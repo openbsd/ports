@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:13:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/03/13 20:58:55 kmos Exp $
 
 COMMENT =		emoji for Python
 
-MODPY_EGG_VERSION =	0.5.4
+MODPY_EGG_VERSION =	1.2.0
 DISTNAME =		emoji-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		textproc
 
@@ -22,6 +21,6 @@ MODPY_PI =		Yes
 MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 .include <bsd.port.mk>

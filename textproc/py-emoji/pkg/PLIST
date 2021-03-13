@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/04/26 18:25:54 kmos Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/03/13 20:58:55 kmos Exp $
+@pkgpath textproc/py-emoji
+@conflict py-emoji-*
 lib/python${MODPY_VERSION}/site-packages/emoji/
 lib/python${MODPY_VERSION}/site-packages/emoji-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/emoji-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -11,6 +13,16 @@ lib/python${MODPY_VERSION}/site-packages/emoji/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/emoji/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/emoji/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/emoji/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/emoji/${MODPY_PYCACHE}unicode_codes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/emoji/core.py
-lib/python${MODPY_VERSION}/site-packages/emoji/unicode_codes.py
+lib/python${MODPY_VERSION}/site-packages/emoji/unicode_codes/
+lib/python${MODPY_VERSION}/site-packages/emoji/unicode_codes/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/emoji/unicode_codes/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/emoji/unicode_codes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/emoji/unicode_codes/${MODPY_PYCACHE}en.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/emoji/unicode_codes/${MODPY_PYCACHE}es.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/emoji/unicode_codes/${MODPY_PYCACHE}it.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/emoji/unicode_codes/${MODPY_PYCACHE}pt.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/emoji/unicode_codes/en.py
+lib/python${MODPY_VERSION}/site-packages/emoji/unicode_codes/es.py
+lib/python${MODPY_VERSION}/site-packages/emoji/unicode_codes/it.py
+lib/python${MODPY_VERSION}/site-packages/emoji/unicode_codes/pt.py
