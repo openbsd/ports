@@ -1,38 +1,40 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/03/14 21:48:58 sthen Exp $
 
 COMMENT =	libftdi, interface to ftdi debug device
 
 CATEGORIES =	devel
 
-V =		1.4
+V =		1.5
 DISTNAME =	libftdi1-$V
-REVISION =	4
 
-SHARED_LIBS +=  ftdi1                     0.0 # 2.4
-SHARED_LIBS +=  ftdipp1                   0.0 # 2.4
+SHARED_LIBS +=  ftdi1                     0.1 # 2.4
 
 HOMEPAGE =	https://www.intra2net.com/en/developer/libftdi/
 
 # library LGPLv2.1 only; c++ wrapper GPLv2 only with linking exception
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c confuse intl m usb-1.0
+WANTLIB += c confuse intl usb-1.0
 
 MASTER_SITES =	https://www.intra2net.com/en/developer/libftdi/download/
 
 EXTRACT_SUFX =	.tar.bz2
 
-COMPILER =		base-clang ports-gcc
-
 MODULES =		devel/cmake \
 			lang/python
-BUILD_DEPENDS =		devel/boost \
-			devel/swig
+# don't force the python RDEP; this is used by flashrom which is helpful
+# to be able to install on small systems
+MODPY_RUNDEP =		No
+BUILD_DEPENDS =		devel/swig
 LIB_DEPENDS =		devel/gettext,-runtime \
 			devel/libusb1 \
 			devel/libconfuse
 
-CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
+CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
+			-DPYTHON_BINDINGS=ON
+# C++ bindings are non-default hidden behind -DFTDICPP, but as of 1.5
+# building them results in a bogus include path in the pkgconfig file.
+# if readding, add BDEP on boost and COMPILER line, and fix that if needed.
 
 NO_TEST =	Yes
 
