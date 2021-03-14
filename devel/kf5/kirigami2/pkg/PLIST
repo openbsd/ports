@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/02/14 06:22:29 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/03/14 14:35:05 rsadowski Exp $
 include/KF5/
 include/KF5/Kirigami2/
 include/KF5/Kirigami2/KirigamiPluginFactory
@@ -63,7 +63,6 @@ lib/qt5/qml/org/kde/kirigami.2/SearchField.qml
 lib/qt5/qml/org/kde/kirigami.2/Separator.qml
 lib/qt5/qml/org/kde/kirigami.2/ShadowedImage.qml
 lib/qt5/qml/org/kde/kirigami.2/SwipeListItem.qml
-lib/qt5/qml/org/kde/kirigami.2/Theme.qml
 lib/qt5/qml/org/kde/kirigami.2/ToolBarApplicationHeader.qml
 lib/qt5/qml/org/kde/kirigami.2/Units.qml
 lib/qt5/qml/org/kde/kirigami.2/UrlButton.qml

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2021/01/23 18:09:53 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.17 2021/03/14 14:35:05 rsadowski Exp $
 @bin bin/kcookiejar5
 @bin bin/ktelnetservice5
 @bin bin/ktrash5
@@ -35,6 +35,7 @@ include/KF5/KIOCore/KIO/JobUiDelegateExtension
 include/KF5/KIOCore/KIO/JobUiDelegateFactory
 include/KF5/KIOCore/KIO/ListJob
 include/KF5/KIOCore/KIO/MetaData
+include/KF5/KIOCore/KIO/MimeTypeFinderJob
 include/KF5/KIOCore/KIO/MimetypeJob
 include/KF5/KIOCore/KIO/MkdirJob
 include/KF5/KIOCore/KIO/MkpathJob
@@ -102,6 +103,7 @@ include/KF5/KIOCore/kio/jobuidelegateextension.h
 include/KF5/KIOCore/kio/jobuidelegatefactory.h
 include/KF5/KIOCore/kio/listjob.h
 include/KF5/KIOCore/kio/metadata.h
+include/KF5/KIOCore/kio/mimetypefinderjob.h
 include/KF5/KIOCore/kio/mimetypejob.h
 include/KF5/KIOCore/kio/mkdirjob.h
 include/KF5/KIOCore/kio/mkpathjob.h
@@ -215,6 +217,7 @@ include/KF5/KIOWidgets/KIO/RenameFileDialog
 include/KF5/KIOWidgets/KIO/SkipDialog
 include/KF5/KIOWidgets/KIO/SslUi
 include/KF5/KIOWidgets/KIO/ThumbCreator
+include/KF5/KIOWidgets/KIO/ThumbDevicePixelRatioDependentCreator
 include/KF5/KIOWidgets/KIO/ThumbSequenceCreator
 include/KF5/KIOWidgets/KOpenWithDialog
 include/KF5/KIOWidgets/KOverlayIconPlugin
@@ -255,6 +258,7 @@ include/KF5/KIOWidgets/kio/renamefiledialog.h
 include/KF5/KIOWidgets/kio/skipdialog.h
 include/KF5/KIOWidgets/kio/sslui.h
 include/KF5/KIOWidgets/kio/thumbcreator.h
+include/KF5/KIOWidgets/kio/thumbdevicepixelratiodependentcreator.h
 include/KF5/KIOWidgets/kio/thumbsequencecreator.h
 include/KF5/KIOWidgets/kiowidgets_export.h
 include/KF5/KIOWidgets/kopenwithdialog.h
@@ -1095,6 +1099,9 @@ share/examples/kio/xdg/kshorturifilterrc
 @sample ${SYSCONFDIR}/xdg/kshorturifilterrc
 share/kconf_update/
 share/kconf_update/filepicker.upd
+share/kdevappwizard/
+share/kdevappwizard/templates/
+share/kdevappwizard/templates/ioslave.tar.bz2
 share/kf5/kcookiejar/
 share/kf5/kcookiejar/domain_info
 share/kf5/mkspecs/qt_KIOCore.pri
@@ -1108,6 +1115,7 @@ share/kservices5/cookies.desktop
 share/kservices5/data.protocol
 share/kservices5/http_cache_cleaner.desktop
 share/kservices5/kcmtrash.desktop
+share/kservices5/mailto.protocol
 share/kservices5/mms.protocol
 share/kservices5/mmst.protocol
 share/kservices5/mmsu.protocol

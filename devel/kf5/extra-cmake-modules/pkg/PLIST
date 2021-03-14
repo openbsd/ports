@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2021/02/20 22:27:29 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.21 2021/03/14 14:35:03 rsadowski Exp $
 @man man/man7/ecm-developer.7
 @man man/man7/ecm-find-modules.7
 @man man/man7/ecm-kde-modules.7
@@ -19,9 +19,11 @@ share/ECM/find-modules/FindGperf.cmake
 share/ECM/find-modules/FindGradle.cmake
 share/ECM/find-modules/FindIcoTool.cmake
 share/ECM/find-modules/FindInotify.cmake
+share/ECM/find-modules/FindIsoCodes.cmake
 share/ECM/find-modules/FindKF5.cmake
 share/ECM/find-modules/FindLibExiv2.cmake
 share/ECM/find-modules/FindLibGit2.cmake
+share/ECM/find-modules/FindLibcap.cmake
 share/ECM/find-modules/FindOpenEXR.cmake
 share/ECM/find-modules/FindPhoneNumber.cmake
 share/ECM/find-modules/FindPoppler.cmake
@@ -132,9 +134,11 @@ share/doc/ECM/html/_sources/find-module/FindGperf.rst.txt
 share/doc/ECM/html/_sources/find-module/FindGradle.rst.txt
 share/doc/ECM/html/_sources/find-module/FindIcoTool.rst.txt
 share/doc/ECM/html/_sources/find-module/FindInotify.rst.txt
+share/doc/ECM/html/_sources/find-module/FindIsoCodes.rst.txt
 share/doc/ECM/html/_sources/find-module/FindKF5.rst.txt
 share/doc/ECM/html/_sources/find-module/FindLibExiv2.rst.txt
 share/doc/ECM/html/_sources/find-module/FindLibGit2.rst.txt
+share/doc/ECM/html/_sources/find-module/FindLibcap.rst.txt
 share/doc/ECM/html/_sources/find-module/FindOpenEXR.rst.txt
 share/doc/ECM/html/_sources/find-module/FindPhoneNumber.rst.txt
 share/doc/ECM/html/_sources/find-module/FindPoppler.rst.txt
@@ -228,9 +232,11 @@ share/doc/ECM/html/find-module/FindGperf.html
 share/doc/ECM/html/find-module/FindGradle.html
 share/doc/ECM/html/find-module/FindIcoTool.html
 share/doc/ECM/html/find-module/FindInotify.html
+share/doc/ECM/html/find-module/FindIsoCodes.html
 share/doc/ECM/html/find-module/FindKF5.html
 share/doc/ECM/html/find-module/FindLibExiv2.html
 share/doc/ECM/html/find-module/FindLibGit2.html
+share/doc/ECM/html/find-module/FindLibcap.html
 share/doc/ECM/html/find-module/FindOpenEXR.html
 share/doc/ECM/html/find-module/FindPhoneNumber.html
 share/doc/ECM/html/find-module/FindPoppler.html

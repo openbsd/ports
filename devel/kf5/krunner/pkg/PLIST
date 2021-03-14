@@ -1,13 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/11/03 16:12:07 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/03/14 14:35:06 rsadowski Exp $
 include/KF5/KRunner/
 include/KF5/KRunner/KRunner/
 include/KF5/KRunner/KRunner/AbstractRunner
+include/KF5/KRunner/KRunner/AbstractRunnerTest
 include/KF5/KRunner/KRunner/QueryMatch
 include/KF5/KRunner/KRunner/RunnerContext
 include/KF5/KRunner/KRunner/RunnerManager
 include/KF5/KRunner/KRunner/RunnerSyntax
 include/KF5/KRunner/krunner/
 include/KF5/KRunner/krunner/abstractrunner.h
+include/KF5/KRunner/krunner/abstractrunnertest.h
 include/KF5/KRunner/krunner/krunner_export.h
 include/KF5/KRunner/krunner/querymatch.h
 include/KF5/KRunner/krunner/runnercontext.h
@@ -15,6 +17,7 @@ include/KF5/KRunner/krunner/runnermanager.h
 include/KF5/KRunner/krunner/runnersyntax.h
 include/KF5/krunner_version.h
 lib/cmake/KF5Runner/
+lib/cmake/KF5Runner/KF5KRunnerMacros.cmake
 lib/cmake/KF5Runner/KF5RunnerConfig.cmake
 lib/cmake/KF5Runner/KF5RunnerConfigVersion.cmake
 lib/cmake/KF5Runner/KF5RunnerTargets${MODCMAKE_BUILD_SUFFIX}
