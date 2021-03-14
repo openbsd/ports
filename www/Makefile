@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1020 2021/03/14 13:20:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.1021 2021/03/14 22:31:25 kmos Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -523,7 +523,6 @@
      SUBDIR += py-vcrpy,python3
      SUBDIR += py-waitress
      SUBDIR += py-waitress,python3
-     SUBDIR += py-webob
      SUBDIR += py-webob,python3
      SUBDIR += py-webpy,python3
      SUBDIR += py-webtest,python3
