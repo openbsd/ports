@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1240 2021/03/14 11:53:18 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1241 2021/03/14 13:13:25 sebastia Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -606,6 +606,7 @@ my $stem_extensions = {
 	'py-emoji' => 'py3-emoji',
 	'py-query' => 'py3-query',
 	'py-ofxparse' => 'py3-ofxparse',
+	'py-puppetboard' => 'py3-puppetboard',
 };
 
 my $obsolete_reason = {
