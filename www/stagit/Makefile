@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2020/08/27 13:55:39 fcambus Exp $
+# $OpenBSD: Makefile,v 1.14 2021/03/14 20:29:00 sthen Exp $
 
 COMMENT =		static git page generator
 
-DISTNAME =		stagit-0.9.4
+DISTNAME =		stagit-0.9.5
 
 CATEGORIES =		www
 
