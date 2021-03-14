@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.70 2020/10/26 12:59:24 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.71 2021/03/14 14:12:27 kn Exp $
 
 COMMENT =	KDE digital photo and video management utility
 
 V =		7.1.0
 DISTNAME =	digikam-${V}
 CATEGORIES =	graphics
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://www.digikam.org/
 
@@ -53,7 +53,7 @@ BUILD_DEPENDS =	devel/bison \
 		misc/shared-desktop-ontologies \
 		multimedia/qtav
 
-RUN_DEPENDS =	databases/sqlite \
+RUN_DEPENDS =	databases/sqlite3 \
 		devel/desktop-file-utils \
 		devel/kf5/kdoctools \
 		multimedia/qtav \
