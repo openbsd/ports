@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/03 21:13:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2021/03/14 21:30:45 kmos Exp $
 
 COMMENT =	wsgi request and response object
 
-MODPY_EGG_VERSION = 1.7.2
+MODPY_EGG_VERSION = 1.8.7
 DISTNAME =	WebOb-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	2
 
 CATEGORIES =	www devel
 
@@ -20,15 +19,16 @@ MODPY_PI =	Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 
-TEST_DEPENDS =	www/py-webtest${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR?=
+FLAVORS =	python3
+FLAVOR =	python3
 
 DOCS =		differences.txt do-it-yourself.txt index.txt whatsnew-*.txt \
 		reference.txt
 EXAMPLES =	comment-example.txt file-example.txt jsonrpc-example.txt \
 		wiki-example.txt
+
+TEST_DEPENDS =	www/py-webtest${MODPY_FLAVOR}
+TEST_ENV +=	PYTHONPATH=${WRKSRC}/lib
 
 post-extract:
 	find ${WRKSRC} -perm 0666 -exec chmod 0644 {} +

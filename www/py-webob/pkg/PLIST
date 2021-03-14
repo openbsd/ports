@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/05/12 07:58:48 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/03/14 21:30:45 kmos Exp $
+@conflict py-webob-*
+@pkgpath www/py-webob
 lib/python${MODPY_VERSION}/site-packages/WebOb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/WebOb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/WebOb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -52,6 +54,7 @@ share/doc/${MODPY_PY_PREFIX}webob/reference.txt
 share/doc/${MODPY_PY_PREFIX}webob/whatsnew-1.5.txt
 share/doc/${MODPY_PY_PREFIX}webob/whatsnew-1.6.txt
 share/doc/${MODPY_PY_PREFIX}webob/whatsnew-1.7.txt
+share/doc/${MODPY_PY_PREFIX}webob/whatsnew-1.8.txt
 share/examples/${MODPY_PY_PREFIX}webob/
 share/examples/${MODPY_PY_PREFIX}webob/comment-example.txt
 share/examples/${MODPY_PY_PREFIX}webob/file-example.txt
