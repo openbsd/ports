@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/10/16 08:19:54 djm Exp $
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
-lib/python${MODPY_VERSION}/site-packages/_sqlite.so
-lib/python${MODPY_VERSION}/site-packages/sqlite/
-lib/python${MODPY_VERSION}/site-packages/sqlite/__init__.py
-lib/python${MODPY_VERSION}/site-packages/sqlite/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/sqlite/main.py
-lib/python${MODPY_VERSION}/site-packages/sqlite/main.pyc

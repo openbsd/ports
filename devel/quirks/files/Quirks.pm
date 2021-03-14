@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1239 2021/03/14 05:44:06 kmos Exp $
+# $OpenBSD: Quirks.pm,v 1.1240 2021/03/14 11:53:18 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2292,6 +2292,7 @@ my $obsolete_reason = {
 	'gstreamer-plugins-ugly' => 6,
 	'lives' => 42,
 	'py-wsgiproxy' => 5,
+	'py-sqlite' => 5,
 };
 
 # reasons for obsolete packages
