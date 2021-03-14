@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2021/02/23 19:39:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/03/14 11:47:04 sthen Exp $
 
 COMMENT=	standalone Yubikey and OATH/HOTP validation server
 DISTNAME=	yubico-yubiserve-3.1
-REVISION=	13
+REVISION=	14
 EXTRACT_SUFX=	.zip
 UNZIP=		unzip -a
 PKGNAME=	${DISTNAME:S/yubico-//}
@@ -21,9 +21,8 @@ MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=yubico-yubiserve/}
 MODULES=	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 BUILD_DEPENDS=	databases/sqlite3
-RUN_DEPENDS=	databases/py-sqlite \
-		security/py-cryptodome \
-		security/py-openssl
+RUN_DEPENDS=	security/py-cryptodome${MODPY_FLAVOR} \
+		security/py-openssl${MODPY_FLAVOR}
 
 NO_BUILD=	Yes
 NO_TEST=	Yes
