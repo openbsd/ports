@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:13:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/03/14 05:44:06 kmos Exp $
 
 COMMENT =	parser for the Open Financial Exchange file format
 
 MODPY_EGG_VERSION = 0.20
 DISTNAME =	ofxparse-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	textproc
 
@@ -20,7 +20,7 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 
 FLAVORS =	python3
-FLAVOR ?=
+FLAVOR =	python3
 
 RUN_DEPENDS +=		devel/py-six${MODPY_FLAVOR} \
 			textproc/py-lxml${MODPY_FLAVOR} \
