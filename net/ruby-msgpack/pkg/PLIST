@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/06/24 12:19:10 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.14 2021/03/14 13:26:48 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
+@so ${GEM_EXTENSIONS_DIR}/msgpack/msgpack.so
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.rubocop.yml
@@ -7,7 +8,7 @@ ${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/ChangeLog
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
-${GEM_LIB}/gems/${DISTNAME}/README.rdoc
+${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/appveyor.yml
 ${GEM_LIB}/gems/${DISTNAME}/bench/
@@ -38,7 +39,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/core_ext.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/factory.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/msgpack.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/msgpack.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/packer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/symbol.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/time.rb
