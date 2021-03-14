@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2021/02/26 18:20:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2021/03/14 10:55:06 stsp Exp $
 
 USE_WXNEEDED =	Yes
 
 COMMENT =	Nintendo DS emulator
 
 DISTNAME =	desmume-0.9.11
-REVISION =	8
+REVISION =	9
 
 CATEGORIES =	emulators
 
