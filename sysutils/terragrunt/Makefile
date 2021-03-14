@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.51 2021/03/08 13:59:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2021/03/14 10:13:21 ajacoutot Exp $
 
 COMMENT=	thin wrapper for Terraform that provides extra tools
 
 MODGO_MODNAME=	github.com/gruntwork-io/terragrunt
-MODGO_VERSION=	v0.28.7
+MODGO_VERSION=	v0.28.11
 DISTNAME=	terragrunt-${MODGO_VERSION}
-REVISION=	0
 
 WRKDIST=	${WRKDIR}/github.com/gruntwork-io/terragrunt@${MODGO_VERSION}
 
@@ -78,7 +77,7 @@ MODGO_MODULES =	\
 	github.com/armon/go-metrics					 v0.0.0-20180917152333-f0300d1749da \
 	github.com/armon/go-radix					 v1.0.0 \
 	github.com/aws/aws-lambda-go					 v1.13.3 \
-	github.com/aws/aws-sdk-go					 v1.29.34 \
+	github.com/aws/aws-sdk-go					 v1.37.7 \
 	github.com/baiyubin/aliyun-sts-go-sdk				 v0.0.0-20180326062324-cfa1a18b161f \
 	github.com/beorn7/perks						 v1.0.0 \
 	github.com/bgentry/go-netrc					 v0.0.0-20140422174119-9fd32a8b3d3d \
@@ -145,7 +144,7 @@ MODGO_MODULES =	\
 	github.com/go-openapi/jsonreference				 v0.19.3 \
 	github.com/go-openapi/spec					 v0.19.3 \
 	github.com/go-openapi/swag					 v0.19.5 \
-	github.com/go-sql-driver/mysql					 v1.5.0 \
+	github.com/go-sql-driver/mysql					 v1.4.1 \
 	github.com/go-stack/stack					 v1.8.0 \
 	github.com/go-test/deep						 v1.0.3 \
 	github.com/gogo/protobuf					 v1.3.1 \
@@ -179,7 +178,7 @@ MODGO_MODULES =	\
 	github.com/grpc-ecosystem/go-grpc-prometheus			 v1.2.0 \
 	github.com/grpc-ecosystem/grpc-gateway				 v1.9.5 \
 	github.com/gruntwork-io/gruntwork-cli				 v0.7.0 \
-	github.com/gruntwork-io/terratest				 v0.30.26 \
+	github.com/gruntwork-io/terratest				 v0.32.6 \
 	github.com/hashicorp/aws-sdk-go-base				 v0.4.0 \
 	github.com/hashicorp/consul					 v0.0.0-20171026175957-610f3c86a089 \
 	github.com/hashicorp/errwrap					 v1.0.0 \
@@ -190,7 +189,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-hclog					 v0.8.0 \
 	github.com/hashicorp/go-immutable-radix				 v1.0.0 \
 	github.com/hashicorp/go-msgpack					 v0.5.4 \
-	github.com/hashicorp/go-multierror				 v1.0.0 \
+	github.com/hashicorp/go-multierror				 v1.1.0 \
 	github.com/hashicorp/go-plugin					 v1.0.1 \
 	github.com/hashicorp/go-retryablehttp				 v0.5.4 \
 	github.com/hashicorp/go-rootcerts				 v1.0.1 \
@@ -219,7 +218,8 @@ MODGO_MODULES =	\
 	github.com/imdario/mergo					 v0.3.7 \
 	github.com/inconshreveable/mousetrap				 v1.0.0 \
 	github.com/jinzhu/copier					 v0.0.0-20190924061706-b57f9002281a \
-	github.com/jmespath/go-jmespath					 v0.0.0-20180206201540-c2b33e8439af \
+	github.com/jmespath/go-jmespath					 v0.4.0 \
+	github.com/jmespath/go-jmespath/internal/testify		 v1.5.1 \
 	github.com/joefitzgerald/rainbow-reporter			 v0.1.0 \
 	github.com/jonboulle/clockwork					 v0.1.0 \
 	github.com/joyent/triton-go					 v0.0.0-20180313100802-d8f9c0314926 \
@@ -357,10 +357,10 @@ MODGO_MODULES =	\
 	golang.org/x/lint						 v0.0.0-20200302205851-738671d3881b \
 	golang.org/x/mobile						 v0.0.0-20190719004257-d2bd2a29d028 \
 	golang.org/x/mod						 v0.3.0 \
-	golang.org/x/net						 v0.0.0-20200822124328-c89045814202 \
+	golang.org/x/net						 v0.0.0-20201110031124-69a78807bb2b \
 	golang.org/x/oauth2						 v0.0.0-20200902213428-5d25da1a8d43 \
 	golang.org/x/sync						 v0.0.0-20200625203802-6e8e738ad208 \
-	golang.org/x/sys						 v0.0.0-20200905004654-be1d3432aa8f \
+	golang.org/x/sys						 v0.0.0-20200930185726-fdedc70b468f \
 	golang.org/x/text						 v0.3.3 \
 	golang.org/x/time						 v0.0.0-20191024005414-555d28b269f0 \
 	golang.org/x/tools						 v0.0.0-20200904185747-39188db58858 \
@@ -524,7 +524,6 @@ MODGO_MODFILES =	\
 	github.com/go-openapi/spec				 v0.0.0-20160808142527-6aced65f8501 \
 	github.com/go-openapi/swag				 v0.0.0-20160704191624-1d0bd113de87 \
 	github.com/go-openapi/swag				 v0.19.2 \
-	github.com/go-sql-driver/mysql				 v1.4.1 \
 	github.com/go-test/deep					 v1.0.1 \
 	github.com/go-test/deep					 v1.0.2-0.20181118220953-042da051cf31 \
 	github.com/gogo/protobuf				 v1.1.1 \
@@ -585,6 +584,7 @@ MODGO_MODFILES =	\
 	github.com/hashicorp/go-hclog				 v0.0.0-20180709165350-ff2cf002a8dd \
 	github.com/hashicorp/go-hclog				 v0.0.0-20181001195459-61d530d6c27f \
 	github.com/hashicorp/go-immutable-radix			 v0.0.0-20180129170900-7f3cd4390caa \
+	github.com/hashicorp/go-multierror			 v1.0.0 \
 	github.com/hashicorp/go-plugin				 v1.0.1-0.20190610192547-a1bc61569a26 \
 	github.com/hashicorp/go-retryablehttp			 v0.5.2 \
 	github.com/hashicorp/go-rootcerts			 v1.0.0 \
@@ -599,6 +599,7 @@ MODGO_MODFILES =	\
 	github.com/hashicorp/yamux				 v0.0.0-20180604194846-3520598351bb \
 	github.com/imdario/mergo				 v0.3.5 \
 	github.com/jmespath/go-jmespath				 v0.0.0-20160202185014-0b12d6b521d8 \
+	github.com/jmespath/go-jmespath				 v0.0.0-20180206201540-c2b33e8439af \
 	github.com/json-iterator/go				 v0.0.0-20180612202835-f2b4162afba3 \
 	github.com/json-iterator/go				 v1.1.5 \
 	github.com/json-iterator/go				 v1.1.6 \
@@ -775,6 +776,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net					 v0.0.0-20200520182314-0ba52f642ac2 \
 	golang.org/x/net					 v0.0.0-20200625001655-4c5254603344 \
 	golang.org/x/net					 v0.0.0-20200707034311-ab3426394381 \
+	golang.org/x/net					 v0.0.0-20200822124328-c89045814202 \
 	golang.org/x/oauth2					 v0.0.0-20180821212333-d2e6202438be \
 	golang.org/x/oauth2					 v0.0.0-20190226205417-e64efc72b421 \
 	golang.org/x/oauth2					 v0.0.0-20190604053449-0f29369cfe45 \
@@ -836,6 +838,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys					 v0.0.0-20200523222454-059865788121 \
 	golang.org/x/sys					 v0.0.0-20200622214017-ed371f2e16b4 \
 	golang.org/x/sys					 v0.0.0-20200803210538-64077c9b5642 \
+	golang.org/x/sys					 v0.0.0-20200905004654-be1d3432aa8f \
 	golang.org/x/text					 v0.0.0-20160726164857-2910a502d2bf \
 	golang.org/x/text					 v0.0.0-20170915032832-14c0d48ead0c \
 	golang.org/x/text					 v0.3.0 \
