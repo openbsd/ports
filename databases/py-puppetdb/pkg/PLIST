@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/09/26 10:15:56 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/03/14 13:10:13 sebastia Exp $
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/
-lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}rc0-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}rc0-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}rc0-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}rc0-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}rc0-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}rc0-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/QueryBuilder.py
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pypuppetdb/${MODPY_PYCACHE}/
@@ -13,12 +13,10 @@ lib/python${MODPY_VERSION}/site-packages/pypuppetdb/${MODPY_PYCACHE}QueryBuilder
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pypuppetdb/${MODPY_PYCACHE}package.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/api.py
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/errors.py
-lib/python${MODPY_VERSION}/site-packages/pypuppetdb/package.py
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/types.py
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/utils.py
 @comment requirements_for_tests/
