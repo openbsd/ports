@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.88 2020/11/01 08:22:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.89 2021/03/14 10:16:31 ajacoutot Exp $
 
 COMMENT=		configuration backend system
 
 GNOME_PROJECT=		dconf
-GNOME_VERSION=		0.38.0
+GNOME_VERSION=		0.40.0
 
-SHARED_LIBS +=		dconf        1.2 # 1.0.0
+SHARED_LIBS +=		dconf        1.3 # 1.0.0
 
 CATEGORIES=		devel
 

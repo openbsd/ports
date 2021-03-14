@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2020/05/15 09:32:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/03/14 10:16:31 ajacoutot Exp $
 @conflict vala-<0.10
 @pkgpath devel/dconf,-main
 @extraunexec rm -rf ${SYSCONFDIR}/dconf/db/*
@@ -15,6 +15,9 @@ include/dconf/dconf.h
 @so lib/gio/modules/libdconfsettings.so
 @lib lib/libdconf.so.${LIBdconf_VERSION}
 lib/pkgconfig/dconf.pc
+lib/systemd/
+lib/systemd/user/
+lib/systemd/user/dconf.service
 @bin libexec/dconf-service
 @man man/man1/dconf-service.1
 @man man/man1/dconf.1
