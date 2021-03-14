@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2021/03/11 12:17:21 pascal Exp $
+# $OpenBSD: Makefile,v 1.27 2021/03/14 16:47:17 pascal Exp $
 
 COMMENT =		Not Quite Perl
 
@@ -27,6 +27,7 @@ DISTFILES =		nqp-$V.tar.gz \
 			rakudo-${RAKUDO_VERSION}.tar.gz:0
 EXTRACT_ONLY =		nqp-$V.tar.gz
 
+BUILD_DEPENDS =		math/libtommath
 LIB_DEPENDS =		lang/moarvm>=${MOAR_VERSION}
 
 CONFIGURE_STYLE =	simple
