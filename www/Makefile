@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1019 2021/03/13 23:30:03 kmos Exp $
+# $OpenBSD: Makefile,v 1.1020 2021/03/14 13:20:01 sthen Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -517,7 +517,7 @@
      SUBDIR += py-treq,python3
      SUBDIR += py-uritemplate
      SUBDIR += py-uritemplate,python3
-     SUBDIR += py-urlgrabber
+     SUBDIR += py-urlgrabber,python3
      SUBDIR += py-urllib3
      SUBDIR += py-urllib3,python3
      SUBDIR += py-vcrpy,python3
