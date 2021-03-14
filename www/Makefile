@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1021 2021/03/14 22:31:25 kmos Exp $
+# $OpenBSD: Makefile,v 1.1022 2021/03/14 23:48:30 kmos Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -457,7 +457,7 @@
      SUBDIR += py-genshi
      SUBDIR += py-genshi,python3
      SUBDIR += py-gunicorn,python3
-     SUBDIR += py-html5-parser
+     SUBDIR += py-html5-parser,python3
      SUBDIR += py-http_ece
      SUBDIR += py-http_ece,python3
      SUBDIR += py-httpbin,python3
