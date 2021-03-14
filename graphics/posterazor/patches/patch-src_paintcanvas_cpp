@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_paintcanvas_cpp,v 1.1 2021/03/14 10:38:10 kirby Exp $
+
+Index: src/paintcanvas.cpp
+--- src/paintcanvas.cpp.orig
++++ src/paintcanvas.cpp
+@@ -25,6 +25,7 @@
+ #include <QImage>
+ #include <QPainter>
+ #include <QVariant>
++#include <QPainterPath>
+ 
+ PaintCanvas::PaintCanvas(QWidget *parent)
+     : QWidget(parent)
