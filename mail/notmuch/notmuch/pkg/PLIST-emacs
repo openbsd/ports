@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST-emacs,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+@comment $OpenBSD: PLIST-emacs,v 1.2 2021/03/14 19:50:49 bket Exp $
 bin/notmuch-emacs-mua
 @info info/notmuch-emacs-mua.info
 @info info/notmuch-emacs.info
 @man man/man1/notmuch-emacs-mua.1
+share/applications/
 share/applications/notmuch-emacs-mua.desktop
+share/emacs/
 share/emacs/site-lisp/coolj.el
 share/emacs/site-lisp/coolj.elc
 share/emacs/site-lisp/notmuch-address.el

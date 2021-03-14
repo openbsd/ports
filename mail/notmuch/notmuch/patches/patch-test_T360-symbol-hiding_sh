@@ -1,4 +1,4 @@
-$OpenBSD: patch-test_T360-symbol-hiding_sh,v 1.1.1.1 2020/05/15 08:58:14 sthen Exp $
+$OpenBSD: patch-test_T360-symbol-hiding_sh,v 1.2 2021/03/14 19:50:49 bket Exp $
 
 Index: test/T360-symbol-hiding.sh
 --- test/T360-symbol-hiding.sh.orig
@@ -7,8 +7,8 @@ Index: test/T360-symbol-hiding.sh
  test_expect_equal "$result" "$output"
  
  test_begin_subtest 'comparing existing to exported symbols'
--nm -P $NOTMUCH_BUILDDIR/lib/libnotmuch.so | awk '$2 == "T" && $1 ~ "^notmuch" {print $1}' | sort | uniq > ACTUAL
-+nm -P $NOTMUCH_BUILDDIR/lib/libnotmuch.so* | awk '$2 == "T" && $1 ~ "^notmuch" {print $1}' | sort | uniq > ACTUAL
- sed -n 's/^\(notmuch_[a-zA-Z0-9_]*\)[[:blank:]]*(.*/\1/p' $NOTMUCH_SRCDIR/lib/notmuch.h | sort | uniq > EXPORTED
+-readelf -Ws $NOTMUCH_BUILDDIR/lib/libnotmuch.so | sed -e 's/\[[^]]*\]//' |\
++readelf -Ws $NOTMUCH_BUILDDIR/lib/libnotmuch.so* | sed -e 's/\[[^]]*\]//' |\
+     awk '$4 == "FUNC" && $5 == "GLOBAL" && $7 != "UND" {print $8}' | sort -u > ACTUAL
+ sed -n 's/^\(notmuch_[a-zA-Z0-9_]*\)[[:blank:]]*(.*/\1/p' $NOTMUCH_SRCDIR/lib/notmuch.h | sort -u > EXPORTED
  test_expect_equal_file EXPORTED ACTUAL
- 
