@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1023 2021/03/15 11:35:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.1024 2021/03/15 21:40:45 sthen Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -468,7 +468,6 @@
      SUBDIR += py-jinja2
      SUBDIR += py-jinja2,python3
      SUBDIR += py-jonpy
-     SUBDIR += py-jwt
      SUBDIR += py-jwt,python3
      SUBDIR += py-macaroons,python3
      SUBDIR += py-mako

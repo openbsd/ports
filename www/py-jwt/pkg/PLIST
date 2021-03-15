@@ -1,40 +1,31 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/02/19 23:13:07 sthen Exp $
-@conflict py-jwt-<1.6.4p2
-bin/pyjwt${MODPY_BIN_SUFFIX}
+@comment $OpenBSD: PLIST,v 1.5 2021/03/15 21:40:46 sthen Exp $
+@conflict py-jwt-*
+@pkgpath www/py-jwt
 lib/python${MODPY_VERSION}/site-packages/PyJWT-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/PyJWT-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/PyJWT-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/PyJWT-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/PyJWT-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/PyJWT-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/PyJWT-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/PyJWT-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/jwt/
 lib/python${MODPY_VERSION}/site-packages/jwt/__init__.py
-lib/python${MODPY_VERSION}/site-packages/jwt/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jwt/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jwt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/jwt/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jwt/${MODPY_PYCACHE}algorithms.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jwt/${MODPY_PYCACHE}api_jwk.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jwt/${MODPY_PYCACHE}api_jws.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jwt/${MODPY_PYCACHE}api_jwt.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/jwt/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jwt/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jwt/${MODPY_PYCACHE}help.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jwt/${MODPY_PYCACHE}jwks_client.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jwt/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jwt/algorithms.py
+lib/python${MODPY_VERSION}/site-packages/jwt/api_jwk.py
 lib/python${MODPY_VERSION}/site-packages/jwt/api_jws.py
 lib/python${MODPY_VERSION}/site-packages/jwt/api_jwt.py
-lib/python${MODPY_VERSION}/site-packages/jwt/compat.py
-lib/python${MODPY_VERSION}/site-packages/jwt/contrib/
-lib/python${MODPY_VERSION}/site-packages/jwt/contrib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jwt/contrib/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/jwt/contrib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/jwt/contrib/algorithms/
-lib/python${MODPY_VERSION}/site-packages/jwt/contrib/algorithms/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jwt/contrib/algorithms/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/jwt/contrib/algorithms/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/jwt/contrib/algorithms/${MODPY_PYCACHE}py_ecdsa.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/jwt/contrib/algorithms/${MODPY_PYCACHE}pycrypto.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/jwt/contrib/algorithms/py_ecdsa.py
-lib/python${MODPY_VERSION}/site-packages/jwt/contrib/algorithms/pycrypto.py
 lib/python${MODPY_VERSION}/site-packages/jwt/exceptions.py
+lib/python${MODPY_VERSION}/site-packages/jwt/help.py
+lib/python${MODPY_VERSION}/site-packages/jwt/jwks_client.py
+lib/python${MODPY_VERSION}/site-packages/jwt/py.typed
 lib/python${MODPY_VERSION}/site-packages/jwt/utils.py
