@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_lib_marble_CMakeLists_txt,v 1.1.1.1 2018/11/21 06:50:04 rsadowski Exp $
+$OpenBSD: patch-src_lib_marble_CMakeLists_txt,v 1.2 2021/03/15 15:59:21 rsadowski Exp $
 
 Index: src/lib/marble/CMakeLists.txt
 --- src/lib/marble/CMakeLists.txt.orig
@@ -19,3 +19,13 @@ Index: src/lib/marble/CMakeLists.txt
  endif()
  CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/config-phonon.h.cmake
                 ${CMAKE_CURRENT_BINARY_DIR}/config-phonon.h)
+@@ -437,8 +438,7 @@ set_target_properties(marblewidget  PROPERTIES
+ 
+ if (NOT (CMAKE_SYSTEM_NAME STREQUAL Android))
+   set_target_properties(marblewidget  PROPERTIES
+-    VERSION ${MARBLE_LIB_VERSION}
+-    SOVERSION ${MARBLE_ABI_VERSION}
++    VERSION ${LIBmarblewidget-qt5_VERSION}
+   )
+ endif()
+ 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2021/01/23 18:10:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.17 2021/03/15 15:59:21 rsadowski Exp $
 
 COMMENT =	virtual globe and world atlas
 DISTNAME =	marble-${VERSION}
 PKGNAME =	marble-kf5-${VERSION}
 CATEGORIES =	geo
+REVISION =	0
 
 HOMEPAGE =	https://marble.kde.org/
 
@@ -73,6 +74,11 @@ CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_libwlocate=ON \
 			-DMOBILE=OFF
 
 TEST_IS_INTERACTIVE =	X11
+
+SUBST_VARS +=	LIBmarblewidget-qt5_VERSION
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/src/lib/marble/CMakeLists.txt
 
 post-extract:
 	rm ${WRKSRC}/data/mwdbii/{PISLAND.PNT,PLAKE.PNT}.orig
