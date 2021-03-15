@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2021/03/10 01:33:55 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.27 2021/03/15 22:08:14 kili Exp $
 
 COMMENT =	command-line interface for Cabal and Hackage
 
 DISTNAME =	cabal-install-3.4.0.0
 CATEGORIES =	devel
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	haskell
 GH_TAGNAME =	${DISTNAME}
@@ -24,6 +24,8 @@ MODGHC_BUILD =          cabal hackage nort
 LIB_DEPENDS =		converters/libiconv \
 			devel/gmp \
 			devel/libffi
+
+RUN_DEPENDS =		lang/ghc
 
 # bootstrap.py handles the extraction of the rest of files.
 EXTRACT_ONLY =		${DISTNAME}.tar.gz
