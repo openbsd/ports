@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2021/02/23 19:39:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2021/03/15 11:29:14 sthen Exp $
 
 COMMENT =	wiki engine written in python
 
@@ -17,6 +17,9 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =	https://static.moinmo.in/files/
 
 MODULES =	lang/python
+# "Moin 1.9.x does not support Python 3.x and only works with Python 2.7.x (and
+# we won't port it to py3). Moin 2.0 (which is still not released and development
+# is very slow-going) is based on Python 3.5+."
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 NO_TEST =	Yes
