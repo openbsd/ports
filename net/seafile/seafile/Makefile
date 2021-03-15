@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2021/02/23 19:39:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2021/03/15 10:38:56 kirby Exp $
 
 COMMENT =		seafile daemon
 
@@ -6,8 +6,8 @@ GH_ACCOUNT =		haiwen
 GH_PROJECT =		seafile
 # upstream keep on sliding tags to pull in new commits
 # this commit is from the "v7.0.10" tag
-GH_COMMIT =		626f561b52a21dea80f02e7b061fe848e1596c81
-DISTNAME =		seafile-daemon-7.0.10pl20201026
+GH_COMMIT =		d34499a2aafa024623a4210fe7f663cef13fe9a6
+DISTNAME =		seafile-daemon-8.0.1pl20210310
 
 SHARED_LIBS =		seafile 4.0
 
