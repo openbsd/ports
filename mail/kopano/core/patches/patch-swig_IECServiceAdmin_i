@@ -1,0 +1,14 @@
+$OpenBSD: patch-swig_IECServiceAdmin_i,v 1.1 2021/03/15 20:31:10 naddy Exp $
+
+Index: swig/IECServiceAdmin.i
+--- swig/IECServiceAdmin.i.orig
++++ swig/IECServiceAdmin.i
+@@ -11,7 +11,7 @@
+ %apply MAPILIST {LPECSVRNAMELIST};
+ %apply MAPILIST * {LPECSERVERLIST* OUTPUT};
+ 
+-%typemap(in,numinputs=0) (bool *OUTPUT) (bool bBool = NULL) {
++%typemap(in,numinputs=0) (bool *OUTPUT) (bool bBool = false) {
+   $1 = &bBool;
+ }
+ %typemap(argout, fragment="SWIG_From_int") bool *OUTPUT{
