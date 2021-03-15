@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2021/01/03 11:57:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2021/03/15 16:55:00 ajacoutot Exp $
 
 COMMENT =		building blocks for modern adaptive GNOME apps
 
 GNOME_PROJECT =		libhandy
-GNOME_VERSION =		1.0.3
+GNOME_VERSION =		1.2.0
 CATEGORIES =		x11
 
 API_V =			1
-SHARED_LIBS +=  handy-1                   0.0 # 3.0
+SHARED_LIBS +=  handy-1                   0.1 # 3.0
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
@@ -23,7 +23,7 @@ MODULES =		devel/meson \
 MODGNOME_TOOLS =	gobject-introspection vala
 
 WANTLIB += atk-1.0 cairo gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 gtk-3 intl m pango-1.0
+WANTLIB += gobject-2.0 gtk-3 intl m pango-1.0 fribidi
 
 LIB_DEPENDS =		x11/gtk+3
 
