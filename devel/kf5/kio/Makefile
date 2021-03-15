@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2021/02/14 06:22:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.22 2021/03/15 17:07:13 rsadowski Exp $
 
 # XXX has some internal dependency problems, look for kpasswdserver.json
 
 COMMENT =	network transparent access to files and data in KDE
+VERSION =	5.80.1
 DISTNAME =	kio-${VERSION}
 
 SHARED_LIBS =	KF5KIOCore		9.1 # 5.20
