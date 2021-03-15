@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.673 2021/03/11 08:40:29 bentley Exp $
+# $OpenBSD: Makefile,v 1.674 2021/03/15 11:12:53 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -59,6 +59,7 @@
      SUBDIR += gpresent
      SUBDIR += grepcidr
      SUBDIR += groff
+     SUBDIR += gron
      SUBDIR += gsed
      SUBDIR += gspell
      SUBDIR += gtk-doc
