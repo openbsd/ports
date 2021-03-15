@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/02/11 17:46:25 kmos Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/03/15 20:01:39 sthen Exp $
+@pkgpath audio/py-musicbrainzngs
 lib/python${MODPY_VERSION}/site-packages/musicbrainzngs/
 lib/python${MODPY_VERSION}/site-packages/musicbrainzngs-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/musicbrainzngs-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
