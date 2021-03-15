@@ -1,0 +1,28 @@
+$OpenBSD: patch-skypeweb_CMakeLists_txt,v 1.1.1.1 2021/03/15 01:49:03 kevlo Exp $
+
+Index: skypeweb/CMakeLists.txt
+--- skypeweb/CMakeLists.txt.orig
++++ skypeweb/CMakeLists.txt
+@@ -29,6 +29,10 @@ include_directories(
+     ${CMAKE_CURRENT_SOURCE_DIR}/purple2compat
+     )
+ 
++link_directories(
++    ${PURPLE_LIBRARY_DIRS}
++    )
++
+ set(SRC_LIST
+     skypeweb_connection.c
+     skypeweb_contacts.c
+@@ -47,11 +51,6 @@ target_link_libraries(${PROJECT_NAME}
+     ${GLIB2_LIBRARIES}
+     ${JSON-GLIB_LIBRARIES}
+     )
+-
+-link_directories(
+-    ${PURPLE_LIBRARY_DIRS}
+-    )
+-
+ 
+ #install(TARGETS ${PROJECT_NAME} DESTINATION ${LIB_INSTALL_DIR})
+ exec_program("${PKG_CONFIG_EXECUTABLE} --variable=plugindir purple 2>/dev/null"

@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/03/15 01:49:03 kevlo Exp $
+@so lib/purple-2/libskypeweb.so
+share/pixmaps/pidgin/emotes/skype/
+share/pixmaps/pidgin/emotes/skype/theme
+share/pixmaps/pidgin/protocols/16/skype.png
+share/pixmaps/pidgin/protocols/16/skypeout.png
+share/pixmaps/pidgin/protocols/22/skype.png
+share/pixmaps/pidgin/protocols/22/skypeout.png
+share/pixmaps/pidgin/protocols/48/skype.png
+share/pixmaps/pidgin/protocols/48/skypeout.png
