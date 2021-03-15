@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.77 2021/03/15 20:53:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.78 2021/03/15 21:02:10 sthen Exp $
 
 COMMENT =		simple distributed software configuration management
-
-REVISION =		0
 
 DISTNAME =		fossil-src-2.14
 PKGNAME =		fossil-2.14
@@ -23,8 +21,6 @@ FLAVOR?=
 # uses pledge()
 WANTLIB =		c crypto fuse m ssl z
 
-LIB_DEPENDS =		sysutils/libfuse
-
 MODULES =		lang/tcl
 MODTCL_VERSION =	8.6
 
@@ -32,8 +28,6 @@ WRKDIST =		${WRKDIR}/${PKGNAME}
 
 BUILD_DEPENDS =		${MODTCL_BUILD_DEPENDS}
 
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_STYLE =	simple
 CONFLICT_MARKER =	fossil-*-!static
 

@@ -1,12 +1,11 @@
-$OpenBSD: patch-doc_libtool_texi,v 1.5 2021/03/15 20:53:22 sthen Exp $
-Index: doc/libtool.texi
---- doc/libtool.texi.orig
-+++ doc/libtool.texi
-@@ -30,15 +30,15 @@ and with no Back-Cover Texts.  A copy of the license i
- the section entitled ``GNU Free Documentation License''.
- @end copying
+$OpenBSD: patch-doc_libtool_texi,v 1.6 2021/03/15 21:02:10 sthen Exp $
+--- doc/libtool.texi.orig	Wed Jun  8 11:04:53 2011
++++ doc/libtool.texi	Wed Jun  8 11:05:44 2011
+@@ -11,16 +11,16 @@
+ @set MAILLIST the Libtool mailing list @email{libtool@@gnu.org}
+ @set objdir .libs
  
--@dircategory Software development
+-@dircategory GNU programming tools
 +@dircategory Programming & development tools
  @direntry
  * Libtool: (libtool).           Generic shared library support script.
@@ -14,10 +13,11 @@ Index: doc/libtool.texi
  
  @dircategory Individual utilities
  @direntry
--* libtool-invocation: (libtool)Invoking libtool. Running the @code{libtool} script.
--* libtoolize: (libtool)Invoking libtoolize.      Adding libtool support.
-+* libtool-invocation: (libtool)	Invoking libtool. Running the @code{libtool} script.
-+* libtoolize: (libtool)	Invoking libtoolize.      Adding libtool support.
+-* libtool-invocation: (libtool)Invoking libtool.
++* libtool-invocation: (libtool)	Invoking libtool.
+                                                 Running the @code{libtool} script.
+-* libtoolize: (libtool)Invoking libtoolize.     Adding libtool support.
++* libtoolize: (libtool)	Invoking libtoolize. Adding libtool support.
  @end direntry
  
- @titlepage
+ @ifnottex

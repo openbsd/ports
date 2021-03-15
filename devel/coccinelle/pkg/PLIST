@@ -1,60 +1,30 @@
-@comment $OpenBSD: PLIST,v 1.14 2021/03/15 20:53:22 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.15 2021/03/15 21:02:10 sthen Exp $
 %%native%%
-@bin bin/spatch
-@bin bin/spgen
+bin/pycocci
+bin/spatch
+bin/spgen
 lib/coccinelle/
 lib/coccinelle/ocaml/
 lib/coccinelle/ocaml/ast0_cocci.cmi
-lib/coccinelle/ocaml/ast0_cocci.cmx
 lib/coccinelle/ocaml/ast_c.cmi
-lib/coccinelle/ocaml/ast_c.cmx
 lib/coccinelle/ocaml/ast_cocci.cmi
-lib/coccinelle/ocaml/ast_cocci.cmx
 lib/coccinelle/ocaml/coccilib.cmi
-lib/coccinelle/ocaml/coccilib.cmx
-lib/coccinelle/ocaml/commands.cmi
-lib/coccinelle/ocaml/commands.cmx
 lib/coccinelle/ocaml/common.cmi
-lib/coccinelle/ocaml/common.cmx
 lib/coccinelle/ocaml/config.cmi
-lib/coccinelle/ocaml/config.cmx
-lib/coccinelle/ocaml/dumper.cmi
-lib/coccinelle/ocaml/dumper.cmx
 lib/coccinelle/ocaml/exposed_modules.cmi
-lib/coccinelle/ocaml/exposed_modules.cmx
 lib/coccinelle/ocaml/externalanalysis.cmi
-lib/coccinelle/ocaml/externalanalysis.cmx
 lib/coccinelle/ocaml/flag.cmi
-lib/coccinelle/ocaml/flag.cmx
-lib/coccinelle/ocaml/flag_parsing_c.cmi
-lib/coccinelle/ocaml/flag_parsing_c.cmx
 lib/coccinelle/ocaml/iteration.cmi
-lib/coccinelle/ocaml/iteration.cmx
 lib/coccinelle/ocaml/lexer_c.cmi
-lib/coccinelle/ocaml/lexer_c.cmx
 lib/coccinelle/ocaml/lib_parsing_c.cmi
-lib/coccinelle/ocaml/lib_parsing_c.cmx
 lib/coccinelle/ocaml/ocamlcocci_aux.cmi
-lib/coccinelle/ocaml/ocamlcocci_aux.cmx
-lib/coccinelle/ocaml/parmap.cmi
-lib/coccinelle/ocaml/parmap.cmx
 lib/coccinelle/ocaml/parse_c.cmi
-lib/coccinelle/ocaml/parse_c.cmx
 lib/coccinelle/ocaml/parser_c.cmi
-lib/coccinelle/ocaml/parser_c.cmx
 lib/coccinelle/ocaml/prepare_ocamlcocci.cmi
-lib/coccinelle/ocaml/prepare_ocamlcocci.cmx
 lib/coccinelle/ocaml/pretty_print_c.cmi
-lib/coccinelle/ocaml/pretty_print_c.cmx
 lib/coccinelle/ocaml/regexp.cmi
-lib/coccinelle/ocaml/regexp.cmx
 lib/coccinelle/ocaml/run_ocamlcocci.cmi
-lib/coccinelle/ocaml/run_ocamlcocci.cmx
-lib/coccinelle/ocaml/token_c.cmi
-lib/coccinelle/ocaml/token_c.cmx
 lib/coccinelle/ocaml/visitor_c.cmi
-lib/coccinelle/ocaml/visitor_c.cmx
-lib/coccinelle/ocaml/yes_prepare_ocamlcocci.cmx
 lib/coccinelle/python/
 lib/coccinelle/python/coccilib/
 lib/coccinelle/python/coccilib/__init__.py
@@ -75,18 +45,17 @@ lib/coccinelle/python/coccilib/output.py
 lib/coccinelle/python/coccilib/report.py
 lib/coccinelle/python/coccilib/trac.py
 lib/coccinelle/python/coccilib/xml_firehose.py
+lib/coccinelle/spgen/
+@bin lib/coccinelle/spgen/spgen
 lib/coccinelle/standard.h
 lib/coccinelle/standard.iso
-@so lib/ocaml/stublibs/dllpyml_stubs.so
+lib/ocaml/stublibs/dllpyml_stubs.so
 @man man/man1/pycocci.1
 @man man/man1/spatch.1
 @man man/man1/spgen.1
 @man man/man3/Coccilib.3
-share/bash-completion/
-share/bash-completion/completions/
-share/bash-completion/completions/spatch
 share/doc/coccinelle/
-share/doc/coccinelle/contents_motif.svg
+share/doc/coccinelle/contents_motif.gif
 share/doc/coccinelle/index.html
 share/doc/coccinelle/main_grammar.css
 share/doc/coccinelle/main_grammar.html
@@ -107,5 +76,5 @@ share/doc/coccinelle/main_grammar014.html
 share/doc/coccinelle/main_grammar015.html
 share/doc/coccinelle/main_grammar016.html
 share/doc/coccinelle/main_grammar017.html
-share/doc/coccinelle/next_motif.svg
-share/doc/coccinelle/previous_motif.svg
+share/doc/coccinelle/next_motif.gif
+share/doc/coccinelle/previous_motif.gif

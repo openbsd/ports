@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.86 2021/03/15 20:53:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.87 2021/03/15 21:02:10 sthen Exp $
 
 COMMENT-main=	generic shared library support script
 COMMENT-ltdl=	GNU libtool system independent dlopen wrapper
 
-VERSION=	2.4.6
+VERSION=	2.4.2
 DISTNAME=	libtool-${VERSION}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-ltdl=	libltdl-${VERSION}
+REVISION-main=	0
+REVISION-ltdl=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=libtool/}
 
@@ -19,9 +21,8 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-AUTOCONF_VERSION= 2.69
-BUILD_DEPENDS=	devel/m4
-TEST_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS}
+AUTOCONF_VERSION= 2.67
+BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS}
 
 MAKE_ENV+= ${_lt_libs}
 MAKE_FLAGS+= ${_lt_libs}
@@ -44,8 +45,6 @@ RUN_DEPENDS-main=	devel/libtool,-ltdl
 
 pre-configure:
 	@cd ${WRKDIR}/bin && ln -sf /usr/bin/true g77
-	cd ${WRKSRC}; \
-	touch -r .version Makefile.in aclocal.m4 m4/ltversion.m4 configure
 
 do-test:
 	@cd ${WRKDIR}/bin && ln -sf \
