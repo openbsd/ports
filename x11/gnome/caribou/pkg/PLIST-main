@@ -1,25 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.18 2018/07/06 06:04:44 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2021/03/15 21:14:23 ajacoutot Exp $
+@pkgpath x11/gnome/caribou
 bin/caribou-preferences
 include/libcaribou/
 include/libcaribou/caribou.h
 lib/girepository-1.0/Caribou-1.0.typelib
 lib/gnome-settings-daemon-3.0/gtk-modules/caribou-gtk-module.desktop
-lib/gtk-2.0/modules/libcaribou-gtk-module.so
-lib/gtk-3.0/modules/libcaribou-gtk-module.so
-lib/libcaribou.a
+@so lib/gtk-3.0/modules/libcaribou-gtk-module.so
+@static-lib lib/libcaribou.a
 lib/libcaribou.la
 @lib lib/libcaribou.so.${LIBcaribou_VERSION}
 lib/pkgconfig/caribou-1.0.pc
 lib/python${MODPY_VERSION}/site-packages/caribou/
 lib/python${MODPY_VERSION}/site-packages/caribou/__init__.py
-lib/python${MODPY_VERSION}/site-packages/caribou/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/caribou/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/caribou/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/caribou/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/caribou/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/caribou/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/caribou/antler/
 lib/python${MODPY_VERSION}/site-packages/caribou/antler/__init__.py
-lib/python${MODPY_VERSION}/site-packages/caribou/antler/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/caribou/antler/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/caribou/antler/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/caribou/antler/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/caribou/antler/${MODPY_PYCACHE}antler_settings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -37,7 +37,7 @@ lib/python${MODPY_VERSION}/site-packages/caribou/antler/window.py
 lib/python${MODPY_VERSION}/site-packages/caribou/i18n.py
 lib/python${MODPY_VERSION}/site-packages/caribou/settings/
 lib/python${MODPY_VERSION}/site-packages/caribou/settings/__init__.py
-lib/python${MODPY_VERSION}/site-packages/caribou/settings/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/caribou/settings/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/caribou/settings/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/caribou/settings/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/caribou/settings/${MODPY_PYCACHE}caribou_settings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -77,9 +77,7 @@ share/dbus-1/services/org.gnome.Caribou.Antler.service
 share/dbus-1/services/org.gnome.Caribou.Daemon.service
 share/examples/caribou/
 share/examples/caribou/xdg/
-@sample ${SYSCONFDIR}/xdg/
 share/examples/caribou/xdg/autostart/
-@sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/caribou/xdg/autostart/caribou-autostart.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/caribou-autostart.desktop
 share/gir-1.0/Caribou-1.0.gir
