@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2085 2021/03/13 11:04:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2086 2021/03/15 20:53:22 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1554,7 +1554,6 @@
      SUBDIR += py-prompt_toolkit,python3
      SUBDIR += py-protobuf
      SUBDIR += py-protobuf,python3
-     SUBDIR += py-ptyprocess
      SUBDIR += py-ptyprocess,python3
      SUBDIR += py-py
      SUBDIR += py-py,python3
@@ -1588,7 +1587,6 @@
      SUBDIR += py-send2trash,python3
      SUBDIR += py-serial
      SUBDIR += py-serial,python3
-     SUBDIR += py-setproctitle
      SUBDIR += py-setproctitle,python3
      SUBDIR += py-setuptools
      SUBDIR += py-setuptools,python3

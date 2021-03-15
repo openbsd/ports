@@ -1,8 +1,9 @@
-$OpenBSD: patch-commons_common_ml,v 1.7 2019/03/04 12:51:12 chrisz Exp $
+$OpenBSD: patch-commons_common_ml,v 1.8 2021/03/15 20:53:22 sthen Exp $
+
 Index: commons/common.ml
 --- commons/common.ml.orig
 +++ commons/common.ml
-@@ -3281,7 +3281,7 @@ let glob pattern =
+@@ -3308,7 +3308,7 @@ let glob pattern =
  let files_of_dir_or_files ext xs =
    xs +> List.map (fun x ->
      if is_directory x
@@ -11,7 +12,7 @@ Index: commons/common.ml
      else [x]
    ) +> List.concat
  
-@@ -3291,7 +3291,7 @@ let files_of_dir_or_files_no_vcs ext xs =
+@@ -3318,7 +3318,7 @@ let files_of_dir_or_files_no_vcs ext xs =
      if is_directory x
      then
        cmd_to_list
@@ -20,7 +21,7 @@ Index: commons/common.ml
              "| grep -v /.hg/ |grep -v /CVS/ | grep -v /.git/ |grep -v /_darcs/"
          )
      else [x]
-@@ -3304,7 +3304,7 @@ let files_of_dir_or_files_no_vcs_post_filter regex xs 
+@@ -3331,7 +3331,7 @@ let files_of_dir_or_files_no_vcs_post_filter regex xs 
      then
        cmd_to_list
          ("find " ^ x  ^
@@ -29,7 +30,7 @@ Index: commons/common.ml
          )
          +> List.filter (fun s -> s =~ regex)
      else [x]
-@@ -5256,7 +5256,7 @@ let (diff: (int -> int -> diff -> unit)-> (string list
+@@ -5304,7 +5304,7 @@ let (diff: (int -> int -> diff -> unit)-> (string list
      write_file file1 (unwords xs);
      write_file file2 (unwords ys);
      command2
@@ -38,7 +39,7 @@ Index: commons/common.ml
      let res = cat fileresult in
      let a = ref 0 in
      let b = ref 0 in
-@@ -5284,7 +5284,7 @@ let (diff2: (int -> int -> diff -> unit) -> (string * 
+@@ -5332,7 +5332,7 @@ let (diff2: (int -> int -> diff -> unit) -> (string * 
      write_file "/tmp/diff1" xstr;
      write_file "/tmp/diff2" ystr;
      command2
@@ -47,13 +48,3 @@ Index: commons/common.ml
        "/tmp/diff1 /tmp/diff2 > /tmp/diffresult");
      let res = cat "/tmp/diffresult" in
      let a = ref 0 in
-@@ -5308,7 +5308,8 @@ let parserCommon lexbuf parserer lexer =
-     let result = parserer lexer lexbuf in
-     result
-   with Parsing.Parse_error ->
--    print_string "buf: "; print_string lexbuf.Lexing.lex_buffer;
-+    print_string "buf: ";
-+    print_string (Bytes.to_string lexbuf.Lexing.lex_buffer);
-     print_string "\n";
-     print_string "current: "; print_int lexbuf.Lexing.lex_curr_pos;
-     print_string "\n";

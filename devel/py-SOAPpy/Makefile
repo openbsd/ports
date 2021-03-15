@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2021/02/23 19:39:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/03/15 20:53:23 sthen Exp $
 
 COMMENT=	Python API for SOAP HTTP/RPC
 
@@ -26,8 +26,8 @@ RUN_DEPENDS=	devel/py-fpconst \
 
 # There are lots of tests, but most of them require network access
 # The one below doesn't, but it has a known failure...
-do-test: fake
-	@cd ${WRKSRC} && ${MAKE_ENV} && \
+do-test:
+	@cd ${WRKSRC} && ${MAKE_ENV} \
 		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} \
 		    ./tests/SOAPtest.py
 

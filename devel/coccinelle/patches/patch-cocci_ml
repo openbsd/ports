@@ -1,8 +1,8 @@
-$OpenBSD: patch-cocci_ml,v 1.8 2019/03/04 12:51:12 chrisz Exp $
+$OpenBSD: patch-cocci_ml,v 1.9 2021/03/15 20:53:22 sthen Exp $
 Index: cocci.ml
 --- cocci.ml.orig
 +++ cocci.ml
-@@ -249,8 +249,8 @@ let show_or_not_diff2 cfile outfile =
+@@ -250,8 +250,8 @@ let show_or_not_diff2 cfile outfile =
  
        let line =
  	match !Flag_parsing_c.diff_lines with
@@ -13,16 +13,16 @@ Index: cocci.ml
        let res = Common.cmd_to_list line in
        (match res with
  	[] -> ()
-@@ -528,7 +528,7 @@ let worth_trying2 cfiles (tokens,_,query,_) =
+@@ -531,7 +531,7 @@ let worth_trying2 cfiles (tokens,_,query,_) =
  
        ) in
        let com =
 -	Printf.sprintf "egrep -q '(%s)' %s"
 +	Printf.sprintf "gegrep -q '(%s)' %s"
- 	  (String.concat "|" tokens) (String.concat " " cfiles) in
+ 	  (String.concat "|" tokens)
+ 	  (String.concat " " (List.map fst cfiles)) in
        (match Sys.command com with
-       | 0 (* success *) -> true
-@@ -2222,7 +2222,7 @@ let check_duplicate_modif2 xs =
+@@ -2357,7 +2357,7 @@ let check_duplicate_modif2 xs =
                match res2 with
                | None -> false
                | Some res2 ->

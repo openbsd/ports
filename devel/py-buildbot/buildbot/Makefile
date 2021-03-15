@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/20 07:18:13 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2021/03/15 20:53:23 sthen Exp $
 
 COMMENT =	continuous integration framework
 
@@ -16,9 +16,9 @@ RUN_DEPENDS =	databases/py-sqlalchemy${MODPY_FLAVOR} \
 		www/py-jwt${MODPY_FLAVOR} \
 		www/py-jinja2${MODPY_FLAVOR}
 
-NO_TEST =	Yes
-#TEST_DEPENDS =	${RUN_DEPENDS} \
-#			devel/py-mock${MODPY_FLAVOR}
+#NO_TEST =	Yes
+TEST_DEPENDS =	${RUN_DEPENDS} \
+			devel/py-mock${MODPY_FLAVOR}
 # also needs treq, pyjade ?
 
 UPDATE_PLIST_ARGS+=-i MODPY_PY_PREFIX

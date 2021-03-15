@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1245 2021/03/15 20:01:38 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1246 2021/03/15 20:53:23 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -612,6 +612,8 @@ my $stem_extensions = {
 	'py-webtest' => 'py3-webtest',
 	'py-genshi' => 'py3-genshi',
 	'py-musicbrainzngs' => 'py3-musicbrainzngs',
+	'py-setproctitle' => 'py3-setproctitle',
+	'py-ptyprocess' => 'py3-ptyprocess',
 };
 
 my $obsolete_reason = {

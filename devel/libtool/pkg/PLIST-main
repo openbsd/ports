@@ -1,21 +1,24 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2011/09/22 21:10:19 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2021/03/15 20:53:22 sthen Exp $
 @pkgpath devel/libtool
 bin/libtool
 bin/libtoolize
 @info info/libtool.info
 @man man/man1/libtool.1
 @man man/man1/libtoolize.1
-share/aclocal/argz.m4
 share/aclocal/libtool.m4
+share/aclocal/ltargz.m4
 share/aclocal/ltoptions.m4
 share/aclocal/ltsugar.m4
 share/aclocal/ltversion.m4
 share/aclocal/lt~obsolete.m4
-share/libtool/config/
-share/libtool/config/compile
-share/libtool/config/config.guess
-share/libtool/config/config.sub
-share/libtool/config/depcomp
-share/libtool/config/install-sh
-share/libtool/config/ltmain.sh
-share/libtool/config/missing
+share/libtool/build-aux/
+share/libtool/build-aux/compile
+share/libtool/build-aux/config.guess
+share/libtool/build-aux/config.sub
+share/libtool/build-aux/depcomp
+share/libtool/build-aux/install-sh
+share/libtool/build-aux/ltmain.sh
+share/libtool/build-aux/missing
+share/libtool/libltdl/lt__argz_.h
+share/libtool/lt__argz.c
+share/libtool/ltdl.mk

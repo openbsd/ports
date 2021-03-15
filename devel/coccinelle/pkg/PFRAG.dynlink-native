@@ -1,3 +1,1 @@
-@comment $OpenBSD: PFRAG.dynlink-native,v 1.1 2019/03/04 12:51:12 chrisz Exp $
-bin/spatch.opt
-@bin lib/coccinelle/spatch.opt
+@comment $OpenBSD: PFRAG.dynlink-native,v 1.2 2021/03/15 20:53:22 sthen Exp $
