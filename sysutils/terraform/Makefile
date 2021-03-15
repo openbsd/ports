@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.53 2021/03/08 13:59:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2021/03/15 10:10:00 ajacoutot Exp $
 
 COMMENT=		tool for building, changing, and versioning infrastructure
 
 MODGO_MODNAME=	github.com/hashicorp/terraform
-MODGO_VERSION=	v0.14.7
+MODGO_VERSION=	v0.14.8
 DISTNAME=	terraform-${MODGO_VERSION}
-REVISION=	0
 
 WRKDIST=	${WRKDIR}/github.com/hashicorp/terraform@${MODGO_VERSION}
 
@@ -59,7 +58,7 @@ MODGO_MODULES =	\
 	github.com/apparentlymart/go-cidr			 v1.1.0 \
 	github.com/apparentlymart/go-dump			 v0.0.0-20190214190832-042adf3cf4a0 \
 	github.com/apparentlymart/go-textseg			 v1.0.0 \
-	github.com/apparentlymart/go-textseg/v12		 v12.0.0 \
+	github.com/apparentlymart/go-textseg/v13		 v13.0.0 \
 	github.com/apparentlymart/go-userdirs			 v0.0.0-20200915174352-b0c018a67c13 \
 	github.com/apparentlymart/go-versions			 v1.0.1 \
 	github.com/armon/circbuf				 v0.0.0-20190214190532-5111143e8da2 \
@@ -157,7 +156,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-version				 v1.2.0 \
 	github.com/hashicorp/golang-lru				 v0.5.1 \
 	github.com/hashicorp/hcl				 v0.0.0-20170504190234-a4b07c25de5f \
-	github.com/hashicorp/hcl/v2				 v2.8.2 \
+	github.com/hashicorp/hcl/v2				 v2.9.1 \
 	github.com/hashicorp/memberlist				 v0.1.0 \
 	github.com/hashicorp/serf				 v0.0.0-20160124182025-e4ec8cc423bb \
 	github.com/hashicorp/terraform-config-inspect		 v0.0.0-20191212124732-c6ae6269b9d7 \
@@ -258,7 +257,8 @@ MODGO_MODULES =	\
 	github.com/xiang90/probing				 v0.0.0-20160813154853-07dd2e8dfe18 \
 	github.com/xlab/treeprint				 v0.0.0-20161029104018-1d6e34225557 \
 	github.com/yuin/goldmark				 v1.2.1 \
-	github.com/zclconf/go-cty				 v1.7.1 \
+	github.com/zclconf/go-cty				 v1.8.0 \
+	github.com/zclconf/go-cty-debug				 v0.0.0-20191215020915-b22d67c1ba0b \
 	github.com/zclconf/go-cty-yaml				 v1.0.2 \
 	go.opencensus.io					 v0.22.4 \
 	go.uber.org/atomic					 v1.3.2 \
@@ -274,7 +274,7 @@ MODGO_MODULES =	\
 	golang.org/x/oauth2					 v0.0.0-20200902213428-5d25da1a8d43 \
 	golang.org/x/sync					 v0.0.0-20201020160332-67f06af15bc9 \
 	golang.org/x/sys					 v0.0.0-20200930185726-fdedc70b468f \
-	golang.org/x/text					 v0.3.3 \
+	golang.org/x/text					 v0.3.5 \
 	golang.org/x/time					 v0.0.0-20191024005414-555d28b269f0 \
 	golang.org/x/tools					 v0.0.0-20201028111035-eafbe7b904eb \
 	golang.org/x/xerrors					 v0.0.0-20200804184101-5ec99f83aff1 \
@@ -593,6 +593,7 @@ MODGO_MODFILES =	\
 	golang.org/x/text				 v0.3.1-0.20180807135948-17ff2d5776d2 \
 	golang.org/x/text				 v0.3.1-0.20181227161524-e6919f6577db \
 	golang.org/x/text				 v0.3.2 \
+	golang.org/x/text				 v0.3.3 \
 	golang.org/x/time				 v0.0.0-20161028155119-f51c12702a4d \
 	golang.org/x/time				 v0.0.0-20181108054448-85acf8d2951c \
 	golang.org/x/time				 v0.0.0-20190308202827-9d24e82272b4 \
