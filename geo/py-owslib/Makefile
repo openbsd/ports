@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/21 08:09:19 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2021/03/15 21:00:42 ajacoutot Exp $
 
 COMMENT =		library for accessing OGC Web Services
 
 MODPY_EGG_VERSION =	0.23.0
 DISTNAME =		OWSLib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
+REVISION =		0
 
 CATEGORIES =		geo devel
 
@@ -21,7 +22,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =	www/py-requests${MODPY_FLAVOR} \
-		textproc/py-yaml,${MODPY_FLAVOR} \
+		textproc/py-yaml${MODPY_FLAVOR} \
 		geo/py-proj${MODPY_FLAVOR} \
 		devel/py-tz${MODPY_FLAVOR} \
 		devel/py-dateutil${MODPY_FLAVOR}

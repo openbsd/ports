@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2021/02/28 08:24:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2021/03/15 21:00:42 ajacoutot Exp $
 
 PORTROACH=		limit:^2
 
@@ -6,7 +6,7 @@ COMMENT=		tracker miners and metadata extractors
 
 GNOME_PROJECT=		tracker-miners
 GNOME_VERSION=		2.3.5
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  tracker-extract           1.1 # 0.0
 
@@ -29,7 +29,7 @@ MODULES=		devel/dconf \
 MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
 
-TEST_DEPENDS=		devel/py-gobject3,${MODPY_FLAVOR}
+TEST_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
 
 LIB_DEPENDS=		audio/flac \
 			audio/libcue \
