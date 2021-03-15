@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2021/01/26 11:47:09 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.40 2021/03/15 06:28:05 rsadowski Exp $
 
 
 COMMENT =		accounting for KDE 5
@@ -21,6 +21,8 @@ SHARED_LIBS +=  kmm_plugin                0.0 # 5.1.0
 SHARED_LIBS +=  kmm_printer               0.0 # 5.1.0
 SHARED_LIBS +=  kmm_settings              0.0 # 5.1.0
 SHARED_LIBS +=  kmm_widgets               0.0 # 5.1.0
+
+MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

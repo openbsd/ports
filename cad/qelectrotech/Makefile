@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2020/12/01 13:37:52 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2021/03/15 06:28:03 rsadowski Exp $
 
 COMMENT=	electric diagrams drawing tool
 
 DISTNAME =	qet-0.7.0
 PKGNAME = 	qelectrotech-0.70
 CATEGORIES =	cad graphics
+REVISION =      0
 
 HOMEPAGE =	https://qelectrotech.org/
 MASTER_SITES =	https://git.tuxfamily.org/qet/qet.git/snapshot/

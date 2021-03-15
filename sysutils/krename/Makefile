@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2020/10/28 11:45:32 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.36 2021/03/15 06:28:06 rsadowski Exp $
 
 COMMENT =	powerful batch file renamer
 
@@ -8,6 +8,8 @@ DISTNAME =	krename-${VERSION}
 CATEGORIES =	sysutils x11
 
 HOMEPAGE =	https://kde.org/applications/utilities/org.kde.krename
+
+MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

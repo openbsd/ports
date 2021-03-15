@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/15 17:13:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2021/03/15 06:28:04 rsadowski Exp $
 
 COMMENT =	screenshot tool with annotations features
 
 GH_ACCOUNT =	ksnip
 GH_PROJECT =	ksnip
 GH_TAGNAME =	v1.8.1
+REVISION =	0
 
 CATEGORIES =	graphics
 

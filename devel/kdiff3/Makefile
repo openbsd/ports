@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2021/01/23 18:10:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.23 2021/03/15 06:28:04 rsadowski Exp $
 
 COMMENT =	compares and merges multiple files or directories
 
@@ -7,6 +7,8 @@ DISTNAME =	kdiff3-1.8.5
 CATEGORIES =	devel
 
 HOMEPAGE =	https://kde.org/applications/development/kdiff3/
+
+MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdiff3/}
 EXTRACT_SUFX =	.tar.xz

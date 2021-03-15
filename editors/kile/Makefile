@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.41 2020/08/20 18:00:14 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.42 2021/03/15 06:28:04 rsadowski Exp $
 
 COMMENT =	user-friendly TeX/LaTeX editor for KDE
 
 CATEGORIES =	editors
 
 DISTNAME =	kile-2.9.93
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://kile.sourceforge.io
 
