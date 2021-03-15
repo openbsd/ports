@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.200 2021/03/13 13:42:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.201 2021/03/15 21:15:11 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (core installation)
 COMMENT-extras=		GNOME desktop meta-package (world installation)
@@ -10,7 +10,7 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-extras=	0
+REVISION-extras=	1
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -121,6 +121,7 @@ RUN_DEPENDS-extras +=	inputmethods/ibus-anthy \
 # gtk+2
 RUN_DEPENDS-extras +=	audio/libcanberra,-gtk \
 			inputmethods/ibus,-gtk2 \
+			x11/gnome/caribou,-gtk2 \
 			x11/gnome/themes-extra \
 			x11/gtk+2,-cups
 
