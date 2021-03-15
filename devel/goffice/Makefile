@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.109 2020/08/13 15:12:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.110 2021/03/15 21:37:03 ajacoutot Exp $
 
 COMMENT=	document centric objects and utilities
 
 GNOME_PROJECT=	goffice
-GNOME_VERSION=	0.10.48
+GNOME_VERSION=	0.10.49
 
 # NOTE: when GNOME_VERSION changes, increment GOFFICE_VERSION and
 # GOFFICE_API_VERSION accordingly and bump:
@@ -11,7 +11,7 @@ GNOME_VERSION=	0.10.48
 GOFFICE_API_VERSION=	${GNOME_VERSION:R}
 SUBST_VARS=		GNOME_VERSION GOFFICE_API_VERSION
 
-SHARED_LIBS +=  goffice-0.10         0.3      # 10.48
+SHARED_LIBS +=  goffice-0.10         0.3      # 10.49
 
 CATEGORIES=	devel
 
