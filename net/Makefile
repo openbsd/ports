@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1247 2021/03/05 12:56:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1248 2021/03/15 01:50:01 kevlo Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -518,6 +518,7 @@
      SUBDIR += pidgin,gtkspell
      SUBDIR += pidgin-icb
      SUBDIR += pidgin-sipe
+     SUBDIR += pidgin-skypeweb
      SUBDIR += pidgin-window-merge
      SUBDIR += pktstat
      SUBDIR += plushs
