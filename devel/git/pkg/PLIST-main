@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.100 2021/03/08 21:19:44 jcs Exp $
+@comment $OpenBSD: PLIST-main,v 1.101 2021/03/16 19:06:52 kn Exp $
 @pkgpath devel/git
 @newgroup _gitdaemon:778
 @newuser _gitdaemon:778:_gitdaemon:daemon:Git Daemon:/nonexistent:/sbin/nologin
@@ -370,6 +370,7 @@ libexec/git/mergetools/xxdiff
 @man man/man5/gitattributes.5
 @man man/man5/githooks.5
 @man man/man5/gitignore.5
+@man man/man5/gitmailmap.5
 @man man/man5/gitmodules.5
 @man man/man5/gitrepository-layout.5
 @man man/man5/gitweb.conf.5
@@ -434,6 +435,7 @@ share/locale/de/LC_MESSAGES/git.mo
 share/locale/el/LC_MESSAGES/git.mo
 share/locale/es/LC_MESSAGES/git.mo
 share/locale/fr/LC_MESSAGES/git.mo
+share/locale/id/LC_MESSAGES/git.mo
 share/locale/is/
 share/locale/is/LC_MESSAGES/
 share/locale/is/LC_MESSAGES/git.mo

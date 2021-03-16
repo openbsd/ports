@@ -1,11 +1,11 @@
-$OpenBSD: patch-builtin_gc_c,v 1.6 2020/12/29 20:23:05 kn Exp $
+$OpenBSD: patch-builtin_gc_c,v 1.7 2021/03/16 19:06:52 kn Exp $
 
 Replace sysctl HW_PHYSMEM/MEMSIZE/whatever madness with sysconf.
 
 Index: builtin/gc.c
 --- builtin/gc.c.orig
 +++ builtin/gc.c
-@@ -247,20 +247,13 @@ static uint64_t total_ram(void)
+@@ -255,20 +255,13 @@ static uint64_t total_ram(void)
  
  	if (!sysinfo(&si))
  		return si.totalram;
