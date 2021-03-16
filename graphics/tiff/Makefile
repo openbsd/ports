@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.90 2019/11/29 16:43:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.91 2021/03/16 15:34:23 landry Exp $
 
 COMMENT=	tools and library routines for working with TIFF images
 
-DISTNAME=	tiff-4.1.0
-SHARED_LIBS=	tiff	40.4	# 10.0
-SHARED_LIBS+=	tiffxx	40.2	# 10.0
+DISTNAME=	tiff-4.2.0
+SHARED_LIBS=	tiff	40.5	# 11.0
+SHARED_LIBS+=	tiffxx	40.2	# 11.0
 CATEGORIES=	graphics
 
 MASTER_SITES=	https://download.osgeo.org/libtiff/
@@ -23,6 +23,7 @@ PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-jbig \
+		--disable-libdeflate \
 		--disable-webp \
 		--with-docdir="${PREFIX}/share/doc/tiff" \
 		--with-jpeg-include-dir="${LOCALBASE}/include" \
