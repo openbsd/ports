@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.120 2021/03/06 17:42:12 danj Exp $
+# $OpenBSD: Makefile,v 1.121 2021/03/16 21:18:38 tb Exp $
 
 COMMENT =		persistent key-value database
 
 DISTNAME =		redis-6.2.1
 CATEGORIES =		databases
 HOMEPAGE =		https://redis.io/
+REVISION =		0
 
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		c crypto ssl ${MODLUA_WANTLIB} m pthread
+WANTLIB +=		c crypto ssl m pthread
 
 MASTER_SITES =		http://download.redis.io/releases/
 
@@ -19,8 +20,7 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
-MODULES =		lang/lua \
-			lang/tcl
+MODULES =		lang/tcl
 
 MAKE_FLAGS =		BUILD_TLS=yes \
 			CC="${CC}" \
@@ -30,8 +30,6 @@ MAKE_FLAGS =		BUILD_TLS=yes \
 			OPT="" \
 			OPTIMIZATION="" \
 			V=1
-
-CFLAGS +=		-I${MODLUA_INCL_DIR}
 
 # Fix "undefined reference to `__atomic_store_8'"
 .if ${MACHINE_ARCH:Mhppa}
@@ -51,14 +49,6 @@ TEST_FLAGS =		TCL_BIN="${MODTCL_BIN}"
 
 DBDIR =			${VARBASE}/redis
 SUBST_VARS +=		DBDIR
-
-post-patch:
-	cp ${WRKSRC}/deps/lua/src/fpconv.? ${WRKSRC}/src/
-	cp ${WRKSRC}/deps/lua/src/strbuf.? ${WRKSRC}/src/
-	cp ${WRKSRC}/deps/lua/src/lua_*.c ${WRKSRC}/src/
-	sed -i -E 's/^#include "(lua|lauxlib)\.h"/#include <\1.h>/' \
-		${WRKSRC}/src/lua_*.c
-	unifdef -x 1 -m -DENABLE_CJSON_GLOBAL ${WRKSRC}/src/lua_cjson.c
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/Makefile

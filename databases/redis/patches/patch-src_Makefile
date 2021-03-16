@@ -1,22 +1,12 @@
-$OpenBSD: patch-src_Makefile,v 1.39 2021/03/14 23:06:17 tb Exp $
+$OpenBSD: patch-src_Makefile,v 1.40 2021/03/16 21:18:38 tb Exp $
 
 Changes in this file:
-- use lua from ports.
 - do not use -funwind-tables and -latomic on armv7
 - run tests with datasize, fds, stacksize and processes at the hard limit
 
 Index: src/Makefile
 --- src/Makefile.orig
 +++ src/Makefile
-@@ -16,7 +16,7 @@ release_hdr := $(shell sh -c './mkreleasehdr.sh')
- uname_S := $(shell sh -c 'uname -s 2>/dev/null || echo not')
- uname_M := $(shell sh -c 'uname -m 2>/dev/null || echo not')
- OPTIMIZATION?=-O2
--DEPENDENCY_TARGETS=hiredis linenoise lua hdr_histogram
-+DEPENDENCY_TARGETS=hiredis linenoise hdr_histogram
- NODEPS:=clean distclean
- 
- # Default settings
 @@ -64,7 +64,7 @@ ifneq (,$(filter aarch64 armv,$(uname_M)))
          CFLAGS+=-funwind-tables
  else
@@ -35,25 +25,7 @@ Index: src/Makefile
  endif
  endif
  
-@@ -283,6 +283,8 @@ REDIS_BENCHMARK_OBJ=ae.o anet.o redis-benchmark.o adli
- REDIS_CHECK_RDB_NAME=redis-check-rdb$(PROG_SUFFIX)
- REDIS_CHECK_AOF_NAME=redis-check-aof$(PROG_SUFFIX)
- 
-+REDIS_SERVER_OBJ+=fpconv.o strbuf.o lua_bit.o lua_cjson.o lua_cmsgpack.o lua_struct.o
-+
- all: $(REDIS_SERVER_NAME) $(REDIS_SENTINEL_NAME) $(REDIS_CLI_NAME) $(REDIS_BENCHMARK_NAME) $(REDIS_CHECK_RDB_NAME) $(REDIS_CHECK_AOF_NAME)
- 	@echo ""
- 	@echo "Hint: It's a good idea to run 'make test' ;)"
-@@ -329,7 +331,7 @@ endif
- 
- # redis-server
- $(REDIS_SERVER_NAME): $(REDIS_SERVER_OBJ)
--	$(REDIS_LD) -o $@ $^ ../deps/hiredis/libhiredis.a ../deps/lua/src/liblua.a $(FINAL_LIBS)
-+	$(REDIS_LD) -o $@ $^ ../deps/hiredis/libhiredis.a $(FINAL_LIBS) -L${LOCALBASE}/lib ${MODLUA_LIB}
- 
- # redis-sentinel
- $(REDIS_SENTINEL_NAME): $(REDIS_SERVER_NAME)
-@@ -376,7 +378,7 @@ distclean: clean
+@@ -376,7 +376,7 @@ distclean: clean
  .PHONY: distclean
  
  test: $(REDIS_SERVER_NAME) $(REDIS_CHECK_AOF_NAME) $(REDIS_CLI_NAME) $(REDIS_BENCHMARK_NAME)
@@ -62,7 +34,7 @@ Index: src/Makefile
  
  test-sentinel: $(REDIS_SENTINEL_NAME) $(REDIS_CLI_NAME)
  	@(cd ..; ./runtest-sentinel)
-@@ -416,7 +418,7 @@ src/help.h:
+@@ -416,7 +416,7 @@ src/help.h:
  	@../utils/generate-command-help.rb > help.h
  
  install: all

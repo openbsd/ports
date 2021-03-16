@@ -1,4 +1,4 @@
-$OpenBSD: patch-deps_Makefile,v 1.13 2021/02/25 15:05:23 tb Exp $
+$OpenBSD: patch-deps_Makefile,v 1.14 2021/03/16 21:18:38 tb Exp $
 
 Index: deps/Makefile
 --- deps/Makefile.orig
@@ -23,3 +23,11 @@ Index: deps/Makefile
  	cd hdr_histogram && $(MAKE)
  
  .PHONY: hdr_histogram
+@@ -78,7 +75,6 @@ AR=ar
+ ARFLAGS=rc
+ 
+ lua: .make-prerequisites
+-	@printf '%b %b\n' $(MAKECOLOR)MAKE$(ENDCOLOR) $(BINCOLOR)$@$(ENDCOLOR)
+ 	cd lua/src && $(MAKE) all CFLAGS="$(LUA_CFLAGS)" MYLDFLAGS="$(LUA_LDFLAGS)" AR="$(AR) $(ARFLAGS)"
+ 
+ .PHONY: lua
