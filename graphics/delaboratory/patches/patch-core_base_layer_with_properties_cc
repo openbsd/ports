@@ -1,0 +1,14 @@
+$OpenBSD: patch-core_base_layer_with_properties_cc,v 1.1 2021/03/16 16:35:54 naddy Exp $
+
+Index: core/base_layer_with_properties.cc
+--- core/base_layer_with_properties.cc.orig
++++ core/base_layer_with_properties.cc
+@@ -19,7 +19,7 @@
+ #include "base_layer_with_properties.h"
+ #include "color_space_utils.h"
+ #include "logger.h"
+-#include "semaphore.h"
++#include "desemaphore.h"
+ #include "str.h"
+ #include "property_numeric.h"
+ #include "property_boolean.h"

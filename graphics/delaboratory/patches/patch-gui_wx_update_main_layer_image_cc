@@ -1,0 +1,14 @@
+$OpenBSD: patch-gui_wx_update_main_layer_image_cc,v 1.1 2021/03/16 16:35:54 naddy Exp $
+
+Index: gui_wx/update_main_layer_image.cc
+--- gui_wx/update_main_layer_image.cc.orig
++++ gui_wx/update_main_layer_image.cc
+@@ -19,7 +19,7 @@
+ #include "update_main_layer_image.h"
+ #include <wx/wx.h>
+ #include "base_layer.h"
+-#include "semaphore.h"
++#include "desemaphore.h"
+ #include "logger.h"
+ #include "color_space_utils.h"
+ #include "str.h"

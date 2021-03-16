@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile,v 1.1 2021/03/16 16:35:54 naddy Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -98,7 +98,7 @@ ifeq (${DEBUG}, YES)
+ CXXFLAGS+=-g -Wall -pedantic 
+ else
+ # release stuff
+-CXXFLAGS+=-Ofast ${OPTFLAGS} -DNDEBUG
++CXXFLAGS+=${OPTFLAGS} -DNDEBUG
+ endif
+ 
+ include .depend

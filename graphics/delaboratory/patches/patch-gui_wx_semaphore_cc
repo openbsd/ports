@@ -1,0 +1,14 @@
+$OpenBSD: patch-gui_wx_semaphore_cc,v 1.1 2021/03/16 16:35:54 naddy Exp $
+
+Index: gui_wx/semaphore.cc
+--- gui_wx/semaphore.cc.orig
++++ gui_wx/semaphore.cc
+@@ -16,7 +16,7 @@
+     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+ 
+-#include "semaphore.h"
++#include "desemaphore.h"
+ #include <wx/wx.h>
+ 
+ class deSemaphoreImpl

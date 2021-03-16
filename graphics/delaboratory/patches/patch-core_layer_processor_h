@@ -1,0 +1,14 @@
+$OpenBSD: patch-core_layer_processor_h,v 1.1 2021/03/16 16:35:54 naddy Exp $
+
+Index: core/layer_processor.h
+--- core/layer_processor.h.orig
++++ core/layer_processor.h
+@@ -32,7 +32,7 @@ class deGUI;
+ #include <map>
+ #include "size.h"
+ #include "renderer.h"
+-#include "semaphore.h"
++#include "desemaphore.h"
+ #include "base_layer.h"
+ 
+ enum

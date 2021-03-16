@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2020/01/26 11:14:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2021/03/16 16:35:54 naddy Exp $
 
 COMMENT =	color correction utility for digital images
 DISTNAME =	delaboratory-0.8
@@ -28,8 +28,9 @@ MAKE_FLAGS =	CXX="${CXX}" OPTFLAGS="${CXXFLAGS}"
 
 NO_TEST =	Yes
 
+# prevent confusion with system <semaphore.h>
 post-patch:
-	sed -i "s,-Ofast,,g" ${WRKSRC}/Makefile
+	mv ${WRKSRC}/gui_wx/semaphore.h ${WRKSRC}/gui_wx/desemaphore.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/delaboratory ${PREFIX}/bin
