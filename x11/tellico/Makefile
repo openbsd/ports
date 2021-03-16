@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.65 2021/02/27 07:54:46 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.66 2021/03/16 06:29:26 rsadowski Exp $
 
 COMMENT =	organizer for book/dvd/music collections
 
-DISTNAME =	tellico-3.3.5
+DISTNAME =	tellico-3.4
 
 CATEGORIES =	x11
 

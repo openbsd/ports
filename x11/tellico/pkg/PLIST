@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2021/02/27 07:54:46 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.25 2021/03/16 06:29:26 rsadowski Exp $
 @conflict tellico-kde4-*
 @pkgpath x11/tellico-kde4
 @bin bin/tellico
@@ -163,17 +163,6 @@ share/doc/HTML/pt_BR/tellico/importing-exporting.docbook
 share/doc/HTML/pt_BR/tellico/index.cache.bz2
 share/doc/HTML/pt_BR/tellico/index.docbook
 share/doc/HTML/pt_BR/tellico/menus.docbook
-share/doc/HTML/ru/tellico/
-share/doc/HTML/ru/tellico/advanced.docbook
-share/doc/HTML/ru/tellico/configuration.docbook
-share/doc/HTML/ru/tellico/details.docbook
-share/doc/HTML/ru/tellico/faqs.docbook
-share/doc/HTML/ru/tellico/fundamentals.docbook
-share/doc/HTML/ru/tellico/hacking.docbook
-share/doc/HTML/ru/tellico/importing-exporting.docbook
-share/doc/HTML/ru/tellico/index.cache.bz2
-share/doc/HTML/ru/tellico/index.docbook
-share/doc/HTML/ru/tellico/menus.docbook
 share/doc/HTML/sv/tellico/
 share/doc/HTML/sv/tellico/advanced.docbook
 share/doc/HTML/sv/tellico/configuration.docbook
@@ -224,11 +213,8 @@ share/doc/HTML/uk/tellico/template-options.png
 share/doc/HTML/uk/tellico/z3950-options.png
 share/examples/tellico/
 share/examples/tellico/xdg/
-share/examples/tellico/xdg/tellico-script.knsrc
-@sample ${SYSCONFDIR}/xdg/tellico-script.knsrc
-share/examples/tellico/xdg/tellico-template.knsrc
-@sample ${SYSCONFDIR}/xdg/tellico-template.knsrc
 share/examples/tellico/xdg/tellicorc
+@sample ${SYSCONFDIR}/xdg/tellicorc
 share/icons/hicolor/128x128/apps/tellico.png
 share/icons/hicolor/128x128/mimetypes/application-x-tellico.png
 share/icons/hicolor/16x16/apps/tellico.png
@@ -242,8 +228,12 @@ share/icons/hicolor/48x48/mimetypes/application-x-tellico.png
 share/icons/hicolor/64x64/apps/tellico.png
 share/icons/hicolor/64x64/mimetypes/application-x-tellico.png
 share/kconf_update/tellico-1-3-update.pl
+share/kconf_update/tellico-3-4-update.pl
 share/kconf_update/tellico-rename.upd
 share/kconf_update/tellico.upd
+share/knsrcfiles/
+share/knsrcfiles/tellico-script.knsrc
+share/knsrcfiles/tellico-template.knsrc
 share/kxmlgui5/
 share/kxmlgui5/tellico/
 share/kxmlgui5/tellico/tellicoui.rc
@@ -304,6 +294,7 @@ share/tellico/bluray-logo.png
 share/tellico/boardgamegeek2tellico.xsl
 share/tellico/cassette-logo.png
 share/tellico/cd-logo.png
+share/tellico/collectorz2tellico.xsl
 share/tellico/comicvine2tellico.xsl
 share/tellico/crossref2tellico.xsl
 share/tellico/data-sources/
@@ -346,6 +337,7 @@ share/tellico/pics/card.png
 share/tellico/pics/checkmark.png
 share/tellico/pics/cite.png
 share/tellico/pics/coin.png
+share/tellico/pics/collectorz.png
 share/tellico/pics/comic.png
 share/tellico/pics/deliciouslibrary.png
 share/tellico/pics/file.png
