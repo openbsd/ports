@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.24 2021/01/05 18:29:19 bket Exp $
+@comment $OpenBSD: PLIST,v 1.25 2021/03/16 13:02:33 bket Exp $
 @bin bin/filezilla
 @bin bin/fzputtygen
 @bin bin/fzsftp
+@static-lib lib/libfzclient-commonui-private.a
+lib/libfzclient-commonui-private.la
+@lib lib/libfzclient-commonui-private.so.${LIBfzclient-commonui-private_VERSION}
 @static-lib lib/libfzclient-private.a
 lib/libfzclient-private.la
 @lib lib/libfzclient-private.so.${LIBfzclient-private_VERSION}
