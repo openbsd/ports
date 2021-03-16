@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2020/03/25 14:03:14 kmos Exp $
+# $OpenBSD: Makefile,v 1.45 2021/03/16 18:52:20 naddy Exp $
 
 BROKEN-sparc64=		Fails to compile in obj/sigsegv.o
 
@@ -6,7 +6,7 @@ COMMENT=		open source 68k Macintosh emulator
 
 DISTNAME=		BasiliskII_src_01052006
 PKGNAME=		BasiliskII-1.0
-REVISION=		10
+REVISION=		11
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://basilisk.cebix.net/
@@ -44,6 +44,10 @@ CONFIGURE_ENV +=	LDFLAGS=-Wl,-znotext
 CFLAGS +=	-fgnu89-inline
 
 NO_TEST=		Yes
+
+# prevent confusion with system <semaphore.h>
+post-patch:
+	rm ${WRKSRC}/semaphore.h
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/BasiliskII
