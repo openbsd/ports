@@ -1,0 +1,19 @@
+Pandoc is a command-line tool that can convert between numerous
+markup and word processing formats, including, but not limited
+to, various flavors of Markdown, HTML, LaTeX and Word docx. (See
+https://pandoc.org/MANUAL.html#option--from for a list of formats).
+It can also produce PDF output.
+
+Pandoc's enhanced version of Markdown includes syntax for tables,
+definition lists, metadata blocks, footnotes, citations, math, and much
+more.
+
+Because pandoc's intermediate representation of a document is less
+expressive than many of the formats it converts between, one should
+not expect perfect conversions between every format and every other.
+Pandoc attempts to preserve the structural elements of a document, but
+not formatting details such as margin size. And some document elements,
+such as complex tables, may not fit into pandoc's simple document model.
+While conversions from pandoc's Markdown to all formats aspire to be
+perfect, conversions from formats more expressive than pandoc's Markdown
+can be expected to be lossy.
