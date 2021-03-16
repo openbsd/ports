@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.44 2021/02/23 19:39:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2021/03/16 14:18:24 rsadowski Exp $
 
 # Qt5WebEngine
 USE_WXNEEDED =		Yes
 
 COMMENT =	IDE for C, C++, Python, QML/JavaScript and PHP
 
+CATEGORIES =	devel x11
+
 VERSION =	5.6.2
 DISTNAME =	kdevelop-${VERSION}
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://www.kdevelop.org/
 
@@ -27,7 +29,7 @@ SHARED_LIBS +=  KDevClangPrivate          0.0 # 5.5
 SHARED_LIBS +=  KDevCMakeCommon           0.0 # 5.5
 SHARED_LIBS +=  KDevCompileAnalyzerCommon 0.0 # 5.5
 
-CATEGORIES =	devel x11
+MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2+, LGPLv2.1+, GNU FDLv1.2
 PERMIT_PACKAGE =	Yes
