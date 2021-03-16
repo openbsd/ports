@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2020/04/04 16:58:26 schwarze Exp $
+# $OpenBSD: Makefile,v 1.3 2021/03/16 17:00:59 sthen Exp $
 
 COMMENT =		convert scdoc text files to man(7) pages
-VERSION =		1.10.1
+VERSION =		1.11.1
 DISTNAME =		scdoc-${VERSION}
 CATEGORIES =		textproc
 HOMEPAGE =		https://git.sr.ht/~sircmpwn/scdoc
@@ -12,6 +12,7 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =		https://git.sr.ht/~sircmpwn/scdoc/
 DISTFILES =		scdoc-{archive/}${VERSION}${EXTRACT_SUFX}
 
+# uses pledge(2)
 WANTLIB =		c
 
 USE_GMAKE =		Yes
