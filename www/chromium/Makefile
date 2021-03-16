@@ -1,17 +1,8 @@
-# $OpenBSD: Makefile,v 1.552 2021/03/11 17:41:14 kurt Exp $
-
-# /usr/local/bin/chrome[60]: /usr/local/chrome/chrome: Cannot allocate memory
-BROKEN-i386=   runtime fails, cannot execve the built binary, immediate ENOMEM even with high limits
-
-.include <bsd.port.arch.mk>
+# $OpenBSD: Makefile,v 1.553 2021/03/16 21:15:15 sthen Exp $
 
 USE_WXNEEDED=		Yes
 
 DPB_PROPERTIES=		parallel parallel2
-.if ${MACHINE_ARCH} == "i386"
-# override parallel
-DPB_PROPERTIES=		lonesome
-.endif
 
 COMMENT=		Chromium browser
 
