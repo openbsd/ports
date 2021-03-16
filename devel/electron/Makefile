@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/03/16 14:15:25 naddy Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -109,7 +109,7 @@ WRKDIST=		${WRKDIR}/chromium-${ECV}
 ALL_TARGET=		electron
 DIST_TARGET=		dist.zip chromedriver.zip mksnapshot.zip
 DIST_TARGET_DIR=	electron
-REVISION=		0
+REVISION=		1
 
 BUILD_DEPENDS+=		devel/libnotify
 LIB_DEPENDS+=		www/nghttp2

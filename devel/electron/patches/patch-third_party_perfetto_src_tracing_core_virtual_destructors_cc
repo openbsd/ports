@@ -1,0 +1,19 @@
+$OpenBSD: patch-third_party_perfetto_src_tracing_core_virtual_destructors_cc,v 1.1 2021/03/16 14:15:25 naddy Exp $
+
+Fix compile error emitted by trunk clang 
+https://github.com/google/perfetto/commit/46f0abc66c1d78c60a0415c5cb46852ef3bfa9bb
+
+Index: third_party/perfetto/src/tracing/core/virtual_destructors.cc
+--- third_party/perfetto/src/tracing/core/virtual_destructors.cc.orig
++++ third_party/perfetto/src/tracing/core/virtual_destructors.cc
+@@ -30,8 +30,8 @@ namespace perfetto {
+ Consumer::~Consumer() = default;
+ Producer::~Producer() = default;
+ TracingService::~TracingService() = default;
+-TracingService::ConsumerEndpoint::~ConsumerEndpoint() = default;
+-TracingService::ProducerEndpoint::~ProducerEndpoint() = default;
++ConsumerEndpoint::~ConsumerEndpoint() = default;
++ProducerEndpoint::~ProducerEndpoint() = default;
+ SharedMemory::~SharedMemory() = default;
+ SharedMemory::Factory::~Factory() = default;
+ SharedMemoryArbiter::~SharedMemoryArbiter() = default;
