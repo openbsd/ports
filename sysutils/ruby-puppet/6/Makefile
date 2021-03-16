@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/17 18:45:58 kn Exp $
+# $OpenBSD: Makefile,v 1.17 2021/03/16 18:43:40 kn Exp $
 
 PORTROACH=		limit:^6
 
 VERSION=		6.21.1
+REVISION=		0
 
 MAINTAINER=		Klemens Nanni <kn@openbsd.org>
 
@@ -32,5 +33,7 @@ do-install:
 	mv ${WRKINST}${SYSCONFDIR}/puppetlabs ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet
 	${INSTALL_DATA} ${WRKSRC}/conf/*.conf \
 		${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet/puppet/
+	# Suppress a huge number of Ruby deprecation/obsolete warnings
+	sed -i -e "s/ruby${MODRUBY_BINREV}/ruby${MODRUBY_BINREV} -W0/" ${PREFIX}/bin/puppet
 
 .include <bsd.port.mk>
