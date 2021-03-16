@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.674 2021/03/15 11:12:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.675 2021/03/16 03:43:01 gnezdo Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -344,6 +344,7 @@
      SUBDIR += p5-sdf
      SUBDIR += p5-tkispell
      SUBDIR += palm-bookmarks
+     SUBDIR += pandoc
      SUBDIR += par
      SUBDIR += patchutils
      SUBDIR += pdf4tcl
