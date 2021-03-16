@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/17 14:46:33 danj Exp $
+# $OpenBSD: Makefile,v 1.12 2021/03/16 17:44:52 sthen Exp $
 
 COMMENT=	caching IMAP proxy to be used with webmail clients
 
-VER=		1.2.7
-DISTNAME=	squirrelmail-imap_proxy-${VER}
-PKGNAME=	imapproxy-${VER}
+DISTNAME=	squirrelmail-20210316_0200-SVN.imap_proxy
+PKGNAME=	imapproxy-1.2.8pre2021.02
+WRKDIST=	${WRKDIR}/squirrelmail.imap_proxy
+
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=squirrelmail/}
-EXTRACT_SUFX=	.tar.bz2
-REVISION=	0
+MASTER_SITES=	http://snapshots.squirrelmail.org/
 
 HOMEPAGE=	http://www.imapproxy.org/
 

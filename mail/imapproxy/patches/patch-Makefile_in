@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2012/06/15 09:07:59 jasper Exp $
+$OpenBSD: patch-Makefile_in,v 1.4 2021/03/16 17:44:52 sthen Exp $
 --- Makefile.in.orig	Mon Jan 28 08:15:08 2008
 +++ Makefile.in	Thu Mar 13 21:57:46 2008
 @@ -54,7 +54,7 @@ TAT_OBJ = ./src/pimpstat.o ./src/config.o
@@ -10,16 +10,3 @@ $OpenBSD: patch-Makefile_in,v 1.3 2012/06/15 09:07:59 jasper Exp $
  TAT_BIN = ./bin/pimpstat
  
  # Rules
-@@ -79,9 +79,9 @@ distclean: clean
- 	rm -f config.cache config.log config.h Makefile
- 
- install: $(XYD_BIN) $(TAT_BIN)
--	mkdir -p $(EBIN)
--	$(INSTALL) -o bin -g bin -m 0755 $(XYD_BIN) $(EBIN)
--	$(INSTALL) -o bin -g bin -m 0755 $(TAT_BIN) $(EBIN)
-+	mkdir -p $(DESTDIR)$(EBIN)
-+	$(INSTALL) -m 0755 $(XYD_BIN) $(DESTDIR)$(EBIN)
-+	$(INSTALL) -m 0755 $(TAT_BIN) $(DESTDIR)$(EBIN)
- 
- install-init:
- 	$(INSTALL) -o root -g sys -m 0755 ./scripts/imapproxy.init $(ETC)/init.d/imapproxy

@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/06/15 09:07:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/03/16 17:44:52 sthen Exp $
 @newgroup _imapproxy:592
 @newuser _imapproxy:592:_imapproxy:daemon:IMAP Proxy Account:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/imapproxyd
 @bin sbin/imapproxyd
 @bin sbin/pimpstat
 share/doc/imapproxy/

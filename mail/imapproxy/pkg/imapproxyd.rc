@@ -1,0 +1,11 @@
+#!/bin/ksh
+#
+# $OpenBSD: imapproxyd.rc,v 1.1 2021/03/16 17:44:52 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/imapproxyd"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1

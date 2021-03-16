@@ -1,7 +1,9 @@
-$OpenBSD: patch-imapproxy_h,v 1.4 2012/06/15 09:07:59 jasper Exp $
---- include/imapproxy.h.orig	Fri Oct 16 10:37:41 2009
-+++ include/imapproxy.h	Sun Jan 10 03:28:47 2010
-@@ -169,7 +169,7 @@
+$OpenBSD: patch-imapproxy_h,v 1.5 2021/03/16 17:44:52 sthen Exp $
+
+Index: include/imapproxy.h
+--- include/imapproxy.h.orig
++++ include/imapproxy.h
+@@ -161,7 +161,7 @@
  /* 
   * Common definitions 
   */
@@ -9,8 +11,8 @@ $OpenBSD: patch-imapproxy_h,v 1.4 2012/06/15 09:07:59 jasper Exp $
 +#define PGM                     "imapproxyd"
  #define IMAP_UNTAGGED_OK        "* OK "           /* untagged OK response    */
  #define IMAP_TAGGED_OK          "1 OK "           /* tagged OK response      */
- #define BUFSIZE                 4096              /* default buffer size     */
-@@ -187,7 +187,7 @@
+ #define BUFSIZE                 8192              /* default buffer size     */
+@@ -179,7 +179,7 @@
  #define SELECT_STATUS_BUF_SIZE  256               /* size of select status   */
  
  #ifndef DEFAULT_CONFIG_FILE
