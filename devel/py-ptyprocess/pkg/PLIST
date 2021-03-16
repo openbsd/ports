@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/03/15 20:53:23 sthen Exp $
-@conflict devel/py-ptyprocess
+@comment $OpenBSD: PLIST,v 1.4 2021/03/16 17:11:39 pvk Exp $
+@conflict py-ptyprocess-*
 lib/python${MODPY_VERSION}/site-packages/ptyprocess/
 lib/python${MODPY_VERSION}/site-packages/ptyprocess-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/ptyprocess/__init__.py
