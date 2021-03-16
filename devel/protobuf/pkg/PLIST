@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/12/08 18:50:17 tb Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/03/16 03:07:53 tb Exp $
 @bin bin/protoc
 include/google/
 include/google/protobuf/
@@ -58,7 +58,6 @@ include/google/protobuf/generated_message_table_driven.h
 include/google/protobuf/generated_message_util.h
 include/google/protobuf/has_bits.h
 include/google/protobuf/implicit_weak_message.h
-include/google/protobuf/inlined_string_field.h
 include/google/protobuf/io/
 include/google/protobuf/io/coded_stream.h
 include/google/protobuf/io/gzip_stream.h
@@ -97,7 +96,6 @@ include/google/protobuf/stubs/bytestream.h
 include/google/protobuf/stubs/callback.h
 include/google/protobuf/stubs/casts.h
 include/google/protobuf/stubs/common.h
-include/google/protobuf/stubs/fastmem.h
 include/google/protobuf/stubs/hash.h
 include/google/protobuf/stubs/logging.h
 include/google/protobuf/stubs/macros.h
