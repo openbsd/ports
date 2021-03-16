@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/16 07:20:49 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/03/16 16:09:13 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
@@ -22,9 +22,9 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/multi_json/adapters/ok_json.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/multi_json/adapters/yajl.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/multi_json/convertible_hash_keys.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/multi_json/options.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/multi_json/options_cache.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/multi_json/parse_error.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/multi_json/vendor/
 ${GEM_LIB}/gems/${DISTNAME}/lib/multi_json/vendor/okjson.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/multi_json/version.rb
-${GEM_LIB}/gems/${DISTNAME}/multi_json.gemspec
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec

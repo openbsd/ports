@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:43:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/03/16 16:09:13 sebastia Exp $
 
 COMMENT =	chooses from multiple available json implementations
 
-DISTNAME =	multi_json-1.11.2
+DISTNAME =	multi_json-1.15.0
 CATEGORIES =	converters
 
 HOMEPAGE =	https://github.com/intridea/multi_json
