@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/01/05 18:28:44 bket Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/03/16 13:02:02 bket Exp $
 include/libfilezilla/
 include/libfilezilla/apply.hpp
 include/libfilezilla/buffer.hpp
@@ -45,6 +45,7 @@ include/libfilezilla/translate.hpp
 include/libfilezilla/uri.hpp
 include/libfilezilla/util.hpp
 include/libfilezilla/version.hpp
+include/libfilezilla/visibility_helper.hpp
 @static-lib lib/libfilezilla.a
 lib/libfilezilla.la
 @lib lib/libfilezilla.so.${LIBfilezilla_VERSION}

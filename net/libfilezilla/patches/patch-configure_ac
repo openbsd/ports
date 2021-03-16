@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.1 2019/11/28 15:55:23 bket Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2021/03/16 13:02:02 bket Exp $
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -42,9 +42,7 @@ if ! test "$localesonly" = "yes"; then
+@@ -41,9 +41,7 @@ if ! test "$localesonly" = "yes"; then
  
  if test "X$GCC" = Xyes; then
    AX_APPEND_FLAG(-Wall, CFLAGS)
