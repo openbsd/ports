@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/03 19:59:11 bket Exp $
+# $OpenBSD: Makefile,v 1.2 2021/03/16 04:48:38 bket Exp $
 
 COMMENT =	bash automated testing system
 
 GH_ACCOUNT =	bats-core
 GH_PROJECT =	bats-core
-GH_TAGNAME =	v1.2.1
+GH_TAGNAME =	v1.3.0
 PKGNAME =	${DISTNAME:S/-core//}
 
 CATEGORIES =	devel
