@@ -1,11 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/01/04 14:06:32 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/03/17 18:43:34 landry Exp $
 @conflict py-proj-*
 @pkgpath geo/py-proj
+bin/pyproj
 lib/python${MODPY_VERSION}/site-packages/pyproj/
 lib/python${MODPY_VERSION}/site-packages/pyproj-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pyproj-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/pyproj-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/pyproj-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/pyproj-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/pyproj-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/pyproj-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/pyproj-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pyproj/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pyproj/__main__.py
@@ -13,30 +17,60 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}_show_versions.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}cf1x8.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}aoi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}crs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}datadir.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}enums.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}geod.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}network.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}proj.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}sync.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}transformer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/pyproj/_compat.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/pyproj/_crs.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/pyproj/_crs.pyi
 @so lib/python${MODPY_VERSION}/site-packages/pyproj/_datadir.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/pyproj/_datadir.pyi
 @so lib/python${MODPY_VERSION}/site-packages/pyproj/_geod.${MODPY_PYC_MAGIC_TAG}so
-@so lib/python${MODPY_VERSION}/site-packages/pyproj/_list.${MODPY_PYC_MAGIC_TAG}so
-@so lib/python${MODPY_VERSION}/site-packages/pyproj/_proj.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/pyproj/_geod.pyi
+@so lib/python${MODPY_VERSION}/site-packages/pyproj/_network.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/pyproj/_network.pyi
 lib/python${MODPY_VERSION}/site-packages/pyproj/_show_versions.py
+@so lib/python${MODPY_VERSION}/site-packages/pyproj/_sync.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/pyproj/_sync.pyi
 @so lib/python${MODPY_VERSION}/site-packages/pyproj/_transformer.${MODPY_PYC_MAGIC_TAG}so
-lib/python${MODPY_VERSION}/site-packages/pyproj/cf1x8.py
+lib/python${MODPY_VERSION}/site-packages/pyproj/_transformer.pyi
+lib/python${MODPY_VERSION}/site-packages/pyproj/aoi.py
 lib/python${MODPY_VERSION}/site-packages/pyproj/compat.py
-lib/python${MODPY_VERSION}/site-packages/pyproj/crs.py
+lib/python${MODPY_VERSION}/site-packages/pyproj/crs/
+lib/python${MODPY_VERSION}/site-packages/pyproj/crs/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyproj/crs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyproj/crs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyproj/crs/${MODPY_PYCACHE}_cf1x8.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyproj/crs/${MODPY_PYCACHE}coordinate_operation.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyproj/crs/${MODPY_PYCACHE}coordinate_system.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyproj/crs/${MODPY_PYCACHE}crs.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyproj/crs/${MODPY_PYCACHE}datum.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyproj/crs/${MODPY_PYCACHE}enums.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyproj/crs/_cf1x8.py
+lib/python${MODPY_VERSION}/site-packages/pyproj/crs/coordinate_operation.py
+lib/python${MODPY_VERSION}/site-packages/pyproj/crs/coordinate_system.py
+lib/python${MODPY_VERSION}/site-packages/pyproj/crs/crs.py
+lib/python${MODPY_VERSION}/site-packages/pyproj/crs/datum.py
+lib/python${MODPY_VERSION}/site-packages/pyproj/crs/enums.py
+@so lib/python${MODPY_VERSION}/site-packages/pyproj/database.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/pyproj/database.pyi
 lib/python${MODPY_VERSION}/site-packages/pyproj/datadir.py
 lib/python${MODPY_VERSION}/site-packages/pyproj/enums.py
 lib/python${MODPY_VERSION}/site-packages/pyproj/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/pyproj/geod.py
+@so lib/python${MODPY_VERSION}/site-packages/pyproj/list.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/pyproj/list.pyi
+lib/python${MODPY_VERSION}/site-packages/pyproj/network.py
 lib/python${MODPY_VERSION}/site-packages/pyproj/proj.py
+lib/python${MODPY_VERSION}/site-packages/pyproj/py.typed
+lib/python${MODPY_VERSION}/site-packages/pyproj/sync.py
 lib/python${MODPY_VERSION}/site-packages/pyproj/transformer.py
 lib/python${MODPY_VERSION}/site-packages/pyproj/utils.py

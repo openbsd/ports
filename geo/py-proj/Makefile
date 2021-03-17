@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2021/01/04 14:06:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2021/03/17 18:43:34 landry Exp $
 
 COMMENT =		Pyrex generated python interface to PROJ.4 library
 
-MODPY_EGG_VERSION =	2.4.2.post1
+MODPY_EGG_VERSION =	3.0.1
 DISTNAME =		pyproj-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/:S/.post/pl/}
-REVISION =		1
 
 CATEGORIES =		geo
 
@@ -35,5 +34,6 @@ TEST_DEPENDS =		${BUILD_PKGPATH} \
 RUN_DEPENDS +=		devel/proj>=6.0 \
 			lang/cython${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR}
+TEST_ENV =	PROJ_NETWORK=OFF
 
 .include <bsd.port.mk>
