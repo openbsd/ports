@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2021/01/14 21:55:21 fcambus Exp $
+# $OpenBSD: Makefile,v 1.5 2021/03/17 11:20:47 fcambus Exp $
 
 COMMENT =	Qodem Terminal Emulator
 
-DISTNAME =	qodem-1.0.0
-REVISION =	1
+DISTNAME =	qodem-1.0.1
 
 CATEGORIES =	comms
 
@@ -21,7 +20,7 @@ USE_GMAKE =	Yes
 
 CONFIGURE_STYLE = gnu
 
-CONFIGURE_ARGS = --disable-sdl --disable-upnp
+CONFIGURE_ARGS = --disable-sdl --disable-upnp --disable-gpm
 
 NO_TEST =	Yes
 
