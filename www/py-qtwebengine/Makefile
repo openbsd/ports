@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/18 14:45:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/03/17 08:22:17 sthen Exp $
 
 COMMENT =	python Qt5WebEngine bindings
 
-MODPY_EGG_VERSION =	5.15.2
+MODPY_EGG_VERSION =	5.15.4
 DISTNAME =	PyQtWebEngine-${MODPY_EGG_VERSION}
 PKGNAME =	py-qtwebengine-${MODPY_EGG_VERSION}
-REVISION =	0
 
 CATEGORIES =	www devel
 
