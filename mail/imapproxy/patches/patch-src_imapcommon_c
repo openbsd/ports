@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_imapcommon_c,v 1.1 2021/03/17 15:05:50 sthen Exp $
+$OpenBSD: patch-src_imapcommon_c,v 1.2 2021/03/17 15:15:45 sthen Exp $
 
 Index: src/imapcommon.c
 --- src/imapcommon.c.orig
@@ -31,7 +31,7 @@ Index: src/imapcommon.c
 +	X509_VERIFY_PARAM_set_hostflags(param, X509_CHECK_FLAG_NO_PARTIAL_WILDCARDS);
 +	if (!X509_VERIFY_PARAM_set1_host(param, PC_Struct.server_hostname, 0)) {
 +	    syslog(LOG_INFO,
-+		    "STARTTLS failed: !X509_VERIFY_PARAM_set1_host() failed: %d",
++		    "STARTTLS failed: X509_VERIFY_PARAM_set1_host() failed: %d",
  		    SSL_get_error( Server->conn->tls, rc ) );
  	    goto fail;
  	}
