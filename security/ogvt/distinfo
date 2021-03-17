@@ -14,7 +14,7 @@ SHA256 (go_modules/golang.org/x/text/@v/v0.3.0.mod) = NoedWG/YAB6E2oeHGQoR5PeHSe
 SHA256 (go_modules/golang.org/x/text/@v/v0.3.0.zip) = 6jBoOVUD08fvjOFqKG91yMk4gsJaZsKqbI4q1Np6muA=
 SHA256 (go_modules/suah.dev/protect/@v/v1.0.0.mod) = EsQj44sl/A8WDIxKNLnrDPAYgp2+6CWlIsX8O9yGayI=
 SHA256 (go_modules/suah.dev/protect/@v/v1.0.0.zip) = 4bJdOEKUdW2aXwvTzHlbRsfMny4n9ynNX9tO1aT3jbE=
-SHA256 (ogvt-v1.0.9.zip) = bVnaDRO4bnMX4cy5A0RGUosnb77QoKZQ0JMcXal2bZs=
+SHA256 (ogvt-v1.1.0.zip) = GeR3yC1z0V/l+uurpSu1AX5y5heY4hnGgoeewlHugXM=
 SIZE (go_modules/golang.org/x/crypto/@v/v0.0.0-20190308221718-c2843e01d9a2.mod) = 88
 SIZE (go_modules/golang.org/x/crypto/@v/v0.0.0-20201221181555-eec23a3978ad.mod) = 209
 SIZE (go_modules/golang.org/x/crypto/@v/v0.0.0-20201221181555-eec23a3978ad.zip) = 1864231
@@ -31,4 +31,4 @@ SIZE (go_modules/golang.org/x/text/@v/v0.3.0.mod) = 25
 SIZE (go_modules/golang.org/x/text/@v/v0.3.0.zip) = 6349244
 SIZE (go_modules/suah.dev/protect/@v/v1.0.0.mod) = 94
 SIZE (go_modules/suah.dev/protect/@v/v1.0.0.zip) = 2809
-SIZE (ogvt-v1.0.9.zip) = 14445
+SIZE (ogvt-v1.1.0.zip) = 14574
