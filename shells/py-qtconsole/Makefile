@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/03 21:13:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/03/17 08:41:48 sthen Exp $
 
 COMMENT =		Jupyter Qt console
 
-MODPY_EGG_VERSION =	4.3.0
-REVISION =		4
+MODPY_EGG_VERSION =	5.0.3
 DISTNAME =		qtconsole-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -15,6 +14,8 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =		devel/ipython${MODPY_FLAVOR}>=5.1.0 \
 			devel/py-ipykernel${MODPY_FLAVOR} \
@@ -24,12 +25,10 @@ RUN_DEPENDS =		devel/ipython${MODPY_FLAVOR}>=5.1.0 \
 			devel/py-traitlets${MODPY_FLAVOR} \
 			textproc/py-pygments${MODPY_FLAVOR} \
 			x11/py-qt5${MODPY_FLAVOR}
-TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR =		python3
 
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m unittest discover
+TEST_ENV =		PY_IGNORE_IMPORTMISMATCH=1
 
 .include <bsd.port.mk>

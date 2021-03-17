@@ -1,9 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/03/06 17:57:15 bket Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/03/17 08:41:48 sthen Exp $
 @conflict py-qtconsole-*
 @pkgpath shells/py-qtconsole
 bin/jupyter-qtconsole
 lib/python${MODPY_VERSION}/site-packages/qtconsole/
-lib/python${MODPY_VERSION}/site-packages/qtconsole-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/qtconsole-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/qtconsole-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/qtconsole-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/qtconsole-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/qtconsole-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/qtconsole-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/qtconsole-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/qtconsole/__init__.py
 lib/python${MODPY_VERSION}/site-packages/qtconsole/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qtconsole/${MODPY_PYCACHE}/
@@ -15,6 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/qtconsole/${MODPY_PYCACHE}base_frontend
 lib/python${MODPY_VERSION}/site-packages/qtconsole/${MODPY_PYCACHE}bracket_matcher.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtconsole/${MODPY_PYCACHE}call_tip_widget.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtconsole/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtconsole/${MODPY_PYCACHE}comms.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtconsole/${MODPY_PYCACHE}completion_html.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtconsole/${MODPY_PYCACHE}completion_plain.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtconsole/${MODPY_PYCACHE}completion_widget.${MODPY_PYC_MAGIC_TAG}pyc
@@ -29,8 +36,7 @@ lib/python${MODPY_VERSION}/site-packages/qtconsole/${MODPY_PYCACHE}kill_ring.${M
 lib/python${MODPY_VERSION}/site-packages/qtconsole/${MODPY_PYCACHE}mainwindow.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtconsole/${MODPY_PYCACHE}manager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtconsole/${MODPY_PYCACHE}pygments_highlighter.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/qtconsole/${MODPY_PYCACHE}qt.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/qtconsole/${MODPY_PYCACHE}qt_loaders.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtconsole/${MODPY_PYCACHE}qstringhelpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtconsole/${MODPY_PYCACHE}qtconsoleapp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtconsole/${MODPY_PYCACHE}rich_ipython_widget.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtconsole/${MODPY_PYCACHE}rich_jupyter_widget.${MODPY_PYC_MAGIC_TAG}pyc
@@ -45,6 +51,7 @@ lib/python${MODPY_VERSION}/site-packages/qtconsole/base_frontend_mixin.py
 lib/python${MODPY_VERSION}/site-packages/qtconsole/bracket_matcher.py
 lib/python${MODPY_VERSION}/site-packages/qtconsole/call_tip_widget.py
 lib/python${MODPY_VERSION}/site-packages/qtconsole/client.py
+lib/python${MODPY_VERSION}/site-packages/qtconsole/comms.py
 lib/python${MODPY_VERSION}/site-packages/qtconsole/completion_html.py
 lib/python${MODPY_VERSION}/site-packages/qtconsole/completion_plain.py
 lib/python${MODPY_VERSION}/site-packages/qtconsole/completion_widget.py
@@ -59,8 +66,7 @@ lib/python${MODPY_VERSION}/site-packages/qtconsole/kill_ring.py
 lib/python${MODPY_VERSION}/site-packages/qtconsole/mainwindow.py
 lib/python${MODPY_VERSION}/site-packages/qtconsole/manager.py
 lib/python${MODPY_VERSION}/site-packages/qtconsole/pygments_highlighter.py
-lib/python${MODPY_VERSION}/site-packages/qtconsole/qt.py
-lib/python${MODPY_VERSION}/site-packages/qtconsole/qt_loaders.py
+lib/python${MODPY_VERSION}/site-packages/qtconsole/qstringhelpers.py
 lib/python${MODPY_VERSION}/site-packages/qtconsole/qtconsoleapp.py
 lib/python${MODPY_VERSION}/site-packages/qtconsole/resources/
 lib/python${MODPY_VERSION}/site-packages/qtconsole/resources/icon/
@@ -74,17 +80,21 @@ lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/
 lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/${MODPY_PYCACHE}test_00_console_widget.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/${MODPY_PYCACHE}test_ansi_code_processor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/${MODPY_PYCACHE}test_app.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/${MODPY_PYCACHE}test_comms.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/${MODPY_PYCACHE}test_completion_widget.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/${MODPY_PYCACHE}test_console_widget.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/${MODPY_PYCACHE}test_frontend_widget.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/${MODPY_PYCACHE}test_jupyter_widget.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/${MODPY_PYCACHE}test_kill_ring.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/${MODPY_PYCACHE}test_styles.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/test_00_console_widget.py
 lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/test_ansi_code_processor.py
 lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/test_app.py
+lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/test_comms.py
 lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/test_completion_widget.py
-lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/test_console_widget.py
+lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/test_frontend_widget.py
 lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/test_jupyter_widget.py
 lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/test_kill_ring.py
 lib/python${MODPY_VERSION}/site-packages/qtconsole/tests/test_styles.py
