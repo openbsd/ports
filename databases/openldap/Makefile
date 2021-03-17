@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.184 2021/01/19 17:54:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.185 2021/03/17 08:49:13 sthen Exp $
 
 DPB_PROPERTIES =	parallel
 
 COMMENT-main =		open-source LDAP software (client)
 COMMENT-server =	open-source LDAP software (server)
 
-DISTNAME =		openldap-2.4.57
+DISTNAME =		openldap-2.4.58
 PKGNAME-main =		${DISTNAME:S/-/-client-/}
 PKGNAME-server =	${DISTNAME:S/-/-server-/}
 
