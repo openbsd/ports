@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2086 2021/03/15 20:53:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.2087 2021/03/17 06:54:34 kmos Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1648,7 +1648,6 @@
      SUBDIR += py-test-runner,python3
      SUBDIR += py-test-subtesthack
      SUBDIR += py-test-subtesthack,python3
-     SUBDIR += py-test-timeout
      SUBDIR += py-test-timeout,python3
      SUBDIR += py-test-vcr,python3
      SUBDIR += py-test-xdist
