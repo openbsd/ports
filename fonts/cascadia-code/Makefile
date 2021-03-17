@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/12 14:33:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/03/17 11:25:23 fcambus Exp $
 
-V =		2102.03
+V =		2102.25
 COMMENT =	Microsoft programming/terminal font
 DISTNAME =	CascadiaCode-${V}
 PKGNAME =	cascadia-code-${V}
