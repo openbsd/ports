@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2021/01/16 06:50:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.26 2021/03/17 05:32:21 rsadowski Exp $
 
 COMMENT=	full suite pictographic icons
 
-VERSION =	5.15.2
+VERSION =	5.15.3
 PKGNAME =	font-awesome-${VERSION}
 DISTNAME =	fontawesome-free-${VERSION}-desktop
 
