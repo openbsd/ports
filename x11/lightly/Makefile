@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/03/09 16:46:05 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2021/03/17 20:08:30 rsadowski Exp $
 
 COMMENT =	modern style for Qt applications
 
@@ -7,6 +7,7 @@ GH_PROJECT =	Lightly
 GH_TAGNAME =	v0.4.1
 
 PKGNAME =	${DISTNAME:L}
+REVISION =	0
 
 SHARED_LIBS =	lightlycommon5	0.0 # 0.4.1
 
