@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2021/02/28 21:01:59 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.38 2021/03/17 08:22:29 sthen Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -2564,6 +2564,7 @@ lib/calibre/calibre/plugins/
 @so lib/calibre/calibre/plugins/bzzdec.so
 @so lib/calibre/calibre/plugins/cPalmdoc.so
 @so lib/calibre/calibre/plugins/certgen.so
+@so lib/calibre/calibre/plugins/fast_css_transform.so
 @so lib/calibre/calibre/plugins/freetype.so
 @so lib/calibre/calibre/plugins/html_as_json.so
 @so lib/calibre/calibre/plugins/html_syntax_highlighter.so
@@ -3117,6 +3118,22 @@ lib/calibre/polyglot/reprlib.py
 lib/calibre/polyglot/smtplib.py
 lib/calibre/polyglot/socketserver.py
 lib/calibre/polyglot/urllib.py
+lib/calibre/qt/
+lib/calibre/qt/__init__.py
+lib/calibre/qt/__main__.py
+${MODPY_COMMENT}lib/calibre/qt/${MODPY_PYCACHE}/
+lib/calibre/qt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/calibre/qt/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/calibre/qt/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
+lib/calibre/qt/${MODPY_PYCACHE}core_name_map.${MODPY_PYC_MAGIC_TAG}pyc
+lib/calibre/qt/${MODPY_PYCACHE}loader.${MODPY_PYC_MAGIC_TAG}pyc
+lib/calibre/qt/${MODPY_PYCACHE}webengine.${MODPY_PYC_MAGIC_TAG}pyc
+lib/calibre/qt/${MODPY_PYCACHE}webengine_name_map.${MODPY_PYC_MAGIC_TAG}pyc
+lib/calibre/qt/core.py
+lib/calibre/qt/core_name_map.py
+lib/calibre/qt/loader.py
+lib/calibre/qt/webengine.py
+lib/calibre/qt/webengine_name_map.py
 lib/calibre/sgmllib.py
 lib/calibre/templite/
 lib/calibre/templite/__init__.py

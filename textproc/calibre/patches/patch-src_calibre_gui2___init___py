@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_calibre_gui2___init___py,v 1.9 2021/02/24 14:13:48 rsadowski Exp $
+$OpenBSD: patch-src_calibre_gui2___init___py,v 1.10 2021/03/17 08:22:29 sthen Exp $
 
 - enable --detach, used by some .desktop files
 
 Index: src/calibre/gui2/__init__.py
 --- src/calibre/gui2/__init__.py.orig
 +++ src/calibre/gui2/__init__.py
-@@ -795,7 +795,7 @@ def load_builtin_fonts():
+@@ -794,7 +794,7 @@ def load_builtin_fonts():
  
  
  def setup_gui_option_parser(parser):
