@@ -1,4 +1,4 @@
-$OpenBSD: patch-scripts_imapproxy_conf,v 1.4 2021/03/16 17:44:52 sthen Exp $
+$OpenBSD: patch-scripts_imapproxy_conf,v 1.5 2021/03/17 15:05:50 sthen Exp $
 
 Index: scripts/imapproxy.conf
 --- scripts/imapproxy.conf.orig
@@ -26,6 +26,24 @@ Index: scripts/imapproxy.conf
  #
 -#chroot_directory /var/empty
 +chroot_directory /var/empty
+ 
+ 
+ #
+@@ -213,12 +213,14 @@ enable_admin_commands no
+ #
+ ## TLS configuration options
+ #
+-#tls_ca_file /usr/share/ssl/certs/ca-bundle.crt
++tls_ca_file /etc/ssl/cert.pem
+ #tls_ca_path /usr/share/ssl/certs/
++tls_verify_server yes
++#tls_ciphers ALL:!aNULL:!eNULL
++
++## Client certificate options
+ #tls_cert_file /usr/share/ssl/certs/mycert.crt
+ #tls_key_file /usr/share/ssl/certs/mycert.key
+-#tls_verify_server no
+-#tls_ciphers ALL:!aNULL:!eNULL
  
  
  #
