@@ -1,8 +1,9 @@
-$OpenBSD: patch-configure_py,v 1.5 2021/01/19 06:26:49 rsadowski Exp $
+$OpenBSD: patch-configure_py,v 1.6 2021/03/17 08:21:55 sthen Exp $
+
 Index: configure.py
 --- configure.py.orig
 +++ configure.py
-@@ -2176,7 +2176,18 @@ def run_command(cmd, verbose):
+@@ -2157,7 +2157,18 @@ def run_command(cmd, verbose):
      """ Run a command and display the output if requested.  cmd is the command
      to run.  verbose is set if the output is to be displayed.
      """
@@ -21,7 +22,7 @@ Index: configure.py
      if verbose:
          sys.stdout.write(cmd + "\n")
  
-@@ -2921,7 +2932,7 @@ Type 'no' to decline the terms of the license.
+@@ -2902,7 +2913,7 @@ Type 'no' to decline the terms of the license.
              sys.stdout.flush()
  
              try:

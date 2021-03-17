@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/02/14 14:24:20 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/03/17 08:21:55 sthen Exp $
+@conflict py-qt5-*
 @pkgpath x11/py-qt5,-main
 @pkgpath x11/py-qt5
-@conflict py-qt5-*
 bin/pylupdate5
 bin/pyrcc5
 bin/pyuic5
@@ -20,7 +20,6 @@ lib/python${MODPY_VERSION}/site-packages/PyQt5-${MODPY_EGG_VERSION}.dist-info/RE
 @so lib/python${MODPY_VERSION}/site-packages/PyQt5/QtMultimedia${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/PyQt5/QtMultimediaWidgets${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/PyQt5/QtNetwork${MODPY_ABI3SO}.so
-@so lib/python${MODPY_VERSION}/site-packages/PyQt5/QtNetworkAuth${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/PyQt5/QtNfc${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/PyQt5/QtOpenGL${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/PyQt5/QtPositioning${MODPY_ABI3SO}.so
@@ -540,17 +539,6 @@ lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtNetwork/qsslsocket.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtNetwork/qtcpserver.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtNetwork/qtcpsocket.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtNetwork/qudpsocket.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtNetworkAuth/
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtNetworkAuth/QtNetworkAuth.toml
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtNetworkAuth/QtNetworkAuthmod.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtNetworkAuth/qabstractoauth.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtNetworkAuth/qabstractoauth2.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtNetworkAuth/qabstractoauthreplyhandler.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtNetworkAuth/qoauth1.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtNetworkAuth/qoauth1signature.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtNetworkAuth/qoauth2authorizationcodeflow.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtNetworkAuth/qoauthhttpserverreplyhandler.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtNetworkAuth/qoauthoobreplyhandler.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtNfc/
 lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtNfc/QtNfc.toml
 lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtNfc/QtNfcmod.sip
@@ -942,8 +930,20 @@ lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/driver.py
 lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/icon_cache.py
 lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/objcreator.py
+lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v2/
+lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v2/__init__.py
+lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v2/as_string.py
+lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v2/ascii_upper.py
+lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v2/proxy_base.py
+lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v2/string_io.py
 lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v3/
 lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v3/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v3/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v3/${MODPY_PYCACHE}as_string.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v3/${MODPY_PYCACHE}ascii_upper.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v3/${MODPY_PYCACHE}proxy_base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v3/${MODPY_PYCACHE}string_io.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v3/as_string.py
 lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v3/ascii_upper.py
 lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v3/proxy_base.py
