@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2021/03/15 17:07:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.23 2021/03/17 15:34:21 rsadowski Exp $
 
 # XXX has some internal dependency problems, look for kpasswdserver.json
 
@@ -21,7 +21,8 @@ WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml
 WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml c exslt m xml2 xslt
 
-BUILD_DEPENDS =	devel/gettext,-tools \
+BUILD_DEPENDS =	archivers/gtar \
+		devel/gettext,-tools \
 		devel/kf5/kdoctools>=${MODKF5_VERSION}
 
 RUN_DEPENDS =	devel/kf5/kdoctools>=${MODKF5_VERSION} \
@@ -60,5 +61,8 @@ CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_ACL=ON \
 PORTHOME =		${WRKDIR}
 TEST_IS_INTERACTIVE =	X11
 TEST_DEPENDS =		${BUILD_PKGPATH}
+
+post-extract:
+	@ln -sf ${LOCALBASE}/bin/gtar ${WRKDIR}/bin/tar
 
 .include <bsd.port.mk>
