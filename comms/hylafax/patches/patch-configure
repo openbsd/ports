@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.13 2019/11/30 12:56:15 naddy Exp $
+$OpenBSD: patch-configure,v 1.14 2021/03/17 12:39:19 naddy Exp $
 Index: configure
 --- configure.orig
 +++ configure
@@ -50,7 +50,7 @@ Index: configure
  				tiff_bytecount_t="uint32"
  				;;
 -		4.[0])		tiff_runlen_t="uint32"
-+		4.[01])		tiff_runlen_t="uint32"
++		4.?)		tiff_runlen_t="uint32"
  				tiff_offset_t="uint64"
  				tiff_bytecount_t="uint64"
  				echo '#define TIFFHeader	TIFFHeaderClassic'
