@@ -1,4 +1,4 @@
-# $OpenBSD: go.port.mk,v 1.40 2021/02/24 14:44:15 espie Exp $
+# $OpenBSD: go.port.mk,v 1.41 2021/03/18 22:35:26 sthen Exp $
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
@@ -52,11 +52,13 @@ MAKE_ENV +=		GOCACHE="${MODGO_GOCACHE}"
 
 MODGO_CMD ?=		${SETENV} ${MAKE_ENV} go
 MODGO_BUILD_CMD =	${MODGO_CMD} install ${MODGO_FLAGS}
+MODGO_LIST_CMD =	${MODGO_CMD} list ${MODGO_FLAGS}
 MODGO_TEST_CMD =	${MODGO_CMD} test ${MODGO_FLAGS} ${MODGO_TEST_FLAGS}
 MODGO_BINDIR ?=		bin
 
 .if ! empty(MODGO_LDFLAGS)
 MODGO_BUILD_CMD +=	-ldflags="${MODGO_LDFLAGS}"
+MODGO_LIST_CMD +=	-ldflags="${MODGO_LDFLAGS}"
 MODGO_TEST_CMD +=	-ldflags="${MODGO_LDFLAGS}"
 .endif
 
@@ -153,12 +155,13 @@ do-build:
 	cd ${WRKSRC} && \
 		${MODGO_BUILD_TARGET}
 .    else
+	cd ${WRKSRC} && \
+		${MODGO_LIST_CMD} -f '{{.Name}}' ${ALL_TARGET} 2>/dev/null \
+			| grep -qe '^main$$' && \
+		${MODGO_BUILD_CMD} ${ALL_TARGET} ; \
 	if [ -d ${WRKSRC}/cmd ]; then \
 		cd ${WRKSRC} && \
-			${MODGO_BUILD_CMD} ${ALL_TARGET}/cmd/... ; \
-	else \
-		cd ${WRKSRC} && \
-			${MODGO_BUILD_CMD} ${ALL_TARGET} ; \
+			${MODGO_BUILD_CMD} ./cmd/... ; \
 	fi;
 .    endif
 .  endif
