@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:43:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2021/03/18 08:57:31 fcambus Exp $
 
 COMMENT =		serial and network communications package
 
 PKGNAME =		kermit-9.0.302
 DISTNAME =		cku302
 CATEGORIES =		comms
-HOMEPAGE =		http://www.kermitproject.org/
+HOMEPAGE =		https://www.kermitproject.org/
+REVISION =		0
 
 # THE C-KERMIT 9.0 LICENSE (Revised 3-Clause BSD License)
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c curses m util
 
-MASTER_SITES =		http://www.kermitproject.org/ftp/kermit/archives/
+MASTER_SITES =		https://www.kermitproject.org/ftp/kermit/archives/
 
 WRKDIST =		${WRKDIR}
 
