@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2020/05/14 21:00:37 jcs Exp $
+# $OpenBSD: Makefile,v 1.18 2021/03/18 09:07:18 fcambus Exp $
 
 DISTNAME=	dnstracer-1.9
 CATEGORIES=	net
-REVISION=	0
+REVISION=	1
 
 # bsd
 PERMIT_PACKAGE=	Yes
@@ -10,8 +10,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	c
 
 COMMENT=	domain name system resolution tracer
-HOMEPAGE=	http://www.mavetju.org/unix/dnstracer.php
-MASTER_SITES=	http://www.mavetju.org/download/
+HOMEPAGE=	https://www.mavetju.org/unix/dnstracer.php
+MASTER_SITES=	https://www.mavetju.org/download/
 
 CONFIGURE_STYLE= gnu
 
