@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/07 14:15:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/03/18 21:38:11 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64
 
@@ -27,7 +27,9 @@ COMPILER=	base-clang ports-gcc
 FLAVORS=	native ssse3 sse4_2 avx2
 FLAVOR?=	ssse3
 
-MODULES=	devel/cmake
+MODULES=	devel/cmake \
+		lang/python
+MODPY_RUNDEP=	No
 BUILD_DEPENDS=	devel/boost \
 		devel/ragel
 LIB_DEPENDS=	databases/sqlite3
