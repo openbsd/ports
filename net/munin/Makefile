@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2021/02/23 19:39:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.103 2021/03/18 07:47:21 kirby Exp $
 
 PORTROACH = 	limitw:1,even
 
@@ -10,6 +10,7 @@ DISTNAME =	munin-$V
 PKGNAME-main =	munin-node-$V
 PKGNAME-server =munin-server-$V
 CATEGORIES =	net
+REVISION-main =	0
 
 HOMEPAGE =	http://munin-monitoring.org/
 MASTER_SITES =	http://downloads.munin-monitoring.org/munin/stable/$V/
