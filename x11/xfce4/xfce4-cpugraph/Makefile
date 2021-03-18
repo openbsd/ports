@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2021/02/14 18:19:42 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2021/03/18 11:52:44 landry Exp $
 
 COMMENT=	Xfce4 cpu usage graph panel plugin
 
-XFCE_VERSION=	1.2.2
+XFCE_VERSION=	1.2.3
 XFCE_PLUGIN=	cpugraph
 
 # GPLv2+
