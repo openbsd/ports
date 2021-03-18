@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.201 2021/03/15 21:15:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.202 2021/03/18 18:29:54 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (core installation)
 COMMENT-extras=		GNOME desktop meta-package (world installation)
@@ -10,7 +10,8 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-extras=	1
+REVISION-main=		0
+REVISION-extras=	2
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -73,7 +74,6 @@ RUN_DEPENDS-main +=	x11/gnome/calculator \
 			x11/gnome/contacts \
 			x11/gnome/eog \
 			evince-*-!light:graphics/evince \
-			x11/gnome/file-roller \
 			x11/gnome/font-viewer \
 			x11/gnome/gedit \
 			x11/gnome/maps \
@@ -114,6 +114,7 @@ RUN_DEPENDS-extras +=	inputmethods/ibus-anthy \
 			x11/gnome/devel-docs \
 			x11/gnome/dictionary \
 			x11/gnome/documents \
+			x11/gnome/file-roller \
 			x11/gnome/todo \
 			x11/gnome/tweaks
 
