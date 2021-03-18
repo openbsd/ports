@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/03/18 11:27:03 sthen Exp $
 
 COMMENT =		display keypresses on screen
 
-DISTNAME =		screenkey-1.2
-REVISION =		0
+MODPY_EGG_VERSION =	1.4
+DISTNAME =		screenkey-${MODPY_EGG_VERSION}
 
 CATEGORIES =		x11
 
@@ -23,6 +23,7 @@ MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
 BUILD_DEPENDS +=	devel/gettext,-tools \
+			devel/py-babel${MODPY_FLAVOR} \
 			devel/py-distutils-extra${MODPY_FLAVOR}
 RUN_DEPENDS +=		devel/desktop-file-utils \
 			devel/py-gobject3${MODPY_FLAVOR} \
