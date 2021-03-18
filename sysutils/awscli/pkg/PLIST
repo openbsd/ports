@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.130 2021/02/13 07:10:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.131 2021/03/18 07:54:30 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -250,9 +250,11 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/awscli/customizations/e
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/${MODPY_PYCACHE}deploy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/${MODPY_PYCACHE}executecommand.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/${MODPY_PYCACHE}filehelpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/deploy.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/exceptions.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/executecommand.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/ecs/filehelpers.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/eks/
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/eks/__init__.py
@@ -4123,12 +4125,14 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds-data/commit-transac
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds-data/execute-statement.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds-data/rollback-transaction.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/add-option-to-option-group.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/add-role-to-db-cluster.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/add-role-to-db-instance.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/add-source-identifier-to-subscription.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/add-tags-to-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/apply-pending-maintenance-action.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/authorize-db-security-group-ingress.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/backtrack-db-cluster.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/cancel-export-task.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/copy-db-cluster-parameter-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/copy-db-cluster-snapshot.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/copy-db-parameter-group.rst
@@ -4166,6 +4170,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/delete-option-group
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-account-attributes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-certificates.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-custom-availability-zones.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-db-cluster-backtracks.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-db-cluster-endpoints.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-db-cluster-parameter-groups.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-db-cluster-parameters.rst
@@ -4204,7 +4209,9 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/generate-db-auth-to
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/import-installation-media.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/list-tags-for-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/modify-certificates.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/modify-current-db-cluster-capacity.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/modify-db-cluster-endpoint.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/modify-db-cluster-parameter-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/modify-db-cluster-snapshot-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/modify-db-cluster.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/modify-db-instance.rst
@@ -4215,13 +4222,17 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/modify-db-snapshot.
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/modify-db-subnet-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/modify-event-subscription.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/modify-global-cluster.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/promote-read-replica-db-cluster.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/promote-read-replica.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/purchase-reserved-db-instance.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/purchase-reserved-db-instances-offerings.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/reboot-db-instance.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/remove-option-from-option-group.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/remove-role-from-db-cluster.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/remove-role-from-db-instance.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/remove-source-identifier-from-subscription.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/remove-tags-from-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/reset-db-cluster-parameter-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/reset-db-parameter-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/restore-db-cluster-from-s3.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/restore-db-cluster-from-snapshot.rst
@@ -4230,6 +4241,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/restore-db-instance
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/restore-db-instance-from-s3.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/restore-db-instance-to-point-in-time.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/start-activity-stream.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/start-db-cluster.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/start-db-instance-automated-backups-replication.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/start-db-instance.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/start-export-task.rst
@@ -4366,8 +4378,10 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/resource-groups/delete-
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/resource-groups/get-group-query.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/resource-groups/get-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/resource-groups/get-tags.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/resource-groups/list-group-resources.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/resource-groups/list-groups.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/resource-groups/list-resource-groups.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/resource-groups/put-group-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/resource-groups/search-resources.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/resource-groups/tag.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/resource-groups/untag.rst
