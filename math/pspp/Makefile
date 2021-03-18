@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/14 16:57:14 bcallah Exp $
+# $OpenBSD: Makefile,v 1.8 2021/03/18 13:44:38 ajacoutot Exp $
 
 COMMENT =	program for statistical analysis of sampled data
 DISTNAME =	pspp-1.4.1
@@ -23,6 +23,10 @@ WANTLIB += xcb-render xcb-shm xml2 z
 MASTER_SITES =	${MASTER_SITE_GNU:=pspp/}
 
 COMPILER =	base-clang ports-gcc
+
+MODULES =	lang/python
+
+MODPY_RUNDEP =	No
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		print/texinfo
