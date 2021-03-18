@@ -1,0 +1,16 @@
+$OpenBSD: patch-gr-filter_lib_mmse_resampler_cc_impl_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
+
+Build with newer Boost. From Fedora.
+
+Index: gr-filter/lib/mmse_resampler_cc_impl.cc
+--- gr-filter/lib/mmse_resampler_cc_impl.cc.orig
++++ gr-filter/lib/mmse_resampler_cc_impl.cc
+@@ -31,6 +31,8 @@
+ namespace gr {
+ namespace filter {
+ 
++using namespace boost::placeholders;
++
+ mmse_resampler_cc::sptr mmse_resampler_cc::make(float phase_shift, float resamp_ratio)
+ {
+     return gnuradio::get_initial_sptr(

@@ -1,0 +1,16 @@
+$OpenBSD: patch-gr-blocks_lib_random_pdu_impl_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
+
+Build with newer Boost. From Fedora.
+
+Index: gr-blocks/lib/random_pdu_impl.cc
+--- gr-blocks/lib/random_pdu_impl.cc.orig
++++ gr-blocks/lib/random_pdu_impl.cc
+@@ -31,6 +31,8 @@
+ namespace gr {
+ namespace blocks {
+ 
++using namespace boost::placeholders;
++
+ random_pdu::sptr
+ random_pdu::make(int min_items, int max_items, unsigned char byte_mask, int length_modulo)
+ {

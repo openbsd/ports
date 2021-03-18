@@ -1,0 +1,16 @@
+$OpenBSD: patch-gr-digital_lib_costas_loop_cc_impl_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
+
+Build with newer Boost. From Fedora.
+
+Index: gr-digital/lib/costas_loop_cc_impl.cc
+--- gr-digital/lib/costas_loop_cc_impl.cc.orig
++++ gr-digital/lib/costas_loop_cc_impl.cc
+@@ -34,6 +34,8 @@
+ namespace gr {
+ namespace digital {
+ 
++using namespace boost::placeholders;
++
+ costas_loop_cc::sptr costas_loop_cc::make(float loop_bw, int order, bool use_snr)
+ {
+     return gnuradio::get_initial_sptr(new costas_loop_cc_impl(loop_bw, order, use_snr));

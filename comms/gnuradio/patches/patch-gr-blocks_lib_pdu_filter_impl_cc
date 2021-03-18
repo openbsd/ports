@@ -1,0 +1,16 @@
+$OpenBSD: patch-gr-blocks_lib_pdu_filter_impl_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
+
+Build with newer Boost. From Fedora.
+
+Index: gr-blocks/lib/pdu_filter_impl.cc
+--- gr-blocks/lib/pdu_filter_impl.cc.orig
++++ gr-blocks/lib/pdu_filter_impl.cc
+@@ -31,6 +31,8 @@
+ namespace gr {
+ namespace blocks {
+ 
++using namespace boost::placeholders;
++
+ pdu_filter::sptr pdu_filter::make(pmt::pmt_t k, pmt::pmt_t v, bool invert)
+ {
+     return gnuradio::get_initial_sptr(new pdu_filter_impl(k, v, invert));

@@ -1,0 +1,16 @@
+$OpenBSD: patch-gr-blocks_lib_socket_pdu_impl_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
+
+Build with newer Boost. From Fedora.
+
+Index: gr-blocks/lib/socket_pdu_impl.cc
+--- gr-blocks/lib/socket_pdu_impl.cc.orig
++++ gr-blocks/lib/socket_pdu_impl.cc
+@@ -32,6 +32,8 @@
+ namespace gr {
+ namespace blocks {
+ 
++using namespace boost::placeholders;
++
+ socket_pdu::sptr socket_pdu::make(std::string type,
+                                   std::string addr,
+                                   std::string port,

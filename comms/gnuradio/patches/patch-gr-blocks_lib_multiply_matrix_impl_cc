@@ -1,0 +1,16 @@
+$OpenBSD: patch-gr-blocks_lib_multiply_matrix_impl_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
+
+Build with newer Boost. From Fedora.
+
+Index: gr-blocks/lib/multiply_matrix_impl.cc
+--- gr-blocks/lib/multiply_matrix_impl.cc.orig
++++ gr-blocks/lib/multiply_matrix_impl.cc
+@@ -31,6 +31,8 @@
+ namespace gr {
+ namespace blocks {
+ 
++using namespace boost::placeholders;
++
+ // Copy tags from input k to output l if A[l][k] is not zero
+ template <>
+ void multiply_matrix_impl<gr_complex>::propagate_tags_by_A(int noutput_items,

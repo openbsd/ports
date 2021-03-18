@@ -1,0 +1,16 @@
+$OpenBSD: patch-gr-filter_lib_freq_xlating_fir_filter_impl_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
+
+Build with newer Boost. From Fedora.
+
+Index: gr-filter/lib/freq_xlating_fir_filter_impl.cc
+--- gr-filter/lib/freq_xlating_fir_filter_impl.cc.orig
++++ gr-filter/lib/freq_xlating_fir_filter_impl.cc
+@@ -32,6 +32,8 @@
+ namespace gr {
+ namespace filter {
+ 
++using namespace boost::placeholders;
++
+ template <class IN_T, class OUT_T, class TAP_T>
+ typename freq_xlating_fir_filter<IN_T, OUT_T, TAP_T>::sptr
+ freq_xlating_fir_filter<IN_T, OUT_T, TAP_T>::make(int decimation,

@@ -1,0 +1,16 @@
+$OpenBSD: patch-gr-digital_lib_constellation_receiver_cb_impl_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
+
+Build with newer Boost. From Fedora.
+
+Index: gr-digital/lib/constellation_receiver_cb_impl.cc
+--- gr-digital/lib/constellation_receiver_cb_impl.cc.orig
++++ gr-digital/lib/constellation_receiver_cb_impl.cc
+@@ -34,6 +34,8 @@
+ namespace gr {
+ namespace digital {
+ 
++using namespace boost::placeholders;
++
+ #define VERBOSE_MM 0     // Used for debugging symbol timing loop
+ #define VERBOSE_COSTAS 0 // Used for debugging phase and frequency tracking
+ 

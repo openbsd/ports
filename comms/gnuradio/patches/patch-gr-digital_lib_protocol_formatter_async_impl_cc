@@ -1,0 +1,16 @@
+$OpenBSD: patch-gr-digital_lib_protocol_formatter_async_impl_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
+
+Build with newer Boost. From Fedora.
+
+Index: gr-digital/lib/protocol_formatter_async_impl.cc
+--- gr-digital/lib/protocol_formatter_async_impl.cc.orig
++++ gr-digital/lib/protocol_formatter_async_impl.cc
+@@ -32,6 +32,8 @@
+ namespace gr {
+ namespace digital {
+ 
++using namespace boost::placeholders;
++
+ protocol_formatter_async::sptr
+ protocol_formatter_async::make(const header_format_base::sptr& format)
+ {

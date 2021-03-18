@@ -1,0 +1,16 @@
+$OpenBSD: patch-gr-qtgui_lib_time_sink_f_impl_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
+
+Build with newer Boost. From Fedora.
+
+Index: gr-qtgui/lib/time_sink_f_impl.cc
+--- gr-qtgui/lib/time_sink_f_impl.cc.orig
++++ gr-qtgui/lib/time_sink_f_impl.cc
+@@ -40,6 +40,8 @@
+ namespace gr {
+ namespace qtgui {
+ 
++using namespace boost::placeholders;
++
+ time_sink_f::sptr time_sink_f::make(int size,
+                                     double samp_rate,
+                                     const std::string& name,

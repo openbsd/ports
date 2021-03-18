@@ -1,0 +1,16 @@
+$OpenBSD: patch-gr-blocks_lib_message_strobe_impl_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
+
+Build with newer Boost. From Fedora.
+
+Index: gr-blocks/lib/message_strobe_impl.cc
+--- gr-blocks/lib/message_strobe_impl.cc.orig
++++ gr-blocks/lib/message_strobe_impl.cc
+@@ -38,6 +38,8 @@
+ namespace gr {
+ namespace blocks {
+ 
++using namespace boost::placeholders;
++
+ message_strobe::sptr message_strobe::make(pmt::pmt_t msg, long period_ms)
+ {
+     return gnuradio::get_initial_sptr(new message_strobe_impl(msg, period_ms));

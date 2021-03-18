@@ -1,0 +1,16 @@
+$OpenBSD: patch-gr-blocks_lib_pdu_remove_impl_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
+
+Build with newer Boost. From Fedora.
+
+Index: gr-blocks/lib/pdu_remove_impl.cc
+--- gr-blocks/lib/pdu_remove_impl.cc.orig
++++ gr-blocks/lib/pdu_remove_impl.cc
+@@ -31,6 +31,8 @@
+ namespace gr {
+ namespace blocks {
+ 
++using namespace boost::placeholders;
++
+ pdu_remove::sptr pdu_remove::make(pmt::pmt_t k)
+ {
+     return gnuradio::get_initial_sptr(new pdu_remove_impl(k));

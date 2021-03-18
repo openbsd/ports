@@ -1,0 +1,16 @@
+$OpenBSD: patch-gr-fec_lib_async_decoder_impl_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
+
+Build with newer Boost. From Fedora.
+
+Index: gr-fec/lib/async_decoder_impl.cc
+--- gr-fec/lib/async_decoder_impl.cc.orig
++++ gr-fec/lib/async_decoder_impl.cc
+@@ -32,6 +32,8 @@
+ namespace gr {
+ namespace fec {
+ 
++using namespace boost::placeholders;
++
+ async_decoder::sptr
+ async_decoder::make(generic_decoder::sptr my_decoder, bool packed, bool rev_pack, int mtu)
+ {

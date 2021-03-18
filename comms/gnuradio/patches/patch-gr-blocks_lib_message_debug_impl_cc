@@ -1,0 +1,16 @@
+$OpenBSD: patch-gr-blocks_lib_message_debug_impl_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
+
+Build with newer Boost. From Fedora.
+
+Index: gr-blocks/lib/message_debug_impl.cc
+--- gr-blocks/lib/message_debug_impl.cc.orig
++++ gr-blocks/lib/message_debug_impl.cc
+@@ -32,6 +32,8 @@
+ namespace gr {
+ namespace blocks {
+ 
++using namespace boost::placeholders;
++
+ message_debug::sptr message_debug::make()
+ {
+     return gnuradio::get_initial_sptr(new message_debug_impl());

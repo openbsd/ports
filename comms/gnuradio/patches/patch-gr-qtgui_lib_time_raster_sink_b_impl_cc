@@ -1,0 +1,16 @@
+$OpenBSD: patch-gr-qtgui_lib_time_raster_sink_b_impl_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
+
+Build with newer Boost. From Fedora.
+
+Index: gr-qtgui/lib/time_raster_sink_b_impl.cc
+--- gr-qtgui/lib/time_raster_sink_b_impl.cc.orig
++++ gr-qtgui/lib/time_raster_sink_b_impl.cc
+@@ -36,6 +36,8 @@
+ namespace gr {
+ namespace qtgui {
+ 
++using namespace boost::placeholders;
++
+ time_raster_sink_b::sptr time_raster_sink_b::make(double samp_rate,
+                                                   double rows,
+                                                   double cols,

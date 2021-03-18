@@ -1,0 +1,16 @@
+$OpenBSD: patch-gr-qtgui_lib_sink_f_impl_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
+
+Build with newer Boost. From Fedora.
+
+Index: gr-qtgui/lib/sink_f_impl.cc
+--- gr-qtgui/lib/sink_f_impl.cc.orig
++++ gr-qtgui/lib/sink_f_impl.cc
+@@ -36,6 +36,8 @@
+ namespace gr {
+ namespace qtgui {
+ 
++using namespace boost::placeholders;
++
+ sink_f::sptr sink_f::make(int fftsize,
+                           int wintype,
+                           double fc,

@@ -1,0 +1,16 @@
+$OpenBSD: patch-gr-digital_lib_header_payload_demux_impl_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
+
+Build with newer Boost. From Fedora.
+
+Index: gr-digital/lib/header_payload_demux_impl.cc
+--- gr-digital/lib/header_payload_demux_impl.cc.orig
++++ gr-digital/lib/header_payload_demux_impl.cc
+@@ -31,6 +31,8 @@
+ namespace gr {
+ namespace digital {
+ 
++using namespace boost::placeholders;
++
+ const pmt::pmt_t header_payload_demux_impl::msg_port_id()
+ {
+     static const pmt::pmt_t msg_port_id = pmt::mp("header_data");

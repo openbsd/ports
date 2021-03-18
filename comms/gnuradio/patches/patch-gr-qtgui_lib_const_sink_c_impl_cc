@@ -1,0 +1,16 @@
+$OpenBSD: patch-gr-qtgui_lib_const_sink_c_impl_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
+
+Build with newer Boost. From Fedora.
+
+Index: gr-qtgui/lib/const_sink_c_impl.cc
+--- gr-qtgui/lib/const_sink_c_impl.cc.orig
++++ gr-qtgui/lib/const_sink_c_impl.cc
+@@ -35,6 +35,8 @@
+ namespace gr {
+ namespace qtgui {
+ 
++using namespace boost::placeholders;
++
+ const_sink_c::sptr
+ const_sink_c::make(int size, const std::string& name, int nconnections, QWidget* parent)
+ {

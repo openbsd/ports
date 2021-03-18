@@ -1,0 +1,16 @@
+$OpenBSD: patch-gnuradio-runtime_lib_block_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
+
+Build with newer Boost. From Fedora.
+
+Index: gnuradio-runtime/lib/block.cc
+--- gnuradio-runtime/lib/block.cc.orig
++++ gnuradio-runtime/lib/block.cc
+@@ -34,6 +34,8 @@
+ 
+ namespace gr {
+ 
++using namespace boost::placeholders;
++
+ block::block(const std::string& name,
+              io_signature::sptr input_signature,
+              io_signature::sptr output_signature)

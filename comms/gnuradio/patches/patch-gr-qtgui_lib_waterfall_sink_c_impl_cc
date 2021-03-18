@@ -1,0 +1,16 @@
+$OpenBSD: patch-gr-qtgui_lib_waterfall_sink_c_impl_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
+
+Build with newer Boost. From Fedora.
+
+Index: gr-qtgui/lib/waterfall_sink_c_impl.cc
+--- gr-qtgui/lib/waterfall_sink_c_impl.cc.orig
++++ gr-qtgui/lib/waterfall_sink_c_impl.cc
+@@ -39,6 +39,8 @@
+ namespace gr {
+ namespace qtgui {
+ 
++using namespace boost::placeholders;
++
+ waterfall_sink_c::sptr waterfall_sink_c::make(int fftsize,
+                                               int wintype,
+                                               double fc,

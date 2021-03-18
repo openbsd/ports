@@ -1,0 +1,16 @@
+$OpenBSD: patch-gr-blocks_lib_mute_impl_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
+
+Build with newer Boost. From Fedora.
+
+Index: gr-blocks/lib/mute_impl.cc
+--- gr-blocks/lib/mute_impl.cc.orig
++++ gr-blocks/lib/mute_impl.cc
+@@ -33,6 +33,8 @@
+ namespace gr {
+ namespace blocks {
+ 
++using namespace boost::placeholders;
++
+ template <class T>
+ typename mute_blk<T>::sptr mute_blk<T>::make(bool mute)
+ {

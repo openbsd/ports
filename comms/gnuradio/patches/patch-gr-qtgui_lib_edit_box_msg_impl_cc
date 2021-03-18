@@ -1,0 +1,16 @@
+$OpenBSD: patch-gr-qtgui_lib_edit_box_msg_impl_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
+
+Build with newer Boost. From Fedora.
+
+Index: gr-qtgui/lib/edit_box_msg_impl.cc
+--- gr-qtgui/lib/edit_box_msg_impl.cc.orig
++++ gr-qtgui/lib/edit_box_msg_impl.cc
+@@ -35,6 +35,8 @@
+ namespace gr {
+ namespace qtgui {
+ 
++using namespace boost::placeholders;
++
+ edit_box_msg::sptr edit_box_msg::make(data_type_t type,
+                                       const std::string& label,
+                                       const std::string& value,

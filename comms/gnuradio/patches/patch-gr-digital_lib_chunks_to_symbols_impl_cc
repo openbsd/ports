@@ -1,0 +1,16 @@
+$OpenBSD: patch-gr-digital_lib_chunks_to_symbols_impl_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
+
+Build with newer Boost. From Fedora.
+
+Index: gr-digital/lib/chunks_to_symbols_impl.cc
+--- gr-digital/lib/chunks_to_symbols_impl.cc.orig
++++ gr-digital/lib/chunks_to_symbols_impl.cc
+@@ -32,6 +32,8 @@
+ namespace gr {
+ namespace digital {
+ 
++using namespace boost::placeholders;
++
+ template <class IN_T, class OUT_T>
+ typename chunks_to_symbols<IN_T, OUT_T>::sptr
+ chunks_to_symbols<IN_T, OUT_T>::make(const std::vector<OUT_T>& symbol_table, const int D)

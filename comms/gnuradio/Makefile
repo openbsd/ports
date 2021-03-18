@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2021/02/23 19:39:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/03/18 19:51:44 rsadowski Exp $
 
 COMMENT =	signal-processing toolkit for SDR (software-defined radio)
 
 V =		3.8.2.0
 DISTNAME =	gnuradio-$V
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=  gnuradio-analog           0.0 # 3.7
 SHARED_LIBS +=  gnuradio-atsc             0.0 # 3.7

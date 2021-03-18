@@ -1,0 +1,16 @@
+$OpenBSD: patch-gr-fec_lib_async_encoder_impl_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
+
+Build with newer Boost. From Fedora.
+
+Index: gr-fec/lib/async_encoder_impl.cc
+--- gr-fec/lib/async_encoder_impl.cc.orig
++++ gr-fec/lib/async_encoder_impl.cc
+@@ -32,6 +32,8 @@
+ namespace gr {
+ namespace fec {
+ 
++using namespace boost::placeholders;
++
+ async_encoder::sptr async_encoder::make(generic_encoder::sptr my_encoder,
+                                         bool packed,
+                                         bool rev_unpack,

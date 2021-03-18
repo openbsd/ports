@@ -1,0 +1,16 @@
+$OpenBSD: patch-gr-blocks_lib_message_strobe_random_impl_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
+
+Build with newer Boost. From Fedora.
+
+Index: gr-blocks/lib/message_strobe_random_impl.cc
+--- gr-blocks/lib/message_strobe_random_impl.cc.orig
++++ gr-blocks/lib/message_strobe_random_impl.cc
+@@ -38,6 +38,8 @@
+ namespace gr {
+ namespace blocks {
+ 
++using namespace boost::placeholders;
++
+ message_strobe_random::sptr
+ message_strobe_random::make(pmt::pmt_t msg,
+                             message_strobe_random_distribution_t dist,

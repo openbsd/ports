@@ -1,0 +1,16 @@
+$OpenBSD: patch-gr-digital_lib_crc32_async_bb_impl_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
+
+Build with newer Boost. From Fedora.
+
+Index: gr-digital/lib/crc32_async_bb_impl.cc
+--- gr-digital/lib/crc32_async_bb_impl.cc.orig
++++ gr-digital/lib/crc32_async_bb_impl.cc
+@@ -31,6 +31,8 @@
+ namespace gr {
+ namespace digital {
+ 
++using namespace boost::placeholders;
++
+ crc32_async_bb::sptr crc32_async_bb::make(bool check)
+ {
+     return gnuradio::get_initial_sptr(new crc32_async_bb_impl(check));

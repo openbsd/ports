@@ -1,0 +1,16 @@
+$OpenBSD: patch-gr-blocks_lib_repeat_impl_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
+
+Build with newer Boost. From Fedora.
+
+Index: gr-blocks/lib/repeat_impl.cc
+--- gr-blocks/lib/repeat_impl.cc.orig
++++ gr-blocks/lib/repeat_impl.cc
+@@ -30,6 +30,8 @@
+ namespace gr {
+ namespace blocks {
+ 
++using namespace boost::placeholders;
++
+ repeat::sptr repeat::make(size_t itemsize, int interp)
+ {
+     return gnuradio::get_initial_sptr(new repeat_impl(itemsize, interp));
