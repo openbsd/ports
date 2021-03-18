@@ -1,12 +1,20 @@
-$OpenBSD: patch-src_cpp_core_system_PosixSystem_cpp,v 1.1.1.1 2020/07/01 18:10:07 bcallah Exp $
+$OpenBSD: patch-src_cpp_core_system_PosixSystem_cpp,v 1.2 2021/03/18 19:53:58 rsadowski Exp $
 
-Adapted from FreeBSD.
-No way to get the path of an executable at runtime.
+- No way to get the path of an executable at runtime.
+- Add support for boost 1.73.
 
 Index: src/cpp/core/system/PosixSystem.cpp
 --- src/cpp/core/system/PosixSystem.cpp.orig
 +++ src/cpp/core/system/PosixSystem.cpp
-@@ -47,13 +47,18 @@
+@@ -23,6 +23,7 @@
+ 
+ #include <boost/algorithm/string.hpp>
+ #include <boost/range/as_array.hpp>
++#include <boost/bind.hpp>
+ 
+ #include <signal.h>
+ #include <fcntl.h>
+@@ -47,13 +48,18 @@
  #include <gsl/gsl>
  #endif
  
@@ -26,7 +34,7 @@ Index: src/cpp/core/system/PosixSystem.cpp
  #include <boost/thread.hpp>
  #include <boost/format.hpp>
  #include <boost/lexical_cast.hpp>
-@@ -926,9 +931,8 @@ Error executablePath(const char * argv0,
+@@ -926,9 +932,8 @@ Error executablePath(const char * argv0,
     // need to also search the PATH for the exe name in argv[0]
     //
  
@@ -38,7 +46,7 @@ Index: src/cpp/core/system/PosixSystem.cpp
  
  #endif
  
-@@ -1405,9 +1409,11 @@ Error osResourceLimit(ResourceLimit limit, int* pLimit
+@@ -1405,9 +1410,11 @@ Error osResourceLimit(ResourceLimit limit, int* pLimit
  {
     switch(limit)
     {
@@ -50,7 +58,7 @@ Index: src/cpp/core/system/PosixSystem.cpp
        case FilesLimit:
           *pLimit = RLIMIT_NOFILE;
           break;
-@@ -1426,7 +1432,7 @@ Error osResourceLimit(ResourceLimit limit, int* pLimit
+@@ -1426,7 +1433,7 @@ Error osResourceLimit(ResourceLimit limit, int* pLimit
        case CpuLimit:
           *pLimit = RLIMIT_CPU;
           break;
@@ -59,7 +67,7 @@ Index: src/cpp/core/system/PosixSystem.cpp
        case NiceLimit:
           *pLimit = RLIMIT_NICE;
           break;
-@@ -1499,7 +1505,7 @@ Error systemInformation(SysInfo* pSysInfo)
+@@ -1499,7 +1506,7 @@ Error systemInformation(SysInfo* pSysInfo)
  {
     pSysInfo->cores = boost::thread::hardware_concurrency();
  
@@ -68,7 +76,7 @@ Index: src/cpp/core/system/PosixSystem.cpp
     struct sysinfo info;
     if (::sysinfo(&info) == -1)
        return systemError(errno, ERROR_LOCATION);
-@@ -1939,7 +1945,7 @@ Error restrictCoreDumps()
+@@ -1939,7 +1946,7 @@ Error restrictCoreDumps()
        return error;
  
     // no ptrace core dumps permitted
@@ -77,7 +85,7 @@ Index: src/cpp/core/system/PosixSystem.cpp
     int res = ::prctl(PR_SET_DUMPABLE, 0);
     if (res == -1)
        return systemError(errno, ERROR_LOCATION);
-@@ -1950,7 +1956,7 @@ Error restrictCoreDumps()
+@@ -1950,7 +1957,7 @@ Error restrictCoreDumps()
  
  Error enableCoreDumps()
  {
@@ -86,7 +94,7 @@ Index: src/cpp/core/system/PosixSystem.cpp
     int res = ::prctl(PR_SET_DUMPABLE, 1);
     if (res == -1)
        return systemError(errno, ERROR_LOCATION);
-@@ -1976,7 +1982,7 @@ void printCoreDumpable(const std::string& context)
+@@ -1976,7 +1983,7 @@ void printCoreDumpable(const std::string& context)
     ostr << "  hard limit: " << rLimitHard << std::endl;
  
     // ptrace

@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_cpp_core_system_PosixOutputCapture_cpp,v 1.1 2021/03/18 19:53:58 rsadowski Exp $
+
+Add support for boost 1.73.
+
+Index: src/cpp/core/system/PosixOutputCapture.cpp
+--- src/cpp/core/system/PosixOutputCapture.cpp.orig
++++ src/cpp/core/system/PosixOutputCapture.cpp
+@@ -28,6 +28,8 @@
+ 
+ #include <core/system/System.hpp>
+ 
++#include <boost/bind.hpp>
++
+ namespace rstudio {
+ namespace core {
+ namespace system {
