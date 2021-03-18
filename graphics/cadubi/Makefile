@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:46:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2021/03/18 09:47:23 fcambus Exp $
 
 COMMENT=	ASCII drawing utility
 
 GH_ACCOUNT =	statico
 GH_PROJECT =	cadubi
-GH_TAGNAME =	v1.3.3
+GH_TAGNAME =	v1.3.4
 
 CATEGORIES=	graphics editors
 

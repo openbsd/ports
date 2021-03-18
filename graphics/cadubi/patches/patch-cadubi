@@ -1,7 +1,17 @@
-$OpenBSD: patch-cadubi,v 1.4 2016/10/04 21:22:42 fcambus Exp $
---- cadubi.orig	Fri Sep 30 08:27:04 2016
-+++ cadubi	Fri Sep 30 08:27:28 2016
-@@ -12,7 +12,7 @@ $VERSION = '1.3.1';
+$OpenBSD: patch-cadubi,v 1.5 2021/03/18 09:47:23 fcambus Exp $
+
+- Fix path to help file.
+- Pass a list to erasechar.
+
+  Currently hitting one of the erase buttons causes HASHBLBLBALBALBA
+  to be printed. This fixes the issue.
+
+  Upstream commit 9cdde76546af7eaab54292df3a336b9b489a69e3.
+
+Index: cadubi
+--- cadubi.orig
++++ cadubi
+@@ -12,7 +12,7 @@ $VERSION = '1.3.4';
  # (sorry guys, i wrote this years before i had the remotest clue as to
  #  what the hell i was doing)
  use FindBin qw($Bin);
@@ -10,3 +20,12 @@ $OpenBSD: patch-cadubi,v 1.4 2016/10/04 21:22:42 fcambus Exp $
  
  # other stuff
  $DEBUG = 0;
+@@ -345,7 +345,7 @@ sub paintchar { # prints the char on screen and saves 
+ 
+ sub erasechar { # saves blank char to $charmap, prints
+     $charmap->[$pos[0]][$pos[1]] = undef;
+-    print &printchar({$charmap->[$pos[0]][$pos[1]]});
++    print &printchar(($charmap->[$pos[0]][$pos[1]]));
+     &curs_move(@pos); #print moves to the right on us, without asking. the nerve!
+ }
+ 
