@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/08/21 21:22:27 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/03/18 08:40:41 fcambus Exp $
 ${GEM_BIN}/kramdown${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -321,6 +321,8 @@ ${GEM_LIB}/gems/${DISTNAME}/test/testcases/block/09_html/simple.options
 ${GEM_LIB}/gems/${DISTNAME}/test/testcases/block/09_html/simple.text
 ${GEM_LIB}/gems/${DISTNAME}/test/testcases/block/09_html/standalone_image_in_div.htmlinput
 ${GEM_LIB}/gems/${DISTNAME}/test/testcases/block/09_html/standalone_image_in_div.text
+${GEM_LIB}/gems/${DISTNAME}/test/testcases/block/09_html/table.kramdown
+${GEM_LIB}/gems/${DISTNAME}/test/testcases/block/09_html/table.text
 ${GEM_LIB}/gems/${DISTNAME}/test/testcases/block/09_html/textarea.html
 ${GEM_LIB}/gems/${DISTNAME}/test/testcases/block/09_html/textarea.text
 ${GEM_LIB}/gems/${DISTNAME}/test/testcases/block/09_html/xml.html
@@ -551,6 +553,8 @@ ${GEM_LIB}/gems/${DISTNAME}/test/testcases/span/abbreviations/abbrev.html
 ${GEM_LIB}/gems/${DISTNAME}/test/testcases/span/abbreviations/abbrev.text
 ${GEM_LIB}/gems/${DISTNAME}/test/testcases/span/abbreviations/abbrev_defs.html
 ${GEM_LIB}/gems/${DISTNAME}/test/testcases/span/abbreviations/abbrev_defs.text
+${GEM_LIB}/gems/${DISTNAME}/test/testcases/span/abbreviations/abbrev_in_html.html
+${GEM_LIB}/gems/${DISTNAME}/test/testcases/span/abbreviations/abbrev_in_html.text
 ${GEM_LIB}/gems/${DISTNAME}/test/testcases/span/abbreviations/in_footnote.html
 ${GEM_LIB}/gems/${DISTNAME}/test/testcases/span/abbreviations/in_footnote.text
 ${GEM_LIB}/gems/${DISTNAME}/test/testcases/span/autolinks/
