@@ -1,4 +1,4 @@
-$OpenBSD: patch-ext_libclementine-common_core_logging_cpp,v 1.5 2020/01/26 17:37:07 rsadowski Exp $
+$OpenBSD: patch-ext_libclementine-common_core_logging_cpp,v 1.6 2021/03/18 18:04:32 tb Exp $
 Use shiny CMake FindBacktrace module.
 Index: ext/libclementine-common/core/logging.cpp
 --- ext/libclementine-common/core/logging.cpp.orig
@@ -9,16 +9,16 @@ Index: ext/libclementine-common/core/logging.cpp
  
 +#include <config.h>
 +
- #include <QtGlobal>
- 
  #include <cxxabi.h>
+ 
+ #include <QtGlobal>
 -#ifdef Q_OS_UNIX
 -#include <execinfo.h>
 -#endif
  
- #include <iostream>
+ #include <glib.h>
  
-@@ -254,7 +253,7 @@ QString DemangleSymbol(const QString& symbol) {
+@@ -315,7 +314,7 @@ QString DemangleSymbol(const QString& symbol) {
  }
  
  void DumpStackTrace() {
@@ -27,7 +27,7 @@ Index: ext/libclementine-common/core/logging.cpp
    void* callstack[128];
    int callstack_size =
        backtrace(reinterpret_cast<void**>(&callstack), sizeof(callstack));
-@@ -267,7 +266,7 @@ void DumpStackTrace() {
+@@ -328,7 +327,7 @@ void DumpStackTrace() {
    }
    free(symbols);
  #else

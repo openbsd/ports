@@ -1,13 +1,14 @@
-$OpenBSD: patch-src_ripper_ripper_h,v 1.1 2020/01/26 17:37:07 rsadowski Exp $
+$OpenBSD: patch-src_ripper_ripper_h,v 1.2 2021/03/18 18:04:32 tb Exp $
 
 Index: src/ripper/ripper.h
 --- src/ripper/ripper.h.orig
 +++ src/ripper/ripper.h
-@@ -18,9 +18,10 @@
+@@ -18,10 +18,10 @@
  #ifndef SRC_RIPPER_RIPPER_H_
  #define SRC_RIPPER_RIPPER_H_
  
 -#include <cdio/cdio.h>
+-
  #include <QMutex>
  #include <QObject>
 +

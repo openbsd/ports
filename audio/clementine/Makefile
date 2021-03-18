@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.45 2021/02/18 20:55:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2021/03/18 18:04:32 tb Exp $
 
 COMMENT =	music player
 
 GH_ACCOUNT =	clementine-player
 GH_PROJECT =	Clementine
-GH_TAGNAME =	1.4.0rc1
-PKGNAME =	clementine-${GH_TAGNAME}
-REVISION=	3
+GH_TAGNAME =	1.4.0rc1-510-g3f34b332c
+PKGNAME =	clementine-${GH_TAGNAME:C/-510.*/pl510/}
 
 CATEGORIES =	audio x11
 
-HOMEPAGE =	https://clementine-player.org/
+HOMEPAGE =	https://www.clementine-player.org/
 
 # GPLv2/LGPLv2/GFDL
 PERMIT_PACKAGE = Yes

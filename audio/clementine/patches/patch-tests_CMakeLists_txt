@@ -1,4 +1,4 @@
-$OpenBSD: patch-tests_CMakeLists_txt,v 1.2 2020/01/26 17:37:07 rsadowski Exp $
+$OpenBSD: patch-tests_CMakeLists_txt,v 1.3 2021/03/18 18:04:32 tb Exp $
 
 Respect CXXFLAGS
 
@@ -8,8 +8,8 @@ Index: tests/CMakeLists.txt
 @@ -1,6 +1,6 @@
  cmake_minimum_required(VERSION 2.8.11)
  
--set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x -fpermissive -Wno-c++11-narrowing -U__STRICT_ANSI__")
-+set(CMAKE_CXX_FLAGS "-std=c++0x -fpermissive -Wno-c++11-narrowing -U__STRICT_ANSI__ ${CMAKE_CXX_FLAGS}")
+-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fpermissive -Wno-c++11-narrowing")
++set(CMAKE_CXX_FLAGS "-fpermissive -Wno-c++11-narrowing -${CMAKE_CXX_FLAGS}")
  
  if(USE_SYSTEM_GMOCK)
    include_directories(${GMOCK_INCLUDE_DIRS} ${GTEST_INCLUDE_DIRS})

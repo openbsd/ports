@@ -1,5 +1,5 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.5 2020/01/26 17:37:07 rsadowski Exp $
-1. -Wno-unused-private-field -Wno-unknown-warning-option dont exist on gcc 4.8
+$OpenBSD: patch-src_CMakeLists_txt,v 1.6 2021/03/18 18:04:32 tb Exp $
+1. -Wno-unused-private-field -Wno-unknown-warning-option don't exist on gcc 4.8
 2. Respect CXXFLAGS
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
@@ -7,8 +7,8 @@ Index: src/CMakeLists.txt
 @@ -1,6 +1,6 @@
  
  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
--set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Woverloaded-virtual -Wall -Wno-sign-compare -Wno-deprecated-declarations -Wno-unused-local-typedefs -Wno-unused-private-field -Wno-unknown-warning-option --std=c++0x -U__STRICT_ANSI__")
-+set(CMAKE_CXX_FLAGS "-Woverloaded-virtual -Wall -Wno-sign-compare -Wno-deprecated-declarations -Wno-unused-local-typedefs --std=c++0x -U__STRICT_ANSI__ ${CMAKE_CXX_FLAGS}")
+-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Woverloaded-virtual -Wall -Wno-sign-compare -Wno-deprecated-declarations -Wno-unused-local-typedefs -Wno-unused-private-field -Wno-unknown-warning-option")
++set(CMAKE_CXX_FLAGS "-Woverloaded-virtual -Wall -Wno-sign-compare -Wno-deprecated-declarations -Wno-unused-local-typedefs ${CMAKE_CXX_FLAGS}")
  
  option(BUILD_WERROR "Build with -Werror" ON)
  

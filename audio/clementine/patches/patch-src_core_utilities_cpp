@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_core_utilities_cpp,v 1.5 2020/01/26 17:37:07 rsadowski Exp $
+$OpenBSD: patch-src_core_utilities_cpp,v 1.6 2021/03/18 18:04:32 tb Exp $
 1. Add support for OpenBSD sensors framework when checking if this PC
    is a laptop.
 Index: src/core/utilities.cpp
 --- src/core/utilities.cpp.orig
 +++ src/core/utilities.cpp
-@@ -66,6 +66,14 @@
+@@ -67,6 +67,14 @@
  #ifdef Q_OS_DARWIN
  #include <sys/resource.h>
  #endif
@@ -18,8 +18,8 @@ Index: src/core/utilities.cpp
 +#endif
  
  #ifdef Q_OS_DARWIN
- #include "core/mac_startup.h"
-@@ -690,9 +698,25 @@ bool IsLaptop() {
+ #include <QProcess>
+@@ -697,9 +705,25 @@ bool IsLaptop() {
      }
    }
    return false;
