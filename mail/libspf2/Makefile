@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/17 14:46:33 danj Exp $
+# $OpenBSD: Makefile,v 1.16 2021/03/19 13:09:13 sthen Exp $
 
 COMMENT=	SPF library
 
 DISTNAME=	libspf2-1.2.10
-REVISION=	5
+REVISION=	6
 
 SHARED_LIBS +=	spf2                 4.0      # 3.0
 
 CATEGORIES=	mail
-HOMEPAGE=	http://www.libspf2.org/
+HOMEPAGE=	https://www.libspf2.org/
 
 MASTER_SITES=	${HOMEPAGE}/spf/
 
