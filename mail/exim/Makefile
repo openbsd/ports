@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2020/06/02 12:44:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.132 2021/03/19 15:59:50 sthen Exp $
 
 COMMENT-main =		flexible mail transfer agent
 COMMENT-eximon =	X11 monitor tool for Exim MTA
@@ -8,6 +8,8 @@ DISTNAME =		exim-${VERSION}
 PKGNAME-main =		exim-${VERSION}
 FULLPKGNAME-eximon =	exim-eximon-${VERSION}
 FULLPKGPATH-eximon =	${PKGPATH},-eximon
+
+REVISION =		0
 
 CATEGORIES =		mail
 
@@ -19,7 +21,8 @@ MAINTAINER =		Renaud Allard <renaud@allard.it>
 PERMIT_PACKAGE =	Yes
 
 cWANTLIB =		c m
-WANTLIB-main =		${cWANTLIB} crypto iconv perl pcre spf2 ssl
+WANTLIB-main =		${cWANTLIB} crypto iconv perl pcre spf2 \
+			ssl opendmarc
 WANTLIB-eximon =	${cWANTLIB} X11 Xaw Xext Xmu Xt pcre
 
 MASTER_SITES =		https://ftp.exim.org/pub/exim/exim4/ \
@@ -31,7 +34,8 @@ MASTER_SITES =		https://ftp.exim.org/pub/exim/exim4/ \
 
 LIB_DEPENDS-main =	converters/libiconv \
 			devel/pcre \
-			mail/libspf2
+			mail/libspf2 \
+			mail/opendmarc
 RUN_DEPENDS-eximon =	${PKGPATH},-main
 LIB_DEPENDS-eximon =	devel/pcre
 
@@ -44,6 +48,8 @@ MULTI_PACKAGES =	-main -eximon
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 .include <bsd.port.arch.mk>
+
+EXIM_MAKECAT +=		"\n\# Porters note: this chunk should be removed after 'make update-patches'\n"
 
 .if ${BUILD_PACKAGES:M-eximon}
 EXIM_MAKECAT +=		"EXIM_MONITOR=eximon.bin\n"

@@ -1,4 +1,4 @@
-$OpenBSD: patch-Local_Makefile,v 1.4 2020/06/02 12:44:19 sthen Exp $
+$OpenBSD: patch-Local_Makefile,v 1.5 2021/03/19 15:59:50 sthen Exp $
 
 Index: Local/Makefile
 --- Local/Makefile.orig
@@ -97,6 +97,18 @@ Index: Local/Makefile
  
  # If you have content scanning you may wish to only include some of the scanner
  # interfaces.  Uncomment any of these lines to remove that code.
+@@ -595,9 +595,9 @@ DISABLE_MAL_MKS=yes
+ 
+ # Uncomment the following line to add DMARC checking capability, implemented
+ # using libopendmarc libraries. You must have SPF and DKIM support enabled also.
+-# SUPPORT_DMARC=yes
++SUPPORT_DMARC=yes
+ # CFLAGS += -I/usr/local/include
+-# LDFLAGS += -lopendmarc
++LDFLAGS += -lopendmarc
+ # Uncomment the following if you need to change the default. You can
+ # override it at runtime (main config option dmarc_tld_file)
+ # DMARC_TLD_FILE=/etc/exim/opendmarc.tlds
 @@ -758,18 +758,18 @@ FIXED_NEVER_USERS=root
  # included in the Exim binary. You will then need to set up the run time
  # configuration to make use of the mechanism(s) selected.
