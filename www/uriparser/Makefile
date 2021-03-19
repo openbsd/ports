@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2020/06/01 13:42:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/03/19 14:29:13 sthen Exp $
 
 COMMENT =		URI parsing library
 
 GH_ACCOUNT =		uriparser
 GH_PROJECT =		uriparser
-GH_TAGNAME =		uriparser-0.9.4
+GH_TAGNAME =		uriparser-0.9.5
 PKGNAME =		${GH_TAGNAME}
 
 SHARED_LIBS +=  uriparser                 3.1 # 1.0
