@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/12/16 16:53:48 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2021/03/19 21:52:02 bcallah Exp $
 
-V =		1.1.2
+V =		1.1.3
 COMMENT =	utility to run CP/M-80 programs under Unix
 DISTNAME =	tnylpo-${V}
 CATEGORIES =	emulators
