@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/27 21:04:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/03/19 20:49:55 bluhm Exp $
 
 COMMENT=	SOFA (Spatially Oriented Format for Acoustics) file reader
 
-VER=		1.0
+VER=		1.2
 CATEGORIES=	audio
 GH_ACCOUNT=	hoene
 GH_PROJECT=	libmysofa
