@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2021/03/08 13:59:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/03/19 11:58:07 sthen Exp $
 
 COMMENT =		manage DNS configuration across any number of DNS hosts
 
@@ -19,6 +19,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		c pthread
 
 MODULES =		lang/go
+FIX_CLEANUP_PERMISSIONS = Yes
 
 DOCDIR =		${PREFIX}/share/doc/dnscontrol
 
