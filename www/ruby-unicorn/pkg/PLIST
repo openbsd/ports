@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2020/01/14 16:50:13 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/03/19 17:49:51 jeremy Exp $
 ${GEM_BIN}/unicorn${GEM_BIN_SUFFIX}
 ${GEM_BIN}/unicorn_rails${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -91,7 +91,6 @@ ${GEM_LIB}/gems/${DISTNAME}/t/detach.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/env.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/fails-rack-lint.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/heartbeat-timeout.ru
-${GEM_LIB}/gems/${DISTNAME}/t/hijack.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/listener_names.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/my-tap-lib.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/oob_gc.ru
@@ -129,7 +128,6 @@ ${GEM_LIB}/gems/${DISTNAME}/t/t0022-listener_names-preload_app.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0100-rack-input-tests.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0116-client_body_buffer_size.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0116.ru
-${GEM_LIB}/gems/${DISTNAME}/t/t0200-rack-hijack.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0300-no-default-middleware.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0301-no-default-middleware-ignored-in-config.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0301.ru
