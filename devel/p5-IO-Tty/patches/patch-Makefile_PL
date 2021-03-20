@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile_PL,v 1.1 2021/03/20 15:38:39 bluhm Exp $
+
+https://github.com/toddr/IO-Tty/pull/28
+
+Index: Makefile.PL
+--- Makefile.PL.orig
++++ Makefile.PL
+@@ -15,7 +15,7 @@ use Config qw(%Config);
+ 
+ my %cfg;
+ @cfg{qw(cc ccflags ldflags)} = @Config{qw(cc ccflags ldflags)};
+-for my $arg (@ARGV) {
++for (@ARGV) {
+   if ( /^(CC|CCFLAGS|LDFLAGS)=(.*)/i ) {
+     $cfg{lc($1)} = $2;
+   }

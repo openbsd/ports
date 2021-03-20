@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.26 2020/11/05 20:40:54 benoit Exp $
+# $OpenBSD: Makefile,v 1.27 2021/03/20 15:38:39 bluhm Exp $
 
-COMMENT=		provide an interface to create pseudo ttys
+COMMENT =	provide an interface to create pseudo ttys
 
-MODULES=		cpan
-DISTNAME =		IO-Tty-1.15
-CATEGORIES=		devel
+DISTNAME =	IO-Tty-1.16
 
-FIX_EXTRACT_PERMISSIONS =	Yes
+CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
 
-WANTLIB += c perl util
+WANTLIB =		c perl util
+
+MODULES =		cpan
 
 .include <bsd.port.mk>

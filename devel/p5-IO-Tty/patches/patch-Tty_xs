@@ -1,0 +1,16 @@
+$OpenBSD: patch-Tty_xs,v 1.4 2021/03/20 15:38:39 bluhm Exp $
+
+https://github.com/toddr/IO-Tty/pull/29
+
+Index: Tty.xs
+--- Tty.xs.orig
++++ Tty.xs
+@@ -864,7 +864,7 @@ unpack_winsize(winsize)
+ 	struct winsize ws;
+     PPCODE:
+ 	if(SvCUR(winsize) != sizeof(ws))
+-	    croak("IO::Tty::unpack_winsize(): Bad arg length - got %d, expected %d",
++	    croak("IO::Tty::unpack_winsize(): Bad arg length - got %zd, expected %zd",
+ 		SvCUR(winsize), sizeof(ws));
+ 	Copy(SvPV_nolen(winsize), &ws, sizeof(ws), char);
+ 	EXTEND(SP, 4);
