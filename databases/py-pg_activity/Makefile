@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/03/20 21:23:58 sthen Exp $
 
 COMMENT =		command line tool for PostgreSQL server activity monitoring
 
-MODPY_EGG_VERSION =	1.5.0
+MODPY_EGG_VERSION =	2.1.2
 DISTNAME =		pg_activity-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
 
-GH_ACCOUNT =		julmon
+GH_ACCOUNT =		dalibo
 GH_PROJECT =		pg_activity
 GH_TAGNAME =		v${MODPY_EGG_VERSION}
 
@@ -18,11 +17,13 @@ MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_SETUPTOOLS =	Yes
 MODPY_SETUP_ARGS =	--with-man
-RUN_DEPENDS =		databases/py-psycopg2 \
-			sysutils/py-psutil
+RUN_DEPENDS =		databases/py-psycopg2${MODPY_FLAVOR} \
+			devel/py-attrs${MODPY_FLAVOR} \
+			sysutils/py-blessed${MODPY_FLAVOR} \
+			sysutils/py-psutil${MODPY_FLAVOR} \
+			textproc/py-humanize${MODPY_FLAVOR}
 
 post-patch:
 	sed -i 's|/usr/share|${LOCALBASE}|' ${WRKSRC}/setup.py

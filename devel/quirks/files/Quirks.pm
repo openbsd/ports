@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1247 2021/03/15 21:40:46 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1248 2021/03/20 21:23:58 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -615,6 +615,7 @@ my $stem_extensions = {
 	'py-setproctitle' => 'py3-setproctitle',
 	'py-ptyprocess' => 'py3-ptyprocess',
 	'py-jwt' => 'py3-jwt',
+	'py-pg_activity' => 'pg_activity', # removing py- prefix
 };
 
 my $obsolete_reason = {
