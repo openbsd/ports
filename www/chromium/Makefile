@@ -1,8 +1,13 @@
-# $OpenBSD: Makefile,v 1.553 2021/03/16 21:15:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.554 2021/03/20 19:45:44 sthen Exp $
 
 USE_WXNEEDED=		Yes
 
+.include <bsd.port.arch.mk>
+.if ${MACHINE_ARCH} == "i386"
+DPB_PROPERTIES=		lonesome
+.else
 DPB_PROPERTIES=		parallel parallel2
+.endif
 
 COMMENT=		Chromium browser
 
