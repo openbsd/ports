@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/03/20 14:14:24 bluhm Exp $
 
 COMMENT =	fail if tests warn
 
-DISTNAME =	Test2-Plugin-NoWarnings-0.08
-REVISION =	0
+DISTNAME =	Test2-Plugin-NoWarnings-0.09
+CPAN_AUTHOR =	DROLSKY
 
 CATEGORIES =	devel
 
@@ -11,12 +11,10 @@ CATEGORIES =	devel
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
-TEST_DEPENDS =		sysutils/p5-Capture-Tiny \
-			devel/p5-IPC-Run3 \
+
+TEST_DEPENDS =		devel/p5-IPC-Run3 \
 			devel/p5-Test2-Suite
 
 PKG_ARCH =		*
-
-CPAN_AUTHOR =	DROLSKY
 
 .include <bsd.port.mk>
