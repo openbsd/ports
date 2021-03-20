@@ -1,1 +1,4 @@
-Perl module that contains code to deal with time periods. 
+The inPeriod function determines if a given time falls within a
+given period.  inPeriod returns 1 if the time does fall within the
+given period, 0 if not, and -1 if inPeriod detects a malformed time
+or period.
