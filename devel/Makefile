@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2089 2021/03/20 15:57:03 daniel Exp $
+# $OpenBSD: Makefile,v 1.2090 2021/03/20 22:35:11 sebastia Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1485,7 +1485,7 @@
      SUBDIR += py-magic,python3
      SUBDIR += py-mccabe
      SUBDIR += py-mccabe,python3
-     SUBDIR += py-minidump
+     SUBDIR += py-minidump,python3
      SUBDIR += py-minimock
      SUBDIR += py-minimock,python3
      SUBDIR += py-mock
