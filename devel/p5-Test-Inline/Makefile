@@ -1,24 +1,27 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/03/20 12:36:32 bluhm Exp $
 
-COMMENT=	inlining your tests next to the code being tested
+COMMENT =	inlining your tests next to the code being tested
 
-MODULES=	cpan
-PKG_ARCH=	*
-DISTNAME=	Test-Inline-2.213
-CATEGORIES=	devel
-REVISION=	0
+DISTNAME =	Test-Inline-2.214
+FIX_EXTRACT_PERMISSIONS =	Yes
 
-# perl
-PERMIT_PACKAGE=	Yes
+CATEGORIES =	devel
 
-RUN_DEPENDS=	devel/p5-Algorithm-Dependency \
-		devel/p5-Config-Tiny \
-		devel/p5-File-chmod \
-		devel/p5-File-Find-Rule \
-		devel/p5-File-Flat \
-		devel/p5-File-Slurp \
-		devel/p5-Test-Script \
-		textproc/p5-Pod-Tests
-BUILD_DEPENDS=	${RUN_DEPENDS}
+# Perl
+PERMIT_PACKAGE	=	Yes
+
+MODULES	=		cpan
+RUN_DEPENDS =		devel/p5-Algorithm-Dependency>=1.02 \
+			devel/p5-Config-Tiny>=2.00 \
+			devel/p5-File-Find-Rule>=0.26 \
+			devel/p5-File-Flat>=1.00 \
+			devel/p5-File-Remove>=0.37 \
+			devel/p5-File-chmod>=0.31 \
+			devel/p5-Params-Util>=0.21 \
+			devel/p5-Path-Tiny
+TEST_DEPENDS =		devel/p5-Test-ClassAPI>=1.02 \
+			devel/p5-Test-Script>=1.02
+
+PKG_ARCH =	*
 
 .include <bsd.port.mk>
