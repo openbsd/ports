@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2020/07/03 21:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2021/03/20 13:52:18 bluhm Exp $
 
 COMMENT =	perl module to manage MIME types
 
-DISTNAME =	MIME-Types-2.17
-REVISION =	0
+DISTNAME =	MIME-Types-2.18
 
 CATEGORIES =	mail
 
