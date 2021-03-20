@@ -1,18 +1,8 @@
-$OpenBSD: patch-doc_socat_1,v 1.7 2015/04/13 14:43:28 jasper Exp $
---- doc/socat.1.orig	Sat Jan 24 17:30:52 2015
-+++ doc/socat.1	Mon Apr 13 14:58:09 2015
-@@ -2904,10 +2904,6 @@ in this file\&.
- Specifies the directory with the trusted (root) certificates\&. The directory
- must contain certificates in PEM format and their hashes (see OpenSSL
- documentation) 
--.IP "\fB\f(CWegd=<filename>\fP\fP"
--On some systems, openssl requires an explicit source of random data\&. Specify
--the socket name where an entropy gathering daemon like egd provides random
--data, e\&.g\&. /dev/egd\-pool\&.
- .IP "\fB\f(CWpseudo\fP\fP"
- On systems where openssl cannot find an entropy source and where no entropy
- gathering daemon can be utilized, this option activates a mechanism for
-@@ -3397,11 +3393,11 @@ connection, invokes a shell\&. This shell has its stdi
+$OpenBSD: patch-doc_socat_1,v 1.8 2021/03/20 16:24:37 tb Exp $
+Index: doc/socat.1
+--- doc/socat.1.orig
++++ doc/socat.1
+@@ -3639,11 +3635,11 @@ connection, invokes a shell\&. This shell has its stdi
  connected to the TCP socket (nofork)\&.  The shell starts filan and lets it print the socket addresses to
  stderr (your terminal window)\&.
  .IP 
@@ -26,7 +16,7 @@ $OpenBSD: patch-doc_socat_1,v 1.7 2015/04/13 14:43:28 jasper Exp $
  to make the squid executable from Cygwin run under Windows, actual per May 2004)\&.
  .IP 
  .IP "\fB\f(CWsocat \- tcp:www\&.blackhat\&.org:31337,readbytes=1000\fP\fP"
-@@ -3524,11 +3520,11 @@ error\&. 
+@@ -3810,11 +3806,11 @@ error\&. 
  .SH "FILES"
  
  .PP 

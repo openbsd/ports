@@ -1,0 +1,23 @@
+$OpenBSD: patch-fdname_c,v 1.1 2021/03/20 16:24:37 tb Exp $
+
+Index: fdname.c
+--- fdname.c.orig
++++ fdname.c
+@@ -254,10 +254,14 @@ int sockname(int fd, FILE *outfile, char style) {
+ 
+ #if defined(SO_PROTOCOL) || defined(SO_PROTOTYPE)
+ #if HAVE_GETPROTOBYNUMBER_R
+-   rc = getprotobynumber_r(proto, &protoent, protoname, sizeof(protoname), &protoentp);
+-   if (protoentp == NULL) {
++   struct protoent_data pdata;
++   memset(&protoent, 0, sizeof(protoent));
++   memset(&pdata, 0, sizeof(pdata));
++   rc = getprotobynumber_r(proto, &protoent, &pdata);
++   protoentp = &protoent;
++   if (rc == -1) {
+       Warn2("sockname(): getprotobynumber_r(proto=%d, ...): %s",
+-	    proto, strerror(rc));
++	    proto, strerror(errno));
+    }
+    strncpy(protoname, protoentp->p_name, sizeof(protoname));
+ #elif HAVE_GETPROTOBYNUMBER

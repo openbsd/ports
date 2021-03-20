@@ -1,18 +1,8 @@
-$OpenBSD: patch-doc_socat_html,v 1.2 2015/04/13 14:43:28 jasper Exp $
---- doc/socat.html.orig	Sat Jan 24 17:31:04 2015
-+++ doc/socat.html	Mon Apr 13 14:58:09 2015
-@@ -2781,10 +2781,6 @@ These options apply to the <a href="socat.html#ADDRESS
-    Specifies the directory with the trusted (root) certificates. The directory
-    must contain certificates in PEM format and their hashes (see OpenSSL
-    documentation) 
--<a name="OPTION_OPENSSL_EGD"></a><p><dt><strong><strong><code>egd=&lt;filename&gt;</code></strong></strong><dd>
--   On some systems, openssl requires an explicit source of random data. Specify
--   the socket name where an entropy gathering daemon like egd provides random
--   data, e.g. /dev/egd-pool.
- <a name="OPTION_OPENSSL_PSEUDO"></a><p><dt><strong><strong><code>pseudo</code></strong></strong><dd>
-    On systems where openssl cannot find an entropy source and where no entropy
-    gathering daemon can be utilized, this option activates a mechanism for
-@@ -3309,10 +3305,10 @@ connection, invokes a shell. This shell has its stdin 
+$OpenBSD: patch-doc_socat_html,v 1.3 2021/03/20 16:24:37 tb Exp $
+Index: doc/socat.html
+--- doc/socat.html.orig
++++ doc/socat.html
+@@ -3509,10 +3505,10 @@ connection, invokes a shell. This shell has its stdin 
  connected to the TCP socket (<a href="socat.html#OPTION_NOFORK">nofork</a>).  The shell starts filan and lets it print the socket addresses to
  stderr (your terminal window).
  <p>
@@ -25,7 +15,7 @@ $OpenBSD: patch-doc_socat_html,v 1.2 2015/04/13 14:43:28 jasper Exp $
  to make the squid executable from Cygwin run under Windows, actual per May 2004).
  <p>
  <p><dt><strong><strong><code>socat - tcp:www.blackhat.org:31337,readbytes=1000</code></strong></strong><dd>
-@@ -3430,9 +3426,9 @@ error. 
+@@ -3669,9 +3665,9 @@ error. 
  <a name="FILES"></a>
  <h2>FILES</h2>
  <p>
