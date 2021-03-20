@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/11/06 09:31:31 tb Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/03/20 06:50:06 tb Exp $
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer-0.0.1-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/__init__.py
@@ -158,6 +158,7 @@ share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-keyupdate-from-server.${MODPY
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-keyupdate.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-large-number-of-extensions.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-legacy-version.${MODPY_PYC_MAGIC_TAG}pyc
+share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-multiple-ccs-messages.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-nociphers.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-non-support.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-obsolete-curves.${MODPY_PYC_MAGIC_TAG}pyc
@@ -298,6 +299,7 @@ share/tlsfuzzer/scripts/test-tls13-keyupdate-from-server.py
 share/tlsfuzzer/scripts/test-tls13-keyupdate.py
 share/tlsfuzzer/scripts/test-tls13-large-number-of-extensions.py
 share/tlsfuzzer/scripts/test-tls13-legacy-version.py
+share/tlsfuzzer/scripts/test-tls13-multiple-ccs-messages.py
 share/tlsfuzzer/scripts/test-tls13-nociphers.py
 share/tlsfuzzer/scripts/test-tls13-non-support.py
 share/tlsfuzzer/scripts/test-tls13-obsolete-curves.py
