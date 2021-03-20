@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.23 2021/03/20 18:47:23 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.24 2021/03/20 18:49:09 sthen Exp $
 
 .if defined(V)
 COMMENT=	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
 
 _BV=		${BUILD_V:C/^http[^-]*-([0-9a-f]{10}).*/-\1/}
-MASTER_SITES?=	https://dl.ubnt.com/unifi/${V}${_BV}/
+MASTER_SITES?=	https://dl.ui.com/unifi/${V}${_BV}/
 
 JAF=		1.1.1
 DISTFILES=	unifi-$V{UniFi.unix}.zip \
