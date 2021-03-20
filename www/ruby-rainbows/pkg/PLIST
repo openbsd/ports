@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/11/14 17:03:55 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/03/20 19:51:41 jeremy Exp $
 ${GEM_BIN}/rainbows${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -11,9 +11,7 @@ ${GEM_LIB}/gems/${DISTNAME}/COPYING
 ${GEM_LIB}/gems/${DISTNAME}/DEPLOY
 ${GEM_LIB}/gems/${DISTNAME}/Documentation/
 ${GEM_LIB}/gems/${DISTNAME}/Documentation/.gitignore
-${GEM_LIB}/gems/${DISTNAME}/Documentation/GNUmakefile
 ${GEM_LIB}/gems/${DISTNAME}/Documentation/comparison.haml
-${GEM_LIB}/gems/${DISTNAME}/Documentation/rainbows.1.txt
 ${GEM_LIB}/gems/${DISTNAME}/FAQ
 ${GEM_LIB}/gems/${DISTNAME}/GIT-VERSION-FILE
 ${GEM_LIB}/gems/${DISTNAME}/GIT-VERSION-GEN
@@ -32,7 +30,6 @@ ${GEM_LIB}/gems/${DISTNAME}/TUNING
 ${GEM_LIB}/gems/${DISTNAME}/Test_Suite
 ${GEM_LIB}/gems/${DISTNAME}/archive/
 ${GEM_LIB}/gems/${DISTNAME}/archive/.gitignore
-${GEM_LIB}/gems/${DISTNAME}/archive/rfmig.rb
 ${GEM_LIB}/gems/${DISTNAME}/archive/slrnpull.conf
 ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/rainbows

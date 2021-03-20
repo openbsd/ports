@@ -1,15 +1,16 @@
-$OpenBSD: patch-_metadata,v 1.1 2017/03/28 23:38:05 jeremy Exp $
+$OpenBSD: patch-_metadata,v 1.2 2021/03/20 19:51:41 jeremy Exp $
 
-Allow prerelease unicorn gem.
+Work with unicorn 6.
 
---- .metadata.orig	Tue Mar 28 16:34:55 2017
-+++ .metadata	Tue Mar 28 16:35:13 2017
-@@ -46,7 +46,7 @@ dependencies:
-       - !ruby/object:Gem::Version
-         version: '5.0'
-   type: :runtime
--  prerelease: false
-+  prerelease: true
-   version_requirements: !ruby/object:Gem::Requirement
+Index: .metadata
+--- .metadata.orig
++++ .metadata
+@@ -48,7 +48,7 @@ dependencies:
+   name: unicorn
+   requirement: !ruby/object:Gem::Requirement
      requirements:
-     - - "~>"
+-    - - "~>"
++    - - ">"
+       - !ruby/object:Gem::Version
+         version: '5.1'
+   type: :runtime
