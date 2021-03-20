@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.22 2021/03/20 18:44:17 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.23 2021/03/20 18:47:23 sthen Exp $
 
 .if defined(V)
 COMMENT=	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
 
 _BV=		${BUILD_V:C/^http[^-]*-([0-9a-f]{10}).*/-\1/}
-MASTER_SITES?=	http://dl.ubnt.com/unifi/${V}${_BV}/
+MASTER_SITES?=	https://dl.ubnt.com/unifi/${V}${_BV}/
 
 JAF=		1.1.1
 DISTFILES=	unifi-$V{UniFi.unix}.zip \
@@ -23,11 +23,11 @@ EXTRACT_ONLY=	unifi-$V.zip
 PKGNAME=	unifi-$V
 
 MASTER_SITES0=	https://spacehopper.org/mirrors/
-MASTER_SITES1=	http://dl.ubnt-ut.com/snmp/
+MASTER_SITES1=	https://dl.ubnt-ut.com/snmp/
 
 CATEGORIES=	net
 
-HOMEPAGE=	http://wiki.ubnt.com/UniFi_FAQ
+HOMEPAGE=	https://wiki.ubnt.com/UniFi_FAQ
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
