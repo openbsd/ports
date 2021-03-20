@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/02/11 23:38:13 kn Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/03/20 22:34:27 sebastia Exp $
+@pkgpath devel/py-minidump
 bin/minidump
 lib/python${MODPY_VERSION}/site-packages/minidump/
 lib/python${MODPY_VERSION}/site-packages/minidump-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -6,14 +7,18 @@ lib/python${MODPY_VERSION}/site-packages/minidump-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/minidump-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/minidump-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/minidump-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/minidump-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/minidump-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/minidump-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
+lib/python${MODPY_VERSION}/site-packages/minidump/__amain__.py
 lib/python${MODPY_VERSION}/site-packages/minidump/__init__.py
 lib/python${MODPY_VERSION}/site-packages/minidump/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/minidump/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/minidump/${MODPY_PYCACHE}__amain__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/minidump/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/minidump/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/minidump/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/minidump/${MODPY_PYCACHE}aminidumpfile.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/minidump/${MODPY_PYCACHE}aminidumpreader.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/minidump/${MODPY_PYCACHE}common_structs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/minidump/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/minidump/${MODPY_PYCACHE}directory.${MODPY_PYC_MAGIC_TAG}pyc
@@ -25,6 +30,8 @@ lib/python${MODPY_VERSION}/site-packages/minidump/${MODPY_PYCACHE}minidumpshell.
 lib/python${MODPY_VERSION}/site-packages/minidump/${MODPY_PYCACHE}win_datatypes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/minidump/${MODPY_PYCACHE}writer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/minidump/_version.py
+lib/python${MODPY_VERSION}/site-packages/minidump/aminidumpfile.py
+lib/python${MODPY_VERSION}/site-packages/minidump/aminidumpreader.py
 lib/python${MODPY_VERSION}/site-packages/minidump/common_structs.py
 lib/python${MODPY_VERSION}/site-packages/minidump/constants.py
 lib/python${MODPY_VERSION}/site-packages/minidump/directory.py

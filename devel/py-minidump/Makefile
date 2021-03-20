@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/03/20 22:34:27 sebastia Exp $
 
 COMMENT =		library to parse Windows minidump file format
 
-MODPY_EGG_VERSION =	0.0.12
+MODPY_EGG_VERSION =	0.0.16
 
 DISTNAME =		minidump-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -18,5 +17,8 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+
+FLAVORS =		python3
+FLAVOR =		python3
 
 .include <bsd.port.mk>
