@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/03/20 12:33:02 bentley Exp $
+share/fonts/
+@fontdir share/fonts/league-fonts/
+share/fonts/league-fonts/Orbitron Black.otf
+share/fonts/league-fonts/Orbitron Black.ttf
+share/fonts/league-fonts/Orbitron Bold.otf
+share/fonts/league-fonts/Orbitron Bold.ttf
+share/fonts/league-fonts/Orbitron Light.otf
+share/fonts/league-fonts/Orbitron Light.ttf
+share/fonts/league-fonts/Orbitron Medium.otf
+share/fonts/league-fonts/Orbitron Medium.ttf
