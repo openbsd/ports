@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/03/20 12:29:15 bentley Exp $
+@conflict league-fonts-<=0.1p2
+share/fonts/
+@fontdir share/fonts/league-fonts/
+share/fonts/league-fonts/GoudyBookletter1911.otf
+share/fonts/league-fonts/GoudyBookletter1911TT.ttf
