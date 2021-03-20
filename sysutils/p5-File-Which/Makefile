@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/03/20 11:31:51 bluhm Exp $
 
-COMMENT=		portable implementation of 'which' in Perl
+COMMENT =	portable implementation of 'which' in Perl
 
-MODULES=		cpan
-PKG_ARCH=		*
+DISTNAME =	File-Which-1.24
 
-DISTNAME =		File-Which-1.23
-REVISION =		0
+CATEGORIES =	sysutils
 
-CATEGORIES=		sysutils
+# Perl
+PERMIT_PACKAGE =	Yes
 
-# Artistic/GPL
-PERMIT_PACKAGE=	Yes
+MODULES =		cpan
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
