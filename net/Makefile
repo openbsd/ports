@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1248 2021/03/15 01:50:01 kevlo Exp $
+# $OpenBSD: Makefile,v 1.1249 2021/03/20 15:57:03 daniel Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -570,7 +570,6 @@
      SUBDIR += py-eapi,python3
      SUBDIR += py-ftpdlib
      SUBDIR += py-ftpdlib,python3
-     SUBDIR += py-geventhttpclient
      SUBDIR += py-geventhttpclient,python3
      SUBDIR += py-idna
      SUBDIR += py-idna,python3
@@ -587,7 +586,6 @@
      SUBDIR += py-minimalmodbus,python3
      SUBDIR += py-msgpack
      SUBDIR += py-msgpack,python3
-     SUBDIR += py-nbxmpp
      SUBDIR += py-nbxmpp,python3
      SUBDIR += py-ncclient
      SUBDIR += py-ncclient,python3

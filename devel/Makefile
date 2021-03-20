@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2088 2021/03/20 15:54:51 daniel Exp $
+# $OpenBSD: Makefile,v 1.2089 2021/03/20 15:57:03 daniel Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1425,7 +1425,6 @@
      SUBDIR += py-future,python3
      SUBDIR += py-futures
      SUBDIR += py-gdata
-     SUBDIR += py-gevent
      SUBDIR += py-gevent,python3
      SUBDIR += py-gitdb
      SUBDIR += py-gitdb,python3

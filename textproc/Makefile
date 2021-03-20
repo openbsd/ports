@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.675 2021/03/16 03:43:01 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.676 2021/03/20 15:57:03 daniel Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -397,7 +397,6 @@
      SUBDIR += py-dicttoxml,python3
      SUBDIR += py-docutils,python3
      SUBDIR += py-elasticsearch,python3
-     SUBDIR += py-emoji
      SUBDIR += py-emoji,python3
      SUBDIR += py-enchant,python3
      SUBDIR += py-et_xmlfile,python3
@@ -419,7 +418,6 @@
      SUBDIR += py-nltk,python3
      SUBDIR += py-numpydoc,python3
      SUBDIR += py-odfpy
-     SUBDIR += py-ofxparse
      SUBDIR += py-ofxparse,python3
      SUBDIR += py-openpyxl,python3
      SUBDIR += py-pandocfilters
@@ -427,7 +425,6 @@
      SUBDIR += py-patiencediff,python3
      SUBDIR += py-pdf
      SUBDIR += py-pdfminer
-     SUBDIR += py-podcastparser
      SUBDIR += py-podcastparser,python3
      SUBDIR += py-polib
      SUBDIR += py-polib,python3
