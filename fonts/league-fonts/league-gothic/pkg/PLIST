@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/03/20 12:30:46 bentley Exp $
+share/fonts/
+@fontdir share/fonts/league-fonts/
+share/fonts/league-fonts/LeagueGothic-Condensed.otf
+share/fonts/league-fonts/LeagueGothic-Condensed.ttf
+share/fonts/league-fonts/LeagueGothic-CondensedItalic.otf
+share/fonts/league-fonts/LeagueGothic-CondensedItalic.ttf
+share/fonts/league-fonts/LeagueGothic-Italic.otf
+share/fonts/league-fonts/LeagueGothic-Italic.ttf
+share/fonts/league-fonts/LeagueGothic-Regular.otf
+share/fonts/league-fonts/LeagueGothic-Regular.ttf
