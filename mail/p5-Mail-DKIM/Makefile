@@ -1,26 +1,28 @@
-# $OpenBSD: Makefile,v 1.25 2020/07/05 22:31:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2021/03/20 18:30:47 bluhm Exp $
 
-COMMENT=	DKIM and DomainKeys message-signing implementation
+COMMENT =	DKIM and DomainKeys message-signing implementation
 
-DISTNAME=	Mail-DKIM-0.58
-CATEGORIES=	mail
+DISTNAME =	Mail-DKIM-1.20200907
+
+CATEGORIES =	mail
 
 # Perl
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
 
-MODULES=	cpan
-PKG_ARCH=	*
+MODULES =		cpan
 
-RUN_DEPENDS=	security/p5-Crypt-OpenSSL-RSA \
-		mail/p5-Mail-Tools \
-		mail/p5-Mail-AuthenticationResults>=1.20180215 \
-		net/p5-Net-DNS
+RUN_DEPENDS =		mail/p5-Mail-AuthenticationResults \
+			mail/p5-Mail-Tools \
+			net/p5-Net-DNS \
+			security/p5-Crypt-OpenSSL-RSA \
 
-TEST_DEPENDS=	devel/p5-Test-RequiresInternet \
-		devel/p5-YAML-XS \
-		net/p5-Net-DNS-Resolver-Mock
+TEST_DEPENDS =		devel/p5-Test-RequiresInternet \
+			devel/p5-YAML-XS \
+			net/p5-Net-DNS-Resolver-Mock
 
-MODCPAN_EXAMPLES=      Yes
+PKG_ARCH =		*
+
+MODCPAN_EXAMPLES =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${MODCPAN_EXAMPLES_DIR}
