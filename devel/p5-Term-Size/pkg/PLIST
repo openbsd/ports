@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/05/19 21:13:26 cwen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/03/20 14:00:13 bluhm Exp $
 ${P5ARCH}/
 ${P5ARCH}/Term/
 ${P5ARCH}/Term/Size.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Term/
 ${P5ARCH}/auto/Term/Size/
-${P5ARCH}/auto/Term/Size/Size.so
+@so ${P5ARCH}/auto/Term/Size/Size.so
 @man man/man3p/Term::Size.3p

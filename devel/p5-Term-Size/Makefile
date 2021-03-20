@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/03 21:45:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/03/20 14:00:13 bluhm Exp $
 
-COMMENT=		module to fetch the size of the terminal
+COMMENT =	module to fetch the size of the terminal
 
-MODULES=		cpan
-DISTNAME=		Term-Size-0.209
-CATEGORIES=		devel
-REVISION=		0
+DISTNAME =	Term-Size-0.211
+
+CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
 
-WANTLIB += c perl
+WANTLIB =		c perl
 
-MAKE_ENV+=	TEST_POD=Yes AUTHOR_TESTING=Yes
+MODULES =		cpan
+
+MAKE_ENV =		TEST_POD=Yes AUTHOR_TESTING=Yes
 
 .include <bsd.port.mk>
