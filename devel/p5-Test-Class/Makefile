@@ -1,21 +1,20 @@
-# $OpenBSD: Makefile,v 1.19 2020/07/03 21:45:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/03/20 12:11:06 bluhm Exp $
 
 COMMENT =	easily create test classes in an xUnit style
 
-MODULES =	cpan
-PKG_ARCH =	*
-DISTNAME =	Test-Class-0.50
-CATEGORIES =	devel
-FIX_EXTRACT_PERMISSIONS=Yes
-REVISION =	0
+DISTNAME =	Test-Class-0.52
 
-# perl
+CATEGORIES =	devel
+
+# Perl
 PERMIT_PACKAGE =	Yes
 
-BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	devel/p5-Test-Exception \
-		devel/p5-MRO-Compat \
-		devel/p5-Module-Runtime \
-		devel/p5-Try-Tiny
-            
+MODULES =		cpan
+RUN_DEPENDS =		devel/p5-MRO-Compat>=0.11 \
+			devel/p5-Module-Runtime \
+			devel/p5-Try-Tiny
+TEST_DEPENDS =		devel/p5-Test-Exception>=0.25
+
+PKG_ARCH =	*
+
 .include <bsd.port.mk>
