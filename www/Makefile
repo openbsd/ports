@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1024 2021/03/15 21:40:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.1025 2021/03/20 15:54:51 daniel Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -163,7 +163,6 @@
      SUBDIR += p5-Catalyst-Helper-Controller-Scaffold
      SUBDIR += p5-Catalyst-Log-Log4perl
      SUBDIR += p5-Catalyst-Model-Adaptor
-     SUBDIR += p5-Catalyst-Plugin-Cache
      SUBDIR += p5-Catalyst-Plugin-Cache
      SUBDIR += p5-Catalyst-Plugin-Cache-FileCache
      SUBDIR += p5-Catalyst-Plugin-Cache-Memcached

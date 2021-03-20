@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2087 2021/03/17 06:54:34 kmos Exp $
+# $OpenBSD: Makefile,v 1.2088 2021/03/20 15:54:51 daniel Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -499,7 +499,6 @@
      SUBDIR += p5-Carp-Clan
      SUBDIR += p5-Carp-Datum
      SUBDIR += p5-Carp-REPL
-     SUBDIR += p5-Catalyst-Manual
      SUBDIR += p5-Catalyst-Manual
      SUBDIR += p5-Catalyst-Plugin-C3
      SUBDIR += p5-Catalyst-Plugin-StackTrace
