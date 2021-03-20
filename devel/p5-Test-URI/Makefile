@@ -1,19 +1,21 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/03/20 13:48:53 bluhm Exp $
 
-COMMENT =		check Uniform Resource Identifiers
+COMMENT =	check Uniform Resource Identifiers
 
-DISTNAME =		Test-URI-1.082
-CATEGORIES =		devel
-REVISION =		0
+DISTNAME =	Test-URI-1.083
 
-MODULES =		cpan
-PKG_ARCH =		*
+CATEGORIES =	devel
+
 
 # Artistic 2.0
 PERMIT_PACKAGE =	Yes
 
+MODULES =		cpan
+
 RUN_DEPENDS =		www/p5-URI
 
-MAKE_ENV +=		TEST_POD=1
+MAKE_ENV =		TEST_POD=1
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
