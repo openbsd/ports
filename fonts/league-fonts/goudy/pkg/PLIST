@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/03/20 12:29:34 bentley Exp $
+share/fonts/
+@fontdir share/fonts/league-fonts/
+share/fonts/league-fonts/GoudyStM-Italic.otf
+share/fonts/league-fonts/GoudyStM.otf
+share/fonts/league-fonts/GoudyStMTT-Italic.ttf
+share/fonts/league-fonts/GoudyStMTT.ttf
