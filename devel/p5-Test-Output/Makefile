@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/03/20 12:59:56 bluhm Exp $
 
-COMMENT= 	test output of other modules
+COMMENT = 	test output of other modules
 
-MODULES=	cpan
-PKG_ARCH=	*
-DISTNAME =	Test-Output-1.031
-REVISION =	1
-CATEGORIES=	devel
+DISTNAME =	Test-Output-1.033
 
-# perl
+CATEGORIES =	devel
+
+# Artistic 2.0
 PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS =		sysutils/p5-Capture-Tiny
+MODULES =		cpan
+RUN_DEPENDS =		sysutils/p5-Capture-Tiny>=0.17
+TEST_DEPENDS =		devel/p5-Test-Pod>=1.14 \
+			devel/p5-Test-Pod-Coverage>=1.04
 
-MAKE_ENV=		TEST_POD=Yes
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
