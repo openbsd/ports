@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.21 2021/03/20 18:26:40 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.22 2021/03/20 18:44:17 sthen Exp $
 
+.if defined(V)
 COMMENT=	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
 
 _BV=		${BUILD_V:C/^http[^-]*-([0-9a-f]{10}).*/-\1/}
@@ -93,4 +94,4 @@ do-install:
 	${INSTALL_DATA} ${FULLDISTDIR}/UBNT-{UniFi-,}MIB \
 		${PREFIX}/share/snmp/mibs/
 	@echo;echo 'Note: ignore the "symlink(s) point to non-existent" warnings during packaging.';echo
-
+.endif
