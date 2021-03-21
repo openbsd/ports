@@ -1,11 +1,11 @@
-$OpenBSD: patch-meson_build,v 1.5 2020/11/11 09:50:14 ajacoutot Exp $
+$OpenBSD: patch-meson_build,v 1.6 2021/03/21 16:31:10 ajacoutot Exp $
 
 https://gitlab.gnome.org/GNOME/gdk-pixbuf/issues/106
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -379,7 +379,9 @@ subdir('gdk-pixbuf')
+@@ -383,7 +383,9 @@ subdir('gdk-pixbuf')
  subdir('po')
  
  if not meson.is_cross_build()
