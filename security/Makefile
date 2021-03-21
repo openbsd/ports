@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.618 2021/03/20 15:57:03 daniel Exp $
+# $OpenBSD: Makefile,v 1.619 2021/03/21 08:58:37 tb Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -272,7 +272,6 @@
      SUBDIR += py-artifacts,python3
      SUBDIR += py-asn1crypto
      SUBDIR += py-asn1crypto,python3
-     SUBDIR += py-axolotl
      SUBDIR += py-axolotl,python3
      SUBDIR += py-axolotl-curve25519
      SUBDIR += py-axolotl-curve25519,python3
