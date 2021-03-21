@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/03/21 12:04:26 tim Exp $
+@bin bin/sqlcipher
+include/sqlcipher/
+include/sqlcipher/sqlite3.h
+include/sqlcipher/sqlite3ext.h
+@static-lib lib/libsqlcipher.a
+lib/libsqlcipher.la
+@lib lib/libsqlcipher.so.${LIBsqlcipher_VERSION}
+lib/pkgconfig/sqlcipher.pc

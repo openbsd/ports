@@ -1,0 +1,36 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2021/03/21 12:04:26 tim Exp $
+
+COMMENT =	encrypted SQLite database
+
+GH_ACCOUNT =	sqlcipher
+GH_PROJECT =	sqlcipher
+GH_TAGNAME =	v4.4.3
+
+SHARED_LIBS +=  sqlcipher                 0.0 # 8.6
+
+CATEGORIES =	databases
+
+HOMEPAGE =	https://www.zetetic.net/sqlcipher/
+MAINTAINER =	Tom Murphy <openbsd@pertho.net>
+
+# PD and BSD
+PERMIT_PACKAGE =	Yes
+
+WANTLIB +=		c crypto curses pthread readline z
+
+CONFIGURE_STYLE =	gnu
+
+CONFIGURE_ARGS +=	--enable-tempstore=yes \
+			--disable-editline \
+			--disable-tcl
+CONFIGURE_ENV +=	TCLSH_CMD=${MODTCL_BIN}
+
+NO_TEST =		Yes
+
+CFLAGS +=		-DSQLITE_HAS_CODEC -DOMIT_MEMLOCK
+
+MODULES =		lang/tcl
+MODTCL_VERSION =	8.6
+BUILD_DEPENDS =		${MODTCL_BUILD_DEPENDS}
+
+.include <bsd.port.mk>
