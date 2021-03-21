@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2021/03/08 13:59:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/03/21 09:30:24 ajacoutot Exp $
 
 COMMENT-main=		vSphere CLI built on top of govmomi
 COMMENT-vcsim=		vCenter and ESXi API based simulator
 
-GH_TAGNAME=		v0.24.0
+GH_TAGNAME=		v0.24.1
 GH_ACCOUNT=		vmware
 GH_PROJECT=		govmomi
 
 PKGNAME-main=		govc-${GH_TAGNAME:C/^v//}
 PKGNAME-vcsim=		vcsim-${GH_TAGNAME:C/^v//}
-REVISION-main=		0
-REVISION-vcsim=		0
 
 CATEGORIES=		sysutils
 
