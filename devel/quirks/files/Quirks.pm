@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1250 2021/03/21 12:24:30 tb Exp $
+# $OpenBSD: Quirks.pm,v 1.1251 2021/03/21 14:05:12 danj Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2305,6 +2305,11 @@ my $obsolete_reason = {
 	'lives' => 42,
 	'py-wsgiproxy' => 5,
 	'py-sqlite' => 5,
+	'upt' => 43,
+	'upt-cpan' => 43,
+	'upt-openbsd' => 43,
+	'upt-pypi' => 43,
+	'upt-rubygems' => 43,
 };
 
 # reasons for obsolete packages
@@ -2352,6 +2357,7 @@ my @msg = (
 	"ancient software that often crashes and relies on single HTTP (no TLS) connections, use wireshark", #40
 	"upstream moved to unversioned tarballs, use the plan9port (same upstream) package instead", #41
 	"unmaintained port that was blocking other changes in ports, suggest kdenlive or shotcut", #42
+	"using portgen instead is recommended", #43
 );
 
 # ->is_base_system($handle, $state):
