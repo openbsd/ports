@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2090 2021/03/20 22:35:11 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2091 2021/03/21 12:22:46 tb Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1550,7 +1550,6 @@
      SUBDIR += py-progressbar
      SUBDIR += py-progressbar,python3
      SUBDIR += py-prompt_toolkit,python3
-     SUBDIR += py-protobuf
      SUBDIR += py-protobuf,python3
      SUBDIR += py-ptyprocess,python3
      SUBDIR += py-py
