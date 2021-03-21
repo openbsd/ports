@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.27 2020/04/04 16:45:33 espie Exp $
+# $OpenBSD: External.pm,v 1.28 2021/03/21 19:17:34 espie Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -189,7 +189,7 @@ sub handle_command
 	my $state = $self->{state};
 	if ($line =~ m/^dontclean\s+(.*)/) {
 		for my $p (split(/\s+/, $1)) {
-			$state->{builder}{dontclean}{$p} = 1;
+			$state->{dontclean}{$p} = 1;
 		}
 	} elsif ($line =~ m/^addhost\s+(.*)/) {
 		my @list = split(/\s+/, $1);

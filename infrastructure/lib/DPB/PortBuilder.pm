@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.87 2019/10/23 10:07:24 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.88 2021/03/21 19:17:34 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -36,7 +36,6 @@ sub new
 	my $self = bless {
 	    state => $state,
 	    clean => $state->opt('c'),
-	    dontclean => $state->{dontclean},
 	    fetch => $state->opt('f'),
 	    wantsize => $state->{wantsize},
 	    fullrepo => $state->fullrepo,
@@ -99,6 +98,17 @@ sub dontjunk
 {
 	my ($self, $v) = @_;
 	$self->{dontjunk}{$v->fullpkgname} = 1;
+}
+
+sub should_clean
+{
+	my ($self, $v) = @_;
+	my $state = $self->{state};
+	if ($state->{never_clean}) {
+		return 0;
+	} else {
+		return  !$state->{dontclean}{$v->pkgpath};
+	}
 }
 
 sub make

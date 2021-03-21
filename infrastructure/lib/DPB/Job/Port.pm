@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.203 2021/02/21 10:48:04 sthen Exp $
+# $OpenBSD: Port.pm,v 1.204 2021/03/21 19:17:34 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -243,8 +243,7 @@ sub finalize
 	if ($core->{status} == 0) {
 		my $v = $job->{v};
 		my $builder = $job->{builder};
-		$job->add_normal_tasks($builder->{dontclean}{$v->pkgpath}, 
-		    $core);
+		$job->add_normal_tasks($builder->should_clean($v), $core);
 	} else {
 		$job->{signature_only} = 1;
 		$job->{builder}->register_updates($job->{v});
@@ -862,13 +861,14 @@ sub setup
 {
 	my ($task, $core) = @_;
 	my $job = $core->job;
-	if ($job->{builder}{dontclean}{$job->{v}->pkgpath}) {
-		return $job->next_task($core);
-	} else {
+	if ($job->{builder}->should_clean($job->{v})) {
 		$job->{lock}->write("cleaned");
 		return $task;
+	} else {
+		return $job->next_task($core);
 	}
 }
+
 sub finalize
 {
 	my ($self, $core) = @_;
@@ -911,6 +911,7 @@ my $repo = {
 	inbetween => 'DPB::Task::Port::InBetween',
 	fake => 'DPB::Task::Port::Fake',
 	signature => 'DPB::Task::Port::Signature',
+	test => 'DPB::Task::Test',
 };
 
 sub create
@@ -1195,8 +1196,7 @@ sub new
 	if ($builder->checks_rebuild($v)) {
 		$job->add_tasks(DPB::Port::TaskFactory->create('signature'));
 	} else {
-		$job->add_normal_tasks($builder->{dontclean}{$v->pkgpath},
-		    $core);
+		$job->add_normal_tasks($builder->should_clean($v), $core);
 	}
 	return $job;
 }
@@ -1228,7 +1228,7 @@ sub new_junk_only
 
 sub add_normal_tasks
 {
-	my ($self, $dontclean, $core) = @_;
+	my ($self, $should_clean, $core) = @_;
 
 	my @todo;
 	my $builder = $self->{builder};
@@ -1302,9 +1302,9 @@ sub add_normal_tasks
 		push @todo, 'show-size';
 	}
 	if ($self->{v}{info}->want_tests) {
-		$dontclean = 1;
+		$should_clean = 0;
 	}
-	if (!$dontclean) {
+	if ($should_clean) {
 		push @todo, 'clean';
 	}
 	$self->add_tasks(map {DPB::Port::TaskFactory->create($_)} @todo);

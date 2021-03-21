@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.88 2020/03/31 11:12:15 espie Exp $
+# $OpenBSD: Config.pm,v 1.89 2021/03/21 19:17:34 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -261,6 +261,9 @@ sub parse_command_line
 	}
 	if ($state->define_present('TESTS')) {
 		$state->{tests} = $state->{subst}->value('tests');
+	}
+	if ($state->{subst}->value('NEVER_CLEAN')) {
+		$state->{never_clean} = 1;
 	}
 	if ($state->{flogdir}) {
 		$state->{logdir} = $state->{flogdir};
