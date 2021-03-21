@@ -1,0 +1,14 @@
+$OpenBSD: patch-assimpTargets-release_cmake_in,v 1.1 2021/03/21 16:03:51 rsadowski Exp $
+
+Index: assimpTargets-release.cmake.in
+--- assimpTargets-release.cmake.in.orig
++++ assimpTargets-release.cmake.in
+@@ -63,7 +63,7 @@ if(MSVC)
+ else()
+   set(ASSIMP_LIBRARY_SUFFIX "@ASSIMP_LIBRARY_SUFFIX@" CACHE STRING "the suffix for the assimp libraries" )
+   if(ASSIMP_BUILD_SHARED_LIBS)
+-    set(sharedLibraryName "libassimp${ASSIMP_LIBRARY_SUFFIX}@CMAKE_SHARED_LIBRARY_SUFFIX@.@ASSIMP_VERSION_MAJOR@")
++    set(sharedLibraryName "libassimp${ASSIMP_LIBRARY_SUFFIX}@CMAKE_SHARED_LIBRARY_SUFFIX@.${LIBassimp_VERSION}")
+     set_target_properties(assimp::assimp PROPERTIES
+       IMPORTED_SONAME_RELEASE "${sharedLibraryName}"
+       IMPORTED_LOCATION_RELEASE "${_IMPORT_PREFIX}/lib/${sharedLibraryName}"
