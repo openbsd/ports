@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.422 2021/03/14 13:11:16 sebastia Exp $
+# $OpenBSD: Makefile,v 1.423 2021/03/21 12:05:33 tim Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -233,6 +233,7 @@
      SUBDIR += sharedance
      SUBDIR += skytools
      SUBDIR += sqlbox
+     SUBDIR += sqlcipher
      SUBDIR += sqlite
      SUBDIR += sqlite3
      SUBDIR += sqlite3-odbc
