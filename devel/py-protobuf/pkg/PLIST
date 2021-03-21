@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/03/16 03:08:43 tb Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/03/21 12:22:09 tb Exp $
+@conflict py-protobuf-*
+@pkgpath devel/py-protobuf
 lib/python${MODPY_VERSION}/site-packages/google/
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/__init__.py

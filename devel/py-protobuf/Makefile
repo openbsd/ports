@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2021/03/16 03:53:29 tb Exp $
+# $OpenBSD: Makefile,v 1.10 2021/03/21 12:22:08 tb Exp $
 
 COMMENT=		Google data interchange format (protocol buffers)
 
 MODPY_EGG_VERSION=	3.15.6
 DISTNAME=		protobuf-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -18,7 +19,7 @@ MODPY_PI_DIR=		p/protobuf
 MODPY_SETUPTOOLS=	Yes
 
 FLAVORS=		python3
-FLAVOR ?=
+FLAVOR=			python3 
 
 BUILD_DEPENDS=		devel/py-wheel${MODPY_FLAVOR}
 RUN_DEPENDS=		devel/py-six${MODPY_FLAVOR}
