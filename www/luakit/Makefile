@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2020/11/12 14:39:54 semarie Exp $
+# $OpenBSD: Makefile,v 1.29 2021/03/21 14:16:21 abieber Exp $
 
 COMMENT =	fast, small, webkit based browser written in lua
 
 GH_ACCOUNT =	luakit
 GH_PROJECT =	luakit
-GH_TAGNAME =	2.2.1
+GH_TAGNAME =	2.3
 
 EPOCH =		1
 
@@ -33,6 +33,7 @@ BUILD_DEPENDS =	devel/help2man \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/luafs \
+		net/luasocket \
 		textproc/lua-markdown
 
 LIB_DEPENDS =	lang/luajit \
