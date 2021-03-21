@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2020/11/20 07:56:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.35 2021/03/21 16:31:28 ajacoutot Exp $
 bin/gcompris
 @bin bin/gcompris-qt
 share/applications/org.kde.gcompris.desktop
@@ -175,41 +175,25 @@ share/gcompris-qt/rcc/traffic.rcc
 share/gcompris-qt/rcc/watercycle.rcc
 share/gcompris-qt/rcc/wordsgame.rcc
 share/gcompris-qt/translations/
-share/gcompris-qt/translations/gcompris_ar.qm
-share/gcompris-qt/translations/gcompris_ast.qm
 share/gcompris-qt/translations/gcompris_be.qm
-share/gcompris-qt/translations/gcompris_bg.qm
 share/gcompris-qt/translations/gcompris_br.qm
-share/gcompris-qt/translations/gcompris_bs.qm
 share/gcompris-qt/translations/gcompris_ca.qm
 share/gcompris-qt/translations/gcompris_ca@valencia.qm
-share/gcompris-qt/translations/gcompris_cs.qm
-share/gcompris-qt/translations/gcompris_da.qm
 share/gcompris-qt/translations/gcompris_de.qm
 share/gcompris-qt/translations/gcompris_el.qm
 share/gcompris-qt/translations/gcompris_en.qm
 share/gcompris-qt/translations/gcompris_en_GB.qm
 share/gcompris-qt/translations/gcompris_es.qm
-share/gcompris-qt/translations/gcompris_et.qm
 share/gcompris-qt/translations/gcompris_eu.qm
-share/gcompris-qt/translations/gcompris_fi.qm
 share/gcompris-qt/translations/gcompris_fr.qm
 share/gcompris-qt/translations/gcompris_ga.qm
-share/gcompris-qt/translations/gcompris_gd.qm
-share/gcompris-qt/translations/gcompris_gl.qm
 share/gcompris-qt/translations/gcompris_he.qm
-share/gcompris-qt/translations/gcompris_hi.qm
 share/gcompris-qt/translations/gcompris_hu.qm
-share/gcompris-qt/translations/gcompris_ia.qm
 share/gcompris-qt/translations/gcompris_id.qm
 share/gcompris-qt/translations/gcompris_it.qm
-share/gcompris-qt/translations/gcompris_ja.qm
-share/gcompris-qt/translations/gcompris_ko.qm
 share/gcompris-qt/translations/gcompris_lt.qm
-share/gcompris-qt/translations/gcompris_lv.qm
 share/gcompris-qt/translations/gcompris_mk.qm
 share/gcompris-qt/translations/gcompris_ml.qm
-share/gcompris-qt/translations/gcompris_nb.qm
 share/gcompris-qt/translations/gcompris_nl.qm
 share/gcompris-qt/translations/gcompris_nn.qm
 share/gcompris-qt/translations/gcompris_pl.qm
@@ -217,14 +201,11 @@ share/gcompris-qt/translations/gcompris_pt.qm
 share/gcompris-qt/translations/gcompris_pt_BR.qm
 share/gcompris-qt/translations/gcompris_ro.qm
 share/gcompris-qt/translations/gcompris_ru.qm
-share/gcompris-qt/translations/gcompris_sk.qm
 share/gcompris-qt/translations/gcompris_sl.qm
+share/gcompris-qt/translations/gcompris_sq.qm
 share/gcompris-qt/translations/gcompris_sv.qm
-share/gcompris-qt/translations/gcompris_ta.qm
-share/gcompris-qt/translations/gcompris_th.qm
 share/gcompris-qt/translations/gcompris_tr.qm
 share/gcompris-qt/translations/gcompris_uk.qm
-share/gcompris-qt/translations/gcompris_zh_CN.qm
 share/gcompris-qt/translations/gcompris_zh_TW.qm
 share/icons/hicolor/256x256/apps/gcompris-qt.png
 share/icons/hicolor/scalable/apps/gcompris-qt.svg

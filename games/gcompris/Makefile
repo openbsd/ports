@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.77 2020/11/20 07:56:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2021/03/21 16:31:28 ajacoutot Exp $
 
 COMMENT=	educational game for children
 
-V=		1.0
+V=		1.1
 DISTNAME=	gcompris-qt-${V}
 PKGNAME=	gcompris-${V}
 EPOCH=		0
@@ -19,8 +19,8 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Multimedia Qt5Network
-WANTLIB += Qt5Qml Qt5Quick Qt5Sensors Qt5Svg Qt5Widgets Qt5Xml
-WANTLIB += Qt5XmlPatterns c m
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5Sensors Qt5Svg Qt5Widgets
+WANTLIB += Qt5Xml Qt5XmlPatterns c m
 
 MASTER_SITES=	http://gcompris.net/download/qt/src/
 
