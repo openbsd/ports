@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:13:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/03/21 08:57:54 tb Exp $
 
 COMMENT =		Python port of libaxolotl
 
 MODPY_EGG_VERSION =	0.2.3
 DISTNAME =		python-axolotl-${MODPY_EGG_VERSION}
 PKGNAME =		py-axolotl-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		security
 
@@ -19,7 +19,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 RUN_DEPENDS =		devel/py-protobuf${MODPY_FLAVOR} \
 			security/py-axolotl-curve25519${MODPY_FLAVOR} \
