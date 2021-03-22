@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.135 2020/12/29 23:59:06 daniel Exp $
+# $OpenBSD: Makefile.inc,v 1.136 2021/03/22 17:35:26 sthen Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -146,14 +146,14 @@ do-gen:
 post-configure:
 	@cd ${WRKSRC} && ${MAKE_PROGRAM} Makefile
 
-ADJ_FILES = ${WRKSRC}/Tools/scripts/pydoc*
+ADJ_FILES = ${WRKSRC}/Tools/scripts/pydoc* ${WRKSRC}/python-gdb.py
 .if ${VERSION} == "2.7"
 ADJ_FILES += ${WRKSRC}/Tools/scripts/2to3
 .endif
 
 post-build:
 	perl -pi -e \
-		's@#! */usr/bin/env +python@#!${PREFIX}/bin/python${VERSION}@' \
+		's@#! */usr/bin/(env +)?python@#!${PREFIX}/bin/python${VERSION}@' \
 		${ADJ_FILES}
 
 post-install:
@@ -173,6 +173,9 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/python${VERSION}
 	${INSTALL_DATA} ${FILESDIR}/CHANGES.OpenBSD \
 		${PREFIX}/share/doc/python${VERSION}/CHANGES.OpenBSD
+	${INSTALL_DATA_DIR} ${PREFIX}/share/gdb/auto-load/usr/local/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/python-gdb.py \
+		${PREFIX}/share/gdb/auto-load/usr/local/bin/python${VERSION}-gdb.py
 
 TEST_TARGET=	test
 TEST_FLAGS=	"EXTRATESTOPTS=-w"

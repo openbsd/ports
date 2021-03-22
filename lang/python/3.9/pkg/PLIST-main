@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2021/02/21 19:23:21 daniel Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2021/03/22 17:35:26 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-${VERSION_SPEC}
@@ -2840,3 +2840,9 @@ lib/python3.9/zoneinfo/_zoneinfo.py
 @man man/man1/python3.9.1
 share/doc/python3.9/
 share/doc/python3.9/CHANGES.OpenBSD
+share/gdb/
+share/gdb/auto-load/
+share/gdb/auto-load/usr/
+share/gdb/auto-load/usr/local/
+share/gdb/auto-load/usr/local/bin/
+share/gdb/auto-load/usr/local/bin/python3.9-gdb.py
