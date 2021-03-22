@@ -1,17 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/07 16:26:17 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/03/22 17:47:45 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.github/
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/workflow.yml
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.rspec
 ${GEM_LIB}/gems/${DISTNAME}/.rubocop.yml
-${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/CHANGES.md
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
-${GEM_LIB}/gems/${DISTNAME}/Guardfile
-${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
-${GEM_LIB}/gems/${DISTNAME}/appveyor.yml
 ${GEM_LIB}/gems/${DISTNAME}/examples/
 ${GEM_LIB}/gems/${DISTNAME}/examples/echo_server.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/
@@ -21,9 +20,13 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/nio/bytebuffer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nio/monitor.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nio/selector.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nio/version.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/nio4r_ext.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/nio4r_ext.so
 ${GEM_LIB}/gems/${DISTNAME}/logo.png
 ${GEM_LIB}/gems/${DISTNAME}/nio4r.gemspec
+${GEM_LIB}/gems/${DISTNAME}/rakelib/
+${GEM_LIB}/gems/${DISTNAME}/rakelib/extension.rake
+${GEM_LIB}/gems/${DISTNAME}/rakelib/rspec.rake
+${GEM_LIB}/gems/${DISTNAME}/rakelib/rubocop.rake
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/nio/
 ${GEM_LIB}/gems/${DISTNAME}/spec/nio/acceptables_spec.rb
@@ -38,8 +41,4 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/nio/selector_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/selectable_examples.rb
-${GEM_LIB}/gems/${DISTNAME}/tasks/
-${GEM_LIB}/gems/${DISTNAME}/tasks/extension.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/rspec.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/rubocop.rake
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
