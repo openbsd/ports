@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2020/08/01 11:20:57 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2021/03/22 17:06:52 sthen Exp $
 
 COMMENT=	BIRD internet routing daemon
 
@@ -13,6 +13,8 @@ HOMEPAGE=	https://bird.network.cz/
 PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 BUILD_DEPENDS=	devel/m4 \
 		devel/bison

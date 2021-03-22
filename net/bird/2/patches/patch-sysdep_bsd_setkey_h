@@ -1,4 +1,4 @@
-$OpenBSD: patch-sysdep_bsd_setkey_h,v 1.2 2019/01/09 15:04:41 sthen Exp $
+$OpenBSD: patch-sysdep_bsd_setkey_h,v 1.3 2021/03/22 17:06:52 sthen Exp $
 
 - the local address must be configured in config file
 - uses hardcoded SPI (same for each direction); see comments for
@@ -40,7 +40,7 @@ Index: sysdep/bsd/setkey.h
      msg->sadb_msg_type = SADB_DELETE;
      send(s, msg, len, 0);
      msg->sadb_msg_type = SADB_ADD;
-@@ -71,7 +84,9 @@ setkey_md5(sockaddr *src, sockaddr *dst, uint pxlen, c
+@@ -71,7 +84,9 @@ setkey_md5(sockaddr *src, uint slen, sockaddr *dst, ui
      sizeof(struct sadb_msg) +
      sizeof(struct sadb_key) + PFKEY_ALIGN8(passwd_len) +
      sizeof(struct sadb_sa) +
@@ -50,7 +50,7 @@ Index: sysdep/bsd/setkey.h
      sizeof(struct sadb_address) + PFKEY_ALIGN8(src->sa.sa_len) +
      sizeof(struct sadb_address) + PFKEY_ALIGN8(dst->sa.sa_len);
  
-@@ -90,6 +105,9 @@ setkey_md5(sockaddr *src, sockaddr *dst, uint pxlen, c
+@@ -90,6 +105,9 @@ setkey_md5(sockaddr *src, uint slen, sockaddr *dst, ui
    msg->sadb_msg_pid = getpid();
    pos += len;
  
@@ -60,7 +60,7 @@ Index: sysdep/bsd/setkey.h
    /* Set authentication algorithm and password */
    struct sadb_key *key = (void *) pos;
    len = sizeof(struct sadb_key) + PFKEY_ALIGN8(passwd_len);
-@@ -98,31 +116,43 @@ setkey_md5(sockaddr *src, sockaddr *dst, uint pxlen, c
+@@ -98,31 +116,43 @@ setkey_md5(sockaddr *src, uint slen, sockaddr *dst, ui
    key->sadb_key_bits = passwd_len * 8;
    memcpy(pos + sizeof(struct sadb_key), passwd, passwd_len);
    pos += len;
@@ -101,18 +101,18 @@ Index: sysdep/bsd/setkey.h
    saddr->sadb_address_exttype = SADB_EXT_ADDRESS_SRC;
 +#ifndef __OpenBSD__
    saddr->sadb_address_proto = IPSEC_ULPROTO_ANY;
-   saddr->sadb_address_prefixlen = pxlen;
+   saddr->sadb_address_prefixlen = slen;
 +#endif
    memcpy(pos + sizeof(struct sadb_address), &src->sa, src->sa.sa_len);
    pos += len;
  
-@@ -131,8 +161,10 @@ setkey_md5(sockaddr *src, sockaddr *dst, uint pxlen, c
+@@ -131,8 +161,10 @@ setkey_md5(sockaddr *src, uint slen, sockaddr *dst, ui
    len = sizeof(struct sadb_address) + PFKEY_ALIGN8(dst->sa.sa_len);
    daddr->sadb_address_len = PFKEY_UNIT64(len);
    daddr->sadb_address_exttype = SADB_EXT_ADDRESS_DST;
 +#ifndef __OpenBSD__
    daddr->sadb_address_proto = IPSEC_ULPROTO_ANY;
-   daddr->sadb_address_prefixlen = pxlen;
+   daddr->sadb_address_prefixlen = dlen;
 +#endif
    memcpy(pos + sizeof(struct sadb_address), &dst->sa, dst->sa.sa_len);
    pos += len;
