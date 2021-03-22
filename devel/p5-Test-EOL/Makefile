@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/03/22 13:27:24 bluhm Exp $
 
 COMMENT =	check the correct line endings in your project
 
-DISTNAME =	Test-EOL-2.00
-REVISION =	0
+DISTNAME =	Test-EOL-2.02
 
 CATEGORIES =	devel
 
 FIX_EXTRACT_PERMISSIONS =	Yes
 
-MAINTAINER=	Wen Heping <wenheping2000@hotmail.com>
+MAINTAINER =		Wen Heping <wenheping2000@hotmail.com>
 
 # Perl
 PERMIT_PACKAGE =	Yes
