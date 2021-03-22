@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.73 2021/03/15 21:02:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.74 2021/03/22 17:33:14 sthen Exp $
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
 
 DISTNAME=	gdb-7.12.1
-REVISION=	15
+REVISION=	16
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 
@@ -21,7 +21,7 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/gdb
 
 WANTLIB = c expat kvm m curses pthread ${MODPY_WANTLIB} ${COMPILER_LIBCXX} util
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc base-gcc
 
 SEPARATE_BUILD= Yes
 CONFIGURE_STYLE=gnu
@@ -30,6 +30,7 @@ CONFIGURE_ARGS=	--program-prefix=e \
 		--disable-sim \
 		--without-guile \
 		--without-lzma \
+		--with-auto-load-dir=${TRUEPREFIX}/share/gdb/auto-load \
 		--enable-target=all \
 		--with-python=${MODPY_BIN}
 
