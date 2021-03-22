@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2021/01/14 21:55:22 fcambus Exp $
+# $OpenBSD: Makefile,v 1.13 2021/03/22 09:07:09 fcambus Exp $
 
 COMMENT =	name-indexed data processing tool
 
 GH_ACCOUNT =	johnkerl
 GH_PROJECT =	miller
-GH_TAGNAME =	v5.10.0
-REVISION =	0
+GH_TAGNAME =	v5.10.1
 
 CATEGORIES =	textproc
 
