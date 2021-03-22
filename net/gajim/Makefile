@@ -1,16 +1,19 @@
-# $OpenBSD: Makefile,v 1.93 2021/02/23 19:39:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.94 2021/03/22 18:16:10 paco Exp $
 
 COMMENT=	jabber client written in pygtk
-MODPY_EGG_VERSION=	1.2.2
+MODPY_EGG_VERSION=	1.3.1
 DISTNAME=	gajim-${MODPY_EGG_VERSION}
 CATEGORIES=	net x11
-REVISION=	0
 
 HOMEPAGE=	https://www.gajim.org
 
-MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
+MAINTAINER=	Paco Esteban <paco@openbsd.org>
 
-MASTER_SITES=	${HOMEPAGE}/downloads/1.2/
+MASTER_SITES=	${HOMEPAGE}/downloads/1.3/
+# upstream did not include the plugin installer on 1.3.1
+# and fixed it on 1.3.1-2
+# https://dev.gajim.org/gajim/gajim/-/issues/10467
+DISTFILES=	gajim-${MODPY_EGG_VERSION}-2${EXTRACT_SUFX}
 
 # GPLv3 only
 PERMIT_PACKAGE=	Yes
@@ -25,7 +28,7 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/libsoup \
 		graphics/py-Pillow${MODPY_FLAVOR} \
 		graphics/py-cairo${MODPY_FLAVOR} \
-		net/py-nbxmpp${MODPY_FLAVOR}>=1.0.2 \
+		net/py-nbxmpp${MODPY_FLAVOR}>=2.0.1 \
 		security/py-cryptodome${MODPY_FLAVOR} \
 		security/py-gnupg${MODPY_FLAVOR} \
 		security/py-keyring${MODPY_FLAVOR} \
