@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_misc_c,v 1.1 2021/03/22 07:34:34 ajacoutot Exp $
+
+From 680fa6596793dc53368e0b8ebf90eddc3a987e42 Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Tue, 5 May 2020 09:53:09 +0200
+Subject: [PATCH] Disable cast-function-type compiler warning and fix other warnings
+
+Index: src/misc.c
+--- src/misc.c.orig
++++ src/misc.c
+@@ -502,9 +502,9 @@ static const char tz_months [][4] = {
+ 	"Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+ };
+ 
+-static const char tz_days [][4] = {
++/*static const char tz_days [][4] = {
+ 	"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"
+-};
++};*/
+ 
+ gboolean
+ is_rfc822(char *in)

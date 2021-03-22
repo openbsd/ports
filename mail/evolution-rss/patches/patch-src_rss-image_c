@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_rss-image_c,v 1.3 2021/03/22 07:34:34 ajacoutot Exp $
+
+64bit time_t
+
+Index: src/rss-image.c
+--- src/rss-image.c.orig
++++ src/rss-image.c
+@@ -269,7 +269,7 @@ check_update_feed_image(gchar *key)
+ 	g_free(feed_dir);
+ 	if (!g_file_test(fav_file, G_FILE_TEST_EXISTS)) {
+ 		if ((f = fopen(fav_file, "w"))) {
+-			fprintf(f, "%lu", start.tv_sec);
++			fprintf(f, "%lld", start.tv_sec);
+ 			fclose(f);
+ 		}
+ 		ret = TRUE;
+@@ -281,7 +281,7 @@ check_update_feed_image(gchar *key)
+ 					(const char *)&rfeed, NULL, 10);
+ 		if (FEED_IMAGE_TTL <= remain) {
+ 			(void)fseek(f, 0L, SEEK_SET);
+-			fprintf(f, "%lu", start.tv_sec);
++			fprintf(f, "%lld", start.tv_sec);
+ 			fclose(f);
+ 			ret =  TRUE;
+ 			goto out;

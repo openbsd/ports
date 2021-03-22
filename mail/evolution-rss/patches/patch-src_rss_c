@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_rss_c,v 1.14 2021/03/22 07:34:34 ajacoutot Exp $
+
+From 0bbf522d0e096443df6387b588d7179a4a99ddb3 Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Tue, 5 May 2020 09:36:53 +0200
+Subject: [PATCH] Adapt to Evolution 3.37.2 EContentEditor changes
+
+Index: src/rss.c
+--- src/rss.c.orig
++++ src/rss.c
+@@ -1348,8 +1348,12 @@ org_gnome_evolution_presend (EPlugin *ep, EMEventTarge
+ 
+ 	editor = e_msg_composer_get_editor (t->composer);
+ #if EVOLUTION_VERSION >= 32190
++#if EVOLUTION_VERSION >= 33702
++	text = g_strdup (e_content_editor_util_get_content_data (e_msg_composer_get_content_hash (t->composer), E_CONTENT_EDITOR_GET_TO_SEND_HTML));
++#else
+ 	cnt_editor = e_html_editor_get_content_editor (editor);
+ 	text = e_content_editor_get_content (cnt_editor, E_CONTENT_EDITOR_GET_TEXT_HTML, NULL, NULL);
++#endif
+ #else
+ 	view = e_html_editor_get_view (editor);
+ #if EVOLUTION_VERSION >= 31390

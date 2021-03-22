@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.92 2021/03/22 07:04:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.93 2021/03/22 07:34:34 ajacoutot Exp $
 
 COMMENT=		RSS reader plugin for evolution
 
 GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.3.96
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		mail
 
@@ -62,7 +62,9 @@ LIB_DEPENDS=		mail/evolution
 
 MODGNOME_TOOLS=		desktop-file-utils
 
-CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION=	2.69
+
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ENV=		ac_cv_path_GPP="${CXX}"
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}

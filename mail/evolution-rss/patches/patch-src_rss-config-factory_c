@@ -1,0 +1,64 @@
+$OpenBSD: patch-src_rss-config-factory_c,v 1.13 2021/03/22 07:34:34 ajacoutot Exp $
+
+From a21a188c3da937429af028345e77f377094970fb Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Tue, 5 May 2020 09:57:19 +0200
+Subject: [PATCH] I#2 - Memory leak in create_folder_feeds
+
+From 680fa6596793dc53368e0b8ebf90eddc3a987e42 Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Tue, 5 May 2020 09:53:09 +0200
+Subject: [PATCH] Disable cast-function-type compiler warning and fix other warnings
+
+Index: src/rss-config-factory.c
+--- src/rss-config-factory.c.orig
++++ src/rss-config-factory.c
+@@ -1237,22 +1237,22 @@ rss_delete_rec (CamelStore *store, CamelFolderInfo *fi
+ #endif
+ 			return;
+ 
+-			uids = camel_folder_get_uids (folder);
++		uids = camel_folder_get_uids (folder);
+ 
+-			camel_folder_freeze (folder);
+-			for (i = 0; i < uids->len; i++)
+-				camel_folder_delete_message (
+-					folder,
+-					uids->pdata[i]);
++		camel_folder_freeze (folder);
++		for (i = 0; i < uids->len; i++)
++			camel_folder_delete_message (
++				folder,
++				uids->pdata[i]);
+ 
+-			camel_folder_free_uids (folder, uids);
++		camel_folder_free_uids (folder, uids);
+ 
+ #if (DATASERVER_VERSION >= 2033001)
+-			camel_folder_synchronize_sync (folder, TRUE, NULL, NULL);
++		camel_folder_synchronize_sync (folder, TRUE, NULL, NULL);
+ #else
+-			camel_folder_sync (folder, TRUE, NULL);
++		camel_folder_sync (folder, TRUE, NULL);
+ #endif
+-			camel_folder_thaw (folder);
++		camel_folder_thaw (folder);
+ 
+ 		d("do camel_store_delete_folder()\n");
+ 
+@@ -2760,13 +2760,12 @@ create_folder_feeds(gchar *folder)
+ 	gchar *tf;
+ 	GList *names;
+ 	gchar *mf = get_main_folder();
+-	GHashTable *nhash = g_hash_table_new(
+-				g_str_hash,
+-				g_str_equal);
+ 	strbuf = NULL;
+ 	if (folder && strcmp(folder, mf))
+ 		tf = extract_main_folder(folder);
+ 	else {
++		GHashTable *nhash = g_hash_table_new(g_str_hash, g_str_equal);
++
+ 		tf = g_strdup(".");
+ 		//get list of "unfoldered" feeds - silly approach
+ 		names = g_hash_table_get_keys(rf->hrname);

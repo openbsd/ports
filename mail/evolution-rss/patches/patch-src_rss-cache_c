@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_rss-cache_c,v 1.1 2021/03/22 07:34:34 ajacoutot Exp $
+
+From 4dd8be4c88884ec95f22ca043e8c4a41a9a19fb3 Mon Sep 17 00:00:00 2001
+From: eru san <erusan@gmail.com>
+Date: Tue, 30 Jul 2019 18:19:35 +0000
+Subject: [PATCH] Remove arbitrary expiration
+
+Index: src/rss-cache.c
+--- src/rss-cache.c.orig
++++ src/rss-cache.c
+@@ -63,10 +63,6 @@ rss_cache_init(void)
+ 	if (!cache)
+ 		return;
+ 
+-	// expire in a month max
+-	// and one week if not accessed sooner
+-	camel_data_cache_set_expire_age(cache, 24*60*60*30);
+-	camel_data_cache_set_expire_access(cache, 24*60*60*7);
+ }
+ 
+ char *

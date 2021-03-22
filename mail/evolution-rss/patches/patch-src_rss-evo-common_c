@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_rss-evo-common_c,v 1.3 2021/03/22 07:34:34 ajacoutot Exp $
+
+From 11a68a6c5ab8deae0e28b06d33385c22e8aab8b2 Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Tue, 5 May 2020 09:48:44 +0200
+Subject: [PATCH] rss_ep_need_proxy_http: Fix an 'if' to properly enclose its commands into a block
+
+Index: src/rss-evo-common.c
+--- src/rss-evo-common.c.orig
++++ src/rss-evo-common.c
+@@ -273,9 +273,10 @@ rss_ep_need_proxy_http (EProxy* proxy, const gchar * h
+ 	so_addr = soup_address_get_sockaddr (myaddr, &addr_len);
+ #endif
+ 
+-	if (!so_addr)
++	if (!so_addr) {
+ 		g_object_unref (myaddr);
+ 		return TRUE;
++	}
+ 
+ 	if (so_addr->sa_family == AF_INET) {
+ 		struct in_addr in, *mask, *addr_in;
