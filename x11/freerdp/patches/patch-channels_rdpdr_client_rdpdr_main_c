@@ -1,4 +1,4 @@
-$OpenBSD: patch-channels_rdpdr_client_rdpdr_main_c,v 1.1 2021/02/28 14:42:09 sthen Exp $
+$OpenBSD: patch-channels_rdpdr_client_rdpdr_main_c,v 1.2 2021/03/22 14:37:15 sthen Exp $
 
 Index: channels/rdpdr/client/rdpdr_main.c
 --- channels/rdpdr/client/rdpdr_main.c.orig
@@ -12,7 +12,7 @@ Index: channels/rdpdr/client/rdpdr_main.c
  
  void first_hotplug(rdpdrPlugin* rdpdr)
  {
-@@ -957,7 +957,7 @@ out:
+@@ -960,7 +960,7 @@ out:
  
  #endif
  

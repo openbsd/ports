@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2021/03/08 13:15:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2021/03/22 14:37:15 sthen Exp $
 
 # Also:  __sync_fetch_and_add_4 __sync_add_and_fetch_4 __sync_sub_and_fetch_4
 BROKEN-hppa =		undefined reference to __sync_val_compare_and_swap_4
 
 COMMENT =		client for Microsoft RDP (remote desktop protocol)
-DISTNAME =		freerdp-2.3.1
-REVISION =		0
+DISTNAME =		freerdp-2.3.2
 DPB_PROPERTIES =	parallel
 CATEGORIES =		x11 net
 
