@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.65 2021/02/20 14:58:34 landry Exp $
+@comment $OpenBSD: PLIST,v 1.66 2021/03/22 08:14:56 landry Exp $
 @bin bin/qgis
 @bin bin/qgis_bench
 @bin bin/qgis_mapserv.fcgi
@@ -756,6 +756,7 @@ include/qgis/qgsmaplayerconfigwidget.h
 include/qgis/qgsmaplayerconfigwidgetfactory.h
 include/qgis/qgsmaplayerdependency.h
 include/qgis/qgsmaplayerelevationproperties.h
+include/qgis/qgsmaplayerfactory.h
 include/qgis/qgsmaplayerlegend.h
 include/qgis/qgsmaplayerloadstyledialog.h
 include/qgis/qgsmaplayermodel.h
