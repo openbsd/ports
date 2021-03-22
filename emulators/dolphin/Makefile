@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/26 18:20:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2021/03/22 22:25:56 thfr Exp $
 
 USE_WXNEEDED =		Yes
 ONLY_FOR_ARCHS =	amd64
@@ -10,8 +10,8 @@ V =			5.0.0.20190621
 DISTNAME =		dolphin-emu-${V}
 PKGNAME-main =		dolphin-${V}
 PKGNAME-nogui =		dolphin-nogui-${V}
-REVISION-main =		0
-REVISION-nogui =	0
+REVISION-main =		1
+REVISION-nogui =	1
 
 MULTI_PACKAGES =	-main -nogui
 
@@ -40,7 +40,8 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		devel/cmake
 TEST_DEPENDS =		devel/gtest
-BUILD_DEPENDS =		devel/gettext,-tools
+BUILD_DEPENDS =		devel/gettext,-tools \
+			devel/fmt \
 LIB_DEPENDS-nogui =	archivers/lzo2 \
 			comms/libhidapi \
 			converters/libiconv \

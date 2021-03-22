@@ -1,0 +1,16 @@
+$OpenBSD: patch-Source_Core_Common_CMakeLists_txt,v 1.1 2021/03/22 22:25:56 thfr Exp $
+
+fmt::fmt => fmt, to use system lib
+
+Index: Source/Core/Common/CMakeLists.txt
+--- Source/Core/Common/CMakeLists.txt.orig
++++ Source/Core/Common/CMakeLists.txt
+@@ -132,7 +132,7 @@ target_link_libraries(common
+ PUBLIC
+   ${CMAKE_THREAD_LIBS_INIT}
+   enet
+-  fmt::fmt
++  fmt
+   ${MBEDTLS_LIBRARIES}
+ 
+ PRIVATE
