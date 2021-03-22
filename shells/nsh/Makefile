@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2021/02/04 22:13:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2021/03/22 17:23:22 sthen Exp $
+
+BROKEN =	needs adapting to changes in base\n
+BROKEN +=	(again); this port is closely tied to interfaces in the base OS and really\n
+BROKEN +=	needs an active maintainer!
 
 COMMENT =	network switch style shell
 
