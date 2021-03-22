@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_first_run_dialog_cc,v 1.23 2020/10/22 13:52:53 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_first_run_dialog_cc,v 1.24 2021/03/22 18:04:54 robert Exp $
 
 Index: chrome/browser/ui/views/first_run_dialog.cc
 --- chrome/browser/ui/views/first_run_dialog.cc.orig
@@ -10,7 +10,7 @@ Index: chrome/browser/ui/views/first_run_dialog.cc
 +#if !defined(OS_BSD)
    ChangeMetricsReportingStateWithReply(
        report_crashes_->GetChecked(),
-       base::BindRepeating(&InitCrashReporterIfEnabled));
+       base::BindOnce(&InitCrashReporterIfEnabled));
 +#endif
  
    if (make_default_->GetChecked())

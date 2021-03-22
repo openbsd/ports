@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_trace_event_process_memory_dump_cc,v 1.16 2021/01/20 07:28:07 robert Exp $
+$OpenBSD: patch-base_trace_event_process_memory_dump_cc,v 1.17 2021/03/22 18:04:53 robert Exp $
 
 Index: base/trace_event/process_memory_dump.cc
 --- base/trace_event/process_memory_dump.cc.orig
 +++ base/trace_event/process_memory_dump.cc
-@@ -100,7 +100,7 @@ size_t ProcessMemoryDump::CountResidentBytes(void* sta
+@@ -101,7 +101,7 @@ base::Optional<size_t> ProcessMemoryDump::CountResiden
  #if defined(OS_WIN)
    std::unique_ptr<PSAPI_WORKING_SET_EX_INFORMATION[]> vec(
        new PSAPI_WORKING_SET_EX_INFORMATION[max_vec_size]);
@@ -12,3 +12,12 @@ Index: base/trace_event/process_memory_dump.cc
    std::unique_ptr<char[]> vec(new char[max_vec_size]);
  #elif defined(OS_POSIX) || defined(OS_FUCHSIA)
    std::unique_ptr<unsigned char[]> vec(new unsigned char[max_vec_size]);
+@@ -123,7 +123,7 @@ base::Optional<size_t> ProcessMemoryDump::CountResiden
+ 
+     for (size_t i = 0; i < page_count; i++)
+       resident_page_count += vec[i].VirtualAttributes.Valid;
+-#elif defined(OS_FUCHSIA)
++#elif defined(OS_FUCHSIA) | defined(OS_BSD)
+     // TODO(fuchsia): Port, see https://crbug.com/706592.
+     ALLOW_UNUSED_LOCAL(chunk_start);
+     ALLOW_UNUSED_LOCAL(page_count);

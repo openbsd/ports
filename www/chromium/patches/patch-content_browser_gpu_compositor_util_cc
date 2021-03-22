@@ -1,14 +1,14 @@
-$OpenBSD: patch-content_browser_gpu_compositor_util_cc,v 1.1 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-content_browser_gpu_compositor_util_cc,v 1.2 2021/03/22 18:04:54 robert Exp $
 
 Index: content/browser/gpu/compositor_util.cc
 --- content/browser/gpu/compositor_util.cc.orig
 +++ content/browser/gpu/compositor_util.cc
-@@ -131,7 +131,7 @@ const GpuFeatureData GetGpuFeatureData(
+@@ -127,7 +127,7 @@ const GpuFeatureData GetGpuFeatureData(
      {"video_decode",
       SafeGetFeatureStatus(gpu_feature_info,
                            gpu::GPU_FEATURE_TYPE_ACCELERATED_VIDEO_DECODE),
--#if defined(OS_LINUX) && !defined(OS_ANDROID) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_ANDROID) && !defined(OS_CHROMEOS)
-      !command_line.HasSwitch(switches::kEnableAcceleratedVideoDecode),
+-#if (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) && !defined(OS_ANDROID)
++#if (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)) && !defined(OS_ANDROID)
+      !base::FeatureList::IsEnabled(media::kVaapiVideoDecodeLinux),
  #else
       command_line.HasSwitch(switches::kDisableAcceleratedVideoDecode),

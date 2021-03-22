@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_base_dragdrop_os_exchange_data_provider_non_backed_cc,v 1.1 2021/01/20 07:28:12 robert Exp $
+$OpenBSD: patch-ui_base_dragdrop_os_exchange_data_provider_non_backed_cc,v 1.2 2021/03/22 18:04:55 robert Exp $
 
 Index: ui/base/dragdrop/os_exchange_data_provider_non_backed.cc
 --- ui/base/dragdrop/os_exchange_data_provider_non_backed.cc.orig
 +++ ui/base/dragdrop/os_exchange_data_provider_non_backed.cc
-@@ -93,7 +93,7 @@ void OSExchangeDataProviderNonBacked::SetPickledData(
+@@ -100,7 +100,7 @@ void OSExchangeDataProviderNonBacked::SetPickledData(
  }
  
  bool OSExchangeDataProviderNonBacked::GetString(base::string16* data) const {
@@ -12,7 +12,7 @@ Index: ui/base/dragdrop/os_exchange_data_provider_non_backed.cc
    if (HasFile()) {
      // Various Linux file managers both pass a list of file:// URIs and set the
      // string representation to the URI. We explicitly don't want to return use
-@@ -177,7 +177,7 @@ bool OSExchangeDataProviderNonBacked::HasCustomFormat(
+@@ -184,7 +184,7 @@ bool OSExchangeDataProviderNonBacked::HasCustomFormat(
    return base::Contains(pickle_data_, format);
  }
  

@@ -1,9 +1,9 @@
-$OpenBSD: patch-net_BUILD_gn,v 1.37 2021/01/20 07:28:11 robert Exp $
+$OpenBSD: patch-net_BUILD_gn,v 1.38 2021/03/22 18:04:54 robert Exp $
 
 Index: net/BUILD.gn
 --- net/BUILD.gn.orig
 +++ net/BUILD.gn
-@@ -99,7 +99,7 @@ net_configs = [
+@@ -100,7 +100,7 @@ net_configs = [
    "//build/config/compiler:wexit_time_destructors",
  ]
  
@@ -12,25 +12,25 @@ Index: net/BUILD.gn
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1385,7 +1385,7 @@ component("net") {
+@@ -1388,7 +1388,7 @@ component("net") {
        }
      }
  
--    if (is_android || is_chromeos) {
-+    if (is_android || is_chromeos || is_openbsd) {
+-    if (is_android || is_chromeos_ash) {
++    if (is_android || is_chromeos_ash || is_openbsd) {
        sources += [
          "base/network_change_notifier_posix.cc",
          "base/network_change_notifier_posix.h",
-@@ -1418,7 +1418,7 @@ component("net") {
+@@ -1421,7 +1421,7 @@ component("net") {
      }
  
      # Use getifaddrs() on POSIX platforms, except Linux.
 -    if (is_posix && !is_linux && !is_chromeos) {
-+    if (is_posix) {
++    if (is_posix && !is_linux && !is_chromeos && !is_openbsd) {
        sources += [
          "base/network_interfaces_getifaddrs.cc",
          "base/network_interfaces_getifaddrs.h",
-@@ -1533,6 +1533,15 @@ component("net") {
+@@ -1537,6 +1537,15 @@ component("net") {
        ]
      }
  
@@ -46,12 +46,12 @@ Index: net/BUILD.gn
      if (!disable_ftp_support) {
        sources += [
          "ftp/ftp_auth_cache.cc",
-@@ -4759,7 +4768,7 @@ test("net_unittests") {
+@@ -4755,7 +4764,7 @@ test("net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux and Android.
 -  if (is_posix && !is_linux && !is_chromeos && !is_android) {
-+  if (is_posix) {
++  if (is_posix && !is_linux && !is_chromeos && !is_android && !is_openbsd) {
      sources += [ "base/network_interfaces_getifaddrs_unittest.cc" ]
    }
  

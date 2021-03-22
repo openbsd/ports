@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_base_switches_cc,v 1.7 2021/01/20 07:28:07 robert Exp $
+$OpenBSD: patch-base_base_switches_cc,v 1.8 2021/03/22 18:04:53 robert Exp $
 
 Index: base/base_switches.cc
 --- base/base_switches.cc.orig
 +++ base/base_switches.cc
-@@ -152,7 +152,7 @@ const char kForceFieldTrialParams[] = "force-fieldtria
+@@ -156,7 +156,7 @@ const char kForceFieldTrialParams[] = "force-fieldtria
  
  #endif
  

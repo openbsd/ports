@@ -1,20 +1,18 @@
-$OpenBSD: patch-content_public_common_content_features_cc,v 1.18 2021/01/20 07:28:10 robert Exp $
-
-WebUSB is bad and it makes the chrome process spin the CPU anyway
+$OpenBSD: patch-content_public_common_content_features_cc,v 1.19 2021/03/22 18:04:54 robert Exp $
 
 Index: content/public/common/content_features.cc
 --- content/public/common/content_features.cc.orig
 +++ content/public/common/content_features.cc
-@@ -48,7 +48,7 @@ const base::Feature kAudioServiceLaunchOnStartup{
- // Runs the audio service in a separate process.
- const base::Feature kAudioServiceOutOfProcess {
+@@ -44,7 +44,7 @@ const base::Feature kAudioServiceOutOfProcess {
    "AudioServiceOutOfProcess",
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
 -#if defined(OS_WIN) || defined(OS_MAC) || \
 +#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
-     (defined(OS_LINUX) && !defined(OS_CHROMEOS))
+     (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
-@@ -60,7 +60,7 @@ const base::Feature kAudioServiceOutOfProcess {
+@@ -56,7 +56,7 @@ const base::Feature kAudioServiceOutOfProcess {
  // kAudioServiceOutOfProcess feature is enabled.
  const base::Feature kAudioServiceSandbox {
    "AudioServiceSandbox",
@@ -23,7 +21,7 @@ Index: content/public/common/content_features.cc
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -759,7 +759,7 @@ const base::Feature kWebAssemblyThreads {
+@@ -774,7 +774,7 @@ const base::Feature kWebAssemblyThreads {
  
  // Enable WebAssembly trap handler.
  #if (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_WIN) || \
@@ -32,16 +30,16 @@ Index: content/public/common/content_features.cc
      defined(ARCH_CPU_X86_64)
  const base::Feature kWebAssemblyTrapHandler{"WebAssemblyTrapHandler",
                                              base::FEATURE_ENABLED_BY_DEFAULT};
-@@ -789,7 +789,7 @@ const base::Feature kWebAuth{"WebAuthentication",
- // https://w3c.github.io/webauthn
- const base::Feature kWebAuthCable {
+@@ -795,7 +795,7 @@ const base::Feature kWebAuthCable {
    "WebAuthenticationCable",
--#if !defined(OS_CHROMEOS) && defined(OS_LINUX)
-+#if !defined(OS_CHROMEOS) && (defined(OS_LINUX) || defined(OS_BSD))
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_LINUX)
++#if BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_LINUX) || defined(OS_BSD)
        base::FEATURE_DISABLED_BY_DEFAULT
  #else
        base::FEATURE_ENABLED_BY_DEFAULT
-@@ -850,7 +850,7 @@ const base::Feature kWebUIReportOnlyTrustedTypes{
+@@ -852,7 +852,7 @@ const base::Feature kWebUIReportOnlyTrustedTypes{
  
  // Controls whether the WebUSB API is enabled:
  // https://wicg.github.io/webusb
@@ -50,3 +48,12 @@ Index: content/public/common/content_features.cc
  
  // Controls whether the WebXR Device API is enabled.
  const base::Feature kWebXr{"WebXR", base::FEATURE_ENABLED_BY_DEFAULT};
+@@ -917,7 +917,7 @@ const base::Feature kRetryGetVideoCaptureDeviceInfos{
+     "RetryGetVideoCaptureDeviceInfos", base::FEATURE_DISABLED_BY_DEFAULT};
+ #endif  // defined(OS_MAC)
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ // If the JavaScript on a WebUI page has an error (such as an unhandled
+ // exception), report that error back the crash reporting infrastructure, same
+ // as we do for program crashes.

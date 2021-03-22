@@ -1,9 +1,9 @@
-$OpenBSD: patch-device_fido_features_h,v 1.4 2021/01/20 07:28:10 robert Exp $
+$OpenBSD: patch-device_fido_features_h,v 1.5 2021/03/22 18:04:54 robert Exp $
 
 Index: device/fido/features.h
 --- device/fido/features.h.orig
 +++ device/fido/features.h
-@@ -37,7 +37,7 @@ extern const base::Feature kWebAuthPhoneSupport;
+@@ -41,7 +41,7 @@ extern const base::Feature kWebAuthCableExtensionAnywh
  COMPONENT_EXPORT(DEVICE_FIDO)
  extern const base::Feature kWebAuthGetAssertionFeaturePolicy;
  

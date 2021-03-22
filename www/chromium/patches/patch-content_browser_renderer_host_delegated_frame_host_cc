@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_renderer_host_delegated_frame_host_cc,v 1.1 2021/01/20 07:28:09 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_delegated_frame_host_cc,v 1.2 2021/03/22 18:04:54 robert Exp $
 
 Index: content/browser/renderer_host/delegated_frame_host.cc
 --- content/browser/renderer_host/delegated_frame_host.cc.orig
 +++ content/browser/renderer_host/delegated_frame_host.cc
-@@ -244,7 +244,7 @@ void DelegatedFrameHost::EmbedSurface(
+@@ -258,7 +258,7 @@ void DelegatedFrameHost::EmbedSurface(
  
    if (!primary_surface_id ||
        primary_surface_id->local_surface_id() != local_surface_id_) {

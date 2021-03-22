@@ -1,23 +1,14 @@
-$OpenBSD: patch-base_allocator_allocator_gni,v 1.6 2021/01/20 07:28:07 robert Exp $
+$OpenBSD: patch-base_allocator_allocator_gni,v 1.7 2021/03/22 18:04:53 robert Exp $
 
 Index: base/allocator/allocator.gni
 --- base/allocator/allocator.gni.orig
 +++ base/allocator/allocator.gni
-@@ -10,7 +10,7 @@ import("//build/config/sanitizers/sanitizers.gni")
- # against the debug CRT with "is_nacl=false".
- if ((is_linux || is_chromeos || is_android || is_apple ||
-      (is_win && !is_component_build && !is_debug)) && !is_asan && !is_hwasan &&
--    !is_lsan && !is_tsan && !is_msan) {
-+    !is_lsan && !is_tsan && !is_msan && !is_openbsd) {
-   _default_use_allocator_shim = true
- } else {
-   _default_use_allocator_shim = false
-@@ -18,7 +18,7 @@ if ((is_linux || is_chromeos || is_android || is_apple
+@@ -6,7 +6,7 @@ import("//build/config/chromecast_build.gni")
+ import("//build/config/sanitizers/sanitizers.gni")
  
- # Temporarily disable tcmalloc on arm64 linux to get rid of compilation errors.
- if (is_android || is_apple || is_asan || is_lsan || is_tsan || is_msan ||
--    is_win || is_fuchsia ||
-+    is_win || is_fuchsia || is_openbsd ||
-     ((is_linux || is_chromeos) && target_cpu == "arm64") ||
-     (is_cast_audio_only && target_cpu == "arm")) {
-   _default_allocator = "none"
+ # Sanitizers replace the allocator, don't use our own.
+-_is_using_sanitizers = is_asan || is_hwasan || is_lsan || is_tsan || is_msan
++_is_using_sanitizers = is_asan || is_hwasan || is_lsan || is_tsan || is_msan || is_openbsd
+ 
+ # - Windows: shims don't work for component builds and debug CRT is not
+ # compatible, see below. On x86, there are some memory regresions.

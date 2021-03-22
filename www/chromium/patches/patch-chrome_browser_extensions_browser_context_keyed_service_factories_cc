@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_extensions_browser_context_keyed_service_factories_cc,v 1.21 2020/09/22 11:47:40 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_browser_context_keyed_service_factories_cc,v 1.22 2021/03/22 18:04:53 robert Exp $
 
 Index: chrome/browser/extensions/browser_context_keyed_service_factories.cc
 --- chrome/browser/extensions/browser_context_keyed_service_factories.cc.orig
 +++ chrome/browser/extensions/browser_context_keyed_service_factories.cc
-@@ -53,7 +53,7 @@
+@@ -54,7 +54,7 @@
  #include "extensions/browser/api/networking_private/networking_private_delegate_factory.h"
  #include "ppapi/buildflags/buildflags.h"
  

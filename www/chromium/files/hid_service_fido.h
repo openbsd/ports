@@ -20,6 +20,7 @@ public:
   ~HidServiceFido() override;
 
   void Connect(const std::string &device_guid,
+               bool allow_protected_reports,
                ConnectCallback connect) override;
   base::WeakPtr<HidService> GetWeakPtr() override;
 

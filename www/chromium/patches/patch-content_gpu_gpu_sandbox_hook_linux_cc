@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_gpu_gpu_sandbox_hook_linux_cc,v 1.17 2021/01/20 07:28:10 robert Exp $
+$OpenBSD: patch-content_gpu_gpu_sandbox_hook_linux_cc,v 1.18 2021/03/22 18:04:54 robert Exp $
 
 Index: content/gpu/gpu_sandbox_hook_linux.cc
 --- content/gpu/gpu_sandbox_hook_linux.cc.orig
 +++ content/gpu/gpu_sandbox_hook_linux.cc
-@@ -98,8 +98,9 @@ static const char kLibV4lEncPluginPath[] =
+@@ -99,8 +99,9 @@ static const char kLibV4lEncPluginPath[] =
      "/usr/lib/libv4l/plugins/libv4l-encplugin.so";
  #endif
  
@@ -14,7 +14,7 @@ Index: content/gpu/gpu_sandbox_hook_linux.cc
  void AddV4L2GpuPermissions(
      std::vector<BrokerFilePermission>* permissions,
      const sandbox::policy::SandboxSeccompBPF::Options& options) {
-@@ -359,8 +360,10 @@ std::vector<BrokerFilePermission> FilePermissionsForGp
+@@ -360,8 +361,10 @@ std::vector<BrokerFilePermission> FilePermissionsForGp
    AddStandardGpuPermissions(&permissions);
    return permissions;
  }
@@ -25,7 +25,7 @@ Index: content/gpu/gpu_sandbox_hook_linux.cc
    // Preload the Mali library.
    if (UseChromecastSandboxAllowlist()) {
      for (const char* path : kAllowedChromecastPaths) {
-@@ -375,6 +378,7 @@ void LoadArmGpuLibraries() {
+@@ -376,6 +379,7 @@ void LoadArmGpuLibraries() {
      // Preload the Tegra V4L2 (video decode acceleration) library.
      dlopen(kLibTegraPath, dlopen_flag);
    }
@@ -33,7 +33,7 @@ Index: content/gpu/gpu_sandbox_hook_linux.cc
  }
  
  bool LoadAmdGpuLibraries() {
-@@ -422,12 +426,14 @@ void LoadV4L2Libraries(
+@@ -423,12 +427,14 @@ void LoadV4L2Libraries(
  }
  
  void LoadChromecastV4L2Libraries() {
@@ -48,7 +48,7 @@ Index: content/gpu/gpu_sandbox_hook_linux.cc
  }
  
  bool LoadLibrariesForGpu(
-@@ -453,6 +459,7 @@ bool LoadLibrariesForGpu(
+@@ -454,6 +460,7 @@ bool LoadLibrariesForGpu(
    return true;
  }
  
@@ -56,7 +56,7 @@ Index: content/gpu/gpu_sandbox_hook_linux.cc
  sandbox::syscall_broker::BrokerCommandSet CommandSetForGPU(
      const sandbox::policy::SandboxLinux::Options& options) {
    sandbox::syscall_broker::BrokerCommandSet command_set;
-@@ -474,13 +481,17 @@ bool BrokerProcessPreSandboxHook(
+@@ -475,13 +482,17 @@ bool BrokerProcessPreSandboxHook(
    SetProcessTitleFromCommandLine(nullptr);
    return true;
  }

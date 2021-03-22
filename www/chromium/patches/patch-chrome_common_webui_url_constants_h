@@ -1,16 +1,16 @@
-$OpenBSD: patch-chrome_common_webui_url_constants_h,v 1.23 2021/01/20 07:28:09 robert Exp $
+$OpenBSD: patch-chrome_common_webui_url_constants_h,v 1.24 2021/03/22 18:04:54 robert Exp $
 
 Index: chrome/common/webui_url_constants.h
 --- chrome/common/webui_url_constants.h.orig
 +++ chrome/common/webui_url_constants.h
-@@ -292,13 +292,13 @@ bool IsSystemWebUIHost(base::StringPiece host);
+@@ -295,13 +295,13 @@ bool IsSystemWebUIHost(base::StringPiece host);
  
- #endif  // defined(OS_CHROMEOS)
+ #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
- extern const char kChromeUIWebUIJsExceptionHost[];
- extern const char kChromeUIWebUIJsExceptionURL[];
+ extern const char kChromeUIWebUIJsErrorHost[];
+ extern const char kChromeUIWebUIJsErrorURL[];
  #endif
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -19,7 +19,7 @@ Index: chrome/common/webui_url_constants.h
  extern const char kChromeUIDiscardsHost[];
  extern const char kChromeUIDiscardsURL[];
  extern const char kChromeUIHatsHost[];
-@@ -315,11 +315,11 @@ extern const char kChromeUILinuxProxyConfigHost[];
+@@ -318,13 +318,13 @@ extern const char kChromeUILinuxProxyConfigHost[];
  #endif
  
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
@@ -28,17 +28,19 @@ Index: chrome/common/webui_url_constants.h
  extern const char kChromeUISandboxHost[];
  #endif
  
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
 -#if defined(OS_WIN) || defined(OS_MAC) || \
 +#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
-     (defined(OS_LINUX) && !defined(OS_CHROMEOS))
+     (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
  extern const char kChromeUIBrowserSwitchHost[];
  extern const char kChromeUIBrowserSwitchURL[];
-@@ -331,7 +331,7 @@ extern const char kChromeUIProfilePickerStartupQuery[]
+@@ -335,7 +335,7 @@ extern const char kChromeUIProfilePickerUrl[];
+ extern const char kChromeUIProfilePickerStartupQuery[];
  #endif
  
- #if ((defined(OS_LINUX) || defined(OS_CHROMEOS)) && defined(TOOLKIT_VIEWS)) || \
--    defined(USE_AURA)
-+    defined(USE_AURA) || defined(OS_BSD)
+-#if ((defined(OS_LINUX) || defined(OS_CHROMEOS)) && defined(TOOLKIT_VIEWS)) || \
++#if ((defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)) && defined(TOOLKIT_VIEWS)) || \
+     defined(USE_AURA)
  extern const char kChromeUITabModalConfirmDialogHost[];
  #endif
- 

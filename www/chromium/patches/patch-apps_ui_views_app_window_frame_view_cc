@@ -1,9 +1,9 @@
-$OpenBSD: patch-apps_ui_views_app_window_frame_view_cc,v 1.5 2021/01/20 07:28:06 robert Exp $
+$OpenBSD: patch-apps_ui_views_app_window_frame_view_cc,v 1.6 2021/03/22 18:04:53 robert Exp $
 
 Index: apps/ui/views/app_window_frame_view.cc
 --- apps/ui/views/app_window_frame_view.cc.orig
 +++ apps/ui/views/app_window_frame_view.cc
-@@ -139,7 +139,7 @@ gfx::Rect AppWindowFrameView::GetWindowBoundsForClient
+@@ -137,7 +137,7 @@ gfx::Rect AppWindowFrameView::GetWindowBoundsForClient
    gfx::Rect window_bounds = client_bounds;
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.

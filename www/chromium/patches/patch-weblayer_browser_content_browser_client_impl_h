@@ -1,4 +1,4 @@
-$OpenBSD: patch-weblayer_browser_content_browser_client_impl_h,v 1.10 2021/01/20 07:28:12 robert Exp $
+$OpenBSD: patch-weblayer_browser_content_browser_client_impl_h,v 1.11 2021/03/22 18:04:55 robert Exp $
 
 Index: weblayer/browser/content_browser_client_impl.h
 --- weblayer/browser/content_browser_client_impl.h.orig
@@ -7,8 +7,8 @@ Index: weblayer/browser/content_browser_client_impl.h
    void RenderProcessWillLaunch(content::RenderProcessHost* host) override;
    scoped_refptr<content::QuotaPermissionContext> CreateQuotaPermissionContext()
        override;
--#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
    void GetAdditionalMappedFilesForChildProcess(
        const base::CommandLine& command_line,
        int child_process_id,

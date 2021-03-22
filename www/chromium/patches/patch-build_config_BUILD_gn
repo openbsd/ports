@@ -1,8 +1,17 @@
-$OpenBSD: patch-build_config_BUILD_gn,v 1.22 2021/01/20 07:28:07 robert Exp $
+$OpenBSD: patch-build_config_BUILD_gn,v 1.23 2021/03/22 18:04:53 robert Exp $
 
 Index: build/config/BUILD.gn
 --- build/config/BUILD.gn.orig
 +++ build/config/BUILD.gn
+@@ -78,7 +78,7 @@ config("feature_flags") {
+   if (use_x11) {
+     defines += [ "USE_X11=1" ]
+   }
+-  if (is_asan || is_hwasan || is_lsan || is_tsan || is_msan) {
++  if (is_asan || is_hwasan || is_lsan || is_tsan || is_msan || is_openbsd) {
+     defines += [ "MEMORY_TOOL_REPLACES_ALLOCATOR" ]
+   }
+   if (is_asan) {
 @@ -230,7 +230,7 @@ config("default_libs") {
        "CoreText.framework",
        "Foundation.framework",

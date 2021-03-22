@@ -1,14 +1,14 @@
-$OpenBSD: patch-chrome_browser_sync_device_info_sync_service_factory_cc,v 1.1 2021/01/20 07:28:08 robert Exp $
+$OpenBSD: patch-chrome_browser_sync_device_info_sync_service_factory_cc,v 1.2 2021/03/22 18:04:54 robert Exp $
 
 Index: chrome/browser/sync/device_info_sync_service_factory.cc
 --- chrome/browser/sync/device_info_sync_service_factory.cc.orig
 +++ chrome/browser/sync/device_info_sync_service_factory.cc
-@@ -42,7 +42,7 @@ class DeviceInfoSyncClient : public syncer::DeviceInfo
-   std::string GetSigninScopedDeviceId() const override {
- // Since the local sync backend is currently only supported on Windows, Mac and
- // Linux don't even check the pref on other os-es.
--#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
+@@ -46,7 +46,7 @@ class DeviceInfoSyncClient : public syncer::DeviceInfo
+ // TODO(crbug.com/1052397): Reassess whether the next block needs to be included
+ // in lacros-chrome once build flag switch of lacros-chrome is
+ // complete.
+-#if defined(OS_WIN) || defined(OS_MAC) || \
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
+     (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
      syncer::SyncPrefs prefs(profile_->GetPrefs());
      if (prefs.IsLocalSyncEnabled()) {
-       return "local_device";

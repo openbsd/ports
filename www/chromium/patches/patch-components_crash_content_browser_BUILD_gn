@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_crash_content_browser_BUILD_gn,v 1.11 2021/01/20 07:28:09 robert Exp $
+$OpenBSD: patch-components_crash_content_browser_BUILD_gn,v 1.12 2021/03/22 18:04:54 robert Exp $
 
 Index: components/crash/content/browser/BUILD.gn
 --- components/crash/content/browser/BUILD.gn.orig
 +++ components/crash/content/browser/BUILD.gn
-@@ -19,7 +19,7 @@ source_set("browser") {
+@@ -21,7 +21,7 @@ source_set("browser") {
      "//content/public/common",
    ]
  
@@ -12,7 +12,7 @@ Index: components/crash/content/browser/BUILD.gn
      # Want this file on both Linux and Android.
      sources += [
        "crash_handler_host_linux.cc",
-@@ -33,7 +33,7 @@ source_set("browser") {
+@@ -37,7 +37,7 @@ source_set("browser") {
  
    # This is not in the GYP build but this target includes breakpad client
    # headers, so add the dependency here.
@@ -21,7 +21,7 @@ Index: components/crash/content/browser/BUILD.gn
      configs += [ "//third_party/breakpad:client_config" ]
      public_configs = [ "//third_party/breakpad:client_config" ]
    }
-@@ -53,7 +53,7 @@ source_set("browser") {
+@@ -57,7 +57,7 @@ source_set("browser") {
        "//components/crash/android:jni_headers",
        "//mojo/public/cpp/bindings",
      ]

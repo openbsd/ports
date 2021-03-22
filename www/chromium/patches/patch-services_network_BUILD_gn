@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_network_BUILD_gn,v 1.20 2021/01/20 07:28:11 robert Exp $
+$OpenBSD: patch-services_network_BUILD_gn,v 1.21 2021/03/22 18:04:55 robert Exp $
 
 Index: services/network/BUILD.gn
 --- services/network/BUILD.gn.orig
 +++ services/network/BUILD.gn
-@@ -265,7 +265,6 @@ component("network_service") {
+@@ -275,7 +275,6 @@ component("network_service") {
  
    if (is_linux || is_chromeos) {
      deps += [

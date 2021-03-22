@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_signin_signin_util_cc,v 1.7 2021/01/20 07:28:08 robert Exp $
+$OpenBSD: patch-chrome_browser_signin_signin_util_cc,v 1.8 2021/03/22 18:04:54 robert Exp $
 
 Index: chrome/browser/signin/signin_util.cc
 --- chrome/browser/signin/signin_util.cc.orig
 +++ chrome/browser/signin/signin_util.cc
-@@ -34,7 +34,7 @@
+@@ -35,7 +35,7 @@
  #include "ui/base/l10n/l10n_util.h"
  
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \

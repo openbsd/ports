@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_libusb_BUILD_gn,v 1.8 2021/01/20 07:28:11 robert Exp $
+$OpenBSD: patch-third_party_libusb_BUILD_gn,v 1.9 2021/03/22 18:04:55 robert Exp $
 
 Index: third_party/libusb/BUILD.gn
 --- third_party/libusb/BUILD.gn.orig
@@ -35,7 +35,7 @@ Index: third_party/libusb/BUILD.gn
 +    ]
 +  }
 +
-   if (is_ash) {
+   if (is_chromeos_ash) {
      defines += [ "USBI_TIMERFD_AVAILABLE" ]
    }
 @@ -140,7 +150,7 @@ static_library("libusb") {

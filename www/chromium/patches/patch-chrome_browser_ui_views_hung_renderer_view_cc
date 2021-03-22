@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_views_hung_renderer_view_cc,v 1.7 2021/01/20 07:28:08 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_hung_renderer_view_cc,v 1.8 2021/03/22 18:04:54 robert Exp $
 
 Index: chrome/browser/ui/views/hung_renderer_view.cc
 --- chrome/browser/ui/views/hung_renderer_view.cc.orig
 +++ chrome/browser/ui/views/hung_renderer_view.cc
-@@ -425,7 +425,7 @@ void HungRendererDialogView::ForceCrashHungRenderer() 
+@@ -423,7 +423,7 @@ void HungRendererDialogView::ForceCrashHungRenderer() 
    content::RenderProcessHost* rph =
        hung_pages_table_model_->GetRenderWidgetHost()->GetProcess();
    if (rph) {

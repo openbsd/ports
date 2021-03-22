@@ -1,10 +1,10 @@
-$OpenBSD: patch-base_system_sys_info_cc,v 1.4 2021/01/20 07:28:07 robert Exp $
+$OpenBSD: patch-base_system_sys_info_cc,v 1.5 2021/03/22 18:04:53 robert Exp $
 
 Index: base/system/sys_info.cc
 --- base/system/sys_info.cc.orig
 +++ base/system/sys_info.cc
-@@ -104,7 +104,7 @@ void SysInfo::GetHardwareInfo(base::OnceCallback<void(
- #elif defined(OS_ANDROID) || defined(OS_APPLE)
+@@ -94,7 +94,7 @@ void SysInfo::GetHardwareInfo(base::OnceCallback<void(
+ #if defined(OS_WIN) || defined(OS_ANDROID) || defined(OS_APPLE)
    base::ThreadPool::PostTaskAndReplyWithResult(
        FROM_HERE, {}, base::BindOnce(&GetHardwareInfoSync), std::move(callback));
 -#elif defined(OS_LINUX) || defined(OS_CHROMEOS)

@@ -1,9 +1,9 @@
-$OpenBSD: patch-media_mojo_services_gpu_mojo_media_client_cc,v 1.12 2021/01/20 07:28:10 robert Exp $
+$OpenBSD: patch-media_mojo_services_gpu_mojo_media_client_cc,v 1.13 2021/03/22 18:04:54 robert Exp $
 
 Index: media/mojo/services/gpu_mojo_media_client.cc
 --- media/mojo/services/gpu_mojo_media_client.cc.orig
 +++ media/mojo/services/gpu_mojo_media_client.cc
-@@ -68,7 +68,7 @@ namespace media {
+@@ -67,7 +67,7 @@ namespace media {
  namespace {
  
  #if defined(OS_ANDROID) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
@@ -12,7 +12,7 @@ Index: media/mojo/services/gpu_mojo_media_client.cc
  gpu::CommandBufferStub* GetCommandBufferStub(
      scoped_refptr<base::SingleThreadTaskRunner> gpu_task_runner,
      base::WeakPtr<MediaGpuChannelManager> media_gpu_channel_manager,
-@@ -300,7 +300,7 @@ std::unique_ptr<VideoDecoder> GpuMojoMediaClient::Crea
+@@ -290,7 +290,7 @@ std::unique_ptr<VideoDecoder> GpuMojoMediaClient::Crea
        }
  
  #elif defined(OS_MAC) || defined(OS_WIN) || defined(OS_LINUX) || \

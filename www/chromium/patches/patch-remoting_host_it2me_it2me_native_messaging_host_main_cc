@@ -1,9 +1,9 @@
-$OpenBSD: patch-remoting_host_it2me_it2me_native_messaging_host_main_cc,v 1.11 2021/01/20 07:28:11 robert Exp $
+$OpenBSD: patch-remoting_host_it2me_it2me_native_messaging_host_main_cc,v 1.12 2021/03/22 18:04:54 robert Exp $
 
 Index: remoting/host/it2me/it2me_native_messaging_host_main.cc
 --- remoting/host/it2me/it2me_native_messaging_host_main.cc.orig
 +++ remoting/host/it2me/it2me_native_messaging_host_main.cc
-@@ -29,7 +29,7 @@
+@@ -30,7 +30,7 @@
  #include "remoting/host/switches.h"
  #include "remoting/host/usage_stats_consent.h"
  
@@ -12,7 +12,7 @@ Index: remoting/host/it2me/it2me_native_messaging_host_main.cc
  #include <gtk/gtk.h>
  
  #include "base/linux_util.h"
-@@ -112,7 +112,7 @@ int It2MeNativeMessagingHostMain(int argc, char** argv
+@@ -114,7 +114,7 @@ int It2MeNativeMessagingHostMain(int argc, char** argv
  
    remoting::LoadResources("");
  

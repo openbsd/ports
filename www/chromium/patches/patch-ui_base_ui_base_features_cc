@@ -1,18 +1,18 @@
-$OpenBSD: patch-ui_base_ui_base_features_cc,v 1.16 2021/01/20 07:28:12 robert Exp $
+$OpenBSD: patch-ui_base_ui_base_features_cc,v 1.17 2021/03/22 18:04:55 robert Exp $
 
 Index: ui/base/ui_base_features.cc
 --- ui/base/ui_base_features.cc.orig
 +++ ui/base/ui_base_features.cc
-@@ -108,7 +108,7 @@ const base::Feature kCompositorThreadedScrollbarScroll
- // native apps on Windows.
- const base::Feature kExperimentalFlingAnimation {
-   "ExperimentalFlingAnimation",
--#if defined(OS_WIN) || \
-+#if defined(OS_WIN) || defined(OS_BSD) || \
-     (defined(OS_LINUX) && !defined(OS_CHROMEOS) && !BUILDFLAG(IS_LACROS))
+@@ -116,7 +116,7 @@ const base::Feature kExperimentalFlingAnimation {
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+ #if defined(OS_WIN) || (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_ASH) && \
+-                        !BUILDFLAG(IS_CHROMEOS_LACROS))
++                        !BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD)
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
-@@ -142,7 +142,7 @@ const base::Feature kPrecisionTouchpadLogging{
+       base::FEATURE_DISABLED_BY_DEFAULT
+@@ -149,7 +149,7 @@ const base::Feature kPrecisionTouchpadLogging{
  #endif  // defined(OS_WIN)
  
  #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
@@ -21,7 +21,16 @@ Index: ui/base/ui_base_features.cc
  // Enables stylus appearing as touch when in contact with digitizer.
  const base::Feature kDirectManipulationStylus = {
      "DirectManipulationStylus",
-@@ -199,7 +199,7 @@ bool IsCSSColorSchemeUARenderingEnabled() {
+@@ -194,7 +194,7 @@ bool IsEyeDropperEnabled() {
+ const base::Feature kCSSColorSchemeUARendering = {
+     "CSSColorSchemeUARendering",
+ #if defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_LINUX) || \
+-    defined(OS_APPLE)
++    defined(OS_APPLE) || defined(OS_BSD)
+                                             base::FEATURE_ENABLED_BY_DEFAULT
+ #else
+     base::FEATURE_DISABLED_BY_DEFAULT
+@@ -213,7 +213,7 @@ bool IsCSSColorSchemeUARenderingEnabled() {
  // Mac launch bug.
  const base::Feature kFormControlsRefresh = {"FormControlsRefresh",
  #if defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_LINUX) || \

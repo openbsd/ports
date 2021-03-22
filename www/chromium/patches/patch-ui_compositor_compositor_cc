@@ -1,14 +1,14 @@
-$OpenBSD: patch-ui_compositor_compositor_cc,v 1.9 2021/01/20 07:28:12 robert Exp $
+$OpenBSD: patch-ui_compositor_compositor_cc,v 1.10 2021/03/22 18:04:55 robert Exp $
 
 Index: ui/compositor/compositor.cc
 --- ui/compositor/compositor.cc.orig
 +++ ui/compositor/compositor.cc
-@@ -732,7 +732,7 @@ void Compositor::CancelThroughtputTracker(TrackerId tr
-   throughput_tracker_map_.erase(tracker_id);
- }
+@@ -750,7 +750,7 @@ void Compositor::CancelThroughtputTracker(TrackerId tr
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  void Compositor::OnCompleteSwapWithNewSize(const gfx::Size& size) {
    for (auto& observer : observer_list_)
      observer.OnCompositingCompleteSwapWithNewSize(this, size);

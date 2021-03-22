@@ -1,18 +1,18 @@
-$OpenBSD: patch-chrome_browser_after_startup_task_utils_cc,v 1.19 2020/10/22 13:52:53 robert Exp $
+$OpenBSD: patch-chrome_browser_after_startup_task_utils_cc,v 1.20 2021/03/22 18:04:53 robert Exp $
 
 Index: chrome/browser/after_startup_task_utils.cc
 --- chrome/browser/after_startup_task_utils.cc.orig
 +++ chrome/browser/after_startup_task_utils.cc
-@@ -32,7 +32,7 @@
- #include "chrome/browser/ui/tabs/tab_strip_model.h"
- #endif
+@@ -35,7 +35,7 @@
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
  
-@@ -120,7 +120,7 @@ void QueueTask(std::unique_ptr<AfterStartupTask> queue
+@@ -123,7 +123,7 @@ void QueueTask(std::unique_ptr<AfterStartupTask> queue
  void SetBrowserStartupIsComplete() {
    DCHECK_CURRENTLY_ON(BrowserThread::UI);
  #if defined(OS_MAC) || defined(OS_WIN) || defined(OS_LINUX) || \
@@ -21,12 +21,12 @@ Index: chrome/browser/after_startup_task_utils.cc
    // Process::Current().CreationTime() is not available on all platforms.
    const base::Time process_creation_time =
        base::Process::Current().CreationTime();
-@@ -138,7 +138,7 @@ void SetBrowserStartupIsComplete() {
-   g_after_startup_tasks.Get().clear();
-   g_after_startup_tasks.Get().shrink_to_fit();
+@@ -143,7 +143,7 @@ void SetBrowserStartupIsComplete() {
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
    // Make sure we complete the startup notification sequence, or launchers will
    // get confused by not receiving the expected message from the main process.
    views::LinuxUI* linux_ui = views::LinuxUI::instance();

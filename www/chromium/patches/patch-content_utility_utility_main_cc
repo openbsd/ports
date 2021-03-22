@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_utility_utility_main_cc,v 1.21 2021/01/20 07:28:10 robert Exp $
+$OpenBSD: patch-content_utility_utility_main_cc,v 1.22 2021/03/22 18:04:54 robert Exp $
 
 Index: content/utility/utility_main.cc
 --- content/utility/utility_main.cc.orig
 +++ content/utility/utility_main.cc
-@@ -24,9 +24,13 @@
+@@ -25,9 +25,13 @@
  #include "sandbox/policy/sandbox.h"
  #include "services/tracing/public/cpp/trace_startup.h"
  
@@ -18,7 +18,7 @@ Index: content/utility/utility_main.cc
  #include "services/audio/audio_sandbox_hook_linux.h"
  #include "services/network/network_sandbox_hook_linux.h"
  #endif
-@@ -82,12 +86,13 @@ int UtilityMain(const MainFunctionParams& parameters) 
+@@ -87,12 +91,13 @@ int UtilityMain(const MainFunctionParams& parameters) 
    if (parameters.command_line.HasSwitch(switches::kUtilityStartupDialog))
      WaitForDebugger("Utility");
  
@@ -32,8 +32,8 @@ Index: content/utility/utility_main.cc
 +#if !defined(OS_BSD)
    if (parameters.zygote_child ||
        sandbox_type == sandbox::policy::SandboxType::kNetwork ||
- #if defined(OS_CHROMEOS)
-@@ -115,6 +120,12 @@ int UtilityMain(const MainFunctionParams& parameters) 
+ #if BUILDFLAG(IS_CHROMEOS_ASH)
+@@ -120,6 +125,12 @@ int UtilityMain(const MainFunctionParams& parameters) 
          sandbox_type, std::move(pre_sandbox_hook),
          sandbox::policy::SandboxLinux::Options());
    }

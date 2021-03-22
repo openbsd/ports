@@ -1,14 +1,14 @@
-$OpenBSD: patch-chrome_browser_sync_profile_sync_service_factory_cc,v 1.1 2021/01/20 07:28:08 robert Exp $
+$OpenBSD: patch-chrome_browser_sync_profile_sync_service_factory_cc,v 1.2 2021/03/22 18:04:54 robert Exp $
 
 Index: chrome/browser/sync/profile_sync_service_factory.cc
 --- chrome/browser/sync/profile_sync_service_factory.cc.orig
 +++ chrome/browser/sync/profile_sync_service_factory.cc
-@@ -202,7 +202,7 @@ KeyedService* ProfileSyncServiceFactory::BuildServiceI
- 
- // Only check the local sync backend pref on the supported platforms of
- // Windows, Mac and Linux.
--#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
+@@ -216,7 +216,7 @@ KeyedService* ProfileSyncServiceFactory::BuildServiceI
+ // included
+ // in lacros-chrome once build flag switch of lacros-chrome is
+ // complete.
+-#if defined(OS_WIN) || defined(OS_MAC) || \
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
+     (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
    syncer::SyncPrefs prefs(profile->GetPrefs());
    local_sync_backend_enabled = prefs.IsLocalSyncEnabled();
-   UMA_HISTOGRAM_BOOLEAN("Sync.Local.Enabled", local_sync_backend_enabled);

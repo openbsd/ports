@@ -1,0 +1,15 @@
+$OpenBSD: patch-net_base_network_interfaces_posix_cc,v 1.4 2021/03/22 18:04:54 robert Exp $
+
+Index: net/base/network_interfaces_posix.cc
+--- net/base/network_interfaces_posix.cc.orig
++++ net/base/network_interfaces_posix.cc
+@@ -62,4 +62,9 @@ std::unique_ptr<ScopedWifiOptions> SetWifiOptions(int 
+   return nullptr;
+ }
+ 
++bool GetNetworkList(NetworkInterfaceList* networks, int policy) {
++  NOTIMPLEMENTED();
++  return false;
++}
++
+ }  // namespace net

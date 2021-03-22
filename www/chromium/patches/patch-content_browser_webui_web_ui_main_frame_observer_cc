@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_webui_web_ui_main_frame_observer_cc,v 1.1 2021/01/20 07:28:09 robert Exp $
+$OpenBSD: patch-content_browser_webui_web_ui_main_frame_observer_cc,v 1.2 2021/03/22 18:04:54 robert Exp $
 
 Index: content/browser/webui/web_ui_main_frame_observer.cc
 --- content/browser/webui/web_ui_main_frame_observer.cc.orig
@@ -12,7 +12,7 @@ Index: content/browser/webui/web_ui_main_frame_observer.cc
  #include "base/callback_helpers.h"
  #include "base/feature_list.h"
  #include "base/logging.h"
-@@ -41,7 +41,7 @@ void WebUIMainFrameObserver::DidFinishNavigation(
+@@ -47,7 +47,7 @@ void WebUIMainFrameObserver::DidFinishNavigation(
    web_ui_->DisallowJavascriptOnAllHandlers();
  }
  

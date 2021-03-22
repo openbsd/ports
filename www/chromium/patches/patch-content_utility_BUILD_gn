@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_utility_BUILD_gn,v 1.5 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-content_utility_BUILD_gn,v 1.6 2021/03/22 18:04:54 robert Exp $
 
 Index: content/utility/BUILD.gn
 --- content/utility/BUILD.gn.orig
 +++ content/utility/BUILD.gn
-@@ -84,7 +84,7 @@ source_set("utility") {
+@@ -93,7 +93,7 @@ source_set("utility") {
      deps += [ "//services/proxy_resolver:lib" ]
    }
  

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_chrome_features_cc,v 1.29 2021/01/20 07:28:09 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_features_cc,v 1.30 2021/03/22 18:04:54 robert Exp $
 
 Index: chrome/common/chrome_features.cc
 --- chrome/common/chrome_features.cc.orig
 +++ chrome/common/chrome_features.cc
-@@ -96,7 +96,7 @@ const base::Feature kAsyncDns {
+@@ -92,7 +92,7 @@ const base::Feature kAsyncDns {
  #endif
  };
  
@@ -12,10 +12,10 @@ Index: chrome/common/chrome_features.cc
  // Enables the Restart background mode optimization. When all Chrome UI is
  // closed and it goes in the background, allows to restart the browser to
  // discard memory.
-@@ -344,7 +344,7 @@ const base::Feature kEnableAllSystemWebApps{"EnableAll
-                                             base::FEATURE_DISABLED_BY_DEFAULT};
- 
- #if defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || \
+@@ -349,7 +349,7 @@ const base::Feature kEnableAllSystemWebApps{"EnableAll
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+ #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
 -    defined(OS_MAC)
 +    defined(OS_MAC) || defined(OS_BSD)
  COMPONENT_EXPORT(CHROME_FEATURES)

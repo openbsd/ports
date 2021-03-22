@@ -1,0 +1,14 @@
+$OpenBSD: patch-third_party_blink_renderer_platform_bindings_parkable_string_h,v 1.1 2021/03/22 18:04:55 robert Exp $
+
+Index: third_party/blink/renderer/platform/bindings/parkable_string.h
+--- third_party/blink/renderer/platform/bindings/parkable_string.h.orig
++++ third_party/blink/renderer/platform/bindings/parkable_string.h
+@@ -227,7 +227,7 @@ class PLATFORM_EXPORT ParkableStringImpl final
+     ParkableMetadata(String string, std::unique_ptr<SecureDigest> digest);
+ 
+     Mutex mutex_;
+-    int lock_depth_ GUARDED_BY(mutex_);
++    unsigned int lock_depth_ GUARDED_BY(mutex_);
+ 
+     // Main thread only.
+     State state_;

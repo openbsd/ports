@@ -1,14 +1,14 @@
-$OpenBSD: patch-build_config_c++_c++_gni,v 1.6 2020/10/22 13:52:53 robert Exp $
+$OpenBSD: patch-build_config_c++_c++_gni,v 1.7 2021/03/22 18:04:53 robert Exp $
 
 Index: build/config/c++/c++.gni
 --- build/config/c++/c++.gni.orig
 +++ build/config/c++/c++.gni
 @@ -13,7 +13,7 @@ declare_args() {
-   use_custom_libcxx =
-       is_fuchsia || is_android || is_mac || (is_ios && !use_xcode_clang) ||
-       (is_win && is_clang) ||
--      ((is_linux || is_chromeos) &&
-+      (((is_linux && !is_openbsd) || is_chromeos) &&
-        (!is_chromeos || default_toolchain != "//build/toolchain/cros:target"))
+   # is not supported.
+   use_custom_libcxx = is_fuchsia || is_android || is_mac ||
+                       (is_ios && !use_xcode_clang) || (is_win && is_clang) ||
+-                      ((is_linux || is_chromeos) &&
++                      (((is_linux && !is_openbsd) || is_chromeos) &&
+                        (!is_chromeos_ash ||
+                         default_toolchain != "//build/toolchain/cros:target"))
  
-   # Use libc++ instead of stdlibc++ when using the host_cpu toolchain, even if

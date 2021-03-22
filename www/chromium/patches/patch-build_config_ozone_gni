@@ -1,14 +1,14 @@
-$OpenBSD: patch-build_config_ozone_gni,v 1.1 2021/01/20 07:28:07 robert Exp $
+$OpenBSD: patch-build_config_ozone_gni,v 1.2 2021/03/22 18:04:53 robert Exp $
 
 Index: build/config/ozone.gni
 --- build/config/ozone.gni.orig
 +++ build/config/ozone.gni
-@@ -69,9 +69,13 @@ declare_args() {
+@@ -70,9 +70,13 @@ declare_args() {
        ozone_platform = "x11"
        ozone_platform_drm = true
        ozone_platform_x11 = true
--    } else if (is_linux) {
-+    } else if (is_linux && !is_openbsd) {
+-    } else if (is_linux || is_chromeos_lacros) {
++    } else if ((is_linux || is_chromeos_lacros) && !is_openbsd) {
        ozone_platform = "x11"
        ozone_platform_wayland = true
 +      ozone_platform_x11 = true

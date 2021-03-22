@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.105 2021/01/20 07:28:13 robert Exp $
+@comment $OpenBSD: PLIST,v 1.106 2021/03/22 18:04:55 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 @bin bin/chromedriver
@@ -137,15 +137,16 @@ chrome/resources/inspector/Images/checker.png
 chrome/resources/inspector/Images/chevrons.svg
 chrome/resources/inspector/Images/chromeDisabledSelect.png
 chrome/resources/inspector/Images/chromeDisabledSelect_2x.png
-chrome/resources/inspector/Images/chromeLeft.png
-chrome/resources/inspector/Images/chromeMiddle.png
-chrome/resources/inspector/Images/chromeRight.png
-chrome/resources/inspector/Images/chromeSelect.png
-chrome/resources/inspector/Images/chromeSelect_2x.png
-chrome/resources/inspector/Images/cssoverview_icons_2x.png
+chrome/resources/inspector/Images/chromeLeft.avif
+chrome/resources/inspector/Images/chromeMiddle.avif
+chrome/resources/inspector/Images/chromeRight.avif
+chrome/resources/inspector/Images/chromeSelect.svg
+chrome/resources/inspector/Images/chromeSelectDark.svg
+chrome/resources/inspector/Images/cssoverview_icons_2x.avif
 chrome/resources/inspector/Images/dropdown_7x6_icon.svg
 chrome/resources/inspector/Images/elements_panel_icon.svg
 chrome/resources/inspector/Images/errorWave.svg
+chrome/resources/inspector/Images/error_icon.svg
 chrome/resources/inspector/Images/feedback_thin_16x16_icon.svg
 chrome/resources/inspector/Images/flex-align-content-center-icon.svg
 chrome/resources/inspector/Images/flex-align-content-end-icon.svg
@@ -169,6 +170,9 @@ chrome/resources/inspector/Images/flex-justify-content-flex-start-icon.svg
 chrome/resources/inspector/Images/flex-justify-content-space-around-icon.svg
 chrome/resources/inspector/Images/flex-justify-content-space-between-icon.svg
 chrome/resources/inspector/Images/flex-justify-content-space-evenly-icon.svg
+chrome/resources/inspector/Images/ic_checkmark_16x16.svg
+chrome/resources/inspector/Images/ic_delete_filter.svg
+chrome/resources/inspector/Images/ic_delete_list.svg
 chrome/resources/inspector/Images/ic_info_black_18dp.svg
 chrome/resources/inspector/Images/ic_page_next_16x16_icon.svg
 chrome/resources/inspector/Images/ic_page_prev_16x16_icon.svg
@@ -184,7 +188,7 @@ chrome/resources/inspector/Images/mediumIcons.svg
 chrome/resources/inspector/Images/navigationControls.png
 chrome/resources/inspector/Images/navigationControls_2x.png
 chrome/resources/inspector/Images/network_panel_icon.svg
-chrome/resources/inspector/Images/nodeIcon.png
+chrome/resources/inspector/Images/nodeIcon.avif
 chrome/resources/inspector/Images/node_search_icon.svg
 chrome/resources/inspector/Images/popoverArrows.png
 chrome/resources/inspector/Images/profileGroupIcon.png
@@ -202,7 +206,7 @@ chrome/resources/inspector/Images/resourceDocumentIconSmall.png
 chrome/resources/inspector/Images/resourceJSIcon.png
 chrome/resources/inspector/Images/resourcePlainIcon.png
 chrome/resources/inspector/Images/resourcePlainIconSmall.png
-chrome/resources/inspector/Images/resourcesTimeGraphIcon.png
+chrome/resources/inspector/Images/resourcesTimeGraphIcon.avif
 chrome/resources/inspector/Images/searchNext.png
 chrome/resources/inspector/Images/searchPrev.png
 chrome/resources/inspector/Images/securityIcons.svg
@@ -213,10 +217,12 @@ chrome/resources/inspector/Images/toolbarResizerVertical.png
 chrome/resources/inspector/Images/touchCursor.png
 chrome/resources/inspector/Images/touchCursor_2x.png
 chrome/resources/inspector/Images/treeoutlineTriangles.svg
-chrome/resources/inspector/Images/whatsnew.png
+chrome/resources/inspector/Images/warning_icon.svg
+chrome/resources/inspector/Images/whatsnew.avif
 chrome/resources/inspector/Tests.js
 chrome/resources/inspector/accessibility/
 chrome/resources/inspector/accessibility/accessibility-legacy.js
+chrome/resources/inspector/accessibility/accessibility-meta.js
 chrome/resources/inspector/accessibility/accessibility.js
 chrome/resources/inspector/accessibility/accessibility_module.js
 chrome/resources/inspector/accessibility_test_runner/
@@ -224,6 +230,7 @@ chrome/resources/inspector/accessibility_test_runner/accessibility_test_runner.j
 chrome/resources/inspector/accessibility_test_runner/accessibility_test_runner_module.js
 chrome/resources/inspector/animation/
 chrome/resources/inspector/animation/animation-legacy.js
+chrome/resources/inspector/animation/animation-meta.js
 chrome/resources/inspector/animation/animation.js
 chrome/resources/inspector/animation/animation_module.js
 chrome/resources/inspector/application_test_runner/
@@ -251,12 +258,14 @@ chrome/resources/inspector/bindings_test_runner/bindings_test_runner.js
 chrome/resources/inspector/bindings_test_runner/bindings_test_runner_module.js
 chrome/resources/inspector/browser_debugger/
 chrome/resources/inspector/browser_debugger/browser_debugger-legacy.js
+chrome/resources/inspector/browser_debugger/browser_debugger-meta.js
 chrome/resources/inspector/browser_debugger/browser_debugger.js
 chrome/resources/inspector/browser_debugger/browser_debugger_module.js
 chrome/resources/inspector/browser_sdk/
 chrome/resources/inspector/browser_sdk/browser_sdk.js
 chrome/resources/inspector/changes/
 chrome/resources/inspector/changes/changes-legacy.js
+chrome/resources/inspector/changes/changes-meta.js
 chrome/resources/inspector/changes/changes.js
 chrome/resources/inspector/changes/changes_module.js
 chrome/resources/inspector/client_variations/
@@ -267,9 +276,6 @@ chrome/resources/inspector/cm/cm.js
 chrome/resources/inspector/cm/cm_module.js
 chrome/resources/inspector/cm_headless/
 chrome/resources/inspector/cm_headless/cm_headless.js
-chrome/resources/inspector/cm_modes/
-chrome/resources/inspector/cm_modes/cm_modes.js
-chrome/resources/inspector/cm_modes/cm_modes_module.js
 chrome/resources/inspector/color_picker/
 chrome/resources/inspector/color_picker/color_picker-legacy.js
 chrome/resources/inspector/color_picker/color_picker.js
@@ -284,6 +290,7 @@ chrome/resources/inspector/components/components-legacy.js
 chrome/resources/inspector/components/components.js
 chrome/resources/inspector/console/
 chrome/resources/inspector/console/console-legacy.js
+chrome/resources/inspector/console/console-meta.js
 chrome/resources/inspector/console/console.js
 chrome/resources/inspector/console/console_module.js
 chrome/resources/inspector/console_counters/
@@ -298,6 +305,7 @@ chrome/resources/inspector/cookie_table/cookie_table.js
 chrome/resources/inspector/cookie_table/cookie_table_module.js
 chrome/resources/inspector/coverage/
 chrome/resources/inspector/coverage/coverage-legacy.js
+chrome/resources/inspector/coverage/coverage-meta.js
 chrome/resources/inspector/coverage/coverage.js
 chrome/resources/inspector/coverage/coverage_module.js
 chrome/resources/inspector/coverage_test_runner/
@@ -307,7 +315,7 @@ chrome/resources/inspector/cpu_profiler_test_runner/
 chrome/resources/inspector/cpu_profiler_test_runner/cpu_profiler_test_runner.js
 chrome/resources/inspector/cpu_profiler_test_runner/cpu_profiler_test_runner_module.js
 chrome/resources/inspector/css_overview/
-chrome/resources/inspector/css_overview/css_overview-legacy.js
+chrome/resources/inspector/css_overview/css_overview-meta.js
 chrome/resources/inspector/css_overview/css_overview.js
 chrome/resources/inspector/css_overview/css_overview_module.js
 chrome/resources/inspector/data_grid/
@@ -319,6 +327,7 @@ chrome/resources/inspector/data_grid_test_runner/data_grid_test_runner.js
 chrome/resources/inspector/data_grid_test_runner/data_grid_test_runner_module.js
 chrome/resources/inspector/developer_resources/
 chrome/resources/inspector/developer_resources/developer_resources-legacy.js
+chrome/resources/inspector/developer_resources/developer_resources-meta.js
 chrome/resources/inspector/developer_resources/developer_resources.js
 chrome/resources/inspector/developer_resources/developer_resources_module.js
 chrome/resources/inspector/device_mode_test_runner/
@@ -330,7 +339,6 @@ chrome/resources/inspector/devices/devices_module.js
 chrome/resources/inspector/devtools_app.html
 chrome/resources/inspector/devtools_app.js
 chrome/resources/inspector/devtools_compatibility.js
-chrome/resources/inspector/devtools_extension_api.js
 chrome/resources/inspector/diff/
 chrome/resources/inspector/diff/diff-legacy.js
 chrome/resources/inspector/diff/diff.js
@@ -339,6 +347,7 @@ chrome/resources/inspector/dom_extension/
 chrome/resources/inspector/dom_extension/dom_extension.js
 chrome/resources/inspector/elements/
 chrome/resources/inspector/elements/elements-legacy.js
+chrome/resources/inspector/elements/elements-meta.js
 chrome/resources/inspector/elements/elements.js
 chrome/resources/inspector/elements/elements_module.js
 chrome/resources/inspector/elements_test_runner/
@@ -392,6 +401,7 @@ chrome/resources/inspector/emulated_devices/optimized/iPhone6Plus-landscape.avif
 chrome/resources/inspector/emulated_devices/optimized/iPhone6Plus-portrait.avif
 chrome/resources/inspector/emulation/
 chrome/resources/inspector/emulation/emulation-legacy.js
+chrome/resources/inspector/emulation/emulation-meta.js
 chrome/resources/inspector/emulation/emulation.js
 chrome/resources/inspector/event_listeners/
 chrome/resources/inspector/event_listeners/event_listeners-legacy.js
@@ -410,8 +420,9 @@ chrome/resources/inspector/formatter/formatter-legacy.js
 chrome/resources/inspector/formatter/formatter.js
 chrome/resources/inspector/formatter/formatter_module.js
 chrome/resources/inspector/formatter_worker/
+chrome/resources/inspector/formatter_worker/FormatterActions.js
+chrome/resources/inspector/formatter_worker/formatter_worker-entrypoint.js
 chrome/resources/inspector/formatter_worker/formatter_worker.js
-chrome/resources/inspector/formatter_worker_entrypoint.js
 chrome/resources/inspector/har_importer/
 chrome/resources/inspector/har_importer/har_importer-legacy.js
 chrome/resources/inspector/har_importer/har_importer.js
@@ -424,10 +435,10 @@ chrome/resources/inspector/heap_snapshot_model/heap_snapshot_model-legacy.js
 chrome/resources/inspector/heap_snapshot_model/heap_snapshot_model.js
 chrome/resources/inspector/heap_snapshot_model/heap_snapshot_model_module.js
 chrome/resources/inspector/heap_snapshot_worker/
+chrome/resources/inspector/heap_snapshot_worker/heap_snapshot_worker-entrypoint.js
 chrome/resources/inspector/heap_snapshot_worker/heap_snapshot_worker-legacy.js
 chrome/resources/inspector/heap_snapshot_worker/heap_snapshot_worker.js
 chrome/resources/inspector/heap_snapshot_worker/heap_snapshot_worker_module.js
-chrome/resources/inspector/heap_snapshot_worker_entrypoint.js
 chrome/resources/inspector/help/
 chrome/resources/inspector/help/help-legacy.js
 chrome/resources/inspector/help/help.js
@@ -494,6 +505,7 @@ chrome/resources/inspector/lighthouse_worker.js
 chrome/resources/inspector/lighthouse_worker/LighthouseService.js
 chrome/resources/inspector/lighthouse_worker/lighthouse_worker.js
 chrome/resources/inspector/linear_memory_inspector/
+chrome/resources/inspector/linear_memory_inspector/linear_memory_inspector-legacy.js
 chrome/resources/inspector/linear_memory_inspector/linear_memory_inspector.js
 chrome/resources/inspector/linear_memory_inspector/linear_memory_inspector_module.js
 chrome/resources/inspector/main/
@@ -510,6 +522,7 @@ chrome/resources/inspector/ndb_app.html
 chrome/resources/inspector/ndb_app.js
 chrome/resources/inspector/network/
 chrome/resources/inspector/network/network-legacy.js
+chrome/resources/inspector/network/network-meta.js
 chrome/resources/inspector/network/network.js
 chrome/resources/inspector/network/network_module.js
 chrome/resources/inspector/network_test_runner/
@@ -547,6 +560,7 @@ chrome/resources/inspector/platform/
 chrome/resources/inspector/platform/platform.js
 chrome/resources/inspector/profiler/
 chrome/resources/inspector/profiler/profiler-legacy.js
+chrome/resources/inspector/profiler/profiler-meta.js
 chrome/resources/inspector/profiler/profiler.js
 chrome/resources/inspector/profiler/profiler_module.js
 chrome/resources/inspector/protocol_client/
@@ -560,6 +574,8 @@ chrome/resources/inspector/quick_open/
 chrome/resources/inspector/quick_open/quick_open-legacy.js
 chrome/resources/inspector/quick_open/quick_open.js
 chrome/resources/inspector/quick_open/quick_open_module.js
+chrome/resources/inspector/recorder/
+chrome/resources/inspector/recorder/recorder.js
 chrome/resources/inspector/resources/
 chrome/resources/inspector/resources/resources-legacy.js
 chrome/resources/inspector/resources/resources.js
@@ -573,12 +589,6 @@ chrome/resources/inspector/screencast/screencast.js
 chrome/resources/inspector/sdk/
 chrome/resources/inspector/sdk/sdk-legacy.js
 chrome/resources/inspector/sdk/sdk.js
-chrome/resources/inspector/sdk/wasm_source_map/
-chrome/resources/inspector/sdk/wasm_source_map/pkg/
-chrome/resources/inspector/sdk/wasm_source_map/pkg/wasm_source_map.d.ts
-chrome/resources/inspector/sdk/wasm_source_map/pkg/wasm_source_map.js
-chrome/resources/inspector/sdk/wasm_source_map/pkg/wasm_source_map_bg.wasm
-chrome/resources/inspector/sdk/wasm_source_map/wasm_source_map-tsconfig.json
 chrome/resources/inspector/sdk_test_runner/
 chrome/resources/inspector/sdk_test_runner/sdk_test_runner.js
 chrome/resources/inspector/sdk_test_runner/sdk_test_runner_module.js
@@ -588,6 +598,7 @@ chrome/resources/inspector/search/search.js
 chrome/resources/inspector/search/search_module.js
 chrome/resources/inspector/security/
 chrome/resources/inspector/security/security-legacy.js
+chrome/resources/inspector/security/security-meta.js
 chrome/resources/inspector/security/security.js
 chrome/resources/inspector/security/security_module.js
 chrome/resources/inspector/security_test_runner/
@@ -611,6 +622,7 @@ chrome/resources/inspector/source_frame/source_frame.js
 chrome/resources/inspector/source_frame/source_frame_module.js
 chrome/resources/inspector/sources/
 chrome/resources/inspector/sources/sources-legacy.js
+chrome/resources/inspector/sources/sources-meta.js
 chrome/resources/inspector/sources/sources.js
 chrome/resources/inspector/sources/sources_module.js
 chrome/resources/inspector/sources_test_runner/
@@ -637,26 +649,12 @@ chrome/resources/inspector/theme_support/
 chrome/resources/inspector/theme_support/theme_support.js
 chrome/resources/inspector/third_party/
 chrome/resources/inspector/third_party/acorn/
-chrome/resources/inspector/third_party/acorn-logical-assignment/
-chrome/resources/inspector/third_party/acorn-logical-assignment/acorn-logical-assignment-tsconfig.json
-chrome/resources/inspector/third_party/acorn-logical-assignment/package/
-chrome/resources/inspector/third_party/acorn-logical-assignment/package/dist/
-chrome/resources/inspector/third_party/acorn-logical-assignment/package/dist/acorn-logical-assignment.mjs
-chrome/resources/inspector/third_party/acorn-logical-assignment/package/dist/acorn-logical-assignment.mjs.d.ts
-chrome/resources/inspector/third_party/acorn-logical-assignment/package/dist/acorn-logical-assignment.mjs.map
 chrome/resources/inspector/third_party/acorn-loose/
 chrome/resources/inspector/third_party/acorn-loose/acorn-loose-tsconfig.json
 chrome/resources/inspector/third_party/acorn-loose/package/
 chrome/resources/inspector/third_party/acorn-loose/package/dist/
 chrome/resources/inspector/third_party/acorn-loose/package/dist/acorn-loose.d.ts
 chrome/resources/inspector/third_party/acorn-loose/package/dist/acorn-loose.mjs
-chrome/resources/inspector/third_party/acorn-numeric-separator/
-chrome/resources/inspector/third_party/acorn-numeric-separator/acorn-numeric-separator-tsconfig.json
-chrome/resources/inspector/third_party/acorn-numeric-separator/package/
-chrome/resources/inspector/third_party/acorn-numeric-separator/package/dist/
-chrome/resources/inspector/third_party/acorn-numeric-separator/package/dist/acorn-numeric-separator.mjs
-chrome/resources/inspector/third_party/acorn-numeric-separator/package/dist/acorn-numeric-separator.mjs.d.ts
-chrome/resources/inspector/third_party/acorn-numeric-separator/package/dist/acorn-numeric-separator.mjs.map
 chrome/resources/inspector/third_party/acorn/acorn-tsconfig.json
 chrome/resources/inspector/third_party/acorn/acorn.js
 chrome/resources/inspector/third_party/acorn/package/
@@ -1091,8 +1089,8 @@ chrome/resources/inspector/ui/ui.js
 chrome/resources/inspector/ui/utils/
 chrome/resources/inspector/ui/utils/utils.js
 chrome/resources/inspector/wasmparser_worker/
+chrome/resources/inspector/wasmparser_worker/wasmparser_worker-entrypoint.js
 chrome/resources/inspector/wasmparser_worker/wasmparser_worker.js
-chrome/resources/inspector/wasmparser_worker_entrypoint.js
 chrome/resources/inspector/web_audio/
 chrome/resources/inspector/web_audio/graph_visualizer/
 chrome/resources/inspector/web_audio/graph_visualizer/graph_visualizer.js

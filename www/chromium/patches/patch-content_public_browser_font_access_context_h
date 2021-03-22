@@ -1,0 +1,14 @@
+$OpenBSD: patch-content_public_browser_font_access_context_h,v 1.1 2021/03/22 18:04:54 robert Exp $
+
+Index: content/public/browser/font_access_context.h
+--- content/public/browser/font_access_context.h.orig
++++ content/public/browser/font_access_context.h
+@@ -11,7 +11,7 @@
+ #include "third_party/blink/public/mojom/font_access/font_access.mojom.h"
+ 
+ #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_MAC)
++    defined(OS_MAC) || defined(OS_BSD)
+ #define PLATFORM_HAS_LOCAL_FONT_ENUMERATION_IMPL 1
+ #endif
+ 

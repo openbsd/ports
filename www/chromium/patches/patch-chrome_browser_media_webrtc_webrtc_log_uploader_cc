@@ -1,10 +1,10 @@
-$OpenBSD: patch-chrome_browser_media_webrtc_webrtc_log_uploader_cc,v 1.13 2020/10/22 13:52:53 robert Exp $
+$OpenBSD: patch-chrome_browser_media_webrtc_webrtc_log_uploader_cc,v 1.14 2021/03/22 18:04:54 robert Exp $
 Index: chrome/browser/media/webrtc/webrtc_log_uploader.cc
 --- chrome/browser/media/webrtc/webrtc_log_uploader.cc.orig
 +++ chrome/browser/media/webrtc/webrtc_log_uploader.cc
-@@ -357,6 +357,8 @@ void WebRtcLogUploader::SetupMultipart(
+@@ -360,6 +360,8 @@ void WebRtcLogUploader::SetupMultipart(
    const char product[] = "Chrome_Android";
- #elif defined(OS_CHROMEOS)
+ #elif BUILDFLAG(IS_CHROMEOS_ASH)
    const char product[] = "Chrome_ChromeOS";
 +#elif defined(OS_OPENBSD)
 +  const char product[] = "Chrome_OpenBSD";

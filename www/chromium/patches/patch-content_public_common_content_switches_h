@@ -1,4 +1,5 @@
-$OpenBSD: patch-content_public_common_content_switches_h,v 1.49 2021/01/20 07:28:10 robert Exp $
+$OpenBSD: patch-content_public_common_content_switches_h,v 1.50 2021/03/22 18:04:54 robert Exp $
+
 Index: content/public/common/content_switches.h
 --- content/public/common/content_switches.h.orig
 +++ content/public/common/content_switches.h
@@ -14,17 +15,17 @@ Index: content/public/common/content_switches.h
  CONTENT_EXPORT extern const char kWebXrRuntimeOpenXr[];
  CONTENT_EXPORT extern const char kWebXrRuntimeWMR[];
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_ANDROID)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS) && !defined(OS_ANDROID)
+-#if (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) && !defined(OS_ANDROID)
++#if (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)) && !defined(OS_ANDROID)
  CONTENT_EXPORT extern const char kEnableAcceleratedVideoDecode[];
  #endif
  CONTENT_EXPORT extern const char kDisableAcceleratedVideoDecode[];
-@@ -266,7 +267,7 @@ CONTENT_EXPORT extern const char kRemoteDebuggingSocke
- CONTENT_EXPORT extern const char kRendererWaitForJavaDebugger[];
- #endif
+@@ -268,7 +269,7 @@ CONTENT_EXPORT extern const char kRendererWaitForJavaD
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  CONTENT_EXPORT extern const char kEnableSpeechDispatcher[];
  #endif
  

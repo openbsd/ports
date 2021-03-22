@@ -1,8 +1,9 @@
-$OpenBSD: patch-content_public_common_content_switches_cc,v 1.51 2021/01/20 07:28:10 robert Exp $
+$OpenBSD: patch-content_public_common_content_switches_cc,v 1.52 2021/03/22 18:04:54 robert Exp $
+
 Index: content/public/common/content_switches.cc
 --- content/public/common/content_switches.cc.orig
 +++ content/public/common/content_switches.cc
-@@ -357,6 +357,8 @@ const char kEnableGpuMemoryBufferVideoFrames[] =
+@@ -353,6 +353,8 @@ const char kEnableGpuMemoryBufferVideoFrames[] =
  // builds.
  const char kEnableLogging[]                 = "enable-logging";
  
@@ -11,21 +12,12 @@ Index: content/public/common/content_switches.cc
  // Enables the type, downlinkMax attributes of the NetInfo API. Also, enables
  // triggering of change attribute of the NetInfo API when there is a change in
  // the connection type.
-@@ -895,7 +897,7 @@ const char kWebXrRuntimeWMR[] = "windows-mixed-reality
- const char kDisableAcceleratedVideoDecode[] =
-     "disable-accelerated-video-decode";
+@@ -955,7 +957,7 @@ const char kEnableAutomation[] = "enable-automation";
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_ANDROID)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS) && !defined(OS_ANDROID)
- // Enables hardware acceleration of video decoding on linux. (defaults to off)
- const char kEnableAcceleratedVideoDecode[] = "enable-accelerated-video-decode";
- #endif
-@@ -959,7 +961,7 @@ const char kEnableAggressiveDOMStorageFlushing[] =
- // Enable indication that browser is controlled by automation.
- const char kEnableAutomation[] = "enable-automation";
- 
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  // Allows sending text-to-speech requests to speech-dispatcher, a common
  // Linux speech service. Because it's buggy, the user must explicitly
  // enable it so that visiting a random webpage can't cause instability.

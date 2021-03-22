@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_angle_util_BUILD_gn,v 1.6 2021/01/20 07:28:11 robert Exp $
+$OpenBSD: patch-third_party_angle_util_BUILD_gn,v 1.7 2021/03/22 18:04:55 robert Exp $
 
 Index: third_party/angle/util/BUILD.gn
 --- third_party/angle/util/BUILD.gn.orig
 +++ third_party/angle/util/BUILD.gn
-@@ -177,7 +177,7 @@ foreach(is_shared_library,
+@@ -186,7 +186,7 @@ foreach(is_shared_library,
      ]
      libs = []
  

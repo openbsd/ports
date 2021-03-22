@@ -1,45 +1,45 @@
-$OpenBSD: patch-components_policy_core_common_cloud_cloud_policy_util_cc,v 1.9 2021/01/20 07:28:09 robert Exp $
+$OpenBSD: patch-components_policy_core_common_cloud_cloud_policy_util_cc,v 1.10 2021/03/22 18:04:54 robert Exp $
 
 Index: components/policy/core/common/cloud/cloud_policy_util.cc
 --- components/policy/core/common/cloud/cloud_policy_util.cc.orig
 +++ components/policy/core/common/cloud/cloud_policy_util.cc
-@@ -17,7 +17,7 @@
+@@ -18,7 +18,7 @@
  #include <wincred.h>
  #endif
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS) || defined(OS_APPLE)
-+#if defined(OS_LINUX) && !defined(OS_CHROMEOS) || defined(OS_APPLE) || defined(OS_BSD)
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_APPLE)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_APPLE) || defined(OS_BSD)
  #include <pwd.h>
  #include <sys/types.h>
  #include <unistd.h>
-@@ -32,7 +32,7 @@
- #import <SystemConfiguration/SCDynamicStoreCopySpecific.h>
- #endif
+@@ -35,7 +35,7 @@
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  #include <limits.h>  // For HOST_NAME_MAX
  #endif
  
-@@ -66,7 +66,7 @@
+@@ -71,7 +71,7 @@
+ 
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  #include "base/system/sys_info.h"
  #endif
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
- #include "base/system/sys_info.h"
- #endif
- 
-@@ -75,7 +75,7 @@ namespace policy {
- namespace em = enterprise_management;
- 
+@@ -95,7 +95,7 @@ std::string GetDeviceModel() {
  std::string GetMachineName() {
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
    char hostname[HOST_NAME_MAX];
    if (gethostname(hostname, HOST_NAME_MAX) == 0)  // Success.
      return hostname;
-@@ -136,7 +136,7 @@ std::string GetMachineName() {
+@@ -148,7 +148,7 @@ std::string GetMachineName() {
  }
  
  std::string GetOSVersion() {
@@ -48,12 +48,12 @@ Index: components/policy/core/common/cloud/cloud_policy_util.cc
    return base::SysInfo::OperatingSystemVersion();
  #elif defined(OS_WIN)
    base::win::OSInfo::VersionNumber version_number =
-@@ -159,7 +159,7 @@ std::string GetOSArchitecture() {
+@@ -171,7 +171,7 @@ std::string GetOSArchitecture() {
  }
  
  std::string GetOSUsername() {
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS) || defined(OS_APPLE)
-+#if defined(OS_LINUX) && !defined(OS_CHROMEOS) || defined(OS_APPLE) || defined(OS_BSD)
+-#if (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_APPLE)
++#if (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_APPLE) || defined(OS_BSD)
    struct passwd* creds = getpwuid(getuid());
    if (!creds || !creds->pw_name)
      return std::string();

@@ -1,0 +1,15 @@
+$OpenBSD: patch-third_party_blink_renderer_platform_scheduler_common_thread_cc,v 1.1 2021/03/22 18:04:55 robert Exp $
+
+Index: third_party/blink/renderer/platform/scheduler/common/thread.cc
+--- third_party/blink/renderer/platform/scheduler/common/thread.cc.orig
++++ third_party/blink/renderer/platform/scheduler/common/thread.cc
+@@ -96,7 +96,8 @@ void Thread::CreateAndSetCompositorThread() {
+       std::make_unique<scheduler::CompositorThread>(params);
+   compositor_thread->Init();
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++// pledge
++#if (defined(OS_LINUX) || defined(OS_CHROMEOS)) && !defined(OS_OPENBSD)
+   if (base::FeatureList::IsEnabled(
+           features::kBlinkCompositorUseDisplayThreadPriority)) {
+     compositor_thread->GetTaskRunner()->PostTaskAndReplyWithResult(

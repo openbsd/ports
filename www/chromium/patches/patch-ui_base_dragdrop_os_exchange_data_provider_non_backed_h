@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_base_dragdrop_os_exchange_data_provider_non_backed_h,v 1.1 2021/01/20 07:28:12 robert Exp $
+$OpenBSD: patch-ui_base_dragdrop_os_exchange_data_provider_non_backed_h,v 1.2 2021/03/22 18:04:55 robert Exp $
 
 Index: ui/base/dragdrop/os_exchange_data_provider_non_backed.h
 --- ui/base/dragdrop/os_exchange_data_provider_non_backed.h.orig
 +++ ui/base/dragdrop/os_exchange_data_provider_non_backed.h
-@@ -60,7 +60,7 @@ class COMPONENT_EXPORT(UI_BASE) OSExchangeDataProvider
+@@ -61,7 +61,7 @@ class COMPONENT_EXPORT(UI_BASE) OSExchangeDataProvider
    bool HasURL(FilenameToURLPolicy policy) const override;
    bool HasFile() const override;
    bool HasCustomFormat(const ClipboardFormatType& format) const override;

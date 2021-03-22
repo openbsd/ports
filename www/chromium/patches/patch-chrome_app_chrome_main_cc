@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_app_chrome_main_cc,v 1.12 2021/01/20 07:28:07 robert Exp $
+$OpenBSD: patch-chrome_app_chrome_main_cc,v 1.13 2021/03/22 18:04:53 robert Exp $
 
 Index: chrome/app/chrome_main.cc
 --- chrome/app/chrome_main.cc.orig
 +++ chrome/app/chrome_main.cc
-@@ -120,7 +120,7 @@ int ChromeMain(int argc, const char** argv) {
+@@ -131,7 +131,7 @@ int ChromeMain(int argc, const char** argv) {
  
    // Chrome-specific process modes.
  #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
