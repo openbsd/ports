@@ -1,0 +1,14 @@
+$OpenBSD: patch-build_go,v 1.1 2021/03/23 15:17:57 sthen Exp $
+
+Index: build.go
+--- build.go.orig
++++ build.go
+@@ -343,7 +343,7 @@ func setBuildEnv() {
+ 		os.Setenv("GOARCH", goarch)
+ 	}
+ 	if goarch == "386" {
+-		os.Setenv("GO386", "387")
++		os.Setenv("GO386", "softfloat")
+ 	}
+ 	if cgo {
+ 		os.Setenv("CGO_ENABLED", "1")
