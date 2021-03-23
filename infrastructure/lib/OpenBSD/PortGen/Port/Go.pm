@@ -1,4 +1,4 @@
-# $OpenBSD: Go.pm,v 1.9 2021/03/03 03:08:30 abieber Exp $
+# $OpenBSD: Go.pm,v 1.10 2021/03/23 13:17:41 abieber Exp $
 #
 # Copyright (c) 2019 Aaron Bieber <abieber@openbsd.org>
 #
@@ -69,13 +69,12 @@ sub _go_determine_name
 	my ( $self, $module ) = @_;
 
 	my $json = $self->get_ver_info($module);
+	$module = $json->{Module};
 	if ($module =~ m/v\d$/) {
 		$json->{Name}   = ( split '/', $module )[-2];
 	} else {
 		$json->{Name}   = ( split '/', $module )[-1];
 	}
-
-	$json->{Module} = $module;
 
 	return $json;
 }
@@ -87,7 +86,7 @@ sub get_dist_info
 	my $json = $self->_go_determine_name($module);
 
 	my ($dist, $mods) = $self->_go_mod_info($json);
-	$json->{License} = $self->_go_lic_info($module);
+	$json->{License} = $self->_go_lic_info($json->{Module});
 
 	$json->{Dist} = $dist if @$dist > 0;
 	$json->{Mods} = $mods if @$mods > 0;
@@ -218,6 +217,13 @@ sub get_ver_info
 	my $version_list = do { local $@; eval { local $SIG{__DIE__};
 	    $self->get( $module . '/@v/list' ) } };
 
+	# Versions can be specified on the command line with a
+	# '@<version>' suffix, which defaults to '@latest':
+	my $at_version = 'latest';
+	if ($module =~ /@/) {
+		($module, $at_version) = split(/@/, $module);
+	}
+
 	my $version_info;
 	if ($version_list) {
 		my %v = ( o => OpenBSD::PackageName::version->from_string("v0.0.0") );
@@ -235,7 +241,12 @@ sub get_ver_info
 		}
 	}
 	else {
-		$version_info = $self->get_json( $self->_go_mod_normalize($module) . '/@latest' );
+		my $endpoint = '/@latest';
+		if ($at_version ne 'latest') {
+			$endpoint = '/@v/' . "${at_version}.info";
+		}
+		$version_info = $self->get_json( $self->_go_mod_normalize($module) . $endpoint );
+		$version_info->{Module} = $module;
 	}
 
 	return $self->{version_info} = $version_info;
