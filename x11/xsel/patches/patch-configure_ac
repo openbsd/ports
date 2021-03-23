@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure_ac,v 1.1 2021/03/23 15:07:28 sthen Exp $
+
+-Wdeclaration-after-statement is gcc 4-only.
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -24,7 +24,7 @@ AC_SEARCH_LIBS([XOpenDisplay], [X11], [], [AC_MSG_ERRO
+ dnl Add some useful warnings if we have gcc.
+ dnl changequote(,)dnl
+ if test "x$ac_cv_prog_gcc" = xyes ; then
+-  CFLAGS="$CFLAGS -fno-strict-aliasing -Wall -Werror -g -std=gnu99 -Wdeclaration-after-statement -Wno-unused"
++  CFLAGS="$CFLAGS -fno-strict-aliasing -Wall -Werror -g -std=gnu99 -Wno-unused"
+ fi
+ dnl changequote([,])dnl
+ 
