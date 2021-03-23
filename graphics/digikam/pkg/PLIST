@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2020/09/04 18:34:50 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.27 2021/03/23 10:37:35 rsadowski Exp $
 @conflict digikam-kde4-*
 @conflict kipi-plugins-<=4
 bin/cleanup_digikamdb
@@ -14,6 +14,7 @@ include/digikam/coredbconstants.h
 include/digikam/coredbfields.h
 include/digikam/coredburl.h
 include/digikam/curvescontainer.h
+include/digikam/dactivelabel.h
 include/digikam/dbengineaction.h
 include/digikam/dbengineconfig.h
 include/digikam/dbengineconfigsettings.h
@@ -53,6 +54,7 @@ include/digikam/dpluginloader.h
 include/digikam/dpluginrawimport.h
 include/digikam/dpreviewimage.h
 include/digikam/dpreviewmanager.h
+include/digikam/dprogresswdg.h
 include/digikam/drawdecoder.h
 include/digikam/drawdecodersettings.h
 include/digikam/drawdecoding.h
@@ -94,6 +96,8 @@ include/digikam/rginfo.h
 include/digikam/thumbnailinfo.h
 include/digikam/thumbnailloadthread.h
 include/digikam/wbcontainer.h
+include/digikam/wstooldialog.h
+include/digikam/wstoolutils.h
 lib/cmake/DigikamCore/
 lib/cmake/DigikamCore/DigikamCoreConfig${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/DigikamCore/DigikamCoreConfig.cmake
@@ -215,7 +219,6 @@ lib/qt5/plugins/digikam/generic/
 @so lib/qt5/plugins/digikam/generic/Generic_DigitalScanner_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_DropBox_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_ExpoBlending_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_FaceBook_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_FileCopy_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_FileTransfer_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_Flickr_Plugin.so
@@ -225,7 +228,6 @@ lib/qt5/plugins/digikam/generic/
 @so lib/qt5/plugins/digikam/generic/Generic_HtmlGallery_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_ImageShack_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_ImgUr_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_IpFs_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_JAlbum_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_MediaServer_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_MediaWiki_Plugin.so
@@ -303,6 +305,7 @@ share/digikam/data/colors-luma.png
 share/digikam/data/craters-pattern.png
 share/digikam/data/curvefree.png
 share/digikam/data/curvemooth.png
+share/digikam/data/detectFacesImg.png
 share/digikam/data/dried-pattern.png
 share/digikam/data/duplicatebothhorz.png
 share/digikam/data/duplicatebothvert.png
@@ -314,6 +317,7 @@ share/digikam/data/histogram-lin.png
 share/digikam/data/histogram-log.png
 share/digikam/data/histogram.png
 share/digikam/data/ice-pattern.png
+share/digikam/data/ignoreImg.png
 share/digikam/data/image-full.png
 share/digikam/data/image-selection.png
 share/digikam/data/leaf-pattern.png
@@ -344,6 +348,7 @@ share/digikam/data/metalwire-texture.png
 share/digikam/data/modern-texture.png
 share/digikam/data/moss-texture.png
 share/digikam/data/original.png
+share/digikam/data/overlayImg.png
 share/digikam/data/paper-pattern.png
 share/digikam/data/paper-texture.png
 share/digikam/data/paper2-texture.png
@@ -357,19 +362,16 @@ share/digikam/data/sample-aix.png
 share/digikam/data/splash-digikam.png
 share/digikam/data/stone-pattern.png
 share/digikam/data/stone-texture.png
+share/digikam/data/tagFacesImg.gif
 share/digikam/data/target.png
 share/digikam/data/togglemouseover.png
 share/digikam/data/wall-pattern.png
 share/digikam/data/wall-texture.png
 share/digikam/data/wood-pattern.png
+share/digikam/data/workOnAllCoresImg.png
 share/digikam/database/
 share/digikam/database/dbconfig.xml
 share/digikam/database/mysql-global.conf
-share/digikam/facesengine/
-share/digikam/facesengine/deploy.prototxt
-share/digikam/facesengine/openface_nn4.small2.v1.t7
-share/digikam/facesengine/res10_300x300_ssd_iter_140000_fp16.caffemodel
-share/digikam/facesengine/shapepredictor.dat
 share/digikam/geoiface/
 share/digikam/geoiface/backend-googlemaps-js.js
 share/digikam/geoiface/backend-googlemaps.html
@@ -694,14 +696,11 @@ share/icons/hicolor/128x128/apps/showfoto.png
 share/icons/hicolor/16x16/apps/digikam.png
 share/icons/hicolor/16x16/apps/dk-box.png
 share/icons/hicolor/16x16/apps/dk-dropbox.png
-share/icons/hicolor/16x16/apps/dk-facebook-white.png
-share/icons/hicolor/16x16/apps/dk-facebook.png
 share/icons/hicolor/16x16/apps/dk-flickr.png
 share/icons/hicolor/16x16/apps/dk-googledrive.png
 share/icons/hicolor/16x16/apps/dk-googlephoto.png
 share/icons/hicolor/16x16/apps/dk-imageshack.png
 share/icons/hicolor/16x16/apps/dk-imgur.png
-share/icons/hicolor/16x16/apps/dk-ipfs.png
 share/icons/hicolor/16x16/apps/dk-mediawiki.png
 share/icons/hicolor/16x16/apps/dk-onedrive.png
 share/icons/hicolor/16x16/apps/dk-pinterest.png
@@ -714,14 +713,11 @@ share/icons/hicolor/16x16/apps/showfoto.png
 share/icons/hicolor/22x22/apps/digikam.png
 share/icons/hicolor/22x22/apps/dk-box.png
 share/icons/hicolor/22x22/apps/dk-dropbox.png
-share/icons/hicolor/22x22/apps/dk-facebook-white.png
-share/icons/hicolor/22x22/apps/dk-facebook.png
 share/icons/hicolor/22x22/apps/dk-flickr.png
 share/icons/hicolor/22x22/apps/dk-googledrive.png
 share/icons/hicolor/22x22/apps/dk-googlephoto.png
 share/icons/hicolor/22x22/apps/dk-imageshack.png
 share/icons/hicolor/22x22/apps/dk-imgur.png
-share/icons/hicolor/22x22/apps/dk-ipfs.png
 share/icons/hicolor/22x22/apps/dk-mediawiki.png
 share/icons/hicolor/22x22/apps/dk-onedrive.png
 share/icons/hicolor/22x22/apps/dk-pinterest.png
@@ -754,14 +750,11 @@ share/icons/hicolor/32x32/actions/underexposure.png
 share/icons/hicolor/32x32/apps/digikam.png
 share/icons/hicolor/32x32/apps/dk-box.png
 share/icons/hicolor/32x32/apps/dk-dropbox.png
-share/icons/hicolor/32x32/apps/dk-facebook-white.png
-share/icons/hicolor/32x32/apps/dk-facebook.png
 share/icons/hicolor/32x32/apps/dk-flickr.png
 share/icons/hicolor/32x32/apps/dk-googledrive.png
 share/icons/hicolor/32x32/apps/dk-googlephoto.png
 share/icons/hicolor/32x32/apps/dk-imageshack.png
 share/icons/hicolor/32x32/apps/dk-imgur.png
-share/icons/hicolor/32x32/apps/dk-ipfs.png
 share/icons/hicolor/32x32/apps/dk-mediawiki.png
 share/icons/hicolor/32x32/apps/dk-onedrive.png
 share/icons/hicolor/32x32/apps/dk-pinterest.png
@@ -774,14 +767,11 @@ share/icons/hicolor/32x32/apps/showfoto.png
 share/icons/hicolor/48x48/apps/digikam.png
 share/icons/hicolor/48x48/apps/dk-box.png
 share/icons/hicolor/48x48/apps/dk-dropbox.png
-share/icons/hicolor/48x48/apps/dk-facebook-white.png
-share/icons/hicolor/48x48/apps/dk-facebook.png
 share/icons/hicolor/48x48/apps/dk-flickr.png
 share/icons/hicolor/48x48/apps/dk-googledrive.png
 share/icons/hicolor/48x48/apps/dk-googlephoto.png
 share/icons/hicolor/48x48/apps/dk-imageshack.png
 share/icons/hicolor/48x48/apps/dk-imgur.png
-share/icons/hicolor/48x48/apps/dk-ipfs.png
 share/icons/hicolor/48x48/apps/dk-mediawiki.png
 share/icons/hicolor/48x48/apps/dk-onedrive.png
 share/icons/hicolor/48x48/apps/dk-pinterest.png
@@ -796,12 +786,9 @@ share/icons/hicolor/64x64/apps/showfoto.png
 share/icons/hicolor/96x96/apps/expoblending.png
 share/icons/hicolor/96x96/apps/panorama.png
 share/icons/hicolor/scalable/apps/digikam.svgz
-share/icons/hicolor/scalable/apps/dk-facebook-white.svgz
-share/icons/hicolor/scalable/apps/dk-facebook.svgz
 share/icons/hicolor/scalable/apps/dk-flickr.svgz
 share/icons/hicolor/scalable/apps/dk-googlephoto.svgz
 share/icons/hicolor/scalable/apps/dk-imgur.svgz
-share/icons/hicolor/scalable/apps/dk-ipfs.svgz
 share/icons/hicolor/scalable/apps/dk-mediawiki.svgz
 share/icons/hicolor/scalable/apps/dk-piwigo.svgz
 share/icons/hicolor/scalable/apps/dk-smugmug.svgz
