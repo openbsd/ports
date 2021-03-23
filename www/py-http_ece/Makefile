@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:13:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/03/23 08:23:18 sebastia Exp $
 
 MODPY_EGG_VERSION =	1.1.0
 COMMENT =		encrypted Content Encoding for HTTP
 DISTNAME =		http_ece-${MODPY_EGG_VERSION}
 PKGNAME =		py-http_ece-${MODPY_EGG_VERSION}
 CATEGORIES =		www
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		https://github.com/martinthomson/encrypted-content-encoding
 MAINTAINER =		Pamela Mosiejczuk <pamela@openbsd.org>
@@ -18,7 +18,7 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PI =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 RUN_DEPENDS =		security/py-cryptography${MODPY_FLAVOR}
 
