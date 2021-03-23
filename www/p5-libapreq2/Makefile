@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2021/03/07 14:28:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/03/23 15:07:46 sthen Exp $
 
 COMMENT=	apache HTTP server request library
 
-DISTNAME=	libapreq2-2.15
+DISTNAME=	libapreq2-2.16
 # can't use perl module with autoconf; p5- prefix added manually here
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www
