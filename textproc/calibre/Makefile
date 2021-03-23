@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.86 2021/03/17 08:22:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.87 2021/03/23 22:19:59 sthen Exp $
 
 COMMENT =		ebook management application
 
 V =			5.13.0
 DISTNAME =		calibre-$V
+REVISION =		0
 
 CATEGORIES =		textproc
 
@@ -61,6 +62,7 @@ BUILD_DEPENDS =		${COMMON_DEPENDS} \
 			sysutils/py-packaging${MODPY_FLAVOR}
 
 RUN_DEPENDS =		${COMMON_DEPENDS} \
+			converters/py-html2text${MODPY_FLAVOR} \
 			devel/desktop-file-utils \
 			misc/shared-mime-info \
 			net/py-netifaces${MODPY_FLAVOR}  \
