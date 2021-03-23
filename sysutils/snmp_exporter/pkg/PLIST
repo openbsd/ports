@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/03/08 21:04:59 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/03/23 19:42:28 sthen Exp $
 @newgroup _snmpexporter:845
 @newuser _snmpexporter:845:_snmpexporter:daemon:prometheus snmp_exporter:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/snmp_exporter
 @bin bin/snmp_exporter
 @bin bin/snmp_generator
+share/doc/pkg-readmes/${PKGSTEM}
 share/doc/snmp_exporter/
 share/doc/snmp_exporter/LICENSE
 share/doc/snmp_exporter/README.md
@@ -15,6 +16,7 @@ share/examples/snmp_exporter/
 @mode
 @owner
 @group
+share/examples/snmp_exporter/generator-pf.yml
 share/examples/snmp_exporter/generator.yml
 @sample ${SYSCONFDIR}/snmp_exporter/generator.yml
 share/examples/snmp_exporter/mibs/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2021/03/08 21:04:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/03/23 19:42:28 sthen Exp $
 
 COMMENT=	Prometheus exporter for SNMP metrics
 
@@ -6,6 +6,7 @@ COMMENT=	Prometheus exporter for SNMP metrics
 # "make mibs", update M version, "make makesum".
 V=		0.20.0
 M=		0.20.0
+REVISION=	0
 GH_ACCOUNT=	prometheus
 GH_PROJECT=	snmp_exporter
 GH_TAGNAME=	v$V
@@ -48,7 +49,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/{LICENSE,README.md} \
 	    ${PREFIX}/share/doc/snmp_exporter/
 	${INSTALL_DATA} ${WRKSRC}/{snmp,generator/generator}.yml \
-	    ${PREFIX}/share/examples/snmp_exporter/
+	    ${FILESDIR}/generator-pf.yml ${PREFIX}/share/examples/snmp_exporter/
 	cp -r ${WRKSRC}/generator/mibs \
 	    ${PREFIX}/share/examples/snmp_exporter/
 	find ${PREFIX}/share/examples/snmp_exporter/mibs -name '*.md5' -delete

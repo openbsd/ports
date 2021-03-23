@@ -1,0 +1,59 @@
+# $OpenBSD: generator-pf.yml,v 1.1 2021/03/23 19:42:28 sthen Exp $
+# Cut-down example of if_mib setup done using SNMPv3 (edit the various
+# $snmpv3-... as needed) and information from OPENBSD-PF-MIB, based on
+# https://yetiops.net/posts/openbsd-snmp-exporter/.
+
+modules:
+  if_mib:
+    walk: [sysUpTime, interfaces, ifXTable]
+    lookups:
+      - source_indexes: [ifIndex]
+        lookup: ifAlias
+      - source_indexes: [ifIndex]
+        lookup: ifDescr
+      - source_indexes: [ifIndex]
+        lookup: ifName
+    overrides:
+      ifAlias:
+        ignore: true # Lookup metric
+      ifDescr:
+        ignore: true # Lookup metric
+      ifName:
+        ignore: true # Lookup metric
+      ifType:
+        type: EnumAsInfo
+    version: 3
+    auth:
+      username: "$snmpv3-user"
+      security_level: authPriv
+      password: "$snmpv3-authkey"
+      auth_protocol: SHA
+      priv_protocol: AES
+      priv_password: "$snmpv3-enckey"
+
+  openbsd_pf:
+    walk:
+      - pfRunning
+      - pfRuntime
+      - pfDebug
+      - pfHostid
+      - pfStateCount
+      - pfStateSearches
+      - pfStateInserts
+      - pfStateRemovals
+      - pfIfTable
+      - pfIfDescr
+      - pfIfType
+      - pfIfIndex
+    lookups:
+    - source_indexes: [pfIfIndex]
+      lookup: pfIfDescr
+      drop_source_indexes: false
+    version: 3
+    auth:
+      username: "$snmpv3-user"
+      security_level: authPriv
+      password: "$snmpv3-authkey"
+      auth_protocol: SHA
+      priv_protocol: AES
+      priv_password: "$snmpv3-enckey"
