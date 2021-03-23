@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/20 12:30:01 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2021/03/23 07:17:05 bentley Exp $
 
 COMMENT =	humanist sans-serif typeface
 
 V =		1.001pre1
 DISTNAME =	Junction-$V
 LEAGUE_FONT =	junction
+REVISION =	0
 
 MASTER_SITES =	https://distfiles.roadrunner.page/
 

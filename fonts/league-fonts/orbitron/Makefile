@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/20 12:33:02 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2021/03/23 07:17:05 bentley Exp $
 
 COMMENT =	geometric sans-serif from the future
 
 V =		1.000pre1
 DISTNAME =	Orbitron-$V
 LEAGUE_FONT =	orbitron
+REVISION =	0
 
 MASTER_SITES =	https://distfiles.roadrunner.page/
 

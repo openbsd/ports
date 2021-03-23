@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/20 12:31:45 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2021/03/23 07:17:05 bentley Exp $
 
 COMMENT =	modern, coquettish script font
 
 V =		1.001pre1
 DISTNAME =	LeagueScriptNumberOne-$V
 LEAGUE_FONT =	league-script-number-one
+REVISION =	0
 
 HOMEPAGE =	https://www.theleagueofmoveabletype.com/league-script
 

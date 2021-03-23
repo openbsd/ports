@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/20 12:29:15 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2021/03/23 07:17:05 bentley Exp $
 
 COMMENT =	font based on Kennerley Oldstyle
 
@@ -6,6 +6,7 @@ V =		2010.07.03
 DISTNAME =	gb1911-$V
 PKGNAME =	gb1911-$V
 LEAGUE_FONT =	goudy-bookletter-1911
+REVISION =	0
 
 MASTER_SITES =	https://crudfactory.com/
 EXTRACT_SUFX =	.zip

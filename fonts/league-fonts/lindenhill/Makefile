@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/20 12:32:40 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2021/03/23 07:17:05 bentley Exp $
 
 COMMENT =	digital version of Frederic Goudy's Deepdene
 
@@ -6,6 +6,7 @@ V =		1.2
 DISTNAME =	lindenhill-$V
 PKGNAME =	lindenhill-$V
 LEAGUE_FONT =	linden-hill
+REVISION =	0
 
 MASTER_SITES =	https://crudfactory.com/
 EXTRACT_SUFX =	.zip

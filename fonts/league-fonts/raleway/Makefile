@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/20 12:34:13 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2021/03/23 07:17:05 bentley Exp $
 
 COMMENT =	elegant variable sans-serif
 
 V =		4.101
 DISTNAME =	Raleway-$V
 LEAGUE_FONT =	raleway
+REVISION =	0
 
 do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR}
