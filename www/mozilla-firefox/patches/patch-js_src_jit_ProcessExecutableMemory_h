@@ -1,11 +1,11 @@
-$OpenBSD: patch-js_src_jit_ProcessExecutableMemory_h,v 1.3 2019/07/09 18:04:16 landry Exp $
+$OpenBSD: patch-js_src_jit_ProcessExecutableMemory_h,v 1.4 2021/03/23 13:25:36 landry Exp $
 
 https://bugzilla.mozilla.org/show_bug.cgi?id=1347139
 
 Index: js/src/jit/ProcessExecutableMemory.h
 --- js/src/jit/ProcessExecutableMemory.h.orig
 +++ js/src/jit/ProcessExecutableMemory.h
-@@ -15,8 +15,9 @@ namespace js {
+@@ -13,8 +13,9 @@ namespace js {
  namespace jit {
  
  // Limit on the number of bytes of executable memory to prevent JIT spraying

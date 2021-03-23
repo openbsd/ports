@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.29 2020/07/30 14:25:08 landry Exp $
+$OpenBSD: README,v 1.30 2021/03/23 13:25:36 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -25,6 +25,12 @@ following files to change the pledge promises, unveil paths, and
 associated permissions:
 
 ${SYSCONFDIR}/${MOZILLA_PROJECT}/{unveil,pledge}.{main,content,gpu}
+
+As unveil() can't show non-existing dirs, it is recommended to manually
+create ~/Downloads for files to be properly saved in this directory.
+
+Starting firefox should create this dir though, but it wont be available
+for downloads until it's restarted.
 
 3rd-Party MIME Handlers
 =======================
