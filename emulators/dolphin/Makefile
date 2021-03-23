@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/03/22 22:25:56 thfr Exp $
+# $OpenBSD: Makefile,v 1.12 2021/03/23 19:16:40 ajacoutot Exp $
 
 USE_WXNEEDED =		Yes
 ONLY_FOR_ARCHS =	amd64
@@ -41,7 +41,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 MODULES =		devel/cmake
 TEST_DEPENDS =		devel/gtest
 BUILD_DEPENDS =		devel/gettext,-tools \
-			devel/fmt \
+			devel/fmt
 LIB_DEPENDS-nogui =	archivers/lzo2 \
 			comms/libhidapi \
 			converters/libiconv \
