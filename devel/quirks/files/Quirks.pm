@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1251 2021/03/21 14:05:12 danj Exp $
+# $OpenBSD: Quirks.pm,v 1.1252 2021/03/23 08:26:23 sebastia Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -618,6 +618,7 @@ my $stem_extensions = {
 	'py-pg_activity' => 'pg_activity', # removing py- prefix
 	'py-axolotl' => 'py3-axolotl',
 	'py-protobuf' => 'py3-protobuf',
+	'py-http_ece' => 'py3-http_ece',
 };
 
 my $obsolete_reason = {
