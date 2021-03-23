@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/02/20 14:22:33 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.14 2021/03/23 14:59:00 sthen Exp $
 bin/qutebrowser
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -383,6 +383,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/${MODPY_PYCACHE}crashs
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/${MODPY_PYCACHE}debugcachestats.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/${MODPY_PYCACHE}earlyinit.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/${MODPY_PYCACHE}editor.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/${MODPY_PYCACHE}elf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/${MODPY_PYCACHE}guiprocess.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/${MODPY_PYCACHE}httpclient.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/${MODPY_PYCACHE}ipc.${MODPY_PYC_MAGIC_TAG}pyc
@@ -409,6 +410,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/crashsignal.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/debugcachestats.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/earlyinit.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/editor.py
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/elf.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/guiprocess.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/httpclient.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/misc/ipc.py
@@ -441,6 +443,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/utils/${MODPY_PYCACHE}log.$
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/utils/${MODPY_PYCACHE}message.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/utils/${MODPY_PYCACHE}objreg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/utils/${MODPY_PYCACHE}qtutils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/utils/${MODPY_PYCACHE}resources.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/utils/${MODPY_PYCACHE}standarddir.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/utils/${MODPY_PYCACHE}urlmatch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/utils/${MODPY_PYCACHE}urlutils.${MODPY_PYC_MAGIC_TAG}pyc
@@ -456,6 +459,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/utils/log.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/utils/message.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/utils/objreg.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/utils/qtutils.py
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/utils/resources.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/utils/standarddir.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/utils/testfile
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/utils/urlmatch.py
