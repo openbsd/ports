@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.53 2021/03/21 09:37:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2021/03/23 22:17:37 sthen Exp $
+
+BROKEN-aarch64=	old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1.1.11
+BROKEN-armv7=	old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1.1.11
 
 COMMENT=	thin wrapper for Terraform that provides extra tools
 

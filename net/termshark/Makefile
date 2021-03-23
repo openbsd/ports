@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2021/03/10 22:08:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/03/23 22:17:36 sthen Exp $
+
+BROKEN-aarch64=	old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1.1.11
+BROKEN-armv7=	old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1.1.11
 
 COMMENT=	terminal UI for tshark, inspired by Wireshark
 
