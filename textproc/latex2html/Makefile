@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 20:50:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2021/03/23 21:45:59 sthen Exp $
 
 COMMENT=	LaTeX to HTML converter
 
-DISTNAME=	latex2html-2015
-REVISION=	2
+GH_ACCOUNT =	latex2html
+GH_PROJECT =	latex2html
+GH_TAGNAME =	v2021
+
 CATEGORIES=	textproc www
 
 HOMEPAGE=	http://www.latex2html.org/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
-
-MASTER_SITES=	${MASTER_SITE_TEX_CTAN:=support/latex2html/}
 
 PATCHORIG=	.pat.orig
 BUILD_DEPENDS=	${RUN_DEPENDS}
@@ -30,8 +30,8 @@ PKG_ARCH=	*
 TEST_TARGET=	test
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/latex2hmtl
-	cp -R ${WRKSRC}/docs/* ${PREFIX}/share/doc/latex2hmtl
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/latex2html
+	cp -R ${WRKSRC}/docs/* ${PREFIX}/share/doc/latex2html
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/latex2html
 	cp -R ${WRKSRC}/example/* ${PREFIX}/share/examples/latex2html
 
