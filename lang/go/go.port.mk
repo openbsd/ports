@@ -1,4 +1,4 @@
-# $OpenBSD: go.port.mk,v 1.41 2021/03/18 22:35:26 sthen Exp $
+# $OpenBSD: go.port.mk,v 1.42 2021/03/23 13:19:08 abieber Exp $
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
@@ -179,9 +179,9 @@ do-test:
 
 # modgo-gen-modules will output MODGO_MODULES and MODGO_MODFILES
 modgo-gen-modules:
-.if empty(ALL_TARGET)
-	@${ECHO_MSG} "No ALL_TARGET set"
+.if empty(MODGO_MODNAME)
+	@${ECHO_MSG} "No MODGO_MODNAME set"
 	@exit 1
 .else
-	@${_PERLSCRIPT}/modgo-gen-modules-helper ${ALL_TARGET}
+	@${_PERLSCRIPT}/modgo-gen-modules-helper ${MODGO_MODNAME}
 .endif
