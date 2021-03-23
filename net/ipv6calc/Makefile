@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2021/03/22 09:36:40 fcambus Exp $
+# $OpenBSD: Makefile,v 1.27 2021/03/23 16:35:01 fcambus Exp $
 
 COMMENT=	tool for manipulating IPv6 addresses
 
@@ -13,6 +13,8 @@ HOMEPAGE=	https://www.deepspace6.net/projects/ipv6calc.html
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto m
+
+BUILD_DEPENDS=	shells/bash
 
 CONFIGURE_STYLE=gnu
 USE_GMAKE=	Yes
