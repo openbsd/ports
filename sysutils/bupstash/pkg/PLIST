@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/03/04 04:29:14 bket Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/03/24 04:51:14 bket Exp $
 @bin bin/bupstash
+@man man/man1/bupstash-diff.1
 @man man/man1/bupstash-gc.1
 @man man/man1/bupstash-get.1
 @man man/man1/bupstash-init.1
