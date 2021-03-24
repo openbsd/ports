@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/03/24 19:50:29 sebastia Exp $
+bin/fickling
+lib/python${MODPY_VERSION}/site-packages/fickling/
+lib/python${MODPY_VERSION}/site-packages/fickling-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/fickling-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/fickling-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/fickling-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/fickling-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/fickling-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/fickling-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/fickling/__init__.py
+lib/python${MODPY_VERSION}/site-packages/fickling/__main__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fickling/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fickling/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fickling/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fickling/${MODPY_PYCACHE}analysis.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fickling/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fickling/${MODPY_PYCACHE}pickle.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fickling/${MODPY_PYCACHE}tracing.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fickling/analysis.py
+lib/python${MODPY_VERSION}/site-packages/fickling/cli.py
+lib/python${MODPY_VERSION}/site-packages/fickling/pickle.py
+lib/python${MODPY_VERSION}/site-packages/fickling/tracing.py

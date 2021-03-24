@@ -1,0 +1,8 @@
+Fickling is a decompiler, static analyzer, and bytecode rewriter for
+Python pickle object serializations.
+
+Pickled Python objects are in fact bytecode that is interpreted by a
+stack-based virtual machine built into Python called the "Pickle
+Machine". Fickling can take pickled data streams and decompile them into
+human-readable Python code that, when executed, will deserialize to the
+original serialized object.
