@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.25 2021/02/10 12:47:07 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.26 2021/03/24 12:49:53 sthen Exp $
 @newgroup _icingaweb2:762
 @newuser _icingaweb2:762:_icingaweb2:daemon:Icinga-web2 user:${PREFIX}/icinga-web2:/sbin/nologin
 @extraunexec rm -rf %D/etc/icingaweb2/*
 @extraunexec rm -rf %D/icinga-web2/tmp/*
+conf/modules.sample/
 icinga-web2/
 icinga-web2/.mailmap
 icinga-web2/AUTHORS
@@ -2739,7 +2740,9 @@ icinga-web2/packages/RPM.md
 icinga-web2/packages/files/
 icinga-web2/packages/files/apache/
 icinga-web2/packages/files/apache/icingaweb2.conf
+@sample conf/modules.sample/icingaweb2.conf
 icinga-web2/packages/files/apache/icingaweb2.fpm.conf
+@sample conf/modules.sample/icingaweb2.fpm.conf
 icinga-web2/packages/files/bin/
 icinga-web2/packages/files/bin/icingacli
 icinga-web2/packages/files/config/

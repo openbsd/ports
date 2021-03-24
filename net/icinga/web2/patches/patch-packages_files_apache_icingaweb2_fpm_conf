@@ -1,0 +1,32 @@
+$OpenBSD: patch-packages_files_apache_icingaweb2_fpm_conf,v 1.1 2021/03/24 12:49:53 sthen Exp $
+
+Index: packages/files/apache/icingaweb2.fpm.conf
+--- packages/files/apache/icingaweb2.fpm.conf.orig
++++ packages/files/apache/icingaweb2.fpm.conf
+@@ -1,14 +1,14 @@
+-Alias /icingaweb2 "/usr/share/icingaweb2/public"
++Alias /icingaweb2 "${TRUEPREFIX}/icinga-web2/public"
+ 
+ <IfVersion < 2.4>
+     # Forward PHP requests to FPM
+     SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+     <LocationMatch "^/icingaweb2/(.*\.php)$">
+-        ProxyPassMatch "fcgi://127.0.0.1:9000/usr/share/icingaweb2/public/$1"
++        ProxyPassMatch "fcgi://127.0.0.1:9000${TRUEPREFIX}/icinga-web2/public/$1"
+     </LocationMatch>
+ </IfVersion>
+ 
+-<Directory "/usr/share/icingaweb2/public">
++<Directory "${TRUEPREFIX}/icinga-web2/public">
+     Options SymLinksIfOwnerMatch
+     AllowOverride None
+ 
+@@ -27,7 +27,7 @@ Alias /icingaweb2 "/usr/share/icingaweb2/public"
+         Allow from all
+     </IfModule>
+ 
+-    SetEnv ICINGAWEB_CONFIGDIR "/etc/icingaweb2"
++    SetEnv ICINGAWEB_CONFIGDIR "${TRUEPREFIX}/etc/icingaweb2"
+ 
+     EnableSendfile Off
+ 

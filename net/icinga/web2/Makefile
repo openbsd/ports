@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.52 2021/02/26 11:17:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2021/03/24 12:49:53 sthen Exp $
 
 COMMENT =	next-generation web UI for icinga
 
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icingaweb2
 GH_TAGNAME =	v2.8.2
-REVISION =	6
+REVISION =	7
 PKGNAME =	icinga-web2-${GH_TAGNAME:S/v//}
 
 MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 MODULES=	lang/php
 
-# XXX as of 2.8.2, php7.3 is ok for most things but not initial install
 MODPHP_PDO_ALLOWED = mysql pgsql
 MODPHP_PDO_PREF =    mysql
 
@@ -28,9 +27,12 @@ do-configure:
 	    ${WRKSRC}/bin/icingacli
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/icinga-web2
+	${INSTALL_DATA_DIR} ${PREFIX}/icinga-web2 \
+	    ${PREFIX}/conf/modules.sample
 	cd ${WRKSRC}; pax -rw ./ ${PREFIX}/icinga-web2/
-	find ${PREFIX}/icinga-web2 -name '*.orig' -delete
+	${SUBST_CMD} ${PREFIX}/icinga-web2/packages/files/apache/*conf
+	find ${PREFIX}/icinga-web2 \( -name '*.orig' \
+	    -or -name '*.beforesubst' \) -delete
 	ln -s ${TRUEPREFIX}/icinga-web2/bin/icingacli \
 	    ${WRKINST}/usr/local/bin/
 
