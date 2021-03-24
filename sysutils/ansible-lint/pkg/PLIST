@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/02/19 19:29:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/03/24 17:07:05 sthen Exp $
 bin/ansible-lint
 lib/python${MODPY_VERSION}/site-packages/ansible_lint-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/ansible_lint-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -14,7 +14,6 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}_prerun.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}app.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}color.${MODPY_PYC_MAGIC_TAG}pyc
@@ -25,6 +24,7 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}file_utils.
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}generate_docs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}loaders.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}logger.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}prerun.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}runner.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}skip_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}pyc
@@ -36,7 +36,6 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansiblelint/_internal/$
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/_internal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/_internal/${MODPY_PYCACHE}rules.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/_internal/rules.py
-lib/python${MODPY_VERSION}/site-packages/ansiblelint/_prerun.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/app.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/cli.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/color.py
@@ -51,6 +50,7 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/formatters/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/generate_docs.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/loaders.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/logger.py
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/prerun.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/AnsibleSyntaxCheckRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/BecomeUserWithoutBecomeRule.py
@@ -71,6 +71,7 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/MetaVideoLinksRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/MissingFilePermissionsRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/NestedJinjaRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/NoFormattingInWhenRule.py
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/NoSameOwnerRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/NoTabsRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/OctalPermissionsRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/PackageIsNotLatestRule.py
@@ -107,6 +108,7 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}MetaV
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}MissingFilePermissionsRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}NestedJinjaRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}NoFormattingInWhenRule.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}NoSameOwnerRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}NoTabsRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}OctalPermissionsRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}PackageIsNotLatestRule.${MODPY_PYC_MAGIC_TAG}pyc

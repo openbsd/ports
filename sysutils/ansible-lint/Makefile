@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2021/03/07 08:41:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2021/03/24 17:07:05 sthen Exp $
 
 COMMENT =		best practices checker for ansible
 
-MODPY_EGG_VERSION =	5.0.2
+MODPY_EGG_VERSION =	5.0.5
 DISTNAME =		ansible-lint-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils
@@ -25,7 +25,7 @@ RUN_DEPENDS =		devel/py-enrich${MODPY_FLAVOR} \
 			sysutils/py-packaging${MODPY_FLAVOR} \
 			textproc/py-ruamel.yaml${MODPY_FLAVOR}
 
-# for tests
+# for tests (can't use MODPY_PYTEST until we have pytest-4.6.6+)
 PORTHOME =		${WRKDIR}
 
 .include <bsd.port.mk>
