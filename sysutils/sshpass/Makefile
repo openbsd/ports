@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2021/03/23 14:21:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/03/24 15:58:09 sthen Exp $
 
 COMMENT =	noninteractive ssh password provider
 
-DISTNAME =	sshpass-1.08
+DISTNAME =	sshpass-1.09
 
 CATEGORIES =	sysutils
 
