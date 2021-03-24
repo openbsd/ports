@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/03/24 19:48:16 sebastia Exp $
+lib/python${MODPY_VERSION}/site-packages/astunparse/
+lib/python${MODPY_VERSION}/site-packages/astunparse-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/astunparse-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/astunparse-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/astunparse-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/astunparse-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/astunparse-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/astunparse-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/astunparse.egg-info/
+lib/python${MODPY_VERSION}/site-packages/astunparse.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/astunparse.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/astunparse.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/astunparse.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/astunparse.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/astunparse.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/astunparse/__init__.py
+lib/python${MODPY_VERSION}/site-packages/astunparse/__main__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/astunparse/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/astunparse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/astunparse/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/astunparse/${MODPY_PYCACHE}printer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/astunparse/${MODPY_PYCACHE}unparser.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/astunparse/printer.py
+lib/python${MODPY_VERSION}/site-packages/astunparse/unparser.py

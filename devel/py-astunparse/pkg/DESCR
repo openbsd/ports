@@ -1,0 +1,5 @@
+An AST unparser for Python.
+
+This is a factored out version of unparse found in the Python source
+distribution; under Demo/parser in Python 2 and under Tools/parser in
+Python 3.
