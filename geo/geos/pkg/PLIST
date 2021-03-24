@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.18 2020/12/23 10:18:19 landry Exp $
+@comment $OpenBSD: PLIST,v 1.19 2021/03/24 10:53:30 landry Exp $
 bin/geos-config
 include/geos/
-include/geos.h
 include/geos/algorithm/
 include/geos/algorithm/Angle.h
 include/geos/algorithm/Area.h
@@ -321,15 +320,12 @@ include/geos/operation/overlay/
 include/geos/operation/overlay/EdgeSetNoder.h
 include/geos/operation/overlay/ElevationMatrix.h
 include/geos/operation/overlay/ElevationMatrixCell.h
-include/geos/operation/overlay/FuzzyPointLocator.h
 include/geos/operation/overlay/LineBuilder.h
 include/geos/operation/overlay/MaximalEdgeRing.h
 include/geos/operation/overlay/MinimalEdgeRing.h
 include/geos/operation/overlay/MinimalEdgeRing.inl
-include/geos/operation/overlay/OffsetPointGenerator.h
 include/geos/operation/overlay/OverlayNodeFactory.h
 include/geos/operation/overlay/OverlayOp.h
-include/geos/operation/overlay/OverlayResultValidator.h
 include/geos/operation/overlay/PointBuilder.h
 include/geos/operation/overlay/PolygonBuilder.h
 include/geos/operation/overlay/snap/
@@ -337,6 +333,10 @@ include/geos/operation/overlay/snap/GeometrySnapper.h
 include/geos/operation/overlay/snap/LineStringSnapper.h
 include/geos/operation/overlay/snap/SnapIfNeededOverlayOp.h
 include/geos/operation/overlay/snap/SnapOverlayOp.h
+include/geos/operation/overlay/validate/
+include/geos/operation/overlay/validate/FuzzyPointLocator.h
+include/geos/operation/overlay/validate/OffsetPointGenerator.h
+include/geos/operation/overlay/validate/OverlayResultValidator.h
 include/geos/operation/overlayng/
 include/geos/operation/overlayng/Edge.h
 include/geos/operation/overlayng/EdgeKey.h
@@ -477,10 +477,12 @@ include/geos/util/UnsupportedOperationException.h
 include/geos/util/math.h
 include/geos/version.h
 include/geos_c.h
-@static-lib lib/libgeos.a
-lib/libgeos.la
+lib/cmake/
+lib/cmake/GEOS/
+lib/cmake/GEOS/geos-config-version.cmake
+lib/cmake/GEOS/geos-config.cmake
+lib/cmake/GEOS/geos-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/GEOS/geos-targets.cmake
 @lib lib/libgeos.so.${LIBgeos_VERSION}
-@static-lib lib/libgeos_c.a
-lib/libgeos_c.la
 @lib lib/libgeos_c.so.${LIBgeos_c_VERSION}
 lib/pkgconfig/geos.pc
