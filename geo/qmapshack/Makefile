@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/03/05 09:52:23 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2021/03/24 10:57:43 landry Exp $
 
 COMMENT =	map management tool
 
@@ -6,6 +6,7 @@ GH_ACCOUNT =	Maproom
 GH_PROJECT =	qmapshack
 GH_TAGNAME =	V_1.15.0
 REVISION =	0
+BROKEN =	doesnt build against proj8
 
 CATEGORIES =	geo
 
