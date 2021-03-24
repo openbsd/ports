@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2021/03/13 01:53:19 kn Exp $
+# $OpenBSD: Makefile,v 1.9 2021/03/24 21:37:17 kn Exp $
 
 COMMENT =	curses TLS-only IRC client
-DISTNAME =	catgirl-441f561f72090a30d1e17e015c3e5257a70ecd85
-PKGNAME =	catgirl-1.6.20120310
+DISTNAME =	catgirl-1.7
 
 CATEGORIES =	net
 
