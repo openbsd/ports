@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_Resource_Files_python3lib_updatechecker_py,v 1.1 2020/03/09 21:13:41 sthen Exp $
+$OpenBSD: patch-src_Resource_Files_python3lib_updatechecker_py,v 1.2 2021/03/24 14:37:05 kirby Exp $
 
 disable phone-home
 
 Index: src/Resource_Files/python3lib/updatechecker.py
 --- src/Resource_Files/python3lib/updatechecker.py.orig
 +++ src/Resource_Files/python3lib/updatechecker.py
-@@ -29,7 +29,7 @@ def check_for_updates(site_url):
+@@ -37,7 +37,7 @@ def check_for_updates(site_url):
      latest_version = ""
      _version_pattern = re.compile(r'<current-version>([^<]*)</current-version>')
  

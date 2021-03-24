@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/03/24 14:37:04 kirby Exp $
 
 COMMENT =	EPUB ebook editor
 
 PKGNAME =	sigil-${GH_TAGNAME}
-REVISION =	1
 
-# newer versions require qtwebengine
 GH_ACCOUNT =	Sigil-Ebook
 GH_PROJECT =	Sigil
-GH_TAGNAME =	0.9.14
+GH_TAGNAME =	1.4.3
 
 CATEGORIES =	editors
 
@@ -18,20 +16,18 @@ HOMEPAGE =	https://sigil-ebook.com/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
-WANTLIB += Qt5Concurrent Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Svg Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml
-WANTLIB += Qt5XmlPatterns c hunspell-1.7 m pcre16 z
+WANTLIB += Qt5Concurrent Qt5Core Qt5Gui Qt5Network Qt5Positioning
+WANTLIB += Qt5PrintSupport Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel
+WANTLIB += Qt5WebEngine Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets
+WANTLIB += Qt5Xml c hunspell-1.7 m pcre16 z
 
-COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake \
 			lang/python \
 			x11/qt5
 RUN_DEPENDS =		devel/desktop-file-utils \
 			textproc/py-lxml${MODPY_FLAVOR}
 LIB_DEPENDS =		textproc/hunspell \
-			x11/qt5/qtsvg \
-			x11/qt5/qtwebkit \
-			x11/qt5/qtxmlpatterns
+			x11/qt5/qtwebengine
 
 CONFIGURE_ARGS =	-DUSE_SYSTEM_LIBS=ON
 
