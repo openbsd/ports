@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2020/11/04 09:19:22 landry Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/03/24 10:59:47 landry Exp $
 @bin bin/cct
 @bin bin/cs2cs
 @bin bin/geod
@@ -20,7 +20,6 @@ include/proj/io.hpp
 include/proj/metadata.hpp
 include/proj/nn.hpp
 include/proj/util.hpp
-include/proj_api.h
 include/proj_constants.h
 include/proj_experimental.h
 include/proj_symbol_rename.h
@@ -36,6 +35,10 @@ lib/pkgconfig/proj.pc
 @man man/man1/projinfo.1
 @man man/man1/projsync.1
 share/doc/pkg-readmes/${PKGSTEM}
+share/doc/proj/
+share/doc/proj/AUTHORS
+share/doc/proj/COPYING
+share/doc/proj/NEWS
 share/proj/
 share/proj/BETA2007.gsb
 share/proj/CH
