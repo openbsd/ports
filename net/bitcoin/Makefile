@@ -1,4 +1,4 @@
-$OpenBSD: Makefile,v 1.27 2021/03/23 20:43:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2021/03/24 07:17:36 rsadowski Exp $
 
 BROKEN-sparc64 =	clang problem, probably needs newer binutils
 
