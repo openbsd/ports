@@ -1,9 +1,9 @@
-$OpenBSD: patch-rfb_rfbproto_h,v 1.1 2019/05/26 12:05:25 sthen Exp $
+$OpenBSD: patch-rfb_rfbproto_h,v 1.2 2021/03/24 12:31:44 ajacoutot Exp $
 
 Index: rfb/rfbproto.h
 --- rfb/rfbproto.h.orig
 +++ rfb/rfbproto.h
-@@ -80,7 +80,7 @@ typedef int8_t rfbBool;
+@@ -79,7 +79,7 @@ typedef int8_t rfbBool;
  
  #if LIBVNCSERVER_HAVE_ENDIAN_H
  # include <endian.h>

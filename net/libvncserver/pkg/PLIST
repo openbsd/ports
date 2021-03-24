@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/05/12 13:36:34 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/03/24 12:31:44 ajacoutot Exp $
 @conflict x11vnc-<0.9.15
 include/rfb/
 include/rfb/keysym.h
@@ -7,6 +7,7 @@ include/rfb/rfbclient.h
 include/rfb/rfbconfig.h
 include/rfb/rfbproto.h
 include/rfb/rfbregion.h
+include/rfb/threading.h
 @lib lib/libvncclient.so.${LIBvncclient_VERSION}
 @lib lib/libvncserver.so.${LIBvncserver_VERSION}
 lib/pkgconfig/libvncclient.pc

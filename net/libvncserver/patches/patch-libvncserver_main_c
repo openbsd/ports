@@ -1,0 +1,14 @@
+$OpenBSD: patch-libvncserver_main_c,v 1.1 2021/03/24 12:31:44 ajacoutot Exp $
+
+Index: libvncserver/main.c
+--- libvncserver/main.c.orig
++++ libvncserver/main.c
+@@ -20,6 +20,8 @@
+ #include <stdarg.h>
+ #include <errno.h>
+ 
++#include <sys/socket.h>
++
+ #ifndef false
+ #define false 0
+ #define true -1
