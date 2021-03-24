@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/02 14:49:53 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.17 2021/03/24 10:55:55 gonzalo Exp $
 
 COMMENT =		compressing non-caching HTTP proxy
 
-DISTNAME =		ziproxy-3.3.1
+DISTNAME =		ziproxy-3.3.2
 EXTRACT_SUFX =		.tar.bz2
-REVISION =		1
 
 CATEGORIES =		net www
 

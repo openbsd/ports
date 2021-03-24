@@ -1,13 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/02/02 14:49:53 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/03/24 10:55:55 gonzalo Exp $
 @newgroup _ziproxy:641
 @newuser _ziproxy:641:641:daemon:Ziproxy Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/log/ziproxy/*
-@owner _ziproxy
-@group _ziproxy
 @rcscript ${RCDIR}/ziproxy
-@mode
-@owner
-@group
 @bin bin/ziproxy
 @bin bin/ziproxylogtool
 @man man/man1/ziproxy.1
