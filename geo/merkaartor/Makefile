@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.44 2021/03/08 07:22:35 landry Exp $
+# $OpenBSD: Makefile,v 1.45 2021/03/24 10:55:42 landry Exp $
 
 COMMENT =	OpenStreetMap editor
 REVISION =	2
+BROKEN =	doesnt build against proj8
 
 GH_ACCOUNT =	openstreetmap
 GH_PROJECT =	merkaartor
