@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2019/12/12 16:10:34 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.39 2021/03/25 07:42:07 giovanni Exp $
 @pkgpath mail/p5-Mail-SpamAssassin
 @newgroup _spamdaemon:506
 @newuser _spamdaemon:506:506:daemon:SpamAssassin:${LOCALSTATEDIR}:/sbin/nologin
@@ -137,6 +137,7 @@ ${P5SITE}/Mail/SpamAssassin/Util/TieOneStringHash.pm
 ${P5SITE}/Mail/SpamAssassin/Util/TinyRedis.pm
 ${P5SITE}/spamassassin-run.pod
 @man man/man1/sa-awl.1
+@man man/man1/sa-check_spamd.1
 @man man/man1/sa-compile.1
 @man man/man1/sa-learn.1
 @man man/man1/sa-update.1
@@ -324,6 +325,7 @@ share/spamassassin/30_text_pt_br.cf
 share/spamassassin/50_scores.cf
 share/spamassassin/60_adsp_override_dkim.cf
 share/spamassassin/60_awl.cf
+share/spamassassin/60_bayes_stopwords.cf
 share/spamassassin/60_shortcircuit.cf
 share/spamassassin/60_txrep.cf
 share/spamassassin/60_whitelist.cf
