@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2021/02/28 09:33:30 jsg Exp $
+# $OpenBSD: Makefile,v 1.27 2021/03/25 11:10:26 kn Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -25,6 +25,9 @@ NO_TEST=	Yes
 
 ARCHS= arm arm64 mips powerpc
 
+EXTRACT_FILES=	${ARCHS:=${DISTNAME}/arch/%/boot/dts} \
+		${DISTNAME}/{include,scripts/dtc/include-prefixes}
+
 do-build:
 .for ARCH in ${ARCHS}
 	cd ${WRKSRC}/arch/${ARCH}/boot/dts ; \
@@ -34,8 +37,7 @@ do-build:
 	        clang-cpp -nostdinc -I . -I include -I${WRKSRC}/include \
 		    -I ${WRKSRC}/scripts/dtc/include-prefixes \
 		    -undef -D__DTS__ -x assembler-with-cpp $$dts \
-		    | dtc -I dts -O dtb -o `echo "$$dts" \
-		    | sed -e 's/\.dts$$/\.dtb/'` - ; \
+		    | dtc -I dts -O dtb -o $${dts%.dts}.dtb - ; \
 	    done ; \
 	done
 .endfor
