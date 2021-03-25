@@ -1,0 +1,12 @@
+$OpenBSD: patch-examples_repeater_c,v 1.1 2021/03/25 07:24:15 ajacoutot Exp $
+
+Index: examples/repeater.c
+--- examples/repeater.c.orig
++++ examples/repeater.c
+@@ -1,5 +1,6 @@
+ /* This example shows how to connect to an UltraVNC repeater. */
+ 
++#include <sys/socket.h>
+ #include <rfb/rfb.h>
+ 
+ static void clientGone(rfbClientPtr cl)
