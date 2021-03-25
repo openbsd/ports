@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2021/03/22 13:52:21 jturner Exp $
+# $OpenBSD: Makefile,v 1.37 2021/03/25 16:04:00 jturner Exp $
 
 COMMENT =		application source generator
 
-DISTNAME =		openradtool-0.12.0
+DISTNAME =		openradtool-0.12.1
 CATEGORIES =		www
 
 MAINTAINER =		James Turner <james@calminferno.net>
@@ -22,6 +22,7 @@ CONFIGURE_ENV =		"PREFIX=${PREFIX}"
 RUN_DEPENDS =		databases/sqlbox \
 			www/kcgi
 
+TEST_DEPENDS =		databases/sqlite3
 TEST_TARGET =		regress
 
 .include <bsd.port.mk>
