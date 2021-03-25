@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2020/11/03 16:12:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2021/03/25 17:42:22 rsadowski Exp $
 
 COMMENT =	interface to use kipi-plugins from a KDE application
 DISTNAME =	libkipi-${VERSION}
 CATEGORIES =	devel graphics
+REVISION =	0
 
 SHARED_LIBS +=  KF5Kipi                   2.0 # 5.2
 
@@ -13,13 +14,16 @@ WANTLIB += Qt5Xml m
 
 MODKDE5_ICON_CACHE = yes
 
-# XXX "KF5KExiv2", but CMake did not find one
-LIB_DEPENDS =		devel/kf5/kconfig \
-			devel/kf5/kxmlgui \
-			devel/kf5/kservice
+LIB_DEPENDS =		devel/kf5/kauth \
+			devel/kf5/kcodecs \
+			devel/kf5/kconfig \
+			devel/kf5/kservice \
+			devel/kf5/kwidgetsaddons \
+			devel/kf5/kxmlgui
 
 BUILD_DEPENDS =		graphics/png \
 			graphics/jpeg \
-			graphics/tiff
+			graphics/tiff \
+			x11/kde-applications/libkexiv2
 
 .include <bsd.port.mk>
