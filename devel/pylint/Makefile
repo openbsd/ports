@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2021/01/06 10:19:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2021/03/25 12:37:02 sthen Exp $
 
 COMMENT =		lint-like code checker for Python code
 
-MODPY_EGG_VERSION =	2.6.0
+MODPY_EGG_VERSION =	2.7.2
 DISTNAME=		pylint-${MODPY_EGG_VERSION}
-REVISION=		0
 
 CATEGORIES=		devel
 
@@ -18,6 +17,7 @@ MODULES=		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
+TEST_ENV =		PY_IGNORE_IMPORTMISMATCH=1
 
 RUN_DEPENDS =		devel/py-astroid${MODPY_FLAVOR}>=2.4 \
 			devel/py-isort${MODPY_FLAVOR} \
