@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_babel_c,v 1.1 2021/03/25 16:22:16 landry Exp $
+
+Index: src/babel.c
+--- src/babel.c.orig
++++ src/babel.c
+@@ -40,7 +40,7 @@
+ #endif
+ 
+ /* TODO in the future we could have support for other shells (change command strings), or not use a shell at all */
+-#define BASH_LOCATION "/bin/bash"
++#define BASH_LOCATION "${LOCALBASE}/bin/bash"
+ 
+ /**
+  * Path to gpsbabel

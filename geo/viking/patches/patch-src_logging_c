@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_logging_c,v 1.1 2021/03/25 16:22:16 landry Exp $
+
+https://github.com/viking-gps/viking/issues/119
+
+Index: src/logging.c
+--- src/logging.c.orig
++++ src/logging.c
+@@ -164,7 +164,7 @@ void a_logging_init ()
+ 		(void)g_log_set_handler ( "GLib", G_LOG_LEVEL_MASK, log_it, NULL );
+ 	}
+ 
+-#if HAVE_X11_XLIB_H
++#if HAVE_LIBX11
+ 	XSetErrorHandler(myXErrorHandler);
+ #endif
+ }
