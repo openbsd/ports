@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.18 2021/03/17 18:54:57 sthen Exp $
+$OpenBSD: README,v 1.19 2021/03/25 22:21:14 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -117,11 +117,11 @@ See:
 Apache HTTPD
 ------------
 Apache configuration for Nextcloud is stored under:
-    ${PREFIX}/conf/modules.sample/apache-nextcloud.conf
+    ${TRUEPREFIX}/conf/modules.sample/apache-nextcloud.conf
 
 It needs to be enabled by running the following command after the apache-httpd
 package is installed:
-# ln -s ../modules.sample/apache-nextcloud.conf ${PREFIX}/conf/modules
+# ln -s ../modules.sample/apache-nextcloud.conf ${TRUEPREFIX}/conf/modules
 # rcctl restart apache2
 
 The rewrite_module needs to be enabled by uncommenting the following line in
@@ -166,7 +166,7 @@ Configuration is done under:
     ${INSTDIR}/config/config.php
 and the default "datadirectory" is set to:
     ${INSTDIR}/data
-When running chrooted, ${PREFIX} must be stripped from the paths.
+When running chrooted, ${TRUEPREFIX} must be stripped from the paths.
 
 Cron job
 --------
@@ -208,7 +208,7 @@ packages may be needed (e.g. php-ldap, php-imap).
 Finishing and validating the installation
 -----------------------------------------
 Make sure the web server can resolve its hostname (e.g. if chrooted, by creating
-${PREFIX}/etc/hosts and/or ${PREFIX}/etc/resolv.conf).
+${TRUEPREFIX}/etc/hosts and/or ${TRUEPREFIX}/etc/resolv.conf).
 
 Create the file "CAN_INSTALL" to allow web-based installation:
 
