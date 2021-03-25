@@ -1,8 +1,9 @@
-$OpenBSD: patch-configure,v 1.5 2019/02/24 12:41:47 kn Exp $
+$OpenBSD: patch-configure,v 1.6 2021/03/25 22:05:09 sthen Exp $
+
 Index: configure
 --- configure.orig
 +++ configure
-@@ -1745,6 +1745,10 @@ else
+@@ -1735,6 +1735,10 @@ else
  
  #undef $2
  
