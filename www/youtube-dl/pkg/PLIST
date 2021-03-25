@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.149 2021/03/02 08:18:05 mestre Exp $
+@comment $OpenBSD: PLIST,v 1.150 2021/03/25 08:49:15 mestre Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -837,6 +837,7 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}za
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}zdf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}zhihu.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}zingmp3.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}zoom.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}zype.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/abc.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/abcnews.py
@@ -1620,6 +1621,7 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/zattoo.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/zdf.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/zhihu.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/zingmp3.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/zoom.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/zype.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/jsinterp.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/options.py
