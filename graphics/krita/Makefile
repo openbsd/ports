@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.46 2021/02/23 19:39:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2021/03/25 17:46:30 rsadowski Exp $
 
 BROKEN-powerpc =	colors are off and as such it is not useable
 
-COMMENT =	advanced drawing and image manipulation
+COMMENT =		advanced drawing and image manipulation
 
-VERSION =	4.4.2
-DISTNAME =	krita-${VERSION}
+VERSION =		4.4.3
+DISTNAME =		krita-${VERSION}
 
 SHARED_LIBS +=  kritabasicflakes          3.0 # 16.0
 SHARED_LIBS +=  kritacolord               1.0 # 16.0
-SHARED_LIBS +=  kritaflake                6.0 # 16.0
+SHARED_LIBS +=  kritaflake                6.1 # 16.0
 SHARED_LIBS +=  kritaodf                  2.0 # 16.0
 SHARED_LIBS +=  kritapigment              6.0 # 16.0
 SHARED_LIBS +=  kritaplugin               1.0 # 16.0
@@ -17,7 +17,7 @@ SHARED_LIBS +=  kritastore                2.0 # 16.0
 SHARED_LIBS +=  kritatext                 1.0 # 16.0
 SHARED_LIBS +=  kritatextlayout           1.0 # 16.0
 SHARED_LIBS +=  kritaversion              1.0 # 16.0
-SHARED_LIBS +=  kritawidgets              4.0 # 16.0
+SHARED_LIBS +=  kritawidgets              4.1 # 16.0
 SHARED_LIBS +=  kritawidgetutils          4.0 # 16.0
 SHARED_LIBS +=  kritacommand              2.0 # 16.0
 SHARED_LIBS +=  kritaimpex                1.0 # 16.0
@@ -26,15 +26,16 @@ SHARED_LIBS +=  kritalibkra               4.0 # 16.0
 SHARED_LIBS +=  kritaqml                  2.0 # 16.0
 SHARED_LIBS +=  kritametadata             0.0 # 18.0
 # XXX Version numbers from editors/calligra 2.x port
-SHARED_LIBS +=  kritapsd                  3.0 # 14.0
+SHARED_LIBS +=  kritapsd                  3.1 # 14.0
 SHARED_LIBS +=  kritacolor                2.0 # 14.0
-SHARED_LIBS +=  kritaglobal               4.3 # 14.0
-SHARED_LIBS +=  kritaimage                57.0 # 0.0
-SHARED_LIBS +=  kritalibbrush             55.0 # 0.0
+SHARED_LIBS +=  kritaglobal               4.4 # 14.0
+SHARED_LIBS +=  kritaimage                58.0 # 0.0
+SHARED_LIBS +=  kritalibbrush             56.0 # 0.0
 SHARED_LIBS +=  kritalibpaintop           56.0 # 0.0
-SHARED_LIBS +=  kritaui                   60.0 # 0.0
+SHARED_LIBS +=  kritaui                   61.0 # 0.0
 
 CATEGORIES =	graphics
+
 DPB_PROPERTIES =	parallel
 
 HOMEPAGE =	https://krita.org
@@ -63,12 +64,12 @@ MODULES =	devel/kf5 \
 
 MODPY_RUNDEP=	No
 
-RUN_DEPENDS +=	devel/desktop-file-utils \
-		net/curl \
-		x11/gtk+3,-guic \
-		x11/qt5/qtquickcontrols
+RUN_DEPENDS =		devel/desktop-file-utils \
+			net/curl \
+			x11/gtk+3,-guic \
+			x11/qt5/qtquickcontrols
 
-LIB_DEPENDS +=		archivers/quazip \
+LIB_DEPENDS =		archivers/quazip \
 			devel/boost \
 			devel/gsl \
 			devel/kf5/kcompletion \
@@ -97,10 +98,9 @@ LIB_DEPENDS +=		archivers/quazip \
 			x11/qt5/qtsvg \
 			x11/qt5/qtx11extras
 
-BUILD_DEPENDS +=	devel/gettext,-tools \
+BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/kf5/kdoctools \
 			devel/kf5/kitemmodels \
-			math/eigen3 \
 			net/curl
 
 # stop searching for optional packages
