@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.169 2020/11/21 01:50:57 namn Exp $
+# $OpenBSD: OpenBSD,v 1.170 2021/03/25 21:39:29 dv Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -72,6 +72,7 @@
 44.01		-79.93		"ian"		# Ian Darwin
 44.1		-77.580556	"brynet"	# Bryan Steele
 44.4325		26.103889	"pirofti"	# Paul Irofti
+44.437481	-73.068176	"dv"		# Dave Voutila
 45.095683	-93.4982	"jim"		# Jim Razmus II
 45.2002		5.7222		"ratchov"	# Alexandre Ratchov
 45.25135	3.19975		"miod"		# Miod Vallat
