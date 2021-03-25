@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2020/03/14 08:32:20 landry Exp $
+# $OpenBSD: Makefile,v 1.26 2021/03/25 06:44:06 landry Exp $
 
 COMMENT =	GVfs mountpoint manager
 
-XFCE_VERSION =	0.5.1
+XFCE_VERSION =	0.5.2
 XFCE_GOODIE =	gigolo
 
 CATEGORIES =	x11
@@ -16,6 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	x11/xfce4
 MODXFCE_DESKTOP_FILE =	Yes
+MODXFCE_ICON_CACHE=	Yes
 CONFIGURE_STYLE =	gnu
 RUN_DEPENDS +=	x11/gnome/gvfs
 LIB_DEPENDS =	x11/gtk+3
