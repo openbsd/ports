@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2021/01/30 12:51:34 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.16 2021/03/25 21:44:06 jsg Exp $
 @unexec-delete rm -f ${PREFIX}/plan9/man/whatis.db
 bin/9
 plan9/
@@ -5383,7 +5383,6 @@ plan9/src/cmd/auxstats/dat.h
 plan9/src/cmd/auxstats/main.c
 plan9/src/cmd/auxstats/mkfile
 plan9/src/cmd/awk/
-plan9/src/cmd/awk/README
 plan9/src/cmd/awk/awk.h
 plan9/src/cmd/awk/awkgram.y
 plan9/src/cmd/awk/lex.c
@@ -6895,7 +6894,6 @@ plan9/src/lib9/exitcode.c
 plan9/src/lib9/fcallfmt.c
 plan9/src/lib9/fmt/
 plan9/src/lib9/fmt/LICENSE
-plan9/src/lib9/fmt/NOTICE
 plan9/src/lib9/fmt/README
 plan9/src/lib9/fmt/charstod.c
 plan9/src/lib9/fmt/dofmt.c
@@ -7010,7 +7008,6 @@ plan9/src/lib9/udp.c
 plan9/src/lib9/unsharp.c
 plan9/src/lib9/utf/
 plan9/src/lib9/utf/LICENSE
-plan9/src/lib9/utf/NOTICE
 plan9/src/lib9/utf/README
 plan9/src/lib9/utf/lib9.h
 plan9/src/lib9/utf/plan9.h

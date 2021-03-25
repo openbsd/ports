@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2021/01/30 12:51:34 jsg Exp $
+# $OpenBSD: Makefile,v 1.38 2021/03/25 21:44:06 jsg Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 BROKEN-i386 =		various "invalid operand for instruction", OpenBSD-386-asm.S
@@ -6,11 +6,11 @@ BROKEN-powerpc =	threading issues
 
 COMMENT =		Plan 9 from user space
 
-DISTNAME =		plan9port-20210129
+DISTNAME =		plan9port-20210323
 
 GH_ACCOUNT =		9fans
 GH_PROJECT =		plan9port
-GH_COMMIT =		36cd4c58c1346375b98f517fb8568be5bb47618d
+GH_COMMIT =		88a87fadae6629932d9c160f53ad5d79775f8f94
 
 CATEGORIES =		plan9
 
@@ -18,7 +18,7 @@ HOMEPAGE =		https://9fans.github.io/plan9port/
 
 MAINTAINER =		Gleydson Soares <gsoares@openbsd.org>
 
-# mostly LPL (see LICENSE)
+# mostly MIT (see LICENSE)
 # certain fonts may NOT be redistributed separately
 PERMIT_PACKAGE =	Yes
 
