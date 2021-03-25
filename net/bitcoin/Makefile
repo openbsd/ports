@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2021/03/24 07:17:36 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.29 2021/03/25 06:40:36 rsadowski Exp $
 
 BROKEN-sparc64 =	clang problem, probably needs newer binutils
 
@@ -8,7 +8,7 @@ GH_ACCOUNT =		bitcoin
 GH_PROJECT =		bitcoin
 GH_TAGNAME =		v0.21.0
 
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  bitcoinconsensus          4.0 # 0.0
 SHARED_LIBS +=  secp256k1                 0.1 # 0.0
@@ -23,13 +23,11 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} boost_filesystem
-WANTLIB += boost_system boost_thread-mt c crypto
-WANTLIB += db_cxx event_core event_extra event_pthreads
-WANTLIB += m sodium ssl zmq zstd sqlite3 z
+WANTLIB += ${COMPILER_LIBCXX} boost_filesystem boost_system boost_thread-mt
+WANTLIB += c db_cxx event_core event_extra event_pthreads m sodium
+WANTLIB += sqlite3 z zmq
 
-LIB_DEPENDS =		archivers/zstd \
-			databases/db/v4 \
+LIB_DEPENDS =		databases/db/v4 \
 			databases/sqlite3 \
 			devel/boost \
 			devel/libevent2 \
@@ -63,16 +61,17 @@ CONFIGURE_ARGS +=	--without-gui
 .else
 
 WANTLIB += GL Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets X11
-WANTLIB += X11-xcb Xdamage Xext Xfixes Xxf86vm dbus-1 drm execinfo
-WANTLIB += expat freetype glapi glib-2.0 graphite2 gthread-2.0
-WANTLIB += harfbuzz iconv icudata icui18n icuuc intl miniupnpc
-WANTLIB += pcre pcre2-16 png qrencode xcb xcb-dri2 double-conversion
-WANTLIB += xcb-dri3 xcb-glx xcb-present xcb-sync xcb-xfixes xshmfence
-WANTLIB += Xau Xdmcp
+WANTLIB += X11-xcb Xau Xdamage Xdmcp Xext Xfixes Xxf86vm crypto
+WANTLIB += dbus-1 double-conversion drm execinfo expat freetype
+WANTLIB += glapi glib-2.0 graphite2 gthread-2.0 harfbuzz iconv
+WANTLIB += icudata icui18n icuuc intl miniupnpc pcre pcre2-16
+WANTLIB += png qrencode ssl xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present
+WANTLIB += xcb-sync xcb-xfixes xshmfence zstd
 
 MODULES +=		x11/qt5
 
-LIB_DEPENDS +=		graphics/libqrencode \
+LIB_DEPENDS +=		archivers/zstd \
+			graphics/libqrencode \
 			math/double-conversion \
 			net/miniupnp/miniupnpc
 
