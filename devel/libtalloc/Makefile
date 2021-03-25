@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.26 2021/03/12 09:02:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2021/03/25 21:33:40 jca Exp $
 
 COMMENT-main=	hierarchical memory pool system with destructors
 COMMENT-python=	Python ${MODPY_VERSION} bindings for talloc
 
 # Keep in sync with the version bundled in net/samba
 V=		2.1.16
+REVISION=	1
+
 DISTNAME=	talloc-$V
 PKGNAME-main=	lib${DISTNAME}
 PKGNAME-python=	py-${DISTNAME}
-REVISION=	1
+
 MULTI_PACKAGES=	-main -python
 
 SHARED_LIBS+=	talloc		1.1
