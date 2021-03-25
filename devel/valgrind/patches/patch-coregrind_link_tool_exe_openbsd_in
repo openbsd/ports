@@ -10,7 +10,7 @@
 +# strip command rewrite offset and align in ELF file. Therefor, when valgrind
 +# launch memcheck-amd64-openbsd, an Abort trap occurs in the execvp() system
 +# call.
-+my $cmd = sprintf "$cc -static -nopie -Wl,--strip-all -Wl,-Ttext=0x%x", "$ala + 0x1000";
++my $cmd = sprintf "$cc -static -nopie -Wl,--strip-all -Wl,-Ttext=0x%x", hex($ala) + 0x1000;
  
 -# so, build up the complete command here:
 -# 'cc' -static -Ttext='ala' 'restargs'

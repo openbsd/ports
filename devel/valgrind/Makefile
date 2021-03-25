@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2020/10/05 01:45:58 asou Exp $
+# $OpenBSD: Makefile,v 1.26 2021/03/25 05:04:36 asou Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -7,7 +7,7 @@ CATEGORIES =		devel
 
 V =			3.10.1
 PV =			20160331
-REVISION =		18
+REVISION =		19
 DISTNAME =		valgrind-${V}
 EXTRACT_SUFX =		.tar.bz2
 
