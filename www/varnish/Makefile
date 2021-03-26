@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.56 2021/02/23 19:39:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2021/03/26 12:35:15 kn Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
-DISTNAME =		varnish-6.5.1
-REVISION =		0
+DISTNAME =		varnish-6.6.0
 
 CATEGORIES =		www
 
-SHARED_LIBS =		varnishapi      3.0     # 2.5
+SHARED_LIBS =		varnishapi      3.1     # 2.6
 
 HOMEPAGE =		https://www.varnish-cache.org/
 
@@ -36,7 +35,7 @@ LIB_DEPENDS +=		devel/libexecinfo
 USE_GMAKE =		Yes
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	autoreconf
-AUTOCONF_VERSION =	2.69
+AUTOCONF_VERSION =	2.71
 AUTOMAKE_VERSION =	1.16
 AUTORECONF =		./autogen.sh
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
