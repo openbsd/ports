@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.47 2021/02/08 03:42:13 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.48 2021/03/26 18:24:54 kirby Exp $
 @pkgpath games/wesnoth,tinygui
 @pkgpath games/wesnoth,lite
 @newgroup _wesnothd:708
@@ -15380,6 +15380,7 @@ share/wesnoth/data/test/scenarios/test_move_unit.cfg
 share/wesnoth/data/test/scenarios/test_movetype.cfg
 share/wesnoth/data/test/scenarios/test_relative_dir.cfg
 share/wesnoth/data/test/scenarios/test_require.cfg
+share/wesnoth/data/test/scenarios/test_resistances.cfg
 share/wesnoth/data/test/scenarios/test_return.cfg
 share/wesnoth/data/test/scenarios/test_role_types.cfg
 share/wesnoth/data/test/scenarios/test_unit_map.cfg
