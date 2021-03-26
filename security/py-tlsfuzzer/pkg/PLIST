@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/03/20 06:50:06 tb Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/03/26 22:01:53 tb Exp $
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer-0.0.1-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/__init__.py
@@ -126,6 +126,7 @@ share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-rsa-pss-sigs-on-certificate-verify.
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-rsa-sigs-on-certificate-verify.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-serverhello-random.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-sessionID-resumption.${MODPY_PYC_MAGIC_TAG}pyc
+share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-sig-algs-renegotiation-resumption.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-sig-algs.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-signature-algorithms.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-ssl-death-alert.${MODPY_PYC_MAGIC_TAG}pyc
@@ -267,6 +268,7 @@ share/tlsfuzzer/scripts/test-rsa-pss-sigs-on-certificate-verify.py
 share/tlsfuzzer/scripts/test-rsa-sigs-on-certificate-verify.py
 share/tlsfuzzer/scripts/test-serverhello-random.py
 share/tlsfuzzer/scripts/test-sessionID-resumption.py
+share/tlsfuzzer/scripts/test-sig-algs-renegotiation-resumption.py
 share/tlsfuzzer/scripts/test-sig-algs.py
 share/tlsfuzzer/scripts/test-signature-algorithms.py
 share/tlsfuzzer/scripts/test-ssl-death-alert.py
