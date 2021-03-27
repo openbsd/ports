@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.102 2021/02/23 19:39:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.103 2021/03/27 15:15:06 sthen Exp $
 
 ONLY_FOR_ARCHS = amd64
+DPB_PROPERTIES = parallel
 
 COMMENT =	3D creation software
 
-DISTNAME =	blender-2.91.2
+DISTNAME =	blender-2.92.0
 
 CATEGORIES =	graphics
 
@@ -23,8 +24,8 @@ WANTLIB += avformat avutil blosc boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
 WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c fftw3
 WANTLIB += freetype gmp gmpxx jpeg m openal openjp2 openvdb osdCPU
-WANTLIB += osdGPU png potrace sndfile swscale tbb tiff tinyxml
-WANTLIB += util yaml-cpp z
+WANTLIB += osdGPU png potrace pugixml sndfile swscale tbb tiff
+WANTLIB += tinyxml util yaml-cpp z
 
 MASTER_SITES =	https://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/
@@ -44,7 +45,8 @@ CONFIGURE_ARGS =	-DPYTHON_INCLUDE_DIR="${MODPY_INCDIR}" \
 			-DWITH_CYCLES_EMBREE=OFF \
 			-DWITH_JACK=OFF
 
-BUILD_DEPENDS = math/py-numpy${MODPY_FLAVOR}
+BUILD_DEPENDS = math/py-numpy${MODPY_FLAVOR} \
+		www/py-requests${MODPY_FLAVOR}
 LIB_DEPENDS =	audio/libsndfile \
 		audio/openal \
 		devel/boost \
@@ -68,6 +70,7 @@ LIB_DEPENDS =	audio/libsndfile \
 		${MODPY_LIB_DEPENDS}
 RUN_DEPENDS =	devel/desktop-file-utils \
 		math/py-numpy${MODPY_FLAVOR} \
+		www/py-requests${MODPY_FLAVOR} \
 		x11/gnome/librsvg
 
 NO_TEST =	Yes

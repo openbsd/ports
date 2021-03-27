@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2020/11/29 19:57:01 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.30 2021/03/27 15:15:06 sthen Exp $
 @pkgpath graphics/blender,ffmpeg
 bin/blender
 @bin bin/blender-bin
@@ -1364,6 +1364,7 @@ share/blender/datafiles/blender_icons32/icon32_zoom_selected.dat
 share/blender/datafiles/blender_icons_geom.py
 share/blender/datafiles/blender_icons_geom_update.py
 share/blender/datafiles/blender_icons_update.py
+share/blender/datafiles/blender_logo.png
 share/blender/datafiles/brushicons/
 share/blender/datafiles/brushicons/blob.png
 share/blender/datafiles/brushicons/blur.png
@@ -1480,6 +1481,7 @@ share/blender/datafiles/icons/brush.sculpt.clay_thumb.dat
 share/blender/datafiles/icons/brush.sculpt.cloth.dat
 share/blender/datafiles/icons/brush.sculpt.crease.dat
 share/blender/datafiles/icons/brush.sculpt.displacement_eraser.dat
+share/blender/datafiles/icons/brush.sculpt.displacement_smear.dat
 share/blender/datafiles/icons/brush.sculpt.draw.dat
 share/blender/datafiles/icons/brush.sculpt.draw_face_sets.dat
 share/blender/datafiles/icons/brush.sculpt.draw_sharp.dat
@@ -1687,6 +1689,7 @@ share/blender/datafiles/studiolights/matcap/toon.exr
 share/blender/datafiles/studiolights/studio/
 share/blender/datafiles/studiolights/studio/basic.sl
 share/blender/datafiles/studiolights/studio/outdoor.sl
+share/blender/datafiles/studiolights/studio/paint.sl
 share/blender/datafiles/studiolights/studio/rim.sl
 share/blender/datafiles/studiolights/studio/studio.sl
 share/blender/datafiles/studiolights/world/
@@ -2255,7 +2258,9 @@ share/blender/scripts/addons/blenderkit/__init__.py
 ${MODPY_COMMENT}share/blender/scripts/addons/blenderkit/${MODPY_PYCACHE}/
 share/blender/scripts/addons/blenderkit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/blenderkit/${MODPY_PYCACHE}append_link.${MODPY_PYC_MAGIC_TAG}pyc
+share/blender/scripts/addons/blenderkit/${MODPY_PYCACHE}asset_bar_op.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/blenderkit/${MODPY_PYCACHE}asset_inspector.${MODPY_PYC_MAGIC_TAG}pyc
+share/blender/scripts/addons/blenderkit/${MODPY_PYCACHE}asset_pack_bg.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/blenderkit/${MODPY_PYCACHE}autothumb.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/blenderkit/${MODPY_PYCACHE}autothumb_material_bg.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/blenderkit/${MODPY_PYCACHE}autothumb_model_bg.${MODPY_PYC_MAGIC_TAG}pyc
@@ -2265,11 +2270,14 @@ share/blender/scripts/addons/blenderkit/${MODPY_PYCACHE}categories.${MODPY_PYC_M
 share/blender/scripts/addons/blenderkit/${MODPY_PYCACHE}colors.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/blenderkit/${MODPY_PYCACHE}download.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/blenderkit/${MODPY_PYCACHE}icons.${MODPY_PYC_MAGIC_TAG}pyc
+share/blender/scripts/addons/blenderkit/${MODPY_PYCACHE}image_utils.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/blenderkit/${MODPY_PYCACHE}oauth.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/blenderkit/${MODPY_PYCACHE}overrides.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/blenderkit/${MODPY_PYCACHE}paths.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/blenderkit/${MODPY_PYCACHE}ratings.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/blenderkit/${MODPY_PYCACHE}rerequests.${MODPY_PYC_MAGIC_TAG}pyc
+share/blender/scripts/addons/blenderkit/${MODPY_PYCACHE}resolutions.${MODPY_PYC_MAGIC_TAG}pyc
+share/blender/scripts/addons/blenderkit/${MODPY_PYCACHE}resolutions_bg.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/blenderkit/${MODPY_PYCACHE}search.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/blenderkit/${MODPY_PYCACHE}tasks_queue.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/blenderkit/${MODPY_PYCACHE}ui.${MODPY_PYC_MAGIC_TAG}pyc
@@ -2280,12 +2288,28 @@ share/blender/scripts/addons/blenderkit/${MODPY_PYCACHE}upload_bg.${MODPY_PYC_MA
 share/blender/scripts/addons/blenderkit/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/blenderkit/${MODPY_PYCACHE}version_checker.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/blenderkit/append_link.py
+share/blender/scripts/addons/blenderkit/asset_bar_op.py
 share/blender/scripts/addons/blenderkit/asset_inspector.py
+share/blender/scripts/addons/blenderkit/asset_pack_bg.py
 share/blender/scripts/addons/blenderkit/autothumb.py
 share/blender/scripts/addons/blenderkit/autothumb_material_bg.py
 share/blender/scripts/addons/blenderkit/autothumb_model_bg.py
 share/blender/scripts/addons/blenderkit/bg_blender.py
 share/blender/scripts/addons/blenderkit/bkit_oauth.py
+share/blender/scripts/addons/blenderkit/bl_ui_widgets/
+share/blender/scripts/addons/blenderkit/bl_ui_widgets/__init__.py
+${MODPY_COMMENT}share/blender/scripts/addons/blenderkit/bl_ui_widgets/${MODPY_PYCACHE}/
+share/blender/scripts/addons/blenderkit/bl_ui_widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+share/blender/scripts/addons/blenderkit/bl_ui_widgets/${MODPY_PYCACHE}bl_ui_button.${MODPY_PYC_MAGIC_TAG}pyc
+share/blender/scripts/addons/blenderkit/bl_ui_widgets/${MODPY_PYCACHE}bl_ui_drag_panel.${MODPY_PYC_MAGIC_TAG}pyc
+share/blender/scripts/addons/blenderkit/bl_ui_widgets/${MODPY_PYCACHE}bl_ui_draw_op.${MODPY_PYC_MAGIC_TAG}pyc
+share/blender/scripts/addons/blenderkit/bl_ui_widgets/${MODPY_PYCACHE}bl_ui_label.${MODPY_PYC_MAGIC_TAG}pyc
+share/blender/scripts/addons/blenderkit/bl_ui_widgets/${MODPY_PYCACHE}bl_ui_widget.${MODPY_PYC_MAGIC_TAG}pyc
+share/blender/scripts/addons/blenderkit/bl_ui_widgets/bl_ui_button.py
+share/blender/scripts/addons/blenderkit/bl_ui_widgets/bl_ui_drag_panel.py
+share/blender/scripts/addons/blenderkit/bl_ui_widgets/bl_ui_draw_op.py
+share/blender/scripts/addons/blenderkit/bl_ui_widgets/bl_ui_label.py
+share/blender/scripts/addons/blenderkit/bl_ui_widgets/bl_ui_widget.py
 share/blender/scripts/addons/blenderkit/blendfiles/
 share/blender/scripts/addons/blenderkit/blendfiles/cleaned.blend
 share/blender/scripts/addons/blenderkit/blendfiles/material_thumbnailer_cycles.blend
@@ -2296,11 +2320,14 @@ share/blender/scripts/addons/blenderkit/data/
 share/blender/scripts/addons/blenderkit/data/categories.json
 share/blender/scripts/addons/blenderkit/download.py
 share/blender/scripts/addons/blenderkit/icons.py
+share/blender/scripts/addons/blenderkit/image_utils.py
 share/blender/scripts/addons/blenderkit/oauth.py
 share/blender/scripts/addons/blenderkit/overrides.py
 share/blender/scripts/addons/blenderkit/paths.py
 share/blender/scripts/addons/blenderkit/ratings.py
 share/blender/scripts/addons/blenderkit/rerequests.py
+share/blender/scripts/addons/blenderkit/resolutions.py
+share/blender/scripts/addons/blenderkit/resolutions_bg.py
 share/blender/scripts/addons/blenderkit/search.py
 share/blender/scripts/addons/blenderkit/tasks_queue.py
 share/blender/scripts/addons/blenderkit/thumbnails/
@@ -2311,8 +2338,6 @@ share/blender/scripts/addons/blenderkit/thumbnails/flp.png
 share/blender/scripts/addons/blenderkit/thumbnails/fp.png
 share/blender/scripts/addons/blenderkit/thumbnails/locked.png
 share/blender/scripts/addons/blenderkit/thumbnails/locked_large.png
-share/blender/scripts/addons/blenderkit/thumbnails/rating_ui.png
-share/blender/scripts/addons/blenderkit/thumbnails/rating_ui_empty.png
 share/blender/scripts/addons/blenderkit/thumbnails/star_white.png
 share/blender/scripts/addons/blenderkit/thumbnails/thumbnail_not_available.jpg
 share/blender/scripts/addons/blenderkit/thumbnails/thumbnail_notready.jpg
@@ -2756,6 +2781,7 @@ share/blender/scripts/addons/io_scene_gltf2/blender/imp/${MODPY_PYCACHE}gltf2_bl
 share/blender/scripts/addons/io_scene_gltf2/blender/imp/${MODPY_PYCACHE}gltf2_blender_scene.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/io_scene_gltf2/blender/imp/${MODPY_PYCACHE}gltf2_blender_texture.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/io_scene_gltf2/blender/imp/${MODPY_PYCACHE}gltf2_blender_vnode.${MODPY_PYC_MAGIC_TAG}pyc
+share/blender/scripts/addons/io_scene_gltf2/blender/imp/${MODPY_PYCACHE}gltf2_io_draco_compression_extension.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_KHR_materials_clearcoat.py
 share/blender/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_KHR_materials_pbrSpecularGlossiness.py
 share/blender/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_KHR_materials_unlit.py
@@ -2774,6 +2800,7 @@ share/blender/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_pbrMetalli
 share/blender/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_scene.py
 share/blender/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_texture.py
 share/blender/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_vnode.py
+share/blender/scripts/addons/io_scene_gltf2/blender/imp/gltf2_io_draco_compression_extension.py
 share/blender/scripts/addons/io_scene_gltf2/io/
 share/blender/scripts/addons/io_scene_gltf2/io/__init__.py
 ${MODPY_COMMENT}share/blender/scripts/addons/io_scene_gltf2/io/${MODPY_PYCACHE}/
@@ -2781,15 +2808,15 @@ share/blender/scripts/addons/io_scene_gltf2/io/${MODPY_PYCACHE}__init__.${MODPY_
 share/blender/scripts/addons/io_scene_gltf2/io/com/
 ${MODPY_COMMENT}share/blender/scripts/addons/io_scene_gltf2/io/com/${MODPY_PYCACHE}/
 share/blender/scripts/addons/io_scene_gltf2/io/com/${MODPY_PYCACHE}gltf2_io.${MODPY_PYC_MAGIC_TAG}pyc
-share/blender/scripts/addons/io_scene_gltf2/io/com/${MODPY_PYCACHE}gltf2_io_color_management.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/io_scene_gltf2/io/com/${MODPY_PYCACHE}gltf2_io_constants.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/io_scene_gltf2/io/com/${MODPY_PYCACHE}gltf2_io_debug.${MODPY_PYC_MAGIC_TAG}pyc
+share/blender/scripts/addons/io_scene_gltf2/io/com/${MODPY_PYCACHE}gltf2_io_draco_compression_extension.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/io_scene_gltf2/io/com/${MODPY_PYCACHE}gltf2_io_extensions.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/io_scene_gltf2/io/com/${MODPY_PYCACHE}gltf2_io_lights_punctual.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/io_scene_gltf2/io/com/gltf2_io.py
-share/blender/scripts/addons/io_scene_gltf2/io/com/gltf2_io_color_management.py
 share/blender/scripts/addons/io_scene_gltf2/io/com/gltf2_io_constants.py
 share/blender/scripts/addons/io_scene_gltf2/io/com/gltf2_io_debug.py
+share/blender/scripts/addons/io_scene_gltf2/io/com/gltf2_io_draco_compression_extension.py
 share/blender/scripts/addons/io_scene_gltf2/io/com/gltf2_io_extensions.py
 share/blender/scripts/addons/io_scene_gltf2/io/com/gltf2_io_lights_punctual.py
 share/blender/scripts/addons/io_scene_gltf2/io/exp/
@@ -3128,6 +3155,7 @@ share/blender/scripts/addons/object_collection_manager/
 share/blender/scripts/addons/object_collection_manager/__init__.py
 ${MODPY_COMMENT}share/blender/scripts/addons/object_collection_manager/${MODPY_PYCACHE}/
 share/blender/scripts/addons/object_collection_manager/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+share/blender/scripts/addons/object_collection_manager/${MODPY_PYCACHE}cm_init.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/object_collection_manager/${MODPY_PYCACHE}internals.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/object_collection_manager/${MODPY_PYCACHE}operator_utils.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/object_collection_manager/${MODPY_PYCACHE}operators.${MODPY_PYC_MAGIC_TAG}pyc
@@ -3137,6 +3165,7 @@ share/blender/scripts/addons/object_collection_manager/${MODPY_PYCACHE}qcd_init.
 share/blender/scripts/addons/object_collection_manager/${MODPY_PYCACHE}qcd_move_widget.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/object_collection_manager/${MODPY_PYCACHE}qcd_operators.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/object_collection_manager/${MODPY_PYCACHE}ui.${MODPY_PYC_MAGIC_TAG}pyc
+share/blender/scripts/addons/object_collection_manager/cm_init.py
 share/blender/scripts/addons/object_collection_manager/icons/
 share/blender/scripts/addons/object_collection_manager/icons/minus.png
 share/blender/scripts/addons/object_collection_manager/internals.py
@@ -3648,6 +3677,20 @@ share/blender/scripts/addons/presets/operator/mesh.primitive_xyz_function_surfac
 share/blender/scripts/addons/presets/operator/mesh.primitive_xyz_function_surface/sterosphere.py
 share/blender/scripts/addons/presets/operator/mesh.primitive_xyz_function_surface/torus.py
 share/blender/scripts/addons/presets/operator/mesh.primitive_xyz_function_surface/twisted_torus.py
+share/blender/scripts/addons/presets/operator/sun_position/
+${MODPY_COMMENT}share/blender/scripts/addons/presets/operator/sun_position/${MODPY_PYCACHE}/
+share/blender/scripts/addons/presets/operator/sun_position/${MODPY_PYCACHE}chongqing.${MODPY_PYC_MAGIC_TAG}pyc
+share/blender/scripts/addons/presets/operator/sun_position/${MODPY_PYCACHE}kinshasa.${MODPY_PYC_MAGIC_TAG}pyc
+share/blender/scripts/addons/presets/operator/sun_position/${MODPY_PYCACHE}london.${MODPY_PYC_MAGIC_TAG}pyc
+share/blender/scripts/addons/presets/operator/sun_position/${MODPY_PYCACHE}new_york.${MODPY_PYC_MAGIC_TAG}pyc
+share/blender/scripts/addons/presets/operator/sun_position/${MODPY_PYCACHE}sao_paulo.${MODPY_PYC_MAGIC_TAG}pyc
+share/blender/scripts/addons/presets/operator/sun_position/${MODPY_PYCACHE}sydney.${MODPY_PYC_MAGIC_TAG}pyc
+share/blender/scripts/addons/presets/operator/sun_position/chongqing.py
+share/blender/scripts/addons/presets/operator/sun_position/kinshasa.py
+share/blender/scripts/addons/presets/operator/sun_position/london.py
+share/blender/scripts/addons/presets/operator/sun_position/new_york.py
+share/blender/scripts/addons/presets/operator/sun_position/sao_paulo.py
+share/blender/scripts/addons/presets/operator/sun_position/sydney.py
 share/blender/scripts/addons/presets/pov/
 share/blender/scripts/addons/presets/pov/light/
 share/blender/scripts/addons/presets/pov/light/01_(4800K)_Direct_Sun.py
@@ -4009,6 +4052,7 @@ share/blender/scripts/addons/rigify/rigs/limbs/__init__.py
 ${MODPY_COMMENT}share/blender/scripts/addons/rigify/rigs/limbs/${MODPY_PYCACHE}/
 share/blender/scripts/addons/rigify/rigs/limbs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/rigify/rigs/limbs/${MODPY_PYCACHE}arm.${MODPY_PYC_MAGIC_TAG}pyc
+share/blender/scripts/addons/rigify/rigs/limbs/${MODPY_PYCACHE}front_paw.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/rigify/rigs/limbs/${MODPY_PYCACHE}leg.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/rigify/rigs/limbs/${MODPY_PYCACHE}limb_rigs.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/rigify/rigs/limbs/${MODPY_PYCACHE}limb_utils.${MODPY_PYC_MAGIC_TAG}pyc
@@ -4019,6 +4063,7 @@ share/blender/scripts/addons/rigify/rigs/limbs/${MODPY_PYCACHE}super_finger.${MO
 share/blender/scripts/addons/rigify/rigs/limbs/${MODPY_PYCACHE}super_limb.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/rigify/rigs/limbs/${MODPY_PYCACHE}super_palm.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/addons/rigify/rigs/limbs/arm.py
+share/blender/scripts/addons/rigify/rigs/limbs/front_paw.py
 share/blender/scripts/addons/rigify/rigs/limbs/leg.py
 share/blender/scripts/addons/rigify/rigs/limbs/limb_rigs.py
 share/blender/scripts/addons/rigify/rigs/limbs/limb_utils.py
@@ -4360,6 +4405,7 @@ share/blender/scripts/modules/bl_i18n_utils/${MODPY_PYCACHE}merge_po.${MODPY_PYC
 share/blender/scripts/modules/bl_i18n_utils/${MODPY_PYCACHE}settings.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/modules/bl_i18n_utils/${MODPY_PYCACHE}settings_user.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/modules/bl_i18n_utils/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+share/blender/scripts/modules/bl_i18n_utils/${MODPY_PYCACHE}utils_cli.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/modules/bl_i18n_utils/${MODPY_PYCACHE}utils_languages_menu.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/modules/bl_i18n_utils/${MODPY_PYCACHE}utils_rtl.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/modules/bl_i18n_utils/${MODPY_PYCACHE}utils_spell_check.${MODPY_PYC_MAGIC_TAG}pyc
@@ -4368,6 +4414,7 @@ share/blender/scripts/modules/bl_i18n_utils/merge_po.py
 share/blender/scripts/modules/bl_i18n_utils/settings.py
 share/blender/scripts/modules/bl_i18n_utils/settings_user.py
 share/blender/scripts/modules/bl_i18n_utils/utils.py
+share/blender/scripts/modules/bl_i18n_utils/utils_cli.py
 share/blender/scripts/modules/bl_i18n_utils/utils_languages_menu.py
 share/blender/scripts/modules/bl_i18n_utils/utils_rtl.py
 share/blender/scripts/modules/bl_i18n_utils/utils_spell_check.py
@@ -4379,10 +4426,12 @@ share/blender/scripts/modules/bl_keymap_utils/${MODPY_PYCACHE}io.${MODPY_PYC_MAG
 share/blender/scripts/modules/bl_keymap_utils/${MODPY_PYCACHE}keymap_from_toolbar.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/modules/bl_keymap_utils/${MODPY_PYCACHE}keymap_hierarchy.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/modules/bl_keymap_utils/${MODPY_PYCACHE}platform_helpers.${MODPY_PYC_MAGIC_TAG}pyc
+share/blender/scripts/modules/bl_keymap_utils/${MODPY_PYCACHE}versioning.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/modules/bl_keymap_utils/io.py
 share/blender/scripts/modules/bl_keymap_utils/keymap_from_toolbar.py
 share/blender/scripts/modules/bl_keymap_utils/keymap_hierarchy.py
 share/blender/scripts/modules/bl_keymap_utils/platform_helpers.py
+share/blender/scripts/modules/bl_keymap_utils/versioning.py
 share/blender/scripts/modules/bl_previews_utils/
 ${MODPY_COMMENT}share/blender/scripts/modules/bl_previews_utils/${MODPY_PYCACHE}/
 share/blender/scripts/modules/bl_previews_utils/${MODPY_PYCACHE}bl_previews_render.${MODPY_PYC_MAGIC_TAG}pyc
@@ -4415,6 +4464,7 @@ share/blender/scripts/modules/bpy_extras/__init__.py
 ${MODPY_COMMENT}share/blender/scripts/modules/bpy_extras/${MODPY_PYCACHE}/
 share/blender/scripts/modules/bpy_extras/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/modules/bpy_extras/${MODPY_PYCACHE}anim_utils.${MODPY_PYC_MAGIC_TAG}pyc
+share/blender/scripts/modules/bpy_extras/${MODPY_PYCACHE}asset_utils.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/modules/bpy_extras/${MODPY_PYCACHE}image_utils.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/modules/bpy_extras/${MODPY_PYCACHE}io_utils.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/modules/bpy_extras/${MODPY_PYCACHE}keyconfig_utils.${MODPY_PYC_MAGIC_TAG}pyc
@@ -4424,6 +4474,7 @@ share/blender/scripts/modules/bpy_extras/${MODPY_PYCACHE}node_utils.${MODPY_PYC_
 share/blender/scripts/modules/bpy_extras/${MODPY_PYCACHE}object_utils.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/modules/bpy_extras/${MODPY_PYCACHE}view3d_utils.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/modules/bpy_extras/anim_utils.py
+share/blender/scripts/modules/bpy_extras/asset_utils.py
 share/blender/scripts/modules/bpy_extras/image_utils.py
 share/blender/scripts/modules/bpy_extras/io_utils.py
 share/blender/scripts/modules/bpy_extras/keyconfig_utils.py
@@ -4833,12 +4884,13 @@ ${MODPY_COMMENT}share/blender/scripts/startup/bl_operators/${MODPY_PYCACHE}/
 share/blender/scripts/startup/bl_operators/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/startup/bl_operators/${MODPY_PYCACHE}add_mesh_torus.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/startup/bl_operators/${MODPY_PYCACHE}anim.${MODPY_PYC_MAGIC_TAG}pyc
+share/blender/scripts/startup/bl_operators/${MODPY_PYCACHE}assets.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/startup/bl_operators/${MODPY_PYCACHE}clip.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/startup/bl_operators/${MODPY_PYCACHE}console.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/startup/bl_operators/${MODPY_PYCACHE}constraint.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/startup/bl_operators/${MODPY_PYCACHE}file.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/startup/bl_operators/${MODPY_PYCACHE}freestyle.${MODPY_PYC_MAGIC_TAG}pyc
-share/blender/scripts/startup/bl_operators/${MODPY_PYCACHE}gpencil_mesh_bake.${MODPY_PYC_MAGIC_TAG}pyc
+share/blender/scripts/startup/bl_operators/${MODPY_PYCACHE}geometry_nodes.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/startup/bl_operators/${MODPY_PYCACHE}image.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/startup/bl_operators/${MODPY_PYCACHE}mesh.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/startup/bl_operators/${MODPY_PYCACHE}node.${MODPY_PYC_MAGIC_TAG}pyc
@@ -4850,7 +4902,6 @@ share/blender/scripts/startup/bl_operators/${MODPY_PYCACHE}presets.${MODPY_PYC_M
 share/blender/scripts/startup/bl_operators/${MODPY_PYCACHE}rigidbody.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/startup/bl_operators/${MODPY_PYCACHE}screen_play_rendered_anim.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/startup/bl_operators/${MODPY_PYCACHE}sequencer.${MODPY_PYC_MAGIC_TAG}pyc
-share/blender/scripts/startup/bl_operators/${MODPY_PYCACHE}simulation.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/startup/bl_operators/${MODPY_PYCACHE}userpref.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/startup/bl_operators/${MODPY_PYCACHE}uvcalc_follow_active.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/startup/bl_operators/${MODPY_PYCACHE}uvcalc_lightmap.${MODPY_PYC_MAGIC_TAG}pyc
@@ -4859,6 +4910,7 @@ share/blender/scripts/startup/bl_operators/${MODPY_PYCACHE}view3d.${MODPY_PYC_MA
 share/blender/scripts/startup/bl_operators/${MODPY_PYCACHE}wm.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/scripts/startup/bl_operators/add_mesh_torus.py
 share/blender/scripts/startup/bl_operators/anim.py
+share/blender/scripts/startup/bl_operators/assets.py
 share/blender/scripts/startup/bl_operators/bmesh/
 ${MODPY_COMMENT}share/blender/scripts/startup/bl_operators/bmesh/${MODPY_PYCACHE}/
 share/blender/scripts/startup/bl_operators/bmesh/${MODPY_PYCACHE}find_adjacent.${MODPY_PYC_MAGIC_TAG}pyc
@@ -4868,7 +4920,7 @@ share/blender/scripts/startup/bl_operators/console.py
 share/blender/scripts/startup/bl_operators/constraint.py
 share/blender/scripts/startup/bl_operators/file.py
 share/blender/scripts/startup/bl_operators/freestyle.py
-share/blender/scripts/startup/bl_operators/gpencil_mesh_bake.py
+share/blender/scripts/startup/bl_operators/geometry_nodes.py
 share/blender/scripts/startup/bl_operators/image.py
 share/blender/scripts/startup/bl_operators/mesh.py
 share/blender/scripts/startup/bl_operators/node.py
@@ -4880,7 +4932,6 @@ share/blender/scripts/startup/bl_operators/presets.py
 share/blender/scripts/startup/bl_operators/rigidbody.py
 share/blender/scripts/startup/bl_operators/screen_play_rendered_anim.py
 share/blender/scripts/startup/bl_operators/sequencer.py
-share/blender/scripts/startup/bl_operators/simulation.py
 share/blender/scripts/startup/bl_operators/userpref.py
 share/blender/scripts/startup/bl_operators/uvcalc_follow_active.py
 share/blender/scripts/startup/bl_operators/uvcalc_lightmap.py
@@ -5104,11 +5155,11 @@ share/doc/blender/BSL-1.0.txt
 share/doc/blender/FTL.txt
 share/doc/blender/GPL-3.0.txt
 share/doc/blender/GPL-license.txt
-share/doc/blender/ISC.txt
 share/doc/blender/MIT.txt
 share/doc/blender/OpenColorIO.txt
 share/doc/blender/OpenSSL.txt
 share/doc/blender/Python.txt
+share/doc/blender/THIRD-PARTY-LICENSES.txt
 share/doc/blender/bfont.ttf.txt
 share/doc/blender/bmonofont-i18n.ttf.txt
 share/doc/blender/copyright.txt

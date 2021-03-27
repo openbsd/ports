@@ -1,11 +1,11 @@
-$OpenBSD: patch-intern_guardedalloc_intern_mallocn_c,v 1.5 2020/11/29 19:57:01 sthen Exp $
+$OpenBSD: patch-intern_guardedalloc_intern_mallocn_c,v 1.6 2021/03/27 15:15:06 sthen Exp $
 
 Use posix_memalign() on OpenBSD.
 
 Index: intern/guardedalloc/intern/mallocn.c
---- intern/guardedalloc/intern/mallocn.c.orig	Tue Sep 22 19:36:29 2020
-+++ intern/guardedalloc/intern/mallocn.c	Sun Nov 22 13:12:51 2020
-@@ -71,7 +71,8 @@ void *aligned_malloc(size_t size, size_t alignment)
+--- intern/guardedalloc/intern/mallocn.c.orig
++++ intern/guardedalloc/intern/mallocn.c
+@@ -72,7 +72,8 @@ void *aligned_malloc(size_t size, size_t alignment)
  
  #ifdef _WIN32
    return _aligned_malloc(size, alignment);

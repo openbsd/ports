@@ -1,9 +1,9 @@
-$OpenBSD: patch-source_blender_blenkernel_intern_packedFile_c,v 1.11 2020/11/29 19:57:01 sthen Exp $
+$OpenBSD: patch-source_blender_blenkernel_intern_packedFile_c,v 1.12 2021/03/27 15:15:06 sthen Exp $
 
 Index: source/blender/blenkernel/intern/packedFile.c
---- source/blender/blenkernel/intern/packedFile.c.orig	Wed Nov 25 14:01:32 2020
-+++ source/blender/blenkernel/intern/packedFile.c	Sat Nov 28 21:50:54 2020
-@@ -330,7 +330,7 @@ int BKE_packedfile_write_to_file(ReportList *reports,
+--- source/blender/blenkernel/intern/packedFile.c.orig
++++ source/blender/blenkernel/intern/packedFile.c
+@@ -333,7 +333,7 @@ int BKE_packedfile_write_to_file(ReportList *reports,
    /* make sure the path to the file exists... */
    BLI_make_existing_file(name);
  
