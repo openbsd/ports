@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.76 2021/02/18 11:59:50 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.77 2021/03/27 15:13:34 sthen Exp $
 @ask-update librenms-<1.60v0 pkg_add cannot handle this update directly. Cancel now, pkg_delete librenms, then install the new version.
 @newgroup _librenms:755
 @newuser _librenms:755:_librenms:daemon:librenms user:${INSTDIR}:/sbin/nologin
@@ -46,6 +46,7 @@ librenms/LibreNMS/Alert/Transport/Discord.php
 librenms/LibreNMS/Alert/Transport/Dummy.php
 librenms/LibreNMS/Alert/Transport/Elasticsearch.php
 librenms/LibreNMS/Alert/Transport/Gitlab.php
+librenms/LibreNMS/Alert/Transport/Googlechat.php
 librenms/LibreNMS/Alert/Transport/Hipchat.php
 librenms/LibreNMS/Alert/Transport/Hue.php
 librenms/LibreNMS/Alert/Transport/Irc.php
@@ -179,6 +180,8 @@ librenms/LibreNMS/Interfaces/Discovery/Sensors/
 librenms/LibreNMS/Interfaces/Discovery/Sensors/WirelessApCountDiscovery.php
 librenms/LibreNMS/Interfaces/Discovery/Sensors/WirelessCapacityDiscovery.php
 librenms/LibreNMS/Interfaces/Discovery/Sensors/WirelessCcqDiscovery.php
+librenms/LibreNMS/Interfaces/Discovery/Sensors/WirelessCellDiscovery.php
+librenms/LibreNMS/Interfaces/Discovery/Sensors/WirelessChannelDiscovery.php
 librenms/LibreNMS/Interfaces/Discovery/Sensors/WirelessClientsDiscovery.php
 librenms/LibreNMS/Interfaces/Discovery/Sensors/WirelessDistanceDiscovery.php
 librenms/LibreNMS/Interfaces/Discovery/Sensors/WirelessErrorRateDiscovery.php
@@ -216,6 +219,8 @@ librenms/LibreNMS/Interfaces/Polling/Sensors/
 librenms/LibreNMS/Interfaces/Polling/Sensors/WirelessApCountPolling.php
 librenms/LibreNMS/Interfaces/Polling/Sensors/WirelessCapacityPolling.php
 librenms/LibreNMS/Interfaces/Polling/Sensors/WirelessCcqPolling.php
+librenms/LibreNMS/Interfaces/Polling/Sensors/WirelessCellPolling.php
+librenms/LibreNMS/Interfaces/Polling/Sensors/WirelessChannelPolling.php
 librenms/LibreNMS/Interfaces/Polling/Sensors/WirelessClientsPolling.php
 librenms/LibreNMS/Interfaces/Polling/Sensors/WirelessDistancePolling.php
 librenms/LibreNMS/Interfaces/Polling/Sensors/WirelessErrorRatePolling.php
@@ -386,6 +391,7 @@ librenms/LibreNMS/OS/Shared/Zyxel.php
 librenms/LibreNMS/OS/Siklu.php
 librenms/LibreNMS/OS/Siteboss.php
 librenms/LibreNMS/OS/Siteboss550.php
+librenms/LibreNMS/OS/Siteboss571.php
 librenms/LibreNMS/OS/SmOs.php
 librenms/LibreNMS/OS/Smartax.php
 librenms/LibreNMS/OS/Sonicwall.php
@@ -530,6 +536,7 @@ librenms/LibreNMS/Util/CiHelper.php
 librenms/LibreNMS/Util/Clean.php
 librenms/LibreNMS/Util/CliColorFormatter.php
 librenms/LibreNMS/Util/Colors.php
+librenms/LibreNMS/Util/Dns.php
 librenms/LibreNMS/Util/DynamicConfig.php
 librenms/LibreNMS/Util/DynamicConfigItem.php
 librenms/LibreNMS/Util/EnvHelper.php
@@ -600,6 +607,7 @@ librenms/app/Console/Commands/
 librenms/app/Console/Commands/AddUserCommand.php
 librenms/app/Console/Commands/BashCompletionCommand.php
 librenms/app/Console/Commands/DevCheckCommand.php
+librenms/app/Console/Commands/DevSimulate.php
 librenms/app/Console/Commands/GetConfigCommand.php
 librenms/app/Console/Commands/SchemaDumpCommand.php
 librenms/app/Console/Commands/SetConfigCommand.php
@@ -971,6 +979,7 @@ librenms/database/factories/DeviceFactory.php
 librenms/database/factories/DeviceGroupFactory.php
 librenms/database/factories/Ipv4AddressFactory.php
 librenms/database/factories/Ipv4NetworkFactory.php
+librenms/database/factories/LocationFactory.php
 librenms/database/factories/OspfNbrFactory.php
 librenms/database/factories/OspfPortFactory.php
 librenms/database/factories/PortFactory.php
@@ -1178,6 +1187,8 @@ librenms/database/migrations/2020_10_30_093601_add_tos_to_ospf_ports.php
 librenms/database/migrations/2020_11_02_164331_add_powerstate_enum_to_vminfo.php
 librenms/database/migrations/2021_02_08_224355_fix_invalid_dates.php
 librenms/database/migrations/2021_02_09_084318_remove_perf_times.php
+librenms/database/migrations/2021_02_21_203415_location_add_fixed_coordinates_flag.php
+librenms/database/migrations/2021_03_17_160729_service_templates_cleanup.php
 librenms/database/schema/
 librenms/database/schema/mysql-schema.dump
 librenms/database/schema/testing-schema.dump
@@ -1379,6 +1390,7 @@ librenms/doc/img/capture-debug-icon.png
 librenms/doc/img/carelpcowebsystemoid.png
 librenms/doc/img/device-troubleshooting.png
 librenms/doc/img/device_groups.png
+librenms/doc/img/example-app-powermon-consumption-02.png
 librenms/doc/img/example-dashboard.png
 librenms/doc/img/example-embed-website.png
 librenms/doc/img/librenms-distributed-diagram.png
@@ -2287,6 +2299,7 @@ librenms/includes/definitions/cimc.yaml
 librenms/includes/definitions/cips.yaml
 librenms/includes/definitions/cirpack.yaml
 librenms/includes/definitions/ciscoepc.yaml
+librenms/includes/definitions/ciscome1200.yaml
 librenms/includes/definitions/ciscosat.yaml
 librenms/includes/definitions/ciscosb.yaml
 librenms/includes/definitions/ciscosce.yaml
@@ -2556,6 +2569,7 @@ librenms/includes/definitions/discovery/mbg-ltos6.yaml
 librenms/includes/definitions/discovery/mcafeewebgateway.yaml
 librenms/includes/definitions/discovery/merakims.yaml
 librenms/includes/definitions/discovery/microsemipdsine.yaml
+librenms/includes/definitions/discovery/microsemitime.yaml
 librenms/includes/definitions/discovery/mimosa.yaml
 librenms/includes/definitions/discovery/monowall.yaml
 librenms/includes/definitions/discovery/motorola-cm.yaml
@@ -2655,9 +2669,11 @@ librenms/includes/definitions/discovery/sentry3.yaml
 librenms/includes/definitions/discovery/sentry4.yaml
 librenms/includes/definitions/discovery/seos.yaml
 librenms/includes/definitions/discovery/serveriron.yaml
+librenms/includes/definitions/discovery/serverscheck.yaml
 librenms/includes/definitions/discovery/sgos.yaml
 librenms/includes/definitions/discovery/siteboss.yaml
 librenms/includes/definitions/discovery/siteboss550.yaml
+librenms/includes/definitions/discovery/siteboss571.yaml
 librenms/includes/definitions/discovery/sixnet.yaml
 librenms/includes/definitions/discovery/sm-os.yaml
 librenms/includes/definitions/discovery/smartax.yaml
@@ -3064,6 +3080,7 @@ librenms/includes/definitions/siklu.yaml
 librenms/includes/definitions/sinetica.yaml
 librenms/includes/definitions/siteboss.yaml
 librenms/includes/definitions/siteboss550.yaml
+librenms/includes/definitions/siteboss571.yaml
 librenms/includes/definitions/sitemonitor.yaml
 librenms/includes/definitions/sixnet.yaml
 librenms/includes/definitions/slms.yaml
@@ -3160,6 +3177,7 @@ librenms/includes/discovery/arp-table/edgeswitch.inc.php
 librenms/includes/discovery/arp-table/screenos.inc.php
 librenms/includes/discovery/bgp-peers/
 librenms/includes/discovery/bgp-peers.inc.php
+librenms/includes/discovery/bgp-peers/dell-os10.inc.php
 librenms/includes/discovery/bgp-peers/timos.inc.php
 librenms/includes/discovery/bgp-peers/vrp.inc.php
 librenms/includes/discovery/cisco-cbqos.inc.php
@@ -3238,14 +3256,15 @@ librenms/includes/discovery/sensors/chromatic_dispersion/
 librenms/includes/discovery/sensors/chromatic_dispersion/infinera-groove.inc.php
 librenms/includes/discovery/sensors/cisco-entity-sensor.inc.php
 librenms/includes/discovery/sensors/count/
+librenms/includes/discovery/sensors/count/cisco.inc.php
 librenms/includes/discovery/sensors/count/dhcpatriot.inc.php
 librenms/includes/discovery/sensors/count/fortigate.inc.php
+librenms/includes/discovery/sensors/count/printer.inc.php
 librenms/includes/discovery/sensors/count/sonicwall.inc.php
 librenms/includes/discovery/sensors/count/webmon.inc.php
 librenms/includes/discovery/sensors/current/
 librenms/includes/discovery/sensors/current/adva_fsp150.inc.php
 librenms/includes/discovery/sensors/current/adva_fsp3kr7.inc.php
-librenms/includes/discovery/sensors/current/aos7.inc.php
 librenms/includes/discovery/sensors/current/apc.inc.php
 librenms/includes/discovery/sensors/current/ciscosb.inc.php
 librenms/includes/discovery/sensors/current/commander-plus.inc.php
@@ -3282,8 +3301,6 @@ librenms/includes/discovery/sensors/current/tpdin.inc.php
 librenms/includes/discovery/sensors/dbm/
 librenms/includes/discovery/sensors/dbm/adva_fsp150.inc.php
 librenms/includes/discovery/sensors/dbm/adva_fsp3kr7.inc.php
-librenms/includes/discovery/sensors/dbm/aos7.inc.php
-librenms/includes/discovery/sensors/dbm/bti800.inc.php
 librenms/includes/discovery/sensors/dbm/ciscoepc.inc.php
 librenms/includes/discovery/sensors/dbm/ciscosb.inc.php
 librenms/includes/discovery/sensors/dbm/comware.inc.php
@@ -3302,7 +3319,6 @@ librenms/includes/discovery/sensors/delay/
 librenms/includes/discovery/sensors/delay/infinera-groove.inc.php
 librenms/includes/discovery/sensors/entity-sensor.inc.php
 librenms/includes/discovery/sensors/fanspeed/
-librenms/includes/discovery/sensors/fanspeed/aos7.inc.php
 librenms/includes/discovery/sensors/fanspeed/apc.inc.php
 librenms/includes/discovery/sensors/fanspeed/areca.inc.php
 librenms/includes/discovery/sensors/fanspeed/benuos.inc.php
@@ -3392,13 +3408,10 @@ librenms/includes/discovery/sensors/pre-cache/
 librenms/includes/discovery/sensors/pre-cache/adva_fsp150.inc.php
 librenms/includes/discovery/sensors/pre-cache/adva_fsp3kr7.inc.php
 librenms/includes/discovery/sensors/pre-cache/aos-emu2.inc.php
-librenms/includes/discovery/sensors/pre-cache/aos6.inc.php
-librenms/includes/discovery/sensors/pre-cache/aos7.inc.php
 librenms/includes/discovery/sensors/pre-cache/apc.inc.php
 librenms/includes/discovery/sensors/pre-cache/arris-c3.inc.php
 librenms/includes/discovery/sensors/pre-cache/arris-c4.inc.php
 librenms/includes/discovery/sensors/pre-cache/avtech.inc.php
-librenms/includes/discovery/sensors/pre-cache/bti800.inc.php
 librenms/includes/discovery/sensors/pre-cache/ciscoepc.inc.php
 librenms/includes/discovery/sensors/pre-cache/ciscosb.inc.php
 librenms/includes/discovery/sensors/pre-cache/comware.inc.php
@@ -3446,9 +3459,7 @@ librenms/includes/discovery/sensors/state/
 librenms/includes/discovery/sensors/state/airos-af-ltu.inc.php
 librenms/includes/discovery/sensors/state/aos-emu2.inc.php
 librenms/includes/discovery/sensors/state/aos6.inc.php
-librenms/includes/discovery/sensors/state/aos7.inc.php
 librenms/includes/discovery/sensors/state/apc.inc.php
-librenms/includes/discovery/sensors/state/aruba-instant.inc.php
 librenms/includes/discovery/sensors/state/asa.inc.php
 librenms/includes/discovery/sensors/state/axiscam.inc.php
 librenms/includes/discovery/sensors/state/boss.inc.php
@@ -3502,7 +3513,6 @@ librenms/includes/discovery/sensors/temperature/akcp.inc.php
 librenms/includes/discovery/sensors/temperature/aos-emu2.inc.php
 librenms/includes/discovery/sensors/temperature/aos.inc.php
 librenms/includes/discovery/sensors/temperature/aos6.inc.php
-librenms/includes/discovery/sensors/temperature/aos7.inc.php
 librenms/includes/discovery/sensors/temperature/apc.inc.php
 librenms/includes/discovery/sensors/temperature/areca.inc.php
 librenms/includes/discovery/sensors/temperature/arris-c4.inc.php
@@ -3591,7 +3601,6 @@ librenms/includes/discovery/sensors/temperature/zxdsl.inc.php
 librenms/includes/discovery/sensors/voltage/
 librenms/includes/discovery/sensors/voltage/adva_fsp150.inc.php
 librenms/includes/discovery/sensors/voltage/adva_fsp3kr7.inc.php
-librenms/includes/discovery/sensors/voltage/aos7.inc.php
 librenms/includes/discovery/sensors/voltage/apc.inc.php
 librenms/includes/discovery/sensors/voltage/areca.inc.php
 librenms/includes/discovery/sensors/voltage/benuos.inc.php
@@ -3658,6 +3667,7 @@ librenms/includes/discovery/storage/nimbleos.inc.php
 librenms/includes/discovery/storage/oceanstor.inc.php
 librenms/includes/discovery/storage/onefs.inc.php
 librenms/includes/discovery/storage/ucd-dsktable.inc.php
+librenms/includes/discovery/storage/vrp.inc.php
 librenms/includes/discovery/stp.inc.php
 librenms/includes/discovery/toner.inc.php
 librenms/includes/discovery/ucd-diskio.inc.php
@@ -3700,6 +3710,7 @@ librenms/includes/html/error-no-perm.inc.php
 librenms/includes/html/forms/
 librenms/includes/html/forms/ack-alert.inc.php
 librenms/includes/html/forms/add-dashboard.inc.php
+librenms/includes/html/forms/alert-details.inc.php
 librenms/includes/html/forms/alert-notes.inc.php
 librenms/includes/html/forms/alert-rules.inc.php
 librenms/includes/html/forms/alert-templates.inc.php
@@ -3824,6 +3835,13 @@ librenms/includes/html/graphs/application/ceph_pool_objects.inc.php
 librenms/includes/html/graphs/application/certificate-common.inc.php
 librenms/includes/html/graphs/application/certificate_age.inc.php
 librenms/includes/html/graphs/application/certificate_remaining_days.inc.php
+librenms/includes/html/graphs/application/chronyd_frequency.inc.php
+librenms/includes/html/graphs/application/chronyd_root.inc.php
+librenms/includes/html/graphs/application/chronyd_source_frequency.inc.php
+librenms/includes/html/graphs/application/chronyd_source_polling.inc.php
+librenms/includes/html/graphs/application/chronyd_source_sampling.inc.php
+librenms/includes/html/graphs/application/chronyd_stratum.inc.php
+librenms/includes/html/graphs/application/chronyd_time.inc.php
 librenms/includes/html/graphs/application/dhcp-stats_networks_current.inc.php
 librenms/includes/html/graphs/application/dhcp-stats_networks_max.inc.php
 librenms/includes/html/graphs/application/dhcp-stats_networks_percent.inc.php
@@ -3831,6 +3849,12 @@ librenms/includes/html/graphs/application/dhcp-stats_pools_current.inc.php
 librenms/includes/html/graphs/application/dhcp-stats_pools_max.inc.php
 librenms/includes/html/graphs/application/dhcp-stats_pools_percent.inc.php
 librenms/includes/html/graphs/application/dhcp-stats_stats.inc.php
+librenms/includes/html/graphs/application/docker-common.inc.php
+librenms/includes/html/graphs/application/docker_cpu_usage.inc.php
+librenms/includes/html/graphs/application/docker_mem_limit.inc.php
+librenms/includes/html/graphs/application/docker_mem_perc.inc.php
+librenms/includes/html/graphs/application/docker_mem_used.inc.php
+librenms/includes/html/graphs/application/docker_pids.inc.php
 librenms/includes/html/graphs/application/drbd_disk_bits.inc.php
 librenms/includes/html/graphs/application/drbd_network_bits.inc.php
 librenms/includes/html/graphs/application/drbd_queue.inc.php
@@ -4005,6 +4029,7 @@ librenms/includes/html/graphs/application/powerdns_queries.inc.php
 librenms/includes/html/graphs/application/powerdns_queries_udp.inc.php
 librenms/includes/html/graphs/application/powerdns_querycache.inc.php
 librenms/includes/html/graphs/application/powerdns_recursing.inc.php
+librenms/includes/html/graphs/application/powermon_consumption.inc.php
 librenms/includes/html/graphs/application/proxmox_traffic.inc.php
 librenms/includes/html/graphs/application/puppet-agent_changes.inc.php
 librenms/includes/html/graphs/application/puppet-agent_events.inc.php
@@ -4431,6 +4456,8 @@ librenms/includes/html/graphs/device/wireless-sensor.inc.php
 librenms/includes/html/graphs/device/wireless_ap-count.inc.php
 librenms/includes/html/graphs/device/wireless_capacity.inc.php
 librenms/includes/html/graphs/device/wireless_ccq.inc.php
+librenms/includes/html/graphs/device/wireless_cell.inc.php
+librenms/includes/html/graphs/device/wireless_channel.inc.php
 librenms/includes/html/graphs/device/wireless_clients.inc.php
 librenms/includes/html/graphs/device/wireless_distance.inc.php
 librenms/includes/html/graphs/device/wireless_error-rate.inc.php
@@ -4603,6 +4630,8 @@ librenms/includes/html/graphs/wireless/ap-count.inc.php
 librenms/includes/html/graphs/wireless/auth.inc.php
 librenms/includes/html/graphs/wireless/capacity.inc.php
 librenms/includes/html/graphs/wireless/ccq.inc.php
+librenms/includes/html/graphs/wireless/cell.inc.php
+librenms/includes/html/graphs/wireless/channel.inc.php
 librenms/includes/html/graphs/wireless/clients.inc.php
 librenms/includes/html/graphs/wireless/distance.inc.php
 librenms/includes/html/graphs/wireless/error-rate.inc.php
@@ -4633,6 +4662,7 @@ librenms/includes/html/list/transport_groups.inc.php
 librenms/includes/html/list/transports.inc.php
 librenms/includes/html/modal/
 librenms/includes/html/modal/alert_ack.inc.php
+librenms/includes/html/modal/alert_details.php
 librenms/includes/html/modal/alert_notes.inc.php
 librenms/includes/html/modal/alert_rule_collection.inc.php
 librenms/includes/html/modal/alert_rule_list.inc.php
@@ -4694,7 +4724,6 @@ librenms/includes/html/pages/delhost.inc.php
 librenms/includes/html/pages/deluser.inc.php
 librenms/includes/html/pages/device/
 librenms/includes/html/pages/device-dependencies.inc.php
-librenms/includes/html/pages/device/accesspoint.inc.php
 librenms/includes/html/pages/device/accesspoints.inc.php
 librenms/includes/html/pages/device/alert-stats.inc.php
 librenms/includes/html/pages/device/alerts.inc.php
@@ -4706,7 +4735,9 @@ librenms/includes/html/pages/device/apps/backupninja.inc.php
 librenms/includes/html/pages/device/apps/bind.inc.php
 librenms/includes/html/pages/device/apps/ceph.inc.php
 librenms/includes/html/pages/device/apps/certificate.inc.php
+librenms/includes/html/pages/device/apps/chronyd.inc.php
 librenms/includes/html/pages/device/apps/dhcp-stats.inc.php
+librenms/includes/html/pages/device/apps/docker.inc.php
 librenms/includes/html/pages/device/apps/drbd.inc.php
 librenms/includes/html/pages/device/apps/entropy.inc.php
 librenms/includes/html/pages/device/apps/exim-stats.inc.php
@@ -4741,6 +4772,7 @@ librenms/includes/html/pages/device/apps/postgres.inc.php
 librenms/includes/html/pages/device/apps/powerdns-dnsdist.inc.php
 librenms/includes/html/pages/device/apps/powerdns-recursor.inc.php
 librenms/includes/html/pages/device/apps/powerdns.inc.php
+librenms/includes/html/pages/device/apps/powermon.inc.php
 librenms/includes/html/pages/device/apps/proxmox.inc.php
 librenms/includes/html/pages/device/apps/puppet-agent.inc.php
 librenms/includes/html/pages/device/apps/pureftpd.inc.php
@@ -5123,7 +5155,9 @@ librenms/includes/polling/applications/backupninja.inc.php
 librenms/includes/polling/applications/bind.inc.php
 librenms/includes/polling/applications/ceph.inc.php
 librenms/includes/polling/applications/certificate.inc.php
+librenms/includes/polling/applications/chronyd.inc.php
 librenms/includes/polling/applications/dhcp-stats.inc.php
+librenms/includes/polling/applications/docker.inc.php
 librenms/includes/polling/applications/drbd.inc.php
 librenms/includes/polling/applications/entropy.inc.php
 librenms/includes/polling/applications/exim-stats.inc.php
@@ -5157,6 +5191,7 @@ librenms/includes/polling/applications/postgres.inc.php
 librenms/includes/polling/applications/powerdns-dnsdist.inc.php
 librenms/includes/polling/applications/powerdns-recursor.inc.php
 librenms/includes/polling/applications/powerdns.inc.php
+librenms/includes/polling/applications/powermon.inc.php
 librenms/includes/polling/applications/proxmox.inc.php
 librenms/includes/polling/applications/puppet-agent.inc.php
 librenms/includes/polling/applications/pureftpd.inc.php
@@ -5422,7 +5457,6 @@ librenms/includes/polling/sensors/pre-cache/aos-emu2.inc.php
 librenms/includes/polling/sensors/pre-cache/geist-watchdog.inc.php
 librenms/includes/polling/sensors/state/
 librenms/includes/polling/sensors/state/aos6.inc.php
-librenms/includes/polling/sensors/state/aos7.inc.php
 librenms/includes/polling/sensors/state/ctm.inc.php
 librenms/includes/polling/sensors/state/dhcpatriot.inc.php
 librenms/includes/polling/sensors/state/eds.inc.php
@@ -5458,6 +5492,7 @@ librenms/includes/polling/storage/nimbleos.inc.php
 librenms/includes/polling/storage/oceanstor.inc.php
 librenms/includes/polling/storage/onefs.inc.php
 librenms/includes/polling/storage/ucd-dsktable.inc.php
+librenms/includes/polling/storage/vrp.inc.php
 librenms/includes/polling/stp.inc.php
 librenms/includes/polling/system.inc.php
 librenms/includes/polling/toner.inc.php
@@ -6053,6 +6088,7 @@ librenms/mibs/asentria/
 librenms/mibs/asentria/ASENTRIA-ROOT-MIB
 librenms/mibs/asentria/SITEBOSS-530-STD-MIB
 librenms/mibs/asentria/SITEBOSS-550-STD-MIB
+librenms/mibs/asentria/SITEBOSS-571-STD-MIB
 librenms/mibs/aten/
 librenms/mibs/aten/ATEN-PE-CFG_int.mib
 librenms/mibs/aten/ATEN-PE-CFG_str.mib
@@ -6606,6 +6642,7 @@ librenms/mibs/cisco/CISCO-VPDN-MGMT-MIB
 librenms/mibs/cisco/CISCO-VRF-MIB
 librenms/mibs/cisco/CISCO-VTP-MIB
 librenms/mibs/cisco/CISCO-WAN-3G-MIB
+librenms/mibs/cisco/CISCO-WAN-CELL-EXT-MIB
 librenms/mibs/cisco/CISCO-WAN-OPTIMIZATION-MIB
 librenms/mibs/cisco/CISCOSB-1-BONJOUR-SERVICE-MIB
 librenms/mibs/cisco/CISCOSB-3SW2SWTABLES-MIB
@@ -7021,10 +7058,12 @@ librenms/mibs/edfa/NSCRTV-ROOT
 librenms/mibs/edgecos/
 librenms/mibs/edgecos/ECS2100-MIB
 librenms/mibs/edgecos/ECS3510-MIB
+librenms/mibs/edgecos/ECS4100-52T-MIB
 librenms/mibs/edgecos/ECS4110-MIB
 librenms/mibs/edgecos/ECS4120-MIB
 librenms/mibs/edgecos/ECS4210-MIB
 librenms/mibs/edgecos/ECS4510-MIB
+librenms/mibs/edgecos/ECS4610-24F-MIB
 librenms/mibs/edgecos/ES3510MA-MIB
 librenms/mibs/edgecos/ES3528MO-MIB
 librenms/mibs/edgecos/ES3528MV2-MIB
@@ -8501,6 +8540,7 @@ librenms/mibs/microsemi/
 librenms/mibs/microsemi/DATUM-MIB
 librenms/mibs/microsemi/MICROSEMI-PDSINE-MIB
 librenms/mibs/microsemi/SSU2000-MIB
+librenms/mibs/microsemi/SYMM-SMI
 librenms/mibs/mikrotik/
 librenms/mibs/mikrotik/MIKROTIK-MIB
 librenms/mibs/mimosa/
@@ -9237,7 +9277,7 @@ librenms/mibs/sentry/
 librenms/mibs/sentry/Sentry3-MIB
 librenms/mibs/sentry/Sentry4-MIB
 librenms/mibs/serverscheck/
-librenms/mibs/serverscheck/SERVERSCHECK-MIB
+librenms/mibs/serverscheck/ServersCheck
 librenms/mibs/siae/
 librenms/mibs/siae/SIAE-ACM-STATISTICS-MIB
 librenms/mibs/siae/SIAE-AGGRL1-MANAGEMENT-MIB
@@ -16175,6 +16215,104 @@ librenms/vendor/pear/console_table/tests/multiline.phpt
 librenms/vendor/pear/console_table/tests/no_header.phpt
 librenms/vendor/pear/console_table/tests/no_rows.phpt
 librenms/vendor/pear/console_table/tests/rules.phpt
+librenms/vendor/pear/net_dns2/
+librenms/vendor/pear/net_dns2/LICENSE
+librenms/vendor/pear/net_dns2/Net/
+librenms/vendor/pear/net_dns2/Net/DNS2/
+librenms/vendor/pear/net_dns2/Net/DNS2.php
+librenms/vendor/pear/net_dns2/Net/DNS2/BitMap.php
+librenms/vendor/pear/net_dns2/Net/DNS2/Cache/
+librenms/vendor/pear/net_dns2/Net/DNS2/Cache.php
+librenms/vendor/pear/net_dns2/Net/DNS2/Cache/File.php
+librenms/vendor/pear/net_dns2/Net/DNS2/Cache/Shm.php
+librenms/vendor/pear/net_dns2/Net/DNS2/Exception.php
+librenms/vendor/pear/net_dns2/Net/DNS2/Header.php
+librenms/vendor/pear/net_dns2/Net/DNS2/Lookups.php
+librenms/vendor/pear/net_dns2/Net/DNS2/Notifier.php
+librenms/vendor/pear/net_dns2/Net/DNS2/Packet/
+librenms/vendor/pear/net_dns2/Net/DNS2/Packet.php
+librenms/vendor/pear/net_dns2/Net/DNS2/Packet/Request.php
+librenms/vendor/pear/net_dns2/Net/DNS2/Packet/Response.php
+librenms/vendor/pear/net_dns2/Net/DNS2/PrivateKey.php
+librenms/vendor/pear/net_dns2/Net/DNS2/Question.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/
+librenms/vendor/pear/net_dns2/Net/DNS2/RR.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/A.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/AAAA.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/AFSDB.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/AMTRELAY.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/ANY.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/APL.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/ATMA.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/AVC.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/CAA.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/CDNSKEY.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/CDS.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/CERT.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/CNAME.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/CSYNC.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/DHCID.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/DLV.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/DNAME.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/DNSKEY.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/DS.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/EID.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/EUI48.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/EUI64.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/HINFO.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/HIP.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/IPSECKEY.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/ISDN.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/KEY.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/KX.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/L32.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/L64.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/LOC.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/LP.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/MX.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/NAPTR.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/NID.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/NIMLOC.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/NS.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/NSAP.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/NSEC.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/NSEC3.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/NSEC3PARAM.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/OPENPGPKEY.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/OPT.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/PTR.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/PX.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/RP.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/RRSIG.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/RT.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/SIG.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/SMIMEA.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/SOA.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/SPF.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/SRV.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/SSHFP.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/TA.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/TALINK.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/TKEY.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/TLSA.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/TSIG.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/TXT.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/TYPE65534.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/URI.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/WKS.php
+librenms/vendor/pear/net_dns2/Net/DNS2/RR/X25.php
+librenms/vendor/pear/net_dns2/Net/DNS2/Resolver.php
+librenms/vendor/pear/net_dns2/Net/DNS2/Socket.php
+librenms/vendor/pear/net_dns2/Net/DNS2/Updater.php
+librenms/vendor/pear/net_dns2/README.md
+librenms/vendor/pear/net_dns2/composer.json
+librenms/vendor/pear/net_dns2/package.php
+librenms/vendor/pear/net_dns2/package.xml
+librenms/vendor/pear/net_dns2/tests/
+librenms/vendor/pear/net_dns2/tests/Tests_Net_DNS2_AllTests.php
+librenms/vendor/pear/net_dns2/tests/Tests_Net_DNS2_DNSSECTest.php
+librenms/vendor/pear/net_dns2/tests/Tests_Net_DNS2_ParserTest.php
+librenms/vendor/pear/net_dns2/tests/Tests_Net_DNS2_ResolverTest.php
 librenms/vendor/php-amqplib/
 librenms/vendor/php-amqplib/php-amqplib/
 librenms/vendor/php-amqplib/php-amqplib/CHANGELOG.md
