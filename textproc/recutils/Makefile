@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/11 08:39:43 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2021/03/27 17:22:37 ajacoutot Exp $
 
 COMMENT =	tools to access human-editable plaintext record files
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c gcrypt gpg-error iconv intl m readline
 
 MASTER_SITES =		${MASTER_SITE_GNU:=recutils/}
+
+BUILD_DEPENDS =		devel/check
 
 LIB_DEPENDS =		security/libgcrypt
 
