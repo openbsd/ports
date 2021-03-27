@@ -1,0 +1,15 @@
+$OpenBSD: patch-js_public_ErrorReport_h,v 1.1 2021/03/27 00:33:54 jca Exp $
+
+Missing include with ports-gcc.
+
+Index: js/public/ErrorReport.h
+--- js/public/ErrorReport.h.orig
++++ js/public/ErrorReport.h
+@@ -20,6 +20,7 @@
+ #include "mozilla/Assertions.h"  // MOZ_ASSERT
+ 
+ #include <iterator>  // std::input_iterator_tag, std::iterator
++#include <stdarg.h>  // va_list
+ #include <stddef.h>  // size_t
+ #include <stdint.h>  // int16_t, uint16_t
+ #include <string.h>  // strlen
