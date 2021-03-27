@@ -1,4 +1,5 @@
-$OpenBSD: patch-setup___init___py,v 1.7 2021/02/24 14:13:48 rsadowski Exp $
+$OpenBSD: patch-setup___init___py,v 1.8 2021/03/27 14:35:12 sthen Exp $
+
 Index: setup/__init__.py
 --- setup/__init__.py.orig
 +++ setup/__init__.py

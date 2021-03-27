@@ -1,7 +1,4 @@
-$OpenBSD: patch-setup_install_py,v 1.5 2021/02/24 14:13:48 rsadowski Exp $
-
-don't allow an updated patch to change the python shebang lines,
-they're correct with "env" here (handled in infrastructure).
+$OpenBSD: patch-setup_install_py,v 1.6 2021/03/27 14:35:12 sthen Exp $
 
 Index: setup/install.py
 --- setup/install.py.orig

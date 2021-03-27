@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.87 2021/03/23 22:19:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.88 2021/03/27 14:35:12 sthen Exp $
 
 COMMENT =		ebook management application
 
-V =			5.13.0
+V =			5.14.0
 DISTNAME =		calibre-$V
-REVISION =		0
 
 CATEGORIES =		textproc
 

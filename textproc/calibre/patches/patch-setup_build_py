@@ -1,8 +1,9 @@
-$OpenBSD: patch-setup_build_py,v 1.5 2021/02/24 14:13:48 rsadowski Exp $
+$OpenBSD: patch-setup_build_py,v 1.6 2021/03/27 14:35:12 sthen Exp $
+
 Index: setup/build.py
 --- setup/build.py.orig
 +++ setup/build.py
-@@ -65,15 +65,7 @@ class Extension(object):
+@@ -71,15 +71,7 @@ class Extension(object):
  
          self.ldflags = d['ldflags'] = kwargs.get('ldflags', [])
          self.optional = d['options'] = kwargs.get('optional', False)
@@ -18,11 +19,8 @@ Index: setup/build.py
  def lazy_load(name):
      if name.startswith('!'):
          name = name[1:]
-@@ -184,8 +176,11 @@ def init_env():
-         ldflags.append('-shared')
- 
+@@ -194,6 +186,8 @@ def init_env(debug=False, sanitize=False):
      if isbsd:
-+        sipdir = os.environ.get('SIP_DIR', '')
          cflags.append('-pthread')
          ldflags.append('-shared')
 +        cflags.append('-I'+os.path.join(sysconfig.PREFIX, 'include'))
@@ -30,30 +28,3 @@ Index: setup/build.py
  
      if ishaiku:
          cflags.append('-lpthread')
-@@ -221,8 +216,8 @@ def init_env():
-         cflags.append('-I%s'%sysconfig.get_python_inc())
-         ldflags.append('/LIBPATH:'+os.path.join(sysconfig.PREFIX, 'libs'))
-         linker = msvc.linker
--    return namedtuple('Environment', 'cc cxx cflags ldflags linker make')(
--        cc=cc, cxx=cxx, cflags=cflags, ldflags=ldflags, linker=linker, make=NMAKE if iswindows else 'make')
-+    return namedtuple('Environment', 'cc cxx cflags ldflags linker make sipdir')(
-+        cc=cc, cxx=cxx, cflags=cflags, ldflags=ldflags, linker=linker, make=NMAKE if iswindows else 'make', sipdir=sipdir if isbsd else '')
- 
- 
- class Build(Command):
-@@ -487,6 +482,7 @@ project-factory = "pyqtbuild:PyQtProject"
- 
- [tool.sip.project]
- sip-files-dir = "."
-+sip-include-dirs = [ "{self.env.sipdir}" ]
- 
- [tool.sip.bindings.pictureflow]
- headers = {ext.headers}
-@@ -495,6 +491,7 @@ exceptions = {needs_exceptions}
- include-dirs = {ext.inc_dirs}
- qmake-QT = ["widgets"]
- sip-file = "{os.path.basename(sipf)}"
-+tags = ["WS_X11"]
- ''')
-         shutil.copy2(sipf, src_dir)
- 

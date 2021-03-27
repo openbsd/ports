@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_calibre_gui2_update_py,v 1.2 2021/02/24 14:13:48 rsadowski Exp $
+$OpenBSD: patch-src_calibre_gui2_update_py,v 1.3 2021/03/27 14:35:12 sthen Exp $
 
-upstream's repo is not a useful source of updates for OpenBSD.
+- upstream's repo is not a useful source of updates for OpenBSD.
 
 Index: src/calibre/gui2/update.py
 --- src/calibre/gui2/update.py.orig
