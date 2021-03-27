@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2021/03/23 22:17:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2021/03/27 08:04:35 ajacoutot Exp $
 
 BROKEN-aarch64=	old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1.1.11
 BROKEN-armv7=	old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1.1.11
@@ -6,7 +6,7 @@ BROKEN-armv7=	old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1
 COMMENT=	thin wrapper for Terraform that provides extra tools
 
 MODGO_MODNAME=	github.com/gruntwork-io/terragrunt
-MODGO_VERSION=	v0.28.15
+MODGO_VERSION=	v0.28.16
 DISTNAME=	terragrunt-${MODGO_VERSION}
 
 WRKDIST=	${WRKDIR}/github.com/gruntwork-io/terragrunt@${MODGO_VERSION}
