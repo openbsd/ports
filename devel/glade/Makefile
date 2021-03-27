@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2021/02/23 19:39:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.96 2021/03/27 00:37:24 jca Exp $
 
 COMMENT=	user interface builder for the gtk+3 toolkit
 
@@ -26,7 +26,7 @@ MODULES=	devel/meson \
 		x11/gnome
 
 # C++11
-COMPILER =	base-clang ports-clang
+COMPILER =	base-clang ports-gcc
 
 BUILD_DEPENDS=	devel/py-gobject3${MODPY_FLAVOR}
 

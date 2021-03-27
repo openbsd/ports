@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.205 2021/03/18 20:17:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.206 2021/03/27 00:37:24 jca Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -25,7 +25,6 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
-# sync with x11/gnome/gjs
 COMPILER=		base-clang ports-gcc
 
 MODGNOME_TOOLS +=	desktop-file-utils docbook gobject-introspection gtk-update-icon-cache
