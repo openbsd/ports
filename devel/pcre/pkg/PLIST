@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2017/05/31 20:16:49 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.21 2021/03/27 07:17:36 robert Exp $
 bin/pcre-config
 @bin bin/pcregrep
 @bin bin/pcretest
@@ -8,16 +8,16 @@ include/pcre_stringpiece.h
 include/pcrecpp.h
 include/pcrecpparg.h
 include/pcreposix.h
-lib/libpcre.a
+@static-lib lib/libpcre.a
 lib/libpcre.la
 @lib lib/libpcre.so.${LIBpcre_VERSION}
-lib/libpcre16.a
+@static-lib lib/libpcre16.a
 lib/libpcre16.la
 @lib lib/libpcre16.so.${LIBpcre16_VERSION}
-lib/libpcrecpp.a
+@static-lib lib/libpcrecpp.a
 lib/libpcrecpp.la
 @lib lib/libpcrecpp.so.${LIBpcrecpp_VERSION}
-lib/libpcreposix.a
+@static-lib lib/libpcreposix.a
 lib/libpcreposix.la
 @lib lib/libpcreposix.so.${LIBpcreposix_VERSION}
 lib/pkgconfig/libpcre.pc
