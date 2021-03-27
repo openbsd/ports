@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2021/03/08 18:20:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2021/03/27 09:13:39 cwen Exp $
 
 COMMENT =		dungeon-crawling action-RPG adventure
 
 DISTNAME =		egoboo-2.8.1
+REVISION =		0
 CATEGORIES =		games
 
 HOMEPAGE =		http://egoboo.sourceforge.net
@@ -21,7 +22,8 @@ LIB_DEPENDS =		devel/sdl-image \
 FIX_CRLF_FILES =	src/Makefile src/enet/Makefile src/game/Makefile \
 			src/game/extensions/ogl_texture.c \
 			src/game/game.c \
-			src/game/platform/file_linux.c
+			src/game/platform/file_linux.c \
+			src/game/md2.c
 
 USE_GMAKE =		Yes
 WRKSRC =		${WRKDIST}/src
