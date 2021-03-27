@@ -1,7 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2021/03/01 12:52:45 semarie Exp $
+# $OpenBSD: Makefile,v 1.4 2021/03/27 10:09:43 semarie Exp $
 
 # should be fine for ${LLVM_ARCHS}, but it needs insane amount of datasize
 ONLY_FOR_ARCHS =	amd64 arm64 powerpc64
+
+BROKEN-arm64 =		generated binary segfault
+BROKEN-powerpc64 =	ld: error: undefined symbol: __subkf3 (and others)
 
 # build llvm as part of the port
 DPB_PROPERTIES =	parallel
