@@ -1,17 +1,17 @@
-$OpenBSD: patch-compiler_rustc_session_src_filesearch_rs,v 1.1 2020/11/19 16:06:07 semarie Exp $
+$OpenBSD: patch-compiler_rustc_session_src_filesearch_rs,v 1.2 2021/03/27 10:02:11 semarie Exp $
 fallback to LOCALBASE as default sysroot.
 Index: compiler/rustc_session/src/filesearch.rs
 --- compiler/rustc_session/src/filesearch.rs.orig
 +++ compiler/rustc_session/src/filesearch.rs
-@@ -130,7 +130,10 @@ pub fn get_or_default_sysroot() -> PathBuf {
-             p.pop();
-             p
+@@ -135,7 +135,10 @@ pub fn get_or_default_sysroot() -> PathBuf {
+                 p.pop();
+                 p
+             }
+-            Err(e) => panic!("failed to get current_exe: {}", e),
++            Err(e) => match option_env!("LOCALBASE") {
++                Some(dir) => return PathBuf::from(dir),
++                None => panic!("failed to get current_exe: {}", e),
++            }
          }
--        Err(e) => panic!("failed to get current_exe: {}", e),
-+        Err(e) => match option_env!("LOCALBASE") {
-+	    Some(dir) => return PathBuf::from(dir),
-+	    None => panic!("failed to get current_exe: {}", e),
-+	}
      }
- }
  

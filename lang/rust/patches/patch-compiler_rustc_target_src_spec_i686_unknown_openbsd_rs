@@ -1,10 +1,10 @@
-$OpenBSD: patch-compiler_rustc_target_src_spec_i686_unknown_openbsd_rs,v 1.2 2021/01/01 09:02:54 semarie Exp $
+$OpenBSD: patch-compiler_rustc_target_src_spec_i686_unknown_openbsd_rs,v 1.3 2021/03/27 10:02:11 semarie Exp $
 i386 should be pentiumpro (no SSE2, no ...)
 pass -znotext to avoid relocation problem with __rust_probestack symbol
 Index: compiler/rustc_target/src/spec/i686_unknown_openbsd.rs
 --- compiler/rustc_target/src/spec/i686_unknown_openbsd.rs.orig
 +++ compiler/rustc_target/src/spec/i686_unknown_openbsd.rs
-@@ -2,10 +2,11 @@ use crate::spec::{LinkerFlavor, Target};
+@@ -2,10 +2,11 @@ use crate::spec::{LinkerFlavor, StackProbeType, Target
  
  pub fn target() -> Target {
      let mut base = super::openbsd_base::opts();
@@ -14,6 +14,6 @@ Index: compiler/rustc_target/src/spec/i686_unknown_openbsd.rs
      base.pre_link_args.get_mut(&LinkerFlavor::Gcc).unwrap().push("-m32".to_string());
      base.pre_link_args.get_mut(&LinkerFlavor::Gcc).unwrap().push("-fuse-ld=lld".to_string());
 +    base.pre_link_args.get_mut(&LinkerFlavor::Gcc).unwrap().push("-Wl,-znotext".to_string());
-     base.stack_probes = true;
+     // don't use probe-stack=inline-asm until rust-lang/rust#83139 is resolved.
+     base.stack_probes = StackProbeType::Call;
  
-     Target {

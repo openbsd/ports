@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_tools_cargo_crates_cargo-test-support_src_paths_rs,v 1.3 2020/06/09 06:39:30 semarie Exp $
+$OpenBSD: patch-src_tools_cargo_crates_cargo-test-support_src_paths_rs,v 1.4 2021/03/27 10:02:11 semarie Exp $
 
 Index: src/tools/cargo/crates/cargo-test-support/src/paths.rs
 --- src/tools/cargo/crates/cargo-test-support/src/paths.rs.orig
@@ -6,7 +6,7 @@ Index: src/tools/cargo/crates/cargo-test-support/src/paths.rs
 @@ -15,19 +15,7 @@ static CARGO_INTEGRATION_TEST_DIR: &str = "cit";
  
  lazy_static! {
-     static ref GLOBAL_ROOT: PathBuf = {
+     pub static ref GLOBAL_ROOT: PathBuf = {
 -        let mut path = t!(env::current_exe());
 -        path.pop(); // chop off exe name
 -        path.pop(); // chop off 'debug'

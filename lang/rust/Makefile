@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2021/02/23 19:39:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.126 2021/03/27 10:02:11 semarie Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -13,14 +13,14 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.50.0
+V =			1.51.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.50.0-20210212
-BV-amd64 =		1.50.0-20210210
-BV-i386 =		1.50.0-20210210
-BV-sparc64 =		1.50.0-20210210
+BV-aarch64 =		1.51.0-20210326
+BV-amd64 =		1.51.0-20210324
+BV-i386 =		1.51.0-20210325
+BV-sparc64 =		1.51.0-20210325
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -73,32 +73,29 @@ SUPDISTFILES +=		${BOOTSTRAP-$m}
 LIBRUST_WITH_HASHES =	addr2line			01 \
 			adler				02 \
 			alloc 				03 \
-			chalk_derive			04 \
-			cfg_if 				05 \
-			compiler_builtins 		06 \
-			core 				07 \
-			getopts 			08 \
-			gimli				09 \
-			hashbrown 			0a \
-			libc 				0b \
-			miniz_oxide			0c \
-			object				0d \
-			panic_abort 			0e \
-			panic_unwind 			0f \
-			proc_macro 			10 \
-			rustc_demangle 			11 \
-			rustc_driver 			12 \
-			rustc_macros 			13 \
-			rustc_std_workspace_alloc 	14 \
-			rustc_std_workspace_core 	15 \
-			rustc_std_workspace_std 	16 \
-			serde_derive			17 \
-			std 				18 \
-			term 				19 \
-			test 				20 \
-			tracing_attributes		21 \
-			unicode_width 			22 \
-			unwind				23
+			cfg_if 				04 \
+			compiler_builtins 		05 \
+			core 				06 \
+			getopts 			07 \
+			gimli				08 \
+			hashbrown 			09 \
+			libc 				0a \
+			miniz_oxide			0b \
+			object				0c \
+			panic_abort 			0d \
+			panic_unwind 			0e \
+			proc_macro 			0f \
+			rustc_demangle 			10 \
+			rustc_driver			11 \
+			rustc_std_workspace_alloc 	12 \
+			rustc_std_workspace_core 	13 \
+			rustc_std_workspace_std 	14 \
+			std 				15 \
+			term 				16 \
+			test 				17 \
+			tracing_attributes		18 \
+			unicode_width 			19 \
+			unwind				20
 
 # generate a stable hash mostly conforming to rust expectations
 # (it should change if anything changed)
@@ -171,9 +168,6 @@ MAKE_ENV +=	RUST_LOG=info
 PATCHORIG =		.openbsd.orig
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
-
-# need for libbacktrace
-USE_LIBTOOL =		gnu
 
 TEST_DEPENDS +=		devel/git \
 			sysutils/ggrep
