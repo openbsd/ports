@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2021/03/19 21:12:56 bluhm Exp $
+# $OpenBSD: Makefile,v 1.12 2021/03/27 11:22:59 bluhm Exp $
 
 COMMENT =	test file attributes
 
-DISTNAME =	Test-File-1.447
+DISTNAME =	Test-File-1.448
 
 CATEGORIES =	devel
 
