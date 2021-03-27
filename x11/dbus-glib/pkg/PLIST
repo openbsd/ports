@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.20 2019/02/26 08:15:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2021/03/27 07:56:17 ajacoutot Exp $
 @bin bin/dbus-binding-tool
 include/dbus-1.0/dbus/dbus-glib-bindings.h
 include/dbus-1.0/dbus/dbus-glib-lowlevel.h
 include/dbus-1.0/dbus/dbus-glib.h
 include/dbus-1.0/dbus/dbus-gtype-specialized.h
 include/dbus-1.0/dbus/dbus-gvalue-parse-variant.h
-lib/libdbus-glib-1.a
+@static-lib lib/libdbus-glib-1.a
 lib/libdbus-glib-1.la
 @lib lib/libdbus-glib-1.so.${LIBdbus-glib-1_VERSION}
 lib/pkgconfig/dbus-glib-1.pc
