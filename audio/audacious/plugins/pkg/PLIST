@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/02/19 20:44:45 edd Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/03/28 05:40:32 bket Exp $
 @pkgpath audio/audacious-plugins,-main
 @pkgpath audio/audacious-plugins
-%%qt5%%
-!%%qt5%%
+@pkgpath audio/audacious/plugins,qt5
 lib/audacious/
 lib/audacious/Container/
 @so lib/audacious/Container/asx.so
@@ -25,12 +24,21 @@ lib/audacious/Effect/
 @so lib/audacious/Effect/stereo.so
 @so lib/audacious/Effect/voice_removal.so
 lib/audacious/General/
+@so lib/audacious/General/albumart-qt.so
 @so lib/audacious/General/cd-menu-items.so
 @so lib/audacious/General/delete-files.so
+@so lib/audacious/General/lyricwiki-qt.so
 @so lib/audacious/General/mpris2.so
 @so lib/audacious/General/notify.so
+@so lib/audacious/General/playlist-manager-qt.so
+@so lib/audacious/General/qthotkey.so
+@so lib/audacious/General/qtui.so
 @so lib/audacious/General/scrobbler.so
+@so lib/audacious/General/search-tool-qt.so
+@so lib/audacious/General/skins-qt.so
+@so lib/audacious/General/song-info-qt.so
 @so lib/audacious/General/song_change.so
+@so lib/audacious/General/statusicon-qt.so
 lib/audacious/Input/
 @so lib/audacious/Input/aac-raw.so
 @so lib/audacious/Input/cdaudio-ng.so
@@ -55,6 +63,10 @@ lib/audacious/Transport/
 @so lib/audacious/Transport/mms.so
 @so lib/audacious/Transport/neon.so
 lib/audacious/Visualization/
+@so lib/audacious/Visualization/blur_scope-qt.so
+@so lib/audacious/Visualization/gl-spectrum-qt.so
+@so lib/audacious/Visualization/qt-spectrum.so
+@so lib/audacious/Visualization/vumeter-qt.so
 share/audacious/Skins/
 share/audacious/Skins/Classic/
 share/audacious/Skins/Classic/balance.png

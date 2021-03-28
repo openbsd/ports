@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/02/19 20:44:45 edd Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/03/28 05:40:32 bket Exp $
 @conflict audacious-<4.0
-%%qt5%%
-!%%qt5%%
+@pkgpath audio/audacious/player,qt5
 @bin bin/audacious
 @bin bin/audtool
 include/audacious/
@@ -36,7 +35,17 @@ include/libaudcore/tuple.h
 include/libaudcore/vfs.h
 include/libaudcore/vfs_async.h
 include/libaudcore/visualizer.h
+include/libaudqt/
+include/libaudqt/colorbutton.h
+include/libaudqt/dock.h
+include/libaudqt/export.h
+include/libaudqt/iface.h
+include/libaudqt/info-widget.h
+include/libaudqt/libaudqt.h
+include/libaudqt/menu.h
+include/libaudqt/treeview.h
 @lib lib/libaudcore.so.${LIBaudcore_VERSION}
+@lib lib/libaudqt.so.${LIBaudqt_VERSION}
 @lib lib/libaudtag.so.${LIBaudtag_VERSION}
 lib/pkgconfig/audacious.pc
 @man man/man1/audacious.1

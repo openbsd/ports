@@ -1,7 +1,0 @@
-@comment $OpenBSD: PFRAG.no-qt5,v 1.1 2021/02/19 20:44:45 edd Exp $
-include/libaudgui/
-include/libaudgui/libaudgui-gtk.h
-include/libaudgui/libaudgui.h
-include/libaudgui/list.h
-include/libaudgui/menu.h
-@lib lib/libaudgui.so.${LIBaudgui_VERSION}

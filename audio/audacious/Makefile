@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.65 2021/02/19 20:44:44 edd Exp $
+# $OpenBSD: Makefile,v 1.66 2021/03/28 05:40:31 bket Exp $
 
      SUBDIR =
      SUBDIR += player
-     SUBDIR += player,qt5
      SUBDIR += plugins
-     SUBDIR += plugins,qt5
 
 .include <bsd.port.subdir.mk>
