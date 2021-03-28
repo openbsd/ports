@@ -1,0 +1,56 @@
+$OpenBSD: patch-Foundation_src_RegularExpression_cpp,v 1.1 2021/03/28 09:10:31 ajacoutot Exp $
+
+From f8a0bbff1bb98eee95658fa81e276e9630a67468 Mon Sep 17 00:00:00 2001
+From: Guenter Obiltschnig <guenter.obiltschnig@appinf.com>
+Date: Sat, 11 Feb 2017 12:03:37 +0100
+Subject: [PATCH] fixed GH #1581: Cannot find 'pcre.h' when using
+ POCO_UNBUNDLED, a non-system PCRE, and CMake
+
+Index: Foundation/src/RegularExpression.cpp
+--- Foundation/src/RegularExpression.cpp.orig
++++ Foundation/src/RegularExpression.cpp
+@@ -62,14 +62,14 @@ RegularExpression::RegularExpression(const std::string
+ 		throw RegularExpressionException(msg.str());
+ 	}
+ 	if (study)
+-		_extra = pcre_study(_pcre, 0, &error);
++		_extra = pcre_study(reinterpret_cast<pcre*>(_pcre), 0, &error);
+ }
+ 
+ 
+ RegularExpression::~RegularExpression()
+ {
+-	if (_pcre)  pcre_free(_pcre);
+-	if (_extra) pcre_free(_extra);
++	if (_pcre)  pcre_free(reinterpret_cast<pcre*>(_pcre));
++	if (_extra) pcre_free(reinterpret_cast<struct pcre_extra*>(_extra));
+ }
+ 
+ 
+@@ -78,7 +78,7 @@ int RegularExpression::match(const std::string& subjec
+ 	poco_assert (offset <= subject.length());
+ 
+ 	int ovec[OVEC_SIZE];
+-	int rc = pcre_exec(_pcre, _extra, subject.c_str(), int(subject.size()), int(offset), options & 0xFFFF, ovec, OVEC_SIZE);
++	int rc = pcre_exec(reinterpret_cast<pcre*>(_pcre), reinterpret_cast<struct pcre_extra*>(_extra), subject.c_str(), int(subject.size()), int(offset), options & 0xFFFF, ovec, OVEC_SIZE);
+ 	if (rc == PCRE_ERROR_NOMATCH)
+ 	{
+ 		mtch.offset = std::string::npos;
+@@ -112,7 +112,7 @@ int RegularExpression::match(const std::string& subjec
+ 	matches.clear();
+ 
+ 	int ovec[OVEC_SIZE];
+-	int rc = pcre_exec(_pcre, _extra, subject.c_str(), int(subject.size()), int(offset), options & 0xFFFF, ovec, OVEC_SIZE);
++	int rc = pcre_exec(reinterpret_cast<pcre*>(_pcre), reinterpret_cast<struct pcre_extra*>(_extra), subject.c_str(), int(subject.size()), int(offset), options & 0xFFFF, ovec, OVEC_SIZE);
+ 	if (rc == PCRE_ERROR_NOMATCH)
+ 	{
+ 		return 0;
+@@ -225,7 +225,7 @@ std::string::size_type RegularExpression::substOne(std
+ 	if (offset >= subject.length()) return std::string::npos;
+ 
+ 	int ovec[OVEC_SIZE];
+-	int rc = pcre_exec(_pcre, _extra, subject.c_str(), int(subject.size()), int(offset), options & 0xFFFF, ovec, OVEC_SIZE);
++	int rc = pcre_exec(reinterpret_cast<pcre*>(_pcre), reinterpret_cast<struct pcre_extra*>(_extra), subject.c_str(), int(subject.size()), int(offset), options & 0xFFFF, ovec, OVEC_SIZE);
+ 	if (rc == PCRE_ERROR_NOMATCH)
+ 	{
+ 		return std::string::npos;

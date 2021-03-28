@@ -1,0 +1,43 @@
+$OpenBSD: patch-Foundation_include_Poco_RegularExpression_h,v 1.1 2021/03/28 09:10:31 ajacoutot Exp $
+
+From f8a0bbff1bb98eee95658fa81e276e9630a67468 Mon Sep 17 00:00:00 2001
+From: Guenter Obiltschnig <guenter.obiltschnig@appinf.com>
+Date: Sat, 11 Feb 2017 12:03:37 +0100
+Subject: [PATCH] fixed GH #1581: Cannot find 'pcre.h' when using
+ POCO_UNBUNDLED, a non-system PCRE, and CMake
+
+Index: Foundation/include/Poco/RegularExpression.h
+--- Foundation/include/Poco/RegularExpression.h.orig
++++ Foundation/include/Poco/RegularExpression.h
+@@ -47,18 +47,6 @@
+ #include <vector>
+ 
+ 
+-//
+-// Copy these definitions from pcre.h
+-// to avoid pulling in the entire header file
+-//
+-extern "C"
+-{
+-	struct real_pcre;
+-	typedef struct real_pcre pcre;
+-	struct pcre_extra;
+-}
+-
+-
+ namespace Poco {
+ 
+ 
+@@ -229,8 +217,10 @@ class Foundation_API RegularExpression (protected)
+ 	std::string::size_type substOne(std::string& subject, std::string::size_type offset, const std::string& replacement, int options) const;
+ 
+ private:
+-	pcre*       _pcre;
+-	pcre_extra* _extra;
++	// Note: to avoid a dependency on the pcre.h header the following are
++	// declared as void* and casted to the correct type in the implementation file.
++	void* _pcre;  // Actual type is pcre*
++	void* _extra; // Actual type is struct pcre_extra*
+ 	
+ 	static const int OVEC_SIZE;
+ 	
