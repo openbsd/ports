@@ -1,32 +1,37 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:46:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/03/28 21:11:05 cwen Exp $
 
 COMMENT=	fast anagram generator
 
-V=		0.95
+V=		1.2
 DISTNAME=	an_${V}.orig
 PKGNAME=	an-${V}
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_DEBIAN:=main/a/an/}
 
-# GPL - LGPL
+# GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c
+HOMEPAGE=	https://salsa.debian.org/pm/an
 
-WRKDIST=	${WRKDIR}/an-${V}
+WANTLIB=	c icudata icui18n icuuc
+
+MASTER_SITES=	${MASTER_SITE_DEBIAN:=main/a/an/}
+
+LIB_DEPENDS=	textproc/icu4c,-main
+
+MAKE_FLAGS+=	CC="${CC}" CFLAGS="${CFLAGS}"
+# Overriding DESTDIR is not enough, their Makefile subdirectories
+# don't respect our files hierarchy
+FAKE_FLAGS+=	MANDIR="${FROOT}/man/man6" INSTALLDIR="${FROOT}/bin"
 
 NO_TEST=	Yes
+
+USE_GMAKE=	Yes
+
+WRKDIST=	${WRKDIR}/an-${V}
+FROOT=		${WRKINST}${PREFIX}
 
 pre-configure:
 	@perl -pi -e 's,/usr/dict/words,/usr/share/dict/words,g' \
 		${WRKSRC}/an.6
-
-do-build:
-	cd ${WRKBUILD} && \
-	${CC} ${CFLAGS} an.c gan_qsort.c -o an ${LDFLAGS}
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/an ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKBUILD}/an.6 ${PREFIX}/man/man6
 
 .include <bsd.port.mk>
