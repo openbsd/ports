@@ -1,11 +1,11 @@
-$OpenBSD: patch-meson_build,v 1.5 2020/12/21 11:40:13 ajacoutot Exp $
+$OpenBSD: patch-meson_build,v 1.6 2021/03/28 08:02:15 ajacoutot Exp $
 
 Remove dependency on devel/libexecinfo.
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -148,7 +148,6 @@ ruby        = find_program('ruby',          required: 
+@@ -153,7 +153,6 @@ ruby         = find_program('ruby',          required:
  # Required Dependencies
  
  config.set('HAVE_UNISTD_H',    cc.has_header('unistd.h'))

@@ -1,0 +1,17 @@
+$OpenBSD: patch-operations_external_png-load_c,v 1.1 2021/03/28 08:02:15 ajacoutot Exp $
+
+../gegl-0.4.30/operations/external/png-load.c:85:9: warning:
+implicit declaration of function 'strptime' is invalid in C99 [-Wimplicit-function-declaration]
+
+Index: operations/external/png-load.c
+--- operations/external/png-load.c.orig
++++ operations/external/png-load.c
+@@ -20,7 +20,7 @@
+ 
+ #include "config.h"
+ #ifdef HAVE_STRPTIME
+-#define _XOPEN_SOURCE
++#define _XOPEN_SOURCE 700
+ #include <time.h>
+ #endif
+ #include <glib/gi18n-lib.h>

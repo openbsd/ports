@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2020/12/21 11:40:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2021/03/28 08:02:15 ajacoutot Exp $
 @conflict gegl-*
 @conflict gegl03-*
 @pkgpath graphics/gegl,-main
@@ -94,6 +94,7 @@ include/gegl-${API_VERSION}/sc/sc-context.h
 include/gegl-${API_VERSION}/sc/sc-outline.h
 include/gegl-${API_VERSION}/sc/sc-sample.h
 lib/gegl-${API_VERSION}/
+lib/gegl-${API_VERSION}/dropshadow2.json
 @so lib/gegl-${API_VERSION}/gegl-common-cxx.so
 @so lib/gegl-${API_VERSION}/gegl-common-gpl3.so
 @so lib/gegl-${API_VERSION}/gegl-common.so
@@ -169,6 +170,7 @@ share/locale/ru/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/sk/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/sl/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/sr/LC_MESSAGES/gegl-${API_VERSION}.mo
+share/locale/sr@latin/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/sv/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/tr/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/uk/LC_MESSAGES/gegl-${API_VERSION}.mo
