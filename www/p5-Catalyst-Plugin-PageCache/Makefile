@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/03/28 20:47:27 afresh1 Exp $
 
 COMMENT =	cache the output of entire pages
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Catalyst-Plugin-PageCache-0.31
-REVISION =	2
+DISTNAME =	Catalyst-Plugin-PageCache-0.32
 CATEGORIES =	www
 FIX_EXTRACT_PERMISSIONS=Yes
 
@@ -19,7 +18,8 @@ RUN_DEPENDS =	www/p5-Catalyst-Runtime \
 TEST_DEPENDS =	devel/p5-Cache-Cache \
 			www/p5-Catalyst-Plugin-I18N
 
-MAKE_ENV +=	TEST_POD=1
+# Optional test dependency
+TEST_DEPENDS +=	devel/p5-DateTime
 
 CONFIGURE_STYLE =	modinst
 
