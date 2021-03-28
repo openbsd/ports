@@ -1,9 +1,9 @@
-$OpenBSD: patch-calc_man,v 1.7 2021/02/04 14:42:07 sthen Exp $
+$OpenBSD: patch-calc_man,v 1.8 2021/03/28 13:23:22 sthen Exp $
 
 Index: calc.man
 --- calc.man.orig
 +++ calc.man
-@@ -600,7 +600,7 @@ may have to be replaced by:
+@@ -596,7 +596,7 @@ may have to be replaced by:
  .sp 1
  .in +5n
  .nf
