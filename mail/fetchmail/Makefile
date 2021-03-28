@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.160 2021/02/23 19:39:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.161 2021/03/28 13:32:50 sthen Exp $
 
 COMMENT=	mail retrieval utility for POP2, POP3, KPOP, IMAP and more
 
-DISTNAME=	fetchmail-6.4.12
+DISTNAME=	fetchmail-6.4.13
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
 
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fetchmail/}
@@ -40,7 +39,7 @@ USE_GROFF=		Yes# uses www.tmac for .URL tags
 DOCS=			FAQ NOTES FEATURES README COPYING fetchmail-FAQ.html \
 			fetchmail-features.html design-notes.html todo.html
 
-# Remove those so they get rebuild. Fixes problems with gcc2.
+# Remove those so they get rebuilt.
 post-extract:
 	rm ${WRKSRC}/rcfile_y.[ch]
 
