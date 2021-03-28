@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2020/11/30 15:49:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2021/03/28 14:01:30 jasper Exp $
 
 COMMENT=		library to handle keyboard descriptions
 
-DISTNAME=		libxkbcommon-1.0.3
+DISTNAME=		libxkbcommon-1.1.0
 SHARED_LIBS +=	xkbcommon            1.6      # unknown
 SHARED_LIBS +=	xkbcommon-x11        1.2      # unknown
 SHARED_LIBS +=	xkbregistry          0.0      # unknown
