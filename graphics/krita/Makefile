@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2021/03/25 17:46:30 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.48 2021/03/28 04:03:04 rsadowski Exp $
 
 BROKEN-powerpc =	colors are off and as such it is not useable
 
@@ -101,6 +101,7 @@ LIB_DEPENDS =		archivers/quazip \
 BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/kf5/kdoctools \
 			devel/kf5/kitemmodels \
+			math/eigen3 \
 			net/curl
 
 # stop searching for optional packages
