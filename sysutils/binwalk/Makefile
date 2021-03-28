@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/03/28 13:50:47 jasper Exp $
 
 COMMENT =	tool for reverse-engineering and analysing firmware blobs
 
-MODPY_EGG_VERSION = 2.2.0
-REVISION =	1
+MODPY_EGG_VERSION = 2.3.1
 GH_ACCOUNT =	ReFirmLabs
 GH_PROJECT =	binwalk
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
@@ -17,6 +16,7 @@ PERMIT_PACKAGE =Yes
 
 MODULES =	lang/python
 
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	testing/tests
 
