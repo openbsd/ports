@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2020/05/14 18:39:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2021/03/28 13:53:03 jasper Exp $
 @pkgpath sysutils/py-ghmi
 bin/fakebmc${MODPY_BIN_SUFFIX}
 bin/pyghmicons${MODPY_BIN_SUFFIX}
@@ -59,10 +59,8 @@ lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/oem/${MODPY_PYCACHE}generic
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/oem/${MODPY_PYCACHE}lookup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/oem/generic.py
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/oem/lenovo/
-lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/oem/lenovo/EfiDecompressor.py
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/oem/lenovo/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/oem/lenovo/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/oem/lenovo/${MODPY_PYCACHE}EfiDecompressor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/oem/lenovo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/oem/lenovo/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/oem/lenovo/${MODPY_PYCACHE}cpu.${MODPY_PYC_MAGIC_TAG}pyc
