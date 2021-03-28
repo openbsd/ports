@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.62 2021/02/28 06:17:30 bket Exp $
+# $OpenBSD: Makefile,v 1.63 2021/03/28 04:56:45 bket Exp $
 
 COMMENT =		enhanced interactive Python shell
 
-MODPY_EGG_VERSION =	7.21.0
+MODPY_EGG_VERSION =	7.22.0
 DISTNAME =		ipython-${MODPY_EGG_VERSION}
 PKGNAME =		ipython${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
 
@@ -39,7 +39,7 @@ TEST_DEPENDS =		${BASE_PKGPATH}=${MODPY_EGG_VERSION} \
 			devel/py-nbformat${MODPY_FLAVOR} \
 			devel/py-nose${MODPY_FLAVOR}>=0.10.1 \
 			devel/py-testpath${MODPY_FLAVOR} \
-			math/py-numpy${MODPY_FLAVOR}>=1.14 \
+			math/py-numpy${MODPY_FLAVOR}>=1.16 \
 			textproc/py-pygments${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}
 
