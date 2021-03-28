@@ -1,9 +1,9 @@
-$OpenBSD: patch-Source_JavaScriptCore_jit_ExecutableAllocator_cpp,v 1.6 2020/09/13 10:28:44 ajacoutot Exp $
+$OpenBSD: patch-Source_JavaScriptCore_jit_ExecutableAllocator_cpp,v 1.7 2021/03/28 07:26:33 ajacoutot Exp $
 
 Index: Source/JavaScriptCore/jit/ExecutableAllocator.cpp
 --- Source/JavaScriptCore/jit/ExecutableAllocator.cpp.orig
 +++ Source/JavaScriptCore/jit/ExecutableAllocator.cpp
-@@ -93,7 +93,8 @@ static constexpr size_t maxIslandsPerRegion = islandRe
+@@ -105,7 +105,8 @@ static constexpr size_t maxIslandsPerRegion = islandRe
  #else
  static constexpr size_t fixedExecutableMemoryPoolSize = 128 * MB;
  #endif

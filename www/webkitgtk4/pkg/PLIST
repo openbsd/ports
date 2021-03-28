@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2021/02/11 13:22:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2021/03/28 07:26:33 ajacoutot Exp $
 @bin bin/WebKitWebDriver
 include/webkitgtk-${API}/
 include/webkitgtk-${API}/JavaScriptCore/
@@ -55,6 +55,7 @@ include/webkitgtk-${API}/webkit2/WebKitHitTestResult.h
 include/webkitgtk-${API}/webkit2/WebKitInputMethodContext.h
 include/webkitgtk-${API}/webkit2/WebKitInstallMissingMediaPluginsPermissionRequest.h
 include/webkitgtk-${API}/webkit2/WebKitJavascriptResult.h
+include/webkitgtk-${API}/webkit2/WebKitMediaKeySystemPermissionRequest.h
 include/webkitgtk-${API}/webkit2/WebKitMimeInfo.h
 include/webkitgtk-${API}/webkit2/WebKitNavigationAction.h
 include/webkitgtk-${API}/webkit2/WebKitNavigationPolicyDecision.h
@@ -230,8 +231,8 @@ lib/webkit2gtk-${API}/
 lib/webkit2gtk-${API}/injected-bundle/
 @so lib/webkit2gtk-${API}/injected-bundle/libwebkit2gtkinjectedbundle.so
 libexec/webkit2gtk-${API}/
+@bin libexec/webkit2gtk-${API}/MiniBrowser
 @bin libexec/webkit2gtk-${API}/WebKitNetworkProcess
-@bin libexec/webkit2gtk-${API}/WebKitPluginProcess
 @bin libexec/webkit2gtk-${API}/WebKitWebProcess
 @bin libexec/webkit2gtk-${API}/jsc
 share/gir-1.0/JavaScriptCore-${API}.gir

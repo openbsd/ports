@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2021/03/18 15:54:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.138 2021/03/28 07:26:33 ajacoutot Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -13,7 +13,7 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit rendering engine
 
-V =			2.30.6
+V =			2.32.0
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk4-${V}
 EXTRACT_SUFX =		.tar.xz
@@ -21,8 +21,8 @@ API =			4.0
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
 
-SHARED_LIBS +=  javascriptcoregtk-${API}     3.3 # 18.13.3
-SHARED_LIBS +=  webkit2gtk-${API}            3.3 # 37.37.2
+SHARED_LIBS +=  javascriptcoregtk-${API}     3.4 # 18.13.3
+SHARED_LIBS +=  webkit2gtk-${API}            3.4 # 37.37.2
 
 CATEGORIES =		www
 
@@ -89,9 +89,16 @@ LIB_DEPENDS =		archivers/woff2 \
 
 CONFIGURE_ENV =		WK_USE_CCACHE=NO
 CONFIGURE_ARGS =	-DPORT=GTK \
+			-DENABLE_MINIBROWSER=ON \
 			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS}" \
 			-DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS}" \
 			-DUSE_SYSTEMD=OFF
+
+# needs Wayland (libwpe -> WPEBackend-fdo -> Wayland)
+CONFIGURE_ARGS +=	-DUSE_WPE_RENDERER=OFF
+
+# Needs GUdev
+CONFIGURE_ARGS +=	-DENABLE_GAMEPAD=OFF
 
 # sync with Source/JavaScriptCore/assembler/MacroAssembler.h
 .if ${MACHINE_ARCH} != "aarch64" && ${MACHINE_ARCH} != "amd64" && \
@@ -125,7 +132,6 @@ post-extract:
 	ln -sf ${RUBY} ${WRKDIR}/bin/ruby
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/Source/cmake/WebKitCommon.cmake \
-		${WRKSRC}/Source/WebKit/Shared/Plugins/unix/PluginSearchPath.cpp
+	${SUBST_CMD} ${WRKSRC}/Source/cmake/WebKitCommon.cmake
 
 .include <bsd.port.mk>

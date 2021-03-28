@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_cmake_OptionsCommon_cmake,v 1.17 2020/09/13 10:28:45 ajacoutot Exp $
+$OpenBSD: patch-Source_cmake_OptionsCommon_cmake,v 1.18 2021/03/28 07:26:33 ajacoutot Exp $
 
 Our ar(1) is too old and have not support for `T'.
 Put the internal library path first so that we can 
@@ -7,10 +7,10 @@ build with an older webkitgtk4 package installed.
 Index: Source/cmake/OptionsCommon.cmake
 --- Source/cmake/OptionsCommon.cmake.orig
 +++ Source/cmake/OptionsCommon.cmake
-@@ -9,10 +9,10 @@ option(USE_THIN_ARCHIVES "Produce all static libraries
- if (USE_THIN_ARCHIVES)
-     execute_process(COMMAND ${CMAKE_AR} -V OUTPUT_VARIABLE AR_VERSION)
-     if ("${AR_VERSION}" MATCHES "^GNU ar")
+@@ -14,10 +14,10 @@ if (USE_THIN_ARCHIVES)
+     elseif ("${AR_ERROR}")
+         message(WARNING "Error from `ar`: ${AR_ERROR}")
+     elseif ("${AR_VERSION}" MATCHES "^GNU ar")
 -        set(CMAKE_CXX_ARCHIVE_CREATE "<CMAKE_AR> crT <TARGET> <LINK_FLAGS> <OBJECTS>")
 -        set(CMAKE_C_ARCHIVE_CREATE "<CMAKE_AR> crT <TARGET> <LINK_FLAGS> <OBJECTS>")
 -        set(CMAKE_CXX_ARCHIVE_APPEND "<CMAKE_AR> rT <TARGET> <LINK_FLAGS> <OBJECTS>")
@@ -22,10 +22,13 @@ Index: Source/cmake/OptionsCommon.cmake
      endif ()
  endif ()
  
-@@ -153,3 +153,6 @@ check_type_size("__int128_t" INT128_VALUE)
+@@ -160,6 +160,9 @@ check_type_size("__int128_t" INT128_VALUE)
  if (HAVE_INT128_VALUE)
    SET_AND_EXPOSE_TO_BUILD(HAVE_INT128_T INT128_VALUE)
  endif ()
 +
 +# make sure that the internal library dir is the first in the path
 +link_directories("${CMAKE_BINARY_DIR}/lib")
+ 
+ # Check whether experimental/filesystem is the filesystem impl available
+ if (STD_EXPERIMENTAL_FILESYSTEM_IS_AVAILABLE)

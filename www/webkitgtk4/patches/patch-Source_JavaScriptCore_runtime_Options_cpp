@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_JavaScriptCore_runtime_Options_cpp,v 1.5 2020/09/13 10:28:44 ajacoutot Exp $
+$OpenBSD: patch-Source_JavaScriptCore_runtime_Options_cpp,v 1.6 2021/03/28 07:26:33 ajacoutot Exp $
 
 powerpc and i386 fix for:
 undefined reference to `WTF::Optional<unsigned long>
@@ -7,7 +7,7 @@ JSC::parse<unsigned long>(char const*)'
 Index: Source/JavaScriptCore/runtime/Options.cpp
 --- Source/JavaScriptCore/runtime/Options.cpp.orig
 +++ Source/JavaScriptCore/runtime/Options.cpp
-@@ -83,7 +83,7 @@ Optional<OptionsStorage::Unsigned> parse(const char* s
+@@ -89,7 +89,7 @@ Optional<OptionsStorage::Unsigned> parse(const char* s
      return WTF::nullopt;
  }
  
@@ -16,7 +16,7 @@ Index: Source/JavaScriptCore/runtime/Options.cpp
  template<>
  Optional<OptionsStorage::Size> parse(const char* string)
  {
-@@ -92,7 +92,7 @@ Optional<OptionsStorage::Size> parse(const char* strin
+@@ -98,7 +98,7 @@ Optional<OptionsStorage::Size> parse(const char* strin
          return value;
      return WTF::nullopt;
  }

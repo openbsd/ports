@@ -1,9 +1,9 @@
-$OpenBSD: patch-Source_JavaScriptCore_jsc_cpp,v 1.1 2020/09/13 10:28:44 ajacoutot Exp $
+$OpenBSD: patch-Source_JavaScriptCore_jsc_cpp,v 1.2 2021/03/28 07:26:33 ajacoutot Exp $
 
 Index: Source/JavaScriptCore/jsc.cpp
 --- Source/JavaScriptCore/jsc.cpp.orig
 +++ Source/JavaScriptCore/jsc.cpp
-@@ -69,6 +69,7 @@
+@@ -71,6 +71,7 @@
  #include "WasmCapabilities.h"
  #include "WasmFaultSignalHandler.h"
  #include "WasmMemory.h"
