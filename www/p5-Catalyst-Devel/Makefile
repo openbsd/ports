@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.20 2020/10/09 03:34:33 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.21 2021/03/28 19:58:51 afresh1 Exp $
 
 COMMENT=	Catalyst development Tools
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	Catalyst-Devel-1.41
+DISTNAME=	Catalyst-Devel-1.42
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.catalystframework.org/
 
 # Perl
 PERMIT_PACKAGE=	Yes
+
+BUILD_DEPENDS=	devel/p5-File-ShareDir-Install
 
 RUN_DEPENDS=	devel/p5-Config-General>=2.42 \
 		devel/p5-File-ChangeNotify>=0.07 \
