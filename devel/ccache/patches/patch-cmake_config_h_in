@@ -1,4 +1,4 @@
-$OpenBSD: patch-cmake_config_h_in,v 1.4 2021/02/02 14:44:40 sthen Exp $
+$OpenBSD: patch-cmake_config_h_in,v 1.5 2021/03/28 20:00:04 sthen Exp $
 
 Index: cmake/config.h.in
 --- cmake/config.h.in.orig
@@ -21,5 +21,5 @@ Index: cmake/config.h.in
 -#elif defined(__FreeBSD__)
 +#elif defined(__FreeBSD__) || defined(__OpenBSD__)
  #  define _XOPEN_SOURCE 700
- #elif !defined(__SunOS_5_11) && !defined(__APPLE__)
- #  define _XOPEN_SOURCE
+ #elif defined(__ibmxl__) && defined(__clang__) // Compiler xlclang
+ #  define _XOPEN_SOURCE 600
