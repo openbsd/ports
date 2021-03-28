@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.39 2021/02/28 19:31:57 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.40 2021/03/28 13:08:02 kirby Exp $
 
 COMMENT =	lexical analyser generator for Haskell
+REVISION =	0
 
 MODCABAL_STEM 		= alex
 MODCABAL_VERSION	= 3.2.5
 MODCABAL_DATA_DIR	= data
 CATEGORIES =	devel
 
-HOMEPAGE =	http://www.haskell.org/alex/
+HOMEPAGE =	https://www.haskell.org/alex/
 
 # BSD3
 PERMIT_PACKAGE =		Yes
