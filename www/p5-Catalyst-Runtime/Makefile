@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2020/10/09 03:28:28 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.30 2021/03/28 18:36:25 afresh1 Exp $
 
 COMMENT=	elegant MVC Web Application Framework
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	Catalyst-Runtime-5.90126
+DISTNAME=	Catalyst-Runtime-5.90128
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.catalystframework.org/
@@ -22,11 +22,10 @@ RUN_DEPENDS=	converters/p5-JSON-MaybeXS>=1.0 \
 		devel/p5-Hash-MultiValue \
 		devel/p5-MRO-Compat \
 		devel/p5-Module-Pluggable>=4.7 \
-		devel/p5-Moose>=1.03 \
+		devel/p5-Moose>=2.1400 \
 		devel/p5-MooseX-Emulate-Class-Accessor-Fast>=0.00903 \
 		devel/p5-MooseX-Getopt>=0.48 \
 		devel/p5-MooseX-MethodAttributes>=0.24 \
-		devel/p5-MooseX-Role-WithOverloading>=0.09 \
 		devel/p5-Path-Class>=0.09 \
 		devel/p5-Safe-Isa \
 		devel/p5-Stream-Buffered \
