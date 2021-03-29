@@ -1,15 +1,16 @@
-$OpenBSD: patch-Source_WTF_wtf_RAMSize_cpp,v 1.6 2021/03/28 07:26:33 ajacoutot Exp $
+$OpenBSD: patch-Source_WTF_wtf_RAMSize_cpp,v 1.7 2021/03/29 16:55:30 sthen Exp $
 
 Index: Source/WTF/wtf/RAMSize.cpp
 --- Source/WTF/wtf/RAMSize.cpp.orig
 +++ Source/WTF/wtf/RAMSize.cpp
-@@ -31,7 +31,9 @@
+@@ -31,7 +31,10 @@
  #if OS(WINDOWS)
  #include <windows.h>
  #elif defined(USE_SYSTEM_MALLOC) && USE_SYSTEM_MALLOC
 -#if OS(LINUX)
 +#if OS(OPENBSD)
 +#include <sys/sysctl.h>
++#include <unistd.h>
 +#elif OS(LINUX)
  #include <sys/sysinfo.h>
  #elif OS(UNIX)
