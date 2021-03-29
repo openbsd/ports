@@ -1,4 +1,4 @@
-$OpenBSD: patch-scripts_baculabackupreport_in,v 1.2 2020/06/11 14:55:07 sthen Exp $
+$OpenBSD: patch-scripts_baculabackupreport_in,v 1.3 2021/03/29 11:36:32 sthen Exp $
 
 without GNU awk,
 
@@ -14,21 +14,21 @@ awk: not enough args in printf(<br>                        <hr align="left" widt
 Index: scripts/baculabackupreport.in
 --- scripts/baculabackupreport.in.orig
 +++ scripts/baculabackupreport.in
-@@ -53,7 +53,7 @@ bcconfig="@sysconfdir@/bconsole.conf"
- dbtype="@DEFAULT_DB_TYPE@"                          # Supported options are pgsql/postgresql, mysql, mariadb
- db="@db_name@"
- dbuser="@db_user@"
--dbbindir="/usr/bin"
-+dbbindir="${LOCALBASE}/bin"
- # dbpass="-p@db_password@"   # Uncomment and set db password if one is used
+@@ -56,7 +56,7 @@ dbtype="@DEFAULT_DB_TYPE@"							# Supported options a
+ # dbfile="/catalog/bacula.db" # Uncomment and set to Bacula sqlite3 catalog database file
+ db="@db_name@"									# Not needed for sqlite
+ dbuser="@db_user@"							# Not needed for sqlite
+-dbbin="/usr/bin/psql"
++dbbin="${LOCALBASE}/bin/psql"
+ # dbpass="-p@db_password@"				# Uncomment and set db password if one is used. Also not needed for sqlite
  
  # Formatting variables
-@@ -179,7 +179,7 @@ if [ -z "${queryresult}" ]; then
- IFS=" "
- msg=$(echo ${queryresult} | \
+@@ -273,7 +273,7 @@ awkerrfile=$(mktemp -t XXXXXX) 
+ # -------------------------
+ msg=$(echo "${queryresult}" | \
  LC_ALL=en_US.UTF-8 \
 -awk \
 +gawk \
  -v html="${html}" \
- -v boldstatus="${boldstatus}" \
- -v colorstatusbg="${colorstatusbg}" \
+ -v awkerrfile="${awkerrfile}" \
+ -v totaljobs="${totaljobs}" \
