@@ -1,0 +1,1298 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/03/29 19:51:31 sthen Exp $
+@bin bin/zynaddsubfx
+lib/lv2/
+lib/lv2/ZynAddSubFX.lv2/
+@so lib/lv2/ZynAddSubFX.lv2/ZynAddSubFX.so
+lib/lv2/ZynAddSubFX.lv2/ZynAddSubFX.ttl
+@so lib/lv2/ZynAddSubFX.lv2/ZynAddSubFX_ui.so
+lib/lv2/ZynAddSubFX.lv2/ZynAddSubFX_ui.ttl
+lib/lv2/ZynAddSubFX.lv2/manifest.ttl
+lib/lv2/ZynAddSubFX.lv2/presets.ttl
+lib/lv2/ZynAddSubFX.lv2presets/
+lib/lv2/ZynAddSubFX.lv2presets/Arpeggios.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Bass.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Brass.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Choir and Voice.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Collection.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Companion.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Cormi_Noise.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Cormi_Sound.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Drums.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Dual.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Fantasy.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Guitar.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Laba170bank.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Misc.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Noises.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Organ.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Pads.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Plucked.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Reed and Wind.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Rhodes.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Splitted.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Strings.ttl
+lib/lv2/ZynAddSubFX.lv2presets/Synth.ttl
+lib/lv2/ZynAddSubFX.lv2presets/SynthPiano.ttl
+lib/lv2/ZynAddSubFX.lv2presets/manifest.ttl
+lib/lv2/ZynAddSubFX.lv2presets/net-wisdom.ttl
+lib/lv2/ZynAddSubFX.lv2presets/olivers-100.ttl
+lib/lv2/ZynAddSubFX.lv2presets/olivers-other.ttl
+lib/lv2/ZynAddSubFX.lv2presets/the_mysterious_bank.ttl
+lib/lv2/ZynAddSubFX.lv2presets/the_mysterious_bank_2.ttl
+lib/lv2/ZynAddSubFX.lv2presets/the_mysterious_bank_3.ttl
+lib/lv2/ZynAddSubFX.lv2presets/the_mysterious_bank_4.ttl
+lib/vst/
+@so lib/vst/ZynAddSubFX.so
+share/applications/zynaddsubfx-alsa.desktop
+share/applications/zynaddsubfx-jack-multi.desktop
+share/applications/zynaddsubfx-jack.desktop
+share/applications/zynaddsubfx-oss.desktop
+share/bash-completion/completions/zynaddsubfx
+share/doc/zynaddsubfx/
+share/doc/zynaddsubfx/AUTHORS.txt
+share/doc/zynaddsubfx/COPYING
+share/doc/zynaddsubfx/HISTORY.txt
+share/doc/zynaddsubfx/README.adoc
+share/pixmaps/
+share/pixmaps/zynaddsubfx.svg
+share/zynaddsubfx/banks/
+share/zynaddsubfx/banks/Arpeggios/
+share/zynaddsubfx/banks/Arpeggios/0001-Arpeggio1.xiz
+share/zynaddsubfx/banks/Arpeggios/0002-Arpeggio2.xiz
+share/zynaddsubfx/banks/Arpeggios/0003-Arpeggio3.xiz
+share/zynaddsubfx/banks/Arpeggios/0004-Arpeggio4.xiz
+share/zynaddsubfx/banks/Arpeggios/0005-Arpeggio5.xiz
+share/zynaddsubfx/banks/Arpeggios/0006-Arpeggio6.xiz
+share/zynaddsubfx/banks/Arpeggios/0007-Arpeggio7.xiz
+share/zynaddsubfx/banks/Arpeggios/0008-Arpeggio8.xiz
+share/zynaddsubfx/banks/Arpeggios/0009-Arpeggio9.xiz
+share/zynaddsubfx/banks/Arpeggios/0010-Arpeggio10.xiz
+share/zynaddsubfx/banks/Arpeggios/0011-Arpeggio11.xiz
+share/zynaddsubfx/banks/Arpeggios/0033-Sequence1.xiz
+share/zynaddsubfx/banks/Arpeggios/0034-Sequence2.xiz
+share/zynaddsubfx/banks/Arpeggios/0036-Echoed Synth.xiz
+share/zynaddsubfx/banks/Arpeggios/0037-Echo FX.xiz
+share/zynaddsubfx/banks/Arpeggios/0039-Soft Arpeggio1.xiz
+share/zynaddsubfx/banks/Arpeggios/0040-Soft Arpeggio2.xiz
+share/zynaddsubfx/banks/Arpeggios/0041-Soft Arpeggio3.xiz
+share/zynaddsubfx/banks/Arpeggios/0042-Soft Arpeggio4.xiz
+share/zynaddsubfx/banks/Arpeggios/0043-Soft Arpeggio5.xiz
+share/zynaddsubfx/banks/Arpeggios/0065-Hyper Organ1.xiz
+share/zynaddsubfx/banks/Arpeggios/0066-Hyper Arpeggio.xiz
+share/zynaddsubfx/banks/Arpeggios/0068-Glass Arpeggio1.xiz
+share/zynaddsubfx/banks/Arpeggios/0069-Glass Arpeggio2.xiz
+share/zynaddsubfx/banks/Bass/
+share/zynaddsubfx/banks/Bass/0001-Bass 1.xiz
+share/zynaddsubfx/banks/Bass/0002-Bass 2.xiz
+share/zynaddsubfx/banks/Bass/0003-Bass 3 _analog_.xiz
+share/zynaddsubfx/banks/Bass/0004-Bass 4.xiz
+share/zynaddsubfx/banks/Bass/0005-Bass 5.xiz
+share/zynaddsubfx/banks/Bass/0006-Analogue Bass.xiz
+share/zynaddsubfx/banks/Bass/0033-Wah Bass.xiz
+share/zynaddsubfx/banks/Bass/0035-FM Bass 1.xiz
+share/zynaddsubfx/banks/Bass/0036-FM Bass 2.xiz
+share/zynaddsubfx/banks/Brass/
+share/zynaddsubfx/banks/Brass/0001-FM Thrumpet.xiz
+share/zynaddsubfx/banks/Brass/0003-Synth Brazz 1.xiz
+share/zynaddsubfx/banks/Brass/0004-Synth Brazz 2.xiz
+share/zynaddsubfx/banks/Brass/0005-Synth Brass 3.xiz
+share/zynaddsubfx/banks/Brass/0006-Synth Brass 4.xiz
+share/zynaddsubfx/banks/Brass/0007-Synth Brass 5.xiz
+share/zynaddsubfx/banks/Brass/0009-Wah Brass.xiz
+share/zynaddsubfx/banks/Brass/0010-Solo Synth1.xiz
+share/zynaddsubfx/banks/Brass/0011-Brazz 1.xiz
+share/zynaddsubfx/banks/Brass/0012-Brazz 2.xiz
+share/zynaddsubfx/banks/Brass/0033-Analog Brass 1.xiz
+share/zynaddsubfx/banks/Brass/0034-Analog Brass 2.xiz
+share/zynaddsubfx/banks/Brass/0035-Analog Brass 3.xiz
+share/zynaddsubfx/banks/Brass/0036-Analog Brass 4.xiz
+share/zynaddsubfx/banks/Brass/0065-Simple Brass.xiz
+share/zynaddsubfx/banks/Brass/0066-Fat Brass.xiz
+share/zynaddsubfx/banks/Brass/0067-Brass Pad1.xiz
+share/zynaddsubfx/banks/Brass/0068-Brass Pad2.xiz
+share/zynaddsubfx/banks/Choir and Voice/
+share/zynaddsubfx/banks/Choir and Voice/0001-AHH Choir 1.xiz
+share/zynaddsubfx/banks/Choir and Voice/0002-AHH Choir 2.xiz
+share/zynaddsubfx/banks/Choir and Voice/0003-EHH Choir 1.xiz
+share/zynaddsubfx/banks/Choir and Voice/0004-Voice OOH.xiz
+share/zynaddsubfx/banks/Choir and Voice/0005-Choir Pad1.xiz
+share/zynaddsubfx/banks/Choir and Voice/0006-Choir Pad2.xiz
+share/zynaddsubfx/banks/Choir and Voice/0007-Choir Pad3.xiz
+share/zynaddsubfx/banks/Choir and Voice/0008-Choir Pad4.xiz
+share/zynaddsubfx/banks/Choir and Voice/0009-Choir Pad5.xiz
+share/zynaddsubfx/banks/Choir and Voice/0010-Choir Pad6.xiz
+share/zynaddsubfx/banks/Choir and Voice/0033-Choir.xiz
+share/zynaddsubfx/banks/Choir and Voice/0034-Slow Morph_Choir.xiz
+share/zynaddsubfx/banks/Choir and Voice/0035-Wah Choir.xiz
+share/zynaddsubfx/banks/Choir and Voice/0036-Eooooo.xiz
+share/zynaddsubfx/banks/Choir and Voice/0037-Voiced Synth.xiz
+share/zynaddsubfx/banks/Choir and Voice/0039-Ohh Choir.xiz
+share/zynaddsubfx/banks/Choir and Voice/0065-Vocal Morph 1.xiz
+share/zynaddsubfx/banks/Choir and Voice/0066-Vocal Morph 2.xiz
+share/zynaddsubfx/banks/Choir and Voice/0067-Vocal Morph 3.xiz
+share/zynaddsubfx/banks/Choir and Voice/0068-Vocal Morph 4.xiz
+share/zynaddsubfx/banks/Choir and Voice/0069-Vocal Morph 5.xiz
+share/zynaddsubfx/banks/Choir and Voice/0070-Vocal Morph 6.xiz
+share/zynaddsubfx/banks/Choir and Voice/0071-Vocal Morph 7.xiz
+share/zynaddsubfx/banks/Collection/
+share/zynaddsubfx/banks/Collection/0001-Xylophone.xiz
+share/zynaddsubfx/banks/Collection/0002-Vibraphone.xiz
+share/zynaddsubfx/banks/Collection/0003-Soft Vibes.xiz
+share/zynaddsubfx/banks/Collection/0004-Simple Chimes.xiz
+share/zynaddsubfx/banks/Collection/0005-Silver Bell.xiz
+share/zynaddsubfx/banks/Collection/0006-Soft Hammer.xiz
+share/zynaddsubfx/banks/Collection/0007-Ethereal.xiz
+share/zynaddsubfx/banks/Collection/0008-Metal Drips.xiz
+share/zynaddsubfx/banks/Collection/0009-Trem Lead.xiz
+share/zynaddsubfx/banks/Collection/0010-Trem Synth Piano 3.xiz
+share/zynaddsubfx/banks/Collection/0011-Trem Synth.xiz
+share/zynaddsubfx/banks/Collection/0012-Simple Square.xiz
+share/zynaddsubfx/banks/Collection/0013-Full Square.xiz
+share/zynaddsubfx/banks/Collection/0014-Super Square.xiz
+share/zynaddsubfx/banks/Collection/0015-Steel Wire.xiz
+share/zynaddsubfx/banks/Collection/0016-Echo Bubbles.xiz
+share/zynaddsubfx/banks/Collection/0017-Fantasia.xiz
+share/zynaddsubfx/banks/Collection/0018-Sub Delay.xiz
+share/zynaddsubfx/banks/Collection/0019-Soft.xiz
+share/zynaddsubfx/banks/Collection/0020-Ultra Soft.xiz
+share/zynaddsubfx/banks/Collection/0021-Whistle.xiz
+share/zynaddsubfx/banks/Collection/0022-Wipe Whistle.xiz
+share/zynaddsubfx/banks/Collection/0023-Ghost Whistle.xiz
+share/zynaddsubfx/banks/Collection/0024-Full Strings.xiz
+share/zynaddsubfx/banks/Collection/0025-Slow Strings.xiz
+share/zynaddsubfx/banks/Collection/0026-Pizzicato Strings.xiz
+share/zynaddsubfx/banks/Collection/0027-Sweep Synth.xiz
+share/zynaddsubfx/banks/Collection/0028-Warm Synth.xiz
+share/zynaddsubfx/banks/Collection/0029-Hard Synth.xiz
+share/zynaddsubfx/banks/Collection/0030-Bright Synth.xiz
+share/zynaddsubfx/banks/Collection/0031-Multi Synth.xiz
+share/zynaddsubfx/banks/Collection/0032-Slow Saw.xiz
+share/zynaddsubfx/banks/Collection/0033-Medium Saw.xiz
+share/zynaddsubfx/banks/Collection/0034-Hard Saw.xiz
+share/zynaddsubfx/banks/Collection/0035-Voiced Saw.xiz
+share/zynaddsubfx/banks/Collection/0036-Sweep Saw.xiz
+share/zynaddsubfx/banks/Collection/0037-Stereo Sweep Saw.xiz
+share/zynaddsubfx/banks/Collection/0038-Wipe Synth.xiz
+share/zynaddsubfx/banks/Collection/0039-Hard Stereo Sweep Synth.xiz
+share/zynaddsubfx/banks/Collection/0040-Master Synth Low.xiz
+share/zynaddsubfx/banks/Collection/0041-Master Synth High.xiz
+share/zynaddsubfx/banks/Collection/0042-Sharp Synth.xiz
+share/zynaddsubfx/banks/Collection/0043-Fretless Bass.xiz
+share/zynaddsubfx/banks/Collection/0044-Decay Bass.xiz
+share/zynaddsubfx/banks/Collection/0045-Steel Bass.xiz
+share/zynaddsubfx/banks/Collection/0046-Synth Bass.xiz
+share/zynaddsubfx/banks/Collection/0047-Distorted Bass.xiz
+share/zynaddsubfx/banks/Collection/0048-Variable Reed.xiz
+share/zynaddsubfx/banks/Collection/0049-Reed Organ.xiz
+share/zynaddsubfx/banks/Collection/0050-Soft Organ.xiz
+share/zynaddsubfx/banks/Collection/0051-Thin Pipe.xiz
+share/zynaddsubfx/banks/Collection/0052-Great Organ.xiz
+share/zynaddsubfx/banks/Collection/0053-64ft Organ.xiz
+share/zynaddsubfx/banks/Collection/0054-Hammond Organ.xiz
+share/zynaddsubfx/banks/Collection/0055-Percussion Organ.xiz
+share/zynaddsubfx/banks/Collection/0056-Sines.xiz
+share/zynaddsubfx/banks/Collection/0057-Soft Flute.xiz
+share/zynaddsubfx/banks/Collection/0058-Warm Flute.xiz
+share/zynaddsubfx/banks/Collection/0059-Ocarina.xiz
+share/zynaddsubfx/banks/Collection/0060-Beyond.xiz
+share/zynaddsubfx/banks/Collection/0061-Sweep Pad.xiz
+share/zynaddsubfx/banks/Collection/0062-Sweep Matrix.xiz
+share/zynaddsubfx/banks/Collection/0063-Matrix.xiz
+share/zynaddsubfx/banks/Collection/0064-Slow Deep Matrix.xiz
+share/zynaddsubfx/banks/Collection/0065-Ice Field.xiz
+share/zynaddsubfx/banks/Collection/0066-Hollow Ice Field.xiz
+share/zynaddsubfx/banks/Collection/0067-Smooth.xiz
+share/zynaddsubfx/banks/Collection/0068-Rushes.xiz
+share/zynaddsubfx/banks/Collection/0069-Medium Rushes.xiz
+share/zynaddsubfx/banks/Collection/0070-Bright Rushes.xiz
+share/zynaddsubfx/banks/Collection/0071-Bright Rush Long Tail.xiz
+share/zynaddsubfx/banks/Collection/0072-Extended Rushes.xiz
+share/zynaddsubfx/banks/Collection/0073-Bright Rush Pipe.xiz
+share/zynaddsubfx/banks/Collection/0074-Sweep Rushes.xiz
+share/zynaddsubfx/banks/Collection/0075-Breathy Pad.xiz
+share/zynaddsubfx/banks/Collection/0076-ReedBank.xiz
+share/zynaddsubfx/banks/Collection/0077-Voyager.xiz
+share/zynaddsubfx/banks/Collection/0078-Soft Voyager.xiz
+share/zynaddsubfx/banks/Collection/0079-Soft Voyager Reverse.xiz
+share/zynaddsubfx/banks/Collection/0080-Echo Choir.xiz
+share/zynaddsubfx/banks/Collection/0081-Sharp.xiz
+share/zynaddsubfx/banks/Collection/0082-Sharp and Warm.xiz
+share/zynaddsubfx/banks/Collection/0083-Sharp and Deep.xiz
+share/zynaddsubfx/banks/Collection/0084-Sharp Reed.xiz
+share/zynaddsubfx/banks/Collection/0085-Far Reed.xiz
+share/zynaddsubfx/banks/Collection/0086-Clarinet.xiz
+share/zynaddsubfx/banks/Collection/0087-Bassoon.xiz
+share/zynaddsubfx/banks/Collection/0088-Aooww.xiz
+share/zynaddsubfx/banks/Collection/0089-Daooww.xiz
+share/zynaddsubfx/banks/Collection/0090-Yaooww.xiz
+share/zynaddsubfx/banks/Collection/0091-Yiee.xiz
+share/zynaddsubfx/banks/Collection/0092-Eeoow.xiz
+share/zynaddsubfx/banks/Collection/0093-Overdrive.xiz
+share/zynaddsubfx/banks/Collection/0094-Overdrive 2.xiz
+share/zynaddsubfx/banks/Collection/0095-Overdrive 3.xiz
+share/zynaddsubfx/banks/Collection/0096-Power Guitar 1.xiz
+share/zynaddsubfx/banks/Collection/0097-Power Guitar 2.xiz
+share/zynaddsubfx/banks/Collection/0098-Wet Brass.xiz
+share/zynaddsubfx/banks/Collection/0099-Wet Brass 2.xiz
+share/zynaddsubfx/banks/Collection/0100-Prophesy.xiz
+share/zynaddsubfx/banks/Collection/0101-Bottle.xiz
+share/zynaddsubfx/banks/Collection/0102-Pan Pipe 32.xiz
+share/zynaddsubfx/banks/Collection/0103-Pan Pipe.xiz
+share/zynaddsubfx/banks/Collection/0104-Pan Pipe 96.xiz
+share/zynaddsubfx/banks/Collection/0105-Lite Guitar.xiz
+share/zynaddsubfx/banks/Collection/0106-Trem Guitar.xiz
+share/zynaddsubfx/banks/Collection/0107-Smooth Guitar.xiz
+share/zynaddsubfx/banks/Collection/0108-Nylon Guitar.xiz
+share/zynaddsubfx/banks/Collection/0109-Tunnel Piano.xiz
+share/zynaddsubfx/banks/Collection/0110-Home Piano.xiz
+share/zynaddsubfx/banks/Collection/0111-Moonlight Piano.xiz
+share/zynaddsubfx/banks/Collection/0112-Soft Piano1.xiz
+share/zynaddsubfx/banks/Collection/0113-Soft Piano2.xiz
+share/zynaddsubfx/banks/Collection/0114-Space Piano.xiz
+share/zynaddsubfx/banks/Collection/0115-Space Voice.xiz
+share/zynaddsubfx/banks/Collection/0116-Far Space Voice.xiz
+share/zynaddsubfx/banks/Collection/0117-Space Voice 2.xiz
+share/zynaddsubfx/banks/Collection/0118-Soft Choir.xiz
+share/zynaddsubfx/banks/Collection/0119-Full Choir.xiz
+share/zynaddsubfx/banks/Collection/0120-Soft Ahh.xiz
+share/zynaddsubfx/banks/Collection/0121-Breathy Ahh.xiz
+share/zynaddsubfx/banks/Collection/0122-Another Choir.xiz
+share/zynaddsubfx/banks/Collection/0123-Light Choir.xiz
+share/zynaddsubfx/banks/Collection/0124-Super Pad.xiz
+share/zynaddsubfx/banks/Collection/0125-Hyper Pad.xiz
+share/zynaddsubfx/banks/Collection/0126-Hyper Matrix.xiz
+share/zynaddsubfx/banks/Collection/0127-Extreme.xiz
+share/zynaddsubfx/banks/Collection/0128-Wind and Surf.xiz
+share/zynaddsubfx/banks/Companion/
+share/zynaddsubfx/banks/Companion/.bankdir
+share/zynaddsubfx/banks/Companion/0004-Muffled Bells.xiz
+share/zynaddsubfx/banks/Companion/0006-Tinkle Bell.xiz
+share/zynaddsubfx/banks/Companion/0010-Metal Sweep.xiz
+share/zynaddsubfx/banks/Companion/0011-Slow Steel.xiz
+share/zynaddsubfx/banks/Companion/0013-Bright Metal.xiz
+share/zynaddsubfx/banks/Companion/0014-Metal Tines.xiz
+share/zynaddsubfx/banks/Companion/0016-Soft Metal.xiz
+share/zynaddsubfx/banks/Companion/0019-Warm Square Swell.xiz
+share/zynaddsubfx/banks/Companion/0021-Bubbles.xiz
+share/zynaddsubfx/banks/Companion/0024-Solo.xiz
+share/zynaddsubfx/banks/Companion/0025-Wind Whistle.xiz
+share/zynaddsubfx/banks/Companion/0028-Theramin.xiz
+share/zynaddsubfx/banks/Companion/0037-Special Saw.xiz
+share/zynaddsubfx/banks/Companion/0038-Smooth Saw.xiz
+share/zynaddsubfx/banks/Companion/0039-Slow Morph.xiz
+share/zynaddsubfx/banks/Companion/0040-Shimmer.xiz
+share/zynaddsubfx/banks/Companion/0041-Buzz.xiz
+share/zynaddsubfx/banks/Companion/0042-Variable Synth.xiz
+share/zynaddsubfx/banks/Companion/0045-Bite.xiz
+share/zynaddsubfx/banks/Companion/0051-Orc Voice.xiz
+share/zynaddsubfx/banks/Companion/0054-Sub Phase Bass.xiz
+share/zynaddsubfx/banks/Companion/0055-Thick Bass.xiz
+share/zynaddsubfx/banks/Companion/0056-Wide Bass.xiz
+share/zynaddsubfx/banks/Companion/0057-Ultra Bass.xiz
+share/zynaddsubfx/banks/Companion/0060-Stopped Pipe.xiz
+share/zynaddsubfx/banks/Companion/0074-Smooth Expanded.xiz
+share/zynaddsubfx/banks/Companion/0078-Brassy.xiz
+share/zynaddsubfx/banks/Companion/0079-Brassy Flutter.xiz
+share/zynaddsubfx/banks/Companion/0080-Soft Brass.xiz
+share/zynaddsubfx/banks/Companion/0081-Post Horn.xiz
+share/zynaddsubfx/banks/Companion/0092-Wind Pipes.xiz
+share/zynaddsubfx/banks/Companion/0106-Harpsichord.xiz
+share/zynaddsubfx/banks/Companion/0107-Cathedral Harp.xiz
+share/zynaddsubfx/banks/Companion/0108-Angel Harp.xiz
+share/zynaddsubfx/banks/Companion/0110-Angel Piano.xiz
+share/zynaddsubfx/banks/Companion/0112-SciFi Piano.xiz
+share/zynaddsubfx/banks/Companion/0114-Space Pipes.xiz
+share/zynaddsubfx/banks/Companion/0116-Soprano.xiz
+share/zynaddsubfx/banks/Companion/0117-Boy Choir.xiz
+share/zynaddsubfx/banks/Companion/0118-Ooo.xiz
+share/zynaddsubfx/banks/Companion/0119-Ghost Choir.xiz
+share/zynaddsubfx/banks/Companion/0121-Ghost Ensemble.xiz
+share/zynaddsubfx/banks/Companion/0127-Hoover.xiz
+share/zynaddsubfx/banks/Cormi_Noise/
+share/zynaddsubfx/banks/Cormi_Noise/.bankdir
+share/zynaddsubfx/banks/Cormi_Noise/0002-Sparo_01.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0003-Laser_01.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0005-Elettrico.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0006-Ronzio_01.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0007-Ronzio_02.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0008-Ronzio_03.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0010-Interferenze.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0012-Passa_astronave.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0013-Passa_asteroide.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0015-Nave.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0017-Strano_01.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0018-Strano_02.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0020-Acqua.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0021-Asteroide.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0024-tastiera.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0026-beepA.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0027-beepB.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0028-beepC.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0033-buao.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0034-creepy.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0036-Trillo.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0037-Trillo1.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0038-Trillo2.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0039-Trillo5.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0041-Scherzo.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0043-Grave.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0045-Fischia_01.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0046-Fischia_02.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0047-Fischia_03.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0049-Resonance Pad2.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0050-Resonance Pad2.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0052-ImpossibleDream1.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0053-ImpossibleDream4.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0054-Delayed Echo.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0057-Glass_01.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0059-Tremulo_01.xiz
+share/zynaddsubfx/banks/Cormi_Noise/0061-Campane.xiz
+share/zynaddsubfx/banks/Cormi_Sound/
+share/zynaddsubfx/banks/Cormi_Sound/0001-Bassoon.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0002-Bassoon2.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0003-Bassoon3.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0004-Volo.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0006-Arpeggio_01.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0007-Arpeggio_02.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0008-Arpeggio_03.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0009-Glass Arpeggio2.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0011-abracadabra.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0012-Ghost Whistle.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0013-Spazio1.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0014-Spazio2.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0015-Space Synth.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0016-SpaceAtmo.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0017-friendly sines.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0019-Acquoso_1.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0020-Acquoso_5.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0021-Acquoso_6.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0023-Fagotto_01.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0024-Fagotto_02.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0025-Fagotto_03.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0027-Delicato_01.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0028-Delicato_02.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0029-Delicato_03.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0031-Wah_dolce_1.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0032-Wah_dolce_2.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0033-Long Space Choir 2.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0034-Choir Pad4.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0035-Ancient_Echos.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0036-Campane.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0037-Chorus.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0038-HellVoice.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0039-Chorus2.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0041-DarkNight.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0042-LightDawn.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0043-Fiiuu.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0045-Spazio_profondo1.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0046-Spazio_Profondo2.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0047-Spazio_Profondo3.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0049-DolcePiano_01.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0050-DolcePiano_02.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0051-DolcePiano_03.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0053-Ding_01.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0054-Ding_02.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0056-Senza_tempo.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0057-Senza_tempo_2.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0058-Senza_tempo_3.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0059-Senza_tempo_4.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0060-Senza_tempo_5.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0062-Sospirato_01.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0063-Sospirato_02.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0064-Sospirato_03.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0065-Synth_piano_03.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0066-Synth_Piano_02.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0068-Piano.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0069-Pianola.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0070-clavicembalo.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0072-Zufolo_1.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0073-Zufolo_2.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0074-Zufolo_3.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0075-Zufolo_4.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0076-Pinkollo.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0078-Tremulo_01.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0079-Tremulo_02.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0081-Organetto_01.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0082-Organetto_02.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0084-Organo_01.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0085-Organo_02.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0086-Organo_03.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0087-Harp 3.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0088-Harp4.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0090-Dolcino_01.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0091-Dolcino_02.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0092-Dolcino_03.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0093-Dolcino_04.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0095-Accordian.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0096-padNice.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0097-k.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0098-z.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0099-a.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0100-Steel Rhodes.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0101-Sweet_Night.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0102-Sweet_Night_2.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0103-Gocce.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0104-Ice Rhodes2.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0105-Voluttuoso.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0106-Entropia.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0108-Arcano.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0109-Arcano2.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0110-Arcano3.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0112-Glass_01.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0113-Glass_02a.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0114-Glass_02b.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0115-Glass_03.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0116-Glass_04.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0119-Arcadia_1.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0120-Arcadia_2.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0121-Arcadia_3.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0122-Arcadia_4.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0124-Armonica.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0125-Fanfara.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0126-Polvere.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0127-Comb Filter.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0128-Synth Pad 5.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0129-Bello.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0130-abbellimento.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0131-Carino.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0132-Cigno.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0133-fluido.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0136-Romantico.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0137-Romantico2.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0138-romanticone.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0139-Emptyness3.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0140-Foglie.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0142-Solitudine.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0144-Inquietudine.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0145-c.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0146-Ancestrale.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0147-Attesa.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0148-vento.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0149-pioggia.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0150-nebbia.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0151-Memory.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0152-Memory2.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0153-Memory3.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0155-contorno.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0156-fantasia.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0157-nostalgia.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0158-patetico.xiz
+share/zynaddsubfx/banks/Cormi_Sound/0159-Destino.xiz
+share/zynaddsubfx/banks/Cormi_Sound/ReadMe.txt
+share/zynaddsubfx/banks/Drums/
+share/zynaddsubfx/banks/Drums/0001-Drums Kit1.xiz
+share/zynaddsubfx/banks/Dual/
+share/zynaddsubfx/banks/Dual/0001-Layered1.xiz
+share/zynaddsubfx/banks/Dual/0002-Layered2.xiz
+share/zynaddsubfx/banks/Dual/0005-Organ and Saw.xiz
+share/zynaddsubfx/banks/Dual/0007-Organ Choir Pad1.xiz
+share/zynaddsubfx/banks/Dual/0008-Organ Choir Pad2.xiz
+share/zynaddsubfx/banks/Dual/0033-Rhodes Strings1.xiz
+share/zynaddsubfx/banks/Dual/0034-Rhodes Strings2.xiz
+share/zynaddsubfx/banks/Dual/0035-Rhodes Strings3.xiz
+share/zynaddsubfx/banks/Dual/0036-Rhodes Strings4.xiz
+share/zynaddsubfx/banks/Dual/0065-Dream of the Saw.xiz
+share/zynaddsubfx/banks/Fantasy/
+share/zynaddsubfx/banks/Fantasy/0001-Emptyness1.xiz
+share/zynaddsubfx/banks/Fantasy/0002-Emptyness2.xiz
+share/zynaddsubfx/banks/Fantasy/0003-Space Synth.xiz
+share/zynaddsubfx/banks/Fantasy/0004-Weird Pad.xiz
+share/zynaddsubfx/banks/Fantasy/0006-Space SynthBrass.xiz
+share/zynaddsubfx/banks/Fantasy/0008-Space Voice1.xiz
+share/zynaddsubfx/banks/Fantasy/0009-Space Voice2.xiz
+share/zynaddsubfx/banks/Fantasy/0010-Space Voice3.xiz
+share/zynaddsubfx/banks/Fantasy/0011-Space Choir1.xiz
+share/zynaddsubfx/banks/Fantasy/0012-Space Choir2.xiz
+share/zynaddsubfx/banks/Fantasy/0014-Glass Voices.xiz
+share/zynaddsubfx/banks/Fantasy/0015-Strange Voice.xiz
+share/zynaddsubfx/banks/Fantasy/0033-ImpossibleDream1.xiz
+share/zynaddsubfx/banks/Fantasy/0034-ImpossibleDream2.xiz
+share/zynaddsubfx/banks/Fantasy/0035-ImpossibleDream3.xiz
+share/zynaddsubfx/banks/Fantasy/0036-ImpossibleDream4.xiz
+share/zynaddsubfx/banks/Fantasy/0037-ImpossibleDream5.xiz
+share/zynaddsubfx/banks/Fantasy/0040-Delayed Echo.xiz
+share/zynaddsubfx/banks/Fantasy/0041-Fade Down Echo.xiz
+share/zynaddsubfx/banks/Fantasy/0042-Rhodes Space1.xiz
+share/zynaddsubfx/banks/Fantasy/0043-Rhodes Space2.xiz
+share/zynaddsubfx/banks/Fantasy/0065-Long SpaceChoir1.xiz
+share/zynaddsubfx/banks/Fantasy/0066-Long SpaceChoir2.xiz
+share/zynaddsubfx/banks/Guitar/
+share/zynaddsubfx/banks/Guitar/0001-Dist Guitar 1.xiz
+share/zynaddsubfx/banks/Guitar/0002-Dist Guitar 2.xiz
+share/zynaddsubfx/banks/Guitar/0003-Dist Guitar 3.xiz
+share/zynaddsubfx/banks/Guitar/0004-Dist Guitar 4.xiz
+share/zynaddsubfx/banks/Guitar/0005-Dist Guitar 5.xiz
+share/zynaddsubfx/banks/Guitar/0033-Trash Guitar 1.xiz
+share/zynaddsubfx/banks/Guitar/0034-Trash Guitar 2.xiz
+share/zynaddsubfx/banks/Guitar/0035-Short.xiz
+share/zynaddsubfx/banks/Guitar/0065-Clean Guitar1.xiz
+share/zynaddsubfx/banks/Guitar/0066-Electric Guitar.xiz
+share/zynaddsubfx/banks/Guitar/0097-Space Guitar.xiz
+share/zynaddsubfx/banks/Laba170bank/
+share/zynaddsubfx/banks/Laba170bank/0001-SquareToSine.xiz
+share/zynaddsubfx/banks/Laba170bank/0002-GaussToSine.xiz
+share/zynaddsubfx/banks/Laba170bank/0003-MorphingOrgan.xiz
+share/zynaddsubfx/banks/Laba170bank/0004-ThinLead.xiz
+share/zynaddsubfx/banks/Laba170bank/0005-BrightLead.xiz
+share/zynaddsubfx/banks/Laba170bank/0006-GenericLead.xiz
+share/zynaddsubfx/banks/Laba170bank/0007-MorphingSuperSaw.xiz
+share/zynaddsubfx/banks/Laba170bank/0008-BrassyFlute.xiz
+share/zynaddsubfx/banks/Laba170bank/0009-GenericLead2.xiz
+share/zynaddsubfx/banks/Laba170bank/0027-ShortFlute.xiz
+share/zynaddsubfx/banks/Laba170bank/0028-PianoBell.xiz
+share/zynaddsubfx/banks/Laba170bank/0029-PianoHarp.xiz
+share/zynaddsubfx/banks/Laba170bank/0030-ScaredPulse.xiz
+share/zynaddsubfx/banks/Laba170bank/0031-Twang2.xiz
+share/zynaddsubfx/banks/Laba170bank/0032-Twang1.xiz
+share/zynaddsubfx/banks/Laba170bank/0037-FatPatch.xiz
+share/zynaddsubfx/banks/Laba170bank/0038-FatPatchSimpler.xiz
+share/zynaddsubfx/banks/Laba170bank/0039-FatPatchSimpler2.xiz
+share/zynaddsubfx/banks/Laba170bank/0046-NoisyGuitar.xiz
+share/zynaddsubfx/banks/Laba170bank/0047-NoisyGuitar2.xiz
+share/zynaddsubfx/banks/Laba170bank/0048-NoisyGuitar3.xiz
+share/zynaddsubfx/banks/Laba170bank/0049-guitar-PowerChorder.xiz
+share/zynaddsubfx/banks/Laba170bank/0050-SynGuitarAcoustic1.xiz
+share/zynaddsubfx/banks/Laba170bank/0051-SynGuitarAcoustic2.xiz
+share/zynaddsubfx/banks/Laba170bank/0052-SynGuitarAcoustic3.xiz
+share/zynaddsubfx/banks/Laba170bank/0054-DevilsFiddle.xiz
+share/zynaddsubfx/banks/Laba170bank/0055-DevilsFiddle2.xiz
+share/zynaddsubfx/banks/Laba170bank/0085-PanFluteSawPad.xiz
+share/zynaddsubfx/banks/Laba170bank/0086-BlownPiano.xiz
+share/zynaddsubfx/banks/Laba170bank/0087-ChoirPatch.xiz
+share/zynaddsubfx/banks/Laba170bank/0088-InfraSoundPad.xiz
+share/zynaddsubfx/banks/Laba170bank/0089-InfraSound2.xiz
+share/zynaddsubfx/banks/Laba170bank/0090-Pad-RingModSine.xiz
+share/zynaddsubfx/banks/Laba170bank/0091-FatPad.xiz
+share/zynaddsubfx/banks/Laba170bank/0092-VibratingPad.xiz
+share/zynaddsubfx/banks/Laba170bank/0097-AnalogBass.xiz
+share/zynaddsubfx/banks/Laba170bank/0098-DoublePadBass.xiz
+share/zynaddsubfx/banks/Laba170bank/0099-SharpBass1.xiz
+share/zynaddsubfx/banks/Laba170bank/0100-SharpBass4.xiz
+share/zynaddsubfx/banks/Laba170bank/0101-SharpBass5.xiz
+share/zynaddsubfx/banks/Laba170bank/0102-PluckedWithTailBassy.xiz
+share/zynaddsubfx/banks/Laba170bank/0103-PluckedAnalogBass.xiz
+share/zynaddsubfx/banks/Laba170bank/0108-NoisyPulseLead.xiz
+share/zynaddsubfx/banks/Laba170bank/0109-NoisyPulseLead2.xiz
+share/zynaddsubfx/banks/Laba170bank/0110-wierdSchwoop.xiz
+share/zynaddsubfx/banks/Laba170bank/0111-PoorAccordion.xiz
+share/zynaddsubfx/banks/Laba170bank/0112-PoorTrumpet.xiz
+share/zynaddsubfx/banks/Laba170bank/0113-BassyChirp.xiz
+share/zynaddsubfx/banks/Laba170bank/0114-hoarseorgan.xiz
+share/zynaddsubfx/banks/Laba170bank/0115-MysticlBells.xiz
+share/zynaddsubfx/banks/Laba170bank/0129-chip-SlowSawStrings.xiz
+share/zynaddsubfx/banks/Laba170bank/0130-chip-SIDarpSoft.xiz
+share/zynaddsubfx/banks/Laba170bank/0131-chip-SIDarpSharp.xiz
+share/zynaddsubfx/banks/Laba170bank/0132-chip-SIDarpSharp2.xiz
+share/zynaddsubfx/banks/Laba170bank/0133-chip-HarshSaw.xiz
+share/zynaddsubfx/banks/Laba170bank/0134-chip-VibratoLead.xiz
+share/zynaddsubfx/banks/Laba170bank/0135-chip-VibratoLead2.xiz
+share/zynaddsubfx/banks/Laba170bank/0136-chip-PWM-VibratoLead.xiz
+share/zynaddsubfx/banks/Laba170bank/0137-chip-PolyDistorted.xiz
+share/zynaddsubfx/banks/Laba170bank/0138-chip-PolyDistorted2.xiz
+share/zynaddsubfx/banks/Laba170bank/0146-PluckedWithVibTail.xiz
+share/zynaddsubfx/banks/Laba170bank/0147-PluckedWithTail2.xiz
+share/zynaddsubfx/banks/Laba170bank/0148-PluckedWithTail.xiz
+share/zynaddsubfx/banks/Laba170bank/descriptions.txt
+share/zynaddsubfx/banks/Misc/
+share/zynaddsubfx/banks/Misc/0001-Memories.xiz
+share/zynaddsubfx/banks/Misc/0002-Bells 1.xiz
+share/zynaddsubfx/banks/Misc/0003-Bells 2.xiz
+share/zynaddsubfx/banks/Misc/0004-Bells 3.xiz
+share/zynaddsubfx/banks/Misc/0005-Bells 4.xiz
+share/zynaddsubfx/banks/Misc/0033-Trash Synth 1.xiz
+share/zynaddsubfx/banks/Misc/0034-Trash Synth 2.xiz
+share/zynaddsubfx/banks/Misc/0035-Trash Synth 3.xiz
+share/zynaddsubfx/banks/Misc/0036-Trash Synth 4.xiz
+share/zynaddsubfx/banks/Misc/0065-SuperSaw 1.xiz
+share/zynaddsubfx/banks/Misc/0066-SuperSaw 2.xiz
+share/zynaddsubfx/banks/Misc/0067-SuperSaw 3.xiz
+share/zynaddsubfx/banks/Misc/0068-SuperSaw 4.xiz
+share/zynaddsubfx/banks/Misc/0069-SuperSaw 5.xiz
+share/zynaddsubfx/banks/Misc/0070-SuperSaw 6.xiz
+share/zynaddsubfx/banks/Noises/
+share/zynaddsubfx/banks/Noises/0001-Synth Effect.xiz
+share/zynaddsubfx/banks/Noises/0002-Ioioioioioi.xiz
+share/zynaddsubfx/banks/Noises/0003-Noise1.xiz
+share/zynaddsubfx/banks/Noises/0004-Noise2.xiz
+share/zynaddsubfx/banks/Noises/0006-Wind.xiz
+share/zynaddsubfx/banks/Noises/0033-Metal Sound 1.xiz
+share/zynaddsubfx/banks/Noises/0034-Metal Sound 2.xiz
+share/zynaddsubfx/banks/Noises/0035-Metal Sound 3.xiz
+share/zynaddsubfx/banks/Noises/0037-Metal Sound 4.xiz
+share/zynaddsubfx/banks/Noises/0038-Metal Sound 5.xiz
+share/zynaddsubfx/banks/Noises/0065-Short noise.xiz
+share/zynaddsubfx/banks/Organ/
+share/zynaddsubfx/banks/Organ/0001-Organ 1.xiz
+share/zynaddsubfx/banks/Organ/0002-Organ 2.xiz
+share/zynaddsubfx/banks/Organ/0003-Organ 3.xiz
+share/zynaddsubfx/banks/Organ/0004-Organ 4.xiz
+share/zynaddsubfx/banks/Organ/0005-Organ 5.xiz
+share/zynaddsubfx/banks/Organ/0006-Organ 6.xiz
+share/zynaddsubfx/banks/Organ/0007-Organ 7.xiz
+share/zynaddsubfx/banks/Organ/0008-Organ 8.xiz
+share/zynaddsubfx/banks/Organ/0009-Organ 9.xiz
+share/zynaddsubfx/banks/Organ/0010-Organ 10.xiz
+share/zynaddsubfx/banks/Organ/0011-Organ 11.xiz
+share/zynaddsubfx/banks/Organ/0012-Organ 12.xiz
+share/zynaddsubfx/banks/Organ/0033-Cathedral Organ1.xiz
+share/zynaddsubfx/banks/Organ/0034-Cathedral Organ2.xiz
+share/zynaddsubfx/banks/Organ/0035-Cathedral Organ3.xiz
+share/zynaddsubfx/banks/Organ/0037-Church Organ 1.xiz
+share/zynaddsubfx/banks/Organ/0038-Church Organ 2.xiz
+share/zynaddsubfx/banks/Organ/0039-Church Organ 3.xiz
+share/zynaddsubfx/banks/Organ/0040-Church Organ 4.xiz
+share/zynaddsubfx/banks/Organ/0041-Church Organ Soft.xiz
+share/zynaddsubfx/banks/Organ/0065-Nice Organ 1.xiz
+share/zynaddsubfx/banks/Organ/0066-Nice Organ 2.xiz
+share/zynaddsubfx/banks/Organ/0067-Sub_Organ.xiz
+share/zynaddsubfx/banks/Organ/0068-Square Organ.xiz
+share/zynaddsubfx/banks/Organ/0069-Soft Organ 1.xiz
+share/zynaddsubfx/banks/Organ/0070-Soft Organ 2.xiz
+share/zynaddsubfx/banks/Organ/0071-Synth Organ.xiz
+share/zynaddsubfx/banks/Organ/0072-Fantasy Organ.xiz
+share/zynaddsubfx/banks/Organ/0097-Accordion Pad 1.xiz
+share/zynaddsubfx/banks/Organ/0098-Accordion Pad 2.xiz
+share/zynaddsubfx/banks/Organ/0099-Synth Accordion1.xiz
+share/zynaddsubfx/banks/Organ/0100-Synth Accordion2.xiz
+share/zynaddsubfx/banks/Organ/0101-Accordion 1.xiz
+share/zynaddsubfx/banks/Pads/
+share/zynaddsubfx/banks/Pads/0001-Sine Pad.xiz
+share/zynaddsubfx/banks/Pads/0002-sin2x  pad.xiz
+share/zynaddsubfx/banks/Pads/0003-Analog Pad 1.xiz
+share/zynaddsubfx/banks/Pads/0004-Analog Pad 2.xiz
+share/zynaddsubfx/banks/Pads/0005-Square Pad 1.xiz
+share/zynaddsubfx/banks/Pads/0006-Square Pad 2.xiz
+share/zynaddsubfx/banks/Pads/0008-Resonance Pad1.xiz
+share/zynaddsubfx/banks/Pads/0009-Resonance Pad2.xiz
+share/zynaddsubfx/banks/Pads/0033-Synth Pad 1.xiz
+share/zynaddsubfx/banks/Pads/0034-Synth Pad 2.xiz
+share/zynaddsubfx/banks/Pads/0035-Synth Pad 3.xiz
+share/zynaddsubfx/banks/Pads/0036-Synth Pad 4.xiz
+share/zynaddsubfx/banks/Pads/0037-Synth Pad 5.xiz
+share/zynaddsubfx/banks/Pads/0065-Soft Pad.xiz
+share/zynaddsubfx/banks/Pads/0066-Flanged Pad 1.xiz
+share/zynaddsubfx/banks/Pads/0097-Bell Pad.xiz
+share/zynaddsubfx/banks/Plucked/
+share/zynaddsubfx/banks/Plucked/0001-Plucked 1.xiz
+share/zynaddsubfx/banks/Plucked/0002-Plucked 2.xiz
+share/zynaddsubfx/banks/Plucked/0003-Plucked 3.xiz
+share/zynaddsubfx/banks/Plucked/0004-Plucked 4.xiz
+share/zynaddsubfx/banks/Plucked/0005-Plucked 5.xiz
+share/zynaddsubfx/banks/Plucked/0006-Plucked 6.xiz
+share/zynaddsubfx/banks/Plucked/0033-Plucked String1.xiz
+share/zynaddsubfx/banks/Plucked/0034-Plucked String2.xiz
+share/zynaddsubfx/banks/Plucked/0036-Plucked Wah.xiz
+share/zynaddsubfx/banks/Plucked/0065-Plucked Pad1.xiz
+share/zynaddsubfx/banks/Reed and Wind/
+share/zynaddsubfx/banks/Reed and Wind/0001-Flute 1.xiz
+share/zynaddsubfx/banks/Reed and Wind/0002-Flute 2.xiz
+share/zynaddsubfx/banks/Reed and Wind/0003-Flute 3.xiz
+share/zynaddsubfx/banks/Reed and Wind/0005-FM Reed.xiz
+share/zynaddsubfx/banks/Reed and Wind/0006-Clarinet.xiz
+share/zynaddsubfx/banks/Reed and Wind/0007-Breathy1.xiz
+share/zynaddsubfx/banks/Reed and Wind/0033-Reed 1.xiz
+share/zynaddsubfx/banks/Reed and Wind/0034-Reed 2.xiz
+share/zynaddsubfx/banks/Reed and Wind/0035-Reed 3.xiz
+share/zynaddsubfx/banks/Reed and Wind/0036-Reed 4.xiz
+share/zynaddsubfx/banks/Reed and Wind/0037-Reed 5.xiz
+share/zynaddsubfx/banks/Reed and Wind/0038-Reed 6.xiz
+share/zynaddsubfx/banks/Reed and Wind/0039-Reed 7.xiz
+share/zynaddsubfx/banks/Reed and Wind/0040-Reed 8.xiz
+share/zynaddsubfx/banks/Reed and Wind/0065-Fat Reed1.xiz
+share/zynaddsubfx/banks/Reed and Wind/0066-Fat Reed2.xiz
+share/zynaddsubfx/banks/Reed and Wind/0067-Fat Reed3 square.xiz
+share/zynaddsubfx/banks/Reed and Wind/0068-Chorused Flute.xiz
+share/zynaddsubfx/banks/Rhodes/
+share/zynaddsubfx/banks/Rhodes/0001-DX Rhodes 1.xiz
+share/zynaddsubfx/banks/Rhodes/0002-DX Rhodes 2.xiz
+share/zynaddsubfx/banks/Rhodes/0003-DX Rhodes 3.xiz
+share/zynaddsubfx/banks/Rhodes/0004-DX Rhodes 4.xiz
+share/zynaddsubfx/banks/Rhodes/0005-DX Rhodes 5.xiz
+share/zynaddsubfx/banks/Rhodes/0007-Dig Rhodes.xiz
+share/zynaddsubfx/banks/Rhodes/0008-Synth Rhodes1.xiz
+share/zynaddsubfx/banks/Rhodes/0009-Synth Rhodes2.xiz
+share/zynaddsubfx/banks/Rhodes/0010-Synth Rhodes3.xiz
+share/zynaddsubfx/banks/Rhodes/0012-Ice Rhodes1.xiz
+share/zynaddsubfx/banks/Rhodes/0013-Ice Rhodes2.xiz
+share/zynaddsubfx/banks/Rhodes/0014-Ice Rhodes3.xiz
+share/zynaddsubfx/banks/Rhodes/0033-FM Rhodes 1.xiz
+share/zynaddsubfx/banks/Rhodes/0034-FM Rhodes 2.xiz
+share/zynaddsubfx/banks/Rhodes/0035-FM Rhodes 3.xiz
+share/zynaddsubfx/banks/Rhodes/0036-FM Rhodes 4.xiz
+share/zynaddsubfx/banks/Rhodes/0037-FM Rhodes 5.xiz
+share/zynaddsubfx/banks/Rhodes/0038-FM Rhodes 6.xiz
+share/zynaddsubfx/banks/Rhodes/0041-Soft Rhodes.xiz
+share/zynaddsubfx/banks/Rhodes/0042-Hard Rhodes1.xiz
+share/zynaddsubfx/banks/Rhodes/0043-Hard Rhodes2.xiz
+share/zynaddsubfx/banks/Rhodes/0044-Echo Rhodes.xiz
+share/zynaddsubfx/banks/Rhodes/0045-A long time ago.xiz
+share/zynaddsubfx/banks/Rhodes/0065-Steel Rhodes.xiz
+share/zynaddsubfx/banks/Rhodes/0067-RhodesPad1.xiz
+share/zynaddsubfx/banks/Rhodes/0068-RhodesPad2.xiz
+share/zynaddsubfx/banks/Splitted/
+share/zynaddsubfx/banks/Splitted/0001-Strings and Reed1.xiz
+share/zynaddsubfx/banks/Splitted/0002-Strings and Reed2.xiz
+share/zynaddsubfx/banks/Splitted/0003-Strings and Flute.xiz
+share/zynaddsubfx/banks/Splitted/0033-Choir and Reed.xiz
+share/zynaddsubfx/banks/Strings/
+share/zynaddsubfx/banks/Strings/0001-Saw Strings 1.xiz
+share/zynaddsubfx/banks/Strings/0002-Saw Strings 2.xiz
+share/zynaddsubfx/banks/Strings/0003-Saw Strings 3.xiz
+share/zynaddsubfx/banks/Strings/0004-Saw Strings 4.xiz
+share/zynaddsubfx/banks/Strings/0005-Saw Strings 5.xiz
+share/zynaddsubfx/banks/Strings/0006-Saw Strings 6.xiz
+share/zynaddsubfx/banks/Strings/0007-Saw Strings 7.xiz
+share/zynaddsubfx/banks/Strings/0008-Saw Strings 8.xiz
+share/zynaddsubfx/banks/Strings/0010-Strings Pad1.xiz
+share/zynaddsubfx/banks/Strings/0011-Strings Pad2.xiz
+share/zynaddsubfx/banks/Strings/0012-Strings Pad3.xiz
+share/zynaddsubfx/banks/Strings/0013-Strings Pad4.xiz
+share/zynaddsubfx/banks/Strings/0014-Strings Pad5.xiz
+share/zynaddsubfx/banks/Strings/0015-Strings Pad6.xiz
+share/zynaddsubfx/banks/Strings/0016-Sweep Pad 1.xiz
+share/zynaddsubfx/banks/Strings/0017-Sweep Pad 1 Fat.xiz
+share/zynaddsubfx/banks/Strings/0018-Sweep Pad 2.xiz
+share/zynaddsubfx/banks/Strings/0019-Sweep Pad 3Wah.xiz
+share/zynaddsubfx/banks/Strings/0020-Sweep Pad 4.xiz
+share/zynaddsubfx/banks/Strings/0033-Strings1.xiz
+share/zynaddsubfx/banks/Strings/0034-Dark Strings.xiz
+share/zynaddsubfx/banks/Strings/0035-Octave Pad.xiz
+share/zynaddsubfx/banks/Strings/0036-Fast Attack.xiz
+share/zynaddsubfx/banks/Strings/0038-Fat Saw.xiz
+share/zynaddsubfx/banks/Strings/0041-Saw 1.xiz
+share/zynaddsubfx/banks/Strings/0042-Saw 2.xiz
+share/zynaddsubfx/banks/Strings/0043-Saw 3.xiz
+share/zynaddsubfx/banks/Strings/0044-Saw Pad.xiz
+share/zynaddsubfx/banks/Strings/0045-Soft Saw Pad.xiz
+share/zynaddsubfx/banks/Strings/0046-Echoed Saw.xiz
+share/zynaddsubfx/banks/Strings/0047-Vibratto Saw1.xiz
+share/zynaddsubfx/banks/Strings/0048-Wah1.xiz
+share/zynaddsubfx/banks/Strings/0050-Synth Violin 1.xiz
+share/zynaddsubfx/banks/Strings/0051-Synth Violin 2 Fat.xiz
+share/zynaddsubfx/banks/Strings/0065-Simple Strings.xiz
+share/zynaddsubfx/banks/Strings/0066-Dual Strings.xiz
+share/zynaddsubfx/banks/Strings/0067-Dual Strings Oct1.xiz
+share/zynaddsubfx/banks/Strings/0068-Dual Strings Oct2.xiz
+share/zynaddsubfx/banks/Strings/0073-Morph Strings1.xiz
+share/zynaddsubfx/banks/Synth/
+share/zynaddsubfx/banks/Synth/0001-Soft Synth 1.xiz
+share/zynaddsubfx/banks/Synth/0002-Soft Synth 2.xiz
+share/zynaddsubfx/banks/Synth/0004-Pulse Pad 1.xiz
+share/zynaddsubfx/banks/Synth/0005-Pulse Pad 2.xiz
+share/zynaddsubfx/banks/Synth/0006-Pulse Pad 3.xiz
+share/zynaddsubfx/banks/Synth/0007-Analog Filter 1.xiz
+share/zynaddsubfx/banks/Synth/0008-Analog Filter 2.xiz
+share/zynaddsubfx/banks/Synth/0033-Phased Pad 1.xiz
+share/zynaddsubfx/banks/Synth/0034-Phased Pad 2.xiz
+share/zynaddsubfx/banks/Synth/0035-Phased Pad 3.xiz
+share/zynaddsubfx/banks/Synth/0037-Resonance Synth.xiz
+share/zynaddsubfx/banks/Synth/0039-Multi-phase synth.xiz
+share/zynaddsubfx/banks/Synth/0065-Computer Lead1.xiz
+share/zynaddsubfx/banks/Synth/0066-Computer Lead2.xiz
+share/zynaddsubfx/banks/Synth/0067-Detuned Harmonic.xiz
+share/zynaddsubfx/banks/Synth/0070-Solo Synth 1.xiz
+share/zynaddsubfx/banks/Synth/0097-FM Synth.xiz
+share/zynaddsubfx/banks/SynthPiano/
+share/zynaddsubfx/banks/SynthPiano/0001-Soft Piano 1.xiz
+share/zynaddsubfx/banks/SynthPiano/0002-Soft Piano 2.xiz
+share/zynaddsubfx/banks/SynthPiano/0004-Fantasy Bell.xiz
+share/zynaddsubfx/banks/SynthPiano/0005-Synth Piano1.xiz
+share/zynaddsubfx/banks/SynthPiano/0006-Synth Piano2.xiz
+share/zynaddsubfx/banks/SynthPiano/0007-Termollo1.xiz
+share/zynaddsubfx/banks/SynthPiano/0008-Termollo2.xiz
+share/zynaddsubfx/banks/SynthPiano/0009-Termollo3.xiz
+share/zynaddsubfx/banks/SynthPiano/0011-Drop1.xiz
+share/zynaddsubfx/banks/SynthPiano/0012-Drop2.xiz
+share/zynaddsubfx/banks/SynthPiano/0033-Analog Piano 1.xiz
+share/zynaddsubfx/banks/SynthPiano/0034-Analog Piano 2.xiz
+share/zynaddsubfx/banks/SynthPiano/0035-Analog Piano 3.xiz
+share/zynaddsubfx/banks/SynthPiano/0037-FM Synth1.xiz
+share/zynaddsubfx/banks/SynthPiano/0039-BinaryPiano1.xiz
+share/zynaddsubfx/banks/SynthPiano/0040-BinaryPiano2.xiz
+share/zynaddsubfx/banks/SynthPiano/0043-Saw Piano 1.xiz
+share/zynaddsubfx/banks/SynthPiano/0065-Synth Piano 1.xiz
+share/zynaddsubfx/banks/SynthPiano/0066-Synth Piano 2.xiz
+share/zynaddsubfx/banks/SynthPiano/0067-Synth Piano 3.xiz
+share/zynaddsubfx/banks/SynthPiano/0068-Synth Piano 3 fat.xiz
+share/zynaddsubfx/banks/SynthPiano/0069-Synth Piano 3 det.xiz
+share/zynaddsubfx/banks/SynthPiano/0070-Synth Piano 4.xiz
+share/zynaddsubfx/banks/SynthPiano/0071-Synth Piano 5.xiz
+share/zynaddsubfx/banks/net-wisdom/
+share/zynaddsubfx/banks/net-wisdom/.bankdir
+share/zynaddsubfx/banks/net-wisdom/0001-Stereo laser gun.xiz
+share/zynaddsubfx/banks/net-wisdom/0002-Mod beeps.xiz
+share/zynaddsubfx/banks/net-wisdom/0003-Rising bleeps.xiz
+share/zynaddsubfx/banks/net-wisdom/0004-Filter rise.xiz
+share/zynaddsubfx/banks/net-wisdom/0005-Order of Chaos.xiz
+share/zynaddsubfx/banks/net-wisdom/0006-Robotix FM.xiz
+share/zynaddsubfx/banks/net-wisdom/0007-broke robot.xiz
+share/zynaddsubfx/banks/net-wisdom/0008-droplets for chords.xiz
+share/zynaddsubfx/banks/net-wisdom/0009-Fantasy Canyon X.xiz
+share/zynaddsubfx/banks/net-wisdom/0010-Batman 2.xiz
+share/zynaddsubfx/banks/net-wisdom/0011-Ping.xiz
+share/zynaddsubfx/banks/net-wisdom/0012-Alien Sound.xiz
+share/zynaddsubfx/banks/net-wisdom/0013-Hoover.xiz
+share/zynaddsubfx/banks/net-wisdom/0014-wyatt1sequenz.xiz
+share/zynaddsubfx/banks/net-wisdom/0015-bizzarro.xiz
+share/zynaddsubfx/banks/net-wisdom/0016-Ioio_01.xiz
+share/zynaddsubfx/banks/net-wisdom/0017-Own Metal Sound after  2.xiz
+share/zynaddsubfx/banks/net-wisdom/0018-Metal Sound 2.xiz
+share/zynaddsubfx/banks/net-wisdom/0019-star chimes.xiz
+share/zynaddsubfx/banks/net-wisdom/0020-Angry Saw.xiz
+share/zynaddsubfx/banks/net-wisdom/0021-Ugly Bells.xiz
+share/zynaddsubfx/banks/net-wisdom/0022-Ghost Bells.xiz
+share/zynaddsubfx/banks/net-wisdom/0023-bubblefx.xiz
+share/zynaddsubfx/banks/net-wisdom/0024-Rich Stereo Wind.xiz
+share/zynaddsubfx/banks/net-wisdom/0025-old echoed ambient.xiz
+share/zynaddsubfx/banks/net-wisdom/0026-White Music 1.xiz
+share/zynaddsubfx/banks/net-wisdom/0027-ping pong drum.xiz
+share/zynaddsubfx/banks/net-wisdom/0028-Fast Bass.xiz
+share/zynaddsubfx/banks/net-wisdom/0029-Res-Synth Bass 3.xiz
+share/zynaddsubfx/banks/net-wisdom/0030-Analog Bass.xiz
+share/zynaddsubfx/banks/net-wisdom/0031-Chip Bass 3.xiz
+share/zynaddsubfx/banks/net-wisdom/0032-Chip Bass 4.xiz
+share/zynaddsubfx/banks/net-wisdom/0033-Vangelis Saw - A.xiz
+share/zynaddsubfx/banks/net-wisdom/0034-Vangelis Saw - B.xiz
+share/zynaddsubfx/banks/net-wisdom/0035-Vangelis Saw - C.xiz
+share/zynaddsubfx/banks/net-wisdom/0036-Vangelis Saw - D.xiz
+share/zynaddsubfx/banks/net-wisdom/0037-buzz.xiz
+share/zynaddsubfx/banks/net-wisdom/0038-Saw String 1.xiz
+share/zynaddsubfx/banks/net-wisdom/0039-StarWind Strings.xiz
+share/zynaddsubfx/banks/net-wisdom/0040-brightstrings.xiz
+share/zynaddsubfx/banks/net-wisdom/0041-Electronic Strings.xiz
+share/zynaddsubfx/banks/net-wisdom/0042-Rick Wright_s String.xiz
+share/zynaddsubfx/banks/net-wisdom/0043-Ominous Strings.xiz
+share/zynaddsubfx/banks/net-wisdom/0044-RichSpace00.xiz
+share/zynaddsubfx/banks/net-wisdom/0045-Galactic Pad.xiz
+share/zynaddsubfx/banks/net-wisdom/0046-Synthy Pad.xiz
+share/zynaddsubfx/banks/net-wisdom/0047-Soft Pad.xiz
+share/zynaddsubfx/banks/net-wisdom/0048-galaxzy-soft.xiz
+share/zynaddsubfx/banks/net-wisdom/0049-Noise-Phased Pad.xiz
+share/zynaddsubfx/banks/net-wisdom/0050-Flanged Pad.xiz
+share/zynaddsubfx/banks/net-wisdom/0051-Aura.xiz
+share/zynaddsubfx/banks/net-wisdom/0052-Sine Effect.xiz
+share/zynaddsubfx/banks/net-wisdom/0053-ContinuumBeatPad.xiz
+share/zynaddsubfx/banks/net-wisdom/0054-onemorepad.xiz
+share/zynaddsubfx/banks/net-wisdom/0055-RadioPulsePad.xiz
+share/zynaddsubfx/banks/net-wisdom/0056-Ethereal Sub.xiz
+share/zynaddsubfx/banks/net-wisdom/0057-Useless Lush.xiz
+share/zynaddsubfx/banks/net-wisdom/0058-Classic Slightly-filtered.xiz
+share/zynaddsubfx/banks/net-wisdom/0059-SUBsaw.xiz
+share/zynaddsubfx/banks/net-wisdom/0060-Subsyn Pad.xiz
+share/zynaddsubfx/banks/net-wisdom/0061-and Yet another one.xiz
+share/zynaddsubfx/banks/net-wisdom/0062-Glass Organ 1.xiz
+share/zynaddsubfx/banks/net-wisdom/0063-similSynth Pad.xiz
+share/zynaddsubfx/banks/net-wisdom/0064-LostForWordsPad.xiz
+share/zynaddsubfx/banks/net-wisdom/0065-WindSaw.xiz
+share/zynaddsubfx/banks/net-wisdom/0066-Comb Filter.xiz
+share/zynaddsubfx/banks/net-wisdom/0067-Beeping Pad.xiz
+share/zynaddsubfx/banks/net-wisdom/0068-Vint Beep Pad.xiz
+share/zynaddsubfx/banks/net-wisdom/0069-Vint Beep Pad mod.xiz
+share/zynaddsubfx/banks/net-wisdom/0070-Sub Lush Sweep.xiz
+share/zynaddsubfx/banks/net-wisdom/0071-Angelic choir.xiz
+share/zynaddsubfx/banks/net-wisdom/0072-2-36AM Lush.xiz
+share/zynaddsubfx/banks/net-wisdom/0073-1-46AM Lush.xiz
+share/zynaddsubfx/banks/net-wisdom/0074-20-36PM Lush.xiz
+share/zynaddsubfx/banks/net-wisdom/0075-Synth Piano 3.xiz
+share/zynaddsubfx/banks/net-wisdom/0076-Bells 3.xiz
+share/zynaddsubfx/banks/net-wisdom/0077-Seraphim Organ.xiz
+share/zynaddsubfx/banks/net-wisdom/0078-StillLagoonSine.xiz
+share/zynaddsubfx/banks/net-wisdom/0079-Enhanced SpCh.xiz
+share/zynaddsubfx/banks/net-wisdom/0080-wahiano01.xiz
+share/zynaddsubfx/banks/net-wisdom/0081-Smooth 1.xiz
+share/zynaddsubfx/banks/net-wisdom/0082-Smooth 1 FM.xiz
+share/zynaddsubfx/banks/net-wisdom/0083-wavy 1.xiz
+share/zynaddsubfx/banks/net-wisdom/0084-progressive-house-pluck.xiz
+share/zynaddsubfx/banks/net-wisdom/0085-Cindi - A.xiz
+share/zynaddsubfx/banks/net-wisdom/0086-Cindi - B.xiz
+share/zynaddsubfx/banks/net-wisdom/0087-Cindi - C.xiz
+share/zynaddsubfx/banks/net-wisdom/0088-Prophet horn 1.xiz
+share/zynaddsubfx/banks/net-wisdom/0089-Prophet horn 2.xiz
+share/zynaddsubfx/banks/net-wisdom/0090-Trancehum.xiz
+share/zynaddsubfx/banks/net-wisdom/0091-Noisy Tone-Percussion.xiz
+share/zynaddsubfx/banks/net-wisdom/0092-Retro Sound_.xiz
+share/zynaddsubfx/banks/net-wisdom/0093-Hum 1.xiz
+share/zynaddsubfx/banks/net-wisdom/0094-Flute.xiz
+share/zynaddsubfx/banks/net-wisdom/0095-Second_Rendezvous_Part_1.xiz
+share/zynaddsubfx/banks/net-wisdom/0096-Trash Synth mod.xiz
+share/zynaddsubfx/banks/net-wisdom/0097-Old radio lead 1.xiz
+share/zynaddsubfx/banks/net-wisdom/0098-Octave trem lead.xiz
+share/zynaddsubfx/banks/net-wisdom/0099-Plucked Synth.xiz
+share/zynaddsubfx/banks/net-wisdom/0100-dropofwater.xiz
+share/zynaddsubfx/banks/net-wisdom/0101-wha ping.xiz
+share/zynaddsubfx/banks/net-wisdom/0102-progressive-lead-1.xiz
+share/zynaddsubfx/banks/net-wisdom/0103-square-lead.xiz
+share/zynaddsubfx/banks/net-wisdom/0104-asaliah.xiz
+share/zynaddsubfx/banks/net-wisdom/0105-Filter Trem clean.xiz
+share/zynaddsubfx/banks/net-wisdom/0106-Quantize Lead.xiz
+share/zynaddsubfx/banks/net-wisdom/0107-Computer Game.xiz
+share/zynaddsubfx/banks/net-wisdom/0108-chord.xiz
+share/zynaddsubfx/banks/net-wisdom/0109-smp_lead.xiz
+share/zynaddsubfx/banks/net-wisdom/0110-Smooth 2.xiz
+share/zynaddsubfx/banks/net-wisdom/0111-Smooth 3.xiz
+share/zynaddsubfx/banks/net-wisdom/0112-Fat Saw.xiz
+share/zynaddsubfx/banks/net-wisdom/0113-kua-kua.xiz
+share/zynaddsubfx/banks/net-wisdom/0114-Ehh_.xiz
+share/zynaddsubfx/banks/net-wisdom/0115-Harp 3.xiz
+share/zynaddsubfx/banks/net-wisdom/0116-Stratotron II.xiz
+share/zynaddsubfx/banks/net-wisdom/0117-Tubular Bells.xiz
+share/zynaddsubfx/banks/net-wisdom/0118-Echo synth bells.xiz
+share/zynaddsubfx/banks/net-wisdom/0119-galaxzy-guitar.xiz
+share/zynaddsubfx/banks/net-wisdom/0120-Talking clav.xiz
+share/zynaddsubfx/banks/net-wisdom/0121-Ocarina.xiz
+share/zynaddsubfx/banks/net-wisdom/0122-Enveloped Pulse Lead.xiz
+share/zynaddsubfx/banks/net-wisdom/0123-Nice Guitar - huh.xiz
+share/zynaddsubfx/banks/net-wisdom/0124-Rlstic Accordion.xiz
+share/zynaddsubfx/banks/net-wisdom/0125-Noise whistle.xiz
+share/zynaddsubfx/banks/net-wisdom/0126-Vibes 7c1.xiz
+share/zynaddsubfx/banks/net-wisdom/0127-Vibes no_trem.xiz
+share/zynaddsubfx/banks/net-wisdom/0128-Marimba 3.xiz
+share/zynaddsubfx/banks/olivers-100/
+share/zynaddsubfx/banks/olivers-100/0001-Folk Flute.xiz
+share/zynaddsubfx/banks/olivers-100/0002-Bamboo Flute.xiz
+share/zynaddsubfx/banks/olivers-100/0003-FM Flute.xiz
+share/zynaddsubfx/banks/olivers-100/0004-Triple Osc Flute.xiz
+share/zynaddsubfx/banks/olivers-100/0005-Soprano Double Reed.xiz
+share/zynaddsubfx/banks/olivers-100/0006-FM Saxophone.xiz
+share/zynaddsubfx/banks/olivers-100/0007-FM Saxophone 2.xiz
+share/zynaddsubfx/banks/olivers-100/0008-Concertina.xiz
+share/zynaddsubfx/banks/olivers-100/0009-FM Brass 1.xiz
+share/zynaddsubfx/banks/olivers-100/0010-FM Brass 2.xiz
+share/zynaddsubfx/banks/olivers-100/0011-FM Brass 3.xiz
+share/zynaddsubfx/banks/olivers-100/0012-Harmonica.xiz
+share/zynaddsubfx/banks/olivers-100/0013-Soft Guitar.xiz
+share/zynaddsubfx/banks/olivers-100/0014-Dist Jazz Guitar.xiz
+share/zynaddsubfx/banks/olivers-100/0015-Dist Jazz Guitar 2.xiz
+share/zynaddsubfx/banks/olivers-100/0016-Banjoey.xiz
+share/zynaddsubfx/banks/olivers-100/0017-Twang Bass.xiz
+share/zynaddsubfx/banks/olivers-100/0018-Bass Guitar - Slap.xiz
+share/zynaddsubfx/banks/olivers-100/0019-FM Sitar.xiz
+share/zynaddsubfx/banks/olivers-100/0020-King-O-Funk.xiz
+share/zynaddsubfx/banks/olivers-100/0021-EP - Twangy.xiz
+share/zynaddsubfx/banks/olivers-100/0022-EP - Muted.xiz
+share/zynaddsubfx/banks/olivers-100/0023-EP - Brighter.xiz
+share/zynaddsubfx/banks/olivers-100/0024-Far Out EP.xiz
+share/zynaddsubfx/banks/olivers-100/0025-Clavinoid.xiz
+share/zynaddsubfx/banks/olivers-100/0026-Harpsichord.xiz
+share/zynaddsubfx/banks/olivers-100/0027-Toy Piano.xiz
+share/zynaddsubfx/banks/olivers-100/0028-Mallets.xiz
+share/zynaddsubfx/banks/olivers-100/0029-Steel Drums.xiz
+share/zynaddsubfx/banks/olivers-100/0030-Balinese Chimes.xiz
+share/zynaddsubfx/banks/olivers-100/0031-Muffled Chimes.xiz
+share/zynaddsubfx/banks/olivers-100/0032-Drum Kit.xiz
+share/zynaddsubfx/banks/olivers-100/0033-Big Crunchy.xiz
+share/zynaddsubfx/banks/olivers-100/0034-Big Flangey.xiz
+share/zynaddsubfx/banks/olivers-100/0035-Numanesque.xiz
+share/zynaddsubfx/banks/olivers-100/0036-240 Grit Lead.xiz
+share/zynaddsubfx/banks/olivers-100/0037-320 Grit Lead.xiz
+share/zynaddsubfx/banks/olivers-100/0038-Gentle Triangle Lead.xiz
+share/zynaddsubfx/banks/olivers-100/0039-Sliding Squares Lead.xiz
+share/zynaddsubfx/banks/olivers-100/0040-Pheasant Lead.xiz
+share/zynaddsubfx/banks/olivers-100/0041-Plinker Bell.xiz
+share/zynaddsubfx/banks/olivers-100/0042-Low pH Lead.xiz
+share/zynaddsubfx/banks/olivers-100/0043-Hovabotalilfanfeer.xiz
+share/zynaddsubfx/banks/olivers-100/0044-Muted Fanfare.xiz
+share/zynaddsubfx/banks/olivers-100/0045-Bink Bink Lead.xiz
+share/zynaddsubfx/banks/olivers-100/0046-Bogus PWM Lead.xiz
+share/zynaddsubfx/banks/olivers-100/0047-Dirty Vibrato Lead.xiz
+share/zynaddsubfx/banks/olivers-100/0048-Wichita Whoop.xiz
+share/zynaddsubfx/banks/olivers-100/0049-Bitey Triangle Lead.xiz
+share/zynaddsubfx/banks/olivers-100/0050-70s Triangle Lead.xiz
+share/zynaddsubfx/banks/olivers-100/0051-Agro Odds Lead.xiz
+share/zynaddsubfx/banks/olivers-100/0052-Soft Synth Brass.xiz
+share/zynaddsubfx/banks/olivers-100/0053-The Quack.xiz
+share/zynaddsubfx/banks/olivers-100/0054-Funky Reso Bass.xiz
+share/zynaddsubfx/banks/olivers-100/0055-ssaB oseR yknuF.xiz
+share/zynaddsubfx/banks/olivers-100/0056-Creeky Reso Base.xiz
+share/zynaddsubfx/banks/olivers-100/0057-Synth Bass.xiz
+share/zynaddsubfx/banks/olivers-100/0058-Basic Thick Bass.xiz
+share/zynaddsubfx/banks/olivers-100/0059-Dirt Encrusted Bass.xiz
+share/zynaddsubfx/banks/olivers-100/0060-Punch Bass.xiz
+share/zynaddsubfx/banks/olivers-100/0061-Formant Bass.xiz
+share/zynaddsubfx/banks/olivers-100/0062-Distorted BIG Bass.xiz
+share/zynaddsubfx/banks/olivers-100/0063-Bass Analogy.xiz
+share/zynaddsubfx/banks/olivers-100/0064-Frankenstein Bass.xiz
+share/zynaddsubfx/banks/olivers-100/0065-Osiris Pad.xiz
+share/zynaddsubfx/banks/olivers-100/0066-Phased Pad.xiz
+share/zynaddsubfx/banks/olivers-100/0067-Growing Pad.xiz
+share/zynaddsubfx/banks/olivers-100/0068-Vintage Sweep Pad.xiz
+share/zynaddsubfx/banks/olivers-100/0069-Mellow Echo Pad.xiz
+share/zynaddsubfx/banks/olivers-100/0070-Flanged Wind Pad.xiz
+share/zynaddsubfx/banks/olivers-100/0071-Warble Pad.xiz
+share/zynaddsubfx/banks/olivers-100/0072-Organz from Outta Space.xiz
+share/zynaddsubfx/banks/olivers-100/0073-Shimmer Swell.xiz
+share/zynaddsubfx/banks/olivers-100/0074-80s Poly 5ths.xiz
+share/zynaddsubfx/banks/olivers-100/0075-Swell 5ths.xiz
+share/zynaddsubfx/banks/olivers-100/0076-Vastness 5ths.xiz
+share/zynaddsubfx/banks/olivers-100/0077-Celestial 5ths.xiz
+share/zynaddsubfx/banks/olivers-100/0078-Supersaw Snit.xiz
+share/zynaddsubfx/banks/olivers-100/0079-Subtle Supersaw Strings.xiz
+share/zynaddsubfx/banks/olivers-100/0080-Jarre Strings.xiz
+share/zynaddsubfx/banks/olivers-100/0081-Phased String Machine.xiz
+share/zynaddsubfx/banks/olivers-100/0082-Tronic Strings.xiz
+share/zynaddsubfx/banks/olivers-100/0083-Tronic Voices.xiz
+share/zynaddsubfx/banks/olivers-100/0084-Welcome to the 80s.xiz
+share/zynaddsubfx/banks/olivers-100/0085-Bright 80s Horn Stab.xiz
+share/zynaddsubfx/banks/olivers-100/0086-Star Voyage Pad.xiz
+share/zynaddsubfx/banks/olivers-100/0087-Breathy Too.xiz
+share/zynaddsubfx/banks/olivers-100/0088-Outer Galaxy Pad.xiz
+share/zynaddsubfx/banks/olivers-100/0089-Iz Da Beatz.xiz
+share/zynaddsubfx/banks/olivers-100/0090-Vintage Unison.xiz
+share/zynaddsubfx/banks/olivers-100/0091-Breezy Chord.xiz
+share/zynaddsubfx/banks/olivers-100/0092-Airy Chord.xiz
+share/zynaddsubfx/banks/olivers-100/0093-Chimey Chord.xiz
+share/zynaddsubfx/banks/olivers-100/0094-Donk Donk Chord.xiz
+share/zynaddsubfx/banks/olivers-100/0095-Gross and Distorted.xiz
+share/zynaddsubfx/banks/olivers-100/0096-Drifty Noisy 5ths.xiz
+share/zynaddsubfx/banks/olivers-100/0097-Passing Comet.xiz
+share/zynaddsubfx/banks/olivers-100/0098-Sweepy Noisy Pulses.xiz
+share/zynaddsubfx/banks/olivers-100/0099-Robot Overlords.xiz
+share/zynaddsubfx/banks/olivers-100/0100-Scrubbed Launch.xiz
+share/zynaddsubfx/banks/olivers-100/0101-Alien Lawnmower.xiz
+share/zynaddsubfx/banks/olivers-100/0102-RacecaR.xiz
+share/zynaddsubfx/banks/olivers-100/0103-Electric Swell.xiz
+share/zynaddsubfx/banks/olivers-100/0104-Classic FM Twang.xiz
+share/zynaddsubfx/banks/olivers-100/0105-Ominosity.xiz
+share/zynaddsubfx/banks/olivers-100/0106-Unpleasantly Drunk.xiz
+share/zynaddsubfx/banks/olivers-100/0107-Hammering Metal.xiz
+share/zynaddsubfx/banks/olivers-100/0108-Boiling Cauldron.xiz
+share/zynaddsubfx/banks/olivers-100/0109-Crickets.xiz
+share/zynaddsubfx/banks/olivers-100/0110-Jumbo Jet.xiz
+share/zynaddsubfx/banks/olivers-100/0111-Alien Chimes.xiz
+share/zynaddsubfx/banks/olivers-100/0112-Synth Hero Lead.xiz
+share/zynaddsubfx/banks/olivers-100/0113-Jan H Lead.xiz
+share/zynaddsubfx/banks/olivers-100/0114-Soft Saw Lead.xiz
+share/zynaddsubfx/banks/olivers-100/0115-Growling Magma.xiz
+share/zynaddsubfx/banks/olivers-100/0116-Chirpy lead.xiz
+share/zynaddsubfx/banks/olivers-100/0117-Devolved 5ths.xiz
+share/zynaddsubfx/banks/olivers-100/0118-Flangey Swell.xiz
+share/zynaddsubfx/banks/olivers-100/0119-Demo 1 Swell.xiz
+share/zynaddsubfx/banks/olivers-100/0120-Phaser Pad.xiz
+share/zynaddsubfx/banks/olivers-100/0121-Another OB Thang.xiz
+share/zynaddsubfx/banks/olivers-100/0122-Nu Gritar.xiz
+share/zynaddsubfx/banks/olivers-100/0123-Double Bass.xiz
+share/zynaddsubfx/banks/olivers-100/0124-Simple Clonewheel.xiz
+share/zynaddsubfx/banks/olivers-100/0125-Simple Clonewheel Percussion.xiz
+share/zynaddsubfx/banks/olivers-100/0126-Prayer I.xiz
+share/zynaddsubfx/banks/olivers-100/0127-Prayer II.xiz
+share/zynaddsubfx/banks/olivers-100/0128-Vibra Toe Lead.xiz
+share/zynaddsubfx/banks/olivers-100/README
+share/zynaddsubfx/banks/olivers-other/
+share/zynaddsubfx/banks/olivers-other/.bankdir
+share/zynaddsubfx/banks/olivers-other/0001-Bender Lead.xiz
+share/zynaddsubfx/banks/olivers-other/0002-${PERMIT_PACKAGE}sound.xiz
+share/zynaddsubfx/banks/olivers-other/0003-Deetwooned.xiz
+share/zynaddsubfx/banks/olivers-other/0004-Bitey Bitey.xiz
+share/zynaddsubfx/banks/olivers-other/0005-Bitey Bitey II.xiz
+share/zynaddsubfx/banks/olivers-other/0006-Wailing PWM Lead.xiz
+share/zynaddsubfx/banks/olivers-other/0007-Cutting PWM Lead.xiz
+share/zynaddsubfx/banks/olivers-other/0008-Slippery Lead.xiz
+share/zynaddsubfx/banks/olivers-other/0009-AS - Flute 2.xiz
+share/zynaddsubfx/banks/olivers-other/0010-FM Clarinet Lead.xiz
+share/zynaddsubfx/banks/olivers-other/0011-Blue Lead.xiz
+share/zynaddsubfx/banks/olivers-other/0014-Warm Pad.xiz
+share/zynaddsubfx/banks/olivers-other/0015-Choo Stab.xiz
+share/zynaddsubfx/banks/olivers-other/0016-Choo Stab II.xiz
+share/zynaddsubfx/banks/olivers-other/0019-Distorted Organ.xiz
+share/zynaddsubfx/banks/olivers-other/0020-Organ w_ Vibrato.xiz
+share/zynaddsubfx/banks/olivers-other/0021-Funky Alien Clavinet.xiz
+share/zynaddsubfx/banks/olivers-other/0022-Reedy thing.xiz
+share/zynaddsubfx/banks/olivers-other/0023-Space Flute.xiz
+share/zynaddsubfx/banks/olivers-other/0024-Rustic flute thingy.xiz
+share/zynaddsubfx/banks/olivers-other/0025-Country Fiddle.xiz
+share/zynaddsubfx/banks/olivers-other/0026-String section.xiz
+share/zynaddsubfx/banks/olivers-other/0027-Country Twang Guitar.xiz
+share/zynaddsubfx/banks/olivers-other/0028-Nasal Bass.xiz
+share/zynaddsubfx/banks/olivers-other/0029-Fretless Bass.xiz
+share/zynaddsubfx/banks/olivers-other/0033-Train Bell.xiz
+share/zynaddsubfx/banks/olivers-other/0034-Drip.xiz
+share/zynaddsubfx/banks/olivers-other/0035-Clunk.xiz
+share/zynaddsubfx/banks/olivers-other/0036-Tick.xiz
+share/zynaddsubfx/banks/olivers-other/0037-Nostromo.xiz
+share/zynaddsubfx/banks/olivers-other/0038-Deep Zyn.xiz
+share/zynaddsubfx/banks/olivers-other/0039-Hoover Craft.xiz
+share/zynaddsubfx/banks/olivers-other/0042-Crunchy Bass.xiz
+share/zynaddsubfx/banks/olivers-other/0043-Funk Bass.xiz
+share/zynaddsubfx/banks/olivers-other/0044-Saw Bass.xiz
+share/zynaddsubfx/banks/olivers-other/0045-Soft Saw Bass.xiz
+share/zynaddsubfx/banks/olivers-other/0046-Pwink Bass.xiz
+share/zynaddsubfx/banks/olivers-other/0047-FM Growly Bass.xiz
+share/zynaddsubfx/banks/olivers-other/0048-Flangey Bass.xiz
+share/zynaddsubfx/banks/olivers-other/0049-Grungy Synth Bass.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/
+share/zynaddsubfx/banks/the_mysterious_bank/0001-strings_pad.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0002-analog_strings.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0003-smooth_strings_pad.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0004-trance_strings_pad.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0005-mega_string.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0007-bass.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0008-bass2.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0009-agressive_bass.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0010-synth_bass.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0011-synth_bass_fat.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0013-supersaw.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0014-supersaw_wihout_release.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0015-superpulse.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0016-sine_pad.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0018-organ1.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0020-pulse_organ.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0021-rock_organ+distorsion.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0022-rock_organ.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0023-space_organ.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0024-space_organ2.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0026-bell_pad.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0027-inna_bell_like.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0029-hard_pulse.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0030-power_pulsions_lead.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0031-wah_sine.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0032-.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0034-alert_!.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0035-alarm2.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0036-glitch.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0037-the_rain.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0038-the_starting_machine.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/0039-thunder.xiz
+share/zynaddsubfx/banks/the_mysterious_bank/README
+share/zynaddsubfx/banks/the_mysterious_bank_2/
+share/zynaddsubfx/banks/the_mysterious_bank_2/0001-analog strings.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0003-fingered_bass.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0004-synth_bass.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0005-synth_bass_2.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0006-synth_bass_3.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0007-synth_bass_4.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0009-organ1.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0010-organ2.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0011-organ3.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0012-church_organ.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0014-synth_bell.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0015-rhodes1.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0016-pseudo_steeldrums.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0017-musicbox.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0019-sine_pad.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0020-sine_pad2.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0021-power_dnb.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0022-fantasy_choir.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0023-heavy_metal_guitar.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0024-synth_flute.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0026-kick.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0027-hithat.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0028-snare.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0030-canyon_wind.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0031-etrange_sound.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0032-mega_alert.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0033-new_glitch.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0034-radio.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0035-the_drunk_world.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0036-ufo.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0037-ufo2.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_2/0038-8_bit_car.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/
+share/zynaddsubfx/banks/the_mysterious_bank_3/0001-soft_strings.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0002-sines_pad.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0003-at_saturnus.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0004-echoes.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0005-echoes2.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0007-compad.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0008-padding.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0009-res_pad.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0010-supersaw.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0011-portal2_lead.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0013-fantasy_bell.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0014-dreaming_bells.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0015-dreaming_bells_dnb.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0016-mega_bell.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0017-in_the_space.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0019-a_bass.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0020-synth_bass.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0021-synth_bass_2.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0022-synth_bass_3.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0023-dnb_bass.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0024-fat_dnb_bass.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0026-cool_organ.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0027-cool_organ2.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0029-new_arpeggio_3.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0030-from_new_arp3.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0032-ufo_blues.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0033-ufo_funk.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0034-synth_guitar.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0035-taped_instrument.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0037-computer.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0038-falling_stars.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_3/0039-real_glitch.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/
+share/zynaddsubfx/banks/the_mysterious_bank_4/0001-res_strings_pad.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0002-another_respad.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0003-strings_pad.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0004-strings_pad_2.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0005-synth_strings.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0007-from_another_space.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0008-from_another_galaxy.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0009-from_another_planet.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0010-unamed_pad.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0011-arpeggio1.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0013-metal_bell.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0014-bell.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0015-belly.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0016-sine_pad.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0017-wil_aow_space.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0019-bass_pad.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0020-bass_pad_fat.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0021-synth_bass.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0022-synth_bass_2.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0023-hard_bass.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0024-pseudo_doublebass.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0025-synth_bass_3.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0027-funky_lead.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0028-daft_punk_lead.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0029-synth_guitar.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0031-rhodes.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0032-rhodes_2.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0033-80s_rhodes.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0035-organ.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0036-organ_not_distorted.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0037-old_organ.xiz
+share/zynaddsubfx/banks/the_mysterious_bank_4/0039-jazz_guitar.xiz
+share/zynaddsubfx/examples/
+share/zynaddsubfx/examples/0km.xmz
+share/zynaddsubfx/examples/Arpeggio 1.xmz
+share/zynaddsubfx/examples/Arpeggio 2.xmz
+share/zynaddsubfx/examples/Arpeggio 3.xmz
+share/zynaddsubfx/examples/Arpeggio 4.xmz
+share/zynaddsubfx/examples/Arpeggio 5.xmz
+share/zynaddsubfx/examples/Arpeggio 6.xmz
+share/zynaddsubfx/examples/Arpeggio Dist 1.xmz
+share/zynaddsubfx/examples/Arpeggio Dist 2.xmz
+share/zynaddsubfx/examples/Arpeggio Flange 1.xmz
+share/zynaddsubfx/examples/Arpeggio Flange 2.xmz
+share/zynaddsubfx/examples/Choir Reeds.xmz
+share/zynaddsubfx/examples/Choir Strings SynthBrass.xmz
+share/zynaddsubfx/examples/Dist Guitar Strings 1.xmz
+share/zynaddsubfx/examples/Dist Guitar Strings 2.xmz
+share/zynaddsubfx/examples/Drop.xmz
+share/zynaddsubfx/examples/Fantasy 1.xmz
+share/zynaddsubfx/examples/Fantasy 2.xmz
+share/zynaddsubfx/examples/Glass Choir.xmz
+share/zynaddsubfx/examples/HighPass Saw Strings.xmz
+share/zynaddsubfx/examples/Ice Rhodes Strings.xmz
+share/zynaddsubfx/examples/JI12.xsz
+share/zynaddsubfx/examples/Legatto 1.xmz
+share/zynaddsubfx/examples/Legatto 2.xmz
+share/zynaddsubfx/examples/Legatto Strings.xmz
+share/zynaddsubfx/examples/Octave Strings.xmz
+share/zynaddsubfx/examples/Organ Choir Strings.xmz
+share/zynaddsubfx/examples/Saw.xmz
+share/zynaddsubfx/examples/Space 1.xmz
+share/zynaddsubfx/examples/Space 2.xmz
+share/zynaddsubfx/examples/Split_keyboard.xmz
+share/zynaddsubfx/examples/String Reverb.xmz
+share/zynaddsubfx/examples/Strings Reeds 1.xmz
+share/zynaddsubfx/examples/Strings Reeds 2.xmz
+share/zynaddsubfx/examples/Struck String Big Reverb 1.xmz
+share/zynaddsubfx/examples/Struck String Big Reverb 2.xmz
+share/zynaddsubfx/examples/Supersaw.xmz
+share/zynaddsubfx/examples/Synth Bells Choir Reverb.xmz
+share/zynaddsubfx/examples/Synth Piano Reverb.xmz
+share/zynaddsubfx/examples/Synth.xmz
+share/zynaddsubfx/examples/bent_synth.xmz
+share/zynaddsubfx/examples/photons.xmz
+@tag update-desktop-database

@@ -1,0 +1,18 @@
+$OpenBSD: patch-cmake_BashCompletion_cmake,v 1.1.1.1 2021/03/29 19:51:31 sthen Exp $
+
+fix bash_completion install
+
+--- cmake/BashCompletion.cmake.orig	Sat Feb 23 21:13:37 2019
++++ cmake/BashCompletion.cmake	Thu Mar 11 18:06:57 2021
+@@ -71,9 +71,9 @@ ELSE()
+ 		SET(BASHCOMP_SCRIPT "${CMAKE_CURRENT_BINARY_DIR}/install_${SCRIPT_NAME}_completion.sh")
+ 
+ 		FILE(WRITE ${BASHCOMP_SCRIPT} "\
+-#!${BASH}\n\
++#!/bin/sh\n\
+ set -e\n\
+-BASHCOMP_PKG_PATH=\"${BASHCOMP_USER_PATH}\"\n\
++BASHCOMP_PKG_PATH=\"\$DESTDIR${BASHCOMP_USER_PATH}\"\n\
+ if [ -w \"${BASHCOMP_PKG_PATH}\" ]; then\n\
+   BASHCOMP_PKG_PATH=\"${BASHCOMP_PKG_PATH}\"\n\
+ fi\n\

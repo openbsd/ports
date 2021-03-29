@@ -1,0 +1,41 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2021/03/29 19:51:31 sthen Exp $
+
+Respect build flags set by ports
+
+--- Makefile.orig	Sun Feb  7 21:44:01 2021
++++ Makefile	Thu Feb 11 08:51:28 2021
+@@ -1,19 +1,19 @@
+ 
+ all:
+-	ruby ./rebuild-fcache.rb
++	$(RUBY) ./rebuild-fcache.rb
+ 	cd deps/nanovg/src   && $(CC) nanovg.c -c -fPIC
+ 	$(AR) rc deps/libnanovg.a deps/nanovg/src/*.o
+ 	cd deps/mruby-file-stat/src && ../configure
+ 	cd src/osc-bridge    && make lib
+ #	cd mruby             && UI_HOTLOAD=1 MRUBY_CONFIG=../build_config.rb rake
+-	cd mruby             && MRUBY_CONFIG=../build_config.rb rake
++	cd mruby             && MRUBY_CONFIG=../build_config.rb $(RAKE)
+ 	$(CC) -shared -o libzest.so `find mruby/build/host -type f | grep -v mrbc | grep -e "\.o$$" | grep -v bin` ./deps/libnanovg.a \
+ 		./deps/libnanovg.a \
+ 		src/osc-bridge/libosc-bridge.a \
+-		`pkg-config --libs libuv` -lm -lX11 -lGL -lpthread
++		`pkg-config --libs libuv` -lm $(LDFLAGS) -lX11 -lGL -lpthread
+ 	$(CC) test-libversion.c deps/pugl/pugl/pugl_x11.c \
+ 		  -DPUGL_HAVE_GL \
+-		  -ldl -o zest -lX11 -lGL -lpthread -I deps/pugl -std=gnu99 -Wno-trigraphs
++		  -o zest $(CFLAGS) $(LDFLAGS) -lX11 -lGL -lpthread -I deps/pugl -std=gnu99 -Wno-trigraphs
+ 
+ osx: deps/libuv.a
+ 	ruby ./rebuild-fcache.rb
+@@ -119,8 +119,8 @@ test:
+ 	cd mruby &&  MRUBY_CONFIG=../build_config.rb rake test
+ 
+ rtest:
+-	cd src/mruby-qml-parse && ruby test-non-mruby.rb
+-	cd src/mruby-qml-spawn && ruby test-non-mruby.rb
++	cd src/mruby-qml-parse && $(RUBY) test-non-mruby.rb
++	cd src/mruby-qml-spawn && $(RUBY) test-non-mruby.rb
+ 
+ run: ## Run the toolkit
+ 	./zest osc.udp://127.0.0.1:1337

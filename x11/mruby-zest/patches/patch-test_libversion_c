@@ -1,0 +1,15 @@
+$OpenBSD: patch-test_libversion_c,v 1.1.1.1 2021/03/29 19:51:31 sthen Exp $
+
+set proper location for libzest.so library
+
+--- test-libversion.c.orig	Tue Feb  9 19:17:33 2021
++++ test-libversion.c	Tue Feb  9 19:18:08 2021
+@@ -657,6 +657,8 @@ int main(int argc, char **argv)
+         handle = dlopen("libzest.so", RTLD_LAZY);
+     if(!handle)
+         handle = dlopen("/opt/zyn-fusion/libzest.so", RTLD_LAZY);
++    if(!handle)
++        handle = dlopen("${LOCALBASE}/share/zynaddsubfx/libzest.so", RTLD_LAZY);
+ #endif
+     if(!handle) {
+         printf("[ERROR] Cannot Open libzest.so\n");

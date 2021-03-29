@@ -1,0 +1,16 @@
+$OpenBSD: patch-DPF_distrho_extra_Mutex_hpp,v 1.1.1.1 2021/03/29 19:51:31 sthen Exp $
+
+OpenBSD doesn't support pthread_condattr_setpshared
+
+--- DPF/distrho/extra/Mutex.hpp.orig	Sat Jul 25 18:05:19 2020
++++ DPF/distrho/extra/Mutex.hpp	Sat Jul 25 18:05:56 2020
+@@ -194,7 +194,9 @@ class Signal (public)
+     {
+         pthread_condattr_t cattr;
+         pthread_condattr_init(&cattr);
++#if 0
+         pthread_condattr_setpshared(&cattr, PTHREAD_PROCESS_PRIVATE);
++#endif
+         pthread_cond_init(&fCondition, &cattr);
+         pthread_condattr_destroy(&cattr);
+ 

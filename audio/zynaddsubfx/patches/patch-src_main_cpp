@@ -1,0 +1,37 @@
+$OpenBSD: patch-src_main_cpp,v 1.1.1.1 2021/03/29 19:51:31 sthen Exp $
+
+Parse the correct address
+Look for zyn-fusion in out-of-path directory
+
+Index: src/main.cpp
+--- src/main.cpp.orig
++++ src/main.cpp
+@@ -707,12 +707,15 @@ int main(int argc, char *argv[])
+ #endif
+     if(!noui) {
+         printf("[INFO] Launching Zyn-Fusion...\n");
+-        const char *addr = middleware->getServerAddress();
++        const char *raddr = middleware->getServerAddress();
++	 char *address;
++        asprintf(&address, "osc.udp://127.0.0.1%s", strrchr(raddr, ':'));
++	 const char *addr = address;
+ #ifndef WIN32
+         gui_pid = fork();
+         if(gui_pid == 0) {
+             auto exec_fusion = [&addr](const char* path) {
+-                execlp(path, "zyn-fusion", addr, "--builtin", "--no-hotload",  0); };
++                execlp(path, "zyn-fusion", addr, "--builtin", "--no-hotload",  nullptr); };
+             if(fusion_dir && *fusion_dir)
+             {
+                 std::string fusion = fusion_dir;
+@@ -732,9 +735,7 @@ int main(int argc, char *argv[])
+                     exec_fusion(fusion.c_str());
+                 }
+             }
+-            exec_fusion("./zyn-fusion");
+-            exec_fusion("/opt/zyn-fusion/zyn-fusion");
+-            exec_fusion("zyn-fusion");
++            exec_fusion("/usr/local/libexec/zyn-fusion");
+             err(1,"Failed to launch Zyn-Fusion");
+         }
+ #else

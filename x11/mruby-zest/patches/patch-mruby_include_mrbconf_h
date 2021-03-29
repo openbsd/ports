@@ -1,0 +1,15 @@
+$OpenBSD: patch-mruby_include_mrbconf_h,v 1.1.1.1 2021/03/29 19:51:31 sthen Exp $
+
+taken from lang/mruby
+
+Index: mruby/include/mrbconf.h
+--- mruby/include/mrbconf.h.orig
++++ mruby/include/mrbconf.h
+@@ -7,6 +7,7 @@
+ #ifndef MRUBYCONF_H
+ #define MRUBYCONF_H
+ 
++#include <endian.h>
+ #include <limits.h>
+ #include <stdint.h>
+ 

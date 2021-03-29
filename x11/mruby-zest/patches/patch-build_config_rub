@@ -1,0 +1,41 @@
+$OpenBSD: patch-build_config_rub,v 1.1.1.1 2021/03/29 19:51:31 sthen Exp $
+
+Set system include, library paths and flags
+
+--- build_config.rb.orig	Sun Feb  7 21:44:01 2021
++++ build_config.rb	Wed Mar 10 16:17:26 2021
+@@ -57,7 +57,6 @@ build_type.new(build_name) do |conf|
+   enable_debug
+ 
+   conf.cc.defines = %w(MRUBY_NANOVG_GL2 MRB_ENABLE_DEBUG_HOOK)
+-  conf.cc.flags << '-O3'
+ 
+   #No default gems
+   # Use standard print/puts/p
+@@ -113,6 +112,8 @@ build_type.new(build_name) do |conf|
+   end
+ 
+   conf.cc do |cc|
++      cc.include_paths << "${LOCALBASE}/include"
++      cc.include_paths << "${X11BASE}/include"
+       cc.include_paths << "#{`pwd`.strip}/../deps/nanovg/src"
+       cc.include_paths << "#{`pwd`.strip}/../deps/pugl/"
+       cc.include_paths << "#{`pwd`.strip}/../deps/libuv/include/" if !linux
+@@ -131,6 +132,8 @@ build_type.new(build_name) do |conf|
+   end
+ 
+   conf.linker do |linker|
++      linker.library_paths  << "${LOCALBASE}/lib"
++      linker.library_paths  << "${X11BASE}/lib"
+       linker.library_paths  << "#{`pwd`.strip}/../src/osc-bridge/"
+       linker.libraries << 'osc-bridge'
+       linker.flags_after_libraries  << "#{`pwd`.strip}/../deps/libnanovg.a"
+@@ -142,7 +145,7 @@ build_type.new(build_name) do |conf|
+         else
+           linker.flags_after_libraries  << "#{`pwd`.strip}/../deps/libuv.a"
+         end
+-        linker.flags_after_libraries  << "-lpthread -ldl -lm"
++        linker.flags_after_libraries  << "-lpthread -lm"
+       else
+         linker.flags_after_libraries  << "#{`pwd`.strip}/../deps/libuv-win.a"
+         linker.flags_after_libraries  << "-lws2_32 -lkernel32 -lpsapi -luserenv -liphlpapi"
