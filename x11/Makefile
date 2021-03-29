@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.703 2021/03/20 15:57:04 daniel Exp $
+# $OpenBSD: Makefile,v 1.704 2021/03/29 19:52:37 sthen Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -179,6 +179,7 @@
      SUBDIR += mouseclock
      SUBDIR += mowitz
      SUBDIR += mplayer
+     SUBDIR += mruby-zest
      SUBDIR += mterm
      SUBDIR += mxconns
      SUBDIR += nagstamon

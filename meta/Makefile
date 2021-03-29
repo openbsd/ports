@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2021/03/28 05:40:32 bket Exp $
+# $OpenBSD: Makefile,v 1.23 2021/03/29 19:52:37 sthen Exp $
 
      SUBDIR =
      SUBDIR += audacious
@@ -16,5 +16,6 @@
      SUBDIR += qt5
      SUBDIR += tor-browser
      SUBDIR += xfce
+     SUBDIR += zyn-fusion
 
 .include <bsd.port.subdir.mk>
