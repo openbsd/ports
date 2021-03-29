@@ -1,0 +1,21 @@
+$OpenBSD: patch-yubikeyedup_tools_dbconf_py,v 1.1 2021/03/29 12:08:39 sthen Exp $
+
+Index: yubikeyedup/tools/dbconf.py
+--- yubikeyedup/tools/dbconf.py.orig
++++ yubikeyedup/tools/dbconf.py
+@@ -251,7 +251,7 @@ class API(DBConf):
+         return keys
+ 
+ 
+-if __name__ == '__main__':
++def main():
+     options = {
+         '-ya': (4, Yubikey, 'add'),
+         '-yk': (1, Yubikey, 'delete'),
+@@ -290,3 +290,6 @@ if __name__ == '__main__':
+     function = getattr(klass, fname)
+     db = klass(filename)
+     function(db, *args)
++
++if __name__ == '__main__':
++    main()

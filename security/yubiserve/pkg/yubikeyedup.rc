@@ -1,0 +1,15 @@
+#!/bin/ksh
+#
+# $OpenBSD: yubikeyedup.rc,v 1.1 2021/03/29 12:08:39 sthen Exp $
+
+daemon="${TRUEPREFIX}/bin/yubikeyedup"
+daemon_flags="--db /var/db/yubiserve/yubikeys.sqlite3"
+daemon_user="_yubiserve"
+
+. /etc/rc.d/rc.subr
+
+pexp="${MODPY_BIN} ${daemon}${daemon_flags:+ ${daemon_flags}}"
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

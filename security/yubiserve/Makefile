@@ -1,54 +1,34 @@
-# $OpenBSD: Makefile,v 1.22 2021/03/14 11:47:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2021/03/29 12:08:39 sthen Exp $
 
-COMMENT=	standalone Yubikey and OATH/HOTP validation server
-DISTNAME=	yubico-yubiserve-3.1
-REVISION=	14
-EXTRACT_SUFX=	.zip
-UNZIP=		unzip -a
-PKGNAME=	${DISTNAME:S/yubico-//}
+COMMENT=	standalone Yubikey validation server
+
+GH_ACCOUNT=	scumjr
+GH_PROJECT=	yubikeyedup
+GH_COMMIT=	d5044d3fdc10cc59a5213efd53e0f80b2a1096f9
+DISTNAME=	yubikeyedup-0.20201226
 
 CATEGORIES=	security www
-
-HOMEPAGE=	https://code.google.com/p/yubico-yubiserve/
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=yubico-yubiserve/}
-
 MODULES=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
-BUILD_DEPENDS=	databases/sqlite3
-RUN_DEPENDS=	security/py-cryptodome${MODPY_FLAVOR} \
-		security/py-openssl${MODPY_FLAVOR}
+MODPY_SETUPTOOLS= Yes
 
-NO_BUILD=	Yes
+RUN_DEPENDS=	security/py-cryptodome${MODPY_FLAVOR}
+
 NO_TEST=	Yes
 
-PKG_ARCH=	*
-WRKDIST=	${WRKDIR}/yubico-yubiserve
-
-MODPY_ADJ_FILES= yubiserve.py dbconf.py
-
 pre-patch:
-	perl -pi -e 's,\?  ,\t,g' ${WRKSRC}/dbconf.py
-	echo >> ${WRKSRC}/yubiserve.py
+	mv ${WRKSRC}/src ${WRKSRC}/yubikeyedup
+	mv ${WRKSRC}/tools ${WRKSRC}/yubikeyedup/tools
+	touch ${WRKSRC}/yubikeyedup/{,tools}/__init__.py
 
-do-configure:
-	@cd ${WRKSRC}; ${SUBST_CMD} -m 555 -c yubiserve.py yubiserve \
-	    dbconf.py yubiserve-dbconf
-	cd ${WRKSRC}; sqlite3 yubikeys.sqlite3 < src/dump.sqlite
-
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/yubiserve \
-	    ${PREFIX}/share/examples/yubiserve
-	cd ${WRKSRC}; ${INSTALL_DATA} LICENSE README \
-	    src/* ${PREFIX}/share/doc/yubiserve; \
-	    ${INSTALL_DATA} yubiserve.cfg yubikeys.sqlite3 \
-	    ${PREFIX}/share/examples/yubiserve; \
-	    ${INSTALL_SCRIPT} yubiserve-dbconf ${PREFIX}/bin/yubiserve-dbconf; \
-	    ${INSTALL_SCRIPT} yubiserve ${PREFIX}/sbin/yubiserve
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/yubikeyedup
+	${INSTALL_DATA} ${WRKSRC}/{LICENSE,README.rst} \
+	    ${PREFIX}/share/doc/yubikeyedup
 
 .include <bsd.port.mk>

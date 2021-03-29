@@ -1,0 +1,43 @@
+$OpenBSD: patch-yubikeyedup_yubiserve_py,v 1.1 2021/03/29 12:08:39 sthen Exp $
+
+Index: yubikeyedup/yubiserve.py
+--- yubikeyedup/yubiserve.py.orig
++++ yubikeyedup/yubiserve.py
+@@ -16,10 +16,10 @@ import time
+ import urllib.request, urllib.parse, urllib.error
+ import urllib.parse
+ 
+-import yubistatus
+-import validate
+-import html
+-from sql import *
++from yubikeyedup import yubistatus
++from yubikeyedup import validate
++from yubikeyedup import html
++from yubikeyedup.sql import *
+ 
+ 
+ class YubiServeHandler:
+@@ -134,12 +134,13 @@ def stop_signal_handler(signum, frame):
+     sys.exit(0)
+ 
+ 
+-if __name__ == '__main__':
++def main():
+     parser = optparse.OptionParser('Usage: %prog [options]')
+     parser.add_option('-d', '--db', default='./yubikeys.sqlite3', dest='db')
+     parser.add_option('-a', '--address', default='0.0.0.0', dest='host')
+     parser.add_option('-p', '--port', default='8000', dest='port')
+     (options, args) = parser.parse_args()
++    global sqlite_db
+     sqlite_db = options.db
+ 
+     yubiserveHTTP = ThreadingHTTPServer((options.host, int(options.port)), YubiHTTPServer)
+@@ -151,3 +152,7 @@ if __name__ == '__main__':
+     http_thread.start()
+ 
+     signal.pause()
++
++
++if __name__ == '__main__':
++    main()

@@ -1,32 +1,42 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/07/18 08:25:07 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/03/29 12:08:39 sthen Exp $
 @newgroup _yubiserve:700
 @newuser _yubiserve:700:_yubiserve:daemon:yubiserve user:/nonexistent:/sbin/nologin
-bin/yubiserve-dbconf
-sbin/yubiserve
-share/doc/yubiserve/
-share/doc/yubiserve/LICENSE
-share/doc/yubiserve/README
-share/doc/yubiserve/dump.mysql
-share/doc/yubiserve/dump.sqlite
-share/examples/yubiserve/
-share/examples/yubiserve/yubikeys.sqlite3
-@mode 770
-@owner _yubiserve
-@group _yubiserve
-@sample /var/db/yubiserve/
-@mode 640
-@sample /var/db/yubiserve/yubikeys.sqlite3
-@mode
-@owner
-@group
-share/examples/yubiserve/yubiserve.cfg
-@mode 750
-@owner root
-@group _yubiserve
-@sample ${SYSCONFDIR}/yubiserve/
-@mode 640
-@sample ${SYSCONFDIR}/yubiserve/yubiserve.cfg
-@mode
-@owner
-@group
-@rcscript ${RCDIR}/yubiserve
+@rcscript ${RCDIR}/yubikeyedup
+bin/yubikeyedup
+bin/yubikeyedup-dbconf
+bin/yubikeyedup-dbcreate
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup/
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup-0.1-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup-0.1-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup-0.1-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup-0.1-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup-0.1-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup-0.1-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yubikeyedup/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup/${MODPY_PYCACHE}html.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup/${MODPY_PYCACHE}sql.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup/${MODPY_PYCACHE}validate.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup/${MODPY_PYCACHE}yubiserve.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup/${MODPY_PYCACHE}yubistatus.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup/html.py
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup/sql.py
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup/tools/
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup/tools/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yubikeyedup/tools/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup/tools/${MODPY_PYCACHE}dbconf.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup/tools/${MODPY_PYCACHE}dbcreate.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup/tools/${MODPY_PYCACHE}flash.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup/tools/${MODPY_PYCACHE}unittests.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup/tools/dbconf.py
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup/tools/dbcreate.py
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup/tools/flash.py
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup/tools/unittests.py
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup/validate.py
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup/yubiserve.py
+lib/python${MODPY_VERSION}/site-packages/yubikeyedup/yubistatus.py
+share/doc/yubikeyedup/
+share/doc/yubikeyedup/LICENSE
+share/doc/yubikeyedup/README.rst

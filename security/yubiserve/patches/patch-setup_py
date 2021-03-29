@@ -1,0 +1,34 @@
+$OpenBSD: patch-setup_py,v 1.1 2021/03/29 12:08:39 sthen Exp $
+
+https://github.com/scumjr/yubikeyedup/pull/5
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -0,0 +1,26 @@
++#!/usr/bin/env python3
++
++from setuptools import setup, find_packages
++
++setup(
++	name='yubikeyedup',
++	version='0.1',
++	author="Alessio Periloso, scumjr, jaroug",
++	author_email="mail@periloso.it",
++	license="GPL v3",
++	description="Yet Another YubiKey OTP Validation Server",
++	long_description=open('README.rst').read(),
++
++	packages=find_packages(),
++	include_package_data=True,
++	classifiers=[
++	],
++
++	entry_points = {
++	    'console_scripts': [
++	        'yubikeyedup=yubikeyedup.yubiserve:main',
++		'yubikeyedup-dbcreate=yubikeyedup.tools.dbcreate:main',
++		'yubikeyedup-dbconf=yubikeyedup.tools.dbconf:main',
++	    ],
++	},
++)
