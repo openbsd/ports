@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/06/02 11:57:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/03/29 12:18:32 sthen Exp $
+@pkgpath net/py-ncclient
 lib/python${MODPY_VERSION}/site-packages/ncclient/
 lib/python${MODPY_VERSION}/site-packages/ncclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/ncclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

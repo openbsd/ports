@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1254 2021/03/29 12:13:53 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1255 2021/03/29 12:18:32 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -621,6 +621,8 @@ my $stem_extensions = {
 	'py-http_ece' => 'py3-http_ece',
 	'yubiserve' => 'yubikeyedup',
 	'py-openssl' => 'py3-openssl',
+	'py-junos-eznc' => 'py3-junos-eznc',
+	'py-ncclient' => 'py3-ncclient',
 };
 
 my $obsolete_reason = {

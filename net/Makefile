@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1249 2021/03/20 15:57:03 daniel Exp $
+# $OpenBSD: Makefile,v 1.1250 2021/03/29 12:18:32 sthen Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -578,7 +578,6 @@
      SUBDIR += py-ipaddr
      SUBDIR += py-ipaddress
      SUBDIR += py-irclib,python3
-     SUBDIR += py-junos-eznc
      SUBDIR += py-junos-eznc,python3
      SUBDIR += py-libcloud,python3
      SUBDIR += py-libpcap
@@ -587,7 +586,6 @@
      SUBDIR += py-msgpack
      SUBDIR += py-msgpack,python3
      SUBDIR += py-nbxmpp,python3
-     SUBDIR += py-ncclient
      SUBDIR += py-ncclient,python3
      SUBDIR += py-netaddr
      SUBDIR += py-netaddr,python3
