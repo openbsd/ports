@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_automate_cc,v 1.1 2021/03/29 06:20:56 rsadowski Exp $
+
+A function macro named E clashes with internal boost definitions.  Rearrange
+the order of header inclusion so that affected boost headers are included
+before monotone defines the macro.
+
+Also, stop bundling boost/circular_buffer, which is available in current
+versions of boost. From Fedora.
+
+Index: src/automate.cc
+--- src/automate.cc.orig
++++ src/automate.cc
+@@ -13,12 +13,12 @@
+ #include <iterator>
+ #include <sstream>
+ #include <unistd.h>
+-#include "vector.hh"
+ 
+ #include <boost/bind.hpp>
+ #include <boost/function.hpp>
+ #include "lexical_cast.hh"
+ #include <boost/tuple/tuple.hpp>
++#include "vector.hh"
+ 
+ #include "app_state.hh"
+ #include "automate_stdio_helpers.hh"

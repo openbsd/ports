@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_xdelta_cc,v 1.1 2021/03/29 06:20:56 rsadowski Exp $
+
+A function macro named E clashes with internal boost definitions.  Rearrange
+the order of header inclusion so that affected boost headers are included
+before monotone defines the macro.
+
+Also, stop bundling boost/circular_buffer, which is available in current
+versions of boost. From Fedora.
+
+Index: src/xdelta.cc
+--- src/xdelta.cc.orig
++++ src/xdelta.cc
+@@ -26,7 +26,6 @@
+ 
+ #include "base.hh"
+ #include <algorithm>
+-#include "vector.hh"
+ #include <set>
+ #include <sstream>
+ #include <cstring>  // memcmp
+@@ -34,6 +33,7 @@
+ #include <boost/shared_ptr.hpp>
+ #include <boost/version.hpp>
+ 
++#include "vector.hh"
+ #include "adler32.hh"
+ #include "hash_map.hh"
+ #include "numeric_vocab.hh"

@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_sanity_hh,v 1.1 2021/03/29 06:20:56 rsadowski Exp $
+
+A function macro named E clashes with internal boost definitions.  Rearrange
+the order of header inclusion so that affected boost headers are included
+before monotone defines the macro.
+
+Also, stop bundling boost/circular_buffer, which is available in current
+versions of boost. From Fedora.
+
+Index: src/sanity.hh
+--- src/sanity.hh.orig
++++ src/sanity.hh
+@@ -14,7 +14,7 @@
+ #include <ostream>
+ #include <cstdio>
+ 
+-#include "boost/current_function.hpp"
++#include <boost/current_function.hpp>
+ 
+ #include "numeric_vocab.hh"
+ #include "origin_type.hh"

@@ -1,0 +1,46 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2021/03/29 06:20:55 rsadowski Exp $
+
+A function macro named E clashes with internal boost definitions.  Rearrange
+the order of header inclusion so that affected boost headers are included
+before monotone defines the macro.
+
+Also, stop bundling boost/circular_buffer, which is available in current
+versions of boost. From Fedora.
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -156,10 +156,7 @@ am__v_AR_1 = 
+ src_lib3rdparty_a_AR = $(AR) $(ARFLAGS)
+ src_lib3rdparty_a_LIBADD =
+ am__src_lib3rdparty_a_SOURCES_DIST =  \
+-	src/boost/circular_buffer_adaptor.hpp \
+-	src/boost/circular_buffer_base.hpp \
+-	src/boost/circular_buffer_fwd.hpp \
+-	src/boost/circular_buffer.hpp src/netxx/accept.cxx \
++	src/netxx/accept.cxx \
+ 	src/netxx/accept.h src/netxx/address.cxx src/netxx/common.h \
+ 	src/netxx/compat.h src/netxx/datagram.cxx \
+ 	src/netxx/datagramserver.cxx src/netxx/osutil.cxx \
+@@ -933,12 +930,6 @@ NETXX_SOURCES = \
+ 	src/netxx/stream.h src/netxx/streambase.h 			\
+ 	src/netxx/streamserver.h src/netxx/timeout.h src/netxx/types.h
+ 
+-BOOST_SANDBOX_SOURCES = \
+-	src/boost/circular_buffer_adaptor.hpp				\
+-	src/boost/circular_buffer_base.hpp				\
+-	src/boost/circular_buffer_fwd.hpp				\
+-	src/boost/circular_buffer.hpp
+-
+ UNIX_PLATFORM_SOURCES = \
+ 	src/unix/read_password.cc src/unix/get_system_flavour.cc	\
+ 	src/unix/process.cc src/unix/terminal.cc src/unix/inodeprint.cc	\
+@@ -1026,7 +1017,7 @@ nodist_test_bin_tester_SOURCES = test/src/testlib.cc
+ noinst_LIBRARIES = src/libplatform.a src/lib3rdparty.a
+ src_libplatform_a_SOURCES = src/platform.hh $(am__append_1) \
+ 	$(am__append_6)
+-src_lib3rdparty_a_SOURCES = $(BOOST_SANDBOX_SOURCES) $(NETXX_SOURCES) \
++src_lib3rdparty_a_SOURCES = $(NETXX_SOURCES) \
+ 	$(am__append_9) $(am__append_11) $(am__append_13) \
+ 	$(am__append_14)
+ bashcompdir = $(sysconfdir)/bash_completion.d

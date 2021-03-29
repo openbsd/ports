@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_rcs_import_cc,v 1.1 2021/03/29 06:20:56 rsadowski Exp $
+
+A function macro named E clashes with internal boost definitions.  Rearrange
+the order of header inclusion so that affected boost headers are included
+before monotone defines the macro.
+
+Also, stop bundling boost/circular_buffer, which is available in current
+versions of boost. From Fedora.
+
+Index: src/rcs_import.cc
+--- src/rcs_import.cc.orig
++++ src/rcs_import.cc
+@@ -16,13 +16,13 @@
+ #include <sstream>
+ #include <stack>
+ #include <stdexcept>
+-#include "vector.hh"
+ #include <cstring> // memset
+ 
+ #include <boost/shared_ptr.hpp>
+ #include <boost/scoped_ptr.hpp>
+ #include "lexical_cast.hh"
+ #include <boost/tokenizer.hpp>
++#include "vector.hh"
+ 
+ #include "cert.hh"
+ #include "constants.hh"

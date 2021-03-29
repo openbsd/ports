@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_update_cc,v 1.1 2021/03/29 06:20:56 rsadowski Exp $
+
+A function macro named E clashes with internal boost definitions.  Rearrange
+the order of header inclusion so that affected boost headers are included
+before monotone defines the macro.
+
+Also, stop bundling boost/circular_buffer, which is available in current
+versions of boost. From Fedora.
+
+Index: src/update.cc
+--- src/update.cc.orig
++++ src/update.cc
+@@ -9,9 +9,9 @@
+ 
+ #include "base.hh"
+ #include <set>
++#include "lexical_cast.hh"
+ #include "safe_map.hh"
+ #include "vector.hh"
+-#include "lexical_cast.hh"
+ 
+ #include "database.hh"
+ #include "sanity.hh"

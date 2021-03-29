@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_rcs_file_cc,v 1.1 2021/03/29 06:20:56 rsadowski Exp $
+
+A function macro named E clashes with internal boost definitions.  Rearrange
+the order of header inclusion so that affected boost headers are included
+before monotone defines the macro.
+
+Also, stop bundling boost/circular_buffer, which is available in current
+versions of boost. From Fedora.
+
+Index: src/rcs_file.cc
+--- src/rcs_file.cc.orig
++++ src/rcs_file.cc
+@@ -10,7 +10,6 @@
+ 
+ #include "base.hh"
+ #include <fstream>
+-#include "vector.hh"
+ 
+ #ifdef WIN32
+ #include <windows.h>
+@@ -32,6 +31,7 @@
+ #endif
+ 
+ #include "rcs_file.hh"
++#include "vector.hh"
+ #include "sanity.hh"
+ #include "char_classifiers.hh"
+ 

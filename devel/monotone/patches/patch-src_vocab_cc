@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_vocab_cc,v 1.1 2021/03/29 06:20:56 rsadowski Exp $
+
+A function macro named E clashes with internal boost definitions.  Rearrange
+the order of header inclusion so that affected boost headers are included
+before monotone defines the macro.
+
+Also, stop bundling boost/circular_buffer, which is available in current
+versions of boost. From Fedora.
+
+Index: src/vocab.cc
+--- src/vocab.cc.orig
++++ src/vocab.cc
+@@ -11,8 +11,8 @@
+ #include "base.hh"
+ #include "constants.hh"
+ #include "hash_map.hh"
+-#include "sanity.hh"
+ #include "vocab.hh"
++#include "sanity.hh"
+ #include "char_classifiers.hh"
+ #include "transforms.hh"
+ 

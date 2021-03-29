@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_netcmd_cc,v 1.1 2021/03/29 06:20:56 rsadowski Exp $
+
+A function macro named E clashes with internal boost definitions.  Rearrange
+the order of header inclusion so that affected boost headers are included
+before monotone defines the macro.
+
+Also, stop bundling boost/circular_buffer, which is available in current
+versions of boost. From Fedora.
+
+Index: src/netcmd.cc
+--- src/netcmd.cc.orig
++++ src/netcmd.cc
+@@ -8,11 +8,11 @@
+ // PURPOSE.
+ 
+ #include "base.hh"
+-#include "vector.hh"
+ #include <utility>
+ 
+ #include "constants.hh"
+ #include "netcmd.hh"
++#include "vector.hh"
+ #include "netio.hh"
+ #include "numeric_vocab.hh"
+ #include "sanity.hh"

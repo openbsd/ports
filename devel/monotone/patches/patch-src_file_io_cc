@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_file_io_cc,v 1.1 2021/03/29 06:20:56 rsadowski Exp $
+
+A function macro named E clashes with internal boost definitions.  Rearrange
+the order of header inclusion so that affected boost headers are included
+before monotone defines the macro.
+
+Also, stop bundling boost/circular_buffer, which is available in current
+versions of boost. From Fedora.
+
+Index: src/file_io.cc
+--- src/file_io.cc.orig
++++ src/file_io.cc
+@@ -12,9 +12,9 @@
+ #include <fstream>
+ 
+ #include <botan/botan.h>
+-#include "botan_pipe_cache.hh"
+ 
+ #include "file_io.hh"
++#include "botan_pipe_cache.hh"
+ #include "sanity.hh"
+ #include "simplestring_xform.hh"
+ #include "charset.hh"

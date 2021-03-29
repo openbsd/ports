@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_network_listener_base_hh,v 1.1 2021/03/29 06:20:56 rsadowski Exp $
+
+A function macro named E clashes with internal boost definitions.  Rearrange
+the order of header inclusion so that affected boost headers are included
+before monotone defines the macro.
+
+Also, stop bundling boost/circular_buffer, which is available in current
+versions of boost. From Fedora.
+
+Index: src/network/listener_base.hh
+--- src/network/listener_base.hh.orig
++++ src/network/listener_base.hh
+@@ -11,9 +11,9 @@
+ #ifndef __LISTENER_BASE_HH__
+ #define __LISTENER_BASE_HH__
+ 
+-#include "reactable.hh"
+-
+ #include <boost/shared_ptr.hpp>
++
++#include "reactable.hh"
+ 
+ // This is not currently needed because there's only one kind of listener.
+ // But it's already here and not hurting anything, and might be useful if

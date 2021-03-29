@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_sha1_cc,v 1.1 2021/03/29 06:20:56 rsadowski Exp $
+
+A function macro named E clashes with internal boost definitions.  Rearrange
+the order of header inclusion so that affected boost headers are included
+before monotone defines the macro.
+
+Also, stop bundling boost/circular_buffer, which is available in current
+versions of boost. From Fedora.
+
+Index: src/sha1.cc
+--- src/sha1.cc.orig
++++ src/sha1.cc
+@@ -22,10 +22,10 @@
+   #include <botan/benchmark.h>
+ #endif
+ 
+-#include "sanity.hh"
+-#include "ui.hh"
+ #include "platform.hh"
+ #include "cmd.hh"
++#include "sanity.hh"
++#include "ui.hh"
+ #include "transforms.hh"
+ 
+ using std::string;

@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_hmac_cc,v 1.1 2021/03/29 06:20:56 rsadowski Exp $
+
+A function macro named E clashes with internal boost definitions.  Rearrange
+the order of header inclusion so that affected boost headers are included
+before monotone defines the macro.
+
+Also, stop bundling boost/circular_buffer, which is available in current
+versions of boost. From Fedora.
+
+Index: src/hmac.cc
+--- src/hmac.cc.orig
++++ src/hmac.cc
+@@ -10,9 +10,9 @@
+ #include "base.hh"
+ #include <botan/botan.h>
+ 
+-#include "sanity.hh"
+ #include "hmac.hh"
+ #include "vocab.hh"
++#include "sanity.hh"
+ #include "constants.hh"
+ 
+ using std::string;

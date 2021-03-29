@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_option_hh,v 1.1 2021/03/29 06:20:56 rsadowski Exp $
+
+A function macro named E clashes with internal boost definitions.  Rearrange
+the order of header inclusion so that affected boost headers are included
+before monotone defines the macro.
+
+Also, stop bundling boost/circular_buffer, which is available in current
+versions of boost. From Fedora.
+
+Index: src/option.hh
+--- src/option.hh.orig
++++ src/option.hh
+@@ -22,9 +22,9 @@
+ #include <stdexcept>
+ #include <map>
+ #include <set>
+-#include "vector.hh"
+-
+ #include <boost/function.hpp>
++
++#include "vector.hh"
+ #include "lexical_cast.hh"
+ 
+ #include "sanity.hh"

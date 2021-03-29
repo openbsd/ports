@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_globish_cc,v 1.1 2021/03/29 06:20:56 rsadowski Exp $
+
+A function macro named E clashes with internal boost definitions.  Rearrange
+the order of header inclusion so that affected boost headers are included
+before monotone defines the macro.
+
+Also, stop bundling boost/circular_buffer, which is available in current
+versions of boost. From Fedora.
+
+Index: src/globish.cc
+--- src/globish.cc.orig
++++ src/globish.cc
+@@ -9,9 +9,9 @@
+ // PURPOSE.
+ 
+ #include "base.hh"
++#include "option.hh" // for arg_type
+ #include "sanity.hh"
+ #include "globish.hh"
+-#include "option.hh" // for arg_type
+ #include "numeric_vocab.hh"
+ 
+ #include <iterator>

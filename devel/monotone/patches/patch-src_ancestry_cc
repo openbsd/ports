@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_ancestry_cc,v 1.1 2021/03/29 06:20:56 rsadowski Exp $
+
+A function macro named E clashes with internal boost definitions.  Rearrange
+the order of header inclusion so that affected boost headers are included
+before monotone defines the macro.
+
+Also, stop bundling boost/circular_buffer, which is available in current
+versions of boost. From Fedora.
+
+Index: src/ancestry.cc
+--- src/ancestry.cc.orig
++++ src/ancestry.cc
+@@ -8,8 +8,8 @@
+ // PURPOSE.
+ 
+ #include "base.hh"
+-#include "sanity.hh"
+ #include "revision.hh"
++#include "sanity.hh"
+ #include "rev_height.hh"
+ #include "roster.hh"
+ 

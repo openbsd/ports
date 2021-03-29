@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_restrictions_cc,v 1.1 2021/03/29 06:20:56 rsadowski Exp $
+
+A function macro named E clashes with internal boost definitions.  Rearrange
+the order of header inclusion so that affected boost headers are included
+before monotone defines the macro.
+
+Also, stop bundling boost/circular_buffer, which is available in current
+versions of boost. From Fedora.
+
+Index: src/restrictions.cc
+--- src/restrictions.cc.orig
++++ src/restrictions.cc
+@@ -8,9 +8,9 @@
+ // PURPOSE.
+ 
+ #include "base.hh"
++#include "restrictions.hh"
+ #include "safe_map.hh"
+ #include "vector.hh"
+-#include "restrictions.hh"
+ #include "file_io.hh"
+ #include "roster.hh"
+ #include "database.hh" // for parent_roster

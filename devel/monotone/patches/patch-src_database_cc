@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_database_cc,v 1.1 2021/03/29 06:20:56 rsadowski Exp $
+
+A function macro named E clashes with internal boost definitions.  Rearrange
+the order of header inclusion so that affected boost headers are included
+before monotone defines the macro.
+
+Also, stop bundling boost/circular_buffer, which is available in current
+versions of boost. From Fedora.
+
+Index: src/database.cc
+--- src/database.cc.orig
++++ src/database.cc
+@@ -17,13 +17,13 @@
+ #include <numeric>
+ #include <set>
+ #include <sstream>
+-#include "vector.hh"
+ 
+ #include <string.h>
+ #include <boost/bind.hpp>
+ #include <boost/shared_ptr.hpp>
+ #include <boost/tuple/tuple.hpp>
+ #include <boost/tuple/tuple_comparison.hpp>
++#include "vector.hh"
+ 
+ #include <botan/botan.h>
+ #include <botan/rsa.h>

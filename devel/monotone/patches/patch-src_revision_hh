@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_revision_hh,v 1.1 2021/03/29 06:20:56 rsadowski Exp $
+
+A function macro named E clashes with internal boost definitions.  Rearrange
+the order of header inclusion so that affected boost headers are included
+before monotone defines the macro.
+
+Also, stop bundling boost/circular_buffer, which is available in current
+versions of boost. From Fedora.
+
+Index: src/revision.hh
+--- src/revision.hh.orig
++++ src/revision.hh
+@@ -11,8 +11,8 @@
+ #define __REVISION_HH__
+ 
+ #include <set>
+-#include "vector.hh"
+ #include "rev_types.hh"
++#include "vector.hh"
+ 
+ class key_store;
+ class node_restriction;

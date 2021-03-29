@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_database_hh,v 1.1 2021/03/29 06:20:56 rsadowski Exp $
+
+A function macro named E clashes with internal boost definitions.  Rearrange
+the order of header inclusion so that affected boost headers are included
+before monotone defines the macro.
+
+Also, stop bundling boost/circular_buffer, which is available in current
+versions of boost. From Fedora.
+
+Index: src/database.hh
+--- src/database.hh.orig
++++ src/database.hh
+@@ -11,10 +11,10 @@
+ #ifndef __DATABASE_HH__
+ #define __DATABASE_HH__
+ 
+-#include "vector.hh"
+ #include <set>
+ #include <boost/function.hpp>
+ #include <boost/shared_ptr.hpp>
++#include "vector.hh"
+ 
+ #include "rev_types.hh"
+ #include "cert.hh"

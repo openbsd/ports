@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_charset_cc,v 1.1 2021/03/29 06:20:56 rsadowski Exp $
+
+A function macro named E clashes with internal boost definitions.  Rearrange
+the order of header inclusion so that affected boost headers are included
+before monotone defines the macro.
+
+Also, stop bundling boost/circular_buffer, which is available in current
+versions of boost. From Fedora.
+
+Index: src/charset.cc
+--- src/charset.cc.orig
++++ src/charset.cc
+@@ -7,12 +7,12 @@
+ // implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ // PURPOSE.
+ 
+-#include "base.hh"
+-#include "vector.hh"
+-
+ #include <boost/tokenizer.hpp>
+ #include <idna.h>
+ #include <stringprep.h>
++
++#include "base.hh"
++#include "vector.hh"
+ 
+ #include "charset.hh"
+ #include "numeric_vocab.hh"
