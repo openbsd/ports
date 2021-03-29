@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2021/03/29 09:03:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2021/03/29 12:13:53 sthen Exp $
 
 COMMENT=	Python interface to the OpenSSL library
 
 MODPY_EGG_VERSION=	20.0.1
+REVISION=	0
 DISTNAME=	pyOpenSSL-${MODPY_EGG_VERSION}
 PKGNAME=	py-openssl-${MODPY_EGG_VERSION}
 CATEGORIES=	security devel
@@ -16,7 +17,7 @@ WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += crypto pthread ssl
 
 FLAVORS=	python3
-FLAVOR?=
+FLAVOR=		python3
 
 RUN_DEPENDS =	security/py-cryptography${MODPY_FLAVOR}
 BUILD_DEPENDS =	${RUN_DEPENDS}

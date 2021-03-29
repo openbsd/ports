@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.620 2021/03/24 19:51:50 sebastia Exp $
+# $OpenBSD: Makefile,v 1.621 2021/03/29 12:13:52 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -296,7 +296,6 @@
      SUBDIR += py-keyring,python3
      SUBDIR += py-libnacl,python3
      SUBDIR += py-miasm
-     SUBDIR += py-openssl
      SUBDIR += py-openssl,python3
      SUBDIR += py-oauthlib,python3
      SUBDIR += py-paramiko
