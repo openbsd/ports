@@ -1,6 +1,6 @@
-$OpenBSD: patch-cle_loader_py,v 1.6 2021/01/17 19:50:45 jasper Exp $
+$OpenBSD: patch-cle_loader_py,v 1.7 2021/03/29 07:54:39 jasper Exp $
 
-Set library search path.
+https://github.com/angr/cle/pull/280
 
 Index: cle/loader.py
 --- cle/loader.py.orig
