@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/01/11 14:25:55 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/03/29 13:17:57 sthen Exp $
 bin/arouteserver
 lib/python${MODPY_VERSION}/site-packages/arouteserver-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
 lib/python${MODPY_VERSION}/site-packages/arouteserver-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -161,6 +161,7 @@ lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/${
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/${MODPY_PYCACHE}instances.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/${MODPY_PYCACHE}kvm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/${MODPY_PYCACHE}openbgpd.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/${MODPY_PYCACHE}routinator.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/base.py
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/bird.py
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/docker.py
@@ -168,6 +169,7 @@ lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/ex
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/instances.py
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/kvm.py
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/openbgpd.py
+lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/routinator.py
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/skeleton/
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/skeleton/AS1.j2
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/tests/live_tests/skeleton/AS2.j2
