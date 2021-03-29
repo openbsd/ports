@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2016/12/18 19:50:59 jca Exp $
+@comment $OpenBSD: PLIST,v 1.19 2021/03/29 13:26:20 sthen Exp $
 @newgroup _news:519
 @newuser _news:519:_news:daemon:NNTP server:/var/spool/news:/sbin/nologin
 @extraunexec rm -rf /var/spool/news/*
@@ -27,8 +27,8 @@ share/examples/leafnode/
 share/examples/leafnode/Makefile.dist
 share/examples/leafnode/UNINSTALL-daemontools
 share/examples/leafnode/config.example
-@sample ${SYSCONFDIR}/leafnode/
-@sample ${SYSCONFDIR}/leafnode/config
+@sample ${SYSCONFDIR}/
+@sample ${SYSCONFDIR}/config
 share/examples/leafnode/filters.example
 share/examples/leafnode/nntp.rules.dist
 share/examples/leafnode/run.tcpd.dist

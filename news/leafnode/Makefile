@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.62 2019/07/12 20:48:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2021/03/29 13:26:20 sthen Exp $
 
 COMMENT=		USENET software package designed for small sites
 
-DISTNAME=		leafnode-1.11.11
-REVISION=		0
+DISTNAME=		leafnode-1.11.12
 CATEGORIES=		news
 
-HOMEPAGE=		http://leafnode.sourceforge.net/
+HOMEPAGE=		https://www.leafnode.org/
 
 # MIT/BSD like
 PERMIT_PACKAGE=	Yes
@@ -22,16 +21,15 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-lockfile=/var/spool/news/fetchnews.lck
 CONFIGURE_ARGS+=	--with-user=_news \
 			--with-group=_news
+SYSCONFDIR=		${BASESYSCONFDIR}/leafnode
 
 DOCS=		README README-FQDN INSTALL FAQ.txt NEWS OLDNEWS
+FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/leafnode
 
 post-install:
 	$(INSTALL_DATA_DIR) ${PREFIX}/share/doc/leafnode
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/leafnode
 	cd ${WRKSRC} && $(INSTALL_DATA) ${DOCS} \
 		${PREFIX}/share/doc/leafnode
-	${INSTALL_DATA} ${WRKINST}/${SYSCONFDIR}/leafnode/* \
-		${PREFIX}/share/examples/leafnode/
 
 .include <bsd.port.mk>
-CONFIGURE_ARGS+=	--sysconfdir=${SYSCONFDIR}/leafnode

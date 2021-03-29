@@ -1,7 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.22 2015/04/06 16:26:22 jca Exp $
---- Makefile.in.orig	Tue Jun 11 23:32:46 2013
-+++ Makefile.in	Fri Jan  2 21:45:49 2015
-@@ -1435,7 +1435,7 @@ info-am:
+$OpenBSD: patch-Makefile_in,v 1.23 2021/03/29 13:26:20 sthen Exp $
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -1479,7 +1479,7 @@ info-am:
  
  install-data-am: install-man
  	@$(NORMAL_INSTALL)
