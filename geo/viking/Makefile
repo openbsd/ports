@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2021/03/29 13:04:53 landry Exp $
+# $OpenBSD: Makefile,v 1.48 2021/03/30 06:56:01 landry Exp $
 
 COMMENT =	GPS track manager
 
@@ -29,7 +29,7 @@ COMPILER =	base-clang ports-gcc
 CONFIGURE_STYLE =	gnu
 # to ensure X11 libs are found when checking for XSetErrorHandler
 CONFIGURE_ENV +=	CFLAGS="-L${X11BASE}/lib"
-MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache yelp
+MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache yelp docbook
 
 USE_GMAKE =	Yes
 

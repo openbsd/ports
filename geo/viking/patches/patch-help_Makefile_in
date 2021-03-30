@@ -1,0 +1,14 @@
+$OpenBSD: patch-help_Makefile_in,v 1.1 2021/03/30 06:56:01 landry Exp $
+
+Index: help/Makefile.in
+--- help/Makefile.in.orig
++++ help/Makefile.in
+@@ -648,7 +648,7 @@ C/figures/%.png:
+ 	-cp -f ../src/icons/$(notdir $@) C/figures/
+ 
+ %.1: %.xml
+-	$(XSLTPROC) -o $@ http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl $<
++	$(XSLTPROC) -o $@ $(prefix)/share/xsl/docbook/manpages/docbook.xsl $<
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
