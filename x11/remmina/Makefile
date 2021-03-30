@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2021/03/30 20:18:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2021/03/30 20:30:51 sthen Exp $
 
 COMMENT=		GTK+ remote desktop client
 
-V=			1.4.12
-REVISION=		0
+V=			1.4.13
 DISTNAME=		remmina-${V}
-WRKDIST=		${WRKDIR}/Remmina-v${V}-97312f67d1e782a709740e79d355348055a272ec
+WRKDIST=		${WRKDIR}/Remmina-v${V}-bd1be9d309b420234961b6dd5d2c6364f4a08e49
 
 CATEGORIES=		x11 net
 
@@ -52,6 +51,9 @@ CONFIGURE_ARGS +=	-DWITH_APPINDICATOR=OFF \
 			-DWITH_ICON_CACHE=OFF \
 			-DWITH_UPDATE_DESKTOP_DB=OFF \
 			-DCMAKE_C_FLAGS="-I${X11BASE}/include -I${LOCALBASE}/include ${CFLAGS}"
+
+# disable phone-home
+CONFIGURE_ARGS +=	-DWITH_NEWS=OFF
 
 # telepathy support is removed in newer releases
 CONFIGURE_ARGS +=	-DWITH_TELEPATHY=OFF
