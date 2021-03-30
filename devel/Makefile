@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2092 2021/03/24 19:49:17 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2093 2021/03/30 01:16:32 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1199,7 +1199,6 @@
      SUBDIR += p5-Universal-moniker
      SUBDIR += p5-Universal-require
      SUBDIR += p5-Unix-Mknod
-     SUBDIR += p5-VCP-autrijus
      SUBDIR += p5-Variable-Magic
      SUBDIR += p5-Want
      SUBDIR += p5-WeakRef

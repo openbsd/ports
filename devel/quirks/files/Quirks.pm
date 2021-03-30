@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1255 2021/03/29 12:18:32 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1256 2021/03/30 01:16:33 afresh1 Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2315,6 +2315,7 @@ my $obsolete_reason = {
 	'upt-openbsd' => 43,
 	'upt-pypi' => 43,
 	'upt-rubygems' => 43,
+	'p5-VCP-autrijus' => 3,
 };
 
 # reasons for obsolete packages
