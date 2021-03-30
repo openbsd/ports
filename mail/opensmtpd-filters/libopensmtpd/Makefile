@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2021/01/04 07:40:05 martijn Exp $
+# $OpenBSD: Makefile,v 1.7 2021/03/30 12:23:47 martijn Exp $
 
 COMMENT=	library for writing opensmtpd filters
 
-V=		0.5
+V=		0.6
 PKGNAME=	libopensmtpd-${V}
 DISTNAME=	libopensmtpd-${V}
 
