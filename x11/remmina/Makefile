@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2021/03/04 16:59:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2021/03/30 20:18:28 sthen Exp $
 
 COMMENT=		GTK+ remote desktop client
 
 V=			1.4.12
+REVISION=		0
 DISTNAME=		remmina-${V}
 WRKDIST=		${WRKDIR}/Remmina-v${V}-97312f67d1e782a709740e79d355348055a272ec
 
