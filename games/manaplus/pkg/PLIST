@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2018/09/02 15:34:11 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.41 2021/03/30 23:25:46 bcallah Exp $
 @conflict tmw-*
 @conflict tmw-music-*
 @pkgpath games/tmw
@@ -7,10 +7,9 @@
 @bin bin/manaplus
 @man man/man6/manaplus.6
 @man man/man6/manaplustest.6
-share/appdata/
-share/appdata/manaplus.appdata.xml
 share/applications/manaplus.desktop
 share/applications/manaplustest.desktop
+share/icons/hicolor/scalable/apps/manaplus.svg
 share/locale/ca/LC_MESSAGES/manaplus.mo
 share/locale/cs/LC_MESSAGES/manaplus.mo
 share/locale/de/LC_MESSAGES/manaplus.mo
@@ -223,7 +222,6 @@ share/manaplus/data/graphics/sprites/manaplus_emotes.xml
 share/manaplus/data/graphics/sprites/manaplus_emotions.png
 share/manaplus/data/graphics/sprites/test.xml
 share/manaplus/data/help/
-share/manaplus/data/help/about-tmw.txt
 share/manaplus/data/help/about.txt
 share/manaplus/data/help/chatcommands.txt
 share/manaplus/data/help/chatguild.txt
@@ -233,7 +231,6 @@ share/manaplus/data/help/download.txt
 share/manaplus/data/help/footer.txt
 share/manaplus/data/help/header.txt
 share/manaplus/data/help/idx/
-share/manaplus/data/help/idx/about-tmw.idx
 share/manaplus/data/help/idx/about.idx
 share/manaplus/data/help/idx/chatcommands.idx
 share/manaplus/data/help/idx/chatguild.idx
@@ -866,6 +863,7 @@ share/manaplus/data/translations/help/ru.po
 share/manaplus/data/translations/help/zh_CN.po
 share/manaplus/data/translations/test/
 share/manaplus/data/translations/test/test1.po
-share/pixmaps/
-share/pixmaps/manaplus.png
+share/metainfo/
+share/metainfo/manaplus.metainfo.xml
 @tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

@@ -1,14 +1,15 @@
-$OpenBSD: patch-data_icons_Makefile_am,v 1.2 2013/02/04 15:03:12 bcallah Exp $
---- data/icons/Makefile.am.orig	Thu Jan 31 23:27:40 2013
-+++ data/icons/Makefile.am	Thu Jan 31 23:27:54 2013
+$OpenBSD: patch-data_icons_Makefile_am,v 1.3 2021/03/30 23:25:46 bcallah Exp $
+Index: data/icons/Makefile.am
+--- data/icons/Makefile.am.orig
++++ data/icons/Makefile.am
 @@ -9,8 +9,8 @@ icons_DATA = manaplus.png \
  	     manaplus.xpm
  
  install-data-local:
--	$(mkinstalldirs) $(DESTDIR)$(datarootdir)/pixmaps
--	$(INSTALL) $(srcdir)/manaplus.png $(DESTDIR)$(datarootdir)/pixmaps/manaplus.png
-+	$(mkinstalldirs) $(DESTDIR)$(datadir)/pixmaps
-+	$(INSTALL) $(srcdir)/manaplus.png $(DESTDIR)$(datadir)/pixmaps/manaplus.png
+-	$(mkinstalldirs) $(DESTDIR)$(datarootdir)/icons/hicolor/scalable/apps
+-	$(INSTALL) $(srcdir)/manaplus.svg $(DESTDIR)$(datarootdir)/icons/hicolor/scalable/apps/manaplus.svg
++	$(mkinstalldirs) $(DESTDIR)$(datadir)/icons/hicolor/scalable/apps
++	$(INSTALL) $(srcdir)/manaplus.svg $(DESTDIR)$(datadir)/icons/hicolor/scalable/apps/manaplus.svg
  
  uninstall-local:
- 	rm -f $(DESTDIR)$(datarootdir)/pixmaps/manaplus.png
+ 	rm -f $(DESTDIR)$(datarootdir)/icons/hicolor/scalable/apps/manaplus.svg

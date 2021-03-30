@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.101 2019/07/12 20:46:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.102 2021/03/30 23:25:46 bcallah Exp $
 
-V =		1.9.3.23
-REVISION =	1
+V =		2.1.3.17
 COMMENT =	client for The Mana World
 DISTNAME =	manaplus-${V}
 EXTRACT_SUFX =	.tar.xz
@@ -14,8 +13,8 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL SDL2 SDL2_gfx-1.0 SDL2_image
-WANTLIB += SDL2_mixer SDL2_net SDL2_ttf X11 c crypto curl execinfo
-WANTLIB += iconv intl m nghttp2 png ssl xml2 z
+WANTLIB += SDL2_mixer SDL2_net SDL2_ttf X11 c curl execinfo iconv
+WANTLIB += intl m png xml2 z
 
 MASTER_SITES =	http://download.evolonline.org/manaplus/download/${V}/
 
@@ -35,7 +34,8 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 		textproc/libxml
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		devel/xdg-utils
+		devel/xdg-utils \
+		x11/gtk+3,-guic
 
 CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
