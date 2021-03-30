@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/03/30 07:27:34 tb Exp $
 
 COMMENT =	automated OpenGL and OpenCL testsuite
 ONLY_FOR_ARCHS =	amd64 i386
@@ -8,6 +8,7 @@ DISTNAME =	piglit-20210128
 GH_ACCOUNT =	mesa3d
 GH_PROJECT =	piglit
 GH_COMMIT =	83173d9536c9f5e1571efe5933d210466ec255b8
+REVISION =	0
 
 CATEGORIES =	graphics
 
@@ -37,6 +38,7 @@ RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR} \
 			www/py-mako${MODPY_FLAVOR}
 BUILD_DEPENDS =		${RUN_DEPENDS} \
+			graphics/glslang \
 			graphics/vulkan-headers
 
 LIB_DEPENDS =		graphics/waffle \
