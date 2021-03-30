@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.21 2021/01/26 18:17:40 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.1 2021/03/30 10:15:42 sthen Exp $
 @option is-branch
 @pkgpath net/unifi
 @pkgpath net/unifi/5.7
 @pkgpath net/unifi/5.8
+@pkgpath net/unifi/stable
 @newgroup _unifi:732
 @newuser _unifi:732:_unifi:daemon:unifi user:${PREFIX}/share/unifi:/sbin/nologin
 @rcscript ${RCDIR}/unifi

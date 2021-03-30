@@ -1,2 +1,6 @@
 This package contains controller software for Ubiquiti UniFi access points,
 switches, gateways and phones.
+
+This version 5.14 is the last one with "old-style" network configuration,
+which can be easier to use with setups that have settings (especially for
+vlans) which vary between different APs at the same site.

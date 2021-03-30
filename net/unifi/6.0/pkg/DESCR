@@ -1,0 +1,14 @@
+This package contains controller software for Ubiquiti UniFi access points,
+switches, gateways and phones.
+
+This branch 6.0 contains the newest version of the controller that still
+supports the original Atheros-based UniFi 11n AP and some others:
+
+UAP-Outdoor
+UAP-Outdoor+
+UAP-Pro
+UAP-IW
+UAP (v1+v2)
+UAP-LR (v1+v2)
+UAP-AC-EDU
+UAP-AC-IW-PRO
