@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.142 2021/02/23 19:39:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.143 2021/03/31 20:52:47 sthen Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
-DISTNAME =	gimp-2.10.22
-REVISION =	1
+DISTNAME =	gimp-2.10.24
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets
@@ -27,14 +26,14 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += Half-2_5 ICE Iex-2_5 IexMath-2_5 IlmImf-2_5 IlmThread-2_5
 WANTLIB += Imath-2_5 SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xmu Xpm Xrandr Xrender Xt aa atk-1.0 avahi-client
-WANTLIB += avahi-common babl-0.1 bz2 c cairo cairo-gobject cups
-WANTLIB += curses dbus-1 de265 execinfo exiv2 expat ffi fontconfig
-WANTLIB += freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gegl-0.4
-WANTLIB += gexiv2 gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0
-WANTLIB += graphite2 gs gtk-x11-2.0 harfbuzz heif hogweed iconv
-WANTLIB += idn2 ijs intl jbig2dec jpeg json-c json-glib-1.0 lcms
-WANTLIB += lcms2 lzma m mng mypaint nettle openjp2 p11-kit
+WANTLIB += Xi Xinerama Xmu Xpm Xrandr Xrender Xt aa aom atk-1.0
+WANTLIB += avahi-client avahi-common babl-0.1 bz2 c cairo cairo-gobject
+WANTLIB += cups curses dav1d dbus-1 de265 execinfo exiv2 expat
+WANTLIB += ffi fontconfig freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gegl-0.4 gexiv2 gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls
+WANTLIB += gobject-2.0 graphite2 gs gtk-x11-2.0 harfbuzz heif
+WANTLIB += hogweed iconv idn2 ijs intl jbig2dec jpeg json-c json-glib-1.0
+WANTLIB += lcms lcms2 lzma m mng mypaint nettle openjp2 p11-kit
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png poppler poppler-glib rsvg-2 tasn1 tiff unistring
 WANTLIB += webp webpdemux webpmux wmf-0.2 wmflite-0.2 x265 xcb

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.49 2020/11/01 20:40:45 jca Exp $
+@comment $OpenBSD: PLIST,v 1.50 2021/03/31 20:52:47 sthen Exp $
 bin/gimp
 @bin bin/gimp-2.10
 bin/gimp-console
@@ -512,9 +512,9 @@ lib/gimp/2.0/plug-ins/print/
 @bin lib/gimp/2.0/plug-ins/print/print
 lib/gimp/2.0/plug-ins/procedure-browser/
 @bin lib/gimp/2.0/plug-ins/procedure-browser/procedure-browser
-lib/gimp/2.0/plug-ins/${MODPY_PY_PREFIX}slice/
-lib/gimp/2.0/plug-ins/${MODPY_PY_PREFIX}slice/${MODPY_PY_PREFIX}slice.py
-lib/gimp/2.0/plug-ins/${MODPY_PY_PREFIX}slice/${MODPY_PY_PREFIX}slice.pyc
+lib/gimp/2.0/plug-ins/py-slice/
+lib/gimp/2.0/plug-ins/py-slice/py-slice.py
+lib/gimp/2.0/plug-ins/py-slice/py-slice.pyc
 lib/gimp/2.0/plug-ins/python-console/
 lib/gimp/2.0/plug-ins/python-console/pyconsole.py
 lib/gimp/2.0/plug-ins/python-console/pyconsole.pyc
@@ -4137,6 +4137,9 @@ share/gimp/2.0/icons/Symbolic/scalable/apps/zoom-original.svg
 share/gimp/2.0/icons/Symbolic/scalable/apps/zoom-out.svg
 share/gimp/2.0/icons/hicolor/
 share/gimp/2.0/icons/hicolor/index.theme
+share/gimp/2.0/icons/hicolor/scalable/
+share/gimp/2.0/icons/hicolor/scalable/status/
+share/gimp/2.0/icons/hicolor/scalable/status/software-update-available.svg
 share/gimp/2.0/images/
 share/gimp/2.0/images/gimp-logo.png
 share/gimp/2.0/images/gimp-splash.png
@@ -4295,7 +4298,7 @@ share/gimp/2.0/scripts/chrome-it.scm
 share/gimp/2.0/scripts/circuit.scm
 share/gimp/2.0/scripts/clothify.scm
 share/gimp/2.0/scripts/coffee.scm
-share/gimp/2.0/scripts/co${MODPY_PY_PREFIX}visible.scm
+share/gimp/2.0/scripts/copy-visible.scm
 share/gimp/2.0/scripts/difference-clouds.scm
 share/gimp/2.0/scripts/distress-selection.scm
 share/gimp/2.0/scripts/drop-shadow.scm
@@ -5604,6 +5607,8 @@ share/locale/ja/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/ja/LC_MESSAGES/gimp20-tips.mo
 share/locale/ja/LC_MESSAGES/gimp20.mo
 share/locale/ka/LC_MESSAGES/gimp20.mo
+share/locale/kab/LC_MESSAGES/gimp20-python.mo
+share/locale/kab/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/kk/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/kk/LC_MESSAGES/gimp20.mo
 share/locale/km/LC_MESSAGES/gimp20-libgimp.mo
