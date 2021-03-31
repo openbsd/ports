@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/03/31 20:40:11 stsp Exp $
+@bin bin/chiaki
+share/applications/
+share/applications/chiaki.desktop
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/chiaki/
+share/examples/chiaki/psn-account-id.py
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/512x512/
+share/icons/hicolor/512x512/apps/
+share/icons/hicolor/512x512/apps/chiaki.png
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+share/metainfo/
+share/metainfo/re.chiaki.Chiaki.appdata.xml

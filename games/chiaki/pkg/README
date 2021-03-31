@@ -1,0 +1,63 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Remote Play client registration
+===============================
+
+If your PS4/PS5 Console is on the same layer 2 network segment, is
+turned on or in stand-by mode, and does not have Discovery explicitly
+disabled, then Chiaki should find it.
+
+Otherwise, you can add it manually. To do so, click the "+" icon in
+the top right, and enter your console's IP address.
+
+You will then need to register your console with Chiaki.
+Two pieces of information are required to do this:
+
+Obtaining your PSN AccountID
+-----------------------------
+
+Starting with PS4 firmware 7.0, it is necessary to use a so-called
+"AccountID" as opposed to the "Online-ID" for registration.
+
+This ID seems to be a unique identifier for a PSN Account and it can
+be obtained from the PlayStation Network after logging in using OAuth.
+A Python script which does this is provided here:
+  ${LOCALBASE}/share/examples/chiaki/psn-account-id.py
+Simply run it in a terminal and follow the instructions. Once you know
+the ID, write it down. You will likely not have to repeat this process.
+
+Obtaining a Registration PIN
+-----------------------------
+
+The console must be put into registration mode in order to allow
+Chiaki to register as a remote play client.
+
+To do this on a PS4, go to:
+Settings -> Remote Play -> Add Device
+Alternatively, on a PS5:
+Settings -> System -> Remote Play -> Link Device
+
+The console will now wait for new Remote Play clients to connect.
+
+Starting Remote Play
+--------------------
+
+Double-click your console's entry in Chiaki's main window to start
+Remote Play.
+
+Key Bindings
+============
+
+Key bindings can be reviewed and changed in Chiaki's settings dialog.
+The F11 key is an undocumented and hard-coded fullscreen toggle.
+
+Controllers
+===========
+
+PlayStation controllers attach as ujoy(4). Chiaki recognizes official
+Sony controllers based on a hard-coded list of SDL controller IDs.
+The upside is that no controller button configuration is required.
+The downside is that PlayStation-compatible third-pary controllers
+might not work even if they work with the console.
