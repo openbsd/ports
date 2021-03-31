@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2021/01/19 06:34:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.28 2021/03/31 07:26:06 tb Exp $
 
 COMMENT =	capybara driver that uses WebKit
 
 DISTNAME =	capybara-webkit-1.15.0
 CATEGORIES =	www
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE=	https://github.com/thoughtbot/capybara-webkit
 

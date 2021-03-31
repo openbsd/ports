@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/01/19 06:34:20 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/03/31 07:26:06 tb Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_EXTENSIONS_DIR}/gem_make.out
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
-${GEM_LIB}/gems/${DISTNAME}/.qmake.stash
+@comment ${GEM_LIB}/gems/${DISTNAME}/.qmake.stash
 ${GEM_LIB}/gems/${DISTNAME}/.rspec
 ${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/Appraisals
