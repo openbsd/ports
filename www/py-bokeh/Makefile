@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2020/11/25 21:45:06 daniel Exp $
+# $OpenBSD: Makefile,v 1.34 2021/03/31 20:18:59 sthen Exp $
 
 COMMENT=		statistical and novel interactive HTML plots for Python
 
-MODPY_EGG_VERSION=	2.2.3
+MODPY_EGG_VERSION=	2.3.0
 DISTNAME=		bokeh-${MODPY_EGG_VERSION}
 PKGNAME=		py-bokeh-${MODPY_EGG_VERSION}
 
