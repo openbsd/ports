@@ -1,9 +1,18 @@
-$OpenBSD: patch-src__cffi_src_openssl_ssl_py,v 1.6 2021/02/14 17:42:51 sthen Exp $
+$OpenBSD: patch-src__cffi_src_openssl_ssl_py,v 1.7 2021/03/31 17:18:54 tb Exp $
 
 Index: src/_cffi_src/openssl/ssl.py
 --- src/_cffi_src/openssl/ssl.py.orig
 +++ src/_cffi_src/openssl/ssl.py
-@@ -676,7 +676,8 @@ int (*SSL_set_tlsext_use_srtp)(SSL *, const char *) = 
+@@ -581,8 +581,6 @@ static const long TLS_ST_OK = 0;
+ #endif
+ 
+ #if CRYPTOGRAPHY_IS_LIBRESSL
+-static const long SSL_OP_NO_DTLSv1 = 0;
+-static const long SSL_OP_NO_DTLSv1_2 = 0;
+ long (*DTLS_set_link_mtu)(SSL *, long) = NULL;
+ long (*DTLS_get_link_min_mtu)(SSL *) = NULL;
+ #endif
+@@ -676,7 +674,8 @@ int (*SSL_set_tlsext_use_srtp)(SSL *, const char *) = 
  SRTP_PROTECTION_PROFILE * (*SSL_get_selected_srtp_profile)(SSL *) = NULL;
  #endif
  
