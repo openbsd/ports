@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.32 2020/11/08 13:29:20 ajacoutot Exp $
-lib/grilo-${API}/
+@comment $OpenBSD: PLIST,v 1.33 2021/03/31 17:59:44 jasper Exp $
 @so lib/grilo-${API}/libgrlchromaprint.so
 @so lib/grilo-${API}/libgrldleyna.so
 @so lib/grilo-${API}/libgrlfilesystem.so
 @so lib/grilo-${API}/libgrlflickr.so
 @so lib/grilo-${API}/libgrlfreebox.so
 @so lib/grilo-${API}/libgrlgravatar.so
-@so lib/grilo-${API}/libgrljamendo.so
 @so lib/grilo-${API}/libgrllocalmetadata.so
 @so lib/grilo-${API}/libgrlluafactory.so
 @so lib/grilo-${API}/libgrlmagnatune.so
@@ -18,7 +16,6 @@ lib/grilo-${API}/
 @so lib/grilo-${API}/libgrlshoutcast.so
 @so lib/grilo-${API}/libgrltmdb.so
 @so lib/grilo-${API}/libgrltracker3.so
-@so lib/grilo-${API}/libgrlvimeo.so
 @so lib/grilo-${API}/libgrlyoutube.so
 lib/pkgconfig/grilo-plugins-${API}.pc
 share/grilo-plugins/
@@ -47,6 +44,12 @@ share/help/C/examples/example-tmdb.c
 share/help/C/grilo-plugins/
 share/help/C/grilo-plugins/grilo-plugins.xml
 share/help/C/grilo-plugins/legal.xml
+share/help/ca/
+share/help/ca/examples/
+share/help/ca/examples/example-tmdb.c
+share/help/ca/grilo-plugins/
+share/help/ca/grilo-plugins/grilo-plugins.xml
+share/help/ca/grilo-plugins/legal.xml
 share/help/cs/
 share/help/cs/examples/
 share/help/cs/examples/example-tmdb.c
@@ -127,6 +130,7 @@ share/locale/nb/LC_MESSAGES/grilo-plugins.mo
 share/locale/ne/LC_MESSAGES/grilo-plugins.mo
 share/locale/nl/LC_MESSAGES/grilo-plugins.mo
 share/locale/oc/LC_MESSAGES/grilo-plugins.mo
+share/locale/pa/LC_MESSAGES/grilo-plugins.mo
 share/locale/pl/LC_MESSAGES/grilo-plugins.mo
 share/locale/pt/LC_MESSAGES/grilo-plugins.mo
 share/locale/pt_BR/LC_MESSAGES/grilo-plugins.mo
