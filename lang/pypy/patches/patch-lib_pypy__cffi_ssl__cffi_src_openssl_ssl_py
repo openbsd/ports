@@ -1,9 +1,18 @@
-$OpenBSD: patch-lib_pypy__cffi_ssl__cffi_src_openssl_ssl_py,v 1.1 2020/09/07 09:32:18 tb Exp $
+$OpenBSD: patch-lib_pypy__cffi_ssl__cffi_src_openssl_ssl_py,v 1.2 2021/03/31 17:17:25 tb Exp $
 
 Index: lib_pypy/_cffi_ssl/_cffi_src/openssl/ssl.py
 --- lib_pypy/_cffi_ssl/_cffi_src/openssl/ssl.py.orig
 +++ lib_pypy/_cffi_ssl/_cffi_src/openssl/ssl.py
-@@ -836,7 +836,8 @@ static const long Cryptography_HAS_CIPHER_DETAILS = 0;
+@@ -729,8 +729,6 @@ const SSL_METHOD *(*DTLS_client_method)(void) = NULL;
+ static const long Cryptography_HAS_GENERIC_DTLS_METHOD = 1;
+ #endif
+ #if CRYPTOGRAPHY_OPENSSL_LESS_THAN_102
+-static const long SSL_OP_NO_DTLSv1 = 0;
+-static const long SSL_OP_NO_DTLSv1_2 = 0;
+ long (*DTLS_set_link_mtu)(SSL *, long) = NULL;
+ long (*DTLS_get_link_min_mtu)(SSL *) = NULL;
+ #endif
+@@ -836,7 +834,8 @@ static const long Cryptography_HAS_CIPHER_DETAILS = 0;
  static const long Cryptography_HAS_CIPHER_DETAILS = 1;
  #endif
  
