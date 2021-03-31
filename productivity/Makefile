@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2020/12/02 19:11:08 solene Exp $
+# $OpenBSD: Makefile,v 1.97 2021/03/31 03:27:41 gnezdo Exp $
 
      SUBDIR =
      SUBDIR += aqbanking
@@ -15,6 +15,7 @@
      SUBDIR += grisbi
      SUBDIR += gsimplecal
      SUBDIR += gtg
+     SUBDIR += hledger
      SUBDIR += homebank
      SUBDIR += impressive
      SUBDIR += khal
