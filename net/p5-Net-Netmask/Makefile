@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/03/31 05:06:17 sthen Exp $
 
 COMMENT =	parse, manipulate and lookup IPv4 CIDR blocks
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Net-Netmask-1.9104
+DISTNAME =	Net-Netmask-2.0001
 CATEGORIES =	net
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes
