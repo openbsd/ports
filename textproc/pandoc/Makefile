@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2021/03/16 03:41:34 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.2 2021/03/31 23:56:11 gnezdo Exp $
 
 # Even with the highest memory limit pandoc fails to compile.
 BROKEN-i386 =	ghc: out of memory (requested 2097152 bytes)
@@ -31,7 +31,7 @@ post-extract:
 	@rm ${WRKSRC}/cabal.project
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/man/pandoc.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/pandoc.1 ${PREFIX}/man/man1
 
 MODCABAL_MANIFEST = \
 	Glob	0.10.1	0	\
