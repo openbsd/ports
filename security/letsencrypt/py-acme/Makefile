@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2020/10/07 13:32:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2021/03/31 20:46:19 sthen Exp $
 
 COMMENT=	ACME protocol implementation
 
@@ -26,7 +26,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MODPY_PYTEST =	Yes
 
-TEST_DEPENDS=	devel/py-mock${MODPY_FLAVOR} \
-		security/py-josepy${MODPY_FLAVOR}
+TEST_DEPENDS=	security/py-josepy${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.59 2021/02/03 16:18:53 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.60 2021/03/31 20:46:19 sthen Exp $
 
 CATEGORIES?=		security/letsencrypt security
 
 MODPY_PI?=		Yes
 MODPY_SETUPTOOLS?=	Yes
 
-MODPY_EGG_VERSION?=	1.12.0
+MODPY_EGG_VERSION?=	1.13.0
 
 MODULES?=		lang/python
 
