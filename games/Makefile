@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.437 2021/02/25 19:40:07 solene Exp $
+# $OpenBSD: Makefile,v 1.438 2021/03/31 20:41:36 stsp Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -45,6 +45,7 @@
      SUBDIR += cgames
      SUBDIR += cgoban
      SUBDIR += chessx
+     SUBDIR += chiaki
      SUBDIR += childsplay
      SUBDIR += chocolate-doom
      SUBDIR += choria
