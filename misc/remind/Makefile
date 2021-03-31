@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2021/02/01 16:20:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2021/03/31 13:38:18 bket Exp $
 
 COMMENT=	scripting language for reminders, with a Tk front end
 
-DISTNAME=	remind-03.03.05
-PKGNAME=	remind-3.3.5
+DISTNAME=	remind-03.03.06
+PKGNAME=	remind-3.3.6
 
 CATEGORIES=	misc
 
@@ -17,6 +17,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=		c m
 
 MASTER_SITES=	https://dianne.skoll.ca/projects/remind/download/
+
+TEST_ENV=		LC_ALL=en_US.UTF-8
 
 MODULES=		x11/tk
 MODTK_VERSION =		8.6
