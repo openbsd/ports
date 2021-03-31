@@ -1,4 +1,4 @@
-$OpenBSD: patch-angr_knowledge_plugins_functions_function_py,v 1.6 2021/01/17 19:50:44 jasper Exp $
+$OpenBSD: patch-angr_knowledge_plugins_functions_function_py,v 1.7 2021/03/31 18:12:19 jasper Exp $
 
 Drop itanium_demangler dependency
 
@@ -6,7 +6,7 @@ Index: angr/knowledge_plugins/functions/function.py
 --- angr/knowledge_plugins/functions/function.py.orig
 +++ angr/knowledge_plugins/functions/function.py
 @@ -7,8 +7,6 @@ from collections import defaultdict
- from typing import Union, Optional, Iterable, Set
+ from typing import Union, Optional, Iterable, Set, Generator
  from typing import Type # For some reasons the linter doesn't recognize the use in apply_definition but PyCharm needs it imported to correctly recognize it # pylint: disable=unused-import
  
 -from itanium_demangler import parse

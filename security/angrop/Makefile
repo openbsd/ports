@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.13 2021/02/23 19:39:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/03/31 18:12:19 jasper Exp $
 
 # sync with devel/angr/Makefile.inc
 ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		ROP chain builder based off of angr
 
-MODPY_EGG_VERSION =	9.0.5450
+MODPY_EGG_VERSION =	9.0.6642
 DISTNAME =		angrop-${MODPY_EGG_VERSION}
 
 CATEGORIES =		security
 
 HOMEPAGE =		https://github.com/salls/angrop
-
-MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # license field not set, consider bugging module's author
 PERMIT_PACKAGE =	Yes

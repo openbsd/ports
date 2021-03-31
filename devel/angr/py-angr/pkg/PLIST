@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/01/17 19:50:44 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/03/31 18:12:19 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/angr/
 lib/python${MODPY_VERSION}/site-packages/angr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/angr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -58,6 +58,7 @@ lib/python${MODPY_VERSION}/site-packages/angr/analyses/${MODPY_PYCACHE}girlscout
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/${MODPY_PYCACHE}init_finder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/${MODPY_PYCACHE}loop_analysis.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/${MODPY_PYCACHE}loopfinder.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/${MODPY_PYCACHE}proximity_graph.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/${MODPY_PYCACHE}reassembler.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/${MODPY_PYCACHE}soot_class_hierarchy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/${MODPY_PYCACHE}stack_pointer_tracker.${MODPY_PYC_MAGIC_TAG}pyc
@@ -190,6 +191,36 @@ lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_p
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/multi_simplifier.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/optimization_pass.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/stack_canary_simplifier.py
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/${MODPY_PYCACHE}a_sub_a_sub_n.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/${MODPY_PYCACHE}bool_expr_xor_1.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/${MODPY_PYCACHE}coalesce_same_cascading_ifs.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/${MODPY_PYCACHE}constant_derefs.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/${MODPY_PYCACHE}conv_a_sub0_shr_and.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/${MODPY_PYCACHE}conv_shl_shr.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/${MODPY_PYCACHE}one_sub_bool.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/${MODPY_PYCACHE}remove_empty_if_body.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/${MODPY_PYCACHE}remove_redundant_bitmasks.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/${MODPY_PYCACHE}remove_redundant_nots.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/${MODPY_PYCACHE}remove_redundant_shifts.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/${MODPY_PYCACHE}single_bit_xor.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/a_sub_a_sub_n.py
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/base.py
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/bool_expr_xor_1.py
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/coalesce_same_cascading_ifs.py
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/constant_derefs.py
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/conv_a_sub0_shr_and.py
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/conv_shl_shr.py
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/one_sub_bool.py
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/remove_empty_if_body.py
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/remove_redundant_bitmasks.py
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/remove_redundant_nots.py
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/remove_redundant_shifts.py
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/single_bit_xor.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/region_identifier.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/region_simplifier.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/sequence_walker.py
@@ -306,6 +337,7 @@ lib/python${MODPY_VERSION}/site-packages/angr/analyses/propagator/engine_vex.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/propagator/propagator.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/propagator/values.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/propagator/vex_vars.py
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/proximity_graph.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/reaching_definitions/
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/reaching_definitions/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/angr/analyses/reaching_definitions/${MODPY_PYCACHE}/
@@ -978,6 +1010,7 @@ lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/${MODPY_PYCACHE}fs
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/${MODPY_PYCACHE}ftell.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/${MODPY_PYCACHE}fwrite.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/${MODPY_PYCACHE}getchar.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/${MODPY_PYCACHE}getdelim.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/${MODPY_PYCACHE}getegid.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/${MODPY_PYCACHE}geteuid.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/${MODPY_PYCACHE}getgid.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1009,6 +1042,7 @@ lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/${MODPY_PYCACHE}st
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/${MODPY_PYCACHE}strncat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/${MODPY_PYCACHE}strncmp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/${MODPY_PYCACHE}strncpy.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/${MODPY_PYCACHE}strnlen.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/${MODPY_PYCACHE}strstr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/${MODPY_PYCACHE}strtol.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/${MODPY_PYCACHE}strtoul.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1043,6 +1077,7 @@ lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/fseek.py
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/ftell.py
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/fwrite.py
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/getchar.py
+lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/getdelim.py
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/getegid.py
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/geteuid.py
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/getgid.py
@@ -1074,6 +1109,7 @@ lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/strlen.py
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/strncat.py
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/strncmp.py
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/strncpy.py
+lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/strnlen.py
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/strstr.py
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/strtol.py
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/libc/strtoul.py
