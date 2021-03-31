@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2021/02/19 23:13:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/03/31 20:39:22 sthen Exp $
 
 COMMENT=	Javascript Object Signing and Encryption (JOSE)
 
 CATEGORIES=	security devel
 
-MODPY_EGG_VERSION= 1.7.0
+MODPY_EGG_VERSION= 1.8.0
 DISTNAME=	josepy-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 FLAVORS=	python3
 FLAVOR=		python3
@@ -20,8 +19,7 @@ MODPY_PI=	Yes
 MODPY_SETUPTOOLS= Yes
 SUBST_VARS=	MODPY_FLAVOR
 
-RUN_DEPENDS=	devel/py-six${MODPY_FLAVOR} \
-		security/py-cryptography${MODPY_FLAVOR} \
+RUN_DEPENDS=	security/py-cryptography${MODPY_FLAVOR} \
 		security/py-openssl${MODPY_FLAVOR}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
