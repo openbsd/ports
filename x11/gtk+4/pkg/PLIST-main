@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2020/12/09 13:42:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2021/03/31 13:42:46 ajacoutot Exp $
 @bin bin/gtk4-builder-tool
 @bin bin/gtk4-encode-symbolic-svg
 @bin bin/gtk4-launch
@@ -74,6 +74,7 @@ include/gtk-4.0/gdk/x11/gdkx11utils.h
 include/gtk-4.0/gsk/
 include/gtk-4.0/gsk/gl/
 include/gtk-4.0/gsk/gl/gskglrenderer.h
+include/gtk-4.0/gsk/gl/gsknglrenderer.h
 include/gtk-4.0/gsk/gsk-autocleanup.h
 include/gtk-4.0/gsk/gsk.h
 include/gtk-4.0/gsk/gskcairorenderer.h

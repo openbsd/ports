@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2021/03/07 08:28:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2021/03/31 13:42:46 ajacoutot Exp $
 
 # XXX add support for libcloudproviders? (-Dcloudproviders=enabled)
 # XXX add support for tracker3? (-Dtracker=enabled)
@@ -13,7 +13,7 @@ COMMENT-guic=		gtk+ icon theme caching utility
 COMMENT-media=		gtk+ media engine
 
 GNOME_PROJECT=		gtk
-GNOME_VERSION=		4.0.3
+GNOME_VERSION=		4.2.0
 
 PKGNAME-main=		gtk+4-${GNOME_VERSION}
 PKGNAME-cloudprint=	gtk+4-cloudprint-${GNOME_VERSION}
@@ -22,11 +22,9 @@ PKGNAME-demos=		gtk+4-demos-${GNOME_VERSION}
 PKGNAME-guic=		gtk4-update-icon-cache-${GNOME_VERSION}
 PKGNAME-media=		gtk+4-media-${GNOME_VERSION}
 
-REVISION-guic=		0
-
 CATEGORIES=		x11 devel
 
-SHARED_LIBS += gtk-4                     3.3 # 1.0.2
+SHARED_LIBS += gtk-4                     4.0 # 1.200.0
 
 HOMEPAGE=		http://www.gtk.org/
 
@@ -92,11 +90,11 @@ WANTLIB-demos += c cairo epoxy gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB-demos += graphene-1.0 gtk-4 harfbuzz intl m pango-1.0 pangocairo-1.0
 WANTLIB-demos += rsvg-2
 
-LIB_DEPENDS-guic=	x11/gtk+4,-main
+LIB_DEPENDS-guic=	graphics/gdk-pixbuf2
 RUN_DEPENDS-guic=	x11/hicolor-icon-theme
 
 # uses pledge()
-WANTLIB-guic += c gdk_pixbuf-2.0 glib-2.0 gtk-4 intl
+WANTLIB-guic += c gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 intl
 
 # gstreamer1-plugins-bad: gstplayer-1.0
 LIB_DEPENDS-media=	multimedia/gstreamer1/plugins-bad \

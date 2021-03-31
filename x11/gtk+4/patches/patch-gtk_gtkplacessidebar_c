@@ -1,11 +1,11 @@
-$OpenBSD: patch-gtk_gtkplacessidebar_c,v 1.7 2020/12/09 13:42:56 ajacoutot Exp $
+$OpenBSD: patch-gtk_gtkplacessidebar_c,v 1.8 2021/03/31 13:42:46 ajacoutot Exp $
 
 unveil(2): check if the XDG directories exist before showing them on the sidebar
 
 Index: gtk/gtkplacessidebar.c
 --- gtk/gtkplacessidebar.c.orig
 +++ gtk/gtkplacessidebar.c
-@@ -602,6 +602,7 @@ add_special_dirs (GtkPlacesSidebar *sidebar)
+@@ -600,6 +600,7 @@ add_special_dirs (GtkPlacesSidebar *sidebar)
         */
        if (path == NULL ||
            path_is_home_dir (path) ||
@@ -13,7 +13,7 @@ Index: gtk/gtkplacessidebar.c
            g_list_find_custom (dirs, path, (GCompareFunc) g_strcmp0) != NULL)
          continue;
  
-@@ -654,7 +655,8 @@ get_desktop_directory_uri (void)
+@@ -652,7 +653,8 @@ get_desktop_directory_uri (void)
    /* "To disable a directory, point it to the homedir."
     * See http://freedesktop.org/wiki/Software/xdg-user-dirs
     */
@@ -23,7 +23,7 @@ Index: gtk/gtkplacessidebar.c
      return NULL;
  
    return g_filename_to_uri (name, NULL, NULL);
-@@ -1019,6 +1021,11 @@ update_places (GtkPlacesSidebar *sidebar)
+@@ -1017,6 +1019,11 @@ update_places (GtkPlacesSidebar *sidebar)
  
    /* home folder */
    home_uri = get_home_directory_uri ();
@@ -35,7 +35,7 @@ Index: gtk/gtkplacessidebar.c
    start_icon = g_themed_icon_new_with_default_fallbacks (ICON_NAME_HOME);
    add_place (sidebar, GTK_PLACES_BUILT_IN,
               GTK_PLACES_SECTION_COMPUTER,
-@@ -1028,6 +1035,9 @@ update_places (GtkPlacesSidebar *sidebar)
+@@ -1026,6 +1033,9 @@ update_places (GtkPlacesSidebar *sidebar)
    g_object_unref (start_icon);
    g_free (home_uri);
  
