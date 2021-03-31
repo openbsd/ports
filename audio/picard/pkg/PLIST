@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/02/21 21:10:40 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.12 2021/03/31 19:12:25 sthen Exp $
 bin/picard
 lib/python${MODPY_VERSION}/site-packages/picard/
 lib/python${MODPY_VERSION}/site-packages/picard-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -354,6 +354,7 @@ lib/python${MODPY_VERSION}/site-packages/picard/util/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/picard/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/picard/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/util/${MODPY_PYCACHE}astrcmp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/picard/util/${MODPY_PYCACHE}bitreader.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/util/${MODPY_PYCACHE}bytes2human.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/util/${MODPY_PYCACHE}cdrom.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/util/${MODPY_PYCACHE}checkupdate.${MODPY_PYC_MAGIC_TAG}pyc
@@ -376,6 +377,7 @@ lib/python${MODPY_VERSION}/site-packages/picard/util/${MODPY_PYCACHE}webbrowser2
 lib/python${MODPY_VERSION}/site-packages/picard/util/${MODPY_PYCACHE}xml.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/picard/util/_astrcmp.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/picard/util/astrcmp.py
+lib/python${MODPY_VERSION}/site-packages/picard/util/bitreader.py
 lib/python${MODPY_VERSION}/site-packages/picard/util/bytes2human.py
 lib/python${MODPY_VERSION}/site-packages/picard/util/cdrom.py
 lib/python${MODPY_VERSION}/site-packages/picard/util/checkupdate.py
