@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2021/03/25 12:37:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2021/03/31 14:07:48 sthen Exp $
 
 COMMENT =		lint-like code checker for Python code
 
-MODPY_EGG_VERSION =	2.7.2
+MODPY_EGG_VERSION =	2.7.4
 DISTNAME=		pylint-${MODPY_EGG_VERSION}
 
 CATEGORIES=		devel
@@ -25,7 +25,8 @@ RUN_DEPENDS =		devel/py-astroid${MODPY_FLAVOR}>=2.4 \
 			devel/py-six${MODPY_FLAVOR} \
 			textproc/py-toml${MODPY_FLAVOR}
 
-TEST_DEPENDS = 		devel/py-logilab-common${MODPY_FLAVOR}>=1.3.0
+TEST_DEPENDS =		devel/py-logilab-common${MODPY_FLAVOR}>=1.3.0 \
+			devel/py-test-benchmark${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR =		python3

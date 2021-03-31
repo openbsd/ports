@@ -1,8 +1,9 @@
-$OpenBSD: patch-tests-lint-unittest_lint_py,v 1.1 2021/01/05 04:37:20 kn Exp $
+$OpenBSD: patch-tests-lint-unittest_lint_py,v 1.2 2021/03/31 14:07:48 sthen Exp $
+
 Index: tests/lint/unittest_lint.py
 --- tests/lint/unittest_lint.py.orig
 +++ tests/lint/unittest_lint.py
-@@ -630,6 +630,12 @@ def pop_pylintrc():
+@@ -624,6 +624,12 @@ def pop_pylintrc():
  
  @pytest.mark.usefixtures("pop_pylintrc")
  def test_pylint_home():
