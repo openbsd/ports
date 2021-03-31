@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.64 2021/02/05 17:08:04 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.65 2021/03/31 17:57:32 naddy Exp $
 @bin bin/curl
 bin/curl-config
 include/curl/
@@ -60,6 +60,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLINFO_REDIRECT_TIME.3
 @man man/man3/CURLINFO_REDIRECT_TIME_T.3
 @man man/man3/CURLINFO_REDIRECT_URL.3
+@man man/man3/CURLINFO_REFERER.3
 @man man/man3/CURLINFO_REQUEST_SIZE.3
 @man man/man3/CURLINFO_RESPONSE_CODE.3
 @man man/man3/CURLINFO_RETRY_AFTER.3
@@ -147,6 +148,9 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_DNS_SERVERS.3
 @man man/man3/CURLOPT_DNS_SHUFFLE_ADDRESSES.3
 @man man/man3/CURLOPT_DNS_USE_GLOBAL_CACHE.3
+@man man/man3/CURLOPT_DOH_SSL_VERIFYHOST.3
+@man man/man3/CURLOPT_DOH_SSL_VERIFYPEER.3
+@man man/man3/CURLOPT_DOH_SSL_VERIFYSTATUS.3
 @man man/man3/CURLOPT_DOH_URL.3
 @man man/man3/CURLOPT_EGDSOCKET.3
 @man man/man3/CURLOPT_ERRORBUFFER.3
