@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2020/01/12 17:25:37 bket Exp $
+# $OpenBSD: Makefile,v 1.12 2021/03/31 20:37:37 sthen Exp $
 
 COMMENT =	command-line encryption using scrypt key derivation function
 
-DISTNAME =	scrypt-1.3.0
-REVISION =	0
+DISTNAME =	scrypt-1.3.1
 
 SHARED_LIBS +=	scrypt-kdf                0.0 # 1.0
 
