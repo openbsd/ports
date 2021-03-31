@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.69 2020/04/15 16:18:48 espie Exp $
+# $OpenBSD: proot,v 1.70 2021/03/31 07:56:43 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -191,6 +191,9 @@ sub do_parm
 	    	$state->{LOGDIR} = File::Spec->canonpath($v);
 	    }, snapshot => sub {
 	    	$state->{snapshot} = $v;
+	    }, trusted_snapshot => sub {
+	    	$state->{snapshot} = $v;
+		$state->{trusted} = 1;
 	    }, actions => sub {
 	    	if ($v eq 'none') {
 			delete $state->{actions};
@@ -766,6 +769,21 @@ sub extract_archive
 	$in->close;
 }
 
+sub find_snapshot_version
+{
+	my ($state, $snapdir, $check) = @_;
+	open my $f, '<', "$snapdir/$check" or
+	    $state->fatal("no $check");
+	while (<$f>) {
+		if (m/openbsd\-(\d+)\-base/) {
+			return $1;
+		} elsif (m/base(\d+)\.tgz/) {
+			return $1;
+		}
+	}
+	$state->fatal("Unrecognized snapshot: no version in $check");
+}
+
 sub get_snapshot
 {
 	my $state = shift;
@@ -782,14 +800,10 @@ sub get_snapshot
 			$grab = sub {};
 		}
 
-		&$grab("SHA256.sig");
-		open my $f, '<', "$snapdir/SHA256.sig" 
-		    or $state->fatal("no SHA256.sig");
-		my $line = <$f>;
-		if ($line !~ m/openbsd\-(\d+)\-base/) {
-			$state->fatal("Unrecognized snapshot");
-		}
-		my $v = $1;
+		my $check = $state->{trusted} ? "SHA256" : "SHA256.sig";
+
+		&$grab($check);
+		my $v = $state->find_snapshot_version($snapdir, $check);
 		my (@files, @later);
 		for my $set (sort keys %{$state->{sets}}) {
 			if ($set =~ m/etc/) {
@@ -800,11 +814,11 @@ sub get_snapshot
 				push(@files, $file);
 			}
 		}
-		if ($state->system(
+		if (!$state->{trusted} && $state->system(
 		    sub {
 			$state->chdir($snapdir); },
 		    '/usr/bin/signify', '-C', '-p',
-		    "/etc/signify/openbsd-$v-base.pub", '-x', 'SHA256.sig',
+		    "/etc/signify/openbsd-$v-base.pub", '-x', $check, 
 		    @files) != 0) {
 			$state->fatal("Checksum error");
 		}
