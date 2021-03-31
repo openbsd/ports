@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.81 2021/01/31 14:19:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.82 2021/03/31 20:07:57 sthen Exp $
 
 COMMENT=	library for dynamic creation of images
 
-V=		2.3.1
+V=		2.3.2
 DISTNAME=	libgd-$V
 PKGNAME=	gd-$V
 
-SHARED_LIBS +=	gd                   22.1     # 3.0
+SHARED_LIBS +=	gd                   22.2     # 3.0
 
 CATEGORIES=	graphics
 
@@ -14,10 +14,10 @@ HOMEPAGE=	https://libgd.github.io/
 
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c fontconfig freetype iconv jpeg m png pthread
-WANTLIB += tiff webp z
+WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += c fontconfig freetype iconv jpeg m png tiff webp z
 
-COMPILER =	base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 MASTER_SITES=	https://github.com/libgd/libgd/releases/download/${PKGNAME}/
@@ -30,7 +30,8 @@ LIB_DEPENDS=	converters/libiconv \
 		graphics/png \
 		graphics/tiff
 
-CONFIGURE_ARGS+=-DBUILD_STATIC_LIBS=ON \
+CONFIGURE_ARGS+= \
+		-DBUILD_STATIC_LIBS=ON \
 		-DENABLE_FONTCONFIG=1 \
 		-DENABLE_FREETYPE=1 \
 		-DENABLE_GD_FORMATS=1 \
@@ -39,5 +40,12 @@ CONFIGURE_ARGS+=-DBUILD_STATIC_LIBS=ON \
 		-DENABLE_PNG=1 \
 		-DENABLE_TIFF=1 \
 		-DENABLE_WEBP=1
+
+# Could be enabled if needed:
+# graphics/libavif, multimedia/libheif, graphics/libimagequant
+CONFIGURE_ARGS+= \
+		-DENABLE_AVIF=0 \
+		-DENABLE_HEIF=0 \
+		-DENABLE_LIQ=0
 
 .include <bsd.port.mk>
