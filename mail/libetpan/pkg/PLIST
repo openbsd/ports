@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/09/17 20:28:33 jca Exp $
-bin/libetpan-config
+@comment $OpenBSD: PLIST,v 1.6 2021/03/31 20:28:43 sthen Exp $
 include/libetpan/
 include/libetpan.h
 include/libetpan/acl.h
@@ -9,6 +8,7 @@ include/libetpan/annotatemore_types.h
 include/libetpan/carray.h
 include/libetpan/charconv.h
 include/libetpan/chash.h
+include/libetpan/clientid.h
 include/libetpan/clist.h
 include/libetpan/condstore.h
 include/libetpan/condstore_types.h
@@ -165,6 +165,7 @@ include/libetpan/xgmlabels.h
 include/libetpan/xgmmsgid.h
 include/libetpan/xgmthrid.h
 include/libetpan/xlist.h
-lib/libetpan.a
+@static-lib lib/libetpan.a
 lib/libetpan.la
 @lib lib/libetpan.so.${LIBetpan_VERSION}
+lib/pkgconfig/libetpan.pc

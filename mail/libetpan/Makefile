@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2020/04/02 22:50:17 danj Exp $
+# $OpenBSD: Makefile,v 1.40 2021/03/31 20:28:43 sthen Exp $
 
 COMMENT=	mail purpose library
 
 GH_ACCOUNT=	dinhviethoa
 GH_PROJECT=	libetpan
-GH_TAGNAME=	1.9.3
+GH_TAGNAME=	1.9.4
 CATEGORIES=	mail devel
-REVISION=	0
 
 SHARED_LIBS +=  etpan                18.2     # 24.0
 
@@ -15,9 +14,11 @@ HOMEPAGE=	https://www.etpan.org/libetpan.html
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += crypto curl expat iconv m nghttp2 pthread sasl2 ssl ${COMPILER_LIBCXX} z
+WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += crypto curl expat iconv m nghttp2 pthread sasl2 ssl z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
