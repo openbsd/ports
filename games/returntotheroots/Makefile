@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2020/12/12 06:59:51 bcallah Exp $
+# $OpenBSD: Makefile,v 1.15 2021/04/01 18:58:53 bcallah Exp $
+
+BROKEN =	needs updating for new Boost
 
 V =		0.8.2.20180924
 COMMENT =	open source engine remake of The Settlers 2 (s25client)
