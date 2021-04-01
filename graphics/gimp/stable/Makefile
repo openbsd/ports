@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.143 2021/03/31 20:52:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.144 2021/04/01 10:01:06 sthen Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
@@ -90,7 +90,8 @@ LIB_DEPENDS=	archivers/bzip2 \
 		x11/gnome/librsvg \
 		x11/gtk+2>=2.24.10
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+CONFIGURE_ENV=	CC_FOR_BUILD="${CC}" \
+		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 USE_GMAKE=		Yes
