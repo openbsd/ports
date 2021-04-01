@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/06/17 21:48:16 kurt Exp $
+# $OpenBSD: Makefile,v 1.8 2021/04/01 12:26:52 kn Exp $
 
 FW_DRIVER=	bwfm
 LINUX_VER=	20200316
@@ -8,6 +8,8 @@ DISTNAME=	linux-firmware-${LINUX_VER}
 EXTRACT_SUFX=	.tar.xz
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		brcm-supplemental-${SUP_VER}.tar.gz:1
+# broad enough to reduce WRKSRC size but specific enough to match both DISTFILES
+EXTRACT_FILES=	\*/{brcm\*.{bin,txt},LICEN[CS]E\*}
 
 MAINTAINER=	Patrick Wildt <patrick@blueri.se>
 
