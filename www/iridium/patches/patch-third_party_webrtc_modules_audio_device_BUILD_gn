@@ -1,13 +1,14 @@
-$OpenBSD: patch-third_party_webrtc_modules_audio_device_BUILD_gn,v 1.12 2020/11/05 15:49:53 robert Exp $
+$OpenBSD: patch-third_party_webrtc_modules_audio_device_BUILD_gn,v 1.13 2021/04/01 10:24:46 robert Exp $
+
 Index: third_party/webrtc/modules/audio_device/BUILD.gn
 --- third_party/webrtc/modules/audio_device/BUILD.gn.orig
 +++ third_party/webrtc/modules/audio_device/BUILD.gn
-@@ -259,7 +259,7 @@ rtc_library("audio_device_impl") {
+@@ -263,7 +263,7 @@ rtc_library("audio_device_impl") {
      if (rtc_use_dummy_audio_file_devices) {
        defines += [ "WEBRTC_DUMMY_FILE_DEVICES" ]
      } else {
--      if (is_linux) {
-+      if (is_linux && !is_openbsd) {
+-      if (is_linux || is_chromeos) {
++      if ((is_linux || is_chromeos) && !is_openbsd) {
          sources += [
            "linux/alsasymboltable_linux.cc",
            "linux/alsasymboltable_linux.h",

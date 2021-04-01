@@ -1,18 +1,18 @@
-$OpenBSD: patch-chrome_browser_policy_configuration_policy_handler_list_factory_cc,v 1.5 2020/11/05 15:49:50 robert Exp $
+$OpenBSD: patch-chrome_browser_policy_configuration_policy_handler_list_factory_cc,v 1.6 2021/04/01 10:24:44 robert Exp $
 
 Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
 --- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig
 +++ chrome/browser/policy/configuration_policy_handler_list_factory.cc
-@@ -1232,7 +1232,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1231,7 +1231,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      base::Value::Type::BOOLEAN },
- #endif  // !defined(OS_MACOSX) && !defined(OS_CHROMEOS)
+ #endif  // !defined(OS_MAC) && !defined(OS_CHROMEOS)
  
--#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS) || defined(OS_BSD)
    { key::kAuthNegotiateDelegateByKdcPolicy,
      prefs::kAuthNegotiateDelegateByKdcPolicy,
      base::Value::Type::BOOLEAN },
-@@ -1304,7 +1304,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1279,7 +1279,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      base::Value::Type::BOOLEAN },
  #endif  // BUILDFLAG(ENABLE_SPELLCHECK)
  

@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_core_scroll_scrollbar_theme_aura_cc,v 1.6 2020/11/05 15:49:52 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_core_scroll_scrollbar_theme_aura_cc,v 1.7 2021/04/01 10:24:45 robert Exp $
 
 Index: third_party/blink/renderer/core/scroll/scrollbar_theme_aura.cc
 --- third_party/blink/renderer/core/scroll/scrollbar_theme_aura.cc.orig
@@ -7,17 +7,17 @@ Index: third_party/blink/renderer/core/scroll/scrollbar_theme_aura.cc
  // Disable snapback on desktop Linux to better integrate with the desktop
  // behavior. Typically, Linux apps do not implement scrollbar snapback (this
  // is true for at least GTK and QT apps).
--#if (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
    return false;
  #else
    return true;
-@@ -301,7 +301,7 @@ ScrollbarPart ScrollbarThemeAura::PartsToInvalidateOnT
+@@ -303,7 +303,7 @@ ScrollbarPart ScrollbarThemeAura::PartsToInvalidateOnT
  
  bool ScrollbarThemeAura::ShouldCenterOnThumb(const Scrollbar& scrollbar,
                                               const WebMouseEvent& event) {
--#if (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
    if (event.button == WebPointerProperties::Button::kMiddle)
      return true;
  #endif

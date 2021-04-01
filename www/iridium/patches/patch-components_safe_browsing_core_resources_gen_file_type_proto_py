@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_safe_browsing_core_resources_gen_file_type_proto_py,v 1.1 2020/11/05 15:49:51 robert Exp $
+$OpenBSD: patch-components_safe_browsing_core_resources_gen_file_type_proto_py,v 1.2 2021/04/01 10:24:44 robert Exp $
 
 Index: components/safe_browsing/core/resources/gen_file_type_proto.py
 --- components/safe_browsing/core/resources/gen_file_type_proto.py.orig

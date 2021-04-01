@@ -1,23 +1,23 @@
-$OpenBSD: patch-base_allocator_allocator_gni,v 1.3 2020/11/05 15:49:49 robert Exp $
+$OpenBSD: patch-base_allocator_allocator_gni,v 1.4 2021/04/01 10:24:43 robert Exp $
 
 Index: base/allocator/allocator.gni
 --- base/allocator/allocator.gni.orig
 +++ base/allocator/allocator.gni
-@@ -8,7 +8,7 @@ import("//build/config/sanitizers/sanitizers.gni")
- # Temporarily disable tcmalloc on arm64 linux to get rid of compilation errors.
- if (is_android || is_mac || is_ios || is_asan || is_lsan || is_tsan ||
-     is_msan || is_win || is_fuchsia || (is_linux && target_cpu == "arm64") ||
--    (is_cast_audio_only && target_cpu == "arm")) {
-+    (is_cast_audio_only && target_cpu == "arm") || is_openbsd) {
-   _default_allocator = "none"
- } else {
-   _default_allocator = "tcmalloc"
-@@ -19,7 +19,7 @@ if (is_android || is_mac || is_ios || is_asan || is_ls
+@@ -10,7 +10,7 @@ import("//build/config/sanitizers/sanitizers.gni")
  # against the debug CRT with "is_nacl=false".
- if ((is_linux || is_android || is_mac || is_ios ||
+ if ((is_linux || is_chromeos || is_android || is_apple ||
       (is_win && !is_component_build && !is_debug)) && !is_asan && !is_hwasan &&
 -    !is_lsan && !is_tsan && !is_msan) {
 +    !is_lsan && !is_tsan && !is_msan && !is_openbsd) {
    _default_use_allocator_shim = true
  } else {
    _default_use_allocator_shim = false
+@@ -18,7 +18,7 @@ if ((is_linux || is_chromeos || is_android || is_apple
+ 
+ # Temporarily disable tcmalloc on arm64 linux to get rid of compilation errors.
+ if (is_android || is_apple || is_asan || is_lsan || is_tsan || is_msan ||
+-    is_win || is_fuchsia ||
++    is_win || is_fuchsia || is_openbsd ||
+     ((is_linux || is_chromeos) && target_cpu == "arm64") ||
+     (is_cast_audio_only && target_cpu == "arm")) {
+   _default_allocator = "none"

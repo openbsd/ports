@@ -1,45 +1,45 @@
-$OpenBSD: patch-chrome_common_pref_names_cc,v 1.25 2020/11/05 15:49:50 robert Exp $
+$OpenBSD: patch-chrome_common_pref_names_cc,v 1.26 2021/04/01 10:24:44 robert Exp $
 
 Index: chrome/common/pref_names.cc
 --- chrome/common/pref_names.cc.orig
 +++ chrome/common/pref_names.cc
-@@ -1081,7 +1081,7 @@ const char kForceYouTubeRestrict[] = "settings.force_y
+@@ -1089,7 +1089,7 @@ const char kForceYouTubeRestrict[] = "settings.force_y
  // only using an account that belongs to one of the domains from this pref.
  const char kAllowedDomainsForApps[] = "settings.allowed_domains_for_apps";
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
  // Linux specific preference on whether we should match the system theme.
  const char kUsesSystemTheme[] = "extensions.theme.use_system";
  #endif
-@@ -1224,7 +1224,7 @@ const char kShowUpdatePromotionInfoBar[] =
+@@ -1246,7 +1246,7 @@ const char kShowUpdatePromotionInfoBar[] =
      "browser.show_update_promotion_info_bar";
  #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
  // Boolean that is false if we should show window manager decorations.  If
  // true, we draw a custom chrome frame (thicker title bar and blue border).
  const char kUseCustomChromeFrame[] = "browser.custom_chrome_frame";
-@@ -1673,7 +1673,7 @@ const char kDownloadDefaultDirectory[] = "download.def
- // upgrade a unsafe location to a safe location.
+@@ -1688,7 +1688,7 @@ const char kDownloadDefaultDirectory[] = "download.def
  const char kDownloadDirUpgraded[] = "download.directory_upgrade";
  
--#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX)
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
+ #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_MAC)
++    defined(OS_MAC) || defined(OS_BSD)
  const char kOpenPdfDownloadInSystemReader[] =
      "download.open_pdf_in_system_reader";
  #endif
-@@ -1988,7 +1988,7 @@ const char kGloballyScopeHTTPAuthCacheEnabled[] =
- const char kAmbientAuthenticationInPrivateModesEnabled[] =
-     "auth.ambient_auth_in_private_modes";
+@@ -2044,7 +2044,7 @@ const char kAmbientAuthenticationInPrivateModesEnabled
+ // requests.
+ const char kBasicAuthOverHttpEnabled[] = "auth.basic_over_http_enabled";
  
--#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS) || defined(OS_BSD)
  // Boolean that specifies whether OK-AS-DELEGATE flag from KDC is respected
- // along with kAuthNegotiateDelegateWhitelist.
+ // along with kAuthNegotiateDelegateAllowlist.
  const char kAuthNegotiateDelegateByKdcPolicy[] =
-@@ -2914,7 +2914,7 @@ const char kAutoplayWhitelist[] = "media.autoplay_whit
+@@ -2955,7 +2955,7 @@ const char kAutoplayWhitelist[] = "media.autoplay_whit
  const char kBlockAutoplayEnabled[] = "media.block_autoplay";
  #endif  // !defined(OS_ANDROID)
  

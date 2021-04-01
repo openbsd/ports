@@ -1,0 +1,31 @@
+$OpenBSD: patch-sandbox_policy_BUILD_gn,v 1.1 2021/04/01 10:24:45 robert Exp $
+
+Index: sandbox/policy/BUILD.gn
+--- sandbox/policy/BUILD.gn.orig
++++ sandbox/policy/BUILD.gn
+@@ -29,7 +29,7 @@ component("policy") {
+     "//sandbox:common",
+   ]
+   public_deps = []
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_openbsd) {
+     sources += [
+       "linux/bpf_audio_policy_linux.cc",
+       "linux/bpf_audio_policy_linux.h",
+@@ -77,6 +77,16 @@ component("policy") {
+       "//sandbox/linux:seccomp_bpf",
+       "//sandbox/linux:suid_sandbox_client",
+     ]
++  }
++  if (is_openbsd) {
++    sources += [
++      "openbsd/sandbox_openbsd.cc",
++      "openbsd/sandbox_openbsd.h",
++    ]
++    deps += [
++      "//sandbox:sandbox_buildflags",
++    ]
++    libs = [ "util" ]
+   }
+   if (is_chromeos_ash) {
+     sources += [

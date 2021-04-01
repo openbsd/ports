@@ -1,50 +1,50 @@
-$OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.20 2020/11/05 15:49:50 robert Exp $
+$OpenBSD: patch-chrome_browser_chrome_browser_main_cc,v 1.21 2021/04/01 10:24:44 robert Exp $
 
 Index: chrome/browser/chrome_browser_main.cc
 --- chrome/browser/chrome_browser_main.cc.orig
 +++ chrome/browser/chrome_browser_main.cc
-@@ -207,7 +207,7 @@
+@@ -209,7 +209,7 @@
  #include "components/arc/metrics/stability_metrics_manager.h"
  #endif  // defined(OS_CHROMEOS)
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
  #include "chrome/browser/first_run/upgrade_util_linux.h"
  #endif  // defined(OS_LINUX) && !defined(OS_CHROMEOS)
  
-@@ -245,7 +245,7 @@
+@@ -246,7 +246,7 @@
+ #include "ui/shell_dialogs/select_file_dialog.h"
  #endif  // defined(OS_WIN)
  
- #if defined(OS_WIN) || defined(OS_MACOSX) || \
--    (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-+    (defined(OS_LINUX) && !defined(OS_CHROMEOS) || defined(OS_BSD))
+-#if defined(OS_WIN) || defined(OS_MAC) || \
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
+     (defined(OS_LINUX) && !defined(OS_CHROMEOS))
  #include "chrome/browser/metrics/desktop_session_duration/desktop_session_duration_tracker.h"
  #include "chrome/browser/metrics/desktop_session_duration/touch_mode_stats_tracker.h"
- #include "chrome/browser/profiles/profile_activity_metrics_recorder.h"
-@@ -924,7 +924,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -926,7 +926,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
        AddFirstRunNewTabs(browser_creator_.get(), master_prefs_->new_tabs);
      }
  
--#if defined(OS_MACOSX) || defined(OS_LINUX)
-+#if defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_MAC) || defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_MAC) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
      // Create directory for user-level Native Messaging manifest files. This
      // makes it less likely that the directory will be created by third-party
      // software with incorrect owner or permission. See crbug.com/725513 .
-@@ -937,7 +937,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -939,7 +939,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
    }
  #endif  // !defined(OS_ANDROID) && !defined(OS_CHROMEOS)
  
--#if defined(OS_LINUX) || defined(OS_OPENBSD)
-+#if defined(OS_LINUX)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_OPENBSD)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS)
    // Set the product channel for crash reports.
    if (!crash_reporter::IsCrashpadEnabled()) {
      breakpad::SetChannelCrashKey(chrome::GetChannelName());
-@@ -954,7 +954,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -956,7 +956,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
    SecKeychainAddCallback(&KeychainCallback, 0, nullptr);
- #endif  // defined(OS_MACOSX)
+ #endif  // defined(OS_MAC)
  
--#if defined(OS_WIN) || defined(OS_MACOSX) || \
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_BSD) || \
+-#if defined(OS_WIN) || defined(OS_MAC) || \
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
      (defined(OS_LINUX) && !defined(OS_CHROMEOS))
    metrics::DesktopSessionDurationTracker::Initialize();
    ProfileActivityMetricsRecorder::Initialize();

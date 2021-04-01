@@ -1,45 +1,36 @@
-$OpenBSD: patch-base_BUILD_gn,v 1.16 2020/11/05 15:49:49 robert Exp $
+$OpenBSD: patch-base_BUILD_gn,v 1.17 2021/04/01 10:24:43 robert Exp $
 
 Index: base/BUILD.gn
 --- base/BUILD.gn.orig
 +++ base/BUILD.gn
-@@ -60,7 +60,7 @@ declare_args() {
-   # replacement base::Location::Current(). On by default in non-official builds
-   # for testing purposes.
-   # TODO(https://crbug.com/974061): remove this eventually.
--  from_here_uses_location_builtins = !is_official_build
-+  from_here_uses_location_builtins = !is_official_build && !is_bsd
- 
-   # Unsafe developer build. Has developer-friendly features that may weaken or
-   # disable security measures like sandboxing or ASLR.
-@@ -887,7 +887,7 @@ jumbo_component("base") {
+@@ -873,7 +873,7 @@ component("base") {
        "timer/hi_res_timer_manager_posix.cc",
      ]
  
--    if (!is_nacl && !is_mac && !is_ios) {
-+    if (!is_nacl && !is_mac && !is_ios && !is_openbsd) {
+-    if (!is_nacl && !is_apple) {
++    if (!is_nacl && !is_apple && !is_openbsd) {
        sources += [
-         "profiler/stack_copier_signal.cc",
-         "profiler/stack_copier_signal.h",
-@@ -896,6 +896,12 @@ jumbo_component("base") {
+         "cpu_affinity_posix.cc",
+         "cpu_affinity_posix.h",
+@@ -884,6 +884,12 @@ component("base") {
          "profiler/thread_delegate_posix.h",
        ]
      }
 +
 +    if (is_openbsd) {
 +      sources += [
-+        "profiler/stack_sampler_openbsd.cc",
++        "profiler/stack_sampler_posix.cc",
 +      ]
 +    }
    }
  
    if (is_win) {
-@@ -1287,11 +1293,16 @@ jumbo_component("base") {
-   # Needed for <atomic> if using newer C++ library than sysroot, except if
+@@ -1293,11 +1299,16 @@ component("base") {
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
--  if (!use_sysroot && (is_android || (is_linux && !is_chromecast)) &&
-+  if (!use_sysroot && (is_android || (is_linux && !is_chromecast) && !is_clang) &&
+   if (!use_sysroot &&
+-      (is_android || ((is_linux || is_chromeos) && !is_chromecast)) &&
++      (is_android || ((is_linux || is_chromeos) && !is_chromecast && !is_openbsd)) &&
        host_toolchain != "//build/toolchain/cros:host") {
      libs += [ "atomic" ]
    }
@@ -52,19 +43,21 @@ Index: base/BUILD.gn
    if (use_allocator_shim) {
      sources += [
        "allocator/allocator_shim.cc",
-@@ -1313,7 +1324,7 @@ jumbo_component("base") {
-         "allocator/allocator_shim_override_glibc_weak_symbols.h",
-       ]
-       deps += [ "//base/allocator:tcmalloc" ]
--    } else if (is_linux && use_allocator == "none") {
-+    } else if ((is_linux && !is_openbsd) && use_allocator == "none") {
-       sources += [ "allocator/allocator_shim_default_dispatch_to_glibc.cc" ]
-     } else if ((is_linux || is_android) && use_allocator == "partition") {
-       # Cannot use the same dispatching for host-side binaries.
-@@ -1925,6 +1936,29 @@ jumbo_component("base") {
+@@ -1316,7 +1327,7 @@ component("base") {
+     if (is_apple) {
+       sources += [ "allocator/allocator_shim_override_mac_symbols.h" ]
      }
-   }
- 
+-    if (is_chromeos || is_linux) {
++    if (is_chromeos || (is_linux && !is_openbsd)) {
+       sources += [
+         "allocator/allocator_shim_override_cpp_symbols.h",
+         "allocator/allocator_shim_override_glibc_weak_symbols.h",
+@@ -1967,6 +1978,29 @@ component("base") {
+         "linux_util.h",
+       ]
+     }
++  }
++
 +  if (is_openbsd) {
 +    sources -= [
 +      "files/file_path_watcher_linux.cc",
@@ -84,19 +77,8 @@ Index: base/BUILD.gn
 +      "system/sys_info_openbsd.cc",
 +      "files/file_path_watcher_kqueue.cc",
 +      "files/file_path_watcher_kqueue.h",
-+      "files/file_path_watcher_stub.cc",
++      "files/file_path_watcher_bsd.cc",
 +    ]
-+  }
-+
-   # iOS
-   if (is_ios) {
-     sources -= [
-@@ -2486,6 +2520,8 @@ if (is_win) {
-       "//base/win:base_win_buildflags",
-     ]
    }
-+
-+  libs = [ "execinfo" ]
- }
  
- if ((is_win && (current_cpu == "x64" || current_cpu == "arm64")) || is_mac ||
+   # iOS

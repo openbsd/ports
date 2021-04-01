@@ -1,4 +1,4 @@
-$OpenBSD: patch-headless_lib_browser_headless_content_browser_client_cc,v 1.10 2020/11/05 15:49:52 robert Exp $
+$OpenBSD: patch-headless_lib_browser_headless_content_browser_client_cc,v 1.11 2021/04/01 10:24:45 robert Exp $
 
 Index: headless/lib/browser/headless_content_browser_client.cc
 --- headless/lib/browser/headless_content_browser_client.cc.orig
@@ -7,8 +7,8 @@ Index: headless/lib/browser/headless_content_browser_client.cc
    return content::GeneratedCodeCacheSettings(true, 0, context->GetPath());
  }
  
--#if defined(OS_POSIX) && !defined(OS_MACOSX)
-+#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
+-#if defined(OS_POSIX) && !defined(OS_MAC)
++#if defined(OS_POSIX) && !defined(OS_MAC) && !defined(OS_BSD)
  void HeadlessContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
      const base::CommandLine& command_line,
      int child_process_id,

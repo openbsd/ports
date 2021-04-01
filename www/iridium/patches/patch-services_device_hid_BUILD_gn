@@ -1,17 +1,13 @@
-$OpenBSD: patch-services_device_hid_BUILD_gn,v 1.5 2020/11/05 15:49:52 robert Exp $
+$OpenBSD: patch-services_device_hid_BUILD_gn,v 1.6 2021/04/01 10:24:45 robert Exp $
 
 Index: services/device/hid/BUILD.gn
 --- services/device/hid/BUILD.gn.orig
 +++ services/device/hid/BUILD.gn
-@@ -41,6 +41,19 @@ source_set("hid") {
+@@ -33,6 +33,16 @@ source_set("hid") {
      "//services/device/public/mojom",
    ]
  
 +  if (is_openbsd) {
-+    sources -= [
-+      "hid_connection_linux.cc",
-+      "hid_connection_linux.h",
-+    ]
 +    sources += [
 +      "hid_connection_fido.cc",
 +      "hid_connection_fido.h",
@@ -20,6 +16,7 @@ Index: services/device/hid/BUILD.gn
 +    ]
 +    libs = ["fido2", "cbor", "usbhid", "crypto", "util"]
 +  }
-   if (is_linux && use_udev) {
++
+   if ((is_linux || is_chromeos) && use_udev) {
      sources += [
-       "hid_service_linux.cc",
+       "hid_connection_linux.cc",

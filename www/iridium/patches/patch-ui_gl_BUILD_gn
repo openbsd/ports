@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_gl_BUILD_gn,v 1.14 2020/11/05 15:49:53 robert Exp $
+$OpenBSD: patch-ui_gl_BUILD_gn,v 1.15 2021/04/01 10:24:46 robert Exp $
 
 Index: ui/gl/BUILD.gn
 --- ui/gl/BUILD.gn.orig
 +++ ui/gl/BUILD.gn
-@@ -165,8 +165,6 @@ jumbo_component("gl") {
+@@ -156,8 +156,6 @@ component("gl") {
      defines += [ "GPU_ENABLE_SERVICE_LOGGING" ]
    }
  
@@ -12,7 +12,7 @@ Index: ui/gl/BUILD.gn
    all_dependent_configs = [ ":gl_config" ]
  
    public_configs = [ "//third_party/khronos:khronos_headers" ]
-@@ -180,7 +178,6 @@ jumbo_component("gl") {
+@@ -171,7 +169,6 @@ component("gl") {
    ]
    public_deps = [
      "//base",
@@ -20,16 +20,7 @@ Index: ui/gl/BUILD.gn
      "//ui/events/platform",
      "//ui/gfx",
      "//ui/gfx/geometry",
-@@ -230,7 +227,7 @@ jumbo_component("gl") {
-       ]
-     }
- 
--    if (is_posix && !is_fuchsia && !is_mac) {
-+    if (is_posix && !is_fuchsia && !is_mac && !is_openbsd) {
-       # Windows has USE_EGL but doesn't support base::FileDescriptor.
-       # libsync isn't supported or needed on MacOSX.
-       # Fuchsia is excluded due to a libsync dependency and because it's
-@@ -374,7 +371,6 @@ jumbo_component("gl") {
+@@ -371,7 +368,6 @@ component("gl") {
        data_deps += [
          "//third_party/angle:libEGL",
          "//third_party/angle:libGLESv2",
@@ -37,7 +28,7 @@ Index: ui/gl/BUILD.gn
        ]
        if (enable_swiftshader) {
          data_deps += [ "//third_party/swiftshader" ]
-@@ -598,8 +594,6 @@ test("gl_unittests") {
+@@ -601,8 +597,6 @@ test("gl_unittests") {
      "//ui/platform_window",
      "//ui/platform_window:platform_impls",
    ]

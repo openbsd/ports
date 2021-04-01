@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_crashpad_crashpad_util_posix_close_multiple_cc,v 1.5 2020/11/05 15:49:53 robert Exp $
+$OpenBSD: patch-third_party_crashpad_crashpad_util_posix_close_multiple_cc,v 1.6 2021/04/01 10:24:45 robert Exp $
 
 Index: third_party/crashpad/crashpad/util/posix/close_multiple.cc
 --- third_party/crashpad/crashpad/util/posix/close_multiple.cc.orig
@@ -7,8 +7,8 @@ Index: third_party/crashpad/crashpad/util/posix/close_multiple.cc
  // This is an advantage over looping over all possible file descriptors, because
  // no attempt needs to be made to close file descriptors that are not open.
  bool CloseMultipleNowOrOnExecUsingFDDir(int min_fd, int preserve_fd) {
--#if defined(OS_MACOSX)
-+#if defined(OS_MACOSX) || defined(OS_BSD)
+-#if defined(OS_APPLE)
++#if defined(OS_APPLE) || defined(OS_BSD)
    static constexpr char kFDDir[] = "/dev/fd";
- #elif defined(OS_LINUX) || defined(OS_ANDROID)
+ #elif defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)
    static constexpr char kFDDir[] = "/proc/self/fd";

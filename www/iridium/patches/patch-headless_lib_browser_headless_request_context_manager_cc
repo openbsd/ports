@@ -1,4 +1,4 @@
-$OpenBSD: patch-headless_lib_browser_headless_request_context_manager_cc,v 1.5 2020/11/05 15:49:52 robert Exp $
+$OpenBSD: patch-headless_lib_browser_headless_request_context_manager_cc,v 1.6 2021/04/01 10:24:45 robert Exp $
 
 Index: headless/lib/browser/headless_request_context_manager.cc
 --- headless/lib/browser/headless_request_context_manager.cc.orig
@@ -21,9 +21,9 @@ Index: headless/lib/browser/headless_request_context_manager.cc
  ::network::mojom::CryptConfigPtr BuildCryptConfigOnce(
      const base::FilePath& user_data_path) {
    static bool done_once = false;
-@@ -213,7 +213,7 @@ HeadlessRequestContextManager::HeadlessRequestContextM
-     proxy_config_monitor_ = std::make_unique<HeadlessProxyConfigMonitor>(
-         base::ThreadTaskRunnerHandle::Get());
+@@ -218,7 +218,7 @@ HeadlessRequestContextManager::HeadlessRequestContextM
+           base::ThreadTaskRunnerHandle::Get());
+     }
    }
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)

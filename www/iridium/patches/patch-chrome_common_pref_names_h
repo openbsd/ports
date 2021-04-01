@@ -1,45 +1,45 @@
-$OpenBSD: patch-chrome_common_pref_names_h,v 1.25 2020/11/05 15:49:50 robert Exp $
+$OpenBSD: patch-chrome_common_pref_names_h,v 1.26 2021/04/01 10:24:44 robert Exp $
 
 Index: chrome/common/pref_names.h
 --- chrome/common/pref_names.h.orig
 +++ chrome/common/pref_names.h
-@@ -349,7 +349,7 @@ extern const char kHistoryMenuPromoShown[];
+@@ -357,7 +357,7 @@ extern const char kAllowDeletingBrowserHistory[];
  extern const char kForceGoogleSafeSearch[];
  extern const char kForceYouTubeRestrict[];
  extern const char kAllowedDomainsForApps[];
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
  extern const char kUsesSystemTheme[];
  #endif
  extern const char kCurrentThemePackFilename[];
-@@ -380,7 +380,7 @@ extern const char kDefaultBrowserSettingEnabled[];
- #if defined(OS_MACOSX)
+@@ -384,7 +384,7 @@ extern const char kDefaultBrowserSettingEnabled[];
+ #if defined(OS_MAC)
  extern const char kShowUpdatePromotionInfoBar[];
  #endif
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
  extern const char kUseCustomChromeFrame[];
  #endif
  #if BUILDFLAG(ENABLE_PLUGINS)
-@@ -556,7 +556,7 @@ extern const char kDownloadExtensionsToOpen[];
- extern const char kDownloadExtensionsToOpenByPolicy[];
+@@ -555,7 +555,7 @@ extern const char kDownloadExtensionsToOpenByPolicy[];
  extern const char kDownloadAllowedURLsForOpenByPolicy[];
  extern const char kDownloadDirUpgraded[];
--#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX)
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
+ #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_MAC)
++    defined(OS_MAC) || defined(OS_BSD)
  extern const char kOpenPdfDownloadInSystemReader[];
  #endif
  #if defined(OS_ANDROID)
-@@ -776,7 +776,7 @@ extern const char kAllowCrossOriginAuthPrompt[];
- extern const char kGloballyScopeHTTPAuthCacheEnabled[];
+@@ -783,7 +783,7 @@ extern const char kGloballyScopeHTTPAuthCacheEnabled[]
  extern const char kAmbientAuthenticationInPrivateModesEnabled[];
+ extern const char kBasicAuthOverHttpEnabled[];
  
--#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS) || defined(OS_BSD)
  extern const char kAuthNegotiateDelegateByKdcPolicy[];
- #endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS)
+ #endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS)
  
-@@ -1010,7 +1010,7 @@ extern const char kAutoplayWhitelist[];
+@@ -1014,7 +1014,7 @@ extern const char kAutoplayWhitelist[];
  extern const char kBlockAutoplayEnabled[];
  #endif
  

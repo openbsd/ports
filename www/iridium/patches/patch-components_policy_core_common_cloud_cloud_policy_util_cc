@@ -1,59 +1,59 @@
-$OpenBSD: patch-components_policy_core_common_cloud_cloud_policy_util_cc,v 1.4 2020/11/05 15:49:51 robert Exp $
+$OpenBSD: patch-components_policy_core_common_cloud_cloud_policy_util_cc,v 1.5 2021/04/01 10:24:44 robert Exp $
 
 Index: components/policy/core/common/cloud/cloud_policy_util.cc
 --- components/policy/core/common/cloud/cloud_policy_util.cc.orig
 +++ components/policy/core/common/cloud/cloud_policy_util.cc
-@@ -16,7 +16,7 @@
+@@ -17,7 +17,7 @@
  #include <wincred.h>
  #endif
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS) || defined(OS_MACOSX)
-+#if defined(OS_LINUX) && !defined(OS_CHROMEOS) || defined(OS_MACOSX) || defined(OS_BSD)
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS) || defined(OS_APPLE)
++#if defined(OS_LINUX) && !defined(OS_CHROMEOS) || defined(OS_APPLE) || defined(OS_BSD)
  #include <pwd.h>
  #include <sys/types.h>
  #include <unistd.h>
-@@ -31,7 +31,7 @@
+@@ -32,7 +32,7 @@
  #import <SystemConfiguration/SCDynamicStoreCopySpecific.h>
  #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
  #include <limits.h>  // For HOST_NAME_MAX
  #endif
  
-@@ -62,7 +62,7 @@
+@@ -66,7 +66,7 @@
  #include "base/system/sys_info.h"
  #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
  #include "base/system/sys_info.h"
  #endif
  
-@@ -71,7 +71,7 @@ namespace policy {
+@@ -75,7 +75,7 @@ namespace policy {
  namespace em = enterprise_management;
  
  std::string GetMachineName() {
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
    char hostname[HOST_NAME_MAX];
    if (gethostname(hostname, HOST_NAME_MAX) == 0)  // Success.
      return hostname;
-@@ -125,7 +125,7 @@ std::string GetMachineName() {
+@@ -136,7 +136,7 @@ std::string GetMachineName() {
  }
  
  std::string GetOSVersion() {
--#if defined(OS_LINUX) || defined(OS_MACOSX)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_APPLE)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_APPLE) || defined(OS_BSD)
    return base::SysInfo::OperatingSystemVersion();
  #elif defined(OS_WIN)
    base::win::OSInfo::VersionNumber version_number =
-@@ -148,7 +148,7 @@ std::string GetOSArchitecture() {
+@@ -159,7 +159,7 @@ std::string GetOSArchitecture() {
  }
  
  std::string GetOSUsername() {
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS) || defined(OS_MACOSX)
-+#if defined(OS_LINUX) && !defined(OS_CHROMEOS) || defined(OS_MACOSX) || defined(OS_BSD)
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS) || defined(OS_APPLE)
++#if defined(OS_LINUX) && !defined(OS_CHROMEOS) || defined(OS_APPLE) || defined(OS_BSD)
    struct passwd* creds = getpwuid(getuid());
    if (!creds || !creds->pw_name)
      return std::string();

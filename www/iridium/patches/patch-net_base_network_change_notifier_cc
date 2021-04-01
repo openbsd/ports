@@ -1,18 +1,18 @@
-$OpenBSD: patch-net_base_network_change_notifier_cc,v 1.17 2020/11/05 15:49:52 robert Exp $
+$OpenBSD: patch-net_base_network_change_notifier_cc,v 1.18 2021/04/01 10:24:45 robert Exp $
 
 Index: net/base/network_change_notifier.cc
 --- net/base/network_change_notifier.cc.orig
 +++ net/base/network_change_notifier.cc
 @@ -35,7 +35,7 @@
  #include "net/base/network_change_notifier_linux.h"
- #elif defined(OS_MACOSX)
+ #elif defined(OS_APPLE)
  #include "net/base/network_change_notifier_mac.h"
 -#elif defined(OS_CHROMEOS) || defined(OS_ANDROID)
 +#elif defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)
  #include "net/base/network_change_notifier_posix.h"
  #elif defined(OS_FUCHSIA)
  #include "net/base/network_change_notifier_fuchsia.h"
-@@ -229,9 +229,13 @@ std::unique_ptr<NetworkChangeNotifier> NetworkChangeNo
+@@ -238,9 +238,13 @@ std::unique_ptr<NetworkChangeNotifier> NetworkChangeNo
    // service in a separate process.
    return std::make_unique<NetworkChangeNotifierPosix>(initial_type,
                                                        initial_subtype);

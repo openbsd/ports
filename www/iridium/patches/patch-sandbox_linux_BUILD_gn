@@ -1,4 +1,4 @@
-$OpenBSD: patch-sandbox_linux_BUILD_gn,v 1.10 2020/11/05 15:49:52 robert Exp $
+$OpenBSD: patch-sandbox_linux_BUILD_gn,v 1.11 2021/04/01 10:24:45 robert Exp $
 
 Index: sandbox/linux/BUILD.gn
 --- sandbox/linux/BUILD.gn.orig
@@ -7,28 +7,28 @@ Index: sandbox/linux/BUILD.gn
  }
  
  declare_args() {
--  compile_suid_client = is_linux
-+  compile_suid_client = is_linux && !is_openbsd
+-  compile_suid_client = is_linux || is_chromeos
++  compile_suid_client = (is_linux || is_chromeos) && !is_openbsd
  
--  compile_credentials = is_linux
-+  compile_credentials = is_linux && !is_openbsd
+-  compile_credentials = is_linux || is_chromeos
++  compile_credentials = (is_linux || is_chromeos) && !is_openbsd
  
    # On Android, use plain GTest.
--  use_base_test_suite = is_linux
-+  use_base_test_suite = is_linux && !is_openbsd
+-  use_base_test_suite = is_linux || is_chromeos
++  use_base_test_suite = (is_linux || is_chromeos) && !is_openbsd
  }
  
  if (is_nacl_nonsfi) {
-@@ -251,7 +251,7 @@ component("seccomp_bpf") {
-     "//sandbox:sandbox_buildflags",
-   ]
+@@ -262,7 +262,7 @@ component("seccomp_bpf") {
+     ]
+   }
  
 -  if (is_nacl_nonsfi) {
 +  if (is_nacl_nonsfi && !is_openbsd) {
      cflags = [ "-fgnu-inline-asm" ]
      sources -= [
        "bpf_dsl/bpf_dsl_forward.h",
-@@ -324,30 +324,8 @@ component("sandbox_services") {
+@@ -335,34 +335,8 @@ component("sandbox_services") {
      "services/proc_util.h",
      "services/resource_limits.cc",
      "services/resource_limits.h",
@@ -56,13 +56,17 @@ Index: sandbox/linux/BUILD.gn
 -    "syscall_broker/broker_process.h",
 -    "syscall_broker/broker_simple_message.cc",
 -    "syscall_broker/broker_simple_message.h",
+-    "syscall_broker/remote_syscall_arg_handler.cc",
+-    "syscall_broker/remote_syscall_arg_handler.h",
+-    "syscall_broker/syscall_dispatcher.cc",
+-    "syscall_broker/syscall_dispatcher.h",
    ]
  
    defines = [ "SANDBOX_IMPLEMENTATION" ]
-@@ -397,6 +375,10 @@ component("sandbox_services") {
-       "syscall_broker/broker_process.h",
-       "syscall_broker/broker_simple_message.cc",
-       "syscall_broker/broker_simple_message.h",
+@@ -416,6 +390,10 @@ component("sandbox_services") {
+       "syscall_broker/remote_syscall_arg_handler.h",
+       "syscall_broker/syscall_dispatcher.cc",
+       "syscall_broker/syscall_dispatcher.h",
 +    ]
 +    sources += [
 +      "services/libc_interceptor.cc",

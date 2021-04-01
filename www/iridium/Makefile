@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.107 2021/02/26 18:20:37 naddy Exp $
-
-BROKEN-i386=   runtime fails, cannot execve the built binary, immediate ENOMEM even with high limits
-
-.include <bsd.port.arch.mk>
+# $OpenBSD: Makefile,v 1.108 2021/04/01 10:24:43 robert Exp $
 
 USE_WXNEEDED=		Yes
 
-DPB_PROPERTIES=		parallel parallel2
+.include <bsd.port.arch.mk>
 .if ${MACHINE_ARCH} == "i386"
 # override parallel
 DPB_PROPERTIES=		lonesome
+.else
+DPB_PROPERTIES=		parallel parallel2
 .endif
 
 COMMENT=		Iridium browser
 
-V=			2020.11.85
+V=			2021.03.88
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -77,7 +75,7 @@ WANTLIB += harfbuzz harfbuzz-subset
 WANTLIB += ffi png
 WANTLIB += iconv lzma
 WANTLIB += fido2 cbor usbhid crypto
-WANTLIB += gbm xcb-dri3
+WANTLIB += gbm xkbcommon
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -101,6 +99,7 @@ LIB_DEPENDS=	devel/harfbuzz \
 		security/nss \
 		textproc/libxslt \
 		x11/gtk+3 \
+		x11/xkbcommon \
 		print/cups,-libs \
 		${MODGCC4_CPPLIBDEP}
 
@@ -149,6 +148,9 @@ GN_ARGS=	enable_nacl=false \
 		fieldtrial_testing_like_official_build=true \
 		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\"
 
+# notyet
+GN_ARGS+=	use_vaapi=false
+
 .if ${MACHINE_ARCH} == "i386"
 GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,--no-keep-memory\"
 .else
@@ -164,25 +166,27 @@ PKG_ARGS+=	-Dswiftshader=1
 # Note: these keys are for OpenBSD use ONLY. For your own distribution,
 # please get your own set of keys. It's free!
 GN_ARGS+=	google_api_key=\"AIzaSyA015yecfJyWi8UQpneQVrNzIKlxjv4MhI\" \
-		google_default_client_id=\"451220141585.apps.googleusercontent.com\" \
-		google_default_client_secret=\"nQcDyaBvDyCeDrsRqKIWSHJn\" \
 		ffmpeg_branding=\"Chrome\" \
 		proprietary_codecs=true
+
+# These are now restricted to use by Google, so bye-bye sync.
+#GN_ARGS+=	google_default_client_id=\"451220141585.apps.googleusercontent.com\"
+#GN_ARGS+=	google_default_client_secret=\"nQcDyaBvDyCeDrsRqKIWSHJn\" \
 
 # XXX dwz doesn't work with iridium yet
 DWZ = :
 
 .if ${FLAVOR:Mdebug}
-DEBUGFLAG=	-g2
+GN_ARGS+=	symbol_level=2
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 .else
-DEBUGFLAG=	-g0
+GN_ARGS+=	symbol_level=0
 .endif
 
 .if ${FLAVOR:Mcomponent}
-GN_ARGS+=      is_component_build=true
+GN_ARGS+=	is_component_build=true
 .else
-GN_ARGS+=      is_component_build=false
+GN_ARGS+=	is_component_build=false
 .endif
 
 pre-configure:
@@ -201,7 +205,8 @@ pre-configure:
 	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
 	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py ${WRKSRC}/v8/tools/run.py \
 		${WRKSRC}/tools/protoc_wrapper/protoc_wrapper.py \
-		${WRKSRC}/build/config/compiler/BUILD.gn
+		${WRKSRC}/build/util/python2_action.py \
+		${WRKSRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py
 
 # Configuration consists of three steps:
 # 1. replace the specified bundled libraries with hooks to use the system libs

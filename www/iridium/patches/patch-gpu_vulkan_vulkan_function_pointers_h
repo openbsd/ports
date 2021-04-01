@@ -1,45 +1,45 @@
-$OpenBSD: patch-gpu_vulkan_vulkan_function_pointers_h,v 1.4 2020/11/05 15:49:51 robert Exp $
+$OpenBSD: patch-gpu_vulkan_vulkan_function_pointers_h,v 1.5 2021/04/01 10:24:45 robert Exp $
 
 Index: gpu/vulkan/vulkan_function_pointers.h
 --- gpu/vulkan/vulkan_function_pointers.h.orig
 +++ gpu/vulkan/vulkan_function_pointers.h
-@@ -234,7 +234,7 @@ struct COMPONENT_EXPORT(VULKAN) VulkanFunctionPointers
+@@ -235,7 +235,7 @@ struct COMPONENT_EXPORT(VULKAN) VulkanFunctionPointers
        vkGetAndroidHardwareBufferPropertiesANDROID;
  #endif  // defined(OS_ANDROID)
  
--#if defined(OS_LINUX) || defined(OS_ANDROID)
-+#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)
    VulkanFunction<PFN_vkGetSemaphoreFdKHR> vkGetSemaphoreFdKHR;
    VulkanFunction<PFN_vkImportSemaphoreFdKHR> vkImportSemaphoreFdKHR;
- #endif  // defined(OS_LINUX) || defined(OS_ANDROID)
-@@ -245,7 +245,7 @@ struct COMPONENT_EXPORT(VULKAN) VulkanFunctionPointers
+ #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)
+@@ -246,7 +246,7 @@ struct COMPONENT_EXPORT(VULKAN) VulkanFunctionPointers
        vkImportSemaphoreWin32HandleKHR;
  #endif  // defined(OS_WIN)
  
--#if defined(OS_LINUX) || defined(OS_ANDROID)
-+#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)
    VulkanFunction<PFN_vkGetMemoryFdKHR> vkGetMemoryFdKHR;
    VulkanFunction<PFN_vkGetMemoryFdPropertiesKHR> vkGetMemoryFdPropertiesKHR;
- #endif  // defined(OS_LINUX) || defined(OS_ANDROID)
-@@ -953,7 +953,7 @@ ALWAYS_INLINE VkResult vkGetAndroidHardwareBufferPrope
+ #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)
+@@ -954,7 +954,7 @@ ALWAYS_INLINE VkResult vkGetAndroidHardwareBufferPrope
  }
  #endif  // defined(OS_ANDROID)
  
--#if defined(OS_LINUX) || defined(OS_ANDROID)
-+#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)
  ALWAYS_INLINE VkResult
  vkGetSemaphoreFdKHR(VkDevice device,
                      const VkSemaphoreGetFdInfoKHR* pGetFdInfo,
-@@ -986,7 +986,7 @@ vkImportSemaphoreWin32HandleKHR(VkDevice device,
+@@ -987,7 +987,7 @@ vkImportSemaphoreWin32HandleKHR(VkDevice device,
  }
  #endif  // defined(OS_WIN)
  
--#if defined(OS_LINUX) || defined(OS_ANDROID)
-+#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)
  ALWAYS_INLINE VkResult vkGetMemoryFdKHR(VkDevice device,
                                          const VkMemoryGetFdInfoKHR* pGetFdInfo,
                                          int* pFd) {
-@@ -1081,4 +1081,4 @@ ALWAYS_INLINE VkResult vkQueuePresentKHR(VkQueue queue
+@@ -1082,4 +1082,4 @@ ALWAYS_INLINE VkResult vkQueuePresentKHR(VkQueue queue
                                                               pPresentInfo);
  }
  

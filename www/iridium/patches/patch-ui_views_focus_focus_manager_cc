@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_views_focus_focus_manager_cc,v 1.1 2020/11/05 15:49:54 robert Exp $
+$OpenBSD: patch-ui_views_focus_focus_manager_cc,v 1.2 2021/04/01 10:24:46 robert Exp $
 
 Index: ui/views/focus/focus_manager.cc
 --- ui/views/focus/focus_manager.cc.orig
 +++ ui/views/focus/focus_manager.cc
-@@ -622,7 +622,7 @@ bool FocusManager::RedirectAcceleratorToBubbleAnchorWi
+@@ -621,7 +621,7 @@ bool FocusManager::RedirectAcceleratorToBubbleAnchorWi
    if (!focus_manager->IsAcceleratorRegistered(accelerator))
      return false;
  
@@ -12,7 +12,7 @@ Index: ui/views/focus/focus_manager.cc
    // Processing an accelerator can delete things. Because we
    // need these objects afterwards on Linux, save widget_ as weak pointer and
    // save the close_on_deactivate property value of widget_delegate in a
-@@ -637,7 +637,7 @@ bool FocusManager::RedirectAcceleratorToBubbleAnchorWi
+@@ -636,7 +636,7 @@ bool FocusManager::RedirectAcceleratorToBubbleAnchorWi
    const bool accelerator_processed =
        focus_manager->ProcessAccelerator(accelerator);
  

@@ -1,58 +1,77 @@
-$OpenBSD: patch-chrome_browser_ui_webui_chrome_web_ui_controller_factory_cc,v 1.24 2020/11/05 15:49:50 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_webui_chrome_web_ui_controller_factory_cc,v 1.25 2021/04/01 10:24:44 robert Exp $
 
 Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
 --- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig
 +++ chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
-@@ -234,11 +234,11 @@
- #include "chrome/browser/ui/webui/conflicts/conflicts_ui.h"
+@@ -241,7 +241,7 @@
+ #include "chrome/browser/ui/webui/app_launcher_page_ui.h"
  #endif
  
--#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ #include "chrome/browser/ui/webui/webui_js_exception/webui_js_exception_ui.h"
+ #endif
+ 
+@@ -263,12 +263,12 @@
+ #endif
+ 
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
  #include "chrome/browser/ui/webui/discards/discards_ui.h"
  #endif
  
--#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_ANDROID)
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+ #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_ANDROID)
++    defined(OS_ANDROID) || defined(OS_BSD)
  #include "chrome/browser/ui/webui/sandbox/sandbox_internals_ui.h"
  #endif
  
-@@ -382,7 +382,7 @@ bool IsAboutUI(const GURL& url) {
+@@ -473,7 +473,7 @@ bool IsAboutUI(const GURL& url) {
  #if !defined(OS_ANDROID)
            || url.host_piece() == chrome::kChromeUITermsHost
  #endif
--#if defined(OS_LINUX) || defined(OS_OPENBSD)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_OPENBSD)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
            || url.host_piece() == chrome::kChromeUILinuxProxyConfigHost
  #endif
  #if defined(OS_CHROMEOS)
-@@ -755,7 +755,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
-   if (url.host_piece() == chrome::kChromeUINaClHost)
+@@ -808,7 +808,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+   }
+ #endif  // !defined(OFFICIAL_BUILD)
+ #endif  // defined(OS_CHROMEOS)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   if (url.host_piece() == chrome::kChromeUIWebUIJsExceptionHost)
+     return &NewWebUI<WebUIJsExceptionUI>;
+ #endif
+@@ -877,7 +877,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
      return &NewWebUI<NaClUI>;
  #endif
--#if (defined(OS_LINUX) && defined(TOOLKIT_VIEWS)) || defined(USE_AURA)
-+#if ((defined(OS_BSD) || defined(OS_LINUX)) && defined(TOOLKIT_VIEWS)) || defined(USE_AURA)
+ #if ((defined(OS_LINUX) || defined(OS_CHROMEOS)) && defined(TOOLKIT_VIEWS)) || \
+-    defined(USE_AURA)
++    defined(USE_AURA) || defined(OS_BSD)
    if (url.host_piece() == chrome::kChromeUITabModalConfirmDialogHost)
      return &NewWebUI<ConstrainedWebDialogUI>;
  #endif
-@@ -803,17 +803,17 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
-     return &NewWebUI<media_router::MediaRouterInternalsUI>;
+@@ -921,17 +921,17 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    }
  #endif
--#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_ANDROID)
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+ #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_ANDROID)
++    defined(OS_ANDROID) || defined(OS_BSD)
    if (url.host_piece() == chrome::kChromeUISandboxHost) {
      return &NewWebUI<SandboxInternalsUI>;
    }
  #endif
--#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
    if (url.host_piece() == chrome::kChromeUIDiscardsHost)
      return &NewWebUI<DiscardsUI>;
  #endif
- #if defined(OS_WIN) || defined(OS_MACOSX) || \
--    (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-+    ((defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS))
+-#if defined(OS_WIN) || defined(OS_MAC) || \
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
+     (defined(OS_LINUX) && !defined(OS_CHROMEOS))
    if (url.host_piece() == chrome::kChromeUIBrowserSwitchHost)
      return &NewWebUI<BrowserSwitchUI>;
- #endif

@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_fonts_font_cache_h,v 1.6 2020/11/05 15:49:52 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_fonts_font_cache_h,v 1.7 2021/04/01 10:24:45 robert Exp $
 
 Index: third_party/blink/renderer/platform/fonts/font_cache.h
 --- third_party/blink/renderer/platform/fonts/font_cache.h.orig
@@ -7,12 +7,12 @@ Index: third_party/blink/renderer/platform/fonts/font_cache.h
  #include "third_party/skia/include/core/SkFontMgr.h"
  #include "third_party/skia/include/core/SkRefCnt.h"
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  #include "ui/gfx/font_fallback_linux.h"
  #endif
  
-@@ -174,7 +174,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -173,7 +173,7 @@ class PLATFORM_EXPORT FontCache {
    sk_sp<SkFontMgr> FontManager() { return font_manager_; }
    static void SetFontManager(sk_sp<SkFontMgr>);
  
@@ -21,25 +21,25 @@ Index: third_party/blink/renderer/platform/fonts/font_cache.h
    // These are needed for calling QueryRenderStyleForStrike, since
    // gfx::GetFontRenderParams makes distinctions based on DSF.
    static float DeviceScaleFactor() { return device_scale_factor_; }
-@@ -249,7 +249,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -248,7 +248,7 @@ class PLATFORM_EXPORT FontCache {
        const FontDescription&);
  #endif  // defined(OS_ANDROID)
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    static bool GetFontForCharacter(UChar32,
                                    const char* preferred_locale,
                                    gfx::FallbackFontData*);
-@@ -334,7 +334,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -326,7 +326,7 @@ class PLATFORM_EXPORT FontCache {
                                     const FontFaceCreationParams&,
                                     std::string& name);
  
--#if defined(OS_ANDROID) || defined(OS_LINUX)
-+#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    static AtomicString GetFamilyNameForCharacter(SkFontMgr*,
                                                  UChar32,
                                                  const FontDescription&,
-@@ -379,7 +379,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -371,7 +371,7 @@ class PLATFORM_EXPORT FontCache {
    std::unique_ptr<FallbackFamilyStyleCache> fallback_params_cache_;
  #endif  // defined(OS_WIN)
  

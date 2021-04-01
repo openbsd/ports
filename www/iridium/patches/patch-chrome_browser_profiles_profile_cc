@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_profiles_profile_cc,v 1.1 2021/04/01 10:24:44 robert Exp $
+
+Index: chrome/browser/profiles/profile.cc
+--- chrome/browser/profiles/profile.cc.orig
++++ chrome/browser/profiles/profile.cc
+@@ -388,7 +388,7 @@ bool Profile::IsIncognitoProfile() const {
+ // static
+ bool Profile::IsEphemeralGuestProfileEnabled() {
+ #if defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || \
+-    defined(OS_MAC)
++    defined(OS_MAC) || defined(OS_BSD)
+   return base::FeatureList::IsEnabled(
+       features::kEnableEphemeralGuestProfilesOnDesktop);
+ #else

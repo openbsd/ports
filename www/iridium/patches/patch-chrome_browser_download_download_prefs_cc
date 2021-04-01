@@ -1,21 +1,21 @@
-$OpenBSD: patch-chrome_browser_download_download_prefs_cc,v 1.18 2020/11/05 15:49:50 robert Exp $
+$OpenBSD: patch-chrome_browser_download_download_prefs_cc,v 1.19 2021/04/01 10:24:44 robert Exp $
 
 Index: chrome/browser/download/download_prefs.cc
 --- chrome/browser/download/download_prefs.cc.orig
 +++ chrome/browser/download/download_prefs.cc
-@@ -11,6 +11,7 @@
- 
+@@ -12,6 +12,7 @@
  #include "base/bind.h"
- #include "base/bind_helpers.h"
-+#include "base/command_line.h"
+ #include "base/callback_helpers.h"
  #include "base/check.h"
++#include "base/command_line.h"
  #include "base/feature_list.h"
  #include "base/files/file_util.h"
+ #include "base/no_destructor.h"
 @@ -57,6 +58,8 @@
  #include "chrome/browser/ui/pdf/adobe_reader_info_win.h"
  #endif
  
-+#include "services/service_manager/sandbox/switches.h"
++#include "sandbox/policy/switches.h"
 +
  using content::BrowserContext;
  using content::BrowserThread;
@@ -24,66 +24,66 @@ Index: chrome/browser/download/download_prefs.cc
  // Consider downloads 'dangerous' if they go to the home directory on Linux and
  // to the desktop on any platform.
  bool DownloadPathIsDangerous(const base::FilePath& download_path) {
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    base::FilePath home_dir = base::GetHomeDir();
    if (download_path == home_dir) {
      return true;
-@@ -172,7 +175,7 @@ DownloadPrefs::DownloadPrefs(Profile* profile) : profi
-                                 GetDefaultDownloadDirectoryForProfile()));
+@@ -173,7 +176,7 @@ DownloadPrefs::DownloadPrefs(Profile* profile) : profi
  #endif  // defined(OS_CHROMEOS)
  
--#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX)
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
+ #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_MAC)
++    defined(OS_MAC) || defined(OS_BSD)
    should_open_pdf_in_system_reader_ =
        prefs->GetBoolean(prefs::kOpenPdfDownloadInSystemReader);
  #endif
-@@ -299,7 +302,7 @@ void DownloadPrefs::RegisterProfilePrefs(
-                                  default_download_path);
+@@ -301,7 +304,7 @@ void DownloadPrefs::RegisterProfilePrefs(
    registry->RegisterFilePathPref(prefs::kSaveFileDefaultDirectory,
                                   default_download_path);
--#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX)
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
+ #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_MAC)
++    defined(OS_MAC) || defined(OS_BSD)
    registry->RegisterBooleanPref(prefs::kOpenPdfDownloadInSystemReader, false);
  #endif
  #if defined(OS_ANDROID)
-@@ -417,7 +420,7 @@ bool DownloadPrefs::IsDownloadPathManaged() const {
- }
+@@ -431,7 +434,7 @@ bool DownloadPrefs::IsDownloadPathManaged() const {
  
  bool DownloadPrefs::IsAutoOpenByUserUsed() const {
--#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX)
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
+ #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_MAC)
++    defined(OS_MAC) || defined(OS_BSD)
    if (ShouldOpenPdfInSystemReader())
      return true;
  #endif
-@@ -431,7 +434,7 @@ bool DownloadPrefs::IsAutoOpenEnabled(const GURL& url,
-     return false;
+@@ -446,7 +449,7 @@ bool DownloadPrefs::IsAutoOpenEnabled(const GURL& url,
    DCHECK(extension[0] == base::FilePath::kExtensionSeparator);
    extension.erase(0, 1);
--#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX)
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
+ #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_MAC)
++    defined(OS_MAC) || defined(OS_BSD)
    if (base::FilePath::CompareEqualIgnoreCase(extension,
                                               FILE_PATH_LITERAL("pdf")) &&
        ShouldOpenPdfInSystemReader())
-@@ -481,7 +484,7 @@ void DownloadPrefs::DisableAutoOpenByUserBasedOnExtens
-   SaveAutoOpenState();
+@@ -497,7 +500,7 @@ void DownloadPrefs::DisableAutoOpenByUserBasedOnExtens
  }
  
--#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX)
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
+ #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_MAC)
++    defined(OS_MAC) || defined(OS_BSD)
  void DownloadPrefs::SetShouldOpenPdfInSystemReader(bool should_open) {
    if (should_open_pdf_in_system_reader_ == should_open)
      return;
-@@ -502,7 +505,7 @@ bool DownloadPrefs::ShouldOpenPdfInSystemReader() cons
- #endif
+@@ -519,7 +522,7 @@ bool DownloadPrefs::ShouldOpenPdfInSystemReader() cons
  
  void DownloadPrefs::ResetAutoOpenByUser() {
--#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX)
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
+ #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_MAC)
++    defined(OS_MAC) || defined(OS_BSD)
    SetShouldOpenPdfInSystemReader(false);
  #endif
    auto_open_by_user_.clear();
-@@ -584,9 +587,13 @@ base::FilePath DownloadPrefs::SanitizeDownloadTargetPa
+@@ -601,9 +604,13 @@ base::FilePath DownloadPrefs::SanitizeDownloadTargetPa
    // Fall back to the default download directory for all other paths.
    return GetDefaultDownloadDirectoryForProfile();
  #else
@@ -94,7 +94,7 @@ Index: chrome/browser/download/download_prefs.cc
    // If the stored download directory is an absolute path, we presume it's
    // correct; there's not really much more validation we can do here.
 -  if (path.IsAbsolute())
-+  if (command_line->HasSwitch(service_manager::switches::kDisableUnveil) && path.IsAbsolute())
++  if (command_line->HasSwitch(sandbox::policy::switches::kDisableUnveil) && path.IsAbsolute())
      return path;
  
    // When the default download directory is *not* an absolute path, we use the

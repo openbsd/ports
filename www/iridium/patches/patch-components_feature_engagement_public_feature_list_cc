@@ -1,12 +1,12 @@
-$OpenBSD: patch-components_feature_engagement_public_feature_list_cc,v 1.6 2020/11/05 15:49:51 robert Exp $
+$OpenBSD: patch-components_feature_engagement_public_feature_list_cc,v 1.7 2021/04/01 10:24:44 robert Exp $
 
 Index: components/feature_engagement/public/feature_list.cc
 --- components/feature_engagement/public/feature_list.cc.orig
 +++ components/feature_engagement/public/feature_list.cc
-@@ -65,7 +65,7 @@ const base::Feature* const kAllFeatures[] = {
-     &kIPHBadgedTranslateManualTriggerFeature,
+@@ -76,7 +76,7 @@ const base::Feature* const kAllFeatures[] = {
+     &kIPHDiscoverFeedHeaderFeature,
  #endif  // defined(OS_IOS)
- #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
+ #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
      &kIPHDesktopTabGroupsNewGroupFeature,

@@ -1,25 +1,23 @@
-$OpenBSD: patch-chrome_browser_metrics_chrome_metrics_service_client_cc,v 1.7 2020/11/05 15:49:50 robert Exp $
+$OpenBSD: patch-chrome_browser_metrics_chrome_metrics_service_client_cc,v 1.8 2021/04/01 10:24:44 robert Exp $
 
 Index: chrome/browser/metrics/chrome_metrics_service_client.cc
 --- chrome/browser/metrics/chrome_metrics_service_client.cc.orig
 +++ chrome/browser/metrics/chrome_metrics_service_client.cc
-@@ -684,7 +684,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
+@@ -695,7 +695,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
        std::make_unique<AntiVirusMetricsProvider>());
  #endif  // defined(OS_WIN)
  
--#if defined(OS_WIN) || defined(OS_MACOSX) || \
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_BSD) || \
+-#if defined(OS_WIN) || defined(OS_MAC) || \
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
      (defined(OS_LINUX) && !defined(OS_CHROMEOS))
    metrics_service_->RegisterMetricsProvider(
        std::make_unique<DesktopPlatformFeaturesMetricsProvider>());
-@@ -950,8 +950,8 @@ bool ChromeMetricsServiceClient::RegisterForProfileEve
+@@ -973,7 +973,7 @@ bool ChromeMetricsServiceClient::RegisterForProfileEve
          profile->GetPath());
    }
  #endif
--#if defined(OS_WIN) || defined(OS_MACOSX) || \
--    (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_BSD) || \
-+    ((defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS))
+-#if defined(OS_WIN) || defined(OS_MAC) || \
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
+     (defined(OS_LINUX) && !defined(OS_CHROMEOS))
    // This creates the DesktopProfileSessionDurationsServices if it didn't exist
    // already.
-   metrics::DesktopProfileSessionDurationsServiceFactory::GetForBrowserContext(

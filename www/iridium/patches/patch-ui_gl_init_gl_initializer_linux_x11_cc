@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_gl_init_gl_initializer_linux_x11_cc,v 1.1 2020/11/05 15:49:54 robert Exp $
+$OpenBSD: patch-ui_gl_init_gl_initializer_linux_x11_cc,v 1.2 2021/04/01 10:24:46 robert Exp $
 
 Index: ui/gl/init/gl_initializer_linux_x11.cc
 --- ui/gl/init/gl_initializer_linux_x11.cc.orig
 +++ ui/gl/init/gl_initializer_linux_x11.cc
-@@ -29,12 +29,13 @@ namespace {
+@@ -28,12 +28,13 @@ namespace {
  
  #if defined(OS_OPENBSD)
  const char kGLLibraryName[] = "libGL.so";

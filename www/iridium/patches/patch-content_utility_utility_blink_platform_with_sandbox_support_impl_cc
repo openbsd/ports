@@ -1,14 +1,14 @@
-$OpenBSD: patch-content_utility_utility_blink_platform_with_sandbox_support_impl_cc,v 1.6 2020/11/05 15:49:51 robert Exp $
+$OpenBSD: patch-content_utility_utility_blink_platform_with_sandbox_support_impl_cc,v 1.7 2021/04/01 10:24:45 robert Exp $
 
 Index: content/utility/utility_blink_platform_with_sandbox_support_impl.cc
 --- content/utility/utility_blink_platform_with_sandbox_support_impl.cc.orig
 +++ content/utility/utility_blink_platform_with_sandbox_support_impl.cc
 @@ -9,7 +9,7 @@
  
- #if defined(OS_MACOSX)
+ #if defined(OS_MAC)
  #include "content/child/child_process_sandbox_support_impl_mac.h"
--#elif defined(OS_LINUX)
-+#elif defined(OS_LINUX) || defined(OS_BSD)
+-#elif defined(OS_LINUX) || defined(OS_CHROMEOS)
++#elif defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  #include "content/child/child_process_sandbox_support_impl_linux.h"
  #endif
  
@@ -16,8 +16,8 @@ Index: content/utility/utility_blink_platform_with_sandbox_support_impl.cc
  
  UtilityBlinkPlatformWithSandboxSupportImpl::
      UtilityBlinkPlatformWithSandboxSupportImpl() {
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    mojo::PendingRemote<font_service::mojom::FontService> font_service;
    UtilityThread::Get()->BindHostReceiver(
        font_service.InitWithNewPipeAndPassReceiver());
@@ -25,8 +25,8 @@ Index: content/utility/utility_blink_platform_with_sandbox_support_impl.cc
  
  blink::WebSandboxSupport*
  UtilityBlinkPlatformWithSandboxSupportImpl::GetSandboxSupport() {
--#if defined(OS_LINUX) || defined(OS_MACOSX)
-+#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || defined(OS_BSD)
    return sandbox_support_.get();
  #else
    return nullptr;

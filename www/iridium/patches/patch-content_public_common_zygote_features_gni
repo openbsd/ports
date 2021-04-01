@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_public_common_zygote_features_gni,v 1.4 2020/11/05 15:49:51 robert Exp $
+$OpenBSD: patch-content_public_common_zygote_features_gni,v 1.5 2021/04/01 10:24:45 robert Exp $
 
 Index: content/public/common/zygote/features.gni
 --- content/public/common/zygote/features.gni.orig

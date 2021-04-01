@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_tools_quic_quic_http_proxy_backend_cc,v 1.3 2020/11/05 15:49:52 robert Exp $
+$OpenBSD: patch-net_tools_quic_quic_http_proxy_backend_cc,v 1.4 2021/04/01 10:24:45 robert Exp $
 
 Index: net/tools/quic/quic_http_proxy_backend.cc
 --- net/tools/quic/quic_http_proxy_backend.cc.orig
@@ -7,8 +7,8 @@ Index: net/tools/quic/quic_http_proxy_backend.cc
    // Enable HTTP2, but disable QUIC on the backend
    context_builder.SetSpdyAndQuicEnabled(true /* http2 */, false /* quic */);
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    // On Linux, use a fixed ProxyConfigService, since the default one
    // depends on glib.
    context_builder.set_proxy_config_service(

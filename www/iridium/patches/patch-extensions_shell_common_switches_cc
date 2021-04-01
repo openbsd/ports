@@ -1,14 +1,14 @@
-$OpenBSD: patch-extensions_shell_common_switches_cc,v 1.3 2020/11/05 15:49:51 robert Exp $
+$OpenBSD: patch-extensions_shell_common_switches_cc,v 1.4 2021/04/01 10:24:45 robert Exp $
 
 Index: extensions/shell/common/switches.cc
 --- extensions/shell/common/switches.cc.orig
 +++ extensions/shell/common/switches.cc
-@@ -18,7 +18,7 @@ const char kAppShellHostWindowSize[] = "app-shell-host
- const char kAppShellPreferredNetwork[] = "app-shell-preferred-network";
- #endif
+@@ -22,7 +22,7 @@ const char kAppShellPreferredNetwork[] = "app-shell-pr
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  // The directory breakpad should store minidumps in.
  const char kCrashDumpsDir[] = "crash-dumps-dir";
  

@@ -1,14 +1,14 @@
-$OpenBSD: patch-chrome_browser_autocomplete_chrome_autocomplete_scheme_classifier_cc,v 1.5 2020/11/05 15:49:50 robert Exp $
+$OpenBSD: patch-chrome_browser_autocomplete_chrome_autocomplete_scheme_classifier_cc,v 1.6 2021/04/01 10:24:44 robert Exp $
 
 Index: chrome/browser/autocomplete/chrome_autocomplete_scheme_classifier.cc
 --- chrome/browser/autocomplete/chrome_autocomplete_scheme_classifier.cc.orig
 +++ chrome/browser/autocomplete/chrome_autocomplete_scheme_classifier.cc
-@@ -87,7 +87,7 @@ ChromeAutocompleteSchemeClassifier::GetInputTypeForSch
+@@ -88,7 +88,7 @@ ChromeAutocompleteSchemeClassifier::GetInputTypeForSch
        return metrics::OmniboxInputType::QUERY;
  
      case ExternalProtocolHandler::UNKNOWN: {
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
        // Linux impl of GetApplicationNameForProtocol doesn't distinguish
        // between URL schemes with handers and those without. This will
        // make the default behaviour be search on Linux.

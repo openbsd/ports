@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_config_linux_pkg-config_py,v 1.8 2020/11/05 15:49:49 robert Exp $
+$OpenBSD: patch-build_config_linux_pkg-config_py,v 1.9 2021/04/01 10:24:44 robert Exp $
 
 Index: build/config/linux/pkg-config.py
 --- build/config/linux/pkg-config.py.orig

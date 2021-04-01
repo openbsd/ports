@@ -1,0 +1,16 @@
+$OpenBSD: patch-sandbox_policy_switches_cc,v 1.1 2021/04/01 10:24:45 robert Exp $
+
+Index: sandbox/policy/switches.cc
+--- sandbox/policy/switches.cc.orig
++++ sandbox/policy/switches.cc
+@@ -82,7 +82,9 @@ const char kGpuSandboxFailuresFatal[] = "gpu-sandbox-f
+ // Meant to be used as a browser-level switch for testing purposes only.
+ const char kNoSandbox[] = "no-sandbox";
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++const char kDisableUnveil[] = "disable-unveil";
++
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ // Instructs the zygote to launch without a sandbox. Processes forked from this
+ // type of zygote will apply their own custom sandboxes later.
+ const char kNoZygoteSandbox[] = "no-zygote-sandbox";

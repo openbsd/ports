@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_debug_stack_trace_posix_cc,v 1.19 2020/11/05 15:49:49 robert Exp $
+$OpenBSD: patch-base_debug_stack_trace_posix_cc,v 1.20 2021/04/01 10:24:43 robert Exp $
 
 Index: base/debug/stack_trace_posix.cc
 --- base/debug/stack_trace_posix.cc.orig
@@ -7,12 +7,12 @@ Index: base/debug/stack_trace_posix.cc
  #include <AvailabilityMacros.h>
  #endif
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  #include "base/debug/proc_maps_linux.h"
  #endif
  
-@@ -657,6 +657,9 @@ class SandboxSymbolizeHelper {
+@@ -656,6 +656,9 @@ class SandboxSymbolizeHelper {
    // for the modules that are loaded in the current process.
    // Returns true on success.
    bool CacheMemoryRegions() {
@@ -22,7 +22,7 @@ Index: base/debug/stack_trace_posix.cc
      // Reads /proc/self/maps.
      std::string contents;
      if (!ReadProcMaps(&contents)) {
-@@ -674,6 +677,7 @@ class SandboxSymbolizeHelper {
+@@ -673,6 +676,7 @@ class SandboxSymbolizeHelper {
  
      is_initialized_ = true;
      return true;
@@ -30,7 +30,7 @@ Index: base/debug/stack_trace_posix.cc
    }
  
    // Opens all object files and caches their file descriptors.
-@@ -834,7 +838,7 @@ size_t CollectStackTrace(void** trace, size_t count) {
+@@ -827,7 +831,7 @@ size_t CollectStackTrace(void** trace, size_t count) {
    // NOTE: This code MUST be async-signal safe (it's used by in-process
    // stack dumping signal handler). NO malloc or stdio is allowed here.
  

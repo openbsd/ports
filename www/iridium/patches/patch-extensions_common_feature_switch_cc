@@ -1,4 +1,4 @@
-$OpenBSD: patch-extensions_common_feature_switch_cc,v 1.6 2020/11/05 15:49:51 robert Exp $
+$OpenBSD: patch-extensions_common_feature_switch_cc,v 1.7 2021/04/01 10:24:45 robert Exp $
 
 Index: extensions/common/feature_switch.cc
 --- extensions/common/feature_switch.cc.orig

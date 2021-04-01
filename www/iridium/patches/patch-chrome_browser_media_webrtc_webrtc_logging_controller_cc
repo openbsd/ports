@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_media_webrtc_webrtc_logging_controller_cc,v 1.4 2020/11/05 15:49:50 robert Exp $
+$OpenBSD: patch-chrome_browser_media_webrtc_webrtc_logging_controller_cc,v 1.5 2021/04/01 10:24:44 robert Exp $
 
 Index: chrome/browser/media/webrtc/webrtc_logging_controller.cc
 --- chrome/browser/media/webrtc/webrtc_logging_controller.cc.orig
@@ -23,11 +23,11 @@ Index: chrome/browser/media/webrtc/webrtc_logging_controller.cc
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  void WebRtcLoggingController::GetLogsDirectory(
-     const LogsDirectoryCallback& callback,
-     const LogsDirectoryErrorCallback& error_callback) {
-@@ -317,7 +317,7 @@ void WebRtcLoggingController::GrantLogsDirectoryAccess
-   base::SequencedTaskRunnerHandle::Get()->PostTask(
-       FROM_HERE, base::BindOnce(callback, file_system.id(), registered_name));
+     LogsDirectoryCallback callback,
+     LogsDirectoryErrorCallback error_callback) {
+@@ -318,7 +318,7 @@ void WebRtcLoggingController::GrantLogsDirectoryAccess
+       FROM_HERE,
+       base::BindOnce(std::move(callback), file_system.id(), registered_name));
  }
 -#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)

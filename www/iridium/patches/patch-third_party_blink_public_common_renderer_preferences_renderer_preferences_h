@@ -1,0 +1,14 @@
+$OpenBSD: patch-third_party_blink_public_common_renderer_preferences_renderer_preferences_h,v 1.1 2021/04/01 10:24:45 robert Exp $
+
+Index: third_party/blink/public/common/renderer_preferences/renderer_preferences.h
+--- third_party/blink/public/common/renderer_preferences/renderer_preferences.h.orig
++++ third_party/blink/public/common/renderer_preferences/renderer_preferences.h
+@@ -49,7 +49,7 @@ struct BLINK_COMMON_EXPORT RendererPreferences {
+   bool webrtc_allow_legacy_tls_protocols{false};
+   UserAgentOverride user_agent_override;
+   std::string accept_languages;
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   std::string system_font_family_name;
+ #endif
+ #if defined(OS_WIN)

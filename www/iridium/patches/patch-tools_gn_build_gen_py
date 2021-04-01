@@ -1,28 +1,28 @@
-$OpenBSD: patch-tools_gn_build_gen_py,v 1.7 2020/11/15 19:14:12 robert Exp $
+$OpenBSD: patch-tools_gn_build_gen_py,v 1.8 2021/04/01 10:24:46 robert Exp $
 
 Index: tools/gn/build/gen.py
 --- tools/gn/build/gen.py.orig
 +++ tools/gn/build/gen.py
-@@ -78,6 +78,9 @@ class Platform(object):
-   def is_haiku(self):
-     return self._platform == 'haiku'
+@@ -90,6 +90,9 @@ class Platform(object):
+   def is_solaris(self):
+     return self._platform == 'solaris'
  
 +  def is_openbsd(self):
 +    return self._platform == 'openbsd'
 +
    def is_posix(self):
-     return self._platform in ['linux', 'freebsd', 'darwin', 'aix', 'openbsd', 'haiku']
+     return self._platform in ['linux', 'freebsd', 'darwin', 'aix', 'openbsd', 'haiku', 'solaris', 'msys', 'netbsd']
  
-@@ -201,7 +204,7 @@ def WriteGenericNinja(path, static_libraries, executab
+@@ -214,7 +217,7 @@ def WriteGenericNinja(path, static_libraries, executab
        'linux': 'build_linux.ninja.template',
        'freebsd': 'build_linux.ninja.template',
        'aix': 'build_aix.ninja.template',
 -      'openbsd': 'build_openbsd.ninja.template',
 +      'openbsd': 'build_linux.ninja.template',
        'haiku': 'build_haiku.ninja.template',
-   }[platform.platform()])
- 
-@@ -375,6 +378,9 @@ def WriteGNNinja(path, platform, host, options):
+       'solaris': 'build_linux.ninja.template',
+       'netbsd': 'build_linux.ninja.template',
+@@ -408,6 +411,9 @@ def WriteGNNinja(path, platform, host, options):
  
      if platform.is_posix() and not platform.is_haiku():
        ldflags.append('-pthread')
@@ -30,5 +30,5 @@ Index: tools/gn/build/gen.py
 +    if platform.is_openbsd():
 +      libs.append('-lkvm')
  
-     if platform.is_mingw():
+     if platform.is_mingw() or platform.is_msys():
        cflags.extend(['-DUNICODE',

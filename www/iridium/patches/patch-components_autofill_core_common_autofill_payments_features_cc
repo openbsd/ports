@@ -1,14 +1,14 @@
-$OpenBSD: patch-components_autofill_core_common_autofill_payments_features_cc,v 1.4 2020/11/05 15:49:51 robert Exp $
+$OpenBSD: patch-components_autofill_core_common_autofill_payments_features_cc,v 1.5 2021/04/01 10:24:44 robert Exp $
 
 Index: components/autofill/core/common/autofill_payments_features.cc
 --- components/autofill/core/common/autofill_payments_features.cc.orig
 +++ components/autofill/core/common/autofill_payments_features.cc
-@@ -123,7 +123,7 @@ const base::Feature kAutofillUpstreamAllowAllEmailDoma
+@@ -128,7 +128,7 @@ const base::Feature kAutofillUpstreamAllowAllEmailDoma
      "AutofillUpstreamAllowAllEmailDomains", base::FEATURE_DISABLED_BY_DEFAULT};
  
  bool ShouldShowImprovedUserConsentForCreditCardSave() {
--#if defined(OS_WIN) || defined(OS_MACOSX) || \
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_BSD) || \
+-#if defined(OS_WIN) || defined(OS_APPLE) || \
++#if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_BSD) || \
      (defined(OS_LINUX) && !defined(OS_CHROMEOS))
    // The new user consent UI is fully launched on MacOS, Windows and Linux.
    return true;

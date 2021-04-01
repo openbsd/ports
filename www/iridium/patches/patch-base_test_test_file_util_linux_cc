@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_test_test_file_util_linux_cc,v 1.6 2020/11/05 15:49:49 robert Exp $
+$OpenBSD: patch-base_test_test_file_util_linux_cc,v 1.7 2021/04/01 10:24:44 robert Exp $
 
 Index: base/test/test_file_util_linux.cc
 --- base/test/test_file_util_linux.cc.orig

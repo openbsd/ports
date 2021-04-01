@@ -1,4 +1,5 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_platform_specific_cc,v 1.9 2020/11/05 15:49:50 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_platform_specific_cc,v 1.10 2021/04/01 10:24:44 robert Exp $
+
 Index: chrome/browser/ui/views/frame/opaque_browser_frame_view_platform_specific.cc
 --- chrome/browser/ui/views/frame/opaque_browser_frame_view_platform_specific.cc.orig
 +++ chrome/browser/ui/views/frame/opaque_browser_frame_view_platform_specific.cc
@@ -6,8 +7,8 @@ Index: chrome/browser/ui/views/frame/opaque_browser_frame_view_platform_specific
  
  #include "build/build_config.h"
  
--#if !defined(OS_LINUX)
-+#if !defined(OS_LINUX) && !defined(OS_BSD)
+-#if !defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if !defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_BSD)
  
  // static
  std::unique_ptr<OpaqueBrowserFrameViewPlatformSpecific>

@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_memory_discardable_memory_internal_h,v 1.2 2020/11/05 15:49:49 robert Exp $
+$OpenBSD: patch-base_memory_discardable_memory_internal_h,v 1.3 2021/04/01 10:24:44 robert Exp $
 
 Index: base/memory/discardable_memory_internal.h
 --- base/memory/discardable_memory_internal.h.orig
@@ -7,8 +7,8 @@ Index: base/memory/discardable_memory_internal.h
  #include "base/metrics/field_trial_params.h"
  #include "build/build_config.h"
  
--#if defined(OS_ANDROID) || defined(OS_LINUX)
-+#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  
  namespace base {
  

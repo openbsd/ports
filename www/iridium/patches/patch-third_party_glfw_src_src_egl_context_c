@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_glfw_src_src_egl_context_c,v 1.1 2020/11/05 15:49:53 robert Exp $
+$OpenBSD: patch-third_party_glfw_src_src_egl_context_c,v 1.2 2021/04/01 10:24:45 robert Exp $
 
 Index: third_party/glfw/src/src/egl_context.c
 --- third_party/glfw/src/src/egl_context.c.orig

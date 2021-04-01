@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_gn_build_build_linux_ninja_template,v 1.6 2020/11/05 15:49:53 robert Exp $
+$OpenBSD: patch-tools_gn_build_build_linux_ninja_template,v 1.7 2021/04/01 10:24:46 robert Exp $
 
 Index: tools/gn/build/build_linux.ninja.template
 --- tools/gn/build/build_linux.ninja.template.orig

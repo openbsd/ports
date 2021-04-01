@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_strings_app_locale_settings_grd,v 1.7 2020/11/05 15:49:54 robert Exp $
+$OpenBSD: patch-ui_strings_app_locale_settings_grd,v 1.8 2021/04/01 10:24:46 robert Exp $
 
 Index: ui/strings/app_locale_settings.grd
 --- ui/strings/app_locale_settings.grd.orig

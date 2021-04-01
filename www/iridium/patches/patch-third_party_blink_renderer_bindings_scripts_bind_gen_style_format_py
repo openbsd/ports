@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_bindings_scripts_bind_gen_style_format_py,v 1.1 2020/11/05 15:49:52 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_bindings_scripts_bind_gen_style_format_py,v 1.2 2021/04/01 10:24:45 robert Exp $
 
 Index: third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py
 --- third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py.orig

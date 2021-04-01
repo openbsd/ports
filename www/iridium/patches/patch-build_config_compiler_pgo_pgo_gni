@@ -1,0 +1,14 @@
+$OpenBSD: patch-build_config_compiler_pgo_pgo_gni,v 1.1 2021/04/01 10:24:44 robert Exp $
+
+Index: build/config/compiler/pgo/pgo.gni
+--- build/config/compiler/pgo/pgo.gni.orig
++++ build/config/compiler/pgo/pgo.gni
+@@ -13,7 +13,7 @@ declare_args() {
+   #     2 : Used during the PGO (optimization) phase.
+   chrome_pgo_phase = 0
+   if (is_official_build &&
+-      (is_win || is_mac || (is_linux && !chromeos_is_browser_only && !is_chromecast))) {
++      (is_win || is_mac || (is_linux && !chromeos_is_browser_only && !is_chromecast && !is_openbsd))) {
+     chrome_pgo_phase = 2
+   }
+ 

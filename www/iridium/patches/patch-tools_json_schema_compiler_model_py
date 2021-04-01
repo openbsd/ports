@@ -1,12 +1,12 @@
-$OpenBSD: patch-tools_json_schema_compiler_model_py,v 1.5 2020/11/05 15:49:53 robert Exp $
+$OpenBSD: patch-tools_json_schema_compiler_model_py,v 1.6 2021/04/01 10:24:46 robert Exp $
 
 Index: tools/json_schema_compiler/model.py
 --- tools/json_schema_compiler/model.py.orig
 +++ tools/json_schema_compiler/model.py
-@@ -605,7 +605,7 @@ class Platforms(object):
-   """
+@@ -735,7 +735,7 @@ class Platforms(object):
    CHROMEOS = _PlatformInfo("chromeos")
    CHROMEOS_TOUCH = _PlatformInfo("chromeos_touch")
+   LACROS = _PlatformInfo("lacros")
 -  LINUX = _PlatformInfo("linux")
 +  LINUX = _PlatformInfo("openbsd")
    MAC = _PlatformInfo("mac")

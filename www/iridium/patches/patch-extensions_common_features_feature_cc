@@ -1,9 +1,9 @@
-$OpenBSD: patch-extensions_common_features_feature_cc,v 1.5 2020/11/05 15:49:51 robert Exp $
+$OpenBSD: patch-extensions_common_features_feature_cc,v 1.6 2021/04/01 10:24:45 robert Exp $
 
 Index: extensions/common/features/feature.cc
 --- extensions/common/features/feature.cc.orig
 +++ extensions/common/features/feature.cc
-@@ -26,6 +26,8 @@ Feature::Platform Feature::GetCurrentPlatform() {
+@@ -32,6 +32,8 @@ Feature::Platform Feature::GetCurrentPlatform() {
    return MACOSX_PLATFORM;
  #elif defined(OS_WIN)
    return WIN_PLATFORM;

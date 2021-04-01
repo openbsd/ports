@@ -1,4 +1,5 @@
-$OpenBSD: patch-media_audio_audio_manager_h,v 1.13 2020/11/05 15:49:52 robert Exp $
+$OpenBSD: patch-media_audio_audio_manager_h,v 1.14 2021/04/01 10:24:45 robert Exp $
+
 Index: media/audio/audio_manager.h
 --- media/audio/audio_manager.h.orig
 +++ media/audio/audio_manager.h
@@ -6,8 +7,8 @@ Index: media/audio/audio_manager.h
    static std::unique_ptr<AudioManager> CreateForTesting(
        std::unique_ptr<AudioThread> audio_thread);
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    // Sets the name of the audio source as seen by external apps. Only actually
    // used with PulseAudio as of this writing.
    static void SetGlobalAppName(const std::string& app_name);

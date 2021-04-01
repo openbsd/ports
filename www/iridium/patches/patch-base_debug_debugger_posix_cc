@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_debug_debugger_posix_cc,v 1.15 2020/11/05 15:49:49 robert Exp $
+$OpenBSD: patch-base_debug_debugger_posix_cc,v 1.16 2021/04/01 10:24:43 robert Exp $
 
 Index: base/debug/debugger_posix.cc
 --- base/debug/debugger_posix.cc.orig

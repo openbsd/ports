@@ -1,8 +1,8 @@
-$OpenBSD: patch-media_BUILD_gn,v 1.10 2020/11/05 15:49:52 robert Exp $
+$OpenBSD: patch-media_BUILD_gn,v 1.11 2021/04/01 10:24:45 robert Exp $
 Index: media/BUILD.gn
 --- media/BUILD.gn.orig
 +++ media/BUILD.gn
-@@ -64,6 +64,9 @@ config("media_config") {
+@@ -66,6 +66,9 @@ config("media_config") {
        defines += [ "DLOPEN_PULSEAUDIO" ]
      }
    }

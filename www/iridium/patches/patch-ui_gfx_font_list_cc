@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_font_list_cc,v 1.8 2020/11/05 15:49:53 robert Exp $
+$OpenBSD: patch-ui_gfx_font_list_cc,v 1.9 2021/04/01 10:24:46 robert Exp $
 
 Index: ui/gfx/font_list.cc
 --- ui/gfx/font_list.cc.orig
@@ -7,8 +7,8 @@ Index: ui/gfx/font_list.cc
  bool g_default_impl_initialized = false;
  
  bool IsFontFamilyAvailable(const std::string& family, SkFontMgr* fontManager) {
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    return !!fontManager->legacyMakeTypeface(family.c_str(), SkFontStyle());
  #else
    sk_sp<SkFontStyleSet> set(fontManager->matchFamily(family.c_str()));

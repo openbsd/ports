@@ -1,9 +1,9 @@
-$OpenBSD: patch-media_capture_video_linux_video_capture_device_factory_linux_cc,v 1.3 2020/11/05 15:49:52 robert Exp $
+$OpenBSD: patch-media_capture_video_linux_video_capture_device_factory_linux_cc,v 1.4 2021/04/01 10:24:45 robert Exp $
 
 Index: media/capture/video/linux/video_capture_device_factory_linux.cc
 --- media/capture/video/linux/video_capture_device_factory_linux.cc.orig
 +++ media/capture/video/linux/video_capture_device_factory_linux.cc
-@@ -78,6 +78,9 @@ class DevVideoFilePathsDeviceProvider
+@@ -84,6 +84,9 @@ class DevVideoFilePathsDeviceProvider
      : public VideoCaptureDeviceFactoryLinux::DeviceProvider {
   public:
    void GetDeviceIds(std::vector<std::string>* target_container) override {
@@ -13,7 +13,7 @@ Index: media/capture/video/linux/video_capture_device_factory_linux.cc
      const base::FilePath path("/dev/");
      base::FileEnumerator enumerator(path, false, base::FileEnumerator::FILES,
                                      "video*");
-@@ -85,9 +88,13 @@ class DevVideoFilePathsDeviceProvider
+@@ -91,9 +94,13 @@ class DevVideoFilePathsDeviceProvider
        const base::FileEnumerator::FileInfo info = enumerator.GetInfo();
        target_container->emplace_back(path.value() + info.GetName().value());
      }
@@ -27,7 +27,7 @@ Index: media/capture/video/linux/video_capture_device_factory_linux.cc
      const std::string file_name = ExtractFileNameFromDeviceId(device_id);
      std::string usb_id;
      const std::string vid_path =
-@@ -105,6 +112,9 @@ class DevVideoFilePathsDeviceProvider
+@@ -111,6 +118,9 @@ class DevVideoFilePathsDeviceProvider
    }
  
    std::string GetDeviceDisplayName(const std::string& device_id) override {
@@ -37,8 +37,8 @@ Index: media/capture/video/linux/video_capture_device_factory_linux.cc
      const std::string file_name = ExtractFileNameFromDeviceId(device_id);
      const std::string interface_path =
          base::StringPrintf(kInterfacePathTemplate, file_name.c_str());
-@@ -249,7 +259,7 @@ void VideoCaptureDeviceFactoryLinux::GetSupportedForma
-   GetSupportedFormatsForV4L2BufferType(fd.get(), supported_formats);
+@@ -246,7 +256,7 @@ void VideoCaptureDeviceFactoryLinux::GetDevicesInfo(
+   std::move(callback).Run(std::move(devices_info));
  }
  
 -int VideoCaptureDeviceFactoryLinux::DoIoctl(int fd, int request, void* argp) {

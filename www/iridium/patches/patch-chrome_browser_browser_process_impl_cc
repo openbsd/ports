@@ -1,9 +1,27 @@
-$OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.14 2020/11/05 15:49:50 robert Exp $
+$OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.15 2021/04/01 10:24:44 robert Exp $
 
 Index: chrome/browser/browser_process_impl.cc
 --- chrome/browser/browser_process_impl.cc.orig
 +++ chrome/browser/browser_process_impl.cc
-@@ -1438,7 +1438,7 @@ void BrowserProcessImpl::Unpin() {
+@@ -196,7 +196,7 @@
+ #include "components/enterprise/browser/controller/chrome_browser_cloud_management_controller.h"
+ #endif
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ #include "chrome/browser/error_reporting/chrome_js_error_report_processor.h"  // nogncheck
+ #endif
+ 
+@@ -1154,7 +1154,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
+   ApplyMetricsReportingPolicy();
+ #endif
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   ChromeJsErrorReportProcessor::Create();
+ #endif
+ 
+@@ -1400,7 +1400,7 @@ void BrowserProcessImpl::Unpin() {
  }
  
  // Mac is currently not supported.

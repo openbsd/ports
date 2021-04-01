@@ -1,14 +1,14 @@
-$OpenBSD: patch-media_base_audio_latency_cc,v 1.8 2020/11/05 15:49:52 robert Exp $
+$OpenBSD: patch-media_base_audio_latency_cc,v 1.9 2021/04/01 10:24:45 robert Exp $
 
 Index: media/base/audio_latency.cc
 --- media/base/audio_latency.cc.orig
 +++ media/base/audio_latency.cc
-@@ -113,7 +113,7 @@ int AudioLatency::GetRtcBufferSize(int sample_rate, in
-     return frames_per_buffer;
+@@ -115,7 +115,7 @@ int AudioLatency::GetRtcBufferSize(int sample_rate, in
    }
  
--#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_FUCHSIA)
-+#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_FUCHSIA) || defined(OS_BSD)
+ #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
+-    defined(OS_FUCHSIA)
++    defined(OS_FUCHSIA) || defined(OS_BSD)
    // On Linux, MacOS and Fuchsia, the low level IO implementations on the
    // browser side supports all buffer size the clients want. We use the native
    // peer connection buffer size (10ms) to achieve best possible performance.

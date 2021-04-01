@@ -1,4 +1,4 @@
-$OpenBSD: patch-remoting_base_chromoting_event_cc,v 1.9 2020/11/05 15:49:52 robert Exp $
+$OpenBSD: patch-remoting_base_chromoting_event_cc,v 1.10 2021/04/01 10:24:45 robert Exp $
 
 Index: remoting/base/chromoting_event.cc
 --- remoting/base/chromoting_event.cc.orig
@@ -7,8 +7,8 @@ Index: remoting/base/chromoting_event.cc
    SetString(kCpuKey, base::SysInfo::OperatingSystemArchitecture());
    SetString(kOsVersionKey, base::SysInfo::OperatingSystemVersion());
    SetString(kWebAppVersionKey, STRINGIZE(VERSION));
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    Os os = Os::CHROMOTING_LINUX;
  #elif defined(OS_CHROMEOS)
    Os os = Os::CHROMOTING_CHROMEOS;

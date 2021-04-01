@@ -1,23 +1,23 @@
-$OpenBSD: patch-chrome_browser_prefs_browser_prefs_cc,v 1.7 2020/11/05 15:49:50 robert Exp $
+$OpenBSD: patch-chrome_browser_prefs_browser_prefs_cc,v 1.8 2021/04/01 10:24:44 robert Exp $
 
 Index: chrome/browser/prefs/browser_prefs.cc
 --- chrome/browser/prefs/browser_prefs.cc.orig
 +++ chrome/browser/prefs/browser_prefs.cc
-@@ -384,7 +384,7 @@
+@@ -381,7 +381,7 @@
  #include "components/os_crypt/os_crypt.h"
  #endif
  
--#if defined(OS_WIN) || defined(OS_MACOSX) || \
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_BSD) || \
+-#if defined(OS_WIN) || defined(OS_MAC) || \
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
      (defined(OS_LINUX) && !defined(OS_CHROMEOS))
  #include "chrome/browser/browser_switcher/browser_switcher_prefs.h"
  #endif
-@@ -1099,7 +1099,7 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
+@@ -1009,7 +1009,7 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
    safe_browsing::PostCleanupSettingsResetter::RegisterProfilePrefs(registry);
  #endif
  
--#if defined(OS_WIN) || defined(OS_MACOSX) || \
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_BSD) || \
+-#if defined(OS_WIN) || defined(OS_MAC) || \
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
      (defined(OS_LINUX) && !defined(OS_CHROMEOS))
    browser_switcher::BrowserSwitcherPrefs::RegisterProfilePrefs(registry);
  #endif

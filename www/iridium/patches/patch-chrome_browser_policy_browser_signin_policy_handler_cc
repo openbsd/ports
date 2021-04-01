@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_policy_browser_signin_policy_handler_cc,v 1.3 2020/11/05 15:49:50 robert Exp $
+$OpenBSD: patch-chrome_browser_policy_browser_signin_policy_handler_cc,v 1.4 2021/04/01 10:24:44 robert Exp $
 
 Index: chrome/browser/policy/browser_signin_policy_handler.cc
 --- chrome/browser/policy/browser_signin_policy_handler.cc.orig
@@ -7,8 +7,8 @@ Index: chrome/browser/policy/browser_signin_policy_handler.cc
      }
      switch (static_cast<BrowserSigninMode>(int_value)) {
        case BrowserSigninMode::kForced:
--#if !defined(OS_LINUX)
-+#if !defined(OS_LINUX) && !defined(OS_BSD)
+-#if !defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if !defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_BSD)
          prefs->SetValue(prefs::kForceBrowserSignin, base::Value(true));
  #endif
          FALLTHROUGH;

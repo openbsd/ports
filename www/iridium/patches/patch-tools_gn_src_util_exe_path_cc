@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_gn_src_util_exe_path_cc,v 1.1 2020/11/15 19:14:12 robert Exp $
+$OpenBSD: patch-tools_gn_src_util_exe_path_cc,v 1.2 2021/04/01 10:24:46 robert Exp $
 
 Index: tools/gn/src/util/exe_path.cc
 --- tools/gn/src/util/exe_path.cc.orig
@@ -7,13 +7,13 @@ Index: tools/gn/src/util/exe_path.cc
  #include <windows.h>
  
  #include "base/win/win_util.h"
--#elif defined(OS_FREEBSD)
-+#elif defined(OS_FREEBSD) || defined(OS_OPENBSD)
+-#elif defined(OS_FREEBSD) || defined(OS_NETBSD)
++#elif defined(OS_FREEBSD) || defined(OS_NETBSD) || defined(OS_OPENBSD)
  #include <limits.h>
  #include <sys/sysctl.h>
  #include <sys/types.h>
-@@ -24,6 +24,10 @@
- #include <image.h>
+@@ -26,6 +26,10 @@
+ #include <stdlib.h>
  #endif
  
 +#if defined(OS_OPENBSD)
@@ -23,10 +23,11 @@ Index: tools/gn/src/util/exe_path.cc
  #if defined(OS_MACOSX)
  
  base::FilePath GetExePath() {
-@@ -79,6 +83,67 @@ base::FilePath GetExePath() {
+@@ -102,6 +106,67 @@ base::FilePath GetExePath() {
+     return base::FilePath();
    }
-   return base::FilePath(std::string(i_info.name));
- }
+   return base::FilePath(raw);
++}
 +
 +#elif defined(OS_OPENBSD)
 +
@@ -87,7 +88,6 @@ Index: tools/gn/src/util/exe_path.cc
 +
 +out:
 +  return base::FilePath();
-+ }
+ }
  
  #else
- 

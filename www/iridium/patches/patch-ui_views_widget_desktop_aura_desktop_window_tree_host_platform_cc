@@ -1,14 +1,14 @@
-$OpenBSD: patch-ui_views_widget_desktop_aura_desktop_window_tree_host_platform_cc,v 1.4 2020/11/05 15:49:54 robert Exp $
+$OpenBSD: patch-ui_views_widget_desktop_aura_desktop_window_tree_host_platform_cc,v 1.5 2021/04/01 10:24:46 robert Exp $
 
 Index: ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc
 --- ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc.orig
 +++ ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc
-@@ -787,7 +787,7 @@ void DesktopWindowTreeHostPlatform::AddAdditionalInitP
+@@ -791,7 +791,7 @@ void DesktopWindowTreeHostPlatform::AddAdditionalInitP
  // DesktopWindowTreeHost:
  
  // Linux subclasses this host and adds some Linux specific bits.
--#if !defined(OS_LINUX)
-+#if !defined(OS_LINUX) && !defined(OS_BSD)
+-#if !defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if !defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_BSD)
  // static
  DesktopWindowTreeHost* DesktopWindowTreeHost::Create(
      internal::NativeWidgetDelegate* native_widget_delegate,

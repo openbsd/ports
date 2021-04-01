@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_process_process_posix_cc,v 1.18 2020/11/05 15:49:49 robert Exp $
+$OpenBSD: patch-base_process_process_posix_cc,v 1.19 2021/04/01 10:24:44 robert Exp $
 
 Index: base/process/process_posix.cc
 --- base/process/process_posix.cc.orig
@@ -15,7 +15,7 @@ Index: base/process/process_posix.cc
  #if BUILDFLAG(CLANG_PROFILING)
  #include "base/test/clang_profiling.h"
  #endif
-@@ -380,7 +385,38 @@ bool Process::SetProcessBackgrounded(bool value) {
+@@ -384,7 +389,42 @@ bool Process::SetProcessBackgrounded(bool value) {
  
  int Process::GetPriority() const {
    DCHECK(IsValid());
@@ -28,12 +28,16 @@ Index: base/process/process_posix.cc
 +}
 +
 +Time Process::CreationTime() const {
++// avoid ps pledge in the network process
++#if !defined(OS_OPENBSD)
 +  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, getpid(),
 +               sizeof(struct kinfo_proc), 0 };
 +  struct kinfo_proc *info = nullptr;
 +  size_t info_size;
++#endif
 +  Time ct = Time();
 +
++#if !defined(OS_OPENBSD)
 +  if (sysctl(mib, base::size(mib), NULL, &info_size, NULL, 0) < 0)
 +    goto out;
 +
@@ -49,7 +53,7 @@ Index: base/process/process_posix.cc
 +out:
 +  if (info)
 +    free(info);
-+
++#endif
 +  return ct;
  }
  

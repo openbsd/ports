@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_startup_bad_flags_prompt_cc,v 1.16 2020/11/05 15:49:50 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_startup_bad_flags_prompt_cc,v 1.17 2021/04/01 10:24:44 robert Exp $
 Index: chrome/browser/ui/startup/bad_flags_prompt.cc
 --- chrome/browser/ui/startup/bad_flags_prompt.cc.orig
 +++ chrome/browser/ui/startup/bad_flags_prompt.cc

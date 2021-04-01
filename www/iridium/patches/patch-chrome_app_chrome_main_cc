@@ -1,24 +1,14 @@
-$OpenBSD: patch-chrome_app_chrome_main_cc,v 1.17 2020/11/05 15:49:49 robert Exp $
+$OpenBSD: patch-chrome_app_chrome_main_cc,v 1.18 2021/04/01 10:24:44 robert Exp $
 
 Index: chrome/app/chrome_main.cc
 --- chrome/app/chrome_main.cc.orig
 +++ chrome/app/chrome_main.cc
-@@ -56,6 +56,9 @@ int ChromeMain(int argc, const char** argv);
- #if !defined(CHROME_MULTIPLE_DLL_CHILD)
- static void trace_url_request(const std::string &caller, const GURL &url)
- {
-+	 base::CommandLine* command_line = base::CommandLine::ForCurrentProcess();
-+	if (!command_line->HasSwitch(switches::kTrk))
-+		return;
- 	iridium::log_url_request(caller, url);
- 	if (url.scheme() != url::kTraceScheme)
- 		/* Do not show infobar for non-trk URLs */
-@@ -126,7 +129,7 @@ int ChromeMain(int argc, const char** argv) {
-   MainThreadStackSamplingProfiler scoped_sampling_profiler;
+@@ -120,7 +120,7 @@ int ChromeMain(int argc, const char** argv) {
  
    // Chrome-specific process modes.
--#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
-+#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
+ #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
+-    defined(OS_WIN)
++    defined(OS_WIN) || defined(OS_BSD)
    if (command_line->HasSwitch(switches::kHeadless)) {
      return headless::HeadlessShellMain(params);
    }

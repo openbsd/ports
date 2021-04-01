@@ -1,14 +1,14 @@
-$OpenBSD: patch-content_browser_renderer_host_render_process_host_impl_h,v 1.11 2020/11/05 15:49:51 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_render_process_host_impl_h,v 1.12 2021/04/01 10:24:45 robert Exp $
 
 Index: content/browser/renderer_host/render_process_host_impl.h
 --- content/browser/renderer_host/render_process_host_impl.h.orig
 +++ content/browser/renderer_host/render_process_host_impl.h
-@@ -478,7 +478,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
+@@ -479,7 +479,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
      is_for_guests_only_ = is_for_guests_only;
    }
  
--#if defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX)
-+#if defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX) && !defined(OS_BSD)
+-#if defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MAC)
++#if defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MAC) && !defined(OS_BSD)
    // Launch the zygote early in the browser startup.
    static void EarlyZygoteLaunch();
- #endif  // defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX)
+ #endif  // defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MAC)

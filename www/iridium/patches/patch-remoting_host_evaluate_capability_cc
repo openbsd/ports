@@ -1,4 +1,4 @@
-$OpenBSD: patch-remoting_host_evaluate_capability_cc,v 1.5 2020/11/05 15:49:52 robert Exp $
+$OpenBSD: patch-remoting_host_evaluate_capability_cc,v 1.6 2021/04/01 10:24:45 robert Exp $
 
 Index: remoting/host/evaluate_capability.cc
 --- remoting/host/evaluate_capability.cc.orig
@@ -7,8 +7,8 @@ Index: remoting/host/evaluate_capability.cc
    }
  #endif
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    if (path.BaseName().value() ==
        FILE_PATH_LITERAL("chrome-remote-desktop-host")) {
      return path;

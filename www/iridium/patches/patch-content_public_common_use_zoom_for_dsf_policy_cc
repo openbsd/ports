@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_public_common_use_zoom_for_dsf_policy_cc,v 1.5 2020/11/05 15:49:51 robert Exp $
+$OpenBSD: patch-content_public_common_use_zoom_for_dsf_policy_cc,v 1.6 2021/04/01 10:24:45 robert Exp $
 
 Index: content/public/common/use_zoom_for_dsf_policy.cc
 --- content/public/common/use_zoom_for_dsf_policy.cc.orig
@@ -7,8 +7,8 @@ Index: content/public/common/use_zoom_for_dsf_policy.cc
  #endif
  
  bool IsUseZoomForDSFEnabledByDefault() {
--#if defined(OS_LINUX) || defined(OS_FUCHSIA)
-+#if defined(OS_LINUX) || defined(OS_FUCHSIA) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
    return true;
  #elif defined(OS_WIN) || defined(OS_ANDROID)
    return base::FeatureList::IsEnabled(kUseZoomForDsfEnabledByDefault);

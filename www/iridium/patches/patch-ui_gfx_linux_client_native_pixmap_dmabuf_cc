@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_linux_client_native_pixmap_dmabuf_cc,v 1.7 2020/11/05 15:49:53 robert Exp $
+$OpenBSD: patch-ui_gfx_linux_client_native_pixmap_dmabuf_cc,v 1.8 2021/04/01 10:24:46 robert Exp $
 
 Index: ui/gfx/linux/client_native_pixmap_dmabuf.cc
 --- ui/gfx/linux/client_native_pixmap_dmabuf.cc.orig

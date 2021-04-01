@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_profiles_profiles_state_cc,v 1.1 2021/04/01 10:24:44 robert Exp $
+
+Index: chrome/browser/profiles/profiles_state.cc
+--- chrome/browser/profiles/profiles_state.cc.orig
++++ chrome/browser/profiles/profiles_state.cc
+@@ -180,7 +180,7 @@ bool IsGuestModeRequested(const base::CommandLine& com
+                           PrefService* local_state,
+                           bool show_warning) {
+ #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_WIN) || \
+-    defined(OS_MAC)
++    defined(OS_MAC) || defined(OS_BSD)
+   DCHECK(local_state);
+ 
+   // Check if guest mode enforcement commandline switch or policy are provided.

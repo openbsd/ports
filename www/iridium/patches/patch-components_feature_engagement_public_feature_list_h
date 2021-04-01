@@ -1,21 +1,21 @@
-$OpenBSD: patch-components_feature_engagement_public_feature_list_h,v 1.6 2020/11/05 15:49:51 robert Exp $
+$OpenBSD: patch-components_feature_engagement_public_feature_list_h,v 1.7 2021/04/01 10:24:44 robert Exp $
 
 Index: components/feature_engagement/public/feature_list.h
 --- components/feature_engagement/public/feature_list.h.orig
 +++ components/feature_engagement/public/feature_list.h
-@@ -122,7 +122,7 @@ DEFINE_VARIATION_PARAM(kIPHBadgedTranslateManualTrigge
+@@ -143,7 +143,7 @@ DEFINE_VARIATION_PARAM(kIPHDiscoverFeedHeaderFeature,
  #endif  // defined(OS_IOS)
  
- #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
+ #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
  DEFINE_VARIATION_PARAM(kIPHDesktopTabGroupsNewGroupFeature,
                         "IPH_DesktopTabGroupsNewGroup");
  DEFINE_VARIATION_PARAM(kIPHFocusModeFeature, "IPH_FocusMode");
-@@ -193,7 +193,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
-         VARIATION_ENTRY(kIPHBadgedReadingListFeature),
+@@ -223,7 +223,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
          VARIATION_ENTRY(kIPHBadgedTranslateManualTriggerFeature),
- #elif defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
+         VARIATION_ENTRY(kIPHDiscoverFeedHeaderFeature),
+ #elif defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
          VARIATION_ENTRY(kIPHDesktopTabGroupsNewGroupFeature),

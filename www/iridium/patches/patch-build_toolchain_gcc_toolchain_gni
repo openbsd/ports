@@ -1,9 +1,9 @@
-$OpenBSD: patch-build_toolchain_gcc_toolchain_gni,v 1.15 2020/11/05 15:49:49 robert Exp $
+$OpenBSD: patch-build_toolchain_gcc_toolchain_gni,v 1.16 2021/04/01 10:24:44 robert Exp $
 Index: build/toolchain/gcc_toolchain.gni
 --- build/toolchain/gcc_toolchain.gni.orig
 +++ build/toolchain/gcc_toolchain.gni
-@@ -36,6 +36,11 @@ if (is_linux && target_os == "android") {
-   enable_resource_whitelist_generation = false
+@@ -50,6 +50,11 @@ if (enable_resource_allowlist_generation) {
+       "enable_resource_allowlist_generation=true does not work for target_os=$target_os")
  }
  
 +declare_args() {
@@ -14,7 +14,7 @@ Index: build/toolchain/gcc_toolchain.gni
  # This template defines a toolchain for something that works like gcc
  # (including clang).
  #
-@@ -589,12 +594,12 @@ template("clang_toolchain") {
+@@ -626,12 +631,12 @@ template("clang_toolchain") {
    }
  
    gcc_toolchain(target_name) {

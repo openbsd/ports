@@ -1,4 +1,4 @@
-$OpenBSD: patch-remoting_host_it2me_it2me_native_messaging_host_main_cc,v 1.7 2020/11/05 15:49:52 robert Exp $
+$OpenBSD: patch-remoting_host_it2me_it2me_native_messaging_host_main_cc,v 1.8 2021/04/01 10:24:45 robert Exp $
 
 Index: remoting/host/it2me/it2me_native_messaging_host_main.cc
 --- remoting/host/it2me/it2me_native_messaging_host_main.cc.orig
@@ -7,8 +7,8 @@ Index: remoting/host/it2me/it2me_native_messaging_host_main.cc
  #include "remoting/host/switches.h"
  #include "remoting/host/usage_stats_consent.h"
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  #include <gtk/gtk.h>
  
  #include "base/linux_util.h"
@@ -16,8 +16,8 @@ Index: remoting/host/it2me/it2me_native_messaging_host_main.cc
  
    remoting::LoadResources("");
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
-   // Required in order for us to run multiple X11 threads.
-   XInitThreads();
- 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   // Create an X11EventSource so the global X11 connection
+   // (x11::Connection::Get()) can dispatch X events.
+   auto event_source =

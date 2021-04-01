@@ -1,14 +1,14 @@
-$OpenBSD: patch-media_video_gpu_memory_buffer_video_frame_pool_cc,v 1.5 2020/11/05 15:49:52 robert Exp $
+$OpenBSD: patch-media_video_gpu_memory_buffer_video_frame_pool_cc,v 1.6 2021/04/01 10:24:45 robert Exp $
 
 Index: media/video/gpu_memory_buffer_video_frame_pool.cc
 --- media/video/gpu_memory_buffer_video_frame_pool.cc.orig
 +++ media/video/gpu_memory_buffer_video_frame_pool.cc
-@@ -573,7 +573,7 @@ void GpuMemoryBufferVideoFramePool::PoolImpl::CreateHa
+@@ -633,7 +633,7 @@ void GpuMemoryBufferVideoFramePool::PoolImpl::CreateHa
    }
  
    bool is_software_backed_video_frame = !video_frame->HasTextures();
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    is_software_backed_video_frame &= !video_frame->HasDmaBufs();
  #endif
  
