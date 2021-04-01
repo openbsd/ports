@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.41 2020/12/30 13:19:05 robert Exp $
+@comment $OpenBSD: PLIST-web,v 1.42 2021/04/01 07:15:38 robert Exp $
 @pkgpath net/zabbix,-web,mysql
 @pkgpath net/zabbix,-web,pgsql
 @sample conf/modules.sample/
@@ -39,6 +39,7 @@ zabbix/app/controllers/CControllerFavouriteCreate.php
 zabbix/app/controllers/CControllerFavouriteDelete.php
 zabbix/app/controllers/CControllerGuiEdit.php
 zabbix/app/controllers/CControllerGuiUpdate.php
+zabbix/app/controllers/CControllerHintBox.php
 zabbix/app/controllers/CControllerHost.php
 zabbix/app/controllers/CControllerHostMacrosList.php
 zabbix/app/controllers/CControllerHostView.php
@@ -241,6 +242,7 @@ zabbix/app/views/administration.valuemap.list.php
 zabbix/app/views/administration.workingtime.edit.php
 zabbix/app/views/dashboard.properties.edit.php
 zabbix/app/views/dashboard.sharing.edit.php
+zabbix/app/views/hint.box.php
 zabbix/app/views/hostmacros.list.php
 zabbix/app/views/js/
 zabbix/app/views/js/administration.authentication.edit.js.php
@@ -542,6 +544,7 @@ zabbix/include/classes/helpers/CArrayHelper.php
 zabbix/include/classes/helpers/CBrandHelper.php
 zabbix/include/classes/helpers/CConditionHelper.php
 zabbix/include/classes/helpers/CElasticsearchHelper.php
+zabbix/include/classes/helpers/CHintBoxHelper.php
 zabbix/include/classes/helpers/CHtml.php
 zabbix/include/classes/helpers/CMapHelper.php
 zabbix/include/classes/helpers/CMathHelper.php
