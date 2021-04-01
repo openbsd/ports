@@ -1,0 +1,27 @@
+$OpenBSD: patch-Source_WebKit_WebProcess_WebPage_CoordinatedGraphics_LayerTreeHost_h,v 1.1 2021/04/01 09:39:33 cwen Exp $
+
+Fix for:
+LayerTreeHost.h:216:28: error: out-of-line definition of 'forceRepaintAsync'
+does not match any declaration in 'WebKit::LayerTreeHost'
+LayerTreeHost.h:82:28: note: type of 1st parameter of member declaration does
+not match definition ('CompletionHandler<void ()> &&' vs
+'CompletionHandler<void ()> &')
+
+LayerTreeHost::forceRepaintAsync used to be a bool method, but is now void.
+It only impacts powerpc where OpenGL is disabled.
+
+That error has been introduced by:
+https://trac.webkit.org/changeset/271171/webkit/trunk/Source/WebKit/WebProcess/WebPage/CoordinatedGraphics/LayerTreeHost.cpp
+
+Index: Source/WebKit/WebProcess/WebPage/CoordinatedGraphics/LayerTreeHost.h
+--- Source/WebKit/WebProcess/WebPage/CoordinatedGraphics/LayerTreeHost.h.orig
++++ Source/WebKit/WebProcess/WebPage/CoordinatedGraphics/LayerTreeHost.h
+@@ -213,7 +213,7 @@ inline void LayerTreeHost::setRootCompositingLayer(Web
+ inline void LayerTreeHost::setViewOverlayRootLayer(WebCore::GraphicsLayer*) { }
+ inline void LayerTreeHost::scrollNonCompositedContents(const WebCore::IntRect&) { }
+ inline void LayerTreeHost::forceRepaint() { }
+-inline bool LayerTreeHost::forceRepaintAsync(CompletionHandler<void()>&) { return false; }
++inline void LayerTreeHost::forceRepaintAsync(CompletionHandler<void()>&&) { }
+ inline void LayerTreeHost::sizeDidChange(const WebCore::IntSize&) { }
+ inline void LayerTreeHost::pauseRendering() { }
+ inline void LayerTreeHost::resumeRendering() { }
