@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/09/27 10:59:00 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/04/01 05:48:11 rsadowski Exp $
 include/dlib/
 include/dlib/algs.h
 include/dlib/all/
@@ -176,6 +176,8 @@ include/dlib/cuda/tensor_abstract.h
 include/dlib/cuda/tensor_tools.h
 include/dlib/data_io/
 include/dlib/data_io.h
+include/dlib/data_io/cifar.h
+include/dlib/data_io/cifar_abstract.h
 include/dlib/data_io/image_dataset_metadata.h
 include/dlib/data_io/libsvm_io.h
 include/dlib/data_io/libsvm_io_abstract.h
@@ -214,6 +216,7 @@ include/dlib/dnn/layers.h
 include/dlib/dnn/layers_abstract.h
 include/dlib/dnn/loss.h
 include/dlib/dnn/loss_abstract.h
+include/dlib/dnn/misc.h
 include/dlib/dnn/solvers.h
 include/dlib/dnn/solvers_abstract.h
 include/dlib/dnn/trainer.h
@@ -613,6 +616,8 @@ include/dlib/matlab/subprocess_stream.h
 include/dlib/matrix/
 include/dlib/matrix.h
 include/dlib/matrix/cblas_constants.h
+include/dlib/matrix/fft_size.h
+include/dlib/matrix/kiss_fft.h
 include/dlib/matrix/lapack/
 include/dlib/matrix/lapack/fortran_id.h
 include/dlib/matrix/lapack/gees.h
@@ -661,6 +666,7 @@ include/dlib/matrix/matrix_subexp_abstract.h
 include/dlib/matrix/matrix_trsm.h
 include/dlib/matrix/matrix_utilities.h
 include/dlib/matrix/matrix_utilities_abstract.h
+include/dlib/matrix/mkl_fft.h
 include/dlib/matrix/symmetric_matrix_cache.h
 include/dlib/matrix/symmetric_matrix_cache_abstract.h
 include/dlib/md5/
@@ -1078,6 +1084,7 @@ include/dlib/test/cmd_line_parser.h
 include/dlib/test/conditioning_class.h
 include/dlib/test/create_iris_datafile.h
 include/dlib/test/examples/
+include/dlib/test/fftr_good_data.h
 include/dlib/test/gui/
 include/dlib/test/optimization_test_functions.h
 include/dlib/test/tester.h

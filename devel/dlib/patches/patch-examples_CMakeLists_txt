@@ -1,4 +1,4 @@
-$OpenBSD: patch-examples_CMakeLists_txt,v 1.3 2020/01/09 04:47:57 rsadowski Exp $
+$OpenBSD: patch-examples_CMakeLists_txt,v 1.4 2021/04/01 05:48:11 rsadowski Exp $
 thread-local storage is not supported
 Index: examples/CMakeLists.txt
 --- examples/CMakeLists.txt.orig
@@ -11,4 +11,4 @@ Index: examples/CMakeLists.txt
 +   #add_gui_example(dnn_face_recognition_ex)
     add_example(dnn_introduction_ex)
     add_example(dnn_introduction2_ex)
-    add_example(dnn_inception_ex)
+    add_example(dnn_introduction3_ex)
