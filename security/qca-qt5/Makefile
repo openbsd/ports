@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2020/09/11 14:17:13 rsadowski Exp $
-# separate port for Qt5 because it's too different from Qt4 case
+# $OpenBSD: Makefile,v 1.9 2021/04/01 12:19:41 rsadowski Exp $
+#
 COMMENT =	Qt Cryptographic Architecture
 
-V =		2.3.1
+V =		2.3.2
 DISTNAME =	qca-${V}
 PKGNAME =	qca-qt5-${V}
 CATEGORIES =	security
