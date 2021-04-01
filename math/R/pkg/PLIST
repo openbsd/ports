@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.46 2021/02/15 10:43:19 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.47 2021/04/01 11:52:25 feinerer Exp $
 bin/R
 @bin bin/Rscript
 lib/R/
@@ -482,6 +482,11 @@ lib/R/library/cluster/po/en@quot/LC_MESSAGES/cluster.mo
 lib/R/library/cluster/po/fr/
 lib/R/library/cluster/po/fr/LC_MESSAGES/
 lib/R/library/cluster/po/fr/LC_MESSAGES/R-cluster.mo
+lib/R/library/cluster/po/fr/LC_MESSAGES/cluster.mo
+lib/R/library/cluster/po/it/
+lib/R/library/cluster/po/it/LC_MESSAGES/
+lib/R/library/cluster/po/it/LC_MESSAGES/R-cluster.mo
+lib/R/library/cluster/po/it/LC_MESSAGES/cluster.mo
 lib/R/library/cluster/po/ko/
 lib/R/library/cluster/po/ko/LC_MESSAGES/
 lib/R/library/cluster/po/ko/LC_MESSAGES/R-cluster.mo
