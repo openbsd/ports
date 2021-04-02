@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2021/02/23 19:39:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2021/04/02 10:27:40 jasper Exp $
 
 COMMENT =		wrapper for Borg to create and prune backups
 
-MODPY_EGG_VERSION =	1.5.12
+MODPY_EGG_VERSION =	1.5.13
 DISTNAME =		borgmatic-${MODPY_EGG_VERSION}
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
