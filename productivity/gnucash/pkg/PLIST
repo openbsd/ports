@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.52 2021/01/09 12:02:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.53 2021/04/02 08:31:52 ajacoutot Exp $
 @conflict gnucash-docs-*
 @pkgpath productivity/gnucash-docs
 bin/gnc-fq-check
@@ -477,6 +477,7 @@ lib/guile/2.2/site-ccache/gnucash/utilities.go
 @so lib/libgnucash-guile.so
 @man man/man1/gnc-fq-dump.1
 @man man/man1/gnc-fq-helper.1
+@man man/man1/gnucash-cli.1
 @man man/man1/gnucash.1
 share/applications/gnucash.desktop
 share/doc/gnucash/
@@ -503,6 +504,7 @@ share/doc/gnucash/ChangeLog.2016
 share/doc/gnucash/ChangeLog.2017
 share/doc/gnucash/ChangeLog.2018
 share/doc/gnucash/ChangeLog.2019
+share/doc/gnucash/ChangeLog.2020
 share/doc/gnucash/DOCUMENTERS
 share/doc/gnucash/HACKING
 share/doc/gnucash/LICENSE
@@ -611,6 +613,7 @@ share/gnome/help/gnucash-guide/de/ch_loans.xml
 share/gnome/help/gnucash-guide/de/ch_oth_assets.xml
 share/gnome/help/gnucash-guide/de/ch_oview.xml
 share/gnome/help/gnucash-guide/de/ch_python_bindings.xml
+share/gnome/help/gnucash-guide/de/ch_reports.xml
 share/gnome/help/gnucash-guide/de/ch_txns.xml
 share/gnome/help/gnucash-guide/de/fdl-appendix.xml
 share/gnome/help/gnucash-guide/de/figures/
@@ -678,6 +681,35 @@ share/gnome/help/gnucash-guide/pt/figures/
 share/gnome/help/gnucash-guide/pt/gnc-docbookx.dtd
 share/gnome/help/gnucash-guide/pt/gnucash-guide.xml
 share/gnome/help/gnucash-guide/pt/legal.xml
+share/gnome/help/gnucash-guide/ru/
+share/gnome/help/gnucash-guide/ru/appendixa.xml
+share/gnome/help/gnucash-guide/ru/appendixb.xml
+share/gnome/help/gnucash-guide/ru/appendixc.xml
+share/gnome/help/gnucash-guide/ru/appendixd.xml
+share/gnome/help/gnucash-guide/ru/ch_accts.xml
+share/gnome/help/gnucash-guide/ru/ch_basics.xml
+share/gnome/help/gnucash-guide/ru/ch_budgets.xml
+share/gnome/help/gnucash-guide/ru/ch_bus_features.xml
+share/gnome/help/gnucash-guide/ru/ch_capgain.xml
+share/gnome/help/gnucash-guide/ru/ch_cbook.xml
+share/gnome/help/gnucash-guide/ru/ch_cc.xml
+share/gnome/help/gnucash-guide/ru/ch_currency.xml
+share/gnome/help/gnucash-guide/ru/ch_dep.xml
+share/gnome/help/gnucash-guide/ru/ch_expenses.xml
+share/gnome/help/gnucash-guide/ru/ch_import_business_data.xml
+share/gnome/help/gnucash-guide/ru/ch_invest.xml
+share/gnome/help/gnucash-guide/ru/ch_loans.xml
+share/gnome/help/gnucash-guide/ru/ch_oth_assets.xml
+share/gnome/help/gnucash-guide/ru/ch_oview.xml
+share/gnome/help/gnucash-guide/ru/ch_python_bindings.xml
+share/gnome/help/gnucash-guide/ru/ch_reports.xml
+share/gnome/help/gnucash-guide/ru/ch_txns.xml
+share/gnome/help/gnucash-guide/ru/fdl-appendix.xml
+share/gnome/help/gnucash-guide/ru/figures/
+share/gnome/help/gnucash-guide/ru/gnc-docbookx.dtd
+share/gnome/help/gnucash-guide/ru/gnc-glossary.xml
+share/gnome/help/gnucash-guide/ru/gnucash-guide.xml
+share/gnome/help/gnucash-guide/ru/legal.xml
 share/gnome/help/gnucash-help/
 share/gnome/help/gnucash-help/C/
 share/gnome/help/gnucash-help/C/Help_ch_Account-Actions.xml
