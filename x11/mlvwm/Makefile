@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/02/06 14:49:13 tb Exp $
+# $OpenBSD: Makefile,v 1.2 2021/04/02 17:38:45 sthen Exp $
 
 COMMENT =	Macintosh-like virtual window manager
 
-V =		0.9.2
+V =		0.9.3
 DISTNAME =	mlvwm-$V
 CATEGORIES =	x11
 
