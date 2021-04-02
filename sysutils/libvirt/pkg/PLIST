@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2021/03/06 08:08:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2021/04/02 09:07:58 ajacoutot Exp $
 @bin bin/virsh
 @bin bin/virt-admin
 @bin bin/virt-host-validate
@@ -113,8 +113,6 @@ share/doc/libvirt/html/api.html
 share/doc/libvirt/html/api_extension.html
 share/doc/libvirt/html/apple-touch-icon.png
 share/doc/libvirt/html/apps.html
-share/doc/libvirt/html/architecture.gif
-share/doc/libvirt/html/architecture.html
 share/doc/libvirt/html/auditlog.html
 share/doc/libvirt/html/auth.html
 share/doc/libvirt/html/best-practices.html
@@ -389,6 +387,7 @@ share/libvirt/cpu_map/x86_Conroe.xml
 share/libvirt/cpu_map/x86_Cooperlake.xml
 share/libvirt/cpu_map/x86_Dhyana.xml
 share/libvirt/cpu_map/x86_EPYC-IBPB.xml
+share/libvirt/cpu_map/x86_EPYC-Milan.xml
 share/libvirt/cpu_map/x86_EPYC-Rome.xml
 share/libvirt/cpu_map/x86_EPYC.xml
 share/libvirt/cpu_map/x86_Haswell-IBRS.xml
@@ -495,6 +494,7 @@ share/locale/pl/LC_MESSAGES/libvirt.mo
 share/locale/pt/LC_MESSAGES/libvirt.mo
 share/locale/pt_BR/LC_MESSAGES/libvirt.mo
 share/locale/ru/LC_MESSAGES/libvirt.mo
+share/locale/si/LC_MESSAGES/libvirt.mo
 share/locale/sr/LC_MESSAGES/libvirt.mo
 share/locale/sr@latin/LC_MESSAGES/libvirt.mo
 share/locale/sv/LC_MESSAGES/libvirt.mo
