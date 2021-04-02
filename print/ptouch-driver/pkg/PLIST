@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/05/28 08:47:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/04/02 08:40:26 ajacoutot Exp $
 @conflict foomatic-db-<4.0.20110101p0
 @bin libexec/cups/filter/rastertoptch
 share/foomatic/db/source/driver/ptouch-pt.xml
@@ -39,6 +39,7 @@ share/foomatic/db/source/printer/Brother-PT-1950VP.xml
 share/foomatic/db/source/printer/Brother-PT-1960.xml
 share/foomatic/db/source/printer/Brother-PT-2300.xml
 share/foomatic/db/source/printer/Brother-PT-2420PC.xml
+share/foomatic/db/source/printer/Brother-PT-2430PC.xml
 share/foomatic/db/source/printer/Brother-PT-2450DX.xml
 share/foomatic/db/source/printer/Brother-PT-2500PC.xml
 share/foomatic/db/source/printer/Brother-PT-2600.xml
@@ -50,6 +51,7 @@ share/foomatic/db/source/printer/Brother-PT-9200PC.xml
 share/foomatic/db/source/printer/Brother-PT-9400.xml
 share/foomatic/db/source/printer/Brother-PT-9500PC.xml
 share/foomatic/db/source/printer/Brother-PT-9600.xml
+share/foomatic/db/source/printer/Brother-PT-9700PC.xml
 share/foomatic/db/source/printer/Brother-PT-E550W.xml
 share/foomatic/db/source/printer/Brother-PT-P700.xml
 share/foomatic/db/source/printer/Brother-PT-P900W.xml
