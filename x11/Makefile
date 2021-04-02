@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.704 2021/03/29 19:52:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.705 2021/04/02 09:29:09 jasper Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -116,6 +116,7 @@
      SUBDIR += gtksourceview
      SUBDIR += gtksourceview3
      SUBDIR += gtksourceview4
+     SUBDIR += gtksourceview5
      SUBDIR += gxmessage
      SUBDIR += herbstluftwm
      SUBDIR += hicolor-icon-theme
