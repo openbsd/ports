@@ -1,8 +1,17 @@
-$OpenBSD: patch-configure_ac,v 1.20 2021/02/09 10:32:33 robert Exp $
+$OpenBSD: patch-configure_ac,v 1.21 2021/04/02 06:43:01 robert Exp $
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
+@@ -91,7 +91,7 @@ AM_PROG_CC_C_O
+ AC_PROG_CXX
+ AC_PROG_INSTALL
+ dnl Needed, at the very least, for `make dist` (hence outside enable_base)
+-AX_PKG_SWIG_MAX(3, [], [ AC_MSG_ERROR([SWIG 3 is required to build..]) ])
++AC_PATH_PROG([SWIG_EXEC], [swig])
+ 
+ # configure may rerun as part of git-checking out a different version,
+ # so remove stale version
 @@ -107,11 +107,13 @@ AS_CASE([$host_os],
  		BUILDOS="openbsd"
  		ZCPPFLAGS="$ZCPPFLAGS -DOPENBSD"

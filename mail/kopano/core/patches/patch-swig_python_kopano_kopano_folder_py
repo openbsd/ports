@@ -1,0 +1,17 @@
+$OpenBSD: patch-swig_python_kopano_kopano_folder_py,v 1.1 2021/04/02 06:43:01 robert Exp $
+
+SWIG 3 version compat hack
+https://jira.kopano.io/browse/KC-1680
+
+Index: swig/python/kopano/kopano/folder.py
+--- swig/python/kopano/kopano/folder.py.orig
++++ swig/python/kopano/kopano/folder.py
+@@ -1204,7 +1204,7 @@ class Folder(Properties):
+ 
+     def search_wait(self):
+         while True:
+-            (restrict, _, state) = self.mapiobj.GetSearchCriteria(0)
++            state = self.mapiobj.GetSearchCriteria(0)[-1]
+             if not state & SEARCH_REBUILD:
+                 break
+ 
