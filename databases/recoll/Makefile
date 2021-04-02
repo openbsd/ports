@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.10 2021/03/31 20:08:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/04/02 17:40:48 sthen Exp $
 
-COMMENT-main= 	full text search application
-COMMENT-gui= 	X user interface to recoll
+COMMENT-main=	full text search application
+COMMENT-gui=	X user interface to recoll
 
 MULTI_PACKAGES=	-main -gui
 
-V=		1.29.2
-DISTNAME= 	recoll-${V}
+V=		1.30.0
+DISTNAME=	recoll-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-gui=	recoll-gui-${V}
 
 SHARED_LIBS +=	recoll-${V}            0.0 # 0.0
 SHARED_LIBS +=  recoll                 0.0 # 0.0
 
-CATEGORIES= 	databases sysutils
+CATEGORIES=	databases sysutils
 
-HOMEPAGE= 	https://www.lesbonscomptes.com/recoll/
+HOMEPAGE=	https://www.lesbonscomptes.com/recoll/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
@@ -51,7 +51,7 @@ LIB_DEPENDS-gui=	${MODQT5_LIB_DEPENDS} \
 			databases/recoll \
 			x11/qt5/qtwebkit
 
-CONFIGURE_STYLE= 	gnu
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
