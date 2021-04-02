@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2020/08/19 12:25:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2021/04/02 10:36:20 jasper Exp $
 
 COMMENT =	iLO automation from python or shell
 
-MODPY_EGG_VERSION =	4.3
+MODPY_EGG_VERSION =	4.4.3
 
 DISTNAME =	python-hpilo-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/^python-/py-/}
@@ -17,6 +17,8 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
+
 FLAVORS =		python3
 FLAVOR =		python3
 
