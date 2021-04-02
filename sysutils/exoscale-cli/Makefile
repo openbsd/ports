@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.47 2021/03/27 07:55:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2021/04/02 08:44:24 ajacoutot Exp $
 
 COMMENT=		manage Exoscale infrastructure from the command-line
 
-GH_TAGNAME=		v1.26.0
+GH_TAGNAME=		v1.27.1
 GH_ACCOUNT=		exoscale
 GH_PROJECT=		cli
 DISTNAME=		${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME:C/^v//}
@@ -10,6 +10,7 @@ DISTNAME=		${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME:C/^v//}
 CATEGORIES=		sysutils
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
+
 # Apache 2.0
 PERMIT_PACKAGE=		Yes
 
