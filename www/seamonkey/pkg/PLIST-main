@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.45 2021/01/26 15:57:23 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.46 2021/04/02 07:19:51 landry Exp $
 @conflict seamonkey-<=2.0.6
 @pkgpath www/seamonkey
 bin/${MOZILLA_PROJECT}
@@ -78,8 +78,6 @@ lib/${MOZILLA_PROJECT}/dependentlibs.list
 lib/${MOZILLA_PROJECT}/dictionaries/
 lib/${MOZILLA_PROJECT}/dictionaries/en-US.aff
 lib/${MOZILLA_PROJECT}/dictionaries/en-US.dic
-lib/${MOZILLA_PROJECT}/distribution/
-lib/${MOZILLA_PROJECT}/distribution/extensions/
 lib/${MOZILLA_PROJECT}/extensions/
 lib/${MOZILLA_PROJECT}/extensions/modern@themes.mozilla.org.xpi
 lib/${MOZILLA_PROJECT}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi

@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.250 2021/03/23 13:17:59 landry Exp $
+# $OpenBSD: Makefile,v 1.251 2021/04/02 07:19:51 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # version = (TB version - 3) / 100 + 2
-MOZILLA_VERSION =	2.53.6
+MOZILLA_VERSION =	2.53.7
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	comm/suite
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-5.8.6
+PKGNAME-lightning =	lightning-seamonkey-5.8.7
 EPOCH-lightning =	0
-REVISION-main =	0
 
 HOMEPAGE =	http://www.seamonkey-project.org/
 
