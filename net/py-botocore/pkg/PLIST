@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.157 2021/03/26 07:37:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.158 2021/04/02 08:32:14 ajacoutot Exp $
 @conflict py-botocore-*
 @pkgpath net/py-botocore
 lib/python${MODPY_VERSION}/site-packages/botocore/
@@ -381,6 +381,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/cognito-idp/2016-04-18/pa
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cognito-idp/2016-04-18/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cognito-sync/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cognito-sync/2014-06-30/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cognito-sync/2014-06-30/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cognito-sync/2014-06-30/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/comprehend/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/comprehend/2017-11-27/
