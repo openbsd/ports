@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: synapse.rc,v 1.1.1.1 2020/03/08 17:03:15 landry Exp $
+# $OpenBSD: synapse.rc,v 1.2 2021/04/02 07:35:56 solene Exp $
 
 daemon="${PREFIX}/share/synapse/synctl"
 daemon_user="_synapse"
@@ -8,7 +8,7 @@ daemon_flags="${LOCALSTATEDIR}/synapse/homeserver.yaml"
 
 . /etc/rc.d/rc.subr
 
-pexp="${MODPY_BIN} -B -m synapse.app.homeserver --daemonize -c ${daemon_flags}"
+pexp="${MODPY_BIN} -m synapse.app.homeserver --daemonize -c ${daemon_flags}"
 
 rc_start() {
 	${rcexec} "${daemon} start ${daemon_flags}"

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2021/03/09 18:55:29 solene Exp $
+@comment $OpenBSD: PLIST,v 1.16 2021/04/02 07:35:56 solene Exp $
 @newgroup _synapse:849
 @newuser _synapse:849:849:daemon:Matrix.org Daemon:/var/synapse:/sbin/nologin
 @rcscript ${RCDIR}/synapse
@@ -1266,6 +1266,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/d
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/59/08delete_pushers_for_deactivated_accounts.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/59/08delete_stale_pushers.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/59/09rejected_events_metadata.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/59/10delete_purged_chain_cover.sql
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/59/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/delta/59/${MODPY_PYCACHE}01ignored_user.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/schema/full_schemas/
@@ -1393,6 +1394,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/util/${MODPY_PYCACHE}iterutils.
 lib/python${MODPY_VERSION}/site-packages/synapse/util/${MODPY_PYCACHE}jsonobject.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/util/${MODPY_PYCACHE}logcontext.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/util/${MODPY_PYCACHE}logformatter.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/util/${MODPY_PYCACHE}macaroons.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/util/${MODPY_PYCACHE}manhole.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/util/${MODPY_PYCACHE}metrics.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/util/${MODPY_PYCACHE}module_loader.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1441,6 +1443,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/util/iterutils.py
 lib/python${MODPY_VERSION}/site-packages/synapse/util/jsonobject.py
 lib/python${MODPY_VERSION}/site-packages/synapse/util/logcontext.py
 lib/python${MODPY_VERSION}/site-packages/synapse/util/logformatter.py
+lib/python${MODPY_VERSION}/site-packages/synapse/util/macaroons.py
 lib/python${MODPY_VERSION}/site-packages/synapse/util/manhole.py
 lib/python${MODPY_VERSION}/site-packages/synapse/util/metrics.py
 lib/python${MODPY_VERSION}/site-packages/synapse/util/module_loader.py
