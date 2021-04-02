@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2021/03/27 08:04:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2021/04/02 08:00:01 ajacoutot Exp $
 
 BROKEN-aarch64=	old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1.1.11
 BROKEN-armv7=	old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1.1.11
@@ -6,7 +6,7 @@ BROKEN-armv7=	old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1
 COMMENT=	thin wrapper for Terraform that provides extra tools
 
 MODGO_MODNAME=	github.com/gruntwork-io/terragrunt
-MODGO_VERSION=	v0.28.16
+MODGO_VERSION=	v0.28.18
 DISTNAME=	terragrunt-${MODGO_VERSION}
 
 WRKDIST=	${WRKDIR}/github.com/gruntwork-io/terragrunt@${MODGO_VERSION}
@@ -60,7 +60,7 @@ MODGO_MODULES =	\
 	github.com/!shopify/toxiproxy					 v2.1.4+incompatible \
 	github.com/!unknwon/com						 v0.0.0-20151008135407-28b053d5a292 \
 	github.com/abdullin/seq						 v0.0.0-20160510034733-d5467c17e7af \
-	github.com/agext/levenshtein					 v1.2.2 \
+	github.com/agext/levenshtein					 v1.2.3 \
 	github.com/agl/ed25519						 v0.0.0-20150830182803-278e1ec8e8a6 \
 	github.com/alecthomas/template					 v0.0.0-20160405071501-a0175ee3bccc \
 	github.com/alecthomas/units					 v0.0.0-20151022065526-2efee857e7cf \
@@ -74,6 +74,7 @@ MODGO_MODULES =	\
 	github.com/apparentlymart/go-dump				 v0.0.0-20190214190832-042adf3cf4a0 \
 	github.com/apparentlymart/go-textseg				 v1.0.0 \
 	github.com/apparentlymart/go-textseg/v12			 v12.0.0 \
+	github.com/apparentlymart/go-textseg/v13			 v13.0.0 \
 	github.com/apparentlymart/go-versions				 v0.0.2-0.20180815153302-64b99f7cb171 \
 	github.com/armon/circbuf					 v0.0.0-20190214190532-5111143e8da2 \
 	github.com/armon/consul-api					 v0.0.0-20180202201655-eb2c6b5be1b6 \
@@ -157,7 +158,7 @@ MODGO_MODULES =	\
 	github.com/golang/protobuf					 v1.4.2 \
 	github.com/golang/snappy					 v0.0.1 \
 	github.com/google/btree						 v1.0.0 \
-	github.com/google/go-cmp					 v0.5.2 \
+	github.com/google/go-cmp					 v0.5.5 \
 	github.com/google/go-containerregistry				 v0.0.0-20200110202235-f4fb41bf00a3 \
 	github.com/google/go-querystring				 v1.0.0 \
 	github.com/google/gofuzz					 v1.1.0 \
@@ -204,12 +205,12 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-version					 v1.2.0 \
 	github.com/hashicorp/golang-lru					 v0.5.3 \
 	github.com/hashicorp/hcl					 v1.0.0 \
-	github.com/hashicorp/hcl/v2					 v2.8.2 \
+	github.com/hashicorp/hcl/v2					 v2.9.1 \
 	github.com/hashicorp/hil					 v0.0.0-20190212112733-ab17b08d6590 \
 	github.com/hashicorp/memberlist					 v0.1.0 \
 	github.com/hashicorp/serf					 v0.0.0-20160124182025-e4ec8cc423bb \
 	github.com/hashicorp/terraform					 v0.12.24 \
-	github.com/hashicorp/terraform-config-inspect			 v0.0.0-20191212124732-c6ae6269b9d7 \
+	github.com/hashicorp/terraform-config-inspect			 v0.0.0-20210318070130-9a80970d6b34 \
 	github.com/hashicorp/terraform-svchost				 v0.0.0-20191011084731-65d371908596 \
 	github.com/hashicorp/vault					 v0.10.4 \
 	github.com/hashicorp/vault/api					 v1.0.4 \
@@ -262,7 +263,7 @@ MODGO_MODULES =	\
 	github.com/mitchellh/go-homedir					 v1.1.0 \
 	github.com/mitchellh/go-linereader				 v0.0.0-20190213213312-1b945b3263eb \
 	github.com/mitchellh/go-testing-interface			 v1.0.0 \
-	github.com/mitchellh/go-wordwrap				 v1.0.0 \
+	github.com/mitchellh/go-wordwrap				 v1.0.1 \
 	github.com/mitchellh/hashstructure				 v1.0.0 \
 	github.com/mitchellh/mapstructure				 v1.2.2 \
 	github.com/mitchellh/panicwrap					 v1.0.0 \
@@ -338,13 +339,16 @@ MODGO_MODULES =	\
 	github.com/urfave/cli						 v1.22.3 \
 	github.com/vdemeester/k8s-pkg-credentialprovider		 v0.0.0-20200107171650-7c61ffa44238 \
 	github.com/vmihailenco/msgpack					 v4.0.1+incompatible \
+	github.com/vmihailenco/msgpack/v4				 v4.3.12 \
+	github.com/vmihailenco/tagparser				 v0.1.1 \
 	github.com/vmware/govmomi					 v0.20.3 \
 	github.com/xanzy/ssh-agent					 v0.2.1 \
 	github.com/xiang90/probing					 v0.0.0-20190116061207-43a291ad63a2 \
 	github.com/xlab/treeprint					 v0.0.0-20161029104018-1d6e34225557 \
 	github.com/xordataexchange/crypt				 v0.0.3-0.20170626215501-b2862e3d0a77 \
 	github.com/yuin/goldmark					 v1.2.1 \
-	github.com/zclconf/go-cty					 v1.3.1 \
+	github.com/zclconf/go-cty					 v1.8.1 \
+	github.com/zclconf/go-cty-debug					 v0.0.0-20191215020915-b22d67c1ba0b \
 	github.com/zclconf/go-cty-yaml					 v1.0.1 \
 	go.etcd.io/bbolt						 v1.3.3 \
 	go.etcd.io/etcd							 v0.0.0-20191023171146-3cf2f69b5738 \
@@ -364,7 +368,7 @@ MODGO_MODULES =	\
 	golang.org/x/oauth2						 v0.0.0-20200902213428-5d25da1a8d43 \
 	golang.org/x/sync						 v0.0.0-20200625203802-6e8e738ad208 \
 	golang.org/x/sys						 v0.0.0-20200930185726-fdedc70b468f \
-	golang.org/x/text						 v0.3.3 \
+	golang.org/x/text						 v0.3.5 \
 	golang.org/x/time						 v0.0.0-20191024005414-555d28b269f0 \
 	golang.org/x/tools						 v0.0.0-20200904185747-39188db58858 \
 	golang.org/x/xerrors						 v0.0.0-20200804184101-5ec99f83aff1 \
@@ -484,6 +488,7 @@ MODGO_MODFILES =	\
 	github.com/!puerkito!bio/purell				 v1.0.0 \
 	github.com/!puerkito!bio/urlesc				 v0.0.0-20160726150825-5bd2802263f2 \
 	github.com/agext/levenshtein				 v1.2.1 \
+	github.com/agext/levenshtein				 v1.2.2 \
 	github.com/apparentlymart/go-dump			 v0.0.0-20180507223929-23540a00eaa3 \
 	github.com/armon/go-radix				 v0.0.0-20180808171621-7fddfc383310 \
 	github.com/aws/aws-sdk-go				 v1.15.78 \
@@ -566,6 +571,7 @@ MODGO_MODFILES =	\
 	github.com/google/go-cmp				 v0.4.1 \
 	github.com/google/go-cmp				 v0.5.0 \
 	github.com/google/go-cmp				 v0.5.1 \
+	github.com/google/go-cmp				 v0.5.2 \
 	github.com/google/gofuzz				 v0.0.0-20161122191042-44d81051d367 \
 	github.com/google/gofuzz				 v1.0.0 \
 	github.com/google/pprof					 v0.0.0-20181206194817-3ea8567a2e57 \
@@ -599,6 +605,7 @@ MODGO_MODFILES =	\
 	github.com/hashicorp/hcl				 v0.0.0-20170504190234-a4b07c25de5f \
 	github.com/hashicorp/hcl/v2				 v2.0.0 \
 	github.com/hashicorp/hcl/v2				 v2.3.0 \
+	github.com/hashicorp/terraform-config-inspect		 v0.0.0-20191212124732-c6ae6269b9d7 \
 	github.com/hashicorp/yamux				 v0.0.0-20180604194846-3520598351bb \
 	github.com/imdario/mergo				 v0.3.5 \
 	github.com/jmespath/go-jmespath				 v0.0.0-20160202185014-0b12d6b521d8 \
@@ -637,6 +644,7 @@ MODGO_MODFILES =	\
 	github.com/mitchellh/go-homedir				 v1.0.0 \
 	github.com/mitchellh/go-testing-interface		 v0.0.0-20171004221916-a61a99592b77 \
 	github.com/mitchellh/go-wordwrap			 v0.0.0-20150314170334-ad45545899c7 \
+	github.com/mitchellh/go-wordwrap			 v1.0.0 \
 	github.com/mitchellh/mapstructure			 v1.1.2 \
 	github.com/modern-go/concurrent				 v0.0.0-20180228061459-e0a39a4cb421 \
 	github.com/modern-go/reflect2				 v0.0.0-20180320133207-05fbef0ca5da \
@@ -693,6 +701,7 @@ MODGO_MODFILES =	\
 	github.com/zclconf/go-cty				 v1.1.0 \
 	github.com/zclconf/go-cty				 v1.2.0 \
 	github.com/zclconf/go-cty				 v1.2.1 \
+	github.com/zclconf/go-cty				 v1.8.0 \
 	go.opencensus.io					 v0.20.1 \
 	go.opencensus.io					 v0.20.2 \
 	go.opencensus.io					 v0.21.0 \
@@ -848,6 +857,7 @@ MODGO_MODFILES =	\
 	golang.org/x/text					 v0.3.1-0.20180807135948-17ff2d5776d2 \
 	golang.org/x/text					 v0.3.1-0.20181227161524-e6919f6577db \
 	golang.org/x/text					 v0.3.2 \
+	golang.org/x/text					 v0.3.3 \
 	golang.org/x/time					 v0.0.0-20180412165947-fbb02b2291d2 \
 	golang.org/x/time					 v0.0.0-20181108054448-85acf8d2951c \
 	golang.org/x/time					 v0.0.0-20190308202827-9d24e82272b4 \
