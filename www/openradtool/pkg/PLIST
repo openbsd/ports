@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/03/19 13:29:09 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/04/03 13:33:09 jturner Exp $
 @conflict kwebapp-*
 @pkgpath www/kwebapp
 @bin bin/ort
@@ -6,6 +6,7 @@
 @bin bin/ort-audit-gv
 @bin bin/ort-audit-json
 @bin bin/ort-c-header
+@bin bin/ort-c-manpage
 @bin bin/ort-c-source
 @bin bin/ort-diff
 @bin bin/ort-javascript
