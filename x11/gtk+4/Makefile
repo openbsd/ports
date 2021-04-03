@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2021/03/31 13:42:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2021/04/03 19:31:41 cwen Exp $
 
 # XXX add support for libcloudproviders? (-Dcloudproviders=enabled)
 # XXX add support for tracker3? (-Dtracker=enabled)
@@ -116,6 +116,12 @@ CONFIGURE_ARGS +=	-Dmedia-ffmpeg=disabled
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mclang}
 CFLAGS +=		-Wno-error
+.endif
+
+# disable meson's default of using "-Wl,--as-needed" on ld.bfd arches;
+# build failures due to undefined references are often seen.
+.if !${PROPERTIES:Mlld}
+CONFIGURE_ARGS +=	-Db_asneeded=false
 .endif
 
 pre-configure:
