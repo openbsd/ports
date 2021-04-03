@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.556 2021/04/01 05:53:16 robert Exp $
+# $OpenBSD: Makefile,v 1.557 2021/04/03 20:27:25 sthen Exp $
+
+BROKEN-i386=	v8/src/wasm/baseline/ia32/liftoff-assembler-ia32.h doesn't build
+# ../../v8/src/wasm/baseline/ia32/liftoff-assembler-ia32.h:364:24: error: out-of-line definition of 'Load' does not match any declaration in 'v8::internal::wasm::LiftoffAssembler'
 
 USE_WXNEEDED=		Yes
 
