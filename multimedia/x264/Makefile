@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2020/11/05 19:42:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2021/04/03 11:15:46 sthen Exp $
 
 COMMENT=	free H.264/MPEG-4 AVC encoder
 
@@ -6,7 +6,7 @@ DISTNAME=	x264-20200705
 GH_ACCOUNT=	mirror
 GH_PROJECT=	x264
 GH_COMMIT=	cde9a93319bea766a92e306d69059c76de970190
-REVISION=	0
+REVISION=	1
 CATEGORIES=	multimedia
 
 SHARED_LIBS=	x264	22.0

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.207 2021/02/23 14:30:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.208 2021/04/03 11:15:46 sthen Exp $
 
 COMMENT=	audio/video converter and streamer
 
 V=		4.3.2
 DISTNAME=	ffmpeg-${V}
+REVISION=	0
 EPOCH=		1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	https://ffmpeg.org/releases/
