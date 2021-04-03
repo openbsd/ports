@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/01/22 18:03:02 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/04/03 21:48:56 sebastia Exp $
 @bin bin/hcxeiutool
 @bin bin/hcxessidtool
 @bin bin/hcxhash2cap
@@ -7,6 +7,7 @@
 @bin bin/hcxmactool
 @bin bin/hcxpcapngtool
 @bin bin/hcxpmkidtool
+@bin bin/hcxpmktool
 @bin bin/hcxpsktool
 @bin bin/hcxwltool
 @bin bin/whoismac
