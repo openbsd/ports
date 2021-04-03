@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/04/03 08:10:46 ajacoutot Exp $
 
 COMMENT=		efficient search engine and triplestore
 
 GNOME_PROJECT=		tracker
-GNOME_VERSION=		3.0.3
+GNOME_VERSION=		3.0.4
 PKGNAME=		tracker3-${GNOME_VERSION}
-REVISION=		0
 
-SHARED_LIBS += tracker-sparql-3.0        0.0 # 0.3.0
+SHARED_LIBS += tracker-sparql-3.0        0.0 # 0.4.0
 
 # LGPLv2.1+; GPLv2+; BSD-3-clause
 PERMIT_PACKAGE=		Yes
