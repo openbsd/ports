@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2020/08/23 09:55:01 jca Exp $
+@comment $OpenBSD: PLIST,v 1.26 2021/04/04 23:43:25 jca Exp $
 @option is-branch
 @pkgpath editors/emacs21,-el
 @pkgpath editors/emacs21,-leim
@@ -1026,6 +1026,7 @@ share/emacs/${VERSION}/etc/tutorials/TUTORIAL.sv
 share/emacs/${VERSION}/etc/tutorials/TUTORIAL.th
 share/emacs/${VERSION}/etc/tutorials/TUTORIAL.translators
 share/emacs/${VERSION}/etc/tutorials/TUTORIAL.zh
+share/emacs/${VERSION}/etc/w32-feature.el
 share/emacs/${VERSION}/etc/yow.lines
 share/emacs/${VERSION}/lisp/
 share/emacs/${VERSION}/lisp/COPYING
@@ -3346,6 +3347,8 @@ share/emacs/${VERSION}/lisp/org/org-plot.el.gz
 share/emacs/${VERSION}/lisp/org/org-plot.elc
 share/emacs/${VERSION}/lisp/org/org-protocol.el.gz
 share/emacs/${VERSION}/lisp/org/org-protocol.elc
+share/emacs/${VERSION}/lisp/org/org-refile.el.gz
+share/emacs/${VERSION}/lisp/org/org-refile.elc
 share/emacs/${VERSION}/lisp/org/org-src.el.gz
 share/emacs/${VERSION}/lisp/org/org-src.elc
 share/emacs/${VERSION}/lisp/org/org-table.el.gz
