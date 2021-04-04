@@ -1,0 +1,24 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2021/04/04 08:57:15 solene Exp $
+
+COMMENT =		gemini server written in C used with inetd
+V =			1.06
+DISTNAME =		vger-${V}
+
+CATEGORIES =		net
+
+HOMEPAGE =		https://tildegit.org/solene/vger/
+
+MAINTAINER =		Florian Viehweger <openbsd@out-of-creativity.de>
+
+# BSD 2-clause
+PERMIT_PACKAGE =	Yes
+
+# uses pledge()
+# uses unveil()
+WANTLIB +=		c
+
+MASTER_SITES =		https://tildegit.org/solene/vger/archive/
+DISTFILES =		vger-{}${V}${EXTRACT_SUFX}
+WRKSRC =		${WRKDIR}/vger
+
+.include <bsd.port.mk>

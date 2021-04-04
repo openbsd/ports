@@ -1,0 +1,50 @@
+$OpenBSD: README,v 1.1.1.1 2021/04/04 08:57:15 solene Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Modify configuration files
+==========================
+
+In order to run Vger, you need to modify /etc/inetd.conf and /etc/relayd.conf.
+
+inetd.conf
+----------
+
+	127.0.0.1:11965 stream tcp nowait _vger ${TRUEPREFIX}/bin/vger vger
+
+relayd.conf
+-----------
+
+	log connection
+	tcp protocol "gemini" {
+		tls keypair hostname.example
+	}
+
+	relay "gemini" {
+	listen on hostname.example port 1965 tls
+	protocol "gemini"
+	forward to 127.0.0.1 port 11965
+	}
+
+
+Enable respective services
+==========================
+
+You need to enable and start inetd and relayd.
+
+$ rcctl enable relayd inetd
+$ rcctl start relayd inetd
+
+Firewall configuration
+======================
+
+Enable TCP port 1965.
+
+Usage
+=====
+
+Vger will serve files named index.gmi if no explicit filename is given.
+If this file doesn't exist and auto index is enabled, an index file
+with a link to every file in the directory will be served.
