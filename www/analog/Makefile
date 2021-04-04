@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.60 2019/07/12 20:50:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2021/04/04 08:51:50 kirby Exp $
 
 COMMENT=	extremely fast program for analysing WWW logfiles
 
 DISTNAME=	analog-6.0
-REVISION=	4
+REVISION=	5
 CATEGORIES=	www
 
-MASTER_SITES=	http://analog.gsp.com/ \
-		http://redmoon.reverse.net/analog/analog-6.0.tar.gz
+HOMEPAGE=	https://analog.gsp.com/
 
-HOMEPAGE=	http://analog.gsp.com/
+MASTER_SITES=	https://analog.gsp.com/ \
+		https://redmoon.reverse.net/analog/
 
 # GPLv2 only
 PERMIT_PACKAGE=	Yes
