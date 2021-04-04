@@ -1,17 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/03/20 21:23:58 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/04/04 07:50:23 feinerer Exp $
 @conflict py-pg_activity-*
 bin/pg_activity
 lib/python${MODPY_VERSION}/site-packages/pg_activity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pg_activity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/pg_activity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/pg_activity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/pg_activity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/pg_activity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/pg_activity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pgactivity/
 lib/python${MODPY_VERSION}/site-packages/pgactivity/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pgactivity/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pgactivity/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pgactivity/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pgactivity/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pgactivity/${MODPY_PYCACHE}activities.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pgactivity/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pgactivity/${MODPY_PYCACHE}colors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pgactivity/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pgactivity/${MODPY_PYCACHE}data.${MODPY_PYC_MAGIC_TAG}pyc
@@ -23,6 +27,7 @@ lib/python${MODPY_VERSION}/site-packages/pgactivity/${MODPY_PYCACHE}utils.${MODP
 lib/python${MODPY_VERSION}/site-packages/pgactivity/${MODPY_PYCACHE}views.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pgactivity/${MODPY_PYCACHE}widgets.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pgactivity/activities.py
+lib/python${MODPY_VERSION}/site-packages/pgactivity/cli.py
 lib/python${MODPY_VERSION}/site-packages/pgactivity/colors.py
 lib/python${MODPY_VERSION}/site-packages/pgactivity/compat.py
 lib/python${MODPY_VERSION}/site-packages/pgactivity/data.py

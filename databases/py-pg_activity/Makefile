@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2021/03/20 21:23:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/04/04 07:50:23 feinerer Exp $
 
 COMMENT =		command line tool for PostgreSQL server activity monitoring
 
-MODPY_EGG_VERSION =	2.1.2
+MODPY_EGG_VERSION =	2.1.4
 DISTNAME =		pg_activity-${MODPY_EGG_VERSION}
 
 GH_ACCOUNT =		dalibo
