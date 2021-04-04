@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1250 2021/03/29 12:18:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.1251 2021/04/04 08:57:59 solene Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -758,6 +758,7 @@
      SUBDIR += uucpd
      SUBDIR += validns
      SUBDIR += vf1
+     SUBDIR += vger
      SUBDIR += vicq
      SUBDIR += vncsnapshot
      SUBDIR += vnstat
