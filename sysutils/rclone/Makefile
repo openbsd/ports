@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2021/04/01 03:31:59 bket Exp $
+# $OpenBSD: Makefile,v 1.27 2021/04/04 09:11:48 solene Exp $
 
 BROKEN-aarch64 =	SIGILL when running rclone
 BROKEN-arm =		SIGBUS when running rclone
@@ -8,6 +8,7 @@ COMMENT =	rsync for cloud storage
 V =		1.55.0
 DISTNAME =	rclone-v${V}
 PKGNAME =	rclone-${V}
+REVISION =	0
 
 CATEGORIES =	sysutils
 
@@ -32,7 +33,7 @@ post-extract:
 	mv ${WRKDIR}/vendor ${WRKDIST}
 
 post-build:
-.for s in bash zsh
+.for s in bash fish zsh
 	cd ${MODGO_WORKSPACE}/bin && \
 		HOME=${WRKSRC} ./rclone genautocomplete $s rclone.$s
 .endfor
@@ -41,9 +42,12 @@ do-install:
 	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/rclone ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/rclone.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/ \
+		${PREFIX}/share/fish/vendor_completions.d/ \
 		${PREFIX}/share/zsh/vendor-completions/
 	${INSTALL_DATA} ${MODGO_WORKSPACE}/bin/rclone.bash \
 		${PREFIX}/share/bash-completion/completions/rclone
+	${INSTALL_DATA} ${MODGO_WORKSPACE}/bin/rclone.fish \
+		${PREFIX}/share/fish/vendor_completions.d/
 	${INSTALL_DATA} ${MODGO_WORKSPACE}/bin/rclone.zsh \
 		${PREFIX}/share/zsh/vendor-completions/_rclone
 
