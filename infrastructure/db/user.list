@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.385 2021/02/10 15:35:38 sthen Exp $
+$OpenBSD: user.list,v 1.386 2021/04/04 08:58:22 solene Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -373,3 +373,4 @@ id  user		group		port
 862 _blackboxexporter	_blackboxexporter	sysutils/blackbox_exporter
 863 _dcc		_dcc		mail/dcc
 864 _icingadirector	_icingaweb2	net/icinga/web2-module-director
+865 _vger		_vger		net/vger
