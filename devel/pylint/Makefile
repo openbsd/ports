@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2021/03/31 14:07:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2021/04/05 14:21:15 sthen Exp $
 
 COMMENT =		lint-like code checker for Python code
 
+# XXX check/update py-astroid pkgspec in RUN_DEPENDS when updating
 MODPY_EGG_VERSION =	2.7.4
 DISTNAME=		pylint-${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -19,7 +21,7 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 TEST_ENV =		PY_IGNORE_IMPORTMISMATCH=1
 
-RUN_DEPENDS =		devel/py-astroid${MODPY_FLAVOR}>=2.4 \
+RUN_DEPENDS =		devel/py-astroid${MODPY_FLAVOR}>=2.5.2,<2.7 \
 			devel/py-isort${MODPY_FLAVOR} \
 			devel/py-mccabe${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR} \
