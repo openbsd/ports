@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.52 2021/03/03 06:38:19 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.53 2021/04/05 14:13:39 sthen Exp $
+
+# XXX python module is linked with wrong libraries if an old version is
+# installed during build
 
 BROKEN-i386 =		clang segfault compiling imagebufalgo_pixelmath.cpp
 BROKEN-powerpc =	clang segfault compiling imagebufalgo_pixelmath.cpp
@@ -8,11 +11,11 @@ COMMENT =		library for reading and writing images
 GH_ACCOUNT =		OpenImageIO
 GH_PROJECT =		oiio
 GH_TAGNAME =		Release-$V
-V =			2.2.11.1
+V =			2.2.13.0
 DISTNAME =		openimageio-${V}
 
-SHARED_LIBS +=		OpenImageIO		9.0 # 2.2.11
-SHARED_LIBS +=		OpenImageIO_Util	5.0 # 2.2.11
+SHARED_LIBS +=		OpenImageIO		10.0 # 2.2.13
+SHARED_LIBS +=		OpenImageIO_Util	6.0 # 2.2.13
 
 CATEGORIES =		graphics devel
 
@@ -23,14 +26,13 @@ MAINTAINER =		Dimitri Karamazov <deserter666@danwin1210.me>
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
-WANTLIB += GL GLU Half-2_5 Iex-2_5 IexMath-2_5 IlmImf-2_5
-WANTLIB += IlmThread-2_5 Imath-2_5 OpenColorIO Qt5Core Qt5Gui
-WANTLIB += Qt5OpenGL Qt5Widgets avcodec avformat avutil
-WANTLIB += boost_atomic-mt boost_chrono-mt boost_date_time-mt
-WANTLIB += boost_filesystem-mt boost_system-mt boost_thread-mt
-WANTLIB += bz2 c freetype gif intl jpeg m openjp2 png pugixml
-WANTLIB += raw_r swscale tiff util webp webpdemux z
+WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += GL GLU Half-2_5 Iex-2_5 IexMath-2_5 IlmImf-2_5 IlmThread-2_5
+WANTLIB += Imath-2_5 OpenColorIO Qt5Core Qt5Gui Qt5OpenGL Qt5Widgets
+WANTLIB += avcodec avformat avutil boost_atomic-mt boost_chrono-mt
+WANTLIB += boost_date_time-mt boost_filesystem-mt boost_system-mt
+WANTLIB += boost_thread-mt bz2 c freetype gif jpeg m openjp2 png
+WANTLIB += pugixml raw_r swscale tiff webp webpdemux z
 
 MODULES =		devel/cmake \
 			lang/python \
