@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/02/20 00:05:11 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/04/05 13:26:31 sthen Exp $
 @bin bin/pwqcheck
 @bin bin/pwqfilter
 @bin bin/pwqgen
@@ -8,6 +8,13 @@ include/passwdqc.h
 @man man/man1/pwqcheck.1
 @man man/man1/pwqfilter.1
 @man man/man1/pwqgen.1
+@man man/man3/libpasswdqc.3
+@man man/man3/passwdqc_check.3
+@man man/man3/passwdqc_params_free.3
+@man man/man3/passwdqc_params_load.3
+@man man/man3/passwdqc_params_parse.3
+@man man/man3/passwdqc_params_reset.3
+@man man/man3/passwdqc_random.3
 @man man/man5/passwdqc.conf.5
 share/doc/passwdqc/
 share/doc/passwdqc/README

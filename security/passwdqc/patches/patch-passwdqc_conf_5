@@ -1,15 +1,15 @@
-$OpenBSD: patch-passwdqc_conf_5,v 1.4 2021/02/20 00:05:11 sthen Exp $
+$OpenBSD: patch-passwdqc_conf_5,v 1.5 2021/04/05 13:26:31 sthen Exp $
 
 Index: passwdqc.conf.5
 --- passwdqc.conf.5.orig
 +++ passwdqc.conf.5
-@@ -285,8 +285,7 @@ logging.
- .Cm config=/etc/passwdqc.conf
+@@ -286,8 +286,7 @@ logging.
  option).
  .Sh SEE ALSO
--.Xr getpwnam 3 ,
+ .Xr getpwnam 3 ,
+-.Xr libpasswdqc 3 ,
 -.Xr pam_passwdqc 8 .
-+.Xr getpwnam 3 .
++.Xr libpasswdqc 3 .
  .Pp
  https://www.openwall.com/passwdqc/
  .Sh AUTHORS

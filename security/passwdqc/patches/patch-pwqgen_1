@@ -1,11 +1,11 @@
-$OpenBSD: patch-pwqgen_1,v 1.5 2021/02/20 00:05:11 sthen Exp $
+$OpenBSD: patch-pwqgen_1,v 1.6 2021/04/05 13:26:31 sthen Exp $
 
 Index: pwqgen.1
 --- pwqgen.1.orig
 +++ pwqgen.1
-@@ -72,8 +72,7 @@ option).
- .Sh SEE ALSO
+@@ -73,8 +73,7 @@ option).
  .Xr pwqcheck 1 ,
+ .Xr libpasswdqc 3 ,
  .Xr urandom 4 ,
 -.Xr passwdqc.conf 5 ,
 -.Xr pam_passwdqc 8 .
