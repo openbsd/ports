@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_mosquitto_c,v 1.1 2021/01/29 16:08:27 sthen Exp $
+$OpenBSD: patch-src_mosquitto_c,v 1.2 2021/04/05 14:30:35 sthen Exp $
 
 Index: src/mosquitto.c
 --- src/mosquitto.c.orig
 +++ src/mosquitto.c
-@@ -110,10 +110,10 @@ int drop_privileges(struct mosquitto__config *config)
+@@ -103,10 +103,10 @@ int drop_privileges(struct mosquitto__config *config)
  					log__printf(NULL, MOSQ_LOG_ERR, "Error: Unable to drop privileges to '%s' because this user does not exist.", config->user);
  					return 1;
  				}else{

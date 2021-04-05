@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.43 2021/03/12 21:17:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2021/04/05 14:30:35 sthen Exp $
 
 COMMENT =		opensource MQTT broker
 
-V =			2.0.9
+V =			2.0.10
 DISTNAME =		mosquitto-$V
 
 SHARED_LIBS +=  mosquitto                 2.0 # 1.5
@@ -54,6 +54,7 @@ do-test:
 	cd ${WRKSRC}/test; env ${MAKE_ENV} \
 	    WRKLIB=${WRKBUILD}/lib/libmosquitto.so.${LIBmosquitto_VERSION} \
 	    WRKLIBPP=${WRKBUILD}/lib/cpp/libmosquittopp.so.${LIBmosquittopp_VERSION} \
-	    LDFLAGS="-L${LOCALBASE}/lib" gmake WITH_TLS_PSK=no WITH_CJSON=no test
+	    LDFLAGS="-L${LOCALBASE}/lib" CXX="${CXX}" \
+	    gmake WITH_TLS_PSK=no WITH_CJSON=no test
 
 .include <bsd.port.mk>
