@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:12:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/04/05 15:58:14 semarie Exp $
 
 COMMENT =		library to access Tryton models like a client
 
-MODPY_EGG_VERSION =	5.0.7
+MODPY_EGG_VERSION =	5.0.8
 DISTNAME =		proteus-${MODPY_EGG_VERSION}
-REVISION =		0
 
 TRYTON_PY =		Yes
 
