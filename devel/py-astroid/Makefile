@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2021/03/04 02:56:30 kmos Exp $
+# $OpenBSD: Makefile,v 1.16 2021/04/05 14:20:07 sthen Exp $
 
 COMMENT =		common base representation of Python source code
 
-MODPY_EGG_VERSION =	2.5.1
+# XXX check devel/pylint which often has tight version restrictions
+MODPY_EGG_VERSION =	2.5.2
 DISTNAME =		astroid-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
