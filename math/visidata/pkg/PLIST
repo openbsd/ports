@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/02/09 14:30:09 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/04/05 13:27:45 sthen Exp $
 bin/vd
 bin/visidata
 lib/python${MODPY_VERSION}/site-packages/visidata/
@@ -28,6 +28,7 @@ lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}color.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}colorsheet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}column.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}customdate.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}ddwplay.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}deprecated.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}describe.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}editor.${MODPY_PYC_MAGIC_TAG}pyc
@@ -46,6 +47,7 @@ lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}macros.${MODPY
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}mainloop.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}melt.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}memory.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}menu.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}metasheets.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}misc.${MODPY_PYC_MAGIC_TAG}pyc
@@ -89,6 +91,7 @@ lib/python${MODPY_VERSION}/site-packages/visidata/color.py
 lib/python${MODPY_VERSION}/site-packages/visidata/colorsheet.py
 lib/python${MODPY_VERSION}/site-packages/visidata/column.py
 lib/python${MODPY_VERSION}/site-packages/visidata/customdate.py
+lib/python${MODPY_VERSION}/site-packages/visidata/ddwplay.py
 lib/python${MODPY_VERSION}/site-packages/visidata/deprecated.py
 lib/python${MODPY_VERSION}/site-packages/visidata/describe.py
 lib/python${MODPY_VERSION}/site-packages/visidata/editor.py
@@ -191,6 +194,7 @@ lib/python${MODPY_VERSION}/site-packages/visidata/man/vd.1
 lib/python${MODPY_VERSION}/site-packages/visidata/man/vd.txt
 lib/python${MODPY_VERSION}/site-packages/visidata/man/visidata.1
 lib/python${MODPY_VERSION}/site-packages/visidata/melt.py
+lib/python${MODPY_VERSION}/site-packages/visidata/memory.py
 lib/python${MODPY_VERSION}/site-packages/visidata/menu.py
 lib/python${MODPY_VERSION}/site-packages/visidata/metasheets.py
 lib/python${MODPY_VERSION}/site-packages/visidata/misc.py
