@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/17 21:48:16 kurt Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/04/05 14:30:04 sthen Exp $
 firmware/bcm4329-fullmac-4.bin
 firmware/brcmfmac43143-sdio.bin
 firmware/brcmfmac43143.bin
@@ -40,6 +40,7 @@ firmware/brcmfmac4354-sdio.bin
 firmware/brcmfmac4356-pcie.bin
 firmware/brcmfmac4356-pcie.gpd-win-pocket.txt
 firmware/brcmfmac4356-sdio.bin
+firmware/brcmfmac4356-sdio.friendlyarm,nanopc-t4.txt
 firmware/brcmfmac4356-sdio.vamrs,rock960.bin
 firmware/brcmfmac4356-sdio.vamrs,rock960.txt
 firmware/brcmfmac43569.bin
