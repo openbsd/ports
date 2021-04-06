@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/09 20:05:15 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2021/04/06 07:22:39 denis Exp $
 
-BROKEN =	doesn't yet work with PostgreSQL 13
 COMMENT =	database designed to make SQL scalable for time-series data
 
 GH_ACCOUNT =	timescale
 GH_PROJECT =	timescaledb
-GH_TAGNAME =	2.0.0
+GH_TAGNAME =	2.1.0
 
 CATEGORIES =	databases
 HOMEPAGE =	https://www.timescale.com/
@@ -16,6 +15,7 @@ MAINTAINER =	Denis Fondras <denis@openbsd.org>
 PERMIT_PACKAGE = Yes
 
 MODULES =	devel/cmake
+SUBST_VARS +=	GH_TAGNAME
 
 WANTLIB =	c crypto pq ssl
 
