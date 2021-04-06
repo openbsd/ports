@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2021/03/08 13:59:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/04/06 14:35:14 abieber Exp $
 
 COMMENT =		federated status conveyance
 
-DISTNAME =		honk-0.9.5
+DISTNAME =		honk-0.9.6
 CATEGORIES =		www
-REVISION =		1
 
 HOMEPAGE =		https://humungus.tedunangst.com/r/honk
+
+MAINTAINER =		Horia Racoviceanu <horia@racoviceanu.com>
 
 # ISC
 PERMIT_PACKAGE =	Yes
