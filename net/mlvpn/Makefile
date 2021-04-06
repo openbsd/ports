@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/01 19:54:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/04/06 12:32:04 solene Exp $
 
 COMMENT =		link-aggregation VPN software
 
 V =			2.3.5
 DISTNAME =		mlvpn-$V
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 

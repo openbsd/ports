@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_privsep_c,v 1.1 2021/04/06 12:32:04 solene Exp $
+
+wroute is required to avoid a crash at runtime as a client
+Reported upstream https://github.com/zehome/MLVPN/issues/152
+
+Index: src/privsep.c
+--- src/privsep.c.orig
++++ src/privsep.c
+@@ -190,7 +190,7 @@ priv_init(char *argv[], char *username)
+         close(socks[0]);
+         priv_fd = socks[1];
+ #ifdef HAVE_PLEDGE
+-        if (pledge("stdio inet unix recvfd", NULL) != 0) {
++        if (pledge("stdio inet unix recvfd wroute", NULL) != 0) {
+             err(1, "pledge");
+         }
+ #endif
