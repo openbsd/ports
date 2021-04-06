@@ -1,0 +1,18 @@
+$OpenBSD: patch-qutebrowser_misc_elf_py,v 1.1 2021/04/06 20:00:13 sthen Exp $
+
+Fix QtWebEngine version detection on OpenBSD
+
+Index: qutebrowser/misc/elf.py
+--- qutebrowser/misc/elf.py.orig
++++ qutebrowser/misc/elf.py
+@@ -316,8 +316,8 @@ def parse_webenginecore() -> Optional[Versions]:
+     else:
+         library_path = pathlib.Path(QLibraryInfo.location(QLibraryInfo.LibrariesPath))
+ 
+-    # PyQt bundles those files with a .5 suffix
+-    lib_file = library_path / 'libQt5WebEngineCore.so.5'
++    library_name = sorted(list(pathlib.Path(library_path).glob('libQt5WebEngineCore.so*')))
++    lib_file = library_path / library_name[-1].as_posix()
+     if not lib_file.exists():
+         return None
+ 
