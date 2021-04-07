@@ -1,20 +1,22 @@
-# $OpenBSD: Makefile,v 1.75 2021/02/23 19:39:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.76 2021/04/07 14:08:35 sthen Exp $
+
+DPB_PROPERTIES=	parallel
 
 COMMENT=	desktop publishing program
-DISTNAME=	scribus-1.5.5
+DISTNAME=	scribus-1.5.6.1
 CATEGORIES=	print
-REVISION=	3
 
 HOMEPAGE=	https://www.scribus.net/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5OpenGL
-WANTLIB += Qt5PrintSupport Qt5Widgets Qt5Xml c cairo cups execinfo
-WANTLIB += fontconfig freetype harfbuzz harfbuzz-icu hunspell-1.7
-WANTLIB += icudata icuuc jpeg lcms2 m podofo poppler ${MODPY_WANTLIB}
-WANTLIB += tiff util xml2 z
+WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
+WANTLIB += Qt5Core Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport
+WANTLIB += Qt5Widgets Qt5Xml c cairo cups execinfo fontconfig
+WANTLIB += freetype harfbuzz harfbuzz-icu hunspell-1.7 icudata
+WANTLIB += icuuc jpeg lcms2 m png podofo poppler tiff util xml2
+WANTLIB += z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scribus/}
 EXTRACT_SUFX=	.tar.xz
@@ -22,12 +24,11 @@ EXTRACT_SUFX=	.tar.xz
 MODULES=	x11/qt5 \
 		devel/cmake \
 		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS=	devel/boost
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		graphics/py2-Pillow \
+		graphics/py-Pillow${MODPY_FLAVOR} \
 		print/ghostscript/gnu \
 		textproc/antiword \
 		misc/shared-mime-info \
@@ -49,10 +50,7 @@ CONFIGURE_ARGS+=	-DCMAKE_INSTALL_MANDIR="${LOCALBASE}/man/" \
 			-DWANT_NOOSG=1
 #DEBUG_CONFIGURE_ARGS +=	-DWANT_DEBUG=1
 
-# delete DOS line endings
-post-extract:
-	@find ${WRKSRC} -type f \( -name "*.cpp" -o -name "*.h" \) -exec \
-		perl -i -pe 's/\r$$//' {} +
+FIX_CRLF_FILES=	`find . -type f \( -name "*.cpp" -o -name "*.h" \)`
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/applications
