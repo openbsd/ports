@@ -1,4 +1,4 @@
-$OpenBSD: patch-gtk_compose_gtk-compose-remove_txt,v 1.1 2021/04/07 10:15:57 ajacoutot Exp $
+$OpenBSD: patch-gtk_compose_gtk-compose-remove_txt,v 1.2 2021/04/07 14:16:01 ajacoutot Exp $
 
 From ed9b3f505718f9a877f5029a002bd097635840fc Mon Sep 17 00:00:00 2001
 From: Matthias Clasen <mclasen@redhat.com>
@@ -6,8 +6,8 @@ Date: Thu, 1 Apr 2021 15:15:47 -0400
 Subject: [PATCH] Revert Compose sequence changes
 
 Index: gtk/compose/gtk-compose-remove.txt
---- gtk/compose/gtk-compose-remove.txt.orig
-+++ gtk/compose/gtk-compose-remove.txt
+--- gtk/compose/gtk-compose-remove.txt
++++ /dev/null
 @@ -1,14 +0,0 @@
 -<dead_tilde> <dead_tilde>        	: "~"   asciitilde # TILDE
 -<dead_acute> <space>             	: "'"   apostrophe # APOSTROPHE
