@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2016/11/25 23:49:04 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.15 2021/04/07 12:03:44 bluhm Exp $
 bin/flamegraph.pl
 bin/nytprofcalls
 bin/nytprofcg
@@ -39,14 +39,15 @@ ${P5ARCH}/Devel/NYTProf/js/jit/jit-yc.js
 ${P5ARCH}/Devel/NYTProf/js/jit/jit.js
 ${P5ARCH}/Devel/NYTProf/js/jquery-min.js
 ${P5ARCH}/Devel/NYTProf/js/jquery-tablesorter-min.js
+${P5ARCH}/Devel/NYTProf/js/jquery.floatThead.min.js
 ${P5ARCH}/Devel/NYTProf/js/style-tablesorter.css
 ${P5ARCH}/Devel/auto/
 ${P5ARCH}/Devel/auto/Devel/
 ${P5ARCH}/Devel/auto/Devel/NYTProf/
-${P5ARCH}/Devel/auto/Devel/NYTProf/NYTProf.so
+@so ${P5ARCH}/Devel/auto/Devel/NYTProf/NYTProf.so
 ${P5ARCH}/auto/Devel/
 ${P5ARCH}/auto/Devel/NYTProf/
-${P5ARCH}/auto/Devel/NYTProf/NYTProf.so
+@so ${P5ARCH}/auto/Devel/NYTProf/NYTProf.so
 @man man/man1/nytprofcalls.1
 @man man/man1/nytprofcg.1
 @man man/man1/nytprofcsv.1
