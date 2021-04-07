@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.1.1.1 2020/12/28 16:45:29 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.2 2021/04/07 14:56:12 jeremy Exp $
 share/ri/
 share/ri/${REV}/
 share/ri/${REV}/system/
@@ -945,6 +945,14 @@ share/ri/${REV}/system/Continuation/
 share/ri/${REV}/system/Continuation/%5b%5d-i.ri
 share/ri/${REV}/system/Continuation/call-i.ri
 share/ri/${REV}/system/Continuation/cdesc-Continuation.ri
+share/ri/${REV}/system/CoreExtensions/
+share/ri/${REV}/system/CoreExtensions/TCPSocketExt/
+share/ri/${REV}/system/CoreExtensions/TCPSocketExt/Initializer/
+share/ri/${REV}/system/CoreExtensions/TCPSocketExt/Initializer/cdesc-Initializer.ri
+share/ri/${REV}/system/CoreExtensions/TCPSocketExt/Initializer/new-c.ri
+share/ri/${REV}/system/CoreExtensions/TCPSocketExt/cdesc-TCPSocketExt.ri
+share/ri/${REV}/system/CoreExtensions/TCPSocketExt/prepended-c.ri
+share/ri/${REV}/system/CoreExtensions/cdesc-CoreExtensions.ri
 share/ri/${REV}/system/Coverage/
 share/ri/${REV}/system/Coverage/cdesc-Coverage.ri
 share/ri/${REV}/system/Coverage/line_stub-c.ri
@@ -2733,8 +2741,6 @@ share/ri/${REV}/system/Gem/Commands/SetupCommand/MakeDirs/
 share/ri/${REV}/system/Gem/Commands/SetupCommand/MakeDirs/cdesc-MakeDirs.ri
 share/ri/${REV}/system/Gem/Commands/SetupCommand/MakeDirs/mkdir_p-i.ri
 share/ri/${REV}/system/Gem/Commands/SetupCommand/bin_file_names-i.ri
-share/ri/${REV}/system/Gem/Commands/SetupCommand/bundler_man1_files_in-i.ri
-share/ri/${REV}/system/Gem/Commands/SetupCommand/bundler_man5_files_in-i.ri
 share/ri/${REV}/system/Gem/Commands/SetupCommand/cdesc-SetupCommand.ri
 share/ri/${REV}/system/Gem/Commands/SetupCommand/check_ruby_version-i.ri
 share/ri/${REV}/system/Gem/Commands/SetupCommand/execute-i.ri
@@ -2746,10 +2752,8 @@ share/ri/${REV}/system/Gem/Commands/SetupCommand/install_executables-i.ri
 share/ri/${REV}/system/Gem/Commands/SetupCommand/install_file-i.ri
 share/ri/${REV}/system/Gem/Commands/SetupCommand/install_file_list-i.ri
 share/ri/${REV}/system/Gem/Commands/SetupCommand/install_lib-i.ri
-share/ri/${REV}/system/Gem/Commands/SetupCommand/install_man-i.ri
 share/ri/${REV}/system/Gem/Commands/SetupCommand/install_rdoc-i.ri
 share/ri/${REV}/system/Gem/Commands/SetupCommand/make_destination_dirs-i.ri
-share/ri/${REV}/system/Gem/Commands/SetupCommand/make_man_dir-i.ri
 share/ri/${REV}/system/Gem/Commands/SetupCommand/new-c.ri
 share/ri/${REV}/system/Gem/Commands/SetupCommand/regenerate_binstubs-i.ri
 share/ri/${REV}/system/Gem/Commands/SetupCommand/regenerate_plugins-i.ri
@@ -2840,6 +2844,7 @@ share/ri/${REV}/system/Gem/ConfigFile/each-i.ri
 share/ri/${REV}/system/Gem/ConfigFile/handle_arguments-i.ri
 share/ri/${REV}/system/Gem/ConfigFile/hash-i.ri
 share/ri/${REV}/system/Gem/ConfigFile/home-i.ri
+share/ri/${REV}/system/Gem/ConfigFile/ipv4_fallback_enabled-i.ri
 share/ri/${REV}/system/Gem/ConfigFile/load_api_keys-i.ri
 share/ri/${REV}/system/Gem/ConfigFile/load_file-i.ri
 share/ri/${REV}/system/Gem/ConfigFile/new-c.ri
@@ -2878,6 +2883,7 @@ share/ri/${REV}/system/Gem/Dependency/%3c%3d%3e-i.ri
 share/ri/${REV}/system/Gem/Dependency/%3d%3d%3d-i.ri
 share/ri/${REV}/system/Gem/Dependency/%3d%7e-i.ri
 share/ri/${REV}/system/Gem/Dependency/cdesc-Dependency.ri
+share/ri/${REV}/system/Gem/Dependency/filters_bundler%3f-i.ri
 share/ri/${REV}/system/Gem/Dependency/identity-i.ri
 share/ri/${REV}/system/Gem/Dependency/latest_version%3f-i.ri
 share/ri/${REV}/system/Gem/Dependency/match%3f-i.ri
@@ -3387,7 +3393,6 @@ share/ri/${REV}/system/Gem/Platform/%3d%7e-i.ri
 share/ri/${REV}/system/Gem/Platform/cdesc-Platform.ri
 share/ri/${REV}/system/Gem/Platform/cpu-i.ri
 share/ri/${REV}/system/Gem/Platform/eql%3f-i.ri
-share/ri/${REV}/system/Gem/Platform/inspect-i.ri
 share/ri/${REV}/system/Gem/Platform/installable%3f-c.ri
 share/ri/${REV}/system/Gem/Platform/local-c.ri
 share/ri/${REV}/system/Gem/Platform/match-c.ri
@@ -3440,6 +3445,7 @@ share/ri/${REV}/system/Gem/RemoteFetcher/
 share/ri/${REV}/system/Gem/RemoteFetcher/FetchError/
 share/ri/${REV}/system/Gem/RemoteFetcher/FetchError/cdesc-FetchError.ri
 share/ri/${REV}/system/Gem/RemoteFetcher/FetchError/new-c.ri
+share/ri/${REV}/system/Gem/RemoteFetcher/FetchError/original_uri-i.ri
 share/ri/${REV}/system/Gem/RemoteFetcher/FetchError/uri-i.ri
 share/ri/${REV}/system/Gem/RemoteFetcher/UnknownHostError/
 share/ri/${REV}/system/Gem/RemoteFetcher/UnknownHostError/cdesc-UnknownHostError.ri
@@ -3716,6 +3722,7 @@ share/ri/${REV}/system/Gem/Resolver/Molinillo/Delegates/ResolutionState/unused_u
 share/ri/${REV}/system/Gem/Resolver/Molinillo/Delegates/SpecificationProvider/
 share/ri/${REV}/system/Gem/Resolver/Molinillo/Delegates/SpecificationProvider/allow_missing%3f-i.ri
 share/ri/${REV}/system/Gem/Resolver/Molinillo/Delegates/SpecificationProvider/cdesc-SpecificationProvider.ri
+share/ri/${REV}/system/Gem/Resolver/Molinillo/Delegates/SpecificationProvider/dependencies_equal%3f-i.ri
 share/ri/${REV}/system/Gem/Resolver/Molinillo/Delegates/SpecificationProvider/dependencies_for-i.ri
 share/ri/${REV}/system/Gem/Resolver/Molinillo/Delegates/SpecificationProvider/name_for-i.ri
 share/ri/${REV}/system/Gem/Resolver/Molinillo/Delegates/SpecificationProvider/name_for_explicit_dependency_source-i.ri
@@ -3799,6 +3806,7 @@ share/ri/${REV}/system/Gem/Resolver/Molinillo/DependencyGraph/Vertex/inspect-i.r
 share/ri/${REV}/system/Gem/Resolver/Molinillo/DependencyGraph/Vertex/is_reachable_from%3f-i.ri
 share/ri/${REV}/system/Gem/Resolver/Molinillo/DependencyGraph/Vertex/name-i.ri
 share/ri/${REV}/system/Gem/Resolver/Molinillo/DependencyGraph/Vertex/new-c.ri
+share/ri/${REV}/system/Gem/Resolver/Molinillo/DependencyGraph/Vertex/new_vertex_set-i.ri
 share/ri/${REV}/system/Gem/Resolver/Molinillo/DependencyGraph/Vertex/outgoing_edges-i.ri
 share/ri/${REV}/system/Gem/Resolver/Molinillo/DependencyGraph/Vertex/path_to%3f-i.ri
 share/ri/${REV}/system/Gem/Resolver/Molinillo/DependencyGraph/Vertex/payload-i.ri
@@ -3920,6 +3928,7 @@ share/ri/${REV}/system/Gem/Resolver/Molinillo/ResolverError/cdesc-ResolverError.
 share/ri/${REV}/system/Gem/Resolver/Molinillo/SpecificationProvider/
 share/ri/${REV}/system/Gem/Resolver/Molinillo/SpecificationProvider/allow_missing%3f-i.ri
 share/ri/${REV}/system/Gem/Resolver/Molinillo/SpecificationProvider/cdesc-SpecificationProvider.ri
+share/ri/${REV}/system/Gem/Resolver/Molinillo/SpecificationProvider/dependencies_equal%3f-i.ri
 share/ri/${REV}/system/Gem/Resolver/Molinillo/SpecificationProvider/dependencies_for-i.ri
 share/ri/${REV}/system/Gem/Resolver/Molinillo/SpecificationProvider/name_for-i.ri
 share/ri/${REV}/system/Gem/Resolver/Molinillo/SpecificationProvider/name_for_explicit_dependency_source-i.ri
@@ -5144,6 +5153,12 @@ share/ri/${REV}/system/IRB/Color/inspect_colorable%3f-c.ri
 share/ri/${REV}/system/IRB/Color/scan-c.ri
 share/ri/${REV}/system/IRB/Color/supported%3f-c.ri
 share/ri/${REV}/system/IRB/Color/without_circular_ref-c.ri
+share/ri/${REV}/system/IRB/ColorPrinter/
+share/ri/${REV}/system/IRB/ColorPrinter/cdesc-ColorPrinter.ri
+share/ri/${REV}/system/IRB/ColorPrinter/pp-c.ri
+share/ri/${REV}/system/IRB/ColorPrinter/pp-i.ri
+share/ri/${REV}/system/IRB/ColorPrinter/screen_width-c.ri
+share/ri/${REV}/system/IRB/ColorPrinter/text-i.ri
 share/ri/${REV}/system/IRB/Context/
 share/ri/${REV}/system/IRB/Context/__exit__-i.ri
 share/ri/${REV}/system/IRB/Context/_set_last_value-i.ri
@@ -5244,6 +5259,10 @@ share/ri/${REV}/system/IRB/ExtendCommand/Kill/
 share/ri/${REV}/system/IRB/ExtendCommand/Kill/cdesc-Kill.ri
 share/ri/${REV}/system/IRB/ExtendCommand/Load/
 share/ri/${REV}/system/IRB/ExtendCommand/Load/cdesc-Load.ri
+share/ri/${REV}/system/IRB/ExtendCommand/Ls/
+share/ri/${REV}/system/IRB/ExtendCommand/Ls/Output/
+share/ri/${REV}/system/IRB/ExtendCommand/Ls/Output/cdesc-Output.ri
+share/ri/${REV}/system/IRB/ExtendCommand/Ls/cdesc-Ls.ri
 share/ri/${REV}/system/IRB/ExtendCommand/Measure/
 share/ri/${REV}/system/IRB/ExtendCommand/Measure/cdesc-Measure.ri
 share/ri/${REV}/system/IRB/ExtendCommand/Nop/
@@ -5254,8 +5273,12 @@ share/ri/${REV}/system/IRB/ExtendCommand/PushWorkspace/
 share/ri/${REV}/system/IRB/ExtendCommand/PushWorkspace/cdesc-PushWorkspace.ri
 share/ri/${REV}/system/IRB/ExtendCommand/Require/
 share/ri/${REV}/system/IRB/ExtendCommand/Require/cdesc-Require.ri
+share/ri/${REV}/system/IRB/ExtendCommand/ShowSource/
+share/ri/${REV}/system/IRB/ExtendCommand/ShowSource/cdesc-ShowSource.ri
 share/ri/${REV}/system/IRB/ExtendCommand/Source/
 share/ri/${REV}/system/IRB/ExtendCommand/Source/cdesc-Source.ri
+share/ri/${REV}/system/IRB/ExtendCommand/Whereami/
+share/ri/${REV}/system/IRB/ExtendCommand/Whereami/cdesc-Whereami.ri
 share/ri/${REV}/system/IRB/ExtendCommand/Workspaces/
 share/ri/${REV}/system/IRB/ExtendCommand/Workspaces/cdesc-Workspaces.ri
 share/ri/${REV}/system/IRB/ExtendCommand/cdesc-ExtendCommand.ri
@@ -5271,12 +5294,14 @@ share/ri/${REV}/system/IRB/ExtendCommandBundle/irb_load-i.ri
 share/ri/${REV}/system/IRB/ExtendCommandBundle/irb_require-i.ri
 share/ri/${REV}/system/IRB/FileInputMethod/
 share/ri/${REV}/system/IRB/FileInputMethod/cdesc-FileInputMethod.ri
+share/ri/${REV}/system/IRB/FileInputMethod/close-i.ri
 share/ri/${REV}/system/IRB/FileInputMethod/encoding-i.ri
 share/ri/${REV}/system/IRB/FileInputMethod/eof%3f-i.ri
 share/ri/${REV}/system/IRB/FileInputMethod/file_name-i.ri
 share/ri/${REV}/system/IRB/FileInputMethod/gets-i.ri
 share/ri/${REV}/system/IRB/FileInputMethod/inspect-i.ri
 share/ri/${REV}/system/IRB/FileInputMethod/new-c.ri
+share/ri/${REV}/system/IRB/FileInputMethod/open-c.ri
 share/ri/${REV}/system/IRB/Frame/
 share/ri/${REV}/system/IRB/Frame/FrameOverflow/
 share/ri/${REV}/system/IRB/Frame/FrameOverflow/cdesc-FrameOverflow.ri
@@ -5319,6 +5344,7 @@ share/ri/${REV}/system/IRB/Irb/
 share/ri/${REV}/system/IRB/Irb/assignment_expression%3f-i.ri
 share/ri/${REV}/system/IRB/Irb/cdesc-Irb.ri
 share/ri/${REV}/system/IRB/Irb/context-i.ri
+share/ri/${REV}/system/IRB/Irb/convert_invalid_byte_sequence-i.ri
 share/ri/${REV}/system/IRB/Irb/eval_input-i.ri
 share/ri/${REV}/system/IRB/Irb/handle_exception-i.ri
 share/ri/${REV}/system/IRB/Irb/inspect-i.ri
@@ -5334,6 +5360,7 @@ share/ri/${REV}/system/IRB/Irb/suspend_workspace-i.ri
 share/ri/${REV}/system/IRB/IrbAlreadyDead/
 share/ri/${REV}/system/IRB/IrbAlreadyDead/cdesc-IrbAlreadyDead.ri
 share/ri/${REV}/system/IRB/IrbLoader/
+share/ri/${REV}/system/IRB/IrbLoader/absolute_path%3f-i.ri
 share/ri/${REV}/system/IRB/IrbLoader/cdesc-IrbLoader.ri
 share/ri/${REV}/system/IRB/IrbLoader/irb_load-i.ri
 share/ri/${REV}/system/IRB/IrbLoader/load_file-i.ri
@@ -11016,6 +11043,7 @@ share/ri/${REV}/system/Reline/core-c.ri
 share/ri/${REV}/system/Reline/encoding_system_needs-c.ri
 share/ri/${REV}/system/Reline/insert_text-c.ri
 share/ri/${REV}/system/Reline/line_editor-c.ri
+share/ri/${REV}/system/Reline/ungetc-c.ri
 share/ri/${REV}/system/Resolv/
 share/ri/${REV}/system/Resolv/DNS/
 share/ri/${REV}/system/Resolv/DNS/Config/
