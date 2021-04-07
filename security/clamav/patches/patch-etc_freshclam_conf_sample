@@ -1,4 +1,4 @@
-$OpenBSD: patch-etc_freshclam_conf_sample,v 1.4 2020/09/15 09:08:36 sthen Exp $
+$OpenBSD: patch-etc_freshclam_conf_sample,v 1.5 2021/04/07 19:17:21 sthen Exp $
 
 Index: etc/freshclam.conf.sample
 --- etc/freshclam.conf.sample.orig
@@ -21,5 +21,5 @@ Index: etc/freshclam.conf.sample
 +# Default: _clamav (may depend on installation options)
 +#DatabaseOwner _clamav
  
- # Use DNS to verify virus database version. Freshclam uses DNS TXT records
+ # Use DNS to verify virus database version. FreshClam uses DNS TXT records
  # to verify database and software versions. With this directive you can change

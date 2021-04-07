@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2020/09/15 09:08:36 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.34 2021/04/07 19:17:21 sthen Exp $
 @newgroup _clamav:539
 @newuser _clamav:539:539:daemon:Clam AntiVirus:/nonexistent:/sbin/nologin
 @extraunexec rm -fr /var/db/clamav/*
@@ -63,6 +63,7 @@ lib/pkgconfig/libclamav.pc
 share/doc/clamav/
 share/doc/clamav/UserManual/
 share/doc/clamav/UserManual.html
+share/doc/clamav/UserManual/Contribute.html
 share/doc/clamav/UserManual/Installation-Unix/
 share/doc/clamav/UserManual/Installation-Unix.html
 share/doc/clamav/UserManual/Installation-Unix/Steps-Debian-Ubuntu.html
