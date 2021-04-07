@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.143 2021/02/05 12:25:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.144 2021/04/07 06:36:17 ajacoutot Exp $
 
 PORTROACH=		skipv:5.90.1
 
@@ -40,6 +40,11 @@ BUILD_DEPENDS=		databases/db/v4 \
 			devel/json-glib \
 			devel/iso-codes \
 			devel/libgee
+
+# XXX only needed for the experimental WEB provider which is disabled by
+# default; but if libsoup is present at configure time, it will be picked up
+# even if -Dlibsoup=false (see meson.build and tools/meson.build)
+BUILD_DEPENDS +=	devel/libsoup
 
 TEST_DEPENDS=		devel/check
 
