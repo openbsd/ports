@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_decode_h,v 1.13 2021/02/16 03:02:38 lteo Exp $
+$OpenBSD: patch-src_decode_h,v 1.14 2021/04/07 02:00:52 lteo Exp $
 Index: src/decode.h
 --- src/decode.h.orig
 +++ src/decode.h
-@@ -839,9 +839,9 @@ typedef struct _SLLHdr {
+@@ -840,9 +840,9 @@ typedef struct _SLLHdr {
   * Pflog1_Hdr:  CVS = 1.3,  DLT_OLD_PFLOG = 17,  Length = 28
   * Pflog2_Hdr:  CVS = 1.8,  DLT_PFLOG     = 117, Length = 48
   * Pflog3_Hdr:  CVS = 1.12, DLT_PFLOG     = 117, Length = 64
