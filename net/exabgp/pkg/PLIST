@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/10 21:42:56 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/04/07 11:55:14 sthen Exp $
 @newgroup _exabgp:839
 @newuser _exabgp:839:_exabgp:daemon:exabgp user:/nonexistent:/sbin/nologin
 @extraunexec rm /var/log/exabgp/exabgp.log*
@@ -25,8 +25,10 @@ lib/python${MODPY_VERSION}/site-packages/exabgp.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/exabgp.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/exabgp.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/exabgp/__init__.py
+lib/python${MODPY_VERSION}/site-packages/exabgp/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/exabgp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/exabgp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/exabgp/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/${MODPY_PYCACHE}debug.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/${MODPY_PYCACHE}logger.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
