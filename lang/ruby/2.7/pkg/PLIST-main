@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2020/10/05 17:13:13 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2021/04/07 14:57:23 jeremy Exp $
 @option no-default-conflict
 @conflict ruby->=2.7,<2.8
 bin/bundle27
@@ -45,7 +45,7 @@ include/ruby-${REV}/ruby/util.h
 include/ruby-${REV}/ruby/version.h
 include/ruby-${REV}/ruby/vm.h
 include/ruby-${REV}/${SUB}/
-include/ruby-${REV}/${SUB}/rb_mjit_min_header-2.7.2.h
+include/ruby-${REV}/${SUB}/rb_mjit_min_header-2.7.3.h
 include/ruby-${REV}/${SUB}/ruby/
 include/ruby-${REV}/${SUB}/ruby/config.h
 @so lib/libruby27.so
@@ -423,6 +423,15 @@ lib/ruby/${REV}/drb/timeridconv.rb
 lib/ruby/${REV}/drb/unix.rb
 lib/ruby/${REV}/drb/weakidconv.rb
 lib/ruby/${REV}/erb.rb
+lib/ruby/${REV}/exe/
+lib/ruby/${REV}/exe/bundle
+lib/ruby/${REV}/exe/bundler
+lib/ruby/${REV}/exe/irb
+lib/ruby/${REV}/exe/racc
+lib/ruby/${REV}/exe/racc2y
+lib/ruby/${REV}/exe/rdoc
+lib/ruby/${REV}/exe/ri
+lib/ruby/${REV}/exe/y2racc
 lib/ruby/${REV}/expect.rb
 lib/ruby/${REV}/fiddle/
 lib/ruby/${REV}/fiddle.rb
@@ -1172,6 +1181,8 @@ lib/ruby/${REV}/rubygems/ssl_certs/rubygems.global.ssl.fastly.net/
 lib/ruby/${REV}/rubygems/ssl_certs/rubygems.global.ssl.fastly.net/DigiCertHighAssuranceEVRootCA.pem
 lib/ruby/${REV}/rubygems/ssl_certs/rubygems.org/
 lib/ruby/${REV}/rubygems/ssl_certs/rubygems.org/AddTrustExternalCARoot.pem
+lib/ruby/${REV}/rubygems/ssl_certs/rubygems.org/GlobalSignRootCA.pem
+lib/ruby/${REV}/rubygems/ssl_certs/rubygems.org/GlobalSignRootCA_R3.pem
 lib/ruby/${REV}/rubygems/stub_specification.rb
 lib/ruby/${REV}/rubygems/syck_hack.rb
 lib/ruby/${REV}/rubygems/test_case.rb
@@ -1600,7 +1611,7 @@ lib/ruby/gems/${REV}/gems/rdoc-6.2.1/exe/ri
 lib/ruby/gems/${REV}/gems/readline-0.0.2/
 lib/ruby/gems/${REV}/gems/readline-ext-0.1.0/
 lib/ruby/gems/${REV}/gems/reline-0.1.5/
-lib/ruby/gems/${REV}/gems/rexml-3.2.3/
+lib/ruby/gems/${REV}/gems/rexml-3.2.3.1/
 lib/ruby/gems/${REV}/gems/rss-0.2.8/
 lib/ruby/gems/${REV}/gems/sdbm-1.0.0/
 lib/ruby/gems/${REV}/gems/singleton-0.1.0/
@@ -1731,7 +1742,7 @@ lib/ruby/gems/${REV}/gems/test-unit-3.3.4/test/util/test_procwrapper.rb
 lib/ruby/gems/${REV}/gems/timeout-0.1.0/
 lib/ruby/gems/${REV}/gems/tracer-0.1.0/
 lib/ruby/gems/${REV}/gems/uri-0.10.0/
-lib/ruby/gems/${REV}/gems/webrick-1.6.0/
+lib/ruby/gems/${REV}/gems/webrick-1.6.1/
 lib/ruby/gems/${REV}/gems/xmlrpc-0.3.0/
 lib/ruby/gems/${REV}/gems/xmlrpc-0.3.0/.gitignore
 lib/ruby/gems/${REV}/gems/xmlrpc-0.3.0/.travis.yml
@@ -1796,7 +1807,7 @@ lib/ruby/gems/${REV}/specifications/default/rdoc-6.2.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/readline-0.0.2.gemspec
 lib/ruby/gems/${REV}/specifications/default/readline-ext-0.1.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/reline-0.1.5.gemspec
-lib/ruby/gems/${REV}/specifications/default/rexml-3.2.3.gemspec
+lib/ruby/gems/${REV}/specifications/default/rexml-3.2.3.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/rss-0.2.8.gemspec
 lib/ruby/gems/${REV}/specifications/default/sdbm-1.0.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/singleton-0.1.0.gemspec
@@ -1805,7 +1816,7 @@ lib/ruby/gems/${REV}/specifications/default/strscan-1.0.3.gemspec
 lib/ruby/gems/${REV}/specifications/default/timeout-0.1.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/tracer-0.1.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/uri-0.10.0.gemspec
-lib/ruby/gems/${REV}/specifications/default/webrick-1.6.0.gemspec
+lib/ruby/gems/${REV}/specifications/default/webrick-1.6.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/yaml-0.1.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/zlib-1.1.0.gemspec
 lib/ruby/gems/${REV}/specifications/minitest-5.13.0.gemspec
