@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.131 2021/03/18 07:54:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.132 2021/04/07 06:08:59 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -1844,6 +1844,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-traffic-mirr
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-traffic-mirror-filter.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-traffic-mirror-session.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-traffic-mirror-target.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-transit-gateway-connect.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-transit-gateway-peering-attachment.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-transit-gateway-prefix-list-reference.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-transit-gateway-route-table.rst
@@ -1859,6 +1860,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-vpc.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-vpn-connection-route.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-vpn-connection.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-vpn-gateway.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-carrier-gateway.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-client-vpn-endpoint.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-client-vpn-route.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-customer-gateway.rst
@@ -1921,6 +1923,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-availabili
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-bundle-tasks.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-byoip-cidrs.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-capacity-reservations.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-carrier-gateways.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-classic-link-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-client-vpn-authorization-rules.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-client-vpn-connections.rst
@@ -2008,6 +2011,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-traffic-mi
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-traffic-mirror-sessions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-traffic-mirror-targets.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-transit-gateway-attachments.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-transit-gateway-connects.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-transit-gateway-multicast-domains.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-transit-gateway-peering-attachments.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-transit-gateway-route-tables.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-transit-gateway-vpc-attachments.rst
@@ -2557,6 +2562,21 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/firehose/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/firehose/list-delivery-streams.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/firehose/put-record-batch.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/firehose/put-record.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/fis/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/fis/create-experiment-template.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/fis/delete-experiment-template.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/fis/get-action.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/fis/get-experiment-template.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/fis/get-experiment.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/fis/list-actions.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/fis/list-experiment-templates.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/fis/list-experiments.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/fis/list-tags-for-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/fis/start-experiment.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/fis/stop-experiment.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/fis/tag-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/fis/untag-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/fis/update-experiment-template.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/fms/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/fms/associate-admin-account.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/fms/delete-notification-channel.rst
@@ -3161,6 +3181,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/detach-security-pro
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/detach-thing-principal.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/disable-topic-rule.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/enable-topic-rule.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/get-behavior-model-training-summaries.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/get-cardinality.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/get-effective-policies.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/get-indexing-configuration.rst
@@ -3194,6 +3215,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-indices.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-job-executions-for-job.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-job-executions-for-thing.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-jobs.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-mitigation-actions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-mitigations-actions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-ota-updates.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/list-outgoing-certificates.rst
@@ -4227,6 +4249,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/promote-read-replic
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/purchase-reserved-db-instance.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/purchase-reserved-db-instances-offerings.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/reboot-db-instance.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/remove-from-global-cluster.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/remove-option-from-option-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/remove-role-from-db-cluster.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/remove-role-from-db-instance.rst
