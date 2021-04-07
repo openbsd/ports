@@ -1,0 +1,32 @@
+$OpenBSD: patch-lib_PDF_API2_Basic_PDF_String_pm,v 1.1 2021/04/07 09:06:32 sthen Exp $
+
+From 3d9787d0c17f7b54af56024a0509f49cd77a54d4 Mon Sep 17 00:00:00 2001
+From: Steve Simms <steve@deefs.net>
+Date: Tue, 6 Apr 2021 20:09:31 -0400
+Subject: [PATCH] [RT #134957] Fix encoding of \n in string with non-printable
+ chars
+
+From c63a96f0ccc79a335801466a0b1e963084dd6e8a Mon Sep 17 00:00:00 2001
+From: Steve Simms <steve@deefs.net>
+Date: Tue, 6 Apr 2021 20:13:15 -0400
+Subject: [PATCH] Remove unnecessary regex flags
+
+Index: lib/PDF/API2/Basic/PDF/String.pm
+--- lib/PDF/API2/Basic/PDF/String.pm.orig
++++ lib/PDF/API2/Basic/PDF/String.pm
+@@ -191,12 +191,12 @@ sub as_pdf {
+         return "<FEFF$str>";
+     }
+     else {
+-        if ($str =~ m/[^\n\r\t\b\f\040-\176\200-\377]/oi) {
+-            $str =~ s/(.)/sprintf('%02X', ord($1))/oge;
++        if ($str =~ m/[^\n\r\t\b\f\040-\176\200-\377]/) {
++            $str =~ s/(.)/sprintf('%02X', ord($1))/sge;
+             return "<$str>";
+         }
+         else {
+-            $str =~ s/([\n\r\t\b\f\\()])/\\$out_trans{$1}/ogi;
++            $str =~ s/([\n\r\t\b\f\\()])/\\$out_trans{$1}/g;
+             return "($str)";
+         }
+     }
