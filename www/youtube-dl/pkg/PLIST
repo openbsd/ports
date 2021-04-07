@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.150 2021/03/25 08:49:15 mestre Exp $
+@comment $OpenBSD: PLIST,v 1.151 2021/04/07 11:51:26 mestre Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -88,6 +88,7 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}ar
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}arcpublishing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}ard.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}arkena.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}arnes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}arte.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}asiancrush.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}atresplayer.${MODPY_PYC_MAGIC_TAG}pyc
@@ -497,6 +498,7 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}or
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}orf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}outsidetv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}packtpub.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}palcomp3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}pandoratv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}parliamentliveuk.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}patreon.${MODPY_PYC_MAGIC_TAG}pyc
@@ -872,6 +874,7 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/archiveorg.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/arcpublishing.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ard.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/arkena.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/arnes.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/arte.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/asiancrush.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/atresplayer.py
@@ -1281,6 +1284,7 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ora.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/orf.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/outsidetv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/packtpub.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/palcomp3.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/pandoratv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/parliamentliveuk.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/patreon.py
