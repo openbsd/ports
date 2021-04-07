@@ -1,6 +1,11 @@
-$OpenBSD: patch-qutebrowser_misc_elf_py,v 1.1 2021/04/06 20:00:13 sthen Exp $
+$OpenBSD: patch-qutebrowser_misc_elf_py,v 1.2 2021/04/07 16:12:49 sthen Exp $
 
-Fix QtWebEngine version detection on OpenBSD
+Fix QtWebEngine version detection on OpenBSD, similar to / replaced by
+
+From a38fabda2581790d365cb82ea37cf45c1c7bb3a6 Mon Sep 17 00:00:00 2001
+From: Dimitri Karamazov <deserter666@danwin1210.me>
+Date: Tue, 6 Apr 2021 23:13:43 +0530
+Subject: [PATCH] Remove reduntant operations
 
 Index: qutebrowser/misc/elf.py
 --- qutebrowser/misc/elf.py.orig
