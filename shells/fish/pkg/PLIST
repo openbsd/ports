@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/03/05 07:48:59 solene Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/04/07 20:08:53 solene Exp $
 @shell bin/fish
 @bin bin/fish_indent
 @bin bin/fish_key_reader
 @man man/man1/fish.1
 @man man/man1/fish_indent.1
 @man man/man1/fish_key_reader.1
-share/applications/
 share/applications/fish.desktop
 share/doc/fish/
 share/doc/fish/.buildinfo
@@ -13,8 +12,6 @@ share/doc/fish/CHANGELOG.rst
 share/doc/fish/_static/
 share/doc/fish/_static/basic.css
 share/doc/fish/_static/classic.css
-share/doc/fish/_static/copybutton.js
-share/doc/fish/_static/custom.css
 share/doc/fish/_static/default.css
 share/doc/fish/_static/doctools.js
 share/doc/fish/_static/documentation_options.js
@@ -579,6 +576,7 @@ share/fish/completions/mkdosfs.fish
 share/fish/completions/mkfs.fat.fish
 share/fish/completions/mkfs.vfat.fish
 share/fish/completions/mkinitcpio.fish
+share/fish/completions/mkpasswd.fish
 share/fish/completions/mktemp.fish
 share/fish/completions/mkvextract.fish
 share/fish/completions/mocha.fish

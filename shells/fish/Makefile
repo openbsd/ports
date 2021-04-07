@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.21 2021/03/05 07:48:59 solene Exp $
+# $OpenBSD: Makefile,v 1.22 2021/04/07 20:08:53 solene Exp $
 
 COMMENT =		friendly interactive shell
 
-V =			3.2.0
+V =			3.2.1
 DISTNAME =		fish-$V
 
 CATEGORIES =		shells
+
+MAINTAINER =		Solene Rapenne <solene@perso.pw>
 
 HOMEPAGE =		https://fishshell.com/
 
