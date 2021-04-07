@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/01/23 20:35:02 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/04/07 08:54:00 fcambus Exp $
 @bin bin/kodev
 @bin bin/kore
+@bin bin/kore-serve
 include/kore/
 include/kore/acme.h
 include/kore/curl.h

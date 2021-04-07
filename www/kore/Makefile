@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2021/02/23 22:04:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2021/04/07 08:54:00 fcambus Exp $
 
 COMMENT =	web application framework for writing scalable web APIs in C
 
 DISTNAME =	kore-4.1.0
+REVISION =	0
 
 CATEGORIES =	www
 
@@ -59,7 +60,11 @@ NO_TEST =	Yes
 post-configure:
 	${SUBST_CMD} ${WRKSRC}/misc/python3-config.sh
 
+post-build:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} tools-build
+
 post-install:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} tools-install
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/kore
 	${INSTALL_DATA} ${WRKSRC}/README.md ${PREFIX}/share/doc/kore
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/kore
