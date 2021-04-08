@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2021/03/03 20:44:23 kn Exp $
+# $OpenBSD: Makefile,v 1.28 2021/04/08 08:04:57 ajacoutot Exp $
 
 COMMENT=		lightweight Gtk+3 based image viewer
 
@@ -44,6 +44,9 @@ CONFIGURE_ARGS=		--disable-doxygen-doc \
 			--disable-ffmpegthumbnailer \
 			--disable-gpu-accel \
 			--disable-pdf \
+			--disable-djvu \
+			--disable-heif \
+			--disable-webp \
 			--enable-gtk3 \
 			--with-htmldir=${PREFIX}/share/doc/geeqie \
 			--with-readmedir=${PREFIX}/share/doc/geeqie
