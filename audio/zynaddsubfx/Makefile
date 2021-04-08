@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/29 19:51:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/04/08 13:45:11 sthen Exp $
+
+# XXX builds with sse/sse2; maybe possible to fix
+ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT=	synth capable of making a countless number of instruments
 
