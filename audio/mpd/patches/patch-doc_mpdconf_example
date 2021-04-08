@@ -1,4 +1,4 @@
-$OpenBSD: patch-doc_mpdconf_example,v 1.20 2021/02/20 14:43:01 landry Exp $
+$OpenBSD: patch-doc_mpdconf_example,v 1.21 2021/04/08 10:16:48 solene Exp $
 Index: doc/mpdconf.example
 --- doc/mpdconf.example.orig
 +++ doc/mpdconf.example
@@ -24,7 +24,7 @@ Index: doc/mpdconf.example
  # files over an accepted protocol.
  #
 -#db_file			"~/.mpd/database"
-++db_file			"/var/spool/mpd/mpd.db"
++db_file			"/var/spool/mpd/mpd.db"
  #
  # These settings are the locations for the daemon log files for the daemon.
  # These logs are great for troubleshooting, depending on your log_level
