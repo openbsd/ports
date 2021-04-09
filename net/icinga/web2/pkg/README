@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.12 2021/03/24 12:49:53 sthen Exp $
+$OpenBSD: README,v 1.13 2021/04/09 17:41:15 florian Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -72,6 +72,28 @@ Or if you use for php-fpm, use this:
 
 And reload:
    # rcctl reload apache2
+
+An example for base httpd(8), serving directly from the root using the
+above php-fpm section:
+
+   server "icinga.example.com" {
+       listen on * tls port 443
+       tls {
+           certificate "/etc/ssl/icinga.example.com.crt"
+           key "/etc/ssl/private/icinga.example.com.key"
+       }
+
+       root "/icinga-web2/public"
+       directory index "index.php"
+       location "*.php*" {
+           fastcgi socket "/run/php-fpm-icingaweb2.sock"
+           fastcgi param ICINGAWEB_CONFIGDIR "/etc/icingaweb2"
+       }
+
+       location not found "*" {
+           request rewrite "/index.php?$QUERY_STRING"
+       }
+   }
 
 - Using icingacli, create the config directory and a token to allow setup:
 

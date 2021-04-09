@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.53 2021/03/24 12:49:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2021/04/09 17:41:15 florian Exp $
 
 COMMENT =	next-generation web UI for icinga
 
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icingaweb2
 GH_TAGNAME =	v2.8.2
-REVISION =	7
+REVISION =	8
 PKGNAME =	icinga-web2-${GH_TAGNAME:S/v//}
 
 MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
