@@ -1,0 +1,31 @@
+$OpenBSD: patch-external_boringssl_crypto_cpu-aarch64-linux_c,v 1.1 2021/04/10 15:31:33 patrick Exp $
+
+Index: external/boringssl/crypto/cpu-aarch64-linux.c
+--- external/boringssl/crypto/cpu-aarch64-linux.c.orig
++++ external/boringssl/crypto/cpu-aarch64-linux.c
+@@ -16,7 +16,9 @@
+ 
+ #if defined(OPENSSL_AARCH64) && !defined(OPENSSL_STATIC_ARMCAP)
+ 
++#if !defined(__OpenBSD__)
+ #include <sys/auxv.h>
++#endif
+ 
+ #include <openssl/arm_arch.h>
+ 
+@@ -63,6 +65,15 @@ void OPENSSL_cpuid_setup(void) {
+   if (ID_AA64ISAR0_SHA2_VAL(isar0_val) >= ID_AA64ISAR0_SHA2_BASE) {
+     OPENSSL_armcap_P |= ARMV8_SHA256;
+   }
++}
++
++#elif defined(__OpenBSD__)
++
++#include <stdlib.h>
++#include <sys/types.h>
++
++void OPENSSL_cpuid_setup(void) {
++  OPENSSL_armcap_P |= ARMV7_NEON;
+ }
+ 
+ #else // linux
