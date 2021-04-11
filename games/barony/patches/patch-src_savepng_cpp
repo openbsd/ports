@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_savepng_cpp,v 1.1 2021/04/11 13:17:41 solene Exp $
+
+Use 'userdata' instead of 'refcount'. 'refcount' is a private SDL_Surface field.
+Use 'imgref' and not 'imgref + 1' 
+
+see: https://github.com/TurningWheel/Barony/pull/582
+
+Index: src/savepng.cpp
+--- src/savepng.cpp.orig
++++ src/savepng.cpp
+@@ -59,7 +59,7 @@ SDL_Surface* SDL_PNGFormatAlpha(SDL_Surface* src)
+ 	/* NO-OP for images < 32bpp and 32bpp images that already have Alpha channel */
+ 	if (src->format->BitsPerPixel <= 24 || src->format->Amask)
+ 	{
+-		src->refcount++;
++		src->userdata = (void *)((long int) src->userdata + 1);
+ 		return src;
+ 	}
+ 

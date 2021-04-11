@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2020/10/04 11:38:58 solene Exp $
+# $OpenBSD: Makefile,v 1.8 2021/04/11 13:17:41 solene Exp $
 
 V =		3.3.7
 COMMENT =	3D, first person roguelike
 PKGNAME =	${DISTNAME:L}
 CATEGORIES =	games x11
+REVISION =	0
 
 GH_ACCOUNT =	TurningWheel
 GH_PROJECT =	Barony
