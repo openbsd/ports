@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_backend_c,v 1.1 2021/04/12 11:22:33 cwen Exp $
+
+Fix for:
+src/backend.c:613:6: warning: implicit declaration of function 'hid_init'
+is invalid in C99
+On ld.bfd arches, this led to undefined references at build time.
+
+It appears that comms/libhidapi redefines hid_init(3) to hidapi_hid_init().
+
+Index: src/backend.c
+--- src/backend.c.orig
++++ src/backend.c
+@@ -23,6 +23,9 @@
+ #ifdef _WIN32
+ #include <winsock2.h>
+ #endif
++#ifdef __OpenBSD__
++#define hid_init hidapi_hid_init
++#endif
+ #include <libsigrok/libsigrok.h>
+ #include "libsigrok-internal.h"
+ 
