@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/03/28 08:02:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/04/12 14:47:34 espie Exp $
 @conflict gegl-*
 @conflict gegl03-*
 @pkgpath graphics/gegl,-main
@@ -106,6 +106,7 @@ lib/gegl-${API_VERSION}/grey2.json
 @so lib/gegl-${API_VERSION}/jpg-load.so
 @so lib/gegl-${API_VERSION}/jpg-save.so
 @so lib/gegl-${API_VERSION}/lcms-from-profile.so
+@so lib/gegl-${API_VERSION}/matting-levin.so
 @so lib/gegl-${API_VERSION}/npd.so
 @so lib/gegl-${API_VERSION}/npy-save.so
 @so lib/gegl-${API_VERSION}/path.so
