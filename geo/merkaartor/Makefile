@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.45 2021/03/24 10:55:42 landry Exp $
+# $OpenBSD: Makefile,v 1.46 2021/04/12 10:17:11 landry Exp $
 
 COMMENT =	OpenStreetMap editor
 REVISION =	2
-BROKEN =	doesnt build against proj8
 
 GH_ACCOUNT =	openstreetmap
 GH_PROJECT =	merkaartor
@@ -22,7 +21,6 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
 # spatialite is marked as non-working
-# proj8 compat: https://github.com/openstreetmap/merkaartor/issues/193
 LIB_DEPENDS =	devel/proj \
 		x11/qt5/qtsvg \
 		geo/gdal
