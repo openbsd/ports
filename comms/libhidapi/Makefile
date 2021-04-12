@@ -1,6 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:43:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/04/12 10:53:55 cwen Exp $
 
 COMMENT =	library for communicating with USB and Bluetooth HID devices
+
+# XXX Any consumer should be patched to use hidapi_hid_init() instead of
+# hid_init(3) to avoid conflict with base usbhid(3).
 
 V =		0.8.0pre20160128
 DISTNAME =	libhidapi-${V}
