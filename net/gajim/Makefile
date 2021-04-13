@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.94 2021/03/22 18:16:10 paco Exp $
+# $OpenBSD: Makefile,v 1.95 2021/04/13 10:18:12 paco Exp $
 
 COMMENT=	jabber client written in pygtk
 MODPY_EGG_VERSION=	1.3.1
 DISTNAME=	gajim-${MODPY_EGG_VERSION}
 CATEGORIES=	net x11
+REVISION=	0
 
 HOMEPAGE=	https://www.gajim.org
 
@@ -23,7 +24,8 @@ MODPY_SETUPTOOLS=	Yes
 
 BUILD_DEPENDS=	devel/gettext,-tools
 
-RUN_DEPENDS=	devel/desktop-file-utils \
+RUN_DEPENDS=	audio/gsound \
+		devel/desktop-file-utils \
 		devel/glib2>=2.6.0 \
 		devel/libsoup \
 		graphics/py-Pillow${MODPY_FLAVOR} \
