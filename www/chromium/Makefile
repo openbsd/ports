@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.558 2021/04/04 15:53:23 robert Exp $
+# $OpenBSD: Makefile,v 1.559 2021/04/14 12:10:33 robert Exp $
 
 BROKEN-i386=	v8/src/wasm/baseline/ia32/liftoff-assembler-ia32.h doesn't build
 # ../../v8/src/wasm/baseline/ia32/liftoff-assembler-ia32.h:364:24: error: out-of-line definition of 'Load' does not match any declaration in 'v8::internal::wasm::LiftoffAssembler'
@@ -14,8 +14,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser
 
-V=			89.0.4389.114
-REVISION=		0
+V=			89.0.4389.128
 
 DISTNAME=		chromium-${V}
 
