@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.204 2021/03/21 19:17:34 espie Exp $
+# $OpenBSD: Port.pm,v 1.205 2021/04/16 20:14:47 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -969,6 +969,7 @@ sub new
 	$job->{current} = '';
 	# for stuff that doesn't really lock
 	$job->{lock} //= DPB::DummyLock->new;
+	$job->set_watch($job->{builder}->logger, $job->{v});
 
 	return $job;
 }

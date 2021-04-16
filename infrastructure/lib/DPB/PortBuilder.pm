@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.88 2021/03/21 19:17:34 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.89 2021/04/16 20:14:47 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -255,7 +255,6 @@ sub build
 		$self->report($v, $job, $core); 
 		&$final_sub($job->{failed});
 	});
-	$job->set_watch($self->logger, $v);
 	$core->start_job($job, $v);
 	# lonesome takes precedence for swallowing everything
 	if ($job->{lonesome}) {
@@ -283,7 +282,6 @@ sub wipe
 		$self->report($v, $job, $core); 
 		&$final_sub($job->{failed});
 	});
-	$job->set_watch($self->logger, $v);
 	$core->start_job($job, $v);
 }
 
