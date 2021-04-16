@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.aarch64,v 1.22 2021/01/15 00:01:16 kurt Exp $
+@comment $OpenBSD: PFRAG.aarch64,v 1.23 2021/04/16 06:40:44 jsg Exp $
 @pkgpath sysutils/u-boot-pinebook
 share/u-boot/
 share/u-boot/a64-olinuxino/
@@ -81,7 +81,6 @@ share/u-boot/pine64_plus/u-boot
 share/u-boot/pine64_plus/u-boot-sunxi-with-spl.bin
 share/u-boot/pine64_plus/u-boot.bin
 share/u-boot/pine64_plus/u-boot.img
-share/u-boot/pinebook/
 share/u-boot/pinebook-pro-rk3399/
 share/u-boot/pinebook-pro-rk3399/idbloader.img
 share/u-boot/pinebook-pro-rk3399/u-boot
@@ -89,6 +88,7 @@ share/u-boot/pinebook-pro-rk3399/u-boot-rockchip.bin
 share/u-boot/pinebook-pro-rk3399/u-boot.bin
 share/u-boot/pinebook-pro-rk3399/u-boot.img
 share/u-boot/pinebook-pro-rk3399/u-boot.itb
+share/u-boot/pinebook/
 share/u-boot/pinebook/sunxi-spl.bin
 share/u-boot/pinebook/u-boot
 share/u-boot/pinebook/u-boot-sunxi-with-spl.bin
@@ -138,6 +138,9 @@ share/u-boot/rpi_3/u-boot.bin
 share/u-boot/rpi_4/
 share/u-boot/rpi_4/u-boot
 share/u-boot/rpi_4/u-boot.bin
+share/u-boot/rpi_arm64/
+share/u-boot/rpi_arm64/u-boot
+share/u-boot/rpi_arm64/u-boot.bin
 share/u-boot/sopine_baseboard/
 share/u-boot/sopine_baseboard/sunxi-spl.bin
 share/u-boot/sopine_baseboard/u-boot
