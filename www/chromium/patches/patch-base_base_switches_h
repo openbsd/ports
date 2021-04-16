@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_base_switches_h,v 1.8 2021/03/22 18:04:53 robert Exp $
+$OpenBSD: patch-base_base_switches_h,v 1.9 2021/04/16 18:15:05 robert Exp $
 
 Index: base/base_switches.h
 --- base/base_switches.h.orig
@@ -10,5 +10,5 @@ Index: base/base_switches.h
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  extern const char kEnableThreadInstructionCount[];
- #endif
  
+ // TODO(crbug.com/1176772): Remove kEnableCrashpad and IsCrashpadEnabled() when

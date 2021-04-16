@@ -1,0 +1,17 @@
+$OpenBSD: patch-ui_gtk_gtk_ui_cc,v 1.1 2021/04/16 18:15:07 robert Exp $
+
+Index: ui/gtk/gtk_ui.cc
+--- ui/gtk/gtk_ui.cc.orig
++++ ui/gtk/gtk_ui.cc
+@@ -360,7 +360,11 @@ void GtkUi::Initialize() {
+ #endif
+ 
+   CHECK(ui_gtk::InitializeStubs(
++#if defined(OS_BSD)
++      {{ui_gtk::kModuleGdk_pixbuf, {"libgdk_pixbuf-2.0.so"}}}));
++#else
+       {{ui_gtk::kModuleGdk_pixbuf, {"libgdk_pixbuf-2.0.so.0"}}}));
++#endif 
+ 
+   GtkSettings* settings = gtk_settings_get_default();
+   g_signal_connect_after(settings, "notify::gtk-theme-name",

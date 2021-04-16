@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.59 2021/03/22 18:04:54 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.60 2021/04/16 18:15:06 robert Exp $
 
 Index: chrome/browser/ui/webui/about_ui.cc
 --- chrome/browser/ui/webui/about_ui.cc.orig

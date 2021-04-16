@@ -1,0 +1,14 @@
+$OpenBSD: patch-mojo_core_BUILD_gn,v 1.1 2021/04/16 18:15:07 robert Exp $
+
+Index: mojo/core/BUILD.gn
+--- mojo/core/BUILD.gn.orig
++++ mojo/core/BUILD.gn
+@@ -126,7 +126,7 @@ template("core_impl_source_set") {
+         ]
+       }
+ 
+-      if ((is_linux || is_chromeos || is_android) && !is_nacl) {
++      if ((is_linux || is_chromeos || is_android) && !is_nacl && !is_openbsd) {
+         sources += [
+           "channel_linux.cc",
+           "channel_linux.h",

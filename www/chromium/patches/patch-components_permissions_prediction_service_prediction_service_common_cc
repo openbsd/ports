@@ -1,14 +1,14 @@
-$OpenBSD: patch-components_permissions_prediction_service_prediction_service_common_cc,v 1.2 2021/03/22 18:04:54 robert Exp $
+$OpenBSD: patch-components_permissions_prediction_service_prediction_service_common_cc,v 1.3 2021/04/16 18:15:06 robert Exp $
 
 Index: components/permissions/prediction_service/prediction_service_common.cc
 --- components/permissions/prediction_service/prediction_service_common.cc.orig
 +++ components/permissions/prediction_service/prediction_service_common.cc
-@@ -11,7 +11,7 @@ namespace permissions {
+@@ -13,7 +13,7 @@
+ namespace permissions {
  ClientFeatures_Platform GetCurrentPlatformProto() {
- #if defined(OS_WIN)
-   return permissions::ClientFeatures_Platform_PLATFORM_WINDOWS;
--#elif defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#elif defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
-   return permissions::ClientFeatures_Platform_PLATFORM_LINUX;
- #elif defined(OS_ANDROID)
-   return permissions::ClientFeatures_Platform_PLATFORM_ANDROID;
+ #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_MAC)
++    defined(OS_MAC) || defined(OS_BSD)
+   return permissions::ClientFeatures_Platform_PLATFORM_DESKTOP;
+ #elif defined(OS_ANDROID) || defined(OS_FUCHSIA)
+   return permissions::ClientFeatures_Platform_PLATFORM_MOBILE;

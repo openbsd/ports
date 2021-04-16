@@ -1,8 +1,8 @@
-$OpenBSD: patch-third_party_webrtc_BUILD_gn,v 1.21 2021/03/22 18:04:55 robert Exp $
+$OpenBSD: patch-third_party_webrtc_BUILD_gn,v 1.22 2021/04/16 18:15:07 robert Exp $
 Index: third_party/webrtc/BUILD.gn
 --- third_party/webrtc/BUILD.gn.orig
 +++ third_party/webrtc/BUILD.gn
-@@ -179,6 +179,9 @@ config("common_inherited_config") {
+@@ -180,6 +180,9 @@ config("common_inherited_config") {
    if (is_linux || is_chromeos) {
      defines += [ "WEBRTC_LINUX" ]
    }

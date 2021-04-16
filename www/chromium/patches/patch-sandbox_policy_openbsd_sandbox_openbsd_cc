@@ -1,4 +1,4 @@
-$OpenBSD: patch-sandbox_policy_openbsd_sandbox_openbsd_cc,v 1.3 2021/01/20 07:28:11 robert Exp $
+$OpenBSD: patch-sandbox_policy_openbsd_sandbox_openbsd_cc,v 1.4 2021/04/16 18:15:07 robert Exp $
 
 Index: sandbox/policy/openbsd/sandbox_openbsd.cc
 --- sandbox/policy/openbsd/sandbox_openbsd.cc.orig
@@ -317,7 +317,7 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.cc
 +    SetPledge("stdio drm prot_exec recvfd sendfd tmppath", NULL);
 +  } else if (process_type == switches::kPpapiPluginProcess) {
 +    // prot_exec needed by v8
-+    SetPledge("stdio prot_exec recvfd sendfd", NULL);
++    SetPledge("stdio rpath prot_exec recvfd sendfd", NULL);
 +  } else if (process_type == switches::kUtilityProcess) {
 +    if (sandbox_type == SandboxType::kAudio)
 +      SetPledge(NULL, "/etc/chromium/pledge.utility_audio");

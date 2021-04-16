@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_usrsctp_BUILD_gn,v 1.10 2021/03/22 18:04:55 robert Exp $
+$OpenBSD: patch-third_party_usrsctp_BUILD_gn,v 1.11 2021/04/16 18:15:07 robert Exp $
 
 Index: third_party/usrsctp/BUILD.gn
 --- third_party/usrsctp/BUILD.gn.orig
 +++ third_party/usrsctp/BUILD.gn
-@@ -12,7 +12,7 @@ config("usrsctp_config") {
+@@ -13,7 +13,7 @@ config("usrsctp_public_config") {
  
    # This is part of the public config because it's used both by usrsctp and
    # the client (WebRTC), to determine if the length field needs populating.

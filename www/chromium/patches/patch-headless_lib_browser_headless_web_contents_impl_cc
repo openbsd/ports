@@ -1,0 +1,14 @@
+$OpenBSD: patch-headless_lib_browser_headless_web_contents_impl_cc,v 1.1 2021/04/16 18:15:07 robert Exp $
+
+Index: headless/lib/browser/headless_web_contents_impl.cc
+--- headless/lib/browser/headless_web_contents_impl.cc.orig
++++ headless/lib/browser/headless_web_contents_impl.cc
+@@ -60,7 +60,7 @@ namespace headless {
+ namespace {
+ 
+ void UpdatePrefsFromSystemSettings(blink::RendererPreferences* prefs) {
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_WIN)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_WIN) || defined(OS_BSD)
+   content::UpdateFontRendererPreferencesFromSystemSettings(prefs);
+ #endif
+ 

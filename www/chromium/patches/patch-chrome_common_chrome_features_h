@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_chrome_features_h,v 1.29 2021/03/22 18:04:54 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_features_h,v 1.30 2021/04/16 18:15:06 robert Exp $
 
 Index: chrome/common/chrome_features.h
 --- chrome/common/chrome_features.h.orig
 +++ chrome/common/chrome_features.h
-@@ -78,7 +78,7 @@ extern const base::Feature kAppShimNewCloseBehavior;
+@@ -81,7 +81,7 @@ extern const base::Feature kAppShimNewCloseBehavior;
  
  COMPONENT_EXPORT(CHROME_FEATURES) extern const base::Feature kAsyncDns;
  
@@ -12,7 +12,7 @@ Index: chrome/common/chrome_features.h
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kBackgroundModeAllowRestart;
  #endif  // defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
-@@ -231,7 +231,7 @@ extern const base::Feature kEnableAmbientAuthenticatio
+@@ -244,7 +244,7 @@ extern const base::Feature kEnableAmbientAuthenticatio
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \

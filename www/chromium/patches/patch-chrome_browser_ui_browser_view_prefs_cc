@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_browser_view_prefs_cc,v 1.13 2021/03/22 18:04:54 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_browser_view_prefs_cc,v 1.14 2021/04/16 18:15:06 robert Exp $
 
 Index: chrome/browser/ui/browser_view_prefs.cc
 --- chrome/browser/ui/browser_view_prefs.cc.orig

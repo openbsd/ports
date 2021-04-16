@@ -1,14 +1,14 @@
-$OpenBSD: patch-gpu_vulkan_vulkan_image_cc,v 1.1 2021/03/22 18:04:54 robert Exp $
+$OpenBSD: patch-gpu_vulkan_vulkan_image_cc,v 1.2 2021/04/16 18:15:07 robert Exp $
 
 Index: gpu/vulkan/vulkan_image.cc
 --- gpu/vulkan/vulkan_image.cc.orig
 +++ gpu/vulkan/vulkan_image.cc
-@@ -320,7 +320,7 @@ bool VulkanImage::InitializeWithExternalMemory(
-   };
-   format_info_2.pNext = &external_info;
+@@ -325,7 +325,7 @@ bool VulkanImage::InitializeWithExternalMemory(
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+ // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
+ // complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
    VkPhysicalDeviceImageDrmFormatModifierInfoEXT modifier_info = {
        .sType =
            VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_DRM_FORMAT_MODIFIER_INFO_EXT,

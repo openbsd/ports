@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_flag_descriptions_cc,v 1.38 2021/04/01 05:53:16 robert Exp $
+$OpenBSD: patch-chrome_browser_flag_descriptions_cc,v 1.39 2021/04/16 18:15:06 robert Exp $
 
 Index: chrome/browser/flag_descriptions.cc
 --- chrome/browser/flag_descriptions.cc.orig
 +++ chrome/browser/flag_descriptions.cc
-@@ -4775,7 +4775,7 @@ const char kEnableNewBadgeOnMenuItemsDescription[] =
+@@ -4950,7 +4950,7 @@ const char kEnableNewBadgeOnMenuItemsDescription[] =
  // Random platform combinations -----------------------------------------------
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -12,7 +12,7 @@ Index: chrome/browser/flag_descriptions.cc
  
  const char kEnableMediaFeedsName[] = "Enables Media Feeds";
  const char kEnableMediaFeedsDescription[] =
-@@ -4822,7 +4822,7 @@ const char kRemoteCopyProgressNotificationDescription[
+@@ -4997,7 +4997,7 @@ const char kRemoteCopyProgressNotificationDescription[
          // defined(OS_CHROMEOS)
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -21,16 +21,25 @@ Index: chrome/browser/flag_descriptions.cc
  
  const char kDirectManipulationStylusName[] = "Direct Manipulation Stylus";
  const char kDirectManipulationStylusDescription[] =
-@@ -4831,7 +4831,7 @@ const char kDirectManipulationStylusDescription[] =
+@@ -5006,7 +5006,7 @@ const char kDirectManipulationStylusDescription[] =
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) ||
          // defined(OS_CHROMEOS)
+ 
+-#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
+ 
+ const char kCommanderName[] = "Commander";
+ const char kCommanderDescription[] =
+@@ -5024,7 +5024,7 @@ const char kDesktopDetailedLanguageSettingsDescription
+ 
+ #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
  
 -#if defined(OS_CHROMEOS) || defined(OS_LINUX)
 +#if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_BSD)
  #if BUILDFLAG(USE_TCMALLOC)
  const char kDynamicTcmallocName[] = "Dynamic Tcmalloc Tuning";
  const char kDynamicTcmallocDescription[] =
-@@ -4857,7 +4857,7 @@ const char kWebShareDescription[] =
+@@ -5050,7 +5050,7 @@ const char kWebShareDescription[] =
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
@@ -39,3 +48,12 @@ Index: chrome/browser/flag_descriptions.cc
  const char kEnableEphemeralGuestProfilesOnDesktopName[] =
      "Enable ephemeral Guest profiles on Desktop";
  const char kEnableEphemeralGuestProfilesOnDesktopDescription[] =
+@@ -5149,7 +5149,7 @@ const char kSendWebUIJavaScriptErrorReportsDescription
+ #endif
+ 
+ #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
+-    defined(OS_MAC)
++    defined(OS_MAC) || defined(OS_BSD)
+ const char kUIDebugToolsName[] = "Debugging tools for UI";
+ const char kUIDebugToolsDescription[] =
+     "Enables additional keyboard shortcuts to help debugging.";

@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_views_widget_native_widget_aura_cc,v 1.8 2021/03/22 18:04:55 robert Exp $
+$OpenBSD: patch-ui_views_widget_native_widget_aura_cc,v 1.9 2021/04/16 18:15:07 robert Exp $
 
 Index: ui/views/widget/native_widget_aura.cc
 --- ui/views/widget/native_widget_aura.cc.orig
@@ -12,7 +12,7 @@ Index: ui/views/widget/native_widget_aura.cc
  #include "ui/views/linux_ui/linux_ui.h"
  #include "ui/views/widget/desktop_aura/desktop_window_tree_host_linux.h"
  #endif
-@@ -1121,7 +1121,7 @@ void NativeWidgetAura::SetInitialFocus(ui::WindowShowS
+@@ -1122,7 +1122,7 @@ void NativeWidgetAura::SetInitialFocus(ui::WindowShowS
  
  namespace {
  #if BUILDFLAG(ENABLE_DESKTOP_AURA) && \
@@ -21,7 +21,7 @@ Index: ui/views/widget/native_widget_aura.cc
  void CloseWindow(aura::Window* window) {
    if (window) {
      Widget* widget = Widget::GetWidgetForNativeView(window);
-@@ -1152,14 +1152,14 @@ void Widget::CloseAllSecondaryWidgets() {
+@@ -1153,14 +1153,14 @@ void Widget::CloseAllSecondaryWidgets() {
  #endif
  
  #if BUILDFLAG(ENABLE_DESKTOP_AURA) && \

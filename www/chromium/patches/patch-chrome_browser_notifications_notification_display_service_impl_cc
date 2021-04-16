@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_notifications_notification_display_service_impl_cc,v 1.11 2021/03/22 18:04:54 robert Exp $
+$OpenBSD: patch-chrome_browser_notifications_notification_display_service_impl_cc,v 1.12 2021/04/16 18:15:06 robert Exp $
 
 Index: chrome/browser/notifications/notification_display_service_impl.cc
 --- chrome/browser/notifications/notification_display_service_impl.cc.orig
@@ -19,9 +19,9 @@ Index: chrome/browser/notifications/notification_display_service_impl.cc
 -#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
 +#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
    registry->RegisterBooleanPref(prefs::kAllowNativeNotifications, true);
+   registry->RegisterBooleanPref(prefs::kAllowSystemNotifications, true);
  #endif
- }
-@@ -82,7 +82,7 @@ NotificationDisplayServiceImpl::NotificationDisplaySer
+@@ -83,7 +83,7 @@ NotificationDisplayServiceImpl::NotificationDisplaySer
                             std::make_unique<PersistentNotificationHandler>());
  
  #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || \

@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_public_common_content_switches_h,v 1.50 2021/03/22 18:04:54 robert Exp $
+$OpenBSD: patch-content_public_common_content_switches_h,v 1.51 2021/04/16 18:15:06 robert Exp $
 
 Index: content/public/common/content_switches.h
 --- content/public/common/content_switches.h.orig
@@ -11,7 +11,7 @@ Index: content/public/common/content_switches.h
  CONTENT_EXPORT extern const char kEnableNetworkInformationDownlinkMax[];
  CONTENT_EXPORT extern const char kEnableNewCanvas2DAPI[];
  CONTENT_EXPORT extern const char kDisableNv12DxgiVideo[];
-@@ -245,7 +246,7 @@ CONTENT_EXPORT extern const char kWebXrRuntimeOrientat
+@@ -246,7 +247,7 @@ CONTENT_EXPORT extern const char kWebXrRuntimeOrientat
  CONTENT_EXPORT extern const char kWebXrRuntimeOpenXr[];
  CONTENT_EXPORT extern const char kWebXrRuntimeWMR[];
  

@@ -1,2 +1,4 @@
-# $OpenBSD: unveil.plugin,v 1.1 2018/08/10 14:57:53 robert Exp $
-/dev/null r
+# $OpenBSD: unveil.plugin,v 1.2 2021/04/16 18:15:05 robert Exp $
+/usr/X11R6/lib/X11/fonts/Type1 r
+/usr/X11R6/lib/X11/fonts/TTF r
+/usr/local/share/fonts r

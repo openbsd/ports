@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_shell_utility_shell_content_utility_client_cc,v 1.6 2021/03/22 18:04:54 robert Exp $
+$OpenBSD: patch-content_shell_utility_shell_content_utility_client_cc,v 1.7 2021/04/16 18:15:07 robert Exp $
 
 Index: content/shell/utility/shell_content_utility_client.cc
 --- content/shell/utility/shell_content_utility_client.cc.orig

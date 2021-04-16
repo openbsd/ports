@@ -1,8 +1,8 @@
-$OpenBSD: patch-net_dns_host_resolver_proc_cc,v 1.6 2020/02/22 12:33:21 robert Exp $
+$OpenBSD: patch-net_dns_host_resolver_proc_cc,v 1.7 2021/04/16 18:15:07 robert Exp $
 Index: net/dns/host_resolver_proc.cc
 --- net/dns/host_resolver_proc.cc.orig
 +++ net/dns/host_resolver_proc.cc
-@@ -18,10 +18,6 @@
+@@ -19,10 +19,6 @@
  #include "net/dns/dns_util.h"
  #include "net/dns/host_resolver.h"
  

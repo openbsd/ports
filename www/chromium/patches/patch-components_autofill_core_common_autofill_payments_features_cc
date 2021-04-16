@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_autofill_core_common_autofill_payments_features_cc,v 1.12 2021/03/22 18:04:54 robert Exp $
+$OpenBSD: patch-components_autofill_core_common_autofill_payments_features_cc,v 1.13 2021/04/16 18:15:06 robert Exp $
 
 Index: components/autofill/core/common/autofill_payments_features.cc
 --- components/autofill/core/common/autofill_payments_features.cc.orig
 +++ components/autofill/core/common/autofill_payments_features.cc
-@@ -137,7 +137,7 @@ const base::Feature kAutofillUpstreamAllowAllEmailDoma
+@@ -121,7 +121,7 @@ const base::Feature kAutofillUpstreamAllowAllEmailDoma
  bool ShouldShowImprovedUserConsentForCreditCardSave() {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

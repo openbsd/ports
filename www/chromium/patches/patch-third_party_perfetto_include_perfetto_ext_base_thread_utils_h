@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_perfetto_include_perfetto_ext_base_thread_utils_h,v 1.4 2020/10/22 13:52:55 robert Exp $
+$OpenBSD: patch-third_party_perfetto_include_perfetto_ext_base_thread_utils_h,v 1.5 2021/04/16 18:15:07 robert Exp $
 
 Index: third_party/perfetto/include/perfetto/ext/base/thread_utils.h
 --- third_party/perfetto/include/perfetto/ext/base/thread_utils.h.orig
 +++ third_party/perfetto/include/perfetto/ext/base/thread_utils.h
-@@ -35,9 +35,10 @@
+@@ -39,9 +39,10 @@
  namespace perfetto {
  namespace base {
  

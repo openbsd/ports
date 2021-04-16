@@ -1,11 +1,11 @@
-$OpenBSD: patch-chrome_common_chrome_paths_cc,v 1.57 2021/03/22 18:04:54 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_paths_cc,v 1.58 2021/04/16 18:15:06 robert Exp $
 
 Index: chrome/common/chrome_paths.cc
 --- chrome/common/chrome_paths.cc.orig
 +++ chrome/common/chrome_paths.cc
-@@ -48,14 +48,14 @@ namespace {
- const base::FilePath::CharType kPepperFlashBaseDirectory[] =
-     FILE_PATH_LITERAL("PepperFlash");
+@@ -44,14 +44,14 @@
+ 
+ namespace {
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
@@ -14,23 +14,14 @@ Index: chrome/common/chrome_paths.cc
  const base::FilePath::CharType kFilepathSinglePrefExtensions[] =
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
 -    FILE_PATH_LITERAL("/usr/share/google-chrome/extensions");
-+    FILE_PATH_LITERAL("/usr/local/share/google-chrome/extensions");
++    FILE_PATH_LITERAL("/usr/local/share/chromium/extensions");
  #else
 -    FILE_PATH_LITERAL("/usr/share/chromium/extensions");
 +    FILE_PATH_LITERAL("/usr/local/share/chromium/extensions");
  #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
  
- // The path to the hint file that tells the pepper plugin loader
-@@ -64,7 +64,7 @@ const base::FilePath::CharType kComponentUpdatedFlashH
-     FILE_PATH_LITERAL("latest-component-updated-flash");
  #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
- 
--#if (defined(OS_LINUX) || defined(OS_CHROMEOS)) && \
-+#if (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)) && \
-     BUILDFLAG(ENABLE_WIDEVINE_CDM_COMPONENT)
- // The name of the hint file that tells the latest component updated Widevine
- // CDM directory. This file name should not be changed as otherwise existing
-@@ -183,7 +183,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -175,7 +175,7 @@ bool PathProvider(int key, base::FilePath* result) {
          return false;
        break;
      case chrome::DIR_DEFAULT_DOWNLOADS_SAFE:
@@ -39,34 +30,16 @@ Index: chrome/common/chrome_paths.cc
        if (!GetUserDownloadsDirectorySafe(&cur))
          return false;
        break;
-@@ -336,7 +336,7 @@ bool PathProvider(int key, base::FilePath* result) {
-       cur = cur.Append(FILE_PATH_LITERAL("pnacl"));
-       break;
- 
--#if (defined(OS_LINUX) || defined(OS_CHROMEOS)) && \
-+#if (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)) && \
-     BUILDFLAG(BUNDLE_WIDEVINE_CDM)
-     case chrome::DIR_BUNDLED_WIDEVINE_CDM:
-       if (!GetComponentDirectory(&cur))
-@@ -350,7 +350,7 @@ bool PathProvider(int key, base::FilePath* result) {
- #endif  // (defined(OS_LINUX) || defined(OS_CHROMEOS)) &&
-         // BUILDFLAG(BUNDLE_WIDEVINE_CDM)
- 
--#if (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) && \
-+#if (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)) && \
-     BUILDFLAG(ENABLE_WIDEVINE_CDM_COMPONENT)
-     case chrome::DIR_COMPONENT_UPDATED_WIDEVINE_CDM:
-       if (!base::PathService::Get(chrome::DIR_USER_DATA, &cur))
-@@ -456,7 +456,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -434,7 +434,7 @@ bool PathProvider(int key, base::FilePath* result) {
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.
- #if defined(OS_CHROMEOS) ||                                  \
+ #if BUILDFLAG(IS_CHROMEOS_ASH) ||                            \
 -    ((defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) && \
-+    ((defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)) && \
++    ((defined(OS_LINUX) || defined(OS_BSD) || BUILDFLAG(IS_CHROMEOS_LACROS)) && \
       BUILDFLAG(CHROMIUM_BRANDING)) ||                        \
      defined(OS_MAC)
      case chrome::DIR_USER_EXTERNAL_EXTENSIONS: {
-@@ -466,7 +466,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -444,7 +444,7 @@ bool PathProvider(int key, base::FilePath* result) {
        break;
      }
  #endif
@@ -75,7 +48,7 @@ Index: chrome/common/chrome_paths.cc
      case chrome::DIR_STANDALONE_EXTERNAL_EXTENSIONS: {
        cur = base::FilePath(kFilepathSinglePrefExtensions);
        break;
-@@ -501,7 +501,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -479,7 +479,7 @@ bool PathProvider(int key, base::FilePath* result) {
  #endif
        break;
  
@@ -84,12 +57,3 @@ Index: chrome/common/chrome_paths.cc
      case chrome::DIR_NATIVE_MESSAGING:
  #if defined(OS_MAC)
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
-@@ -535,7 +535,7 @@ bool PathProvider(int key, base::FilePath* result) {
-       cur = cur.Append(kGCMStoreDirname);
-       break;
- #endif  // !defined(OS_ANDROID)
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
-     case chrome::FILE_COMPONENT_FLASH_HINT:
-       if (!base::PathService::Get(
-               chrome::DIR_COMPONENT_UPDATED_PEPPER_FLASH_PLUGIN, &cur)) {

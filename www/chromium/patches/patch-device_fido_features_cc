@@ -1,9 +1,9 @@
-$OpenBSD: patch-device_fido_features_cc,v 1.5 2021/03/22 18:04:54 robert Exp $
+$OpenBSD: patch-device_fido_features_cc,v 1.6 2021/04/16 18:15:07 robert Exp $
 
 Index: device/fido/features.cc
 --- device/fido/features.cc.orig
 +++ device/fido/features.cc
-@@ -33,7 +33,7 @@ extern const base::Feature kWebAuthGetAssertionFeature
+@@ -47,7 +47,7 @@ extern const base::Feature kWebAuthGetAssertionFeature
      "WebAuthenticationGetAssertionFeaturePolicy",
      base::FEATURE_ENABLED_BY_DEFAULT};
  

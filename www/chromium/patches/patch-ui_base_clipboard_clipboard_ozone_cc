@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_base_clipboard_clipboard_ozone_cc,v 1.3 2021/03/22 18:04:55 robert Exp $
+$OpenBSD: patch-ui_base_clipboard_clipboard_ozone_cc,v 1.4 2021/04/16 18:15:07 robert Exp $
 
 Index: ui/base/clipboard/clipboard_ozone.cc
 --- ui/base/clipboard/clipboard_ozone.cc.orig
 +++ ui/base/clipboard/clipboard_ozone.cc
-@@ -305,7 +305,7 @@ class ClipboardOzone::AsyncClipboardOzone {
+@@ -301,7 +301,7 @@ class ClipboardOzone::AsyncClipboardOzone {
  // of lacros-chrome is complete.
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

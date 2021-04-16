@@ -1,10 +1,10 @@
-$OpenBSD: patch-third_party_pdfium_core_fxge_fx_ge_linux_cpp,v 1.12 2021/01/20 07:28:11 robert Exp $
+$OpenBSD: patch-third_party_pdfium_core_fxge_fx_ge_linux_cpp,v 1.13 2021/04/16 18:15:07 robert Exp $
 
 Index: third_party/pdfium/core/fxge/fx_ge_linux.cpp
 --- third_party/pdfium/core/fxge/fx_ge_linux.cpp.orig
 +++ third_party/pdfium/core/fxge/fx_ge_linux.cpp
-@@ -16,7 +16,7 @@
- #include "core/fxge/systemfontinfo_iface.h"
+@@ -17,7 +17,7 @@
+ #include "third_party/base/check.h"
  #include "third_party/base/stl_util.h"
  
 -#if !defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_ASMJS)
@@ -12,7 +12,7 @@ Index: third_party/pdfium/core/fxge/fx_ge_linux.cpp
  #error "Included on the wrong platform"
  #endif
  
-@@ -165,9 +165,8 @@ class CLinuxPlatform : public CFX_GEModule::PlatformIf
+@@ -166,9 +166,8 @@ class CLinuxPlatform : public CFX_GEModule::PlatformIf
    std::unique_ptr<SystemFontInfoIface> CreateDefaultSystemFontInfo() override {
      auto pInfo = std::make_unique<CFX_LinuxFontInfo>();
      if (!pInfo->ParseFontCfg(CFX_GEModule::Get()->GetUserFontPaths())) {

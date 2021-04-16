@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_debug_elf_reader_cc,v 1.5 2020/10/22 13:52:53 robert Exp $
+$OpenBSD: patch-base_debug_elf_reader_cc,v 1.6 2021/04/16 18:15:05 robert Exp $
 
 Index: base/debug/elf_reader.cc
 --- base/debug/elf_reader.cc.orig
@@ -17,5 +17,5 @@ Index: base/debug/elf_reader.cc
        }
 +#endif
  
-       size_t section_size = bits::Align(current_note->n_namesz, 4) +
-                             bits::Align(current_note->n_descsz, 4) +
+       size_t section_size = bits::AlignUp(current_note->n_namesz, 4) +
+                             bits::AlignUp(current_note->n_descsz, 4) +

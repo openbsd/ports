@@ -1,8 +1,8 @@
-$OpenBSD: patch-services_network_public_cpp_cert_verifier_cert_verifier_creation_cc,v 1.2 2021/01/20 07:28:11 robert Exp $
+$OpenBSD: patch-services_cert_verifier_cert_verifier_creation_cc,v 1.1 2021/04/16 18:15:07 robert Exp $
 
-Index: services/network/public/cpp/cert_verifier/cert_verifier_creation.cc
---- services/network/public/cpp/cert_verifier/cert_verifier_creation.cc.orig
-+++ services/network/public/cpp/cert_verifier/cert_verifier_creation.cc
+Index: services/cert_verifier/cert_verifier_creation.cc
+--- services/cert_verifier/cert_verifier_creation.cc.orig
++++ services/cert_verifier/cert_verifier_creation.cc
 @@ -71,7 +71,7 @@ scoped_refptr<net::CertVerifyProc> CreateCertVerifyPro
  
  bool IsUsingCertNetFetcher() {

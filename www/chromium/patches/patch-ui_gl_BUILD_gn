@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_gl_BUILD_gn,v 1.36 2021/03/22 18:04:55 robert Exp $
+$OpenBSD: patch-ui_gl_BUILD_gn,v 1.37 2021/04/16 18:15:07 robert Exp $
 
 Index: ui/gl/BUILD.gn
 --- ui/gl/BUILD.gn.orig
 +++ ui/gl/BUILD.gn
-@@ -157,8 +157,6 @@ component("gl") {
+@@ -158,8 +158,6 @@ component("gl") {
      defines += [ "GPU_ENABLE_SERVICE_LOGGING" ]
    }
  
@@ -12,7 +12,7 @@ Index: ui/gl/BUILD.gn
    all_dependent_configs = [ ":gl_config" ]
  
    public_configs = [ "//third_party/khronos:khronos_headers" ]
-@@ -173,7 +171,6 @@ component("gl") {
+@@ -174,7 +172,6 @@ component("gl") {
    ]
    public_deps = [
      "//base",
@@ -20,7 +20,7 @@ Index: ui/gl/BUILD.gn
      "//ui/events/platform",
      "//ui/gfx",
      "//ui/gfx/geometry",
-@@ -373,7 +370,6 @@ component("gl") {
+@@ -374,7 +371,6 @@ component("gl") {
        data_deps += [
          "//third_party/angle:libEGL",
          "//third_party/angle:libGLESv2",

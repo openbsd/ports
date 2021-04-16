@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_webui_chrome_web_ui_controller_factory_cc,v 1.48 2021/03/22 18:04:54 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_webui_chrome_web_ui_controller_factory_cc,v 1.49 2021/04/16 18:15:06 robert Exp $
 
 Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
 --- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig
 +++ chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
-@@ -242,7 +242,7 @@
+@@ -246,7 +246,7 @@
  #include "chrome/browser/ui/webui/app_launcher_page_ui.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
  #include "chrome/browser/ui/webui/webui_js_error/webui_js_error_ui.h"
  #endif
  
-@@ -264,12 +264,12 @@
+@@ -267,12 +267,12 @@
  #endif
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -27,7 +27,7 @@ Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
  #include "chrome/browser/ui/webui/sandbox/sandbox_internals_ui.h"
  #endif
  
-@@ -465,7 +465,7 @@ bool IsAboutUI(const GURL& url) {
+@@ -478,7 +478,7 @@ bool IsAboutUI(const GURL& url) {
  #if !defined(OS_ANDROID)
            || url.host_piece() == chrome::kChromeUITermsHost
  #endif
@@ -36,7 +36,7 @@ Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
            || url.host_piece() == chrome::kChromeUILinuxProxyConfigHost
  #endif
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -811,7 +811,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -832,7 +832,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    }
  #endif  // !defined(OFFICIAL_BUILD)
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
@@ -45,7 +45,7 @@ Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
    if (url.host_piece() == chrome::kChromeUIWebUIJsErrorHost)
      return &NewWebUI<WebUIJsErrorUI>;
  #endif
-@@ -873,7 +873,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -892,7 +892,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    if (url.host_piece() == chrome::kChromeUINaClHost)
      return &NewWebUI<NaClUI>;
  #endif
@@ -54,7 +54,7 @@ Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
      defined(USE_AURA)
    if (url.host_piece() == chrome::kChromeUITabModalConfirmDialogHost)
      return &NewWebUI<ConstrainedWebDialogUI>;
-@@ -918,19 +918,19 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -937,19 +937,19 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    }
  #endif
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \

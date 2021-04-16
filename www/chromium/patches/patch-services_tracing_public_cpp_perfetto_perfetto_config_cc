@@ -1,14 +1,14 @@
-$OpenBSD: patch-services_tracing_public_cpp_perfetto_perfetto_config_cc,v 1.7 2021/03/22 18:04:55 robert Exp $
+$OpenBSD: patch-services_tracing_public_cpp_perfetto_perfetto_config_cc,v 1.8 2021/04/16 18:15:07 robert Exp $
 
 Index: services/tracing/public/cpp/perfetto/perfetto_config.cc
 --- services/tracing/public/cpp/perfetto/perfetto_config.cc.orig
 +++ services/tracing/public/cpp/perfetto/perfetto_config.cc
-@@ -83,7 +83,7 @@ void AddDataSourceConfigs(
+@@ -88,7 +88,7 @@ void AddDataSourceConfigs(
+ // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.
- #if defined(OS_CHROMEOS) ||      \
-     (BUILDFLAG(IS_CHROMECAST) && \
--     (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)))
-+     (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)))
+ #if BUILDFLAG(IS_CHROMEOS_ASH) || \
+-    (BUILDFLAG(IS_CHROMECAST) && defined(OS_LINUX))
++    (BUILDFLAG(IS_CHROMECAST) && (defined(OS_LINUX) || defined(OS_BSD)))
      if (source_names.empty() ||
          source_names.count(tracing::mojom::kSystemTraceDataSourceName) == 1) {
-       AddDataSourceConfig(perfetto_config,
+       AddDataSourceConfig(

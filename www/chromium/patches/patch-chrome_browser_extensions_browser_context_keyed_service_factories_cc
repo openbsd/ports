@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_extensions_browser_context_keyed_service_factories_cc,v 1.22 2021/03/22 18:04:53 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_browser_context_keyed_service_factories_cc,v 1.23 2021/04/16 18:15:06 robert Exp $
 
 Index: chrome/browser/extensions/browser_context_keyed_service_factories.cc
 --- chrome/browser/extensions/browser_context_keyed_service_factories.cc.orig

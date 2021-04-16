@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_autofill_core_browser_autofill_external_delegate_cc,v 1.7 2021/03/22 18:04:54 robert Exp $
+$OpenBSD: patch-components_autofill_core_browser_autofill_external_delegate_cc,v 1.8 2021/04/16 18:15:06 robert Exp $
 
 Index: components/autofill/core/browser/autofill_external_delegate.cc
 --- components/autofill/core/browser/autofill_external_delegate.cc.orig

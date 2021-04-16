@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_views_widget_desktop_aura_desktop_window_tree_host_platform_cc,v 1.12 2021/03/22 18:04:55 robert Exp $
+$OpenBSD: patch-ui_views_widget_desktop_aura_desktop_window_tree_host_platform_cc,v 1.13 2021/04/16 18:15:07 robert Exp $
 
 Index: ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc
 --- ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc.orig
 +++ ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc
-@@ -818,7 +818,7 @@ void DesktopWindowTreeHostPlatform::AddAdditionalInitP
+@@ -836,7 +836,7 @@ bool DesktopWindowTreeHostPlatform::ShouldUseLayerForS
  // DesktopWindowTreeHost:
  
  // Linux subclasses this host and adds some Linux specific bits.

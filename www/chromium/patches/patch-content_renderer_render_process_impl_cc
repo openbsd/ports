@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_renderer_render_process_impl_cc,v 1.15 2021/03/22 18:04:54 robert Exp $
+$OpenBSD: patch-content_renderer_render_process_impl_cc,v 1.16 2021/04/16 18:15:06 robert Exp $
 
 Index: content/renderer/render_process_impl.cc
 --- content/renderer/render_process_impl.cc.orig
@@ -20,4 +20,4 @@ Index: content/renderer/render_process_impl.cc
 +#if (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)) && defined(ARCH_CPU_X86_64)
    if (base::FeatureList::IsEnabled(features::kWebAssemblyTrapHandler)) {
      base::CommandLine* command_line = base::CommandLine::ForCurrentProcess();
-     if (!command_line->HasSwitch(switches::kDisableInProcessStackTraces)) {
+ 

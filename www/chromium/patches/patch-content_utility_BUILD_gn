@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_utility_BUILD_gn,v 1.6 2021/03/22 18:04:54 robert Exp $
+$OpenBSD: patch-content_utility_BUILD_gn,v 1.7 2021/04/16 18:15:07 robert Exp $
 
 Index: content/utility/BUILD.gn
 --- content/utility/BUILD.gn.orig

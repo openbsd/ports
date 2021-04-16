@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.559 2021/04/14 12:10:33 robert Exp $
-
-BROKEN-i386=	v8/src/wasm/baseline/ia32/liftoff-assembler-ia32.h doesn't build
-# ../../v8/src/wasm/baseline/ia32/liftoff-assembler-ia32.h:364:24: error: out-of-line definition of 'Load' does not match any declaration in 'v8::internal::wasm::LiftoffAssembler'
+# $OpenBSD: Makefile,v 1.560 2021/04/16 18:15:05 robert Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -14,7 +11,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser
 
-V=			89.0.4389.128
+V=			90.0.4430.72
 
 DISTNAME=		chromium-${V}
 
@@ -207,7 +204,6 @@ pre-configure:
 	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
 	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py ${WRKSRC}/v8/tools/run.py \
 		${WRKSRC}/tools/protoc_wrapper/protoc_wrapper.py \
-		${WRKSRC}/build/config/compiler/BUILD.gn \
 		${WRKSRC}/build/util/python2_action.py \
 		${WRKSRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py
 

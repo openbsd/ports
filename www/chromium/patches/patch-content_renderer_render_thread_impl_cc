@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.49 2021/03/22 18:04:54 robert Exp $
+$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.50 2021/04/16 18:15:06 robert Exp $
 
 Index: content/renderer/render_thread_impl.cc
 --- content/renderer/render_thread_impl.cc.orig
 +++ content/renderer/render_thread_impl.cc
-@@ -174,7 +174,7 @@
+@@ -175,7 +175,7 @@
  
  #if defined(OS_MAC)
  #include <malloc/malloc.h>
@@ -12,7 +12,7 @@ Index: content/renderer/render_thread_impl.cc
  #include <malloc.h>
  #endif
  
-@@ -687,7 +687,7 @@ void RenderThreadImpl::Init() {
+@@ -686,7 +686,7 @@ void RenderThreadImpl::Init() {
    DCHECK(parsed_num_raster_threads) << string_value;
    DCHECK_GT(num_raster_threads, 0);
  
@@ -21,7 +21,7 @@ Index: content/renderer/render_thread_impl.cc
    categorized_worker_pool_->SetBackgroundingCallback(
        main_thread_scheduler_->DefaultTaskRunner(),
        base::BindOnce(
-@@ -710,7 +710,7 @@ void RenderThreadImpl::Init() {
+@@ -709,7 +709,7 @@ void RenderThreadImpl::Init() {
    base::DiscardableMemoryAllocator::SetInstance(
        discardable_memory_allocator_.get());
  
@@ -30,7 +30,7 @@ Index: content/renderer/render_thread_impl.cc
    if (base::FeatureList::IsEnabled(
            blink::features::kBlinkCompositorUseDisplayThreadPriority)) {
      render_message_filter()->SetThreadPriority(
-@@ -1079,7 +1079,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
+@@ -1038,7 +1038,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
    const bool enable_video_accelerator =
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

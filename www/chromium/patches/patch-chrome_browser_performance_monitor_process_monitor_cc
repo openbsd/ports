@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_performance_monitor_process_monitor_cc,v 1.1 2021/04/16 18:15:06 robert Exp $
+
+Index: chrome/browser/performance_monitor/process_monitor.cc
+--- chrome/browser/performance_monitor/process_monitor.cc.orig
++++ chrome/browser/performance_monitor/process_monitor.cc
+@@ -83,7 +83,7 @@ ProcessMonitor::Metrics& operator+=(ProcessMonitor::Me
+ #endif
+ 
+ #if defined(OS_MAC) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_AIX)
++    defined(OS_AIX) || defined(OS_BSD)
+   lhs.idle_wakeups += rhs.idle_wakeups;
+ #endif
+ 

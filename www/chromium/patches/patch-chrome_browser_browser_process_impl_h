@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_browser_process_impl_h,v 1.35 2021/03/22 18:04:53 robert Exp $
+$OpenBSD: patch-chrome_browser_browser_process_impl_h,v 1.36 2021/04/16 18:15:05 robert Exp $
 
 Index: chrome/browser/browser_process_impl.h
 --- chrome/browser/browser_process_impl.h.orig
 +++ chrome/browser/browser_process_impl.h
-@@ -352,7 +352,7 @@ class BrowserProcessImpl : public BrowserProcess,
+@@ -357,7 +357,7 @@ class BrowserProcessImpl : public BrowserProcess,
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

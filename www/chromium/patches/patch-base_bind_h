@@ -1,0 +1,14 @@
+$OpenBSD: patch-base_bind_h,v 1.1 2021/04/16 18:15:05 robert Exp $
+
+Index: base/bind.h
+--- base/bind.h.orig
++++ base/bind.h
+@@ -314,7 +314,7 @@ inline OnceCallback<MakeUnboundRunType<Functor, Args..
+                 "BindOnce requires non-const rvalue for OnceCallback binding."
+                 " I.e.: base::BindOnce(std::move(callback)).");
+ #if defined(OS_LINUX) || defined(OS_WIN) || \
+-    defined(NCTEST_BIND_ONCE_WITH_PASSED)
++    defined(NCTEST_BIND_ONCE_WITH_PASSED) || defined(OS_BSD)
+   // TODO(https://crbug.com/1180750): Enable this everywhere.
+   static_assert(
+       conjunction<

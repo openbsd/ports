@@ -1,0 +1,18 @@
+$OpenBSD: patch-third_party_perfetto_src_base_string_utils_cc,v 1.1 2021/04/16 18:15:07 robert Exp $
+
+Index: third_party/perfetto/src/base/string_utils.cc
+--- third_party/perfetto/src/base/string_utils.cc.orig
++++ third_party/perfetto/src/base/string_utils.cc
+@@ -33,9 +33,10 @@ namespace base {
+ 
+ // Locale-independant as possible version of strtod.
+ double StrToD(const char* nptr, char** endptr) {
+-#if PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID) || \
++#if (PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID) || \
+     PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) ||   \
+-    PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE)
++    PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE)) && \
++    !PERFETTO_BUILDFLAG(PERFETTO_OS_OPENBSD)
+   static auto c_locale = newlocale(LC_ALL, "C", nullptr);
+   return strtod_l(nptr, endptr, c_locale);
+ #else

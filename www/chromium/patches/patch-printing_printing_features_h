@@ -1,9 +1,9 @@
-$OpenBSD: patch-printing_printing_features_h,v 1.2 2021/01/20 07:28:11 robert Exp $
+$OpenBSD: patch-printing_printing_features_h,v 1.3 2021/04/16 18:15:07 robert Exp $
 
 Index: printing/printing_features.h
 --- printing/printing_features.h.orig
 +++ printing/printing_features.h
-@@ -39,7 +39,7 @@ PRINTING_EXPORT bool ShouldPrintUsingXps(bool source_i
+@@ -35,7 +35,7 @@ PRINTING_EXPORT bool ShouldPrintUsingXps(bool source_i
  #endif  // defined(OS_WIN)
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \

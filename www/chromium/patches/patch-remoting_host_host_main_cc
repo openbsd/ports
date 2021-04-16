@@ -1,4 +1,4 @@
-$OpenBSD: patch-remoting_host_host_main_cc,v 1.4 2021/03/22 18:04:54 robert Exp $
+$OpenBSD: patch-remoting_host_host_main_cc,v 1.5 2021/04/16 18:15:07 robert Exp $
 
 Index: remoting/host/host_main.cc
 --- remoting/host/host_main.cc.orig
@@ -21,7 +21,7 @@ Index: remoting/host/host_main.cc
      "  --audio-pipe-name=<pipe> - Sets the pipe name to capture audio on "
      "Linux.\n"
  #endif  // defined(OS_LINUX)
-@@ -152,7 +152,7 @@ MainRoutineFn SelectMainRoutine(const std::string& pro
+@@ -148,7 +148,7 @@ MainRoutineFn SelectMainRoutine(const std::string& pro
    } else if (process_type == kProcessTypeRdpDesktopSession) {
      main_routine = &RdpDesktopSessionMain;
  #endif  // defined(OS_WIN)
