@@ -1,37 +1,22 @@
-$OpenBSD: patch-mozglue_misc_Uptime_cpp,v 1.1 2021/02/23 14:46:29 landry Exp $
+$OpenBSD: patch-mozglue_misc_Uptime_cpp,v 1.2 2021/04/19 08:20:50 landry Exp $
 
-https://bug1686405.bmoattachments.org/attachment.cgi?id=9197204
-https://bugzilla.mozilla.org/show_bug.cgi?id=1686405
+https://phabricator.services.mozilla.com/D109492
+https://hg.mozilla.org/mozilla-central/rev/ea1a5d53adaf
 
 Index: mozglue/misc/Uptime.cpp
 --- mozglue/misc/Uptime.cpp.orig
 +++ mozglue/misc/Uptime.cpp
-@@ -43,10 +43,8 @@ Maybe<uint64_t> NowIncludingSuspendMs() {
-   return Some(clock_gettime_nsec_np(CLOCK_MONOTONIC_RAW) / kNSperMS);
+@@ -111,7 +111,12 @@ Maybe<uint64_t> NowIncludingSuspendMs() {
+ #  endif
  }
  
--#endif  // macOS
-+#elif defined(XP_WIN)
- 
--#if defined(XP_WIN)
--
- // Number of hundreds of nanoseconds in a millisecond
- static constexpr uint64_t kHNSperMS = 10000;
- 
-@@ -77,10 +75,13 @@ Maybe<uint64_t> NowIncludingSuspendMs() {
-   pQueryInterruptTime(&interrupt_time);
-   return Some(interrupt_time / kHNSperMS);
- }
--#endif  // XP_WIN
--
--#if defined(XP_LINUX)  // including Android
-+#else
- #  include <time.h>
+-#endif  // XP_LINUX
++#else  // catch all
 +
-+#if !defined(CLOCK_BOOTTIME) && defined(CLOCK_UPTIME)
-+// DragonFly and FreeBSD
-+#define CLOCK_BOOTTIME CLOCK_UPTIME
++Maybe<uint64_t> NowExcludingSuspendMs() { return Nothing(); }
++Maybe<uint64_t> NowIncludingSuspendMs() { return Nothing(); }
++
 +#endif
  
- // Number of nanoseconds in a millisecond.
- static constexpr uint64_t kNSperMS = 1000000;
+ };  // anonymous namespace
+ 
