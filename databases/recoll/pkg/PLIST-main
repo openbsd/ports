@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2021/03/11 13:34:05 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2021/04/23 21:13:24 sthen Exp $
 @pkgpath databases/recoll
 @bin bin/recollindex
 @bin bin/recollq
@@ -124,3 +124,4 @@ share/recoll/filters/svg.xsl
 share/recoll/filters/xls-dump.py
 share/recoll/filters/xlsxmltocsv.py
 share/recoll/filters/xml.xsl
+share/recoll/translations/recoll_ja.qm
