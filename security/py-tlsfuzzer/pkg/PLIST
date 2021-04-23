@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/03/26 22:01:53 tb Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/04/23 20:54:58 tb Exp $
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer-0.0.1-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/__init__.py
@@ -119,6 +119,7 @@ share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-ocsp-stapling.${MODPY_PYC_MAGIC_TAG
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-openssl-3712.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-record-layer-fragmentation.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-record-size-limit.${MODPY_PYC_MAGIC_TAG}pyc
+share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-renegotiation-changed-clienthello.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-renegotiation-disabled-client-cert.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-renegotiation-disabled.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-resumption-with-wrong-ciphers.${MODPY_PYC_MAGIC_TAG}pyc
@@ -261,6 +262,7 @@ share/tlsfuzzer/scripts/test-ocsp-stapling.py
 share/tlsfuzzer/scripts/test-openssl-3712.py
 share/tlsfuzzer/scripts/test-record-layer-fragmentation.py
 share/tlsfuzzer/scripts/test-record-size-limit.py
+share/tlsfuzzer/scripts/test-renegotiation-changed-clienthello.py
 share/tlsfuzzer/scripts/test-renegotiation-disabled-client-cert.py
 share/tlsfuzzer/scripts/test-renegotiation-disabled.py
 share/tlsfuzzer/scripts/test-resumption-with-wrong-ciphers.py
