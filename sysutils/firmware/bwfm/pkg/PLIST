@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/04/05 14:30:04 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/04/23 21:15:00 sthen Exp $
 firmware/bcm4329-fullmac-4.bin
 firmware/brcmfmac43143-sdio.bin
 firmware/brcmfmac43143.bin
@@ -34,6 +34,9 @@ firmware/brcmfmac43455-sdio.raspberrypi,3-model-b-plus.txt
 firmware/brcmfmac43455-sdio.raspberrypi,4-model-b.txt
 firmware/brcmfmac43456-sdio.pine64,pinebook-pro.bin
 firmware/brcmfmac43456-sdio.pine64,pinebook-pro.txt
+firmware/brcmfmac43456-sdio.raspberrypi,400.bin
+firmware/brcmfmac43456-sdio.raspberrypi,400.clm_blob
+firmware/brcmfmac43456-sdio.raspberrypi,400.txt
 firmware/brcmfmac4350-pcie.bin
 firmware/brcmfmac4350c2-pcie.bin
 firmware/brcmfmac4354-sdio.bin
