@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.151 2021/04/07 11:51:26 mestre Exp $
+@comment $OpenBSD: PLIST,v 1.152 2021/04/23 23:57:56 mestre Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -397,6 +397,7 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}ma
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}malltv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}mangomolo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}manyvids.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}maoritv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}markiza.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}massengeschmacktv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}matchtv.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1183,6 +1184,7 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/mailru.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/malltv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/mangomolo.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/manyvids.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/maoritv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/markiza.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/massengeschmacktv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/matchtv.py
