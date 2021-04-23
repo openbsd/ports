@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.27 2021/04/03 11:13:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2021/04/23 21:16:16 sthen Exp $
 
 COMMENT =	interactive process viewer
 
 GH_ACCOUNT =	htop-dev
 GH_PROJECT =	htop
 #GH_TAGNAME =	3.0.5
-GH_COMMIT =	272e72680b84a52183d39a519d6704324063bae1
-DISTNAME =	htop-3.0.5pl20210325
-REVISION =	0
+GH_COMMIT =	feec16cbb53dabc6a52ef2f69a6a13798be82617
+DISTNAME =	htop-3.0.5pl20210418
 
 CATEGORIES =	sysutils
 
