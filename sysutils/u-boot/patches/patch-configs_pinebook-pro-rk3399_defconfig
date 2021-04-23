@@ -1,4 +1,4 @@
-$OpenBSD: patch-configs_pinebook-pro-rk3399_defconfig,v 1.3 2021/01/14 00:56:54 jsg Exp $
+$OpenBSD: patch-configs_pinebook-pro-rk3399_defconfig,v 1.4 2021/04/23 23:56:11 jsg Exp $
 
 Disable CONFIG_USE_PREBOOT / usb start to fix boot.
 
@@ -14,7 +14,7 @@ Index: configs/pinebook-pro-rk3399_defconfig
  CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399-pinebook-pro.dtb"
  CONFIG_DISPLAY_BOARDINFO_LATE=y
  CONFIG_MISC_INIT_R=y
-@@ -68,7 +68,7 @@ CONFIG_RAM_RK3399_LPDDR4=y
+@@ -67,7 +67,7 @@ CONFIG_RAM_RK3399_LPDDR4=y
  CONFIG_DM_RESET=y
  CONFIG_DM_RNG=y
  CONFIG_RNG_ROCKCHIP=y

@@ -1,4 +1,4 @@
-$OpenBSD: patch-configs_rockpro64-rk3399_defconfig,v 1.6 2021/01/14 00:56:54 jsg Exp $
+$OpenBSD: patch-configs_rockpro64-rk3399_defconfig,v 1.7 2021/04/23 23:56:11 jsg Exp $
 
 Disable CONFIG_USE_PREBOOT / usb start to fix boot.
 
@@ -14,10 +14,10 @@ Index: configs/rockpro64-rk3399_defconfig
  CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399-rockpro64.dtb"
  CONFIG_DISPLAY_BOARDINFO_LATE=y
  CONFIG_MISC_INIT_R=y
-@@ -57,7 +57,7 @@ CONFIG_REGULATOR_RK8XX=y
- CONFIG_PWM_ROCKCHIP=y
- CONFIG_RAM_RK3399_LPDDR4=y
+@@ -58,7 +58,7 @@ CONFIG_RAM_RK3399_LPDDR4=y
  CONFIG_DM_RESET=y
+ CONFIG_DM_RNG=y
+ CONFIG_RNG_ROCKCHIP=y
 -CONFIG_BAUDRATE=1500000
 +CONFIG_BAUDRATE=115200
  CONFIG_DEBUG_UART_SHIFT=2
