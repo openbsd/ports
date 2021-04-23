@@ -1,4 +1,4 @@
-$OpenBSD: patch-aom_ports_arm_cpudetect_c,v 1.2 2019/09/22 09:20:46 ajacoutot Exp $
+$OpenBSD: patch-aom_ports_arm_cpudetect_c,v 1.3 2021/04/23 21:12:07 sthen Exp $
 
 Allow ARM CPU runtime detection code to build on OpenBSD.
 
@@ -26,5 +26,5 @@ Index: aom_ports/arm_cpudetect.c
 +
 +#else  /* end __OpenBSD__ */
  #error \
-     "--enable-runtime-cpu-detect selected, but no CPU detection method " \
- "available for your platform. Reconfigure with --disable-runtime-cpu-detect."
+     "Runtime CPU detection selected, but no CPU detection method " \
+ "available for your platform. Rerun cmake with -DCONFIG_RUNTIME_CPU_DETECT=0."

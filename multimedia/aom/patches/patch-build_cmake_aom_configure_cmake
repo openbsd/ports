@@ -1,11 +1,11 @@
-$OpenBSD: patch-build_cmake_aom_configure_cmake,v 1.5 2020/03/15 11:10:36 ajacoutot Exp $
+$OpenBSD: patch-build_cmake_aom_configure_cmake,v 1.6 2021/04/23 21:12:07 sthen Exp $
 
 ARM uses compiler intrinsics, so don't require GNU as.
 
 Index: build/cmake/aom_configure.cmake
 --- build/cmake/aom_configure.cmake.orig
 +++ build/cmake/aom_configure.cmake
-@@ -162,17 +162,6 @@ elseif("${AOM_TARGET_CPU}" MATCHES "arm")
+@@ -160,17 +160,6 @@ elseif(AOM_TARGET_CPU MATCHES "arm")
        set(AS_EXECUTABLE as)
      endif()
    endif()
