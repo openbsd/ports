@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.179 2021/01/29 12:14:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.180 2021/04/24 09:13:21 ajacoutot Exp $
 
 COMMENT=		SAX-based render library for SVG files
 
 GNOME_PROJECT=		librsvg
-STABLE_VERSION=		2.50.3
+STABLE_VERSION=		2.50.4
 OLD_VERSION=		2.40.21
 DISTFILES=		librsvg-${STABLE_VERSION}${EXTRACT_SUFX}:0 \
 			librsvg-${OLD_VERSION}${EXTRACT_SUFX}:1
@@ -24,15 +24,15 @@ PKG_ARGS=		-Dold=0 -Dstable=1
 MAKE_ENV+=		CARGO_BUILD_JOBS=${MAKE_JOBS} \
 			CARGO_HOME=${WRKBUILD}/cargo-home
 COMPILER=		base-clang ports-gcc
-WANTLIB += ${COMPILER_LIBCXX} cairo-gobject
+WANTLIB += ${COMPILER_LIBCXX} cairo-gobject jpeg
 .else
 ### old
-REVISION=		0
+REVISION=		1
 SHARED_LIBS +=  rsvg-2               38.2     # 42.20
 GNOME_VERSION=		${OLD_VERSION}
 PATCH_LIST=		old-patch-*
 PKG_ARGS=		-Dold=1 -Dstable=0
-WANTLIB += croco-0.6 ffi gmodule-2.0 pcre
+WANTLIB += ${COMPILER_LIBCXX} croco-0.6 ffi gmodule-2.0 jpeg pcre
 LIB_DEPENDS +=		www/libcroco
 .endif
 
