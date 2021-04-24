@@ -1,0 +1,23 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2021/04/24 13:25:43 solene Exp $
+
+Remove optimizations
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -291,15 +291,6 @@ status "Compiler" "$CC"
+ CFLAGS=${CFLAGS:--fno-math-errno -funroll-loops -fomit-frame-pointer -Wall}
+ cflags "-std=c99 -I."
+ 
+-# DEBUG
+-if [ -z "$DEBUG" ]; then
+-    cflags "-O3 -DNDEBUG"
+-    status "Debug" "no"
+-else
+-    cflags "-O1 -g -DDEBUG"
+-    status "Debug" "yes"
+-fi
+-
+ # SSE
+ if [ "$SSE" = 'auto' ]; then
+     SSE=0
