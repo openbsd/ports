@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.547 2021/03/04 02:45:50 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.548 2021/04/24 00:31:56 jeremy Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -267,7 +267,6 @@
      SUBDIR += rawtherapee
      SUBDIR += ruby-color
      SUBDIR += ruby-gruff
-     SUBDIR += ruby-rmagick,ruby26
      SUBDIR += ruby-rmagick,ruby27
      SUBDIR += ruby-rmagick,ruby30
      SUBDIR += s10sh

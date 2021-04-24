@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.455 2021/03/29 19:52:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.456 2021/04/24 00:31:55 jeremy Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -202,10 +202,8 @@
      SUBDIR += rhythmbox
      SUBDIR += rtunes
      SUBDIR += rubberband
-     SUBDIR += ruby-taglib,ruby26
      SUBDIR += ruby-taglib,ruby27
      SUBDIR += ruby-taglib,ruby30
-     SUBDIR += ruby-vorbis_comment,ruby26
      SUBDIR += ruby-vorbis_comment,ruby27
      SUBDIR += ruby-vorbis_comment,ruby30
      SUBDIR += schismtracker
