@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2021/04/24 13:26:32 solene Exp $
+# $OpenBSD: Makefile,v 1.24 2021/04/24 13:58:52 rsadowski Exp $
 
 COMMENT =		friendly interactive shell
 
@@ -41,7 +41,6 @@ MODPY_ADJ_FILES =	share/tools/create_manpage_completions.py \
 
 MAKE_FLAGS =		V=1
 
-CONFIGURE_ARGS =	--without-included-pcre2
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
