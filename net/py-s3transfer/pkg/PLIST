@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/03/26 13:25:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/04/24 07:35:15 ajacoutot Exp $
 @conflict py-s3transfer-*
 @pkgpath net/py-s3transfer
 lib/python${MODPY_VERSION}/site-packages/s3transfer/
@@ -15,6 +15,7 @@ lib/python${MODPY_VERSION}/site-packages/s3transfer/${MODPY_PYCACHE}bandwidth.${
 lib/python${MODPY_VERSION}/site-packages/s3transfer/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/s3transfer/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/s3transfer/${MODPY_PYCACHE}copies.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/s3transfer/${MODPY_PYCACHE}crt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/s3transfer/${MODPY_PYCACHE}delete.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/s3transfer/${MODPY_PYCACHE}download.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/s3transfer/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
@@ -29,6 +30,7 @@ lib/python${MODPY_VERSION}/site-packages/s3transfer/bandwidth.py
 lib/python${MODPY_VERSION}/site-packages/s3transfer/compat.py
 lib/python${MODPY_VERSION}/site-packages/s3transfer/constants.py
 lib/python${MODPY_VERSION}/site-packages/s3transfer/copies.py
+lib/python${MODPY_VERSION}/site-packages/s3transfer/crt.py
 lib/python${MODPY_VERSION}/site-packages/s3transfer/delete.py
 lib/python${MODPY_VERSION}/site-packages/s3transfer/download.py
 lib/python${MODPY_VERSION}/site-packages/s3transfer/exceptions.py
