@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2021/02/14 09:27:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.16 2021/04/24 05:03:25 rsadowski Exp $
 
 COMMENT =		installation and loading of content packages in KDE
 DISTNAME =		kpackage-${VERSION}
-REVISION =		0
 
 SHARED_LIBS =		KF5Package		7.0
 

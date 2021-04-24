@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/14 10:35:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2021/04/24 05:03:27 rsadowski Exp $
 
 COMMENT =		framework to create integrate services and actions
 DISTNAME =		purpose-${VERSION}
-REVISION =		0
 
 SHARED_LIBS +=  KF5Purpose                2.0
 SHARED_LIBS +=  KF5PurposeWidgets         2.0

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/01/23 18:09:54 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/04/24 05:03:25 rsadowski Exp $
 @bin bin/knewstuff-dialog
 include/KF5/KNewStuff3/
 include/KF5/KNewStuff3/KNS3/
@@ -81,6 +81,7 @@ lib/cmake/KF5NewStuffQuick/KF5NewStuffQuickConfigVersion.cmake
 lib/qt5/qml/org/kde/newstuff/
 @so lib/qt5/qml/org/kde/newstuff/libnewstuffqmlplugin.so
 lib/qt5/qml/org/kde/newstuff/qml/
+lib/qt5/qml/org/kde/newstuff/qml/Action.qml
 lib/qt5/qml/org/kde/newstuff/qml/Button.qml
 lib/qt5/qml/org/kde/newstuff/qml/Dialog.qml
 lib/qt5/qml/org/kde/newstuff/qml/DialogContent.qml

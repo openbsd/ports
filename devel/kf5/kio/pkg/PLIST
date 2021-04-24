@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2021/03/14 14:35:05 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.18 2021/04/24 05:03:24 rsadowski Exp $
 @bin bin/kcookiejar5
 @bin bin/ktelnetservice5
 @bin bin/ktrash5
@@ -859,9 +859,15 @@ share/doc/HTML/ru/kcontrol5/
 share/doc/HTML/ru/kcontrol5/cookies/
 share/doc/HTML/ru/kcontrol5/cookies/index.cache.bz2
 share/doc/HTML/ru/kcontrol5/cookies/index.docbook
+share/doc/HTML/ru/kcontrol5/netpref/
+share/doc/HTML/ru/kcontrol5/netpref/index.cache.bz2
+share/doc/HTML/ru/kcontrol5/netpref/index.docbook
 share/doc/HTML/ru/kcontrol5/proxy/
 share/doc/HTML/ru/kcontrol5/proxy/index.cache.bz2
 share/doc/HTML/ru/kcontrol5/proxy/index.docbook
+share/doc/HTML/ru/kcontrol5/trash/
+share/doc/HTML/ru/kcontrol5/trash/index.cache.bz2
+share/doc/HTML/ru/kcontrol5/trash/index.docbook
 share/doc/HTML/ru/kioslave5/
 share/doc/HTML/ru/kioslave5/data/
 share/doc/HTML/ru/kioslave5/data/index.cache.bz2
@@ -878,6 +884,9 @@ share/doc/HTML/ru/kioslave5/help/documentationnotfound/index.cache.bz2
 share/doc/HTML/ru/kioslave5/help/documentationnotfound/index.docbook
 share/doc/HTML/ru/kioslave5/help/index.cache.bz2
 share/doc/HTML/ru/kioslave5/help/index.docbook
+share/doc/HTML/ru/kioslave5/http/
+share/doc/HTML/ru/kioslave5/http/index.cache.bz2
+share/doc/HTML/ru/kioslave5/http/index.docbook
 share/doc/HTML/ru/kioslave5/telnet/
 share/doc/HTML/ru/kioslave5/telnet/index.cache.bz2
 share/doc/HTML/ru/kioslave5/telnet/index.docbook

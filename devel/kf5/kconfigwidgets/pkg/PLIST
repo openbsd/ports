@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/01/23 18:09:52 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/04/24 05:03:21 rsadowski Exp $
 bin/preparetips5
 include/KF5/KConfigWidgets/
 include/KF5/KConfigWidgets/KCModule
@@ -8,6 +8,7 @@ include/KF5/KConfigWidgets/KColorSchemeManager
 include/KF5/KConfigWidgets/KConfigDialog
 include/KF5/KConfigWidgets/KConfigDialogManager
 include/KF5/KConfigWidgets/KConfigViewStateSaver
+include/KF5/KConfigWidgets/KHamburgerMenu
 include/KF5/KConfigWidgets/KHelpClient
 include/KF5/KConfigWidgets/KLanguageButton
 include/KF5/KConfigWidgets/KLanguageName
@@ -24,6 +25,7 @@ include/KF5/KConfigWidgets/kconfigdialog.h
 include/KF5/KConfigWidgets/kconfigdialogmanager.h
 include/KF5/KConfigWidgets/kconfigviewstatesaver.h
 include/KF5/KConfigWidgets/kconfigwidgets_export.h
+include/KF5/KConfigWidgets/khamburgermenu.h
 include/KF5/KConfigWidgets/khelpclient.h
 include/KF5/KConfigWidgets/klanguagebutton.h
 include/KF5/KConfigWidgets/klanguagename.h

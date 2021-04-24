@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2021/01/23 18:09:55 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.22 2021/04/24 05:03:27 rsadowski Exp $
 
 COMMENT =	core components and tools of the Plasma Workspaces
 DISTNAME =	plasma-framework-${VERSION}
 
-SHARED_LIBS =	KF5Plasma		9.0
+SHARED_LIBS =	KF5Plasma		9.1
 SHARED_LIBS +=	KF5PlasmaQuick		7.1
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL ICE KF5Activities KF5Archive
