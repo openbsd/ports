@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2021/03/21 09:30:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2021/04/24 07:58:09 ajacoutot Exp $
 
 COMMENT-main=		vSphere CLI built on top of govmomi
 COMMENT-vcsim=		vCenter and ESXi API based simulator
 
-GH_TAGNAME=		v0.24.1
+GH_TAGNAME=		v0.25.0
 GH_ACCOUNT=		vmware
 GH_PROJECT=		govmomi
 
