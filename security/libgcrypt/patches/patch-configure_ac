@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.8 2021/01/29 12:14:13 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.9 2021/04/24 07:44:41 ajacoutot Exp $
 
 Index: configure.ac
 --- configure.ac.orig
@@ -12,7 +12,7 @@ Index: configure.ac
  auto_random_modules="$available_random_modules"
  
  # Supported thread backends.
-@@ -2170,6 +2170,7 @@ AC_CHECK_FUNCS(strerror rand mmap getpagesize sysconf 
+@@ -2195,6 +2195,7 @@ AC_CHECK_FUNCS(strerror rand mmap getpagesize sysconf 
  AC_CHECK_FUNCS(gettimeofday getrusage gethrtime clock_gettime syslog)
  AC_CHECK_FUNCS(syscall fcntl ftruncate flockfile getauxval elf_aux_info)
  AC_CHECK_FUNCS(explicit_bzero explicit_memset getentropy)
@@ -20,7 +20,7 @@ Index: configure.ac
  
  GNUPG_CHECK_MLOCK
  
-@@ -2241,7 +2242,9 @@ fi
+@@ -2266,7 +2267,9 @@ fi
  if test "$random" = "default"; then
  
      # Select default value.
@@ -31,7 +31,7 @@ Index: configure.ac
          # Try Linuxish random device.
          random_modules="linux"
      else
-@@ -3036,6 +3039,12 @@ LIST_MEMBER(scrypt, $enabled_kdfs)
+@@ -3085,6 +3088,12 @@ LIST_MEMBER(scrypt, $enabled_kdfs)
  if test "$found" = "1" ; then
     GCRYPT_KDFS="$GCRYPT_KDFS scrypt.lo"
     AC_DEFINE(USE_SCRYPT, 1, [Defined if this module should be included])
