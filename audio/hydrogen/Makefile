@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2021/02/27 15:45:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2021/04/24 04:36:07 rsadowski Exp $
 
 COMMENT=		software drum machine
 
 V=			1.0.1
 DISTNAME=		hydrogen-$V
 CATEGORIES=		audio
+REVISION=		0
 
 HOMEPAGE=		http://www.hydrogen-music.org/
 
@@ -48,6 +49,9 @@ CONFIGURE_ARGS=		-DWANT_ALSA=OFF \
 			-DWANT_PULSEAUDIO=OFF \
 			-DWANT_RUBBERBAND=ON \
 			-DWANT_SNDIO=ON
+
+# Disable Doxygen
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
 
 post-extract:
 	cp ${FILESDIR}/Sndio{Audio,Midi}Driver.h \
