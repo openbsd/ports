@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.292 2021/03/05 10:43:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.293 2021/04/24 12:34:38 jca Exp $
 
 VERSION =		4.9.18
 DISTNAME =		samba-${VERSION}
@@ -21,16 +21,15 @@ PKG_ARCH-docs =		*
 LDB_V =			1.4.8
 TEVENT_V =		0.9.37
 
-REVISION-ldb =		3
-REVISION-main =		3
-REVISION-tevent =	1
+REVISION-ldb =		4
+REVISION-main =		4
+REVISION-tevent =	2
 
 SHARED_LIBS =		asn1-samba4		0.0 \
 			com_err-samba4		0.0 \
 			dcerpc			0.0 \
 			dcerpc-binding		2.0 \
 			dcerpc-samr		0.0 \
-			dcerpc-server		7.0 \
 			gssapi-samba4		0.0 \
 			hcrypto-samba4		0.0 \
 			hdb-samba4		0.0 \
@@ -170,7 +169,7 @@ CONFIGURE_ARGS =	--enable-fhs \
 			--without-acl-support \
 			--without-libarchive \
 			--disable-rpath \
-			--with-ntvfs-fileserver \
+			--without-ad-dc \
 			--without-gpgme \
 			--without-ldb-lmdb
 

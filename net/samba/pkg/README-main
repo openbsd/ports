@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.15 2019/06/22 23:58:23 jca Exp $
+$OpenBSD: README-main,v 1.16 2021/04/24 12:34:38 jca Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -27,18 +27,3 @@ Winbind on OpenBSD does not support local user logins as there
 is no nsswitch support.  Winbind support is included for external
 systems like Dovecot or Squid that are able to use it to authenticate
 users.
-
-Nmbd and AD DC mode
-===================
-Note that nmbd(8) daemon currently doesn't work properly when samba is
-set up as an AD DC controller.
-
-Max open files limit
-====================
-To use Samba as a domain controller it is advised to bump the values of
-openfiles-max in /etc/login.conf and kern.maxfiles over 16384.  If you
-are using /etc/login.conf.db (not usually recommended) then be sure to
-rebuild it.
-
-Don't forget to add the entry kern.maxfiles=16384 to the
-/etc/sysctl.conf file to keep the change across reboots.

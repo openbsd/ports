@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.54 2019/12/23 12:26:22 jca Exp $
+@comment $OpenBSD: PLIST-main,v 1.55 2021/04/24 12:34:38 jca Exp $
 @conflict ldb-<1.4.8p0v0
 @pkgpath net/samba,ldap,-main
 @pkgpath net/samba,ads,-main
 @pkgpath net/samba,,-main
 @rcscript ${RCDIR}/nmbd
 @rcscript ${RCDIR}/samba
-@rcscript ${RCDIR}/samba_ad_dc
 @rcscript ${RCDIR}/smbd
 @rcscript ${RCDIR}/winbindd
 @sample ${SYSCONFDIR}/samba/
@@ -29,7 +28,6 @@ bin/pidl
 @bin bin/regshell
 @bin bin/regtree
 @bin bin/rpcclient
-bin/samba-tool
 @bin bin/sharesec
 @bin bin/smbcacls
 @bin bin/smbclient
@@ -55,7 +53,6 @@ include/samba-4.0/core/werror.h
 include/samba-4.0/core/werror_gen.h
 include/samba-4.0/credentials.h
 include/samba-4.0/dcerpc.h
-include/samba-4.0/dcerpc_server.h
 include/samba-4.0/domain_credentials.h
 include/samba-4.0/gen_ndr/
 include/samba-4.0/gen_ndr/atsvc.h
@@ -136,7 +133,6 @@ include/samba-4.0/util_ldb.h
 include/samba-4.0/wbclient.h
 @lib lib/libdcerpc-binding.so.${LIBdcerpc-binding_VERSION}
 @lib lib/libdcerpc-samr.so.${LIBdcerpc-samr_VERSION}
-@lib lib/libdcerpc-server.so.${LIBdcerpc-server_VERSION}
 @lib lib/libdcerpc.so.${LIBdcerpc_VERSION}
 @lib lib/libndr-krb5pac.so.${LIBndr-krb5pac_VERSION}
 @lib lib/libndr-nbt.so.${LIBndr-nbt_VERSION}
@@ -157,7 +153,6 @@ include/samba-4.0/wbclient.h
 @lib lib/libwbclient.so.${LIBwbclient_VERSION}
 lib/pkgconfig/dcerpc.pc
 lib/pkgconfig/dcerpc_samr.pc
-lib/pkgconfig/dcerpc_server.pc
 lib/pkgconfig/ndr.pc
 lib/pkgconfig/ndr_krb5pac.pc
 lib/pkgconfig/ndr_nbt.pc
@@ -229,7 +224,6 @@ lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/__init__.${MODPY_PYOEXTENS
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/winreg.so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/wkssvc.so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/xattr.so
-@so lib/python${MODPY_VERSION}/site-packages/samba/dckeytab.so
 lib/python${MODPY_VERSION}/site-packages/samba/descriptor.py
 lib/python${MODPY_VERSION}/site-packages/samba/descriptor.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/descriptor.${MODPY_PYOEXTENSION}
@@ -242,8 +236,6 @@ lib/python${MODPY_VERSION}/site-packages/samba/domain_update.${MODPY_PYOEXTENSIO
 lib/python${MODPY_VERSION}/site-packages/samba/drs_utils.py
 lib/python${MODPY_VERSION}/site-packages/samba/drs_utils.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/drs_utils.${MODPY_PYOEXTENSION}
-@so lib/python${MODPY_VERSION}/site-packages/samba/dsdb.so
-@so lib/python${MODPY_VERSION}/site-packages/samba/dsdb_dns.so
 lib/python${MODPY_VERSION}/site-packages/samba/emulate/
 lib/python${MODPY_VERSION}/site-packages/samba/emulate/__init__.py
 lib/python${MODPY_VERSION}/site-packages/samba/emulate/__init__.pyc
@@ -953,13 +945,6 @@ lib/python${MODPY_VERSION}/site-packages/samba/xattr.${MODPY_PYOEXTENSION}
 @so lib/python${MODPY_VERSION}/site-packages/samba/xattr_tdb.so
 lib/samba/auth/
 @so lib/samba/auth/script.so
-lib/samba/bind9/
-@so lib/samba/bind9/dlz_bind9.so
-@so lib/samba/bind9/dlz_bind9_10.so
-@so lib/samba/bind9/dlz_bind9_11.so
-@so lib/samba/bind9/dlz_bind9_9.so
-lib/samba/gensec/
-@so lib/samba/gensec/krb5.so
 lib/samba/idmap/
 @so lib/samba/idmap/ad.so
 @so lib/samba/idmap/autorid.so
@@ -970,56 +955,9 @@ lib/samba/idmap/
 @so lib/samba/idmap/tdb2.so
 lib/samba/krb5/
 @so lib/samba/krb5/winbind_krb5_locator.so
-@so lib/samba/ldb/acl.so
-@so lib/samba/ldb/aclread.so
-@so lib/samba/ldb/anr.so
-@so lib/samba/ldb/audit_log.so
-@so lib/samba/ldb/descriptor.so
-@so lib/samba/ldb/dirsync.so
-@so lib/samba/ldb/dns_notify.so
-@so lib/samba/ldb/dsdb_notification.so
-@so lib/samba/ldb/encrypted_secrets.so
-@so lib/samba/ldb/extended_dn_in.so
-@so lib/samba/ldb/extended_dn_out.so
-@so lib/samba/ldb/extended_dn_store.so
-@so lib/samba/ldb/group_audit_log.so
 @so lib/samba/ldb/ildap.so
-@so lib/samba/ldb/instancetype.so
-@so lib/samba/ldb/lazy_commit.so
 @so lib/samba/ldb/ldbsamba_extensions.so
-@so lib/samba/ldb/linked_attributes.so
-@so lib/samba/ldb/local_password.so
-@so lib/samba/ldb/new_partition.so
-@so lib/samba/ldb/objectclass.so
-@so lib/samba/ldb/objectclass_attrs.so
-@so lib/samba/ldb/objectguid.so
-@so lib/samba/ldb/operational.so
-@so lib/samba/ldb/partition.so
-@so lib/samba/ldb/password_hash.so
-@so lib/samba/ldb/ranged_results.so
-@so lib/samba/ldb/repl_meta_data.so
-@so lib/samba/ldb/resolve_oids.so
-@so lib/samba/ldb/rootdse.so
-@so lib/samba/ldb/samba3sam.so
-@so lib/samba/ldb/samba3sid.so
-@so lib/samba/ldb/samba_dsdb.so
-@so lib/samba/ldb/samba_secrets.so
-@so lib/samba/ldb/samldb.so
-@so lib/samba/ldb/schema_data.so
-@so lib/samba/ldb/schema_load.so
-@so lib/samba/ldb/secrets_tdb_sync.so
-@so lib/samba/ldb/show_deleted.so
-@so lib/samba/ldb/simple_dn.so
-@so lib/samba/ldb/simple_ldap_map.so
-@so lib/samba/ldb/subtree_delete.so
-@so lib/samba/ldb/subtree_rename.so
-@so lib/samba/ldb/tombstone_reanimate.so
-@so lib/samba/ldb/unique_object_sids.so
-@so lib/samba/ldb/update_keytab.so
-@so lib/samba/ldb/vlv.so
-@so lib/samba/ldb/wins_ldb.so
 @so lib/samba/libCHARSET3-samba4.so
-@so lib/samba/libHDB-SAMBA4-samba4.so
 @so lib/samba/libLIBWBCLIENT-OLD-samba4.so
 @so lib/samba/libMESSAGING-SEND-samba4.so
 @so lib/samba/libMESSAGING-samba4.so
@@ -1043,14 +981,9 @@ lib/samba/krb5/
 @so lib/samba/libcmdline-credentials-samba4.so
 @lib lib/samba/libcom_err-samba4.so.${LIBcom_err-samba4_VERSION}
 @so lib/samba/libcommon-auth-samba4.so
-@so lib/samba/libdb-glue-samba4.so
 @so lib/samba/libdbwrap-samba4.so
 @so lib/samba/libdcerpc-samba-samba4.so
 @so lib/samba/libdcerpc-samba4.so
-@so lib/samba/libdfs-server-ad-samba4.so
-@so lib/samba/libdlz-bind9-for-torture-samba4.so
-@so lib/samba/libdnsserver-common-samba4.so
-@so lib/samba/libdsdb-garbage-collect-tombstones-samba4.so
 @so lib/samba/libdsdb-module-samba4.so
 @so lib/samba/libevents-samba4.so
 @so lib/samba/libflag-mapping-samba4.so
@@ -1086,13 +1019,10 @@ lib/samba/krb5/
 @so lib/samba/libnon-posix-acls-samba4.so
 @so lib/samba/libnpa-tstream-samba4.so
 @so lib/samba/libnss-info-samba4.so
-@so lib/samba/libntvfs-samba4.so
-@so lib/samba/libpac-samba4.so
 @so lib/samba/libpopt-samba3-cmdline-samba4.so
 @so lib/samba/libpopt-samba3-samba4.so
 @so lib/samba/libposix-eadb-samba4.so
 @so lib/samba/libprinting-migrate-samba4.so
-@so lib/samba/libprocess-model-samba4.so
 @so lib/samba/libregistry-samba4.so
 @lib lib/samba/libroken-samba4.so.${LIBroken-samba4_VERSION}
 @so lib/samba/libsamba-cluster-support-samba4.so
@@ -1104,11 +1034,9 @@ lib/samba/krb5/
 @so lib/samba/libsamba-sockets-samba4.so
 @so lib/samba/libsamba3-util-samba4.so
 @so lib/samba/libsamdb-common-samba4.so
-@so lib/samba/libscavenge-dns-records-samba4.so
 @so lib/samba/libsecrets3-samba4.so
 @so lib/samba/libserver-id-db-samba4.so
 @so lib/samba/libserver-role-samba4.so
-@so lib/samba/libservice-samba4.so
 @so lib/samba/libshares-samba4.so
 @so lib/samba/libsmb-transport-samba4.so
 @so lib/samba/libsmbclient-raw-samba4.so
@@ -1135,25 +1063,6 @@ lib/samba/nss_info/
 @so lib/samba/nss_info/rfc2307.so
 @so lib/samba/nss_info/sfu.so
 @so lib/samba/nss_info/sfu20.so
-lib/samba/process_model/
-@so lib/samba/process_model/prefork.so
-@so lib/samba/process_model/standard.so
-lib/samba/service/
-@so lib/samba/service/cldap.so
-@so lib/samba/service/dcerpc.so
-@so lib/samba/service/dns.so
-@so lib/samba/service/dns_update.so
-@so lib/samba/service/drepl.so
-@so lib/samba/service/kcc.so
-@so lib/samba/service/kdc.so
-@so lib/samba/service/ldap.so
-@so lib/samba/service/nbtd.so
-@so lib/samba/service/ntp_signd.so
-@so lib/samba/service/s3fs.so
-@so lib/samba/service/smb.so
-@so lib/samba/service/web.so
-@so lib/samba/service/winbindd.so
-@so lib/samba/service/wrepl.so
 lib/samba/vfs/
 @so lib/samba/vfs/acl_tdb.so
 @so lib/samba/vfs/acl_xattr.so
@@ -1175,7 +1084,6 @@ lib/samba/vfs/
 @so lib/samba/vfs/media_harmony.so
 @so lib/samba/vfs/netatalk.so
 @so lib/samba/vfs/offline.so
-@so lib/samba/vfs/posix_eadb.so
 @so lib/samba/vfs/preopen.so
 @so lib/samba/vfs/readahead.so
 @so lib/samba/vfs/readonly.so
@@ -1345,12 +1253,7 @@ libexec/samba/
 @man man/man8/winbindd.8
 @bin sbin/eventlogadm
 @bin sbin/nmbd
-@bin sbin/samba
 sbin/samba-gpupdate
-sbin/samba_dnsupdate
-sbin/samba_kcc
-sbin/samba_spnupdate
-sbin/samba_upgradedns
 @bin sbin/smbd
 @bin sbin/winbindd
 share/doc/pkg-readmes/${PKGSTEM}
@@ -1359,118 +1262,6 @@ share/examples/samba/
 share/examples/samba/smb.conf.default
 @sample ${SYSCONFDIR}/samba/smb.conf
 @comment share/perl5/
-share/samba/
-share/samba/setup/
-share/samba/setup/DB_CONFIG
-share/samba/setup/ad-schema/
-share/samba/setup/ad-schema/AD_DS_Attributes__Windows_Server_2012_R2.ldf
-share/samba/setup/ad-schema/AD_DS_Attributes__Windows_Server_2016.ldf
-share/samba/setup/ad-schema/AD_DS_Classes__Windows_Server_2012_R2.ldf
-share/samba/setup/ad-schema/AD_DS_Classes__Windows_Server_2016.ldf
-share/samba/setup/ad-schema/Attributes_for_AD_DS__Windows_Server_2008_R2.ldf
-share/samba/setup/ad-schema/Attributes_for_AD_DS__Windows_Server_2012.ldf
-share/samba/setup/ad-schema/Classes_for_AD_DS__Windows_Server_2008_R2.ldf
-share/samba/setup/ad-schema/Classes_for_AD_DS__Windows_Server_2012.ldf
-share/samba/setup/ad-schema/MS-AD_Schema_2K8_Attributes.txt
-share/samba/setup/ad-schema/MS-AD_Schema_2K8_Classes.txt
-share/samba/setup/ad-schema/MS-AD_Schema_2K8_R2_Attributes.txt
-share/samba/setup/ad-schema/MS-AD_Schema_2K8_R2_Classes.txt
-share/samba/setup/ad-schema/licence.txt
-share/samba/setup/adprep/
-share/samba/setup/adprep/WindowsServerDocs/
-share/samba/setup/adprep/WindowsServerDocs/Forest-Wide-Updates.md
-share/samba/setup/adprep/WindowsServerDocs/Sch49.ldf.diff
-share/samba/setup/adprep/WindowsServerDocs/Sch50.ldf.diff
-share/samba/setup/adprep/WindowsServerDocs/Sch51.ldf.diff
-share/samba/setup/adprep/WindowsServerDocs/Sch57.ldf.diff
-share/samba/setup/adprep/WindowsServerDocs/Sch59.ldf.diff
-share/samba/setup/adprep/WindowsServerDocs/Schema-Updates.md
-share/samba/setup/adprep/fix-forest-rev.ldf
-share/samba/setup/aggregate_schema.ldif
-share/samba/setup/cn=samba.ldif
-share/samba/setup/display-specifiers/
-share/samba/setup/display-specifiers/DisplaySpecifiers-Win2k0.txt
-share/samba/setup/display-specifiers/DisplaySpecifiers-Win2k3.txt
-share/samba/setup/display-specifiers/DisplaySpecifiers-Win2k3R2.txt
-share/samba/setup/display-specifiers/DisplaySpecifiers-Win2k8.txt
-share/samba/setup/display-specifiers/DisplaySpecifiers-Win2k8R2.txt
-share/samba/setup/dns_update_list
-share/samba/setup/extended-rights.ldif
-share/samba/setup/fedora-ds-init.ldif
-share/samba/setup/fedorads-dna.ldif
-share/samba/setup/fedorads-index.ldif
-share/samba/setup/fedorads-linked-attributes.ldif
-share/samba/setup/fedorads-pam.ldif
-share/samba/setup/fedorads-partitions.ldif
-share/samba/setup/fedorads-refint-add.ldif
-share/samba/setup/fedorads-refint-delete.ldif
-share/samba/setup/fedorads-samba.ldif
-share/samba/setup/fedorads-sasl.ldif
-share/samba/setup/fedorads.inf
-share/samba/setup/idmap_init.ldif
-share/samba/setup/krb5.conf
-share/samba/setup/memberof.conf
-share/samba/setup/mmr_serverids.conf
-share/samba/setup/mmr_syncrepl.conf
-share/samba/setup/modules.conf
-share/samba/setup/named.conf
-share/samba/setup/named.conf.dlz
-share/samba/setup/named.conf.update
-share/samba/setup/named.txt
-share/samba/setup/olc_mmr.conf
-share/samba/setup/olc_seed.ldif
-share/samba/setup/olc_serverid.conf
-share/samba/setup/olc_syncrepl.conf
-share/samba/setup/olc_syncrepl_seed.conf
-share/samba/setup/prefixMap.txt
-share/samba/setup/provision.ldif
-share/samba/setup/provision.reg
-share/samba/setup/provision.zone
-share/samba/setup/provision_basedn.ldif
-share/samba/setup/provision_basedn_modify.ldif
-share/samba/setup/provision_basedn_options.ldif
-share/samba/setup/provision_basedn_references.ldif
-share/samba/setup/provision_computers_add.ldif
-share/samba/setup/provision_computers_modify.ldif
-share/samba/setup/provision_configuration.ldif
-share/samba/setup/provision_configuration_basedn.ldif
-share/samba/setup/provision_configuration_modify.ldif
-share/samba/setup/provision_configuration_references.ldif
-share/samba/setup/provision_dns_accounts_add.ldif
-share/samba/setup/provision_dns_add_samba.ldif
-share/samba/setup/provision_dnszones_add.ldif
-share/samba/setup/provision_dnszones_modify.ldif
-share/samba/setup/provision_dnszones_partitions.ldif
-share/samba/setup/provision_group_policy.ldif
-share/samba/setup/provision_init.ldif
-share/samba/setup/provision_partitions.ldif
-share/samba/setup/provision_privilege.ldif
-share/samba/setup/provision_rootdse_add.ldif
-share/samba/setup/provision_rootdse_modify.ldif
-share/samba/setup/provision_schema_basedn.ldif
-share/samba/setup/provision_schema_basedn_modify.ldif
-share/samba/setup/provision_self_join.ldif
-share/samba/setup/provision_self_join_config.ldif
-share/samba/setup/provision_self_join_modify.ldif
-share/samba/setup/provision_self_join_modify_config.ldif
-share/samba/setup/provision_self_join_modify_schema.ldif
-share/samba/setup/provision_users.ldif
-share/samba/setup/provision_users_add.ldif
-share/samba/setup/provision_users_modify.ldif
-share/samba/setup/provision_well_known_sec_princ.ldif
-share/samba/setup/refint.conf
-share/samba/setup/schema-map-fedora-ds-1.0
-share/samba/setup/schema-map-openldap-2.3
-share/samba/setup/schema_samba4.ldif
-share/samba/setup/secrets.ldif
-share/samba/setup/secrets_dns.ldif
-share/samba/setup/secrets_init.ldif
-share/samba/setup/secrets_sasl_ldap.ldif
-share/samba/setup/secrets_simple_ldap.ldif
-share/samba/setup/share.ldif
-share/samba/setup/slapd.conf
-share/samba/setup/spn_update_list
-share/samba/setup/ypServ30.ldif
 @mode 0750
 @sample /var/cache/samba/
 @sample ${SAMBA_LOGDIR}/
