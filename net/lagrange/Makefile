@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2021/03/14 13:49:01 solene Exp $
+# $OpenBSD: Makefile,v 1.16 2021/04/24 13:44:03 solene Exp $
 
 COMMENT =	SDL multi protocol navigator
-VERSION =	1.2.3
+VERSION =	1.3.3
 
 DISTNAME =	lagrange-${VERSION}
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE =Yes
 
 WANTLIB +=	SDL2 mpg123 pcre unistring
 WANTLIB +=	c crypto m ssl z pthread
+
+DEBUG_PACKAGES =${BUILD_PACKAGES}
 
 MASTER_SITES =	https://git.skyjake.fi/skyjake/lagrange/releases/download/v${VERSION}/
 
