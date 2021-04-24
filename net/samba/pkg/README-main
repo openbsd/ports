@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.16 2021/04/24 12:34:38 jca Exp $
+$OpenBSD: README-main,v 1.17 2021/04/24 12:39:06 jca Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -27,3 +27,9 @@ Winbind on OpenBSD does not support local user logins as there
 is no nsswitch support.  Winbind support is included for external
 systems like Dovecot or Squid that are able to use it to authenticate
 users.
+
+AD DC support
+=============
+Support for AD DC mode is explicitely disabled in this port.  The AD DC
+code is broken at runtime on several archs, and would need xattrs/ACLs
+support to be truely usable.
