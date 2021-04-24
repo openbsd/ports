@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2021/03/02 08:10:23 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2021/04/24 05:22:56 rsadowski Exp $
 @bin bin/opencv_annotation
 @bin bin/opencv_interactive-calibration
+@bin bin/opencv_model_diagnostics
 @bin bin/opencv_version
 @bin bin/opencv_visualisation
 bin/setup_vars_opencv4.sh
@@ -66,6 +67,8 @@ include/opencv4/opencv2/core/detail/
 include/opencv4/opencv2/core/detail/async_promise.hpp
 include/opencv4/opencv2/core/detail/exception_ptr.hpp
 include/opencv4/opencv2/core/directx.hpp
+include/opencv4/opencv2/core/dualquaternion.hpp
+include/opencv4/opencv2/core/dualquaternion.inl.hpp
 include/opencv4/opencv2/core/eigen.hpp
 include/opencv4/opencv2/core/fast_math.hpp
 include/opencv4/opencv2/core/hal/
@@ -116,6 +119,11 @@ include/opencv4/opencv2/core/opengl.hpp
 include/opencv4/opencv2/core/operations.hpp
 include/opencv4/opencv2/core/optim.hpp
 include/opencv4/opencv2/core/ovx.hpp
+include/opencv4/opencv2/core/parallel/
+include/opencv4/opencv2/core/parallel/backend/
+include/opencv4/opencv2/core/parallel/backend/parallel_for.openmp.hpp
+include/opencv4/opencv2/core/parallel/backend/parallel_for.tbb.hpp
+include/opencv4/opencv2/core/parallel/parallel_backend.hpp
 include/opencv4/opencv2/core/persistence.hpp
 include/opencv4/opencv2/core/quaternion.hpp
 include/opencv4/opencv2/core/quaternion.inl.hpp
@@ -210,6 +218,7 @@ include/opencv4/opencv2/imgcodecs/legacy/constants_c.h
 include/opencv4/opencv2/imgcodecs/macosx.h
 include/opencv4/opencv2/imgproc/
 include/opencv4/opencv2/imgproc.hpp
+include/opencv4/opencv2/imgproc/bindings.hpp
 include/opencv4/opencv2/imgproc/detail/
 include/opencv4/opencv2/imgproc/detail/gcgraph.hpp
 include/opencv4/opencv2/imgproc/hal/
@@ -217,6 +226,7 @@ include/opencv4/opencv2/imgproc/hal/hal.hpp
 include/opencv4/opencv2/imgproc/hal/interface.h
 include/opencv4/opencv2/imgproc/imgproc.hpp
 include/opencv4/opencv2/imgproc/imgproc_c.h
+include/opencv4/opencv2/imgproc/segmentation.hpp
 include/opencv4/opencv2/imgproc/types_c.h
 include/opencv4/opencv2/ml/
 include/opencv4/opencv2/ml.hpp
@@ -253,6 +263,8 @@ include/opencv4/opencv2/stitching/warpers.hpp
 include/opencv4/opencv2/video/
 include/opencv4/opencv2/video.hpp
 include/opencv4/opencv2/video/background_segm.hpp
+include/opencv4/opencv2/video/detail/
+include/opencv4/opencv2/video/detail/tracking.detail.hpp
 include/opencv4/opencv2/video/legacy/
 include/opencv4/opencv2/video/legacy/constants_c.h
 include/opencv4/opencv2/video/tracking.hpp

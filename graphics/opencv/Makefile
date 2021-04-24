@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2021/03/02 08:10:23 espie Exp $
+# $OpenBSD: Makefile,v 1.69 2021/04/24 05:22:56 rsadowski Exp $
 
 ONLY_FOR_ARCHS-java =	aarch64 amd64 i386
 
@@ -6,11 +6,10 @@ CATEGORIES =		graphics devel
 COMMENT-main =		library for computer vision real-time processing
 COMMENT-java =		Java bindings for OpenCV
 
-V =			4.5.1
+V =			4.5.2
 GH_ACCOUNT =		opencv
 GH_PROJECT =		opencv
 GH_TAGNAME =		${V}
-REVISION =		2
 
 PKGNAME-main =		opencv-${V}
 PKGNAME-java =		opencv-java-${V}
@@ -28,8 +27,9 @@ SHARED_LIBS += $i 9.0
 
 WANTLIB-main += ${COMPILER_LIBCXX} IlmImf-2_5 avcodec avformat avutil
 WANTLIB-main += c cairo gdk-3 gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gstapp-1.0
-WANTLIB-main += gstpbutils-1.0 gstreamer-1.0 gstriff-1.0 gtk-3 jpeg
-WANTLIB-main += m openjp2 png swscale tiff webp z
+WANTLIB-main += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gstriff-1.0
+WANTLIB-main += gstvideo-1.0 gtk-3 jpeg m openjp2 png swscale tiff
+WANTLIB-main += webp z
 
 WANTLIB-java += ${COMPILER_LIBCXX} m opencv_calib3d opencv_core opencv_dnn
 WANTLIB-java += opencv_features2d opencv_flann opencv_highgui opencv_imgcodecs
@@ -63,6 +63,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			graphics/openjp2 \
 			graphics/png \
 			graphics/tiff \
+			multimedia/gstreamer1/core \
 			multimedia/gstreamer1/plugins-base \
 			x11/gtk+3
 
@@ -77,7 +78,7 @@ CONFIGURE_ENV =		CFLAGS="${CFLAGS} -fPIC" \
 
 # Fix "undefined reference to `__atomic_store_8'" (and more)
 .if ${MACHINE_ARCH:Mhppa}
-WANTLIB +=		atomic
+WANTLIB-main +=		tomic
 CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS} -latomic"
 .endif
 
@@ -103,7 +104,6 @@ CONFIGURE_ARGS =	-DBUILD_DOCS=OFF \
 			-DWITH_V4L=OFF \
 			-DWITH_VTK=OFF \
 			-DOPENCV_GENERATE_PKGCONFIG=ON
-
 
 .include <bsd.port.arch.mk>
 
