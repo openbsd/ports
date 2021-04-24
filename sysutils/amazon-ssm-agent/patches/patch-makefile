@@ -1,4 +1,4 @@
-$OpenBSD: patch-makefile,v 1.23 2021/02/20 15:00:18 abieber Exp $
+$OpenBSD: patch-makefile,v 1.24 2021/04/24 07:51:07 ajacoutot Exp $
 
 Index: makefile
 --- makefile.orig
@@ -29,7 +29,7 @@ Index: makefile
  .PHONY: dev-build-windows
  dev-build-windows: clean quick-integtest checkstyle pre-release build-windows
  .PHONY: dev-build-linux-386
-@@ -144,6 +146,12 @@ build-freebsd: GOARCH=amd64
+@@ -147,6 +149,12 @@ build-freebsd: GOARCH=amd64
  build-freebsd: GOOS=freebsd
  build-freebsd: GO_BUILD=$(GO_BUILD_NOPIE)
  build-freebsd: build-any-amd64-freebsd
@@ -42,7 +42,7 @@ Index: makefile
  
  .PHONY: build-darwin
  build-darwin: GOARCH=amd64
-@@ -421,4 +429,4 @@ build-tests-windows: copy-src copy-tests-src pre-build
+@@ -430,4 +438,4 @@ build-tests-windows: copy-src copy-tests-src pre-build
  
  .PHONY: gen-report
  gen-report:
