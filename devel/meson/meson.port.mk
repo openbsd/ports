@@ -1,6 +1,6 @@
-# $OpenBSD: meson.port.mk,v 1.60 2021/02/21 07:26:14 ajacoutot Exp $
+# $OpenBSD: meson.port.mk,v 1.61 2021/04/24 07:23:28 ajacoutot Exp $
 
-BUILD_DEPENDS +=	devel/meson>=0.57.1v0
+BUILD_DEPENDS +=	devel/meson>=0.57.2v0
 SEPARATE_BUILD ?=	Yes
 
 .if empty(CONFIGURE_STYLE)
