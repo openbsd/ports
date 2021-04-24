@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2021/02/20 06:57:51 rsadowski Exp $ #
+# $OpenBSD: Makefile,v 1.16 2021/04/24 04:53:27 rsadowski Exp $ #
 
 COMMENT =	desktop sync client for Nextcloud
 
-V =		3.1.3
+V =		3.2.0
 DISTNAME =	nextcloudclient-${V}
 
 GH_ACCOUNT =	nextcloud
@@ -23,8 +23,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2
-WANTLIB += Qt5Svg Qt5WebSockets Qt5Widgets Qt5Xml c crypto gio-2.0
-WANTLIB += glib-2.0 gobject-2.0 intl m qt5keychain secret-1 sqlite3
+WANTLIB += Qt5Svg Qt5WebEngine Qt5WebSockets Qt5Widgets Qt5Xml c crypto
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 intl m qt5keychain secret-1 sqlite3
 WANTLIB += ssl z lib/inotify/inotify
 
 MODULES =		devel/cmake \
@@ -36,6 +36,7 @@ BUILD_DEPENDS =		devel/gettext,-tools
 BUILD_DEPENDS +=	devel/cmocka
 
 RUN_DEPENDS =		devel/desktop-file-utils \
+			misc/shared-mime-info \
 			x11/gtk+3,-guic \
 			x11/qt5/qtgraphicaleffects
 
@@ -44,14 +45,20 @@ LIB_DEPENDS =		databases/sqlite3 \
 			security/qtkeychain \
 			x11/qt5/qtsvg \
 			x11/qt5/qtquickcontrols2 \
+			x11/qt5/qtwebengine \
 			x11/qt5/qtwebsockets
 
 CONFIGURE_ARGS =	-DBUILD_SHELL_INTEGRATION_NAUTILUS=OFF \
 			-DBUILD_SHELL_INTEGRATION_DOLPHIN=OFF \
 			-DBUILD_SHELL_INTEGRATION=OFF \
 			-DUNIT_TESTING=ON \
-			-DWITH_CRASHREPORTER=OFF \
-			-DNO_SHIBBOLETH=ON
+			-DWITH_CRASHREPORTER=OFF
+
+# Disable Doxygen
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
+
+# Disable SharedMime
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_SharedMimeInfo=ON
 
 # Do not install under /etc/Nextcloud
 CONFIGURE_ARGS +=	-DSYSCONF_INSTALL_DIR=${SYSCONFDIR}

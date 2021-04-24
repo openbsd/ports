@@ -1,0 +1,17 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.4 2021/04/24 04:53:27 rsadowski Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -187,10 +187,8 @@ if(BUILD_CLIENT)
+         find_package(Sparkle)
+     endif()
+ 
+-    if(UNIX)
++    if(UNIX AND NOT APPLE)
+         find_package(INotify REQUIRED)
+-    else()
+-        find_package(INotify)
+     endif()
+     find_package(Sphinx)
+     find_package(PdfLatex)

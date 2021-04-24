@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/01/28 20:23:01 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/04/24 04:53:27 rsadowski Exp $
 @bin bin/nextcloud
 @bin bin/nextcloudcmd
 include/nextcloudsync/
@@ -13,9 +13,9 @@ include/nextcloudsync/mirall/progressdispatcher.h
 include/nextcloudsync/mirall/syncengine.h
 include/nextcloudsync/mirall/syncfileitem.h
 include/nextcloudsync/mirall/syncresult.h
+lib/libnextcloud_csync.so.0
+lib/libnextcloud_csync.so.3.2.0
 @lib lib/libnextcloudsync.so.${LIBnextcloudsync_VERSION}
-lib/nextcloud/
-@lib lib/nextcloud/libocsync.so.${LIBocsync_VERSION}
 share/applications/com.nextcloud.desktopclient.nextcloud.desktop
 share/examples/Nextcloud/
 @sample ${SYSCONFDIR}/Nextcloud/
@@ -32,6 +32,7 @@ share/icons/hicolor/32x32/apps/Nextcloud.png
 share/icons/hicolor/48x48/apps/Nextcloud.png
 share/icons/hicolor/512x512/apps/Nextcloud.png
 share/icons/hicolor/64x64/apps/Nextcloud.png
+share/mime/packages/nextcloud.xml
 share/nextcloud/
 share/nextcloud/i18n/
 share/nextcloud/i18n/client_TW.qm
@@ -82,6 +83,7 @@ share/nextcloud/i18n/client_pt.qm
 share/nextcloud/i18n/client_pt_BR.qm
 share/nextcloud/i18n/client_ro.qm
 share/nextcloud/i18n/client_ru.qm
+share/nextcloud/i18n/client_sc.qm
 share/nextcloud/i18n/client_sk.qm
 share/nextcloud/i18n/client_sl.qm
 share/nextcloud/i18n/client_sr.qm
@@ -94,3 +96,4 @@ share/nextcloud/i18n/client_zh_HK.qm
 share/nextcloud/i18n/client_zh_TW.qm
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-mime-database
