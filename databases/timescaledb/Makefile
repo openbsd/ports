@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2021/04/06 07:22:39 denis Exp $
+# $OpenBSD: Makefile,v 1.4 2021/04/24 17:54:50 denis Exp $
 
 COMMENT =	database designed to make SQL scalable for time-series data
 
 GH_ACCOUNT =	timescale
 GH_PROJECT =	timescaledb
 GH_TAGNAME =	2.1.0
+
+REVISION =	0
 
 CATEGORIES =	databases
 HOMEPAGE =	https://www.timescale.com/
@@ -25,7 +27,10 @@ LIB_DEPENDS =	databases/postgresql
 BUILD_DEPENDS =	databases/postgresql,-server
 RUN_DEPENDS =	databases/postgresql,-server
 
-CONFIGURE_ARGS += -DREGRESS_CHECKS=OFF
+CONFIGURE_ARGS +=	-DREGRESS_CHECKS=OFF \
+			-DLINTER=OFF \
+			-DSEND_TELEMETRY_DEFAULT=OFF \
+			-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
 
 # only build Apache-licensed code, disabling the TsL library which
 # is licensed under its own license, see tsl/LICENSE-TIMESCALE

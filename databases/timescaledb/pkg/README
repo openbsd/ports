@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2020/11/15 09:12:13 denis Exp $
+$OpenBSD: README,v 1.2 2021/04/24 17:54:50 denis Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -11,20 +11,20 @@ library, and then restart PostgreSQL.
 
         shared_preload_libraries = 'timescaledb'
 
-Disabling telemetry
-===================
-TimescaleDB sends telemetry reports periodically in the background by default.
+Telemetry
+=========
+TimescaleDB telemetry and version checking is disabled by default.
 
-To turn off telemetry for a whole instance, simply include the following line
+To turn on telemetry for a whole instance, simply include the following line
 in your postgresql.conf file:
 
-        timescaledb.telemetry_level=off
+        timescaledb.telemetry_level=basic
 
-Alternatively, you can disable it from psql:
+Alternatively, you can enable it from psql:
 
         ALTER [SYSTEM | DATABASE | USER] { *db_name* | *role_specification* }
-            SET timescaledb.telemetry_level=off;
+            SET timescaledb.telemetry_level=basic;
 
 Then reload the configuration.
 
-To re-enable it at a later time, replace 'off' with 'basic' in the above.
+To disable it again at a later time, replace 'basic' with 'off' in the above.
