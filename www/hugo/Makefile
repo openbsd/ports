@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.32 2021/03/08 13:59:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2021/04/24 08:30:41 paco Exp $
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 COMMENT =	fast and flexible static site generator
 
 MODGO_MODNAME =	github.com/gohugoio/hugo
-MODGO_VERSION =	v0.81.0
+MODGO_VERSION =	v0.82.1
 
 DISTNAME =	hugo-${MODGO_VERSION}
-REVISION =	0
 
 CATEGORIES =	www
 
@@ -130,7 +129,7 @@ MODGO_MODULES =	\
 	github.com/dustin/go-humanize				 v1.0.0 \
 	github.com/envoyproxy/go-control-plane			 v0.9.7 \
 	github.com/envoyproxy/protoc-gen-validate		 v0.1.0 \
-	github.com/evanw/esbuild				 v0.8.46 \
+	github.com/evanw/esbuild				 v0.9.6 \
 	github.com/fatih/color					 v1.7.0 \
 	github.com/fortytw2/leaktest				 v1.3.0 \
 	github.com/frankban/quicktest				 v1.11.3 \
@@ -215,7 +214,7 @@ MODGO_MODULES =	\
 	github.com/kr/pty					 v1.1.1 \
 	github.com/kr/text					 v0.1.0 \
 	github.com/kylelemons/godebug				 v1.1.0 \
-	github.com/kyokomi/emoji/v2				 v2.2.7 \
+	github.com/kyokomi/emoji/v2				 v2.2.8 \
 	github.com/lib/pq					 v1.1.1 \
 	github.com/magefile/mage				 v1.10.0 \
 	github.com/magiconair/properties			 v1.8.1 \
@@ -283,8 +282,8 @@ MODGO_MODULES =	\
 	github.com/stretchr/objx				 v0.2.0 \
 	github.com/stretchr/testify				 v1.6.1 \
 	github.com/subosito/gotenv				 v1.2.0 \
-	github.com/tdewolff/minify/v2				 v2.9.13 \
-	github.com/tdewolff/parse/v2				 v2.5.10 \
+	github.com/tdewolff/minify/v2				 v2.9.15 \
+	github.com/tdewolff/parse/v2				 v2.5.14 \
 	github.com/tdewolff/test				 v1.0.6 \
 	github.com/tmc/grpc-websocket-proxy			 v0.0.0-20190109142713-0ad062ec5ee5 \
 	github.com/urfave/cli					 v1.22.4 \
