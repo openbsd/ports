@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.27 2021/04/15 07:40:24 denis Exp $
+# $OpenBSD: Makefile,v 1.28 2021/04/24 10:51:58 sthen Exp $
+
+# probably also on (32-bit) arm
+BROKEN-i386 =	pkg/disk/stat_other.go:40:91: cannot use st.Atim.Nsec (type int32) as type int64 in argument to strconv.FormatInt
 
 COMMENT =	cli for minio
 
