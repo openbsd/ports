@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.158 2021/04/02 08:32:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.159 2021/04/24 07:34:45 ajacoutot Exp $
 @conflict py-botocore-*
 @pkgpath net/py-botocore
 lib/python${MODPY_VERSION}/site-packages/botocore/
@@ -55,6 +55,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/config.py
 lib/python${MODPY_VERSION}/site-packages/botocore/configloader.py
 lib/python${MODPY_VERSION}/site-packages/botocore/configprovider.py
 lib/python${MODPY_VERSION}/site-packages/botocore/credentials.py
+lib/python${MODPY_VERSION}/site-packages/botocore/crt/
+lib/python${MODPY_VERSION}/site-packages/botocore/crt/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/botocore/crt/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/botocore/crt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/botocore/crt/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/botocore/crt/auth.py
 lib/python${MODPY_VERSION}/site-packages/botocore/data/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/_retry.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/accessanalyzer/
@@ -897,6 +903,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/logs/2014-03-28/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/logs/2014-03-28/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/logs/2014-03-28/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/logs/2014-03-28/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/lookoutequipment/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/lookoutequipment/2020-12-15/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/lookoutequipment/2020-12-15/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/lookoutequipment/2020-12-15/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lookoutmetrics/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lookoutmetrics/2017-07-25/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lookoutmetrics/2017-07-25/paginators-1.json
@@ -942,6 +952,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/mediaconnect/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mediaconnect/2018-11-14/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mediaconnect/2018-11-14/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mediaconnect/2018-11-14/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/mediaconnect/2018-11-14/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mediaconvert/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mediaconvert/2017-08-29/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mediaconvert/2017-08-29/paginators-1.json
@@ -983,6 +994,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/mgh/2017-05-31/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mgh/2017-05-31/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mgh/2017-05-31/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mgh/2017-05-31/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/mgn/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/mgn/2020-02-26/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/mgn/2020-02-26/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/mgn/2020-02-26/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/migrationhub-config/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/migrationhub-config/2019-06-30/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/migrationhub-config/2019-06-30/paginators-1.json
