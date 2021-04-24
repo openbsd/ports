@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/08/17 10:31:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2021/04/24 09:30:50 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 @pkgpath ${BASE_PKGPATH},-main
 @pkgpath x11/gtk-vnc,gtk2
@@ -23,6 +23,7 @@ include/gvnc-1.0/vnccursor.h
 include/gvnc-1.0/vncframebuffer.h
 include/gvnc-1.0/vncpixelformat.h
 include/gvnc-1.0/vncutil.h
+include/gvnc-1.0/vncversion.h
 include/gvncpulse-1.0/
 include/gvncpulse-1.0/gvncpulse.h
 include/gvncpulse-1.0/vncaudiopulse.h
@@ -50,6 +51,7 @@ share/locale/en_GB/LC_MESSAGES/gtk-vnc.mo
 share/locale/eo/LC_MESSAGES/gtk-vnc.mo
 share/locale/es/LC_MESSAGES/gtk-vnc.mo
 share/locale/eu/LC_MESSAGES/gtk-vnc.mo
+share/locale/fa/LC_MESSAGES/gtk-vnc.mo
 share/locale/fr/LC_MESSAGES/gtk-vnc.mo
 share/locale/fur/LC_MESSAGES/gtk-vnc.mo
 share/locale/gd/LC_MESSAGES/gtk-vnc.mo
