@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/04/24 04:33:53 tb Exp $
+# $OpenBSD: Makefile,v 1.2 2021/04/24 12:19:10 tb Exp $
 
 COMMENT =		fast elliptic curve digital signatures
 
@@ -28,7 +28,8 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+FLAVORS =		python3
+FLAVOR =		python3
 
 CFLAGS +=		-I${LOCALBASE}/include
 
