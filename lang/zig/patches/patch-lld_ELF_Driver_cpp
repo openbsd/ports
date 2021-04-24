@@ -1,9 +1,9 @@
-$OpenBSD: patch-lld_ELF_Driver_cpp,v 1.1.1.1 2021/02/28 15:32:17 semarie Exp $
+$OpenBSD: patch-lld_ELF_Driver_cpp,v 1.2 2021/04/24 13:59:21 semarie Exp $
 
 Index: lld/ELF/Driver.cpp
 --- lld/ELF/Driver.cpp.orig
 +++ lld/ELF/Driver.cpp
-@@ -630,6 +630,9 @@ static bool isOutputFormatBinary(opt::InputArgList &ar
+@@ -666,6 +666,9 @@ static bool isOutputFormatBinary(opt::InputArgList &ar
  }
  
  static DiscardPolicy getDiscard(opt::InputArgList &args) {
@@ -13,7 +13,7 @@ Index: lld/ELF/Driver.cpp
    auto *arg =
        args.getLastArg(OPT_discard_all, OPT_discard_locals, OPT_discard_none);
    if (!arg)
-@@ -986,7 +989,12 @@ static void readConfigs(opt::InputArgList &args) {
+@@ -1042,7 +1045,12 @@ static void readConfigs(opt::InputArgList &args) {
    config->optimize = args::getInteger(args, OPT_O, 1);
    config->orphanHandling = getOrphanHandling(args);
    config->outputFile = args.getLastArgValue(OPT_o);
