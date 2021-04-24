@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.132 2021/04/07 06:08:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.133 2021/04/24 07:35:35 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -1550,7 +1550,10 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/detective/get-members.r
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/detective/list-graphs.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/detective/list-invitations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/detective/list-members.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/detective/list-tags-for-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/detective/reject-invitation.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/detective/tag-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/detective/untag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/devicefarm/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/devicefarm/create-device-pool.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/devicefarm/create-project.rst
@@ -3548,16 +3551,20 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/batch-get-channel.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/batch-get-stream-key.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/create-channel.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/create-recording-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/create-stream-key.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/delete-playback-key-pair.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/delete-recording-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/delete-stream-key.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/get-channel.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/get-playback-key-pair.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/get-recording-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/get-stream-key.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/get-stream.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/import-playback-key-pair.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/list-channels.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/list-playback-key-pairs.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/list-recording-configurations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/list-stream-keys.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/list-streams.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/list-tags-for-resource.rst
