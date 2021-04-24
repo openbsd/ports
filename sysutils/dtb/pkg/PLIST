@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2021/02/28 09:33:30 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.20 2021/04/24 00:50:43 jsg Exp $
 share/dtb/
 share/dtb/arm/
 share/dtb/arm/aks-cdu.dtb
@@ -2064,3 +2064,8 @@ share/dtb/powerpc/xpedite5301.dtb
 share/dtb/powerpc/xpedite5330.dtb
 share/dtb/powerpc/xpedite5370.dtb
 share/dtb/powerpc/yosemite.dtb
+share/dtb/riscv/
+share/dtb/riscv/kendryte/
+share/dtb/riscv/kendryte/k210.dtb
+share/dtb/riscv/sifive/
+share/dtb/riscv/sifive/hifive-unleashed-a00.dtb

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2021/03/25 11:10:26 kn Exp $
+# $OpenBSD: Makefile,v 1.28 2021/04/24 00:50:43 jsg Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT=	Device Tree Blobs
 VERSION=	5.11
+REVISION=	0
 DISTNAME=	linux-${VERSION}
 PKGNAME=	dtb-${VERSION:S/-//}
 CATEGORIES=	sysutils
@@ -23,7 +24,7 @@ MODCLANG_ARCHS=	${GCC4_ARCHS}
 BUILD_DEPENDS=	devel/dtc
 NO_TEST=	Yes
 
-ARCHS= arm arm64 mips powerpc
+ARCHS= arm arm64 mips powerpc riscv
 
 EXTRACT_FILES=	${ARCHS:=${DISTNAME}/arch/%/boot/dts} \
 		${DISTNAME}/{include,scripts/dtc/include-prefixes}
