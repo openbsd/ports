@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/23 19:39:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/04/24 06:44:18 martin Exp $
 
 COMMENT =		job scheduling for humans
 
-MODPY_EGG_VERSION = 	1.0.0
+MODPY_EGG_VERSION = 	1.1.0
 DISTNAME =		schedule-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -12,8 +12,6 @@ MAINTAINER =		Martin Reindl <martin@catai.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
-
-WANTLIB =		${MODPY_WANTLIB}
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
