@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2020/12/12 20:31:00 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.18 2021/04/24 11:05:48 bluhm Exp $
 @bin bin/botan
 @bin bin/botan-test
 include/botan-2/
@@ -376,6 +376,7 @@ share/botan-2/data/block/twofish.vec
 share/botan-2/data/block/xtea.vec
 share/botan-2/data/bn/
 share/botan-2/data/bn/add.vec
+share/botan-2/data/bn/cmp.vec
 share/botan-2/data/bn/divide.vec
 share/botan-2/data/bn/dsa_gen.vec
 share/botan-2/data/bn/gcd.vec
