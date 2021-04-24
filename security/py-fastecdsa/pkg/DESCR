@@ -1,0 +1,5 @@
+Fast elliptic curve cryptography, specifically digital signatures.  There
+is no nonce reuse, no branching on secret material, and all points are
+validated before any operations are performed on them.  Timing side
+channels are mitigated via Montgomery point multiplication.  Nonces are
+generated per RFC6979.

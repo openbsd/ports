@@ -1,0 +1,17 @@
+$OpenBSD: patch-fastecdsa_tests_test_rfc6979_ecdsa_py,v 1.1.1.1 2021/04/24 04:33:53 tb Exp $
+
+Use extra distfile instead of reaching out to the internet.
+
+Index: fastecdsa/tests/test_rfc6979_ecdsa.py
+--- fastecdsa/tests/test_rfc6979_ecdsa.py.orig
++++ fastecdsa/tests/test_rfc6979_ecdsa.py
+@@ -11,7 +11,8 @@ from ..util import RFC6979
+ class TestRFC6979ECDSA(TestCase):
+     @classmethod
+     def setUpClass(cls):
+-        cls.rfc6979_text = urlopen('https://tools.ietf.org/rfc/rfc6979.txt').read().decode()
++        with open('rfc6979.txt') as f:
++            cls.rfc6979_text = f.read()
+         cls.hash_lookup = {
+             '1': sha1,
+             '224': sha224,

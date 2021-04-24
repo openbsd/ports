@@ -1,0 +1,19 @@
+$OpenBSD: patch-fastecdsa_tests_test_whycheproof_vectors_py,v 1.1.1.1 2021/04/24 04:33:53 tb Exp $
+
+Use the JSON files from security/wycheproof-testvectors instead of fetching 
+them from GitHub.
+
+Index: fastecdsa/tests/test_whycheproof_vectors.py
+--- fastecdsa/tests/test_whycheproof_vectors.py.orig
++++ fastecdsa/tests/test_whycheproof_vectors.py
+@@ -25,7 +25,9 @@ class TestWycheproofEcdsaVerify(TestCase):
+     @staticmethod
+     def _get_tests(url):
+         try:
+-            test_raw = urlopen(url).read()
++            url = url.replace('https://raw.githubusercontent.com/google/wycheproof/master/', '${LOCALBASE}/share/wycheproof/')
++            with open(url) as f:
++                test_raw = f.read()
+             test_json = loads(test_raw)
+             return test_json["testGroups"]
+         except (JSONDecodeError, URLError) as error:
