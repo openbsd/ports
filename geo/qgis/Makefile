@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2021/03/22 08:14:56 landry Exp $
+# $OpenBSD: Makefile,v 1.146 2021/04/24 07:52:05 landry Exp $
 
 BROKEN-powerpc =	does not build: "operand out of range"
 BROKEN-sparc64 =	undefined reference to QOpenGLExtension_ARB_tessellation_shader::QOpenGLExtension_ARB_tessellation_shader() in libQt53DRender.so.2.0 when linking qgis_3drenderingtest
@@ -7,14 +7,14 @@ COMMENT =	desktop geographical information system
 
 DPB_PROPERTIES =	parallel
 
-DISTNAME =	qgis-3.18.1
+DISTNAME =	qgis-3.18.2
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
 
-SHARED_LIBS =	qgis_core	50.0 \
-		qgis_app	33.0 \
-		qgis_gui	40.0 \
+SHARED_LIBS =	qgis_core	51.0 \
+		qgis_app	33.1 \
+		qgis_gui	40.1 \
 		qgis_analysis	17.1 \
 		qgis_server	16.1 \
 		qgispython	6.0 \
