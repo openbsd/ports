@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2021/03/22 08:53:27 fcambus Exp $
+# $OpenBSD: Makefile,v 1.18 2021/04/24 07:23:38 fcambus Exp $
 
 COMMENT =	OpenMPT based module player library and command-line player
 
-DISTNAME =	libopenmpt-0.5.7+release.autotools
+DISTNAME =	libopenmpt-0.5.8+release.autotools
 PKGNAME =	${DISTNAME:S/+release.autotools//}
 
 SHARED_LIBS +=	openmpt	0.1	# 2.2
