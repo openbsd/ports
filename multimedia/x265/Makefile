@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2021/04/24 05:48:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.51 2021/04/24 20:08:20 rsadowski Exp $
 
 COMMENT=	free H.265/HEVC encoder
 
@@ -22,6 +22,9 @@ WANTLIB=	c m pthread ${COMPILER_LIBCXX}
 WRKSRC=		${WRKDIST}/source
 
 MODULES=	devel/cmake
+
+# source/cmake/Version.cmake
+BUILD_DEPENDS+=	devel/git
 
 # XXX requires __sync builtins
 COMPILER=	base-clang ports-gcc
