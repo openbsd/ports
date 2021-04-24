@@ -1,0 +1,18 @@
+$OpenBSD: patch-third_party_libwebrtc_webrtc_rtc_base_platform_thread_cc,v 1.1 2021/04/24 12:26:09 jca Exp $
+
+Avoid calling pthread_setschedparam() with a possibly uninitialized
+thread parameter.  The creator thread may set the thread_ member after
+the created thread runs.
+
+Index: third_party/libwebrtc/webrtc/rtc_base/platform_thread.cc
+--- third_party/libwebrtc/webrtc/rtc_base/platform_thread.cc.orig
++++ third_party/libwebrtc/webrtc/rtc_base/platform_thread.cc
+@@ -360,7 +360,7 @@ bool PlatformThread::SetPriority(ThreadPriority priori
+       param.sched_priority = top_prio;
+       break;
+   }
+-  return pthread_setschedparam(thread_, policy, &param) == 0;
++  return pthread_setschedparam(pthread_self(), policy, &param) == 0;
+ #endif  // defined(WEBRTC_WIN)
+ }
+ 
