@@ -1,15 +1,14 @@
-$OpenBSD: patch-man_man_pro,v 1.2 2020/02/19 06:10:17 rsadowski Exp $
+$OpenBSD: patch-man_man_pro,v 1.3 2021/04/24 05:00:33 rsadowski Exp $
 
 Index: man/man.pro
 --- man/man.pro.orig
 +++ man/man.pro
-@@ -21,8 +21,7 @@ MAN_TARGET   = qdirstat.1.gz              \
- # message(target: $$MAN_TARGET)
+@@ -11,7 +11,7 @@ MAN_SRC      = qdirstat.1                 \
+ MAN_TARGET   = qdirstat.1.gz              \
+                qdirstat-cache-writer.1.gz
+ 
+-MAN_PATH     = $$INSTALL_PREFIX/share/man/man1
++MAN_PATH     = $$INSTALL_PREFIX/man/man1
  
  man.files    = $$MAN_TARGET
--man.commands = gzip --keep --force $$MAN_SRC
--man.path     = $$INSTALL_PREFIX/share/man/man1
-+man.path     = $$INSTALL_PREFIX/man/man1
- 
- INSTALLS    += man
- QMAKE_CLEAN += $$MAN_TARGET
+ man.path     = $$MAN_PATH
