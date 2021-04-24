@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2021/03/07 08:30:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2021/04/24 08:06:30 ajacoutot Exp $
 @conflict gtk+2-<2.22
 @conflict gtk+2-docs-<2.22
 @define-tag update-gdk-pixbuf at-end %D/bin/gdk-pixbuf-query-loaders --update-cache
@@ -31,8 +31,6 @@ lib/gdk-pixbuf-2.0/2.10.0/loaders/
 @so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-gif.so
 @so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-icns.so
 @so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-ico.so
-@so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-jpeg.so
-@so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-png.so
 @so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-pnm.so
 @so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-qtif.so
 @so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-tga.so
