@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/17 14:49:20 danj Exp $
+# $OpenBSD: Makefile,v 1.15 2021/04/25 10:40:13 phessler Exp $
 
-ONLY_FOR_ARCHS= amd64 arm i386
+ONLY_FOR_ARCHS= aarch64 amd64 arm i386
 
 COMMENT=	Monkey's audio lossless codec
 
