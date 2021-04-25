@@ -2,5 +2,7 @@ SANE stands for Scanner Access Now Easy.
 This package contains the SANE libraries (this means backends and
 network scanning parts) and the command line frontend scanimage.
 
-Available FLAVOR:
+Available FLAVORS:
+	escl - build support for the eSCL protocol
+                (vendor-neutral network protocol for driverless scanning)
 	snmp - build with net-snmp support (SNMP scanner autodiscovery)

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2020/08/23 15:52:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.29 2021/04/25 06:54:52 ajacoutot Exp $
 @newgroup _saned:553
 @newuser _saned:553:_saned:daemon:SANE Scanner Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/spool/lock/sane/*
@@ -542,3 +542,6 @@ share/sane/snapscan/
 @mode 775
 @group _saned
 @sample /var/spool/lock/sane/
+@mode
+@group
+%%escl%%
