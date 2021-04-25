@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.294 2021/04/24 12:39:06 jca Exp $
+# $OpenBSD: Makefile,v 1.295 2021/04/25 12:09:46 jca Exp $
 
 VERSION =		4.9.18
 DISTNAME =		samba-${VERSION}
@@ -21,8 +21,8 @@ PKG_ARCH-docs =		*
 LDB_V =			1.4.8
 TEVENT_V =		0.9.37
 
-REVISION-ldb =		4
-REVISION-main =		5
+REVISION-ldb =		5
+REVISION-main =		6
 REVISION-tevent =	2
 
 SHARED_LIBS =		asn1-samba4		0.0 \
@@ -106,14 +106,16 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 MODULES =		lang/python perl
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
-BUILD_DEPENDS =		devel/cmocka \
+BUILD_DEPENDS =		databases/tdb,-python \
+			devel/cmocka \
 			devel/p5-Parse-Yapp>=1.0.5 \
 			net/py2-dnspython \
 			textproc/docbook-xsl \
 			x11/dbus
 
-RUN_DEPENDS-main =	net/py2-dnspython \
-			databases/tdb,-python
+RUN_DEPENDS-main =	databases/tdb,-python \
+			net/py2-dnspython
+
 RUN_DEPENDS-docs =
 
 LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb>=${LDB_V} \
