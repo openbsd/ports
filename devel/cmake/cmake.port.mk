@@ -1,4 +1,4 @@
-# $OpenBSD: cmake.port.mk,v 1.70 2020/11/23 18:35:03 sthen Exp $
+# $OpenBSD: cmake.port.mk,v 1.71 2021/04/25 12:25:30 rsadowski Exp $
 
 BUILD_DEPENDS+=	devel/cmake
 
@@ -103,6 +103,7 @@ MODCMAKE_configure =	cd ${WRKBUILD} && ${SETENV} \
 	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 	${CONFIGURE_ENV} ${LOCALBASE}/bin/cmake \
 		-DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY=ON \
+		-DCMAKE_SUPPRESS_REGENERATION=ON \
 		-G ${_MODCMAKE_GEN} ${CONFIGURE_ARGS} ${WRKSRC}
 
 .if !defined(CONFIGURE_ARGS) || ! ${CONFIGURE_ARGS:M*CMAKE_BUILD_TYPE*}
