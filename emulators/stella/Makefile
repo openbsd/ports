@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2021/02/27 06:08:20 benoit Exp $
+# $OpenBSD: Makefile,v 1.41 2021/04/25 07:11:47 benoit Exp $
 
 COMMENT =		Atari 2600 VCS emulator
 
-V =			6.5.2
+V =			6.5.3
 DISTNAME =		stella-$V
 CATEGORIES =		emulators
 EXTRACT_SUFX =		-src.tar.xz
