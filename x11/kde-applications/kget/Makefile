@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2020/11/08 20:12:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2021/04/25 04:16:13 rsadowski Exp $
 
 COMMENT =	download manager for KDE
 DISTNAME =	kget-${VERSION}
 CATEGORIES =	net www
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/internet/kget/
 
@@ -28,17 +29,19 @@ MODKDE5_DOCS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
 
-BUILD_DEPENDS +=	databases/sqlite3 \
-			devel/boost \
-			devel/kf5/kitemmodels \
-			x11/qt5/qtquickcontrols
+BUILD_DEPENDS =	databases/sqlite3 \
+		devel/boost \
+		devel/kf5/kinit \
+		devel/kf5/kitemmodels \
+		x11/qt5/qtquickcontrols
 
-RUN_DEPENDS +=	databases/sqlite3 \
+RUN_DEPENDS =	databases/sqlite3 \
+		devel/kf5/kinit \
 		devel/kf5/kitemmodels \
 		x11/kde-applications/kio-extras \
 		x11/qt5/qtquickcontrols
 
-LIB_DEPENDS +=	devel/kf5/karchive \
+LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kauth \
 		devel/kf5/kbookmarks \
 		devel/kf5/kcmutils \
