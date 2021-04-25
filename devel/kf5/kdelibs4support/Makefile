@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2021/02/23 19:39:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/04/25 14:25:19 rsadowski Exp $
 
 COMMENT =		legacy support for kdelibs-4.x compatibility
 DISTNAME =		kdelibs4support-${VERSION}
+REVISION =		0
 
 SHARED_LIBS =		KF5KDELibs4Support	8.0
 
@@ -32,6 +33,7 @@ RUN_DEPENDS =		devel/kf5/kded>=${MODKF5_VERSION} \
 			devel/kf5/kdesignerplugin>=${MODKF5_VERSION} \
 			devel/kf5/kdoctools>=${MODKF5_VERSION} \
 			devel/kf5/kemoticons>=${MODKF5_VERSION} \
+			devel/kf5/kinit>=${MODKF5_VERSION} \
 			devel/kf5/kitemmodels>=${MODKF5_VERSION}
 
 LIB_DEPENDS =		devel/kf5/kauth>=${MODKF5_VERSION} \
