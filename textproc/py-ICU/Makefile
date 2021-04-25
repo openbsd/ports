@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2021/01/04 14:06:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2021/04/25 06:07:55 ajacoutot Exp $
 
 COMMENT=		Python extension wrapping the ICU C++ API
 
-MODPY_EGG_VERSION=	2.5
+MODPY_EGG_VERSION=	2.7.2
 DISTNAME=		PyICU-${MODPY_EGG_VERSION}
 PKGNAME=		py-ICU-${MODPY_EGG_VERSION}
-REVISION=		0
 
 CATEGORIES=		textproc
 
@@ -19,13 +18,6 @@ MODULES=		lang/python
 MODPY_PI=		Yes
 MODPY_PYTEST=		Yes
 MODPY_SETUPTOOLS=	Yes
-
-### XXX temporaty until next release
-GH_ACCOUNT=		ovalhub
-GH_PROJECT=		pyicu
-GH_TAGNAME=		4051c690e0daa4a2d822fb4f9215a8e808804768
-MODPY_PI=		No
-### end XXX
 
 FLAVORS=		python3
 FLAVOR?=
