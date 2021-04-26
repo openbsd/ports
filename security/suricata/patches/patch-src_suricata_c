@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_suricata_c,v 1.7 2021/01/31 18:03:49 sthen Exp $
+$OpenBSD: patch-src_suricata_c,v 1.8 2021/04/26 09:09:01 gonzalo Exp $
 
 Use setresuid/gid() directly to change user and group.  Otherwise
 Suricata uses libcap-ng on Linux and runs as root elsewhere.
@@ -6,7 +6,7 @@ Suricata uses libcap-ng on Linux and runs as root elsewhere.
 Index: src/suricata.c
 --- src/suricata.c.orig
 +++ src/suricata.c
-@@ -2818,6 +2818,7 @@ int SuricataMain(int argc, char **argv)
+@@ -2825,6 +2825,7 @@ int SuricataMain(int argc, char **argv)
  
      PostRunStartedDetectSetup(&suricata);
  
