@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2021/03/18 07:47:21 kirby Exp $
+# $OpenBSD: Makefile,v 1.104 2021/04/26 09:22:47 kirby Exp $
 
 PORTROACH = 	limitw:1,even
 
@@ -10,10 +10,12 @@ DISTNAME =	munin-$V
 PKGNAME-main =	munin-node-$V
 PKGNAME-server =munin-server-$V
 CATEGORIES =	net
-REVISION-main =	0
+REVISION-main =	1
+REVISION-server =	0
 
-HOMEPAGE =	http://munin-monitoring.org/
-MASTER_SITES =	http://downloads.munin-monitoring.org/munin/stable/$V/
+HOMEPAGE =	https://munin-monitoring.org/
+MASTER_SITES =	http://downloads.munin-monitoring.org/munin/stable/$V/ \
+		${MASTER_SITE_SOURCEFORGE:=munin/}
 
 # Mostly GPLv2.
 # DejaVuSans.ttf and DejaVuSansMono.ttf has a non-restrictive license.
