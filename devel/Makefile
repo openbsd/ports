@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2094 2021/04/24 00:31:56 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2095 2021/04/26 16:10:51 jeremy Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1768,7 +1768,6 @@
      SUBDIR += ruby-i18n
      SUBDIR += ruby-indentation
      SUBDIR += ruby-isolate
-     SUBDIR += ruby-jeweler
      SUBDIR += ruby-json_pure
      SUBDIR += ruby-kgio,ruby27
      SUBDIR += ruby-kgio,ruby30
