@@ -1,4 +1,4 @@
-# $OpenBSD: cargo.port.mk,v 1.21 2021/04/24 13:28:45 semarie Exp $
+# $OpenBSD: cargo.port.mk,v 1.22 2021/04/27 06:51:10 semarie Exp $
 
 CATEGORIES +=	lang/rust
 
@@ -45,6 +45,9 @@ _MODCARGO_DIST_SUBDIR = ${MODCARGO_DIST_SUBDIR}/
 # Could be changed by setting MODCARGO_MASTER_SITESN.
 MODCARGO_MASTER_SITESN ?= 9
 MASTER_SITES${MODCARGO_MASTER_SITESN} ?= ${MASTER_SITES_CRATESIO}
+
+# per crates options
+MODCARGO_CRATES_SQLITE3_BUNDLED ?= No
 
 # Generated list of DISTFILES.
 .for _cratename _cratever in ${MODCARGO_CRATES}
@@ -100,12 +103,16 @@ MODCARGO_post-extract += \
 
 .    elif "${_cratename}" == "libsodium-sys"
 MODCARGO_ENV +=	SODIUM_SHARED=1
-MODCARGO_post-extract  += \
+MODCARGO_post-extract += \
 	${ECHO_MSG} "[modcargo] Removing libsrc for ${_cratename}-${_cratever}" ; \
 	rm -f -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/libsodium-*.tar.gz ;
 
+.    elif "${_cratename}" == "libsqlite3-sys" && ${MODCARGO_CRATES_SQLITE3_BUNDLED:L} == "yes"
+MODCARGO_post-extract += \
+	${ECHO_MSG} "[modcargo] Keeping libsrc for ${_cratename}-${_cratever}" ;	
+
 .    elif "${_cratename}" == "libsqlite3-sys"
-MODCARGO_post-extract  += \
+MODCARGO_post-extract += \
 	${ECHO_MSG} "[modcargo] Removing libsrc for ${_cratename}-${_cratever}" ; \
 	rm -rf -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/sqlite3 ;
 
