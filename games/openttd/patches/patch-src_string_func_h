@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_string_func_h,v 1.4 2020/04/07 15:13:34 solene Exp $
+$OpenBSD: patch-src_string_func_h,v 1.5 2021/04/27 18:54:08 solene Exp $
 Don't use openttd's internal copy of strcasestr().
 Index: src/string_func.h
 --- src/string_func.h.orig
 +++ src/string_func.h
-@@ -248,7 +248,7 @@ static inline bool IsWhitespace(WChar c)
+@@ -260,7 +260,7 @@ static inline bool IsWhitespace(WChar c)
  #endif
  
  /* strcasestr is available for _GNU_SOURCE, BSD and some Apple */

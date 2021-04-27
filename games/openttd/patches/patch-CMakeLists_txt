@@ -1,0 +1,22 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2021/04/27 18:54:08 solene Exp $
+Disable allegro support.
+Ours (4.2.3 at time of writing) is old and seemingly incompatible.
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -121,7 +121,6 @@ find_package(PNG)
+ 
+ if(NOT OPTION_DEDICATED)
+     if(NOT WIN32)
+-        find_package(Allegro)
+         if(NOT APPLE)
+             find_package(Freetype)
+             find_package(SDL2)
+@@ -253,7 +252,6 @@ if(NOT OPTION_DEDICATED)
+     link_package(Fluidsynth)
+     link_package(SDL)
+     link_package(SDL2 TARGET SDL2::SDL2)
+-    link_package(Allegro)
+     link_package(FREETYPE TARGET Freetype::Freetype)
+     link_package(Fontconfig TARGET Fontconfig::Fontconfig)
+     link_package(ICU_lx)
