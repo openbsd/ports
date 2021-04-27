@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/12/15 09:03:27 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/04/27 05:44:42 landry Exp $
 @pkgpath databases/sqlite3,-main
 @bin bin/sqlite3
 include/sqlite3.h
@@ -244,6 +244,7 @@ lib/pkgconfig/sqlite3.pc
 @man man/man3/sqlite3session_enable.3
 @man man/man3/sqlite3session_indirect.3
 @man man/man3/sqlite3session_isempty.3
+@man man/man3/sqlite3session_memory_used.3
 @man man/man3/sqlite3session_patchset.3
 @man man/man3/sqlite3session_table_filter.3
 @man man/man3/sqlite_int64.3
