@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2021/04/23 21:15:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/04/27 20:14:32 kurt Exp $
 
 FW_DRIVER=	bwfm
 LINUX_VER=	20200316
 SUP_VER=	1.2
-REVISION=	1
+REVISION=	2
 FW_VER=		${LINUX_VER}.${SUP_VER}
 DISTNAME=	linux-firmware-${LINUX_VER}
 EXTRACT_SUFX=	.tar.xz
@@ -29,8 +29,12 @@ do-install:
 
 	${INSTALL_DATA} ${SUP_DIR}/*bin ${PREFIX}/firmware/
 	${INSTALL_DATA} ${SUP_DIR}/*txt ${PREFIX}/firmware/
-	${INSTALL_DATA} ${SUP_DIR}/brcmfmac4356-sdio.vamrs,rock960.txt \
-		${PREFIX}/firmware/brcmfmac4356-sdio.friendlyarm,nanopc-t4.txt
+	cd ${PREFIX}/firmware && ln brcmfmac4356-sdio.vamrs,rock960.txt \
+		brcmfmac4356-sdio.friendlyarm,nanopc-t4.txt && \
+		ln brcmfmac43456-sdio.pine64,pinebook-pro.bin \
+		brcmfmac43456-sdio.pine64,rockpro64-v2.1.bin && \
+		ln brcmfmac43456-sdio.pine64,pinebook-pro.txt \
+		brcmfmac43456-sdio.pine64,rockpro64-v2.1.txt
 
 .for i in bin txt clm_blob
 	${INSTALL_DATA} ${RPI_DIR}/brcmfmac43456-sdio.$i \
