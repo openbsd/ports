@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2021/01/23 18:10:21 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2021/04/27 05:27:02 rsadowski Exp $
 
 COMMENT =	KDE itinerary data model and itinerary extraction library
 DISTNAME =	kitinerary-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KPimItinerary       2.0 # 5.13.2
+SHARED_LIBS +=  KPimItinerary       2.1 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5CalendarCore KF5Contacts
 WANTLIB += KF5I18n KF5Mime KPimPkPass Qt5Core Qt5Gui Qt5Network

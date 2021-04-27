@@ -1,4 +1,4 @@
-$OpenBSD: patch-mimetreeparser_src_CMakeLists_txt,v 1.2 2020/09/07 14:49:28 rsadowski Exp $
+$OpenBSD: patch-mimetreeparser_src_CMakeLists_txt,v 1.3 2021/04/27 05:27:20 rsadowski Exp $
 
 Index: mimetreeparser/src/CMakeLists.txt
 --- mimetreeparser/src/CMakeLists.txt.orig
@@ -13,25 +13,15 @@ Index: mimetreeparser/src/CMakeLists.txt
  set(libmimetreeparser_main_SRCS
      bodyformatter/applicationpgpencrypted.cpp
      bodyformatter/applicationpkcs7mime.cpp
-@@ -120,7 +117,12 @@ ecm_qt_declare_logging_category(libmimetreeparser_SRCS
- add_library(KF5MimeTreeParser
-     ${libmimetreeparser_SRCS}
-     )
+@@ -124,6 +121,11 @@ if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+     set_target_properties(KF5MimeTreeParser PROPERTIES UNITY_BUILD ON)
+ endif()
+ 
++
 +target_include_directories(KF5MimeTreeParser PUBLIC "${CMAKE_INSTALL_PREFIX}/include"
 +                    "${CMAKE_INSTALL_PREFIX}/include/inotify"
 +                    "${CMAKE_INSTALL_PREFIX}/include/gpgme++"
 +                    "${CMAKE_INSTALL_PREFIX}/include/qgpgme")
  
-+
  generate_export_header(KF5MimeTreeParser BASE_NAME mimetreeparser)
  add_library(KF5::MimeTreeParser ALIAS KF5MimeTreeParser)
- 
-@@ -129,7 +131,7 @@ set(mimetreeparser_LINK_LIBRARIES
- 
- target_link_libraries(KF5MimeTreeParser
-     PRIVATE
--    QGpgme
-+    qgpgme
-     KF5::Codecs
-     KF5::I18n
-     KF5::CoreAddons

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2021/03/08 18:27:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2021/04/27 05:27:08 rsadowski Exp $
 
 COMMENT =	file compare utility for KDE
 DISTNAME =	kompare-${VERSION}
@@ -38,7 +38,7 @@ SUBST_VARS +=	LIBkompareinterface_VERSION \
 		LIBkomparedialogpages_VERSION
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/interfaces/CMakeLists.txt \
-		${WRKSRC}/libdialogpages/CMakeLists.txt
+	${SUBST_CMD} ${WRKSRC}/src/interfaces/CMakeLists.txt \
+		${WRKSRC}/src/dialogpages/CMakeLists.txt
 
 .include <bsd.port.mk>

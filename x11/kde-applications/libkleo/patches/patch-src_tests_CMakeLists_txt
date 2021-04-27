@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_tests_CMakeLists_txt,v 1.1 2021/04/27 05:27:17 rsadowski Exp $
+
+Index: src/tests/CMakeLists.txt
+--- src/tests/CMakeLists.txt.orig
++++ src/tests/CMakeLists.txt
+@@ -1,5 +1,10 @@
+ include(ECMMarkAsTest)
+ 
++# target_include_directories does not handle empty include paths
++include_directories("${CMAKE_INSTALL_PREFIX}/include"
++                    "${CMAKE_INSTALL_PREFIX}/include/gpgme++"
++                    "${CMAKE_INSTALL_PREFIX}/include/qgpgme")
++
+ # Convenience macro to add kleo unit tests.
+ macro( add_kleo_test _source )
+   set( _test ${_source} )

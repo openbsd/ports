@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2021/01/23 18:10:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2021/04/27 05:27:16 rsadowski Exp $
 
 COMMENT =	common code and data for many KDE games
 DISTNAME =	libkdegames-${VERSION}
 PKGNAME =	libkdegames-kf5-${VERSION}
 CATEGORIES =	devel games
 
-SHARED_LIBS +=  KF5KDEGames               2.0 # 7.0
-SHARED_LIBS +=  KF5KDEGamesPrivate        2.0 # 1.0
+SHARED_LIBS +=  KF5KDEGames               3.0 # 7.0
+SHARED_LIBS +=  KF5KDEGamesPrivate        3.0 # 1.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5AuthCore
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui

@@ -1,22 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/01/23 18:10:27 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/04/27 05:27:16 rsadowski Exp $
 include/KF5/KF5KDEGames/
-include/KF5/KF5KDEGames/KDE/
-include/KF5/KF5KDEGames/KDE/KGameClock
-include/KF5/KF5KDEGames/KDE/KGamePopupItem
-include/KF5/KF5KDEGames/KDE/KGameRenderedItem
-include/KF5/KF5KDEGames/KDE/KGameRenderedObjectItem
-include/KF5/KF5KDEGames/KDE/KGameRenderer
-include/KF5/KF5KDEGames/KDE/KGameRendererClient
-include/KF5/KF5KDEGames/KDE/KHighscore
-include/KF5/KF5KDEGames/KDE/KScoreDialog
-include/KF5/KF5KDEGames/KDE/KStandardGameAction
-include/KF5/KF5KDEGames/KDE/KgAudioScene
-include/KF5/KF5KDEGames/KDE/KgDeclarativeView
-include/KF5/KF5KDEGames/KDE/KgDifficulty
-include/KF5/KF5KDEGames/KDE/KgSound
-include/KF5/KF5KDEGames/KDE/KgTheme
-include/KF5/KF5KDEGames/KDE/KgThemeProvider
-include/KF5/KF5KDEGames/KDE/KgThemeSelector
+include/KF5/KF5KDEGames/KGameClock
+include/KF5/KF5KDEGames/KGamePopupItem
+include/KF5/KF5KDEGames/KGameRenderedItem
+include/KF5/KF5KDEGames/KGameRenderedObjectItem
+include/KF5/KF5KDEGames/KGameRenderer
+include/KF5/KF5KDEGames/KGameRendererClient
+include/KF5/KF5KDEGames/KHighscore
+include/KF5/KF5KDEGames/KScoreDialog
+include/KF5/KF5KDEGames/KStandardGameAction
+include/KF5/KF5KDEGames/KgAudioScene
+include/KF5/KF5KDEGames/KgDeclarativeView
+include/KF5/KF5KDEGames/KgDifficulty
+include/KF5/KF5KDEGames/KgSound
+include/KF5/KF5KDEGames/KgTheme
+include/KF5/KF5KDEGames/KgThemeProvider
+include/KF5/KF5KDEGames/KgThemeSelector
 include/KF5/KF5KDEGames/highscore/
 include/KF5/KF5KDEGames/highscore/khighscore.h
 include/KF5/KF5KDEGames/highscore/kscoredialog.h
@@ -65,8 +64,8 @@ include/KF5/KF5KDEGames/libkdegamesprivate/libkdegamesprivate_export.h
 lib/cmake/KF5KDEGames/
 lib/cmake/KF5KDEGames/KF5KDEGamesConfig.cmake
 lib/cmake/KF5KDEGames/KF5KDEGamesConfigVersion.cmake
-lib/cmake/KF5KDEGames/KF5KDEGamesLibraryDepends${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/KF5KDEGames/KF5KDEGamesLibraryDepends.cmake
+lib/cmake/KF5KDEGames/KF5KDEGamesTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF5KDEGames/KF5KDEGamesTargets.cmake
 @lib lib/libKF5KDEGames.so.${LIBKF5KDEGames_VERSION}
 @lib lib/libKF5KDEGamesPrivate.so.${LIBKF5KDEGamesPrivate_VERSION}
 lib/qt5/qml/org/kde/games/

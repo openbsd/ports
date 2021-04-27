@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/01/23 18:10:12 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/04/27 05:26:55 rsadowski Exp $
 @conflict kdepimlibs-<=4
 @pkgpath productivity/akonadi
 @bin bin/akonadi2xml
@@ -376,8 +376,6 @@ share/icons/hicolor/32x32/apps/akonadi.png
 share/icons/hicolor/48x48/apps/akonadi.png
 share/icons/hicolor/64x64/apps/akonadi.png
 share/icons/hicolor/scalable/apps/akonadi.svgz
-share/kdevappwizard/
-share/kdevappwizard/templates/
 share/kdevappwizard/templates/akonadiresource.tar.bz2
 share/kdevappwizard/templates/akonadiserializer.tar.bz2
 share/kf5/akonadi/

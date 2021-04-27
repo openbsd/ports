@@ -1,8 +1,8 @@
-$OpenBSD: patch-libdialogpages_CMakeLists_txt,v 1.1.1.1 2019/03/03 10:52:30 rsadowski Exp $
+$OpenBSD: patch-src_dialogpages_CMakeLists_txt,v 1.1 2021/04/27 05:27:08 rsadowski Exp $
 
-Index: libdialogpages/CMakeLists.txt
---- libdialogpages/CMakeLists.txt.orig
-+++ libdialogpages/CMakeLists.txt
+Index: src/dialogpages/CMakeLists.txt
+--- src/dialogpages/CMakeLists.txt.orig
++++ src/dialogpages/CMakeLists.txt
 @@ -19,7 +19,7 @@ target_link_libraries(komparedialogpages
          KF5::WidgetsAddons
  )

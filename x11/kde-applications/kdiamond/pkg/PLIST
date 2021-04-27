@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/01/23 18:10:19 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/04/27 05:27:00 rsadowski Exp $
 @pkgpath x11/kde4/kdiamond
 @bin bin/kdiamond
 share/applications/org.kde.kdiamond.desktop
@@ -64,9 +64,6 @@ share/kdiamond/themes/funny_zoo.svgz
 share/knotifications5/kdiamond.notifyrc
 share/knsrcfiles/
 share/knsrcfiles/kdiamond.knsrc
-share/kxmlgui5/
-share/kxmlgui5/kdiamond/
-share/kxmlgui5/kdiamond/kdiamondui.rc
 share/locale/ar/LC_MESSAGES/kdiamond.mo
 share/locale/bg/LC_MESSAGES/kdiamond.mo
 share/locale/bs/LC_MESSAGES/kdiamond.mo

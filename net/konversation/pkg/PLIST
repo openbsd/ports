@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/03/09 05:50:03 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/04/27 05:26:55 rsadowski Exp $
 @bin bin/konversation
 share/applications/org.kde.konversation.desktop
 share/doc/HTML/ca/konversation/
@@ -93,9 +93,6 @@ share/doc/HTML/pt/konversation/index.docbook
 share/doc/HTML/pt_BR/konversation/
 share/doc/HTML/pt_BR/konversation/index.cache.bz2
 share/doc/HTML/pt_BR/konversation/index.docbook
-share/doc/HTML/ru/konversation/
-share/doc/HTML/ru/konversation/index.cache.bz2
-share/doc/HTML/ru/konversation/index.docbook
 share/doc/HTML/sv/konversation/
 share/doc/HTML/sv/konversation/addchannel.png
 share/doc/HTML/sv/konversation/addnetwork_co.png

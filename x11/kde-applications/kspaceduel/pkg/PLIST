@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/04/27 05:27:12 rsadowski Exp $
 @conflict kdegames-*
 @pkgpath x11/kde4/kspaceduel
 @bin bin/kspaceduel
@@ -89,9 +89,6 @@ share/kspaceduel/sprites/playerinfo/ship21.png
 share/kspaceduel/sprites/playerinfo/ship22.png
 share/kspaceduel/sprites/playerinfo/ship23.png
 share/kspaceduel/sprites/playerinfo/win.png
-share/kxmlgui5/
-share/kxmlgui5/kspaceduel/
-share/kxmlgui5/kspaceduel/kspaceduelui.rc
 share/locale/ar/LC_MESSAGES/kspaceduel.mo
 share/locale/bg/LC_MESSAGES/kspaceduel.mo
 share/locale/bs/LC_MESSAGES/kspaceduel.mo

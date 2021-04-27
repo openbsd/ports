@@ -1,8 +1,8 @@
-$OpenBSD: patch-interfaces_CMakeLists_txt,v 1.1.1.1 2019/03/03 10:52:30 rsadowski Exp $
+$OpenBSD: patch-src_interfaces_CMakeLists_txt,v 1.1 2021/04/27 05:27:08 rsadowski Exp $
 
-Index: interfaces/CMakeLists.txt
---- interfaces/CMakeLists.txt.orig
-+++ interfaces/CMakeLists.txt
+Index: src/interfaces/CMakeLists.txt
+--- src/interfaces/CMakeLists.txt.orig
++++ src/interfaces/CMakeLists.txt
 @@ -11,7 +11,7 @@ target_link_libraries(kompareinterface
          Qt5::Core
  )

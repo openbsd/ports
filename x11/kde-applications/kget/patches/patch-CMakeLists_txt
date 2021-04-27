@@ -1,9 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2020/06/14 03:52:06 rsadowski Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2021/04/27 05:27:01 rsadowski Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -138,7 +138,10 @@ include_directories(
+@@ -141,7 +141,10 @@ include_directories(
      ${CMAKE_CURRENT_SOURCE_DIR}
      ${CMAKE_CURRENT_SOURCE_DIR}/core/
      ${CMAKE_CURRENT_BINARY_DIR}/core/
@@ -15,7 +15,7 @@ Index: CMakeLists.txt
  )
  
  if(SQLITE_FOUND)
-@@ -221,7 +224,8 @@ if (Qca-qt5_FOUND)
+@@ -225,7 +228,8 @@ if (Qca-qt5_FOUND)
  endif ()
  
  if (Gpgmepp_FOUND)
@@ -25,7 +25,7 @@ Index: CMakeLists.txt
      kde_enable_exceptions()
  endif()
  
-@@ -322,7 +326,8 @@ if(CMAKE_BUILD_TYPE MATCHES debugfull)
+@@ -326,7 +330,8 @@ if(CMAKE_BUILD_TYPE MATCHES debugfull)
  endif()
  
  if (QGpgme_FOUND)
@@ -34,4 +34,4 @@ Index: CMakeLists.txt
 +  target_link_libraries(kget qgpgme)
  endif()
  
- install(TARGETS kget ${INSTALL_TARGETS_DEFAULT_ARGS})
+ install(TARGETS kget ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

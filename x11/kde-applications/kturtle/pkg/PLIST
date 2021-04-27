@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/11 11:23:08 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/04/27 05:27:14 rsadowski Exp $
 @pkgpath x11/kde4/kturtle
 @bin bin/kturtle
 share/applications/org.kde.kturtle.desktop
@@ -27,6 +27,7 @@ share/doc/HTML/en/kturtle/index.cache.bz2
 share/doc/HTML/en/kturtle/index.docbook
 share/doc/HTML/en/kturtle/mainwindow.png
 share/doc/HTML/en/kturtle/mainwindow_flower_nrs.png
+share/doc/HTML/en/kturtle/media-playback-start.png
 share/doc/HTML/en/kturtle/programming-reference.docbook
 share/doc/HTML/en/kturtle/translator-guide.docbook
 share/doc/HTML/en/kturtle/using-kturtle.docbook

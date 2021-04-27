@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2021/01/23 18:10:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2021/04/27 05:27:16 rsadowski Exp $
 
 COMMENT =	KDE-based library for accessing various Google services
 DISTNAME =	libkgapi-${VERSION}
 CATEGORIES =	www devel
 
 SHARED_LIBS +=  KPimGAPIBlogger       2.0 # 5.13.3
-SHARED_LIBS +=  KPimGAPICalendar      2.0 # 5.13.3
+SHARED_LIBS +=  KPimGAPICalendar      2.1 # 5.13.3
 SHARED_LIBS +=  KPimGAPIContacts      2.0 # 5.13.3
 SHARED_LIBS +=  KPimGAPICore          2.0 # 5.13.3
 SHARED_LIBS +=  KPimGAPIDrive         2.0 # 5.13.3

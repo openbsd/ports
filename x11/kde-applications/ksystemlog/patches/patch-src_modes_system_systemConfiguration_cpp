@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_modes_system_systemConfiguration_cpp,v 1.1 2021/04/27 05:27:12 rsadowski Exp $
+
+Index: src/modes/system/systemConfiguration.cpp
+--- src/modes/system/systemConfiguration.cpp.orig
++++ src/modes/system/systemConfiguration.cpp
+@@ -23,7 +23,11 @@
+ 
+ SystemConfiguration::SystemConfiguration()
+     : GenericLogModeConfiguration(QStringLiteral(SYSTEM_LOG_MODE_ID),
++#if defined(__OpenBSD__)
++                                  QStringList() << QStringLiteral("/var/log/messages"),
++#else
+                                   QStringList() << QStringLiteral("/var/log/syslog"),
++#endif
+                                   QList<int>() << Globals::INFORMATION_LOG_LEVEL_ID)
+ {
+     /*

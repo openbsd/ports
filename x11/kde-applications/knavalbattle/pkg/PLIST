@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/01/23 18:10:23 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/04/27 05:27:07 rsadowski Exp $
 @pkgpath x11/kde4/knavalbattle
 @bin bin/knavalbattle
 share/applications/org.kde.knavalbattle.desktop
 share/doc/HTML/ca/knavalbattle/
+share/doc/HTML/ca/knavalbattle/gameboard.png
 share/doc/HTML/ca/knavalbattle/index.cache.bz2
 share/doc/HTML/ca/knavalbattle/index.docbook
 share/doc/HTML/de/knavalbattle/

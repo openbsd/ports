@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/03/08 18:27:05 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/04/27 05:26:58 rsadowski Exp $
 @pkgpath x11/kde4/kapptemplate
 @bin bin/kapptemplate
 share/applications/org.kde.kapptemplate.desktop
@@ -38,9 +38,6 @@ share/doc/HTML/pt/kapptemplate/index.docbook
 share/doc/HTML/pt_BR/kapptemplate/
 share/doc/HTML/pt_BR/kapptemplate/index.cache.bz2
 share/doc/HTML/pt_BR/kapptemplate/index.docbook
-share/doc/HTML/ru/kapptemplate/
-share/doc/HTML/ru/kapptemplate/index.cache.bz2
-share/doc/HTML/ru/kapptemplate/index.docbook
 share/doc/HTML/sv/kapptemplate/
 share/doc/HTML/sv/kapptemplate/index.cache.bz2
 share/doc/HTML/sv/kapptemplate/index.docbook
@@ -54,8 +51,6 @@ share/icons/hicolor/32x32/apps/kapptemplate.png
 share/icons/hicolor/48x48/apps/kapptemplate.png
 share/icons/hicolor/64x64/apps/kapptemplate.png
 share/icons/hicolor/scalable/apps/kapptemplate.svg
-share/kdevappwizard/
-share/kdevappwizard/templates/
 share/kdevappwizard/templates/kde-frameworks5-simple.tar.bz2
 share/kdevappwizard/templates/kde-frameworks5.tar.bz2
 share/locale/bs/LC_MESSAGES/kapptemplate.mo
@@ -102,3 +97,4 @@ share/locale/zh_TW/LC_MESSAGES/kapptemplate.mo
 share/metainfo/
 share/metainfo/org.kde.kapptemplate.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/qlogging-categories5/kapptemplate.categories

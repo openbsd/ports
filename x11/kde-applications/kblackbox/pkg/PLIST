@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:15 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/04/27 05:26:59 rsadowski Exp $
 @pkgpath x11/kde4/kblackbox
 @bin bin/kblackbox
 share/applications/org.kde.kblackbox.desktop
@@ -46,9 +46,6 @@ share/icons/hicolor/64x64/apps/kblackbox.png
 share/kblackbox/
 share/kblackbox/pics/
 share/kblackbox/pics/kblackbox.svgz
-share/kxmlgui5/
-share/kxmlgui5/kblackbox/
-share/kxmlgui5/kblackbox/kblackboxui.rc
 share/locale/ar/LC_MESSAGES/kblackbox.mo
 share/locale/bg/LC_MESSAGES/kblackbox.mo
 share/locale/bs/LC_MESSAGES/kblackbox.mo

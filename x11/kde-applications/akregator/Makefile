@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2021/01/23 18:10:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2021/04/27 05:26:56 rsadowski Exp $
 
 COMMENT =	news feed reader
 DISTNAME =	akregator-${VERSION}
 CATEGORIES =	net www
 
 SHARED_LIBS +=  akregatorinterfaces       1.0 # 5.13.2
-SHARED_LIBS +=  akregatorprivate          1.0 # 5.13.2
+SHARED_LIBS +=  akregatorprivate          2.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiCore
 WANTLIB += KF5AkonadiMime KF5Auth KF5AuthCore KF5Codecs KF5Completion

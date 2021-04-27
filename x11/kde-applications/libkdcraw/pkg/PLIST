@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/04 05:30:27 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/04/27 05:27:16 rsadowski Exp $
 include/KF5/
 include/KF5/KDCRAW/
 include/KF5/KDCRAW/KDCRAW/
@@ -19,3 +19,5 @@ lib/cmake/KF5KDcraw/KF5KDcrawConfigVersion.cmake
 lib/cmake/KF5KDcraw/KF5KDcrawTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5KDcraw/KF5KDcrawTargets.cmake
 @lib lib/libKF5KDcraw.so.${LIBKF5KDcraw_VERSION}
+share/qlogging-categories5/
+share/qlogging-categories5/libkdcraw.categories

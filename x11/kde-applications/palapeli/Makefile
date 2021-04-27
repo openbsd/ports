@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/01/23 18:10:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2021/04/27 05:27:21 rsadowski Exp $
 
 COMMENT =	jigsaw puzzle game
 DISTNAME =	palapeli-${VERSION}
@@ -6,7 +6,7 @@ CATEGORIES =	games
 
 HOMEPAGE =	https://www.kde.org/applications/games/palapeli
 
-SHARED_LIBS +=  pala                      2.0 # 0.2
+SHARED_LIBS +=  pala                      3.0 # 0.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets

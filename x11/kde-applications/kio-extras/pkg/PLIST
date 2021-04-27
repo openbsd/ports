@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/03/08 18:27:13 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/04/27 05:27:02 rsadowski Exp $
 include/KF5/kio_archivebase.h
 include/KF5/libkioarchive_export.h
 lib/cmake/KioArchive/
@@ -503,18 +503,27 @@ share/doc/HTML/ru/kioslave5/bookmarks/index.docbook
 share/doc/HTML/ru/kioslave5/bzip2/
 share/doc/HTML/ru/kioslave5/bzip2/index.cache.bz2
 share/doc/HTML/ru/kioslave5/bzip2/index.docbook
+share/doc/HTML/ru/kioslave5/fish/
+share/doc/HTML/ru/kioslave5/fish/index.cache.bz2
+share/doc/HTML/ru/kioslave5/fish/index.docbook
 share/doc/HTML/ru/kioslave5/gzip/
 share/doc/HTML/ru/kioslave5/gzip/index.cache.bz2
 share/doc/HTML/ru/kioslave5/gzip/index.docbook
 share/doc/HTML/ru/kioslave5/info/
 share/doc/HTML/ru/kioslave5/info/index.cache.bz2
 share/doc/HTML/ru/kioslave5/info/index.docbook
+share/doc/HTML/ru/kioslave5/man/
+share/doc/HTML/ru/kioslave5/man/index.cache.bz2
+share/doc/HTML/ru/kioslave5/man/index.docbook
 share/doc/HTML/ru/kioslave5/network/
 share/doc/HTML/ru/kioslave5/network/index.cache.bz2
 share/doc/HTML/ru/kioslave5/network/index.docbook
 share/doc/HTML/ru/kioslave5/nfs/
 share/doc/HTML/ru/kioslave5/nfs/index.cache.bz2
 share/doc/HTML/ru/kioslave5/nfs/index.docbook
+share/doc/HTML/ru/kioslave5/recentdocuments/
+share/doc/HTML/ru/kioslave5/recentdocuments/index.cache.bz2
+share/doc/HTML/ru/kioslave5/recentdocuments/index.docbook
 share/doc/HTML/ru/kioslave5/sftp/
 share/doc/HTML/ru/kioslave5/sftp/index.cache.bz2
 share/doc/HTML/ru/kioslave5/sftp/index.docbook
@@ -720,7 +729,9 @@ share/locale/ar/LC_MESSAGES/kio5_sftp.mo
 share/locale/ar/LC_MESSAGES/kio5_smb.mo
 share/locale/ar/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/ast/LC_MESSAGES/kio5_fish.mo
+share/locale/ast/LC_MESSAGES/kio5_info.mo
 share/locale/ast/LC_MESSAGES/kio5_mtp.mo
+share/locale/ast/LC_MESSAGES/kio5_network.mo
 share/locale/ast/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/bg/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/bg/LC_MESSAGES/kio5_activities.mo
@@ -1004,6 +1015,7 @@ share/locale/hu/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/hu/LC_MESSAGES/kio5_fish.mo
 share/locale/hu/LC_MESSAGES/kio5_info.mo
 share/locale/hu/LC_MESSAGES/kio5_man.mo
+share/locale/hu/LC_MESSAGES/kio5_network.mo
 share/locale/hu/LC_MESSAGES/kio5_nfs.mo
 share/locale/hu/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/hu/LC_MESSAGES/kio5_sftp.mo

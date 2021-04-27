@@ -1,11 +1,11 @@
-$OpenBSD: patch-samba_filepropertiesplugin_authhelper_cpp,v 1.1 2021/01/23 18:10:18 rsadowski Exp $
+$OpenBSD: patch-samba_filepropertiesplugin_authhelper_cpp,v 1.2 2021/04/27 05:27:00 rsadowski Exp $
 
 Add OpenBSD usermod support
 
 Index: samba/filepropertiesplugin/authhelper.cpp
 --- samba/filepropertiesplugin/authhelper.cpp.orig
 +++ samba/filepropertiesplugin/authhelper.cpp
-@@ -93,6 +93,12 @@ ActionReply AuthHelper::addtogroup(const QVariantMap &
+@@ -101,6 +101,12 @@ ActionReply AuthHelper::addtogroup(const QVariantMap &
          QStringLiteral("{%1}").arg(group),
          QStringLiteral("-m"),
          QStringLiteral("{%1}").arg(user) });

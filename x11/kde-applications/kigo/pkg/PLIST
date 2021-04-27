@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/01/23 18:10:20 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/04/27 05:27:01 rsadowski Exp $
 @pkgpath x11/kde4/kigo
 @bin bin/kigo
 share/applications/org.kde.kigo.desktop
@@ -95,9 +95,6 @@ share/kigo/themes/plain.desktop
 share/knsrcfiles/
 share/knsrcfiles/kigo-games.knsrc
 share/knsrcfiles/kigo.knsrc
-share/kxmlgui5/
-share/kxmlgui5/kigo/
-share/kxmlgui5/kigo/kigoui.rc
 share/locale/bs/LC_MESSAGES/kigo.mo
 share/locale/ca/LC_MESSAGES/kigo.mo
 share/locale/ca@valencia/LC_MESSAGES/kigo.mo

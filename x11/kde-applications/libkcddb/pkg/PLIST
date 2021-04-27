@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/04/27 05:27:15 rsadowski Exp $
 @conflict kdebase-<4
 include/KF5/KCddb/
 include/KF5/KCddb/Categories
@@ -187,3 +187,4 @@ share/locale/zh_CN/LC_MESSAGES/kcmcddb.mo
 share/locale/zh_CN/LC_MESSAGES/libkcddb.mo
 share/locale/zh_TW/LC_MESSAGES/kcmcddb.mo
 share/locale/zh_TW/LC_MESSAGES/libkcddb.mo
+share/qlogging-categories5/libkcddb.categories

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2021/02/23 19:39:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/04/27 05:26:57 rsadowski Exp $
 
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${VERSION}
@@ -33,6 +33,8 @@ MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
+
+RUN_DEPENDS =	misc/shared-mime-info
 
 LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kcrash \

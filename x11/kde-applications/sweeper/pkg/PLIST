@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/03/08 18:27:34 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/04/27 05:27:23 rsadowski Exp $
 @pkgpath x11/kde4/sweeper
 @bin bin/sweeper
 share/applications/org.kde.sweeper.desktop
@@ -40,9 +40,6 @@ share/doc/HTML/pt_BR/sweeper/
 share/doc/HTML/pt_BR/sweeper/index.cache.bz2
 share/doc/HTML/pt_BR/sweeper/index.docbook
 share/doc/HTML/pt_BR/sweeper/sweeper.png
-share/doc/HTML/ru/sweeper/
-share/doc/HTML/ru/sweeper/index.cache.bz2
-share/doc/HTML/ru/sweeper/index.docbook
 share/doc/HTML/sv/sweeper/
 share/doc/HTML/sv/sweeper/index.cache.bz2
 share/doc/HTML/sv/sweeper/index.docbook
@@ -109,3 +106,4 @@ share/locale/zh_TW/LC_MESSAGES/sweeper.mo
 share/metainfo/
 share/metainfo/org.kde.sweeper.appdata.xml
 @tag update-desktop-database
+share/qlogging-categories5/sweeper.categories

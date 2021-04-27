@@ -1,27 +1,30 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/09/11 11:23:10 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/04/27 05:27:21 rsadowski Exp $
 @pkgpath x11/kde4/palapeli
 @bin bin/palapeli
 include/Pala/
-include/Pala/Slicer
-include/Pala/SlicerJob
-include/Pala/SlicerMode
-include/Pala/SlicerProperty
-include/Pala/SlicerPropertySet
-include/libpala/
-include/libpala/libpala_export.h
-include/libpala/slicer.h
-include/libpala/slicerjob.h
-include/libpala/slicermode.h
-include/libpala/slicerproperty.h
-include/libpala/slicerpropertyset.h
-lib/libpala/
+include/Pala/Pala/
+include/Pala/Pala/Slicer
+include/Pala/Pala/SlicerJob
+include/Pala/Pala/SlicerMode
+include/Pala/Pala/SlicerProperty
+include/Pala/Pala/SlicerPropertySet
+include/Pala/pala/
+include/Pala/pala/libpala_export.h
+include/Pala/pala/slicer.h
+include/Pala/pala/slicerjob.h
+include/Pala/pala/slicermode.h
+include/Pala/pala/slicerproperty.h
+include/Pala/pala/slicerpropertyset.h
+lib/cmake/Pala/
+lib/cmake/Pala/PalaConfig.cmake
+lib/cmake/Pala/PalaConfigVersion.cmake
+lib/cmake/Pala/PalaTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Pala/PalaTargets.cmake
 @lib lib/libpala.so.${LIBpala_VERSION}
-lib/libpala/libpala-config.cmake
-lib/libpala/pala-targets${MODCMAKE_BUILD_SUFFIX}
-lib/libpala/pala-targets.cmake
-@so lib/qt5/plugins/palapeli_goldbergslicer.so
-@so lib/qt5/plugins/palapeli_jigsawslicer.so
-@so lib/qt5/plugins/palapeli_rectslicer.so
+lib/qt5/plugins/palapelislicers/
+@so lib/qt5/plugins/palapelislicers/palapeli_goldbergslicer.so
+@so lib/qt5/plugins/palapelislicers/palapeli_jigsawslicer.so
+@so lib/qt5/plugins/palapelislicers/palapeli_rectslicer.so
 @so lib/qt5/plugins/palathumbcreator.so
 share/applications/org.kde.palapeli.desktop
 share/doc/HTML/de/palapeli/
@@ -81,14 +84,7 @@ share/icons/hicolor/64x64/mimetypes/application-x-palapeli.png
 share/knotifications5/palapeli.notifyrc
 share/kservices5/ServiceMenus/
 share/kservices5/ServiceMenus/palapeli_servicemenu.desktop
-share/kservices5/palapeli_goldbergslicer.desktop
-share/kservices5/palapeli_jigsawslicer.desktop
-share/kservices5/palapeli_rectslicer.desktop
 share/kservices5/palathumbcreator.desktop
-share/kservicetypes5/libpala-slicerplugin.desktop
-share/kxmlgui5/
-share/kxmlgui5/palapeli/
-share/kxmlgui5/palapeli/palapeliui.rc
 share/locale/bs/LC_MESSAGES/palapeli.mo
 share/locale/ca/LC_MESSAGES/palapeli.mo
 share/locale/ca@valencia/LC_MESSAGES/palapeli.mo

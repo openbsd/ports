@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_modes_kernel_kernelLogMode_cpp,v 1.1 2021/04/27 05:27:12 rsadowski Exp $
+
+Index: src/modes/kernel/kernelLogMode.cpp
+--- src/modes/kernel/kernelLogMode.cpp.orig
++++ src/modes/kernel/kernelLogMode.cpp
+@@ -57,6 +57,6 @@ Analyzer *KernelLogMode::createAnalyzer(const QVariant
+ 
+ QVector<LogFile> KernelLogMode::createLogFiles()
+ {
+-    const QVector<LogFile> logFiles{LogFile(QUrl::fromLocalFile(QStringLiteral("/bin/dmesg")), Globals::instance().informationLogLevel())};
++    const QVector<LogFile> logFiles{LogFile(QUrl::fromLocalFile(QStringLiteral("/sbin/dmesg")), Globals::instance().informationLogLevel())};
+     return logFiles;
+ }

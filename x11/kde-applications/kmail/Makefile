@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2021/01/23 18:10:22 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2021/04/27 05:27:05 rsadowski Exp $
 
 COMMENT =	KDE PIM email client
 DISTNAME =	kmail-${VERSION}
 CATEGORIES =	net mail
 
-SHARED_LIBS +=  kmailprivate       2.0 # 5.13.2
+SHARED_LIBS +=  kmailprivate       3.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiAgentBase KF5AkonadiContact
 WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiSearchDebug

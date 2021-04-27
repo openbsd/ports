@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:12 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/04/27 05:26:56 rsadowski Exp $
 @pkgpath x11/kde4/ark
 @bin bin/ark
 @lib lib/libkerfuffle.so.${LIBkerfuffle_VERSION}
@@ -93,10 +93,8 @@ share/icons/hicolor/64x64/apps/ark.png
 share/icons/hicolor/scalable/apps/ark.svgz
 share/kservices5/ark_part.desktop
 share/kservicetypes5/kerfufflePlugin.desktop
-share/kxmlgui5/
-share/kxmlgui5/ark/
-share/kxmlgui5/ark/ark_viewer.rc
 share/locale/ar/LC_MESSAGES/ark.mo
+share/locale/ast/LC_MESSAGES/ark.mo
 share/locale/bg/LC_MESSAGES/ark.mo
 share/locale/bs/LC_MESSAGES/ark.mo
 share/locale/ca/LC_MESSAGES/ark.mo

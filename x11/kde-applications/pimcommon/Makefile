@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2021/01/23 18:10:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2021/04/27 05:27:21 rsadowski Exp $
 
 COMMENT =	common libraries for KDE PIM
 DISTNAME =	pimcommon-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KF5PimCommon              2.1 # 5.13.3
-SHARED_LIBS +=  KF5PimCommonAkonadi       3.0 # 5.13.3
+SHARED_LIBS +=  KF5PimCommon              2.2 # 5.13.3
+SHARED_LIBS +=  KF5PimCommonAkonadi       4.0 # 5.13.3
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiContact KF5AkonadiCore
 WANTLIB += KF5AkonadiSearchPIM KF5AkonadiWidgets KF5Archive KF5Attica
@@ -44,13 +44,13 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kxmlgui \
 		devel/kf5/purpose \
 		x11/kde-applications/akonadi \
-		x11/kde-applications/akonadi-search \
 		x11/kde-applications/akonadi-contacts \
+		x11/kde-applications/akonadi-search \
 		x11/kde-applications/kimap \
+		x11/kde-applications/kldap \
 		x11/kde-applications/kmime \
 		x11/kde-applications/kpimtextedit \
-		x11/kde-applications/libkdepim \
-		x11/kde-applications/kldap
+		x11/kde-applications/libkdepim
 
 TEST_IS_INTERACTIVE =	X11
 

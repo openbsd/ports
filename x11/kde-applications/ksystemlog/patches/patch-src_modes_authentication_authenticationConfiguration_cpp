@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_modes_authentication_authenticationConfiguration_cpp,v 1.1 2021/04/27 05:27:12 rsadowski Exp $
+
+Index: src/modes/authentication/authenticationConfiguration.cpp
+--- src/modes/authentication/authenticationConfiguration.cpp.orig
++++ src/modes/authentication/authenticationConfiguration.cpp
+@@ -25,7 +25,11 @@ AuthenticationConfiguration::AuthenticationConfigurati
+ {
+     mConfiguration->setCurrentGroup(QStringLiteral("AuthenticationLogMode"));
+ 
++#if defined(__OpenBSD__)
++    const QString defaultAuthenticationPath{QStringLiteral("/var/log/authlog")};
++#else
+     const QString defaultAuthenticationPath{QStringLiteral("/var/log/auth.log")};
++#endif
+     mConfiguration->addItemString(QStringLiteral("LogFilePath"), mAuthenticationPath, defaultAuthenticationPath, QStringLiteral("LogFilePath"));
+ 
+     const QStringList defaultWarningKeywords{QStringLiteral("failed")};

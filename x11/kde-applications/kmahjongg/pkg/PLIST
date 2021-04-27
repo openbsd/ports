@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:21 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/04/27 05:27:05 rsadowski Exp $
 @pkgpath x11/kde4/kmahjongg
 @bin bin/kmahjongg
 share/applications/org.kde.kmahjongg.desktop
@@ -257,9 +257,6 @@ share/kmahjongg/layouts/up&down.desktop
 share/kmahjongg/layouts/up&down.layout
 share/kmahjongg/layouts/well.desktop
 share/kmahjongg/layouts/well.layout
-share/kxmlgui5/
-share/kxmlgui5/kmahjongg/
-share/kxmlgui5/kmahjongg/kmahjonggui.rc
 share/locale/ar/LC_MESSAGES/kmahjongg.mo
 share/locale/bg/LC_MESSAGES/kmahjongg.mo
 share/locale/bs/LC_MESSAGES/kmahjongg.mo

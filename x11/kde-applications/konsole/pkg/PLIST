@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/03/08 18:27:21 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/04/27 05:27:09 rsadowski Exp $
 @conflict kdebase-<4
 @pkgpath x11/kde4/konsole
 @bin bin/konsole
@@ -32,9 +32,6 @@ share/doc/HTML/pt_BR/konsole/
 share/doc/HTML/pt_BR/konsole/draganddrop-contextmenu.png
 share/doc/HTML/pt_BR/konsole/index.cache.bz2
 share/doc/HTML/pt_BR/konsole/index.docbook
-share/doc/HTML/ru/konsole/
-share/doc/HTML/ru/konsole/index.cache.bz2
-share/doc/HTML/ru/konsole/index.docbook
 share/doc/HTML/sr/konsole/
 share/doc/HTML/sr/konsole/index.cache.bz2
 share/doc/HTML/sr/konsole/index.docbook
@@ -72,7 +69,6 @@ share/konsole/linux.keytab
 share/konsole/macos.keytab
 share/konsole/solaris.keytab
 share/kservices5/ServiceMenus/
-share/kservices5/ServiceMenus/konsolehere.desktop
 share/kservices5/ServiceMenus/konsolerun.desktop
 share/kservices5/konsolepart.desktop
 share/kservicetypes5/terminalemulator.desktop

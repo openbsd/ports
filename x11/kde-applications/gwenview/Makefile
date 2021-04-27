@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2020/11/03 16:12:32 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2021/04/27 05:26:57 rsadowski Exp $
 
 COMMENT =	KDE image viewer
 DISTNAME =	gwenview-${VERSION}
 CATEGORIES =	graphics x11
 
-SHARED_LIBS +=  gwenviewlib               55.0 # 4.97
+SHARED_LIBS +=  gwenviewlib               56.0 # 4.97
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Auth KF5AuthCore
 WANTLIB += KF5Baloo KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore

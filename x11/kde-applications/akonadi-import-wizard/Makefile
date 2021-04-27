@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2021/01/23 18:10:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2021/04/27 05:26:56 rsadowski Exp $
 
 COMMENT =	PIM Akonadi import wizard
 DISTNAME =	akonadi-import-wizard-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KPimImportWizard       1.0 # 5.13.2
+SHARED_LIBS +=  KPimImportWizard       1.1 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiContact KF5AkonadiCore
 WANTLIB += KF5AkonadiMime KF5AkonadiWidgets KF5Archive KF5Auth

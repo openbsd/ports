@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/03 05:13:35 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/04/27 05:26:56 rsadowski Exp $
 @pkgpath x11/kde4/bomber
 @bin bin/bomber
 share/applications/org.kde.bomber.desktop
@@ -66,9 +66,6 @@ share/icons/hicolor/128x128/apps/bomber.png
 share/icons/hicolor/32x32/apps/bomber.png
 share/icons/hicolor/48x48/apps/bomber.png
 share/icons/hicolor/64x64/apps/bomber.png
-share/kxmlgui5/
-share/kxmlgui5/bomber/
-share/kxmlgui5/bomber/bomberui.rc
 share/locale/ar/LC_MESSAGES/bomber.mo
 share/locale/bg/LC_MESSAGES/bomber.mo
 share/locale/bs/LC_MESSAGES/bomber.mo

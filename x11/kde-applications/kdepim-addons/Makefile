@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/01/23 18:10:19 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2021/04/27 05:27:00 rsadowski Exp $
 
 COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-addons-${VERSION}
@@ -11,12 +11,12 @@ SHARED_LIBS +=  grammarcommon                            1.0 # 5.13.2
 SHARED_LIBS +=  kaddressbookimportexportlibprivate       1.0 # 5.13.2
 SHARED_LIBS +=  kaddressbookmergelibprivate              1.0 # 5.13.2
 SHARED_LIBS +=  kmailgrammalecte                         1.0 # 5.13.2
-SHARED_LIBS +=  kmaillanguagetool                        1.0 # 5.13.2
+SHARED_LIBS +=  kmaillanguagetool                        2.0 # 5.13.2
 SHARED_LIBS +=  kmailmarkdown                            1.0 # 5.13.2
 SHARED_LIBS +=  kmailquicktextpluginprivate              1.0 # 5.13.2
 SHARED_LIBS +=  shorturlpluginprivate                    1.0 # 5.13.2
 SHARED_LIBS +=  expireaccounttrashfolderconfig           0.0 # 5.16.1
-SHARED_LIBS +=  folderconfiguresettings                  0.0 # 5.16.1
+SHARED_LIBS +=  folderconfiguresettings                  0.1 # 5.16.1
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiCalendar
 WANTLIB += KF5AkonadiContact KF5AkonadiCore KF5AkonadiMime KF5AkonadiNotes

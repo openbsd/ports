@@ -1,12 +1,14 @@
-$OpenBSD: patch-src_net_address_h,v 1.1.1.1 2013/04/24 19:23:44 zhuk Exp $
---- src/net/address.h.orig	Sun Jun 10 17:00:06 2012
-+++ src/net/address.h	Sun Jun 10 17:01:40 2012
-@@ -20,6 +20,8 @@
- #ifndef NETADDRESS_H
- #define NETADDRESS_H
+$OpenBSD: patch-src_net_address_h,v 1.2 2021/04/27 05:26:55 rsadowski Exp $
+Index: src/net/address.h
+--- src/net/address.h.orig
++++ src/net/address.h
+@@ -25,6 +25,9 @@
+ #include <netinet/in.h>
+ #include <util/constants.h>
  
 +#include <sys/types.h>
 +#include <sys/socket.h>
- #include <netinet/in.h>
- #include <QHostAddress>
- #include <util/constants.h>
++
+ namespace net
+ {
+ using bt::Uint16;

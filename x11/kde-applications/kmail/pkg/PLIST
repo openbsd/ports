@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/01/23 18:10:22 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/04/27 05:27:05 rsadowski Exp $
 @conflict kdepimlibs-<=4
 @bin bin/akonadi_archivemail_agent
 @bin bin/akonadi_followupreminder_agent
 @bin bin/akonadi_mailfilter_agent
+@bin bin/akonadi_mailmerge_agent
 @bin bin/akonadi_sendlater_agent
 @bin bin/akonadi_unifiedmailbox_agent
 @bin bin/kmail
@@ -21,6 +22,7 @@ lib/qt5/plugins/kontact5/
 share/akonadi/agents/archivemailagent.desktop
 share/akonadi/agents/followupreminder.desktop
 share/akonadi/agents/mailfilteragent.desktop
+share/akonadi/agents/mailmergeagent.desktop
 share/akonadi/agents/sendlateragent.desktop
 share/akonadi/agents/unifiedmailboxagent.desktop
 share/applications/kmail_view.desktop
@@ -98,21 +100,41 @@ share/doc/HTML/en/akonadi_sendlater_agent/index.docbook
 share/doc/HTML/en/akonadi_sendlater_agent/sendlateragent-configure.png
 share/doc/HTML/en/akonadi_sendlater_agent/sendlateragent-dialog.png
 share/doc/HTML/en/kmail2/
+share/doc/HTML/en/kmail2/accounts-ldap.png
+share/doc/HTML/en/kmail2/accounts-receiving.png
+share/doc/HTML/en/kmail2/accounts-sending.png
 share/doc/HTML/en/kmail2/accountwizard.png
 share/doc/HTML/en/kmail2/accountwizard2.png
 share/doc/HTML/en/kmail2/accountwizard3.png
 share/doc/HTML/en/kmail2/accountwizard4.png
-share/doc/HTML/en/kmail2/aggregationtheme.png
+share/doc/HTML/en/kmail2/appearancecolors.png
+share/doc/HTML/en/kmail2/appearancefonts.png
+share/doc/HTML/en/kmail2/appearancegeneral.png
+share/doc/HTML/en/kmail2/appearancelayout.png
+share/doc/HTML/en/kmail2/appearancelist.png
+share/doc/HTML/en/kmail2/appearancetags.png
 share/doc/HTML/en/kmail2/composer-window.png
+share/doc/HTML/en/kmail2/composerattach.png
+share/doc/HTML/en/kmail2/composercharset.png
+share/doc/HTML/en/kmail2/composercorrect.png
+share/doc/HTML/en/kmail2/composercustom.png
+share/doc/HTML/en/kmail2/composergeneral.png
+share/doc/HTML/en/kmail2/composerheaders.png
+share/doc/HTML/en/kmail2/composerresize.png
+share/doc/HTML/en/kmail2/composerstandard.png
+share/doc/HTML/en/kmail2/composersubject.png
 share/doc/HTML/en/kmail2/configure.docbook
 share/doc/HTML/en/kmail2/configure.png
 share/doc/HTML/en/kmail2/configurebutton.png
 share/doc/HTML/en/kmail2/credits-and-licenses.docbook
+share/doc/HTML/en/kmail2/dialog-cancel.png
+share/doc/HTML/en/kmail2/dialog-ok-apply.png
 share/doc/HTML/en/kmail2/document-decrypt.png
 share/doc/HTML/en/kmail2/document-edit.png
 share/doc/HTML/en/kmail2/document-import.png
 share/doc/HTML/en/kmail2/document-new.png
 share/doc/HTML/en/kmail2/document-open.png
+share/doc/HTML/en/kmail2/edit-undo.png
 share/doc/HTML/en/kmail2/faq.docbook
 share/doc/HTML/en/kmail2/filter-dialog.png
 share/doc/HTML/en/kmail2/folder-example.png
@@ -144,15 +166,23 @@ share/doc/HTML/en/kmail2/mail-thread-ignored.png
 share/doc/HTML/en/kmail2/mail-thread-watch.png
 share/doc/HTML/en/kmail2/menus.docbook
 share/doc/HTML/en/kmail2/message.png
-share/doc/HTML/en/kmail2/messagelisttheme.png
+share/doc/HTML/en/kmail2/miscfolders.png
+share/doc/HTML/en/kmail2/miscinvite.png
+share/doc/HTML/en/kmail2/miscprint.png
 share/doc/HTML/en/kmail2/newidentity.png
 share/doc/HTML/en/kmail2/newidentity2.png
 share/doc/HTML/en/kmail2/preferences-desktop-font.png
 share/doc/HTML/en/kmail2/preview.png
 share/doc/HTML/en/kmail2/receiving.png
+share/doc/HTML/en/kmail2/securitycomposing.png
+share/doc/HTML/en/kmail2/securitymdn.png
+share/doc/HTML/en/kmail2/securitymisc.png
+share/doc/HTML/en/kmail2/securityreading.png
+share/doc/HTML/en/kmail2/securitysmime.png
 share/doc/HTML/en/kmail2/sending.png
 share/doc/HTML/en/kmail2/sending2.png
 share/doc/HTML/en/kmail2/smile.png
+share/doc/HTML/en/kmail2/system-help.png
 share/doc/HTML/en/kmail2/troubleshooting.docbook
 share/doc/HTML/en/kmail2/using-kmail.docbook
 share/doc/HTML/en/ktnef/
@@ -301,14 +331,52 @@ share/doc/HTML/uk/akonadi_sendlater_agent/index.docbook
 share/doc/HTML/uk/akonadi_sendlater_agent/sendlateragent-configure.png
 share/doc/HTML/uk/akonadi_sendlater_agent/sendlateragent-dialog.png
 share/doc/HTML/uk/kmail2/
+share/doc/HTML/uk/kmail2/accounts-ldap.png
+share/doc/HTML/uk/kmail2/accounts-receiving.png
+share/doc/HTML/uk/kmail2/accounts-sending.png
+share/doc/HTML/uk/kmail2/appearancecolors.png
+share/doc/HTML/uk/kmail2/appearancefonts.png
+share/doc/HTML/uk/kmail2/appearancegeneral.png
+share/doc/HTML/uk/kmail2/appearancelayout.png
+share/doc/HTML/uk/kmail2/appearancelist.png
+share/doc/HTML/uk/kmail2/appearancetags.png
+share/doc/HTML/uk/kmail2/composer-window.png
+share/doc/HTML/uk/kmail2/composerattach.png
+share/doc/HTML/uk/kmail2/composercharset.png
+share/doc/HTML/uk/kmail2/composercorrect.png
+share/doc/HTML/uk/kmail2/composercustom.png
+share/doc/HTML/uk/kmail2/composergeneral.png
+share/doc/HTML/uk/kmail2/composerheaders.png
+share/doc/HTML/uk/kmail2/composerresize.png
+share/doc/HTML/uk/kmail2/composerstandard.png
+share/doc/HTML/uk/kmail2/composersubject.png
 share/doc/HTML/uk/kmail2/configure.docbook
 share/doc/HTML/uk/kmail2/credits-and-licenses.docbook
 share/doc/HTML/uk/kmail2/faq.docbook
+share/doc/HTML/uk/kmail2/folder-example.png
+share/doc/HTML/uk/kmail2/folder-properties.png
 share/doc/HTML/uk/kmail2/getting-started.docbook
+share/doc/HTML/uk/kmail2/identitiesadvanced.png
+share/doc/HTML/uk/kmail2/identitycryptography.png
+share/doc/HTML/uk/kmail2/identitygeneral.png
+share/doc/HTML/uk/kmail2/identitypicture.png
+share/doc/HTML/uk/kmail2/identitysignature.png
+share/doc/HTML/uk/kmail2/identitytemplate.png
 share/doc/HTML/uk/kmail2/index.cache.bz2
 share/doc/HTML/uk/kmail2/index.docbook
 share/doc/HTML/uk/kmail2/intro.docbook
 share/doc/HTML/uk/kmail2/menus.docbook
+share/doc/HTML/uk/kmail2/miscfolders.png
+share/doc/HTML/uk/kmail2/miscinvite.png
+share/doc/HTML/uk/kmail2/miscprint.png
+share/doc/HTML/uk/kmail2/receiving.png
+share/doc/HTML/uk/kmail2/securitycomposing.png
+share/doc/HTML/uk/kmail2/securitymdn.png
+share/doc/HTML/uk/kmail2/securitymisc.png
+share/doc/HTML/uk/kmail2/securityreading.png
+share/doc/HTML/uk/kmail2/securitysmime.png
+share/doc/HTML/uk/kmail2/sending.png
+share/doc/HTML/uk/kmail2/sending2.png
 share/doc/HTML/uk/kmail2/troubleshooting.docbook
 share/doc/HTML/uk/kmail2/using-kmail.docbook
 share/doc/HTML/uk/ktnef/
@@ -374,6 +442,7 @@ share/kmail2/pics/pgp-keys.png
 share/knotifications5/akonadi_archivemail_agent.notifyrc
 share/knotifications5/akonadi_followupreminder_agent.notifyrc
 share/knotifications5/akonadi_mailfilter_agent.notifyrc
+share/knotifications5/akonadi_mailmerge_agent.notifyrc
 share/knotifications5/akonadi_sendlater_agent.notifyrc
 share/knotifications5/kmail2.notifyrc
 share/kontact/

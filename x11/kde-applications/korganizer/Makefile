@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/01/23 18:10:24 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2021/04/27 05:27:09 rsadowski Exp $
 
 COMMENT =	calendar and scheduling component of kontact
 DISTNAME =	korganizer-${VERSION}
@@ -6,7 +6,7 @@ CATEGORIES =	net www
 
 SHARED_LIBS +=  korganizer_core         1.0 # 5.13.2
 SHARED_LIBS +=  korganizer_interfaces   1.0 # 5.13.2
-SHARED_LIBS +=  korganizerprivate       2.0 # 5.13.2
+SHARED_LIBS +=  korganizerprivate       3.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF5AkonadiCalendar KF5AkonadiContact
 WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiNotes KF5AkonadiSearchPIM

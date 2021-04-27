@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:21 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/04/27 05:27:04 rsadowski Exp $
 @pkgpath x11/kde4/klickety
 @bin bin/klickety
 share/applications/org.kde.klickety.desktop
@@ -87,9 +87,6 @@ share/klickety/themes/ksame_old.desktop
 share/klickety/themes/ksame_old.svg
 share/klickety/themes/ksame_old_preview.png
 share/klickety/themes/ksame_preview.png
-share/kxmlgui5/
-share/kxmlgui5/klickety/
-share/kxmlgui5/klickety/klicketyui.rc
 share/locale/bs/LC_MESSAGES/klickety.mo
 share/locale/ca/LC_MESSAGES/klickety.mo
 share/locale/ca@valencia/LC_MESSAGES/klickety.mo

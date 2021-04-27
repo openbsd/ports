@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/01/23 18:10:29 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/04/27 05:27:20 rsadowski Exp $
 @pkgpath x11/kde4/okular
 @bin bin/okular
 include/okular/
@@ -123,6 +123,7 @@ share/doc/HTML/en/okular/annotation-properties.png
 share/doc/HTML/en/okular/annotations.png
 share/doc/HTML/en/okular/bookmark-management.png
 share/doc/HTML/en/okular/bookmarks.png
+share/doc/HTML/en/okular/config-pdf-digital-signatures.png
 share/doc/HTML/en/okular/configure-annotations.png
 share/doc/HTML/en/okular/configure-backends.png
 share/doc/HTML/en/okular/configure-editor.png

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/01/23 18:10:22 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2021/04/27 05:27:06 rsadowski Exp $
 
 COMMENT =	sound channel mixer and volume control
 DISTNAME =	kmix-${VERSION}
@@ -6,7 +6,7 @@ CATEGORIES =	audio
 
 HOMEPAGE =	https://kde.org/applications/multimedia/org.kde.kmix
 
-SHARED_LIBS +=  kmixcore                3.0 # 5.13.80
+SHARED_LIBS +=  kmixcore                2.0 # 5.13.80
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5DBusAddons

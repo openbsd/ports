@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:18 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/04/27 05:27:01 rsadowski Exp $
 @pkgpath x11/kde4/kgeography
 @bin bin/kgeography
 share/applications/org.kde.kgeography.desktop
@@ -26,6 +26,7 @@ share/doc/HTML/de/kgeography/index.docbook
 share/doc/HTML/de/kgeography/kgeography.png
 share/doc/HTML/de/kgeography/zoom.png
 share/doc/HTML/en/kgeography/
+share/doc/HTML/en/kgeography/dialog-information.png
 share/doc/HTML/en/kgeography/first-start1.png
 share/doc/HTML/en/kgeography/first-start10.png
 share/doc/HTML/en/kgeography/first-start11.png

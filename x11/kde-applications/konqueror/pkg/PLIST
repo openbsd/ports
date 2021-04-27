@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/01/23 18:10:24 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/04/27 05:27:08 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @conflict kdebase-*
@@ -28,7 +28,6 @@ lib/cmake/KF5Konq/KF5KonqTargets.cmake
 @so lib/qt5/plugins/autorefresh.so
 @so lib/qt5/plugins/babelfishplugin.so
 @so lib/qt5/plugins/dirfilterplugin.so
-@so lib/qt5/plugins/fsviewpart.so
 @so lib/qt5/plugins/kcm_bookmarks.so
 @so lib/qt5/plugins/kcm_history.so
 @so lib/qt5/plugins/kcm_konq.so
@@ -37,12 +36,13 @@ lib/cmake/KF5Konq/KF5KonqTargets.cmake
 lib/qt5/plugins/kf5/kfileitemaction/
 @so lib/qt5/plugins/kf5/kfileitemaction/akregatorplugin.so
 lib/qt5/plugins/kf5/parts/
+@so lib/qt5/plugins/kf5/parts/fsviewpart.so
+@so lib/qt5/plugins/kf5/parts/konq_sidebar.so
 @so lib/qt5/plugins/kf5/parts/webenginepart.so
 @so lib/qt5/plugins/khtmlsettingsplugin.so
 @so lib/qt5/plugins/khtmlttsplugin.so
 @so lib/qt5/plugins/kimgallery.so
 @so lib/qt5/plugins/konq_shellcmdplugin.so
-@so lib/qt5/plugins/konq_sidebar.so
 @so lib/qt5/plugins/konqsidebar_bookmarks.so
 @so lib/qt5/plugins/konqsidebar_history.so
 @so lib/qt5/plugins/konqsidebar_places.so
@@ -1043,6 +1043,7 @@ share/locale/de/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/de/LC_MESSAGES/libkonq.mo
 share/locale/de/LC_MESSAGES/searchbarplugin.mo
 share/locale/de/LC_MESSAGES/uachangerplugin.mo
+share/locale/de/LC_MESSAGES/webarchiver.mo
 share/locale/de/LC_MESSAGES/webenginepart.mo
 share/locale/el/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/el/LC_MESSAGES/autorefresh.mo

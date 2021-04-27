@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:23 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/04/27 05:27:09 rsadowski Exp $
 @pkgpath x11/kde4/konquest
 @bin bin/konquest
 share/applications/org.kde.konquest.desktop
@@ -60,9 +60,6 @@ share/konquest/
 share/konquest/pics/
 share/konquest/pics/default_theme.svgz
 share/konquest/pics/konquest-splash.png
-share/kxmlgui5/
-share/kxmlgui5/konquest/
-share/kxmlgui5/konquest/konquestui.rc
 share/locale/ar/LC_MESSAGES/konquest.mo
 share/locale/bg/LC_MESSAGES/konquest.mo
 share/locale/bs/LC_MESSAGES/konquest.mo

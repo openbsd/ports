@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/09/07 14:49:17 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/04/27 05:27:00 rsadowski Exp $
 @bin bin/kdebugsettings
 @lib lib/libkdebugsettings.so.${LIBkdebugsettings_VERSION}
 share/applications/org.kde.kdebugsettings.desktop
+share/kdebugsettings/
+share/kdebugsettings/groups/
+share/kdebugsettings/groups/Full Debug Ruqola
 share/locale/ar/LC_MESSAGES/kdebugsettings.mo
 share/locale/ca/LC_MESSAGES/kdebugsettings.mo
 share/locale/ca@valencia/LC_MESSAGES/kdebugsettings.mo

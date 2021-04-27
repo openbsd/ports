@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/01/23 18:10:13 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/04/27 05:26:56 rsadowski Exp $
 include/KF5/Akonadi/
 include/KF5/Akonadi/Notes/
 include/KF5/Akonadi/Notes/NoteUtils
@@ -17,6 +17,7 @@ lib/cmake/KF5AkonadiNotes/KF5AkonadiNotesTargets.cmake
 share/kf5/mkspecs/qt_AkonadiNotes.pri
 share/locale/ar/LC_MESSAGES/akonadinotes5.mo
 share/locale/ast/LC_MESSAGES/akonadinotes5.mo
+share/locale/bg/LC_MESSAGES/akonadinotes5.mo
 share/locale/bs/LC_MESSAGES/akonadinotes5.mo
 share/locale/ca/LC_MESSAGES/akonadinotes5.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadinotes5.mo

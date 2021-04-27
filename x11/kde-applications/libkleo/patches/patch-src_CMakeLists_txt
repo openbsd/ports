@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.4 2021/01/23 18:10:27 rsadowski Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.5 2021/04/27 05:27:17 rsadowski Exp $
 
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
@@ -13,7 +13,7 @@ Index: src/CMakeLists.txt
  
  add_definitions(-DTRANSLATION_DOMAIN=\"libkleopatra\")
  
-@@ -82,7 +84,7 @@ ki18n_wrap_ui(libkleo_ui_common_SRCS
+@@ -87,7 +89,7 @@ ki18n_wrap_ui(libkleo_ui_common_SRCS
  set(kleo_LIB_SRCS ${libkleo_core_SRCS} ${libkleo_ui_SRCS}
                                         ${libkleo_ui_common_SRCS})
  
@@ -22,7 +22,7 @@ Index: src/CMakeLists.txt
                                                  KF5::I18n
                                                  KF5::Completion
                                                  KF5::ConfigCore
-@@ -118,7 +120,7 @@ install(TARGETS
+@@ -126,7 +128,7 @@ install(TARGETS
  
  
  

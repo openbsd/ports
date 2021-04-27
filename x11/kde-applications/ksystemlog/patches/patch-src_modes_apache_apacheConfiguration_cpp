@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_modes_apache_apacheConfiguration_cpp,v 1.1 2021/04/27 05:27:12 rsadowski Exp $
+
+Index: src/modes/apache/apacheConfiguration.cpp
+--- src/modes/apache/apacheConfiguration.cpp.orig
++++ src/modes/apache/apacheConfiguration.cpp
+@@ -25,10 +25,19 @@ ApacheConfiguration::ApacheConfiguration()
+ {
+     mConfiguration->setCurrentGroup(QStringLiteral("ApacheLogMode"));
+ 
++#if defined(__OpenBSD__)
++    const QStringList defaultApachePaths{QStringLiteral("/var/apache2/logs/error_log"), QStringLiteral("/var/www/logs/error_log")};
++#else
+     const QStringList defaultApachePaths{QStringLiteral("/var/log/apache2/error.log")};
++#endif
++
+     mConfiguration->addItemStringList(QStringLiteral("ApacheLogFilesPaths"), mApachePaths, defaultApachePaths, QStringLiteral("ApacheLogFilesPaths"));
+ 
++#if defined(__OpenBSD__)
++    const QStringList defaultApacheAccessPaths{QStringLiteral("/var/apache2/logs/access_log")};
++#else
+     const QStringList defaultApacheAccessPaths{QStringLiteral("/var/log/apache2/access.log")};
++#endif
+     mConfiguration->addItemStringList(QStringLiteral("ApacheAccessLogFilesPaths"),
+                                       mApacheAccessPaths,
+                                       defaultApacheAccessPaths,

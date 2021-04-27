@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/03/08 18:27:03 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/04/27 05:26:58 rsadowski Exp $
 @bin bin/kalarm
 @bin bin/kalarmautostart
 @bin libexec/kauth/kalarm_helper
@@ -46,9 +46,6 @@ share/doc/HTML/pt/kalarm/index.docbook
 share/doc/HTML/pt_BR/kalarm/
 share/doc/HTML/pt_BR/kalarm/index.cache.bz2
 share/doc/HTML/pt_BR/kalarm/index.docbook
-share/doc/HTML/ru/kalarm/
-share/doc/HTML/ru/kalarm/index.cache.bz2
-share/doc/HTML/ru/kalarm/index.docbook
 share/doc/HTML/sv/kalarm/
 share/doc/HTML/sv/kalarm/index.cache.bz2
 share/doc/HTML/sv/kalarm/index.docbook

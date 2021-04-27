@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2021/03/15 15:55:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2021/04/27 05:27:22 rsadowski Exp $
 
 COMMENT =	convert PO files to XML
 DISTNAME =	poxml-${VERSION}
 CATEGORIES =	x11 devel
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Xml c gettextpo m
 

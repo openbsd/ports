@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2020/11/03 16:12:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2021/04/27 05:27:05 rsadowski Exp $
 
 COMMENT =	mail transport service
 DISTNAME =	kmailtransport-${VERSION}
 CATEGORIES =	mail devel
 
-SHARED_LIBS +=  KF5MailTransport             1.0 # 5.13.3
+SHARED_LIBS +=  KF5MailTransport             2.0 # 5.13.3
 SHARED_LIBS +=  KF5MailTransportAkonadi      1.0 # 5.13.3
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCore KF5AkonadiMime KF5Auth

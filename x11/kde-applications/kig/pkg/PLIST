@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/09/07 14:49:19 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/04/27 05:27:01 rsadowski Exp $
 @pkgpath x11/kde4/kig
 @bin bin/kig
 bin/pykig.py
@@ -31,16 +31,22 @@ share/doc/HTML/en/kig/constructed_a_point.png
 share/doc/HTML/en/kig/constructed_script_object.png
 share/doc/HTML/en/kig/constructing_a_circle.png
 share/doc/HTML/en/kig/constructing_a_circle_2.png
+share/doc/HTML/en/kig/edit-delete.png
 share/doc/HTML/en/kig/edit_types_dialog.png
 share/doc/HTML/en/kig/index.cache.bz2
 share/doc/HTML/en/kig/index.docbook
+share/doc/HTML/en/kig/kig_text.png
+share/doc/HTML/en/kig/locus.png
 share/doc/HTML/en/kig/macro_wizard.png
 share/doc/HTML/en/kig/macros_at_work.png
+share/doc/HTML/en/kig/process-stop.png
 share/doc/HTML/en/kig/script_wizard.png
 share/doc/HTML/en/kig/script_wizard_entering_code.png
 share/doc/HTML/en/kig/selecting_objects.png
 share/doc/HTML/en/kig/simple_locus_construction.png
+share/doc/HTML/en/kig/system-run.png
 share/doc/HTML/en/kig/test_run_macro.png
+share/doc/HTML/en/kig/text-x-python3.png
 share/doc/HTML/en/kig/text_label_attaching.png
 share/doc/HTML/en/kig/text_label_wizard.png
 share/doc/HTML/en/kig/text_label_wizard__select_property.png

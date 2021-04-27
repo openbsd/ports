@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_modes_cron_cronConfiguration_cpp,v 1.1 2021/04/27 05:27:12 rsadowski Exp $
+
+Index: src/modes/cron/cronConfiguration.cpp
+--- src/modes/cron/cronConfiguration.cpp.orig
++++ src/modes/cron/cronConfiguration.cpp
+@@ -25,7 +25,11 @@ CronConfiguration::CronConfiguration()
+ {
+     mConfiguration->setCurrentGroup(QStringLiteral("CronLogMode"));
+ 
++#if defined(__OpenBSD__)
++    const QStringList defaultCronPaths{QStringLiteral("/var/cron/log")};
++#else
+     const QStringList defaultCronPaths{QStringLiteral("/var/log/syslog")};
++#endif
+     mConfiguration->addItemStringList(QStringLiteral("LogFilesPaths"), mCronPaths, defaultCronPaths, QStringLiteral("LogFilesPaths"));
+ 
+     const QString defaultProcessFilter(QStringLiteral("/usr/sbin/cron"));

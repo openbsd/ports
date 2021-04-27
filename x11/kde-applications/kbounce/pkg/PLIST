@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:16 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/04/27 05:26:59 rsadowski Exp $
 @pkgpath x11/kde4/kbounce
 @bin bin/kbounce
 share/applications/org.kde.kbounce.desktop
@@ -84,9 +84,6 @@ share/kbounce/themes/roads_preview.png
 share/kbounce/themes/the_beach.desktop
 share/kbounce/themes/the_beach.svgz
 share/kbounce/themes/thebeach_preview.png
-share/kxmlgui5/
-share/kxmlgui5/kbounce/
-share/kxmlgui5/kbounce/kbounceui.rc
 share/locale/ar/LC_MESSAGES/kbounce.mo
 share/locale/bg/LC_MESSAGES/kbounce.mo
 share/locale/bs/LC_MESSAGES/kbounce.mo
@@ -144,3 +141,4 @@ share/metainfo/
 share/metainfo/org.kde.kbounce.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+share/qlogging-categories5/kbounce.categories

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/01/23 18:10:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2021/04/27 05:27:20 rsadowski Exp $
 
 COMMENT =	KDE software for music education
 DISTNAME =	minuet-${VERSION}
@@ -6,7 +6,7 @@ CATEGORIES =	audio education
 
 HOMEPAGE =	https://minuet.kde.org/
 
-SHARED_LIBS +=  minuetinterfaces          2.0 # 0.3
+SHARED_LIBS +=  minuetinterfaces          3.0 # 0.3
 
 WANTLIB += ${COMPILER_LIBCXX} KF5CoreAddons KF5Crash KF5I18n Qt5Core
 WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2

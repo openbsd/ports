@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:29 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/04/27 05:27:22 rsadowski Exp $
 @pkgpath x11/kde4/rocs
 @bin bin/rocs
 include/rocs/
@@ -10,6 +10,7 @@ lib/qt5/plugins/rocs/
 lib/qt5/plugins/rocs/editorplugins/
 @so lib/qt5/plugins/rocs/editorplugins/assignvaluesplugin.so
 @so lib/qt5/plugins/rocs/editorplugins/generategraphplugin.so
+@so lib/qt5/plugins/rocs/editorplugins/graphlayoutplugin.so
 @so lib/qt5/plugins/rocs/editorplugins/transformedgesplugin.so
 lib/qt5/plugins/rocs/fileformats/
 @so lib/qt5/plugins/rocs/fileformats/dotfileformat.so
@@ -28,6 +29,7 @@ share/doc/HTML/de/rocs/
 share/doc/HTML/de/rocs/index.cache.bz2
 share/doc/HTML/de/rocs/index.docbook
 share/doc/HTML/en/rocs/
+share/doc/HTML/en/rocs/force-based-layout-ui-screenshot.png
 share/doc/HTML/en/rocs/hi22-action-rocsalignbottom.png
 share/doc/HTML/en/rocs/hi22-action-rocsaligncircle.png
 share/doc/HTML/en/rocs/hi22-action-rocsalignhmiddle.png
@@ -45,6 +47,7 @@ share/doc/HTML/en/rocs/hi22-actions-rocsnode.png
 share/doc/HTML/en/rocs/hi22-actions-rocsselectmove.png
 share/doc/HTML/en/rocs/index.cache.bz2
 share/doc/HTML/en/rocs/index.docbook
+share/doc/HTML/en/rocs/radial-tree-layout-ui-screenshot.png
 share/doc/HTML/en/rocs/rocs-control-engine-debug.png
 share/doc/HTML/en/rocs/rocs-control-engine-step.png
 share/doc/HTML/en/rocs/rocs-interfaces.png
