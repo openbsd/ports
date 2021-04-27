@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.94 2020/06/09 07:13:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.95 2021/04/27 11:16:48 bluhm Exp $
 
 COMMENT=		XSLT C Library for GNOME
 
 VERSION=		1.1.34
 DISTNAME=		libxslt-${VERSION}
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  xslt                 4.0      # 2.33
 SHARED_LIBS +=  exslt                9.8      # 8.20
@@ -31,5 +31,6 @@ CONFIGURE_ARGS+=	--with-libxml-include-prefix="${LOCALBASE}/include/libxml2" \
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			XML_CONFIG="${LOCALBASE}/bin/xml2-config"
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>

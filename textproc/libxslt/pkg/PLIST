@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2020/06/09 07:13:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.29 2021/04/27 11:16:48 bluhm Exp $
 @pkgpath textproc/libxslt,-main
 bin/xslt-config
 @bin bin/xsltproc
@@ -28,11 +28,11 @@ include/libxslt/xsltconfig.h
 include/libxslt/xsltexports.h
 include/libxslt/xsltlocale.h
 include/libxslt/xsltutils.h
-lib/libexslt.a
+@static-lib lib/libexslt.a
 lib/libexslt.la
 @lib lib/libexslt.so.${LIBexslt_VERSION}
 lib/libxslt-plugins/
-lib/libxslt.a
+@static-lib lib/libxslt.a
 lib/libxslt.la
 @lib lib/libxslt.so.${LIBxslt_VERSION}
 lib/pkgconfig/libexslt.pc

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.185 2021/02/23 19:39:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.186 2021/04/27 11:16:48 bluhm Exp $
 
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
 
 VERSION=		2.9.10
-REVISION-main=		2
+REVISION-main=		3
 REVISION-python=	3
 DISTNAME=		libxml2-${VERSION}
 PKGNAME-main=		libxml-${VERSION}
@@ -33,6 +33,8 @@ CONFIGURE_ARGS+=	--enable-static \
 
 # only used to fetch data during regression test
 CONFIGURE_ENV=		WGET=/usr/bin/ftp
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 PSEUDO_FLAVORS=		no_python
 FLAVOR?=
