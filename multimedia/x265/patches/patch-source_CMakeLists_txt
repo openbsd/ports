@@ -1,0 +1,15 @@
+$OpenBSD: patch-source_CMakeLists_txt,v 1.6 2021/04/27 04:42:09 rsadowski Exp $
+
+Index: source/CMakeLists.txt
+--- source/CMakeLists.txt.orig
++++ source/CMakeLists.txt
+@@ -485,7 +485,8 @@ if(POWER)
+     endif()
+ endif()
+ 
+-include(Version) # determine X265_VERSION and X265_LATEST_TAG
++set(X265_VERSION "unknown" CACHE STRING "")
++set(X265_LATEST_TAG "0.0" CACHE STRING "")
+ include_directories(. common encoder "${PROJECT_BINARY_DIR}")
+ 
+ option(ENABLE_PPA "Enable PPA profiling instrumentation" OFF)

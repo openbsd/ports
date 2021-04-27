@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2021/04/24 20:08:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.52 2021/04/27 04:42:09 rsadowski Exp $
 
 COMMENT=	free H.265/HEVC encoder
 
@@ -23,9 +23,6 @@ WRKSRC=		${WRKDIST}/source
 
 MODULES=	devel/cmake
 
-# source/cmake/Version.cmake
-BUILD_DEPENDS+=	devel/git
-
 # XXX requires __sync builtins
 COMPILER=	base-clang ports-gcc
 
@@ -36,6 +33,9 @@ BUILD_DEPENDS+=	devel/nasm
 CONFIGURE_ARGS+=-DCMAKE_ASM_YASM_FLAGS_DEBUG="-g dwarf2" \
 		-DENABLE_PIC=On \
 		-DENABLE_TESTS=On
+
+CONFIGURE_ARGS+=-DX265_VERSION=${VER} \
+		-DX265_LATEST_TAG=${VER}
 
 .if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+=-DENABLE_ASSEMBLY=Off
