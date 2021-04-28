@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1264 2021/04/28 08:52:25 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.1265 2021/04/28 08:57:05 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1552,6 +1552,20 @@ setup_obsolete_reason(
 	3 => 'p5-VCP-autrijus',
 );
 
+my $obsolete_suggestion = {
+	'xgrab' => [qw(scrot xwd)],
+	'dkim-milter' => 'opendkim',
+	'qhacc' => [qw(homebank gnucash kmymoney)],
+	'qgo' => 'kigo',
+	'beediff' => 'kompare',
+	'sqliteman' => [qw(sqlitebrowser kexi)],
+	'gbirthday' => 'qbirthday',
+	'qlandkartegt' => 'qmapshack',
+	'keepassx' => 'keepassxc',
+	'lives' => [qw(kdenlive shotcut')],
+	'pdfshuffler' => 'pdfarranger', 
+};
+
 # reasons for obsolete packages
 my $obsolete_message = {
 	0 => "ancient software that doesn't work",
@@ -1646,6 +1660,7 @@ sub filter_obsolete
 				}
 			}
 		}
+		my $suggestion = $obsolete_suggestion->{$stem};
 		if (defined $reason) {
 			$state->say("Obsolete package: #1 (#2)", $pkgname, 
 			    $obsolete_message->{$reason});
