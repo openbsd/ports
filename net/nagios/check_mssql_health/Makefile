@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2021/03/02 20:30:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/04/28 19:41:49 sthen Exp $
 
 COMMENT=		Nagios plugin to check Microsoft SQL Server
 
 DISTNAME=		check_mssql_health-2.7.2.1
+REVISION=		0
 CATEGORIES=		net databases
 
 HOMEPAGE=		https://labs.consol.de/nagios/check_mssql_health/
