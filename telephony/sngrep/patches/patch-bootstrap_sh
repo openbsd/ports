@@ -1,0 +1,16 @@
+$OpenBSD: patch-bootstrap_sh,v 1.1.1.1 2021/04/28 19:12:30 sthen Exp $
+
+Index: bootstrap.sh
+--- bootstrap.sh.orig
++++ bootstrap.sh
+@@ -13,10 +13,6 @@ check_for_app() {
+ # On Linux, environment variables tell which one to use.
+ 
+ case `uname -sr` in
+-        OpenBSD*)
+-                export AUTOCONF_VERSION=2.69
+-                export AUTOMAKE_VERSION=1.15
+-                ;;
+         FreeBSD*)
+                 AUTOCONF_VERSION=2.69
+                 AUTOMAKE_VERSION=1.15

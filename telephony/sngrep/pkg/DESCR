@@ -1,0 +1,2 @@
+sngrep is an ncurses-based tool for displaying SIP call message flows,
+either from live capture or stored pcap files.
