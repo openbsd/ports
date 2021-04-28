@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/04/24 13:25:43 solene Exp $
+# $OpenBSD: Makefile,v 1.2 2021/04/28 20:12:54 solene Exp $
 
 COMMENT =	PNG compressor
 
 GH_ACCOUNT =	kornelski
 GH_PROJECT =	pngquant
 GH_TAGNAME =	2.14.1
+REVISION =	0
 
 CATEGORIES =	graphics
 
@@ -22,6 +23,8 @@ LIB_DEPENDS =	graphics/lcms2 \
 BUILD_DEPENDS =	shells/bash
 
 USE_GMAKE =	Yes
+
+MAKE_ENV =	CC="${CC}"
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pngquant/
