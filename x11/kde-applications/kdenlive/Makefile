@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2021/01/23 18:10:18 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.17 2021/04/28 15:17:15 rsadowski Exp $
 
 # Qt5WebEngine
 USE_WXNEEDED =	Yes
@@ -17,10 +17,9 @@ WANTLIB += KF5NewStuffCore KF5Notifications KF5NotifyConfig KF5Package
 WANTLIB += KF5Purpose KF5PurposeWidgets KF5Service KF5Solid KF5SonnetUi
 WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
-WANTLIB += Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
-WANTLIB += Qt5Quick Qt5QuickControls2 Qt5QuickWidgets Qt5Svg Qt5WebChannel
-WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5Xml
-WANTLIB += c m mlt mlt++ rttr_core
+WANTLIB += Qt5Network Qt5NetworkAuth Qt5Qml Qt5QmlModels Qt5Quick
+WANTLIB += Qt5QuickControls2 Qt5QuickWidgets Qt5Svg Qt5Widgets
+WANTLIB += Qt5Xml c m mlt mlt++
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -71,6 +70,7 @@ LIB_DEPENDS =	devel/kf5/attica \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtmultimedia \
 		x11/qt5/qtquickcontrols2 \
+		x11/qt5/qtnetworkauth \
 		x11/qt5/qtsvg \
 		x11/qt5/qtwebengine
 
