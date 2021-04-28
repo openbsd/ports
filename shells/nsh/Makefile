@@ -1,21 +1,19 @@
-# $OpenBSD: Makefile,v 1.41 2021/03/22 17:23:22 sthen Exp $
-
-BROKEN =	needs adapting to changes in base\n
-BROKEN +=	(again); this port is closely tied to interfaces in the base OS and really\n
-BROKEN +=	needs an active maintainer!
+# $OpenBSD: Makefile,v 1.42 2021/04/28 20:14:36 sthen Exp $
 
 COMMENT =	network switch style shell
 
-DISTNAME =	nsh-1.0.20201006
+DISTNAME =	nsh-1.0.20210416
 
 GH_ACCOUNT =	yellowman
 GH_PROJECT =	nsh
-GH_COMMIT =	4b92f9124641caddcce238293919b1ec45b5a20d
+GH_COMMIT =	5a237b068794446a016e5a394a802922b9c668cf
 
 CATEGORIES =	shells net
-HOMEPAGE =	http://www.nmedia.net/nsh/
+HOMEPAGE =	https://www.nmedia.net/nsh/
 
-# 3 & 2 clause BSD
+MAINTAINER =	Tom Smyth <tom.smyth@wirelessconnect.eu>
+
+# BSD
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses edit sqlite3
