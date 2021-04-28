@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.49 2021/03/28 13:23:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2021/04/28 19:39:27 sthen Exp $
 
 COMMENT=	C-style arbitrary precision calculator
 
-V=		2.13.0.0
+V=		2.13.0.1
 DISTNAME=	calc-$V
 EXTRACT_SUFX=	.tar.bz2
 
@@ -21,7 +21,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses readline
 
-MASTER_SITES=	https://github.com/lcn2/calc/releases/download/$V/ \
+MASTER_SITES=	https://github.com/lcn2/calc/releases/download/v$V/ \
 		http://www.isthe.com/chongo/src/calc/
 
 MAKE_FLAGS= Q="" \
