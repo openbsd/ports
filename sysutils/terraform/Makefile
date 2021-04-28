@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.56 2021/04/24 08:39:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2021/04/28 06:25:04 ajacoutot Exp $
 
 COMMENT=		tool for building, changing, and versioning infrastructure
 
 MODGO_MODNAME=	github.com/hashicorp/terraform
-MODGO_VERSION=	v0.15.0
+MODGO_VERSION=	v0.15.1
 DISTNAME=	terraform-${MODGO_VERSION}
 
 WRKDIST=	${WRKDIR}/github.com/hashicorp/terraform@${MODGO_VERSION}
@@ -150,7 +150,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-immutable-radix			 v0.0.0-20180129170900-7f3cd4390caa \
 	github.com/hashicorp/go-msgpack				 v0.5.4 \
 	github.com/hashicorp/go-multierror			 v1.1.1 \
-	github.com/hashicorp/go-plugin				 v1.4.0 \
+	github.com/hashicorp/go-plugin				 v1.4.1 \
 	github.com/hashicorp/go-retryablehttp			 v0.5.2 \
 	github.com/hashicorp/go-rootcerts			 v1.0.0 \
 	github.com/hashicorp/go-safetemp			 v1.0.0 \
@@ -262,7 +262,7 @@ MODGO_MODULES =	\
 	github.com/xiang90/probing				 v0.0.0-20160813154853-07dd2e8dfe18 \
 	github.com/xlab/treeprint				 v0.0.0-20161029104018-1d6e34225557 \
 	github.com/yuin/goldmark				 v1.2.1 \
-	github.com/zclconf/go-cty				 v1.8.1 \
+	github.com/zclconf/go-cty				 v1.8.2 \
 	github.com/zclconf/go-cty-debug				 v0.0.0-20191215020915-b22d67c1ba0b \
 	github.com/zclconf/go-cty-yaml				 v1.0.2 \
 	go.opencensus.io					 v0.22.4 \
