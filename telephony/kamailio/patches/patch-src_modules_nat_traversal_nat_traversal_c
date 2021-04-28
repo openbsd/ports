@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_modules_nat_traversal_nat_traversal_c,v 1.4 2021/02/06 21:32:06 sthen Exp $
+$OpenBSD: patch-src_modules_nat_traversal_nat_traversal_c,v 1.5 2021/04/28 19:35:07 sthen Exp $
 
 Index: src/modules/nat_traversal/nat_traversal.c
 --- src/modules/nat_traversal/nat_traversal.c.orig
 +++ src/modules/nat_traversal/nat_traversal.c
-@@ -1719,7 +1719,7 @@ static void restore_keepalive_state(void)
+@@ -1724,7 +1724,7 @@ static void restore_keepalive_state(void)
  	res = fscanf(f, STATE_FILE_HEADER); // skip header
  
  	while(true) {

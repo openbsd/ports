@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.48 2021/02/06 21:32:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2021/04/28 19:35:07 sthen Exp $
 
 COMMENT-main =		mature and flexible open source SIP server
 
-VERSION =		5.4.3
+VERSION =		5.4.5
 
 DISTNAME =		kamailio-${VERSION}_src
 
@@ -19,7 +19,7 @@ PKGNAME-presence =	kamailio-presence-${VERSION}
 PKGNAME-radius =	kamailio-radius-${VERSION}
 
 CATEGORIES =		telephony
-HOMEPAGE =		http://www.kamailio.org/
+HOMEPAGE =		https://www.kamailio.org/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
@@ -32,7 +32,7 @@ MAKE_ENV =		CC="${CC}" \
 			CC_EXTRA_OPTS="${CFLAGS} -DOPENSSL_NO_BUF_FREELISTS -DHAVE_ARC4RANDOM -I${LOCALBASE}/include" \
 			LD_EXTRA_OPTS="${LDFLAGS} -pthread -L${LOCALBASE}/lib"
 
-MASTER_SITES =		http://www.kamailio.org/pub/kamailio/${VERSION}/src/
+MASTER_SITES =		https://www.kamailio.org/pub/kamailio/${VERSION}/src/
 WRKDIST =		${WRKDIR}/kamailio-${VERSION}
 
 WANTLIB-main =		${COMPILER_LIBCXX} \

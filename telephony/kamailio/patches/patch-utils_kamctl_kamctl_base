@@ -1,9 +1,9 @@
-$OpenBSD: patch-utils_kamctl_kamctl_base,v 1.6 2021/02/06 21:32:06 sthen Exp $
+$OpenBSD: patch-utils_kamctl_kamctl_base,v 1.7 2021/04/28 19:35:07 sthen Exp $
 
 Index: utils/kamctl/kamctl.base
 --- utils/kamctl/kamctl.base.orig
 +++ utils/kamctl/kamctl.base
-@@ -603,7 +603,7 @@ mdbg() {
+@@ -604,7 +604,7 @@ mdbg() {
  
  mwarn() {
  	if [ -t 1 -a -z "$NOHLPRINT" ] ; then
@@ -12,7 +12,7 @@ Index: utils/kamctl/kamctl.base
  	else
  		echo "** WARNING: $1"
  	fi
-@@ -611,7 +611,7 @@ mwarn() {
+@@ -612,7 +612,7 @@ mwarn() {
  
  minfo() {
  	if [ -t 1 -a -z "$NOHLPRINT" ] ; then
@@ -21,7 +21,7 @@ Index: utils/kamctl/kamctl.base
  	else
  		echo "** INFO: $1"
  	fi
-@@ -627,7 +627,7 @@ mecho() {
+@@ -628,7 +628,7 @@ mecho() {
  
  merr() {
  	if [ -t 1 -a -z "$NOHLPRINT" ] ; then

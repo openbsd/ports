@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_core_tcp_read_c,v 1.4 2021/02/06 21:32:06 sthen Exp $
+$OpenBSD: patch-src_core_tcp_read_c,v 1.5 2021/04/28 19:35:07 sthen Exp $
 
 Index: src/core/tcp_read.c
 --- src/core/tcp_read.c.orig
 +++ src/core/tcp_read.c
-@@ -1677,6 +1677,14 @@ void release_tcpconn(struct tcp_connection* c, long st
+@@ -1678,6 +1678,14 @@ void release_tcpconn(struct tcp_connection* c, long st
  				ip_addr2a(&c->rcv.src_ip), c->rcv.src_port,
  				ip_addr2a(&c->rcv.dst_ip), c->rcv.dst_port);
  		LM_DBG("extra_data %p\n", c->extra_data);
