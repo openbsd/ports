@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1244 2021/04/28 08:21:42 espie Exp $
+# $OpenBSD: Makefile,v 1.1245 2021/04/28 08:27:32 espie Exp $
 
 COMMENT =	exceptions to pkg_add rules
 CATEGORIES =	devel databases
@@ -17,8 +17,8 @@ PERLDIR =	${PREFIX}/libdata/perl5/site_perl
 NO_TEST =	Yes
 
 do-build:
-	@for i in `find ${FILESDIR} -type f -name \*.pm`; do \
-	    perl -c $$i; done
+	perl -Mlib=${FILESDIR} ${FILESDIR}/t >${WRKDIR}/result
+	cmp ${WRKDIR}/result ${FILESDIR}/reference
 
 do-install:
 	${INSTALL_DATA_DIR} ${PERLDIR}/OpenBSD/Quirks
