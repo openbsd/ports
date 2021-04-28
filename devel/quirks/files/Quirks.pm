@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1259 2021/04/28 08:21:42 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.1260 2021/04/28 08:23:02 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1242,7 +1242,7 @@ my $obsolete_reason = {
 	'vinagre' => 3,
 	'gnome-getting-started-docs' => 5,
 	'py-poppler' => 3,
-	'pdfshuffler' => 3,
+	'pdfshuffler' => 44,
 	'colord' => 27,
 	'colord-gtk' => 27,
 	'gnome-color-manager' => 5,
@@ -1581,7 +1581,8 @@ my @msg = (
 	"ancient software that often crashes and relies on single HTTP (no TLS) connections, use wireshark", #40
 	"upstream moved to unversioned tarballs, use the plan9port (same upstream) package instead", #41
 	"unmaintained port that was blocking other changes in ports, suggest kdenlive or shotcut", #42
-	"using portgen instead is recommended", #43
+	"using portgen instead is recommended", #43,
+	"no longer maintained upstream (suggest pdfarranger)", #44,
 );
 
 # ->is_base_system($handle, $state):
