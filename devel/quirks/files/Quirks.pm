@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1261 2021/04/28 08:29:40 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.1262 2021/04/28 08:42:37 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1537,53 +1537,50 @@ my $obsolete_reason = {
 };
 
 # reasons for obsolete packages
-my @msg = (
-	"ancient software that doesn't work", #0
-	"no benefit to being packaged", #1
-	"no longer maintained and full of security holes", #2
-	"no longer maintained upstream", #3
-	"superseded by base component", #4
-	"outdated and/or no longer required by other ports", #5
-	"no longer useful", #6
-	"removed in favor of using languages package manager", #7
-	"requires systemd", #8
-	"256 colors only, suggest scrot or xwd", #9
-	"has been replaced by opendkim", #10
-	"no longer packageable", #11
-	"replace with IMAPSieve, see https://wiki.dovecot.org/HowTo/AntispamWithSieve", #12
-	"has a dependency on obsolete software", #13
-	"python2 port superseded by python3 version", #14
-	"no longer maintained upstream, suggest homebank, gnucash, kmymoney", #15
-	"no longer maintained upstream, suggest kigo", #16
-	"old GeoIP databases end-of-life, see alternative using geoip2/libmaxminddb", #17
-	"no longer maintained upstream, suggest kompare", #18
-	"no longer maintained upstream, suggest sqlitebrowser, kexi", #19
-	"merged into IETF Opus codec, obsolete, audio/mumble uses bundled version now", #20
-	"upstream recommends to use composer to build a drupal site", #21
-	"the original GeoIP database is end of life; use libmaxminddb/GeoIP2", #22
-	"no longer maintained upstream, became commercial over ten years ago", #23
-	"no longer maintained upstream, suggest qbirthday", #24
-	"no longer maintained upstream, suggest qmapshack", #25
-	"outdated Qt4 application, suggest keepassxc", #26
-	"requires GUdev or GUsb", #27
-	"consider migrating MCollective agents and filters using tools like Bolt and PuppetDB's Puppet Query Language", #28
-	"unmaintained port that was blocking other changes in ports", #29
-	"crashes in many different ways at runtime, does not build with '-fno-common'", #30
-	"upstream is dead, python2-only, nothing uses it", #31
-	"no more public distfiles, license forbids distributing package due to local changes", #32
-	"no longer maintained upstream, website suggests https://cronometer.com until rewrite is done", #33
-	"upstream is dead, basic functionality does not work, use tcpdump(1) and scapy(1) instead", #34
-	"upstream is dead, no longer useful, does not support IPv6", #35
-	"ancient software, use pf.conf(5) 'af-to'", #36
-	"upstream is dead, default settings cause crash when connecting to mpd", #37
-	"icinga 1 is end-of-life, migrate to icinga 2 (needs config rewrite)", #38
-	"Flash/SWF is end-of-life", #39
-	"ancient software that often crashes and relies on single HTTP (no TLS) connections, use wireshark", #40
-	"upstream moved to unversioned tarballs, use the plan9port (same upstream) package instead", #41
-	"unmaintained port that was blocking other changes in ports, suggest kdenlive or shotcut", #42
-	"using portgen instead is recommended", #43,
-	"no longer maintained upstream (suggest pdfarranger)", #44,
-);
+my $obsolete_message = {
+	0 => "ancient software that doesn't work",
+	1 => "no benefit to being packaged",
+	2 => "no longer maintained and full of security holes",
+	3 => "no longer maintained upstream",
+	4 => "superseded by base component",
+	5 => "outdated and/or no longer required by other ports",
+	6 => "no longer useful",
+	7 => "removed in favor of using languages package manager",
+	10 => "has been replaced by opendkim",
+	11 => "no longer packageable",
+	12 => "replace with IMAPSieve, see https://wiki.dovecot.org/HowTo/AntispamWithSieve",
+	13 => "has a dependency on obsolete software",
+	14 => "python2 port superseded by python3 version",
+	15 => "no longer maintained upstream, suggest homebank, gnucash, kmymoney",
+	16 => "no longer maintained upstream, suggest kigo",
+	17 => "old GeoIP databases end-of-life, see alternative using geoip2/libmaxminddb",
+	18 => "no longer maintained upstream, suggest kompare",
+	19 => "no longer maintained upstream, suggest sqlitebrowser, kexi",
+	20 => "merged into IETF Opus codec, obsolete, audio/mumble uses bundled version now",
+	21 => "upstream recommends to use composer to build a drupal site",
+	22 => "the original GeoIP database is end of life; use libmaxminddb/GeoIP2",
+	23 => "no longer maintained upstream, became commercial over ten years ago",
+	24 => "no longer maintained upstream, suggest qbirthday",
+	25 => "no longer maintained upstream, suggest qmapshack",
+	26 => "outdated Qt4 application, suggest keepassxc",
+	27 => "requires GUdev or GUsb",
+	28 => "consider migrating MCollective agents and filters using tools like Bolt and PuppetDB's Puppet Query Language",
+	29 => "unmaintained port that was blocking other changes in ports",
+	30 => "crashes in many different ways at runtime, does not build with '-fno-common'",
+	31 => "upstream is dead, python2-only, nothing uses it",
+	33 => "no longer maintained upstream, website suggests https://cronometer.com until rewrite is done",
+	34 => "upstream is dead, basic functionality does not work, use tcpdump(1) and scapy(1) instead",
+	35 => "upstream is dead, no longer useful, does not support IPv6",
+	36 => "ancient software, use pf.conf(5) 'af-to'",
+	37 => "upstream is dead, default settings cause crash when connecting to mpd",
+	38 => "icinga 1 is end-of-life, migrate to icinga 2 (needs config rewrite)",
+	39 => "Flash/SWF is end-of-life",
+	40 => "ancient software that often crashes and relies on single HTTP (no TLS) connections, use wireshark",
+	41 => "upstream moved to unversioned tarballs, use the plan9port (same upstream) package instead",
+	42 => "unmaintained port that was blocking other changes in ports, suggest kdenlive or shotcut",
+	43 => "using portgen instead is recommended",
+	44 => "no longer maintained upstream (suggest pdfarranger)",
+};
 
 # ->is_base_system($handle, $state):
 #	checks whether an existing handle is now part of the base system
@@ -1629,7 +1626,7 @@ sub filter_obsolete
 		$reason = 21 if (!defined $reason && $pkgname =~ m/^drupal/); # 6.7
 		if (defined $reason) {
 			$state->say("Obsolete package: #1 (#2)", $pkgname, 
-			    $msg[$reason]);
+			    $obsolete_message->{$reason});
 		} else {
 			push(@$list, $pkgname);
 		}
@@ -1827,6 +1824,25 @@ sub is_optional_tag
 # doesn't do anything yet, but will be used to check consistency eventually
 sub sanity_check
 {
+	my $self = shift;
+	my $rc = 0;
+	my $pointed;
+	while (my ($k, $v) = each %$obsolete_reason) {
+		if (!defined $obsolete_message->{$v}) {
+			print STDERR "$k points to $v with no message\n";
+			$rc = 1;
+		}
+		$pointed->{$v} = 1;
+	}
+	# XXX until we merge regexps
+	$pointed->{21} = 1;
+	while (my ($k, $v) = each %$obsolete_message) {
+		if (!$pointed->{$k}) {
+			print STDERR "Message key $k ($v) is unused\n";
+		    	$rc = 1;
+		}
+	}
+	exit $rc if $rc;
 }
 
 1;
