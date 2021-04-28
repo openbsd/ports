@@ -1,0 +1,18 @@
+$OpenBSD: patch-tests_CMakeLists_txt,v 1.1 2021/04/28 05:08:53 rsadowski Exp $
+
+Use nowide from Boost. From Fedora.
+
+Index: tests/CMakeLists.txt
+--- tests/CMakeLists.txt.orig
++++ tests/CMakeLists.txt
+@@ -1,8 +1,8 @@
+-set(BOOST_REQUIRED_COMPONENTS system date_time chrono log log_setup thread filesystem regex)
++set(BOOST_REQUIRED_COMPONENTS system date_time chrono log log_setup thread filesystem regex nowide)
+ if (LEATHERMAN_USE_LOCALES)
+     set(BOOST_REQUIRED_COMPONENTS ${BOOST_REQUIRED_COMPONENTS} locale)
+ endif()
+-find_package(Boost "1.54" REQUIRED COMPONENTS ${BOOST_REQUIRED_COMPONENTS})
++find_package(Boost "1.73" REQUIRED COMPONENTS ${BOOST_REQUIRED_COMPONENTS})
+ 
+ include_directories(BEFORE ${LEATHERMAN_CATCH_INCLUDE} ${LEATHERMAN_INCLUDE_DIRS})
+ add_executable(leatherman_test main.cc ${LEATHERMAN_TEST_SRCS})

@@ -1,0 +1,14 @@
+$OpenBSD: patch-util_src_environment_cc,v 1.1 2021/04/28 05:08:53 rsadowski Exp $
+
+Use nowide from Boost. From Fedora.
+
+Index: util/src/environment.cc
+--- util/src/environment.cc.orig
++++ util/src/environment.cc
+@@ -1,5 +1,5 @@
+ #include <leatherman/util/environment.hpp>
+-#include <boost/nowide/cenv.hpp>
++#include <boost/nowide/cstdlib.hpp>
+ #include <stdexcept>
+ 
+ using namespace std;

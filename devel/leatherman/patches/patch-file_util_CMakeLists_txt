@@ -1,0 +1,18 @@
+$OpenBSD: patch-file_util_CMakeLists_txt,v 1.1 2021/04/28 05:08:53 rsadowski Exp $
+
+Use nowide from Boost. From Fedora.
+
+Index: file_util/CMakeLists.txt
+--- file_util/CMakeLists.txt.orig
++++ file_util/CMakeLists.txt
+@@ -1,9 +1,8 @@
+-find_package(Boost 1.54 REQUIRED COMPONENTS regex filesystem system)
++find_package(Boost 1.73 REQUIRED COMPONENTS regex filesystem system nowide)
+ 
+ add_leatherman_deps("${Boost_LIBRARIES}")
+ add_leatherman_includes("${Boost_INCLUDE_DIRS}")
+ 
+-leatherman_dependency(nowide)
+ leatherman_dependency(locale)
+ leatherman_dependency(logging)
+ leatherman_dependency(util)

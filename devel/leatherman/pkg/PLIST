@@ -1,20 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/09/08 09:53:49 sebastia Exp $
-include/boost/nowide/
-include/boost/nowide/args.hpp
-include/boost/nowide/cenv.hpp
-include/boost/nowide/config.hpp
-include/boost/nowide/convert.hpp
-include/boost/nowide/cstdio.hpp
-include/boost/nowide/cstdlib.hpp
-include/boost/nowide/filebuf.hpp
-include/boost/nowide/fstream.hpp
-include/boost/nowide/integration/
-include/boost/nowide/integration/filesystem.hpp
-include/boost/nowide/iostream.hpp
-include/boost/nowide/stackstring.hpp
-include/boost/nowide/system.hpp
-include/boost/nowide/utf8_codecvt.hpp
-include/boost/nowide/windows.hpp
+@comment $OpenBSD: PLIST,v 1.7 2021/04/28 05:08:53 rsadowski Exp $
 include/leatherman/
 include/leatherman/curl/
 include/leatherman/curl/client.hpp

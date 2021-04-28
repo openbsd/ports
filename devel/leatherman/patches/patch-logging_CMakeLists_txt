@@ -1,0 +1,15 @@
+$OpenBSD: patch-logging_CMakeLists_txt,v 1.1 2021/04/28 05:08:53 rsadowski Exp $
+
+Use nowide from Boost. From Fedora.
+
+Index: logging/CMakeLists.txt
+--- logging/CMakeLists.txt.orig
++++ logging/CMakeLists.txt
+@@ -4,7 +4,6 @@ find_package(Threads)
+ add_leatherman_deps(${Boost_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
+ add_leatherman_includes("${Boost_INCLUDE_DIRS}")
+ 
+-leatherman_dependency(nowide)
+ leatherman_dependency(locale)
+ 
+ if (CMAKE_SYSTEM_NAME MATCHES "Linux" OR CMAKE_SYSTEM_NAME MATCHES "SunOS")

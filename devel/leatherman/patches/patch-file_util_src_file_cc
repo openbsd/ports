@@ -1,0 +1,15 @@
+$OpenBSD: patch-file_util_src_file_cc,v 1.1 2021/04/28 05:08:53 rsadowski Exp $
+
+Use nowide from Boost. From Fedora.
+
+Index: file_util/src/file.cc
+--- file_util/src/file.cc.orig
++++ file_util/src/file.cc
+@@ -1,6 +1,6 @@
+ #include <leatherman/file_util/file.hpp>
+ #include <boost/nowide/fstream.hpp>
+-#include <boost/nowide/cenv.hpp>
++#include <boost/nowide/cstdlib.hpp>
+ #include <boost/filesystem.hpp>
+ #include <sstream>
+ #include <leatherman/logging/logging.hpp>
