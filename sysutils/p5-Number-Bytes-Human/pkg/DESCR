@@ -1,0 +1,3 @@
+This module provides a formatter which turns byte counts to usual readable
+format, like '2.0K', '3.1G', '100B'. It was inspired in the -h option of Unix
+utilities like du, df and ls for "human-readable" output.
