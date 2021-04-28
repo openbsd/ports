@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:47:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/04/28 15:23:44 kurt Exp $
 
 COMMENT=		helper script for launching java applications
 
 GH_ACCOUNT=		bsdkurt
 GH_PROJECT=		javaPathHelper
-GH_TAGNAME=		2.0
+GH_TAGNAME=		2.1
 
 CATEGORIES=		java
 
