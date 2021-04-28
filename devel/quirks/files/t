@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: t,v 1.3 2021/04/28 08:57:05 espie Exp $
+# $OpenBSD: t,v 1.4 2021/04/28 09:08:14 espie Exp $
 #
 # Copyright (c) 2021 Marc Espie <espie@openbsd.org>
 #
@@ -24,7 +24,7 @@ use OpenBSD::State;
 
 my @list = qw(terraform-provider-terraform-0 drupal-7.0 qhacc-0 qgo-0
 	beediff-1 sqliteman-3 gbirthday-1 qlandkartegt-0 keepassx-12
-	lives-5 pdfshuffler-42);
+	lives-5 pdfshuffler-42 hs-zlib-3 kde-i18n-af-12 kde-l10n-hi-2);
 
 my $state = OpenBSD::State->new('test');
 
