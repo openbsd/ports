@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.599 2021/04/24 00:31:56 jeremy Exp $
+# $OpenBSD: Makefile,v 1.600 2021/04/28 16:01:08 tracey Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -215,6 +215,8 @@
      SUBDIR += opam
      SUBDIR += openpoppassd
      SUBDIR += p5-Capture-Tiny
+     SUBDIR += p5-Data-Float
+     SUBDIR += p5-Data-Entropy
      SUBDIR += p5-File-Monitor
      SUBDIR += p5-File-NFSLock
      SUBDIR += p5-File-Rename
@@ -224,6 +226,7 @@
      SUBDIR += p5-Filesys-Notify-Simple
      SUBDIR += p5-Filesys-Virtual
      SUBDIR += p5-Filesys-Virtual-Plain
+     SUBDIR += p5-Number-Bytes-Human
      SUBDIR += p5-Parse-DMIDecode
      SUBDIR += p5-Proc-ProcessTable
      SUBDIR += p5-Proc-Queue
