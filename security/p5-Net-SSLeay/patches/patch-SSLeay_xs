@@ -1,0 +1,14 @@
+$OpenBSD: patch-SSLeay_xs,v 1.1 2021/04/28 17:57:58 tb Exp $
+
+Index: SSLeay.xs
+--- SSLeay.xs.orig
++++ SSLeay.xs
+@@ -6065,7 +6065,7 @@ SSL_total_renegotiations(ssl)
+   OUTPUT:
+   RETVAL
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)) || (LIBRESSL_VERSION_NUMBER >= 0x2070000fL)
+ void
+ SSL_SESSION_get_master_key(s)
+      SSL_SESSION *   s
