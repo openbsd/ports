@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2021/03/25 16:30:32 landry Exp $
+@comment $OpenBSD: PLIST,v 1.20 2021/04/28 13:27:19 landry Exp $
 @conflict py-buildbot-*
 @pkgpath devel/py-buildbot
 @newgroup _buildbot:673
@@ -375,10 +375,12 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/reporters/generators/__init__.
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/buildbot/reporters/generators/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/buildbot/reporters/generators/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/reporters/generators/${MODPY_PYCACHE}build.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/reporters/generators/${MODPY_PYCACHE}buildrequest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/reporters/generators/${MODPY_PYCACHE}buildset.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/reporters/generators/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/reporters/generators/${MODPY_PYCACHE}worker.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/reporters/generators/build.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/reporters/generators/buildrequest.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/reporters/generators/buildset.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/reporters/generators/utils.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/reporters/generators/worker.py
@@ -431,6 +433,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/scripts/${MODPY_PYCACHE}cleanu
 lib/python${MODPY_VERSION}/site-packages/buildbot/scripts/${MODPY_PYCACHE}create_master.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/scripts/${MODPY_PYCACHE}dataspec.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/scripts/${MODPY_PYCACHE}devproxy.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/scripts/${MODPY_PYCACHE}gengraphql.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/scripts/${MODPY_PYCACHE}logwatcher.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/scripts/${MODPY_PYCACHE}reconfig.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/scripts/${MODPY_PYCACHE}restart.${MODPY_PYC_MAGIC_TAG}pyc
@@ -450,6 +453,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/scripts/cleanupdb.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/scripts/create_master.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/scripts/dataspec.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/scripts/devproxy.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/scripts/gengraphql.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/scripts/logwatcher.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/scripts/reconfig.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/scripts/restart.py
@@ -531,6 +535,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/steps/${MODPY_PYCACHE}__init__
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/${MODPY_PYCACHE}cmake.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/${MODPY_PYCACHE}cppcheck.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/${MODPY_PYCACHE}download_secret_to_worker.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/steps/${MODPY_PYCACHE}gitdiffinfo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/${MODPY_PYCACHE}master.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/${MODPY_PYCACHE}maxq.${MODPY_PYC_MAGIC_TAG}pyc
@@ -547,6 +552,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/steps/${MODPY_PYCACHE}worker.$
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/cmake.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/cppcheck.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/download_secret_to_worker.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/steps/gitdiffinfo.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/http.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/master.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/maxq.py
@@ -865,6 +871,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test_secret_in_vault.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test_secret_rendered_service.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test_stats_service.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test_steps_git_diffinfo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test_test_util_gpo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test_test_util_validation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test_test_util_warnings.${MODPY_PYC_MAGIC_TAG}pyc
@@ -899,6 +906,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_secret_in_passw
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_secret_in_vault.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_secret_rendered_service.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_stats_service.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_steps_git_diffinfo.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_templates_dir/
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_templates_dir/builds.html
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_templates_dir/plugin/
