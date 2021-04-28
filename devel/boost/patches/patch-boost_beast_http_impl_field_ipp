@@ -1,0 +1,33 @@
+$OpenBSD: patch-boost_beast_http_impl_field_ipp,v 1.1 2021/04/28 05:08:58 rsadowski Exp $
+
+Index: boost/beast/http/impl/field.ipp
+--- boost/beast/http/impl/field.ipp.orig
++++ boost/beast/http/impl/field.ipp
+@@ -11,11 +11,13 @@
+ #define BOOST_BEAST_HTTP_IMPL_FIELD_IPP
+ 
+ #include <boost/beast/http/field.hpp>
++#include <boost/assert.hpp>
+ #include <algorithm>
+ #include <array>
+ #include <cstring>
+-#include <boost/assert.hpp>
++#include <ostream>
+ 
++
+ namespace boost {
+ namespace beast {
+ namespace http {
+@@ -563,6 +565,12 @@ field
+ string_to_field(string_view s)
+ {
+     return detail::get_field_table().string_to_field(s);
++}
++
++std::ostream&
++operator<<(std::ostream& os, field f)
++{
++    return os << to_string(f);
+ }
+ 
+ } // http

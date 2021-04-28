@@ -1,0 +1,34 @@
+$OpenBSD: patch-libs_beast_test_beast_core_stream_traits_cpp,v 1.1 2021/04/28 05:08:58 rsadowski Exp $
+
+Index: libs/beast/test/beast/core/stream_traits.cpp
+--- libs/beast/test/beast/core/stream_traits.cpp.orig
++++ libs/beast/test/beast/core/stream_traits.cpp
+@@ -214,14 +214,14 @@ class stream_traits_test (public)
+     struct async_read_stream
+     {
+         net::io_context::executor_type get_executor() noexcept;
+-        template<class MutableBufferSequence, class ReadHandler>
++        template<class MutableBufferSequence, BOOST_BEAST_ASYNC_TPARAM2 ReadHandler>
+         void async_read_some(MutableBufferSequence const&, ReadHandler&&);
+     };
+ 
+     struct async_write_stream
+     {
+         net::io_context::executor_type get_executor() noexcept;
+-        template<class ConstBufferSequence, class WriteHandler>
++        template<class ConstBufferSequence, BOOST_BEAST_ASYNC_TPARAM2 WriteHandler>
+         void async_write_some(ConstBufferSequence const&, WriteHandler&&);
+     };
+ 
+@@ -232,9 +232,9 @@ class stream_traits_test (public)
+     struct async_stream : async_read_stream, async_write_stream
+     {
+         net::io_context::executor_type get_executor() noexcept;
+-        template<class MutableBufferSequence, class ReadHandler>
++        template<class MutableBufferSequence, BOOST_BEAST_ASYNC_TPARAM2 ReadHandler>
+         void async_read_some(MutableBufferSequence const&, ReadHandler&&);
+-        template<class ConstBufferSequence, class WriteHandler>
++        template<class ConstBufferSequence, BOOST_BEAST_ASYNC_TPARAM2 WriteHandler>
+         void async_write_some(ConstBufferSequence const&, WriteHandler&&);
+     };
+ 

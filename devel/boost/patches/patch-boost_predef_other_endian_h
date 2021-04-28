@@ -1,4 +1,4 @@
-$OpenBSD: patch-boost_predef_other_endian_h,v 1.4 2021/02/01 12:00:51 rsadowski Exp $
+$OpenBSD: patch-boost_predef_other_endian_h,v 1.5 2021/04/28 05:08:58 rsadowski Exp $
 
 Switch to using the endian.h header on OpenBSD.
 
@@ -9,8 +9,8 @@ Index: boost/predef/other/endian.h
   */
  #if !BOOST_ENDIAN_BIG_BYTE && !BOOST_ENDIAN_BIG_WORD && \
      !BOOST_ENDIAN_LITTLE_BYTE && !BOOST_ENDIAN_LITTLE_WORD
--#   if BOOST_LIB_C_GNU || BOOST_OS_ANDROID
-+#   if BOOST_LIB_C_GNU || BOOST_OS_ANDROID || BOOST_OS_BSD_OPEN
+-#   if BOOST_LIB_C_GNU || BOOST_PLAT_ANDROID
++#   if BOOST_LIB_C_GNU || BOOST_PLAT_ANDROID || BOOST_OS_BSD_OPEN
  #       include <endian.h>
  #   else
  #       if BOOST_OS_MACOS

@@ -1,0 +1,49 @@
+$OpenBSD: patch-libs_beast_test_beast_core_buffered_read_stream_cpp,v 1.1 2021/04/28 05:08:58 rsadowski Exp $
+
+Index: libs/beast/test/beast/core/buffered_read_stream.cpp
+--- libs/beast/test/beast/core/buffered_read_stream.cpp.orig
++++ libs/beast/test/beast/core/buffered_read_stream.cpp
+@@ -21,6 +21,9 @@
+ #include <boost/asio/spawn.hpp>
+ #include <boost/asio/strand.hpp>
+ #include <boost/optional.hpp>
++#if BOOST_ASIO_HAS_CO_AWAIT
++#include <boost/asio/use_awaitable.hpp>
++#endif
+ 
+ namespace boost {
+ namespace beast {
+@@ -211,6 +214,22 @@ class buffered_read_stream_test (public)
+         }
+     };
+ 
++#if BOOST_ASIO_HAS_CO_AWAIT
++    void testAwaitableCompiles(
++        buffered_read_stream<test::stream, flat_buffer>& stream,
++        net::mutable_buffer rxbuf,
++        net::const_buffer txbuf)
++    {
++        static_assert(std::is_same_v<
++            net::awaitable<std::size_t>, decltype(
++            stream.async_read_some(rxbuf, net::use_awaitable))>);
++
++        static_assert(std::is_same_v<
++            net::awaitable<std::size_t>, decltype(
++            stream.async_write_some(txbuf, net::use_awaitable))>);
++    }
++#endif
++
+     void run() override
+     {
+         testSpecialMembers();
+@@ -221,6 +240,10 @@ class buffered_read_stream_test (public)
+         });
+ 
+         testAsyncLoop();
++
++#if BOOST_ASIO_HAS_CO_AWAIT
++        boost::ignore_unused(&buffered_read_stream_test::testAwaitableCompiles);
++#endif
+     }
+ };
+ 

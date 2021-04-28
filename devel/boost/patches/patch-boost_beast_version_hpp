@@ -1,0 +1,14 @@
+$OpenBSD: patch-boost_beast_version_hpp,v 1.1 2021/04/28 05:08:58 rsadowski Exp $
+
+Index: boost/beast/version.hpp
+--- boost/beast/version.hpp.orig
++++ boost/beast/version.hpp
+@@ -20,7 +20,7 @@
+     This is a simple integer that is incremented by one every
+     time a set of code changes is merged to the develop branch.
+ */
+-#define BOOST_BEAST_VERSION 290
++#define BOOST_BEAST_VERSION 292
+ 
+ #define BOOST_BEAST_VERSION_STRING "Boost.Beast/" BOOST_STRINGIZE(BOOST_BEAST_VERSION)
+ 

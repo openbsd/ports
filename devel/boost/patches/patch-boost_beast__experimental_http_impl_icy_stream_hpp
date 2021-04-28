@@ -1,0 +1,23 @@
+$OpenBSD: patch-boost_beast__experimental_http_impl_icy_stream_hpp,v 1.1 2021/04/28 05:08:58 rsadowski Exp $
+
+Index: boost/beast/_experimental/http/impl/icy_stream.hpp
+--- boost/beast/_experimental/http/impl/icy_stream.hpp.orig
++++ boost/beast/_experimental/http/impl/icy_stream.hpp
+@@ -259,7 +259,7 @@ read_some(MutableBufferSequence const& buffers, error_
+ template<class NextLayer>
+ template<
+     class MutableBufferSequence,
+-    class ReadHandler>
++    BOOST_BEAST_ASYNC_TPARAM2 ReadHandler>
+ BOOST_BEAST_ASYNC_RESULT2(ReadHandler)
+ icy_stream<NextLayer>::
+ async_read_some(
+@@ -311,7 +311,7 @@ write_some(MutableBufferSequence const& buffers, error
+ template<class NextLayer>
+ template<
+     class MutableBufferSequence,
+-    class WriteHandler>
++    BOOST_BEAST_ASYNC_TPARAM2 WriteHandler>
+ BOOST_BEAST_ASYNC_RESULT2(WriteHandler)
+ icy_stream<NextLayer>::
+ async_write_some(

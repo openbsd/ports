@@ -1,0 +1,13 @@
+$OpenBSD: patch-libs_beast_test_beast_http_CMakeLists_txt,v 1.1 2021/04/28 05:08:58 rsadowski Exp $
+
+Index: libs/beast/test/beast/http/CMakeLists.txt
+--- libs/beast/test/beast/http/CMakeLists.txt.orig
++++ libs/beast/test/beast/http/CMakeLists.txt
+@@ -26,6 +26,7 @@ add_executable (tests-beast-http
+     empty_body.cpp
+     error.cpp
+     field.cpp
++    field_compiles.cpp
+     fields.cpp
+     file_body.cpp
+     message.cpp

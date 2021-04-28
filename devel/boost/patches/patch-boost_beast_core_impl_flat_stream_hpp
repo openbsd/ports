@@ -1,0 +1,23 @@
+$OpenBSD: patch-boost_beast_core_impl_flat_stream_hpp,v 1.1 2021/04/28 05:08:58 rsadowski Exp $
+
+Index: boost/beast/core/impl/flat_stream.hpp
+--- boost/beast/core/impl/flat_stream.hpp.orig
++++ boost/beast/core/impl/flat_stream.hpp
+@@ -144,7 +144,7 @@ read_some(MutableBufferSequence const& buffers, error_
+ template<class NextLayer>
+ template<
+     class MutableBufferSequence,
+-    class ReadHandler>
++    BOOST_BEAST_ASYNC_TPARAM2 ReadHandler>
+ BOOST_BEAST_ASYNC_RESULT2(ReadHandler)
+ flat_stream<NextLayer>::
+ async_read_some(
+@@ -225,7 +225,7 @@ write_some(ConstBufferSequence const& buffers, error_c
+ template<class NextLayer>
+ template<
+     class ConstBufferSequence,
+-    class WriteHandler>
++    BOOST_BEAST_ASYNC_TPARAM2 WriteHandler>
+ BOOST_BEAST_ASYNC_RESULT2(WriteHandler)
+ flat_stream<NextLayer>::
+ async_write_some(

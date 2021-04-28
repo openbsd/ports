@@ -1,0 +1,31 @@
+$OpenBSD: patch-libs_beast_CHANGELOG_md,v 1.1 2021/04/28 05:08:58 rsadowski Exp $
+
+Index: libs/beast/CHANGELOG.md
+--- libs/beast/CHANGELOG.md.orig
++++ libs/beast/CHANGELOG.md
+@@ -1,3 +1,25 @@
++Version 292:
++
++* Fix compile errors on Visual Studio with /std:c++latest
++* Fix standalone compilation error with std::string_view 
++* OpenSSL 1.0.2 or later is required
++* Fix c++20 deprecation warning in span_body
++
++--------------------------------------------------------------------------------
++
++Version 291:
++
++* Test websocket with use_awaitable
++* Test http write with use_awaitable
++* Test http read with use_awaitable
++* Fix use buffered_read_stream with use_awaitable
++* Implement is_completion_token_for trait
++* Test use_awaitable with basic_stream
++* Fix async_detect_ssl with use_awaitable
++* Add clang coroutines-ts to circleci config
++
++--------------------------------------------------------------------------------
++
+ Version 290:
+ 
+ * Travis build host now bionic

@@ -1,0 +1,14 @@
+$OpenBSD: patch-boost_beast_websocket_impl_close_hpp,v 1.1 2021/04/28 05:08:58 rsadowski Exp $
+
+Index: boost/beast/websocket/impl/close.hpp
+--- boost/beast/websocket/impl/close.hpp.orig
++++ boost/beast/websocket/impl/close.hpp
+@@ -382,7 +382,7 @@ close(close_reason const& cr, error_code& ec)
+ }
+ 
+ template<class NextLayer, bool deflateSupported>
+-template<class CloseHandler>
++template<BOOST_BEAST_ASYNC_TPARAM1 CloseHandler>
+ BOOST_BEAST_ASYNC_RESULT1(CloseHandler)
+ stream<NextLayer, deflateSupported>::
+ async_close(close_reason const& cr, CloseHandler&& handler)

@@ -1,0 +1,14 @@
+$OpenBSD: patch-libs_beast_doc_qbk_01_intro__intro_qbk,v 1.1 2021/04/28 05:08:58 rsadowski Exp $
+
+Index: libs/beast/doc/qbk/01_intro/_intro.qbk
+--- libs/beast/doc/qbk/01_intro/_intro.qbk.orig
++++ libs/beast/doc/qbk/01_intro/_intro.qbk
+@@ -58,7 +58,7 @@ Beast requires:
+ 
+ * [*C++11:] Robust support for most language features.
+ * [*Boost:] Beast only works with Boost, not stand-alone Asio
+-* [*OpenSSL:] Required to build the tests, examples, and to use TLS/Secure sockets.
++* [*OpenSSL:] Version 1.0.2 or higher. Required to build the tests, examples, and to use TLS/Secure sockets.
+ 
+ Tested with these compilers: msvc-14+, gcc 4.8.4+, clang 3.6+.
+ 

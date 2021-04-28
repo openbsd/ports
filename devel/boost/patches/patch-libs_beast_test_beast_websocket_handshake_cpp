@@ -1,0 +1,49 @@
+$OpenBSD: patch-libs_beast_test_beast_websocket_handshake_cpp,v 1.1 2021/04/28 05:08:58 rsadowski Exp $
+
+Index: libs/beast/test/beast/websocket/handshake.cpp
+--- libs/beast/test/beast/websocket/handshake.cpp.orig
++++ libs/beast/test/beast/websocket/handshake.cpp
+@@ -18,6 +18,9 @@
+ #include <boost/asio/io_context.hpp>
+ #include <boost/asio/strand.hpp>
+ #include <thread>
++#if BOOST_ASIO_HAS_CO_AWAIT
++#include <boost/asio/use_awaitable.hpp>
++#endif
+ 
+ namespace boost {
+ namespace beast {
+@@ -704,6 +707,23 @@ class handshake_test : public websocket_test_suite (pu
+         }
+     }
+ 
++#if BOOST_ASIO_HAS_CO_AWAIT
++    void testAwaitableCompiles(
++        stream<test::stream>& s,
++        std::string host,
++        std::string port,
++        response_type& resp)
++    {
++        static_assert(std::is_same_v<
++            net::awaitable<void>, decltype(
++            s.async_handshake(host, port, net::use_awaitable))>);
++
++        static_assert(std::is_same_v<
++            net::awaitable<void>, decltype(
++            s.async_handshake(resp, host, port, net::use_awaitable))>);
++    }
++#endif
++
+     void
+     run() override
+     {
+@@ -714,6 +734,9 @@ class handshake_test : public websocket_test_suite (pu
+         testMoveOnly();
+         testAsync();
+         testIssue1460();
++#if BOOST_ASIO_HAS_CO_AWAIT
++        boost::ignore_unused(&handshake_test::testAwaitableCompiles);
++#endif
+     }
+ };
+ 

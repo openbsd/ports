@@ -1,11 +1,11 @@
-$OpenBSD: patch-boost_asio_detail_config_hpp,v 1.4 2021/02/01 12:00:51 rsadowski Exp $
+$OpenBSD: patch-boost_asio_detail_config_hpp,v 1.5 2021/04/28 05:08:58 rsadowski Exp $
 
 Use _POSIX_VERSION to detect support for MSG_NOSIGNAL.
 
 Index: boost/asio/detail/config.hpp
 --- boost/asio/detail/config.hpp.orig
 +++ boost/asio/detail/config.hpp
-@@ -1475,4 +1475,15 @@
+@@ -1480,4 +1480,15 @@
  # endif // defined(__clang__)
  #endif // !defined(BOOST_ASIO_HAS_CO_AWAIT)
  

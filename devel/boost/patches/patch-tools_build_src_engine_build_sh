@@ -1,9 +1,9 @@
-$OpenBSD: patch-tools_build_src_engine_build_sh,v 1.1 2021/02/01 12:00:51 rsadowski Exp $
+$OpenBSD: patch-tools_build_src_engine_build_sh,v 1.2 2021/04/28 05:08:58 rsadowski Exp $
 
 Index: tools/build/src/engine/build.sh
 --- tools/build/src/engine/build.sh.orig
 +++ tools/build/src/engine/build.sh
-@@ -184,7 +184,7 @@ case $B2_TOOLSET in
+@@ -233,7 +233,7 @@ case $B2_TOOLSET in
  
          *)
          B2_CXX="${CXX} -x c++ -std=c++11"
@@ -12,12 +12,9 @@ Index: tools/build/src/engine/build.sh
          B2_CXXFLAGS_DEBUG="-O0 -g"
          esac
      ;;
-@@ -321,9 +321,9 @@ case $B2_TOOLSET in
-     clang*)
-         CXX=${CXX:=clang++}
+@@ -372,7 +372,7 @@ case $B2_TOOLSET in
          CXX_VERSION_OPT=${CXX_VERSION_OPT:=--version}
--        B2_CXX="${CXX} -x c++ -O3 -std=c++11"
-+        B2_CXX="${CXX} -x c++ -std=c++11"
+         B2_CXX="${CXX} -x c++ -std=c++11"
          B2_TOOLSET=clang
 -        B2_CXXFLAGS_RELEASE="-O3 -s"
 +        B2_CXXFLAGS_RELEASE=""

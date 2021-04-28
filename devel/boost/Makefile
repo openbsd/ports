@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.108 2021/02/23 19:39:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.109 2021/04/28 05:08:58 rsadowski Exp $
 
 ONLY_FOR_ARCHS-md = aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64
 
 COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
 
-VERSION=	1.72.0
+VERSION=	1.73.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME-main=	boost-${VERSION}
 PKGNAME-md=	boost-md-${VERSION}
@@ -14,10 +14,11 @@ MASTER_SITES=	https://dl.bintray.com/boostorg/release/${VERSION}/source/
 EXTRACT_SUFX=	.tar.bz2
 FIX_EXTRACT_PERMISSIONS =	Yes
 
-SO_VERSION=	13.0
+SO_VERSION=	14.0
 BOOST_LIBS=	boost_atomic-mt \
 		boost_chrono-mt boost_chrono \
 		boost_container-mt boost_container \
+		boost_contract boost_contract-mt \
 		boost_date_time-mt boost_date_time \
 		boost_filesystem-mt boost_filesystem \
 		boost_graph-mt boost_graph \
@@ -31,6 +32,7 @@ BOOST_LIBS=	boost_atomic-mt \
 		boost_math_tr1-mt boost_math_tr1 \
 		boost_math_tr1f-mt boost_math_tr1f \
 		boost_math_tr1l-mt boost_math_tr1l \
+		boost_nowide-mt boost_nowide \
 		boost_prg_exec_monitor-mt boost_prg_exec_monitor \
 		boost_program_options-mt boost_program_options \
 		boost_numpy38-mt boost_numpy38 \
@@ -44,8 +46,7 @@ BOOST_LIBS=	boost_atomic-mt \
 		boost_unit_test_framework-mt boost_unit_test_framework \
 		boost_wserialization-mt boost_wserialization \
 		boost_wave-mt boost_wave \
-		boost_type_erasure-mt boost_type_erasure \
-		boost_contract boost_contract-mt
+		boost_type_erasure-mt boost_type_erasure
 
 # MD
 BOOST_LIBS+=	boost_context-mt \
