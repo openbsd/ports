@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1265 2021/04/28 08:57:05 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.1266 2021/04/28 09:05:39 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -873,9 +873,9 @@ setup_obsolete_reason(
 	3 => 'valknut',
 	3 => 'dclib',
 	3 => 'luma',
-	15 => 'qhacc',
+	3 => 'qhacc',
 	17 => 'nginx-geoip',
-	16 => 'qgo',
+	3 => 'qgo',
 	3 => 'qrfcview',
 	3 => 'mutella',
 	5 => 'erl-bcrypt',
@@ -883,9 +883,9 @@ setup_obsolete_reason(
 	5 => 'rebar18',
 	5 => 'rebar17',
 	3 => 'bouml',
-	18 => 'beediff',
+	3 => 'beediff',
 	3 => 'php-mcrypt',
-	19 => 'sqliteman',
+	3 => 'sqliteman',
 	3 => 'entomologist',
 	6 => 'fcitx-qt4',
 	3 => 'partiwm',
@@ -1165,7 +1165,7 @@ setup_obsolete_reason(
 	3 => 'smokekde',
 	3 => 'smokeqt',
 	3 => 'superkaramba',
-	24 => 'gbirthday',
+	3 => 'gbirthday',
 	4 => 'wireguard-go',
 	4 => 'wiresep',
 	4 => 'wireless',
@@ -1178,7 +1178,7 @@ setup_obsolete_reason(
 	1 => 'uim-qt',
 	1 => 'uim-qt4',
 	5 => 'dbusmenu-qt',
-	25 => 'qlandkartegt',
+	3 => 'qlandkartegt',
 	3 => 'qca',
 	3 => 'qca-gnupg',
 	3 => 'qca-ossl',
@@ -1258,7 +1258,7 @@ setup_obsolete_reason(
 	3 => 'vinagre',
 	5 => 'gnome-getting-started-docs',
 	3 => 'py-poppler',
-	44 => 'pdfshuffler',
+	3 => 'pdfshuffler',
 	27 => 'colord',
 	27 => 'colord-gtk',
 	5 => 'gnome-color-manager',
@@ -1541,7 +1541,7 @@ setup_obsolete_reason(
 	6 => 'gstreamer-plugins-gl',
 	6 => 'gstreamer-plugins-good',
 	6 => 'gstreamer-plugins-ugly',
-	42 => 'lives',
+	29 => 'lives',
 	5 => 'py-wsgiproxy',
 	5 => 'py-sqlite',
 	43 => 'upt',
@@ -1562,7 +1562,7 @@ my $obsolete_suggestion = {
 	'gbirthday' => 'qbirthday',
 	'qlandkartegt' => 'qmapshack',
 	'keepassx' => 'keepassxc',
-	'lives' => [qw(kdenlive shotcut')],
+	'lives' => [qw(kdenlive shotcut)],
 	'pdfshuffler' => 'pdfarranger', 
 };
 
@@ -1581,18 +1581,12 @@ my $obsolete_message = {
 	12 => "replace with IMAPSieve, see https://wiki.dovecot.org/HowTo/AntispamWithSieve",
 	13 => "has a dependency on obsolete software",
 	14 => "python2 port superseded by python3 version",
-	15 => "no longer maintained upstream, suggest homebank, gnucash, kmymoney",
-	16 => "no longer maintained upstream, suggest kigo",
 	17 => "old GeoIP databases end-of-life, see alternative using geoip2/libmaxminddb",
-	18 => "no longer maintained upstream, suggest kompare",
-	19 => "no longer maintained upstream, suggest sqlitebrowser, kexi",
 	20 => "merged into IETF Opus codec, obsolete, audio/mumble uses bundled version now",
 	21 => "upstream recommends to use composer to build a drupal site",
 	22 => "the original GeoIP database is end of life; use libmaxminddb/GeoIP2",
 	23 => "no longer maintained upstream, became commercial over ten years ago",
-	24 => "no longer maintained upstream, suggest qbirthday",
-	25 => "no longer maintained upstream, suggest qmapshack",
-	26 => "outdated Qt4 application, suggest keepassxc",
+	26 => "outdated Qt4 application",
 	27 => "requires GUdev or GUsb",
 	28 => "consider migrating MCollective agents and filters using tools like Bolt and PuppetDB's Puppet Query Language",
 	29 => "unmaintained port that was blocking other changes in ports",
@@ -1607,9 +1601,7 @@ my $obsolete_message = {
 	39 => "Flash/SWF is end-of-life",
 	40 => "ancient software that often crashes and relies on single HTTP (no TLS) connections, use wireshark",
 	41 => "upstream moved to unversioned tarballs, use the plan9port (same upstream) package instead",
-	42 => "unmaintained port that was blocking other changes in ports, suggest kdenlive or shotcut",
 	43 => "using portgen instead is recommended",
-	44 => "no longer maintained upstream (suggest pdfarranger)",
 };
 
 # ->is_base_system($handle, $state):
@@ -1661,9 +1653,19 @@ sub filter_obsolete
 			}
 		}
 		my $suggestion = $obsolete_suggestion->{$stem};
+		my @l = ();
 		if (defined $reason) {
+			push(@l, $obsolete_message->{$reason});
+		}
+		if (defined $suggestion) {
+			if (ref($suggestion)) {
+				$suggestion = join(', ', @$suggestion);
+			}
+			push(@l, $state->f("suggest #1", $suggestion));
+		}
+		if (@l > 0) {
 			$state->say("Obsolete package: #1 (#2)", $pkgname, 
-			    $obsolete_message->{$reason});
+			    join(', ', @l));
 		} else {
 			push(@$list, $pkgname);
 		}
