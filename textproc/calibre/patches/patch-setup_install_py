@@ -1,9 +1,9 @@
-$OpenBSD: patch-setup_install_py,v 1.6 2021/03/27 14:35:12 sthen Exp $
+$OpenBSD: patch-setup_install_py,v 1.7 2021/04/28 20:23:06 sthen Exp $
 
 Index: setup/install.py
 --- setup/install.py.orig
 +++ setup/install.py
-@@ -263,7 +263,7 @@ class Install(Develop):
+@@ -270,7 +270,7 @@ class Install(Develop):
              reldir = os.path.relpath(x[0], self.SRC)
              destdir = os.path.join(dest, reldir)
              for f in x[-1]:

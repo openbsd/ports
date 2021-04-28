@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2021/03/27 14:35:12 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.40 2021/04/28 20:23:06 sthen Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -1509,6 +1509,7 @@ lib/calibre/calibre/gui2/actions/${MODPY_PYCACHE}add.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/actions/${MODPY_PYCACHE}add_to_library.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/actions/${MODPY_PYCACHE}annotate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/actions/${MODPY_PYCACHE}author_mapper.${MODPY_PYC_MAGIC_TAG}pyc
+lib/calibre/calibre/gui2/actions/${MODPY_PYCACHE}auto_scroll.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/actions/${MODPY_PYCACHE}browse_annots.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/actions/${MODPY_PYCACHE}catalog.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/actions/${MODPY_PYCACHE}choose_library.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1548,6 +1549,7 @@ lib/calibre/calibre/gui2/actions/add.py
 lib/calibre/calibre/gui2/actions/add_to_library.py
 lib/calibre/calibre/gui2/actions/annotate.py
 lib/calibre/calibre/gui2/actions/author_mapper.py
+lib/calibre/calibre/gui2/actions/auto_scroll.py
 lib/calibre/calibre/gui2/actions/browse_annots.py
 lib/calibre/calibre/gui2/actions/catalog.py
 lib/calibre/calibre/gui2/actions/choose_library.py
@@ -1843,6 +1845,7 @@ lib/calibre/calibre/gui2/dialogs/${MODPY_PYCACHE}tag_list_editor_table_widget.${
 lib/calibre/calibre/gui2/dialogs/${MODPY_PYCACHE}tag_list_editor_ui.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/dialogs/${MODPY_PYCACHE}template_dialog.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/dialogs/${MODPY_PYCACHE}template_dialog_box_layout.${MODPY_PYC_MAGIC_TAG}pyc
+lib/calibre/calibre/gui2/dialogs/${MODPY_PYCACHE}template_dialog_code_widget.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/dialogs/${MODPY_PYCACHE}template_dialog_ui.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/dialogs/${MODPY_PYCACHE}template_line_editor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/dialogs/${MODPY_PYCACHE}trim_image.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1908,6 +1911,7 @@ lib/calibre/calibre/gui2/dialogs/tag_list_editor_table_widget.py
 lib/calibre/calibre/gui2/dialogs/tag_list_editor_ui.py
 lib/calibre/calibre/gui2/dialogs/template_dialog.py
 lib/calibre/calibre/gui2/dialogs/template_dialog_box_layout.py
+lib/calibre/calibre/gui2/dialogs/template_dialog_code_widget.py
 lib/calibre/calibre/gui2/dialogs/template_dialog_ui.py
 lib/calibre/calibre/gui2/dialogs/template_line_editor.py
 lib/calibre/calibre/gui2/dialogs/trim_image.py
@@ -3972,6 +3976,7 @@ share/calibre/recipes/cracked_com.recipe
 share/calibre/recipes/craigslist.recipe
 share/calibre/recipes/credit_slips.png
 share/calibre/recipes/credit_slips.recipe
+share/calibre/recipes/crikey.recipe
 share/calibre/recipes/cronica.png
 share/calibre/recipes/cronica.recipe
 share/calibre/recipes/csid.png
@@ -4955,6 +4960,7 @@ share/calibre/recipes/lomza.png
 share/calibre/recipes/lomza.recipe
 share/calibre/recipes/london_free_press.png
 share/calibre/recipes/london_free_press.recipe
+share/calibre/recipes/los_danieles.recipe
 share/calibre/recipes/los_tiempos_bo.png
 share/calibre/recipes/los_tiempos_bo.recipe
 share/calibre/recipes/losservatoreromano_it.recipe
@@ -5803,6 +5809,7 @@ share/calibre/recipes/the_oz.recipe
 share/calibre/recipes/the_philippine_daily_inquirer.recipe
 share/calibre/recipes/the_philippine_star.recipe
 share/calibre/recipes/the_register.recipe
+share/calibre/recipes/the_saturday_paper.recipe
 share/calibre/recipes/the_scotsman.png
 share/calibre/recipes/the_scotsman.recipe
 share/calibre/recipes/the_sun.recipe
