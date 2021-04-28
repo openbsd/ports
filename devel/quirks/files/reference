@@ -1,4 +1,4 @@
-Obsolete package: terraform-provider-terraform-0 (no longer maintained upstream)
+Obsolete package: terraform-provider-terraform-0 (no benefit to being packaged)
 Obsolete package: drupal-7.0 (upstream recommends to use composer to build a drupal site)
 Obsolete package: qhacc-0 (no longer maintained upstream, suggest homebank, gnucash, kmymoney)
 Obsolete package: qgo-0 (no longer maintained upstream, suggest kigo)
