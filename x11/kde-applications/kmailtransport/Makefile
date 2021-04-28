@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2021/04/27 05:27:05 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2021/04/28 16:52:17 rsadowski Exp $
 
 COMMENT =	mail transport service
 DISTNAME =	kmailtransport-${VERSION}
 CATEGORIES =	mail devel
+REVISION =	0
 
 SHARED_LIBS +=  KF5MailTransport             2.0 # 5.13.3
 SHARED_LIBS +=  KF5MailTransportAkonadi      1.0 # 5.13.3
@@ -13,7 +14,8 @@ WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5I18n KF5ItemModels
 WANTLIB += KF5JobWidgets KF5KCMUtils KF5KIOCore KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5Mime KF5Service KF5Wallet KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KPimGAPICore KPimSMTP Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml m
+WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml gio-2.0 glib-2.0
+WANTLIB += gobject-2.0 intl m qt5keychain secret-1
 
 MODKDE5_TRANSLATIONS = yes
 
@@ -40,6 +42,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kservice \
 		devel/kf5/kwallet \
 		devel/kf5/kwidgetsaddons \
+		security/qtkeychain \
 		x11/kde-applications/akonadi \
 		x11/kde-applications/akonadi-mime \
 		x11/kde-applications/kmime \
