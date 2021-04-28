@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2021/03/07 23:05:59 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.9 2021/04/28 19:50:11 sthen Exp $
 
 COMMENT =	renames multiple files
 
-DISTNAME =	File-Rename-1.13
+DISTNAME =	File-Rename-1.20
 CATEGORIES =	sysutils
-REVISION =	1
 
 MODULES =	cpan
 PKG_ARCH =	*
