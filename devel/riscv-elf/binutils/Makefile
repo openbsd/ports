@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/06/08 14:24:32 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2021/04/28 03:35:52 jsg Exp $
 
 COMMENT=	binutils for riscv-elf cross-development
 
-V=		2.30
+V=		2.31.1
 DISTNAME=	binutils-${V}
 
 HOMEPAGE=	https://www.gnu.org/software/binutils/

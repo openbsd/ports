@@ -1,12 +1,12 @@
-$OpenBSD: patch-ld_Makefile_in,v 1.1.1.1 2018/06/08 14:24:32 kevlo Exp $
+$OpenBSD: patch-ld_Makefile_in,v 1.2 2021/04/28 03:35:52 jsg Exp $
 
 Index: ld/Makefile.in
 --- ld/Makefile.in.orig
 +++ ld/Makefile.in
-@@ -181,7 +181,7 @@ LTYACCCOMPILE = $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOO
- SOURCES = $(libldtestplug_la_SOURCES) $(libldtestplug2_la_SOURCES) \
- 	$(libldtestplug3_la_SOURCES) $(libldtestplug4_la_SOURCES) \
- 	$(ld_new_SOURCES) $(EXTRA_ld_new_SOURCES)
+@@ -273,7 +273,7 @@ AM_V_texidevnull = $(am__v_texidevnull_@AM_V@)
+ am__v_texidevnull_ = $(am__v_texidevnull_@AM_DEFAULT_V@)
+ am__v_texidevnull_0 = > /dev/null
+ am__v_texidevnull_1 = 
 -INFO_DEPS = ld.info
 +INFO_DEPS =
  am__TEXINFO_TEX_DIR = $(srcdir)/../texinfo

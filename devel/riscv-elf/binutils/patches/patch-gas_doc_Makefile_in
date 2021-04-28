@@ -1,14 +1,14 @@
-$OpenBSD: patch-gas_doc_Makefile_in,v 1.1.1.1 2018/06/08 14:24:32 kevlo Exp $
+$OpenBSD: patch-gas_doc_Makefile_in,v 1.2 2021/04/28 03:35:52 jsg Exp $
 
 Index: gas/doc/Makefile.in
 --- gas/doc/Makefile.in.orig
 +++ gas/doc/Makefile.in
-@@ -99,7 +99,7 @@ CONFIG_CLEAN_VPATH_FILES =
- depcomp =
- am__depfiles_maybe =
- SOURCES =
+@@ -174,7 +174,7 @@ AM_V_texidevnull = $(am__v_texidevnull_@AM_V@)
+ am__v_texidevnull_ = $(am__v_texidevnull_@AM_DEFAULT_V@)
+ am__v_texidevnull_0 = > /dev/null
+ am__v_texidevnull_1 = 
 -INFO_DEPS = as.info
 +INFO_DEPS =
- TEXINFO_TEX = $(top_srcdir)/../texinfo/texinfo.tex
- am__TEXINFO_TEX_DIR = $(top_srcdir)/../texinfo
+ TEXINFO_TEX = $(top_srcdir)/../texinfo.tex
+ am__TEXINFO_TEX_DIR = $(top_srcdir)/..
  DVIS = as.dvi

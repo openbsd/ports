@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/08 14:24:32 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/04/28 03:35:52 jsg Exp $
 @bin bin/${CONFIG}-addr2line
 @bin bin/${CONFIG}-ar
 @bin bin/${CONFIG}-as
@@ -23,7 +23,6 @@
 @man man/man1/${CONFIG}-elfedit.1
 @man man/man1/${CONFIG}-gprof.1
 @man man/man1/${CONFIG}-ld.1
-@man man/man1/${CONFIG}-nlmconv.1
 @man man/man1/${CONFIG}-nm.1
 @man man/man1/${CONFIG}-objcopy.1
 @man man/man1/${CONFIG}-objdump.1
@@ -52,9 +51,21 @@ ${CONFIG}/lib/ldscripts/elf32lriscv.x
 ${CONFIG}/lib/ldscripts/elf32lriscv.xbn
 ${CONFIG}/lib/ldscripts/elf32lriscv.xc
 ${CONFIG}/lib/ldscripts/elf32lriscv.xce
+${CONFIG}/lib/ldscripts/elf32lriscv.xd
+${CONFIG}/lib/ldscripts/elf32lriscv.xdc
+${CONFIG}/lib/ldscripts/elf32lriscv.xdce
+${CONFIG}/lib/ldscripts/elf32lriscv.xde
+${CONFIG}/lib/ldscripts/elf32lriscv.xdw
+${CONFIG}/lib/ldscripts/elf32lriscv.xdwe
 ${CONFIG}/lib/ldscripts/elf32lriscv.xe
 ${CONFIG}/lib/ldscripts/elf32lriscv.xn
 ${CONFIG}/lib/ldscripts/elf32lriscv.xr
+${CONFIG}/lib/ldscripts/elf32lriscv.xs
+${CONFIG}/lib/ldscripts/elf32lriscv.xsc
+${CONFIG}/lib/ldscripts/elf32lriscv.xsce
+${CONFIG}/lib/ldscripts/elf32lriscv.xse
+${CONFIG}/lib/ldscripts/elf32lriscv.xsw
+${CONFIG}/lib/ldscripts/elf32lriscv.xswe
 ${CONFIG}/lib/ldscripts/elf32lriscv.xu
 ${CONFIG}/lib/ldscripts/elf32lriscv.xw
 ${CONFIG}/lib/ldscripts/elf32lriscv.xwe
@@ -62,9 +73,21 @@ ${CONFIG}/lib/ldscripts/elf64lriscv.x
 ${CONFIG}/lib/ldscripts/elf64lriscv.xbn
 ${CONFIG}/lib/ldscripts/elf64lriscv.xc
 ${CONFIG}/lib/ldscripts/elf64lriscv.xce
+${CONFIG}/lib/ldscripts/elf64lriscv.xd
+${CONFIG}/lib/ldscripts/elf64lriscv.xdc
+${CONFIG}/lib/ldscripts/elf64lriscv.xdce
+${CONFIG}/lib/ldscripts/elf64lriscv.xde
+${CONFIG}/lib/ldscripts/elf64lriscv.xdw
+${CONFIG}/lib/ldscripts/elf64lriscv.xdwe
 ${CONFIG}/lib/ldscripts/elf64lriscv.xe
 ${CONFIG}/lib/ldscripts/elf64lriscv.xn
 ${CONFIG}/lib/ldscripts/elf64lriscv.xr
+${CONFIG}/lib/ldscripts/elf64lriscv.xs
+${CONFIG}/lib/ldscripts/elf64lriscv.xsc
+${CONFIG}/lib/ldscripts/elf64lriscv.xsce
+${CONFIG}/lib/ldscripts/elf64lriscv.xse
+${CONFIG}/lib/ldscripts/elf64lriscv.xsw
+${CONFIG}/lib/ldscripts/elf64lriscv.xswe
 ${CONFIG}/lib/ldscripts/elf64lriscv.xu
 ${CONFIG}/lib/ldscripts/elf64lriscv.xw
 ${CONFIG}/lib/ldscripts/elf64lriscv.xwe
