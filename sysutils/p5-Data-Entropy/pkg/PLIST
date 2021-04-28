@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/04/28 15:55:16 tracey Exp $
+${P5SITE}/Data/Entropy/
+${P5SITE}/Data/Entropy.pm
+${P5SITE}/Data/Entropy/Algorithms.pm
+${P5SITE}/Data/Entropy/RawSource/
+${P5SITE}/Data/Entropy/RawSource/CryptCounter.pm
+${P5SITE}/Data/Entropy/RawSource/Local.pm
+${P5SITE}/Data/Entropy/RawSource/RandomOrg.pm
+${P5SITE}/Data/Entropy/RawSource/RandomnumbersInfo.pm
+${P5SITE}/Data/Entropy/Source.pm
+@man man/man3p/Data::Entropy.3p
+@man man/man3p/Data::Entropy::Algorithms.3p
+@man man/man3p/Data::Entropy::RawSource::CryptCounter.3p
+@man man/man3p/Data::Entropy::RawSource::Local.3p
+@man man/man3p/Data::Entropy::RawSource::RandomOrg.3p
+@man man/man3p/Data::Entropy::RawSource::RandomnumbersInfo.3p
+@man man/man3p/Data::Entropy::Source.3p
