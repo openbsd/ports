@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_flag_descriptions_h,v 1.38 2021/04/16 18:15:06 robert Exp $
+$OpenBSD: patch-chrome_browser_flag_descriptions_h,v 1.39 2021/04/28 07:52:54 robert Exp $
 
 Index: chrome/browser/flag_descriptions.h
 --- chrome/browser/flag_descriptions.h.orig
@@ -12,7 +12,7 @@ Index: chrome/browser/flag_descriptions.h
  #include "base/allocator/buildflags.h"
  #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
  
-@@ -2901,7 +2901,7 @@ extern const char kEnableNewBadgeOnMenuItemsDescriptio
+@@ -2904,7 +2904,7 @@ extern const char kEnableNewBadgeOnMenuItemsDescriptio
  // Random platform combinations -----------------------------------------------
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -21,7 +21,7 @@ Index: chrome/browser/flag_descriptions.h
  
  extern const char kEnableMediaFeedsName[];
  extern const char kEnableMediaFeedsDescription[];
-@@ -2930,7 +2930,7 @@ extern const char kDirectManipulationStylusDescription
+@@ -2933,7 +2933,7 @@ extern const char kDirectManipulationStylusDescription
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) ||
          // defined(OS_CHROMEOS)
  
@@ -30,7 +30,7 @@ Index: chrome/browser/flag_descriptions.h
  
  extern const char kCommanderName[];
  extern const char kCommanderDescription[];
-@@ -2943,7 +2943,7 @@ extern const char kDesktopDetailedLanguageSettingsDesc
+@@ -2946,7 +2946,7 @@ extern const char kDesktopDetailedLanguageSettingsDesc
  
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
  
@@ -39,7 +39,7 @@ Index: chrome/browser/flag_descriptions.h
  #if BUILDFLAG(USE_TCMALLOC)
  extern const char kDynamicTcmallocName[];
  extern const char kDynamicTcmallocDescription[];
-@@ -2963,7 +2963,7 @@ extern const char kWebShareDescription[];
+@@ -2966,7 +2966,7 @@ extern const char kWebShareDescription[];
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
@@ -48,7 +48,7 @@ Index: chrome/browser/flag_descriptions.h
  extern const char kEnableEphemeralGuestProfilesOnDesktopName[];
  extern const char kEnableEphemeralGuestProfilesOnDesktopDescription[];
  #endif  // defined(OS_WIN) || (defined(OS_LINUX) ||
-@@ -3029,7 +3029,7 @@ extern const char kSendWebUIJavaScriptErrorReportsDesc
+@@ -3032,7 +3032,7 @@ extern const char kSendWebUIJavaScriptErrorReportsDesc
  #endif
  
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
