@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2021/01/31 19:44:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/04/28 19:10:16 sthen Exp $
 
 COMMENT=	bulk mail detection (Distributed Checksum Clearinghouses)
 
-DISTNAME=	dcc-2.3.167
+DISTNAME=	dcc-2.3.168
 EXTRACT_SUFX=	.tar.Z
 
 CATEGORIES=	mail
