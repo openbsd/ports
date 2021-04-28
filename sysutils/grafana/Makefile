@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2021/03/22 11:57:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2021/04/28 17:34:46 sthen Exp $
 
 COMMENT =	monitoring and metric analytics dashboards
 
 V =		7.4.5
+REVISION =	0
 DISTNAME =	grafana+vendor-$V
 WRKDIST =	${WRKDIR}/grafana-$V
 EXTRACT_SUFX =	.tar.zstd
