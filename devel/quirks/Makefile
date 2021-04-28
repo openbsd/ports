@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1251 2021/04/28 09:18:26 espie Exp $
+# $OpenBSD: Makefile,v 1.1252 2021/04/28 09:21:46 espie Exp $
 
 COMMENT =	exceptions to pkg_add rules
 CATEGORIES =	devel databases
@@ -17,7 +17,6 @@ PERLDIR =	${PREFIX}/libdata/perl5/site_perl
 NO_TEST =	Yes
 
 do-build:
-	#perl -Mlib=${FILESDIR} ${FILESDIR}/t 
 	perl -Mlib=${FILESDIR} ${FILESDIR}/t >${WRKDIR}/result
 	cmp ${WRKDIR}/result ${FILESDIR}/reference
 

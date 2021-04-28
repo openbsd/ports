@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1267 2021/04/28 09:18:26 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.1268 2021/04/28 09:21:46 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -471,6 +471,9 @@ sub setup_obsolete_reason
 	}
 }
 
+# this list is put in the "wrong" order (index => stem) because we
+# want to put regexps as well in there (see the terraform or hs entries
+# for instance)
 setup_obsolete_reason(
 # 6.3
 	5 => 'puppet-dashboard',
@@ -1195,6 +1198,8 @@ setup_obsolete_reason(
 	3 => 'p5-VCP-autrijus',
 );
 
+# though it's not yet used, these should be pkgnames, so that eventually
+# pkg_add is able to act on it
 my $obsolete_suggestion = {
 	'xgrab' => [qw(scrot xwd)],
 	'dkim-milter' => 'opendkim',
