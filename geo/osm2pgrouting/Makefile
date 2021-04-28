@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2020/10/09 21:14:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2021/04/28 13:18:41 landry Exp $
 
 GH_ACCOUNT =		pgRouting
 GH_PROJECT =		osm2pgrouting
-GH_TAGNAME =		v2.3.6
+GH_TAGNAME =		v2.3.7
 
 COMMENT =		convert OSM data to PgRouting format
 CATEGORIES =		geo
