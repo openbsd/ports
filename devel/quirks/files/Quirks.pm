@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1263 2021/04/28 08:48:59 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.1264 2021/04/28 08:52:25 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -992,6 +992,7 @@ setup_obsolete_reason(
 	22 => 'GeoIP',
 	2 => 'akpop3d',
 	6 => 'gtk+4-cloudprint',
+	21 => qr{^drupal},
 # 6.8
 	3 => 'planner',
 	3 => 'gnome-recipes',
@@ -1227,6 +1228,7 @@ setup_obsolete_reason(
 	5 => 'fpc',
 	13 => 'exaile',
 	3 => 'instead-launcher',
+	3 => qr{^(ruby(19|2[0-5])-|ruby-[^0-9])},
 # 6.9
 	3 => 'py-notify',
 	3 => 'glimpse',
@@ -1636,8 +1638,14 @@ sub filter_obsolete
 	for my $pkgname (@in) {
 		my $stem = OpenBSD::PackageName::splitstem($pkgname);
 		my $reason = $obsolete_reason->{$stem};
-		$reason = 3 if (!defined $reason && $pkgname =~ m/^(ruby(19|2[0-5])-|ruby-[^0-9])/); # 6.8
-		$reason = 21 if (!defined $reason && $pkgname =~ m/^drupal/); # 6.7
+		if (!defined $reason) {
+			for my $o (@$obsolete_regexp) {
+				if ($pkgname =~ m/$o->[0]/) {
+					$reason = $o->[1];
+				    	last;
+				}
+			}
+		}
 		if (defined $reason) {
 			$state->say("Obsolete package: #1 (#2)", $pkgname, 
 			    $obsolete_message->{$reason});
