@@ -1,0 +1,93 @@
+#! /bin/ksh
+# $OpenBSD: fetch_cmd.template,v 1.1 2021/04/28 16:42:30 espie Exp $
+# Copyright (c) 2021 Marc Espie <espie@openbsd.org>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+
+# this is a template for parsing the common ftp options a FETCH_CMD
+# requires, so that you can use curl or whatever weird shit you need
+# later
+
+continued=false
+if test -t
+then
+	verbose=true
+	progressmeter=true
+else
+	verbose=false
+	progressmeter=false
+fi
+sessionfile=
+outputfile=
+pipeout=false
+
+args=`getopt CmvVo:S: $*`
+if [ $? -ne 0 ]
+then
+	echo "Usage: $0 [ftp options] [files ...]"
+	exit 2
+fi
+set -e
+set -- $args
+while [ $# -ne 0 ]
+do
+    case "$1" in
+    -C)
+    	continued=true
+	shift
+    ;;
+    -v) 
+    	verbose=true
+	shift
+    ;;
+    -V)
+    	verbose=false
+	shift
+    ;;
+    -m)
+    	progressmeter=true
+	shift
+    ;;
+    -o)
+    	outputfile=$2
+	case $outputfile in
+	-)
+		pipeout=true
+	;;
+	esac
+	shift
+	shift
+    ;;
+    -S)
+    	ssl=$2
+	shift
+	shift
+	case $ssl in
+	session=*)
+		sessionfile=`echo $ssl|sed -e 's/session=//'`
+	;;
+	esac
+    ;;
+    --)
+    	shift
+    	break
+    ;;
+    esac
+done
+
+# for instance, a skeleton using curl
+args="-L -s"
+[[ -n $outputfile ]] && args="$args -o $outputfile"
+$continued && args="$args -C -"
+exec /usr/local/bin/curl $args "$@"
