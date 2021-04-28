@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1260 2021/04/28 08:23:02 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.1261 2021/04/28 08:29:40 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -26,14 +26,14 @@ package OpenBSD::Quirks;
 sub new
 {
 	my ($class, $version) = @_;
-	if ($version == 1 || $version == 2 || $version == 3) {
-		return OpenBSD::Quirks3->new;
+	if ($version <= 4) {
+		return OpenBSD::Quirks4->new;
 	} else {
 		return undef;
 	}
 }
 
-package OpenBSD::Quirks3;
+package OpenBSD::Quirks4;
 use Config;
 sub new
 {
@@ -1822,6 +1822,11 @@ sub is_optional_tag
 {
 	my ($self, $tag) = @_;
 	return $optional_tag->{$tag->name};
+}
+
+# doesn't do anything yet, but will be used to check consistency eventually
+sub sanity_check
+{
 }
 
 1;
