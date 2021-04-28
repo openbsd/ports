@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/07/15 20:36:08 kn Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/04/28 20:11:02 sthen Exp $
 bin/tqdm
 lib/python${MODPY_VERSION}/site-packages/tqdm/
 lib/python${MODPY_VERSION}/site-packages/tqdm-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -21,6 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/tqdm/${MODPY_PYCACHE}_tqdm_notebook.${M
 lib/python${MODPY_VERSION}/site-packages/tqdm/${MODPY_PYCACHE}_tqdm_pandas.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tqdm/${MODPY_PYCACHE}_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tqdm/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tqdm/${MODPY_PYCACHE}asyncio.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tqdm/${MODPY_PYCACHE}auto.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tqdm/${MODPY_PYCACHE}autonotebook.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tqdm/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
@@ -37,6 +38,7 @@ lib/python${MODPY_VERSION}/site-packages/tqdm/_tqdm_notebook.py
 lib/python${MODPY_VERSION}/site-packages/tqdm/_tqdm_pandas.py
 lib/python${MODPY_VERSION}/site-packages/tqdm/_utils.py
 lib/python${MODPY_VERSION}/site-packages/tqdm/_version.py
+lib/python${MODPY_VERSION}/site-packages/tqdm/asyncio.py
 lib/python${MODPY_VERSION}/site-packages/tqdm/auto.py
 lib/python${MODPY_VERSION}/site-packages/tqdm/autonotebook.py
 lib/python${MODPY_VERSION}/site-packages/tqdm/cli.py
