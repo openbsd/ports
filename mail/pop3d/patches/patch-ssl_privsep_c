@@ -1,4 +1,6 @@
-$OpenBSD: patch-ssl_privsep_c,v 1.1 2021/04/28 19:43:54 tb Exp $
+$OpenBSD: patch-ssl_privsep_c,v 1.2 2021/04/28 19:53:00 tb Exp $
+
+https://github.com/snimmagadda/pop3d/pull/12
 
 Index: ssl_privsep.c
 --- ssl_privsep.c.orig
