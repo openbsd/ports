@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile,v 1.19 2019/12/24 15:03:18 ajacoutot Exp $
+$OpenBSD: patch-Makefile,v 1.20 2021/04/28 04:03:24 rsadowski Exp $
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -260,7 +260,7 @@ example: example$(EXE)
+@@ -261,7 +261,7 @@ example: example$(EXE)
  endif
  
  x264$(EXE): $(GENERATED) .depend $(OBJCLI) $(CLI_LIBX264)
@@ -12,7 +12,7 @@ Index: Makefile
  
  checkasm8$(EXE): $(GENERATED) .depend $(OBJCHK) $(OBJCHK_8) $(LIBX264)
  	$(LD)$@ $(OBJCHK) $(OBJCHK_8) $(LIBX264) $(LDFLAGS)
-@@ -406,7 +406,6 @@ ifneq ($(IMPLIBNAME),)
+@@ -407,7 +407,6 @@ ifneq ($(IMPLIBNAME),)
  	$(INSTALL) -m 755 $(SONAME) $(DESTDIR)$(bindir)
  	$(INSTALL) -m 644 $(IMPLIBNAME) $(DESTDIR)$(libdir)
  else ifneq ($(SONAME),)

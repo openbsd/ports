@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.59 2021/04/03 11:15:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2021/04/28 04:03:24 rsadowski Exp $
 
 COMMENT=	free H.264/MPEG-4 AVC encoder
 
-DISTNAME=	x264-20200705
+DISTNAME=	x264-20210415
 GH_ACCOUNT=	mirror
 GH_PROJECT=	x264
-GH_COMMIT=	cde9a93319bea766a92e306d69059c76de970190
-REVISION=	1
+GH_COMMIT=	c347e7a0b476d77674e2c9a6f137f57da026e8fc
 CATEGORIES=	multimedia
 
-SHARED_LIBS=	x264	22.0
+SHARED_LIBS=	x264	23.0
 
 HOMEPAGE=	https://www.videolan.org/developers/x264.html
 
@@ -33,6 +32,8 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
 CONFIGURE_ENV=	API=${LIBx264_VERSION}
 CONFIGURE_ARGS+=--prefix=${PREFIX} \
+		--bashcompletionsdir=${LOCALBASE}/share/bash-completion/completions \
+		--enable-bashcompletion \
 		--enable-pic \
 		--enable-shared \
 		--enable-static \

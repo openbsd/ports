@@ -1,11 +1,11 @@
-$OpenBSD: patch-common_osdep_h,v 1.13 2020/03/01 10:02:12 ajacoutot Exp $
+$OpenBSD: patch-common_osdep_h,v 1.14 2021/04/28 04:03:24 rsadowski Exp $
 
 Enable the use of __sync_fetch_and_add().
 
 Index: common/osdep.h
 --- common/osdep.h.orig
 +++ common/osdep.h
-@@ -367,7 +367,7 @@ X264_API int x264_threading_init( void );
+@@ -434,7 +434,7 @@ X264_API int x264_threading_init( void );
  static ALWAYS_INLINE int x264_pthread_fetch_and_add( int *val, int add, x264_pthread_mutex_t *mutex )
  {
  #if HAVE_THREAD
