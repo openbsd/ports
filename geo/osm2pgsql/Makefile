@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2021/03/07 17:33:37 landry Exp $
+# $OpenBSD: Makefile,v 1.18 2021/04/29 08:51:34 landry Exp $
 
 COMMENT =		OSM data to PostgreSQL converter
 
-GH_TAGNAME =		1.4.1
+GH_TAGNAME =		1.4.2
 GH_PROJECT =		osm2pgsql
 GH_ACCOUNT =		openstreetmap
 
@@ -23,7 +23,6 @@ MODULES =		databases/postgresql    \
 			devel/cmake		\
 			lang/python		\
 			lang/lua
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 LIB_DEPENDS =		databases/postgresql	\
 			devel/proj		\
