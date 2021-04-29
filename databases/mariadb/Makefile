@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2021/02/23 14:29:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.106 2021/04/29 20:52:00 sthen Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
@@ -9,6 +9,7 @@ DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
 PKGNAME-tests=	mariadb-tests-${VERSION}
+REVISION-main=	0
 EPOCH=		1
 # libiconv dep was removed post-6.8
 # keep REVISION in -current above -stable until 6.9
