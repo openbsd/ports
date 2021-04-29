@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1268 2021/04/28 09:21:46 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.1269 2021/04/29 13:18:15 semarie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -455,6 +455,8 @@ my $stem_extensions = {
 	'py-junos-eznc' => 'py3-junos-eznc',
 	'py-ncclient' => 'py3-ncclient',
 	'py-beautifulsoup4' => 'py3-beautifulsoup4',
+# 7.0
+	'weboob' => 'woob',
 };
 
 my $obsolete_reason = {};
