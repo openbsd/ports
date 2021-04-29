@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2020/08/29 20:26:08 martin Exp $
+# $OpenBSD: Makefile,v 1.5 2021/04/29 13:54:37 martin Exp $
 
 COMMENT =	finds unused code in Python programs
 
-MODPY_EGG_VERSION =	2.1
+MODPY_EGG_VERSION =	2.3
 
 DISTNAME =	vulture-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
@@ -20,6 +20,7 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 FLAVORS =	python3
 FLAVOR =	python3
