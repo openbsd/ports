@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.600 2021/04/28 16:01:08 tracey Exp $
+# $OpenBSD: Makefile,v 1.601 2021/04/29 04:12:29 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -211,6 +211,7 @@
      SUBDIR += nomad
      SUBDIR += ntfs-3g
      SUBDIR += nut
+     SUBDIR += oc
      SUBDIR += od1000_firmware
      SUBDIR += opam
      SUBDIR += openpoppassd
