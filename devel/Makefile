@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2095 2021/04/26 16:10:51 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2096 2021/04/29 20:17:54 naddy Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -326,6 +326,7 @@
      SUBDIR += libxsvf
      SUBDIR += libyajl
      SUBDIR += libyaml
+     SUBDIR += libzen
      SUBDIR += llvm
      SUBDIR += log4c
      SUBDIR += log4cplus
