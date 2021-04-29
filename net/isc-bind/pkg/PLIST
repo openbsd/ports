@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2021/02/20 15:49:52 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.29 2021/04/29 09:28:31 sthen Exp $
 @pkgpath net/isc-bind,ratelimit
 @newgroup _bind:741
 @newuser _bind:741:_bind:daemon:bind user:/nonexistent:/sbin/nologin
@@ -233,6 +233,7 @@ include/isc/taskpool.h
 include/isc/thread.h
 include/isc/time.h
 include/isc/timer.h
+include/isc/tls.h
 include/isc/tm.h
 include/isc/types.h
 include/isc/utf8.h
@@ -284,20 +285,27 @@ include/pk11/result.h
 include/pk11/site.h
 include/pkcs11/
 include/pkcs11/pkcs11.h
+@so lib/libbind9-9.16.15.so
 lib/libbind9.la
-@lib lib/libbind9.so.${LIBbind9_VERSION}
+@so lib/libbind9.so
+@so lib/libdns-9.16.15.so
 lib/libdns.la
-@lib lib/libdns.so.${LIBdns_VERSION}
+@so lib/libdns.so
+@so lib/libirs-9.16.15.so
 lib/libirs.la
-@lib lib/libirs.so.${LIBirs_VERSION}
+@so lib/libirs.so
+@so lib/libisc-9.16.15.so
 lib/libisc.la
-@lib lib/libisc.so.${LIBisc_VERSION}
+@so lib/libisc.so
+@so lib/libisccc-9.16.15.so
 lib/libisccc.la
-@lib lib/libisccc.so.${LIBisccc_VERSION}
+@so lib/libisccc.so
+@so lib/libisccfg-9.16.15.so
 lib/libisccfg.la
-@lib lib/libisccfg.so.${LIBisccfg_VERSION}
+@so lib/libisccfg.so
+@so lib/libns-9.16.15.so
 lib/libns.la
-@lib lib/libns.so.${LIBns_VERSION}
+@so lib/libns.so
 lib/named/
 @so lib/named/filter-aaaa.so
 lib/python${MODPY_VERSION}/

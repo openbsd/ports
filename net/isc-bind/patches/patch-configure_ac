@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.13 2021/02/27 20:56:03 sthen Exp $
+$OpenBSD: patch-configure_ac,v 1.14 2021/04/29 09:28:31 sthen Exp $
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -1833,7 +1833,7 @@ AC_DEFINE(NEED_OPTARG, 1, [Defined if extern char *opt
+@@ -1816,7 +1816,7 @@ AC_DEFINE(NEED_OPTARG, 1, [Defined if extern char *opt
  AC_MSG_CHECKING([for st_mtim.tv_nsec])
  AC_COMPILE_IFELSE(
    [AC_LANG_PROGRAM(
