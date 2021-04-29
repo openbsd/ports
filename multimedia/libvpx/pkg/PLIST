@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/12/24 15:08:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/04/29 04:07:21 rsadowski Exp $
 @bin bin/vpxdec
 @bin bin/vpxenc
 include/vpx/
@@ -8,6 +8,7 @@ include/vpx/vp8dx.h
 include/vpx/vpx_codec.h
 include/vpx/vpx_decoder.h
 include/vpx/vpx_encoder.h
+include/vpx/vpx_ext_ratectrl.h
 include/vpx/vpx_frame_buffer.h
 include/vpx/vpx_image.h
 include/vpx/vpx_integer.h
