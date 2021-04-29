@@ -1,4 +1,4 @@
-/*	$OpenBSD: ssl-openssl.c,v 1.9 2015/01/09 01:34:44 brad Exp $	*/
+/*	$OpenBSD: ssl-openssl.c,v 1.10 2021/04/29 18:27:02 tb Exp $	*/
 
 /*
  * OpenSSL SSL-plugin for purple
@@ -39,34 +39,6 @@ typedef struct
 #define PURPLE_SSL_OPENSSL_DATA(gsc) ((PurpleSslOpensslData *)gsc->private_data)
 
 /*
- * ssl_openssl_init_openssl
- *
- * load the error strings we might want to use eventually, and init the
- * openssl library
- */
-static void
-ssl_openssl_init_openssl(void)
-{
-	/*
-	 * load the error number to string strings so that we can make sense
-	 * of ssl issues while debugging this code
-	 */
-	SSL_load_error_strings();
-
-	/*
-	 * we need to initialise the openssl library
-	 * we do not seed the random number generator, although we probably
-	 * should in purple-win32.
-	 */
-	SSL_library_init();
-
-	/*
-	 * add all digest algorithms and ciphers
-	 */
-	OpenSSL_add_all_algorithms();
-}
-
-/*
  * ssl_openssl_init
  */
 static gboolean
@@ -77,14 +49,10 @@ ssl_openssl_init(void)
 
 /*
  * ssl_openssl_uninit
- *
- * couldn't find anything to match the call to SSL_library_init in the man
- * pages, i wonder if there actually is anything we need to call
  */
 static void
 ssl_openssl_uninit(void)
 {
-	ERR_free_strings();
 }
 
 /*
@@ -151,7 +119,7 @@ ssl_openssl_connect(PurpleSslConnection *gsc)
 	/*
 	 * allocate a new SSL_CTX object
 	 */
-	openssl_data->ssl_ctx = SSL_CTX_new(SSLv23_client_method());
+	openssl_data->ssl_ctx = SSL_CTX_new(TLS_method());
 	if (openssl_data->ssl_ctx == NULL) {
 		purple_debug_error("openssl", "SSL_CTX_new failed\n");
 		if (gsc->error_cb != NULL)
@@ -161,12 +129,6 @@ ssl_openssl_connect(PurpleSslConnection *gsc)
 		purple_ssl_close(gsc);
 		return;
 	}
-
-	/*
-	 * disable SSLv2 and SSLv3
-	 */
-	SSL_CTX_set_options(openssl_data->ssl_ctx,
-		(SSL_OP_NO_SSLv2 | SSL_OP_NO_SSLv3));
 
 	/*
 	 * allocate a new SSL object
@@ -302,9 +264,6 @@ plugin_load(PurplePlugin *plugin)
 {
 	if (!purple_ssl_get_ops())
 		purple_ssl_set_ops(&ssl_ops);
-
-	/* Init OpenSSL now so others can use it even if sslconn never does */
-	ssl_openssl_init_openssl();
 
 	return (TRUE);
 }
