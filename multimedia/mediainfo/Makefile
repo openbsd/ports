@@ -1,54 +1,37 @@
-# $OpenBSD: Makefile,v 1.24 2020/10/30 20:55:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2021/04/29 20:19:54 naddy Exp $
 
-COMMENT=	display technical and tag data for video and audio files
+COMMENT=	utility for reading information from audio/video files
 
-VERSION=	20.09
+VERSION=	21.03
 PKGNAME=	mediainfo-${VERSION}
 CATEGORIES=	multimedia
+
 HOMEPAGE=	https://mediaarea.net/en/MediaInfo
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
-# BSD-style
+# BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c m pthread ${COMPILER_LIBCXX} z
+WANTLIB=	${COMPILER_LIBCXX} c m mediainfo pthread z zen
 
-COMPILER =	base-clang ports-gcc
+MASTER_SITES=	https://mediaarea.net/download/source/mediainfo/${VERSION}/
+DISTFILES=	mediainfo_${VERSION}.tar.xz
 
-MASTER_SITES=	https://mediaarea.net/download/binary/mediainfo/${VERSION}/
-DISTFILES=	MediaInfo_CLI_${VERSION}_GNU_FromSource.tar.xz
+COMPILER=	base-clang ports-gcc
 
-WRKDIST=	${WRKDIR}/MediaInfo_CLI_GNU_FromSource
+LIB_DEPENDS=	devel/libzen \
+		multimedia/libmediainfo
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	SUBDIRS="${SUBDIRS}"
-MAKE_ENV=	SUBDIRS="${SUBDIRS}"
-LIBTOOL_FLAGS=	--tag=disable-shared
-MODGNU_CONFIG_GUESS_DIRS=${SUBDIRS}
-
-ZENLIBDIR=	${WRKSRC}/ZenLib/Project/GNU/Library
-MEDIAINFOLIBDIR=${WRKSRC}/MediaInfoLib/Project/GNU/Library
-MEDIAINFODIR=	${WRKSRC}/MediaInfo/Project/GNU/CLI
-
-SUBDIRS=	${ZENLIBDIR} ${MEDIAINFOLIBDIR} ${MEDIAINFODIR}
+CONFIGURE_STYLE=autoreconf
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
-# MediaInfoLib tests fetch files from the Internet
-NO_TEST=	Yes
+AUTOCONF_VERSION=2.69
+AUTOMAKE_VERSION=1.13
+AUTOCONF_DIR=	${WRKBUILD}
 
-# fix line endings for files that are patched
-#pre-patch:
-#	@sed -i "s/$$(printf \\r)\$$//" \
-#	    ${WRKSRC}/MediaInfoLib/Source/MediaInfo/MediaInfo_Internal.cpp
-
-pre-configure:
-	@cp ${FILESDIR}/configure ${FILESDIR}/Makefile ${WRKSRC}
-	@chmod a+x ${WRKSRC}/configure
-
-do-install:
-	@cd ${MEDIAINFODIR} && ${LIBTOOL} ${LIBTOOL_FLAGS} --mode=install \
-	    ${INSTALL_PROGRAM} mediainfo ${PREFIX}/bin
+WRKDIST=	${WRKDIR}/MediaInfo
+WRKBUILD=	${WRKSRC}/Project/GNU/CLI
 
 .include <bsd.port.mk>
