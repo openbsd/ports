@@ -1,0 +1,15 @@
+$OpenBSD: patch-Project_GNU_Library_configure_ac,v 1.1.1.1 2021/04/29 20:16:01 naddy Exp $
+
+Index: Project/GNU/Library/configure.ac
+--- Project/GNU/Library/configure.ac.orig
++++ Project/GNU/Library/configure.ac
+@@ -843,9 +843,6 @@ if test "$GXX" = yes ; then
+ 	if test "$enable_debug" = "yes"; then
+ 		CFLAGS="$CFLAGS -O0 -g -Wall -Wundef"
+ 		CXXFLAGS="$CXXFLAGS -O0 -g -Wall -W -Wundef -Wcast-qual -Wno-ctor-dtor-privacy"
+-	else
+-		CFLAGS="$CFLAGS -O2"
+-		CXXFLAGS="$CXXFLAGS -O2"
+ 	fi
+ 	if test "$enable_gprof" = "yes"; then
+ 		CFLAGS="$CFLAGS -pg -g"

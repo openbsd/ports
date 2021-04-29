@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/04/29 20:16:01 naddy Exp $
+include/MediaInfo/
+include/MediaInfo/MediaInfo.h
+include/MediaInfo/MediaInfoList.h
+include/MediaInfo/MediaInfo_Const.h
+include/MediaInfo/MediaInfo_Events.h
+include/MediaInfoDLL/
+include/MediaInfoDLL/MediaInfoDLL.h
+include/MediaInfoDLL/MediaInfoDLL_Static.h
+@static-lib lib/libmediainfo.a
+lib/libmediainfo.la
+@lib lib/libmediainfo.so.${LIBmediainfo_VERSION}
+lib/pkgconfig/libmediainfo.pc

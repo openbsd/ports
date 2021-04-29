@@ -1,0 +1,10 @@
+MediaInfo is a library used for retrieving technical information and other
+metadata about audio or video files.
+
+A non-exhaustive list of the information MediaInfo can retrieve from media
+files include:
+- General: title, author, director, album, track number, date, duration...
+- Video: codec, aspect, fps, bitrate...
+- Audio: codec, sample rate, channels, language, bitrate...
+- Text: language of subtitle
+- Chapters: number of chapters, list of chapters
