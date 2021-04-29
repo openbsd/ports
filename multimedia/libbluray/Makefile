@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2020/12/14 16:06:00 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.17 2021/04/29 04:25:14 rsadowski Exp $
 
 COMMENT =		library supporting Blu-ray playback
 
-V =			1.2.1
+V =			1.3.0
 DISTNAME =		libbluray-${V}
 CATEGORIES =		multimedia
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=		c expat fontconfig freetype iconv lzma m pthread
 WANTLIB +=		xml2 z
 
-SHARED_LIBS +=		bluray		3.1	# 11.0
+SHARED_LIBS +=		bluray		3.2	# 11.0
 
 LIB_DEPENDS =		converters/libiconv \
 			textproc/libxml
