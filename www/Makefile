@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1028 2021/04/24 00:31:56 jeremy Exp $
+# $OpenBSD: Makefile,v 1.1029 2021/04/29 13:09:42 semarie Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -621,7 +621,6 @@
      SUBDIR += wbox
      SUBDIR += webalizer
      SUBDIR += webkitgtk4
-     SUBDIR += weboob
      SUBDIR += wp-cli
      SUBDIR += wslay
      SUBDIR += wwwcount
