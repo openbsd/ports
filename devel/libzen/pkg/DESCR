@@ -1,0 +1,3 @@
+ZenLib is a C++ utility library. It includes classes for handling
+strings, configuration, bit streams, threading, translation, and
+cross-platform operating system functions.
