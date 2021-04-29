@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2020/11/02 21:57:19 jca Exp $
+@comment $OpenBSD: PLIST,v 1.16 2021/04/29 22:31:15 benno Exp $
 bin/zim
 lib/python${MODPY_VERSION}/site-packages/zim/
 lib/python${MODPY_VERSION}/site-packages/zim-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -336,7 +336,9 @@ share/locale/fi/LC_MESSAGES/zim.mo
 share/locale/fr/LC_MESSAGES/zim.mo
 share/locale/gl/LC_MESSAGES/zim.mo
 share/locale/he/LC_MESSAGES/zim.mo
+share/locale/hr/LC_MESSAGES/zim.mo
 share/locale/hu/LC_MESSAGES/zim.mo
+share/locale/id/LC_MESSAGES/zim.mo
 share/locale/it/LC_MESSAGES/zim.mo
 share/locale/ja/LC_MESSAGES/zim.mo
 share/locale/ko/LC_MESSAGES/zim.mo
