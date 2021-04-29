@@ -1,0 +1,13 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2021/04/29 13:11:35 semarie Exp $
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -34,7 +34,7 @@ def install_woob():
+     packages = set(find_packages(exclude=['modules', 'modules.*']))
+ 
+     data_files = [
+-        ('share/man/man1', glob.glob('man/*')),
++        ('man/man1', glob.glob('man/*')),
+     ]
+ 
+     requirements = [
