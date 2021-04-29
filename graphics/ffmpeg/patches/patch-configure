@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.65 2020/07/06 07:14:55 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.66 2021/04/29 03:57:55 rsadowski Exp $
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -5339,7 +5339,6 @@ case $target_os in
+@@ -5377,7 +5377,6 @@ case $target_os in
          enable section_data_rel_ro
          striptype=""
          SHFLAGS='-shared'
@@ -11,7 +11,7 @@ Index: configure
          SLIB_INSTALL_LINKS=
          oss_indev_extralibs="-lossaudio"
          oss_outdev_extralibs="-lossaudio"
-@@ -5695,7 +5694,7 @@ set_default libdir
+@@ -5733,7 +5732,7 @@ set_default libdir
  set_default $PATHS_LIST
  set_default nm
  

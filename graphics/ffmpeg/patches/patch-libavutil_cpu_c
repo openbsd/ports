@@ -1,9 +1,9 @@
-$OpenBSD: patch-libavutil_cpu_c,v 1.1 2021/04/03 11:15:46 sthen Exp $
+$OpenBSD: patch-libavutil_cpu_c,v 1.2 2021/04/29 03:57:55 rsadowski Exp $
 
 Index: libavutil/cpu.c
 --- libavutil/cpu.c.orig
 +++ libavutil/cpu.c
-@@ -283,6 +283,12 @@ int av_cpu_count(void)
+@@ -291,6 +291,12 @@ int av_cpu_count(void)
      DWORD_PTR proc_aff, sys_aff;
      if (GetProcessAffinityMask(GetCurrentProcess(), &proc_aff, &sys_aff))
          nb_cpus = av_popcount64(proc_aff);

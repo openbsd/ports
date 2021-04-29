@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2020/06/18 07:03:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.39 2021/04/29 03:57:55 rsadowski Exp $
 @bin bin/ffmpeg
 @bin bin/ffplay
 @bin bin/ffprobe
@@ -75,6 +75,7 @@ include/libavutil/eval.h
 include/libavutil/ffversion.h
 include/libavutil/fifo.h
 include/libavutil/file.h
+include/libavutil/film_grain_params.h
 include/libavutil/frame.h
 include/libavutil/hash.h
 include/libavutil/hdr_dynamic_metadata.h

@@ -1,23 +1,22 @@
-# $OpenBSD: Makefile,v 1.208 2021/04/03 11:15:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.209 2021/04/29 03:57:54 rsadowski Exp $
 
 COMMENT=	audio/video converter and streamer
 
-V=		4.3.2
+V=		4.4
 DISTNAME=	ffmpeg-${V}
-REVISION=	0
 EPOCH=		1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	https://ffmpeg.org/releases/
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	avcodec		24.0 \
-		avdevice	12.0 \
-		avfilter	9.0 \
-		avformat	21.0 \
+SHARED_LIBS=	avcodec		25.0 \
+		avdevice	13.0 \
+		avfilter	10.0 \
+		avformat	22.0 \
 		avresample	2.0 \
-		avutil		14.0 \
-		postproc	18.0 \
-		swresample	3.0 \
+		avutil		15.0 \
+		postproc	19.0 \
+		swresample	4.0 \
 		swscale		7.0
 
 HOMEPAGE=	https://ffmpeg.org/
