@@ -1,5 +1,5 @@
 #! /bin/ksh
-# $OpenBSD: fetch_cmd.template,v 1.1 2021/04/28 16:42:30 espie Exp $
+# $OpenBSD: fetch_cmd.template,v 1.2 2021/04/30 20:20:02 naddy Exp $
 # Copyright (c) 2021 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -32,59 +32,35 @@ sessionfile=
 outputfile=
 pipeout=false
 
-args=`getopt CmvVo:S: $*`
-if [ $? -ne 0 ]
-then
-	echo "Usage: $0 [ftp options] [files ...]"
-	exit 2
-fi
 set -e
-set -- $args
-while [ $# -ne 0 ]
+while getopts CmVvo:S: name
 do
-    case "$1" in
-    -C)
-    	continued=true
-	shift
-    ;;
-    -v) 
-    	verbose=true
-	shift
-    ;;
-    -V)
-    	verbose=false
-	shift
-    ;;
-    -m)
-    	progressmeter=true
-	shift
-    ;;
-    -o)
-    	outputfile=$2
-	case $outputfile in
-	-)
-		pipeout=true
-	;;
+	case $name in
+	C)	continued=true
+		;;
+	m)	progressmeter=true
+		;;
+	V)	verbose=false
+		;;
+	v)	verbose=true
+		;;
+	o)	outputfile=$OPTARG
+		case $outputfile in
+		-)	pipeout=true ;;
+		esac
+		;;
+	S)	ssl=$OPTARG
+		case $ssl in
+		session=*)
+			sessionfile=${sessionfile#session=} ;;
+		esac
+		;;
+	?)	echo "Usage: $0 [ftp options] [files ...]" >&2
+		exit 2
+		;;
 	esac
-	shift
-	shift
-    ;;
-    -S)
-    	ssl=$2
-	shift
-	shift
-	case $ssl in
-	session=*)
-		sessionfile=`echo $ssl|sed -e 's/session=//'`
-	;;
-	esac
-    ;;
-    --)
-    	shift
-    	break
-    ;;
-    esac
 done
+shift $((OPTIND - 1))
 
 # for instance, a skeleton using curl
 args="-L -s"
