@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.159 2021/04/30 17:00:26 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.160 2021/04/30 18:20:59 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -160,7 +160,7 @@ CONFIGURE_ARGS+=	--enable-phpdbg
 .for i in ${SAPI}
 WANTLIB$i +=		argon2 crypto curses iconv intl lzma m onig
 WANTLIB$i +=		pthread readline sodium ssl xml2 z
-.  if ! "$i" == "-apache"
+.  if !("$i"=="-apache")
 WANTLIB$i +=		c
 .  endif
 LIB_DEPENDS$i +=	devel/gettext,-runtime \
