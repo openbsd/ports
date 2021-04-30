@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.116 2021/03/25 07:42:07 giovanni Exp $
+# $OpenBSD: Makefile,v 1.117 2021/04/30 14:43:48 giovanni Exp $
 
 COMMENT=		mailfilter to identify and mark spam
 
-VER=			3.4.5
+VER=			3.4.6
 DISTNAME=		Mail-SpamAssassin-${VER}
 PKGNAME=		p5-${DISTNAME}
-RULESNAME=		Mail-SpamAssassin-rules-${VER}.r1887800.tgz
+RULESNAME=		Mail-SpamAssassin-rules-${VER}.r1888502.tgz
 CATEGORIES=		mail perl5
 
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} ${RULESNAME}
