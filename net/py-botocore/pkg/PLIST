@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.159 2021/04/24 07:34:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.160 2021/04/30 07:05:55 ajacoutot Exp $
 @conflict py-botocore-*
 @pkgpath net/py-botocore
 lib/python${MODPY_VERSION}/site-packages/botocore/
@@ -1035,6 +1035,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/networkmanager/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/networkmanager/2019-07-05/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/networkmanager/2019-07-05/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/networkmanager/2019-07-05/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/nimble/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/nimble/2020-08-01/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/nimble/2020-08-01/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/nimble/2020-08-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworks/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworks/2013-02-18/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/opsworks/2013-02-18/examples-1.json
