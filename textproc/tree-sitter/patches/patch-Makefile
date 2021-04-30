@@ -1,0 +1,41 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2021/04/30 16:16:46 paco Exp $
+
+Remove forced SONAME so it does not disagree with lib file name.
+Also remove useless symlinks for the shared lib and fix the substitutions on
+the pkg-config file
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -35,7 +35,7 @@ else
+ 	SOEXT = so
+ 	SOEXTVER_MAJOR = so.$(SONAME_MAJOR)
+ 	SOEXTVER = so.$(SONAME_MAJOR).$(SONAME_MINOR)
+-	LINKSHARED += -shared -Wl,-soname,libtree-sitter.so.$(SONAME_MAJOR)
++	LINKSHARED += -shared
+ endif
+ ifneq (,$(filter $(shell uname),FreeBSD NetBSD DragonFly))
+ 	PCLIBDIR := $(PREFIX)/libdata/pkgconfig
+@@ -48,21 +48,16 @@ libtree-sitter.a: $(OBJ)
+ 
+ libtree-sitter.$(SOEXTVER): $(OBJ)
+ 	$(CC) $(LDFLAGS) $(LINKSHARED) $^ $(LDLIBS) -o $@
+-	ln -sf $@ libtree-sitter.$(SOEXT)
+-	ln -sf $@ libtree-sitter.$(SOEXTVER_MAJOR)
+ 
+ install: all
+ 	install -d '$(DESTDIR)$(LIBDIR)'
+ 	install -m755 libtree-sitter.a '$(DESTDIR)$(LIBDIR)'/libtree-sitter.a
+ 	install -m755 libtree-sitter.$(SOEXTVER) '$(DESTDIR)$(LIBDIR)'/libtree-sitter.$(SOEXTVER)
+-	ln -sf libtree-sitter.$(SOEXTVER) '$(DESTDIR)$(LIBDIR)'/libtree-sitter.$(SOEXTVER_MAJOR)
+-	ln -sf libtree-sitter.$(SOEXTVER) '$(DESTDIR)$(LIBDIR)'/libtree-sitter.$(SOEXT)
+ 	install -d '$(DESTDIR)$(INCLUDEDIR)'/tree_sitter
+ 	install -m644 lib/include/tree_sitter/*.h '$(DESTDIR)$(INCLUDEDIR)'/tree_sitter/
+ 	install -d '$(DESTDIR)$(PCLIBDIR)'
+ 	sed -e 's|@LIBDIR@|$(LIBDIR)|;s|@INCLUDEDIR@|$(INCLUDEDIR)|;s|@VERSION@|$(VERSION)|' \
+-	    -e 's|=$(PREFIX)|=$${prefix}|' \
+-	    -e 's|@PREFIX@|$(PREFIX)|' \
++	    -e 's|@PREFIX@|$(LOCALBASE)|' \
+ 	    tree-sitter.pc.in > '$(DESTDIR)$(PCLIBDIR)'/tree-sitter.pc
+ 
+ clean:
