@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.46 2021/03/18 18:04:32 tb Exp $
+# $OpenBSD: Makefile,v 1.47 2021/04/30 22:46:24 solene Exp $
 
 COMMENT =	music player
 
 GH_ACCOUNT =	clementine-player
 GH_PROJECT =	Clementine
-GH_TAGNAME =	1.4.0rc1-510-g3f34b332c
-PKGNAME =	clementine-${GH_TAGNAME:C/-510.*/pl510/}
+GH_TAGNAME =	1.4.0rc1-550-g72c1f91c0
+PKGNAME =	clementine-${GH_TAGNAME:C/-550.*/pl550/}
 
 CATEGORIES =	audio x11
 
