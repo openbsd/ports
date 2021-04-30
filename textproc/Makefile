@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.677 2021/04/24 00:31:56 jeremy Exp $
+# $OpenBSD: Makefile,v 1.678 2021/04/30 16:17:51 paco Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -535,6 +535,7 @@
      SUBDIR += tinyxml
      SUBDIR += tinyxml2
      SUBDIR += tre
+     SUBDIR += tree-sitter
      SUBDIR += txt2man
      SUBDIR += txt2tags
      SUBDIR += uchardet
