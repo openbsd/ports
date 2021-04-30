@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2019/12/30 22:45:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2021/04/30 17:14:50 millert Exp $
 
 COMMENT=	log management solution
 
@@ -6,7 +6,7 @@ V =		3.12.1
 REL =		3.12
 DISTNAME =	syslog-ng-$V
 CATEGORIES =	sysutils
-REVISION =	7
+REVISION =	8
 
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 
@@ -15,13 +15,15 @@ HOMEPAGE =	https://syslog-ng.com/
 # GPL v2
 PERMIT_PACKAGE =		Yes
 
-WANTLIB += c crypto curl dbi evtlog glib-2.0 gmodule-2.0 gthread-2.0
+WANTLIB += c crypto curl dbi glib-2.0 gmodule-2.0 gthread-2.0
 WANTLIB += iconv intl ivykis json-c m maxminddb nghttp2 pcre pthread
 WANTLIB += ssl z
 
 MASTER_SITES =	http://github.com/balabit/syslog-ng/releases/download/${DISTNAME}/
 
-SHARED_LIBS =	syslog-ng		5.0 \
+SHARED_LIBS =	evtlog			2.0 \
+		evtlog-${REL}		2.0 \
+		syslog-ng		5.0 \
 		syslog-ng-${REL}	5.0
 
 # needs a newer compiler due to libmaxminddb header
@@ -31,7 +33,6 @@ COMPILER_LANGS = c
 LIB_DEPENDS =	devel/glib2 \
 		devel/json-c \
 		devel/libivykis \
-		sysutils/eventlog \
 		databases/libdbi>=0.9.0 \
 		net/curl \
 		net/libmaxminddb
@@ -62,9 +63,7 @@ CONFIGURE_ENV +=	OPENSSL_CFLAGS="-I/usr/include/openssl" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 # json-c only installs libjson-c.pc; syslog-ng checks for libjson.pc
 CONFIGURE_ENV +=	JSON_C_CFLAGS="`pkg-config json-c --cflags`" \
-			JSON_C_LIBS="`pkg-config json-c --libs`" \
-			EVTLOG_LIBS="-L${LOCALBASE}/lib -levtlog" \
-			EVTLOG_CFLAGS="-I${LOCALBASE}/include/eventlog"
+			JSON_C_LIBS="`pkg-config json-c --libs`"
 
 USE_GMAKE =	Yes
 

@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.24 2019/12/09 14:45:16 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.25 2021/04/30 17:14:50 millert Exp $
+@conflict eventlog-*
+@pkgpath sysutils/eventlog
 @rcscript ${RCDIR}/syslog_ng
 @bin bin/dqtool
 @bin bin/loggen
@@ -225,9 +227,13 @@ include/syslog-ng/value-pairs/evttag.h
 include/syslog-ng/value-pairs/transforms.h
 include/syslog-ng/value-pairs/value-pairs.h
 include/syslog-ng/versioning.h
+@lib lib/libevtlog-3.12.so.${LIBevtlog-3.12_VERSION}
+@static-lib lib/libevtlog.a
+lib/libevtlog.la
+@lib lib/libevtlog.so.${LIBevtlog_VERSION}
 @lib lib/libsyslog-ng-3.12.so.${LIBsyslog-ng-3.12_VERSION}
-lib/libsyslog-ng-native-connector.a
-lib/libsyslog-ng.a
+@static-lib lib/libsyslog-ng-native-connector.a
+@static-lib lib/libsyslog-ng.a
 lib/libsyslog-ng.la
 @lib lib/libsyslog-ng.so.${LIBsyslog-ng_VERSION}
 lib/pkgconfig/syslog-ng-add-contextual-data.pc
@@ -235,37 +241,37 @@ lib/pkgconfig/syslog-ng-native-connector.pc
 lib/pkgconfig/syslog-ng-test.pc
 lib/pkgconfig/syslog-ng.pc
 lib/syslog-ng/
-lib/syslog-ng/libadd-contextual-data.so
-lib/syslog-ng/libaffile.so
-lib/syslog-ng/libafprog.so
-lib/syslog-ng/libafsocket.so
-lib/syslog-ng/libafsql.so
-lib/syslog-ng/libafuser.so
-lib/syslog-ng/libbasicfuncs.so
-lib/syslog-ng/libcef.so
-lib/syslog-ng/libconfgen.so
-lib/syslog-ng/libcryptofuncs.so
-lib/syslog-ng/libcsvparser.so
-lib/syslog-ng/libdate.so
-lib/syslog-ng/libdbparser.so
-lib/syslog-ng/libdisk-buffer.so
-lib/syslog-ng/libgeoip2-plugin.so
-lib/syslog-ng/libgraphite.so
-lib/syslog-ng/libhttp.so
-lib/syslog-ng/libjson-plugin.so
-lib/syslog-ng/libkvformat.so
-lib/syslog-ng/liblinux-kmsg-format.so
-lib/syslog-ng/libmap-value-pairs.so
-lib/syslog-ng/libpseudofile.so
-lib/syslog-ng/libsnmptrapd-parser.so
-lib/syslog-ng/libstardate.so
-lib/syslog-ng/libsyslogformat.so
-lib/syslog-ng/libsystem-source.so
-lib/syslog-ng/libtags-parser.so
+@so lib/syslog-ng/libadd-contextual-data.so
+@so lib/syslog-ng/libaffile.so
+@so lib/syslog-ng/libafprog.so
+@so lib/syslog-ng/libafsocket.so
+@so lib/syslog-ng/libafsql.so
+@so lib/syslog-ng/libafuser.so
+@so lib/syslog-ng/libbasicfuncs.so
+@so lib/syslog-ng/libcef.so
+@so lib/syslog-ng/libconfgen.so
+@so lib/syslog-ng/libcryptofuncs.so
+@so lib/syslog-ng/libcsvparser.so
+@so lib/syslog-ng/libdate.so
+@so lib/syslog-ng/libdbparser.so
+@so lib/syslog-ng/libdisk-buffer.so
+@so lib/syslog-ng/libgeoip2-plugin.so
+@so lib/syslog-ng/libgraphite.so
+@so lib/syslog-ng/libhttp.so
+@so lib/syslog-ng/libjson-plugin.so
+@so lib/syslog-ng/libkvformat.so
+@so lib/syslog-ng/liblinux-kmsg-format.so
+@so lib/syslog-ng/libmap-value-pairs.so
+@so lib/syslog-ng/libpseudofile.so
+@so lib/syslog-ng/libsnmptrapd-parser.so
+@so lib/syslog-ng/libstardate.so
+@so lib/syslog-ng/libsyslogformat.so
+@so lib/syslog-ng/libsystem-source.so
+@so lib/syslog-ng/libtags-parser.so
 lib/syslog-ng/libtest/
-lib/syslog-ng/libtest/libsyslog-ng-test.a
-lib/syslog-ng/libtfgetent.so
-lib/syslog-ng/libxml.so
+@static-lib lib/syslog-ng/libtest/libsyslog-ng-test.a
+@so lib/syslog-ng/libtfgetent.so
+@so lib/syslog-ng/libxml.so
 @man man/man1/dqtool.1
 @man man/man1/loggen.1
 @man man/man1/pdbtool.1
