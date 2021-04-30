@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.403 2021/03/07 14:17:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.404 2021/04/30 16:38:46 sthen Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -181,7 +181,6 @@
      SUBDIR += pear-Mail-Mime
      SUBDIR += pear-Mail-mimeDecode
      SUBDIR += pear-Mime-Type
-     SUBDIR += pecl-mailparse,php72
      SUBDIR += pecl-mailparse,php73
      SUBDIR += pecl-mailparse,php74
      SUBDIR += pecl-mailparse,php80

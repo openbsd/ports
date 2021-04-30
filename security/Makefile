@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.623 2021/04/24 04:35:30 tb Exp $
+# $OpenBSD: Makefile,v 1.624 2021/04/30 16:38:46 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -244,7 +244,6 @@
      SUBDIR += pear-Auth
      SUBDIR += pear-Auth-HTTP
      SUBDIR += pear-Auth-SASL
-     SUBDIR += pecl-mcrypt,php72
      SUBDIR += pecl-mcrypt,php73
      SUBDIR += pecl-mcrypt,php74
      SUBDIR += pecl-mcrypt,php80

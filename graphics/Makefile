@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.550 2021/04/25 06:54:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.551 2021/04/30 16:38:46 sthen Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -226,7 +226,6 @@
      SUBDIR += p5-Sane
      SUBDIR += pdf2djvu
      SUBDIR += pdfsandwich
-     SUBDIR += pecl-imagick,php72
      SUBDIR += pecl-imagick,php73
      SUBDIR += pecl-imagick,php74
      #SUBDIR += pecl-imagick,php80 not yet
