@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST-enchant,v 1.2 2021/02/24 17:31:58 sthen Exp $
-@option no-default-conflict
-@option is-branch
-@conflict php-enchant-${PHP_PKGSPEC}
-@so lib/php-${PV}/modules/enchant.so
-share/examples/php-${PV}/enchant.ini
-@sample ${SYSCONFDIR}/php-${PV}.sample/enchant.ini

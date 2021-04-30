@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.158 2021/03/08 15:10:42 kmos Exp $
+# $OpenBSD: Makefile.inc,v 1.159 2021/04/30 17:00:26 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -102,7 +102,7 @@ CONFIGURE_ARGS+=	--with-gettext=${LOCALBASE} \
 			--enable-sysvshm \
 			--enable-xml
 
-.if ${PV:M7.2} || ${PV:M7.3}
+.if ${PV:M7.3}
 CONFIGURE_ARGS+=	--enable-wddx \
 			--with-onig=${LOCALBASE} \
 			--with-pcre-regex
@@ -158,14 +158,17 @@ HOMEPAGE-dbg=		https://www.php.net/phpdbg
 CONFIGURE_ARGS+=	--enable-phpdbg
 
 .for i in ${SAPI}
-WANTLIB$i +=		argon2 c crypto curses iconv intl lzma m onig
+WANTLIB$i +=		argon2 crypto curses iconv intl lzma m onig
 WANTLIB$i +=		pthread readline sodium ssl xml2 z
+.  if ! "$i" == "-apache"
+WANTLIB$i +=		c
+.  endif
 LIB_DEPENDS$i +=	devel/gettext,-runtime \
 			security/argon2 \
 			security/libsodium \
 			textproc/libxml \
 			textproc/oniguruma
-.  if !${PV:M7.2} && !${PV:M7.3}
+.  if !${PV:M7.3}
 WANTLIB$i +=		pcre2-8
 LIB_DEPENDS$i +=	devel/pcre2
 .  endif
@@ -229,8 +232,8 @@ LIB_DEPENDS-gd=		graphics/jpeg \
 			graphics/libwebp \
 			graphics/png
 WANTLIB-gd+=		freetype jpeg m png pthread webp z
-.if ${PV:M7.2} || ${PV:M7.3}
-# bundled gd in 7.2/7.3
+.if ${PV:M7.3}
+# bundled gd in <=7.3
 .  if ${BUILD_PACKAGES:M-gd}
 CONFIGURE_ARGS+=	--with-gd=shared \
 			--with-freetype-dir=${X11BASE} \
@@ -242,7 +245,7 @@ CONFIGURE_ARGS+=	--with-gd=shared \
 .  endif
 WANTLIB-gd+=		X11 Xpm xcb
 .else
-# standalone gd in 7.4/8
+# standalone gd in 7.4+
 .  if ${BUILD_PACKAGES:M-gd}
 CONFIGURE_ARGS+=	--with-external-gd \
 			--enable-gd=shared \
@@ -282,7 +285,7 @@ LIB_DEPENDS-intl=	textproc/icu4c
 RUN_DEPENDS-intl=	textproc/icu4c,-wwwdata
 WANTLIB-intl=		${COMPILER_LIBCXX} icudata icui18n icuio icuuc m
 .if ${BUILD_PACKAGES:M-intl}
-.  if ${PV:M7.2} || ${PV:M7.3}
+.  if ${PV:M7.3}
 CONFIGURE_ARGS+=	--enable-intl=shared \
 			--with-icu-dir=${LOCALBASE}
 .  else
@@ -326,7 +329,7 @@ WANTLIB-pcntl=		pthread
 COMMENT-pdo_dblib=	PDO DB-LIB support for php
 HOMEPAGE-pdo_dblib=	https://www.php.net/pdo_dblib
 LIB_DEPENDS-pdo_dblib=	databases/freetds
-WANTLIB-pdo_dblib=	ffi gmp gnutls hogweed iconv idn2 intl \
+WANTLIB-pdo_dblib=	gmp gnutls hogweed iconv idn2 intl \
 			nettle p11-kit pthread sybdb tasn1 unistring
 .if ${BUILD_PACKAGES:M-pdo_dblib}
 CONFIGURE_ARGS+=	--with-pdo-dblib=shared,${LOCALBASE}
@@ -453,7 +456,7 @@ CONFIGURE_ARGS+=	--with-xsl=shared --enable-dom
 # zip
 COMMENT-zip=		zip functions for php
 HOMEPAGE-zip=		https://www.php.net/zip
-.if ${PV:M7.2} || ${PV:M7.3}
+.if ${PV:M7.3}
 CONFIGURE_ARGS+=	--enable-zip=shared,${LOCALBASE}
 CONFIGURE_ARGS+=	--with-libzip=${LOCALBASE}
 .else
