@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/20 10:28:52 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/04/30 16:53:00 sthen Exp $
+${MODPECL_DEFAULTV}@pkgpath www/pecl-pledge,php72
 @extra ${SYSCONFDIR}/php-${MODPHP_VERSION}/${MODULE_NAME}.ini 
 lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
 share/doc/pkg-readmes/${PKGSTEM}

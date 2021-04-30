@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.32 2021/02/24 21:23:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2021/04/30 16:52:59 sthen Exp $
 
-COMMENT =	PHP extension for parsing and working with plain/MIME email
+COMMENT=	PHP extension for parsing and working with plain/MIME email
 
-DISTNAME =	mailparse-3.1.1
-CATEGORIES =	mail
-REVISION =	0
+DISTNAME=	mailparse-3.1.1
+CATEGORIES=	mail
+REVISION=	1
 
-MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # PHP
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 
-MODULES =	lang/php/pecl
+MODULES=	lang/php/pecl
 
-CONFIGURE_STYLE = gnu
+CONFIGURE_STYLE= gnu
 
 .include <bsd.port.mk>

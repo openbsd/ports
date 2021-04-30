@@ -1,24 +1,24 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/24 21:23:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/04/30 16:52:59 sthen Exp $
 
-COMMENT =	YAML-1.1 parser and emitter for PHP
+COMMENT=	YAML-1.1 parser and emitter for PHP
 
-DISTNAME =	yaml-2.2.1
-DIST_SUBDIR =	pecl
-REVISION =	0
+DISTNAME=	yaml-2.2.1
+DIST_SUBDIR=	pecl
+REVISION=	1
 
-CATEGORIES =	textproc
+CATEGORIES=	textproc
 
 # PHP
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += yaml-0
 
-MODULES =	lang/php/pecl
+MODULES=	lang/php/pecl
 
-MODPHP_DO_SAMPLE = yaml
+MODPHP_DO_SAMPLE= yaml
 
-LIB_DEPENDS =	devel/libyaml
+LIB_DEPENDS=	devel/libyaml
 
-CONFIGURE_STYLE = gnu
+CONFIGURE_STYLE= gnu
 
 .include <bsd.port.mk>

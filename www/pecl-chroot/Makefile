@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2021/02/24 21:23:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2021/04/30 16:52:59 sthen Exp $
 
 COMMENT=	PHP support for chroot(2)
 
 DISTNAME=	pecl-chroot-1.0
-REVISION=	15
+REVISION=	16
 
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
@@ -14,7 +14,7 @@ WANTLIB=	c
 
 # not really PECL but close enough
 MODULES=	lang/php/pecl
-FLAVORS=	php72 php73 php74
+FLAVORS=	php73 php74
 CONFIGURE_STYLE= gnu
 
 .include <bsd.port.mk>
