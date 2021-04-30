@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/01/04 14:06:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/04/30 07:33:07 landry Exp $
 @so lib/python${MODPY_VERSION}/site-packages/_libldap0.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/ldap0/
 lib/python${MODPY_VERSION}/site-packages/ldap0-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -17,6 +17,8 @@ lib/python${MODPY_VERSION}/site-packages/ldap0/${MODPY_PYCACHE}__init__.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/ldap0/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap0/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ldap0/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ldap0/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ldap0/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap0/${MODPY_PYCACHE}cidict.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ldap0/${MODPY_PYCACHE}cidict.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap0/${MODPY_PYCACHE}dn.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -54,6 +56,7 @@ lib/python${MODPY_VERSION}/site-packages/ldap0/${MODPY_PYCACHE}tmpl.${MODPY_PYC_
 lib/python${MODPY_VERSION}/site-packages/ldap0/${MODPY_PYCACHE}typehints.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ldap0/${MODPY_PYCACHE}typehints.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap0/base.py
+lib/python${MODPY_VERSION}/site-packages/ldap0/cache.py
 lib/python${MODPY_VERSION}/site-packages/ldap0/cidict.py
 lib/python${MODPY_VERSION}/site-packages/ldap0/controls/
 lib/python${MODPY_VERSION}/site-packages/ldap0/controls/__init__.py
