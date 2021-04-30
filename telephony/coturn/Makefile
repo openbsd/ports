@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2020/08/15 05:11:03 feinerer Exp $
+# $OpenBSD: Makefile,v 1.8 2021/04/30 07:52:33 feinerer Exp $
 
 COMMENT =	coturn STUN/TURN server
 
-V =		4.5.1.3
+V =		4.5.2
 DISTNAME =	turnserver-${V}
 
 CATEGORIES =	telephony
@@ -30,7 +30,9 @@ LIB_DEPENDS =		databases/mariadb \
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--localstatedir='${LOCALSTATEDIR}'
 # There is no port for MongoDB development libraries and/or headers
-CONFIGURE_ENV =		TURN_NO_MONGO=1
+CONFIGURE_ENV =		TURN_NO_MONGO=1 \
+			TURN_NO_PROMETHEUS=1 \
+			TURN_NO_SYSTEMD=1
 
 post-install:
 	rm -rf ${PREFIX}/etc
