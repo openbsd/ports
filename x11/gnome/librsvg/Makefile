@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.180 2021/04/24 09:13:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.181 2021/05/01 06:20:37 ajacoutot Exp $
 
 COMMENT=		SAX-based render library for SVG files
 
 GNOME_PROJECT=		librsvg
-STABLE_VERSION=		2.50.4
+STABLE_VERSION=		2.50.5
 OLD_VERSION=		2.40.21
 DISTFILES=		librsvg-${STABLE_VERSION}${EXTRACT_SUFX}:0 \
 			librsvg-${OLD_VERSION}${EXTRACT_SUFX}:1
