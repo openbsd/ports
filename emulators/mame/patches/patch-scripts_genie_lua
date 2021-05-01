@@ -1,11 +1,11 @@
-$OpenBSD: patch-scripts_genie_lua,v 1.17 2021/03/31 15:18:55 fcambus Exp $
+$OpenBSD: patch-scripts_genie_lua,v 1.18 2021/05/01 13:34:18 fcambus Exp $
 
 - Set OPT_FLAGS even when OPTIMIZE is unset, to allow passing CXXFLAGS
 
 Index: scripts/genie.lua
 --- scripts/genie.lua.orig
 +++ scripts/genie.lua
-@@ -843,17 +843,19 @@ if _OPTIONS["NOWERROR"]==nil then
+@@ -846,17 +846,19 @@ if _OPTIONS["NOWERROR"]==nil then
  	}
  end
  

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/02/01 15:47:16 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/05/01 13:34:18 fcambus Exp $
 @conflict sdlmame-*
 @conflict sdlmame-tools-*
 @conflict sdlmess-*
@@ -41,6 +41,7 @@ share/mame/artwork/bgfx/border_blur/
 share/mame/artwork/bgfx/border_blur/default.lay
 share/mame/artwork/bgfx/chains/
 share/mame/artwork/bgfx/chains/crt-geom/
+share/mame/artwork/bgfx/chains/crt-geom/add_alpha.py
 share/mame/artwork/bgfx/chains/crt-geom/aperture_1_2_bgr.png
 share/mame/artwork/bgfx/chains/crt-geom/aperture_1_4_rgb.png
 share/mame/artwork/bgfx/chains/crt-geom/aperture_2_4_rgb.png
