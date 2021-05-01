@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2021/03/13 11:25:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2021/05/01 06:24:13 ajacoutot Exp $
 
 COMMENT=		GLib wrapper around libarchive
 
 GNOME_PROJECT=		gnome-autoar
-GNOME_VERSION=		0.3.1
+GNOME_VERSION=		0.3.2
 
 SHARED_LIBS +=  gnome-autoar-0            0.0 # 0.0
 SHARED_LIBS +=  gnome-autoar-gtk-0        0.0 # 0.0
@@ -18,9 +18,9 @@ WANTLIB += Xfixes Xi Xinerama Xrandr Xrender archive atk-1.0 atk-bridge-2.0
 WANTLIB += b2 bz2 cairo cairo-gobject charset crypto epoxy expat
 WANTLIB += ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gtk-3 harfbuzz iconv intl lz4 lzma m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png xcb xcb-render xcb-shm
-WANTLIB += z zstd
+WANTLIB += gtk-3 harfbuzz iconv intl jpeg lz4 lzma m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png xcb xcb-render
+WANTLIB += xcb-shm z zstd
 
 MODULES=		x11/gnome
 
