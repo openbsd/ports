@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2020/10/18 16:02:16 ian Exp $
+@comment $OpenBSD: PLIST,v 1.22 2021/05/01 12:25:42 ian Exp $
 share/asterisk/
 share/asterisk/moh/
 share/asterisk/moh/song30.sln
@@ -45,3 +45,4 @@ share/asterisk/moh/song60g.sln
 share/asterisk/moh/song61.sln
 share/asterisk/moh/song62.sln
 share/asterisk/moh/song68.sln
+share/asterisk/moh/song69.sln
