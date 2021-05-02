@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/01/23 18:10:37 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/05/02 04:15:18 rsadowski Exp $
 @bin bin/kdiff3
 lib/qt5/plugins/kf5/kfileitemaction/
 @so lib/qt5/plugins/kf5/kfileitemaction/kdiff3fileitemaction.so
@@ -50,7 +50,6 @@ share/icons/hicolor/32x32/apps/kdiff3.png
 share/icons/hicolor/48x48/apps/kdiff3.png
 share/icons/hicolor/64x64/apps/kdiff3.png
 share/icons/hicolor/scalable/apps/kdiff3.svgz
-share/kservices5/kdiff3part.desktop
 share/kxmlgui5/
 share/kxmlgui5/kdiff3/
 share/kxmlgui5/kdiff3/kdiff3_shell.rc
@@ -154,6 +153,7 @@ share/locale/rw/LC_MESSAGES/kdiff3.mo
 share/locale/sk/LC_MESSAGES/diff_ext.mo
 share/locale/sk/LC_MESSAGES/kdiff3.mo
 share/locale/sk/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+share/locale/sl/LC_MESSAGES/diff_ext.mo
 share/locale/sl/LC_MESSAGES/kdiff3.mo
 share/locale/sl/LC_MESSAGES/kdiff3fileitemactionplugin.mo
 share/locale/sr/LC_MESSAGES/kdiff3.mo
