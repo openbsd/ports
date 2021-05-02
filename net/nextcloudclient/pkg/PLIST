@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/04/24 04:53:27 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/05/02 14:59:45 rsadowski Exp $
 @bin bin/nextcloud
 @bin bin/nextcloudcmd
 include/nextcloudsync/
@@ -13,8 +13,7 @@ include/nextcloudsync/mirall/progressdispatcher.h
 include/nextcloudsync/mirall/syncengine.h
 include/nextcloudsync/mirall/syncfileitem.h
 include/nextcloudsync/mirall/syncresult.h
-lib/libnextcloud_csync.so.0
-lib/libnextcloud_csync.so.3.2.0
+@lib lib/libnextcloud_csync.so.${LIBnextcloud_csync_VERSION}
 @lib lib/libnextcloudsync.so.${LIBnextcloudsync_VERSION}
 share/applications/com.nextcloud.desktopclient.nextcloud.desktop
 share/examples/Nextcloud/

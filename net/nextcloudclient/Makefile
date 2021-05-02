@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2021/04/24 04:53:27 rsadowski Exp $ #
+# $OpenBSD: Makefile,v 1.17 2021/05/02 14:59:45 rsadowski Exp $ #
 
 COMMENT =	desktop sync client for Nextcloud
 
-V =		3.2.0
+V =		3.2.1
 DISTNAME =	nextcloudclient-${V}
 
 GH_ACCOUNT =	nextcloud
@@ -13,8 +13,8 @@ CATEGORIES =	net
 
 HOMEPAGE =	https://nextcloud.com
 
-SHARED_LIBS +=  nextcloudsync   0.1 # 3.0.3
-SHARED_LIBS +=  ocsync          0.0 # 3.0.3
+SHARED_LIBS +=  nextcloudsync    0.1 # 3.2.1
+SHARED_LIBS +=  nextcloud_csync  0.0 # 3.2.1
 
 MAINTAINER =	Adriano Barbosa <barbosa.aob@gmail.com>
 
@@ -22,10 +22,11 @@ MAINTAINER =	Adriano Barbosa <barbosa.aob@gmail.com>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2
-WANTLIB += Qt5Svg Qt5WebEngine Qt5WebSockets Qt5Widgets Qt5Xml c crypto
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 intl m qt5keychain secret-1 sqlite3
-WANTLIB += ssl z lib/inotify/inotify
+WANTLIB += Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
+WANTLIB += Qt5Quick Qt5QuickControls2 Qt5Svg Qt5WebChannel Qt5WebEngineCore
+WANTLIB += Qt5WebEngineWidgets Qt5WebSockets Qt5Widgets Qt5Xml
+WANTLIB += c crypto gio-2.0 glib-2.0 gobject-2.0 intl m qt5keychain
+WANTLIB += secret-1 sqlite3 ssl z lib/inotify/inotify
 
 MODULES =		devel/cmake \
 			x11/qt5
