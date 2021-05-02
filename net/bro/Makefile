@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.74 2021/04/24 11:37:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2021/05/02 17:57:18 ajacoutot Exp $
 
 COMMENT=		network analysis and security monitoring framework
 
 V=			4.0.1
 DISTNAME=		zeek-${V}
+REVISION=		0
 
 SHARED_LIBS +=	binpac                    2.0
 SHARED_LIBS +=  broccoli                  9.0
