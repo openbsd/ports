@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.88 2020/04/08 08:01:36 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.89 2021/05/02 06:08:53 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -49,6 +49,15 @@ sub new
 			}
 		}
 		close $fh;
+	}
+	# bsd.port.mk gave us a FETCH_CMD, remove options we will replace
+	# to avoid confusing the command line
+	for my $w (split /\s+/, $state->{fetch_cmd}) {
+		next if $w eq '-C';
+		next if $w eq '-v';
+		next if $w eq '-V';
+		next if $w eq '-m';
+		push(@{$o->{fetch_cmd}}, $w);
 	}
 	print "zap duplicates...";
 	# rewrite "more or less" the same info, so we flush duplicates,

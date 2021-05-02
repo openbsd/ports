@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.25 2020/02/27 16:06:06 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.26 2021/05/02 06:08:53 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -135,14 +135,9 @@ sub run
 		print STDERR "No size in distinfo\n";
 		exit(1);
 	}
-	my $ftp = OpenBSD::Paths->ftp;
-	my @cmd = ('-C', '-o', $job->{file}->tempfilename, '-v',
+	my @cmd = (@{$job->{fetcher}{fetch_cmd}}, 
+	    '-C', '-v', '-o', $job->{file}->tempfilename,
 	    $site.$self->filename($job->{file}));
-	if ($ftp =~ /\s/) {
-		unshift @cmd, split(/\s+/, $ftp);
-	} else {
-		unshift @cmd, $ftp;
-	}
 	print STDERR "===> Trying $site\n";
 	print STDERR join(' ', @cmd), "\n";
 	# run ftp;

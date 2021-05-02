@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.89 2021/03/21 19:17:34 espie Exp $
+# $OpenBSD: Config.pm,v 1.90 2021/05/02 06:08:53 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -177,11 +177,11 @@ sub parse_command_line
 	# reparse things properly now that we can chroot
 	my $backup;
 	($state->{ports}, $state->{portspath}, $state->{repo}, $state->{localarch},
-	    $state->{distdir}, $state->{localbase}, $backup) =
+	    $state->{distdir}, $state->{localbase}, $backup, $state->{fetch_cmd}) =
 		DPB::Vars->get(DPB::Host::Localhost->getshell($state), 
 		$state,
 		"PORTSDIR", "PORTSDIR_PATH", "PACKAGE_REPOSITORY", 
-		"MACHINE_ARCH", "DISTDIR", "LOCALBASE", "MASTER_SITE_BACKUP");
+		"MACHINE_ARCH", "DISTDIR", "LOCALBASE", "MASTER_SITE_BACKUP", "FETCH_CMD");
 
     	if (!defined $state->{portspath}) {
 		$state->usage("Can't obtain vital information from the ports tree");
