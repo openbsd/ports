@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/23 19:39:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/05/02 15:24:00 sthen Exp $
 
 # XXX version 7.0.0 and up do not support python2 anymore;
 # python3 support lives in graphics/py-Pillow
@@ -10,7 +10,7 @@ MODPY_EGG_VERSION=	6.2.2
 DISTNAME=		Pillow-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		graphics
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		https://python-pillow.org/
 
@@ -18,20 +18,21 @@ HOMEPAGE=		https://python-pillow.org/
 # Permission to use, copy, modify and distribute freely.
 PERMIT_PACKAGE=	Yes
 
-MODPY_PI =		Yes
+WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += freetype imagequant jpeg lcms2 openjp2 pthread tiff
+WANTLIB += webp webpdemux webpmux z
 
-WANTLIB=		freetype openjp2 jpeg lcms2 pthread tiff webp z \
-			webpdemux webpmux \
-			${MODPY_WANTLIB}
+MODPY_PI=		Yes
 
 MODULES=		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_2}
 MODPY_PYTEST=		Yes
 MODPY_SETUPTOOLS=	Yes
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 LIB_DEPENDS=		graphics/lcms2 \
 			graphics/openjp2>=2.3.0p0 \
+			graphics/libimagequant \
 			graphics/libwebp
 TEST_DEPENDS=		${FULLPKGNAME}:${BUILD_PKGPATH}
 
