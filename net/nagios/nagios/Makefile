@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2021/02/24 16:49:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.89 2021/05/02 19:30:58 stsp Exp $
 
 ONLY_FOR_ARCHS=	${LP64_ARCHS} # time_t format string issues
 
@@ -6,6 +6,7 @@ COMMENT-main=	host and service monitor
 COMMENT-web=	cgis and webpages for nagios
 
 V=		4.4.6
+REVISION=	0
 DISTNAME=	nagios-$V
 PKGNAME-main=	nagios-$V
 PKGNAME-web=	nagios-web-$V
@@ -87,7 +88,6 @@ EXDIR=		${PREFIX}/share/examples/nagios
 SAMPLEDIR=	${WRKSRC}/sample-config
 MODSAMPLE=	${WRKINST}${PREFIX-web}/conf/modules.sample
 
-INSTALL_TARGET=	install-unstripped
 SUBST_VARS=	CHROOT
 
 .if ${FLAVOR:Mchroot}
