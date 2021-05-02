@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST-ga,v 1.1 2021/02/28 18:38:41 landry Exp $
+@comment $OpenBSD: PLIST-ga,v 1.2 2021/05/02 08:15:19 landry Exp $
 @conflict qemu-<=5.1.0p2
 @bin bin/qemu-ga
 @man man/man7/qemu-ga-ref.7
 @man man/man8/qemu-ga.8
 share/doc/qemu/interop/qemu-ga-ref.html
-share/doc/qemu/interop/qemu-ga-ref.txt
 share/doc/qemu/interop/qemu-ga.html

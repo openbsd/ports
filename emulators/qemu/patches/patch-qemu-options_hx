@@ -1,11 +1,11 @@
-$OpenBSD: patch-qemu-options_hx,v 1.7 2020/08/17 09:58:44 sthen Exp $
+$OpenBSD: patch-qemu-options_hx,v 1.8 2021/05/02 08:15:19 landry Exp $
 
 Index: qemu-options.hx
 --- qemu-options.hx.orig
 +++ qemu-options.hx
-@@ -590,6 +590,9 @@ DEF("audiodev", HAS_ARG, QEMU_OPTION_audiodev,
- #ifdef CONFIG_AUDIO_SDL
+@@ -614,6 +614,9 @@ DEF("audiodev", HAS_ARG, QEMU_OPTION_audiodev,
      "-audiodev sdl,id=id[,prop[=value][,...]]\n"
+     "                in|out.buffer-count= number of buffers\n"
  #endif
 +#ifdef CONFIG_AUDIO_SNDIO
 +    "-audiodev sndio,id=id[,prop[=value][,...]]\n"
@@ -13,10 +13,10 @@ Index: qemu-options.hx
  #ifdef CONFIG_SPICE
      "-audiodev spice,id=id[,prop[=value][,...]]\n"
  #endif
-@@ -747,6 +750,11 @@ SRST
-     Creates a backend using SDL. This backend is available on most
-     systems, but you should use your platform's native backend if
-     possible. This backend has no backend specific properties.
+@@ -776,6 +779,11 @@ SRST
+ 
+     ``in|out.buffer-count=count``
+         Sets the count of the buffers.
 +
 +``-audiodev sndio,id=id[,prop[=value][,...]]``
 +    Creates a backend using SNDIO. This backend is available on

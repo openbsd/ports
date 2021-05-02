@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.206 2021/02/28 18:38:41 landry Exp $
+# $OpenBSD: Makefile,v 1.207 2021/05/02 08:15:19 landry Exp $
 
 ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc powerpc64 sparc64
 DPB_PROPERTIES=	parallel
@@ -6,11 +6,10 @@ DPB_PROPERTIES=	parallel
 COMMENT-main=	multi system emulator
 COMMENT-ga=	QEMU guest agent
 
-VERSION=	5.1.0
-DISTNAME=	qemu-5.1.0
-PKGNAME-main=	qemu-${VERSION}
+VERSION=	6.0.0
+DISTNAME=	qemu-${VERSION}
+PKGNAME-main=	${DISTNAME}
 PKGNAME-ga=	qemu-ga-${VERSION}
-REVISION-main=	3
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 EXTRACT_SUFX=	.tar.xz
@@ -22,12 +21,12 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # GPLv2, LGPLv2 and BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	${COMPILER_LIBCXX} c glib-2.0 gthread-2.0 intl m
-WANTLIB-main=	${WANTLIB} SDL2 X11 atk-1.0 bz2 c cairo cairo-gobject capstone \
-		curl curses epoxy fdt gbm gdk-3 gdk_pixbuf-2.0 gio-2.0 gnutls \
-		gobject-2.0 gtk-3 harfbuzz iconv iscsi jpeg lzo2 nettle nfs \
-		pango-1.0 pangocairo-1.0 pixman-1 png sndio ssh usb-1.0 util \
-		vte-2.91 xkbcommon xml2 z zstd
+WANTLIB=	c glib-2.0 pthread
+WANTLIB-main=	${COMPILER_LIBCXX} ${WANTLIB} SDL2 X11 bz2 cairo capstone \
+		curl curses epoxy fdt gbm gdk-3 gdk_pixbuf-2.0 gio-2.0 \
+		gnutls gobject-2.0 gtk-3 iconv intl iscsi jpeg lzo2 m \
+		nettle nfs pixman-1 png sndio ssh usb-1.0 util vte-2.91 \
+		xkbcommon z zstd
 WANTLIB-ga=	${WANTLIB}
 
 MULTI_PACKAGES=	-main -ga
@@ -39,11 +38,11 @@ MODULES=	lang/python
 MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	devel/gettext,-tools \
+		devel/ninja \
 		textproc/py-sphinx${MODPY_FLAVOR}>=3.5.1
 
 RUN_DEPENDS-main=	${BUILD_PKGPATH}-ga
-LIB_DEPENDS=	devel/gettext,-runtime \
-		devel/glib2
+LIB_DEPENDS=	devel/glib2
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		archivers/bzip2 \
 		archivers/lzo2 \
@@ -51,6 +50,7 @@ LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		converters/libiconv \
 		devel/capstone/main \
 		devel/dtc \
+		devel/gettext,-runtime \
 		devel/libiscsi \
 		devel/libnfs \
 		devel/libusb1 \
@@ -62,7 +62,6 @@ LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		security/gnutls \
 		security/libnettle \
 		security/libssh \
-		textproc/libxml \
 		x11/gtk+3 \
 		x11/xkbcommon
 LIB_DEPENDS-ga=	${LIB_DEPENDS}
@@ -70,18 +69,16 @@ LIB_DEPENDS-ga=	${LIB_DEPENDS}
 MAKE_ENV=	V=1
 FAKE_FLAGS=	qemu_confdir=${PREFIX}/share/examples/qemu
 
-EXTRA_CFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
-EXTRA_LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
-
-# fix build with ancient ncurses. ncurses needs to be updated to 5.9 or newer.
-EXTRA_CFLAGS+=	-D_XOPEN_SOURCE_EXTENDED
+CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 
 # until the system headers are fixed properly.
-EXTRA_CFLAGS+=	-Wno-redundant-decls
+CFLAGS+=	-Wno-redundant-decls
 
 SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=simple
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--sysconfdir=${SYSCONFDIR} \
 		--mandir=${PREFIX}/man \
@@ -90,11 +87,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--cc="${CC}" \
 		--cxx="${CXX}" \
 		--host-cc="${CC}" \
-		--extra-cflags="${EXTRA_CFLAGS}" \
-		--extra-ldflags="${EXTRA_LDFLAGS}" \
 		--disable-bsd-user \
 		--enable-capstone=system \
-		--enable-curses \
 		--disable-auth-pam \
 		--disable-gcrypt \
 		--disable-sdl-image \

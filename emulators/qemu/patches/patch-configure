@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.66 2020/08/17 09:58:44 sthen Exp $
+$OpenBSD: patch-configure,v 1.67 2021/05/02 08:15:19 landry Exp $
 
 sndio module
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -857,8 +857,8 @@ NetBSD)
+@@ -763,8 +763,8 @@ NetBSD)
  OpenBSD)
    bsd="yes"
    make="${MAKE-gmake}"
@@ -13,42 +13,18 @@ Index: configure
 -  audio_possible_drivers="sdl"
 +  audio_drv_list="sndio"
 +  audio_possible_drivers="sndio"
-   HOST_VARIANT_DIR="openbsd"
-   supported_os="yes"
  ;;
-@@ -3690,6 +3690,24 @@ fi
- ##########################################
- # Sound support libraries probe
- 
-+audio_drv_probe()
-+{
-+    drv=$1
-+    hdr=$2
-+    lib=$3
-+    exp=$4
-+    cfl=$5
-+        cat > $TMPC << EOF
-+#include <$hdr>
-+int main(void) { $exp }
-+EOF
-+    if compile_prog "$cfl" "$lib" ; then
-+        :
-+    else
-+        return 1
-+    fi
-+}
-+
- audio_drv_list=$(echo "$audio_drv_list" | sed -e 's/,/ /g')
- for drv in $audio_drv_list; do
-     case $drv in
-@@ -3739,6 +3757,23 @@ for drv in $audio_drv_list; do
+ Darwin)
+   bsd="yes"
+@@ -3246,6 +3246,24 @@ for drv in $audio_drv_list; do
      fi
      ;;
  
 +    sndio | try-sndio)
-+    if audio_drv_probe $drv sndio.h "-lsndio" \
-+        "sio_open(0, SIO_PLAY, 0); return 0;"; then
-+        sndio_libs="-lsndio"
++    if $pkg_config sndio --exists; then
++        sndio=yes
++        sndio_libs=$($pkg_config sndio --libs)
++        sndio_cflags=$($pkg_config sndio --cflags)
 +        if test "$drv" = "try-sndio"; then
 +            audio_drv_list=$(echo "$audio_drv_list" | sed -e 's/try-sndio/sndio/')
 +        fi
@@ -62,34 +38,26 @@ Index: configure
 +    fi
 +    ;;
 +
-     coreaudio)
-       coreaudio_libs="-framework CoreAudio"
-     ;;
-@@ -6524,10 +6559,6 @@ write_c_skeleton
+     coreaudio | try-coreaudio)
+     if test "$coreaudio" = "no"; then
+       if test "$drv" = "try-coreaudio"; then
+@@ -5299,7 +5317,6 @@ write_c_skeleton
  if test "$gcov" = "yes" ; then
-   QEMU_CFLAGS="-fprofile-arcs -ftest-coverage -g $QEMU_CFLAGS"
-   QEMU_LDFLAGS="-fprofile-arcs -ftest-coverage $QEMU_LDFLAGS"
--elif test "$fortify_source" = "yes" ; then
--  CFLAGS="-O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 $CFLAGS"
--elif test "$debug" = "no"; then
--  CFLAGS="-O2 $CFLAGS"
+   :
+ elif test "$fortify_source" = "yes" ; then
+-  QEMU_CFLAGS="-U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 $QEMU_CFLAGS"
+   debug=no
  fi
  
- if test "$have_asan" = "yes"; then
-@@ -7182,7 +7213,7 @@ echo "CONFIG_AUDIO_DRIVERS=$audio_drv_list" >> $config
- for drv in $audio_drv_list; do
-     def=CONFIG_AUDIO_$(echo $drv | LC_ALL=C tr '[a-z]' '[A-Z]')
-     case "$drv" in
--	alsa | oss | pa | sdl)
-+	alsa | oss | pa | sdl | sndio)
- 	    echo "$def=m" >> $config_host_mak ;;
- 	*)
- 	    echo "$def=y" >> $config_host_mak ;;
-@@ -7193,6 +7224,7 @@ echo "PULSE_LIBS=$pulse_libs" >> $config_host_mak
+@@ -5562,6 +5579,11 @@ echo "PULSE_CFLAGS=$pulse_cflags" >> $config_host_mak
  echo "COREAUDIO_LIBS=$coreaudio_libs" >> $config_host_mak
  echo "DSOUND_LIBS=$dsound_libs" >> $config_host_mak
  echo "OSS_LIBS=$oss_libs" >> $config_host_mak
++if test "$sndio" = "yes" ; then
++    echo "CONFIG_SNDIO=y" >> $config_host_mak
++fi
 +echo "SNDIO_LIBS=$sndio_libs" >> $config_host_mak
- echo "JACK_LIBS=$jack_libs" >> $config_host_mak
- if test "$audio_win_int" = "yes" ; then
-   echo "CONFIG_AUDIO_WIN_INT=y" >> $config_host_mak
++echo "SNDIO_CFLAGS=$sndio_cflags" >> $config_host_mak
+ if test "$libjack" = "yes" ; then
+     echo "CONFIG_LIBJACK=y" >> $config_host_mak
+ fi

@@ -1,9 +1,9 @@
-$OpenBSD: patch-qapi_audio_json,v 1.4 2020/08/17 09:58:44 sthen Exp $
+$OpenBSD: patch-qapi_audio_json,v 1.5 2021/05/02 08:15:19 landry Exp $
 
 Index: qapi/audio.json
 --- qapi/audio.json.orig
 +++ qapi/audio.json
-@@ -102,6 +102,28 @@
+@@ -106,6 +106,28 @@
      '*threshold': 'uint32' } }
  
  ##
@@ -32,7 +32,7 @@ Index: qapi/audio.json
  # @AudiodevCoreaudioPerDirectionOptions:
  #
  # Options of the Core Audio backend that are used for both playback and
-@@ -352,7 +374,7 @@
+@@ -387,7 +409,7 @@
  ##
  { 'enum': 'AudiodevDriver',
    'data': [ 'none', 'alsa', 'coreaudio', 'dsound', 'jack', 'oss', 'pa',
@@ -41,10 +41,10 @@ Index: qapi/audio.json
  
  ##
  # @Audiodev:
-@@ -382,5 +404,6 @@
+@@ -417,5 +439,6 @@
      'oss':       'AudiodevOssOptions',
      'pa':        'AudiodevPaOptions',
-     'sdl':       'AudiodevGenericOptions',
+     'sdl':       'AudiodevSdlOptions',
 +    'sndio':     'AudiodevSndioOptions',
      'spice':     'AudiodevGenericOptions',
      'wav':       'AudiodevWavOptions' } }
