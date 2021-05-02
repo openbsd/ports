@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.184 2021/04/29 16:57:48 kili Exp $
+# $OpenBSD: Makefile,v 1.185 2021/05/02 21:45:24 gnezdo Exp $
 
 # Not yet ported to other architectures
 ONLY_FOR_ARCHS =	i386 amd64
@@ -18,9 +18,10 @@ GHC_VERSION =		8.10.3
 DISTNAME =		ghc-${GHC_VERSION}
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
+REVISION =		0
 
 # Version of the precompiled binaries
-BIN_VER =		8.6.4.20200921
+BIN_VER =		8.10.3.20210429
 
 # lang/python needed for regression tests.
 MODULES =		lang/python
