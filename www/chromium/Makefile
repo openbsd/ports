@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.562 2021/04/28 07:52:54 robert Exp $
+# $OpenBSD: Makefile,v 1.563 2021/05/02 12:45:00 robert Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -12,6 +12,7 @@ DPB_PROPERTIES=		parallel parallel2
 COMMENT=		Chromium browser
 
 V=			90.0.4430.93
+REVISION=		0
 
 DISTNAME=		chromium-${V}
 
@@ -250,6 +251,8 @@ do-install:
 .for f in libVkICD_mock_icd
 	${INSTALL_DATA} ${BUILDDIR}/${f}.so ${PREFIX}/${DIST_TARGET_DIR}
 .endfor
+	${INSTALL_DATA} ${BUILDDIR}/libvulkan.so.1 \
+		${PREFIX}/${DIST_TARGET_DIR}/libvulkan.so
 
 .if ${MACHINE_ARCH} != "aarch64"
 	# SwiftShader

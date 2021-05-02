@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.107 2021/04/16 18:15:07 robert Exp $
+@comment $OpenBSD: PLIST,v 1.108 2021/05/02 12:45:00 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 @bin bin/chromedriver
@@ -12,6 +12,7 @@ chrome/icudtl.dat
 @so chrome/libGLESv2.so
 %%component%%
 @so chrome/libVkICD_mock_icd.so
+@so chrome/libvulkan.so
 chrome/locales/
 chrome/locales/am.pak
 chrome/locales/am.pak.info
