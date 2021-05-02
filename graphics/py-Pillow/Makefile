@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2021/04/02 14:42:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2021/05/02 15:21:17 sthen Exp $
 
 COMMENT=		Python Imaging Library (maintained fork of PIL)
 
 MODPY_EGG_VERSION=	8.2.0
+REVISION=		0
 DISTNAME=		Pillow-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		graphics
@@ -13,8 +14,8 @@ HOMEPAGE=		https://python-pillow.org/
 # Permission to use, copy, modify and distribute freely.
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += freetype jpeg lcms2 openjp2 pthread tiff webp webpdemux
-WANTLIB += webpmux z
+WANTLIB += freetype imagequant jpeg lcms2 openjp2 pthread tiff
+WANTLIB += webp webpdemux webpmux z
 
 FLAVORS=		python3
 FLAVOR=			python3
@@ -28,6 +29,7 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 LIB_DEPENDS=		graphics/lcms2 \
 			graphics/openjp2>=2.3.0p0 \
+			graphics/libimagequant \
 			graphics/libwebp
 TEST_DEPENDS=		${FULLPKGNAME}:${BUILD_PKGPATH} \
 			sysutils/py-packaging${MODPY_FLAVOR}
