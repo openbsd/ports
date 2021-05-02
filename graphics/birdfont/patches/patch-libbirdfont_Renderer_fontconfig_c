@@ -1,0 +1,16 @@
+$OpenBSD: patch-libbirdfont_Renderer_fontconfig_c,v 1.1 2021/05/02 12:13:10 jasper Exp $
+
+https://github.com/johanmattssonm/birdfont/commit/bca2f3462d422ffe4e5911f734ece63193a2f7ef
+
+Index: libbirdfont/Renderer/fontconfig.c
+--- libbirdfont/Renderer/fontconfig.c.orig
++++ libbirdfont/Renderer/fontconfig.c
+@@ -13,7 +13,7 @@
+ */
+ 
+ #include <stdio.h>
+-#include <glib.h>a
++#include <glib.h>
+ #include <fontconfig/fontconfig.h>
+ 
+ gchar* find_font_with_property (FcConfig* fontconfig, const gchar* characters, const gchar* property) {

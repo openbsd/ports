@@ -1,0 +1,16 @@
+$OpenBSD: patch-libbirdfont_OpenFontFormat_load_font_c,v 1.1 2021/05/02 12:13:10 jasper Exp $
+
+https://github.com/johanmattssonm/birdfont/commit/bca2f3462d422ffe4e5911f734ece63193a2f7ef
+
+Index: libbirdfont/OpenFontFormat/load_font.c
+--- libbirdfont/OpenFontFormat/load_font.c.orig
++++ libbirdfont/OpenFontFormat/load_font.c
+@@ -17,7 +17,7 @@
+ #include FT_OPENTYPE_VALIDATE_H
+ #include FT_TRUETYPE_TABLES_H
+ #include FT_SFNT_NAMES_H
+-#include "birdfont.h"
++#include <birdfont.h>
+ 
+ /** Error codes. */
+ #define OK 0
