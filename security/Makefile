@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.624 2021/04/30 16:38:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.625 2021/05/03 17:48:04 tb Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -144,6 +144,7 @@
      SUBDIR += openpam
      SUBDIR += opensc
      SUBDIR += openssl
+     SUBDIR += openssl-ruby-tests
      SUBDIR += ophcrack
      SUBDIR += opm
      SUBDIR += opmsg
