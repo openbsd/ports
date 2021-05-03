@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.90 2021/05/02 06:08:53 espie Exp $
+# $OpenBSD: Config.pm,v 1.91 2021/05/03 07:16:46 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -260,10 +260,13 @@ sub parse_command_line
 		$state->{lockdir} = $state->{subst}->value('LOCKDIR');
 	}
 	if ($state->define_present('TESTS')) {
-		$state->{tests} = $state->{subst}->value('tests');
+		$state->{tests} = $state->{subst}->value('TESTS');
 	}
 	if ($state->{subst}->value('NEVER_CLEAN')) {
 		$state->{never_clean} = 1;
+	}
+	if ($state->define_present('FETCH_CMD')) {
+		$state->{fetch_cmd} = $state->{subst}->value('FETCH_CMD');
 	}
 	if ($state->{flogdir}) {
 		$state->{logdir} = $state->{flogdir};
@@ -372,6 +375,10 @@ sub command_line_overrides
 	}
 	if ($state->defines("ALWAYS_CLEAN")) {
 		$override_prop->{always_clean} = 1;
+	}
+	if ($state->defines("FETCH_CMD")) {
+		$override_prop->{FETCH_CMD} =
+		    $state->{subst}->value('FETCH_CMD');
 	}
 	if ($state->opt('M')) {
 		$override_prop->{mem} = $state->opt('M');
