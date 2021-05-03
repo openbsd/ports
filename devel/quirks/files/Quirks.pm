@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1269 2021/04/29 13:18:15 semarie Exp $
+# $OpenBSD: Quirks.pm,v 1.1270 2021/05/03 16:22:24 solene Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1198,6 +1198,8 @@ setup_obsolete_reason(
 	43 => 'upt-pypi',
 	43 => 'upt-rubygems',
 	3 => 'p5-VCP-autrijus',
+# 7.0
+	3 => 'mailpile',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
