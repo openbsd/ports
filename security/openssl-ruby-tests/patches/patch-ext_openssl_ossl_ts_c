@@ -1,0 +1,17 @@
+$OpenBSD: patch-ext_openssl_ossl_ts_c,v 1.1.1.1 2021/05/03 17:46:37 tb Exp $
+
+Index: ext/openssl/ossl_ts.c
+--- ext/openssl/ossl_ts.c.orig
++++ ext/openssl/ossl_ts.c
+@@ -1071,9 +1071,9 @@ ossl_tsfac_serial_cb(struct TS_resp_ctx *ctx, void *da
+ }
+ 
+ static int
+-ossl_tsfac_time_cb(struct TS_resp_ctx *ctx, void *data, long *sec, long *usec)
++ossl_tsfac_time_cb(struct TS_resp_ctx *ctx, void *data, long long *sec, long *usec)
+ {
+-    *sec = *((long *)data);
++    *sec = *((long long *)data);
+     *usec = 0;
+     return 1;
+ }
