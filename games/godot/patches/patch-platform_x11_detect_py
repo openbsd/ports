@@ -1,34 +1,40 @@
-$OpenBSD: patch-platform_x11_detect_py,v 1.3 2020/09/06 10:34:19 thfr Exp $
+$OpenBSD: patch-platform_x11_detect_py,v 1.4 2021/05/03 19:10:25 thfr Exp $
 
 remove hardcoded -O2, found by bcallah@. Add sndio
 
 Index: platform/x11/detect.py
 --- platform/x11/detect.py.orig
 +++ platform/x11/detect.py
-@@ -85,21 +85,12 @@ def configure(env):
+@@ -87,26 +87,9 @@ def get_flags():
+ def configure(env):
      ## Build type
  
-     if env["target"] == "release":
+-    if env["target"] == "release":
 -        if env["optimize"] == "speed":  # optimize for speed (default)
 -            env.Prepend(CCFLAGS=["-O3"])
--        else:  # optimize for size
+-        elif env["optimize"] == "size":  # optimize for size
 -            env.Prepend(CCFLAGS=["-Os"])
 -
-         if env["debug_symbols"] == "yes":
-             env.Prepend(CCFLAGS=["-g1"])
-         if env["debug_symbols"] == "full":
-             env.Prepend(CCFLAGS=["-g2"])
- 
-     elif env["target"] == "release_debug":
+-        if env["debug_symbols"]:
+-            env.Prepend(CCFLAGS=["-g2"])
+-
+-    elif env["target"] == "release_debug":
 -        if env["optimize"] == "speed":  # optimize for speed (default)
 -            env.Prepend(CCFLAGS=["-O2"])
--        else:  # optimize for size
+-        elif env["optimize"] == "size":  # optimize for size
 -            env.Prepend(CCFLAGS=["-Os"])
+-
++    if env["target"] == "release_debug":
          env.Prepend(CPPDEFINES=["DEBUG_ENABLED"])
  
-         if env["debug_symbols"] == "yes":
-@@ -302,6 +293,10 @@ def configure(env):
-         env.ParseConfig("pkg-config alsa --libs")
+-        if env["debug_symbols"]:
+-            env.Prepend(CCFLAGS=["-g2"])
+-
+     elif env["target"] == "debug":
+         env.Prepend(CCFLAGS=["-ggdb"])
+         env.Prepend(CCFLAGS=["-g3"])
+@@ -318,6 +301,10 @@ def configure(env):
+         env.Append(CPPDEFINES=["ALSA_ENABLED", "ALSAMIDI_ENABLED"])
      else:
          print("ALSA libraries not found, disabling driver")
 +

@@ -1,12 +1,12 @@
-$OpenBSD: patch-drivers_unix_os_unix_cpp,v 1.5 2020/09/19 06:37:23 thfr Exp $
+$OpenBSD: patch-drivers_unix_os_unix_cpp,v 1.6 2021/05/03 19:10:24 thfr Exp $
 
 hardcode executable path
 
 Index: drivers/unix/os_unix.cpp
 --- drivers/unix/os_unix.cpp.orig
 +++ drivers/unix/os_unix.cpp
-@@ -512,7 +512,7 @@ String OS_Unix::get_executable_path() const {
- #elif defined(__OpenBSD__)
+@@ -501,7 +501,7 @@ String OS_Unix::get_executable_path() const {
+ #elif defined(__OpenBSD__) || defined(__NetBSD__)
  	char resolved_path[MAXPATHLEN];
  
 -	realpath(OS::get_executable_path().utf8().get_data(), resolved_path);

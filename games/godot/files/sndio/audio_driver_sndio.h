@@ -1,4 +1,4 @@
-/* $OpenBSD: audio_driver_sndio.h,v 1.1 2020/09/06 10:34:19 thfr Exp $ */
+/* $OpenBSD: audio_driver_sndio.h,v 1.2 2021/05/03 19:10:24 thfr Exp $ */
 /*************************************************************************/
 /*  audio_driver_sndio.h                                                 */
 /*************************************************************************/
@@ -34,8 +34,8 @@
 #include <sndio.h>
 
 class AudioDriverSndio : public AudioDriver {
-	Thread *thread;
-	Mutex *mutex;
+	Thread thread;
+	Mutex mutex;
 
 	Vector<int32_t> samples;
 

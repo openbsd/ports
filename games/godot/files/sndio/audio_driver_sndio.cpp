@@ -1,4 +1,4 @@
-/* $OpenBSD: audio_driver_sndio.cpp,v 1.1 2020/09/06 10:34:19 thfr Exp $ */
+/* $OpenBSD: audio_driver_sndio.cpp,v 1.2 2021/05/03 19:10:24 thfr Exp $ */
 /*************************************************************************/
 /*  audio_driver_sndio.cpp                                               */
 /*************************************************************************/
@@ -70,8 +70,7 @@ Error AudioDriverSndio::init() {
 
 	samples.resize(period_size * channels);
 
-	mutex = Mutex::create();
-	thread = Thread::create(AudioDriverSndio::thread_func, this);
+	thread.start(AudioDriverSndio::thread_func, this);
 
 	return OK;
 }
@@ -116,30 +115,16 @@ AudioDriver::SpeakerMode AudioDriverSndio::get_speaker_mode() const {
 }
 
 void AudioDriverSndio::lock() {
-	if (!thread || !mutex)
-		return;
-	mutex->lock();
+	mutex.lock();
 }
 
 void AudioDriverSndio::unlock() {
-	if (!thread || !mutex)
-		return;
-	mutex->unlock();
+	mutex.unlock();
 }
 
 void AudioDriverSndio::finish() {
-	if (thread) {
-		exit_thread = true;
-		Thread::wait_to_finish(thread);
-
-		memdelete(thread);
-		thread = NULL;
-	}
-
-	if (mutex) {
-		memdelete(mutex);
-		mutex = NULL;
-	}
+	exit_thread = true;
+	thread.wait_to_finish();
 
 	if (handle) {
 		sio_close(handle);
@@ -148,8 +133,6 @@ void AudioDriverSndio::finish() {
 }
 
 AudioDriverSndio::AudioDriverSndio() {
-	mutex = NULL;
-	thread = NULL;
 }
 
 AudioDriverSndio::~AudioDriverSndio() {
