@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2021/01/27 05:21:23 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.63 2021/05/03 15:35:13 rsadowski Exp $
 
      SUBDIR =
 
@@ -110,6 +110,7 @@
      SUBDIR += kdenlive
      SUBDIR += kmix
      #SUBDIR += kwave
+     SUBDIR += elisa
 
      # internet / network
      SUBDIR += kdenetwork-filesharing
