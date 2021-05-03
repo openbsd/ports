@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2021/04/03 08:36:35 thfr Exp $
+# $OpenBSD: Makefile,v 1.15 2021/05/03 19:05:47 thfr Exp $
 
 # versions are in sync with FNA versions
-V =		21.04
+V =		21.05
 COMMENT =	XAudio reimplementation for open platforms
 DISTNAME =	fna-${V:S/.//g}
 PKGNAME =	faudio-${V}
