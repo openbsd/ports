@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1270 2021/05/03 16:22:24 solene Exp $
+# $OpenBSD: Quirks.pm,v 1.1271 2021/05/03 20:14:49 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -455,6 +455,7 @@ my $stem_extensions = {
 	'py-junos-eznc' => 'py3-junos-eznc',
 	'py-ncclient' => 'py3-ncclient',
 	'py-beautifulsoup4' => 'py3-beautifulsoup4',
+	'py-beautifulsoup' => 'py3-beautifulsoup4', 
 # 7.0
 	'weboob' => 'woob',
 };
@@ -1171,7 +1172,6 @@ setup_obsolete_reason(
 	3 => 'bsd-airtools',
 	3 => 'gtkpod',
 	0 => 'golem',
-	14 => 'py-beautifulsoup',
 	3 => 'wmmultipop3',
 	3 => 'wmpop3',
 	3 => 'angst',
@@ -1232,7 +1232,6 @@ my $obsolete_message = {
 	11 => "no longer packageable",
 	12 => "replace with IMAPSieve, see https://wiki.dovecot.org/HowTo/AntispamWithSieve",
 	13 => "has a dependency on obsolete software",
-	14 => "python2 port superseded by python3 version",
 	17 => "old GeoIP databases end-of-life, see alternative using geoip2/libmaxminddb",
 	20 => "merged into IETF Opus codec, obsolete, audio/mumble uses bundled version now",
 	21 => "upstream recommends to use composer to build a drupal site",
