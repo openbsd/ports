@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.148 2021/04/28 19:42:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.149 2021/05/03 11:17:09 jasper Exp $
 
 COMMENT-main=		compiler for the GObject type system
 COMMENT-valadoc=	Vala documentation generator
 
 GNOME_PROJECT=		vala
-GNOME_VERSION=		0.50.7
+GNOME_VERSION=		0.50.8
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-valadoc=	valadoc-${GNOME_VERSION}
