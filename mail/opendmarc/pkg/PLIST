@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/24 11:35:02 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/05/03 13:31:49 sthen Exp $
 @newgroup _opendmarc:835
 @newuser _opendmarc:835:_opendmarc:daemon:opendmarc Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/opendmarc
 include/opendmarc/
 include/opendmarc/dmarc.h
-lib/libopendmarc.a
+@static-lib lib/libopendmarc.a
 lib/libopendmarc.la
 @lib lib/libopendmarc.so.${LIBopendmarc_VERSION}
 @man man/man5/opendmarc.conf.5
@@ -28,7 +28,6 @@ share/doc/opendmarc/LICENSE.Sendmail
 share/doc/opendmarc/README
 share/doc/opendmarc/README.rddmarc
 share/doc/opendmarc/README.schema
-share/doc/opendmarc/README.specs.html
 share/doc/opendmarc/dmarc_policy_t.html
 share/doc/opendmarc/dmarcfail.py
 share/doc/opendmarc/index.html
