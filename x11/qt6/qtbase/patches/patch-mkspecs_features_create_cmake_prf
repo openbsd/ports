@@ -1,0 +1,41 @@
+$OpenBSD: patch-mkspecs_features_create_cmake_prf,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
+
+Index: mkspecs/features/create_cmake.prf
+--- mkspecs/features/create_cmake.prf.orig
++++ mkspecs/features/create_cmake.prf
+@@ -55,10 +55,10 @@ darwin:!qt_framework:!debug_and_release:CONFIG(debug, 
+     CMAKE_QT_STEM = $$replace(CMAKE_QT_STEM, _debug$, )
+ }
+ 
+-!generated_privates {
+-    isEmpty(SYNCQT.INJECTED_PRIVATE_HEADER_FILES):isEmpty(SYNCQT.PRIVATE_HEADER_FILES): \
+-        CMAKE_NO_PRIVATE_INCLUDES = true
+-}
++#!generated_privates {
++#    isEmpty(SYNCQT.INJECTED_PRIVATE_HEADER_FILES):isEmpty(SYNCQT.PRIVATE_HEADER_FILES): \
++#        CMAKE_NO_PRIVATE_INCLUDES = true
++#}
+ split_incpath {
+     CMAKE_ADD_SOURCE_INCLUDE_DIRS = true
+     CMAKE_SOURCE_INCLUDES = \
+@@ -351,10 +351,16 @@ mac {
+         CMAKE_LIB_FILE_LOCATION_DEBUG = lib$${CMAKE_QT_STEM}.so
+         CMAKE_LIB_FILE_LOCATION_RELEASE = lib$${CMAKE_QT_STEM}.so
+         CMAKE_LIB_SONAME = lib$${CMAKE_QT_STEM}.so
+-    } else {
+-        CMAKE_LIB_FILE_LOCATION_DEBUG = lib$${CMAKE_QT_STEM}.so.$$eval(QT.$${MODULE}.VERSION)
+-        CMAKE_LIB_FILE_LOCATION_RELEASE = lib$${CMAKE_QT_STEM}.so.$$eval(QT.$${MODULE}.VERSION)
+-        CMAKE_LIB_SONAME = lib$${CMAKE_QT_STEM}.so.$$section(QT.$${MODULE}.VERSION, ., 0, 0)
++    } else:eval(LIBVER_OVERRIDE = \$\$(LIB$${CMAKE_QT_STEM}_VERSION)) {
++        !isEmpty(QMAKE_OPENBSD_SHLIB):!isEmpty(LIBVER_OVERRIDE) {
++            # OpenBSD-style version overriding, no SONAME intended
++            CMAKE_LIB_FILE_LOCATION_DEBUG = lib$${CMAKE_QT_STEM}.so.$${LIBVER_OVERRIDE}
++            CMAKE_LIB_FILE_LOCATION_RELEASE = lib$${CMAKE_QT_STEM}.so.$${LIBVER_OVERRIDE}
++        } else {
++            CMAKE_LIB_FILE_LOCATION_DEBUG = lib$${CMAKE_QT_STEM}.so.$$eval(QT.$${MODULE}.VERSION)
++            CMAKE_LIB_FILE_LOCATION_RELEASE = lib$${CMAKE_QT_STEM}.so.$$eval(QT.$${MODULE}.VERSION)
++            CMAKE_LIB_SONAME = lib$${CMAKE_QT_STEM}.so.$$section(QT.$${MODULE}.VERSION, ., 0, 0)
++        }
+     }
+ }
+ 

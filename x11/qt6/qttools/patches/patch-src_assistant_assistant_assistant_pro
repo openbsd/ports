@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_assistant_assistant_assistant_pro,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
+Force using qtextbrowser: no W^X violations and no
+circular dependencies.
+
+Index: src/assistant/assistant/assistant.pro
+--- src/assistant/assistant/assistant.pro.orig
++++ src/assistant/assistant/assistant.pro
+@@ -1,4 +1,4 @@
+-qtHaveModule(webkitwidgets):!contains(QT_CONFIG, static) {
++qtHaveModule(webkitwidgets):!contains(QT_CONFIG, static):!openbsd {
+     BROWSER = qtwebkit
+ } else {
+     BROWSER = qtextbrowser

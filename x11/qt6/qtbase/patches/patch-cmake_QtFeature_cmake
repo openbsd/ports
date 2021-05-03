@@ -1,0 +1,26 @@
+$OpenBSD: patch-cmake_QtFeature_cmake,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
+
+Index: cmake/QtFeature.cmake
+--- cmake/QtFeature.cmake.orig
++++ cmake/QtFeature.cmake
+@@ -1023,4 +1023,20 @@ function(qt_make_features_available target)
+     endforeach()
+ endfunction()
+ 
++# function to add libs to an INTERFACE library target if the lib exists,
++# needed because qt_config_compile test only accepts imported targets in its
++# LIBRARIES argument if PROJECT_PATH is not set.
++function(qt_test_lib_target)
++qt_parse_all_arguments(arg "qt_test_lib_target" "" "TARGET" "LIBS" ${ARGN})
+ 
++if(TARGET ${arg_TARGET})
++    return()
++endif()
++    add_library(${arg_TARGET} INTERFACE IMPORTED)
++foreach(_lib ${arg_LIBS})
++    find_library(fl_${_lib} NAMES ${_lib})
++    if(fl_${_lib})
++        target_link_libraries(${arg_TARGET} INTERFACE ${fl_${_lib}})
++    endif()
++endforeach()
++endfunction()

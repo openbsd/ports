@@ -1,0 +1,14 @@
+$OpenBSD: patch-cmake_QtPlatformSupport_cmake,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
+
+Index: cmake/QtPlatformSupport.cmake
+--- cmake/QtPlatformSupport.cmake.orig
++++ cmake/QtPlatformSupport.cmake
+@@ -20,6 +20,8 @@ qt_set01(WASM CMAKE_SYSTEM_NAME STREQUAL "Emscripten")
+ 
+ qt_set01(BSD APPLE OR OPENBSD OR FREEBSD OR NETBSD)
+ 
++qt_set01(X11_PLATFORM LINUX OR HPUX OR OPENBSD OR FREEBSD OR NETBSD OR SOLARIS)
++
+ qt_set01(WINRT WIN32 AND CMAKE_VS_PLATFORM_TOOSLET STREQUAL "winrt") # FIXME: How to identify this?
+ 
+ qt_set01(IOS APPLE AND CMAKE_SYSTEM_NAME STREQUAL "iOS")

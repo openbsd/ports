@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST-mysql,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
+lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginConfig.cmake
+lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginConfigVersion.cmake
+lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginDependencies.cmake
+lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets.cmake
+@so lib/qt6/plugins/sqldrivers/libqsqlmysql.so

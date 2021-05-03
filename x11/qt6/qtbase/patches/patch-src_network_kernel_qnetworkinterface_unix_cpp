@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_network_kernel_qnetworkinterface_unix_cpp,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
+
+Index: src/network/kernel/qnetworkinterface_unix.cpp
+--- src/network/kernel/qnetworkinterface_unix.cpp.orig
++++ src/network/kernel/qnetworkinterface_unix.cpp
+@@ -68,6 +68,9 @@
+ #  endif
+ #endif // QT_LINUXBASE
+ 
++#include <netinet/in.h>
++#include <netinet6/in6_var.h>
++
+ #include <qplatformdefs.h>
+ 
+ QT_BEGIN_NAMESPACE
+@@ -450,7 +453,9 @@ static QNetworkInterface::InterfaceType probeIfType(in
+         return QNetworkInterface::Ieee1394;
+ 
+     case IFT_GIF:
++#ifdef IFT_STF
+     case IFT_STF:
++#endif
+         return QNetworkInterface::Virtual;
+     }
+ 

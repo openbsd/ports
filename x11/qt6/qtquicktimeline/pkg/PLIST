@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
+lib/cmake/
+lib/cmake/Qt6Qml/
+lib/cmake/Qt6Qml/QmlPlugins/
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginConfig.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginConfigVersion.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginDependencies.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginTargets.cmake
+lib/qt6/
+lib/qt6/qml/
+lib/qt6/qml/QtQuick/
+lib/qt6/qml/QtQuick/Timeline/
+@so lib/qt6/qml/QtQuick/Timeline/libqtquicktimelineplugin.so
+lib/qt6/qml/QtQuick/Timeline/plugins.qmltypes
+lib/qt6/qml/QtQuick/Timeline/qmldir

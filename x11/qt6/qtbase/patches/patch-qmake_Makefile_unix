@@ -1,0 +1,27 @@
+$OpenBSD: patch-qmake_Makefile_unix,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
+
+Index: qmake/Makefile.unix
+--- qmake/Makefile.unix.orig
++++ qmake/Makefile.unix
+@@ -164,7 +164,7 @@ DEPEND_SRC = \
+ # by configure); QTSRCS2 may include *.mm entries on macOS.
+ # See below for special handling of qlibraryinfo.cpp
+ 
+-CPPFLAGS = -g $(EXTRA_CPPFLAGS) \
++CPPFLAGS += -g $(EXTRA_CPPFLAGS) \
+ 	   -I$(QMKSRC) -I$(QMKLIBSRC) -I$(QMKGENSRC) \
+ 	   -I$(SOURCE_PATH)/src/3rdparty/tinycbor/src \
+ 	   -I$(SOURCE_PATH)/src/3rdparty/pcre2/src \
+@@ -180,9 +180,9 @@ CPPFLAGS = -g $(EXTRA_CPPFLAGS) \
+            -DPCRE2_DISABLE_JIT \
+             $(EXTRA_CPPFLAGS)
+ 
+-CXXFLAGS = $(EXTRA_CXXFLAGS) $(CONFIG_CXXFLAGS) $(CPPFLAGS)
+-CFLAGS = $(CPPFLAGS) $(CONFIG_CFLAGS)
+-LFLAGS = $(EXTRA_LFLAGS) $(CONFIG_LFLAGS)
++CXXFLAGS += $(EXTRA_CXXFLAGS) $(CONFIG_CXXFLAGS) $(CPPFLAGS)
++CFLAGS += $(CPPFLAGS) $(CONFIG_CFLAGS)
++LFLAGS = $(LDFLAGS) $(EXTRA_LFLAGS) $(CONFIG_LFLAGS)
+ 
+ first all: $(BUILD_PATH)/bin/qmake$(EXEEXT)
+ qmake: $(BUILD_PATH)/bin/qmake$(EXEEXT)

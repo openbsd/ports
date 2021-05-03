@@ -1,0 +1,13 @@
+$OpenBSD: patch-qmake_generators_unix_unixmake_h,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
+
+Index: qmake/generators/unix/unixmake.h
+--- qmake/generators/unix/unixmake.h.orig
++++ qmake/generators/unix/unixmake.h
+@@ -61,6 +61,7 @@ class UnixMakefileGenerator : public MakefileGenerator
+     std::pair<bool, QString> writeObjectsPart(QTextStream &, bool do_incremental);
+ private:
+     void init2();
++    void separateInternalLibdirs(ProStringList &libs, ProStringList &libdirsInt, QString prefix);
+     ProStringList libdirToFlags(const ProKey &key);
+ };
+ 

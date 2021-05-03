@@ -1,0 +1,16 @@
+$OpenBSD: patch-mkspecs_common_qcc-base_conf,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
+
+Index: mkspecs/common/qcc-base.conf
+--- mkspecs/common/qcc-base.conf.orig
++++ mkspecs/common/qcc-base.conf
+@@ -11,8 +11,8 @@
+ 
+ QMAKE_COMPILER          = rim_qcc gcc   # qcc is mostly gcc in disguise
+ 
+-QMAKE_CFLAGS_OPTIMIZE      = -O2
+-QMAKE_CFLAGS_OPTIMIZE_FULL = -O3
++QMAKE_CFLAGS_OPTIMIZE      =
++QMAKE_CFLAGS_OPTIMIZE_FULL =
+ 
+ QMAKE_CFLAGS           += -Wno-psabi
+ QMAKE_CFLAGS_DEPS      += -M

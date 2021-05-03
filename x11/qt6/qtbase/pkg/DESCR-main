@@ -1,0 +1,26 @@
+Qt is a cross-platform toolkit for developing applications, mainly GUI-based.
+
+There's a debug version of the libraries: qt6-debug.
+
+There are database plugins: qt6-mysql, qt6-postgresql and qt6-sqlite
+
+People who want to use Qt6 to compile applications outside the ports tree
+should note that Qt6's installation conforms to OpenBSD habits, not Qt's
+recommendations. Accordingly:
+
+- libs are separated from includes.
+- moc is installed as ${PREFIX}/bin/moc-qt6, in order not to conflict
+  with other Qt versions.
+- uic is installed as ${PREFIX}/bin/uic-qt6
+
+Generally, it's just a question of invoking:
+
+env MOC=moc-qt6 UIC=uic-qt6 configure \
+	--with-qt-includes=${PREFIX}/include/X11/qt6 \
+	--with-qt-libraries=${PREFIX}/lib/qt6
+
+... or, to force MOC/UIC in your make/gmake invocation:
+
+  make MOC=moc-qt6 UIC=uic-qt6
+
+will override the Makefile contents.

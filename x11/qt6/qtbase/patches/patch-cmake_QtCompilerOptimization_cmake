@@ -1,0 +1,23 @@
+$OpenBSD: patch-cmake_QtCompilerOptimization_cmake,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
+
+Index: cmake/QtCompilerOptimization.cmake
+--- cmake/QtCompilerOptimization.cmake.orig
++++ cmake/QtCompilerOptimization.cmake
+@@ -137,7 +137,7 @@ endif()
+ # gcc and clang base
+ if(GCC OR CLANG)
+     set(QT_CFLAGS_OPTIMIZE "-O2")
+-    set(QT_CFLAGS_OPTIMIZE_FULL "-O3")
++    set(QT_CFLAGS_OPTIMIZE_FULL "")
+     set(QT_CFLAGS_OPTIMIZE_DEBUG "-Og")
+     set(QT_CFLAGS_OPTIMIZE_SIZE "-Os")
+ 
+@@ -148,7 +148,7 @@ endif()
+ 
+ # Flags that CMake might set, aka flags the compiler would see as valid values.
+ if(GCC OR CLANG OR QCC OR ICC)
+-    set(QT_CFLAGS_OPTIMIZE_VALID_VALUES "-O0" "-O1" "-O2" "-O3" "-Os" "-Oz")
++    set(QT_CFLAGS_OPTIMIZE_VALID_VALUES "-O0" "-O1" "-O2" "-Os" "-Oz")
+ endif()
+ 
+ 

@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST-psql,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
+lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginConfig.cmake
+lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginConfigVersion.cmake
+lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginDependencies.cmake
+lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets.cmake
+@so lib/qt6/plugins/sqldrivers/libqsqlpsql.so

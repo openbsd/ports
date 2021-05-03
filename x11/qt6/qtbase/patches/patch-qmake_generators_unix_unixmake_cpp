@@ -1,0 +1,129 @@
+$OpenBSD: patch-qmake_generators_unix_unixmake_cpp,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
+
+Index: qmake/generators/unix/unixmake.cpp
+--- qmake/generators/unix/unixmake.cpp.orig
++++ qmake/generators/unix/unixmake.cpp
+@@ -34,8 +34,50 @@
+ #include <time.h>
+ #include <qdebug.h>
+ 
++#include <iostream>
++
+ QT_BEGIN_NAMESPACE
++// Helper for putting -L for in-build-tree directories first, all other arguments later;
++// avoids picking up system libraries instead of built ones.
++void
++UnixMakefileGenerator::separateInternalLibdirs(ProStringList &libs, ProStringList &libdirsInt, QString prefix) {
++    QFileInfo fi(project->cacheFile().isEmpty() ? project->buildRoot() : project->cacheFile());
++    QFileInfo fi2(fi.dir().path());
++    QDir dir(fi2.dir().path());
++    const QString lbroot(prefix + (dir.isRoot() ? project->buildRoot() : dir.path()) + QDir::separator());
+ 
++    for (int i = 0; i < libs.size();) {
++        QString l(libs[i].toQString());
++        /**
++         * Transform /usr/ports/pobj/xxx/lib/libQt5Core.so
++         * into -L/usr/ports/pobj/xxx/build-amd64/lib -lQt5Core
++         */
++        if (!l.startsWith(QLatin1String("-L")) && l.endsWith(QLatin1String(".so")))
++        {
++            const QFileInfo fil(l);
++            QString name = fil.fileName().replace(QLatin1String(".so"), QLatin1String(""));
++            if (name.startsWith(QLatin1String("lib")))
++                name = name.replace(QLatin1String("lib"), QLatin1String("-l"));
++
++            libs += name;
++            libdirsInt += QString(QLatin1String("-L") + fil.absoluteDir().absolutePath());
++            libs.remove(i);
++        }
++        else
++        {
++            // Collect all Prefixed paths in libdirsInt and remove it from libs
++            if (l.startsWith(lbroot)) {
++                if (!libdirsInt.contains(l)) {
++                    libdirsInt += l;
++                }
++                libs.remove(i);
++            } else {
++                ++i;
++            }
++        }
++    }
++}
++
+ ProStringList UnixMakefileGenerator::libdirToFlags(const ProKey &key)
+ {
+     ProStringList results;
+@@ -107,6 +149,13 @@ UnixMakefileGenerator::init()
+     project->values("QMAKE_RPATHLINKDIR") += project->values("QMAKE_RPATHLINKDIR_POST");
+     if(!project->isEmpty("QMAKE_INCDIR"))
+         project->values("INCLUDEPATH") += project->values("QMAKE_INCDIR");
++
++    // This adds the bin dir in front of the LIBS list
++    QString destdir = project->first("DESTDIR").toQString();
++    if (destdir.isEmpty())
++        destdir = qmake_getpwd();
++    project->values("QMAKE_LIBDIR_FLAGS") += "-L" + destdir;   // will be escaped later
++
+     // The order of the next two lines is relevant due to side effect on QMAKE_LFLAGS.
+     ProStringList ldadd = project->values("QMAKE_LIBDIR_FLAGS") + libdirToFlags("QMAKE_LIBDIR");
+     ProStringList ldaddpost = libdirToFlags("QMAKE_LIBDIR_POST");
+@@ -119,7 +168,12 @@ UnixMakefileGenerator::init()
+         ldadd += project->values("QMAKE_FRAMEWORKPATH_FLAGS");
+     }
+     ProStringList &qmklibs = project->values("LIBS");
+-    qmklibs = ldadd + qmklibs;
++    qmklibs += ldadd;
++    ProStringList libdirsInternal;
++    separateInternalLibdirs(qmklibs, libdirsInternal, QStringLiteral("-L"));
++    separateInternalLibdirs(project->values("QMAKE_LIBS_PRIVATE"), libdirsInternal, QStringLiteral("-L"));
++    qmklibs = libdirsInternal + qmklibs;
++
+     ProStringList &qmklibspost = project->values("QMAKE_LIBS");
+     qmklibspost = ldaddpost + qmklibspost;
+     if (!project->isEmpty("QMAKE_RPATHDIR") && !project->isEmpty("QMAKE_LFLAGS_RPATH")) {
+@@ -147,7 +201,10 @@ UnixMakefileGenerator::init()
+         }
+     }
+     if (!project->isEmpty("QMAKE_RPATHLINKDIR")) {
+-        const ProStringList &rpathdirs = project->values("QMAKE_RPATHLINKDIR");
++        ProStringList &rpathdirs = project->values("QMAKE_RPATHLINKDIR");
++        ProStringList rpathdirsInternal;
++        separateInternalLibdirs(rpathdirs, rpathdirsInternal, QString());
++        rpathdirs = rpathdirsInternal + rpathdirs;
+         for (int i = 0; i < rpathdirs.size(); ++i) {
+             if (!project->isEmpty("QMAKE_LFLAGS_RPATHLINK"))
+                 project->values("QMAKE_LFLAGS") += var("QMAKE_LFLAGS_RPATHLINK") + escapeFilePath(QFileInfo(rpathdirs[i].toQString()).absoluteFilePath());
+@@ -403,6 +460,9 @@ UnixMakefileGenerator::findLibraries(bool linkPrl, boo
+                                            "QMAKE_LIBS", "QMAKE_LIBS_PRIVATE", nullptr };
+     for (int i = 0; lflags[i]; i++) {
+         ProStringList &l = project->values(lflags[i]);
++        ProStringList libdirsInt;
++        separateInternalLibdirs(l, libdirsInt, QStringLiteral("-L"));
++        l = libdirsInt + l;
+         for (ProStringList::Iterator it = l.begin(); it != l.end(); ) {
+             QString opt = (*it).toQString();
+             if(opt.startsWith("-")) {
+@@ -546,6 +606,13 @@ UnixMakefileGenerator::findLibraries(bool linkPrl, boo
+             }
+         }
+     }
++    ProStringList libdirsInt;
++    for (int i = 0; lflags[i]; i++) {
++        ProStringList &l = project->values(lflags[i]);
++    separateInternalLibdirs(l, libdirsInt, QStringLiteral("-L"));
++    }
++    ProStringList &libs = project->values("QMAKE_LIBS");
++    libs = libdirsInt + libs;
+     return false;
+ }
+ 
+@@ -708,7 +775,7 @@ UnixMakefileGenerator::defaultInstall(const QString &t
+                 uninst.append("-$(DEL_FILE) " + dst);
+             }
+         }
+-        if(!links.isEmpty()) {
++        if(!links.isEmpty() && project->isEmpty("QMAKE_OPENBSD_SHLIB")) {
+             for(int i = 0; i < links.size(); ++i) {
+                 if (target_mode == TARG_UNIX_MODE || target_mode == TARG_MAC_MODE) {
+                     QString link = Option::fixPathToTargetOS(destdir + links[i], false);

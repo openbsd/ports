@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_network_ssl_qsslsocket_openssl_cpp,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
+
+https://github.com/gentoo/libressl/blob/master/dev-qt/qtnetwork/files/qtnetwork-5.15.2-libressl.patch
+
+Index: src/network/ssl/qsslsocket_openssl.cpp
+--- src/network/ssl/qsslsocket_openssl.cpp.orig
++++ src/network/ssl/qsslsocket_openssl.cpp
+@@ -771,7 +771,7 @@ bool QSslSocketBackendPrivate::initSslContext()
+     else if (mode == QSslSocket::SslServerMode)
+         q_SSL_set_psk_server_callback(ssl, &q_ssl_psk_server_callback);
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x10101006L
++#if OPENSSL_VERSION_NUMBER >= 0x10101006L && !defined(LIBRESSL_VERSION_NUMBER)
+     // Set the client callback for TLSv1.3 PSK
+     if (mode == QSslSocket::SslClientMode
+         && QSslSocket::sslLibraryBuildVersionNumber() >= 0x10101006L) {

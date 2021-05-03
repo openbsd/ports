@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_network_ssl_qsslcontext_openssl_p_h,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
+
+https://github.com/gentoo/libressl/blob/master/dev-qt/qtnetwork/files/qtnetwork-5.15.2-libressl.patch
+
+Index: src/network/ssl/qsslcontext_openssl_p.h
+--- src/network/ssl/qsslcontext_openssl_p.h.orig
++++ src/network/ssl/qsslcontext_openssl_p.h
+@@ -61,6 +61,13 @@
+ 
+ QT_BEGIN_NAMESPACE
+ 
++#ifndef DTLS_ANY_VERSION
++#define DTLS_ANY_VERSION 0x1FFFF
++#endif
++#ifndef TLS_ANY_VERSION
++#define TLS_ANY_VERSION 0x10000
++#endif
++
+ #ifndef QT_NO_SSL
+ 
+ class QSslContext

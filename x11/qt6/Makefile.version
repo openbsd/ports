@@ -1,0 +1,8 @@
+# $OpenBSD: Makefile.version,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
+
+# Common source for Qt6 version
+QT6_VERSION =		6.0.2
+
+# This one is used for building dependencies for examples and documentation,
+# which obviously should be in sync with core packages.
+QT6_NEXT_VERSION =	6.1
