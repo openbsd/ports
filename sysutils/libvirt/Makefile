@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.78 2021/04/02 09:07:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2021/05/04 12:32:54 ajacoutot Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
-DISTNAME=		libvirt-7.2.0
+DISTNAME=		libvirt-7.3.0
 
 CATEGORIES=		sysutils devel emulators
 
-SHARED_LIBS += virt                      2.2 # 0.7002.0
-SHARED_LIBS += virt-qemu                 2.2 # 0.7002.0
-SHARED_LIBS += virt-lxc                  2.1 # 0.7002.0
-SHARED_LIBS += virt-admin                2.1 # 0.7002.0
+SHARED_LIBS += virt                      2.2 # 0.7003.0
+SHARED_LIBS += virt-qemu                 2.2 # 0.7003.0
+SHARED_LIBS += virt-lxc                  2.1 # 0.7003.0
+SHARED_LIBS += virt-admin                2.1 # 0.7003.0
 
 HOMEPAGE=		https://libvirt.org/
 
