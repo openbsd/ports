@@ -1,0 +1,28 @@
+$OpenBSD: README,v 1.1.1.1 2021/05/04 17:46:51 rsadowski Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+OpenBSDisks2 is started automatically when an application makes a DBus
+org.freedesktop.UDisks2 request.
+
+Security
+========
+Please note that OpenBSDisks2 is run as root.
+
+Logging
+========
+Logging is enabled by default to syslogd(8) with the tag "openbsdisks2". If you
+want to use a separate file for logs, add the following lines to the top of
+/etc/syslog.conf:
+
+	!!openbsdisks2
+	*.*					/var/log/openbsdisks2.log
+	!*
+
+create logfile:
+	# install -D -m 0640 /dev/null /var/log/openbsdisks2.log
+
+and restart syslogd(8):
+	# rcctl reload syslogd

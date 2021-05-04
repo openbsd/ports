@@ -1,0 +1,9 @@
+A UDisks2 service implementation for OpenBSD forked from FreeBSD
+(bsdutils/bsdisks).
+
+OpenBSDisks2 provides a simple DBus org.freedesktop.UDisks2 service.
+It only provides readable properties for the UDisks2.Drive,
+UDisks2.Block and UDisks2.Filesystem interfaces.
+
+UDisks2 is an abstraction for enumerating disk and storage devices and
+performing operations on them.
