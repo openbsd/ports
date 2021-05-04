@@ -1,4 +1,4 @@
-$OpenBSD: patch-qt_src_network_ssl_qsslsocket_openssl_cpp,v 1.3 2018/07/24 12:03:11 sthen Exp $
+$OpenBSD: patch-qt_src_network_ssl_qsslsocket_openssl_cpp,v 1.4 2021/05/04 15:31:25 tb Exp $
 
 Index: qt/src/network/ssl/qsslsocket_openssl.cpp
 --- qt/src/network/ssl/qsslsocket_openssl.cpp.orig
@@ -20,30 +20,7 @@ Index: qt/src/network/ssl/qsslsocket_openssl.cpp
  QSslSocketBackendPrivate::QSslSocketBackendPrivate()
      : ssl(0),
        ctx(0),
-@@ -225,12 +222,9 @@ QSslCipher QSslSocketBackendPrivate::QSslCipher_from_S
-             ciph.d->encryptionMethod = descriptionList.at(4).mid(4);
-         ciph.d->exportable = (descriptionList.size() > 6 && descriptionList.at(6) == QLatin1String("export"));
- 
--#if OPENSSL_VERSION_NUMBER < 0x10100000L
-         ciph.d->bits = cipher->strength_bits;
-         ciph.d->supportedBits = cipher->alg_bits;
--#else
--	ciph.d->bits = q_SSL_CIPHER_get_bits(cipher, &ciph.d->supportedBits);
--#endif
-+
-     }
-     return ciph;
- }
-@@ -373,7 +367,7 @@ init_context:
-         //
-         // See also: QSslContext::fromConfiguration()
-         if (caCertificate.expiryDate() >= QDateTime::currentDateTime()) {
--	  q_X509_STORE_add_cert(q_SSL_CTX_get_cert_store(ctx), (X509 *)caCertificate.handle());
-+            q_X509_STORE_add_cert(ctx->cert_store, (X509 *)caCertificate.handle());
-         }
-     }
- 
-@@ -510,10 +504,8 @@ void QSslSocketBackendPrivate::destroySslContext()
+@@ -510,10 +507,8 @@ void QSslSocketBackendPrivate::destroySslContext()
  */
  void QSslSocketPrivate::deinitialize()
  {
@@ -54,7 +31,7 @@ Index: qt/src/network/ssl/qsslsocket_openssl.cpp
  }
  
  /*!
-@@ -534,17 +526,13 @@ bool QSslSocketPrivate::ensureLibraryLoaded()
+@@ -534,17 +529,13 @@ bool QSslSocketPrivate::ensureLibraryLoaded()
          return false;
  
      // Check if the library itself needs to be initialized.
@@ -72,7 +49,7 @@ Index: qt/src/network/ssl/qsslsocket_openssl.cpp
          if (q_SSL_library_init() != 1)
              return false;
          q_SSL_load_error_strings();
-@@ -583,9 +571,7 @@ bool QSslSocketPrivate::ensureLibraryLoaded()
+@@ -583,9 +574,7 @@ bool QSslSocketPrivate::ensureLibraryLoaded()
  
  void QSslSocketPrivate::ensureCiphersAndCertsLoaded()
  {
@@ -83,23 +60,3 @@ Index: qt/src/network/ssl/qsslsocket_openssl.cpp
      if (s_loadedCiphersAndCerts)
          return;
      s_loadedCiphersAndCerts = true;
-@@ -677,18 +663,13 @@ void QSslSocketPrivate::resetDefaultCiphers()
-     STACK_OF(SSL_CIPHER) *supportedCiphers = q_SSL_get_ciphers(mySsl);
-     for (int i = 0; i < q_sk_SSL_CIPHER_num(supportedCiphers); ++i) {
-         if (SSL_CIPHER *cipher = q_sk_SSL_CIPHER_value(supportedCiphers, i)) {
--
--#if OPENSSL_VERSION_NUMBER < 0x10100000L
--	  if (cipher->valid) {
--#endif
-+            if (cipher->valid) {
-                 QSslCipher ciph = QSslSocketBackendPrivate::QSslCipher_from_SSL_CIPHER(cipher);
-                 if (!ciph.isNull()) {
-                     if (!ciph.name().toLower().startsWith(QLatin1String("adh")))
-                         ciphers << ciph;
-                 }
--#if OPENSSL_VERSION_NUMBER < 0x10100000L
-             }
--#endif
-         }
-     }
- 
