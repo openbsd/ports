@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.330 2020/12/23 21:17:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.331 2021/05/04 14:42:48 sthen Exp $
+
+BROKEN=		outdated; newer versions require OpenSSL 1.1.1 API
 
 VERSION=	3.6-20200627
 REVISION=	0
