@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2020/11/03 16:12:09 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.17 2021/05/04 17:52:18 rsadowski Exp $
 
 COMMENT =	KDE hardware abstraction layer
 DISTNAME =	solid-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	KF5Solid		7.1
 
@@ -9,6 +10,8 @@ WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Qml Qt5Xml c m
 
 BUILD_DEPENDS =	devel/bison
+
+RUN_DEPENDS =	sysutils/openbsdisks2
 
 LIB_DEPENDS =	x11/qt5/qtdeclarative
 
