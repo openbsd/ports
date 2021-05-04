@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2096 2021/04/29 20:17:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.2097 2021/05/04 18:54:22 tb Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1851,6 +1851,7 @@
      SUBDIR += sdlmm
      SUBDIR += sfio
      SUBDIR += shapelib
+     SUBDIR += sharness
      SUBDIR += shellcheck
      SUBDIR += shtool
      SUBDIR += shunit2
