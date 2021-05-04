@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2021/03/16 18:43:40 kn Exp $
+# $OpenBSD: Makefile,v 1.18 2021/05/04 22:03:06 kn Exp $
 
 PORTROACH=		limit:^6
 
-VERSION=		6.21.1
-REVISION=		0
+VERSION=		6.22.1
 
 MAINTAINER=		Klemens Nanni <kn@openbsd.org>
 
