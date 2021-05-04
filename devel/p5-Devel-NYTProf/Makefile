@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.38 2021/04/07 12:03:44 bluhm Exp $
+# $OpenBSD: Makefile,v 1.39 2021/05/04 07:17:05 bluhm Exp $
 
 COMMENT =	powerful feature-rich perl source code profiler
 
-DISTNAME =	Devel-NYTProf-6.07
+DISTNAME =	Devel-NYTProf-6.09
 
 CATEGORIES =	devel
 
@@ -18,6 +18,9 @@ RUN_DEPENDS =		converters/p5-JSON-MaybeXS \
 			sysutils/p5-File-Which>=1.09
 TEST_DEPENDS =		devel/p5-Sub-Name>=0.05 \
 			devel/p5-Test-Differences>=0.60 \
-			devel/p5-Test-Portability-Files
+			devel/p5-Test-Portability-Files \
+			sysutils/p5-Capture-Tiny
+
+TEST_ENV =		NYTPROF_AUTHOR_TESTING=1
 
 .include <bsd.port.mk>
