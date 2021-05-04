@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/05/03 13:31:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/05/04 15:29:54 sthen Exp $
 
 COMMENT=	library and milter for DMARC
 
@@ -7,8 +7,9 @@ GH_ACCOUNT=	trusteddomainproject
 GH_PROJECT=	OpenDMARC
 GH_TAGNAME=	rel-opendmarc-${V:C/\./-/g}
 DISTNAME=	opendmarc-$V
+REVISION=	0
 
-SHARED_LIBS +=	opendmarc             0.1
+SHARED_LIBS +=	opendmarc             1.0
 
 CATEGORIES=	mail
 
