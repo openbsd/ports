@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2021/04/03 19:31:41 cwen Exp $
+# $OpenBSD: Makefile,v 1.44 2021/05/04 08:40:17 ajacoutot Exp $
 
 # XXX add support for libcloudproviders? (-Dcloudproviders=enabled)
 # XXX add support for tracker3? (-Dtracker=enabled)
@@ -13,7 +13,7 @@ COMMENT-guic=		gtk+ icon theme caching utility
 COMMENT-media=		gtk+ media engine
 
 GNOME_PROJECT=		gtk
-GNOME_VERSION=		4.2.0
+GNOME_VERSION=		4.2.1
 
 PKGNAME-main=		gtk+4-${GNOME_VERSION}
 PKGNAME-cloudprint=	gtk+4-cloudprint-${GNOME_VERSION}
@@ -24,7 +24,7 @@ PKGNAME-media=		gtk+4-media-${GNOME_VERSION}
 
 CATEGORIES=		x11 devel
 
-SHARED_LIBS += gtk-4                     4.0 # 1.200.0
+SHARED_LIBS += gtk-4                     4.0 # 1.200.1
 
 HOMEPAGE=		http://www.gtk.org/
 
@@ -94,7 +94,7 @@ LIB_DEPENDS-guic=	graphics/gdk-pixbuf2
 RUN_DEPENDS-guic=	x11/hicolor-icon-theme
 
 # uses pledge()
-WANTLIB-guic += c gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 intl
+WANTLIB-guic += c gdk_pixbuf-2.0 glib-2.0 intl
 
 # gstreamer1-plugins-bad: gstplayer-1.0
 LIB_DEPENDS-media=	multimedia/gstreamer1/plugins-bad \

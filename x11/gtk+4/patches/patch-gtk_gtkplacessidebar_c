@@ -1,4 +1,4 @@
-$OpenBSD: patch-gtk_gtkplacessidebar_c,v 1.8 2021/03/31 13:42:46 ajacoutot Exp $
+$OpenBSD: patch-gtk_gtkplacessidebar_c,v 1.9 2021/05/04 08:40:17 ajacoutot Exp $
 
 unveil(2): check if the XDG directories exist before showing them on the sidebar
 
@@ -23,7 +23,7 @@ Index: gtk/gtkplacessidebar.c
      return NULL;
  
    return g_filename_to_uri (name, NULL, NULL);
-@@ -1017,6 +1019,11 @@ update_places (GtkPlacesSidebar *sidebar)
+@@ -1020,6 +1022,11 @@ update_places (GtkPlacesSidebar *sidebar)
  
    /* home folder */
    home_uri = get_home_directory_uri ();
@@ -35,7 +35,7 @@ Index: gtk/gtkplacessidebar.c
    start_icon = g_themed_icon_new_with_default_fallbacks (ICON_NAME_HOME);
    add_place (sidebar, GTK_PLACES_BUILT_IN,
               GTK_PLACES_SECTION_COMPUTER,
-@@ -1026,6 +1033,9 @@ update_places (GtkPlacesSidebar *sidebar)
+@@ -1029,6 +1036,9 @@ update_places (GtkPlacesSidebar *sidebar)
    g_object_unref (start_icon);
    g_free (home_uri);
  
