@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/04 18:53:01 tb Exp $
+share/doc/sharness/
+share/doc/sharness/API.md
+share/doc/sharness/CHANGELOG.md
+share/doc/sharness/COPYING
+share/doc/sharness/README.git
+share/doc/sharness/README.md
+share/doc/sharness/examples/
+share/doc/sharness/examples/Makefile
+share/doc/sharness/examples/simple.t
+share/sharness/
+share/sharness/aggregate-results.sh
+share/sharness/sharness.sh
