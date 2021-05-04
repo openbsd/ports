@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.601 2021/04/29 04:12:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.602 2021/05/04 17:49:37 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -214,6 +214,7 @@
      SUBDIR += oc
      SUBDIR += od1000_firmware
      SUBDIR += opam
+     SUBDIR += openbsdisks2
      SUBDIR += openpoppassd
      SUBDIR += p5-Capture-Tiny
      SUBDIR += p5-Data-Float
