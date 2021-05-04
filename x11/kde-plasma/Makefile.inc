@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2021/04/24 05:04:07 rsadowski Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2021/05/04 17:34:57 rsadowski Exp $
 
 CATEGORIES +=		x11/kde-plasma
 
@@ -19,7 +19,7 @@ MODULES :=		devel/kf5 \
 # LGPLv2.1+, GPLv2+, GPLv3
 PERMIT_PACKAGE ?=	Yes
 
-VERSION ?=		5.21.4
+VERSION ?=		5.21.5
 
 MASTER_SITES =		${MASTER_SITE_KDE:=stable/plasma/${VERSION}/}
 
