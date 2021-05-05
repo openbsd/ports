@@ -1,0 +1,16 @@
+$OpenBSD: patch-ssl_c,v 1.10 2021/05/05 19:00:05 tb Exp $
+
+https://github.com/droe/sslsplit/pull/291
+
+Index: ssl.c
+--- ssl.c.orig
++++ ssl.c
+@@ -598,7 +598,7 @@ ssl_ssl_masterkey_to_str(SSL *ssl)
+ 	char *str = NULL;
+ 	int rv;
+ 	unsigned char *k, *r;
+-#if (OPENSSL_VERSION_NUMBER >= 0x10100000L) && !defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER >= 0x10100000L) && (!defined(LIBRESSL_VERSION_NUMBER) || LIBRESSL_VERSION_NUMBER >= 0x2070000fL)
+ 	unsigned char kbuf[48], rbuf[32];
+ 	k = &kbuf[0];
+ 	r = &rbuf[0];
