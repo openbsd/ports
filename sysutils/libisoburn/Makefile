@@ -1,19 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 2020/10/11 17:56:15 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2021/05/05 07:33:58 landry Exp $
 
 COMMENT-main =		create ISO-9660 filesystem and burn CD/DVD/BD media
 COMMENT-xorriso =	ISO 9660 Rock Ridge Filesystem Manipulator
 COMMENT-tcltk =		frontend for xorriso
 
-V =	1.4.8
+V =	1.5.4
 DISTNAME =	libisoburn-${V}
-SHARED_LIBS +=	isoburn 0.0 # 106.0
+SHARED_LIBS +=	isoburn 0.1 # 112.0
 
 PKGNAME-main =		${PKGNAME}
 PKGNAME-xorriso =	xorriso-${V}
 PKGNAME-tcltk =		xorriso-tcltk-${V}
-REVISION-main =		0
-REVISION-tcltk =	0
-REVISION-xorriso =	0
 
 MULTI_PACKAGES =	-main -xorriso -tcltk
 
@@ -27,8 +24,8 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		x11/tk
 
-LIB_DEPENDS-main =	sysutils/libisofs \
-			sysutils/libburn
+LIB_DEPENDS-main =	sysutils/libisofs>=$V \
+			sysutils/libburn>=$V
 WANTLIB-main =		burn curses iconv isofs pthread readline z
 LIB_DEPENDS-xorriso =	${BASE_PKGPATH},-main
 WANTLIB-xorriso =	${WANTLIB-main} c isoburn

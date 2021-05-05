@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2017/12/19 20:20:44 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2021/05/05 07:33:58 landry Exp $
 include/libisoburn/
 include/libisoburn/libisoburn.h
 include/libisoburn/xorriso.h
-lib/libisoburn.a
+@static-lib lib/libisoburn.a
 lib/libisoburn.la
 @lib lib/libisoburn.so.${LIBisoburn_VERSION}
 lib/pkgconfig/libisoburn-1.pc
