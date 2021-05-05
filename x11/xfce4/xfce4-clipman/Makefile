@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.61 2020/12/29 15:15:48 landry Exp $
+# $OpenBSD: Makefile,v 1.62 2021/05/05 10:39:15 landry Exp $
 
 COMMENT=	Xfce4 clipboard history panel plugin
 
-XFCE_VERSION=	1.6.1
-REVISION=	0
+XFCE_VERSION=	1.6.2
 XFCE_PLUGIN=	clipman
 
 # GPLv2
@@ -27,7 +26,7 @@ WANTLIB =	ICE SM X11 Xcomposite Xcursor Xdamage Xext \
 		gobject-2.0 m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pixman-1 png pthread startup-notification-1 \
 		xfce4util z xcb Xtst xfce4ui-2 ${COMPILER_LIBCXX} \
-		X11-xcb ffi xcb-util xfconf-0 qrencode \
+		X11-xcb ffi xcb-util xfconf-0 qrencode jpeg \
 		atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3 xfce4panel-2.0 \
 		gthread-2.0 xcb-render xcb-shm harfbuzz graphite2 iconv intl
 
