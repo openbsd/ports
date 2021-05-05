@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.181 2021/03/24 07:30:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.182 2021/05/05 20:31:59 ajacoutot Exp $
 
 # XXX https://bugzilla.gnome.org/show_bug.cgi?id=590059
 #RUN_DEPENDS +=		misc/hwdata
@@ -7,7 +7,7 @@ COMMENT=		components for the GNOME desktop
 
 GNOME_PROJECT=		gnome-desktop
 # sync with meta/gnome "V" variable
-GNOME_VERSION=		3.38.5
+GNOME_VERSION=		3.38.6
 
 SHARED_LIBS += gnome-desktop-3           2.2 # 19.0.10
 
