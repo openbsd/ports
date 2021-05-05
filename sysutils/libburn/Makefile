@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2020/10/11 17:56:15 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2021/05/05 07:33:07 landry Exp $
 
 COMMENT =	library for reading, mastering and writing optical discs
 
-DISTNAME =	libburn-1.4.8
-SHARED_LIBS +=  burn 0.0 # 105.0
+DISTNAME =	libburn-1.5.4
+SHARED_LIBS +=  burn 0.1 # 111.0
 
 CATEGORIES =	sysutils
 

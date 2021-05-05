@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/12/19 20:18:08 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/05/05 07:33:07 landry Exp $
 @bin bin/cdrskin
 include/libburn/
 include/libburn/libburn.h
-lib/libburn.a
+@static-lib lib/libburn.a
 lib/libburn.la
 @lib lib/libburn.so.${LIBburn_VERSION}
 lib/pkgconfig/libburn-1.pc
