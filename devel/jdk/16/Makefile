@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/05/04 23:16:47 kurt Exp $
+# $OpenBSD: Makefile,v 1.2 2021/05/05 12:30:42 kurt Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 aarch64
 USE_WXNEEDED=	Yes
 DPB_PROPERTIES=	parallel
 
 COMMENT=	OpenJDK Software Development Kit v${VERSION_STR}
-BASE_VER=	16.0.0
-PATCH_VER=	36
+BASE_VER=	16.0.1
+PATCH_VER=	9
 BSD_PORT_REL=	1
-VERSION_STR=	16+${PATCH_VER}-${BSD_PORT_REL}
+VERSION_STR=	${BASE_VER}+${PATCH_VER}-${BSD_PORT_REL}
 PACKAGE_VER=	${BASE_VER}.${PATCH_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${PACKAGE_VER}
 PKGSTEM=	jdk-16
@@ -17,7 +17,7 @@ EPOCH=		0
 DIST_SUBDIR=	jdk
 DISTNAME=	jdk-${VERSION_STR}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-WRKDIST=	${WRKDIR}/jdk16-jdk-16-${PATCH_VER}-${BSD_PORT_REL}
+WRKDIST=	${WRKDIR}/jdk16u-jdk-${BASE_VER}-${PATCH_VER}-${BSD_PORT_REL}
 BOOTJDK_DATE=	20210317
 
 CATEGORIES=	devel/jdk java
@@ -27,7 +27,7 @@ FLAVOR?=
 
 HOMEPAGE=	http://openjdk.java.net/
 
-MASTER_SITES=	https://github.com/battleblow/jdk16/archive/
+MASTER_SITES=	https://github.com/battleblow/jdk16u/archive/
 MASTER_SITES1=	https://spacehopper.org/mirrors/ \
 		http://www.intricatesoftware.com/distfiles/
 
