@@ -1,4 +1,23 @@
-# $OpenBSD: Makefile,v 1.44 2020/03/15 19:53:59 solene Exp $
+# $OpenBSD: Makefile,v 1.45 2021/05/05 16:24:06 sthen Exp $
+
+BROKEN-i386 =		build fails in "Compiling file [...]/src/compiler/generic/genesis.lisp"
+# ;; Compiling file /pobj/sbcl-2.0.1/sbcl-2.0.1/src/compiler/generic/genesis.lisp ...
+# ;; Wrote file /pobj/sbcl-2.0.1/sbcl-2.0.1/obj/from-host/src/compiler/generic/genesis.fas-tmp
+# 0 errors, 0 warnings
+# ;;  Loading file obj/from-host/src/compiler/generic/genesis.fas ...
+# ;;  Loaded file obj/from-host/src/compiler/generic/genesis.fas
+# *** - OPEN: File
+#       #P"/pobj/sbcl-2.0.1/sbcl-2.0.1/obj/from-xc/tls-init.lisp-expr" does not
+#       exist
+# The following restarts are available:
+# SKIP           :R1      skip (GENESIS OBJECT-FILE-NAMES # ...)
+# RETRY          :R2      retry (GENESIS OBJECT-FILE-NAMES # ...)
+# STOP           :R3      stop loading file /pobj/sbcl-2.0.1/sbcl-2.0.1/make-genesis-2.lisp
+# ABORT-BUILD    :R4      Abort building SBCL.
+# ABORT          :R5      Abort main loop
+# //testing for consistency of first and second GENESIS passes
+# diff: output/genesis-2: No such file or directory   
+# error: header files do not match between first and second GENESIS
 
 # not yet ported to other arches
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
