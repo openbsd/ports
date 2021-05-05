@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1271 2021/05/03 20:14:49 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1272 2021/05/05 11:55:59 landry Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1200,6 +1200,7 @@ setup_obsolete_reason(
 	3 => 'p5-VCP-autrijus',
 # 7.0
 	3 => 'mailpile',
+	7 => 'p5-Geo-GDAL',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1227,7 +1228,7 @@ my $obsolete_message = {
 	4 => "superseded by base component",
 	5 => "outdated and/or no longer required by other ports",
 	6 => "no longer useful",
-	7 => "removed in favor of using languages package manager",
+	7 => "removed in favor of using the language's package manager",
 	10 => "has been replaced by opendkim",
 	11 => "no longer packageable",
 	12 => "replace with IMAPSieve, see https://wiki.dovecot.org/HowTo/AntispamWithSieve",
