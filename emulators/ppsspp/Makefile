@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2021/02/23 19:39:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/05/05 07:31:12 rsadowski Exp $
 
 # See https://github.com/hrydgard/ppsspp/issues/8823
 NOT_FOR_ARCHS =	${BE_ARCHS}
@@ -8,6 +8,7 @@ COMMENT =	Sony PlayStation Portable emulator
 GH_ACCOUNT =	hrydgard
 GH_PROJECT =	ppsspp
 GH_TAGNAME =	v1.10.3
+REVISION =	0
 
 GLSLANG =	d0850f875ec392a130ccf00018dab458b546f27c
 PPSSPP_LANG =	1c64b8fbd3cb6bd87935eb53f302f7de6f86e209
