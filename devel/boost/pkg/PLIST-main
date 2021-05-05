@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2021/04/28 05:08:58 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2021/05/05 12:05:58 rsadowski Exp $
 @pkgpath devel/boost
+@conflict leatherman-<1.12.4p0
 include/boost/
 include/boost/accumulators/
 include/boost/accumulators/accumulators.hpp

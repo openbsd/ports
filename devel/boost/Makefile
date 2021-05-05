@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2021/04/28 05:08:58 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.110 2021/05/05 12:05:58 rsadowski Exp $
 
 ONLY_FOR_ARCHS-md = aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64
 
@@ -13,6 +13,7 @@ CATEGORIES=	devel
 MASTER_SITES=	https://dl.bintray.com/boostorg/release/${VERSION}/source/
 EXTRACT_SUFX=	.tar.bz2
 FIX_EXTRACT_PERMISSIONS =	Yes
+REVISION-main=	0
 
 SO_VERSION=	14.0
 BOOST_LIBS=	boost_atomic-mt \
