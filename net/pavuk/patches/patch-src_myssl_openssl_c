@@ -1,10 +1,35 @@
-$OpenBSD: patch-src_myssl_openssl_c,v 1.2 2015/07/18 15:33:51 sthen Exp $
+$OpenBSD: patch-src_myssl_openssl_c,v 1.3 2021/05/05 17:04:18 tb Exp $
 
+Retrieve session ID via accessors instead of reaching inside the struct.
 Allow building against OpenSSL without SSLv2/v3 support.
 
---- src/myssl_openssl.c.orig	Mon Aug 15 02:59:30 2005
-+++ src/myssl_openssl.c	Sat Jul 18 09:33:24 2015
-@@ -543,12 +543,16 @@ bufio *my_ssl_do_connect(doc * docp, bufio * socket,
+Index: src/myssl_openssl.c
+--- src/myssl_openssl.c.orig
++++ src/myssl_openssl.c
+@@ -48,16 +48,18 @@ static int cmp_sockaddr(struct sockaddr_in *a, struct 
+ 
+ static void dump_session_id(SSL_SESSION * s)
+ {
+-  int i;
++  const unsigned char *session_id;
++  unsigned int i, session_id_length;
+   if(!s)
+   {
+     DEBUG_SSL("No session ID to dump?\n");
+     return;
+   }
+-  DEBUG_SSL("ssl_session_id(%d) = [", s->session_id_length);
+-  for(i = 0; i < s->session_id_length; i++)
++  session_id = SSL_SESSION_get_id(s, &session_id_length);
++  DEBUG_SSL("ssl_session_id(%u) = [", session_id_length);
++  for(i = 0; i < session_id_length; i++)
+   {
+-    DEBUG_SSL(" %02x", s->session_id[i]);
++    DEBUG_SSL(" %02x", session_id[i]);
+   }
+   DEBUG_SSL("]\n");
+   return;
+@@ -543,12 +545,16 @@ bufio *my_ssl_do_connect(doc * docp, bufio * socket,
  
    switch (cfg.ssl_version)
    {
