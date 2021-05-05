@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.27 2020/07/03 21:44:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2021/05/05 20:17:57 sthen Exp $
 
 COMMENT=		in-core objects like strings and arrays for I/O
 
 MODULES=		cpan
 PKG_ARCH=		*
-DISTNAME=		IO-stringy-2.111
-REVISION=		1
+DISTNAME=		IO-Stringy-2.113
+# distribution changed from IO::stringy to IO::Stringy
+PKGNAME=		p5-${DISTNAME:S/S/s/}
 CATEGORIES=		devel
 
 # perl
