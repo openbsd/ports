@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2021/01/21 19:29:01 kurt Exp $
+# $OpenBSD: Makefile,v 1.23 2021/05/05 12:30:16 kurt Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 aarch64
 USE_WXNEEDED=	Yes
 DPB_PROPERTIES=	parallel
 
 COMMENT=	OpenJDK Software Development Kit v${VERSION_STR}
-BASE_VER=	11.0.10
+BASE_VER=	11.0.11
 PATCH_VER=	9
 BSD_PORT_REL=	1
 VERSION_STR=	${BASE_VER}+${PATCH_VER}-${BSD_PORT_REL}
