@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.204 2020/11/21 08:38:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.205 2021/05/06 11:41:29 ajacoutot Exp $
 
 COMMENT=		GNOME file manager
 
@@ -44,6 +44,10 @@ MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 CONFIGURE_ARGS=		-Dselinux=false
+
+# XXX test/automated/displayless/meson.build:45:2:
+# ERROR: List item must be one of <class 'str'>, not <class 'list'>
+CONFIGURE_ARGS +=	-Dtests=none
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
