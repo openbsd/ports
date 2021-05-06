@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2021/01/03 08:35:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2021/05/06 19:13:11 tb Exp $
 
 COMMENT =		mouse and keyboard sharing utility
 
 V =			2.3.3
 DISTNAME =		barrier-${V}-release
 PKGNAME =		barrier-${V}
+REVISION =		0
 CATEGORIES =		net x11
 
 MASTER_SITES =		https://github.com/debauchee/barrier/releases/download/v${V}/

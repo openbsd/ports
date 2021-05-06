@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_lib_net_SecureSocket_cpp,v 1.1 2021/05/06 19:13:11 tb Exp $
+
+Use SSL_get_client_ciphers instead of reaching into the SSL_SESSION
+https://github.com/debauchee/barrier/pull/1156
+
+Index: src/lib/net/SecureSocket.cpp
+--- src/lib/net/SecureSocket.cpp.orig
++++ src/lib/net/SecureSocket.cpp
+@@ -832,7 +832,7 @@ SecureSocket::showSecureCipherInfo()
+         showCipherStackDesc(sStack);
+     }
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ 	// m_ssl->m_ssl->session->ciphers is not forward compatable,
+ 	// In future release of OpenSSL, it's not visible,
+     STACK_OF(SSL_CIPHER) * cStack = m_ssl->m_ssl->session->ciphers;
