@@ -1,4 +1,4 @@
-$OpenBSD: patch-libtiff_tif_open_c,v 1.4 2021/03/16 15:34:23 landry Exp $
+$OpenBSD: patch-libtiff_tif_open_c,v 1.5 2021/05/06 15:28:48 landry Exp $
 Index: libtiff/tif_open.c
 --- libtiff/tif_open.c.orig
 +++ libtiff/tif_open.c
@@ -26,5 +26,5 @@ Index: libtiff/tif_open.c
 -	strcpy(tif->tif_name, name);
 +	strlcpy(tif->tif_name, name, namelen+1);
  	tif->tif_mode = m &~ (O_CREAT|O_TRUNC);
- 	tif->tif_curdir = (uint16) -1;		/* non-existent directory */
+ 	tif->tif_curdir = (uint16_t) -1;		/* non-existent directory */
  	tif->tif_curoff = 0;

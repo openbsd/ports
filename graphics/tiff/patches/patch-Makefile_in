@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.13 2018/12/05 20:35:25 naddy Exp $
+$OpenBSD: patch-Makefile_in,v 1.14 2021/05/06 15:28:48 landry Exp $
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -433,7 +433,7 @@ EXTRA_DIST = \
- 	nmake.opt
+@@ -434,7 +434,7 @@ EXTRA_DIST = \
+ 	libtiff-4.pc.in
  
  dist_doc_DATA = $(docfiles)
 -SUBDIRS = port libtiff tools build contrib test man html

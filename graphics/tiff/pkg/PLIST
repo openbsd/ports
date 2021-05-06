@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2021/03/16 15:34:23 landry Exp $
+@comment $OpenBSD: PLIST,v 1.30 2021/05/06 15:28:49 landry Exp $
 @bin bin/fax2ps
 @bin bin/fax2tiff
 @bin bin/pal2rgb
@@ -244,3 +244,4 @@ share/doc/tiff/v4.0.8.html
 share/doc/tiff/v4.0.9.html
 share/doc/tiff/v4.1.0.html
 share/doc/tiff/v4.2.0.html
+share/doc/tiff/v4.3.0.html

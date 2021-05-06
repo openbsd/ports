@@ -1,4 +1,4 @@
-$OpenBSD: patch-libtiff_tif_codec_c,v 1.6 2018/12/05 20:35:25 naddy Exp $
+$OpenBSD: patch-libtiff_tif_codec_c,v 1.7 2021/05/06 15:28:48 landry Exp $
 Index: libtiff/tif_codec.c
 --- libtiff/tif_codec.c.orig
 +++ libtiff/tif_codec.c
@@ -6,7 +6,7 @@ Index: libtiff/tif_codec.c
  	const TIFFCodec* c = TIFFFindCODEC(tif->tif_dir.td_compression);
          char compression_code[20];
          
--        sprintf(compression_code, "%d",tif->tif_dir.td_compression );
+-        sprintf(compression_code, "%"PRIu16, tif->tif_dir.td_compression );
 +        snprintf(compression_code, sizeof(compression_code), "%d",
 +		 tif->tif_dir.td_compression );
  	TIFFErrorExt(tif->tif_clientdata, tif->tif_name,

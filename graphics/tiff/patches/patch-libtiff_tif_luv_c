@@ -1,8 +1,8 @@
-$OpenBSD: patch-libtiff_tif_luv_c,v 1.10 2021/03/16 15:34:23 landry Exp $
+$OpenBSD: patch-libtiff_tif_luv_c,v 1.11 2021/05/06 15:28:48 landry Exp $
 Index: libtiff/tif_luv.c
 --- libtiff/tif_luv.c.orig
 +++ libtiff/tif_luv.c
-@@ -754,7 +754,7 @@ static int tiff_itrunc(double x, int m)
+@@ -733,7 +733,7 @@ static int tiff_itrunc(double x, int m)
          return (int)x;
      /* Silence CoverityScan warning about bad crypto function */
      /* coverity[dont_call] */
