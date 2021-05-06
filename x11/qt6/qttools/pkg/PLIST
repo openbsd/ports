@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/05/06 08:36:15 rsadowski Exp $
 bin/assistant-qt6
 bin/designer-qt6
 bin/linguist-qt6
@@ -8,6 +8,7 @@ bin/pixeltool-qt6
 bin/qdbus-qt6
 bin/qdoc-qt6
 bin/qtdiag-qt6
+include/X11/qt6/
 include/X11/qt6/QtDesigner/
 include/X11/qt6/QtDesigner/${VERSION}/
 include/X11/qt6/QtDesigner/${VERSION}/QtDesigner/
@@ -273,6 +274,9 @@ include/X11/qt6/QtUiTools/QtUiToolsVersion
 include/X11/qt6/QtUiTools/qtuitoolsglobal.h
 include/X11/qt6/QtUiTools/qtuitoolsversion.h
 include/X11/qt6/QtUiTools/quiloader.h
+lib/cmake/
+lib/cmake/Qt6BuildInternals/
+lib/cmake/Qt6BuildInternals/StandaloneTests/
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtToolsTestsConfig.cmake
 lib/cmake/Qt6Designer/
 lib/cmake/Qt6Designer/Qt6DesignerAdditionalTargetInfo.cmake
@@ -358,6 +362,8 @@ lib/libQt6Help.prl
 @lib lib/libQt6Help.so.${LIBQt6Help_VERSION}
 lib/libQt6UiTools.prl
 @lib lib/libQt6UiTools.so.${LIBQt6UiTools_VERSION}
+lib/qt6/
+lib/qt6/bin/
 @bin lib/qt6/bin/assistant
 @bin lib/qt6/bin/designer
 @bin lib/qt6/bin/lconvert
@@ -377,6 +383,8 @@ lib/libQt6UiTools.prl
 @bin lib/qt6/bin/qtdiag
 @bin lib/qt6/bin/qtpaths
 @bin lib/qt6/bin/qtplugininfo
+lib/qt6/mkspecs/
+lib/qt6/mkspecs/modules/
 lib/qt6/mkspecs/modules/qt_lib_designer.pri
 lib/qt6/mkspecs/modules/qt_lib_designer_private.pri
 lib/qt6/mkspecs/modules/qt_lib_designercomponents_private.pri
@@ -388,8 +396,11 @@ lib/qt6/mkspecs/modules/qt_lib_tools_private.pri
 lib/qt6/mkspecs/modules/qt_lib_uiplugin.pri
 lib/qt6/mkspecs/modules/qt_lib_uitools.pri
 lib/qt6/mkspecs/modules/qt_lib_uitools_private.pri
+lib/qt6/plugins/
 lib/qt6/plugins/designer/
 @so lib/qt6/plugins/designer/libqquickwidget.so
+share/qt6/
+share/qt6/modules/
 share/qt6/modules/Designer.json
 share/qt6/modules/DesignerComponents.json
 share/qt6/modules/Help.json

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2021/05/06 08:36:14 rsadowski Exp $
 
 ONLY_FOR_ARCHS ?=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -46,7 +46,6 @@ DEBUG_PACKAGES ?=	${BUILD_PACKAGES}
 
 PROGRAMS6 =	assistant designer linguist lrelease lupdate moc pixeltool \
 		qcollectiongenerator qdbus qdoc qmake qml qtdiag rcc uic
-
 
 .PHONY: qt6-post-install
 post-install: qt6-post-install

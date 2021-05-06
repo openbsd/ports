@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
-include/X11/qt6/
+@comment $OpenBSD: PLIST,v 1.2 2021/05/06 08:36:15 rsadowski Exp $
 include/X11/qt6/QtQuickControls2/
 include/X11/qt6/QtQuickControls2/${VERSION}/
 include/X11/qt6/QtQuickControls2/${VERSION}/QtQuickControls2/
@@ -153,12 +152,7 @@ include/X11/qt6/QtQuickTemplates2/QtQuickTemplates2Depends
 include/X11/qt6/QtQuickTemplates2/QtQuickTemplates2Version
 include/X11/qt6/QtQuickTemplates2/qtquicktemplates2-config.h
 include/X11/qt6/QtQuickTemplates2/qtquicktemplates2version.h
-lib/cmake/
-lib/cmake/Qt6BuildInternals/
-lib/cmake/Qt6BuildInternals/StandaloneTests/
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtQuickControls2TestsConfig.cmake
-lib/cmake/Qt6Qml/
-lib/cmake/Qt6Qml/QmlPlugins/
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtlabsplatformpluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtlabsplatformpluginConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtlabsplatformpluginConfigVersion.cmake
@@ -279,7 +273,6 @@ lib/libQt6QuickControls2Impl.prl
 @lib lib/libQt6QuickControls2Impl.so.${LIBQt6QuickControls2Impl_VERSION}
 lib/libQt6QuickTemplates2.prl
 @lib lib/libQt6QuickTemplates2.so.${LIBQt6QuickTemplates2_VERSION}
-lib/metatypes/
 lib/metatypes/qt6qtquickcontrols2basicstyleimplplugin_release_metatypes.json
 lib/metatypes/qt6qtquickcontrols2basicstyleplugin_release_metatypes.json
 lib/metatypes/qt6qtquickcontrols2fusionstyleimplplugin_release_metatypes.json
@@ -294,22 +287,15 @@ lib/metatypes/qt6qtquickcontrols2universalstyleplugin_release_metatypes.json
 lib/metatypes/qt6quickcontrols2_release_metatypes.json
 lib/metatypes/qt6quickcontrols2impl_release_metatypes.json
 lib/metatypes/qt6quicktemplates2_release_metatypes.json
-lib/qt6/
-lib/qt6/mkspecs/
-lib/qt6/mkspecs/modules/
 lib/qt6/mkspecs/modules/qt_lib_quickcontrols2.pri
 lib/qt6/mkspecs/modules/qt_lib_quickcontrols2_private.pri
 lib/qt6/mkspecs/modules/qt_lib_quickcontrols2impl.pri
 lib/qt6/mkspecs/modules/qt_lib_quickcontrols2impl_private.pri
 lib/qt6/mkspecs/modules/qt_lib_quicktemplates2.pri
 lib/qt6/mkspecs/modules/qt_lib_quicktemplates2_private.pri
-lib/qt6/qml/
-lib/qt6/qml/Qt/
-lib/qt6/qml/Qt/labs/
 lib/qt6/qml/Qt/labs/platform/
 @so lib/qt6/qml/Qt/labs/platform/libqtlabsplatformplugin.so
 lib/qt6/qml/Qt/labs/platform/qmldir
-lib/qt6/qml/QtQuick/
 lib/qt6/qml/QtQuick/Controls/
 lib/qt6/qml/QtQuick/Controls/Basic/
 lib/qt6/qml/QtQuick/Controls/Basic/AbstractButton.qml
@@ -784,8 +770,6 @@ lib/qt6/qml/QtQuick/Templates/
 @so lib/qt6/qml/QtQuick/Templates/libqtquicktemplates2plugin.so
 lib/qt6/qml/QtQuick/Templates/plugins.qmltypes
 lib/qt6/qml/QtQuick/Templates/qmldir
-share/qt6/
-share/qt6/modules/
 share/qt6/modules/QuickControls2.json
 share/qt6/modules/QuickControls2Impl.json
 share/qt6/modules/QuickTemplates2.json

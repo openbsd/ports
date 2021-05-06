@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
-include/X11/qt6/
+@comment $OpenBSD: PLIST,v 1.2 2021/05/06 08:36:15 rsadowski Exp $
 include/X11/qt6/QtShaderTools/
 include/X11/qt6/QtShaderTools/${VERSION}/
 include/X11/qt6/QtShaderTools/${VERSION}/QtShaderTools/
@@ -15,9 +14,6 @@ include/X11/qt6/QtShaderTools/QtShaderToolsDepends
 include/X11/qt6/QtShaderTools/QtShaderToolsVersion
 include/X11/qt6/QtShaderTools/qtshadertoolsglobal.h
 include/X11/qt6/QtShaderTools/qtshadertoolsversion.h
-lib/cmake/
-lib/cmake/Qt6BuildInternals/
-lib/cmake/Qt6BuildInternals/StandaloneTests/
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtShaderToolsTestsConfig.cmake
 lib/cmake/Qt6ShaderTools/
 lib/cmake/Qt6ShaderTools/Qt6ShaderToolsAdditionalTargetInfo.cmake
@@ -38,13 +34,7 @@ lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsTargets.cmake
 lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsVersionlessTargets.cmake
 lib/libQt6ShaderTools.prl
 @lib lib/libQt6ShaderTools.so.${LIBQt6ShaderTools_VERSION}
-lib/qt6/
-lib/qt6/bin/
 @bin lib/qt6/bin/qsb
-lib/qt6/mkspecs/
-lib/qt6/mkspecs/modules/
 lib/qt6/mkspecs/modules/qt_lib_shadertools.pri
 lib/qt6/mkspecs/modules/qt_lib_shadertools_private.pri
-share/qt6/
-share/qt6/modules/
 share/qt6/modules/ShaderTools.json

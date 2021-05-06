@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
-include/X11/qt6/
+@comment $OpenBSD: PLIST,v 1.2 2021/05/06 08:36:15 rsadowski Exp $
 include/X11/qt6/QtCore5Compat/
 include/X11/qt6/QtCore5Compat/${VERSION}/
 include/X11/qt6/QtCore5Compat/${VERSION}/QtCore5Compat/
@@ -65,9 +64,6 @@ include/X11/qt6/QtCore5Compat/qtcore5compat-config.h
 include/X11/qt6/QtCore5Compat/qtcore5compatversion.h
 include/X11/qt6/QtCore5Compat/qtextcodec.h
 include/X11/qt6/QtCore5Compat/qxml.h
-lib/cmake/
-lib/cmake/Qt6BuildInternals/
-lib/cmake/Qt6BuildInternals/StandaloneTests/
 lib/cmake/Qt6BuildInternals/StandaloneTests/Qt5CompatTestsConfig.cmake
 lib/cmake/Qt6Core5Compat/
 lib/cmake/Qt6Core5Compat/Qt6Core5CompatAdditionalTargetInfo.cmake
@@ -79,11 +75,6 @@ lib/cmake/Qt6Core5Compat/Qt6Core5CompatTargets.cmake
 lib/cmake/Qt6Core5Compat/Qt6Core5CompatVersionlessTargets.cmake
 lib/libQt6Core5Compat.prl
 @lib lib/libQt6Core5Compat.so.${LIBQt6Core5Compat_VERSION}
-lib/qt6/
-lib/qt6/mkspecs/
-lib/qt6/mkspecs/modules/
 lib/qt6/mkspecs/modules/qt_lib_core5compat.pri
 lib/qt6/mkspecs/modules/qt_lib_core5compat_private.pri
-share/qt6/
-share/qt6/modules/
 share/qt6/modules/Core5Compat.json

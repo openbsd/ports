@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
-include/X11/qt6/
+@comment $OpenBSD: PLIST,v 1.2 2021/05/06 08:36:15 rsadowski Exp $
 include/X11/qt6/QtSvg/
 include/X11/qt6/QtSvg/${VERSION}/
 include/X11/qt6/QtSvg/${VERSION}/QtSvg/
@@ -31,11 +30,7 @@ include/X11/qt6/QtSvgWidgets/qgraphicssvgitem.h
 include/X11/qt6/QtSvgWidgets/qsvgwidget.h
 include/X11/qt6/QtSvgWidgets/qtsvgwidgetsglobal.h
 include/X11/qt6/QtSvgWidgets/qtsvgwidgetsversion.h
-lib/cmake/
-lib/cmake/Qt6BuildInternals/
-lib/cmake/Qt6BuildInternals/StandaloneTests/
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtSvgTestsConfig.cmake
-lib/cmake/Qt6Gui/
 lib/cmake/Qt6Gui/Qt6QSvgIconPluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Gui/Qt6QSvgIconPluginConfig.cmake
 lib/cmake/Qt6Gui/Qt6QSvgIconPluginConfigVersion.cmake
@@ -68,19 +63,12 @@ lib/libQt6Svg.prl
 @lib lib/libQt6Svg.so.${LIBQt6Svg_VERSION}
 lib/libQt6SvgWidgets.prl
 @lib lib/libQt6SvgWidgets.so.${LIBQt6SvgWidgets_VERSION}
-lib/qt6/
-lib/qt6/mkspecs/
-lib/qt6/mkspecs/modules/
 lib/qt6/mkspecs/modules/qt_lib_svg.pri
 lib/qt6/mkspecs/modules/qt_lib_svg_private.pri
 lib/qt6/mkspecs/modules/qt_lib_svgwidgets.pri
 lib/qt6/mkspecs/modules/qt_lib_svgwidgets_private.pri
-lib/qt6/plugins/
 lib/qt6/plugins/iconengines/
 @so lib/qt6/plugins/iconengines/libqsvgicon.so
-lib/qt6/plugins/imageformats/
 @so lib/qt6/plugins/imageformats/libqsvg.so
-share/qt6/
-share/qt6/modules/
 share/qt6/modules/Svg.json
 share/qt6/modules/SvgWidgets.json

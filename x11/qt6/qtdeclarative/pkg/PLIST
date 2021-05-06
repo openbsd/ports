@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/05/06 08:36:15 rsadowski Exp $
+bin/qml-qt6
 include/X11/qt6/QtPacketProtocol/
 include/X11/qt6/QtPacketProtocol/${VERSION}/
 include/X11/qt6/QtPacketProtocol/${VERSION}/QtPacketProtocol/

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
-include/X11/qt6/
+@comment $OpenBSD: PLIST,v 1.2 2021/05/06 08:36:15 rsadowski Exp $
 include/X11/qt6/QtQuick3D/
 include/X11/qt6/QtQuick3D/${VERSION}/
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/
@@ -151,12 +150,7 @@ include/X11/qt6/QtQuick3DUtils/QtQuick3DUtils
 include/X11/qt6/QtQuick3DUtils/QtQuick3DUtilsDepends
 include/X11/qt6/QtQuick3DUtils/QtQuick3DUtilsVersion
 include/X11/qt6/QtQuick3DUtils/qtquick3dutilsversion.h
-lib/cmake/
-lib/cmake/Qt6BuildInternals/
-lib/cmake/Qt6BuildInternals/StandaloneTests/
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtQuick3DTestsConfig.cmake
-lib/cmake/Qt6Qml/
-lib/cmake/Qt6Qml/QmlPlugins/
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qquick3dpluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qquick3dpluginConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qquick3dpluginConfigVersion.cmake
@@ -236,17 +230,12 @@ lib/libQt6Quick3DRuntimeRender.prl
 @lib lib/libQt6Quick3DRuntimeRender.so.${LIBQt6Quick3DRuntimeRender_VERSION}
 lib/libQt6Quick3DUtils.prl
 @lib lib/libQt6Quick3DUtils.so.${LIBQt6Quick3DUtils_VERSION}
-lib/metatypes/
 lib/metatypes/qt6qtquick3deffectplugin_release_metatypes.json
 lib/metatypes/qt6qtquick3dhelpersplugin_release_metatypes.json
 lib/metatypes/qt6quick3d_release_metatypes.json
-lib/qt6/
-lib/qt6/bin/
 @bin lib/qt6/bin/balsam
 @bin lib/qt6/bin/meshdebug
 @bin lib/qt6/bin/shadergen
-lib/qt6/mkspecs/
-lib/qt6/mkspecs/modules/
 lib/qt6/mkspecs/modules/qt_lib_quick3d.pri
 lib/qt6/mkspecs/modules/qt_lib_quick3d_private.pri
 lib/qt6/mkspecs/modules/qt_lib_quick3dassetimport.pri
@@ -255,11 +244,9 @@ lib/qt6/mkspecs/modules/qt_lib_quick3druntimerender.pri
 lib/qt6/mkspecs/modules/qt_lib_quick3druntimerender_private.pri
 lib/qt6/mkspecs/modules/qt_lib_quick3dutils.pri
 lib/qt6/mkspecs/modules/qt_lib_quick3dutils_private.pri
-lib/qt6/plugins/
 lib/qt6/plugins/assetimporters/
 @so lib/qt6/plugins/assetimporters/libassimp.so
 @so lib/qt6/plugins/assetimporters/libuip.so
-lib/qt6/qml/
 lib/qt6/qml/QtQuick3D/
 lib/qt6/qml/QtQuick3D/Effects/
 lib/qt6/qml/QtQuick3D/Effects/AdditiveColorGradient.qml
@@ -463,8 +450,6 @@ lib/qt6/qml/QtQuick3D/designer/source/view3D_template.qml
 @so lib/qt6/qml/QtQuick3D/libqquick3dplugin.so
 lib/qt6/qml/QtQuick3D/plugins.qmltypes
 lib/qt6/qml/QtQuick3D/qmldir
-share/qt6/
-share/qt6/modules/
 share/qt6/modules/Quick3D.json
 share/qt6/modules/Quick3DAssetImport.json
 share/qt6/modules/Quick3DRuntimeRender.json

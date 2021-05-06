@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2021/05/06 08:36:15 rsadowski Exp $
 
 QT6NAME =		QtTools
 
@@ -17,6 +17,8 @@ WANTLIB += clang clang-cpp m
 LIB_DEPENDS =	x11/qt6/qtbase>=${VERSION},<${NEXT_VERSION} \
 		x11/qt6/qtdeclarative>=${VERSION},<${NEXT_VERSION} \
 		devel/llvm
+
+BUILD_DEPENDS =		graphics/vulkan-loader
 
 CONFIGURE_ENV =		LLVM_INSTALL_DIR=${LOCALBASE}
 
