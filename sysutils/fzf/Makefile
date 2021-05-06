@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2021/03/08 13:59:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/05/06 11:15:41 paco Exp $
 
 COMMENT =	command-line fuzzy finder
 
 # Note: we make our own vendored distfile as upstream doesn't do semantic
 # versioning. Use 'go mod vendor'.
 DISTNAME =	fzf-0.24.1
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	sysutils
 
@@ -22,6 +22,8 @@ MASTER_SITES =	https://theunixzoo.co.uk/distfiles/
 
 MODULES =	lang/go
 MODGO_TYPE =	bin
+
+RUN_DEPENDS =	shells/bash
 
 ALL_TARGET =	github.com/junegunn/fzf
 
