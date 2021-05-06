@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2021/05/06 04:30:23 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.112 2021/05/06 11:36:14 rsadowski Exp $
 
 ONLY_FOR_ARCHS-md = aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64
 
@@ -10,7 +10,7 @@ DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME-main=	boost-${VERSION}
 PKGNAME-md=	boost-md-${VERSION}
 CATEGORIES=	devel
-MASTER_SITES=	https://dl.bintray.com/boostorg/release/${VERSION}/source/
+MASTER_SITES=	https://boostorg.jfrog.io/artifactory/main/release/${VERSION}/source/
 EXTRACT_SUFX=	.tar.bz2
 FIX_EXTRACT_PERMISSIONS =	Yes
 REVISION-main=	0
