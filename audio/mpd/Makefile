@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2021/04/08 10:16:48 solene Exp $
+# $OpenBSD: Makefile,v 1.135 2021/05/06 11:11:17 ajacoutot Exp $
 
 BROKEN-hppa =		no atomic ops
 COMMENT =		Music Player Daemon
@@ -57,6 +57,7 @@ CONFIGURE_ARGS +=	-Dsystemd=disabled \
 			-Dupnp=disabled \
 			-Dlibmpdclient=enabled \
 			-Dneighbor=false \
+			-Dhtml_manual=false
 # storage
 CONFIGURE_ARGS +=	-Dudisks=disabled \
 			-Dwebdav=enabled
