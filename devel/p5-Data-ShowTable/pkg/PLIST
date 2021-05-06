@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:43:58 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/05/06 15:09:25 kettenis Exp $
+@conflict py3-astropy-*
 bin/showtable
 ${P5SITE}/Data/
 ${P5SITE}/Data/ShowTable.pm
