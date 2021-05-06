@@ -1,0 +1,28 @@
+$OpenBSD: patch-code_CMakeLists_txt,v 1.1 2021/05/06 20:54:50 namn Exp $
+
+Add -lGL and -lGLU to openjk_sp 
+
+see: https://github.com/JACoders/OpenJK/pull/1037
+
+Unbreaks crash when toggling fullscreen in the singleplayer binary on
+OpenBSD. openjk (multiplayer binary) uses -lGL and -lGLU but openjk_sp
+did not.
+
+Index: code/CMakeLists.txt
+--- code/CMakeLists.txt.orig
++++ code/CMakeLists.txt
+@@ -46,6 +46,14 @@ if(BuildSPEngine OR BuildJK2SPEngine)
+ 		"${GSLIncludeDirectory}")
+ 
+ 	#    Dependencies
++
++	if (NOT WIN32)
++		# OpenGL
++		find_package(OpenGL REQUIRED)
++		set(SPEngineIncludeDirectories ${SPEngineIncludeDirectories} ${OPENGL_INCLUDE_DIR})
++		set(SPEngineLibraries ${SPEngineLibraries} ${OPENGL_LIBRARIES})
++	endif()
++
+ 	# OpenAL (is optionally included for Windows)
+ 	if(MSVC AND NOT WIN64)
+ 		if(UseInternalOpenAL)
