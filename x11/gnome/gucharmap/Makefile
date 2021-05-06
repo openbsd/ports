@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.130 2021/01/11 00:49:44 kmos Exp $
+# $OpenBSD: Makefile,v 1.131 2021/05/06 10:42:28 ajacoutot Exp $
 
 COMMENT=		Unicode character map for the GNOME project
 
 GNOME_PROJECT=		gucharmap
-GNOME_VERSION=		13.0.4
-REVISION=		0
+GNOME_VERSION=		13.0.7
 
-SHARED_LIBS +=  gucharmap_2_90            7.0 # 7.0
+SHARED_LIBS += gucharmap_2_90            7.1 # 7.0.0
 
 # GPLv3+
 PERMIT_PACKAGE=		Yes
@@ -25,18 +24,20 @@ MODULES=		devel/dconf \
 			devel/meson \
 			x11/gnome
 
-MODGNOME_TOOLS=		desktop-file-utils gobject-introspection vala yelp
+MODGNOME_TOOLS=		desktop-file-utils gobject-introspection vala
 
 BUILD_DEPENDS=		archivers/unzip \
 			devel/gsettings-desktop-schemas \
-			textproc/gtk-doc \
-			textproc/unicode-ucd>=9.0.0
+			textproc/unicode-ucd
 
 RUN_DEPENDS =		devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=		x11/gtk+3,-main
 
-CONFIGURE_ARGS +=	-Ducd_path=${LOCALBASE}/share/unicode/ucd/
+CONFIGURE_ARGS +=	-Ducd_path=${LOCALBASE}/share/unicode/ucd/ \
+			-Ddocs=false
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mlld}
