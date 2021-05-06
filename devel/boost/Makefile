@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2021/05/05 12:05:58 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.111 2021/05/06 04:30:23 rsadowski Exp $
 
 ONLY_FOR_ARCHS-md = aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64
 
@@ -19,7 +19,7 @@ SO_VERSION=	14.0
 BOOST_LIBS=	boost_atomic-mt \
 		boost_chrono-mt boost_chrono \
 		boost_container-mt boost_container \
-		boost_contract boost_contract-mt \
+		boost_contract-mt boost_contract \
 		boost_date_time-mt boost_date_time \
 		boost_filesystem-mt boost_filesystem \
 		boost_graph-mt boost_graph \
@@ -34,9 +34,9 @@ BOOST_LIBS=	boost_atomic-mt \
 		boost_math_tr1f-mt boost_math_tr1f \
 		boost_math_tr1l-mt boost_math_tr1l \
 		boost_nowide-mt boost_nowide \
+		boost_numpy38-mt boost_numpy38 \
 		boost_prg_exec_monitor-mt boost_prg_exec_monitor \
 		boost_program_options-mt boost_program_options \
-		boost_numpy38-mt boost_numpy38 \
 		boost_python38-mt boost_python38 \
 		boost_random-mt boost_random \
 		boost_regex-mt boost_regex \
@@ -44,10 +44,10 @@ BOOST_LIBS=	boost_atomic-mt \
 		boost_system-mt boost_system \
 		boost_thread-mt \
 		boost_timer-mt boost_timer \
+		boost_type_erasure-mt boost_type_erasure \
 		boost_unit_test_framework-mt boost_unit_test_framework \
 		boost_wserialization-mt boost_wserialization \
-		boost_wave-mt boost_wave \
-		boost_type_erasure-mt boost_type_erasure
+		boost_wave-mt boost_wave
 
 # MD
 BOOST_LIBS+=	boost_context-mt \
