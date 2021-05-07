@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.80 2021/02/26 08:04:07 landry Exp $
+# $OpenBSD: Makefile,v 1.81 2021/05/07 06:52:57 landry Exp $
 
 COMMENT=	Xfce4 desktop panel
 
 XFCE_PROJECT=	xfce4-panel
-XFCE_VERSION=	4.16.2
+XFCE_VERSION=	4.16.3
 
 SHARED_LIBS=	xfce4panel-2.0	0.2 # 4.0
 
@@ -19,7 +19,7 @@ WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
 WANTLIB += pthread startup-notification-1 wnck-3 xcb
 WANTLIB += xcb-render xcb-shm xcb-util xfce4ui-2 xfce4util xfconf-0 z
-WANTLIB += iconv intl exo-2
+WANTLIB += iconv intl exo-2 jpeg
 WANTLIB += dbusmenu-glib dbusmenu-gtk3
 WANTLIB += ${COMPILER_LIBCXX}
 
