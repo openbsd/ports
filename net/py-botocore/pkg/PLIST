@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.160 2021/04/30 07:05:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.161 2021/05/07 17:05:17 ajacoutot Exp $
 @conflict py-botocore-*
 @pkgpath net/py-botocore
 lib/python${MODPY_VERSION}/site-packages/botocore/
@@ -638,6 +638,14 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/events/2015-10-07/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/events/2015-10-07/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/events/2015-10-07/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/events/2015-10-07/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/finspace/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/finspace-data/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/finspace-data/2020-07-13/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/finspace-data/2020-07-13/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/finspace-data/2020-07-13/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/finspace/2021-03-12/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/finspace/2021-03-12/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/finspace/2021-03-12/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/firehose/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/firehose/2015-08-04/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/firehose/2015-08-04/examples-1.json
