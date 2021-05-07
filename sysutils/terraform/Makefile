@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.57 2021/04/28 06:25:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2021/05/07 17:37:13 ajacoutot Exp $
 
 COMMENT=		tool for building, changing, and versioning infrastructure
 
 MODGO_MODNAME=	github.com/hashicorp/terraform
-MODGO_VERSION=	v0.15.1
+MODGO_VERSION=	v0.15.3
 DISTNAME=	terraform-${MODGO_VERSION}
 
 WRKDIST=	${WRKDIR}/github.com/hashicorp/terraform@${MODGO_VERSION}
@@ -156,12 +156,13 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-safetemp			 v1.0.0 \
 	github.com/hashicorp/go-slug				 v0.4.1 \
 	github.com/hashicorp/go-sockaddr			 v0.0.0-20180320115054-6d291a969b86 \
-	github.com/hashicorp/go-tfe				 v0.8.1 \
+	github.com/hashicorp/go-tfe				 v0.14.0 \
 	github.com/hashicorp/go-uuid				 v1.0.1 \
 	github.com/hashicorp/go-version				 v1.2.1 \
 	github.com/hashicorp/golang-lru				 v0.5.1 \
 	github.com/hashicorp/hcl				 v0.0.0-20170504190234-a4b07c25de5f \
-	github.com/hashicorp/hcl/v2				 v2.9.1 \
+	github.com/hashicorp/hcl/v2				 v2.10.0 \
+	github.com/hashicorp/jsonapi				 v0.0.0-20210420151930-edf82c9774bf \
 	github.com/hashicorp/memberlist				 v0.1.0 \
 	github.com/hashicorp/serf				 v0.0.0-20160124182025-e4ec8cc423bb \
 	github.com/hashicorp/terraform-config-inspect		 v0.0.0-20210209133302-4fd17a0faac2 \
@@ -248,7 +249,6 @@ MODGO_MODULES =	\
 	github.com/spf13/pflag					 v1.0.3 \
 	github.com/stretchr/objx				 v0.1.1 \
 	github.com/stretchr/testify				 v1.6.1 \
-	github.com/svanharmelen/jsonapi				 v0.0.0-20180618144545-0c0828c3f16d \
 	github.com/tencentcloud/tencentcloud-sdk-go		 v3.0.82+incompatible \
 	github.com/tencentyun/cos-go-sdk-v5			 v0.0.0-20190808065407-f07404cefc8c \
 	github.com/tmc/grpc-websocket-proxy			 v0.0.0-20171017195756-830351dc03c6 \
@@ -262,7 +262,7 @@ MODGO_MODULES =	\
 	github.com/xiang90/probing				 v0.0.0-20160813154853-07dd2e8dfe18 \
 	github.com/xlab/treeprint				 v0.0.0-20161029104018-1d6e34225557 \
 	github.com/yuin/goldmark				 v1.2.1 \
-	github.com/zclconf/go-cty				 v1.8.2 \
+	github.com/zclconf/go-cty				 v1.8.3 \
 	github.com/zclconf/go-cty-debug				 v0.0.0-20191215020915-b22d67c1ba0b \
 	github.com/zclconf/go-cty-yaml				 v1.0.2 \
 	go.opencensus.io					 v0.22.4 \

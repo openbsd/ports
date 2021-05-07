@@ -379,8 +379,8 @@ SHA256 (go_modules/github.com/hashicorp/go-slug/@v/v0.4.1.mod) = jCtubaK0D1iWLRB
 SHA256 (go_modules/github.com/hashicorp/go-slug/@v/v0.4.1.zip) = LeyzuYRHehjaGflcwsV5EV4vx19wBiI29OQRdvN+2PU=
 SHA256 (go_modules/github.com/hashicorp/go-sockaddr/@v/v0.0.0-20180320115054-6d291a969b86.mod) = 8IH+Tpe45d46gWtFZ2zumPjyOHQMS8i/Z3VaitUH2x4=
 SHA256 (go_modules/github.com/hashicorp/go-sockaddr/@v/v0.0.0-20180320115054-6d291a969b86.zip) = QZumTLb6dn2x+7O3k/JlaUPRzMTbVxIjTRIeNgzGi4g=
-SHA256 (go_modules/github.com/hashicorp/go-tfe/@v/v0.8.1.mod) = SNjUA/0d6PAmTp+QRRm/HLUI+imjBwbqHl8cc67XyIM=
-SHA256 (go_modules/github.com/hashicorp/go-tfe/@v/v0.8.1.zip) = Y5bLiTpRhjqzrGHh49wqWFmdkf2EU+08q1oUnS0ygpo=
+SHA256 (go_modules/github.com/hashicorp/go-tfe/@v/v0.14.0.mod) = aRVHZNAyWzFh5p5bYDfGqWFYeB1g37EU3Du4cnsbY9U=
+SHA256 (go_modules/github.com/hashicorp/go-tfe/@v/v0.14.0.zip) = THfTmvRFE93iMcLDemvfzFeT17oYsLqKKc6HH9gez10=
 SHA256 (go_modules/github.com/hashicorp/go-uuid/@v/v1.0.0.mod) = HEqWrRVd4eqwQGKlvkAQu5qqNxJSrtUkIXwuacFK3s8=
 SHA256 (go_modules/github.com/hashicorp/go-uuid/@v/v1.0.1.mod) = HEqWrRVd4eqwQGKlvkAQu5qqNxJSrtUkIXwuacFK3s8=
 SHA256 (go_modules/github.com/hashicorp/go-uuid/@v/v1.0.1.zip) = oFQXuYiwR9VfyorU/sa95Ww5B/Z5/s5I+X1gjmHoKlw=
@@ -395,8 +395,10 @@ SHA256 (go_modules/github.com/hashicorp/golang-lru/@v/v0.5.1.zip) = D4qvMR5I+6BG
 SHA256 (go_modules/github.com/hashicorp/hcl/@v/v0.0.0-20170504190234-a4b07c25de5f.mod) = aDxTsRB2PkqQk3+8dKrxSJGX6790w3g9rpPwZT8fYw8=
 SHA256 (go_modules/github.com/hashicorp/hcl/@v/v0.0.0-20170504190234-a4b07c25de5f.zip) = p2iduxd/khzRqbHiJ3CCPh5D8q1CS5TnR1wOPLiwqL8=
 SHA256 (go_modules/github.com/hashicorp/hcl/v2/@v/v2.0.0.mod) = vsgbrC1Bl4TesIcAQy60OQcQPhe5L5sBEDOBXWxh+3A=
-SHA256 (go_modules/github.com/hashicorp/hcl/v2/@v/v2.9.1.mod) = cLMtXDb+6n7a/DCSiHRVrWZ9PO3j1JSYejPqM1gWD+o=
-SHA256 (go_modules/github.com/hashicorp/hcl/v2/@v/v2.9.1.zip) = 9soRpRZxvYKVEHsoJj2XrhXUNAGjkjIcc4uyyTH8WiE=
+SHA256 (go_modules/github.com/hashicorp/hcl/v2/@v/v2.10.0.mod) = cLMtXDb+6n7a/DCSiHRVrWZ9PO3j1JSYejPqM1gWD+o=
+SHA256 (go_modules/github.com/hashicorp/hcl/v2/@v/v2.10.0.zip) = 2w+ZykrNXj2bDv8/XLZ30xznX7+49srELl0lXe4Y0t4=
+SHA256 (go_modules/github.com/hashicorp/jsonapi/@v/v0.0.0-20210420151930-edf82c9774bf.mod) = 4trf9WfkgeSUO3WpSEkXMsMkV+jIHGzqozsmm3JX24o=
+SHA256 (go_modules/github.com/hashicorp/jsonapi/@v/v0.0.0-20210420151930-edf82c9774bf.zip) = ++OWa6LiC2p4VWOHyfGzdeoZuW6yL26/Vg5Gl/y1Zo4=
 SHA256 (go_modules/github.com/hashicorp/memberlist/@v/v0.1.0.mod) = fEHaBag/ikwys2qvY59NOVRPhG+yftqIixRZqnbfKlU=
 SHA256 (go_modules/github.com/hashicorp/memberlist/@v/v0.1.0.zip) = Co2Jy81rB4Mbc1draV1G2WmBhAclrSvVbtxJ7S+A+AA=
 SHA256 (go_modules/github.com/hashicorp/serf/@v/v0.0.0-20160124182025-e4ec8cc423bb.mod) = sivifzSl/k55Kv4jXraCDi9+7xJnZvdRxnuw9olJLOM=
@@ -615,8 +617,6 @@ SHA256 (go_modules/github.com/stretchr/testify/@v/v1.4.0.mod) = awx7cQMNT8VdTm5u
 SHA256 (go_modules/github.com/stretchr/testify/@v/v1.5.1.mod) = 46EcKmxf4G+KIh5yiWhJF6xJrQEjP4G1HINgdzcH5wA=
 SHA256 (go_modules/github.com/stretchr/testify/@v/v1.6.1.mod) = //gWjZjmoHFWxFShtuklUJ8xd+lsFVUW1/lrQHnMo78=
 SHA256 (go_modules/github.com/stretchr/testify/@v/v1.6.1.zip) = 48dzJBlWWOrQKJxQeWb+xVxpp7G446rBPFh9xQky+8M=
-SHA256 (go_modules/github.com/svanharmelen/jsonapi/@v/v0.0.0-20180618144545-0c0828c3f16d.mod) = st++k14O8hJ7HZAnSMTm9CA1ueBDVWOQXPu09lTpCv0=
-SHA256 (go_modules/github.com/svanharmelen/jsonapi/@v/v0.0.0-20180618144545-0c0828c3f16d.zip) = SCsT9CahXzy2SuXLGl/S8nyhQkZaF04kosw1aBKj7Sg=
 SHA256 (go_modules/github.com/tencentcloud/tencentcloud-sdk-go/@v/v3.0.82+incompatible.mod) = S0HjtXIOwa0HT/jxG2MDcN09rarWDSb5L1fSNbJ9YbM=
 SHA256 (go_modules/github.com/tencentcloud/tencentcloud-sdk-go/@v/v3.0.82+incompatible.zip) = 3R0MNTavcwtNIrLeNyrQ67s/OEPRCmqeTCdUlgKO7lE=
 SHA256 (go_modules/github.com/tencentyun/cos-go-sdk-v5/@v/v0.0.0-20190808065407-f07404cefc8c.mod) = cK6ZZxJ56DNWLm7GORmeYbVM6ouf8MIzWkFYWF1/x7U=
@@ -654,8 +654,8 @@ SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.0.0.mod) = GX5I510+0r6IJ+SFbE
 SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.1.0.mod) = GX5I510+0r6IJ+SFbEHFp8BV+hJT0AkHYL3O8ktNE5M=
 SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.2.0.mod) = N3olwwoP5QJJQSY8gOCHFMHuyHp60aiU3mIdVZUaSls=
 SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.8.0.mod) = 7L1mA5NbOFHNk2KhPVkN81FOheXSdN/QNj4JSh4pz+Y=
-SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.8.2.mod) = 7L1mA5NbOFHNk2KhPVkN81FOheXSdN/QNj4JSh4pz+Y=
-SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.8.2.zip) = zcalHvBPUFlPEexWqWRzx/M1Ow3Ds0sLd0zxR8fi/MA=
+SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.8.3.mod) = 7L1mA5NbOFHNk2KhPVkN81FOheXSdN/QNj4JSh4pz+Y=
+SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.8.3.zip) = htLS3TYjUfuJSFkkpxA+Iwq/0x0wt1nHi9KUYYRrDoI=
 SHA256 (go_modules/go.opencensus.io/@v/v0.21.0.mod) = ieCSXaA6WvmIebPPtdlps3ZFVLKe3LQ4ROy/EtYVxUI=
 SHA256 (go_modules/go.opencensus.io/@v/v0.22.0.mod) = k4BXagrLOyivqJbSzETL289WZ/m9zY1Z7fy7ZRpxPg8=
 SHA256 (go_modules/go.opencensus.io/@v/v0.22.2.mod) = 4EL962hfCby193jU9jlT86anD0wQBPvRqSyZzbgfw5w=
@@ -1046,7 +1046,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/@v/v0.0.0-20190525122527-15
 SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/@v/v0.0.0-20190525122527-15d366b2352e.zip) = bfT2TH3pDi8StbfvnZU5cHD3v4bJq3P6LY/0yuc3v1k=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRelO2IPjOKMKW5R06o=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.zip) = oNOSUuhmWkKKjLnU38nL6ge3rpCuYufPNlG+cZrfUVo=
-SHA256 (terraform-v0.15.1.zip) = xqBCQZtNJ3DlsiHUy2/7nwwy3FycfWdFFlRaT5fWhHs=
+SHA256 (terraform-v0.15.3.zip) = IAuCOvfaEqSKTNk+KpWZdTZOhz+E4UcI85Iu+utjIH4=
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.34.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.38.0.mod) = 1006
@@ -1428,8 +1428,8 @@ SIZE (go_modules/github.com/hashicorp/go-slug/@v/v0.4.1.mod) = 45
 SIZE (go_modules/github.com/hashicorp/go-slug/@v/v0.4.1.zip) = 19131
 SIZE (go_modules/github.com/hashicorp/go-sockaddr/@v/v0.0.0-20180320115054-6d291a969b86.mod) = 40
 SIZE (go_modules/github.com/hashicorp/go-sockaddr/@v/v0.0.0-20180320115054-6d291a969b86.zip) = 136787
-SIZE (go_modules/github.com/hashicorp/go-tfe/@v/v0.8.1.mod) = 465
-SIZE (go_modules/github.com/hashicorp/go-tfe/@v/v0.8.1.zip) = 114881
+SIZE (go_modules/github.com/hashicorp/go-tfe/@v/v0.14.0.mod) = 462
+SIZE (go_modules/github.com/hashicorp/go-tfe/@v/v0.14.0.zip) = 175922
 SIZE (go_modules/github.com/hashicorp/go-uuid/@v/v1.0.0.mod) = 36
 SIZE (go_modules/github.com/hashicorp/go-uuid/@v/v1.0.1.mod) = 36
 SIZE (go_modules/github.com/hashicorp/go-uuid/@v/v1.0.1.zip) = 7804
@@ -1444,8 +1444,10 @@ SIZE (go_modules/github.com/hashicorp/golang-lru/@v/v0.5.1.zip) = 19548
 SIZE (go_modules/github.com/hashicorp/hcl/@v/v0.0.0-20170504190234-a4b07c25de5f.mod) = 32
 SIZE (go_modules/github.com/hashicorp/hcl/@v/v0.0.0-20170504190234-a4b07c25de5f.zip) = 131062
 SIZE (go_modules/github.com/hashicorp/hcl/v2/@v/v2.0.0.mod) = 819
-SIZE (go_modules/github.com/hashicorp/hcl/v2/@v/v2.9.1.mod) = 863
-SIZE (go_modules/github.com/hashicorp/hcl/v2/@v/v2.9.1.zip) = 529975
+SIZE (go_modules/github.com/hashicorp/hcl/v2/@v/v2.10.0.mod) = 863
+SIZE (go_modules/github.com/hashicorp/hcl/v2/@v/v2.10.0.zip) = 531430
+SIZE (go_modules/github.com/hashicorp/jsonapi/@v/v0.0.0-20210420151930-edf82c9774bf.mod) = 36
+SIZE (go_modules/github.com/hashicorp/jsonapi/@v/v0.0.0-20210420151930-edf82c9774bf.zip) = 40342
 SIZE (go_modules/github.com/hashicorp/memberlist/@v/v0.1.0.mod) = 39
 SIZE (go_modules/github.com/hashicorp/memberlist/@v/v0.1.0.zip) = 90161
 SIZE (go_modules/github.com/hashicorp/serf/@v/v0.0.0-20160124182025-e4ec8cc423bb.mod) = 33
@@ -1664,8 +1666,6 @@ SIZE (go_modules/github.com/stretchr/testify/@v/v1.4.0.mod) = 179
 SIZE (go_modules/github.com/stretchr/testify/@v/v1.5.1.mod) = 188
 SIZE (go_modules/github.com/stretchr/testify/@v/v1.6.1.mod) = 216
 SIZE (go_modules/github.com/stretchr/testify/@v/v1.6.1.zip) = 98541
-SIZE (go_modules/github.com/svanharmelen/jsonapi/@v/v0.0.0-20180618144545-0c0828c3f16d.mod) = 39
-SIZE (go_modules/github.com/svanharmelen/jsonapi/@v/v0.0.0-20180618144545-0c0828c3f16d.zip) = 38488
 SIZE (go_modules/github.com/tencentcloud/tencentcloud-sdk-go/@v/v3.0.82+incompatible.mod) = 51
 SIZE (go_modules/github.com/tencentcloud/tencentcloud-sdk-go/@v/v3.0.82+incompatible.zip) = 1055465
 SIZE (go_modules/github.com/tencentyun/cos-go-sdk-v5/@v/v0.0.0-20190808065407-f07404cefc8c.mod) = 261
@@ -1703,8 +1703,8 @@ SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.0.0.mod) = 568
 SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.1.0.mod) = 568
 SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.2.0.mod) = 601
 SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.8.0.mod) = 207
-SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.8.2.mod) = 207
-SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.8.2.zip) = 268836
+SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.8.3.mod) = 207
+SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.8.3.zip) = 269513
 SIZE (go_modules/go.opencensus.io/@v/v0.21.0.mod) = 305
 SIZE (go_modules/go.opencensus.io/@v/v0.22.0.mod) = 408
 SIZE (go_modules/go.opencensus.io/@v/v0.22.2.mod) = 478
@@ -2095,4 +2095,4 @@ SIZE (go_modules/sigs.k8s.io/structured-merge-diff/@v/v0.0.0-20190525122527-15d3
 SIZE (go_modules/sigs.k8s.io/structured-merge-diff/@v/v0.0.0-20190525122527-15d366b2352e.zip) = 113591
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.zip) = 18120
-SIZE (terraform-v0.15.1.zip) = 4053964
+SIZE (terraform-v0.15.3.zip) = 4107954
