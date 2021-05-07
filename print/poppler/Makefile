@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.165 2021/03/09 20:33:48 kili Exp $
+# $OpenBSD: Makefile,v 1.166 2021/05/07 07:25:15 rsadowski Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt5=	Qt5 interface to PDF rendering library
+COMMENT-qt6=	Qt6 interface to PDF rendering library
 COMMENT-utils=	PDF conversion tools and utilities
 
 V=		21.03.0
@@ -10,12 +11,17 @@ CATEGORIES=	print
 PKGNAME-main=	poppler-$V
 PKGNAME-utils=	poppler-utils-$V
 PKGNAME-qt5=	poppler-qt5-$V
+PKGNAME-qt6=	poppler-qt6-$V
+REVISION-main=	0
+REVISION-qt5=	0
+REVISION-utils=	0
 
 EXTRACT_SUFX=	.tar.xz
 
 SHARED_LIBS +=	poppler              69.0     # 108.0
 SHARED_LIBS +=	poppler-glib         19.8     # 8.19
 SHARED_LIBS +=	poppler-qt5          8.7      # 1.27
+SHARED_LIBS +=	poppler-qt6          0.0      # 1.1
 SHARED_LIBS +=	poppler-cpp          16.2     # 0.9
 
 HOMEPAGE=	https://poppler.freedesktop.org/
@@ -31,19 +37,23 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 NOT_FOR_ARCHS-qt5 = arm
 
-MULTI_PACKAGES=-main -qt5 -utils
+MULTI_PACKAGES=-main -qt5 -qt6 -utils
 
 .include <bsd.port.arch.mk>
 
-# c++-14
+# c++-17
 COMPILER=	base-clang ports-gcc
-
-cWANTLIB=	expat freetype fontconfig jpeg m pthread tiff z
 
 MODULES=	devel/cmake
 
 .if ${BUILD_PACKAGES:M-qt5}
 MODULES+=	x11/qt5
+MODQT5_DEPS=	No
+.endif
+
+.if ${BUILD_PACKAGES:M-qt6}
+MODULES+=	x11/qt6
+MODQT6_DEPS=	No
 .endif
 
 # devel/boost only as build+run dependency, poppler uses
@@ -71,24 +81,24 @@ LIB_DEPENDS-qt5=${MODQT5_LIB_DEPENDS} \
 		${MODGCC4_CPPLIBDEP} \
 		print/poppler
 
+LIB_DEPENDS-qt6=${MODQT6_LIB_DEPENDS} \
+		${MODGCC4_CPPLIBDEP} \
+		print/poppler
+
 LIB_DEPENDS-utils=${MODGCC4_CPPLIBDEP} \
 		print/poppler
 
-WANTLIB-main=	${cWANTLIB} Xext ffi gio-2.0 glib-2.0 gmodule-2.0 \
-		gobject-2.0 pixman-1 openjp2 X11 Xrender cairo pcre \
-		png xcb xcb-render lcms2 xcb-shm \
-		iconv intl ${COMPILER_LIBCXX}
+WANTLIB-main=	${COMPILER_LIBCXX} \
+		cairo fontconfig freetype gio-2.0 glib-2.0 gobject-2.0 \
+		iconv intl jpeg lcms2 m openjp2 png tiff z
 
-WANTLIB-qt5=	${cWANTLIB} $(COMPILER_LIBCXX) \
-		GL Qt5Core Qt5Gui Qt5Widgets Qt5Xml X11 X11-xcb \
-		Xdamage Xext Xfixes Xxf86vm drm execinfo glapi \
-		glib-2.0 graphite2 gthread-2.0 harfbuzz \
-		iconv icudata icui18n icuuc intl lcms2 openjp2 pcre \
-		pcre2-16 png poppler xcb xcb-dri2 xcb-glx
+WANTLIB-qt5=	$(COMPILER_LIBCXX) Qt5Core Qt5Gui Qt5Xml freetype lcms2 \
+		m poppler
 
-WANTLIB-utils=	X11 Xext Xrender c cairo fontconfig lcms2 m pixman-1 \
-		png ${COMPILER_LIBCXX} xcb xcb-render xcb-shm openjp2 \
-		poppler z ${cWANTLIB}
+WANTLIB-qt6=	$(COMPILER_LIBCXX) GL Qt6Core Qt6Gui freetype lcms2 \
+		m poppler
+
+WANTLIB-utils=	${COMPILER_LIBCXX} c cairo freetype lcms2 m poppler
 
 CONFIGURE_ARGS+=-DENABLE_UNSTABLE_API_ABI_HEADERS=True \
 		-DBUILD_GTK_TESTS=False \
