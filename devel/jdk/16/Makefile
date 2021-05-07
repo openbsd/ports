@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/05/05 12:30:42 kurt Exp $
+# $OpenBSD: Makefile,v 1.3 2021/05/07 13:34:30 kurt Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 aarch64
 USE_WXNEEDED=	Yes
@@ -90,9 +90,8 @@ GMAKE=		${LOCALBASE}/bin/gmake
 PARALLEL_MAKE_FLAGS=
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV+= AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		ac_cv_path_NAWK=awk
-CONFIGURE_ARGS=	MAKE=${GMAKE} \
+CONFIGURE_ENV+= AUTOCONF_VERSION=${AUTOCONF_VERSION}
+CONFIGURE_ARGS=	MAKE=${GMAKE} MKDIR=mkdir AWK=awk \
 		--with-boot-jdk=${BOOT_JDK} \
 		--with-jobs=${MAKE_JOBS} \
 		--with-debug-level=release \
