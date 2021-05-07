@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.58 2021/02/23 19:39:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2021/05/07 17:51:12 ajacoutot Exp $
 
 COMMENT=		dbus debugger
 
-GNOME_VERSION=		0.3.15
+GNOME_VERSION=		0.3.16
 GNOME_PROJECT=		d-feet
 MODPY_EGG_VERSION=	${GNOME_VERSION}
-REVISION=		2
 
 CATEGORIES=		sysutils
 
