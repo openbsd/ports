@@ -1,4 +1,4 @@
-# $OpenBSD: qt6.port.mk,v 1.2 2021/05/06 16:07:28 rsadowski Exp $
+# $OpenBSD: qt6.port.mk,v 1.3 2021/05/07 07:15:15 rsadowski Exp $
 
 # This fragment defines MODQT_* variables to make it easier to substitute
 # qt3/qt4/qt6 in a port.
@@ -77,10 +77,10 @@ _MODQT6_CMAKE_PKGS = \
 _MODQT6_SETUP +=	${_p}_DIR=${MODQT6_LIBDIR}/cmake
 .endfor
 
-MODQT6_LIB_DEPENDS = 	x11/qt6/qtbase,-main
+MODQT6_LIB_DEPENDS = 	x11/qt6/qtbase
 MODQT_LIB_DEPENDS ?= 	${MODQT6_LIB_DEPENDS}
 
-MODQT6_BUILD_DEPENDS = 	x11/qt6/qttools,-main
+MODQT6_BUILD_DEPENDS = 	x11/qt6/qttools
 MODQT_BUILD_DEPENDS ?= 	${MODQT6_BUILD_DEPENDS}
 
 MODQT_DEPS ?=		Yes
