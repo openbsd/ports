@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/02/01 00:08:18 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/05/08 11:01:16 ajacoutot Exp $
 bin/spd-conf
 @bin bin/spd-say
 @bin bin/spdsend
@@ -44,15 +44,11 @@ lib/python${MODPY_VERSION}/site-packages/speechd_config/config.py
 lib/python${MODPY_VERSION}/site-packages/speechd_config/paths.py
 lib/speech-dispatcher/
 lib/speech-dispatcher-modules/
-@bin lib/speech-dispatcher-modules/sd_baratinoo
 @bin lib/speech-dispatcher-modules/sd_cicero
 @bin lib/speech-dispatcher-modules/sd_dummy
 @bin lib/speech-dispatcher-modules/sd_espeak
 @bin lib/speech-dispatcher-modules/sd_festival
 @bin lib/speech-dispatcher-modules/sd_generic
-@bin lib/speech-dispatcher-modules/sd_ibmtts
-@bin lib/speech-dispatcher-modules/sd_kali
-@bin lib/speech-dispatcher-modules/sd_voxin
 @so lib/speech-dispatcher/spd_libao.so
 share/examples/speech-dispatcher/
 share/examples/speech-dispatcher/speech-dispatcher/
@@ -63,7 +59,6 @@ share/examples/speech-dispatcher/speech-dispatcher/clients/emacs.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/clients/emacs.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/
-share/examples/speech-dispatcher/speech-dispatcher/modules/baratinoo.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/cicero.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/cicero.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/dtk-generic.conf
@@ -73,24 +68,23 @@ share/examples/speech-dispatcher/speech-dispatcher/modules/epos-generic.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/espeak-mbrola-generic.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/espeak-mbrola-generic.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/espeak-ng-mbrola-generic.conf
+@sample ${SYSCONFDIR}/speech-dispatcher/modules/espeak-ng-mbrola-generic.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/espeak-ng.conf
+@sample ${SYSCONFDIR}/speech-dispatcher/modules/espeak-ng.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/espeak.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/espeak.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/festival.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/festival.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/flite.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/flite.conf
-share/examples/speech-dispatcher/speech-dispatcher/modules/ibmtts.conf
-@sample ${SYSCONFDIR}/speech-dispatcher/modules/ibmtts.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/ivona.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/ivona.conf
-share/examples/speech-dispatcher/speech-dispatcher/modules/kali.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/llia_phon-generic.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/llia_phon-generic.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/mary-generic-disabled.conf
+@sample ${SYSCONFDIR}/speech-dispatcher/modules/mary-generic-disabled.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/swift-generic.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/swift-generic.conf
-share/examples/speech-dispatcher/speech-dispatcher/modules/voxin.conf
 share/examples/speech-dispatcher/speech-dispatcher/speechd.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/speechd.conf
 share/locale/cs/LC_MESSAGES/speech-dispatcher.mo
@@ -114,14 +108,10 @@ share/speech-dispatcher/conf/clients/emacs.conf
 share/speech-dispatcher/conf/desktop/
 share/speech-dispatcher/conf/desktop/speechd.desktop
 share/speech-dispatcher/conf/modules/
-share/speech-dispatcher/conf/modules/baratinoo.conf
 share/speech-dispatcher/conf/modules/cicero.conf
 share/speech-dispatcher/conf/modules/espeak-ng.conf
 share/speech-dispatcher/conf/modules/espeak.conf
 share/speech-dispatcher/conf/modules/festival.conf
-share/speech-dispatcher/conf/modules/ibmtts.conf
-share/speech-dispatcher/conf/modules/kali.conf
-share/speech-dispatcher/conf/modules/voxin.conf
 share/speech-dispatcher/conf/speechd.conf
 share/speech-dispatcher/locale/
 share/speech-dispatcher/locale/af/
