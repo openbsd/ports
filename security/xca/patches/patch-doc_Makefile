@@ -1,14 +1,14 @@
-$OpenBSD: patch-doc_Makefile,v 1.7 2020/06/06 20:40:49 sthen Exp $
+$OpenBSD: patch-doc_Makefile,v 1.8 2021/05/08 09:40:37 sthen Exp $
 
 Index: doc/Makefile
 --- doc/Makefile.orig
 +++ doc/Makefile
-@@ -23,7 +23,7 @@ install: $(doc)
+@@ -43,7 +43,7 @@ install: $(doc)
  	$(ENABLE_DOC)install -m 755 -d $(DESTDIR)$(htmldir)
- 	$(ENABLE_DOC)install -m 644 xca*.html $(DESTDIR)$(htmldir)
+ 	$(ENABLE_DOC)install -m 644 $(qthelpfiles) $(DESTDIR)$(htmldir)
  	install -m 755 -d $(DESTDIR)$(mandir)/man1
 -	install -m 644 *.1.gz $(DESTDIR)/$(mandir)/man1
 +	install -m 644 *.1 $(DESTDIR)/$(mandir)/man1
  
- app: xca.html
+ app: $(doc)
  	mkdir -p $(APPDIR)/Resources

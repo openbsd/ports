@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2020/07/11 22:54:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2021/05/08 09:40:36 sthen Exp $
 
 COMMENT=	create and manage certificates, CSRs, keys, etc
 
-V=		2.3.0
+V=		2.4.0
 DISTNAME=	xca-$V
 PORTROACH=	skipv:RELEASE.$V
 CATEGORIES=	security x11
-REVISION=	0
 
 HOMEPAGE=	https://hohnstaedt.de/xca/
 
@@ -15,7 +14,7 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Sql Qt5Widgets
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Help Qt5Sql Qt5Widgets
 WANTLIB += c crypto ltdl m
 
 MASTER_SITES=	https://github.com/chris2511/xca/releases/download/RELEASE.$V/
@@ -24,15 +23,16 @@ MODULES=	x11/qt5
 
 USE_GMAKE=	Yes
 
+CFLAGS+=	-I${LOCALBASE}/include
+CXXFLAGS+=	-I${LOCALBASE}/include -std=c++11
+
 CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		CXXFLAGS="${CXXFLAGS} -std=c++11" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
-MAKE_FLAGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
+MAKE_FLAGS=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
 MAKE_ENV=	destdir=${WRKINST}
 
-LIB_DEPENDS=	devel/libtool,-ltdl
+LIB_DEPENDS=	devel/libtool,-ltdl \
+		x11/qt5/qttools,-main
 RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info
 

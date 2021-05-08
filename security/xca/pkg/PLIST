@@ -1,31 +1,46 @@
-@comment $OpenBSD: PLIST,v 1.11 2020/06/06 20:40:49 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.12 2021/05/08 09:40:37 sthen Exp $
 @ask-update xca-<2 .xdb format changes in XCA 2.x. Upgrade is automatic, but backup your old files.
 @bin bin/xca
 @man man/man1/xca.1
 share/applications/xca.desktop
+share/bash-completion/completions/xca
 share/doc/xca/
-share/doc/xca/xca-1.html
-share/doc/xca/xca-10.html
-share/doc/xca/xca-11.html
-share/doc/xca/xca-12.html
-share/doc/xca/xca-13.html
-share/doc/xca/xca-14.html
-share/doc/xca/xca-15.html
-share/doc/xca/xca-2.html
-share/doc/xca/xca-3.html
-share/doc/xca/xca-4.html
-share/doc/xca/xca-5.html
-share/doc/xca/xca-6.html
-share/doc/xca/xca-7.html
-share/doc/xca/xca-8.html
-share/doc/xca/xca-9.html
-share/doc/xca/xca.html
+share/doc/xca/arguments.html
+share/doc/xca/certificate-input.html
+share/doc/xca/certificates.html
+share/doc/xca/changelog.html
+share/doc/xca/commandline.html
+share/doc/xca/common-actions.html
+share/doc/xca/database.html
+share/doc/xca/genindex.html
+share/doc/xca/index.html
+share/doc/xca/introduction.html
+share/doc/xca/miscellaneous.html
+share/doc/xca/object-ids.html
+share/doc/xca/options.html
+share/doc/xca/privatekey.html
+share/doc/xca/requests.html
+share/doc/xca/revocationlist.html
+share/doc/xca/smartcard.html
+share/doc/xca/step-by-step.html
+share/doc/xca/template.html
+share/doc/xca/xca.qch
+share/doc/xca/xca.qhc
 share/icons/hicolor/16x16/apps/xca.png
+share/icons/hicolor/16x16/mimetypes/x-xca-database.png
+share/icons/hicolor/16x16/mimetypes/x-xca-template.png
 share/icons/hicolor/32x32/apps/xca.png
+share/icons/hicolor/32x32/mimetypes/x-xca-database.png
+share/icons/hicolor/32x32/mimetypes/x-xca-template.png
+share/icons/hicolor/48x48/apps/xca.png
+share/icons/hicolor/48x48/mimetypes/x-xca-database.png
+share/icons/hicolor/48x48/mimetypes/x-xca-template.png
 share/icons/hicolor/64x64/apps/xca.png
+share/icons/hicolor/64x64/mimetypes/x-xca-database.png
+share/icons/hicolor/64x64/mimetypes/x-xca-template.png
 share/mime/packages/xca.xml
 share/pixmaps/
-share/pixmaps/xca.xpm
+share/pixmaps/xca-32x32.xpm
 share/xca/
 share/xca/CA.xca
 share/xca/TLS_client.xca
