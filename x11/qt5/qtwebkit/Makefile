@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2021/02/23 19:39:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2021/05/08 12:43:06 sthen Exp $
 
 COMMENT =		QtWebKit with a more modern WebKit code base
 
 USE_WXNEEDED =		Yes
+FIX_EXTRACT_PERMISSIONS = Yes
 
 CATEGORIES =		www
 
