@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/05/08 13:00:22 rsadowski Exp $
 
 SHARED_LIBS += 		gemrb_core 0.0
 
@@ -37,7 +37,7 @@ CONFIGURE_ARGS +=	-DSYSCONF_DIR=${SYSCONFDIR}/gemrb \
 			-DEXAMPLE_CONF_DIR=${PREFIX}/share/examples/gemrb/ \
 			-DMAN_DIR=${PREFIX}/man/man6 \
 			-DCMAKE_MODULE_LINKER_FLAGS=-lc \
-			-DCMAKE_CXX_FLAGS=${CXXFLAGS} \
+			-DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
 			-DDISABLE_WERROR=1
 
 NO_TEST =		Yes
