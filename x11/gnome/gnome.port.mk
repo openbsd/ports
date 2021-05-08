@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.117 2020/06/10 07:19:20 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.118 2021/05/08 10:10:30 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -10,7 +10,12 @@ EXTRACT_SUFX ?=		.tar.xz
 DISTNAME=		${GNOME_PROJECT}-${GNOME_VERSION}
 VERSION=		${GNOME_VERSION}
 HOMEPAGE ?=		https://wiki.gnome.org/
+# XXX make it more generic
+.if ${GNOME_VERSION:R:R:R} == "40"
+MASTER_SITES ?=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:R:R:R}/}
+.else
 MASTER_SITES ?=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/}
+.endif
 CATEGORIES +=		x11/gnome
 .  elif (defined(MATE_PROJECT) && defined(MATE_VERSION))
 DISTNAME=		${MATE_PROJECT}-${MATE_VERSION}
