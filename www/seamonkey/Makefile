@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.252 2021/04/24 07:54:49 landry Exp $
+# $OpenBSD: Makefile,v 1.253 2021/05/08 07:19:14 semarie Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -58,6 +58,8 @@ WANTLIB += X11-xcb intl pixman-1 xcb xcb-shm
 WANTLIB += Xcursor Xi harfbuzz
 
 WANTLIB-lightning=
+
+MAKE_ENV +=	RUSTC_BOOTSTRAP="packed_simd,encoding_rs"
 
 # build lightning xpi
 CONFIGURE_ARGS +=	--enable-calendar
