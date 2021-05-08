@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2021/02/26 03:03:53 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.22 2021/05/08 20:25:50 daniel Exp $
 @bin bin/gxemul
 @man man/man1/gxemul.1
 share/doc/gxemul/
@@ -119,18 +119,10 @@ share/doc/gxemul/20210222-openbsd-luna88k-mp-1-small.png
 share/doc/gxemul/20210222-openbsd-luna88k-mp-1.png
 share/doc/gxemul/20210222-openbsd-luna88k-mp-2-small.png
 share/doc/gxemul/20210222-openbsd-luna88k-mp-2.png
-share/doc/gxemul/Doxyfile
+share/doc/gxemul/20210328-openbsd-luna88k-inside-openbsd-luna88k-small.png
+share/doc/gxemul/20210328-openbsd-luna88k-inside-openbsd-luna88k.png
 share/doc/gxemul/RELEASE.html
 share/doc/gxemul/TODO.html
-share/doc/gxemul/components/
-share/doc/gxemul/components.html
-share/doc/gxemul/components/component_cache.html
-share/doc/gxemul/components/component_cpu.html
-share/doc/gxemul/components/component_dummy.html
-share/doc/gxemul/components/component_i960_cpu.html
-share/doc/gxemul/components/component_m88k_cpu.html
-share/doc/gxemul/components/component_mainbus.html
-share/doc/gxemul/components/component_ram.html
 share/doc/gxemul/configfiles.html
 share/doc/gxemul/debian-1-small.png
 share/doc/gxemul/debian-1.png
@@ -163,13 +155,8 @@ share/doc/gxemul/debian-8.png
 share/doc/gxemul/debian-9-small.png
 share/doc/gxemul/debian-9.png
 share/doc/gxemul/debugging.html
-share/doc/gxemul/doxygen.css
-share/doc/gxemul/doxygen_footerFile.html
-share/doc/gxemul/doxygen_headerFile.html
 share/doc/gxemul/experiments.html
-share/doc/gxemul/framework.html
 share/doc/gxemul/generate_machine_doc.sh
-share/doc/gxemul/head.html
 share/doc/gxemul/index.html
 share/doc/gxemul/intro.html
 share/doc/gxemul/machine_algor.html
@@ -193,21 +180,7 @@ share/doc/gxemul/machine_rpi.html
 share/doc/gxemul/machine_sgi_o2.html
 share/doc/gxemul/machine_template.html
 share/doc/gxemul/machine_vocore.html
-share/doc/gxemul/machines/
-share/doc/gxemul/machines.html
-share/doc/gxemul/machines/machine_cyclonevh.html
-share/doc/gxemul/machines/machine_cyclonevh.html.SKEL
-share/doc/gxemul/machines/machine_hp700rx.html
-share/doc/gxemul/machines/machine_hp700rx.html.SKEL
-share/doc/gxemul/machines/machine_mvme187.html
-share/doc/gxemul/machines/machine_mvme187.html.SKEL
-share/doc/gxemul/machines/machine_testm88k-thumb.png
-share/doc/gxemul/machines/machine_testm88k.html
-share/doc/gxemul/machines/machine_testm88k.html.SKEL
-share/doc/gxemul/machines/machine_testm88k.png
-share/doc/gxemul/machines/machine_testmips-thumb.png
 share/doc/gxemul/misc.html
-share/doc/gxemul/model.png
 share/doc/gxemul/networking.html
 share/doc/gxemul/openbsd-luna88k-20210130-small.png
 share/doc/gxemul/openbsd-luna88k-20210130.png
@@ -224,7 +197,6 @@ share/doc/gxemul/sgi-o2-real_small.jpg
 share/doc/gxemul/simplified_dyntrans.png
 share/doc/gxemul/sprite-20040711.png
 share/doc/gxemul/sprite-20040711_small.png
-share/doc/gxemul/tail.html
 share/doc/gxemul/technical.html
 share/doc/gxemul/translation.html
 share/doc/gxemul/ultrix4.5-20040706.png

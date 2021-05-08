@@ -1,89 +1,33 @@
-$OpenBSD: patch-configure,v 1.8 2021/02/26 03:03:53 daniel Exp $
+$OpenBSD: patch-configure,v 1.9 2021/05/08 20:25:50 daniel Exp $
 
-- allow doxygen to be disabled
-- remove hardcoded -O3
+remove hardcoded O3
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -110,6 +110,8 @@ if [ z"$*" != z ]; then
- 			NOX11=YES
- 		else if [ z$a = z--without-unittests ]; then
- 			UNITTESTS=NO
-+		else if [ z$a = z--disable-doxygen ]; then
-+			DISABLEDOXYGEN=YES
- 		else if [ z$a = z--disable-valgrind ]; then
- 			DISABLEVALGRIND=YES
- 		else if [ z$a = z--debug ]; then
-@@ -118,6 +120,8 @@ if [ z"$*" != z ]; then
- 			printf "usage: $0 [options]\n\n"
- 			echo "  --disable-x           don't include X11 support,"\
- 			    "even if the host supports it"
-+			echo "  --disable-doxygen     don't use doxygen, even"\
-+			    "if it is installed"
- 			echo "  --disable-valgrind    don't use valgrind, even"\
- 			    "if it is installed"
- 			echo "  --without-unittests   don't include unit tests"
-@@ -134,7 +138,7 @@ if [ z"$*" != z ]; then
- 			echo "Run  $0 --help  to get a list of" \
- 			    "available options."
- 			exit
--		fi; fi; fi; fi; fi
-+		fi; fi; fi; fi; fi; fi
- 	done
- fi
- 
-@@ -594,22 +598,6 @@ fi
+@@ -541,25 +541,6 @@ fi
  rm -f _testprog _testprog.error _testprog.stdout
  
  
 -#  -O optimization for non-debug builds. Try -O and -O3.
 -if [ ! z"$DEBUG" = zYES ]; then
--	$CXX $CXXFLAGS -O _testprog.cc -o _testprog 2> /dev/null
+-	printf "checking whether -O3 or -O can be used (non-DEBUG build)... "
+-	$CC $CFLAGS -O _testprog.c -o _testprog 2> /dev/null
 -	if [ -x _testprog ]; then
 -		rm -f _testprog
--		$CXX $CXXFLAGS -O3 _testprog.cc -o _testprog 2> /dev/null
+-		$CC $CFLAGS -O3 _testprog.c -o _testprog 2> /dev/null
 -		if [ -x _testprog ]; then
--			CXXFLAGS="-O3 $CXXFLAGS"
+-			CFLAGS="-O3 $CFLAGS"
+-			printf "yes, -O3\n"
 -		else
--			CXXFLAGS="-O $CXXFLAGS"
+-			CFLAGS="-O $CFLAGS"
+-			printf "yes, -O\n"
 -		fi
+-	else
+-		printf "no\n"
 -	fi
 -fi
 -rm -f _testprog
--
--
+ 
+ 
  #  -fpeephole
- if [ ! z"$DEBUG" = zYES ]; then
- 	printf "checking whether -fpeephole can be used... "
-@@ -1106,12 +1094,17 @@ rm -f _test_end*
- 
- printf "checking for Doxygen... "
- 
--if (doxygen --version); then
--	# Version is printed, if found.
--	DOXYGEN=doxygen
--else
--	# Not found is already printed, if doxygen is not found.
-+if [ z$DISABLEDOXYGEN = zYES ]; then
-+	echo skipped
- 	DOXYGEN="\#"
-+else
-+	if (doxygen --version); then
-+		# Version is printed, if found.
-+		DOXYGEN=doxygen
-+	else
-+		# Not found is already printed, if doxygen is not found.
-+		DOXYGEN="\#"
-+	fi
- fi
- 
- 
-@@ -1121,6 +1114,7 @@ printf "checking for valgrind... "
- 
- if [ z$DISABLEVALGRIND = zYES ]; then
- 	echo skipped
-+	VALGRIND=""
- else
- 	if (valgrind --version); then
- 		# Version is printed, if found.

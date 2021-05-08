@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.50 2021/02/26 03:03:53 daniel Exp $
+# $OpenBSD: Makefile,v 1.51 2021/05/08 20:25:50 daniel Exp $
 
 COMMENT=		ARM/M88k/MIPS/PowerPC/SuperH machines emulator
 
-DISTNAME =		gxemul-0.6.3.1
+DISTNAME =		gxemul-0.7.0
 
 CATEGORIES=		emulators
 
@@ -17,8 +17,6 @@ WANTLIB =		c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-CONFIGURE_ARGS +=	--disable-valgrind \
-			--disable-doxygen
 CONFIGURE_STYLE=	simple
 
 FLAVORS=		no_x11
