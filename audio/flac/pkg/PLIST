@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2019/08/12 21:47:24 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.19 2021/05/08 15:19:22 naddy Exp $
 @bin bin/flac
 @bin bin/metaflac
 include/FLAC/
@@ -17,10 +17,10 @@ include/FLAC/metadata.h
 include/FLAC/ordinals.h
 include/FLAC/stream_decoder.h
 include/FLAC/stream_encoder.h
-lib/libFLAC++.a
+@static-lib lib/libFLAC++.a
 lib/libFLAC++.la
 @lib lib/libFLAC++.so.${LIBFLAC++_VERSION}
-lib/libFLAC.a
+@static-lib lib/libFLAC.a
 lib/libFLAC.la
 @lib lib/libFLAC.so.${LIBFLAC_VERSION}
 lib/pkgconfig/flac++.pc
