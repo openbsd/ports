@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2021/01/09 14:34:26 bluhm Exp $
+# $OpenBSD: Makefile,v 1.3 2021/05/08 07:15:02 benoit Exp $
 
 COMMENT =	introspect overloaded operators
 
-DISTNAME =	Devel-OverloadInfo-0.005
+DISTNAME =	Devel-OverloadInfo-0.007
 
 CATEGORIES =	devel
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		cpan
 
 RUN_DEPENDS =		devel/p5-MRO-Compat \
-			devel/p5-Package-Stash>=0.14 \
-			devel/p5-Sub-Identify
+			devel/p5-Package-Stash>=0.14
 TEST_DEPENDS =		devel/p5-Test-Fatal \
 			devel/p5-Test-Spelling
 
