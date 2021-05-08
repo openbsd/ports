@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/05/03 15:34:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2021/05/08 06:28:06 rsadowski Exp $
 
 COMMENT =	audio player with QML and KDE Plasma integration
 DISTNAME =	elisa-${VERSION}
 CATEGORIES =	audio
+REVISION =	0
 
 HOMEPAGE =	https://elisa.kde.org/
 
@@ -24,8 +25,11 @@ MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
 
-BUILD_DEPENDS =	devel/kf5/kinit
-RUN_DEPENDS =	devel/kf5/kinit
+BUILD_DEPENDS =	devel/kf5/kinit \
+		devel/kf5/kirigami2
+
+RUN_DEPENDS =	devel/kf5/kinit \
+		devel/kf5/kirigami2
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kbookmarks \
