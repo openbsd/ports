@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_common_mak,v 1.5 2020/09/14 12:51:40 sthen Exp $
+$OpenBSD: patch-src_common_mak,v 1.6 2021/05/08 14:45:02 sthen Exp $
 
 Index: src/common.mak
 --- src/common.mak.orig
 +++ src/common.mak
-@@ -214,11 +214,10 @@ else	
+@@ -217,11 +217,10 @@ else	
    CXXFLAGS	 += -g -O2
    DLL_LDFLAGS	 += -shared 
    PLUGIN_LDFLAGS += -shared

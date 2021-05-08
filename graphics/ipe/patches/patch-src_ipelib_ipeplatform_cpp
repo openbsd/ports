@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_ipelib_ipeplatform_cpp,v 1.5 2020/09/14 12:51:40 sthen Exp $
+$OpenBSD: patch-src_ipelib_ipeplatform_cpp,v 1.6 2021/05/08 14:45:02 sthen Exp $
 
 Index: src/ipelib/ipeplatform.cpp
 --- src/ipelib/ipeplatform.cpp.orig
@@ -13,7 +13,7 @@ Index: src/ipelib/ipeplatform.cpp
  
  #ifdef IPE_GSL
  #include <gsl/gsl_errno.h>
-@@ -667,6 +670,8 @@ static double ipestrtod(const char *s, char ** fin)
+@@ -671,6 +674,8 @@ static double ipestrtod(const char *s, char ** fin)
      return p_strtod_l(s, fin, ipeLocale);
    else
      return strtod(s, fin);

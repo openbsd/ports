@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/14 12:51:40 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/05/08 14:45:02 sthen Exp $
 @bin bin/ipe
 @bin bin/ipe6upgrade
 bin/ipecurl
 @bin bin/ipeextract
 @bin bin/ipepresenter
 @bin bin/iperender
+bin/iperender-par
 @bin bin/ipescript
 @bin bin/ipetoipe
 include/ipeattributes.h
@@ -25,7 +26,6 @@ include/ipelatex.h
 include/ipelet.h
 include/ipelib.h
 include/ipeobject.h
-include/ipeosx.h
 include/ipepage.h
 include/ipepainter.h
 include/ipepath.h
@@ -275,9 +275,11 @@ share/doc/ipe/cpp-ipelets.html
 share/doc/ipe/dir_7b54d492694b293bf8b54c70d2fe7f56.html
 share/doc/ipe/dir_91a90e6e897462a7bb8a7a0fc103953b.html
 share/doc/ipe/dir_d44c64559bbebec7f509842c48db8b23.html
+share/doc/ipe/dir_e27e8af4fb4f24f00c2e8a69665fe110.html
 share/doc/ipe/doc.png
 share/doc/ipe/doxygen.css
-share/doc/ipe/doxygen.png
+share/doc/ipe/doxygen.svg
+share/doc/ipe/dynsections.js
 share/doc/ipe/example1.svg
 share/doc/ipe/example2.svg
 share/doc/ipe/example3.svg
@@ -290,7 +292,6 @@ share/doc/ipe/folderopen.png
 share/doc/ipe/fontbbox.svg
 share/doc/ipe/fontbbox2.svg
 share/doc/ipe/functions.html
-share/doc/ipe/functions_0x7e.html
 share/doc/ipe/functions_b.html
 share/doc/ipe/functions_c.html
 share/doc/ipe/functions_d.html
@@ -299,7 +300,6 @@ share/doc/ipe/functions_enum.html
 share/doc/ipe/functions_eval.html
 share/doc/ipe/functions_f.html
 share/doc/ipe/functions_func.html
-share/doc/ipe/functions_func_0x7e.html
 share/doc/ipe/functions_func_b.html
 share/doc/ipe/functions_func_c.html
 share/doc/ipe/functions_func_d.html
@@ -323,6 +323,7 @@ share/doc/ipe/functions_func_v.html
 share/doc/ipe/functions_func_w.html
 share/doc/ipe/functions_func_x.html
 share/doc/ipe/functions_func_z.html
+share/doc/ipe/functions_func_~.html
 share/doc/ipe/functions_g.html
 share/doc/ipe/functions_h.html
 share/doc/ipe/functions_i.html
@@ -360,6 +361,7 @@ share/doc/ipe/functions_w.html
 share/doc/ipe/functions_x.html
 share/doc/ipe/functions_y.html
 share/doc/ipe/functions_z.html
+share/doc/ipe/functions_~.html
 share/doc/ipe/group__attr.html
 share/doc/ipe/group__base.html
 share/doc/ipe/group__cairo.html
@@ -419,20 +421,20 @@ share/doc/ipe/manual_40.html
 share/doc/ipe/manual_42.html
 share/doc/ipe/manual_43.html
 share/doc/ipe/manual_44.html
-share/doc/ipe/manual_46.html
+share/doc/ipe/manual_45.html
 share/doc/ipe/manual_47.html
 share/doc/ipe/manual_48.html
 share/doc/ipe/manual_49.html
 share/doc/ipe/manual_5.html
 share/doc/ipe/manual_50.html
-share/doc/ipe/manual_52.html
-share/doc/ipe/manual_54.html
+share/doc/ipe/manual_51.html
+share/doc/ipe/manual_53.html
 share/doc/ipe/manual_55.html
-share/doc/ipe/manual_57.html
+share/doc/ipe/manual_56.html
 share/doc/ipe/manual_58.html
 share/doc/ipe/manual_59.html
 share/doc/ipe/manual_6.html
-share/doc/ipe/manual_61.html
+share/doc/ipe/manual_60.html
 share/doc/ipe/manual_62.html
 share/doc/ipe/manual_63.html
 share/doc/ipe/manual_64.html
@@ -443,8 +445,9 @@ share/doc/ipe/manual_68.html
 share/doc/ipe/manual_69.html
 share/doc/ipe/manual_7.html
 share/doc/ipe/manual_70.html
-share/doc/ipe/manual_72.html
+share/doc/ipe/manual_71.html
 share/doc/ipe/manual_73.html
+share/doc/ipe/manual_74.html
 share/doc/ipe/manual_8.html
 share/doc/ipe/manual_9.html
 share/doc/ipe/manual_customize.html
