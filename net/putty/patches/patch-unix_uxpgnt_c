@@ -1,11 +1,11 @@
-$OpenBSD: patch-unix_uxpgnt_c,v 1.2 2019/07/20 11:55:25 sthen Exp $
+$OpenBSD: patch-unix_uxpgnt_c,v 1.3 2021/05/08 10:26:22 sthen Exp $
 
 https://svnweb.freebsd.org/ports/head/security/putty/files/patch-unix_uxpgnt.c?revision=496064&view=co
 
 Index: unix/uxpgnt.c
 --- unix/uxpgnt.c.orig
 +++ unix/uxpgnt.c
-@@ -240,7 +240,7 @@ void pageant_fork_and_print_env(bool retain_tty)
+@@ -364,7 +364,7 @@ void pageant_fork_and_print_env(bool retain_tty)
          /* Get out of our previous process group, to avoid being
           * blasted by passing signals. But keep our controlling tty,
           * so we can keep checking to see if we still have one. */

@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2019/05/17 15:39:59 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2021/05/08 10:26:22 sthen Exp $
 @bin bin/plink
 @bin bin/pscp
 @bin bin/psftp
+@bin bin/psusan
 @bin bin/puttygen
 @man man/man1/plink.1
 @man man/man1/pscp.1
 @man man/man1/psftp.1
+@man man/man1/psusan.1
 @man man/man1/puttygen.1
