@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.17 2021/05/04 17:52:18 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.18 2021/05/09 14:32:02 rsadowski Exp $
 
 COMMENT =	KDE hardware abstraction layer
 DISTNAME =	solid-${VERSION}
-REVISION =	0
 
 SHARED_LIBS =	KF5Solid		7.1
 

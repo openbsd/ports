@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/11/03 16:12:08 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/05/09 14:32:01 rsadowski Exp $
 include/KF5/
 include/KF5/KWindowSystem/
 include/KF5/KWindowSystem/KKeyServer
@@ -53,6 +53,7 @@ share/kf5/mkspecs/qt_KWindowSystem.pri
 share/locale/af/LC_MESSAGES/kwindowsystem5_qt.qm
 share/locale/ar/LC_MESSAGES/kwindowsystem5_qt.qm
 share/locale/as/LC_MESSAGES/kwindowsystem5_qt.qm
+share/locale/ast/LC_MESSAGES/kwindowsystem5_qt.qm
 share/locale/az/LC_MESSAGES/kwindowsystem5_qt.qm
 share/locale/be/LC_MESSAGES/kwindowsystem5_qt.qm
 share/locale/be@latin/LC_MESSAGES/kwindowsystem5_qt.qm

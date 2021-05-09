@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2021/04/24 05:03:20 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.22 2021/05/09 14:31:57 rsadowski Exp $
 share/icons/breeze/
 share/icons/breeze-dark/
 share/icons/breeze-dark/actions/
@@ -1286,6 +1286,8 @@ share/icons/breeze-dark/actions/16/show-path-outline.svg
 share/icons/breeze-dark/actions/16/show_table_column.svg
 share/icons/breeze-dark/actions/16/show_table_row.svg
 share/icons/breeze-dark/actions/16/shuffle.svg
+share/icons/breeze-dark/actions/16/sidebar-collapse.svg
+share/icons/breeze-dark/actions/16/sidebar-expand.svg
 share/icons/breeze-dark/actions/16/similarartists-amarok.svg
 share/icons/breeze-dark/actions/16/slanted.svg
 share/icons/breeze-dark/actions/16/smallclock.svg
@@ -3145,6 +3147,8 @@ share/icons/breeze-dark/actions/22/show-path-outline.svg
 share/icons/breeze-dark/actions/22/show_table_column.svg
 share/icons/breeze-dark/actions/22/show_table_row.svg
 share/icons/breeze-dark/actions/22/shuffle.svg
+share/icons/breeze-dark/actions/22/sidebar-collapse.svg
+share/icons/breeze-dark/actions/22/sidebar-expand.svg
 share/icons/breeze-dark/actions/22/similarartists-amarok.svg
 share/icons/breeze-dark/actions/22/skg-chart-bubble.svg
 share/icons/breeze-dark/actions/22/skrooge_credit_card.svg
@@ -3761,6 +3765,7 @@ share/icons/breeze-dark/actions/32/expand.svg
 share/icons/breeze-dark/actions/32/file-zoom-in.svg
 share/icons/breeze-dark/actions/32/file-zoom-out.svg
 share/icons/breeze-dark/actions/32/financial-account.svg
+share/icons/breeze-dark/actions/32/financial-budget.svg
 share/icons/breeze-dark/actions/32/financial-list.svg
 share/icons/breeze-dark/actions/32/financial-payees.svg
 share/icons/breeze-dark/actions/32/flash.svg
@@ -9463,6 +9468,8 @@ share/icons/breeze/actions/16/show-path-outline.svg
 share/icons/breeze/actions/16/show_table_column.svg
 share/icons/breeze/actions/16/show_table_row.svg
 share/icons/breeze/actions/16/shuffle.svg
+share/icons/breeze/actions/16/sidebar-collapse.svg
+share/icons/breeze/actions/16/sidebar-expand.svg
 share/icons/breeze/actions/16/similarartists-amarok.svg
 share/icons/breeze/actions/16/slanted.svg
 share/icons/breeze/actions/16/smallclock.svg
@@ -11315,6 +11322,8 @@ share/icons/breeze/actions/22/show-path-outline.svg
 share/icons/breeze/actions/22/show_table_column.svg
 share/icons/breeze/actions/22/show_table_row.svg
 share/icons/breeze/actions/22/shuffle.svg
+share/icons/breeze/actions/22/sidebar-collapse.svg
+share/icons/breeze/actions/22/sidebar-expand.svg
 share/icons/breeze/actions/22/similarartists-amarok.svg
 share/icons/breeze/actions/22/skg-chart-bubble.svg
 share/icons/breeze/actions/22/skrooge_credit_card.svg
@@ -11936,6 +11945,7 @@ share/icons/breeze/actions/32/expand.svg
 share/icons/breeze/actions/32/file-zoom-in.svg
 share/icons/breeze/actions/32/file-zoom-out.svg
 share/icons/breeze/actions/32/financial-account.svg
+share/icons/breeze/actions/32/financial-budget.svg
 share/icons/breeze/actions/32/financial-list.svg
 share/icons/breeze/actions/32/financial-payees.svg
 share/icons/breeze/actions/32/flash.svg
