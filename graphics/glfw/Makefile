@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2021/01/29 14:31:30 kmos Exp $
-
+# $OpenBSD: Makefile,v 1.6 2021/05/09 04:47:15 kmos Exp $
 COMMENT =	open source, multi-platform library for creating windows
-V =		3.3.2
+V =		3.3.4
 DISTNAME =	glfw-${V}
 CATEGORIES =	graphics x11
 
