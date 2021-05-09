@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/04/22 13:28:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/05/09 08:51:10 ajacoutot Exp $
 share/pkgconfig/yelp-xsl.pc
 share/yelp-xsl/
 share/yelp-xsl/js/
@@ -6,6 +6,13 @@ share/yelp-xsl/js/highlight.pack.js
 share/yelp-xsl/xslt/
 share/yelp-xsl/xslt/common/
 share/yelp-xsl/xslt/common/color.xsl
+share/yelp-xsl/xslt/common/css/
+share/yelp-xsl/xslt/common/css/core.css.tmpl
+share/yelp-xsl/xslt/common/css/docbook.css.tmpl
+share/yelp-xsl/xslt/common/css/elements.css.tmpl
+share/yelp-xsl/xslt/common/css/mallard-editor.css.tmpl
+share/yelp-xsl/xslt/common/css/mallard.css.tmpl
+share/yelp-xsl/xslt/common/css/syntax.css.tmpl
 share/yelp-xsl/xslt/common/domains/
 share/yelp-xsl/xslt/common/domains/yelp-xsl.xml
 share/yelp-xsl/xslt/common/html.xsl
@@ -20,6 +27,7 @@ share/yelp-xsl/xslt/common/icons/yelp-note-tip.svg
 share/yelp-xsl/xslt/common/icons/yelp-note-warning.svg
 share/yelp-xsl/xslt/common/l10n-numbers.xsl
 share/yelp-xsl/xslt/common/l10n.xsl
+share/yelp-xsl/xslt/common/tmpl.xsl
 share/yelp-xsl/xslt/common/ttml.xsl
 share/yelp-xsl/xslt/common/utils.xsl
 share/yelp-xsl/xslt/docbook/
@@ -36,7 +44,6 @@ share/yelp-xsl/xslt/docbook/html/db2html-block.xsl
 share/yelp-xsl/xslt/docbook/html/db2html-callout.xsl
 share/yelp-xsl/xslt/docbook/html/db2html-classsynopsis.xsl
 share/yelp-xsl/xslt/docbook/html/db2html-cmdsynopsis.xsl
-share/yelp-xsl/xslt/docbook/html/db2html-css.xsl
 share/yelp-xsl/xslt/docbook/html/db2html-division.xsl
 share/yelp-xsl/xslt/docbook/html/db2html-ebnf.xsl
 share/yelp-xsl/xslt/docbook/html/db2html-footnote.xsl

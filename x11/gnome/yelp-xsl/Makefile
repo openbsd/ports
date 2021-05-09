@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2021/02/13 17:13:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2021/05/09 08:51:10 ajacoutot Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		XSLT stylesheets for yelp
 
 GNOME_PROJECT=		yelp-xsl
-GNOME_VERSION=		3.38.3
+GNOME_VERSION=		40.0
 
 # GPLv2 - LGPLv2.1 - MIT
 PERMIT_PACKAGE=		Yes
