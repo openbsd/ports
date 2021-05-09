@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_memory-models_Makefile,v 1.1 2021/05/09 13:27:14 millert Exp $
+Newer bison includes the defines file in the parser so the name must match.
+
+Index: src/memory-models/Makefile
+--- src/memory-models/Makefile.orig
++++ src/memory-models/Makefile
+@@ -17,11 +17,7 @@ all: mmcc$(EXEEXT)
+ ###############################################################################
+ 
+ mm_y.tab.cpp: parser.y
+-	$(YACC) $(YFLAGS) $$flags -pyymm -d parser.y -o $@
+-
+-mm_y.tab.h: mm_y.tab.cpp
+-	if [ -e mm_y.tab.hpp ] ; then mv mm_y.tab.hpp mm_y.tab.h ; else \
+-        mv mm_y.tab.cpp.h mm_y.tab.h ; fi
++	$(YACC) $(YFLAGS) $$flags -pyymm --defines=mm_y.tab.h parser.y -o $@
+ 
+ mm_lex.yy.cpp: scanner.l
+ 	$(LEX) -Pyymm -o$@ scanner.l
