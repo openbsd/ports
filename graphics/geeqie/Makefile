@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2021/04/08 08:04:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2021/05/09 17:35:59 ajacoutot Exp $
 
 COMMENT=		lightweight Gtk+3 based image viewer
 
@@ -23,6 +23,8 @@ COMPILER=		base-clang ports-gcc base-gcc
 MASTER_SITES=		http://geeqie.org/
 
 MODULES=		textproc/intltool
+
+BUILD_DEPENDS=		x11/gnome/yelp-tools
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/xdg-utils \
