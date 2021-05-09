@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.61 2019/07/12 20:48:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2021/05/09 08:57:02 ajacoutot Exp $
+
+BROKEN=		does not build with GLib >=2.68
 
 COMMENT=	powerful newsreader
 
