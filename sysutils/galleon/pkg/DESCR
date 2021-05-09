@@ -1,0 +1,5 @@
+Galleon is a tool for installing and maintaining JBoss software such
+as Wildfly servers.  It can install "standard" servers or you can
+choose which modules to install in order to provision a smaller server
+with just the services you need.
+

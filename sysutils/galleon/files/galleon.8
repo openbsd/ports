@@ -1,0 +1,36 @@
+.\"	$OpenBSD: galleon.8,v 1.1.1.1 2021/05/09 12:27:11 ian Exp $
+.\"
+.\" Public Domain
+.\"
+.Dd $Mdocdate: May 9 2021 $
+.Dt GALLEON 8
+.Os
+.Sh NAME
+.Nm galleon
+.Nd provisions and maintains JBoss software such as Wildfly instances
+.Sh SYNOPSIS
+.Nm
+.Op Fl args
+.Sh DESCRIPTION
+The
+.Nm
+utility downloads modules to assemble and install a JBoss Wildfly instance.
+.Nm
+can be controlled with command line arguments, absent which 
+it will enter an interactive mode.
+.Sh EXAMPLES
+To install the standalone (non-clustered) version of Wildfly:
+.Pp
+.Dl # galleon install wildfly:current --dir=/var/wildfly --default-configs=standalone/standalone.xml
+.Pp
+To update the installation later:
+.Pp
+.Dl # galleon update --dir=/var/wildfly
+.Sh SEE ALSO
+There is a guide to using 
+.Nm 
+to install Wildfly at ${HOMEPAGE}.
+There is built-in help in the interactive mode.
+Finally there is extensive documentation on
+.Nm
+in general in ${TRUEPREFIX}/share/doc/galleon/index.html
