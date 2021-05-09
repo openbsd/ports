@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.138 2021/02/27 08:58:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.139 2021/05/09 08:52:38 ajacoutot Exp $
 
 # XXX should be a RUN_DEPENDS of x11/gnome/{libgnome-keyring,libsecret} but that
 # would create dependency loops:                                                
@@ -8,18 +8,19 @@
 COMMENT=		password agent for the GNOME project
 
 GNOME_PROJECT=		gnome-keyring
-GNOME_VERSION=		3.36.0
+GNOME_VERSION=		40.0
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 c cairo cairo-gobject
-WANTLIB += epoxy expat ffi fontconfig freetype fribidi gck-1 gcr-base-3
-WANTLIB += gcr-ui-3 gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 gtk-3 harfbuzz
-WANTLIB += iconv intl m p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread xcb xcb-render xcb-shm z
+WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
+WANTLIB += c cairo cairo-gobject epoxy expat ffi fontconfig freetype
+WANTLIB += fribidi gck-1 gcr-base-3 gcr-ui-3 gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
+WANTLIB += graphite2 gtk-3 harfbuzz iconv intl jpeg m p11-kit
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png xcb xcb-render xcb-shm z
 
 MODULES=		devel/dconf \
 			x11/gnome
