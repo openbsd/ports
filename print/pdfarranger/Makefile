@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/23 19:39:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/05/09 22:15:23 kmos Exp $
 
 COMMENT =		GUI tool to rearrange and modify PDF files
 
-MODPY_EGG_VERSION =	1.6.2
+MODPY_EGG_VERSION =	1.7.1
 GH_ACCOUNT =		pdfarranger
 GH_PROJECT =		pdfarranger
 GH_TAGNAME =		${MODPY_EGG_VERSION}
@@ -17,14 +17,19 @@ MODULES =		lang/python \
 
 MODPY_SETUPTOOLS =	Yes
 
+# Tests write to HOME
+PORTHOME =		${WRKDIR}
+
 BUILD_DEPENDS =		devel/py-distutils-extra${MODPY_FLAVOR} \
 			print/py-pikepdf${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/desktop-file-utils \
+			devel/py-dateutil${MODPY_FLAVOR} \
 			devel/py-gobject3${MODPY_FLAVOR} \
+			graphics/img2pdf \
 			print/py-pikepdf${MODPY_FLAVOR} \
 			x11/gtk+3 \
 			x11/gtk+3,-guic
 
-NO_TEST =		Yes
+TEST_IS_INTERACTIVE =	X11
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/11/02 19:52:43 jca Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/05/09 22:15:23 kmos Exp $
 bin/pdfarranger
 lib/python${MODPY_VERSION}/site-packages/pdfarranger/
 lib/python${MODPY_VERSION}/site-packages/pdfarranger-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -14,15 +14,23 @@ lib/python${MODPY_VERSION}/site-packages/pdfarranger/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pdfarranger/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pdfarranger/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pdfarranger/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pdfarranger/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pdfarranger/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pdfarranger/${MODPY_PYCACHE}croputils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pdfarranger/${MODPY_PYCACHE}exporter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pdfarranger/${MODPY_PYCACHE}iconview.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pdfarranger/${MODPY_PYCACHE}metadata.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pdfarranger/${MODPY_PYCACHE}pdfarranger.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pdfarranger/${MODPY_PYCACHE}splitter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pdfarranger/${MODPY_PYCACHE}undo.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pdfarranger/config.py
+lib/python${MODPY_VERSION}/site-packages/pdfarranger/core.py
+lib/python${MODPY_VERSION}/site-packages/pdfarranger/croputils.py
 lib/python${MODPY_VERSION}/site-packages/pdfarranger/exporter.py
 lib/python${MODPY_VERSION}/site-packages/pdfarranger/iconview.py
 lib/python${MODPY_VERSION}/site-packages/pdfarranger/metadata.py
 lib/python${MODPY_VERSION}/site-packages/pdfarranger/pdfarranger.py
+lib/python${MODPY_VERSION}/site-packages/pdfarranger/splitter.py
 lib/python${MODPY_VERSION}/site-packages/pdfarranger/undo.py
 @man man/man1/pdfarranger.1
 share/applications/com.github.jeromerobert.pdfarranger.desktop
@@ -36,6 +44,7 @@ share/locale/cs/LC_MESSAGES/pdfarranger.mo
 share/locale/de/LC_MESSAGES/pdfarranger.mo
 share/locale/el/LC_MESSAGES/pdfarranger.mo
 share/locale/es/LC_MESSAGES/pdfarranger.mo
+share/locale/fi/LC_MESSAGES/pdfarranger.mo
 share/locale/fr/LC_MESSAGES/pdfarranger.mo
 share/locale/hr/LC_MESSAGES/pdfarranger.mo
 share/locale/hu/LC_MESSAGES/pdfarranger.mo
@@ -47,6 +56,10 @@ share/locale/pl_PL/
 share/locale/pl_PL/LC_MESSAGES/
 share/locale/pl_PL/LC_MESSAGES/pdfarranger.mo
 share/locale/pt_BR/LC_MESSAGES/pdfarranger.mo
+share/locale/pt_PT/
+share/locale/pt_PT/LC_MESSAGES/
+share/locale/pt_PT/LC_MESSAGES/pdfarranger.mo
+share/locale/ru/LC_MESSAGES/pdfarranger.mo
 share/locale/sv/LC_MESSAGES/pdfarranger.mo
 share/locale/tr/LC_MESSAGES/pdfarranger.mo
 share/locale/zh_CN/LC_MESSAGES/pdfarranger.mo
