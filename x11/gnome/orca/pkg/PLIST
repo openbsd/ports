@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2020/11/01 08:26:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.43 2021/05/09 08:53:43 ajacoutot Exp $
 bin/orca
 lib/python${MODPY_VERSION}/site-packages/orca/
 lib/python${MODPY_VERSION}/site-packages/orca/__init__.py
@@ -742,7 +742,6 @@ share/help/C/orca/introduction.page
 share/help/C/orca/preferences.page
 share/help/C/orca/preferences_braille.page
 share/help/C/orca/preferences_chat.page
-share/help/C/orca/preferences_gecko.page
 share/help/C/orca/preferences_general.page
 share/help/C/orca/preferences_introduction.page
 share/help/C/orca/preferences_key_bindings.page
@@ -753,6 +752,7 @@ share/help/C/orca/preferences_spellcheck.page
 share/help/C/orca/preferences_table_navigation.page
 share/help/C/orca/preferences_text_attributes.page
 share/help/C/orca/preferences_voice.page
+share/help/C/orca/preferences_web.page
 share/help/bg/
 share/help/bg/orca/
 share/help/bg/orca/commands.page
@@ -798,7 +798,6 @@ share/help/bg/orca/introduction.page
 share/help/bg/orca/preferences.page
 share/help/bg/orca/preferences_braille.page
 share/help/bg/orca/preferences_chat.page
-share/help/bg/orca/preferences_gecko.page
 share/help/bg/orca/preferences_general.page
 share/help/bg/orca/preferences_introduction.page
 share/help/bg/orca/preferences_key_bindings.page
@@ -809,6 +808,7 @@ share/help/bg/orca/preferences_spellcheck.page
 share/help/bg/orca/preferences_table_navigation.page
 share/help/bg/orca/preferences_text_attributes.page
 share/help/bg/orca/preferences_voice.page
+share/help/bg/orca/preferences_web.page
 share/help/cs/
 share/help/cs/orca/
 share/help/cs/orca/commands.page
@@ -854,7 +854,6 @@ share/help/cs/orca/introduction.page
 share/help/cs/orca/preferences.page
 share/help/cs/orca/preferences_braille.page
 share/help/cs/orca/preferences_chat.page
-share/help/cs/orca/preferences_gecko.page
 share/help/cs/orca/preferences_general.page
 share/help/cs/orca/preferences_introduction.page
 share/help/cs/orca/preferences_key_bindings.page
@@ -865,6 +864,7 @@ share/help/cs/orca/preferences_spellcheck.page
 share/help/cs/orca/preferences_table_navigation.page
 share/help/cs/orca/preferences_text_attributes.page
 share/help/cs/orca/preferences_voice.page
+share/help/cs/orca/preferences_web.page
 share/help/de/
 share/help/de/orca/
 share/help/de/orca/commands.page
@@ -910,7 +910,6 @@ share/help/de/orca/introduction.page
 share/help/de/orca/preferences.page
 share/help/de/orca/preferences_braille.page
 share/help/de/orca/preferences_chat.page
-share/help/de/orca/preferences_gecko.page
 share/help/de/orca/preferences_general.page
 share/help/de/orca/preferences_introduction.page
 share/help/de/orca/preferences_key_bindings.page
@@ -921,6 +920,7 @@ share/help/de/orca/preferences_spellcheck.page
 share/help/de/orca/preferences_table_navigation.page
 share/help/de/orca/preferences_text_attributes.page
 share/help/de/orca/preferences_voice.page
+share/help/de/orca/preferences_web.page
 share/help/el/
 share/help/el/orca/
 share/help/el/orca/commands.page
@@ -966,7 +966,6 @@ share/help/el/orca/introduction.page
 share/help/el/orca/preferences.page
 share/help/el/orca/preferences_braille.page
 share/help/el/orca/preferences_chat.page
-share/help/el/orca/preferences_gecko.page
 share/help/el/orca/preferences_general.page
 share/help/el/orca/preferences_introduction.page
 share/help/el/orca/preferences_key_bindings.page
@@ -977,6 +976,7 @@ share/help/el/orca/preferences_spellcheck.page
 share/help/el/orca/preferences_table_navigation.page
 share/help/el/orca/preferences_text_attributes.page
 share/help/el/orca/preferences_voice.page
+share/help/el/orca/preferences_web.page
 share/help/es/
 share/help/es/orca/
 share/help/es/orca/commands.page
@@ -1022,7 +1022,6 @@ share/help/es/orca/introduction.page
 share/help/es/orca/preferences.page
 share/help/es/orca/preferences_braille.page
 share/help/es/orca/preferences_chat.page
-share/help/es/orca/preferences_gecko.page
 share/help/es/orca/preferences_general.page
 share/help/es/orca/preferences_introduction.page
 share/help/es/orca/preferences_key_bindings.page
@@ -1033,6 +1032,7 @@ share/help/es/orca/preferences_spellcheck.page
 share/help/es/orca/preferences_table_navigation.page
 share/help/es/orca/preferences_text_attributes.page
 share/help/es/orca/preferences_voice.page
+share/help/es/orca/preferences_web.page
 share/help/fr/
 share/help/fr/orca/
 share/help/fr/orca/commands.page
@@ -1078,7 +1078,6 @@ share/help/fr/orca/introduction.page
 share/help/fr/orca/preferences.page
 share/help/fr/orca/preferences_braille.page
 share/help/fr/orca/preferences_chat.page
-share/help/fr/orca/preferences_gecko.page
 share/help/fr/orca/preferences_general.page
 share/help/fr/orca/preferences_introduction.page
 share/help/fr/orca/preferences_key_bindings.page
@@ -1089,6 +1088,7 @@ share/help/fr/orca/preferences_spellcheck.page
 share/help/fr/orca/preferences_table_navigation.page
 share/help/fr/orca/preferences_text_attributes.page
 share/help/fr/orca/preferences_voice.page
+share/help/fr/orca/preferences_web.page
 share/help/gl/
 share/help/gl/orca/
 share/help/gl/orca/commands.page
@@ -1134,7 +1134,6 @@ share/help/gl/orca/introduction.page
 share/help/gl/orca/preferences.page
 share/help/gl/orca/preferences_braille.page
 share/help/gl/orca/preferences_chat.page
-share/help/gl/orca/preferences_gecko.page
 share/help/gl/orca/preferences_general.page
 share/help/gl/orca/preferences_introduction.page
 share/help/gl/orca/preferences_key_bindings.page
@@ -1145,6 +1144,7 @@ share/help/gl/orca/preferences_spellcheck.page
 share/help/gl/orca/preferences_table_navigation.page
 share/help/gl/orca/preferences_text_attributes.page
 share/help/gl/orca/preferences_voice.page
+share/help/gl/orca/preferences_web.page
 share/help/hu/
 share/help/hu/orca/
 share/help/hu/orca/commands.page
@@ -1190,7 +1190,6 @@ share/help/hu/orca/introduction.page
 share/help/hu/orca/preferences.page
 share/help/hu/orca/preferences_braille.page
 share/help/hu/orca/preferences_chat.page
-share/help/hu/orca/preferences_gecko.page
 share/help/hu/orca/preferences_general.page
 share/help/hu/orca/preferences_introduction.page
 share/help/hu/orca/preferences_key_bindings.page
@@ -1201,6 +1200,63 @@ share/help/hu/orca/preferences_spellcheck.page
 share/help/hu/orca/preferences_table_navigation.page
 share/help/hu/orca/preferences_text_attributes.page
 share/help/hu/orca/preferences_voice.page
+share/help/hu/orca/preferences_web.page
+share/help/id/
+share/help/id/orca/
+share/help/id/orca/commands.page
+share/help/id/orca/commands_bookmarks.page
+share/help/id/orca/commands_braille.page
+share/help/id/orca/commands_chat.page
+share/help/id/orca/commands_controlling_orca.page
+share/help/id/orca/commands_debugging.page
+share/help/id/orca/commands_find.page
+share/help/id/orca/commands_flat_review.page
+share/help/id/orca/commands_live_regions.page
+share/help/id/orca/commands_mouse.page
+share/help/id/orca/commands_profiles.page
+share/help/id/orca/commands_reading.page
+share/help/id/orca/commands_speech_settings.page
+share/help/id/orca/commands_structural_navigation.page
+share/help/id/orca/commands_table.page
+share/help/id/orca/commands_time_date_notifications.page
+share/help/id/orca/commands_where_am_i.page
+share/help/id/orca/figures/
+share/help/id/orca/figures/orca-logo.png
+share/help/id/orca/howto_bookmarks.page
+share/help/id/orca/howto_documents.page
+share/help/id/orca/howto_flat_review.page
+share/help/id/orca/howto_forms.page
+share/help/id/orca/howto_key_bindings.page
+share/help/id/orca/howto_keyboard_layout.page
+share/help/id/orca/howto_learn_modes.page
+share/help/id/orca/howto_live_regions.page
+share/help/id/orca/howto_mouse_review.page
+share/help/id/orca/howto_notifications.page
+share/help/id/orca/howto_orca_find.page
+share/help/id/orca/howto_profiles.page
+share/help/id/orca/howto_setting_up_orca.page
+share/help/id/orca/howto_structural_navigation.page
+share/help/id/orca/howto_tables.page
+share/help/id/orca/howto_text_attributes.page
+share/help/id/orca/howto_the_orca_modifier.page
+share/help/id/orca/howto_toggling_caps_lock.page
+share/help/id/orca/howto_whereami.page
+share/help/id/orca/index.page
+share/help/id/orca/introduction.page
+share/help/id/orca/preferences.page
+share/help/id/orca/preferences_braille.page
+share/help/id/orca/preferences_chat.page
+share/help/id/orca/preferences_general.page
+share/help/id/orca/preferences_introduction.page
+share/help/id/orca/preferences_key_bindings.page
+share/help/id/orca/preferences_key_echo.page
+share/help/id/orca/preferences_pronunciation.page
+share/help/id/orca/preferences_speech.page
+share/help/id/orca/preferences_spellcheck.page
+share/help/id/orca/preferences_table_navigation.page
+share/help/id/orca/preferences_text_attributes.page
+share/help/id/orca/preferences_voice.page
+share/help/id/orca/preferences_web.page
 share/help/pt_BR/
 share/help/pt_BR/orca/
 share/help/pt_BR/orca/commands.page
@@ -1246,7 +1302,6 @@ share/help/pt_BR/orca/introduction.page
 share/help/pt_BR/orca/preferences.page
 share/help/pt_BR/orca/preferences_braille.page
 share/help/pt_BR/orca/preferences_chat.page
-share/help/pt_BR/orca/preferences_gecko.page
 share/help/pt_BR/orca/preferences_general.page
 share/help/pt_BR/orca/preferences_introduction.page
 share/help/pt_BR/orca/preferences_key_bindings.page
@@ -1257,6 +1312,7 @@ share/help/pt_BR/orca/preferences_spellcheck.page
 share/help/pt_BR/orca/preferences_table_navigation.page
 share/help/pt_BR/orca/preferences_text_attributes.page
 share/help/pt_BR/orca/preferences_voice.page
+share/help/pt_BR/orca/preferences_web.page
 share/help/sl/
 share/help/sl/orca/
 share/help/sl/orca/commands.page
@@ -1302,7 +1358,6 @@ share/help/sl/orca/introduction.page
 share/help/sl/orca/preferences.page
 share/help/sl/orca/preferences_braille.page
 share/help/sl/orca/preferences_chat.page
-share/help/sl/orca/preferences_gecko.page
 share/help/sl/orca/preferences_general.page
 share/help/sl/orca/preferences_introduction.page
 share/help/sl/orca/preferences_key_bindings.page
@@ -1313,6 +1368,7 @@ share/help/sl/orca/preferences_spellcheck.page
 share/help/sl/orca/preferences_table_navigation.page
 share/help/sl/orca/preferences_text_attributes.page
 share/help/sl/orca/preferences_voice.page
+share/help/sl/orca/preferences_web.page
 share/help/sv/
 share/help/sv/orca/
 share/help/sv/orca/commands.page
@@ -1358,7 +1414,6 @@ share/help/sv/orca/introduction.page
 share/help/sv/orca/preferences.page
 share/help/sv/orca/preferences_braille.page
 share/help/sv/orca/preferences_chat.page
-share/help/sv/orca/preferences_gecko.page
 share/help/sv/orca/preferences_general.page
 share/help/sv/orca/preferences_introduction.page
 share/help/sv/orca/preferences_key_bindings.page
@@ -1369,6 +1424,7 @@ share/help/sv/orca/preferences_spellcheck.page
 share/help/sv/orca/preferences_table_navigation.page
 share/help/sv/orca/preferences_text_attributes.page
 share/help/sv/orca/preferences_voice.page
+share/help/sv/orca/preferences_web.page
 share/help/uk/
 share/help/uk/orca/
 share/help/uk/orca/commands.page
@@ -1414,7 +1470,6 @@ share/help/uk/orca/introduction.page
 share/help/uk/orca/preferences.page
 share/help/uk/orca/preferences_braille.page
 share/help/uk/orca/preferences_chat.page
-share/help/uk/orca/preferences_gecko.page
 share/help/uk/orca/preferences_general.page
 share/help/uk/orca/preferences_introduction.page
 share/help/uk/orca/preferences_key_bindings.page
@@ -1425,6 +1480,7 @@ share/help/uk/orca/preferences_spellcheck.page
 share/help/uk/orca/preferences_table_navigation.page
 share/help/uk/orca/preferences_text_attributes.page
 share/help/uk/orca/preferences_voice.page
+share/help/uk/orca/preferences_web.page
 share/icons/hicolor/16x16/apps/orca.png
 share/icons/hicolor/22x22/apps/orca.png
 share/icons/hicolor/24x24/apps/orca.png
