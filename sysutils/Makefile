@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.602 2021/05/04 17:49:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.603 2021/05/09 12:29:45 ian Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -106,6 +106,7 @@
      SUBDIR += fsstress
      SUBDIR += fwa
      SUBDIR += fzf
+     SUBDIR += galleon
      SUBDIR += gamin
      SUBDIR += gdmap
      SUBDIR += ggrep
