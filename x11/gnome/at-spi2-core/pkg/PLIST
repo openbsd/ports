@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2019/04/25 14:20:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2021/05/09 08:50:57 ajacoutot Exp $
 include/at-spi-2.0/
 include/at-spi-2.0/atspi/
 include/at-spi-2.0/atspi/atspi-accessible.h
@@ -7,7 +7,10 @@ include/at-spi-2.0/atspi/atspi-application.h
 include/at-spi-2.0/atspi/atspi-collection.h
 include/at-spi-2.0/atspi/atspi-component.h
 include/at-spi-2.0/atspi/atspi-constants.h
+include/at-spi-2.0/atspi/atspi-device-legacy.h
 include/at-spi-2.0/atspi/atspi-device-listener.h
+include/at-spi-2.0/atspi/atspi-device-x11.h
+include/at-spi-2.0/atspi/atspi-device.h
 include/at-spi-2.0/atspi/atspi-document.h
 include/at-spi-2.0/atspi/atspi-editabletext.h
 include/at-spi-2.0/atspi/atspi-enum-types.h
