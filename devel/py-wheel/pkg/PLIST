@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/02/19 23:13:03 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/05/09 09:08:01 sthen Exp $
 @conflict py-wheel-<0.34.2p1
 bin/wheel${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/wheel/
@@ -15,15 +15,12 @@ lib/python${MODPY_VERSION}/site-packages/wheel/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wheel/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wheel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wheel/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/wheel/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wheel/${MODPY_PYCACHE}bdist_wheel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wheel/${MODPY_PYCACHE}macosx_libfile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wheel/${MODPY_PYCACHE}metadata.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/wheel/${MODPY_PYCACHE}pep425tags.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wheel/${MODPY_PYCACHE}pkginfo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wheel/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wheel/${MODPY_PYCACHE}wheelfile.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/wheel/_version.py
 lib/python${MODPY_VERSION}/site-packages/wheel/bdist_wheel.py
 lib/python${MODPY_VERSION}/site-packages/wheel/cli/
 lib/python${MODPY_VERSION}/site-packages/wheel/cli/__init__.py
@@ -37,7 +34,18 @@ lib/python${MODPY_VERSION}/site-packages/wheel/cli/pack.py
 lib/python${MODPY_VERSION}/site-packages/wheel/cli/unpack.py
 lib/python${MODPY_VERSION}/site-packages/wheel/macosx_libfile.py
 lib/python${MODPY_VERSION}/site-packages/wheel/metadata.py
-lib/python${MODPY_VERSION}/site-packages/wheel/pep425tags.py
 lib/python${MODPY_VERSION}/site-packages/wheel/pkginfo.py
 lib/python${MODPY_VERSION}/site-packages/wheel/util.py
+lib/python${MODPY_VERSION}/site-packages/wheel/vendored/
+lib/python${MODPY_VERSION}/site-packages/wheel/vendored/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wheel/vendored/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wheel/vendored/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wheel/vendored/packaging/
+lib/python${MODPY_VERSION}/site-packages/wheel/vendored/packaging/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wheel/vendored/packaging/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wheel/vendored/packaging/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wheel/vendored/packaging/${MODPY_PYCACHE}_typing.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wheel/vendored/packaging/${MODPY_PYCACHE}tags.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wheel/vendored/packaging/_typing.py
+lib/python${MODPY_VERSION}/site-packages/wheel/vendored/packaging/tags.py
 lib/python${MODPY_VERSION}/site-packages/wheel/wheelfile.py

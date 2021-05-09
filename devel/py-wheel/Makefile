@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/19 23:13:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/05/09 09:08:01 sthen Exp $
 
 COMMENT =		built-package format for Python
 
-MODPY_EGG_VERSION =	0.34.2
+MODPY_EGG_VERSION =	0.36.2
 DISTNAME =		wheel-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		1
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -19,6 +18,11 @@ MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
+
+# With tar from base, some files are extracted with a timestamp of
+# Jan 1 1970, resulting in tests failing.
+BUILD_DEPENDS =		archivers/gtar
+TAR =			${LOCALBASE}/bin/gtar
 
 TEST_DEPENDS =		${BASE_PKGPATH}=${MODPY_EGG_VERSION} \
 			devel/py-coverage${MODPY_FLAVOR} \
