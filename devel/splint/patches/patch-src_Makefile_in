@@ -1,6 +1,52 @@
-$OpenBSD: patch-src_Makefile_in,v 1.2 2007/08/25 08:03:43 espie Exp $
---- src/Makefile.in.orig	Fri Jul 13 23:42:42 2007
-+++ src/Makefile.in	Tue Aug 14 20:01:44 2007
+$OpenBSD: patch-src_Makefile_in,v 1.3 2021/05/09 13:40:03 millert Exp $
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -1032,7 +1032,7 @@ signature.c.der:
+ 	else \
+ 	  echo '* Making signature.c'; \
+ 	  $(BISON) $(YFLAGS) -p lsl signature.y; \
+-	  $(CAT) bison.head signature.tab.c bison.reset >signature.c; \
++	  $(CAT) bison.head signature.tab.c bison.reset | $(SED) 's/signature\.tab\.h/signature_gen.h/g' >signature.c; \
+ 	  $(CP) signature.c signature.c.der; \
+ 	  $(MV) Headers/signature_gen.h Headers/signature_gen.bak || true; \
+ 	  $(CAT) bison.head signature.tab.h bison.reset >Headers/signature_gen.h; \
+@@ -1045,7 +1045,7 @@ Headers/signature_gen.h signature.c: signature.c.der s
+ 	else \
+ 	  echo '* Making signature.c'; \
+ 	  $(BISON) $(YFLAGS) -p lsl signature.y; \
+-	  $(CAT) bison.head signature.tab.c bison.reset >signature.c; \
++	  $(CAT) bison.head signature.tab.c bison.reset | $(SED) 's/signature\.tab\.h/signature_gen.h/g' >signature.c; \
+ 	  $(CP) signature.c signature.c.der; \
+ 	  $(MV) Headers/signature_gen.h Headers/signature_gen.bak; \
+ 	  $(CAT) bison.head signature.tab.h bison.reset >Headers/signature_gen.h; \
+@@ -1059,7 +1059,7 @@ Headers/cgrammar_tokens.h cgrammar.c: cgrammar.c.der c
+ 	  echo '* Making cgrammar.c'; \
+           echo '*      Note: Expect 157 shift/reduce conflicts and 123 reduce/reduce conflicts. (see cgrammar.y for explanation)'; \
+ 	  $(BISON) $(YFLAGS) cgrammar.y; \
+-	  $(CAT) bison.head cgrammar.tab.c bison.reset | $(SED) 's/YYSTYPE/cgrammar_YYSTYPE/g' | $(SED) 's/lsllex/cgrammar_lsllex/g' > cgrammar.c; \
++	  $(CAT) bison.head cgrammar.tab.c bison.reset | $(SED) -e 's/YYSTYPE/cgrammar_YYSTYPE/g' -e 's/lsllex/cgrammar_lsllex/g' -e 's/cgrammar\.tab\.h/cgrammar_tokens.h/g' > cgrammar.c; \
+ 	  $(CP) cgrammar.c cgrammar.c.der; \
+ 	  $(MV) Headers/cgrammar_tokens.h Headers/cgrammar_tokens.bak || true; \
+ 	  $(CAT) bison.head cgrammar.tab.h bison.reset | $(SED) 's/YYSTYPE/cgrammar_YYSTYPE/g' | $(SED) 's/lsllex/cgrammar_lsllex/g' > Headers/cgrammar_tokens.h; \
+@@ -1073,7 +1073,7 @@ Headers/mtgrammar_tokens.h mtgrammar.c: mtgrammar.y
+ 	  echo '* Making mtgrammar.c'; \
+ 	  echo '*       Note: Expect 11 shift/reduce conflicts.'; \
+ 	  $(BISON) $(YFLAGS) -p mt mtgrammar.y; \
+-	  $(CAT) bison.head mtgrammar.tab.c bison.reset >mtgrammar.c; \
++	  $(CAT) bison.head mtgrammar.tab.c bison.reset | $(SED) 's/mtgrammar\.tab\.h/mtgrammar_tokens.h/g' >mtgrammar.c; \
+ 	  $(CP) mtgrammar.c mtgrammar.c.der; \
+ 	  $(MV) Headers/mtgrammar_tokens.h Headers/mtgrammar_tokens.bak; \
+ 	  $(CAT) bison.head mtgrammar.tab.h bison.reset >Headers/mtgrammar_tokens.h; \
+@@ -1087,7 +1087,7 @@ Headers/llgrammar_gen.h Headers/llgrammar_gen2.h llgra
+ 	  echo '* Making llgrammar.c'; \
+ 	  echo '*       Note: Expect 2 shift/reduce conflicts'; \
+ 	  $(BISON) $(YFLAGS) -p yl llgrammar.y; \
+-	  $(CAT) bison.head llgrammar.tab.c bison.reset >llgrammar.c; \
++	  $(CAT) bison.head llgrammar.tab.c bison.reset | $(SED) 's/llgrammar\.tab\.h/llgrammar_gen2.h/g' >llgrammar.c; \
+ 	  $(CP) llgrammar.c llgrammar.c.der; \
+ 	  $(MV) Headers/llgrammar_gen2.h Headers/llgrammar_gen2.bak; \
+ 	  $(CAT) bison.head llgrammar.tab.h bison.reset >Headers/llgrammar_gen2.h; \
 @@ -1159,7 +1159,6 @@ up: 
  	$(MAKE) clean
  
