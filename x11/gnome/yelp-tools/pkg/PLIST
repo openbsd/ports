@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/11/01 08:22:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/05/09 08:51:21 ajacoutot Exp $
 bin/yelp-build
 bin/yelp-check
 bin/yelp-new
@@ -9,17 +9,13 @@ share/yelp-tools/templates/concept.duck
 share/yelp-tools/templates/concept.page
 share/yelp-tools/templates/guide.duck
 share/yelp-tools/templates/guide.page
+share/yelp-tools/templates/info.ducktype.include
+share/yelp-tools/templates/info.mallard.include
 share/yelp-tools/templates/reference.duck
 share/yelp-tools/templates/reference.page
 share/yelp-tools/templates/task.duck
 share/yelp-tools/templates/task.page
 share/yelp-tools/xslt/
-share/yelp-tools/xslt/comments.xsl
-share/yelp-tools/xslt/mal-epub.xsl
-share/yelp-tools/xslt/mal-files.xsl
-share/yelp-tools/xslt/mal-license.xsl
 share/yelp-tools/xslt/mal-ncx.xsl
 share/yelp-tools/xslt/mal-opf.xsl
 share/yelp-tools/xslt/mal-rng.xsl
-share/yelp-tools/xslt/mal-status.xsl
-share/yelp-tools/xslt/media.xsl
