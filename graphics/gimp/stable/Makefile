@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.144 2021/04/01 10:01:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.145 2021/05/09 14:18:37 espie Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 DISTNAME =	gimp-2.10.24
+REVISION =	0
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets
