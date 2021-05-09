@@ -1,0 +1,28 @@
+$OpenBSD: patch-glib_poppler-action_cc,v 1.3 2021/05/09 08:55:41 ajacoutot Exp $
+
+From 47de887d7658cfd68df44b3acf710971054f957b Mon Sep 17 00:00:00 2001
+From: Christian Persch <chpe@src.gnome.org>
+Date: Fri, 26 Mar 2021 18:17:25 +0100
+Subject: [PATCH] glib: Use stock glib macro to define boxed type
+
+Index: glib/poppler-action.cc
+--- glib/poppler-action.cc.orig
++++ glib/poppler-action.cc
+@@ -25,7 +25,7 @@
+  * @title: PopplerAction
+  */
+ 
+-POPPLER_DEFINE_BOXED_TYPE(PopplerDest, poppler_dest, poppler_dest_copy, poppler_dest_free)
++G_DEFINE_BOXED_TYPE(PopplerDest, poppler_dest, poppler_dest_copy, poppler_dest_free)
+ 
+ /**
+  * poppler_dest_copy:
+@@ -88,7 +88,7 @@ static PopplerActionLayer *poppler_action_layer_copy(P
+     return retval;
+ }
+ 
+-POPPLER_DEFINE_BOXED_TYPE(PopplerAction, poppler_action, poppler_action_copy, poppler_action_free)
++G_DEFINE_BOXED_TYPE(PopplerAction, poppler_action, poppler_action_copy, poppler_action_free)
+ 
+ /**
+  * poppler_action_free:

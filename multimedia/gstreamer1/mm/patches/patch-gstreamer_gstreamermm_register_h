@@ -1,0 +1,16 @@
+$OpenBSD: patch-gstreamer_gstreamermm_register_h,v 1.1 2021/05/09 08:55:41 ajacoutot Exp $
+
+Fix build with GLib >=2.68
+
+Index: gstreamer/gstreamermm/register.h
+--- gstreamer/gstreamermm/register.h.orig
++++ gstreamer/gstreamermm/register.h
+@@ -110,7 +110,7 @@ register_mm_type(const gchar * type_name)
+     /* The typedef for GType may be gulong or gsize, depending on the
+      * system and whether the compiler is c++ or not. The g_once_init_*
+      * functions always take a gsize * though ... */
+-    static volatile gsize gonce_data = 0;
++    static gsize gonce_data = 0;
+     if (g_once_init_enter (&gonce_data)) {
+         GTypeInfo info;
+ 

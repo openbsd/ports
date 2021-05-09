@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_nautilus-enum-types_c_template,v 1.1 2021/05/09 08:55:41 ajacoutot Exp $
+
+From 9b733dd9df9d6d9805c56749d05ada15a7560ef4 Mon Sep 17 00:00:00 2001
+From: Ondrej Holy <oholy@redhat.com>
+Date: Wed, 13 Jan 2021 13:22:58 +0100
+Subject: [PATCH] Drop use of volatile
+
+Index: src/nautilus-enum-types.c.template
+--- src/nautilus-enum-types.c.template.orig
++++ src/nautilus-enum-types.c.template
+@@ -13,7 +13,7 @@
+ GType
+ @enum_name@_get_type (void)
+ {
+-    static volatile GType type_once = 0;
++    static GType type_once = 0;
+ 
+     if (g_once_init_enter (&type_once))
+     {

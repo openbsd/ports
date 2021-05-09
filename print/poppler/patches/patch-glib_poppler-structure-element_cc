@@ -1,0 +1,28 @@
+$OpenBSD: patch-glib_poppler-structure-element_cc,v 1.1 2021/05/09 08:55:41 ajacoutot Exp $
+
+From 47de887d7658cfd68df44b3acf710971054f957b Mon Sep 17 00:00:00 2001
+From: Christian Persch <chpe@src.gnome.org>
+Date: Fri, 26 Mar 2021 18:17:25 +0100
+Subject: [PATCH] glib: Use stock glib macro to define boxed type
+
+Index: glib/poppler-structure-element.cc
+--- glib/poppler-structure-element.cc.orig
++++ glib/poppler-structure-element.cc
+@@ -581,7 +581,7 @@ struct _PopplerStructureElementIter
+     unsigned index;
+ };
+ 
+-POPPLER_DEFINE_BOXED_TYPE(PopplerStructureElementIter, poppler_structure_element_iter, poppler_structure_element_iter_copy, poppler_structure_element_iter_free)
++G_DEFINE_BOXED_TYPE(PopplerStructureElementIter, poppler_structure_element_iter, poppler_structure_element_iter_copy, poppler_structure_element_iter_free)
+ 
+ /**
+  * poppler_structure_element_iter_copy:
+@@ -763,7 +763,7 @@ struct _PopplerTextSpan
+     PopplerColor color;
+ };
+ 
+-POPPLER_DEFINE_BOXED_TYPE(PopplerTextSpan, poppler_text_span, poppler_text_span_copy, poppler_text_span_free)
++G_DEFINE_BOXED_TYPE(PopplerTextSpan, poppler_text_span, poppler_text_span_copy, poppler_text_span_free)
+ 
+ enum
+ {

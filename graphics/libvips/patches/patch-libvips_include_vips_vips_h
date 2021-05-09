@@ -1,0 +1,29 @@
+$OpenBSD: patch-libvips_include_vips_vips_h,v 1.1 2021/05/09 08:55:41 ajacoutot Exp $
+
+From cfe50903dffd576f6c25b0f24882b38a38085644 Mon Sep 17 00:00:00 2001
+From: John Cupitt <jcupitt@gmail.com>
+Date: Tue, 9 Feb 2021 16:07:51 +0000
+Subject: [PATCH] don't put glib includes inside extern "C" blocks
+
+Index: libvips/include/vips/vips.h
+--- libvips/include/vips/vips.h.orig
++++ libvips/include/vips/vips.h
+@@ -80,14 +80,14 @@
+ #ifndef VIPS_VIPS_H
+ #define VIPS_VIPS_H
+ 
+-#ifdef __cplusplus
+-extern "C" {
+-#endif /*__cplusplus*/
+-
+ #include <glib.h>
+ #include <glib/gstdio.h>
+ #include <gmodule.h>
+ #include <glib-object.h>
++
++#ifdef __cplusplus
++extern "C" {
++#endif /*__cplusplus*/
+ 
+ /* If we're being parsed by SWIG, remove gcc attributes.
+  */

@@ -1,0 +1,17 @@
+$OpenBSD: patch-pv_views_trace_decodetrace_cpp,v 1.1 2021/05/09 08:55:42 ajacoutot Exp $
+
+Fix build with GLib >=2.68
+
+Index: pv/views/trace/decodetrace.cpp
+--- pv/views/trace/decodetrace.cpp.orig
++++ pv/views/trace/decodetrace.cpp
+@@ -17,9 +17,7 @@
+  * along with this program; if not, see <http://www.gnu.org/licenses/>.
+  */
+ 
+-extern "C" {
+ #include <libsigrokdecode/libsigrokdecode.h>
+-}
+ 
+ #include <limits>
+ #include <mutex>

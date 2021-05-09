@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.52 2020/05/14 19:16:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.53 2021/05/09 08:55:41 ajacoutot Exp $
+
+# XXX there's a maintained fork at https://github.com/sergiomb2/ufraw
 
 COMMENT=	read and manipulate raw images from digital cameras
 

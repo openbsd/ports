@@ -1,0 +1,100 @@
+$OpenBSD: patch-glib_poppler-page_cc,v 1.2 2021/05/09 08:55:41 ajacoutot Exp $
+
+From 47de887d7658cfd68df44b3acf710971054f957b Mon Sep 17 00:00:00 2001
+From: Christian Persch <chpe@src.gnome.org>
+Date: Fri, 26 Mar 2021 18:17:25 +0100
+Subject: [PATCH] glib: Use stock glib macro to define boxed type
+
+Index: glib/poppler-page.cc
+--- glib/poppler-page.cc.orig
++++ glib/poppler-page.cc
+@@ -1566,7 +1566,7 @@ void poppler_page_remove_annot(PopplerPage *page, Popp
+ 
+ /* PopplerRectangle type */
+ 
+-POPPLER_DEFINE_BOXED_TYPE(PopplerRectangle, poppler_rectangle, poppler_rectangle_copy, poppler_rectangle_free)
++G_DEFINE_BOXED_TYPE(PopplerRectangle, poppler_rectangle, poppler_rectangle_copy, poppler_rectangle_free)
+ 
+ /**
+  * poppler_rectangle_new:
+@@ -1608,7 +1608,7 @@ void poppler_rectangle_free(PopplerRectangle *rectangl
+ 
+ /* PopplerPoint type */
+ 
+-POPPLER_DEFINE_BOXED_TYPE(PopplerPoint, poppler_point, poppler_point_copy, poppler_point_free)
++G_DEFINE_BOXED_TYPE(PopplerPoint, poppler_point, poppler_point_copy, poppler_point_free)
+ 
+ /**
+  * poppler_point_new:
+@@ -1657,7 +1657,7 @@ void poppler_point_free(PopplerPoint *point)
+ 
+ /* PopplerQuadrilateral type */
+ 
+-POPPLER_DEFINE_BOXED_TYPE(PopplerQuadrilateral, poppler_quadrilateral, poppler_quadrilateral_copy, poppler_quadrilateral_free)
++G_DEFINE_BOXED_TYPE(PopplerQuadrilateral, poppler_quadrilateral, poppler_quadrilateral_copy, poppler_quadrilateral_free)
+ 
+ /**
+  * poppler_quadrilateral_new:
+@@ -1705,7 +1705,7 @@ void poppler_quadrilateral_free(PopplerQuadrilateral *
+ 
+ /* PopplerTextAttributes type */
+ 
+-POPPLER_DEFINE_BOXED_TYPE(PopplerTextAttributes, poppler_text_attributes, poppler_text_attributes_copy, poppler_text_attributes_free)
++G_DEFINE_BOXED_TYPE(PopplerTextAttributes, poppler_text_attributes, poppler_text_attributes_copy, poppler_text_attributes_free)
+ 
+ /**
+  * poppler_text_attributes_new:
+@@ -1804,7 +1804,7 @@ void poppler_text_attributes_free(PopplerTextAttribute
+  */
+ 
+ /* PopplerColor type */
+-POPPLER_DEFINE_BOXED_TYPE(PopplerColor, poppler_color, poppler_color_copy, poppler_color_free)
++G_DEFINE_BOXED_TYPE(PopplerColor, poppler_color, poppler_color_copy, poppler_color_free)
+ 
+ /**
+  * poppler_color_new:
+@@ -1848,7 +1848,7 @@ void poppler_color_free(PopplerColor *color)
+ }
+ 
+ /* PopplerLinkMapping type */
+-POPPLER_DEFINE_BOXED_TYPE(PopplerLinkMapping, poppler_link_mapping, poppler_link_mapping_copy, poppler_link_mapping_free)
++G_DEFINE_BOXED_TYPE(PopplerLinkMapping, poppler_link_mapping, poppler_link_mapping_copy, poppler_link_mapping_free)
+ 
+ /**
+  * poppler_link_mapping_new:
+@@ -1900,7 +1900,7 @@ void poppler_link_mapping_free(PopplerLinkMapping *map
+ }
+ 
+ /* Poppler Image mapping type */
+-POPPLER_DEFINE_BOXED_TYPE(PopplerImageMapping, poppler_image_mapping, poppler_image_mapping_copy, poppler_image_mapping_free)
++G_DEFINE_BOXED_TYPE(PopplerImageMapping, poppler_image_mapping, poppler_image_mapping_copy, poppler_image_mapping_free)
+ 
+ /**
+  * poppler_image_mapping_new:
+@@ -1939,7 +1939,7 @@ void poppler_image_mapping_free(PopplerImageMapping *m
+ }
+ 
+ /* Page Transition */
+-POPPLER_DEFINE_BOXED_TYPE(PopplerPageTransition, poppler_page_transition, poppler_page_transition_copy, poppler_page_transition_free)
++G_DEFINE_BOXED_TYPE(PopplerPageTransition, poppler_page_transition, poppler_page_transition_copy, poppler_page_transition_free)
+ 
+ /**
+  * poppler_page_transition_new:
+@@ -1983,7 +1983,7 @@ void poppler_page_transition_free(PopplerPageTransitio
+ }
+ 
+ /* Form Field Mapping Type */
+-POPPLER_DEFINE_BOXED_TYPE(PopplerFormFieldMapping, poppler_form_field_mapping, poppler_form_field_mapping_copy, poppler_form_field_mapping_free)
++G_DEFINE_BOXED_TYPE(PopplerFormFieldMapping, poppler_form_field_mapping, poppler_form_field_mapping_copy, poppler_form_field_mapping_free)
+ 
+ /**
+  * poppler_form_field_mapping_new:
+@@ -2035,7 +2035,7 @@ void poppler_form_field_mapping_free(PopplerFormFieldM
+ }
+ 
+ /* PopplerAnnot Mapping Type */
+-POPPLER_DEFINE_BOXED_TYPE(PopplerAnnotMapping, poppler_annot_mapping, poppler_annot_mapping_copy, poppler_annot_mapping_free)
++G_DEFINE_BOXED_TYPE(PopplerAnnotMapping, poppler_annot_mapping, poppler_annot_mapping_copy, poppler_annot_mapping_free)
+ 
+ /**
+  * poppler_annot_mapping_new:

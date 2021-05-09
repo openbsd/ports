@@ -1,0 +1,20 @@
+$OpenBSD: patch-Source_WTF_wtf_glib_GRefPtr_h,v 1.1 2021/05/09 08:55:41 ajacoutot Exp $
+
+From 5b698ba3faffd4e198a45be9fe74f53307395e4b Mon Sep 17 00:00:00 2001
+From: Fabian Vogt <fvogt@suse.de>
+Date: Wed, 7 Apr 2021 13:38:09 +0200
+Subject: [PATCH] Remove invalid g_object declarations to fix build with glib >= 2.68
+
+Index: Source/WTF/wtf/glib/GRefPtr.h
+--- Source/WTF/wtf/glib/GRefPtr.h.orig
++++ Source/WTF/wtf/glib/GRefPtr.h
+@@ -29,9 +29,6 @@
+ #include <wtf/RefPtr.h>
+ #include <algorithm>
+ 
+-extern "C" void g_object_unref(gpointer);
+-extern "C" gpointer g_object_ref_sink(gpointer);
+-
+ namespace WTF {
+ 
+ enum GRefPtrAdoptType { GRefPtrAdopt };

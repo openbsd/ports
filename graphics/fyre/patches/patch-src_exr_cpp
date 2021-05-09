@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_exr_cpp,v 1.1 2021/05/09 08:55:42 ajacoutot Exp $
+
+Fix build with GLib >=2.68
+
+Index: src/exr.cpp
+--- src/exr.cpp.orig
++++ src/exr.cpp
+@@ -22,8 +22,9 @@
+  *
+  */
+ 
+-extern "C" {
+ #include "histogram-imager.h"
++
++extern "C" {
+ #include "config.h"
+ }
+ 
