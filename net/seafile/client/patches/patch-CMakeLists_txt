@@ -1,9 +1,21 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2020/08/09 09:29:13 kirby Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2021/05/09 08:56:20 ajacoutot Exp $
+
+1st chunk:
+Fix build with GLib >=2.68
+https://github.com/haiwen/seafile-client/pull/1346
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -185,7 +185,7 @@ IF (BUILD_SHIBBOLETH_SUPPORT)
+@@ -6,6 +6,7 @@ SET(SEAFILE_CLIENT_VERSION_MINOR 0)
+ SET(SEAFILE_CLIENT_VERSION_PATCH 1)
+ SET(PROJECT_VERSION "${SEAFILE_CLIENT_VERSION_MAJOR}.${SEAFILE_CLIENT_VERSION_MINOR}.${SEAFILE_CLIENT_VERSION_PATCH}")
+ ADD_DEFINITIONS(-DSEAFILE_CLIENT_VERSION=${PROJECT_VERSION})
++ADD_DEFINITIONS(-DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_26)
+ INCLUDE(FindPkgConfig)
+ 
+ ## Build crash repoter on release build as default
+@@ -185,7 +186,7 @@ IF (BUILD_SHIBBOLETH_SUPPORT)
      ADD_DEFINITIONS(-DHAVE_SHIBBOLETH_SUPPORT)
  ENDIF()
  
@@ -12,7 +24,7 @@ Index: CMakeLists.txt
      SET(USE_QT_LIBRARIES ${USE_QT_LIBRARIES} "DBus")
  ENDIF()
  
-@@ -795,7 +795,7 @@ ENDIF()
+@@ -795,7 +796,7 @@ ENDIF()
  
  ## QtBus
  IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD")
