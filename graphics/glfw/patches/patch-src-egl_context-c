@@ -1,8 +1,8 @@
-$OpenBSD: patch-src-egl_context-c,v 1.3 2021/01/29 14:31:30 kmos Exp $
+$OpenBSD: patch-src-egl_context-c,v 1.4 2021/05/09 05:28:17 kmos Exp $
 Index: src/egl_context.c
 --- src/egl_context.c.orig
 +++ src/egl_context.c
-@@ -657,6 +657,8 @@ GLFWbool _glfwCreateContextEGL(_GLFWwindow* window,
+@@ -655,6 +655,8 @@ GLFWbool _glfwCreateContextEGL(_GLFWwindow* window,
              _GLFW_OPENGL_LIBRARY,
  #elif defined(_GLFW_WIN32)
  #elif defined(_GLFW_COCOA)

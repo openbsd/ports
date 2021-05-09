@@ -1,14 +1,16 @@
-$OpenBSD: patch-x11_init_c,v 1.1 2021/05/09 04:47:15 kmos Exp $
-diff --git src/x11_init.c src/x11_init.c
-index 87b3eb78..3d2a0bee 100644
---- src/x11_init.c
+$OpenBSD: patch-src_x11_init_c,v 1.1 2021/05/09 05:28:17 kmos Exp $
+
+Fix cursor hiding
+
+Index: src/x11_init.c
+--- src/x11_init.c.orig
 +++ src/x11_init.c
 @@ -710,6 +710,8 @@ static GLFWbool initExtensions(void)
  
  #if defined(__CYGWIN__)
      _glfw.x11.xcursor.handle = _glfw_dlopen("libXcursor-1.so");
 +#elif defined(__OpenBSD__)
-+    _glfw.x11.xcursor.handle = _glfw_dlopen("libXcursor.so.5.0");
++    _glfw.x11.xcursor.handle = _glfw_dlopen("libXcursor.so");
  #else
      _glfw.x11.xcursor.handle = _glfw_dlopen("libXcursor.so.1");
  #endif
