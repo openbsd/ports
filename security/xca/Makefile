@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2021/05/08 09:40:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2021/05/09 07:51:58 sthen Exp $
 
 COMMENT=	create and manage certificates, CSRs, keys, etc
 
@@ -35,6 +35,7 @@ LIB_DEPENDS=	devel/libtool,-ltdl \
 		x11/qt5/qttools,-main
 RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info
+BUILD_DEPENDS=	textproc/py-sphinx
 
 NO_TEST=	Yes
 
