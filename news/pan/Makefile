@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2021/05/09 08:57:02 ajacoutot Exp $
-
-BROKEN=		does not build with GLib >=2.68
+# $OpenBSD: Makefile,v 1.63 2021/05/09 09:09:05 ajacoutot Exp $
 
 COMMENT=	powerful newsreader
 
@@ -19,8 +17,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} atk-1.0 c cairo cairo-gobject enchant
 WANTLIB += enchant-2 gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmime-2.6
 WANTLIB += gmodule-2.0 gnome-keyring gnutls gobject-2.0 gthread-2.0
-WANTLIB += gtk-3 gtkspell3-3 iconv intl m notify pango-1.0 pangocairo-1.0
-WANTLIB += z
+WANTLIB += gtk-3 gtkspell3-3 harfbuzz iconv intl m notify pango-1.0
+WANTLIB += pangocairo-1.0 z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -39,8 +37,11 @@ LIB_DEPENDS=	devel/libnotify \
 RUN_DEPENDS=	devel/desktop-file-utils
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+
+# GLIB_VERSION_MIN_REQUIRED to fix build with GLib >=2.68
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_26" \
 		LDFLAGS="-L${LOCALBASE}/lib -liconv"
+
 CONFIGURE_ARGS=	--with-gtk3 --enable-libnotify --enable-gkr --with-gnutls
 
 .include <bsd.port.mk>
