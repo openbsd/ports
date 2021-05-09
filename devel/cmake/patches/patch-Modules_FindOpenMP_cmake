@@ -1,11 +1,11 @@
-$OpenBSD: patch-Modules_FindOpenMP_cmake,v 1.3 2020/05/25 05:12:00 rsadowski Exp $
+$OpenBSD: patch-Modules_FindOpenMP_cmake,v 1.4 2021/05/09 14:46:15 rsadowski Exp $
 
 Add libs and paths. Ensure the lib is used for the C case.
 
 Index: Modules/FindOpenMP.cmake
 --- Modules/FindOpenMP.cmake.orig
 +++ Modules/FindOpenMP.cmake
-@@ -95,8 +95,8 @@ function(_OPENMP_FLAG_CANDIDATES LANG)
+@@ -101,8 +101,8 @@ function(_OPENMP_FLAG_CANDIDATES LANG)
    if(NOT OpenMP_${LANG}_FLAG)
      unset(OpenMP_FLAG_CANDIDATES)
  
