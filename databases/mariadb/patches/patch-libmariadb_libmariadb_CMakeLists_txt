@@ -1,9 +1,9 @@
-$OpenBSD: patch-libmariadb_libmariadb_CMakeLists_txt,v 1.8 2020/11/05 11:57:59 sthen Exp $
+$OpenBSD: patch-libmariadb_libmariadb_CMakeLists_txt,v 1.9 2021/05/09 09:17:13 sthen Exp $
 
 Index: libmariadb/libmariadb/CMakeLists.txt
 --- libmariadb/libmariadb/CMakeLists.txt.orig
 +++ libmariadb/libmariadb/CMakeLists.txt
-@@ -397,6 +397,8 @@ ENDIF()
+@@ -398,6 +398,8 @@ ENDIF()
  ADD_LIBRARY(mariadbclient STATIC  ${MARIADB_OBJECTS} ${EMPTY_FILE})
  TARGET_LINK_LIBRARIES(mariadbclient ${SYSTEM_LIBS})
  

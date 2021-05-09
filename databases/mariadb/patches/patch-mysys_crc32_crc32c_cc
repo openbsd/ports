@@ -1,17 +1,15 @@
-$OpenBSD: patch-mysys_crc32_crc32c_cc,v 1.2 2021/02/23 14:29:03 sthen Exp $
+$OpenBSD: patch-mysys_crc32_crc32c_cc,v 1.3 2021/05/09 09:17:13 sthen Exp $
 
 Add support for OpenBSD/powerpc64.
 
 Index: mysys/crc32/crc32c.cc
 --- mysys/crc32/crc32c.cc.orig
 +++ mysys/crc32/crc32c.cc
-@@ -491,7 +491,18 @@ static int arch_ppc_probe(void) {
+@@ -528,6 +528,16 @@ static int arch_ppc_probe(void) {
  
    return arch_ppc_crc32;
  }
--#endif  // __linux__
 +#elif __OpenBSD__
-+
 +static int arch_ppc_probe(void) {
 +  arch_ppc_crc32 = 0;
 +
@@ -21,7 +19,6 @@ Index: mysys/crc32/crc32c.cc
 +
 +  return arch_ppc_crc32;
 +}
-+#endif  // __OpenBSD__
+ #endif  // __linux__
+ #endif
  
- static bool isAltiVec() {
-   if (arch_ppc_probe()) {

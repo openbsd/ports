@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.37 2020/11/05 11:57:59 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.38 2021/05/09 09:17:13 sthen Exp $
 @conflict mariadb-client-<=10.4.12v1
 @newgroup _mysql:502
 @newuser _mysql:502:_mysql:daemon:MySQL Account:/nonexistent:/sbin/nologin
@@ -556,7 +556,6 @@ libexec/mysqld
 share/doc/mysql/
 share/doc/mysql/COPYING
 share/doc/mysql/CREDITS
-share/doc/mysql/EXCEPTIONS-CLIENT
 share/doc/mysql/INSTALL-BINARY
 share/doc/mysql/README-wsrep
 share/doc/mysql/README.md
@@ -645,7 +644,6 @@ share/mysql/mysql_system_tables.sql
 share/mysql/mysql_system_tables_data.sql
 share/mysql/mysql_test_data_timezone.sql
 share/mysql/mysql_test_db.sql
-share/mysql/mysql_to_mariadb.sql
 share/mysql/norwegian/
 share/mysql/norwegian-ny/
 share/mysql/norwegian-ny/errmsg.sys
