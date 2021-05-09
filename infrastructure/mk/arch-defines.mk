@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.80 2021/04/10 15:36:13 patrick Exp $
+# $OpenBSD: arch-defines.mk,v 1.81 2021/05/09 08:17:47 sthen Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -12,12 +12,13 @@
 ARCH ?!= uname -m
 
 ALL_ARCHS = aarch64 alpha amd64 arm arm64 armv7 hppa i386 landisk loongson \
-	luna88k m88k macppc mips64 mips64el octeon powerpc64 sgi sh sparc64
+	luna88k m88k macppc mips64 mips64el octeon powerpc64 riscv64 sgi \
+	sh sparc64
 # not all powerpc have apm(4), hence the use of macppc
 APM_ARCHS = arm64 amd64 i386 loongson macppc sparc64
 BE_ARCHS = hppa m88k mips64 powerpc powerpc64 sparc64
-LE_ARCHS = aarch64 alpha amd64 arm i386 mips64el sh
-LP64_ARCHS = aarch64 alpha amd64 mips64 mips64el powerpc64 sparc64
+LE_ARCHS = aarch64 alpha amd64 arm i386 mips64el riscv64 sh
+LP64_ARCHS = aarch64 alpha amd64 mips64 mips64el powerpc64 riscv64 sparc64
 GCC4_ARCHS = alpha hppa sh sparc64
 GCC3_ARCHS = m88k
 # XXX easier for ports that depend on mono
@@ -28,9 +29,9 @@ GO_ARCHS = aarch64 amd64 arm arm64 armv7 i386
 RUST_ARCHS = aarch64 amd64 i386 sparc64
 
 # arches where the base compiler is clang
-CLANG_ARCHS = aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64
+CLANG_ARCHS = aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64 riscv64
 # arches using LLVM's linker (ld.lld); others use binutils' ld.bfd
-LLD_ARCHS = aarch64 amd64 arm i386 powerpc64
+LLD_ARCHS = aarch64 amd64 arm i386 powerpc64 riscv64
 
 # arches where ports devel/llvm builds - populates llvm ONLY_FOR_ARCHS
 # as well as available for PROPERTIES checks.
@@ -70,6 +71,7 @@ _LLD_EMUL_mips64 = elf64btsmip
 _LLD_EMUL_mips64el = elf64ltsmip
 _LLD_EMUL_powerpc = elf32ppc
 _LLD_EMUL_powerpc64 = elf64ppc
+_LLD_EMUL_riscv64 = elf64lriscv
 _LLD_EMUL_sparc64 = elf64_sparc
 .endif
 
