@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2021/05/02 13:09:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2021/05/10 19:32:49 kmos Exp $
 
 COMMENT=		library to handle keyboard descriptions
 
@@ -22,6 +22,9 @@ MASTER_SITES=		${HOMEPAGE}/download/
 EXTRACT_SUFX=		.tar.xz
 
 MODULES =		devel/meson
+
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 WANTLIB += c xcb xcb-xkb xml2
 
