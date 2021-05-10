@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2020/07/05 11:29:36 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2021/05/10 17:22:23 tb Exp $
 
 COMMENT = 	lightweight connection pooler for PostgreSQL
 
 V = 		1.14.0
 DISTNAME = 	pgbouncer-${V}
+REVISION =	0
 
 CATEGORIES = 	databases
 
