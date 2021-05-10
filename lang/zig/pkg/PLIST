@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/04/24 13:59:21 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/05/10 04:44:19 semarie Exp $
 @bin bin/zig
 lib/zig/
 lib/zig/include/
@@ -10132,7 +10132,6 @@ lib/zig/std/build/write_file.zig
 lib/zig/std/builtin.zig
 lib/zig/std/c/
 lib/zig/std/c.zig
-lib/zig/std/c/ast.zig
 lib/zig/std/c/builtins.zig
 lib/zig/std/c/darwin.zig
 lib/zig/std/c/dragonfly.zig
@@ -10145,7 +10144,6 @@ lib/zig/std/c/linux.zig
 lib/zig/std/c/minix.zig
 lib/zig/std/c/netbsd.zig
 lib/zig/std/c/openbsd.zig
-lib/zig/std/c/parse.zig
 lib/zig/std/c/solaris.zig
 lib/zig/std/c/tokenizer.zig
 lib/zig/std/c/windows.zig
@@ -10180,7 +10178,7 @@ lib/zig/std/crypto/benchmark.zig
 lib/zig/std/crypto/blake2.zig
 lib/zig/std/crypto/blake3.zig
 lib/zig/std/crypto/chacha20.zig
-lib/zig/std/crypto/error.zig
+lib/zig/std/crypto/errors.zig
 lib/zig/std/crypto/ghash.zig
 lib/zig/std/crypto/gimli.zig
 lib/zig/std/crypto/hkdf.zig
@@ -10189,6 +10187,15 @@ lib/zig/std/crypto/isap.zig
 lib/zig/std/crypto/md5.zig
 lib/zig/std/crypto/modes.zig
 lib/zig/std/crypto/pbkdf2.zig
+lib/zig/std/crypto/pcurves/
+lib/zig/std/crypto/pcurves/common.zig
+lib/zig/std/crypto/pcurves/p256/
+lib/zig/std/crypto/pcurves/p256.zig
+lib/zig/std/crypto/pcurves/p256/field.zig
+lib/zig/std/crypto/pcurves/p256/p256_64.zig
+lib/zig/std/crypto/pcurves/p256/p256_scalar_64.zig
+lib/zig/std/crypto/pcurves/p256/scalar.zig
+lib/zig/std/crypto/pcurves/tests.zig
 lib/zig/std/crypto/poly1305.zig
 lib/zig/std/crypto/salsa20.zig
 lib/zig/std/crypto/sha1.zig
@@ -10224,6 +10231,7 @@ lib/zig/std/fmt/errol.zig
 lib/zig/std/fmt/errol/enum3.zig
 lib/zig/std/fmt/errol/lookup.zig
 lib/zig/std/fmt/parse_float.zig
+lib/zig/std/fmt/parse_hex_float.zig
 lib/zig/std/fs/
 lib/zig/std/fs.zig
 lib/zig/std/fs/file.zig
@@ -10374,6 +10382,7 @@ lib/zig/std/os/bits/linux/arm-eabi.zig
 lib/zig/std/os/bits/linux/arm64.zig
 lib/zig/std/os/bits/linux/errno-generic.zig
 lib/zig/std/os/bits/linux/errno-mips.zig
+lib/zig/std/os/bits/linux/errno-sparc.zig
 lib/zig/std/os/bits/linux/i386.zig
 lib/zig/std/os/bits/linux/mips.zig
 lib/zig/std/os/bits/linux/netlink.zig
@@ -10410,6 +10419,7 @@ lib/zig/std/os/linux/powerpc64.zig
 lib/zig/std/os/linux/riscv64.zig
 lib/zig/std/os/linux/sparc64.zig
 lib/zig/std/os/linux/start_pie.zig
+lib/zig/std/os/linux/thumb.zig
 lib/zig/std/os/linux/tls.zig
 lib/zig/std/os/linux/vdso.zig
 lib/zig/std/os/linux/x86_64.zig
@@ -10602,6 +10612,14 @@ lib/zig/std/valgrind.zig
 lib/zig/std/valgrind/callgrind.zig
 lib/zig/std/valgrind/memcheck.zig
 lib/zig/std/wasm.zig
+lib/zig/std/x/
+lib/zig/std/x.zig
+lib/zig/std/x/net/
+lib/zig/std/x/net/ip.zig
+lib/zig/std/x/net/tcp.zig
+lib/zig/std/x/os/
+lib/zig/std/x/os/Socket.zig
+lib/zig/std/x/os/net.zig
 lib/zig/std/zig/
 lib/zig/std/zig.zig
 lib/zig/std/zig/ast.zig
@@ -10612,6 +10630,7 @@ lib/zig/std/zig/render.zig
 lib/zig/std/zig/string_literal.zig
 lib/zig/std/zig/system/
 lib/zig/std/zig/system.zig
+lib/zig/std/zig/system/linux.zig
 lib/zig/std/zig/system/macos.zig
 lib/zig/std/zig/system/windows.zig
 lib/zig/std/zig/system/x86.zig

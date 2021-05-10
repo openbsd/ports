@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/04/24 13:59:21 semarie Exp $
+# $OpenBSD: Makefile,v 1.6 2021/05/10 04:44:19 semarie Exp $
 
 # should be fine for ${LLVM_ARCHS}, but it needs insane amount of datasize
 ONLY_FOR_ARCHS =	amd64 arm64 powerpc64
@@ -11,11 +11,11 @@ DPB_PROPERTIES =	parallel
 
 COMMENT =	zig compiler and toolchain
 
-DISTNAME =	zig-0.8.0pre1939
+DISTNAME =	zig-0.8.0pre2168
 
 GH_ACCOUNT =	ziglang
 GH_PROJECT =	zig-bootstrap
-GH_COMMIT =	1f4ebdbb7dcf838b8cf36b89232b42fa679292c4
+GH_COMMIT =	97391bff373c151681d6ebbfb94f42d6259b8882
 
 CATEGORIES =	lang
 
