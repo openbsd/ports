@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.165 2021/01/26 18:29:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.166 2021/05/10 15:02:29 tb Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 BROKEN-arm =	invalid instruction, vmov.u32 r2, r3, s8, s9, related to FELightingNEON.cpp
@@ -23,24 +23,24 @@ PKGNAME-main =		qt4-${PKGVERSION}
 PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
-REVISION-main =		24
+REVISION-main =		25
 REVISION-mysql =	8
 REVISION-postgresql =	7
 REVISION-sqlite2 =	7
 REVISION-tds =		7
-REVISION-debug =	5
-REVISION-examples =	10
+REVISION-debug =	6
+REVISION-examples =	11
 REVISION-html =		4
 
 # XXX qmake include parser is bogus
 DPB_PROPERTIES =	parallel	nojunk
 
-SHARED_LIBS =	Qt3Support 10.0 \
+SHARED_LIBS =	Qt3Support 10.1 \
 		QtCore 10.0 \
 		QtDesigner 8.0 \
 		QtDesignerComponents 8.0 \
 		QtGui 11.0 \
-		QtNetwork 12.0 \
+		QtNetwork 12.1 \
 		QtSql 9.0 \
 		QtXml 9.0 \
 		QtSvg 8.0 \
@@ -48,7 +48,7 @@ SHARED_LIBS =	Qt3Support 10.0 \
 		QtDBus 4.0 \
 		QtScript 3.0 \
 		QtCLucene 2.0 \
-		QtHelp 3.0 \
+		QtHelp 3.1 \
 		QtScriptTools 1.0
 
 VERSION =	4.8.7

@@ -1,9 +1,18 @@
-$OpenBSD: patch-src_network_ssl_qsslsocket_openssl_symbols_p_h,v 1.2 2019/11/12 09:55:51 tb Exp $
+$OpenBSD: patch-src_network_ssl_qsslsocket_openssl_symbols_p_h,v 1.3 2021/05/10 15:02:29 tb Exp $
 
 Index: src/network/ssl/qsslsocket_openssl_symbols_p.h
 --- src/network/ssl/qsslsocket_openssl_symbols_p.h.orig
 +++ src/network/ssl/qsslsocket_openssl_symbols_p.h
-@@ -360,6 +360,8 @@ int q_X509_get_ext_count(X509 *a);
+@@ -294,6 +294,8 @@ int q_SSL_CTX_use_PrivateKey(SSL_CTX *a, EVP_PKEY *b);
+ int q_SSL_CTX_use_RSAPrivateKey(SSL_CTX *a, RSA *b);
+ int q_SSL_CTX_use_PrivateKey_file(SSL_CTX *a, const char *b, int c);
+ void q_SSL_free(SSL *a);
++X509_STORE *q_SSL_CTX_get_cert_store(const SSL_CTX *a);
++int q_SSL_CIPHER_get_bits(const SSL_CIPHER *c, int *alg_bits);
+ #if OPENSSL_VERSION_NUMBER >= 0x00908000L
+ // 0.9.8 broke SC and BC by changing this function's signature.
+ STACK_OF(SSL_CIPHER) *q_SSL_get_ciphers(const SSL *a);
+@@ -360,6 +362,8 @@ int q_X509_get_ext_count(X509 *a);
  void *q_X509_get_ext_d2i(X509 *a, int b, int *c, int *d);
  X509_NAME *q_X509_get_issuer_name(X509 *a);
  X509_NAME *q_X509_get_subject_name(X509 *a);
@@ -12,7 +21,7 @@ Index: src/network/ssl/qsslsocket_openssl_symbols_p.h
  int q_X509_verify_cert(X509_STORE_CTX *ctx);
  int q_X509_NAME_entry_count(X509_NAME *a);
  X509_NAME_ENTRY *q_X509_NAME_get_entry(X509_NAME *a,int b);
-@@ -410,8 +412,8 @@ DSA *q_d2i_DSAPrivateKey(DSA **a, unsigned char **pp, 
+@@ -410,8 +414,8 @@ DSA *q_d2i_DSAPrivateKey(DSA **a, unsigned char **pp, 
  #define q_sk_SSL_CIPHER_value(st, i) q_SKM_sk_value(SSL_CIPHER, (st), (i))
  #define q_SSL_CTX_add_extra_chain_cert(ctx,x509) \
          q_SSL_CTX_ctrl(ctx,SSL_CTRL_EXTRA_CHAIN_CERT,0,(char *)x509)
