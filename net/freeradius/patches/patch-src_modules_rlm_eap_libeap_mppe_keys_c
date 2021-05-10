@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_modules_rlm_eap_libeap_mppe_keys_c,v 1.1 2021/05/10 14:53:33 tb Exp $
+
+Index: src/modules/rlm_eap/libeap/mppe_keys.c
+--- src/modules/rlm_eap/libeap/mppe_keys.c.orig
++++ src/modules/rlm_eap/libeap/mppe_keys.c
+@@ -233,9 +233,8 @@ void eaptls_gen_eap_key(SSL *s, uint32_t header, VALUE
+ 	if (!vp) return;
+ 
+ 	vp->vp_octets[0] = header & 0xff;
+-	memcpy(vp->vp_octets + 1, s->s3->client_random, SSL3_RANDOM_SIZE);
+-	memcpy(vp->vp_octets + 1 + SSL3_RANDOM_SIZE,
+-	       s->s3->server_random, SSL3_RANDOM_SIZE);
++	SSL_get_client_random(s, vp->vp_octets + 1, SSL3_RANDOM_SIZE);
++	SSL_get_server_random(s, vp->vp_octets + 1 + SSL3_RANDOM_SIZE, SSL3_RANDOM_SIZE);
+ 	vp->length = 1 + 2 * SSL3_RANDOM_SIZE;
+ 	pairadd(vps, vp);
+ }
