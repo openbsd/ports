@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2021/03/16 14:15:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2021/05/10 15:26:10 jasper Exp $
 
 .include <bsd.port.arch.mk>
+
+BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
 
 USE_WXNEEDED=		Yes
 
@@ -10,10 +12,11 @@ DPB_PROPERTIES=		parallel parallel2
 DPB_PROPERTIES=		lonesome
 .endif
 
-COMMENT=		Chromium browser
+COMMENT=		cross platform desktop applications
 
 ECV=			80.0.3987.158
 ELECTRON_V=		8.2.0
+REVISION =		0
 
 DISTFILES+=		chromium-${ECV}${EXTRACT_SUFX} \
 			electron-${ELECTRON_V}_${ECV}${EXTRACT_SUFX}:0 \
