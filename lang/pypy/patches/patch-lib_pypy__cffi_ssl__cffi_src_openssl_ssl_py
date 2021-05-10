@@ -1,8 +1,17 @@
-$OpenBSD: patch-lib_pypy__cffi_ssl__cffi_src_openssl_ssl_py,v 1.2 2021/03/31 17:17:25 tb Exp $
+$OpenBSD: patch-lib_pypy__cffi_ssl__cffi_src_openssl_ssl_py,v 1.3 2021/05/10 17:26:04 tb Exp $
 
 Index: lib_pypy/_cffi_ssl/_cffi_src/openssl/ssl.py
 --- lib_pypy/_cffi_ssl/_cffi_src/openssl/ssl.py.orig
 +++ lib_pypy/_cffi_ssl/_cffi_src/openssl/ssl.py
+@@ -552,7 +552,7 @@ int SSL_CTX_set_max_early_data(SSL_CTX *, uint32_t);
+ CUSTOMIZATIONS = """
+ /* Added in 1.0.2 but we need it in all versions now due to the great
+    opaquing. */
+-#if CRYPTOGRAPHY_OPENSSL_LESS_THAN_102
++#if CRYPTOGRAPHY_OPENSSL_LESS_THAN_102 && !CRYPTOGRAPHY_IS_LIBRESSL
+ /* from ssl/ssl_lib.c */
+ const SSL_METHOD *SSL_CTX_get_ssl_method(SSL_CTX *ctx) {
+     return ctx->method;
 @@ -729,8 +729,6 @@ const SSL_METHOD *(*DTLS_client_method)(void) = NULL;
  static const long Cryptography_HAS_GENERIC_DTLS_METHOD = 1;
  #endif
