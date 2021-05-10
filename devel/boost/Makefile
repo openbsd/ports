@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2021/05/06 11:36:14 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.113 2021/05/10 15:08:50 tb Exp $
 
 ONLY_FOR_ARCHS-md = aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64
 
@@ -13,7 +13,7 @@ CATEGORIES=	devel
 MASTER_SITES=	https://boostorg.jfrog.io/artifactory/main/release/${VERSION}/source/
 EXTRACT_SUFX=	.tar.bz2
 FIX_EXTRACT_PERMISSIONS =	Yes
-REVISION-main=	0
+REVISION-main=	1
 
 SO_VERSION=	14.0
 BOOST_LIBS=	boost_atomic-mt \
