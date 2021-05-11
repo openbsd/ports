@@ -1,0 +1,17 @@
+$OpenBSD: patch-Source_WTF_wtf_Atomics_cpp,v 1.1 2021/05/11 15:33:59 cwen Exp $
+
+powerpc fix: don't redefine 64-bits __sync_* built-ins operators
+
+Index: Source/WTF/wtf/Atomics.cpp
+--- Source/WTF/wtf/Atomics.cpp.orig
++++ Source/WTF/wtf/Atomics.cpp
+@@ -32,7 +32,8 @@
+ // (http://gcc.gnu.org/bugzilla/show_bug.cgi?id=56296). GCC >= 4.8 will support __atomic_* builtin
+ // functions for this purpose for all the GCC targets, but for current compilers we have to include
+ // our own implementation.
+-#if COMPILER(GCC_OR_CLANG) && !defined(__GCC_HAVE_SYNC_COMPARE_AND_SWAP_8) && USE(PTHREADS)
++#if !defined(__powerpc__) \
++    && COMPILER(GCC_OR_CLANG) && !defined(__GCC_HAVE_SYNC_COMPARE_AND_SWAP_8) && USE(PTHREADS)
+ 
+ #include "ThreadingPrimitives.h"
+ 
