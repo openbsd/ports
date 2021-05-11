@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2021/04/27 05:26:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2021/05/11 13:20:14 rsadowski Exp $
 
 COMMENT =	KDE development helper scripts
 DISTNAME =	kde-dev-scripts-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/development/
 
@@ -12,7 +13,8 @@ MODKDE5_DOCS = yes
 MODULES +=	lang/python \
 		perl
 
-RUN_DEPENDS =	math/graphviz
+RUN_DEPENDS =	math/graphviz \
+		shells/bash
 
 MODPERL_ADJ_FILES = \
 	colorsvn \
@@ -42,5 +44,8 @@ MODPY_ADJ_FILES = \
 	kdelnk2desktop.py \
 	reviewboard-am \
 	zonetab2pot.py \
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/draw_lib_dependencies
 
 .include <bsd.port.mk>

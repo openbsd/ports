@@ -1,0 +1,21 @@
+$OpenBSD: patch-draw_lib_dependencies,v 1.1 2021/05/11 13:20:14 rsadowski Exp $
+
+
+Index: draw_lib_dependencies
+--- draw_lib_dependencies.orig
++++ draw_lib_dependencies
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!${LOCALBASE}/bin/bash
+ 
+ # Copyright 2013 Dominik Seichter <domseichter@googlemail.com>
+ # 
+@@ -95,7 +95,7 @@ analyze()
+                 exit 1
+             fi
+  
+-            DEPPATH=$(grep -- "$DEP" "$LDDTMPFILE" | awk '{print $3}')
++            DEPPATH=$(grep -- "$DEP" "$LDDTMPFILE" | awk '{print $7}')
+             if [ -n "$DEPPATH" ];
+             then
+                 echo "  \"$NAME\" -> \"$DEP\";" >> $OUT
