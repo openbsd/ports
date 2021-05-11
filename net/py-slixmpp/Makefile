@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2021/03/01 16:45:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/05/11 15:46:29 kmos Exp $
 
 COMMENT =		slixmpp is an elegant Python library for XMPP
 
-MODPY_EGG_VERSION =	1.5.2
-REVISION =		0
+MODPY_EGG_VERSION =	1.7.1
 DISTNAME =		slixmpp-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		net
