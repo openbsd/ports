@@ -1,7 +1,11 @@
-$OpenBSD: patch-parser_c,v 1.20 2020/02/01 20:35:32 bluhm Exp $
+$OpenBSD: patch-parser_c,v 1.21 2021/05/11 07:39:24 bluhm Exp $
 
 https://gitlab.gnome.org/GNOME/libxml2/commit/0e1a49c89076
 CVE-2020-7595
+
+https://bugzilla.redhat.com/show_bug.cgi?id=1956522
+https://gitlab.gnome.org/GNOME/libxml2/commit/babe75030c7f64a37826bb3342317134568bef61
+CVE-2021-3537
 
 Index: parser.c
 --- parser.c.orig
@@ -16,3 +20,24 @@ Index: parser.c
  
  	if (c == 0) break;
          if ((c == '&') && (str[1] == '#')) {
+@@ -6194,6 +6195,8 @@ xmlParseElementChildrenContentDeclPriv(xmlParserCtxtPt
+ 	SKIP_BLANKS;
+         cur = ret = xmlParseElementChildrenContentDeclPriv(ctxt, inputid,
+                                                            depth + 1);
++        if (cur == NULL)
++            return(NULL);
+ 	SKIP_BLANKS;
+ 	GROW;
+     } else {
+@@ -6327,6 +6330,11 @@ xmlParseElementChildrenContentDeclPriv(xmlParserCtxtPt
+ 	    SKIP_BLANKS;
+ 	    last = xmlParseElementChildrenContentDeclPriv(ctxt, inputid,
+                                                           depth + 1);
++            if (last == NULL) {
++		if (ret != NULL)
++		    xmlFreeDocElementContent(ctxt->myDoc, ret);
++		return(NULL);
++            }
+ 	    SKIP_BLANKS;
+ 	} else {
+ 	    elem = xmlParseName(ctxt);
