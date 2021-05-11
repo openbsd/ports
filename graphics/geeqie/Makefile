@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2021/05/09 22:18:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2021/05/11 06:23:39 ajacoutot Exp $
 
 COMMENT=		lightweight Gtk+3 based image viewer
 
@@ -55,6 +55,10 @@ AUTOCONF_VERSION=	2.71
 AUTOMAKE_VERSION=	1.16
 AUTORECONF=		./autogen.sh
 MAKE_ENV=		MKDIR_P='mkdir -p'
+
+# XXX
+# lxml.ElementInclude.FatalIncludeError: cannot load 'GuideMainWindowFilePane.xml' as 'xml'
+CONFIGURE_ENV +=	ac_cv_path_GNOME_DOC_TOOL=
 
 post-install:
 	rm -rf ${PREFIX}/share/doc/
