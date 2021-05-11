@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/11/05 20:37:31 tracey Exp $
+# $OpenBSD: Makefile,v 1.2 2021/05/11 19:09:34 tracey Exp $
 
 COMMENT =		tool for isolation, routing, and drilling of PCBs
-V =			2.1.0
+V =			2.4.0
 
 GH_ACCOUNT =		pcb2gcode
 GH_PROJECT =		pcb2gcode
