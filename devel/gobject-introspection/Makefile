@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.105 2021/02/23 19:39:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.106 2021/05/11 19:56:02 jasper Exp $
 
 COMMENT=		GObject Introspection
 
-GNOME_VERSION=		1.66.1
+GNOME_VERSION=		1.68.0
 GNOME_PROJECT=		gobject-introspection
-REVISION=		0
 
 CATEGORIES=		devel
 
@@ -21,8 +20,7 @@ MODULES=		devel/meson \
 			lang/python \
 			x11/gnome
 
-WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += intl m pthread
+WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 m
 
 LIB_DEPENDS=		devel/glib2
 
