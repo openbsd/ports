@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_Makefile,v 1.40 2021/03/16 21:18:38 tb Exp $
+$OpenBSD: patch-src_Makefile,v 1.41 2021/05/11 00:17:53 danj Exp $
 
 Changes in this file:
 - do not use -funwind-tables and -latomic on armv7
@@ -16,16 +16,16 @@ Index: src/Makefile
  endif
  endif
  
-@@ -98,7 +98,7 @@ ifneq (,$(filter aarch64 armv,$(uname_M)))
-         FINAL_LIBS+=-latomic
- else
+@@ -95,7 +95,7 @@ DEBUG=-g -ggdb
+ 
+ # Linux ARM32 needs -latomic at linking time
  ifneq (,$(findstring armv,$(uname_M)))
 -        FINAL_LIBS+=-latomic
 +#        FINAL_LIBS+=-latomic
  endif
- endif
  
-@@ -376,7 +376,7 @@ distclean: clean
+ ifeq ($(uname_S),SunOS)
+@@ -380,7 +380,7 @@ distclean: clean
  .PHONY: distclean
  
  test: $(REDIS_SERVER_NAME) $(REDIS_CHECK_AOF_NAME) $(REDIS_CLI_NAME) $(REDIS_BENCHMARK_NAME)
@@ -34,12 +34,12 @@ Index: src/Makefile
  
  test-sentinel: $(REDIS_SENTINEL_NAME) $(REDIS_CLI_NAME)
  	@(cd ..; ./runtest-sentinel)
-@@ -416,7 +416,7 @@ src/help.h:
+@@ -420,7 +420,7 @@ src/help.h:
  	@../utils/generate-command-help.rb > help.h
  
  install: all
 -	@mkdir -p $(INSTALL_BIN)
 +	$(INSTALL_DIR) $(INSTALL_BIN)
- 	$(REDIS_INSTALL) $(REDIS_SERVER_NAME) $(INSTALL_BIN)
- 	$(REDIS_INSTALL) $(REDIS_BENCHMARK_NAME) $(INSTALL_BIN)
- 	$(REDIS_INSTALL) $(REDIS_CLI_NAME) $(INSTALL_BIN)
+ 	$(call MAKE_INSTALL,$(REDIS_SERVER_NAME),$(INSTALL_BIN))
+ 	$(call MAKE_INSTALL,$(REDIS_BENCHMARK_NAME),$(INSTALL_BIN))
+ 	$(call MAKE_INSTALL,$(REDIS_CLI_NAME),$(INSTALL_BIN))
