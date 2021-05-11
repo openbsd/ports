@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/04/24 23:52:31 bcallah Exp $
+# $OpenBSD: Makefile,v 1.9 2021/05/11 19:48:18 kmos Exp $
 
 COMMENT =	small and easy to use console text editor
 DISTNAME =	dte-1.10
@@ -13,6 +13,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c iconv
 
 MASTER_SITES =	https://craigbarnes.gitlab.io/dist/dte/
+
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS =	c
 
 LIB_DEPENDS =	converters/libiconv
 
