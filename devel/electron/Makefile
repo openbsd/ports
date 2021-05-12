@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/05/10 15:26:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2021/05/12 11:05:12 naddy Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -12,11 +12,11 @@ DPB_PROPERTIES=		parallel parallel2
 DPB_PROPERTIES=		lonesome
 .endif
 
-COMMENT=		cross platform desktop applications
+COMMENT=		cross-platform desktop applications
 
 ECV=			80.0.3987.158
 ELECTRON_V=		8.2.0
-REVISION =		0
+REVISION=		2
 
 DISTFILES+=		chromium-${ECV}${EXTRACT_SUFX} \
 			electron-${ELECTRON_V}_${ECV}${EXTRACT_SUFX}:0 \
@@ -112,7 +112,6 @@ WRKDIST=		${WRKDIR}/chromium-${ECV}
 ALL_TARGET=		electron
 DIST_TARGET=		dist.zip chromedriver.zip mksnapshot.zip
 DIST_TARGET_DIR=	electron
-REVISION=		1
 
 BUILD_DEPENDS+=		devel/libnotify
 LIB_DEPENDS+=		www/nghttp2
