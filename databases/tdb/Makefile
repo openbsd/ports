@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.35 2021/03/12 00:41:36 jca Exp $
+# $OpenBSD: Makefile,v 1.36 2021/05/12 23:30:53 jca Exp $
 
 COMMENT-main=	trivial database library
 COMMENT-python=	Python ${MODPY_VERSION} bindings for tdb
 
 # Keep in sync with the version bundled in net/samba
-V=		1.3.18
-REVISION=	0
+V=		1.4.3
 
 DISTNAME=	tdb-$V
 PKGNAME-main=	${DISTNAME}
-PKGNAME-python=	py-${DISTNAME}
+PKGNAME-python=	py3-${DISTNAME}
 
 MULTI_PACKAGES=	-main -python
 
@@ -28,14 +27,15 @@ MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB-main=	c pthread
-WANTLIB-python=	intl m pthread tdb util ${MODPY_WANTLIB}
+WANTLIB-python=	intl m pthread tdb util
+# Extra
+WANTLIB-python+=${MODPY_WANTLIB}
 
 MASTER_SITES=	https://download.samba.org/pub/tdb/
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 MODULES=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP=	No
 MODPY_ADJ_FILES= buildtools/bin/waf
 
