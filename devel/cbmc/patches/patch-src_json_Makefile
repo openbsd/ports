@@ -1,18 +1,20 @@
-$OpenBSD: patch-src_json_Makefile,v 1.1 2021/05/09 13:27:14 millert Exp $
+$OpenBSD: patch-src_json_Makefile,v 1.2 2021/05/12 14:44:18 naddy Exp $
 Newer bison includes the defines file in the parser so the name must match.
 
 Index: src/json/Makefile
 --- src/json/Makefile.orig
 +++ src/json/Makefile
-@@ -16,11 +16,7 @@ json$(LIBEXT): $(OBJ)
+@@ -15,12 +15,8 @@ all: json$(LIBEXT)
+ json$(LIBEXT): $(OBJ)
  	$(LINKLIB)
  
- json_y.tab.cpp: parser.y
+-json_y.tab.cpp: parser.y
 -	$(YACC) $(YFLAGS) $$flags -pyyjson -d parser.y -o $@
 -
 -json_y.tab.h: json_y.tab.cpp
 -	if [ -e json_y.tab.hpp ] ; then mv json_y.tab.hpp $@ ; else \
 -        mv json_y.tab.cpp.h $@ ; fi
++json_y.tab.cpp json_y.tab.h: parser.y
 +	$(YACC) $(YFLAGS) $$flags -pyyjson --defines=json_y.tab.h parser.y -o $@
  
  json_lex.yy.cpp: scanner.l

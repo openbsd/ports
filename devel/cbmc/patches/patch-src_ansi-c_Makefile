@@ -1,18 +1,20 @@
-$OpenBSD: patch-src_ansi-c_Makefile,v 1.1 2021/05/09 13:27:14 millert Exp $
+$OpenBSD: patch-src_ansi-c_Makefile,v 1.2 2021/05/12 14:44:18 naddy Exp $
 Newer bison includes the defines file in the parser so the name must match.
 
 Index: src/ansi-c/Makefile
 --- src/ansi-c/Makefile.orig
 +++ src/ansi-c/Makefile
-@@ -37,11 +37,7 @@ all: ansi-c$(LIBEXT)
+@@ -36,12 +36,8 @@ all: ansi-c$(LIBEXT)
+ 
  ###############################################################################
  
- ansi_c_y.tab.cpp: parser.y
+-ansi_c_y.tab.cpp: parser.y
 -	$(YACC) $(YFLAGS) $$flags -pyyansi_c -d parser.y -o $@
 -
 -ansi_c_y.tab.h: ansi_c_y.tab.cpp
 -	if [ -e ansi_c_y.tab.hpp ] ; then mv ansi_c_y.tab.hpp ansi_c_y.tab.h ; else \
 -        mv ansi_c_y.tab.cpp.h ansi_c_y.tab.h ; fi
++ansi_c_y.tab.cpp ansi_c_y.tab.h: parser.y
 +	$(YACC) $(YFLAGS) $$flags -pyyansi_c --defines=ansi_c_y.tab.h parser.y -o $@
  
  ansi_c_lex.yy.cpp: scanner.l
