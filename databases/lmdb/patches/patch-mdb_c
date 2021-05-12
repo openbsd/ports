@@ -1,11 +1,11 @@
-$OpenBSD: patch-mdb_c,v 1.6 2020/04/14 09:06:42 chrisz Exp $
+$OpenBSD: patch-mdb_c,v 1.7 2021/05/12 23:37:31 jca Exp $
 
 enforce MDB_WRITEMAP, because we have no UBC (Unified Buffer Cache).
 
 Index: mdb.c
 --- mdb.c.orig
 +++ mdb.c
-@@ -4968,6 +4967,7 @@ mdb_env_open(MDB_env *env, const char *path, unsigned 
+@@ -4976,6 +4976,7 @@ mdb_env_open(MDB_env *env, const char *path, unsigned 
  		/* silently ignore WRITEMAP when we're only getting read access */
  		flags &= ~MDB_WRITEMAP;
  	} else {

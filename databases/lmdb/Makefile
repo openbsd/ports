@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2020/04/14 09:06:42 chrisz Exp $
+# $OpenBSD: Makefile,v 1.10 2021/05/12 23:37:31 jca Exp $
 
 COMMENT =	Symas Lightning Memory-Mapped Database
 
-VERSION =	0.9.24
+VERSION =	0.9.29
 
-GH_ACCOUNT =	LMDB
-GH_PROJECT =	lmdb
-GH_TAGNAME =	LMDB_${VERSION}
-
-DISTNAME =	${GH_PROJECT}-${VERSION}
+DISTNAME =	openldap-LMDB_${VERSION}
+PKGNAME =	lmdb-${VERSION}
 
 SHARED_LIBS +=  lmdb                      0.0 # 0.0
 
@@ -23,6 +20,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c pthread
 
+MASTER_SITES =		https://git.openldap.org/openldap/openldap/-/archive/LMDB_${VERSION}/
+
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 USE_GMAKE =		Yes
@@ -31,6 +30,6 @@ MAKE_FLAGS =		CC="${CC}" XCFLAGS="${CFLAGS}" \
 			SHARED_VERSION_MAJOR=${LIBlmdb_VERSION:R} \
 			SHARED_VERSION_MINOR=${LIBlmdb_VERSION:E}
 
-WRKDIST =		${WRKDIR}/lmdb-${GH_TAGNAME}/libraries/liblmdb
+WRKDIST =		${WRKDIR}/openldap-LMDB_${VERSION}/libraries/liblmdb
 
 .include <bsd.port.mk>
