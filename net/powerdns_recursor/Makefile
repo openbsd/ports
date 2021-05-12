@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2021/03/31 08:04:31 otto Exp $
+# $OpenBSD: Makefile,v 1.19 2021/05/12 05:49:47 otto Exp $
 
 COMMENT=		recursive nameserver
 
-V=			4.4.3
+V=			4.5.1
 DISTNAME=		pdns-recursor-${V}
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME=		powerdns-recursor-${V}
@@ -16,7 +16,7 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB+=		${COMPILER_LIBCXX} boost_context-mt boost_filesystem-mt
 WANTLIB+=		boost_system-mt boost_thread-mt c crypto fstrm m
-WANTLIB+=		protobuf sodium z
+WANTLIB+=		sodium z
 
 MASTER_SITES=		https://downloads.powerdns.com/releases/
 MAINTAINER=     	Otto Moerbeek <otto@drijf.net>
@@ -27,7 +27,6 @@ NO_TEST=		Yes
 
 LIB_DEPENDS=		devel/boost \
 			devel/boost,-md \
-			devel/protobuf \
 			net/libfstrm \
 			security/libsodium
 
@@ -44,14 +43,13 @@ USE_GMAKE=		Yes
 
 CONFIGURE_ARGS+=	--disable-botan \
 			--disable-libdecaf \
-			--with-protobuf \
 			--enable-dnstap \
 			--with-lua=${MODLUA_DEP} \
 			--without-net-snmp \
 			--without-systemd
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
-			CXXFLAGS="-Wno-deprecated-copy" \
+			CXXFLAGS="-Wno-deprecated-copy -Wno-deprecated-declarations" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 EXAMPLE_DIR=            ${PREFIX}/share/examples/pdns/
