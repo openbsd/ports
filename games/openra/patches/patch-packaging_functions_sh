@@ -1,0 +1,19 @@
+$OpenBSD: patch-packaging_functions_sh,v 1.1 2021/05/12 13:52:49 patrick Exp $
+
+disable geoip and configure-system-libraries stuff
+
+Index: packaging/functions.sh
+--- packaging/functions.sh.orig
++++ packaging/functions.sh
+@@ -36,11 +36,7 @@ install_assemblies_mono() {
+ 	msbuild -verbosity:m -nologo -t:Clean
+ 	rm -rf "${SRC_PATH:?}/bin"
+ 	msbuild -verbosity:m -nologo -t:Build -restore -p:Configuration=Release -p:TargetPlatform="${TARGETPLATFORM}"
+-	if [ "${TARGETPLATFORM}" = "unix-generic" ]; then
+-		./configure-system-libraries.sh
+-	fi
+ 
+-	./fetch-geoip.sh
+ 	cd "${ORIG_PWD}" || exit 1
+ 
+ 	echo "Installing engine to ${DEST_PATH}"

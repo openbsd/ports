@@ -1,0 +1,15 @@
+$OpenBSD: patch-OpenRA_Mods_Common_Widgets_Logic_MapChooserLogic_cs,v 1.1 2021/05/12 13:52:49 patrick Exp $
+
+Index: OpenRA.Mods.Common/Widgets/Logic/MapChooserLogic.cs
+--- OpenRA.Mods.Common/Widgets/Logic/MapChooserLogic.cs.orig
++++ OpenRA.Mods.Common/Widgets/Logic/MapChooserLogic.cs
+@@ -210,7 +210,8 @@ namespace OpenRA.Mods.Common.Widgets.Logic
+ 				gameModeDropdown.GetText = () =>
+ 				{
+ 					var item = categories.FirstOrDefault(m => m.Category == category);
+-					if (item == default((string, int)))
++					if (item.Category == default(string) &&
++					    item.Count == default(int))
+ 						item.Category = "No matches";
+ 
+ 					return showItem(item);

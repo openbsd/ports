@@ -1,16 +1,14 @@
-$OpenBSD: patch-launch-dedicated_sh,v 1.2 2020/06/17 15:24:30 thfr Exp $
-
-full path for the assembly
+$OpenBSD: patch-launch-dedicated_sh,v 1.3 2021/05/12 13:52:49 patrick Exp $
 
 Index: launch-dedicated.sh
 --- launch-dedicated.sh.orig
 +++ launch-dedicated.sh
-@@ -24,7 +24,7 @@ ShareAnonymizedIPs="${ShareAnonymizedIPs:-"True"}"
+@@ -25,7 +25,7 @@ ShareAnonymizedIPs="${ShareAnonymizedIPs:-"True"}"
  SupportDir="${SupportDir:-""}"
  
  while true; do
--     mono --debug OpenRA.Server.exe Game.Mod="$Mod" \
-+     mono --debug ${PREFIX}/share/openra/OpenRA.Server.exe Game.Mod="$Mod" \
+-     mono --debug bin/OpenRA.Server.exe Engine.EngineDir=".." Game.Mod="$Mod" \
++     mono --debug ${PREFIX}/share/openra/OpenRA.Server.exe Engine.EngineDir=".." Game.Mod="$Mod" \
       Server.Name="$Name" \
       Server.ListenPort="$ListenPort" \
       Server.AdvertiseOnline="$AdvertiseOnline" \

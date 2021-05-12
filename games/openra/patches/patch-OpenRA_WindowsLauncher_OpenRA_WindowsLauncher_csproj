@@ -1,0 +1,14 @@
+$OpenBSD: patch-OpenRA_WindowsLauncher_OpenRA_WindowsLauncher_csproj,v 1.1 2021/05/12 13:52:49 patrick Exp $
+
+Index: OpenRA.WindowsLauncher/OpenRA.WindowsLauncher.csproj
+--- OpenRA.WindowsLauncher/OpenRA.WindowsLauncher.csproj.orig
++++ OpenRA.WindowsLauncher/OpenRA.WindowsLauncher.csproj
+@@ -5,7 +5,7 @@
+     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+     <Optimize>true</Optimize>
+     <UseVSHostingProcess>false</UseVSHostingProcess>
+-    <LangVersion>7.3</LangVersion>
++    <LangVersion>7.2</LangVersion>
+     <DebugSymbols>true</DebugSymbols>
+     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+     <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>

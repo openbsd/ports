@@ -1,15 +1,15 @@
-$OpenBSD: patch-launch-game_sh,v 1.2 2019/04/02 18:52:40 ajacoutot Exp $
-
-don't use python for determining the path of the launcher
-set correct path for launching
-replace the bashism [ z"${*#*Game.Mod}" = z"$*" ] with something more portable
+$OpenBSD: patch-launch-game_sh,v 1.3 2021/05/12 13:52:49 patrick Exp $
 
 Index: launch-game.sh
 --- launch-game.sh.orig
 +++ launch-game.sh
-@@ -1,10 +1,21 @@
+@@ -1,14 +1,21 @@
  #!/bin/sh
--MODLAUNCHER=$(python -c "import os; print(os.path.realpath('$0'))")
+-if command -v python3 >/dev/null 2>&1; then
+-	 MODLAUNCHER=$(python3 -c "import os; print(os.path.realpath('$0'))")
+-else
+-	 MODLAUNCHER=$(python -c "import os; print(os.path.realpath('$0'))")
+-fi
 +MODLAUNCHER=$(readlink -f $0)
  
  # Prompt for a mod to launch if one is not already specified
@@ -32,12 +32,12 @@ Index: launch-game.sh
  	if command -v zenity > /dev/null
  	then
  		TITLE=$(zenity --forms --add-combo="" --combo-values="Red Alert|Tiberian Dawn|Dune 2000|Tiberian Sun" --text "Select mod" --title="" || echo "cancel")
-@@ -21,7 +32,7 @@ then
+@@ -25,7 +32,7 @@ then
  fi
  
  # Launch the engine with the appropriate arguments
--mono OpenRA.Game.exe Engine.LaunchPath="$MODLAUNCHER" $MODARG "$@"
-+mono ${PREFIX}/share/openra/OpenRA.Game.exe Engine.LaunchPath="$MODLAUNCHER" $MODARG "$ARGLIST"
+-mono bin/OpenRA.exe Engine.EngineDir=".." Engine.LaunchPath="$MODLAUNCHER" $MODARG "$@"
++mono ${PREFIX}/share/openra/OpenRA.exe Engine.EngineDir=".." Engine.LaunchPath="$MODLAUNCHER" $MODARG "$@"
  
  # Show a crash dialog if something went wrong
  if [ $? != 0 ] && [ $? != 1 ]; then

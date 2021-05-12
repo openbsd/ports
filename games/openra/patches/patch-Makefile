@@ -1,72 +1,58 @@
-$OpenBSD: patch-Makefile,v 1.3 2020/06/17 15:24:30 thfr Exp $
+$OpenBSD: patch-Makefile,v 1.4 2021/05/12 13:52:49 patrick Exp $
 
 set the installdir to PREFIX/share rather than PREFIX/lib
 hardcode VERSION, instead of getting it from git
 don't install IP2LOCATION-LITE-DB1.IPV6.BIN.ZIP; use libmaxminddb from
 ports instead
+disable the script configure-system-libraries.sh which hardcodes shared libs
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -58,7 +58,7 @@ datadir ?= $(datarootdir)
+@@ -50,11 +50,11 @@ datadir ?= $(datarootdir)
  mandir ?= $(datarootdir)/man/
  bindir ?= $(prefix)/bin
  libdir ?= $(prefix)/lib
 -gameinstalldir ?= $(libdir)/openra
 +gameinstalldir ?= $(datarootdir)/openra
  
- BIN_INSTALL_DIR = $(DESTDIR)$(bindir)
- DATA_INSTALL_DIR = $(DESTDIR)$(gameinstalldir)
-@@ -76,13 +76,13 @@ INSTALL_PROGRAM = $(INSTALL) -m755
- INSTALL_DATA = $(INSTALL) -m644
- 
  # Toolchain
+ CWD = $(shell pwd)
 -MSBUILD = msbuild -verbosity:m -nologo
 +MSBUILD = msbuild -verbosity:d -nologo -clp:DisableConsoleColor
+ MONO = mono
+ RM = rm
+ RM_R = $(RM) -r
+@@ -62,7 +62,7 @@ RM_F = $(RM) -f
+ RM_RF = $(RM) -rf
  
- # Enable 32 bit builds while generating the windows installer
- WIN32 = false
+ # Only for use in target version:
+-VERSION := $(shell git name-rev --name-only --tags --no-undefined HEAD 2>/dev/null || (c=$$(git rev-parse --short HEAD 2>/dev/null) && echo git-$$c))
++VERSION := release-20210321
  
- # program targets
--VERSION     = $(shell git name-rev --name-only --tags --no-undefined HEAD 2>/dev/null || echo git-`git rev-parse --short HEAD`)
-+VERSION     = release-20200503
- 
- # dependencies
- UNAME_S := $(shell uname -s)
-@@ -101,7 +101,7 @@ check-scripts:
- check: dependencies
- 	@echo
- 	@echo "Compiling in debug mode..."
--	@$(MSBUILD) -t:build -p:Configuration=Debug
-+	@$(MSBUILD)
- 	@echo
- 	@echo "Checking runtime assemblies..."
- 	@mono --debug OpenRA.Utility.exe all --check-runtime-assemblies $(WHITELISTED_OPENRA_ASSEMBLIES) $(WHITELISTED_THIRDPARTY_ASSEMBLIES) $(WHITELISTED_CORE_ASSEMBLIES)
-@@ -157,7 +157,7 @@ ifeq ($(WIN32), $(filter $(WIN32),true yes y on 1))
- else
- 	@$(MSBUILD) -t:build -p:Configuration=Release
- endif
+ # Detect target platform for dependencies if not given by the user
+ ifndef TARGETPLATFORM
+@@ -86,23 +86,15 @@ OPENRA_UTILITY = ENGINE_DIR=".." $(MONO) --debug bin/O
+ all:
+ 	@command -v $(firstword $(MSBUILD)) >/dev/null || (echo "OpenRA requires the '$(MSBUILD)' tool provided by Mono >= 5.18."; exit 1)
+ 	@$(MSBUILD) -t:Build -restore -p:Configuration=Release -p:TargetPlatform=$(TARGETPLATFORM)
+-ifeq ($(TARGETPLATFORM), unix-generic)
+-	@./configure-system-libraries.sh
+-endif
 -	@./fetch-geoip.sh
-+#	@./fetch-geoip.sh
  
  clean:
- 	@ $(MSBUILD) -t:clean
-@@ -169,10 +169,8 @@ clean:
- distclean: clean
+ 	@-$(RM_RF) ./bin ./*/bin ./*/obj
+ 	@$(MSBUILD) -t:Clean
+-	@-$(RM_F) IP2LOCATION-LITE-DB1.IPV6.BIN.ZIP
  
- cli-dependencies:
--	@./thirdparty/fetch-thirdparty-deps.sh
- 	@ $(CP_R) thirdparty/download/*.dll .
- 	@ $(CP_R) thirdparty/download/*.dll.config .
--	@ test -f OpenRA.Game/obj/project.assets.json || $(MSBUILD) -t:restore
- 
- linux-dependencies: cli-dependencies linux-native-dependencies
- 
-@@ -219,7 +217,6 @@ install-engine:
- 	@$(INSTALL_DATA) VERSION "$(DATA_INSTALL_DIR)/VERSION"
- 	@$(INSTALL_DATA) AUTHORS "$(DATA_INSTALL_DIR)/AUTHORS"
- 	@$(INSTALL_DATA) COPYING "$(DATA_INSTALL_DIR)/COPYING"
--	@$(INSTALL_DATA) IP2LOCATION-LITE-DB1.IPV6.BIN.ZIP "$(DATA_INSTALL_DIR)/IP2LOCATION-LITE-DB1.IPV6.BIN.ZIP"
- 
- 	@$(CP_R) glsl "$(DATA_INSTALL_DIR)"
- 	@$(CP_R) lua "$(DATA_INSTALL_DIR)"
+ check:
+ 	@echo
+ 	@echo "Compiling in debug mode..."
+ 	@$(MSBUILD) -t:build -restore -p:Configuration=Debug -p:TargetPlatform=$(TARGETPLATFORM)
+-ifeq ($(TARGETPLATFORM), unix-generic)
+-	@./configure-system-libraries.sh
+-endif
+ 	@echo
+ 	@echo "Checking runtime assemblies..."
+ 	@$(OPENRA_UTILITY) all --check-runtime-assemblies $(WHITELISTED_OPENRA_ASSEMBLIES) $(WHITELISTED_THIRDPARTY_ASSEMBLIES) $(WHITELISTED_CORE_ASSEMBLIES)

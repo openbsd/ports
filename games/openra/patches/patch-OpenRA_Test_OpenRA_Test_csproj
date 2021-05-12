@@ -1,0 +1,14 @@
+$OpenBSD: patch-OpenRA_Test_OpenRA_Test_csproj,v 1.1 2021/05/12 13:52:49 patrick Exp $
+
+Index: OpenRA.Test/OpenRA.Test.csproj
+--- OpenRA.Test/OpenRA.Test.csproj.orig
++++ OpenRA.Test/OpenRA.Test.csproj
+@@ -2,7 +2,7 @@
+   <PropertyGroup>
+     <TargetFramework>net472</TargetFramework>
+     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+-    <LangVersion>7.3</LangVersion>
++    <LangVersion>7.2</LangVersion>
+     <DebugSymbols>true</DebugSymbols>
+     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+     <OutputPath>../bin</OutputPath>

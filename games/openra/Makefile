@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/26 18:20:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2021/05/12 13:52:49 patrick Exp $
 
 COMMENT =		open-source real-time strategy game engine
-V =			20200503
+V =			20210321
 DISTNAME =		openra-${V}
 CATEGORIES =		games x11
 HOMEPAGE =		https://www.openra.net
@@ -15,10 +15,15 @@ MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
 # zlib (SDL2-CS, OpenAL-CS)
 PERMIT_PACKAGE =	Yes
 
+DIST_SUBDIR =		openra
+
 # dlopen'd via mono-config(5)
 WANTLIB +=	SDL2 freetype openal
 
-MASTER_SITES =  	https://mirrors.nycbug.org/pub/distfiles/
+MASTER_SITES = 		https://thfr.info/distfiles/
+MASTER_SITES0 = 	https://thfr.info/distfiles/
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
+			nuget-${DISTNAME}${EXTRACT_SUFX}:0
 EXTRACT_SUFX =		.tar.xz
 
 FIX_CRLF_FILES =	thirdparty/download/SharpFont.dll.config
@@ -26,15 +31,12 @@ FIX_CRLF_FILES =	thirdparty/download/SharpFont.dll.config
 MODULES =		lang/lua \
 			lang/mono
 
-DLLMAP_FILES =		thirdparty/download/OpenAL-CS.dll.config \
-			thirdparty/download/SDL2-CS.dll.config \
-			thirdparty/download/SharpFont.dll.config
-
 MODLUA_VERSION =	5.1
 MODLUA_SA =		Yes
 BUILD_DEPENDS =		devel/msbuild \
 			net/curl
 RUN_DEPENDS =		devel/desktop-file-utils \
+			misc/shared-mime-info \
 			net/libmaxminddb,-db \
 			x11/gtk+3,-guic
 LIB_DEPENDS =		audio/openal \
@@ -44,6 +46,12 @@ USE_GMAKE =		Yes
 NO_TEST =		Yes
 ALL_TARGET =	version all
 
+# Without GIT_COMMIT, build breaks because of empty $(GitHeadSha)
+MAKE_ENV =		NUGET_PACKAGES=${WRKDIR}/nuget-${DISTNAME} \
+			GIT_COMMIT=3c930fa8721935cf0e381fd349f6f50cf2bc223d
+# pass a different $HOME so that the build's NuGet doesn't try to write in $HOME
+MAKE_FLAGS =		HOME=${WRKSRC}/nugethome
+
 SUBST_VARS +=		LOCALSTATEDIR
 
 do-gen:
@@ -51,10 +59,12 @@ do-gen:
 	${SUBST_CMD} ${WRKSRC}/launch-dedicated.sh
 	${SUBST_CMD} ${WRKSRC}/OpenRA.Game/Network/GeoIP.cs
 
+# overwrite the config files that point to the wrong system libraries
 post-install:
 	cd ${WRKSRC} && ${MAKE_PROGRAM} install-linux-shortcuts
 	${INSTALL_SCRIPT} ${WRKSRC}/launch-game.sh ${PREFIX}/bin/openra
 	${INSTALL_SCRIPT} ${WRKSRC}/launch-dedicated.sh \
 		${PREFIX}/bin/openra-dedicated
+	cp ${FILESDIR}/*.config ${PREFIX}/share/openra/
 
 .include <bsd.port.mk>
