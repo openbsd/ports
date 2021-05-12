@@ -1,0 +1,14 @@
+$OpenBSD: patch-source4_heimdal_lib_com_err_version-script_map,v 1.1 2021/05/12 23:33:24 jca Exp $
+
+Don't add a version to the symbols in this library, it breaks binutils-2.17 ld(1).
+
+Index: source4/heimdal/lib/com_err/version-script.map
+--- source4/heimdal/lib/com_err/version-script.map.orig
++++ source4/heimdal/lib/com_err/version-script.map
+@@ -2,5 +2,5 @@
+ 
+-HEIMDAL_COM_ERR_1.0 {
++{
+ 	global:
+ 		com_right;
+ 		com_right_r;

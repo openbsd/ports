@@ -1,0 +1,15 @@
+$OpenBSD: patch-source4_heimdal_lib_asn1_version-script_map,v 1.1 2021/05/12 23:33:24 jca Exp $
+
+Don't add a version to the symbols in this library, it breaks binutils-2.17 ld(1).
+
+Index: source4/heimdal/lib/asn1/version-script.map
+--- source4/heimdal/lib/asn1/version-script.map.orig
++++ source4/heimdal/lib/asn1/version-script.map
+@@ -1,6 +1,6 @@
+ # Export everything, but put a tag on is so that we make ourself incompatible with older versions
+ 
+-HEIMDAL_ASN1_1.0 {
++{
+ 	global:
+ 		*;
+ };

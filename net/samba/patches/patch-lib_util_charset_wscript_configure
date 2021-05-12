@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_util_charset_wscript_configure,v 1.1 2021/05/12 23:33:24 jca Exp $
+
+Force-disable icu4c use for now. To be revisited if Spotlight support
+is reenabled.
+
+Index: lib/util/charset/wscript_configure
+--- lib/util/charset/wscript_configure.orig
++++ lib/util/charset/wscript_configure
+@@ -37,7 +37,7 @@ conf.CHECK_CODE('''
+                 lib='iconv',
+                 headers='errno.h iconv.h')
+ 
+-if conf.CHECK_CFG(package='icu-i18n',
++if False and conf.CHECK_CFG(package='icu-i18n',
+                args='--cflags --libs',
+                msg='Checking for icu-i18n',
+                uselib_store='ICU_I18N'):

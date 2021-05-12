@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ldb,v 1.10 2019/12/23 12:26:22 jca Exp $
+@comment $OpenBSD: PLIST-ldb,v 1.11 2021/05/12 23:33:25 jca Exp $
 @conflict samba-<4.9.17p0v0
 @bin bin/ldbadd
 @bin bin/ldbdel
@@ -13,18 +13,18 @@ include/samba-4.0/ldb_module.h
 include/samba-4.0/ldb_version.h
 include/samba-4.0/pyldb.h
 @lib lib/libldb.so.${LIBldb_VERSION}
-@lib lib/libpyldb-util.so.${LIBpyldb-util_VERSION}
+@comment @lib lib/libpyldb-util.${PYLDB_UTIL_LIBSUFFIX}
+@lib lib/libpyldb-util.${PYLDB_UTIL_LIBSUFFIX}
 lib/pkgconfig/ldb.pc
-lib/pkgconfig/pyldb-util.pc
+lib/pkgconfig/pyldb-util.${MODPY_PYC_MAGIC_TAG}pc
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}_ldb_text.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}_ldb_text.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_ldb_text.py
-lib/python${MODPY_VERSION}/site-packages/_ldb_text.pyc
-lib/python${MODPY_VERSION}/site-packages/_ldb_text.${MODPY_PYOEXTENSION}
-@so lib/python${MODPY_VERSION}/site-packages/ldb.so
+@so lib/python${MODPY_VERSION}/site-packages/ldb.${MODPY_PYC_MAGIC_TAG}so
 lib/samba/ldb/
 @so lib/samba/ldb/asq.so
 @so lib/samba/ldb/ldap.so
 @so lib/samba/ldb/ldb.so
-@so lib/samba/ldb/paged_results.so
 @so lib/samba/ldb/paged_searches.so
 @so lib/samba/ldb/rdn_name.so
 @so lib/samba/ldb/sample.so

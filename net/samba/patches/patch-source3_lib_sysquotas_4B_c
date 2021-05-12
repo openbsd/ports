@@ -1,12 +1,13 @@
-$OpenBSD: patch-source3_lib_sysquotas_4B_c,v 1.1 2016/05/15 01:10:07 jca Exp $
+$OpenBSD: patch-source3_lib_sysquotas_4B_c,v 1.2 2021/05/12 23:33:24 jca Exp $
 
 Switch back to root to call quotactl(2), our kernel has too strict
 permision checks.
 
---- source3/lib/sysquotas_4B.c.orig	Fri May 13 21:11:44 2016
-+++ source3/lib/sysquotas_4B.c	Fri May 13 21:12:54 2016
-@@ -47,7 +47,7 @@
- #include <ufs/ufs/quota.h>
+Index: source3/lib/sysquotas_4B.c
+--- source3/lib/sysquotas_4B.c.orig
++++ source3/lib/sysquotas_4B.c
+@@ -51,7 +51,7 @@
+ #include <jfs/quota.h>
  #endif
  
 -#if defined(DARWINOS)

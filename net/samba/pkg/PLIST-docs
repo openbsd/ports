@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.26 2018/06/11 11:59:51 jca Exp $
+@comment $OpenBSD: PLIST-docs,v 1.27 2021/05/12 23:33:24 jca Exp $
 @pkgpath net/samba,-docs
 share/examples/samba/LDAP/
 share/examples/samba/LDAP/README
@@ -66,14 +66,11 @@ share/examples/samba/libsmbclient/testnotify.c
 share/examples/samba/libsmbclient/testread.c
 share/examples/samba/libsmbclient/testsmbc.c
 share/examples/samba/libsmbclient/teststat.c
-@comment share/examples/samba/libsmbclient/teststat.c.orig
 share/examples/samba/libsmbclient/teststat2.c
-@comment share/examples/samba/libsmbclient/teststat2.c.orig
 share/examples/samba/libsmbclient/teststat3.c
 share/examples/samba/libsmbclient/teststatvfs.c
 share/examples/samba/libsmbclient/testtruncate.c
 share/examples/samba/libsmbclient/testutime.c
-@comment share/examples/samba/libsmbclient/testutime.c.orig
 share/examples/samba/libsmbclient/testwrite.c
 share/examples/samba/libsmbclient/tree.c
 share/examples/samba/libsmbclient/wscript_build
@@ -196,3 +193,10 @@ share/examples/samba/validchars/nwdos70.out
 share/examples/samba/validchars/readme
 share/examples/samba/validchars/validchr.c
 share/examples/samba/validchars/validchr.com
+share/examples/samba/winexe/
+share/examples/samba/winexe/README
+share/examples/samba/winexe/winexe.c
+share/examples/samba/winexe/winexesvc.c
+share/examples/samba/winexe/winexesvc.h
+share/examples/samba/winexe/wscript
+share/examples/samba/winexe/wscript_build

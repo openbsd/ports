@@ -1,0 +1,35 @@
+$OpenBSD: patch-buildtools_wafsamba_samba_abi_py,v 1.1 2021/05/12 23:33:24 jca Exp $
+
+Drop fully fledged version script support, only use simpler version
+scripts to limit symbol visibility. Appending a version to all symbols
+breaks binutils-2.17 ld(1).
+
+Index: buildtools/wafsamba/samba_abi.py
+--- buildtools/wafsamba/samba_abi.py.orig
++++ buildtools/wafsamba/samba_abi.py
+@@ -170,24 +170,7 @@ def abi_write_vscript(f, libname, current_version, ver
+         version
+     """
+ 
+-    invmap = {}
+-    for s in symmap:
+-        invmap.setdefault(symmap[s], []).append(s)
+-
+-    last_key = ""
+-    versions = sorted(versions, key=version_key)
+-    for k in versions:
+-        symver = "%s_%s" % (libname, k)
+-        if symver == current_version:
+-            break
+-        f.write("%s {\n" % symver)
+-        if k in sorted(invmap.keys()):
+-            f.write("\tglobal:\n")
+-            for s in invmap.get(k, []):
+-                f.write("\t\t%s;\n" % s);
+-        f.write("}%s;\n\n" % last_key)
+-        last_key = " %s" % symver
+-    f.write("%s {\n" % current_version)
++    f.write("{\n")
+     local_abi = list(filter(lambda x: x[0] == '!', abi_match))
+     global_abi = list(filter(lambda x: x[0] != '!', abi_match))
+     f.write("\tglobal:\n")
