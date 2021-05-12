@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2021/05/10 12:58:45 otto Exp $
+# $OpenBSD: Makefile,v 1.22 2021/05/12 05:49:04 otto Exp $
 
 COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
-DISTNAME=		dnsdist-1.5.2
+DISTNAME=		dnsdist-1.6.0
 EXTRACT_SUFX=		.tar.bz2
 
 CATEGORIES=		net
@@ -15,7 +15,7 @@ MAINTAINER=		Otto Moerbeek <otto@drijf.net>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB +=		${MODLUA_WANTLIB} c curses edit m \
-			protobuf fstrm h2o-evloop pthread \
+			fstrm h2o-evloop pthread \
 			z crypto ssl sodium ${COMPILER_LIBCXX}
 
 MASTER_SITES=		https://downloads.powerdns.com/releases/
@@ -36,7 +36,7 @@ CONFIGURE_ARGS+=	--without-gnutls \
 			--enable-dnstap \
 			--enable-dns-over-https
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
-			CXXFLAGS="-Wno-deprecated-copy" \
+			CXXFLAGS="-Wno-deprecated-copy -Wno-deprecated-declarations" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			LIBEDIT_LIBS='-ledit -lcurses' \
 			LIBEDIT_CFLAGS=' '
@@ -50,7 +50,6 @@ MODLUA_VERSION=		5.3
 BUILD_DEPENDS=		devel/boost
 LIB_DEPENDS+=		${MODLUA_LIB_DEPENDS} \
 			security/libsodium \
-			devel/protobuf \
 			net/libfstrm \
 			www/h2o
 
