@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/02/25 21:52:51 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/05/12 16:21:43 sthen Exp $
+@conflict mrtg-<2.17.7p2
 bin/podselect
 ${P5SITE}/Pod/
 ${P5SITE}/Pod/Find.pm
