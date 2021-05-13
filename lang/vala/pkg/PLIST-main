@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2020/03/30 11:00:11 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2021/05/13 07:49:55 jasper Exp $
 @pkgpath lang/vala
 bin/vala
 bin/vala-${API_V}
@@ -55,6 +55,16 @@ share/devhelp/books/vala-${API_V}/vala-${API_V}.devhelp2
 share/vala/
 share/vala-${API_V}/
 share/vala-${API_V}/vapi/
+share/vala-${API_V}/vapi/SDL2_gfx.deps
+share/vala-${API_V}/vapi/SDL2_gfx.vapi
+share/vala-${API_V}/vapi/SDL2_image.deps
+share/vala-${API_V}/vapi/SDL2_image.vapi
+share/vala-${API_V}/vapi/SDL2_mixer.deps
+share/vala-${API_V}/vapi/SDL2_mixer.vapi
+share/vala-${API_V}/vapi/SDL2_net.deps
+share/vala-${API_V}/vapi/SDL2_net.vapi
+share/vala-${API_V}/vapi/SDL2_ttf.deps
+share/vala-${API_V}/vapi/SDL2_ttf.vapi
 share/vala-${API_V}/vapi/alsa.deps
 share/vala-${API_V}/vapi/alsa.vapi
 share/vala-${API_V}/vapi/atk.deps
@@ -91,6 +101,7 @@ share/vala-${API_V}/vapi/cogl-pango-1.0.deps
 share/vala-${API_V}/vapi/cogl-pango-1.0.vapi
 share/vala-${API_V}/vapi/curses.vapi
 share/vala-${API_V}/vapi/dbus-glib-1.vapi
+share/vala-${API_V}/vapi/enchant-2.vapi
 share/vala-${API_V}/vapi/enchant.vapi
 share/vala-${API_V}/vapi/fuse.deps
 share/vala-${API_V}/vapi/fuse.vapi
@@ -130,6 +141,8 @@ share/vala-${API_V}/vapi/gnome-desktop-2.0.vapi
 share/vala-${API_V}/vapi/gnome-desktop-3.0.deps
 share/vala-${API_V}/vapi/gnome-desktop-3.0.vapi
 share/vala-${API_V}/vapi/gnome-vfs-2.0.vapi
+share/vala-${API_V}/vapi/gnu.deps
+share/vala-${API_V}/vapi/gnu.vapi
 share/vala-${API_V}/vapi/gnutls.vapi
 share/vala-${API_V}/vapi/gobject-2.0.deps
 share/vala-${API_V}/vapi/gobject-2.0.vapi
@@ -168,6 +181,8 @@ share/vala-${API_V}/vapi/gstreamer-net-1.0.deps
 share/vala-${API_V}/vapi/gstreamer-net-1.0.vapi
 share/vala-${API_V}/vapi/gstreamer-pbutils-1.0.deps
 share/vala-${API_V}/vapi/gstreamer-pbutils-1.0.vapi
+share/vala-${API_V}/vapi/gstreamer-play-1.0.deps
+share/vala-${API_V}/vapi/gstreamer-play-1.0.vapi
 share/vala-${API_V}/vapi/gstreamer-player-1.0.deps
 share/vala-${API_V}/vapi/gstreamer-player-1.0.vapi
 share/vala-${API_V}/vapi/gstreamer-riff-1.0.deps
@@ -259,6 +274,7 @@ share/vala-${API_V}/vapi/libsexy.deps
 share/vala-${API_V}/vapi/libsexy.vapi
 share/vala-${API_V}/vapi/libsoup-2.4.deps
 share/vala-${API_V}/vapi/libsoup-2.4.vapi
+share/vala-${API_V}/vapi/libunwind-generic.vapi
 share/vala-${API_V}/vapi/libusb-1.0.deps
 share/vala-${API_V}/vapi/libusb-1.0.vapi
 share/vala-${API_V}/vapi/libusb.vapi
@@ -297,17 +313,15 @@ share/vala-${API_V}/vapi/rest-0.7.deps
 share/vala-${API_V}/vapi/rest-0.7.vapi
 share/vala-${API_V}/vapi/rest-extras-0.7.deps
 share/vala-${API_V}/vapi/rest-extras-0.7.vapi
-share/vala-${API_V}/vapi/sdl-gfx.deps
-share/vala-${API_V}/vapi/sdl-gfx.vapi
-share/vala-${API_V}/vapi/sdl-image.deps
-share/vala-${API_V}/vapi/sdl-image.vapi
-share/vala-${API_V}/vapi/sdl-mixer.deps
-share/vala-${API_V}/vapi/sdl-mixer.vapi
-share/vala-${API_V}/vapi/sdl-net.deps
-share/vala-${API_V}/vapi/sdl-net.vapi
-share/vala-${API_V}/vapi/sdl-ttf.deps
-share/vala-${API_V}/vapi/sdl-ttf.vapi
-share/vala-${API_V}/vapi/sdl.vapi
+share/vala-${API_V}/vapi/sdl2-android.deps
+share/vala-${API_V}/vapi/sdl2-android.vapi
+share/vala-${API_V}/vapi/sdl2-ios.deps
+share/vala-${API_V}/vapi/sdl2-ios.vapi
+share/vala-${API_V}/vapi/sdl2-windows.deps
+share/vala-${API_V}/vapi/sdl2-windows.vapi
+share/vala-${API_V}/vapi/sdl2-winrt.deps
+share/vala-${API_V}/vapi/sdl2-winrt.vapi
+share/vala-${API_V}/vapi/sdl2.vapi
 share/vala-${API_V}/vapi/sqlite3.vapi
 share/vala-${API_V}/vapi/taglib_c.vapi
 share/vala-${API_V}/vapi/tiff.vapi
