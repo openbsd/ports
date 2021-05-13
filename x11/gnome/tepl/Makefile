@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/21 08:07:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2021/05/13 08:11:28 ajacoutot Exp $
 
 COMMENT=		Text Editor Product Line
 
 GNOME_PROJECT=		tepl
-GNOME_VERSION=		5.0.1
+GNOME_VERSION=		6.00.0
 
 CATEGORIES=		devel
 
-SHARED_LIBS += tepl-5                    0.0 # 0.0.0
+SHARED_LIBS += tepl-6                    0.0 # 0.0.0
 
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += amtk-5 cairo gdk-3 gio-2.0 glib-2.0 gobject-2.0 gtk-3
-WANTLIB += gtksourceview-4 icui18n icuuc intl
+WANTLIB += gtksourceview-4 icui18n icuuc intl pango-1.0
 
 COMPILER=		base-clang ports-gcc base-gcc
 
