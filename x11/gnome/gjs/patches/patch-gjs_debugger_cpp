@@ -1,4 +1,4 @@
-$OpenBSD: patch-gjs_debugger_cpp,v 1.1 2020/05/14 14:55:56 jasper Exp $
+$OpenBSD: patch-gjs_debugger_cpp,v 1.2 2021/05/13 07:51:16 jasper Exp $
 
 XXX:
 Moving the HAVE_READLINE_READLINE_H block until after the Mozilla
@@ -8,7 +8,7 @@ which unhides it?
 Index: gjs/debugger.cpp
 --- gjs/debugger.cpp.orig
 +++ gjs/debugger.cpp
-@@ -27,10 +27,6 @@
+@@ -7,10 +7,6 @@
  #include <stdint.h>
  #include <stdio.h>  // for feof, fflush, fgets, stdin, stdout
  
@@ -19,7 +19,7 @@ Index: gjs/debugger.cpp
  
  #ifdef HAVE_UNISTD_H
  #    include <unistd.h>  // for isatty, STDIN_FILENO
-@@ -58,6 +54,12 @@
+@@ -38,6 +34,12 @@
  #include "gjs/jsapi-util-args.h"
  #include "gjs/jsapi-util.h"
  #include "gjs/macros.h"

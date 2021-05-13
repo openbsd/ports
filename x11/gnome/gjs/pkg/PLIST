@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2020/10/17 12:57:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2021/05/13 07:51:16 jasper Exp $
 bin/gjs
 @bin bin/gjs-console
 include/gjs-1.0/
@@ -29,6 +29,7 @@ share/examples/gjs/gtk.js
 share/examples/gjs/http-client.js
 share/examples/gjs/http-server.js
 share/examples/gjs/test.jpg
+share/examples/gjs/test.jpg.license
 share/examples/gjs/webkit.js
 share/examples/gjs/websocket-client.js
 share/gjs-1.0/

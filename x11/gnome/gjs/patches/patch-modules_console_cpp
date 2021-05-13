@@ -1,9 +1,9 @@
-$OpenBSD: patch-modules_console_cpp,v 1.2 2020/10/17 12:57:23 jasper Exp $
+$OpenBSD: patch-modules_console_cpp,v 1.3 2021/05/13 07:51:16 jasper Exp $
 
 Index: modules/console.cpp
 --- modules/console.cpp.orig
 +++ modules/console.cpp
-@@ -42,6 +42,8 @@
+@@ -17,6 +17,8 @@
  
  #ifdef HAVE_READLINE_READLINE_H
  #    include <stdio.h>  // include before readline/readline.h
