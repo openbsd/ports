@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2020/02/04 09:47:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.29 2021/05/13 18:47:25 jasper Exp $
 @conflict folks-meta-tracker-*
 @pkgpath net/telepathy/folks,-main
 @pkgpath net/telepathy/folks,-tracker
@@ -20,10 +20,10 @@ lib/folks/${API_V}/backends/key-file/
 @so lib/folks/${API_V}/backends/key-file/key-file.so
 lib/folks/${API_V}/backends/telepathy/
 @so lib/folks/${API_V}/backends/telepathy/telepathy.so
-lib/girepository-1.0/Folks-0.6.typelib
-lib/girepository-1.0/FolksDummy-0.6.typelib
-lib/girepository-1.0/FolksEds-0.6.typelib
-lib/girepository-1.0/FolksTelepathy-0.6.typelib
+lib/girepository-1.0/Folks-0.7.typelib
+lib/girepository-1.0/FolksDummy-0.7.typelib
+lib/girepository-1.0/FolksEds-0.7.typelib
+lib/girepository-1.0/FolksTelepathy-0.7.typelib
 @lib lib/libfolks-dummy.so.${LIBfolks-dummy_VERSION}
 @lib lib/libfolks-eds.so.${LIBfolks-eds_VERSION}
 @lib lib/libfolks-telepathy.so.${LIBfolks-telepathy_VERSION}
@@ -33,10 +33,10 @@ lib/pkgconfig/folks-eds.pc
 lib/pkgconfig/folks-telepathy.pc
 lib/pkgconfig/folks.pc
 share/GConf/gsettings/folks.convert
-share/gir-1.0/Folks-0.6.gir
-share/gir-1.0/FolksDummy-0.6.gir
-share/gir-1.0/FolksEds-0.6.gir
-share/gir-1.0/FolksTelepathy-0.6.gir
+share/gir-1.0/Folks-0.7.gir
+share/gir-1.0/FolksDummy-0.7.gir
+share/gir-1.0/FolksEds-0.7.gir
+share/gir-1.0/FolksTelepathy-0.7.gir
 share/glib-2.0/schemas/org.freedesktop.folks.gschema.xml
 share/locale/ar/LC_MESSAGES/folks.mo
 share/locale/as/LC_MESSAGES/folks.mo

@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.117 2021/02/23 19:39:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.118 2021/05/13 18:47:24 jasper Exp $
 
 COMMENT=		people aggregation library
 
 GNOME_PROJECT=		folks
-GNOME_VERSION=		0.14.0
-REVISION=		0
+GNOME_VERSION=		0.15.2
 
 # see BACKEND_DIR in config.h
-API_V=			46
+API_V=			26
 
 SHARED_LIBS +=  folks                5.6      # 25.20.0
 SHARED_LIBS +=  folks-dummy          0.0      # 25.20.0

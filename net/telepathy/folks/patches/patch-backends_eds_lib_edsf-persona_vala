@@ -1,0 +1,16 @@
+$OpenBSD: patch-backends_eds_lib_edsf-persona_vala,v 1.1 2021/05/13 18:47:25 jasper Exp $
+
+https://gitlab.gnome.org/GNOME/folks/-/issues/129
+
+Index: backends/eds/lib/edsf-persona.vala
+--- backends/eds/lib/edsf-persona.vala.orig
++++ backends/eds/lib/edsf-persona.vala
+@@ -2268,7 +2268,7 @@ public class Edsf.Persona : Folks.Persona,
+   private unowned string? _get_string_property (string prop_name)
+     {
+       var field = E.Contact.field_id (prop_name);
+-      return_if_fail (E.Contact.field_is_string (field));
++      return_val_if_fail (E.Contact.field_is_string (field), null);
+       return contact.get_const<string> (field);
+     }
+ 
