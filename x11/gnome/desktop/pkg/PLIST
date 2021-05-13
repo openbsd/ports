@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.57 2020/11/05 10:32:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.58 2021/05/13 09:01:43 ajacoutot Exp $
 include/gnome-desktop-3.0/
 include/gnome-desktop-3.0/libgnome-desktop/
 include/gnome-desktop-3.0/libgnome-desktop/gnome-bg-crossfade.h
@@ -16,7 +16,6 @@ include/gnome-desktop-3.0/libgnome-desktop/gnome-xkb-info.h
 lib/girepository-1.0/GnomeDesktop-3.0.typelib
 @lib lib/libgnome-desktop-3.so.${LIBgnome-desktop-3_VERSION}
 lib/pkgconfig/gnome-desktop-3.0.pc
-@bin libexec/gnome-rr-debug
 share/gir-1.0/GnomeDesktop-3.0.gir
 share/gnome/
 share/gnome/gnome-version.xml
