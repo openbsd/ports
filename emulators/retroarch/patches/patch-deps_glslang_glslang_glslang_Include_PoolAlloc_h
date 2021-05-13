@@ -1,0 +1,18 @@
+$OpenBSD: patch-deps_glslang_glslang_glslang_Include_PoolAlloc_h,v 1.1 2021/05/13 06:40:58 rsadowski Exp $
+
+TPoolAllocator is not copy assignable, so this setter could never have
+been used. After a recent change (878a24ee2), new versions of Clang
+reject this code outright.
+https://github.com/libretro/RetroArch/commit/e4b9311ac15570bfe757d77de1c66584f95e1df9
+
+Index: deps/glslang/glslang/glslang/Include/PoolAlloc.h
+--- deps/glslang/glslang/glslang/Include/PoolAlloc.h.orig
++++ deps/glslang/glslang/glslang/Include/PoolAlloc.h
+@@ -304,7 +304,6 @@ class pool_allocator { (public)
+     size_type max_size() const { return static_cast<size_type>(-1) / sizeof(T); }
+     size_type max_size(int size) const { return static_cast<size_type>(-1) / size; }
+ 
+-    void setAllocator(TPoolAllocator* a) { allocator = *a; }
+     TPoolAllocator& getAllocator() const { return allocator; }
+ 
+ protected:

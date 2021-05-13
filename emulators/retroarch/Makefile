@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2020/04/29 14:12:08 cwen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/05/13 06:40:58 rsadowski Exp $
 
 COMMENT =		generic multi-emulator frontend
 
 V =			1.7.6
 DISTNAME =		RetroArch-$V
 PKGNAME =		retroarch-$V
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		emulators
 
@@ -14,22 +14,20 @@ HOMEPAGE =		https://www.libretro.com/
 # code GPLv3+, assets CC-BY-4.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += EGL GL Qt5Concurrent Qt5Core Qt5Gui Qt5Network Qt5Widgets
-WANTLIB += SDL2 X11 X11-xcb Xext Xinerama Xv Xxf86vm ass avcodec
-WANTLIB += avformat avutil c crypto drm freetype gbm m openal
-WANTLIB += ssl swresample swscale usb-1.0 xcb xkbcommon z
-
-COMPILER =		base-clang ports-gcc base-gcc
+WANTLIB += ${COMPILER_LIBCXX} EGL GL Qt5Concurrent Qt5Core Qt5Gui
+WANTLIB += Qt5Network Qt5Widgets SDL2 X11 X11-xcb Xext Xinerama
+WANTLIB += Xrandr Xv Xxf86vm ass avcodec avformat avutil c crypto
+WANTLIB += drm freetype gbm m openal ssl swresample swscale usb-1.0
+WANTLIB += xcb xkbcommon z
 
 MASTER_SITES =		https://github.com/libretro/RetroArch/releases/download/v$V/
-
 EXTRACT_SUFX =		.tar.xz
 
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
 MODULES =		x11/qt5
 RUN_DEPENDS =		devel/desktop-file-utils
+BUILD_DEPENDS =		graphics/vulkan-tools
 LIB_DEPENDS =		audio/openal \
 			devel/libusb1 \
 			devel/sdl2 \
