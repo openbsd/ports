@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.291 2020/11/14 11:05:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.292 2021/05/13 08:10:16 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accerciser
@@ -49,7 +49,6 @@
      SUBDIR += icon-theme-symbolic
      SUBDIR += initial-setup
      SUBDIR += keyring
-     SUBDIR += latex
      SUBDIR += libbonobo
      SUBDIR += libbonoboui
      SUBDIR += libcryptui
