@@ -1,9 +1,11 @@
-$OpenBSD: patch-libwnck_tasklist_c,v 1.9 2020/05/14 14:52:42 ajacoutot Exp $
+$OpenBSD: patch-libwnck_tasklist_c,v 1.10 2021/05/13 08:38:27 ajacoutot Exp $
+
+64bit time_t
 
 Index: libwnck/tasklist.c
 --- libwnck/tasklist.c.orig
 +++ libwnck/tasklist.c
-@@ -4315,7 +4315,8 @@ sequence_timeout_callback (void *user_data)
+@@ -4701,7 +4701,8 @@ sequence_timeout_callback (void *user_data)
    WnckTasklist *tasklist = user_data;
    GList *tmp;
    gint64 now;
