@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.187 2021/02/14 13:20:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.188 2021/05/13 09:34:46 jasper Exp $
 
 COMMENT=		GNOME document viewer
 
 GNOME_PROJECT=		evince
-GNOME_VERSION=		3.38.2
+GNOME_VERSION=		40.1
 
 MAJ_V=			3.0
 SUBST_VARS=		MAJ_V
@@ -21,7 +21,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gspell-1
-WANTLIB += gtk-3 intl pango-1.0 pangocairo-1.0 poppler-glib
+WANTLIB += gtk-3 handy-1 intl pango-1.0 pangocairo-1.0 poppler-glib
 WANTLIB += secret-1 synctex tiff xml2
 
 COMPILER=		base-clang ports-gcc base-gcc
@@ -41,10 +41,10 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas
 BUILD_DEPENDS +=	devel/appstream-glib
 
 LIB_DEPENDS=		print/poppler \
+			print/texlive/base,-synctex \
 			textproc/gspell \
 			x11/gnome/libsecret \
-			x11/gtk+3 \
-			print/texlive/base,-synctex
+			x11/libhandy
 
 RUN_DEPENDS=		archivers/unrar \
 			archivers/unzip \
