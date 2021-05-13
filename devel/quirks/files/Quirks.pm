@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1274 2021/05/13 08:11:11 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1275 2021/05/13 10:53:23 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -460,6 +460,7 @@ my $stem_extensions = {
 	'weboob' => 'woob',
 	'py-talloc' => 'py3-talloc',
 	'py-tdb' => 'py3-tdb',
+	'bijiben' => 'gnome-notes',
 };
 
 my $obsolete_reason = {};
