@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/03/16 13:02:02 bket Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/05/13 17:04:54 bket Exp $
 include/libfilezilla/
 include/libfilezilla/apply.hpp
 include/libfilezilla/buffer.hpp
@@ -14,6 +14,7 @@ include/libfilezilla/glue/unix.hpp
 include/libfilezilla/glue/wx.hpp
 include/libfilezilla/glue/wxinvoker.hpp
 include/libfilezilla/hash.hpp
+include/libfilezilla/hostname_lookup.hpp
 include/libfilezilla/invoker.hpp
 include/libfilezilla/iputils.hpp
 include/libfilezilla/libfilezilla.hpp
