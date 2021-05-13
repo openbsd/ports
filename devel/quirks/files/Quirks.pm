@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1273 2021/05/12 23:34:44 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.1274 2021/05/13 08:11:11 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1203,6 +1203,7 @@ setup_obsolete_reason(
 # 7.0
 	3 => 'mailpile',
 	7 => 'p5-Geo-GDAL',
+	3 => 'gnome-latex',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
