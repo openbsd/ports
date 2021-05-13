@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2019/08/06 18:19:51 juanfra Exp $
+# $OpenBSD: Makefile,v 1.4 2021/05/13 13:34:49 jasper Exp $
+
+BROKEN-powerpc64 = unrecoverable segmentation violation - execution terminated
 
 PKGNAME=	chicken-bootstrap-${V}
 
