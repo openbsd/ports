@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2021/05/13 09:33:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.89 2021/05/13 19:42:48 ajacoutot Exp $
 
 COMMENT=		sytem monitor for GNOME
 
@@ -10,10 +10,10 @@ CATEGORIES=		sysutils
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += c cairo gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0 giomm-2.4
-WANTLIB += glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0 gtk-3 gtkmm-3.0
-WANTLIB += gtop-2.0 intl m pango-1.0 pangocairo-1.0 rsvg-2 sigc-2.0
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} c cairo gdk-3 gdk_pixbuf-2.0 gdkmm-3.0
+WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0
+WANTLIB += gtk-3 gtkmm-3.0 gtop-2.0 handy-1 intl m pango-1.0 pangocairo-1.0
+WANTLIB += rsvg-2 sigc-2.0
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -24,7 +24,8 @@ COMPILER =		base-clang ports-gcc
 
 LIB_DEPENDS=		devel/libgtop2>=2.38.0 \
 			x11/gnome/librsvg \
-			x11/gtk3mm
+			x11/gtk3mm \
+			x11/libhandy
 
 # share/polkit-1/actions/org.gnome.gnome-system-monitor.policy
 BUILD_DEPENDS +=	sysutils/polkit
