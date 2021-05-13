@@ -1,8 +1,8 @@
-#	$OpenBSD: Makefile,v 1.22 2021/02/23 19:39:15 sthen Exp $
+#	$OpenBSD: Makefile,v 1.23 2021/05/13 23:55:12 jca Exp $
 
 COMMENT=	tool to analyse \#includes in C and C++ source files
 CATEGORIES=	devel
-DISTNAME=	include-what-you-use-0.14.src
+DISTNAME=	include-what-you-use-0.15.src
 PKGNAME=	${DISTNAME:.src=}
 
 HOMEPAGE=	https://include-what-you-use.org
@@ -14,8 +14,8 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	${COMPILER_LIBCXX} c m pthread
-LLVM_V=		10.0.0
+WANTLIB=	${COMPILER_LIBCXX} c clang-cpp m pthread
+LLVM_V=		11.1.0
 BUILD_DEPENDS=	devel/llvm>=${LLVM_V}
 RUN_DEPENDS=	devel/llvm>=${LLVM_V}
 
@@ -26,6 +26,7 @@ MODPY_ADJ_FILES=	*.py
 COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c++
 
+WRKDIST=		${WRKDIR}
 DOCDIR=			${PREFIX}/share/doc/include-what-you-use
 
 do-test:
