@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/13 10:52:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/05/13 19:22:50 ajacoutot Exp $
 @conflict bijiben-*
 @pkgpath x11/gnome/bijiben
 @bin bin/bijiben
@@ -443,9 +443,9 @@ share/locale/vi/LC_MESSAGES/bijiben.mo
 share/locale/zh_CN/LC_MESSAGES/bijiben.mo
 share/locale/zh_HK/LC_MESSAGES/bijiben.mo
 share/locale/zh_TW/LC_MESSAGES/bijiben.mo
+share/metainfo/org.gnome.Notes.appdata.xml
+share/mime/packages/org.gnome.Notes.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag glib-compile-schemas
 @tag update-mime-database
-share/metainfo/org.gnome.Notes.appdata.xml
-share/mime/packages/org.gnome.Notes.xml
