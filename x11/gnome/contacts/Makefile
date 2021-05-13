@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.84 2020/11/07 14:58:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.85 2021/05/13 12:40:15 jasper Exp $
 
 COMMENT=		contacts manager for GNOME
 
 GNOME_PROJECT=		gnome-contacts
-GNOME_VERSION=		3.38.1
+GNOME_VERSION=		40.0
 
 CATEGORIES=		productivity
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE= 	Yes
 WANTLIB += atk-1.0 c cairo edataserver-1.2 edataserverui-1.2 folks
 WANTLIB += folks-eds gdk-3 gdk_pixbuf-2.0 gee-0.8 gio-2.0 glib-2.0
 WANTLIB += gnome-desktop-3 goa-1.0 gobject-2.0 gtk-3 handy-1 intl
-WANTLIB += m pango-1.0 pangocairo-1.0
+WANTLIB += m pango-1.0
 WANTLIB += ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
