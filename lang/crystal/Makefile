@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2020/08/03 20:36:28 gkoehler Exp $
+# $OpenBSD: Makefile,v 1.10 2021/05/13 23:52:00 jca Exp $
+
+BROKEN =	needs an update to support llvm-11
 
 # Hopefully ${CLANG_ARCHS} at some point.
 ONLY_FOR_ARCHS=	amd64
