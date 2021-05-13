@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.44 2021/04/27 17:22:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.45 2021/05/13 09:33:42 jasper Exp $
 @conflict nautilus-file-roller-*
 @pkgpath x11/gnome/file-roller,-main
 @pkgpath x11/gnome/file-roller,-nautilus
@@ -8,7 +8,7 @@ libexec/file-roller/
 libexec/file-roller/isoinfo.sh
 @bin libexec/file-roller/rpm2cpio
 share/applications/org.gnome.FileRoller.desktop
-share/dbus-1/services/org.gnome.FileRoller.ArchiveManager1.service
+share/dbus-1/services/org.gnome.ArchiveManager1.service
 share/dbus-1/services/org.gnome.FileRoller.service
 share/file-roller/
 share/file-roller/packages.match
