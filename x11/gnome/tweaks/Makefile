@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/05/13 08:18:50 ajacoutot Exp $
 
 COMMENT=		customize advanced GNOME 3 options
 
 GNOME_PROJECT=		gnome-tweaks
-GNOME_VERSION=		3.34.1
+GNOME_VERSION=		40.0
 
 CATEGORIES=		sysutils
 
 # GPLv3
 PERMIT_PACKAGE=		Yes
 
-MODULES=		devel/meson \
+MODULES=		devel/dconf \
+			devel/meson \
 			lang/python \
 			x11/gnome
 
