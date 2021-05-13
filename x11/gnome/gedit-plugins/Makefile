@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.114 2021/03/29 08:01:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.115 2021/05/13 09:30:41 jasper Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
-GNOME_VERSION=		3.38.2
+GNOME_VERSION=		40.1
 
 CATEGORIES=		editors
 
@@ -22,7 +22,7 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/libgit2/libgit2-glib>=0.0.6p0 \
 			devel/vte3 \
 			x11/dbus-python${MODPY_FLAVOR} \
-			x11/gnome/gedit>=3.14.0 \
+			x11/gnome/gedit \
 			x11/gnome/gucharmap
 
 # msgfmt: cannot locate ITS rules for plugins/bookmarks/gedit-bookmarks.metainfo.xml.in
@@ -36,7 +36,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/py-gobject3${MODPY_FLAVOR} \
 			devel/vte3 \
 			x11/dbus-python${MODPY_FLAVOR} \
-			x11/gnome/gedit>=3.14.0 \
+			x11/gnome/gedit \
 			x11/gnome/gucharmap
 
 CONFIGURE_ARGS =	-Dplugin_zeitgeist=false
