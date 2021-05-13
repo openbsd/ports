@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2021/05/13 09:04:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2021/05/13 17:50:04 jasper Exp $
 
 COMMENT =		GNOME utility to insert unusual characters
 
 GNOME_PROJECT =		gnome-characters
 GNOME_VERSION =		40.0
+REVISION =		0
 
 # BSD3/GPLv2
 PERMIT_PACKAGE =	Yes
@@ -16,8 +17,10 @@ MODULES =		devel/dconf \
 
 LIB_DEPENDS =		converters/libunistring \
 			x11/gtk+3
-BUILD_DEPENDS =		x11/gnome/gjs
-RUN_DEPENDS =		x11/gnome/gjs
+BUILD_DEPENDS =		x11/gnome/gjs \
+			x11/libhandy
+RUN_DEPENDS =		x11/gnome/gjs \
+			x11/libhandy
 
 MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache
 
