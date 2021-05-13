@@ -14,6 +14,9 @@ wasm-objdump:
 wasm-interp:
    decode and run a WebAssembly binary file using a stack-based interpreter
 
+wasm-decompile:
+   decompile a wasm binary into readable C-like syntax
+
 wat-desugar:
    parse .wat text form as supported by the spec interpreter
    (s-expressions, flat syntax, or mixed) and print "canonical" flat format

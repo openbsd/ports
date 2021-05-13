@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_tools_wasm-objdump_cc,v 1.1 2021/05/13 05:00:36 semarie Exp $
+
+Index: src/tools/wasm-objdump.cc
+--- src/tools/wasm-objdump.cc.orig
++++ src/tools/wasm-objdump.cc
+@@ -18,6 +18,9 @@
+ #include <cstdlib>
+ #include <cstring>
+ 
++#include <err.h>
++#include <unistd.h>
++
+ #include "src/common.h"
+ #include "src/option-parser.h"
+ #include "src/stream.h"
+@@ -117,6 +120,9 @@ Result dump_file(const char* filename) {
+ 
+ int ProgramMain(int argc, char** argv) {
+   InitStdio();
++
++  if (pledge("stdio rpath", NULL) != 0)
++    err(1, "pledge");
+ 
+   ParseOptions(argc, argv);
+   if (!s_objdump_options.headers && !s_objdump_options.details &&

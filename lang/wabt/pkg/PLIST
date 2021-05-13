@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/02/04 14:13:04 rapha Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/05/13 05:00:36 semarie Exp $
 @bin bin/spectest-interp
+@bin bin/wasm-decompile
 @bin bin/wasm-interp
 @bin bin/wasm-objdump
 @bin bin/wasm-opcodecnt
@@ -10,7 +11,11 @@
 @bin bin/wast2json
 @bin bin/wat-desugar
 @bin bin/wat2wasm
+include/wasm-rt-impl.h
+include/wasm-rt.h
+@static-lib lib/libwasm-rt-impl.a
 @man man/man1/spectest-interp.1
+@man man/man1/wasm-decompile.1
 @man man/man1/wasm-interp.1
 @man man/man1/wasm-objdump.1
 @man man/man1/wasm-opcodecnt.1

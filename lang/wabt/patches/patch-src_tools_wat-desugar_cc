@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_tools_wat-desugar_cc,v 1.1 2021/05/13 05:00:36 semarie Exp $
+
+Index: src/tools/wat-desugar.cc
+--- src/tools/wat-desugar.cc.orig
++++ src/tools/wat-desugar.cc
+@@ -20,6 +20,9 @@
+ #include <cstdio>
+ #include <cstdlib>
+ 
++#include <err.h>
++#include <unistd.h>
++
+ #include "config.h"
+ 
+ #include "src/apply-names.h"
+@@ -83,6 +86,13 @@ static void ParseOptions(int argc, char** argv) {
+ int ProgramMain(int argc, char** argv) {
+   InitStdio();
+   ParseOptions(argc, argv);
++
++  if (unveil(s_infile, "r") != 0)
++    err(1, "unveil: %s", s_infile);
++  if (s_outfile != NULL && unveil(s_outfile, "wc") != 0)
++    err(1, "unveil: %s", s_outfile);
++  if (pledge("stdio rpath wpath cpath", NULL) != 0)
++    err(1, "pledge");
+ 
+   std::vector<uint8_t> file_data;
+   Result result = ReadFile(s_infile, &file_data);

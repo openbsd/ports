@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_tools_wasm2c_cc,v 1.1 2021/05/13 05:00:36 semarie Exp $
+
+Index: src/tools/wasm2c.cc
+--- src/tools/wasm2c.cc.orig
++++ src/tools/wasm2c.cc
+@@ -19,6 +19,9 @@
+ #include <cstdio>
+ #include <cstdlib>
+ 
++#include <err.h>
++#include <unistd.h>
++
+ #include "src/apply-names.h"
+ #include "src/binary-reader.h"
+ #include "src/binary-reader-ir.h"
+@@ -108,6 +111,9 @@ int ProgramMain(int argc, char** argv) {
+ 
+   InitStdio();
+   ParseOptions(argc, argv);
++
++  if (pledge("stdio rpath wpath cpath", NULL) != 0)
++    err(1, "pledge");
+ 
+   std::vector<uint8_t> file_data;
+   result = ReadFile(s_infile.c_str(), &file_data);

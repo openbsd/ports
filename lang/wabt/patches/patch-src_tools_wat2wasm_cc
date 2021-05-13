@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_tools_wat2wasm_cc,v 1.1 2021/05/13 05:00:36 semarie Exp $
+
+Index: src/tools/wat2wasm.cc
+--- src/tools/wat2wasm.cc.orig
++++ src/tools/wat2wasm.cc
+@@ -21,6 +21,9 @@
+ #include <cstdio>
+ #include <string>
+ 
++#include <err.h>
++#include <unistd.h>
++
+ #include "config.h"
+ 
+ #include "src/binary-writer.h"
+@@ -125,6 +128,13 @@ int ProgramMain(int argc, char** argv) {
+   InitStdio();
+ 
+   ParseOptions(argc, argv);
++
++  if (unveil(s_infile, "r") != 0)
++    err(1, "unveil: %s", s_infile);
++  if (!s_outfile.empty() && unveil(s_outfile.c_str(), "wc") != 0)
++    err(1, "unveil: %s", s_outfile.c_str());
++  if (pledge("stdio rpath wpath cpath", NULL) != 0)
++    err(1, "pledge");
+ 
+   std::vector<uint8_t> file_data;
+   Result result = ReadFile(s_infile, &file_data);

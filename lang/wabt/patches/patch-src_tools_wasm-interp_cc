@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_tools_wasm-interp_cc,v 1.1 2021/05/13 05:00:36 semarie Exp $
+
+Index: src/tools/wasm-interp.cc
+--- src/tools/wasm-interp.cc.orig
++++ src/tools/wasm-interp.cc
+@@ -22,6 +22,9 @@
+ #include <string>
+ #include <vector>
+ 
++#include <err.h>
++#include <unistd.h>
++
+ #include "src/binary-reader.h"
+ #include "src/error-formatter.h"
+ #include "src/feature.h"
+@@ -326,6 +329,11 @@ int ProgramMain(int argc, char** argv) {
+ 
+   ParseOptions(argc, argv);
+ 
++  if (unveil(s_infile, "r") != 0)
++    err(1, "unveil: %s", s_infile);
++  if (pledge("stdio rpath", NULL) != 0)
++    err(1, "pledge");
++  
+   wabt::Result result = ReadAndRunModule(s_infile);
+   return result != wabt::Result::Ok;
+ }
