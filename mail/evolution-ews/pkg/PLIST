@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2020/11/06 14:46:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2021/05/13 10:22:41 ajacoutot Exp $
 @so lib/evolution-data-server/addressbook-backends/libebookbackendews.so
 @so lib/evolution-data-server/addressbook-backends/libebookbackendmicrosoft365.so
 @so lib/evolution-data-server/calendar-backends/libecalbackendews.so
@@ -36,6 +36,7 @@ share/locale/hi/LC_MESSAGES/evolution-ews.mo
 share/locale/hr/LC_MESSAGES/evolution-ews.mo
 share/locale/hu/LC_MESSAGES/evolution-ews.mo
 share/locale/id/LC_MESSAGES/evolution-ews.mo
+share/locale/it/LC_MESSAGES/evolution-ews.mo
 share/locale/ja/LC_MESSAGES/evolution-ews.mo
 share/locale/kn/LC_MESSAGES/evolution-ews.mo
 share/locale/lt/LC_MESSAGES/evolution-ews.mo
