@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.56 2021/02/23 19:39:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2021/05/13 08:22:57 kirby Exp $
 
 COMMENT =		encrypted backup using rsync algorithm
 
 MODPY_EGG_VERSION =	0.8.18
 DISTNAME =		duplicity-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		sysutils
 
-HOMEPAGE =		http://www.nongnu.org/duplicity/
+HOMEPAGE =		https://www.nongnu.org/duplicity/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
@@ -45,5 +46,7 @@ TEST_DEPENDS =		archivers/gtar \
 			textproc/py-sphinx${MODPY_FLAVOR}
 
 MAKE_ENV =		LIBRSYNC_DIR=${LOCALBASE}
+
+MODPY_ADJ_FILES =	bin/duplicity bin/rdiffdir
 
 .include <bsd.port.mk>
