@@ -1,0 +1,17 @@
+$OpenBSD: patch-libretro-common_audio_audio_mix_c,v 1.1 2021/05/13 13:47:53 jasper Exp $
+
+Fix build on powerpc64 where we don't need this header and regular powerpc
+doesn't use it.
+
+Index: libretro-common/audio/audio_mix.c
+--- libretro-common/audio/audio_mix.c.orig
++++ libretro-common/audio/audio_mix.c
+@@ -24,8 +24,6 @@
+ 
+ #if defined(__SSE2__)
+ #include <emmintrin.h>
+-#elif defined(__ALTIVEC__)
+-#include <altivec.h>
+ #endif
+ 
+ #include <stdio.h>
