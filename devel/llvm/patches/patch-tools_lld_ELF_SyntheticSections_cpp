@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_lld_ELF_SyntheticSections_cpp,v 1.16 2020/11/18 21:20:00 jca Exp $
+$OpenBSD: patch-tools_lld_ELF_SyntheticSections_cpp,v 1.17 2021/05/13 23:54:25 jca Exp $
 
 - Always allocate GOT header entries on powerpc.
 - Do not reserve PowerPC GOT header entries when creating a relocatable object file.
@@ -6,7 +6,7 @@ $OpenBSD: patch-tools_lld_ELF_SyntheticSections_cpp,v 1.16 2020/11/18 21:20:00 j
 Index: tools/lld/ELF/SyntheticSections.cpp
 --- tools/lld/ELF/SyntheticSections.cpp.orig
 +++ tools/lld/ELF/SyntheticSections.cpp
-@@ -604,6 +604,8 @@ GotSection::GotSection()
+@@ -607,6 +607,8 @@ GotSection::GotSection()
    // ElfSym::globalOffsetTable.
    if (ElfSym::globalOffsetTable && !target->gotBaseSymInGotPlt)
      numEntries += target->gotHeaderEntriesNum;

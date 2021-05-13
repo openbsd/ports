@@ -1,31 +1,31 @@
-$OpenBSD: patch-include_llvm_CodeGen_AsmPrinter_h,v 1.6 2020/08/05 06:49:48 jca Exp $
+$OpenBSD: patch-include_llvm_CodeGen_AsmPrinter_h,v 1.7 2021/05/13 23:54:24 jca Exp $
 
 Use int3 trap padding between functions instead of trapsleds with a leading jump.
 
 Index: include/llvm/CodeGen/AsmPrinter.h
 --- include/llvm/CodeGen/AsmPrinter.h.orig
 +++ include/llvm/CodeGen/AsmPrinter.h
-@@ -365,6 +365,11 @@ class AsmPrinter : public MachineFunctionPass { (publi
+@@ -375,6 +375,11 @@ class AsmPrinter : public MachineFunctionPass { (publi
    /// correctness.
-   void EmitAlignment(Align Alignment, const GlobalObject *GV = nullptr) const;
+   void emitAlignment(Align Alignment, const GlobalObject *GV = nullptr) const;
  
 +  /// Emit an alignment directive to the specified power of two boundary,
-+  /// like EmitAlignment, but call EmitTrapToAlignment to fill with
++  /// like emitAlignment, but call emitTrapToAlignment to fill with
 +  /// trap instructions instead of NOPs.
-+  void EmitTrapAlignment(Align Alignment, const GlobalObject *GO = nullptr) const;
++  void emitTrapAlignment(Align Alignment, const GlobalObject *GO = nullptr) const;
 +
    /// Lower the specified LLVM Constant to an MCExpr.
    virtual const MCExpr *lowerConstant(const Constant *CV);
  
-@@ -425,6 +430,11 @@ class AsmPrinter : public MachineFunctionPass { (publi
-   virtual void EmitInstruction(const MachineInstr *) {
+@@ -435,6 +440,11 @@ class AsmPrinter : public MachineFunctionPass { (publi
+   virtual void emitInstruction(const MachineInstr *) {
      llvm_unreachable("EmitInstruction not implemented");
    }
 +
 +  /// Emit an alignment directive to the specified power
 +  /// of two boundary, but use Trap instructions for alignment
 +  /// sections that should never be executed.
-+  virtual void EmitTrapToAlignment(Align Alignment) const;
++  virtual void emitTrapToAlignment(Align Alignment) const;
  
    /// Return the symbol for the specified constant pool entry.
    virtual MCSymbol *GetCPISymbol(unsigned CPID) const;

@@ -1,13 +1,13 @@
-$OpenBSD: patch-tools_lld_ELF_DriverUtils_cpp,v 1.10 2020/08/05 06:49:49 jca Exp $
+$OpenBSD: patch-tools_lld_ELF_DriverUtils_cpp,v 1.11 2021/05/13 23:54:25 jca Exp $
 
 Handle the OpenBSD-style major/minor shared library version scheme.
 
 Index: tools/lld/ELF/DriverUtils.cpp
 --- tools/lld/ELF/DriverUtils.cpp.orig
 +++ tools/lld/ELF/DriverUtils.cpp
-@@ -227,9 +227,36 @@ Optional<std::string> findFromSearchPaths(StringRef pa
+@@ -227,9 +227,36 @@ Optional<std::string> elf::findFromSearchPaths(StringR
  // search paths.
- Optional<std::string> searchLibraryBaseName(StringRef name) {
+ Optional<std::string> elf::searchLibraryBaseName(StringRef name) {
    for (StringRef dir : config->searchPaths) {
 -    if (!config->isStatic)
 +    if (!config->isStatic) {

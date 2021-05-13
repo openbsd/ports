@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_Target_PowerPC_PPCAsmPrinter_cpp,v 1.8 2020/11/18 21:20:00 jca Exp $
+$OpenBSD: patch-lib_Target_PowerPC_PPCAsmPrinter_cpp,v 1.9 2021/05/13 23:54:24 jca Exp $
 
 Add RETGUARD implementation for powerpc and powerpc64.
 
 Index: lib/Target/PowerPC/PPCAsmPrinter.cpp
 --- lib/Target/PowerPC/PPCAsmPrinter.cpp.orig
 +++ lib/Target/PowerPC/PPCAsmPrinter.cpp
-@@ -678,6 +678,85 @@ void PPCAsmPrinter::EmitInstruction(const MachineInstr
+@@ -657,6 +657,85 @@ void PPCAsmPrinter::emitInstruction(const MachineInstr
        return;
      }
    }
@@ -31,7 +31,7 @@ Index: lib/Target/PowerPC/PPCAsmPrinter.cpp
 +    const MCExpr *HereExpr = MCSymbolRefExpr::create(HereSym, OutContext);
 +    EmitToStreamer(*OutStreamer, MCInstBuilder(BL)
 +                                 .addExpr(HereExpr));
-+    OutStreamer->EmitLabel(HereSym);
++    OutStreamer->emitLabel(HereSym);
 +
 +    // Grab the result
 +    EmitToStreamer(*OutStreamer, MCInstBuilder(MFLR)
@@ -56,9 +56,9 @@ Index: lib/Target/PowerPC/PPCAsmPrinter.cpp
 +      const MCExpr *GOTDeltaExpr =
 +        MCBinaryExpr::createSub(GOTExpr, HereExpr, OutContext);
 +      const MCExpr *GOTDeltaHi =
-+        PPCMCExpr::createHa(GOTDeltaExpr, false, OutContext);
++        PPCMCExpr::createHa(GOTDeltaExpr, OutContext);
 +      const MCExpr *GOTDeltaLo =
-+        PPCMCExpr::createLo(GOTDeltaExpr, false, OutContext);
++        PPCMCExpr::createLo(GOTDeltaExpr, OutContext);
 +
 +      EmitToStreamer(*OutStreamer, MCInstBuilder(PPC::ADDIS)
 +                                   .addReg(DEST)
@@ -89,5 +89,5 @@ Index: lib/Target/PowerPC/PPCAsmPrinter.cpp
 +    return;
 +  }
    case PPC::LWZtoc: {
-     assert(!IsDarwin && "TOC is an ELF/XCOFF construct.");
- 
+     // Transform %rN = LWZtoc @op1, %r2
+     LowerPPCMachineInstrToMCInst(MI, TmpInst, *this);

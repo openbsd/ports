@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_include_clang_Basic_CodeGenOptions_def,v 1.6 2021/03/15 21:02:10 sthen Exp $
+$OpenBSD: patch-tools_clang_include_clang_Basic_CodeGenOptions_def,v 1.7 2021/05/13 23:54:25 jca Exp $
 
 - Add RETGUARD to clang for amd64. This security mechanism uses per-function
   random cookies to protect access to function return instructions, with the
@@ -22,22 +22,13 @@ $OpenBSD: patch-tools_clang_include_clang_Basic_CodeGenOptions_def,v 1.6 2021/03
 Index: tools/clang/include/clang/Basic/CodeGenOptions.def
 --- tools/clang/include/clang/Basic/CodeGenOptions.def.orig
 +++ tools/clang/include/clang/Basic/CodeGenOptions.def
-@@ -58,6 +58,8 @@ CODEGENOPT(DisableLLVMPasses , 1, 0) ///< Don't run an
-                                      ///< frontend.
- CODEGENOPT(DisableLifetimeMarkers, 1, 0) ///< Don't emit any lifetime markers
- CODEGENOPT(DisableO0ImplyOptNone , 1, 0) ///< Don't annonate function with optnone at O0
-+CODEGENOPT(ExperimentalStrictFloatingPoint, 1, 0) ///< Enables the new, experimental
-+                                                  ///< strict floating point.
- CODEGENOPT(ExperimentalNewPassManager, 1, 0) ///< Enables the new, experimental
-                                              ///< pass manager.
- CODEGENOPT(DebugPassManager, 1, 0) ///< Prints debug information for the new
-@@ -303,6 +305,9 @@ VALUE_CODEGENOPT(NumRegisterParameters, 32, 0)
- 
+@@ -312,6 +312,9 @@ VALUE_CODEGENOPT(SmallDataLimit, 32, 0)
  /// The lower bound for a buffer to be considered for stack protection.
  VALUE_CODEGENOPT(SSPBufferSize, 32, 0)
-+
+ 
 +/// Whether to use return protectors
 +CODEGENOPT(ReturnProtector, 1, 0)
- 
++
  /// The kind of generated debug info.
  ENUM_CODEGENOPT(DebugInfo, codegenoptions::DebugInfoKind, 3, codegenoptions::NoDebugInfo)
+ 

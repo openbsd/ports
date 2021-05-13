@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_X86_X86MCInstLower_cpp,v 1.9 2020/08/05 06:49:48 jca Exp $
+$OpenBSD: patch-lib_Target_X86_X86MCInstLower_cpp,v 1.10 2021/05/13 23:54:25 jca Exp $
 
 - Add RETGUARD to clang for amd64. This security mechanism uses per-function
   random cookies to protect access to function return instructions, with the
@@ -25,7 +25,7 @@ $OpenBSD: patch-lib_Target_X86_X86MCInstLower_cpp,v 1.9 2020/08/05 06:49:48 jca 
 Index: lib/Target/X86/X86MCInstLower.cpp
 --- lib/Target/X86/X86MCInstLower.cpp.orig
 +++ lib/Target/X86/X86MCInstLower.cpp
-@@ -2226,6 +2226,50 @@ void X86AsmPrinter::EmitInstruction(const MachineInstr
+@@ -2566,6 +2566,50 @@ void X86AsmPrinter::emitInstruction(const MachineInstr
          MCInstBuilder(X86::MOV64rr).addReg(X86::R10).addReg(X86::RAX));
      return;
  
@@ -43,7 +43,7 @@ Index: lib/Target/X86/X86MCInstLower.cpp
 +
 +    // Now .fill up to 0xe byte, so the ret happens on 0xf
 +    MCSymbol *Dot = OutContext.createTempSymbol();
-+    OutStreamer->EmitLabel(Dot);
++    OutStreamer->emitLabel(Dot);
 +    const MCExpr *DotE = MCSymbolRefExpr::create(Dot, OutContext);
 +    const MCExpr *BaseE = MCSymbolRefExpr::create(
 +        TM.getSymbol(&MF->getFunction()), OutContext);
@@ -58,7 +58,7 @@ Index: lib/Target/X86/X86MCInstLower.cpp
 +    OutStreamer->emitFill(*FillE, 0xCC);
 +
 +    // And finally emit the jump target symbol
-+    OutStreamer->EmitLabel(RGSuccSym);
++    OutStreamer->emitLabel(RGSuccSym);
 +    return;
 +  }
 +
@@ -68,22 +68,22 @@ Index: lib/Target/X86/X86MCInstLower.cpp
 +    EmitAndCountInstruction(MCInstBuilder(X86::JMP_1).addExpr(RGSuccExpr));
 +    EmitAndCountInstruction(MCInstBuilder(X86::INT3));
 +    EmitAndCountInstruction(MCInstBuilder(X86::INT3));
-+    OutStreamer->EmitValueToAlignment(8, 0xCC, 1);
-+    OutStreamer->EmitLabel(RGSuccSym);
++    OutStreamer->emitValueToAlignment(8, 0xCC, 1);
++    OutStreamer->emitLabel(RGSuccSym);
 +    return;
 +  }
 +
    case X86::SEH_PushReg:
    case X86::SEH_SaveReg:
    case X86::SEH_SaveXMM:
-@@ -2657,4 +2701,10 @@ void X86AsmPrinter::EmitInstruction(const MachineInstr
+@@ -2615,4 +2659,10 @@ void X86AsmPrinter::emitInstruction(const MachineInstr
    }
  
    EmitAndCountInstruction(TmpInst);
 +}
 +
 +/// Emit Trap bytes to the specified power of two alignment
-+void X86AsmPrinter::EmitTrapToAlignment(Align Alignment) const {
-+  if (Alignment == Align::None()) return;
-+  OutStreamer->EmitValueToAlignment(Alignment.value(), 0xCC, 1);
++void X86AsmPrinter::emitTrapToAlignment(Align Alignment) const {
++  if (Alignment == Align(1)) return;
++  OutStreamer->emitValueToAlignment(Alignment.value(), 0xCC, 1);
  }

@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_Target_AArch64_AArch64InstrInfo_td,v 1.4 2020/08/05 06:49:48 jca Exp $
+$OpenBSD: patch-lib_Target_AArch64_AArch64InstrInfo_td,v 1.5 2021/05/13 23:54:24 jca Exp $
 
 Add retguard for arm64.
 
 Index: lib/Target/AArch64/AArch64InstrInfo.td
 --- lib/Target/AArch64/AArch64InstrInfo.td.orig
 +++ lib/Target/AArch64/AArch64InstrInfo.td
-@@ -653,6 +653,14 @@ def ADDlowTLS
+@@ -678,6 +678,14 @@ def ADDlowTLS
  
  } // isReMaterializable, isCodeGenOnly
  

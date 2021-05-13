@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_lld_ELF_Symbols_cpp,v 1.3 2020/08/05 06:49:49 jca Exp $
+$OpenBSD: patch-tools_lld_ELF_Symbols_cpp,v 1.4 2021/05/13 23:54:25 jca Exp $
 
 Generate __data_start symbol that marks the start of .data when __data_start
 is referenced from code being linked.
@@ -6,9 +6,9 @@ is referenced from code being linked.
 Index: tools/lld/ELF/Symbols.cpp
 --- tools/lld/ELF/Symbols.cpp.orig
 +++ tools/lld/ELF/Symbols.cpp
-@@ -38,6 +38,7 @@ std::string toELFString(const Archive::Symbol &b) {
+@@ -50,6 +50,7 @@ std::string lld::toELFString(const Archive::Symbol &b)
+ }
  
- namespace elf {
  Defined *ElfSym::bss;
 +Defined *ElfSym::data;
  Defined *ElfSym::etext1;

@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_Mips_AsmParser_MipsAsmParser_cpp,v 1.4 2020/12/21 21:38:51 jca Exp $
+$OpenBSD: patch-lib_Target_Mips_AsmParser_MipsAsmParser_cpp,v 1.5 2021/05/13 23:54:24 jca Exp $
 
 Adapt the -mfix-loongson2f-btb workaround from as(1) to LLVM/clang.
 
@@ -13,7 +13,7 @@ Index: lib/Target/Mips/AsmParser/MipsAsmParser.cpp
  
  namespace {
  
-@@ -234,6 +235,9 @@ class MipsAsmParser : public MCTargetAsmParser {
+@@ -236,6 +237,9 @@ class MipsAsmParser : public MCTargetAsmParser {
  
    bool emitPartialAddress(MipsTargetStreamer &TOut, SMLoc IDLoc, MCSymbol *Sym);
  
@@ -23,7 +23,7 @@ Index: lib/Target/Mips/AsmParser/MipsAsmParser.cpp
    bool expandLoadImm(MCInst &Inst, bool Is32BitImm, SMLoc IDLoc,
                       MCStreamer &Out, const MCSubtargetInfo *STI);
  
-@@ -2088,6 +2092,19 @@ bool MipsAsmParser::processInstruction(MCInst &Inst, S
+@@ -2104,6 +2108,19 @@ bool MipsAsmParser::processInstruction(MCInst &Inst, S
      Inst = BInst;
    }
  
@@ -43,7 +43,7 @@ Index: lib/Target/Mips/AsmParser/MipsAsmParser.cpp
    // This expansion is not in a function called by tryExpandInstruction()
    // because the pseudo-instruction doesn't have a distinct opcode.
    if ((Opcode == Mips::JAL || Opcode == Mips::JAL_MM) && inPicMode()) {
-@@ -3306,6 +3323,39 @@ bool MipsAsmParser::emitPartialAddress(MipsTargetStrea
+@@ -3334,6 +3351,39 @@ bool MipsAsmParser::emitPartialAddress(MipsTargetStrea
        TOut.emitRRI(Mips::DSLL, ATReg, ATReg, 16, IDLoc, STI);
      }
    }

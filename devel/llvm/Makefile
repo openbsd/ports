@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.274 2021/02/23 19:39:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.275 2021/05/13 23:54:24 jca Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
@@ -11,15 +11,14 @@ COMMENT-python =	Python bindings for Clang
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
-LLVM_V =	10.0.1
+LLVM_V =	11.1.0
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME =	llvm-${LLVM_V}
 PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py3-llvm-${LLVM_V}
 PKGNAME-lldb =	lldb-${LLVM_V}
-REVISION-main =	10
-REVISION-lldb =	1
+
 CATEGORIES =	devel
 
 SHARED_LIBS =	clang		8.1 \
@@ -87,7 +86,6 @@ CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
 			-DLLVM_ENABLE_TERMINFO:Bool=False \
 			-DLLVM_ENABLE_RTTI:Bool=True \
 			-DCMAKE_DISABLE_FIND_PACKAGE_LibXml2:Bool=True \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Z3:Bool=True \
 			-DLLVM_LINK_LLVM_DYLIB:Bool=True \
 			-DLLVM_BUILD_LLVM_DYLIB:Bool=True \
 			-DEPYDOC_EXECUTABLE=EPYDOC_EXECUTABLE-NOTFOUND \

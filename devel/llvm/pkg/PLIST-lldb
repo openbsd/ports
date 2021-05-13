@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-lldb,v 1.7 2020/08/07 11:42:02 jca Exp $
+@comment $OpenBSD: PLIST-lldb,v 1.8 2021/05/13 23:54:25 jca Exp $
 @conflict ${MODPY_PY_PREFIX}llvm-<6.0.1p3
 @conflict llvm-<10.0.0p0
 @bin bin/lldb
@@ -16,6 +16,7 @@ include/lldb/API/SBBreakpointLocation.h
 include/lldb/API/SBBreakpointName.h
 include/lldb/API/SBBroadcaster.h
 include/lldb/API/SBCommandInterpreter.h
+include/lldb/API/SBCommandInterpreterRunOptions.h
 include/lldb/API/SBCommandReturnObject.h
 include/lldb/API/SBCommunication.h
 include/lldb/API/SBCompileUnit.h
@@ -23,6 +24,7 @@ include/lldb/API/SBData.h
 include/lldb/API/SBDebugger.h
 include/lldb/API/SBDeclaration.h
 include/lldb/API/SBDefines.h
+include/lldb/API/SBEnvironment.h
 include/lldb/API/SBError.h
 include/lldb/API/SBEvent.h
 include/lldb/API/SBExecutionContext.h
@@ -108,7 +110,6 @@ include/lldb/Core/AddressResolver.h
 include/lldb/Core/AddressResolverFileLine.h
 include/lldb/Core/AddressResolverName.h
 include/lldb/Core/Architecture.h
-include/lldb/Core/ClangForward.h
 include/lldb/Core/Communication.h
 include/lldb/Core/Debugger.h
 include/lldb/Core/Disassembler.h
@@ -235,7 +236,6 @@ include/lldb/Host/SafeMachO.h
 include/lldb/Host/Socket.h
 include/lldb/Host/SocketAddress.h
 include/lldb/Host/StringConvert.h
-include/lldb/Host/TaskPool.h
 include/lldb/Host/Terminal.h
 include/lldb/Host/ThreadLauncher.h
 include/lldb/Host/Time.h
@@ -344,17 +344,11 @@ include/lldb/Symbol/
 include/lldb/Symbol/ArmUnwindInfo.h
 include/lldb/Symbol/Block.h
 include/lldb/Symbol/CallFrameInfo.h
-include/lldb/Symbol/ClangASTContext.h
-include/lldb/Symbol/ClangASTImporter.h
-include/lldb/Symbol/ClangASTMetadata.h
-include/lldb/Symbol/ClangExternalASTSourceCallbacks.h
-include/lldb/Symbol/ClangUtil.h
 include/lldb/Symbol/CompactUnwindInfo.h
 include/lldb/Symbol/CompileUnit.h
 include/lldb/Symbol/CompilerDecl.h
 include/lldb/Symbol/CompilerDeclContext.h
 include/lldb/Symbol/CompilerType.h
-include/lldb/Symbol/CxxModuleHandler.h
 include/lldb/Symbol/DWARFCallFrameInfo.h
 include/lldb/Symbol/DebugMacros.h
 include/lldb/Symbol/DeclVendor.h
@@ -385,6 +379,7 @@ include/lldb/Symbol/Variable.h
 include/lldb/Symbol/VariableList.h
 include/lldb/Target/
 include/lldb/Target/ABI.h
+include/lldb/Target/AssertFrameRecognizer.h
 include/lldb/Target/DynamicLoader.h
 include/lldb/Target/ExecutionContext.h
 include/lldb/Target/ExecutionContextScope.h
@@ -408,6 +403,7 @@ include/lldb/Target/QueueItem.h
 include/lldb/Target/QueueList.h
 include/lldb/Target/RegisterCheckpoint.h
 include/lldb/Target/RegisterContext.h
+include/lldb/Target/RegisterContextUnwind.h
 include/lldb/Target/RegisterNumber.h
 include/lldb/Target/RemoteAwarePlatform.h
 include/lldb/Target/SectionLoadHistory.h
@@ -433,6 +429,7 @@ include/lldb/Target/ThreadPlanCallUserExpression.h
 include/lldb/Target/ThreadPlanPython.h
 include/lldb/Target/ThreadPlanRunToAddress.h
 include/lldb/Target/ThreadPlanShouldStopHere.h
+include/lldb/Target/ThreadPlanStack.h
 include/lldb/Target/ThreadPlanStepInRange.h
 include/lldb/Target/ThreadPlanStepInstruction.h
 include/lldb/Target/ThreadPlanStepOut.h
@@ -446,6 +443,7 @@ include/lldb/Target/ThreadSpec.h
 include/lldb/Target/UnixSignals.h
 include/lldb/Target/Unwind.h
 include/lldb/Target/UnwindAssembly.h
+include/lldb/Target/UnwindLLDB.h
 include/lldb/Utility/
 include/lldb/Utility/AnsiTerminal.h
 include/lldb/Utility/ArchSpec.h
@@ -483,7 +481,6 @@ include/lldb/Utility/ReproducerInstrumentation.h
 include/lldb/Utility/Scalar.h
 include/lldb/Utility/SelectHelper.h
 include/lldb/Utility/SharedCluster.h
-include/lldb/Utility/SharingPtr.h
 include/lldb/Utility/State.h
 include/lldb/Utility/Status.h
 include/lldb/Utility/Stream.h
@@ -505,6 +502,7 @@ include/lldb/Utility/UserID.h
 include/lldb/Utility/UserIDResolver.h
 include/lldb/Utility/VASPrintf.h
 include/lldb/Utility/VMRange.h
+include/lldb/Utility/XcodeSDK.h
 include/lldb/lldb-defines.h
 include/lldb/lldb-enumerations.h
 include/lldb/lldb-forward.h

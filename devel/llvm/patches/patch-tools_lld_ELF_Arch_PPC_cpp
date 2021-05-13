@@ -1,11 +1,11 @@
-$OpenBSD: patch-tools_lld_ELF_Arch_PPC_cpp,v 1.1 2020/12/21 21:38:51 jca Exp $
+$OpenBSD: patch-tools_lld_ELF_Arch_PPC_cpp,v 1.2 2021/05/13 23:54:25 jca Exp $
 
 Add R_PPC_ADDR24 to lld.
 
 Index: tools/lld/ELF/Arch/PPC.cpp
 --- tools/lld/ELF/Arch/PPC.cpp.orig
 +++ tools/lld/ELF/Arch/PPC.cpp
-@@ -220,6 +220,7 @@ RelExpr PPC::getRelExpr(RelType type, const Symbol &s,
+@@ -223,6 +223,7 @@ RelExpr PPC::getRelExpr(RelType type, const Symbol &s,
    case R_PPC_ADDR16_HA:
    case R_PPC_ADDR16_HI:
    case R_PPC_ADDR16_LO:
@@ -13,7 +13,7 @@ Index: tools/lld/ELF/Arch/PPC.cpp
    case R_PPC_ADDR32:
      return R_ABS;
    case R_PPC_DTPREL16:
-@@ -344,6 +345,7 @@ void PPC::relocateOne(uint8_t *loc, RelType type, uint
+@@ -347,6 +348,7 @@ void PPC::relocate(uint8_t *loc, const Relocation &rel
      break;
    }
    case R_PPC_REL24:
