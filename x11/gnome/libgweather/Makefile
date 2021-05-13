@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.101 2021/05/13 07:52:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.102 2021/05/13 17:58:03 jasper Exp $
 
 COMMENT=		weather information access library
 
 GNOME_PROJECT=		libgweather
 GNOME_VERSION=		40.0
+REVISION=		0
 
-SHARED_LIBS += gweather-3                3.4 # 15.0.0
+SHARED_LIBS += gweather-3                3.5 # 15.0.0
 
 CATEGORIES=		net
 
@@ -17,9 +18,12 @@ WANTLIB += intl m soup-2.4 xml2
 
 MODULES=		devel/dconf \
 			devel/meson \
+			lang/python \
 			x11/gnome
 
+MODPY_RUNDEP =		No
 MODGNOME_TOOLS= 	gobject-introspection vala
+BUILD_DEPENDS +=	devel/py-gobject3${MODPY_FLAVOR}
 LIB_DEPENDS=		geo/geocode-glib \
 			x11/gtk+3
 
