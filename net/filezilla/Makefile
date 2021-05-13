@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.79 2021/03/24 05:15:41 bket Exp $
+# $OpenBSD: Makefile,v 1.80 2021/05/13 17:05:45 bket Exp $
 
 BROKEN-hppa=	serverpath.h:17:19: error: variable 'CServerPath final' has initializer but incomplete type
 BROKEN-alpha=	serverpath.h:17:19: error: variable 'CServerPath final' has initializer but incomplete type
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 
-V=		3.53.1
+V=		3.54.1
 PKGNAME=	filezilla-$V
 DISTNAME=	FileZilla_$V_src
 
-SHARED_LIBS+=	fzclient-commonui-private	0.0	# 3.53.0
-SHARED_LIBS+=	fzclient-private		1.1	# 3.53.0
+SHARED_LIBS+=	fzclient-commonui-private	0.1	# 3.54.1
+SHARED_LIBS+=	fzclient-private		2.0	# 3.54.1
 
 CATEGORIES=	net
 
@@ -33,7 +33,7 @@ WANTLIB += pcre pixman-1 png pugixml samplerate sndio sqlite3
 WANTLIB += tasn1 tiff unistring usbhid wx_baseu-3.0 wx_baseu_xml-3.0
 WANTLIB += wx_gtk3u_adv-3.0 wx_gtk3u_aui-3.0 wx_gtk3u_core-3.0
 WANTLIB += wx_gtk3u_html-3.0 wx_gtk3u_xrc-3.0 xcb xcb-render xcb-shm
-WANTLIB += z zstd
+WANTLIB += z
 
 MASTER_SITES=	https://download.filezilla-project.org/client/
 EXTRACT_SUFX=	.tar.bz2
@@ -44,7 +44,7 @@ COMPILER=	base-clang ports-gcc
 LIB_DEPENDS=	databases/sqlite3 \
 		devel/harfbuzz \
 		devel/libidn \
-		net/libfilezilla>=0.27.0 \
+		net/libfilezilla>=0.28.0 \
 		security/gnutls \
 		textproc/pugixml \
 		x11/dbus \
