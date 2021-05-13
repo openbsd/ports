@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2020/08/07 17:53:40 semarie Exp $
+# $OpenBSD: Makefile,v 1.4 2021/05/13 10:44:14 semarie Exp $
 
 COMMENT =	generator for the woboq code browser
 
-DISTNAME =	woboq_codebrowser-2.1pl1
+DISTNAME =	woboq_codebrowser-2.1pl2
 
 GH_ACCOUNT =	woboq
 GH_PROJECT =	woboq_codebrowser
 # support LLVM version we have in ports
-GH_COMMIT =	7099759f8eaa23cd64215a9ba1845594fb4c4005
+GH_COMMIT =	19b823ba36993d7ca2e06cbebcac39fb1c8059f3
 
 CATEGORIES =	devel
 
