@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.122 2021/04/28 19:30:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.123 2021/05/13 07:51:51 jasper Exp $
 
 COMMENT=	interfaces for interacting with online accounts
 
 GNOME_PROJECT=	gnome-online-accounts
-GNOME_VERSION=	3.38.2
+GNOME_VERSION=	3.40.0
 
 SHARED_LIBS +=  goa-1.0              4.0      # .0.0
 SHARED_LIBS +=  goa-backend-1.0      4.0      # .1.0
