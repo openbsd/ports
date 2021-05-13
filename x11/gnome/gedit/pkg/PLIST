@@ -1,29 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.64 2020/11/20 14:39:04 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.65 2021/05/13 09:30:41 jasper Exp $
 @bin bin/gedit
-include/gedit-3.38/
-include/gedit-3.38/gedit/
-include/gedit-3.38/gedit/gedit-app-activatable.h
-include/gedit-3.38/gedit/gedit-app.h
-include/gedit-3.38/gedit/gedit-commands.h
-include/gedit-3.38/gedit/gedit-debug.h
-include/gedit-3.38/gedit/gedit-document.h
-include/gedit-3.38/gedit/gedit-encodings-combo-box.h
-include/gedit-3.38/gedit/gedit-enum-types.h
-include/gedit-3.38/gedit/gedit-menu-extension.h
-include/gedit-3.38/gedit/gedit-message-bus.h
-include/gedit-3.38/gedit/gedit-message.h
-include/gedit-3.38/gedit/gedit-progress-info-bar.h
-include/gedit-3.38/gedit/gedit-statusbar.h
-include/gedit-3.38/gedit/gedit-tab.h
-include/gedit-3.38/gedit/gedit-utils.h
-include/gedit-3.38/gedit/gedit-view-activatable.h
-include/gedit-3.38/gedit/gedit-view.h
-include/gedit-3.38/gedit/gedit-window-activatable.h
-include/gedit-3.38/gedit/gedit-window.h
+include/gedit-40.0/
+include/gedit-40.0/gedit/
+include/gedit-40.0/gedit/gedit-app-activatable.h
+include/gedit-40.0/gedit/gedit-app.h
+include/gedit-40.0/gedit/gedit-commands.h
+include/gedit-40.0/gedit/gedit-debug.h
+include/gedit-40.0/gedit/gedit-document.h
+include/gedit-40.0/gedit/gedit-encodings-combo-box.h
+include/gedit-40.0/gedit/gedit-enum-types.h
+include/gedit-40.0/gedit/gedit-menu-extension.h
+include/gedit-40.0/gedit/gedit-message-bus.h
+include/gedit-40.0/gedit/gedit-message.h
+include/gedit-40.0/gedit/gedit-statusbar.h
+include/gedit-40.0/gedit/gedit-tab.h
+include/gedit-40.0/gedit/gedit-utils.h
+include/gedit-40.0/gedit/gedit-view-activatable.h
+include/gedit-40.0/gedit/gedit-view.h
+include/gedit-40.0/gedit/gedit-window-activatable.h
+include/gedit-40.0/gedit/gedit-window.h
 lib/gedit/
 lib/gedit/girepository-1.0/
 lib/gedit/girepository-1.0/Gedit-3.0.typelib
-@so lib/gedit/libgedit-3.38.so
+@so lib/gedit/libgedit-40.0.so
 lib/gedit/plugins/
 lib/gedit/plugins/docinfo.plugin
 lib/gedit/plugins/externaltools/
@@ -149,8 +148,8 @@ share/help/C/
 share/help/C/gedit/
 share/help/C/gedit/figures/
 share/help/C/gedit/figures/gedit-html-snippet.png
-share/help/C/gedit/figures/gedit-icon.png
 share/help/C/gedit/figures/gedit3-screenshot.png
+share/help/C/gedit/figures/org.gnome.gedit.svg
 share/help/C/gedit/gedit-change-color-scheme.page
 share/help/C/gedit/gedit-change-default-font.page
 share/help/C/gedit/gedit-close-file.page
@@ -193,8 +192,8 @@ share/help/ar/
 share/help/ar/gedit/
 share/help/ar/gedit/figures/
 share/help/ar/gedit/figures/gedit-html-snippet.png
-share/help/ar/gedit/figures/gedit-icon.png
 share/help/ar/gedit/figures/gedit3-screenshot.png
+share/help/ar/gedit/figures/org.gnome.gedit.svg
 share/help/ar/gedit/gedit-change-color-scheme.page
 share/help/ar/gedit/gedit-change-default-font.page
 share/help/ar/gedit/gedit-close-file.page
@@ -237,8 +236,8 @@ share/help/bg/
 share/help/bg/gedit/
 share/help/bg/gedit/figures/
 share/help/bg/gedit/figures/gedit-html-snippet.png
-share/help/bg/gedit/figures/gedit-icon.png
 share/help/bg/gedit/figures/gedit3-screenshot.png
+share/help/bg/gedit/figures/org.gnome.gedit.svg
 share/help/bg/gedit/gedit-change-color-scheme.page
 share/help/bg/gedit/gedit-change-default-font.page
 share/help/bg/gedit/gedit-close-file.page
@@ -281,8 +280,8 @@ share/help/ca/
 share/help/ca/gedit/
 share/help/ca/gedit/figures/
 share/help/ca/gedit/figures/gedit-html-snippet.png
-share/help/ca/gedit/figures/gedit-icon.png
 share/help/ca/gedit/figures/gedit3-screenshot.png
+share/help/ca/gedit/figures/org.gnome.gedit.svg
 share/help/ca/gedit/gedit-change-color-scheme.page
 share/help/ca/gedit/gedit-change-default-font.page
 share/help/ca/gedit/gedit-close-file.page
@@ -325,8 +324,8 @@ share/help/cs/
 share/help/cs/gedit/
 share/help/cs/gedit/figures/
 share/help/cs/gedit/figures/gedit-html-snippet.png
-share/help/cs/gedit/figures/gedit-icon.png
 share/help/cs/gedit/figures/gedit3-screenshot.png
+share/help/cs/gedit/figures/org.gnome.gedit.svg
 share/help/cs/gedit/gedit-change-color-scheme.page
 share/help/cs/gedit/gedit-change-default-font.page
 share/help/cs/gedit/gedit-close-file.page
@@ -369,8 +368,8 @@ share/help/da/
 share/help/da/gedit/
 share/help/da/gedit/figures/
 share/help/da/gedit/figures/gedit-html-snippet.png
-share/help/da/gedit/figures/gedit-icon.png
 share/help/da/gedit/figures/gedit3-screenshot.png
+share/help/da/gedit/figures/org.gnome.gedit.svg
 share/help/da/gedit/gedit-change-color-scheme.page
 share/help/da/gedit/gedit-change-default-font.page
 share/help/da/gedit/gedit-close-file.page
@@ -413,8 +412,8 @@ share/help/de/
 share/help/de/gedit/
 share/help/de/gedit/figures/
 share/help/de/gedit/figures/gedit-html-snippet.png
-share/help/de/gedit/figures/gedit-icon.png
 share/help/de/gedit/figures/gedit3-screenshot.png
+share/help/de/gedit/figures/org.gnome.gedit.svg
 share/help/de/gedit/gedit-change-color-scheme.page
 share/help/de/gedit/gedit-change-default-font.page
 share/help/de/gedit/gedit-close-file.page
@@ -457,8 +456,8 @@ share/help/el/
 share/help/el/gedit/
 share/help/el/gedit/figures/
 share/help/el/gedit/figures/gedit-html-snippet.png
-share/help/el/gedit/figures/gedit-icon.png
 share/help/el/gedit/figures/gedit3-screenshot.png
+share/help/el/gedit/figures/org.gnome.gedit.svg
 share/help/el/gedit/gedit-change-color-scheme.page
 share/help/el/gedit/gedit-change-default-font.page
 share/help/el/gedit/gedit-close-file.page
@@ -501,8 +500,8 @@ share/help/en_GB/
 share/help/en_GB/gedit/
 share/help/en_GB/gedit/figures/
 share/help/en_GB/gedit/figures/gedit-html-snippet.png
-share/help/en_GB/gedit/figures/gedit-icon.png
 share/help/en_GB/gedit/figures/gedit3-screenshot.png
+share/help/en_GB/gedit/figures/org.gnome.gedit.svg
 share/help/en_GB/gedit/gedit-change-color-scheme.page
 share/help/en_GB/gedit/gedit-change-default-font.page
 share/help/en_GB/gedit/gedit-close-file.page
@@ -545,8 +544,8 @@ share/help/es/
 share/help/es/gedit/
 share/help/es/gedit/figures/
 share/help/es/gedit/figures/gedit-html-snippet.png
-share/help/es/gedit/figures/gedit-icon.png
 share/help/es/gedit/figures/gedit3-screenshot.png
+share/help/es/gedit/figures/org.gnome.gedit.svg
 share/help/es/gedit/gedit-change-color-scheme.page
 share/help/es/gedit/gedit-change-default-font.page
 share/help/es/gedit/gedit-close-file.page
@@ -589,8 +588,8 @@ share/help/eu/
 share/help/eu/gedit/
 share/help/eu/gedit/figures/
 share/help/eu/gedit/figures/gedit-html-snippet.png
-share/help/eu/gedit/figures/gedit-icon.png
 share/help/eu/gedit/figures/gedit3-screenshot.png
+share/help/eu/gedit/figures/org.gnome.gedit.svg
 share/help/eu/gedit/gedit-change-color-scheme.page
 share/help/eu/gedit/gedit-change-default-font.page
 share/help/eu/gedit/gedit-close-file.page
@@ -633,8 +632,8 @@ share/help/fi/
 share/help/fi/gedit/
 share/help/fi/gedit/figures/
 share/help/fi/gedit/figures/gedit-html-snippet.png
-share/help/fi/gedit/figures/gedit-icon.png
 share/help/fi/gedit/figures/gedit3-screenshot.png
+share/help/fi/gedit/figures/org.gnome.gedit.svg
 share/help/fi/gedit/gedit-change-color-scheme.page
 share/help/fi/gedit/gedit-change-default-font.page
 share/help/fi/gedit/gedit-close-file.page
@@ -677,8 +676,8 @@ share/help/fr/
 share/help/fr/gedit/
 share/help/fr/gedit/figures/
 share/help/fr/gedit/figures/gedit-html-snippet.png
-share/help/fr/gedit/figures/gedit-icon.png
 share/help/fr/gedit/figures/gedit3-screenshot.png
+share/help/fr/gedit/figures/org.gnome.gedit.svg
 share/help/fr/gedit/gedit-change-color-scheme.page
 share/help/fr/gedit/gedit-change-default-font.page
 share/help/fr/gedit/gedit-close-file.page
@@ -721,8 +720,8 @@ share/help/gl/
 share/help/gl/gedit/
 share/help/gl/gedit/figures/
 share/help/gl/gedit/figures/gedit-html-snippet.png
-share/help/gl/gedit/figures/gedit-icon.png
 share/help/gl/gedit/figures/gedit3-screenshot.png
+share/help/gl/gedit/figures/org.gnome.gedit.svg
 share/help/gl/gedit/gedit-change-color-scheme.page
 share/help/gl/gedit/gedit-change-default-font.page
 share/help/gl/gedit/gedit-close-file.page
@@ -765,8 +764,8 @@ share/help/hu/
 share/help/hu/gedit/
 share/help/hu/gedit/figures/
 share/help/hu/gedit/figures/gedit-html-snippet.png
-share/help/hu/gedit/figures/gedit-icon.png
 share/help/hu/gedit/figures/gedit3-screenshot.png
+share/help/hu/gedit/figures/org.gnome.gedit.svg
 share/help/hu/gedit/gedit-change-color-scheme.page
 share/help/hu/gedit/gedit-change-default-font.page
 share/help/hu/gedit/gedit-close-file.page
@@ -809,8 +808,8 @@ share/help/id/
 share/help/id/gedit/
 share/help/id/gedit/figures/
 share/help/id/gedit/figures/gedit-html-snippet.png
-share/help/id/gedit/figures/gedit-icon.png
 share/help/id/gedit/figures/gedit3-screenshot.png
+share/help/id/gedit/figures/org.gnome.gedit.svg
 share/help/id/gedit/gedit-change-color-scheme.page
 share/help/id/gedit/gedit-change-default-font.page
 share/help/id/gedit/gedit-close-file.page
@@ -853,8 +852,8 @@ share/help/it/
 share/help/it/gedit/
 share/help/it/gedit/figures/
 share/help/it/gedit/figures/gedit-html-snippet.png
-share/help/it/gedit/figures/gedit-icon.png
 share/help/it/gedit/figures/gedit3-screenshot.png
+share/help/it/gedit/figures/org.gnome.gedit.svg
 share/help/it/gedit/gedit-change-color-scheme.page
 share/help/it/gedit/gedit-change-default-font.page
 share/help/it/gedit/gedit-close-file.page
@@ -897,8 +896,8 @@ share/help/ja/
 share/help/ja/gedit/
 share/help/ja/gedit/figures/
 share/help/ja/gedit/figures/gedit-html-snippet.png
-share/help/ja/gedit/figures/gedit-icon.png
 share/help/ja/gedit/figures/gedit3-screenshot.png
+share/help/ja/gedit/figures/org.gnome.gedit.svg
 share/help/ja/gedit/gedit-change-color-scheme.page
 share/help/ja/gedit/gedit-change-default-font.page
 share/help/ja/gedit/gedit-close-file.page
@@ -941,8 +940,8 @@ share/help/ko/
 share/help/ko/gedit/
 share/help/ko/gedit/figures/
 share/help/ko/gedit/figures/gedit-html-snippet.png
-share/help/ko/gedit/figures/gedit-icon.png
 share/help/ko/gedit/figures/gedit3-screenshot.png
+share/help/ko/gedit/figures/org.gnome.gedit.svg
 share/help/ko/gedit/gedit-change-color-scheme.page
 share/help/ko/gedit/gedit-change-default-font.page
 share/help/ko/gedit/gedit-close-file.page
@@ -985,8 +984,8 @@ share/help/lv/
 share/help/lv/gedit/
 share/help/lv/gedit/figures/
 share/help/lv/gedit/figures/gedit-html-snippet.png
-share/help/lv/gedit/figures/gedit-icon.png
 share/help/lv/gedit/figures/gedit3-screenshot.png
+share/help/lv/gedit/figures/org.gnome.gedit.svg
 share/help/lv/gedit/gedit-change-color-scheme.page
 share/help/lv/gedit/gedit-change-default-font.page
 share/help/lv/gedit/gedit-close-file.page
@@ -1029,8 +1028,8 @@ share/help/oc/
 share/help/oc/gedit/
 share/help/oc/gedit/figures/
 share/help/oc/gedit/figures/gedit-html-snippet.png
-share/help/oc/gedit/figures/gedit-icon.png
 share/help/oc/gedit/figures/gedit3-screenshot.png
+share/help/oc/gedit/figures/org.gnome.gedit.svg
 share/help/oc/gedit/gedit-change-color-scheme.page
 share/help/oc/gedit/gedit-change-default-font.page
 share/help/oc/gedit/gedit-close-file.page
@@ -1073,8 +1072,8 @@ share/help/pl/
 share/help/pl/gedit/
 share/help/pl/gedit/figures/
 share/help/pl/gedit/figures/gedit-html-snippet.png
-share/help/pl/gedit/figures/gedit-icon.png
 share/help/pl/gedit/figures/gedit3-screenshot.png
+share/help/pl/gedit/figures/org.gnome.gedit.svg
 share/help/pl/gedit/gedit-change-color-scheme.page
 share/help/pl/gedit/gedit-change-default-font.page
 share/help/pl/gedit/gedit-close-file.page
@@ -1117,8 +1116,8 @@ share/help/pt_BR/
 share/help/pt_BR/gedit/
 share/help/pt_BR/gedit/figures/
 share/help/pt_BR/gedit/figures/gedit-html-snippet.png
-share/help/pt_BR/gedit/figures/gedit-icon.png
 share/help/pt_BR/gedit/figures/gedit3-screenshot.png
+share/help/pt_BR/gedit/figures/org.gnome.gedit.svg
 share/help/pt_BR/gedit/gedit-change-color-scheme.page
 share/help/pt_BR/gedit/gedit-change-default-font.page
 share/help/pt_BR/gedit/gedit-close-file.page
@@ -1161,8 +1160,8 @@ share/help/ro/
 share/help/ro/gedit/
 share/help/ro/gedit/figures/
 share/help/ro/gedit/figures/gedit-html-snippet.png
-share/help/ro/gedit/figures/gedit-icon.png
 share/help/ro/gedit/figures/gedit3-screenshot.png
+share/help/ro/gedit/figures/org.gnome.gedit.svg
 share/help/ro/gedit/gedit-change-color-scheme.page
 share/help/ro/gedit/gedit-change-default-font.page
 share/help/ro/gedit/gedit-close-file.page
@@ -1205,8 +1204,8 @@ share/help/ru/
 share/help/ru/gedit/
 share/help/ru/gedit/figures/
 share/help/ru/gedit/figures/gedit-html-snippet.png
-share/help/ru/gedit/figures/gedit-icon.png
 share/help/ru/gedit/figures/gedit3-screenshot.png
+share/help/ru/gedit/figures/org.gnome.gedit.svg
 share/help/ru/gedit/gedit-change-color-scheme.page
 share/help/ru/gedit/gedit-change-default-font.page
 share/help/ru/gedit/gedit-close-file.page
@@ -1249,8 +1248,8 @@ share/help/sl/
 share/help/sl/gedit/
 share/help/sl/gedit/figures/
 share/help/sl/gedit/figures/gedit-html-snippet.png
-share/help/sl/gedit/figures/gedit-icon.png
 share/help/sl/gedit/figures/gedit3-screenshot.png
+share/help/sl/gedit/figures/org.gnome.gedit.svg
 share/help/sl/gedit/gedit-change-color-scheme.page
 share/help/sl/gedit/gedit-change-default-font.page
 share/help/sl/gedit/gedit-close-file.page
@@ -1293,8 +1292,8 @@ share/help/sv/
 share/help/sv/gedit/
 share/help/sv/gedit/figures/
 share/help/sv/gedit/figures/gedit-html-snippet.png
-share/help/sv/gedit/figures/gedit-icon.png
 share/help/sv/gedit/figures/gedit3-screenshot.png
+share/help/sv/gedit/figures/org.gnome.gedit.svg
 share/help/sv/gedit/gedit-change-color-scheme.page
 share/help/sv/gedit/gedit-change-default-font.page
 share/help/sv/gedit/gedit-close-file.page
@@ -1337,8 +1336,8 @@ share/help/te/
 share/help/te/gedit/
 share/help/te/gedit/figures/
 share/help/te/gedit/figures/gedit-html-snippet.png
-share/help/te/gedit/figures/gedit-icon.png
 share/help/te/gedit/figures/gedit3-screenshot.png
+share/help/te/gedit/figures/org.gnome.gedit.svg
 share/help/te/gedit/gedit-change-color-scheme.page
 share/help/te/gedit/gedit-change-default-font.page
 share/help/te/gedit/gedit-close-file.page
@@ -1381,8 +1380,8 @@ share/help/th/
 share/help/th/gedit/
 share/help/th/gedit/figures/
 share/help/th/gedit/figures/gedit-html-snippet.png
-share/help/th/gedit/figures/gedit-icon.png
 share/help/th/gedit/figures/gedit3-screenshot.png
+share/help/th/gedit/figures/org.gnome.gedit.svg
 share/help/th/gedit/gedit-change-color-scheme.page
 share/help/th/gedit/gedit-change-default-font.page
 share/help/th/gedit/gedit-close-file.page
@@ -1425,8 +1424,8 @@ share/help/uk/
 share/help/uk/gedit/
 share/help/uk/gedit/figures/
 share/help/uk/gedit/figures/gedit-html-snippet.png
-share/help/uk/gedit/figures/gedit-icon.png
 share/help/uk/gedit/figures/gedit3-screenshot.png
+share/help/uk/gedit/figures/org.gnome.gedit.svg
 share/help/uk/gedit/gedit-change-color-scheme.page
 share/help/uk/gedit/gedit-change-default-font.page
 share/help/uk/gedit/gedit-close-file.page
@@ -1469,8 +1468,8 @@ share/help/zh_CN/
 share/help/zh_CN/gedit/
 share/help/zh_CN/gedit/figures/
 share/help/zh_CN/gedit/figures/gedit-html-snippet.png
-share/help/zh_CN/gedit/figures/gedit-icon.png
 share/help/zh_CN/gedit/figures/gedit3-screenshot.png
+share/help/zh_CN/gedit/figures/org.gnome.gedit.svg
 share/help/zh_CN/gedit/gedit-change-color-scheme.page
 share/help/zh_CN/gedit/gedit-change-default-font.page
 share/help/zh_CN/gedit/gedit-close-file.page
@@ -1513,8 +1512,8 @@ share/help/zh_HK/
 share/help/zh_HK/gedit/
 share/help/zh_HK/gedit/figures/
 share/help/zh_HK/gedit/figures/gedit-html-snippet.png
-share/help/zh_HK/gedit/figures/gedit-icon.png
 share/help/zh_HK/gedit/figures/gedit3-screenshot.png
+share/help/zh_HK/gedit/figures/org.gnome.gedit.svg
 share/help/zh_HK/gedit/gedit-change-color-scheme.page
 share/help/zh_HK/gedit/gedit-change-default-font.page
 share/help/zh_HK/gedit/gedit-close-file.page
@@ -1557,8 +1556,8 @@ share/help/zh_TW/
 share/help/zh_TW/gedit/
 share/help/zh_TW/gedit/figures/
 share/help/zh_TW/gedit/figures/gedit-html-snippet.png
-share/help/zh_TW/gedit/figures/gedit-icon.png
 share/help/zh_TW/gedit/figures/gedit3-screenshot.png
+share/help/zh_TW/gedit/figures/org.gnome.gedit.svg
 share/help/zh_TW/gedit/gedit-change-color-scheme.page
 share/help/zh_TW/gedit/gedit-change-default-font.page
 share/help/zh_TW/gedit/gedit-close-file.page
