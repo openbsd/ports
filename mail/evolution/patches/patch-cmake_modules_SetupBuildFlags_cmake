@@ -1,0 +1,16 @@
+$OpenBSD: patch-cmake_modules_SetupBuildFlags_cmake,v 1.5 2021/05/13 10:22:18 ajacoutot Exp $
+
+XXX push upstream
+See patch-cmake_modules_SetupBuildFlags_cmake in databases/evolution
+
+Index: cmake/modules/SetupBuildFlags.cmake
+--- cmake/modules/SetupBuildFlags.cmake.orig
++++ cmake/modules/SetupBuildFlags.cmake
+@@ -20,7 +20,6 @@ macro(setup_build_flags _maintainer_mode)
+ 		-Wundef
+ 		-Wwrite-strings
+ 		-Wno-cast-function-type
+-		-Wl,--no-undefined
+ 		-fno-strict-aliasing
+ 	)
+ 

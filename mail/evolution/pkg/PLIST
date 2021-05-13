@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.61 2020/11/20 11:13:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.62 2021/05/13 10:22:18 ajacoutot Exp $
 @conflict evolution-plugins-*
 @pkgpath mail/evolution,-main
 @pkgpath mail/evolution,-plugins
@@ -172,6 +172,7 @@ include/evolution/e-util/e-datetime-format.h
 include/evolution/e-util/e-destination-store.h
 include/evolution/e-util/e-dialog-utils.h
 include/evolution/e-util/e-dialog-widgets.h
+include/evolution/e-util/e-ellipsized-combo-box-text.h
 include/evolution/e-util/e-emoticon-action.h
 include/evolution/e-util/e-emoticon-chooser-menu.h
 include/evolution/e-util/e-emoticon-chooser.h
@@ -593,6 +594,7 @@ lib/evolution/plugins/
 @so lib/evolution/plugins/liborg-gnome-email-custom-header.so
 @so lib/evolution/plugins/liborg-gnome-evolution-attachment-reminder.so
 @so lib/evolution/plugins/liborg-gnome-evolution-bbdb.so
+@so lib/evolution/plugins/liborg-gnome-evolution-sender-validation.so
 @so lib/evolution/plugins/liborg-gnome-external-editor.so
 @so lib/evolution/plugins/liborg-gnome-face.so
 @so lib/evolution/plugins/liborg-gnome-mail-notification.so
@@ -607,6 +609,7 @@ lib/evolution/plugins/org-gnome-dbx-import.eplug
 lib/evolution/plugins/org-gnome-email-custom-header.eplug
 lib/evolution/plugins/org-gnome-evolution-attachment-reminder.eplug
 lib/evolution/plugins/org-gnome-evolution-bbdb.eplug
+lib/evolution/plugins/org-gnome-evolution-sender-validation.eplug
 lib/evolution/plugins/org-gnome-external-editor.eplug
 lib/evolution/plugins/org-gnome-face.eplug
 lib/evolution/plugins/org-gnome-mail-notification.eplug
@@ -740,6 +743,7 @@ share/evolution/errors/org-gnome-external-editor.error
 share/evolution/errors/org-gnome-face.error
 share/evolution/errors/org-gnome-itip-formatter.error
 share/evolution/errors/org-gnome-mailing-list-actions.error
+share/evolution/errors/org-gnome-sender-validation.error
 share/evolution/errors/shell.error
 share/evolution/errors/widgets.error
 share/evolution/etspec/
@@ -899,6 +903,8 @@ share/evolution/icons/hicolor/32x32/actions/view-calendar-workweek.png
 share/evolution/icons/hicolor/32x32/apps/
 share/evolution/icons/hicolor/32x32/apps/contact-editor.png
 share/evolution/icons/hicolor/32x32/status/
+share/evolution/icons/hicolor/32x32/status/aspect-ratio-lock.png
+share/evolution/icons/hicolor/32x32/status/aspect-ratio-unlock.png
 share/evolution/icons/hicolor/32x32/status/offline.png
 share/evolution/icons/hicolor/32x32/status/online.png
 share/evolution/icons/hicolor/48x48/
@@ -1031,6 +1037,7 @@ share/glib-2.0/schemas/org.gnome.evolution.plugin.itip.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.plugin.mail-notification.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.plugin.prefer-plain.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.plugin.publish-calendar.gschema.xml
+share/glib-2.0/schemas/org.gnome.evolution.plugin.sender-validator.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.plugin.templates.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.shell.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.spamassassin.gschema.xml
@@ -1099,6 +1106,7 @@ share/help/C/evolution/figures/color-5c3566.png
 share/help/C/evolution/figures/color-8f5902.png
 share/help/C/evolution/figures/color-a40000.png
 share/help/C/evolution/figures/color-c4a000.png
+share/help/C/evolution/figures/color-ccccccffffff.png
 share/help/C/evolution/figures/color-ce5c00.png
 share/help/C/evolution/figures/evolutionlogo.png
 share/help/C/evolution/figures/html-composer-insert-image.png
@@ -1119,7 +1127,6 @@ share/help/C/evolution/import-data.page
 share/help/C/evolution/import-single-files.page
 share/help/C/evolution/import-supported-file-formats.page
 share/help/C/evolution/index.page
-share/help/C/evolution/intro-application.page
 share/help/C/evolution/intro-first-run.page
 share/help/C/evolution/intro-keyboard-shortcuts.page
 share/help/C/evolution/intro-main-window.page
@@ -1251,6 +1258,7 @@ share/help/C/evolution/problems-debug-how-to.page
 share/help/C/evolution/problems-getting-help.page
 share/help/C/evolution/problems-reporting-bugs.page
 share/help/C/evolution/searching-items.page
+share/help/C/evolution/start-command-line-parameters.page
 share/help/C/evolution/sync-with-other-devices.page
 share/help/C/evolution/tasks-caldav.page
 share/help/C/evolution/tasks-display-settings.page
@@ -1330,6 +1338,7 @@ share/help/ca/evolution/figures/color-5c3566.png
 share/help/ca/evolution/figures/color-8f5902.png
 share/help/ca/evolution/figures/color-a40000.png
 share/help/ca/evolution/figures/color-c4a000.png
+share/help/ca/evolution/figures/color-ccccccffffff.png
 share/help/ca/evolution/figures/color-ce5c00.png
 share/help/ca/evolution/figures/evolutionlogo.png
 share/help/ca/evolution/figures/html-composer-insert-image.png
@@ -1350,7 +1359,6 @@ share/help/ca/evolution/import-data.page
 share/help/ca/evolution/import-single-files.page
 share/help/ca/evolution/import-supported-file-formats.page
 share/help/ca/evolution/index.page
-share/help/ca/evolution/intro-application.page
 share/help/ca/evolution/intro-first-run.page
 share/help/ca/evolution/intro-keyboard-shortcuts.page
 share/help/ca/evolution/intro-main-window.page
@@ -1482,6 +1490,7 @@ share/help/ca/evolution/problems-debug-how-to.page
 share/help/ca/evolution/problems-getting-help.page
 share/help/ca/evolution/problems-reporting-bugs.page
 share/help/ca/evolution/searching-items.page
+share/help/ca/evolution/start-command-line-parameters.page
 share/help/ca/evolution/sync-with-other-devices.page
 share/help/ca/evolution/tasks-caldav.page
 share/help/ca/evolution/tasks-display-settings.page
@@ -1561,6 +1570,7 @@ share/help/cs/evolution/figures/color-5c3566.png
 share/help/cs/evolution/figures/color-8f5902.png
 share/help/cs/evolution/figures/color-a40000.png
 share/help/cs/evolution/figures/color-c4a000.png
+share/help/cs/evolution/figures/color-ccccccffffff.png
 share/help/cs/evolution/figures/color-ce5c00.png
 share/help/cs/evolution/figures/evolutionlogo.png
 share/help/cs/evolution/figures/html-composer-insert-image.png
@@ -1581,7 +1591,6 @@ share/help/cs/evolution/import-data.page
 share/help/cs/evolution/import-single-files.page
 share/help/cs/evolution/import-supported-file-formats.page
 share/help/cs/evolution/index.page
-share/help/cs/evolution/intro-application.page
 share/help/cs/evolution/intro-first-run.page
 share/help/cs/evolution/intro-keyboard-shortcuts.page
 share/help/cs/evolution/intro-main-window.page
@@ -1713,6 +1722,7 @@ share/help/cs/evolution/problems-debug-how-to.page
 share/help/cs/evolution/problems-getting-help.page
 share/help/cs/evolution/problems-reporting-bugs.page
 share/help/cs/evolution/searching-items.page
+share/help/cs/evolution/start-command-line-parameters.page
 share/help/cs/evolution/sync-with-other-devices.page
 share/help/cs/evolution/tasks-caldav.page
 share/help/cs/evolution/tasks-display-settings.page
@@ -1792,6 +1802,7 @@ share/help/de/evolution/figures/color-5c3566.png
 share/help/de/evolution/figures/color-8f5902.png
 share/help/de/evolution/figures/color-a40000.png
 share/help/de/evolution/figures/color-c4a000.png
+share/help/de/evolution/figures/color-ccccccffffff.png
 share/help/de/evolution/figures/color-ce5c00.png
 share/help/de/evolution/figures/evolutionlogo.png
 share/help/de/evolution/figures/html-composer-insert-image.png
@@ -1812,7 +1823,6 @@ share/help/de/evolution/import-data.page
 share/help/de/evolution/import-single-files.page
 share/help/de/evolution/import-supported-file-formats.page
 share/help/de/evolution/index.page
-share/help/de/evolution/intro-application.page
 share/help/de/evolution/intro-first-run.page
 share/help/de/evolution/intro-keyboard-shortcuts.page
 share/help/de/evolution/intro-main-window.page
@@ -1944,6 +1954,7 @@ share/help/de/evolution/problems-debug-how-to.page
 share/help/de/evolution/problems-getting-help.page
 share/help/de/evolution/problems-reporting-bugs.page
 share/help/de/evolution/searching-items.page
+share/help/de/evolution/start-command-line-parameters.page
 share/help/de/evolution/sync-with-other-devices.page
 share/help/de/evolution/tasks-caldav.page
 share/help/de/evolution/tasks-display-settings.page
@@ -2023,6 +2034,7 @@ share/help/el/evolution/figures/color-5c3566.png
 share/help/el/evolution/figures/color-8f5902.png
 share/help/el/evolution/figures/color-a40000.png
 share/help/el/evolution/figures/color-c4a000.png
+share/help/el/evolution/figures/color-ccccccffffff.png
 share/help/el/evolution/figures/color-ce5c00.png
 share/help/el/evolution/figures/evolutionlogo.png
 share/help/el/evolution/figures/html-composer-insert-image.png
@@ -2043,7 +2055,6 @@ share/help/el/evolution/import-data.page
 share/help/el/evolution/import-single-files.page
 share/help/el/evolution/import-supported-file-formats.page
 share/help/el/evolution/index.page
-share/help/el/evolution/intro-application.page
 share/help/el/evolution/intro-first-run.page
 share/help/el/evolution/intro-keyboard-shortcuts.page
 share/help/el/evolution/intro-main-window.page
@@ -2175,6 +2186,7 @@ share/help/el/evolution/problems-debug-how-to.page
 share/help/el/evolution/problems-getting-help.page
 share/help/el/evolution/problems-reporting-bugs.page
 share/help/el/evolution/searching-items.page
+share/help/el/evolution/start-command-line-parameters.page
 share/help/el/evolution/sync-with-other-devices.page
 share/help/el/evolution/tasks-caldav.page
 share/help/el/evolution/tasks-display-settings.page
@@ -2255,6 +2267,7 @@ share/help/en_GB/evolution/figures/color-5c3566.png
 share/help/en_GB/evolution/figures/color-8f5902.png
 share/help/en_GB/evolution/figures/color-a40000.png
 share/help/en_GB/evolution/figures/color-c4a000.png
+share/help/en_GB/evolution/figures/color-ccccccffffff.png
 share/help/en_GB/evolution/figures/color-ce5c00.png
 share/help/en_GB/evolution/figures/evolutionlogo.png
 share/help/en_GB/evolution/figures/html-composer-insert-image.png
@@ -2275,7 +2288,6 @@ share/help/en_GB/evolution/import-data.page
 share/help/en_GB/evolution/import-single-files.page
 share/help/en_GB/evolution/import-supported-file-formats.page
 share/help/en_GB/evolution/index.page
-share/help/en_GB/evolution/intro-application.page
 share/help/en_GB/evolution/intro-first-run.page
 share/help/en_GB/evolution/intro-keyboard-shortcuts.page
 share/help/en_GB/evolution/intro-main-window.page
@@ -2407,6 +2419,7 @@ share/help/en_GB/evolution/problems-debug-how-to.page
 share/help/en_GB/evolution/problems-getting-help.page
 share/help/en_GB/evolution/problems-reporting-bugs.page
 share/help/en_GB/evolution/searching-items.page
+share/help/en_GB/evolution/start-command-line-parameters.page
 share/help/en_GB/evolution/sync-with-other-devices.page
 share/help/en_GB/evolution/tasks-caldav.page
 share/help/en_GB/evolution/tasks-display-settings.page
@@ -2486,6 +2499,7 @@ share/help/es/evolution/figures/color-5c3566.png
 share/help/es/evolution/figures/color-8f5902.png
 share/help/es/evolution/figures/color-a40000.png
 share/help/es/evolution/figures/color-c4a000.png
+share/help/es/evolution/figures/color-ccccccffffff.png
 share/help/es/evolution/figures/color-ce5c00.png
 share/help/es/evolution/figures/evolutionlogo.png
 share/help/es/evolution/figures/html-composer-insert-image.png
@@ -2506,7 +2520,6 @@ share/help/es/evolution/import-data.page
 share/help/es/evolution/import-single-files.page
 share/help/es/evolution/import-supported-file-formats.page
 share/help/es/evolution/index.page
-share/help/es/evolution/intro-application.page
 share/help/es/evolution/intro-first-run.page
 share/help/es/evolution/intro-keyboard-shortcuts.page
 share/help/es/evolution/intro-main-window.page
@@ -2638,6 +2651,7 @@ share/help/es/evolution/problems-debug-how-to.page
 share/help/es/evolution/problems-getting-help.page
 share/help/es/evolution/problems-reporting-bugs.page
 share/help/es/evolution/searching-items.page
+share/help/es/evolution/start-command-line-parameters.page
 share/help/es/evolution/sync-with-other-devices.page
 share/help/es/evolution/tasks-caldav.page
 share/help/es/evolution/tasks-display-settings.page
@@ -2717,6 +2731,7 @@ share/help/eu/evolution/figures/color-5c3566.png
 share/help/eu/evolution/figures/color-8f5902.png
 share/help/eu/evolution/figures/color-a40000.png
 share/help/eu/evolution/figures/color-c4a000.png
+share/help/eu/evolution/figures/color-ccccccffffff.png
 share/help/eu/evolution/figures/color-ce5c00.png
 share/help/eu/evolution/figures/evolutionlogo.png
 share/help/eu/evolution/figures/html-composer-insert-image.png
@@ -2737,7 +2752,6 @@ share/help/eu/evolution/import-data.page
 share/help/eu/evolution/import-single-files.page
 share/help/eu/evolution/import-supported-file-formats.page
 share/help/eu/evolution/index.page
-share/help/eu/evolution/intro-application.page
 share/help/eu/evolution/intro-first-run.page
 share/help/eu/evolution/intro-keyboard-shortcuts.page
 share/help/eu/evolution/intro-main-window.page
@@ -2869,6 +2883,7 @@ share/help/eu/evolution/problems-debug-how-to.page
 share/help/eu/evolution/problems-getting-help.page
 share/help/eu/evolution/problems-reporting-bugs.page
 share/help/eu/evolution/searching-items.page
+share/help/eu/evolution/start-command-line-parameters.page
 share/help/eu/evolution/sync-with-other-devices.page
 share/help/eu/evolution/tasks-caldav.page
 share/help/eu/evolution/tasks-display-settings.page
@@ -2948,6 +2963,7 @@ share/help/fr/evolution/figures/color-5c3566.png
 share/help/fr/evolution/figures/color-8f5902.png
 share/help/fr/evolution/figures/color-a40000.png
 share/help/fr/evolution/figures/color-c4a000.png
+share/help/fr/evolution/figures/color-ccccccffffff.png
 share/help/fr/evolution/figures/color-ce5c00.png
 share/help/fr/evolution/figures/evolutionlogo.png
 share/help/fr/evolution/figures/html-composer-insert-image.png
@@ -2968,7 +2984,6 @@ share/help/fr/evolution/import-data.page
 share/help/fr/evolution/import-single-files.page
 share/help/fr/evolution/import-supported-file-formats.page
 share/help/fr/evolution/index.page
-share/help/fr/evolution/intro-application.page
 share/help/fr/evolution/intro-first-run.page
 share/help/fr/evolution/intro-keyboard-shortcuts.page
 share/help/fr/evolution/intro-main-window.page
@@ -3100,6 +3115,7 @@ share/help/fr/evolution/problems-debug-how-to.page
 share/help/fr/evolution/problems-getting-help.page
 share/help/fr/evolution/problems-reporting-bugs.page
 share/help/fr/evolution/searching-items.page
+share/help/fr/evolution/start-command-line-parameters.page
 share/help/fr/evolution/sync-with-other-devices.page
 share/help/fr/evolution/tasks-caldav.page
 share/help/fr/evolution/tasks-display-settings.page
@@ -3179,6 +3195,7 @@ share/help/gl/evolution/figures/color-5c3566.png
 share/help/gl/evolution/figures/color-8f5902.png
 share/help/gl/evolution/figures/color-a40000.png
 share/help/gl/evolution/figures/color-c4a000.png
+share/help/gl/evolution/figures/color-ccccccffffff.png
 share/help/gl/evolution/figures/color-ce5c00.png
 share/help/gl/evolution/figures/evolutionlogo.png
 share/help/gl/evolution/figures/html-composer-insert-image.png
@@ -3199,7 +3216,6 @@ share/help/gl/evolution/import-data.page
 share/help/gl/evolution/import-single-files.page
 share/help/gl/evolution/import-supported-file-formats.page
 share/help/gl/evolution/index.page
-share/help/gl/evolution/intro-application.page
 share/help/gl/evolution/intro-first-run.page
 share/help/gl/evolution/intro-keyboard-shortcuts.page
 share/help/gl/evolution/intro-main-window.page
@@ -3331,6 +3347,7 @@ share/help/gl/evolution/problems-debug-how-to.page
 share/help/gl/evolution/problems-getting-help.page
 share/help/gl/evolution/problems-reporting-bugs.page
 share/help/gl/evolution/searching-items.page
+share/help/gl/evolution/start-command-line-parameters.page
 share/help/gl/evolution/sync-with-other-devices.page
 share/help/gl/evolution/tasks-caldav.page
 share/help/gl/evolution/tasks-display-settings.page
@@ -3410,6 +3427,7 @@ share/help/hu/evolution/figures/color-5c3566.png
 share/help/hu/evolution/figures/color-8f5902.png
 share/help/hu/evolution/figures/color-a40000.png
 share/help/hu/evolution/figures/color-c4a000.png
+share/help/hu/evolution/figures/color-ccccccffffff.png
 share/help/hu/evolution/figures/color-ce5c00.png
 share/help/hu/evolution/figures/evolutionlogo.png
 share/help/hu/evolution/figures/html-composer-insert-image.png
@@ -3430,7 +3448,6 @@ share/help/hu/evolution/import-data.page
 share/help/hu/evolution/import-single-files.page
 share/help/hu/evolution/import-supported-file-formats.page
 share/help/hu/evolution/index.page
-share/help/hu/evolution/intro-application.page
 share/help/hu/evolution/intro-first-run.page
 share/help/hu/evolution/intro-keyboard-shortcuts.page
 share/help/hu/evolution/intro-main-window.page
@@ -3562,6 +3579,7 @@ share/help/hu/evolution/problems-debug-how-to.page
 share/help/hu/evolution/problems-getting-help.page
 share/help/hu/evolution/problems-reporting-bugs.page
 share/help/hu/evolution/searching-items.page
+share/help/hu/evolution/start-command-line-parameters.page
 share/help/hu/evolution/sync-with-other-devices.page
 share/help/hu/evolution/tasks-caldav.page
 share/help/hu/evolution/tasks-display-settings.page
@@ -3642,6 +3660,7 @@ share/help/id/evolution/figures/color-5c3566.png
 share/help/id/evolution/figures/color-8f5902.png
 share/help/id/evolution/figures/color-a40000.png
 share/help/id/evolution/figures/color-c4a000.png
+share/help/id/evolution/figures/color-ccccccffffff.png
 share/help/id/evolution/figures/color-ce5c00.png
 share/help/id/evolution/figures/evolutionlogo.png
 share/help/id/evolution/figures/html-composer-insert-image.png
@@ -3662,7 +3681,6 @@ share/help/id/evolution/import-data.page
 share/help/id/evolution/import-single-files.page
 share/help/id/evolution/import-supported-file-formats.page
 share/help/id/evolution/index.page
-share/help/id/evolution/intro-application.page
 share/help/id/evolution/intro-first-run.page
 share/help/id/evolution/intro-keyboard-shortcuts.page
 share/help/id/evolution/intro-main-window.page
@@ -3794,6 +3812,7 @@ share/help/id/evolution/problems-debug-how-to.page
 share/help/id/evolution/problems-getting-help.page
 share/help/id/evolution/problems-reporting-bugs.page
 share/help/id/evolution/searching-items.page
+share/help/id/evolution/start-command-line-parameters.page
 share/help/id/evolution/sync-with-other-devices.page
 share/help/id/evolution/tasks-caldav.page
 share/help/id/evolution/tasks-display-settings.page
@@ -3874,6 +3893,7 @@ share/help/mk/evolution/figures/color-5c3566.png
 share/help/mk/evolution/figures/color-8f5902.png
 share/help/mk/evolution/figures/color-a40000.png
 share/help/mk/evolution/figures/color-c4a000.png
+share/help/mk/evolution/figures/color-ccccccffffff.png
 share/help/mk/evolution/figures/color-ce5c00.png
 share/help/mk/evolution/figures/evolutionlogo.png
 share/help/mk/evolution/figures/html-composer-insert-image.png
@@ -3894,7 +3914,6 @@ share/help/mk/evolution/import-data.page
 share/help/mk/evolution/import-single-files.page
 share/help/mk/evolution/import-supported-file-formats.page
 share/help/mk/evolution/index.page
-share/help/mk/evolution/intro-application.page
 share/help/mk/evolution/intro-first-run.page
 share/help/mk/evolution/intro-keyboard-shortcuts.page
 share/help/mk/evolution/intro-main-window.page
@@ -4026,6 +4045,7 @@ share/help/mk/evolution/problems-debug-how-to.page
 share/help/mk/evolution/problems-getting-help.page
 share/help/mk/evolution/problems-reporting-bugs.page
 share/help/mk/evolution/searching-items.page
+share/help/mk/evolution/start-command-line-parameters.page
 share/help/mk/evolution/sync-with-other-devices.page
 share/help/mk/evolution/tasks-caldav.page
 share/help/mk/evolution/tasks-display-settings.page
@@ -4105,6 +4125,7 @@ share/help/oc/evolution/figures/color-5c3566.png
 share/help/oc/evolution/figures/color-8f5902.png
 share/help/oc/evolution/figures/color-a40000.png
 share/help/oc/evolution/figures/color-c4a000.png
+share/help/oc/evolution/figures/color-ccccccffffff.png
 share/help/oc/evolution/figures/color-ce5c00.png
 share/help/oc/evolution/figures/evolutionlogo.png
 share/help/oc/evolution/figures/html-composer-insert-image.png
@@ -4125,7 +4146,6 @@ share/help/oc/evolution/import-data.page
 share/help/oc/evolution/import-single-files.page
 share/help/oc/evolution/import-supported-file-formats.page
 share/help/oc/evolution/index.page
-share/help/oc/evolution/intro-application.page
 share/help/oc/evolution/intro-first-run.page
 share/help/oc/evolution/intro-keyboard-shortcuts.page
 share/help/oc/evolution/intro-main-window.page
@@ -4257,6 +4277,7 @@ share/help/oc/evolution/problems-debug-how-to.page
 share/help/oc/evolution/problems-getting-help.page
 share/help/oc/evolution/problems-reporting-bugs.page
 share/help/oc/evolution/searching-items.page
+share/help/oc/evolution/start-command-line-parameters.page
 share/help/oc/evolution/sync-with-other-devices.page
 share/help/oc/evolution/tasks-caldav.page
 share/help/oc/evolution/tasks-display-settings.page
@@ -4337,6 +4358,7 @@ share/help/ru/evolution/figures/color-5c3566.png
 share/help/ru/evolution/figures/color-8f5902.png
 share/help/ru/evolution/figures/color-a40000.png
 share/help/ru/evolution/figures/color-c4a000.png
+share/help/ru/evolution/figures/color-ccccccffffff.png
 share/help/ru/evolution/figures/color-ce5c00.png
 share/help/ru/evolution/figures/evolutionlogo.png
 share/help/ru/evolution/figures/html-composer-insert-image.png
@@ -4357,7 +4379,6 @@ share/help/ru/evolution/import-data.page
 share/help/ru/evolution/import-single-files.page
 share/help/ru/evolution/import-supported-file-formats.page
 share/help/ru/evolution/index.page
-share/help/ru/evolution/intro-application.page
 share/help/ru/evolution/intro-first-run.page
 share/help/ru/evolution/intro-keyboard-shortcuts.page
 share/help/ru/evolution/intro-main-window.page
@@ -4489,6 +4510,7 @@ share/help/ru/evolution/problems-debug-how-to.page
 share/help/ru/evolution/problems-getting-help.page
 share/help/ru/evolution/problems-reporting-bugs.page
 share/help/ru/evolution/searching-items.page
+share/help/ru/evolution/start-command-line-parameters.page
 share/help/ru/evolution/sync-with-other-devices.page
 share/help/ru/evolution/tasks-caldav.page
 share/help/ru/evolution/tasks-display-settings.page
@@ -4568,6 +4590,7 @@ share/help/sl/evolution/figures/color-5c3566.png
 share/help/sl/evolution/figures/color-8f5902.png
 share/help/sl/evolution/figures/color-a40000.png
 share/help/sl/evolution/figures/color-c4a000.png
+share/help/sl/evolution/figures/color-ccccccffffff.png
 share/help/sl/evolution/figures/color-ce5c00.png
 share/help/sl/evolution/figures/evolutionlogo.png
 share/help/sl/evolution/figures/html-composer-insert-image.png
@@ -4588,7 +4611,6 @@ share/help/sl/evolution/import-data.page
 share/help/sl/evolution/import-single-files.page
 share/help/sl/evolution/import-supported-file-formats.page
 share/help/sl/evolution/index.page
-share/help/sl/evolution/intro-application.page
 share/help/sl/evolution/intro-first-run.page
 share/help/sl/evolution/intro-keyboard-shortcuts.page
 share/help/sl/evolution/intro-main-window.page
@@ -4720,6 +4742,7 @@ share/help/sl/evolution/problems-debug-how-to.page
 share/help/sl/evolution/problems-getting-help.page
 share/help/sl/evolution/problems-reporting-bugs.page
 share/help/sl/evolution/searching-items.page
+share/help/sl/evolution/start-command-line-parameters.page
 share/help/sl/evolution/sync-with-other-devices.page
 share/help/sl/evolution/tasks-caldav.page
 share/help/sl/evolution/tasks-display-settings.page
@@ -4799,6 +4822,7 @@ share/help/sv/evolution/figures/color-5c3566.png
 share/help/sv/evolution/figures/color-8f5902.png
 share/help/sv/evolution/figures/color-a40000.png
 share/help/sv/evolution/figures/color-c4a000.png
+share/help/sv/evolution/figures/color-ccccccffffff.png
 share/help/sv/evolution/figures/color-ce5c00.png
 share/help/sv/evolution/figures/evolutionlogo.png
 share/help/sv/evolution/figures/html-composer-insert-image.png
@@ -4819,7 +4843,6 @@ share/help/sv/evolution/import-data.page
 share/help/sv/evolution/import-single-files.page
 share/help/sv/evolution/import-supported-file-formats.page
 share/help/sv/evolution/index.page
-share/help/sv/evolution/intro-application.page
 share/help/sv/evolution/intro-first-run.page
 share/help/sv/evolution/intro-keyboard-shortcuts.page
 share/help/sv/evolution/intro-main-window.page
@@ -4951,6 +4974,7 @@ share/help/sv/evolution/problems-debug-how-to.page
 share/help/sv/evolution/problems-getting-help.page
 share/help/sv/evolution/problems-reporting-bugs.page
 share/help/sv/evolution/searching-items.page
+share/help/sv/evolution/start-command-line-parameters.page
 share/help/sv/evolution/sync-with-other-devices.page
 share/help/sv/evolution/tasks-caldav.page
 share/help/sv/evolution/tasks-display-settings.page
@@ -5031,6 +5055,7 @@ share/help/te/evolution/figures/color-5c3566.png
 share/help/te/evolution/figures/color-8f5902.png
 share/help/te/evolution/figures/color-a40000.png
 share/help/te/evolution/figures/color-c4a000.png
+share/help/te/evolution/figures/color-ccccccffffff.png
 share/help/te/evolution/figures/color-ce5c00.png
 share/help/te/evolution/figures/evolutionlogo.png
 share/help/te/evolution/figures/html-composer-insert-image.png
@@ -5051,7 +5076,6 @@ share/help/te/evolution/import-data.page
 share/help/te/evolution/import-single-files.page
 share/help/te/evolution/import-supported-file-formats.page
 share/help/te/evolution/index.page
-share/help/te/evolution/intro-application.page
 share/help/te/evolution/intro-first-run.page
 share/help/te/evolution/intro-keyboard-shortcuts.page
 share/help/te/evolution/intro-main-window.page
@@ -5183,6 +5207,7 @@ share/help/te/evolution/problems-debug-how-to.page
 share/help/te/evolution/problems-getting-help.page
 share/help/te/evolution/problems-reporting-bugs.page
 share/help/te/evolution/searching-items.page
+share/help/te/evolution/start-command-line-parameters.page
 share/help/te/evolution/sync-with-other-devices.page
 share/help/te/evolution/tasks-caldav.page
 share/help/te/evolution/tasks-display-settings.page
@@ -5262,6 +5287,7 @@ share/help/uk/evolution/figures/color-5c3566.png
 share/help/uk/evolution/figures/color-8f5902.png
 share/help/uk/evolution/figures/color-a40000.png
 share/help/uk/evolution/figures/color-c4a000.png
+share/help/uk/evolution/figures/color-ccccccffffff.png
 share/help/uk/evolution/figures/color-ce5c00.png
 share/help/uk/evolution/figures/evolutionlogo.png
 share/help/uk/evolution/figures/html-composer-insert-image.png
@@ -5282,7 +5308,6 @@ share/help/uk/evolution/import-data.page
 share/help/uk/evolution/import-single-files.page
 share/help/uk/evolution/import-supported-file-formats.page
 share/help/uk/evolution/index.page
-share/help/uk/evolution/intro-application.page
 share/help/uk/evolution/intro-first-run.page
 share/help/uk/evolution/intro-keyboard-shortcuts.page
 share/help/uk/evolution/intro-main-window.page
@@ -5414,6 +5439,7 @@ share/help/uk/evolution/problems-debug-how-to.page
 share/help/uk/evolution/problems-getting-help.page
 share/help/uk/evolution/problems-reporting-bugs.page
 share/help/uk/evolution/searching-items.page
+share/help/uk/evolution/start-command-line-parameters.page
 share/help/uk/evolution/sync-with-other-devices.page
 share/help/uk/evolution/tasks-caldav.page
 share/help/uk/evolution/tasks-display-settings.page
@@ -5493,6 +5519,7 @@ share/help/zh_CN/evolution/figures/color-5c3566.png
 share/help/zh_CN/evolution/figures/color-8f5902.png
 share/help/zh_CN/evolution/figures/color-a40000.png
 share/help/zh_CN/evolution/figures/color-c4a000.png
+share/help/zh_CN/evolution/figures/color-ccccccffffff.png
 share/help/zh_CN/evolution/figures/color-ce5c00.png
 share/help/zh_CN/evolution/figures/evolutionlogo.png
 share/help/zh_CN/evolution/figures/html-composer-insert-image.png
@@ -5513,7 +5540,6 @@ share/help/zh_CN/evolution/import-data.page
 share/help/zh_CN/evolution/import-single-files.page
 share/help/zh_CN/evolution/import-supported-file-formats.page
 share/help/zh_CN/evolution/index.page
-share/help/zh_CN/evolution/intro-application.page
 share/help/zh_CN/evolution/intro-first-run.page
 share/help/zh_CN/evolution/intro-keyboard-shortcuts.page
 share/help/zh_CN/evolution/intro-main-window.page
@@ -5645,6 +5671,7 @@ share/help/zh_CN/evolution/problems-debug-how-to.page
 share/help/zh_CN/evolution/problems-getting-help.page
 share/help/zh_CN/evolution/problems-reporting-bugs.page
 share/help/zh_CN/evolution/searching-items.page
+share/help/zh_CN/evolution/start-command-line-parameters.page
 share/help/zh_CN/evolution/sync-with-other-devices.page
 share/help/zh_CN/evolution/tasks-caldav.page
 share/help/zh_CN/evolution/tasks-display-settings.page
@@ -5724,7 +5751,6 @@ share/locale/is/LC_MESSAGES/evolution.mo
 share/locale/it/LC_MESSAGES/evolution.mo
 share/locale/ja/LC_MESSAGES/evolution.mo
 share/locale/ka/LC_MESSAGES/evolution.mo
-share/locale/kab/LC_MESSAGES/evolution.mo
 share/locale/kk/LC_MESSAGES/evolution.mo
 share/locale/kn/LC_MESSAGES/evolution.mo
 share/locale/ko/LC_MESSAGES/evolution.mo
