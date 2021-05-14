@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2020/11/07 10:01:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2021/05/14 07:29:24 ajacoutot Exp $
 @bin bin/gnome-clocks
 share/applications/org.gnome.clocks.desktop
 share/dbus-1/services/org.gnome.clocks.service
@@ -120,6 +120,20 @@ share/help/es/gnome-clocks/timer.page
 share/help/es/gnome-clocks/world-add.page
 share/help/es/gnome-clocks/world-check.page
 share/help/es/gnome-clocks/world-remove.page
+share/help/eu/gnome-clocks/
+share/help/eu/gnome-clocks/alarm-add.page
+share/help/eu/gnome-clocks/alarm-edit.page
+share/help/eu/gnome-clocks/alarm-remove.page
+share/help/eu/gnome-clocks/alarm-snooze-stop.page
+share/help/eu/gnome-clocks/figures/
+share/help/eu/gnome-clocks/figures/gnome-clocks.png
+share/help/eu/gnome-clocks/index.page
+share/help/eu/gnome-clocks/legal.xml
+share/help/eu/gnome-clocks/stopwatch.page
+share/help/eu/gnome-clocks/timer.page
+share/help/eu/gnome-clocks/world-add.page
+share/help/eu/gnome-clocks/world-check.page
+share/help/eu/gnome-clocks/world-remove.page
 share/help/fi/gnome-clocks/
 share/help/fi/gnome-clocks/alarm-add.page
 share/help/fi/gnome-clocks/alarm-edit.page
