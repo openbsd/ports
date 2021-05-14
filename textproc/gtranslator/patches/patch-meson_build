@@ -1,11 +1,11 @@
-$OpenBSD: patch-meson_build,v 1.1 2021/02/05 12:26:08 ajacoutot Exp $
+$OpenBSD: patch-meson_build,v 1.2 2021/05/14 08:28:54 ajacoutot Exp $
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -108,7 +108,7 @@ gtr_deps = [
-   glib_dep,
+@@ -109,7 +109,7 @@ gtr_deps = [
    gtk_dep,
+   libhandy_dep,
    dependency('libdazzle-1.0', version: '>= 3.33.90'),
 -  dependency('libgda-5.0'),
 +  dependency('libgda-6.0'),
