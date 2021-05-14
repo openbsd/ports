@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.18 2021/05/07 16:41:10 solene Exp $
+# $OpenBSD: Makefile,v 1.19 2021/05/14 15:32:06 solene Exp $
 
 COMMENT =	SDL multi protocol navigator
-VERSION =	1.4.0
+VERSION =	1.4.1
 
 DISTNAME =	lagrange-${VERSION}
 
