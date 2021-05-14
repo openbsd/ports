@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2021/05/13 19:22:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2021/05/14 14:04:18 jasper Exp $
 
 COMMENT=		simple note editor
 
 GNOME_PROJECT=		gnome-notes
 GNOME_VERSION=		40.1
-REVISION=		0
+REVISION=		1
 
 # GPLv3
 PERMIT_PACKAGE=		Yes
