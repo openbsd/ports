@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2021/04/30 17:14:50 millert Exp $
+# $OpenBSD: Makefile,v 1.70 2021/05/14 20:49:05 steven Exp $
 
 COMMENT=	log management solution
 
@@ -6,7 +6,7 @@ V =		3.12.1
 REL =		3.12
 DISTNAME =	syslog-ng-$V
 CATEGORIES =	sysutils
-REVISION =	8
+REVISION =	9
 
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 
