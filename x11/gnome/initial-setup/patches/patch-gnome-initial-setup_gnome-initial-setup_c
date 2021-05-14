@@ -1,4 +1,4 @@
-$OpenBSD: patch-gnome-initial-setup_gnome-initial-setup_c,v 1.10 2020/11/07 15:51:26 ajacoutot Exp $
+$OpenBSD: patch-gnome-initial-setup_gnome-initial-setup_c,v 1.11 2021/05/14 10:29:31 ajacoutot Exp $
 
 Disable NetworkManager.
 
@@ -13,7 +13,7 @@ Index: gnome-initial-setup/gnome-initial-setup.c
  #include "pages/timezone/gis-timezone-page.h"
  #include "pages/privacy/gis-privacy-page.h"
  #include "pages/goa/gis-goa-page.h"
-@@ -68,7 +67,6 @@ static PageData page_table[] = {
+@@ -67,7 +66,6 @@ static PageData page_table[] = {
    PAGE (welcome, FALSE),
    PAGE (language, FALSE),
    PAGE (keyboard, FALSE),

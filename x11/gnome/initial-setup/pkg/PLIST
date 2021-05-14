@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.17 2020/04/26 07:48:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2021/05/14 10:29:31 ajacoutot Exp $
 @newgroup _gnome-initial-setup:724
 @newuser _gnome-initial-setup:724:_gnome-initial-setup:daemon:GNOME Initial Setup:/nonexistent:/sbin/nologin
 @bin libexec/gnome-initial-setup
 @bin libexec/gnome-initial-setup-copy-worker
-libexec/gnome-welcome-tour
+share/applications/gnome-initial-setup.desktop
 share/examples/gnome-initial-setup/
 share/examples/gnome-initial-setup/xdg/
 share/examples/gnome-initial-setup/xdg/autostart/
@@ -11,9 +11,6 @@ share/examples/gnome-initial-setup/xdg/autostart/gnome-initial-setup-copy-worker
 @sample ${SYSCONFDIR}/xdg/autostart/gnome-initial-setup-copy-worker.desktop
 share/examples/gnome-initial-setup/xdg/autostart/gnome-initial-setup-first-login.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/gnome-initial-setup-first-login.desktop
-share/examples/gnome-initial-setup/xdg/autostart/gnome-welcome-tour.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/gnome-welcome-tour.desktop
-share/gdm/greeter/applications/gnome-initial-setup.desktop
 share/gnome-session/sessions/gnome-initial-setup.session
 share/gnome-shell/
 share/gnome-shell/modes/
@@ -92,3 +89,4 @@ share/locale/zh_CN/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-initial-setup.mo
 share/polkit-1/rules.d/20-gnome-initial-setup.rules
+@tag update-desktop-database

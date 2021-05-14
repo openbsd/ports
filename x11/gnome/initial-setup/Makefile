@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.64 2021/04/30 06:42:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2021/05/14 10:29:31 ajacoutot Exp $
 
 COMMENT=		initial-setup firstboot-like tool
 
 GNOME_PROJECT=		gnome-initial-setup
-GNOME_VERSION=		3.38.5
+GNOME_VERSION=		40.1
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -20,6 +20,8 @@ MODULES=		devel/dconf \
 			devel/meson \
 			security/heimdal \
 			x11/gnome
+
+MODGNOME_TOOLS=		desktop-file-utils
 
 LIB_DEPENDS=		inputmethods/ibus \
 			security/libpwquality \
