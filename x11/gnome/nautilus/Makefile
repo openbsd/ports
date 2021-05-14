@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.205 2021/05/06 11:41:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.206 2021/05/14 08:08:30 ajacoutot Exp $
 
 COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
-GNOME_VERSION=		3.38.2
+GNOME_VERSION=		40.1
 
 SHARED_LIBS += nautilus-extension        3.0 # 1.5.0
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
 WANTLIB += gexiv2 gio-2.0 glib-2.0 gmodule-2.0 gnome-autoar-0
 WANTLIB += gnome-desktop-3 gobject-2.0 gstpbutils-1.0 gstreamer-1.0
-WANTLIB += gtk-3 intl m pango-1.0 pangocairo-1.0 tracker-sparql-3.0
+WANTLIB += gtk-3 handy-1 intl m pango-1.0 pangocairo-1.0 tracker-sparql-3.0
 
 COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
@@ -36,14 +36,16 @@ LIB_DEPENDS=		graphics/libgexiv2 \
 			multimedia/gstreamer1/plugins-base \
 			x11/gnome/autoar \
 			x11/gnome/desktop \
-			x11/gnome/tracker3
+			x11/gnome/tracker3 \
+			x11/libhandy
 
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
-CONFIGURE_ARGS=		-Dselinux=false
+CONFIGURE_ARGS=		-Dselinux=false \
+			-Dlibportal=false
 
 # XXX test/automated/displayless/meson.build:45:2:
 # ERROR: List item must be one of <class 'str'>, not <class 'list'>
