@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.29 2021/02/07 08:03:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2021/05/14 08:08:10 ajacoutot Exp $
 @conflict postler-*
 @pkgpath mail/postler
 @bin bin/geary
 lib/geary/
-@so lib/geary/libgeary-client-3.38.so
+@so lib/geary/libgeary-client-40.0.so
 lib/geary/plugins/
 lib/geary/plugins/desktop-notifications/
 lib/geary/plugins/desktop-notifications/desktop-notifications.plugin
@@ -61,6 +61,8 @@ share/geary/sql/version-025.sql
 share/geary/sql/version-026.sql
 share/geary/sql/version-027.sql
 share/geary/sql/version-028.sql
+share/geary/sql/version-029.sql
+share/geary/sql/version-030.sql
 share/glib-2.0/schemas/org.gnome.Geary.gschema.xml
 share/help/
 share/help/C/
