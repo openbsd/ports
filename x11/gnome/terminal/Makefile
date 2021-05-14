@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.176 2021/02/14 12:54:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.177 2021/05/14 07:23:09 jasper Exp $
 
 COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
-GNOME_VERSION=	3.38.3
+GNOME_VERSION=	3.40.1
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
@@ -13,7 +13,7 @@ WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 c cairo cairo-gobject
 WANTLIB += dconf epoxy expat ffi fontconfig freetype fribidi gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls
 WANTLIB += gobject-2.0 graphite2 gtk-3 harfbuzz hogweed iconv
-WANTLIB += icudata icuuc idn2 intl m nautilus-extension nettle
+WANTLIB += icudata icuuc idn2 intl jpeg m nautilus-extension nettle
 WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pcre2-8 pixman-1 png tasn1 unistring uuid vte-2.91
 WANTLIB += xcb xcb-render xcb-shm z
