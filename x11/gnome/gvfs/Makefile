@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.200 2021/05/13 08:31:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.201 2021/05/14 19:03:32 ajacoutot Exp $
 
 COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba
@@ -63,8 +63,7 @@ RUN_DEPENDS-google=	${BASE_PKGPATH},-main=${GNOME_VERSION}
 LIB_DEPENDS-google=	devel/libgdata \
 			x11/gnome/online-accounts
 
-CONFIGURE_ARGS=		-Ddeprecated_programs=true \
-			-Dman=true
+CONFIGURE_ARGS=		-Dman=true
 
 # most of these need gudev and/or systemd
 CONFIGURE_ARGS +=	-Dafc=false \
