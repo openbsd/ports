@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2020/11/08 07:48:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2021/05/14 09:05:52 ajacoutot Exp $
 
 COMMENT=		remote desktop client for GNOME
 
-GNOME_PROJECT=		connections
-GNOME_VERSION=		3.38.1
+GNOME_PROJECT=		gnome-connections
+GNOME_VERSION=		40.0.1
 
 CATEGORIES=		net
 
@@ -17,7 +17,7 @@ MODULES=		devel/dconf \
 			devel/meson \
 			x11/gnome
 
-MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
+MODGNOME_TOOLS=		desktop-file-utils gobject-introspection yelp \
 			gtk-update-icon-cache shared-mime-info vala
 
 LIB_DEPENDS=		x11/freerdp \
