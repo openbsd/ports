@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.206 2021/03/27 00:37:24 jca Exp $
+# $OpenBSD: Makefile,v 1.207 2021/05/14 07:22:33 jasper Exp $
 
 USE_WXNEEDED=		Yes
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
-GNOME_VERSION=		3.38.4
+GNOME_VERSION=		40.0
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -13,12 +13,12 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += X11 Xfixes atk-1.0 atk-bridge-2.0 c cairo ecal-2.0
 WANTLIB += edataserver-1.2 gcr-base-3 gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += girepository-1.0 gjs glib-2.0 gnome-autoar-0 gnome-desktop-3
-WANTLIB += gobject-2.0 graphene-1.0 gtk-3 ical-glib intl json-glib-1.0
-WANTLIB += m mutter-7 pango-1.0 pangocairo-1.0 polkit-agent-1
+WANTLIB += gobject-2.0 graphene-1.0 gtk-3 gtk-4 ical-glib intl json-glib-1.0
+WANTLIB += m mutter-8 pango-1.0 pangocairo-1.0 polkit-agent-1
 WANTLIB += polkit-gobject-1 pulse pulse-mainloop-glib
-WANTLIB += lib/mutter-7/mutter-clutter-7
-WANTLIB += lib/mutter-7/mutter-cogl-7
-WANTLIB += lib/mutter-7/mutter-cogl-pango-7
+WANTLIB += lib/mutter-8/mutter-clutter-8
+WANTLIB += lib/mutter-8/mutter-cogl-8
+WANTLIB += lib/mutter-8/mutter-cogl-pango-8
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -43,7 +43,8 @@ LIB_DEPENDS=		audio/pulseaudio \
 			x11/gnome/autoar \
 			x11/gnome/gcr \
 			x11/gnome/gjs \
-			x11/gnome/mutter>=3.38.0
+			x11/gnome/mutter>=40.0 \
+			x11/gtk+4
 
 # configure looks for gnome-keybindings.pc;
 # system.js, backgroundMenu.js, network.js, remoteSearch.js

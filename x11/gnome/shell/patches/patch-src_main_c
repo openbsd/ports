@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_main_c,v 1.7 2020/11/08 10:42:44 ajacoutot Exp $
+$OpenBSD: patch-src_main_c,v 1.8 2021/05/14 07:22:33 jasper Exp $
 
 Disable broken signal handler which locks the malloc mutex recursively.
 
@@ -38,7 +38,7 @@ not available.
 Index: src/main.c
 --- src/main.c.orig
 +++ src/main.c
-@@ -395,6 +395,7 @@ dump_gjs_stack_on_signal_handler (int signo)
+@@ -352,6 +352,7 @@ dump_gjs_stack_on_signal_handler (int signo)
  static void
  dump_gjs_stack_on_signal (int signo)
  {
@@ -46,7 +46,7 @@ Index: src/main.c
    struct sigaction sa = {
      .sa_flags   = SA_RESETHAND | SA_NODEFER,
      .sa_handler = dump_gjs_stack_on_signal_handler,
-@@ -404,6 +405,7 @@ dump_gjs_stack_on_signal (int signo)
+@@ -361,6 +362,7 @@ dump_gjs_stack_on_signal (int signo)
  
    sigaction (signo, &sa, NULL);
    _tracked_signals[signo] = TRUE;

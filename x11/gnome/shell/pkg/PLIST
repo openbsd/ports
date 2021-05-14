@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2020/11/07 13:13:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.40 2021/05/14 07:22:33 jasper Exp $
 @conflict gnome-panel-*
 @conflict gnome-screensaver-*
 @conflict notification-daemon-*
@@ -42,6 +42,7 @@ share/dbus-1/interfaces/org.gnome.Shell.Screenshot.xml
 share/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
 share/dbus-1/interfaces/org.gnome.ShellSearchProvider2.xml
 share/dbus-1/services/org.gnome.Extensions.service
+share/dbus-1/services/org.gnome.ScreenSaver.service
 share/dbus-1/services/org.gnome.Shell.CalendarServer.service
 share/dbus-1/services/org.gnome.Shell.Extensions.service
 share/dbus-1/services/org.gnome.Shell.HotplugSniffer.service
@@ -65,6 +66,8 @@ share/gnome-shell/gnome-shell-theme.gresource
 share/gnome-shell/org.gnome.Extensions
 share/gnome-shell/org.gnome.Extensions.data.gresource
 share/gnome-shell/org.gnome.Extensions.src.gresource
+share/gnome-shell/org.gnome.ScreenSaver
+share/gnome-shell/org.gnome.ScreenSaver.src.gresource
 share/gnome-shell/org.gnome.Shell.Extensions
 share/gnome-shell/org.gnome.Shell.Extensions.src.gresource
 share/gnome-shell/org.gnome.Shell.Notifications
