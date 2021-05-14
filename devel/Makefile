@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2097 2021/05/04 18:54:22 tb Exp $
+# $OpenBSD: Makefile,v 1.2098 2021/05/14 21:25:08 bluhm Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1105,6 +1105,7 @@
      SUBDIR += p5-Test-JSON
      SUBDIR += p5-Test-LeakTrace
      SUBDIR += p5-Test-LectroTest
+     SUBDIR += p5-Test-Lib
      SUBDIR += p5-Test-LongString
      SUBDIR += p5-Test-Manifest
      SUBDIR += p5-Test-Memory-Cycle
