@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2098 2021/05/14 21:25:08 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2099 2021/05/14 21:51:14 bluhm Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -486,6 +486,7 @@
      SUBDIR += p5-C-Scan
      SUBDIR += p5-CLASS
      SUBDIR += p5-CLI-Framework
+     SUBDIR += p5-CLI-Osprey
      SUBDIR += p5-CPAN-Meta-Check
      SUBDIR += p5-Cache-Cache
      SUBDIR += p5-Cache-FastMmap
