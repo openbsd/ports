@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/14 21:46:43 bluhm Exp $
+${P5SITE}/CLI/
+${P5SITE}/CLI/Osprey/
+${P5SITE}/CLI/Osprey.pm
+${P5SITE}/CLI/Osprey/Descriptive/
+${P5SITE}/CLI/Osprey/Descriptive.pm
+${P5SITE}/CLI/Osprey/Descriptive/Usage.pm
+${P5SITE}/CLI/Osprey/InlineSubcommand.pm
+${P5SITE}/CLI/Osprey/Role.pm
+@man man/man3p/CLI::Osprey.3p
+@man man/man3p/CLI::Osprey::Descriptive.3p
+@man man/man3p/CLI::Osprey::Descriptive::Usage.3p
+@man man/man3p/CLI::Osprey::InlineSubcommand.3p
+@man man/man3p/CLI::Osprey::Role.3p
