@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2020/09/01 11:53:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/05/14 22:56:25 bluhm Exp $
 
 COMMENT =	cryptographic toolkit for Perl
-DISTNAME =	CryptX-0.069
-CATEGORIES =	security
 
+DISTNAME =	CryptX-0.072
 CPAN_AUTHOR =	MIK
+
+CATEGORIES =	security
 
 # Perl
 PERMIT_PACKAGE =	Yes
