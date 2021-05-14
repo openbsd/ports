@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.206 2021/05/13 10:54:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.207 2021/05/14 11:53:58 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (core installation)
 COMMENT-extras=		GNOME desktop meta-package (world installation)
@@ -7,7 +7,8 @@ COMMENT-extras=		GNOME desktop meta-package (world installation)
 V=			40.1
 PKGNAME=		gnome-${V}
 
-REVISION-extras =	0
+REVISION-main =		0
+REVISION-extras =	1
 
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
@@ -41,7 +42,8 @@ RUN_DEPENDS-extras +=	x11/gnome/builder \
 			x11/gnome/devhelp
 
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core/meta-gnome-core-os-services.bst
-RUN_DEPENDS-main +=	sysutils/upower
+RUN_DEPENDS-main +=	sysutils/accountsservice \
+			sysutils/upower
 
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core/meta-gnome-core-shell.bst
 RUN_DEPENDS-main +=	devel/gsettings-desktop-schemas \
@@ -55,15 +57,15 @@ RUN_DEPENDS-main +=	devel/gsettings-desktop-schemas \
 			x11/gnome/initial-setup \
 			x11/gnome/keyring \
 			x11/gnome/menus \
+			x11/gnome/mutter \
+			x11/gnome/orca \
 			x11/gnome/session \
 			x11/gnome/settings-daemon \
 			x11/gnome/shell \
 			x11/gnome/shell-extensions \
+			x11/gnome/sushi \
 			x11/gnome/tour \
-			x11/gnome/user-docs \
-			x11/gnome/mutter \
-			x11/gnome/orca \
-			x11/gnome/sushi
+			x11/gnome/user-docs
 
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core/meta-gnome-core-utilities.bst
 RUN_DEPENDS-main +=	x11/gnome/calculator \
@@ -118,7 +120,6 @@ RUN_DEPENDS-extras +=	inputmethods/ibus-anthy \
 			x11/gnome/todo \
 			x11/gnome/tweaks
 
-
 # gtk+2
 RUN_DEPENDS-extras +=	audio/libcanberra,-gtk \
 			inputmethods/ibus,-gtk2 \
@@ -127,7 +128,7 @@ RUN_DEPENDS-extras +=	audio/libcanberra,-gtk \
 			x11/gtk+2,-cups
 
 # gtk+4
-#RUN_DEPENDS-extras +=	inputmethods/ibus,-gtk4
+RUN_DEPENDS-extras +=	inputmethods/ibus,-gtk4
 
 # depends on -main
 RUN_DEPENDS-extras +=	STEM-=${V}:${BASE_PKGPATH},-main
