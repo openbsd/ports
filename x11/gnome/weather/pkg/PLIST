@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2020/04/04 11:16:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2021/05/14 06:40:23 ajacoutot Exp $
 bin/gnome-weather
 share/applications/org.gnome.Weather.desktop
 share/dbus-1/services/org.gnome.Weather.BackgroundService.service
@@ -8,6 +8,33 @@ share/gnome-shell/
 share/gnome-shell/search-providers/
 share/gnome-shell/search-providers/org.gnome.Weather.search-provider.ini
 share/icons/hicolor/scalable/apps/org.gnome.Weather.svg
+share/icons/hicolor/scalable/status/temperature-symbolic.svg
+share/icons/hicolor/scalable/status/weather-clear-large.svg
+share/icons/hicolor/scalable/status/weather-clear-night-large.svg
+share/icons/hicolor/scalable/status/weather-clear-night-small.svg
+share/icons/hicolor/scalable/status/weather-clear-small.svg
+share/icons/hicolor/scalable/status/weather-few-clouds-large.svg
+share/icons/hicolor/scalable/status/weather-few-clouds-night-large.svg
+share/icons/hicolor/scalable/status/weather-few-clouds-night-small.svg
+share/icons/hicolor/scalable/status/weather-few-clouds-small.svg
+share/icons/hicolor/scalable/status/weather-fog-large.svg
+share/icons/hicolor/scalable/status/weather-fog-small.svg
+share/icons/hicolor/scalable/status/weather-overcast-large.svg
+share/icons/hicolor/scalable/status/weather-overcast-small.svg
+share/icons/hicolor/scalable/status/weather-severe-alert-large.svg
+share/icons/hicolor/scalable/status/weather-severe-alert-small.svg
+share/icons/hicolor/scalable/status/weather-showers-large.svg
+share/icons/hicolor/scalable/status/weather-showers-scattered-large.svg
+share/icons/hicolor/scalable/status/weather-showers-scattered-small.svg
+share/icons/hicolor/scalable/status/weather-showers-small.svg
+share/icons/hicolor/scalable/status/weather-snow-large.svg
+share/icons/hicolor/scalable/status/weather-snow-small.svg
+share/icons/hicolor/scalable/status/weather-storm-large.svg
+share/icons/hicolor/scalable/status/weather-storm-small.svg
+share/icons/hicolor/scalable/status/weather-tornado-large.svg
+share/icons/hicolor/scalable/status/weather-tornado-small.svg
+share/icons/hicolor/scalable/status/weather-windy-large.svg
+share/icons/hicolor/scalable/status/weather-windy-small.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Weather-symbolic.svg
 share/locale/af/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/an/LC_MESSAGES/org.gnome.Weather.mo
@@ -15,6 +42,7 @@ share/locale/ar/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/as/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/be/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/bg/LC_MESSAGES/org.gnome.Weather.mo
+share/locale/bn_IN/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/bs/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/ca/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/ca@valencia/LC_MESSAGES/org.gnome.Weather.mo
@@ -47,8 +75,6 @@ share/locale/kn/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/ko/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/lt/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/lv/LC_MESSAGES/org.gnome.Weather.mo
-share/locale/mjw/
-share/locale/mjw/LC_MESSAGES/
 share/locale/mjw/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/ml/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/ms/LC_MESSAGES/org.gnome.Weather.mo
@@ -77,7 +103,6 @@ share/locale/vi/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/zh_CN/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/zh_HK/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/zh_TW/LC_MESSAGES/org.gnome.Weather.mo
-share/metainfo/
 share/metainfo/org.gnome.Weather.appdata.xml
 share/org.gnome.Weather/
 share/org.gnome.Weather/org.gnome.Weather
