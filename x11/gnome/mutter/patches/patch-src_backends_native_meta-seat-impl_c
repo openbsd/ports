@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_backends_native_meta-seat-impl_c,v 1.1 2021/05/14 07:22:18 jasper Exp $
+
+Revert:
+https://gitlab.gnome.org/GNOME/mutter/-/commit/9f5c453fc773e391178dec328737827e4be6d80c
+
+Index: src/backends/native/meta-seat-impl.c
+--- src/backends/native/meta-seat-impl.c.orig
++++ src/backends/native/meta-seat-impl.c
+@@ -412,7 +412,7 @@ meta_seat_impl_notify_key_in_impl (MetaSeatImpl       
+                                          seat_impl->xkb,
+                                          seat_impl->button_state,
+                                          us2ms (time_us), key, state);
+-  event->key.evdev_code = key;
++  meta_event_native_set_event_code (event, key);
+ 
+   keycode = meta_xkb_evdev_to_keycode (key);
+ 
+@@ -732,7 +732,7 @@ meta_seat_impl_notify_button_in_impl (MetaSeatImpl    
+         button = mapped_button;
+     }
+ 
+-  event->button.evdev_code = button;
++  meta_event_native_set_event_code (event, button);
+ 
+   if (clutter_input_device_get_device_type (input_device) == CLUTTER_TABLET_DEVICE)
+     {

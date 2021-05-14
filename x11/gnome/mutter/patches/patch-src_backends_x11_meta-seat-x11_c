@@ -1,0 +1,71 @@
+$OpenBSD: patch-src_backends_x11_meta-seat-x11_c,v 1.1 2021/05/14 07:22:18 jasper Exp $
+
+Revert:
+https://gitlab.gnome.org/GNOME/mutter/-/commit/9f5c453fc773e391178dec328737827e4be6d80c
+
+Index: src/backends/x11/meta-seat-x11.c
+--- src/backends/x11/meta-seat-x11.c.orig
++++ src/backends/x11/meta-seat-x11.c
+@@ -18,7 +18,6 @@
+  */
+ #include "config.h"
+ 
+-#include <linux/input-event-codes.h>
+ #include <X11/extensions/XInput2.h>
+ #include <X11/extensions/XKB.h>
+ 
+@@ -1732,35 +1731,6 @@ get_source_device_checked (MetaSeatX11   *seat,
+   return source_device;
+ }
+ 
+-static uint32_t
+-evdev_button_code (uint32_t x_button)
+-{
+-  uint32_t button;
+-
+-  switch (x_button)
+-    {
+-    case 1:
+-      button = BTN_LEFT;
+-      break;
+-
+-      /* The evdev input right and middle button numbers are swapped
+-         relative to how Clutter numbers them */
+-    case 2:
+-      button = BTN_MIDDLE;
+-      break;
+-
+-    case 3:
+-      button = BTN_RIGHT;
+-      break;
+-
+-    default:
+-      button = x_button + (BTN_LEFT - 1) + 4;
+-      break;
+-    }
+-
+-  return button;
+-}
+-
+ gboolean
+ meta_seat_x11_translate_event (MetaSeatX11  *seat,
+                                XEvent       *xevent,
+@@ -1864,10 +1834,6 @@ meta_seat_x11_translate_event (MetaSeatX11  *seat,
+         meta_input_device_x11_translate_state (event, &xev->mods, &xev->buttons, &xev->group);
+         event->key.hardware_keycode = xev->detail;
+ 
+-        /* clutter-xkb-utils.c adds a fixed offset of 8 to go into XKB's
+-         * range, so we do the reverse here. */
+-        event->key.evdev_code = event->key.hardware_keycode - 8;
+-
+           /* keyval is the key ignoring all modifiers ('1' vs. '!') */
+         event->key.keyval =
+           meta_keymap_x11_translate_key_state (keymap_x11,
+@@ -2048,7 +2014,6 @@ meta_seat_x11_translate_event (MetaSeatX11  *seat,
+             event->button.time = xev->time;
+             translate_coords (stage_x11, xev->event_x, xev->event_y, &event->button.x, &event->button.y);
+             event->button.button = xev->detail;
+-            event->button.evdev_code = evdev_button_code (xev->detail);
+             meta_input_device_x11_translate_state (event,
+                                                    &xev->mods,
+                                                    &xev->buttons,

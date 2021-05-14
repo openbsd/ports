@@ -1,0 +1,34 @@
+$OpenBSD: patch-clutter_clutter_clutter-event_h,v 1.1 2021/05/14 07:22:18 jasper Exp $
+
+Revert:
+https://gitlab.gnome.org/GNOME/mutter/-/commit/9f5c453fc773e391178dec328737827e4be6d80c
+
+Index: clutter/clutter/clutter-event.h
+--- clutter/clutter/clutter-event.h.orig
++++ clutter/clutter/clutter-event.h
+@@ -173,7 +173,6 @@ struct _ClutterKeyEvent
+   guint keyval;
+   guint16 hardware_keycode;
+   gunichar unicode_value;
+-  uint32_t evdev_code;
+   ClutterInputDevice *device;
+ };
+ 
+@@ -217,7 +216,6 @@ struct _ClutterButtonEvent
+   guint click_count;
+   gdouble *axes; /* Future use */
+   ClutterInputDevice *device;
+-  uint32_t evdev_code;
+ };
+ 
+ /**
+@@ -808,8 +806,7 @@ gboolean                 clutter_event_get_pad_event_d
+                                                                       guint                  *number,
+                                                                       guint                  *mode,
+                                                                       gdouble                *value);
+-CLUTTER_EXPORT
+-uint32_t                 clutter_event_get_event_code                (const ClutterEvent     *event);
++
+ 
+ CLUTTER_EXPORT
+ int32_t                  clutter_event_sequence_get_slot (const ClutterEventSequence *sequence);
