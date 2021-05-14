@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_plugins_meson_build,v 1.1 2021/05/14 13:52:30 ajacoutot Exp $
+
+XXX requires libportal
+
+Index: src/plugins/meson.build
+--- src/plugins/meson.build.orig
++++ src/plugins/meson.build
+@@ -13,7 +13,6 @@ plugins_conf = configuration_data()
+ plugins_conf.set('VERSION', gnome_todo_version)
+ 
+ subdir('all-tasks-panel')
+-subdir('background')
+ subdir('dark-theme')
+ subdir('eds')
+ subdir('inbox-panel')

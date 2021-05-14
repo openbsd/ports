@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_plugins_todoist_gtd-provider-todoist_c,v 1.1 2021/05/14 13:52:30 ajacoutot Exp $
+
+https://gitlab.gnome.org/GNOME/gnome-todo/merge_requests/39
+
+Index: src/plugins/todoist/gtd-provider-todoist.c
+--- src/plugins/todoist/gtd-provider-todoist.c.orig
++++ src/plugins/todoist/gtd-provider-todoist.c
+@@ -19,7 +19,7 @@
+ 
+ #define G_LOG_DOMAIN "GtdProviderTodoist"
+ 
+-#define _XOPEN_SOURCE
++#define _XOPEN_SOURCE 700
+ 
+ #include "gtd-debug.h"
+ #include "gtd-provider-todoist.h"
