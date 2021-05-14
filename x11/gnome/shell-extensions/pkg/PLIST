@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2020/11/07 13:13:35 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.29 2021/05/14 07:22:48 jasper Exp $
 share/glib-2.0/schemas/00_org.gnome.shell.extensions.classic.gschema.override
 share/glib-2.0/schemas/org.gnome.shell.extensions.auto-move-windows.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.native-window-placement.gschema.xml
@@ -19,10 +19,6 @@ share/gnome-shell/extensions/drive-menu@gnome-shell-extensions.gcampax.github.co
 share/gnome-shell/extensions/drive-menu@gnome-shell-extensions.gcampax.github.com/extension.js
 share/gnome-shell/extensions/drive-menu@gnome-shell-extensions.gcampax.github.com/metadata.json
 share/gnome-shell/extensions/drive-menu@gnome-shell-extensions.gcampax.github.com/stylesheet.css
-share/gnome-shell/extensions/horizontal-workspaces@gnome-shell-extensions.gcampax.github.com/
-share/gnome-shell/extensions/horizontal-workspaces@gnome-shell-extensions.gcampax.github.com/extension.js
-share/gnome-shell/extensions/horizontal-workspaces@gnome-shell-extensions.gcampax.github.com/metadata.json
-share/gnome-shell/extensions/horizontal-workspaces@gnome-shell-extensions.gcampax.github.com/stylesheet.css
 share/gnome-shell/extensions/launch-new-instance@gnome-shell-extensions.gcampax.github.com/
 share/gnome-shell/extensions/launch-new-instance@gnome-shell-extensions.gcampax.github.com/extension.js
 share/gnome-shell/extensions/launch-new-instance@gnome-shell-extensions.gcampax.github.com/metadata.json
