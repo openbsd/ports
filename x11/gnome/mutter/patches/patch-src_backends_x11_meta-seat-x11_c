@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_backends_x11_meta-seat-x11_c,v 1.1 2021/05/14 07:22:18 jasper Exp $
+$OpenBSD: patch-src_backends_x11_meta-seat-x11_c,v 1.2 2021/05/14 16:19:24 jasper Exp $
 
 Revert:
 https://gitlab.gnome.org/GNOME/mutter/-/commit/9f5c453fc773e391178dec328737827e4be6d80c
@@ -14,7 +14,7 @@ Index: src/backends/x11/meta-seat-x11.c
  #include <X11/extensions/XInput2.h>
  #include <X11/extensions/XKB.h>
  
-@@ -1732,35 +1731,6 @@ get_source_device_checked (MetaSeatX11   *seat,
+@@ -1734,35 +1733,6 @@ get_source_device_checked (MetaSeatX11   *seat,
    return source_device;
  }
  
@@ -50,7 +50,7 @@ Index: src/backends/x11/meta-seat-x11.c
  gboolean
  meta_seat_x11_translate_event (MetaSeatX11  *seat,
                                 XEvent       *xevent,
-@@ -1864,10 +1834,6 @@ meta_seat_x11_translate_event (MetaSeatX11  *seat,
+@@ -1866,10 +1836,6 @@ meta_seat_x11_translate_event (MetaSeatX11  *seat,
          meta_input_device_x11_translate_state (event, &xev->mods, &xev->buttons, &xev->group);
          event->key.hardware_keycode = xev->detail;
  
@@ -61,7 +61,7 @@ Index: src/backends/x11/meta-seat-x11.c
            /* keyval is the key ignoring all modifiers ('1' vs. '!') */
          event->key.keyval =
            meta_keymap_x11_translate_key_state (keymap_x11,
-@@ -2048,7 +2014,6 @@ meta_seat_x11_translate_event (MetaSeatX11  *seat,
+@@ -2050,7 +2016,6 @@ meta_seat_x11_translate_event (MetaSeatX11  *seat,
              event->button.time = xev->time;
              translate_coords (stage_x11, xev->event_x, xev->event_y, &event->button.x, &event->button.y);
              event->button.button = xev->detail;
