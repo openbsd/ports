@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2021/03/10 15:20:59 bluhm Exp $
+# $OpenBSD: Makefile,v 1.22 2021/05/14 23:28:40 bluhm Exp $
 
 COMMENT =	cross-platform basic tests for scripts
 
-DISTNAME =	Test-Script-1.27
+DISTNAME =	Test-Script-1.29
 
 CATEGORIES =	devel
 
