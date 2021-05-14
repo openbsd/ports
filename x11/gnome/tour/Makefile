@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/21 09:19:08 semarie Exp $
+# $OpenBSD: Makefile,v 1.3 2021/05/14 07:11:22 ajacoutot Exp $
 
 COMMENT=		GNOME's Tour & Greeter
 
 GNOME_PROJECT=		gnome-tour
-GNOME_VERSION=		3.38.0
-
-REVISION=		0
+GNOME_VERSION=		40.0
 
 # needed due to the devel/cargo MODULE
 DISTFILES=		${GNOME_PROJECT}-${GNOME_VERSION}${EXTRACT_SUFX}
@@ -18,7 +16,7 @@ DISTFILES=		${GNOME_PROJECT}-${GNOME_VERSION}${EXTRACT_SUFX}
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += c c++abi gdk-3 gio-2.0 glib-2.0 gobject-2.0 gtk-3 handy-1
-WANTLIB += intl m pthread
+WANTLIB += intl m pango-1.0 pthread
 
 MODULES=		devel/meson \
 			x11/gnome
