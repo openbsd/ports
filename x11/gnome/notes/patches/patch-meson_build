@@ -1,6 +1,7 @@
-$OpenBSD: patch-meson_build,v 1.1 2021/05/14 14:04:18 jasper Exp $
+$OpenBSD: patch-meson_build,v 1.2 2021/05/14 14:13:31 jasper Exp $
 
 Remove unused uuid dependency
+https://gitlab.gnome.org/GNOME/gnome-notes/-/issues/176
 
 Index: meson.build
 --- meson.build.orig
