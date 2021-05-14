@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/07 11:20:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2021/05/14 07:09:30 ajacoutot Exp $
 
 COMMENT=		GNOME dictionary application
 
 GNOME_PROJECT=		gnome-dictionary
-GNOME_VERSION=		3.26.1
-REVISION=		1
+GNOME_VERSION=		40.0
 
 SHARED_LIBS +=  gdict-1.0            9.1      # 10.0
 
@@ -20,6 +19,7 @@ MODULES=		devel/dconf \
 
 LIB_DEPENDS=		x11/gtk+3
 
-MODGNOME_TOOLS=		desktop-file-utils docbook gobject-introspection yelp
+MODGNOME_TOOLS=		desktop-file-utils docbook gobject-introspection yelp \
+			gtk-update-icon-cache
 
 .include <bsd.port.mk>

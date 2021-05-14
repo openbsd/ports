@@ -1,15 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.15 2018/07/06 06:04:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2021/05/14 07:09:30 ajacoutot Exp $
 @conflict gnome-utils-*
 @bin bin/gnome-dictionary
 @man man/man1/gnome-dictionary.1
-share/appdata/
-share/appdata/org.gnome.Dictionary.appdata.xml
 share/applications/org.gnome.Dictionary.desktop
 share/dbus-1/services/org.gnome.Dictionary.service
 share/gdict-1.0/
 share/gdict-1.0/sources/
 share/gdict-1.0/sources/default.desktop
-share/gdict-1.0/sources/spanish.desktop
 share/gdict-1.0/sources/thai.desktop
 share/glib-2.0/schemas/org.gnome.dictionary.gschema.xml
 share/help/
@@ -18,8 +15,8 @@ share/help/C/gnome-dictionary/
 share/help/C/gnome-dictionary/definition.page
 share/help/C/gnome-dictionary/dictionary-select.page
 share/help/C/gnome-dictionary/figures/
+share/help/C/gnome-dictionary/figures/gnome-dictionary-3-26.png
 share/help/C/gnome-dictionary/figures/gnome-dictionary-icon.png
-share/help/C/gnome-dictionary/figures/gnome-dictionary.png
 share/help/C/gnome-dictionary/find.page
 share/help/C/gnome-dictionary/index.page
 share/help/C/gnome-dictionary/introduction.page
@@ -43,8 +40,8 @@ share/help/ca/gnome-dictionary/
 share/help/ca/gnome-dictionary/definition.page
 share/help/ca/gnome-dictionary/dictionary-select.page
 share/help/ca/gnome-dictionary/figures/
+share/help/ca/gnome-dictionary/figures/gnome-dictionary-3-26.png
 share/help/ca/gnome-dictionary/figures/gnome-dictionary-icon.png
-share/help/ca/gnome-dictionary/figures/gnome-dictionary.png
 share/help/ca/gnome-dictionary/find.page
 share/help/ca/gnome-dictionary/index.page
 share/help/ca/gnome-dictionary/introduction.page
@@ -68,8 +65,8 @@ share/help/cs/gnome-dictionary/
 share/help/cs/gnome-dictionary/definition.page
 share/help/cs/gnome-dictionary/dictionary-select.page
 share/help/cs/gnome-dictionary/figures/
+share/help/cs/gnome-dictionary/figures/gnome-dictionary-3-26.png
 share/help/cs/gnome-dictionary/figures/gnome-dictionary-icon.png
-share/help/cs/gnome-dictionary/figures/gnome-dictionary.png
 share/help/cs/gnome-dictionary/find.page
 share/help/cs/gnome-dictionary/index.page
 share/help/cs/gnome-dictionary/introduction.page
@@ -93,8 +90,8 @@ share/help/da/gnome-dictionary/
 share/help/da/gnome-dictionary/definition.page
 share/help/da/gnome-dictionary/dictionary-select.page
 share/help/da/gnome-dictionary/figures/
+share/help/da/gnome-dictionary/figures/gnome-dictionary-3-26.png
 share/help/da/gnome-dictionary/figures/gnome-dictionary-icon.png
-share/help/da/gnome-dictionary/figures/gnome-dictionary.png
 share/help/da/gnome-dictionary/find.page
 share/help/da/gnome-dictionary/index.page
 share/help/da/gnome-dictionary/introduction.page
@@ -118,8 +115,8 @@ share/help/de/gnome-dictionary/
 share/help/de/gnome-dictionary/definition.page
 share/help/de/gnome-dictionary/dictionary-select.page
 share/help/de/gnome-dictionary/figures/
+share/help/de/gnome-dictionary/figures/gnome-dictionary-3-26.png
 share/help/de/gnome-dictionary/figures/gnome-dictionary-icon.png
-share/help/de/gnome-dictionary/figures/gnome-dictionary.png
 share/help/de/gnome-dictionary/find.page
 share/help/de/gnome-dictionary/index.page
 share/help/de/gnome-dictionary/introduction.page
@@ -143,8 +140,8 @@ share/help/el/gnome-dictionary/
 share/help/el/gnome-dictionary/definition.page
 share/help/el/gnome-dictionary/dictionary-select.page
 share/help/el/gnome-dictionary/figures/
+share/help/el/gnome-dictionary/figures/gnome-dictionary-3-26.png
 share/help/el/gnome-dictionary/figures/gnome-dictionary-icon.png
-share/help/el/gnome-dictionary/figures/gnome-dictionary.png
 share/help/el/gnome-dictionary/find.page
 share/help/el/gnome-dictionary/index.page
 share/help/el/gnome-dictionary/introduction.page
@@ -168,8 +165,8 @@ share/help/en_GB/gnome-dictionary/
 share/help/en_GB/gnome-dictionary/definition.page
 share/help/en_GB/gnome-dictionary/dictionary-select.page
 share/help/en_GB/gnome-dictionary/figures/
+share/help/en_GB/gnome-dictionary/figures/gnome-dictionary-3-26.png
 share/help/en_GB/gnome-dictionary/figures/gnome-dictionary-icon.png
-share/help/en_GB/gnome-dictionary/figures/gnome-dictionary.png
 share/help/en_GB/gnome-dictionary/find.page
 share/help/en_GB/gnome-dictionary/index.page
 share/help/en_GB/gnome-dictionary/introduction.page
@@ -193,8 +190,8 @@ share/help/es/gnome-dictionary/
 share/help/es/gnome-dictionary/definition.page
 share/help/es/gnome-dictionary/dictionary-select.page
 share/help/es/gnome-dictionary/figures/
+share/help/es/gnome-dictionary/figures/gnome-dictionary-3-26.png
 share/help/es/gnome-dictionary/figures/gnome-dictionary-icon.png
-share/help/es/gnome-dictionary/figures/gnome-dictionary.png
 share/help/es/gnome-dictionary/find.page
 share/help/es/gnome-dictionary/index.page
 share/help/es/gnome-dictionary/introduction.page
@@ -218,8 +215,8 @@ share/help/eu/gnome-dictionary/
 share/help/eu/gnome-dictionary/definition.page
 share/help/eu/gnome-dictionary/dictionary-select.page
 share/help/eu/gnome-dictionary/figures/
+share/help/eu/gnome-dictionary/figures/gnome-dictionary-3-26.png
 share/help/eu/gnome-dictionary/figures/gnome-dictionary-icon.png
-share/help/eu/gnome-dictionary/figures/gnome-dictionary.png
 share/help/eu/gnome-dictionary/find.page
 share/help/eu/gnome-dictionary/index.page
 share/help/eu/gnome-dictionary/introduction.page
@@ -243,8 +240,8 @@ share/help/fi/gnome-dictionary/
 share/help/fi/gnome-dictionary/definition.page
 share/help/fi/gnome-dictionary/dictionary-select.page
 share/help/fi/gnome-dictionary/figures/
+share/help/fi/gnome-dictionary/figures/gnome-dictionary-3-26.png
 share/help/fi/gnome-dictionary/figures/gnome-dictionary-icon.png
-share/help/fi/gnome-dictionary/figures/gnome-dictionary.png
 share/help/fi/gnome-dictionary/find.page
 share/help/fi/gnome-dictionary/index.page
 share/help/fi/gnome-dictionary/introduction.page
@@ -268,8 +265,8 @@ share/help/fr/gnome-dictionary/
 share/help/fr/gnome-dictionary/definition.page
 share/help/fr/gnome-dictionary/dictionary-select.page
 share/help/fr/gnome-dictionary/figures/
+share/help/fr/gnome-dictionary/figures/gnome-dictionary-3-26.png
 share/help/fr/gnome-dictionary/figures/gnome-dictionary-icon.png
-share/help/fr/gnome-dictionary/figures/gnome-dictionary.png
 share/help/fr/gnome-dictionary/find.page
 share/help/fr/gnome-dictionary/index.page
 share/help/fr/gnome-dictionary/introduction.page
@@ -293,8 +290,8 @@ share/help/gl/gnome-dictionary/
 share/help/gl/gnome-dictionary/definition.page
 share/help/gl/gnome-dictionary/dictionary-select.page
 share/help/gl/gnome-dictionary/figures/
+share/help/gl/gnome-dictionary/figures/gnome-dictionary-3-26.png
 share/help/gl/gnome-dictionary/figures/gnome-dictionary-icon.png
-share/help/gl/gnome-dictionary/figures/gnome-dictionary.png
 share/help/gl/gnome-dictionary/find.page
 share/help/gl/gnome-dictionary/index.page
 share/help/gl/gnome-dictionary/introduction.page
@@ -318,8 +315,8 @@ share/help/hu/gnome-dictionary/
 share/help/hu/gnome-dictionary/definition.page
 share/help/hu/gnome-dictionary/dictionary-select.page
 share/help/hu/gnome-dictionary/figures/
+share/help/hu/gnome-dictionary/figures/gnome-dictionary-3-26.png
 share/help/hu/gnome-dictionary/figures/gnome-dictionary-icon.png
-share/help/hu/gnome-dictionary/figures/gnome-dictionary.png
 share/help/hu/gnome-dictionary/find.page
 share/help/hu/gnome-dictionary/index.page
 share/help/hu/gnome-dictionary/introduction.page
@@ -343,8 +340,8 @@ share/help/id/gnome-dictionary/
 share/help/id/gnome-dictionary/definition.page
 share/help/id/gnome-dictionary/dictionary-select.page
 share/help/id/gnome-dictionary/figures/
+share/help/id/gnome-dictionary/figures/gnome-dictionary-3-26.png
 share/help/id/gnome-dictionary/figures/gnome-dictionary-icon.png
-share/help/id/gnome-dictionary/figures/gnome-dictionary.png
 share/help/id/gnome-dictionary/find.page
 share/help/id/gnome-dictionary/index.page
 share/help/id/gnome-dictionary/introduction.page
@@ -368,8 +365,8 @@ share/help/it/gnome-dictionary/
 share/help/it/gnome-dictionary/definition.page
 share/help/it/gnome-dictionary/dictionary-select.page
 share/help/it/gnome-dictionary/figures/
+share/help/it/gnome-dictionary/figures/gnome-dictionary-3-26.png
 share/help/it/gnome-dictionary/figures/gnome-dictionary-icon.png
-share/help/it/gnome-dictionary/figures/gnome-dictionary.png
 share/help/it/gnome-dictionary/find.page
 share/help/it/gnome-dictionary/index.page
 share/help/it/gnome-dictionary/introduction.page
@@ -393,8 +390,8 @@ share/help/ko/gnome-dictionary/
 share/help/ko/gnome-dictionary/definition.page
 share/help/ko/gnome-dictionary/dictionary-select.page
 share/help/ko/gnome-dictionary/figures/
+share/help/ko/gnome-dictionary/figures/gnome-dictionary-3-26.png
 share/help/ko/gnome-dictionary/figures/gnome-dictionary-icon.png
-share/help/ko/gnome-dictionary/figures/gnome-dictionary.png
 share/help/ko/gnome-dictionary/find.page
 share/help/ko/gnome-dictionary/index.page
 share/help/ko/gnome-dictionary/introduction.page
@@ -418,8 +415,8 @@ share/help/oc/gnome-dictionary/
 share/help/oc/gnome-dictionary/definition.page
 share/help/oc/gnome-dictionary/dictionary-select.page
 share/help/oc/gnome-dictionary/figures/
+share/help/oc/gnome-dictionary/figures/gnome-dictionary-3-26.png
 share/help/oc/gnome-dictionary/figures/gnome-dictionary-icon.png
-share/help/oc/gnome-dictionary/figures/gnome-dictionary.png
 share/help/oc/gnome-dictionary/find.page
 share/help/oc/gnome-dictionary/index.page
 share/help/oc/gnome-dictionary/introduction.page
@@ -443,8 +440,8 @@ share/help/pl/gnome-dictionary/
 share/help/pl/gnome-dictionary/definition.page
 share/help/pl/gnome-dictionary/dictionary-select.page
 share/help/pl/gnome-dictionary/figures/
+share/help/pl/gnome-dictionary/figures/gnome-dictionary-3-26.png
 share/help/pl/gnome-dictionary/figures/gnome-dictionary-icon.png
-share/help/pl/gnome-dictionary/figures/gnome-dictionary.png
 share/help/pl/gnome-dictionary/find.page
 share/help/pl/gnome-dictionary/index.page
 share/help/pl/gnome-dictionary/introduction.page
@@ -468,8 +465,8 @@ share/help/pt_BR/gnome-dictionary/
 share/help/pt_BR/gnome-dictionary/definition.page
 share/help/pt_BR/gnome-dictionary/dictionary-select.page
 share/help/pt_BR/gnome-dictionary/figures/
+share/help/pt_BR/gnome-dictionary/figures/gnome-dictionary-3-26.png
 share/help/pt_BR/gnome-dictionary/figures/gnome-dictionary-icon.png
-share/help/pt_BR/gnome-dictionary/figures/gnome-dictionary.png
 share/help/pt_BR/gnome-dictionary/find.page
 share/help/pt_BR/gnome-dictionary/index.page
 share/help/pt_BR/gnome-dictionary/introduction.page
@@ -493,8 +490,8 @@ share/help/ru/gnome-dictionary/
 share/help/ru/gnome-dictionary/definition.page
 share/help/ru/gnome-dictionary/dictionary-select.page
 share/help/ru/gnome-dictionary/figures/
+share/help/ru/gnome-dictionary/figures/gnome-dictionary-3-26.png
 share/help/ru/gnome-dictionary/figures/gnome-dictionary-icon.png
-share/help/ru/gnome-dictionary/figures/gnome-dictionary.png
 share/help/ru/gnome-dictionary/find.page
 share/help/ru/gnome-dictionary/index.page
 share/help/ru/gnome-dictionary/introduction.page
@@ -518,8 +515,8 @@ share/help/sl/gnome-dictionary/
 share/help/sl/gnome-dictionary/definition.page
 share/help/sl/gnome-dictionary/dictionary-select.page
 share/help/sl/gnome-dictionary/figures/
+share/help/sl/gnome-dictionary/figures/gnome-dictionary-3-26.png
 share/help/sl/gnome-dictionary/figures/gnome-dictionary-icon.png
-share/help/sl/gnome-dictionary/figures/gnome-dictionary.png
 share/help/sl/gnome-dictionary/find.page
 share/help/sl/gnome-dictionary/index.page
 share/help/sl/gnome-dictionary/introduction.page
@@ -543,8 +540,8 @@ share/help/sv/gnome-dictionary/
 share/help/sv/gnome-dictionary/definition.page
 share/help/sv/gnome-dictionary/dictionary-select.page
 share/help/sv/gnome-dictionary/figures/
+share/help/sv/gnome-dictionary/figures/gnome-dictionary-3-26.png
 share/help/sv/gnome-dictionary/figures/gnome-dictionary-icon.png
-share/help/sv/gnome-dictionary/figures/gnome-dictionary.png
 share/help/sv/gnome-dictionary/find.page
 share/help/sv/gnome-dictionary/index.page
 share/help/sv/gnome-dictionary/introduction.page
@@ -568,8 +565,8 @@ share/help/uk/gnome-dictionary/
 share/help/uk/gnome-dictionary/definition.page
 share/help/uk/gnome-dictionary/dictionary-select.page
 share/help/uk/gnome-dictionary/figures/
+share/help/uk/gnome-dictionary/figures/gnome-dictionary-3-26.png
 share/help/uk/gnome-dictionary/figures/gnome-dictionary-icon.png
-share/help/uk/gnome-dictionary/figures/gnome-dictionary.png
 share/help/uk/gnome-dictionary/find.page
 share/help/uk/gnome-dictionary/index.page
 share/help/uk/gnome-dictionary/introduction.page
@@ -593,8 +590,8 @@ share/help/zh_CN/gnome-dictionary/
 share/help/zh_CN/gnome-dictionary/definition.page
 share/help/zh_CN/gnome-dictionary/dictionary-select.page
 share/help/zh_CN/gnome-dictionary/figures/
+share/help/zh_CN/gnome-dictionary/figures/gnome-dictionary-3-26.png
 share/help/zh_CN/gnome-dictionary/figures/gnome-dictionary-icon.png
-share/help/zh_CN/gnome-dictionary/figures/gnome-dictionary.png
 share/help/zh_CN/gnome-dictionary/find.page
 share/help/zh_CN/gnome-dictionary/index.page
 share/help/zh_CN/gnome-dictionary/introduction.page
@@ -613,6 +610,9 @@ share/help/zh_CN/gnome-dictionary/sources-edit.page
 share/help/zh_CN/gnome-dictionary/sources-select.page
 share/help/zh_CN/gnome-dictionary/sources.page
 share/help/zh_CN/gnome-dictionary/text-copy.page
+share/icons/hicolor/scalable/apps/org.gnome.Dictionary.Devel.svg
+share/icons/hicolor/scalable/apps/org.gnome.Dictionary.svg
+share/icons/hicolor/symbolic/apps/org.gnome.Dictionary-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-dictionary.mo
 share/locale/am/LC_MESSAGES/gnome-dictionary.mo
 share/locale/ar/LC_MESSAGES/gnome-dictionary.mo
@@ -668,6 +668,9 @@ share/locale/lt/LC_MESSAGES/gnome-dictionary.mo
 share/locale/lv/LC_MESSAGES/gnome-dictionary.mo
 share/locale/mai/LC_MESSAGES/gnome-dictionary.mo
 share/locale/mg/LC_MESSAGES/gnome-dictionary.mo
+share/locale/mjw/
+share/locale/mjw/LC_MESSAGES/
+share/locale/mjw/LC_MESSAGES/gnome-dictionary.mo
 share/locale/mk/LC_MESSAGES/gnome-dictionary.mo
 share/locale/ml/LC_MESSAGES/gnome-dictionary.mo
 share/locale/mn/LC_MESSAGES/gnome-dictionary.mo
@@ -708,5 +711,7 @@ share/locale/xh/LC_MESSAGES/gnome-dictionary.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-dictionary.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-dictionary.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-dictionary.mo
+share/metainfo/org.gnome.Dictionary.appdata.xml
 @tag glib-compile-schemas
 @tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
