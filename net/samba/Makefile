@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.296 2021/05/12 23:33:24 jca Exp $
+# $OpenBSD: Makefile,v 1.297 2021/05/14 06:47:26 jca Exp $
 
 VERSION =		4.14.4
 DISTNAME =		samba-${VERSION}
@@ -20,6 +20,8 @@ PKG_ARCH-docs =		*
 
 LDB_V =			2.3.0
 TEVENT_V =		0.10.2
+
+REVISION-main =		0
 
 SHARED_LIBS =		asn1-samba4		1.0 \
 			com_err-samba4		1.0 \
@@ -253,5 +255,6 @@ post-install:
 	     -e 's:MYGROUP:WORKGROUP:' \
 	     ${WRKDIST}/examples/smb.conf.default > ${SAMBA_CONFIG}.tmp && \
 	    mv ${SAMBA_CONFIG}.tmp ${SAMBA_CONFIG}
+	[ -x "${PREFIX}/bin/mdfind" ] && mv "${PREFIX}/bin/mdfind" "${PREFIX}/bin/samba-mdfind"
 
 .include <bsd.port.mk>

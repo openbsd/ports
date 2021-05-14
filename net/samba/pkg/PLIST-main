@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.56 2021/05/12 23:33:25 jca Exp $
+@comment $OpenBSD: PLIST-main,v 1.57 2021/05/14 06:47:26 jca Exp $
 @conflict ldb-<1.4.8p0v0
 @pkgpath net/samba,ldap,-main
 @pkgpath net/samba,ads,-main
@@ -15,7 +15,6 @@ bin/findsmb
 @bin bin/gentest
 @bin bin/locktest
 @bin bin/masktest
-@bin bin/mdfind
 @bin bin/mvxattr
 @bin bin/ndrdump
 @bin bin/net
@@ -29,6 +28,7 @@ bin/findsmb
 @bin bin/regshell
 @bin bin/regtree
 @bin bin/rpcclient
+@bin bin/samba-mdfind
 @bin bin/sharesec
 @bin bin/smbcacls
 @bin bin/smbclient
