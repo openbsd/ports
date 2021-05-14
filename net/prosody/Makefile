@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.60 2021/03/06 18:43:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2021/05/14 07:45:26 solene Exp $
 
 COMMENT=	communications server for Jabber/XMPP written in Lua
-DISTNAME=	prosody-0.11.8
+DISTNAME=	prosody-0.11.9
 CATEGORIES=	net
 MASTER_SITES=	https://prosody.im/downloads/source/
 
