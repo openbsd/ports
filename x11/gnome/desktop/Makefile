@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.183 2021/05/13 09:01:43 ajacoutot Exp $
-
-# XXX https://bugzilla.gnome.org/show_bug.cgi?id=590059
-#RUN_DEPENDS +=		misc/hwdata
+# $OpenBSD: Makefile,v 1.184 2021/05/14 13:50:02 ajacoutot Exp $
 
 COMMENT=		components for the GNOME desktop
 
