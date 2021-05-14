@@ -1,21 +1,25 @@
-$OpenBSD: patch-lib_byteorder_h,v 1.1 2021/04/24 11:11:47 ajacoutot Exp $
+$OpenBSD: patch-lib_byteorder_h,v 1.2 2021/05/14 07:20:12 jasper Exp $
 
-./lib/byteorder.h:64:28: error: function-like macro '__GNUC_PREREQ' is not defined
+https://github.com/cyrusimap/cyrus-imapd/commit/d9ee6586e3b87840761421bd24ec5a87f80a3e50
+https://github.com/cyrusimap/cyrus-imapd/commit/d325540ef40104429bb69769f000b46a4e8db48d
 
 Index: lib/byteorder.h
 --- lib/byteorder.h.orig
 +++ lib/byteorder.h
-@@ -61,7 +61,12 @@
+@@ -61,11 +61,15 @@
  #  define ntohll(x) (x)
  
  #else /* small-endian machines */
 -#  if defined(__GNUC__) && __GNUC_PREREQ(4, 3)
-+#  if defined(__GNUC__) && !defined(__clang__)
-+#    if __GNUC_PREREQ(4, 3)
-+#      define GNUC_PREREQ_4_3 1
-+#    endif
-+#  endif
-+#  if defined(GNUC_PREREQ_4_3)
++#  if defined(__GNUC__) && ((__GNUC__ == 4 && __GNUC_MINOR__ >= 3) || __GNUC__ > 4)
       /* Remove existing macros if present */
++#    undef ntohs
++#    undef htons
  #    undef ntohl
  #    undef htonl
+      /* These optimise to single instructions in gcc */
++#    define ntohs(i) __builtin_bswap16(i)
++#    define htons(i) __builtin_bswap16(i)
+ #    define ntohl(i) __builtin_bswap32(i)
+ #    define htonl(i) __builtin_bswap32(i)
+ #    define ntohll(i) __builtin_bswap64(i)
