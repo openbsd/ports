@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2019/11/01 22:08:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2021/05/14 09:24:26 ajacoutot Exp $
 
 COMMENT=		document and e-books manager for GNOME
 
 GNOME_PROJECT=		gnome-books
-GNOME_VERSION=		3.34.0
+GNOME_VERSION=		40.0
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -28,18 +28,18 @@ COMPILER=		base-clang ports-gcc
 BUILD_DEPENDS +=	www/webkitgtk4 \
 			x11/gnome/gjs \
 			x11/gnome/libgepub \
-			x11/gnome/tracker
+			x11/gnome/tracker3
 RUN_DEPENDS +=		www/webkitgtk4 \
 			x11/gnome/gjs \
 			x11/gnome/libgepub \
-			x11/gnome/tracker
+			x11/gnome/tracker3
 
 LIB_DEPENDS=		evince-*-!light:graphics/evince \
 			x11/gnome/desktop
 
 RUN_DEPENDS +=		x11/gnome/epub-thumbnailer
 
-# org.freedesktop.Tracker1.Miner.Extract
-RUN_DEPENDS +=		x11/gnome/tracker-miners
+# org.freedesktop.Tracker3.Miner.Files
+RUN_DEPENDS +=		x11/gnome/tracker3-miners
 
 .include <bsd.port.mk>

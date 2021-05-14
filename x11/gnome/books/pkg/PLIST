@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/08 21:28:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/05/14 09:24:26 ajacoutot Exp $
 @conflict gnome-documents-<3.32.0
 bin/gnome-books
 lib/gnome-books/
 lib/gnome-books/girepository-1.0/
 lib/gnome-books/girepository-1.0/Gd-1.0.typelib
 lib/gnome-books/girepository-1.0/GdPrivate-1.0.typelib
-lib/gnome-books/libgd.so
-lib/gnome-books/libgdprivate-1.0.so
+@so lib/gnome-books/libgd.so
+@so lib/gnome-books/libgdprivate-1.0.so
 @man man/man1/gnome-books.1
 share/applications/org.gnome.Books.desktop
 share/dbus-1/services/org.gnome.Books.service
@@ -30,6 +30,7 @@ share/locale/bn_IN/LC_MESSAGES/gnome-books.mo
 share/locale/bs/LC_MESSAGES/gnome-books.mo
 share/locale/ca/LC_MESSAGES/gnome-books.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-books.mo
+share/locale/ckb/LC_MESSAGES/gnome-books.mo
 share/locale/cs/LC_MESSAGES/gnome-books.mo
 share/locale/da/LC_MESSAGES/gnome-books.mo
 share/locale/de/LC_MESSAGES/gnome-books.mo
@@ -63,6 +64,7 @@ share/locale/lv/LC_MESSAGES/gnome-books.mo
 share/locale/mk/LC_MESSAGES/gnome-books.mo
 share/locale/ml/LC_MESSAGES/gnome-books.mo
 share/locale/mr/LC_MESSAGES/gnome-books.mo
+share/locale/ms/LC_MESSAGES/gnome-books.mo
 share/locale/nb/LC_MESSAGES/gnome-books.mo
 share/locale/ne/LC_MESSAGES/gnome-books.mo
 share/locale/nl/LC_MESSAGES/gnome-books.mo
