@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2021/05/14 06:40:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2021/05/14 17:34:13 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -18,13 +18,13 @@ MODULES=		devel/dconf \
 BUILD_DEPENDS=		geo/geoclue2 \
 			x11/gnome/gjs \
 			x11/gnome/libgweather \
-			x11/gtk+3
+			x11/libhandy
 
 RUN_DEPENDS=		geo/geoclue2 \
 			x11/gnome/desktop \
 			x11/gnome/gjs \
 			x11/gnome/libgweather \
-			x11/gtk+3
+			x11/libhandy
 
 MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
