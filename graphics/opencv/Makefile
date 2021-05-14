@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2021/04/24 05:22:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.70 2021/05/14 18:24:44 espie Exp $
 
 ONLY_FOR_ARCHS-java =	aarch64 amd64 i386
 
@@ -13,6 +13,8 @@ GH_TAGNAME =		${V}
 
 PKGNAME-main =		opencv-${V}
 PKGNAME-java =		opencv-java-${V}
+REVISION-java =		0
+REVISION-main =		0
 
 HOMEPAGE =		https://www.opencv.org/
 
@@ -22,7 +24,7 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
   opencv_flann opencv_highgui opencv_imgproc opencv_ml opencv_objdetect \
   opencv_photo opencv_stitching opencv_video opencv_imgcodecs \
   opencv_videoio opencv_dnn
-SHARED_LIBS += $i 9.0
+SHARED_LIBS += $i 9.1
 .endfor
 
 WANTLIB-main += ${COMPILER_LIBCXX} IlmImf-2_5 avcodec avformat avutil

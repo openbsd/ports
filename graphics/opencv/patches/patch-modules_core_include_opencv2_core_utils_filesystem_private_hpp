@@ -1,0 +1,15 @@
+$OpenBSD: patch-modules_core_include_opencv2_core_utils_filesystem_private_hpp,v 1.1 2021/05/14 18:24:44 espie Exp $
+
+Index: modules/core/include/opencv2/core/utils/filesystem.private.hpp
+--- modules/core/include/opencv2/core/utils/filesystem.private.hpp.orig
++++ modules/core/include/opencv2/core/utils/filesystem.private.hpp
+@@ -12,7 +12,8 @@
+ #  elif defined WINRT || defined _WIN32_WCE
+      /* not supported */
+ #  elif defined __ANDROID__ || defined __linux__ || defined _WIN32 || \
+-        defined __FreeBSD__ || defined __bsdi__ || defined __HAIKU__
++        defined __FreeBSD__ || defined __bsdi__ || defined __HAIKU__ || \
++	defined __OpenBSD__
+ #      define OPENCV_HAVE_FILESYSTEM_SUPPORT 1
+ #  elif defined(__APPLE__)
+ #    include <TargetConditionals.h>
