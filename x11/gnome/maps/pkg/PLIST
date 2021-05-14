@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2020/11/07 10:09:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2021/05/14 07:30:35 ajacoutot Exp $
 bin/gnome-maps
 lib/gnome-maps/
 lib/gnome-maps/girepository-1.0/
@@ -17,10 +17,15 @@ share/gnome-maps/icons/hicolor/16x16/apps/
 share/gnome-maps/icons/hicolor/16x16/apps/layer-not-visible-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/layer-visible-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/layers-button-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/map-marker-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/maps-point-end-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/maps-point-end.svg
 share/gnome-maps/icons/hicolor/16x16/apps/maps-point-start-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/maps-point-start.svg
+share/gnome-maps/icons/hicolor/16x16/apps/mountain-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/no-toilets-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/no-wheelchair-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/phone-oldschool-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/route-bike-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/route-button-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/route-car-symbolic.svg
@@ -36,6 +41,9 @@ share/gnome-maps/icons/hicolor/16x16/apps/route-transit-subway-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/route-transit-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/route-transit-train-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/route-transit-tram-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/toilets-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/wheelchair-limited-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/wheelchair-symbolic.svg
 share/gnome-maps/icons/hicolor/24x24/
 share/gnome-maps/icons/hicolor/24x24/apps/
 share/gnome-maps/icons/hicolor/24x24/apps/user-location-compass.png
