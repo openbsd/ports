@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2021/03/23 22:17:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2021/05/15 16:57:16 ajacoutot Exp $
 
 BROKEN-aarch64=	old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1.1.11
 BROKEN-armv7=	old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1.1.11
@@ -8,10 +8,9 @@ NOT_FOR_ARCHS=		i386
 
 COMMENT=		cluster scheduler
 
-GH_TAGNAME=		v1.0.4
+GH_TAGNAME=		v1.0.5
 GH_ACCOUNT=		hashicorp
 GH_PROJECT=		nomad
-REVISION=		0
 
 CATEGORIES=		sysutils
 
