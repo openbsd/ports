@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2019/12/08 10:16:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2021/05/15 17:47:16 ajacoutot Exp $
 @conflict gstreamer1-plugins-bad-<1.14.0
 @conflict gstreamer1-plugins-ugly-<1.14.0
 @so lib/gstreamer-${API}/libgstalaw.so
@@ -37,7 +37,6 @@
 @so lib/gstreamer-${API}/libgstmultifile.so
 @so lib/gstreamer-${API}/libgstmultipart.so
 @so lib/gstreamer-${API}/libgstnavigationtest.so
-@so lib/gstreamer-${API}/libgstossaudio.so
 @so lib/gstreamer-${API}/libgstpng.so
 @so lib/gstreamer-${API}/libgstreplaygain.so
 @so lib/gstreamer-${API}/libgstrtp.so
