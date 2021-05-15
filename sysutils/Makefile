@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.603 2021/05/09 12:29:45 ian Exp $
+# $OpenBSD: Makefile,v 1.604 2021/05/15 10:33:08 jsg Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -217,6 +217,7 @@
      SUBDIR += opam
      SUBDIR += openbsdisks2
      SUBDIR += openpoppassd
+     SUBDIR += opensbi
      SUBDIR += p5-Capture-Tiny
      SUBDIR += p5-Data-Float
      SUBDIR += p5-Data-Entropy
