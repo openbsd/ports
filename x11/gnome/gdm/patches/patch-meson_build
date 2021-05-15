@@ -1,19 +1,19 @@
-$OpenBSD: patch-meson_build,v 1.1 2020/11/08 09:52:01 ajacoutot Exp $
+$OpenBSD: patch-meson_build,v 1.2 2021/05/15 15:49:02 ajacoutot Exp $
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -37,9 +37,6 @@ gdm_screenshot_dir = (get_option('screenshot-dir') != 
+@@ -36,9 +36,6 @@ gdm_screenshot_dir = (get_option('screenshot-dir') != 
  # Common variables
  config_h_dir = include_directories('.')
  
 -# Dependencies
 -udev_dep = dependency('udev')
 -
- glib_min_version = '2.44.0'
+ glib_min_version = '2.56.0'
  
  glib_dep = dependency('glib-2.0', version: '>=' + glib_min_version)
-@@ -53,16 +50,6 @@ xcb_dep = dependency('xcb')
+@@ -52,16 +49,6 @@ xcb_dep = dependency('xcb')
  keyutils_dep = dependency('libkeyutils', required: false)
  libselinux_dep = dependency('libselinux', required: get_option('selinux'))
  
@@ -30,7 +30,7 @@ Index: meson.build
  # X11
  x_deps = declare_dependency(
    dependencies: [
-@@ -94,19 +81,9 @@ if xdmcp_dep.found() and get_option('tcp-wrappers')
+@@ -93,19 +80,9 @@ if xdmcp_dep.found() and get_option('tcp-wrappers')
    libwrap_dep = cc.find_library('libwrap')
  endif
  # systemd

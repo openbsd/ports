@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_gdm-manager_c,v 1.26 2020/11/08 09:52:01 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-manager_c,v 1.27 2021/05/15 15:49:02 ajacoutot Exp $
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From fcba1e1a5d556ce7b52101dbd2d1ba4a19469161 Mon Sep 17 00:00:00 2001
@@ -745,7 +745,7 @@ Index: daemon/gdm-manager.c
          return is_on_seat0;
  }
  
-@@ -2016,11 +2407,57 @@ on_user_session_died (GdmSession *session,
+@@ -2019,11 +2410,57 @@ on_user_session_died (GdmSession *session,
  }
  
  static char *
@@ -805,7 +805,7 @@ Index: daemon/gdm-manager.c
  }
  
  static void
-@@ -2029,25 +2466,6 @@ on_session_reauthenticated (GdmSession *session,
+@@ -2032,25 +2469,6 @@ on_session_reauthenticated (GdmSession *session,
                              GdmManager *manager)
  {
          gboolean fail_if_already_switched = FALSE;

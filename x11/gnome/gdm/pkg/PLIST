@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.103 2020/11/14 11:45:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.104 2021/05/15 15:49:02 ajacoutot Exp $
 @newuser _gdm:676:_x11:daemon:GNOME Display Manager:/var/db/gdm:/sbin/nologin
 @comment starts a full gnome-session as _gdm which requires a valid homedir
 @extraunexec rm -rf /var/db/gdm
@@ -15,8 +15,8 @@ lib/girepository-1.0/Gdm-1.0.typelib
 @lib lib/libgdm.so.${LIBgdm_VERSION}
 lib/pkgconfig/gdm.pc
 @so lib/security/pam_gdm.so
-@bin libexec/gdm-disable-wayland
 @bin libexec/gdm-host-chooser
+@bin libexec/gdm-runtime-config
 @bin libexec/gdm-session-worker
 @bin libexec/gdm-simple-chooser
 @bin libexec/gdm-wayland-session
@@ -111,6 +111,10 @@ share/help/en_GB/gdm/legal.xml
 share/help/es/gdm/
 share/help/es/gdm/index.docbook
 share/help/es/gdm/legal.xml
+share/help/eu/
+share/help/eu/gdm/
+share/help/eu/gdm/index.docbook
+share/help/eu/gdm/legal.xml
 share/help/fr/gdm/
 share/help/fr/gdm/index.docbook
 share/help/fr/gdm/legal.xml
@@ -120,7 +124,6 @@ share/help/gl/gdm/legal.xml
 share/help/hu/gdm/
 share/help/hu/gdm/index.docbook
 share/help/hu/gdm/legal.xml
-share/help/id/
 share/help/id/gdm/
 share/help/id/gdm/index.docbook
 share/help/id/gdm/legal.xml

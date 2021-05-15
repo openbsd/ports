@@ -1,4 +1,4 @@
-$OpenBSD: patch-libgdm_gdm-user-switching_c,v 1.4 2020/05/14 15:25:54 ajacoutot Exp $
+$OpenBSD: patch-libgdm_gdm-user-switching_c,v 1.5 2021/05/15 15:49:02 ajacoutot Exp $
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From fcba1e1a5d556ce7b52101dbd2d1ba4a19469161 Mon Sep 17 00:00:00 2001
@@ -405,7 +405,7 @@ Index: libgdm/gdm-user-switching.c
  
                  return FALSE;
          }
-@@ -236,9 +542,9 @@ goto_login_session (GDBusConnection  *connection,
+@@ -218,9 +524,9 @@ goto_login_session (GDBusConnection  *connection,
                  return FALSE;
          }
  
@@ -417,7 +417,7 @@ Index: libgdm/gdm-user-switching.c
  
                  if (res) {
                          ret = TRUE;
-@@ -257,10 +563,11 @@ goto_login_session (GDBusConnection  *connection,
+@@ -239,10 +545,11 @@ goto_login_session (GDBusConnection  *connection,
  
          return ret;
  }
@@ -430,7 +430,7 @@ Index: libgdm/gdm-user-switching.c
  {
          GDBusConnection *connection;
          gboolean retval;
-@@ -269,8 +576,23 @@ gdm_goto_login_session_sync (GCancellable  *cancellabl
+@@ -251,8 +558,23 @@ gdm_goto_login_session_sync (GCancellable  *cancellabl
          if (!connection)
                  return FALSE;
  

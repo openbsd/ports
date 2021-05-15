@@ -1,4 +1,4 @@
-$OpenBSD: patch-common_gdm-common_c,v 1.8 2020/05/14 15:25:54 ajacoutot Exp $
+$OpenBSD: patch-common_gdm-common_c,v 1.9 2021/05/15 15:49:02 ajacoutot Exp $
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From fcba1e1a5d556ce7b52101dbd2d1ba4a19469161 Mon Sep 17 00:00:00 2001
@@ -396,7 +396,7 @@ Index: common/gdm-common.c
  
                  return FALSE;
          }
-@@ -530,9 +834,9 @@ goto_login_session (GDBusConnection  *connection,
+@@ -512,9 +816,9 @@ goto_login_session (GDBusConnection  *connection,
                  return FALSE;
          }
  
@@ -408,7 +408,7 @@ Index: common/gdm-common.c
  
                  if (res) {
                          ret = TRUE;
-@@ -551,6 +855,7 @@ goto_login_session (GDBusConnection  *connection,
+@@ -533,6 +837,7 @@ goto_login_session (GDBusConnection  *connection,
  
          return ret;
  }
@@ -416,7 +416,7 @@ Index: common/gdm-common.c
  
  gboolean
  gdm_goto_login_session (GError **error)
-@@ -566,7 +871,17 @@ gdm_goto_login_session (GError **error)
+@@ -548,7 +853,17 @@ gdm_goto_login_session (GError **error)
                  return FALSE;
          }
  
@@ -435,7 +435,7 @@ Index: common/gdm-common.c
  }
  
  static void
-@@ -841,136 +1156,4 @@ gdm_shell_expand (const char *str,
+@@ -823,136 +1138,4 @@ gdm_shell_expand (const char *str,
                  }
          }
          return g_string_free (s, FALSE);
