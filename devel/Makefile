@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2099 2021/05/14 21:51:14 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2100 2021/05/15 20:18:12 bluhm Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -648,6 +648,7 @@
      SUBDIR += p5-Devel-Cycle
      SUBDIR += p5-Devel-Declare
      SUBDIR += p5-Devel-FastProf
+     SUBDIR += p5-Devel-FindPerl
      SUBDIR += p5-Devel-FindRef
      SUBDIR += p5-Devel-Gladiator
      SUBDIR += p5-Devel-GlobalDestruction
