@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.50 2020/02/08 11:53:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2021/05/15 16:02:07 ajacoutot Exp $
 
 COMMENT=		Abstract Syntax Notation One structure parser library
 
-DISTNAME=		libtasn1-4.16.0
+DISTNAME=		libtasn1-4.17.0
 CATEGORIES=		security
 
-SHARED_LIBS +=  tasn1                4.2      # 12.0
+SHARED_LIBS +=  tasn1                4.2      # 12.1
 
 HOMEPAGE=		https://www.gnu.org/software/libtasn1/
 
