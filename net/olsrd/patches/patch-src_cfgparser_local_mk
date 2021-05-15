@@ -1,12 +1,23 @@
-$OpenBSD: patch-src_cfgparser_local_mk,v 1.3 2017/06/04 11:45:04 stsp Exp $
+$OpenBSD: patch-src_cfgparser_local_mk,v 1.4 2021/05/15 22:04:12 millert Exp $
 Index: src/cfgparser/local.mk
 --- src/cfgparser/local.mk.orig
 +++ src/cfgparser/local.mk
-@@ -83,5 +83,7 @@ endif
+@@ -74,14 +74,12 @@ $(C)oparse.c: $(C)oparse.y $(C)olsrd_conf.h $(C)Makefi
+ ifeq ($(VERBOSE),0)
+ 	@echo "[BISON] $@"
+ endif
+-	$(MAKECMDPREFIX)$(BISON) -d -o "$@-tmp" "$<"
+-	$(MAKECMDPREFIX)sed	-e 's/register //' \
+-		-e '/^#line/s/$(call quote,$@-tmp)/$(call quote,$@)/' \
+-		< "$@-tmp" >"$@"
+-	$(MAKECMDPREFIX)mv "$(subst .c,.h,$@-tmp)" "$(subst .c,.h,$@)"
+-	$(MAKECMDPREFIX)$(RM) "$@-tmp" "$(subst .c,.h,$@-tmp)"
++	$(MAKECMDPREFIX)$(BISON) -d -o "$@" "$<"
++	$(MAKECMDPREFIX)sed 's/register //' "$@" > "$@.o" && mv "$@.o" "$@"
  
  $(C)oparse.o: CFLAGS := $(filter-out -Wunreachable-code,$(CFLAGS))
- 
-+$(C)cfgfile_gen.o: CFLAGS += -fPIC
 +
++$(C)cfgfile_gen.o: CFLAGS += -fPIC
+ 
  # and a few files to be cleaned
  TMPFILES += $(foreach pat,oscan.c oparse.c oparse.h,$(C)$(pat) $(C)$(pat)-tmp)
