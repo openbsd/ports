@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/15 20:27:50 bket Exp $
+lib/python${MODPY_VERSION}/site-packages/matplotlib_inline/
+lib/python${MODPY_VERSION}/site-packages/matplotlib_inline-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/matplotlib_inline-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/matplotlib_inline-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/matplotlib_inline-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/matplotlib_inline-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/matplotlib_inline-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/matplotlib_inline/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/matplotlib_inline/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/matplotlib_inline/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/matplotlib_inline/${MODPY_PYCACHE}backend_inline.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/matplotlib_inline/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/matplotlib_inline/backend_inline.py
+lib/python${MODPY_VERSION}/site-packages/matplotlib_inline/config.py
