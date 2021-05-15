@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.67 2021/04/24 07:52:05 landry Exp $
+@comment $OpenBSD: PLIST,v 1.68 2021/05/15 11:22:44 landry Exp $
 @bin bin/qgis
 @bin bin/qgis_bench
 @bin bin/qgis_mapserv.fcgi
@@ -3040,6 +3040,7 @@ share/qgis/python/plugins/processing/tests/Grass7AlgorithmsVectorTest.py
 share/qgis/python/plugins/processing/tests/GuiTest.py
 share/qgis/python/plugins/processing/tests/ModelerTest.py
 share/qgis/python/plugins/processing/tests/OtbAlgorithmsTest.py
+share/qgis/python/plugins/processing/tests/ParametersTest.py
 share/qgis/python/plugins/processing/tests/ProcessingGeneralTest.py
 share/qgis/python/plugins/processing/tests/ProjectProvider.py
 share/qgis/python/plugins/processing/tests/QgisAlgorithmsTest1.py
