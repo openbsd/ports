@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.6 2020/03/27 20:08:40 kmos Exp $
+# $OpenBSD: Makefile,v 1.7 2021/05/15 16:41:46 ajacoutot Exp $
 
 COMMENT=		service for interacting with DMRs
 
 GH_PROJECT=		dleyna-renderer
-REVISION=		1
 
-SHARED_LIBS +=	dleyna-renderer-1.0       0.0 # 1.3
-
-WANTLIB += c dleyna-core-1.0 ffi gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gssdp-1.2 gupnp-1.2 gupnp-av-1.0 gupnp-dlna-2.0
-WANTLIB += iconv idn2 intl lzma m pcre psl pthread soup-2.4 sqlite3
-WANTLIB += unistring xml2 z
+SHARED_LIBS += dleyna-renderer-1.0       1.0 # 1.0.3
 
 RUN_DEPENDS=		net/dleyna/connector-dbus
 
-LIB_DEPENDS=		net/dleyna/core>=0.6.0p0 \
+LIB_DEPENDS=		net/dleyna/core \
 			net/gupnp/av \
 			net/gupnp/dlna
 
-FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/dleyna-renderer
+WANTLIB += c dleyna-core-1.0 gio-2.0 glib-2.0 gobject-2.0 gssdp-1.2
+WANTLIB += gupnp-1.2 gupnp-av-1.0 gupnp-dlna-2.0 m soup-2.4
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dleyna-renderer
+	mv ${WRKINST}/etc/dleyna-renderer-service.conf \
+		${PREFIX}/share/examples/dleyna-renderer
 
 .include <bsd.port.mk>

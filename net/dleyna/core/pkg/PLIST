@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/10/09 17:45:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/05/15 16:41:46 ajacoutot Exp $
 include/dleyna-1.0/
 include/dleyna-1.0/libdleyna/
 include/dleyna-1.0/libdleyna/core/
@@ -14,6 +14,5 @@ include/dleyna-1.0/libdleyna/core/settings.h
 include/dleyna-1.0/libdleyna/core/task-atom.h
 include/dleyna-1.0/libdleyna/core/task-processor.h
 include/dleyna-1.0/libdleyna/core/white-list.h
-lib/libdleyna-core-1.0.la
 @lib lib/libdleyna-core-1.0.so.${LIBdleyna-core-1.0_VERSION}
 lib/pkgconfig/dleyna-core-1.0.pc

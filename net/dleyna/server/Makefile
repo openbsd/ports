@@ -1,24 +1,23 @@
-# $OpenBSD: Makefile,v 1.6 2020/03/24 15:26:26 kmos Exp $
+# $OpenBSD: Makefile,v 1.7 2021/05/15 16:41:46 ajacoutot Exp $
 
 COMMENT=		service for interacting with DMSes
 
 GH_PROJECT=		dleyna-server
-REVISION=		1
 
-SHARED_LIBS +=	dleyna-server-1.0         0.0 # 1.3
+SHARED_LIBS += dleyna-server-1.0         1.0 # 1.0.3
 
-RUN_DEPENDS=		net/dleyna/connector-dbus>=0.3.0p0
+RUN_DEPENDS=		net/dleyna/connector-dbus
 
-LIB_DEPENDS=		net/dleyna/core>=0.6.0p0 \
+LIB_DEPENDS=		net/dleyna/core \
 			net/gupnp/av \
 			net/gupnp/dlna
 
-WANTLIB += c dleyna-core-1.0 ffi gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gssdp-1.2 gupnp-1.2 gupnp-av-1.0 gupnp-dlna-2.0
-WANTLIB += iconv idn2 intl lzma m pcre psl pthread soup-2.4 sqlite3
-WANTLIB += unistring xml2 z
+WANTLIB += c dleyna-core-1.0 gio-2.0 glib-2.0 gobject-2.0 gssdp-1.2
+WANTLIB += gupnp-1.2 gupnp-av-1.0 gupnp-dlna-2.0 soup-2.4 xml2
 
-FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/dleyna-server
-
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dleyna-server
+	mv ${WRKINST}/etc/dleyna-server-service.conf \
+		${PREFIX}/share/examples/dleyna-server
 
 .include <bsd.port.mk>
