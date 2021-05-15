@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/03 21:12:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/05/15 20:40:16 bket Exp $
 
 COMMENT =		python parser
 
-MODPY_EGG_VERSION =	0.5.1
+MODPY_EGG_VERSION =	0.8.2
 DISTNAME =		parso-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION = 		1
 
 CATEGORIES =		devel
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/03/25 10:01:46 mariani Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/05/15 20:40:16 bket Exp $
 @conflict py-parso-*
 @pkgpath devel/py-parso
 lib/python${MODPY_VERSION}/site-packages/parso/
@@ -47,14 +47,11 @@ lib/python${MODPY_VERSION}/site-packages/parso/python/${MODPY_PYCACHE}tokenize.$
 lib/python${MODPY_VERSION}/site-packages/parso/python/${MODPY_PYCACHE}tree.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/parso/python/diff.py
 lib/python${MODPY_VERSION}/site-packages/parso/python/errors.py
-lib/python${MODPY_VERSION}/site-packages/parso/python/grammar26.txt
-lib/python${MODPY_VERSION}/site-packages/parso/python/grammar27.txt
-lib/python${MODPY_VERSION}/site-packages/parso/python/grammar33.txt
-lib/python${MODPY_VERSION}/site-packages/parso/python/grammar34.txt
-lib/python${MODPY_VERSION}/site-packages/parso/python/grammar35.txt
+lib/python${MODPY_VERSION}/site-packages/parso/python/grammar310.txt
 lib/python${MODPY_VERSION}/site-packages/parso/python/grammar36.txt
 lib/python${MODPY_VERSION}/site-packages/parso/python/grammar37.txt
 lib/python${MODPY_VERSION}/site-packages/parso/python/grammar38.txt
+lib/python${MODPY_VERSION}/site-packages/parso/python/grammar39.txt
 lib/python${MODPY_VERSION}/site-packages/parso/python/parser.py
 lib/python${MODPY_VERSION}/site-packages/parso/python/pep8.py
 lib/python${MODPY_VERSION}/site-packages/parso/python/prefix.py
