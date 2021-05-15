@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2021/04/24 11:05:48 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.19 2021/05/15 20:12:27 bluhm Exp $
 @bin bin/botan
 @bin bin/botan-test
 include/botan-2/
@@ -1114,8 +1114,17 @@ share/botan-2/data/x509/misc/contains_authority_info_access.pem
 share/botan-2/data/x509/misc/contains_authority_info_access_with_two_ca_issuers.pem
 share/botan-2/data/x509/misc/contains_bmpstring.pem
 share/botan-2/data/x509/misc/contains_utf8string.pem
+share/botan-2/data/x509/misc/name_constraint_ci/
+share/botan-2/data/x509/misc/name_constraint_ci/int.pem
+share/botan-2/data/x509/misc/name_constraint_ci/leaf.pem
+share/botan-2/data/x509/misc/name_constraint_ci/root.pem
+share/botan-2/data/x509/misc/nc_skip_self/
+share/botan-2/data/x509/misc/nc_skip_self/int.pem
+share/botan-2/data/x509/misc/nc_skip_self/leaf.pem
+share/botan-2/data/x509/misc/nc_skip_self/root.pem
 share/botan-2/data/x509/misc/opcuactt_ca.der
 share/botan-2/data/x509/misc/opcuactt_ca.pem
+share/botan-2/data/x509/misc/rdn_set.crt
 share/botan-2/data/x509/misc/rsa_key.pem
 share/botan-2/data/x509/misc/rsa_oaep.pem
 share/botan-2/data/x509/misc/v1ca/
