@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_verilog_y,v 1.1 2021/05/15 22:02:57 millert Exp $
+Fix build with Bison 3.7 and newer
+https://github.com/verilator/verilator/commit/aa39d020d88dd1d5beb3810cf551ff879b7f88a4
+
+Index: src/verilog.y
+--- src/verilog.y.orig
++++ src/verilog.y
+@@ -207,6 +207,15 @@ static void ERRSVKWD(FileLine* fileline, const string&
+ class AstSenTree;
+ %}
+ 
++// We run bison with the -d argument. This tells it to generate a
++// header file with token names. Old versions of bison pasted the
++// contents of that file into the generated source as well; newer
++// versions just include it.
++//
++// Since we run bison through ../bisonpre, it doesn't know the correct
++// header file name, so we need to tell it.
++BISONPRE_VERSION(3.7,%define api.header.include {"V3ParseBison.h"})
++
+ // When writing Bison patterns we use yTOKEN instead of "token",
+ // so Bison will error out on unknown "token"s.
+ 

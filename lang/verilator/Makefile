@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2021/05/15 22:02:57 millert Exp $
 
 COMMENT=	very fast free Verilog HDL simulator
 
 DISTNAME =	verilator-3.912
 CATEGORIES=	lang devel
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE=	https://www.veripool.org/wiki/verilator/Intro
 
