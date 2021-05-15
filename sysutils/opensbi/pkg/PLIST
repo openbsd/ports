@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/15 10:31:44 jsg Exp $
+share/opensbi/
+share/opensbi/generic/
+share/opensbi/generic/fw_jump.bin
