@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hpijs,v 1.66 2021/02/18 09:13:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST-hpijs,v 1.67 2021/05/15 17:06:01 ajacoutot Exp $
 @conflict hplip-libs-<=3.9.8
 @conflict hpcups-<=3.2.11
 @pkgpath print/hpijs
@@ -491,6 +491,7 @@ share/foomatic/db/source/PPD/HP/hp-envy_5540_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-envy_5640_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-envy_5660_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-envy_6000_series.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-envy_6400_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-envy_7640_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-envy_8000_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-envy_photo_6200_series.ppd.gz
@@ -1075,32 +1076,24 @@ share/foomatic/db/source/PPD/HP/hp-pagewide_pro_577_mfp-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-pagewide_pro_750-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-pagewide_pro_mfp_772-777-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-pagewide_xl_3900ps_mfp-ps.ppd.gz
-share/foomatic/db/source/PPD/HP/hp_pagewide_xl_3920ps_mfp-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-pagewide_xl_4000ps-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-pagewide_xl_4000ps_mfp-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-pagewide_xl_4100ps-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-pagewide_xl_4100ps_mfp-ps.ppd.gz
-share/foomatic/db/source/PPD/HP/hp_pagewide_xl_4200ps-ps.ppd.gz
-share/foomatic/db/source/PPD/HP/hp_pagewide_xl_4200ps_mfp-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-pagewide_xl_4500ps-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-pagewide_xl_4500ps_mfp-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-pagewide_xl_4600ps-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-pagewide_xl_4600ps_mfp-ps.ppd.gz
-share/foomatic/db/source/PPD/HP/hp_pagewide_xl_4700ps-ps.ppd.gz
-share/foomatic/db/source/PPD/HP/hp_pagewide_xl_4700ps_mfp-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-pagewide_xl_5000ps-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-pagewide_xl_5000ps_blueprinter-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-pagewide_xl_5000ps_mfp-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-pagewide_xl_5100ps-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-pagewide_xl_5100ps_mfp-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-pagewide_xl_5100ps_mfp_blueprinter-ps.ppd.gz
-share/foomatic/db/source/PPD/HP/hp_pagewide_xl_5200ps-ps.ppd.gz
-share/foomatic/db/source/PPD/HP/hp_pagewide_xl_5200ps_mfp-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-pagewide_xl_6000ps-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-pagewide_xl_6000ps_mfp-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-pagewide_xl_8000ps-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-pagewide_xl_8000ps_blueprinter-ps.ppd.gz
-share/foomatic/db/source/PPD/HP/hp_pagewide_xl_8200ps-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-photosmart_100.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-photosmart_1115.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-photosmart_1215.ppd.gz
@@ -1247,3 +1240,11 @@ share/foomatic/db/source/PPD/HP/hp-smart_tank_plus_570_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-smart_tank_plus_650_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-smart_tank_wireless_450_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-tango.ppd.gz
+share/foomatic/db/source/PPD/HP/hp_pagewide_xl_3920ps_mfp-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp_pagewide_xl_4200ps-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp_pagewide_xl_4200ps_mfp-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp_pagewide_xl_4700ps-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp_pagewide_xl_4700ps_mfp-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp_pagewide_xl_5200ps-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp_pagewide_xl_5200ps_mfp-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp_pagewide_xl_8200ps-ps.ppd.gz

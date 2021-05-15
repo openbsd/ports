@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.190 2021/02/26 18:20:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.191 2021/05/15 17:06:00 ajacoutot Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -9,7 +9,7 @@ COMMENT-hpcups=		HP native CUPS driver
 COMMENT-hpijs=		HP ghostscript driver (spooler independent)
 COMMENT-gui=		HPLIP graphical tools
 
-V=			3.21.2
+V=			3.21.4
 DISTNAME=		hplip-${V}
 SUBST_VARS=		V
 
@@ -164,6 +164,9 @@ CONFIGURE_ARGS=		--with-hpppddir=${PREFIX}/share/foomatic/db/source/PPD/HP \
 			--enable-hpijs-install \
 			--enable-foomatic-ppd-install \
 			--enable-foomatic-drv-install
+
+# not free
+CONFIGURE_ARGS +=	--disable-imageProcessor-build
 
 # XXX scan/sane/hpaio.c:422:8: error: void function 'sane_hpaio_close' should not return a value
 CFLAGS +=		-Wno-return-type

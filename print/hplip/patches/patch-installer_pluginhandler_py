@@ -1,4 +1,4 @@
-$OpenBSD: patch-installer_pluginhandler_py,v 1.6 2018/10/31 14:14:30 ajacoutot Exp $
+$OpenBSD: patch-installer_pluginhandler_py,v 1.7 2021/05/15 17:06:01 ajacoutot Exp $
 
 Index: installer/pluginhandler.py
 --- installer/pluginhandler.py.orig
@@ -28,7 +28,7 @@ Index: installer/pluginhandler.py
  
          copies = []
  
-@@ -236,8 +236,8 @@ class PluginHandle(object):
+@@ -239,8 +239,8 @@ class PluginHandle(object):
      def __setPluginConfFile(self):
          home = sys_conf.get('dirs', 'home')
  

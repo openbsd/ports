@@ -1,9 +1,9 @@
-$OpenBSD: patch-prnt_cups_py,v 1.10 2021/02/18 09:13:42 ajacoutot Exp $
+$OpenBSD: patch-prnt_cups_py,v 1.11 2021/05/15 17:06:01 ajacoutot Exp $
 
 Index: prnt/cups.py
 --- prnt/cups.py.orig
 +++ prnt/cups.py
-@@ -233,8 +233,8 @@ def isfamilydrv(ppds):
+@@ -236,8 +236,8 @@ def isfamilydrv(ppds):
                  
  def getPPDPath(addtional_paths=None):
      """
@@ -14,7 +14,7 @@ Index: prnt/cups.py
      """
      if addtional_paths is None:
          addtional_paths = []
-@@ -264,16 +264,16 @@ def getPPDPath1(addtional_paths=None):
+@@ -267,16 +267,16 @@ def getPPDPath1(addtional_paths=None):
  
  def getAllowableMIMETypes():
      """
@@ -36,7 +36,7 @@ Index: prnt/cups.py
      for path in paths:
          files.extend(glob.glob(path))
      for f in files:
-@@ -334,11 +334,11 @@ def getSystemPPDs():
+@@ -337,11 +337,11 @@ def getSystemPPDs():
      else: # 1.2.x
          log.debug("(CUPS 1.2.x) Getting list of PPDs using CUPS_GET_PPDS...")
          ppd_dict = cupsext.getPPDList()
@@ -51,7 +51,7 @@ Index: prnt/cups.py
  
          log.debug("CUPS PPD base path = %s" % cups_ppd_path)
          log.debug("Foomatic PPD base path = %s" % foomatic_ppd_path)
-@@ -357,8 +357,8 @@ def getSystemPPDs():
+@@ -360,8 +360,8 @@ def getSystemPPDs():
                          'gutenprint' in ppd):
  
                      # PPD files returned by CUPS_GET_PPDS (and by lpinfo -m)
@@ -62,7 +62,7 @@ Index: prnt/cups.py
                      # Here we will try both and see which one it is...
  
                      if os.path.exists(ppd):
-@@ -416,7 +416,7 @@ number_pat = re.compile(r""".*?(\d+)""", re.IGNORECASE
+@@ -419,7 +419,7 @@ number_pat = re.compile(r""".*?(\d+)""", re.IGNORECASE
  STRIP_STRINGS2 = ['foomatic:', 'hp-', 'hp_', 'hp ', '.gz', '.ppd',
                    'drv:', '-pcl', '-pcl3', '-jetready',
                   '-zxs', '-zjs', '-ps', '-postscript', '-pdf',
@@ -71,7 +71,7 @@ Index: prnt/cups.py
  
  
  for p in list(models.TECH_CLASS_PDLS.values()):
-@@ -696,7 +696,7 @@ def getFaxPPDFile(mq, model):
+@@ -699,7 +699,7 @@ def getFaxPPDFile(mq, model):
  
  
  def getErrorLogLevel():
