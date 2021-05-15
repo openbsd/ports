@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2021/03/15 06:28:06 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.44 2021/05/15 09:56:39 rsadowski Exp $
 
 COMMENT =	drop-down terminal emulator based on KDE Konsole
 
@@ -11,7 +11,7 @@ HOMEPAGE =	https://kde.org/applications/system/org.kde.yakuake
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 
-MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
+MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # usual KDE rules:
 # LGPLv2.1+, GPLv2+, GPLv3

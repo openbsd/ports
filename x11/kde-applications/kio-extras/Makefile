@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2021/01/23 18:10:21 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2021/05/15 09:56:33 rsadowski Exp $
 
 COMMENT =	extra functionality for kioslaves
 DISTNAME =	kio-extras-${VERSION}
@@ -11,13 +11,13 @@ WANTLIB += ${COMPILER_LIBCXX} Half-2_5 Iex-2_5 IlmImf-2_5 IlmThread-2_5
 WANTLIB += Imath-2_5 KF5Activities KF5ActivitiesStats KF5Archive
 WANTLIB += KF5Auth KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5DBusAddons KF5DNSSD KF5GuiAddons KF5I18n KF5IconThemes
-WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
-WANTLIB += KF5KIOGui KF5KIOWidgets KF5Service KF5Solid KF5SyntaxHighlighting
+WANTLIB += KF5DBusAddons KF5DNSSD KF5GuiAddons KF5I18n KF5ItemViews
+WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOFileWidgets KF5KIOGui
+WANTLIB += KF5KIOWidgets KF5Service KF5Solid KF5SyntaxHighlighting
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Sql Qt5Svg Qt5Widgets
 WANTLIB += Qt5Xml Xcursor c kdsoap m mtp phonon4qt5 phonon4qt5experimental
-WANTLIB += smbclient ssh tag util
+WANTLIB += ssh tag util
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes

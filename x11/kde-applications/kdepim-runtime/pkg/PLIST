@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/01/23 18:10:19 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/05/15 09:56:32 rsadowski Exp $
 @bin bin/akonadi_akonotes_resource
 @bin bin/akonadi_birthdays_resource
 @bin bin/akonadi_contacts_resource
@@ -862,6 +862,7 @@ share/locale/ia/LC_MESSAGES/gid-migrator.mo
 share/locale/ia/LC_MESSAGES/kio_akonadi.mo
 share/locale/ia/LC_MESSAGES/kio_pop3.mo
 share/locale/ia/LC_MESSAGES/libfolderarchivesettings.mo
+share/locale/id/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/is/LC_MESSAGES/kio_pop3.mo
 share/locale/it/LC_MESSAGES/accountwizard_contacts.mo
 share/locale/it/LC_MESSAGES/accountwizard_ews.mo

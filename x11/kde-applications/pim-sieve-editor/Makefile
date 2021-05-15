@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/04/27 05:27:21 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2021/05/15 09:56:39 rsadowski Exp $
 
 COMMENT =	mail sieve editor
 DISTNAME =	pim-sieve-editor-${VERSION}
@@ -12,7 +12,8 @@ WANTLIB += KF5CoreAddons KF5Crash KF5DBusAddons KF5I18n KF5IconThemes
 WANTLIB += KF5KIOCore KF5KManageSieve KF5KSieve KF5KSieveUi KF5MailTransport
 WANTLIB += KF5PimCommon KF5Service KF5Wallet KF5WidgetsAddons
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5Xml c m
+WANTLIB += Qt5Widgets Qt5Xml c gio-2.0 glib-2.0 gobject-2.0 intl
+WANTLIB += m qt5keychain secret-1
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes

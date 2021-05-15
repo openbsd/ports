@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/04/27 05:26:58 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/05/15 09:56:30 rsadowski Exp $
 @conflict kdebase-*
 @pkgpath x11/kde4/kate
 @bin bin/kate
@@ -596,6 +596,7 @@ share/locale/de/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/de/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/de/LC_MESSAGES/katefiletree.mo
 share/locale/de/LC_MESSAGES/kategdbplugin.mo
+share/locale/de/LC_MESSAGES/kategitblameplugin.mo
 share/locale/de/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/de/LC_MESSAGES/kateopenheader.mo
 share/locale/de/LC_MESSAGES/kateproject.mo

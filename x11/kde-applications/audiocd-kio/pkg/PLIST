@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/01/23 18:10:14 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/05/15 09:56:28 rsadowski Exp $
 @conflict kdebase-<4
 include/audiocdencoder.h
 include/audiocdplugins_export.h
@@ -20,6 +20,9 @@ share/doc/HTML/ca/kcontrol/kcmaudiocd/index.docbook
 share/doc/HTML/ca/kioslave5/audiocd/
 share/doc/HTML/ca/kioslave5/audiocd/index.cache.bz2
 share/doc/HTML/ca/kioslave5/audiocd/index.docbook
+share/doc/HTML/de/kcontrol/kcmaudiocd/
+share/doc/HTML/de/kcontrol/kcmaudiocd/index.cache.bz2
+share/doc/HTML/de/kcontrol/kcmaudiocd/index.docbook
 share/doc/HTML/de/kioslave5/audiocd/
 share/doc/HTML/de/kioslave5/audiocd/index.cache.bz2
 share/doc/HTML/de/kioslave5/audiocd/index.docbook

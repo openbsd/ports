@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2021/03/15 06:28:05 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.25 2021/05/15 09:56:26 rsadowski Exp $
 
 COMMENT =	IRC client for KDE
 
 DISTNAME =	konversation-${MODKDE_VERSION}
-REVISION =	0
 
 CATEGORIES =	net
 
@@ -30,35 +29,35 @@ MODULES =	x11/kde-applications \
 		devel/kf5 \
 		lang/python
 
-BUILD_DEPENDS +=	devel/kf5/kdoctools \
-			devel/kf5/kitemmodels \
-			devel/gettext,-tools
+BUILD_DEPENDS =	devel/kf5/kdoctools \
+		devel/kf5/kitemmodels \
+		devel/gettext,-tools
 
-RUN_DEPENDS +=		devel/desktop-file-utils \
-			devel/gettext,-runtime \
-			x11/gtk+3,-guic
+RUN_DEPENDS =	devel/desktop-file-utils \
+		devel/gettext,-runtime \
+		x11/gtk+3,-guic
 
-LIB_DEPENDS +=		devel/kf5/karchive  \
-			devel/kf5/kbookmarks \
-			devel/kf5/kconfigwidgets \
-			devel/kf5/kcoreaddons \
-			devel/kf5/kcrash \
-			devel/kf5/kdbusaddons \
-			devel/kf5/kglobalaccel \
-			devel/kf5/ki18n  \
-			devel/kf5/kidletime \
-			devel/kf5/kio \
-			devel/kf5/kitemviews \
-			devel/kf5/knewstuff \
-			devel/kf5/knotifications  \
-			devel/kf5/knotifyconfig \
-			devel/kf5/kparts \
-			devel/kf5/kwallet \
-			devel/kf5/kwidgetsaddons \
-			devel/kf5/kwindowsystem \
-			devel/kf5/solid \
-			multimedia/phonon \
-			security/qca-qt5
+LIB_DEPENDS =	devel/kf5/karchive  \
+		devel/kf5/kbookmarks \
+		devel/kf5/kconfigwidgets \
+		devel/kf5/kcoreaddons \
+		devel/kf5/kcrash \
+		devel/kf5/kdbusaddons \
+		devel/kf5/kglobalaccel \
+		devel/kf5/ki18n  \
+		devel/kf5/kidletime \
+		devel/kf5/kio \
+		devel/kf5/kitemviews \
+		devel/kf5/knewstuff \
+		devel/kf5/knotifications  \
+		devel/kf5/knotifyconfig \
+		devel/kf5/kparts \
+		devel/kf5/kwallet \
+		devel/kf5/kwidgetsaddons \
+		devel/kf5/kwindowsystem \
+		devel/kf5/solid \
+		multimedia/phonon \
+		security/qca-qt5
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
