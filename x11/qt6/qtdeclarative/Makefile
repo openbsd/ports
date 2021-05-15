@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2021/05/15 12:24:55 rsadowski Exp $
 
 # qmlplugindump
 USE_WXNEEDED =		Yes
 
 QT6NAME =		QtDeclarative
 COMMENT =		Qt6 Quick and QML components
+REVISION =		0
 
 SHARED_LIBS =   Qt6Qml                    0.0 # 6.0
 SHARED_LIBS +=  Qt6Quick                  0.0 # 6.0
@@ -20,6 +21,7 @@ WANTLIB += Qt6Sql Qt6Test Qt6Widgets c m
 
 MODULES =		lang/python
 MODPY_RUNDEP =		No
+MODQT6_DEPS =		No
 CONFIGURE_STYLE =	cmake
 
 pre-configure:
