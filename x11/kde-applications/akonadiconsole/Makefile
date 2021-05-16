@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/01/23 18:10:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2021/05/16 14:56:43 rsadowski Exp $
 
 COMMENT =	Akonadi management and debugging console
 DISTNAME =	akonadiconsole-${VERSION}
@@ -56,7 +56,7 @@ LIB_DEPENDS =	databases/xapian-core \
 		x11/kde-applications/pimcommon
 
 CONFIGURE_ARGS +=	-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include/KF5" \
-			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include/KF5" \
+			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include/KF5"
 
 TEST_IS_INTERACTIVE =	X11
 
