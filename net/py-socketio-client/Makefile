@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:13:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/05/16 18:38:37 kmos Exp $
 
 COMMENT =		python socket.io client library
 
 MODPY_EGG_VERSION =	0.6.7
 DISTNAME =		socketIO_client-${MODPY_EGG_VERSION}
 PKGNAME =		py-socketIO-client-${MODPY_EGG_VERSION}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		net
 
@@ -20,7 +20,7 @@ MODPY_SETUPTOOLS =	Yes
 
 MODULES =		lang/python
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
 			net/py-websocket-client${MODPY_FLAVOR} \
