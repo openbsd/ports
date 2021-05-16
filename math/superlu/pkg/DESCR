@@ -1,0 +1,5 @@
+SuperLU contains a set of subroutines to solve a sparse linear
+system A*X=B. It uses Gaussian elimination with partial pivoting
+(GEPP).  The columns of A may be preordered before factorization;
+the preordering for sparsity is completely separate from the
+factorization.

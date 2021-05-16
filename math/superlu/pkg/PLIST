@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/16 16:11:31 espie Exp $
+include/slu_Cnames.h
+include/slu_cdefs.h
+include/slu_dcomplex.h
+include/slu_ddefs.h
+include/slu_scomplex.h
+include/slu_sdefs.h
+include/slu_util.h
+include/slu_zdefs.h
+include/superlu_enum_consts.h
+include/supermatrix.h
+lib/cmake/
+lib/cmake/superlu/
+lib/cmake/superlu/superluConfig.cmake
+lib/cmake/superlu/superluConfigVersion.cmake
+lib/cmake/superlu/superluTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/superlu/superluTargets.cmake
+@lib lib/libsuperlu.so.${LIBsuperlu_VERSION}
+lib/pkgconfig/superlu.pc
