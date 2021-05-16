@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/03/13 09:19:41 solene Exp $
+# $OpenBSD: Makefile,v 1.5 2021/05/16 17:14:41 kmos Exp $
 
 COMMENT =	name-based proxying of HTTPS without decrypting traffic
 
@@ -14,6 +14,9 @@ MAINTAINER =	Renaud Allard <renaud@allard.it>
 
 # BSD
 PERMIT_PACKAGE = Yes
+
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS =	c
 
 # use pledge()
 WANTLIB += c ev pcre udns
