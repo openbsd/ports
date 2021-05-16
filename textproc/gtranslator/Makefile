@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2021/05/14 08:28:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2021/05/16 17:12:24 kmos Exp $
 
 COMMENT=		gettext(1) files editor for GNOME
 
@@ -36,5 +36,10 @@ LIB_DEPENDS=		devel/gettext,-tools \
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
 
 .include <bsd.port.mk>
