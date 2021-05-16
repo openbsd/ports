@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/05/15 16:05:05 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2021/05/16 11:58:36 rsadowski Exp $
 
 # qmlplugindump
 USE_WXNEEDED =		Yes
 
 QT6NAME =		QtDeclarative
 COMMENT =		Qt6 Quick and QML components
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS =   Qt6Qml                    0.0 # 6.0
 SHARED_LIBS +=  Qt6Quick                  0.0 # 6.0
@@ -23,6 +23,7 @@ MODULES =		lang/python
 MODPY_RUNDEP =		No
 MODQT6_DEPS =		No
 LIB_DEPENDS =		x11/qt6/qtbase>=${VERSION},<${NEXT_VERSION}
+BUILD_DEPENDS =		graphics/vulkan-loader
 CONFIGURE_STYLE =	cmake
 
 pre-configure:
