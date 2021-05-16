@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2021/05/14 07:30:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2021/05/16 07:31:06 ajacoutot Exp $
 
 COMMENT=		map application for GNOME
 
@@ -25,7 +25,8 @@ LIB_DEPENDS=		geo/geocode-glib \
 			net/telepathy/folks
 
 BUILD_DEPENDS=		geo/geoclue2 \
-			x11/gnome/gjs
+			x11/gnome/gjs \
+			x11/libhandy
 
 RUN_DEPENDS=		geo/geoclue2 \
 			x11/gnome/gfbgraph \
