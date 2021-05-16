@@ -1,6 +1,6 @@
-$OpenBSD: patch-backends_eds_lib_edsf-persona_vala,v 1.1 2021/05/13 18:47:25 jasper Exp $
+$OpenBSD: patch-backends_eds_lib_edsf-persona_vala,v 1.2 2021/05/16 09:50:19 jasper Exp $
 
-https://gitlab.gnome.org/GNOME/folks/-/issues/129
+https://gitlab.gnome.org/GNOME/folks/-/commit/343460faa12b46316132e5a24dcf25d90674bffa
 
 Index: backends/eds/lib/edsf-persona.vala
 --- backends/eds/lib/edsf-persona.vala.orig
