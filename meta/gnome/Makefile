@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.207 2021/05/14 11:53:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.208 2021/05/16 09:17:25 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (core installation)
 COMMENT-extras=		GNOME desktop meta-package (world installation)
@@ -7,7 +7,7 @@ COMMENT-extras=		GNOME desktop meta-package (world installation)
 V=			40.1
 PKGNAME=		gnome-${V}
 
-REVISION-main =		0
+REVISION-main =		1
 REVISION-extras =	1
 
 PKGNAME-main=		gnome-${V}
@@ -100,7 +100,6 @@ RUN_DEPENDS-extras +=	graphics/simple-scan \
 
 RUN_DEPENDS-main +=	x11/gnome/grilo-plugins \
 			x11/gnome/online-accounts \
-			x11/gnome/online-miners \
 			x11/gnome/tracker3-miners
 
 ################################################################################
