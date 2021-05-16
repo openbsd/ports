@@ -1,3 +1,3 @@
-@comment $OpenBSD: PFRAG.gtk3-main,v 1.1 2021/01/24 15:20:07 sthen Exp $
+@comment $OpenBSD: PFRAG.gtk3-main,v 1.2 2021/05/16 17:11:41 sthen Exp $
 @pkgpath editors/vim,gtk
-@pkgpath editors/vim,gtk2
+@pkgpath editors/vim,gtk2,-main
