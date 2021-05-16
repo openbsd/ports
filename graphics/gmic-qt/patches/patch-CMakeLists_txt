@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2021/05/16 09:42:24 espie Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -100,7 +100,7 @@ set(COMPILE_FLAGS "-Dgmic_build -Dcimg_use_vt100 -Dgmi
+ if(APPLE)
+    set(COMPILE_FLAGS "${COMPILE_FLAGS} -mmacosx-version-min=10.8 -stdlib=libc++ -Wno-error=c++11-narrowing -Wc++11-extensions -fpermissive")
+ else()
+-  set(COMPILE_FLAGS "${COMPILE_FLAGS} -Wno-error=narrowing -fno-ipa-sra -fpermissive")
++  set(COMPILE_FLAGS "${COMPILE_FLAGS} -Wno-error=narrowing -fpermissive")
+ endif()
+ 
+ if(NOT "${PRERELEASE_TAG}" STREQUAL "")
