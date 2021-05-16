@@ -1,0 +1,3 @@
+find2perl is a little translator to convert find(1) command lines to
+equivalent Perl code. The resulting code is typically faster than
+running find(1) itself.
