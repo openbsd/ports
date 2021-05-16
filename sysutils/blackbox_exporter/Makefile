@@ -1,33 +1,26 @@
-# $OpenBSD: Makefile,v 1.3 2021/03/08 13:59:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/05/16 20:11:28 sthen Exp $
 
-COMMENT =		Prometheus exporter to test HTTP/DNS/TCP/ICMP endpoints
+COMMENT=	Prometheus exporter to test HTTP/DNS/TCP/ICMP endpoints
 
-GH_ACCOUNT =		prometheus
-GH_PROJECT =		blackbox_exporter
-GH_TAGNAME =		v0.18.0
-REVISION =		1
+MODGO_MODNAME=	github.com/prometheus/blackbox_exporter
+MODGO_VERSION=	v0.19.0
+DISTNAME=	blackbox_exporter-${MODGO_VERSION}
 
-CATEGORIES =		sysutils
+CATEGORIES=	sysutils
 
-MAINTAINER =		Stuart Henderson <stu.ports@spacehopper.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
+
 # Apache 2.0
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=Yes
 
-BUILD_DEPENDS =		devel/promu
+USE_GMAKE=	Yes
 
-USE_GMAKE =		Yes
+MODULES=	lang/go
 
-MODULES=		lang/go
-MODGO_GOPATH=		${MODGO_WORKSPACE}
+.include "modules.inc"
 
-# promu doesn't like the default PREFIX
-do-build:
-	cd ${WRKSRC} && ${MAKE_ENV} GOMAXPROCS=${MAKE_JOBS} PREFIX=. ${MAKE_PROGRAM} \
-	    PROMU="${LOCALBASE}/bin/promu -v" build
-
-do-install:
+post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/blackbox_exporter
-	${INSTALL_PROGRAM} ${WRKSRC}/blackbox_exporter ${PREFIX}/bin
 	cd ${PREFIX}/share; \
 	    ${INSTALL_DATA} ${WRKSRC}/{LICENSE,*.md} doc/blackbox_exporter; \
 	    ${INSTALL_DATA} ${WRKSRC}/*.yml examples/blackbox_exporter
