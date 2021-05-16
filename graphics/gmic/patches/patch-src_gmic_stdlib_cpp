@@ -1,5 +1,6 @@
-$OpenBSD: patch-src_gmic_stdlib_cpp,v 1.1.1.1 2021/05/16 09:40:38 espie Exp $
+$OpenBSD: patch-src_gmic_stdlib_cpp,v 1.2 2021/05/16 09:47:28 espie Exp $
 
+separated compiled macros
 Index: src/gmic_stdlib.cpp
 --- src/gmic_stdlib.cpp.orig
 +++ src/gmic_stdlib.cpp

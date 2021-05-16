@@ -1,5 +1,7 @@
-$OpenBSD: patch-src_CImg_h,v 1.1.1.1 2021/05/16 09:40:38 espie Exp $
+$OpenBSD: patch-src_CImg_h,v 1.2 2021/05/16 09:47:28 espie Exp $
 
+quick hack to allow parallel to work since we don't have a standard include
+guard
 Index: src/CImg.h
 --- src/CImg.h.orig
 +++ src/CImg.h

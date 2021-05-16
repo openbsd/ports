@@ -1,4 +1,7 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2021/05/16 09:40:38 espie Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2021/05/16 09:47:28 espie Exp $
+
+- remove flags that make no sense for us
+- separate compressed macros so they can be rebuilt properly
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig

@@ -1,5 +1,6 @@
-$OpenBSD: patch-src_gmic_cpp,v 1.1.1.1 2021/05/16 09:40:38 espie Exp $
+$OpenBSD: patch-src_gmic_cpp,v 1.2 2021/05/16 09:47:28 espie Exp $
 
+pthread_self will do in a pinch
 Index: src/gmic.cpp
 --- src/gmic.cpp.orig
 +++ src/gmic.cpp
