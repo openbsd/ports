@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/02 14:49:18 jcs Exp $
+# $OpenBSD: Makefile,v 1.2 2021/05/16 17:15:25 kmos Exp $
+
+BROKEN-sparc64=	error "Need to describe target architecture"
 
 COMMENT=	BBS terminal program
 
