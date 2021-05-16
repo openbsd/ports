@@ -1,25 +1,26 @@
-# $OpenBSD: Makefile,v 1.27 2020/10/05 19:46:18 jca Exp $
+# $OpenBSD: Makefile,v 1.28 2021/05/16 09:45:16 ajacoutot Exp $
 
 COMMENT=		PGP public keys sharing via DNS-SD and HKP
 
 GNOME_PROJECT=		seahorse-sharing
 GNOME_VERSION=		3.8.0
-REVISION=		11
+REVISION=		12
 
 CATEGORIES=		net security
 
 # GPLv2/GFDLv1.1
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender assuan atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += avahi-client avahi-common avahi-glib c cairo cairo-gobject
-WANTLIB += dbus-1 epoxy expat ffi fontconfig freetype gdk-3
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gpg-error gpgme graphite2 gthread-2.0 gtk-3 harfbuzz lzma m
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
-WANTLIB += pthread soup-2.4 sqlite3 xcb xcb-render xcb-shm
-WANTLIB += xml2 z iconv intl Xtst
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xcomposite Xcursor Xdamage
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender assuan atk-1.0
+WANTLIB += atk-bridge-2.0 avahi-client avahi-common avahi-glib
+WANTLIB += brotlicommon brotlidec c cairo cairo-gobject dbus-1
+WANTLIB += epoxy expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
+WANTLIB += gpgme graphite2 gthread-2.0 gtk-3 harfbuzz iconv idn2
+WANTLIB += intl jpeg lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png psl soup-2.4 sqlite3 unistring xcb
+WANTLIB += xcb-render xcb-shm xml2 z
 
 MODULES=		x11/gnome
 
@@ -30,8 +31,8 @@ LIB_DEPENDS=		devel/libsoup \
 
 CONFIGURE_STYLE=	gnu
 
-BUILD_DEPENDS +=	security/gnupg>=2.2.23p1
-RUN_DEPENDS +=		security/gnupg>=2.2.23p1
+BUILD_DEPENDS +=	security/gnupg
+RUN_DEPENDS +=		security/gnupg
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/seahorse-sharing
 
