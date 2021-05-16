@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_fw_paravirt_c,v 1.3 2018/12/10 16:25:17 claudio Exp $
+$OpenBSD: patch-src_fw_paravirt_c,v 1.4 2021/05/16 18:55:07 sthen Exp $
 
 Don't use 'rep insb' to read IO ports, vmm does not support that yet.
 Allow detection of >4GB RAM. Normally seabios only allows this with the
@@ -7,7 +7,7 @@ qemu config device which VMM doesn't have.
 Index: src/fw/paravirt.c
 --- src/fw/paravirt.c.orig
 +++ src/fw/paravirt.c
-@@ -257,7 +257,9 @@ qemu_cfg_read(void *buf, int len)
+@@ -310,7 +310,9 @@ qemu_cfg_read(void *buf, int len)
      if (qemu_cfg_dma_enabled()) {
          qemu_cfg_dma_transfer(buf, len, QEMU_CFG_DMA_CTL_READ);
      } else {
@@ -18,7 +18,7 @@ Index: src/fw/paravirt.c
      }
  }
  
-@@ -491,6 +493,18 @@ qemu_cfg_e820(void)
+@@ -515,6 +517,18 @@ qemu_cfg_e820(void)
          e820_add(0xfffbc000, 4*4096, E820_RESERVED);
      }
  

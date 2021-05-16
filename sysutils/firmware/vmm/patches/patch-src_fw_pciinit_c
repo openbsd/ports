@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_fw_pciinit_c,v 1.2 2018/04/26 12:23:32 sthen Exp $
+$OpenBSD: patch-src_fw_pciinit_c,v 1.3 2021/05/16 18:55:07 sthen Exp $
 
 Since we hijacked the OpenBSD PCI vendor ID, this diff should probably
 not be upstreamed.
@@ -18,7 +18,7 @@ Index: src/fw/pciinit.c
  /* PIIX3/PIIX4 PCI to ISA bridge */
  static void piix_isa_bridge_setup(struct pci_device *pci, void *arg)
  {
-@@ -507,11 +512,18 @@ static void mch_mem_addr_setup(struct pci_device *dev,
+@@ -505,11 +510,18 @@ static void mch_mem_addr_setup(struct pci_device *dev,
          pci_io_low_end = acpi_pm_base;
  }
  

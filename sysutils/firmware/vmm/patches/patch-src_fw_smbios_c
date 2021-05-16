@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_fw_smbios_c,v 1.1 2018/07/11 09:09:46 reyk Exp $
+$OpenBSD: patch-src_fw_smbios_c,v 1.2 2021/05/16 18:55:07 sthen Exp $
 
---- src/fw/smbios.c.orig	Fri Nov 10 17:49:19 2017
-+++ src/fw/smbios.c	Tue Jul 10 17:29:14 2018
+Index: src/fw/smbios.c
+--- src/fw/smbios.c.orig
++++ src/fw/smbios.c
 @@ -6,6 +6,7 @@
  //
  // This file may be distributed under the terms of the GNU LGPLv3 license.
@@ -21,7 +22,7 @@ $OpenBSD: patch-src_fw_smbios_c,v 1.1 2018/07/11 09:09:46 reyk Exp $
  
      p->bios_starting_address_segment = 0xe800;
  
-@@ -223,7 +224,7 @@ smbios_init_type_1(void *start)
+@@ -227,7 +228,7 @@ smbios_init_type_1(void *start)
      p->header.handle = 0x100;
  
      load_str_field_with_default(1, manufacturer_str, BUILD_APPNAME);

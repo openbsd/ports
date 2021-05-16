@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2021/02/23 19:39:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2021/05/16 18:55:07 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -16,9 +16,8 @@ COMPILER_LANGS=	c
 # alignments.  As a result, this project can not be built.
 
 FW_DRIVER=	vmm
-FW_VER=		1.11.0
+FW_VER=		1.14.0
 SB_VER=		20100422
-REVISION=	3
 DISTNAME=	seabios-${FW_VER}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 	sgabios-20100422{23d474943dcd55d0550a3d20b3d30e9040a4f15b}.tar.gz:0
@@ -34,6 +33,7 @@ PERMIT_PACKAGE=   firmware
 PERMIT_DISTFILES= Yes
 
 NO_BUILD=	No
+UPDATE_PLIST_ARGS= -i PERMIT_PACKAGE
 
 MODULES=	lang/python
 CONFIGURE_STYLE= x # workaround python.port.mk
