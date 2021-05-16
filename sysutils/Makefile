@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.604 2021/05/15 10:33:08 jsg Exp $
+# $OpenBSD: Makefile,v 1.605 2021/05/16 15:14:28 naddy Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -94,6 +94,7 @@
      SUBDIR += faubackup
      SUBDIR += fdupes
      SUBDIR += fff
+     SUBDIR += find2perl
      SUBDIR += findlib
      SUBDIR += firmware
      SUBDIR += flashrom
