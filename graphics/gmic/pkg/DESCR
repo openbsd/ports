@@ -1,0 +1,11 @@
+gmic is full-featured open-source framework for digital image
+processing,
+
+The framework provides several user interfaces to convert / process
+/ visualize generic image datasets, ranging from 1D scalar signals
+to 3D+t sequences of multi-spectral volumetric images, hence including
+2D color images.
+
+gmic itself is  a command-line tool to use the  image processing
+features from a shell.  It may be seen as a "friendly" companion
+to the ImageMagick or GraphicsMagick software suites.

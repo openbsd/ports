@@ -1,0 +1,8 @@
+$OpenBSD: patch-src_stdlib_defs_h,v 1.1.1.1 2021/05/16 09:40:38 espie Exp $
+
+Index: src/stdlib_defs.h
+--- src/stdlib_defs.h.orig
++++ src/stdlib_defs.h
+@@ -0,0 +1,2 @@
++extern const unsigned char data_gmic_stdlib[];
++extern const unsigned long size_data_gmic_stdlib;

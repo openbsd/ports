@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_gmic_cpp,v 1.1.1.1 2021/05/16 09:40:38 espie Exp $
+
+Index: src/gmic.cpp
+--- src/gmic.cpp.orig
++++ src/gmic.cpp
+@@ -2022,7 +2022,7 @@ const CImgList<T>& _gmic_display(CImgDisplay &disp, co
+ #include "gmic.h"
+ using namespace cimg_library;
+ 
+-#include "gmic_stdlib.h"
++#include "stdlib_defs.h"
+ 
+ // Define convenience macros, variables and functions.
+ //----------------------------------------------------
+@@ -2454,6 +2454,8 @@ CImgList<void*> gmic::list_p_is_abort = CImgList<void*
+ bool *gmic::abort_ptr(bool *const p_is_abort) {
+ #if defined(__MACOSX__) || defined(__APPLE__)
+   void* tid = (void*)(cimg_ulong)getpid();
++#elif defined(__OpenBSD__)
++  void* tid = (void*)pthread_self();
+ #elif cimg_OS==1
+   void* tid = (void*)(cimg_ulong)syscall(SYS_gettid);
+ #elif cimg_OS==2
+@@ -2794,6 +2796,8 @@ gmic::~gmic() {
+   cimg::mutex(21);
+ #if defined(__MACOSX__) || defined(__APPLE__)
+   void* tid = (void*)(cimg_ulong)getpid();
++#elif defined(__OpenBSD__)
++  void* tid = (void*)pthread_self();
+ #elif cimg_OS==1
+   void* tid = (void*)(cimg_ulong)syscall(SYS_gettid);
+ #elif cimg_OS==2

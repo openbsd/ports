@@ -1,0 +1,32 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2021/05/16 09:40:38 espie Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -100,7 +100,7 @@ set(COMPILE_FLAGS "-Dgmic_build -Dcimg_use_vt100 -Dgmi
+ if(APPLE)
+    set(COMPILE_FLAGS "${COMPILE_FLAGS} -mmacosx-version-min=10.8 -stdlib=libc++ -Wno-error=c++11-narrowing -Wc++11-extensions -fpermissive")
+ else()
+-  set(COMPILE_FLAGS "${COMPILE_FLAGS} -Wno-error=narrowing -fno-ipa-sra -fpermissive")
++  set(COMPILE_FLAGS "${COMPILE_FLAGS} -Wno-error=narrowing -fpermissive")
+ endif()
+ 
+ if(NOT "${PRERELEASE_TAG}" STREQUAL "")
+@@ -137,7 +137,7 @@ if(NOT CUSTOM_CFLAGS)
+ endif()
+ 
+ # source files
+-set(CLI_Sources src/gmic.cpp)
++set(CLI_Sources src/gmic.cpp src/gmic_stdlib.cpp)
+ 
+ if(BUILD_LIB)
+   add_library(libgmic SHARED ${CLI_Sources})
+@@ -181,7 +181,7 @@ endif()
+ 
+ 
+ if(BUILD_CLI)
+-  add_executable(gmic src/gmic_cli.cpp)
++  add_executable(gmic src/gmic_cli.cpp src/gmic_stdlib.cpp)
+   if(ENABLE_DYNAMIC_LINKING)
+     target_link_libraries(gmic libgmic)
+   else()
