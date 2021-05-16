@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.199 2021/02/20 21:16:53 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.200 2021/05/16 16:12:10 espie Exp $
 
      SUBDIR =
      SUBDIR += 4ti2
@@ -153,6 +153,7 @@
      SUBDIR += sc
      SUBDIR += spread-sheet-widget
      SUBDIR += suitesparse
+     SUBDIR += superlu
      SUBDIR += udunits
      SUBDIR += veusz
      SUBDIR += visidata
