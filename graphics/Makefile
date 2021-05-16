@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.553 2021/05/15 20:34:43 bket Exp $
+# $OpenBSD: Makefile,v 1.554 2021/05/16 09:44:05 espie Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -82,6 +82,8 @@
      SUBDIR += glm
      SUBDIR += glpng
      SUBDIR += glslang
+     SUBDIR += gmic
+     SUBDIR += gmic-qt
      SUBDIR += gmt
      SUBDIR += gnofract4d
      SUBDIR += gocr
