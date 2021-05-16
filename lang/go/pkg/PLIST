@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.47 2021/03/12 17:36:22 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.48 2021/05/16 07:40:45 jsing Exp $
 bin/go
 bin/gofmt
 go/
@@ -373,6 +373,12 @@ go/misc/cgo/testplugin/testdata/issue25756/plugin/
 go/misc/cgo/testplugin/testdata/issue25756/plugin/c-life.c
 go/misc/cgo/testplugin/testdata/issue25756/plugin/life.go
 go/misc/cgo/testplugin/testdata/issue25756/plugin/life.h
+go/misc/cgo/testplugin/testdata/issue44956/
+go/misc/cgo/testplugin/testdata/issue44956/base/
+go/misc/cgo/testplugin/testdata/issue44956/base/base.go
+go/misc/cgo/testplugin/testdata/issue44956/main.go
+go/misc/cgo/testplugin/testdata/issue44956/plugin1.go
+go/misc/cgo/testplugin/testdata/issue44956/plugin2.go
 go/misc/cgo/testplugin/testdata/method/
 go/misc/cgo/testplugin/testdata/method/main.go
 go/misc/cgo/testplugin/testdata/method/plugin.go
@@ -1160,6 +1166,7 @@ go/src/archive/zip/testdata/go-with-datadesc-sig.zip
 go/src/archive/zip/testdata/gophercolor16x16.png
 go/src/archive/zip/testdata/readme.notzip
 go/src/archive/zip/testdata/readme.zip
+go/src/archive/zip/testdata/subdir.zip
 go/src/archive/zip/testdata/symlink.zip
 go/src/archive/zip/testdata/test-trailing-junk.zip
 go/src/archive/zip/testdata/test.zip
@@ -2521,6 +2528,7 @@ go/src/cmd/go/testdata/script/mod_get_latest_pseudo.txt
 go/src/cmd/go/testdata/script/mod_get_local.txt
 go/src/cmd/go/testdata/script/mod_get_main.txt
 go/src/cmd/go/testdata/script/mod_get_major.txt
+go/src/cmd/go/testdata/script/mod_get_missing_ziphash.txt
 go/src/cmd/go/testdata/script/mod_get_moved.txt
 go/src/cmd/go/testdata/script/mod_get_newcycle.txt
 go/src/cmd/go/testdata/script/mod_get_none.txt
@@ -2583,6 +2591,7 @@ go/src/cmd/go/testdata/script/mod_install_pkg_version.txt
 go/src/cmd/go/testdata/script/mod_install_versioned.txt
 go/src/cmd/go/testdata/script/mod_internal.txt
 go/src/cmd/go/testdata/script/mod_invalid_path.txt
+go/src/cmd/go/testdata/script/mod_invalid_path_plus.txt
 go/src/cmd/go/testdata/script/mod_invalid_version.txt
 go/src/cmd/go/testdata/script/mod_issue35317.txt
 go/src/cmd/go/testdata/script/mod_lazy_downgrade.txt
@@ -10274,6 +10283,7 @@ go/test/fixedbugs/issue4510.dir/
 go/test/fixedbugs/issue4510.dir/f1.go
 go/test/fixedbugs/issue4510.dir/f2.go
 go/test/fixedbugs/issue4510.go
+go/test/fixedbugs/issue45175.go
 go/test/fixedbugs/issue4517a.go
 go/test/fixedbugs/issue4517b.go
 go/test/fixedbugs/issue4517c.go
