@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/05/05 12:59:55 kurt Exp $
+# $OpenBSD: Makefile,v 1.6 2021/05/16 17:11:18 kmos Exp $
 
 COMMENT=	flexible I/O tester
 
@@ -17,6 +17,9 @@ MAINTAINER=	Kurt Miller <kurt@openbsd.org>
 # version was used when publishing results and that features or bug fixes
 # be sent upstream to fio
 PERMIT_PACKAGE=	Yes
+
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 WANTLIB=	c m pthread z
 
