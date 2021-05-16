@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/05/14 13:51:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2021/05/16 17:13:19 kmos Exp $
 
 COMMENT=		building blocks for modern adaptive GNOME apps
 
@@ -15,6 +15,9 @@ SHARED_LIBS += adwaita-1                 0.0 # 0
 
 # LGPLv2.1+
 PERMIT_PACKAGE=		Yes
+
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
 
 WANTLIB += c cairo fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += graphene-1.0 gtk-4 intl m pango-1.0
