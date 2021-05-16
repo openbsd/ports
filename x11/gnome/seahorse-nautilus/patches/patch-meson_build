@@ -1,0 +1,23 @@
+$OpenBSD: patch-meson_build,v 1.1 2021/05/16 09:38:04 ajacoutot Exp $
+
+https://gitlab.gnome.org/GNOME/seahorse-nautilus/merge_requests/1
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -19,7 +19,6 @@ po_dir = join_paths(meson.source_root(), 'po')
+ datadir = join_paths(seahorse_nautilus_prefix, get_option('datadir'))
+ bindir = join_paths(seahorse_nautilus_prefix, get_option('bindir'))
+ localedir = join_paths(seahorse_nautilus_prefix, get_option('localedir'))
+-uidir = join_paths(datadir, 'seahorse-nautilus', 'ui')
+ config_h_dir = include_directories('.')
+ 
+ # Dependencies
+@@ -75,7 +74,6 @@ conf.set_quoted('G_LOG_DOMAIN', meson.project_name())
+ conf.set_quoted('DATA_DIR', datadir)
+ conf.set_quoted('LOCALEDIR', localedir)
+ conf.set_quoted('GNOMELOCALEDIR', localedir)
+-conf.set_quoted('SEAHORSE_UIDIR', uidir)
+ conf.set('HAVE_LIBNOTIFY', libnotify_enabled)
+ config_file = configure_file(
+   output: 'config.h',

@@ -1,0 +1,19 @@
+$OpenBSD: patch-tool_seahorse-widget_c,v 1.1 2021/05/16 09:38:04 ajacoutot Exp $
+
+https://gitlab.gnome.org/GNOME/seahorse-nautilus/merge_requests/1
+
+Index: tool/seahorse-widget.c
+--- tool/seahorse-widget.c.orig
++++ tool/seahorse-widget.c
+@@ -204,9 +204,9 @@ object_set_property (GObject *object, guint prop_id, c
+         g_return_if_fail (swidget->name == NULL);
+         swidget->name = g_value_dup_string (value);
+         path = g_strdup_printf ("%sseahorse-%s.ui",
+-                                SEAHORSE_UIDIR, swidget->name);
++                                "/org/gnome/Seahorse/", swidget->name);
+         swidget->gtkbuilder = gtk_builder_new ();
+-        gtk_builder_add_from_file (swidget->gtkbuilder, path, &error);
++        gtk_builder_add_from_resource (swidget->gtkbuilder, path, &error);
+         if (error != NULL) {
+             g_warning ("couldn't load ui file: %s", error->message);
+             g_error_free (error);

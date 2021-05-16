@@ -1,0 +1,16 @@
+$OpenBSD: patch-tool_meson_build,v 1.1 2021/05/16 09:38:04 ajacoutot Exp $
+
+https://gitlab.gnome.org/GNOME/seahorse-nautilus/merge_requests/1
+
+Index: tool/meson.build
+--- tool/meson.build.orig
++++ tool/meson.build
+@@ -43,7 +43,7 @@ seahorse_tool_cflags = [
+ ]
+ 
+ seahorse_tool = executable('seahorse-tool',
+-  seahorse_tool_sources,
++  seahorse_tool_sources, resources,
+   dependencies: seahorse_tool_dependencies,
+   c_args: seahorse_tool_cflags,
+   include_directories: config_h_dir,
