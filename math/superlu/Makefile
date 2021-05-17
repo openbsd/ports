@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/05/16 16:11:31 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2021/05/17 10:50:04 espie Exp $
 
 COMMENT =	library for solving sparse linear equation systems
 
@@ -24,7 +24,7 @@ LIB_DEPENDS =	math/blas
 
 CONFIGURE_ARGS += -DBUILD_SHARED_LIBS=ON
 CONFIGURE_ARGS += -DUSE_XSDK_DEFAULTS=ON
-CONFIGURE_ARGS += -DXSDK_ENABLE_Fortran=ON
+CONFIGURE_ARGS += -DXSDK_ENABLE_Fortran=OFF
 
 
 .include <bsd.port.mk>
