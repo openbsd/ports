@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.152 2021/04/23 23:57:56 mestre Exp $
+@comment $OpenBSD: PLIST,v 1.153 2021/05/17 12:51:50 mestre Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -119,7 +119,6 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}bi
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}biqle.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}bitchute.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}bleacherreport.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}blinkx.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}bloomberg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}bokecc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}bongacams.${MODPY_PYC_MAGIC_TAG}pyc
@@ -521,6 +520,7 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}pl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}playfm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}playplustv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}plays.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}playstuff.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}playtvak.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}playvid.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}playwire.${MODPY_PYC_MAGIC_TAG}pyc
@@ -906,7 +906,6 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/biobiochiletv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/biqle.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/bitchute.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/bleacherreport.py
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/blinkx.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/bloomberg.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/bokecc.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/bongacams.py
@@ -1308,6 +1307,7 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/platzi.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/playfm.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/playplustv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/plays.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/playstuff.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/playtvak.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/playvid.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/playwire.py
