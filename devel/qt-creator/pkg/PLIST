@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2021/01/19 06:50:57 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.21 2021/05/17 06:12:03 rsadowski Exp $
 @bin bin/qtcreator
 bin/qtcreator.sh
 @lib lib/libAdvancedDockingSystem.so.${LIBAdvancedDockingSystem_VERSION}
@@ -140,6 +140,7 @@ share/qtcreator/cplusplus/examples/
 share/qtcreator/cplusplus/examples/CMakeLists.txt
 share/qtcreator/cplusplus/examples/clazy_example.cpp
 share/qtcreator/cplusplus/examples/examples.pro
+share/qtcreator/cplusplus/examples/icontest.cpp
 share/qtcreator/cplusplus/examples/tidy_example.cpp
 share/qtcreator/cplusplus/examples/tidy_example.h
 share/qtcreator/cplusplus/wrappedMingwHeaders/
@@ -155,6 +156,7 @@ share/qtcreator/debugger/cdbbridge.py
 share/qtcreator/debugger/creatortypes.py
 share/qtcreator/debugger/dumper.py
 share/qtcreator/debugger/gdbbridge.py
+share/qtcreator/debugger/gdbtracepoint.py
 share/qtcreator/debugger/lldbbridge.py
 share/qtcreator/debugger/misctypes.py
 share/qtcreator/debugger/opencvtypes.py
@@ -193,6 +195,9 @@ share/qtcreator/indexer_preincludes/qglobal.h
 share/qtcreator/indexer_preincludes/windows.h
 share/qtcreator/modeleditor/
 share/qtcreator/modeleditor/standard.def
+share/qtcreator/package-manager/
+share/qtcreator/package-manager/auto-setup.cmake
+share/qtcreator/package-manager/conan.cmake
 share/qtcreator/qml/
 share/qtcreator/qml-type-descriptions/
 share/qtcreator/qml-type-descriptions/builtins.qmltypes
@@ -423,6 +428,10 @@ share/qtcreator/qml/qmlpuppet/qml2puppet/iconrenderer/
 share/qtcreator/qml/qmlpuppet/qml2puppet/iconrenderer/iconrenderer.cpp
 share/qtcreator/qml/qmlpuppet/qml2puppet/iconrenderer/iconrenderer.h
 share/qtcreator/qml/qmlpuppet/qml2puppet/iconrenderer/iconrenderer.pri
+share/qtcreator/qml/qmlpuppet/qml2puppet/import3d/
+share/qtcreator/qml/qmlpuppet/qml2puppet/import3d/import3d.cpp
+share/qtcreator/qml/qmlpuppet/qml2puppet/import3d/import3d.h
+share/qtcreator/qml/qmlpuppet/qml2puppet/import3d/import3d.pri
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/anchorchangesnodeinstance.cpp
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/anchorchangesnodeinstance.h
@@ -503,8 +512,10 @@ share/qtcreator/qml/qmlpuppet/types/enumeration.h
 share/qtcreator/qml/qmlpuppet/types/types.pri
 share/qtcreator/qmldesigner/
 share/qtcreator/qmldesigner/itemLibraryQmlSources/
+share/qtcreator/qmldesigner/itemLibraryQmlSources/AddImport.qml
 share/qtcreator/qmldesigner/itemLibraryQmlSources/ItemDelegate.qml
 share/qtcreator/qmldesigner/itemLibraryQmlSources/ItemsView.qml
+share/qtcreator/qmldesigner/itemLibraryQmlSources/LibraryHeader.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/
 share/qtcreator/qmldesigner/propertyEditorQmlSources/PropertyTemplates/
 share/qtcreator/qmldesigner/propertyEditorQmlSources/PropertyTemplates/BooleanEditorTemplate.template
@@ -667,6 +678,7 @@ share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/Expa
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/ItemDelegate.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/Menu.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/MenuItem.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/MenuItemWithIcon.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/MenuSeparator.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/RealSliderPopup.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/RealSpinBox.qml
@@ -698,9 +710,13 @@ share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioTheme/qmldir
 share/qtcreator/qmldesigner/qt4mcu/
 share/qtcreator/qmldesigner/qt4mcu/metadata.qml
 share/qtcreator/qmldesigner/qt4mcu/qul-14.qml
+share/qtcreator/qmldesigner/qt4mcu/qul-17.qml
+share/qtcreator/qmldesigner/qt4mcu/qul-18.qml
 share/qtcreator/qmldesigner/statesEditorQmlSources/
 share/qtcreator/qmldesigner/statesEditorQmlSources/StatesDelegate.qml
 share/qtcreator/qmldesigner/statesEditorQmlSources/StatesList.qml
+share/qtcreator/qmldesigner/statesEditorQmlSources/images/
+share/qtcreator/qmldesigner/statesEditorQmlSources/images/checkers.png
 share/qtcreator/qmldesigner/workspacePresets/
 share/qtcreator/qmldesigner/workspacePresets/3D_Preset.wrk
 share/qtcreator/qmldesigner/workspacePresets/Essentials.wrk

@@ -1,27 +1,27 @@
-# $OpenBSD: Makefile,v 1.75 2021/03/23 10:38:50 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.76 2021/05/17 06:12:03 rsadowski Exp $
 
 USE_WXNEEDED =		Yes
 
 COMMENT =		cross-platform IDE for use with Qt
-V =			4.14.2
+V =			4.15.0
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
 
 SHARED_LIBS +=  Aggregation               0.0 # 0.0
-SHARED_LIBS +=  CPlusPlus                 3.0 # 0.0
-SHARED_LIBS +=  ExtensionSystem           4.0 # 0.0
+SHARED_LIBS +=  CPlusPlus                 4.0 # 0.0
+SHARED_LIBS +=  ExtensionSystem           5.0 # 0.0
 SHARED_LIBS +=  GLSL                      0.0 # 0.0
-SHARED_LIBS +=  LanguageUtils             0.1 # 0.0
+SHARED_LIBS +=  LanguageUtils             0.2 # 0.0
 SHARED_LIBS +=  QmlDebug                  4.0 # 0.0
 SHARED_LIBS +=  QmlEditorWidgets          0.0 # 0.0
-SHARED_LIBS +=  QmlJS                     6.0 # 0.0
+SHARED_LIBS +=  QmlJS                     7.0 # 0.0
 SHARED_LIBS +=  QtcSsh                    1.0 # 0.0
-SHARED_LIBS +=  Utils                     6.0 # 0.0
-SHARED_LIBS +=  Sqlite                    5.1 # 1.0
-SHARED_LIBS +=  Modeling                  4.0 # 1.0
+SHARED_LIBS +=  Utils                     7.0 # 0.0
+SHARED_LIBS +=  Sqlite                    6.0 # 1.0
+SHARED_LIBS +=  Modeling                  5.0 # 1.0
 SHARED_LIBS +=  Clangsupport              1.0 # 4.5
 SHARED_LIBS +=  Tracing                   1.0 # 4.7
-SHARED_LIBS +=  LanguageServerProtocol    1.0 # 4.8
+SHARED_LIBS +=  LanguageServerProtocol    2.0 # 4.8
 SHARED_LIBS +=  AdvancedDockingSystem     0.0 # 4.12
 
 MAKE_FLAGS =	BUILD_TESTS=1
