@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.62 2020/10/05 21:50:40 jca Exp $
+# $OpenBSD: Makefile,v 1.63 2021/05/17 16:41:44 millert Exp $
 
 COMMENT=	GNU parser generator
 
-DISTNAME=	bison-3.3.2
-REVISION=	2
+DISTNAME=	bison-3.7.6
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=bison/}
 EXTRACT_SUFX=	.tar.xz
@@ -15,17 +14,15 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c iconv intl m
 
-AUTOCONF_VERSION= 2.69
-AUTOMAKE_VERSION= 1.16
-
 LIB_DEPENDS=	devel/gettext,-runtime
 BUILD_DEPENDS=	devel/gettext,-tools \
 		devel/help2man \
 		devel/m4
 RUN_DEPENDS=	devel/m4
 
-CONFIGURE_STYLE=autoreconf
-CONFIGURE_ARGS=	--disable-yacc
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	--disable-yacc --without-libtextstyle-prefix
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
 
 .include <bsd.port.mk>

@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2021/05/17 16:41:44 millert Exp $
+
+Break the "bison.help: bison" dependency to avoid rebuilding bison.info.
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -10432,7 +10432,7 @@ $(srcdir)/$(doc_bison).info.bak: $(srcdir)/$(doc_bison
+ 
+ doc/refcard.pdf: doc/refcard.tex
+ 	$(AM_V_GEN) cd doc && pdftex $(abs_top_srcdir)/doc/refcard.tex
+-@CROSS_COMPILING_FALSE@$(top_srcdir)/doc/bison.help: src/bison$(EXEEXT)
++@CROSS_COMPILING_FALSE@$(top_srcdir)/doc/bison.help: #src/bison$(EXEEXT)
+ @CROSS_COMPILING_FALSE@	$(AM_V_GEN)$(MKDIR_P) doc
+ @CROSS_COMPILING_FALSE@	$(AM_V_at) LC_ALL=C tests/bison --version >doc/bison.help.tmp
+ @CROSS_COMPILING_FALSE@	$(AM_V_at) LC_ALL=C tests/bison --help | \
