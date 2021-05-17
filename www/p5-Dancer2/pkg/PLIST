@@ -1,12 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/01/30 03:45:45 afresh1 Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/05/17 13:31:19 benoit Exp $
 bin/dancer2
 ${P5SITE}/Dancer2/
 ${P5SITE}/Dancer2.pm
 ${P5SITE}/Dancer2/CLI/
 ${P5SITE}/Dancer2/CLI.pm
-${P5SITE}/Dancer2/CLI/Command/
-${P5SITE}/Dancer2/CLI/Command/gen.pm
-${P5SITE}/Dancer2/CLI/Command/version.pm
+${P5SITE}/Dancer2/CLI/Gen.pm
+${P5SITE}/Dancer2/CLI/Version.pm
 ${P5SITE}/Dancer2/Config.pod
 ${P5SITE}/Dancer2/Cookbook.pod
 ${P5SITE}/Dancer2/Core/
@@ -120,8 +119,8 @@ ${P5SITE}/auto/share/dist/Dancer2/skel/views/layouts/main.tt
 @man man/man1/dancer2.1
 @man man/man3p/Dancer2.3p
 @man man/man3p/Dancer2::CLI.3p
-@man man/man3p/Dancer2::CLI::Command::gen.3p
-@man man/man3p/Dancer2::CLI::Command::version.3p
+@man man/man3p/Dancer2::CLI::Gen.3p
+@man man/man3p/Dancer2::CLI::Version.3p
 @man man/man3p/Dancer2::Config.3p
 @man man/man3p/Dancer2::Cookbook.3p
 @man man/man3p/Dancer2::Core.3p

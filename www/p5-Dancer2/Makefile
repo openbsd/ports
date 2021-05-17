@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2021/02/03 08:29:17 benoit Exp $
+# $OpenBSD: Makefile,v 1.13 2021/05/17 13:31:19 benoit Exp $
 
 COMMENT =		lightweight yet powerful web application framework
 
 MODULES =		cpan
 PKG_ARCH =		*
-DISTNAME =		Dancer2-0.300005
+DISTNAME =		Dancer2-0.301002
 CATEGORIES =		www
 
 # Perl
@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 BUILD_DEPENDS =		devel/p5-File-ShareDir-Install>=0.06
 
-RUN_DEPENDS = 		devel/p5-App-Cmd \
+RUN_DEPENDS = 		devel/p5-CLI-Osprey \
 			devel/p5-Class-Load \
 			devel/p5-Config-Any \
 			security/p5-Digest-SHA1 \
