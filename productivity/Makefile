@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2021/04/30 13:25:12 paco Exp $
+# $OpenBSD: Makefile,v 1.99 2021/05/17 10:17:54 bluhm Exp $
 
      SUBDIR =
      SUBDIR += aqbanking
@@ -29,6 +29,7 @@
      SUBDIR += novprog
      SUBDIR += osmo
      SUBDIR += p5-Business-Tax-VAT-Validation
+     SUBDIR += p5-iCal-Parser
      SUBDIR += projectlibre
      SUBDIR += py-tasklib
      SUBDIR += qbirthday
