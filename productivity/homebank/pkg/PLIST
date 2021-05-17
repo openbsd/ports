@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2021/03/09 05:41:48 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.28 2021/05/17 05:17:42 rsadowski Exp $
 @bin bin/homebank
 share/appdata/
 share/appdata/homebank.appdata.xml
@@ -182,9 +182,6 @@ share/homebank/icons/
 share/homebank/icons/hicolor/
 share/homebank/icons/hicolor/16x16/
 share/homebank/icons/hicolor/16x16/status/
-share/homebank/icons/hicolor/16x16/status/flt-exclude.png
-share/homebank/icons/hicolor/16x16/status/flt-inactive.png
-share/homebank/icons/hicolor/16x16/status/flt-include.png
 share/homebank/icons/hicolor/16x16/status/hb-ope-auto.png
 share/homebank/icons/hicolor/16x16/status/hb-ope-budget.png
 share/homebank/icons/hicolor/16x16/status/hb-ope-cleared.png
@@ -254,8 +251,10 @@ share/homebank/icons/hicolor/24x24/actions/hb-view-donut.png
 share/homebank/icons/hicolor/24x24/actions/hb-view-line.png
 share/homebank/icons/hicolor/24x24/actions/hb-view-list.png
 share/homebank/icons/hicolor/24x24/actions/hb-view-pie.png
+share/homebank/icons/hicolor/24x24/actions/hb-view-progress.png
 share/homebank/icons/hicolor/24x24/actions/hb-view-refresh.png
 share/homebank/icons/hicolor/24x24/actions/hb-view-stack.png
+share/homebank/icons/hicolor/24x24/actions/hb-view-stack100.png
 share/homebank/icons/hicolor/48x48/
 share/homebank/icons/hicolor/48x48/status/
 share/homebank/icons/hicolor/48x48/status/prf-backup.png
