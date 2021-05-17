@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1277 2021/05/16 18:38:37 kmos Exp $
+# $OpenBSD: Quirks.pm,v 1.1278 2021/05/17 20:42:20 daniel Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -463,6 +463,7 @@ my $stem_extensions = {
 	'bijiben' => 'gnome-notes',
 	'connections' => 'gnome-connections',
 	'py-socketio-client' => 'py3-socketio-client',
+	'py-cycler' => 'py3-cycler',
 };
 
 my $obsolete_reason = {};
