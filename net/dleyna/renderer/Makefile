@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2021/05/15 16:41:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2021/05/17 10:37:46 ajacoutot Exp $
 
 COMMENT=		service for interacting with DMRs
 
 GH_PROJECT=		dleyna-renderer
 
 SHARED_LIBS += dleyna-renderer-1.0       1.0 # 1.0.3
+
+BUILD_DEPENDS=		textproc/docbook-xsl
 
 RUN_DEPENDS=		net/dleyna/connector-dbus
 
