@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2021/01/03 12:43:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2021/05/17 06:31:37 daniel Exp $
 
 BROKEN-sparc64 = multiple definition of use_vis3_instructions
 
@@ -7,6 +7,7 @@ COMMENT =	Unicorn CPU emulator engine
 MODPY_EGG_VERSION =	1.0.2
 DISTNAME =	unicorn-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -26,9 +27,6 @@ MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
 FLAVOR =		python3
-
-# see patches/patch-src_Makefile
-BUILD_DEPENDS =		lang/python/${MODPY_DEFAULT_VERSION_2}
 
 USE_GMAKE =		Yes
 
