@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2021/05/16 07:00:20 paco Exp $
+# $OpenBSD: Makefile,v 1.35 2021/05/17 19:00:28 paco Exp $
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 COMMENT =	fast and flexible static site generator
@@ -32,8 +32,9 @@ FLAVOR ?=
 .if ${FLAVOR:Mextended}
 MODGO_FLAGS +=	--tags extended
 LIB_DEPENDS +=	www/libsass
-WANTLIB +=	sass
-MAKE_ENV +=	CGO_CPPFLAGS='-I${LOCALBASE}/include -DUSE_LIBSASS_SRC' CGO_LDFLAGS='-L${LOCALBASE}/lib -lsass'
+WANTLIB +=	${COMPILER_LIBCXX}
+WANTLIB +=	m sass
+MAKE_ENV +=	CGO_CPPFLAGS='-I${LOCALBASE}/include -DUSE_LIBSASS_SRC' CGO_LDFLAGS='-L${LOCALBASE}/lib -lm -lsass'
 .endif
 
 post-build:
