@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2021/03/16 06:29:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.26 2021/05/17 05:29:11 rsadowski Exp $
 @conflict tellico-kde4-*
 @pkgpath x11/tellico-kde4
 @bin bin/tellico
@@ -163,6 +163,17 @@ share/doc/HTML/pt_BR/tellico/importing-exporting.docbook
 share/doc/HTML/pt_BR/tellico/index.cache.bz2
 share/doc/HTML/pt_BR/tellico/index.docbook
 share/doc/HTML/pt_BR/tellico/menus.docbook
+share/doc/HTML/ru/tellico/
+share/doc/HTML/ru/tellico/advanced.docbook
+share/doc/HTML/ru/tellico/configuration.docbook
+share/doc/HTML/ru/tellico/details.docbook
+share/doc/HTML/ru/tellico/faqs.docbook
+share/doc/HTML/ru/tellico/fundamentals.docbook
+share/doc/HTML/ru/tellico/hacking.docbook
+share/doc/HTML/ru/tellico/importing-exporting.docbook
+share/doc/HTML/ru/tellico/index.cache.bz2
+share/doc/HTML/ru/tellico/index.docbook
+share/doc/HTML/ru/tellico/menus.docbook
 share/doc/HTML/sv/tellico/
 share/doc/HTML/sv/tellico/advanced.docbook
 share/doc/HTML/sv/tellico/configuration.docbook
