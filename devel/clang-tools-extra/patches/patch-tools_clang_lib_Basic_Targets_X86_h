@@ -1,15 +1,15 @@
-$OpenBSD: patch-tools_clang_lib_Basic_Targets_X86_h,v 1.3 2020/09/03 20:54:01 rsadowski Exp $
+$OpenBSD: patch-tools_clang_lib_Basic_Targets_X86_h,v 1.4 2021/05/18 03:35:07 rsadowski Exp $
 
-implement -msave-args in clang/llvm, like the sun did for gcc 
+- implement -msave-args in clang/llvm, like the sun did for gcc.
 
 Index: tools/clang/lib/Basic/Targets/X86.h
 --- tools/clang/lib/Basic/Targets/X86.h.orig
 +++ tools/clang/lib/Basic/Targets/X86.h
-@@ -123,6 +123,7 @@ class LLVM_LIBRARY_VISIBILITY X86TargetInfo : public T
+@@ -124,6 +124,7 @@ class LLVM_LIBRARY_VISIBILITY X86TargetInfo : public T
    bool HasMOVDIR64B = false;
    bool HasPTWRITE = false;
    bool HasINVPCID = false;
 +  bool HasSaveArgs = false;
    bool HasENQCMD = false;
- 
- protected:
+   bool HasAMXTILE = false;
+   bool HasAMXINT8 = false;

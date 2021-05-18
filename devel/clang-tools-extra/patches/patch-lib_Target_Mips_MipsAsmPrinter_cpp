@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_Target_Mips_MipsAsmPrinter_cpp,v 1.3 2020/09/03 20:54:01 rsadowski Exp $
+$OpenBSD: patch-lib_Target_Mips_MipsAsmPrinter_cpp,v 1.4 2021/05/18 03:35:07 rsadowski Exp $
 
 - Add retguard for octeon/mips64.
 
 Index: lib/Target/Mips/MipsAsmPrinter.cpp
 --- lib/Target/Mips/MipsAsmPrinter.cpp.orig
 +++ lib/Target/Mips/MipsAsmPrinter.cpp
-@@ -242,6 +242,83 @@ void MipsAsmPrinter::EmitInstruction(const MachineInst
+@@ -242,6 +242,83 @@ void MipsAsmPrinter::emitInstruction(const MachineInst
    case Mips::PATCHABLE_TAIL_CALL:
      LowerPATCHABLE_TAIL_CALL(*MI);
      return;
@@ -41,7 +41,7 @@ Index: lib/Target/Mips/MipsAsmPrinter.cpp
 +      // Emit a symbol for "here/PC" because BAL will put
 +      // the address of the instruction following the NOP into RA
 +      // and we need this symbol to do the math
-+      OutStreamer->EmitLabel(PCSym);
++      OutStreamer->emitLabel(PCSym);
 +
 +      // Store PC in IN2
 +      EmitToStreamer(*OutStreamer, MCInstBuilder(Mips::OR64)
@@ -83,7 +83,7 @@ Index: lib/Target/Mips/MipsAsmPrinter.cpp
 +  case Mips::RETGUARD_EMIT_SYMBOL:
 +    {
 +      MCSymbol *ReturnSym = MI->getOperand(0).getMCSymbol();
-+      OutStreamer->EmitLabel(ReturnSym);
++      OutStreamer->emitLabel(ReturnSym);
 +      return;
 +    }
    }

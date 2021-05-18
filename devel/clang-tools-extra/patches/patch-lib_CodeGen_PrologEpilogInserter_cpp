@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_CodeGen_PrologEpilogInserter_cpp,v 1.3 2020/09/03 20:54:01 rsadowski Exp $
+$OpenBSD: patch-lib_CodeGen_PrologEpilogInserter_cpp,v 1.4 2021/05/18 03:35:07 rsadowski Exp $
 
 - Add RETGUARD to clang for amd64. This security mechanism uses per-function
   random cookies to protect access to function return instructions, with the
@@ -45,7 +45,7 @@ Index: lib/CodeGen/PrologEpilogInserter.cpp
    // Reinsert stashed debug values at the start of the entry blocks.
    for (auto &I : EntryDbgValues)
      I.first->insert(I.first->begin(), I.second.begin(), I.second.end());
-@@ -349,7 +357,9 @@ void PEI::calculateCallFrameInfo(MachineFunction &MF) 
+@@ -353,7 +361,9 @@ void PEI::calculateCallFrameInfo(MachineFunction &MF) 
  /// Compute the sets of entry and return blocks for saving and restoring
  /// callee-saved registers, and placing prolog and epilog code.
  void PEI::calculateSaveRestoreBlocks(MachineFunction &MF) {
@@ -56,7 +56,7 @@ Index: lib/CodeGen/PrologEpilogInserter.cpp
  
    // Even when we do not change any CSR, we still want to insert the
    // prologue and epilogue of the function.
-@@ -365,7 +375,18 @@ void PEI::calculateSaveRestoreBlocks(MachineFunction &
+@@ -369,7 +379,18 @@ void PEI::calculateSaveRestoreBlocks(MachineFunction &
      // epilogue.
      if (!RestoreBlock->succ_empty() || RestoreBlock->isReturnBlock())
        RestoreBlocks.push_back(RestoreBlock);
@@ -76,7 +76,7 @@ Index: lib/CodeGen/PrologEpilogInserter.cpp
    }
  
    // Save refs to entry and return blocks.
-@@ -376,6 +397,9 @@ void PEI::calculateSaveRestoreBlocks(MachineFunction &
+@@ -380,6 +401,9 @@ void PEI::calculateSaveRestoreBlocks(MachineFunction &
      if (MBB.isReturnBlock())
        RestoreBlocks.push_back(&MBB);
    }
@@ -86,7 +86,7 @@ Index: lib/CodeGen/PrologEpilogInserter.cpp
  }
  
  static void assignCalleeSavedSpillSlots(MachineFunction &F,
-@@ -397,6 +421,10 @@ static void assignCalleeSavedSpillSlots(MachineFunctio
+@@ -401,6 +425,10 @@ static void assignCalleeSavedSpillSlots(MachineFunctio
  
    const TargetFrameLowering *TFI = F.getSubtarget().getFrameLowering();
    MachineFrameInfo &MFI = F.getFrameInfo();

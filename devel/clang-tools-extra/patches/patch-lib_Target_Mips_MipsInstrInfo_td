@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_Target_Mips_MipsInstrInfo_td,v 1.3 2020/09/03 20:54:01 rsadowski Exp $
+$OpenBSD: patch-lib_Target_Mips_MipsInstrInfo_td,v 1.4 2021/05/18 03:35:07 rsadowski Exp $
 
 - Add retguard for octeon/mips64.
 
 Index: lib/Target/Mips/MipsInstrInfo.td
 --- lib/Target/Mips/MipsInstrInfo.td.orig
 +++ lib/Target/Mips/MipsInstrInfo.td
-@@ -2011,6 +2011,31 @@ def LONG_BRANCH_ADDiu2Op : PseudoSE<(outs GPR32Opnd:$d
+@@ -2012,6 +2012,31 @@ def LONG_BRANCH_ADDiu2Op : PseudoSE<(outs GPR32Opnd:$d
    bit hasNoSchedulingInfo = 1;
  }
  

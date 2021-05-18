@@ -1,43 +1,41 @@
-$OpenBSD: patch-tools_clang_include_clang_Driver_Options_td,v 1.3 2020/09/03 20:54:01 rsadowski Exp $
+$OpenBSD: patch-tools_clang_include_clang_Driver_Options_td,v 1.4 2021/05/18 03:35:07 rsadowski Exp $
 
 - Add ret protector options as no-ops.
 - Improve the X86FixupGadgets pass
-- Add -msvr4-struct-return for powerpc.
+- Adapt the -mfix-loongson2f-btb workaround from as(1) to LLVM/clang.
 - Alias the command line parameter -p to -pg.
 - implement -msave-args in clang/llvm, like the sun did for gcc
 
 Index: tools/clang/include/clang/Driver/Options.td
 --- tools/clang/include/clang/Driver/Options.td.orig
 +++ tools/clang/include/clang/Driver/Options.td
-@@ -1780,6 +1780,14 @@ def ftrivial_auto_var_init : Joined<["-"], "ftrivial-a
+@@ -1799,6 +1799,16 @@ def ftrivial_auto_var_init : Joined<["-"], "ftrivial-a
  def enable_trivial_var_init_zero : Flag<["-"], "enable-trivial-auto-var-init-zero-knowing-it-will-be-removed-from-clang">,
    Flags<[CC1Option, CoreOption]>,
    HelpText<"Trivial automatic variable initialization to zero is only here for benchmarks, it'll eventually be removed, and I'm OK with that because I'm only using it to benchmark">;
-+def fno_ret_protector : Flag<["-"], "fno-ret-protector">, Group<f_Group>,
++def ret_protector : Flag<["-"], "ret-protector">, Flags<[CC1Option]>,
++  HelpText<"Enable Return Protectors">;
++def fno_ret_protector : Flag<["-"], "fno-ret-protector">, Group<f_Group>, Flags<[CoreOption]>,
 +  HelpText<"Disable return protector">;
-+def fret_protector : Flag<["-"], "fret-protector">, Group<f_Group>,
++def fret_protector : Flag<["-"], "fret-protector">, Group<f_Group>, Flags<[CoreOption]>,
 +  HelpText<"Enable return protector">;
-+def fno_fixup_gadgets : Flag<["-"], "fno-fixup-gadgets">, Group<f_Group>,
++def fno_fixup_gadgets : Flag<["-"], "fno-fixup-gadgets">, Group<f_Group>, Flags<[CoreOption]>,
 +  HelpText<"Disable FixupGadgets pass (x86 only)">;
-+def ffixup_gadgets : Flag<["-"], "ffixup-gadgets">, Group<f_Group>,
++def ffixup_gadgets : Flag<["-"], "ffixup-gadgets">, Group<f_Group>, Flags<[CoreOption]>,
 +  HelpText<"Replace ROP friendly instructions with safe alternatives (x86 only)">;
+ def ftrivial_auto_var_init_stop_after : Joined<["-"], "ftrivial-auto-var-init-stop-after=">, Group<f_Group>,
+   Flags<[CC1Option, CoreOption]>, HelpText<"Stop initializing trivial automatic stack variables after the specified number of instances">;
  def fstandalone_debug : Flag<["-"], "fstandalone-debug">, Group<f_Group>, Flags<[CoreOption]>,
-   HelpText<"Emit full debug info for all types used by the program">;
- def fno_standalone_debug : Flag<["-"], "fno-standalone-debug">, Group<f_Group>, Flags<[CoreOption]>,
-@@ -2447,6 +2455,12 @@ def mlongcall: Flag<["-"], "mlongcall">,
-     Group<m_ppc_Features_Group>;
- def mno_longcall : Flag<["-"], "mno-longcall">,
-     Group<m_ppc_Features_Group>;
-+def maix_struct_return : Flag<["-"], "maix-struct-return">,
-+  Group<m_Group>, Flags<[CC1Option]>,
-+  HelpText<"Return all structs in memory (PPC32 only)">;
-+def msvr4_struct_return : Flag<["-"], "msvr4-struct-return">,
-+  Group<m_Group>, Flags<[CC1Option]>,
-+  HelpText<"Return small structs in registers (PPC32 only)">;
- 
- def mvx : Flag<["-"], "mvx">, Group<m_Group>;
- def mno_vx : Flag<["-"], "mno-vx">, Group<m_Group>;
-@@ -2727,7 +2741,7 @@ def pthreads : Flag<["-"], "pthreads">;
+@@ -2548,6 +2558,8 @@ def mno_check_zero_division : Flag<["-"], "mno-check-z
+                               Group<m_mips_Features_Group>;
+ def mcompact_branches_EQ : Joined<["-"], "mcompact-branches=">,
+                            Group<m_mips_Features_Group>;
++def mfix_loongson2f_btb : Flag<["-"], "mfix-loongson2f-btb">,
++                          Group<m_mips_Features_Group>;
+ def mbranch_likely : Flag<["-"], "mbranch-likely">, Group<m_Group>,
+   IgnoredGCCCompat;
+ def mno_branch_likely : Flag<["-"], "mno-branch-likely">, Group<m_Group>,
+@@ -2760,7 +2772,7 @@ def pthreads : Flag<["-"], "pthreads">;
  def pthread : Flag<["-"], "pthread">, Flags<[CC1Option]>,
    HelpText<"Support POSIX threads in generated code">;
  def no_pthread : Flag<["-"], "no-pthread">, Flags<[CC1Option]>;
@@ -46,7 +44,7 @@ Index: tools/clang/include/clang/Driver/Options.td
  def pie : Flag<["-"], "pie">;
  def static_pie : Flag<["-"], "static-pie">;
  def read__only__relocs : Separate<["-"], "read_only_relocs">;
-@@ -3200,6 +3214,8 @@ def mshstk : Flag<["-"], "mshstk">, Group<m_x86_Featur
+@@ -3243,6 +3255,8 @@ def mshstk : Flag<["-"], "mshstk">, Group<m_x86_Featur
  def mno_shstk : Flag<["-"], "mno-shstk">, Group<m_x86_Features_Group>;
  def mretpoline_external_thunk : Flag<["-"], "mretpoline-external-thunk">, Group<m_x86_Features_Group>;
  def mno_retpoline_external_thunk : Flag<["-"], "mno-retpoline-external-thunk">, Group<m_x86_Features_Group>;
