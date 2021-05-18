@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.101 2021/04/25 06:54:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.102 2021/05/18 09:52:33 ajacoutot Exp $
 
 BROKEN-alpha=		ICE hp5590.c:1141: error: unrecognizable insn
 
 COMMENT=		API for accessing scanners, backends
 
 DISTNAME=		sane-backends-1.0.32
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  sane                 2.1      # unknown
 
@@ -53,6 +53,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 CONFIGURE_ARGS=		--sbindir=${PREFIX}/libexec \
 			--docdir=${PREFIX}/share/doc/sane-backends \
+			--with-lockdir=/var/spool/lock/sane \
 			--without-gphoto2 \
 			--with-group=553 \
 			--enable-pthread
