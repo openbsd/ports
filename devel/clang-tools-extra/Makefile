@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2021/05/18 03:35:07 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.16 2021/05/18 06:19:48 rsadowski Exp $
 
 # XXX
 # This port is more or less a copy from devel/llvm and it tries to
@@ -16,6 +16,7 @@ COMMENT=	Clang extra tools
 LLVM_V =	11.1.0
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME=	clang-tools-extra-${LLVM_V}
+REVISION=	0
 
 CATEGORIES =	devel
 

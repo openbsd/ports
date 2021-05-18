@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.4 2021/05/18 03:35:07 rsadowski Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.5 2021/05/18 06:19:48 rsadowski Exp $
 
 - Switch Powerpc64 Big Endian to ELFv2 on OpenBSD.
 - Adapt the -mfix-loongson2f-btb workaround from as(1) to LLVM/clang.
@@ -34,7 +34,7 @@ $OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.4 2021/05/18 03:
 
 Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
 --- tools/clang/lib/Driver/ToolChains/Clang.cpp.orig
-    +++ tools/clang/lib/Driver/ToolChains/Clang.cpp
++++ tools/clang/lib/Driver/ToolChains/Clang.cpp
 @@ -2328,6 +2328,11 @@ static void CollectArgsForIntegratedAssembler(Compilat
            CmdArgs.push_back("-soft-float");
            continue;
