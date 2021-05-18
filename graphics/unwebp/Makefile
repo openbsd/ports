@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2021/04/28 07:39:52 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2021/05/18 18:26:35 espie Exp $
 
 COMMENT =	convert webp into gif/png
 CATEGORIES = 	graphics converters
 MAINTAINER = 	Marc Espie <espie@openbsd.org>
 
 GH_PROJECT = 	unwebp
-GH_TAGNAME = 	2.9
+GH_TAGNAME = 	2.10
 GH_ACCOUNT = 	marcespie
 
 # BSD licence
