@@ -1,4 +1,8 @@
-$OpenBSD: patch-Modules_CMakeUnixFindMake_cmake,v 1.6 2016/11/28 09:15:13 dcoppa Exp $
+$OpenBSD: patch-Modules_CMakeUnixFindMake_cmake,v 1.7 2021/05/18 03:42:29 rsadowski Exp $
+
+Discussion here:
+https://gitlab.kitware.com/cmake/cmake/-/merge_requests/6132
+
 --- Modules/CMakeUnixFindMake.cmake.orig	Fri Nov 11 15:37:13 2016
 +++ Modules/CMakeUnixFindMake.cmake	Fri Nov 25 22:31:44 2016
 @@ -2,7 +2,7 @@
