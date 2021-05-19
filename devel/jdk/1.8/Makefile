@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.58 2021/05/05 12:29:28 kurt Exp $
+# $OpenBSD: Makefile,v 1.59 2021/05/19 01:37:37 kurt Exp $
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64 aarch64
 USE_WXNEEDED=	Yes
 DPB_PROPERTIES=	parallel
 
@@ -8,7 +8,7 @@ COMMENT=	OpenJDK Software Development Kit v${V}
 BASE_VER=	1.8.0
 UPDATE_VER=	292
 BUILD_VER=	b10
-BSD_PORT_REL=	1
+BSD_PORT_REL=	2
 V=		${BASE_VER}.${UPDATE_VER}.${BUILD_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${V}
 PKGSTEM=	jdk-${BASE_VER}
@@ -16,7 +16,7 @@ EPOCH=		0
 
 DIST_SUBDIR=	jdk
 DISTNAME=	jdk8u${UPDATE_VER}-${BUILD_VER}.${BSD_PORT_REL}
-BOOTJDK_DATE=	20190111
+BOOTJDK_DATE=	20210514
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 WRKDIST=	${WRKDIR}/openjdk-jdk8u-jdk8u${UPDATE_VER}-${BUILD_VER}.${BSD_PORT_REL}
 
@@ -41,8 +41,9 @@ PERMIT_PACKAGE=	Yes
 NO_TEST=	Yes
 
 APACHE_ANT=	apache-ant-1.9.7-bin.tar.gz
-SUPDISTFILES+=	openjdk8-bootjdk-i386-${BOOTJDK_DATE}.tar.gz:1  \
-		openjdk8-bootjdk-amd64-${BOOTJDK_DATE}.tar.gz:1 \
+SUPDISTFILES+=	openjdk-jdk8u-bootjdk-i386-${BOOTJDK_DATE}.tar.gz:1  \
+		openjdk-jdk8u-bootjdk-amd64-${BOOTJDK_DATE}.tar.gz:1 \
+		openjdk-jdk8u-bootjdk-aarch64-${BOOTJDK_DATE}.tar.gz:1 \
 		${APACHE_ANT}:2
 
 COMPILER=	base-clang ports-gcc base-gcc
@@ -58,8 +59,8 @@ BUILD_DEPENDS+=	jdk->=1.8.0.00v0,<1.9v0:devel/jdk/1.8 \
 		devel/apache-ant>=1.8.2
 BOOT_JDK=	${LOCALBASE}/jdk-1.8.0
 .else
-BOOT_JDK_DIST=	openjdk8-bootjdk-${ARCH}-${BOOTJDK_DATE}.tar.gz
-.  if (${ARCH}==amd64) || (${ARCH}==i386)
+BOOT_JDK_DIST=	openjdk-jdk8u-bootjdk-${MACHINE_ARCH}-${BOOTJDK_DATE}.tar.gz
+.  if (${MACHINE_ARCH}==amd64) || (${MACHINE_ARCH}==i386) || (${MACHINE_ARCH}==aarch64)
 DISTFILES+=	${BOOT_JDK_DIST}:1
 .  endif
 DISTFILES+=	${APACHE_ANT}:2
@@ -106,7 +107,7 @@ CONFIGURE_ARGS=	--disable-option-checking \
 CONFIGURE_ENV+=	ac_cv_path_NAWK=awk
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/common/autoconf/build-aux
 
-# MAKE_FLAGS=	LOG=debug
+MAKE_FLAGS=	LOG=debug
 MAKE_ENV+=	DEFAULT_LIBPATH="/usr/lib:${X11BASE}/lib:${LOCALBASE}/lib" \
 		COMPILER_WARNINGS_FATAL=false
 
@@ -137,7 +138,7 @@ do-install:
 # and a copy of the system shared libs needed to run it.
 # The parts deleted are not needed for bootstrap and would
 # require more system shared libs to be saved.
-BOOTJDK_TAR=	openjdk8-bootjdk-${ARCH}-$$(date +%Y%m%d).tar.gz
+BOOTJDK_TAR=	openjdk-jdk8u-bootjdk-${MACHINE_ARCH}-$$(date +%Y%m%d).tar.gz
 build-bootjdk: build
 	@${_PBUILD} rm -rf ${WRKTMP}
 	@${_PBUILD} mkdir -p ${WRKTMP}/bootjdk
@@ -149,11 +150,11 @@ build-bootjdk: build
 		${_PBUILD} rm -rf demo sample
 	@cd ${WRKTMP}/bootjdk && \
 		${_PBUILD} rm bin/appletviewer bin/policytool jre/bin/policytool
-	@cd ${WRKTMP}/bootjdk/jre/lib/${ARCH} && \
+	@cd ${WRKTMP}/bootjdk/jre/lib/${MACHINE_ARCH} && \
 		${_PBUILD} rm libnpt.so libinstrument.so libsplashscreen.so \
 		libjsound.so libawt_xawt.so
-	@LD_LIBRARY_PATH="${WRKTMP}/bootjdk/jre/lib/${ARCH}:${WRKTMP}/bootjdk/jre/lib/${ARCH}/server" \
-		find ${WRKTMP}/bootjdk -type f -perm -500 -exec ldd {} + 2>/dev/null | \
+	@LD_LIBRARY_PATH="${WRKTMP}/bootjdk/jre/lib/${MACHINE_ARCH}:${WRKTMP}/bootjdk/jre/lib/${MACHINE_ARCH}/server" \
+		find ${WRKTMP}/bootjdk -type f -exec ldd {} + 2>/dev/null | \
 		grep rlib | cut -d"/" -f 2-20 | sort -u | grep -v "\.so$$" | \
 		xargs -I % ${_PBUILD} cp /% ${WRKTMP}/bootjdk-libs
 	@cd ${WRKTMP} && \
