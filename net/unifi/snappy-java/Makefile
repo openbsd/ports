@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2021/03/20 18:44:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/05/19 01:50:30 kurt Exp $
 
 # This is not a normal port, and does not produce a package.
 # It is a maintainer helper to provide a way to build snappy-java.jar
@@ -10,6 +10,7 @@ COMMENT=	special helper port to build snappy-java-X.jar for unifi
 SNAPPYJ_V=	1.1.8.4
 SNAPPY_V=	1.1.8
 BITSHUFFLE_V=	0.3.2
+REVISION=	0
 
 DISTNAME=	snappy-java-${SNAPPYJ_V}
 

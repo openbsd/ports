@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/03/18 19:53:58 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2021/05/19 01:50:30 kurt Exp $
 
 # XXX: patches/patch-src_cpp_core_r_util_REnvironmentPosix_cpp
 # must be kept in sync with math/R shlib bumps.
@@ -10,7 +10,7 @@ ONLY_FOR_ARCHS =	${LP64_ARCHS}
 V =		1.3.959
 COMMENT =	Integrated Development Environment (IDE) for R
 PKGNAME =	rstudio-${V}
-REVISION =	1
+REVISION =	2
 CATEGORIES =	math x11
 
 HOMEPAGE =	https://www.rstudio.com/

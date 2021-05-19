@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/09/12 14:36:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2021/05/19 01:50:31 kurt Exp $
 
 COMMENT =		framework for analyzing TLS libraries
 
 V =			3.5.0
 DISTNAME =		TLS-Attacker-$V
 PKGNAME =		${DISTNAME:L}
+REVISION =		0
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/05/14 20:34:19 ian Exp $ 
+# $OpenBSD: Makefile,v 1.2 2021/05/19 01:50:31 kurt Exp $ 
 
 COMMENT =	CrossFire crossword constructor
 CATEGORIES =	textproc games
@@ -10,6 +10,7 @@ PKGNAME =	crossfire-${V}
 DISTNAME =	CrossFire-${V:S/./_/g}-linux
 EXTRACT_SUFX =	.tgz
 WRKDIST =	${WRKDIR}/CrossFire
+REVISION =	0
 
 MAINTAINER=	Ian Darwin <ian@openbsd.org>
 

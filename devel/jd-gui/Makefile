@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2020/02/05 09:16:09 rpointel Exp $
+# $OpenBSD: Makefile,v 1.14 2021/05/19 01:50:29 kurt Exp $
 
 COMMENT =		yet another fast Java decompiler
 
 VERSION =		1.6.6
 DISTNAME =		jd-gui-${VERSION}
+REVISION =		0
 
 CATEGORIES =		devel security
 

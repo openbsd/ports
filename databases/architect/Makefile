@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:43:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2021/05/19 01:50:29 kurt Exp $
 
 PKG_ARCH=		*
 
@@ -11,7 +11,7 @@ PKGNAME=		architect-${V}
 CATEGORIES=		databases
 WRKDIST=		${WRKDIR}/architect-${V}
 
-REVISION=		8
+REVISION=		9
 
 HOMEPAGE=		http://www.sqlpower.ca/page/architect
 
