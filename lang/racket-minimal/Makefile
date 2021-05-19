@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.70 2021/03/11 22:08:43 juanfra Exp $
+# $OpenBSD: Makefile,v 1.71 2021/05/19 19:21:24 juanfra Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc powerpc64 sparc64
 
 COMMENT =		multi-paradigm programming language
 
-V =			7.9
-REVISION =		0
+V =			8.1
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
@@ -93,10 +92,11 @@ CFLAGS += -ggdb3
 #   https://github.com/racket/racket/issues/1239
 # - Racket builds fine with -O2 (and -O1 and -Os) on powerpc but
 #   it doesn't pass the tests.
-# - CS only supports OpenBSD on amd64.
+# - CS only supports OpenBSD on amd64. And maybe i386.
 .if ${FLAVOR:Mno_jit}
 ONLY_FOR_ARCHS =	arm amd64 i386 powerpc
-CONFIGURE_ARGS +=	--disable-jit \
+CONFIGURE_ARGS +=	--enable-bcdefault \
+			--disable-jit \
 			--disable-places \
 			--disable-futures
 .elif ${MACHINE_ARCH} == "amd64"
@@ -104,27 +104,32 @@ CONFIGURE_ARGS +=	--enable-csdefault \
 			--enable-places \
 			--enable-futures
 .elif ${MACHINE_ARCH} == "i386"
-CONFIGURE_ARGS +=	--enable-jit \
+CONFIGURE_ARGS +=	--enable-csdefault \
 			--enable-places \
 			--enable-futures
 .elif ${MACHINE_ARCH} == "arm"
-CONFIGURE_ARGS +=	--enable-jit \
+CONFIGURE_ARGS +=	--enable-bcdefault \
+			--enable-jit \
 			--disable-places \
 			--disable-futures
 .elif ${MACHINE_ARCH} == "powerpc"
-CONFIGURE_ARGS +=	--enable-jit \
+CONFIGURE_ARGS +=	--enable-bcdefault \
+			--enable-jit \
 			--disable-places \
 			--disable-futures
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -O0 -Wall -Wno-unused-value" \
 			CPPFLAGS="${CPPFLAGS} -O0 -Wall -Wno-unused-value"
 .else
-CONFIGURE_ARGS +=	--disable-jit \
+CONFIGURE_ARGS +=	--enable-bcdefault \
+			--disable-jit \
 			--disable-places \
 			--disable-futures
 .endif
 
 # The embedded versions of BC and CS use different files
 .if ${MACHINE_ARCH} == "amd64" && !${FLAVOR:Mno_jit}
+PKG_ARGS +=		-Dbc=0 -Dcs=1
+.elif ${MACHINE_ARCH} == "i386" && !${FLAVOR:Mno_jit}
 PKG_ARGS +=		-Dbc=0 -Dcs=1
 .else
 PKG_ARGS +=		-Dbc=1 -Dcs=0
@@ -154,7 +159,7 @@ CONFIGURE_ARGS +=	--disable-extflonum
 # The easiest workaround is to pass the CFLAGS also as CPPFLAGS.
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -msse -msse2 -mfpmath=sse" \
 			CPPFLAGS="${CPPFLAGS} -msse -msse2 -mfpmath=sse"
-CONFIGURE_ARGS +=	--enable-extflonum
+# XXX CONFIGURE_ARGS +=	--enable-extflonum
 .endif
 
 .include <bsd.port.mk>
