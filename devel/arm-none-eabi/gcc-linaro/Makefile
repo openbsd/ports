@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2021/01/09 21:41:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2021/05/19 08:39:16 cwen Exp $
 
 BROKEN-arm=	ICE: Bus error in unwind-dw2.c
-BROKEN-powerpc=	libgcc/libgcc2.c:1999:1: internal compiler error: in create_edge, at cgraph.c:850
 
 COMMENT=	gcc for ${CONFIG} cross-development, Linaro version
 
