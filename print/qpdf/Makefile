@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2021/03/14 10:18:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2021/05/19 12:29:44 ajacoutot Exp $
 
 COMMENT=	PDF transformation and inspection utility
 
-DISTNAME=	qpdf-10.3.1
+DISTNAME=	qpdf-10.3.2
 
-SHARED_LIBS +=  qpdf                 9.1      # 31.1
+SHARED_LIBS +=  qpdf                 9.1      # 31.2
 
 CATEGORIES=	print graphics
 
