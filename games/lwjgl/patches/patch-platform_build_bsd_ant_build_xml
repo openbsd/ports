@@ -1,0 +1,27 @@
+$OpenBSD: patch-platform_build_bsd_ant_build_xml,v 1.4 2021/05/19 21:29:07 kurt Exp $
+
+Use os.arch on 64 bit builds.
+
+Index: platform_build/bsd_ant/build.xml
+--- platform_build/bsd_ant/build.xml.orig
++++ platform_build/bsd_ant/build.xml
+@@ -5,7 +5,7 @@
+ 	<property name="libname32" value="liblwjgl.so"/>
+ 	<property name="libname64" value="liblwjgl64.so"/>
+ 	<property name="libs32" value="-L/usr/X11R6/lib -L/usr/local/lib -lm -lX11 -lXext -lXcursor -lXrandr -pthread -L${java.home}/lib/i386 -ljawt" />
+-	<property name="libs64" value="-L/usr/X11R6/lib -L/usr/local/lib -lm -lX11 -lXext -lXcursor -lXrandr -lXxf86vm -pthread -L${java.home}/lib/amd64 -ljawt" />
++	<property name="libs64" value="-L/usr/X11R6/lib -L/usr/local/lib -lm -lX11 -lXext -lXcursor -lXrandr -lXxf86vm -pthread -L${java.home}/lib/${os.arch} -ljawt" />
+     <property name="cflags32" value="-O2 -Wall -c -fPIC -std=c99 -Wunused"/>
+ 
+ 	<target name="clean">
+@@ -67,7 +67,9 @@
+     	<condition property="build.64bit.only">
+             <and>
+                 <os name="OpenBSD"/>
+-                <equals arg1="${hwplatform}" arg2="amd64"/>
++                <not>
++                    <equals arg1="${hwplatform}" arg2="i386"/>
++                </not>
+             </and>
+         </condition>
+ 
