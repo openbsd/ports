@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_jtag_drivers_nulink_usb_c,v 1.1 2021/05/19 16:09:17 paco Exp $
+
+Index: src/jtag/drivers/nulink_usb.c
+--- src/jtag/drivers/nulink_usb.c.orig
++++ src/jtag/drivers/nulink_usb.c
+@@ -1043,7 +1043,7 @@ static int nulink_usb_open(struct hl_interface_param_s
+ 		return ERROR_FAIL;
+ 	}
+ 
+-	if (hid_init() != 0) {
++	if (hidapi_hid_init() != 0) {
+ 		LOG_ERROR("unable to open HIDAPI");
+ 		return ERROR_FAIL;
+ 	}

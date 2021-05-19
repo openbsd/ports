@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_jtag_drivers_cmsis_dap_usb_hid_c,v 1.1 2021/05/19 16:09:17 paco Exp $
+
+Index: src/jtag/drivers/cmsis_dap_usb_hid.c
+--- src/jtag/drivers/cmsis_dap_usb_hid.c.orig
++++ src/jtag/drivers/cmsis_dap_usb_hid.c
+@@ -56,7 +56,7 @@ static int cmsis_dap_hid_open(struct cmsis_dap *dap, u
+ 	target_vid = 0;
+ 	target_pid = 0;
+ 
+-	if (hid_init() != 0) {
++	if (hidapi_hid_init() != 0) {
+ 		LOG_ERROR("unable to open HIDAPI");
+ 		return ERROR_FAIL;
+ 	}
