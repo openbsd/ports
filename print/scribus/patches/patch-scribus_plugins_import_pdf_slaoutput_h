@@ -1,6 +1,8 @@
-$OpenBSD: patch-scribus_plugins_import_pdf_slaoutput_h,v 1.4 2021/04/07 14:08:35 sthen Exp $
+$OpenBSD: patch-scribus_plugins_import_pdf_slaoutput_h,v 1.5 2021/05/19 19:59:39 kili Exp $
 
 Fix for poppler-21.03.x from svn r24537 and r24538.
+
+Fix for poppler-21.04.x.
 
 Index: scribus/plugins/import/pdf/slaoutput.h
 --- scribus/plugins/import/pdf/slaoutput.h.orig
@@ -17,3 +19,12 @@ Index: scribus/plugins/import/pdf/slaoutput.h
  	GBool functionShadedFill(GfxState * /*state*/, GfxFunctionShading * /*shading*/) override { qDebug() << "Function Shaded Fill";  return gFalse; }
  	GBool axialShadedFill(GfxState *state, GfxAxialShading *shading, double tMin, double tMax) override;
  	GBool axialShadedSupportExtend(GfxState *state, GfxAxialShading *shading)  override { return (shading->getExtend0() == shading->getExtend1()); }
+@@ -368,7 +372,7 @@ class SlaOutputDev : public OutputDev (public)
+ 	Catalog *catalog {nullptr};
+ 	SplashFontEngine *m_fontEngine {nullptr};
+ 	SplashFont *m_font {nullptr};
+-	FormPageWidgets *m_formWidgets {nullptr};
++	std::unique_ptr<FormPageWidgets> m_formWidgets;
+ 	QHash<QString, QList<int> > m_radioMap;
+ 	QHash<int, PageItem*> m_radioButtons;
+ 	int m_actPage;
