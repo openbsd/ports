@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.39 2020/12/07 21:31:24 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.40 2021/05/19 19:57:03 kili Exp $
 @conflict poppler-qt-<0.5.4p0
 @pkgpath print/poppler
 include/poppler/
@@ -93,6 +93,7 @@ include/poppler/cpp/poppler-page.h
 include/poppler/cpp/poppler-rectangle.h
 include/poppler/cpp/poppler-toc.h
 include/poppler/cpp/poppler-version.h
+include/poppler/cpp/poppler_cpp_export.h
 include/poppler/fofi/
 include/poppler/fofi/FoFiBase.h
 include/poppler/fofi/FoFiEncodings.h
@@ -131,6 +132,7 @@ include/poppler/goo/gmem.h
 include/poppler/goo/grandom.h
 include/poppler/goo/gstrtod.h
 include/poppler/poppler-config.h
+include/poppler/poppler_private_export.h
 include/poppler/splash/
 include/poppler/splash/Splash.h
 include/poppler/splash/SplashBitmap.h
