@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.162 2021/05/15 17:01:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.163 2021/05/19 10:00:37 ajacoutot Exp $
 @conflict py-botocore-*
 @pkgpath net/py-botocore
 lib/python${MODPY_VERSION}/site-packages/botocore/
@@ -130,6 +130,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/application-insights/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/application-insights/2018-11-25/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/application-insights/2018-11-25/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/application-insights/2018-11-25/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/applicationcostprofiler/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/applicationcostprofiler/2020-09-10/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/applicationcostprofiler/2020-09-10/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/applicationcostprofiler/2020-09-10/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appmesh/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appmesh/2018-10-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appmesh/2018-10-01/paginators-1.json
@@ -137,6 +141,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/appmesh/2018-10-01/servic
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appmesh/2019-01-25/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appmesh/2019-01-25/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appmesh/2019-01-25/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/apprunner/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/apprunner/2020-05-15/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/apprunner/2020-05-15/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/apprunner/2020-05-15/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appstream/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appstream/2016-12-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appstream/2016-12-01/examples-1.json
