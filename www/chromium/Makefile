@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.567 2021/05/17 12:11:47 robert Exp $
+# $OpenBSD: Makefile,v 1.568 2021/05/20 16:44:59 sthen Exp $
 
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
+BROKEN-i386 =		../../third_party/angle/src/libANGLE/validationEGL.h:137:12: error: reference to type 'const egl::AttributeMap' could not bind to an lvalue of type 'const long *'
 
 USE_WXNEEDED=		Yes
 

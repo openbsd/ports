@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.108 2021/05/05 07:15:14 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.109 2021/05/20 16:44:59 sthen Exp $
 
 # Unversioned distfiles
 PORTROACH =	ignore:1
 
 # keep in sync with working archs.. sigh
-ONLY_FOR_ARCHS =	amd64 i386 aarch64
+ONLY_FOR_ARCHS =	amd64 aarch64
 
 PKG_ARCH =	*
 

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.459 2021/05/05 07:25:00 landry Exp $
+# $OpenBSD: Makefile,v 1.460 2021/05/20 16:44:59 sthen Exp $
 
 COMMENT =	Firefox web browser
-ONLY_FOR_ARCHS =	amd64 i386 aarch64
+ONLY_FOR_ARCHS =	amd64 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
