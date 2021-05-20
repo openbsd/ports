@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2021/05/04 12:32:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2021/05/20 17:01:44 tb Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
@@ -23,6 +23,10 @@ WANTLIB += sasl2 ssh2 util xml2 yajl
 
 MASTER_SITES=		https://libvirt.org/sources/
 EXTRACT_SUFX=		.tar.xz
+
+# "#error You need at least GCC v4.8 to compile libvirt"
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
 
 MODULES=		devel/meson
 
