@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/02/08 20:33:03 kmos Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/05/20 12:19:32 kurt Exp $
 share/lwjgl3/
 share/lwjgl3/assimp_license.txt
 share/lwjgl3/bgfx_license.txt
@@ -33,8 +33,6 @@ share/lwjgl3/lwjgl-meshoptimizer.jar
 share/lwjgl3/lwjgl-nanovg-natives-openbsd.jar
 share/lwjgl3/lwjgl-nanovg.jar
 share/lwjgl3/lwjgl-natives-openbsd.jar
-share/lwjgl3/lwjgl-nfd-natives-openbsd.jar
-share/lwjgl3/lwjgl-nfd.jar
 share/lwjgl3/lwjgl-nuklear-natives-openbsd.jar
 share/lwjgl3/lwjgl-nuklear.jar
 share/lwjgl3/lwjgl-odbc.jar
@@ -44,7 +42,6 @@ share/lwjgl3/lwjgl-opengl-natives-openbsd.jar
 share/lwjgl3/lwjgl-opengl.jar
 share/lwjgl3/lwjgl-opengles-natives-openbsd.jar
 share/lwjgl3/lwjgl-opengles.jar
-share/lwjgl3/lwjgl-openvr.jar
 share/lwjgl3/lwjgl-opus.jar
 share/lwjgl3/lwjgl-par-natives-openbsd.jar
 share/lwjgl3/lwjgl-par.jar
@@ -55,15 +52,12 @@ share/lwjgl3/lwjgl-rpmalloc.jar
 share/lwjgl3/lwjgl-shaderc.jar
 share/lwjgl3/lwjgl-sources.jar
 share/lwjgl3/lwjgl-spvc.jar
-share/lwjgl3/lwjgl-sse-natives-openbsd.jar
-share/lwjgl3/lwjgl-sse.jar
 share/lwjgl3/lwjgl-stb-natives-openbsd.jar
 share/lwjgl3/lwjgl-stb.jar
 share/lwjgl3/lwjgl-tinyexr-natives-openbsd.jar
 share/lwjgl3/lwjgl-tinyexr.jar
 share/lwjgl3/lwjgl-tinyfd-natives-openbsd.jar
 share/lwjgl3/lwjgl-tinyfd.jar
-share/lwjgl3/lwjgl-tootle.jar
 share/lwjgl3/lwjgl-vma-natives-openbsd.jar
 share/lwjgl3/lwjgl-vma.jar
 share/lwjgl3/lwjgl-vulkan.jar
@@ -77,17 +71,14 @@ share/lwjgl3/meow_license.txt
 share/lwjgl3/meshoptimizer_license.txt
 share/lwjgl3/nanosvg_license.txt
 share/lwjgl3/nanovg_license.txt
-share/lwjgl3/nfd_license.txt
 share/lwjgl3/openal_soft_license.txt
-share/lwjgl3/openvr_license.txt
 share/lwjgl3/opus_license.txt
 share/lwjgl3/remotery_license.txt
 share/lwjgl3/rpmalloc_license.txt
 share/lwjgl3/shaderc_license.txt
 share/lwjgl3/tinyexr_license.txt
 share/lwjgl3/tinyfd_license.txt
-share/lwjgl3/tootle_directxmesh_license.txt
-share/lwjgl3/tootle_license.txt
 share/lwjgl3/vma_license.txt
 share/lwjgl3/xxhash_license.txt
 share/lwjgl3/yoga_license.txt
+%%x86%%

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/03/07 14:52:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/05/20 12:19:32 kurt Exp $
 
 BROKEN-i386 =	java.lang.OutOfMemoryError: Java heap space in kotlinc
 
@@ -6,13 +6,20 @@ COMMENT =	lightweight game library for java
 
 V =		3.2.4alpha1
 DISTNAME =	lwjgl3-${V}
+REVISION =	0
 
 KOTLIN_V =	1.3.61
 
 .if ${MACHINE_ARCH} == "i386"
 M_ARCH =	""
+PKG_ARGS +=	-Dx86=1
 .elif ${MACHINE_ARCH} == "amd64"
 M_ARCH =	64
+PKG_ARGS +=	-Dx86=1
+.elif ${MACHINE_ARCH} == "aarch64"
+M_ARCH =	64
+PKG_ARGS +=	-Dx86=0
+MAKE_ENV+=	LWJGL_BUILD_ARCH=arm64
 .endif
 
 LWJGL3_HOME =	${PREFIX}/share/lwjgl3
@@ -86,7 +93,7 @@ do-build:
 	${MODJAVA_BUILD_TARGET}
 	cd ${MODJAVA_BUILD_DIR} && \
 		${SETENV} ${MAKE_ENV} LWJGL_BUILD_OFFLINE=true \
-		JAVA8_HOME=${LOCALBASE}/jdk-11 ${LOCALBASE}/bin/ant \
+		JAVA8_HOME=${JAVA_HOME} ${LOCALBASE}/bin/ant \
 		-buildfile ${MODJAVA_BUILD_FILE} release ${MODJAVA_BUILD_ARGS}
 
 do-install:

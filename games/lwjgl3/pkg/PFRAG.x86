@@ -1,0 +1,11 @@
+@comment $OpenBSD: PFRAG.x86,v 1.1 2021/05/20 12:19:32 kurt Exp $
+share/lwjgl3/lwjgl-nfd-natives-openbsd.jar
+share/lwjgl3/lwjgl-nfd.jar
+share/lwjgl3/lwjgl-openvr.jar
+share/lwjgl3/lwjgl-sse-natives-openbsd.jar
+share/lwjgl3/lwjgl-sse.jar
+share/lwjgl3/lwjgl-tootle.jar
+share/lwjgl3/nfd_license.txt
+share/lwjgl3/openvr_license.txt
+share/lwjgl3/tootle_directxmesh_license.txt
+share/lwjgl3/tootle_license.txt
