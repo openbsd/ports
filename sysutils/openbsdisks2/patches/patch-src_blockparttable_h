@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_blockparttable_h,v 1.1 2021/05/20 18:38:40 tb Exp $
+
+Index: src/blockparttable.h
+--- src/blockparttable.h.orig
++++ src/blockparttable.h
+@@ -30,6 +30,8 @@
+ #include <QString>
+ #include <QStringList>
+ 
++#include <memory>
++
+ class BlockPartTable
+ {
+ public:

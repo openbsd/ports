@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2021/05/15 08:20:57 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2021/05/20 18:38:40 tb Exp $
 
 COMMENT =	UDisks2 service implementation for OpenBSD
 
 V =		0.2.3
 DISTNAME =	openbsdisks2-${V}beta
+REVISION =	0
 
 CATEGORIES =	sysutils
 
