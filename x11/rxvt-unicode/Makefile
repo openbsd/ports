@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.50 2021/03/09 04:17:05 jcs Exp $
+# $OpenBSD: Makefile,v 1.51 2021/05/21 17:43:41 bket Exp $
 
 COMMENT =	clone of rxvt with Unicode and Xft support
 
-DISTNAME =	rxvt-unicode-9.22
-REVISION =	12
+DISTNAME =	rxvt-unicode-9.26
 CATEGORIES =	x11
 FIX_EXTRACT_PERMISSIONS =	Yes
 
@@ -30,7 +29,8 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 FAKE_FLAGS =	INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoconf
+AUTOCONF_VERSION =	2.71
 CONFIGURE_ARGS =	--enable-256-color \
 			--enable-perl \
 			--enable-pixbuf \

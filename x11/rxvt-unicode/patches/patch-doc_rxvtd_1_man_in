@@ -1,6 +1,7 @@
-$OpenBSD: patch-doc_rxvtd_1_man_in,v 1.4 2015/01/05 16:09:51 dcoppa Exp $
---- doc/rxvtd.1.man.in.orig	Wed Dec 31 08:37:40 2014
-+++ doc/rxvtd.1.man.in	Mon Jan  5 09:14:22 2015
+$OpenBSD: patch-doc_rxvtd_1_man_in,v 1.5 2021/05/21 17:43:41 bket Exp $
+Index: doc/rxvtd.1.man.in
+--- doc/rxvtd.1.man.in.orig
++++ doc/rxvtd.1.man.in
 @@ -142,7 +142,7 @@
  @@RXVT_NAME@@d \- @@RXVT_NAME@@ terminal daemon
  .SH "SYNOPSIS"
@@ -16,7 +17,7 @@ $OpenBSD: patch-doc_rxvtd_1_man_in,v 1.4 2015/01/05 16:09:51 dcoppa Exp $
  socket.
 -.IP "\fB\-m\fR, \fB\-\-mlock\fR" 4
 -.IX Item "-m, --mlock"
--This makes \fB@@RXVT_NAME@@d\fR call \fImlockall\fR\|(2) on itself. This locks
+-This makes \fB@@RXVT_NAME@@d\fR call \fBmlockall\fR\|(2) on itself. This locks
 -\&\fB@@RXVT_NAME@@d\fR in \s-1RAM\s0 and prevents it from being swapped out to disk,
 -at the cost of consuming a lot more memory on most operating systems.
 -.Sp
