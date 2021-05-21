@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.42 2019/12/29 23:56:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2021/05/21 16:26:39 sthen Exp $
 
 COMMENT=	printed circuit board layout tool
-DISTNAME=	pcb-4.1.3
+DISTNAME=	pcb-4.3.0
 CATEGORIES=	cad
-REVISION=	0
 EPOCH=		0
 
 HOMEPAGE=	http://pcb.geda-project.org/

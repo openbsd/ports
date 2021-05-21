@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2018/10/26 04:01:51 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.16 2021/05/21 16:26:39 sthen Exp $
 bin/MergePCBPS
 bin/Merge_dimPCBPS
 @bin bin/pcb
@@ -223,7 +223,6 @@ share/pcb/newlib/not_vetted_ingo/smt1206.ele
 share/pcb/newlib/not_vetted_ingo/smt1210.ele
 share/pcb/newlib/not_vetted_ingo/smt1913.ele
 share/pcb/newlib/not_vetted_ingo/smt2416.ele
-share/pcb/newlib/sockets/
 share/pcb/newlib/tests/
 share/pcb/newlib/tests/14DIP_oval_pad
 share/pcb/newlib/tests/Generic_TSOP48_Flash
