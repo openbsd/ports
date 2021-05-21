@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.41 2021/01/27 12:08:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2021/05/21 11:35:22 ajacoutot Exp $
 
 PORTROACH=		limit:^2\.46
 
 COMMENT =		C++ interface for pango
 
 GNOME_PROJECT =		pangomm
-GNOME_VERSION =		2.46.0
+GNOME_VERSION =		2.46.1
 
 CATEGORIES =		devel x11
 
