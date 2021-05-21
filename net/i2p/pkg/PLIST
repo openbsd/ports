@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/03/05 20:52:23 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/05/21 13:19:59 kurt Exp $
 @newgroup _i2p:861
 @newuser _i2p:861:861:daemon:i2p account:${DB_DIR}:/sbin/nologin
 @rcscript ${RCDIR}/i2p
@@ -414,7 +414,6 @@ share/i2p/lib/jetty-xml.jar
 share/i2p/lib/jrobin.jar
 share/i2p/lib/jstl.jar
 @so share/i2p/lib/libjbigi.so
-@so share/i2p/lib/libjcpuid.so
 share/i2p/lib/mstreaming.jar
 share/i2p/lib/org.mortbay.jetty.jar
 share/i2p/lib/org.mortbay.jmx.jar
@@ -433,3 +432,4 @@ share/i2p/webapps/routerconsole.war
 share/i2p/webapps/susidns.war
 share/i2p/webapps/susimail.war
 share/i2p/wrapper.config
+%%x86%%

@@ -1,16 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2021/05/19 01:50:30 kurt Exp $
-
-# would normally be set in java.port.mk, but i2p pulls in bsd.port.arch.mk
-# itself which interferes with ONLY_FOR_ARCHS coming from MODULES.
-# list is for jdk 1.8 arches.
-ONLY_FOR_ARCHS=	amd64 i386 aarch64
+# $OpenBSD: Makefile,v 1.9 2021/05/21 13:19:59 kurt Exp $
 
 COMMENT=	i2p routing protocol
 
 GH_ACCOUNT=	i2p
 GH_PROJECT=	i2p.i2p
-GH_COMMIT=	5d5e6fa3c2365f6c9956d3691d620eb5797091f8
-DISTNAME=	i2p-0.9.49
+GH_TAGNAME=	i2p-0.9.50
+DISTNAME=	${GH_TAGNAME}
 
 CATEGORIES=	net
 
@@ -34,18 +29,22 @@ RUN_DEPENDS=	devel/gettext,-runtime \
 		java/tanukiwrapper
 LIB_DEPENDS=	devel/gmp
 
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mlp64}
-BITS=64
-.else
+.if ${MACHINE_ARCH} == "i386"
 BITS=32
+PKG_ARGS+=	-Dx86=1
+.elif ${MACHINE_ARCH} == "amd64"
+BITS=64
+PKG_ARGS+=	-Dx86=1
+.elif ${MACHINE_ARCH} == "aarch64"
+BITS=64
+PKG_ARGS+=	-Dx86=0
 .endif
 
 DB_DIR=		${LOCALSTATEDIR}/i2p
 
 SUBST_VARS=	DB_DIR JAVA_HOME
 
-MAKE_ENV=	CC=${CC} BITS=${BITS}
+MAKE_ENV=	CC=${CC} BITS=${BITS} MACHINE_ARCH=${MACHINE_ARCH}
 
 # test requires addition dependencies (atleast: junit, hamcrest, jmockfit)
 NO_TEST=	Yes
@@ -69,8 +68,10 @@ do-install:
 .for dir in lib webapps docs eepsite geoip certificates
 	cp -Rp ${WRKSRC}/pkg-temp/${dir} ${PREFIX}/share/i2p
 .endfor
+.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
 	cp ${WRKSRC}/core/c/t/freenet/support/CPUInformation/libjcpuid*.so \
 		${PREFIX}/share/i2p/lib/libjcpuid.so
+.endif
 	cp ${WRKSRC}/core/c/t/libjbigi.so ${PREFIX}/share/i2p/lib
 	rm -rf ${PREFIX}/share/i2p/lib/{wrapper,wrapper.jar}
 
