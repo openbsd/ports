@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2020/10/07 06:13:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2021/05/21 04:50:54 ajacoutot Exp $
 
 PORTROACH=		limitw:1,even
 
 COMMENT=		C++ interface for cairo
 
-V=			1.16.0
+V=			1.16.1
 DISTNAME=		cairomm-${V}
 EXTRACT_SUFX=		.tar.xz
 PKGNAME=		cairomm16-${V}
