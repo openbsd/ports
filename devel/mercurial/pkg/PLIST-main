@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.22 2021/02/08 23:54:55 juanfra Exp $
+@comment $OpenBSD: PLIST-main,v 1.23 2021/05/21 20:50:48 juanfra Exp $
 @pkgpath devel/mercurial
 @bin bin/chg
 bin/hg
@@ -760,11 +760,13 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/
 lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/${MODPY_PYCACHE}concurrency_checker.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/${MODPY_PYCACHE}deltas.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/${MODPY_PYCACHE}flagutil.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/${MODPY_PYCACHE}nodemap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/${MODPY_PYCACHE}sidedata.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/concurrency_checker.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/constants.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/deltas.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/revlogutils/flagutil.py
@@ -1106,6 +1108,7 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/utils/${MODPY_PYCACHE}repovie
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/${MODPY_PYCACHE}resourceutil.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/${MODPY_PYCACHE}storageutil.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/${MODPY_PYCACHE}stringutil.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/utils/${MODPY_PYCACHE}urlutil.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/cborutil.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/compression.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/dateutil.py
@@ -1116,6 +1119,7 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/utils/repoviewutil.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/resourceutil.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/storageutil.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/stringutil.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/utils/urlutil.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/verify.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/vfs.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/win32.py

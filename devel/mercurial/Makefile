@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.110 2021/02/23 19:39:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.111 2021/05/21 20:50:48 juanfra Exp $
 
 COMMENT-main =		fast, lightweight source control management
 COMMENT-x11 =		graphical tooling for mercurial
 
-MODPY_EGG_VERSION =	5.7
+MODPY_EGG_VERSION =	5.8
 DISTNAME =		mercurial-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
 
@@ -11,8 +11,6 @@ PKGNAME-main =		${DISTNAME}
 PKGNAME-x11 =		mercurial-x11-${MODPY_EGG_VERSION}
 
 HOMEPAGE =		https://www.mercurial-scm.org
-
-MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
