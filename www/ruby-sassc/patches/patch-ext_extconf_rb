@@ -1,19 +1,13 @@
-$OpenBSD: patch-ext_extconf_rb,v 1.1.1.1 2019/11/10 16:52:05 jeremy Exp $
+$OpenBSD: patch-ext_extconf_rb,v 1.2 2021/05/21 22:26:28 jeremy Exp $
 
 Index: ext/extconf.rb
 --- ext/extconf.rb.orig
 +++ ext/extconf.rb
-@@ -20,12 +20,12 @@ if enable_config('static-stdlib', false)
- end
+@@ -29,7 +29,7 @@ end
+ # see: https://github.com/sass/sassc-ruby/issues/148
+ enable_lto_by_default = (Gem::Platform.local.os == "darwin" && !ENV['NIX_CC'].nil?)
  
- # Set to false when building binary gems
--if enable_config('march-tune-native', true)
-+if enable_config('march-tune-native', false)
-   $CFLAGS << ' -march=native -mtune=native'
-   $CXXFLAGS << ' -march=native -mtune=native'
- end
- 
--if enable_config('lto', true)
+-if enable_config('lto', enable_lto_by_default)
 +if enable_config('lto', false)
    $CFLAGS << ' -flto'
    $CXXFLAGS << ' -flto'

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/10 16:52:05 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/05/21 22:26:28 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -19,10 +19,9 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sassc/error.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sassc/functions_handler.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sassc/import_handler.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sassc/importer.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/sassc/libsass.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/sassc/libsass.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/sassc/native/
 ${GEM_LIB}/gems/${DISTNAME}/lib/sassc/native.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/sassc/native/lib_c.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sassc/native/native_context_api.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sassc/native/native_functions_api.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sassc/native/sass2scss_api.rb
