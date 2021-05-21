@@ -1,0 +1,13 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2021/05/21 19:43:49 kmos Exp $
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -52,7 +52,7 @@ package_data = dict(
+ )
+ 
+ force_windows_specific_files = (
+-    os.environ.get("SETUPTOOLS_INSTALL_WINDOWS_SPECIFIC_FILES", "1").lower()
++    os.environ.get("SETUPTOOLS_INSTALL_WINDOWS_SPECIFIC_FILES", "0").lower()
+     not in ("", "0", "false", "no")
+ )
+ 
