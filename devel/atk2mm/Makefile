@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.32 2020/12/20 08:07:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2021/05/21 09:50:50 ajacoutot Exp $
 
 PORTROACH=		limit:^2\.28
 
 COMMENT=		C++ binding for the ATK library
 
 GNOME_PROJECT=		atkmm
-GNOME_VERSION=		2.28.1
+GNOME_VERSION=		2.28.2
 PKGNAME=		atk2mm-${GNOME_VERSION}
 
 CATEGORIES=		devel
 
-SHARED_LIBS +=  atkmm-1.6            10.1     # 2.0
+SHARED_LIBS += atkmm-1.6                 10.1 # 1.1.0
 
 HOMEPAGE=		http://www.gtkmm.org/
 
