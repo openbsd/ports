@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/03 17:46:37 tb Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/05/21 21:18:22 tb Exp $
 share/openssl-ruby-tests/
 share/openssl-ruby-tests/BSDL
 share/openssl-ruby-tests/ext/
@@ -77,11 +77,16 @@ share/openssl-ruby-tests/test/openssl/
 share/openssl-ruby-tests/test/openssl/envutil.rb
 share/openssl-ruby-tests/test/openssl/fixtures/
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/
+share/openssl-ruby-tests/test/openssl/fixtures/pkey/certificate.der
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/dh-1.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/dh1024.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/dsa1024.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/dsa256.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/dsa512.pem
+share/openssl-ruby-tests/test/openssl/fixtures/pkey/empty.der
+share/openssl-ruby-tests/test/openssl/fixtures/pkey/empty.pem
+share/openssl-ruby-tests/test/openssl/fixtures/pkey/fullchain.pem
+share/openssl-ruby-tests/test/openssl/fixtures/pkey/garbage.txt
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/p256.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/rsa-1.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/rsa-2.pem
