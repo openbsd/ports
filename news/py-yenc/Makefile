@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2021/02/23 19:39:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/05/21 19:50:34 kmos Exp $
 
 COMMENT=		yEnc encoding/decoding extension for Python
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION=	0.4.0
 DISTNAME=		yenc-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		news
+REVISION=		0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2021/02/20 22:27:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/05/21 19:50:22 kmos Exp $
 
 COMMENT=		small expressive ORM
 
 MODPY_EGG_VERSION=	2.8.3
 DISTNAME=		peewee-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		5
+REVISION=		6
 
 GH_ACCOUNT=		coleifer
 GH_PROJECT=		peewee

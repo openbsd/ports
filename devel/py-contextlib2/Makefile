@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:12:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/05/21 19:50:24 kmos Exp $
 
 COMMENT =		backports and enhancements for the contextlib module
 
 MODPY_EGG_VERSION =	0.5.5
 DISTNAME =		contextlib2-${MODPY_EGG_VERSION}
 PKGNAME =		py-contextlib2-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 

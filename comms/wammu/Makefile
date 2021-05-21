@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/23 19:39:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/05/21 19:50:22 kmos Exp $
 
 COMMENT =		Gnu All Mobile Management Utilities GUI
 
 MODPY_EGG_VERSION = 	0.44
 DISTNAME =		wammu-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		comms x11
 

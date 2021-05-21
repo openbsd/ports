@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2021/02/23 19:39:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2021/05/21 19:50:25 kmos Exp $
 
 COMMENT=		class and function decorators
 
 MODPY_EGG_VERSION=	1.8
 DISTNAME=		DecoratorTools-${MODPY_EGG_VERSION}
 PKGNAME=		py-decoratortools-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 

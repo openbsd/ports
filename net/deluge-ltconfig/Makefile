@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/05/21 19:50:33 kmos Exp $
 
 COMMENT =	libtorrent settings modification plugin for deluge
 
 MODPY_EGG_VERSION =	0.3.1
+REVISION =	0
 
 GH_ACCOUNT =	ratanakvlun
 GH_PROJECT =	deluge-ltconfig

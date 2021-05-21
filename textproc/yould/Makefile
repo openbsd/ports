@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/05/21 19:50:37 kmos Exp $
 
 COMMENT=		generator for pronounceable random words
 
 MODPY_EGG_VERSION=	0.3.7
 DISTNAME=		yould-${MODPY_EGG_VERSION}
-REVISION=		5
+REVISION=		6
 CATEGORIES=		textproc
 
 # GPLv3

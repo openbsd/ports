@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:12:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/05/21 19:50:25 kmos Exp $
 
 COMMENT =		container class boilerplate killer
 
 MODPY_EGG_VERSION =	5.0.0
 DISTNAME =		fields-${MODPY_EGG_VERSION}
 PKGNAME =		py-fields-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 

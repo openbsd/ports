@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2021/03/12 21:23:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2021/05/21 19:50:33 kmos Exp $
 
 COMMENT=	Python interface to cURL library
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION=	7.43.0.6
 DISTNAME=	pycurl-${MODPY_EGG_VERSION}
 PKGNAME=	py-curl-${MODPY_EGG_VERSION}
 CATEGORIES=	net
+REVISION=	0
 
 HOMEPAGE=	http://pycurl.sourceforge.net/
 

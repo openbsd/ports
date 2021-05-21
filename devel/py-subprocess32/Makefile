@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/23 19:39:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/05/21 19:50:29 kmos Exp $
 
 COMMENT =		backport of the subprocess library module from Python 3
 
 MODPY_EGG_VERSION =	3.5.2
 DISTNAME =		subprocess32-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

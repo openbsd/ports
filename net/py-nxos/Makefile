@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:13:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/05/21 19:50:33 kmos Exp $
 
 COMMENT =		library for managing Cisco NX-OS devices through NX-API
 
 MODPY_EGG_VERSION =	0.0.5
-REVISION =		1
+REVISION =		2
 DISTNAME =		pynxos-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/py//}
 

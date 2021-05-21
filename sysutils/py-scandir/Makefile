@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2021/01/04 14:06:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/05/21 19:50:36 kmos Exp $
 
 COMMENT =		improved directory iterator and faster os.walk()
 
 MODPY_EGG_VERSION =	1.10.0
 DISTNAME =		scandir-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		sysutils
 

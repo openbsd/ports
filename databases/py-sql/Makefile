@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:12:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/05/21 19:50:22 kmos Exp $
 
 COMMENT=		library to write SQL queries
 
 MODPY_EGG_VERSION =	1.1.0
 DISTNAME=		python-sql-${MODPY_EGG_VERSION}
 PKGNAME=		py-sql-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		databases
 

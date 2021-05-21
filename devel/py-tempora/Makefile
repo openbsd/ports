@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/19 23:13:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/05/21 19:50:30 kmos Exp $
 
 COMMENT =		objects and routines pertaining to date and time
 
 MODPY_EGG_VERSION =	1.14.1
-REVISION =		2
+REVISION =		3
 DISTNAME =		tempora-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 

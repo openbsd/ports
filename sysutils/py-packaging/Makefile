@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:13:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/05/21 19:50:35 kmos Exp $
 
 COMMENT =	core utilities for Python packages
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	19.2
 
 DISTNAME =	packaging-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	sysutils
 

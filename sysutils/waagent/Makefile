@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/05/21 19:50:36 kmos Exp $
 
 COMMENT=		Microsoft Azure Linux Agent
 
@@ -7,7 +7,7 @@ GH_ACCOUNT=		Azure
 GH_PROJECT=		WALinuxAgent
 GH_TAGNAME=		v${V}
 PKGNAME=		waagent-${V}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		sysutils
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:12:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/05/21 19:50:29 kmos Exp $
 
 COMMENT =		simple namespaced plugin facility
 
 MODPY_EGG_VERSION =	1.5.0
 DISTNAME =		straight.plugin-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

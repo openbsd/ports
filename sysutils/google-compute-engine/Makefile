@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/05/21 19:50:35 kmos Exp $
 
 COMMENT =		Google Cloud Platform (GCP) Compute Engine daemon
 
 MODPY_EGG_VERSION =	2.4.0
 DISTNAME =		google-compute-engine-${MODPY_EGG_VERSION}
-REVISION =		3
+REVISION =		4
 
 GH_ACCOUNT =		GoogleCloudPlatform
 GH_PROJECT =		compute-image-packages

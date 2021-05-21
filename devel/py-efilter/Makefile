@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/05/21 19:50:25 kmos Exp $
 
 COMMENT =	EFILTER query language
 
 MODPY_EGG_VERSION = 1.5
 DISTNAME =	efilter-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 GH_ACCOUNT =	google
 GH_PROJECT =	dotty

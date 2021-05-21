@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/23 19:39:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/05/21 19:50:23 kmos Exp $
 
 COMMENT =	binary property list (plist) parser module written in Python
 
 MODPY_EGG_VERSION = 0.1.5
 DISTNAME =	py-binplist-${MODPY_EGG_VERSION}
+REVISION =	0
 
 GH_ACCOUNT =	google
 GH_PROJECT =	binplist

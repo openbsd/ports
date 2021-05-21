@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:13:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/05/21 19:50:35 kmos Exp $
 
 COMMENT =		AWS v4 authentication for py-requests
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	0.9
 
 DISTNAME =		requests-aws4auth-${MODPY_EGG_VERSION}
 PKGNAME =		${MODPY_PY_PREFIX}requests-aws4auth-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		security
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2021/02/19 23:13:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/05/21 19:50:28 kmos Exp $
 
 COMMENT =	help visualize profiling data collected with the cProfile
 
 MODPY_EGG_VERSION = 1.4.5
 DISTNAME =	pyprof2calltree-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 

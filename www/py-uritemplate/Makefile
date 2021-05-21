@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:13:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/05/21 19:50:39 kmos Exp $
 
 COMMENT =	URI templates
 
 MODPY_EGG_VERSION = 3.0.1
 DISTNAME =	uritemplate-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	www
 

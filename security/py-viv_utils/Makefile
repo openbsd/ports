@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/23 19:39:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/05/21 19:50:35 kmos Exp $
 
 COMMENT =	utilities for working with vivisect
 
 MODPY_EGG_VERSION =	0.3.9
 DISTNAME =	viv_utils-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	security
 

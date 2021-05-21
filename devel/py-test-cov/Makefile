@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:12:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/05/21 19:50:30 kmos Exp $
 
 COMMENT =		pytest plugin for measuring coverage
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	2.8.1
 DISTNAME =		pytest-cov-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://pytest-cov.readthedocs.org/en/latest/
 

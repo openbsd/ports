@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2021/02/23 19:39:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/05/21 19:50:38 kmos Exp $
 
 COMMENT =		load, configure, compose WSGI applications and servers
 
 MODPY_EGG_VERSION =	1.5.0
 DISTNAME =		PasteDeploy-${MODPY_EGG_VERSION}
 PKGNAME =		py-paste-deploy-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		www
 

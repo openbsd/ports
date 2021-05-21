@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/05/21 19:50:28 kmos Exp $
 
 COMMENT =		version of dict that keeps keys in sorted order
 
 MODPY_EGG_VERSION =	0.4.13
 DISTNAME =		ruamel.ordereddict-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

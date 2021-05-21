@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:13:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/05/21 19:50:39 kmos Exp $
 
 COMMENT =	 	X11 library for Python
 
@@ -6,7 +6,7 @@ GH_ACCOUNT =		python-xlib
 GH_PROJECT =		python-xlib
 GH_TAGNAME =		0.25
 PKGNAME =		py-xlib-${GH_TAGNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		x11
 

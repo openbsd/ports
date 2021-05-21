@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/05/21 19:50:34 kmos Exp $
 
 COMMENT =	FireEye Labs Obfuscated String Solver
 
 MODPY_EGG_VERSION =	1.6.1
 PKGNAME =	floss-${MODPY_EGG_VERSION}
+REVISION =	0
 
 GH_ACCOUNT =	fireeye
 GH_PROJECT =	flare-floss

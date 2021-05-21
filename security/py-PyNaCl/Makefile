@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/03 21:13:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/05/21 19:50:34 kmos Exp $
 
 COMMENT =		Python binding to the NaCl library
 
 MODPY_EGG_VERSION =	1.4.0
 DISTNAME =		PyNaCl-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		security
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/23 19:39:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/05/21 19:50:26 kmos Exp $
 
 COMMENT =		backports of the Python linecache module
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.0.0
 
 DISTNAME =		linecache2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

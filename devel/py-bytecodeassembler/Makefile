@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2021/02/23 19:39:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/05/21 19:50:24 kmos Exp $
 
 COMMENT =		python bytecode assembler
 
 MODPY_EGG_VERSION =	0.6.1
 DISTNAME =		BytecodeAssembler-${MODPY_EGG_VERSION}
 PKGNAME =		py-bytecodeassembler-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		devel
 

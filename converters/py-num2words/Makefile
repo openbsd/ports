@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:12:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/05/21 19:50:22 kmos Exp $
 
 COMMENT =	convert numbers to words
 
 MODPY_EGG_VERSION =	0.5.10
 DISTNAME =		num2words-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =	converters
 

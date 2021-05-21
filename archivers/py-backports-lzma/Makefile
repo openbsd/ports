@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/05/21 19:50:21 kmos Exp $
 
 COMMENT =	backport of Python 3.3's 'lzma' module for XZ/LZMA
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	0.0.14
 
 DISTNAME =	backports.lzma-${MODPY_EGG_VERSION}
 PKGNAME =	py-backports-lzma-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	archivers
 

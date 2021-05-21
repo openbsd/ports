@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/05/21 19:50:32 kmos Exp $
 
 # XXX version 1.19.0 and up do not support python2 anymore;
 # python3 support lives in graphics/py-cairo
@@ -14,7 +14,7 @@ GH_ACCOUNT=		pygobject
 GH_PROJECT=		pycairo
 GH_TAGNAME=		v${MODPY_EGG_VERSION}
 PKGNAME=		py-cairo-${MODPY_EGG_VERSION}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		graphics
 

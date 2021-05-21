@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/05/21 19:50:28 kmos Exp $
 
 COMMENT =	distributed object middleware for Python
 
 MODPY_EGG_VERSION = 3.16
 DISTNAME =	Pyro-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 

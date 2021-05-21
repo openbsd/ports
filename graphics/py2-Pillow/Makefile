@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/05/02 15:24:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/05/21 19:50:32 kmos Exp $
 
 # XXX version 7.0.0 and up do not support python2 anymore;
 # python3 support lives in graphics/py-Pillow
@@ -10,7 +10,7 @@ MODPY_EGG_VERSION=	6.2.2
 DISTNAME=		Pillow-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		graphics
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=		https://python-pillow.org/
 

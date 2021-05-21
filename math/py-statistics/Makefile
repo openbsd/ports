@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/05/21 19:50:32 kmos Exp $
 
 COMMENT =		port of Python 3.4 statistics module to Python 2
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.0.3.5
 DISTNAME =		statistics-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
+REVISION =		0
 
 HOMEPAGE =		https://github.com/digitalemagine/py-statistics
 

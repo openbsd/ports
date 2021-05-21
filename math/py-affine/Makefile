@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:12:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/05/21 19:50:32 kmos Exp $
 
 COMMENT =		matrices describing affine transformation of the plane
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	2.3.0
 DISTNAME =		affine-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Martin Reindl <martin@catai.org>
 

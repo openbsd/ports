@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2020/10/30 19:29:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2021/05/21 19:50:35 kmos Exp $
 
 COMMENT =		scp module for Paramiko
 
 MODPY_EGG_VERSION =	0.13.3
 DISTNAME =		scp-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		security
 

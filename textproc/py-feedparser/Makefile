@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2020/07/03 21:13:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2021/05/21 19:50:36 kmos Exp $
 
 COMMENT=	RSS and Atom feeds parser written in Python
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION=	5.2.1
 DISTNAME=	feedparser-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
-REVISION=	3
+REVISION=	4
 
 HOMEPAGE=	https://github.com/kurtmckee/feedparser
 

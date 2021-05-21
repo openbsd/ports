@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2021/02/23 19:39:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/05/21 19:50:38 kmos Exp $
 
 COMMENT=		pluggable command-line frontend
 
 MODPY_EGG_VERSION=	1.7.5
 DISTNAME=		PasteScript-${MODPY_EGG_VERSION}
 PKGNAME=		py-paste-script-${MODPY_EGG_VERSION}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		www
 

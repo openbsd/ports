@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:12:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/05/21 19:50:25 kmos Exp $
 
 COMMENT =	Pythonic argument parser
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION = 0.6.2
 DISTNAME =	docopt-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	devel
-REVISION =	4
+REVISION =	5
 
 HOMEPAGE =	http://docopt.org
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:12:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/05/21 19:50:30 kmos Exp $
 
 COMMENT =		py.test plugin to store test expectations
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	1.1.0
 DISTNAME =		pytest-expect-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE =		https://github.com/gsnedders/pytest-expect
 

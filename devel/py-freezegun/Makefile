@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:12:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/05/21 19:50:25 kmos Exp $
 
 COMMENT =		let your Python tests travel through time
 
 MODPY_EGG_VERSION =	0.3.12
 DISTNAME =		freezegun-${MODPY_EGG_VERSION}
 PKGNAME =		py-freezegun-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2021/02/23 19:39:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/05/21 19:50:32 kmos Exp $
 
 # This port is known to generate errors on (some) radeon cards.
 # Intel cards appear to work fine.
@@ -7,7 +7,7 @@ V =			1.3.110
 COMMENT =		guitar hero clone
 DISTNAME =		FretsOnFire-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		12
+REVISION =		13
 
 CATEGORIES =		games x11
 

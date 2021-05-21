@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/05/21 19:50:30 kmos Exp $
 
 COMMENT =		backport of type hints for python
 
 MODPY_EGG_VERSION =	3.7.4.1
 DISTNAME =		typing-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

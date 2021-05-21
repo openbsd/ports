@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/23 19:39:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/05/21 19:50:32 kmos Exp $
 
 # Keep in sync with games/renpy!!!
 V =		7.3.5.606
 COMMENT =	Ren'Py fork of pygame
 PKGNAME =	pygame_sdl2-${V}
 CATEGORIES =	games x11
+REVISION =	0
 
 GH_ACCOUNT =	renpy
 GH_PROJECT =	pygame_sdl2

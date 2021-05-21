@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/05/21 19:50:25 kmos Exp $
 
 COMMENT =	display the Python traceback on a crash
 
 MODPY_EGG_VERSION =	3.0
 DISTNAME =	faulthandler-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

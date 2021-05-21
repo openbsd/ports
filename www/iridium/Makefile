@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2021/05/10 15:26:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.110 2021/05/21 19:50:37 kmos Exp $
 
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
 
@@ -19,6 +19,7 @@ V=			2021.03.88
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
+REVISION=		0
 
 CATEGORIES=		www
 

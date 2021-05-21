@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/05/21 19:50:31 kmos Exp $
 
 COMMENT =		backport of new features added to unittest
 
 MODPY_EGG_VERSION =	1.1.0
-REVISION =		0
+REVISION =		1
 DISTNAME =		unittest2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel

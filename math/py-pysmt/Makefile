@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/19 23:13:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/05/21 19:50:32 kmos Exp $
 
 COMMENT =		library for SMT formulae manipulation and solving
 
 MODPY_EGG_VERSION =	0.8.0
 DISTNAME =		PySMT-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		math
 

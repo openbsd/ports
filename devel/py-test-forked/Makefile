@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:12:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/05/21 19:50:30 kmos Exp $
 
 COMMENT =		run each test in a forked subprocess
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	0.2
 
 DISTNAME =		pytest-forked-${MODPY_EGG_VERSION}
 PKGNAME =		py-test-forked-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:12:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/05/21 19:50:22 kmos Exp $
 
 COMMENT =		serialize and deserialize AMF data
 
 MODPY_EGG_VERSION =	0.9.1
 DISTNAME =		Mini-AMF-${MODPY_EGG_VERSION}
 PKGNAME =		py-mini-amf-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		converters
 HOMEPAGE =		https://github.com/zackw/mini-amf

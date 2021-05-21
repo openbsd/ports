@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:12:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/05/21 19:50:24 kmos Exp $
 
 COMMENT =		python attributes without boilerplate
 
 MODPY_EGG_VERSION =	14.3.0
 DISTNAME =		characteristic-${MODPY_EGG_VERSION}
 PKGNAME =		py-characteristic-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 

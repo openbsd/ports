@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:12:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/05/21 19:50:23 kmos Exp $
 
 COMMENT =	namespace control and lazy-import mechanism for Python
 
@@ -6,7 +6,7 @@ DISTNAME =		apipkg-${MODPY_EGG_VERSION}
 MODPY_EGG_VERSION =	1.4
 MODPY_PI =		Yes
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =	devel
 

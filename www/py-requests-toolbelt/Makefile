@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2021/01/07 08:29:55 paco Exp $
+# $OpenBSD: Makefile,v 1.7 2021/05/21 19:50:39 kmos Exp $
 
 COMMENT =		utility belt for advanced users of python-requests
 
 MODPY_EGG_VERSION =	0.9.1
 DISTNAME =		requests-toolbelt-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
 

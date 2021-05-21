@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/01/10 22:16:48 daniel Exp $
+# $OpenBSD: Makefile,v 1.8 2021/05/21 19:50:39 kmos Exp $
 
 COMMENT =		windowing and multimedia library for Python
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.4.11
 DISTNAME =		pyglet-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 EXTRACT_SUFX =		.zip
+REVISION =		0
 
 CATEGORIES =		x11 multimedia
 

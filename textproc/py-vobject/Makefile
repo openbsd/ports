@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2021/02/19 23:13:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/05/21 19:50:37 kmos Exp $
 
 COMMENT =		iCalendar library for Python
 
 MODPY_EGG_VERSION =	0.9.6.1
 DISTNAME =		vobject-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES=		textproc devel
 

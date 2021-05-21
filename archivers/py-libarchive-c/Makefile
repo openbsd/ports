@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:12:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/05/21 19:50:22 kmos Exp $
 
 MODPY_EGG_VERSION =	2.9
 COMMENT =	Python interface to libarchive
 DISTNAME =	libarchive-c-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	archivers devel
-REVISION =	0
+REVISION =	1
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2021/02/23 19:39:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/05/21 19:50:33 kmos Exp $
 
 COMMENT =	emulator for rapid prototyping of software defined networks
 
 V=		2.2.2
 DISTNAME =	mininet-$V
 EXTRACT_SUFX =	.tar.gz
+REVISION =	0
 
 CATEGORIES =	net
 

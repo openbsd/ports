@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:13:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/05/21 19:50:39 kmos Exp $
 
 COMMENT =	Python wrapper for Xvfb, Xephyr and Xvnc
 
 MODPY_EGG_VERSION = 0.2.1
 DISTNAME =	PyVirtualDisplay-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:L:S/^py/py-/}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	x11
 

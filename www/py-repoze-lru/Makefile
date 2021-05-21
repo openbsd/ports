@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2021/02/27 18:40:40 daniel Exp $
+# $OpenBSD: Makefile,v 1.10 2021/05/21 19:50:38 kmos Exp $
 
 COMMENT =	tiny LRU cache implementation and decorator
 
 MODPY_EGG_VERSION = 0.6
 DISTNAME =	repoze.lru-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/./-/}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	www devel
 

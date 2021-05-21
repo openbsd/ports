@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/05/21 19:50:24 kmos Exp $
 
 COMMENT =		Python 3.5 configparser for Python 2.6 - 3.5
 
@@ -7,7 +7,7 @@ DISTNAME =		configparser-${MODPY_EGG_VERSION}
 PKGNAME =		py-configparser-${MODPY_EGG_VERSION}
 EPOCH =			0
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://bitbucket.org/ambv/configparser
 

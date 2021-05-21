@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/05/21 19:50:35 kmos Exp $
 
 COMMENT =		memory artifact extraction utility framework
 
 MODPY_EGG_VERSION =	2.6.1
-REVISION =		0
+REVISION =		1
 DISTNAME =		volatility-${MODPY_EGG_VERSION}
 
 GH_ACCOUNT =		volatilityfoundation

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2100 2021/05/15 20:18:12 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2101 2021/05/21 19:50:22 kmos Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1589,7 +1589,7 @@
      SUBDIR += py-serial
      SUBDIR += py-serial,python3
      SUBDIR += py-setproctitle,python3
-     SUBDIR += py-setuptools
+     SUBDIR += py2-setuptools
      SUBDIR += py-setuptools,python3
      SUBDIR += py-setuptools_git
      SUBDIR += py-setuptools_git,python3

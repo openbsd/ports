@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/06/27 15:59:57 kmos Exp $
+# $OpenBSD: Makefile,v 1.5 2021/05/21 19:50:28 kmos Exp $
 
 COMMENT =		easy to use progressbar library for python
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.5
 DISTNAME =		progress-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
+REVISION =		0
 
 HOMEPAGE =		https://github.com/verigak/progress/
 

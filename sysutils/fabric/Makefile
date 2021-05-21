@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/05/21 19:50:35 kmos Exp $
 
 COMMENT =		simple, pythonic tool for remote execution and deployment
 
 MODPY_EGG_VERSION =	1.14.0
 DISTNAME =		Fabric-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:L}
+REVISION =		0
 
 CATEGORIES =		sysutils
 

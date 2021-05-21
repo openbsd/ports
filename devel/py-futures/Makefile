@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/23 19:39:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/05/21 19:50:26 kmos Exp $
 
 COMMENT=	futures implementation for Python
 
@@ -7,6 +7,7 @@ DISTNAME=	futures-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
 MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
+REVISION=	0
 
 # Python Software Foundation license
 PERMIT_PACKAGE=	Yes

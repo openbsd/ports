@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2021/01/04 14:06:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/05/21 19:50:34 kmos Exp $
 
 COMMENT=		PDF-generating toolkit for Python
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION=	3.2.0
 DISTNAME=		reportlab-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 EPOCH=			0
-REVISION=		7
+REVISION=		8
 
 # see patches/patch-setup_py
 # grep 'archive =' reportlab-3.2.0/setup.py
