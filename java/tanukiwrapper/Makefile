@@ -1,17 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2021/01/06 13:30:22 solene Exp $
-
-# would normally be set in java.port.mk, but i2p pulls in bsd.port.arch.mk
-# itself which interferes with ONLY_FOR_ARCHS coming from MODULES.
-# list is for jdk 1.8 arches.
-ONLY_FOR_ARCHS= amd64 i386
-
-BROKEN-i386=	various relocation R_386_PC32 cannot be used against symbol XX
+# $OpenBSD: Makefile,v 1.21 2021/05/21 11:51:08 kurt Exp $
 
 COMMENT=	Tanuki Java Service Wrapper
 
 V=		3.5.45
 DISTNAME=	wrapper_${V}_src
 PKGNAME=	java-tanukiwrapper-${V}
+REVISION=	0
 CATEGORIES=	java
 
 HOMEPAGE=	https://wrapper.tanukisoftware.com/
@@ -27,11 +21,15 @@ MODULES=	java
 MODJAVA_VER=	1.8
 MODJAVA_BUILD=	ant
 
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mlp64}
-BITS=64
-.else
+.if ${MACHINE_ARCH} == "i386"
 BITS=32
+MAKE_ARCH=x86-32
+.elif ${MACHINE_ARCH} == "amd64"
+BITS=64
+MAKE_ARCH=x86-64
+.elif ${MACHINE_ARCH} == "aarch64"
+BITS=64
+MAKE_ARCH=armhf-64
 .endif
 
 MODJAVA_BUILD_ARGS= -Dbits=${BITS}
@@ -45,10 +43,10 @@ USE_GMAKE=	Yes
 SUBST_VARS+=	CC CFLAGS
 
 post-extract:
-	cp ${FILESDIR}/Makefile-openbsd-x86-${BITS}.gmake ${WRKSRC}/src/c/
+	cp ${FILESDIR}/Makefile-openbsd-${MAKE_ARCH}.gmake ${WRKSRC}/src/c/
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/c/Makefile-openbsd-x86-${BITS}.gmake
+	${SUBST_CMD} ${WRKSRC}/src/c/Makefile-openbsd-${MAKE_ARCH}.gmake
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/java/classes/  \
