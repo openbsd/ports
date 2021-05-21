@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2020/10/04 09:58:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2021/05/21 04:50:39 ajacoutot Exp $
 
 PORTROACH=		limit:^1.14
 
@@ -7,7 +7,7 @@ NOT_FOR_ARCHS=		m88k
 
 COMMENT=		C++ interface for cairo
 
-DISTNAME=		cairomm-1.14.2
+DISTNAME=		cairomm-1.14.3
 EXTRACT_SUFX=		.tar.xz
 
 SHARED_LIBS += cairomm-1.0               5.2 # 1.4.0
