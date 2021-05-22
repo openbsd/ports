@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2021/04/03 21:48:56 sebastia Exp $
+# $OpenBSD: Makefile,v 1.12 2021/05/22 21:54:07 sebastia Exp $
 
 COMMENT =	convert pcap dumps to hashcat or John the Ripper input
 
 GH_ACCOUNT =	ZerBea
 GH_PROJECT =	hcxtools
-GH_TAGNAME =	6.1.6
+GH_TAGNAME =	6.2.0
 DISTNAME =	hcxtools-${GH_TAGNAME}
 
 CATEGORIES =	security
@@ -15,15 +15,10 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto ssl pthread curl z
-#WANTLIB += lib/eopenssl11/crypto
-#WANTLIB += lib/eopenssl11/ssl
 LIB_DEPENDS +=	net/curl
-#		security/openssl/1.1
 
 USE_GMAKE =	Yes
 ALL_TARGET =
-
-#LDFLAGS += -Wl,-rpath=${LOCALBASE}/lib/eopenssl11 -L${LOCALBASE}/lib/eopenssl11 -L${LOCALBASE}/lib
 
 MAKE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"
 MAKE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
