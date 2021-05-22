@@ -1,4 +1,4 @@
-$OpenBSD: patch-GNUmakefile,v 1.2 2020/07/10 16:22:31 bcallah Exp $
+$OpenBSD: patch-GNUmakefile,v 1.3 2021/05/22 19:13:18 cwen Exp $
 
 Don't build wayland renderer.
 Correct shared library numbers.
@@ -12,16 +12,16 @@ Don't install library symlinks but do install the shared library.
 Index: GNUmakefile
 --- GNUmakefile.orig
 +++ GNUmakefile
-@@ -20,7 +20,7 @@ override CPPFLAGS += -D_DEFAULT_SOURCE -Ilib
- libs = libbemenu.so
+@@ -22,7 +22,7 @@ libs = libbemenu.so
  pkgconfigs = bemenu.pc
  bins = bemenu bemenu-run
+ mans = bemenu.1
 -renderers = bemenu-renderer-x11.so bemenu-renderer-curses.so bemenu-renderer-wayland.so
 +renderers = bemenu-renderer-x11.so bemenu-renderer-curses.so
- all: $(bins) $(renderers)
+ all: $(bins) $(renderers) $(mans)
  clients: $(bins)
  curses: bemenu-renderer-curses.so
-@@ -35,12 +35,10 @@ wayland: bemenu-renderer-wayland.so
+@@ -37,12 +37,10 @@ wayland: bemenu-renderer-wayland.so
  %.a:
  	$(LINK.c) -c $(filter %.c,$^) $(LDLIBS) -o $@
  
@@ -36,7 +36,7 @@ Index: GNUmakefile
  
  $(pkgconfigs): %: VERSION %.in
  	sed "s/@VERSION@/$(VERSION)/;s,@PREFIX@,$(PREFIX),;s,@LIBDIR@,$(libdir)," $(addsuffix .in, $@) > $@
-@@ -53,11 +51,10 @@ $(bins): %: | $(libs)
+@@ -58,11 +56,10 @@ $(bins): %: | $(libs)
  
  cdl.a: lib/3rdparty/cdl.c lib/3rdparty/cdl.h
  
@@ -50,7 +50,7 @@ Index: GNUmakefile
  bemenu-renderer-curses.so: lib/renderers/curses/curses.c
  
  bemenu-renderer-x11.so: private override LDLIBS += $(shell pkg-config --libs x11 xinerama cairo pango pangocairo)
-@@ -93,9 +90,9 @@ install-include: lib/bemenu.h
+@@ -106,9 +103,9 @@ install-include: lib/bemenu.h
  	mkdir -p "$(DESTDIR)$(PREFIX)$(includedir)"
  	cp $^ "$(DESTDIR)$(PREFIX)$(includedir)"
  
@@ -62,7 +62,7 @@ Index: GNUmakefile
  
  install-lib-symlinks: $(libs) | install-libs
  	cp -RP $^ $(addsuffix .$(firstword $(subst ., ,$(VERSION))), $^) "$(DESTDIR)$(PREFIX)$(libdir)"
-@@ -123,7 +120,7 @@ install-x11:
+@@ -136,7 +133,7 @@ install-x11:
  	mkdir -p "$(DESTDIR)$(PREFIX)$(libdir)/bemenu"
  	-cp bemenu-renderer-x11.so "$(DESTDIR)$(PREFIX)$(libdir)/bemenu"
  
