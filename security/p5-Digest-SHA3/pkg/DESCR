@@ -1,0 +1,3 @@
+Digest::SHA3 is a complete implementation of the NIST SHA-3 cryptographic hash
+function, as specified in Draft FIPS 202 (SHA-3 Standard: Permutation-Based
+Hash and Extendable-Output Functions).
