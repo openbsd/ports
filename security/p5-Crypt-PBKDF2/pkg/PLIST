@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/22 16:21:14 afresh1 Exp $
+${P5SITE}/Crypt/
+${P5SITE}/Crypt/PBKDF2/
+${P5SITE}/Crypt/PBKDF2.pm
+${P5SITE}/Crypt/PBKDF2/Hash/
+${P5SITE}/Crypt/PBKDF2/Hash.pm
+${P5SITE}/Crypt/PBKDF2/Hash/DigestHMAC.pm
+${P5SITE}/Crypt/PBKDF2/Hash/HMACSHA1.pm
+${P5SITE}/Crypt/PBKDF2/Hash/HMACSHA2.pm
+${P5SITE}/Crypt/PBKDF2/Hash/HMACSHA3.pm
+@man man/man3p/Crypt::PBKDF2.3p
+@man man/man3p/Crypt::PBKDF2::Hash.3p
+@man man/man3p/Crypt::PBKDF2::Hash::DigestHMAC.3p
+@man man/man3p/Crypt::PBKDF2::Hash::HMACSHA1.3p
+@man man/man3p/Crypt::PBKDF2::Hash::HMACSHA2.3p
+@man man/man3p/Crypt::PBKDF2::Hash::HMACSHA3.3p
