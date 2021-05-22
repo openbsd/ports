@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.11 2021/01/19 06:16:29 rsadowski Exp $
+@comment $OpenBSD: PLIST-html,v 1.12 2021/05/22 05:20:11 rsadowski Exp $
 @conflict qt3d-html-*
 @conflict qtactiveqt-html-*
 @conflict qtbase-html-*
@@ -553,24 +553,11 @@ share/doc/qt5/qt3d/qt3danimation.html
 share/doc/qt5/qt3d/qt3dcore-module.html
 share/doc/qt5/qt3d/qt3dcore-qabstractaspect-proxy.html
 share/doc/qt5/qt3d/qt3dcore-qaspectengine-proxy.html
-share/doc/qt5/qt3d/qt3dcore-qcomponentaddedchange-proxy.html
-share/doc/qt5/qt3d/qt3dcore-qcomponentremovedchange-proxy.html
-share/doc/qt5/qt3d/qt3dcore-qdynamicpropertyupdatedchange-proxy.html
 share/doc/qt5/qt3d/qt3dcore-qentity-proxy.html
 share/doc/qt5/qt3d/qt3dcore-qnode-proxy.html
 share/doc/qt5/qt3d/qt3dcore-qnodecommand-proxy.html
 share/doc/qt5/qt3d/qt3dcore-qnodecreatedchange.html
 share/doc/qt5/qt3d/qt3dcore-qnodecreatedchangebase-proxy.html
-share/doc/qt5/qt3d/qt3dcore-qnodedestroyedchange-proxy.html
-share/doc/qt5/qt3d/qt3dcore-qpropertynodeaddedchange-proxy.html
-share/doc/qt5/qt3d/qt3dcore-qpropertynoderemovedchange-proxy.html
-share/doc/qt5/qt3d/qt3dcore-qpropertyupdatedchange-proxy.html
-share/doc/qt5/qt3d/qt3dcore-qpropertyupdatedchangebase-proxy.html
-share/doc/qt5/qt3d/qt3dcore-qpropertyvalueaddedchange-proxy.html
-share/doc/qt5/qt3d/qt3dcore-qpropertyvalueaddedchangebase-proxy.html
-share/doc/qt5/qt3d/qt3dcore-qpropertyvalueremovedchange-proxy.html
-share/doc/qt5/qt3d/qt3dcore-qpropertyvalueremovedchangebase-proxy.html
-share/doc/qt5/qt3d/qt3dcore-qstaticpropertyupdatedchangebase-proxy.html
 share/doc/qt5/qt3d/qt3dcore.html
 share/doc/qt5/qt3d/qt3dextras-module.html
 share/doc/qt5/qt3d/qt3dinput-module.html
