@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/22 17:57:34 paco Exp $
+@bin bin/hcloud
+share/doc/hcloud/
+share/doc/hcloud/README.md
+share/examples/hcloud/
+share/examples/hcloud/firewall_rules.json

@@ -1,0 +1,4 @@
+Manage Hetzner Cloud Server from the command line.
+
+Hcloud is is a command line utility written in go, which implements the
+Hetzner Cloud API as described in https://docs.hetzner.cloud
