@@ -1,6 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/10/06 17:01:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/05/22 16:23:44 afresh1 Exp $
 ${P5SITE}/Crypt/
+${P5SITE}/Crypt/CBC/
 ${P5SITE}/Crypt/CBC.pm
+${P5SITE}/Crypt/CBC/PBKDF/
+${P5SITE}/Crypt/CBC/PBKDF.pm
+${P5SITE}/Crypt/CBC/PBKDF/none.pm
+${P5SITE}/Crypt/CBC/PBKDF/opensslv1.pm
+${P5SITE}/Crypt/CBC/PBKDF/opensslv2.pm
+${P5SITE}/Crypt/CBC/PBKDF/pbkdf2.pm
+${P5SITE}/Crypt/CBC/PBKDF/randomiv.pm
 @man man/man3p/Crypt::CBC.3p
 share/examples/p5-Crypt-CBC/
 share/examples/p5-Crypt-CBC/aes.pl
