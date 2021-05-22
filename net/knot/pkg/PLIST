@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/11/06 23:02:23 jca Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/05/22 22:00:31 jca Exp $
 @newgroup _knot:751
 @newuser _knot:751:_knot::Knot DNS Server:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/knot
@@ -49,6 +49,9 @@ include/libknot/packet/compr.h
 include/libknot/packet/pkt.h
 include/libknot/packet/rrset-wire.h
 include/libknot/packet/wire.h
+include/libknot/probe/
+include/libknot/probe/data.h
+include/libknot/probe/probe.h
 include/libknot/rdata.h
 include/libknot/rdataset.h
 include/libknot/rrset-dump.h
