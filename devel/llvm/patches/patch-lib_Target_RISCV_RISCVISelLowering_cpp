@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_Target_RISCV_RISCVISelLowering_cpp,v 1.1 2021/05/22 20:27:35 jca Exp $
+
+- enable EmuTLS on RiscV.
+
+Index: lib/Target/RISCV/RISCVISelLowering.cpp
+--- lib/Target/RISCV/RISCVISelLowering.cpp.orig
++++ lib/Target/RISCV/RISCVISelLowering.cpp
+@@ -634,6 +634,10 @@ SDValue RISCVTargetLowering::getDynamicTLSAddr(GlobalA
+ 
+ SDValue RISCVTargetLowering::lowerGlobalTLSAddress(SDValue Op,
+                                                    SelectionDAG &DAG) const {
++  const GlobalAddressSDNode *GA = cast<GlobalAddressSDNode>(Op);
++  if (DAG.getTarget().useEmulatedTLS())
++    return LowerToTLSEmulatedModel(GA, DAG);
++
+   SDLoc DL(Op);
+   EVT Ty = Op.getValueType();
+   GlobalAddressSDNode *N = cast<GlobalAddressSDNode>(Op);
