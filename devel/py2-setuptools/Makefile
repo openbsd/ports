@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/05/21 19:43:49 kmos Exp $
+# $OpenBSD: Makefile,v 1.2 2021/05/22 09:54:40 ajacoutot Exp $
 
 COMMENT =	simplified packaging system for Python modules
 
@@ -34,7 +34,7 @@ SUBST_VARS+ =		MODPY_FLAVOR
 # Not listed, but needed for tests
 TEST_DEPENDS =		devel/py-futures \
 			devel/py-mock \
-			devel/py-pip$ \
+			devel/py-pip \
 			devel/py-wheel \
 			sysutils/py-packaging
 
