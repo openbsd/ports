@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_cpp_core_HtmlUtils_cpp,v 1.1 2021/05/22 12:01:39 rsadowski Exp $
+
+fix building with boost 1.75.
+
+Index: src/cpp/core/HtmlUtils.cpp
+--- src/cpp/core/HtmlUtils.cpp.orig
++++ src/cpp/core/HtmlUtils.cpp
+@@ -19,12 +19,15 @@
+ 
+ #include <boost/format.hpp>
+ #include <boost/algorithm/string/predicate.hpp>
++#include <boost/bind/bind.hpp>
+ 
+ #include <core/Base64.hpp>
+ #include <core/FileSerializer.hpp>
+ #include <core/RegexUtils.hpp>
+ 
+ #include <core/http/Util.hpp>
++
++using namespace boost::placeholders;
+ 
+ namespace rstudio {
+ namespace core {

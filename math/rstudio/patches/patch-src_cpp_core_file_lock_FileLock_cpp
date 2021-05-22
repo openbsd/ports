@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_cpp_core_file_lock_FileLock_cpp,v 1.1 2021/05/22 12:01:39 rsadowski Exp $
+
+fix building with boost 1.75.
+
+Index: src/cpp/core/file_lock/FileLock.cpp
+--- src/cpp/core/file_lock/FileLock.cpp.orig
++++ src/cpp/core/file_lock/FileLock.cpp
+@@ -26,9 +26,12 @@
+ #include <core/system/Environment.hpp>
+ 
+ #include <boost/algorithm/string.hpp>
++#include <boost/bind/bind.hpp>
+ 
+ // borrowed from SessionConstants.hpp
+ #define kRStudioSessionRoute "RSTUDIO_SESSION_ROUTE"
++
++using namespace boost::placeholders;
+ 
+ namespace rstudio {
+ namespace core {
