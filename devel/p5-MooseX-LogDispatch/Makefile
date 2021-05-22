@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/05/22 19:55:49 afresh1 Exp $
 
 COMMENT=		logging role for Moose
 
@@ -12,6 +12,9 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*
+
+# Avoid Module::AutoInstall magic
+CONFIGURE_ARGS=		--skipdeps
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/p5-IO-stringy \
