@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/01/04 14:06:35 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/05/22 21:47:29 namn Exp $
 include/libtorrent/
 include/libtorrent/add_torrent_params.hpp
 include/libtorrent/address.hpp
@@ -43,6 +43,7 @@ include/libtorrent/aux_/noexcept_movable.hpp
 include/libtorrent/aux_/numeric_cast.hpp
 include/libtorrent/aux_/openssl.hpp
 include/libtorrent/aux_/path.hpp
+include/libtorrent/aux_/pool.hpp
 include/libtorrent/aux_/portmap.hpp
 include/libtorrent/aux_/proxy_settings.hpp
 include/libtorrent/aux_/range.hpp

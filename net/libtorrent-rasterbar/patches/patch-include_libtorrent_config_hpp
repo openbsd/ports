@@ -1,8 +1,8 @@
-$OpenBSD: patch-include_libtorrent_config_hpp,v 1.4 2020/09/04 04:24:28 rsadowski Exp $
+$OpenBSD: patch-include_libtorrent_config_hpp,v 1.5 2021/05/22 21:47:28 namn Exp $
 Index: include/libtorrent/config.hpp
 --- include/libtorrent/config.hpp.orig
 +++ include/libtorrent/config.hpp
-@@ -414,6 +414,10 @@ POSSIBILITY OF SUCH DAMAGE.
+@@ -429,6 +429,10 @@ POSSIBILITY OF SUCH DAMAGE.
  #define TORRENT_USE_UNC_PATHS 0
  #endif
  
