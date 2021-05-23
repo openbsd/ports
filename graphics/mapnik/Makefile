@@ -1,43 +1,37 @@
-# $OpenBSD: Makefile,v 1.37 2021/02/23 19:39:25 sthen Exp $
-
-BROKEN =	undefined reference to '_ZN6icu_5613UnicodeStringC1EOS0_'
-
-# out of memory, renderer_common/process_group_symbolizer.cpp
-# powerpc &sparc64 OOM's on expression_grammar.cpp
-ONLY_FOR_ARCHS =	amd64
+# $OpenBSD: Makefile,v 1.38 2021/05/23 17:47:00 kirby Exp $
 
 COMMENT =	toolkit for developing mapping applications
 
-DISTNAME =	mapnik-v3.0.10
+# Check if next release incorporates support for new PROJ
+V =		3.1.0
+DISTNAME =	mapnik-v${V}
 PKGNAME =	${DISTNAME:S/v//}
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	5
 
-SHARED_LIBS =	mapnik 3.0 #3.0
+SHARED_LIBS =	mapnik 4.0 #3.0
 CATEGORIES =	graphics geo
 
-HOMEPAGE =	http://mapnik.org/
-MAINTAINER =	Landry Breuil <landry@openbsd.org>
+HOMEPAGE =	https://mapnik.org/
+
 DPB_PROPERTIES = nojunk
 
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += X11 Xau Xdmcp Xext Xrender boost_filesystem-mt
-WANTLIB += boost_program_options-mt boost_regex-mt harfbuzz webp
-WANTLIB += boost_system-mt c cairo expat fontconfig freetype 
-WANTLIB += gdal glib-2.0 gobject-2.0 iconv icuuc intl jpeg m pcre pixman-1
-WANTLIB += png>=17.0 pq proj pthread sqlite3 tiff
-WANTLIB += xcb xcb-render xcb-shm z ${COMPILER_LIBCXX}
+WANTLIB += X11 Xau Xdmcp Xext Xrender boost_filesystem
+WANTLIB += boost_program_options boost_regex harfbuzz webp
+WANTLIB += boost_system c cairo expat ffi fontconfig freetype
+WANTLIB += gdal glib-2.0 gobject-2.0 icudata icui18n icuuc
+WANTLIB += intl jpeg m pcre pixman-1 png>=17.0 pq pthread
+WANTLIB += sqlite3 tiff xcb xcb-render xcb-shm xml2 z ${COMPILER_LIBCXX}
 
-MASTER_SITES =	http://mapnik.s3.amazonaws.com/dist/v3.0.10/
+MASTER_SITES =	https://github.com/mapnik/mapnik/releases/download/v${V}/
 MODULES =	devel/scons \
 		lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
-# clang doesnt ship cstdint ?
+# C++14
 COMPILER =	base-clang ports-gcc
-MODGCC4_ARCHS =	amd64 i386 powerpc sparc64
 
 TEST_DEPENDS =	shells/bash \
 		${BUILD_PKGPATH}
@@ -46,7 +40,6 @@ LIB_DEPENDS =	devel/boost>=1.58 \
 		databases/sqlite3 \
 		graphics/cairo \
 		graphics/libwebp \
-		devel/proj \
 		devel/harfbuzz \
 		geo/gdal \
 		textproc/icu4c
@@ -60,14 +53,19 @@ MODSCONS_FLAGS =	PREFIX="${TRUEPREFIX}" \
 			HB_LIBS=${LOCALBASE}/lib \
 			WARNING_CXXFLAGS="-I${X11BASE}/include/freetype2" \
 			SYSTEM_FONTS=${X11BASE}/lib/X11/fonts/TTF/ \
+			CUSTOM_LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			FAST=yes \
-			INPUT_PLUGINS=raster,postgis,shape,gdal,ogr,sqlite
+			INPUT_PLUGINS=raster,postgis,shape,gdal,ogr,sqlite \
+			XMLPARSER=libxml2
 
 pre-configure:
 	# subst shlib version
 	${SUBST_CMD} ${WRKSRC}/src/build.py
 
 do-test:
+	# Test data cuold be fetched from github and extracted to test subdir.
+	# https://github.com/mapnik/test-data
+	# https://github.com/mapnik/test-data-visual
 	# warning: some tests may swap your machine to death
 	# python_tests.datasource_test.test_hit_grid may stall gobbling all cpu
 	# python_tests.geometry_io_test.test_wkb_parsing may segfault

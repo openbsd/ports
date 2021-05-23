@@ -1,8 +1,9 @@
-$OpenBSD: patch-SConstruct,v 1.7 2016/09/04 16:46:57 landry Exp $
+$OpenBSD: patch-SConstruct,v 1.8 2021/05/23 17:47:01 kirby Exp $
 2nd chunk is needed for proper boost_thread detection
---- SConstruct.orig	Fri Feb 26 03:02:05 2016
-+++ SConstruct	Sun Sep  4 17:29:08 2016
-@@ -290,7 +290,7 @@ opts.AddVariables(
+Index: SConstruct
+--- SConstruct.orig
++++ SConstruct
+@@ -297,7 +297,7 @@ opts.AddVariables(
      ('CUSTOM_LDFLAGS', 'Custom linker flags, e.g. -L<lib dir> if you have libraries in a nonstandard directory <lib dir>', ''),
      EnumVariable('LINKING', "Set library format for libmapnik",'shared', ['shared','static']),
      EnumVariable('RUNTIME_LINK', "Set preference for linking dependencies",'shared', ['shared','static']),
@@ -10,14 +11,14 @@ $OpenBSD: patch-SConstruct,v 1.7 2016/09/04 16:46:57 landry Exp $
 +    EnumVariable('OPTIMIZATION','Set compiler optimization level','2', ['0','1','2','3','4','s']),
      # Note: setting DEBUG=True will override any custom OPTIMIZATION level
      BoolVariable('DEBUG', 'Compile a debug version of Mapnik', 'False'),
-     BoolVariable('DEBUG_UNDEFINED', 'Compile a version of Mapnik using clang/llvm undefined behavior asserts', 'False'),
-@@ -1415,6 +1415,9 @@ if not preconfigured:
-             # of attaching to cxxflags after configure
-             if env['PLATFORM'] == 'SunOS':
-                 env.Append(CXXFLAGS = '-pthreads')
-+            if env['PLATFORM'] == 'OpenBSD':
-+                env.Append(CXXFLAGS = '-pthread')
-+
+     BoolVariable('COVERAGE', 'Compile a libmapnik and plugins with --coverage', 'False'),
+@@ -1364,6 +1364,9 @@ if not preconfigured:
  
-         # if requested, sort LIBPATH and CPPPATH before running CheckLibWithHeader tests
-         if env['PRIORITIZE_LINKING']:
+     thread_suffix = 'mt'
+     if env['PLATFORM'] == 'FreeBSD':
++        thread_suffix = ''
++        env.Append(LIBS = 'pthread')
++    if env['PLATFORM'] == 'OpenBSD':
+         thread_suffix = ''
+         env.Append(LIBS = 'pthread')
+ 

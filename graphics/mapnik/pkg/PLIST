@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/09/18 20:07:09 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/05/23 17:47:01 kirby Exp $
 bin/mapnik-config
-@bin bin/nik2img
+@bin bin/mapnik-index
+@bin bin/mapnik-render
 @bin bin/shapeindex
 include/mapnik/
 include/mapnik/agg/
@@ -139,11 +140,13 @@ include/mapnik/attribute_collector.hpp
 include/mapnik/attribute_descriptor.hpp
 include/mapnik/boolean.hpp
 include/mapnik/box2d.hpp
+include/mapnik/box2d_impl.hpp
 include/mapnik/cairo/
 include/mapnik/cairo/cairo_context.hpp
 include/mapnik/cairo/cairo_image_util.hpp
 include/mapnik/cairo/cairo_render_vector.hpp
 include/mapnik/cairo/cairo_renderer.hpp
+include/mapnik/cairo/render_polygon_pattern.hpp
 include/mapnik/cairo_io.hpp
 include/mapnik/color.hpp
 include/mapnik/color_factory.hpp
@@ -154,6 +157,9 @@ include/mapnik/css_color_grammar.hpp
 include/mapnik/css_color_grammar_impl.hpp
 include/mapnik/csv/
 include/mapnik/csv/csv_grammar.hpp
+include/mapnik/csv/csv_grammar_impl.hpp
+include/mapnik/csv/csv_types.hpp
+include/mapnik/cxx11_support.hpp
 include/mapnik/datasource.hpp
 include/mapnik/datasource_cache.hpp
 include/mapnik/datasource_geometry_type.hpp
@@ -194,6 +200,7 @@ include/mapnik/geometry_fusion_adapted.hpp
 include/mapnik/geometry_is_empty.hpp
 include/mapnik/geometry_is_simple.hpp
 include/mapnik/geometry_is_valid.hpp
+include/mapnik/geometry_remove_empty.hpp
 include/mapnik/geometry_reprojection.hpp
 include/mapnik/geometry_reprojection_impl.hpp
 include/mapnik/geometry_strategy.hpp
@@ -201,7 +208,6 @@ include/mapnik/geometry_to_path.hpp
 include/mapnik/geometry_transform.hpp
 include/mapnik/geometry_type.hpp
 include/mapnik/geometry_types.hpp
-include/mapnik/geometry_unique.hpp
 include/mapnik/global.hpp
 include/mapnik/gradient.hpp
 include/mapnik/grid/
@@ -213,8 +219,8 @@ include/mapnik/grid/grid_render_marker.hpp
 include/mapnik/grid/grid_renderer.hpp
 include/mapnik/grid/grid_renderer_base.hpp
 include/mapnik/grid/grid_rendering_buffer.hpp
-include/mapnik/grid/grid_util.hpp
 include/mapnik/grid/grid_view.hpp
+include/mapnik/grid_vertex_converter.hpp
 include/mapnik/group/
 include/mapnik/group/group_layout.hpp
 include/mapnik/group/group_layout_manager.hpp
@@ -248,6 +254,7 @@ include/mapnik/image_view_impl.hpp
 include/mapnik/image_view_null.hpp
 include/mapnik/jpeg_io.hpp
 include/mapnik/json/
+include/mapnik/json/attribute_value_visitor.hpp
 include/mapnik/json/error_handler.hpp
 include/mapnik/json/extract_bounding_box_grammar.hpp
 include/mapnik/json/extract_bounding_box_grammar_impl.hpp
@@ -266,11 +273,12 @@ include/mapnik/json/geometry_grammar.hpp
 include/mapnik/json/geometry_grammar_impl.hpp
 include/mapnik/json/geometry_parser.hpp
 include/mapnik/json/geometry_util.hpp
+include/mapnik/json/positions.hpp
 include/mapnik/json/positions_grammar.hpp
 include/mapnik/json/positions_grammar_impl.hpp
 include/mapnik/json/properties_generator_grammar.hpp
 include/mapnik/json/properties_generator_grammar_impl.hpp
-include/mapnik/json/symbolizer_grammar.hpp
+include/mapnik/json/stringifier.hpp
 include/mapnik/json/topojson_grammar.hpp
 include/mapnik/json/topojson_grammar_impl.hpp
 include/mapnik/json/topojson_utils.hpp
@@ -281,12 +289,19 @@ include/mapnik/layer.hpp
 include/mapnik/load_map.hpp
 include/mapnik/make_unique.hpp
 include/mapnik/map.hpp
+include/mapnik/mapbox/
+include/mapnik/mapbox/optional.hpp
+include/mapnik/mapbox/recursive_wrapper.hpp
+include/mapnik/mapbox/variant.hpp
+include/mapnik/mapbox/variant_io.hpp
+include/mapnik/mapbox/variant_visitor.hpp
 include/mapnik/mapped_memory_cache.hpp
 include/mapnik/marker.hpp
 include/mapnik/marker_cache.hpp
 include/mapnik/marker_helpers.hpp
 include/mapnik/markers_placement.hpp
 include/mapnik/markers_placements/
+include/mapnik/markers_placements/basic.hpp
 include/mapnik/markers_placements/interior.hpp
 include/mapnik/markers_placements/line.hpp
 include/mapnik/markers_placements/point.hpp
@@ -294,7 +309,6 @@ include/mapnik/markers_placements/vertext_first.hpp
 include/mapnik/markers_placements/vertext_last.hpp
 include/mapnik/memory_datasource.hpp
 include/mapnik/memory_featureset.hpp
-include/mapnik/miniz_png.hpp
 include/mapnik/octree.hpp
 include/mapnik/offset_converter.hpp
 include/mapnik/palette.hpp
@@ -341,6 +355,7 @@ include/mapnik/sparsehash/template_util.h
 include/mapnik/sparsehash/type_traits.h
 include/mapnik/sql_utils.hpp
 include/mapnik/sse.hpp
+include/mapnik/stringify_macro.hpp
 include/mapnik/svg/
 include/mapnik/svg/geometry_svg_generator.hpp
 include/mapnik/svg/geometry_svg_generator_impl.hpp
@@ -351,11 +366,14 @@ include/mapnik/svg/svg_path_adapter.hpp
 include/mapnik/svg/svg_path_attributes.hpp
 include/mapnik/svg/svg_path_commands.hpp
 include/mapnik/svg/svg_path_grammar.hpp
+include/mapnik/svg/svg_path_grammar_impl.hpp
 include/mapnik/svg/svg_path_parser.hpp
 include/mapnik/svg/svg_points_grammar.hpp
+include/mapnik/svg/svg_points_grammar_impl.hpp
 include/mapnik/svg/svg_renderer_agg.hpp
 include/mapnik/svg/svg_storage.hpp
 include/mapnik/svg/svg_transform_grammar.hpp
+include/mapnik/svg/svg_transform_grammar_impl.hpp
 include/mapnik/symbolizer.hpp
 include/mapnik/symbolizer_base.hpp
 include/mapnik/symbolizer_default_values.hpp
@@ -407,6 +425,7 @@ include/mapnik/transform_path_adapter.hpp
 include/mapnik/transform_processor.hpp
 include/mapnik/unicode.hpp
 include/mapnik/util/
+include/mapnik/util/char_array_buffer.hpp
 include/mapnik/util/const_rendering_buffer.hpp
 include/mapnik/util/container_adapter.hpp
 include/mapnik/util/conversions.hpp
@@ -423,12 +442,12 @@ include/mapnik/util/geometry_to_wkt.hpp
 include/mapnik/util/hsl.hpp
 include/mapnik/util/is_clockwise.hpp
 include/mapnik/util/math.hpp
+include/mapnik/util/name_to_int.hpp
 include/mapnik/util/noncopyable.hpp
 include/mapnik/util/path_iterator.hpp
-include/mapnik/util/recursive_wrapper.hpp
 include/mapnik/util/rounding_cast.hpp
 include/mapnik/util/singleton.hpp
-include/mapnik/util/spirit_transform_attribute.hpp
+include/mapnik/util/spatial_index.hpp
 include/mapnik/util/timer.hpp
 include/mapnik/util/trim.hpp
 include/mapnik/util/utf_conv_win.hpp
@@ -447,6 +466,8 @@ include/mapnik/vertex_processor.hpp
 include/mapnik/vertex_vector.hpp
 include/mapnik/view_strategy.hpp
 include/mapnik/view_transform.hpp
+include/mapnik/warning_ignore.hpp
+include/mapnik/warning_ignore_agg.hpp
 include/mapnik/warp.hpp
 include/mapnik/webp_io.hpp
 include/mapnik/well_known_srs.hpp
@@ -461,8 +482,8 @@ include/mapnik/xml_attribute_cast.hpp
 include/mapnik/xml_loader.hpp
 include/mapnik/xml_node.hpp
 include/mapnik/xml_tree.hpp
-lib/libmapnik-json.a
-lib/libmapnik-wkt.a
+@static-lib lib/libmapnik-json.a
+@static-lib lib/libmapnik-wkt.a
 @lib lib/libmapnik.so.${LIBmapnik_VERSION}
 lib/mapnik/
 lib/mapnik/input/

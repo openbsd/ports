@@ -1,9 +1,10 @@
-$OpenBSD: patch-src_build_py,v 1.5 2016/09/04 16:46:57 landry Exp $
---- src/build.py.orig	Fri Feb 26 03:02:05 2016
-+++ src/build.py	Sun Sep  4 17:29:08 2016
+$OpenBSD: patch-src_build_py,v 1.6 2021/05/23 17:47:01 kirby Exp $
+Index: src/build.py
+--- src/build.py.orig
++++ src/build.py
 @@ -37,9 +37,6 @@ def call(cmd, silent=True):
      elif not silent:
-         print stderr
+         print (stderr)
  
 -def ldconfig(*args,**kwargs):
 -    call('ldconfig')
@@ -11,7 +12,7 @@ $OpenBSD: patch-src_build_py,v 1.5 2016/09/04 16:46:57 landry Exp $
  if env['LINKING'] == 'static':
      lib_env.Append(CXXFLAGS="-fPIC")
  
-@@ -136,7 +133,7 @@ else: # unix, non-macos
+@@ -140,7 +137,7 @@ else: # unix, non-macos
          else:
              mapnik_lib_link_flag += ' -Wl,-h,%s' %  mapnik_libname
      else: # Linux and others
@@ -20,7 +21,7 @@ $OpenBSD: patch-src_build_py,v 1.5 2016/09/04 16:46:57 landry Exp $
              lib_env['LIBS'].append('dl')
          mapnik_lib_link_flag += ' -Wl,-rpath-link,.'
          if env['ENABLE_SONAME']:
-@@ -434,9 +431,7 @@ else:
+@@ -450,9 +447,7 @@ else:
              os.remove(trgt)
          os.symlink(os.path.basename(src), trgt)
  
@@ -31,7 +32,7 @@ $OpenBSD: patch-src_build_py,v 1.5 2016/09/04 16:46:57 landry Exp $
      target = os.path.join(env['MAPNIK_LIB_BASE_DEST'], soFile)
  
      if 'uninstall' not in COMMAND_LINE_TARGETS:
-@@ -446,30 +441,8 @@ else:
+@@ -462,30 +457,8 @@ else:
              mapnik = lib_env_final.SharedLibrary(env['MAPNIK_NAME'], source)
          result = env.InstallAs(target=target, source=mapnik)
          env.Alias(target='install', source=result)

@@ -1,17 +1,20 @@
-$OpenBSD: patch-test_run,v 1.1 2015/09/18 20:07:09 landry Exp $
+$OpenBSD: patch-test_run,v 1.2 2021/05/23 17:47:01 kirby Exp $
 find -quit is only in gfind
---- test/run.orig	Sat Aug  8 17:20:43 2015
-+++ test/run	Sat Aug  8 17:20:55 2015
-@@ -19,12 +19,10 @@ if [ -d "test/data" ]; then
-     failures=$((failures+$?))
+Index: test/run
+--- test/run.orig
++++ test/run
+@@ -29,13 +29,12 @@ if [ -d "test/data" ]; then
  
      run_substep "Running standalone C++ tests..."
+     found_test=false
 -    if [ -n "$(find test/standalone/ -maxdepth 1 -name '*-bin' -print -quit)" ]; then
          for FILE in test/standalone/*-bin; do
-             ${FILE};
-           failures=$((failures+$?))
+           found_test=true
+           ran_a_test=true
+           ${FILE} || failures=$((failures+$?))
          done
 -    fi
- 
-     if [ -d "test/data-visual/styles" ]; then
-         run_substep "Running visual tests..."
++ 
+     if [[ $found_test == false ]]; then
+         run_warn "Skipping standalone tests since they were not built"
+     fi
