@@ -1,0 +1,18 @@
+$OpenBSD: patch-cpp_CMakeLists_txt,v 1.1.1.1 2021/05/23 14:26:04 rsadowski Exp $
+
+CMake Error:
+ninja: error: build.ninja:1485: multiple rules generate ...
+phonenumbers/metadata.h [-w dupbuild=err] 
+
+Index: cpp/CMakeLists.txt
+--- cpp/CMakeLists.txt.orig
++++ cpp/CMakeLists.txt
+@@ -351,7 +351,7 @@ add_metadata_gen_target (
+   ${TEST_METADATA_TARGET}
+   "${RESOURCES_DIR}/PhoneNumberMetadataForTesting.xml"
+   "test_metadata"
+-  "metadata"
++  "test_metadata"
+ )
+ list (APPEND TESTING_LIBRARY_SOURCES "src/phonenumbers/test_metadata.cc")
+ 

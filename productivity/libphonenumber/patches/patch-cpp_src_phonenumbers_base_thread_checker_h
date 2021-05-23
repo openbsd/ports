@@ -1,0 +1,15 @@
+$OpenBSD: patch-cpp_src_phonenumbers_base_thread_checker_h,v 1.1.1.1 2021/05/23 14:26:04 rsadowski Exp $
+
+Index: cpp/src/phonenumbers/base/thread_checker.h
+--- cpp/src/phonenumbers/base/thread_checker.h.orig
++++ cpp/src/phonenumbers/base/thread_checker.h
+@@ -33,7 +33,8 @@
+ #endif
+ 
+ #if !defined(NDEBUG) && !defined(I18N_PHONENUMBERS_USE_BOOST) && \
+-    (defined(__linux__) || defined(__APPLE__) || defined(I18N_PHONENUMBERS_HAVE_POSIX_THREAD))
++    (defined(__linux__) || defined(__APPLE__) ||  defined(__FreeBSD__) || defined(__OpenBSD__) || \
++     defined(I18N_PHONENUMBERS_HAVE_POSIX_THREAD))
+ 
+ #include <pthread.h>
+ 

@@ -1,0 +1,44 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/23 14:26:04 rsadowski Exp $
+include/phonenumbers/
+include/phonenumbers/asyoutypeformatter.h
+include/phonenumbers/base/
+include/phonenumbers/base/basictypes.h
+include/phonenumbers/base/logging.h
+include/phonenumbers/base/memory/
+include/phonenumbers/base/memory/scoped_ptr.h
+include/phonenumbers/base/memory/singleton.h
+include/phonenumbers/base/memory/singleton_boost.h
+include/phonenumbers/base/memory/singleton_posix.h
+include/phonenumbers/base/memory/singleton_stdmutex.h
+include/phonenumbers/base/memory/singleton_unsafe.h
+include/phonenumbers/base/memory/singleton_win32.h
+include/phonenumbers/base/synchronization/
+include/phonenumbers/base/synchronization/lock.h
+include/phonenumbers/base/synchronization/lock_boost.h
+include/phonenumbers/base/synchronization/lock_posix.h
+include/phonenumbers/base/synchronization/lock_stdmutex.h
+include/phonenumbers/base/synchronization/lock_unsafe.h
+include/phonenumbers/base/synchronization/lock_win32.h
+include/phonenumbers/base/template_util.h
+include/phonenumbers/base/thread_checker.h
+include/phonenumbers/callback.h
+include/phonenumbers/geocoding/
+include/phonenumbers/geocoding/phonenumber_offline_geocoder.h
+include/phonenumbers/logger.h
+include/phonenumbers/matcher_api.h
+include/phonenumbers/phonemetadata.pb.h
+include/phonenumbers/phonenumber.pb.h
+include/phonenumbers/phonenumbermatch.h
+include/phonenumbers/phonenumbermatcher.h
+include/phonenumbers/phonenumberutil.h
+include/phonenumbers/regexp_adapter.h
+include/phonenumbers/regexp_cache.h
+include/phonenumbers/region_code.h
+include/phonenumbers/shortnumberinfo.h
+include/phonenumbers/unicodestring.h
+include/phonenumbers/utf/
+include/phonenumbers/utf/unicodetext.h
+@static-lib lib/libgeocoding.a
+@lib lib/libgeocoding.so.${LIBgeocoding_VERSION}
+@static-lib lib/libphonenumber.a
+@lib lib/libphonenumber.so.${LIBphonenumber_VERSION}
