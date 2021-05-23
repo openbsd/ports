@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2021/02/05 01:02:04 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.23 2021/05/23 19:23:52 sthen Exp $
 
 COMMENT=		Verilog simulation and synthesis tool
 
 V=			11.0
 DISTNAME=		verilog-$V
+REVISION=		0
 PKGNAME=		iverilog-$V
 CATEGORIES=		lang devel
 
