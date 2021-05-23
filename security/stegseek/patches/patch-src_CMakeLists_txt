@@ -1,16 +1,16 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2021/02/02 16:07:54 sebastia Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.2 2021/05/23 18:23:09 sebastia Exp $
 
 do not force -O3
 
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -69,7 +69,7 @@ file(GLOB headers
+@@ -68,7 +68,7 @@ file(GLOB headers
+ 
  add_library(stegseek_lib ${sources} ${headers})
  
- 
--set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+-set(CMAKE_CXX_FLAGS_RELEASE "-O2")
 +set(CMAKE_CXX_FLAGS_RELEASE "")
+ set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -s")
  
  add_executable(stegseek main.cc)
- 

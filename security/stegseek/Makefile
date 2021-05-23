@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/02/02 16:07:54 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2021/05/23 18:23:09 sebastia Exp $
 
 COMMENT =	lightning fast steghide cracker
 
 GH_ACCOUNT =	RickdeJager
 GH_PROJECT =	stegseek
-GH_TAGNAME =	v0.5
+GH_TAGNAME =	v0.6
 EPOCH =		0
 
 CATEGORIES =	security
