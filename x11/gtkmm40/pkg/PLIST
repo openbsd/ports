@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/12/20 15:11:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/05/23 13:45:30 ajacoutot Exp $
 include/gtkmm-4.0/
 include/gtkmm-4.0/gdkmm/
 include/gtkmm-4.0/gdkmm.h
@@ -537,6 +537,7 @@ include/gtkmm-4.0/gtkmm/scrolledwindow.h
 include/gtkmm-4.0/gtkmm/searchbar.h
 include/gtkmm-4.0/gtkmm/searchentry.h
 include/gtkmm-4.0/gtkmm/selectionfiltermodel.h
+include/gtkmm-4.0/gtkmm/selectionlistmodelimpl.h
 include/gtkmm-4.0/gtkmm/selectionmodel.h
 include/gtkmm-4.0/gtkmm/separator.h
 include/gtkmm-4.0/gtkmm/settings.h
