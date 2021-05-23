@@ -1,0 +1,16 @@
+$OpenBSD: patch-ssl_h,v 1.1 2021/05/23 11:54:51 tb Exp $
+
+All missing API has been available since LibreSSL 2.7.0.
+
+Index: ssl.h
+--- ssl.h.orig
++++ ssl.h
+@@ -79,7 +79,7 @@
+ #define OPENSSL_NO_SHA0
+ #endif
+ 
+-#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || (defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL)
+ #if LIBRESSL_VERSION_NUMBER >= 0x2050100fL
+ #define SSL_is_server(ssl) ((ssl)->server)
+ #else /* < LibreSSL 2.5.1 and OpenSSL < 1.1.0 */
