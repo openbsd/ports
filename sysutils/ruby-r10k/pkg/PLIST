@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2021/03/11 19:23:15 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.23 2021/05/23 18:34:29 sebastia Exp $
 ${GEM_BIN}/r10k${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -18,7 +18,6 @@ ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.mkd
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
-${GEM_LIB}/gems/${DISTNAME}/azure-pipelines.yml
 ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/r10k
 ${GEM_LIB}/gems/${DISTNAME}/doc/
@@ -45,6 +44,7 @@ ${GEM_LIB}/gems/${DISTNAME}/docker/.rspec
 ${GEM_LIB}/gems/${DISTNAME}/docker/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/docker/Makefile
 ${GEM_LIB}/gems/${DISTNAME}/docker/README.md
+${GEM_LIB}/gems/${DISTNAME}/docker/docker-compose.yml
 ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/
 ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/Dockerfile
 ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/adduser.sh
