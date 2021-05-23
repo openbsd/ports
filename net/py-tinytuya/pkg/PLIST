@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/23 20:23:34 martin Exp $
+lib/python${MODPY_VERSION}/site-packages/tinytuya/
+lib/python${MODPY_VERSION}/site-packages/tinytuya-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/tinytuya-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/tinytuya-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/tinytuya-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/tinytuya-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/tinytuya-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/tinytuya/__init__.py
+lib/python${MODPY_VERSION}/site-packages/tinytuya/__main__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tinytuya/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tinytuya/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tinytuya/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tinytuya/${MODPY_PYCACHE}wizard.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tinytuya/wizard.py
