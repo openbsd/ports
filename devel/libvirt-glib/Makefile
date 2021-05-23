@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2021/02/18 09:20:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2021/05/23 21:52:18 kmos Exp $
 
 COMMENT=		libvirt wrapper suited for GObject-based applications
 
@@ -20,6 +20,9 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes
+
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
 
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 intl virt xml2
 
