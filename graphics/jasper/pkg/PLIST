@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/12/14 00:23:28 jca Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/05/23 19:28:08 sthen Exp $
 @bin bin/imgcmp
 @bin bin/imginfo
 @bin bin/jasper
 include/jasper/
 include/jasper/jas_cm.h
+include/jasper/jas_compiler.h
 include/jasper/jas_config.h
 include/jasper/jas_debug.h
 include/jasper/jas_dll.h

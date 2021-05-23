@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:47:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2021/05/23 19:28:08 sthen Exp $
 
 COMMENT =	reference implementation of JPEG-2000
 
-DISTNAME =	jasper-2.0.14
-FIX_EXTRACT_PERMISSIONS=Yes
+V =		2.0.32
+DISTNAME =	jasper-$V
+DISTFILES =	jasper-$V{jasper}.tar.gz
 
-SHARED_LIBS =	jasper		3.0
+SHARED_LIBS =	jasper		4.0
 
 CATEGORIES =	graphics
 
@@ -16,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m
 
-MASTER_SITES =	https://www.ece.uvic.ca/~frodo/jasper/software/
+MASTER_SITES =	https://github.com/jasper-software/jasper/releases/download/version-$V/
 
 # -stdc=gnu11
 COMPILER =	base-clang ports-gcc
