@@ -1,14 +1,17 @@
-# $OpenBSD: Makefile,v 1.55 2020/03/22 10:02:26 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2021/05/23 19:28:13 sthen Exp $
 
 COMMENT=	X11 image display and modification tool
 
 DISTNAME=	xv-3.10a
-REVISION=	16
+PKGNAME=	${DISTNAME}.20081216
 CATEGORIES=	graphics x11
 
 MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/
 MASTER_SITES0=	${MASTER_SITE_SOURCEFORGE:=png-mng/}
-DISTFILES=	${DISTNAME}.tar.gz xv-3.10a-jumbo-patches-20070520.tar.gz:0
+MASTER_SITES1=	http://www.gregroelofs.com/code/
+DISTFILES=	${DISTNAME}.tar.gz \
+		xv-3.10a-jumbo-patches-20070520.tar.gz:0
+PATCHFILES=	xv-3.10a-enhancements.20070520-20081216.diff:1
 DIST_SUBDIR=	xv
 
 HOMEPAGE=	http://www.trilon.com/xv/index.html

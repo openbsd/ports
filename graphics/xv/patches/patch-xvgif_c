@@ -1,6 +1,8 @@
-$OpenBSD: patch-xvgif_c,v 1.1 2013/01/07 21:23:23 espie Exp $
---- xvgif.c.orig	Mon Jan  7 21:59:13 2013
-+++ xvgif.c	Mon Jan  7 22:00:10 2013
+$OpenBSD: patch-xvgif_c,v 1.2 2021/05/23 19:28:13 sthen Exp $
+
+Index: xvgif.c
+--- xvgif.c.orig
++++ xvgif.c
 @@ -75,6 +75,7 @@ static boolean Interlace, HasGlobalColormap;
  static byte *RawGIF;		/* The heap array to hold it, raw */
  static byte *Raster;		/* The raster data stream, unblocked */

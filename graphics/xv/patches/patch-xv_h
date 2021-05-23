@@ -1,7 +1,9 @@
-$OpenBSD: patch-xv_h,v 1.5 2014/10/29 16:45:09 espie Exp $
---- xv.h.orig	Tue Oct 28 14:44:22 2014
-+++ xv.h	Tue Oct 28 14:45:15 2014
-@@ -1689,7 +1689,8 @@ char *GetDirFullName       PARM((void));
+$OpenBSD: patch-xv_h,v 1.6 2021/05/23 19:28:13 sthen Exp $
+
+Index: xv.h
+--- xv.h.orig
++++ xv.h
+@@ -1690,7 +1690,8 @@ char *GetDirFullName       PARM((void));
  void SetDirSaveMode        PARM((int, int));
  int  Globify               PARM((char *));
  FILE *OpenOutFile          PARM((const char *));

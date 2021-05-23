@@ -1,6 +1,6 @@
-$OpenBSD: patch-xvsmooth_c,v 1.1 2011/05/25 09:09:56 sthen Exp $
+$OpenBSD: patch-xvsmooth_c,v 1.2 2021/05/23 19:28:13 sthen Exp $
 
-Fix off-by-one's resulting in dereferncing out-of-bound memory.
+Fix off-by-one's resulting in dereferencing out-of-bound memory.
 http://permalink.gmane.org/gmane.os.openbsd.ports/48385
 
 --- xvsmooth.c.orig	Sun May 22 23:48:28 2011

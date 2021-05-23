@@ -1,6 +1,8 @@
-$OpenBSD: patch-xvpcd_c,v 1.1 2007/05/29 21:16:03 naddy Exp $
---- xvpcd.c.orig	Sun May 27 00:39:02 2007
-+++ xvpcd.c	Sun May 27 00:39:29 2007
+$OpenBSD: patch-xvpcd_c,v 1.2 2021/05/23 19:28:13 sthen Exp $
+
+Index: xvpcd.c
+--- xvpcd.c.orig
++++ xvpcd.c
 @@ -30,9 +30,6 @@
  #ifdef HAVE_PCD
  
