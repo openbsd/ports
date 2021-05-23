@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/23 19:39:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/05/23 19:22:27 sthen Exp $
 
 COMMENT =	framework for Verilog RTL synthesis
+DISTNAME =	yosys-0.9pl4081
 
 GH_ACCOUNT =	YosysHQ
 GH_PROJECT =	yosys
-GH_TAGNAME =	yosys-0.9
-DISTNAME =	${GH_TAGNAME}
-REVISION =	1
+GH_COMMIT =	25de8faf10157ab0cb40f77c7cbf3143527c598e
 
 CATEGORIES =	cad
 
@@ -14,15 +13,16 @@ HOMEPAGE =	http://www.clifford.at/yosys/
 MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.mooo.com>
 
 # ISC (yosys), MIT (MiniSat)
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE = Yes
 
-WANTLIB +=	${COMPILER_LIBCXX} ${MODTCL_WANTLIB} c m readline ffi
+WANTLIB +=	${COMPILER_LIBCXX} ${MODTCL_WANTLIB} c m readline ffi z
 
 # C++11
 COMPILER =	base-clang ports-gcc
 
 MODULES =	lang/python \
 		lang/tcl
+
 CONFIGURE_STYLE = none
 
 BUILD_DEPENDS =	devel/bison \
@@ -36,7 +36,8 @@ RUN_DEPENDS =	cad/abc \
 LIB_DEPENDS =	${MODTCL_LIB_DEPENDS} \
 		devel/libffi
 
-TEST_DEPENDS =	cad/abc \
+TEST_DEPENDS =	${BUILD_PKGPATH} \
+		cad/abc \
 		lang/gawk \
 		lang/iverilog \
 		shells/bash
@@ -56,9 +57,15 @@ TEST_ENV =	MAKE="${MAKE_PROGRAM}"
 
 FAKE_FLAGS =	PREFIX="${TRUEPREFIX}"
 
+# the only gcc-specific things from "config-gcc" are setting CXX/LD, which
+# we override above
 do-configure:
 	@${SUBST_CMD} ${WRKSRC}/kernel/yosys.cc
 	@cd ${WRKBUILD} && exec env -i ${MAKE_ENV} ${MAKE_PROGRAM} config-gcc
+
+post-build:
+	grep -rl "#!/bin/bash" ${WRKSRC} | \
+	    xargs sed -i 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,'
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
