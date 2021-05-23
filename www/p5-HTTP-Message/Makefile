@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:46:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/05/23 21:15:04 bluhm Exp $
 
 COMMENT =	HTTP Style Messages
 
-DISTNAME =	HTTP-Message-6.13
+DISTNAME =	HTTP-Message-6.31
 CATEGORIES =	www
-REVISION =	0
 
 MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
@@ -14,7 +13,8 @@ PERMIT_PACKAGE =	Yes
 MODULES =	cpan
 PKG_ARCH =	*
 
-RUN_DEPENDS =	textproc/p5-Encode-Locale>=1.00 \
+RUN_DEPENDS =	devel/p5-Clone \
+		textproc/p5-Encode-Locale>=1.00 \
 		www/p5-IO-HTML \
 		www/p5-HTTP-Date>=6.00 \
 		www/p5-LWP-MediaTypes>=6.00 \
