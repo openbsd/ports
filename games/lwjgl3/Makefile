@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/05/20 12:19:32 kurt Exp $
+# $OpenBSD: Makefile,v 1.5 2021/05/23 16:26:14 kmos Exp $
 
 BROKEN-i386 =	java.lang.OutOfMemoryError: Java heap space in kotlinc
 
@@ -20,6 +20,8 @@ PKG_ARGS +=	-Dx86=1
 M_ARCH =	64
 PKG_ARGS +=	-Dx86=0
 MAKE_ENV+=	LWJGL_BUILD_ARCH=arm64
+.else
+PKG_ARGS +=	-Dx86=0
 .endif
 
 LWJGL3_HOME =	${PREFIX}/share/lwjgl3
