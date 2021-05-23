@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2021/05/17 10:17:54 bluhm Exp $
+# $OpenBSD: Makefile,v 1.100 2021/05/23 14:27:52 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += aqbanking
@@ -23,6 +23,7 @@
      SUBDIR += kmymoney
      SUBDIR += ledger
      SUBDIR += libalkimia
+     SUBDIR += libphonenumber
      SUBDIR += librcps
      SUBDIR += lifeograph
      SUBDIR += mcds
