@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/05/21 13:19:59 kurt Exp $
+# $OpenBSD: Makefile,v 1.10 2021/05/23 16:26:43 kmos Exp $
 
 COMMENT=	i2p routing protocol
 
@@ -37,6 +37,8 @@ BITS=64
 PKG_ARGS+=	-Dx86=1
 .elif ${MACHINE_ARCH} == "aarch64"
 BITS=64
+PKG_ARGS+=	-Dx86=0
+.else
 PKG_ARGS+=	-Dx86=0
 .endif
 
