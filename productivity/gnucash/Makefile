@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.130 2021/04/02 08:31:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.131 2021/05/23 17:53:32 ajacoutot Exp $
 
 COMMENT =		personal and small-business financial-accounting software
 
 GNOME_PROJECT =		gnucash
 GNOME_VERSION =		4.5
 EXTRACT_SUFX =		.tar.bz2
+REVISION =		0
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			gnucash-docs-${GNOME_VERSION}.tar.gz
