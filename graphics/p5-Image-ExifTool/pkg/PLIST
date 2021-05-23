@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2020/06/21 18:00:33 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.36 2021/05/23 19:47:11 tj Exp $
 bin/exiftool
 ${P5SITE}/File/
 ${P5SITE}/File/RandomAccess.pm
@@ -135,6 +135,7 @@ ${P5SITE}/Image/ExifTool/MOI.pm
 ${P5SITE}/Image/ExifTool/MPC.pm
 ${P5SITE}/Image/ExifTool/MPEG.pm
 ${P5SITE}/Image/ExifTool/MPF.pm
+${P5SITE}/Image/ExifTool/MRC.pm
 ${P5SITE}/Image/ExifTool/MWG.pm
 ${P5SITE}/Image/ExifTool/MXF.pm
 ${P5SITE}/Image/ExifTool/MacOS.pm
@@ -147,6 +148,7 @@ ${P5SITE}/Image/ExifTool/Motorola.pm
 ${P5SITE}/Image/ExifTool/Nikon.pm
 ${P5SITE}/Image/ExifTool/NikonCapture.pm
 ${P5SITE}/Image/ExifTool/NikonCustom.pm
+${P5SITE}/Image/ExifTool/NikonSettings.pm
 ${P5SITE}/Image/ExifTool/Nintendo.pm
 ${P5SITE}/Image/ExifTool/OOXML.pm
 ${P5SITE}/Image/ExifTool/Ogg.pm
@@ -221,6 +223,7 @@ ${P5SITE}/Image/ExifTool/XMP.pm
 ${P5SITE}/Image/ExifTool/XMP2.pl
 ${P5SITE}/Image/ExifTool/XMPStruct.pl
 ${P5SITE}/Image/ExifTool/ZIP.pm
+${P5SITE}/Image/ExifTool/ZISRAW.pm
 ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man1/exiftool.1
 @man man/man3p/File::RandomAccess.3p
@@ -318,6 +321,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::MPC.3p
 @man man/man3p/Image::ExifTool::MPEG.3p
 @man man/man3p/Image::ExifTool::MPF.3p
+@man man/man3p/Image::ExifTool::MRC.3p
 @man man/man3p/Image::ExifTool::MWG.3p
 @man man/man3p/Image::ExifTool::MXF.3p
 @man man/man3p/Image::ExifTool::MacOS.3p
@@ -330,6 +334,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::Nikon.3p
 @man man/man3p/Image::ExifTool::NikonCapture.3p
 @man man/man3p/Image::ExifTool::NikonCustom.3p
+@man man/man3p/Image::ExifTool::NikonSettings.3p
 @man man/man3p/Image::ExifTool::Nintendo.3p
 @man man/man3p/Image::ExifTool::OOXML.3p
 @man man/man3p/Image::ExifTool::Ogg.3p
@@ -403,4 +408,5 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::XMP2.3p
 @man man/man3p/Image::ExifTool::XMPStruct.3p
 @man man/man3p/Image::ExifTool::ZIP.3p
+@man man/man3p/Image::ExifTool::ZISRAW.3p
 @man man/man3p/Image::ExifTool::iWork.3p
