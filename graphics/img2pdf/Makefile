@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/05/23 13:17:01 sthen Exp $
 
 COMMENT =		losslessly convert images to PDF
 
-MODPY_EGG_VERSION =	0.4.0
+MODPY_EGG_VERSION =	0.4.1
 DISTNAME =		img2pdf-${MODPY_EGG_VERSION}
 
 CATEGORIES =		graphics
@@ -22,6 +22,7 @@ RUN_DEPENDS =		graphics/py-Pillow${MODPY_FLAVOR} \
 # some tests fail as they require pdfrw (overall this is optional for
 # img2pdf and autodetected at runtime; we don't have it in ports yet)
 MODPY_PYTEST =		Yes
-TEST_DEPENDS =		sysutils/py-packaging${MODPY_FLAVOR}
+TEST_DEPENDS =		sysutils/py-packaging${MODPY_FLAVOR} \
+			math/py-scipy${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
