@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.71 2021/05/19 19:21:24 juanfra Exp $
+# $OpenBSD: Makefile,v 1.72 2021/05/23 20:00:10 sthen Exp $
+
+BROKEN-i386 = either build hangs, or dies with "Error: invalid memory reference"
 
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc powerpc64 sparc64
 
