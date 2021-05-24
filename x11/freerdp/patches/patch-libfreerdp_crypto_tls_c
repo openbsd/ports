@@ -1,6 +1,6 @@
-$OpenBSD: patch-libfreerdp_crypto_tls_c,v 1.5 2021/05/23 13:35:37 tb Exp $
+$OpenBSD: patch-libfreerdp_crypto_tls_c,v 1.6 2021/05/24 20:13:20 tb Exp $
 
-Avoid reaching inside SSL and use BIO_up_reaf() instead of handrolling it.
+Avoid reaching inside SSL and use BIO_up_ref() instead of handrolling it.
 https://github.com/FreeRDP/FreeRDP/pull/7033
 
 Index: libfreerdp/crypto/tls.c
