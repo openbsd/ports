@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.70 2021/05/14 20:49:05 steven Exp $
+# $OpenBSD: Makefile,v 1.71 2021/05/24 15:50:22 millert Exp $
 
 COMMENT=	log management solution
 
-V =		3.12.1
-REL =		3.12
+V =		3.32.1
+REL =		3.32.1
 DISTNAME =	syslog-ng-$V
 CATEGORIES =	sysutils
-REVISION =	9
 
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 
@@ -19,17 +18,23 @@ WANTLIB += c crypto curl dbi glib-2.0 gmodule-2.0 gthread-2.0
 WANTLIB += iconv intl ivykis json-c m maxminddb nghttp2 pcre pthread
 WANTLIB += ssl z
 
-MASTER_SITES =	http://github.com/balabit/syslog-ng/releases/download/${DISTNAME}/
+MASTER_SITES =	https://github.com/balabit/syslog-ng/releases/download/${DISTNAME}/
 
-SHARED_LIBS =	evtlog			2.0 \
-		evtlog-${REL}		2.0 \
-		syslog-ng		5.0 \
-		syslog-ng-${REL}	5.0
+SHARED_LIBS =	evtlog			3.0 \
+		evtlog-3.32		3.0 \
+		syslog-ng		6.0 \
+		syslog-ng-3.32		6.0 \
+		loggen_helper		1.0 \
+		loggen_helper-3.32	1.0 \
+		loggen_plugin		1.0 \
+		loggen_plugin-3.32	1.0 \
+		secret-storage		1.0
 
 # needs a newer compiler due to libmaxminddb header
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS = c
 
+BUILD_DEPENDS=	devel/bison>=3.4.2
 LIB_DEPENDS =	devel/glib2 \
 		devel/json-c \
 		devel/libivykis \
@@ -58,12 +63,9 @@ CONFIGURE_ARGS +=	--disable-tcp-wrapper \
 			--enable-sql \
 			--enable-manpages
 
-CONFIGURE_ENV +=	OPENSSL_CFLAGS="-I/usr/include/openssl" \
-			OPENSSL_LIBS="-lssl -lcrypto" \
-			LDFLAGS="-L${LOCALBASE}/lib"
-# json-c only installs libjson-c.pc; syslog-ng checks for libjson.pc
-CONFIGURE_ENV +=	JSON_C_CFLAGS="`pkg-config json-c --cflags`" \
-			JSON_C_LIBS="`pkg-config json-c --libs`"
+CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib"
+
+YACC =		bison -y
 
 USE_GMAKE =	Yes
 

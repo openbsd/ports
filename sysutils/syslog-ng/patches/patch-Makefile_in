@@ -1,38 +1,29 @@
-$OpenBSD: patch-Makefile_in,v 1.12 2021/04/30 17:14:50 millert Exp $
+$OpenBSD: patch-Makefile_in,v 1.13 2021/05/24 15:50:22 millert Exp $
 - temporary hack until libtool is fixed.
-- work around different getent API, adapted from
-https://github.com/balabit/syslog-ng/commit/8b33cbe143b00d6af72cb5145fecd67e6158a9dd
+- avoid GNU tar-specific option
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -4183,7 +4183,9 @@ compatinclude_HEADERS = \
- 	lib/compat/string.h		\
- 	lib/compat/time.h		\
- 	lib/compat/openssl_support.h	\
--	lib/compat/pcre.h
-+	lib/compat/pcre.h		\
-+	lib/compat/getent.h		\
-+	lib/compat/getent-bb.h
+@@ -10001,11 +10001,7 @@ modules_test_subdirs = \
  
- compat_sources = \
- 	lib/compat/getutent.c		\
-@@ -4194,7 +4196,8 @@ compat_sources = \
- 	lib/compat/strcasestr.c		\
- 	lib/compat/strtok_r.c		\
- 	lib/compat/time.c		\
--	lib/compat/openssl_support.c
-+	lib/compat/openssl_support.c	\
-+	lib/compat/getent.c
+ syslog_ng_syslog_ng_SOURCES = syslog-ng/main.c
  
- lib_compat_tests_TESTS = \
- 	lib/compat/tests/test_strtok_r
-@@ -7089,7 +7092,7 @@ lib/str-repr/lib_libsyslog_ng_la-encode.lo:  \
- 	lib/str-repr/$(am__dirstamp) \
- 	lib/str-repr/$(DEPDIR)/$(am__dirstamp)
- lib/libsyslog-ng.la: $(lib_libsyslog_ng_la_OBJECTS) $(lib_libsyslog_ng_la_DEPENDENCIES) $(EXTRA_lib_libsyslog_ng_la_DEPENDENCIES) lib/$(am__dirstamp)
--	$(AM_V_CCLD)$(lib_libsyslog_ng_la_LINK) -rpath $(libdir) $(lib_libsyslog_ng_la_OBJECTS) $(lib_libsyslog_ng_la_LIBADD) $(LIBS)
-+	$(AM_V_CCLD)$(lib_libsyslog_ng_la_LINK) -rpath $(libdir) -version-info 0:0:0 $(lib_libsyslog_ng_la_OBJECTS) $(lib_libsyslog_ng_la_LIBADD) $(LIBS)
- modules/add-contextual-data/$(am__dirstamp):
- 	@$(MKDIR_P) modules/add-contextual-data
- 	@: > modules/add-contextual-data/$(am__dirstamp)
+-# NOTE: we're referring to the syslog-ng lib directly instead of via
+-# libtool, because in mixed mode libtool is not used for the final linking
+-# phase.  See the comment in the configure script for details.
+-syslog_ng_syslog_ng_LDADD = -L${top_builddir}/lib/.libs \
+-					  -lsyslog-ng @SYSLOGNG_DEPS_LIBS@
++syslog_ng_syslog_ng_LDADD = $(top_builddir)/lib/libsyslog-ng.la
+ 
+ syslog_ng_syslog_ng_LINK = @SYSLOGNG_LINK@
+ syslog_ng_syslog_ng_DEPENDENCIES = lib/libsyslog-ng.la
+@@ -28362,7 +28358,7 @@ scl-install-data-local:
+ 		fi; \
+ 	done
+ 	$(mkinstalldirs) $(DESTDIR)/$(scldir)
+-	(cd $(srcdir)/scl; tar cf - $(SCL_SUBDIRS)) | (cd $(DESTDIR)/$(scldir) && tar xf - --no-same-owner)
++	(cd $(srcdir)/scl; tar cf - $(SCL_SUBDIRS)) | (cd $(DESTDIR)/$(scldir) && tar xf -)
+ 	chmod -R u+rwX $(DESTDIR)/$(scldir)
+ 
+ scl-uninstall-local:
