@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/03 10:15:11 jca Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/05/24 18:01:03 solene Exp $
 @bin bin/flatc
 include/flatbuffers/
 include/flatbuffers/base.h
@@ -10,6 +10,9 @@ include/flatbuffers/grpc.h
 include/flatbuffers/hash.h
 include/flatbuffers/idl.h
 include/flatbuffers/minireflect.h
+include/flatbuffers/pch/
+include/flatbuffers/pch/flatc_pch.h
+include/flatbuffers/pch/pch.h
 include/flatbuffers/reflection.h
 include/flatbuffers/reflection_generated.h
 include/flatbuffers/registry.h
@@ -24,3 +27,4 @@ lib/cmake/flatbuffers/FlatbuffersSharedTargets.cmake
 lib/cmake/flatbuffers/FlatcTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/flatbuffers/FlatcTargets.cmake
 @lib lib/libflatbuffers.so.${LIBflatbuffers_VERSION}
+lib/pkgconfig/flatbuffers.pc

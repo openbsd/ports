@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/03 10:15:11 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2021/05/24 18:01:03 solene Exp $
 
 COMMENT=	memory optimized serialization library
 
 GH_ACCOUNT=	google
 GH_PROJECT=	flatbuffers
-GH_TAGNAME=	v1.12.0
+GH_TAGNAME=	v2.0.0
 
-SHARED_LIBS=	flatbuffers	0.0	# 1.12
+SHARED_LIBS=	flatbuffers	1.0	# 2.0.0
 
 CATEGORIES=	devel
 HOMEPAGE=	https://google.github.io/flatbuffers/
