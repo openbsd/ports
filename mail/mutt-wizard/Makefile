@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2021/05/24 13:22:16 kmos Exp $
+# $OpenBSD: Makefile,v 1.5 2021/05/24 16:23:43 kmos Exp $
 
 COMMENT =	neomutt and isync configuration with good defaults
 CATEGORIES =	mail
-DISTNAME =	mutt-wizard-3.2.1p20210504
+DISTNAME =	mutt-wizard-3.2.1.20210504
 
 GH_ACCOUNT =	LukeSmithxyz
 GH_PROJECT =	mutt-wizard
