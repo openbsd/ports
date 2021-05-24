@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/10 17:21:30 tracey Exp $
+# $OpenBSD: Makefile,v 1.2 2021/05/24 01:38:55 kmos Exp $
 
 COMMENT =	contextual menu for X11
 
@@ -14,6 +14,9 @@ HOMEPAGE =	https://github.com/phillbush/xmenu
 
 # MIT
 PERMIT_PACKAGE =Yes
+
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS =	c
 
 LIB_DEPENDS =	graphics/imlib2
 
