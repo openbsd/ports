@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.457 2021/05/24 20:18:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.458 2021/05/24 20:28:31 sthen Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -225,6 +225,7 @@
      SUBDIR += speexdsp
      SUBDIR += squeezecenter
      SUBDIR += squeezelite
+     SUBDIR += sratom
      SUBDIR += streamripper
      SUBDIR += swh-plugins
      SUBDIR += taglib

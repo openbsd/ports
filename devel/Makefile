@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2101 2021/05/21 19:50:22 kmos Exp $
+# $OpenBSD: Makefile,v 1.2102 2021/05/24 20:28:31 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1852,6 +1852,7 @@
      SUBDIR += sdl2-net
      SUBDIR += sdl2-ttf
      SUBDIR += sdlmm
+     SUBDIR += serd
      SUBDIR += sfio
      SUBDIR += shapelib
      SUBDIR += sharness
@@ -1864,6 +1865,7 @@
      SUBDIR += smpeg
      SUBDIR += smpeg2
      SUBDIR += snare
+     SUBDIR += sord
      SUBDIR += sparsehash
      SUBDIR += spe
      SUBDIR += spice-protocol
