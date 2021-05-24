@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/02/19 20:05:13 solene Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/05/24 17:41:15 solene Exp $
 bin/glances
 lib/python${MODPY_VERSION}/site-packages/Glances-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Glances-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -34,6 +34,7 @@ lib/python${MODPY_VERSION}/site-packages/glances/${MODPY_PYCACHE}password.${MODP
 lib/python${MODPY_VERSION}/site-packages/glances/${MODPY_PYCACHE}password_list.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/glances/${MODPY_PYCACHE}ports_list.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/glances/${MODPY_PYCACHE}processes.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/glances/${MODPY_PYCACHE}secure.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/glances/${MODPY_PYCACHE}server.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/glances/${MODPY_PYCACHE}snmp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/glances/${MODPY_PYCACHE}standalone.${MODPY_PYC_MAGIC_TAG}pyc
@@ -128,6 +129,7 @@ lib/python${MODPY_VERSION}/site-packages/glances/outputs/${MODPY_PYCACHE}glances
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/${MODPY_PYCACHE}glances_sparklines.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/${MODPY_PYCACHE}glances_stdout.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/${MODPY_PYCACHE}glances_stdout_csv.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/glances/outputs/${MODPY_PYCACHE}glances_stdout_issue.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/glances_bars.py
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/glances_bottle.py
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/glances_curses.py
@@ -135,6 +137,7 @@ lib/python${MODPY_VERSION}/site-packages/glances/outputs/glances_curses_browser.
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/glances_sparklines.py
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/glances_stdout.py
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/glances_stdout_csv.py
+lib/python${MODPY_VERSION}/site-packages/glances/outputs/glances_stdout_issue.py
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/static/
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/static/.gitignore
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/static/README.md
@@ -367,6 +370,7 @@ lib/python${MODPY_VERSION}/site-packages/glances/plugins/sensors/glances_batperc
 lib/python${MODPY_VERSION}/site-packages/glances/plugins/sensors/glances_hddtemp.py
 lib/python${MODPY_VERSION}/site-packages/glances/ports_list.py
 lib/python${MODPY_VERSION}/site-packages/glances/processes.py
+lib/python${MODPY_VERSION}/site-packages/glances/secure.py
 lib/python${MODPY_VERSION}/site-packages/glances/server.py
 lib/python${MODPY_VERSION}/site-packages/glances/snmp.py
 lib/python${MODPY_VERSION}/site-packages/glances/standalone.py
