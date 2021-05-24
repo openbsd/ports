@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2020/11/21 17:29:44 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2021/05/24 17:54:10 sthen Exp $
 @pkgpath security/oath-toolkit
 @bin bin/oathtool
 include/liboath/
@@ -9,7 +9,6 @@ lib/liboath.la
 lib/pkgconfig/liboath.pc
 @comment lib/security/pam_oath.a
 @comment lib/security/pam_oath.la
-@so lib/security/pam_oath.so
 @man man/man1/oathtool.1
 @man man/man3/oath_authenticate_usersfile.3
 @man man/man3/oath_base32_decode.3
