@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.456 2021/04/24 00:31:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.457 2021/05/24 20:18:18 sthen Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -99,6 +99,7 @@
      SUBDIR += libworkman
      SUBDIR += libxmp
      SUBDIR += lmms
+     SUBDIR += lv2
      SUBDIR += mac
      SUBDIR += madplay
      SUBDIR += mcp-plugins
