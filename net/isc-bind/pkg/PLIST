@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2021/04/29 09:28:31 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.30 2021/05/24 16:27:38 sthen Exp $
 @pkgpath net/isc-bind,ratelimit
 @newgroup _bind:741
 @newuser _bind:741:_bind:daemon:bind user:/nonexistent:/sbin/nologin
@@ -285,25 +285,25 @@ include/pk11/result.h
 include/pk11/site.h
 include/pkcs11/
 include/pkcs11/pkcs11.h
-@so lib/libbind9-9.16.15.so
+@so lib/libbind9-${V}.so
 lib/libbind9.la
 @so lib/libbind9.so
-@so lib/libdns-9.16.15.so
+@so lib/libdns-${V}.so
 lib/libdns.la
 @so lib/libdns.so
-@so lib/libirs-9.16.15.so
+@so lib/libirs-${V}.so
 lib/libirs.la
 @so lib/libirs.so
-@so lib/libisc-9.16.15.so
+@so lib/libisc-${V}.so
 lib/libisc.la
 @so lib/libisc.so
-@so lib/libisccc-9.16.15.so
+@so lib/libisccc-${V}.so
 lib/libisccc.la
 @so lib/libisccc.so
-@so lib/libisccfg-9.16.15.so
+@so lib/libisccfg-${V}.so
 lib/libisccfg.la
 @so lib/libisccfg.so
-@so lib/libns-9.16.15.so
+@so lib/libns-${V}.so
 lib/libns.la
 @so lib/libns.so
 lib/named/
