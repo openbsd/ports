@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.458 2021/05/24 20:28:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.459 2021/05/24 20:32:44 sthen Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -98,6 +98,7 @@
      SUBDIR += libvorbis
      SUBDIR += libworkman
      SUBDIR += libxmp
+     SUBDIR += lilv
      SUBDIR += lmms
      SUBDIR += lv2
      SUBDIR += mac
