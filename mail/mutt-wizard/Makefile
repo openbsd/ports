@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2021/01/23 23:11:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/05/24 13:22:16 kmos Exp $
 
 COMMENT =	neomutt and isync configuration with good defaults
 CATEGORIES =	mail
+DISTNAME =	mutt-wizard-3.2.1p20210504
 
 GH_ACCOUNT =	LukeSmithxyz
 GH_PROJECT =	mutt-wizard
-GH_TAGNAME =	v3.1.1
+GH_COMMIT =	80aee073122c63d1b570dc32e4490909ff15753b
 
 EPOCH =		0
 
@@ -14,10 +15,11 @@ MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS =	mail/neomutt \
+RUN_DEPENDS =	mail/neomutt,gpgme,sasl,notmuch \
 		mail/isync \
 		mail/msmtp \
-		security/password-store
+		security/password-store \
+		sysutils/coreutils
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
