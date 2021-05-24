@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.32 2020/11/21 17:34:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2021/05/24 17:52:54 sthen Exp $
 
 COMMENT-main =		tools to collect and process netflow data
 COMMENT-nfprofile =	filters data from nfdump according to profiles
 
-V =			1.6.22
+V =			1.6.23
 GH_ACCOUNT =		phaag
 GH_PROJECT =		nfdump
 GH_TAGNAME =		v$V
 FULLPKGNAME-main =	nfdump-$V
 FULLPKGNAME-nfprofile =	nfprofile-$V
 
-SHARED_LIBS +=	nfdump                    1.0 # unknown
+SHARED_LIBS +=	nfdump                    1.1
 
 CATEGORIES =		net
 
