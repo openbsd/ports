@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2021/04/05 14:13:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2021/05/24 20:04:27 sthen Exp $
 
 # XXX python module is linked with wrong libraries if an old version is
 # installed during build
@@ -11,11 +11,11 @@ COMMENT =		library for reading and writing images
 GH_ACCOUNT =		OpenImageIO
 GH_PROJECT =		oiio
 GH_TAGNAME =		Release-$V
-V =			2.2.13.0
+V =			2.2.14.0
 DISTNAME =		openimageio-${V}
 
-SHARED_LIBS +=		OpenImageIO		10.0 # 2.2.13
-SHARED_LIBS +=		OpenImageIO_Util	6.0 # 2.2.13
+SHARED_LIBS +=		OpenImageIO		10.1 # 2.2.14
+SHARED_LIBS +=		OpenImageIO_Util	6.0 # 2.2.14
 
 CATEGORIES =		graphics devel
 

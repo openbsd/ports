@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/04/05 14:13:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.14 2021/05/24 20:04:27 sthen Exp $
 @conflict idiff-*
 @bin bin/iconvert
 @bin bin/idiff
@@ -71,7 +71,7 @@ lib/cmake/OpenImageIO/OpenImageIOTargets.cmake
 @lib lib/libOpenImageIO.so.${LIBOpenImageIO_VERSION}
 @lib lib/libOpenImageIO_Util.so.${LIBOpenImageIO_Util_VERSION}
 lib/pkgconfig/OpenImageIO.pc
-lib/python${MODPY_VERSION}/site-packages/OpenImageIO.${MODPY_PYC_MAGIC_TAG}so.10.0
+lib/python${MODPY_VERSION}/site-packages/OpenImageIO.${MODPY_PYC_MAGIC_TAG}so.10.1
 @man man/man1/iconvert.1
 @man man/man1/idiff.1
 @man man/man1/igrep.1

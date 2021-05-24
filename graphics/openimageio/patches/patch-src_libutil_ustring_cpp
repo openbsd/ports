@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_libutil_ustring_cpp,v 1.1 2021/01/23 12:46:26 jasper Exp $
+$OpenBSD: patch-src_libutil_ustring_cpp,v 1.2 2021/05/24 20:04:27 sthen Exp $
 
 error: expected value in expression
 #    if _LIBCPP_BIG_ENDIAN
@@ -6,7 +6,7 @@ error: expected value in expression
 Index: src/libutil/ustring.cpp
 --- src/libutil/ustring.cpp.orig
 +++ src/libutil/ustring.cpp
-@@ -293,7 +293,7 @@ struct libcpp_string__long {
+@@ -308,7 +308,7 @@ struct libcpp_string__long {
      std::string::size_type __size_;
      std::string::size_type __cap_;
  };
@@ -15,7 +15,7 @@ Index: src/libutil/ustring.cpp
  enum { libcpp_string__long_mask = 0x1ul };
  #    else   // _LIBCPP_BIG_ENDIAN
  enum { libcpp_string__long_mask = ~(std::string::size_type(~0) >> 1) };
-@@ -304,7 +304,7 @@ struct libcpp_string__long {
+@@ -319,7 +319,7 @@ struct libcpp_string__long {
      std::string::size_type __size_;
      std::string::pointer __data_;
  };
