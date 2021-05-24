@@ -1,6 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/01/20 10:06:33 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/05/24 03:21:48 jsg Exp $
 firmware/amdgpu/
 firmware/amdgpu/amdgpu-license
+firmware/amdgpu/arcturus_asd.bin
+firmware/amdgpu/arcturus_gpu_info.bin
+firmware/amdgpu/arcturus_mec.bin
+firmware/amdgpu/arcturus_mec2.bin
+firmware/amdgpu/arcturus_rlc.bin
+firmware/amdgpu/arcturus_sdma.bin
+firmware/amdgpu/arcturus_smc.bin
+firmware/amdgpu/arcturus_sos.bin
+firmware/amdgpu/arcturus_ta.bin
+firmware/amdgpu/arcturus_vcn.bin
 firmware/amdgpu/banks_k_2_smc.bin
 firmware/amdgpu/bonaire_ce.bin
 firmware/amdgpu/bonaire_k_smc.bin
@@ -36,6 +46,17 @@ firmware/amdgpu/fiji_sdma1.bin
 firmware/amdgpu/fiji_smc.bin
 firmware/amdgpu/fiji_uvd.bin
 firmware/amdgpu/fiji_vce.bin
+firmware/amdgpu/green_sardine_asd.bin
+firmware/amdgpu/green_sardine_ce.bin
+firmware/amdgpu/green_sardine_dmcub.bin
+firmware/amdgpu/green_sardine_me.bin
+firmware/amdgpu/green_sardine_mec.bin
+firmware/amdgpu/green_sardine_mec2.bin
+firmware/amdgpu/green_sardine_pfp.bin
+firmware/amdgpu/green_sardine_rlc.bin
+firmware/amdgpu/green_sardine_sdma.bin
+firmware/amdgpu/green_sardine_ta.bin
+firmware/amdgpu/green_sardine_vcn.bin
 firmware/amdgpu/hainan_ce.bin
 firmware/amdgpu/hainan_k_smc.bin
 firmware/amdgpu/hainan_mc.bin
@@ -131,6 +152,18 @@ firmware/amdgpu/navi14_smc.bin
 firmware/amdgpu/navi14_sos.bin
 firmware/amdgpu/navi14_ta.bin
 firmware/amdgpu/navi14_vcn.bin
+firmware/amdgpu/navy_flounder_ce.bin
+firmware/amdgpu/navy_flounder_dmcub.bin
+firmware/amdgpu/navy_flounder_me.bin
+firmware/amdgpu/navy_flounder_mec.bin
+firmware/amdgpu/navy_flounder_mec2.bin
+firmware/amdgpu/navy_flounder_pfp.bin
+firmware/amdgpu/navy_flounder_rlc.bin
+firmware/amdgpu/navy_flounder_sdma.bin
+firmware/amdgpu/navy_flounder_smc.bin
+firmware/amdgpu/navy_flounder_sos.bin
+firmware/amdgpu/navy_flounder_ta.bin
+firmware/amdgpu/navy_flounder_vcn.bin
 firmware/amdgpu/oland_ce.bin
 firmware/amdgpu/oland_k_smc.bin
 firmware/amdgpu/oland_mc.bin
@@ -201,6 +234,7 @@ firmware/amdgpu/polaris11_smc.bin
 firmware/amdgpu/polaris11_smc_sk.bin
 firmware/amdgpu/polaris11_uvd.bin
 firmware/amdgpu/polaris11_vce.bin
+firmware/amdgpu/polaris12_32_mc.bin
 firmware/amdgpu/polaris12_ce.bin
 firmware/amdgpu/polaris12_ce_2.bin
 firmware/amdgpu/polaris12_k_mc.bin
