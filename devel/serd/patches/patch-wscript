@@ -1,0 +1,16 @@
+$OpenBSD: patch-wscript,v 1.1.1.1 2021/05/24 20:27:30 sthen Exp $
+
+set proper shared library version
+
+Index: wscript
+--- wscript.orig
++++ wscript
+@@ -186,7 +186,7 @@ def build(bld):
+                 'includes':        ['include'],
+                 'cflags':          ['-fvisibility=hidden'],
+                 'lib':             ['m'],
+-                'vnum':            SERD_VERSION,
++                'vnum':            os.environ['libserd_0_ltversion'],
+                 'install_path':    '${LIBDIR}'}
+     if bld.env.MSVC_COMPILER:
+         lib_args['cflags'] = []

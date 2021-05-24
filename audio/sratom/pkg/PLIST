@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/24 20:27:30 sthen Exp $
+include/sratom-0/
+include/sratom-0/sratom/
+include/sratom-0/sratom/sratom.h
+@lib lib/libsratom-0.so.${LIBsratom-0_VERSION}
+lib/pkgconfig/sratom-0.pc

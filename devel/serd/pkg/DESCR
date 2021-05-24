@@ -1,0 +1,6 @@
+Serd is a lightweight C library for RDF syntax which supports reading and
+writing Turtle, TRiG, NTriples, and NQuads.
+
+Serd is suitable for performance-critical or resource-limited applications,
+such as serialising very large data sets, network protocols, or embedded
+systems that require minimal dependencies and lightweight deployment.

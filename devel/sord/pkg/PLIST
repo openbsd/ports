@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/24 20:27:30 sthen Exp $
+@bin bin/sord_validate
+@bin bin/sordi
+include/sord-0/
+include/sord-0/sord/
+include/sord-0/sord/sord.h
+include/sord-0/sord/sordmm.hpp
+@lib lib/libsord-0.so.${LIBsord-0_VERSION}
+lib/pkgconfig/sord-0.pc
+@man man/man1/sord_validate.1
+@man man/man1/sordi.1

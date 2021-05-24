@@ -1,0 +1,16 @@
+$OpenBSD: patch-wscript,v 1.1.1.1 2021/05/24 20:27:30 sthen Exp $
+
+set proper shared library version
+
+Index: wscript
+--- wscript.orig
++++ wscript
+@@ -123,7 +123,7 @@ def build(bld):
+                   export_includes = ['.'],
+                   name            = 'libsord',
+                   target          = 'sord-%s' % SORD_MAJOR_VERSION,
+-                  vnum            = SORD_VERSION,
++                  vnum            = os.environ['libsord_0_ltversion'],
+                   install_path    = '${LIBDIR}',
+                   libs            = libs,
+                   uselib          = 'SERD',

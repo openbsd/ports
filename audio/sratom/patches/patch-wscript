@@ -1,0 +1,24 @@
+$OpenBSD: patch-wscript,v 1.1.1.1 2021/05/24 20:27:30 sthen Exp $
+
+set proper shared library version
+
+Index: wscript
+--- wscript.orig
++++ wscript
+@@ -2,6 +2,7 @@
+ 
+ from waflib import Build, Logs, Options
+ from waflib.extras import autowaf
++import os
+ 
+ # Library and package version (UNIX style major, minor, micro)
+ # major increment <=> incompatible changes
+@@ -119,7 +120,7 @@ def build(bld):
+             uselib          = 'SERD SORD LV2',
+             name            = 'libsratom',
+             target          = 'sratom-%s' % SRATOM_MAJOR_VERSION,
+-            vnum            = SRATOM_VERSION,
++            vnum            = os.environ['libsratom_0_ltversion'],
+             install_path    = '${LIBDIR}',
+             defines         = defines + ['SRATOM_INTERNAL'],
+             cflags          = libflags)
