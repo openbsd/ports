@@ -1,0 +1,16 @@
+$OpenBSD: patch-wscript,v 1.1.1.1 2021/05/24 20:32:25 sthen Exp $
+
+set proper shared library version
+
+Index: wscript
+--- wscript.orig
++++ wscript
+@@ -244,7 +244,7 @@ def build(bld):
+                   includes        = ['.', './src'],
+                   name            = 'liblilv',
+                   target          = 'lilv-%s' % LILV_MAJOR_VERSION,
+-                  vnum            = LILV_VERSION,
++                  vnum            = os.environ['liblilv_0_ltversion'],
+                   install_path    = '${LIBDIR}',
+                   defines         = ['LILV_SHARED', 'LILV_INTERNAL'],
+                   cflags          = libflags,

@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/24 20:32:25 sthen Exp $
+@bin bin/lilv-bench
+@bin bin/lv2apply
+@bin bin/lv2info
+@bin bin/lv2ls
+include/lilv-0/
+include/lilv-0/lilv/
+include/lilv-0/lilv/lilv.h
+include/lilv-0/lilv/lilvmm.hpp
+@lib lib/liblilv-0.so.${LIBlilv-0_VERSION}
+lib/pkgconfig/lilv-0.pc
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}lilv.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lilv.py
+@man man/man1/lv2apply.1
+@man man/man1/lv2info.1
+@man man/man1/lv2ls.1
