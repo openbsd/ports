@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2021/02/27 20:50:33 pvk Exp $
+# $OpenBSD: Makefile,v 1.25 2021/05/24 17:48:09 pvk Exp $
 
 COMMENT=	open-source turn-key solution for DNSSEC
 
-DISTNAME=	opendnssec-2.1.8
+DISTNAME=	opendnssec-2.1.9
 
 CATEGORIES=	security
 
@@ -96,5 +96,10 @@ post-install:
 		${PREFIX}/share/opendnssec/migration/migrate-sqlite.sql
 	${INSTALL_DATA} ${WRKSRC}/enforcer/utils/1.4-2.0_db_convert/mysql_convert.sql \
 		${PREFIX}/share/opendnssec/migration/migrate-mysql.sql
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
 
 .include <bsd.port.mk>
