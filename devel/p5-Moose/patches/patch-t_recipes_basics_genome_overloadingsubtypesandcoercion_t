@@ -1,0 +1,24 @@
+$OpenBSD: patch-t_recipes_basics_genome_overloadingsubtypesandcoercion_t,v 1.1 2021/05/24 00:00:05 afresh1 Exp $
+
+List::Util 1.56 is required for this test and mentioned in a few
+places in the docs (mostly related to this test).
+We can't use our core List::Util until we update it so skip this test
+until then.
+
+https://github.com/moose/Moose/commit/83ef6774ca2634ec0b9fc888aef19af7f7efd1ff
+
+Index: t/recipes/basics_genome_overloadingsubtypesandcoercion.t
+--- t/recipes/basics_genome_overloadingsubtypesandcoercion.t.orig
++++ t/recipes/basics_genome_overloadingsubtypesandcoercion.t
+@@ -2,6 +2,11 @@ use strict;
+ use warnings;
+ 
+ use Test::More;
++BEGIN {
++require List::Util;
++plan skip_all => "Need newer version of List::Util"
++    unless eval { List::Util->VERSION('1.56') };
++}
+ 
+ # TODO: use inc::ExtractInlineTests and inc::MyInline to inline this test into the pod,
+ # so we do not need special handling for it in the build.
