@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2021/01/04 14:06:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2021/05/24 02:10:06 kmos Exp $
 
 BROKEN-arm =	llvm out of memory
 BROKEN-powerpc = virtual memory exhausted, even with -O1
+BROKEN-sparc64 = Exhausts virtual memory
 
 COMMENT-main =	 C++ machine learning library
 COMMENT-python = python bindings to C++ machine learning library
