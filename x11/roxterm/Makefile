@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2021/02/11 10:20:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2021/05/24 01:37:12 kmos Exp $
 
 COMMENT=		highly configurable terminal emulator
 
@@ -24,6 +24,11 @@ LIB_DEPENDS=		devel/vte3 \
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			x11/gtk+3,-guic
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
 
 NO_TEST=		Yes
 
