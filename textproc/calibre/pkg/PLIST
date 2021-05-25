@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2021/04/28 20:23:06 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.41 2021/05/25 19:21:32 sthen Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -342,9 +342,7 @@ lib/calibre/calibre/devices/mtp/windows/__init__.py
 ${MODPY_COMMENT}lib/calibre/calibre/devices/mtp/windows/${MODPY_PYCACHE}/
 lib/calibre/calibre/devices/mtp/windows/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/devices/mtp/windows/${MODPY_PYCACHE}driver.${MODPY_PYC_MAGIC_TAG}pyc
-lib/calibre/calibre/devices/mtp/windows/${MODPY_PYCACHE}remote.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/devices/mtp/windows/driver.py
-lib/calibre/calibre/devices/mtp/windows/remote.py
 lib/calibre/calibre/devices/nokia/
 lib/calibre/calibre/devices/nokia/__init__.py
 ${MODPY_COMMENT}lib/calibre/calibre/devices/nokia/${MODPY_PYCACHE}/
@@ -855,7 +853,6 @@ lib/calibre/calibre/ebooks/metadata/sources/${MODPY_PYCACHE}google.${MODPY_PYC_M
 lib/calibre/calibre/ebooks/metadata/sources/${MODPY_PYCACHE}google_images.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/ebooks/metadata/sources/${MODPY_PYCACHE}identify.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/ebooks/metadata/sources/${MODPY_PYCACHE}openlibrary.${MODPY_PYC_MAGIC_TAG}pyc
-lib/calibre/calibre/ebooks/metadata/sources/${MODPY_PYCACHE}overdrive.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/ebooks/metadata/sources/${MODPY_PYCACHE}prefs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/ebooks/metadata/sources/${MODPY_PYCACHE}search_engines.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/ebooks/metadata/sources/${MODPY_PYCACHE}test.${MODPY_PYC_MAGIC_TAG}pyc
@@ -871,7 +868,6 @@ lib/calibre/calibre/ebooks/metadata/sources/google.py
 lib/calibre/calibre/ebooks/metadata/sources/google_images.py
 lib/calibre/calibre/ebooks/metadata/sources/identify.py
 lib/calibre/calibre/ebooks/metadata/sources/openlibrary.py
-lib/calibre/calibre/ebooks/metadata/sources/overdrive.py
 lib/calibre/calibre/ebooks/metadata/sources/prefs.py
 lib/calibre/calibre/ebooks/metadata/sources/search_engines.py
 lib/calibre/calibre/ebooks/metadata/sources/test.py
@@ -5220,7 +5216,6 @@ share/calibre/recipes/novinky.cz.recipe
 share/calibre/recipes/novinky.recipe
 share/calibre/recipes/novosti.png
 share/calibre/recipes/novosti.recipe
-share/calibre/recipes/now_toronto.recipe
 share/calibre/recipes/nowiny_rybnik.png
 share/calibre/recipes/nowiny_rybnik.recipe
 share/calibre/recipes/nowy_obywatel.png
