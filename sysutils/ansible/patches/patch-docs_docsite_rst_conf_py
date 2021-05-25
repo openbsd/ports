@@ -1,4 +1,4 @@
-$OpenBSD: patch-docs_docsite_rst_conf_py,v 1.6 2020/10/09 07:18:47 pvk Exp $
+$OpenBSD: patch-docs_docsite_rst_conf_py,v 1.7 2021/05/25 21:54:46 pvk Exp $
 
 Do not set URL prefixes in html docs
 
@@ -7,9 +7,9 @@ Index: docs/docsite/rst/conf.py
 +++ docs/docsite/rst/conf.py
 @@ -147,7 +147,7 @@ html_context = {
      'current_version': version,
-     'latest_version': '2.10',
+     'latest_version': '3',
      # list specifically out of order to make latest work
--    'available_versions': ('latest', '2.9', '2.9_ja', '2.8', 'devel'),
+-    'available_versions': ('latest', '2.9', 'devel'),
 +    'available_versions': ('latest', '2.9'),
      'css_files': ('_static/ansible.css',  # overrides to the standard theme
                    ),

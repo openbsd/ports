@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.137 2021/04/24 15:10:40 pvk Exp $
+# $OpenBSD: Makefile,v 1.138 2021/05/25 21:54:46 pvk Exp $
 
 COMMENT-main =		ssh based config management framework
 COMMENT-html =		offline Ansible documentation in HTML format
 
-MODPY_EGG_VERSION =	2.9.20
+MODPY_EGG_VERSION =	2.9.22
 DISTNAME =		ansible-${MODPY_EGG_VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-html =		ansible-html-${MODPY_EGG_VERSION}
