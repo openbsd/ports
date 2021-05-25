@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/25 22:52:43 abieber Exp $
+include/qtolm/
+include/qtolm/account.h
+include/qtolm/errors.h
+include/qtolm/groupsession.h
+include/qtolm/message.h
+include/qtolm/pk.h
+include/qtolm/session.h
+include/qtolm/utils.h
+lib/cmake/
+lib/cmake/QtOlm/
+lib/cmake/QtOlm/QtOlmConfig.cmake
+lib/cmake/QtOlm/QtOlmConfigVersion.cmake
+lib/cmake/QtOlm/QtOlmTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/QtOlm/QtOlmTargets.cmake
+@lib lib/libQtOlm.so.${LIBQtOlm_VERSION}
+lib/pkgconfig/QtOlm.pc
