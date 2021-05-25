@@ -1,8 +1,9 @@
-$OpenBSD: patch-man_nginx_8,v 1.5 2020/06/08 06:03:50 landry Exp $
+$OpenBSD: patch-man_nginx_8,v 1.6 2021/05/25 19:43:56 sthen Exp $
+
 Index: man/nginx.8
 --- man/nginx.8.orig
 +++ man/nginx.8
-@@ -92,6 +92,23 @@ Do not run, just test the configuration file.
+@@ -99,6 +99,23 @@ Do not run, just test the configuration file.
  .Nm
  checks the configuration file syntax and then tries to open files
  referenced in the configuration file.

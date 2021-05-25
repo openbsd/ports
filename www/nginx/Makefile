@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.152 2021/05/10 15:06:06 tb Exp $
+# $OpenBSD: Makefile,v 1.153 2021/05/25 19:43:55 sthen Exp $
 
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 
@@ -17,16 +17,9 @@ COMMENT-passenger=	nginx passenger (ruby/python/nodejs) integration module
 COMMENT-rtmp=		nginx module for RTMP streaming
 COMMENT-securelink=	nginx HMAC secure link module
 
-VERSION=	1.18.0
+VERSION=	1.20.1
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
-
-REVISION-main=	4
-REVISION-lua=	0
-REVISION-xslt=	0
-REVISION-passenger=	0
-REVISION-stream=	0
-REVISION-naxsi=		0
 
 VERSION-rtmp=	1.2.1
 
@@ -49,7 +42,8 @@ ONLY_FOR_ARCHS-passenger= aarch64 amd64 arm i386
 
 MASTER_SITES=	https://nginx.org/download/
 MASTER_SITES0=	https://github.com/
-MASTER_SITES1=	https://raw.githubusercontent.com/rnagy/nginx_chroot_patch/master/
+MASTER_SITES1=	https://raw.githubusercontent.com/rnagy/nginx_chroot_patch/master/ \
+		https://raw.githubusercontent.com/sthen/nginx_chroot_patch/add_1.20.1/
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -136,7 +130,7 @@ CFLAGS+=	-Wall -Wpointer-arith \
 LDFLAGS+=	-L ${LOCALBASE}/lib -L ${X11BASE}/lib
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
-PATCHFILES+=		nginx-1.16.1-chroot.patch:1
+PATCHFILES+=		nginx-1.20.1-chroot.patch:1
 PATCH_DIST_STRIP=	-p1
 
 CONFIGURE_STYLE=	simple
