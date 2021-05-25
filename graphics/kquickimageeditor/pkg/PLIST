@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/25 22:49:10 abieber Exp $
+lib/cmake/
+lib/cmake/KQuickImageEditor/
+lib/cmake/KQuickImageEditor/KQuickImageEditorConfig.cmake
+lib/cmake/KQuickImageEditor/KQuickImageEditorConfigVersion.cmake
+lib/qt5/
+lib/qt5/qml/
+lib/qt5/qml/org/
+lib/qt5/qml/org/kde/
+lib/qt5/qml/org/kde/kquickimageeditor/
+lib/qt5/qml/org/kde/kquickimageeditor/BasicResizeHandle.qml
+@so lib/qt5/qml/org/kde/kquickimageeditor/libkquickimageeditorplugin.so
+lib/qt5/qml/org/kde/kquickimageeditor/plugins.qmltypes
+lib/qt5/qml/org/kde/kquickimageeditor/qmldir
+lib/qt5/qml/org/kde/kquickimageeditor/qmldir.license
+share/kf5/
+share/kf5/mkspecs/
+share/kf5/mkspecs/qt_KQuickImageEditor.pri
