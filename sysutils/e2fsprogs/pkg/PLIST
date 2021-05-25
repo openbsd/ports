@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2014/11/10 20:38:50 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.17 2021/05/25 19:44:28 sthen Exp $
 @conflict e2fs-uuid-*
 @conflict uuid-*
 @conflict ossp-uuid-<1.6.2p2
@@ -26,6 +26,7 @@ include/ext2fs/ext2_io.h
 include/ext2fs/ext2_types.h
 include/ext2fs/ext2fs.h
 include/ext2fs/ext3_extents.h
+include/ext2fs/hashmap.h
 include/ext2fs/qcow2.h
 include/ext2fs/tdb.h
 include/ss/
@@ -35,17 +36,17 @@ include/uuid/
 include/uuid/uuid.h
 @info info/libext2fs.info
 @bin lib/e2initrd_helper
-lib/libblkid.a
+@static-lib lib/libblkid.a
 @lib lib/libblkid.so.${LIBblkid_VERSION}
-lib/libcom_err.a
+@static-lib lib/libcom_err.a
 @lib lib/libcom_err.so.${LIBcom_err_VERSION}
-lib/libe2p.a
+@static-lib lib/libe2p.a
 @lib lib/libe2p.so.${LIBe2p_VERSION}
-lib/libext2fs.a
+@static-lib lib/libext2fs.a
 @lib lib/libext2fs.so.${LIBext2fs_VERSION}
-lib/libss.a
+@static-lib lib/libss.a
 @lib lib/libss.so.${LIBss_VERSION}
-lib/libuuid.a
+@static-lib lib/libuuid.a
 @lib lib/libuuid.so.${LIBuuid_VERSION}
 lib/pkgconfig/blkid.pc
 lib/pkgconfig/com_err.pc
@@ -84,20 +85,19 @@ lib/pkgconfig/uuid.pc
 @man man/man8/e2fsck.8
 @man man/man8/e2image.8
 @man man/man8/e2label.8
+@man man/man8/e2mmpstatus.8
 @man man/man8/e2undo.8
 @man man/man8/filefrag.8
 @man man/man8/findfs.8
 @man man/man8/fsck.ext2.8
 @man man/man8/fsck.ext3.8
 @man man/man8/fsck.ext4.8
-@man man/man8/fsck.ext4dev.8
 @man man/man8/fsck_ext2fs.8
 @man man/man8/logsave.8
 @man man/man8/mke2fs.8
 @man man/man8/mkfs.ext2.8
 @man man/man8/mkfs.ext3.8
 @man man/man8/mkfs.ext4.8
-@man man/man8/mkfs.ext4dev.8
 @man man/man8/mklost+found.8
 @man man/man8/resize2fs.8
 @man man/man8/tune2fs.8
@@ -109,20 +109,19 @@ lib/pkgconfig/uuid.pc
 @bin sbin/e2fsck
 @bin sbin/e2image
 @bin sbin/e2label
+@bin sbin/e2mmpstatus
 @bin sbin/e2undo
 @bin sbin/filefrag
 @bin sbin/findfs
 @bin sbin/fsck.ext2
 @bin sbin/fsck.ext3
 @bin sbin/fsck.ext4
-@bin sbin/fsck.ext4dev
 @bin sbin/fsck_ext2fs
 @bin sbin/logsave
 @bin sbin/mke2fs
 @bin sbin/mkfs.ext2
 @bin sbin/mkfs.ext3
 @bin sbin/mkfs.ext4
-@bin sbin/mkfs.ext4dev
 @bin sbin/mklost+found
 @bin sbin/resize2fs
 @bin sbin/tune2fs
@@ -134,14 +133,22 @@ share/examples/e2fsprogs/mke2fs.conf
 @sample ${SYSCONFDIR}/mke2fs.conf
 share/locale/ca/LC_MESSAGES/e2fsprogs.mo
 share/locale/cs/LC_MESSAGES/e2fsprogs.mo
+share/locale/da/LC_MESSAGES/e2fsprogs.mo
 share/locale/de/LC_MESSAGES/e2fsprogs.mo
 share/locale/eo/LC_MESSAGES/e2fsprogs.mo
 share/locale/es/LC_MESSAGES/e2fsprogs.mo
+share/locale/fi/LC_MESSAGES/e2fsprogs.mo
 share/locale/fr/LC_MESSAGES/e2fsprogs.mo
+share/locale/hu/LC_MESSAGES/e2fsprogs.mo
 share/locale/id/LC_MESSAGES/e2fsprogs.mo
 share/locale/it/LC_MESSAGES/e2fsprogs.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
+share/locale/ms/LC_MESSAGES/e2fsprogs.mo
 share/locale/nl/LC_MESSAGES/e2fsprogs.mo
 share/locale/pl/LC_MESSAGES/e2fsprogs.mo
+share/locale/pt/LC_MESSAGES/e2fsprogs.mo
+share/locale/sr/LC_MESSAGES/e2fsprogs.mo
 share/locale/sv/LC_MESSAGES/e2fsprogs.mo
 share/locale/tr/LC_MESSAGES/e2fsprogs.mo
 share/locale/uk/LC_MESSAGES/e2fsprogs.mo

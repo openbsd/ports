@@ -1,6 +1,8 @@
-$OpenBSD: patch-lib_uuid_gen_uuid_c,v 1.1 2014/11/10 20:38:50 sthen Exp $
---- lib/uuid/gen_uuid.c.orig	Sat Nov  8 10:51:53 2014
-+++ lib/uuid/gen_uuid.c	Sat Nov  8 11:12:57 2014
+$OpenBSD: patch-lib_uuid_gen_uuid_c,v 1.2 2021/05/25 19:44:28 sthen Exp $
+
+Index: lib/uuid/gen_uuid.c
+--- lib/uuid/gen_uuid.c.orig
++++ lib/uuid/gen_uuid.c
 @@ -167,8 +167,17 @@ static int get_random_fd(void)
  	return fd;
  }
@@ -28,7 +30,7 @@ $OpenBSD: patch-lib_uuid_gen_uuid_c,v 1.1 2014/11/10 20:38:50 sthen Exp $
  
  /*
   * Get the ethernet hardware address, if we can find it...
-@@ -663,7 +673,17 @@ void uuid_generate_random(uuid_t out)
+@@ -679,7 +689,17 @@ void uuid_generate_random(uuid_t out)
  }
  
  
@@ -46,7 +48,7 @@ $OpenBSD: patch-lib_uuid_gen_uuid_c,v 1.1 2014/11/10 20:38:50 sthen Exp $
   * This is the generic front-end to uuid_generate_random and
   * uuid_generate_time.  It uses uuid_generate_random only if
   * /dev/urandom is available, since otherwise we won't have
-@@ -676,3 +696,4 @@ void uuid_generate(uuid_t out)
+@@ -692,3 +712,4 @@ void uuid_generate(uuid_t out)
  	else
  		uuid_generate_time(out);
  }

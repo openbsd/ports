@@ -1,10 +1,11 @@
-$OpenBSD: patch-lib_Makefile_elf-lib,v 1.7 2013/06/21 22:35:51 sthen Exp $
+$OpenBSD: patch-lib_Makefile_elf-lib,v 1.8 2021/05/25 19:44:28 sthen Exp $
 
 Don't generate library symlinks.
 Don't run ldconfig.
 
---- lib/Makefile.elf-lib.orig	Wed Aug 15 21:43:55 2012
-+++ lib/Makefile.elf-lib	Wed Jun 19 14:25:04 2013
+Index: lib/Makefile.elf-lib
+--- lib/Makefile.elf-lib.orig
++++ lib/Makefile.elf-lib
 @@ -32,7 +32,6 @@ $(ELF_LIB): $(OBJS)
  	$(Q) (cd ..; $(LN) $(LINK_BUILD_FLAGS) \
  		`echo $(my_dir) | sed -e 's;lib/;;'`/$(ELF_LIB) $(ELF_LIB))
@@ -12,7 +13,7 @@ Don't run ldconfig.
 -	$(Q) (cd ..; $(LN) $(LINK_BUILD_FLAGS) $(ELF_LIB) $(ELF_SONAME))
  
  installdirs-elf-lib::
- 	$(E) "	MKINSTALLDIRS $(ELF_INSTALL_DIR) $(libdir)"
+ 	$(E) "	MKDIR_P $(ELF_INSTALL_DIR) $(libdir)"
 @@ -44,14 +43,6 @@ installdirs:: installdirs-elf-lib
  install-shlibs install:: $(ELF_LIB) installdirs-elf-lib $(DEP_INSTALL_SYMLINK)
  	$(E) "	INSTALL-ELF-LIB $(ELF_INSTALL_DIR)/$(ELF_LIB)"

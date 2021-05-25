@@ -1,7 +1,9 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.4 2014/04/30 11:40:04 ajacoutot Exp $
---- doc/Makefile.in.orig	Sun Dec 29 05:18:02 2013
-+++ doc/Makefile.in	Wed Apr 30 10:36:56 2014
-@@ -17,9 +17,9 @@ INFO=@MAKEINFO@
+$OpenBSD: patch-doc_Makefile_in,v 1.5 2021/05/25 19:44:28 sthen Exp $
+
+Index: doc/Makefile.in
+--- doc/Makefile.in.orig
++++ doc/Makefile.in
+@@ -18,9 +18,9 @@ INFO=@MAKEINFO@
  HTML=makeinfo --html --no-split
  PS2PDF=ps2pdf
  
@@ -11,14 +13,14 @@ $OpenBSD: patch-doc_Makefile_in,v 1.4 2014/04/30 11:40:04 ajacoutot Exp $
 -install-doc-libs: libext2fs.info libext2fs.dvi
 +install-doc-libs: libext2fs.info
  	$(Q) $(RM) -rf $(DESTDIR)$(infodir)/libext2fs.info*
- 	$(E) "	MKINSTALLDIRS $(infodir)"
- 	$(Q) $(MKINSTALLDIRS) $(DESTDIR)$(infodir)
-@@ -27,8 +27,6 @@ install-doc-libs: libext2fs.info libext2fs.dvi
+ 	$(E) "	MKDIR_P $(infodir)"
+ 	$(Q) $(MKDIR_P) $(DESTDIR)$(infodir)
+@@ -28,8 +28,6 @@ install-doc-libs: libext2fs.info libext2fs.dvi
  		echo "	INSTALL_DATA $(infodir)/$$i" ; \
  		$(INSTALL_DATA) $$i $(DESTDIR)$(infodir)/$$i ; \
  	done
 -	$(E) "	GZIP $(infodir)/libext2fs.info*"
--	-$(Q) gzip -9 $(DESTDIR)$(infodir)/libext2fs.info*
+-	-$(Q) gzip -9n $(DESTDIR)$(infodir)/libext2fs.info*
  
  uninstall-doc-libs:
  	$(RM) -rf $(DESTDIR)$(infodir)/libext2fs.info*

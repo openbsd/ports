@@ -1,7 +1,9 @@
-$OpenBSD: patch-lib_blkid_Makefile_in,v 1.2 2013/06/21 22:35:51 sthen Exp $
---- lib/blkid/Makefile.in.orig	Thu Jan  3 03:39:51 2013
-+++ lib/blkid/Makefile.in	Wed Jun 19 14:25:06 2013
-@@ -31,8 +31,8 @@ HFILES_IN=	blkid.h blkid_types.h
+$OpenBSD: patch-lib_blkid_Makefile_in,v 1.3 2021/05/25 19:44:28 sthen Exp $
+
+Index: lib/blkid/Makefile.in
+--- lib/blkid/Makefile.in.orig
++++ lib/blkid/Makefile.in
+@@ -32,8 +32,8 @@ HFILES_IN=	blkid.h blkid_types.h
  LIBRARY= libblkid
  LIBDIR= blkid
  

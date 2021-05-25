@@ -1,7 +1,9 @@
-$OpenBSD: patch-lib_et_Makefile_in,v 1.6 2014/04/22 10:21:13 ajacoutot Exp $
---- lib/et/Makefile.in.orig	Tue Apr 22 10:36:27 2014
-+++ lib/et/Makefile.in	Tue Apr 22 10:36:58 2014
-@@ -25,8 +25,8 @@ SHARE_FILES= et_c.awk et_h.awk
+$OpenBSD: patch-lib_et_Makefile_in,v 1.7 2021/05/25 19:44:28 sthen Exp $
+
+Index: lib/et/Makefile.in
+--- lib/et/Makefile.in.orig
++++ lib/et/Makefile.in
+@@ -26,8 +26,8 @@ SHARE_FILES= et_c.awk et_h.awk
  LIBRARY= libcom_err
  LIBDIR= et
  

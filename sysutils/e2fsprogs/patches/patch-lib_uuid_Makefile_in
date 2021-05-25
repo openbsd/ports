@@ -1,7 +1,9 @@
-$OpenBSD: patch-lib_uuid_Makefile_in,v 1.4 2013/06/21 22:35:51 sthen Exp $
---- lib/uuid/Makefile.in.orig	Mon Jul 30 23:41:44 2012
-+++ lib/uuid/Makefile.in	Wed Jun 19 14:25:06 2013
-@@ -41,8 +41,8 @@ SRCS=		$(srcdir)/clear.c \
+$OpenBSD: patch-lib_uuid_Makefile_in,v 1.5 2021/05/25 19:44:28 sthen Exp $
+
+Index: lib/uuid/Makefile.in
+--- lib/uuid/Makefile.in.orig
++++ lib/uuid/Makefile.in
+@@ -42,8 +42,8 @@ SRCS=		$(srcdir)/clear.c \
  LIBRARY= libuuid
  LIBDIR= uuid
  

@@ -1,7 +1,9 @@
-$OpenBSD: patch-lib_ss_Makefile_in,v 1.5 2014/04/22 10:21:13 ajacoutot Exp $
---- lib/ss/Makefile.in.orig	Fri Sep 21 18:30:41 2012
-+++ lib/ss/Makefile.in	Tue Apr 22 10:29:47 2014
-@@ -15,8 +15,8 @@ DLOPEN_LIB = @DLOPEN_LIB@
+$OpenBSD: patch-lib_ss_Makefile_in,v 1.6 2021/05/25 19:44:28 sthen Exp $
+
+Index: lib/ss/Makefile.in
+--- lib/ss/Makefile.in.orig
++++ lib/ss/Makefile.in
+@@ -16,8 +16,8 @@ DLOPEN_LIB = @DLOPEN_LIB@
  LIBRARY= libss
  LIBDIR= ss
  

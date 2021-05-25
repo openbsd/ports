@@ -1,40 +1,41 @@
-# $OpenBSD: Makefile,v 1.41 2019/07/12 20:49:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2021/05/25 19:44:28 sthen Exp $
 
 COMMENT=	utilities to manipulate ext2 filesystems
 
-DISTNAME=	e2fsprogs-1.42.12
-REVISION=	5
+DISTNAME=	e2fsprogs-1.46.2
 CATEGORIES=	sysutils devel
 SHARED_LIBS=	blkid		0.0 \
 		com_err		21.0 \
-		e2p		3.1 \
-		ext2fs		4.1 \
-		ss		3.1 \
+		e2p		3.2 \
+		ext2fs		5.0 \
+		ss		3.2 \
 		uuid		14.0
 
 HOMEPAGE=	http://e2fsprogs.sourceforge.net/
+PORTROACH=	site:https://github.com/tytso/e2fsprogs/releases/
 
 # GPLv2/LGPLv2/BSD/MIT
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c iconv intl
+WANTLIB += c iconv intl pthread
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=e2fsprogs/}
 
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 LIB_DEPENDS=	devel/gettext,-runtime
 
 SEPARATE_BUILD=	Yes
-CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.69
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --disable-tls \
 		--disable-uuidd \
-		--enable-elf-shlibs
+		--disable-fuse2fs \
+		--enable-elf-shlibs \
+		--enable-verbose-makecmds
 CONFIGURE_ENV=	CPPFLAGS="-D_EXT2_USE_C_VERSIONS_" \
 		ac_cv_header_execinfo_h=no
 USE_GMAKE=	Yes
 
-MAKE_FLAGS=	V=1 \
-		LIBINTL="-L${LOCALBASE}/lib -lintl -liconv" \
+MAKE_FLAGS=	LIBINTL="-L${LOCALBASE}/lib -lintl -liconv" \
 		LIBblkid_VERSION=${LIBblkid_VERSION} \
 		LIBcom_err_VERSION=${LIBcom_err_VERSION} \
 		LIBe2p_VERSION=${LIBe2p_VERSION} \
