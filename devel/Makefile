@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2102 2021/05/24 20:28:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.2103 2021/05/25 02:55:33 gnezdo Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -55,6 +55,7 @@
      SUBDIR += bullet
      SUBDIR += bzr
      SUBDIR += bzr-svn
+     SUBDIR += cabal-bundler
      SUBDIR += cabal-install
      SUBDIR += capstone
      SUBDIR += cargo-generate-vendor
