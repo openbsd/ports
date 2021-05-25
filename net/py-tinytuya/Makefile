@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/05/23 20:23:34 martin Exp $
+# $OpenBSD: Makefile,v 1.2 2021/05/25 06:56:18 ajacoutot Exp $
 
 COMMENT =		interface with Tuya WiFi smart devices
 
 MODPY_EGG_VERSION =	1.2.5
 DISTNAME =		tinytuya-${MODPY_EGG_VERSION}
 PKGNAME =		py-tinytuya-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		net
 
@@ -25,7 +26,11 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =		python3
 FLAVOR =		python3
 
-BUILD_DEPENDS =		security/py-cryptodome${MODPY_FLAVOR}
+BUILD_DEPENDS =		security/py-cryptodome${MODPY_FLAVOR} \
+			www/py-requests${MODPY_FLAVOR}
+
+RUN_DEPENDS =		security/py-cryptodome${MODPY_FLAVOR} \
+			www/py-requests${MODPY_FLAVOR}
 
 # tests require actual devices and editing the test file
 NO_TEST = 		Yes
