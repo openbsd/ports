@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/03/14 13:10:13 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/05/25 11:43:56 sebastia Exp $
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -11,11 +11,27 @@ lib/python${MODPY_VERSION}/site-packages/pypuppetdb/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pypuppetdb/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/${MODPY_PYCACHE}QueryBuilder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pypuppetdb/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pypuppetdb/api.py
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/api/
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/api/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pypuppetdb/api/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/api/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/api/${MODPY_PYCACHE}command.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/api/${MODPY_PYCACHE}metadata.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/api/${MODPY_PYCACHE}metrics.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/api/${MODPY_PYCACHE}pql.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/api/${MODPY_PYCACHE}query.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/api/${MODPY_PYCACHE}status.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/api/base.py
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/api/command.py
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/api/metadata.py
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/api/metrics.py
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/api/pql.py
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/api/query.py
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/api/status.py
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/errors.py
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/types.py
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/utils.py
