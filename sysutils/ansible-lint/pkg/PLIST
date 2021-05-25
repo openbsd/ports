@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/03/24 17:07:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.12 2021/05/25 20:16:31 sthen Exp $
 bin/ansible-lint
 lib/python${MODPY_VERSION}/site-packages/ansible_lint-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/ansible_lint-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -51,6 +51,7 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/generate_docs.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/loaders.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/logger.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/prerun.py
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/py.typed
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/AnsibleSyntaxCheckRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/BecomeUserWithoutBecomeRule.py
@@ -62,6 +63,7 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/ComparisonToLiteralBo
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/DeprecatedModuleRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/EnvVarsInCommandRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/GitHasVersionRule.py
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/IgnoreErrorsRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/IncludeMissingFileRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/MercurialHasRevisionRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/MetaChangeFromDefaultRule.py
@@ -71,6 +73,7 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/MetaVideoLinksRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/MissingFilePermissionsRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/NestedJinjaRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/NoFormattingInWhenRule.py
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/NoLogPasswordsRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/NoSameOwnerRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/NoTabsRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/OctalPermissionsRule.py
@@ -86,6 +89,7 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/UseCommandInsteadOfSh
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/UseHandlerRatherThanWhenChangedRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/UsingBareVariablesIsDeprecatedRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/VariableHasSpacesRule.py
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/VariableNamingRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/YamllintRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}/
@@ -99,6 +103,7 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}Compa
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}DeprecatedModuleRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}EnvVarsInCommandRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}GitHasVersionRule.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}IgnoreErrorsRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}IncludeMissingFileRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}MercurialHasRevisionRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}MetaChangeFromDefaultRule.${MODPY_PYC_MAGIC_TAG}pyc
@@ -108,6 +113,7 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}MetaV
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}MissingFilePermissionsRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}NestedJinjaRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}NoFormattingInWhenRule.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}NoLogPasswordsRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}NoSameOwnerRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}NoTabsRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}OctalPermissionsRule.${MODPY_PYC_MAGIC_TAG}pyc
@@ -123,6 +129,7 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}UseCo
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}UseHandlerRatherThanWhenChangedRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}UsingBareVariablesIsDeprecatedRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}VariableHasSpacesRule.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}VariableNamingRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}YamllintRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/custom/

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2021/03/27 14:10:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2021/05/25 20:16:31 sthen Exp $
 
 COMMENT =		best practices checker for ansible
 
-MODPY_EGG_VERSION =	5.0.6
+MODPY_EGG_VERSION =	5.0.11
 DISTNAME =		ansible-lint-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils
@@ -20,6 +20,7 @@ BUILD_DEPENDS =		devel/py-setuptools_scm_git_archive${MODPY_FLAVOR} \
 
 RUN_DEPENDS =		devel/py-enrich${MODPY_FLAVOR} \
 			devel/py-rich${MODPY_FLAVOR} \
+			devel/py-tenacity${MODPY_FLAVOR} \
 			devel/py-wcmatch${MODPY_FLAVOR} \
 			sysutils/ansible \
 			sysutils/py-packaging${MODPY_FLAVOR} \
