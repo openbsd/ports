@@ -1,0 +1,4 @@
+The Quotient project aims to produce a Qt5-based SDK to develop applications
+for Matrix. libQuotient is a library that enables client applications. It is
+the backbone of Quaternion, Spectral and other projects. Versions 0.5.x and
+older use the previous name - libQMatrixClient.
