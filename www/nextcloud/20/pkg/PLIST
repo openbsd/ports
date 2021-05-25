@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/04/28 07:59:00 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/05/25 08:13:16 gonzalo Exp $
 @option is-branch
 @conflict nextcloud-*
 @pkgpath www/nextcloud
@@ -6415,6 +6415,8 @@ nextcloud/apps/accessibility/l10n/ar.js
 nextcloud/apps/accessibility/l10n/ar.json
 nextcloud/apps/accessibility/l10n/bg.js
 nextcloud/apps/accessibility/l10n/bg.json
+nextcloud/apps/accessibility/l10n/bn_BD.js
+nextcloud/apps/accessibility/l10n/bn_BD.json
 nextcloud/apps/accessibility/l10n/br.js
 nextcloud/apps/accessibility/l10n/br.json
 nextcloud/apps/accessibility/l10n/bs.js
@@ -6767,16 +6769,12 @@ nextcloud/apps/activity/l10n/sr@latin.js
 nextcloud/apps/activity/l10n/sr@latin.json
 nextcloud/apps/activity/l10n/sv.js
 nextcloud/apps/activity/l10n/sv.json
-nextcloud/apps/activity/l10n/ta.js
-nextcloud/apps/activity/l10n/ta.json
 nextcloud/apps/activity/l10n/th.js
 nextcloud/apps/activity/l10n/th.json
 nextcloud/apps/activity/l10n/tk.js
 nextcloud/apps/activity/l10n/tk.json
 nextcloud/apps/activity/l10n/tr.js
 nextcloud/apps/activity/l10n/tr.json
-nextcloud/apps/activity/l10n/ug.js
-nextcloud/apps/activity/l10n/ug.json
 nextcloud/apps/activity/l10n/uk.js
 nextcloud/apps/activity/l10n/uk.json
 nextcloud/apps/activity/l10n/uz.js
@@ -8175,6 +8173,8 @@ nextcloud/apps/encryption/l10n/ro.js
 nextcloud/apps/encryption/l10n/ro.json
 nextcloud/apps/encryption/l10n/ru.js
 nextcloud/apps/encryption/l10n/ru.json
+nextcloud/apps/encryption/l10n/sc.js
+nextcloud/apps/encryption/l10n/sc.json
 nextcloud/apps/encryption/l10n/sk.js
 nextcloud/apps/encryption/l10n/sk.json
 nextcloud/apps/encryption/l10n/sk_SK.js
@@ -8652,7 +8652,6 @@ nextcloud/apps/federation/lib/DAV/FedAuth.php
 nextcloud/apps/federation/lib/DbHandler.php
 nextcloud/apps/federation/lib/Hooks.php
 nextcloud/apps/federation/lib/Listener/
-nextcloud/apps/federation/lib/Listener/FederatedShareAddedListener.php
 nextcloud/apps/federation/lib/Listener/SabrePluginAuthInitListener.php
 nextcloud/apps/federation/lib/Middleware/
 nextcloud/apps/federation/lib/Middleware/AddServerMiddleware.php
@@ -8960,6 +8959,8 @@ nextcloud/apps/files/l10n/ro.js
 nextcloud/apps/files/l10n/ro.json
 nextcloud/apps/files/l10n/ru.js
 nextcloud/apps/files/l10n/ru.json
+nextcloud/apps/files/l10n/sc.js
+nextcloud/apps/files/l10n/sc.json
 nextcloud/apps/files/l10n/si_LK.js
 nextcloud/apps/files/l10n/si_LK.json
 nextcloud/apps/files/l10n/sk.js
@@ -10510,6 +10511,8 @@ nextcloud/apps/files_sharing/l10n/ro.js
 nextcloud/apps/files_sharing/l10n/ro.json
 nextcloud/apps/files_sharing/l10n/ru.js
 nextcloud/apps/files_sharing/l10n/ru.json
+nextcloud/apps/files_sharing/l10n/sc.js
+nextcloud/apps/files_sharing/l10n/sc.json
 nextcloud/apps/files_sharing/l10n/si_LK.js
 nextcloud/apps/files_sharing/l10n/si_LK.json
 nextcloud/apps/files_sharing/l10n/sk.js
@@ -12438,6 +12441,8 @@ nextcloud/apps/password_policy/l10n/pt_PT.js
 nextcloud/apps/password_policy/l10n/pt_PT.json
 nextcloud/apps/password_policy/l10n/ru.js
 nextcloud/apps/password_policy/l10n/ru.json
+nextcloud/apps/password_policy/l10n/sc.js
+nextcloud/apps/password_policy/l10n/sc.json
 nextcloud/apps/password_policy/l10n/sk.js
 nextcloud/apps/password_policy/l10n/sk.json
 nextcloud/apps/password_policy/l10n/sl.js
@@ -12721,6 +12726,8 @@ nextcloud/apps/photos/l10n/ro.js
 nextcloud/apps/photos/l10n/ro.json
 nextcloud/apps/photos/l10n/ru.js
 nextcloud/apps/photos/l10n/ru.json
+nextcloud/apps/photos/l10n/sc.js
+nextcloud/apps/photos/l10n/sc.json
 nextcloud/apps/photos/l10n/si.js
 nextcloud/apps/photos/l10n/si.json
 nextcloud/apps/photos/l10n/sk.js
@@ -12994,12 +13001,16 @@ nextcloud/apps/provisioning_api/l10n/hu.js
 nextcloud/apps/provisioning_api/l10n/hu.json
 nextcloud/apps/provisioning_api/l10n/it.js
 nextcloud/apps/provisioning_api/l10n/it.json
+nextcloud/apps/provisioning_api/l10n/ja.js
+nextcloud/apps/provisioning_api/l10n/ja.json
 nextcloud/apps/provisioning_api/l10n/nl.js
 nextcloud/apps/provisioning_api/l10n/nl.json
 nextcloud/apps/provisioning_api/l10n/pl.js
 nextcloud/apps/provisioning_api/l10n/pl.json
 nextcloud/apps/provisioning_api/l10n/pt_BR.js
 nextcloud/apps/provisioning_api/l10n/pt_BR.json
+nextcloud/apps/provisioning_api/l10n/ru.js
+nextcloud/apps/provisioning_api/l10n/ru.json
 nextcloud/apps/provisioning_api/l10n/sc.js
 nextcloud/apps/provisioning_api/l10n/sc.json
 nextcloud/apps/provisioning_api/l10n/sk.js
@@ -13355,10 +13366,14 @@ nextcloud/apps/serverinfo/l10n/zh_HK.json
 nextcloud/apps/serverinfo/l10n/zh_TW.js
 nextcloud/apps/serverinfo/l10n/zh_TW.json
 nextcloud/apps/serverinfo/lib/
+nextcloud/apps/serverinfo/lib/Commands/
+nextcloud/apps/serverinfo/lib/Commands/UpdateStorageStats.php
 nextcloud/apps/serverinfo/lib/Controller/
 nextcloud/apps/serverinfo/lib/Controller/ApiController.php
 nextcloud/apps/serverinfo/lib/Controller/PageController.php
 nextcloud/apps/serverinfo/lib/DatabaseStatistics.php
+nextcloud/apps/serverinfo/lib/Jobs/
+nextcloud/apps/serverinfo/lib/Jobs/UpdateStorageStats.php
 nextcloud/apps/serverinfo/lib/OperatingSystems/
 nextcloud/apps/serverinfo/lib/OperatingSystems/DefaultOs.php
 nextcloud/apps/serverinfo/lib/OperatingSystems/FreeBSD.php
@@ -15899,6 +15914,7 @@ nextcloud/apps/user_ldap/lib/Events/UserBackendRegistered.php
 nextcloud/apps/user_ldap/lib/Exceptions/
 nextcloud/apps/user_ldap/lib/Exceptions/AttributeNotSet.php
 nextcloud/apps/user_ldap/lib/Exceptions/ConstraintViolationException.php
+nextcloud/apps/user_ldap/lib/Exceptions/NoMoreResults.php
 nextcloud/apps/user_ldap/lib/Exceptions/NotOnLDAP.php
 nextcloud/apps/user_ldap/lib/FilesystemHelper.php
 nextcloud/apps/user_ldap/lib/GroupPluginManager.php
@@ -16390,6 +16406,8 @@ nextcloud/apps/weather_status/l10n/pl.js
 nextcloud/apps/weather_status/l10n/pl.json
 nextcloud/apps/weather_status/l10n/pt_BR.js
 nextcloud/apps/weather_status/l10n/pt_BR.json
+nextcloud/apps/weather_status/l10n/pt_PT.js
+nextcloud/apps/weather_status/l10n/pt_PT.json
 nextcloud/apps/weather_status/l10n/ru.js
 nextcloud/apps/weather_status/l10n/ru.json
 nextcloud/apps/weather_status/l10n/sk.js
@@ -16637,6 +16655,7 @@ nextcloud/core/Application.php
 nextcloud/core/BackgroundJobs/
 nextcloud/core/BackgroundJobs/BackgroundCleanupUpdaterBackupsJob.php
 nextcloud/core/BackgroundJobs/CleanupLoginFlowV2.php
+nextcloud/core/BackgroundJobs/LookupServerSendCheckBackgroundJob.php
 nextcloud/core/Command/
 nextcloud/core/Command/App/
 nextcloud/core/Command/App/CheckCode.php
@@ -18889,6 +18908,8 @@ nextcloud/lib/private/Repair/NC${MAJOR}/
 nextcloud/lib/private/Repair/NC20/EncryptionLegacyCipher.php
 nextcloud/lib/private/Repair/NC20/EncryptionMigration.php
 nextcloud/lib/private/Repair/NC20/ShippedDashboardEnable.php
+nextcloud/lib/private/Repair/NC22/
+nextcloud/lib/private/Repair/NC22/LookupServerSendCheck.php
 nextcloud/lib/private/Repair/OldGroupMembershipShares.php
 nextcloud/lib/private/Repair/Owncloud/
 nextcloud/lib/private/Repair/Owncloud/CleanPreviews.php
