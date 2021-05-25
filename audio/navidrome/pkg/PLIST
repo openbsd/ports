@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/25 22:14:47 abieber Exp $
+@newgroup _navidrome:866
+@newuser _navidrome:866:866:daemon:Navidrome Account:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/navidrome
+@mode 755
+@owner _navidrome
+@group _navidrome
+@sample ${VARBASE}/navidrome/
+@sample ${VARBASE}/navidrome/music/
+@mode
+@owner
+@group
+@bin bin/navidrome
+share/doc/pkg-readmes/${PKGSTEM}

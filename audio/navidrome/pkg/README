@@ -1,0 +1,23 @@
+$OpenBSD: README,v 1.1.1.1 2021/05/25 22:14:47 abieber Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Adding Music
+=============
+
+Music can be added by copying it to ${VARBASE}/navidrome/music/ or by changing
+the `--datafolder` directory used.
+
+Web Interface
+=============
+
+${PKGSTEM} serves up a web interface on:
+
+	 http://localhost:4533
+
+If you wish to listen on a different interface or change the location
+${PKGSTEM} looks for music, you can modify it via rcctl:
+
+         # rcctl set navidrome flags -a 0.0.0.0 --datafolder /home/music

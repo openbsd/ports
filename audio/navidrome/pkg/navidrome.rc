@@ -1,0 +1,14 @@
+#!/bin/ksh
+#
+# $OpenBSD: navidrome.rc,v 1.1.1.1 2021/05/25 22:14:47 abieber Exp $
+
+daemon="${TRUEPREFIX}/bin/navidrome"
+daemon_user="_navidrome"
+daemon_flags="-a localhost --datafolder ${VARBASE}/navidrome --musicfolder ${VARBASE}/navidrome/music"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1
