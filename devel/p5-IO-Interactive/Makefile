@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/23 02:10:23 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.2 2021/05/25 22:58:51 bluhm Exp $
 
 COMMENT =	utilities for interactive I/O
 
-DISTNAME =	IO-Interactive-1.022
+DISTNAME =	IO-Interactive-1.023
 
 CATEGORIES =	devel
 
 MAINTAINER =	Wen Heping <wenheping2000@Hotmail.com>
 
-# Perl
+# Artistic 2.0
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
