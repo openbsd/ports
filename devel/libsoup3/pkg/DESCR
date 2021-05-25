@@ -1,0 +1,12 @@
+libsoup is an HTTP client/server library for GNOME.
+It uses GObjects and the glib main loop, to integrate well with GNOME
+applications.
+
+Features:
+  * Both asynchronous (GMainLoop and callback-based) and synchronous APIs
+  * Automatically caches connections
+  * SSL support
+  * Proxy support, including authentication and SSL tunneling
+  * Client support for Digest, NTLM, and Basic authentication
+  * Server support for Digest and Basic authentication
+  * XML-RPC support
