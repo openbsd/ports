@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.76 2021/04/28 19:45:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.77 2021/05/25 18:29:40 sthen Exp $
 
 COMMENT =	free font editor for TTF, EOT, and SVG fonts
 
 DISTNAME =	birdfont-2.29.4
+REVISION =	0
 CATEGORIES =	graphics print
 
 SHARED_LIBS +=	birdfont			17.0 # 2.11.7
 SHARED_LIBS +=	birdgems			17.0 # 2.11.7
 
-HOMEPAGE =	http://birdfont.org/
+HOMEPAGE =	https://birdfont.org/
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
 
-MASTER_SITES =	http://birdfont.org/releases/
+MASTER_SITES =	https://birdfont.org/releases/
 EXTRACT_SUFX =	.tar.xz
 
 WANTLIB += atk-1.0 c cairo cairo-gobject fontconfig freetype gdk-3
