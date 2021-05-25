@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.555 2021/05/17 20:42:20 daniel Exp $
+# $OpenBSD: Makefile,v 1.556 2021/05/25 22:50:23 abieber Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -121,6 +121,7 @@
      SUBDIR += kcolorpicker
      SUBDIR += kdiagram
      SUBDIR += kimageannotator
+     SUBDIR += kquickimageeditor
      SUBDIR += krita
      SUBDIR += ksnip
      SUBDIR += l2p
