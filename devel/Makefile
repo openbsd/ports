@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2103 2021/05/25 02:55:33 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.2104 2021/05/25 08:28:57 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -308,6 +308,7 @@
      SUBDIR += libslang
      SUBDIR += libsmb2
      SUBDIR += libsoup
+     SUBDIR += libsoup3
      SUBDIR += libspectrum
      SUBDIR += libtalloc
      SUBDIR += libtermkey
