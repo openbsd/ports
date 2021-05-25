@@ -1,0 +1,41 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/25 23:17:29 abieber Exp $
+@pkgpath x11/kde4/okteta
+@bin bin/neochat
+share/applications/org.kde.neochat.desktop
+share/icons/hicolor/16x16/apps/org.kde.neochat.svg
+share/icons/hicolor/16x16@2/
+share/icons/hicolor/16x16@2/apps/
+share/icons/hicolor/16x16@2/apps/org.kde.neochat.svg
+share/icons/hicolor/16x16@3/
+share/icons/hicolor/16x16@3/apps/
+share/icons/hicolor/16x16@3/apps/org.kde.neochat.svg
+share/icons/hicolor/scalable/apps/org.kde.neochat.svg
+share/icons/hicolor/symbolic/apps/org.kde.neochat-symbolic.svg
+share/knotifications5/
+share/knotifications5/neochat.notifyrc
+share/locale/ca/LC_MESSAGES/neochat.mo
+share/locale/ca@valencia/LC_MESSAGES/neochat.mo
+share/locale/da/LC_MESSAGES/neochat.mo
+share/locale/de/LC_MESSAGES/neochat.mo
+share/locale/en_GB/LC_MESSAGES/neochat.mo
+share/locale/es/LC_MESSAGES/neochat.mo
+share/locale/eu/LC_MESSAGES/neochat.mo
+share/locale/fi/LC_MESSAGES/neochat.mo
+share/locale/fr/LC_MESSAGES/neochat.mo
+share/locale/hu/LC_MESSAGES/neochat.mo
+share/locale/it/LC_MESSAGES/neochat.mo
+share/locale/nl/LC_MESSAGES/neochat.mo
+share/locale/nn/LC_MESSAGES/neochat.mo
+share/locale/pl/LC_MESSAGES/neochat.mo
+share/locale/pt/LC_MESSAGES/neochat.mo
+share/locale/pt_BR/LC_MESSAGES/neochat.mo
+share/locale/sk/LC_MESSAGES/neochat.mo
+share/locale/sl/LC_MESSAGES/neochat.mo
+share/locale/sv/LC_MESSAGES/neochat.mo
+share/locale/uk/LC_MESSAGES/neochat.mo
+share/locale/zh_CN/LC_MESSAGES/neochat.mo
+share/metainfo/
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-mime-database
+share/metainfo/org.kde.neochat.appdata.xml
