@@ -6,7 +6,10 @@ ruby, don't forget to remove the following files:
  rm ${PREFIX}/bin/irb
  rm ${PREFIX}/bin/rdoc
  rm ${PREFIX}/bin/ri
+ rm ${PREFIX}/bin/rake
  rm ${PREFIX}/bin/gem
  rm ${PREFIX}/bin/bundle
  rm ${PREFIX}/bin/bundler
- rm ${PREFIX}/bin/rake
+ rm ${PREFIX}/bin/racc
+ rm ${PREFIX}/bin/racc2y
+ rm ${PREFIX}/bin/y2racc
