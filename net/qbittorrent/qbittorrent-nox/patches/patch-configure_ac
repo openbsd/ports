@@ -1,0 +1,20 @@
+$OpenBSD: patch-configure_ac,v 1.1 2021/05/25 18:20:43 mariani Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -185,12 +185,12 @@ PKG_CHECK_MODULES(libtorrent,
+                   LIBS="$libtorrent_LIBS $LIBS"])
+ 
+ PKG_CHECK_MODULES(openssl,
+-                  [openssl >= 1.1.1],
++                  [openssl >= 1.0.0],
+                   [CXXFLAGS="$openssl_CFLAGS $CXXFLAGS"
+                   LIBS="$openssl_LIBS $LIBS"])
+ 
+ PKG_CHECK_MODULES(zlib,
+-                 [zlib >= 1.2.11],
++                 [zlib >= 1.2.3],
+                  [CXXFLAGS="$zlib_CFLAGS $CXXFLAGS"
+                  LIBS="$zlib_LIBS $LIBS"])
+ 
