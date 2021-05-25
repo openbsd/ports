@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/03 16:42:30 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2021/05/25 01:49:57 bcallah Exp $
 
 COMMENT =	compiler for Inform 6 interactive fiction
 PKGNAME =	${DISTNAME:L}
 
 GH_ACCOUNT =	DavidKinder
 GH_PROJECT =	Inform6
-GH_TAGNAME =	v6.34
+GH_TAGNAME =	v6.35
 
 WANTLIB += c
 
