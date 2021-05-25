@@ -1,0 +1,5 @@
+cabal-bundler: (ab)use cabal-install solver to build standalone
+installation bundles.
+
+The OpenBSD port is used to create or update the MODCABAL_MANIFEST
+entries for the ports.

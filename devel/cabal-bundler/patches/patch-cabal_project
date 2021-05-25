@@ -1,0 +1,32 @@
+$OpenBSD: patch-cabal_project,v 1.1 2021/05/25 02:54:25 gnezdo Exp $
+
+Avoid building the parts we don't use that drag in extra dependencies.
+
+Index: cabal.project
+--- cabal.project.orig
++++ cabal.project
+@@ -1,17 +1,5 @@
+-with-compiler: ghc-8.8.4
+-tests: True
+-
+ packages: cabal-bundler
+-packages: cabal-deps
+-packages: cabal-diff
+-packages: cabal-docspec
+-packages: cabal-env
+-packages: cabal-hie
+-packages: cabal-iface-query
+ 
+-packages: cabal-store-check
+-packages: cabal-store-gc
+-
+ packages: peura
+ 
+ package cabal-bundler
+@@ -36,5 +24,4 @@ constraints: directory     installed
+ constraints: process       installed
+ constraints: transformers  installed
+ 
+-packages: https://oleg.fi/gentle-introduction-2021.2.tar.gz
+--- packages: gentle-introduction-2021.1.tar.gz
++packages: ../gentle-introduction-2021.2

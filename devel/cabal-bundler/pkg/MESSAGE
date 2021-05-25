@@ -1,0 +1,2 @@
+Remember to run `cabal v2-update` to download hackage package list
+before using cabal-bundler.
