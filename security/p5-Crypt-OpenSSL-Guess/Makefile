@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/11/22 08:27:21 benoit Exp $
+# $OpenBSD: Makefile,v 1.2 2021/05/25 23:31:11 bluhm Exp $
 
 COMMENT =	guess OpenSSL include path
 
-DISTNAME =	Crypt-OpenSSL-Guess-0.11
+DISTNAME =	Crypt-OpenSSL-Guess-0.13
 
 CATEGORIES =	security
 
