@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2021/03/08 13:59:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/05/25 11:17:37 sthen Exp $
 
 COMMENT =	terminal file manager inspired by ranger written in Go
 
 MODGO_MODNAME =	github.com/gokcehan/lf
-MODGO_VERSION =	v0.0.0-20210221224548-ced1ccd0c34b
+MODGO_VERSION =	v0.0.0-20210413204849-4601e74d666e
 
-DISTNAME =	lf-${MODGO_VERSION}
-PKGNAME =	lf-${MODGO_VERSION:C/v([0-9.]*)-([0-9]{8}).*/\1.\2/}
+R =		22
+DISTNAME =	lf-${R}
 WRKDIST =	${WRKDIR}/github.com/gokcehan/lf@${MODGO_VERSION}
-REVISION =	0
 
 CATEGORIES =	sysutils
 
@@ -26,7 +25,8 @@ RUN_DEPENDS =		devel/desktop-file-utils
 
 MODGO_MODULES =	\
 	github.com/gdamore/encoding		 v1.0.0 \
-	github.com/gdamore/tcell/v2		 v2.2.0 \
+	github.com/gdamore/tcell/v2		 v2.3.1 \
+	github.com/gokcehan/tcell/v2		 v2.2.1-0.20210329222449-4dd2d52e83ef \
 	github.com/lucasb-eyer/go-colorful	 v1.0.3 \
 	github.com/mattn/go-runewidth		 v0.0.10 \
 	github.com/rivo/uniseg			 v0.1.0 \
