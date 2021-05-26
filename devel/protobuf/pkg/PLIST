@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/03/16 03:07:53 tb Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/05/26 15:28:54 tb Exp $
 @bin bin/protoc
 include/google/
 include/google/protobuf/
@@ -21,6 +21,7 @@ include/google/protobuf/compiler/csharp/csharp_names.h
 include/google/protobuf/compiler/importer.h
 include/google/protobuf/compiler/java/
 include/google/protobuf/compiler/java/java_generator.h
+include/google/protobuf/compiler/java/java_kotlin_generator.h
 include/google/protobuf/compiler/java/java_names.h
 include/google/protobuf/compiler/js/
 include/google/protobuf/compiler/js/js_generator.h
