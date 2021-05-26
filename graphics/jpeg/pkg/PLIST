@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2020/02/05 17:31:09 thfr Exp $
+@comment $OpenBSD: PLIST,v 1.19 2021/05/26 10:20:06 sthen Exp $
 @bin bin/cjpeg
 @bin bin/djpeg
 @bin bin/jpegtran
@@ -10,6 +10,12 @@ include/jerror.h
 include/jmorecfg.h
 include/jpeglib.h
 include/turbojpeg.h
+lib/cmake/
+lib/cmake/libjpeg-turbo/
+lib/cmake/libjpeg-turbo/libjpeg-turboConfig.cmake
+lib/cmake/libjpeg-turbo/libjpeg-turboConfigVersion.cmake
+lib/cmake/libjpeg-turbo/libjpeg-turboTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/libjpeg-turbo/libjpeg-turboTargets.cmake
 @static-lib lib/libjpeg.a
 @lib lib/libjpeg.so.${LIBjpeg_VERSION}
 @static-lib lib/libturbojpeg.a
