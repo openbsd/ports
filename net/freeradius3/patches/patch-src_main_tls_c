@@ -1,52 +1,77 @@
-$OpenBSD: patch-src_main_tls_c,v 1.9 2020/03/26 09:47:30 sthen Exp $
+$OpenBSD: patch-src_main_tls_c,v 1.10 2021/05/26 12:12:38 sthen Exp $
 
 Index: src/main/tls.c
 --- src/main/tls.c.orig
 +++ src/main/tls.c
-@@ -2122,7 +2122,8 @@ int cbtls_verify(int ok, X509_STORE_CTX *ctx)
+@@ -613,7 +613,7 @@ tls_session_t *tls_new_session(TALLOC_CTX *ctx, fr_tls
+ 				/*
+ 				 * Swap empty store with the old one.
+ 				 */
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L
+ 				conf->old_x509_store = SSL_CTX_get_cert_store(conf->ctx);
+ 				/* Bump refcnt so the store is kept allocated till next store replacement */
+ 				X509_STORE_up_ref(conf->old_x509_store);
+@@ -1580,7 +1580,7 @@ static int load_dh_params(SSL_CTX *ctx, char *file)
+ 	 *
+ 	 * Change suggested by @t8m
+ 	 */
+-#if OPENSSL_VERSION_NUMBER >= 0x10101000L
++#if OPENSSL_VERSION_NUMBER >= 0x10101000L && !defined(LIBRESSL_VERSION_NUMBER)
+ 	if (FIPS_mode() > 0) {
+ 		WARN(LOG_PREFIX ": Ignoring user-selected DH parameters in FIPS mode. Using defaults.");
+ 		return 0;
+@@ -1803,7 +1803,7 @@ done:
+ 	return 0;
+ }
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ static SSL_SESSION *cbtls_get_session(SSL *ssl, unsigned char *data, int len, int *copy)
+ #else
+ static SSL_SESSION *cbtls_get_session(SSL *ssl, const unsigned char *data, int len, int *copy)
+@@ -2187,7 +2187,7 @@ static int cbtls_cache_refresh(SSL *ssl, SSL_SESSION *
+ 	return 0;
+ }
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ static SSL_SESSION *cbtls_cache_load(SSL *ssl, unsigned char *data, int len, int *copy)
+ #else
+ static SSL_SESSION *cbtls_cache_load(SSL *ssl, const unsigned char *data, int len, int *copy)
+@@ -2723,7 +2723,7 @@ int cbtls_verify(int ok, X509_STORE_CTX *ctx)
  	char		cn_str[1024];
  	char		buf[64];
  	X509		*client_cert;
 -#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
-+#if OPENSSL_VERSION_NUMBER >= 0x10100000L && \
-+    (!defined(LIBRESSL_VERSION_NUMBER) || LIBRESSL_VERSION_NUMBER >= 0x2080000fL)
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L
  	const STACK_OF(X509_EXTENSION) *ext_list;
  #else
  	STACK_OF(X509_EXTENSION) *ext_list;
-@@ -2334,7 +2335,8 @@ int cbtls_verify(int ok, X509_STORE_CTX *ctx)
+@@ -2935,7 +2935,7 @@ int cbtls_verify(int ok, X509_STORE_CTX *ctx)
  	}
  
  	if (lookup == 0) {
 -#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
-+#if OPENSSL_VERSION_NUMBER >= 0x10100000L && \
-+    (!defined(LIBRESSL_VERSION_NUMBER) || LIBRESSL_VERSION_NUMBER >= 0x2070000fL)
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L
  		ext_list = X509_get0_extensions(client_cert);
  #else
  		X509_CINF	*client_inf;
-@@ -3222,7 +3224,7 @@ post_ca:
- #ifdef SSL_OP_NO_TLSv1
- 	if (conf->disable_tlsv1) {
- 		ctx_options |= SSL_OP_NO_TLSv1;
--#if OPENSSL_VERSION_NUMBER >= 0x10100000L
-+#if OPENSSL_VERSION_NUMBER >= 0x10100000L /* ok for libressl */
- 		WARN("Please use tls_min_version and tls_max_version instead of disable_tlsv1");
+@@ -2988,7 +2988,7 @@ int cbtls_verify(int ok, X509_STORE_CTX *ctx)
+ 				value[0] = '0';
+ 				value[1] = 'x';
+ 				const unsigned char *srcp;
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L
+ 				const ASN1_STRING *srcasn1p;
+ 				srcasn1p = X509_EXTENSION_get_data(ext);
+ 				srcp = ASN1_STRING_get0_data(srcasn1p);
+@@ -3987,7 +3987,7 @@ post_ca:
+ 	 *	disable early data.
+ 	 *
+ 	 */
+-#if OPENSSL_VERSION_NUMBER >= 0x10101000L
++#if OPENSSL_VERSION_NUMBER >= 0x10101000L && !defined(LIBRESSL_VERSION_NUMBER)
+ 	SSL_CTX_set_max_early_data(ctx, 0);
  #endif
- 	}
-@@ -3232,7 +3234,7 @@ post_ca:
- #ifdef SSL_OP_NO_TLSv1_1
- 	if (conf->disable_tlsv1_1) {
- 		ctx_options |= SSL_OP_NO_TLSv1_1;
--#if OPENSSL_VERSION_NUMBER >= 0x10100000L
-+#if OPENSSL_VERSION_NUMBER >= 0x10100000L /* ok for libressl */
- 		WARN("Please use tls_min_version and tls_max_version instead of disable_tlsv1_2");
- #endif
- 	}
-@@ -3243,7 +3245,7 @@ post_ca:
  
- 	if (conf->disable_tlsv1_2) {
- 		ctx_options |= SSL_OP_NO_TLSv1_2;
--#if OPENSSL_VERSION_NUMBER >= 0x10100000L
-+#if OPENSSL_VERSION_NUMBER >= 0x10100000L /* ok for libressl */
- 		WARN("Please use tls_min_version and tls_max_version instead of disable_tlsv1_2");
- #endif
- 	}

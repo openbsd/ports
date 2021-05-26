@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2021/03/05 10:43:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2021/05/26 12:12:38 sthen Exp $
 
 PORTROACH=	limit:^3\.
 
@@ -11,9 +11,7 @@ COMMENT-mysql=	freeradius mysql rlm addon
 COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-python=	freeradius python rlm addon
 
-V=		3.0.21
-REVISION-main=	2
-REVISION=	1
+V=		3.0.22
 DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
 
@@ -56,6 +54,8 @@ CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/freeradius \
 TEST_TARGET=	test
 TEST_DEPENDS=	freeradius-$V:${BUILD_PKGPATH}
 TEST_IS_INTERACTIVE=Yes # doesn't exit properly
+# For manual tests, eapol_test from wpa_supplicant is useful.
+# See http://deployingradius.com/scripts/eapol_test/
 
 # an experimental py3 module exists, not built by default yet
 MODULES=	lang/python
@@ -82,9 +82,9 @@ LIB_DEPENDS-main=	databases/gdbm \
 			devel/pcre \
 			net/curl
 
-WANTLIB-main += c crypto curl execinfo gdbm hiredis json-c m nghttp2
+WANTLIB-main += c crypto curl execinfo gdbm hiredis json-c m
 WANTLIB-main += pcap pcre perl pthread readline sqlite3 ssl talloc
-WANTLIB-main += ykclient yubikey z
+WANTLIB-main += ykclient yubikey
 
 .for i in ${MULTI_PACKAGES:N-main}
 PSEUDO_FLAVORS+= no_${i:S/-//}
@@ -185,7 +185,9 @@ pre-install:
 
 post-install:
 	rm ${PREFIX}/lib/freeradius/*.*a
-	rm -r ${PREFIX}/share/examples/freeradius/mods-config/sql/*/oracle
+	rm -r \
+	    ${PREFIX}/share/examples/freeradius/mods-config/sql/*/oracle \
+	    ${PREFIX}/share/doc/freeradius/antora
 	chmod -R u+rwX,og+rX ${PREFIX}/share/examples/freeradius/
 	${SUBST_CMD} -c -m 555 ${FILESDIR}/freeradius-enable.sh \
 	    ${PREFIX}/share/freeradius/freeradius-enable.sh

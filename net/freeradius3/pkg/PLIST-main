@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2020/03/26 09:47:30 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2021/05/26 12:12:38 sthen Exp $
 @option is-branch
 @conflict freeradius-*
 @conflict radiusd-cistron-*
@@ -20,6 +20,7 @@ bin/radtest
 @bin bin/radwho
 bin/radzap
 @bin bin/rlm_ippool_tool
+bin/rlm_sqlippool_tool
 @bin bin/smbencrypt
 include/freeradius/
 include/freeradius/attributes.h
@@ -114,7 +115,6 @@ lib/freeradius/
 @so lib/freeradius/rlm_eap.so
 @so lib/freeradius/rlm_eap_fast.so
 @so lib/freeradius/rlm_eap_gtc.so
-@so lib/freeradius/rlm_eap_leap.so
 @so lib/freeradius/rlm_eap_md5.so
 @so lib/freeradius/rlm_eap_mschapv2.so
 @so lib/freeradius/rlm_eap_peap.so
@@ -145,11 +145,13 @@ lib/freeradius/
 @so lib/freeradius/rlm_soh.so
 @so lib/freeradius/rlm_sometimes.so
 @so lib/freeradius/rlm_sql.so
+@so lib/freeradius/rlm_sql_map.so
 @so lib/freeradius/rlm_sql_null.so
 @so lib/freeradius/rlm_sql_sqlite.so
 @so lib/freeradius/rlm_sqlcounter.so
 @so lib/freeradius/rlm_sqlippool.so
 @so lib/freeradius/rlm_test.so
+@so lib/freeradius/rlm_totp.so
 @so lib/freeradius/rlm_unix.so
 @so lib/freeradius/rlm_unpack.so
 @so lib/freeradius/rlm_utf8.so
@@ -194,6 +196,7 @@ lib/freeradius/
 @man man/man8/radsniff.8
 @man man/man8/radsqlrelay.8
 @man man/man8/rlm_ippool_tool.8
+@man man/man8/rlm_sqlippool_tool.8
 sbin/checkrad
 sbin/raddebug
 @bin sbin/radiusd
@@ -211,6 +214,7 @@ share/doc/freeradius/configuration/
 share/doc/freeradius/configuration/acct_type.rst
 share/doc/freeradius/configuration/autz_type.rst
 share/doc/freeradius/configuration/configurable_failover.rst
+share/doc/freeradius/configuration/dynamic_home_servers.md
 share/doc/freeradius/configuration/load_balance.rst
 share/doc/freeradius/configuration/post_auth_type
 share/doc/freeradius/configuration/session_type
@@ -352,8 +356,8 @@ share/examples/freeradius/certs/
 @group _freeradius
 share/examples/freeradius/certs/Makefile
 @sample ${FREERADIUS_ETC}/certs/Makefile
-share/examples/freeradius/certs/README
-@sample ${FREERADIUS_ETC}/certs/README
+share/examples/freeradius/certs/README.md
+@sample ${FREERADIUS_ETC}/certs/README.md
 share/examples/freeradius/certs/bootstrap
 @mode 555
 @sample ${FREERADIUS_ETC}/certs/bootstrap
@@ -375,7 +379,9 @@ share/examples/freeradius/dictionary
 share/examples/freeradius/experimental.conf
 @sample ${FREERADIUS_ETC}/experimental.conf
 share/examples/freeradius/hints
+@sample ${FREERADIUS_ETC}/hints
 share/examples/freeradius/huntgroups
+@sample ${FREERADIUS_ETC}/huntgroups
 share/examples/freeradius/mods-available/
 @sample ${FREERADIUS_ETC}/mods-available/
 share/examples/freeradius/mods-available/README.rst
@@ -408,6 +414,12 @@ share/examples/freeradius/mods-available/detail.log
 @sample ${FREERADIUS_ETC}/mods-available/detail.log
 share/examples/freeradius/mods-available/dhcp
 @sample ${FREERADIUS_ETC}/mods-available/dhcp
+share/examples/freeradius/mods-available/dhcp_files
+@sample ${FREERADIUS_ETC}/mods-available/dhcp_files
+share/examples/freeradius/mods-available/dhcp_passwd
+@sample ${FREERADIUS_ETC}/mods-available/dhcp_passwd
+share/examples/freeradius/mods-available/dhcp_sql
+@sample ${FREERADIUS_ETC}/mods-available/dhcp_sql
 share/examples/freeradius/mods-available/dhcp_sqlippool
 @sample ${FREERADIUS_ETC}/mods-available/dhcp_sqlippool
 share/examples/freeradius/mods-available/digest
@@ -487,12 +499,16 @@ share/examples/freeradius/mods-available/sometimes
 @sample ${FREERADIUS_ETC}/mods-available/sometimes
 share/examples/freeradius/mods-available/sql
 @sample ${FREERADIUS_ETC}/mods-available/sql
+share/examples/freeradius/mods-available/sql_map
+@sample ${FREERADIUS_ETC}/mods-available/sql_map
 share/examples/freeradius/mods-available/sqlcounter
 @sample ${FREERADIUS_ETC}/mods-available/sqlcounter
 share/examples/freeradius/mods-available/sqlippool
 @sample ${FREERADIUS_ETC}/mods-available/sqlippool
 share/examples/freeradius/mods-available/sradutmp
 @sample ${FREERADIUS_ETC}/mods-available/sradutmp
+share/examples/freeradius/mods-available/totp
+@sample ${FREERADIUS_ETC}/mods-available/totp
 @comment share/examples/freeradius/mods-available/unbound
 share/examples/freeradius/mods-available/unix
 @sample ${FREERADIUS_ETC}/mods-available/unix
@@ -516,6 +532,8 @@ share/examples/freeradius/mods-config/attr_filter/access_reject
 @sample ${FREERADIUS_ETC}/mods-config/attr_filter/access_reject
 share/examples/freeradius/mods-config/attr_filter/accounting_response
 @sample ${FREERADIUS_ETC}/mods-config/attr_filter/accounting_response
+share/examples/freeradius/mods-config/attr_filter/coa
+@sample ${FREERADIUS_ETC}/mods-config/attr_filter/coa
 share/examples/freeradius/mods-config/attr_filter/post-proxy
 @sample ${FREERADIUS_ETC}/mods-config/attr_filter/post-proxy
 share/examples/freeradius/mods-config/attr_filter/pre-proxy
@@ -526,6 +544,8 @@ share/examples/freeradius/mods-config/files/accounting
 @sample ${FREERADIUS_ETC}/mods-config/files/accounting
 share/examples/freeradius/mods-config/files/authorize
 @sample ${FREERADIUS_ETC}/mods-config/files/authorize
+share/examples/freeradius/mods-config/files/dhcp
+@sample ${FREERADIUS_ETC}/mods-config/files/dhcp
 share/examples/freeradius/mods-config/files/pre-proxy
 @sample ${FREERADIUS_ETC}/mods-config/files/pre-proxy
 share/examples/freeradius/mods-config/perl/
@@ -560,6 +580,14 @@ share/examples/freeradius/mods-config/sql/cui/sqlite/queries.conf
 @sample ${FREERADIUS_ETC}/mods-config/sql/cui/sqlite/queries.conf
 share/examples/freeradius/mods-config/sql/cui/sqlite/schema.sql
 @sample ${FREERADIUS_ETC}/mods-config/sql/cui/sqlite/schema.sql
+share/examples/freeradius/mods-config/sql/dhcp/
+@sample ${FREERADIUS_ETC}/mods-config/sql/dhcp/
+share/examples/freeradius/mods-config/sql/dhcp/sqlite/
+@sample ${FREERADIUS_ETC}/mods-config/sql/dhcp/sqlite/
+share/examples/freeradius/mods-config/sql/dhcp/sqlite/queries.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/dhcp/sqlite/queries.conf
+share/examples/freeradius/mods-config/sql/dhcp/sqlite/schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/dhcp/sqlite/schema.sql
 share/examples/freeradius/mods-config/sql/ippool/
 @sample ${FREERADIUS_ETC}/mods-config/sql/ippool/
 share/examples/freeradius/mods-config/sql/ippool-dhcp/
@@ -691,8 +719,8 @@ share/examples/freeradius/sites-available/coa-relay
 @sample ${FREERADIUS_ETC}/sites-available/coa-relay
 share/examples/freeradius/sites-available/control-socket
 @sample ${FREERADIUS_ETC}/sites-available/control-socket
-share/examples/freeradius/sites-available/copy-acct-to-home-server
-@sample ${FREERADIUS_ETC}/sites-available/copy-acct-to-home-server
+share/examples/freeradius/sites-available/co${MODPY_PY_PREFIX}acct-to-home-server
+@sample ${FREERADIUS_ETC}/sites-available/co${MODPY_PY_PREFIX}acct-to-home-server
 share/examples/freeradius/sites-available/decoupled-accounting
 @sample ${FREERADIUS_ETC}/sites-available/decoupled-accounting
 share/examples/freeradius/sites-available/default
@@ -711,6 +739,8 @@ share/examples/freeradius/sites-available/originate-coa
 @sample ${FREERADIUS_ETC}/sites-available/originate-coa
 share/examples/freeradius/sites-available/proxy-inner-tunnel
 @sample ${FREERADIUS_ETC}/sites-available/proxy-inner-tunnel
+share/examples/freeradius/sites-available/resource-check
+@sample ${FREERADIUS_ETC}/sites-available/resource-check
 share/examples/freeradius/sites-available/robust-proxy-accounting
 @sample ${FREERADIUS_ETC}/sites-available/robust-proxy-accounting
 share/examples/freeradius/sites-available/soh
@@ -776,6 +806,7 @@ share/freeradius/dictionary.bt
 share/freeradius/dictionary.cablelabs
 share/freeradius/dictionary.cabletron
 share/freeradius/dictionary.camiant
+share/freeradius/dictionary.centec
 share/freeradius/dictionary.checkpoint
 share/freeradius/dictionary.chillispot
 share/freeradius/dictionary.cisco
@@ -931,6 +962,7 @@ share/freeradius/dictionary.symbol
 share/freeradius/dictionary.t_systems_nova
 share/freeradius/dictionary.telebit
 share/freeradius/dictionary.telkom
+share/freeradius/dictionary.telrad
 share/freeradius/dictionary.terena
 share/freeradius/dictionary.trapeze
 share/freeradius/dictionary.travelping
