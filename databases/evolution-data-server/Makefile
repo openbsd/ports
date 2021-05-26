@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.271 2021/05/13 10:21:53 ajacoutot Exp $
-
-# XXX add libphonenumber support when a cpp release is out
+# $OpenBSD: Makefile,v 1.272 2021/05/26 07:25:04 ajacoutot Exp $
 
 COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		3.40.1
+REVISION=		0
 
 CATEGORIES=		databases productivity
 
@@ -25,15 +24,15 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # LGPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} X11 atk-1.0 c cairo cairo-gobject
-WANTLIB += canberra canberra-gtk3 db gck-1 gcr-base-3 gcr-ui-3
-WANTLIB += gdata gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += goa-1.0 gobject-2.0 gtk-3 gweather-3 harfbuzz ical
-WANTLIB += ical-glib icalss icalvcal icudata icui18n icuuc intl
-WANTLIB += javascriptcoregtk-4.0 json-glib-1.0 lber ldap m nspr4
-WANTLIB += nss3 nssutil3 p11-kit pango-1.0 pangocairo-1.0 plc4
-WANTLIB += plds4 secret-1 smime3 soup-2.4 sqlite3 ssl3 webkit2gtk-4.0
-WANTLIB += xml2 z
+WANTLIB += ${COMPILER_LIBCXX} X11 atk-1.0 boost_thread-mt c cairo
+WANTLIB += cairo-gobject canberra canberra-gtk3 db gck-1 gcr-base-3
+WANTLIB += gcr-ui-3 gdata gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 goa-1.0 gobject-2.0 gtk-3 gweather-3 harfbuzz
+WANTLIB += ical ical-glib icalss icalvcal icudata icui18n icuuc
+WANTLIB += intl javascriptcoregtk-4.0 json-glib-1.0 lber ldap
+WANTLIB += m nspr4 nss3 nssutil3 p11-kit pango-1.0 pangocairo-1.0
+WANTLIB += phonenumber plc4 plds4 secret-1 smime3 soup-2.4 sqlite3
+WANTLIB += ssl3 webkit2gtk-4.0 xml2 z
 
 COMPILER=		base-clang ports-gcc base-gcc
 
@@ -48,6 +47,7 @@ LIB_DEPENDS= 		audio/libcanberra,-gtk3 \
 			databases/db/v4 \
 			databases/openldap \
 			devel/libgdata \
+			productivity/libphonenumber \
 			security/nss \
 			textproc/libical,-glib \
 			www/webkitgtk4 \
@@ -62,6 +62,7 @@ MODGNOME_TOOLS=		desktop-file-utils gobject-introspection vala
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 CONFIGURE_ARGS=		-DWITH_KRB5=OFF \
+			-DWITH_PHONENUMBER=ON \
 			-DWITH_LIBDB_CFLAGS="-I${LOCALBASE}/include/db4" \
 			-DWITH_LIBDB_LIBS="-L${LOCALBASE}/lib -ldb" \
 			-DWITH_OPENLDAP=${LOCALBASE} \
