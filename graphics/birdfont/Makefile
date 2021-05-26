@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.77 2021/05/25 18:29:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.78 2021/05/26 13:01:29 sthen Exp $
 
 COMMENT =	free font editor for TTF, EOT, and SVG fonts
 
 DISTNAME =	birdfont-2.29.4
-REVISION =	0
+REVISION =	1
 CATEGORIES =	graphics print
 
 SHARED_LIBS +=	birdfont			17.0 # 2.11.7
@@ -25,12 +25,10 @@ WANTLIB += pangocairo-1.0 soup-2.4 sqlite3 webkit2gtk-4.0 xmlbird
 WANTLIB += z harfbuzz
 
 MODULES =	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
-MODPY_ADJ_FILES =	configure install.py
+MODPY_ADJ_FILES =	configure install.py build.py
 
 BUILD_DEPENDS =	devel/gettext,-tools \
-		devel/py-doit \
 		lang/vala
 
 LIB_DEPENDS =	devel/libgee \
@@ -56,7 +54,7 @@ pre-configure:
 		${WRKSRC}/dodo.py ${WRKSRC}/scripts/version.py
 
 do-build:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/doit
+	cd ${WRKSRC} && ./build.py
 
 do-install:
 	cd ${WRKSRC} && ./install.py --nogzip=1
