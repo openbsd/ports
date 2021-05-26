@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2020/11/11 02:45:18 jeremy Exp $
+# $OpenBSD: Makefile,v 1.7 2021/05/26 20:35:49 jeremy Exp $
 
 COMMENT=		ruby graphical tooklit using Tk
 
-DISTNAME=		tk-0.3.0
+DISTNAME=		tk-0.4.0
 CATEGORIES=		x11
 
 HOMEPAGE=		https://github.com/ruby/tk
@@ -12,18 +12,18 @@ MAINTAINER=		Jeremy Evans <jeremy@openbsd.org>
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MODULES=		lang/ruby
+MODULES=		lang/ruby x11/tk
 
 CONFIGURE_STYLE=	ruby gem ext
 
 MODRUBY_TEST=	rake
 
-CONFIGURE_ARGS =	--with-tcl-include=${LOCALBASE}/include/tcl8.5 \
-			--with-tk-include=${LOCALBASE}/include/tk8.5 \
-			--with-tcllib=tcl85 \
-			--with-tklib=tk85 \
+CONFIGURE_ARGS =	--with-tcl-include=${MODTCL_INCDIR} \
+			--with-tk-include=${MODTK_INCDIR} \
+			--with-tcllib=${MODTCL_LIB} \
+			--with-tklib=${MODTK_LIB} \
 			--with-X11-dir=${X11BASE}
-WANTLIB =		X11 tcl85 tk85
-LIB_DEPENDS =		tk->=8.5,<8.6:x11/tk/8.5
+WANTLIB =		X11 ${MODTCL_LIB} ${MODTK_LIB}
+LIB_DEPENDS =		${MODTK_LIB_DEPENDS}
 
 .include <bsd.port.mk>
