@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.54 2020/06/04 09:08:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.55 2021/05/26 05:56:49 ajacoutot Exp $
 @bin bin/certtool
 @bin bin/danetool
 @bin bin/gnutls-cli
@@ -90,6 +90,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_alert_get_strname.3
 @man man/man3/gnutls_alert_send.3
 @man man/man3/gnutls_alert_send_appropriate.3
+@man man/man3/gnutls_alert_set_read_function.3
 @man man/man3/gnutls_alpn_get_selected_protocol.3
 @man man/man3/gnutls_alpn_set_protocols.3
 @man man/man3/gnutls_anon_allocate_client_credentials.3
@@ -304,7 +305,10 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_handshake_set_post_client_hello_function.3
 @man man/man3/gnutls_handshake_set_private_extensions.3
 @man man/man3/gnutls_handshake_set_random.3
+@man man/man3/gnutls_handshake_set_read_function.3
+@man man/man3/gnutls_handshake_set_secret_function.3
 @man man/man3/gnutls_handshake_set_timeout.3
+@man man/man3/gnutls_handshake_write.3
 @man man/man3/gnutls_hash.3
 @man man/man3/gnutls_hash_copy.3
 @man man/man3/gnutls_hash_deinit.3
@@ -749,6 +753,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_session_set_verify_cert.3
 @man man/man3/gnutls_session_set_verify_cert2.3
 @man man/man3/gnutls_session_set_verify_function.3
+@man man/man3/gnutls_session_set_verify_output_function.3
 @man man/man3/gnutls_session_supplemental_register.3
 @man man/man3/gnutls_session_ticket_enable_client.3
 @man man/man3/gnutls_session_ticket_enable_server.3
@@ -1199,12 +1204,15 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_x509_trust_list_get_issuer.3
 @man man/man3/gnutls_x509_trust_list_get_issuer_by_dn.3
 @man man/man3/gnutls_x509_trust_list_get_issuer_by_subject_key_id.3
+@man man/man3/gnutls_x509_trust_list_get_ptr.3
 @man man/man3/gnutls_x509_trust_list_init.3
 @man man/man3/gnutls_x509_trust_list_iter_deinit.3
 @man man/man3/gnutls_x509_trust_list_iter_get_ca.3
 @man man/man3/gnutls_x509_trust_list_remove_cas.3
 @man man/man3/gnutls_x509_trust_list_remove_trust_file.3
 @man man/man3/gnutls_x509_trust_list_remove_trust_mem.3
+@man man/man3/gnutls_x509_trust_list_set_getissuer_function.3
+@man man/man3/gnutls_x509_trust_list_set_ptr.3
 @man man/man3/gnutls_x509_trust_list_verify_crt.3
 @man man/man3/gnutls_x509_trust_list_verify_crt2.3
 @man man/man3/gnutls_x509_trust_list_verify_named_crt.3
@@ -1253,8 +1261,6 @@ share/locale/es/LC_MESSAGES/gnutls.mo
 share/locale/fi/LC_MESSAGES/gnutls.mo
 share/locale/fr/LC_MESSAGES/gnutls.mo
 share/locale/it/LC_MESSAGES/gnutls.mo
-share/locale/ms/
-share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/gnutls.mo
 share/locale/nl/LC_MESSAGES/gnutls.mo
 share/locale/pl/LC_MESSAGES/gnutls.mo
