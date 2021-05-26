@@ -1,8 +1,9 @@
-$OpenBSD: patch-src_perl_Makefile_in,v 1.13 2019/02/17 19:25:43 kn Exp $
+$OpenBSD: patch-src_perl_Makefile_in,v 1.14 2021/05/26 13:50:02 sthen Exp $
+
 Index: src/perl/Makefile.in
 --- src/perl/Makefile.in.orig
 +++ src/perl/Makefile.in
-@@ -409,7 +409,7 @@ AM_CPPFLAGS = \
+@@ -411,7 +411,7 @@ AM_CPPFLAGS = \
  	-I$(top_srcdir)/src/core \
  	-I$(top_srcdir)/src/fe-common/core \
  	$(GLIB_CFLAGS) \

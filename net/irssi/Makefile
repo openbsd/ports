@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2021/02/15 19:52:56 kn Exp $
+# $OpenBSD: Makefile,v 1.95 2021/05/26 13:50:02 sthen Exp $
 
 MULTI_PACKAGES = -main -otr
 
@@ -8,15 +8,11 @@ MULTI_PACKAGES = -main -otr
 COMMENT-main =	modular IRC client with many features
 COMMENT-otr =	OTR (off-the-record) plugin for irssi
 
-V =		1.2.2
+V =		1.2.3
 DISTNAME =	irssi-$V
 PKGSPEC-main =	irssi-=$V
 PKGNAME-main =	irssi-$V
 PKGNAME-otr =	irssi-otr-$V
-REVISION =	5
-
-PATCHFILES =	glib-2-63.patch
-PATCH_DIST_STRIP =	-p1
 
 CATEGORIES =	net
 
