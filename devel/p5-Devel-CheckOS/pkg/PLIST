@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/05/21 23:59:42 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/05/26 10:01:40 bluhm Exp $
 bin/use-devel-assertos
 ${P5SITE}/Devel/
 ${P5SITE}/Devel/AssertOS/
@@ -27,6 +27,7 @@ ${P5SITE}/Devel/AssertOS/Irix.pm
 ${P5SITE}/Devel/AssertOS/Linux/
 ${P5SITE}/Devel/AssertOS/Linux.pm
 ${P5SITE}/Devel/AssertOS/Linux/Debian.pm
+${P5SITE}/Devel/AssertOS/Linux/Devuan.pm
 ${P5SITE}/Devel/AssertOS/Linux/Raspbian.pm
 ${P5SITE}/Devel/AssertOS/Linux/RealDebian.pm
 ${P5SITE}/Devel/AssertOS/Linux/Ubuntu.pm
@@ -117,6 +118,7 @@ ${P5SITE}/Devel/CheckOS/Families.pod
 @man man/man3p/Devel::AssertOS::Irix.3p
 @man man/man3p/Devel::AssertOS::Linux.3p
 @man man/man3p/Devel::AssertOS::Linux::Debian.3p
+@man man/man3p/Devel::AssertOS::Linux::Devuan.3p
 @man man/man3p/Devel::AssertOS::Linux::Raspbian.3p
 @man man/man3p/Devel::AssertOS::Linux::RealDebian.3p
 @man man/man3p/Devel::AssertOS::Linux::Ubuntu.3p
