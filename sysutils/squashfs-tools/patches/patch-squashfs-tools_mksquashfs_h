@@ -1,9 +1,6 @@
-$OpenBSD: patch-squashfs-tools_mksquashfs_h,v 1.2 2021/01/30 15:19:36 jsg Exp $
+$OpenBSD: patch-squashfs-tools_mksquashfs_h,v 1.3 2021/05/26 19:54:24 sthen Exp $
 
-https://github.com/plougher/squashfs-tools/pull/69
-
-squashfs-tools: fix build failure against gcc-10
-fe2f5da4b0f8994169c53e84b7cb8a0feefc97b5
+missing from actions.c, read_fs.c, sort.c 
 
 Index: squashfs-tools/mksquashfs.h
 --- squashfs-tools/mksquashfs.h.orig
@@ -16,12 +13,3 @@ Index: squashfs-tools/mksquashfs.h
  
  struct dir_info {
  	char			*pathname;
-@@ -143,7 +144,7 @@ struct append_file {
- #endif
- 
- extern struct cache *reader_buffer, *fragment_buffer, *reserve_cache;
--struct cache *bwriter_buffer, *fwriter_buffer;
-+extern struct cache *bwriter_buffer, *fwriter_buffer;
- extern struct queue *to_reader, *to_deflate, *to_writer, *from_writer,
- 	*to_frag, *locked_fragment, *to_process_frag;
- extern struct append_file **file_mapping;

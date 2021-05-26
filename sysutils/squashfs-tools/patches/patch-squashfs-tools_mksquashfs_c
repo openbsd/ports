@@ -1,37 +1,31 @@
-$OpenBSD: patch-squashfs-tools_mksquashfs_c,v 1.1.1.1 2019/12/16 15:35:26 jasper Exp $
+$OpenBSD: patch-squashfs-tools_mksquashfs_c,v 1.2 2021/05/26 19:54:24 sthen Exp $
 
-https://github.com/plougher/squashfs-tools/pull/69
+equivalent effect to https://github.com/plougher/squashfs-tools/pull/69
+but simpler
 
 Index: squashfs-tools/mksquashfs.c
 --- squashfs-tools/mksquashfs.c.orig
 +++ squashfs-tools/mksquashfs.c
-@@ -35,7 +35,12 @@
+@@ -35,7 +35,10 @@
  #include <stddef.h>
  #include <sys/types.h>
  #include <sys/stat.h>
-+#ifndef linux
-+#include <sys/sysctl.h>
-+#else
++#ifdef linux
 +#include <sys/sysinfo.h>
  #include <sys/sysmacros.h>
 +#endif
  #include <fcntl.h>
  #include <errno.h>
  #include <dirent.h>
-@@ -50,8 +55,11 @@
+@@ -50,7 +53,6 @@
  #include <sys/wait.h>
  #include <limits.h>
  #include <ctype.h>
 -#include <sys/sysinfo.h>
  
-+#ifndef FNM_EXTMATCH /* glibc extension */
-+	#define FNM_EXTMATCH 0
-+#endif
-+
  #ifndef linux
  #define __BYTE_ORDER BYTE_ORDER
- #define __BIG_ENDIAN BIG_ENDIAN
-@@ -4348,6 +4356,7 @@ void initialise_threads(int readq, int fragq, int bwri
+@@ -4348,6 +4350,7 @@ void initialise_threads(int readq, int fragq, int bwri
  	sigemptyset(&sigmask);
  	sigaddset(&sigmask, SIGQUIT);
  	sigaddset(&sigmask, SIGHUP);
@@ -39,47 +33,39 @@ Index: squashfs-tools/mksquashfs.c
  	if(pthread_sigmask(SIG_BLOCK, &sigmask, NULL) != 0)
  		BAD_ERROR("Failed to set signal mask in intialise_threads\n");
  
-@@ -5195,6 +5204,35 @@ int get_physical_memory()
+@@ -4363,7 +4366,9 @@ void initialise_threads(int readq, int fragq, int bwri
+ 		BAD_ERROR("Failed to set signal mask in intialise_threads\n");
+ 
+ 	if(processors == -1) {
+-#ifndef linux
++#ifdef _SC_NPROCESSORS_ONLN
++		processors = sysconf(_SC_NPROCESSORS_ONLN);
++#else
+ 		int mib[2];
+ 		size_t len = sizeof(processors);
+ 
+@@ -4380,8 +4385,6 @@ void initialise_threads(int readq, int fragq, int bwri
+ 			ERROR_EXIT("  Defaulting to 1\n");
+ 			processors = 1;
+ 		}
+-#else
+-		processors = sysconf(_SC_NPROCESSORS_ONLN);
+ #endif
+ 	}
+ 
+@@ -5195,6 +5198,7 @@ int get_physical_memory()
  	long long page_size = sysconf(_SC_PAGESIZE);
  	int phys_mem;
  
-+#ifndef linux
-+	#ifdef HW_MEMSIZE
-+		#define SYSCTL_PHYSMEM HW_MEMSIZE
-+	#elif defined(HW_PHYSMEM64)
-+		#define SYSCTL_PHYSMEM HW_PHYSMEM64
-+	#else
-+		#define SYSCTL_PHYSMEM HW_PHYSMEM
-+	#endif
-+
-+	int mib[2];
-+	uint64_t sysctl_physmem = 0;
-+	size_t sysctl_len = sizeof(sysctl_physmem);
-+
-+	mib[0] = CTL_HW;
-+	mib[1] = SYSCTL_PHYSMEM;
-+
-+	if(sysctl(mib, 2, &sysctl_physmem, &sysctl_len, NULL, 0) == 0) {
-+		/* some systems use 32-bit values, work with what we're given */
-+		if (sysctl_len == 4)
-+			sysctl_physmem = *(uint32_t*)&sysctl_physmem;
-+		phys_mem = sysctl_physmem >> 20;
-+	} else {
-+		ERROR_START("Failed to get amount of available "
-+			"memory.");
-+		ERROR_EXIT("  Defaulting to least viable amount\n");
-+		phys_mem = SQUASHFS_LOWMEM;
-+	}
-+  #undef SYSCTL_PHYSMEM
-+#else
++#ifdef linux
  	if(num_pages == -1 || page_size == -1) {
  		struct sysinfo sys;
  		int res = sysinfo(&sys);
-@@ -5207,6 +5245,7 @@ int get_physical_memory()
+@@ -5205,6 +5209,7 @@ int get_physical_memory()
+ 		num_pages = sys.totalram;
+ 		page_size = sys.mem_unit;
  	}
- 
- 	phys_mem = num_pages * page_size >> 20;
 +#endif
  
- 	if(phys_mem < SQUASHFS_LOWMEM)
- 		BAD_ERROR("Mksquashfs requires more physical memory than is "
+ 	phys_mem = num_pages * page_size >> 20;
+ 

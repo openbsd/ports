@@ -1,25 +1,26 @@
-$OpenBSD: patch-squashfs-tools_unsquashfs_c,v 1.1.1.1 2019/12/16 15:35:26 jasper Exp $
+$OpenBSD: patch-squashfs-tools_unsquashfs_c,v 1.2 2021/05/26 19:54:24 sthen Exp $
 
 https://github.com/plougher/squashfs-tools/pull/69
-with the lutimes(3) changes removed 
+with the lutimes(3) changes removed and prefer _SC_NPROCESSORS_ONLN
 
 Index: squashfs-tools/unsquashfs.c
 --- squashfs-tools/unsquashfs.c.orig
 +++ squashfs-tools/unsquashfs.c
-@@ -32,8 +32,12 @@
+@@ -32,8 +32,13 @@
  #include "stdarg.h"
  #include "fnmatch_compat.h"
  
-+#ifndef linux
++#ifndef _SC_NPROCESSORS_ONLN
 +#include <sys/sysctl.h>
-+#else
++#endif
++#ifdef linux
  #include <sys/sysinfo.h>
  #include <sys/sysmacros.h>
 +#endif
  #include <sys/types.h>
  #include <sys/time.h>
  #include <sys/resource.h>
-@@ -2235,6 +2239,7 @@ void initialise_threads(int fragment_buffer_size, int 
+@@ -2245,6 +2250,7 @@ void initialise_threads(int fragment_buffer_size, int 
  	sigemptyset(&sigmask);
  	sigaddset(&sigmask, SIGQUIT);
  	sigaddset(&sigmask, SIGHUP);
@@ -27,3 +28,23 @@ Index: squashfs-tools/unsquashfs.c
  	if(pthread_sigmask(SIG_BLOCK, &sigmask, NULL) != 0)
  		EXIT_UNSQUASH("Failed to set signal mask in initialise_threads"
  			"\n");
+@@ -2261,7 +2267,9 @@ void initialise_threads(int fragment_buffer_size, int 
+ 			"\n");
+ 
+ 	if(processors == -1) {
+-#ifndef linux
++#ifdef _SC_NPROCESSORS_ONLN
++		processors = sysconf(_SC_NPROCESSORS_ONLN);
++#else
+ 		int mib[2];
+ 		size_t len = sizeof(processors);
+ 
+@@ -2277,8 +2285,6 @@ void initialise_threads(int fragment_buffer_size, int 
+ 				"Defaulting to 1\n");
+ 			processors = 1;
+ 		}
+-#else
+-		processors = sysconf(_SC_NPROCESSORS_ONLN);
+ #endif
+ 	}
+ 
