@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.46 2021/05/19 01:50:29 kurt Exp $
+# $OpenBSD: Makefile,v 1.47 2021/05/26 18:18:33 rsadowski Exp $
 
 COMMENT=		NetBeans Java IDE
 
-V=			12.3
+V=			12.4
 DISTNAME=		netbeans-${V}-bin
 PKGNAME=		netbeans-${V}
 CATEGORIES=		devel
-REVISION=		0
 
 HOMEPAGE=		https://netbeans.apache.org
 
