@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/05/25 23:17:29 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2021/05/26 22:18:54 abieber Exp $
 
 COMMENT =	client for Matrix chat
 VERSION =	1.1.1
 DISTNAME =	neochat-${VERSION}
+
+REVISION =	0
 
 CATEGORIES=	net
 
