@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1031 2021/04/30 16:38:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.1032 2021/05/27 14:50:40 landry Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -105,6 +105,7 @@
      SUBDIR += netsurf
      SUBDIR += newsboat
      SUBDIR += nextcloud
+     SUBDIR += nextcloud_notify_push
      SUBDIR += nghttp2
      SUBDIR += nginx
      SUBDIR += nostromo
