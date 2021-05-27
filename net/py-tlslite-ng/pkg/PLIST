@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/01/23 12:24:04 tb Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/05/27 14:25:00 tb Exp $
 bin/tls.py
 bin/tlsdb.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/
@@ -187,4 +187,4 @@ lib/python${MODPY_VERSION}/site-packages/tlslite/utils/x25519.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/verifierdb.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/x509.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/x509certchain.py
-lib/python${MODPY_VERSION}/site-packages/tlslite_ng-0.8.0_alpha40-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/tlslite_ng-0.8.0_alpha41-py${MODPY_VERSION}.egg-info
