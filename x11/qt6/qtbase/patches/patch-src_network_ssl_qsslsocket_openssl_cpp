@@ -1,11 +1,32 @@
-$OpenBSD: patch-src_network_ssl_qsslsocket_openssl_cpp,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
+$OpenBSD: patch-src_network_ssl_qsslsocket_openssl_cpp,v 1.2 2021/05/27 14:33:18 tb Exp $
 
 https://github.com/gentoo/libressl/blob/master/dev-qt/qtnetwork/files/qtnetwork-5.15.2-libressl.patch
 
 Index: src/network/ssl/qsslsocket_openssl.cpp
 --- src/network/ssl/qsslsocket_openssl.cpp.orig
 +++ src/network/ssl/qsslsocket_openssl.cpp
-@@ -771,7 +771,7 @@ bool QSslSocketBackendPrivate::initSslContext()
+@@ -353,7 +353,11 @@ static int q_ssl_psk_use_session_callback(SSL *ssl, co
+ 
+     return 1; // need to return 1 or else "the connection setup fails."
+ }
++#endif // TLS1_3_VERSION
+ 
++#endif // !OPENSSL_NO_PSK
++
++#ifdef TLS1_3_VERSION
+ int q_ssl_sess_set_new_cb(SSL *ssl, SSL_SESSION *session)
+ {
+     if (!ssl) {
+@@ -371,8 +375,6 @@ int q_ssl_sess_set_new_cb(SSL *ssl, SSL_SESSION *sessi
+ }
+ #endif // TLS1_3_VERSION
+ 
+-#endif // !OPENSSL_NO_PSK
+-
+ #if QT_CONFIG(ocsp)
+ 
+ int qt_OCSP_status_server_callback(SSL *ssl, void *ocspRequest)
+@@ -771,7 +773,7 @@ bool QSslSocketBackendPrivate::initSslContext()
      else if (mode == QSslSocket::SslServerMode)
          q_SSL_set_psk_server_callback(ssl, &q_ssl_psk_server_callback);
  

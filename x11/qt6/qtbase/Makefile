@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2021/05/27 14:33:18 tb Exp $
 
 QT6NAME =		QtBase
 
@@ -6,6 +6,8 @@ COMMENT-main =		C++ general-purpose toolkit
 COMMENT-global =	global Qt6 documentation internals
 COMMENT-mysql =		MySQL plugin for Qt6
 COMMENT-psql =		PostgresSQL plugin for Qt6
+
+REVISION-main =		0
 
 PKGNAME-mysql =		qt6-mysql-${VERSION}
 PKGNAME-global =	qt6-global-${VERSION}
