@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.606 2021/05/22 17:58:49 paco Exp $
+# $OpenBSD: Makefile,v 1.607 2021/05/27 16:14:27 kn Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -253,6 +253,7 @@
      SUBDIR += packer
      SUBDIR += packer-vmm
      SUBDIR += parallel
+     SUBDIR += patchelf
      SUBDIR += pciutils
      SUBDIR += perp
      SUBDIR += pftop
