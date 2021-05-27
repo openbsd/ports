@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/12/21 21:16:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2021/05/27 17:23:17 ajacoutot Exp $
 
 COMMENT=		C++ bindings for libxml2
 
-GNOME_VERSION=		5.0.0
+GNOME_VERSION=		5.0.1
 GNOME_PROJECT=		libxml++
 PKGNAME=		libxml++50-${GNOME_VERSION}
 
