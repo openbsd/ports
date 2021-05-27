@@ -1,0 +1,19 @@
+$OpenBSD: patch-librecad_src_lib_engine_rs_ellipse_cpp,v 1.1 2021/05/27 04:16:29 rsadowski Exp $
+
+add boost tuple include to fix build.
+
+https://github.com/LibreCAD/LibreCAD/commit/e02f3580311d50b617427652ff77988f6bd62d9d
+
+Index: librecad/src/lib/engine/rs_ellipse.cpp
+--- librecad/src/lib/engine/rs_ellipse.cpp.orig
++++ librecad/src/lib/engine/rs_ellipse.cpp
+@@ -48,6 +48,9 @@
+ #include <boost/version.hpp>
+ #include <boost/math/tools/roots.hpp>
+ #include <boost/math/special_functions/ellint_2.hpp>
++#if BOOST_VERSION > 104500
++#include <boost/math/tools/tuple.hpp>
++#endif
+ #endif
+ 
+ namespace{
