@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2020/10/03 10:30:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2021/05/27 15:37:50 ajacoutot Exp $
 
 PORTROACH=		limit:^2
 
 COMMENT=		C++ wrapper for the libxml XML parser library
 
-GNOME_VERSION=		2.42.0
+GNOME_VERSION=		2.42.1
 GNOME_PROJECT=		libxml++
 
 SHARED_LIBS += xml++-2.6                 2.1 # 2.0.7
