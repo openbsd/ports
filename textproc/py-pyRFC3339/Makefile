@@ -1,24 +1,23 @@
-# $OpenBSD: Makefile,v 1.9 2021/05/21 19:50:37 kmos Exp $
+# $OpenBSD: Makefile,v 1.10 2021/05/27 23:02:22 sthen Exp $
 
 COMMENT=	format dates according to RFC3339
 
-MODPY_EGG_VERSION=	1.0
+MODPY_EGG_VERSION=	1.1
 DISTNAME=	pyRFC3339-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
 CATEGORIES=	textproc
-REVISION=	4
 
 # ISC
 PERMIT_PACKAGE=	Yes
 
 FLAVORS=	python3
-FLAVOR?=
+FLAVOR=		python3
 
 MODULES=	lang/python
 MODPY_SETUPTOOLS= Yes
 MODPY_PI=	Yes
+NO_TEST=	Yes
 
 RUN_DEPENDS=	devel/py-tz${MODPY_FLAVOR}
-TEST_DEPENDS=	devel/py-nose${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
