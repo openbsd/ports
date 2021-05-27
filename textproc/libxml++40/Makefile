@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/12/21 21:16:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2021/05/27 15:38:44 ajacoutot Exp $
 
 PORTROACH=		limit:^4\.0
 
 COMMENT=		C++ bindings for libxml2
 
-GNOME_VERSION=		4.0.0
+GNOME_VERSION=		4.0.1
 GNOME_PROJECT=		libxml++
 PKGNAME=		libxml++40-${GNOME_VERSION}
 
