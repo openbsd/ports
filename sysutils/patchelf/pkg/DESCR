@@ -1,0 +1,11 @@
+PatchELF is a simple utility for modifying existing ELF executables and
+libraries.  In particular, it can do the following:
+
+* Change the dynamic loader ("ELF interpreter") of executables
+* Change the `RPATH` of executables and libraries
+* Shrink the `RPATH` of executables and libraries
+* Remove declared dependencies on dynamic libraries (`DT_NEEDED` entries)
+* Add a declared dependency on a dynamic library (`DT_NEEDED`)
+* Replace a declared dependency on a dynamic library with another one
+  (`DT_NEEDED`)
+* Change `SONAME` of a dynamic library
