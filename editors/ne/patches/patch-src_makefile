@@ -1,35 +1,40 @@
-$OpenBSD: patch-src_makefile,v 1.7 2020/02/29 13:44:07 bcallah Exp $
+$OpenBSD: patch-src_makefile,v 1.8 2021/05/27 12:41:29 bcallah Exp $
+
+Remove hardcoded compiler and optimiation flags.
+
 Index: src/makefile
 --- src/makefile.orig
 +++ src/makefile
-@@ -85,27 +85,16 @@ NE_NOWCHAR=
+@@ -90,29 +90,16 @@ NE_NOWCHAR=
  NE_DEBUG=
  NE_TEST=
  
 -ifeq ($(origin CC),default)
 -CC=c99
 -endif
--
--ifeq ($(CC),gcc)
- GCCFLAGS=-std=c99 -Wall -Wno-parentheses
--endif
++GCCFLAGS=-std=c99 -Wall -Wno-parentheses -fno-strict-aliasing -Wp,-D_FORTIFY_SOURCE=2
  
- CFLAGS=$(OPTS) $(GCCFLAGS) \
--	-D_REGEX_LARGE_OFFSETS -D_GNU_SOURCE -DSTDC_HEADERS -Dinline=__inline__ \
+-# Test for GCC
+-ifneq (,$(findstring gcc,$(shell $(CC) 2>&1)))
+-GCCFLAGS=-std=c99 -Wall -Wno-parentheses -fno-strict-aliasing -flto=auto -ffat-lto-objects -Wp,-D_FORTIFY_SOURCE=2
+-LDFLAGS=-flto=auto
+-endif
+-
+ CFLAGS=$(GCCFLAGS) \
+ 	-D_REGEX_LARGE_OFFSETS -D_GNU_SOURCE -DSTDC_HEADERS -DHAVE_SNPRINTF \
 -	$(if $(NE_NOWCHAR), -DNOWCHAR,) \
 -	$(if $(NE_TEST),    -DNE_TEST -coverage,) \
 -	$(if $(NE_DEBUG),   -g -fsanitize=address -fsanitize=undefined,-O3 -DNDEBUG) \
--	$(if $(NE_TERMCAP), -DTERMCAP,) \
--	$(if $(NE_ANSI),    -DTERMCAP -DANSI,)
-+	-D_REGEX_LARGE_OFFSETS -D_GNU_SOURCE -DSTDC_HEADERS -Dinline=__inline__ -DNDEBUG
- 
+-	$(if $(NE_TERMCAP), -DNE_TERMCAP,) \
+-	$(if $(NE_ANSI),    -DNE_TERMCAP -DNE_ANSI,) \
+ 	$(OPTS)
  
  LIBS=$(if $(NE_TERMCAP)$(NE_ANSI),,-lcurses)
  
 -ne:	$(OBJS) $(if $(NE_TERMCAP)$(NE_ANSI),$(TERMCAPOBJS),)
--	$(CC) $(OPTS) $(LDFLAGS) $(if $(NE_TEST), -coverage,) $(if $(NE_DEBUG), -fsanitize=address -fsanitize=undefined,) $^ -lm $(LIBS) -o $(PROGRAM)
+-	$(CC) $(LDFLAGS) $(if $(NE_TEST), -coverage,) $(if $(NE_DEBUG), -fsanitize=address -fsanitize=undefined,) $^ $(LIBS) $(OPTS) -lm -o $(PROGRAM)
 +ne:	$(OBJS)
-+	$(CC) $(OPTS) $(LDFLAGS) -lm -lcurses $(LIBS) -o $(PROGRAM) $(OBJS)
++	$(CC) $(LDFLAGS) $(OBJS) $(LIBS) $(OPTS) -lm -lcurses -o $(PROGRAM)
  
  clean:
  	rm -f ne *.o *.gcda *.gcda.info *.gcno core
