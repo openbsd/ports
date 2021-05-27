@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2021/05/01 13:34:18 fcambus Exp $
+# $OpenBSD: Makefile,v 1.49 2021/05/27 04:10:30 rsadowski Exp $
 
 BROKEN-i386 =	broken on 32-bit; enum in src/frontend/mame/ui/videoopt.h starting at 0x80000000
 ONLY_FOR_ARCHS = amd64 i386
@@ -12,6 +12,7 @@ GH_ACCOUNT =	mamedev
 GH_PROJECT =	mame
 GH_TAGNAME =	mame0${V}
 DISTNAME =	mame-0.${V}
+REVISION =	0
 
 CATEGORIES =	emulators
 
@@ -21,8 +22,8 @@ HOMEPAGE =	https://mamedev.org/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} FLAC GL SDL2 SDL2_ttf X11 Xext Xi
-WANTLIB += Xinerama c expat fontconfig freetype jpeg lua5.3 m
-WANTLIB += sqlite3 util z
+WANTLIB += Xinerama c expat fontconfig freetype jpeg lua${MODLUA_VERSION} m
+WANTLIB += pugixml sqlite3 util z
 
 COMPILER =	base-clang ports-gcc base-gcc
 
@@ -38,7 +39,8 @@ LIB_DEPENDS =	audio/flac \
 		databases/sqlite3 \
 		devel/sdl2 \
 		devel/sdl2-ttf \
-		graphics/jpeg
+		graphics/jpeg \
+		textproc/pugixml
 
 CFLAGS +=	-I${PREFIX}/include -I${X11BASE}/include -I${MODLUA_INCL_DIR}
 CFLAGS +=	-Wno-unknown-warning-option -Wno-ignored-qualifiers -fno-ret-protector
@@ -53,6 +55,7 @@ MAKE_ENV =	NOWERROR=1 TOOLS=1 verbose=1 \
 		USE_SYSTEM_LIB_FLAC=1 \
 		USE_SYSTEM_LIB_LUA=1 \
 		USE_SYSTEM_LIB_SQLITE3=1 \
+		USE_SYSTEM_LIB_PUGIXML=1 \
 		USE_QTDEBUG=0 # avoid depending on Qt
 
 .if ${MACHINE_ARCH} == "amd64"
