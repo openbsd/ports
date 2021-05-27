@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_rebar_prv_escriptize_erl,v 1.1.1.1 2020/11/26 03:31:56 jmatthew Exp $
+$OpenBSD: patch-src_rebar_prv_escriptize_erl,v 1.2 2021/05/27 08:43:50 sthen Exp $
 
 Use versioned escript
 
 Index: src/rebar_prv_escriptize.erl
 --- src/rebar_prv_escriptize.erl.orig
 +++ src/rebar_prv_escriptize.erl
-@@ -126,7 +126,7 @@ escriptize(State0, App) ->
+@@ -138,7 +138,7 @@ escriptize(State0, App) ->
                            [AppNameStr, AppNameStr, AppNameStr]),
      EscriptSections =
          [ {shebang,

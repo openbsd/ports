@@ -1,24 +1,21 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/19 03:58:34 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.5 2021/05/27 08:43:50 sthen Exp $
 
 COMMENT = 		Erlang build tool
 
-V=			3.13.2
-PKGNAME=		rebar3-${V}
-DISTNAME= 		${V}
-CATEGORIES=		devel
-HOMEPAGE=		https://www.rebar3.org
+GH_ACCOUNT =		erlang
+GH_PROJECT =		rebar3
+GH_TAGNAME =		3.15.2
+CATEGORIES =		devel
+HOMEPAGE =		https://www.rebar3.org
 MAINTAINER =		Jonathan Matthew <jmatthew@openbsd.org>
 
 # APLv2
-PERMIT_PACKAGE=		Yes
+PERMIT_PACKAGE =	Yes
 
 FLAVORS =		erlang21
 FLAVOR ?=		erlang21
 
-MASTER_SITES = 		https://github.com/erlang/rebar3/archive/
 MASTER_SITES1 = 	https://repo.hex.pm/tarballs/
-
-WRKDIST = 		${WRKDIR}/rebar3-${V}
 
 .if ${FLAVOR:Merlang21}
 _EV =                   ${FLAVOR:C/.*([0-9][0-9]+\$)/\1/}
@@ -28,22 +25,26 @@ ERL_VERSION =           ${_EV}
 ERRORS +=               "Invalid FLAVOR set: ${FLAVOR}"
 .endif
 
-EXTRACT_ONLY = 		${V}.tar.gz
+EXTRACT_ONLY =		rebar3-${GH_TAGNAME}.tar.gz
 
+# certifi held back; >=2.6.0 -> "undefined parse transform 'certifi_pt'"
 HEX_MODULES = \
-	bbmustache 		1.8.0 \
-	certifi			2.5.1 \
-	cf			0.2.2 \
-	cth_readable		1.4.6 \
-	erlware_commons		1.3.1 \
+	bbmustache		1.12.1 \
+	certifi			2.5.3 \
+	cf			0.3.1 \
+	cth_readable		1.5.1 \
+	erlware_commons		1.5.0 \
 	eunit_formatters	0.5.0 \
-	getopt			1.0.1 \
-	parse_trans		3.3.0 \
+	getopt			1.0.2 \
+	parse_trans		3.4.0 \
 	providers		1.8.1 \
-	relx			3.33.0 \
-	ssl_verify_fun		1.1.5
+	relx			4.4.0 \
+	ssl_verify_fun		1.1.6
+# for tests
+HEX_MODULES += \
+	meck			0.8.13
 
-DISTFILES = ${V}.tar.gz
+DISTFILES =	rebar3-{}${GH_TAGNAME}.tar.gz
 .for _m _v in ${HEX_MODULES}
 DISTFILES += ${_m}-${_v}.tar:1
 .endfor
@@ -75,5 +76,11 @@ do-build:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rebar3 ${PREFIX}/bin/rebar3-${ERL_VERSION}
+
+PORTHOME=	${WRKDIR}
+do-test:
+	cd ${WRKSRC} && \
+	    ${SETENV} ${ALL_TEST_ENV} ./rebar3 escriptize && \
+	    ${SETENV} ${ALL_TEST_ENV} ./rebar3 ct
 
 .include <bsd.port.mk>
