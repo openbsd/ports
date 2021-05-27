@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_device_hid_hid_service_cc,v 1.4 2021/04/16 18:15:07 robert Exp $
+$OpenBSD: patch-services_device_hid_hid_service_cc,v 1.5 2021/05/27 04:21:02 robert Exp $
 
 Index: services/device/hid/hid_service.cc
 --- services/device/hid/hid_service.cc.orig
@@ -12,7 +12,7 @@ Index: services/device/hid/hid_service.cc
  #elif defined(OS_MAC)
  #include "services/device/hid/hid_service_mac.h"
  #elif defined(OS_WIN)
-@@ -58,6 +60,8 @@ constexpr base::TaskTraits HidService::kBlockingTaskTr
+@@ -61,6 +63,8 @@ constexpr base::TaskTraits HidService::kBlockingTaskTr
  std::unique_ptr<HidService> HidService::Create() {
  #if (defined(OS_LINUX) || defined(OS_CHROMEOS)) && defined(USE_UDEV)
    return base::WrapUnique(new HidServiceLinux());

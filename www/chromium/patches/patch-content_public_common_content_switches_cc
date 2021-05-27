@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_public_common_content_switches_cc,v 1.53 2021/04/16 18:15:06 robert Exp $
+$OpenBSD: patch-content_public_common_content_switches_cc,v 1.54 2021/05/27 04:21:01 robert Exp $
 
 Index: content/public/common/content_switches.cc
 --- content/public/common/content_switches.cc.orig
 +++ content/public/common/content_switches.cc
-@@ -353,6 +353,8 @@ const char kEnableGpuMemoryBufferVideoFrames[] =
+@@ -363,6 +363,8 @@ const char kEnableGpuMemoryBufferVideoFrames[] =
  // builds.
  const char kEnableLogging[]                 = "enable-logging";
  
@@ -12,7 +12,7 @@ Index: content/public/common/content_switches.cc
  // Enables the type, downlinkMax attributes of the NetInfo API. Also, enables
  // triggering of change attribute of the NetInfo API when there is a change in
  // the connection type.
-@@ -959,7 +961,7 @@ const char kEnableAutomation[] = "enable-automation";
+@@ -977,7 +979,7 @@ const char kEnableAutomation[] = "enable-automation";
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

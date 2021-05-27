@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_browser_process_impl_h,v 1.36 2021/04/16 18:15:05 robert Exp $
+$OpenBSD: patch-chrome_browser_browser_process_impl_h,v 1.37 2021/05/27 04:21:00 robert Exp $
 
 Index: chrome/browser/browser_process_impl.h
 --- chrome/browser/browser_process_impl.h.orig

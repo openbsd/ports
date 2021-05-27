@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_signin_signin_util_cc,v 1.9 2021/04/16 18:15:06 robert Exp $
+$OpenBSD: patch-chrome_browser_signin_signin_util_cc,v 1.10 2021/05/27 04:21:00 robert Exp $
 
 Index: chrome/browser/signin/signin_util.cc
 --- chrome/browser/signin/signin_util.cc.orig

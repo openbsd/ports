@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_platform_window_platform_window_init_properties_h,v 1.5 2021/04/16 18:15:07 robert Exp $
+$OpenBSD: patch-ui_platform_window_platform_window_init_properties_h,v 1.6 2021/05/27 04:21:03 robert Exp $
 
 Index: ui/platform_window/platform_window_init_properties.h
 --- ui/platform_window/platform_window_init_properties.h.orig

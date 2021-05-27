@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.74 2021/04/16 18:15:06 robert Exp $
+$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.75 2021/05/27 04:21:01 robert Exp $
 
 Index: content/browser/browser_main_loop.cc
 --- content/browser/browser_main_loop.cc.orig
 +++ content/browser/browser_main_loop.cc
-@@ -242,6 +242,13 @@
+@@ -243,6 +243,13 @@
  #include "mojo/public/cpp/bindings/lib/test_random_mojo_delays.h"
  #endif
  

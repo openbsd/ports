@@ -1,4 +1,4 @@
-$OpenBSD: patch-v8_src_base_platform_platform-posix_cc,v 1.31 2021/04/16 18:15:07 robert Exp $
+$OpenBSD: patch-v8_src_base_platform_platform-posix_cc,v 1.32 2021/05/27 04:21:03 robert Exp $
 
 Index: v8/src/base/platform/platform-posix.cc
 --- v8/src/base/platform/platform-posix.cc.orig

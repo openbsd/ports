@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_boringssl_BUILD_generated_gni,v 1.17 2021/04/16 18:15:07 robert Exp $
+$OpenBSD: patch-third_party_boringssl_BUILD_generated_gni,v 1.18 2021/05/27 04:21:02 robert Exp $
 
 Index: third_party/boringssl/BUILD.generated.gni
 --- third_party/boringssl/BUILD.generated.gni.orig

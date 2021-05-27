@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_public_common_content_switches_h,v 1.51 2021/04/16 18:15:06 robert Exp $
+$OpenBSD: patch-content_public_common_content_switches_h,v 1.52 2021/05/27 04:21:01 robert Exp $
 
 Index: content/public/common/content_switches.h
 --- content/public/common/content_switches.h.orig
 +++ content/public/common/content_switches.h
-@@ -111,6 +111,7 @@ CONTENT_EXPORT extern const char kEnableFtp[];
+@@ -112,6 +112,7 @@ CONTENT_EXPORT extern const char kEnableFtp[];
  CONTENT_EXPORT extern const char kEnableGpuMemoryBufferVideoFrames[];
  CONTENT_EXPORT extern const char kEnableLCDText[];
  CONTENT_EXPORT extern const char kEnableLogging[];
@@ -11,15 +11,6 @@ Index: content/public/common/content_switches.h
  CONTENT_EXPORT extern const char kEnableNetworkInformationDownlinkMax[];
  CONTENT_EXPORT extern const char kEnableNewCanvas2DAPI[];
  CONTENT_EXPORT extern const char kDisableNv12DxgiVideo[];
-@@ -246,7 +247,7 @@ CONTENT_EXPORT extern const char kWebXrRuntimeOrientat
- CONTENT_EXPORT extern const char kWebXrRuntimeOpenXr[];
- CONTENT_EXPORT extern const char kWebXrRuntimeWMR[];
- 
--#if (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) && !defined(OS_ANDROID)
-+#if (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)) && !defined(OS_ANDROID)
- CONTENT_EXPORT extern const char kEnableAcceleratedVideoDecode[];
- #endif
- CONTENT_EXPORT extern const char kDisableAcceleratedVideoDecode[];
 @@ -268,7 +269,7 @@ CONTENT_EXPORT extern const char kRendererWaitForJavaD
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch

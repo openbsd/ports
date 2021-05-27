@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.48 2021/04/16 18:15:05 robert Exp $
+$OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.49 2021/05/27 04:21:00 robert Exp $
 
 Index: chrome/browser/browser_process_impl.cc
 --- chrome/browser/browser_process_impl.cc.orig
@@ -17,7 +17,7 @@ Index: chrome/browser/browser_process_impl.cc
  // How often to check if the persistent instance of Chrome needs to restart
  // to install an update.
  static const int kUpdateCheckIntervalHours = 6;
-@@ -1128,7 +1128,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
+@@ -1132,7 +1132,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
    ApplyMetricsReportingPolicy();
  #endif
  
@@ -26,7 +26,7 @@ Index: chrome/browser/browser_process_impl.cc
    ChromeJsErrorReportProcessor::Create();
  #endif
  
-@@ -1363,7 +1363,7 @@ void BrowserProcessImpl::Unpin() {
+@@ -1367,7 +1367,7 @@ void BrowserProcessImpl::Unpin() {
  // Mac is currently not supported.
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.

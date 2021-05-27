@@ -1,4 +1,4 @@
-$OpenBSD: patch-mojo_core_embedder_features_h,v 1.1 2021/04/16 18:15:07 robert Exp $
+$OpenBSD: patch-mojo_core_embedder_features_h,v 1.2 2021/05/27 04:21:02 robert Exp $
 
 Index: mojo/core/embedder/features.h
 --- mojo/core/embedder/features.h.orig
@@ -11,4 +11,4 @@ Index: mojo/core/embedder/features.h
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)
  extern const base::Feature kMojoLinuxChannelSharedMem;
  extern const base::FeatureParam<int> kMojoLinuxChannelSharedMemPages;
- #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)
+ extern const base::FeatureParam<bool> kMojoLinuxChannelSharedMemEfdZeroOnWake;

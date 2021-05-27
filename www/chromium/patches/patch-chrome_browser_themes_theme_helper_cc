@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_themes_theme_helper_cc,v 1.1 2021/04/16 18:15:06 robert Exp $
+$OpenBSD: patch-chrome_browser_themes_theme_helper_cc,v 1.2 2021/05/27 04:21:01 robert Exp $
 
 Index: chrome/browser/themes/theme_helper.cc
 --- chrome/browser/themes/theme_helper.cc.orig
 +++ chrome/browser/themes/theme_helper.cc
-@@ -304,7 +304,7 @@ bool ThemeHelper::ShouldUseIncreasedContrastThemeSuppl
+@@ -289,7 +289,7 @@ bool ThemeHelper::ShouldUseIncreasedContrastThemeSuppl
      ui::NativeTheme* native_theme) const {
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_extensions_api_settings_private_prefs_util_cc,v 1.26 2021/04/16 18:15:06 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_api_settings_private_prefs_util_cc,v 1.27 2021/05/27 04:21:00 robert Exp $
 
 Index: chrome/browser/extensions/api/settings_private/prefs_util.cc
 --- chrome/browser/extensions/api/settings_private/prefs_util.cc.orig
 +++ chrome/browser/extensions/api/settings_private/prefs_util.cc
-@@ -176,7 +176,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
+@@ -178,7 +178,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -12,8 +12,8 @@ Index: chrome/browser/extensions/api/settings_private/prefs_util.cc
    (*s_allowlist)[::prefs::kUseCustomChromeFrame] =
        settings_api::PrefType::PREF_TYPE_BOOLEAN;
  #endif
-@@ -188,7 +188,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
-       settings_api::PrefType::PREF_TYPE_STRING;
+@@ -192,7 +192,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
+       settings_api::PrefType::PREF_TYPE_NUMBER;
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
 -#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)

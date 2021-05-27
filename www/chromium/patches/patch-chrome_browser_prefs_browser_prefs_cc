@@ -1,9 +1,16 @@
-$OpenBSD: patch-chrome_browser_prefs_browser_prefs_cc,v 1.21 2021/04/16 18:15:06 robert Exp $
+$OpenBSD: patch-chrome_browser_prefs_browser_prefs_cc,v 1.22 2021/05/27 04:21:00 robert Exp $
 
 Index: chrome/browser/prefs/browser_prefs.cc
 --- chrome/browser/prefs/browser_prefs.cc.orig
 +++ chrome/browser/prefs/browser_prefs.cc
-@@ -389,7 +389,7 @@
+@@ -386,13 +386,13 @@
+ #endif
+ 
+ #if defined(OS_WIN) || defined(OS_MAC) || \
+-    (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
++    ((defined(OS_LINUX) || defined(OS_BSD)) && !BUILDFLAG(IS_CHROMEOS_LACROS))
+ #include "chrome/browser/web_applications/components/url_handler_prefs.h"
+ #endif
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -12,7 +19,25 @@ Index: chrome/browser/prefs/browser_prefs.cc
      (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
  #include "chrome/browser/browser_switcher/browser_switcher_prefs.h"
  #endif
-@@ -1139,7 +1139,7 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
+@@ -841,7 +841,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
+ // TODO(crbug/1169547) Remove `BUILDFLAG(IS_CHROMEOS_LACROS)` once the
+ // migration is complete.
+ #if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) || \
+-    BUILDFLAG(IS_CHROMEOS_LACROS)
++    BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
+   enterprise_connectors::RegisterLocalPrefs(registry);
+ #endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN)
+ 
+@@ -870,7 +870,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
+ #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
+ #endif  // defined(OS_WIN)
+ 
+-#if defined(OS_WIN) || defined(OS_MAC) || \
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
+     (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
+   web_app::url_handler_prefs::RegisterLocalStatePrefs(registry);
+ #endif
+@@ -1152,7 +1152,7 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

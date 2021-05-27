@@ -1,4 +1,4 @@
-$OpenBSD: patch-headless_lib_browser_headless_request_context_manager_cc,v 1.13 2021/04/16 18:15:07 robert Exp $
+$OpenBSD: patch-headless_lib_browser_headless_request_context_manager_cc,v 1.14 2021/05/27 04:21:02 robert Exp $
 
 Index: headless/lib/browser/headless_request_context_manager.cc
 --- headless/lib/browser/headless_request_context_manager.cc.orig

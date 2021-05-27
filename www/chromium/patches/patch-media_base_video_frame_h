@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_base_video_frame_h,v 1.34 2021/04/16 18:15:07 robert Exp $
+$OpenBSD: patch-media_base_video_frame_h,v 1.35 2021/05/27 04:21:02 robert Exp $
 
 Index: media/base/video_frame.h
 --- media/base/video_frame.h.orig
@@ -39,7 +39,7 @@ Index: media/base/video_frame.h
    // Returns a vector containing the backing DmaBufs for this frame. The number
    // of returned DmaBufs will be equal or less than the number of planes of
    // the frame. If there are less, this means that the last FD contains the
-@@ -699,7 +699,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -697,7 +697,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    // GPU memory buffer, if this frame is STORAGE_GPU_MEMORY_BUFFER.
    std::unique_ptr<gfx::GpuMemoryBuffer> gpu_memory_buffer_;
  

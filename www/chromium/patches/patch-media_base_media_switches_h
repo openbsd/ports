@@ -1,14 +1,23 @@
-$OpenBSD: patch-media_base_media_switches_h,v 1.4 2021/04/16 18:15:07 robert Exp $
+$OpenBSD: patch-media_base_media_switches_h,v 1.5 2021/05/27 04:21:02 robert Exp $
 
 Index: media/base/media_switches.h
 --- media/base/media_switches.h.orig
 +++ media/base/media_switches.h
-@@ -183,7 +183,7 @@ MEDIA_EXPORT extern const base::Feature kUseR16Texture
+@@ -37,7 +37,7 @@ MEDIA_EXPORT extern const char kDisableBackgroundMedia
+ MEDIA_EXPORT extern const char kReportVp9AsAnUnsupportedMimeType[];
+ 
+ #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FREEBSD) || \
+-    defined(OS_SOLARIS)
++    defined(OS_SOLARIS) || defined(OS_BSD)
+ MEDIA_EXPORT extern const char kAlsaInputDevice[];
+ MEDIA_EXPORT extern const char kAlsaOutputDevice[];
+ #endif
+@@ -179,7 +179,7 @@ MEDIA_EXPORT extern const base::Feature kUseFakeDevice
+ MEDIA_EXPORT extern const base::Feature kUseMediaHistoryStore;
+ MEDIA_EXPORT extern const base::Feature kUseR16Texture;
  MEDIA_EXPORT extern const base::Feature kUseSodaForLiveCaption;
- // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
- // complete.
--#if (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
-+#if (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD)
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
  MEDIA_EXPORT extern const base::Feature kVaapiVideoDecodeLinux;
  MEDIA_EXPORT extern const base::Feature kVaapiVideoEncodeLinux;
- #endif  // defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
+ #endif  // defined(OS_LINUX)

@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_prefs_pref_service_incognito_allowlist_cc,v 1.4 2021/04/16 18:15:06 robert Exp $
+$OpenBSD: patch-chrome_browser_prefs_pref_service_incognito_allowlist_cc,v 1.5 2021/05/27 04:21:00 robert Exp $
 
 Index: chrome/browser/prefs/pref_service_incognito_allowlist.cc
 --- chrome/browser/prefs/pref_service_incognito_allowlist.cc.orig

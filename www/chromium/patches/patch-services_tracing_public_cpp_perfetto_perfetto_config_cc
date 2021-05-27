@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_tracing_public_cpp_perfetto_perfetto_config_cc,v 1.8 2021/04/16 18:15:07 robert Exp $
+$OpenBSD: patch-services_tracing_public_cpp_perfetto_perfetto_config_cc,v 1.9 2021/05/27 04:21:02 robert Exp $
 
 Index: services/tracing/public/cpp/perfetto/perfetto_config.cc
 --- services/tracing/public/cpp/perfetto/perfetto_config.cc.orig

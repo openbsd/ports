@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_download_download_prefs_cc,v 1.28 2021/04/16 18:15:06 robert Exp $
+$OpenBSD: patch-chrome_browser_download_download_prefs_cc,v 1.29 2021/05/27 04:21:00 robert Exp $
 
 Index: chrome/browser/download/download_prefs.cc
 --- chrome/browser/download/download_prefs.cc.orig

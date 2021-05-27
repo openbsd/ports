@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_gpu_gpu_sandbox_hook_linux_cc,v 1.19 2021/04/16 18:15:06 robert Exp $
+$OpenBSD: patch-content_gpu_gpu_sandbox_hook_linux_cc,v 1.20 2021/05/27 04:21:01 robert Exp $
 
 Index: content/gpu/gpu_sandbox_hook_linux.cc
 --- content/gpu/gpu_sandbox_hook_linux.cc.orig

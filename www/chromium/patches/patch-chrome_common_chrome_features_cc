@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_chrome_features_cc,v 1.31 2021/04/16 18:15:06 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_features_cc,v 1.32 2021/05/27 04:21:01 robert Exp $
 
 Index: chrome/common/chrome_features.cc
 --- chrome/common/chrome_features.cc.orig
 +++ chrome/common/chrome_features.cc
-@@ -96,7 +96,7 @@ const base::Feature kAsyncDns {
+@@ -81,7 +81,7 @@ const base::Feature kAsyncDns {
  #endif
  };
  
@@ -12,7 +12,16 @@ Index: chrome/common/chrome_features.cc
  // Enables the Restart background mode optimization. When all Chrome UI is
  // closed and it goes in the background, allows to restart the browser to
  // discard memory.
-@@ -361,7 +361,7 @@ const base::Feature kEnableAllSystemWebApps{"EnableAll
+@@ -265,7 +265,7 @@ const base::Feature kDesktopPWAsFlashAppNameInsteadOfO
+ // Enables or disables Desktop PWAs to be auto-started on OS login.
+ const base::Feature kDesktopPWAsRunOnOsLogin {
+   "DesktopPWAsRunOnOsLogin",
+-#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
+       base::FEATURE_ENABLED_BY_DEFAULT
+ #else
+       base::FEATURE_DISABLED_BY_DEFAULT
+@@ -357,7 +357,7 @@ const base::Feature kEnableAllSystemWebApps{"EnableAll
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
@@ -21,3 +30,12 @@ Index: chrome/common/chrome_features.cc
  COMPONENT_EXPORT(CHROME_FEATURES)
  // Enables ephemeral Guest profiles on desktop.
  extern const base::Feature kEnableEphemeralGuestProfilesOnDesktop{
+@@ -545,7 +545,7 @@ const base::Feature kIncompatibleApplicationsWarning{
+ #endif
+ 
+ #if defined(OS_MAC) || defined(OS_WIN) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+ // When enabled, removes any theme or background customization done by the user
+ // on the Incognito UI.
+ const base::Feature kIncognitoBrandConsistencyForDesktop{

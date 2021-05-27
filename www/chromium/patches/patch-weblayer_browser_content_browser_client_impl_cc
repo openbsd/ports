@@ -1,9 +1,9 @@
-$OpenBSD: patch-weblayer_browser_content_browser_client_impl_cc,v 1.13 2021/05/11 07:23:43 robert Exp $
+$OpenBSD: patch-weblayer_browser_content_browser_client_impl_cc,v 1.14 2021/05/27 04:21:03 robert Exp $
 
 Index: weblayer/browser/content_browser_client_impl.cc
 --- weblayer/browser/content_browser_client_impl.cc.orig
 +++ weblayer/browser/content_browser_client_impl.cc
-@@ -146,7 +146,7 @@
+@@ -147,7 +147,7 @@
  
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.
@@ -12,7 +12,7 @@ Index: weblayer/browser/content_browser_client_impl.cc
  #include "content/public/common/content_descriptors.h"
  #endif
  
-@@ -471,7 +471,7 @@ void ContentBrowserClientImpl::OnNetworkServiceCreated
+@@ -476,7 +476,7 @@ void ContentBrowserClientImpl::OnNetworkServiceCreated
          embedder_support::GetUserAgent());
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.
@@ -21,7 +21,7 @@ Index: weblayer/browser/content_browser_client_impl.cc
    network::mojom::CryptConfigPtr config = network::mojom::CryptConfig::New();
    content::GetNetworkService()->SetCryptConfig(std::move(config));
  #endif
-@@ -952,7 +952,7 @@ SafeBrowsingService* ContentBrowserClientImpl::GetSafe
+@@ -966,7 +966,7 @@ SafeBrowsingService* ContentBrowserClientImpl::GetSafe
  
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.

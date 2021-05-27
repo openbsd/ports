@@ -1,9 +1,9 @@
-$OpenBSD: patch-printing_print_settings_h,v 1.4 2021/01/20 07:28:11 robert Exp $
+$OpenBSD: patch-printing_print_settings_h,v 1.5 2021/05/27 04:21:02 robert Exp $
 
 Index: printing/print_settings.h
 --- printing/print_settings.h.orig
 +++ printing/print_settings.h
-@@ -20,7 +20,7 @@
+@@ -19,7 +19,7 @@
  #include "ui/gfx/geometry/rect.h"
  #include "ui/gfx/geometry/size.h"
  
@@ -12,7 +12,7 @@ Index: printing/print_settings.h
  #include <map>
  
  #include "base/values.h"
-@@ -81,7 +81,7 @@ class PRINTING_EXPORT PrintSettings {
+@@ -80,7 +80,7 @@ class PRINTING_EXPORT PrintSettings {
      }
    };
  
@@ -21,7 +21,7 @@ Index: printing/print_settings.h
    using AdvancedSettings = std::map<std::string, base::Value>;
  #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
  
-@@ -222,7 +222,7 @@ class PRINTING_EXPORT PrintSettings {
+@@ -221,7 +221,7 @@ class PRINTING_EXPORT PrintSettings {
      pages_per_sheet_ = pages_per_sheet;
    }
  
@@ -30,7 +30,7 @@ Index: printing/print_settings.h
    AdvancedSettings& advanced_settings() { return advanced_settings_; }
    const AdvancedSettings& advanced_settings() const {
      return advanced_settings_;
-@@ -321,7 +321,7 @@ class PRINTING_EXPORT PrintSettings {
+@@ -320,7 +320,7 @@ class PRINTING_EXPORT PrintSettings {
    // Number of pages per sheet.
    int pages_per_sheet_;
  

@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_autofill_core_browser_personal_data_manager_cc,v 1.15 2021/04/16 18:15:06 robert Exp $
+$OpenBSD: patch-components_autofill_core_browser_personal_data_manager_cc,v 1.16 2021/05/27 04:21:01 robert Exp $
 
 Index: components/autofill/core/browser/personal_data_manager.cc
 --- components/autofill/core/browser/personal_data_manager.cc.orig

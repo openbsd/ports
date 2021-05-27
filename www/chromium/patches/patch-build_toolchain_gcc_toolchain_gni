@@ -1,4 +1,5 @@
-$OpenBSD: patch-build_toolchain_gcc_toolchain_gni,v 1.30 2021/04/16 18:15:05 robert Exp $
+$OpenBSD: patch-build_toolchain_gcc_toolchain_gni,v 1.31 2021/05/27 04:21:00 robert Exp $
+
 Index: build/toolchain/gcc_toolchain.gni
 --- build/toolchain/gcc_toolchain.gni.orig
 +++ build/toolchain/gcc_toolchain.gni
@@ -14,7 +15,7 @@ Index: build/toolchain/gcc_toolchain.gni
  # This template defines a toolchain for something that works like gcc
  # (including clang).
  #
-@@ -646,12 +651,12 @@ template("clang_toolchain") {
+@@ -654,13 +659,13 @@ template("clang_toolchain") {
    }
  
    gcc_toolchain(target_name) {
@@ -27,7 +28,9 @@ Index: build/toolchain/gcc_toolchain.gni
      ld = cxx
      readelf = "${toolprefix}readelf"
 -    ar = "${prefix}/llvm-ar"
+-    nm = "${prefix}/llvm-nm"
 +    ar = "${prefix}/ar"
-     nm = "${toolprefix}nm"
++    nm = "${prefix}/nm"
  
      forward_variables_from(invoker,
+                            [

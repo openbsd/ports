@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_graphics_begin_frame_provider_cc,v 1.4 2021/04/16 18:15:07 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_graphics_begin_frame_provider_cc,v 1.5 2021/05/27 04:21:02 robert Exp $
 
 Index: third_party/blink/renderer/platform/graphics/begin_frame_provider.cc
 --- third_party/blink/renderer/platform/graphics/begin_frame_provider.cc.orig

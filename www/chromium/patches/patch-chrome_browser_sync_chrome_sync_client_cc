@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_sync_chrome_sync_client_cc,v 1.39 2021/04/16 18:15:06 robert Exp $
+$OpenBSD: patch-chrome_browser_sync_chrome_sync_client_cc,v 1.40 2021/05/27 04:21:00 robert Exp $
 
 Index: chrome/browser/sync/chrome_sync_client.cc
 --- chrome/browser/sync/chrome_sync_client.cc.orig

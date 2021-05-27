@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_base_x_x11_cursor_loader_cc,v 1.5 2021/04/16 18:15:07 robert Exp $
+$OpenBSD: patch-ui_base_x_x11_cursor_loader_cc,v 1.6 2021/05/27 04:21:02 robert Exp $
 
 Index: ui/base/x/x11_cursor_loader.cc
 --- ui/base/x/x11_cursor_loader.cc.orig
 +++ ui/base/x/x11_cursor_loader.cc
-@@ -137,7 +137,11 @@ std::string CursorPathFromLibXcursor() {
+@@ -138,7 +138,11 @@ std::string CursorPathFromLibXcursor() {
      void operator()(void* ptr) const { dlclose(ptr); }
    };
  

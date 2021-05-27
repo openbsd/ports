@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_devtools_devtools_eye_dropper_cc,v 1.15 2021/04/16 18:15:06 robert Exp $
+$OpenBSD: patch-chrome_browser_devtools_devtools_eye_dropper_cc,v 1.16 2021/05/27 04:21:00 robert Exp $
 
 Index: chrome/browser/devtools/devtools_eye_dropper.cc
 --- chrome/browser/devtools/devtools_eye_dropper.cc.orig

@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_renderer_host_render_widget_host_view_aura_cc,v 1.58 2021/04/16 18:15:06 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_render_widget_host_view_aura_cc,v 1.59 2021/05/27 04:21:01 robert Exp $
 
 Index: content/browser/renderer_host/render_widget_host_view_aura.cc
 --- content/browser/renderer_host/render_widget_host_view_aura.cc.orig

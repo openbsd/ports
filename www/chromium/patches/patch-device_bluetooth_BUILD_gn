@@ -1,4 +1,4 @@
-$OpenBSD: patch-device_bluetooth_BUILD_gn,v 1.27 2021/04/16 18:15:07 robert Exp $
+$OpenBSD: patch-device_bluetooth_BUILD_gn,v 1.28 2021/05/27 04:21:01 robert Exp $
 Index: device/bluetooth/BUILD.gn
 --- device/bluetooth/BUILD.gn.orig
 +++ device/bluetooth/BUILD.gn

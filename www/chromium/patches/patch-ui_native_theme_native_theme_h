@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_native_theme_native_theme_h,v 1.7 2021/04/16 18:15:07 robert Exp $
+$OpenBSD: patch-ui_native_theme_native_theme_h,v 1.8 2021/05/27 04:21:03 robert Exp $
 
 Index: ui/native_theme/native_theme.h
 --- ui/native_theme/native_theme.h.orig
 +++ ui/native_theme/native_theme.h
-@@ -54,7 +54,7 @@ class NATIVE_THEME_EXPORT NativeTheme {
+@@ -56,7 +56,7 @@ class NATIVE_THEME_EXPORT NativeTheme {
      kCheckbox,
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

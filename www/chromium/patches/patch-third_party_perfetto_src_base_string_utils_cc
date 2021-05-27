@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_perfetto_src_base_string_utils_cc,v 1.1 2021/04/16 18:15:07 robert Exp $
+$OpenBSD: patch-third_party_perfetto_src_base_string_utils_cc,v 1.2 2021/05/27 04:21:02 robert Exp $
 
 Index: third_party/perfetto/src/base/string_utils.cc
 --- third_party/perfetto/src/base/string_utils.cc.orig
 +++ third_party/perfetto/src/base/string_utils.cc
-@@ -33,9 +33,10 @@ namespace base {
+@@ -38,9 +38,10 @@ constexpr char kBase64Table[] =
  
  // Locale-independant as possible version of strtod.
  double StrToD(const char* nptr, char** endptr) {

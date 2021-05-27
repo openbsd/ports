@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_core_clipboard_system_clipboard_cc,v 1.4 2021/04/16 18:15:07 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_core_clipboard_system_clipboard_cc,v 1.5 2021/05/27 04:21:02 robert Exp $
 
 Index: third_party/blink/renderer/core/clipboard/system_clipboard.cc
 --- third_party/blink/renderer/core/clipboard/system_clipboard.cc.orig

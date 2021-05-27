@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_config_c++_c++_gni,v 1.8 2021/04/16 18:15:05 robert Exp $
+$OpenBSD: patch-build_config_c++_c++_gni,v 1.9 2021/05/27 04:21:00 robert Exp $
 
 Index: build/config/c++/c++.gni
 --- build/config/c++/c++.gni.orig

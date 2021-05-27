@@ -1,4 +1,4 @@
-$OpenBSD: patch-gpu_command_buffer_service_shared_image_factory_cc,v 1.1 2021/04/16 18:15:07 robert Exp $
+$OpenBSD: patch-gpu_command_buffer_service_shared_image_factory_cc,v 1.2 2021/05/27 04:21:02 robert Exp $
 
 Index: gpu/command_buffer/service/shared_image_factory.cc
 --- gpu/command_buffer/service/shared_image_factory.cc.orig

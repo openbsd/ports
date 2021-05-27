@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_device_geolocation_location_arbitrator_cc,v 1.7 2021/04/16 18:15:07 robert Exp $
+$OpenBSD: patch-services_device_geolocation_location_arbitrator_cc,v 1.8 2021/05/27 04:21:02 robert Exp $
 
 Index: services/device/geolocation/location_arbitrator.cc
 --- services/device/geolocation/location_arbitrator.cc.orig

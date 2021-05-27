@@ -1,4 +1,4 @@
-$OpenBSD: patch-mojo_core_BUILD_gn,v 1.1 2021/04/16 18:15:07 robert Exp $
+$OpenBSD: patch-mojo_core_BUILD_gn,v 1.2 2021/05/27 04:21:02 robert Exp $
 
 Index: mojo/core/BUILD.gn
 --- mojo/core/BUILD.gn.orig

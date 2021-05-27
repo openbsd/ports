@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_utility_utility_main_cc,v 1.23 2021/04/16 18:15:07 robert Exp $
+$OpenBSD: patch-content_utility_utility_main_cc,v 1.24 2021/05/27 04:21:01 robert Exp $
 
 Index: content/utility/utility_main.cc
 --- content/utility/utility_main.cc.orig
 +++ content/utility/utility_main.cc
-@@ -25,9 +25,13 @@
+@@ -26,13 +26,17 @@
  #include "sandbox/policy/sandbox.h"
  #include "services/tracing/public/cpp/trace_startup.h"
  
@@ -11,14 +11,18 @@ Index: content/utility/utility_main.cc
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
 +#if !defined(OS_BSD)
  #include "content/utility/speech/speech_recognition_sandbox_hook_linux.h"
+ #include "printing/sandbox/print_backend_sandbox_hook_linux.h"
  #include "sandbox/policy/linux/sandbox_linux.h"
-+#else
-+#include "sandbox/policy/openbsd/sandbox_openbsd.h"
-+#endif
  #include "services/audio/audio_sandbox_hook_linux.h"
  #include "services/network/network_sandbox_hook_linux.h"
++#else
++#include "sandbox/policy/openbsd/sandbox_openbsd.h"
  #endif
-@@ -87,12 +91,13 @@ int UtilityMain(const MainFunctionParams& parameters) 
++#endif
+ 
+ #if BUILDFLAG(IS_CHROMEOS_ASH)
+ #include "chromeos/services/ime/ime_sandbox_hook.h"
+@@ -89,12 +93,13 @@ int UtilityMain(const MainFunctionParams& parameters) 
    if (parameters.command_line.HasSwitch(switches::kUtilityStartupDialog))
      WaitForDebugger("Utility");
  
@@ -33,7 +37,7 @@ Index: content/utility/utility_main.cc
    if (parameters.zygote_child ||
        sandbox_type == sandbox::policy::SandboxType::kNetwork ||
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -120,6 +125,12 @@ int UtilityMain(const MainFunctionParams& parameters) 
+@@ -125,6 +130,12 @@ int UtilityMain(const MainFunctionParams& parameters) 
          sandbox_type, std::move(pre_sandbox_hook),
          sandbox::policy::SandboxLinux::Options());
    }

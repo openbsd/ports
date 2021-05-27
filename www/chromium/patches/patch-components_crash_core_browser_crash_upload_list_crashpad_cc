@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_crash_core_browser_crash_upload_list_crashpad_cc,v 1.1 2021/04/16 18:15:06 robert Exp $
+$OpenBSD: patch-components_crash_core_browser_crash_upload_list_crashpad_cc,v 1.2 2021/05/27 04:21:01 robert Exp $
 
 Index: components/crash/core/browser/crash_upload_list_crashpad.cc
 --- components/crash/core/browser/crash_upload_list_crashpad.cc.orig

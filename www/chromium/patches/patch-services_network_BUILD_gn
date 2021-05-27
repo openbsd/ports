@@ -1,13 +1,13 @@
-$OpenBSD: patch-services_network_BUILD_gn,v 1.22 2021/04/16 18:15:07 robert Exp $
+$OpenBSD: patch-services_network_BUILD_gn,v 1.23 2021/05/27 04:21:02 robert Exp $
 
 Index: services/network/BUILD.gn
 --- services/network/BUILD.gn.orig
 +++ services/network/BUILD.gn
-@@ -275,7 +275,6 @@ component("network_service") {
- 
-   if (is_linux || is_chromeos) {
-     deps += [
+@@ -290,7 +290,6 @@ if (is_linux || is_chromeos) {
+     ]
+     deps = [
+       "//base:base",
 -      "//sandbox/linux:sandbox_services",
-       "//sandbox/policy",
+       "//sandbox/policy:policy",
      ]
    }

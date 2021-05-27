@@ -1,36 +1,45 @@
-$OpenBSD: patch-chrome_browser_policy_configuration_policy_handler_list_factory_cc,v 1.20 2021/04/16 18:15:06 robert Exp $
+$OpenBSD: patch-chrome_browser_policy_configuration_policy_handler_list_factory_cc,v 1.21 2021/05/27 04:21:00 robert Exp $
 
 Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
 --- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig
 +++ chrome/browser/policy/configuration_policy_handler_list_factory.cc
-@@ -1242,7 +1242,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1281,7 +1281,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+ 
+ // TODO(crbug.com/1179280): Remove OS_LINUX once https://crbug.com/1169547 is
+ // done.
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   { key::kLacrosSecondaryProfilesAllowed,
+     prefs::kLacrosSecondaryProfilesAllowed,
      base::Value::Type::BOOLEAN },
- #endif // !defined(OS_MAC) && !BUILDFLAG(IS_CHROMEOS_ASH)
+@@ -1293,7 +1293,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+     base::Value::Type::BOOLEAN },
+ #endif // !defined(OS_MAC) && !defined(OS_CHROMEOS)
  
 -#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS) || defined(OS_BSD)
    { key::kAuthNegotiateDelegateByKdcPolicy,
      prefs::kAuthNegotiateDelegateByKdcPolicy,
      base::Value::Type::BOOLEAN },
-@@ -1595,7 +1595,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
- // TODO(crbug/1169547) Remove `BUILDFLAG(IS_CHROMEOS_LACROS)` once the
- // migration is complete.
- #if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) || \
--    BUILDFLAG(IS_CHROMEOS_LACROS)
-+    BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
+@@ -1650,7 +1650,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+       SimpleSchemaValidatingPolicyHandler::MANDATORY_ALLOWED));
+ #endif  // defined(OS_ANDROID)
+ 
+-#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN)
++#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) || defined(OS_BSD)
    handlers->AddHandler(
        std::make_unique<
            enterprise_connectors::EnterpriseConnectorsPolicyHandler>(
-@@ -1950,7 +1950,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -2012,7 +2012,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+       SimpleSchemaValidatingPolicyHandler::RECOMMENDED_PROHIBITED,
        SimpleSchemaValidatingPolicyHandler::MANDATORY_ALLOWED));
  
- // TODO(crbug.com/1175651): Remove BUILDFLAG(IS_CHROMEOS_LACROS)
--#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
+-#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
    handlers->AddHandler(std::make_unique<SimpleSchemaValidatingPolicyHandler>(
        key::kWebAppSettings, prefs::kWebAppSettings, chrome_schema,
        SCHEMA_ALLOW_UNKNOWN,
-@@ -1969,7 +1969,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -2031,7 +2031,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

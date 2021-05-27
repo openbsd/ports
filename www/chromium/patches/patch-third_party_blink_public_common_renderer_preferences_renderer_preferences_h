@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_blink_public_common_renderer_preferences_renderer_preferences_h,v 1.1 2021/01/20 07:28:11 robert Exp $
+$OpenBSD: patch-third_party_blink_public_common_renderer_preferences_renderer_preferences_h,v 1.2 2021/05/27 04:21:02 robert Exp $
 
 Index: third_party/blink/public/common/renderer_preferences/renderer_preferences.h
 --- third_party/blink/public/common/renderer_preferences/renderer_preferences.h.orig
 +++ third_party/blink/public/common/renderer_preferences/renderer_preferences.h
-@@ -49,7 +49,7 @@ struct BLINK_COMMON_EXPORT RendererPreferences {
+@@ -50,7 +50,7 @@ struct BLINK_COMMON_EXPORT RendererPreferences {
    bool webrtc_allow_legacy_tls_protocols{false};
    UserAgentOverride user_agent_override;
    std::string accept_languages;

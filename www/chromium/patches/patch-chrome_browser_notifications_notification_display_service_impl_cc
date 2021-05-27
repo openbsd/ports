@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_notifications_notification_display_service_impl_cc,v 1.12 2021/04/16 18:15:06 robert Exp $
+$OpenBSD: patch-chrome_browser_notifications_notification_display_service_impl_cc,v 1.13 2021/05/27 04:21:00 robert Exp $
 
 Index: chrome/browser/notifications/notification_display_service_impl.cc
 --- chrome/browser/notifications/notification_display_service_impl.cc.orig
 +++ chrome/browser/notifications/notification_display_service_impl.cc
-@@ -31,7 +31,7 @@
+@@ -30,7 +30,7 @@
  #endif
  
  #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
@@ -12,7 +12,7 @@ Index: chrome/browser/notifications/notification_display_service_impl.cc
  #include "chrome/browser/send_tab_to_self/desktop_notification_handler.h"
  #include "chrome/browser/sharing/sharing_notification_handler.h"
  #endif
-@@ -66,7 +66,7 @@ void NotificationDisplayServiceImpl::RegisterProfilePr
+@@ -65,7 +65,7 @@ void NotificationDisplayServiceImpl::RegisterProfilePr
      user_prefs::PrefRegistrySyncable* registry) {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -21,7 +21,7 @@ Index: chrome/browser/notifications/notification_display_service_impl.cc
    registry->RegisterBooleanPref(prefs::kAllowNativeNotifications, true);
    registry->RegisterBooleanPref(prefs::kAllowSystemNotifications, true);
  #endif
-@@ -83,7 +83,7 @@ NotificationDisplayServiceImpl::NotificationDisplaySer
+@@ -82,7 +82,7 @@ NotificationDisplayServiceImpl::NotificationDisplaySer
                             std::make_unique<PersistentNotificationHandler>());
  
  #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || \

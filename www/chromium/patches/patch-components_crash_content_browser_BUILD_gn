@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_crash_content_browser_BUILD_gn,v 1.13 2021/04/16 18:15:06 robert Exp $
+$OpenBSD: patch-components_crash_content_browser_BUILD_gn,v 1.14 2021/05/27 04:21:01 robert Exp $
 
 Index: components/crash/content/browser/BUILD.gn
 --- components/crash/content/browser/BUILD.gn.orig
@@ -21,7 +21,7 @@ Index: components/crash/content/browser/BUILD.gn
      configs += [ "//third_party/breakpad:client_config" ]
      public_configs = [ "//third_party/breakpad:client_config" ]
    }
-@@ -57,7 +57,7 @@ source_set("browser") {
+@@ -59,7 +59,7 @@ source_set("browser") {
        "//components/crash/android:jni_headers",
        "//mojo/public/cpp/bindings",
      ]

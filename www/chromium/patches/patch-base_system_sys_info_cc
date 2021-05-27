@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_system_sys_info_cc,v 1.6 2021/04/16 18:15:05 robert Exp $
+$OpenBSD: patch-base_system_sys_info_cc,v 1.7 2021/05/27 04:21:00 robert Exp $
 
 Index: base/system/sys_info.cc
 --- base/system/sys_info.cc.orig

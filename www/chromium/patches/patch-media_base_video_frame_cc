@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_base_video_frame_cc,v 1.31 2021/04/16 18:15:07 robert Exp $
+$OpenBSD: patch-media_base_video_frame_cc,v 1.32 2021/05/27 04:21:02 robert Exp $
 
 Index: media/base/video_frame.cc
 --- media/base/video_frame.cc.orig
@@ -30,7 +30,7 @@ Index: media/base/video_frame.cc
  // This class allows us to embed a vector<ScopedFD> into a scoped_refptr, and
  // thus to have several VideoFrames share the same set of DMABUF FDs.
  class VideoFrame::DmabufHolder
-@@ -673,7 +673,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalGpuM
+@@ -668,7 +668,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalGpuM
    return frame;
  }
  
@@ -39,7 +39,7 @@ Index: media/base/video_frame.cc
  // static
  scoped_refptr<VideoFrame> VideoFrame::WrapExternalDmabufs(
      const VideoFrameLayout& layout,
-@@ -896,7 +896,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapVideoFrame(
+@@ -891,7 +891,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapVideoFrame(
      }
    }
  
@@ -48,7 +48,7 @@ Index: media/base/video_frame.cc
    DCHECK(frame->dmabuf_fds_);
    // If there are any |dmabuf_fds_| plugged in, we should refer them too.
    wrapping_frame->dmabuf_fds_ = frame->dmabuf_fds_;
-@@ -1246,7 +1246,7 @@ const gpu::MailboxHolder& VideoFrame::mailbox_holder(
+@@ -1242,7 +1242,7 @@ const gpu::MailboxHolder& VideoFrame::mailbox_holder(
                          : mailbox_holders_[texture_index];
  }
  
@@ -57,7 +57,7 @@ Index: media/base/video_frame.cc
  const std::vector<base::ScopedFD>& VideoFrame::DmabufFds() const {
    DCHECK_EQ(storage_type_, STORAGE_DMABUFS);
  
-@@ -1331,7 +1331,7 @@ VideoFrame::VideoFrame(const VideoFrameLayout& layout,
+@@ -1327,7 +1327,7 @@ VideoFrame::VideoFrame(const VideoFrameLayout& layout,
        storage_type_(storage_type),
        visible_rect_(Intersection(visible_rect, gfx::Rect(layout.coded_size()))),
        natural_size_(natural_size),

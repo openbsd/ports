@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_base_network_change_notifier_cc,v 1.41 2021/04/16 18:15:07 robert Exp $
+$OpenBSD: patch-net_base_network_change_notifier_cc,v 1.42 2021/05/27 04:21:02 robert Exp $
 
 Index: net/base/network_change_notifier.cc
 --- net/base/network_change_notifier.cc.orig

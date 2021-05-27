@@ -1,32 +1,14 @@
-$OpenBSD: patch-chrome_browser_performance_monitor_process_metrics_recorder_cc,v 1.1 2021/04/16 18:15:06 robert Exp $
+$OpenBSD: patch-chrome_browser_performance_monitor_process_metrics_recorder_cc,v 1.2 2021/05/27 04:21:00 robert Exp $
 
 Index: chrome/browser/performance_monitor/process_metrics_recorder.cc
 --- chrome/browser/performance_monitor/process_metrics_recorder.cc.orig
 +++ chrome/browser/performance_monitor/process_metrics_recorder.cc
-@@ -59,7 +59,7 @@ void ProcessMetricsRecorder::OnMetricsSampled(
-           kDiskUsageHistogramBucketCount);
- #endif
+@@ -33,7 +33,7 @@ void RecordProcessHistograms(const char* histogram_suf
+       metrics.cpu_usage * kCPUUsageFactor, kCPUUsageHistogramMin,
+       kCPUUsageHistogramMax, kCPUUsageHistogramBucketCount);
  #if defined(OS_MAC) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
 -    defined(OS_AIX)
 +    defined(OS_AIX) || defined(OS_BSD)
-       UMA_HISTOGRAM_COUNTS_10000(
-           "PerformanceMonitor.IdleWakeups.BrowserProcess",
-           metrics.idle_wakeups);
-@@ -83,7 +83,7 @@ void ProcessMetricsRecorder::OnMetricsSampled(
-                               true);
-       }
- #if defined(OS_MAC) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
--    defined(OS_AIX)
-+    defined(OS_AIX) || defined(OS_BSD)
-       UMA_HISTOGRAM_COUNTS_10000(
-           "PerformanceMonitor.IdleWakeups.RendererProcess",
-           metrics.idle_wakeups);
-@@ -106,7 +106,7 @@ void ProcessMetricsRecorder::OnMetricsSampled(
-       if (metrics.cpu_usage > kHighCPUUtilizationThreshold)
-         UMA_HISTOGRAM_BOOLEAN("PerformanceMonitor.HighCPU.GPUProcess", true);
- #if defined(OS_MAC) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
--    defined(OS_AIX)
-+    defined(OS_AIX) || defined(OS_BSD)
-       UMA_HISTOGRAM_COUNTS_10000("PerformanceMonitor.IdleWakeups.GPUProcess",
-                                  metrics.idle_wakeups);
- #endif
+   base::UmaHistogramCounts10000(
+       base::JoinString({"PerformanceMonitor.IdleWakeUps.", histogram_suffix},
+                        ""),

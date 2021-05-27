@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_perf_chrome_telemetry_build_BUILD_gn,v 1.7 2021/04/16 18:15:07 robert Exp $
+$OpenBSD: patch-tools_perf_chrome_telemetry_build_BUILD_gn,v 1.8 2021/05/27 04:21:02 robert Exp $
 
 Index: tools/perf/chrome_telemetry_build/BUILD.gn
 --- tools/perf/chrome_telemetry_build/BUILD.gn.orig
@@ -12,7 +12,7 @@ Index: tools/perf/chrome_telemetry_build/BUILD.gn
      data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
  
      # CrOS currently has issues with the locally compiled version of
-@@ -142,7 +142,7 @@ group("telemetry_chrome_test_without_chrome") {
+@@ -141,7 +141,7 @@ group("telemetry_chrome_test_without_chrome") {
    ]
  
    # Cr-Fuchsia doesn't support breakpad.

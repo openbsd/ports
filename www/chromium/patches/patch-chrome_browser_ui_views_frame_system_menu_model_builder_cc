@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_system_menu_model_builder_cc,v 1.17 2021/04/16 18:15:06 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_system_menu_model_builder_cc,v 1.18 2021/05/27 04:21:01 robert Exp $
 
 Index: chrome/browser/ui/views/frame/system_menu_model_builder.cc
 --- chrome/browser/ui/views/frame/system_menu_model_builder.cc.orig

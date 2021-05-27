@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_feature_engagement_public_feature_list_cc,v 1.15 2021/04/16 18:15:06 robert Exp $
+$OpenBSD: patch-components_feature_engagement_public_feature_list_cc,v 1.16 2021/05/27 04:21:01 robert Exp $
 
 Index: components/feature_engagement/public/feature_list.cc
 --- components/feature_engagement/public/feature_list.cc.orig
 +++ components/feature_engagement/public/feature_list.cc
-@@ -80,7 +80,7 @@ const base::Feature* const kAllFeatures[] = {
+@@ -84,7 +84,7 @@ const base::Feature* const kAllFeatures[] = {
      &kIPHDiscoverFeedHeaderFeature,
  #endif  // defined(OS_IOS)
  #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \

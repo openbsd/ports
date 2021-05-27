@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_views_views_delegate_h,v 1.21 2021/04/16 18:15:07 robert Exp $
+$OpenBSD: patch-ui_views_views_delegate_h,v 1.22 2021/05/27 04:21:03 robert Exp $
 
 Index: ui/views/views_delegate.h
 --- ui/views/views_delegate.h.orig
 +++ ui/views/views_delegate.h
-@@ -138,7 +138,7 @@ class VIEWS_EXPORT ViewsDelegate {
+@@ -137,7 +137,7 @@ class VIEWS_EXPORT ViewsDelegate {
    // environment.
    virtual bool IsWindowInMetro(gfx::NativeWindow window) const;
  #elif BUILDFLAG(ENABLE_DESKTOP_AURA) && \

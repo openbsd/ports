@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_compositor_viz_process_transport_factory_cc,v 1.4 2021/04/16 18:15:06 robert Exp $
+$OpenBSD: patch-content_browser_compositor_viz_process_transport_factory_cc,v 1.5 2021/05/27 04:21:01 robert Exp $
 
 Index: content/browser/compositor/viz_process_transport_factory.cc
 --- content/browser/compositor/viz_process_transport_factory.cc.orig
 +++ content/browser/compositor/viz_process_transport_factory.cc
-@@ -111,7 +111,7 @@ class HostDisplayClient : public viz::HostDisplayClien
+@@ -112,7 +112,7 @@ class HostDisplayClient : public viz::HostDisplayClien
    // viz::HostDisplayClient:
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

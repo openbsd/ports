@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_app_content_main_runner_impl_cc,v 1.22 2021/04/16 18:15:06 robert Exp $
+$OpenBSD: patch-content_app_content_main_runner_impl_cc,v 1.23 2021/05/27 04:21:01 robert Exp $
 
 Index: content/app/content_main_runner_impl.cc
 --- content/app/content_main_runner_impl.cc.orig
 +++ content/app/content_main_runner_impl.cc
-@@ -125,17 +125,17 @@
+@@ -128,17 +128,17 @@
  #include "base/posix/global_descriptors.h"
  #include "content/public/common/content_descriptors.h"
  
@@ -24,7 +24,7 @@ Index: content/app/content_main_runner_impl.cc
  #include "base/native_library.h"
  #include "base/rand_util.h"
  #include "content/public/common/zygote/sandbox_support_linux.h"
-@@ -167,6 +167,13 @@
+@@ -170,6 +170,13 @@
  #include "media/base/media_switches.h"
  #endif
  
@@ -37,8 +37,8 @@ Index: content/app/content_main_runner_impl.cc
 +
  #if defined(OS_ANDROID)
  #include "base/system/sys_info.h"
- #include "content/browser/android/browser_startup_controller.h"
-@@ -307,7 +314,7 @@ void InitializeZygoteSandboxForBrowserProcess(
+ #include "components/power_scheduler/power_scheduler.h"
+@@ -311,7 +318,7 @@ void InitializeZygoteSandboxForBrowserProcess(
  }
  #endif  // BUILDFLAG(USE_ZYGOTE_HANDLE)
  
@@ -47,7 +47,7 @@ Index: content/app/content_main_runner_impl.cc
  
  #if BUILDFLAG(ENABLE_PLUGINS)
  // Loads the (native) libraries but does not initialize them (i.e., does not
-@@ -346,11 +353,14 @@ void PreloadLibraryCdms() {
+@@ -350,11 +357,14 @@ void PreloadLibraryCdms() {
  }
  #endif  // BUILDFLAG(ENABLE_LIBRARY_CDMS)
  
@@ -63,7 +63,7 @@ Index: content/app/content_main_runner_impl.cc
  
  #if BUILDFLAG(ENABLE_PLUGINS)
    // Ensure access to the Pepper plugins before the sandbox is turned on.
-@@ -362,6 +372,11 @@ void PreSandboxInit() {
+@@ -366,6 +376,11 @@ void PreSandboxInit() {
  #endif
    InitializeWebRtcModule();
  
@@ -75,7 +75,7 @@ Index: content/app/content_main_runner_impl.cc
    // Set the android SkFontMgr for blink. We need to ensure this is done
    // before the sandbox is initialized to allow the font manager to access
    // font configuration files on disk.
-@@ -516,7 +531,7 @@ int RunZygote(ContentMainDelegate* delegate) {
+@@ -533,7 +548,7 @@ int RunZygote(ContentMainDelegate* delegate) {
    delegate->ZygoteStarting(&zygote_fork_delegates);
    media::InitializeMediaLibrary();
  
@@ -84,7 +84,7 @@ Index: content/app/content_main_runner_impl.cc
    PreSandboxInit();
  #endif
  
-@@ -674,10 +689,10 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
+@@ -691,10 +706,10 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
               kFieldTrialDescriptor + base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !OS_ANDROID
  
@@ -97,7 +97,7 @@ Index: content/app/content_main_runner_impl.cc
  
  #endif  // !OS_WIN
  
-@@ -872,6 +887,16 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
+@@ -884,6 +899,16 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
    }
  #endif
  
@@ -114,7 +114,7 @@ Index: content/app/content_main_runner_impl.cc
    delegate_->SandboxInitialized(process_type);
  
  #if BUILDFLAG(USE_ZYGOTE_HANDLE)
-@@ -916,7 +941,7 @@ int ContentMainRunnerImpl::Run(bool start_minimal_brow
+@@ -928,7 +953,7 @@ int ContentMainRunnerImpl::Run(bool start_minimal_brow
        mojo::core::InitFeatures();
      }
  
@@ -123,7 +123,7 @@ Index: content/app/content_main_runner_impl.cc
      // If dynamic Mojo Core is being used, ensure that it's loaded very early in
      // the child/zygote process, before any sandbox is initialized. The library
      // is not fully initialized with IPC support until a ChildProcess is later
-@@ -939,6 +964,11 @@ int ContentMainRunnerImpl::Run(bool start_minimal_brow
+@@ -951,6 +976,11 @@ int ContentMainRunnerImpl::Run(bool start_minimal_brow
  #endif
  
    RegisterMainThreadFactories();

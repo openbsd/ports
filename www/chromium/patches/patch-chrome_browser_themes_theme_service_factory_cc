@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_themes_theme_service_factory_cc,v 1.8 2021/04/16 18:15:06 robert Exp $
+$OpenBSD: patch-chrome_browser_themes_theme_service_factory_cc,v 1.9 2021/05/27 04:21:01 robert Exp $
 
 Index: chrome/browser/themes/theme_service_factory.cc
 --- chrome/browser/themes/theme_service_factory.cc.orig

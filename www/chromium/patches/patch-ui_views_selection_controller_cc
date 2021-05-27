@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_views_selection_controller_cc,v 1.6 2021/04/16 18:15:07 robert Exp $
+$OpenBSD: patch-ui_views_selection_controller_cc,v 1.7 2021/05/27 04:21:03 robert Exp $
 
 Index: ui/views/selection_controller.cc
 --- ui/views/selection_controller.cc.orig

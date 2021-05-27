@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_mojo_services_gpu_mojo_media_client_cc,v 1.14 2021/04/16 18:15:07 robert Exp $
+$OpenBSD: patch-media_mojo_services_gpu_mojo_media_client_cc,v 1.15 2021/05/27 04:21:02 robert Exp $
 
 Index: media/mojo/services/gpu_mojo_media_client.cc
 --- media/mojo/services/gpu_mojo_media_client.cc.orig

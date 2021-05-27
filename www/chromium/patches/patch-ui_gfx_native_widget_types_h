@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_native_widget_types_h,v 1.7 2021/04/16 18:15:07 robert Exp $
+$OpenBSD: patch-ui_gfx_native_widget_types_h,v 1.8 2021/05/27 04:21:03 robert Exp $
 
 Index: ui/gfx/native_widget_types.h
 --- ui/gfx/native_widget_types.h.orig

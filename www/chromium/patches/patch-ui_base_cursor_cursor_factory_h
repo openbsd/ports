@@ -1,10 +1,10 @@
-$OpenBSD: patch-ui_base_cursor_cursor_factory_h,v 1.1 2021/04/16 18:15:07 robert Exp $
+$OpenBSD: patch-ui_base_cursor_cursor_factory_h,v 1.2 2021/05/27 04:21:02 robert Exp $
 
 Index: ui/base/cursor/cursor_factory.h
 --- ui/base/cursor/cursor_factory.h.orig
 +++ ui/base/cursor/cursor_factory.h
-@@ -67,7 +67,7 @@ class COMPONENT_EXPORT(UI_BASE_CURSOR_BASE) CursorFact
-   virtual void ObserveThemeChanges();
+@@ -73,7 +73,7 @@ class COMPONENT_EXPORT(UI_BASE_CURSOR_BASE) CursorFact
+   virtual void SetDeviceScaleFactor(float scale);
  };
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)

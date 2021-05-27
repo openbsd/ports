@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_browser_frame_cc,v 1.26 2021/04/16 18:15:06 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_browser_frame_cc,v 1.27 2021/05/27 04:21:01 robert Exp $
 
 Index: chrome/browser/ui/views/frame/browser_frame.cc
 --- chrome/browser/ui/views/frame/browser_frame.cc.orig
 +++ chrome/browser/ui/views/frame/browser_frame.cc
-@@ -43,7 +43,7 @@
+@@ -44,7 +44,7 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/views/frame/browser_frame.cc
  #include "ui/display/screen.h"
  #endif
  
-@@ -52,7 +52,7 @@ namespace {
+@@ -53,7 +53,7 @@ namespace {
  bool IsUsingGtkTheme(Profile* profile) {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -21,7 +21,7 @@ Index: chrome/browser/ui/views/frame/browser_frame.cc
    return ThemeServiceFactory::GetForProfile(profile)->UsingSystemTheme();
  #else
    return false;
-@@ -220,7 +220,7 @@ void BrowserFrame::OnNativeWidgetWorkspaceChanged() {
+@@ -221,7 +221,7 @@ void BrowserFrame::OnNativeWidgetWorkspaceChanged() {
                                             IsVisibleOnAllWorkspaces());
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

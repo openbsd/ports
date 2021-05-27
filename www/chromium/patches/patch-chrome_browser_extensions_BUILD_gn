@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_extensions_BUILD_gn,v 1.38 2021/04/16 18:15:06 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_BUILD_gn,v 1.39 2021/05/27 04:21:00 robert Exp $
 Index: chrome/browser/extensions/BUILD.gn
 --- chrome/browser/extensions/BUILD.gn.orig
 +++ chrome/browser/extensions/BUILD.gn
-@@ -1249,6 +1249,10 @@ static_library("extensions") {
+@@ -1269,6 +1269,10 @@ static_library("extensions") {
      ]
    }
  
