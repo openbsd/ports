@@ -1,0 +1,10 @@
+This nextcloud service attempts to solve the issue where Nextcloud clients have
+to periodically check the server if any files have been changed. In order to
+keep sync snappy, clients wants to check for updates often, which increases the
+load on the server.
+
+With many clients all checking for updates a large portion of the server load
+can consist of just these update checks.
+
+By providing a way for the server to send update notifications to the clients,
+the need for the clients to make these checks can be greatly reduced.

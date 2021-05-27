@@ -1,0 +1,60 @@
+$OpenBSD: README,v 1.1.1.1 2021/05/27 14:49:46 landry Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Prerequisites
+=============
+
+Per https://github.com/nextcloud/notify_push#requirements
+${PKGSTEM} requires that nextcloud is configured to use a redis cache. Refer to
+nextcloud documentation for this.
+
+Running the service
+===================
+
+once the service is enabled and started, the nextcloud virtualhost should be
+modified so that /push/ location on the nextcloud virtual host points at the
+websocket provided by the service.
+
+examples are provided at https://github.com/nextcloud/notify_push#reverse-proxy
+see below for nginx:
+
+location ^~ /push/ {
+    proxy_pass http://127.0.0.1:7867/;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "Upgrade";
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+}
+
+Setting up the service
+======================
+
+the notify_push nextcloud app needs to be installed and configured, the occ
+commands has the notify_push:setup subcommand for that, per
+https://github.com/nextcloud/notify_push#nextcloud-app
+
+$doas -u www /var/www/nextcloud/occ notify_push:setup https://nextcloud_fqdn/push
+- redis is configured
+- push server is receiving redis messages
+- push server can load mount info from database
+- push server can connect to the Nextcloud server
+- push server is a trusted proxy
+- push server is running the same version as the app
+  configuration saved
+
+depending on webserver setup, a common issue is the IP of the server not being
+in trusted_proxies in nextcloud config.php, see
+https://github.com/nextcloud/notify_push#push-server-is-not-a-trusted-proxy for
+details.
+
+adding this to config.php usually solves the issue:
+
+  'trusted_proxies' =>
+  array (
+    0 => 'server.public.ip'
+  ),
+
