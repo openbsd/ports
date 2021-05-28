@@ -1,13 +1,13 @@
-$OpenBSD: patch-src_runtime_GNUmakefile,v 1.9 2020/03/15 19:54:00 solene Exp $
+$OpenBSD: patch-src_runtime_GNUmakefile,v 1.10 2021/05/28 16:23:31 solene Exp $
 Index: src/runtime/GNUmakefile
 --- src/runtime/GNUmakefile.orig
 +++ src/runtime/GNUmakefile
-@@ -34,7 +34,7 @@ __LDFLAGS__ =
+@@ -33,7 +33,7 @@ __LDFLAGS__ =
  
  include ../../output/prefix.def
  
 -CFLAGS += -g -Wall -Wundef -Wsign-compare -Wpointer-arith -O3
 +CFLAGS += -Wall -Wundef -Wsign-compare -Wpointer-arith
  ASFLAGS += $(CFLAGS)
- CPPFLAGS += -I. -DSBCL_PREFIX=\"$(SBCL_PREFIX)\"
+ CPPFLAGS += -I.
  

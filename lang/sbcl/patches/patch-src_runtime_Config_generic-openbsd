@@ -1,17 +1,19 @@
-$OpenBSD: patch-src_runtime_Config_generic-openbsd,v 1.4 2019/05/14 07:59:53 solene Exp $
+$OpenBSD: patch-src_runtime_Config_generic-openbsd,v 1.5 2021/05/28 16:23:31 solene Exp $
 
 Don't try to guess (wrong) with clang. Just assume we have pie
 
 Index: src/runtime/Config.generic-openbsd
 --- src/runtime/Config.generic-openbsd.orig
 +++ src/runtime/Config.generic-openbsd
-@@ -17,9 +17,7 @@ CFLAGS += -pthread -DOS_THREAD_STACK
+@@ -17,11 +17,7 @@ CFLAGS += -pthread
  OS_LIBS += -pthread
  endif
  
+-ifeq ($(DISABLE_PIE),yes)
 -ifneq ($(shell $(CC) -dM -E - < /dev/null 2>/dev/null | grep -e '__clang__'),)
  CFLAGS += -fno-pie
- LINKFLAGS += -Wl,-nopie
+ LINKFLAGS += -nopie
  LDFLAGS += -nopie
  __LDFLAGS__ += -nopie
+-endif
 -endif
