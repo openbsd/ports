@@ -1,0 +1,8 @@
+IRTT (Isochronous Round-Trip Tester) is software that runs on a client
+and server, using its own UDP-based protocol to allow measurements
+including round-trip time, one-way delay (assuming the clocks are
+synchronized), and lost/out-of-order/duplicate packets.
+
+It has features for reasonably secure use on both public and private
+servers, including optional HMAC (access control) and three-way
+handshake (anti-spoofing).
