@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1255 2021/05/25 23:18:38 abieber Exp $
+# $OpenBSD: Makefile,v 1.1256 2021/05/28 10:54:51 sthen Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -175,6 +175,7 @@
      SUBDIR += irssi
      SUBDIR += irssi-icb
      SUBDIR += irssi-xmpp
+     SUBDIR += irtt
      SUBDIR += isc-bind
      SUBDIR += isc-bind,geoip
      SUBDIR += isc-dhcp
