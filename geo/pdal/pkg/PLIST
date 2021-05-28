@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/10/19 06:34:58 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/05/28 11:45:21 landry Exp $
 @bin bin/pdal
 bin/pdal-config
 include/pdal/
@@ -52,7 +52,7 @@ include/pdal/XMLSchema.hpp
 include/pdal/compression/
 include/pdal/compression/Compression.hpp
 include/pdal/compression/DeflateCompression.hpp
-include/pdal/compression/LazPerfCompression.hpp
+include/pdal/compression/GzipCompression.hpp
 include/pdal/compression/LazPerfVlrCompression.hpp
 include/pdal/compression/LzmaCompression.hpp
 include/pdal/compression/ZstdCompression.hpp
@@ -78,6 +78,7 @@ include/pdal/filters/EstimateRankFilter.hpp
 include/pdal/filters/FaceRasterFilter.hpp
 include/pdal/filters/FarthestPointSamplingFilter.hpp
 include/pdal/filters/FerryFilter.hpp
+include/pdal/filters/GpsTimeConvert.hpp
 include/pdal/filters/GreedyProjection.hpp
 include/pdal/filters/GroupByFilter.hpp
 include/pdal/filters/HagDelaunayFilter.hpp
@@ -111,6 +112,7 @@ include/pdal/filters/RadialDensityFilter.hpp
 include/pdal/filters/RandomizeFilter.hpp
 include/pdal/filters/RangeFilter.hpp
 include/pdal/filters/ReciprocityFilter.hpp
+include/pdal/filters/RelaxationDartThrowing.hpp
 include/pdal/filters/ReprojectionFilter.hpp
 include/pdal/filters/ReturnsFilter.hpp
 include/pdal/filters/SMRFilter.hpp
@@ -127,6 +129,7 @@ include/pdal/filters/TransformationFilter.hpp
 include/pdal/filters/VoxelCenterNearestNeighborFilter.hpp
 include/pdal/filters/VoxelCentroidNearestNeighborFilter.hpp
 include/pdal/filters/VoxelDownsizeFilter.hpp
+include/pdal/filters/ZsmoothFilter.hpp
 include/pdal/filters/private/
 include/pdal/filters/private/DimRange.hpp
 include/pdal/filters/private/Point.hpp
@@ -227,8 +230,10 @@ include/pdal/io/private/ept/Overlap.hpp
 include/pdal/io/private/ept/TileContents.hpp
 include/pdal/io/private/ept/VectorPointTable.hpp
 include/pdal/kernels/
+include/pdal/kernels/ChamferKernel.hpp
 include/pdal/kernels/DeltaKernel.hpp
 include/pdal/kernels/DensityKernel.hpp
+include/pdal/kernels/EvalKernel.hpp
 include/pdal/kernels/GroundKernel.hpp
 include/pdal/kernels/HausdorffKernel.hpp
 include/pdal/kernels/InfoKernel.hpp
@@ -276,6 +281,7 @@ include/pdal/util/Inserter.hpp
 include/pdal/util/NullOStream.hpp
 include/pdal/util/OStream.hpp
 include/pdal/util/ProgramArgs.hpp
+include/pdal/util/Random.hpp
 include/pdal/util/ThreadPool.hpp
 include/pdal/util/Utils.hpp
 include/pdal/util/Uuid.hpp
