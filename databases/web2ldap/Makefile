@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2021/04/30 07:33:43 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2021/05/28 15:12:48 landry Exp $
 
 COMMENT =	full-featured LDAP client running as web application
 
-MODPY_EGG_VERSION =	1.5.117
+MODPY_EGG_VERSION =	1.6.4
 DISTNAME =	web2ldap-${MODPY_EGG_VERSION}
 
 CATEGORIES =	databases www sysutils
@@ -22,7 +22,7 @@ FIX_EXTRACT_PERMISSIONS =	Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =	Yes
 
-BUILD_DEPENDS =	databases/py-ldap0${MODPY_FLAVOR} \
+BUILD_DEPENDS =	databases/py-ldap0${MODPY_FLAVOR}>=1.2.8 \
 		textproc/py-xlwt${MODPY_FLAVOR} \
 		net/py-dnspython${MODPY_FLAVOR} \
 		security/py-asn1crypto${MODPY_FLAVOR} \

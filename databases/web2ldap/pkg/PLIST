@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/02/01 18:21:07 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/05/28 15:12:48 landry Exp $
 @newgroup _web2ldap:857
 @newuser _web2ldap:857:_web2ldap:daemon:web2ldap service account:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/web2ldap
@@ -49,14 +49,14 @@ lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}connect.${
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}connect.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}conninfo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}conninfo.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}dds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}dds.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}delete.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}delete.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}dit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}dit.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}entry.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}entry.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}form.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}form.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}groupadm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -93,6 +93,10 @@ lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}session.${
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}session.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}srvrr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}srvrr.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}stats.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}stats.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}tmpl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}tmpl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}urlredirect.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/${MODPY_PYCACHE}urlredirect.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/add.py
@@ -101,10 +105,10 @@ lib/python${MODPY_VERSION}/site-packages/web2ldap/app/bulkmod.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/cnf.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/connect.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/conninfo.py
-lib/python${MODPY_VERSION}/site-packages/web2ldap/app/core.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/dds.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/delete.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/dit.py
+lib/python${MODPY_VERSION}/site-packages/web2ldap/app/entry.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/form.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/groupadm.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/gui.py
@@ -277,6 +281,8 @@ lib/python${MODPY_VERSION}/site-packages/web2ldap/app/search.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/searchform.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/session.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/srvrr.py
+lib/python${MODPY_VERSION}/site-packages/web2ldap/app/stats.py
+lib/python${MODPY_VERSION}/site-packages/web2ldap/app/tmpl.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/urlredirect.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/checkinst.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/ldapsession.py
@@ -314,9 +320,12 @@ lib/python${MODPY_VERSION}/site-packages/web2ldap/web/${MODPY_PYCACHE}helper.${M
 lib/python${MODPY_VERSION}/site-packages/web2ldap/web/${MODPY_PYCACHE}helper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/web2ldap/web/${MODPY_PYCACHE}session.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/web2ldap/web/${MODPY_PYCACHE}session.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/web2ldap/web/${MODPY_PYCACHE}wsgi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/web2ldap/web/${MODPY_PYCACHE}wsgi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/web2ldap/web/forms.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/web/helper.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/web/session.py
+lib/python${MODPY_VERSION}/site-packages/web2ldap/web/wsgi.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/wsgi.py
 share/doc/web2ldap/
 share/doc/web2ldap/.htaccess
@@ -336,6 +345,7 @@ share/doc/web2ldap/changes-1.2.html
 share/doc/web2ldap/changes-1.3.html
 share/doc/web2ldap/changes-1.4.html
 share/doc/web2ldap/changes-1.5.html
+share/doc/web2ldap/changes-1.6.html
 share/doc/web2ldap/changes-ancient.html
 share/doc/web2ldap/changes.html
 share/doc/web2ldap/compatibility.html
@@ -353,7 +363,6 @@ share/doc/web2ldap/files.html
 share/doc/web2ldap/install.html
 share/doc/web2ldap/install_container.html
 share/doc/web2ldap/install_opensuse.html
-share/doc/web2ldap/news.html
 share/doc/web2ldap/related.html
 share/doc/web2ldap/robots.txt
 share/doc/web2ldap/ssi/
