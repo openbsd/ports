@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.21 2021/01/10 16:10:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/05/28 10:04:30 sthen Exp $
 
 COMMENT =	applied math library and CLI calculator
 CATEGORIES =	math devel
 
-V =		3.16.1
+V =		3.19.0
 DISTNAME =	libqalculate-$V
 HOMEPAGE =	https://qalculate.github.io/
 
-SHARED_LIBS =	qalculate		1.0	# .31.2
+SHARED_LIBS =	qalculate		1.1	# .34.0
 
 # GPLv2+
 PERMIT_PACKAGE = Yes
@@ -30,7 +30,8 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 		textproc/libxml
 
 CONFIGURE_STYLE =	autoconf
-AUTOCONF_VERSION =	2.69
+AUTOCONF_VERSION =	2.71
+USE_GMAKE =		Yes
 
 CONFIGURE_ARGS =	--with-readline=ereadline
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include/ereadline -I${LOCALBASE}/include" \
