@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.112 2021/05/22 05:15:35 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.113 2021/05/28 10:45:00 sthen Exp $
 
 COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
-V =		2.12.3
-REVISION =	2
+V =		2.12.4
 
 GH_PROJECT =	icinga2
 GH_TAGNAME =	v$V
