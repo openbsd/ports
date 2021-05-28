@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2021/04/28 20:12:54 solene Exp $
+# $OpenBSD: Makefile,v 1.3 2021/05/28 16:22:03 solene Exp $
 
 COMMENT =	PNG compressor
 
 GH_ACCOUNT =	kornelski
 GH_PROJECT =	pngquant
-GH_TAGNAME =	2.14.1
-REVISION =	0
+GH_TAGNAME =	2.15.1
 
 CATEGORIES =	graphics
 
