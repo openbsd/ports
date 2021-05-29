@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/10 01:47:57 afresh1 Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/05/29 11:25:59 bluhm Exp $
 ${P5SITE}/HTML/FormHandler/
 ${P5SITE}/HTML/FormHandler.pm
 ${P5SITE}/HTML/FormHandler/Base.pm
@@ -42,9 +42,12 @@ ${P5SITE}/HTML/FormHandler/Field/PrimaryKey.pm
 ${P5SITE}/HTML/FormHandler/Field/Repeatable/
 ${P5SITE}/HTML/FormHandler/Field/Repeatable.pm
 ${P5SITE}/HTML/FormHandler/Field/Repeatable/Instance.pm
+${P5SITE}/HTML/FormHandler/Field/RequestToken.pm
 ${P5SITE}/HTML/FormHandler/Field/Reset.pm
 ${P5SITE}/HTML/FormHandler/Field/Result.pm
 ${P5SITE}/HTML/FormHandler/Field/RmElement.pm
+${P5SITE}/HTML/FormHandler/Field/Role/
+${P5SITE}/HTML/FormHandler/Field/Role/RequestToken.pm
 ${P5SITE}/HTML/FormHandler/Field/Second.pm
 ${P5SITE}/HTML/FormHandler/Field/Select.pm
 ${P5SITE}/HTML/FormHandler/Field/SelectCSV.pm
@@ -61,9 +64,11 @@ ${P5SITE}/HTML/FormHandler/I18N/
 ${P5SITE}/HTML/FormHandler/I18N.pm
 ${P5SITE}/HTML/FormHandler/I18N/ar_kw.pm
 ${P5SITE}/HTML/FormHandler/I18N/bg_bg.pm
+${P5SITE}/HTML/FormHandler/I18N/ca_es.pm
 ${P5SITE}/HTML/FormHandler/I18N/cs_cz.pm
 ${P5SITE}/HTML/FormHandler/I18N/de_de.pm
 ${P5SITE}/HTML/FormHandler/I18N/en_us.pm
+${P5SITE}/HTML/FormHandler/I18N/es_es.pm
 ${P5SITE}/HTML/FormHandler/I18N/hu_hu.pm
 ${P5SITE}/HTML/FormHandler/I18N/it_it.pm
 ${P5SITE}/HTML/FormHandler/I18N/ja_jp.pm
@@ -250,9 +255,11 @@ ${P5SITE}/auto/share/dist/HTML-FormHandler/templates/wrapper/wrap_label.tt
 @man man/man3p/HTML::FormHandler::Field::PrimaryKey.3p
 @man man/man3p/HTML::FormHandler::Field::Repeatable.3p
 @man man/man3p/HTML::FormHandler::Field::Repeatable::Instance.3p
+@man man/man3p/HTML::FormHandler::Field::RequestToken.3p
 @man man/man3p/HTML::FormHandler::Field::Reset.3p
 @man man/man3p/HTML::FormHandler::Field::Result.3p
 @man man/man3p/HTML::FormHandler::Field::RmElement.3p
+@man man/man3p/HTML::FormHandler::Field::Role::RequestToken.3p
 @man man/man3p/HTML::FormHandler::Field::Second.3p
 @man man/man3p/HTML::FormHandler::Field::Select.3p
 @man man/man3p/HTML::FormHandler::Field::SelectCSV.3p
@@ -268,9 +275,11 @@ ${P5SITE}/auto/share/dist/HTML-FormHandler/templates/wrapper/wrap_label.tt
 @man man/man3p/HTML::FormHandler::I18N.3p
 @man man/man3p/HTML::FormHandler::I18N::ar_kw.3p
 @man man/man3p/HTML::FormHandler::I18N::bg_bg.3p
+@man man/man3p/HTML::FormHandler::I18N::ca_es.3p
 @man man/man3p/HTML::FormHandler::I18N::cs_cz.3p
 @man man/man3p/HTML::FormHandler::I18N::de_de.3p
 @man man/man3p/HTML::FormHandler::I18N::en_us.3p
+@man man/man3p/HTML::FormHandler::I18N::es_es.3p
 @man man/man3p/HTML::FormHandler::I18N::hu_hu.3p
 @man man/man3p/HTML::FormHandler::I18N::it_it.3p
 @man man/man3p/HTML::FormHandler::I18N::ja_jp.3p

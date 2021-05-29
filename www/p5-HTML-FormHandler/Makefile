@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/10 01:47:57 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.2 2021/05/29 11:25:59 bluhm Exp $
 
 COMMENT =	HTML forms using Moose
 
-DISTNAME =	HTML-FormHandler-0.40062
+DISTNAME =	HTML-FormHandler-0.40068
 
 CATEGORIES =	www
 
@@ -20,7 +20,7 @@ RUN_DEPENDS =		converters/p5-JSON-MaybeXS>=1.003003 \
 			devel/p5-DateTime \
 			devel/p5-DateTime-Format-Strptime \
 			devel/p5-File-ShareDir \
-			devel/p5-Moose>=2.0 \
+			devel/p5-Moose>=2.1403 \
 			devel/p5-MooseX-Getopt>=0.16 \
 			devel/p5-MooseX-Types>=0.20 \
 			devel/p5-MooseX-Types-Common \
