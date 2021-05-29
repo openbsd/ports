@@ -1,18 +1,6 @@
-$OpenBSD: patch-daemon_gdm-launch-environment_c,v 1.10 2019/11/02 15:34:07 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-launch-environment_c,v 1.11 2021/05/29 14:02:24 ajacoutot Exp $
 
 XXX fix+push upstream
-
-REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
-From 1ac67f522f5690c27023d98096ca817f12f7eb88 Mon Sep 17 00:00:00 2001
-From: Ray Strode <rstrode@redhat.com>
-Date: Fri, 12 Jun 2015 13:28:01 -0400
-Subject: drop consolekit support
-
-REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
-From a9cacb929470eb82582396984c61d5b611bfeb1a Mon Sep 17 00:00:00 2001
-From: Ray Strode <rstrode@redhat.com>
-Date: Fri, 12 Jun 2015 14:33:40 -0400
-Subject: session: drop session-type property
 
 Index: daemon/gdm-launch-environment.c
 --- daemon/gdm-launch-environment.c.orig
