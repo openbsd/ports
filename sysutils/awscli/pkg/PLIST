@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.133 2021/04/24 07:35:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.134 2021/05/29 09:06:50 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -1219,10 +1219,19 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/update-repos
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/update-repository-name.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codeguru-reviewer/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codeguru-reviewer/associate-repository.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codeguru-reviewer/create-code-review.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codeguru-reviewer/describe-code-review.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codeguru-reviewer/describe-recommendation-feedback.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codeguru-reviewer/describe-repository-association.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codeguru-reviewer/disassociate-repository.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codeguru-reviewer/list-code-reviews.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codeguru-reviewer/list-recommendation-feedback.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codeguru-reviewer/list-recommendations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codeguru-reviewer/list-repository-associations.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codeguru-reviewer/list-tags-for-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codeguru-reviewer/put-recommendation-feedback.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codeguru-reviewer/tag-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codeguru-reviewer/untag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codepipeline/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codepipeline/acknowledge-job.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codepipeline/create-custom-action-type.rst
@@ -4663,6 +4672,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/untag-re
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/update-secret-version-stage.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/update-secret.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/securityhub/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/securityhub/accept-administrator-invitation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/securityhub/accept-invitation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/securityhub/batch-disable-standards.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/securityhub/batch-enable-standards.rst
@@ -4685,11 +4695,13 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/securityhub/describe-st
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/securityhub/disable-import-findings-for-product.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/securityhub/disable-organization-admin-account.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/securityhub/disable-security-hub.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/securityhub/disassociate-from-administrator-account.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/securityhub/disassociate-from-master-account.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/securityhub/disassociate-members.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/securityhub/enable-import-findings-for-product.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/securityhub/enable-organization-admin-account.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/securityhub/enable-security-hub.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/securityhub/get-administrator-account.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/securityhub/get-enabled-standards.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/securityhub/get-findings.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/securityhub/get-insight-results.rst
@@ -4989,6 +5001,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/start-automation-ex
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/start-session.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/stop-automation-execution.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/terminate-session.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/unlabel-parameter-version.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/update-association-status.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/update-association.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/update-document-default-version.rst
