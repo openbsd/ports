@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:46:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/05/29 11:36:05 bluhm Exp $
 
 COMMENT =	minimalist HTTP user agent cookie jar
 
-DISTNAME =	HTTP-CookieJar-0.008
-REVISION =	0
+DISTNAME =	HTTP-CookieJar-0.010
 
 CATEGORIES =	www
 
