@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.345 2021/05/12 06:45:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.346 2021/05/29 15:29:33 ajacoutot Exp $
 
 COMMENT=		general-purpose utility library
 
 GNOME_PROJECT=		glib
 GNOME_VERSION=		2.68.2
 PKGNAME=		${DISTNAME:S/glib/glib2/}
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -54,6 +55,13 @@ CONFIGURE_ARGS=		-Dselinux=disabled \
 			-Dxattr=false \
 			-Dlibmount=disabled \
 			-Dman=true
+
+# XXX G_ENABLE_DEBUG seems to enable some badly tested code;
+# it can easily trigger a segfault in ConsoleKit2, for instance:
+# dbus-send --system --print-reply --dest=org.freedesktop.ConsoleKit \
+	/org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Inhibit \
+	string:"shutdown:sleep" string:"foo" string:"bar" string:"block
+CONFIGURE_ARGS +=	-Dglib_debug=disabled
 
 pre-configure:
 	sed -i -e "s,/usr/local,${LOCALBASE},g;" \
