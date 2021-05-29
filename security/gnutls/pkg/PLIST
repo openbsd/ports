@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.55 2021/05/26 05:56:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.56 2021/05/29 22:43:09 ajacoutot Exp $
 @bin bin/certtool
 @bin bin/danetool
 @bin bin/gnutls-cli
@@ -29,6 +29,7 @@ include/gnutls/urls.h
 include/gnutls/x509-ext.h
 include/gnutls/x509.h
 info/gnutls-client-server-use-case.png
+info/gnutls-crypto-layers.png
 @info info/gnutls-guile.info
 info/gnutls-handshake-sequence.png
 info/gnutls-handshake-state.png
@@ -258,6 +259,8 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_dtls_set_data_mtu.3
 @man man/man3/gnutls_dtls_set_mtu.3
 @man man/man3/gnutls_dtls_set_timeouts.3
+@man man/man3/gnutls_early_cipher_get.3
+@man man/man3/gnutls_early_prf_hash_get.3
 @man man/man3/gnutls_ecc_curve_get.3
 @man man/man3/gnutls_ecc_curve_get_id.3
 @man man/man3/gnutls_ecc_curve_get_name.3
@@ -1218,6 +1221,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_x509_trust_list_verify_named_crt.3
 share/doc/gnutls/
 share/doc/gnutls/gnutls-client-server-use-case.png
+share/doc/gnutls/gnutls-crypto-layers.png
 share/doc/gnutls/gnutls-handshake-sequence.png
 share/doc/gnutls/gnutls-handshake-state.png
 share/doc/gnutls/gnutls-internals.png
