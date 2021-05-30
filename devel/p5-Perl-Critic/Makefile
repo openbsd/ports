@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2020/07/03 21:45:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2021/05/30 21:42:24 bluhm Exp $
 
 COMMENT =	critique Perl source code for best-practices
 
-DISTNAME =	Perl-Critic-1.138
-REVISION =	0
+DISTNAME =	Perl-Critic-1.140
 
 CATEGORIES =	devel
 
@@ -11,15 +10,11 @@ CATEGORIES =	devel
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
-PKG_ARCH =		*
-MODCPAN_EXAMPLES =	Yes
-MAKE_ENV =		TEST_POD=Yes
-
-TEST_DEPENDS =		devel/p5-Test-Deep \
-			devel/p5-Test-Memory-Cycle
-
 BUILD_DEPENDS =		devel/p5-B-Keywords>=1.05 \
-			devel/p5-List-MoreUtils>=0.19
+			devel/p5-Devel-CheckOS \
+			devel/p5-List-MoreUtils>=0.19 \
+			devel/p5-Module-Build>=0.4204 \
+			devel/p5-Test-Deep
 
 RUN_DEPENDS =		devel/p5-B-Keywords>=1.05 \
 			devel/p5-Config-Tiny>=2 \
@@ -36,8 +31,17 @@ RUN_DEPENDS =		devel/p5-B-Keywords>=1.05 \
 			textproc/p5-PPIx-QuoteLike \
 			textproc/p5-PPIx-Regexp>=0.068 \
 			textproc/p5-PPIx-Utilities>=1.001 \
+			textproc/p5-Pod-Parser \
 			textproc/p5-Pod-Spell>=1
+TEST_DEPENDS =		devel/p5-Test-Deep \
+			devel/p5-Test-Memory-Cycle
+
+MAKE_ENV =		TEST_POD=Yes
 
 CONFIGURE_STYLE =	modbuild
+
+PKG_ARCH =		*
+
+MODCPAN_EXAMPLES =	Yes
 
 .include <bsd.port.mk>
