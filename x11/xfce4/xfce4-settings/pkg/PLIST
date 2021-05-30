@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2020/12/29 14:44:13 landry Exp $
+@comment $OpenBSD: PLIST,v 1.19 2021/05/30 14:46:59 landry Exp $
 @conflict xfce-mcs-manager-*
 @conflict xfce-mcs-plugins-*
 @conflict exo-<4.15
@@ -151,6 +151,7 @@ share/locale/ie/LC_MESSAGES/xfce4-settings.mo
 share/locale/is/LC_MESSAGES/xfce4-settings.mo
 share/locale/it/LC_MESSAGES/xfce4-settings.mo
 share/locale/ja/LC_MESSAGES/xfce4-settings.mo
+share/locale/kab/LC_MESSAGES/xfce4-settings.mo
 share/locale/kk/LC_MESSAGES/xfce4-settings.mo
 share/locale/ko/LC_MESSAGES/xfce4-settings.mo
 share/locale/lt/LC_MESSAGES/xfce4-settings.mo
