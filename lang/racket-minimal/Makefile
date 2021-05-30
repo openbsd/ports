@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2021/05/23 20:00:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2021/05/30 22:33:31 juanfra Exp $
 
 BROKEN-i386 = either build hangs, or dies with "Error: invalid memory reference"
 
@@ -7,9 +7,10 @@ ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc powerpc64 sparc64
 COMMENT =		multi-paradigm programming language
 
 V =			8.1
+REVISION =		0
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
-			racket-openbsd-1${EXTRACT_SUFX}
+			racket-openbsd-2${EXTRACT_SUFX}
 
 CATEGORIES =		lang
 HOMEPAGE =		https://racket-lang.org/
@@ -143,6 +144,7 @@ post-install:
 	@perl -i -pe 's/installation-name . "snapshot"/installation-name . "$V"/g' ${WRKINST}/etc/racket/config.rktd
 	@mv ${WRKINST}/etc/racket ${PREFIX}/share/examples
 	@cp ${WRKDIR}/racket-openbsd/racket-user-bin-paths ${PREFIX}/bin
+	@cp ${WRKDIR}/racket-openbsd/racket-system-info ${PREFIX}/bin
 
 # Since 5.3.4 if __SSE_MATH__ is defined (C_COMPILER_USES_SSE) and
 # MZ_TRY_EXTFLONUMS enabled, MZ_LONG_DOUBLE (extflonum) is turned on. Also
