@@ -1,0 +1,16 @@
+$OpenBSD: patch-_metadata,v 1.1 2021/05/31 07:27:20 sebastia Exp $
+
+upstream locked cri to be compatible with older ruby versions
+
+Index: .metadata
+--- .metadata.orig
++++ .metadata
+@@ -28,7 +28,7 @@ dependencies:
+   name: cri
+   requirement: !ruby/object:Gem::Requirement
+     requirements:
+-    - - '='
++    - - '~>'
+       - !ruby/object:Gem::Version
+         version: 2.15.10
+   type: :runtime
