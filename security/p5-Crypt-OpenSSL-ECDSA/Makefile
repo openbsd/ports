@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/05/31 14:09:21 bluhm Exp $
 
 COMMENT =	ECDSA encoding and decoding using OpenSSL
 
-MODULES =	cpan
+DISTNAME =	Crypt-OpenSSL-ECDSA-0.10
 
-DISTNAME =	Crypt-OpenSSL-ECDSA-0.08
 CATEGORIES =	security
-REVISION =	0
 
 # Perl
-PERMIT_PACKAGE = Yes
+PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	c crypto perl ssl
+WANTLIB =		c crypto perl
 
-RUN_DEPENDS =	security/p5-Crypt-OpenSSL-EC>=0.05
-BUILD_DEPENDS =	${RUN_DEPENDS}
+MODULES =		cpan
+RUN_DEPENDS =		security/p5-Crypt-OpenSSL-EC>=0.05
 
 .include <bsd.port.mk>
