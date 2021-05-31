@@ -1,0 +1,11 @@
+$OpenBSD: patch-helpers_xfce-do-release,v 1.1 2021/05/31 05:12:34 landry Exp $
+
+Index: helpers/xfce-do-release
+--- helpers/xfce-do-release.orig
++++ helpers/xfce-do-release
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ 
+ component=$1
+ version=$2

@@ -1,0 +1,13 @@
+$OpenBSD: patch-helpers_xfce-get-release-notes,v 1.1 2021/05/31 05:12:34 landry Exp $
+
+Index: helpers/xfce-get-release-notes
+--- helpers/xfce-get-release-notes.orig
++++ helpers/xfce-get-release-notes
+@@ -19,6 +19,6 @@ git log --format=%s ${LAST_TAG}..HEAD | \
+   grep -v "Back to development" | \
+   while read line; do \
+     echo "- $line" | \
+-    fold -s -w $LINE_LENGTH - | \
++    fold -s -w $LINE_LENGTH | \
+     sed -e "s/^[^ ]/&/g"
+   done

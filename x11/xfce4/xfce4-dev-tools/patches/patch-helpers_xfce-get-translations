@@ -1,0 +1,29 @@
+$OpenBSD: patch-helpers_xfce-get-translations,v 1.1 2021/05/31 05:12:34 landry Exp $
+
+Index: helpers/xfce-get-translations
+--- helpers/xfce-get-translations.orig
++++ helpers/xfce-get-translations
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ 
+ # Just a small script to get all language updates to a repository since a
+ # commit or tag.
+@@ -28,7 +28,7 @@ printf '%s\n' '- Translation Updates:'
+ 
+ LANGUAGES=$(
+ for l in $UPDATES; do
+-	echo -n "$(grep '^"Language-Team:' po/$l.po | grep -Po '(?<=: ).*' | grep -Po '^(.*)(?= \(http)')"
++	echo -n "$(grep '^"Language-Team:' po/$l.po | sed -e 's/.*: //; s/ (http//;')"
+ 	echo ","
+ done
+ )
+@@ -37,7 +37,7 @@ SORTED=$(echo "$LANGUAGES" | sort)
+ SORTED=${SORTED::-1} # remove last comma
+ while read line; do
+ 	echo -n "$line "
+-done <<< "$SORTED" | fold -s -w $LINE_LENGTH - | sed -e "s/^[^ ]/${INDENT}&/g" | sed -e 's/[[:space:]]*$//'
++done <<< "$SORTED" | fold -s -w $LINE_LENGTH | sed -e "s/^[^ ]/${INDENT}&/g" | sed -e 's/[[:space:]]*$//'
+ echo ""
+ 
+ if [ "$SILENT" != "silent" ]; then
