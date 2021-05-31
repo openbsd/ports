@@ -1,4 +1,4 @@
-$OpenBSD: patch-helpers_xfce-get-translations,v 1.1 2021/05/31 05:12:34 landry Exp $
+$OpenBSD: patch-helpers_xfce-get-translations,v 1.2 2021/05/31 05:19:04 landry Exp $
 
 Index: helpers/xfce-get-translations
 --- helpers/xfce-get-translations.orig
@@ -14,7 +14,7 @@ Index: helpers/xfce-get-translations
  LANGUAGES=$(
  for l in $UPDATES; do
 -	echo -n "$(grep '^"Language-Team:' po/$l.po | grep -Po '(?<=: ).*' | grep -Po '^(.*)(?= \(http)')"
-+	echo -n "$(grep '^"Language-Team:' po/$l.po | sed -e 's/.*: //; s/ (http//;')"
++	echo -n "$(grep '^"Language-Team:' po/$l.po | sed -e 's/.*: //; s/ (http.*//;')"
  	echo ","
  done
  )
