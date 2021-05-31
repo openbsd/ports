@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/07/16 23:57:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/05/31 21:02:03 bluhm Exp $
 ${P5ARCH}/Crypt/OpenSSL/RSA.pm
 ${P5ARCH}/auto/Crypt/OpenSSL/RSA/
-${P5ARCH}/auto/Crypt/OpenSSL/RSA/RSA.so
+@so ${P5ARCH}/auto/Crypt/OpenSSL/RSA/RSA.so
 ${P5ARCH}/auto/Crypt/OpenSSL/RSA/autosplit.ix
 ${P5ARCH}/auto/Crypt/OpenSSL/RSA/get_key_parameters.al
 ${P5ARCH}/auto/Crypt/OpenSSL/RSA/import_random_seed.al

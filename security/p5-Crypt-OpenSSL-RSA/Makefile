@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.25 2020/07/03 21:45:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2021/05/31 21:02:03 bluhm Exp $
 
 COMMENT =	RSA encoding and decoding using OpenSSL
 
-MODULES =	cpan
+DISTNAME =	Crypt-OpenSSL-RSA-0.31
 
-DISTNAME =	Crypt-OpenSSL-RSA-0.28
 CATEGORIES =	security
-REVISION =	2
 
 # Perl
-PERMIT_PACKAGE = Yes
+PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	c crypto perl ssl
+WANTLIB =		c crypto perl ssl
 
-RUN_DEPENDS =	security/p5-Crypt-OpenSSL-Random>=0.03 \
-		security/p5-Crypt-OpenSSL-Bignum>=0.03
-BUILD_DEPENDS =	${RUN_DEPENDS}
+MODULES =		cpan
+BUILD_DEPENDS =		security/p5-Crypt-OpenSSL-Guess>=0.11
+RUN_DEPENDS =		security/p5-Crypt-OpenSSL-Bignum \
+			security/p5-Crypt-OpenSSL-Random
 
 .include <bsd.port.mk>
