@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.161 2021/04/24 15:17:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.162 2021/05/31 20:10:49 naddy Exp $
 
 COMMENT=	transfer files with FTP, HTTP, HTTPS, etc.
 
-DISTNAME=	curl-7.76.1
-SHARED_LIBS=	curl                 26.9     # 11.0
+DISTNAME=	curl-7.77.0
+SHARED_LIBS=	curl                 26.10    # 11.0
 CATEGORIES=	net
 HOMEPAGE=	https://curl.se/
 
@@ -21,9 +21,11 @@ WANTLIB=	c crypto pthread nghttp2 ssl z
 AUTOCONF_VERSION=2.69
 CONFIGURE_STYLE=autoconf
 # Beware of circular dependency curl -> brotli -> cmake -> curl
-CONFIGURE_ARGS=	--with-ca-bundle=/etc/ssl/cert.pem \
+CONFIGURE_ARGS=	--with-openssl \
+		--with-ca-bundle=/etc/ssl/cert.pem \
 		--without-brotli \
 		--without-hyper \
+		--without-libgsasl \
 		--without-libidn2 \
 		--without-libpsl \
 		--without-libssh \

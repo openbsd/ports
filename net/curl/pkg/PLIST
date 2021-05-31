@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.65 2021/03/31 17:57:32 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.66 2021/05/31 20:10:49 naddy Exp $
 @bin bin/curl
 bin/curl-config
 include/curl/
@@ -112,6 +112,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_AWS_SIGV4.3
 @man man/man3/CURLOPT_BUFFERSIZE.3
 @man man/man3/CURLOPT_CAINFO.3
+@man man/man3/CURLOPT_CAINFO_BLOB.3
 @man man/man3/CURLOPT_CAPATH.3
 @man man/man3/CURLOPT_CERTINFO.3
 @man man/man3/CURLOPT_CHUNK_BGN_FUNCTION.3
@@ -264,6 +265,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_PROXYUSERNAME.3
 @man man/man3/CURLOPT_PROXYUSERPWD.3
 @man man/man3/CURLOPT_PROXY_CAINFO.3
+@man man/man3/CURLOPT_PROXY_CAINFO_BLOB.3
 @man man/man3/CURLOPT_PROXY_CAPATH.3
 @man man/man3/CURLOPT_PROXY_CRLFILE.3
 @man man/man3/CURLOPT_PROXY_ISSUERCERT.3
