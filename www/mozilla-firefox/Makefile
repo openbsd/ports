@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.460 2021/05/20 16:44:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.461 2021/06/01 13:24:20 landry Exp $
 
 COMMENT =	Firefox web browser
 ONLY_FOR_ARCHS =	amd64 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	88.0.1
+MOZILLA_VERSION =	89.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
-SO_VERSION =	101.0
+SO_VERSION =	102.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk xul clearkey lgpllibs mozsqlite3
@@ -33,7 +33,7 @@ MODCLANG_ARCHS =	amd64 i386
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
 # 63 requires cbindgen #1478813
-BUILD_DEPENDS +=	devel/cbindgen>=0.15.0
+BUILD_DEPENDS +=	devel/cbindgen>=0.19.0
 #1670807
 BUILD_DEPENDS +=	devel/m4
 
@@ -51,6 +51,7 @@ CONFIGURE_ENV +=	M4=/usr/local/bin/gm4
 
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
+#CONFIGURE_ARGS +=	--enable-forkserver
 CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/lib
 
 # XXX badly formed debug ?
