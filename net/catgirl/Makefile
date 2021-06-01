@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2021/03/24 21:37:17 kn Exp $
+# $OpenBSD: Makefile,v 1.10 2021/06/01 17:08:15 kn Exp $
 
 COMMENT =	curses TLS-only IRC client
-DISTNAME =	catgirl-1.7
+DISTNAME =	catgirl-1.8
 
 CATEGORIES =	net
 
@@ -26,8 +26,7 @@ MASTER_SITES =	https://git.causal.agency/catgirl/snapshot/
 
 NO_TEST =	Yes
 
-FAKE_FLAGS =	PREFIX=${PREFIX} \
-		MANDIR=${PREFIX}/man
+FAKE_FLAGS =	PREFIX=${PREFIX}
 
 EXAMPLES =	${PREFIX}/share/examples/catgirl
 
