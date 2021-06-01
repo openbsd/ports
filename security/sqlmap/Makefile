@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2021/02/23 19:39:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2021/06/01 15:13:34 gonzalo Exp $
 
 COMMENT =		penetration testing tool to detect/exploit SQL injection
 
 GH_ACCOUNT =		sqlmapproject
 GH_PROJECT =		sqlmap
-GH_TAGNAME =		1.5
+GH_TAGNAME =		1.5.5
 
 CATEGORIES =		security
 
