@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2021/05/28 12:05:49 sthen Exp $
-
-BROKEN = wants an older version of ruby-cri than is in ports
+# $OpenBSD: Makefile,v 1.33 2021/06/01 05:59:18 sebastia Exp $
 
 COMMENT =	Puppet module management
 
