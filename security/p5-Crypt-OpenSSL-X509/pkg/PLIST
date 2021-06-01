@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/07/16 23:57:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/06/01 19:16:08 bluhm Exp $
 ${P5ARCH}/
 ${P5ARCH}/Crypt/
 ${P5ARCH}/Crypt/OpenSSL/
@@ -7,5 +7,5 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/Crypt/
 ${P5ARCH}/auto/Crypt/OpenSSL/
 ${P5ARCH}/auto/Crypt/OpenSSL/X509/
-${P5ARCH}/auto/Crypt/OpenSSL/X509/X509.so
+@so ${P5ARCH}/auto/Crypt/OpenSSL/X509/X509.so
 @man man/man3p/Crypt::OpenSSL::X509.3p
