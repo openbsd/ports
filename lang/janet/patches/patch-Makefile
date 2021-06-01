@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.21 2021/04/27 13:25:33 jturner Exp $
+$OpenBSD: patch-Makefile,v 1.22 2021/06/01 15:51:09 jturner Exp $
 
 Use a date stamp for JANET_BUILD to avoid using git.
 Fix installation.
@@ -20,9 +20,9 @@ Index: Makefile
 -JANET_MANPATH?=$(PREFIX)/share/man/man1/
 +JANET_MANPATH?=$(PREFIX)/man/man1/
  JANET_PKG_CONFIG_PATH?=$(LIBDIR)/pkgconfig
+ JANET_DIST_DIR?=janet-dist
  DEBUGGER=gdb
- SONAME_SETTER=-Wl,-soname,
-@@ -279,17 +279,14 @@ install: $(JANET_TARGET) $(JANET_LIBRARY) $(JANET_STAT
+@@ -269,17 +269,14 @@ install: $(JANET_TARGET) $(JANET_LIBRARY) $(JANET_STAT
  	cp -r build/janet.h '$(DESTDIR)$(INCLUDEDIR)/janet'
  	mkdir -p '$(DESTDIR)$(JANET_PATH)'
  	mkdir -p '$(DESTDIR)$(LIBDIR)'
