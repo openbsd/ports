@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.4 2021/03/08 13:59:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/06/01 15:11:26 gonzalo Exp $
 
 COMMENT =	disk Usage/free utility
 
 MODGO_MODNAME =	github.com/muesli/duf
-MODGO_VERSION =	v0.6.0
+MODGO_VERSION =	v0.6.2
 
 DISTNAME =	duf-${MODGO_VERSION}
-PKGNAME =	duf-0.6.0
-REVISION =	0
+PKGNAME =	duf-0.6.2
 
 CATEGORIES =	sysutils
 
 MAINTAINER =	Gonzalo L. R. <gonzalo@openbsd.org>
+
 # MIT
 PERMIT_PACKAGE =	Yes
 
@@ -20,10 +20,10 @@ MODULES =		lang/go
 MODGO_MODULES =	\
 	github.com/davecgh/go-spew		 v1.1.1 \
 	github.com/jedib0t/go-pretty/v6		 v6.0.5 \
-	github.com/lucasb-eyer/go-colorful	 v1.0.3 \
+	github.com/lucasb-eyer/go-colorful	 v1.2.0 \
 	github.com/mattn/go-isatty		 v0.0.12 \
 	github.com/mattn/go-runewidth		 v0.0.10 \
-	github.com/muesli/termenv		 v0.7.4 \
+	github.com/muesli/termenv		 v0.8.1 \
 	github.com/pkg/profile			 v1.2.1 \
 	github.com/pmezard/go-difflib		 v1.0.0 \
 	github.com/rivo/uniseg			 v0.1.0 \
