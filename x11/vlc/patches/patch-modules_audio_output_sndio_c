@@ -1,0 +1,18 @@
+$OpenBSD: patch-modules_audio_output_sndio_c,v 1.1 2021/06/01 19:32:43 ratchov Exp $
+
+Set volume/mute function pointers when handle is freed, to ensure
+sio_setvol() is not called on a freed handle. Fixes crashes when
+volume is adjusted while playback is stopped.
+
+Index: modules/audio_output/sndio.c
+--- modules/audio_output/sndio.c.orig
++++ modules/audio_output/sndio.c
+@@ -208,6 +208,8 @@ static void Stop (audio_output_t *aout)
+ {
+     aout_sys_t *sys = aout->sys;
+ 
++    aout->volume_set = NULL;
++    aout->mute_set = NULL;
+     sio_close (sys->hdl);
+ }
+ 
