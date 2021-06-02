@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2020/10/20 14:44:46 landry Exp $
+@comment $OpenBSD: PLIST,v 1.16 2021/06/02 03:55:00 landry Exp $
 @bin bin/certutil
 @bin bin/cmsutil
 @bin bin/crlutil
@@ -124,3 +124,11 @@ lib/libsoftokn3.chk
 @lib lib/libsoftokn3.so.${LIBsoftokn3_VERSION}
 @lib lib/libssl3.so.${LIBssl3_VERSION}
 lib/pkgconfig/nss.pc
+@man man/man1/certutil.1
+@man man/man1/cmsutil.1
+@man man/man1/crlutil.1
+@man man/man1/modutil.1
+@man man/man1/pk12util.1
+@man man/man1/signtool.1
+@man man/man1/signver.1
+@man man/man1/ssltap.1

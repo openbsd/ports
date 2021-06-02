@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.138 2021/04/24 08:17:07 landry Exp $
+# $OpenBSD: Makefile,v 1.139 2021/06/02 03:55:00 landry Exp $
 
 COMMENT=		libraries to support development of security-enabled apps
 
-VERSION=		3.64
+VERSION=		3.66
 # from https://hg.mozilla.org/projects/nss/file/tip/automation/release/nspr-version.txt
 NSPR_VERSION=		4.30
 DISTNAME=		nss-${VERSION}
 
-SO_VERSION=		58.8
+SO_VERSION=		58.9
 .for _lib in freebl3 nss3 nssckbi nssckbi-testlib nssdbm3 nssutil3 smime3 softokn3 ssl3
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
@@ -61,6 +61,9 @@ do-install:
 	${INSTALL_DATA} ${NSSOBJ}/lib/*.so.${SO_VERSION} ${PREFIX}/lib/
 	${INSTALL_DATA} ${NSSOBJ}/lib/{libcrmf.a,*.chk} ${PREFIX}/lib/
 	cd ${NSSOBJ}/bin && ${INSTALL_PROGRAM} ${MAIN_TOOLS} ${PREFIX}/bin/
+.for m in ${MAIN_TOOLS}
+	${INSTALL_MAN} ${WRKSRC}/doc/nroff/${m}.1 ${PREFIX}/man/man1/
+.endfor
 	${SUBST_CMD} -m 644 -o ${BINOWN} -g ${BINGRP} \
 		-c ${WRKSRC}/pkg/pkg-config/nss.pc.in ${PREFIX}/lib/pkgconfig/nss.pc
 	${SUBST_CMD} -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} \
