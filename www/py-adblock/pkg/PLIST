@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/06/02 20:04:10 sthen Exp $
+@so lib/libadblock.so
+lib/python${MODPY_VERSION}/site-packages/adblock/
+lib/python${MODPY_VERSION}/site-packages/adblock-0.4.4.dist-info/
+lib/python${MODPY_VERSION}/site-packages/adblock-0.4.4.dist-info/INSTALLER
+lib/python${MODPY_VERSION}/site-packages/adblock-0.4.4.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/adblock-0.4.4.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/adblock-0.4.4.dist-info/REQUESTED
+lib/python${MODPY_VERSION}/site-packages/adblock-0.4.4.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/adblock-0.4.4.dist-info/direct_url.json
+lib/python${MODPY_VERSION}/site-packages/adblock/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/adblock/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/adblock/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/adblock/adblock${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/adblock/adblock.pyi
+lib/python${MODPY_VERSION}/site-packages/adblock/py.typed
