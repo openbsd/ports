@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2104 2021/05/25 08:28:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2105 2021/06/02 20:04:56 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -400,6 +400,7 @@
      SUBDIR += lutok
      SUBDIR += m4
      SUBDIR += makeesparduino
+     SUBDIR += maturin
      SUBDIR += maven
      SUBDIR += mcs
      SUBDIR += mercurial

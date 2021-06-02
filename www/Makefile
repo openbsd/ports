@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1032 2021/05/27 14:50:40 landry Exp $
+# $OpenBSD: Makefile,v 1.1033 2021/06/02 20:04:55 sthen Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -417,6 +417,7 @@
      SUBDIR += purritobin
      SUBDIR += py-CherryPy
      SUBDIR += py-CherryPy,python3
+     SUBDIR += py-adblock,python3
      SUBDIR += py-aiohttp,python3
      SUBDIR += py-autobahn,python3
      SUBDIR += py-beaker
