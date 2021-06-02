@@ -1,0 +1,3 @@
+This program allows you to build and publish crates with pyo3, rust-cpython
+and cffi bindings as well as rust binaries as python packages. It is meant
+as a zero configuration replacement for setuptools-rust and milksnake.
