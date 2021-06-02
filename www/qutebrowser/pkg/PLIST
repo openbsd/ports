@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2021/03/23 14:59:00 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.15 2021/06/02 20:05:35 sthen Exp $
 bin/qutebrowser
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -93,6 +93,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webengine/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webengine/${MODPY_PYCACHE}cookies.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webengine/${MODPY_PYCACHE}darkmode.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webengine/${MODPY_PYCACHE}interceptor.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webengine/${MODPY_PYCACHE}notification.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webengine/${MODPY_PYCACHE}spell.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webengine/${MODPY_PYCACHE}tabhistory.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webengine/${MODPY_PYCACHE}webenginedownloads.${MODPY_PYC_MAGIC_TAG}pyc
@@ -106,6 +107,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webengine/certifica
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webengine/cookies.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webengine/darkmode.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webengine/interceptor.py
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webengine/notification.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webengine/spell.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webengine/tabhistory.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webengine/webenginedownloads.py
@@ -164,11 +166,13 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/commands/${MODPY_PYCACHE}__
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/commands/${MODPY_PYCACHE}argparser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/commands/${MODPY_PYCACHE}cmdexc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/commands/${MODPY_PYCACHE}command.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/commands/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/commands/${MODPY_PYCACHE}runners.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/commands/${MODPY_PYCACHE}userscripts.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/commands/argparser.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/commands/cmdexc.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/commands/command.py
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/commands/parser.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/commands/runners.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/commands/userscripts.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/completion/
@@ -290,6 +294,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/license.html
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/log.html
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/no_pdfjs.html
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/pre.html
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/process.html
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/settings.html
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/styled.html
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/html/tabs.html
@@ -308,7 +313,9 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/history.js
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/pac_utils.js
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/position_caret.js
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/quirks/
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/quirks/discord.user.js
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/quirks/globalthis.user.js
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/quirks/googledocs.user.js
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/quirks/object_fromentries.user.js
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/quirks/string_replaceall.user.js
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/quirks/whatsapp_web.user.js

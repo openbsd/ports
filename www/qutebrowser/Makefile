@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2021/04/06 20:00:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2021/06/02 20:05:35 sthen Exp $
 
 COMMENT =		keyboard-focused browser with a minimal GUI
 
-MODPY_EGG_VERSION =	2.1.1
+MODPY_EGG_VERSION =	2.2.2
 DISTNAME =		qutebrowser-${MODPY_EGG_VERSION}
-REVISION =		0
 
 HOMEPAGE =		https://www.qutebrowser.org/
 
@@ -24,6 +23,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			textproc/py-yaml${MODPY_FLAVOR} \
 			x11/gtk+3,-guic \
 			x11/py-qt5${MODPY_FLAVOR} \
+			www/py-adblock${MODPY_FLAVOR} \
 			www/py-jinja2${MODPY_FLAVOR} \
 			www/py-qtwebengine${MODPY_FLAVOR}
 
