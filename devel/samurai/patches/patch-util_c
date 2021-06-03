@@ -1,0 +1,17 @@
+$OpenBSD: patch-util_c,v 1.1 2021/06/03 21:22:02 bcallah Exp $
+
+CVE-2021-30218
+https://github.com/michaelforney/samurai/commit/e84b6d99c85043fa1ba54851ee500540ec206918
+
+Index: util.c
+--- util.c.orig
++++ util.c
+@@ -258,7 +258,7 @@ writefile(const char *name, struct string *s)
+ 		return -1;
+ 	}
+ 	ret = 0;
+-	if (fwrite(s->s, 1, s->n, f) != s->n || fflush(f) != 0) {
++	if (s && (fwrite(s->s, 1, s->n, f) != s->n || fflush(f) != 0)) {
+ 		warn("write %s:", name);
+ 		ret = -1;
+ 	}

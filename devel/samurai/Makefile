@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2020/12/21 22:47:37 bcallah Exp $
+# $OpenBSD: Makefile,v 1.10 2021/06/03 21:22:02 bcallah Exp $
 
 COMMENT =	ninja-compatible build tool written in C
 
 V =		1.2
 DISTNAME =	samurai-$V
+REVISION =	0
 CATEGORIES =	devel
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
