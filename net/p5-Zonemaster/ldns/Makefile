@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/26 15:28:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/06/03 17:39:35 sthen Exp $
 
 COMMENT=	module to interface the DNS resolver using the ldns library
 
 MODULES=	cpan
 CPAN_AUTHOR=	ZNMSTR
-DISTNAME=	Zonemaster-LDNS-2.1.0
+DISTNAME=	Zonemaster-LDNS-2.2.0
 CATEGORIES=	net
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
@@ -19,8 +19,10 @@ LIB_DEPENDS=	devel/libidn \
 		net/ldns
 TEST_DEPENDS=	devel/p5-Test-Fatal
 
+# --no-ed25519: requires openssl 1.1.1 for NID_ED25519 etc.
+# --prefix-openssl: actually used for -lldns -lidn not openssl
 CONFIGURE_ARGS=	--no-internal-ldns \
 		--no-ed25519 \
-		--prefix-openssl=${LOCALBASE} # actually for -lldns -lidn not openssl
+		--prefix-openssl=${LOCALBASE}
 
 .include <bsd.port.mk>

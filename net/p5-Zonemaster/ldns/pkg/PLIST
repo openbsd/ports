@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/07/26 15:28:10 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/06/03 17:39:35 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Zonemaster/
 ${P5ARCH}/Zonemaster/LDNS/
@@ -13,6 +13,7 @@ ${P5ARCH}/Zonemaster/LDNS/RR/AFSDB.pm
 ${P5ARCH}/Zonemaster/LDNS/RR/APL.pm
 ${P5ARCH}/Zonemaster/LDNS/RR/ATMA.pm
 ${P5ARCH}/Zonemaster/LDNS/RR/CAA.pm
+${P5ARCH}/Zonemaster/LDNS/RR/CDNSKEY.pm
 ${P5ARCH}/Zonemaster/LDNS/RR/CDS.pm
 ${P5ARCH}/Zonemaster/LDNS/RR/CERT.pm
 ${P5ARCH}/Zonemaster/LDNS/RR/CNAME.pm
@@ -95,6 +96,7 @@ ${P5ARCH}/auto/Zonemaster/LDNS/
 @man man/man3p/Zonemaster::LDNS::RR::APL.3p
 @man man/man3p/Zonemaster::LDNS::RR::ATMA.3p
 @man man/man3p/Zonemaster::LDNS::RR::CAA.3p
+@man man/man3p/Zonemaster::LDNS::RR::CDNSKEY.3p
 @man man/man3p/Zonemaster::LDNS::RR::CDS.3p
 @man man/man3p/Zonemaster::LDNS::RR::CERT.3p
 @man man/man3p/Zonemaster::LDNS::RR::CNAME.3p
