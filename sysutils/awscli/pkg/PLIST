@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.134 2021/05/29 09:06:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.135 2021/06/03 09:01:36 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -2665,17 +2665,32 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/wait/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/wait/vault-exists.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/wait/vault-not-exists.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/add-custom-routing-endpoints.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/advertise-byoip-cidr.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/allow-custom-routing-traffic.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/create-accelerator.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/create-custom-routing-accelerator.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/create-custom-routing-endpoint-group.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/create-custom-routing-listener.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/create-endpoint-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/create-listener.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/deny-custom-routing-traffic.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/deprovision-byoip-cidr.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/describe-accelerator-attributes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/describe-accelerator.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/describe-custom-routing-accelerator-attributes.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/describe-custom-routing-accelerator.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/describe-custom-routing-endpoint-group.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/describe-custom-routing-listener.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/describe-endpoint-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/describe-listener.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/list-accelerators.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/list-byoip-cidr.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/list-custom-routing-accelerators.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/list-custom-routing-endpoint-groups.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/list-custom-routing-listeners.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/list-custom-routing-port-mappings-by-destination.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/list-custom-routing-port-mappings.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/list-endpoint-groups.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/list-listeners.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/list-tags-for-resource.rst
@@ -2684,6 +2699,9 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/tag-r
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/untag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/update-accelerator-attributes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/update-accelerator.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/update-custom-routing-accelerator-attributes.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/update-custom-routing-accelerator.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/update-custom-routing-listener.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/update-endpoint-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/update-listener.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/withdraw-byoip-cidr.rst
