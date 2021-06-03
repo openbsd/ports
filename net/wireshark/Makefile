@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2021/06/03 10:49:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.122 2021/06/03 10:51:05 sthen Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
@@ -32,13 +32,6 @@ cWANTLIB +=	c gcrypt glib-2.0 gmodule-2.0 m pcap z
 MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 
 MULTI_PACKAGES = -text -main
-
-DEBUG_PACKAGES = ${BUILD_PACKAGES}
-# XXX Disabled for now:
-#
-# ld: error: ui/qt/CMakeFiles/qtui.dir/widgets/drag_drop_toolbar.cpp.o: unknown file type
-# ld: error: ui/qt/CMakeFiles/qtui.dir/utils/frame_information.cpp.o: section header table goes past the end of the file: e_shoff = 0x5eb20
-# c++: error: linker command failed with exit code 1 (use -v to see invocation)
 
 PSEUDO_FLAVORS = no_x11
 
