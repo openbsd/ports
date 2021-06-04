@@ -1,14 +1,11 @@
-$OpenBSD: patch-src_3rdparty_chromium_content_gpu_gpu_sandbox_hook_linux_cc,v 1.2 2021/01/19 06:16:34 rsadowski Exp $
+$OpenBSD: patch-src_3rdparty_chromium_content_gpu_gpu_sandbox_hook_linux_cc,v 1.3 2021/06/04 20:11:21 rsadowski Exp $
 
 Index: src/3rdparty/chromium/content/gpu/gpu_sandbox_hook_linux.cc
 --- src/3rdparty/chromium/content/gpu/gpu_sandbox_hook_linux.cc.orig
 +++ src/3rdparty/chromium/content/gpu/gpu_sandbox_hook_linux.cc
-@@ -97,8 +97,9 @@ static const char kLibV4lEncPluginPath[] =
-     "/usr/lib/libv4l/plugins/libv4l-encplugin.so";
- #endif
+@@ -99,6 +99,7 @@ static const char kLibV4lEncPluginPath[] =
  
--constexpr int dlopen_flag = RTLD_NOW | RTLD_GLOBAL | RTLD_NODELETE;
-+constexpr int dlopen_flag = RTLD_NOW | RTLD_GLOBAL;
+ constexpr int dlopen_flag = RTLD_NOW | RTLD_GLOBAL | RTLD_NODELETE;
  
 +#if !defined(OS_BSD)
  void AddV4L2GpuWhitelist(
