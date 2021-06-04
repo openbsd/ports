@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/06/04 03:18:47 bket Exp $
 
 COMMENT =	binary newsreader supporting NZB files
 
-VERSION =	21.0
+VERSION =	21.1
 DISTNAME =	nzbget-${VERSION}
 
 CATEGORIES =	news
@@ -22,8 +22,8 @@ EXTRACT_SUFX =	-src.tar.gz
 # C++14
 COMPILER =	base-clang ports-clang ports-gcc
 
-RUN_DEPENDS =	archivers/unrar \
-		archivers/p7zip
+RUN_DEPENDS =	archivers/p7zip \
+		archivers/unrar
 LIB_DEPENDS =	textproc/libxml
 
 MAKE_FLAGS =	MAKE=${MAKE_PROGRAM}
