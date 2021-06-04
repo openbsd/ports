@@ -1,11 +1,11 @@
-$OpenBSD: patch-common_compat_c,v 1.6 2020/12/14 07:59:31 ajacoutot Exp $
+$OpenBSD: patch-common_compat_c,v 1.7 2021/06/04 07:50:11 ajacoutot Exp $
 
 Index: common/compat.c
 --- common/compat.c.orig
 +++ common/compat.c
-@@ -40,6 +40,11 @@
-  */
- #define _XOPEN_SOURCE 700
+@@ -54,6 +54,11 @@
+ #define __BSD_VISIBLE 1
+ #endif
  
 +/*
 + * This is needed to expose issetugid since we define _XOPEN_SOURCE
