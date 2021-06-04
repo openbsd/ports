@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.121 2021/04/01 11:52:24 feinerer Exp $
+# $OpenBSD: Makefile,v 1.122 2021/06/04 10:11:43 feinerer Exp $
 
 COMMENT=	powerful math/statistics/graphics language
-DISTNAME=	R-4.0.5
+DISTNAME=	R-4.1.0
 
-SO_VERSION=	37.0
+SO_VERSION=	38.0
 .for _lib in R Rblas Rlapack
 SHARED_LIBS +=	${_lib} ${SO_VERSION}
 .endfor
