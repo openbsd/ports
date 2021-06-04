@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.85 2021/02/27 08:33:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2021/06/04 07:46:37 ajacoutot Exp $
 
 COMMENT=		framework for granting privileged operations to users
 
-DISTNAME=		polkit-0.118
-REVISION=		0
+DISTNAME=		polkit-0.119
 
 SHARED_LIBS +=  polkit-gobject-1	2.0 # .0.0
 SHARED_LIBS +=  polkit-agent-1		2.0 # .0.0
@@ -17,8 +16,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c expat gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 intl mozjs-78
+WANTLIB += ${COMPILER_LIBCXX} c expat gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += intl mozjs-78
 
 MASTER_SITES=		https://www.freedesktop.org/software/polkit/releases/
 
@@ -65,7 +64,7 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/polkit
 
 pre-configure:
-	perl -pi \
+	sed -i \
 		-e "s,/usr/bin/pkexec,${PREFIX}/bin/pkexec,g;" \
 		-e "s,/usr/bin/python,${MODPY_BIN},g;" \
 		-e "s,/usr/bin/my-pk-test,${PREFIX}/bin/my-pk-test,g;" \
@@ -78,7 +77,7 @@ pre-configure:
 		-e "s,>/usr<,>${PREFIX}<,g" \
 		${WRKSRC}/docs/man/pkexec.xml \
 		${WRKSRC}/docs/man/polkit.xml \
-		${WRKSRC}/docs/extensiondir.xml \
+		${WRKSRC}/docs/extensiondir.xml.in \
 		${WRKSRC}/src/examples/org.freedesktop.policykit.examples.pkexec.policy.in
 
 .include <bsd.port.mk>
