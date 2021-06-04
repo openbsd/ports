@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2021/05/28 16:50:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2021/06/04 15:47:05 ajacoutot Exp $
 
 COMMENT =		HTTP client/server library for GNOME
 
 GNOME_PROJECT =		libsoup
-GNOME_VERSION =		2.99.7
+GNOME_VERSION =		2.99.8
 PKGNAME=		libsoup3-${GNOME_VERSION}
 
 SHARED_LIBS += soup-3.0                  0.0 # 0.0.0
@@ -45,7 +45,8 @@ CONFIGURE_ARGS =	-Dgssapi=disabled \
 
 # requires unported wstest and dependency on apache2, python quart...
 CONFIGURE_ARGS +=	-Dautobahn=disabled \
-			-Dtests=false
+			-Dtests=false \
+			-Dhttp2_tests=disabled
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
