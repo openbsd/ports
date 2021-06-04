@@ -1,0 +1,14 @@
+$OpenBSD: patch-dom_indexedDB_IDBObjectStore_cpp,v 1.1 2021/06/04 11:26:54 landry Exp $
+
+Index: dom/indexedDB/IDBObjectStore.cpp
+--- dom/indexedDB/IDBObjectStore.cpp.orig
++++ dom/indexedDB/IDBObjectStore.cpp
+@@ -1546,7 +1546,7 @@ IDBObjectStore::AddOrPut(JSContext* aCx,
+   MOZ_ASSERT(aCx);
+   MOZ_ASSERT_IF(aFromCursor, aOverwrite);
+ 
+-  if (mTransaction->GetMode() == IDBTransaction::CLEANUP ||
++  if (mTransaction->GetMode() == IDBTransaction::CLEANUPX ||
+       mDeletedSpec) {
+     aRv.Throw(NS_ERROR_DOM_INDEXEDDB_NOT_ALLOWED_ERR);
+     return nullptr;

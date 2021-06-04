@@ -1,0 +1,14 @@
+$OpenBSD: patch-dom_indexedDB_ProfilerHelpers_h,v 1.1 2021/06/04 11:26:54 landry Exp $
+
+Index: dom/indexedDB/ProfilerHelpers.h
+--- dom/indexedDB/ProfilerHelpers.h.orig
++++ dom/indexedDB/ProfilerHelpers.h
+@@ -130,7 +130,7 @@ class MOZ_STACK_CLASS LoggingString final (public)
+       case IDBTransaction::READ_WRITE_FLUSH:
+         AppendLiteral("\"readwriteflush\"");
+         break;
+-      case IDBTransaction::CLEANUP:
++      case IDBTransaction::CLEANUPX:
+         AppendLiteral("\"cleanup\"");
+         break;
+       case IDBTransaction::VERSION_CHANGE:

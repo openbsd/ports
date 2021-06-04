@@ -1,0 +1,104 @@
+$OpenBSD: patch-dom_indexedDB_ActorsParent_cpp,v 1.1 2021/06/04 11:26:54 landry Exp $
+
+Index: dom/indexedDB/ActorsParent.cpp
+--- dom/indexedDB/ActorsParent.cpp.orig
++++ dom/indexedDB/ActorsParent.cpp
+@@ -11381,7 +11381,7 @@ AutoSavepoint::~AutoSavepoint()
+     MOZ_ASSERT(mDEBUGTransaction->GetMode() == IDBTransaction::READ_WRITE ||
+                mDEBUGTransaction->GetMode() ==
+                  IDBTransaction::READ_WRITE_FLUSH ||
+-               mDEBUGTransaction->GetMode() == IDBTransaction::CLEANUP ||
++               mDEBUGTransaction->GetMode() == IDBTransaction::CLEANUPX ||
+                mDEBUGTransaction->GetMode() == IDBTransaction::VERSION_CHANGE);
+ 
+     if (NS_FAILED(mConnection->RollbackSavepoint())) {
+@@ -11397,7 +11397,7 @@ AutoSavepoint::Start(const TransactionBase* aTransacti
+   MOZ_ASSERT(aTransaction);
+   MOZ_ASSERT(aTransaction->GetMode() == IDBTransaction::READ_WRITE ||
+              aTransaction->GetMode() == IDBTransaction::READ_WRITE_FLUSH ||
+-             aTransaction->GetMode() == IDBTransaction::CLEANUP ||
++             aTransaction->GetMode() == IDBTransaction::CLEANUPX ||
+              aTransaction->GetMode() == IDBTransaction::VERSION_CHANGE);
+ 
+   DatabaseConnection* connection = aTransaction->GetDatabase()->GetConnection();
+@@ -14540,7 +14540,7 @@ Database::AllocPBackgroundIDBTransactionParent(
+   if (NS_WARN_IF(aMode != IDBTransaction::READ_ONLY &&
+                  aMode != IDBTransaction::READ_WRITE &&
+                  aMode != IDBTransaction::READ_WRITE_FLUSH &&
+-                 aMode != IDBTransaction::CLEANUP)) {
++                 aMode != IDBTransaction::CLEANUPX)) {
+     ASSERT_UNLESS_FUZZING();
+     return nullptr;
+   }
+@@ -14549,7 +14549,7 @@ Database::AllocPBackgroundIDBTransactionParent(
+   // has write access.
+   if (NS_WARN_IF((aMode == IDBTransaction::READ_WRITE ||
+                   aMode == IDBTransaction::READ_WRITE_FLUSH ||
+-                  aMode == IDBTransaction::CLEANUP) &&
++                  aMode == IDBTransaction::CLEANUPX) &&
+                  mPrincipalInfo.type() == PrincipalInfo::TSystemPrincipalInfo &&
+                  !mChromeWriteAccessAllowed)) {
+     return nullptr;
+@@ -14615,7 +14615,7 @@ Database::RecvPBackgroundIDBTransactionConstructor(
+   MOZ_ASSERT(aMode == IDBTransaction::READ_ONLY ||
+              aMode == IDBTransaction::READ_WRITE ||
+              aMode == IDBTransaction::READ_WRITE_FLUSH ||
+-             aMode == IDBTransaction::CLEANUP);
++             aMode == IDBTransaction::CLEANUPX);
+   MOZ_ASSERT(!mClosed);
+ 
+   if (IsInvalidated()) {
+@@ -14778,7 +14778,7 @@ StartTransactionOp::DoDatabaseWork(DatabaseConnection*
+ 
+   Transaction()->SetActiveOnConnectionThread();
+ 
+-  if (Transaction()->GetMode() == IDBTransaction::CLEANUP) {
++  if (Transaction()->GetMode() == IDBTransaction::CLEANUPX) {
+     nsresult rv = aConnection->DisableQuotaChecks();
+     if (NS_WARN_IF(NS_FAILED(rv))) {
+       return rv;
+@@ -15097,7 +15097,7 @@ TransactionBase::VerifyRequestParams(const RequestPara
+     case RequestParams::TObjectStoreDeleteParams: {
+       if (NS_WARN_IF(mMode != IDBTransaction::READ_WRITE &&
+                      mMode != IDBTransaction::READ_WRITE_FLUSH &&
+-                     mMode != IDBTransaction::CLEANUP &&
++                     mMode != IDBTransaction::CLEANUPX &&
+                      mMode != IDBTransaction::VERSION_CHANGE)) {
+         ASSERT_UNLESS_FUZZING();
+         return false;
+@@ -15121,7 +15121,7 @@ TransactionBase::VerifyRequestParams(const RequestPara
+     case RequestParams::TObjectStoreClearParams: {
+       if (NS_WARN_IF(mMode != IDBTransaction::READ_WRITE &&
+                      mMode != IDBTransaction::READ_WRITE_FLUSH &&
+-                     mMode != IDBTransaction::CLEANUP &&
++                     mMode != IDBTransaction::CLEANUPX &&
+                      mMode != IDBTransaction::VERSION_CHANGE)) {
+         ASSERT_UNLESS_FUZZING();
+         return false;
+@@ -23880,7 +23880,7 @@ CommitOp::WriteAutoIncrementCounts()
+   mTransaction->AssertIsOnConnectionThread();
+   MOZ_ASSERT(mTransaction->GetMode() == IDBTransaction::READ_WRITE ||
+              mTransaction->GetMode() == IDBTransaction::READ_WRITE_FLUSH ||
+-             mTransaction->GetMode() == IDBTransaction::CLEANUP ||
++             mTransaction->GetMode() == IDBTransaction::CLEANUPX ||
+              mTransaction->GetMode() == IDBTransaction::VERSION_CHANGE);
+ 
+   const nsTArray<RefPtr<FullObjectStoreMetadata>>& metadataArray =
+@@ -23948,7 +23948,7 @@ CommitOp::CommitOrRollbackAutoIncrementCounts()
+   mTransaction->AssertIsOnConnectionThread();
+   MOZ_ASSERT(mTransaction->GetMode() == IDBTransaction::READ_WRITE ||
+              mTransaction->GetMode() == IDBTransaction::READ_WRITE_FLUSH ||
+-             mTransaction->GetMode() == IDBTransaction::CLEANUP ||
++             mTransaction->GetMode() == IDBTransaction::CLEANUPX ||
+              mTransaction->GetMode() == IDBTransaction::VERSION_CHANGE);
+ 
+   nsTArray<RefPtr<FullObjectStoreMetadata>>& metadataArray =
+@@ -24080,7 +24080,7 @@ CommitOp::Run()
+ 
+       connection->FinishWriteTransaction();
+ 
+-      if (mTransaction->GetMode() == IDBTransaction::CLEANUP) {
++      if (mTransaction->GetMode() == IDBTransaction::CLEANUPX) {
+         connection->DoIdleProcessing(/* aNeedsCheckpoint */ true);
+ 
+         connection->EnableQuotaChecks();

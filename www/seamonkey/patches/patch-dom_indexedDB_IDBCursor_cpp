@@ -1,0 +1,14 @@
+$OpenBSD: patch-dom_indexedDB_IDBCursor_cpp,v 1.1 2021/06/04 11:26:54 landry Exp $
+
+Index: dom/indexedDB/IDBCursor.cpp
+--- dom/indexedDB/IDBCursor.cpp.orig
++++ dom/indexedDB/IDBCursor.cpp
+@@ -686,7 +686,7 @@ IDBCursor::Update(JSContext* aCx, JS::Handle<JS::Value
+     return nullptr;
+   }
+ 
+-  if (mTransaction->GetMode() == IDBTransaction::CLEANUP ||
++  if (mTransaction->GetMode() == IDBTransaction::CLEANUPX ||
+       IsSourceDeleted() ||
+       !mHaveValue ||
+       mType == Type_ObjectStoreKey ||

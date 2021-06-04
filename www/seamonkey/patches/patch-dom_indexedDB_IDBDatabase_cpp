@@ -1,0 +1,41 @@
+$OpenBSD: patch-dom_indexedDB_IDBDatabase_cpp,v 1.1 2021/06/04 11:26:54 landry Exp $
+
+Index: dom/indexedDB/IDBDatabase.cpp
+--- dom/indexedDB/IDBDatabase.cpp.orig
++++ dom/indexedDB/IDBDatabase.cpp
+@@ -673,7 +673,7 @@ IDBDatabase::Transaction(JSContext* aCx,
+       break;
+     case IDBTransactionMode::Readwrite:
+       if (mQuotaExceeded) {
+-        mode = IDBTransaction::CLEANUP;
++        mode = IDBTransaction::CLEANUPX;
+         mQuotaExceeded = false;
+       } else {
+         mode = IDBTransaction::READ_WRITE;
+@@ -683,7 +683,7 @@ IDBDatabase::Transaction(JSContext* aCx,
+       mode = IDBTransaction::READ_WRITE_FLUSH;
+       break;
+     case IDBTransactionMode::Cleanup:
+-      mode = IDBTransaction::CLEANUP;
++      mode = IDBTransaction::CLEANUPX;
+       mQuotaExceeded = false;
+       break;
+     case IDBTransactionMode::Versionchange:
+@@ -717,7 +717,7 @@ IDBDatabase::Transaction(JSContext* aCx,
+ 
+   transaction->SetBackgroundActor(actor);
+ 
+-  if (mode == IDBTransaction::CLEANUP) {
++  if (mode == IDBTransaction::CLEANUPX) {
+     ExpireFileActors(/* aExpireAll */ true);
+   }
+ 
+@@ -870,7 +870,7 @@ IDBDatabase::AbortTransactions(bool aShouldWarn)
+             // We warn for any transactions that could have written data.
+             case IDBTransaction::READ_WRITE:
+             case IDBTransaction::READ_WRITE_FLUSH:
+-            case IDBTransaction::CLEANUP:
++            case IDBTransaction::CLEANUPX:
+             case IDBTransaction::VERSION_CHANGE:
+               transactionsThatNeedWarning.AppendElement(transaction);
+               break;
