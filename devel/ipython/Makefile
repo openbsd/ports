@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.63 2021/03/28 04:56:45 bket Exp $
+# $OpenBSD: Makefile,v 1.64 2021/06/04 03:17:39 bket Exp $
 
 COMMENT =		enhanced interactive Python shell
 
-MODPY_EGG_VERSION =	7.22.0
+MODPY_EGG_VERSION =	7.23.1
 DISTNAME =		ipython-${MODPY_EGG_VERSION}
 PKGNAME =		ipython${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
 
@@ -26,10 +26,11 @@ RUN_DEPENDS =		databases/py-pickleshare${MODPY_FLAVOR} \
 			devel/desktop-file-utils \
 			devel/py-backcall${MODPY_FLAVOR} \
 			devel/py-decorator${MODPY_FLAVOR} \
-			devel/py-jedi${MODPY_FLAVOR}>=0.10 \
+			devel/py-jedi${MODPY_FLAVOR}>=0.16 \
 			devel/py-pexpect${MODPY_FLAVOR}>=4.3 \
 			devel/py-prompt_toolkit${MODPY_FLAVOR}>=2.0.0v1,<3.1.0v1 \
 			devel/py-traitlets${MODPY_FLAVOR}>=4.2 \
+			graphics/py-matplotlib-inline${MODPY_FLAVOR} \
 			textproc/py-pygments${MODPY_FLAVOR}
 
 # Note that if you have pdb++ installed OR are using PORTS_PRIVSEP, tests will
