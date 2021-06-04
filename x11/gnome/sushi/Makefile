@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.61 2020/11/01 08:27:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2021/06/04 12:06:25 ajacoutot Exp $
 
 COMMENT=	quick previewer for Nautilus
 
 GNOME_PROJECT=	sushi
-GNOME_VERSION=	3.38.0
+GNOME_VERSION=	3.38.1
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
