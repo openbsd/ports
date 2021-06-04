@@ -1,23 +1,22 @@
-$OpenBSD: patch-cogl_cogl_cogl-dma-buf-handle_h,v 1.1 2020/11/07 13:13:32 jasper Exp $
-
-Revert:
-https://gitlab.gnome.org/GNOME/mutter/-/commit/5b07ccd0a766aeda3fa81a1ec32ab8fa51d05235
+$OpenBSD: patch-cogl_cogl_cogl-dma-buf-handle_h,v 1.2 2021/06/04 10:56:17 ajacoutot Exp $
 
 Index: cogl/cogl/cogl-dma-buf-handle.h
 --- cogl/cogl/cogl-dma-buf-handle.h.orig
 +++ cogl/cogl/cogl-dma-buf-handle.h
-@@ -63,14 +63,6 @@ cogl_dma_buf_handle_new (CoglFramebuffer *framebuffer,
+@@ -63,6 +63,7 @@ cogl_dma_buf_handle_new (CoglFramebuffer *framebuffer,
  COGL_EXPORT void
  cogl_dma_buf_handle_free (CoglDmaBufHandle *dmabuf_handle);
  
--COGL_EXPORT gboolean
--cogl_dma_buf_handle_sync_read_start (CoglDmaBufHandle  *dmabuf_handle,
--                                     GError           **error);
++# ifdef __linux__
+ COGL_EXPORT gboolean
+ cogl_dma_buf_handle_sync_read_start (CoglDmaBufHandle  *dmabuf_handle,
+                                      GError           **error);
+@@ -70,7 +71,7 @@ cogl_dma_buf_handle_sync_read_start (CoglDmaBufHandle 
+ COGL_EXPORT gboolean
+ cogl_dma_buf_handle_sync_read_end (CoglDmaBufHandle  *dmabuf_handle,
+                                    GError           **error);
 -
--COGL_EXPORT gboolean
--cogl_dma_buf_handle_sync_read_end (CoglDmaBufHandle  *dmabuf_handle,
--                                   GError           **error);
--
++# endif
  COGL_EXPORT gpointer
  cogl_dma_buf_handle_mmap (CoglDmaBufHandle  *dmabuf_handle,
                            GError           **error);
