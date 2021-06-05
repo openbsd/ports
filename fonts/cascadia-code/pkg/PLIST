@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/07/10 15:39:31 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/06/05 21:27:01 fcambus Exp $
 share/fonts/
 @fontdir share/fonts/cascadia/
 share/fonts/cascadia/CascadiaCode-Bold.otf
@@ -8,6 +8,13 @@ share/fonts/cascadia/CascadiaCode-Regular.otf
 share/fonts/cascadia/CascadiaCode-SemiBold.otf
 share/fonts/cascadia/CascadiaCode-SemiLight.otf
 share/fonts/cascadia/CascadiaCode.ttf
+share/fonts/cascadia/CascadiaCodeItalic-BoldItalic.otf
+share/fonts/cascadia/CascadiaCodeItalic-ExtraLightItalic.otf
+share/fonts/cascadia/CascadiaCodeItalic-Italic.otf
+share/fonts/cascadia/CascadiaCodeItalic-LightItalic.otf
+share/fonts/cascadia/CascadiaCodeItalic-SemiBoldItalic.otf
+share/fonts/cascadia/CascadiaCodeItalic-SemiLightItalic.otf
+share/fonts/cascadia/CascadiaCodeItalic.ttf
 share/fonts/cascadia/CascadiaCodePL-Bold.otf
 share/fonts/cascadia/CascadiaCodePL-ExtraLight.otf
 share/fonts/cascadia/CascadiaCodePL-Light.otf
@@ -15,6 +22,13 @@ share/fonts/cascadia/CascadiaCodePL-Regular.otf
 share/fonts/cascadia/CascadiaCodePL-SemiBold.otf
 share/fonts/cascadia/CascadiaCodePL-SemiLight.otf
 share/fonts/cascadia/CascadiaCodePL.ttf
+share/fonts/cascadia/CascadiaCodePLItalic-BoldItalic.otf
+share/fonts/cascadia/CascadiaCodePLItalic-ExtraLightItalic.otf
+share/fonts/cascadia/CascadiaCodePLItalic-Italic.otf
+share/fonts/cascadia/CascadiaCodePLItalic-LightItalic.otf
+share/fonts/cascadia/CascadiaCodePLItalic-SemiBoldItalic.otf
+share/fonts/cascadia/CascadiaCodePLItalic-SemiLightItalic.otf
+share/fonts/cascadia/CascadiaCodePLItalic.ttf
 share/fonts/cascadia/CascadiaMono-Bold.otf
 share/fonts/cascadia/CascadiaMono-ExtraLight.otf
 share/fonts/cascadia/CascadiaMono-Light.otf
@@ -22,6 +36,13 @@ share/fonts/cascadia/CascadiaMono-Regular.otf
 share/fonts/cascadia/CascadiaMono-SemiBold.otf
 share/fonts/cascadia/CascadiaMono-SemiLight.otf
 share/fonts/cascadia/CascadiaMono.ttf
+share/fonts/cascadia/CascadiaMonoItalic-BoldItalic.otf
+share/fonts/cascadia/CascadiaMonoItalic-ExtraLightItalic.otf
+share/fonts/cascadia/CascadiaMonoItalic-Italic.otf
+share/fonts/cascadia/CascadiaMonoItalic-LightItalic.otf
+share/fonts/cascadia/CascadiaMonoItalic-SemiBoldItalic.otf
+share/fonts/cascadia/CascadiaMonoItalic-SemiLightItalic.otf
+share/fonts/cascadia/CascadiaMonoItalic.ttf
 share/fonts/cascadia/CascadiaMonoPL-Bold.otf
 share/fonts/cascadia/CascadiaMonoPL-ExtraLight.otf
 share/fonts/cascadia/CascadiaMonoPL-Light.otf
@@ -29,3 +50,10 @@ share/fonts/cascadia/CascadiaMonoPL-Regular.otf
 share/fonts/cascadia/CascadiaMonoPL-SemiBold.otf
 share/fonts/cascadia/CascadiaMonoPL-SemiLight.otf
 share/fonts/cascadia/CascadiaMonoPL.ttf
+share/fonts/cascadia/CascadiaMonoPLItalic-BoldItalic.otf
+share/fonts/cascadia/CascadiaMonoPLItalic-ExtraLightItalic.otf
+share/fonts/cascadia/CascadiaMonoPLItalic-Italic.otf
+share/fonts/cascadia/CascadiaMonoPLItalic-LightItalic.otf
+share/fonts/cascadia/CascadiaMonoPLItalic-SemiBoldItalic.otf
+share/fonts/cascadia/CascadiaMonoPLItalic-SemiLightItalic.otf
+share/fonts/cascadia/CascadiaMonoPLItalic.ttf
