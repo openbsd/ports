@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2018/10/24 14:28:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/06/05 03:50:40 rsadowski Exp $
 
 COMMENT =	compiz configuration system library
 
 V =		0.8.8
 DISTNAME =	libcompizconfig-${V}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	compizconfig	0.0 # 0.0
 
