@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2021/04/01 12:19:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2021/06/05 04:08:50 rsadowski Exp $
 #
 COMMENT =	Qt Cryptographic Architecture
 
-V =		2.3.2
+V =		2.3.3
 DISTNAME =	qca-${V}
 PKGNAME =	qca-qt5-${V}
 CATEGORIES =	security
@@ -10,6 +10,8 @@ CATEGORIES =	security
 SHARED_LIBS =	qca-qt5		1.0
 
 HOMEPAGE =	https://userbase.kde.org/QCA
+
+MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes

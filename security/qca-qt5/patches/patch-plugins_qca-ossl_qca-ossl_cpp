@@ -1,11 +1,11 @@
-$OpenBSD: patch-plugins_qca-ossl_qca-ossl_cpp,v 1.4 2021/04/01 12:19:41 rsadowski Exp $
+$OpenBSD: patch-plugins_qca-ossl_qca-ossl_cpp,v 1.5 2021/06/05 04:08:50 rsadowski Exp $
 
 LibreSSL 3.0.x support from Stefan Strogin <steils@gentoo.org>
 
 Index: plugins/qca-ossl/qca-ossl.cpp
 --- plugins/qca-ossl/qca-ossl.cpp.orig
 +++ plugins/qca-ossl/qca-ossl.cpp
-@@ -41,7 +41,13 @@
+@@ -40,7 +40,13 @@
  #include <openssl/ssl.h>
  #include <openssl/x509v3.h>
  
@@ -19,7 +19,7 @@ Index: plugins/qca-ossl/qca-ossl.cpp
  
  using namespace QCA;
  
-@@ -1239,6 +1245,7 @@ class opensslPbkdf2Context : public KDFContext (public
+@@ -1243,6 +1249,7 @@ class opensslPbkdf2Context : public KDFContext (public
  protected:
  };
  
@@ -27,7 +27,7 @@ Index: plugins/qca-ossl/qca-ossl.cpp
  class opensslHkdfContext : public HKDFContext
  {
      Q_OBJECT
-@@ -1271,6 +1278,7 @@ class opensslHkdfContext : public HKDFContext (public)
+@@ -1275,6 +1282,7 @@ class opensslHkdfContext : public HKDFContext (public)
          return out;
      }
  };
@@ -35,7 +35,7 @@ Index: plugins/qca-ossl/qca-ossl.cpp
  
  class opensslHMACContext : public MACContext
  {
-@@ -4951,7 +4959,11 @@ class MyTLSContext : public TLSContext (public)
+@@ -4943,7 +4951,11 @@ class MyTLSContext : public TLSContext (public)
          case TLS::TLS_v1:
              ctx = SSL_CTX_new(TLS_client_method());
              SSL_CTX_set_min_proto_version(ctx, TLS1_VERSION);
@@ -47,7 +47,7 @@ Index: plugins/qca-ossl/qca-ossl.cpp
              break;
          case TLS::DTLS_v1:
          default:
-@@ -4972,7 +4984,11 @@ class MyTLSContext : public TLSContext (public)
+@@ -4964,7 +4976,11 @@ class MyTLSContext : public TLSContext (public)
          QStringList cipherList;
          for (int i = 0; i < sk_SSL_CIPHER_num(sk); ++i) {
              const SSL_CIPHER *thisCipher = sk_SSL_CIPHER_value(sk, i);
@@ -59,7 +59,7 @@ Index: plugins/qca-ossl/qca-ossl.cpp
          }
          sk_SSL_CIPHER_free(sk);
  
-@@ -5345,7 +5361,11 @@ class MyTLSContext : public TLSContext (public)
+@@ -5337,7 +5353,11 @@ class MyTLSContext : public TLSContext (public)
              sessInfo.version = TLS::TLS_v1;
          }
  
@@ -71,7 +71,7 @@ Index: plugins/qca-ossl/qca-ossl.cpp
  
          sessInfo.cipherMaxBits = SSL_get_cipher_bits(ssl, &(sessInfo.cipherBits));
  
-@@ -6629,7 +6649,9 @@ class opensslProvider : public Provider (public)
+@@ -6621,7 +6641,9 @@ class opensslProvider : public Provider (public)
  #endif
          list += QStringLiteral("pbkdf1(sha1)");
          list += QStringLiteral("pbkdf2(sha1)");
@@ -81,7 +81,7 @@ Index: plugins/qca-ossl/qca-ossl.cpp
          list += QStringLiteral("pkey");
          list += QStringLiteral("dlgroup");
          list += QStringLiteral("rsa");
-@@ -6698,8 +6720,10 @@ class opensslProvider : public Provider (public)
+@@ -6690,8 +6712,10 @@ class opensslProvider : public Provider (public)
  #endif
          else if (type == QLatin1String("pbkdf2(sha1)"))
              return new opensslPbkdf2Context(this, type);
