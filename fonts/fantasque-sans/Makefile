@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2020/05/25 04:30:12 bentley Exp $
+# $OpenBSD: Makefile,v 1.16 2021/06/05 12:34:05 jasper Exp $
 
 COMMENT =			programming font designed with functionality in mind
 
 V =				1.8.0
 DISTNAME =			fantasque-sans-$V
 DISTFILES =			${DISTNAME}{FantasqueSansMono-Normal}.tar.gz
-REVISION =			0
+REVISION =			1
 
 CATEGORIES =			fonts
-
-MAINTAINER =			Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 HOMEPAGE =			https://fontlibrary.org/en/font/fantasque-sans-mono
 

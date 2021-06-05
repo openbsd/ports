@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2020/07/03 21:45:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2021/06/05 12:34:06 jasper Exp $
 
 COMMENT=	module to calculate SHA1 digests
 
 MODULES=	cpan
 DISTNAME=	Digest-SHA1-2.13
-REVISION=	5
+REVISION=	6
 CATEGORIES=	security
-
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Artistic licence
 PERMIT_PACKAGE=	Yes

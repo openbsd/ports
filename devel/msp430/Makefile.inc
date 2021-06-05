@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.29 2020/01/26 11:14:30 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.30 2021/06/05 12:34:05 jasper Exp $
 
 #
 # XXX: Don't forget to adjust meta/msp430 when updating to new LTS
@@ -22,8 +22,6 @@ COMMENT?=		${TOOL} for ${TARGET}
 LTS_V?=			20120406
 
 CATEGORIES+=		devel
-
-MAINTAINER?=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # mspgcc4 was forked from mspgcc several years ago due to dormancy of the
 # original project. Currently mspgcc is being developed again and unifying

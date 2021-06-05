@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2017/05/12 15:11:17 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2021/06/05 12:34:05 jasper Exp $
 
 COMMENT=		libc for ${TARGET}
 
 TOOL=			${TARGET}-libc
 TOOL_V= 		20120224
+REVISION=		0
 
 LTS_PATCHES=		msp430-libc-20120224-sf3522752.patch
 

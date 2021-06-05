@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/10/02 17:50:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2021/06/05 12:34:05 jasper Exp $
 
 COMMENT =	fan made parody Zelda game for Solarus engine
 
@@ -6,7 +6,7 @@ GH_ACCOUNT=	christopho
 GH_PROJECT=	zsxd
 GH_TAGNAME=	${GH_PROJECT}-1.11.0
 DISTNAME=	${GH_TAGNAME}
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://www.solarus-games.org/en/games/the-legend-of-zelda-mystery-of-solarus-xd
 

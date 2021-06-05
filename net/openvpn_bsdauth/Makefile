@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:48:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/06/05 12:34:06 jasper Exp $
 
 COMMENT =	BSD Auth helper program for OpenVPN
 
 DISTNAME =	openvpn_bsdauth-7
-REVISION=	2
+REVISION=	3
 CATEGORIES =	net
 HOMEPAGE =	http://www.wormhole.hu/~ice/openvpn_bsdauth/
-
-MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE =	Yes

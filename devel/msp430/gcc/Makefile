@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2021/01/09 21:41:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2021/06/05 12:34:05 jasper Exp $
 
 TOOL=			gcc
 TOOL_V= 		4.6.3
 
-REVISION=		3
+REVISION=		4
 
 GNU_TOOL=		Yes
 
