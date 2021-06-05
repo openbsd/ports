@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.347 2021/05/29 15:33:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.348 2021/06/05 09:08:39 ajacoutot Exp $
 
 COMMENT=		general-purpose utility library
 
@@ -56,11 +56,7 @@ CONFIGURE_ARGS=		-Dselinux=disabled \
 			-Dlibmount=disabled \
 			-Dman=true
 
-# XXX G_ENABLE_DEBUG seems to enable some badly tested code;
-# it can easily trigger a segfault in ConsoleKit2, for instance:
-# dbus-send --system --print-reply --dest=org.freedesktop.ConsoleKit \
-#	/org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Inhibit \
-#	string:"shutdown:sleep" string:"foo" string:"bar" string:"block
+# Don't set G_ENABLE_DEBUG by default
 CONFIGURE_ARGS +=	-Dglib_debug=disabled
 
 pre-configure:
