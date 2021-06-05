@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.59 2021/05/22 14:13:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2021/06/05 09:16:34 ajacoutot Exp $
 
 COMMENT=		tool for building, changing, and versioning infrastructure
 
 MODGO_MODNAME=	github.com/hashicorp/terraform
-MODGO_VERSION=	v0.15.4
+MODGO_VERSION=	v0.15.5
 DISTNAME=	terraform-${MODGO_VERSION}
 
 WRKDIST=	${WRKDIR}/github.com/hashicorp/terraform@${MODGO_VERSION}
@@ -13,6 +13,7 @@ CATEGORIES=		sysutils net
 HOMEPAGE=		https://www.terraform.io/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
+
 # MPLv2
 PERMIT_PACKAGE=		Yes
 
