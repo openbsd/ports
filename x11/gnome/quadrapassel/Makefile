@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2020/11/07 12:17:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2021/06/05 12:47:12 jasper Exp $
 
 COMMENT =		fit falling blocks together
 
 GNOME_PROJECT =		quadrapassel
-GNOME_VERSION =		3.38.1
+GNOME_VERSION =		40.1
 
 CATEGORIES =		games
 
@@ -24,4 +24,5 @@ LIB_DEPENDS =		audio/gsound \
 
 MODGNOME_LDFLAGS +=    -L${X11BASE}/lib
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 .include <bsd.port.mk>
