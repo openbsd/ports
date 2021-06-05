@@ -1,9 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.5 2021/04/24 11:37:10 ajacoutot Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.6 2021/06/05 13:15:05 ajacoutot Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -550,13 +550,12 @@ if ( INSTALL_ZKG )
+@@ -553,13 +553,12 @@ if ( INSTALL_ZKG )
      # An etc/zkg directory for zkg's config file simplifies zkg's
      # config file code.
      set(ZEEK_ZKG_CONFIG_DIR "${ZEEK_ETC_INSTALL_DIR}/zkg")

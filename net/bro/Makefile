@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.75 2021/05/02 17:57:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2021/06/05 13:15:05 ajacoutot Exp $
 
 COMMENT=		network analysis and security monitoring framework
 
-V=			4.0.1
+V=			4.0.2
 DISTNAME=		zeek-${V}
-REVISION=		0
 
 SHARED_LIBS +=	binpac                    2.0
 SHARED_LIBS +=  broccoli                  9.0
@@ -25,7 +24,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c crypto m maxminddb pcap pthread ssl z
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB} lib/libbind/bind
 
-MASTER_SITES=		https://old.zeek.org/downloads/
+MASTER_SITES=		https://download.zeek.org/ \
+			https://old.zeek.org/downloads/
 
 FIX_EXTRACT_PERMISSIONS=Yes
 
