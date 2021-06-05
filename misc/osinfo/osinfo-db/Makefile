@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.44 2021/04/28 05:53:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2021/06/05 08:50:01 ajacoutot Exp $
 
 COMMENT=		osinfo database files
 
-V=			20210426
+V=			20210531
 DISTNAME=		osinfo-db-${V}
 EXTRACT_SUFX=		.tar.xz
 
@@ -22,11 +22,11 @@ do-install:
 
 # Adding a new OpenBSD release
 # ============================
-# - fork+clone https://gitlab.com/libosinfo/osinfo-db
+# - fork+clone+branch https://gitlab.com/libosinfo/osinfo-db
 # cd osinfo-db/data/os/openbsd.org/
 # cp openbsd-X.Y.xml.in openbsd-X.Y+1.xml.in
 # - substitute X.Y => X.Y+1, XY => XY+1, XY-2 => XY-1 etc.
-# - fix Copyright, release-date, eol-datee
+# - fix Copyright, release-date, eol-date
 # cd ../../../tests/isodata/openbsd/
 # mkdir openbsdX.Y+1 && cd openbsdX.Y+1
 # - fetch i386 and amd64 install and boot-only ISOs
