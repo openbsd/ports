@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/11/02 17:27:45 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/06/05 04:20:33 rsadowski Exp $
 @conflict qt-creator-<=4.3.1p1
 @bin bin/qbs
 @bin bin/qbs-config
@@ -152,6 +152,19 @@ share/qbs/examples/baremetal/cy7c68013a/nes-gamepads/nes-gamepads.qbs
 share/qbs/examples/baremetal/cy7c68013a/nes-gamepads/regs.h
 share/qbs/examples/baremetal/cy7c68013a/nes-gamepads/usb.c
 share/qbs/examples/baremetal/cy7c68013a/nes-gamepads/usb.h
+share/qbs/examples/baremetal/esp8266/
+share/qbs/examples/baremetal/esp8266/README.md
+share/qbs/examples/baremetal/esp8266/access-point/
+share/qbs/examples/baremetal/esp8266/access-point/access-point.qbs
+share/qbs/examples/baremetal/esp8266/access-point/user_config.h
+share/qbs/examples/baremetal/esp8266/access-point/user_main.c
+share/qbs/examples/baremetal/esp8266/esp8266.qbs
+share/qbs/examples/baremetal/esp8266/qbs/
+share/qbs/examples/baremetal/esp8266/qbs/imports/
+share/qbs/examples/baremetal/esp8266/qbs/imports/Esp8266SdkProbe.qbs
+share/qbs/examples/baremetal/esp8266/qbs/modules/
+share/qbs/examples/baremetal/esp8266/qbs/modules/esp8266_sdk/
+share/qbs/examples/baremetal/esp8266/qbs/modules/esp8266_sdk/Esp8266SdkModule.qbs
 share/qbs/examples/baremetal/msp430f5529/
 share/qbs/examples/baremetal/msp430f5529/msp430f5529.qbs
 share/qbs/examples/baremetal/msp430f5529/nes-gamepads/
@@ -182,6 +195,24 @@ share/qbs/examples/baremetal/msp430f5529/redblink/main.c
 share/qbs/examples/baremetal/msp430f5529/redblink/redblink.qbs
 share/qbs/examples/baremetal/msp430f5529/redblink/system.c
 share/qbs/examples/baremetal/msp430f5529/redblink/system.h
+share/qbs/examples/baremetal/pca10001/
+share/qbs/examples/baremetal/pca10001/greenblink/
+share/qbs/examples/baremetal/pca10001/greenblink/README.md
+share/qbs/examples/baremetal/pca10001/greenblink/gcc/
+share/qbs/examples/baremetal/pca10001/greenblink/gcc/flash.ld
+share/qbs/examples/baremetal/pca10001/greenblink/gcc/startup.s
+share/qbs/examples/baremetal/pca10001/greenblink/gpio.c
+share/qbs/examples/baremetal/pca10001/greenblink/gpio.h
+share/qbs/examples/baremetal/pca10001/greenblink/greenblink.qbs
+share/qbs/examples/baremetal/pca10001/greenblink/iar/
+share/qbs/examples/baremetal/pca10001/greenblink/iar/flash.icf
+share/qbs/examples/baremetal/pca10001/greenblink/iar/startup.s
+share/qbs/examples/baremetal/pca10001/greenblink/keil/
+share/qbs/examples/baremetal/pca10001/greenblink/keil/flash.sct
+share/qbs/examples/baremetal/pca10001/greenblink/keil/startup.s
+share/qbs/examples/baremetal/pca10001/greenblink/main.c
+share/qbs/examples/baremetal/pca10001/greenblink/system.h
+share/qbs/examples/baremetal/pca10001/pca10001.qbs
 share/qbs/examples/baremetal/pca10040/
 share/qbs/examples/baremetal/pca10040/greenblink/
 share/qbs/examples/baremetal/pca10040/greenblink/README.md
@@ -191,6 +222,9 @@ share/qbs/examples/baremetal/pca10040/greenblink/gcc/startup.s
 share/qbs/examples/baremetal/pca10040/greenblink/gpio.c
 share/qbs/examples/baremetal/pca10040/greenblink/gpio.h
 share/qbs/examples/baremetal/pca10040/greenblink/greenblink.qbs
+share/qbs/examples/baremetal/pca10040/greenblink/iar/
+share/qbs/examples/baremetal/pca10040/greenblink/iar/flash.icf
+share/qbs/examples/baremetal/pca10040/greenblink/iar/startup.s
 share/qbs/examples/baremetal/pca10040/greenblink/keil/
 share/qbs/examples/baremetal/pca10040/greenblink/keil/flash.sct
 share/qbs/examples/baremetal/pca10040/greenblink/keil/startup.s
@@ -206,6 +240,9 @@ share/qbs/examples/baremetal/stm32f103/greenblink/gcc/startup.s
 share/qbs/examples/baremetal/stm32f103/greenblink/gpio.c
 share/qbs/examples/baremetal/stm32f103/greenblink/gpio.h
 share/qbs/examples/baremetal/stm32f103/greenblink/greenblink.qbs
+share/qbs/examples/baremetal/stm32f103/greenblink/iar/
+share/qbs/examples/baremetal/stm32f103/greenblink/iar/flash.icf
+share/qbs/examples/baremetal/stm32f103/greenblink/iar/startup.s
 share/qbs/examples/baremetal/stm32f103/greenblink/keil/
 share/qbs/examples/baremetal/stm32f103/greenblink/keil/flash.sct
 share/qbs/examples/baremetal/stm32f103/greenblink/keil/startup.s
@@ -288,7 +325,11 @@ share/qbs/examples/cocoa-application/CocoaApplication/en.lproj/Credits.rtf
 share/qbs/examples/cocoa-application/CocoaApplication/en.lproj/InfoPlist.strings
 share/qbs/examples/cocoa-application/CocoaApplication/en.lproj/LICENSE
 share/qbs/examples/cocoa-application/CocoaApplication/en.lproj/MainMenu.xib
-share/qbs/examples/cocoa-application/CocoaApplication/en_US.lproj
+share/qbs/examples/cocoa-application/CocoaApplication/en_US.lproj/
+share/qbs/examples/cocoa-application/CocoaApplication/en_US.lproj/Credits.rtf
+share/qbs/examples/cocoa-application/CocoaApplication/en_US.lproj/InfoPlist.strings
+share/qbs/examples/cocoa-application/CocoaApplication/en_US.lproj/LICENSE
+share/qbs/examples/cocoa-application/CocoaApplication/en_US.lproj/MainMenu.xib
 share/qbs/examples/cocoa-application/CocoaApplication/main.m
 share/qbs/examples/cocoa-application/app.qbs
 share/qbs/examples/cocoa-application/cocoa-application.qbs
@@ -301,11 +342,9 @@ share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/AppDelegate.h
 share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/AppDelegate.m
 share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/CocoaTouchApplication-Info.plist
 share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/CocoaTouchApplication-Prefix.pch
-share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/Default-568h@2x.png
-share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/Default.png
-share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/Default@2x.png
 share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/DetailViewController.h
 share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/DetailViewController.m
+share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/LaunchScreen.storyboard
 share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/MasterViewController.h
 share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/MasterViewController.m
 share/qbs/examples/cocoa-touch-application/CocoaTouchApplication/en.lproj/
@@ -433,6 +472,7 @@ share/qbs/imports/qbs/Probes/PkgConfigProbe.qbs
 share/qbs/imports/qbs/Probes/SdccProbe.qbs
 share/qbs/imports/qbs/Probes/TypeScriptProbe.qbs
 share/qbs/imports/qbs/Probes/WiXProbe.qbs
+share/qbs/imports/qbs/Probes/XcodeLocationProbe.qbs
 share/qbs/imports/qbs/Probes/XcodeProbe.qbs
 share/qbs/imports/qbs/Probes/path-probe.js
 share/qbs/imports/qbs/UnixUtils/
@@ -486,6 +526,7 @@ share/qbs/module-providers/Qt/templates/qml.qbs
 share/qbs/module-providers/Qt/templates/qmlcache.qbs
 share/qbs/module-providers/Qt/templates/quick.js
 share/qbs/module-providers/Qt/templates/quick.qbs
+share/qbs/module-providers/Qt/templates/rcc.js
 share/qbs/module-providers/Qt/templates/scxml.qbs
 share/qbs/module-providers/__fallback/
 share/qbs/module-providers/__fallback/fallback.qbs
@@ -525,6 +566,13 @@ share/qbs/modules/cli/CLIModule.qbs
 share/qbs/modules/cli/cli.js
 share/qbs/modules/cli/mono.qbs
 share/qbs/modules/cli/windows-dotnet.qbs
+share/qbs/modules/codesign/
+share/qbs/modules/codesign/CodeSignModule.qbs
+share/qbs/modules/codesign/android.qbs
+share/qbs/modules/codesign/apple.qbs
+share/qbs/modules/codesign/codesign.js
+share/qbs/modules/codesign/noop.qbs
+share/qbs/modules/codesign/signtool.qbs
 share/qbs/modules/cpp/
 share/qbs/modules/cpp/CppModule.qbs
 share/qbs/modules/cpp/DarwinGCC.qbs
@@ -600,6 +648,8 @@ share/qbs/modules/pkgconfig/pkgconfig.qbs
 share/qbs/modules/protobuf/
 share/qbs/modules/protobuf/cpp/
 share/qbs/modules/protobuf/cpp/protobufcpp.qbs
+share/qbs/modules/protobuf/nanopb/
+share/qbs/modules/protobuf/nanopb/nanopb.qbs
 share/qbs/modules/protobuf/objc/
 share/qbs/modules/protobuf/objc/protobufobjc.qbs
 share/qbs/modules/protobuf/protobuf.js
