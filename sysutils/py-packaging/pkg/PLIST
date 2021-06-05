@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/10/06 20:20:23 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/06/05 08:48:30 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/packaging/
 lib/python${MODPY_VERSION}/site-packages/packaging-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/packaging-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -13,6 +13,7 @@ lib/python${MODPY_VERSION}/site-packages/packaging/${MODPY_PYCACHE}__about__.${M
 lib/python${MODPY_VERSION}/site-packages/packaging/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/packaging/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/packaging/${MODPY_PYCACHE}_structures.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/packaging/${MODPY_PYCACHE}_typing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/packaging/${MODPY_PYCACHE}markers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/packaging/${MODPY_PYCACHE}requirements.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/packaging/${MODPY_PYCACHE}specifiers.${MODPY_PYC_MAGIC_TAG}pyc
@@ -21,7 +22,9 @@ lib/python${MODPY_VERSION}/site-packages/packaging/${MODPY_PYCACHE}utils.${MODPY
 lib/python${MODPY_VERSION}/site-packages/packaging/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/packaging/_compat.py
 lib/python${MODPY_VERSION}/site-packages/packaging/_structures.py
+lib/python${MODPY_VERSION}/site-packages/packaging/_typing.py
 lib/python${MODPY_VERSION}/site-packages/packaging/markers.py
+lib/python${MODPY_VERSION}/site-packages/packaging/py.typed
 lib/python${MODPY_VERSION}/site-packages/packaging/requirements.py
 lib/python${MODPY_VERSION}/site-packages/packaging/specifiers.py
 lib/python${MODPY_VERSION}/site-packages/packaging/tags.py
