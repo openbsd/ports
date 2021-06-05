@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1280 2021/05/27 23:02:22 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1281 2021/06/05 13:00:34 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1209,6 +1209,7 @@ setup_obsolete_reason(
 	3 => 'mailpile',
 	7 => 'p5-Geo-GDAL',
 	3 => 'gnome-latex',
+	3 => 'p5-Puppet-Tidy',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

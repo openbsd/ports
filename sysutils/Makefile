@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.607 2021/05/27 16:14:27 kn Exp $
+# $OpenBSD: Makefile,v 1.608 2021/06/05 13:00:34 jasper Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -237,7 +237,6 @@
      SUBDIR += p5-Proc-ProcessTable
      SUBDIR += p5-Proc-Queue
      SUBDIR += p5-Proc-Wait3
-     SUBDIR += p5-Puppet-Tidy
      SUBDIR += p5-Quota
      SUBDIR += p5-Rex
      SUBDIR += p5-Schedule-At
