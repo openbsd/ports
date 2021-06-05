@@ -1,4 +1,4 @@
-$OpenBSD: patch-conf_default_xml,v 1.6 2021/02/06 21:07:31 sthen Exp $
+$OpenBSD: patch-conf_default_xml,v 1.7 2021/06/05 18:35:51 sthen Exp $
 
 Index: conf/default.xml
 --- conf/default.xml.orig
@@ -37,7 +37,7 @@ Index: conf/default.xml
      <entry key='database.ignoreUnknown'>true</entry>
      <entry key='database.generateQueries'>true</entry>
 -    <entry key='database.changelog'>./schema/changelog-master.xml</entry>
-+    <entry key='database.changelog'>${LOCALBASE}/share/traccar/schema/changelog-master.xml</entry>
++    <entry key='database.changelog'>../..${LOCALBASE}/share/traccar/schema/changelog-master.xml</entry>
   
      <entry key='database.loginUser'>
          SELECT * FROM tc_users

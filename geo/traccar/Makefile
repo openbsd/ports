@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2021/05/19 01:50:30 kurt Exp $
+# $OpenBSD: Makefile,v 1.16 2021/06/05 18:35:51 sthen Exp $
 
 COMMENT =	modern GPS tracking platform
-V =		4.12
+V =		4.13
 PKGNAME =	traccar-${V}
 DISTNAME =	traccar-other-${V}
 EXTRACT_SUFX =	.zip
 WRKDIST =	${WRKDIR}
-REVISION =	0
 
 CATEGORIES =	geo
 HOMEPAGE =	https://www.traccar.org/
@@ -19,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES = https://github.com/traccar/traccar/releases/download/v${V}/
 
 MODULES =               java
-MODJAVA_VER =           1.8+
+MODJAVA_VER =           11+
 
 RUN_DEPENDS=		java/javaPathHelper
 
