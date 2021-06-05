@@ -3,3 +3,6 @@ with the included ttyplay command. ttyrec is just a
 derivative of script command for recording timing
 information with microsecond accuracy as well. It can record
 emacs -nw, vi, lynx, or any programs running on tty.
+
+Data recorded with ttyrec can be converted into an animated GIF
+with the seq2gif tool from the graphics/seq2gif port.

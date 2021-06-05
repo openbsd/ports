@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:47:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2021/06/05 13:29:52 stsp Exp $
 
 COMMENT=	tty recorder
 
 DISTNAME=	ttyrec-1.0.8
-REVISION=	3
+REVISION=	4
 CATEGORIES=	misc
 
 HOMEPAGE=	http://0xcc.net/ttyrec/
