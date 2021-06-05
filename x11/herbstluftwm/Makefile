@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.21 2021/03/06 12:01:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/06/05 11:21:31 bket Exp $
 
 COMMENT =		manual tiling window manager
-DISTNAME =		herbstluftwm-0.9.2
+DISTNAME =		herbstluftwm-0.9.3
 CATEGORIES =		x11
 
 HOMEPAGE =		https://herbstluftwm.org/
@@ -12,8 +12,8 @@ MAINTAINER =		Lucas <lucas@sexy.is>, \
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} X11 Xext Xft Xinerama Xrandr c freetype
-WANTLIB += m z
+WANTLIB += ${COMPILER_LIBCXX} X11 Xext Xft Xinerama Xrandr Xrender
+WANTLIB += c freetype m z
 
 MASTER_SITES =		https://herbstluftwm.org/tarballs/
 

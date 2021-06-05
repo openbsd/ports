@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/03/06 12:01:31 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/06/05 11:21:31 bket Exp $
 @tag update-desktop-database
 @sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/herbstluftwm/
@@ -31,6 +31,7 @@ share/doc/herbstluftwm/examples/q3terminal.sh
 share/doc/herbstluftwm/examples/savestate.sh
 share/doc/herbstluftwm/examples/scratchpad.sh
 share/doc/herbstluftwm/examples/toggledualhead.sh
+share/doc/herbstluftwm/examples/unminimize.sh
 share/doc/herbstluftwm/examples/windowmenu.sh
 share/doc/herbstluftwm/examples/wselect.sh
 share/doc/herbstluftwm/hlwm-doc.json
