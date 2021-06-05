@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.6 2021/04/15 07:40:24 denis Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2021/06/05 12:03:27 danj Exp $
 
 CATEGORIES =	net sysutils
 
 HOMEPAGE =	https://minio.io
 
-# APACHEv2
+# AGPLv3+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c pthread
