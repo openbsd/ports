@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.37 2020/10/09 19:12:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.38 2021/06/05 04:28:12 rsadowski Exp $
 
 BROKEN = Connection Error: Unable to connect to server
 
 COMMENT=	multiplatform Jabber client
 
-DISTNAME=	psi-1.4
+V=		1.5
+DISTNAME=	psi-${V}
 CATEGORIES=	net
-REVISION=	0
 
 HOMEPAGE=	https://psi-im.org/
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=psi/Psi/1.4/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=psi/Psi/${V}/}
 EXTRACT_SUFX=	.tar.xz
 
 # GPLv2
@@ -18,16 +18,15 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Multimedia Qt5Network Qt5Positioning Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5Quick Qt5Svg Qt5WebChannel Qt5WebEngine Qt5WebEngineCore
-WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5X11Extras Qt5Xml
-WANTLIB += SM X11 Xext c hunspell-1.7 idn m qca-qt5 xcb z
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5Svg Qt5WebChannel Qt5WebEngine
+WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5X11Extras
+WANTLIB += Qt5Xml SM X11 Xext c idn m qca-qt5 xcb z
 
 MODULES=		devel/cmake \
 			x11/qt5
 
 LIB_DEPENDS=		devel/libidn \
 			security/qca-qt5 \
-			textproc/hunspell \
 			x11/qt5/qtmultimedia \
 			x11/qt5/qtsvg \
 			x11/qt5/qtwebengine \
@@ -36,7 +35,7 @@ LIB_DEPENDS=		devel/libidn \
 RUN_DEPENDS=		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
-CONFIGURE_ARGS=		-DUSE_CCACHE=OFF
+CONFIGURE_ARGS=		-DUSE_CCACHE=OFF -DUSE_HUNSPELL=OFF
 
 # For QSettings to write its setup
 PORTHOME=		${WRKDIST}
