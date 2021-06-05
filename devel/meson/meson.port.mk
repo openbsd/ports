@@ -1,4 +1,4 @@
-# $OpenBSD: meson.port.mk,v 1.62 2021/05/03 13:47:42 ajacoutot Exp $
+# $OpenBSD: meson.port.mk,v 1.63 2021/06/05 15:04:14 ajacoutot Exp $
 
 BUILD_DEPENDS +=	devel/meson>=0.58.0v0
 SEPARATE_BUILD ?=	Yes
@@ -53,18 +53,19 @@ MODMESON_configure=	${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/meson \
 .   if !target(do-build)
 do-build:
 	exec ${SETENV} ${MAKE_ENV} \
-		${LOCALBASE}/bin/ninja -C ${WRKBUILD} -v -j ${MAKE_JOBS}
+		${LOCALBASE}/bin/meson compile -C ${WRKBUILD} -v -j ${MAKE_JOBS}
 .   endif
 
 .   if !target(do-install)
 do-install:
 	exec ${SETENV} ${MAKE_ENV} ${FAKE_SETUP} \
-		${LOCALBASE}/bin/ninja -C ${WRKBUILD} ${FAKE_TARGET}
+		${LOCALBASE}/bin/meson install --no-rebuild -C ${WRKBUILD}
 .   endif
 
 .   if !target(do-test)
 do-test:
 	exec ${SETENV} ${ALL_TEST_ENV} \
-		${LOCALBASE}/bin/ninja -C ${WRKBUILD} ${TEST_TARGET}
+		${LOCALBASE}/bin/meson test --num-processes ${MAKE_JOBS} \
+			--print-errorlogs -C ${WRKBUILD}
 .   endif
 .endif
