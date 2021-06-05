@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.556 2021/05/25 22:50:23 abieber Exp $
+# $OpenBSD: Makefile,v 1.557 2021/06/05 13:24:01 stsp Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -279,6 +279,7 @@
      SUBDIR += scour
      SUBDIR += scratch
      SUBDIR += scrot
+     SUBDIR += seq2gif
      SUBDIR += shotwell
      SUBDIR += simgear
      SUBDIR += simple-scan
