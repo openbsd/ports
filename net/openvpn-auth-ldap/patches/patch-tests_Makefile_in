@@ -1,27 +1,19 @@
-$OpenBSD: patch-tests_Makefile_in,v 1.2 2017/06/19 21:02:11 sebastia Exp $
+$OpenBSD: patch-tests_Makefile_in,v 1.3 2021/06/06 15:11:18 landry Exp $
 
-Do not test failing tests due to using
-the modern runtime
+uses syntax not in recent obj-c ??
+/usr/obj/ports/openvpn-openvpn-auth-ldap-auth-ldap-2.0.4/openvpn-auth-ldap-auth-ldap-2.0.4/tests/TRLocalPacketFilterTests.m:175: undefined reference to `suite_create'                
+/usr/obj/ports/openvpn-openvpn-auth-ldap-auth-ldap-2.0.4/openvpn-auth-ldap-auth-ldap-2.0.4/tests/TRLocalPacketFilterTests.m:177: undefined reference to `tcase_create'               
+/usr/obj/ports/openvpn-openvpn-auth-ldap-auth-ldap-2.0.4/openvpn-auth-ldap-auth-ldap-2.0.4/tests/TRLocalPacketFilterTests.m:178: undefined reference to `tcase_add_checked_fixture'   
+/usr/obj/ports/openvpn-openvpn-auth-ldap-auth-ldap-2.0.4/openvpn-auth-ldap-auth-ldap-2.0.4/tests/TRLocalPacketFilterTests.m:179: undefined reference to `suite_add_tcase'    
 
 Index: tests/Makefile.in
 --- tests/Makefile.in.orig
 +++ tests/Makefile.in
-@@ -13,9 +13,7 @@ TEST_OBJS=	tests.o \
- 		LFAuthLDAPConfig.o \
- 		LFLDAPConnection.o \
- 		TRLDAPEntry.o \
--		TRArray.o \
- 		TRHash.o \
--		TRObject.o \
- 		TRPacketFilter.o \
- 		TRPFAddress.o \
- 		TRConfigToken.o \
-@@ -26,7 +24,7 @@ TEST_OBJS=	tests.o \
- CFLAGS+=	@CHECK_CFLAGS@ -DTEST_DATA=\"${srcdir}/data\"
- OBJCFLAGS+=	@CHECK_CFLAGS@ -DTEST_DATA=\"${srcdir}/data\"
- LIBS+=		-lauth-ldap-testing $(OBJC_LIBS) $(LDAP_LIBS) @CHECK_LIBS@
--LDFLAGS+=	-L${top_builddir}src $(LIBS)
-+LDFLAGS+=	-L${top_builddir}/src $(LIBS)
- 
- # Recompile the tests every time
- all: tests
+@@ -25,7 +25,6 @@ TEST_OBJS=	tests.o \
+ 		TRLDAPEntryTests.o \
+ 		TRLDAPGroupConfigTests.o \
+ 		TRLDAPSearchFilterTests.o \
+-		TRLocalPacketFilterTests.o \
+ 		TRObjectTests.o \
+ 		mockpf.o \
+ 		TRPFAddressTests.o \

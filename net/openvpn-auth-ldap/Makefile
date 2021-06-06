@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.25 2020/08/16 20:37:45 sebastia Exp $
+# $OpenBSD: Makefile,v 1.26 2021/06/06 15:11:18 landry Exp $
 
 COMMENT =		LDAP authentication plugin for OpenVPN 2.x
 
-VERSION =		2.0.3
-REVISION =		14
-DISTNAME =		auth-ldap-${VERSION}
-PKGNAME =		openvpn-${DISTNAME}
+VERSION =		2.0.4
+GH_ACCOUNT =		threerings
+GH_PROJECT =		openvpn-auth-ldap
+GH_TAGNAME =		auth-ldap-${VERSION}
+PKGNAME =		openvpn-${GH_TAGNAME}
 CATEGORIES =		net security
 
 HOMEPAGE =		https://github.com/threerings/openvpn-auth-ldap
@@ -18,12 +19,9 @@ WANTLIB =		${COMPILER_LIBCXX} lber ldap
 MODULES =		x11/gnustep
 MODGNUSTEP_NEEDS_GUI =	No
 
-MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=openvpn-auth-ldap/}
-
 RUN_DEPENDS =		net/openvpn
 LIB_DEPENDS =		databases/openldap
 BUILD_DEPENDS =		${RUN_DEPENDS} \
-			devel/check \
 			devel/re2c
 
 SEPARATE_BUILD =	Yes
@@ -37,8 +35,7 @@ MAKE_FILE =		Makefile
 LDFLAGS += -lc++abi -lpthread
 .endif
 
-CONFIGURE_ARGS =  --with-check=${LOCALBASE} \
-		  --with-openldap=${LOCALBASE} \
+CONFIGURE_ARGS =  --with-openldap=${LOCALBASE} \
 		  --with-openvpn=${LOCALBASE}/include/openvpn \
 		  CC="${CC}" \
 		  LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}" \

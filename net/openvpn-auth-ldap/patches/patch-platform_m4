@@ -1,6 +1,6 @@
-$OpenBSD: patch-platform_m4,v 1.1 2017/08/03 14:46:33 jca Exp $
+$OpenBSD: patch-platform_m4,v 1.2 2021/06/06 15:11:18 landry Exp $
 
-Don't clobber LDFLAGS.
+Don't clobber LDFLAGS - ensures configure finds libobjc2.
 
 Index: platform.m4
 --- platform.m4.orig
