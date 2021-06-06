@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2021/01/13 09:40:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2021/06/06 22:38:31 sthen Exp $
 
 COMMENT=	script to update an OpenBSD CVS repository via rsync
 
-DISTNAME=	reposync-20210113
+DISTNAME=	reposync-20210606
 
 HOMEPAGE=	https://github.com/sthen/reposync
 MASTER_SITES=	https://spacehopper.org/mirrors/
