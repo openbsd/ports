@@ -1,8 +1,7 @@
-$OpenBSD: patch-src_posix_thread_c,v 1.5 2021/04/03 11:15:46 sthen Exp $
+$OpenBSD: patch-src_posix_thread_c,v 1.6 2021/06/06 06:52:46 rsadowski Exp $
 
-- Make use of clock_gettime() on OpenBSD. Until we have per-process
-  timers and can enable _POSIX_TIMERS in unistd.h.
-- Make use of _SC_NPROCESSORS_ONLN.
+Make use of clock_gettime() on OpenBSD. Until we have per-process
+timers and can enable _POSIX_TIMERS in unistd.h.
 
 Index: src/posix/thread.c
 --- src/posix/thread.c.orig
@@ -25,12 +24,3 @@ Index: src/posix/thread.c
      struct timespec ts;
  
      vlc_clock_setup ();
-@@ -712,6 +712,8 @@ unsigned vlc_GetCPUCount(void)
-         count = sysconf (_SC_NPROCESSORS_ONLN);
-     free (cpulist);
-     return count ? count : 1;
-+#elif defined(_SC_NPROCESSORS_ONLN)
-+    return sysconf(_SC_NPROCESSORS_ONLN);
- #elif defined(_SC_NPROCESSORS_CONF)
-     return sysconf(_SC_NPROCESSORS_CONF);
- #else

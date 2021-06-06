@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.249 2021/06/01 19:32:43 ratchov Exp $
+# $OpenBSD: Makefile,v 1.250 2021/06/06 06:52:46 rsadowski Exp $
 
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
 
-V=		3.0.12
+V=		3.0.14
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
-REVISION-main=	1
 CATEGORIES=	x11
 MASTER_SITES=	https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
@@ -34,13 +33,13 @@ WANTLIB-main=	EGL GL ICE Qt5Core Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras \
 		ffi fontconfig freetype fribidi gbm gcrypt gdk-3 gdk_pixbuf-2.0 \
 		gio-2.0 glapi glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0 \
 		gpg-error graphite2 gsm gthread-2.0 gtk-3 harfbuzz \
-		hogweed icudata icui18n icuio icuuc idn2 jpeg lcms2 \
-		lz4 lzma matroska mp3lame nettle nfs notify ogg opus \
-		p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
-		pcre2-16 pixman-1 placebo png postproc protobuf-lite \
-		rsvg-2 smb2 sndio soxr speex speexdsp ssl swresample \
-		swscale tag tar tasn1 theoradec theoraenc tiff unistring \
-		usbhid vorbis vorbisenc vpx webp x264 x265 xcb xcb-composite \
+		hogweed icudata icui18n icuuc idn2 jpeg lcms2 lz4 lzma \
+		matroska mp3lame nettle nfs notify ogg opus p11-kit \
+		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pcre2-16 \
+		pixman-1 placebo png postproc protobuf-lite rsvg-2 \
+		smb2 sndio soxr speex speexdsp ssl swresample swscale \
+		tag tar tasn1 theoradec theoraenc tiff unistring usbhid \
+		vorbis vorbisenc vpx webp x264 x265 xcb xcb-composite \
 		xcb-dri2 xcb-dri3 xcb-glx xcb-keysyms xcb-present xcb-randr \
 		xcb-render xcb-shm xcb-sync xcb-xfixes xcb-xv xml2 \
 		xshmfence xvidcore z zstd ${WANTLIB-common}
