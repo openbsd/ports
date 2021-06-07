@@ -1,0 +1,15 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2021/06/07 21:05:56 sthen Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -61,7 +61,8 @@ if (WITH_THREADS)
+ endif (WITH_THREADS)
+ 
+ check_include_file (dlfcn.h HAVE_DLFCN_H)
+-check_include_file (execinfo.h HAVE_EXECINFO_H)
++# needs library; could be changed to use FindBacktrace
++# check_include_file (execinfo.h HAVE_EXECINFO_H)
+ check_include_file (glob.h HAVE_GLOB_H)
+ check_include_file (inttypes.h HAVE_INTTYPES_H)
+ check_include_file (libunwind.h HAVE_LIBUNWIND_H)
