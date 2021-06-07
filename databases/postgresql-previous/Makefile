@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2021/02/23 19:39:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/06/07 15:15:25 jeremy Exp $
 
 COMMENT=	PostgreSQL RDBMS (previous version, for pg_upgrade)
 
-VERSION=	12.6
+VERSION=	12.7
 DISTNAME=	postgresql-${VERSION}
 PKGNAME=	postgresql-previous-${VERSION}
 
