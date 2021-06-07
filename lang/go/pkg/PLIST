@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.48 2021/05/16 07:40:45 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.49 2021/06/07 11:02:54 danj Exp $
 bin/go
 bin/gofmt
 go/
@@ -2679,6 +2679,7 @@ go/src/cmd/go/testdata/script/mod_tidy_old.txt
 go/src/cmd/go/testdata/script/mod_tidy_quote.txt
 go/src/cmd/go/testdata/script/mod_tidy_replace.txt
 go/src/cmd/go/testdata/script/mod_tidy_sum.txt
+go/src/cmd/go/testdata/script/mod_tidy_too_new.txt
 go/src/cmd/go/testdata/script/mod_upgrade_patch.txt
 go/src/cmd/go/testdata/script/mod_vcs_missing.txt
 go/src/cmd/go/testdata/script/mod_vendor.txt
