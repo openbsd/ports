@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.79 2021/05/18 17:14:30 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.80 2021/06/07 20:13:21 sthen Exp $
 @ask-update librenms-<1.60v0 pkg_add cannot handle this update directly. Cancel now, pkg_delete librenms, then install the new version.
 @newgroup _librenms:755
 @newuser _librenms:755:_librenms:daemon:librenms user:${INSTDIR}:/sbin/nologin
@@ -20039,4 +20039,7 @@ librenms/vendor/wpb/string-blade-compiler/tests/bootstrap.php
 librenms/webpack.mix.js
 @cwd ${LOCALBASE}
 bin/lnms
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/lnms-completion.bash
 share/doc/pkg-readmes/${PKGSTEM}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.126 2021/05/20 07:34:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.127 2021/06/07 20:13:20 sthen Exp $
 
 COMMENT=	auto-discovering network management/monitoring system
 
@@ -8,6 +8,7 @@ GH_PROJECT=	librenms
 GH_TAGNAME=	21.5.1
 DISTFILES=	librenms-${GH_TAGNAME}.tar.gz librenms-vendor-${GH_TAGNAME}.tar.xz:0
 EPOCH=		0
+REVISION=	0
 
 CATEGORIES=	net www
 
@@ -69,7 +70,8 @@ post-extract:
 	    ${WRKSRC}/librenms.nonroot.cron
 
 do-install:
-	${INSTALL_DATA_DIR} ${INSTDIR}
+	${INSTALL_DATA_DIR} ${INSTDIR} \
+	    ${WRKINST}/${LOCALBASE}/share/bash-completion/completions/
 	cd ${WRKSRC}; pax -rw . ${INSTDIR}
 	find ${INSTDIR} -name '*.orig' -delete
 	mkdir -p ${INSTDIR}/{rrd,logs}
@@ -78,6 +80,8 @@ do-install:
 	rm -rf ${INSTDIR}/tests
 	find ${INSTDIR} -name '.git*' -exec rm -rf {} +
 	ln -s /var/www/librenms/lnms ${WRKINST}/${LOCALBASE}/bin/
+	${INSTALL_DATA} ${WRKSRC}/misc/lnms-completion.bash \
+	    ${WRKINST}/${LOCALBASE}/share/bash-completion/completions/
 
 # maintainer convenience target
 dist: /usr/ports/distfiles/librenms-${GH_TAGNAME}.tar.gz

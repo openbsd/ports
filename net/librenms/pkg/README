@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.14 2020/06/06 19:02:25 sthen Exp $
+$OpenBSD: README,v 1.15 2021/06/07 20:13:21 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -34,10 +34,9 @@ creating the database.
 
 On the database server, create a database and user account for LibreNMS:
 
-CREATE DATABASE librenms;
-GRANT ALL PRIVILEGES ON librenms.*
-  TO 'librenms'@'<ip>'
-  IDENTIFIED BY '<password>';
+CREATE DATABASE librenms CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE USER 'librenms'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON librenms.* TO 'librenms'@'localhost';
 FLUSH PRIVILEGES;
 exit
 
@@ -138,24 +137,24 @@ and generate an APP_KEY:
 The next steps can either be done from the CLI, or by using the web-based
 installer which carries out additional checks. Choose *one* of the following:
 
-Option 1: CLI
--------------
-cd ${INSTDIR}
-$EDITOR config.php   # set database username/password etc.
-doas -u _librenms ./build-base.php
-doas -u _librenms ./adduser.php <name> <pass> 10	# 10=admin priv
-doas -u _librenms ./addhost.php localhost public v2c
-doas -u _librenms ./discovery.php -h all
-doas -u _librenms ./poller.php -h all
-
-Option 2: Web-based
+Option 1: Web-based
 -------------------
-In order to use the web-based installer, you must first remove the default
-configuration file:
+In order to use the web-based installer (normally preferable), you must
+first remove the default configuration file:
 
 rm ${INSTDIR}/config.php
 
 Then open /install.php in a web browser (e.g. http://localhost/install.php).
+
+Option 2: CLI
+-------------
+cd ${INSTDIR}
+$EDITOR config.php   # set database username/password etc.
+doas -u _librenms php ./includes/sql-schema/update.php
+doas -u _librenms ./adduser.php <name> <pass> 10	# 10=admin priv
+doas -u _librenms ./addhost.php localhost public v2c
+doas -u _librenms ./discovery.php -h all
+doas -u _librenms ./poller.php -h all
 
 Periodic tasks
 ==============
