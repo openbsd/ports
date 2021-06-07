@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2021/05/14 08:30:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.130 2021/06/07 07:25:58 cwen Exp $
 
 COMMENT=		GNOME encryption interface
 
@@ -25,6 +25,11 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mclang}
 CFLAGS +=		-std=gnu99
+.endif
+# disable meson's default of using "-Wl,--as-needed" on ld.bfd arches;
+# build failures due to undefined references are often seen.
+.if !${PROPERTIES:Mlld}
+CONFIGURE_ARGS +=	-Db_asneeded=false
 .endif
 
 LIB_DEPENDS=		databases/openldap \
