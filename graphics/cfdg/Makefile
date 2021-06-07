@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:46:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2021/06/07 16:30:15 tb Exp $
 
 COMMENT =	Context Free Design Grammar
 
-VERSION =	3.0.11
+VERSION =	3.3
 DISTNAME =	ContextFreeSource${VERSION}
 PKGNAME =	cfdg-${VERSION}
 
@@ -16,11 +16,12 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =	https://www.contextfreeart.org/download/
 EXTRACT_SUFX =	.tgz
 
-WANTLIB += ${COMPILER_LIBCXX} c m png z
+WANTLIB += ${COMPILER_LIBCXX} c icudata icui18n icuuc m png
 
 BUILD_DEPENDS =	devel/bison
 
-LIB_DEPENDS =	graphics/png
+LIB_DEPENDS =	graphics/png \
+		textproc/icu4c
 
 COMPILER =	base-clang ports-gcc
 

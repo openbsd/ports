@@ -1,42 +1,44 @@
-$OpenBSD: patch-Makefile,v 1.5 2018/04/27 14:59:43 bcallah Exp $
+$OpenBSD: patch-Makefile,v 1.6 2021/06/07 16:30:16 tb Exp $
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -18,13 +18,13 @@ SRC_DIRS = $(COMMON_DIR) $(UNIX_DIR) $(DERIVED_DIR) $(
- vpath %.cpp $(SRC_DIRS)
+@@ -19,7 +19,7 @@ vpath %.cpp $(SRC_DIRS)
+ vpath %.cfdg input
  
- INC_DIRS = $(COMMON_DIR) $(UNIX_DIR) $(DERIVED_DIR) $(AGG_DIR)/include $(COMMON_DIR)/agg-extras $(FFMPEG_DIR)/include
+ INC_DIRS = $(COMMON_DIR) $(UNIX_DIR) $(DERIVED_DIR) $(COMMON_DIR)/agg-extras
 -INC_DIRS += /usr/local/include
 +INC_DIRS += $(LOCALBASE)/include
  
  #
+ # Installation directories
+@@ -34,7 +34,7 @@ MAN_DIR = $(DESTDIR)$(prefix)/share/man
  # Library directories for FFmpeg and libpng
  #
  
--LIB_DIRS = $(FFMPEG_DIR)/lib /usr/local/lib
-+LIB_DIRS = $(FFMPEG_DIR)/lib $(LOCALBASE)/lib
+-LIB_DIRS = /usr/local/lib
++LIB_DIRS = $(LOCALBASE)/lib
  
  #
  # Sources and Objects
-@@ -52,7 +52,11 @@ LIBS = png z m
+@@ -75,7 +75,11 @@ LIBS = png m
  ifeq ($(shell uname -s), Darwin)
-   LIBS += c++
+   LIBS += c++ icucore
  else
--  LIBS += stdc++
+-  LIBS += stdc++ atomic icui18n icuuc icudata
 +  ifeq ($(shell uname -s), OpenBSD)
-+    LIBS += $(LIBCXX)
++    LIBS += $(LIBCXX) icui18n icuuc icudata
 +  else
-+    LIBS += stdc++
++    LIBS += stdc++ atomic icui18n icuuc icudata
 +  endif
  endif
  
  #
-@@ -143,7 +147,7 @@ test: cfdg
+@@ -196,7 +200,7 @@ check: cfdg
  #
  
- CPPFLAGS += $(patsubst %,-I%,$(INC_DIRS))
--CPPFLAGS += -O3 -Wall -Wextra -march=native -Wno-parentheses -std=c++14
-+CPPFLAGS += -Wall -Wextra -Wno-parentheses -std=c++14
- #CPPFLAGS += -g
+ CXXFLAGS += $(patsubst %,-I%,$(INC_DIRS))
+-CXXFLAGS += -O2 -Wall -Wextra -march=native -Wno-parentheses -std=c++14
++CXXFLAGS += -Wall -Wextra -Wno-parentheses -std=c++14
+ CXXFLAGS += -g -D_GLIBCXX_USE_C99_MATH=1
+ CPPFLAGS += -DNDEBUG
  
- # Add this for clang

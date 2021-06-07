@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/12/02 18:20:27 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/06/07 16:30:16 tb Exp $
 @bin bin/cfdg
 share/examples/cfdg/
 share/examples/cfdg/README
@@ -8,29 +8,50 @@ share/examples/cfdg/input/alphabet.cfdg
 share/examples/cfdg/input/chanukah.cfdg
 share/examples/cfdg/input/cilia.cfdg
 share/examples/cfdg/input/ciliasun.cfdg
+share/examples/cfdg/input/ciliasun_v2.cfdg
 share/examples/cfdg/input/demo1.cfdg
+share/examples/cfdg/input/demo1_v2.cfdg
 share/examples/cfdg/input/demo2.cfdg
+share/examples/cfdg/input/demo2_v2.cfdg
 share/examples/cfdg/input/funky_flower.cfdg
+share/examples/cfdg/input/funky_flower_v2.cfdg
 share/examples/cfdg/input/i_curves.cfdg
+share/examples/cfdg/input/i_curves_v2.cfdg
 share/examples/cfdg/input/i_pix.cfdg
+share/examples/cfdg/input/i_pix_v2.cfdg
 share/examples/cfdg/input/i_polygons.cfdg
+share/examples/cfdg/input/i_polygons_v2.cfdg
 share/examples/cfdg/input/lesson.cfdg
 share/examples/cfdg/input/lesson2.cfdg
+share/examples/cfdg/input/lesson2_v2.cfdg
+share/examples/cfdg/input/lesson_v2.cfdg
 share/examples/cfdg/input/mtree.cfdg
+share/examples/cfdg/input/mtree_v2.cfdg
 share/examples/cfdg/input/octopi.cfdg
+share/examples/cfdg/input/octopi_v2.cfdg
 share/examples/cfdg/input/point.cfdg
 share/examples/cfdg/input/quadcity.cfdg
+share/examples/cfdg/input/quadcity_v2.cfdg
 share/examples/cfdg/input/rendering-tests.cfdg
 share/examples/cfdg/input/rose.cfdg
+share/examples/cfdg/input/rose_v2.cfdg
 share/examples/cfdg/input/sierpinski.cfdg
+share/examples/cfdg/input/sierpinski_v2.cfdg
 share/examples/cfdg/input/snowflake.cfdg
+share/examples/cfdg/input/snowflake_v2.cfdg
 share/examples/cfdg/input/tangle.cfdg
+share/examples/cfdg/input/tangle_v2.cfdg
 share/examples/cfdg/input/thingy.cfdg
 share/examples/cfdg/input/thorns.cfdg
 share/examples/cfdg/input/tree_number_5.cfdg
 share/examples/cfdg/input/triples.cfdg
+share/examples/cfdg/input/triples_v2.cfdg
 share/examples/cfdg/input/underground.cfdg
+share/examples/cfdg/input/underground_v2.cfdg
 share/examples/cfdg/input/weighting_demo.cfdg
+share/examples/cfdg/input/weighting_demo_v2.cfdg
 share/examples/cfdg/input/welcome.cfdg
+share/examples/cfdg/input/welcome_v2.cfdg
 share/examples/cfdg/input/xmas.cfdg
 share/examples/cfdg/input/ziggy.cfdg
+share/examples/cfdg/input/ziggy_v2.cfdg
