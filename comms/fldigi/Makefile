@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2020/11/09 11:33:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2021/06/07 20:52:52 sthen Exp $
 
 COMMENT=	soundcard-based software modem for Amateur Radio use
 
@@ -43,6 +43,9 @@ CONFIGURE_ARGS=	--disable-oss \
 # const char* szBeginner = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\
 # ./dialogs/guide.cxx:1:26: error: expected expression
 CONFIGURE_ARGS +=	--without-asciidoc
+
+# needs -lexecinfo
+CONFIGURE_ENV=	ac_cv_header_execinfo_h=no
 
 MAKE_FLAGS=	ASCIIDOC_ICONS_DIR=${SYSCONFDIR}/asciidoc/images/icons
 
