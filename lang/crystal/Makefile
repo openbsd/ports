@@ -1,35 +1,43 @@
-# $OpenBSD: Makefile,v 1.10 2021/05/13 23:52:00 jca Exp $
-
-BROKEN =	needs an update to support llvm-11
+# $OpenBSD: Makefile,v 1.11 2021/06/07 16:40:58 jcs Exp $
 
 # Hopefully ${CLANG_ARCHS} at some point.
 ONLY_FOR_ARCHS=	amd64
 
-V =		0.30.1
-V_SHARDS =	0.9.0
+V =		1.0.0
+V_SHARDS =	0.14.1
+V_MOLINILLO =	0.2.0
 COMMENT =	statically typed object oriented language
 DISTNAME =	crystal-${V}
 CATEGORIES =	lang
 
 HOMEPAGE =	https://crystal-lang.org/
-MAINTAINER =	Wesley Moxam <wes@wmoxam.com>
+MAINTAINER =	joshua stein <jcs@jcs.org>
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c event_core event_extra gc iconv
-WANTLIB += m pcre yaml
+WANTLIB += m pcre crypto ssl yaml-0 z
 
-# Requires a bootstrap compiler object (crystal.o) which can be built by:
-# .build/crystal build --cross-compile \
-# 	--target amd64-unknown-openbsd`uname -r` src/compiler/crystal.cr \
-# 	-D i_know_what_im_doing
+#
+# crystal-X-OpenBSDX.X.tar.gz is an archive of a bootstrap compiler object
+# (crystal.o) which can be cross-compiled on another platform by installing the
+# current version of Crystal there, then checking out the source for that
+# version and running:
+#
+# 	make crystal FLAGS="--cross-compile --target amd64-unknown-openbsd6.9"
+#
+# The result will be built at .build/crystal.o
+#
+
 MASTER_SITES =	https://github.com/crystal-lang/crystal/archive/
-MASTER_SITES0 =	https://wmoxam.com/public/
+MASTER_SITES0 =	https://jcs.org/distfiles/
 MASTER_SITES1 =	https://github.com/crystal-lang/shards/archive/
+MASTER_SITES2 =	https://github.com/crystal-lang/crystal-molinillo/archive/
 DISTFILES =	crystal-${V}{${V}}.tar.gz \
-		crystal-${V}-OpenBSD6.5.tar.gz:0 \
-		shards-${V}{v${V_SHARDS}}.tar.gz:1
+		crystal-${V}-OpenBSD6.9.tar.gz:0 \
+		shards-${V}{v${V_SHARDS}}.tar.gz:1 \
+		crystal-molinillo-${V}{v${V_MOLINILLO}}.tar.gz:2
 
 # Build requires llvm-config from ports, not from base
 COMPILER =	ports-clang
@@ -49,6 +57,10 @@ ALL_TARGET =	crystal release=1
 
 NO_TEST =	Yes
 
+post-extract:
+	mv ${WRKDIR}/shards-${V_SHARDS} ${WRKSRC}/
+	mv ${WRKDIR}/crystal-molinillo-${V_MOLINILLO} ${WRKSRC}/
+
 do-build:
 	mkdir -p ${WRKSRC}/.build
 	# Link the compiler from the pre-built bootstrap object
@@ -57,27 +69,21 @@ do-build:
 	cd ${WRKSRC} && ${CXX} -rdynamic -o ${WRKBUILD}/.build/crystal \
 		${WRKSRC}/../crystal.o \
 		${WRKSRC}/src/llvm/ext/llvm_ext.o \
-		${WRKSRC}/src/ext/sigfault.o \
+		${WRKSRC}/src/ext/libcrystal.a \
 		-L${LOCALBASE}/lib \
 		`(${LLVM_CONFIG} --libs --system-libs --ldflags 2> /dev/null)` \
 		-lz -lpcre -lgc -lpthread -levent_core -levent_extra -lssl \
-		-lcrypto -liconv
-	# Use the compiler to re-compile the compiler
-	touch ${WRKSRC}/src/compiler/crystal.cr
-	cd ${WRKSRC}; \
-		ulimit -s 5120 -d 4096000 && \
-		CRYSTAL_CONFIG_PATH="lib:${TRUEPREFIX}/lib/crystal" \
-		CXX=${CXX} LLVM_CONFIG=${LLVM_CONFIG} \
-		${MAKE_PROGRAM} ${ALL_TARGET}
-	cd ${WRKSRC}/../shards-${V_SHARDS} && \
-		${MAKE_PROGRAM} CRYSTAL=${WRKSRC}/.build/crystal \
-		CRYSTAL_PATH=${WRKSRC}/src CRFLAGS=--release
+		-lcrypto -liconv -lc++abi
+	cd ${WRKSRC}/shards-${V_SHARDS} && \
+		env CRYSTAL_PATH=lib:${WRKSRC}/src \
+		CRYSTAL=${WRKSRC}/.build/crystal \
+		${MAKE_PROGRAM}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/crystal
 	${INSTALL_PROGRAM} ${WRKSRC}/.build/crystal ${PREFIX}/bin
 	cd ${WRKSRC}/src && pax -rw . ${PREFIX}/lib/crystal/
-	${INSTALL_PROGRAM} ${WRKSRC}/../shards-${V_SHARDS}/bin/shards \
+	${INSTALL_PROGRAM} ${WRKSRC}/shards-${V_SHARDS}/bin/shards \
 		${PREFIX}/bin
 
 .include <bsd.port.mk>
