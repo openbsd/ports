@@ -1,0 +1,14 @@
+$OpenBSD: patch-aio_compat_h,v 1.1 2021/06/07 01:00:45 bcallah Exp $
+
+Index: aio_compat.h
+--- aio_compat.h.orig
++++ aio_compat.h
+@@ -128,7 +128,7 @@ int	aio_write(struct aiocb *);
+  *	"acb_list" is an array of "nacb_listent" I/O control blocks.
+  *	when all I/Os are complete, the optional signal "sig" is sent.
+  */
+-int	lio_listio(int, struct aiocb * __restrict const[__restrict_arr], int,
++int	lio_listio(int, struct aiocb * __restrict const[], int,
+ 	    struct sigevent * __restrict);
+ 
+ /*
