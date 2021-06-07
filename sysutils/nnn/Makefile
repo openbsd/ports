@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2021/04/26 10:46:35 bket Exp $
+# $OpenBSD: Makefile,v 1.15 2021/06/07 18:29:23 sthen Exp $
 
 COMMENT =		the missing terminal file browser for X
 
-V =			4.0
+V =			4.1.1
 DISTNAME =		nnn-v${V}
 PKGNAME =		nnn-${V}
 
@@ -15,7 +15,7 @@ MAINTAINER =		Martin Ziemer <horrad@horrad.de>
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		c curses readline
+WANTLIB =		c curses pthread readline
 
 MASTER_SITES =		https://github.com/jarun/nnn/releases/download/v${V}/
 
