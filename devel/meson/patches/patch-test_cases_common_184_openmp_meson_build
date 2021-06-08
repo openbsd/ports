@@ -1,11 +1,11 @@
-$OpenBSD: patch-test_cases_common_184_openmp_meson_build,v 1.1 2021/05/03 13:47:42 ajacoutot Exp $
+$OpenBSD: patch-test_cases_common_184_openmp_meson_build,v 1.2 2021/06/08 09:03:49 ajacoutot Exp $
 
 XXX https://github.com/jasperla/openbsd-wip/tree/master/devel/openmp
 
 Index: test cases/common/184 openmp/meson.build
---- test cases/common/184 openmp/meson.build.orig	Mon May  3 15:33:02 2021
-+++ test cases/common/184 openmp/meson.build	Mon May  3 15:33:36 2021
-@@ -19,6 +19,9 @@
+--- "test cases/common/184 openmp/meson.build.orig"
++++ "test cases/common/184 openmp/meson.build"
+@@ -19,6 +19,9 @@ endif
  if host_machine.system() == 'darwin'
    error('MESON_SKIP_TEST macOS does not support OpenMP.')
  endif
