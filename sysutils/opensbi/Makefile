@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.1.1.1 2021/05/15 10:31:44 jsg Exp $
+#	$OpenBSD: Makefile,v 1.2 2021/06/08 07:05:33 jsg Exp $
 
 PKG_ARCH=	*
 
@@ -7,6 +7,7 @@ COMMENT=	RISC-V Supervisor Binary Interface
 GH_ACCOUNT=	riscv
 GH_PROJECT=	opensbi
 GH_TAGNAME=	v0.9
+REVISION=	0
 
 CATEGORIES=	sysutils
 
@@ -38,7 +39,8 @@ do-build:
 do-install:
 .for P in ${PLATFORMS}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/opensbi/${P}
-	${INSTALL_DATA} ${WRKBUILD}/build/platform/${P}/firmware/fw_jump.bin \
+	${INSTALL_DATA} \
+	    ${WRKBUILD}/build/platform/${P}/firmware/fw_{jump,dynamic}.bin \
 	    ${PREFIX}/share/opensbi/${P}
 .endfor
 
