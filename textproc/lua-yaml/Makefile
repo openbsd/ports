@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/06/08 13:54:57 sthen Exp $
 
 COMMENT =	Lua library for parsing and emitting YAML
 V =		6.1
@@ -22,7 +22,7 @@ MODULES =		lang/lua
 LIB_DEPENDS =		devel/libyaml
 
 FLAVORS =		lua52 lua53
-FlAVOR ?=
+FLAVOR ?=
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${PREFIX}/include" \
