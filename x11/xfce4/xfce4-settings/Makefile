@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2021/05/30 14:46:59 landry Exp $
+# $OpenBSD: Makefile,v 1.50 2021/06/08 18:02:35 landry Exp $
 
 COMMENT=	Xfce4 settings helpers
 
 XFCE_PROJECT=	xfce4-settings
-XFCE_VERSION=	4.16.1
+XFCE_VERSION=	4.16.2
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -23,7 +23,7 @@ LIB_DEPENDS=	x11/xfce4/libxfce4ui \
 
 WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB += atk-1.0 c cairo expat
+WANTLIB += atk-1.0 c cairo expat jpeg
 WANTLIB += ffi fontconfig freetype gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
@@ -37,5 +37,6 @@ WANTLIB += ${COMPILER_LIBCXX}
 
 FAKE_FLAGS =	autostartdir=${PREFIX}/share/examples/xfce4-settings \
 		menudir=${PREFIX}/share/examples/xfce4-settings \
+		defaultsdir=${PREFIX}/share/examples/xfce4-settings \
 		settingsdir=${PREFIX}/share/examples/xfce4-settings
 .include <bsd.port.mk>

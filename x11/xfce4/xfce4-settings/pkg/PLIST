@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2021/05/30 14:46:59 landry Exp $
+@comment $OpenBSD: PLIST,v 1.20 2021/06/08 18:02:35 landry Exp $
 @conflict xfce-mcs-manager-*
 @conflict xfce-mcs-plugins-*
 @conflict exo-<4.15
@@ -29,6 +29,8 @@ share/applications/xfce4-settings-editor.desktop
 share/applications/xfce4-terminal-emulator.desktop
 share/applications/xfce4-web-browser.desktop
 share/examples/xfce4-settings/
+share/examples/xfce4-settings/helpers.rc
+@sample ${SYSCONFDIR}/xdg/xfce4/helpers.rc
 share/examples/xfce4-settings/xfce-settings-manager.menu
 @sample ${SYSCONFDIR}/xdg/menus/xfce-settings-manager.menu
 share/examples/xfce4-settings/xfsettingsd.desktop
