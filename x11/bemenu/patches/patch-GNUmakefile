@@ -1,10 +1,9 @@
-$OpenBSD: patch-GNUmakefile,v 1.3 2021/05/22 19:13:18 cwen Exp $
+$OpenBSD: patch-GNUmakefile,v 1.4 2021/06/09 09:22:34 sthen Exp $
 
 Don't build wayland renderer.
 Correct shared library numbers.
 Don't create shared library symlinks.
 No -ldl.
--D_XOPEN_SOURCE_EXTENDED needed for ncursesw functions.
 We have -lncursesw in base.
 Don't relink the shared library during install time.
 Don't install library symlinks but do install the shared library.
@@ -35,9 +34,9 @@ Index: GNUmakefile
 +	$(LINK.c) -shared -fPIC $(filter %.c %.a,$^) $(LDLIBS) -o $(full) -Wl,-soname,$(full)
  
  $(pkgconfigs): %: VERSION %.in
- 	sed "s/@VERSION@/$(VERSION)/;s,@PREFIX@,$(PREFIX),;s,@LIBDIR@,$(libdir)," $(addsuffix .in, $@) > $@
-@@ -58,11 +56,10 @@ $(bins): %: | $(libs)
- 
+ 	sed "s/@VERSION@/$(VERSION)/;s,@PREFIX@,$(PREFIX),;s,@LIBDIR@,$(libdir),;s,@INCLUDEDIR@,$(includedir)," $(addsuffix .in, $@) > $@
+@@ -59,11 +57,9 @@ $(bins): %: | $(libs)
+ cdl.a: private override LDFLAGS += -fPIC
  cdl.a: lib/3rdparty/cdl.c lib/3rdparty/cdl.h
  
 -libbemenu.so: private override LDLIBS += -ldl
@@ -45,12 +44,11 @@ Index: GNUmakefile
  
 -bemenu-renderer-curses.so: private override LDLIBS += $(shell pkg-config --libs ncursesw) -lm
 -bemenu-renderer-curses.so: private override CPPFLAGS += $(shell pkg-config --cflags-only-I ncursesw)
-+bemenu-renderer-curses.so: private override CPPFLAGS += -D_XOPEN_SOURCE_EXTENDED
 +bemenu-renderer-curses.so: private override LDLIBS += -lncursesw -lm
  bemenu-renderer-curses.so: lib/renderers/curses/curses.c
  
  bemenu-renderer-x11.so: private override LDLIBS += $(shell pkg-config --libs x11 xinerama cairo pango pangocairo)
-@@ -106,9 +103,9 @@ install-include: lib/bemenu.h
+@@ -110,9 +106,9 @@ install-include: lib/bemenu.h
  	mkdir -p "$(DESTDIR)$(PREFIX)$(includedir)"
  	cp $^ "$(DESTDIR)$(PREFIX)$(includedir)"
  
@@ -62,7 +60,7 @@ Index: GNUmakefile
  
  install-lib-symlinks: $(libs) | install-libs
  	cp -RP $^ $(addsuffix .$(firstword $(subst ., ,$(VERSION))), $^) "$(DESTDIR)$(PREFIX)$(libdir)"
-@@ -136,7 +133,7 @@ install-x11:
+@@ -140,7 +136,7 @@ install-x11:
  	mkdir -p "$(DESTDIR)$(PREFIX)$(libdir)/bemenu"
  	-cp bemenu-renderer-x11.so "$(DESTDIR)$(PREFIX)$(libdir)/bemenu"
  

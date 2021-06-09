@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2021/05/22 19:13:18 cwen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/06/09 09:22:34 sthen Exp $
 
 COMMENT =	menu library inspired by dmenu
 CATEGORIES =	x11
 
-SHARED_LIBS +=	bemenu                    1.0 # 0.6.0
+SHARED_LIBS +=	bemenu                    1.0 # 0.6.2
 
 GH_ACCOUNT =	Cloudef
 GH_PROJECT =	bemenu
-GH_TAGNAME =	0.6.0
+GH_TAGNAME =	0.6.2
 
 MAINTAINER =	Dimitri Karamazov <deserter666@danwin1210.me>
 
