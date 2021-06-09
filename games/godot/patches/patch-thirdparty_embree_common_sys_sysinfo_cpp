@@ -1,0 +1,45 @@
+$OpenBSD: patch-thirdparty_embree_common_sys_sysinfo_cpp,v 1.1 2021/06/09 15:56:32 cwen Exp $
+
+1. we don't seem to have pthread_getaffinity_np in pthread_np.h; use sysctl
+   like macos and android then.
+2. just fake getExecutableFileName and get{Virtual,Resident}MemoryBytes
+
+Index: thirdparty/embree/common/sys/sysinfo.cpp
+--- thirdparty/embree/common/sys/sysinfo.cpp.orig
++++ thirdparty/embree/common/sys/sysinfo.cpp
+@@ -595,6 +595,26 @@ namespace embree
+ 
+ #endif
+ 
++#if defined(__OpenBSD__)
++namespace embree
++{
++  std::string getExecutableFileName()
++  {
++    return "";
++  }
++
++  size_t getVirtualMemoryBytes()
++  {
++    return 0;
++  };
++
++  size_t getResidentMemoryBytes()
++  {
++    return 0;
++  };
++}
++#endif
++
+ ////////////////////////////////////////////////////////////////////////////////
+ /// Mac OS X Platform
+ ////////////////////////////////////////////////////////////////////////////////
+@@ -643,7 +663,7 @@ namespace embree
+     static int nThreads = -1;
+     if (nThreads != -1) return nThreads;
+ 
+-#if defined(__MACOSX__) || defined(__ANDROID__)
++#if defined(__MACOSX__) || defined(__ANDROID__) || defined(__OpenBSD__)
+     nThreads = sysconf(_SC_NPROCESSORS_ONLN); // does not work in Linux LXC container
+     assert(nThreads);
+ #else
