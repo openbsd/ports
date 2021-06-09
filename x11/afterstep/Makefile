@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.54 2019/07/12 21:02:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2021/06/09 19:50:10 sthen Exp $
 
 COMMENT=	window manager, continuation of the Bowman NeXTSTEP clone
 
 V=		2.2.12
-REVISION=	4
+REVISION=	5
 DISTNAME=	AfterStep-${V}
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=     x11
@@ -28,8 +28,7 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/rxvt-unicode \
 		x11/xloadimage
 
-LIB_DEPENDS=	devel/libexecinfo \
-		x11/dbus \
+LIB_DEPENDS=	x11/dbus \
 		x11/gnome/librsvg \
 		x11/gtk+2
 

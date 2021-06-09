@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2020/02/08 15:31:55 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2021/06/09 19:50:08 sthen Exp $
 
 COMMENT =	interpreter for the programming language APL
 DISTNAME =	apl-1.8
+REVISION =	0
 CATEGORIES =	lang
 
 SHARED_LIBS +=	_sql                      0.0 # 0.0
@@ -28,8 +29,7 @@ COMPILER =	base-clang ports-gcc
 
 MASTER_SITES =	${MASTER_SITE_GNU:=apl/}
 
-LIB_DEPENDS =	devel/libexecinfo \
-		devel/pcre2 \
+LIB_DEPENDS =	devel/pcre2 \
 		math/fftw3 \
 		x11/gtk+3
 

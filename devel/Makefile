@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2105 2021/06/02 20:04:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.2106 2021/06/09 19:50:07 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -262,7 +262,6 @@
      SUBDIR += libev
      SUBDIR += libevent2
      SUBDIR += libeventextra
-     SUBDIR += libexecinfo
      SUBDIR += libfastjson
      SUBDIR += libffi
      SUBDIR += libfirm

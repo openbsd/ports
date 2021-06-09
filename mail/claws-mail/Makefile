@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.130 2020/10/27 09:25:37 solene Exp $
+# $OpenBSD: Makefile,v 1.131 2021/06/09 19:50:08 sthen Exp $
 
 COMMENT-main=		mail and news client
 COMMENT-bogofilter=	bogofilter plugin
@@ -8,6 +8,7 @@ COMMENT-gdata=		gdata plugin
 
 V=			3.17.8
 DISTNAME=		claws-mail-${V}
+REVISION=		0
 PKGNAME-main=		${DISTNAME}
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
@@ -64,8 +65,7 @@ WANTLIB-pdfviewer =  ${WANTLIB}
 WANTLIB-pdfviewer += jpeg lcms2 lzma openjp2 png poppler poppler-glib tiff zstd
 WANTLIB-pdfviewer += ${COMPILER_LIBCXX}
 
-LIB_DEPENDS=		devel/libexecinfo \
-			mail/libetpan \
+LIB_DEPENDS=		mail/libetpan \
 			security/cyrus-sasl2 \
 			x11/gtk+2
 

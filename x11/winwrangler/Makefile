@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2020/02/16 08:54:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2021/06/09 19:50:10 sthen Exp $
 
 COMMENT =	desktop daemon to perform advanced window manipulations
 
 V =		0.2.4
 DISTNAME =	winwrangler-$V
-REVISION =	14
+REVISION =	15
 
 CATEGORIES =	x11
 
@@ -33,7 +33,6 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -liconv"
 
-BUILD_DEPENDS =	devel/libexecinfo
 LIB_DEPENDS =	x11/gtkhotkey \
 		devel/gettext,-runtime \
 		devel/libwnck

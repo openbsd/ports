@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/06 15:00:03 jca Exp $
+# $OpenBSD: Makefile,v 1.10 2021/06/09 19:50:08 sthen Exp $
 
 # see https://github.com/ponylang/ponyc/issues/3207
 #     https://github.com/ponylang/ponyc/pull/3034
@@ -12,6 +12,7 @@ CATEGORIES =	lang
 GH_ACCOUNT =	ponylang
 GH_PROJECT =	ponyc
 GH_TAGNAME =	0.28.1
+REVISION =	0
 
 HOMEPAGE =	https://www.ponylang.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -27,8 +28,6 @@ COMPILER =	base-clang ports-clang
 
 BUILD_DEPENDS =	${RUN_DEPENDS} \
 		devel/pcre2
-
-LIB_DEPENDS =	devel/libexecinfo
 
 RUN_DEPENDS =	devel/llvm>=7.0,<7.1
 

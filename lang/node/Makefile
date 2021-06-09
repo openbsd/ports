@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2021/02/23 19:39:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.89 2021/06/09 19:50:08 sthen Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -16,7 +16,7 @@ PLEDGE_VER =		1.1.2
 DISTFILES =		node-pledge-{}${PLEDGE_VER}.tar.gz:0 \
 			${DISTNAME}-headers.tar.gz \
 			${DISTNAME}.tar.gz
-REVISION =		1
+REVISION =		2
 
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
@@ -37,8 +37,6 @@ MODULES =		lang/python
 WANTLIB += c execinfo kvm m pthread util ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc
-
-LIB_DEPENDS =		devel/libexecinfo
 
 USE_GMAKE =		Yes
 

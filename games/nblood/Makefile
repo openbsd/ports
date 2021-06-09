@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/01/16 03:50:32 jsg Exp $
+# $OpenBSD: Makefile,v 1.8 2021/06/09 19:50:07 sthen Exp $
 
 COMMENT =	reverse-engineered ports of Build games
 
@@ -8,6 +8,7 @@ GH_ACCOUNT =	nukeykt
 GH_PROJECT =	NBlood
 GH_COMMIT =	6ae5ab57d788328dd61a12dab9c9600c982adec1
 CATEGORIES =	games x11
+REVISION =	0
 
 VC_BRANCH =	master
 # git rev-list --count hash
@@ -32,7 +33,6 @@ LIB_DEPENDS =	archivers/lz4 \
 		audio/libvorbis \
 		audio/flac \
 		devel/sdl2 \
-		devel/libexecinfo \
 		multimedia/libvpx
 
 # dlopen()'d; shows as Extra in check-lib-depends but it is used

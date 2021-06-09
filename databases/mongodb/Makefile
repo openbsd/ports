@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2021/05/23 07:22:37 tb Exp $
+# $OpenBSD: Makefile,v 1.43 2021/06/09 19:50:06 sthen Exp $
 
 PORTROACH =	limitw:1,even
 USE_WXNEEDED =	Yes
@@ -12,7 +12,7 @@ COMMENT =	scalable, high-performance document-oriented database
 DISTNAME =	mongodb-src-r3.2.22
 PKGNAME =	${DISTNAME:S/src-r//}
 CATEGORIES =	databases
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE =	https://www.mongodb.com/
 
@@ -56,8 +56,7 @@ MODSCONS_FLAGS += --prefix="${PREFIX}" \
 		  -j${MAKE_JOBS}
 
 ALL_TARGET =	core tools
-LIB_DEPENDS =	devel/libexecinfo \
-		devel/boost \
+LIB_DEPENDS =	devel/boost \
 		devel/pcre \
 		devel/yaml-cpp
 TEST_DEPENDS =	textproc/py-yaml \

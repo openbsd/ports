@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.62 2021/03/23 11:23:52 jsg Exp $
+# $OpenBSD: Makefile,v 1.63 2021/06/09 19:50:06 sthen Exp $
 
 COMMENT =		C/C++ static checker
 
 DISTNAME =		cppcheck-2.4
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -17,8 +18,7 @@ WANTLIB =		c execinfo m pcre ${COMPILER_LIBCXX}
 
 BUILD_DEPENDS =		textproc/docbook-xsl
 
-LIB_DEPENDS =		devel/pcre \
-			devel/libexecinfo
+LIB_DEPENDS =		devel/pcre
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cppcheck/}
 

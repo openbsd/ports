@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2021/02/26 18:20:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2021/06/09 19:50:07 sthen Exp $
 
 # XXX fix build with icu >=5.9.1 (remove at next update?)
 CXXFLAGS +=		-DU_USING_ICU_NAMESPACE=1
@@ -7,7 +7,7 @@ COMMENT =		historical real-time strategy game
 
 DISTNAME =		0ad-${V}-alpha-unix-build
 PKGNAME =		0ad-${V}
-REVISION =		0
+REVISION =		1
 
 USE_WXNEEDED =		Yes
 
@@ -25,7 +25,6 @@ LIB_DEPENDS =		audio/libvorbis \
 			audio/openal \
 			converters/libiconv \
 			devel/boost \
-			devel/libexecinfo \
 			devel/nspr \
 			devel/sdl2 \
 			graphics/png \

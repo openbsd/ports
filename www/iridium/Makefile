@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2021/06/05 09:22:31 semarie Exp $
+# $OpenBSD: Makefile,v 1.112 2021/06/09 19:50:09 sthen Exp $
 
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
 
@@ -15,11 +15,11 @@ DPB_PROPERTIES=		parallel parallel2
 COMMENT=		Iridium browser
 
 V=			2021.03.88
+REVISION=		2
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
-REVISION=		1
 
 CATEGORIES=		www
 
@@ -98,7 +98,6 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		x11/py-xcbgen \
 		${MODGCC4_CPPDEP}
 LIB_DEPENDS=	devel/harfbuzz \
-		devel/libexecinfo \
 		security/nss \
 		textproc/libxslt \
 		x11/gtk+3 \

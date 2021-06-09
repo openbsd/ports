@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.66 2019/07/12 20:48:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2021/06/09 19:50:09 sthen Exp $
 
 COMMENT=		Gtk-based GUI client for the Gnutella Network
 
 DISTNAME=		gtk-gnutella-0.97.1
 EPOCH=			0
-CATEGORIES=     	net
-REVISION=		5
+CATEGORIES=		net
+REVISION=		6
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # this litle shit has its own mkdep that stashes /usr/local dependencies
@@ -25,8 +25,7 @@ WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread z
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtk-gnutella/}
 EXTRACT_SUFX=	.tar.bz2
 
-BUILD_DEPENDS=	devel/gettext,-tools \
-		devel/libexecinfo
+BUILD_DEPENDS=	devel/gettext,-tools
 LIB_DEPENDS=	x11/gtk+2
 RUN_DEPENDS=	devel/desktop-file-utils
 

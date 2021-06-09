@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 14:27:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.16 2021/06/09 19:50:07 sthen Exp $
 
 V =		2.1pl20200624
 COMMENT =	scrabble game
 DISTNAME =	eliot-${V}
+REVISION =	0
 CATEGORIES =	games
 
 HOMEPAGE =	https://nongnu.org/eliot/
@@ -30,8 +31,7 @@ CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -pthread -L${LOCALBASE}/lib -liconv"
 USE_GMAKE =	Yes
 
-BUILD_DEPENDS =	devel/boost \
-		devel/libexecinfo
+BUILD_DEPENDS =	devel/boost
 RUN_DEPENDS =	devel/desktop-file-utils
 LIB_DEPENDS =	textproc/arabica devel/libconfig
 WANTLIB +=	Qt5Core Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets

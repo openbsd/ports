@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2021/03/06 22:24:27 daniel Exp $
+# $OpenBSD: Makefile,v 1.37 2021/06/09 19:50:07 sthen Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -7,7 +7,7 @@ COMMENT=	isometric RPG game
 DISTNAME =	freedroidRPG-0.16.1
 PKGNAME =	${DISTNAME:L}
 CATEGORIES=	games x11
-REVISION =	4
+REVISION =	5
 
 HOMEPAGE =	https://www.freedroid.org/
 
@@ -32,8 +32,7 @@ MODLUA_VERSION =5.3
 MODPY_RUNDEP =	No
 
 BUILD_DEPENDS =	lang/gawk
-LIB_DEPENDS=	devel/libexecinfo \
-		devel/sdl-gfx \
+LIB_DEPENDS=	devel/sdl-gfx \
 		devel/sdl-image \
 		devel/sdl-mixer \
 		${MODLUA_LIB_DEPENDS}

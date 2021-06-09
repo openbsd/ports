@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/12/29 23:56:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2021/06/09 19:50:08 sthen Exp $
 
 BROKEN =		does not build with pango >=1.44
 
@@ -8,8 +8,7 @@ COMMENT-editor = 	UFO:AI map editor
 DISTNAME =		ufoai-${V}-source
 PKGNAME-main =		${DISTNAME:S/-source//}
 PKGNAME-editor = 	uforadiant-${V}
-REVISION-editor =       5
-REVISION-main =		4
+REVISION =		6
 
 EXTRACT_SUFX =		.tar.bz2
 
@@ -37,8 +36,7 @@ BUILD_DEPENDS = 	devel/gettext,-tools
 RUN_DEPENDS = 		games/ufoai/data \
 			devel/desktop-file-utils
 
-LIB_DEPENDS-main =	devel/libexecinfo \
-			devel/sdl-mixer \
+LIB_DEPENDS-main =	devel/sdl-mixer \
 			devel/sdl-ttf \
 			graphics/jpeg \
 			graphics/png \
@@ -50,7 +48,6 @@ LIB_DEPENDS-main =	devel/libexecinfo \
 
 LIB_DEPENDS-editor = 	audio/libvorbis \
 			audio/openal \
-			devel/libexecinfo \
 			devel/sdl \
 			x11/gtkglext \
 			x11/gtksourceview \

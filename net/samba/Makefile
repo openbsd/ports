@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.297 2021/05/14 06:47:26 jca Exp $
+# $OpenBSD: Makefile,v 1.298 2021/06/09 19:50:09 sthen Exp $
 
 VERSION =		4.14.4
 DISTNAME =		samba-${VERSION}
@@ -21,7 +21,7 @@ PKG_ARCH-docs =		*
 LDB_V =			2.3.0
 TEVENT_V =		0.10.2
 
-REVISION-main =		0
+REVISION-main =		1
 
 SHARED_LIBS =		asn1-samba4		1.0 \
 			com_err-samba4		1.0 \
@@ -122,7 +122,6 @@ LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb>=${LDB_V} \
 			databases/tdb>=1.4.3 \
 			devel/gettext,-runtime \
 			devel/jansson \
-			devel/libexecinfo \
 			devel/libtalloc>=2.1.16 \
 			devel/libtalloc,-python \
 			devel/popt \

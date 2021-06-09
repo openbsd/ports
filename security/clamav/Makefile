@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.143 2021/04/07 19:17:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.144 2021/06/09 19:50:09 sthen Exp $
 
 COMMENT=	virus scanner
 DISTNAME=	clamav-0.103.2
+REVISION=	0
 
 CATEGORIES=	security
 
@@ -23,8 +24,7 @@ WANTLIB += milter mspack nghttp2 pcre2-8 pthread ssl xml2 z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-BUILD_DEPENDS=		devel/check \
-			devel/libexecinfo
+BUILD_DEPENDS=		devel/check
 
 LIB_DEPENDS=		archivers/bzip2 \
 			archivers/libmspack \

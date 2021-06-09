@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2021/04/11 13:17:41 solene Exp $
+# $OpenBSD: Makefile,v 1.9 2021/06/09 19:50:07 sthen Exp $
 
 V =		3.3.7
 COMMENT =	3D, first person roguelike
 PKGNAME =	${DISTNAME:L}
 CATEGORIES =	games x11
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	TurningWheel
 GH_PROJECT =	Barony
@@ -31,7 +31,6 @@ MODULES =	devel/cmake
 
 LIB_DEPENDS =	audio/libvorbis \
 		audio/openal \
-		devel/libexecinfo \
 		devel/physfs \
 		devel/sdl2 \
 		devel/sdl2-image \

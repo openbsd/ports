@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/06 22:08:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2021/06/09 19:50:08 sthen Exp $
 
 # Should work on all other archs.
 NOT_FOR_ARCHS =	aarch64 m88k mips64 powerpc64
 
 COMMENT =	GNU Pascal compiler
 DISTNAME =	gpc-20070904
-REVISION =	7
+REVISION =	8
 CATEGORIES =	lang
 
 HOMEPAGE =	https://www.gnu-pascal.de/gpc/h-index.html
@@ -19,7 +19,6 @@ WANTLIB += c gmp mpfr
 MASTER_SITES =	https://mirrors.nycbug.org/pub/distfiles/
 
 BUILD_DEPENDS =	devel/bison \
-		devel/libexecinfo \
 		textproc/gsed \
 		${MODGNU_AUTOCONF_DEPENDS}
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:47:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/06/09 19:50:08 sthen Exp $
 
 COMMENT =		small footprint implementation of Tcl
 
 DISTNAME =		jimtcl-0.77pl2
+REVISION =		0
 SHARED_LIBS =		jim 2.5
 CATEGORIES =		lang devel
 HOMEPAGE =		http://jim.tcl.tk/
@@ -20,8 +21,7 @@ MODULES =		lang/tcl
 BUILD_DEPENDS =		${MODTCL_BUILD_DEPENDS} \
 			textproc/asciidoc
 
-LIB_DEPENDS =		databases/sqlite3 \
-			devel/libexecinfo
+LIB_DEPENDS =		databases/sqlite3
 
 MAKE_FLAGS =		LIBJIM=libjim.so.${LIBjim_VERSION} \
 			SH_CFLAGS=${PICFLAG} \

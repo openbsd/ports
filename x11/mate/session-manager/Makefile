@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2020/08/15 06:34:14 robert Exp $
+# $OpenBSD: Makefile,v 1.21 2021/06/09 19:50:10 sthen Exp $
 
 COMMENT=		MATE session manager
 
 MATE_PROJECT=		mate-session-manager
 MATE_VERSION=		1.24.1
+
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -27,8 +29,7 @@ MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
 BUILD_DEPENDS=		textproc/xmlto
 
-LIB_DEPENDS=		devel/libexecinfo \
-			x11/dbus-glib \
+LIB_DEPENDS=		x11/dbus-glib \
 			x11/gtk+3
 
 RUN_DEPENDS=		x11/gnome/keyring \

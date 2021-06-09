@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.145 2021/05/09 14:18:37 espie Exp $
+# $OpenBSD: Makefile,v 1.146 2021/06/09 19:50:08 sthen Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 DISTNAME =	gimp-2.10.24
-REVISION =	0
+REVISION =	1
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets
@@ -69,7 +69,6 @@ LIB_DEPENDS=	archivers/bzip2 \
 		archivers/xz \
 		devel/glib2>=2.54.2 \
 		devel/harfbuzz>=0.9.19 \
-		devel/libexecinfo \
 		devel/pango>=1.29.4 \
 		graphics/aalib \
 		graphics/babl>=0.1.52 \

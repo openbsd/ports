@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.57 2021/03/26 12:35:15 kn Exp $
+# $OpenBSD: Makefile,v 1.58 2021/06/09 19:50:09 sthen Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
 DISTNAME =		varnish-6.6.0
+REVISION =		0
 
 CATEGORIES =		www
 
@@ -29,8 +30,6 @@ MODPY_ADJ_FILES =	lib/libvcc/{vsc,vmod}tool.py
 BUILD_DEPENDS =		textproc/py-docutils${MODPY_FLAVOR} \
 			textproc/py-sphinx${MODPY_FLAVOR}
 LIB_DEPENDS =		devel/pcre
-# The internal backtrace implementation fails to build with -Werror on arm/hppa
-LIB_DEPENDS +=		devel/libexecinfo
 
 USE_GMAKE =		Yes
 SEPARATE_BUILD =	Yes

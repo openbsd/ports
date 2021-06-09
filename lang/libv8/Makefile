@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2021/02/27 21:33:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2021/06/09 19:50:08 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -12,7 +12,7 @@ COMMENT=	V8 JavaScript for clients and servers
 
 V8_VERSION=	3.16.14.11
 EPOCH=		0
-REVISION=	2
+REVISION=	3
 V8_ARCH=	${MACHINE_ARCH:S/amd64/x64/:S/i386/ia32/}
 V8_RELEASE=	release
 
@@ -32,8 +32,6 @@ PERMIT_PACKAGE=	Yes
 WANTLIB +=	c execinfo m pthread ssl ${COMPILER_LIBCXX} 
 
 BUILD_DEPENDS=	devel/gyp
-
-LIB_DEPENDS=	devel/libexecinfo
 
 COMPILER=	base-clang ports-gcc
 DEBUG_PACKAGES=	${BUILD_PACKAGES}

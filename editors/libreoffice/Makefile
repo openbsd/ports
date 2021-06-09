@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.245 2021/04/01 18:02:21 robert Exp $
+# $OpenBSD: Makefile,v 1.246 2021/06/09 19:50:07 sthen Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -35,6 +35,8 @@ PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel
+
+REVISION=	0
 
 EPOCH=		0
 
@@ -171,7 +173,6 @@ BUILD_DEPENDS+=	archivers/zip \
 		devel/gettext,-tools \
 		devel/gpatch \
 		devel/gperf \
-		devel/libexecinfo \
 		graphics/glew \
 		graphics/glm \
 		shells/bash \
@@ -233,7 +234,6 @@ WANTLIB-main+=	boost_system boost_system-mt boost_date_time-mt
 WANTLIB-main+=	lber ldap ${MODPY_WANTLIB}
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
-			devel/libexecinfo \
 			devel/xdg-utils \
 			graphics/glew \
 			graphics/glm \

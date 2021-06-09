@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2021/04/01 16:42:50 robert Exp $
+# $OpenBSD: Makefile,v 1.145 2021/06/09 19:50:08 sthen Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -52,13 +52,11 @@ BUILD_DEPENDS=	devel/bison \
 
 RUN_DEPENDS=	x11/libgdiplus
 
-TEST_DEPENDS=	lang/python/${MODPY_VERSION}
+TEST_DEPENDS=	${MODPY_RUN_DEPENDS}
 
 CONFIGURE_STYLE=autoreconf
 AUTOCONF_VERSION=2.69
 AUTOMAKE_VERSION=1.15
-
-CONFIGURE_ENV=	ac_cv_header_execinfo_h=no
 
 CONFIGURE_ARGS=	--with-gc=included \
 		--with-tls=pthread \

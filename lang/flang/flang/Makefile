@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.51 2020/07/12 18:06:48 bcallah Exp $
+# $OpenBSD: Makefile,v 1.52 2021/06/09 19:50:08 sthen Exp $
 
 COMMENT =	LLVM Fortran compiler passes and runtime library
 DISTNAME =	flang-8.0.1.20200707
+REVISION =	0
 
 SHARED_LIBS +=	flang                     2.1 # 8.0
 SHARED_LIBS +=	flangrti                  5.0 # 8.0
@@ -21,7 +22,6 @@ BUILD_DEPENDS =	devel/llvm \
 		${RUN_DEPENDS}
 
 LIB_DEPENDS =	devel/libaio_compat \
-		devel/libexecinfo \
 		lang/flang/libpgmath
 
 RUN_DEPENDS =	lang/flang/driver
@@ -31,7 +31,7 @@ RUN_DEPENDS =	lang/flang/driver
 USE_NINJA =	No
 
 CONFIGURE_ARGS =	-DCMAKE_Fortran_COMPILER="${LOCALBASE}/bin/flang" \
-			-DFLANG_LIBEXECINFO="${LOCALBASE}/lib/libexecinfo.a" \
+			-DFLANG_LIBEXECINFO="/usr/lib/libexecinfo.a" \
 			-DFLANG_LIBOMP="${WRKBUILD}/lib/libompstub.a" \
 			-DLIBPGMATH="${LOCALBASE}/lib/libpgmath.a" \
 			-DWITH_WERROR=OFF

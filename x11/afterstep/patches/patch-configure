@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.2 2015/06/29 14:46:57 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.3 2021/06/09 19:50:10 sthen Exp $
 --- configure.orig	Wed May  1 15:34:11 2013
 +++ configure	Mon Jun 29 13:54:28 2015
 @@ -7150,7 +7150,7 @@ fi
@@ -6,7 +6,7 @@ $OpenBSD: patch-configure,v 1.2 2015/06/29 14:46:57 ajacoutot Exp $
  
  if test "x$enable_staticlibs" = "xyes"; then
 -   AFTERBASE_LIB="../../libAfterBase/libAfterBase.a"
-+   AFTERBASE_LIB="../../libAfterBase/libAfterBase.a ${LOCALBASE}/lib/libexecinfo.a"
++   AFTERBASE_LIB="../../libAfterBase/libAfterBase.a /usr/lib/libexecinfo.a"
     AFTERIMAGE_LIB="../../libAfterImage/libAfterImage.a"
     AFTERSTEP_LIB="../../libAfterStep/libAfterStep.a"
     AFTERCONF_LIB="../../libAfterConf/libAfterConf.a"
@@ -15,7 +15,7 @@ $OpenBSD: patch-configure,v 1.2 2015/06/29 14:46:57 ajacoutot Exp $
  		LIBUNINSTALL="uninstall.cyg"
  	else
 -   		AFTERBASE_LIB="../../libAfterBase/libAfterBase.so"
-+   		AFTERBASE_LIB="../../libAfterBase/libAfterBase.so ${LOCALBASE}/lib/libexecinfo.a"
++   		AFTERBASE_LIB="../../libAfterBase/libAfterBase.so /usr/lib/libexecinfo.a"
     		AFTERIMAGE_LIB="../../libAfterImage/libAfterImage.so"
     		AFTERSTEP_LIB="../../libAfterStep/libAfterStep.so"
     		AFTERCONF_LIB="../../libAfterConf/libAfterConf.so"
@@ -24,7 +24,7 @@ $OpenBSD: patch-configure,v 1.2 2015/06/29 14:46:57 ajacoutot Exp $
  fi
  
 -AFTERBASE_STATIC_LIB="../../libAfterBase/libAfterBase.a"
-+AFTERBASE_STATIC_LIB="../../libAfterBase/libAfterBase.a ${LOCALBASE}/lib/libexecinfo.a"
++AFTERBASE_STATIC_LIB="../../libAfterBase/libAfterBase.a /usr/lib/libexecinfo.a"
  AFTERIMAGE_STATIC_LIB="../../libAfterImage/libAfterImage.a"
  AFTERSTEP_STATIC_LIB="../../libAfterStep/libAfterStep.a"
  AFTERCONF_STATIC_LIB="../../libAfterConf/libAfterConf.a"

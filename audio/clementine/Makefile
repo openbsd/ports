@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.47 2021/04/30 22:46:24 solene Exp $
+# $OpenBSD: Makefile,v 1.48 2021/06/09 19:50:06 sthen Exp $
 
 COMMENT =	music player
 
 GH_ACCOUNT =	clementine-player
 GH_PROJECT =	Clementine
 GH_TAGNAME =	1.4.0rc1-550-g72c1f91c0
+REVISION =	0
 PKGNAME =	clementine-${GH_TAGNAME:C/-550.*/pl550/}
 
 CATEGORIES =	audio x11
@@ -42,7 +43,6 @@ LIB_DEPENDS =		audio/chromaprint \
 			audio/libgpod \
 			audio/liblastfm>=1.1.0 \
 			audio/pulseaudio \
-			devel/libexecinfo \
 			devel/libmtp \
 			devel/libplist \
 			devel/protobuf \

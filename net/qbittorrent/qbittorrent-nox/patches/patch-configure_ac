@@ -1,9 +1,22 @@
-$OpenBSD: patch-configure_ac,v 1.1 2021/05/25 18:20:43 mariani Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2021/06/09 19:50:09 sthen Exp $
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -185,12 +185,12 @@ PKG_CHECK_MODULES(libtorrent,
+@@ -53,6 +53,12 @@ AC_ARG_ENABLE(qt-dbus,
+               [enable_qt_dbus=yes])
+ 
+ # Detect OS
++AC_MSG_CHECKING([whether OS is OpenBSD])
++AS_IF([expr "$host_os" : ".*openbsd.*" > /dev/null],
++      [AC_MSG_RESULT([yes])
++      LIBS="-lexecinfo $LIBS"],
++      [AC_MSG_RESULT([no])])
++
+ AC_MSG_CHECKING([whether OS is FreeBSD])
+ AS_IF([expr "$host_os" : ".*freebsd.*" > /dev/null],
+       [AC_MSG_RESULT([yes])
+@@ -185,12 +191,12 @@ PKG_CHECK_MODULES(libtorrent,
                    LIBS="$libtorrent_LIBS $LIBS"])
  
  PKG_CHECK_MODULES(openssl,

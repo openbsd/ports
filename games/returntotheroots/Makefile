@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2021/04/01 18:58:53 bcallah Exp $
+# $OpenBSD: Makefile,v 1.16 2021/06/09 19:50:08 sthen Exp $
 
 BROKEN =	needs updating for new Boost
 
@@ -7,7 +7,7 @@ COMMENT =	open source engine remake of The Settlers 2 (s25client)
 DISTNAME =	s25client-${V}
 PKGNAME =	returntotheroots-${V}
 CATEGORIES =	games x11
-REVISION =	4
+REVISION =	5
 
 ONLY_FOR_ARCHS =	i386 amd64
 
@@ -36,7 +36,6 @@ BUILD_DEPENDS =	devel/gettext,-tools
 
 LIB_DEPENDS =	archivers/bzip2 \
 		devel/boost \
-		devel/libexecinfo \
 		devel/sdl-mixer \
 		net/miniupnp/miniupnpc
 

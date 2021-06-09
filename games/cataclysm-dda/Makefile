@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2021/01/04 17:00:36 kirby Exp $
+# $OpenBSD: Makefile,v 1.15 2021/06/09 19:50:07 sthen Exp $
 
 COMMENT=		rogue-like zombie survival game
 CATEGORIES=		games
@@ -8,6 +8,7 @@ GH_PROJECT=		Cataclysm-DDA
 GH_TAGNAME=		0.E-3
 DISTNAME=		cataclysm-dda-0.E.3
 EPOCH=			0
+REVISION=		0
 
 HOMEPAGE=		https://cataclysmdda.org
 MAINTAINER=		Tim Meunier <trondd@kagu-tsuchi.com>
@@ -25,8 +26,7 @@ COMPILER=		base-clang ports-gcc
 
 MODULES=		textproc/intltool
 
-LIB_DEPENDS=		devel/gettext,-runtime \
-			devel/libexecinfo
+LIB_DEPENDS=		devel/gettext,-runtime
 
 MAKE_ENV=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 

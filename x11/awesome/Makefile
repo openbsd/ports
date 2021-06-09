@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.113 2021/02/02 15:37:24 bket Exp $
+# $OpenBSD: Makefile,v 1.114 2021/06/09 19:50:10 sthen Exp $
 
 COMMENT=		highly configurable framework window manager
 
 V=			4.3
 DISTNAME=		awesome-${V}
 CATEGORIES=		x11
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		https://awesomewm.org/
 
@@ -27,7 +27,6 @@ MODULES=		devel/cmake \
 MODLUA_VERSION=		5.3
 
 LIB_DEPENDS=		${MODLUA_LIB_DEPENDS} \
-			devel/libexecinfo \
 			devel/startup-notification \
 			graphics/cairo \
 			graphics/gdk-pixbuf2 \

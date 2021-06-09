@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2021/02/23 19:39:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/06/09 19:50:07 sthen Exp $
 
 COMMENT=	wysiwyw (what you see is what you want) editing platform
 
 DISTNAME=	TeXmacs-1.99.18-src
 PKGNAME=	${DISTNAME:S/-src//}
+REVISION=	0
+
 CATEGORIES=	editors print x11
 
 HOMEPAGE=	https://texmacs.org/
@@ -31,7 +33,6 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 LIB_DEPENDS=	databases/sqlite3 \
 		devel/gmp \
-		devel/libexecinfo \
 		graphics/jpeg \
 		graphics/png \
 		lang/guile

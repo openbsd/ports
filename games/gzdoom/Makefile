@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/03/09 12:18:50 solene Exp $
+# $OpenBSD: Makefile,v 1.12 2021/06/09 19:50:07 sthen Exp $
 
 BROKEN-i386 =		various always_inline functions require sse2, but would be inlined into function 'Loop' that is compiled without support for sse2
 
@@ -13,6 +13,7 @@ GH_ACCOUNT =		coelckers
 GH_PROJECT =		gzdoom
 GH_TAGNAME =		g${V}
 DISTNAME =		gzdoom-${V}
+REVISION =		0
 
 CATEGORIES=		games
 
@@ -38,7 +39,6 @@ CONFIGURE_ARGS +=	-DHAVE_STDINT_H=1
 LIB_DEPENDS =		audio/mpg123 \
 			audio/openal \
 			archivers/bzip2 \
-			devel/libexecinfo \
 			graphics/jpeg \
 			devel/sdl2
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2020/08/30 13:28:44 martin Exp $
+# $OpenBSD: Makefile,v 1.34 2021/06/09 19:50:07 sthen Exp $
 
 COMMENT =		open source MPI-3.1 implementation
 
 V =			4.0.5
 DISTNAME =		openmpi-$V
+REVISION =		0
 
 SHARED_LIBS +=  open-pal		5.0 # 60.5
 SHARED_LIBS +=  mca_common_sm		2.0 # 60.0
@@ -38,7 +39,6 @@ COMPILER =		ports-gcc
 MODULES =		fortran
 MODFORTRAN_COMPILER =	gfortran
 BUILD_DEPENDS =		devel/libtool,-ltdl
-LIB_DEPENDS =		devel/libexecinfo
 
 CONFIGURE_ARGS +=	--enable-mpi-fortran=usempif08 \
 			FC=egfortran \

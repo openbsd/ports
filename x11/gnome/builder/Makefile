@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.109 2021/05/14 09:40:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.110 2021/06/09 19:50:10 sthen Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		3.40.2
+
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -31,7 +33,6 @@ COMPILER=		ports-gcc
 COMPILER_LANGS=		c
 
 BUILD_DEPENDS=		devel/ectags \
-			devel/libexecinfo \
 			textproc/py-sphinx${MODPY_FLAVOR}
 
 RUN_DEPENDS=		devel/ectags

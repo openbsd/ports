@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2021/01/08 23:58:29 jsg Exp $
+# $OpenBSD: Makefile,v 1.28 2021/06/09 19:50:07 sthen Exp $
 
 COMMENT =	Enhanced Duke Nukem 3D engine
 RDATE =		20201221
@@ -7,6 +7,8 @@ DISTNAME =	eduke32_src_${RDATE}-${RTAG}
 PKGNAME =	eduke32-2.0.0.${RTAG:C/-.*$//}
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	games x11
+
+REVISION =	0
 
 HOMEPAGE =	https://www.eduke32.com/
 
@@ -27,7 +29,6 @@ LIB_DEPENDS =	archivers/lz4 \
 		audio/libvorbis \
 		audio/flac \
 		devel/sdl2 \
-		devel/libexecinfo \
 		multimedia/libvpx
 
 # dlopen()'d; shows as Extra in check-lib-depends but it is used

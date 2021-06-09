@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1281 2021/06/05 13:00:34 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.1282 2021/06/09 19:50:10 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -61,6 +61,7 @@ my $base_exceptions = {
 	'libelf' => '/usr/lib/libelf.so.*',
 # 6.9
 	'acme-client' => '/usr/sbin/acme-client',
+	'libexecinfo' => '/usr/include/execinfo.h',
 };
 
 my $stem_extensions = {

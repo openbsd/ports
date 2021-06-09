@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2021/04/28 19:23:21 edd Exp $
+# $OpenBSD: Makefile,v 1.5 2021/06/09 19:50:07 sthen Exp $
 
 COMMENT =	online multiplayer doom
 
 V =		0.8.3
 DISTNAME =	odamex-src-${V}
 PKGNAME =	odamex-${V}
+REVISION =	0
 
 CATEGORIES =	games
 HOMEPAGE =	https://odamex.net/
@@ -32,8 +33,7 @@ CONFIGURE_ENV +=	CXXFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/miniupn
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS +=	-DNO_AG-ODALAUNCH_TARGET=YES
 
-LIB_DEPENDS =		devel/libexecinfo \
-			x11/wxWidgets \
+LIB_DEPENDS =		x11/wxWidgets \
 			audio/portmidi \
 			graphics/png \
 			devel/sdl2-mixer \

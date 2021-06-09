@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.102 2021/03/30 23:25:46 bcallah Exp $
+# $OpenBSD: Makefile,v 1.103 2021/06/09 19:50:07 sthen Exp $
 
 V =		2.1.3.17
+REVISION =	0
 COMMENT =	client for The Mana World
 DISTNAME =	manaplus-${V}
 EXTRACT_SUFX =	.tar.xz
@@ -24,7 +25,6 @@ COMPILER =	base-clang ports-gcc
 BUILD_DEPENDS =	devel/gettext,-tools
 
 LIB_DEPENDS =	devel/gettext,-runtime \
-		devel/libexecinfo \
 		devel/sdl2-gfx \
 		devel/sdl2-image \
 		devel/sdl2-mixer \

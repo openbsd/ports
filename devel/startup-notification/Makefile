@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:46:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2021/06/09 19:50:07 sthen Exp $
 
 COMMENT=		library for tracking application startup
 
 GNOME_PROJECT=		startup-notification
 GNOME_VERSION=		0.12
-REVISION=		6
+REVISION=		7
 
 CATEGORIES=		devel
 
@@ -25,7 +25,9 @@ CONFIGURE_STYLE=	gnu
 # add -lexecinfo to LDFLAGS because the main startup-notification
 # library does not use/need it, so we just define HAVE_BACKTRACE.
 # (see patch-test_Makefile_in)
-TEST_DEPENDS=		devel/libexecinfo
+
+# XXX NEEDS REVIEW - LIBEXECINFO IN BASE
+
 CFLAGS +=		-DHAVE_BACKTRACE
 
 .include <bsd.port.mk>

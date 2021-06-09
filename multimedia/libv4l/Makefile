@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2020/05/26 09:54:56 feinerer Exp $
+# $OpenBSD: Makefile,v 1.26 2021/06/09 19:50:09 sthen Exp $
 
 COMMENT =		libv4l userspace library
 
 VERSION =		1.20.0
 DISTNAME =		v4l-utils-${VERSION}
 PKGNAME =		libv4l-${VERSION}
+REVISION =		0
 
 SHARED_LIBS +=	v4l1		0.0 # 0.0
 SHARED_LIBS +=	v4l2		0.0 # 0.0
@@ -27,8 +28,7 @@ MASTER_SITES =		https://linuxtv.org/downloads/v4l-utils/
 EXTRACT_SUFX =		.tar.bz2
 
 BUILD_DEPENDS =		devel/argp-standalone
-LIB_DEPENDS =		devel/libexecinfo \
-			graphics/jpeg>=1.5.0v0
+LIB_DEPENDS =		graphics/jpeg>=1.5.0v0
 
 SEPARATE_BUILD =	Yes
 LIBTOOL_FLAGS =		--tag=disable-static

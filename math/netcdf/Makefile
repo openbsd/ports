@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2020/04/04 19:26:43 cwen Exp $
+# $OpenBSD: Makefile,v 1.43 2021/06/09 19:50:08 sthen Exp $
 
 COMMENT=	library for machine-independent, array-oriented data access
 
@@ -6,7 +6,7 @@ V=		4.7.4
 NAME=		netcdf
 DISTNAME=	${NAME}-c-${V}
 PKGNAME=	${NAME}-${V}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	math
 
@@ -22,8 +22,6 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=		c m z pthread
 WANTLIB+=		curl crypto nghttp2 ssl
 WANTLIB+=		hdf5 hdf5_hl
-
-BUILD_DEPENDS =		devel/libexecinfo
 
 LIB_DEPENDS =		net/curl \
 			math/hdf5

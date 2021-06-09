@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2021/05/12 06:35:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.142 2021/06/09 19:50:09 sthen Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -20,6 +20,8 @@ EXTRACT_SUFX =		.tar.xz
 API =			4.0
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
+
+REVISION =		0
 
 SHARED_LIBS +=  javascriptcoregtk-${API}     3.4 # 18.13.3
 SHARED_LIBS +=  webkit2gtk-${API}            3.4 # 37.37.2
@@ -69,7 +71,6 @@ NO_TEST =		Yes
 BUILD_DEPENDS =		devel/bison \
 			devel/gettext,-tools \
 			devel/gperf \
-			devel/libexecinfo \
 			geo/geoclue2
 
 RUN_DEPENDS =		geo/geoclue2

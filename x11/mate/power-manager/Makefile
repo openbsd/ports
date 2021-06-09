@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2020/08/20 06:39:58 robert Exp $
+# $OpenBSD: Makefile,v 1.18 2021/06/09 19:50:10 sthen Exp $
 
 COMMENT=		MATE power manager
 
 MATE_PROJECT=		mate-power-manager
 MATE_VERSION=		1.24.2
+
+REVISION=		0
 
 # LGPLv2
 PERMIT_PACKAGE=	Yes
@@ -28,7 +30,6 @@ CONFIGURE_STYLE=	gnu
 MODGNOME_LDFLAGS=	-lexecinfo
 
 LIB_DEPENDS=		sysutils/upower \
-			devel/libexecinfo \
 			x11/gnome/libgnome-keyring \
 			x11/mate/panel
 

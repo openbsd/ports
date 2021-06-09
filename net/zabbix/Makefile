@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.174 2021/05/10 17:34:19 tb Exp $
+# $OpenBSD: Makefile,v 1.175 2021/06/09 19:50:09 sthen Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -6,7 +6,7 @@ COMMENT-proxy =		network and application monitoring - proxy
 COMMENT-web =		network and application monitoring - web frontend
 
 VERSION =		5.0.10
-REVISION =		0
+REVISION =		1
 DISTNAME =		zabbix-${VERSION}
 FULLPKGNAME-main =	zabbix-agent-${VERSION}
 FULLPKGPATH-main =	net/zabbix,-main
@@ -41,7 +41,6 @@ WANTLIB =		c iconv kvm m execinfo lber ldap crypto ssl z \
 
 LIB_DEPENDS =		converters/libiconv \
 			databases/openldap \
-			devel/libexecinfo \
 			devel/pcre \
 			net/curl
 

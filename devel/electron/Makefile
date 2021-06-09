@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/05/12 11:05:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2021/06/09 19:50:06 sthen Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -16,7 +16,7 @@ COMMENT=		cross-platform desktop applications
 
 ECV=			80.0.3987.158
 ELECTRON_V=		8.2.0
-REVISION=		2
+REVISION=		3
 
 DISTFILES+=		chromium-${ECV}${EXTRACT_SUFX} \
 			electron-${ELECTRON_V}_${ECV}${EXTRACT_SUFX}:0 \
@@ -93,7 +93,6 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		x11/gtk+3 \
 		${MODGCC4_CPPDEP}
 LIB_DEPENDS=	devel/harfbuzz \
-		devel/libexecinfo \
 		security/nss \
 		textproc/libxslt \
 		x11/gtk+3 \

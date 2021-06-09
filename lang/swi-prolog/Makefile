@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2021/05/04 15:25:22 tb Exp $
+# $OpenBSD: Makefile,v 1.89 2021/06/09 19:50:08 sthen Exp $
 
 BROKEN-hppa =		undefined reference to __sync_fetch_and_add_4
 BROKEN-sparc64 =	infinite loop or aborts during build
@@ -6,7 +6,7 @@ BROKEN-sparc64 =	infinite loop or aborts during build
 COMMENT =		Prolog for the real world
 
 V =			7.6.0
-REVISION =		9
+REVISION =		10
 DISTNAME =		swipl-$V
 PKGNAME =		swi-prolog-$V
 CATEGORIES =		lang
@@ -51,7 +51,6 @@ USE_GMAKE =		Yes
 BUILD_DEPENDS =		${RUN_DEPENDS}
 BUILD_DEPENDS +=	shells/bash
 LIB_DEPENDS =		devel/gmp \
-			devel/libexecinfo \
 			graphics/jpeg \
 			devel/uuid \
 			databases/db/v4 \

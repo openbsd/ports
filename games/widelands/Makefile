@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.32 2021/02/23 19:39:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2021/06/09 19:50:08 sthen Exp $
 
-COMMENT=	economic and military simulation game
+COMMENT =	economic and military simulation game
 
 V =		21
 DISTNAME = 	widelands-build${V}-source
-PKGNAME=	widelands-0.${V}
-CATEGORIES=	games
+PKGNAME =	widelands-0.${V}
+CATEGORIES =	games
+REVISION =	0
 
-HOMEPAGE=	https://wl.widelands.org/
+HOMEPAGE =	https://wl.widelands.org/
 MASTER_SITES =	https://launchpad.net/widelands/build${V}/build${V}/+download/
 
 # GPLv2+
@@ -23,7 +24,6 @@ COMPILER =	base-clang ports-gcc
 BUILD_DEPENDS =	devel/gettext,-tools
 LIB_DEPENDS =	devel/boost \
 		devel/gettext,-runtime \
-		devel/libexecinfo \
 		devel/sdl2-image \
 		devel/sdl2-mixer \
 		devel/sdl2-ttf \
@@ -45,8 +45,8 @@ CONFIGURE_ARGS =	-DWL_INSTALL_DATADIR=${PREFIX}/share/widelands \
 CONFIGURE_ENV =	LDFLAGS="${LDFLAGS} -lGL -lexecinfo -lintl -liconv \
 			-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-NO_TEST=	Yes
+NO_TEST =	Yes
 
-WRKDIST=	${WRKDIR}/${DISTNAME:S/-source//}
+WRKDIST =	${WRKDIR}/${DISTNAME:S/-source//}
 
 .include <bsd.port.mk>

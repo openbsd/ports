@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/05/27 14:33:18 tb Exp $
+# $OpenBSD: Makefile,v 1.3 2021/06/09 19:50:10 sthen Exp $
 
 QT6NAME =		QtBase
 
@@ -7,7 +7,7 @@ COMMENT-global =	global Qt6 documentation internals
 COMMENT-mysql =		MySQL plugin for Qt6
 COMMENT-psql =		PostgresSQL plugin for Qt6
 
-REVISION-main =		0
+REVISION =		0
 
 PKGNAME-mysql =		qt6-mysql-${VERSION}
 PKGNAME-global =	qt6-global-${VERSION}
@@ -57,7 +57,6 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			databases/iodbc \
 			devel/atk \
 			devel/harfbuzz \
-			devel/libexecinfo \
 			devel/pango \
 			devel/pcre2 \
 			graphics/cairo \
@@ -75,12 +74,10 @@ LIB_DEPENDS-main +=	devel/gettext,-runtime
 
 LIB_DEPENDS-mysql =	${BASE_PKGPATH},-main>=${VERSION:R},<${NEXT_VERSION} \
 			${MODGCC4_CPPLIBDEP} \
-			devel/libexecinfo \
 			databases/mariadb
 
 LIB_DEPENDS-psql =	${BASE_PKGPATH},-main>=${VERSION:R},<${NEXT_VERSION} \
 			${MODGCC4_CPPLIBDEP} \
-			devel/libexecinfo \
 			databases/postgresql
 
 BUILD_DEPENDS =		geo/geoclue \
