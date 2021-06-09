@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2021/02/23 19:39:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2021/06/09 21:52:24 kili Exp $
 
 BROKEN-i386=		hangs at runtime. started after switch to clang
 
@@ -12,7 +12,7 @@ SHARED_LIBS=		fontforge	4.0 \
 			gioftp		2.1 \
 			gunicode	5.1 \
 			gutils		2.1
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		print
 
@@ -23,12 +23,13 @@ MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  ${MODPY_WANTLIB}
+WANTLIB =  ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
 WANTLIB += ICE SM X11 Xext Xft Xi Xrender c cairo expat ffi fontconfig
-WANTLIB += freetype fribidi gif glib-2.0 gobject-2.0 graphite2
-WANTLIB += harfbuzz iconv intl jpeg lzma m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pangoxft-1.0 pcre pixman-1 png
-WANTLIB += pthread tiff util xcb xcb-render xcb-shm xml2 z zstd
+WANTLIB += freetype fribidi gif gio-2.0 gmodule-2.0 glib-2.0
+WANTLIB += gobject-2.0 graphite2 harfbuzz iconv intl jpeg lzma m
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pangoxft-1.0 pcre
+WANTLIB += pixman-1 png pthread spiro tiff util xcb xcb-render
+WANTLIB += xcb-shm xml2 z zstd
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fontforge/}
 
@@ -41,6 +42,7 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS}	\
 			graphics/cairo	\
 			graphics/jpeg		\
 			devel/pango		\
+			graphics/libspiro	\
 			graphics/png		\
 			graphics/tiff		\
 			graphics/giflib		\
