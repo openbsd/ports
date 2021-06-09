@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2021/05/26 12:12:38 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.19 2021/06/09 17:03:14 sthen Exp $
 @option is-branch
 @conflict freeradius-*
 @conflict radiusd-cistron-*
@@ -379,9 +379,9 @@ share/examples/freeradius/dictionary
 share/examples/freeradius/experimental.conf
 @sample ${FREERADIUS_ETC}/experimental.conf
 share/examples/freeradius/hints
-@sample ${FREERADIUS_ETC}/hints
+@comment hints is intentionally not sampled, see freeradius-enable.sh
 share/examples/freeradius/huntgroups
-@sample ${FREERADIUS_ETC}/huntgroups
+@comment huntgroups is intentionally not sampled, see freeradius-enable.sh
 share/examples/freeradius/mods-available/
 @sample ${FREERADIUS_ETC}/mods-available/
 share/examples/freeradius/mods-available/README.rst
