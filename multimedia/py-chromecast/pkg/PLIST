@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/02/11 07:43:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/06/09 15:24:28 ajacoutot Exp $
 @pkgpath multimedia/py-chromecast
 lib/python${MODPY_VERSION}/site-packages/PyChromecast-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/PyChromecast-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -29,6 +29,8 @@ lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}bbciplayer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}bbcsounds.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}bubbleupnp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}dashcast.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}homeassistant.${MODPY_PYC_MAGIC_TAG}pyc
@@ -40,6 +42,8 @@ lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}supla.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}yleareena.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}youtube.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/bbciplayer.py
+lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/bbcsounds.py
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/bubbleupnp.py
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/dashcast.py
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/homeassistant.py
