@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/06/09 10:43:16 landry Exp $
+lib/python${MODPY_VERSION}/site-packages/python_telegram-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/telegram/
+lib/python${MODPY_VERSION}/site-packages/telegram/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/telegram/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/telegram/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/telegram/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/telegram/${MODPY_PYCACHE}tdjson.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/telegram/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/telegram/${MODPY_PYCACHE}worker.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/telegram/client.py
+lib/python${MODPY_VERSION}/site-packages/telegram/tdjson.py
+lib/python${MODPY_VERSION}/site-packages/telegram/utils.py
+lib/python${MODPY_VERSION}/site-packages/telegram/worker.py
