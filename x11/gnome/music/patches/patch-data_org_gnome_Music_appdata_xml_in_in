@@ -1,0 +1,15 @@
+$OpenBSD: patch-data_org_gnome_Music_appdata_xml_in_in,v 1.1 2021/06/09 11:56:01 ajacoutot Exp $
+
+https://gitlab.gnome.org/GNOME/gnome-music/-/merge_requests/855/diffs
+
+Index: data/org.gnome.Music.appdata.xml.in.in
+--- data/org.gnome.Music.appdata.xml.in.in.orig
++++ data/org.gnome.Music.appdata.xml.in.in
+@@ -37,7 +37,6 @@
+         <p>This release also updates translations.</p>
+       </description>
+     </release>
+-  <releases>
+     <release version="40.0" date="2021-03-21">
+       <description>
+         <p>
