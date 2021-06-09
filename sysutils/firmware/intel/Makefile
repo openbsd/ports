@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2021/02/17 22:37:52 jsg Exp $
+# $OpenBSD: Makefile,v 1.27 2021/06/09 13:58:59 jsg Exp $
 
 COMMENT=	microcode update binaries for Intel CPUs
 FW_DRIVER=	intel
 
-FW_VER=		20210216
+FW_VER=		20210608
 EPOCH=		0
 GH_ACCOUNT=	intel
 GH_PROJECT=	Intel-Linux-Processor-Microcode-Data-Files
