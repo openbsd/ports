@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2021/03/10 01:33:40 gnezdo Exp $
+@comment $OpenBSD: PLIST,v 1.19 2021/06/09 04:22:20 gnezdo Exp $
 @conflict hs-xhtml-*
 @conflict hs-deepseq-<=1.1.0.2p0
 @conflict hs-binary-*
@@ -2475,12 +2475,12 @@ lib/ghc/ghc-${GHC_VER}/GHC/HsToCore/PmCheck/Types.dyn_hi
 lib/ghc/ghc-${GHC_VER}/GHC/HsToCore/PmCheck/Types.hi
 lib/ghc/ghc-${GHC_VER}/GHC/HsToCore/PmCheck/Types.p_hi
 lib/ghc/ghc-${GHC_VER}/GHC/Platform/
+lib/ghc/ghc-${GHC_VER}/GHC/Platform/AArch64.dyn_hi
+lib/ghc/ghc-${GHC_VER}/GHC/Platform/AArch64.hi
+lib/ghc/ghc-${GHC_VER}/GHC/Platform/AArch64.p_hi
 lib/ghc/ghc-${GHC_VER}/GHC/Platform/ARM.dyn_hi
 lib/ghc/ghc-${GHC_VER}/GHC/Platform/ARM.hi
 lib/ghc/ghc-${GHC_VER}/GHC/Platform/ARM.p_hi
-lib/ghc/ghc-${GHC_VER}/GHC/Platform/ARM64.dyn_hi
-lib/ghc/ghc-${GHC_VER}/GHC/Platform/ARM64.hi
-lib/ghc/ghc-${GHC_VER}/GHC/Platform/ARM64.p_hi
 lib/ghc/ghc-${GHC_VER}/GHC/Platform/NoRegs.dyn_hi
 lib/ghc/ghc-${GHC_VER}/GHC/Platform/NoRegs.hi
 lib/ghc/ghc-${GHC_VER}/GHC/Platform/NoRegs.p_hi

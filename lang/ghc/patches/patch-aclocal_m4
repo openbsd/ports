@@ -1,9 +1,9 @@
-$OpenBSD: patch-aclocal_m4,v 1.4 2021/03/10 01:33:40 gnezdo Exp $
+$OpenBSD: patch-aclocal_m4,v 1.5 2021/06/09 04:22:20 gnezdo Exp $
 
 Index: aclocal.m4
 --- aclocal.m4.orig
 +++ aclocal.m4
-@@ -732,6 +732,12 @@ AC_DEFUN([FPTOOLS_SET_C_LD_FLAGS],
+@@ -767,6 +767,12 @@ AC_DEFUN([FPTOOLS_SET_C_LD_FLAGS],
          $4="$$4 -z wxneeded"
          ;;
  

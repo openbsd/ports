@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no_i386,v 1.1 2021/03/10 01:33:40 gnezdo Exp $
+@comment $OpenBSD: PFRAG.no_i386,v 1.2 2021/06/09 04:22:20 gnezdo Exp $
 bin/haddock
 bin/haddock-ghc-${GHC_VER}
 @bin lib/ghc/bin/haddock
@@ -101,12 +101,16 @@ share/doc/ghc/html/haddock/_static/alabaster.css
 share/doc/ghc/html/haddock/_static/basic.css
 share/doc/ghc/html/haddock/_static/custom.css
 share/doc/ghc/html/haddock/_static/doctools.js
+share/doc/ghc/html/haddock/_static/documentation_options.js
 share/doc/ghc/html/haddock/_static/file.png
+share/doc/ghc/html/haddock/_static/jquery-3.5.1.js
 share/doc/ghc/html/haddock/_static/jquery.js
+share/doc/ghc/html/haddock/_static/language_data.js
 share/doc/ghc/html/haddock/_static/minus.png
 share/doc/ghc/html/haddock/_static/plus.png
 share/doc/ghc/html/haddock/_static/pygments.css
 share/doc/ghc/html/haddock/_static/searchtools.js
+share/doc/ghc/html/haddock/_static/underscore-1.12.0.js
 share/doc/ghc/html/haddock/_static/underscore.js
 share/doc/ghc/html/haddock/genindex.html
 share/doc/ghc/html/haddock/index.html
@@ -1135,8 +1139,8 @@ share/doc/ghc/html/libraries/ghc-${GHC_VER}/GHC-HsToCore-PmCheck-Oracle.html
 share/doc/ghc/html/libraries/ghc-${GHC_VER}/GHC-HsToCore-PmCheck-Ppr.html
 share/doc/ghc/html/libraries/ghc-${GHC_VER}/GHC-HsToCore-PmCheck-Types.html
 share/doc/ghc/html/libraries/ghc-${GHC_VER}/GHC-HsToCore-PmCheck.html
+share/doc/ghc/html/libraries/ghc-${GHC_VER}/GHC-Platform-AArch64.html
 share/doc/ghc/html/libraries/ghc-${GHC_VER}/GHC-Platform-ARM.html
-share/doc/ghc/html/libraries/ghc-${GHC_VER}/GHC-Platform-ARM64.html
 share/doc/ghc/html/libraries/ghc-${GHC_VER}/GHC-Platform-NoRegs.html
 share/doc/ghc/html/libraries/ghc-${GHC_VER}/GHC-Platform-PPC.html
 share/doc/ghc/html/libraries/ghc-${GHC_VER}/GHC-Platform-Regs.html
@@ -2362,6 +2366,10 @@ share/doc/ghc/html/users_guide/
 share/doc/ghc/html/users_guide/.buildinfo
 share/doc/ghc/html/users_guide/8.10.1-notes.html
 share/doc/ghc/html/users_guide/8.10.2-notes.html
+share/doc/ghc/html/users_guide/8.10.3-notes.html
+share/doc/ghc/html/users_guide/8.10.4-notes.html
+share/doc/ghc/html/users_guide/_sources/8.10.3-notes.rst.txt
+share/doc/ghc/html/users_guide/_sources/8.10.4-notes.rst.txt
 share/doc/ghc/html/users_guide/${GHC_VER}-notes.html
 share/doc/ghc/html/users_guide/_images/
 share/doc/ghc/html/users_guide/_images/prof_scc.svg
@@ -2408,9 +2416,12 @@ share/doc/ghc/html/users_guide/_static/
 share/doc/ghc/html/users_guide/_static/Recip.png
 share/doc/ghc/html/users_guide/_static/basic.css
 share/doc/ghc/html/users_guide/_static/doctools.js
+share/doc/ghc/html/users_guide/_static/documentation_options.js
 share/doc/ghc/html/users_guide/_static/file.png
 share/doc/ghc/html/users_guide/_static/ghc-theme.css
+share/doc/ghc/html/users_guide/_static/jquery-3.5.1.js
 share/doc/ghc/html/users_guide/_static/jquery.js
+share/doc/ghc/html/users_guide/_static/language_data.js
 share/doc/ghc/html/users_guide/_static/logo.pdf
 share/doc/ghc/html/users_guide/_static/minus.png
 share/doc/ghc/html/users_guide/_static/opensearch.xml
@@ -2419,6 +2430,7 @@ share/doc/ghc/html/users_guide/_static/prof_scc.pdf
 share/doc/ghc/html/users_guide/_static/prof_scc.svg
 share/doc/ghc/html/users_guide/_static/pygments.css
 share/doc/ghc/html/users_guide/_static/searchtools.js
+share/doc/ghc/html/users_guide/_static/underscore-1.12.0.js
 share/doc/ghc/html/users_guide/_static/underscore.js
 share/doc/ghc/html/users_guide/bugs.html
 share/doc/ghc/html/users_guide/codegens.html
@@ -2460,11 +2472,3 @@ share/doc/ghc/html/users_guide/using.html
 share/doc/ghc/html/users_guide/utils.html
 share/doc/ghc/html/users_guide/what_glasgow_exts_does.html
 share/doc/ghc/html/users_guide/win32-dlls.html
-share/doc/ghc/html/haddock/_static/documentation_options.js
-share/doc/ghc/html/haddock/_static/jquery-3.5.1.js
-share/doc/ghc/html/haddock/_static/language_data.js
-share/doc/ghc/html/haddock/_static/underscore-1.12.0.js
-share/doc/ghc/html/users_guide/_static/documentation_options.js
-share/doc/ghc/html/users_guide/_static/jquery-3.5.1.js
-share/doc/ghc/html/users_guide/_static/language_data.js
-share/doc/ghc/html/users_guide/_static/underscore-1.12.0.js
