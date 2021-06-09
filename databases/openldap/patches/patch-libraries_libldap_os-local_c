@@ -1,0 +1,16 @@
+$OpenBSD: patch-libraries_libldap_os-local_c,v 1.1 2021/06/09 22:31:27 sthen Exp $
+
+Index: libraries/libldap/os-local.c
+--- libraries/libldap/os-local.c.orig
++++ libraries/libldap/os-local.c
+@@ -176,8 +176,8 @@ ldap_pvt_connect(LDAP *ld, ber_socket_t s, struct sock
+ 		opt_tv = &tv;
+ 	}
+ 
+-	oslocal_debug(ld, "ldap_connect_timeout: fd: %d tm: %ld async: %d\n",
+-		s, opt_tv ? tv.tv_sec : -1L, async);
++	oslocal_debug(ld, "ldap_connect_timeout: fd: %d tm: %lld async: %d\n",
++		s, opt_tv ? (long long)tv.tv_sec : -1L, async);
+ 
+ 	if ( ldap_pvt_ndelay_on(ld, s) == -1 ) return -1;
+ 

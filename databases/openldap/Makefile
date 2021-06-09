@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.186 2021/05/24 17:05:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.187 2021/06/09 22:31:27 sthen Exp $
 
 DPB_PROPERTIES =	parallel
 
@@ -8,7 +8,7 @@ COMMENT-server =	open-source LDAP software (server)
 # 2.5 requires openssl 1.1.1+
 PORTROACH =		limit:^2\.4\.
 
-DISTNAME =		openldap-2.4.58
+DISTNAME =		openldap-2.4.59
 PKGNAME-main =		${DISTNAME:S/-/-client-/}
 PKGNAME-server =	${DISTNAME:S/-/-server-/}
 
@@ -103,13 +103,16 @@ MULTI_PACKAGES =	-main -server
 BUILD_DEPENDS +=	textproc/groff
 LIB_DEPENDS +=		security/cyrus-sasl2
 WANTLIB +=		pthread sasl2
-CPPFLAGS +=		-I${LOCALBASE}/include/sasl
+CPPFLAGS =		-I${LOCALBASE}/include/sasl \
+			-I${LOCALBASE}/include/db4 \
+			-I${LOCALBASE}/include
+CFLAGS +=		-Wno-format-extra-args
 
 LIB_DEPENDS-server =	${LIB_DEPENDS-main} \
 			databases/db/v4,no_java,no_tcl \
 			databases/openldap,-main
 
-CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include/sasl -I${LOCALBASE}/include/db4 -I${LOCALBASE}/include" \
+CONFIGURE_ENV +=	CPPFLAGS="${CPPFLAGS}" \
 			LDFLAGS="-L${LOCALBASE}/lib/db4 -L${LOCALBASE}/lib"
 
 WANTLIB-server +=	${WANTLIB} lber ldap_r lib/db4/db>=4 m perl
