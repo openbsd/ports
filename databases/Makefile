@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.425 2021/04/30 16:38:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.426 2021/06/09 10:30:34 sthen Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -26,6 +26,8 @@
      SUBDIR += liquibase
      SUBDIR += lmdb
      SUBDIR += luadbi
+     SUBDIR += luadbi,lua52
+     SUBDIR += luadbi,lua53
      SUBDIR += lualdap
      SUBDIR += luasqlite3
      SUBDIR += mariadb

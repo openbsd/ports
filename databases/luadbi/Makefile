@@ -1,30 +1,41 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:43:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/06/09 10:30:34 sthen Exp $
 
 COMMENT-main=	database interface library for Lua (including SQLite3)
 COMMENT-mysql=	MySQL driver for luadbi
 COMMENT-pgsql=	PostgreSQL driver for luadbi
 
+V=		0.6
 GH_ACCOUNT=	mwild1
 GH_PROJECT=	luadbi
-V=		0.6
 GH_TAGNAME=	v${V}
-PKGNAME-main=	${GH_PROJECT}-${V}
-PKGNAME-mysql=	${GH_PROJECT}-mysql-$V
-PKGNAME-pgsql=	${GH_PROJECT}-pgsql-$V
-REVISION-main = 0
+REVISION=	1
+
+PKGNAME-main=		luadbi-$V
+PKGNAME-mysql=		luadbi-mysql-$V
+PKGNAME-pgsql=		luadbi-pgsql-$V
+FULLPKGNAME-main=	${_MODLUA_PKG_PREFIX}dbi-$V
+FULLPKGNAME-mysql=	${_MODLUA_PKG_PREFIX}dbi-mysql-$V
+FULLPKGNAME-pgsql=	${_MODLUA_PKG_PREFIX}dbi-pgsql-$V
+FULLPKGPATH-main=	databases/luadbi,${MODLUA_FLAVOR:=,}-main
+FULLPKGPATH-mysql=	databases/luadbi,${MODLUA_FLAVOR:=,}-mysql
+FULLPKGPATH-pgsql=	databases/luadbi,${MODLUA_FLAVOR:=,}-pgsql
 
 CATEGORIES=	databases
 
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MULTI_PACKAGES=		-main -mysql -pgsql
+MULTI_PACKAGES=	-main -mysql -pgsql
+
+MODULES=	lang/lua
+FLAVORS=	lua52 lua53
+FLAVOR?=
 
 WANTLIB-main=		sqlite3
 LIB_DEPENDS-main=	databases/sqlite3
 RUN_DEPENDS-main=	#empty
 
-WANTLIB-mysql=		mysqlclient
+WANTLIB-mysql=		mariadb
 LIB_DEPENDS-mysql=	databases/mariadb
 RUN_DEPENDS-mysql=	${BASE_PKGPATH},-main
 
@@ -33,10 +44,7 @@ BUILD_DEPENDS=		databases/postgresql,-server
 LIB_DEPENDS-pgsql=	databases/postgresql
 RUN_DEPENDS-pgsql=	${BASE_PKGPATH},-main
 
-MODULES=		lang/lua
-
 USE_GMAKE=		Yes
-
 ALL_TARGET=		free # == sqlite3 mysql postgresql
 INSTALL_TARGET=		install_free
 # requires luarocks
