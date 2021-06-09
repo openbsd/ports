@@ -1,0 +1,15 @@
+$OpenBSD: patch-gen_git_commit_h_sh,v 1.1.1.1 2021/06/09 10:42:16 landry Exp $
+
+Index: gen_git_commit_h.sh
+--- gen_git_commit_h.sh.orig
++++ gen_git_commit_h.sh
+@@ -1,7 +1,6 @@
+ #!/bin/sh
+-commit=$(git rev-parse HEAD)
+-git diff-index --quiet HEAD
+-dirty=$?
++commit=${COMMIT}
++dirty=0
+ printf "#pragma once\n#define GIT_COMMIT \"$commit\"\n#define GIT_DIRTY $dirty\n" > auto/git_info.h.new
+ if cmp -s auto/git_info.h.new auto/git_info.h 2>&1 > /dev/null
+ then

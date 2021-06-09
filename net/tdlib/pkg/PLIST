@@ -1,0 +1,40 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/06/09 10:42:16 landry Exp $
+include/td/
+include/td/telegram/
+include/td/telegram/Client.h
+include/td/telegram/Log.h
+include/td/telegram/td_api.h
+include/td/telegram/td_api.hpp
+include/td/telegram/td_json_client.h
+include/td/telegram/td_log.h
+include/td/telegram/tdjson_export.h
+include/td/tl/
+include/td/tl/TlObject.h
+lib/cmake/
+lib/cmake/Td/
+lib/cmake/Td/TdConfig.cmake
+lib/cmake/Td/TdConfigVersion.cmake
+lib/cmake/Td/TdTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Td/TdTargets.cmake
+@static-lib lib/libtdactor.a
+@static-lib lib/libtdapi.a
+@static-lib lib/libtdclient.a
+@static-lib lib/libtdcore.a
+@static-lib lib/libtddb.a
+@lib lib/libtdjson.so.${LIBtdjson_VERSION}
+@static-lib lib/libtdjson_private.a
+@static-lib lib/libtdjson_static.a
+@static-lib lib/libtdnet.a
+@static-lib lib/libtdsqlite.a
+@static-lib lib/libtdutils.a
+lib/pkgconfig/tdactor.pc
+lib/pkgconfig/tdapi.pc
+lib/pkgconfig/tdclient.pc
+lib/pkgconfig/tdcore.pc
+lib/pkgconfig/tddb.pc
+lib/pkgconfig/tdjson.pc
+lib/pkgconfig/tdjson_private.pc
+lib/pkgconfig/tdjson_static.pc
+lib/pkgconfig/tdnet.pc
+lib/pkgconfig/tdsqlite.pc
+lib/pkgconfig/tdutils.pc
