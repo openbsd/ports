@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.71 2021/05/24 15:50:22 millert Exp $
+# $OpenBSD: Makefile,v 1.72 2021/06/09 18:54:01 steven Exp $
 
 COMMENT=	log management solution
 
 V =		3.32.1
 REL =		3.32.1
 DISTNAME =	syslog-ng-$V
+REVISION =	0
 CATEGORIES =	sysutils
 
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
@@ -55,6 +56,7 @@ CONFIGURE_ARGS +=	--disable-tcp-wrapper \
 			--disable-stomp \
 			--disable-redis \
 			--disable-riemann \
+			--disable-afsnmp \
 			--disable-geoip \
 			--enable-geoip2 \
 			--without-libnet \
