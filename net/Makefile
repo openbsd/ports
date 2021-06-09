@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1256 2021/05/28 10:54:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.1257 2021/06/09 10:45:29 landry Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -622,6 +622,7 @@
      SUBDIR += py-socks,python3
      SUBDIR += py-stem
      SUBDIR += py-stem,python3
+     SUBDIR += py-telegram,python3
      SUBDIR += py-tinytuya,python3
      SUBDIR += py-tld
      SUBDIR += py-tld,python3
@@ -718,9 +719,11 @@
      SUBDIR += tcpstat
      SUBDIR += tcptrace
      SUBDIR += tcptraceroute
+     SUBDIR += tdlib
      SUBDIR += telegram-purple
      SUBDIR += telepathy
      SUBDIR += termshark
+     SUBDIR += tg
      SUBDIR += thcrut
      SUBDIR += thingsd
      SUBDIR += tinc
