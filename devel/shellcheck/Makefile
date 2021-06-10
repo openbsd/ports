@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2021/04/25 17:29:48 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.9 2021/06/10 08:28:00 sthen Exp $
 
 COMMENT =		shell script analysis tool
 
 MODCABAL_STEM =		ShellCheck
 MODCABAL_VERSION =	0.7.2
 MODCABAL_EXECUTABLES =	shellcheck
+REVISION =		0
 PKGNAME =		${DISTNAME:L}
 CATEGORIES =		devel
 HOMEPAGE =		https://www.shellcheck.net/
@@ -57,11 +58,13 @@ RUN_DEPENDS-main =
 
 NO_TEST =		Yes
 
-# TODO(gnezdo): find a lighter-weight option than pandoc used by
-# ShellCheck's manpage converter or pre-format and carry the page with
-# files directory. Gating ShellCheck on pandoc is a bad trade-off.
+# pkg_add pandoc; cd ${WRKSRC}; ./manpage; cp shellcheck.1 ${FILESDIR}/
+# (and update md5)
+post-patch:
+	@[ `md5 < ${WRKSRC}/shellcheck.1.md` == e0bc56969657579f92b02bba09970ae4 ] || \
+	    (echo "*** manpage changed; regenerate ${FILESDIR}/shellcheck.1"; sleep 3)
+
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${PKGNAME}
-	${INSTALL_DATA} ${WRKSRC}/shellcheck.1.md ${PREFIX}/share/doc/${PKGNAME}
+	${INSTALL_DATA} ${FILESDIR}/shellcheck.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>

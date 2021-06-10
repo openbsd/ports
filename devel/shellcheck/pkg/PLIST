@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2021/02/28 19:58:09 gnezdo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/06/10 08:28:00 sthen Exp $
 @pkgpath devel/shellcheck,-main
 @bin bin/shellcheck
-share/doc/${PKGNAME}/
-share/doc/${PKGNAME}/shellcheck.1.md
+@man man/man1/shellcheck.1
