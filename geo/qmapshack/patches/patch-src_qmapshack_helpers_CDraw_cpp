@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_qmapshack_helpers_CDraw_cpp,v 1.1 2021/01/19 06:44:20 rsadowski Exp $
+$OpenBSD: patch-src_qmapshack_helpers_CDraw_cpp,v 1.2 2021/06/10 19:07:11 landry Exp $
 
 Index: src/qmapshack/helpers/CDraw.cpp
 --- src/qmapshack/helpers/CDraw.cpp.orig
 +++ src/qmapshack/helpers/CDraw.cpp
-@@ -24,6 +24,7 @@
- #include <QImage>
+@@ -25,6 +25,7 @@
+ #include <QPainterPath>
  #include <QPointF>
  #include <QtMath>
 +#include <QPainterPath>

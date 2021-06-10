@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_qmaptool_setup_IAppSetup_cpp,v 1.1.1.1 2020/08/22 06:10:19 kirby Exp $
+$OpenBSD: patch-src_qmaptool_setup_IAppSetup_cpp,v 1.2 2021/06/10 19:07:11 landry Exp $
 
 Index: src/qmaptool/setup/IAppSetup.cpp
 --- src/qmaptool/setup/IAppSetup.cpp.orig
 +++ src/qmaptool/setup/IAppSetup.cpp
-@@ -56,7 +56,7 @@ IAppSetup& IAppSetup::createInstance(QObject * parent)
+@@ -56,7 +56,7 @@ IAppSetup& IAppSetup::createInstance(QObject* parent)
      }
  #if defined(Q_OS_MAC)
      new CAppSetupMac(parent);

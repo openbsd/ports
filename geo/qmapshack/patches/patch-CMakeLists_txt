@@ -1,0 +1,23 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2021/06/10 19:07:11 landry Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -154,16 +154,12 @@ find_package(GDAL                   REQUIRED)
+ find_package(PROJ                   REQUIRED)
+ find_package(JPEG                   REQUIRED)
+ find_package(ROUTINO                REQUIRED)
+-find_package(QuaZip-Qt5             REQUIRED)
++find_package(QuaZip5                REQUIRED)
+ find_package(ALGLIB                         ) # optional as we can use our local version
+ 
+ 
+ if(${Qt5Widgets_VERSION} VERSION_LESS 5.8.0)
+     message( SEND_ERROR "You need at least Qt5.8 or newer.")
+-endif()
+-
+-if(${PROJ_VERSION} VERSION_LESS 7.2.1)
+-    message( SEND_ERROR "You need at least PROJ 7.2.1 or newer.")
+ endif()
+ 
+ if(USE_QT5DBus)

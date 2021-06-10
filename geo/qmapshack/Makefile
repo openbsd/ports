@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2021/03/24 10:57:43 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2021/06/10 19:07:11 landry Exp $
 
 COMMENT =	map management tool
 
 GH_ACCOUNT =	Maproom
 GH_PROJECT =	qmapshack
-GH_TAGNAME =	V_1.15.0
-REVISION =	0
-BROKEN =	doesnt build against proj8
+GH_TAGNAME =	V_1.16.0
 
 CATEGORIES =	geo
 
@@ -16,8 +14,8 @@ HOMEPAGE =	https://github.com/Maproom/qmapshack/wiki
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5DBus Qt5Gui Qt5Help
-WANTLIB += Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml Qt5Quick
-WANTLIB += Qt5Sql Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
+WANTLIB += Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
+WANTLIB += Qt5Quick Qt5Sql Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
 WANTLIB += Qt5Widgets Qt5Xml c gdal jpeg m proj quazip5 routino
 
 MODULES =		devel/cmake x11/qt5
@@ -32,9 +30,7 @@ LIB_DEPENDS =		archivers/quazip \
 			x11/qt5/qttools \
 			x11/qt5/qtwebengine
 
-# https://github.com/Maproom/qmapshack/issues/333
-CONFIGURE_ARGS =	-DCMAKE_CXX_FLAGS=-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1 \
-			-Wno-dev
+CONFIGURE_ARGS =	-Wno-dev
 
 NO_TEST =		Yes
 

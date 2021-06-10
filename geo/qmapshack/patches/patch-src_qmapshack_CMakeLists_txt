@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_qmapshack_CMakeLists_txt,v 1.1 2021/06/10 19:07:11 landry Exp $
+
+Index: src/qmapshack/CMakeLists.txt
+--- src/qmapshack/CMakeLists.txt.orig
++++ src/qmapshack/CMakeLists.txt
+@@ -927,6 +927,7 @@ include_directories(
+     ${PROJ_INCLUDE_DIRS}
+     ${ROUTINO_INCLUDE_DIRS}
+     ${ALGLIB_INCLUDE_DIRS}
++    ${QUAZIP_INCLUDE_DIR}
+ )
+ 
+ if(APPLE)
+@@ -974,7 +975,7 @@ target_link_libraries(${APPLICATION_NAME}
+     ${PROJ_LIBRARIES}
+     ${ROUTINO_LIBRARIES}
+     ${ALGLIB_LIBRARIES}
+-    QuaZip::QuaZip
++    ${QUAZIP_LIBRARIES}
+ )
+ 
+ if(APPLE)
