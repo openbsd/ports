@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.101 2021/03/16 19:06:52 kn Exp $
+@comment $OpenBSD: PLIST-main,v 1.102 2021/06/10 22:38:00 kn Exp $
 @pkgpath devel/git
 @newgroup _gitdaemon:778
 @newuser _gitdaemon:778:_gitdaemon:daemon:Git Daemon:/nonexistent:/sbin/nologin
@@ -41,6 +41,7 @@ libexec/git/git-bisect
 @bin libexec/git/git-check-mailmap
 @bin libexec/git/git-check-ref-format
 @bin libexec/git/git-checkout
+@bin libexec/git/git-checkout--worker
 @bin libexec/git/git-checkout-index
 @bin libexec/git/git-cherry
 @bin libexec/git/git-cherry-pick
