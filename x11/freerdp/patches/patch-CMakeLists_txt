@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.9 2021/03/08 13:15:36 sthen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.10 2021/06/10 14:07:26 ajacoutot Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
@@ -27,15 +27,6 @@ Index: CMakeLists.txt
  	find_path(EPOLLSHIM_INCLUDE_DIR NAMES sys/epoll.h sys/timerfd.h HINTS /usr/local/include/libepoll-shim)
  	find_library(EPOLLSHIM_LIBS NAMES epoll-shim libepoll-shim HINTS /usr/local/lib)
  endif()
-@@ -528,7 +530,7 @@ add_definitions(-DWINPR_EXPORTS -DFREERDP_EXPORTS)
- if(NOT IOS)
- 	check_include_files(fcntl.h HAVE_FCNTL_H)
- 	check_include_files(unistd.h HAVE_UNISTD_H)
--	check_include_files(execinfo.h HAVE_EXECINFO_H)
-+	#check_include_files(execinfo.h HAVE_EXECINFO_H)
- 	check_include_files(inttypes.h HAVE_INTTYPES_H)
- 	check_include_files(sys/modem.h HAVE_SYS_MODEM_H)
- 	check_include_files(sys/filio.h HAVE_SYS_FILIO_H)
 @@ -636,11 +638,11 @@ if(UNIX OR CYGWIN)
  	if (HAVE_SYS_EVENTFD_H)
  		check_symbol_exists(eventfd_read sys/eventfd.h WITH_EVENTFD_READ_WRITE)

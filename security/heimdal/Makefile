@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2020/05/31 08:04:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2021/06/10 14:07:25 ajacoutot Exp $
 
 COMMENT-main=		Kerberos 5 implementation
 COMMENT-devel-docs=	Heimdal C functions documentation
@@ -11,9 +11,9 @@ PKGNAME-main=		${DISTNAME}
 PKGNAME-devel-docs=	heimdal-devel-docs-${V}
 PKGNAME-libs=		heimdal-libs-${V}
 
-REVISION-main=		0
+REVISION-main=		1
 REVISION-devel-docs=	0
-REVISION-libs=		0
+REVISION-libs=		1
 
 CATEGORIES=		security net
 
@@ -99,9 +99,6 @@ CONFIGURE_ENV +=	ac_cv_funclib_db_create=no \
 # symbol versioning suspected to trigger weird linking problems
 # with our binutils
 CONFIGURE_ENV +=	rk_cv_version_script=no
-
-# do not pick-up libexecinfo if installed
-CONFIGURE_ENV +=	ac_cv_header_execinfo_h=no
 
 # install bins, libs and includes under a non-default PATH/PREFIX
 CONFIGURE_ARGS +=	--bindir=${PREFIX}/heimdal/bin \

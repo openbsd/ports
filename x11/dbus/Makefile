@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.164 2020/07/03 21:48:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.165 2021/06/10 14:07:25 ajacoutot Exp $
 
 # XXX merge on next major update
 # https://gitlab.freedesktop.org/dbus/dbus/merge_requests/124/diffs
@@ -8,6 +8,9 @@ DPB_PROPERTIES=		parallel
 
 COMMENT-main=		message bus system
 COMMENT-suid=		DBus setuid helper for starting system services
+
+REVISION-main=		0
+REVISION-suid=		0
 
 V=			1.12.20
 DISTNAME=		dbus-${V}
@@ -27,7 +30,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += c expat pthread
+WANTLIB += c execinfo expat pthread
 
 WANTLIB-main += ${WANTLIB} ICE SM X11 xcb
 
@@ -63,10 +66,6 @@ CONFIGURE_ARGS=		--with-dbus-user=_dbus \
 # we can't use --without-x because this would break bus activated clients (since
 # we don't use systemd)
 #CONFIGURE_ARGS +=	--without-x
-
-# gives no chance of picking up devel/libexecinfo
-CONFIGURE_ENV +=	ac_cv_header_execinfo_h=no \
-			ac_cv_func_backtrace=no
 
 # Full test coverage is disabled:
 # * changes the final dbus binaries
