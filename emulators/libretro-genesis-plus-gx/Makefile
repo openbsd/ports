@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/23 16:29:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2021/06/10 20:41:58 kmos Exp $
 
 COMMENT =	Sega Genesis core for retroarch
 
@@ -33,5 +33,10 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/libretro-genesis-plus-gx
 	${INSTALL_DATA} ${WRKSRC}/LICENSE.txt \
 		${PREFIX}/share/doc/libretro-genesis-plus-gx
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
 
 .include <bsd.port.mk>
