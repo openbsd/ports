@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2021/01/04 07:50:56 martijn Exp $
+# $OpenBSD: Makefile,v 1.5 2021/06/10 11:00:15 martijn Exp $
 
 SUBDIR =
 SUBDIR += admdscrub
 SUBDIR += dkimsign
+SUBDIR += dkimsign,ed25519
 SUBDIR += dnsbl
 SUBDIR += libopensmtpd
 SUBDIR += rspamd
