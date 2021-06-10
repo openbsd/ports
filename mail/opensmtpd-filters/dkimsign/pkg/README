@@ -1,15 +1,16 @@
-$OpenBSD: README,v 1.1 2019/09/23 19:24:45 martijn Exp $
+$OpenBSD: README,v 1.2 2021/06/10 10:58:51 martijn Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
-To use filter-dkimsign, you must first generate a key:
+To use filter-dkimsign, you must first generate a private key:
 
-  doas -u _dkimsign openssl genrsa -out ${SYSCONFDIR}/mail/dkim/private.key 2048
+  doas -u _dkimsign openssl genrsa -out ${SYSCONFDIR}/mail/dkim/private.rsa.key 2048
 
-To generate the public ready for dns:
-  openssl rsa -in ${SYSCONFDIR}/mail/dkim/private.key -pubout | \
+To generate the public key ready for dns:
+
+  openssl rsa -in ${SYSCONFDIR}/mail/dkim/private.rsa.key -pubout | \
     sed '1s/.*/v=DKIM1;p=/;:nl;${s/-----.*//;q;};N;s/\n//g;b nl;'
 
 This value needs to be placed in a DNS txt record with the following syntax:
@@ -17,10 +18,31 @@ This value needs to be placed in a DNS txt record with the following syntax:
 
 Edit the /etc/mail/smtpd.conf file to declare the filter:
 
-  filter "dkimsign" proc-exec "filter-dkimsign -d <domain> -s <selector> -k ${SYSCONFDIR}/mail/dkim/private.key" user _dkimsign group _dkimsign
+  filter dkimsign_rsa proc-exec "filter-dkimsign -d <domain> -s <selector> -k ${SYSCONFDIR}/mail/dkim/private.rsa.key" user _dkimsign group _dkimsign
 
 Then add the filter to each listener that should be signed:
 
-  listen on all filter "dkimsign"
+  listen on all filter dkimsign_rsa
+
+To use Ed25519 similar steps must be taken.
+
+  Make sure the ed25519 flavor of opensmtpd-filter-dkimsign is installed.
+
+To generate the private key:
+
+  doas -u _dkimsign eopenssl11 genpkey -algorithm ed25519 -outform PEM -out ${SYSCONFDIR}/mail/dkim/private.ed25519.key
+
+To generate the public key ready for dns:
+
+  printf "v=DKIM1;k=ed25519;p=%s" "$(eopenssl11 pkey -outform DER -pubout -in ${SYSCONFDIR}/mail/dkim/private.ed25519.key | tail -c +13 | openssl base64)"
+
+Edit the /etc/mail/smtpd.conf file to declare the filter:
+
+  filter dkimsign_ed25519 proc-exec "filter-dkimsign -a ed25519-sha256 -d <domain> -s <selector> -k ${SYSCONFDIR}/mail/dkim/private.ed25519.key" user _dkimsign group _dkimsign
+
+To add both filters to each listener that should be signed:
+
+  filter dkimsign chain { dkimsign_rsa, dkimsign_ed25519 }
+  listen on all filter dkimsign
 
 For a full list of options see filter-dkimsign(8).
