@@ -1,21 +1,19 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:44:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/06/10 12:59:51 bluhm Exp $
 
 COMMENT =	parse directory listing
 
-DISTNAME =	File-Listing-6.04
-CPAN_AUTHOR =	GAAS
+DISTNAME =	File-Listing-6.14
 CATEGORIES =	devel
-REVISION =	0
 
 MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes
 
-MODULES =	cpan
-PKG_ARCH =	*
+MODULES =		cpan
 
-RUN_DEPENDS =	www/p5-HTTP-Date>=6.00
-BUILD_DEPENDS =	${RUN_DEPENDS}
+RUN_DEPENDS =		www/p5-HTTP-Date
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
