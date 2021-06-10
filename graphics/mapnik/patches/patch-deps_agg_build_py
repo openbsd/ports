@@ -1,0 +1,11 @@
+$OpenBSD: patch-deps_agg_build_py,v 1.1 2021/06/10 19:16:17 kirby Exp $
+
+Index: deps/agg/build.py
+--- deps/agg/build.py.orig
++++ deps/agg/build.py
+@@ -25,4 +25,4 @@ from glob import glob
+ Import('env')
+ lib_env = env.Clone()
+ lib_env.Append(CXXFLAGS='-fPIC')
+-lib_env.StaticLibrary('agg', glob('./src/' + '*.cpp'), LIBS=[])
++lib_env.StaticLibrary('agg_bundled', glob('./src/' + '*.cpp'), LIBS=[])

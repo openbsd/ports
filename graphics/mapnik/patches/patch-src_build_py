@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_build_py,v 1.6 2021/05/23 17:47:01 kirby Exp $
+$OpenBSD: patch-src_build_py,v 1.7 2021/06/10 19:16:17 kirby Exp $
 Index: src/build.py
 --- src/build.py.orig
 +++ src/build.py
@@ -11,6 +11,15 @@ Index: src/build.py
 -
  if env['LINKING'] == 'static':
      lib_env.Append(CXXFLAGS="-fPIC")
+ 
+@@ -114,7 +111,7 @@ if env['PLATFORM'] == 'Linux':
+     lib_env['LINKFLAGS'].append('-pthread')
+ 
+ if env['RUNTIME_LINK'] != 'static':
+-    lib_env['LIBS'].insert(0, 'agg')
++    lib_env['LIBS'].insert(0, 'agg_bundled')
+ 
+ lib_env['LIBS'].append('z')
  
 @@ -140,7 +137,7 @@ else: # unix, non-macos
          else:
@@ -52,7 +61,7 @@ Index: src/build.py
 -    env['create_uninstall_target'](env, target2)
 -    env['create_uninstall_target'](env, target1)
      env['create_uninstall_target'](env, target)
--
+ 
 -    # to enable local testing
 -    lib_major_minor = "%s.%d.%d" % (os.path.basename(env.subst(env['MAPNIK_LIB_NAME'])), int(major), int(minor))
 -    local_lib = os.path.basename(env.subst(env['MAPNIK_LIB_NAME']))
@@ -60,6 +69,7 @@ Index: src/build.py
 -        os.remove(lib_major_minor)
 -    os.symlink(local_lib,lib_major_minor)
 -    Clean(mapnik,lib_major_minor);
- 
+-
  if not env['RUNTIME_LINK'] == 'static':
-     Depends(mapnik, env.subst('../deps/agg/libagg.a'))
+-    Depends(mapnik, env.subst('../deps/agg/libagg.a'))
++    Depends(mapnik, env.subst('../deps/agg/libagg_bundled.a'))
