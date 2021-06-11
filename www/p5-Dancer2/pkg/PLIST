@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/05/17 13:31:19 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/06/11 16:51:21 bluhm Exp $
 bin/dancer2
 ${P5SITE}/Dancer2/
 ${P5SITE}/Dancer2.pm
@@ -60,6 +60,7 @@ ${P5SITE}/Dancer2/Logger/Null.pm
 ${P5SITE}/Dancer2/Manual/
 ${P5SITE}/Dancer2/Manual.pod
 ${P5SITE}/Dancer2/Manual/Deployment.pod
+${P5SITE}/Dancer2/Manual/Keywords.pod
 ${P5SITE}/Dancer2/Manual/Migration.pod
 ${P5SITE}/Dancer2/Manual/Testing.pod
 ${P5SITE}/Dancer2/Plugin.pm
@@ -82,6 +83,9 @@ ${P5SITE}/Dancer2/Template/Tiny.pm
 ${P5SITE}/Dancer2/Test.pm
 ${P5SITE}/Dancer2/Tutorial.pod
 ${P5SITE}/auto/share/dist/Dancer2/
+@comment ${P5SITE}/auto/share/dist/Dancer2/.gitignore
+@comment ${P5SITE}/auto/share/dist/Dancer2/docker/
+@comment ${P5SITE}/auto/share/dist/Dancer2/docker/Dockerfile
 ${P5SITE}/auto/share/dist/Dancer2/skel/
 ${P5SITE}/auto/share/dist/Dancer2/skel/.dancer
 ${P5SITE}/auto/share/dist/Dancer2/skel/MANIFEST.SKIP
@@ -166,6 +170,7 @@ ${P5SITE}/auto/share/dist/Dancer2/skel/views/layouts/main.tt
 @man man/man3p/Dancer2::Logger::Null.3p
 @man man/man3p/Dancer2::Manual.3p
 @man man/man3p/Dancer2::Manual::Deployment.3p
+@man man/man3p/Dancer2::Manual::Keywords.3p
 @man man/man3p/Dancer2::Manual::Migration.3p
 @man man/man3p/Dancer2::Manual::Testing.3p
 @man man/man3p/Dancer2::Plugin.3p
