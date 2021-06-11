@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2021/03/08 13:59:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/06/11 10:36:09 claudio Exp $
 
 COMMENT =		prometheus exporter for hardware and OS metrics
 
 MODGO_MODNAME =		github.com/prometheus/node_exporter
-MODGO_VERSION =		v1.1.1
+MODGO_VERSION =		v1.1.2
 
 DISTNAME =		node_exporter-${MODGO_VERSION}
-REVISION =		1
 
 CATEGORIES =		sysutils
 
