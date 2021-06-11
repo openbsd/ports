@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.57 2021/05/12 13:02:09 millert Exp $
+# $OpenBSD: Makefile,v 1.58 2021/06/11 21:49:41 millert Exp $
 
 COMMENT-main=	execute a command as another user
 COMMENT-python=	sudo Python plugin
 
-V=		1.9.7
+V=		1.9.7p1
 DISTNAME=	sudo-${V}
 CATEGORIES=	security
 
