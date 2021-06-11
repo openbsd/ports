@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.348 2021/06/05 09:08:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.349 2021/06/11 08:07:16 ajacoutot Exp $
 
 COMMENT=		general-purpose utility library
 
 GNOME_PROJECT=		glib
-GNOME_VERSION=		2.68.2
+GNOME_VERSION=		2.68.3
 PKGNAME=		${DISTNAME:S/glib/glib2/}
-REVISION=		0
 
 CATEGORIES=		devel
 
@@ -17,11 +16,11 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # would trigger an abort():
 # GLib-GObject:ERROR:gvaluetypes.c:457:_g_value_types_init:
 # assertion failed: (type == G_TYPE_CHAR)
-SHARED_LIBS += glib-2.0                  4201.6 # 0.6800.2
-SHARED_LIBS += gobject-2.0               4200.13 # 0.6800.2
-SHARED_LIBS += gthread-2.0               4200.13 # 0.6800.2
-SHARED_LIBS += gmodule-2.0               4200.13 # 0.6800.2
-SHARED_LIBS += gio-2.0                   4200.13 # 0.6800.2
+SHARED_LIBS += glib-2.0                  4201.6 # 0.6800.3
+SHARED_LIBS += gobject-2.0               4200.13 # 0.6800.3
+SHARED_LIBS += gthread-2.0               4200.13 # 0.6800.3
+SHARED_LIBS += gmodule-2.0               4200.13 # 0.6800.3
+SHARED_LIBS += gio-2.0                   4200.13 # 0.6800.3
 
 # LGPLv2
 PERMIT_PACKAGE=	Yes
