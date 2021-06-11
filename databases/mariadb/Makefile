@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2021/05/09 09:17:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.108 2021/06/11 19:19:59 sthen Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
@@ -9,6 +9,9 @@ DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
 PKGNAME-tests=	mariadb-tests-${VERSION}
+REVISION-main=	0
+REVISION-server= 0
+REVISION-tests= 0
 EPOCH=		1
 # libiconv dep was removed post-6.8
 # keep REVISION in -current above -stable until 6.9
@@ -29,7 +32,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # GPLv2 and LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	${COMPILER_LIBCXX} c crypto m pthread ssl z
+WANTLIB=	${COMPILER_LIBCXX} c crypto execinfo m pthread ssl z
 WANTLIB-main=	${WANTLIB} curses readline
 WANTLIB-server=	${WANTLIB} bz2 curl lz4 lzma lzo2 pcre2-8 snappy xml2
 WANTLIB-tests=	${WANTLIB} pcre2-8 pcre2-posix
@@ -95,10 +98,6 @@ CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 
 # force disabling the PAM auth plugin if OpenPAM is installed
 CONFIGURE_ARGS+=-DHAVE_PAM_APPL_H=0
-
-# force disabling libexecinfo if it is installed
-CONFIGURE_ARGS+=-DHAVE_EXECINFO_H=0 \
-		-DHAVE_LIBEXECINFO=0
 
 # The ColumnStore, Mroonga, RocksDB, and TokuDB storage engines are disabled.
 # ColumnStore is only buildable on X86.
