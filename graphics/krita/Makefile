@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.49 2021/05/16 19:15:23 cwen Exp $
+# $OpenBSD: Makefile,v 1.50 2021/06/11 05:57:36 rsadowski Exp $
 
 COMMENT =		advanced drawing and image manipulation
 
-VERSION =		4.4.3
+VERSION =		4.4.5
 DISTNAME =		krita-${VERSION}
 
-SHARED_LIBS +=  kritabasicflakes          3.0 # 16.0
+SHARED_LIBS +=  kritabasicflakes          4.0 # 16.0
 SHARED_LIBS +=  kritacolord               1.0 # 16.0
-SHARED_LIBS +=  kritaflake                6.1 # 16.0
+SHARED_LIBS +=  kritaflake                6.2 # 16.0
 SHARED_LIBS +=  kritaodf                  2.0 # 16.0
 SHARED_LIBS +=  kritapigment              6.0 # 16.0
 SHARED_LIBS +=  kritaplugin               1.0 # 16.0
@@ -15,11 +15,11 @@ SHARED_LIBS +=  kritastore                2.0 # 16.0
 SHARED_LIBS +=  kritatext                 1.0 # 16.0
 SHARED_LIBS +=  kritatextlayout           1.0 # 16.0
 SHARED_LIBS +=  kritaversion              1.0 # 16.0
-SHARED_LIBS +=  kritawidgets              4.1 # 16.0
+SHARED_LIBS +=  kritawidgets              4.2 # 16.0
 SHARED_LIBS +=  kritawidgetutils          4.0 # 16.0
 SHARED_LIBS +=  kritacommand              2.0 # 16.0
 SHARED_LIBS +=  kritaimpex                1.0 # 16.0
-SHARED_LIBS +=  kritalibkis               3.1 # 16.0
+SHARED_LIBS +=  kritalibkis               3.2 # 16.0
 SHARED_LIBS +=  kritalibkra               4.0 # 16.0
 SHARED_LIBS +=  kritaqml                  2.0 # 16.0
 SHARED_LIBS +=  kritametadata             0.0 # 18.0
@@ -27,10 +27,10 @@ SHARED_LIBS +=  kritametadata             0.0 # 18.0
 SHARED_LIBS +=  kritapsd                  3.1 # 14.0
 SHARED_LIBS +=  kritacolor                2.0 # 14.0
 SHARED_LIBS +=  kritaglobal               4.4 # 14.0
-SHARED_LIBS +=  kritaimage                58.0 # 0.0
+SHARED_LIBS +=  kritaimage                59.0 # 0.0
 SHARED_LIBS +=  kritalibbrush             56.0 # 0.0
 SHARED_LIBS +=  kritalibpaintop           56.0 # 0.0
-SHARED_LIBS +=  kritaui                   61.0 # 0.0
+SHARED_LIBS +=  kritaui                   62.0 # 0.0
 
 CATEGORIES =	graphics
 
