@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/06/04 15:47:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2021/06/11 07:49:28 ajacoutot Exp $
 
 COMMENT =		HTTP client/server library for GNOME
 
@@ -43,10 +43,11 @@ CONFIGURE_ARGS =	-Dgssapi=disabled \
 			-Dsysprof=disabled \
 			-Dtls_check=false
 
-# requires unported wstest and dependency on apache2, python quart...
+# requires unported wstest and dependency on apache2, python quart, gnutls...
 CONFIGURE_ARGS +=	-Dautobahn=disabled \
 			-Dtests=false \
-			-Dhttp2_tests=disabled
+			-Dhttp2_tests=disabled \
+			-Dpkcs11_tests=disabled
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
