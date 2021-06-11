@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2020/12/29 15:13:08 landry Exp $
+# $OpenBSD: Makefile,v 1.48 2021/06/11 11:41:36 landry Exp $
 
 COMMENT=	Xfce4 lightweight image-viewer
 
-XFCE_VERSION=	0.10.0
+XFCE_VERSION=	0.11.0
 XFCE_GOODIE=	ristretto
-REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -13,9 +12,6 @@ MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes
 MODXFCE_ICON_CACHE=	Yes
 RUN_DEPENDS=	misc/shared-mime-info
-
-# https://git.xfce.org/apps/ristretto/commit/?id=13600d6f78a7178ed9c1f07697751cb37195920b
-MAKE_ENV += AM_LDFLAGS=-L${X11BASE}/lib
 
 LIB_DEPENDS=	devel/libmagic \
 		graphics/libexif \
