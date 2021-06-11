@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile,v 1.1 2021/06/11 16:02:18 sthen Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -6,7 +6,7 @@ TARBALL := ${DISTNAME}.tar.gz
+ DEFINES += -D_XOPEN_SOURCE=700
+ DEFINES += -D_BSD_SOURCE
+ CFLAGS_SSL=`pkg-config --cflags libssl`
+-LIBS_TLS ?= -ltls `pkg-config --libs libssl`
++LIBS_TLS ?= -ltls `pkg-config --libs libcrypto libssl`
+ LIBS_SSL = `pkg-config --libs libssl openssl`
+ 
+ .PHONY: all test clean install

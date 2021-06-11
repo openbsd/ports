@@ -1,0 +1,14 @@
+$OpenBSD: patch-httpc_c,v 1.1 2021/06/11 16:02:18 sthen Exp $
+
+Index: httpc.c
+--- httpc.c.orig
++++ httpc.c
+@@ -155,7 +155,7 @@ main(int argc, char *argv[])
+ 	dprintf(WRITE_FD, "GET %s HTTP/1.1\r\n", uri);
+ 	if (host != NULL)
+ 		dprintf(WRITE_FD, "Host: %s\r\n", host);
+-	dprintf(WRITE_FD, "Accept-Encoding: gzip\r\n", host);
++	dprintf(WRITE_FD, "Accept-Encoding: gzip\r\n");
+ 	dprintf(WRITE_FD, "Connection: close\r\n");
+ 	dprintf(WRITE_FD, "\r\n");
+ 
