@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_mips_n32_S,v 1.1 2021/06/11 15:37:15 visa Exp $
+
+Use EH_FRAME_FLAGS to get section flags that clang's integrated assembler
+expects. This fixes the following build error on mips64:
+
+../src/mips/n32.S:585:9: error: changed section flags for .eh_frame, expected: 0x2
+        .section .eh_frame,"aw",@progbits
+        ^
+
+Index: src/mips/n32.S
+--- src/mips/n32.S.orig
++++ src/mips/n32.S
+@@ -582,7 +582,7 @@ cls_epilogue:	
+ 	.end	ffi_closure_N32
+ 
+ #ifdef __GNUC__
+-        .section        .eh_frame,"aw",@progbits
++        .section        .eh_frame,EH_FRAME_FLAGS,@progbits
+ .Lframe1:
+         .4byte  .LECIE1-.LSCIE1		# length
+ .LSCIE1:
