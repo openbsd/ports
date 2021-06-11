@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2021/01/13 13:05:43 kirby Exp $
+# $OpenBSD: Makefile,v 1.3 2021/06/11 05:04:05 landry Exp $
 
 COMMENT =		OpenStreetMap routing software
 
 DISTNAME =		routino-3.3.3
+REVISION =	0
 
 SHARED_LIBS +=		routino 0.0
 SHARED_LIBS +=		routino-slim 0.0
@@ -24,7 +25,8 @@ EXTRACT_SUFX =		.tgz
 LIB_DEPENDS =		archivers/bzip2
 
 MAKE_FLAGS =		CC=${CC} LD=${CC} \
-			CFLAGS="${CFLAGS} -pthread -DUSE_PTHREADS -I${LOCALBASE}/include" \
+			CFLAGS="${CFLAGS} -pthread -DUSE_PTHREADS \
+			-DUSE_GZIP -DUSE_BZIP2 -I${LOCALBASE}/include" \
 			LDFLAGS="-lm -pthread -lbz2 -lz -L${LOCALBASE}/lib"
 
 USE_GMAKE =		Yes
