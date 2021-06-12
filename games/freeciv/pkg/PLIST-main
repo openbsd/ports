@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2020/02/20 17:31:50 bket Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2021/06/12 06:58:01 bket Exp $
 @conflict freeciv-client-<2.4.4
 @pkgpath games/freeciv
 @bin bin/freeciv-manual
@@ -10,7 +10,7 @@
 @man man/man6/freeciv-server.6
 share/appdata/
 share/appdata/freeciv-server.appdata.xml
-share/applications/freeciv-server.desktop
+share/applications/org.freeciv.server.desktop
 share/doc/freeciv/
 share/doc/freeciv/ABOUT-NLS
 share/doc/freeciv/AUTHORS

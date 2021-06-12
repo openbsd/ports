@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.124 2020/02/20 17:31:50 bket Exp $
+# $OpenBSD: Makefile,v 1.125 2021/06/12 06:58:01 bket Exp $
 
 COMMENT-main=	Civilization clone for X11; multiplayer; game server
 COMMENT-client=	Freeciv client
 COMMENT-share=	shared data files for Freeciv
 
-VERSION=	2.6.2
+VERSION=	2.6.4
 DISTNAME=	freeciv-${VERSION}
 PKGNAME-main=	freeciv-server-${VERSION}
 PKGNAME-client=	freeciv-client-${VERSION}
@@ -20,8 +20,8 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freeciv/}
 EXTRACT_SUFX=	.tar.bz2
 
-cWANTLIB += bz2 c crypto curl iconv intl lzma m nghttp2 pthread sqlite3 ssl z
-cWANTLIB += ${MODLUA_WANTLIB}
+cWANTLIB += bz2 c crypto curl execinfo iconv intl lzma m nghttp2 pthread
+cWANTLIB += sqlite3 ssl z ${MODLUA_WANTLIB}
 
 WANTLIB-main += readline ${cWANTLIB}
 
@@ -64,10 +64,9 @@ USE_LIBTOOL =	No
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib -lintl -liconv" \
+		LDFLAGS="-L${LOCALBASE}/lib -lintl -liconv -lexecinfo" \
 		LUA_CFLAGS=-I${MODLUA_INCL_DIR} \
-		LUA_LIBS="${MODLUA_LIB} -lm" \
-		ac_cv_header_execinfo_h=no
+		LUA_LIBS="${MODLUA_LIB} -lm"
 
 CONFIGURE_ARGS=	--with-ggz-client=no \
 		--enable-mapimg=no \
