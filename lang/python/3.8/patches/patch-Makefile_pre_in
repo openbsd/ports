@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_pre_in,v 1.1 2019/11/07 16:14:09 kmos Exp $
+$OpenBSD: patch-Makefile_pre_in,v 1.2 2021/06/12 04:03:23 kmos Exp $
 
 Index: Makefile.pre.in
 --- Makefile.pre.in.orig
 +++ Makefile.pre.in
-@@ -643,7 +643,7 @@ gdbhooks: $(BUILDPYTHON)-gdb.py
+@@ -646,7 +646,7 @@ gdbhooks: $(BUILDPYTHON)-gdb.py
  
  SRC_GDB_HOOKS=$(srcdir)/Tools/gdb/libpython.py
  $(BUILDPYTHON)-gdb.py: $(SRC_GDB_HOOKS)

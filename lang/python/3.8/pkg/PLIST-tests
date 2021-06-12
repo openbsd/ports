@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.8 2021/02/21 19:24:26 daniel Exp $
+@comment $OpenBSD: PLIST-tests,v 1.9 2021/06/12 04:03:23 kmos Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-tests-${VERSION_SPEC}
@@ -2370,6 +2370,7 @@ lib/python3.8/test/mp_fork_bomb.py
 lib/python3.8/test/mp_preload.py
 lib/python3.8/test/multibytecodec_support.py
 lib/python3.8/test/nokia.pem
+lib/python3.8/test/nosan.pem
 lib/python3.8/test/nullbytecert.pem
 lib/python3.8/test/nullcert.pem
 lib/python3.8/test/outstanding_bugs.py
