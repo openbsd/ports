@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.98 2021/04/04 23:43:25 jca Exp $
+# $OpenBSD: Makefile,v 1.99 2021/06/12 23:17:50 jca Exp $
 
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
 VERSION=		27.2
 DISTNAME=		emacs-${VERSION}
+REVISION=		0
 
 CATEGORIES=		editors
 
@@ -14,7 +15,7 @@ MAINTAINER=		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 # GPLv3+
 PERMIT_PACKAGE=		Yes
 
-WANTLIB =		c curses jansson gmp gnutls m pthread xml2 z
+WANTLIB =		c curses execinfo jansson gmp gnutls m pthread xml2 z
 
 MASTER_SITES=		${MASTER_SITE_GNU:=emacs/}
 EXTRACT_SUFX=		.tar.xz
@@ -32,8 +33,7 @@ CONFIGURE_ARGS=		--build="${GCCARCH}" \
 			--without-sound
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}" \
-			ac_cv_header_execinfo_h=no
+			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
 
 MAKE_ENV=		INSTALL_EMACS="${INSTALL_SCRIPT}" \
 			LOGNAME="${SHAREOWN}"
