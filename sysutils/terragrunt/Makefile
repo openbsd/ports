@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2021/06/05 09:21:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2021/06/12 14:13:51 ajacoutot Exp $
 
 BROKEN-aarch64=	old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1.1.11
 BROKEN-armv7=	old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1.1.11
@@ -6,7 +6,7 @@ BROKEN-armv7=	old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1
 COMMENT=	thin wrapper for Terraform that provides extra tools
 
 MODGO_MODNAME=	github.com/gruntwork-io/terragrunt
-MODGO_VERSION=	v0.29.8
+MODGO_VERSION=	v0.30.3
 DISTNAME=	terragrunt-${MODGO_VERSION}
 
 WRKDIST=	${WRKDIR}/github.com/gruntwork-io/terragrunt@${MODGO_VERSION}
@@ -310,7 +310,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-kms-wrapping/entropy			 v0.1.0 \
 	github.com/hashicorp/go-memdb					 v1.0.2 \
 	github.com/hashicorp/go-msgpack					 v0.5.5 \
-	github.com/hashicorp/go-multierror				 v1.1.0 \
+	github.com/hashicorp/go-multierror				 v1.1.1 \
 	github.com/hashicorp/go-plugin					 v1.0.1 \
 	github.com/hashicorp/go-raftchunking				 v0.6.3-0.20191002164813-7e9e8525653a \
 	github.com/hashicorp/go-retryablehttp				 v0.6.7 \
@@ -600,7 +600,7 @@ MODGO_MODULES =	\
 	github.com/yuin/gopher-lua					 v0.0.0-20200816102855-ee81675732da \
 	github.com/zclconf/go-cty					 v1.8.1 \
 	github.com/zclconf/go-cty-debug					 v0.0.0-20191215020915-b22d67c1ba0b \
-	github.com/zclconf/go-cty-yaml					 v1.0.1 \
+	github.com/zclconf/go-cty-yaml					 v1.0.2 \
 	go.etcd.io/bbolt						 v1.3.5 \
 	go.etcd.io/etcd							 v0.5.0-alpha.5.0.20200425165423-262c93980547 \
 	go.mongodb.org/atlas						 v0.7.1 \
@@ -978,6 +978,7 @@ MODGO_MODFILES =	\
 	github.com/hashicorp/go-msgpack				 v0.5.3 \
 	github.com/hashicorp/go-msgpack				 v0.5.4 \
 	github.com/hashicorp/go-multierror			 v1.0.0 \
+	github.com/hashicorp/go-multierror			 v1.1.0 \
 	github.com/hashicorp/go-plugin				 v1.0.0 \
 	github.com/hashicorp/go-plugin				 v1.0.1-0.20190610192547-a1bc61569a26 \
 	github.com/hashicorp/go-retryablehttp			 v0.5.2 \
@@ -1238,6 +1239,7 @@ MODGO_MODFILES =	\
 	github.com/zclconf/go-cty				 v1.2.0 \
 	github.com/zclconf/go-cty				 v1.2.1 \
 	github.com/zclconf/go-cty				 v1.8.0 \
+	github.com/zclconf/go-cty-yaml				 v1.0.1 \
 	go.etcd.io/bbolt					 v1.3.2 \
 	go.etcd.io/bbolt					 v1.3.3 \
 	go.etcd.io/bbolt					 v1.3.4 \
