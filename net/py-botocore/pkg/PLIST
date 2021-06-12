@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.163 2021/05/19 10:00:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.164 2021/06/12 13:13:55 ajacoutot Exp $
 @conflict py-botocore-*
 @pkgpath net/py-botocore
 lib/python${MODPY_VERSION}/site-packages/botocore/
@@ -1114,6 +1114,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/pricing/2017-10-15/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pricing/2017-10-15/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pricing/2017-10-15/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pricing/2017-10-15/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/proton/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/proton/2020-07-20/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/proton/2020-07-20/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/proton/2020-07-20/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/qldb/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/qldb-session/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/qldb-session/2019-07-11/
