@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2021/04/30 16:38:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.110 2021/06/12 05:31:18 daniel Exp $
 
      SUBDIR =
      SUBDIR += arc
@@ -54,7 +54,6 @@
      SUBDIR += pigz
      SUBDIR += py-backports-lzma
      SUBDIR += py-brotli,python3
-     SUBDIR += py-libarchive-c
      SUBDIR += py-libarchive-c,python3
      SUBDIR += py-lz4,python3
      SUBDIR += py-lzo
