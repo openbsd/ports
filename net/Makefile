@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1257 2021/06/09 10:45:29 landry Exp $
+# $OpenBSD: Makefile,v 1.1258 2021/06/12 05:35:26 daniel Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -583,7 +583,6 @@
      SUBDIR += py-junos-eznc,python3
      SUBDIR += py-libcloud,python3
      SUBDIR += py-libpcap
-     SUBDIR += py-minimalmodbus
      SUBDIR += py-minimalmodbus,python3
      SUBDIR += py-msgpack
      SUBDIR += py-msgpack,python3
