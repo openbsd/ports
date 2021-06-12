@@ -1,4 +1,4 @@
-SHA256 (consul-template-v0.25.2.zip) = NIcAYGc7lFmhQXIVspoOot81Q5vdWJUNDPo4bs4kouY=
+SHA256 (consul-template-v0.26.0.zip) = qykt/PQgJ0PATKDNU21puetgnKZ+MpYg0H2LAdAEorY=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = IhijTyC5cbwZUhbUGV9XUgoqy9hd5/wxrPxEAmZwTBE=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.26.0.zip) = Uh+MNnOW/1K36cIgPjKnFMmVeItdFKQOK7gp6wp4eKc=
 SHA256 (go_modules/github.com/!burnt!sushi/toml/@v/v0.3.1.mod) = KAIbQYClnDmTYHqVsY4jDdC8a+pSQv/o6ou/tPT3tNc=
@@ -178,8 +178,8 @@ SHA256 (go_modules/github.com/mattn/go-isatty/@v/v0.0.12.mod) = GgYuVsAmbQBL6lER
 SHA256 (go_modules/github.com/mattn/go-isatty/@v/v0.0.12.zip) = B5QdJOCJTCncQrzSnWRIFc17XuhOPBS75tUa0T78vwc=
 SHA256 (go_modules/github.com/mattn/go-isatty/@v/v0.0.3.mod) = fPaZQoQQ5Q1cTPCMVMCR/cO0aAmhjkcau4z/BgTXpVA=
 SHA256 (go_modules/github.com/mattn/go-isatty/@v/v0.0.8.mod) = T3daib6agBiagm7yLcMD44lVfFWPFL/UC3W17yhF5W8=
-SHA256 (go_modules/github.com/mattn/go-shellwords/@v/v1.0.10.mod) = Kb//Fv9Xt9raZOanSAbZMVSazOYctwxFijidCZwtDsI=
-SHA256 (go_modules/github.com/mattn/go-shellwords/@v/v1.0.10.zip) = z9UmdWFPuxS4XwBWFWFK/GqUxjIXMWcM8D5XH18R58Y=
+SHA256 (go_modules/github.com/mattn/go-shellwords/@v/v1.0.12.mod) = Kb//Fv9Xt9raZOanSAbZMVSazOYctwxFijidCZwtDsI=
+SHA256 (go_modules/github.com/mattn/go-shellwords/@v/v1.0.12.zip) = bTXD7ckuR6BpiHiNaDwa04lxm1XvGdWn8jmrRwi22hE=
 SHA256 (go_modules/github.com/matttproud/golang_protobuf_extensions/@v/v1.0.1.mod) = XJwAhrmy623J8nuh0zsopmRj/jDC+Hb/BbfISOd56nc=
 SHA256 (go_modules/github.com/matttproud/golang_protobuf_extensions/@v/v1.0.1.zip) = 5k3FgCP0uMRHLQWkTycZuE1sLMNkzGgoIMn3KyM8nNw=
 SHA256 (go_modules/github.com/miekg/dns/@v/v1.0.14.mod) = Ome3772JfyqxRn05ul7LMjH3LPCtZcKQyXxbqC+LMaw=
@@ -372,7 +372,7 @@ SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.3.0.zip) = mOBPKTAZypu2r/Ax837KVVpIsPw
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190102054323-c2f93a96b099.mod) = scYIN+phM18U32TzGUw82S4PYo9gZIBnGJUPDXodvp4=
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.mod) = scYIN+phM18U32TzGUw82S4PYo9gZIBnGJUPDXodvp4=
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.zip) = 7qqCcA6WrF6APXqcMjYzMlBL7/j7sSAkkrTUPVpec2A=
-SIZE (consul-template-v0.25.2.zip) = 285841
+SIZE (consul-template-v0.26.0.zip) = 292504
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.zip) = 2508208
 SIZE (go_modules/github.com/!burnt!sushi/toml/@v/v0.3.1.mod) = 34
@@ -552,8 +552,8 @@ SIZE (go_modules/github.com/mattn/go-isatty/@v/v0.0.12.mod) = 104
 SIZE (go_modules/github.com/mattn/go-isatty/@v/v0.0.12.zip) = 8902
 SIZE (go_modules/github.com/mattn/go-isatty/@v/v0.0.3.mod) = 34
 SIZE (go_modules/github.com/mattn/go-isatty/@v/v0.0.8.mod) = 95
-SIZE (go_modules/github.com/mattn/go-shellwords/@v/v1.0.10.mod) = 47
-SIZE (go_modules/github.com/mattn/go-shellwords/@v/v1.0.10.zip) = 7653
+SIZE (go_modules/github.com/mattn/go-shellwords/@v/v1.0.12.mod) = 47
+SIZE (go_modules/github.com/mattn/go-shellwords/@v/v1.0.12.zip) = 9134
 SIZE (go_modules/github.com/matttproud/golang_protobuf_extensions/@v/v1.0.1.mod) = 56
 SIZE (go_modules/github.com/matttproud/golang_protobuf_extensions/@v/v1.0.1.zip) = 44378
 SIZE (go_modules/github.com/miekg/dns/@v/v1.0.14.mod) = 28
