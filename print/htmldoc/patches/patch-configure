@@ -1,13 +1,12 @@
-$OpenBSD: patch-configure,v 1.6 2020/02/16 08:30:08 benoit Exp $
-Index: configure
---- configure.orig
-+++ configure
-@@ -5624,7 +5624,7 @@ if test -n "$GXX"; then
-     fi
+$OpenBSD: patch-configure,v 1.7 2021/06/12 13:32:39 benoit Exp $
+--- configure.orig	Tue May 18 02:50:17 2021
++++ configure	Sat Jun 12 15:24:27 2021
+@@ -6318,7 +6318,7 @@
+         if test -z "$OPTIM"
+ then :
  
-         if test -z "$OPTIM"; then
 -        OPTIM="-Os -g"
 +        OPTIM=""
-     fi
  
-         OPTIM="-Wall -Wunused -Wno-char-subscripts -Wno-format-y2k $OPTIM"
+ fi
+ 

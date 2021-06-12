@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.50 2020/12/26 05:54:10 benoit Exp $
+# $OpenBSD: Makefile,v 1.51 2021/06/12 13:32:39 benoit Exp $
 
 COMMENT =		convert HTML pages to PDF/PS format
 
-V =			1.9.11
+V =			1.9.12
 DISTNAME =		htmldoc-${V}
 CATEGORIES =		print www
 
@@ -30,9 +30,6 @@ CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
-
-post-extract:
-	rm -r ${WRKSRC}/jpeg ${WRKSRC}/png ${WRKSRC}/zlib
 
 NO_TEST =		Yes
 
