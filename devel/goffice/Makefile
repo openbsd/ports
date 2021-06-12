@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.110 2021/03/15 21:37:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.111 2021/06/12 10:34:00 ajacoutot Exp $
 
 COMMENT=	document centric objects and utilities
 
 GNOME_PROJECT=	goffice
-GNOME_VERSION=	0.10.49
+GNOME_VERSION=	0.10.50
 
 # NOTE: when GNOME_VERSION changes, increment GOFFICE_VERSION and
 # GOFFICE_API_VERSION accordingly and bump:
@@ -11,7 +11,7 @@ GNOME_VERSION=	0.10.49
 GOFFICE_API_VERSION=	${GNOME_VERSION:R}
 SUBST_VARS=		GNOME_VERSION GOFFICE_API_VERSION
 
-SHARED_LIBS +=  goffice-0.10         0.3      # 10.49
+SHARED_LIBS +=  goffice-0.10         0.3      # 10.50
 
 CATEGORIES=	devel
 
@@ -22,8 +22,8 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
-WANTLIB += avahi-common bz2 cairo cairo-gobject dbus-1 epoxy expat
-WANTLIB += ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
+WANTLIB += avahi-common bz2 cairo cairo-gobject dbus-1 epoxy execinfo
+WANTLIB += expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gobject-2.0 graphite2
 WANTLIB += gs gsf-1 gtk-3 harfbuzz hogweed iconv idn2 intl jpeg
 WANTLIB += lzma m nettle p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
