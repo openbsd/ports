@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.42 2021/06/03 16:31:48 tb Exp $
+# $OpenBSD: Makefile,v 1.43 2021/06/12 10:25:10 tb Exp $
 
 COMMENT =		c++ protocol buffers
 
-V =			3.17.2
+V =			3.17.3
 DISTNAME =		protobuf-cpp-$V
 PKGNAME =		protobuf-$V
 
 WRKDIST =		${WRKDIR}/protobuf-${V}
 
-SHARED_LIBS +=		protobuf-lite	11.0    # 28.2
-SHARED_LIBS +=		protobuf	11.0    # 28.2
-SHARED_LIBS +=		protoc		12.0    # 28.2
+SHARED_LIBS +=		protobuf-lite	11.1    # 28.3
+SHARED_LIBS +=		protobuf	12.0    # 28.3
+SHARED_LIBS +=		protoc		13.0    # 28.3
 
 CATEGORIES =		devel
 
