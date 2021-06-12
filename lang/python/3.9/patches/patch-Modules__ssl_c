@@ -1,4 +1,4 @@
-$OpenBSD: patch-Modules__ssl_c,v 1.1.1.1 2020/10/05 20:48:10 kmos Exp $
+$OpenBSD: patch-Modules__ssl_c,v 1.2 2021/06/12 04:00:22 kmos Exp $
 
 XXX maybe the second hunk can go away now we have auto-init, I'm not sure
 exactly what python's lock protects
@@ -6,9 +6,9 @@ exactly what python's lock protects
 Index: Modules/_ssl.c
 --- Modules/_ssl.c.orig
 +++ Modules/_ssl.c
-@@ -137,7 +137,8 @@ static void _PySSLFixErrno(void) {
- /* Include generated data (error codes) */
+@@ -142,7 +142,8 @@ static void _PySSLFixErrno(void) {
  #include "_ssl_data.h"
+ #endif
  
 -#if (OPENSSL_VERSION_NUMBER >= 0x10100000L) && !defined(LIBRESSL_VERSION_NUMBER)
 +#if (OPENSSL_VERSION_NUMBER >= 0x10100000L) && \
@@ -16,7 +16,7 @@ Index: Modules/_ssl.c
  #  define OPENSSL_VERSION_1_1 1
  #  define PY_OPENSSL_1_1_API 1
  #endif
-@@ -211,6 +212,9 @@ static void _PySSLFixErrno(void) {
+@@ -212,6 +213,9 @@ extern const SSL_METHOD *TLSv1_2_method(void);
  
  #if defined(OPENSSL_VERSION_1_1) && !defined(OPENSSL_NO_SSL2)
  #define OPENSSL_NO_SSL2
