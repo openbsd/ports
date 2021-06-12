@@ -1,0 +1,21 @@
+$OpenBSD: patch-testsuite_reftests_meson_build,v 1.1 2021/06/12 09:03:29 ajacoutot Exp $
+
+XXX rework and push upstream
+
+Index: testsuite/reftests/meson.build
+--- testsuite/reftests/meson.build.orig
++++ testsuite/reftests/meson.build
+@@ -38,11 +38,12 @@ tcdata.set('libexecdir', join_paths(get_option('prefix
+ #    configuration : tcdata)
+ #endforeach
+ 
++libexecinfo_dep = cc.find_library('execinfo', required : false)
+ gtk_reftest = executable('gtk-reftest',
+   sources: 'gtk-reftest.c',
+   c_args: common_cflags,
+   link_with : [libgtkreftestprivate, libreftest],
+-  dependencies : libgtk_dep,
++  dependencies : [libgtk_dep, libexecinfo_dep]
+ )
+ 
+ image_compare = executable('image-compare',
