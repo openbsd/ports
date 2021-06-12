@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2021/05/21 19:50:27 kmos Exp $
+# $OpenBSD: Makefile,v 1.18 2021/06/12 02:24:53 daniel Exp $
 
 COMMENT=		Python module dependency analysis tool
 
@@ -18,7 +18,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS=	Yes
 
 FLAVORS =		python3
-FLAVOR? =
+FLAVOR ?=
 
 RUN_DEPENDS=		devel/py-altgraph${MODPY_FLAVOR}
 

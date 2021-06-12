@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/05/21 19:50:35 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2021/06/12 02:24:53 daniel Exp $
 
 COMMENT =		AWS v4 authentication for py-requests
 
@@ -23,7 +23,7 @@ RUN_DEPENDS =		www/py-requests${MODPY_FLAVOR}
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
 FLAVORS =		python3
-FLAVOR? =
+FLAVOR ?=
 
 NO_TEST =		Yes
 
