@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2107 2021/06/13 15:26:35 benoit Exp $
+# $OpenBSD: Makefile,v 1.2108 2021/06/13 15:38:00 benoit Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -662,6 +662,7 @@
      SUBDIR += p5-Devel-NYTProf
      SUBDIR += p5-Devel-OverloadInfo
      SUBDIR += p5-Devel-PartialDump
+     SUBDIR += p5-Devel-PatchPerl
      SUBDIR += p5-Devel-REPL
      SUBDIR += p5-Devel-Refcount
      SUBDIR += p5-Devel-SawAmpersand
