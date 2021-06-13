@@ -1,4 +1,4 @@
-# $OpenBSD: CPAN.pm,v 1.8 2019/05/14 15:00:01 afresh1 Exp $
+# $OpenBSD: CPAN.pm,v 1.9 2021/06/13 19:00:06 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -189,6 +189,12 @@ sub fill_in_makefile
 		: $di->{metadata}->{license}[0]
 	);
 	$self->set_modules('cpan');
+
+	# It's common for perl ports to have a version that starts with a v.
+	# However, that's not a valid PKGNAME.
+	$self->set_other( PKGNAME => 'p5-${DISTNAME:S/-v/-/}' )
+	    if not $self->get_other('PKGNAME')
+	       and ( $di->{version} || '' ) =~ /^v/;
 
 	$self->set_other( 'CPAN_AUTHOR', $di->{author} )
 	    if $self->needs_author($di);
