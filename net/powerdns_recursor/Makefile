@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2021/06/11 19:26:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/06/13 20:34:53 sthen Exp $
 
 COMMENT=		recursive nameserver
 
@@ -39,7 +39,9 @@ WANTLIB+=		${MODLUA_WANTLIB}
 
 SYSCONFDIR=		${BASESYSCONFDIR}/pdns
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.16
 USE_GMAKE=		Yes
 
 CONFIGURE_ARGS+=	--disable-botan \
