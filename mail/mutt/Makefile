@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.150 2021/05/04 21:35:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.151 2021/06/13 21:04:46 sthen Exp $
 
 COMMENT=	tty-based e-mail client
 
-DISTNAME=	mutt-2.0.7
+DISTNAME=	mutt-2.1.0
 EPOCH=		3
 
 CATEGORIES=	mail
@@ -27,6 +27,8 @@ LIB_DEPENDS=	databases/qdbm \
 BUILD_DEPENDS+=	textproc/docbook-xsl \
 		www/lynx
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 FLAVORS=	debug gpgme sasl slang
 FLAVOR?=
