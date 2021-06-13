@@ -1,4 +1,4 @@
-# $OpenBSD: Port.pm,v 1.20 2019/12/15 00:57:49 afresh1 Exp $
+# $OpenBSD: Port.pm,v 1.21 2021/06/13 18:30:50 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 # Copyright (c) 2019 Andrew Hewus Fresh <afresh1@openbsd.org>
@@ -594,6 +594,10 @@ sub make_port
 
 	$self->set_other( 'CONFIGURE_STYLE',
 		$self->get_config_style( $di, $wrksrc ) );
+
+	# If we set any BUILD_DEPENDS or CONFIGURE_STYLE,
+	# the extract is out of date, so we need to clean and try again.
+	$self->make_clean();
 
 	$self->write_makefile();
 
