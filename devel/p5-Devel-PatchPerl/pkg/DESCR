@@ -1,0 +1,5 @@
+Devel::PatchPerl is a modularisation of the patching code contained in
+Devel::PPPort's buildperl.pl.
+
+It does not build perls, it merely provides an interface to the source
+patching functionality.

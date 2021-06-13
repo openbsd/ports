@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/06/13 15:34:11 benoit Exp $
+bin/patchperl
+${P5SITE}/Devel/PatchPerl/
+${P5SITE}/Devel/PatchPerl.pm
+${P5SITE}/Devel/PatchPerl/Hints.pm
+${P5SITE}/Devel/PatchPerl/Plugin.pm
+@man man/man1/patchperl.1
+@man man/man3p/Devel::PatchPerl.3p
+@man man/man3p/Devel::PatchPerl::Hints.3p
+@man man/man3p/Devel::PatchPerl::Plugin.3p
