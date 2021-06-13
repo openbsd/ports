@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2019/12/08 08:22:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2021/06/13 06:32:42 ajacoutot Exp $
 
 COMMENT=		remote filesystem snapshot utility
 
 GH_ACCOUNT=		rsnapshot
 GH_PROJECT=		rsnapshot
-GH_TAGNAME=		1.4.3
+GH_TAGNAME=		1.4.4
 
 CATEGORIES=		net sysutils
 
@@ -15,10 +15,6 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=		Yes
 
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.15
-AUTORECONF=		./autogen.sh
-
 BUILD_DEPENDS=		net/rsync
 
 RUN_DEPENDS=		devel/p5-Lchown \
@@ -27,11 +23,14 @@ RUN_DEPENDS=		devel/p5-Lchown \
 PKG_ARCH=		*
 
 CONFIGURE_STYLE=	autoreconf
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
+AUTORECONF=		./autogen.sh
 
 SAMPLES_DIR=		${PREFIX}/share/examples/rsnapshot
 FAKE_FLAGS=		sysconfdir=${SAMPLES_DIR}
 
-pre-build:
+post-configure:
 	sed -i "s,/etc/rsnapshot.conf,${SYSCONFDIR}/rsnapshot.conf,g" \
 		${WRKSRC}/{README.md,rsnapshot-program.pl} \
 		${WRKSRC}/rsnapshot{,-diff} \
