@@ -1,0 +1,3 @@
+CPAN::Perl::Releases is a module that contains the mappings of all perl
+releases that have been uploaded to CPAN to the authors/id/ path that
+the tarballs reside in.
