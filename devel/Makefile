@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2106 2021/06/09 19:50:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.2107 2021/06/13 15:26:35 benoit Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -575,6 +575,7 @@
      SUBDIR += p5-Config-Tiny
      SUBDIR += p5-Context-Preserve
      SUBDIR += p5-Coro
+     SUBDIR += p5-CPAN-Perl-Releases
      SUBDIR += p5-Curses
      SUBDIR += p5-Curses-UI
      SUBDIR += p5-Curses-Widgets
