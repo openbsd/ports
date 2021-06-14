@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2020/06/01 21:24:48 jung Exp $
+# $OpenBSD: Makefile,v 1.16 2021/06/14 23:57:16 sthen Exp $
 
 COMMENT=		count lines of code
 
 V=			1.86
 DISTNAME=		cloc-${V}
+REVISION=		0
 
 CATEGORIES=		textproc devel
 
@@ -25,7 +26,8 @@ RUN_DEPENDS=		devel/p5-Algorithm-Diff \
 BUILD_DEPENDS+=		${RUN_DEPENDS}
 
 FAKE_FLAGS=		prefix="${PREFIX}" \
-			man_prefix="${PREFIX}"
+			man_prefix="${PREFIX}" \
+			PODDATE=`stat -t %Y-%m-%d -f %Sm ${WRKSRC}/cloc`
 
 USE_GMAKE=		Yes
 
