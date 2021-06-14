@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2020/06/09 21:12:17 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.18 2021/06/14 21:08:36 sebastia Exp $
 bin/GSSpeechServer
 @bin bin/gclose
 @bin bin/gcloseall
@@ -9,6 +9,7 @@ bin/GSSpeechServer
 include/AppKit/
 include/AppKit/AppKit.h
 include/AppKit/AppKitDefines.h
+include/AppKit/AppKitErrors.h
 include/AppKit/AppKitExceptions.h
 include/AppKit/DPSOperators.h
 include/AppKit/GMAppKit.h
@@ -59,6 +60,10 @@ include/AppKit/IMCustomObject.h
 include/AppKit/IMLoading.h
 include/AppKit/NSAccessibility.h
 include/AppKit/NSAccessibilityConstants.h
+include/AppKit/NSAccessibilityCustomAction.h
+include/AppKit/NSAccessibilityCustomRotor.h
+include/AppKit/NSAccessibilityElement.h
+include/AppKit/NSAccessibilityProtocols.h
 include/AppKit/NSActionCell.h
 include/AppKit/NSAffineTransform.h
 include/AppKit/NSAlert.h
@@ -117,6 +122,7 @@ include/AppKit/NSEvent.h
 include/AppKit/NSFileWrapper.h
 include/AppKit/NSFileWrapperExtensions.h
 include/AppKit/NSFont.h
+include/AppKit/NSFontAssetRequest.h
 include/AppKit/NSFontCollection.h
 include/AppKit/NSFontDescriptor.h
 include/AppKit/NSFontManager.h
@@ -128,6 +134,7 @@ include/AppKit/NSGlyphGenerator.h
 include/AppKit/NSGradient.h
 include/AppKit/NSGraphics.h
 include/AppKit/NSGraphicsContext.h
+include/AppKit/NSGridView.h
 include/AppKit/NSGroupTouchBarItem.h
 include/AppKit/NSHelpManager.h
 include/AppKit/NSHelpPanel.h
@@ -139,11 +146,15 @@ include/AppKit/NSInputManager.h
 include/AppKit/NSInputServer.h
 include/AppKit/NSInterfaceStyle.h
 include/AppKit/NSKeyValueBinding.h
+include/AppKit/NSLayoutAnchor.h
+include/AppKit/NSLayoutConstraint.h
+include/AppKit/NSLayoutGuide.h
 include/AppKit/NSLayoutManager.h
 include/AppKit/NSLevelIndicator.h
 include/AppKit/NSLevelIndicatorCell.h
 include/AppKit/NSMagnificationGestureRecognizer.h
 include/AppKit/NSMatrix.h
+include/AppKit/NSMediaLibraryBrowserController.h
 include/AppKit/NSMenu.h
 include/AppKit/NSMenuItem.h
 include/AppKit/NSMenuItemCell.h
@@ -165,12 +176,18 @@ include/AppKit/NSPDFImageRep.h
 include/AppKit/NSPDFInfo.h
 include/AppKit/NSPDFPanel.h
 include/AppKit/NSPICTImageRep.h
+include/AppKit/NSPageController.h
 include/AppKit/NSPageLayout.h
 include/AppKit/NSPanGestureRecognizer.h
 include/AppKit/NSPanel.h
 include/AppKit/NSParagraphStyle.h
 include/AppKit/NSPasteboard.h
 include/AppKit/NSPasteboardItem.h
+include/AppKit/NSPathCell.h
+include/AppKit/NSPathComponentCell.h
+include/AppKit/NSPathControl.h
+include/AppKit/NSPathControlItem.h
+include/AppKit/NSPersistentDocument.h
 include/AppKit/NSPickerTouchBarItem.h
 include/AppKit/NSPopUpButton.h
 include/AppKit/NSPopUpButtonCell.h
@@ -194,16 +211,22 @@ include/AppKit/NSSavePanel.h
 include/AppKit/NSScreen.h
 include/AppKit/NSScrollView.h
 include/AppKit/NSScroller.h
+include/AppKit/NSScrubber.h
+include/AppKit/NSScrubberItemView.h
+include/AppKit/NSScrubberLayout.h
 include/AppKit/NSSearchField.h
 include/AppKit/NSSearchFieldCell.h
 include/AppKit/NSSecureTextField.h
 include/AppKit/NSSegmentedCell.h
 include/AppKit/NSSegmentedControl.h
+include/AppKit/NSSeguePerforming.h
 include/AppKit/NSSelection.h
 include/AppKit/NSShadow.h
 include/AppKit/NSSharingService.h
+include/AppKit/NSSharingServicePickerToolbarItem.h
 include/AppKit/NSSharingServicePickerTouchBarItem.h
 include/AppKit/NSSlider.h
+include/AppKit/NSSliderAccessory.h
 include/AppKit/NSSliderCell.h
 include/AppKit/NSSliderTouchBarItem.h
 include/AppKit/NSSound.h
@@ -213,13 +236,20 @@ include/AppKit/NSSpellChecker.h
 include/AppKit/NSSpellProtocol.h
 include/AppKit/NSSpellServer.h
 include/AppKit/NSSplitView.h
+include/AppKit/NSSplitViewController.h
+include/AppKit/NSSplitViewItem.h
 include/AppKit/NSStatusBar.h
+include/AppKit/NSStatusBarButton.h
 include/AppKit/NSStatusItem.h
 include/AppKit/NSStepper.h
 include/AppKit/NSStepperCell.h
 include/AppKit/NSStepperTouchBarItem.h
+include/AppKit/NSStoryboard.h
+include/AppKit/NSStoryboardSegue.h
 include/AppKit/NSStringDrawing.h
+include/AppKit/NSSwitch.h
 include/AppKit/NSTabView.h
+include/AppKit/NSTabViewController.h
 include/AppKit/NSTabViewItem.h
 include/AppKit/NSTableColumn.h
 include/AppKit/NSTableHeaderCell.h
@@ -228,13 +258,19 @@ include/AppKit/NSTableView.h
 include/AppKit/NSText.h
 include/AppKit/NSTextAlternatives.h
 include/AppKit/NSTextAttachment.h
+include/AppKit/NSTextCheckingClient.h
+include/AppKit/NSTextCheckingController.h
 include/AppKit/NSTextContainer.h
 include/AppKit/NSTextField.h
 include/AppKit/NSTextFieldCell.h
+include/AppKit/NSTextFinder.h
+include/AppKit/NSTextInputClient.h
+include/AppKit/NSTextInputContext.h
 include/AppKit/NSTextList.h
 include/AppKit/NSTextStorage.h
 include/AppKit/NSTextTable.h
 include/AppKit/NSTextView.h
+include/AppKit/NSTitlebarAccessoryViewController.h
 include/AppKit/NSTokenField.h
 include/AppKit/NSTokenFieldCell.h
 include/AppKit/NSToolbar.h
@@ -247,7 +283,9 @@ include/AppKit/NSTrackingArea.h
 include/AppKit/NSTreeController.h
 include/AppKit/NSTreeNode.h
 include/AppKit/NSUserDefaultsController.h
+include/AppKit/NSUserInterfaceCompression.h
 include/AppKit/NSUserInterfaceItemIdentification.h
+include/AppKit/NSUserInterfaceItemSearching.h
 include/AppKit/NSUserInterfaceLayout.h
 include/AppKit/NSUserInterfaceValidation.h
 include/AppKit/NSView.h
@@ -255,6 +293,7 @@ include/AppKit/NSViewController.h
 include/AppKit/NSVisualEffectView.h
 include/AppKit/NSWindow.h
 include/AppKit/NSWindowController.h
+include/AppKit/NSWindowRestoration.h
 include/AppKit/NSWorkspace.h
 include/AppKit/PSOperators.h
 include/Cocoa/
