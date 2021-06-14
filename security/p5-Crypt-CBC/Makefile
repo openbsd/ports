@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2021/05/22 16:23:44 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.32 2021/06/14 20:19:27 sthen Exp $
 
 COMMENT=	cryptographic cipher block chaining mode
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	Crypt-CBC-3.03
+DISTNAME =	Crypt-CBC-3.04
 CATEGORIES=	security
 
 RUN_DEPENDS=	security/p5-Crypt-DES \
