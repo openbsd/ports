@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2021/06/11 20:55:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.108 2021/06/14 20:20:35 naddy Exp $
 
 COMMENT=	fast console MPEG audio player and decoder library
 
@@ -20,7 +20,8 @@ EXTRACT_SUFX=	.tar.bz2
 
 WANTLIB=	c m sndio
 
-CONFIGURE_STYLE=gnu
+AUTOCONF_VERSION=2.69
+CONFIGURE_STYLE=autoconf
 CONFIGURE_ARGS=	--enable-static \
 		--disable-lfs-alias \
 		--with-audio=sndio \
