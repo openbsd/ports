@@ -1,0 +1,40 @@
+$OpenBSD: patch-numpy_distutils_site_cfg,v 1.1.1.1 2021/06/14 00:25:39 daniel Exp $
+--- numpy/distutils/site.cfg.orig	Fri Feb 13 15:41:03 2009
++++ numpy/distutils/site.cfg	Fri Feb 13 15:41:47 2009
+@@ -0,0 +1,36 @@
++[x11]
++library_dirs = /usr/X11R6/lib
++include_dirs = /usr/X11R6/include
++
++# Hack to stop numpy linking against random installed libraries
++
++[mkl]
++mkl_libs = XXXnonexistXXX
++
++[blas_mkl]
++blas_mkl_libs = XXXnonexistXXX
++
++[lapack_mkl]
++lapack_mkl_libs = XXXnonexistXXX
++
++[fftw]
++fftw_libs = XXXnonexistXXX
++
++[lapack_atlas]
++lapack_atlas_libs = XXXnonexistXXX
++
++[atlas]
++atlas_libs = XXXnonexistXXX
++
++[atlas_threads]
++atlas_threads_libs = XXXnonexistXXX
++
++[atlas_blas]
++atlas_blas_libs = XXXnonexistXXX
++
++[atlas_blas_threads]
++atlas_blas_threads_libs = XXXnonexistXXX
++
++[djbfft]
++djbfft_libs = XXXnonexistXXX
++

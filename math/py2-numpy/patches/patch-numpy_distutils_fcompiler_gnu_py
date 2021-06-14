@@ -1,0 +1,18 @@
+$OpenBSD: patch-numpy_distutils_fcompiler_gnu_py,v 1.1.1.1 2021/06/14 00:25:39 daniel Exp $
+
+Causes segmentation fault on powerpc when building py-scipy.
+
+See discussion at:
+https://github.com/numpy/numpy/issues/5451
+
+Index: numpy/distutils/fcompiler/gnu.py
+--- numpy/distutils/fcompiler/gnu.py.orig
++++ numpy/distutils/fcompiler/gnu.py
+@@ -245,7 +245,6 @@ class GnuFCompiler(FCompiler):
+             opt = ['-O2']
+         else:
+             opt = ['-O3']
+-        opt.append('-funroll-loops')
+         return opt
+ 
+     def _c_arch_flags(self):
