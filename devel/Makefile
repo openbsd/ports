@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2108 2021/06/13 15:38:00 benoit Exp $
+# $OpenBSD: Makefile,v 1.2109 2021/06/14 18:00:23 pvk Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1580,6 +1580,7 @@
      SUBDIR += py-regex,python3 
      SUBDIR += py-rencode
      SUBDIR += py-rencode,python3
+     SUBDIR += py-resolvelib,python3
      SUBDIR += py-rfc6555
      SUBDIR += py-rfc6555,python3
      SUBDIR += py-rich,python3
