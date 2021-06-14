@@ -1,7 +1,0 @@
-Ansible is a radically simple, SSH-based, model-driven, configuration
-management, deployment, and ad-hoc task execution framework. Some
-core areas of focus include multi-node deployment, rolling updates,
-and parallel orchestration.
-
-This package contains Ansible HTML documentation, also available
-online at https://docs.ansible.com/ansible/
