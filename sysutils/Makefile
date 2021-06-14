@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.608 2021/06/05 13:00:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.609 2021/06/14 19:30:19 pvk Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -6,6 +6,7 @@
      SUBDIR += amazon-ssm-agent
      SUBDIR += anacron
      SUBDIR += ansible
+     SUBDIR += ansible-core
      SUBDIR += ansible-lint
      SUBDIR += apachetop
      SUBDIR += apcd
