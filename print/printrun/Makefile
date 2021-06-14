@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/06/14 01:02:27 daniel Exp $
 
 COMMENT =		3D printing host suite
 
@@ -9,7 +9,7 @@ GH_ACCOUNT=	kliment
 GH_PROJECT=	Printrun
 GH_TAGNAME=	${DISTNAME}
 EPOCH=		0
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	print
 
@@ -26,7 +26,7 @@ MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/py-gobject \
 		devel/py-serial \
-		math/py-numpy \
+		math/py2-numpy \
 		sysutils/py-psutil \
 		textproc/py-lxml \
 		x11/dbus-python,-main \

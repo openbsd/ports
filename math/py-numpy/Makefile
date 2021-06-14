@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2021/05/21 19:50:32 kmos Exp $
+# $OpenBSD: Makefile,v 1.62 2021/06/14 01:02:27 daniel Exp $
 
 COMMENT=		fast array and numeric programming library for Python
 
@@ -22,7 +22,7 @@ MODULES=		lang/python \
 			fortran
 
 FLAVORS=		python3
-FLAVOR?=
+FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS=	Yes

@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/06/14 01:02:27 daniel Exp $
 
 COMMENT =		Python bindings for lpsolve
 DISTNAME =		lp_solve_${V}_Python_source
 # interface version differs from pkg version
 MODPY_EGG_VERSION =	5.5.0.9
 PKGNAME =		py-lpsolve-${V}
-REVISION =		1
+REVISION =		2
 
 LIB_DEPENDS +=		math/lpsolve/core
-BUILD_DEPENDS +=	math/py-numpy
-RUN_DEPENDS +=		math/py-numpy
+BUILD_DEPENDS +=	math/py2-numpy
+RUN_DEPENDS +=		math/py2-numpy
 MODULES =		lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 

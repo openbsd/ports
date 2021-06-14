@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/06/14 01:02:27 daniel Exp $
 
 COMMENT =	one-button treasure collecting game
 
@@ -8,7 +8,7 @@ DISTNAME =	mysticmine-${MODPY_EGG_VERSION}
 GH_ACCOUNT =	dewitters
 GH_PROJECT =	MysticMine
 GH_COMMIT =	2fc0a5eaa0ab299c3a23ce17ae1c56a98055a44c
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	games
 
@@ -21,7 +21,7 @@ MODULES =		lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 BUILD_DEPENDS =		lang/cython${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/pygame${MODPY_FLAVOR} \
-			math/py-numpy${MODPY_FLAVOR}
+			math/py2-numpy
 
 NO_TEST =		Yes
 

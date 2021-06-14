@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.200 2021/05/16 16:12:10 espie Exp $
+# $OpenBSD: Makefile,v 1.201 2021/06/14 01:02:27 daniel Exp $
 
      SUBDIR =
      SUBDIR += 4ti2
@@ -132,7 +132,7 @@
      SUBDIR += py-networkx,python3
      SUBDIR += py-netcdf4
      SUBDIR += py-numexpr,python3
-     SUBDIR += py-numpy
+     SUBDIR += py2-numpy
      SUBDIR += py-numpy,python3
      SUBDIR += py-osqp,python3
      SUBDIR += py-pandas,python3

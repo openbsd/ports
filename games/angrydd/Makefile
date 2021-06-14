@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2021/02/23 19:39:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2021/06/14 01:02:27 daniel Exp $
 
 COMMENT=	falling blocks puzzle game
 
 DISTNAME=	angrydd-1.0.1
-REVISION =	8
+REVISION =	9
 CATEGORIES=	games
 
 HOMEPAGE=	http://www.sacredchao.net/~piman/angrydd/
@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	${HOMEPAGE}
 
 RUN_DEPENDS=	devel/pygame>=1.7 \
-		math/py-numpy
+		math/py2-numpy
 
 MODULES=	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
