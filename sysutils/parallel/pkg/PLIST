@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/10/03 03:21:45 nayden Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/06/14 18:53:00 tj Exp $
 bin/env_parallel
 bin/env_parallel.ash
 bin/env_parallel.bash
@@ -15,6 +15,7 @@ bin/niceload
 bin/parallel
 bin/parcat
 bin/parset
+bin/parsort
 bin/sem
 bin/sql
 @man man/man1/env_parallel.1
@@ -22,6 +23,7 @@ bin/sql
 @man man/man1/parallel.1
 @man man/man1/parcat.1
 @man man/man1/parset.1
+@man man/man1/parsort.1
 @man man/man1/sem.1
 @man man/man1/sql.1
 @man man/man7/parallel_alternatives.7
