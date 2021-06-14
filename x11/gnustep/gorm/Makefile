@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2020/08/16 20:35:19 sebastia Exp $
+# $OpenBSD: Makefile,v 1.26 2021/06/14 21:10:49 sebastia Exp $
 
 COMMENT=	GNUstep graphical object relationship modeller
 
-DISTNAME=	gorm-1.2.26
-REVISION =	0
+DISTNAME=	gorm-1.2.28
 HOMEPAGE=	http://www.gnustep.org/experience/Gorm.html
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}dev-apps/
 

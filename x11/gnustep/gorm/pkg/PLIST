@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/06/09 21:13:18 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/06/14 21:10:50 sebastia Exp $
 bin/Gorm
 include/GormCore/
 include/GormCore/GormBoxEditor.h
@@ -157,6 +157,10 @@ libexec/GNUstep/Gorm.app/Resources/2Controls.palette/Resources/ControlsPalette.g
 libexec/GNUstep/Gorm.app/Resources/2Controls.palette/Resources/ControlsPalette.gorm/data.info
 libexec/GNUstep/Gorm.app/Resources/2Controls.palette/Resources/ControlsPalette.gorm/objects.gorm
 libexec/GNUstep/Gorm.app/Resources/2Controls.palette/Resources/ControlsPalette.tiff
+libexec/GNUstep/Gorm.app/Resources/2Controls.palette/Resources/GormCellSizeInspector.gorm/
+libexec/GNUstep/Gorm.app/Resources/2Controls.palette/Resources/GormCellSizeInspector.gorm/data.classes
+libexec/GNUstep/Gorm.app/Resources/2Controls.palette/Resources/GormCellSizeInspector.gorm/data.info
+libexec/GNUstep/Gorm.app/Resources/2Controls.palette/Resources/GormCellSizeInspector.gorm/objects.gorm
 libexec/GNUstep/Gorm.app/Resources/2Controls.palette/Resources/GormNSBoxInspector.gorm/
 libexec/GNUstep/Gorm.app/Resources/2Controls.palette/Resources/GormNSBoxInspector.gorm/data.classes
 libexec/GNUstep/Gorm.app/Resources/2Controls.palette/Resources/GormNSBoxInspector.gorm/data.info
