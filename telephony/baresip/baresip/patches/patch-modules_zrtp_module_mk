@@ -1,4 +1,4 @@
-$OpenBSD: patch-modules_zrtp_module_mk,v 1.4 2018/08/03 12:20:06 feinerer Exp $
+$OpenBSD: patch-modules_zrtp_module_mk,v 1.5 2021/06/15 06:54:44 landry Exp $
 Index: modules/zrtp/module.mk
 --- modules/zrtp/module.mk.orig
 +++ modules/zrtp/module.mk
@@ -9,5 +9,5 @@ Index: modules/zrtp/module.mk
 -$(MOD)_LFLAGS	+= -lzrtp -lbn
 +$(MOD)_LFLAGS	+= -lzrtp
  $(MOD)_CFLAGS   += -isystem /usr/local/include/libzrtp
- $(MOD)_CFLAGS   += -Wno-strict-prototypes
+ $(MOD)_CFLAGS   += -Wno-strict-prototypes -Wno-zero-length-array
  

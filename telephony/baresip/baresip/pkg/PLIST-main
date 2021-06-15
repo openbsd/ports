@@ -1,66 +1,68 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2018/08/03 12:20:06 feinerer Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2021/06/15 06:54:44 landry Exp $
 @pkgpath telephony/baresip/baresip
 @bin bin/baresip
 lib/baresip/
 lib/baresip/modules/
-lib/baresip/modules/account.so
-lib/baresip/modules/amr.so
-lib/baresip/modules/aubridge.so
-lib/baresip/modules/aufile.so
-lib/baresip/modules/auloop.so
-lib/baresip/modules/avahi.so
-lib/baresip/modules/avcodec.so
-lib/baresip/modules/avformat.so
-lib/baresip/modules/b2bua.so
-lib/baresip/modules/cons.so
-lib/baresip/modules/contact.so
-lib/baresip/modules/ctrl_tcp.so
-lib/baresip/modules/debug_cmd.so
-lib/baresip/modules/dtls_srtp.so
-lib/baresip/modules/echo.so
-lib/baresip/modules/fakevideo.so
-lib/baresip/modules/g711.so
-lib/baresip/modules/g722.so
-lib/baresip/modules/g726.so
-lib/baresip/modules/gsm.so
-lib/baresip/modules/h265.so
-lib/baresip/modules/httpd.so
-lib/baresip/modules/ice.so
-lib/baresip/modules/l16.so
-lib/baresip/modules/menu.so
-lib/baresip/modules/mpa.so
-lib/baresip/modules/mqtt.so
-lib/baresip/modules/mwi.so
-lib/baresip/modules/natbd.so
-lib/baresip/modules/natpmp.so
-lib/baresip/modules/opus.so
-lib/baresip/modules/plc.so
-lib/baresip/modules/presence.so
-lib/baresip/modules/sdl2.so
-lib/baresip/modules/selfview.so
-lib/baresip/modules/snapshot.so
-lib/baresip/modules/sndfile.so
-lib/baresip/modules/sndio.so
-lib/baresip/modules/speex_aec.so
-lib/baresip/modules/speex_pp.so
-lib/baresip/modules/srtp.so
-lib/baresip/modules/stdio.so
-lib/baresip/modules/stun.so
-lib/baresip/modules/swscale.so
-lib/baresip/modules/syslog.so
-lib/baresip/modules/turn.so
-lib/baresip/modules/uuid.so
-lib/baresip/modules/v4l2.so
+@so lib/baresip/modules/account.so
+@so lib/baresip/modules/amr.so
+@so lib/baresip/modules/aubridge.so
+@so lib/baresip/modules/aufile.so
+@so lib/baresip/modules/auloop.so
+@so lib/baresip/modules/ausine.so
+@so lib/baresip/modules/avcodec.so
+@so lib/baresip/modules/avformat.so
+@so lib/baresip/modules/b2bua.so
+@so lib/baresip/modules/cons.so
+@so lib/baresip/modules/contact.so
+@so lib/baresip/modules/ctrl_tcp.so
+@so lib/baresip/modules/debug_cmd.so
+@so lib/baresip/modules/dtls_srtp.so
+@so lib/baresip/modules/ebuacip.so
+@so lib/baresip/modules/echo.so
+@so lib/baresip/modules/fakevideo.so
+@so lib/baresip/modules/g711.so
+@so lib/baresip/modules/g722.so
+@so lib/baresip/modules/g726.so
+@so lib/baresip/modules/gsm.so
+@so lib/baresip/modules/httpd.so
+@so lib/baresip/modules/ice.so
+@so lib/baresip/modules/l16.so
+@so lib/baresip/modules/menu.so
+@so lib/baresip/modules/mixausrc.so
+@so lib/baresip/modules/mpa.so
+@so lib/baresip/modules/mqtt.so
+@so lib/baresip/modules/multicast.so
+@so lib/baresip/modules/mwi.so
+@so lib/baresip/modules/natpmp.so
+@so lib/baresip/modules/opus.so
+@so lib/baresip/modules/plc.so
+@so lib/baresip/modules/presence.so
+@so lib/baresip/modules/rtcpsummary.so
+@so lib/baresip/modules/selfview.so
+@so lib/baresip/modules/serreg.so
+@so lib/baresip/modules/snapshot.so
+@so lib/baresip/modules/sndfile.so
+@so lib/baresip/modules/sndio.so
+@so lib/baresip/modules/speex_pp.so
+@so lib/baresip/modules/srtp.so
+@so lib/baresip/modules/stdio.so
+@so lib/baresip/modules/stun.so
+@so lib/baresip/modules/swscale.so
+@so lib/baresip/modules/syslog.so
+@so lib/baresip/modules/turn.so
+@so lib/baresip/modules/uuid.so
+@so lib/baresip/modules/v4l2.so
 @comment lib/baresip/modules/v4l2_codec.so
-lib/baresip/modules/vidbridge.so
-lib/baresip/modules/vidloop.so
-lib/baresip/modules/vp8.so
-lib/baresip/modules/vp9.so
-lib/baresip/modules/vumeter.so
-lib/baresip/modules/x11.so
-lib/baresip/modules/x11grab.so
-lib/baresip/modules/zrtp.so
+@so lib/baresip/modules/vidbridge.so
+@so lib/baresip/modules/vidloop.so
+@so lib/baresip/modules/vp8.so
+@so lib/baresip/modules/vp9.so
+@so lib/baresip/modules/vumeter.so
+@so lib/baresip/modules/x11.so
+@so lib/baresip/modules/x11grab.so
+@so lib/baresip/modules/zrtp.so
 share/baresip/
+share/baresip/autoanswer.wav
 share/baresip/busy.wav
 share/baresip/callwaiting.wav
 share/baresip/error.wav
@@ -69,3 +71,19 @@ share/baresip/message.wav
 share/baresip/notfound.wav
 share/baresip/ring.wav
 share/baresip/ringback.wav
+share/baresip/sound0.wav
+share/baresip/sound1.wav
+share/baresip/sound2.wav
+share/baresip/sound3.wav
+share/baresip/sound4.wav
+share/baresip/sound5.wav
+share/baresip/sound6.wav
+share/baresip/sound7.wav
+share/baresip/sound8.wav
+share/baresip/sound9.wav
+share/baresip/sounda.wav
+share/baresip/soundb.wav
+share/baresip/soundc.wav
+share/baresip/soundd.wav
+share/baresip/soundroute.wav
+share/baresip/soundstar.wav
