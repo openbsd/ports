@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/11/03 16:12:03 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/06/15 09:37:24 rsadowski Exp $
 include/KF5/
 include/KF5/BluezQt/
 include/KF5/BluezQt/BluezQt/
@@ -21,6 +21,8 @@ include/KF5/BluezQt/BluezQt/Media
 include/KF5/BluezQt/BluezQt/MediaEndpoint
 include/KF5/BluezQt/BluezQt/MediaPlayer
 include/KF5/BluezQt/BluezQt/MediaPlayerTrack
+include/KF5/BluezQt/BluezQt/MediaTransport
+include/KF5/BluezQt/BluezQt/MediaTypes
 include/KF5/BluezQt/BluezQt/ObexAgent
 include/KF5/BluezQt/BluezQt/ObexFileTransfer
 include/KF5/BluezQt/BluezQt/ObexFileTransferEntry
@@ -33,6 +35,7 @@ include/KF5/BluezQt/BluezQt/Profile
 include/KF5/BluezQt/BluezQt/Request
 include/KF5/BluezQt/BluezQt/Rfkill
 include/KF5/BluezQt/BluezQt/Services
+include/KF5/BluezQt/BluezQt/TPendingCall
 include/KF5/BluezQt/BluezQt/Types
 include/KF5/BluezQt/bluezqt/
 include/KF5/BluezQt/bluezqt/adapter.h
@@ -55,6 +58,8 @@ include/KF5/BluezQt/bluezqt/media.h
 include/KF5/BluezQt/bluezqt/mediaendpoint.h
 include/KF5/BluezQt/bluezqt/mediaplayer.h
 include/KF5/BluezQt/bluezqt/mediaplayertrack.h
+include/KF5/BluezQt/bluezqt/mediatransport.h
+include/KF5/BluezQt/bluezqt/mediatypes.h
 include/KF5/BluezQt/bluezqt/obexagent.h
 include/KF5/BluezQt/bluezqt/obexfiletransfer.h
 include/KF5/BluezQt/bluezqt/obexfiletransferentry.h
@@ -67,6 +72,7 @@ include/KF5/BluezQt/bluezqt/profile.h
 include/KF5/BluezQt/bluezqt/request.h
 include/KF5/BluezQt/bluezqt/rfkill.h
 include/KF5/BluezQt/bluezqt/services.h
+include/KF5/BluezQt/bluezqt/tpendingcall.h
 include/KF5/BluezQt/bluezqt/types.h
 include/KF5/bluezqt_version.h
 lib/cmake/KF5BluezQt/

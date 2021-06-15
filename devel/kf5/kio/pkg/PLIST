@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2021/04/24 05:03:24 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.19 2021/06/15 09:37:28 rsadowski Exp $
 @bin bin/kcookiejar5
 @bin bin/ktelnetservice5
 @bin bin/ktrash5
@@ -184,12 +184,14 @@ include/KF5/KIOGui/KIO/ApplicationLauncherJob
 include/KF5/KIOGui/KIO/CommandLauncherJob
 include/KF5/KIOGui/KIO/FavIconRequestJob
 include/KF5/KIOGui/KIO/OpenUrlJob
+include/KF5/KIOGui/KTerminalLauncherJob
 include/KF5/KIOGui/kio/
 include/KF5/KIOGui/kio/applicationlauncherjob.h
 include/KF5/KIOGui/kio/commandlauncherjob.h
 include/KF5/KIOGui/kio/faviconrequestjob.h
 include/KF5/KIOGui/kio/openurljob.h
 include/KF5/KIOGui/kiogui_export.h
+include/KF5/KIOGui/kterminallauncherjob.h
 include/KF5/KIOWidgets/
 include/KF5/KIOWidgets/KAbstractFileItemActionPlugin
 include/KF5/KIOWidgets/KAutoMount
@@ -332,9 +334,6 @@ share/dbus-1/services/org.kde.kioexecd.service
 share/dbus-1/services/org.kde.kpasswdserver.service
 share/dbus-1/services/org.kde.kssld5.service
 share/doc/HTML/ca/kcontrol5/
-share/doc/HTML/ca/kcontrol5/cache/
-share/doc/HTML/ca/kcontrol5/cache/index.cache.bz2
-share/doc/HTML/ca/kcontrol5/cache/index.docbook
 share/doc/HTML/ca/kcontrol5/cookies/
 share/doc/HTML/ca/kcontrol5/cookies/index.cache.bz2
 share/doc/HTML/ca/kcontrol5/cookies/index.docbook
@@ -350,9 +349,6 @@ share/doc/HTML/ca/kcontrol5/smb/index.docbook
 share/doc/HTML/ca/kcontrol5/trash/
 share/doc/HTML/ca/kcontrol5/trash/index.cache.bz2
 share/doc/HTML/ca/kcontrol5/trash/index.docbook
-share/doc/HTML/ca/kcontrol5/useragent/
-share/doc/HTML/ca/kcontrol5/useragent/index.cache.bz2
-share/doc/HTML/ca/kcontrol5/useragent/index.docbook
 share/doc/HTML/ca/kcontrol5/webshortcuts/
 share/doc/HTML/ca/kcontrol5/webshortcuts/index.cache.bz2
 share/doc/HTML/ca/kcontrol5/webshortcuts/index.docbook
@@ -385,9 +381,6 @@ share/doc/HTML/ca/kioslave5/webdav/
 share/doc/HTML/ca/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/ca/kioslave5/webdav/index.docbook
 share/doc/HTML/de/kcontrol5/
-share/doc/HTML/de/kcontrol5/cache/
-share/doc/HTML/de/kcontrol5/cache/index.cache.bz2
-share/doc/HTML/de/kcontrol5/cache/index.docbook
 share/doc/HTML/de/kcontrol5/cookies/
 share/doc/HTML/de/kcontrol5/cookies/index.cache.bz2
 share/doc/HTML/de/kcontrol5/cookies/index.docbook
@@ -403,9 +396,6 @@ share/doc/HTML/de/kcontrol5/smb/index.docbook
 share/doc/HTML/de/kcontrol5/trash/
 share/doc/HTML/de/kcontrol5/trash/index.cache.bz2
 share/doc/HTML/de/kcontrol5/trash/index.docbook
-share/doc/HTML/de/kcontrol5/useragent/
-share/doc/HTML/de/kcontrol5/useragent/index.cache.bz2
-share/doc/HTML/de/kcontrol5/useragent/index.docbook
 share/doc/HTML/de/kcontrol5/webshortcuts/
 share/doc/HTML/de/kcontrol5/webshortcuts/index.cache.bz2
 share/doc/HTML/de/kcontrol5/webshortcuts/index.docbook
@@ -438,9 +428,6 @@ share/doc/HTML/de/kioslave5/webdav/
 share/doc/HTML/de/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/de/kioslave5/webdav/index.docbook
 share/doc/HTML/en/kcontrol5/
-share/doc/HTML/en/kcontrol5/cache/
-share/doc/HTML/en/kcontrol5/cache/index.cache.bz2
-share/doc/HTML/en/kcontrol5/cache/index.docbook
 share/doc/HTML/en/kcontrol5/cookies/
 share/doc/HTML/en/kcontrol5/cookies/index.cache.bz2
 share/doc/HTML/en/kcontrol5/cookies/index.docbook
@@ -456,9 +443,6 @@ share/doc/HTML/en/kcontrol5/smb/index.docbook
 share/doc/HTML/en/kcontrol5/trash/
 share/doc/HTML/en/kcontrol5/trash/index.cache.bz2
 share/doc/HTML/en/kcontrol5/trash/index.docbook
-share/doc/HTML/en/kcontrol5/useragent/
-share/doc/HTML/en/kcontrol5/useragent/index.cache.bz2
-share/doc/HTML/en/kcontrol5/useragent/index.docbook
 share/doc/HTML/en/kcontrol5/webshortcuts/
 share/doc/HTML/en/kcontrol5/webshortcuts/index.cache.bz2
 share/doc/HTML/en/kcontrol5/webshortcuts/index.docbook
@@ -491,9 +475,6 @@ share/doc/HTML/en/kioslave5/webdav/
 share/doc/HTML/en/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/en/kioslave5/webdav/index.docbook
 share/doc/HTML/es/kcontrol5/
-share/doc/HTML/es/kcontrol5/cache/
-share/doc/HTML/es/kcontrol5/cache/index.cache.bz2
-share/doc/HTML/es/kcontrol5/cache/index.docbook
 share/doc/HTML/es/kcontrol5/cookies/
 share/doc/HTML/es/kcontrol5/cookies/index.cache.bz2
 share/doc/HTML/es/kcontrol5/cookies/index.docbook
@@ -509,9 +490,6 @@ share/doc/HTML/es/kcontrol5/smb/index.docbook
 share/doc/HTML/es/kcontrol5/trash/
 share/doc/HTML/es/kcontrol5/trash/index.cache.bz2
 share/doc/HTML/es/kcontrol5/trash/index.docbook
-share/doc/HTML/es/kcontrol5/useragent/
-share/doc/HTML/es/kcontrol5/useragent/index.cache.bz2
-share/doc/HTML/es/kcontrol5/useragent/index.docbook
 share/doc/HTML/es/kcontrol5/webshortcuts/
 share/doc/HTML/es/kcontrol5/webshortcuts/index.cache.bz2
 share/doc/HTML/es/kcontrol5/webshortcuts/index.docbook
@@ -569,9 +547,6 @@ share/doc/HTML/et/kioslave5/webdav/
 share/doc/HTML/et/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/et/kioslave5/webdav/index.docbook
 share/doc/HTML/fr/kcontrol5/
-share/doc/HTML/fr/kcontrol5/cache/
-share/doc/HTML/fr/kcontrol5/cache/index.cache.bz2
-share/doc/HTML/fr/kcontrol5/cache/index.docbook
 share/doc/HTML/fr/kcontrol5/cookies/
 share/doc/HTML/fr/kcontrol5/cookies/index.cache.bz2
 share/doc/HTML/fr/kcontrol5/cookies/index.docbook
@@ -587,9 +562,6 @@ share/doc/HTML/fr/kcontrol5/smb/index.docbook
 share/doc/HTML/fr/kcontrol5/trash/
 share/doc/HTML/fr/kcontrol5/trash/index.cache.bz2
 share/doc/HTML/fr/kcontrol5/trash/index.docbook
-share/doc/HTML/fr/kcontrol5/useragent/
-share/doc/HTML/fr/kcontrol5/useragent/index.cache.bz2
-share/doc/HTML/fr/kcontrol5/useragent/index.docbook
 share/doc/HTML/fr/kcontrol5/webshortcuts/
 share/doc/HTML/fr/kcontrol5/webshortcuts/index.cache.bz2
 share/doc/HTML/fr/kcontrol5/webshortcuts/index.docbook
@@ -638,9 +610,6 @@ share/doc/HTML/gl/kioslave5/webdav/
 share/doc/HTML/gl/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/gl/kioslave5/webdav/index.docbook
 share/doc/HTML/it/kcontrol5/
-share/doc/HTML/it/kcontrol5/cache/
-share/doc/HTML/it/kcontrol5/cache/index.cache.bz2
-share/doc/HTML/it/kcontrol5/cache/index.docbook
 share/doc/HTML/it/kcontrol5/cookies/
 share/doc/HTML/it/kcontrol5/cookies/index.cache.bz2
 share/doc/HTML/it/kcontrol5/cookies/index.docbook
@@ -656,9 +625,6 @@ share/doc/HTML/it/kcontrol5/smb/index.docbook
 share/doc/HTML/it/kcontrol5/trash/
 share/doc/HTML/it/kcontrol5/trash/index.cache.bz2
 share/doc/HTML/it/kcontrol5/trash/index.docbook
-share/doc/HTML/it/kcontrol5/useragent/
-share/doc/HTML/it/kcontrol5/useragent/index.cache.bz2
-share/doc/HTML/it/kcontrol5/useragent/index.docbook
 share/doc/HTML/it/kcontrol5/webshortcuts/
 share/doc/HTML/it/kcontrol5/webshortcuts/index.cache.bz2
 share/doc/HTML/it/kcontrol5/webshortcuts/index.docbook
@@ -696,9 +662,6 @@ share/doc/HTML/nb/kcontrol5/trash/
 share/doc/HTML/nb/kcontrol5/trash/index.cache.bz2
 share/doc/HTML/nb/kcontrol5/trash/index.docbook
 share/doc/HTML/nl/kcontrol5/
-share/doc/HTML/nl/kcontrol5/cache/
-share/doc/HTML/nl/kcontrol5/cache/index.cache.bz2
-share/doc/HTML/nl/kcontrol5/cache/index.docbook
 share/doc/HTML/nl/kcontrol5/cookies/
 share/doc/HTML/nl/kcontrol5/cookies/index.cache.bz2
 share/doc/HTML/nl/kcontrol5/cookies/index.docbook
@@ -714,9 +677,6 @@ share/doc/HTML/nl/kcontrol5/smb/index.docbook
 share/doc/HTML/nl/kcontrol5/trash/
 share/doc/HTML/nl/kcontrol5/trash/index.cache.bz2
 share/doc/HTML/nl/kcontrol5/trash/index.docbook
-share/doc/HTML/nl/kcontrol5/useragent/
-share/doc/HTML/nl/kcontrol5/useragent/index.cache.bz2
-share/doc/HTML/nl/kcontrol5/useragent/index.docbook
 share/doc/HTML/nl/kcontrol5/webshortcuts/
 share/doc/HTML/nl/kcontrol5/webshortcuts/index.cache.bz2
 share/doc/HTML/nl/kcontrol5/webshortcuts/index.docbook
@@ -749,9 +709,6 @@ share/doc/HTML/nl/kioslave5/webdav/
 share/doc/HTML/nl/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/nl/kioslave5/webdav/index.docbook
 share/doc/HTML/pt/kcontrol5/
-share/doc/HTML/pt/kcontrol5/cache/
-share/doc/HTML/pt/kcontrol5/cache/index.cache.bz2
-share/doc/HTML/pt/kcontrol5/cache/index.docbook
 share/doc/HTML/pt/kcontrol5/cookies/
 share/doc/HTML/pt/kcontrol5/cookies/index.cache.bz2
 share/doc/HTML/pt/kcontrol5/cookies/index.docbook
@@ -767,9 +724,6 @@ share/doc/HTML/pt/kcontrol5/smb/index.docbook
 share/doc/HTML/pt/kcontrol5/trash/
 share/doc/HTML/pt/kcontrol5/trash/index.cache.bz2
 share/doc/HTML/pt/kcontrol5/trash/index.docbook
-share/doc/HTML/pt/kcontrol5/useragent/
-share/doc/HTML/pt/kcontrol5/useragent/index.cache.bz2
-share/doc/HTML/pt/kcontrol5/useragent/index.docbook
 share/doc/HTML/pt/kcontrol5/webshortcuts/
 share/doc/HTML/pt/kcontrol5/webshortcuts/index.cache.bz2
 share/doc/HTML/pt/kcontrol5/webshortcuts/index.docbook
@@ -803,9 +757,6 @@ share/doc/HTML/pt/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/pt/kioslave5/webdav/index.docbook
 share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/kcontrol5/
-share/doc/HTML/pt_BR/kcontrol5/cache/
-share/doc/HTML/pt_BR/kcontrol5/cache/index.cache.bz2
-share/doc/HTML/pt_BR/kcontrol5/cache/index.docbook
 share/doc/HTML/pt_BR/kcontrol5/cookies/
 share/doc/HTML/pt_BR/kcontrol5/cookies/index.cache.bz2
 share/doc/HTML/pt_BR/kcontrol5/cookies/index.docbook
@@ -821,9 +772,6 @@ share/doc/HTML/pt_BR/kcontrol5/smb/index.docbook
 share/doc/HTML/pt_BR/kcontrol5/trash/
 share/doc/HTML/pt_BR/kcontrol5/trash/index.cache.bz2
 share/doc/HTML/pt_BR/kcontrol5/trash/index.docbook
-share/doc/HTML/pt_BR/kcontrol5/useragent/
-share/doc/HTML/pt_BR/kcontrol5/useragent/index.cache.bz2
-share/doc/HTML/pt_BR/kcontrol5/useragent/index.docbook
 share/doc/HTML/pt_BR/kcontrol5/webshortcuts/
 share/doc/HTML/pt_BR/kcontrol5/webshortcuts/index.cache.bz2
 share/doc/HTML/pt_BR/kcontrol5/webshortcuts/index.docbook
@@ -894,9 +842,6 @@ share/doc/HTML/ru/kioslave5/webdav/
 share/doc/HTML/ru/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/ru/kioslave5/webdav/index.docbook
 share/doc/HTML/sr/kcontrol5/
-share/doc/HTML/sr/kcontrol5/cache/
-share/doc/HTML/sr/kcontrol5/cache/index.cache.bz2
-share/doc/HTML/sr/kcontrol5/cache/index.docbook
 share/doc/HTML/sr/kcontrol5/cookies/
 share/doc/HTML/sr/kcontrol5/cookies/index.cache.bz2
 share/doc/HTML/sr/kcontrol5/cookies/index.docbook
@@ -909,9 +854,6 @@ share/doc/HTML/sr/kcontrol5/proxy/index.docbook
 share/doc/HTML/sr/kcontrol5/smb/
 share/doc/HTML/sr/kcontrol5/smb/index.cache.bz2
 share/doc/HTML/sr/kcontrol5/smb/index.docbook
-share/doc/HTML/sr/kcontrol5/useragent/
-share/doc/HTML/sr/kcontrol5/useragent/index.cache.bz2
-share/doc/HTML/sr/kcontrol5/useragent/index.docbook
 share/doc/HTML/sr/kcontrol5/webshortcuts/
 share/doc/HTML/sr/kcontrol5/webshortcuts/index.cache.bz2
 share/doc/HTML/sr/kcontrol5/webshortcuts/index.docbook
@@ -945,9 +887,6 @@ share/doc/HTML/sr/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/sr/kioslave5/webdav/index.docbook
 share/doc/HTML/sr@latin/
 share/doc/HTML/sr@latin/kcontrol5/
-share/doc/HTML/sr@latin/kcontrol5/cache/
-share/doc/HTML/sr@latin/kcontrol5/cache/index.cache.bz2
-share/doc/HTML/sr@latin/kcontrol5/cache/index.docbook
 share/doc/HTML/sr@latin/kcontrol5/cookies/
 share/doc/HTML/sr@latin/kcontrol5/cookies/index.cache.bz2
 share/doc/HTML/sr@latin/kcontrol5/cookies/index.docbook
@@ -960,9 +899,6 @@ share/doc/HTML/sr@latin/kcontrol5/proxy/index.docbook
 share/doc/HTML/sr@latin/kcontrol5/smb/
 share/doc/HTML/sr@latin/kcontrol5/smb/index.cache.bz2
 share/doc/HTML/sr@latin/kcontrol5/smb/index.docbook
-share/doc/HTML/sr@latin/kcontrol5/useragent/
-share/doc/HTML/sr@latin/kcontrol5/useragent/index.cache.bz2
-share/doc/HTML/sr@latin/kcontrol5/useragent/index.docbook
 share/doc/HTML/sr@latin/kcontrol5/webshortcuts/
 share/doc/HTML/sr@latin/kcontrol5/webshortcuts/index.cache.bz2
 share/doc/HTML/sr@latin/kcontrol5/webshortcuts/index.docbook
@@ -995,9 +931,6 @@ share/doc/HTML/sr@latin/kioslave5/webdav/
 share/doc/HTML/sr@latin/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/sr@latin/kioslave5/webdav/index.docbook
 share/doc/HTML/sv/kcontrol5/
-share/doc/HTML/sv/kcontrol5/cache/
-share/doc/HTML/sv/kcontrol5/cache/index.cache.bz2
-share/doc/HTML/sv/kcontrol5/cache/index.docbook
 share/doc/HTML/sv/kcontrol5/cookies/
 share/doc/HTML/sv/kcontrol5/cookies/index.cache.bz2
 share/doc/HTML/sv/kcontrol5/cookies/index.docbook
@@ -1013,9 +946,6 @@ share/doc/HTML/sv/kcontrol5/smb/index.docbook
 share/doc/HTML/sv/kcontrol5/trash/
 share/doc/HTML/sv/kcontrol5/trash/index.cache.bz2
 share/doc/HTML/sv/kcontrol5/trash/index.docbook
-share/doc/HTML/sv/kcontrol5/useragent/
-share/doc/HTML/sv/kcontrol5/useragent/index.cache.bz2
-share/doc/HTML/sv/kcontrol5/useragent/index.docbook
 share/doc/HTML/sv/kcontrol5/webshortcuts/
 share/doc/HTML/sv/kcontrol5/webshortcuts/index.cache.bz2
 share/doc/HTML/sv/kcontrol5/webshortcuts/index.docbook
@@ -1048,9 +978,6 @@ share/doc/HTML/sv/kioslave5/webdav/
 share/doc/HTML/sv/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/sv/kioslave5/webdav/index.docbook
 share/doc/HTML/uk/kcontrol5/
-share/doc/HTML/uk/kcontrol5/cache/
-share/doc/HTML/uk/kcontrol5/cache/index.cache.bz2
-share/doc/HTML/uk/kcontrol5/cache/index.docbook
 share/doc/HTML/uk/kcontrol5/cookies/
 share/doc/HTML/uk/kcontrol5/cookies/index.cache.bz2
 share/doc/HTML/uk/kcontrol5/cookies/index.docbook
@@ -1066,9 +993,6 @@ share/doc/HTML/uk/kcontrol5/smb/index.docbook
 share/doc/HTML/uk/kcontrol5/trash/
 share/doc/HTML/uk/kcontrol5/trash/index.cache.bz2
 share/doc/HTML/uk/kcontrol5/trash/index.docbook
-share/doc/HTML/uk/kcontrol5/useragent/
-share/doc/HTML/uk/kcontrol5/useragent/index.cache.bz2
-share/doc/HTML/uk/kcontrol5/useragent/index.docbook
 share/doc/HTML/uk/kcontrol5/webshortcuts/
 share/doc/HTML/uk/kcontrol5/webshortcuts/index.cache.bz2
 share/doc/HTML/uk/kcontrol5/webshortcuts/index.docbook
@@ -1119,7 +1043,6 @@ share/kf5/mkspecs/qt_KIOGui.pri
 share/kf5/mkspecs/qt_KIOWidgets.pri
 share/kf5/mkspecs/qt_KNTLM.pri
 share/knotifications5/proxyscout.notifyrc
-share/kservices5/cache.desktop
 share/kservices5/cookies.desktop
 share/kservices5/data.protocol
 share/kservices5/http_cache_cleaner.desktop
@@ -1261,50 +1184,6 @@ share/kservices5/searchproviders/yahoo_shopping.desktop
 share/kservices5/searchproviders/yahoo_video.desktop
 share/kservices5/searchproviders/youtube.desktop
 share/kservices5/smb.desktop
-share/kservices5/useragent.desktop
-share/kservices5/useragentstrings/
-share/kservices5/useragentstrings/android10.desktop
-share/kservices5/useragentstrings/chrome10onwinnt51.desktop
-share/kservices5/useragentstrings/chrome22oncurrent.desktop
-share/kservices5/useragentstrings/chrome23oncurrent.desktop
-share/kservices5/useragentstrings/chrome24oncurrent.desktop
-share/kservices5/useragentstrings/chrome50oncurrent.desktop
-share/kservices5/useragentstrings/chrome570oncurrent.desktop
-share/kservices5/useragentstrings/firefox15oncurrent.desktop
-share/kservices5/useragentstrings/firefox16oncurrent.desktop
-share/kservices5/useragentstrings/firefox20oncurrent.desktop
-share/kservices5/useragentstrings/firefox30oncurrent.desktop
-share/kservices5/useragentstrings/firefox36oncurrent.desktop
-share/kservices5/useragentstrings/firefox520oncurrent.desktop
-share/kservices5/useragentstrings/googlebot.desktop
-share/kservices5/useragentstrings/ie401onwinnt4.desktop
-share/kservices5/useragentstrings/ie50onppc.desktop
-share/kservices5/useragentstrings/ie55onwinnt5.desktop
-share/kservices5/useragentstrings/ie60oncurrent.desktop
-share/kservices5/useragentstrings/ie60onwinnt51.desktop
-share/kservices5/useragentstrings/ie70onwinnt51.desktop
-share/kservices5/useragentstrings/ie80onwinnt60.desktop
-share/kservices5/useragentstrings/ie90onwinnt71.desktop
-share/kservices5/useragentstrings/lynxoncurrent.desktop
-share/kservices5/useragentstrings/nn301oncurrent.desktop
-share/kservices5/useragentstrings/nn475oncurrent.desktop
-share/kservices5/useragentstrings/nn475onwin95.desktop
-share/kservices5/useragentstrings/ns71oncurrent.desktop
-share/kservices5/useragentstrings/ns71onwinnt51.desktop
-share/kservices5/useragentstrings/op1162oncurrent.desktop
-share/kservices5/useragentstrings/op1202oncurrent.desktop
-share/kservices5/useragentstrings/op403onwinnt4.desktop
-share/kservices5/useragentstrings/op85oncurrent.desktop
-share/kservices5/useragentstrings/op90oncurrent.desktop
-share/kservices5/useragentstrings/op962oncurrent.desktop
-share/kservices5/useragentstrings/safari20.desktop
-share/kservices5/useragentstrings/safari30oniphone.desktop
-share/kservices5/useragentstrings/safari32.desktop
-share/kservices5/useragentstrings/safari40.desktop
-share/kservices5/useragentstrings/safari517.desktop
-share/kservices5/useragentstrings/safari60.desktop
-share/kservices5/useragentstrings/w3moncurrent.desktop
-share/kservices5/useragentstrings/wgetoncurrent.desktop
 share/kservices5/webshortcuts.desktop
 share/kservicetypes5/kfileitemactionplugin.desktop
 share/kservicetypes5/kiodndpopupmenuplugin.desktop
@@ -1312,7 +1191,6 @@ share/kservicetypes5/konqpopupmenuplugin.desktop
 share/kservicetypes5/kpropertiesdialogplugin.desktop
 share/kservicetypes5/kurifilterplugin.desktop
 share/kservicetypes5/searchprovider.desktop
-share/kservicetypes5/uasprovider.desktop
 share/locale/af/LC_MESSAGES/kio5.mo
 share/locale/ar/LC_MESSAGES/kio5.mo
 share/locale/ast/LC_MESSAGES/kio5.mo

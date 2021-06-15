@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/09/07 14:48:49 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/06/15 09:37:29 rsadowski Exp $
 include/KF5/KPeople/
 include/KF5/KPeople/KPeople/
 include/KF5/KPeople/KPeople/Global
 include/KF5/KPeople/KPeople/PersonData
 include/KF5/KPeople/KPeople/PersonPluginManager
 include/KF5/KPeople/KPeople/PersonsModel
+include/KF5/KPeople/KPeople/PersonsSortFilterProxyModel
 include/KF5/KPeople/KPeople/Widgets/
 include/KF5/KPeople/KPeople/Widgets/AbstractFieldWidgetFactory
 include/KF5/KPeople/KPeople/Widgets/Actions
@@ -24,6 +25,7 @@ include/KF5/KPeople/kpeople/kpeople_export.h
 include/KF5/KPeople/kpeople/persondata.h
 include/KF5/KPeople/kpeople/personpluginmanager.h
 include/KF5/KPeople/kpeople/personsmodel.h
+include/KF5/KPeople/kpeople/personssortfilterproxymodel.h
 include/KF5/KPeople/kpeople/widgets/
 include/KF5/KPeople/kpeople/widgets/abstractfieldwidgetfactory.h
 include/KF5/KPeople/kpeople/widgets/actions.h

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/01/23 18:09:55 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/06/15 09:37:31 rsadowski Exp $
 @pkgpath x11/kde4/oxygen-icons
 share/icons/oxygen/
 share/icons/oxygen/base/
@@ -788,6 +788,10 @@ share/icons/oxygen/base/128x128/places/user-home.png
 share/icons/oxygen/base/128x128/places/user-identity.png
 share/icons/oxygen/base/128x128/places/user-trash-full.png
 share/icons/oxygen/base/128x128/places/user-trash.png
+share/icons/oxygen/base/128x128/preferences/
+share/icons/oxygen/base/128x128/preferences/preferences-desktop-wallpaper.png
+share/icons/oxygen/base/128x128/preferences/preferences-devices-printer.png
+share/icons/oxygen/base/128x128/preferences/preferences-kde-connect.png
 share/icons/oxygen/base/128x128/status/
 share/icons/oxygen/base/128x128/status/data-error.png
 share/icons/oxygen/base/128x128/status/data-information.png
@@ -2509,6 +2513,9 @@ share/icons/oxygen/base/16x16/places/user-home.png
 share/icons/oxygen/base/16x16/places/user-identity.png
 share/icons/oxygen/base/16x16/places/user-trash-full.png
 share/icons/oxygen/base/16x16/places/user-trash.png
+share/icons/oxygen/base/16x16/preferences/
+share/icons/oxygen/base/16x16/preferences/preferences-devices-printer.png
+share/icons/oxygen/base/16x16/preferences/preferences-kde-connect.png
 share/icons/oxygen/base/16x16/special/
 share/icons/oxygen/base/16x16/special/file-zoom-in.png
 share/icons/oxygen/base/16x16/special/file-zoom-out.png
@@ -4344,6 +4351,9 @@ share/icons/oxygen/base/22x22/places/user-home.png
 share/icons/oxygen/base/22x22/places/user-identity.png
 share/icons/oxygen/base/22x22/places/user-trash-full.png
 share/icons/oxygen/base/22x22/places/user-trash.png
+share/icons/oxygen/base/22x22/preferences/
+share/icons/oxygen/base/22x22/preferences/preferences-devices-printer.png
+share/icons/oxygen/base/22x22/preferences/preferences-kde-connect.png
 share/icons/oxygen/base/22x22/special/
 share/icons/oxygen/base/22x22/special/file-zoom-in.png
 share/icons/oxygen/base/22x22/special/file-zoom-out.png
@@ -4607,6 +4617,7 @@ share/icons/oxygen/base/256x256/devices/network-wireless-connected-75.png
 share/icons/oxygen/base/256x256/devices/network-wireless-disconnected.png
 share/icons/oxygen/base/256x256/devices/network-wireless.png
 share/icons/oxygen/base/256x256/devices/printer-laser.png
+share/icons/oxygen/base/256x256/devices/printer.png
 share/icons/oxygen/base/256x256/devices/secure-card.png
 share/icons/oxygen/base/256x256/devices/smartphone.png
 share/icons/oxygen/base/256x256/devices/tablet.png
@@ -5019,6 +5030,9 @@ share/icons/oxygen/base/256x256/places/user-desktop.png
 share/icons/oxygen/base/256x256/places/user-home.png
 share/icons/oxygen/base/256x256/places/user-trash-full.png
 share/icons/oxygen/base/256x256/places/user-trash.png
+share/icons/oxygen/base/256x256/preferences/
+share/icons/oxygen/base/256x256/preferences/preferences-devices-printer.png
+share/icons/oxygen/base/256x256/preferences/preferences-kde-connect.png
 share/icons/oxygen/base/256x256/status/
 share/icons/oxygen/base/256x256/status/user-trash-full.png
 share/icons/oxygen/base/32x32/
@@ -6451,6 +6465,9 @@ share/icons/oxygen/base/32x32/places/user-home.png
 share/icons/oxygen/base/32x32/places/user-identity.png
 share/icons/oxygen/base/32x32/places/user-trash-full.png
 share/icons/oxygen/base/32x32/places/user-trash.png
+share/icons/oxygen/base/32x32/preferences/
+share/icons/oxygen/base/32x32/preferences/preferences-devices-printer.png
+share/icons/oxygen/base/32x32/preferences/preferences-kde-connect.png
 share/icons/oxygen/base/32x32/status/
 share/icons/oxygen/base/32x32/status/appointment-recurring.png
 share/icons/oxygen/base/32x32/status/appointment-reminder.png
@@ -7811,6 +7828,9 @@ share/icons/oxygen/base/48x48/mimetypes/x-office-document.png
 share/icons/oxygen/base/48x48/mimetypes/x-office-drawing.png
 share/icons/oxygen/base/48x48/mimetypes/x-office-presentation.png
 share/icons/oxygen/base/48x48/mimetypes/x-office-spreadsheet.png
+share/icons/oxygen/base/48x48/perferences/
+share/icons/oxygen/base/48x48/perferences/preferences-devices-printer.png
+share/icons/oxygen/base/48x48/perferences/preferences-kde-connect.png
 share/icons/oxygen/base/48x48/places/
 share/icons/oxygen/base/48x48/places/bookmarks.png
 share/icons/oxygen/base/48x48/places/certificate-server.png
@@ -8750,6 +8770,9 @@ share/icons/oxygen/base/64x64/places/user-home.png
 share/icons/oxygen/base/64x64/places/user-identity.png
 share/icons/oxygen/base/64x64/places/user-trash-full.png
 share/icons/oxygen/base/64x64/places/user-trash.png
+share/icons/oxygen/base/64x64/preferences/
+share/icons/oxygen/base/64x64/preferences/preferences-devices-printer.png
+share/icons/oxygen/base/64x64/preferences/preferences-kde-connect.png
 share/icons/oxygen/base/64x64/status/
 share/icons/oxygen/base/64x64/status/data-error.png
 share/icons/oxygen/base/64x64/status/data-information.png

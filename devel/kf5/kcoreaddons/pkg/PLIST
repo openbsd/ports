@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/03/14 14:35:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/06/15 09:37:26 rsadowski Exp $
 @bin bin/desktoptojson
 include/KF5/
 include/KF5/KCoreAddons/
@@ -178,6 +178,9 @@ share/locale/it/LC_MESSAGES/kde5_xml_mimetypes.qm
 share/locale/ja/LC_MESSAGES/kcoreaddons5_qt.qm
 share/locale/ja/LC_MESSAGES/kde5_xml_mimetypes.qm
 share/locale/ka/LC_MESSAGES/kcoreaddons5_qt.qm
+share/locale/kab/
+share/locale/kab/LC_MESSAGES/
+share/locale/kab/LC_MESSAGES/kcoreaddons5_qt.qm
 share/locale/kk/LC_MESSAGES/kcoreaddons5_qt.qm
 share/locale/kk/LC_MESSAGES/kde5_xml_mimetypes.qm
 share/locale/km/LC_MESSAGES/kcoreaddons5_qt.qm

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2020/09/07 14:48:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2021/06/15 09:37:29 rsadowski Exp $
 
 COMMENT =		interface for media player KParts
 DISTNAME =		kmediaplayer-${VERSION}
@@ -8,9 +8,10 @@ SHARED_LIBS =		KF5MediaPlayer		6.0
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
-WANTLIB += KF5Parts KF5Service KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml m
+WANTLIB += KF5Parts KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
+WANTLIB += m
 
 BUILD_DEPENDS =		devel/gettext,-tools
 

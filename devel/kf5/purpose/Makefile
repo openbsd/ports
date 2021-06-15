@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2021/04/24 05:03:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2021/06/15 09:37:31 rsadowski Exp $
 
 COMMENT =		framework to create integrate services and actions
 DISTNAME =		purpose-${VERSION}
@@ -10,9 +10,9 @@ SHARED_LIBS +=  ReviewboardHelpers        2.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Completion KF5ConfigCore KF5CoreAddons
 WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
-WANTLIB += KF5Notifications KF5Service KF5WidgetsAddons KF5WindowSystem
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml
-WANTLIB += Qt5Widgets c m
+WANTLIB += KF5Notifications KF5Service KF5Solid KF5WidgetsAddons
+WANTLIB += KF5WindowSystem Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
+WANTLIB += Qt5Network Qt5Qml Qt5Widgets c m
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf5/kirigami2>=${MODKF5_VERSION} \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:48:45 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/06/15 09:37:25 rsadowski Exp $
 @bin bin/kreadconfig5
 @bin bin/kwriteconfig5
 include/KF5/
@@ -102,6 +102,9 @@ share/locale/id/LC_MESSAGES/kconfig5_qt.qm
 share/locale/is/LC_MESSAGES/kconfig5_qt.qm
 share/locale/it/LC_MESSAGES/kconfig5_qt.qm
 share/locale/ja/LC_MESSAGES/kconfig5_qt.qm
+share/locale/kab/
+share/locale/kab/LC_MESSAGES/
+share/locale/kab/LC_MESSAGES/kconfig5_qt.qm
 share/locale/kk/LC_MESSAGES/kconfig5_qt.qm
 share/locale/km/LC_MESSAGES/kconfig5_qt.qm
 share/locale/kn/LC_MESSAGES/kconfig5_qt.qm

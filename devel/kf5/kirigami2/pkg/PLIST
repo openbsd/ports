@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/03/14 14:35:05 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.14 2021/06/15 09:37:28 rsadowski Exp $
 include/KF5/
 include/KF5/Kirigami2/
 include/KF5/Kirigami2/KirigamiPluginFactory
@@ -109,12 +109,16 @@ lib/qt5/qml/org/kde/kirigami.2/styles/org.kde.desktop/SwipeListItem.qml
 lib/qt5/qml/org/kde/kirigami.2/styles/org.kde.desktop/Theme.qml
 lib/qt5/qml/org/kde/kirigami.2/styles/org.kde.desktop/Units.qml
 lib/qt5/qml/org/kde/kirigami.2/swipenavigator/
+lib/qt5/qml/org/kde/kirigami.2/swipenavigator/PageTab.qml
 lib/qt5/qml/org/kde/kirigami.2/swipenavigator/PrivateSwipeHighlight.qml
 lib/qt5/qml/org/kde/kirigami.2/swipenavigator/PrivateSwipeProgress.qml
 lib/qt5/qml/org/kde/kirigami.2/swipenavigator/PrivateSwipeStack.qml
 lib/qt5/qml/org/kde/kirigami.2/swipenavigator/PrivateSwipeTab.qml
 lib/qt5/qml/org/kde/kirigami.2/swipenavigator/PrivateSwipeTabBar.qml
 lib/qt5/qml/org/kde/kirigami.2/swipenavigator/SwipeNavigator.qml
+lib/qt5/qml/org/kde/kirigami.2/swipenavigator/TabViewLayout.qml
+lib/qt5/qml/org/kde/kirigami.2/swipenavigator/templates/
+lib/qt5/qml/org/kde/kirigami.2/swipenavigator/templates/PageTab.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/
 lib/qt5/qml/org/kde/kirigami.2/templates/AbstractApplicationHeader.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/AbstractCard.qml
