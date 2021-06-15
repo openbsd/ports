@@ -1,17 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/12/11 13:48:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/06/15 06:52:47 landry Exp $
 @newgroup _restund:742
 @newuser _restund:742:742:daemon:restund user:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/restund
 lib/restund/
 lib/restund/modules/
-lib/restund/modules/auth.so
-lib/restund/modules/binding.so
-lib/restund/modules/filedb.so
-lib/restund/modules/mysql_ser.so
-lib/restund/modules/restauth.so
-lib/restund/modules/stat.so
-lib/restund/modules/status.so
-lib/restund/modules/syslog.so
-lib/restund/modules/turn.so
+@so lib/restund/modules/auth.so
+@so lib/restund/modules/binding.so
+@so lib/restund/modules/cpuusage.so
+@so lib/restund/modules/influxdb.so
+@so lib/restund/modules/mysql_ser.so
+@so lib/restund/modules/stat.so
+@so lib/restund/modules/status.so
+@so lib/restund/modules/syslog.so
+@so lib/restund/modules/turn.so
 @bin sbin/restund
 share/doc/restund/
 share/doc/restund/README
@@ -23,4 +24,3 @@ share/examples/restund/munin/restund_turn_allocs
 share/examples/restund/munin/restund_turn_bytes
 share/examples/restund/restund.conf
 @sample ${SYSCONFDIR}/restund.conf
-@rcscript ${RCDIR}/restund
