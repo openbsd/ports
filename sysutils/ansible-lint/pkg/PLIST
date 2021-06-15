@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/05/25 20:16:31 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/06/15 19:43:06 sthen Exp $
 bin/ansible-lint
 lib/python${MODPY_VERSION}/site-packages/ansible_lint-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/ansible_lint-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -64,7 +64,6 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/DeprecatedModuleRule.
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/EnvVarsInCommandRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/GitHasVersionRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/IgnoreErrorsRule.py
-lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/IncludeMissingFileRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/MercurialHasRevisionRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/MetaChangeFromDefaultRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/MetaMainHasInfoRule.py
@@ -104,7 +103,6 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}Depre
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}EnvVarsInCommandRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}GitHasVersionRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}IgnoreErrorsRule.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}IncludeMissingFileRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}MercurialHasRevisionRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}MetaChangeFromDefaultRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}MetaMainHasInfoRule.${MODPY_PYC_MAGIC_TAG}pyc
