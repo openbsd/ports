@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/06/15 06:08:41 benoit Exp $
 
 COMMENT =	authentication plugin for the Mojolicious Perl framework
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Mojolicious-Plugin-Authentication-1.33
+DISTNAME =	Mojolicious-Plugin-Authentication-1.37
 CATEGORIES =	security
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes
