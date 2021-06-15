@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/11/10 12:06:38 edd Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/06/15 09:11:02 edd Exp $
 @newgroup _syncthing:768
 @newuser _syncthing:768:_syncthing:daemon:Syncthing user:${VARBASE}/syncthing:/sbin/nologin
 @rcscript ${RCDIR}/syncthing
@@ -8,7 +8,6 @@
 @extraunexec rm -rf ${VARBASE}/syncthing/{.,}*
 @owner
 @group
-@bin bin/stcli
 @bin bin/stdiscosrv
 @bin bin/strelaysrv
 @bin bin/syncthing

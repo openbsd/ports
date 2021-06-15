@@ -1,34 +1,13 @@
-$OpenBSD: patch-build_go,v 1.13 2021/01/14 23:39:51 edd Exp $
+$OpenBSD: patch-build_go,v 1.14 2021/06/15 09:11:02 edd Exp $
 Index: build.go
 --- build.go.orig
 +++ build.go
-@@ -202,6 +202,20 @@ var targets = map[string]target{
- 			{src: "AUTHORS", dst: "deb/usr/share/doc/syncthing-relaypoolsrv/AUTHORS.txt", perm: 0644},
- 		},
- 	},
-+	"stcli": {
-+		name:        "stcli",
-+		debname:     "stcli",
-+		debdeps:     []string{"libc6"},
-+		description: "Syncthing Commandline Interface",
-+		buildPkgs:   []string{"github.com/syncthing/syncthing/cmd/stcli"},
-+		binaryName:  "stcli", // .exe will be added automatically for Windows builds
-+		archiveFiles: []archiveFile{
-+			{src: "{{binary}}", dst: "{{binary}}", perm: 0755},
-+		},
-+		installationFiles: []archiveFile{
-+			{src: "{{binary}}", dst: "deb/usr/bin/{{binary}}", perm: 0755},
-+		},
-+	},
- }
- 
- // These are repos we need to clone to run "go generate"
-@@ -523,7 +537,7 @@ func appendParameters(args []string, tags []string, pk
+@@ -526,7 +540,7 @@ func appendParameters(args []string, tags []string, pk
  
  	if !debugBinary {
  		// Regular binaries get version tagged and skip some debug symbols
--		args = append(args, "-ldflags", ldflags(tags))
-+		args = append(args, "-x", "-ldflags", ldflags(tags))
+-		args = append(args, "-trimpath", "-ldflags", ldflags(tags))
++		args = append(args, "-x", "-trimpath", "-ldflags", ldflags(tags))
  	} else {
  		// -gcflags to disable optimizations and inlining. Skip -ldflags
  		// because `Could not launch program: decoding dwarf section info at

@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.34 2021/03/08 13:59:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2021/06/15 09:11:02 edd Exp $
 
 BROKEN-aarch64 =golang.org/x/Sys/cpu panic (illegal instruction)
 
 COMMENT =	open decentralized synchronization utility
 
-V =		1.12.1
+V =		1.17.0
 DISTNAME =	syncthing-${V}
 DISTFILES =	syncthing-source-v${V}${EXTRACT_SUFX}
-REVISION =	0
 
 CATEGORIES =	net
 HOMEPAGE =	https://syncthing.net/
@@ -29,7 +28,7 @@ MODGO_TYPE =		bin
 
 # Syncthing contains a lot of stuff that end users wouldn't be interested in,
 # so we package only these binaries.
-ST_CMDS =	syncthing stdiscosrv strelaysrv stcli
+ST_CMDS =	syncthing stdiscosrv strelaysrv
 
 do-build:
 .for cmd in ${ST_CMDS}
