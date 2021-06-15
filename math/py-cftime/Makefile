@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2021/02/16 09:26:26 martin Exp $
+# $OpenBSD: Makefile,v 1.15 2021/06/15 09:39:49 martin Exp $
 
 COMMENT=	time and date handling utility functions from netcdf4-python
 
-MODPY_EGG_VERSION= 	1.4.1
+MODPY_EGG_VERSION= 	1.5.0
 DISTNAME=		cftime-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
@@ -15,7 +15,7 @@ MAINTAINER=		Martin Reindl <martin@catai.org>
 # MIT
 PERMIT_PACKAGE=		Yes
 
-WANTLIB=		pthread ${MODPY_WANTLIB}
+WANTLIB=		pthread
 
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
