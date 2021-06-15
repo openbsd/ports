@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:45:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/06/15 06:55:01 benoit Exp $
 
 COMMENT =	Perl extension to parse PKCS \#10 certificate requests
 
-DISTNAME =	Crypt-PKCS10-2.001
+DISTNAME =	Crypt-PKCS10-2.002
 CATEGORIES =	security
-REVISION =	0
 
 # perl
 PERMIT_PACKAGE =	Yes
