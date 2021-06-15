@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:44:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/06/15 13:28:53 benoit Exp $
 
 COMMENT =	flexibly parse strings and turn them into DateTime objects
 
-DISTNAME =	DateTime-Format-Flexible-0.32
-REVISION =	0
+DISTNAME =	DateTime-Format-Flexible-0.33
 
 CATEGORIES =	devel
 
@@ -15,8 +14,7 @@ MODULES =		cpan
 RUN_DEPENDS =		devel/p5-DateTime \
 			devel/p5-DateTime-Format-Builder>=0.74 \
 			devel/p5-DateTime-TimeZone \
-			devel/p5-List-MoreUtils \
-			devel/p5-Module-Pluggable
+			devel/p5-List-MoreUtils
 TEST_DEPENDS =		devel/p5-Test-Exception \
 			devel/p5-Test-MockTime \
 			devel/p5-Test-NoWarnings
