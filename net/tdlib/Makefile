@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/06/09 10:42:16 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2021/06/15 19:37:40 cwen Exp $
+
+
+# See https://github.com/tdlib/td/issues/364
+NOT_FOR_ARCHS =	${BE_ARCHS}
 
 COMMENT =	cross-platform library for building Telegram clients
 
