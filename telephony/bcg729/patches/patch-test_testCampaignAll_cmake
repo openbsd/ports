@@ -1,0 +1,11 @@
+$OpenBSD: patch-test_testCampaignAll_cmake,v 1.1 2021/06/15 04:19:26 landry Exp $
+
+Index: test/testCampaignAll.cmake
+--- test/testCampaignAll.cmake.orig
++++ test/testCampaignAll.cmake
+@@ -1,4 +1,4 @@
+-#! /bin/bash
++#!/bin/sh
+ # This script check if we have the tests patterns and download them if needed
+ # then run all available tests
+ 

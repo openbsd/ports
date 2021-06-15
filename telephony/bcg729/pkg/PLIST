@@ -1,8 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/10/10 12:33:16 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/06/15 04:19:26 landry Exp $
 include/bcg729/
 include/bcg729/decoder.h
 include/bcg729/encoder.h
-lib/libbcg729.a
-lib/libbcg729.la
+@static-lib lib/libbcg729.a
 @lib lib/libbcg729.so.${LIBbcg729_VERSION}
 lib/pkgconfig/libbcg729.pc
+share/Bcg729/
+share/Bcg729/cmake/
+share/Bcg729/cmake/Bcg729Config.cmake
+share/Bcg729/cmake/Bcg729ConfigVersion.cmake
+share/Bcg729/cmake/Bcg729Targets${MODCMAKE_BUILD_SUFFIX}
+share/Bcg729/cmake/Bcg729Targets.cmake
