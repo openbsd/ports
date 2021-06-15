@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.17 2021/05/08 13:00:22 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.18 2021/06/15 04:23:45 kirby Exp $
 
 SHARED_LIBS += 		gemrb_core 0.0
 
 COMMENT =		open-source implementation of Bioware's Infinity Engine
 
-DISTNAME =		gemrb-0.8.6
+V =			0.8.8
+DISTNAME =		gemrb-${V}-sources
+PKGNAME =		gemrb-${V}
 
 CATEGORIES =		games emulators x11
 
-HOMEPAGE =		http://www.gemrb.org/
+HOMEPAGE =		https://www.gemrb.org/
 
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
@@ -20,7 +22,8 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gemrb/}
 WANTLIB += SDL SDL_mixer c freetype iconv m openal png pthread
 WANTLIB += vlc vorbisfile z ${MODPY_WANTLIB} ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+# C++11
+COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake \
 			lang/python
@@ -38,9 +41,16 @@ CONFIGURE_ARGS +=	-DSYSCONF_DIR=${SYSCONFDIR}/gemrb \
 			-DMAN_DIR=${PREFIX}/man/man6 \
 			-DCMAKE_MODULE_LINKER_FLAGS=-lc \
 			-DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
-			-DDISABLE_WERROR=1
+			-DDISABLE_WERROR=1 \
+			-DSDL_BACKEND=SDL \
+			-Wno-dev
 
 NO_TEST =		Yes
+
+WRKDIST =		${WRKDIR}/gemrb-${V}
+
+do-gen:
+	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
 
 post-install:
 	 cd ${PREFIX}/share/gemrb/GUIScripts/ && find * -name \*.py \

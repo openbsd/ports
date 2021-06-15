@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2021/06/15 04:23:45 kirby Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -6,6 +6,8 @@ endif(COMMAND cmake_policy)
+ 
+ set(CMAKE_CXX_STANDARD 11)
+ 
++include_directories( "${LOCALBASE}/include" )
++
+ # prevent in-source builds
+ IF(NOT INSOURCEBUILD AND (${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_BINARY_DIR}))
+ 	MESSAGE(FATAL_ERROR "
