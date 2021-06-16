@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2021/06/15 09:37:23 rsadowski Exp $
-@conflict kf5-baloo-<=5.51.0p1v0
-@conflict kde-l10n-*
+@comment $OpenBSD: PLIST,v 1.11 2021/06/16 18:20:19 rsadowski Exp $
+@conflict baloo->=4
 @conflict kde-i18n-*
-@pkgpath devel/kf5/baloo
+@conflict kde-l10n-*
+@conflict kf5-baloo-<=5.51.0p1v0
+@pkgpath devel/kf5/baloo,main
+@pkgpath devel/kf5/baloo,icons
 include/KF5/Baloo/
 include/KF5/Baloo/Baloo/
 include/KF5/Baloo/Baloo/File
@@ -37,6 +39,7 @@ lib/qt5/qml/org/kde/baloo/experimental/
 lib/qt5/qml/org/kde/baloo/experimental/qmldir
 @so lib/qt5/qml/org/kde/baloo/libbalooplugin.so
 lib/qt5/qml/org/kde/baloo/qmldir
+share/dbus-1/interfaces/org.kde.baloo.file.indexer.xml
 share/dbus-1/interfaces/org.kde.baloo.fileindexer.xml
 share/dbus-1/interfaces/org.kde.baloo.main.xml
 share/dbus-1/interfaces/org.kde.baloo.scheduler.xml
