@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/29 22:16:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/06/16 00:59:14 daniel Exp $
 @bin bin/bearoffdump
 @bin bin/gnubg
 @bin bin/makebearoff
@@ -172,18 +172,19 @@ share/gnubg/met/zadeh.xml
 share/gnubg/pixmaps/
 share/gnubg/pixmaps/gnubg-big.png
 share/gnubg/scripts/
+${MODPY_COMMENT}share/gnubg/scripts/${MODPY_PYCACHE}/
+share/gnubg/scripts/${MODPY_PYCACHE}batch.${MODPY_PYC_MAGIC_TAG}pyc
+share/gnubg/scripts/${MODPY_PYCACHE}batch_win.${MODPY_PYC_MAGIC_TAG}pyc
+share/gnubg/scripts/${MODPY_PYCACHE}database.${MODPY_PYC_MAGIC_TAG}pyc
+share/gnubg/scripts/${MODPY_PYCACHE}db_import.${MODPY_PYC_MAGIC_TAG}pyc
+share/gnubg/scripts/${MODPY_PYCACHE}gnubg.${MODPY_PYC_MAGIC_TAG}pyc
+share/gnubg/scripts/${MODPY_PYCACHE}matchseries.${MODPY_PYC_MAGIC_TAG}pyc
 share/gnubg/scripts/batch.py
-share/gnubg/scripts/batch.pyc
 share/gnubg/scripts/batch_win.py
-share/gnubg/scripts/batch_win.pyc
 share/gnubg/scripts/database.py
-share/gnubg/scripts/database.pyc
 share/gnubg/scripts/db_import.py
-share/gnubg/scripts/db_import.pyc
 share/gnubg/scripts/gnubg.py
-share/gnubg/scripts/gnubg.pyc
 share/gnubg/scripts/matchseries.py
-share/gnubg/scripts/matchseries.pyc
 share/gnubg/scripts/query_player.sh
 share/gnubg/sounds/
 share/gnubg/sounds/chequer.wav
