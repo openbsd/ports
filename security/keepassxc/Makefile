@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.35 2021/02/01 06:39:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.36 2021/06/16 18:23:21 rsadowski Exp $
 
 COMMENT =	management tool for password and sensitive data
 
-V =		2.6.4
+V =		2.6.6
 DISTNAME =	keepassxc-${V}
 
 CATEGORIES =	security
@@ -19,7 +19,8 @@ WANTLIB += Qt5Network Qt5Svg Qt5Widgets Qt5X11Extras X11 Xi Xtst
 WANTLIB += argon2 c gcrypt gpg-error m qrencode quazip5 readline
 WANTLIB += sodium z
 
-MASTER_SITES =	https://github.com/keepassxreboot/keepassxc/releases/download/${V}/
+MASTER_SITES =	\
+	https://github.com/keepassxreboot/keepassxc/releases/download/${V}/
 EXTRACT_SUFX =	-src.tar.xz
 
 MODULES =	x11/qt5 \
