@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/02/02 19:09:14 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.12 2021/06/17 21:49:06 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
@@ -90,6 +90,10 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/powerpc-openbsd/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/powerpc-openbsd/types.conf
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/powerpc64-linux/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/powerpc64-linux/types.conf
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/powerpc64le-linux/
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/powerpc64le-linux/types.conf
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/riscv64-linux/
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/riscv64-linux/types.conf
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/s390-linux/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/s390-linux/types.conf
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/s390x-linux/
@@ -144,6 +148,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/union.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/variadic.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/version.rb
 @so ${GEM_LIB}/gems/${DISTNAME}/lib/ffi_c.so
+${GEM_LIB}/gems/${DISTNAME}/rakelib/
+${GEM_LIB}/gems/${DISTNAME}/rakelib/ffi_gem_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/samples/
 ${GEM_LIB}/gems/${DISTNAME}/samples/getlogin.rb
 ${GEM_LIB}/gems/${DISTNAME}/samples/getpid.rb
