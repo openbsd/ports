@@ -1,11 +1,11 @@
-$OpenBSD: patch-Gemfile,v 1.1.1.1 2019/04/23 11:16:06 sebastia Exp $
+$OpenBSD: patch-Gemfile,v 1.2 2021/06/17 21:55:48 sebastia Exp $
 
 for the tests to run
 
 Index: Gemfile
 --- Gemfile.orig
 +++ Gemfile
-@@ -19,7 +19,7 @@ group :development, :test do
+@@ -20,7 +20,7 @@ group :development, :test do
    end
  
    if Gem.ruby_version >= Gem::Version.new("2.0.0")
@@ -14,7 +14,7 @@ Index: Gemfile
    end
  
    if Gem.ruby_version >= Gem::Version.new("2.2.0")
-@@ -31,8 +31,3 @@ group :development, :test do
+@@ -36,8 +36,3 @@ group :development, :test do
    end
  end
  

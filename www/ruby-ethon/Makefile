@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:51:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/06/17 21:55:48 sebastia Exp $
 
 COMMENT =		lightweight libcurl wrapper
 
-DISTNAME =		ethon-0.12.0
+DISTNAME =		ethon-0.14.0
 
 CATEGORIES =		www
 HOMEPAGE =		https://github.com/typhoeus/typhoeus
@@ -16,7 +16,7 @@ MODULES =		lang/ruby
 CONFIGURE_STYLE =	ruby gem
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		devel/ruby-ffi,${MODRUBY_FLAVOR},>=1.3
+RUN_DEPENDS =		devel/ruby-ffi,${MODRUBY_FLAVOR},>=1.15
 
 MODRUBY_TEST =		rake rspec
 TEST_DEPENDS +=		www/ruby-sinatra,${MODRUBY_FLAVOR} \
