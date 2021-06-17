@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2021/05/15 09:56:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2021/06/17 06:20:17 rsadowski Exp $
 
 COMMENT =	extra functionality for kioslaves
 DISTNAME =	kio-extras-${VERSION}
 CATEGORIES =	productivity net
+REVISION =	0
 
 SHARED_LIBS +=  kioarchive                3.0 # 5.97
 SHARED_LIBS +=  molletnetwork5            3.0 # 18.08
@@ -17,15 +18,17 @@ WANTLIB += KF5KIOWidgets KF5Service KF5Solid KF5SyntaxHighlighting
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Sql Qt5Svg Qt5Widgets
 WANTLIB += Qt5Xml Xcursor c kdsoap m mtp phonon4qt5 phonon4qt5experimental
-WANTLIB += ssh tag util
+WANTLIB += smbclient ssh tag util
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
 
 BUILD_DEPENDS =	devel/gperf \
+		devel/kf5/kiconthemes \
 		devel/kf5/kpty
 
 RUN_DEPENDS =	devel/gperf \
+		devel/kf5/kiconthemes \
 		devel/kf5/kpty \
 		misc/shared-mime-info
 
@@ -44,7 +47,6 @@ LIB_DEPENDS =	audio/taglib \
 		devel/kf5/kdnssd \
 		devel/kf5/kguiaddons \
 		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
 		devel/kf5/kio \
 		devel/kf5/kitemviews \
 		devel/kf5/kservice \
