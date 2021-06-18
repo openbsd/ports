@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2021/02/03 18:50:36 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.19 2021/06/18 08:57:51 sebastia Exp $
 ${GEM_BIN}/nokogiri${GEM_BIN_SUFFIX}
 ${GEM_LIB}/build_info/${DISTNAME}.info
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -25,6 +25,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/css/tokenizer.rex
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/css/xpath_visitor.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/decorators/
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/decorators/slop.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/extension.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html/
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html/builder.rb
@@ -95,14 +96,15 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/xsd/xmlparser/
 ${GEM_LIB}/gems/${DISTNAME}/lib/xsd/xmlparser/nokogiri.rb
 ${GEM_LIB}/gems/${DISTNAME}/patches/
 ${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/
-${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0001-Revert-Do-not-URI-escape-in-server-side-includes.patch
-${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0002-Remove-script-macro-support.patch
-${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0003-Update-entities-to-remove-handling-of-ssi.patch
-${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0004-libxml2.la-is-in-top_builddir.patch
-${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0005-Fix-infinite-loop-in-xmlStringLenDecodeEntities.patch
-${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0006-htmlParseComment-treat-as-if-it-closed-the-comment.patch
-${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0007-use-new-htmlParseLookupCommentEnd-to-find-comment-en.patch
-${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0008-use-glibc-strlen.patch
-${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0009-avoid-isnan-isinf.patch
+${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0001-Remove-script-macro-support.patch
+${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0002-Update-entities-to-remove-handling-of-ssi.patch
+${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0003-libxml2.la-is-in-top_builddir.patch
+${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0004-use-glibc-strlen.patch
+${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0005-avoid-isnan-isinf.patch
+${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0006-update-automake-files-for-arm64.patch
+${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0007-Fix-XPath-recursion-limit.patch
+${GEM_LIB}/gems/${DISTNAME}/patches/libxslt/
+${GEM_LIB}/gems/${DISTNAME}/patches/libxslt/0001-update-automake-files-for-arm64.patch
+${GEM_LIB}/gems/${DISTNAME}/patches/libxslt/0002-Fix-xml2-config-check-in-configure-script.patch
 ${GEM_LIB}/gems/${DISTNAME}/ports/
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
