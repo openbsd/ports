@@ -1,22 +1,4 @@
-$OpenBSD: patch-daemon_gdm-server_c,v 1.14 2021/06/18 12:00:53 robert Exp $
-
-REVERT - OpenBSD lacks sigwaitinfo(2)
-From 956d7d1c7a0cfbf2beacdb9e88e645e15ad32047 Mon Sep 17 00:00:00 2001
-From: Jasper St. Pierre <jstpierre@mecheye.net>
-Date: Fri, 14 Feb 2014 19:32:50 +0000
-Subject: server: Process SIGUSR1 more carefully
-
-REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
-From 1ac67f522f5690c27023d98096ca817f12f7eb88 Mon Sep 17 00:00:00 2001
-From: Ray Strode <rstrode@redhat.com>
-Date: Fri, 12 Jun 2015 13:28:01 -0400
-Subject: drop consolekit support
-
-REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
-From 9be58c9ec9a3a411492a5182ac4b0d51fdc3a323 Mon Sep 17 00:00:00 2001
-From: Ray Strode <rstrode@redhat.com>
-Date: Fri, 12 Jun 2015 13:48:52 -0400
-Subject: require logind support
+$OpenBSD: patch-daemon_gdm-server_c,v 1.15 2021/06/18 22:31:44 ajacoutot Exp $
 
 Index: daemon/gdm-server.c
 --- daemon/gdm-server.c.orig

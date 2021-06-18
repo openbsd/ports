@@ -1,34 +1,4 @@
-$OpenBSD: patch-daemon_gdm-manager_c,v 1.29 2021/06/18 12:00:53 robert Exp $
-
-REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
-From fcba1e1a5d556ce7b52101dbd2d1ba4a19469161 Mon Sep 17 00:00:00 2001
-From: Iain Lane <iain@orangesquash.org.uk>
-Date: Fri, 5 Jan 2018 11:53:34 +0000
-Subject: [PATCH] manager: Find user's current graphical session, not session of caller
-
-REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
-From 21905303afbd508f3bf599ad219c9209413c53a2 Mon Sep 17 00:00:00 2001
-From: Ray Strode <rstrode@redhat.com>
-Date: Wed, 5 Apr 2017 12:11:20 -0400
-Subject: manager: stop transient greeter session when done with it
-
-REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
-From 22c332baaf8ad6d7082c5b01250bae70934c2fd1 Mon Sep 17 00:00:00 2001
-From: Ray Strode <rstrode@redhat.com>
-Date: Tue, 4 Apr 2017 17:07:04 -0400
-Subject: manager: make sure we end up on a login screen
-
-REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
-From 1ac67f522f5690c27023d98096ca817f12f7eb88 Mon Sep 17 00:00:00 2001
-From: Ray Strode <rstrode@redhat.com>
-Date: Fri, 12 Jun 2015 13:28:01 -0400
-Subject: drop consolekit support
-
-REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
-From 9be58c9ec9a3a411492a5182ac4b0d51fdc3a323 Mon Sep 17 00:00:00 2001
-From: Ray Strode <rstrode@redhat.com>
-Date: Fri, 12 Jun 2015 13:48:52 -0400
-Subject: require logind support
+$OpenBSD: patch-daemon_gdm-manager_c,v 1.30 2021/06/18 22:31:43 ajacoutot Exp $
 
 Index: daemon/gdm-manager.c
 --- daemon/gdm-manager.c.orig

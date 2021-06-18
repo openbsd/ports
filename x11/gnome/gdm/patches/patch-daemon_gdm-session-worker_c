@@ -1,28 +1,4 @@
-$OpenBSD: patch-daemon_gdm-session-worker_c,v 1.25 2021/06/18 12:00:53 robert Exp $
-
-REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
-From 1ac67f522f5690c27023d98096ca817f12f7eb88 Mon Sep 17 00:00:00 2001
-From: Ray Strode <rstrode@redhat.com>
-Date: Fri, 12 Jun 2015 13:28:01 -0400
-Subject: drop consolekit support
-
-REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
-From 9be58c9ec9a3a411492a5182ac4b0d51fdc3a323 Mon Sep 17 00:00:00 2001
-From: Ray Strode <rstrode@redhat.com>
-Date: Fri, 12 Jun 2015 13:48:52 -0400
-Subject: require logind support
-
-REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
-From a9cacb929470eb82582396984c61d5b611bfeb1a Mon Sep 17 00:00:00 2001
-From: Ray Strode <rstrode@redhat.com>
-Date: Fri, 12 Jun 2015 14:33:40 -0400
-Subject: session: drop session-type property
-
-REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
-From 6942fb9b16bab7173bbd295fb19a9770289dbe0e Mon Sep 17 00:00:00 2001
-From: Tim Lunn <tim@feathertop.org>
-Date: Mon, 11 Apr 2016 23:18:10 +1000
-Subject: gdm-session: set PAM_TTY when initialising pam
+$OpenBSD: patch-daemon_gdm-session-worker_c,v 1.26 2021/06/18 22:31:44 ajacoutot Exp $
 
 Index: daemon/gdm-session-worker.c
 --- daemon/gdm-session-worker.c.orig
