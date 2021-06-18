@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2021/05/05 12:30:16 kurt Exp $
+# $OpenBSD: Makefile,v 1.24 2021/06/18 19:37:53 kurt Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 aarch64
 USE_WXNEEDED=	Yes
@@ -13,12 +13,13 @@ PACKAGE_VER=	${BASE_VER}.${PATCH_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${PACKAGE_VER}
 PKGSTEM=	jdk-11
 EPOCH=		0
+REVISION=	0
 
 DIST_SUBDIR=	jdk
 DISTNAME=	jdk-${VERSION_STR}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 WRKDIST=	${WRKDIR}/openjdk-jdk11u-jdk-${BASE_VER}-${PATCH_VER}-${BSD_PORT_REL}
-BOOTJDK_DATE=	20200225
+BOOTJDK_DATE=	20210615
 
 CATEGORIES=	devel/jdk java
 
@@ -186,8 +187,8 @@ build-bootjdk: build
 	@cd ${WRKTMP}/bootjdk && \
 		${_PBUILD} rm -rf demo jmods man sample
 	@cd ${WRKTMP}/bootjdk/lib && \
-		${_PBUILD} rm libsplashscreen.so libinstrument.so libjsound.so \
-		libawt_xawt.so liblcms.so libfontmanager.so libjdwp.so libjavajpeg.so
+		${_PBUILD} rm libsplashscreen.so libinstrument.so libawt_xawt.so \
+		liblcms.so libfontmanager.so libjdwp.so libjavajpeg.so
 	@find ${WRKTMP}/bootjdk/lib ${WRKTMP}/bootjdk/bin \
 		-exec sh -c 'file {} | grep -q ELF && \
 		${_PBUILD} strip -S {}' \;
