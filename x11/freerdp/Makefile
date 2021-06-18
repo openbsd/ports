@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2021/06/10 14:07:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2021/06/18 07:54:45 tb Exp $
 
 # Also:  __sync_fetch_and_add_4 __sync_add_and_fetch_4 __sync_sub_and_fetch_4
 BROKEN-hppa =		undefined reference to __sync_val_compare_and_swap_4
@@ -7,7 +7,7 @@ COMMENT =		client for Microsoft RDP (remote desktop protocol)
 DISTNAME =		freerdp-2.3.2
 DPB_PROPERTIES =	parallel
 CATEGORIES =		x11 net
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=  freerdp-client2           1.0
 SHARED_LIBS +=  freerdp2                  1.1
@@ -26,11 +26,12 @@ PATCH_DIST_STRIP =	-p1
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcursor Xext Xfixes Xi Xinerama Xrandr Xrender Xv
-WANTLIB += avcodec avutil c crypto cups epoll-shim m pthread sndio
+WANTLIB += avcodec avutil c crypto cups epoll-shim execinfo m pthread sndio
 WANTLIB += ssl swresample usb-1.0 xkbfile
 
-# thread-local storage
+# thread-local storage; C11
 COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 MODULES =		devel/cmake
 

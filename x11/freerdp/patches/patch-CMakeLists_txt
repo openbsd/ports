@@ -1,9 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.10 2021/06/10 14:07:26 ajacoutot Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.11 2021/06/18 07:54:45 tb Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -198,12 +198,14 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "BSD")
+@@ -198,12 +198,15 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "BSD")
  	set(BSD TRUE)
  	if(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
  		set(FREEBSD TRUE)
@@ -15,10 +15,11 @@ Index: CMakeLists.txt
  	if(${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
  		set(OPENBSD TRUE)
 +		set(EPOLLSHIM TRUE)
++		set(EXECINFO TRUE)
  	endif()
  endif()
  
-@@ -212,7 +214,7 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "DragonFly")
+@@ -212,11 +215,16 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "DragonFly")
  	set(FREEBSD TRUE)
  endif()
  
@@ -27,7 +28,16 @@ Index: CMakeLists.txt
  	find_path(EPOLLSHIM_INCLUDE_DIR NAMES sys/epoll.h sys/timerfd.h HINTS /usr/local/include/libepoll-shim)
  	find_library(EPOLLSHIM_LIBS NAMES epoll-shim libepoll-shim HINTS /usr/local/lib)
  endif()
-@@ -636,11 +638,11 @@ if(UNIX OR CYGWIN)
+ 
++if(EXECINFO)
++	find_path(EXECINFO_INCLUDE_DIR NAMES execinfo.h HINTS /usr/include)
++	find_library(EXECINFO_LIBS NAMES execinfo libexecinfo HINTS /usr/lib)
++endif()
++
+ # Configure MSVC Runtime
+ if(MSVC)
+ 	include(MSVCRuntime)
+@@ -636,12 +644,18 @@ if(UNIX OR CYGWIN)
  	if (HAVE_SYS_EVENTFD_H)
  		check_symbol_exists(eventfd_read sys/eventfd.h WITH_EVENTFD_READ_WRITE)
  	endif()
@@ -35,9 +45,16 @@ Index: CMakeLists.txt
 +	if (EPOLLSHIM)
  		list(APPEND CMAKE_REQUIRED_INCLUDES ${EPOLLSHIM_INCLUDE_DIR})
  	endif()
++	if (EXECINFO)
++		list(APPEND CMAKE_REQUIRED_INCLUDES ${EXECINFO_INCLUDE_DIR})
++	endif()
  	check_include_files(sys/timerfd.h HAVE_SYS_TIMERFD_H)
 -	if (FREEBSD)
 +	if (EPOLLSHIM)
  		list(REMOVE_ITEM CMAKE_REQUIRED_INCLUDES ${EPOLLSHIM_INCLUDE_DIR})
++	endif()
++	if (EXECINFO)
++		list(REMOVE_ITEM CMAKE_REQUIRED_INCLUDES ${EXECINFO_INCLUDE_DIR})
  	endif()
  	check_include_files(poll.h HAVE_POLL_H)
+ 	list(APPEND CMAKE_REQUIRED_LIBRARIES m)
