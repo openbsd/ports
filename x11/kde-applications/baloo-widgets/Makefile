@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2020/11/03 16:12:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2021/06/18 19:30:10 naddy Exp $
 
 COMMENT =	widgets for Baloo
 DISTNAME =	baloo-widgets-${VERSION}
 PKGNAME =	baloo-widgets-kf5-${VERSION}
 CATEGORIES =	devel x11
+REVISION =	0
 
 SHARED_LIBS +=  KF5BalooWidgets       1.0 # 19.12.3
 
