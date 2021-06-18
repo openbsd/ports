@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2020/12/23 07:44:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2021/06/18 10:41:39 ajacoutot Exp $
 
 COMMENT=		generic spell checking library
 
-V=			2.2.15
+V=			2.3.0
 DISTNAME=		enchant-${V}
 PKGNAME=		enchant2-${V}
 
-SHARED_LIBS +=  enchant-2            0.1      # 4.15
+SHARED_LIBS +=  enchant-2            0.1      # 5.0
 
 CATEGORIES=		textproc
 
@@ -29,8 +29,7 @@ LIB_DEPENDS=		devel/glib2 \
 			textproc/aspell/core \
 			textproc/hunspell
 
-AUTOCONF_VERSION=	2.69
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
