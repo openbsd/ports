@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2021/05/23 18:34:29 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.24 2021/06/18 09:07:00 sebastia Exp $
 ${GEM_BIN}/r10k${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -9,6 +9,7 @@ ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/docker.yml
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/release.yml
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/rspec_tests.yml
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/stale.yml
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.mkd
@@ -202,6 +203,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/cli/ext/logging.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/cli/help.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/cli/puppetfile.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/cli/version.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/r10k/content_synchronizer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/deployment/
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/deployment.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/deployment/config.rb
@@ -285,6 +287,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/svn/working_dir.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/util/
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/util/attempt.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/util/basedir.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/r10k/util/cleaner.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/util/commands.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/util/exec_env.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/util/license.rb
