@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.79 2021/06/14 21:07:43 sebastia Exp $
+# $OpenBSD: Makefile,v 1.80 2021/06/19 20:47:25 sebastia Exp $
 
 COMMENT=	GNUstep base library
 
 DISTNAME=	gnustep-base-1.28.0
+REVISION=	0
 
 SHARED_LIBS=	gnustep-base 10.4
 CATEGORIES=	devel
@@ -13,7 +14,7 @@ SUBST_VARS=	LIBDIR
 HOMEPAGE=	http://www.gnustep.org/
 
 WANTLIB += avahi-client avahi-common c ffi gmp gnutls iberty iconv icudata
-WANTLIB += icui18n icuuc m objc2 pthread lzma xml2 xslt z
+WANTLIB += curl icui18n icuuc m objc2 pthread xml2 xslt z
 WANTLIB += ${COMPILER_LIBCXX}
 
 .if ${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "amd64"
@@ -33,6 +34,7 @@ LIB_DEPENDS +=	converters/libiconv \
 		security/gnutls \
 		textproc/icu4c \
 		net/avahi \
+		net/curl \
 		x11/gnustep/libobjc2
 
 CONFIGURE_STYLE=gnu
