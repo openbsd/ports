@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2021/01/19 21:59:31 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2021/06/19 12:38:52 jca Exp $
 
 COMMENT =		Debian Almquist shell, POSIX-compliant
 
-DISTNAME =		dash-0.5.11.3
+DISTNAME =		dash-0.5.11.4
 
 CATEGORIES =		shells
 
