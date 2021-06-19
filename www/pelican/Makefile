@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/06/19 03:02:49 danj Exp $
 
 COMMENT =		static site generator written in Python
 
 MODPY_EGG_VERSION =	${GH_TAGNAME}
 DISTNAME =		pelican-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 GH_ACCOUNT =		getpelican
 GH_PROJECT =		pelican
@@ -13,8 +13,6 @@ GH_TAGNAME =		4.0.1
 CATEGORIES =		www
 
 HOMEPAGE =		https://blog.getpelican.com/
-
-MAINTAINER =		Daniel Jakots <obsd@chown.me>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
