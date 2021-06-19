@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2021/05/28 10:45:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.114 2021/06/19 13:40:25 sthen Exp $
 
 COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
@@ -11,6 +11,7 @@ GH_TAGNAME =	v$V
 PKGNAME-main =	icinga2-$V
 PKGNAME-mysql =	icinga2-ido-mysql-$V
 PKGNAME-pgsql =	icinga2-ido-pgsql-$V
+REVISION =	0
 EPOCH =		0
 
 SHARED_LIBS +=	base                      0.0 # 2.6
@@ -43,7 +44,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_context-mt boost_coroutine-mt boost_date_time-mt
 WANTLIB += boost_filesystem-mt boost_program_options-mt boost_regex-mt
-WANTLIB += boost_system-mt boost_thread-mt c curses edit m
+WANTLIB += boost_system-mt boost_thread-mt c curses edit execinfo m
 
 # libressl
 WANTLIB += crypto ssl
@@ -87,8 +88,7 @@ CONFIGURE_ARGS += \
 	-DICINGA2_USER=_icinga \
 	-DICINGA2_GROUP=_icinga \
 	-DICINGA2_GIT_VERSION_INFO=OFF \
-	-DICINGA2_PLUGINDIR=${LOCALBASE}/libexec/nagios \
-	-DHAVE_LIBEXECINFO=OFF
+	-DICINGA2_PLUGINDIR=${LOCALBASE}/libexec/nagios
 CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS}"
 
 # "undefined reference to `__atomic_fetch_sub_8'"

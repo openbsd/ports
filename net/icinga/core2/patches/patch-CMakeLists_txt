@@ -1,0 +1,24 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.13 2021/06/19 13:40:25 sthen Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -203,10 +203,6 @@ include_directories(
+   ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_BINARY_DIR}/lib
+ )
+ 
+-if(HAVE_LIBEXECINFO)
+-  list(APPEND base_DEPS execinfo)
+-endif()
+-
+ if(UNIX OR CYGWIN)
+   list(APPEND base_OBJS $<TARGET_OBJECTS:execvpe>)
+ endif()
+@@ -364,6 +360,7 @@ check_library_exists(execinfo backtrace_symbols "" HAV
+ check_include_file_cxx(cxxabi.h HAVE_CXXABI_H)
+ 
+ if(HAVE_LIBEXECINFO)
++  list(APPEND base_DEPS execinfo)
+   set(HAVE_BACKTRACE_SYMBOLS TRUE)
+ endif()
+ 
