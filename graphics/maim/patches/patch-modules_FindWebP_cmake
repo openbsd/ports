@@ -1,0 +1,21 @@
+$OpenBSD: patch-modules_FindWebP_cmake,v 1.1 2021/06/19 04:17:24 rsadowski Exp $
+
+Index: modules/FindWebP.cmake
+--- modules/FindWebP.cmake.orig
++++ modules/FindWebP.cmake
+@@ -8,12 +8,12 @@
+ 
+ find_path( WEBP_INCLUDE_DIR
+            NAMES webp/encode.h
+-           PATH_SUFFIXES /usr/include /include
++           PATH_SUFFIXES ${LOCALBASE}/include /usr/include /include
+            DOC "The libwebp include directory" )
+ 
+ find_library( WEBP_LIBRARY
+-              NAMES libwebp.so
+-              PATHS /usr/lib /lib
++              NAMES webp
++              PATHS ${LOCALBASE}/lib /usr/lib /lib
+               DOC "The libwebp library" )
+ 
+ if( WEBP_INCLUDE_DIR AND WEBP_LIBRARY )

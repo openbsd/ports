@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2020/05/14 19:44:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.29 2021/06/19 04:17:24 rsadowski Exp $
 
 COMMENT =	desktop screenshot utility (make image)
 CATEGORIES =	graphics x11
 
 GH_ACCOUNT =	naelstrof
 GH_PROJECT =	maim
-GH_TAGNAME =	v5.6.3
+GH_TAGNAME =	v5.7.4
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
@@ -13,21 +13,26 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL ICE SM X11 Xcomposite Xext Xfixes
-WANTLIB += Xrandr Xrender c icuuc jpeg m png slopy z
+WANTLIB += Xrandr Xrender c icuuc jpeg m png slopy webp z
 
 MODULES =		devel/cmake
 
+# C++11
 COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS =		graphics/glm
 
-LIB_DEPENDS +=		graphics/jpeg \
+LIB_DEPENDS =		graphics/jpeg \
+			graphics/libwebp \
 			graphics/png \
 			graphics/slop \
 			textproc/icu4c
 
-CONFIGURE_ARGS +=	-DCMAKE_INSTALL_MANDIR="${LOCALBASE}/man" \
+CONFIGURE_ARGS =	-DCMAKE_INSTALL_MANDIR="${LOCALBASE}/man" \
 			-DCMAKE_INSTALL_PREFIX=${LOCALBASE}
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/modules/FindWebP.cmake
 
 NO_TEST =	Yes
 
