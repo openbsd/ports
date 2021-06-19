@@ -1,0 +1,2 @@
+psrecord is a small utility that uses the psutil library to record the
+CPU and memory activity of a process.
