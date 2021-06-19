@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2021/02/23 19:39:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/06/19 12:09:54 kn Exp $
 
 COMMENT =		jq wrapper for YAML/XML documents
 
-MODPY_EGG_VERSION =	2.12.0
+MODPY_EGG_VERSION =	2.12.2
 DISTNAME =		yq-${MODPY_EGG_VERSION}
 
 CATEGORIES =		textproc
