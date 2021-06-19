@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.21 2021/05/05 20:23:59 danj Exp $
+# $OpenBSD: Makefile,v 1.22 2021/06/19 15:06:46 danj Exp $
 
 COMMENT=		command line image viewer
 
 GH_ACCOUNT=		phillipberndt
 GH_PROJECT=		pqiv
-GH_TAGNAME=		2.11
-REVISION=		0
+GH_TAGNAME=		2.12
+
+MAINTAINER=		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 CATEGORIES=		graphics
 
@@ -14,8 +15,8 @@ HOMEPAGE=		https://github.com/phillipberndt/pqiv/
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += X11 atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 intl m pango-1.0 pangocairo-1.0
+WANTLIB += X11 atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gobject-2.0 gtk-3 harfbuzz intl m pango-1.0 pangocairo-1.0
 
 COMPILER=		base-clang ports-clang ports-gcc
 
