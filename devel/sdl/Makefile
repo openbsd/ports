@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.105 2021/01/23 17:52:00 thfr Exp $
+# $OpenBSD: Makefile,v 1.106 2021/06/19 20:37:52 cwen Exp $
 
 COMMENT=	cross-platform multimedia library
 
 VERSION=	1.2.15
 DISTNAME=	SDL-${VERSION}
 PKGNAME=	${DISTNAME:L}
-REVISION=	11
+REVISION=	12
 CATEGORIES=	devel
 MAINTAINER=	Thomas Frohwein <thfr@openbsd.org>
 MASTER_SITES=	${HOMEPAGE}release/
@@ -64,6 +64,13 @@ WANTLIB+=	X11 Xau Xdmcp Xext Xrandr Xrender xcb
 .endif
 
 NO_TEST=	Yes
+
+# The assembly code contains AltiVec instructions, whose support is not
+# properly detected at runtime. Fix SIGILLs on macppc G3s, while keeping
+# it for powerpc64.
+.if ${MACHINE_ARCH} == "powerpc"
+CONFIGURE_ARGS+= --enable-altivec=no
+.endif
 
 pre-configure:
 	@mkdir -p ${WRKSRC}/src/audio/sndio

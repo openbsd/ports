@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2021/01/23 17:47:43 thfr Exp $
+# $OpenBSD: Makefile,v 1.35 2021/06/19 20:37:52 cwen Exp $
 
 COMMENT=	cross-platform multimedia library
 
 V=		2.0.14
 DISTNAME=	SDL2-${V}
 PKGNAME=	sdl2-${V}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://www.libsdl.org/release/
 
@@ -50,6 +50,13 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .if ${MACHINE_ARCH} == "hppa"
 CONFIGURE_ARGS+= --disable-atomic
+.endif
+
+# The assembly code contains AltiVec instructions, whose support is not
+# properly detected at runtime. Fix SIGILLs on macppc G3s, while keeping
+# it for powerpc64.
+.if ${MACHINE_ARCH} == "powerpc"
+CONFIGURE_ARGS+= --enable-altivec=no
 .endif
 
 # tests in test subdir, but interactive and not hooked up to build
