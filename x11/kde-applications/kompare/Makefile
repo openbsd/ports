@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2021/04/27 05:27:08 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2021/06/19 18:34:40 rsadowski Exp $
 
 COMMENT =	file compare utility for KDE
 DISTNAME =	kompare-${VERSION}
@@ -10,10 +10,11 @@ SHARED_LIBS +=  kompareinterface    2.0 # 0.0
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5I18n KF5IconThemes KF5JobWidgets KF5KIOCore KF5KIOGui
-WANTLIB += KF5KIOWidgets KF5Parts KF5Service KF5SonnetUi KF5SyntaxHighlighting
-WANTLIB += KF5TextEditor KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5PrintSupport Qt5Widgets Qt5Xml c komparediff2 m
+WANTLIB += KF5KIOWidgets KF5Parts KF5Service KF5Solid KF5SonnetUi
+WANTLIB += KF5SyntaxHighlighting KF5TextEditor KF5TextWidgets
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
+WANTLIB += Qt5Xml c komparediff2 m
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:16 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/06/19 18:34:35 rsadowski Exp $
 @pkgpath x11/kde4/kcharselect
 @bin bin/kcharselect
 share/applications/org.kde.kcharselect.desktop
@@ -64,6 +64,7 @@ share/doc/HTML/uk/kcharselect/index.cache.bz2
 share/doc/HTML/uk/kcharselect/index.docbook
 share/doc/HTML/uk/kcharselect/kcharselect.png
 share/locale/ar/LC_MESSAGES/kcharselect.mo
+share/locale/be/LC_MESSAGES/kcharselect.mo
 share/locale/bg/LC_MESSAGES/kcharselect.mo
 share/locale/bs/LC_MESSAGES/kcharselect.mo
 share/locale/ca/LC_MESSAGES/kcharselect.mo
@@ -107,10 +108,14 @@ share/locale/pt/LC_MESSAGES/kcharselect.mo
 share/locale/pt_BR/LC_MESSAGES/kcharselect.mo
 share/locale/ro/LC_MESSAGES/kcharselect.mo
 share/locale/ru/LC_MESSAGES/kcharselect.mo
+share/locale/se/LC_MESSAGES/kcharselect.mo
 share/locale/sk/LC_MESSAGES/kcharselect.mo
 share/locale/sl/LC_MESSAGES/kcharselect.mo
+share/locale/sq/LC_MESSAGES/kcharselect.mo
 share/locale/sr/LC_MESSAGES/kcharselect.mo
 share/locale/sv/LC_MESSAGES/kcharselect.mo
+share/locale/ta/LC_MESSAGES/kcharselect.mo
+share/locale/tg/LC_MESSAGES/kcharselect.mo
 share/locale/tr/LC_MESSAGES/kcharselect.mo
 share/locale/ug/LC_MESSAGES/kcharselect.mo
 share/locale/uk/LC_MESSAGES/kcharselect.mo

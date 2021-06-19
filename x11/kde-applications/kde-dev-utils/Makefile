@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/11/03 16:12:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2021/06/19 18:34:35 rsadowski Exp $
 
 COMMENT =	KDE development helper utilities
 DISTNAME =	kde-dev-utils-${VERSION}
@@ -9,10 +9,10 @@ HOMEPAGE =	https://kde.org/applications/development/
 WANTLIB += ${COMPILER_LIBCXX} GL KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui
-WANTLIB += KF5KIOWidgets KF5Parts KF5Service KF5SonnetUi KF5TextWidgets
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Designer Qt5Gui Qt5Network Qt5Widgets
-WANTLIB += Qt5Xml c m
+WANTLIB += KF5KIOWidgets KF5Parts KF5Service KF5Solid KF5SonnetUi
+WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Designer Qt5Gui Qt5Network
+WANTLIB += Qt5Widgets Qt5Xml c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

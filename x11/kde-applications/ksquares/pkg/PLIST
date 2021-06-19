@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/09/07 14:49:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/06/19 18:34:42 rsadowski Exp $
 @pkgpath x11/kde4/ksquares
 @bin bin/ksquares
 share/applications/org.kde.ksquares.desktop
@@ -53,6 +53,7 @@ share/icons/hicolor/32x32/apps/ksquares.png
 share/icons/hicolor/48x48/apps/ksquares.png
 share/icons/hicolor/64x64/apps/ksquares.png
 share/locale/ar/LC_MESSAGES/ksquares.mo
+share/locale/be/LC_MESSAGES/ksquares.mo
 share/locale/bs/LC_MESSAGES/ksquares.mo
 share/locale/ca/LC_MESSAGES/ksquares.mo
 share/locale/ca@valencia/LC_MESSAGES/ksquares.mo
@@ -91,8 +92,10 @@ share/locale/pt/LC_MESSAGES/ksquares.mo
 share/locale/pt_BR/LC_MESSAGES/ksquares.mo
 share/locale/ro/LC_MESSAGES/ksquares.mo
 share/locale/ru/LC_MESSAGES/ksquares.mo
+share/locale/se/LC_MESSAGES/ksquares.mo
 share/locale/sk/LC_MESSAGES/ksquares.mo
 share/locale/sl/LC_MESSAGES/ksquares.mo
+share/locale/sq/LC_MESSAGES/ksquares.mo
 share/locale/sr/LC_MESSAGES/ksquares.mo
 share/locale/sv/LC_MESSAGES/ksquares.mo
 share/locale/tr/LC_MESSAGES/ksquares.mo

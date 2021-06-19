@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/05/15 09:56:29 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/06/19 18:34:32 rsadowski Exp $
 @so lib/qt5/plugins/fileviewbazaarplugin.so
 @so lib/qt5/plugins/fileviewdropboxplugin.so
 @so lib/qt5/plugins/fileviewgitplugin.so
@@ -14,6 +14,11 @@ share/kservices5/fileviewgitplugin.desktop
 share/kservices5/fileviewhgplugin.desktop
 share/kservices5/fileviewsvnplugin.desktop
 share/locale/ast/LC_MESSAGES/mountisoaction.mo
+share/locale/az/LC_MESSAGES/fileviewbazaarplugin.mo
+share/locale/az/LC_MESSAGES/fileviewgitplugin.mo
+share/locale/az/LC_MESSAGES/fileviewhgplugin.mo
+share/locale/az/LC_MESSAGES/fileviewsvnplugin.mo
+share/locale/az/LC_MESSAGES/mountisoaction.mo
 share/locale/bs/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/bs/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/bs/LC_MESSAGES/fileviewhgplugin.mo
@@ -107,6 +112,7 @@ share/locale/ja/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/ja/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/ja/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/ja/LC_MESSAGES/fileviewsvnplugin.mo
+share/locale/ja/LC_MESSAGES/mountisoaction.mo
 share/locale/kk/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/kk/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/kk/LC_MESSAGES/fileviewhgplugin.mo
@@ -197,6 +203,7 @@ share/locale/uk/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/uk/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/uk/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/uk/LC_MESSAGES/mountisoaction.mo
+share/locale/vi/LC_MESSAGES/mountisoaction.mo
 share/locale/zh_CN/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/zh_CN/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/zh_CN/LC_MESSAGES/fileviewhgplugin.mo

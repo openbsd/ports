@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/09/07 14:49:22 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/06/19 18:34:39 rsadowski Exp $
 include/KF5/KMime/
 include/KF5/KMime/KMime/
 include/KF5/KMime/KMime/Content
@@ -33,6 +33,7 @@ lib/cmake/KF5Mime/KF5MimeTargets.cmake
 @lib lib/libKF5Mime.so.${LIBKF5Mime_VERSION}
 share/kf5/mkspecs/qt_KMime.pri
 share/locale/ar/LC_MESSAGES/libkmime5.mo
+share/locale/be/LC_MESSAGES/libkmime5.mo
 share/locale/bg/LC_MESSAGES/libkmime5.mo
 share/locale/bs/LC_MESSAGES/libkmime5.mo
 share/locale/ca/LC_MESSAGES/libkmime5.mo
@@ -72,10 +73,13 @@ share/locale/pt/LC_MESSAGES/libkmime5.mo
 share/locale/pt_BR/LC_MESSAGES/libkmime5.mo
 share/locale/ro/LC_MESSAGES/libkmime5.mo
 share/locale/ru/LC_MESSAGES/libkmime5.mo
+share/locale/se/LC_MESSAGES/libkmime5.mo
 share/locale/sk/LC_MESSAGES/libkmime5.mo
 share/locale/sl/LC_MESSAGES/libkmime5.mo
+share/locale/sq/LC_MESSAGES/libkmime5.mo
 share/locale/sr/LC_MESSAGES/libkmime5.mo
 share/locale/sv/LC_MESSAGES/libkmime5.mo
+share/locale/ta/LC_MESSAGES/libkmime5.mo
 share/locale/tr/LC_MESSAGES/libkmime5.mo
 share/locale/ug/LC_MESSAGES/libkmime5.mo
 share/locale/uk/LC_MESSAGES/libkmime5.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:29 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/06/19 18:34:46 rsadowski Exp $
 @pkgpath x11/kde4/print-manager
 @bin bin/configure-printer
 @bin bin/kde-add-printer
@@ -20,6 +20,8 @@ share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/ar/LC_MESSAGES/print-manager.mo
 share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/ast/LC_MESSAGES/print-manager.mo
+share/locale/az/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
+share/locale/az/LC_MESSAGES/print-manager.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/bg/LC_MESSAGES/print-manager.mo
 share/locale/bs/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
@@ -100,6 +102,8 @@ share/locale/sr/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/sr/LC_MESSAGES/print-manager.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/sv/LC_MESSAGES/print-manager.mo
+share/locale/tg/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
+share/locale/tg/LC_MESSAGES/print-manager.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/tr/LC_MESSAGES/print-manager.mo
 share/locale/ug/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo

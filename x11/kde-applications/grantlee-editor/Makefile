@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/01/23 18:10:15 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2021/06/19 18:34:32 rsadowski Exp $
 
 COMMENT =	utilities and tools to manage themes in KDE PIM applications
 DISTNAME =	grantlee-editor-${VERSION}
@@ -14,11 +14,11 @@ WANTLIB += KF5Crash KF5DBusAddons KF5GrantleeTheme KF5I18n KF5ItemModels
 WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Libkleo
 WANTLIB += KF5MessageCore KF5MessageViewer KF5Mime KF5MimeTreeParser
 WANTLIB += KF5NewStuff KF5NewStuffCore KF5PimCommon KF5PimTextEdit
-WANTLIB += KF5Service KF5SyntaxHighlighting KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
-WANTLIB += Qt5Quick Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
-WANTLIB += Qt5Widgets Qt5Xml c gpgmepp m qgpgme
+WANTLIB += KF5Service KF5Solid KF5SyntaxHighlighting KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml
+WANTLIB += Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
+WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml c gpgmepp m qgpgme
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes

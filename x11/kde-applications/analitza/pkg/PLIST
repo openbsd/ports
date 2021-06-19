@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/02/08 20:00:40 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/06/19 18:34:31 rsadowski Exp $
 @pkgpath x11/kde4/analitza
 include/Analitza5/
 include/Analitza5/analitza/
@@ -90,6 +90,7 @@ share/locale/ia/LC_MESSAGES/analitza_qt.qm
 share/locale/it/LC_MESSAGES/analitza_qt.qm
 share/locale/ja/LC_MESSAGES/analitza_qt.qm
 share/locale/kk/LC_MESSAGES/analitza_qt.qm
+share/locale/ko/LC_MESSAGES/analitza_qt.qm
 share/locale/lt/LC_MESSAGES/analitza_qt.qm
 share/locale/lv/LC_MESSAGES/analitza_qt.qm
 share/locale/ml/LC_MESSAGES/analitza_qt.qm
@@ -102,6 +103,9 @@ share/locale/pl/LC_MESSAGES/analitza_qt.qm
 share/locale/pt/LC_MESSAGES/analitza_qt.qm
 share/locale/pt_BR/LC_MESSAGES/analitza_qt.qm
 share/locale/ru/LC_MESSAGES/analitza_qt.qm
+share/locale/se/
+share/locale/se/LC_MESSAGES/
+share/locale/se/LC_MESSAGES/analitza_qt.qm
 share/locale/sk/LC_MESSAGES/analitza_qt.qm
 share/locale/sl/LC_MESSAGES/analitza_qt.qm
 share/locale/sv/LC_MESSAGES/analitza_qt.qm

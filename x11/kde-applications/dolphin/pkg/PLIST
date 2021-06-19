@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/04/27 05:26:57 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.12 2021/06/19 18:34:32 rsadowski Exp $
 @conflict dolphin-plugins-<=4.14.3
 @bin bin/dolphin
 @bin bin/servicemenuinstaller
@@ -201,6 +201,9 @@ share/kservices5/kcmdolphinviewmodes.desktop
 share/kservicetypes5/fileviewversioncontrolplugin.desktop
 share/locale/ar/LC_MESSAGES/dolphin.mo
 share/locale/ast/LC_MESSAGES/dolphin.mo
+share/locale/az/LC_MESSAGES/dolphin.mo
+share/locale/az/LC_MESSAGES/dolphin_servicemenuinstaller.mo
+share/locale/be/LC_MESSAGES/dolphin.mo
 share/locale/bg/LC_MESSAGES/dolphin.mo
 share/locale/bs/LC_MESSAGES/dolphin.mo
 share/locale/ca/LC_MESSAGES/dolphin.mo
@@ -277,18 +280,24 @@ share/locale/ro/LC_MESSAGES/dolphin.mo
 share/locale/ro/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/ru/LC_MESSAGES/dolphin.mo
 share/locale/ru/LC_MESSAGES/dolphin_servicemenuinstaller.mo
+share/locale/se/LC_MESSAGES/dolphin.mo
 share/locale/sk/LC_MESSAGES/dolphin.mo
 share/locale/sk/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/sl/LC_MESSAGES/dolphin.mo
 share/locale/sl/LC_MESSAGES/dolphin_servicemenuinstaller.mo
+share/locale/sq/LC_MESSAGES/dolphin.mo
 share/locale/sr/LC_MESSAGES/dolphin.mo
 share/locale/sv/LC_MESSAGES/dolphin.mo
 share/locale/sv/LC_MESSAGES/dolphin_servicemenuinstaller.mo
+share/locale/ta/LC_MESSAGES/dolphin.mo
+share/locale/tg/LC_MESSAGES/dolphin.mo
 share/locale/tr/LC_MESSAGES/dolphin.mo
 share/locale/tr/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/ug/LC_MESSAGES/dolphin.mo
 share/locale/uk/LC_MESSAGES/dolphin.mo
 share/locale/uk/LC_MESSAGES/dolphin_servicemenuinstaller.mo
+share/locale/vi/LC_MESSAGES/dolphin.mo
+share/locale/vi/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/wa/LC_MESSAGES/dolphin.mo
 share/locale/zh_CN/LC_MESSAGES/dolphin.mo
 share/locale/zh_CN/LC_MESSAGES/dolphin_servicemenuinstaller.mo

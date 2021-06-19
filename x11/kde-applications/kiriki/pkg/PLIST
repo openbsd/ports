@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/04/27 05:27:02 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/06/19 18:34:38 rsadowski Exp $
 @pkgpath x11/kde4/kiriki
 @bin bin/kiriki
 share/applications/org.kde.kiriki.desktop
@@ -58,6 +58,7 @@ share/kiriki/images/dice-5.png
 share/kiriki/images/dice-6.png
 share/kiriki/images/dice-none.png
 share/locale/ar/LC_MESSAGES/kiriki.mo
+share/locale/be/LC_MESSAGES/kiriki.mo
 share/locale/bs/LC_MESSAGES/kiriki.mo
 share/locale/ca/LC_MESSAGES/kiriki.mo
 share/locale/ca@valencia/LC_MESSAGES/kiriki.mo
@@ -96,6 +97,7 @@ share/locale/pt/LC_MESSAGES/kiriki.mo
 share/locale/pt_BR/LC_MESSAGES/kiriki.mo
 share/locale/ro/LC_MESSAGES/kiriki.mo
 share/locale/ru/LC_MESSAGES/kiriki.mo
+share/locale/se/LC_MESSAGES/kiriki.mo
 share/locale/sk/LC_MESSAGES/kiriki.mo
 share/locale/sl/LC_MESSAGES/kiriki.mo
 share/locale/sr/LC_MESSAGES/kiriki.mo

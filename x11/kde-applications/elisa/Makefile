@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2021/05/08 06:28:06 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2021/06/19 18:34:32 rsadowski Exp $
 
 COMMENT =	audio player with QML and KDE Plasma integration
 DISTNAME =	elisa-${VERSION}
 CATEGORIES =	audio
-REVISION =	0
 
 HOMEPAGE =	https://elisa.kde.org/
 

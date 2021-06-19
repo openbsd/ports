@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/11/03 16:12:32 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/06/19 18:34:32 rsadowski Exp $
 @pkgpath x11/kde4/dragon
 @bin bin/dragon
 lib/qt5/plugins/kf5/parts/
@@ -102,6 +102,7 @@ share/kservices5/ServiceMenus/
 share/kservices5/ServiceMenus/dragonplayer_play_dvd.desktop
 share/kservices5/dragonplayer_part.desktop
 share/locale/ar/LC_MESSAGES/dragonplayer.mo
+share/locale/be/LC_MESSAGES/dragonplayer.mo
 share/locale/bg/LC_MESSAGES/dragonplayer.mo
 share/locale/bs/LC_MESSAGES/dragonplayer.mo
 share/locale/ca/LC_MESSAGES/dragonplayer.mo
@@ -145,6 +146,7 @@ share/locale/ro/LC_MESSAGES/dragonplayer.mo
 share/locale/ru/LC_MESSAGES/dragonplayer.mo
 share/locale/sk/LC_MESSAGES/dragonplayer.mo
 share/locale/sl/LC_MESSAGES/dragonplayer.mo
+share/locale/sq/LC_MESSAGES/dragonplayer.mo
 share/locale/sr/LC_MESSAGES/dragonplayer.mo
 share/locale/sv/LC_MESSAGES/dragonplayer.mo
 share/locale/tr/LC_MESSAGES/dragonplayer.mo

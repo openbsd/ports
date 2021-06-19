@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/01/23 18:10:16 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/06/19 18:34:33 rsadowski Exp $
 @conflict kdepimlibs-<=4
 @pkgpath x11/kde4/akregator
 @bin bin/kaddressbook
@@ -42,6 +42,10 @@ share/doc/HTML/ca/kaddressbook/
 share/doc/HTML/ca/kaddressbook/docbook-reference.docbook
 share/doc/HTML/ca/kaddressbook/index.cache.bz2
 share/doc/HTML/ca/kaddressbook/index.docbook
+share/doc/HTML/de/kaddressbook/
+share/doc/HTML/de/kaddressbook/docbook-reference.docbook
+share/doc/HTML/de/kaddressbook/index.cache.bz2
+share/doc/HTML/de/kaddressbook/index.docbook
 share/doc/HTML/en/kaddressbook/
 share/doc/HTML/en/kaddressbook/KDE_logo.png
 share/doc/HTML/en/kaddressbook/address-book-new.png
@@ -288,6 +292,8 @@ share/kservices5/kaddressbook_config_plugins.desktop
 share/kservices5/kontact/
 share/kservices5/kontact/kaddressbookplugin.desktop
 share/locale/ar/LC_MESSAGES/kaddressbook.mo
+share/locale/az/LC_MESSAGES/kaddressbook.mo
+share/locale/be/LC_MESSAGES/kaddressbook.mo
 share/locale/bg/LC_MESSAGES/kaddressbook.mo
 share/locale/bs/LC_MESSAGES/kaddressbook.mo
 share/locale/ca/LC_MESSAGES/kaddressbook.mo
@@ -329,13 +335,18 @@ share/locale/pt/LC_MESSAGES/kaddressbook.mo
 share/locale/pt_BR/LC_MESSAGES/kaddressbook.mo
 share/locale/ro/LC_MESSAGES/kaddressbook.mo
 share/locale/ru/LC_MESSAGES/kaddressbook.mo
+share/locale/se/LC_MESSAGES/kaddressbook.mo
 share/locale/sk/LC_MESSAGES/kaddressbook.mo
 share/locale/sl/LC_MESSAGES/kaddressbook.mo
+share/locale/sq/LC_MESSAGES/kaddressbook.mo
 share/locale/sr/LC_MESSAGES/kaddressbook.mo
 share/locale/sv/LC_MESSAGES/kaddressbook.mo
+share/locale/ta/LC_MESSAGES/kaddressbook.mo
+share/locale/tg/LC_MESSAGES/kaddressbook.mo
 share/locale/tr/LC_MESSAGES/kaddressbook.mo
 share/locale/ug/LC_MESSAGES/kaddressbook.mo
 share/locale/uk/LC_MESSAGES/kaddressbook.mo
+share/locale/vi/LC_MESSAGES/kaddressbook.mo
 share/locale/zh_CN/LC_MESSAGES/kaddressbook.mo
 share/locale/zh_TW/LC_MESSAGES/kaddressbook.mo
 share/metainfo/org.kde.kaddressbook.appdata.xml

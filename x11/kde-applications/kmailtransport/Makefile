@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2021/04/28 16:52:17 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2021/06/19 18:34:39 rsadowski Exp $
 
 COMMENT =	mail transport service
 DISTNAME =	kmailtransport-${VERSION}
 CATEGORIES =	mail devel
-REVISION =	0
 
 SHARED_LIBS +=  KF5MailTransport             2.0 # 5.13.3
 SHARED_LIBS +=  KF5MailTransportAkonadi      1.0 # 5.13.3
@@ -12,10 +11,10 @@ WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCore KF5AkonadiMime KF5Auth
 WANTLIB += KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5I18n KF5ItemModels
 WANTLIB += KF5JobWidgets KF5KCMUtils KF5KIOCore KF5KIOGui KF5KIOWidgets
-WANTLIB += KF5Mime KF5Service KF5Wallet KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KPimGAPICore KPimSMTP Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 intl m qt5keychain secret-1
+WANTLIB += KF5Mime KF5Service KF5Solid KF5Wallet KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KPimGAPICore KPimSMTP Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 intl m qt5keychain secret-1
 
 MODKDE5_TRANSLATIONS = yes
 

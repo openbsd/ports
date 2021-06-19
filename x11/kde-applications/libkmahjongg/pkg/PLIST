@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/04/27 05:27:17 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/06/19 18:34:44 rsadowski Exp $
 include/KF5/KF5KMahjongg/
 include/KF5/KF5KMahjongg/KMahjonggBackground
 include/KF5/KF5KMahjongg/KMahjonggConfigDialog
@@ -52,6 +52,7 @@ share/kmahjongglib/tilesets/traditional.copyright
 share/kmahjongglib/tilesets/traditional.desktop
 share/kmahjongglib/tilesets/traditional.svgz
 share/locale/ar/LC_MESSAGES/libkmahjongg5.mo
+share/locale/be/LC_MESSAGES/libkmahjongg5.mo
 share/locale/bs/LC_MESSAGES/libkmahjongg5.mo
 share/locale/ca/LC_MESSAGES/libkmahjongg5.mo
 share/locale/ca@valencia/LC_MESSAGES/libkmahjongg5.mo
@@ -91,8 +92,10 @@ share/locale/pt/LC_MESSAGES/libkmahjongg5.mo
 share/locale/pt_BR/LC_MESSAGES/libkmahjongg5.mo
 share/locale/ro/LC_MESSAGES/libkmahjongg5.mo
 share/locale/ru/LC_MESSAGES/libkmahjongg5.mo
+share/locale/se/LC_MESSAGES/libkmahjongg5.mo
 share/locale/sk/LC_MESSAGES/libkmahjongg5.mo
 share/locale/sl/LC_MESSAGES/libkmahjongg5.mo
+share/locale/sq/LC_MESSAGES/libkmahjongg5.mo
 share/locale/sr/LC_MESSAGES/libkmahjongg5.mo
 share/locale/sv/LC_MESSAGES/libkmahjongg5.mo
 share/locale/tr/LC_MESSAGES/libkmahjongg5.mo

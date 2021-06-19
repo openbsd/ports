@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2021/04/27 05:27:22 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.19 2021/06/19 18:34:46 rsadowski Exp $
 
 COMMENT =	KDE screen capture and screenshot program
 VERSION =	19.04.3
 DISTNAME =	spectacle-${VERSION}
 CATEGORIES =	x11
-REVISION =	6
+REVISION =	7
 
 HOMEPAGE =	https://www.kde.org/applications/graphics/spectacle/
 
@@ -15,7 +15,7 @@ WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5DBusAddons KF5Declarative KF5I18n
 WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Kipi
 WANTLIB += KF5NewStuff KF5NewStuffCore KF5Notifications KF5Package
-WANTLIB += KF5Purpose KF5PurposeWidgets KF5Service KF5WidgetsAddons
+WANTLIB += KF5Purpose KF5PurposeWidgets KF5Service KF5Solid KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Qml Qt5QmlModels
 WANTLIB += Qt5Quick Qt5Widgets Qt5X11Extras Qt5Xml c m xcb xcb-cursor

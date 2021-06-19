@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:24 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/06/19 18:34:42 rsadowski Exp $
 @pkgpath x11/kde4/kreversi
 @bin bin/kreversi
 share/applications/org.kde.kreversi.desktop
@@ -83,6 +83,7 @@ share/kreversi/sounds/
 share/kreversi/sounds/reversi-click.wav
 share/kreversi/sounds/reversi-won.wav
 share/locale/ar/LC_MESSAGES/kreversi.mo
+share/locale/be/LC_MESSAGES/kreversi.mo
 share/locale/bg/LC_MESSAGES/kreversi.mo
 share/locale/bs/LC_MESSAGES/kreversi.mo
 share/locale/ca/LC_MESSAGES/kreversi.mo
@@ -126,10 +127,14 @@ share/locale/pt/LC_MESSAGES/kreversi.mo
 share/locale/pt_BR/LC_MESSAGES/kreversi.mo
 share/locale/ro/LC_MESSAGES/kreversi.mo
 share/locale/ru/LC_MESSAGES/kreversi.mo
+share/locale/se/LC_MESSAGES/kreversi.mo
 share/locale/sk/LC_MESSAGES/kreversi.mo
 share/locale/sl/LC_MESSAGES/kreversi.mo
+share/locale/sq/LC_MESSAGES/kreversi.mo
 share/locale/sr/LC_MESSAGES/kreversi.mo
 share/locale/sv/LC_MESSAGES/kreversi.mo
+share/locale/ta/LC_MESSAGES/kreversi.mo
+share/locale/tg/LC_MESSAGES/kreversi.mo
 share/locale/tr/LC_MESSAGES/kreversi.mo
 share/locale/ug/LC_MESSAGES/kreversi.mo
 share/locale/uk/LC_MESSAGES/kreversi.mo

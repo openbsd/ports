@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/04/27 05:27:05 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/06/19 18:34:39 rsadowski Exp $
 @conflict kdepimlibs-<=4
 @bin bin/akonadi_archivemail_agent
 @bin bin/akonadi_followupreminder_agent
@@ -468,6 +468,7 @@ share/locale/ar/LC_MESSAGES/akonadi_followupreminder_agent.mo
 share/locale/ar/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/ar/LC_MESSAGES/akonadi_sendlater_agent.mo
 share/locale/ar/LC_MESSAGES/kmail.mo
+share/locale/be/LC_MESSAGES/kmail.mo
 share/locale/bg/LC_MESSAGES/kmail.mo
 share/locale/bs/LC_MESSAGES/akonadi_archivemail_agent.mo
 share/locale/bs/LC_MESSAGES/akonadi_followupreminder_agent.mo
@@ -702,6 +703,8 @@ share/locale/ru/LC_MESSAGES/akonadi_unifiedmailbox_agent.mo
 share/locale/ru/LC_MESSAGES/kmail-refresh-settings.mo
 share/locale/ru/LC_MESSAGES/kmail.mo
 share/locale/ru/LC_MESSAGES/ktnef.mo
+share/locale/se/LC_MESSAGES/kmail.mo
+share/locale/se/LC_MESSAGES/ktnef.mo
 share/locale/sk/LC_MESSAGES/akonadi_archivemail_agent.mo
 share/locale/sk/LC_MESSAGES/akonadi_followupreminder_agent.mo
 share/locale/sk/LC_MESSAGES/akonadi_mailfilter_agent.mo
@@ -718,6 +721,7 @@ share/locale/sl/LC_MESSAGES/akonadi_unifiedmailbox_agent.mo
 share/locale/sl/LC_MESSAGES/kmail-refresh-settings.mo
 share/locale/sl/LC_MESSAGES/kmail.mo
 share/locale/sl/LC_MESSAGES/ktnef.mo
+share/locale/sq/LC_MESSAGES/kmail.mo
 share/locale/sr/LC_MESSAGES/akonadi_archivemail_agent.mo
 share/locale/sr/LC_MESSAGES/akonadi_followupreminder_agent.mo
 share/locale/sr/LC_MESSAGES/akonadi_mailfilter_agent.mo
@@ -731,6 +735,8 @@ share/locale/sv/LC_MESSAGES/akonadi_unifiedmailbox_agent.mo
 share/locale/sv/LC_MESSAGES/kmail-refresh-settings.mo
 share/locale/sv/LC_MESSAGES/kmail.mo
 share/locale/sv/LC_MESSAGES/ktnef.mo
+share/locale/ta/LC_MESSAGES/kmail.mo
+share/locale/tg/LC_MESSAGES/kmail.mo
 share/locale/tr/LC_MESSAGES/akonadi_followupreminder_agent.mo
 share/locale/tr/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/tr/LC_MESSAGES/akonadi_sendlater_agent.mo

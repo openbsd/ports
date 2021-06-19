@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:24 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/06/19 18:34:42 rsadowski Exp $
 @pkgpath x11/kde4/kruler
 @bin bin/kruler
 share/applications/org.kde.kruler.desktop
@@ -70,6 +70,7 @@ share/kruler/
 share/kruler/sounds/
 share/kruler/sounds/move.wav
 share/locale/ar/LC_MESSAGES/kruler.mo
+share/locale/be/LC_MESSAGES/kruler.mo
 share/locale/bg/LC_MESSAGES/kruler.mo
 share/locale/bs/LC_MESSAGES/kruler.mo
 share/locale/ca/LC_MESSAGES/kruler.mo
@@ -114,13 +115,18 @@ share/locale/pt/LC_MESSAGES/kruler.mo
 share/locale/pt_BR/LC_MESSAGES/kruler.mo
 share/locale/ro/LC_MESSAGES/kruler.mo
 share/locale/ru/LC_MESSAGES/kruler.mo
+share/locale/se/LC_MESSAGES/kruler.mo
 share/locale/sk/LC_MESSAGES/kruler.mo
 share/locale/sl/LC_MESSAGES/kruler.mo
+share/locale/sq/LC_MESSAGES/kruler.mo
 share/locale/sr/LC_MESSAGES/kruler.mo
 share/locale/sv/LC_MESSAGES/kruler.mo
+share/locale/ta/LC_MESSAGES/kruler.mo
+share/locale/tg/LC_MESSAGES/kruler.mo
 share/locale/tr/LC_MESSAGES/kruler.mo
 share/locale/ug/LC_MESSAGES/kruler.mo
 share/locale/uk/LC_MESSAGES/kruler.mo
+share/locale/vi/LC_MESSAGES/kruler.mo
 share/locale/zh_CN/LC_MESSAGES/kruler.mo
 share/locale/zh_TW/LC_MESSAGES/kruler.mo
 share/metainfo/

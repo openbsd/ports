@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/03 05:13:37 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/06/19 18:34:34 rsadowski Exp $
 @pkgpath x11/kde4/kbreakout
 @bin bin/kbreakout
 share/applications/org.kde.kbreakout.desktop
@@ -144,6 +144,7 @@ share/locale/ro/LC_MESSAGES/kbreakout.mo
 share/locale/ru/LC_MESSAGES/kbreakout.mo
 share/locale/sk/LC_MESSAGES/kbreakout.mo
 share/locale/sl/LC_MESSAGES/kbreakout.mo
+share/locale/sq/LC_MESSAGES/kbreakout.mo
 share/locale/sr/LC_MESSAGES/kbreakout.mo
 share/locale/sv/LC_MESSAGES/kbreakout.mo
 share/locale/tr/LC_MESSAGES/kbreakout.mo

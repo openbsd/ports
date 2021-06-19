@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/04/27 05:26:58 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/06/19 18:34:33 rsadowski Exp $
 @bin bin/kalzium
 include/libkdeedu/
 include/libkdeedu/chemicaldataobject.h
@@ -731,6 +731,7 @@ share/libkdeedu/data/spectra.xml
 share/libkdeedu/data/symbols.csv
 share/libkdeedu/data/symbols2.csv
 share/locale/ar/LC_MESSAGES/kalzium.mo
+share/locale/be/LC_MESSAGES/kalzium.mo
 share/locale/bg/LC_MESSAGES/kalzium.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/bg/LC_MESSAGES/plasma_engine_kalzium.mo
@@ -990,6 +991,7 @@ share/locale/ru/LC_MESSAGES/plasma_applet_gasCalculator.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
 share/locale/ru/LC_MESSAGES/plasma_engine_kalzium.mo
+share/locale/se/LC_MESSAGES/kalzium.mo
 share/locale/sk/LC_MESSAGES/kalzium.mo
 share/locale/sk/LC_MESSAGES/plasma_applet_Molmasscalculator.mo
 share/locale/sk/LC_MESSAGES/plasma_applet_concentrationCalculator.mo
@@ -1004,6 +1006,12 @@ share/locale/sl/LC_MESSAGES/plasma_applet_gasCalculator.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
 share/locale/sl/LC_MESSAGES/plasma_engine_kalzium.mo
+share/locale/sq/LC_MESSAGES/kalzium.mo
+share/locale/sq/LC_MESSAGES/plasma_applet_concentrationCalculator.mo
+share/locale/sq/LC_MESSAGES/plasma_applet_gasCalculator.mo
+share/locale/sq/LC_MESSAGES/plasma_applet_kalzium.mo
+share/locale/sq/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
+share/locale/sq/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/sv/LC_MESSAGES/kalzium.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_Molmasscalculator.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_concentrationCalculator.mo
@@ -1011,6 +1019,8 @@ share/locale/sv/LC_MESSAGES/plasma_applet_gasCalculator.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
 share/locale/sv/LC_MESSAGES/plasma_engine_kalzium.mo
+share/locale/ta/LC_MESSAGES/kalzium.mo
+share/locale/tg/LC_MESSAGES/kalzium.mo
 share/locale/tr/LC_MESSAGES/kalzium.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_Molmasscalculator.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_concentrationCalculator.mo

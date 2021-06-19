@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/04/27 05:26:58 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/06/19 18:34:33 rsadowski Exp $
 @bin bin/kalarm
 @bin bin/kalarmautostart
 @bin libexec/kauth/kalarm_helper
@@ -91,6 +91,7 @@ share/kxmlgui5/
 share/kxmlgui5/kalarm/
 share/kxmlgui5/kalarm/kalarmui.rc
 share/locale/ar/LC_MESSAGES/kalarm.mo
+share/locale/be/LC_MESSAGES/kalarm.mo
 share/locale/bg/LC_MESSAGES/kalarm.mo
 share/locale/bs/LC_MESSAGES/kalarm.mo
 share/locale/ca/LC_MESSAGES/kalarm.mo
@@ -133,10 +134,14 @@ share/locale/pt/LC_MESSAGES/kalarm.mo
 share/locale/pt_BR/LC_MESSAGES/kalarm.mo
 share/locale/ro/LC_MESSAGES/kalarm.mo
 share/locale/ru/LC_MESSAGES/kalarm.mo
+share/locale/se/LC_MESSAGES/kalarm.mo
 share/locale/sk/LC_MESSAGES/kalarm.mo
 share/locale/sl/LC_MESSAGES/kalarm.mo
+share/locale/sq/LC_MESSAGES/kalarm.mo
 share/locale/sr/LC_MESSAGES/kalarm.mo
 share/locale/sv/LC_MESSAGES/kalarm.mo
+share/locale/ta/LC_MESSAGES/kalarm.mo
+share/locale/tg/LC_MESSAGES/kalarm.mo
 share/locale/tr/LC_MESSAGES/kalarm.mo
 share/locale/ug/LC_MESSAGES/kalarm.mo
 share/locale/uk/LC_MESSAGES/kalarm.mo

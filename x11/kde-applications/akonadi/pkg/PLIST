@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/04/27 05:26:55 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/06/19 18:34:30 rsadowski Exp $
 @conflict kdepimlibs-<=4
 @pkgpath productivity/akonadi
 @bin bin/akonadi2xml
@@ -389,6 +389,9 @@ share/kf5/mkspecs/qt_AkonadiWidgets.pri
 share/kf5/mkspecs/qt_AkonadiXml.pri
 share/locale/ar/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/ar/LC_MESSAGES/libakonadi5.mo
+share/locale/az/LC_MESSAGES/akonadi_knut_resource.mo
+share/locale/az/LC_MESSAGES/libakonadi5.mo
+share/locale/be/LC_MESSAGES/libakonadi5.mo
 share/locale/bs/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/bs/LC_MESSAGES/libakonadi5.mo
 share/locale/ca/LC_MESSAGES/akonadi_knut_resource.mo
@@ -461,10 +464,12 @@ share/locale/ro/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/ro/LC_MESSAGES/libakonadi5.mo
 share/locale/ru/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/ru/LC_MESSAGES/libakonadi5.mo
+share/locale/se/LC_MESSAGES/libakonadi5.mo
 share/locale/sk/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/sk/LC_MESSAGES/libakonadi5.mo
 share/locale/sl/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/sl/LC_MESSAGES/libakonadi5.mo
+share/locale/sq/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/sr/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/sr/LC_MESSAGES/libakonadi5.mo
 share/locale/sv/LC_MESSAGES/akonadi_knut_resource.mo

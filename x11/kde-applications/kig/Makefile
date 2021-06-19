@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2021/03/08 18:27:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2021/06/19 18:34:37 rsadowski Exp $
 
 COMMENT =	KDE geometric constructions explorer
 DISTNAME =	kig-${VERSION}
@@ -8,10 +8,10 @@ WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5Crash KF5I18n KF5IconThemes KF5JobWidgets
 WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Parts KF5Service
-WANTLIB += KF5SonnetUi KF5SyntaxHighlighting KF5TextEditor KF5TextWidgets
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Svg
-WANTLIB += Qt5Widgets Qt5Xml Qt5XmlPatterns c m
+WANTLIB += KF5Solid KF5SonnetUi KF5SyntaxHighlighting KF5TextEditor
+WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
+WANTLIB += Qt5Svg Qt5Widgets Qt5Xml Qt5XmlPatterns c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

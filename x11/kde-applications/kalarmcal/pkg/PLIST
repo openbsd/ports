@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/01/23 18:10:16 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/06/19 18:34:33 rsadowski Exp $
 include/KF5/KAlarmCal/
 include/KF5/KAlarmCal/KAlarmCal/
 include/KF5/KAlarmCal/KAlarmCal/Akonadi
@@ -43,6 +43,7 @@ share/akonadi/plugins/serializer/akonadi_serializer_kalarm.desktop
 share/kf5/mkspecs/qt_KAlarmCal.pri
 share/locale/ar/LC_MESSAGES/libkalarmcal5-serializer.mo
 share/locale/ar/LC_MESSAGES/libkalarmcal5.mo
+share/locale/be/LC_MESSAGES/libkalarmcal5.mo
 share/locale/bg/LC_MESSAGES/libkalarmcal5.mo
 share/locale/bs/LC_MESSAGES/libkalarmcal5-serializer.mo
 share/locale/bs/LC_MESSAGES/libkalarmcal5.mo
@@ -119,14 +120,18 @@ share/locale/ro/LC_MESSAGES/libkalarmcal5-serializer.mo
 share/locale/ro/LC_MESSAGES/libkalarmcal5.mo
 share/locale/ru/LC_MESSAGES/libkalarmcal5-serializer.mo
 share/locale/ru/LC_MESSAGES/libkalarmcal5.mo
+share/locale/se/LC_MESSAGES/libkalarmcal5.mo
 share/locale/sk/LC_MESSAGES/libkalarmcal5-serializer.mo
 share/locale/sk/LC_MESSAGES/libkalarmcal5.mo
 share/locale/sl/LC_MESSAGES/libkalarmcal5-serializer.mo
 share/locale/sl/LC_MESSAGES/libkalarmcal5.mo
+share/locale/sq/LC_MESSAGES/libkalarmcal5.mo
 share/locale/sr/LC_MESSAGES/libkalarmcal5-serializer.mo
 share/locale/sr/LC_MESSAGES/libkalarmcal5.mo
 share/locale/sv/LC_MESSAGES/libkalarmcal5-serializer.mo
 share/locale/sv/LC_MESSAGES/libkalarmcal5.mo
+share/locale/ta/LC_MESSAGES/libkalarmcal5.mo
+share/locale/tg/LC_MESSAGES/libkalarmcal5.mo
 share/locale/tr/LC_MESSAGES/libkalarmcal5-serializer.mo
 share/locale/tr/LC_MESSAGES/libkalarmcal5.mo
 share/locale/ug/LC_MESSAGES/libkalarmcal5-serializer.mo

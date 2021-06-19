@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:23 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/06/19 18:34:40 rsadowski Exp $
 @pkgpath x11/kde4/kolourpaint
 @bin bin/kolourpaint
 @lib lib/libkolourpaint_lgpl.so.${LIBkolourpaint_lgpl_VERSION}
@@ -373,6 +373,7 @@ share/kxmlgui5/
 share/kxmlgui5/kolourpaint/
 share/kxmlgui5/kolourpaint/kolourpaintui.rc
 share/locale/ar/LC_MESSAGES/kolourpaint.mo
+share/locale/be/LC_MESSAGES/kolourpaint.mo
 share/locale/bg/LC_MESSAGES/kolourpaint.mo
 share/locale/bs/LC_MESSAGES/kolourpaint.mo
 share/locale/ca/LC_MESSAGES/kolourpaint.mo
@@ -416,9 +417,13 @@ share/locale/pt/LC_MESSAGES/kolourpaint.mo
 share/locale/pt_BR/LC_MESSAGES/kolourpaint.mo
 share/locale/ro/LC_MESSAGES/kolourpaint.mo
 share/locale/ru/LC_MESSAGES/kolourpaint.mo
+share/locale/se/LC_MESSAGES/kolourpaint.mo
 share/locale/sk/LC_MESSAGES/kolourpaint.mo
 share/locale/sl/LC_MESSAGES/kolourpaint.mo
+share/locale/sq/LC_MESSAGES/kolourpaint.mo
 share/locale/sv/LC_MESSAGES/kolourpaint.mo
+share/locale/ta/LC_MESSAGES/kolourpaint.mo
+share/locale/tg/LC_MESSAGES/kolourpaint.mo
 share/locale/tr/LC_MESSAGES/kolourpaint.mo
 share/locale/ug/LC_MESSAGES/kolourpaint.mo
 share/locale/uk/LC_MESSAGES/kolourpaint.mo

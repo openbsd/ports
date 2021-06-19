@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2021/04/27 05:27:09 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2021/06/19 18:34:41 rsadowski Exp $
 
 COMMENT =	calendar and scheduling component of kontact
 DISTNAME =	korganizer-${VERSION}
@@ -20,10 +20,11 @@ WANTLIB += KF5ItemViews KF5JobWidgets KF5KCMUtils KF5KIOCore KF5KIOGui
 WANTLIB += KF5KIOWidgets KF5KontactInterface KF5Ldap KF5Libkdepim
 WANTLIB += KF5MailTransport KF5MailTransportAkonadi KF5Mime KF5NewStuff
 WANTLIB += KF5NewStuffCore KF5Notifications KF5Parts KF5PimCommon
-WANTLIB += KF5PimCommonAkonadi KF5PimTextEdit KF5Service KF5SonnetUi
-WANTLIB += KF5TextWidgets KF5Wallet KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5PrintSupport Qt5Widgets Qt5Xml c m phonon4qt5
+WANTLIB += KF5PimCommonAkonadi KF5PimTextEdit KF5Service KF5Solid
+WANTLIB += KF5SonnetUi KF5TextWidgets KF5Wallet KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets Qt5Xml
+WANTLIB += c m phonon4qt5
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes

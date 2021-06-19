@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2021/06/17 06:20:17 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2021/06/19 18:34:38 rsadowski Exp $
 
 COMMENT =	extra functionality for kioslaves
 DISTNAME =	kio-extras-${VERSION}
 CATEGORIES =	productivity net
-REVISION =	0
 
 SHARED_LIBS +=  kioarchive                3.0 # 5.97
 SHARED_LIBS +=  molletnetwork5            3.0 # 18.08

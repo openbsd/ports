@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:24 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/06/19 18:34:41 rsadowski Exp $
 include/KF5/KPIMTextEdit/
 include/KF5/KPIMTextEdit/KPIMTextEdit/
 include/KF5/KPIMTextEdit/KPIMTextEdit/AbstractMarkupBuilder
@@ -112,6 +112,7 @@ share/locale/ro/LC_MESSAGES/libkpimtextedit.mo
 share/locale/ru/LC_MESSAGES/libkpimtextedit.mo
 share/locale/sk/LC_MESSAGES/libkpimtextedit.mo
 share/locale/sl/LC_MESSAGES/libkpimtextedit.mo
+share/locale/sq/LC_MESSAGES/libkpimtextedit.mo
 share/locale/sr/LC_MESSAGES/libkpimtextedit.mo
 share/locale/sv/LC_MESSAGES/libkpimtextedit.mo
 share/locale/tr/LC_MESSAGES/libkpimtextedit.mo

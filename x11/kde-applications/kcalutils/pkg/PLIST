@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/04/27 05:26:59 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/06/19 18:34:35 rsadowski Exp $
 include/KF5/KCalUtils/
 include/KF5/KCalUtils/KCalUtils/
 include/KF5/KCalUtils/KCalUtils/DndFactory
@@ -64,6 +64,7 @@ share/locale/pt/LC_MESSAGES/libkcalutils5.mo
 share/locale/pt_BR/LC_MESSAGES/libkcalutils5.mo
 share/locale/ro/LC_MESSAGES/libkcalutils5.mo
 share/locale/ru/LC_MESSAGES/libkcalutils5.mo
+share/locale/se/LC_MESSAGES/libkcalutils5.mo
 share/locale/sk/LC_MESSAGES/libkcalutils5.mo
 share/locale/sl/LC_MESSAGES/libkcalutils5.mo
 share/locale/sr/LC_MESSAGES/libkcalutils5.mo

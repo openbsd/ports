@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/04/27 05:27:14 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/06/19 18:34:43 rsadowski Exp $
 @conflict kdegames-*
 @bin bin/ktuberling
 share/applications/org.kde.ktuberling.desktop
@@ -1839,6 +1839,7 @@ share/kxmlgui5/
 share/kxmlgui5/ktuberling/
 share/kxmlgui5/ktuberling/ktuberlingui.rc
 share/locale/ar/LC_MESSAGES/ktuberling.mo
+share/locale/be/LC_MESSAGES/ktuberling.mo
 share/locale/bg/LC_MESSAGES/ktuberling.mo
 share/locale/bs/LC_MESSAGES/ktuberling.mo
 share/locale/ca/LC_MESSAGES/ktuberling.mo
@@ -1882,10 +1883,14 @@ share/locale/pt/LC_MESSAGES/ktuberling.mo
 share/locale/pt_BR/LC_MESSAGES/ktuberling.mo
 share/locale/ro/LC_MESSAGES/ktuberling.mo
 share/locale/ru/LC_MESSAGES/ktuberling.mo
+share/locale/se/LC_MESSAGES/ktuberling.mo
 share/locale/sk/LC_MESSAGES/ktuberling.mo
 share/locale/sl/LC_MESSAGES/ktuberling.mo
+share/locale/sq/LC_MESSAGES/ktuberling.mo
 share/locale/sr/LC_MESSAGES/ktuberling.mo
 share/locale/sv/LC_MESSAGES/ktuberling.mo
+share/locale/ta/LC_MESSAGES/ktuberling.mo
+share/locale/tg/LC_MESSAGES/ktuberling.mo
 share/locale/tr/LC_MESSAGES/ktuberling.mo
 share/locale/ug/LC_MESSAGES/ktuberling.mo
 share/locale/uk/LC_MESSAGES/ktuberling.mo

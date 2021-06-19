@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/04/27 05:27:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2021/06/19 18:34:37 rsadowski Exp $
 
 COMMENT =	KDE pim identities
 DISTNAME =	kidentitymanagement-${VERSION}
@@ -9,9 +9,9 @@ SHARED_LIBS +=  KF5IdentityManagement     1.1 # 5.10
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
-WANTLIB += KF5PimTextEdit KF5Service KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5Xml m
+WANTLIB += KF5PimTextEdit KF5Service KF5Solid KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml m
 
 MODKDE5_TRANSLATIONS = yes
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/09/07 14:49:17 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/06/19 18:34:35 rsadowski Exp $
 share/apps/
 share/apps/kvtml/
 share/apps/kvtml/bg/
@@ -374,6 +374,11 @@ share/apps/kvtml/sv/sports.kvtml
 share/apps/kvtml/sv/transportation.kvtml
 share/apps/kvtml/sv/vegetables.kvtml
 share/apps/kvtml/sv/worldcapitals.kvtml
+share/apps/kvtml/tg/
+share/apps/kvtml/tg/animals.kvtml
+share/apps/kvtml/tg/easy.kvtml
+share/apps/kvtml/tg/hard.kvtml
+share/apps/kvtml/tg/medium.kvtml
 share/apps/kvtml/tr/
 share/apps/kvtml/tr/animals.kvtml
 share/apps/kvtml/tr/easy.kvtml

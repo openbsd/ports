@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/11 11:23:08 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/06/19 18:34:43 rsadowski Exp $
 @pkgpath x11/kde4/kwalletmanager
 @bin bin/kwalletmanager5
 @so lib/qt5/plugins/kcm_kwallet5.so
@@ -84,6 +84,10 @@ share/kxmlgui5/kwalletmanager5/
 share/kxmlgui5/kwalletmanager5/kwalletmanager.rc
 share/locale/ar/LC_MESSAGES/kcmkwallet.mo
 share/locale/ar/LC_MESSAGES/kwalletmanager.mo
+share/locale/az/LC_MESSAGES/kcmkwallet.mo
+share/locale/az/LC_MESSAGES/kwalletmanager.mo
+share/locale/be/LC_MESSAGES/kcmkwallet.mo
+share/locale/be/LC_MESSAGES/kwalletmanager.mo
 share/locale/bg/LC_MESSAGES/kcmkwallet.mo
 share/locale/bg/LC_MESSAGES/kwalletmanager.mo
 share/locale/bs/LC_MESSAGES/kcmkwallet.mo
@@ -168,14 +172,22 @@ share/locale/ro/LC_MESSAGES/kcmkwallet.mo
 share/locale/ro/LC_MESSAGES/kwalletmanager.mo
 share/locale/ru/LC_MESSAGES/kcmkwallet.mo
 share/locale/ru/LC_MESSAGES/kwalletmanager.mo
+share/locale/se/LC_MESSAGES/kcmkwallet.mo
+share/locale/se/LC_MESSAGES/kwalletmanager.mo
 share/locale/sk/LC_MESSAGES/kcmkwallet.mo
 share/locale/sk/LC_MESSAGES/kwalletmanager.mo
 share/locale/sl/LC_MESSAGES/kcmkwallet.mo
 share/locale/sl/LC_MESSAGES/kwalletmanager.mo
+share/locale/sq/LC_MESSAGES/kcmkwallet.mo
+share/locale/sq/LC_MESSAGES/kwalletmanager.mo
 share/locale/sr/LC_MESSAGES/kcmkwallet.mo
 share/locale/sr/LC_MESSAGES/kwalletmanager.mo
 share/locale/sv/LC_MESSAGES/kcmkwallet.mo
 share/locale/sv/LC_MESSAGES/kwalletmanager.mo
+share/locale/ta/LC_MESSAGES/kcmkwallet.mo
+share/locale/ta/LC_MESSAGES/kwalletmanager.mo
+share/locale/tg/LC_MESSAGES/kcmkwallet.mo
+share/locale/tg/LC_MESSAGES/kwalletmanager.mo
 share/locale/tr/LC_MESSAGES/kcmkwallet.mo
 share/locale/tr/LC_MESSAGES/kwalletmanager.mo
 share/locale/ug/LC_MESSAGES/kcmkwallet.mo

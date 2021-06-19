@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/04/27 05:27:06 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/06/19 18:34:40 rsadowski Exp $
 @pkgpath x11/kde4/kmix
 @bin bin/kmix
 @bin bin/kmixctrl
@@ -151,6 +151,7 @@ share/kxmlgui5/
 share/kxmlgui5/kmix/
 share/kxmlgui5/kmix/kmixui.rc
 share/locale/ar/LC_MESSAGES/kmix.mo
+share/locale/be/LC_MESSAGES/kmix.mo
 share/locale/bg/LC_MESSAGES/kmix.mo
 share/locale/bs/LC_MESSAGES/kmix.mo
 share/locale/ca/LC_MESSAGES/kmix.mo
@@ -194,10 +195,14 @@ share/locale/pt/LC_MESSAGES/kmix.mo
 share/locale/pt_BR/LC_MESSAGES/kmix.mo
 share/locale/ro/LC_MESSAGES/kmix.mo
 share/locale/ru/LC_MESSAGES/kmix.mo
+share/locale/se/LC_MESSAGES/kmix.mo
 share/locale/sk/LC_MESSAGES/kmix.mo
 share/locale/sl/LC_MESSAGES/kmix.mo
+share/locale/sq/LC_MESSAGES/kmix.mo
 share/locale/sr/LC_MESSAGES/kmix.mo
 share/locale/sv/LC_MESSAGES/kmix.mo
+share/locale/ta/LC_MESSAGES/kmix.mo
+share/locale/tg/LC_MESSAGES/kmix.mo
 share/locale/tr/LC_MESSAGES/kmix.mo
 share/locale/ug/LC_MESSAGES/kmix.mo
 share/locale/uk/LC_MESSAGES/kmix.mo

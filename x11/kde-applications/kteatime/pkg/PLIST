@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/06/19 18:34:43 rsadowski Exp $
 @pkgpath x11/kde4/kteatime
 @bin bin/kteatime
 share/applications/org.kde.kteatime.desktop
@@ -49,6 +49,7 @@ share/icons/hicolor/64x64/apps/kteatime.png
 share/icons/hicolor/scalable/apps/kteatime.svgz
 share/knotifications5/kteatime.notifyrc
 share/locale/ar/LC_MESSAGES/kteatime.mo
+share/locale/be/LC_MESSAGES/kteatime.mo
 share/locale/bg/LC_MESSAGES/kteatime.mo
 share/locale/bs/LC_MESSAGES/kteatime.mo
 share/locale/ca/LC_MESSAGES/kteatime.mo
@@ -92,10 +93,13 @@ share/locale/pt/LC_MESSAGES/kteatime.mo
 share/locale/pt_BR/LC_MESSAGES/kteatime.mo
 share/locale/ro/LC_MESSAGES/kteatime.mo
 share/locale/ru/LC_MESSAGES/kteatime.mo
+share/locale/se/LC_MESSAGES/kteatime.mo
 share/locale/sk/LC_MESSAGES/kteatime.mo
 share/locale/sl/LC_MESSAGES/kteatime.mo
 share/locale/sr/LC_MESSAGES/kteatime.mo
 share/locale/sv/LC_MESSAGES/kteatime.mo
+share/locale/ta/LC_MESSAGES/kteatime.mo
+share/locale/tg/LC_MESSAGES/kteatime.mo
 share/locale/tr/LC_MESSAGES/kteatime.mo
 share/locale/ug/LC_MESSAGES/kteatime.mo
 share/locale/uk/LC_MESSAGES/kteatime.mo

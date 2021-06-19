@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/01/23 18:10:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2021/06/19 18:34:46 rsadowski Exp $
 
 COMMENT =	printing management for KDE
 DISTNAME =	print-manager-${VERSION}
@@ -12,9 +12,9 @@ WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5DBusAddons KF5I18n KF5IconThemes KF5JobWidgets KF5KCMUtils
 WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Notifications
-WANTLIB += KF5Service KF5WidgetsAddons KF5WindowSystem Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5QmlModels
-WANTLIB += Qt5Quick Qt5Widgets Qt5Xml c cups m
+WANTLIB += KF5Service KF5Solid KF5WidgetsAddons KF5WindowSystem
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml
+WANTLIB += Qt5QmlModels Qt5Quick Qt5Widgets Qt5Xml c cups m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_TRANSLATIONS = yes

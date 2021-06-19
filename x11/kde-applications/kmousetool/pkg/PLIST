@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/06/03 05:13:41 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/06/19 18:34:40 rsadowski Exp $
 @pkgpath x11/kde4/kmousetool
 @bin bin/kmousetool
 @man man/man1/kmousetool.1
@@ -50,6 +50,7 @@ share/kmousetool/
 share/kmousetool/sounds/
 share/kmousetool/sounds/mousetool_tap.wav
 share/locale/ar/LC_MESSAGES/kmousetool.mo
+share/locale/be/LC_MESSAGES/kmousetool.mo
 share/locale/bg/LC_MESSAGES/kmousetool.mo
 share/locale/bs/LC_MESSAGES/kmousetool.mo
 share/locale/ca/LC_MESSAGES/kmousetool.mo
@@ -93,13 +94,18 @@ share/locale/pt/LC_MESSAGES/kmousetool.mo
 share/locale/pt_BR/LC_MESSAGES/kmousetool.mo
 share/locale/ro/LC_MESSAGES/kmousetool.mo
 share/locale/ru/LC_MESSAGES/kmousetool.mo
+share/locale/se/LC_MESSAGES/kmousetool.mo
 share/locale/sk/LC_MESSAGES/kmousetool.mo
 share/locale/sl/LC_MESSAGES/kmousetool.mo
+share/locale/sq/LC_MESSAGES/kmousetool.mo
 share/locale/sr/LC_MESSAGES/kmousetool.mo
 share/locale/sv/LC_MESSAGES/kmousetool.mo
+share/locale/ta/LC_MESSAGES/kmousetool.mo
+share/locale/tg/LC_MESSAGES/kmousetool.mo
 share/locale/tr/LC_MESSAGES/kmousetool.mo
 share/locale/ug/LC_MESSAGES/kmousetool.mo
 share/locale/uk/LC_MESSAGES/kmousetool.mo
+share/locale/vi/LC_MESSAGES/kmousetool.mo
 share/locale/zh_CN/LC_MESSAGES/kmousetool.mo
 share/locale/zh_TW/LC_MESSAGES/kmousetool.mo
 share/metainfo/

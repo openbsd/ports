@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/03/08 18:27:33 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/06/19 18:34:46 rsadowski Exp $
 @pkgpath x11/kde4/step
 @bin bin/step
 share/applications/org.kde.step.desktop
@@ -105,6 +105,7 @@ share/kxmlgui5/
 share/kxmlgui5/step/
 share/kxmlgui5/step/stepui.rc
 share/locale/ar/LC_MESSAGES/step.mo
+share/locale/be/LC_MESSAGES/step.mo
 share/locale/bg/LC_MESSAGES/step.mo
 share/locale/bs/LC_MESSAGES/step.mo
 share/locale/ca/LC_MESSAGES/step.mo
@@ -192,6 +193,7 @@ share/locale/sk/LC_MESSAGES/step_example_files.mo
 share/locale/sk/LC_MESSAGES/step_objinfo_files.mo
 share/locale/sl/LC_MESSAGES/step.mo
 share/locale/sl/LC_MESSAGES/step_objinfo_files.mo
+share/locale/sq/LC_MESSAGES/step.mo
 share/locale/sv/LC_MESSAGES/step.mo
 share/locale/sv/LC_MESSAGES/step_example_files.mo
 share/locale/sv/LC_MESSAGES/step_objinfo_files.mo

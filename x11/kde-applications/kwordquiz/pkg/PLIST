@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/01/23 18:10:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/06/19 18:34:43 rsadowski Exp $
 @pkgpath x11/kde4/kwordquiz
 @bin bin/kwordquiz
 share/applications/org.kde.kwordquiz.desktop
@@ -311,6 +311,7 @@ share/kxmlgui5/
 share/kxmlgui5/kwordquiz/
 share/kxmlgui5/kwordquiz/kwordquizui.rc
 share/locale/ar/LC_MESSAGES/kwordquiz.mo
+share/locale/be/LC_MESSAGES/kwordquiz.mo
 share/locale/bg/LC_MESSAGES/kwordquiz.mo
 share/locale/bs/LC_MESSAGES/kwordquiz.mo
 share/locale/ca/LC_MESSAGES/kwordquiz.mo
@@ -352,9 +353,13 @@ share/locale/pt/LC_MESSAGES/kwordquiz.mo
 share/locale/pt_BR/LC_MESSAGES/kwordquiz.mo
 share/locale/ro/LC_MESSAGES/kwordquiz.mo
 share/locale/ru/LC_MESSAGES/kwordquiz.mo
+share/locale/se/LC_MESSAGES/kwordquiz.mo
 share/locale/sk/LC_MESSAGES/kwordquiz.mo
 share/locale/sl/LC_MESSAGES/kwordquiz.mo
+share/locale/sq/LC_MESSAGES/kwordquiz.mo
 share/locale/sv/LC_MESSAGES/kwordquiz.mo
+share/locale/ta/LC_MESSAGES/kwordquiz.mo
+share/locale/tg/LC_MESSAGES/kwordquiz.mo
 share/locale/tr/LC_MESSAGES/kwordquiz.mo
 share/locale/ug/LC_MESSAGES/kwordquiz.mo
 share/locale/uk/LC_MESSAGES/kwordquiz.mo

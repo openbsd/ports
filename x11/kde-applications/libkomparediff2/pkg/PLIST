@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/09/07 14:49:27 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/06/19 18:34:44 rsadowski Exp $
 include/libkomparediff2/
 include/libkomparediff2/diff2_export.h
 include/libkomparediff2/difference.h
@@ -17,6 +17,7 @@ lib/cmake/LibKompareDiff2/LibKompareDiff2Targets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/LibKompareDiff2/LibKompareDiff2Targets.cmake
 @lib lib/libkomparediff2.so.${LIBkomparediff2_VERSION}
 share/locale/ar/LC_MESSAGES/libkomparediff2.mo
+share/locale/be/LC_MESSAGES/libkomparediff2.mo
 share/locale/bg/LC_MESSAGES/libkomparediff2.mo
 share/locale/bs/LC_MESSAGES/libkomparediff2.mo
 share/locale/ca/LC_MESSAGES/libkomparediff2.mo
@@ -57,10 +58,14 @@ share/locale/pt/LC_MESSAGES/libkomparediff2.mo
 share/locale/pt_BR/LC_MESSAGES/libkomparediff2.mo
 share/locale/ro/LC_MESSAGES/libkomparediff2.mo
 share/locale/ru/LC_MESSAGES/libkomparediff2.mo
+share/locale/se/LC_MESSAGES/libkomparediff2.mo
 share/locale/sk/LC_MESSAGES/libkomparediff2.mo
 share/locale/sl/LC_MESSAGES/libkomparediff2.mo
+share/locale/sq/LC_MESSAGES/libkomparediff2.mo
 share/locale/sr/LC_MESSAGES/libkomparediff2.mo
 share/locale/sv/LC_MESSAGES/libkomparediff2.mo
+share/locale/ta/LC_MESSAGES/libkomparediff2.mo
+share/locale/tg/LC_MESSAGES/libkomparediff2.mo
 share/locale/tr/LC_MESSAGES/libkomparediff2.mo
 share/locale/ug/LC_MESSAGES/libkomparediff2.mo
 share/locale/uk/LC_MESSAGES/libkomparediff2.mo

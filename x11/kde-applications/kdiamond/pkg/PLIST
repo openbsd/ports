@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/04/27 05:27:00 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/06/19 18:34:36 rsadowski Exp $
 @pkgpath x11/kde4/kdiamond
 @bin bin/kdiamond
 share/applications/org.kde.kdiamond.desktop
@@ -107,6 +107,7 @@ share/locale/ro/LC_MESSAGES/kdiamond.mo
 share/locale/ru/LC_MESSAGES/kdiamond.mo
 share/locale/sk/LC_MESSAGES/kdiamond.mo
 share/locale/sl/LC_MESSAGES/kdiamond.mo
+share/locale/sq/LC_MESSAGES/kdiamond.mo
 share/locale/sr/LC_MESSAGES/kdiamond.mo
 share/locale/sv/LC_MESSAGES/kdiamond.mo
 share/locale/tr/LC_MESSAGES/kdiamond.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/01/23 18:10:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/06/19 18:34:42 rsadowski Exp $
 @pkgpath x11/kde4/ksirk
 @bin bin/ksirk
 @bin bin/ksirkskineditor
@@ -199,6 +199,7 @@ share/kxmlgui5/ksirk/ksirkui.rc
 share/kxmlgui5/ksirkskineditor/
 share/kxmlgui5/ksirkskineditor/ksirkskineditorui.rc
 share/locale/ar/LC_MESSAGES/ksirk.mo
+share/locale/be/LC_MESSAGES/ksirk.mo
 share/locale/bs/LC_MESSAGES/ksirk.mo
 share/locale/bs/LC_MESSAGES/ksirkskineditor.mo
 share/locale/ca/LC_MESSAGES/ksirk.mo

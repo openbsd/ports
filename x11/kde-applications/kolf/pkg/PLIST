@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:22 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/06/19 18:34:40 rsadowski Exp $
 @pkgpath x11/kde4/kolf
 @bin bin/kolf
 share/applications/org.kde.kolf.desktop
@@ -78,6 +78,7 @@ share/kxmlgui5/
 share/kxmlgui5/kolf/
 share/kxmlgui5/kolf/kolfui.rc
 share/locale/ar/LC_MESSAGES/kolf.mo
+share/locale/be/LC_MESSAGES/kolf.mo
 share/locale/bg/LC_MESSAGES/kolf.mo
 share/locale/bs/LC_MESSAGES/kolf.mo
 share/locale/ca/LC_MESSAGES/kolf.mo
@@ -120,10 +121,14 @@ share/locale/pt/LC_MESSAGES/kolf.mo
 share/locale/pt_BR/LC_MESSAGES/kolf.mo
 share/locale/ro/LC_MESSAGES/kolf.mo
 share/locale/ru/LC_MESSAGES/kolf.mo
+share/locale/se/LC_MESSAGES/kolf.mo
 share/locale/sk/LC_MESSAGES/kolf.mo
 share/locale/sl/LC_MESSAGES/kolf.mo
+share/locale/sq/LC_MESSAGES/kolf.mo
 share/locale/sr/LC_MESSAGES/kolf.mo
 share/locale/sv/LC_MESSAGES/kolf.mo
+share/locale/ta/LC_MESSAGES/kolf.mo
+share/locale/tg/LC_MESSAGES/kolf.mo
 share/locale/tr/LC_MESSAGES/kolf.mo
 share/locale/ug/LC_MESSAGES/kolf.mo
 share/locale/uk/LC_MESSAGES/kolf.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/04/27 05:27:22 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/06/19 18:34:46 rsadowski Exp $
 @pkgpath x11/kde4/rocs
 @bin bin/rocs
 include/rocs/
@@ -161,6 +161,8 @@ share/locale/ja/LC_MESSAGES/libgraphtheory.mo
 share/locale/ja/LC_MESSAGES/rocs.mo
 share/locale/kk/LC_MESSAGES/libgraphtheory.mo
 share/locale/kk/LC_MESSAGES/rocs.mo
+share/locale/ko/LC_MESSAGES/libgraphtheory.mo
+share/locale/ko/LC_MESSAGES/rocs.mo
 share/locale/lt/LC_MESSAGES/libgraphtheory.mo
 share/locale/lt/LC_MESSAGES/rocs.mo
 share/locale/lv/LC_MESSAGES/libgraphtheory.mo

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/04/27 05:27:18 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2021/06/19 18:34:45 rsadowski Exp $
 
 COMMENT =	sieve script library
 DISTNAME =	libksieve-${VERSION}
@@ -14,11 +14,12 @@ WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5I18n KF5IconThemes
 WANTLIB += KF5IdentityManagement KF5JobWidgets KF5KIOCore KF5KIOGui
 WANTLIB += KF5KIOWidgets KF5Libkdepim KF5MailTransport KF5Mime
 WANTLIB += KF5NewStuff KF5NewStuffCore KF5PimCommon KF5PimTextEdit
-WANTLIB += KF5Service KF5SonnetUi KF5SyntaxHighlighting KF5Wallet
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
-WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml m sasl2
+WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5SyntaxHighlighting
+WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning
+WANTLIB += Qt5PrintSupport Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel
+WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5Xml
+WANTLIB += m sasl2
 
 MODKDE5_TRANSLATIONS = yes
 

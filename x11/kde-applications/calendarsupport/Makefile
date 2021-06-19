@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/01/23 18:10:14 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2021/06/19 18:34:32 rsadowski Exp $
 
 COMMENT =	PIM calendar support library
 DISTNAME =	calendarsupport-${VERSION}
@@ -12,9 +12,10 @@ WANTLIB += KF5CalendarCore KF5CalendarUtils KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5GuiAddons KF5Holidays KF5I18n KF5IdentityManagement
 WANTLIB += KF5ItemModels KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
-WANTLIB += KF5Mime KF5PimCommon KF5PimTextEdit KF5Service KF5WidgetsAddons
-WANTLIB += KF5WindowSystem Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Network Qt5PrintSupport Qt5Widgets Qt5Xml m
+WANTLIB += KF5Mime KF5PimCommon KF5PimTextEdit KF5Service KF5Solid
+WANTLIB += KF5WidgetsAddons KF5WindowSystem Qt5Concurrent Qt5Core
+WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
+WANTLIB += Qt5Xml m
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/04/27 05:27:05 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/06/19 18:34:39 rsadowski Exp $
 @pkgpath x11/kde4/kmahjongg
 @bin bin/kmahjongg
 share/applications/org.kde.kmahjongg.desktop
@@ -258,6 +258,7 @@ share/kmahjongg/layouts/up&down.layout
 share/kmahjongg/layouts/well.desktop
 share/kmahjongg/layouts/well.layout
 share/locale/ar/LC_MESSAGES/kmahjongg.mo
+share/locale/be/LC_MESSAGES/kmahjongg.mo
 share/locale/bg/LC_MESSAGES/kmahjongg.mo
 share/locale/bs/LC_MESSAGES/kmahjongg.mo
 share/locale/ca/LC_MESSAGES/kmahjongg.mo
@@ -301,10 +302,14 @@ share/locale/pt/LC_MESSAGES/kmahjongg.mo
 share/locale/pt_BR/LC_MESSAGES/kmahjongg.mo
 share/locale/ro/LC_MESSAGES/kmahjongg.mo
 share/locale/ru/LC_MESSAGES/kmahjongg.mo
+share/locale/se/LC_MESSAGES/kmahjongg.mo
 share/locale/sk/LC_MESSAGES/kmahjongg.mo
 share/locale/sl/LC_MESSAGES/kmahjongg.mo
+share/locale/sq/LC_MESSAGES/kmahjongg.mo
 share/locale/sr/LC_MESSAGES/kmahjongg.mo
 share/locale/sv/LC_MESSAGES/kmahjongg.mo
+share/locale/ta/LC_MESSAGES/kmahjongg.mo
+share/locale/tg/LC_MESSAGES/kmahjongg.mo
 share/locale/tr/LC_MESSAGES/kmahjongg.mo
 share/locale/ug/LC_MESSAGES/kmahjongg.mo
 share/locale/uk/LC_MESSAGES/kmahjongg.mo

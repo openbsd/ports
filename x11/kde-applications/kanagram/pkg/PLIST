@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/09/11 11:23:01 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/06/19 18:34:34 rsadowski Exp $
 @pkgpath x11/kde4/kanagram
 @bin bin/kanagram
 share/applications/org.kde.kanagram.desktop
@@ -137,6 +137,7 @@ share/kanagram/ui/sounds/right.wav
 share/kanagram/ui/sounds/wrong.ogg
 share/kanagram/ui/sounds/wrong.wav
 share/locale/ar/LC_MESSAGES/kanagram.mo
+share/locale/be/LC_MESSAGES/kanagram.mo
 share/locale/bg/LC_MESSAGES/kanagram.mo
 share/locale/bs/LC_MESSAGES/kanagram.mo
 share/locale/ca/LC_MESSAGES/kanagram.mo
@@ -179,9 +180,12 @@ share/locale/pt/LC_MESSAGES/kanagram.mo
 share/locale/pt_BR/LC_MESSAGES/kanagram.mo
 share/locale/ro/LC_MESSAGES/kanagram.mo
 share/locale/ru/LC_MESSAGES/kanagram.mo
+share/locale/se/LC_MESSAGES/kanagram.mo
 share/locale/sk/LC_MESSAGES/kanagram.mo
 share/locale/sl/LC_MESSAGES/kanagram.mo
+share/locale/sq/LC_MESSAGES/kanagram.mo
 share/locale/sv/LC_MESSAGES/kanagram.mo
+share/locale/tg/LC_MESSAGES/kanagram.mo
 share/locale/tr/LC_MESSAGES/kanagram.mo
 share/locale/ug/LC_MESSAGES/kanagram.mo
 share/locale/uk/LC_MESSAGES/kanagram.mo

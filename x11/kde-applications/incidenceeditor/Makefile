@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/01/23 18:10:15 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2021/06/19 18:34:33 rsadowski Exp $
 
 COMMENT =	KDE PIM incidence editor
 DISTNAME =	incidenceeditor-${VERSION}
@@ -15,9 +15,9 @@ WANTLIB += KF5GrantleeTheme KF5I18n KF5IMAP KF5IconThemes KF5IdentityManagement
 WANTLIB += KF5ItemModels KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5Ldap KF5Libkdepim KF5MailTransport KF5MailTransportAkonadi
 WANTLIB += KF5Mime KF5PimCommon KF5PimCommonAkonadi KF5PimTextEdit
-WANTLIB += KF5Service KF5SonnetUi KF5TextWidgets KF5Wallet KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui KGantt Qt5Concurrent Qt5Core
-WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
+WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5Wallet
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui KGantt Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
 WANTLIB += Qt5Xml c m
 
 MODKDE5_TRANSLATIONS = yes

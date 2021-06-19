@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/11/03 16:12:34 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/06/19 18:34:35 rsadowski Exp $
 @so lib/qt5/plugins/kcm_cron.so
 share/doc/HTML/ca/kcontrol5/kcron/
 share/doc/HTML/ca/kcontrol5/kcron/index.cache.bz2
@@ -80,6 +80,7 @@ share/doc/HTML/zh_CN/kcontrol5/kcron/index.cache.bz2
 share/doc/HTML/zh_CN/kcontrol5/kcron/index.docbook
 share/kservices5/kcm_cron.desktop
 share/locale/ar/LC_MESSAGES/kcron.mo
+share/locale/be/LC_MESSAGES/kcron.mo
 share/locale/bg/LC_MESSAGES/kcron.mo
 share/locale/bs/LC_MESSAGES/kcron.mo
 share/locale/ca/LC_MESSAGES/kcron.mo
@@ -122,13 +123,18 @@ share/locale/pt/LC_MESSAGES/kcron.mo
 share/locale/pt_BR/LC_MESSAGES/kcron.mo
 share/locale/ro/LC_MESSAGES/kcron.mo
 share/locale/ru/LC_MESSAGES/kcron.mo
+share/locale/se/LC_MESSAGES/kcron.mo
 share/locale/sk/LC_MESSAGES/kcron.mo
 share/locale/sl/LC_MESSAGES/kcron.mo
+share/locale/sq/LC_MESSAGES/kcron.mo
 share/locale/sr/LC_MESSAGES/kcron.mo
 share/locale/sv/LC_MESSAGES/kcron.mo
+share/locale/ta/LC_MESSAGES/kcron.mo
+share/locale/tg/LC_MESSAGES/kcron.mo
 share/locale/tr/LC_MESSAGES/kcron.mo
 share/locale/ug/LC_MESSAGES/kcron.mo
 share/locale/uk/LC_MESSAGES/kcron.mo
+share/locale/vi/LC_MESSAGES/kcron.mo
 share/locale/wa/LC_MESSAGES/kcron.mo
 share/locale/zh_CN/LC_MESSAGES/kcron.mo
 share/locale/zh_TW/LC_MESSAGES/kcron.mo

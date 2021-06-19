@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2021/06/16 19:59:07 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.17 2021/06/19 18:34:33 rsadowski Exp $
 
 COMMENT =	KDE image viewer
 DISTNAME =	gwenview-${VERSION}
 CATEGORIES =	graphics x11
-REVISION =	0
 
 SHARED_LIBS +=  gwenviewlib               56.0 # 4.97
 

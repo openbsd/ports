@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/01/27 05:52:08 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/06/19 18:34:30 rsadowski Exp $
 include/KF5/libktorrent/
 include/KF5/libktorrent/bcodec/
 include/KF5/libktorrent/bcodec/bdecoder.h
@@ -206,6 +206,7 @@ lib/cmake/KF5Torrent/KF5TorrentTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Torrent/KF5TorrentTargets.cmake
 @lib lib/libKF5Torrent.so.${LIBKF5Torrent_VERSION}
 share/locale/ar/LC_MESSAGES/libktorrent5.mo
+share/locale/be/LC_MESSAGES/libktorrent5.mo
 share/locale/bg/LC_MESSAGES/libktorrent5.mo
 share/locale/bs/LC_MESSAGES/libktorrent5.mo
 share/locale/ca/LC_MESSAGES/libktorrent5.mo
@@ -245,6 +246,7 @@ share/locale/pt/LC_MESSAGES/libktorrent5.mo
 share/locale/pt_BR/LC_MESSAGES/libktorrent5.mo
 share/locale/ro/LC_MESSAGES/libktorrent5.mo
 share/locale/ru/LC_MESSAGES/libktorrent5.mo
+share/locale/se/LC_MESSAGES/libktorrent5.mo
 share/locale/sk/LC_MESSAGES/libktorrent5.mo
 share/locale/sl/LC_MESSAGES/libktorrent5.mo
 share/locale/sr/LC_MESSAGES/libktorrent5.mo

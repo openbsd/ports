@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/04/27 05:27:03 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/06/19 18:34:38 rsadowski Exp $
 include/KF5/KLDAP/
 include/KF5/KLDAP/KLDAP/
 include/KF5/KLDAP/KLDAP/AddHostDialog
@@ -105,6 +105,8 @@ share/kservices5/ldap.protocol
 share/kservices5/ldaps.protocol
 share/locale/ar/LC_MESSAGES/kio_ldap.mo
 share/locale/ar/LC_MESSAGES/libkldap5.mo
+share/locale/be/LC_MESSAGES/kio_ldap.mo
+share/locale/be/LC_MESSAGES/libkldap5.mo
 share/locale/bg/LC_MESSAGES/kio_ldap.mo
 share/locale/bs/LC_MESSAGES/kio_ldap.mo
 share/locale/bs/LC_MESSAGES/libkldap5.mo
@@ -182,20 +184,25 @@ share/locale/ro/LC_MESSAGES/kio_ldap.mo
 share/locale/ro/LC_MESSAGES/libkldap5.mo
 share/locale/ru/LC_MESSAGES/kio_ldap.mo
 share/locale/ru/LC_MESSAGES/libkldap5.mo
+share/locale/se/LC_MESSAGES/kio_ldap.mo
+share/locale/se/LC_MESSAGES/libkldap5.mo
 share/locale/sk/LC_MESSAGES/kio_ldap.mo
 share/locale/sk/LC_MESSAGES/libkldap5.mo
 share/locale/sl/LC_MESSAGES/kio_ldap.mo
 share/locale/sl/LC_MESSAGES/libkldap5.mo
+share/locale/sq/LC_MESSAGES/libkldap5.mo
 share/locale/sr/LC_MESSAGES/kio_ldap.mo
 share/locale/sr/LC_MESSAGES/libkldap5.mo
 share/locale/sv/LC_MESSAGES/kio_ldap.mo
 share/locale/sv/LC_MESSAGES/libkldap5.mo
+share/locale/ta/LC_MESSAGES/kio_ldap.mo
 share/locale/tr/LC_MESSAGES/kio_ldap.mo
 share/locale/tr/LC_MESSAGES/libkldap5.mo
 share/locale/ug/LC_MESSAGES/kio_ldap.mo
 share/locale/ug/LC_MESSAGES/libkldap5.mo
 share/locale/uk/LC_MESSAGES/kio_ldap.mo
 share/locale/uk/LC_MESSAGES/libkldap5.mo
+share/locale/vi/LC_MESSAGES/kio_ldap.mo
 share/locale/zh_CN/LC_MESSAGES/kio_ldap.mo
 share/locale/zh_CN/LC_MESSAGES/libkldap5.mo
 share/locale/zh_TW/LC_MESSAGES/kio_ldap.mo

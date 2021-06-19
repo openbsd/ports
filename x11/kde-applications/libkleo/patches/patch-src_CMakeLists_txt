@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.5 2021/04/27 05:27:17 rsadowski Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.6 2021/06/19 18:34:44 rsadowski Exp $
 
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
@@ -22,7 +22,7 @@ Index: src/CMakeLists.txt
                                                  KF5::I18n
                                                  KF5::Completion
                                                  KF5::ConfigCore
-@@ -126,7 +128,7 @@ install(TARGETS
+@@ -131,7 +133,7 @@ install(TARGETS
  
  
  

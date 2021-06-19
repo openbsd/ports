@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/04/27 05:26:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2021/06/19 18:34:31 rsadowski Exp $
 
 COMMENT =	news feed reader
 DISTNAME =	akregator-${VERSION}
@@ -15,7 +15,7 @@ WANTLIB += KF5JobWidgets KF5KCMUtils KF5KIOCore KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5KontactInterface KF5Libkdepim KF5Libkleo KF5MessageCore
 WANTLIB += KF5MessageViewer KF5Mime KF5MimeTreeParser KF5Notifications
 WANTLIB += KF5NotifyConfig KF5Parts KF5PimCommon KF5PimTextEdit
-WANTLIB += KF5Service KF5SonnetUi KF5Syndication KF5TextWidgets
+WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5Syndication KF5TextWidgets
 WANTLIB += KF5WebEngineViewer KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels

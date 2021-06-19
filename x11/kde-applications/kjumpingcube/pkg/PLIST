@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:20 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/06/19 18:34:38 rsadowski Exp $
 @pkgpath x11/kde4/kjumpingcube
 @bin bin/kjumpingcube
 share/applications/org.kde.kjumpingcube.desktop
@@ -56,6 +56,7 @@ share/kjumpingcube/pics/
 share/kjumpingcube/pics/default.desktop
 share/kjumpingcube/pics/default.svg
 share/locale/ar/LC_MESSAGES/kjumpingcube.mo
+share/locale/be/LC_MESSAGES/kjumpingcube.mo
 share/locale/bg/LC_MESSAGES/kjumpingcube.mo
 share/locale/bs/LC_MESSAGES/kjumpingcube.mo
 share/locale/ca/LC_MESSAGES/kjumpingcube.mo
@@ -99,13 +100,18 @@ share/locale/pt/LC_MESSAGES/kjumpingcube.mo
 share/locale/pt_BR/LC_MESSAGES/kjumpingcube.mo
 share/locale/ro/LC_MESSAGES/kjumpingcube.mo
 share/locale/ru/LC_MESSAGES/kjumpingcube.mo
+share/locale/se/LC_MESSAGES/kjumpingcube.mo
 share/locale/sk/LC_MESSAGES/kjumpingcube.mo
 share/locale/sl/LC_MESSAGES/kjumpingcube.mo
+share/locale/sq/LC_MESSAGES/kjumpingcube.mo
 share/locale/sr/LC_MESSAGES/kjumpingcube.mo
 share/locale/sv/LC_MESSAGES/kjumpingcube.mo
+share/locale/ta/LC_MESSAGES/kjumpingcube.mo
+share/locale/tg/LC_MESSAGES/kjumpingcube.mo
 share/locale/tr/LC_MESSAGES/kjumpingcube.mo
 share/locale/ug/LC_MESSAGES/kjumpingcube.mo
 share/locale/uk/LC_MESSAGES/kjumpingcube.mo
+share/locale/vi/LC_MESSAGES/kjumpingcube.mo
 share/locale/zh_CN/LC_MESSAGES/kjumpingcube.mo
 share/locale/zh_TW/LC_MESSAGES/kjumpingcube.mo
 share/metainfo/

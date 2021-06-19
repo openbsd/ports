@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/01/23 18:10:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/06/19 18:34:42 rsadowski Exp $
 @bin bin/ksnakeduel
 share/applications/org.kde.ksnakeduel.desktop
 share/config.kcfg/
@@ -100,6 +100,7 @@ share/locale/ro/LC_MESSAGES/ksnakeduel.mo
 share/locale/ru/LC_MESSAGES/ksnakeduel.mo
 share/locale/sk/LC_MESSAGES/ksnakeduel.mo
 share/locale/sl/LC_MESSAGES/ksnakeduel.mo
+share/locale/sq/LC_MESSAGES/ksnakeduel.mo
 share/locale/sr/LC_MESSAGES/ksnakeduel.mo
 share/locale/sv/LC_MESSAGES/ksnakeduel.mo
 share/locale/tr/LC_MESSAGES/ksnakeduel.mo

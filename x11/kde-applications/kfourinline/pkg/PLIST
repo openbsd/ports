@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:49:18 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/06/19 18:34:37 rsadowski Exp $
 @pkgpath x11/kde4/kfourinline
 @bin bin/kfourinline
 @bin bin/kfourinlineproc
@@ -65,6 +65,7 @@ share/kfourinline/grafix/yellow.svg
 share/kfourinline/grafix/yellow_reflection.desktop
 share/kfourinline/grafix/yellow_reflection.rc
 share/locale/ar/LC_MESSAGES/kfourinline.mo
+share/locale/be/LC_MESSAGES/kfourinline.mo
 share/locale/bg/LC_MESSAGES/kfourinline.mo
 share/locale/bs/LC_MESSAGES/kfourinline.mo
 share/locale/ca/LC_MESSAGES/kfourinline.mo
@@ -111,6 +112,8 @@ share/locale/sk/LC_MESSAGES/kfourinline.mo
 share/locale/sl/LC_MESSAGES/kfourinline.mo
 share/locale/sr/LC_MESSAGES/kfourinline.mo
 share/locale/sv/LC_MESSAGES/kfourinline.mo
+share/locale/ta/LC_MESSAGES/kfourinline.mo
+share/locale/tg/LC_MESSAGES/kfourinline.mo
 share/locale/tr/LC_MESSAGES/kfourinline.mo
 share/locale/ug/LC_MESSAGES/kfourinline.mo
 share/locale/uk/LC_MESSAGES/kfourinline.mo

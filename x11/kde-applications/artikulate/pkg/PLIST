@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/02/08 20:00:40 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/06/19 18:34:31 rsadowski Exp $
 @pkgpath x11/kde4/artikulate
 @bin bin/artikulate
 @bin bin/artikulate_editor
@@ -79,6 +79,7 @@ share/icons/hicolor/64x64/apps/artikulate.png
 share/icons/hicolor/scalable/apps/artikulate.svg
 share/knsrcfiles/
 share/knsrcfiles/artikulate.knsrc
+share/locale/az/LC_MESSAGES/artikulate.mo
 share/locale/bs/LC_MESSAGES/artikulate.mo
 share/locale/ca/LC_MESSAGES/artikulate.mo
 share/locale/ca@valencia/LC_MESSAGES/artikulate.mo
@@ -99,6 +100,7 @@ share/locale/hu/LC_MESSAGES/artikulate.mo
 share/locale/ia/LC_MESSAGES/artikulate.mo
 share/locale/it/LC_MESSAGES/artikulate.mo
 share/locale/ja/LC_MESSAGES/artikulate.mo
+share/locale/ko/LC_MESSAGES/artikulate.mo
 share/locale/lt/LC_MESSAGES/artikulate.mo
 share/locale/ml/LC_MESSAGES/artikulate.mo
 share/locale/mr/LC_MESSAGES/artikulate.mo

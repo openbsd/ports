@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2021/05/15 09:56:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.45 2021/06/19 18:34:47 rsadowski Exp $
 
 COMMENT =	drop-down terminal emulator based on KDE Konsole
 
@@ -23,9 +23,10 @@ WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5DBusAddons
 WANTLIB += KF5GlobalAccel KF5I18n KF5IconThemes KF5JobWidgets
 WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5NewStuff KF5NewStuffCore
 WANTLIB += KF5Notifications KF5NotifyConfig KF5Parts KF5Service
-WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml X11 c m
+WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5X11Extras Qt5Xml X11
+WANTLIB += c m
 
 MODULES =	x11/kde-applications \
 		devel/kf5

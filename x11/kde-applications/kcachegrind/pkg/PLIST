@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/04/27 05:26:59 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/06/19 18:34:35 rsadowski Exp $
 @pkgpath x11/kde4/kcachegrind
 bin/dprof2calltree
 bin/hotshot2calltree
@@ -67,6 +67,7 @@ share/kcachegrind/icons/hicolor/32x32/actions/
 share/kcachegrind/icons/hicolor/32x32/actions/percent.png
 share/kcachegrind/tips
 share/locale/ar/LC_MESSAGES/kcachegrind.mo
+share/locale/be/LC_MESSAGES/kcachegrind.mo
 share/locale/bs/LC_MESSAGES/kcachegrind.mo
 share/locale/ca/LC_MESSAGES/kcachegrind.mo
 share/locale/ca@valencia/LC_MESSAGES/kcachegrind.mo
@@ -104,9 +105,13 @@ share/locale/pt/LC_MESSAGES/kcachegrind.mo
 share/locale/pt_BR/LC_MESSAGES/kcachegrind.mo
 share/locale/ro/LC_MESSAGES/kcachegrind.mo
 share/locale/ru/LC_MESSAGES/kcachegrind.mo
+share/locale/se/LC_MESSAGES/kcachegrind.mo
 share/locale/sk/LC_MESSAGES/kcachegrind.mo
 share/locale/sl/LC_MESSAGES/kcachegrind.mo
+share/locale/sq/LC_MESSAGES/kcachegrind.mo
 share/locale/sv/LC_MESSAGES/kcachegrind.mo
+share/locale/ta/LC_MESSAGES/kcachegrind.mo
+share/locale/tg/LC_MESSAGES/kcachegrind.mo
 share/locale/tr/LC_MESSAGES/kcachegrind.mo
 share/locale/ug/LC_MESSAGES/kcachegrind.mo
 share/locale/uk/LC_MESSAGES/kcachegrind.mo

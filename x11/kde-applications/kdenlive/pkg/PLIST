@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/04/27 05:27:00 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.12 2021/06/19 18:34:36 rsadowski Exp $
 @pkgpath multimedia/kdenlive
 @bin bin/kdenlive
 @bin bin/kdenlive_render
@@ -378,6 +378,7 @@ share/kdenlive/effects/frei0r_equaliz0r.xml
 share/kdenlive/effects/frei0r_facebl0r.xml
 share/kdenlive/effects/frei0r_facedetect.xml
 share/kdenlive/effects/frei0r_flippo.xml
+share/kdenlive/effects/frei0r_glitch0r.xml
 share/kdenlive/effects/frei0r_glow.xml
 share/kdenlive/effects/frei0r_hqdn3d.xml
 share/kdenlive/effects/frei0r_hueshift0r.xml
@@ -428,6 +429,7 @@ share/kdenlive/effects/lift_gamma_gain.xml
 share/kdenlive/effects/lightshow.xml
 share/kdenlive/effects/loudness.xml
 share/kdenlive/effects/luma.xml
+share/kdenlive/effects/lumaliftgaingamma.xml
 share/kdenlive/effects/mirror.xml
 share/kdenlive/effects/mono.xml
 share/kdenlive/effects/movit_blur.xml
@@ -592,6 +594,7 @@ share/kxmlgui5/kdenlive/
 share/kxmlgui5/kdenlive/kdenliveui.rc
 share/locale/ar/LC_MESSAGES/kdenlive.mo
 share/locale/ast/LC_MESSAGES/kdenlive.mo
+share/locale/az/LC_MESSAGES/kdenlive.mo
 share/locale/bs/LC_MESSAGES/kdenlive.mo
 share/locale/ca/LC_MESSAGES/kdenlive.mo
 share/locale/ca@valencia/LC_MESSAGES/kdenlive.mo

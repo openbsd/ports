@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/01/23 18:10:21 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/06/19 18:34:38 rsadowski Exp $
 include/KF5/KIMAP/
 include/KF5/KIMAP/KIMAP/
 include/KF5/KIMAP/KIMAP/Acl
@@ -178,6 +178,7 @@ share/locale/ro/LC_MESSAGES/libkimap5.mo
 share/locale/ru/LC_MESSAGES/libkimap5.mo
 share/locale/sk/LC_MESSAGES/libkimap5.mo
 share/locale/sl/LC_MESSAGES/libkimap5.mo
+share/locale/sq/LC_MESSAGES/libkimap5.mo
 share/locale/sr/LC_MESSAGES/libkimap5.mo
 share/locale/sv/LC_MESSAGES/libkimap5.mo
 share/locale/tr/LC_MESSAGES/libkimap5.mo

@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/05 05:40:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/06/19 18:34:35 rsadowski Exp $
 @pkgpath x11/kde4/kcolorchooser
 @bin bin/kcolorchooser
 share/applications/org.kde.kcolorchooser.desktop
 share/icons/hicolor/16x16/apps/kcolorchooser.png
 share/icons/hicolor/22x22/apps/kcolorchooser.png
 share/locale/ar/LC_MESSAGES/kcolorchooser.mo
+share/locale/az/LC_MESSAGES/kcolorchooser.mo
+share/locale/be/LC_MESSAGES/kcolorchooser.mo
 share/locale/bg/LC_MESSAGES/kcolorchooser.mo
 share/locale/bs/LC_MESSAGES/kcolorchooser.mo
 share/locale/ca/LC_MESSAGES/kcolorchooser.mo
@@ -49,11 +51,13 @@ share/locale/ro/LC_MESSAGES/kcolorchooser.mo
 share/locale/ru/LC_MESSAGES/kcolorchooser.mo
 share/locale/sk/LC_MESSAGES/kcolorchooser.mo
 share/locale/sl/LC_MESSAGES/kcolorchooser.mo
+share/locale/sq/LC_MESSAGES/kcolorchooser.mo
 share/locale/sr/LC_MESSAGES/kcolorchooser.mo
 share/locale/sv/LC_MESSAGES/kcolorchooser.mo
 share/locale/tr/LC_MESSAGES/kcolorchooser.mo
 share/locale/ug/LC_MESSAGES/kcolorchooser.mo
 share/locale/uk/LC_MESSAGES/kcolorchooser.mo
+share/locale/vi/LC_MESSAGES/kcolorchooser.mo
 share/locale/wa/LC_MESSAGES/kcolorchooser.mo
 share/locale/zh_CN/LC_MESSAGES/kcolorchooser.mo
 share/locale/zh_TW/LC_MESSAGES/kcolorchooser.mo

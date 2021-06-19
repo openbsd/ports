@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/11/03 16:12:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2021/06/19 18:34:35 rsadowski Exp $
 
 COMMENT =	thumbnailers for various graphics file formats
 DISTNAME =	kdegraphics-thumbnailers-${VERSION}
@@ -7,7 +7,7 @@ CATEGORIES =	devel graphics
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Completion KF5ConfigCore
 WANTLIB += KF5CoreAddons KF5JobWidgets KF5KDcraw KF5KExiv2 KF5KIOCore
-WANTLIB += KF5KIOGui KF5KIOWidgets KF5Service KF5WidgetsAddons
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5Service KF5Solid KF5WidgetsAddons
 WANTLIB += KF5WindowSystem Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Network Qt5Widgets m
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/06/19 18:34:33 rsadowski Exp $
 
 COMMENT =	periodic table of elements
 DISTNAME =	kalzium-${VERSION}
@@ -11,8 +11,8 @@ SHARED_LIBS +=  science                   2.0 # 5.0
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5I18n KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOGui
-WANTLIB += KF5KIOWidgets KF5Plotting KF5Service KF5SonnetUi KF5TextWidgets
-WANTLIB += KF5UnitConversion KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5KIOWidgets KF5Plotting KF5Service KF5Solid KF5SonnetUi
+WANTLIB += KF5TextWidgets KF5UnitConversion KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Script Qt5Svg Qt5Widgets Qt5Xml c m openbabel
 

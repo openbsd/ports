@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/04/27 05:27:17 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/06/19 18:34:44 rsadowski Exp $
 include/KF5/Libkleo/
 include/KF5/Libkleo/ChecksumDefinition
 include/KF5/Libkleo/Classify
@@ -111,6 +111,7 @@ share/libkleopatra/pics/key_ok.png
 share/libkleopatra/pics/key_unknown.png
 share/libkleopatra/pics/smartcard.xpm
 share/locale/ar/LC_MESSAGES/libkleopatra.mo
+share/locale/be/LC_MESSAGES/libkleopatra.mo
 share/locale/bg/LC_MESSAGES/libkleopatra.mo
 share/locale/bs/LC_MESSAGES/libkleopatra.mo
 share/locale/ca/LC_MESSAGES/libkleopatra.mo
@@ -152,10 +153,14 @@ share/locale/pt/LC_MESSAGES/libkleopatra.mo
 share/locale/pt_BR/LC_MESSAGES/libkleopatra.mo
 share/locale/ro/LC_MESSAGES/libkleopatra.mo
 share/locale/ru/LC_MESSAGES/libkleopatra.mo
+share/locale/se/LC_MESSAGES/libkleopatra.mo
 share/locale/sk/LC_MESSAGES/libkleopatra.mo
 share/locale/sl/LC_MESSAGES/libkleopatra.mo
+share/locale/sq/LC_MESSAGES/libkleopatra.mo
 share/locale/sr/LC_MESSAGES/libkleopatra.mo
 share/locale/sv/LC_MESSAGES/libkleopatra.mo
+share/locale/ta/LC_MESSAGES/libkleopatra.mo
+share/locale/tg/LC_MESSAGES/libkleopatra.mo
 share/locale/tr/LC_MESSAGES/libkleopatra.mo
 share/locale/ug/LC_MESSAGES/libkleopatra.mo
 share/locale/uk/LC_MESSAGES/libkleopatra.mo
