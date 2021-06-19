@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.609 2021/06/14 19:30:19 pvk Exp $
+# $OpenBSD: Makefile,v 1.610 2021/06/19 12:47:16 semarie Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -264,6 +264,7 @@
      SUBDIR += prometheus
      SUBDIR += pscpug
      SUBDIR += psftools
+     SUBDIR += psrecord
      SUBDIR += pstree
      SUBDIR += pv
      SUBDIR += py-analyzemft
