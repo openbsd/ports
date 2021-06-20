@@ -1,0 +1,2 @@
+'httpclient' provides similiar functionality to libwww-perl (LWP) for
+Ruby. 'httpclient' was formerly known as 'http-access2'.
