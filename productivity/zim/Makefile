@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2021/04/29 22:31:00 benno Exp $
+# $OpenBSD: Makefile,v 1.27 2021/06/20 17:32:09 tb Exp $
 
 COMMENT =		desktop wiki
 
@@ -31,5 +31,8 @@ RUN_DEPENDS =		${COMMON_DEPENDS} \
 			devel/desktop-file-utils \
 			misc/shared-mime-info \
 			x11/gtk+3,-guic
+
+PORTHOME =		${WRKDIR}
+MAKE_ENV +=		XDG_RUNTIME_DIR=${PORTHOME}
 
 .include <bsd.port.mk>
