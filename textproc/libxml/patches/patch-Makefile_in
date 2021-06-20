@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.11 2019/11/01 15:37:45 jasper Exp $
+$OpenBSD: patch-Makefile_in,v 1.12 2021/06/20 22:11:16 bluhm Exp $
 
 DEPS: Fix parallel build.  gmake recognizes libxml2.la and ./libxml2.la
 as equivalent, ours does not.
@@ -15,7 +15,7 @@ Index: Makefile.in
  LDADDS = $(STATIC_BINARIES) $(top_builddir)/libxml2.la $(THREAD_LIBS) $(Z_LIBS) $(LZMA_LIBS) $(ICONV_LIBS) $(M_LIBS) $(WIN32_EXTRA_LIBADD)
  man_MANS = xml2-config.1 libxml.3
  m4datadir = $(datadir)/aclocal
-@@ -880,7 +880,7 @@ cmake_DATA = libxml2-config.cmake
+@@ -881,7 +881,7 @@ cmake_DATA = libxml2-config.cmake
  # Install the tests program sources as examples 
  #
  BASE_DIR = $(datadir)/doc
@@ -24,7 +24,7 @@ Index: Makefile.in
  EXAMPLES_DIR = $(BASE_DIR)/$(DOC_MODULE)/examples
  
  #
-@@ -2089,7 +2089,7 @@ runtests: runtest$(EXEEXT) testrecurse$(EXEEXT) testap
+@@ -2090,7 +2090,7 @@ runtests: runtest$(EXEEXT) testrecurse$(EXEEXT) testap
            testchar$(EXEEXT) testdict$(EXEEXT) runxmlconf$(EXEEXT)
  	[ -d test   ] || $(LN_S) $(srcdir)/test   .
  	[ -d result ] || $(LN_S) $(srcdir)/result .
@@ -33,7 +33,7 @@ Index: Makefile.in
  	    $(CHECKER) ./testrecurse$(EXEEXT) && \
  	    ASAN_OPTIONS="$$ASAN_OPTIONS:detect_leaks=0" $(CHECKER) ./testapi$(EXEEXT) && \
  	    $(CHECKER) ./testchar$(EXEEXT) && \
-@@ -2616,6 +2616,7 @@ SVGtests : xmllint$(EXEEXT)
+@@ -2618,6 +2618,7 @@ SVGtests : xmllint$(EXEEXT)
  	      grep "MORY ALLO" .memdump  | grep -v "MEMORY ALLOCATED : 0";\
  	  else \
  	      echo Testing $$name ; \

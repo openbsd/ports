@@ -1,11 +1,11 @@
-$OpenBSD: patch-python_libxml_c,v 1.1 2020/06/10 22:54:58 ajacoutot Exp $
+$OpenBSD: patch-python_libxml_c,v 1.2 2021/06/20 22:11:16 bluhm Exp $
 
 https://gitlab.gnome.org/GNOME/libxml2/-/issues/64
 
 Index: python/libxml.c
 --- python/libxml.c.orig
 +++ python/libxml.c
-@@ -1620,6 +1620,7 @@ libxml_xmlErrorFuncHandler(ATTRIBUTE_UNUSED void *ctx,
+@@ -1621,6 +1621,7 @@ libxml_xmlErrorFuncHandler(ATTRIBUTE_UNUSED void *ctx,
      PyObject *message;
      PyObject *result;
      char str[1000];
@@ -13,7 +13,7 @@ Index: python/libxml.c
  
  #ifdef DEBUG_ERROR
      printf("libxml_xmlErrorFuncHandler(%p, %s, ...) called\n", ctx, msg);
-@@ -1636,12 +1637,20 @@ libxml_xmlErrorFuncHandler(ATTRIBUTE_UNUSED void *ctx,
+@@ -1637,12 +1638,20 @@ libxml_xmlErrorFuncHandler(ATTRIBUTE_UNUSED void *ctx,
  	    str[999] = 0;
          va_end(ap);
  
