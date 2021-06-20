@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2109 2021/06/14 18:00:23 pvk Exp $
+# $OpenBSD: Makefile,v 1.2110 2021/06/20 10:46:54 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1622,6 +1622,7 @@
      SUBDIR += py-sortedcontainers,python3
      SUBDIR += py-spark-parser
      SUBDIR += py-spark-parser,python3
+     SUBDIR += py-speg,python3
      SUBDIR += py-stdnum
      SUBDIR += py-stdnum,python3
      SUBDIR += py-straight.plugin
