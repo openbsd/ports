@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2021/05/24 10:22:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2021/06/20 10:54:03 sthen Exp $
 
 COMMENT=		powerful descriptive vector graphics language
 
 DISTNAME=		asymptote-2.70
-REVISION=		0
+REVISION=		1
 EXTRACT_SUFX=		.src.tgz
 CATEGORIES=		graphics
 
@@ -25,13 +25,17 @@ BUILD_DEPENDS=		print/texinfo \
 			print/texlive/base \
 			print/texlive/texmf,-main
 RUN_DEPENDS=		print/texlive/texmf,-full \
-			${MODPY_TKINTER_DEPENDS}
+			math/py-numpy${MODPY_FLAVOR} \
+			textproc/py-cson${MODPY_FLAVOR} \
+			x11/gnome/librsvg \
+			x11/py-qt5${MODPY_FLAVOR}
 
 LIB_DEPENDS=		devel/boehm-gc \
 			devel/gsl \
 			devel/libsigsegv \
 			graphics/freeglut \
-			math/fftw3
+			math/fftw3 \
+			net/curl
 
 USE_GMAKE=		Yes
 
@@ -57,8 +61,5 @@ pre-build:
 
 post-install:
 	mv ${PREFIX}/man/man1/xasy.1x ${PREFIX}/man/man1/xasy.1
-	# xasy requires "cson" (https://pypi.org/project/cson/) which is not
-	# yet ported; also numpy, PyQt5, rsvg-convert; see GUI/requirements.txt
-	rm ${PREFIX}/bin/xasy ${PREFIX}/man/man1/xasy.1
 
 .include <bsd.port.mk>
