@@ -1,0 +1,2 @@
+This is a Python parser for the Coffeescript Object Notation (CSON).
+The interface is the same as for the standard 'json' package.
