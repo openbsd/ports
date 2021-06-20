@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2021/05/24 20:03:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/06/20 11:29:19 sthen Exp $
 
 COMMENT=	open framework for storing and sharing scene data
 
 GH_ACCOUNT=	alembic
 GH_PROJECT=	alembic
-GH_TAGNAME=	1.8.1
+GH_TAGNAME=	1.8.2
 
 SHARED_LIBS +=  Alembic                   0.1 # 1.8
 
