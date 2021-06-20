@@ -1,4 +1,4 @@
-$OpenBSD: patch-ext_libclementine-common_CMakeLists_txt,v 1.6 2020/01/26 17:37:07 rsadowski Exp $
+$OpenBSD: patch-ext_libclementine-common_CMakeLists_txt,v 1.7 2021/06/20 05:54:53 rsadowski Exp $
 
 1. Respect CXXFLAGS
 2. Switch Clementine to FindBacktrace.cmake
@@ -6,16 +6,16 @@ $OpenBSD: patch-ext_libclementine-common_CMakeLists_txt,v 1.6 2020/01/26 17:37:0
 Index: ext/libclementine-common/CMakeLists.txt
 --- ext/libclementine-common/CMakeLists.txt.orig
 +++ ext/libclementine-common/CMakeLists.txt
-@@ -3,7 +3,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
+@@ -2,7 +2,7 @@ include_directories(${PROTOBUF_INCLUDE_DIRS})
+ include_directories(${CMAKE_CURRENT_BINARY_DIR})
  include_directories(${CMAKE_CURRENT_SOURCE_DIR})
- include_directories(${CMAKE_SOURCE_DIR}/src)
  
 -set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++0x")
 +set(CMAKE_CXX_FLAGS "--std=c++0x ${CMAKE_CXX_FLAGS}")
  
  set(SOURCES
    core/closure.cpp
-@@ -40,3 +40,11 @@ target_link_libraries(libclementine-common
+@@ -39,3 +39,11 @@ target_link_libraries(libclementine-common
    ${TAGLIB_LIBRARIES}
    ${CMAKE_THREAD_LIBS_INIT}
  )
