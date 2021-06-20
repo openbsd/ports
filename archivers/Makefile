@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2021/06/12 05:31:18 daniel Exp $
+# $OpenBSD: Makefile,v 1.111 2021/06/20 09:46:49 sebastia Exp $
 
      SUBDIR =
      SUBDIR += arc
@@ -61,6 +61,7 @@
      SUBDIR += quazip
      SUBDIR += ripole
      SUBDIR += ruby-minitar
+     SUBDIR += ruby-rubyzip
      SUBDIR += rzip
      SUBDIR += sltar
      SUBDIR += snappy
