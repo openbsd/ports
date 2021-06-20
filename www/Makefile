@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1034 2021/06/20 10:31:18 sebastia Exp $
+# $OpenBSD: Makefile,v 1.1035 2021/06/20 22:53:49 jca Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -18,7 +18,6 @@
      SUBDIR += bozohttpd
      SUBDIR += c-icap
      SUBDIR += calamaris
-     SUBDIR += canto
      SUBDIR += castor
      SUBDIR += cgicc
      SUBDIR += cgiparse
