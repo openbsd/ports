@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2021/06/15 06:54:44 landry Exp $
+# $OpenBSD: Makefile,v 1.29 2021/06/20 12:13:52 sthen Exp $
 
 COMMENT-main =		modular SIP User-Agent with audio and video support
 COMMENT-gtk =		GTK+-based modules for baresip
@@ -6,6 +6,7 @@ COMMENT-gtk =		GTK+-based modules for baresip
 GH_ACCOUNT =	baresip
 GH_PROJECT =	baresip
 GH_TAGNAME =	v1.1.0
+REVISION-gtk =	0
 PKGNAME-main =		baresip-${GH_TAGNAME:C/^v//}
 PKGNAME-gtk =		baresip-gtk-${GH_TAGNAME:C/^v//}
 

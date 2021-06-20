@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-gtk,v 1.1 2021/06/15 06:54:44 landry Exp $
+@comment $OpenBSD: PLIST-gtk,v 1.2 2021/06/20 12:13:52 sthen Exp $
 @conflict baresip-gtk2-*
-@pkgpath telephony/baresip,-gtk2
+@pkgpath telephony/baresip/baresip,-gtk2
 @so lib/baresip/modules/cairo.so
 @so lib/baresip/modules/gst.so
 @so lib/baresip/modules/gst_video.so
