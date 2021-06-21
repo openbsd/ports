@@ -1,4 +1,4 @@
-# $OpenBSD: BinaryScan.pm,v 1.5 2014/07/09 11:26:11 espie Exp $
+# $OpenBSD: BinaryScan.pm,v 1.6 2021/06/21 15:16:52 espie Exp $
 # Copyright (c) 2011 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -16,7 +16,7 @@
 use strict;
 use warnings;
 
-# scan binaries through objdump or ldd, and record the results
+# scan binaries through objdump and record the results
 # - retrieves files through source (see FileSource)
 # - pass the result off to a recorder
 
@@ -223,53 +223,6 @@ sub finish_scanning
 		}
 		delete $self->{cleanup};
 	}
-}
-
-package OpenBSD::BinaryScan::Ldd;
-our @ISA = qw(OpenBSD::BinaryScan);
-
-sub command() { 'ldd' }
-
-sub exec
-{
-	my ($self, @names) = @_;
-	if (@names > 1) {
-		$self->fatal("Can't run ldd over several names");
-	}
-	exec($self->command, '-f', "NEEDED lib%o.so.%m.%n\n", @names);
-}
-
-sub parse
-{
-	my ($self, $cmd, $fullname) = @_;
-	my @l = ();
-	my $linux_binary = 0;
-	while (my $line = <$cmd>) {
-		chomp;
-		if ($line =~ m/^\s+NEEDED\s+(.*?)\s*$/) {
-			my $lib = $1;
-			push(@l, $lib);
-			# detect linux binaries
-			if ($lib eq 'libc.so.6') {
-				$linux_binary = 1;
-			}
-		}
-	}
-	$self->record_libs($fullname, @l) unless $linux_binary;
-}
-
-sub scan_binary
-{
-	my ($self, $item, $fullname, $n) = @_;
-	my $cmd = $self->start($n);
-
-	$self->parse($cmd, $fullname);
-	close($cmd);
-	$self->{source}->clean($item);
-}
-
-sub finish_scanning
-{
 }
 
 1;

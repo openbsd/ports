@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.45 2019/07/08 13:13:29 kmos Exp $
+# $OpenBSD: check-lib-depends,v 1.46 2021/06/21 15:16:52 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -222,8 +222,8 @@ sub handle_options
 		my $v = shift;
 		$state->{may_be_missing}{$v} = 1;
 	};
-	$state->SUPER::handle_options('oid:D:fF:B:qS:s:O:',
-		'[-fiomqx] [-B destdir] [-d pkgrepo] [-F fuzz] [-O dest] [-S var=value] [-s source]');
+	$state->SUPER::handle_options('id:D:fF:B:qS:s:O:',
+		'[-fimqx] [-B destdir] [-d pkgrepo] [-F fuzz] [-O dest] [-S var=value] [-s source]');
 
 	$state->{destdir} = $state->opt('B');
 	if ($state->opt('O')) {
@@ -235,11 +235,7 @@ sub handle_options
 	$state->{full} = $state->opt('f');
 	$state->{repository} = $state->opt('d');
 	$state->{stdin} = $state->opt('i');
-	if ($state->opt('o')) {
-		$state->{scanner} = OpenBSD::BinaryScan::Ldd->new($state);
-	} else {
-		$state->{scanner} = OpenBSD::BinaryScan::Objdump->new($state);
-	}
+	$state->{scanner} = OpenBSD::BinaryScan::Objdump->new($state);
 	$state->{quiet} = $state->opt('q');
 	if ($state->opt('D')) {
 		$state->{logger} = Logger->new($state->opt('D'));
