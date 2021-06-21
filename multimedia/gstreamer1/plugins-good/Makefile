@@ -1,11 +1,8 @@
-# $OpenBSD: Makefile,v 1.70 2021/05/15 17:47:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2021/06/21 14:30:41 ajacoutot Exp $
 
 # Reenable that port on non-rust archs at the cost of pulseaudio support:
 # pulseaudio -> [...] -> spidermonkey>=78 -> rust
 ONLY_FOR_ARCHS-pulse=	${RUST_ARCHS}
-
-# XXX ossaudio(3) is only enabled to be used as a mixing device by
-# x11/xfce4/xfce4-mixer
 
 COMMENT-main=		good elements for GStreamer
 COMMENT-pulse=		pulseaudio(1) element for GStreamer
