@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/06/07 20:56:32 sthen Exp $
-
-BROKEN-i386 =	build fails, maturin: Unknown target triple i686-unknown-openbsd
+# $OpenBSD: Makefile,v 1.3 2021/06/21 21:07:46 sthen Exp $
 
 COMMENT =	Brave's adblock library
 
