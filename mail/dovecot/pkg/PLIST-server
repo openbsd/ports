@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.82 2021/03/08 17:56:18 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.83 2021/06/22 11:29:26 sthen Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -80,6 +80,7 @@ include/dovecot/config-parser.h
 include/dovecot/config-request.h
 include/dovecot/config.h
 include/dovecot/connection.h
+include/dovecot/cpu-limit.h
 include/dovecot/crc32.h
 include/dovecot/data-stack.h
 include/dovecot/db-checkpassword.h
