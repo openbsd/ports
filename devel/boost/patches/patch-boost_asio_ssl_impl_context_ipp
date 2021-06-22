@@ -1,4 +1,4 @@
-$OpenBSD: patch-boost_asio_ssl_impl_context_ipp,v 1.3 2021/05/10 15:08:50 tb Exp $
+$OpenBSD: patch-boost_asio_ssl_impl_context_ipp,v 1.4 2021/06/22 04:20:13 rsadowski Exp $
 
 Use accessors instead of reaching into SSL_CTX. The requisite
 accessors have been available since LibreSSL 2.7.2 and are thus
@@ -7,7 +7,7 @@ present in all supported versions.
 Index: boost/asio/ssl/impl/context.ipp
 --- boost/asio/ssl/impl/context.ipp.orig
 +++ boost/asio/ssl/impl/context.ipp
-@@ -387,9 +387,7 @@ context::~context()
+@@ -397,9 +397,7 @@ context::~context()
  {
    if (handle_)
    {
@@ -18,7 +18,7 @@ Index: boost/asio/ssl/impl/context.ipp
      void* cb_userdata = ::SSL_CTX_get_default_passwd_cb_userdata(handle_);
  #else // (OPENSSL_VERSION_NUMBER >= 0x10100000L)
      void* cb_userdata = handle_->default_passwd_callback_userdata;
-@@ -400,9 +398,7 @@ context::~context()
+@@ -410,9 +408,7 @@ context::~context()
          static_cast<detail::password_callback_base*>(
              cb_userdata);
        delete callback;
@@ -29,7 +29,7 @@ Index: boost/asio/ssl/impl/context.ipp
        ::SSL_CTX_set_default_passwd_cb_userdata(handle_, 0);
  #else // (OPENSSL_VERSION_NUMBER >= 0x10100000L)
        handle_->default_passwd_callback_userdata = 0;
-@@ -739,9 +735,7 @@ BOOST_ASIO_SYNC_OP_VOID context::use_certificate_chain
+@@ -759,9 +755,7 @@ BOOST_ASIO_SYNC_OP_VOID context::use_certificate_chain
    bio_cleanup bio = { make_buffer_bio(chain) };
    if (bio.p)
    {
@@ -40,7 +40,7 @@ Index: boost/asio/ssl/impl/context.ipp
      pem_password_cb* callback = ::SSL_CTX_get_default_passwd_cb(handle_);
      void* cb_userdata = ::SSL_CTX_get_default_passwd_cb_userdata(handle_);
  #else // (OPENSSL_VERSION_NUMBER >= 0x10100000L)
-@@ -768,9 +762,7 @@ BOOST_ASIO_SYNC_OP_VOID context::use_certificate_chain
+@@ -788,9 +782,7 @@ BOOST_ASIO_SYNC_OP_VOID context::use_certificate_chain
        BOOST_ASIO_SYNC_OP_VOID_RETURN(ec);
      }
  
@@ -51,7 +51,7 @@ Index: boost/asio/ssl/impl/context.ipp
      ::SSL_CTX_clear_chain_certs(handle_);
  #else
      if (handle_->extra_certs)
-@@ -847,9 +839,7 @@ BOOST_ASIO_SYNC_OP_VOID context::use_private_key(
+@@ -867,9 +859,7 @@ BOOST_ASIO_SYNC_OP_VOID context::use_private_key(
  {
    ::ERR_clear_error();
  
@@ -62,7 +62,7 @@ Index: boost/asio/ssl/impl/context.ipp
      pem_password_cb* callback = ::SSL_CTX_get_default_passwd_cb(handle_);
      void* cb_userdata = ::SSL_CTX_get_default_passwd_cb_userdata(handle_);
  #else // (OPENSSL_VERSION_NUMBER >= 0x10100000L)
-@@ -916,9 +906,7 @@ BOOST_ASIO_SYNC_OP_VOID context::use_rsa_private_key(
+@@ -936,9 +926,7 @@ BOOST_ASIO_SYNC_OP_VOID context::use_rsa_private_key(
  {
    ::ERR_clear_error();
  
@@ -73,7 +73,7 @@ Index: boost/asio/ssl/impl/context.ipp
      pem_password_cb* callback = ::SSL_CTX_get_default_passwd_cb(handle_);
      void* cb_userdata = ::SSL_CTX_get_default_passwd_cb_userdata(handle_);
  #else // (OPENSSL_VERSION_NUMBER >= 0x10100000L)
-@@ -1157,9 +1145,7 @@ int context::verify_callback_function(int preverified,
+@@ -1177,9 +1165,7 @@ int context::verify_callback_function(int preverified,
  BOOST_ASIO_SYNC_OP_VOID context::do_set_password_callback(
      detail::password_callback_base* callback, boost::system::error_code& ec)
  {

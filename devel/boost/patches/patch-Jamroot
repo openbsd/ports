@@ -1,13 +1,16 @@
-$OpenBSD: patch-Jamroot,v 1.10 2021/04/28 05:08:58 rsadowski Exp $
+$OpenBSD: patch-Jamroot,v 1.11 2021/06/22 04:20:13 rsadowski Exp $
 
 Index: Jamroot
 --- Jamroot.orig
 +++ Jamroot
-@@ -146,8 +146,9 @@ import tools/boost\_install/boost-install ;
+@@ -146,11 +146,12 @@ import tools/boost\_install/boost-install ;
  path-constant BOOST_ROOT : . ;
- constant BOOST_VERSION : 1.73.0 ;
+ constant BOOST_VERSION : 1.76.0 ;
  constant BOOST_JAMROOT_MODULE : $(__name__) ;
 +constant SO_VERSION : ${SO_VERSION} ;
+ 
+ # Allow subprojects to simply `import config : requires ;` to get access to the requires rule
+ modules.poke : BOOST_BUILD_PATH : $(BOOST_ROOT)/libs/config/checks [ modules.peek : BOOST_BUILD_PATH ] ;
  
 -boostcpp.set-version $(BOOST_VERSION) ;
 +boostcpp.set-version $(SO_VERSION) ;
