@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.36 2021/03/10 16:33:17 daniel Exp $
+# $OpenBSD: Makefile,v 1.37 2021/06/22 04:19:19 rsadowski Exp $
+
+BROKEN=			linking fails with Boost 1.76
 
 COMMENT=		fractal program with GTK interface
 GH_ACCOUNT=		oskusalerma
