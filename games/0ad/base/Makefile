@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2021/06/14 10:19:46 bentley Exp $
+# $OpenBSD: Makefile,v 1.34 2021/06/22 04:34:08 rsadowski Exp $
 
 # XXX fix build with icu >=5.9.1 (remove at next update?)
 CXXFLAGS +=		-DU_USING_ICU_NAMESPACE=1
@@ -7,17 +7,17 @@ COMMENT =		historical real-time strategy game
 
 DISTNAME =		0ad-${V}-alpha-unix-build
 PKGNAME =		0ad-${V}
-REVISION =		2
+REVISION =		3
 
 USE_WXNEEDED =		Yes
 
 SO_VERSION =	0.0
 SHARED_LIBS +=  mozjs38-ps-release        ${SO_VERSION}
 
-WANTLIB += GL SDL2 X11 Xcursor boost_filesystem boost_system c curl
-WANTLIB += enet execinfo gloox iconv icui18n icuuc m miniupnpc
-WANTLIB += nspr4 ogg openal plc4 plds4 png pthread vorbis vorbisfile
-WANTLIB += sodium xml2 z ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} GL SDL2 X11 Xcursor boost_filesystem
+WANTLIB += boost_system c curl enet execinfo gloox iconv icui18n
+WANTLIB += icuuc m miniupnpc nspr4 ogg openal plc4 plds4 png sodium
+WANTLIB += vorbis vorbisfile xml2 z
 
 BUILD_DEPENDS =		archivers/zip \
 			shells/bash

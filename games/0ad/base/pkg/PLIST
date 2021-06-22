@@ -1,22 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/12/25 00:32:56 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/06/22 04:34:08 rsadowski Exp $
 bin/0ad
 @bin bin/pyrogenesis
-lib/libCollada.so
-lib/libatlas.a
-lib/libengine.a
-lib/libglooxwrapper.a
-lib/libgraphics.a
-lib/libgui.a
-lib/liblobby.a
-lib/liblowlevel.a
-lib/libmocks_real.a
-lib/libmocks_test.a
-lib/libmongoose.a
+@so lib/libCollada.so
+@static-lib lib/libatlas.a
+@static-lib lib/libengine.a
+@static-lib lib/libglooxwrapper.a
+@static-lib lib/libgraphics.a
+@static-lib lib/libgui.a
+@static-lib lib/liblobby.a
+@static-lib lib/liblowlevel.a
+@static-lib lib/libmocks_real.a
+@static-lib lib/libmocks_test.a
+@static-lib lib/libmongoose.a
 @lib lib/libmozjs38-ps-release.so.${LIBmozjs38-ps-release_VERSION}
-lib/libnetwork.a
-lib/libscriptinterface.a
-lib/libsimulation2.a
-lib/libtinygettext.a
+@static-lib lib/libnetwork.a
+@static-lib lib/libscriptinterface.a
+@static-lib lib/libsimulation2.a
+@static-lib lib/libtinygettext.a
 share/0ad/l10n/
 share/0ad/l10n/.tx/
 share/0ad/l10n/.tx/config
