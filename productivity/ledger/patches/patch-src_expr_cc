@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_expr_cc,v 1.1 2021/06/22 04:19:25 rsadowski Exp $
+
+Fix compilation with Boost 1.76
+https://github.com/ledger/ledger/commit/69e6b89cf8d2820d28174e7ffaea1c59a0f84d3f
+
+Index: src/expr.cc
+--- src/expr.cc.orig
++++ src/expr.cc
+@@ -35,6 +35,9 @@
+ #include "parser.h"
+ #include "scope.h"
+ 
++#include <boost/smart_ptr/scoped_ptr.hpp>
++
++
+ namespace ledger {
+ 
+ expr_t::expr_t() : base_type()
