@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/12/07 22:42:50 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/06/22 04:31:21 rsadowski Exp $
 @bin bin/synfig
 bin/synfig-config
 include/synfig-${API_V}/
@@ -286,33 +286,33 @@ include/synfig-${API_V}/synfig/waypoint.h
 include/synfig-${API_V}/synfig/weightedvalue.h
 include/synfig-${API_V}/synfig/widthpoint.h
 include/synfig-${API_V}/synfig/zstreambuf.h
-lib/libsynfig.a
+@static-lib lib/libsynfig.a
 lib/libsynfig.la
 @lib lib/libsynfig.so.${LIBsynfig_VERSION}
 lib/pkgconfig/synfig.pc
 lib/synfig/
 lib/synfig/modules/
-lib/synfig/modules/liblyr_freetype.so
-lib/synfig/modules/liblyr_std.so
-lib/synfig/modules/libmod_bmp.so
-lib/synfig/modules/libmod_dv.so
-lib/synfig/modules/libmod_example.so
-lib/synfig/modules/libmod_ffmpeg.so
-lib/synfig/modules/libmod_filter.so
-lib/synfig/modules/libmod_geometry.so
-lib/synfig/modules/libmod_gif.so
-lib/synfig/modules/libmod_gradient.so
-lib/synfig/modules/libmod_imagemagick.so
-lib/synfig/modules/libmod_jpeg.so
-lib/synfig/modules/libmod_magickpp.so
-lib/synfig/modules/libmod_mng.so
-lib/synfig/modules/libmod_noise.so
-lib/synfig/modules/libmod_openexr.so
-lib/synfig/modules/libmod_particle.so
-lib/synfig/modules/libmod_png.so
-lib/synfig/modules/libmod_ppm.so
-lib/synfig/modules/libmod_svg.so
-lib/synfig/modules/libmod_yuv420p.so
+@so lib/synfig/modules/liblyr_freetype.so
+@so lib/synfig/modules/liblyr_std.so
+@so lib/synfig/modules/libmod_bmp.so
+@so lib/synfig/modules/libmod_dv.so
+@so lib/synfig/modules/libmod_example.so
+@so lib/synfig/modules/libmod_ffmpeg.so
+@so lib/synfig/modules/libmod_filter.so
+@so lib/synfig/modules/libmod_geometry.so
+@so lib/synfig/modules/libmod_gif.so
+@so lib/synfig/modules/libmod_gradient.so
+@so lib/synfig/modules/libmod_imagemagick.so
+@so lib/synfig/modules/libmod_jpeg.so
+@so lib/synfig/modules/libmod_magickpp.so
+@so lib/synfig/modules/libmod_mng.so
+@so lib/synfig/modules/libmod_noise.so
+@so lib/synfig/modules/libmod_openexr.so
+@so lib/synfig/modules/libmod_particle.so
+@so lib/synfig/modules/libmod_png.so
+@so lib/synfig/modules/libmod_ppm.so
+@so lib/synfig/modules/libmod_svg.so
+@so lib/synfig/modules/libmod_yuv420p.so
 share/examples/synfig/
 share/examples/synfig/synfig_modules.cfg
 @sample ${SYSCONFDIR}/synfig_modules.cfg
