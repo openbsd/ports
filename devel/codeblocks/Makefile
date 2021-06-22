@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2021/02/27 08:53:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2021/06/22 04:24:16 rsadowski Exp $
 
 BROKEN-alpha=	sqvm.cpp:394:1: internal compiler error: Segmentation fault
 COMMENT=	Code::Blocks C/C++ IDE
@@ -7,7 +7,7 @@ V=		20.03
 DISTNAME=	codeblocks-${V}
 PKGNAME=	codeblocks-${V}
 EXTRACT_SUFX=	.tar.xz
-REVISION=	1
+REVISION=	2
 
 WRKDIST=	${WRKDIR}/codeblocks-${V}
 
@@ -33,19 +33,18 @@ HOMEPAGE=	http://www.codeblocks.org/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SDL2 SM X11 Xcomposite Xcursor
-WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
-WANTLIB += atk-1.0 atk-bridge-2.0 boost_system bz2 c cairo
-WANTLIB += cairo-gobject epoxy expat ffi fontconfig freetype
-WANTLIB += fribidi gamin-1 gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
-WANTLIB += harfbuzz hunspell-1.7 iconv intl jpeg m mspack notify
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png samplerate sndio tiff usbhid wx_baseu-3.0 wx_baseu_net-3.0
-WANTLIB += wx_baseu_xml-3.0 wx_gtk3u_adv-3.0 wx_gtk3u_aui-3.0
-WANTLIB += wx_gtk3u_core-3.0 wx_gtk3u_html-3.0 wx_gtk3u_propgrid-3.0
-WANTLIB += wx_gtk3u_qa-3.0 wx_gtk3u_richtext-3.0 wx_gtk3u_xrc-3.0
-WANTLIB += xcb xcb-render xcb-shm z
-WANTLIB += Xss lzma zstd
+WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xss
+WANTLIB += Xxf86vm atk-1.0 atk-bridge-2.0 boost_system bz2 c cairo
+WANTLIB += cairo-gobject curses epoxy execinfo expat ffi fontconfig
+WANTLIB += freetype fribidi gamin-1 gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB += gtk-3 harfbuzz hunspell-1.7 iconv intl jpeg lzma m
+WANTLIB += mspack notify pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png samplerate sndio tiff usbhid wx_baseu-3.0
+WANTLIB += wx_baseu_net-3.0 wx_baseu_xml-3.0 wx_gtk3u_adv-3.0
+WANTLIB += wx_gtk3u_aui-3.0 wx_gtk3u_core-3.0 wx_gtk3u_html-3.0
+WANTLIB += wx_gtk3u_propgrid-3.0 wx_gtk3u_qa-3.0 wx_gtk3u_richtext-3.0
+WANTLIB += wx_gtk3u_xrc-3.0 xcb xcb-render xcb-shm z zstd
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=codeblocks/Sources/${V}/}
 
