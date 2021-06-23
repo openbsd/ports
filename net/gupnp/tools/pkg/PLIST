@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/03/30 01:52:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2021/06/23 09:21:55 jasper Exp $
 @bin bin/gssdp-discover
 @bin bin/gupnp-av-cp
 @bin bin/gupnp-network-light
@@ -9,13 +9,10 @@ share/applications/gupnp-network-light.desktop
 share/applications/gupnp-universal-cp.desktop
 share/gupnp-tools/
 share/gupnp-tools/pixmaps/
-share/gupnp-tools/pixmaps/av-cp.png
 share/gupnp-tools/pixmaps/media-renderer.png
 share/gupnp-tools/pixmaps/network-light-22x22.png
-share/gupnp-tools/pixmaps/network-light-256x256.png
 share/gupnp-tools/pixmaps/network-light-off.png
 share/gupnp-tools/pixmaps/network-light-on.png
-share/gupnp-tools/pixmaps/universal-cp.png
 share/gupnp-tools/pixmaps/upnp-action-arg-in.png
 share/gupnp-tools/pixmaps/upnp-action-arg-out.png
 share/gupnp-tools/pixmaps/upnp-device.png
@@ -26,13 +23,18 @@ share/gupnp-tools/xml/Dimming-scpd.xml
 share/gupnp-tools/xml/SwitchPower-scpd.xml
 share/gupnp-tools/xml/network-light-desc.xml
 share/icons/hicolor/256x256/apps/av-cp.png
-share/icons/hicolor/256x256/apps/network-light-256x256.png
+share/icons/hicolor/256x256/apps/network-light.png
 share/icons/hicolor/256x256/apps/universal-cp.png
+share/icons/hicolor/64x64/apps/av-cp.png
+share/icons/hicolor/64x64/apps/network-light.png
+share/icons/hicolor/64x64/apps/universal-cp.png
 share/locale/bs/LC_MESSAGES/gupnp-tools.mo
 share/locale/cs/LC_MESSAGES/gupnp-tools.mo
+share/locale/da/LC_MESSAGES/gupnp-tools.mo
 share/locale/de/LC_MESSAGES/gupnp-tools.mo
 share/locale/el/LC_MESSAGES/gupnp-tools.mo
 share/locale/es/LC_MESSAGES/gupnp-tools.mo
+share/locale/eu/LC_MESSAGES/gupnp-tools.mo
 share/locale/fur/LC_MESSAGES/gupnp-tools.mo
 share/locale/hu/LC_MESSAGES/gupnp-tools.mo
 share/locale/id/LC_MESSAGES/gupnp-tools.mo
@@ -40,12 +42,14 @@ share/locale/ja/LC_MESSAGES/gupnp-tools.mo
 share/locale/pl/LC_MESSAGES/gupnp-tools.mo
 share/locale/pt/LC_MESSAGES/gupnp-tools.mo
 share/locale/pt_BR/LC_MESSAGES/gupnp-tools.mo
+share/locale/ro/LC_MESSAGES/gupnp-tools.mo
 share/locale/sk/LC_MESSAGES/gupnp-tools.mo
 share/locale/sl/LC_MESSAGES/gupnp-tools.mo
 share/locale/sr/LC_MESSAGES/gupnp-tools.mo
 share/locale/sr@latin/LC_MESSAGES/gupnp-tools.mo
 share/locale/sv/LC_MESSAGES/gupnp-tools.mo
 share/locale/tr/LC_MESSAGES/gupnp-tools.mo
+share/locale/uk/LC_MESSAGES/gupnp-tools.mo
 share/locale/zh_CN/LC_MESSAGES/gupnp-tools.mo
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
