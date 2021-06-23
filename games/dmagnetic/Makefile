@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2021/01/31 16:37:47 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.18 2021/06/23 22:36:56 sthen Exp $
 
-V =		0.30
+V =		0.31
 COMMENT =	interpreter for Magnetic Scrolls games
 DISTNAME =	dMagnetic_${V}
 PKGNAME =	dmagnetic-${V}
@@ -24,7 +24,7 @@ TEST_TARGET =	check
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dMagnetic ${PREFIX}/bin/dMagnetic
-	${INSTALL_MAN} ${WRKSRC}/dMagnetic.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/dMagnetic.6 ${PREFIX}/man/man6
 	${INSTALL_MAN} ${WRKSRC}/dMagneticini.5 ${PREFIX}/man/man5
 	${INSTALL_DATA_DIR} ${PREFIX}/share/dMagnetic
 	${INSTALL_DATA} ${WRKSRC}/dMagnetic.ini ${PREFIX}/share/dMagnetic
