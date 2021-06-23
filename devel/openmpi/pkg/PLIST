@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/03/06 06:59:33 martin Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/06/23 13:01:22 martin Exp $
 bin/aggregate_profile.pl
 bin/mpiCC
 bin/mpic++
@@ -373,6 +373,7 @@ lib/pkgconfig/ompi-f90.pc
 lib/pkgconfig/ompi-fort.pc
 lib/pkgconfig/ompi.pc
 lib/pkgconfig/orte.pc
+lib/pkgconfig/pmix.pc
 lib/pmix/
 lib/pmix/mca_bfrops_v12.a
 lib/pmix/mca_bfrops_v12.la
@@ -392,6 +393,9 @@ lib/pmix/mca_gds_ds12.la
 lib/pmix/mca_gds_hash.a
 lib/pmix/mca_gds_hash.la
 @so lib/pmix/mca_gds_hash.so
+lib/pmix/mca_pcompress_zlib.a
+lib/pmix/mca_pcompress_zlib.la
+@so lib/pmix/mca_pcompress_zlib.so
 lib/pmix/mca_plog_default.a
 lib/pmix/mca_plog_default.la
 @so lib/pmix/mca_plog_default.so
@@ -401,12 +405,9 @@ lib/pmix/mca_plog_stdfd.la
 lib/pmix/mca_plog_syslog.a
 lib/pmix/mca_plog_syslog.la
 @so lib/pmix/mca_plog_syslog.so
-lib/pmix/mca_pnet_tcp.a
-lib/pmix/mca_pnet_tcp.la
-@so lib/pmix/mca_pnet_tcp.so
-lib/pmix/mca_pnet_test.a
-lib/pmix/mca_pnet_test.la
-@so lib/pmix/mca_pnet_test.so
+lib/pmix/mca_preg_compress.a
+lib/pmix/mca_preg_compress.la
+@so lib/pmix/mca_preg_compress.so
 lib/pmix/mca_preg_native.a
 lib/pmix/mca_preg_native.la
 @so lib/pmix/mca_preg_native.so
@@ -425,6 +426,12 @@ lib/pmix/mca_psensor_heartbeat.la
 lib/pmix/mca_pshmem_mmap.a
 lib/pmix/mca_pshmem_mmap.la
 @so lib/pmix/mca_pshmem_mmap.so
+lib/pmix/mca_psquash_flex128.a
+lib/pmix/mca_psquash_flex128.la
+@so lib/pmix/mca_psquash_flex128.so
+lib/pmix/mca_psquash_native.a
+lib/pmix/mca_psquash_native.la
+@so lib/pmix/mca_psquash_native.so
 lib/pmix/mca_ptl_tcp.a
 lib/pmix/mca_ptl_tcp.la
 @so lib/pmix/mca_ptl_tcp.so
