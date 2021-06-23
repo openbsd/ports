@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/01/04 14:06:27 sthen Exp $
-@conflict biopython-*
-@pkgpath biology/py-biopython
+@comment $OpenBSD: PLIST,v 1.12 2021/06/23 10:46:49 martin Exp $
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/Bio/
 lib/python${MODPY_VERSION}/site-packages/Bio/Affy/
 lib/python${MODPY_VERSION}/site-packages/Bio/Affy/CelFile.py
@@ -132,10 +132,6 @@ lib/python${MODPY_VERSION}/site-packages/Bio/Compass/
 lib/python${MODPY_VERSION}/site-packages/Bio/Compass/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Bio/Compass/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Bio/Compass/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/Bio/Crystal/
-lib/python${MODPY_VERSION}/site-packages/Bio/Crystal/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Bio/Crystal/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/Bio/Crystal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Data/
 lib/python${MODPY_VERSION}/site-packages/Bio/Data/CodonTable.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Data/IUPACData.py
@@ -427,14 +423,6 @@ lib/python${MODPY_VERSION}/site-packages/Bio/ExPASy/${MODPY_PYCACHE}ScanProsite.
 lib/python${MODPY_VERSION}/site-packages/Bio/ExPASy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/ExPASy/${MODPY_PYCACHE}cellosaurus.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/ExPASy/cellosaurus.py
-lib/python${MODPY_VERSION}/site-packages/Bio/FSSP/
-lib/python${MODPY_VERSION}/site-packages/Bio/FSSP/FSSPTools.py
-lib/python${MODPY_VERSION}/site-packages/Bio/FSSP/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Bio/FSSP/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/Bio/FSSP/${MODPY_PYCACHE}FSSPTools.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/Bio/FSSP/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/Bio/FSSP/${MODPY_PYCACHE}fssp_rec.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/Bio/FSSP/fssp_rec.py
 lib/python${MODPY_VERSION}/site-packages/Bio/File.py
 lib/python${MODPY_VERSION}/site-packages/Bio/GenBank/
 lib/python${MODPY_VERSION}/site-packages/Bio/GenBank/Record.py
@@ -595,6 +583,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/PDB/QCPSuperimposer/qcprotmodule.c
 @so lib/python${MODPY_VERSION}/site-packages/Bio/PDB/QCPSuperimposer/qcprotmodule.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/Residue.py
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/ResidueDepth.py
+lib/python${MODPY_VERSION}/site-packages/Bio/PDB/SASA.py
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/SCADIO.py
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/Selection.py
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/Structure.py
@@ -625,6 +614,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/PDB/${MODPY_PYCACHE}PSEA.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/${MODPY_PYCACHE}Polypeptide.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/${MODPY_PYCACHE}Residue.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/${MODPY_PYCACHE}ResidueDepth.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/PDB/${MODPY_PYCACHE}SASA.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/${MODPY_PYCACHE}SCADIO.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/${MODPY_PYCACHE}Selection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/${MODPY_PYCACHE}Structure.${MODPY_PYC_MAGIC_TAG}pyc
@@ -876,6 +866,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/SeqIO/SffIO.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqIO/SnapGeneIO.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqIO/SwissIO.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqIO/TabIO.py
+lib/python${MODPY_VERSION}/site-packages/Bio/SeqIO/TwoBitIO.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqIO/UniprotIO.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqIO/XdnaIO.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqIO/__init__.py
@@ -897,11 +888,14 @@ lib/python${MODPY_VERSION}/site-packages/Bio/SeqIO/${MODPY_PYCACHE}SffIO.${MODPY
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqIO/${MODPY_PYCACHE}SnapGeneIO.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqIO/${MODPY_PYCACHE}SwissIO.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqIO/${MODPY_PYCACHE}TabIO.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/SeqIO/${MODPY_PYCACHE}TwoBitIO.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqIO/${MODPY_PYCACHE}UniprotIO.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqIO/${MODPY_PYCACHE}XdnaIO.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqIO/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqIO/${MODPY_PYCACHE}_index.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqIO/_index.py
+lib/python${MODPY_VERSION}/site-packages/Bio/SeqIO/_twoBitIO.c
+@so lib/python${MODPY_VERSION}/site-packages/Bio/SeqIO/_twoBitIO.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqRecord.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqUtils/
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqUtils/CheckSum.py
@@ -941,12 +935,6 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Bio/Sequencing/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/Bio/Sequencing/${MODPY_PYCACHE}Ace.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Sequencing/${MODPY_PYCACHE}Phd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Sequencing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/Bio/Statistics/
-lib/python${MODPY_VERSION}/site-packages/Bio/Statistics/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Bio/Statistics/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/Bio/Statistics/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/Bio/Statistics/${MODPY_PYCACHE}lowess.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/Bio/Statistics/lowess.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SubsMat/
 lib/python${MODPY_VERSION}/site-packages/Bio/SubsMat/FreqTable.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SubsMat/MatrixInfo.py

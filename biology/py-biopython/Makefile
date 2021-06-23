@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2021/01/04 14:06:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2021/06/23 10:46:49 martin Exp $
 
 COMMENT =		Python tools for computational molecular biology
 
-MODPY_EGG_VERSION =	1.78
+MODPY_EGG_VERSION =	1.79
 DISTNAME =		biopython-${MODPY_EGG_VERSION}
 CATEGORIES =		biology
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 HOMEPAGE =		http://www.biopython.org/
 
@@ -39,7 +38,7 @@ post-install:
 	cd ${WRKSRC}/Doc/examples; tar cf - * | \
 		tar xf - -C ${PREFIX}/share/examples/py-biopython
 
-do-test: fake
+do-test:
 	@cd ${WRKSRC}/Tests && \
 		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
 		${MODPY_BIN} ./run_tests.py
