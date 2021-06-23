@@ -38,7 +38,7 @@ MODGO_MODULES =	\
 	github.com/!puerkito!bio/urlesc				 v0.0.0-20170810143723-de5bf2ad4578 \
 	github.com/akavel/rsrc					 v0.8.0 \
 	github.com/alecthomas/assert				 v0.0.0-20170929043011-405dbfeb8e38 \
-	github.com/alecthomas/chroma				 v0.9.1 \
+	github.com/alecthomas/chroma				 v0.9.2 \
 	github.com/alecthomas/colour				 v0.0.0-20160524082231-60882d9e2721 \
 	github.com/alecthomas/kong				 v0.2.4 \
 	github.com/alecthomas/kong-hcl				 v0.1.8-0.20190615233001-b21fea9723c8 \
@@ -53,7 +53,7 @@ MODGO_MODULES =	\
 	github.com/bep/debounce					 v1.2.0 \
 	github.com/bep/gitmap					 v1.1.2 \
 	github.com/bep/godartsass				 v0.12.0 \
-	github.com/bep/golibsass				 v0.7.0 \
+	github.com/bep/golibsass				 v1.0.0 \
 	github.com/bep/gowebp					 v0.1.0 \
 	github.com/bep/tmc					 v0.5.1 \
 	github.com/bgentry/speakeasy				 v0.1.0 \
@@ -104,7 +104,6 @@ MODGO_MODULES =	\
 	github.com/gobuffalo/flect				 v0.2.2 \
 	github.com/gobwas/glob					 v0.2.3 \
 	github.com/gogo/protobuf				 v1.2.1 \
-	github.com/gohugoio/go-i18n				 v2.1.3-0.20210430103248-4c28c89f8013+incompatible \
 	github.com/gohugoio/go-i18n/v2				 v2.1.3-0.20210430103248-4c28c89f8013 \
 	github.com/gohugoio/testmod!builder/mods		 v0.0.0-20190520184928-c56af20f2e95 \
 	github.com/golang/glog					 v0.0.0-20160126235308-23def4e6c14b \
@@ -237,7 +236,7 @@ MODGO_MODULES =	\
 	github.com/spf13/fsync					 v0.9.0 \
 	github.com/spf13/jwalterweatherman			 v1.1.0 \
 	github.com/spf13/pflag					 v1.0.5 \
-	github.com/spf13/viper					 v1.7.1 \
+	github.com/spf13/viper					 v1.7.0 \
 	github.com/stretchr/objx				 v0.2.0 \
 	github.com/stretchr/testify				 v1.6.1 \
 	github.com/subosito/gotenv				 v1.2.0 \
@@ -248,7 +247,7 @@ MODGO_MODULES =	\
 	github.com/valyala/bytebufferpool			 v1.0.0 \
 	github.com/valyala/fasttemplate				 v1.0.1 \
 	github.com/xiang90/probing				 v0.0.0-20190116061207-43a291ad63a2 \
-	github.com/yuin/goldmark				 v1.3.5 \
+	github.com/yuin/goldmark				 v1.3.8 \
 	github.com/yuin/goldmark-highlighting			 v0.0.0-20200307114337-60d527fdb691 \
 	go.etcd.io/bbolt					 v1.3.2 \
 	go.opencensus.io					 v0.23.0 \
@@ -450,7 +449,6 @@ MODGO_MODFILES =	\
 	github.com/spf13/cast					 v1.3.0 \
 	github.com/spf13/jwalterweatherman			 v1.0.0 \
 	github.com/spf13/pflag					 v1.0.3 \
-	github.com/spf13/viper					 v1.7.0 \
 	github.com/stretchr/objx				 v0.1.0 \
 	github.com/stretchr/objx				 v0.1.1 \
 	github.com/stretchr/testify				 v0.0.0-20161117074351-18a02ba4a312 \
@@ -804,3 +802,4 @@ MODGO_MODFILES =	\
 	honnef.co/go/tools					 v0.0.0-20190523083050-ea95bdfd59fc \
 	honnef.co/go/tools					 v0.0.1-2019.2.3 \
 	honnef.co/go/tools					 v0.0.1-2020.1.3
+

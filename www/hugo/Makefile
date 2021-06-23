@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2021/05/17 19:00:28 paco Exp $
+# $OpenBSD: Makefile,v 1.36 2021/06/23 14:37:59 paco Exp $
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 COMMENT =	fast and flexible static site generator
 
 MODGO_MODNAME =	github.com/gohugoio/hugo
-MODGO_VERSION =	v0.83.1
+MODGO_VERSION =	v0.84.0
 
 DISTNAME =	hugo-${MODGO_VERSION}
 
