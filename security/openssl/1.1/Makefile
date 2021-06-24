@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2021/03/25 14:54:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2021/06/24 15:26:09 kn Exp $
 
 # bump security/sslscan if updating
 PORTROACH=	limit:^1\.1\.[0-9][a-z] skipb:0 skipv:1.1.1
 V=		1.1.1k
 PKGSPEC=	openssl->=1.1.0,<1.2
+REVISION=	0
 
 SHLIBVER=	11.6
 SHARED_LIBS=	crypto ${SHLIBVER} \
@@ -21,6 +22,7 @@ CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT=	config
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--openssldir=${PREFIX}/share/eopenssl11 \
+			enable-ssl-trace \
 			no-threads no-rc5 no-ssl3 \
 			no-devcryptoeng \
 			shared

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2021/01/07 21:55:33 tb Exp $
+# $OpenBSD: Makefile,v 1.13 2021/06/24 15:26:09 kn Exp $
 
 PORTROACH=	limit:^1\.0\.
 V=		1.0.2u
-REVISION=	3
+REVISION=	4
 PKGSPEC=	openssl-<1.1.0
 
 SHLIBVER=	6.2
@@ -29,7 +29,8 @@ CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT=	config
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--openssldir=${PREFIX}/share/eopenssl \
-	                --install_prefix=${WRKINST} \
+			--install_prefix=${WRKINST} \
+			enable-ssl-trace \
 			no-threads no-krb5 \
 			no-rc5 no-ssl2 no-ssl3 \
 			shared
