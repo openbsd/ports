@@ -1,9 +1,11 @@
-$OpenBSD: patch-res_res_rtp_asterisk_c,v 1.9 2021/05/07 19:35:11 sthen Exp $
+$OpenBSD: patch-res_res_rtp_asterisk_c,v 1.10 2021/06/24 17:12:04 sthen Exp $
+
+libressl *does* have this now
 
 Index: res/res_rtp_asterisk.c
 --- res/res_rtp_asterisk.c.orig
 +++ res/res_rtp_asterisk.c
-@@ -1835,7 +1835,7 @@ static int dtls_setup_rtcp(struct ast_rtp_instance *in
+@@ -1845,7 +1845,7 @@ static int dtls_setup_rtcp(struct ast_rtp_instance *in
  
  static const SSL_METHOD *get_dtls_method(void)
  {
