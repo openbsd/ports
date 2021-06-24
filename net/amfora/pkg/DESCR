@@ -1,0 +1,12 @@
+Amfora aims to be the best looking Gemini client with the most features all
+in the terminal. It does not support Gopher or other non-Web protocols.
+
+Features:
+* Support ANSI color codes
+* Styled page content
+* Multiple charset support
+* Tabbed browsing
+* Built-in search
+* Bookmarks
+* Theming
+* Proxying
