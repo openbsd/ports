@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.22 2021/02/28 21:22:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2021/06/24 02:30:27 danj Exp $
 
 GH_ACCOUNT=		google
 GH_PROJECT=		leveldb
 GH_TAGNAME=		1.23
 
+REVISION=		0
+
 COMMENT=		fast key-value storage library
 CATEGORIES=		databases devel
 
 SHARED_LIBS=		leveldb	3.0 # 0.0
-
-MAINTAINER=		Ashton Fagg <ashton@fagg.id.au>
 
 # BSD3
 PERMIT_PACKAGE=		Yes
