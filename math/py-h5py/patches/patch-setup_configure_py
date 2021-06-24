@@ -1,11 +1,11 @@
-Avoid rebuild during make fake.
+$OpenBSD: patch-setup_configure_py,v 1.2 2021/06/24 10:52:02 martin Exp $
 
-$OpenBSD: patch-setup_configure_py,v 1.1 2020/12/09 09:52:23 martin Exp $
+Avoid rebuild during make fake.
 
 Index: setup_configure.py
 --- setup_configure.py.orig
 +++ setup_configure.py
-@@ -150,8 +150,8 @@ class BuildConfig:
+@@ -156,8 +156,8 @@ class BuildConfig:
          }
  
      def changed(self):

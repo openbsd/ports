@@ -1,13 +1,13 @@
-Relax Numpy and Python requirements.
+$OpenBSD: patch-setup_py,v 1.2 2021/06/24 10:52:02 martin Exp $
 
-$OpenBSD: patch-setup_py,v 1.1 2020/12/09 09:52:23 martin Exp $
+Relax Numpy and Python requirements.
 
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -29,8 +29,7 @@ NUMPY_MIN_VERSIONS = [
+@@ -28,8 +28,7 @@ VERSION = '3.3.0'
+ NUMPY_MIN_VERSIONS = [
      # Numpy    Python
-     ('1.12',   "=='3.6'"),
      ('1.14.5', "=='3.7'"),
 -    ('1.17.5', "=='3.8'"),
 -    ('1.19.3', ">='3.9'"),
