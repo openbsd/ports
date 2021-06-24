@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.57 2021/05/25 20:23:55 pvk Exp $
+# $OpenBSD: Makefile,v 1.58 2021/06/24 10:58:16 pvk Exp $
 
 COMMENT =		compact self-hosted Git service
 
-VERSION =		1.14.2
+VERSION =		1.14.3
 DISTNAME =		gitea-src-${VERSION}
 PKGNAME =		gitea-${VERSION}
 
