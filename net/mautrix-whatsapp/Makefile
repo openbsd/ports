@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2021/03/08 13:59:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/06/24 02:28:37 abieber Exp $
 
 COMMENT =	matrix-WhatsApp puppeting bridge
 
-V =		20200327
-COMMIT =	3a9642386cdff8293657c8409da4bffd674184bf
-DISTNAME =	mautrix-whatsapp-${V}
-REVISION =	0
+MODGO_VERSION =	v0.1.7
+MODGO_MODNAME =	maunium.net/go/mautrix-whatsapp
 
-# warning, for the .tar.gz, "go mod vendor" is not sufficient
-# you need to clone https://github.com/chai2010/webp and
-# copy webp/internal into vendor/github.com/chai2010/webp/
+DISTNAME =	mautrix-whatsapp-${MODGO_VERSION}
+
+EPOCH =		0
 
 CATEGORIES =	net
 
@@ -17,14 +15,17 @@ HOMEPAGE =	https://github.com/tulir/mautrix-whatsapp
 
 MAINTAINER =	Renaud Allard <renaud@allard.it>
 WANTLIB +=	c m pthread
-MASTER_SITES =	https://elendil.arnor.org/OpenBSD/
+
+BUILD_DEPENDS =	devel/olm
+RUN_DEPENDS =	devel/olm
 
 # GNU Affero General Public License v3.0
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/go
 
-ALL_TARGET =	maunium.net/go/mautrix-whatsapp
+MAKE_ENV +=	CGO_CFLAGS=-I${LOCALBASE}/include \
+		CGO_LDFLAGS=-L${LOCALBASE}/lib
 
 NO_TEST =	Yes
 
@@ -37,5 +38,7 @@ do-install:
 	${PREFIX}/share/examples/mautrix-whatsapp
 	${INSTALL_DATA} ${WRKSRC}/example-config.yaml \
 	${PREFIX}/share/examples/mautrix-whatsapp
+
+.include "./modules.inc"
 
 .include <bsd.port.mk>
