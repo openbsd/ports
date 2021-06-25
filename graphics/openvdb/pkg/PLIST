@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/02/28 06:19:01 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/06/25 20:56:03 sthen Exp $
 @bin bin/vdb_print
 include/openvdb/
 include/openvdb/Exceptions.h
@@ -25,6 +25,8 @@ include/openvdb/math/ConjGradient.h
 include/openvdb/math/Coord.h
 include/openvdb/math/DDA.h
 include/openvdb/math/FiniteDifference.h
+include/openvdb/math/Half.h
+include/openvdb/math/HalfLimits.h
 include/openvdb/math/LegacyFrustum.h
 include/openvdb/math/Maps.h
 include/openvdb/math/Mat.h
@@ -64,9 +66,11 @@ include/openvdb/points/PointSample.h
 include/openvdb/points/PointScatter.h
 include/openvdb/points/StreamCompression.h
 include/openvdb/tools/
+include/openvdb/tools/Activate.h
 include/openvdb/tools/ChangeBackground.h
 include/openvdb/tools/Clip.h
 include/openvdb/tools/Composite.h
+include/openvdb/tools/Count.h
 include/openvdb/tools/Dense.h
 include/openvdb/tools/DenseSparseTools.h
 include/openvdb/tools/Diagnostics.h
@@ -91,6 +95,7 @@ include/openvdb/tools/Merge.h
 include/openvdb/tools/MeshToVolume.h
 include/openvdb/tools/Morphology.h
 include/openvdb/tools/MultiResGrid.h
+include/openvdb/tools/NodeVisitor.h
 include/openvdb/tools/ParticleAtlas.h
 include/openvdb/tools/ParticlesToLevelSet.h
 include/openvdb/tools/PointAdvect.h
