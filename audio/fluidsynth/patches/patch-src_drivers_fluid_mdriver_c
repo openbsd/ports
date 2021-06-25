@@ -1,7 +1,9 @@
-$OpenBSD: patch-src_drivers_fluid_mdriver_c,v 1.1 2013/03/29 12:37:43 sthen Exp $
---- src/drivers/fluid_mdriver.c.orig	Thu Aug 16 05:01:13 2012
-+++ src/drivers/fluid_mdriver.c	Sun Mar 24 23:55:55 2013
-@@ -46,6 +46,15 @@ fluid_midi_driver_t *new_fluid_jack_midi_driver (fluid
+$OpenBSD: patch-src_drivers_fluid_mdriver_c,v 1.2 2021/06/25 21:48:40 sthen Exp $
+
+Index: src/drivers/fluid_mdriver.c
+--- src/drivers/fluid_mdriver.c.orig
++++ src/drivers/fluid_mdriver.c
+@@ -53,6 +53,15 @@ fluid_midi_driver_t *new_fluid_jack_midi_driver (fluid
  int delete_fluid_jack_midi_driver(fluid_midi_driver_t *p);
  #endif
  
@@ -17,7 +19,7 @@ $OpenBSD: patch-src_drivers_fluid_mdriver_c,v 1.1 2013/03/29 12:37:43 sthen Exp 
  /* OSS */
  #if OSS_SUPPORT
  fluid_midi_driver_t* new_fluid_oss_midi_driver(fluid_settings_t* settings,
-@@ -96,6 +105,12 @@ struct fluid_mdriver_definition_t {
+@@ -105,6 +114,12 @@ struct fluid_mdriver_definition_t {
  
  
  struct fluid_mdriver_definition_t fluid_midi_drivers[] = {
@@ -30,7 +32,7 @@ $OpenBSD: patch-src_drivers_fluid_mdriver_c,v 1.1 2013/03/29 12:37:43 sthen Exp 
  #if JACK_SUPPORT
    { "jack",
      new_fluid_jack_midi_driver,
-@@ -149,7 +164,9 @@ void fluid_midi_driver_settings(fluid_settings_t* sett
+@@ -158,7 +173,9 @@ void fluid_midi_driver_settings(fluid_settings_t* sett
                                 FLUID_DEFAULT_MIDI_RT_PRIO, 0, 99, 0, NULL, NULL);
  
    /* Set the default driver */
@@ -41,7 +43,7 @@ $OpenBSD: patch-src_drivers_fluid_mdriver_c,v 1.1 2013/03/29 12:37:43 sthen Exp 
    fluid_settings_register_str(settings, "midi.driver", "alsa_seq", 0, NULL, NULL);
  #elif JACK_SUPPORT
    fluid_settings_register_str(settings, "midi.driver", "jack", 0, NULL, NULL);
-@@ -169,6 +186,9 @@ void fluid_midi_driver_settings(fluid_settings_t* sett
+@@ -178,6 +195,9 @@ void fluid_midi_driver_settings(fluid_settings_t* sett
  #if ALSA_SUPPORT
    fluid_settings_add_option(settings, "midi.driver", "alsa_seq");
    fluid_settings_add_option(settings, "midi.driver", "alsa_raw");

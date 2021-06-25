@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/05/22 11:31:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/06/25 21:48:40 sthen Exp $
 @bin bin/fluidsynth
 include/fluidsynth/
 include/fluidsynth.h
@@ -19,7 +19,7 @@ include/fluidsynth/synth.h
 include/fluidsynth/types.h
 include/fluidsynth/version.h
 include/fluidsynth/voice.h
-lib/libfluidsynth.a
+@static-lib lib/libfluidsynth.a
 lib/libfluidsynth.la
 @lib lib/libfluidsynth.so.${LIBfluidsynth_VERSION}
 lib/pkgconfig/fluidsynth.pc

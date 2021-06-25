@@ -1,6 +1,8 @@
-$OpenBSD: patch-src_utils_fluid_sys_c,v 1.1 2013/03/29 12:37:43 sthen Exp $
---- src/utils/fluid_sys.c.orig	Thu Aug 16 05:01:13 2012
-+++ src/utils/fluid_sys.c	Mon Mar 25 00:20:40 2013
+$OpenBSD: patch-src_utils_fluid_sys_c,v 1.2 2021/06/25 21:48:40 sthen Exp $
+
+Index: src/utils/fluid_sys.c
+--- src/utils/fluid_sys.c.orig
++++ src/utils/fluid_sys.c
 @@ -429,8 +429,10 @@ fluid_thread_self_set_prio (int prio_level)
      memset(&priority, 0, sizeof(priority));
      priority.sched_priority = prio_level;

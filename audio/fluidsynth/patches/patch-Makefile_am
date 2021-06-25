@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_am,v 1.1 2021/06/25 21:48:40 sthen Exp $
+
+automake: Don't whine about not having README
+
+Index: Makefile.am
+--- Makefile.am.orig
++++ Makefile.am
+@@ -9,3 +9,4 @@ EXTRA_DIST = TODO acinclude.m4 autogen.sh fluidsynth.p
+ DISTCLEANFILES = fluidsynth.pc
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = fluidsynth.pc
++README: README.md
