@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2021/03/06 18:43:56 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.18 2021/06/25 04:30:22 rsadowski Exp $
 @newgroup _prosody:638
 @newuser _prosody:638:_prosody:daemon:prosody user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/prosody
@@ -237,16 +237,6 @@ share/examples/prosody/certs/
 @sample ${SYSCONFDIR}/prosody/certs/
 share/examples/prosody/certs/Makefile
 @sample ${SYSCONFDIR}/prosody/certs/Makefile
-share/examples/prosody/certs/example.com.crt
-share/examples/prosody/certs/example.com.key
-share/examples/prosody/certs/localhost.crt
-@sample ${SYSCONFDIR}/prosody/certs/localhost.crt
-@mode 400
-@owner _prosody
-share/examples/prosody/certs/localhost.key
-@sample ${SYSCONFDIR}/prosody/certs/localhost.key
-@mode
-@owner
 share/examples/prosody/certs/openssl.cnf
 @sample ${SYSCONFDIR}/prosody/certs/openssl.cnf
 share/examples/prosody/prosody.cfg.lua
