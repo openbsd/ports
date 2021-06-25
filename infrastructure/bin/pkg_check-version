@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: pkg_check-version,v 1.2 2021/06/05 16:20:08 espie Exp $
+# $OpenBSD: pkg_check-version,v 1.3 2021/06/25 15:35:30 abieber Exp $
 #
 # Copyright (c) 2021 Marc Espie <espie@openbsd.org>
 #
@@ -101,7 +101,7 @@ sub parse_and_run
 {
 	my $self = shift;
 	my $rc = 0;
-	my $state = OpenBSD::VersionCheck::State->new('pkg-check_version');
+	my $state = OpenBSD::VersionCheck::State->new('pkg_check-version');
 	$state->handle_options;
 	my $by_stem = {};
 	for my $name (@ARGV) {
