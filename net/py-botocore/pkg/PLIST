@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.164 2021/06/12 13:13:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.165 2021/06/25 16:29:15 ajacoutot Exp $
 @conflict py-botocore-*
 @pkgpath net/py-botocore
 lib/python${MODPY_VERSION}/site-packages/botocore/
@@ -361,6 +361,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/codeguru-reviewer/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codeguru-reviewer/2019-09-19/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codeguru-reviewer/2019-09-19/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codeguru-reviewer/2019-09-19/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/codeguru-reviewer/2019-09-19/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codeguruprofiler/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codeguruprofiler/2019-07-18/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codeguruprofiler/2019-07-18/paginators-1.json
