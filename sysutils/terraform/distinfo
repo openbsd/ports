@@ -675,8 +675,8 @@ SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.0.0.mod) = GX5I510+0r6IJ+SFbE
 SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.1.0.mod) = GX5I510+0r6IJ+SFbEHFp8BV+hJT0AkHYL3O8ktNE5M=
 SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.2.0.mod) = N3olwwoP5QJJQSY8gOCHFMHuyHp60aiU3mIdVZUaSls=
 SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.8.0.mod) = 7L1mA5NbOFHNk2KhPVkN81FOheXSdN/QNj4JSh4pz+Y=
-SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.8.3.mod) = 7L1mA5NbOFHNk2KhPVkN81FOheXSdN/QNj4JSh4pz+Y=
-SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.8.3.zip) = htLS3TYjUfuJSFkkpxA+Iwq/0x0wt1nHi9KUYYRrDoI=
+SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.8.4.mod) = 7L1mA5NbOFHNk2KhPVkN81FOheXSdN/QNj4JSh4pz+Y=
+SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.8.4.zip) = hDLebNF47aXaup1DITZTg9GfW/oUpI4RZt+yXtccOlA=
 SHA256 (go_modules/go.opencensus.io/@v/v0.21.0.mod) = ieCSXaA6WvmIebPPtdlps3ZFVLKe3LQ4ROy/EtYVxUI=
 SHA256 (go_modules/go.opencensus.io/@v/v0.22.0.mod) = k4BXagrLOyivqJbSzETL289WZ/m9zY1Z7fy7ZRpxPg8=
 SHA256 (go_modules/go.opencensus.io/@v/v0.22.2.mod) = 4EL962hfCby193jU9jlT86anD0wQBPvRqSyZzbgfw5w=
@@ -1112,7 +1112,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/@v/v0.0.0-20190525122527-15
 SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/@v/v0.0.0-20190525122527-15d366b2352e.zip) = bfT2TH3pDi8StbfvnZU5cHD3v4bJq3P6LY/0yuc3v1k=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRelO2IPjOKMKW5R06o=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.zip) = oNOSUuhmWkKKjLnU38nL6ge3rpCuYufPNlG+cZrfUVo=
-SHA256 (terraform-v1.0.0.zip) = onAhvq5NPUwiiqpO4f+TPQW1GFi4R3M2Ikho5y43RX0=
+SHA256 (terraform-v1.0.1.zip) = 2pBVZurD1PpIcGDpz4O8ftFcRPKMRuazyglBSyCOtoU=
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.34.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.38.0.mod) = 1006
@@ -1790,8 +1790,8 @@ SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.0.0.mod) = 568
 SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.1.0.mod) = 568
 SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.2.0.mod) = 601
 SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.8.0.mod) = 207
-SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.8.3.mod) = 207
-SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.8.3.zip) = 269513
+SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.8.4.mod) = 207
+SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.8.4.zip) = 270223
 SIZE (go_modules/go.opencensus.io/@v/v0.21.0.mod) = 305
 SIZE (go_modules/go.opencensus.io/@v/v0.22.0.mod) = 408
 SIZE (go_modules/go.opencensus.io/@v/v0.22.2.mod) = 478
@@ -2227,4 +2227,4 @@ SIZE (go_modules/sigs.k8s.io/structured-merge-diff/@v/v0.0.0-20190525122527-15d3
 SIZE (go_modules/sigs.k8s.io/structured-merge-diff/@v/v0.0.0-20190525122527-15d366b2352e.zip) = 113591
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.zip) = 18120
-SIZE (terraform-v1.0.0.zip) = 4166522
+SIZE (terraform-v1.0.1.zip) = 4173484
