@@ -1,11 +1,11 @@
-$OpenBSD: patch-meson_build,v 1.6 2019/01/16 20:20:51 ajacoutot Exp $
+$OpenBSD: patch-meson_build,v 1.7 2021/06/25 14:39:05 ajacoutot Exp $
 
 Drop flags that break the build with base gcc.
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -107,8 +107,6 @@ elif cc.get_id() == 'gcc' or cc.get_id() == 'clang'
+@@ -106,8 +106,6 @@ elif cc.get_id() == 'gcc' or cc.get_id() == 'clang'
      '-Wno-uninitialized',
      '-Wno-shadow',
      '-Wno-int-conversion',
