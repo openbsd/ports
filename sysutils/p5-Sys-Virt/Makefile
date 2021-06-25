@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.43 2021/06/12 13:21:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2021/06/25 15:27:57 ajacoutot Exp $
+
+PORTROACH=		skipv:4.0.0,4.1.0,4.2.0
 
 COMMENT=		represent and manage a libvirt hypervisor connection
 
