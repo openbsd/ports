@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/23 15:20:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/06/25 16:04:20 ajacoutot Exp $
 @pkgpath x11/polkit-qt,qt5
 include/polkit-qt5-1/
 include/polkit-qt5-1/PolkitQt1/
@@ -16,14 +16,16 @@ include/polkit-qt5-1/PolkitQt1/Identity
 include/polkit-qt5-1/PolkitQt1/Subject
 include/polkit-qt5-1/PolkitQt1/TemporaryAuthorization
 include/polkit-qt5-1/polkitqt1-actiondescription.h
+include/polkit-qt5-1/polkitqt1-agent-export.h
 include/polkit-qt5-1/polkitqt1-agent-listener.h
 include/polkit-qt5-1/polkitqt1-agent-session.h
 include/polkit-qt5-1/polkitqt1-authority.h
+include/polkit-qt5-1/polkitqt1-core-export.h
 include/polkit-qt5-1/polkitqt1-details.h
-include/polkit-qt5-1/polkitqt1-export.h
 include/polkit-qt5-1/polkitqt1-gui-action.h
 include/polkit-qt5-1/polkitqt1-gui-actionbutton.h
 include/polkit-qt5-1/polkitqt1-gui-actionbuttons.h
+include/polkit-qt5-1/polkitqt1-gui-export.h
 include/polkit-qt5-1/polkitqt1-identity.h
 include/polkit-qt5-1/polkitqt1-subject.h
 include/polkit-qt5-1/polkitqt1-temporaryauthorization.h
