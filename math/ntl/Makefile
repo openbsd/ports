@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.55 2021/06/21 06:37:06 benoit Exp $
+# $OpenBSD: Makefile,v 1.56 2021/06/25 07:08:19 benoit Exp $
 
 COMMENT =	Victor Shoup's Number Theory Library
 
-DISTNAME =	ntl-11.5.0
+DISTNAME =	ntl-11.5.1
 SHARED_LIBS =	ntl	10.0	# 0.0
 CATEGORIES =	math
 
