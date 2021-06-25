@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2021/04/28 05:53:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2021/06/25 15:25:01 ajacoutot Exp $
 share/osinfo/
 share/osinfo/LICENSE
 share/osinfo/VERSION
@@ -129,6 +129,7 @@ share/osinfo/os/alpinelinux.org/alpinelinux-3.10.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.11.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.12.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.13.xml
+share/osinfo/os/alpinelinux.org/alpinelinux-3.14.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.5.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.6.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.7.xml
@@ -203,6 +204,7 @@ share/osinfo/os/centos.org/centos-6.9.xml
 share/osinfo/os/centos.org/centos-7.0.xml
 share/osinfo/os/centos.org/centos-8.xml
 share/osinfo/os/centos.org/centos-stream-8.xml
+share/osinfo/os/centos.org/centos-stream-9.xml
 share/osinfo/os/cirros-cloud.net/
 share/osinfo/os/cirros-cloud.net/cirros-0.3.0.xml
 share/osinfo/os/cirros-cloud.net/cirros-0.3.1.xml
@@ -561,6 +563,7 @@ share/osinfo/os/netbsd.org/netbsd-9.0.xml
 share/osinfo/os/nixos.org/
 share/osinfo/os/nixos.org/nixos-20.03.xml
 share/osinfo/os/nixos.org/nixos-20.09.xml
+share/osinfo/os/nixos.org/nixos-21.05.xml
 share/osinfo/os/nixos.org/nixos-unknown.xml
 share/osinfo/os/nixos.org/nixos-unstable.xml
 share/osinfo/os/novell.com/
@@ -592,6 +595,8 @@ share/osinfo/os/openbsd.org/openbsd-6.4.xml
 share/osinfo/os/openbsd.org/openbsd-6.5.xml
 share/osinfo/os/openbsd.org/openbsd-6.6.xml
 share/osinfo/os/openbsd.org/openbsd-6.7.xml
+share/osinfo/os/openbsd.org/openbsd-6.8.xml
+share/osinfo/os/openbsd.org/openbsd-6.9.xml
 share/osinfo/os/opensuse.org/
 share/osinfo/os/opensuse.org/opensuse-10.2.xml
 share/osinfo/os/opensuse.org/opensuse-10.3.xml
@@ -805,6 +810,7 @@ share/osinfo/os/suse.com/caasp-unknown.xml
 share/osinfo/os/suse.com/sle-15-unknown.xml
 share/osinfo/os/suse.com/sle-15.1.xml
 share/osinfo/os/suse.com/sle-15.2.xml
+share/osinfo/os/suse.com/sle-15.3.xml
 share/osinfo/os/suse.com/sle-15.xml
 share/osinfo/os/suse.com/sle-unknown.xml
 share/osinfo/os/suse.com/sled-10.1.xml
@@ -825,6 +831,7 @@ share/osinfo/os/suse.com/sled-12.4.xml
 share/osinfo/os/suse.com/sled-12.5.xml
 share/osinfo/os/suse.com/sled-12.xml
 share/osinfo/os/suse.com/sled-9.xml
+share/osinfo/os/suse.com/slem-5.0.xml
 share/osinfo/os/suse.com/sles-10.1.xml
 share/osinfo/os/suse.com/sles-10.2.xml
 share/osinfo/os/suse.com/sles-10.3.xml
