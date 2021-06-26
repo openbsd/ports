@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2021/06/25 17:42:59 kirby Exp $
+# $OpenBSD: Makefile,v 1.17 2021/06/26 06:25:41 kirby Exp $
 
 COMMENT=		rogue-like zombie survival game
 CATEGORIES=		games
@@ -30,8 +30,8 @@ LIB_DEPENDS=		devel/gettext,-runtime
 
 MAKE_ENV=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
-MAKE_FLAGS=		ASTYLE=0 BSD=1 RELEASE=1 USE_XDG_DIR=1 \
-			LINTJSON=0 LOCALIZE=1 LANGUAGES=all BACKTRACE=1
+MAKE_FLAGS=		ASTYLE=0 RELEASE=1 USE_XDG_DIR=1 \
+			LINTJSON=0 LANGUAGES=all
 
 .if ${FLAVOR:Mno_x11}
 WANTLIB+=		curses
