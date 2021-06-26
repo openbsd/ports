@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.16 2021/03/01 20:40:52 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.17 2021/06/26 15:21:53 sthen Exp $
 
 COMMENT-main ?=	Java servlet and Java server pages server
 COMMENT-examples =example applications and full documentation
@@ -21,9 +21,7 @@ HOMEPAGE =	http://tomcat.apache.org/
 MULTI_PACKAGES = -main -examples
 
 MODULES =	java
-# some issues seen with jdk/11; at least tomcat + lang/lucee results in 404s
-# when things work as-is with 1.8
-MODJAVA_VER ?=	1.8
+MODJAVA_VER ?=	1.8+
 
 RUN_DEPENDS =	java/javaPathHelper
 
