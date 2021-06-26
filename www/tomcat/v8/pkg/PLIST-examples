@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.34 2021/03/01 20:40:38 sthen Exp $
+@comment $OpenBSD: PLIST-examples,v 1.35 2021/06/26 15:19:43 sthen Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -65,11 +65,7 @@ webapps/docs/annotationapi/overview-frame.html
 webapps/docs/annotationapi/overview-summary.html
 webapps/docs/annotationapi/overview-tree.html
 webapps/docs/annotationapi/package-list
-webapps/docs/annotationapi/resources/
-webapps/docs/annotationapi/resources/background.gif
-webapps/docs/annotationapi/resources/tab.gif
-webapps/docs/annotationapi/resources/titlebar.gif
-webapps/docs/annotationapi/resources/titlebar_end.gif
+webapps/docs/annotationapi/script.js
 webapps/docs/annotationapi/stylesheet.css
 webapps/docs/api/
 webapps/docs/api/allclasses-frame.html
@@ -480,6 +476,7 @@ webapps/docs/api/org/apache/catalina/realm/NullRealm.html
 webapps/docs/api/org/apache/catalina/realm/RealmBase.AllRolesMode.html
 webapps/docs/api/org/apache/catalina/realm/RealmBase.html
 webapps/docs/api/org/apache/catalina/realm/SecretKeyCredentialHandler.html
+webapps/docs/api/org/apache/catalina/realm/UserDatabaseRealm.UserDatabasePrincipal.html
 webapps/docs/api/org/apache/catalina/realm/UserDatabaseRealm.html
 webapps/docs/api/org/apache/catalina/realm/X509SubjectDnRetriever.html
 webapps/docs/api/org/apache/catalina/realm/X509UsernameRetriever.html
@@ -1073,31 +1070,12 @@ webapps/docs/api/org/apache/coyote/http11/upgrade/package-frame.html
 webapps/docs/api/org/apache/coyote/http11/upgrade/package-summary.html
 webapps/docs/api/org/apache/coyote/http11/upgrade/package-tree.html
 webapps/docs/api/org/apache/coyote/http2/
-webapps/docs/api/org/apache/coyote/http2/ByteUtil.html
-webapps/docs/api/org/apache/coyote/http2/ConnectionException.html
-webapps/docs/api/org/apache/coyote/http2/ConnectionSettingsBase.html
-webapps/docs/api/org/apache/coyote/http2/ConnectionSettingsLocal.html
-webapps/docs/api/org/apache/coyote/http2/ConnectionSettingsRemote.html
 webapps/docs/api/org/apache/coyote/http2/Constants.html
-webapps/docs/api/org/apache/coyote/http2/Flags.html
-webapps/docs/api/org/apache/coyote/http2/FrameType.html
 webapps/docs/api/org/apache/coyote/http2/HPackHuffman.HuffmanCode.html
 webapps/docs/api/org/apache/coyote/http2/HPackHuffman.html
-webapps/docs/api/org/apache/coyote/http2/HeaderSink.html
 webapps/docs/api/org/apache/coyote/http2/HpackDecoder.html
-webapps/docs/api/org/apache/coyote/http2/HpackEncoder.HpackHeaderFunction.html
-webapps/docs/api/org/apache/coyote/http2/HpackEncoder.State.html
-webapps/docs/api/org/apache/coyote/http2/HpackEncoder.html
-webapps/docs/api/org/apache/coyote/http2/HpackException.html
-webapps/docs/api/org/apache/coyote/http2/Http2Error.html
-webapps/docs/api/org/apache/coyote/http2/Http2Exception.html
 webapps/docs/api/org/apache/coyote/http2/Http2OutputBuffer.html
 webapps/docs/api/org/apache/coyote/http2/Http2Protocol.html
-webapps/docs/api/org/apache/coyote/http2/Http2UpgradeHandler.html
-webapps/docs/api/org/apache/coyote/http2/Setting.html
-webapps/docs/api/org/apache/coyote/http2/Stream.html
-webapps/docs/api/org/apache/coyote/http2/StreamException.html
-webapps/docs/api/org/apache/coyote/http2/StreamStateMachine.html
 webapps/docs/api/org/apache/coyote/http2/package-frame.html
 webapps/docs/api/org/apache/coyote/http2/package-summary.html
 webapps/docs/api/org/apache/coyote/http2/package-tree.html
@@ -1815,6 +1793,7 @@ webapps/docs/api/org/apache/tomcat/util/digester/Rules.html
 webapps/docs/api/org/apache/tomcat/util/digester/RulesBase.html
 webapps/docs/api/org/apache/tomcat/util/digester/SetNextRule.html
 webapps/docs/api/org/apache/tomcat/util/digester/SetPropertiesRule.html
+webapps/docs/api/org/apache/tomcat/util/digester/SystemPropertySource.html
 webapps/docs/api/org/apache/tomcat/util/digester/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/digester/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/digester/package-tree.html
@@ -2128,12 +2107,17 @@ webapps/docs/api/org/apache/tomcat/websocket/AuthenticatorFactory.html
 webapps/docs/api/org/apache/tomcat/websocket/BackgroundProcess.html
 webapps/docs/api/org/apache/tomcat/websocket/BackgroundProcessManager.html
 webapps/docs/api/org/apache/tomcat/websocket/BasicAuthenticator.html
+webapps/docs/api/org/apache/tomcat/websocket/ClientEndpointHolder.html
 webapps/docs/api/org/apache/tomcat/websocket/Constants.html
 webapps/docs/api/org/apache/tomcat/websocket/DecoderEntry.html
 webapps/docs/api/org/apache/tomcat/websocket/DigestAuthenticator.html
+webapps/docs/api/org/apache/tomcat/websocket/EndpointClassHolder.html
+webapps/docs/api/org/apache/tomcat/websocket/EndpointHolder.html
 webapps/docs/api/org/apache/tomcat/websocket/MessageHandlerResult.html
 webapps/docs/api/org/apache/tomcat/websocket/MessageHandlerResultType.html
 webapps/docs/api/org/apache/tomcat/websocket/PerMessageDeflate.html
+webapps/docs/api/org/apache/tomcat/websocket/PojoClassHolder.html
+webapps/docs/api/org/apache/tomcat/websocket/PojoHolder.html
 webapps/docs/api/org/apache/tomcat/websocket/ReadBufferOverflowException.html
 webapps/docs/api/org/apache/tomcat/websocket/Transformation.html
 webapps/docs/api/org/apache/tomcat/websocket/TransformationFactory.html
@@ -2200,11 +2184,7 @@ webapps/docs/api/overview-frame.html
 webapps/docs/api/overview-summary.html
 webapps/docs/api/overview-tree.html
 webapps/docs/api/package-list
-webapps/docs/api/resources/
-webapps/docs/api/resources/background.gif
-webapps/docs/api/resources/tab.gif
-webapps/docs/api/resources/titlebar.gif
-webapps/docs/api/resources/titlebar_end.gif
+webapps/docs/api/script.js
 webapps/docs/api/serialized-form.html
 webapps/docs/api/stylesheet.css
 webapps/docs/appdev/
@@ -2340,11 +2320,7 @@ webapps/docs/elapi/javax/el/package-summary.html
 webapps/docs/elapi/javax/el/package-tree.html
 webapps/docs/elapi/overview-tree.html
 webapps/docs/elapi/package-list
-webapps/docs/elapi/resources/
-webapps/docs/elapi/resources/background.gif
-webapps/docs/elapi/resources/tab.gif
-webapps/docs/elapi/resources/titlebar.gif
-webapps/docs/elapi/resources/titlebar_end.gif
+webapps/docs/elapi/script.js
 webapps/docs/elapi/serialized-form.html
 webapps/docs/elapi/stylesheet.css
 webapps/docs/extras.html
@@ -2440,11 +2416,7 @@ webapps/docs/jaspicapi/overview-frame.html
 webapps/docs/jaspicapi/overview-summary.html
 webapps/docs/jaspicapi/overview-tree.html
 webapps/docs/jaspicapi/package-list
-webapps/docs/jaspicapi/resources/
-webapps/docs/jaspicapi/resources/background.gif
-webapps/docs/jaspicapi/resources/tab.gif
-webapps/docs/jaspicapi/resources/titlebar.gif
-webapps/docs/jaspicapi/resources/titlebar_end.gif
+webapps/docs/jaspicapi/script.js
 webapps/docs/jaspicapi/serialized-form.html
 webapps/docs/jaspicapi/stylesheet.css
 webapps/docs/jdbc-pool.html
@@ -2527,11 +2499,7 @@ webapps/docs/jspapi/overview-frame.html
 webapps/docs/jspapi/overview-summary.html
 webapps/docs/jspapi/overview-tree.html
 webapps/docs/jspapi/package-list
-webapps/docs/jspapi/resources/
-webapps/docs/jspapi/resources/background.gif
-webapps/docs/jspapi/resources/tab.gif
-webapps/docs/jspapi/resources/titlebar.gif
-webapps/docs/jspapi/resources/titlebar_end.gif
+webapps/docs/jspapi/script.js
 webapps/docs/jspapi/serialized-form.html
 webapps/docs/jspapi/stylesheet.css
 webapps/docs/logging.html
@@ -2651,11 +2619,7 @@ webapps/docs/servletapi/overview-frame.html
 webapps/docs/servletapi/overview-summary.html
 webapps/docs/servletapi/overview-tree.html
 webapps/docs/servletapi/package-list
-webapps/docs/servletapi/resources/
-webapps/docs/servletapi/resources/background.gif
-webapps/docs/servletapi/resources/tab.gif
-webapps/docs/servletapi/resources/titlebar.gif
-webapps/docs/servletapi/resources/titlebar_end.gif
+webapps/docs/servletapi/script.js
 webapps/docs/servletapi/serialized-form.html
 webapps/docs/servletapi/stylesheet.css
 webapps/docs/setup.html
@@ -2743,11 +2707,7 @@ webapps/docs/websocketapi/overview-frame.html
 webapps/docs/websocketapi/overview-summary.html
 webapps/docs/websocketapi/overview-tree.html
 webapps/docs/websocketapi/package-list
-webapps/docs/websocketapi/resources/
-webapps/docs/websocketapi/resources/background.gif
-webapps/docs/websocketapi/resources/tab.gif
-webapps/docs/websocketapi/resources/titlebar.gif
-webapps/docs/websocketapi/resources/titlebar_end.gif
+webapps/docs/websocketapi/script.js
 webapps/docs/websocketapi/serialized-form.html
 webapps/docs/websocketapi/stylesheet.css
 webapps/docs/windows-auth-howto.html
