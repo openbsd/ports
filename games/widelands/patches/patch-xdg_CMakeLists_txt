@@ -1,0 +1,24 @@
+$OpenBSD: patch-xdg_CMakeLists_txt,v 1.1 2021/06/26 05:31:16 kirby Exp $
+
+Index: xdg/CMakeLists.txt
+--- xdg/CMakeLists.txt.orig
++++ xdg/CMakeLists.txt
+@@ -6,14 +6,14 @@ set(XDG_APPLICATION_ID "org.widelands.Widelands")
+ list(APPEND icon_sizes "16" "32" "48" "64" "128")
+ foreach (icon_size ${icon_sizes})
+   #install(FILES ${CMAKE_SOURCE_DIR}/data/images/logos/wl-ico-${icon_size}.png DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/${icon_size}x${icon_size}/apps RENAME ${XDG_APPLICATION_ID}.png)
+-  install(FILES ${CMAKE_SOURCE_DIR}/data/images/logos/wl-ico-${icon_size}.png DESTINATION ../share/icons/hicolor/${icon_size}x${icon_size}/apps RENAME ${XDG_APPLICATION_ID}.png)
++  install(FILES ${CMAKE_SOURCE_DIR}/data/images/logos/wl-ico-${icon_size}.png DESTINATION share/icons/hicolor/${icon_size}x${icon_size}/apps RENAME ${XDG_APPLICATION_ID}.png)
+ endforeach (icon_size ${icon_sizes})
+ #install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/${CMAKE_PROJECT_NAME}.6           DESTINATION ${CMAKE_INSTALL_MANDIR}/man6)
+-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/${CMAKE_PROJECT_NAME}.6           DESTINATION ../share/man/man6)
++install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/${CMAKE_PROJECT_NAME}.6           DESTINATION man/man6)
+ #install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/${XDG_APPLICATION_ID}.desktop     DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications)
+-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/${XDG_APPLICATION_ID}.desktop     DESTINATION ../share/applications)
++install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/${XDG_APPLICATION_ID}.desktop     DESTINATION share/applications)
+ #install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/${XDG_APPLICATION_ID}.appdata.xml DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/metainfo)
+-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/${XDG_APPLICATION_ID}.appdata.xml DESTINATION ../share/metainfo)
++install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/${XDG_APPLICATION_ID}.appdata.xml DESTINATION share/metainfo)
+ 
+ find_program(GTK_UPDATE_ICON_CACHE NAMES gtk-update-icon-cache)
+ if (GTK_UPDATE_ICON_CACHE)

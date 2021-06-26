@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.33 2021/06/09 19:50:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2021/06/26 05:31:16 kirby Exp $
 
 COMMENT =	economic and military simulation game
 
-V =		21
-DISTNAME = 	widelands-build${V}-source
-PKGNAME =	widelands-0.${V}
-CATEGORIES =	games
-REVISION =	0
+GH_ACCOUNT = 	widelands
+GH_PROJECT = 	widelands
+GH_TAGNAME = 	v1.0
 
-HOMEPAGE =	https://wl.widelands.org/
-MASTER_SITES =	https://launchpad.net/widelands/build${V}/build${V}/+download/
+CATEGORIES =	games
+
+HOMEPAGE =	https://www.widelands.org/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW SDL2 SDL2_image SDL2_mixer
-WANTLIB += SDL2_ttf boost_regex-mt boost_unit_test_framework-mt boost_system-mt
-WANTLIB += c execinfo iconv icuuc intl m png z
+WANTLIB += SDL2_ttf boost_unit_test_framework-mt boost_system-mt
+WANTLIB += c curl execinfo iconv icudata icuuc intl m png z
 
 # c++11
 COMPILER =	base-clang ports-gcc
@@ -29,18 +28,22 @@ LIB_DEPENDS =	devel/boost \
 		devel/sdl2-ttf \
 		graphics/png \
 		graphics/glew \
+		net/curl \
 		textproc/icu4c
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+3,-guic
 
 MODULES =	devel/cmake \
 		lang/lua \
 		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_RUNDEP=	No
 
 CONFIGURE_ARGS =	-DWL_INSTALL_DATADIR=${PREFIX}/share/widelands \
 			-DWL_INSTALL_BASEDIR=${PREFIX}/share/widelands \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
+			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
+			-DGTK_UPDATE_ICON_CACHE=False \
+			-Wno-dev
 
 CONFIGURE_ENV =	LDFLAGS="${LDFLAGS} -lGL -lexecinfo -lintl -liconv \
 			-L${LOCALBASE}/lib -L${X11BASE}/lib"
