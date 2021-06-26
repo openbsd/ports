@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.9 2021/03/01 20:40:29 sthen Exp $
+@comment $OpenBSD: PLIST-examples,v 1.10 2021/06/26 15:21:12 sthen Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -480,6 +480,7 @@ webapps/docs/api/org/apache/catalina/realm/NullRealm.html
 webapps/docs/api/org/apache/catalina/realm/RealmBase.AllRolesMode.html
 webapps/docs/api/org/apache/catalina/realm/RealmBase.html
 webapps/docs/api/org/apache/catalina/realm/SecretKeyCredentialHandler.html
+webapps/docs/api/org/apache/catalina/realm/UserDatabaseRealm.UserDatabasePrincipal.html
 webapps/docs/api/org/apache/catalina/realm/UserDatabaseRealm.html
 webapps/docs/api/org/apache/catalina/realm/X509SubjectDnRetriever.html
 webapps/docs/api/org/apache/catalina/realm/X509UsernameRetriever.html
@@ -1189,6 +1190,7 @@ webapps/docs/api/org/apache/jasper/compiler/JspRuntimeContext.html
 webapps/docs/api/org/apache/jasper/compiler/JspUtil.ValidAttribute.html
 webapps/docs/api/org/apache/jasper/compiler/JspUtil.html
 webapps/docs/api/org/apache/jasper/compiler/Localizer.html
+webapps/docs/api/org/apache/jasper/compiler/NewlineReductionServletWriter.html
 webapps/docs/api/org/apache/jasper/compiler/ServletWriter.html
 webapps/docs/api/org/apache/jasper/compiler/SmapInput.html
 webapps/docs/api/org/apache/jasper/compiler/SmapStratum.html
@@ -1819,6 +1821,7 @@ webapps/docs/api/org/apache/tomcat/util/digester/RulesBase.html
 webapps/docs/api/org/apache/tomcat/util/digester/SetNextRule.html
 webapps/docs/api/org/apache/tomcat/util/digester/SetPropertiesRule.Listener.html
 webapps/docs/api/org/apache/tomcat/util/digester/SetPropertiesRule.html
+webapps/docs/api/org/apache/tomcat/util/digester/SystemPropertySource.html
 webapps/docs/api/org/apache/tomcat/util/digester/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/digester/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/digester/package-tree.html
@@ -1996,10 +1999,6 @@ webapps/docs/api/org/apache/tomcat/util/net/Nio2Endpoint.Nio2SocketWrapper.html
 webapps/docs/api/org/apache/tomcat/util/net/Nio2Endpoint.SendfileData.html
 webapps/docs/api/org/apache/tomcat/util/net/Nio2Endpoint.SocketProcessor.html
 webapps/docs/api/org/apache/tomcat/util/net/Nio2Endpoint.html
-webapps/docs/api/org/apache/tomcat/util/net/NioBlockingSelector.BlockPoller.RunnableCancel.html
-webapps/docs/api/org/apache/tomcat/util/net/NioBlockingSelector.BlockPoller.html
-webapps/docs/api/org/apache/tomcat/util/net/NioBlockingSelector.KeyReference.html
-webapps/docs/api/org/apache/tomcat/util/net/NioBlockingSelector.html
 webapps/docs/api/org/apache/tomcat/util/net/NioChannel.html
 webapps/docs/api/org/apache/tomcat/util/net/NioEndpoint.NioSocketWrapper.html
 webapps/docs/api/org/apache/tomcat/util/net/NioEndpoint.Poller.html
@@ -2007,7 +2006,6 @@ webapps/docs/api/org/apache/tomcat/util/net/NioEndpoint.PollerEvent.html
 webapps/docs/api/org/apache/tomcat/util/net/NioEndpoint.SendfileData.html
 webapps/docs/api/org/apache/tomcat/util/net/NioEndpoint.SocketProcessor.html
 webapps/docs/api/org/apache/tomcat/util/net/NioEndpoint.html
-webapps/docs/api/org/apache/tomcat/util/net/NioSelectorPool.html
 webapps/docs/api/org/apache/tomcat/util/net/SSLContext.html
 webapps/docs/api/org/apache/tomcat/util/net/SSLHostConfig.CertificateVerification.html
 webapps/docs/api/org/apache/tomcat/util/net/SSLHostConfig.Type.html
@@ -2139,12 +2137,17 @@ webapps/docs/api/org/apache/tomcat/websocket/AuthenticatorFactory.html
 webapps/docs/api/org/apache/tomcat/websocket/BackgroundProcess.html
 webapps/docs/api/org/apache/tomcat/websocket/BackgroundProcessManager.html
 webapps/docs/api/org/apache/tomcat/websocket/BasicAuthenticator.html
+webapps/docs/api/org/apache/tomcat/websocket/ClientEndpointHolder.html
 webapps/docs/api/org/apache/tomcat/websocket/Constants.html
 webapps/docs/api/org/apache/tomcat/websocket/DecoderEntry.html
 webapps/docs/api/org/apache/tomcat/websocket/DigestAuthenticator.html
+webapps/docs/api/org/apache/tomcat/websocket/EndpointClassHolder.html
+webapps/docs/api/org/apache/tomcat/websocket/EndpointHolder.html
 webapps/docs/api/org/apache/tomcat/websocket/MessageHandlerResult.html
 webapps/docs/api/org/apache/tomcat/websocket/MessageHandlerResultType.html
 webapps/docs/api/org/apache/tomcat/websocket/PerMessageDeflate.html
+webapps/docs/api/org/apache/tomcat/websocket/PojoClassHolder.html
+webapps/docs/api/org/apache/tomcat/websocket/PojoHolder.html
 webapps/docs/api/org/apache/tomcat/websocket/ReadBufferOverflowException.html
 webapps/docs/api/org/apache/tomcat/websocket/Transformation.html
 webapps/docs/api/org/apache/tomcat/websocket/TransformationFactory.html
