@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/04/02 19:49:59 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/06/26 05:28:20 rsadowski Exp $
 bin/as2gbmap
 @bin bin/makebin
 @bin bin/packihx
@@ -8662,6 +8662,11 @@ share/sdcc/non-free/lib/pic14/pic16f1764.lib
 share/sdcc/non-free/lib/pic14/pic16f1765.lib
 share/sdcc/non-free/lib/pic14/pic16f1768.lib
 share/sdcc/non-free/lib/pic14/pic16f1769.lib
+share/sdcc/non-free/lib/pic14/pic16f1773.lib
+share/sdcc/non-free/lib/pic14/pic16f1776.lib
+share/sdcc/non-free/lib/pic14/pic16f1777.lib
+share/sdcc/non-free/lib/pic14/pic16f1778.lib
+share/sdcc/non-free/lib/pic14/pic16f1779.lib
 share/sdcc/non-free/lib/pic14/pic16f1782.lib
 share/sdcc/non-free/lib/pic14/pic16f1783.lib
 share/sdcc/non-free/lib/pic14/pic16f1784.lib
@@ -8684,6 +8689,8 @@ share/sdcc/non-free/lib/pic14/pic16f18325.lib
 share/sdcc/non-free/lib/pic14/pic16f18344.lib
 share/sdcc/non-free/lib/pic14/pic16f18345.lib
 share/sdcc/non-free/lib/pic14/pic16f1847.lib
+share/sdcc/non-free/lib/pic14/pic16f18855.lib
+share/sdcc/non-free/lib/pic14/pic16f18875.lib
 share/sdcc/non-free/lib/pic14/pic16f1933.lib
 share/sdcc/non-free/lib/pic14/pic16f1934.lib
 share/sdcc/non-free/lib/pic14/pic16f1936.lib
@@ -8806,6 +8813,11 @@ share/sdcc/non-free/lib/pic14/pic16lf1764.lib
 share/sdcc/non-free/lib/pic14/pic16lf1765.lib
 share/sdcc/non-free/lib/pic14/pic16lf1768.lib
 share/sdcc/non-free/lib/pic14/pic16lf1769.lib
+share/sdcc/non-free/lib/pic14/pic16lf1773.lib
+share/sdcc/non-free/lib/pic14/pic16lf1776.lib
+share/sdcc/non-free/lib/pic14/pic16lf1777.lib
+share/sdcc/non-free/lib/pic14/pic16lf1778.lib
+share/sdcc/non-free/lib/pic14/pic16lf1779.lib
 share/sdcc/non-free/lib/pic14/pic16lf1782.lib
 share/sdcc/non-free/lib/pic14/pic16lf1783.lib
 share/sdcc/non-free/lib/pic14/pic16lf1784.lib
@@ -8828,6 +8840,8 @@ share/sdcc/non-free/lib/pic14/pic16lf18325.lib
 share/sdcc/non-free/lib/pic14/pic16lf18344.lib
 share/sdcc/non-free/lib/pic14/pic16lf18345.lib
 share/sdcc/non-free/lib/pic14/pic16lf1847.lib
+share/sdcc/non-free/lib/pic14/pic16lf18855.lib
+share/sdcc/non-free/lib/pic14/pic16lf18875.lib
 share/sdcc/non-free/lib/pic14/pic16lf1902.lib
 share/sdcc/non-free/lib/pic14/pic16lf1903.lib
 share/sdcc/non-free/lib/pic14/pic16lf1904.lib
