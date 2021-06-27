@@ -1,14 +1,14 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2019/04/04 10:36:45 sthen Exp $
+$OpenBSD: patch-Makefile_in,v 1.3 2021/06/27 23:49:58 namn Exp $
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -1469,7 +1469,7 @@ distuninstallcheck_listfiles = find . -type f | \
+@@ -1644,7 +1644,7 @@ distuninstallcheck_listfiles = find . -type f | \
  ACLOCAL_AMFLAGS = -I m4
  
  # subdirectories in the distribution
--SUBDIRS = lib src doc po util fuzz tests testenv
-+SUBDIRS = lib src doc po util tests testenv
+-SUBDIRS = lib src doc po gnulib_po util fuzz tests testenv
++SUBDIRS = lib src doc po gnulib_po util tests testenv
  EXTRA_DIST = MAILING-LIST \
               msdos/config.h msdos/Makefile.DJ \
               msdos/Makefile.WC ABOUT-NLS \

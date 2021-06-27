@@ -1,8 +1,8 @@
-$OpenBSD: patch-doc_wget_texi,v 1.16 2019/02/21 22:32:31 sthen Exp $
+$OpenBSD: patch-doc_wget_texi,v 1.17 2021/06/27 23:49:58 namn Exp $
 Index: doc/wget.texi
 --- doc/wget.texi.orig
 +++ doc/wget.texi
-@@ -190,7 +190,7 @@ gauge can be customized to your preferences.
+@@ -195,7 +195,7 @@ gauge can be customized to your preferences.
  Most of the features are fully configurable, either through command line
  options, or via the initialization file @file{.wgetrc} (@pxref{Startup
  File}).  Wget allows you to define @dfn{global} startup files
@@ -11,7 +11,7 @@ Index: doc/wget.texi
  specify the location of a startup file with the --config option.
  To disable the reading of config files, use --no-config.
  If both --config and --no-config are given, --no-config is ignored.
-@@ -199,7 +199,7 @@ If both --config and --no-config are given, --no-confi
+@@ -204,7 +204,7 @@ If both --config and --no-config are given, --no-confi
  @ignore
  @c man begin FILES
  @table @samp
@@ -20,7 +20,7 @@ Index: doc/wget.texi
  Default location of the @dfn{global} startup file.
  
  @item .wgetrc
-@@ -3166,9 +3166,8 @@ commands.
+@@ -3185,9 +3185,8 @@ commands.
  @cindex location of wgetrc
  
  When initializing, Wget will look for a @dfn{global} startup file,
@@ -32,7 +32,7 @@ Index: doc/wget.texi
  
  Then it will look for the user's file.  If the environmental variable
  @code{WGETRC} is set, Wget will try to load that file.  Failing that, no
-@@ -3178,7 +3177,7 @@ If @code{WGETRC} is not set, Wget will try to load @fi
+@@ -3197,7 +3196,7 @@ If @code{WGETRC} is not set, Wget will try to load @fi
  
  The fact that user's settings are loaded after the system-wide ones
  means that in case of collision user's wgetrc @emph{overrides} the
