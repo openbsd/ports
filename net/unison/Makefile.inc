@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.32 2021/02/01 05:31:03 bket Exp $
+# $OpenBSD: Makefile.inc,v 1.33 2021/06/27 19:17:41 bket Exp $
 
 COMMENT=	multi-platform file synchronization tool
 
@@ -56,7 +56,7 @@ PORTHOME=	${WRKDIR}
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/src
 
-DOCS=		BUGS.txt NEWS README
+DOCS+=		NEWS README
 
 # Avoid the nightmare of their Makefile install target.
 # Do not use INSTALL_PROGRAM, as the bytecode version must not be stripped!
