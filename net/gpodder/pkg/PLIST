@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2020/07/05 14:56:22 kn Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/06/28 07:26:05 sthen Exp $
 bin/gpo
 bin/gpodder
 bin/gpodder-migrate2tres
@@ -28,8 +28,6 @@ lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}directory.${MOD
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}directory.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}download.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}download.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}escapist_videos.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}escapist_videos.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}extensions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}extensions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}feedcore.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -60,8 +58,6 @@ lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}sync.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}sync.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}syncui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}syncui.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}unittests.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}unittests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}utilwin32ctypes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -82,7 +78,6 @@ lib/python${MODPY_VERSION}/site-packages/gpodder/dbusproxy.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/deviceplaylist.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/directory.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/download.py
-lib/python${MODPY_VERSION}/site-packages/gpodder/escapist_videos.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/extensions.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/feedcore.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/
@@ -193,15 +188,6 @@ lib/python${MODPY_VERSION}/site-packages/gpodder/schema.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/services.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/sync.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/syncui.py
-lib/python${MODPY_VERSION}/site-packages/gpodder/test/
-lib/python${MODPY_VERSION}/site-packages/gpodder/test/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gpodder/test/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/gpodder/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/gpodder/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gpodder/test/${MODPY_PYCACHE}model.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/gpodder/test/${MODPY_PYCACHE}model.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gpodder/test/model.py
-lib/python${MODPY_VERSION}/site-packages/gpodder/unittests.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/util.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/utilwin32ctypes.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/utilwin32locale.py
@@ -350,9 +336,6 @@ share/locale/ro/LC_MESSAGES/gpodder.mo
 share/locale/ru/LC_MESSAGES/gpodder.mo
 share/locale/sv/LC_MESSAGES/gpodder.mo
 share/locale/tr/LC_MESSAGES/gpodder.mo
-share/locale/tr_TR/
-share/locale/tr_TR/LC_MESSAGES/
-share/locale/tr_TR/LC_MESSAGES/gpodder.mo
 share/locale/uk/LC_MESSAGES/gpodder.mo
 share/locale/zh_CN/LC_MESSAGES/gpodder.mo
 @tag update-desktop-database

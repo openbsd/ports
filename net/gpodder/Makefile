@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2021/02/23 19:39:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2021/06/28 07:26:05 sthen Exp $
 
 COMMENT=		media aggregator and podcast client
 
-MODPY_EGG_VERSION=	3.10.17
+MODPY_EGG_VERSION=	3.10.20
 
 GH_ACCOUNT=		gpodder
 GH_PROJECT=		gpodder
@@ -20,13 +20,13 @@ PERMIT_PACKAGE=		Yes
 MODULES=		lang/python \
 			textproc/intltool
 
-# XXX Causes python crash
-#MODPY_PYTEST=		Yes
+TEST_ENV=		PYTEST=py.test
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/gettext,-runtime \
 			devel/py-html5lib${MODPY_FLAVOR} \
 			devel/py-gobject3${MODPY_FLAVOR} \
+			www/py-requests${MODPY_FLAVOR} \
 			net/mygpoclient \
 			textproc/py-podcastparser${MODPY_FLAVOR} \
 			www/youtube-dl \
