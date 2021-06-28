@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2018/06/29 09:58:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2021/06/28 11:18:18 espie Exp $
 @unexec-delete rm ${SYSCONFDIR}/xml/catalog
 share/sgml/catalog
 share/sgml/docbook/2.4.1/
@@ -299,4 +299,4 @@ share/xml/docbook/catalog.xml
 share/libxml2/docbook.spec
 @sample ${SYSCONFDIR}/xml/
 @tag libxml2/rebuild
-@exec ln -sf /var/db/xmlcatalog ${SYSCONFDIR}/xml/catalog
+@exec-add ln -sf /var/db/xmlcatalog ${SYSCONFDIR}/xml/catalog
