@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/02/13 16:27:22 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/06/28 15:20:15 bcallah Exp $
 @bin bin/astarithmetic
 @bin bin/astbuildprog
 @bin bin/astconvertt
@@ -12,6 +12,8 @@
 @bin bin/astmkprof
 @bin bin/astnoisechisel
 @bin bin/astquery
+bin/astscript-ds9-region
+bin/astscript-radial-profile
 bin/astscript-sort-by-night
 @bin bin/astsegment
 @bin bin/aststatistics
@@ -28,6 +30,7 @@ include/gnuastro/convolve.h
 include/gnuastro/cosmology.h
 include/gnuastro/data.h
 include/gnuastro/dimension.h
+include/gnuastro/ds9.h
 include/gnuastro/eps.h
 include/gnuastro/fits.h
 include/gnuastro/git.h
@@ -54,6 +57,7 @@ include/gnuastro/units.h
 include/gnuastro/wcs.h
 info/gnuastro-figures/
 info/gnuastro-figures/README
+info/gnuastro-figures/done.txt
 info/gnuastro-figures/epicycles.eps
 info/gnuastro-figures/epicycles.png
 info/gnuastro-figures/epicycles.txt
@@ -91,11 +95,16 @@ lib/pkgconfig/gnuastro.pc
 @man man/man1/astmkprof.1
 @man man/man1/astnoisechisel.1
 @man man/man1/astquery.1
+@man man/man1/astscript-ds9-region.1
+@man man/man1/astscript-radial-profile.1
 @man man/man1/astscript-sort-by-night.1
 @man man/man1/astsegment.1
 @man man/man1/aststatistics.1
 @man man/man1/asttable.1
 @man man/man1/astwarp.1
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/gnuastro
 share/doc/gnuastro/
 share/doc/gnuastro/README
 share/examples/gnuastro/
@@ -123,9 +132,14 @@ share/examples/gnuastro/astmkprof-3d.conf
 @sample ${SYSCONFDIR}/astmkprof-3d.conf
 share/examples/gnuastro/astmkprof.conf
 @sample ${SYSCONFDIR}/astmkprof.conf
+share/examples/gnuastro/astnoisechisel-3d.conf
+@sample ${SYSCONFDIR}/astnoisechisel-3d.conf
 share/examples/gnuastro/astnoisechisel.conf
 @sample ${SYSCONFDIR}/astnoisechisel.conf
 share/examples/gnuastro/astquery.conf
+@sample ${SYSCONFDIR}/astquery.conf
+share/examples/gnuastro/astsegment-3d.conf
+@sample ${SYSCONFDIR}/astsegment-3d.conf
 share/examples/gnuastro/astsegment.conf
 @sample ${SYSCONFDIR}/astsegment.conf
 share/examples/gnuastro/aststatistics.conf

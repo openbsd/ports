@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/13 16:27:22 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2021/06/28 15:20:15 bcallah Exp $
 
 COMMENT =	GNU Astronomy Utilities
-DISTNAME =	gnuastro-0.14
+DISTNAME =	gnuastro-0.15
 CATEGORIES =	astro
 
-SHARED_LIBS +=	gnuastro                  2.0 # 12.0
+SHARED_LIBS +=	gnuastro                  2.1 # 13.0
 
 HOMEPAGE =	https://www.gnu.org/software/gnuastro/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -12,16 +12,17 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c cfitsio crypto curl git2 gsl gslcblas jpeg lzma m
-WANTLIB += nghttp2 pcre pcreposix pthread ssh2 ssl tiff wcs z
-WANTLIB += zstd
+WANTLIB += bz2 c cfitsio crypto curl git2 gsl gslcblas jpeg lzma
+WANTLIB += m nghttp2 pcre pcreposix pthread ssh2 ssl tiff wcs
+WANTLIB += z zstd
 
 MASTER_SITES =	${MASTER_SITE_GNU:=gnuastro/}
 
 # Claimed to be too old; uses it anyway.
 BUILD_DEPENDS =	print/ghostscript/gnu
 
-LIB_DEPENDS =	archivers/zstd \
+LIB_DEPENDS =	archivers/bzip2 \
+		archivers/zstd \
 		astro/wcslib \
 		devel/gsl \
 		devel/libgit2/libgit2 \
@@ -34,5 +35,13 @@ CONFIGURE_STYLE =	gnu
 USE_GMAKE =	Yes
 
 FAKE_FLAGS =	sysconfdir="${PREFIX}/share/examples/gnuastro"
+
+# Move bash completion file to the appropriate directory.
+# Also, rename it to something more identifiable.
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions
+	${INSTALL_DATA} ${PREFIX}/share/gnuastro/completion.bash \
+		${PREFIX}/share/bash-completion/completions/gnuastro
+	rm -rf ${PREFIX}/share/gnuastro
 
 .include <bsd.port.mk>
