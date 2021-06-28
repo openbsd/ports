@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/06/28 15:46:34 sthen Exp $
 
 COMMENT =		extract C reference manpages from SQLite3 header file
 
-DISTNAME =		sqlite2mdoc-0.1.4
+DISTNAME =		sqlite2mdoc-0.1.10
 
 MAINTAINER =		Kristaps Dzonsons <kristaps@bsd.lv>
 
@@ -21,6 +21,6 @@ CONFIGURE_ARGS =	PREFIX="${PREFIX}"
 
 ALL_TARGET =		sqlite2mdoc
 
-NO_TEST =		Yes
+TEST_TARGET =		regress
 
 .include <bsd.port.mk>
