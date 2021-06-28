@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/06/28 17:00:20 sthen Exp $
 
 COMMENT =	decompressor for mozilla lz4json format
 
@@ -20,6 +20,7 @@ MAKE_FLAGS =	CFLAGS="-Wall ${CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -llz4 ${LDFLAGS}"
 
 ALL_TARGET =
+NO_TEST =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lz4jsoncat ${PREFIX}/bin
