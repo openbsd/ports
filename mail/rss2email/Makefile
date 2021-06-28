@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/06/28 07:24:00 sthen Exp $
 
 COMMENT =	convert RSS/Atom newsfeeds to email
 
-MODPY_EGG_VERSION = 3.12.1
+MODPY_EGG_VERSION = 3.13.1
 DISTNAME =	rss2email-${MODPY_EGG_VERSION}
 CATEGORIES =	mail www
 
@@ -18,11 +18,10 @@ RUN_DEPENDS +=	converters/py-html2text${MODPY_FLAVOR} \
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_TEST_DIR =	${WRKSRC}/test
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/r2e.1 ${PREFIX}/man/man1/
-
-do-test:
-	cd ${WRKSRC} && env PYTHONPATH=. ${MODPY_BIN} test/test.py
 
 .include <bsd.port.mk>
