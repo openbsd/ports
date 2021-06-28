@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2021/06/22 11:33:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2021/06/28 12:28:41 sthen Exp $
 
 COMMENT =		keyboard-focused browser with a minimal GUI
 
 MODPY_EGG_VERSION =	2.2.3
 DISTNAME =		qutebrowser-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://www.qutebrowser.org/
 
@@ -44,7 +44,7 @@ post-install:
 .include <bsd.port.arch.mk>
 # adblock is rust+python; selectively add the dependency to avoid
 # knocking out qutebrowser where it would otherwise work.
-.if ${PROPERTIES:Mrust}
+.if ${PROPERTIES:Mrust} && ${MACHINE_ARCH} != sparc64
 RUN_DEPENDS +=		www/py-adblock${MODPY_FLAVOR}
 .endif
 
