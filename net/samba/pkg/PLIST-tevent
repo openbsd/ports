@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST-tevent,v 1.5 2021/05/12 23:33:25 jca Exp $
+@comment $OpenBSD: PLIST-tevent,v 1.6 2021/06/28 13:24:00 jca Exp $
 include/samba-4.0/
 include/samba-4.0/tevent.h
 @lib lib/libtevent.so.${LIBtevent_VERSION}
 lib/pkgconfig/tevent.pc
-@so lib/python${MODPY_VERSION}/site-packages/_tevent.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}tevent.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}tevent.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/_tevent.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/tevent.py
