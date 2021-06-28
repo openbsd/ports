@@ -1,0 +1,17 @@
+$OpenBSD: patch-unireverse_c,v 1.1 2021/06/28 21:34:19 cwen Exp $
+
+Fix an infinite loop on archs where char is unsigned by default (arm*
+and powerpc), because EOF (-1) could not be reached by getc(3).
+
+Index: unireverse.c
+--- unireverse.c.orig
++++ unireverse.c
+@@ -151,7 +151,7 @@ int main(int ac, char **av) {
+ 
+ char * GetLine(FILE *fp, int *LineLength)
+ {
+-  char c;
++  int c;
+   int Available;
+   int CharsRead;
+   char *Line;
