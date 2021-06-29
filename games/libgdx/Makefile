@@ -1,9 +1,9 @@
-# $ OpenBSD	$
+# $OpenBSD: Makefile,v 1.4 2021/06/29 03:52:34 thfr Exp $
 
 COMMENT =		java game development framework
 VERSION =		1.9.11
 PKGNAME =		libgdx-${VERSION}
-REVISION =		0
+REVISION =		1
 
 .if ${MACHINE_ARCH} == "i386"
 M_ARCH =
@@ -28,7 +28,7 @@ WANTLIB += ${COMPILER_LIBCXX} X11 m
 MASTER_SITES0 =		https://thfr.info/distfiles/
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			m2repo-libgdx-${VERSION}.tar.gz:0
+			m2repo-libgdx-${VERSION}-tools.tar.gz:0
 
 DIST_SUBDIR =		libgdx
 
@@ -45,7 +45,7 @@ PATCHORIG =		.orig.port
 
 # mvn command
 # flags: -o: offline
-MVN =			mvn -o -Dmaven.repo.local=${WRKDIR}/m2repo-libgdx-${VERSION} package
+MVN =			mvn -o -Dmaven.repo.local=${WRKDIR}/m2repo-libgdx-${VERSION}-tools package
 
 NO_TEST =		Yes
 
@@ -96,6 +96,8 @@ do-build:
 		&& env -i ${MAKE_ENV} ${MVN}
 	cd ${WRKSRC}/extensions/gdx-box2d/gdx-box2d \
 		&& env -i ${MAKE_ENV} ${MVN}
+	cd ${WRKSRC}/extensions/gdx-tools \
+		&& env -i ${MAKE_ENV} ${MVN}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/libgdx
@@ -116,6 +118,7 @@ do-install:
 		${WRKBUILD}/extensions/gdx-freetype/target/classes/com \
 		${WRKBUILD}/extensions/gdx-controllers/gdx-controllers{,-desktop}/target/classes/com \
 		${WRKBUILD}/extensions/gdx-box2d/gdx-box2d/target/classes/com \
+		${WRKBUILD}/extensions/gdx-tools/target/classes/com \
 		${PREFIX}/share/libgdx/
 
 post-install:
