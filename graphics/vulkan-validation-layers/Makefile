@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/06/29 03:48:22 thfr Exp $
 
 COMMENT =	Vulkan Validation Layers
 
-V =		1.2.162.0
+V =		1.2.176.1
 PKGNAME =	vulkan-validation-layers-${V}
-GH_TAGNAME =	sdk-${V}
+GH_TAGNAME =	sdk.${V}-TAG
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	Vulkan-ValidationLayers
 
@@ -32,7 +32,8 @@ BUILD_DEPENDS =	graphics/glslang \
 
 CONFIGURE_ARGS +=	-DGLSLANG_INSTALL_DIR="${LOCALBASE}" \
 			-DBUILD_WSI_WAYLAND_SUPPORT=False \
-			-DSPIRV_HEADERS_INSTALL_DIR=${LOCALBASE}/include/spirv
+			-DSPIRV_HEADERS_INSTALL_DIR=${LOCALBASE}/include/spirv \
+			-DUSE_ROBIN_HOOD_HASHING=False
 
 # Tests only build if Google Test framework is in directory external/
 NO_TEST =	Yes

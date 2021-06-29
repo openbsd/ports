@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2020/12/27 15:58:43 thfr Exp $
+# $OpenBSD: Makefile,v 1.6 2021/06/29 03:48:21 thfr Exp $
 
 COMMENT =	Vulkan header files
 
-V =		1.2.162.0
+V =		1.2.176.1
 PKGNAME =	vulkan-headers-${V}
-GH_TAGNAME =	sdk-${V}
+GH_TAGNAME =	sdk.${V}-TAG
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	Vulkan-Headers
 

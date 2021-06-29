@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2020/12/27 15:58:42 thfr Exp $
+# $OpenBSD: Makefile,v 1.5 2021/06/29 03:48:20 thfr Exp $
 
 COMMENT =	SPIRV-Headers
 
-V =		1.5.4.raytracing.fixed
-PKGNAME =	spirv-headers-1.5.4pl1
-GH_TAGNAME =	${V}
+DISTNAME =	spirv-headers-1.5.4pl2
+# commit from 2021-06-23
+GH_COMMIT =	f95c3b3761ee1b1903f54ae69b526ed6f0edc3b9
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	SPIRV-Headers
 

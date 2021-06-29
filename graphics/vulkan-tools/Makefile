@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/06/29 03:48:21 thfr Exp $
 
 COMMENT =	Vulkan Utilities and Tools
 
-V =		1.2.162.0
+V =		1.2.176.1
 PKGNAME =	vulkan-tools-${V}
-GH_TAGNAME =	sdk-${V}
+GH_TAGNAME =	sdk.${V}-TAG
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	Vulkan-Tools
 

@@ -1,4 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/12/27 15:58:43 thfr Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/06/29 03:48:21 thfr Exp $
+include/vk_video/
+include/vk_video/vulkan_video_codec_h264std.h
+include/vk_video/vulkan_video_codec_h264std_decode.h
+include/vk_video/vulkan_video_codec_h264std_encode.h
+include/vk_video/vulkan_video_codec_h265std.h
+include/vk_video/vulkan_video_codec_h265std_decode.h
+include/vk_video/vulkan_video_codecs_common.h
 include/vulkan/
 include/vulkan/vk_icd.h
 include/vulkan/vk_layer.h
@@ -15,6 +22,7 @@ include/vulkan/vulkan_ggp.h
 include/vulkan/vulkan_ios.h
 include/vulkan/vulkan_macos.h
 include/vulkan/vulkan_metal.h
+include/vulkan/vulkan_screen.h
 include/vulkan/vulkan_vi.h
 include/vulkan/vulkan_wayland.h
 include/vulkan/vulkan_win32.h

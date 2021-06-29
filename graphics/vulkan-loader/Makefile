@@ -1,15 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/23 19:39:26 sthen Exp $
-
-# Integrated clang assembler doesn't work with x86 - Bug #698164
-# remove if build can be updated to clang 9.0.0 (see
-# https://github.com/KhronosGroup/Vulkan-Loader/issues/252)
-BROKEN-i386 =	clang integrated asm fails, https://github.com/KhronosGroup/Vulkan-Loader/issues/252
+# $OpenBSD: Makefile,v 1.12 2021/06/29 03:48:21 thfr Exp $
 
 COMMENT =	Vulkan ICD loader
 
-V =		1.2.162.0
+V =		1.2.176.1
 PKGNAME =	vulkan-loader-${V}
-GH_TAGNAME =	sdk-${V}
+GH_TAGNAME =	sdk.${V}-TAG
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	Vulkan-Loader
 
