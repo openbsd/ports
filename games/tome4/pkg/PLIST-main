@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2020/10/29 20:28:41 solene Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2021/06/29 06:45:08 solene Exp $
 @bin bin/tome4
 share/doc/pkg-readmes/${PKGSTEM}
 share/tome4/_realtime/
@@ -22,6 +22,11 @@ share/tome4/_realtime/data/general/npcs/kobold.lua
 share/tome4/_realtime/data/gfx/
 share/tome4/_realtime/data/gfx/particles/
 share/tome4/_realtime/data/gfx/particles/acid.lua
+share/tome4/_realtime/data/locales/
+share/tome4/_realtime/data/locales/ja_JP.lua
+share/tome4/_realtime/data/locales/ko_KR.lua
+share/tome4/_realtime/data/locales/zh_hans.lua
+share/tome4/_realtime/data/locales/zh_hant.lua
 share/tome4/_realtime/data/rooms/
 share/tome4/_realtime/data/rooms/pilar.lua
 share/tome4/_realtime/data/rooms/simple.lua
@@ -61,6 +66,11 @@ share/tome4/data/general/npcs/kobold.lua
 share/tome4/data/gfx/
 share/tome4/data/gfx/particles/
 share/tome4/data/gfx/particles/acid.lua
+share/tome4/data/locales/
+share/tome4/data/locales/ja_JP.lua
+share/tome4/data/locales/ko_KR.lua
+share/tome4/data/locales/zh_hans.lua
+share/tome4/data/locales/zh_hant.lua
 share/tome4/data/rooms/
 share/tome4/data/rooms/pilar.lua
 share/tome4/data/rooms/simple.lua
@@ -80,6 +90,7 @@ share/tome4/game/addons/
 share/tome4/game/addons/tome-addon-dev.teaa
 share/tome4/game/addons/tome-items-vault.teaa
 share/tome4/game/addons/tome-possessors.teaa
+share/tome4/game/addons/tome-remote-designer.teaa
 share/tome4/game/engines/
 share/tome4/game/engines/te4-${V}.teae
 share/tome4/game/loader/
