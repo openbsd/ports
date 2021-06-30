@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.255 2021/06/04 11:26:54 landry Exp $
+# $OpenBSD: Makefile,v 1.256 2021/06/30 14:07:52 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # version = (TB version - 3) / 100 + 2
-MOZILLA_VERSION =	2.53.7.1
+MOZILLA_VERSION =	2.53.8
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	comm/suite
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-5.8.7.1
+PKGNAME-lightning =	lightning-seamonkey-5.8.8
 EPOCH-lightning =	0
-REVISION-main =	1
 
 HOMEPAGE =	http://www.seamonkey-project.org/
 
@@ -76,7 +75,7 @@ post-install:
 		${PREFIX}/share/applications/${MOZILLA_PROJECT}.desktop ; \
 	# install icon for desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
-	${INSTALL_DATA} ${PREFIX}/lib/${MOZILLA_PROJECT}/chrome/icons/default/default.png \
+	${INSTALL_DATA} ${PREFIX}/lib/${MOZILLA_PROJECT}/chrome/icons/default/default128.png \
 		${PREFIX}/share/pixmaps/${MOZILLA_PROJECT}.png
 
 .include <bsd.port.mk>
