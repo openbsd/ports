@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2020/11/15 09:45:18 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.16 2021/06/30 15:46:30 fcambus Exp $
 bin/perltidy
 ${P5SITE}/Perl/
 ${P5SITE}/Perl/Tidy/
@@ -41,6 +41,7 @@ share/examples/perltidy/lextest
 share/examples/perltidy/perlcomment.pl
 share/examples/perltidy/perllinetype.pl
 share/examples/perltidy/perlmask.pl
+share/examples/perltidy/perltidy_hide.pl
 share/examples/perltidy/perltidy_okw.pl
 share/examples/perltidy/perltidyrc_dump.pl
 share/examples/perltidy/perlxmltok.pl
