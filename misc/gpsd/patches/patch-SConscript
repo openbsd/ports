@@ -1,9 +1,10 @@
-$OpenBSD: patch-SConstruct,v 1.3 2021/02/14 08:30:56 kirby Exp $
-Index: SConstruct
---- SConstruct.orig
-+++ SConstruct
-@@ -264,8 +264,7 @@ api_version_minor = 14
- libgps_version_current = 27
+$OpenBSD: patch-SConscript,v 1.1 2021/06/30 12:23:50 kirby Exp $
+
+Index: SConscript
+--- SConscript.orig
++++ SConscript
+@@ -272,8 +272,7 @@ api_version_minor = 14
+ libgps_version_current = 28
  libgps_version_revision = 0
  libgps_version_age = 0
 -libgps_version = "%d.%d.%d" % (libgps_version_current, libgps_version_age,
@@ -12,7 +13,7 @@ Index: SConstruct
  #
  # Release identification ends here
  
-@@ -754,7 +753,7 @@ def CheckPKG(context, name):
+@@ -805,7 +804,7 @@ def CheckPKG(context, name):
  
  
  # Stylesheet URLs for making HTML and man pages from DocBook XML.
@@ -21,7 +22,7 @@ Index: SConstruct
  docbook_man_uri = docbook_url_stem + 'manpages/docbook.xsl'
  docbook_html_uri = docbook_url_stem + 'html/docbook.xsl'
  
-@@ -1374,6 +1373,10 @@ else:
+@@ -1440,6 +1439,10 @@ if not cleaning and not helping:
      # if not, force qt to off
      if config.env["qt"]:
          qt_net_name = 'Qt%sNetwork' % config.env["qt_versioned"]
@@ -32,7 +33,7 @@ Index: SConstruct
          qt_network = config.CheckPKG(qt_net_name)
          if not qt_network:
              config.env["qt"] = False
-@@ -1500,20 +1503,6 @@ elif config.env['python']:
+@@ -1609,20 +1612,6 @@ if not cleaning and not helping and config.env['python
  
          config.env['xgps_deps'] = True
  
@@ -43,17 +44,17 @@ Index: SConstruct
 -            config.env['xgps_deps'] = False
 -            announce("WARNING: Python module cairo (pycairo) not found.")
 -
--        # check for pycairo
+-        # check for pygobject
 -        if not config.GetPythonValue('module gi (pygobject)',
 -                                     'import gi', '"found"'):
--            # no pycairo, used by xgps, xgpsspeed
+-            # no pygobject, used by xgps, xgpsspeed
 -            config.env['xgps_deps'] = False
 -            announce("WARNING: Python module gi (pygobject) not found.")
 -
          # gtk+ needed by pygobject
          if not config.CheckPKG('gtk+-3.0'):
              config.env['xgps_deps'] = False
-@@ -1730,7 +1719,7 @@ static_gpsdlib = env.StaticLibrary(
+@@ -1847,7 +1836,7 @@ libgpsd_static = env.StaticLibrary(
  packet_ffi_objects = [env.SharedObject(s) for s in packet_ffi_extension]
  packet_ffi_shared = env.SharedLibrary(target="gpsdpacket",
                                        source=packet_ffi_objects,
@@ -61,4 +62,4 @@ Index: SConstruct
 +                                      SHLIBVERSION="%s" % ('${LIBgpsdpacket_VERSION}'),
                                        parse_flags=rtlibs + libgps_flags)
  
- env.Clean(libgps_shared, "gps_maskdump.c")
+ libraries = [libgps_shared, packet_ffi_shared]

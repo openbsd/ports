@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.82 2021/02/24 16:49:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.83 2021/06/30 12:23:50 kirby Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
 COMMENT-php=		web-based gpsd monitor in php
 
-VERSION=		3.21
-REVISION-php=		0
+VERSION=		3.22
 DISTNAME=		gpsd-${VERSION}
 PKGNAME-main=		gpsd-${VERSION}
 PKGNAME-x11=		gpsd-x11-${VERSION}
@@ -69,20 +68,17 @@ PREFIX-php=		${VARBASE}/www
 
 SUBST_VARS +=		VERSION
 
-MODPY_ADJ_FILES =	gegps gpsprof gps/gps.py gpsfake gpscat xgps xgpsspeed \
-			gps/aiogps.py gps/clienthelpers.py ubxtool zerk
-
 pre-configure:
 	@perl -pi -e "s,/usr/share/gpsd/,," ${WRKSRC}/packaging/X11/*.desktop
 	@perl -pi -e "s,http://docbook.sourceforge.net/release/xsl/current/,\
 		${LOCALBASE}/share/xsl/docbook/," \
 		${WRKSRC}/SConstruct
-	${SUBST_CMD} ${WRKSRC}/SConstruct
+	${SUBST_CMD} ${WRKSRC}/SConscript
 
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}/var/www/gpsd
-	${INSTALL_SCRIPT} ${WRKSRC}/gpsd.php ${WRKINST}/var/www/gpsd
-	${INSTALL_DATA} ${WRKSRC}/gpsd_config.h ${PREFIX}/include
+	${INSTALL_SCRIPT} ${WRKSRC}/${PKGNAME}/clients/gpsd.php ${WRKINST}/var/www/gpsd
+	${INSTALL_DATA} ${WRKSRC}/${PKGNAME}/include/gpsd_config.h ${PREFIX}/include
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
 	${INSTALL_DATA} ${WRKSRC}/packaging/X11/*.desktop \
