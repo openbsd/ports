@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/06/30 16:12:42 fcambus Exp $
 
 COMMENT =		source code spelling checker
 
-MODPY_EGG_VERSION =	2.0.0
+MODPY_EGG_VERSION =	2.1.0
 
 DISTNAME =		codespell-${MODPY_EGG_VERSION}
 
