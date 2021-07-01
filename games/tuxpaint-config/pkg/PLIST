@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/09/02 08:31:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/07/01 11:56:57 ajacoutot Exp $
 @bin bin/tuxpaint-config
 @man man/man1/tuxpaint-config.1
 share/doc/tuxpaint-config/
@@ -46,6 +46,7 @@ share/locale/sat/LC_MESSAGES/tuxpaint-config.mo
 share/locale/sk/LC_MESSAGES/tuxpaint-config.mo
 share/locale/sl/LC_MESSAGES/tuxpaint-config.mo
 share/locale/son/LC_MESSAGES/tuxpaint-config.mo
+share/locale/sq/LC_MESSAGES/tuxpaint-config.mo
 share/locale/sr/LC_MESSAGES/tuxpaint-config.mo
 share/locale/sr@latin/LC_MESSAGES/tuxpaint-config.mo
 share/locale/sv/LC_MESSAGES/tuxpaint-config.mo
