@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.53 2021/04/02 08:31:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.54 2021/07/01 11:51:42 ajacoutot Exp $
 @conflict gnucash-docs-*
 @pkgpath productivity/gnucash-docs
 bin/gnc-fq-check
@@ -68,7 +68,6 @@ include/gnucash/gnc-cell-renderer-popup.h
 include/gnucash/gnc-cell-renderer-text-flag.h
 include/gnucash/gnc-cell-renderer-text-view.h
 include/gnucash/gnc-cell-view.h
-include/gnucash/gnc-combott.h
 include/gnucash/gnc-commodity-edit.h
 include/gnucash/gnc-commodity.h
 include/gnucash/gnc-component-manager.h
@@ -443,6 +442,7 @@ lib/guile/2.2/site-ccache/gnucash/reports/standard/dashboard.go
 lib/guile/2.2/site-ccache/gnucash/reports/standard/equity-statement.go
 lib/guile/2.2/site-ccache/gnucash/reports/standard/general-journal.go
 lib/guile/2.2/site-ccache/gnucash/reports/standard/general-ledger.go
+lib/guile/2.2/site-ccache/gnucash/reports/standard/ifrs-cost-basis.go
 lib/guile/2.2/site-ccache/gnucash/reports/standard/income-gst-statement.go
 lib/guile/2.2/site-ccache/gnucash/reports/standard/income-statement.go
 lib/guile/2.2/site-ccache/gnucash/reports/standard/invoice.go
@@ -732,8 +732,16 @@ share/gnome/help/gnucash-help/C/figures/
 share/gnome/help/gnucash-help/C/gnc-docbookx.dtd
 share/gnome/help/gnucash-help/C/gnucash-help.xml
 share/gnome/help/gnucash-help/de/
+share/gnome/help/gnucash-help/de/Help_ch_Account-Actions.xml
+share/gnome/help/gnucash-help/de/Help_ch_Business.xml
+share/gnome/help/gnucash-help/de/Help_ch_Customize.xml
+share/gnome/help/gnucash-help/de/Help_ch_GUIMenus.xml
+share/gnome/help/gnucash-help/de/Help_ch_GettingHelp.xml
 share/gnome/help/gnucash-help/de/Help_ch_GettingStarted.xml
 share/gnome/help/gnucash-help/de/Help_ch_Intro.xml
+share/gnome/help/gnucash-help/de/Help_ch_Reports.xml
+share/gnome/help/gnucash-help/de/Help_ch_Tools_Assistants.xml
+share/gnome/help/gnucash-help/de/Help_ch_Transactions.xml
 share/gnome/help/gnucash-help/de/Help_chartofaccts.xml
 share/gnome/help/gnucash-help/de/Help_chtacctseg.xml
 share/gnome/help/gnucash-help/de/Help_fdl-appendix.xml
@@ -1228,7 +1236,23 @@ share/gnucash/accounts/zh_CN/acctchrt_spouseretire.gnucash-xea
 share/gnucash/accounts/zh_HK/
 share/gnucash/accounts/zh_HK/acctchrt_business.gnucash-xea
 share/gnucash/accounts/zh_TW/
+share/gnucash/accounts/zh_TW/acctchrt_brokerage.gnucash-xea
 share/gnucash/accounts/zh_TW/acctchrt_business.gnucash-xea
+share/gnucash/accounts/zh_TW/acctchrt_carloan.gnucash-xea
+share/gnucash/accounts/zh_TW/acctchrt_cdmoneymkt.gnucash-xea
+share/gnucash/accounts/zh_TW/acctchrt_checkbook.gnucash-xea
+share/gnucash/accounts/zh_TW/acctchrt_childcare.gnucash-xea
+share/gnucash/accounts/zh_TW/acctchrt_common.gnucash-xea
+share/gnucash/accounts/zh_TW/acctchrt_eduloan.gnucash-xea
+share/gnucash/accounts/zh_TW/acctchrt_fixedassets.gnucash-xea
+share/gnucash/accounts/zh_TW/acctchrt_homeloan.gnucash-xea
+share/gnucash/accounts/zh_TW/acctchrt_homeown.gnucash-xea
+share/gnucash/accounts/zh_TW/acctchrt_otherloan.gnucash-xea
+share/gnucash/accounts/zh_TW/acctchrt_renter.gnucash-xea
+share/gnucash/accounts/zh_TW/acctchrt_retiremt.gnucash-xea
+share/gnucash/accounts/zh_TW/acctchrt_spouseinc.gnucash-xea
+share/gnucash/accounts/zh_TW/acctchrt_spouseretire.gnucash-xea
+share/gnucash/accounts/zh_TW/acctchrt_vehicle.gnucash-xea
 share/gnucash/chartjs/
 share/gnucash/chartjs/Chart.bundle.js
 share/gnucash/chartjs/Chart.bundle.min.js
@@ -1611,6 +1635,7 @@ share/guile/site/2.2/gnucash/reports/standard/dashboard.scm
 share/guile/site/2.2/gnucash/reports/standard/equity-statement.scm
 share/guile/site/2.2/gnucash/reports/standard/general-journal.scm
 share/guile/site/2.2/gnucash/reports/standard/general-ledger.scm
+share/guile/site/2.2/gnucash/reports/standard/ifrs-cost-basis.scm
 share/guile/site/2.2/gnucash/reports/standard/income-gst-statement.scm
 share/guile/site/2.2/gnucash/reports/standard/income-statement.scm
 share/guile/site/2.2/gnucash/reports/standard/invoice.scm
