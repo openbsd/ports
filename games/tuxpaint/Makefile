@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2021/01/09 14:05:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2021/07/01 11:53:38 ajacoutot Exp $
 
 COMMENT=		drawing program for children
 
-DISTNAME=		tuxpaint-0.9.25
+DISTNAME=		tuxpaint-0.9.26
 
 CATEGORIES=		games graphics
 
@@ -14,11 +14,11 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += SDL SDL_Pango SDL_image SDL_mixer SDL_ttf c cairo fribidi
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 imagequant
-WANTLIB += intl m paper png pthread rsvg-2 z
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 harfbuzz
+WANTLIB += imagequant intl m pango-1.0 paper png pthread rsvg-2
+WANTLIB += z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=tuxpaint/}
-
 
 BUILD_DEPENDS=		devel/gettext,-tools \
 			devel/gperf \

@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile,v 1.12 2021/01/09 14:05:40 ajacoutot Exp $
+$OpenBSD: patch-Makefile,v 1.13 2021/07/01 11:53:38 ajacoutot Exp $
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -52,7 +52,7 @@ else
+@@ -58,7 +58,7 @@ else
            endif
          else
            OS:=linux
@@ -12,37 +12,37 @@ Index: Makefile
          endif
        endif
      endif
-@@ -110,7 +110,7 @@ ARCH_LIBS:=$($(OS)_ARCH_LIBS)
- windows_ARCH_CFLAGS:=
- macos_ARCH_CFLAGS:=-mmacosx-version-min=10.8 -isystem /opt/local/include -DHAVE_STRCASESTR -w -headerpad_max_install_names
+@@ -175,7 +175,7 @@ windows_ARCH_CFLAGS:=
+ macos_ARCH_CFLAGS:=-isysroot $(SDKROOT) -I$(SDKROOT)/usr/include -I$(HOSTROOT)/include -mmacosx-version-min=$(MINVER) -arch $(subst $() $(), -arch ,$(ARCHS)) -w -headerpad_max_install_names -DHAVE_STRCASESTR
+ ios_ARCH_CFLAGS:=-isysroot $(SDKROOT) -I$(SDKROOT)/usr/include -I$(HOSTROOT)/include $(MINVEROPT) -arch $(subst $() $(), -arch ,$(ARCHS)) -w -fPIC -DHAVE_STRCASESTR -DUNLINK_ONLY
  beos_ARCH_CFLAGS:=
 -linux_ARCH_CFLAGS:=
 +#linux_ARCH_CFLAGS:=
  ARCH_CFLAGS:=$($(OS)_ARCH_CFLAGS)
  
  windows_ARCH_LDFLAGS:=
-@@ -120,9 +120,8 @@ linux_ARCH_LDFLAGS:=
+@@ -186,9 +186,8 @@ linux_ARCH_LDFLAGS:=
  ARCH_LDFLAGS:=$($(OS)_ARCH_LDFLAGS)
  LDFLAGS:=$(ARCH_LDFLAGS)
  
--PAPER_LIB:=$(call linktest,-lpaper,)
--PNG:=$(call linktest,-lpng,)
--PNG:=$(if $(PNG),$(PNG),$(call linktest,-lpng12,))
+-PAPER_LIB:=$(call linktest,,-lpaper,)
+-PNG:=$(call linktest,libpng,-lpng,)
+-PNG:=$(if $(PNG),$(PNG),$(call linktest,,-lpng12,))
 +PAPER_LIB:=-lpaper
 +PNG:=$(shell $(PKG_CONFIG) --libs libpng)
  
  FRIBIDI_LIB:=$(shell $(PKG_CONFIG) --libs fribidi)
  FRIBIDI_CFLAGS:=$(shell $(PKG_CONFIG) --cflags fribidi)
-@@ -144,7 +143,7 @@ ARCH_HEADERS:=$($(OS)_ARCH_HEADERS)
- windows_PREFIX:=/usr/local
+@@ -212,7 +211,7 @@ windows_PREFIX:=/usr/local
  macos_PREFIX:=Resources
+ ios_PREFIX:=.
  linux_PREFIX:=/usr/local
 -PREFIX:=$($(OS)_PREFIX)
 +PREFIX:=${TRUEPREFIX}
  
  # Root directory to place files when creating packages.
  # PKG_ROOT is the old name for this, and should be undefined.
-@@ -178,19 +177,19 @@ INCLUDE_PREFIX:=$(DESTDIR)$(PREFIX)/include
+@@ -248,19 +247,19 @@ INCLUDE_PREFIX:=$(DESTDIR)$(PREFIX)/include
  MAGIC_PREFIX:=$(DESTDIR)$(LIBDIR)/lib$(LIBDIRSUFFIX)/tuxpaint/plugins
  
  # Docs and man page:
@@ -67,7 +67,7 @@ Index: Makefile
  endif
  
  ifeq ($(SYSNAME),Haiku)
-@@ -658,18 +657,16 @@ uninstall:	uninstall-i18n
+@@ -733,18 +732,16 @@ uninstall:	uninstall-i18n
  install-default-config:
  	@echo
  	@echo "...Installing default config file..."
@@ -90,7 +90,7 @@ Index: Makefile
  
  
  # Install example stamps
-@@ -677,7 +674,7 @@ install-bash-completion:
+@@ -752,7 +749,7 @@ install-bash-completion:
  install-example-stamps:
  	@echo
  	@echo "...Installing example stamps..."
@@ -99,7 +99,7 @@ Index: Makefile
  	@cp -R stamps/* $(DATA_PREFIX)/stamps
  	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)/stamps
  
-@@ -727,7 +724,10 @@ $(THUMB_STARTERS):
+@@ -802,7 +799,10 @@ $(THUMB_STARTERS):
  	fi
  
  $(INSTALLED_THUMB_STARTERS): $(DATA_PREFIX)/%: %
@@ -111,7 +111,7 @@ Index: Makefile
  
  .PHONY: echo-thumb-starters
  echo-thumb-starters:
-@@ -834,24 +834,22 @@ install-nokia770:
+@@ -909,24 +909,22 @@ install-nokia770:
  install-xdg:
  	@echo
  	@echo "...Installing launcher icon into desktop environment..."
@@ -152,7 +152,7 @@ Index: Makefile
  
  # Install the PNG icon (for KDE desktop, etc.)
  # and the 24-color 32x32 XPM (for other Window managers):
-@@ -859,12 +857,9 @@ install-xdg:
+@@ -934,12 +932,9 @@ install-xdg:
  install-icon:
  	@echo
  	@echo "...Installing launcher icon graphics..."
@@ -168,7 +168,7 @@ Index: Makefile
  
  
  # Install the program:
-@@ -872,9 +867,8 @@ install-icon:
+@@ -947,9 +942,8 @@ install-icon:
  install-bin:
  	@echo
  	@echo "...Installing program itself..."
@@ -180,7 +180,7 @@ Index: Makefile
  
  # Install tuxpaint-config and required Windows DLLs into the 'bdist' directory
  .PHONY: install-dlls
-@@ -949,8 +943,7 @@ install-haiku:
+@@ -1024,8 +1018,7 @@ install-haiku:
  install-importscript:
  	@echo
  	@echo "...Installing 'tuxpaint-import' script..."
@@ -190,7 +190,7 @@ Index: Makefile
  
  
  # Install the data (sound, graphics, fonts):
-@@ -958,12 +951,14 @@ install-importscript:
+@@ -1033,12 +1026,14 @@ install-importscript:
  install-data:
  	@echo
  	@echo "...Installing data files..."
@@ -207,7 +207,7 @@ Index: Makefile
  	@cp -R fonts/locale/* $(DATA_PREFIX)/fonts/locale
  	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)/fonts/locale
  
-@@ -983,7 +978,7 @@ install-osk:
+@@ -1058,7 +1053,7 @@ install-osk:
  install-doc:
  	@echo
  	@echo "...Installing documentation..."
@@ -216,7 +216,7 @@ Index: Makefile
  	@cp -R docs/* $(DOC_PREFIX)
  	@# FIXME: Needs improvement, when we add other translations -bjk 2018.08.30
  	@install -d $(DOC_PREFIX)/en/magic-docs
-@@ -997,25 +992,13 @@ install-man:
+@@ -1072,25 +1067,13 @@ install-man:
  	@echo
  	@echo "...Installing man pages..."
  	@# man1 directory...
