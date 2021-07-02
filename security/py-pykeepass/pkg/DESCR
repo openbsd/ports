@@ -1,0 +1,2 @@
+pykeepass is a Python library to interact with keepass databases
+(supports KDBX3 and KDBX4).

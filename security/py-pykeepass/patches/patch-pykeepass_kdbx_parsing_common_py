@@ -1,0 +1,16 @@
+$OpenBSD: patch-pykeepass_kdbx_parsing_common_py,v 1.1.1.1 2021/07/02 15:29:09 sthen Exp $
+
+we have Cryptodome (which uses the Crypto namespace) rather than Cryptodomex
+
+Index: pykeepass/kdbx_parsing/common.py
+--- pykeepass/kdbx_parsing/common.py.orig
++++ pykeepass/kdbx_parsing/common.py
+@@ -1,6 +1,6 @@
+-from Cryptodome.Cipher import AES, ChaCha20, Salsa20
++from Crypto.Cipher import AES, ChaCha20, Salsa20
+ from .twofish import Twofish
+-from Cryptodome.Util import Padding as CryptoPadding
++from Crypto.Util import Padding as CryptoPadding
+ import hashlib
+ from construct import (
+     Adapter, BitStruct, BitsSwapped, Container, Flag, Padding, ListContainer, Mapping, GreedyBytes, Int32ul, Switch

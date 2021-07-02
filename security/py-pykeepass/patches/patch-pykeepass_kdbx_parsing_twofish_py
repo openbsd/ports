@@ -1,0 +1,18 @@
+$OpenBSD: patch-pykeepass_kdbx_parsing_twofish_py,v 1.1.1.1 2021/07/02 15:29:09 sthen Exp $
+
+we have Cryptodome (which uses the Crypto namespace) rather than Cryptodomex
+
+Index: pykeepass/kdbx_parsing/twofish.py
+--- pykeepass/kdbx_parsing/twofish.py.orig
++++ pykeepass/kdbx_parsing/twofish.py
+@@ -25,8 +25,8 @@
+ __all__ = ['Twofish']
+ 
+ from . import pytwofish
+-from Cryptodome.Util.strxor import strxor
+-from Cryptodome.Util.Padding import pad
++from Crypto.Util.strxor import strxor
++from Crypto.Util.Padding import pad
+ 
+ MODE_ECB = 1
+ MODE_CBC = 2
