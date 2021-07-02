@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.10 2021/02/21 21:36:30 sthen Exp $
+$OpenBSD: README,v 1.11 2021/07/02 10:27:11 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -45,6 +45,12 @@ interface pppoe0
 	# request prefixes from the provider to use for downstream networks
 	ia_pd 2 em0/1 vlan3/2 vlan5/3
 -- -- -- -- -- --
+
+(By default, dhcpcd will request a prefix length that is the largest
+multiple of 8 that fits the networks. In some unusual cases, the
+provider may require a specific prefix length hint instead; to
+modify the above example for such a provider,
+"ia_pd 2/::/48 em0/1 vlan3/2 vlan5/3").
 
 In normal cases, you would use rad(8) to advertise these prefixes to
 clients. Put the following in /etc/rad.conf:

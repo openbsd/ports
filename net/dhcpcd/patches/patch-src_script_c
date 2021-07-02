@@ -1,7 +1,13 @@
-$OpenBSD: patch-src_script_c,v 1.4 2021/01/16 23:35:47 tb Exp $
+$OpenBSD: patch-src_script_c,v 1.5 2021/07/02 10:27:11 sthen Exp $
 
-Avoid log noise and plug a memory leak:
-https://roy.marples.name/archives/dhcpcd-discuss/0003426.html
+From 39b397dddda51d45958ced162cf1c7a589f65866 Mon Sep 17 00:00:00 2001
+From: Roy Marples <roy@marples.name>
+Date: Mon, 18 Jan 2021 11:31:05 +0000
+Subject: [PATCH] script: Use rt_proto_add to ensure no duplicate interfaces on
+ OpenBSD
+
+OpenBSD allows matching priorities, so we need to take the interfaces
+in the order given to ensure uniqueness.
 
 Index: src/script.c
 --- src/script.c.orig
