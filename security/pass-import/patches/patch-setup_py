@@ -1,0 +1,23 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2021/07/02 19:31:13 sthen Exp $
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -17,7 +17,7 @@ with open('README.md') as file:
+ 
+ share = Path(sys.prefix, 'share')
+ base = '/usr'
+-if os.uname().sysname == 'Darwin':
++if os.uname().sysname == 'Darwin' or os.uname().sysname == 'OpenBSD':
+     base = '/usr/local'
+ lib = Path(base, 'lib', 'password-store', 'extensions')
+ 
+@@ -53,7 +53,7 @@ setup(
+         ]
+     },
+     data_files=[
+-        (str(share / 'man' / 'man1'), [
++        (str(Path(sys.prefix) / 'man' / 'man1'), [
+             'share/man/man1/pass-import.1',
+             'share/man/man1/pimport.1',
+         ]),

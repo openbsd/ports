@@ -1,0 +1,13 @@
+pass-import is an extension for "password-store", allowing you to import
+password databases from various password managers to a pass(1) repository.
+
+By default, entries are imported at the root of the password store and
+only the main data (password, login, email, URL, group) are kept. This
+behaviour can be changed using the provided options.
+
+pass-import handles duplicates and is compatible with browserpass.
+It imports OTP secrets in a way that is compatible with pass-otp.
+
+pass-import also provides a pimport script that allows importing
+passwords to a small number other password managers. For instance,
+you can import passwords to a Keepass database or a generic CSV file.
