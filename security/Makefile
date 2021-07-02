@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.627 2021/07/02 15:29:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.628 2021/07/02 19:31:34 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -234,6 +234,7 @@
      SUBDIR += p5-Text-Password-Pronounceable
      SUBDIR += p5-Tie-EncryptedHash
      SUBDIR += p5-Unix-OpenBSD-Random
+     SUBDIR += pass-import
      SUBDIR += pass-otp
      SUBDIR += passwdqc
      SUBDIR += password-gorilla
