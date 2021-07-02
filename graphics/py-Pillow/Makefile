@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2021/05/02 15:21:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2021/07/02 14:14:10 sthen Exp $
 
 COMMENT=		Python Imaging Library (maintained fork of PIL)
 
-MODPY_EGG_VERSION=	8.2.0
-REVISION=		0
+MODPY_EGG_VERSION=	8.3.0
 DISTNAME=		Pillow-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		graphics
@@ -40,7 +39,7 @@ INCL_DIR=		${MODPY_INCDIR:S/${LOCALBASE}\///}
 pre-test:
 	cd ${WRKSRC}; ${MODPY_BIN} ./selftest.py
 	# Removing PyQt-related tests that segfault
-	cd ${WRKSRC}/Tests; rm -f test_qt_image_fromqpixmap.py test_qt_image_toqimage.py test_qt_image_toqpixmap.py
+	cd ${WRKSRC}/Tests; rm -f test_qt_image_*.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_INCDIR}
