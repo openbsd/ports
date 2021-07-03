@@ -1,14 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/28 02:37:25 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/07/03 15:00:57 cwen Exp $
 @bin bin/hyperrogue
 share/doc/hyperrogue/
 share/doc/hyperrogue/README.md
 share/hyperrogue/
 share/hyperrogue/DejaVuSans-Bold.ttf
+share/hyperrogue/honeycomb-rules-344.dat
+share/hyperrogue/honeycomb-rules-353.dat
+share/hyperrogue/honeycomb-rules-354.dat
+share/hyperrogue/honeycomb-rules-355.dat
 share/hyperrogue/honeycomb-rules-435.dat
+share/hyperrogue/honeycomb-rules-436.dat
 share/hyperrogue/honeycomb-rules-534.dat
 share/hyperrogue/honeycomb-rules-535.dat
+share/hyperrogue/honeycomb-rules-536.dat
 share/hyperrogue/hyperrogue-music.txt
 share/hyperrogue/music/
+share/hyperrogue/music/hr-domina-hunting.ogg
+share/hyperrogue/music/hr-domina-mountain.ogg
 share/hyperrogue/music/hr-savino-caribbean.ogg
 share/hyperrogue/music/hr-savino-ivory.ogg
 share/hyperrogue/music/hr-savino-ocean.ogg
@@ -27,12 +35,14 @@ share/hyperrogue/music/hr3-rlyeh.ogg
 share/hyperrogue/shyp-geodesics.dat
 share/hyperrogue/solv-geodesics.dat
 share/hyperrogue/sounds/
+share/hyperrogue/sounds/apple.ogg
 share/hyperrogue/sounds/bull.ogg
 share/hyperrogue/sounds/click.ogg
 share/hyperrogue/sounds/closegate.ogg
 share/hyperrogue/sounds/credits.txt
 share/hyperrogue/sounds/die-bomberbird.ogg
 share/hyperrogue/sounds/die-fairy.ogg
+share/hyperrogue/sounds/die-kraken.ogg
 share/hyperrogue/sounds/die-prince.ogg
 share/hyperrogue/sounds/die-princess.ogg
 share/hyperrogue/sounds/die-troll.ogg
@@ -40,6 +50,7 @@ share/hyperrogue/sounds/die-vinebeast.ogg
 share/hyperrogue/sounds/die-vinespirit.ogg
 share/hyperrogue/sounds/dzia-prince.ogg
 share/hyperrogue/sounds/dzia-princess.ogg
+share/hyperrogue/sounds/elementalgem.ogg
 share/hyperrogue/sounds/explosion.ogg
 share/hyperrogue/sounds/fire.ogg
 share/hyperrogue/sounds/heal-prince.ogg
@@ -57,6 +68,7 @@ share/hyperrogue/sounds/hit-rose.ogg
 share/hyperrogue/sounds/hit-sword1.ogg
 share/hyperrogue/sounds/hit-sword2.ogg
 share/hyperrogue/sounds/hit-sword3.ogg
+share/hyperrogue/sounds/levelup.ogg
 share/hyperrogue/sounds/message-roar.ogg
 share/hyperrogue/sounds/message-troll.ogg
 share/hyperrogue/sounds/mousesqueak.ogg
@@ -85,6 +97,9 @@ share/hyperrogue/sounds/seen-dragon.ogg
 share/hyperrogue/sounds/seen-eagle.ogg
 share/hyperrogue/sounds/seen-earth.ogg
 share/hyperrogue/sounds/seen-fairy.ogg
+share/hyperrogue/sounds/seen-frog1.ogg
+share/hyperrogue/sounds/seen-frog2.ogg
+share/hyperrogue/sounds/seen-frog3.ogg
 share/hyperrogue/sounds/seen-gardener.ogg
 share/hyperrogue/sounds/seen-ghost.ogg
 share/hyperrogue/sounds/seen-kraken.ogg

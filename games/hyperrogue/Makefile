@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2020/06/28 02:37:25 bcallah Exp $
+# $OpenBSD: Makefile,v 1.17 2021/07/03 15:00:57 cwen Exp $
 
-V =		11.3o
+V =		12.0b
 COMMENT =	roguelike game in a non-Euclidean world
 CATEGORIES =	games x11
 
@@ -20,26 +20,41 @@ WANTLIB += c m png z
 # C++11
 COMPILER =	base-clang ports-gcc
 
-BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
-
 LIB_DEPENDS =	devel/sdl-gfx \
 		devel/sdl-mixer \
 		devel/sdl-ttf \
 		graphics/glew \
 		graphics/png
 
-CONFIGURE_STYLE =	autoreconf
-CONFIGURE_ENV =		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
+CXXFLAGS +=	-I${LOCALBASE}/include -I${X11BASE}/include \
+			-DHYPERPATH="\\\"${LOCALBASE}/share/hyperrogue/\\\""
+LDFLAGS +=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 
-MAKE_FLAGS =	CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS} -std=c++11"
+MAKE_ENV +=	CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+		LDFLAGS="${LDFLAGS}" CXX="${CXX}" \
+		HYPERROGUE_USE_GLEW=1 \
+		HYPERROGUE_USE_PNG=1
 
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.16
+USE_GMAKE =	Yes
+NO_TEST =	Yes
+ALL_TARGET =	hyperrogue
 
-# Correct version number
-pre-configure:
-	sed -i 's,10.4i,${V},g' ${WRKSRC}/configure.ac
+# There is no install target
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/hyperrogue ${PREFIX}/bin
+
+	${INSTALL_DATA_DIR} ${PREFIX}/share/hyperrogue
+	${INSTALL_DATA_DIR} ${PREFIX}/share/hyperrogue/sounds
+	${INSTALL_DATA_DIR} ${PREFIX}/share/hyperrogue/music
+
+	${INSTALL_DATA} ${WRKSRC}/*.ttf \
+			${WRKSRC}/*.dat \
+			${WRKSRC}/hyperrogue-music.txt \
+			${PREFIX}/share/hyperrogue
+	${INSTALL_DATA} ${WRKSRC}/sounds/* ${PREFIX}/share/hyperrogue/sounds
+	${INSTALL_DATA} ${WRKSRC}/music/* ${PREFIX}/share/hyperrogue/music
+
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/hyperrogue
+	${INSTALL_DATA} ${WRKSRC}/README.md ${PREFIX}/share/doc/hyperrogue
 
 .include <bsd.port.mk>
