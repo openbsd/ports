@@ -1,0 +1,313 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2021/07/03 20:42:34 bcallah Exp $
+
+Don't do git stuff.
+Use Lua, SDL2, curl, duktape, giflib, and libpng from ports.
+Put pixmap in correct directory.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -10,39 +10,6 @@ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+     set(VERSION_BUILD ".dbg" )
+ endif()
+ 
+-find_package(Git)
+-if(Git_FOUND)
+-    execute_process(
+-        COMMAND ${GIT_EXECUTABLE} status
+-        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+-        ERROR_VARIABLE RESULT_STRING
+-        OUTPUT_STRIP_TRAILING_WHITESPACE
+-    )
+-
+-    string(LENGTH "${RESULT_STRING}" LENGTH_RESULT_STRING)
+-
+-    if(${LENGTH_RESULT_STRING} EQUAL 0)
+-
+-        execute_process(
+-            COMMAND ${GIT_EXECUTABLE} log -1 --format=%H
+-            WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+-            OUTPUT_VARIABLE GIT_COMMIT_HASH
+-            OUTPUT_STRIP_TRAILING_WHITESPACE
+-        )
+-
+-        string(SUBSTRING ${GIT_COMMIT_HASH} 0 7 GIT_COMMIT_HASH)
+-        set(VERSION_HASH ${GIT_COMMIT_HASH} )
+-
+-        execute_process(
+-            COMMAND ${GIT_EXECUTABLE} rev-list HEAD --count
+-            WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+-            OUTPUT_VARIABLE VERSION_REVISION
+-            OUTPUT_STRIP_TRAILING_WHITESPACE
+-        )
+-
+-    endif()
+-endif()
+-
+ project(TIC-80 VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_REVISION} LANGUAGES C CXX)
+ message("Building for target : ${CMAKE_SYSTEM_NAME}")
+ 
+@@ -133,51 +100,6 @@ set(THIRDPARTY_DIR ${CMAKE_SOURCE_DIR}/vendor)
+ # LUA
+ ################################
+ 
+-set(LUA_DIR ${THIRDPARTY_DIR}/lua)
+-set(LUA_SRC 
+-    ${LUA_DIR}/lapi.c
+-    ${LUA_DIR}/lcode.c
+-    ${LUA_DIR}/lctype.c
+-    ${LUA_DIR}/ldebug.c
+-    ${LUA_DIR}/ldo.c
+-    ${LUA_DIR}/ldump.c
+-    ${LUA_DIR}/lfunc.c
+-    ${LUA_DIR}/lgc.c
+-    ${LUA_DIR}/llex.c
+-    ${LUA_DIR}/lmem.c
+-    ${LUA_DIR}/lobject.c
+-    ${LUA_DIR}/lopcodes.c
+-    ${LUA_DIR}/lparser.c
+-    ${LUA_DIR}/lstate.c
+-    ${LUA_DIR}/lstring.c
+-    ${LUA_DIR}/ltable.c
+-    ${LUA_DIR}/ltm.c
+-    ${LUA_DIR}/lundump.c
+-    ${LUA_DIR}/lvm.c
+-    ${LUA_DIR}/lzio.c
+-    ${LUA_DIR}/lauxlib.c
+-    ${LUA_DIR}/lbaselib.c
+-    ${LUA_DIR}/lcorolib.c
+-    ${LUA_DIR}/ldblib.c
+-    ${LUA_DIR}/liolib.c
+-    ${LUA_DIR}/lmathlib.c
+-    ${LUA_DIR}/loslib.c
+-    ${LUA_DIR}/lstrlib.c
+-    ${LUA_DIR}/ltablib.c
+-    ${LUA_DIR}/lutf8lib.c
+-    ${LUA_DIR}/loadlib.c
+-    ${LUA_DIR}/linit.c
+-)
+-
+-add_library(lua STATIC ${LUA_SRC})
+-
+-target_compile_definitions(lua PRIVATE LUA_COMPAT_5_2)
+-target_include_directories(lua INTERFACE ${THIRDPARTY_DIR}/lua)
+-
+-if(N3DS)
+-    target_compile_definitions(lua PUBLIC LUA_32BITS)
+-endif()
+-
+ ################################
+ # LPEG
+ ################################
+@@ -254,21 +176,6 @@ target_include_directories(squirrel PRIVATE ${SQUIRREL
+ # GIFLIB
+ ################################
+ 
+-set(GIFLIB_DIR ${THIRDPARTY_DIR}/giflib)
+-set(GIFLIB_SRC
+-    ${GIFLIB_DIR}/dgif_lib.c
+-    ${GIFLIB_DIR}/egif_lib.c
+-    ${GIFLIB_DIR}/gif_err.c
+-    ${GIFLIB_DIR}/gif_font.c
+-    ${GIFLIB_DIR}/gif_hash.c
+-    ${GIFLIB_DIR}/gifalloc.c
+-    ${GIFLIB_DIR}/openbsd-reallocarray.c
+-)
+-add_library(giflib STATIC ${GIFLIB_SRC})
+-target_include_directories(giflib 
+-    PRIVATE ${GIFLIB_DIR}
+-    INTERFACE ${THIRDPARTY_DIR}/giflib)
+-
+ ################################
+ # Blipbuf
+ ################################
+@@ -280,9 +187,6 @@ target_include_directories(blipbuf INTERFACE ${THIRDPA
+ # Duktape
+ ################################
+ 
+-add_library(duktape STATIC ${THIRDPARTY_DIR}/duktape/src/duktape.c)
+-target_include_directories(duktape INTERFACE ${THIRDPARTY_DIR}/duktape/src)
+-
+ ################################
+ # TIC-80 core
+ ################################
+@@ -320,17 +224,17 @@ macro(MACRO_CORE SCRIPT DEFINE BUILD_DEPRECATED)
+             ${CMAKE_SOURCE_DIR}/src)
+ 
+     target_link_libraries(tic80core${SCRIPT}
+-        lua 
++        lua5.3 
+         lpeg 
+         wren 
+         squirrel 
+         duktape 
+         blipbuf 
+-        zlib)
++        z)
+ 
+     if(${BUILD_DEPRECATED})
+         target_compile_definitions(tic80core${SCRIPT} PRIVATE DEPRECATED_CHUNKS)
+-        target_link_libraries(tic80core${SCRIPT} giflib)
++        target_link_libraries(tic80core${SCRIPT} gif)
+     endif()
+ 
+     if(LINUX)
+@@ -368,9 +272,6 @@ if(BUILD_SDL AND NOT EMSCRIPTEN AND NOT RPI)
+     endif()
+     
+     set(SDL_SHARED OFF CACHE BOOL "" FORCE)
+-
+-    add_subdirectory(${THIRDPARTY_DIR}/sdl2)
+-
+ endif()
+ 
+ ################################
+@@ -391,7 +292,7 @@ if(BUILD_SDL AND BUILD_PLAYER AND NOT RPI)
+         target_link_options(player-sdl PRIVATE -static)
+     endif()
+ 
+-    target_link_libraries(player-sdl tic80core SDL2-static SDL2main)
++    target_link_libraries(player-sdl tic80core SDL2 SDL2main)
+ endif()
+ 
+ ################################
+@@ -518,24 +419,6 @@ endif()
+ 
+ if (NOT N3DS)
+ 
+-set(ZLIB_DIR ${THIRDPARTY_DIR}/zlib)
+-set(ZLIB_SRC 
+-    ${ZLIB_DIR}/adler32.c
+-    ${ZLIB_DIR}/compress.c
+-    ${ZLIB_DIR}/crc32.c
+-    ${ZLIB_DIR}/deflate.c
+-    ${ZLIB_DIR}/inflate.c
+-    ${ZLIB_DIR}/infback.c
+-    ${ZLIB_DIR}/inftrees.c
+-    ${ZLIB_DIR}/inffast.c
+-    ${ZLIB_DIR}/trees.c
+-    ${ZLIB_DIR}/uncompr.c
+-    ${ZLIB_DIR}/zutil.c
+-)
+-
+-add_library(zlib STATIC ${ZLIB_SRC})
+-target_include_directories(zlib INTERFACE ${THIRDPARTY_DIR}/zlib)
+-
+ else ()
+ 
+ add_library(zlib STATIC IMPORTED)
+@@ -568,7 +451,7 @@ if(BUILD_DEMO_CARTS)
+     target_link_libraries(prj2cart tic80core)
+ 
+     add_executable(bin2txt ${TOOLS_DIR}/bin2txt.c)
+-    target_link_libraries(bin2txt zlib)
++    target_link_libraries(bin2txt z)
+ 
+     add_executable(xplode 
+         ${TOOLS_DIR}/xplode.c 
+@@ -577,7 +460,7 @@ if(BUILD_DEMO_CARTS)
+         ${CMAKE_SOURCE_DIR}/src/studio/project.c)
+ 
+     target_include_directories(xplode PRIVATE ${CMAKE_SOURCE_DIR}/src ${CMAKE_SOURCE_DIR}/include)
+-    target_link_libraries(xplode tic80core png giflib)
++    target_link_libraries(xplode tic80core png gif)
+ 
+     if(LINUX)
+         target_link_libraries(xplode m)
+@@ -655,9 +538,6 @@ if (USE_CURL)
+     if(RPI)
+         set(CURL_ZLIB OFF CACHE BOOL "" )
+     endif()
+-
+-    add_subdirectory(${THIRDPARTY_DIR}/curl)
+-
+ endif()
+ 
+ ################################
+@@ -681,36 +561,8 @@ endif()
+ # PNG
+ ################################
+ 
+-set(LIBPNG_DIR ${THIRDPARTY_DIR}/libpng)
+-set(LIBPNG_SRC 
+-    ${LIBPNG_DIR}/png.c
+-    ${LIBPNG_DIR}/pngerror.c
+-    ${LIBPNG_DIR}/pngget.c
+-    ${LIBPNG_DIR}/pngmem.c
+-    ${LIBPNG_DIR}/pngpread.c
+-    ${LIBPNG_DIR}/pngread.c
+-    ${LIBPNG_DIR}/pngrio.c
+-    ${LIBPNG_DIR}/pngrtran.c
+-    ${LIBPNG_DIR}/pngrutil.c
+-    ${LIBPNG_DIR}/pngset.c
+-    ${LIBPNG_DIR}/pngtrans.c
+-    ${LIBPNG_DIR}/pngwio.c
+-    ${LIBPNG_DIR}/pngwrite.c
+-    ${LIBPNG_DIR}/pngwtran.c
+-    ${LIBPNG_DIR}/pngwutil.c
+-)
++target_link_libraries(tic80core${SCRIPT} png)
+ 
+-configure_file(${LIBPNG_DIR}/scripts/pnglibconf.h.prebuilt ${CMAKE_CURRENT_BINARY_DIR}/pnglibconf.h)
+-
+-add_library(png STATIC ${LIBPNG_SRC})
+-
+-target_compile_definitions(png PRIVATE PNG_ARM_NEON_OPT=0)
+-
+-target_include_directories(png 
+-    PUBLIC ${CMAKE_CURRENT_BINARY_DIR} 
+-    PRIVATE ${THIRDPARTY_DIR}/zlib
+-    INTERFACE ${THIRDPARTY_DIR}/libpng)
+-
+ ################################
+ # TIC-80 studio
+ ################################
+@@ -756,10 +608,10 @@ endif()
+ 
+ target_include_directories(tic80studio PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
+ 
+-target_link_libraries(tic80studio tic80core zip wave_writer argparse giflib png)
++target_link_libraries(tic80studio tic80core zip wave_writer argparse gif png)
+ 
+ if(USE_CURL)
+-    target_link_libraries(tic80studio libcurl)
++    target_link_libraries(tic80studio curl)
+ endif()
+ 
+ if(USE_LIBUV)
+@@ -846,7 +698,7 @@ if(ANDROID)
+ endif()
+ 
+ if(NOT EMSCRIPTEN)
+-    target_link_libraries(sdlgpu SDL2-static)
++    target_link_libraries(sdlgpu SDL2)
+ endif()
+ 
+ endif()
+@@ -914,7 +766,7 @@ if(BUILD_SDL)
+         elseif(RPI)
+             target_link_libraries(tic80 libSDL2.a bcm_host)
+         else()
+-            target_link_libraries(tic80 SDL2-static)
++            target_link_libraries(tic80 SDL2)
+         endif()
+     endif()
+ 
+@@ -925,7 +777,7 @@ if(BUILD_SDL)
+         install(TARGETS tic80 DESTINATION bin)
+ 
+         SET(TIC80_DESKTOP_DIR     "share/applications/")
+-        SET(TIC80_PIXMAPS_DIR     "share/icons/")
++        SET(TIC80_PIXMAPS_DIR     "share/pixmaps/")
+ 
+         install (FILES ${PROJECT_SOURCE_DIR}/build/linux/tic80.desktop DESTINATION ${TIC80_DESKTOP_DIR})
+         install (FILES ${PROJECT_SOURCE_DIR}/build/linux/tic80.xml DESTINATION ${TIC80_DESKTOP_DIR})
+@@ -1058,7 +910,7 @@ if(BUILD_STUB)
+             elseif(RPI)
+                 target_link_libraries(tic80${SCRIPT} libSDL2.a bcm_host pthread dl)
+             else()
+-                target_link_libraries(tic80${SCRIPT} SDL2-static)
++                target_link_libraries(tic80${SCRIPT} SDL2)
+             endif()
+         endif()
+ 

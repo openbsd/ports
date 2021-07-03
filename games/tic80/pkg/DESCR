@@ -1,0 +1,13 @@
+TIC-80 is a fantasy computer for making, playing and sharing tiny games.
+
+There are built-in tools for development: code, sprites, maps, sound
+editors and the command line, which is enough to create a mini retro
+game. You will get a cartridge file, which can be stored and played
+locally, or uploaded to the TIC-80 website to be shared and played
+online.
+
+Also, the game can be packed into a player that works on all popular
+platforms and distributed as you wish. To make a retro styled game the
+whole process of creation takes place under some technical limitations:
+240x136 pixel display, 16 color palette, 256 8x8 color sprites and 4
+channel sound.

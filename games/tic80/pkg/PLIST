@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/07/03 20:42:34 bcallah Exp $
+@bin bin/bin2txt
+@bin bin/cart2prj
+@bin bin/player-sdl
+@bin bin/prj2cart
+@bin bin/tic80
+@bin bin/xplode
+share/applications/tic80.desktop
+share/applications/tic80.xml
+share/pixmaps/
+share/pixmaps/tic80.png
+@tag update-desktop-database

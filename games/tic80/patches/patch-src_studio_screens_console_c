@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_studio_screens_console_c,v 1.1.1.1 2021/07/03 20:42:34 bcallah Exp $
+
+Fix include header.
+
+Index: src/studio/screens/console.c
+--- src/studio/screens/console.c.orig
++++ src/studio/screens/console.c
+@@ -38,7 +38,7 @@
+ #include <string.h>
+ 
+ #if !defined(__TIC_MACOSX__)
+-#include <malloc.h>
++#include <stdlib.h>
+ #endif
+ 
+ #if defined (TIC_BUILD_WITH_LUA)
