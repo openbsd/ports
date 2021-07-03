@@ -1,4 +1,4 @@
-# $OpenBSD: go.port.mk,v 1.42 2021/03/23 13:19:08 abieber Exp $
+# $OpenBSD: go.port.mk,v 1.43 2021/07/03 02:37:46 abieber Exp $
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
@@ -71,7 +71,7 @@ DISTNAME_ESC =		${DISTNAME${_s}}
 EXTRACT_SUFX ?=		.zip
 PKGNAME ?=		${DISTNAME:S/-v/-/}
 ALL_TARGET ?=		${MODGO_MODNAME}
-MODGO_FLAGS +=		-modcacherw
+MODGO_FLAGS +=		-modcacherw -trimpath
 DISTFILES +=		${DISTNAME_ESC}${EXTRACT_SUFX}{${MODGO_VERSION}${EXTRACT_SUFX}}
 EXTRACT_ONLY =		${DISTNAME_ESC}${EXTRACT_SUFX}
 MASTER_SITES ?=		${MASTER_SITE_ATHENS}${MODGO_MODNAME_ESC}/@v/
@@ -177,11 +177,18 @@ do-test:
 .  endif
 .endif
 
-# modgo-gen-modules will output MODGO_MODULES and MODGO_MODFILES
+# modgo-gen-modules will output MODGO_MODULES and MODGO_MODFILES for
+# the latest version of a given MODGO_MODNAME if MODGO_VERSION is set to
+# "latest". Otherwise it will fetch the MODULES/MODFILES for the presently
+# set MODGO_VERSION.
 modgo-gen-modules:
 .if empty(MODGO_MODNAME)
 	@${ECHO_MSG} "No MODGO_MODNAME set"
 	@exit 1
-.else
+.endif
+
+.if empty(MODGO_VERSION) || ${MODGO_VERSION} == "latest"
 	@${_PERLSCRIPT}/modgo-gen-modules-helper ${MODGO_MODNAME}
+.else
+	@${_PERLSCRIPT}/modgo-gen-modules-helper ${MODGO_MODNAME} ${MODGO_VERSION}
 .endif
