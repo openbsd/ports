@@ -1,13 +1,18 @@
-$OpenBSD: patch-src_lj_arch_h,v 1.5 2017/05/05 10:21:47 jsg Exp $
---- src/lj_arch.h.orig	Tue May  2 04:11:00 2017
-+++ src/lj_arch.h	Tue May  2 11:40:27 2017
-@@ -339,9 +339,6 @@
- #if defined(_SOFT_FLOAT) || defined(_SOFT_DOUBLE)
- #error "No support for PowerPC CPUs without double-precision FPU"
+$OpenBSD: patch-src_lj_arch_h,v 1.6 2021/07/03 20:21:07 sthen Exp $
+
+Our base-clang poses as gcc-4.2.1, but building with clang on powerpc
+"requires" gcc>=4.3, unlike other archs requiring lower versions. Instead,
+ignore the gcc version check ifdef hell for all base-clang arches.
+
+Index: src/lj_arch.h
+--- src/lj_arch.h.orig
++++ src/lj_arch.h
+@@ -299,7 +299,7 @@
  #endif
--#if defined(_LITTLE_ENDIAN)
--#error "No support for little-endian PowerPC"
--#endif
- #if defined(_LP64)
- #error "No support for PowerPC 64 bit mode"
- #endif
+ 
+ /* Check for minimum required compiler versions. */
+-#if defined(__GNUC__)
++#if defined(__GNUC__) && !defined(__clang__)
+ #if LJ_TARGET_X86
+ #if (__GNUC__ < 3) || ((__GNUC__ == 3) && __GNUC_MINOR__ < 4)
+ #error "Need at least GCC 3.4 or newer"

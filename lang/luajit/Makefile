@@ -1,38 +1,38 @@
-# $OpenBSD: Makefile,v 1.31 2020/08/10 00:56:40 jca Exp $
+# $OpenBSD: Makefile,v 1.32 2021/07/03 20:21:07 sthen Exp $
 
-# ../src/luajit2/src/lj_arch.h:55:2: error: #error "No support for
-# this architecture (yet)"
-ONLY_FOR_ARCHS = powerpc i386 amd64
-# arm needs missing EABI symbols
+ONLY_FOR_ARCHS = arm amd64 i386 powerpc
+# if changing the above and it actually builds, switch to using
+#  luajit in mail/rspamd
+# - arm added speculatively, so not added in rspamd yet.
+#
+# no aarch64 support in luajit 2.0 branch
 # games/tome4 is using embedded copy of luajit
-# if changing, sync in mail/rspamd
 
 SHARED_LIBS +=	luajit-${MODLUA_VERSION} 1.0 # 2.0.5
 
+# "Releases are only made occasionally. You're strongly encouraged to follow
+# the git branches"
+GH_ACCOUNT =	LuaJIT
+GH_PROJECT =	LuaJIT
+GH_COMMIT =	98f95f69180d48ce49289d6428b46a9ccdd67a46
+
 COMMENT =	just-in-time compiler for Lua
 V =		2.0.5
-REVISION =	2
-DISTNAME =	LuaJIT-${V}
+DISTNAME =	LuaJIT-${V}pl20210608
 PKGNAME =	${DISTNAME:L}
 
 CATEGORIES =	lang
 
-HOMEPAGE =	http://luajit.org/
+HOMEPAGE =	https://luajit.org/
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c m
 
-MASTER_SITES =	${HOMEPAGE}download/
-
 MODULES =	lang/lua
 MODLUA_SA=	Yes
 MODLUA_VERSION=	5.1
-
-MODULES +=	gcc4
-MODGCC4_ARCHS =	powerpc
-MODGCC4_LANGS =	c
 
 MAKE_FLAGS += \
 	CC="${CC}" \

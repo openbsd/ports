@@ -1,6 +1,8 @@
-$OpenBSD: patch-Makefile,v 1.6 2017/05/05 10:21:47 jsg Exp $
---- Makefile.orig	Tue May  2 04:11:00 2017
-+++ Makefile	Tue May  2 11:40:27 2017
+$OpenBSD: patch-Makefile,v 1.7 2021/07/03 20:21:07 sthen Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
 @@ -17,7 +17,7 @@ MAJVER=  2
  MINVER=  0
  RELVER=  5
@@ -15,7 +17,7 @@ $OpenBSD: patch-Makefile,v 1.6 2017/05/05 10:21:47 jsg Exp $
  	$(RM) $(INSTALL_TSYM) $(INSTALL_DYN) $(INSTALL_SHORT1) $(INSTALL_SHORT2)
  	cd src && test -f $(FILE_SO) && \
 -	  $(INSTALL_X) $(FILE_SO) $(INSTALL_DYN) && \
--	  $(LDCONFIG) $(INSTALL_LIB) && \
+-	  ( $(LDCONFIG) $(INSTALL_LIB) || : ) && \
 -	  $(SYMLINK) $(INSTALL_SONAME) $(INSTALL_SHORT1) && \
 -	  $(SYMLINK) $(INSTALL_SONAME) $(INSTALL_SHORT2) || :
 +	  $(INSTALL_X) $(FILE_SO) $(INSTALL_DYN) || :
