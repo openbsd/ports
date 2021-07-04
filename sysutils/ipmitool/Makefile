@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2021/01/31 19:36:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2021/07/04 22:33:49 patrick Exp $
 
 COMMENT=	manage and configure devices that support IPMI
 
 V=		1.8.18
 DISTNAME=	ipmitool-$V
-REVISION=	4
+REVISION=	5
 CATEGORIES=	sysutils
 EXTRACT_SUFX=	.tar.bz2
 
@@ -32,7 +32,8 @@ CONFIGURE_ARGS+= --enable-intf-lan \
 		--disable-intf-bmc \
 		--disable-intf-dummy
 
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+.if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "amd64" || \
+    ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc64"
 CONFIGURE_ARGS+=	--enable-intf-open
 .else
 CONFIGURE_ARGS+=	--disable-intf-open
