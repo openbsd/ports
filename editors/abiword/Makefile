@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.134 2021/02/23 19:39:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.135 2021/07/04 08:01:05 ajacoutot Exp $
 
 BROKEN-alpha=	gr_RenderInfo.cpp:426:1: internal compiler error: Segmentation fault
 
 COMMENT=	free cross-platform WYSIWYG word processor
 
-VERSION=	3.0.4
+VERSION=	3.0.5
 DISTNAME=	abiword-${VERSION}
-REVISION=	2
 
 CATEGORIES=	editors
 
@@ -20,20 +19,21 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender aspell atk-1.0
 WANTLIB += atk-bridge-2.0 avahi-common bz2 c cairo cairo-gobject
-WANTLIB += crypto curl dbus-1 enchant-2 epoxy expat ffi fontconfig
-WANTLIB += freetype fribidi gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gmp gobject-2.0 goffice-0.10 gpg-error
-WANTLIB += graphite2 gs gsf-1 gthread-2.0 gtk-3 harfbuzz hogweed
-WANTLIB += iconv idn2 intl jpeg ltdl lzma m mpfr nettle nghttp2
-WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png raptor2 rasqal rdf rsvg-2 spectre ssl
-WANTLIB += tasn1 unistring uuid wmf-0.2 wmflite-0.2 wv-1.2 xcb
-WANTLIB += xcb-render xcb-shm xml2 xslt yajl z zstd
+WANTLIB += crypto curl dbus-1 enchant-2 epoxy execinfo expat ffi
+WANTLIB += fontconfig freetype fribidi gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gobject-2.0 goffice-0.10
+WANTLIB += gpg-error graphite2 gs gsf-1 gthread-2.0 gtk-3 harfbuzz
+WANTLIB += hogweed iconv idn2 intl jpeg ltdl lzma m mpfr nettle
+WANTLIB += nghttp2 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png raptor2 rasqal rdf rsvg-2 spectre
+WANTLIB += ssl tasn1 unistring uuid wmf-0.2 wmflite-0.2 wv-1.2
+WANTLIB += xcb xcb-render xcb-shm xml2 xslt yajl z zstd
 
 MASTER_SITES=	http://www.abisource.com/downloads/abiword/${VERSION}/source/
 
 MODULES=	lang/python
 
+# C++11
 COMPILER =	base-clang ports-gcc
 
 .if ${MACHINE_ARCH} == "hppa"
