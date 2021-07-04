@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/07/04 14:55:34 jca Exp $
 
 COMMENT =	Sony PlayStation core for retroarch
 
 V =		22
 DISTNAME =	libretro-pcsx-rearmed-$V
+REVISION =	0
 
 GH_ACCOUNT =	notaz
 GH_PROJECT =	pcsx_rearmed
