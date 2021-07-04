@@ -1,12 +1,13 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2018/08/28 18:26:57 bcallah Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2021/07/04 23:19:38 jca Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -8,7 +8,10 @@ find_package(X11)
+@@ -8,7 +8,11 @@ find_package(X11)
  INCLUDE(CheckIncludeFiles)
  include(GNUInstallDirs)
  
++set(CMAKE_INCLUDE_CURRENT_DIR ON)
 +include_directories(${OPENBSD_LOCALBASE}/include)
 +link_directories(${OPENBSD_LOCALBASE}/lib)
  
@@ -14,7 +15,7 @@ Index: CMakeLists.txt
  pkg_check_modules(GSL gsl)
  
  if (NOT GSL_FOUND)
-@@ -36,7 +39,6 @@ CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/config.h.in
+@@ -36,7 +40,6 @@ CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/config.h.in
  
  
  install(DIRECTORY flow DESTINATION lib/graywolf/bin)
