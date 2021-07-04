@@ -1,13 +1,18 @@
-# $OpenBSD: Makefile,v 1.301 2021/06/18 12:00:53 robert Exp $
+# $OpenBSD: Makefile,v 1.302 2021/07/04 10:43:16 robert Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		40.0
-REVISION=		3
+REVISION=		4
 
-DISTFILES=		${DISTNAME}${EXTRACT_SUFX} gdm-puffy.png:0
-EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
+GH_ACCOUNT=		rnagy
+GH_PROJECT=		gdm
+GH_COMMIT=		5afc6cfa4cb84b0671d3f2f4d55c4ce697985aa8
+EXTRACT_SUFX=		.tar.gz
+
+SUPDISTFILES=		gdm-puffy.png:0
+MASTER_SITES=		${MASTER_SITES_GITHUB}
 MASTER_SITES0=		https://distfiles.bsdfrog.org/
 
 SHARED_LIBS +=  gdm                  0.0      # 1.0
