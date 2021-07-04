@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/03/21 16:03:51 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2021/07/04 14:35:05 tb Exp $
 
 COMMENT =	open asset import library
 CATEGORIES =	multimedia
@@ -8,7 +8,7 @@ SHARED_LIBS +=	assimp                    1.0 # 5.0
 GH_ACCOUNT =	assimp
 GH_PROJECT =	assimp
 GH_TAGNAME =	v5.0.0
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://www.assimp.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
