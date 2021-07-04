@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2021/06/13 04:25:44 rsadowski Exp $ #
+# $OpenBSD: Makefile,v 1.20 2021/07/04 05:34:03 rsadowski Exp $ #
 
 COMMENT =	desktop sync client for Nextcloud
 
-V =		3.2.2
+V =		3.2.3
 DISTNAME =	nextcloudclient-${V}
 
 GH_ACCOUNT =	nextcloud
@@ -32,6 +32,10 @@ MODULES =		devel/cmake \
 			x11/qt5
 
 BUILD_DEPENDS =		devel/gettext,-tools
+
+# Generate png icons with inkscape
+# https://github.com/nextcloud/desktop/pull/3466
+BUILD_DEPENDS +=	graphics/inkscape
 
 # Needs for test at build-time
 BUILD_DEPENDS +=	devel/cmocka
