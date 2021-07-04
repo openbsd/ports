@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2021/06/03 08:53:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.35 2021/07/04 08:04:54 ajacoutot Exp $
 @bin bin/virsh
 @bin bin/virt-admin
 @bin bin/virt-host-validate
@@ -135,6 +135,7 @@ share/doc/libvirt/html/docs.html
 share/doc/libvirt/html/downloads.html
 share/doc/libvirt/html/drivers.html
 share/doc/libvirt/html/drvbhyve.html
+share/doc/libvirt/html/drvch.html
 share/doc/libvirt/html/drvesx.html
 share/doc/libvirt/html/drvhyperv.html
 share/doc/libvirt/html/drvlxc.html
@@ -183,6 +184,9 @@ share/doc/libvirt/html/formatstoragecaps.html
 share/doc/libvirt/html/formatstorageencryption.html
 share/doc/libvirt/html/generic.css
 share/doc/libvirt/html/glib-adoption.html
+share/doc/libvirt/html/go/
+share/doc/libvirt/html/go/libvirt.html
+share/doc/libvirt/html/go/libvirtxml.html
 share/doc/libvirt/html/goals.html
 share/doc/libvirt/html/governance.html
 share/doc/libvirt/html/hacking.html
@@ -350,9 +354,6 @@ share/examples/libvirt/libvirt-admin.conf
 @sample ${SYSCONFDIR}/libvirt/libvirt-admin.conf
 share/examples/libvirt/libvirt.conf
 @sample ${SYSCONFDIR}/libvirt/libvirt.conf
-share/examples/libvirt/sasl2/
-share/examples/libvirt/sasl2/libvirt.conf
-@sample ${SYSCONFDIR}/sasl2/libvirt.conf
 share/libvirt/
 share/libvirt/api/
 share/libvirt/api/libvirt-admin-api.xml

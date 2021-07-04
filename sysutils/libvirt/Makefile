@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.81 2021/06/03 08:53:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.82 2021/07/04 08:04:54 ajacoutot Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
-DISTNAME=		libvirt-7.4.0
+DISTNAME=		libvirt-7.5.0
 
 CATEGORIES=		sysutils devel emulators
 
@@ -19,7 +19,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curl gio-2.0 glib-2.0 gnutls gobject-2.0 intl m pthread
-WANTLIB += sasl2 ssh2 util xml2 yajl
+WANTLIB += util xml2 yajl
 
 MASTER_SITES=		https://libvirt.org/sources/
 EXTRACT_SUFX=		.tar.xz
@@ -43,9 +43,7 @@ BUILD_DEPENDS +=	textproc/libxslt
 LIB_DEPENDS=		devel/glib2 \
 			devel/libyajl \
 			net/curl \
-			security/cyrus-sasl2 \
 			security/gnutls \
-			security/libssh2 \
 			textproc/libxml
 
 # disable until proven useful
@@ -67,7 +65,8 @@ DISABLED_FEATURES=	wireshark_dissector apparmor attr audit capng fuse \
 			driver_libxl driver_lxc driver_openvz driver_vz \
 			driver_qemu secdriver_apparmor secdriver_selinux \
 			login_shell driver_network nss sysctl_config \
-			git_werror libnl
+			git_werror libnl apparmor_profiles sanlock firewalld \
+			firewalld_zone driver_remote
 
 CONFIGURE_ARGS=		-Dinit_script=none
 
@@ -104,6 +103,5 @@ post-install:
 	rm -rf ${WRKINST}/var/{cache/libvirt,lib}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
 	mv ${WRKINST}${SYSCONFDIR}/libvirt ${PREFIX}/share/examples/
-	mv ${WRKINST}${SYSCONFDIR}/sasl2 ${PREFIX}/share/examples/libvirt/
 
 .include <bsd.port.mk>
