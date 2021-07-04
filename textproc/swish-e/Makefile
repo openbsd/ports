@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/07/04 14:31:45 tb Exp $
 
 COMMENT =		web/text search engine
 
 DISTNAME =		swish-e-2.4.7
-REVISION =		4
+REVISION =		5
 SHARED_LIBS =		swish-e	2.1
 CATEGORIES =		textproc www
 
-HOMEPAGE =		http://swish-e.org/
-MASTER_SITES =		${HOMEPAGE}distribution/
+MASTER_SITES =		https://spacehopper.org/mirrors/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

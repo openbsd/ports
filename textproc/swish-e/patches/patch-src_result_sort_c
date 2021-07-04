@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_result_sort_c,v 1.1 2021/07/04 14:31:46 tb Exp $
+
+Fix namespace collision with libz
+
+Index: src/result_sort.c
+--- src/result_sort.c.orig
++++ src/result_sort.c
+@@ -260,7 +260,7 @@ int    *LoadSortedProps(IndexFILE * indexf, struct met
+ 
+         /* Unpack / decompress the numbers */
+         for (j = 0; j < indexf->header.totalfiles; j++)
+-            m->sorted_data[j] = uncompress2(&s);
++            m->sorted_data[j] = swish_uncompress2(&s);
+ 
+         efree(buffer);
+     }

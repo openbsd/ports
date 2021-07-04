@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_db_native_c,v 1.1 2021/07/04 14:31:46 tb Exp $
+
+Fix namespace collision with libz
+
+Index: src/db_native.c
+--- src/db_native.c.orig
++++ src/db_native.c
+@@ -1601,7 +1601,7 @@ long    DB_ReadWordData_Native(sw_off_t wordID, unsign
+ 
+     *worddata = buf = WORDDATA_Get(DB->worddata,wordID,data_size);
+     /* Get saved_bytes and adjust data_size */
+-    *saved_bytes = uncompress2(&buf);
++    *saved_bytes = swish_uncompress2(&buf);
+     *data_size -= (buf - (*worddata));
+     /* Remove saved_bytes from buffer
+     ** We need to use memmove because data overlaps */

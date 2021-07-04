@@ -1,6 +1,61 @@
-$OpenBSD: patch-src_compress_c,v 1.1 2014/12/02 11:59:42 naddy Exp $
---- src/compress.c.orig	Sun Apr  5 03:58:32 2009
-+++ src/compress.c	Tue Dec  2 05:06:54 2014
+$OpenBSD: patch-src_compress_c,v 1.2 2021/07/04 14:31:46 tb Exp $
+
+Fix namespace collision with libz
+
+Index: src/compress.c
+--- src/compress.c.orig
++++ src/compress.c
+@@ -194,7 +194,7 @@ int     uncompress1(FILE * fp, int (*f_getc) (FILE *))
+ 
+ /* same routine but this works with a memory forward buffer instead of file */
+ /* it also increases the buffer pointer */
+-int     uncompress2(unsigned char **buffer)
++int     swish_uncompress2(unsigned char **buffer)
+ {
+     int     _c;
+     int     num = 0;
+@@ -604,10 +604,10 @@ void uncompress_location_values(unsigned char **buf,un
+     else
+         (*frequency) |= (*flag) & 15;   /* Binary 00001111 */
+ 
+-    *filenum = uncompress2(&p);
++    *filenum = swish_uncompress2(&p);
+ 
+     if(! (*frequency))
+-        *frequency = uncompress2(&p);
++        *frequency = swish_uncompress2(&p);
+ 
+     *buf = p;
+ }
+@@ -656,7 +656,7 @@ void uncompress_location_positions(unsigned char **buf
+         }
+ 
+         /* First position is always "as is" */
+-        posdata[0] = (unsigned int)uncompress2(&p);
++        posdata[0] = (unsigned int)swish_uncompress2(&p);
+ 
+         /* Check if positions where stored as two values per byte or the old "compress" style */
+         if(flag & POS_4_BIT)
+@@ -674,7 +674,7 @@ void uncompress_location_positions(unsigned char **buf
+         {
+             for (i = 1; i < frequency; i++)
+             {
+-                tmp = uncompress2(&p);
++                tmp = swish_uncompress2(&p);
+                 posdata[i] = (unsigned int)tmp;
+             }
+         }
+@@ -974,8 +974,8 @@ void    remove_worddata_longs(unsigned char *worddata,
+     src = worddata;
+ 
+     /* Jump over tfrequency and get first metaID */
+-    tfrequency = uncompress2(&src);     /* tfrequency */
+-    metaID = uncompress2(&src);     /* metaID */
++    tfrequency = swish_uncompress2(&src);     /* tfrequency */
++    metaID = swish_uncompress2(&src);     /* metaID */
+     dst = src;
+ 
+     while(1)
 @@ -995,7 +995,7 @@ void    remove_worddata_longs(unsigned char *worddata,
              progerr("Internal error in remove_worddata_longs");
  
@@ -10,3 +65,12 @@ $OpenBSD: patch-src_compress_c,v 1.1 2014/12/02 11:59:42 naddy Exp $
  
          /* Increase pointers */
          src += data_len;
+@@ -1006,7 +1006,7 @@ void    remove_worddata_longs(unsigned char *worddata,
+             break;   /* End of worddata */
+ 
+         /* Get next metaID */
+-        metaID = uncompress2(&src);
++        metaID = swish_uncompress2(&src);
+         dst = compress3(metaID,dst);
+     }
+     /* Adjust to new size */

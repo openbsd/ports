@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_compress_h,v 1.1 2021/07/04 14:31:46 tb Exp $
+
+Fix namespace collision with libz
+
+Index: src/compress.h
+--- src/compress.h.orig
++++ src/compress.h
+@@ -36,7 +36,7 @@ void compress1(int num, FILE *fp, int (*f_putc)(int , 
+ unsigned char *compress3(int num, unsigned char *buffer);
+ 
+ int uncompress1(FILE *fp, int (*f_getc)(FILE *fp));
+-int uncompress2(unsigned char **buffer);
++int swish_uncompress2(unsigned char **buffer);
+ 
+ 
+ unsigned long PACKLONG(unsigned long num);
