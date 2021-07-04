@@ -1,0 +1,35 @@
+$OpenBSD: patch-readvmf_c,v 1.1 2021/07/04 15:14:07 jca Exp $
+
+Fix incorrect type usage, zlib's gzFile is already a pointer type.
+Don't use data read from file as a format string (obvious security issue).
+
+Index: readvmf.c
+--- readvmf.c.orig
++++ readvmf.c
+@@ -339,7 +339,7 @@ pixmap_image()
+ char *
+ getdata(fd)
+ #ifdef ZLIB
+-gzFile * fd;
++gzFile fd;
+ #else
+ FILE *fd;
+ #endif
+@@ -432,7 +432,7 @@ struct Sundata * Context;
+   double theta, phi;
+   char *str, *ptr;
+ #ifdef ZLIB
+-  gzFile * fd;
++  gzFile fd;
+ #else
+   FILE *fd;
+ #endif
+@@ -480,7 +480,7 @@ struct Sundata * Context;
+      ret_value = 5;
+      goto abort;
+   }
+-  if (reformat) printf(str);
++  if (reformat) printf("%s", str);
+ 
+   k = 0;
+   num_colors = 0;

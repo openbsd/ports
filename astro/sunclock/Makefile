@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 21:25:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2021/07/04 15:14:07 jca Exp $
 
 COMMENT-main=		display the phase of the Sun on a map of the Earth
 COMMENT-maps=		additional maps of the Earth for sunclock
@@ -7,7 +7,7 @@ VERSION=		3.56
 DISTNAME=		sunclock-${VERSION}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-maps=		sunclock-maps-${VERSION}
-REVISION-main=		4
+REVISION-main=		5
 REVISION-maps=		0
 CATEGORIES=		astro
 
