@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.86 2021/06/01 14:26:16 landry Exp $
+# $OpenBSD: Makefile,v 1.87 2021/07/05 06:57:22 landry Exp $
 
 COMMENT =		Netscape Portable Runtime
 
-VER=			4.31
+VER=			4.32
 DISTNAME=		nspr-${VER}
 
 SO_VERSION=		24.0
