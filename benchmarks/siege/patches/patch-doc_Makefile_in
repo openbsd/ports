@@ -1,9 +1,9 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.4 2019/12/01 22:03:11 fcambus Exp $
+$OpenBSD: patch-doc_Makefile_in,v 1.5 2021/07/05 21:33:05 fcambus Exp $
 
 Index: doc/Makefile.in
 --- doc/Makefile.in.orig
 +++ doc/Makefile.in
-@@ -250,8 +250,8 @@ siege2csv.1.in         
+@@ -305,8 +305,8 @@ siege2csv.1.in         
  
  EXTRA_DIST = $(man_SOURCE) $(man_SHELLS) urls.txt siegerc.in
  DISTCLEANFILES = siegerc $(man_MANS) $(man_SHELLS)
@@ -14,7 +14,7 @@ Index: doc/Makefile.in
  all: all-am
  
  .SUFFIXES:
-@@ -398,7 +398,7 @@ install-exec: install-exec-am
+@@ -437,7 +437,7 @@ install-exec: install-exec-am
  install-data: install-data-am
  
  install-am: all-am

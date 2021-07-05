@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2021/05/01 13:33:25 fcambus Exp $
+# $OpenBSD: Makefile,v 1.18 2021/07/05 21:33:05 fcambus Exp $
 
 COMMENT =		multi-threaded HTTP benchmark and regression tester
 
-DISTNAME =		siege-4.0.9
+DISTNAME =		siege-4.1.0
 
 CATEGORIES =		benchmarks www
 
