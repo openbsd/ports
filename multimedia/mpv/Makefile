@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.71 2021/04/07 06:58:46 namn Exp $
+# $OpenBSD: Makefile,v 1.72 2021/07/05 10:00:18 sthen Exp $
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.33.1
+REVISION =		0
 
 SHARED_LIBS +=		mpv		0.2 # 1.109
 
@@ -91,8 +92,7 @@ CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
 			--disable-wayland
 
 MAKE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			RST2MAN=rst2man${MODPY_BIN_SUFFIX}
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 MAKE_FLAGS =		-o "${WRKBUILD}" -t "${WRKSRC}" --destdir="${DESTDIR}"
 
 NO_TEST =		Yes
