@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.58 2021/06/09 19:50:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2021/07/05 10:00:54 sthen Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
 DISTNAME =		varnish-6.6.0
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 
@@ -40,9 +40,7 @@ AUTORECONF =		./autogen.sh
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}" \
 			PYTHON="${MODPY_BIN}"
-CONFIGURE_ARGS =	--docdir=${PREFIX}/share/examples/varnish \
-			--with-rst2man=rst2man${MODPY_BIN_SUFFIX} \
-			--with-sphinx-build=sphinx-build${MODPY_BIN_SUFFIX}
+CONFIGURE_ARGS =	--docdir=${PREFIX}/share/examples/varnish
 
 TEST_TARGET =		check
 
