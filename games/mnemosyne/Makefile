@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.44 2021/02/25 22:26:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2021/07/05 09:33:44 jca Exp $
 
 COMMENT=	flash-card tool which optimises your learning process
 
-MODPY_EGG_VERSION = 2.7.3
+MODPY_EGG_VERSION = 2.8
 DISTNAME=	Mnemosyne-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	games education
@@ -29,6 +29,7 @@ RUN_DEPENDS=	x11/py-qt5${MODPY_FLAVOR}>=5.6 \
 		graphics/py-matplotlib${MODPY_FLAVOR} \
 		www/py-cheroot${MODPY_FLAVOR}>=5 \
 		www/py-webob${MODPY_FLAVOR}>=1.4 \
+		security/py-argon2-cffi${MODPY_FLAVORS} \
 		devel/desktop-file-utils
 
 NO_TEST=	Yes
