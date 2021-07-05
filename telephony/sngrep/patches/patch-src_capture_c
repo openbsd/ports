@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_capture_c,v 1.1.1.1 2021/04/28 19:12:30 sthen Exp $
+$OpenBSD: patch-src_capture_c,v 1.2 2021/07/05 12:39:24 sthen Exp $
 
 Index: src/capture.c
 --- src/capture.c.orig
 +++ src/capture.c
-@@ -1130,8 +1130,11 @@ datalink_size(int datalink)
+@@ -1151,8 +1151,11 @@ datalink_size(int datalink)
          case DLT_PPP:
          case DLT_PPP_BSDOS:
          case DLT_PPP_SERIAL:

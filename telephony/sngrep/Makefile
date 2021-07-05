@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/04/28 19:12:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/07/05 12:39:24 sthen Exp $
 
 COMMENT=	SIP packet capture tool with curses UI
 
 GH_ACCOUNT=	irontec
 GH_PROJECT=	sngrep
-GH_TAGNAME=	v1.4.8
+GH_TAGNAME=	v1.4.9
 
 CATEGORIES=	telephony net
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
