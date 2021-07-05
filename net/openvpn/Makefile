@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2021/06/19 12:19:35 jca Exp $
+# $OpenBSD: Makefile,v 1.106 2021/07/05 12:15:50 jsg Exp $
 
 COMMENT=	easy-to-use, robust, and highly configurable VPN
 
@@ -25,9 +25,7 @@ TEST_DEPENDS=	devel/cmocka
 CONFIGURE_STYLE= gnu
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}" \
-		RST2HTML="${LOCALBASE}/bin/rst2html-3" \
-		RST2MAN="${LOCALBASE}/bin/rst2man-3"
+		LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
