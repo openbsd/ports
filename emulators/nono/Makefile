@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2021/06/01 15:16:28 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.15 2021/07/06 16:43:48 daniel Exp $
 
 # Big endian support is not complete as of 0.1.0
 NOT_FOR_ARCHS=		${BE_ARCHS}
@@ -7,14 +7,16 @@ BROKEN-i386=		requires __m128i and similar types; may work if SSE is disabled
 COMMENT=		LUNA-I emulator
 
 DISTNAME=		nono-0.1.6
+REVISION=		0
 CATEGORIES=		emulators
 
 MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
 
 HOMEPAGE=		http://www.pastel-flower.jp/~isaki/nono/
 
-# BSD
-PERMIT_PACKAGE=	Yes
+# see doc/nono-license.txt
+PERMIT_DISTFILES =	Yes
+PERMIT_PACKAGE =	binaries cannot be distributed
 
 WANTLIB += ${COMPILER_LIBCXX} c curses edit m wx_baseu-3.0 wx_baseu_net-3.0
 WANTLIB += wx_baseu_xml-3.0 wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0
