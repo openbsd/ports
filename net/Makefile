@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1259 2021/06/24 18:13:00 paco Exp $
+# $OpenBSD: Makefile,v 1.1260 2021/07/06 20:15:09 tb Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -37,6 +37,7 @@
      SUBDIR += blaeu
      SUBDIR += bnc
      SUBDIR += bombadillo
+     SUBDIR += bore
      SUBDIR += bro
      SUBDIR += btpd
      SUBDIR += bwm-ng
