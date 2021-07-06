@@ -1,4 +1,4 @@
-$OpenBSD: patch-sandbox_policy_openbsd_sandbox_openbsd_h,v 1.1 2021/04/01 10:24:45 robert Exp $
+$OpenBSD: patch-sandbox_policy_openbsd_sandbox_openbsd_h,v 1.2 2021/07/06 11:13:51 robert Exp $
 
 Index: sandbox/policy/openbsd/sandbox_openbsd.h
 --- sandbox/policy/openbsd/sandbox_openbsd.h.orig

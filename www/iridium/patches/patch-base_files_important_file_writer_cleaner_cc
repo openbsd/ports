@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_files_important_file_writer_cleaner_cc,v 1.1 2021/04/01 10:24:43 robert Exp $
+$OpenBSD: patch-base_files_important_file_writer_cleaner_cc,v 1.2 2021/07/06 11:13:49 robert Exp $
 
 Index: base/files/important_file_writer_cleaner.cc
 --- base/files/important_file_writer_cleaner.cc.orig

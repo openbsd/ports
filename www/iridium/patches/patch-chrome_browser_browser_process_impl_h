@@ -1,14 +1,14 @@
-$OpenBSD: patch-chrome_browser_browser_process_impl_h,v 1.14 2021/04/01 10:24:44 robert Exp $
+$OpenBSD: patch-chrome_browser_browser_process_impl_h,v 1.15 2021/07/06 11:13:50 robert Exp $
 
 Index: chrome/browser/browser_process_impl.h
 --- chrome/browser/browser_process_impl.h.orig
 +++ chrome/browser/browser_process_impl.h
-@@ -355,7 +355,7 @@ class BrowserProcessImpl : public BrowserProcess,
+@@ -357,7 +357,7 @@ class BrowserProcessImpl : public BrowserProcess,
  
-   std::unique_ptr<BatteryMetrics> battery_metrics_;
- 
--#if defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-+#if defined(OS_WIN) || ((defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS))
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
++#if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD)
    base::RepeatingTimer autoupdate_timer_;
  
    // Gets called by autoupdate timer to see if browser needs restart and can be

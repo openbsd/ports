@@ -1,18 +1,18 @@
-$OpenBSD: patch-ui_base_ui_base_features_cc,v 1.7 2021/04/01 10:24:46 robert Exp $
+$OpenBSD: patch-ui_base_ui_base_features_cc,v 1.8 2021/07/06 11:13:52 robert Exp $
 
 Index: ui/base/ui_base_features.cc
 --- ui/base/ui_base_features.cc.orig
 +++ ui/base/ui_base_features.cc
-@@ -108,7 +108,7 @@ const base::Feature kCompositorThreadedScrollbarScroll
- // native apps on Windows.
- const base::Feature kExperimentalFlingAnimation {
-   "ExperimentalFlingAnimation",
--#if defined(OS_WIN) || \
-+#if defined(OS_WIN) || defined(OS_BSD) || \
-     (defined(OS_LINUX) && !defined(OS_CHROMEOS) && !BUILDFLAG(IS_LACROS))
+@@ -148,7 +148,7 @@ const base::Feature kExperimentalFlingAnimation {
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+ #if defined(OS_WIN) || (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_ASH) && \
+-                        !BUILDFLAG(IS_CHROMEOS_LACROS))
++                        !BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD))
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
-@@ -142,7 +142,7 @@ const base::Feature kPrecisionTouchpadLogging{
+       base::FEATURE_DISABLED_BY_DEFAULT
+@@ -181,7 +181,7 @@ const base::Feature kPrecisionTouchpadLogging{
  #endif  // defined(OS_WIN)
  
  #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
@@ -21,12 +21,12 @@ Index: ui/base/ui_base_features.cc
  // Enables stylus appearing as touch when in contact with digitizer.
  const base::Feature kDirectManipulationStylus = {
      "DirectManipulationStylus",
-@@ -199,7 +199,7 @@ bool IsCSSColorSchemeUARenderingEnabled() {
- // Mac launch bug.
- const base::Feature kFormControlsRefresh = {"FormControlsRefresh",
- #if defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_LINUX) || \
--    defined(OS_APPLE)
-+    defined(OS_APPLE) || defined(OS_BSD)
-                                             base::FEATURE_ENABLED_BY_DEFAULT
+@@ -209,7 +209,7 @@ bool IsForcedColorsEnabled() {
+ // milestones.
+ const base::Feature kEyeDropper {
+   "EyeDropper",
+-#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
+       base::FEATURE_ENABLED_BY_DEFAULT
  #else
-                                             base::FEATURE_DISABLED_BY_DEFAULT
+       base::FEATURE_DISABLED_BY_DEFAULT

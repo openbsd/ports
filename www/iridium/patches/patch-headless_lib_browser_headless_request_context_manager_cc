@@ -1,32 +1,23 @@
-$OpenBSD: patch-headless_lib_browser_headless_request_context_manager_cc,v 1.6 2021/04/01 10:24:45 robert Exp $
+$OpenBSD: patch-headless_lib_browser_headless_request_context_manager_cc,v 1.7 2021/07/06 11:13:51 robert Exp $
 
 Index: headless/lib/browser/headless_request_context_manager.cc
 --- headless/lib/browser/headless_request_context_manager.cc.orig
 +++ headless/lib/browser/headless_request_context_manager.cc
-@@ -26,7 +26,7 @@ namespace headless {
+@@ -35,7 +35,7 @@ namespace {
  
- namespace {
- 
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  constexpr char kProductName[] = "HeadlessChrome";
  #endif
  
-@@ -56,7 +56,7 @@ net::NetworkTrafficAnnotationTag GetProxyConfigTraffic
-   return traffic_annotation;
- }
+@@ -73,7 +73,7 @@ void SetCryptConfigOnce(const base::FilePath& user_dat
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
- ::network::mojom::CryptConfigPtr BuildCryptConfigOnce(
-     const base::FilePath& user_data_path) {
-   static bool done_once = false;
-@@ -218,7 +218,7 @@ HeadlessRequestContextManager::HeadlessRequestContextM
-           base::ThreadTaskRunnerHandle::Get());
-     }
-   }
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
-   auto crypt_config = BuildCryptConfigOnce(user_data_path_);
-   if (crypt_config)
-     content::GetNetworkService()->SetCryptConfig(std::move(crypt_config));
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
+   ::network::mojom::CryptConfigPtr config =
+       ::network::mojom::CryptConfig::New();
+   config->store = base::CommandLine::ForCurrentProcess()->GetSwitchValueASCII(

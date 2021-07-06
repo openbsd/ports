@@ -1,14 +1,14 @@
-$OpenBSD: patch-weblayer_browser_content_browser_client_impl_h,v 1.5 2021/04/01 10:24:46 robert Exp $
+$OpenBSD: patch-weblayer_browser_content_browser_client_impl_h,v 1.6 2021/07/06 11:13:52 robert Exp $
 
 Index: weblayer/browser/content_browser_client_impl.h
 --- weblayer/browser/content_browser_client_impl.h.orig
 +++ weblayer/browser/content_browser_client_impl.h
-@@ -116,7 +116,7 @@ class ContentBrowserClientImpl : public content::Conte
-   void RenderProcessWillLaunch(content::RenderProcessHost* host) override;
-   scoped_refptr<content::QuotaPermissionContext> CreateQuotaPermissionContext()
+@@ -157,7 +157,7 @@ class ContentBrowserClientImpl : public content::Conte
        override;
--#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)
+ // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
+ // complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_ANDROID) || defined(OS_BSD)
    void GetAdditionalMappedFilesForChildProcess(
        const base::CommandLine& command_line,
        int child_process_id,

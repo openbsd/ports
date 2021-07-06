@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_extensions_BUILD_gn,v 1.15 2021/04/01 10:24:44 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_BUILD_gn,v 1.16 2021/07/06 11:13:50 robert Exp $
 Index: chrome/browser/extensions/BUILD.gn
 --- chrome/browser/extensions/BUILD.gn.orig
 +++ chrome/browser/extensions/BUILD.gn
-@@ -1233,6 +1233,10 @@ static_library("extensions") {
-     deps += [ "//chrome/common:service_process_mojom" ]
+@@ -1269,6 +1269,10 @@ static_library("extensions") {
+     ]
    }
  
 +  if (is_openbsd) {

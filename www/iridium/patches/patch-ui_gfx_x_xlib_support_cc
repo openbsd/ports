@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_gfx_x_xlib_support_cc,v 1.1 2021/04/01 10:24:46 robert Exp $
+$OpenBSD: patch-ui_gfx_x_xlib_support_cc,v 1.2 2021/07/06 11:13:52 robert Exp $
 
 Index: ui/gfx/x/xlib_support.cc
 --- ui/gfx/x/xlib_support.cc.orig
 +++ ui/gfx/x/xlib_support.cc
-@@ -32,7 +32,11 @@ void InitXlib() {
+@@ -38,10 +38,18 @@ void InitXlib() {
    if (xlib_loader->loaded())
      return;
  
@@ -11,6 +11,13 @@ Index: ui/gfx/x/xlib_support.cc
 +  CHECK(xlib_loader->Load("libX11.so"));
 +#else
    CHECK(xlib_loader->Load("libX11.so.6"));
++#endif
+ 
+   auto* xlib_xcb_loader = GetXlibXcbLoader();
++#if defined(OS_BSD)
++  CHECK(xlib_xcb_loader->Load("libX11-xcb.so"));
++#else
+   CHECK(xlib_xcb_loader->Load("libX11-xcb.so.1"));
 +#endif
  
    CHECK(xlib_loader->XInitThreads());

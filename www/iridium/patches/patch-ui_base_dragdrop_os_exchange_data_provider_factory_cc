@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_base_dragdrop_os_exchange_data_provider_factory_cc,v 1.10 2021/04/01 10:24:46 robert Exp $
+$OpenBSD: patch-ui_base_dragdrop_os_exchange_data_provider_factory_cc,v 1.11 2021/07/06 11:13:52 robert Exp $
 
 Index: ui/base/dragdrop/os_exchange_data_provider_factory.cc
 --- ui/base/dragdrop/os_exchange_data_provider_factory.cc.orig

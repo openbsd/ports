@@ -1,9 +1,9 @@
-$OpenBSD: patch-net_BUILD_gn,v 1.15 2021/04/01 10:24:45 robert Exp $
+$OpenBSD: patch-net_BUILD_gn,v 1.16 2021/07/06 11:13:51 robert Exp $
 
 Index: net/BUILD.gn
 --- net/BUILD.gn.orig
 +++ net/BUILD.gn
-@@ -99,7 +99,7 @@ net_configs = [
+@@ -100,7 +100,7 @@ net_configs = [
    "//build/config/compiler:wexit_time_destructors",
  ]
  
@@ -12,25 +12,38 @@ Index: net/BUILD.gn
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1385,7 +1385,7 @@ component("net") {
+@@ -1378,7 +1378,7 @@ component("net") {
        }
      }
  
--    if (is_android || is_chromeos) {
-+    if (is_android || is_chromeos || is_openbsd) {
+-    if (is_android || is_chromeos_ash) {
++    if (is_android || is_chromeos_ash || is_openbsd) {
        sources += [
          "base/network_change_notifier_posix.cc",
          "base/network_change_notifier_posix.h",
-@@ -1418,7 +1418,7 @@ component("net") {
+@@ -1411,13 +1411,20 @@ component("net") {
      }
  
      # Use getifaddrs() on POSIX platforms, except Linux.
 -    if (is_posix && !is_linux && !is_chromeos) {
-+    if (is_posix) {
++    if (is_posix && !is_linux && !is_chromeos && !is_openbsd) {
        sources += [
          "base/network_interfaces_getifaddrs.cc",
          "base/network_interfaces_getifaddrs.h",
-@@ -1533,6 +1533,15 @@ component("net") {
+       ]
+     }
+ 
++    if (is_openbsd) {
++      sources += [
++        "base/network_interfaces_getifaddrs.cc",
++        "base/network_interfaces_getifaddrs.h",
++      ]
++    }
++
+     if (use_nss_certs) {
+       sources += [
+         "cert/internal/system_trust_store_nss.h",
+@@ -1527,6 +1534,15 @@ component("net") {
        ]
      }
  
@@ -46,12 +59,12 @@ Index: net/BUILD.gn
      if (!disable_ftp_support) {
        sources += [
          "ftp/ftp_auth_cache.cc",
-@@ -4759,7 +4768,7 @@ test("net_unittests") {
+@@ -4748,7 +4764,7 @@ test("net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux and Android.
 -  if (is_posix && !is_linux && !is_chromeos && !is_android) {
-+  if (is_posix) {
++  if (is_posix && !is_linux && !is_chromeos && !is_android && !is_openbsd) {
      sources += [ "base/network_interfaces_getifaddrs_unittest.cc" ]
    }
  

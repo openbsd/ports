@@ -1,22 +1,22 @@
-$OpenBSD: patch-chrome_browser_metrics_chrome_browser_main_extra_parts_metrics_cc,v 1.14 2021/04/01 10:24:44 robert Exp $
+$OpenBSD: patch-chrome_browser_metrics_chrome_browser_main_extra_parts_metrics_cc,v 1.15 2021/07/06 11:13:50 robert Exp $
 
 Index: chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
 --- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig
 +++ chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
-@@ -50,8 +50,10 @@
- #include <cpu-features.h>
- #endif  // defined(OS_ANDROID) && defined(__arm__)
+@@ -61,8 +61,10 @@
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
 +#if !defined(OS_BSD)
  #include <gnu/libc-version.h>
 +#endif
  
  #include "base/linux_util.h"
  #include "base/strings/string_split.h"
-@@ -214,7 +216,9 @@ void RecordStartupMetrics() {
-   base::UmaHistogramBoolean("Windows.ApplockerRunning", IsApplockerRunning());
+@@ -227,7 +229,9 @@ void RecordStartupMetrics() {
+   crypto::MeasureTPMAvailability();
  #endif  // defined(OS_WIN)
  
 +#if !defined(OS_BSD)

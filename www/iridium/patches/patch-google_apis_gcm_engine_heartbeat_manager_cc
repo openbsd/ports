@@ -1,4 +1,4 @@
-$OpenBSD: patch-google_apis_gcm_engine_heartbeat_manager_cc,v 1.5 2021/04/01 10:24:45 robert Exp $
+$OpenBSD: patch-google_apis_gcm_engine_heartbeat_manager_cc,v 1.6 2021/07/06 11:13:51 robert Exp $
 
 Index: google_apis/gcm/engine/heartbeat_manager.cc
 --- google_apis/gcm/engine/heartbeat_manager.cc.orig
@@ -7,8 +7,8 @@ Index: google_apis/gcm/engine/heartbeat_manager.cc
  // Minimum time spent sleeping before we force a new heartbeat.
  const int kMinSuspendTimeMs = 1000 * 10; // 10 seconds.
  
--#if defined(OS_LINUX) || BUILDFLAG(IS_LACROS)
-+#if defined(OS_LINUX) || BUILDFLAG(IS_LACROS) || defined(OS_BSD)
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  // The period at which to check if the heartbeat time has passed. Used to
  // protect against platforms where the timer is delayed by the system being
  // suspended.  Only needed on linux because the other OSes provide a standard
@@ -16,8 +16,8 @@ Index: google_apis/gcm/engine/heartbeat_manager.cc
        base::BindRepeating(&HeartbeatManager::OnHeartbeatTriggered,
                            weak_ptr_factory_.GetWeakPtr()));
  
--#if defined(OS_LINUX) || BUILDFLAG(IS_LACROS)
-+#if defined(OS_LINUX) || BUILDFLAG(IS_LACROS) || defined(OS_BSD)
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
    // Windows, Mac, Android, iOS, and Chrome OS all provide a way to be notified
    // when the system is suspending or resuming.  The only one that does not is
    // Linux so we need to poll to check for missed heartbeats.
@@ -25,8 +25,8 @@ Index: google_apis/gcm/engine/heartbeat_manager.cc
      return;
    }
  
--#if defined(OS_LINUX) || BUILDFLAG(IS_LACROS)
-+#if defined(OS_LINUX) || BUILDFLAG(IS_LACROS) || defined(OS_BSD)
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
    // Otherwise check again later.
    io_task_runner_->PostDelayedTask(
        FROM_HERE,

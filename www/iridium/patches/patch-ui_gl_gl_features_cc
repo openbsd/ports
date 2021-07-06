@@ -1,14 +1,14 @@
-$OpenBSD: patch-ui_gl_gl_features_cc,v 1.2 2021/04/01 10:24:46 robert Exp $
+$OpenBSD: patch-ui_gl_gl_features_cc,v 1.3 2021/07/06 11:13:52 robert Exp $
 
 Index: ui/gl/gl_features.cc
 --- ui/gl/gl_features.cc.orig
 +++ ui/gl/gl_features.cc
-@@ -14,7 +14,7 @@ namespace features {
+@@ -24,7 +24,7 @@ const base::Feature kGpuVsync{"GpuVsync", base::FEATUR
  const base::Feature kDefaultPassthroughCommandDecoder{
    "DefaultPassthroughCommandDecoder",
- #if defined(OS_WIN) || \
--    (defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(CHROMECAST_BUILD))
-+    ((defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS) && !defined(CHROMECAST_BUILD))
+ #if defined(OS_WIN) ||                                       \
+-    ((defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) && \
++    ((defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)) && \
+      !defined(CHROMECAST_BUILD))
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
-       base::FEATURE_DISABLED_BY_DEFAULT

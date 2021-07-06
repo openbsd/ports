@@ -1,23 +1,23 @@
-$OpenBSD: patch-chrome_browser_extensions_api_settings_private_prefs_util_cc,v 1.13 2021/04/01 10:24:44 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_api_settings_private_prefs_util_cc,v 1.14 2021/07/06 11:13:50 robert Exp $
 
 Index: chrome/browser/extensions/api/settings_private/prefs_util.cc
 --- chrome/browser/extensions/api/settings_private/prefs_util.cc.orig
 +++ chrome/browser/extensions/api/settings_private/prefs_util.cc
-@@ -171,7 +171,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
-   (*s_allowlist)[bookmarks::prefs::kShowBookmarkBar] =
-       settings_api::PrefType::PREF_TYPE_BOOLEAN;
+@@ -178,7 +178,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
    (*s_allowlist)[::prefs::kUseCustomChromeFrame] =
        settings_api::PrefType::PREF_TYPE_BOOLEAN;
  #endif
-@@ -181,7 +181,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
-   // Appearance settings.
-   (*s_allowlist)[::prefs::kCurrentThemeID] =
-       settings_api::PrefType::PREF_TYPE_STRING;
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+@@ -192,7 +192,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
+       settings_api::PrefType::PREF_TYPE_NUMBER;
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
    (*s_allowlist)[::prefs::kUsesSystemTheme] =
        settings_api::PrefType::PREF_TYPE_BOOLEAN;
  #endif

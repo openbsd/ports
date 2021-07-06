@@ -1,23 +1,23 @@
-$OpenBSD: patch-ui_views_controls_label_cc,v 1.11 2021/04/01 10:24:46 robert Exp $
+$OpenBSD: patch-ui_views_controls_label_cc,v 1.12 2021/07/06 11:13:52 robert Exp $
 
 Index: ui/views/controls/label.cc
 --- ui/views/controls/label.cc.orig
 +++ ui/views/controls/label.cc
-@@ -773,7 +773,7 @@ bool Label::OnMousePressed(const ui::MouseEvent& event
-     GetFocusManager()->SetFocusedView(this);
-   }
+@@ -817,7 +817,7 @@ bool Label::OnMousePressed(const ui::MouseEvent& event
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
    if (event.IsOnlyMiddleMouseButton() && GetFocusManager() && !had_focus)
      GetFocusManager()->SetFocusedView(this);
  #endif
-@@ -960,7 +960,7 @@ bool Label::PasteSelectionClipboard() {
- }
- 
+@@ -1006,7 +1006,7 @@ bool Label::PasteSelectionClipboard() {
  void Label::UpdateSelectionClipboard() {
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
    if (!GetObscured()) {
      ui::ScopedClipboardWriter(ui::ClipboardBuffer::kSelection)
          .WriteText(GetSelectedText());

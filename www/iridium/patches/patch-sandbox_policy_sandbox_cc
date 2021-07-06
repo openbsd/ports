@@ -1,4 +1,4 @@
-$OpenBSD: patch-sandbox_policy_sandbox_cc,v 1.1 2021/04/01 10:24:45 robert Exp $
+$OpenBSD: patch-sandbox_policy_sandbox_cc,v 1.2 2021/07/06 11:13:51 robert Exp $
 
 Index: sandbox/policy/sandbox.cc
 --- sandbox/policy/sandbox.cc.orig
@@ -13,8 +13,8 @@ Index: sandbox/policy/sandbox.cc
 +
  #if defined(OS_MAC)
  #include "sandbox/mac/seatbelt.h"
- #include "sandbox/policy/mac/sandbox_mac.h"
-@@ -30,7 +34,7 @@
+ #endif  // defined(OS_MAC)
+@@ -29,7 +33,7 @@
  namespace sandbox {
  namespace policy {
  

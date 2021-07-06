@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_angle_src_gpu_info_util_SystemInfo_linux_cpp,v 1.7 2021/04/01 10:24:45 robert Exp $
+$OpenBSD: patch-third_party_angle_src_gpu_info_util_SystemInfo_linux_cpp,v 1.8 2021/07/06 11:13:51 robert Exp $
 
 Index: third_party/angle/src/gpu_info_util/SystemInfo_linux.cpp
 --- third_party/angle/src/gpu_info_util/SystemInfo_linux.cpp.orig
 +++ third_party/angle/src/gpu_info_util/SystemInfo_linux.cpp
-@@ -71,10 +71,17 @@ bool GetPCIDevicesWithLibPCI(std::vector<GPUDeviceInfo
+@@ -71,6 +71,12 @@ bool GetPCIDevicesWithLibPCI(std::vector<GPUDeviceInfo
  
  bool GetSystemInfo(SystemInfo *info)
  {
@@ -16,8 +16,11 @@ Index: third_party/angle/src/gpu_info_util/SystemInfo_linux.cpp
      if (!GetPCIDevicesWithLibPCI(&(info->gpus)))
      {
          return false;
+@@ -80,6 +86,7 @@ bool GetSystemInfo(SystemInfo *info)
+     {
+         return false;
      }
 +#endif
  
-     if (info->gpus.size() == 0)
-     {
+     GetDualGPUInfo(info);
+ 

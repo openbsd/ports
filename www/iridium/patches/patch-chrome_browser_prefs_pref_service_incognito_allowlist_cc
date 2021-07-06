@@ -1,14 +1,14 @@
-$OpenBSD: patch-chrome_browser_prefs_pref_service_incognito_allowlist_cc,v 1.2 2021/04/01 10:24:44 robert Exp $
+$OpenBSD: patch-chrome_browser_prefs_pref_service_incognito_allowlist_cc,v 1.3 2021/07/06 11:13:50 robert Exp $
 
 Index: chrome/browser/prefs/pref_service_incognito_allowlist.cc
 --- chrome/browser/prefs/pref_service_incognito_allowlist.cc.orig
 +++ chrome/browser/prefs/pref_service_incognito_allowlist.cc
-@@ -136,7 +136,7 @@ const char* const kPersistentPrefNames[] = {
-     prefs::kShowFullscreenToolbar,
- #endif
+@@ -138,7 +138,7 @@ const char* const kPersistentPrefNames[] = {
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
      // Toggleing custom frames affects all open windows in the profile, hence
      // should be written to the regular profile when changed in incognito mode.
      prefs::kUseCustomChromeFrame,

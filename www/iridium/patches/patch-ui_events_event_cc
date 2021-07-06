@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_events_event_cc,v 1.1 2021/04/01 10:24:46 robert Exp $
+$OpenBSD: patch-ui_events_event_cc,v 1.2 2021/07/06 11:13:52 robert Exp $
 
 Index: ui/events/event.cc
 --- ui/events/event.cc.orig
 +++ ui/events/event.cc
-@@ -469,7 +469,7 @@ std::string LocatedEvent::ToString() const {
+@@ -450,7 +450,7 @@ std::string LocatedEvent::ToString() const {
  MouseEvent::MouseEvent(const PlatformEvent& native_event)
      : LocatedEvent(native_event),
        changed_button_flags_(GetChangedMouseButtonFlagsFromNative(native_event)),

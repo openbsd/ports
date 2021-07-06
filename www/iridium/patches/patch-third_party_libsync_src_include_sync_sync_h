@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_libsync_src_include_sync_sync_h,v 1.1 2021/04/01 10:24:45 robert Exp $
+$OpenBSD: patch-third_party_libsync_src_include_sync_sync_h,v 1.2 2021/07/06 11:13:52 robert Exp $
 
 Index: third_party/libsync/src/include/sync/sync.h
 --- third_party/libsync/src/include/sync/sync.h.orig

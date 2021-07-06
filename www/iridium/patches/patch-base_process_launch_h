@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_process_launch_h,v 1.16 2021/04/01 10:24:44 robert Exp $
+$OpenBSD: patch-base_process_launch_h,v 1.17 2021/07/06 11:13:49 robert Exp $
 
 Index: base/process/launch.h
 --- base/process/launch.h.orig
 +++ base/process/launch.h
-@@ -180,7 +180,7 @@ struct BASE_EXPORT LaunchOptions {
+@@ -190,7 +190,7 @@ struct BASE_EXPORT LaunchOptions {
    bool clear_environment = false;
  #endif  // OS_WIN || OS_POSIX || OS_FUCHSIA
  

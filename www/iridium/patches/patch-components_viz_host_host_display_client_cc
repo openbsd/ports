@@ -1,14 +1,14 @@
-$OpenBSD: patch-components_viz_host_host_display_client_cc,v 1.3 2021/04/01 10:24:44 robert Exp $
+$OpenBSD: patch-components_viz_host_host_display_client_cc,v 1.4 2021/07/06 11:13:50 robert Exp $
 
 Index: components/viz/host/host_display_client.cc
 --- components/viz/host/host_display_client.cc.orig
 +++ components/viz/host/host_display_client.cc
-@@ -56,7 +56,7 @@ void HostDisplayClient::CreateLayeredWindowUpdater(
- }
- #endif
+@@ -60,7 +60,7 @@ void HostDisplayClient::CreateLayeredWindowUpdater(
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  void HostDisplayClient::DidCompleteSwapWithNewSize(const gfx::Size& size) {
    NOTIMPLEMENTED();
  }

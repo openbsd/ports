@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_fonts_font_unique_name_lookup_cc,v 1.5 2021/04/01 10:24:45 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_fonts_font_unique_name_lookup_cc,v 1.6 2021/07/06 11:13:52 robert Exp $
 
 Index: third_party/blink/renderer/platform/fonts/font_unique_name_lookup.cc
 --- third_party/blink/renderer/platform/fonts/font_unique_name_lookup.cc.orig

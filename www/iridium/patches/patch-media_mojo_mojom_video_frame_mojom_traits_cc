@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_mojo_mojom_video_frame_mojom_traits_cc,v 1.4 2021/04/01 10:24:45 robert Exp $
+$OpenBSD: patch-media_mojo_mojom_video_frame_mojom_traits_cc,v 1.5 2021/07/06 11:13:51 robert Exp $
 
 Index: media/mojo/mojom/video_frame_mojom_traits.cc
 --- media/mojo/mojom/video_frame_mojom_traits.cc.orig
@@ -12,21 +12,3 @@ Index: media/mojo/mojom/video_frame_mojom_traits.cc
  #include "base/posix/eintr_wrapper.h"
  #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
  
-@@ -63,7 +63,7 @@ media::mojom::VideoFrameDataPtr MakeVideoFrameData(
-             std::move(offsets)));
-   }
- 
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
-   if (input->storage_type() == media::VideoFrame::STORAGE_DMABUFS) {
-     std::vector<mojo::PlatformHandle> dmabuf_fds;
- 
-@@ -166,7 +166,7 @@ bool StructTraits<media::mojom::VideoFrameDataView,
-         shared_buffer_data.TakeFrameData(),
-         shared_buffer_data.frame_data_size(), std::move(offsets),
-         std::move(strides), timestamp);
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
-   } else if (data.is_dmabuf_data()) {
-     media::mojom::DmabufVideoFrameDataDataView dmabuf_data;
-     data.GetDmabufDataDataView(&dmabuf_data);

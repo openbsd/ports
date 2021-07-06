@@ -1,14 +1,14 @@
-$OpenBSD: patch-chrome_browser_chrome_browser_main_posix_cc,v 1.10 2021/04/01 10:24:44 robert Exp $
+$OpenBSD: patch-chrome_browser_chrome_browser_main_posix_cc,v 1.11 2021/07/06 11:13:50 robert Exp $
 
 Index: chrome/browser/chrome_browser_main_posix.cc
 --- chrome/browser/chrome_browser_main_posix.cc.orig
 +++ chrome/browser/chrome_browser_main_posix.cc
-@@ -70,7 +70,7 @@ void ExitHandler::ExitWhenPossibleOnUIThread(int signa
-     // ExitHandler takes care of deleting itself.
-     new ExitHandler();
+@@ -72,7 +72,7 @@ void ExitHandler::ExitWhenPossibleOnUIThread(int signa
    } else {
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
      switch (signal) {
        case SIGINT:
        case SIGHUP:

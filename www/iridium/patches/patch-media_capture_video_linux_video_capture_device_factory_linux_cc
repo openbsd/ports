@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_capture_video_linux_video_capture_device_factory_linux_cc,v 1.4 2021/04/01 10:24:45 robert Exp $
+$OpenBSD: patch-media_capture_video_linux_video_capture_device_factory_linux_cc,v 1.5 2021/07/06 11:13:51 robert Exp $
 
 Index: media/capture/video/linux/video_capture_device_factory_linux.cc
 --- media/capture/video/linux/video_capture_device_factory_linux.cc.orig
@@ -37,7 +37,7 @@ Index: media/capture/video/linux/video_capture_device_factory_linux.cc
      const std::string file_name = ExtractFileNameFromDeviceId(device_id);
      const std::string interface_path =
          base::StringPrintf(kInterfacePathTemplate, file_name.c_str());
-@@ -246,7 +256,7 @@ void VideoCaptureDeviceFactoryLinux::GetDevicesInfo(
+@@ -260,7 +270,7 @@ void VideoCaptureDeviceFactoryLinux::GetDevicesInfo(
    std::move(callback).Run(std::move(devices_info));
  }
  

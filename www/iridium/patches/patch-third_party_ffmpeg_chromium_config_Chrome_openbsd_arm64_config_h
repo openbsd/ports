@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_arm64_config_h,v 1.6 2021/04/01 10:24:45 robert Exp $
+$OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_arm64_config_h,v 1.7 2021/07/06 11:13:52 robert Exp $
 
 needs manual editing after auto generation because of:
 - softfp/hardfp selection is done by the chrome build 

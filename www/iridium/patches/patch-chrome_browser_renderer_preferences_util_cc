@@ -1,27 +1,27 @@
-$OpenBSD: patch-chrome_browser_renderer_preferences_util_cc,v 1.20 2021/04/01 10:24:44 robert Exp $
+$OpenBSD: patch-chrome_browser_renderer_preferences_util_cc,v 1.21 2021/07/06 11:13:50 robert Exp $
 
 Index: chrome/browser/renderer_preferences_util.cc
 --- chrome/browser/renderer_preferences_util.cc.orig
 +++ chrome/browser/renderer_preferences_util.cc
-@@ -34,7 +34,7 @@
+@@ -42,7 +42,7 @@
  #include "ui/base/cocoa/defaults_utils.h"
  #endif
  
--#if defined(USE_AURA) && defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if defined(USE_AURA) && ((defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD))
+-#if defined(USE_AURA) && (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
++#if defined(USE_AURA) && (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD))
  #include "chrome/browser/themes/theme_service.h"
  #include "chrome/browser/themes/theme_service_factory.h"
  #include "ui/views/linux_ui/linux_ui.h"
-@@ -153,7 +153,7 @@ void UpdateFromSystemSettings(blink::RendererPreferenc
+@@ -171,7 +171,7 @@ void UpdateFromSystemSettings(blink::RendererPreferenc
      prefs->caret_blink_interval = interval;
  #endif
  
--#if defined(USE_AURA) && defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if defined(USE_AURA) && ((defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD))
+-#if defined(USE_AURA) && (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
++#if defined(USE_AURA) && (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD))
    views::LinuxUI* linux_ui = views::LinuxUI::instance();
    if (linux_ui) {
      if (ThemeServiceFactory::GetForProfile(profile)->UsingSystemTheme()) {
-@@ -173,7 +173,7 @@ void UpdateFromSystemSettings(blink::RendererPreferenc
+@@ -191,7 +191,7 @@ void UpdateFromSystemSettings(blink::RendererPreferenc
  #endif
  
  #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \

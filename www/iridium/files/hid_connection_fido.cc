@@ -138,8 +138,9 @@ private:
 
 HidConnectionFido::HidConnectionFido(
     scoped_refptr<HidDeviceInfo> device_info, base::ScopedFD fd,
-    scoped_refptr<base::SequencedTaskRunner> blocking_task_runner)
-    : HidConnection(device_info),
+    scoped_refptr<base::SequencedTaskRunner> blocking_task_runner,
+    bool allow_protected_reports)
+    : HidConnection(device_info, allow_protected_reports),
       blocking_task_runner_(std::move(blocking_task_runner)),
       weak_factory_(this),
       helper_(std::make_unique<BlockingTaskHelper>(

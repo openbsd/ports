@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_threading_platform_thread_posix_cc,v 1.13 2021/04/01 10:24:44 robert Exp $
+$OpenBSD: patch-base_threading_platform_thread_posix_cc,v 1.14 2021/07/06 11:13:49 robert Exp $
 
 XXX pledge(2)
 

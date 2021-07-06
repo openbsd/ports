@@ -1,11 +1,11 @@
-$OpenBSD: patch-tools_json_schema_compiler_cpp_bundle_generator_py,v 1.4 2021/04/01 10:24:46 robert Exp $
+$OpenBSD: patch-tools_json_schema_compiler_cpp_bundle_generator_py,v 1.5 2021/07/06 11:13:52 robert Exp $
 
 Index: tools/json_schema_compiler/cpp_bundle_generator.py
 --- tools/json_schema_compiler/cpp_bundle_generator.py.orig
 +++ tools/json_schema_compiler/cpp_bundle_generator.py
-@@ -152,7 +152,7 @@ class CppBundleGenerator(object):
-         # defined(OS_CHROMEOS) && BUILDFLAG(IS_LACROS).
-         ifdefs.append('BUILDFLAG(IS_LACROS)')
+@@ -154,7 +154,7 @@ class CppBundleGenerator(object):
+         # defined(OS_CHROMEOS) && BUILDFLAG(IS_CHROMEOS_LACROS).
+         ifdefs.append('BUILDFLAG(IS_CHROMEOS_LACROS)')
        elif platform == Platforms.LINUX:
 -        ifdefs.append('(defined(OS_LINUX) && !defined(OS_CHROMEOS))')
 +        ifdefs.append('(defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)')

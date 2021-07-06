@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_opus_BUILD_gn,v 1.5 2021/04/01 10:24:46 robert Exp $
+$OpenBSD: patch-third_party_opus_BUILD_gn,v 1.6 2021/07/06 11:13:52 robert Exp $
 
 Index: third_party/opus/BUILD.gn
 --- third_party/opus/BUILD.gn.orig

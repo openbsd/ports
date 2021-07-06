@@ -1,13 +1,14 @@
-$OpenBSD: patch-chrome_app_chrome_command_ids_h,v 1.11 2021/04/01 10:24:44 robert Exp $
+$OpenBSD: patch-chrome_app_chrome_command_ids_h,v 1.12 2021/07/06 11:13:49 robert Exp $
+
 Index: chrome/app/chrome_command_ids.h
 --- chrome/app/chrome_command_ids.h.orig
 +++ chrome/app/chrome_command_ids.h
-@@ -61,7 +61,7 @@
- #define IDC_ALL_WINDOWS_FRONT           34048
+@@ -65,7 +65,7 @@
  #define IDC_NAME_WINDOW                 34049
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  #define IDC_USE_SYSTEM_TITLE_BAR        34051
  #define IDC_RESTORE_WINDOW              34052
  #endif

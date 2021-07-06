@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_BUILD_gn,v 1.3 2021/04/01 10:24:45 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_BUILD_gn,v 1.4 2021/07/06 11:13:51 robert Exp $
 
 Index: third_party/blink/renderer/BUILD.gn
 --- third_party/blink/renderer/BUILD.gn.orig
@@ -7,8 +7,8 @@ Index: third_party/blink/renderer/BUILD.gn
        "-Wno-implicit-int-conversion",
      ]
  
--    if (!is_ash || default_toolchain != "//build/toolchain/cros:target") {
-+    if ((!is_ash && !is_openbsd) || default_toolchain != "//build/toolchain/cros:target") {
+-    if (!is_chromeos_ash ||
++    if ((!is_chromeos_ash && !is_openbsd) ||
+         default_toolchain != "//build/toolchain/cros:target") {
        cflags += [ "-Wno-enum-float-conversion" ]
      }
-   }

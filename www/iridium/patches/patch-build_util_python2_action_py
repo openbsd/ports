@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_util_python2_action_py,v 1.1 2021/04/01 10:24:44 robert Exp $
+$OpenBSD: patch-build_util_python2_action_py,v 1.2 2021/07/06 11:13:49 robert Exp $
 
 Index: build/util/python2_action.py
 --- build/util/python2_action.py.orig

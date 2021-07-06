@@ -1,14 +1,14 @@
-$OpenBSD: patch-components_autofill_core_common_autofill_payments_features_cc,v 1.5 2021/04/01 10:24:44 robert Exp $
+$OpenBSD: patch-components_autofill_core_common_autofill_payments_features_cc,v 1.6 2021/07/06 11:13:50 robert Exp $
 
 Index: components/autofill/core/common/autofill_payments_features.cc
 --- components/autofill/core/common/autofill_payments_features.cc.orig
 +++ components/autofill/core/common/autofill_payments_features.cc
-@@ -128,7 +128,7 @@ const base::Feature kAutofillUpstreamAllowAllEmailDoma
-     "AutofillUpstreamAllowAllEmailDomains", base::FEATURE_DISABLED_BY_DEFAULT};
- 
+@@ -143,7 +143,7 @@ const base::Feature kAutofillUpstreamAllowAllEmailDoma
  bool ShouldShowImprovedUserConsentForCreditCardSave() {
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
 -#if defined(OS_WIN) || defined(OS_APPLE) || \
 +#if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_BSD) || \
-     (defined(OS_LINUX) && !defined(OS_CHROMEOS))
+     (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
    // The new user consent UI is fully launched on MacOS, Windows and Linux.
    return true;

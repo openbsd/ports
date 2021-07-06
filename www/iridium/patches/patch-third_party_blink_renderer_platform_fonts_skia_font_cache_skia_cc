@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_fonts_skia_font_cache_skia_cc,v 1.7 2021/04/01 10:24:45 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_fonts_skia_font_cache_skia_cc,v 1.8 2021/07/06 11:13:52 robert Exp $
 
 Index: third_party/blink/renderer/platform/fonts/skia/font_cache_skia.cc
 --- third_party/blink/renderer/platform/fonts/skia/font_cache_skia.cc.orig
@@ -27,6 +27,6 @@ Index: third_party/blink/renderer/platform/fonts/skia/font_cache_skia.cc
    sk_sp<SkTypeface> typeface;
 -#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
-   if (alternate_name == AlternateFontName::kLocalUniqueFace &&
-       RuntimeEnabledFeatures::FontSrcLocalMatchingEnabled()) {
-     typeface = CreateTypefaceFromUniqueName(creation_params);
+   bool noto_color_emoji_from_gmscore = false;
+ #if defined(OS_ANDROID)
+   // Use the unique local matching pathway for fetching Noto Color Emoji Compat

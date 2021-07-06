@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.27 2021/04/01 10:24:44 robert Exp $
+$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.28 2021/07/06 11:13:50 robert Exp $
 
 Index: content/browser/browser_main_loop.cc
 --- content/browser/browser_main_loop.cc.orig
 +++ content/browser/browser_main_loop.cc
-@@ -240,6 +240,13 @@
+@@ -243,6 +243,13 @@
  #include "mojo/public/cpp/bindings/lib/test_random_mojo_delays.h"
  #endif
  
@@ -17,7 +17,7 @@ Index: content/browser/browser_main_loop.cc
  // One of the linux specific headers defines this as a macro.
  #ifdef DestroyAll
  #undef DestroyAll
-@@ -577,6 +584,12 @@ int BrowserMainLoop::EarlyInitialization() {
+@@ -528,6 +535,12 @@ int BrowserMainLoop::EarlyInitialization() {
    // by now since a thread to start the ServiceManager has been created
    // before the browser main loop starts.
    DCHECK(SandboxHostLinux::GetInstance()->IsInitialized());
@@ -30,7 +30,7 @@ Index: content/browser/browser_main_loop.cc
  #endif
  
  #if defined(USE_X11)
-@@ -611,7 +624,7 @@ int BrowserMainLoop::EarlyInitialization() {
+@@ -562,7 +575,7 @@ int BrowserMainLoop::EarlyInitialization() {
  
    // Up the priority of the UI thread unless it was already high (since Mac
    // and recent versions of Android (O+) do this automatically).

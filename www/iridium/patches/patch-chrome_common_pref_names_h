@@ -1,27 +1,27 @@
-$OpenBSD: patch-chrome_common_pref_names_h,v 1.26 2021/04/01 10:24:44 robert Exp $
+$OpenBSD: patch-chrome_common_pref_names_h,v 1.27 2021/07/06 11:13:50 robert Exp $
 
 Index: chrome/common/pref_names.h
 --- chrome/common/pref_names.h.orig
 +++ chrome/common/pref_names.h
-@@ -357,7 +357,7 @@ extern const char kAllowDeletingBrowserHistory[];
- extern const char kForceGoogleSafeSearch[];
- extern const char kForceYouTubeRestrict[];
+@@ -366,7 +366,7 @@ extern const char kForceYouTubeRestrict[];
  extern const char kAllowedDomainsForApps[];
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  extern const char kUsesSystemTheme[];
  #endif
  extern const char kCurrentThemePackFilename[];
-@@ -384,7 +384,7 @@ extern const char kDefaultBrowserSettingEnabled[];
- #if defined(OS_MAC)
- extern const char kShowUpdatePromotionInfoBar[];
+@@ -395,7 +395,7 @@ extern const char kShowUpdatePromotionInfoBar[];
  #endif
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  extern const char kUseCustomChromeFrame[];
  #endif
  #if BUILDFLAG(ENABLE_PLUGINS)
-@@ -555,7 +555,7 @@ extern const char kDownloadExtensionsToOpenByPolicy[];
+@@ -568,7 +568,7 @@ extern const char kDownloadExtensionsToOpenByPolicy[];
  extern const char kDownloadAllowedURLsForOpenByPolicy[];
  extern const char kDownloadDirUpgraded[];
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
@@ -30,7 +30,16 @@ Index: chrome/common/pref_names.h
  extern const char kOpenPdfDownloadInSystemReader[];
  #endif
  #if defined(OS_ANDROID)
-@@ -783,7 +783,7 @@ extern const char kGloballyScopeHTTPAuthCacheEnabled[]
+@@ -670,7 +670,7 @@ extern const char kWebAppsDidMigrateDefaultChromeApps[
+ extern const char kWebAppsUninstalledDefaultChromeApps[];
+ extern const char kWebAppsPreferences[];
+ 
+-#if defined(OS_WIN) || defined(OS_MAC) || \
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
+     (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
+ extern const char kWebAppsUrlHandlerInfo[];
+ #endif
+@@ -807,7 +807,7 @@ extern const char kGloballyScopeHTTPAuthCacheEnabled[]
  extern const char kAmbientAuthenticationInPrivateModesEnabled[];
  extern const char kBasicAuthOverHttpEnabled[];
  
@@ -39,12 +48,21 @@ Index: chrome/common/pref_names.h
  extern const char kAuthNegotiateDelegateByKdcPolicy[];
  #endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS)
  
-@@ -1014,7 +1014,7 @@ extern const char kAutoplayWhitelist[];
- extern const char kBlockAutoplayEnabled[];
- #endif
+@@ -927,7 +927,7 @@ extern const char kSigninAllowedOnNextStartup[];
+ extern const char kSigninInterceptionEnabled[];
+ // TODO(crbug.com/1179280): Remove OS_LINUX once https://crbug.com/1169547 is
+ // done.
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ extern const char kLacrosSecondaryProfilesAllowed[];
+ #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+@@ -1042,7 +1042,7 @@ extern const char kBlockAutoplayEnabled[];
+ 
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  extern const char kAllowNativeNotifications[];
+ extern const char kAllowSystemNotifications[];
  #endif
- 

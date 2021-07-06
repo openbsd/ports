@@ -1,16 +1,16 @@
-$OpenBSD: patch-chrome_browser_ui_views_first_run_dialog_cc,v 1.17 2021/04/01 10:24:44 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_first_run_dialog_cc,v 1.18 2021/07/06 11:13:50 robert Exp $
 
 Index: chrome/browser/ui/views/first_run_dialog.cc
 --- chrome/browser/ui/views/first_run_dialog.cc.orig
 +++ chrome/browser/ui/views/first_run_dialog.cc
-@@ -114,9 +114,11 @@ void FirstRunDialog::Done() {
+@@ -115,9 +115,11 @@ void FirstRunDialog::Done() {
  bool FirstRunDialog::Accept() {
    GetWidget()->Hide();
  
 +#if !defined(OS_BSD)
    ChangeMetricsReportingStateWithReply(
        report_crashes_->GetChecked(),
-       base::BindRepeating(&InitCrashReporterIfEnabled));
+       base::BindOnce(&InitCrashReporterIfEnabled));
 +#endif
  
    if (make_default_->GetChecked())

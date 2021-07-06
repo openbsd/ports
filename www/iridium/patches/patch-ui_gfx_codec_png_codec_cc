@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_codec_png_codec_cc,v 1.12 2021/04/01 10:24:46 robert Exp $
+$OpenBSD: patch-ui_gfx_codec_png_codec_cc,v 1.13 2021/07/06 11:13:52 robert Exp $
 Index: ui/gfx/codec/png_codec.cc
 --- ui/gfx/codec/png_codec.cc.orig
 +++ ui/gfx/codec/png_codec.cc

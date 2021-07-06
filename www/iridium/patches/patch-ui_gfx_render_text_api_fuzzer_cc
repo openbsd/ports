@@ -1,32 +1,32 @@
-$OpenBSD: patch-ui_gfx_render_text_api_fuzzer_cc,v 1.1 2021/04/01 10:24:46 robert Exp $
+$OpenBSD: patch-ui_gfx_render_text_api_fuzzer_cc,v 1.2 2021/07/06 11:13:52 robert Exp $
 
 Index: ui/gfx/render_text_api_fuzzer.cc
 --- ui/gfx/render_text_api_fuzzer.cc.orig
 +++ ui/gfx/render_text_api_fuzzer.cc
-@@ -17,7 +17,7 @@
- #include "ui/gfx/canvas.h"
- #include "ui/gfx/render_text.h"
+@@ -20,7 +20,7 @@
  
--#if defined(OS_ANDROID) || defined(OS_LINUX)
-+#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+ // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
+ // complete.
+-#if defined(OS_ANDROID) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
++#if defined(OS_ANDROID) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD))
  #include "base/test/test_discardable_memory_allocator.h"
  #endif
  
-@@ -37,7 +37,7 @@ struct Environment {
-                           TestTimeouts::Initialize(),
-                           base::test::TaskEnvironment::MainThreadType::UI)) {
+@@ -42,7 +42,7 @@ struct Environment {
      logging::SetMinLogLevel(logging::LOG_FATAL);
--#if defined(OS_ANDROID) || defined(OS_LINUX)
-+#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+ // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
+ // complete.
+-#if defined(OS_ANDROID) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
++#if defined(OS_ANDROID) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD))
      // Some platforms require discardable memory to use bitmap fonts.
      base::DiscardableMemoryAllocator::SetInstance(
          &discardable_memory_allocator);
-@@ -46,7 +46,7 @@ struct Environment {
-     gfx::FontList::SetDefaultFontDescription(kFontDescription);
-   }
+@@ -53,7 +53,7 @@ struct Environment {
  
--#if defined(OS_ANDROID) || defined(OS_LINUX)
-+#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+ // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
+ // complete.
+-#if defined(OS_ANDROID) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
++#if defined(OS_ANDROID) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD))
    base::TestDiscardableMemoryAllocator discardable_memory_allocator;
  #endif
  

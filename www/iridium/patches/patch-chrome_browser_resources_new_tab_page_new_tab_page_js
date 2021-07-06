@@ -1,16 +1,16 @@
-$OpenBSD: patch-chrome_browser_resources_new_tab_page_new_tab_page_js,v 1.1 2021/04/01 10:24:44 robert Exp $
+$OpenBSD: patch-chrome_browser_resources_new_tab_page_new_tab_page_js,v 1.2 2021/07/06 11:13:50 robert Exp $
 
 Index: chrome/browser/resources/new_tab_page/new_tab_page.js
 --- chrome/browser/resources/new_tab_page/new_tab_page.js.orig
 +++ chrome/browser/resources/new_tab_page/new_tab_page.js
-@@ -16,10 +16,6 @@ export {BackgroundManager} from './background_manager.
- export {BrowserProxy} from './browser_proxy.js';
- export {BackgroundSelectionType} from './customize_dialog_types.js';
- export {ImgElement} from './img.js';
+@@ -20,10 +20,6 @@ export {ChromeCartProxy} from './modules/cart/chrome_c
+ export {chromeCartDescriptor} from './modules/cart/module.js';
+ export {DriveProxy} from './modules/drive/drive_module_proxy.js';
+ export {driveDescriptor} from './modules/drive/module.js';
 -// <if expr="not is_official_build">
 -export {FooProxy} from './modules/dummy/foo_proxy.js';
 -export {dummyDescriptor} from './modules/dummy/module.js';
 -// </if>
- export {kaleidoscopeDescriptor} from './modules/kaleidoscope/module.js';
  export {ModuleDescriptor} from './modules/module_descriptor.js';
+ export {ModuleHeaderElement} from './modules/module_header.js';
  export {ModuleRegistry} from './modules/module_registry.js';

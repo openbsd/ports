@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_resources_media_router_extension_src_utils_platform_utils_js,v 1.1 2021/04/01 10:24:44 robert Exp $
+$OpenBSD: patch-chrome_browser_resources_media_router_extension_src_utils_platform_utils_js,v 1.2 2021/07/06 11:13:50 robert Exp $
 
 Index: chrome/browser/resources/media_router/extension/src/utils/platform_utils.js
 --- chrome/browser/resources/media_router/extension/src/utils/platform_utils.js.orig

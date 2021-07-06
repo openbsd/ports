@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_heap_impl_thread_state_cc,v 1.1 2021/04/01 10:24:45 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_heap_impl_thread_state_cc,v 1.2 2021/07/06 11:13:52 robert Exp $
 
 Index: third_party/blink/renderer/platform/heap/impl/thread_state.cc
 --- third_party/blink/renderer/platform/heap/impl/thread_state.cc.orig

@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_base_clipboard_clipboard_constants_cc,v 1.1 2021/04/01 10:24:46 robert Exp $
+$OpenBSD: patch-ui_base_clipboard_clipboard_constants_cc,v 1.2 2021/07/06 11:13:52 robert Exp $
 
 Index: ui/base/clipboard/clipboard_constants.cc
 --- ui/base/clipboard/clipboard_constants.cc.orig
 +++ ui/base/clipboard/clipboard_constants.cc
-@@ -16,7 +16,7 @@ const char kMimeTypeSvg[] = "image/svg+xml";
+@@ -18,7 +18,7 @@ const char kMimeTypeSvg[] = "image/svg+xml";
  const char kMimeTypeRTF[] = "text/rtf";
  const char kMimeTypePNG[] = "image/png";
  

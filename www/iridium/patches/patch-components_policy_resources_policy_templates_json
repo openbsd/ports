@@ -1,10 +1,10 @@
-$OpenBSD: patch-components_policy_resources_policy_templates_json,v 1.24 2021/04/01 10:24:44 robert Exp $
+$OpenBSD: patch-components_policy_resources_policy_templates_json,v 1.25 2021/07/06 11:13:50 robert Exp $
 
 Index: components/policy/resources/policy_templates.json
 --- components/policy/resources/policy_templates.json.orig
 +++ components/policy/resources/policy_templates.json
-@@ -1292,7 +1292,7 @@
-       'owners': ['file://components/policy/resources/OWNERS'],
+@@ -1320,7 +1320,7 @@
+       'owners': ['file://components/policy/resources/OWNERS', 'pastarmovj@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
 -      'supported_on': ['chrome.win7:11-', 'chrome.mac:11-', 'chrome.linux:11-'],
@@ -12,8 +12,8 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -2133,7 +2133,7 @@
-       'owners': ['file://remoting/OWNERS'],
+@@ -2213,7 +2213,7 @@
+       'owners': ['file://remoting/OWNERS', 'jamiewalch@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
 -      'supported_on': ['chrome.linux:25-', 'chrome.mac:25-'],
@@ -21,8 +21,8 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -4386,7 +4386,7 @@
-       'owners': ['file://components/policy/resources/OWNERS'],
+@@ -4552,7 +4552,7 @@
+       'owners': ['file://components/policy/resources/OWNERS', 'rsorokin@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
 -      'supported_on': ['chrome.linux:74-','chrome.mac:74-','chrome_os:74-'],
@@ -30,8 +30,8 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -4406,7 +4406,7 @@
-       'owners': ['file://components/policy/resources/OWNERS'],
+@@ -4604,7 +4604,7 @@
+       'owners': ['file://components/policy/resources/OWNERS', 'rsorokin@chromium.org'],
        'type': 'string',
        'schema': { 'type': 'string' },
 -      'supported_on': ['chrome.linux:9-'],
@@ -39,8 +39,8 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': False,
          'per_profile': False,
-@@ -4462,7 +4462,7 @@
-       'owners': ['file://components/policy/resources/OWNERS'],
+@@ -4660,7 +4660,7 @@
+       'owners': ['file://components/policy/resources/OWNERS', 'rsorokin@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
 -      'supported_on': ['chrome.linux:63-','chrome.mac:63-','chrome_os:63-','android:63-','webview_android:63-'],
@@ -48,8 +48,8 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -8644,7 +8644,7 @@
-       'owners': ['file://src/net/cert/OWNERS'],
+@@ -9103,7 +9103,7 @@
+       'owners': ['file://net/cert/OWNERS', 'rsleevi@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
 -      'supported_on': ['chrome_os:30-', 'chrome.linux:30-', 'chrome.win:30-'],
@@ -57,8 +57,8 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -8728,7 +8728,7 @@
-       'owners': ['file://components/policy/resources/OWNERS'],
+@@ -9197,7 +9197,7 @@
+       'owners': ['file://components/policy/resources/OWNERS', 'pmarko@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
 -      'supported_on': ['chrome_os:77-83', 'chrome.linux:79-83', 'chrome.mac:83-'],
@@ -66,8 +66,8 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': False,
          'per_profile': False,
-@@ -10221,7 +10221,7 @@
-       'owners': ['file://components/policy/resources/OWNERS'],
+@@ -10808,7 +10808,7 @@
+       'owners': ['file://components/policy/resources/OWNERS', 'pmarko@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
 -      'supported_on': ['chrome.win:19-', 'chrome.linux:19-'],
@@ -75,8 +75,8 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -10957,7 +10957,7 @@
-       'owners': ['file://components/policy/resources/OWNERS'],
+@@ -11618,7 +11618,7 @@
+       'owners': ['file://components/policy/resources/OWNERS', 'bartfab@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
 -      'supported_on': ['chrome.win:31-', 'chrome.linux:31-', 'chrome_os:31-'],
@@ -84,7 +84,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': True,
          'per_profile': True,
-@@ -17387,7 +17387,7 @@
+@@ -18175,7 +18175,7 @@
          'items': { 'type': 'string' }
        },
        # Spell checking is provided by macOS, so can't be controlled on Mac.
@@ -93,7 +93,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'can_be_recommended': False,
          'dynamic_refresh': True,
-@@ -17418,7 +17418,7 @@
+@@ -18206,7 +18206,7 @@
          'items': { 'type': 'string' }
        },
        # Spell checking is provided by macOS, so can't be controlled on Mac.
@@ -102,7 +102,7 @@ Index: components/policy/resources/policy_templates.json
        'deprecated': True,
        'features': {
          'can_be_recommended': False,
-@@ -17452,7 +17452,7 @@
+@@ -18240,7 +18240,7 @@
          'items': { 'type': 'string' }
        },
        # Spell checking is provided by macOS, so can't be controlled on Mac.
@@ -111,7 +111,7 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'can_be_recommended': False,
          'dynamic_refresh': True,
-@@ -18107,7 +18107,7 @@
+@@ -18908,7 +18908,7 @@
        'owners': ['fbeaufort@chromium.org', 'beccahughes@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -120,8 +120,8 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': True,
          'per_profile': True,
-@@ -21641,7 +21641,7 @@
-       'owners': ['services/audio/OWNERS'],
+@@ -22679,7 +22679,7 @@
+       'owners': ['file://services/audio/OWNERS', 'dalecurtis@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
 -      'supported_on': ['chrome.win:79-', 'chrome.linux:79-', 'chrome.mac:79-'],
@@ -129,8 +129,8 @@ Index: components/policy/resources/policy_templates.json
        'features': {
          'dynamic_refresh': False,
          'per_profile': False,
-@@ -22703,7 +22703,7 @@ If this policy is left unset, privacy screen is disabl
-       'owners': ['file://chrome/browser/notifications/OWNERS'],
+@@ -23770,7 +23770,7 @@ If this policy is left unset, privacy screen is disabl
+       'owners': ['file://chrome/browser/notifications/OWNERS', 'knollr@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
 -      'supported_on': ['chrome.linux:83-'],

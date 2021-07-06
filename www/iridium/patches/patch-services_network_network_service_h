@@ -1,14 +1,14 @@
-$OpenBSD: patch-services_network_network_service_h,v 1.8 2021/04/01 10:24:45 robert Exp $
+$OpenBSD: patch-services_network_network_service_h,v 1.9 2021/07/06 11:13:51 robert Exp $
 
 Index: services/network/network_service.h
 --- services/network/network_service.h.orig
 +++ services/network/network_service.h
-@@ -197,7 +197,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
-       base::span<const uint8_t> config,
-       mojom::NetworkService::UpdateLegacyTLSConfigCallback callback) override;
+@@ -155,7 +155,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
+       base::span<const uint8_t> crl_set,
+       mojom::NetworkService::UpdateCRLSetCallback callback) override;
    void OnCertDBChanged() override;
--#if defined(OS_LINUX) || BUILDFLAG(IS_LACROS)
-+#if defined(OS_LINUX) || BUILDFLAG(IS_LACROS) || defined(OS_BSD)
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
    void SetCryptConfig(mojom::CryptConfigPtr crypt_config) override;
  #endif
  #if defined(OS_WIN) || defined(OS_MAC)

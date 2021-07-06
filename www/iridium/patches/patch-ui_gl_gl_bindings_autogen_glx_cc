@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.17 2021/04/01 10:24:46 robert Exp $
+$OpenBSD: patch-ui_gl_gl_bindings_autogen_glx_cc,v 1.18 2021/07/06 11:13:52 robert Exp $
 
 Index: ui/gl/gl_bindings_autogen_glx.cc
 --- ui/gl/gl_bindings_autogen_glx.cc.orig
@@ -35,7 +35,7 @@ Index: ui/gl/gl_bindings_autogen_glx.cc
  void GLXApiBase::glXGetSelectedEventFn(Display* dpy,
                                         GLXDrawable drawable,
                                         unsigned long* mask) {
-@@ -647,6 +658,11 @@ bool TraceGLXApi::glXGetMscRateOMLFn(Display* dpy,
+@@ -648,6 +659,11 @@ bool TraceGLXApi::glXGetMscRateOMLFn(Display* dpy,
    return glx_api_->glXGetMscRateOMLFn(dpy, drawable, numerator, denominator);
  }
  
@@ -47,7 +47,7 @@ Index: ui/gl/gl_bindings_autogen_glx.cc
  void TraceGLXApi::glXGetSelectedEventFn(Display* dpy,
                                          GLXDrawable drawable,
                                          unsigned long* mask) {
-@@ -1068,6 +1084,14 @@ bool LogGLXApi::glXGetMscRateOMLFn(Display* dpy,
+@@ -1069,6 +1085,14 @@ bool LogGLXApi::glXGetMscRateOMLFn(Display* dpy,
                   << static_cast<const void*>(denominator) << ")");
    bool result =
        glx_api_->glXGetMscRateOMLFn(dpy, drawable, numerator, denominator);

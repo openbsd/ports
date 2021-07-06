@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2021/06/09 19:50:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.113 2021/07/06 11:13:48 robert Exp $
 
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
 
@@ -14,8 +14,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Iridium browser
 
-V=			2021.03.88
-REVISION=		2
+V=			2021.06.91
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -74,11 +73,12 @@ WANTLIB += drm epoxy fontconfig freetype fribidi gmodule-2.0 graphite2
 WANTLIB += gthread-2.0 intl pangoft2-1.0 pcre pixman-1
 WANTLIB += plc4 plds4 util xcb-dri2 xcb-glx xcb-render xcb-shm
 WANTLIB += xml2 z
-WANTLIB += harfbuzz harfbuzz-subset
+WANTLIB += harfbuzz harfbuzz-subset harfbuzz-gobject
 WANTLIB += ffi png
 WANTLIB += iconv lzma
 WANTLIB += fido2 cbor usbhid crypto
 WANTLIB += gbm xkbcommon
+WANTLIB += tiff xshmfence
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -98,6 +98,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		x11/py-xcbgen \
 		${MODGCC4_CPPDEP}
 LIB_DEPENDS=	devel/harfbuzz \
+		graphics/tiff \
 		security/nss \
 		textproc/libxslt \
 		x11/gtk+3 \
@@ -252,6 +253,8 @@ do-install:
 .for f in libVkICD_mock_icd
 	${INSTALL_DATA} ${BUILDDIR}/${f}.so ${PREFIX}/${DIST_TARGET_DIR}
 .endfor
+	${INSTALL_DATA} ${BUILDDIR}/libvulkan.so.1 \
+		${PREFIX}/${DIST_TARGET_DIR}/libvulkan.so
 
 .if ${MACHINE_ARCH} != "aarch64"
 	# SwiftShader

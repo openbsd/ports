@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_feature_engagement_public_event_constants_cc,v 1.7 2021/04/01 10:24:44 robert Exp $
+$OpenBSD: patch-components_feature_engagement_public_event_constants_cc,v 1.8 2021/07/06 11:13:50 robert Exp $
 
 Index: components/feature_engagement/public/event_constants.cc
 --- components/feature_engagement/public/event_constants.cc.orig
@@ -10,8 +10,8 @@ Index: components/feature_engagement/public/event_constants.cc
 -    defined(OS_CHROMEOS)
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
  const char kNewTabOpened[] = "new_tab_opened";
- #endif  // defined(OS_WIN) || defined(OS_APPLE) ||
-         // defined(OS_LINUX) || defined(OS_CHROMEOS)
+ #endif  // defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) ||
+         // defined(OS_CHROMEOS)
  
  #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)

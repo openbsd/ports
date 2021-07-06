@@ -1,36 +1,18 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.19 2021/04/01 10:24:44 robert Exp $
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.20 2021/07/06 11:13:49 robert Exp $
 
 Index: build/config/compiler/BUILD.gn
 --- build/config/compiler/BUILD.gn.orig
 +++ build/config/compiler/BUILD.gn
-@@ -62,7 +62,7 @@ declare_args() {
- 
-   # Enable fatal linker warnings. Building Chromium with certain versions
+@@ -66,7 +66,7 @@ declare_args() {
    # of binutils can cause linker warning.
--  fatal_linker_warnings = true
-+  fatal_linker_warnings = false
+   # TODO(thakis): Set this to true unconditionally once lld/MachO bring-up
+   # is along far enough that it no longer emits linker warnings.
+-  fatal_linker_warnings = !(is_apple && use_lld)
++  fatal_linker_warnings = !(is_apple && use_lld && !is_openbsd)
  
    # Build with C++ RTTI enabled. Chromium builds without RTTI by default,
    # but some sanitizers are known to require it, like CFI diagnostics
-@@ -143,7 +143,7 @@ declare_args() {
-   # Token limits may not be accurate for build configs not covered by the CQ,
-   # so only enable them by default for mainstream build configs.
-   enable_wmax_tokens =
--      !is_official_build &&
-+      !is_official_build && !is_openbsd &&
-       ((is_mac && target_cpu == "x64" && !use_system_xcode) ||
-        (is_linux && !is_chromeos && target_cpu == "x64") ||
-        (is_win && target_cpu == "x86") || (is_win && target_cpu == "x64") ||
-@@ -254,6 +254,8 @@ config("compiler") {
- 
-   configs += [
-     # See the definitions below.
-+    ":clang_revision",
-+    ":compiler_cpu_abi",
-     ":compiler_codegen",
-     ":compiler_deterministic",
-   ]
-@@ -375,6 +377,7 @@ config("compiler") {
+@@ -416,6 +416,7 @@ config("compiler") {
      }
  
      ldflags += [
@@ -38,7 +20,7 @@ Index: build/config/compiler/BUILD.gn
        "-Wl,-z,noexecstack",
        "-Wl,-z,relro",
      ]
-@@ -383,13 +386,8 @@ config("compiler") {
+@@ -424,13 +425,8 @@ config("compiler") {
        ldflags += [ "-Wl,-z,now" ]
      }
  
@@ -54,25 +36,7 @@ Index: build/config/compiler/BUILD.gn
      }
    }
  
-@@ -474,6 +472,17 @@ config("compiler") {
-     ldflags += [ "-Wl,-z,keep-text-section-prefix" ]
-   }
- 
-+  if (is_clang && !is_nacl && !use_xcode_clang && !is_openbsd) {
-+    cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
-+
-+    cflags += [
-+      # TODO(hans): Remove this once Clang generates better optimized debug info
-+      # by default. https://crbug.com/765793
-+      "-mllvm",
-+      "-instcombine-lower-dbg-declare=0",
-+    ]
-+  }
-+
-   # C11/C++11 compiler flags setup.
-   # ---------------------------
-   if (is_linux || is_chromeos || is_android || (is_nacl && is_clang) ||
-@@ -748,7 +757,7 @@ config("compiler_cpu_abi") {
+@@ -815,7 +811,7 @@ config("compiler_cpu_abi") {
          ]
        }
      } else if (current_cpu == "arm") {
@@ -81,7 +45,7 @@ Index: build/config/compiler/BUILD.gn
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
        }
-@@ -762,7 +771,7 @@ config("compiler_cpu_abi") {
+@@ -829,7 +825,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -90,7 +54,7 @@ Index: build/config/compiler/BUILD.gn
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1499,11 +1508,6 @@ config("default_warnings") {
+@@ -1566,11 +1562,6 @@ config("default_warnings") {
          # Flags NaCl (Clang 3.7) and Xcode 9.2 (Clang clang-900.0.39.2) do not
          # recognize.
          cflags += [
@@ -102,7 +66,7 @@ Index: build/config/compiler/BUILD.gn
            # Ignore warnings about MSVC optimization pragmas.
            # TODO(thakis): Only for no_chromium_code? http://crbug.com/912662
            "-Wno-ignored-pragma-optimize",
-@@ -1519,9 +1523,6 @@ config("default_warnings") {
+@@ -1586,9 +1577,6 @@ config("default_warnings") {
  
            # TODO(https://crbug.com/1028110): Evaluate and possible enable.
            "-Wno-deprecated-copy",
@@ -112,53 +76,20 @@ Index: build/config/compiler/BUILD.gn
          ]
  
          cflags_c += [
-@@ -1538,7 +1539,7 @@ config("default_warnings") {
-           cflags += [ "-Wmax-tokens" ]
-         } else {
-           # TODO(https://crbug.com/1049569): Remove after Clang 87b235db.
+@@ -1596,12 +1584,6 @@ config("default_warnings") {
+           "-Wno-implicit-fallthrough",
+         ]
+ 
+-        if (enable_wmax_tokens) {
+-          cflags += [ "-Wmax-tokens" ]
+-        } else {
+-          # TODO(https://crbug.com/1049569): Remove after Clang 87b235db.
 -          cflags += [ "-Wno-max-tokens" ]
-+          # cflags += [ "-Wno-max-tokens" ]
-         }
+-        }
        }
      }
-@@ -1559,7 +1560,7 @@ config("chromium_code") {
-       defines = [ "_HAS_NODISCARD" ]
-     }
-   } else {
--    cflags = []
-+    cflags = ["-Wall"]
-     if (treat_warnings_as_errors) {
-       cflags += [ "-Werror" ]
- 
-@@ -1569,6 +1570,11 @@ config("chromium_code") {
-       ldflags = [ "-Werror" ]
-     }
- 
-+    if (is_clang) {
-+      # Enable extra warnings for chromium_code when we control the compiler.
-+      cflags += [ "-Wextra" ]
-+    }
-+
-     # In Chromium code, we define __STDC_foo_MACROS in order to get the
-     # C99 macros on Mac and Linux.
-     defines = [
-@@ -1576,6 +1582,15 @@ config("chromium_code") {
-       "__STDC_FORMAT_MACROS",
-     ]
- 
-+   if (!is_debug && !using_sanitizer && current_cpu != "s390x" &&
-+        current_cpu != "s390" && current_cpu != "ppc64" &&
-+        current_cpu != "mips" && current_cpu != "mips64") {
-+      # Non-chromium code is not guaranteed to compile cleanly with
-+      # _FORTIFY_SOURCE. Also, fortified build may fail when optimizations are
-+      # disabled, so only do that for Release build.
-+      defines += [ "_FORTIFY_SOURCE=2" ]
-+    }
-+
-     if (is_mac) {
-       cflags_objc = [ "-Wobjc-missing-property-synthesis" ]
-       cflags_objcc = [ "-Wobjc-missing-property-synthesis" ]
-@@ -1657,7 +1672,7 @@ config("no_chromium_code") {
+   }
+@@ -1719,7 +1701,7 @@ config("no_chromium_code") {
        # suppressing them individually, we just blanket suppress them here.
        "-Wno-unused-variable",
      ]
@@ -167,16 +98,16 @@ Index: build/config/compiler/BUILD.gn
        cflags += [
          # TODO(https://crbug.com/1031169): Clean up and enable.
          "-Wno-misleading-indentation",
-@@ -1735,7 +1750,7 @@ config("thin_archive") {
-   # Mac and iOS use the mac-specific "libtool" command, not ar, which doesn't
-   # have a "thin archive" mode (it does accept -T, but it means truncating
-   # archive names to 16 characters, which is not what we want).
--  if ((is_posix && !is_nacl && !is_apple) || is_fuchsia) {
-+  if ((is_posix && !is_nacl && !is_apple && !is_openbsd) || is_fuchsia) {
+@@ -1797,7 +1779,7 @@ config("export_dynamic") {
+ config("thin_archive") {
+   # The macOS and iOS default linker ld64 does not support reading thin
+   # archives.
+-  if ((is_posix && !is_nacl && (!is_apple || use_lld)) || is_fuchsia) {
++  if ((is_posix && !is_nacl && (!is_apple || use_lld) && !is_openbsd) || is_fuchsia) {
      arflags = [ "-T" ]
    } else if (is_win && use_lld) {
      arflags = [ "/llvmlibthin" ]
-@@ -1978,8 +1993,7 @@ config("default_stack_frames") {
+@@ -2033,8 +2015,7 @@ config("default_stack_frames") {
  }
  
  # Default "optimization on" config.
@@ -186,7 +117,7 @@ Index: build/config/compiler/BUILD.gn
    if (is_win) {
      if (chrome_pgo_phase != 2) {
        # Favor size over speed, /O1 must be before the common flags.
-@@ -2014,8 +2028,7 @@ config("xoptimize") {
+@@ -2069,8 +2050,7 @@ config("xoptimize") {
  }
  
  # Turn off optimizations.
@@ -196,7 +127,7 @@ Index: build/config/compiler/BUILD.gn
    if (is_win) {
      cflags = [
        "/Od",  # Disable optimization.
-@@ -2055,8 +2068,7 @@ config("xno_optimize") {
+@@ -2110,8 +2090,7 @@ config("xno_optimize") {
  # Turns up the optimization level. On Windows, this implies whole program
  # optimization and link-time code generation which is very expensive and should
  # be used sparingly.
@@ -206,7 +137,7 @@ Index: build/config/compiler/BUILD.gn
    if (is_nacl && is_nacl_irt) {
      # The NaCl IRT is a special case and always wants its own config.
      # Various components do:
-@@ -2088,8 +2100,7 @@ config("xoptimize_max") {
+@@ -2143,8 +2122,7 @@ config("xoptimize_max") {
  #
  # TODO(crbug.com/621335) - rework how all of these configs are related
  # so that we don't need this disclaimer.
@@ -216,7 +147,7 @@ Index: build/config/compiler/BUILD.gn
    if (is_nacl && is_nacl_irt) {
      # The NaCl IRT is a special case and always wants its own config.
      # Various components do:
-@@ -2114,8 +2125,7 @@ config("xoptimize_speed") {
+@@ -2169,8 +2147,7 @@ config("xoptimize_speed") {
    }
  }
  
@@ -226,7 +157,7 @@ Index: build/config/compiler/BUILD.gn
    cflags = [ "-O1" ] + common_optimize_on_cflags
    ldflags = common_optimize_on_ldflags
    visibility = [ ":default_optimization" ]
-@@ -2187,7 +2197,7 @@ config("afdo_optimize_size") {
+@@ -2235,7 +2212,7 @@ config("afdo_optimize_size") {
  # between //base/allocator:tcmalloc and AFDO on GCC), so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -235,7 +166,7 @@ Index: build/config/compiler/BUILD.gn
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2203,7 +2213,7 @@ config("afdo") {
+@@ -2251,7 +2228,7 @@ config("afdo") {
        cflags += [ "-fprofile-sample-use=${rebased_clang_sample_profile}" ]
        inputs = [ _clang_sample_profile ]
      }
@@ -244,7 +175,7 @@ Index: build/config/compiler/BUILD.gn
      cflags = [ "-fauto-profile=${auto_profile_path}" ]
      inputs = [ auto_profile_path ]
    }
-@@ -2244,8 +2254,7 @@ config("win_pdbaltpath") {
+@@ -2289,8 +2266,7 @@ config("win_pdbaltpath") {
  }
  
  # Full symbols.
@@ -254,16 +185,16 @@ Index: build/config/compiler/BUILD.gn
    if (is_win) {
      if (is_clang) {
        cflags = [ "/Z7" ]  # Debug information in the .obj files.
-@@ -2299,7 +2308,7 @@ config("xsymbols") {
-     }
+@@ -2308,7 +2284,7 @@ config("xsymbols") {
+     # All configs using /DEBUG should include this:
+     configs = [ ":win_pdbaltpath" ]
  
-     # TODO(https://crbug.com/1050118): Investigate missing debug info on mac.
--    if (is_clang && !is_nacl && !use_xcode_clang && !is_apple) {
-+    if (is_clang && !is_nacl && !use_xcode_clang && !is_apple && !is_openbsd) {
-       cflags += [
-         "-Xclang",
-         "-debug-info-kind=constructor",
-@@ -2343,8 +2352,7 @@ config("xsymbols") {
+-    if (is_clang) {
++    if (is_clang && !is_openbsd) {
+       # Use constructor debug mode. This option reduces debug info more than
+       # -fno-standalone-debug by emitting class type information only when
+       # constructors are emitted.
+@@ -2393,8 +2369,7 @@ config("xsymbols") {
  # Minimal symbols.
  # This config guarantees to hold symbol for stack trace which are shown to user
  # when crash happens in unittests running on buildbot.
@@ -273,7 +204,7 @@ Index: build/config/compiler/BUILD.gn
    if (is_win) {
      # Functions, files, and line tables only.
      cflags = []
-@@ -2397,8 +2405,7 @@ config("xminimal_symbols") {
+@@ -2453,8 +2428,7 @@ config("xminimal_symbols") {
  # This configuration contains function names only. That is, the compiler is
  # told to not generate debug information and the linker then just puts function
  # names in the final debug information.

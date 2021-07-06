@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_files_file_path_watcher_bsd_cc,v 1.1 2021/04/01 10:24:43 robert Exp $
+$OpenBSD: patch-base_files_file_path_watcher_bsd_cc,v 1.2 2021/07/06 11:13:49 robert Exp $
 
 Index: base/files/file_path_watcher_bsd.cc
 --- base/files/file_path_watcher_bsd.cc.orig

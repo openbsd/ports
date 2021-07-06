@@ -1,9 +1,9 @@
-$OpenBSD: patch-ipc_ipc_channel_mojo_cc,v 1.8 2021/04/01 10:24:45 robert Exp $
+$OpenBSD: patch-ipc_ipc_channel_mojo_cc,v 1.9 2021/07/06 11:13:51 robert Exp $
 
 Index: ipc/ipc_channel_mojo.cc
 --- ipc/ipc_channel_mojo.cc.orig
 +++ ipc/ipc_channel_mojo.cc
-@@ -74,7 +74,7 @@ class MojoChannelFactory : public ChannelFactory {
+@@ -76,7 +76,7 @@ class MojoChannelFactory : public ChannelFactory {
  };
  
  base::ProcessId GetSelfPID() {

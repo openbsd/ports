@@ -1,9 +1,9 @@
-$OpenBSD: patch-cc_BUILD_gn,v 1.15 2021/04/01 10:24:44 robert Exp $
+$OpenBSD: patch-cc_BUILD_gn,v 1.16 2021/07/06 11:13:49 robert Exp $
 
 Index: cc/BUILD.gn
 --- cc/BUILD.gn.orig
 +++ cc/BUILD.gn
-@@ -620,7 +620,7 @@ cc_test_static_library("test_support") {
+@@ -640,7 +640,7 @@ cc_test_static_library("test_support") {
    if (enable_vulkan) {
      deps += [ "//gpu/vulkan/init" ]
    }
@@ -12,7 +12,7 @@ Index: cc/BUILD.gn
      data_deps = [ "//third_party/mesa_headers" ]
    }
  }
-@@ -832,7 +832,6 @@ cc_test("cc_unittests") {
+@@ -857,7 +857,6 @@ cc_test("cc_unittests") {
    ]
    data_deps = [
      "//testing/buildbot/filters:cc_unittests_filters",

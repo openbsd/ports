@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_build_scripts_run_with_pythonpath_py,v 1.1 2021/04/01 10:24:45 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_build_scripts_run_with_pythonpath_py,v 1.2 2021/07/06 11:13:51 robert Exp $
 
 Index: third_party/blink/renderer/build/scripts/run_with_pythonpath.py
 --- third_party/blink/renderer/build/scripts/run_with_pythonpath.py.orig

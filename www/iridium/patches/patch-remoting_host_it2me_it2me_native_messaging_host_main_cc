@@ -1,9 +1,9 @@
-$OpenBSD: patch-remoting_host_it2me_it2me_native_messaging_host_main_cc,v 1.8 2021/04/01 10:24:45 robert Exp $
+$OpenBSD: patch-remoting_host_it2me_it2me_native_messaging_host_main_cc,v 1.9 2021/07/06 11:13:51 robert Exp $
 
 Index: remoting/host/it2me/it2me_native_messaging_host_main.cc
 --- remoting/host/it2me/it2me_native_messaging_host_main.cc.orig
 +++ remoting/host/it2me/it2me_native_messaging_host_main.cc
-@@ -29,7 +29,7 @@
+@@ -30,7 +30,7 @@
  #include "remoting/host/switches.h"
  #include "remoting/host/usage_stats_consent.h"
  
@@ -12,12 +12,39 @@ Index: remoting/host/it2me/it2me_native_messaging_host_main.cc
  #include <gtk/gtk.h>
  
  #include "base/linux_util.h"
-@@ -112,7 +112,7 @@ int It2MeNativeMessagingHostMain(int argc, char** argv
+@@ -76,7 +76,7 @@ bool CurrentProcessHasUiAccess() {
+ // Creates a It2MeNativeMessagingHost instance, attaches it to stdin/stdout and
+ // runs the task executor until It2MeNativeMessagingHost signals shutdown.
+ int It2MeNativeMessagingHostMain(int argc, char** argv) {
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   // Initialize Xlib for multi-threaded use, allowing non-Chromium code to
+   // use X11 safely (such as the WebRTC capturer, GTK ...)
+   x11::InitXlib();
+@@ -121,7 +121,7 @@ int It2MeNativeMessagingHostMain(int argc, char** argv
  
    remoting::LoadResources("");
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
-   // Create an X11EventSource so the global X11 connection
+   // Required for any calls into GTK functions, such as the Disconnect and
+   // Continue windows. Calling with nullptr arguments because we don't have
+   // any command line arguments for gtk to consume.
+@@ -253,7 +253,7 @@ int It2MeNativeMessagingHostMain(int argc, char** argv
+   std::unique_ptr<PolicyWatcher> policy_watcher =
+       PolicyWatcher::CreateWithTaskRunner(context->file_task_runner());
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   // Create an X11EventSource on all UI threads, so the global X11 connection
    // (x11::Connection::Get()) can dispatch X events.
    auto event_source =
+@@ -275,7 +275,7 @@ int It2MeNativeMessagingHostMain(int argc, char** argv
+   // Run the loop until channel is alive.
+   run_loop.Run();
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   input_task_runner->PostTask(FROM_HERE, base::BindOnce([]() {
+                                 delete ui::X11EventSource::GetInstance();
+                               }));

@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_app_generated_resources_grd,v 1.18 2021/04/01 10:24:44 robert Exp $
+$OpenBSD: patch-chrome_app_generated_resources_grd,v 1.19 2021/07/06 11:13:49 robert Exp $
 
 Index: chrome/app/generated_resources.grd
 --- chrome/app/generated_resources.grd.orig
@@ -12,7 +12,7 @@ Index: chrome/app/generated_resources.grd
  for making strings OS specific.  Other platform defines such as use_titlecase
  are declared in tools/grit/grit_rule.gni.
  -->
-@@ -5263,7 +5263,7 @@ Keep your key file in a safe place. You will need it t
+@@ -5271,7 +5271,7 @@ Keep your key file in a safe place. You will need it t
        </if>
  
        <!-- chrome://browser-switch strings -->
@@ -21,21 +21,21 @@ Index: chrome/app/generated_resources.grd
          <message name="IDS_ABOUT_BROWSER_SWITCH_TITLE" desc="about:browser-switch page title">
            Legacy Browser Support
          </message>
-@@ -7269,7 +7269,7 @@ the Bookmarks menu.">
+@@ -7432,7 +7432,7 @@ Keep your key file in a safe place. You will need it t
          Google Pay
        </message>
  
--      <if expr="is_linux and not chromeos">
-+      <if expr="is_posix and not chromeos">
+-      <if expr="is_linux and not chromeos and not lacros">
++      <if expr="is_posix and not chromeos and not lacros">
          <message name="IDS_SHOW_WINDOW_DECORATIONS" desc="The label of a radio button in the options dialog for using the system title bar and borders.">
            Use system title bar and borders
          </message>
-@@ -8257,7 +8257,7 @@ Please help our engineers fix this problem. Tell us wh
+@@ -8443,7 +8443,7 @@ Please help our engineers fix this problem. Tell us wh
          Set as default
        </message>
  
--      <if expr="is_linux and not chromeos">
-+      <if expr="is_posix and not chromeos">
+-      <if expr="is_linux and not chromeos and not lacros">
++      <if expr="is_posix and not chromeos and not lacros">
          <message name="IDS_MINIMIZE_WINDOW_MENU" desc="The Linux browser window menu item text for minimizing the window.">
            Minimize
          </message>

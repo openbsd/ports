@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gl_generate_bindings_py,v 1.24 2021/04/01 10:24:46 robert Exp $
+$OpenBSD: patch-ui_gl_generate_bindings_py,v 1.25 2021/07/06 11:13:52 robert Exp $
 Index: ui/gl/generate_bindings.py
 --- ui/gl/generate_bindings.py.orig
 +++ ui/gl/generate_bindings.py

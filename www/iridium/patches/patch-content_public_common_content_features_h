@@ -1,0 +1,14 @@
+$OpenBSD: patch-content_public_common_content_features_h,v 1.1 2021/07/06 11:13:51 robert Exp $
+
+Index: content/public/common/content_features.h
+--- content/public/common/content_features.h.orig
++++ content/public/common/content_features.h
+@@ -231,7 +231,7 @@ CONTENT_EXPORT extern const base::Feature kMacSyscallS
+ CONTENT_EXPORT extern const base::Feature kRetryGetVideoCaptureDeviceInfos;
+ #endif  // defined(OS_MAC)
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ CONTENT_EXPORT extern const base::Feature kSendWebUIJavaScriptErrorReports;
+ CONTENT_EXPORT extern const char
+     kSendWebUIJavaScriptErrorReportsSendToProductionVariation[];

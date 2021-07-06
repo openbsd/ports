@@ -19,7 +19,8 @@ class HidConnectionFido : public HidConnection {
 public:
   HidConnectionFido(
       scoped_refptr<HidDeviceInfo> device_info, base::ScopedFD fd,
-      scoped_refptr<base::SequencedTaskRunner> blocking_task_runner);
+      scoped_refptr<base::SequencedTaskRunner> blocking_task_runner,
+      bool allow_protected_reports);
 
 private:
   friend class base::RefCountedThreadSafe<HidConnectionFido>;

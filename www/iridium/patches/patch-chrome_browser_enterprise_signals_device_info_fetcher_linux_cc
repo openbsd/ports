@@ -1,0 +1,37 @@
+$OpenBSD: patch-chrome_browser_enterprise_signals_device_info_fetcher_linux_cc,v 1.1 2021/07/06 11:13:50 robert Exp $
+
+Index: chrome/browser/enterprise/signals/device_info_fetcher_linux.cc
+--- chrome/browser/enterprise/signals/device_info_fetcher_linux.cc.orig
++++ chrome/browser/enterprise/signals/device_info_fetcher_linux.cc
+@@ -4,11 +4,15 @@
+ 
+ #include "chrome/browser/enterprise/signals/device_info_fetcher_linux.h"
+ 
++#include "build/build_config.h"
++
+ #if defined(USE_GIO)
+ #include <gio/gio.h>
+ #endif  // defined(USE_GIO)
+ #include <sys/stat.h>
++#if !defined(OS_BSD)
+ #include <sys/sysmacros.h>
++#endif
+ 
+ #include <string>
+ 
+@@ -103,6 +107,7 @@ SettingValue GetScreenlockSecured() {
+ // Implements the logic from the native host installation script. First find the
+ // root device identifier, then locate its parent and get its type.
+ SettingValue GetDiskEncrypted() {
++#if !defined(OS_BSD)
+   struct stat info;
+   // First figure out the device identifier. Fail fast if this fails.
+   if (stat("/", &info) != 0)
+@@ -124,6 +129,7 @@ SettingValue GetDiskEncrypted() {
+     }
+     return SettingValue::UNKNOWN;
+   }
++#endif
+   return SettingValue::DISABLED;
+ }
+ 

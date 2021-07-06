@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_app_content_main_runner_impl_cc,v 1.8 2021/04/01 10:24:44 robert Exp $
+$OpenBSD: patch-content_app_content_main_runner_impl_cc,v 1.9 2021/07/06 11:13:50 robert Exp $
 
 Index: content/app/content_main_runner_impl.cc
 --- content/app/content_main_runner_impl.cc.orig
 +++ content/app/content_main_runner_impl.cc
-@@ -124,17 +124,17 @@
+@@ -128,17 +128,17 @@
  #include "base/posix/global_descriptors.h"
  #include "content/public/common/content_descriptors.h"
  
@@ -12,7 +12,7 @@ Index: content/app/content_main_runner_impl.cc
  #include "content/public/common/zygote/zygote_fork_delegate_linux.h"
  #endif
 -#if !defined(OS_MAC) && !defined(OS_ANDROID)
-+#if !defined(OS_MAC) && !defined(OS_ANDROID) && !defined(OS_BSD)
++#if !defined(OS_MAC) && !defined(OS_ANDROID) && !defined(S_BSD)
  #include "content/zygote/zygote_main.h"
  #include "sandbox/linux/services/libc_interceptor.h"
  #endif
@@ -24,7 +24,7 @@ Index: content/app/content_main_runner_impl.cc
  #include "base/native_library.h"
  #include "base/rand_util.h"
  #include "content/public/common/zygote/sandbox_support_linux.h"
-@@ -166,6 +166,13 @@
+@@ -170,6 +170,13 @@
  #include "media/base/media_switches.h"
  #endif
  
@@ -36,9 +36,9 @@ Index: content/app/content_main_runner_impl.cc
 +#endif
 +
  #if defined(OS_ANDROID)
- #include "content/browser/android/browser_startup_controller.h"
- #include "content/common/android/cpu_affinity.h"
-@@ -310,7 +317,7 @@ void InitializeZygoteSandboxForBrowserProcess(
+ #include "base/system/sys_info.h"
+ #include "components/power_scheduler/power_scheduler.h"
+@@ -311,7 +318,7 @@ void InitializeZygoteSandboxForBrowserProcess(
  }
  #endif  // BUILDFLAG(USE_ZYGOTE_HANDLE)
  
@@ -47,15 +47,15 @@ Index: content/app/content_main_runner_impl.cc
  
  #if BUILDFLAG(ENABLE_PLUGINS)
  // Loads the (native) libraries but does not initialize them (i.e., does not
-@@ -349,11 +356,14 @@ void PreloadLibraryCdms() {
+@@ -350,11 +357,14 @@ void PreloadLibraryCdms() {
  }
  #endif  // BUILDFLAG(ENABLE_LIBRARY_CDMS)
  
 -#if BUILDFLAG(USE_ZYGOTE_HANDLE)
 +#if BUILDFLAG(USE_ZYGOTE_HANDLE) || defined(OS_BSD)
  void PreSandboxInit() {
-+// arc4random
-+#if !defined(OS_OPENBSD)
++  // arc4random
++#if !defined(OS_OPENBSD) 
    // Pre-acquire resources needed by BoringSSL. See
    // https://boringssl.googlesource.com/boringssl/+/HEAD/SANDBOXING.md
    CRYPTO_pre_sandbox_init();
@@ -63,7 +63,7 @@ Index: content/app/content_main_runner_impl.cc
  
  #if BUILDFLAG(ENABLE_PLUGINS)
    // Ensure access to the Pepper plugins before the sandbox is turned on.
-@@ -365,6 +375,11 @@ void PreSandboxInit() {
+@@ -366,6 +376,11 @@ void PreSandboxInit() {
  #endif
    InitializeWebRtcModule();
  
@@ -75,7 +75,7 @@ Index: content/app/content_main_runner_impl.cc
    // Set the android SkFontMgr for blink. We need to ensure this is done
    // before the sandbox is initialized to allow the font manager to access
    // font configuration files on disk.
-@@ -464,7 +479,7 @@ int RunZygote(ContentMainDelegate* delegate) {
+@@ -533,7 +548,7 @@ int RunZygote(ContentMainDelegate* delegate) {
    delegate->ZygoteStarting(&zygote_fork_delegates);
    media::InitializeMediaLibrary();
  
@@ -84,7 +84,7 @@ Index: content/app/content_main_runner_impl.cc
    PreSandboxInit();
  #endif
  
-@@ -615,10 +630,10 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
+@@ -691,10 +706,10 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
               kFieldTrialDescriptor + base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !OS_ANDROID
  
@@ -97,24 +97,24 @@ Index: content/app/content_main_runner_impl.cc
  
  #endif  // !OS_WIN
  
-@@ -811,6 +826,16 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
-     }
+@@ -884,6 +899,16 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
+   }
  #endif
  
 +#if defined(OS_OPENBSD)
-+    if (process_type.empty()) {
-+      sandbox::policy::SandboxLinux::Options sandbox_options;
-+      sandbox::policy::SandboxLinux::GetInstance()->InitializeSandbox(
-+          sandbox::policy::SandboxTypeFromCommandLine(
-+              *base::CommandLine::ForCurrentProcess()),
-+          sandbox::policy::SandboxLinux::PreSandboxHook(), sandbox_options);
-+    }
++  if (process_type.empty()) {
++    sandbox::policy::SandboxLinux::Options sandbox_options;
++    sandbox::policy::SandboxLinux::GetInstance()->InitializeSandbox(
++        sandbox::policy::SandboxTypeFromCommandLine(
++            *base::CommandLine::ForCurrentProcess()),
++        sandbox::policy::SandboxLinux::PreSandboxHook(), sandbox_options);
++  }
 +#endif
 +
-     delegate_->SandboxInitialized(process_type);
+   delegate_->SandboxInitialized(process_type);
  
  #if BUILDFLAG(USE_ZYGOTE_HANDLE)
-@@ -855,7 +880,7 @@ int ContentMainRunnerImpl::Run(bool start_service_mana
+@@ -928,7 +953,7 @@ int ContentMainRunnerImpl::Run(bool start_minimal_brow
        mojo::core::InitFeatures();
      }
  
@@ -123,7 +123,7 @@ Index: content/app/content_main_runner_impl.cc
      // If dynamic Mojo Core is being used, ensure that it's loaded very early in
      // the child/zygote process, before any sandbox is initialized. The library
      // is not fully initialized with IPC support until a ChildProcess is later
-@@ -878,6 +903,11 @@ int ContentMainRunnerImpl::Run(bool start_service_mana
+@@ -951,6 +976,11 @@ int ContentMainRunnerImpl::Run(bool start_minimal_brow
  #endif
  
    RegisterMainThreadFactories();
@@ -131,7 +131,7 @@ Index: content/app/content_main_runner_impl.cc
 +#if defined(OS_OPENBSD)
 +  if (!process_type.empty())
 +    PreSandboxInit();
-+#endif
++#endif 
  
    if (process_type.empty())
-     return RunServiceManager(main_params, start_service_manager_only);
+     return RunBrowser(main_params, start_minimal_browser);

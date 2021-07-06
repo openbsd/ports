@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_browser_resources_grd,v 1.25 2021/04/01 10:24:44 robert Exp $
+$OpenBSD: patch-chrome_browser_browser_resources_grd,v 1.26 2021/07/06 11:13:50 robert Exp $
 
 Index: chrome/browser/browser_resources.grd
 --- chrome/browser/browser_resources.grd.orig
 +++ chrome/browser/browser_resources.grd
-@@ -78,7 +78,7 @@
+@@ -41,7 +41,7 @@
          <include name="IDR_DISCARDS_SITE_DATA_MOJOM_WEBUI_JS" file="${root_gen_dir}\mojom-webui\chrome\browser\ui\webui\discards\site_data.mojom-webui.js" use_base_dir="false" type="BINDATA" />
          <include name="IDR_DISCARDS_SORTED_TABLE_BEHAVIOR_JS" file="resources\discards\sorted_table_behavior.js" type="BINDATA" />
        </if>

@@ -1,10 +1,10 @@
-$OpenBSD: patch-third_party_webrtc_rtc_base_BUILD_gn,v 1.12 2021/04/01 10:24:46 robert Exp $
+$OpenBSD: patch-third_party_webrtc_rtc_base_BUILD_gn,v 1.13 2021/07/06 11:13:52 robert Exp $
 
 Index: third_party/webrtc/rtc_base/BUILD.gn
 --- third_party/webrtc/rtc_base/BUILD.gn.orig
 +++ third_party/webrtc/rtc_base/BUILD.gn
-@@ -1006,7 +1006,7 @@ rtc_library("rtc_base") {
-     deps += [ "system:cocoa_threading" ]
+@@ -1070,7 +1070,7 @@ rtc_library("rtc_base") {
+     sources += [ "mac_ifaddrs_converter.cc" ]
    }
  
 -  if (is_linux || is_chromeos) {

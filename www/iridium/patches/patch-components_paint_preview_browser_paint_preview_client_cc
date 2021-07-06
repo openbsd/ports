@@ -1,0 +1,16 @@
+$OpenBSD: patch-components_paint_preview_browser_paint_preview_client_cc,v 1.1 2021/07/06 11:13:50 robert Exp $
+
+Index: components/paint_preview/browser/paint_preview_client.cc
+--- components/paint_preview/browser/paint_preview_client.cc.orig
++++ components/paint_preview/browser/paint_preview_client.cc
+@@ -303,8 +303,8 @@ void PaintPreviewClient::CapturePaintPreview(
+   metadata->set_url(url.spec());
+   metadata->set_version(kPaintPreviewVersion);
+   auto* chromeVersion = metadata->mutable_chrome_version();
+-  chromeVersion->set_major(CHROME_VERSION_MAJOR);
+-  chromeVersion->set_minor(CHROME_VERSION_MINOR);
++  chromeVersion->set_gmajor(CHROME_VERSION_MAJOR);
++  chromeVersion->set_gminor(CHROME_VERSION_MINOR);
+   chromeVersion->set_build(CHROME_VERSION_BUILD);
+   chromeVersion->set_patch(CHROME_VERSION_PATCH);
+   document_data.callback = std::move(callback);

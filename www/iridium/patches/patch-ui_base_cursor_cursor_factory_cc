@@ -1,0 +1,14 @@
+$OpenBSD: patch-ui_base_cursor_cursor_factory_cc,v 1.1 2021/07/06 11:13:52 robert Exp $
+
+Index: ui/base/cursor/cursor_factory.cc
+--- ui/base/cursor/cursor_factory.cc.orig
++++ ui/base/cursor/cursor_factory.cc
+@@ -69,7 +69,7 @@ void CursorFactory::ObserveThemeChanges() {
+ 
+ void CursorFactory::SetDeviceScaleFactor(float scale) {}
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ 
+ // Returns a cursor name compatible with either X11 or the FreeDesktop.org
+ // cursor spec ([1] and [2]), followed by fallbacks that can work as

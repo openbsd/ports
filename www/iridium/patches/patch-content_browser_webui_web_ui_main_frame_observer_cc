@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_webui_web_ui_main_frame_observer_cc,v 1.1 2021/04/01 10:24:45 robert Exp $
+$OpenBSD: patch-content_browser_webui_web_ui_main_frame_observer_cc,v 1.2 2021/07/06 11:13:51 robert Exp $
 
 Index: content/browser/webui/web_ui_main_frame_observer.cc
 --- content/browser/webui/web_ui_main_frame_observer.cc.orig
@@ -12,7 +12,16 @@ Index: content/browser/webui/web_ui_main_frame_observer.cc
  #include "base/callback_helpers.h"
  #include "base/feature_list.h"
  #include "base/logging.h"
-@@ -41,7 +41,7 @@ void WebUIMainFrameObserver::DidFinishNavigation(
+@@ -31,7 +31,7 @@ namespace content {
+ 
+ namespace {
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ // Remove the pieces of the URL we don't want to send back with the error
+ // reports. In particular, do not send query or fragments as those can have
+ // privacy-sensitive information in them.
+@@ -67,7 +67,7 @@ void WebUIMainFrameObserver::DidFinishNavigation(
    web_ui_->DisallowJavascriptOnAllHandlers();
  }
  

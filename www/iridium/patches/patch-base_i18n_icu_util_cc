@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_i18n_icu_util_cc,v 1.9 2021/04/01 10:24:44 robert Exp $
+$OpenBSD: patch-base_i18n_icu_util_cc,v 1.10 2021/07/06 11:13:49 robert Exp $
 
 Index: base/i18n/icu_util.cc
 --- base/i18n/icu_util.cc.orig
 +++ base/i18n/icu_util.cc
-@@ -48,7 +48,7 @@
+@@ -49,7 +49,7 @@
  #include "third_party/icu/source/common/unicode/unistr.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: base/i18n/icu_util.cc
      ((defined(OS_LINUX) || defined(OS_CHROMEOS)) && !BUILDFLAG(IS_CHROMECAST))
  #include "third_party/icu/source/i18n/unicode/timezone.h"
  #endif
-@@ -342,7 +342,8 @@ void InitializeIcuTimeZone() {
+@@ -343,7 +343,8 @@ void InitializeIcuTimeZone() {
        FuchsiaIntlProfileWatcher::GetPrimaryTimeZoneIdForIcuInitialization();
    icu::TimeZone::adoptDefault(
        icu::TimeZone::createTimeZone(icu::UnicodeString::fromUTF8(zone_id)));

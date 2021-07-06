@@ -59,13 +59,14 @@ struct ConnectParams {
   scoped_refptr<base::SequencedTaskRunner> task_runner;
   scoped_refptr<base::SequencedTaskRunner> blocking_task_runner;
   base::ScopedFD fd;
+  bool allow_protected_reports;
 };
 
 void CreateConnection(std::unique_ptr<ConnectParams> params) {
   DCHECK(params->fd.is_valid());
   std::move(params->callback).Run(base::MakeRefCounted<HidConnectionFido>(
       std::move(params->device_info), std::move(params->fd),
-      std::move(params->blocking_task_runner)));
+      std::move(params->blocking_task_runner), params->allow_protected_reports));
 }
 
 void FinishOpen(std::unique_ptr<ConnectParams> params) {
@@ -299,6 +300,7 @@ base::WeakPtr<HidService> HidServiceFido::GetWeakPtr() {
 }
 
 void HidServiceFido::Connect(const std::string &device_guid,
+                             bool allow_protected_reports,
                              ConnectCallback callback) {
   DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
 

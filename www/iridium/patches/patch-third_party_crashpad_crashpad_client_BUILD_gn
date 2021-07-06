@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_crashpad_crashpad_client_BUILD_gn,v 1.7 2021/04/01 10:24:45 robert Exp $
+$OpenBSD: patch-third_party_crashpad_crashpad_client_BUILD_gn,v 1.8 2021/07/06 11:13:52 robert Exp $
 
 Index: third_party/crashpad/crashpad/client/BUILD.gn
 --- third_party/crashpad/crashpad/client/BUILD.gn.orig
 +++ third_party/crashpad/crashpad/client/BUILD.gn
-@@ -77,7 +77,13 @@ crashpad_static_library("client") {
+@@ -78,7 +78,13 @@ crashpad_static_library("client") {
      sources += [ "crashpad_client_fuchsia.cc" ]
    }
  

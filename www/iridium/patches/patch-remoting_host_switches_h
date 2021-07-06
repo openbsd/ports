@@ -1,4 +1,4 @@
-$OpenBSD: patch-remoting_host_switches_h,v 1.4 2021/04/01 10:24:45 robert Exp $
+$OpenBSD: patch-remoting_host_switches_h,v 1.5 2021/07/06 11:13:51 robert Exp $
 
 Index: remoting/host/switches.h
 --- remoting/host/switches.h.orig

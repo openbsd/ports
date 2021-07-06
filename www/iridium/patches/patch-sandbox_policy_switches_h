@@ -1,9 +1,9 @@
-$OpenBSD: patch-sandbox_policy_switches_h,v 1.1 2021/04/01 10:24:45 robert Exp $
+$OpenBSD: patch-sandbox_policy_switches_h,v 1.2 2021/07/06 11:13:51 robert Exp $
 
 Index: sandbox/policy/switches.h
 --- sandbox/policy/switches.h.orig
 +++ sandbox/policy/switches.h
-@@ -54,7 +54,8 @@ SANDBOX_POLICY_EXPORT extern const char kDisableSetuid
+@@ -55,7 +55,8 @@ SANDBOX_POLICY_EXPORT extern const char kDisableSetuid
  SANDBOX_POLICY_EXPORT extern const char kGpuSandboxAllowSysVShm[];
  SANDBOX_POLICY_EXPORT extern const char kGpuSandboxFailuresFatal[];
  SANDBOX_POLICY_EXPORT extern const char kNoSandbox[];

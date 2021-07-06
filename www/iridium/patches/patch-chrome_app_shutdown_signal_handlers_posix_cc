@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_app_shutdown_signal_handlers_posix_cc,v 1.9 2021/04/01 10:24:44 robert Exp $
+$OpenBSD: patch-chrome_app_shutdown_signal_handlers_posix_cc,v 1.10 2021/07/06 11:13:49 robert Exp $
 
 Index: chrome/app/shutdown_signal_handlers_posix.cc
 --- chrome/app/shutdown_signal_handlers_posix.cc.orig

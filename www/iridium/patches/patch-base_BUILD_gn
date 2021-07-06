@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_BUILD_gn,v 1.17 2021/04/01 10:24:43 robert Exp $
+$OpenBSD: patch-base_BUILD_gn,v 1.18 2021/07/06 11:13:49 robert Exp $
 
 Index: base/BUILD.gn
 --- base/BUILD.gn.orig
 +++ base/BUILD.gn
-@@ -873,7 +873,7 @@ component("base") {
+@@ -963,7 +963,7 @@ component("base") {
        "timer/hi_res_timer_manager_posix.cc",
      ]
  
@@ -12,7 +12,7 @@ Index: base/BUILD.gn
        sources += [
          "cpu_affinity_posix.cc",
          "cpu_affinity_posix.h",
-@@ -884,6 +884,12 @@ component("base") {
+@@ -974,6 +974,12 @@ component("base") {
          "profiler/thread_delegate_posix.h",
        ]
      }
@@ -25,7 +25,7 @@ Index: base/BUILD.gn
    }
  
    if (is_win) {
-@@ -1293,11 +1299,16 @@ component("base") {
+@@ -1377,11 +1383,16 @@ component("base") {
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
    if (!use_sysroot &&
@@ -43,16 +43,16 @@ Index: base/BUILD.gn
    if (use_allocator_shim) {
      sources += [
        "allocator/allocator_shim.cc",
-@@ -1316,7 +1327,7 @@ component("base") {
-     if (is_apple) {
-       sources += [ "allocator/allocator_shim_override_mac_symbols.h" ]
+@@ -1403,7 +1414,7 @@ component("base") {
+         "allocator/allocator_shim_override_mac_symbols.h",
+       ]
      }
 -    if (is_chromeos || is_linux) {
 +    if (is_chromeos || (is_linux && !is_openbsd)) {
        sources += [
          "allocator/allocator_shim_override_cpp_symbols.h",
          "allocator/allocator_shim_override_glibc_weak_symbols.h",
-@@ -1967,6 +1978,29 @@ component("base") {
+@@ -2062,6 +2073,29 @@ component("base") {
          "linux_util.h",
        ]
      }

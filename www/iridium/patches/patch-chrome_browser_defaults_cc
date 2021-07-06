@@ -1,13 +1,14 @@
-$OpenBSD: patch-chrome_browser_defaults_cc,v 1.16 2021/04/01 10:24:44 robert Exp $
+$OpenBSD: patch-chrome_browser_defaults_cc,v 1.17 2021/07/06 11:13:50 robert Exp $
+
 Index: chrome/browser/defaults.cc
 --- chrome/browser/defaults.cc.orig
 +++ chrome/browser/defaults.cc
-@@ -43,7 +43,7 @@ const bool kSyncAutoStarts = true;
- const bool kSyncAutoStarts = false;
- #endif
+@@ -46,7 +46,7 @@ const bool kSyncAutoStarts = false;
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  const bool kScrollEventChangesTab = true;
  #else
  const bool kScrollEventChangesTab = false;

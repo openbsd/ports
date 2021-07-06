@@ -1,9 +1,9 @@
-$OpenBSD: patch-media_base_audio_latency_cc,v 1.9 2021/04/01 10:24:45 robert Exp $
+$OpenBSD: patch-media_base_audio_latency_cc,v 1.10 2021/07/06 11:13:51 robert Exp $
 
 Index: media/base/audio_latency.cc
 --- media/base/audio_latency.cc.orig
 +++ media/base/audio_latency.cc
-@@ -115,7 +115,7 @@ int AudioLatency::GetRtcBufferSize(int sample_rate, in
+@@ -135,7 +135,7 @@ int AudioLatency::GetRtcBufferSize(int sample_rate, in
    }
  
  #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || \

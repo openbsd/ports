@@ -1,14 +1,14 @@
-$OpenBSD: patch-base_base_switches_h,v 1.4 2021/04/01 10:24:43 robert Exp $
+$OpenBSD: patch-base_base_switches_h,v 1.5 2021/07/06 11:13:49 robert Exp $
 
 Index: base/base_switches.h
 --- base/base_switches.h.orig
 +++ base/base_switches.h
-@@ -55,7 +55,7 @@ extern const char kEnableIdleTracing[];
+@@ -59,7 +59,7 @@ extern const char kEnableIdleTracing[];
  extern const char kForceFieldTrialParams[];
  #endif
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  extern const char kEnableThreadInstructionCount[];
- #endif
  
+ // TODO(crbug.com/1176772): Remove kEnableCrashpad and IsCrashpadEnabled() when

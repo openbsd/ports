@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_abseil-cpp_absl_base_internal_sysinfo_cc,v 1.1 2021/04/01 10:24:45 robert Exp $
+$OpenBSD: patch-third_party_abseil-cpp_absl_base_internal_sysinfo_cc,v 1.2 2021/07/06 11:13:51 robert Exp $
 
 Index: third_party/abseil-cpp/absl/base/internal/sysinfo.cc
 --- third_party/abseil-cpp/absl/base/internal/sysinfo.cc.orig

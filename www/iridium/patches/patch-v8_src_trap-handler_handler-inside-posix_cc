@@ -1,4 +1,4 @@
-$OpenBSD: patch-v8_src_trap-handler_handler-inside-posix_cc,v 1.5 2021/04/01 10:24:46 robert Exp $
+$OpenBSD: patch-v8_src_trap-handler_handler-inside-posix_cc,v 1.6 2021/07/06 11:13:52 robert Exp $
 
 Index: v8/src/trap-handler/handler-inside-posix.cc
 --- v8/src/trap-handler/handler-inside-posix.cc.orig
@@ -11,7 +11,7 @@ Index: v8/src/trap-handler/handler-inside-posix.cc
 -         info->si_code != SI_ASYNCIO && info->si_code != SI_MESGQ;
 +         info->si_code != SI_QUEUE && info->si_code != SI_TIMER
 +#ifdef V8_OS_OPENBSD
-+	 ;
++         ;
 +#else
 +         && info->si_code != SI_ASYNCIO && info->si_code != SI_MESGQ;
 +#endif
@@ -19,11 +19,11 @@ Index: v8/src/trap-handler/handler-inside-posix.cc
  
  class SigUnmaskStack {
 @@ -114,6 +118,8 @@ bool TryHandleSignal(int signum, siginfo_t* info, void
-     auto* context_rip = &uc->uc_mcontext->__ss.__rip;
- #elif V8_OS_FREEBSD
-     auto* context_rip = &uc->uc_mcontext.mc_rip;
-+#elif V8_OS_OPENBSD
-+    auto* context_rip = &uc->sc_rip;
+     auto* context_ip = &uc->uc_mcontext->__ss.__rip;
+ #elif V8_OS_FREEBSD && V8_TARGET_ARCH_X64
+     auto* context_ip = &uc->uc_mcontext.mc_rip;
++#elif V8_OS_OPENBSD && V8_TARGET_ARCH_X64
++    auto* context_ip = &uc->sc_rip;
  #else
  #error Unsupported platform
  #endif
