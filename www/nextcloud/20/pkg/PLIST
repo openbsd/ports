@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/05/25 08:13:16 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/07/06 12:22:54 gonzalo Exp $
 @option is-branch
 @conflict nextcloud-*
 @pkgpath www/nextcloud
@@ -6931,6 +6931,8 @@ nextcloud/apps/admin_audit/l10n/pl.js
 nextcloud/apps/admin_audit/l10n/pl.json
 nextcloud/apps/admin_audit/l10n/pt_BR.js
 nextcloud/apps/admin_audit/l10n/pt_BR.json
+nextcloud/apps/admin_audit/l10n/pt_PT.js
+nextcloud/apps/admin_audit/l10n/pt_PT.json
 nextcloud/apps/admin_audit/l10n/ro.js
 nextcloud/apps/admin_audit/l10n/ro.json
 nextcloud/apps/admin_audit/l10n/ru.js
@@ -7022,6 +7024,8 @@ nextcloud/apps/cloud_federation_api/l10n/it.js
 nextcloud/apps/cloud_federation_api/l10n/it.json
 nextcloud/apps/cloud_federation_api/l10n/mk.js
 nextcloud/apps/cloud_federation_api/l10n/mk.json
+nextcloud/apps/cloud_federation_api/l10n/my.js
+nextcloud/apps/cloud_federation_api/l10n/my.json
 nextcloud/apps/cloud_federation_api/l10n/nb.js
 nextcloud/apps/cloud_federation_api/l10n/nb.json
 nextcloud/apps/cloud_federation_api/l10n/nl.js
@@ -7507,6 +7511,8 @@ nextcloud/apps/dashboard/l10n/pt_BR.js
 nextcloud/apps/dashboard/l10n/pt_BR.json
 nextcloud/apps/dashboard/l10n/pt_PT.js
 nextcloud/apps/dashboard/l10n/pt_PT.json
+nextcloud/apps/dashboard/l10n/ro.js
+nextcloud/apps/dashboard/l10n/ro.json
 nextcloud/apps/dashboard/l10n/ru.js
 nextcloud/apps/dashboard/l10n/ru.json
 nextcloud/apps/dashboard/l10n/sc.js
@@ -7521,6 +7527,8 @@ nextcloud/apps/dashboard/l10n/th.js
 nextcloud/apps/dashboard/l10n/th.json
 nextcloud/apps/dashboard/l10n/tr.js
 nextcloud/apps/dashboard/l10n/tr.json
+nextcloud/apps/dashboard/l10n/uk.js
+nextcloud/apps/dashboard/l10n/uk.json
 nextcloud/apps/dashboard/l10n/zh_CN.js
 nextcloud/apps/dashboard/l10n/zh_CN.json
 nextcloud/apps/dashboard/l10n/zh_HK.js
@@ -8213,6 +8221,7 @@ nextcloud/apps/encryption/lib/AppInfo/Application.php
 nextcloud/apps/encryption/lib/Command/
 nextcloud/apps/encryption/lib/Command/DisableMasterKey.php
 nextcloud/apps/encryption/lib/Command/EnableMasterKey.php
+nextcloud/apps/encryption/lib/Command/FixEncryptedVersion.php
 nextcloud/apps/encryption/lib/Command/RecoverUser.php
 nextcloud/apps/encryption/lib/Command/ScanLegacyFormat.php
 nextcloud/apps/encryption/lib/Controller/
@@ -8404,6 +8413,8 @@ nextcloud/apps/federatedfilesharing/l10n/ro.js
 nextcloud/apps/federatedfilesharing/l10n/ro.json
 nextcloud/apps/federatedfilesharing/l10n/ru.js
 nextcloud/apps/federatedfilesharing/l10n/ru.json
+nextcloud/apps/federatedfilesharing/l10n/sc.js
+nextcloud/apps/federatedfilesharing/l10n/sc.json
 nextcloud/apps/federatedfilesharing/l10n/sk.js
 nextcloud/apps/federatedfilesharing/l10n/sk.json
 nextcloud/apps/federatedfilesharing/l10n/sk_SK.js
@@ -11372,6 +11383,8 @@ nextcloud/apps/firstrunwizard/l10n/ro.js
 nextcloud/apps/firstrunwizard/l10n/ro.json
 nextcloud/apps/firstrunwizard/l10n/ru.js
 nextcloud/apps/firstrunwizard/l10n/ru.json
+nextcloud/apps/firstrunwizard/l10n/sc.js
+nextcloud/apps/firstrunwizard/l10n/sc.json
 nextcloud/apps/firstrunwizard/l10n/si.js
 nextcloud/apps/firstrunwizard/l10n/si.json
 nextcloud/apps/firstrunwizard/l10n/si_LK.php
@@ -12541,7 +12554,6 @@ nextcloud/apps/password_policy/lists/list-9.php
 nextcloud/apps/password_policy/templates/
 nextcloud/apps/password_policy/templates/settings-admin.php
 nextcloud/apps/photos/
-nextcloud/apps/photos/.npmignore
 nextcloud/apps/photos/COPYING
 nextcloud/apps/photos/appinfo/
 nextcloud/apps/photos/appinfo/info.xml
@@ -12565,7 +12577,6 @@ nextcloud/apps/photos/js/photos-10.js
 nextcloud/apps/photos/js/photos-10.js.map
 nextcloud/apps/photos/js/photos-2.js
 nextcloud/apps/photos/js/photos-2.js.map
-nextcloud/apps/photos/js/photos-3.js.map
 nextcloud/apps/photos/js/photos-4.js
 nextcloud/apps/photos/js/photos-4.js.map
 nextcloud/apps/photos/js/photos-5.js
@@ -12919,6 +12930,8 @@ nextcloud/apps/privacy/l10n/ro.js
 nextcloud/apps/privacy/l10n/ro.json
 nextcloud/apps/privacy/l10n/ru.js
 nextcloud/apps/privacy/l10n/ru.json
+nextcloud/apps/privacy/l10n/sc.js
+nextcloud/apps/privacy/l10n/sc.json
 nextcloud/apps/privacy/l10n/sk.js
 nextcloud/apps/privacy/l10n/sk.json
 nextcloud/apps/privacy/l10n/sl.js
@@ -13440,8 +13453,8 @@ nextcloud/apps/settings/js/templates/federationscopemenu.handlebars
 nextcloud/apps/settings/js/usersettings.js
 nextcloud/apps/settings/js/vue-settings-admin-security.js
 nextcloud/apps/settings/js/vue-settings-admin-security.js.map
-nextcloud/apps/settings/js/vue-settings-apps-489d5f46c67b4e8fbf67.js
-nextcloud/apps/settings/js/vue-settings-apps-489d5f46c67b4e8fbf67.js.map
+nextcloud/apps/settings/js/vue-settings-apps-82c8ffb1805a0b48eca3.js
+nextcloud/apps/settings/js/vue-settings-apps-82c8ffb1805a0b48eca3.js.map
 nextcloud/apps/settings/js/vue-settings-apps-users-management.js
 nextcloud/apps/settings/js/vue-settings-apps-users-management.js.map
 nextcloud/apps/settings/js/vue-settings-nextcloud-pdf.js
@@ -13450,14 +13463,14 @@ nextcloud/apps/settings/js/vue-settings-personal-security.js
 nextcloud/apps/settings/js/vue-settings-personal-security.js.map
 nextcloud/apps/settings/js/vue-settings-personal-webauthn.js
 nextcloud/apps/settings/js/vue-settings-personal-webauthn.js.map
-nextcloud/apps/settings/js/vue-settings-users-f21df1de93ddcf45e13b.js
-nextcloud/apps/settings/js/vue-settings-users-f21df1de93ddcf45e13b.js.map
-nextcloud/apps/settings/js/vue-vendors-settings-apps-0e3130278180acc1bb58.js
-nextcloud/apps/settings/js/vue-vendors-settings-apps-0e3130278180acc1bb58.js.map
-nextcloud/apps/settings/js/vue-vendors-settings-apps-settings-users-feb6e6add9aee6bcda40.js
-nextcloud/apps/settings/js/vue-vendors-settings-apps-settings-users-feb6e6add9aee6bcda40.js.map
-nextcloud/apps/settings/js/vue-vendors-settings-users-bcea665d3ab241c6619f.js
-nextcloud/apps/settings/js/vue-vendors-settings-users-bcea665d3ab241c6619f.js.map
+nextcloud/apps/settings/js/vue-settings-users-28c1af21e51d70bac3f0.js
+nextcloud/apps/settings/js/vue-settings-users-28c1af21e51d70bac3f0.js.map
+nextcloud/apps/settings/js/vue-vendors-settings-apps-819b3785a5a45a970ac6.js
+nextcloud/apps/settings/js/vue-vendors-settings-apps-819b3785a5a45a970ac6.js.map
+nextcloud/apps/settings/js/vue-vendors-settings-apps-settings-users-e235cbbd16a8b21863b6.js
+nextcloud/apps/settings/js/vue-vendors-settings-apps-settings-users-e235cbbd16a8b21863b6.js.map
+nextcloud/apps/settings/js/vue-vendors-settings-users-f9b8831ab02691bc50a9.js
+nextcloud/apps/settings/js/vue-vendors-settings-users-f9b8831ab02691bc50a9.js.map
 nextcloud/apps/settings/l10n/
 nextcloud/apps/settings/l10n/af.js
 nextcloud/apps/settings/l10n/af.json
@@ -13891,6 +13904,8 @@ nextcloud/apps/support/l10n/de.js
 nextcloud/apps/support/l10n/de.json
 nextcloud/apps/support/l10n/de_DE.js
 nextcloud/apps/support/l10n/de_DE.json
+nextcloud/apps/support/l10n/el.js
+nextcloud/apps/support/l10n/el.json
 nextcloud/apps/support/l10n/es.js
 nextcloud/apps/support/l10n/es.json
 nextcloud/apps/support/l10n/es_AR.js
@@ -13905,6 +13920,8 @@ nextcloud/apps/support/l10n/gl.js
 nextcloud/apps/support/l10n/gl.json
 nextcloud/apps/support/l10n/he.js
 nextcloud/apps/support/l10n/he.json
+nextcloud/apps/support/l10n/hr.js
+nextcloud/apps/support/l10n/hr.json
 nextcloud/apps/support/l10n/hu.js
 nextcloud/apps/support/l10n/hu.json
 nextcloud/apps/support/l10n/is.js
@@ -13913,6 +13930,8 @@ nextcloud/apps/support/l10n/it.js
 nextcloud/apps/support/l10n/it.json
 nextcloud/apps/support/l10n/ja.js
 nextcloud/apps/support/l10n/ja.json
+nextcloud/apps/support/l10n/ko.js
+nextcloud/apps/support/l10n/ko.json
 nextcloud/apps/support/l10n/lt_LT.js
 nextcloud/apps/support/l10n/lt_LT.json
 nextcloud/apps/support/l10n/nb.js
@@ -13929,12 +13948,18 @@ nextcloud/apps/support/l10n/ru.js
 nextcloud/apps/support/l10n/ru.json
 nextcloud/apps/support/l10n/sk.js
 nextcloud/apps/support/l10n/sk.json
+nextcloud/apps/support/l10n/sl.js
+nextcloud/apps/support/l10n/sl.json
 nextcloud/apps/support/l10n/sr.js
 nextcloud/apps/support/l10n/sr.json
+nextcloud/apps/support/l10n/sv.js
+nextcloud/apps/support/l10n/sv.json
 nextcloud/apps/support/l10n/tr.js
 nextcloud/apps/support/l10n/tr.json
 nextcloud/apps/support/l10n/zh_CN.js
 nextcloud/apps/support/l10n/zh_CN.json
+nextcloud/apps/support/l10n/zh_HK.js
+nextcloud/apps/support/l10n/zh_HK.json
 nextcloud/apps/support/l10n/zh_TW.js
 nextcloud/apps/support/l10n/zh_TW.json
 nextcloud/apps/support/lib/
@@ -14813,6 +14838,8 @@ nextcloud/apps/text/js/viewer.js
 nextcloud/apps/text/js/viewer.js.map
 nextcloud/apps/text/krankerl.toml
 nextcloud/apps/text/l10n/
+nextcloud/apps/text/l10n/af.js
+nextcloud/apps/text/l10n/af.json
 nextcloud/apps/text/l10n/ar.js
 nextcloud/apps/text/l10n/ar.json
 nextcloud/apps/text/l10n/ast.js
@@ -16070,6 +16097,10 @@ nextcloud/apps/user_status/l10n/pt_BR.js
 nextcloud/apps/user_status/l10n/pt_BR.json
 nextcloud/apps/user_status/l10n/ru.js
 nextcloud/apps/user_status/l10n/ru.json
+nextcloud/apps/user_status/l10n/sc.js
+nextcloud/apps/user_status/l10n/sc.json
+nextcloud/apps/user_status/l10n/sk.js
+nextcloud/apps/user_status/l10n/sk.json
 nextcloud/apps/user_status/l10n/sl.js
 nextcloud/apps/user_status/l10n/sl.json
 nextcloud/apps/user_status/l10n/sv.js
@@ -16123,7 +16154,6 @@ nextcloud/apps/user_status/lib/Service/JSDataService.php
 nextcloud/apps/user_status/lib/Service/PredefinedStatusService.php
 nextcloud/apps/user_status/lib/Service/StatusService.php
 nextcloud/apps/viewer/
-nextcloud/apps/viewer/.npmignore
 nextcloud/apps/viewer/COPYING
 nextcloud/apps/viewer/appinfo/
 nextcloud/apps/viewer/appinfo/info.xml
@@ -16366,6 +16396,8 @@ nextcloud/apps/weather_status/js/
 nextcloud/apps/weather_status/js/weather-status.js
 nextcloud/apps/weather_status/js/weather-status.js.map
 nextcloud/apps/weather_status/l10n/
+nextcloud/apps/weather_status/l10n/af.js
+nextcloud/apps/weather_status/l10n/af.json
 nextcloud/apps/weather_status/l10n/ca.js
 nextcloud/apps/weather_status/l10n/ca.json
 nextcloud/apps/weather_status/l10n/cs.js
@@ -16386,6 +16418,8 @@ nextcloud/apps/weather_status/l10n/fr.js
 nextcloud/apps/weather_status/l10n/fr.json
 nextcloud/apps/weather_status/l10n/gl.js
 nextcloud/apps/weather_status/l10n/gl.json
+nextcloud/apps/weather_status/l10n/he.js
+nextcloud/apps/weather_status/l10n/he.json
 nextcloud/apps/weather_status/l10n/hr.js
 nextcloud/apps/weather_status/l10n/hr.json
 nextcloud/apps/weather_status/l10n/hu.js
@@ -17180,7 +17214,7 @@ nextcloud/core/doc/admin/_static/social/rss.svg
 nextcloud/core/doc/admin/_static/social/twitter.svg
 nextcloud/core/doc/admin/_static/social/twitterround.png
 nextcloud/core/doc/admin/_static/social/youtube.svg
-nextcloud/core/doc/admin/_static/underscore-1.12.0.js
+nextcloud/core/doc/admin/_static/underscore-1.13.1.js
 nextcloud/core/doc/admin/_static/underscore.js
 nextcloud/core/doc/admin/apps_management.html
 nextcloud/core/doc/admin/configuration_database/
@@ -17494,7 +17528,7 @@ nextcloud/core/doc/user/_static/social/rss.svg
 nextcloud/core/doc/user/_static/social/twitter.svg
 nextcloud/core/doc/user/_static/social/twitterround.png
 nextcloud/core/doc/user/_static/social/youtube.svg
-nextcloud/core/doc/user/_static/underscore-1.12.0.js
+nextcloud/core/doc/user/_static/underscore-1.13.1.js
 nextcloud/core/doc/user/_static/underscore.js
 nextcloud/core/doc/user/contents.html
 nextcloud/core/doc/user/external_storage/
@@ -18386,6 +18420,7 @@ nextcloud/lib/private/Authentication/Listeners/RemoteWipeEmailListener.php
 nextcloud/lib/private/Authentication/Listeners/RemoteWipeNotificationsListener.php
 nextcloud/lib/private/Authentication/Listeners/UserDeletedStoreCleanupListener.php
 nextcloud/lib/private/Authentication/Listeners/UserDeletedTokenCleanupListener.php
+nextcloud/lib/private/Authentication/Listeners/UserDeletedWebAuthnCleanupListener.php
 nextcloud/lib/private/Authentication/Listeners/UserLoggedInListener.php
 nextcloud/lib/private/Authentication/Login/
 nextcloud/lib/private/Authentication/Login/ALoginCommand.php
