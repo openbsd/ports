@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/11/12 09:33:42 semarie Exp $
+# $OpenBSD: Makefile,v 1.2 2021/07/06 19:59:22 abieber Exp $
 
 COMMENT=	lua string hashing/indexing library
 CATEGORIES=	devel
@@ -6,10 +6,11 @@ CATEGORIES=	devel
 GH_ACCOUNT=	Olivine-Labs
 GH_PROJECT=	say
 GH_TAGNAME=	v1.3-1
+REVISION=	0
 
 PKGNAME =	lua-say-1.3.1
 
-MAINTAINER=	sh+ports@codevoid.de
+MAINTAINER=	Stefan Hagen <sh+ports@codevoid.de>
 
 # MIT
 PERMIT_PACKAGE=	Yes
