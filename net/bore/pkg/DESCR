@@ -1,0 +1,2 @@
+DNS query tool. Provides highlighting by default and some useful protocol
+debugging features, and uses pledge(2) and unveil(2) on OpenBSD.

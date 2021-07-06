@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/07/06 20:14:10 tb Exp $
+@bin bin/bore
+@man man/man1/bore.1
