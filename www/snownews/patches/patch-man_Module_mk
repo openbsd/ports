@@ -1,0 +1,36 @@
+$OpenBSD: patch-man_Module_mk,v 1.1 2021/07/06 19:33:21 cwen Exp $
+
+Making the fake stage easier to debug
+
+Index: man/Module.mk
+--- man/Module.mk.orig
++++ man/Module.mk
+@@ -15,23 +15,18 @@ man/emani	:= $(subst man/,${man1d}/,${man/mans})
+ man/lmani	:= $(foreach l,${man/langs},${mand}/${l}/man1/snownews.1)
+ 
+ ${mand}:
+-	@echo "Creating $@ ..."
+-	@${INSTALL} -d $@
++	${INSTALL} -d $@
+ ${man1d}: | ${mand}
+-	@echo "Creating $@ ..."
+-	@${INSTALL} -d $@
++	${INSTALL} -d $@
+ ${lmand}: | ${mand}
+-	@echo "Creating $@ ..."
+-	@${INSTALL} -d $@
++	${INSTALL} -d $@
+ man/mani	:= ${man/emani}
+ ${man/emani}:	${man1d}/%:	man/%	| ${man1d}
+-	@echo "Installing $@ ..."
+-	@${INSTALL_DATA} $< $@
++	${INSTALL_DATA} $< $@
+ ifdef localedir
+ man/mani	+= ${man/lmani}
+ ${man/lmani}:	${mand}/%/man1/snownews.1:	man/snownews.%.1 | ${lmand}
+-	@echo "Installing $@ ..."
+-	@${INSTALL_DATA} $< $@
++	${INSTALL_DATA} $< $@
+ endif
+ 
+ installdirs:	${mand} ${man1d}

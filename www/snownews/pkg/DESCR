@@ -1,11 +1,10 @@
-Snownews is a text mode RSS newsreader.  It supports RSS 1.0 feeds that
-comply with the W3C RDF specification and also supports Radio Userland's
-RSS 0.91 and 2.0 versions.
+Snownews is a text mode RSS and Atom newsreader.  It supports RSS 1.0 and 2.0
+feeds that comply with the W3C specifications, Radio Userland's RSS 0.91 and
+Atom feeds.
 
 Here are some feeds to get you started:
 
-Freshmeat	- http://freshmeat.net/backend/fm.rdf
-OpenBSD Journal	- http://undeadly.org/cgi?action=rss
-The Register	- http://www.theregister.co.uk/excerpts.rss
-Slashdot	- http://slashdot.org/slashdot.rdf
-Snownews	- http://home.kcore.de/~kiza/software/snownews/snowlog.rdf
+OpenBSD Journal	- https://undeadly.org/cgi?action=rss
+r/OpenBSD	- https://www.reddit.com/r/openbsd.rss
+The Register	- https://www.theregister.com/off_prem/channel/headlines.atom
+Slashdot	- http://rss.slashdot.org/Slashdot/slashdotMainatom

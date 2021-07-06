@@ -1,0 +1,35 @@
+$OpenBSD: patch-po_Module_mk,v 1.1 2021/07/06 19:33:21 cwen Exp $
+
+Making the fake stage easier to debug
+
+Index: po/Module.mk
+--- po/Module.mk.orig
++++ po/Module.mk
+@@ -17,14 +17,11 @@ polds		:= $(foreach l,${locales},${pod}/${l}/LC_MESSAG
+ po/objsi	:= $(foreach l,${polds},${l}/${name}.mo)
+ 
+ ${pod}:
+-	@echo "Creating $@ ..."
+-	@${INSTALL} -d $@
++	${INSTALL} -d $@
+ ${polds}: | ${pod}
+-	@echo "Creating $@ ..."
+-	@${INSTALL} -d $@
++	${INSTALL} -d $@
+ ${po/objsi}:	${pod}/%/LC_MESSAGES/${name}.mo:	$Opo/%.mo | ${polds}
+-	@echo "Installing $@ ..."
+-	@${INSTALL_DATA} $< $@
++	${INSTALL_DATA} $< $@
+ 
+ installdirs:	${polds}
+ install:	po/install
+@@ -38,8 +35,7 @@ po/uninstall:
+ 	fi
+ 
+ $O%.mo:	%.po
+-	@echo "    Compiling $< ..."
+-	@${MSGFMT} -o $@ $<
++	${MSGFMT} -o $@ $<
+ endif
+ 
+ ################ Maintenance ###########################################

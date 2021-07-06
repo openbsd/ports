@@ -1,46 +1,51 @@
-$OpenBSD: patch-configure,v 1.4 2020/11/20 20:48:11 sthen Exp $
+$OpenBSD: patch-configure,v 1.5 2021/07/06 19:33:21 cwen Exp $
+
+Hunk #0: report proper version
+Hunk #1: ncurses can't be found using pkg-config(1)
+Hunk #2: make our sed(1) happy
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -36,9 +36,9 @@ seds=[s/^#undef \(USE_UNSUPPORTED_AND_BROKEN_CODE\)/#d
- PROGS="CC=gcc CC=clang INSTALL=install MSGFMT=msgfmt"
+@@ -4,7 +4,7 @@
+ ######################################################################
+ 
+ pkg_name="snownews"
+-pkg_verstr="v1.7"
++pkg_verstr="v1.8"
+ pkg_bugreport="Mike Sharov <msharov@users.sourceforge.net>"
+ 
+ # Files that get created by this script
+@@ -34,7 +34,7 @@ seds=[s/^#undef \(USE_UNSUPPORTED_AND_BROKEN_CODE\)/#d
+ progs="CC=gcc CC=clang CC=cc INSTALL=install MSGFMT=msgfmt"
  
  # Libs found using pkg-config
--LIBS="libxml-2.0 ncurses zlib"
-+LIBS="libxml-2.0"
- # Defaults to substitute with pkg-config --libs output
--DEFLIBS="-lxml2 -lncursesw -lz"
-+DEFLIBS="-lxml2"
- # Defaults to substitute with pkg-config --cflags output
- DEFINCS="-I\/usr\/include\/libxml2"
+-pkgs="libcurl libxml-2.0 libcrypto ncursesw"
++pkgs="libcurl libxml-2.0 libcrypto"
+ # Default pkg flags to substitute when pkg-config is not found
+ pkg_libs="-lcurl -lxml2 -lcrypto -lncursesw"
+ pkg_cflags="-I\/usr\/include\/libxml2"
+@@ -154,15 +154,15 @@ done
  
-@@ -156,21 +156,21 @@ done
  #### Set directory prefixes ##########################################
  
- sub "s/@prefix@/${ac_var_prefix:=\/usr\/local}/g
--s/@bindir@/${ac_var_bindir:=$ac_var_prefix\/bin}/g
--s/@mandir@/${ac_var_mandir:=$ac_var_prefix\/share\/man}/g
--s/@localedir@/${ac_var_localedir:=$ac_var_prefix\/share\/locale}/g
--s/@builddir@/\/tmp\/$USER\/make/g
-+s/@bindir@/${ac_var_bindir:=$ac_var_prefix\\/bin}/g
-+s/@mandir@/${ac_var_mandir:=$ac_var_prefix\\/share\\/man}/g
-+s/@localedir@/${ac_var_localedir:=$ac_var_prefix\\/share\\/locale}/g
-+s/@builddir@/\\/tmp\\/$USER\\/make/g
- s/@pkgdir@//g"
- 
- # Replace prefix variables, where available
- if [ "$ac_var_bindir" = "$ac_var_prefix\/bin" ]; then
--    sub "s/$ac_var_bindir/\${PREFIX}\/bin/";
-+    sub "s/$ac_var_bindir/\${PREFIX}\\/bin/";
- fi
- if [ "$ac_var_mandir" = "$ac_var_prefix\/share\/man" ]; then
--    sub "s/$ac_var_mandir/\${PREFIX}\/share\/man/";
-+    sub "s/$ac_var_mandir/\${PREFIX}\\/share\\/man/";
- fi
- if [ "$ac_var_localedir" = "$ac_var_prefix\/share\/locale" ]; then
--    sub "s/ $ac_var_localedir/ \${PREFIX}\/share\/locale/";
-+    sub "s/ $ac_var_localedir/ \${PREFIX}\\/share\\/locale/";
- fi
+-sub "s/@prefix@/${ac_var_prefix:=\/usr\/local}/g
+-s/@bindir@/${ac_var_bindir:=\$\{prefix\}\/bin}/g
+-s/@datadir@/${ac_var_datadir:=\$\{prefix\}\/share}/g
+-s/@mandir@/${ac_var_mandir:=\$\{datadir\}\/man}/g
+-s/@man1dir@/${ac_var_man1dir:=\$\{mandir\}\/man1}/g
+-s/@localedir@/${ac_var_localedir:=\$\{datadir\}\/locale}/g
+-s/@localepath@/${ac_var_prefix}\/share\/locale/g
++sub "s/@prefix@/${ac_var_prefix:=\\/usr\\/local}/g
++s/@bindir@/${ac_var_bindir:=\$\{prefix\}\\/bin}/g
++s/@datadir@/${ac_var_datadir:=\$\{prefix\}\\/share}/g
++s/@mandir@/${ac_var_mandir:=\$\{datadir\}\\/man}/g
++s/@man1dir@/${ac_var_man1dir:=\$\{mandir\}\\/man1}/g
++s/@localedir@/${ac_var_localedir:=\$\{datadir\}\\/locale}/g
++s/@localepath@/${ac_var_prefix}\\/share\\/locale/g
+ s/@TMPDIR@/$(escpath ${TMPDIR:-/tmp})/g
+-s/@builddir@/\$\{TMPDIR\}\/make/g"
++s/@builddir@/\$\\{TMPDIR\}\\/make/g"
  
  #### Find programs and libs ##########################################
+ 

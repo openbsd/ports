@@ -1,28 +1,41 @@
-$OpenBSD: patch-Makefile,v 1.14 2020/11/20 20:48:11 sthen Exp $
+$OpenBSD: patch-Makefile,v 1.15 2021/07/06 19:33:21 cwen Exp $
+
+Don't hide compilation/installation invocations
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -19,19 +19,16 @@ run:	${EXE}
- 	@${EXE}
+@@ -20,16 +20,13 @@ run:	${exe}
+ 	@${exe}
  
- ${EXE}:	${OBJS}
+ ${exe}:	${objs}
 -	@echo "Linking $@ ..."
--	@${CC} -o $@ $^ ${LDFLAGS}
-+	${CC} -o $@ $^ ${LDFLAGS}
- 
- ${EXE}-static: ${SRCS}
- 	${CC} -s -static -o $@ ${CFLAGS} ${SRCS} ${LDFLAGS}
+-	@${CC} ${ldflags} -o $@ $^ ${libs}
++	${CC} ${ldflags} -o $@ $^ ${libs}
  
  $O%.o:	%.c
 -	@echo "    Compiling $< ..."
--	@${CC} ${CFLAGS} -MMD -MT "$(<:.c=.s) $@" -o $@ -c $<
-+	${CC} ${CFLAGS} -MMD -MT "$(<:.c=.s) $@" -o $@ -c $<
+-	@${CC} ${cflags} -MMD -MT "$(<:.c=.s) $@" -o $@ -c $<
++	${CC} ${cflags} -MMD -MT "$(<:.c=.s) $@" -o $@ -c $<
  
  %.s:	%.c
 -	@echo "    Compiling $< to assembly ..."
--	@${CC} ${CFLAGS} -S -o $@ -c $<
-+	${CC} ${CFLAGS} -S -o $@ -c $<
+-	@${CC} ${cflags} -S -o $@ -c $<
++	${CC} ${cflags} -S -o $@ -c $<
  
  include man/Module.mk
  include po/Module.mk
+@@ -43,11 +40,9 @@ exed	:= ${DESTDIR}${bindir}
+ exei	:= ${exed}/$(notdir ${exe})
+ 
+ ${exed}:
+-	@echo "Creating $@ ..."
+-	@${INSTALL} -d $@
++	${INSTALL} -d $@
+ ${exei}:	${exe} | ${exed}
+-	@echo "Installing $@ ..."
+-	@${INSTALL_PROGRAM} $< $@
++	${INSTALL_PROGRAM} $< $@
+ 
+ installdirs:	${exed}
+ install:	${exei}
