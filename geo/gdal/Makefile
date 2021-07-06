@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.97 2021/05/05 11:54:56 landry Exp $
+# $OpenBSD: Makefile,v 1.98 2021/07/06 08:04:25 landry Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 
-V =		3.3.0
+V =		3.3.1
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}${EXTRACT_SUFX}
@@ -13,7 +13,7 @@ FULLPKGPATH-main =	geo/gdal,-main
 FULLPKGNAME-python =	py3-${DISTNAME}
 FULLPKGPATH-python =	geo/gdal,-python${FLAVOR_EXT:S/-/,/g}
 
-SHARED_LIBS =	gdal 41.0 # 0.1 # 28.2
+SHARED_LIBS =	gdal 41.0 # 29.1
 CATEGORIES =	geo devel
 
 HOMEPAGE =	http://www.gdal.org/
@@ -75,7 +75,7 @@ TEST_ENV =		GDAL_DOWNLOAD_TEST_DATA=1 GDAL_RUN_SLOW_TESTS=yes
 
 MODPY_SETUPTOOLS =	Yes
 MODPY_EGG_VERSION =	${V}
-MODPY_ADJ_FILES =	swig/python/scripts/*.py swig/python/samples/*.py
+MODPY_ADJ_FILES =	swig/python/gdal-utils/osgeo_utils/samples/*.py swig/python/gdal-utils/scripts/*.py
 
 MAKE_FILE =	GNUmakefile
 MAKE_FLAGS =	LIBTOOL_FINISH=:
