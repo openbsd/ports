@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/04/07 20:08:53 solene Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/07/06 16:55:34 daniel Exp $
 @shell bin/fish
 @bin bin/fish_indent
 @bin bin/fish_key_reader
@@ -26,7 +26,7 @@ share/doc/fish/_static/pydoctheme.css
 share/doc/fish/_static/pygments.css
 share/doc/fish/_static/searchtools.js
 share/doc/fish/_static/sidebar.js
-share/doc/fish/_static/underscore-1.12.0.js
+share/doc/fish/_static/underscore-1.13.1.js
 share/doc/fish/_static/underscore.js
 share/doc/fish/cmds/
 share/doc/fish/cmds/_.html

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2021/06/15 09:37:24 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.23 2021/07/06 16:55:32 daniel Exp $
 @man man/man7/ecm-developer.7
 @man man/man7/ecm-find-modules.7
 @man man/man7/ecm-kde-modules.7
@@ -221,7 +221,7 @@ share/doc/ECM/html/_static/plus.png
 share/doc/ECM/html/_static/pygments.css
 share/doc/ECM/html/_static/searchtools.js
 share/doc/ECM/html/_static/sidebar.js
-share/doc/ECM/html/_static/underscore-1.12.0.js
+share/doc/ECM/html/_static/underscore-1.13.1.js
 share/doc/ECM/html/_static/underscore.js
 share/doc/ECM/html/find-module/
 share/doc/ECM/html/find-module/FindCanberra.html

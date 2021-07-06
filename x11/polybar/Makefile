@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2021/03/04 07:43:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2021/07/06 16:55:34 daniel Exp $
 
 COMMENT =	fast and easy-to-use status bar
 V =		3.5.5
 DISTNAME =	polybar-$V
 CATEGORIES =	x11
+REVISION =	0
 
 HOMEPAGE =	https://polybar.github.io/
 MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -29,7 +30,7 @@ DEBUG_PACKAGES =${BUILD_PACKAGES}
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	${RUN_DEPENDS} \
-		textproc/py-sphinx${MODPY_FLAVOR}>=2.4.3 \
+		textproc/py-sphinx${MODPY_FLAVOR}>=4.0.2 \
 		x11/i3
 
 LIB_DEPENDS =	audio/libmpdclient \

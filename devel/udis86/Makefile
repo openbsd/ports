@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2021/02/23 19:39:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/07/06 16:55:33 daniel Exp $
 
 COMMENT =	easy-to-use minimalistic disassembler library
 
 DISTNAME =	udis86-1.7.2
 CATEGORIES =	devel
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS=	udis86		1.0
 
@@ -23,7 +23,7 @@ MODULES =	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS =	devel/yasm \
-		textproc/py-sphinx,python3>=1.5
+		textproc/py-sphinx,python3>=4.0.2
 
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.69

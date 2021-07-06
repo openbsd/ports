@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/02/20 22:27:27 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/07/06 16:55:32 daniel Exp $
 @bin bin/mydumper
 @bin bin/myloader
 @man man/man1/mydumper.1
@@ -33,7 +33,7 @@ share/doc/mydumper/html/_static/plus.png
 share/doc/mydumper/html/_static/pygments.css
 share/doc/mydumper/html/_static/searchtools.js
 share/doc/mydumper/html/_static/sidebar.js
-share/doc/mydumper/html/_static/underscore-1.12.0.js
+share/doc/mydumper/html/_static/underscore-1.13.1.js
 share/doc/mydumper/html/_static/underscore.js
 share/doc/mydumper/html/authors.html
 share/doc/mydumper/html/compiling.html

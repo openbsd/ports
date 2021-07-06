@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/02/24 02:22:04 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/07/06 16:55:34 daniel Exp $
 @conflict py-flask-wtf-*
 @pkgpath www/py-flask-wtf
 lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -61,7 +61,7 @@ share/doc/${MODPY_PY_PREFIX}flask-wtf/_static/minus.png
 share/doc/${MODPY_PY_PREFIX}flask-wtf/_static/plus.png
 share/doc/${MODPY_PY_PREFIX}flask-wtf/_static/pygments.css
 share/doc/${MODPY_PY_PREFIX}flask-wtf/_static/searchtools.js
-share/doc/${MODPY_PY_PREFIX}flask-wtf/_static/underscore-1.12.0.js
+share/doc/${MODPY_PY_PREFIX}flask-wtf/_static/underscore-1.13.1.js
 share/doc/${MODPY_PY_PREFIX}flask-wtf/_static/underscore.js
 share/doc/${MODPY_PY_PREFIX}flask-wtf/api.html
 share/doc/${MODPY_PY_PREFIX}flask-wtf/authors.html

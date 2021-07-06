@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/02/20 22:27:30 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/07/06 16:55:33 daniel Exp $
 @bin bin/udcli
 include/libudis86/
 include/libudis86/extern.h
@@ -39,7 +39,7 @@ share/doc/udis86/manual/_static/pyramid.css
 share/doc/udis86/manual/_static/searchtools.js
 share/doc/udis86/manual/_static/transparent.gif
 share/doc/udis86/manual/_static/udis86.css
-share/doc/udis86/manual/_static/underscore-1.12.0.js
+share/doc/udis86/manual/_static/underscore-1.13.1.js
 share/doc/udis86/manual/_static/underscore.js
 share/doc/udis86/manual/genindex.html
 share/doc/udis86/manual/getstarted.html

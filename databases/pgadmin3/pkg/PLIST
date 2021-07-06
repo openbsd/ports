@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2021/02/20 22:27:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.17 2021/07/06 16:55:32 daniel Exp $
 @bin bin/pgadmin3
 share/pgadmin3/
 share/pgadmin3/branding/
@@ -198,7 +198,7 @@ share/pgadmin3/docs/en_US/_static/slony-table.png
 share/pgadmin3/docs/en_US/_static/slony-upgrade.png
 share/pgadmin3/docs/en_US/_static/status.png
 share/pgadmin3/docs/en_US/_static/transaction.png
-share/pgadmin3/docs/en_US/_static/underscore-1.12.0.js
+share/pgadmin3/docs/en_US/_static/underscore-1.13.1.js
 share/pgadmin3/docs/en_US/_static/underscore.js
 share/pgadmin3/docs/en_US/appendices.html
 share/pgadmin3/docs/en_US/backup.html

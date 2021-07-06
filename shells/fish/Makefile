@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2021/04/24 13:58:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.25 2021/07/06 16:55:33 daniel Exp $
 
 COMMENT =		friendly interactive shell
 
 V =			3.2.2
 DISTNAME =		fish-$V
+REVISION =		0
 
 CATEGORIES =		shells
 
@@ -27,7 +28,7 @@ MODULES =		devel/cmake \
 			lang/python
 
 BUILD_DEPENDS =		devel/gettext,-tools \
-			textproc/py-sphinx,python3>=1.5
+			textproc/py-sphinx,python3>=4.0.2
 
 LIB_DEPENDS =		devel/pcre2 \
 			devel/gettext,-runtime

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.209 2021/05/04 16:06:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.210 2021/07/06 16:55:33 daniel Exp $
 
 ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc powerpc64 sparc64
 DPB_PROPERTIES=	parallel
@@ -14,6 +14,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 EXTRACT_SUFX=	.tar.xz
 REVISION-ga=	0
+REVISION-main=	0
 
 HOMEPAGE=	https://www.qemu.org/
 
@@ -41,7 +42,7 @@ MODPY_RUNDEP=	No
 BUILD_DEPENDS=	devel/gettext,-tools \
 		devel/ninja \
 		shells/bash \
-		textproc/py-sphinx${MODPY_FLAVOR}>=3.5.1
+		textproc/py-sphinx${MODPY_FLAVOR}>=4.0.2
 
 RUN_DEPENDS-main=	${BUILD_PKGPATH}-ga
 LIB_DEPENDS=	devel/glib2

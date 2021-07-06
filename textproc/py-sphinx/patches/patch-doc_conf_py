@@ -1,11 +1,11 @@
-$OpenBSD: patch-doc_conf_py,v 1.1 2021/02/21 10:04:45 sthen Exp $
+$OpenBSD: patch-doc_conf_py,v 1.2 2021/07/06 16:55:34 daniel Exp $
 
 Disabled to prevent going online during build.
 
 Index: doc/conf.py
 --- doc/conf.py.orig
 +++ doc/conf.py
-@@ -118,11 +118,6 @@ texinfo_documents = [
+@@ -106,11 +106,6 @@ texinfo_documents = [
       1),
  ]
  

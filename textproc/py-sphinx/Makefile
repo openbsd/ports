@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.43 2021/04/28 19:53:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2021/07/06 16:55:34 daniel Exp $
 
 COMMENT =		Python documentation generator
 
-# Note, Sphinx 4.0 will remove support for evaluating Python 2 syntax
-# This is likely to break downstream ports
-MODPY_EGG_VERSION =	3.5.4
+MODPY_EGG_VERSION =	4.0.2
 DISTNAME =		Sphinx-${MODPY_EGG_VERSION}
 PKGNAME =		py-sphinx-${MODPY_EGG_VERSION}
 
@@ -28,7 +26,7 @@ RUN_DEPENDS =		devel/py-babel${MODPY_FLAVOR} \
 			graphics/py-imagesize${MODPY_FLAVOR} \
 			sysutils/py-packaging${MODPY_FLAVOR} \
 			textproc/py-alabaster${MODPY_FLAVOR} \
-			textproc/py-docutils${MODPY_FLAVOR}<=0.17 \
+			textproc/py-docutils${MODPY_FLAVOR}<=0.18 \
 			textproc/py-pygments${MODPY_FLAVOR} \
 			textproc/py-snowballstemmer${MODPY_FLAVOR} \
 			textproc/py-sphinxcontrib/applehelp${MODPY_FLAVOR} \

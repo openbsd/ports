@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2021/05/21 19:50:22 kmos Exp $
+# $OpenBSD: Makefile,v 1.22 2021/07/06 16:55:32 daniel Exp $
 
 COMMENT=		small expressive ORM
 
 MODPY_EGG_VERSION=	2.8.3
 DISTNAME=		peewee-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		6
+REVISION=		7
 
 GH_ACCOUNT=		coleifer
 GH_PROJECT=		peewee
@@ -18,7 +18,7 @@ HOMEPAGE=		http://docs.peewee-orm.com/
 # MIT
 PERMIT_PACKAGE=	Yes
 
-BUILD_DEPENDS=		textproc/py-sphinx,python3>=1.5
+BUILD_DEPENDS=		textproc/py-sphinx,python3>=4.0.2
 
 FLAVORS=		python3
 FLAVOR?=

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2021/02/24 02:22:03 daniel Exp $
+# $OpenBSD: Makefile,v 1.19 2021/07/06 16:55:34 daniel Exp $
 
 COMMENT=	simple integration of Flask and WTForms
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION=0.14.2
 DISTNAME=	Flask-WTF-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME:L}
 CATEGORIES=	www
-REVISION=	4
+REVISION=	5
 
 # BSD
 PERMIT_PACKAGE=	Yes
@@ -19,7 +19,7 @@ MODPY_SETUPTOOLS=	Yes
 FLAVORS =		python3
 FLAVOR  =		python3
 
-BUILD_DEPENDS=		textproc/py-sphinx${MODPY_FLAVOR}>=1.5
+BUILD_DEPENDS=		textproc/py-sphinx${MODPY_FLAVOR}>=4.0.2
 RUN_DEPENDS=		www/py-flask${MODPY_FLAVOR} \
 			www/py-wtforms${MODPY_FLAVOR}
 

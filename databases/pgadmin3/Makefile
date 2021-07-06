@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.45 2021/02/20 22:27:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2021/07/06 16:55:32 daniel Exp $
 
 COMMENT=	administration and development platform for PostgreSQL
 
 V=		1.22.1
 DISTNAME=	pgadmin3-$V
 CATEGORIES=	databases devel
-REVISION=	5
+REVISION=	6
 
 HOMEPAGE=	https://www.pgadmin.org/
 
@@ -29,7 +29,7 @@ LIB_DEPENDS=	x11/wxWidgets>=3.0.4 \
 		textproc/libxslt
 
 BUILD_DEPENDS +=	databases/postgresql,-server \
-			textproc/py-sphinx,python3
+			textproc/py-sphinx,python3>=4.0.2
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS}"

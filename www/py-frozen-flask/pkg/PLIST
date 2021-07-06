@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/02/20 22:27:31 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/07/06 16:55:34 daniel Exp $
 @conflict py-frozen-flask-*
 @pkgpath www/py-frozen-flask
 lib/python${MODPY_VERSION}/site-packages/Frozen_Flask-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -53,7 +53,7 @@ share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/plus.png
 share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/pygments.css
 share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/searchtools.js
 share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/small_flask.css
-share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/underscore-1.12.0.js
+share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/underscore-1.13.1.js
 share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/underscore.js
 share/doc/${MODPY_PY_PREFIX}frozen-flask/genindex.html
 share/doc/${MODPY_PY_PREFIX}frozen-flask/index.html

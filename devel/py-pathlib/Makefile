@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2021/02/20 22:27:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/07/06 16:55:32 daniel Exp $
 
 COMMENT =		object-oriented filesystem paths
 
 MODPY_EGG_VERSION =	1.0.1
 DISTNAME =		pathlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		9
+REVISION =		10
 
 CATEGORIES =		devel
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 MODULES =		lang/python
-BUILD_DEPENDS =		textproc/py-sphinx,python3>=1.5
+BUILD_DEPENDS =		textproc/py-sphinx,python3>=4.0.2
 TEST_DEPENDS =		lang/python/${MODPY_VERSION},-tests
 
 FLAVORS =		python3

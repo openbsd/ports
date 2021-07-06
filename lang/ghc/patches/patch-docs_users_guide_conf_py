@@ -1,0 +1,17 @@
+$OpenBSD: patch-docs_users_guide_conf_py,v 1.1 2021/07/06 16:55:33 daniel Exp $
+
+sphinx 4.0.2 build-time fix; part of upstream commit
+83407ffc
+
+Index: docs/users_guide/conf.py
+--- docs/users_guide/conf.py.orig
++++ docs/users_guide/conf.py
+@@ -100,7 +100,7 @@ htmlhelp_basename = 'GHCUsersGuide'
+ latex_elements = {
+     'inputenc': '',
+     'utf8extra': '',
+-    'preamble': '''
++    'preamble': r'''
+ \usepackage{fontspec}
+ \usepackage{makeidx}
+ \setsansfont{DejaVu Sans}

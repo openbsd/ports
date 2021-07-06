@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/20 22:27:27 sthen Exp $$
+# $OpenBSD: Makefile,v 1.17 2021/07/06 16:55:32 daniel Exp $$
 
 COMMENT =	utility for quick MySQL dumping
 
 V =		0.9.1
-REVISION =	4
+REVISION =	5
 DISTNAME =	mydumper-${V}
 CATEGORIES =	databases
 
@@ -18,7 +18,7 @@ WANTLIB +=	pcre ssl z
 MASTER_SITES =	https://launchpad.net/mydumper/${V:R}/${V}/+download/
 
 MODULES =	devel/cmake
-BUILD_DEPENDS =	textproc/py-sphinx,python3>=1.5
+BUILD_DEPENDS =	textproc/py-sphinx,python3>=4.0.2
 LIB_DEPENDS =	databases/mariadb \
 		devel/glib2 \
 		devel/pcre

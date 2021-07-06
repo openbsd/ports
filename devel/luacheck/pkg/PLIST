@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/02/21 16:30:45 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/07/06 16:55:32 daniel Exp $
 bin/luacheck
 share/doc/luacheck/
 share/doc/luacheck/_sources/
@@ -44,7 +44,7 @@ share/doc/luacheck/_static/minus.png
 share/doc/luacheck/_static/plus.png
 share/doc/luacheck/_static/pygments.css
 share/doc/luacheck/_static/searchtools.js
-share/doc/luacheck/_static/underscore-1.12.0.js
+share/doc/luacheck/_static/underscore-1.13.1.js
 share/doc/luacheck/_static/underscore.js
 share/doc/luacheck/cli.html
 share/doc/luacheck/config.html

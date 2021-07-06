@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/03/01 13:11:19 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/07/06 16:55:34 daniel Exp $
 @pkgpath www/py-itsdangerous
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}itsdangerous.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/itsdangerous-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -25,7 +25,7 @@ share/doc/${MODPY_PY_PREFIX}itsdangerous/_static/minus.png
 share/doc/${MODPY_PY_PREFIX}itsdangerous/_static/plus.png
 share/doc/${MODPY_PY_PREFIX}itsdangerous/_static/pygments.css
 share/doc/${MODPY_PY_PREFIX}itsdangerous/_static/searchtools.js
-share/doc/${MODPY_PY_PREFIX}itsdangerous/_static/underscore-1.12.0.js
+share/doc/${MODPY_PY_PREFIX}itsdangerous/_static/underscore-1.13.1.js
 share/doc/${MODPY_PY_PREFIX}itsdangerous/_static/underscore.js
 share/doc/${MODPY_PY_PREFIX}itsdangerous/genindex.html
 share/doc/${MODPY_PY_PREFIX}itsdangerous/index.html

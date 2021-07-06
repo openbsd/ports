@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/02/20 22:27:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/07/06 16:55:32 daniel Exp $
 @conflict py-peewee-<2.8.3p4
 bin/pwiz${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}peewee.${MODPY_PYC_MAGIC_TAG}pyc
@@ -99,7 +99,7 @@ share/doc/${MODPY_PY_PREFIX}peewee/_static/plus.png
 share/doc/${MODPY_PY_PREFIX}peewee/_static/pygments.css
 share/doc/${MODPY_PY_PREFIX}peewee/_static/searchtools.js
 share/doc/${MODPY_PY_PREFIX}peewee/_static/sidebar.js
-share/doc/${MODPY_PY_PREFIX}peewee/_static/underscore-1.12.0.js
+share/doc/${MODPY_PY_PREFIX}peewee/_static/underscore-1.13.1.js
 share/doc/${MODPY_PY_PREFIX}peewee/_static/underscore.js
 share/doc/${MODPY_PY_PREFIX}peewee/genindex.html
 share/doc/${MODPY_PY_PREFIX}peewee/index.html

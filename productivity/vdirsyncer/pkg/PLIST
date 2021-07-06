@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/02/21 16:30:45 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/07/06 16:55:33 daniel Exp $
 bin/vdirsyncer
 lib/python${MODPY_VERSION}/site-packages/vdirsyncer/
 lib/python${MODPY_VERSION}/site-packages/vdirsyncer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -143,7 +143,7 @@ share/doc/vdirsyncer/_static/minus.png
 share/doc/vdirsyncer/_static/plus.png
 share/doc/vdirsyncer/_static/pygments.css
 share/doc/vdirsyncer/_static/searchtools.js
-share/doc/vdirsyncer/_static/underscore-1.12.0.js
+share/doc/vdirsyncer/_static/underscore-1.13.1.js
 share/doc/vdirsyncer/_static/underscore.js
 share/doc/vdirsyncer/changelog.html
 share/doc/vdirsyncer/config.html

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2021/03/01 13:11:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/07/06 16:55:34 daniel Exp $
 
 COMMENT = 	helpers to pass trusted data to untrusted environments
 
 MODPY_EGG_VERSION = 0.24
-REVISION =	8
+REVISION =	9
 DISTNAME =	itsdangerous-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
@@ -20,7 +20,7 @@ MODULES =	lang/python
 
 MODPY_SETUPTOOLS =	Yes
 
-BUILD_DEPENDS =	textproc/py-sphinx,python3>=1.5
+BUILD_DEPENDS =	textproc/py-sphinx,python3>=4.0.2
 
 FLAVORS =	python3
 FLAVOR =	python3

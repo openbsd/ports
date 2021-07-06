@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/21 16:30:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/07/06 16:55:32 daniel Exp $
 
 COMMENT=	tool for linting and static analysis of Lua code
 CATEGORIES=	devel
@@ -7,11 +7,11 @@ GH_ACCOUNT=	mpeterv
 GH_PROJECT=	luacheck
 GH_TAGNAME=	0.21.2
 
-REVISION=	4
+REVISION=	5
 
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
-BUILD_DEPENDS=	textproc/py-sphinx,python3>=1.5 \
+BUILD_DEPENDS=	textproc/py-sphinx,python3>=4.0.2 \
 		textproc/py-sphinx_rtd_theme,python3>=0.4.3
 
 # MIT
