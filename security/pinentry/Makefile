@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 21:15:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2021/07/07 07:53:30 edd Exp $
 
 COMMENT-main = 	PIN or passphrase entry dialog (ncurses interface)
 COMMENT-gtk2 = 	PIN or passphrase entry dialog (gtk2 interface)
 COMMENT-gnome3 =PIN or passphrase entry dialog (GNOME 3 interface)
 
-VERSION = 	1.1.0
-REVISION =	0
+VERSION = 	1.1.1
 DISTNAME = 	pinentry-${VERSION}
 CATEGORIES = 	security
 EXTRACT_SUFX =	.tar.bz2
