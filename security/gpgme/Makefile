@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2021/07/07 09:33:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2021/07/07 09:53:17 sthen Exp $
 
 COMMENT-main =		GnuPG Made Easy
 COMMENT-qt =		Qt bindings for GPGme
@@ -53,7 +53,6 @@ CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 .if ${BUILD_PACKAGES:M-qt}
 MODULES +=		x11/qt5
 CONFIGURE_ARGS +=	--enable-languages='cpp qt'
-CXXFLAGS +=		"-std=c++17"
 LIB_DEPENDS-qt +=	${LIB_DEPENDS} \
 			gpgme-=${VERSION}:${BUILD_PKGPATH},-main
 .else
