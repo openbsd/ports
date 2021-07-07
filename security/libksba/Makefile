@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2020/08/25 18:19:19 edd Exp $
+# $OpenBSD: Makefile,v 1.23 2021/07/07 07:52:07 edd Exp $
 
 COMMENT = 	X.509 library
 
-DISTNAME = 	libksba-1.4.0
+DISTNAME = 	libksba-1.6.0
 CATEGORIES = 	security
 
-SHARED_LIBS = 	ksba 1.0	# 20.0
+SHARED_LIBS = 	ksba 2.0	# 22.0
 
 MASTER_SITES =	${MASTER_SITE_GNUPG:=libksba/}
 
