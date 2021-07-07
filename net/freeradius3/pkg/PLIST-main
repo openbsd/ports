@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2021/06/09 17:03:14 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2021/07/07 12:28:42 sthen Exp $
 @option is-branch
 @conflict freeradius-*
 @conflict radiusd-cistron-*
@@ -475,8 +475,6 @@ share/examples/freeradius/mods-available/perl
 @sample ${FREERADIUS_ETC}/mods-available/perl
 share/examples/freeradius/mods-available/preprocess
 @sample ${FREERADIUS_ETC}/mods-available/preprocess
-@comment share/examples/freeradius/mods-available/python3
-@comment @sample ${FREERADIUS_ETC}/mods-available/python3
 share/examples/freeradius/mods-available/radutmp
 @sample ${FREERADIUS_ETC}/mods-available/radutmp
 share/examples/freeradius/mods-available/realm
@@ -662,6 +660,7 @@ share/examples/freeradius/mods-enabled/realm
 share/examples/freeradius/mods-enabled/replicate
 share/examples/freeradius/mods-enabled/soh
 share/examples/freeradius/mods-enabled/sradutmp
+share/examples/freeradius/mods-enabled/totp
 share/examples/freeradius/mods-enabled/unix
 share/examples/freeradius/mods-enabled/unpack
 share/examples/freeradius/mods-enabled/utf8
@@ -719,8 +718,8 @@ share/examples/freeradius/sites-available/coa-relay
 @sample ${FREERADIUS_ETC}/sites-available/coa-relay
 share/examples/freeradius/sites-available/control-socket
 @sample ${FREERADIUS_ETC}/sites-available/control-socket
-share/examples/freeradius/sites-available/co${MODPY_PY_PREFIX}acct-to-home-server
-@sample ${FREERADIUS_ETC}/sites-available/co${MODPY_PY_PREFIX}acct-to-home-server
+share/examples/freeradius/sites-available/copy-acct-to-home-server
+@sample ${FREERADIUS_ETC}/sites-available/copy-acct-to-home-server
 share/examples/freeradius/sites-available/decoupled-accounting
 @sample ${FREERADIUS_ETC}/sites-available/decoupled-accounting
 share/examples/freeradius/sites-available/default
@@ -749,6 +748,8 @@ share/examples/freeradius/sites-available/status
 @sample ${FREERADIUS_ETC}/sites-available/status
 share/examples/freeradius/sites-available/tls
 @sample ${FREERADIUS_ETC}/sites-available/tls
+share/examples/freeradius/sites-available/totp
+@sample ${FREERADIUS_ETC}/sites-available/totp
 share/examples/freeradius/sites-available/virtual.example.com
 @sample ${FREERADIUS_ETC}/sites-available/virtual.example.com
 share/examples/freeradius/sites-available/vmps

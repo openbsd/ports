@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2021/06/09 19:50:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2021/07/07 12:28:42 sthen Exp $
 
 PORTROACH=	limit:^3\.
 
@@ -10,11 +10,11 @@ COMMENT-memcached= freeradius memcached rlm addon
 COMMENT-mysql=	freeradius mysql rlm addon
 COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-python=	freeradius python rlm addon
+COMMENT-python3= freeradius python3 rlm addon (experimental)
 
-V=		3.0.22
+V=		3.0.23
 DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
-REVISION-main=	1
 
 PKGNAME-main=	freeradius-$V
 PKGNAME-freetds= freeradius-freetds-$V
@@ -24,6 +24,7 @@ PKGNAME-memcached= freeradius-memcached-$V
 PKGNAME-mysql=	freeradius-mysql-$V
 PKGNAME-pgsql=	freeradius-pgsql-$V
 PKGNAME-python=	freeradius-python-$V
+PKGNAME-python3= freeradius-python3-$V
 
 CATEGORIES=	net security
 
@@ -49,6 +50,8 @@ CONFIGURE_ENV=	ac_cv_path_LOCATE= \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/freeradius \
+		--without-rlm_mongo \
+		--without-rlm_oracle \
 		--without-rlm_pam
 # No option to disable collectd; bodged via patch-configure.
 
@@ -58,15 +61,13 @@ TEST_IS_INTERACTIVE=Yes # doesn't exit properly
 # For manual tests, eapol_test from wpa_supplicant is useful.
 # See http://deployingradius.com/scripts/eapol_test/
 
-# an experimental py3 module exists, not built by default yet
 MODULES=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 # thread-local storage
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS = c
 
-MULTI_PACKAGES= -main -freetds -iodbc -ldap -memcached -mysql -pgsql -python
+MULTI_PACKAGES= -main -freetds -iodbc -ldap -memcached -mysql -pgsql -python -python3
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	no#...has its own _special_ libtool.
@@ -97,9 +98,19 @@ FLAVOR?=
 .if ! ${BUILD_PACKAGES:M-python}
 CONFIGURE_ARGS+=	--without-rlm_python
 .endif
-LIB_DEPENDS-python=	${MODPY_LIB_DEPENDS}
-WANTLIB-python=		${MODPY_WANTLIB} intl m pthread util
-RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
+LIB_DEPENDS-python=	lang/python/2.7
+WANTLIB-python=		python2.7 intl m pthread util
+RUN_DEPENDS-python=	lang/python/2.7
+
+# rlm_python3
+.if ${BUILD_PACKAGES:M-python3}
+CONFIGURE_ARGS+=	--with-rlm_python3
+.else
+CONFIGURE_ARGS+=	--without-rlm_python3
+.endif
+LIB_DEPENDS-python3=	${MODPY_LIB_DEPENDS}
+WANTLIB-python3=	${MODPY_WANTLIB} intl m pthread util
+RUN_DEPENDS-python3=	${MODPY_RUN_DEPENDS}
 
 # rlm_ldap
 .if ${BUILD_PACKAGES:M-ldap}
@@ -187,9 +198,11 @@ post-install:
 	rm ${PREFIX}/lib/freeradius/*.*a
 	rm -r \
 	    ${PREFIX}/share/examples/freeradius/mods-config/sql/*/oracle \
+	    ${PREFIX}/share/examples/freeradius/mods-config/sql/*/mongo \
 	    ${PREFIX}/share/doc/freeradius/antora
 	chmod -R u+rwX,og+rX ${PREFIX}/share/examples/freeradius/
 	${SUBST_CMD} -c -m 555 ${FILESDIR}/freeradius-enable.sh \
 	    ${PREFIX}/share/freeradius/freeradius-enable.sh
+	rm ${PREFIX}/share/examples/freeradius/mods-available/eap.orig
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_main_cb_c,v 1.1 2021/05/26 12:12:38 sthen Exp $
+$OpenBSD: patch-src_main_cb_c,v 1.2 2021/07/07 12:28:42 sthen Exp $
 
 Index: src/main/cb.c
 --- src/main/cb.c.orig
 +++ src/main/cb.c
-@@ -63,7 +63,7 @@ void cbtls_info(SSL const *s, int where, int ret)
+@@ -64,7 +64,7 @@ void cbtls_info(SSL const *s, int where, int ret)
  			/*
  			 *	After a ClientHello, list all the proposed ciphers from the client
  			 */
