@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.113 2021/07/06 11:13:48 robert Exp $
+# $OpenBSD: Makefile,v 1.114 2021/07/07 23:49:05 sthen Exp $
 
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
+BROKEN-i386 =		zlib_inflate_chunk_simd fails ("would be inlined into function 'v_load8_dup' that is compiled without support for 'sse2'", etc)
 
 USE_WXNEEDED=		Yes
 
