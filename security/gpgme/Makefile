@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.59 2021/02/06 18:39:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2021/07/07 09:33:06 sthen Exp $
 
 COMMENT-main =		GnuPG Made Easy
 COMMENT-qt =		Qt bindings for GPGme
 
-VERSION =		1.15.1
+VERSION =		1.16.0
 DISTNAME =		gpgme-${VERSION}
 PKGNAME-main =		gpgme-${VERSION}
 PKGNAME-qt =		gpgme-qt-${VERSION}
 
 CATEGORIES =		security devel
 
-SHARED_LIBS +=  gpgme                22.1     # 35.1
-SHARED_LIBS +=  gpgmepp              0.0      # 18.1
+SHARED_LIBS +=  gpgme                22.1     # 36.0
+SHARED_LIBS +=  gpgmepp              1.0      # 19.0
 SHARED_LIBS +=  qgpgme               0.0      # 12.1
 
-HOMEPAGE =		https://www.gnupg.org/software/gpgme/index.html
+HOMEPAGE =		https://www.gnupg.org/software/gpgme/
 
 MASTER_SITES =		${MASTER_SITE_GNUPG:=gpgme/}
 EXTRACT_SUFX =		.tar.bz2
@@ -22,10 +22,10 @@ EXTRACT_SUFX =		.tar.bz2
 # GPLv2 - LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB = assuan gpg-error iconv intl
-WANTLIB-main = ${WANTLIB} c m
-WANTLIB-qt = ${COMPILER_LIBCXX} ${WANTLIB} Qt5Core execinfo glib-2.0
-WANTLIB-qt += gthread-2.0 icudata icui18n icuuc m pcre pcre2-16 z gpgme
+WANTLIB =	assuan gpg-error iconv intl
+WANTLIB-main =	${WANTLIB} c m
+WANTLIB-qt =	${COMPILER_LIBCXX} ${WANTLIB} Qt5Core execinfo glib-2.0
+WANTLIB-qt +=	gthread-2.0 icudata icui18n icuuc m pcre pcre2-16 z gpgme
 
 COMPILER =		base-clang ports-gcc
 
@@ -53,7 +53,7 @@ CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 .if ${BUILD_PACKAGES:M-qt}
 MODULES +=		x11/qt5
 CONFIGURE_ARGS +=	--enable-languages='cpp qt'
-CXXFLAGS +=		"-std=c++11"
+CXXFLAGS +=		"-std=c++17"
 LIB_DEPENDS-qt +=	${LIB_DEPENDS} \
 			gpgme-=${VERSION}:${BUILD_PKGPATH},-main
 .else
