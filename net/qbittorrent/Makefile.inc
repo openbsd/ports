@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.15 2021/05/25 18:20:43 mariani Exp $
+# $OpenBSD: Makefile.inc,v 1.16 2021/07/07 11:53:39 mariani Exp $
 
 # qmake picks up gcrypt.h even though it's unused
 DPB_PROPERTIES =	nojunk
 
-VER =		4.3.5
+VER =		4.3.6
 DISTNAME =	qbittorrent-${VER}
 
 DIST_SUBDIR =	qbittorrent

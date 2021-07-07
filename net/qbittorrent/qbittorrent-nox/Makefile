@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2021/06/09 19:50:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/07/07 11:53:39 mariani Exp $
 
 COMMENT =		BitTorrent client with web interface
 PKGNAME =		qbittorrent-nox-${VER}
-REVISION =		0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Network Qt5Xml boost_system
 WANTLIB += boost_system-mt c crypto execinfo m ssl torrent-rasterbar z
