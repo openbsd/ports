@@ -1,12 +1,12 @@
-$OpenBSD: patch-configs_pinebook-pro-rk3399_defconfig,v 1.4 2021/04/23 23:56:11 jsg Exp $
+$OpenBSD: patch-configs_pinebook-pro-rk3399_defconfig,v 1.5 2021/07/07 11:58:37 jsg Exp $
 
 Disable CONFIG_USE_PREBOOT / usb start to fix boot.
 
 Index: configs/pinebook-pro-rk3399_defconfig
 --- configs/pinebook-pro-rk3399_defconfig.orig
 +++ configs/pinebook-pro-rk3399_defconfig
-@@ -12,7 +12,7 @@ CONFIG_SPL_SPI_SUPPORT=y
- CONFIG_DEFAULT_DEVICE_TREE="rk3399-pinebook-pro"
+@@ -12,7 +12,7 @@ CONFIG_SPL_SPI_FLASH_SUPPORT=y
+ CONFIG_SPL_SPI_SUPPORT=y
  CONFIG_DEBUG_UART=y
  CONFIG_BOOTDELAY=3
 -CONFIG_USE_PREBOOT=y

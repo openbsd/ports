@@ -1,20 +1,20 @@
-$OpenBSD: patch-configs_rock960-rk3399_defconfig,v 1.6 2021/04/23 23:56:11 jsg Exp $
+$OpenBSD: patch-configs_rock960-rk3399_defconfig,v 1.7 2021/07/07 11:58:37 jsg Exp $
 
 Disable CONFIG_USE_PREBOOT / usb start to fix boot.
 
 Index: configs/rock960-rk3399_defconfig
 --- configs/rock960-rk3399_defconfig.orig
 +++ configs/rock960-rk3399_defconfig
-@@ -8,7 +8,7 @@ CONFIG_DEBUG_UART_BASE=0xFF1A0000
+@@ -8,7 +8,7 @@ CONFIG_TARGET_ROCK960_RK3399=y
+ CONFIG_DEBUG_UART_BASE=0xFF1A0000
  CONFIG_DEBUG_UART_CLOCK=24000000
- CONFIG_DEFAULT_DEVICE_TREE="rk3399-rock960"
  CONFIG_DEBUG_UART=y
 -CONFIG_USE_PREBOOT=y
 +# CONFIG_USE_PREBOOT is not set
  CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399-rock960.dtb"
  CONFIG_DISPLAY_BOARDINFO_LATE=y
  CONFIG_MISC_INIT_R=y
-@@ -50,7 +50,7 @@ CONFIG_PWM_ROCKCHIP=y
+@@ -51,7 +51,7 @@ CONFIG_PWM_ROCKCHIP=y
  CONFIG_DM_RESET=y
  CONFIG_DM_RNG=y
  CONFIG_RNG_ROCKCHIP=y

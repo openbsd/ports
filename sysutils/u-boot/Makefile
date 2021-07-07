@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.83 2021/04/28 04:03:28 jsg Exp $
+#	$OpenBSD: Makefile,v 1.84 2021/07/07 11:58:37 jsg Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 BROKEN-arm=	lib/time.c:187:1: internal compiler error: Bus error
@@ -7,7 +7,7 @@ FLAVORS=	aarch64 arm riscv64
 FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
-VERSION=	2021.04
+VERSION=	2021.07
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
@@ -48,8 +48,10 @@ SUNXI_BL31=	"${LOCALBASE}/share/arm-trusted-firmware/sun50i_a64-bl31.bin"
 BUILD_DEPENDS+=	devel/arm-none-eabi/gcc-linaro>=7.4.2019.02
 MAKE_ENV+=	CROSS_COMPILE="arm-none-eabi-"
 .elif "${FLAVOR}" == "riscv64"
-BUILD_DEPENDS+= devel/riscv-elf/gcc
+BUILD_DEPENDS+= devel/riscv-elf/gcc \
+		sysutils/opensbi>=0.9p0
 MAKE_ENV+=	CROSS_COMPILE="riscv64-unknown-elf-"
+FW_DYNAMIC=	"${LOCALBASE}/share/opensbi/generic/fw_dynamic.bin"
 .endif
 
 USE_GMAKE=	Yes
@@ -140,11 +142,11 @@ BOARDS=\
 	rpi_2 \
 	rpi_3_32b \
 	tinker-rk3288 \
-	turris_omnia \
-	vexpress_ca15_tc2
+	turris_omnia
 .elif "${FLAVOR}" == "riscv64"
 BOARDS=\
-	qemu-riscv64_smode
+	qemu-riscv64_smode \
+	sifive_unmatched
 .endif
 
 FILES=\
@@ -162,6 +164,7 @@ FILES=\
 	u-boot-rockchip.bin \
 	idbloader.img \
 	spl/sunxi-spl.bin \
+	spl/u-boot-spl.bin
 
 do-build:
 .for BOARD in ${BOARDS}
@@ -178,6 +181,11 @@ do-build:
 .elif "${BOARD:M*-rk3328}"
 	cd ${WRKSRC} && \
 	    ${SETENV} ${MAKE_ENV} BL31=${RK3328_BL31} ${MAKE_PROGRAM} \
+	        ${MAKE_FLAGS} O="build/${BOARD}" \
+	        -f ${MAKE_FILE} ${ALL_TARGET}
+.elif "${BOARD:M*sifive_*}"
+	cd ${WRKSRC} && \
+	    ${SETENV} ${MAKE_ENV} OPENSBI=${FW_DYNAMIC} ${MAKE_PROGRAM} \
 	        ${MAKE_FLAGS} O="build/${BOARD}" \
 	        -f ${MAKE_FILE} ${ALL_TARGET}
 .else

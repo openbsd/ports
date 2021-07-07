@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.arm,v 1.24 2021/01/14 00:56:54 jsg Exp $
+@comment $OpenBSD: PFRAG.arm,v 1.25 2021/07/07 11:58:37 jsg Exp $
 @pkgpath sysutils/u-boot,
 share/u-boot/
 share/u-boot/A10-OLinuXino-Lime/
@@ -258,10 +258,6 @@ share/u-boot/udoo/u-boot.img
 share/u-boot/usbarmory/
 share/u-boot/usbarmory/u-boot
 share/u-boot/usbarmory/u-boot.bin
-share/u-boot/usbarmory/u-boot.imx
-share/u-boot/vexpress_ca15_tc2/
-share/u-boot/vexpress_ca15_tc2/u-boot
-share/u-boot/vexpress_ca15_tc2/u-boot.bin
 share/u-boot/wandboard/
 share/u-boot/wandboard/SPL
 share/u-boot/wandboard/u-boot
