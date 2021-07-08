@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/05/09 22:15:23 kmos Exp $
+# $OpenBSD: Makefile,v 1.4 2021/07/08 10:46:56 sthen Exp $
 
 COMMENT =		GUI tool to rearrange and modify PDF files
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.7.1
 GH_ACCOUNT =		pdfarranger
 GH_PROJECT =		pdfarranger
 GH_TAGNAME =		${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		print
 
@@ -27,6 +28,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/py-gobject3${MODPY_FLAVOR} \
 			graphics/img2pdf \
 			print/py-pikepdf${MODPY_FLAVOR} \
+			print/py-poppler \
 			x11/gtk+3 \
 			x11/gtk+3,-guic
 
