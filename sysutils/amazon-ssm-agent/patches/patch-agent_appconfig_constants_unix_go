@@ -1,4 +1,4 @@
-$OpenBSD: patch-agent_appconfig_constants_unix_go,v 1.17 2021/06/16 11:24:08 ajacoutot Exp $
+$OpenBSD: patch-agent_appconfig_constants_unix_go,v 1.18 2021/07/08 16:29:43 ajacoutot Exp $
 
 Index: agent/appconfig/constants_unix.go
 --- agent/appconfig/constants_unix.go.orig
@@ -25,7 +25,7 @@ Index: agent/appconfig/constants_unix.go
  
  	// UpdaterArtifactsRoot represents the directory for storing update related information
  	UpdaterArtifactsRoot = AgentData + "update/"
-@@ -115,9 +115,9 @@ const (
+@@ -112,9 +112,9 @@ const (
  var PowerShellPluginCommandName string
  
  // DefaultProgramFolder is the default folder for SSM
@@ -37,7 +37,7 @@ Index: agent/appconfig/constants_unix.go
  var DefaultSSMAgentWorker = defaultWorkerPath + "ssm-agent-worker"
  var DefaultDocumentWorker = defaultWorkerPath + "ssm-document-worker"
  var DefaultSessionWorker = defaultWorkerPath + "ssm-session-worker"
-@@ -136,9 +136,9 @@ func init() {
+@@ -133,9 +133,9 @@ func init() {
  	/*
  	   Powershell command used to be poweshell in alpha versions, now it's pwsh in prod versions
  	*/
