@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.6 2019/12/28 17:45:52 sthen Exp $
+$OpenBSD: README,v 1.7 2021/07/08 11:49:14 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -64,8 +64,9 @@ or to do this and also lock to a specific BSSID:
 Starting wpa_supplicant
 -----------------------
 After configuring as above, enable wpa_supplicant via rcctl(8) -
-"rcctl enable wpa_supplicant" as usual - and set the interface name and
-type. For a wireless network on iwm0:
+"rcctl enable wpa_supplicant" as usual. It will attempt to auto detect
+the interface name and type, but if there is a problem with this it can
+be hardcoded instead. For a wireless network on iwm0:
 
 # rcctl set wpa_supplicant flags -c ${SYSCONFDIR}/wpa_supplicant.conf -s -D openbsd -i iwm0
 

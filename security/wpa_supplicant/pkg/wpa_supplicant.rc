@@ -1,9 +1,18 @@
 #!/bin/ksh
 #
-# $OpenBSD: wpa_supplicant.rc,v 1.3 2019/12/28 17:45:52 sthen Exp $
+# $OpenBSD: wpa_supplicant.rc,v 1.4 2021/07/08 11:49:14 sthen Exp $
 
+_wlan=$(ifconfig wlan 2>/dev/null | cut -d: -f1 | head -1)
+if [[ -n $_wlan ]]; then
+	_iface="-D openbsd -i ${_wlan}"
+else
+	_egress=$(ifconfig egress 2>/dev/null | cut -d: -f1 | head -1)
+	[[ -z $_egress ]] && _egress="em0"
+	_iface="-D wired -i ${_egress}"
+fi
 daemon="${TRUEPREFIX}/sbin/wpa_supplicant -B"
-daemon_flags="-c ${SYSCONFDIR}/wpa_supplicant.conf -s -D openbsd -i athn0"
+daemon_flags="-c ${SYSCONFDIR}/wpa_supplicant.conf -s ${_iface}"
+unset _wlan _iface _egress
 
 . /etc/rc.d/rc.subr
 
