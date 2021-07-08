@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2021/05/21 19:50:37 kmos Exp $
+# $OpenBSD: Makefile,v 1.8 2021/07/08 23:57:34 daniel Exp $
 
 COMMENT=		simple WSGI-framework for small web-applications
 
-MODPY_EGG_VERSION=	0.12.16
+MODPY_EGG_VERSION=	0.12.19
 DISTNAME=		bottle-${MODPY_EGG_VERSION}
 PKGNAME=		py-bottle-${MODPY_EGG_VERSION}
-REVISION=		2
 
 CATEGORIES=		www
 
@@ -16,12 +15,12 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 
+FLAVORS =		python3
+FLAVOR ?=
+
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 MODPY_PYTEST=		Yes
-
-FLAVORS=		python3
-FLAVOR ?=
 
 post-install:
 	mv ${PREFIX}/bin/bottle{,${MODPY_BIN_SUFFIX}}.py
