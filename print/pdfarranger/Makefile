@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/07/08 10:46:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/07/08 22:25:19 sthen Exp $
 
 COMMENT =		GUI tool to rearrange and modify PDF files
 
@@ -27,8 +27,8 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/py-dateutil${MODPY_FLAVOR} \
 			devel/py-gobject3${MODPY_FLAVOR} \
 			graphics/img2pdf \
+			print/poppler \
 			print/py-pikepdf${MODPY_FLAVOR} \
-			print/py-poppler \
 			x11/gtk+3 \
 			x11/gtk+3,-guic
 
