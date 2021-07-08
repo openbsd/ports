@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.48 2020/02/06 11:26:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2021/07/08 10:05:11 sthen Exp $
 
 COMMENT =		SMTP plugin for MUAs
 
-DISTNAME =		msmtp-1.8.7
+DISTNAME =		msmtp-1.8.15
 CATEGORIES =		mail
 
 HOMEPAGE =		https://marlam.de/msmtp/
 
 MAINTAINER =		Xiyue Deng <manphiz@gmail.com>
 
-# GPLv3
-PERMIT_PACKAGE =		Yes
+# GPLv3+
+PERMIT_PACKAGE =	Yes
 
-WANTLIB =  c iconv idn2 intl gnutls
+WANTLIB = c iconv idn2 intl gnutls
 
 MASTER_SITES =		https://marlam.de/msmtp/releases/
 EXTRACT_SUFX =		.tar.xz
