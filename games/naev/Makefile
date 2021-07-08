@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/20 07:56:48 kirby Exp $
+# $OpenBSD: Makefile,v 1.6 2021/07/08 08:12:09 ajacoutot Exp $
 
 # Requires OpenGL>=3.2
 ONLY_FOR_ARCHS = 	aarch64 amd64 i386
@@ -28,7 +28,8 @@ WANTLIB-data =
 
 MODULES =		lang/lua textproc/intltool
 BUILD_DEPENDS = 	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			textproc/itstool
 LIB_DEPENDS-main =	devel/sdl2-mixer \
 			graphics/png \
 			math/suitesparse \
