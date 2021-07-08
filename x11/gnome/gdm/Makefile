@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.302 2021/07/04 10:43:16 robert Exp $
+# $OpenBSD: Makefile,v 1.303 2021/07/08 08:08:11 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
@@ -11,7 +11,11 @@ GH_PROJECT=		gdm
 GH_COMMIT=		5afc6cfa4cb84b0671d3f2f4d55c4ce697985aa8
 EXTRACT_SUFX=		.tar.gz
 
-SUPDISTFILES=		gdm-puffy.png:0
+# bsd.port.mk:1288
+DISTFILES=		${DISTNAME}-${GH_COMMIT:C/(........).*/\1/}${EXTRACT_SUFX}{${GH_COMMIT}${EXTRACT_SUFX}} \
+			gdm-puffy.png:0
+EXTRACT_ONLY=		${DISTNAME}-${GH_COMMIT:C/(........).*/\1/}${EXTRACT_SUFX}
+
 MASTER_SITES=		${MASTER_SITES_GITHUB}
 MASTER_SITES0=		https://distfiles.bsdfrog.org/
 
