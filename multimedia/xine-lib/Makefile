@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.147 2021/04/08 08:46:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.148 2021/07/08 10:43:26 sthen Exp $
 
 COMMENT=	multimedia decoding library
 
@@ -90,8 +90,7 @@ CONFIGURE_ARGS+=--disable-a52dec \
 		--without-imagemagick \
 		--without-libaom
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
-		ac_cv_header_execinfo_h=no
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 NO_TEST=	Yes
 
