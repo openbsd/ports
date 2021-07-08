@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2021/05/25 19:44:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2021/07/08 10:44:38 sthen Exp $
 
 COMMENT=	utilities to manipulate ext2 filesystems
 
 DISTNAME=	e2fsprogs-1.46.2
+REVISION=	0
 CATEGORIES=	sysutils devel
 SHARED_LIBS=	blkid		0.0 \
 		com_err		21.0 \
@@ -17,7 +18,7 @@ PORTROACH=	site:https://github.com/tytso/e2fsprogs/releases/
 # GPLv2/LGPLv2/BSD/MIT
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c iconv intl pthread
+WANTLIB += c execinfo iconv intl pthread
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=e2fsprogs/}
 
@@ -32,7 +33,7 @@ CONFIGURE_ARGS+= --disable-tls \
 		--enable-elf-shlibs \
 		--enable-verbose-makecmds
 CONFIGURE_ENV=	CPPFLAGS="-D_EXT2_USE_C_VERSIONS_" \
-		ac_cv_header_execinfo_h=no
+		LDFLAGS="-lexecinfo"
 USE_GMAKE=	Yes
 
 MAKE_FLAGS=	LIBINTL="-L${LOCALBASE}/lib -lintl -liconv" \
