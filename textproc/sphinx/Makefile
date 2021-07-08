@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2021/02/24 16:49:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2021/07/08 10:45:02 sthen Exp $
 
 COMMENT =	free open-source SQL full-text search engine
 BROKEN-hppa =	internal compiler error: internal consistency failure
@@ -10,14 +10,14 @@ VERSION =	2.2.11
 DISTNAME =	sphinx-${VERSION}-release
 PKGNAME =	sphinx-${VERSION}
 CATEGORIES =	textproc
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://www.sphinxsearch.com/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		c expat iconv m pthread ${COMPILER_LIBCXX} z
+WANTLIB =		c execinfo expat iconv m pthread ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -35,10 +35,7 @@ LOCALSTATEDIR =		${BASELOCALSTATEDIR}/sphinx
 CONFIGURE_ARGS =	--with-unixodbc=no
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			ac_cv_header_execinfo_h=no
-# checks for execinfo header but not libexecinfo for backtrace* functions,
-# so it's not used anyway
+			LDFLAGS="-L${LOCALBASE}/lib -lexecinfo"
 
 FLAVORS =		pgsql
 FLAVOR ?=
