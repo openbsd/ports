@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.105 2021/02/13 15:07:08 bcallah Exp $
+# $OpenBSD: Makefile,v 1.106 2021/07/08 13:55:36 bcallah Exp $
 
 COMMENT=	lightweight image viewer
 
-DISTNAME=	feh-3.6.3
+DISTNAME=	feh-3.7
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	graphics
 FIX_EXTRACT_PERMISSIONS=Yes
