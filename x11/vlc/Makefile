@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.250 2021/06/06 06:52:46 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.251 2021/07/08 10:44:01 sthen Exp $
 
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
@@ -7,6 +7,7 @@ V=		3.0.14
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
+REVISION-main=	0
 CATEGORIES=	x11
 MASTER_SITES=	https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
@@ -188,10 +189,10 @@ CONFIGURE_ARGS+= --disable-live555
 CONFIGURE_ENV+=	BUILDCC="${CC}" \
 		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
+		LIBS_libvlccore="-lexecinfo" \
 		LIVE555_PREFIX="${LOCALBASE}/live" \
 		PKG_CONFIG_PATH="${LOCALBASE}/lib/qt5/pkgconfig" \
-		RCC="${LOCALBASE}/bin/rcc-qt5" \
-		ac_cv_header_execinfo_h=no
+		RCC="${LOCALBASE}/bin/rcc-qt5"
 
 PSEUDO_FLAVORS=	no_jack
 FLAVOR?=
