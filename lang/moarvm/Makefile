@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.26 2021/03/11 12:17:21 pascal Exp $
+# $OpenBSD: Makefile,v 1.27 2021/07/09 13:43:48 jasper Exp $
 
-ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64 sparc64
+ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64 riscv64 sparc64
 
 COMMENT =		virtual machine for nqp/rakudo
 
