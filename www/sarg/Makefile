@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2021/02/22 21:56:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2021/07/09 09:31:03 sthen Exp $
 
 COMMENT=		Squid Analysis Report Generator
 
 DISTNAME=		sarg-2.4.0
+REVISION=		0
 CATEGORIES=		www
 
 HOMEPAGE=		http://sarg.sourceforge.net/
@@ -10,7 +11,7 @@ HOMEPAGE=		http://sarg.sourceforge.net/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += bz2 c gd iconv intl lzma m pcre z
+WANTLIB += bz2 c execinfo gd iconv intl lzma m pcre z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sarg/}
 
@@ -26,9 +27,8 @@ CONFIGURE_ARGS=		--sysconfdir=${SYSCONFDIR}/sarg \
 			--enable-sargphp=${VARBASE}/www/htdocs/sarg-php \
 			--enable-fontdir=${SYSCONFDIR}/sarg/fonts \
 			--enable-imagedir=${SYSCONFDIR}/sarg/images
-CONFIGURE_ENV=		ac_cv_header_execinfo_h=no \
-			CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -liconv -lintl"
+CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -liconv -lintl -lexecinfo"
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/cfgaux
 
