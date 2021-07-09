@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.234 2021/07/07 12:44:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.235 2021/07/09 09:32:00 sthen Exp $
 
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
@@ -10,6 +10,7 @@ EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	squid-$V
 PKGNAME-ldap=	squid-ldap-$V
 PKGNAME-ntlm=	squid-ntlm-$V
+REVISION=	0
 
 .for i in -ldap -ntlm
 # subpackages aren't flavoured, so overwrite the default name/path
@@ -25,8 +26,8 @@ HOMEPAGE=	http://www.squid-cache.org/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-cWANTLIB=	${COMPILER_LIBCXX} c gmp gnutls hogweed iconv idn2
-cWANTLIB+=	intl m nettle p11-kit pthread ssl tasn1 unistring
+cWANTLIB=	${COMPILER_LIBCXX} c execinfo gmp gnutls hogweed iconv
+cWANTLIB+=	idn2 intl m nettle p11-kit pthread ssl tasn1 unistring
 
 # repo at https://github.com/squid-cache/squid
 MASTER_SITES=	${HOMEPAGE}Versions/v${V:R}/ \
@@ -82,6 +83,7 @@ CONFIGURE_ARGS+= --datadir="${PREFIX}/share/squid" \
 		--enable-removal-policies="lru heap" \
 		--enable-ssl \
 		--enable-ssl-crtd \
+		--enable-stacktraces \
 		--with-openssl \
 		--enable-storeio="aufs ufs diskd" \
 		--with-default-user="_squid" \
@@ -103,10 +105,9 @@ CONFIGURE_ARGS+= --disable-pf-transparent \
 CONFIGURE_ARGS+= --enable-external-acl-helpers="${EXTERNAL_ACL}"
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
+		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo" \
 		ac_cv_header_et_com_err_h=false \
-		ac_cv_header_security_pam_appl_h=false \
-		ac_cv_header_execinfo_h=false
+		ac_cv_header_security_pam_appl_h=false
 E=		${TRUEPREFIX}/share/examples/squid
 FAKE_FLAGS=	sysconfdir=$E \
 		DEFAULT_CONFIG_FILE=$E/squid.conf \
@@ -142,7 +143,7 @@ WANTLIB-ldap +=     ${cWANTLIB} crypto lber ldap sasl2 ssl
 
 RUN_DEPENDS-ntlm+=   net/samba
 LIB_DEPENDS-ntlm=   security/libnettle
-WANTLIB-ntlm=       ${COMPILER_LIBCXX} c m nettle pthread
+WANTLIB-ntlm=       ${COMPILER_LIBCXX} c execinfo m nettle pthread
 
 pre-build:
 	@cd ${WRKSRC}/src; sed -i 's,/usr/local,${LOCALBASE},g' \
