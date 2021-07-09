@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.178 2021/06/05 18:10:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.179 2021/07/09 09:41:48 jasper Exp $
 
 COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
-GNOME_VERSION=	3.40.2
+GNOME_VERSION=	3.40.3
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
