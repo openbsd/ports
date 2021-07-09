@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2021/02/28 20:37:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2021/07/09 21:33:28 sthen Exp $
 
 COMMENT=	C++ client API for PostgreSQL
 
@@ -31,6 +31,7 @@ MODPY_ADJ_FILES=tools/splitconfig \
 SEPARATE_BUILD=	No
 
 CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	--disable-documentation
 USE_GMAKE=	Yes
 BUILD_DEPENDS=	textproc/xmlto
 
