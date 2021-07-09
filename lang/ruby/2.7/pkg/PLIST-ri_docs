@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.4 2021/04/07 14:57:23 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.5 2021/07/09 17:05:03 jeremy Exp $
 share/ri/
 share/ri/${REV}/
 share/ri/${REV}/system/
@@ -9215,6 +9215,7 @@ share/ri/${REV}/system/Net/FTP/status-i.ri
 share/ri/${REV}/system/Net/FTP/storbinary-i.ri
 share/ri/${REV}/system/Net/FTP/storlines-i.ri
 share/ri/${REV}/system/Net/FTP/system-i.ri
+share/ri/${REV}/system/Net/FTP/use_pasv_ip-i.ri
 share/ri/${REV}/system/Net/FTP/voidcmd-i.ri
 share/ri/${REV}/system/Net/FTP/welcome-i.ri
 share/ri/${REV}/system/Net/FTPConnectionError/
@@ -9673,6 +9674,8 @@ share/ri/${REV}/system/Net/IMAP/ResponseError/new-c.ri
 share/ri/${REV}/system/Net/IMAP/ResponseError/response-i.ri
 share/ri/${REV}/system/Net/IMAP/ResponseParseError/
 share/ri/${REV}/system/Net/IMAP/ResponseParseError/cdesc-ResponseParseError.ri
+share/ri/${REV}/system/Net/IMAP/UnknownResponseError/
+share/ri/${REV}/system/Net/IMAP/UnknownResponseError/cdesc-UnknownResponseError.ri
 share/ri/${REV}/system/Net/IMAP/add_authenticator-c.ri
 share/ri/${REV}/system/Net/IMAP/add_response_handler-i.ri
 share/ri/${REV}/system/Net/IMAP/append-i.ri

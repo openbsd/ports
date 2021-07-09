@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2021/04/07 14:57:23 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2021/07/09 17:05:03 jeremy Exp $
 @option no-default-conflict
 @conflict ruby->=2.7,<2.8
 bin/bundle27
@@ -45,7 +45,7 @@ include/ruby-${REV}/ruby/util.h
 include/ruby-${REV}/ruby/version.h
 include/ruby-${REV}/ruby/vm.h
 include/ruby-${REV}/${SUB}/
-include/ruby-${REV}/${SUB}/rb_mjit_min_header-2.7.3.h
+include/ruby-${REV}/${SUB}/rb_mjit_min_header-2.7.4.h
 include/ruby-${REV}/${SUB}/ruby/
 include/ruby-${REV}/${SUB}/ruby/config.h
 @so lib/libruby27.so
@@ -1604,10 +1604,10 @@ lib/ruby/gems/${REV}/gems/rake-13.0.1/lib/rake/trace_output.rb
 lib/ruby/gems/${REV}/gems/rake-13.0.1/lib/rake/version.rb
 lib/ruby/gems/${REV}/gems/rake-13.0.1/lib/rake/win32.rb
 lib/ruby/gems/${REV}/gems/rake-13.0.1/rake.gemspec
-lib/ruby/gems/${REV}/gems/rdoc-6.2.1/
-lib/ruby/gems/${REV}/gems/rdoc-6.2.1/exe/
-lib/ruby/gems/${REV}/gems/rdoc-6.2.1/exe/rdoc
-lib/ruby/gems/${REV}/gems/rdoc-6.2.1/exe/ri
+lib/ruby/gems/${REV}/gems/rdoc-6.2.1.1/
+lib/ruby/gems/${REV}/gems/rdoc-6.2.1.1/exe/
+lib/ruby/gems/${REV}/gems/rdoc-6.2.1.1/exe/rdoc
+lib/ruby/gems/${REV}/gems/rdoc-6.2.1.1/exe/ri
 lib/ruby/gems/${REV}/gems/readline-0.0.2/
 lib/ruby/gems/${REV}/gems/readline-ext-0.1.0/
 lib/ruby/gems/${REV}/gems/reline-0.1.5/
@@ -1803,7 +1803,7 @@ lib/ruby/gems/${REV}/specifications/default/prime-0.1.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/pstore-0.1.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/psych-3.1.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/racc-1.4.16.gemspec
-lib/ruby/gems/${REV}/specifications/default/rdoc-6.2.1.gemspec
+lib/ruby/gems/${REV}/specifications/default/rdoc-6.2.1.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/readline-0.0.2.gemspec
 lib/ruby/gems/${REV}/specifications/default/readline-ext-0.1.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/reline-0.1.5.gemspec
