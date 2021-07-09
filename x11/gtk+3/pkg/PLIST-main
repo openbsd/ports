@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.58 2020/12/06 09:00:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.59 2021/07/09 09:53:50 ajacoutot Exp $
 @conflict gtk+3-docs-*
+@conflict gtk+3-cloudprint-*
 @conflict gettext-tools-<0.19.7p1
+@pkgpath x11/gtk+3,-cloudprint
 @pkgpath x11/gtk+3,-docs
 @define-tag gtk-query-immodules-3.0 at-end %D/bin/gtk-query-immodules-3.0 --update-cache
 @tag gtk-query-immodules-3.0
@@ -99,6 +101,7 @@ include/gtk-3.0/gtk/a11y/gtkcontaineraccessible.h
 include/gtk-3.0/gtk/a11y/gtkcontainercellaccessible.h
 include/gtk-3.0/gtk/a11y/gtkentryaccessible.h
 include/gtk-3.0/gtk/a11y/gtkexpanderaccessible.h
+include/gtk-3.0/gtk/a11y/gtkfilechooserwidgetaccessible.h
 include/gtk-3.0/gtk/a11y/gtkflowboxaccessible.h
 include/gtk-3.0/gtk/a11y/gtkflowboxchildaccessible.h
 include/gtk-3.0/gtk/a11y/gtkframeaccessible.h

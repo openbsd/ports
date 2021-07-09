@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.249 2021/04/24 07:49:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.250 2021/07/09 09:53:50 ajacoutot Exp $
 
 # XXX add support for libcloudproviders?
 
@@ -8,21 +8,19 @@ PORTROACH=		skipv:3.90.0,3.92.1,3.93.0,3.94.0
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-cups=		gtk+3 CUPS print backend
-COMMENT-cloudprint=	gtk+3 Google Cloud Print backend
 COMMENT-guic=		gtk+ icon theme caching utility
 
 GNOME_PROJECT=		gtk+
-GNOME_VERSION=		3.24.29
+GNOME_VERSION=		3.24.30
 
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
-PKGNAME-cloudprint=	gtk+3-cloudprint-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
 
 CATEGORIES=		x11 devel
 
-SHARED_LIBS +=  gdk-3                2201.1   # 2404.25
-SHARED_LIBS +=  gtk-3                2201.0   # 2404.25
+SHARED_LIBS +=  gdk-3                2201.1   # 2404.26
+SHARED_LIBS +=  gtk-3                2201.0   # 2404.26
 SHARED_LIBS +=  gailutil-3           0.0      # 0.0
 
 HOMEPAGE=		http://www.gtk.org/
@@ -33,9 +31,9 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += ffi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += iconv intl m pcre pthread z
+WANTLIB += iconv intl jpeg m pcre pthread z
 
-MULTI_PACKAGES=		-main -cups -cloudprint -guic
+MULTI_PACKAGES=		-main -cups -guic
 
 MODULES=		devel/dconf \
 			x11/gnome
@@ -59,7 +57,7 @@ WANTLIB-main += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB-main += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB-main += cairo cairo-gobject dbus-1 expat fontconfig freetype
 WANTLIB-main += graphite2 harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB-main += pixman-1 xcb xcb-render xcb-shm png
+WANTLIB-main += pixman-1 xcb xcb-render xcb-shm png execinfo
 
 LIB_DEPENDS-cups=	${LIB_DEPENDS} \
 			print/cups,-libs \
@@ -73,28 +71,13 @@ WANTLIB-cups += cairo cairo-gobject dbus-1 expat fontconfig freetype
 WANTLIB-cups += graphite2 harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-cups += pixman-1 xcb xcb-render png avahi-client avahi-common
 WANTLIB-cups += cups gdk-3 gmp xcb-shm gnutls gtk-3 hogweed nettle
-WANTLIB-cups += p11-kit tasn1 unistring
-
-LIB_DEPENDS-cloudprint=	${LIB_DEPENDS} \
-			devel/json-glib \
-			net/librest \
-			${BASE_PKGPATH},-main=${GNOME_VERSION}
-RUN_DEPENDS-cloudprint=
-
-WANTLIB-cloudprint += ${WANTLIB} ${COMPILER_LIBCXX} epoxy fribidi idn2 psl unistring
-WANTLIB-cloudprint += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB-cloudprint += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB-cloudprint += cairo cairo-gobject dbus-1 expat fontconfig freetype
-WANTLIB-cloudprint += graphite2 gthread-2.0 harfbuzz pango-1.0 pangocairo-1.0
-WANTLIB-cloudprint += pangoft2-1.0 pixman-1 xcb xcb-render
-WANTLIB-cloudprint += gdk-3 gtk-3 json-glib-1.0 rest-0.7 soup-2.4 soup-gnome-2.4
-WANTLIB-cloudprint += sqlite3 xml2 lzma xcb-shm png brotlicommon brotlidec
+WANTLIB-cups += p11-kit tasn1 unistring execinfo
 
 LIB_DEPENDS-guic=	graphics/gdk-pixbuf2
 RUN_DEPENDS-guic=	x11/hicolor-icon-theme
 
 # uses pledge()
-WANTLIB-guic += ${WANTLIB} c
+WANTLIB-guic += ${WANTLIB} c png
 
 MODGNOME_TOOLS=		docbook gobject-introspection gtk-update-icon-cache \
 			desktop-file-utils
@@ -111,7 +94,7 @@ CFLAGS +=	-std=gnu99
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gtk+3
 
 # configure will disable lpr in default gtk-print-backends if cups is found
-MAKE_FLAGS=		GTK_PRINT_BACKENDS="file,lpr,cups,cloudprint"
+MAKE_FLAGS=		GTK_PRINT_BACKENDS="file,lpr,cups"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/gtk-3.0/modules
