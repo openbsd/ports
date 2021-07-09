@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2021/03/11 23:07:32 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2021/07/09 15:47:05 jasper Exp $
 
-# Also has a riscv target
-ONLY_FOR_ARCHS =	amd64 arm64 armv7 i386
+ONLY_FOR_ARCHS =	amd64 arm64 armv7 i386 riscv64
 
 COMMENT =	tiny C compiler
 DISTNAME =	tcc-0.9.27.20210221
