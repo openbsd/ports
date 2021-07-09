@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2018/05/27 08:37:05 espie Exp $
+@comment $OpenBSD: PLIST,v 1.20 2021/07/09 10:41:58 sthen Exp $
 @bin bin/slsh
 include/slang.h
 include/slcurses.h
@@ -9,21 +9,26 @@ lib/pkgconfig/slang.pc
 lib/slang/
 lib/slang/v2/
 lib/slang/v2/modules/
-lib/slang/v2/modules/csv-module.so
-lib/slang/v2/modules/fcntl-module.so
-lib/slang/v2/modules/fork-module.so
-lib/slang/v2/modules/iconv-module.so
-lib/slang/v2/modules/onig-module.so
-lib/slang/v2/modules/pcre-module.so
-lib/slang/v2/modules/png-module.so
-lib/slang/v2/modules/rand-module.so
-lib/slang/v2/modules/select-module.so
-lib/slang/v2/modules/slsmg-module.so
-lib/slang/v2/modules/socket-module.so
-lib/slang/v2/modules/sysconf-module.so
-lib/slang/v2/modules/termios-module.so
-lib/slang/v2/modules/varray-module.so
-lib/slang/v2/modules/zlib-module.so
+@so lib/slang/v2/modules/base64-module.so
+@so lib/slang/v2/modules/chksum-module.so
+@so lib/slang/v2/modules/csv-module.so
+@so lib/slang/v2/modules/fcntl-module.so
+@so lib/slang/v2/modules/fork-module.so
+@so lib/slang/v2/modules/histogram-module.so
+@so lib/slang/v2/modules/iconv-module.so
+@so lib/slang/v2/modules/json-module.so
+@so lib/slang/v2/modules/onig-module.so
+@so lib/slang/v2/modules/pcre-module.so
+@so lib/slang/v2/modules/png-module.so
+@so lib/slang/v2/modules/rand-module.so
+@so lib/slang/v2/modules/select-module.so
+@so lib/slang/v2/modules/slsmg-module.so
+@so lib/slang/v2/modules/socket-module.so
+@so lib/slang/v2/modules/stats-module.so
+@so lib/slang/v2/modules/sysconf-module.so
+@so lib/slang/v2/modules/termios-module.so
+@so lib/slang/v2/modules/varray-module.so
+@so lib/slang/v2/modules/zlib-module.so
 @man man/man1/slsh.1
 share/doc/slang/
 share/doc/slang/COPYING
@@ -36,6 +41,10 @@ share/doc/slang/slangfun.txt
 share/doc/slsh/
 share/doc/slsh/html/
 share/doc/slsh/html/slshfun-1.html
+share/doc/slsh/html/slshfun-10.html
+share/doc/slsh/html/slshfun-11.html
+share/doc/slsh/html/slshfun-12.html
+share/doc/slsh/html/slshfun-13.html
 share/doc/slsh/html/slshfun-2.html
 share/doc/slsh/html/slshfun-3.html
 share/doc/slsh/html/slshfun-4.html
@@ -48,13 +57,18 @@ share/doc/slsh/html/slshfun.html
 share/slsh/
 share/slsh/arrayfuns.sl
 share/slsh/autoload.sl
+share/slsh/base64.sl
+share/slsh/chksum.sl
 share/slsh/cmaps/
 share/slsh/cmaps/cool.map
 share/slsh/cmaps/coolwarm.map
 share/slsh/cmaps/copper.map
+share/slsh/cmaps/cubicl.map
+share/slsh/cmaps/cubicyf.map
 share/slsh/cmaps/drywet.map
 share/slsh/cmaps/ds9b.map
 share/slsh/cmaps/ds9sls.map
+share/slsh/cmaps/edge.map
 share/slsh/cmaps/gebco.map
 share/slsh/cmaps/globe.map
 share/slsh/cmaps/gray.map
@@ -79,13 +93,20 @@ share/slsh/examples/slsh.rc
 @sample ${SYSCONFDIR}/slsh.rc
 share/slsh/fcntl.sl
 share/slsh/fork.sl
+share/slsh/fswalk.sl
 share/slsh/glob.sl
 share/slsh/help/
 share/slsh/help/arrayfuns.hlp
+share/slsh/help/base64funs.hlp
+share/slsh/help/chksumfuns.hlp
 share/slsh/help/cmdopt.hlp
 share/slsh/help/csvfuns.hlp
 share/slsh/help/forkfuns.hlp
+share/slsh/help/fswalk.hlp
 share/slsh/help/glob.hlp
+share/slsh/help/histfuns.hlp
+share/slsh/help/jsonfuns.hlp
+share/slsh/help/listfuns.hlp
 share/slsh/help/onigfuns.hlp
 share/slsh/help/pcrefuns.hlp
 share/slsh/help/pngfuns.hlp
@@ -98,8 +119,12 @@ share/slsh/help/require.hlp
 share/slsh/help/setfuns.hlp
 share/slsh/help/slsmg.hlp
 share/slsh/help/sockfuns.hlp
+share/slsh/help/statsfuns.hlp
 share/slsh/help/structfuns.hlp
+share/slsh/histogram.sl
 share/slsh/iconv.sl
+share/slsh/json.sl
+share/slsh/listfuns.sl
 share/slsh/local-packages/
 share/slsh/onig.sl
 share/slsh/pcre.sl
@@ -135,6 +160,11 @@ share/slsh/slshhelp.sl
 share/slsh/slshrl.sl
 share/slsh/slsmg.sl
 share/slsh/socket.sl
+share/slsh/stats.sl
+share/slsh/statslib/
+share/slsh/statslib/ad_test.sl
+share/slsh/statslib/ks_test.sl
+share/slsh/statslib/kuiper.sl
 share/slsh/stkcheck.sl
 share/slsh/structfuns.sl
 share/slsh/sysconf.sl

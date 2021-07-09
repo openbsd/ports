@@ -1,7 +1,9 @@
-$OpenBSD: patch-autoconf_aclocal_m4,v 1.8 2016/09/06 13:18:42 jasper Exp $
---- autoconf/aclocal.m4.orig	Mon Apr 11 04:37:07 2011
-+++ autoconf/aclocal.m4	Fri Feb 19 08:41:23 2016
-@@ -571,13 +571,13 @@ fi
+$OpenBSD: patch-autoconf_aclocal_m4,v 1.9 2021/07/09 10:41:58 sthen Exp $
+
+Index: autoconf/aclocal.m4
+--- autoconf/aclocal.m4.orig
++++ autoconf/aclocal.m4
+@@ -600,13 +600,13 @@ fi
  
  dnl #Some defaults
  ELFLIB="lib\$(THIS_LIB).so"
@@ -15,29 +17,31 @@ $OpenBSD: patch-autoconf_aclocal_m4,v 1.8 2016/09/06 13:18:42 jasper Exp $
  INSTALL_ELFLIB_TARGET="install-elf-and-links"
 -ELFLIB_BUILD_NAME="\$(ELFLIB_MAJOR_MINOR_MICRO)"
 +ELFLIB_BUILD_NAME="\$(ELFLIB_MAJOR_MINOR)"
- INSTALL_MODULE="\$(INSTALL_DATA)"
+ INSTALL_MODULE="\$(INSTALL)"
  SLANG_DLL_CFLAGS=""
  M_LIB="-lm"
-@@ -702,6 +702,25 @@ case "$host_os" in
-     ELF_LINK="\$(CC) \$(LDFLAGS) -shared -Wl,-O1 -Wl,--version-script,\$(VERSION_SCRIPT) -Wl,-soname,\$(ELFLIB_MAJOR)"
+@@ -742,6 +742,27 @@ case "$host_os" in
      ELF_DEP_LIBS="\$(DL_LIB)"
-     CC_SHARED="\$(CC) \$(CFLAGS) -shared -fPIC"
+     CC_SHARED_FLAGS="-shared -fPIC"
+     CC_SHARED="\$(CC) $CC_SHARED_FLAGS \$(CFLAGS)"
 +    ;;
 +   *openbsd* )
-+      DYNAMIC_LINK_FLAGS=""
-+      ELF_CC="$CC"
 +      case `arch -s` in
 +        sparc64)
-+          ELF_CFLAGS="$CFLAGS -fPIC"
++          PIC_FLAG="-fPIC"
 +         ;;
 +        *)
-+          ELF_CFLAGS="$CFLAGS -fpic"
++          PIC_FLAG="-fpic"
 +         ;;
 +      esac
++      DYNAMIC_LINK_FLAGS=""
++      ELF_CC="$CC"
++      ELF_CFLAGS="$CFLAGS $PIC_FLAG"
 +      ELF_LINK="$CC -shared $ELF_CFLAGS"
 +      ELF_LINK_CMD="\$(ELF_LINK)"
 +      ELF_DEP_LIBS=
-+      CC_SHARED="$CC -shared $ELF_CFLAGS"
++      CC_SHARED_FLAGS="-shared $PIC_FLAG"
++      CC_SHARED="$CC $CC_SHARED_FLAGS $CFLAGS"
 +      if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`"; then
 +        DYNAMIC_LINK_FLAGS="-Wl,-E"
 +      fi

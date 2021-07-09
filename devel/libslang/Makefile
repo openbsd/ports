@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.65 2019/07/12 20:44:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2021/07/09 10:41:58 sthen Exp $
 
 COMMENT=	stack-based interpreter for terminal applications
 
-DISTNAME=	slang-2.2.4
-REVISION=	5
+DISTNAME=	slang-2.3.2
 PKGNAME=	lib${DISTNAME}
-SHARED_LIBS=	slang 16.0
+EXTRACT_SUFX=	.tar.bz2
+SHARED_LIBS=	slang 16.1
 
 CATEGORIES=	devel
-MASTER_SITES=	http://www.jedsoft.org/releases/slang/old/
+MASTER_SITES=	http://www.jedsoft.org/releases/slang/ \
+		http://www.jedsoft.org/releases/slang/old/
 
 HOMEPAGE=	http://jedsoft.org/slang/
 
@@ -22,7 +23,7 @@ LIB_DEPENDS=		converters/libiconv \
 			graphics/png \
 			textproc/oniguruma
 
-AUTOCONF_VERSION=	2.61
+AUTOCONF_VERSION=	2.69
 CONFIGURE_STYLE=	autoconf no-autoheader
 AUTOCONF_DIR=		${WRKSRC}/autoconf
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/autoconf
