@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2021/04/07 14:56:12 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2021/07/09 17:04:32 jeremy Exp $
 @option no-default-conflict
 @conflict ruby->=3.0,<3.1
 bin/bundle30
@@ -206,7 +206,7 @@ include/ruby-${REV}/ruby/util.h
 include/ruby-${REV}/ruby/version.h
 include/ruby-${REV}/ruby/vm.h
 include/ruby-${REV}/${SUB}/
-include/ruby-${REV}/${SUB}/rb_mjit_min_header-3.0.1.h
+include/ruby-${REV}/${SUB}/rb_mjit_min_header-3.0.2.h
 include/ruby-${REV}/${SUB}/ruby/
 include/ruby-${REV}/${SUB}/ruby/config.h
 @so lib/libruby30.so
@@ -402,7 +402,9 @@ lib/ruby/${REV}/bundler/source/path/installer.rb
 lib/ruby/${REV}/bundler/source/rubygems/
 lib/ruby/${REV}/bundler/source/rubygems.rb
 lib/ruby/${REV}/bundler/source/rubygems/remote.rb
+lib/ruby/${REV}/bundler/source/rubygems_aggregate.rb
 lib/ruby/${REV}/bundler/source_list.rb
+lib/ruby/${REV}/bundler/source_map.rb
 lib/ruby/${REV}/bundler/spec_set.rb
 lib/ruby/${REV}/bundler/stub_specification.rb
 lib/ruby/${REV}/bundler/templates/
@@ -997,6 +999,7 @@ lib/ruby/${REV}/rdoc/markup/pre_process.rb
 lib/ruby/${REV}/rdoc/markup/raw.rb
 lib/ruby/${REV}/rdoc/markup/regexp_handling.rb
 lib/ruby/${REV}/rdoc/markup/rule.rb
+lib/ruby/${REV}/rdoc/markup/table.rb
 lib/ruby/${REV}/rdoc/markup/to_ansi.rb
 lib/ruby/${REV}/rdoc/markup/to_bs.rb
 lib/ruby/${REV}/rdoc/markup/to_html.rb
@@ -1471,10 +1474,10 @@ lib/ruby/gems/${REV}/gems/abbrev-0.1.0/
 lib/ruby/gems/${REV}/gems/base64-0.1.0/
 lib/ruby/gems/${REV}/gems/benchmark-0.1.1/
 lib/ruby/gems/${REV}/gems/bigdecimal-3.0.0/
-lib/ruby/gems/${REV}/gems/bundler-2.2.15/
-lib/ruby/gems/${REV}/gems/bundler-2.2.15/libexec/
-lib/ruby/gems/${REV}/gems/bundler-2.2.15/libexec/bundle
-lib/ruby/gems/${REV}/gems/bundler-2.2.15/libexec/bundler
+lib/ruby/gems/${REV}/gems/bundler-2.2.22/
+lib/ruby/gems/${REV}/gems/bundler-2.2.22/libexec/
+lib/ruby/gems/${REV}/gems/bundler-2.2.22/libexec/bundle
+lib/ruby/gems/${REV}/gems/bundler-2.2.22/libexec/bundler
 lib/ruby/gems/${REV}/gems/cgi-0.2.0/
 lib/ruby/gems/${REV}/gems/csv-3.1.9/
 lib/ruby/gems/${REV}/gems/date-3.1.0/
@@ -1540,7 +1543,7 @@ lib/ruby/gems/${REV}/gems/minitest-5.14.2/test/minitest/test_minitest_reporter.r
 lib/ruby/gems/${REV}/gems/minitest-5.14.2/test/minitest/test_minitest_spec.rb
 lib/ruby/gems/${REV}/gems/minitest-5.14.2/test/minitest/test_minitest_test.rb
 lib/ruby/gems/${REV}/gems/mutex_m-0.1.1/
-lib/ruby/gems/${REV}/gems/net-ftp-0.1.1/
+lib/ruby/gems/${REV}/gems/net-ftp-0.1.2/
 lib/ruby/gems/${REV}/gems/net-http-0.1.1/
 lib/ruby/gems/${REV}/gems/net-imap-0.1.1/
 lib/ruby/gems/${REV}/gems/net-pop-0.1.1/
@@ -1962,10 +1965,10 @@ lib/ruby/gems/${REV}/gems/rbs-1.0.4/stdlib/zlib/0/zlib.rbs
 lib/ruby/gems/${REV}/gems/rbs-1.0.4/steep/
 lib/ruby/gems/${REV}/gems/rbs-1.0.4/steep/Gemfile
 lib/ruby/gems/${REV}/gems/rbs-1.0.4/steep/Gemfile.lock
-lib/ruby/gems/${REV}/gems/rdoc-6.3.0/
-lib/ruby/gems/${REV}/gems/rdoc-6.3.0/exe/
-lib/ruby/gems/${REV}/gems/rdoc-6.3.0/exe/rdoc
-lib/ruby/gems/${REV}/gems/rdoc-6.3.0/exe/ri
+lib/ruby/gems/${REV}/gems/rdoc-6.3.1/
+lib/ruby/gems/${REV}/gems/rdoc-6.3.1/exe/
+lib/ruby/gems/${REV}/gems/rdoc-6.3.1/exe/rdoc
+lib/ruby/gems/${REV}/gems/rdoc-6.3.1/exe/ri
 lib/ruby/gems/${REV}/gems/readline-0.0.2/
 lib/ruby/gems/${REV}/gems/readline-ext-0.1.1/
 lib/ruby/gems/${REV}/gems/reline-0.2.5/
@@ -2647,7 +2650,7 @@ lib/ruby/gems/${REV}/specifications/default/abbrev-0.1.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/base64-0.1.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/benchmark-0.1.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/bigdecimal-3.0.0.gemspec
-lib/ruby/gems/${REV}/specifications/default/bundler-2.2.15.gemspec
+lib/ruby/gems/${REV}/specifications/default/bundler-2.2.22.gemspec
 lib/ruby/gems/${REV}/specifications/default/cgi-0.2.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/csv-3.1.9.gemspec
 lib/ruby/gems/${REV}/specifications/default/date-3.1.0.gemspec
@@ -2676,7 +2679,7 @@ lib/ruby/gems/${REV}/specifications/default/json-2.5.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/logger-1.4.3.gemspec
 lib/ruby/gems/${REV}/specifications/default/matrix-0.3.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/mutex_m-0.1.1.gemspec
-lib/ruby/gems/${REV}/specifications/default/net-ftp-0.1.1.gemspec
+lib/ruby/gems/${REV}/specifications/default/net-ftp-0.1.2.gemspec
 lib/ruby/gems/${REV}/specifications/default/net-http-0.1.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/net-imap-0.1.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/net-pop-0.1.1.gemspec
@@ -2696,7 +2699,7 @@ lib/ruby/gems/${REV}/specifications/default/prime-0.1.2.gemspec
 lib/ruby/gems/${REV}/specifications/default/pstore-0.1.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/psych-3.3.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/racc-1.5.1.gemspec
-lib/ruby/gems/${REV}/specifications/default/rdoc-6.3.0.gemspec
+lib/ruby/gems/${REV}/specifications/default/rdoc-6.3.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/readline-0.0.2.gemspec
 lib/ruby/gems/${REV}/specifications/default/readline-ext-0.1.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/reline-0.2.5.gemspec

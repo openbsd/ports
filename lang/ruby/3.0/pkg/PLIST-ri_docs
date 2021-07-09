@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.2 2021/04/07 14:56:12 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.3 2021/07/09 17:04:32 jeremy Exp $
 share/ri/
 share/ri/${REV}/
 share/ri/${REV}/system/
@@ -910,6 +910,7 @@ share/ri/${REV}/system/Complex/conjugate-i.ri
 share/ri/${REV}/system/Complex/denominator-i.ri
 share/ri/${REV}/system/Complex/fdiv-i.ri
 share/ri/${REV}/system/Complex/finite%3f-i.ri
+share/ri/${REV}/system/Complex/hash-i.ri
 share/ri/${REV}/system/Complex/imag-i.ri
 share/ri/${REV}/system/Complex/imaginary-i.ri
 share/ri/${REV}/system/Complex/infinite%3f-i.ri
@@ -2609,10 +2610,13 @@ share/ri/${REV}/system/Gem/Commands/CertCommand/
 share/ri/${REV}/system/Gem/Commands/CertCommand/build-i.ri
 share/ri/${REV}/system/Gem/Commands/CertCommand/cdesc-CertCommand.ri
 share/ri/${REV}/system/Gem/Commands/CertCommand/certificates_matching-i.ri
+share/ri/${REV}/system/Gem/Commands/CertCommand/check_openssl-i.ri
 share/ri/${REV}/system/Gem/Commands/CertCommand/execute-i.ri
 share/ri/${REV}/system/Gem/Commands/CertCommand/load_default_cert-i.ri
 share/ri/${REV}/system/Gem/Commands/CertCommand/load_default_key-i.ri
 share/ri/${REV}/system/Gem/Commands/CertCommand/new-c.ri
+share/ri/${REV}/system/Gem/Commands/CertCommand/open_cert-i.ri
+share/ri/${REV}/system/Gem/Commands/CertCommand/open_private_key-i.ri
 share/ri/${REV}/system/Gem/Commands/CertCommand/re_sign_cert-i.ri
 share/ri/${REV}/system/Gem/Commands/CertCommand/sign-i.ri
 share/ri/${REV}/system/Gem/Commands/CertCommand/valid_email%3f-i.ri
@@ -3027,6 +3031,7 @@ share/ri/${REV}/system/Gem/GemcutterUtilities/get_key_name-i.ri
 share/ri/${REV}/system/Gem/GemcutterUtilities/get_scope_params-i.ri
 share/ri/${REV}/system/Gem/GemcutterUtilities/host-i.ri
 share/ri/${REV}/system/Gem/GemcutterUtilities/mfa_unauthorized%3f-i.ri
+share/ri/${REV}/system/Gem/GemcutterUtilities/otp-i.ri
 share/ri/${REV}/system/Gem/GemcutterUtilities/pretty_host-i.ri
 share/ri/${REV}/system/Gem/GemcutterUtilities/request_with_otp-i.ri
 share/ri/${REV}/system/Gem/GemcutterUtilities/rubygems_api_request-i.ri
@@ -4486,6 +4491,7 @@ share/ri/${REV}/system/Gem/TestCase/StaticSet/find_spec-i.ri
 share/ri/${REV}/system/Gem/TestCase/StaticSet/load_spec-i.ri
 share/ri/${REV}/system/Gem/TestCase/StaticSet/new-c.ri
 share/ri/${REV}/system/Gem/TestCase/StaticSet/remote-i.ri
+share/ri/${REV}/system/Gem/TestCase/_synchronize-i.ri
 share/ri/${REV}/system/Gem/TestCase/add_to_fetcher-i.ri
 share/ri/${REV}/system/Gem/TestCase/all_spec_names-i.ri
 share/ri/${REV}/system/Gem/TestCase/ask_if_ok-i.ri
@@ -4494,6 +4500,7 @@ share/ri/${REV}/system/Gem/TestCase/assert_contains_make_command-i.ri
 share/ri/${REV}/system/Gem/TestCase/assert_directory_exists-i.ri
 share/ri/${REV}/system/Gem/TestCase/bindir-i.ri
 share/ri/${REV}/system/Gem/TestCase/build_rake_in-i.ri
+share/ri/${REV}/system/Gem/TestCase/capture_subprocess_io-i.ri
 share/ri/${REV}/system/Gem/TestCase/cdesc-TestCase.ri
 share/ri/${REV}/system/Gem/TestCase/common_installer_setup-i.ri
 share/ri/${REV}/system/Gem/TestCase/common_installer_teardown-i.ri
@@ -4509,6 +4516,8 @@ share/ri/${REV}/system/Gem/TestCase/install_gem_user-i.ri
 share/ri/${REV}/system/Gem/TestCase/install_specs-i.ri
 share/ri/${REV}/system/Gem/TestCase/java_platform%3f-c.ri
 share/ri/${REV}/system/Gem/TestCase/java_platform%3f-i.ri
+share/ri/${REV}/system/Gem/TestCase/load_yaml-i.ri
+share/ri/${REV}/system/Gem/TestCase/load_yaml_file-i.ri
 share/ri/${REV}/system/Gem/TestCase/loaded_spec_names-i.ri
 share/ri/${REV}/system/Gem/TestCase/make_command-c.ri
 share/ri/${REV}/system/Gem/TestCase/make_command-i.ri
@@ -4549,6 +4558,7 @@ share/ri/${REV}/system/Gem/TestCase/wait_for_child_process_to_exit-i.ri
 share/ri/${REV}/system/Gem/TestCase/win_platform%3f-c.ri
 share/ri/${REV}/system/Gem/TestCase/win_platform%3f-i.ri
 share/ri/${REV}/system/Gem/TestCase/with_clean_path_to_ruby-i.ri
+share/ri/${REV}/system/Gem/TestCase/without_any_upwards_gemfiles-i.ri
 share/ri/${REV}/system/Gem/TestCase/write_file-i.ri
 share/ri/${REV}/system/Gem/Text/
 share/ri/${REV}/system/Gem/Text/cdesc-Text.ri
@@ -6408,6 +6418,7 @@ share/ri/${REV}/system/Net/FTP/status-i.ri
 share/ri/${REV}/system/Net/FTP/storbinary-i.ri
 share/ri/${REV}/system/Net/FTP/storlines-i.ri
 share/ri/${REV}/system/Net/FTP/system-i.ri
+share/ri/${REV}/system/Net/FTP/use_pasv_ip-i.ri
 share/ri/${REV}/system/Net/FTP/voidcmd-i.ri
 share/ri/${REV}/system/Net/FTP/welcome-i.ri
 share/ri/${REV}/system/Net/FTPConnectionError/
@@ -6868,6 +6879,8 @@ share/ri/${REV}/system/Net/IMAP/ResponseError/new-c.ri
 share/ri/${REV}/system/Net/IMAP/ResponseError/response-i.ri
 share/ri/${REV}/system/Net/IMAP/ResponseParseError/
 share/ri/${REV}/system/Net/IMAP/ResponseParseError/cdesc-ResponseParseError.ri
+share/ri/${REV}/system/Net/IMAP/UnknownResponseError/
+share/ri/${REV}/system/Net/IMAP/UnknownResponseError/cdesc-UnknownResponseError.ri
 share/ri/${REV}/system/Net/IMAP/add_authenticator-c.ri
 share/ri/${REV}/system/Net/IMAP/add_response_handler-i.ri
 share/ri/${REV}/system/Net/IMAP/append-i.ri
@@ -7308,6 +7321,7 @@ share/ri/${REV}/system/Object/send-i.ri
 share/ri/${REV}/system/Object/singleton_class-i.ri
 share/ri/${REV}/system/Object/singleton_method-i.ri
 share/ri/${REV}/system/Object/singleton_methods-i.ri
+share/ri/${REV}/system/Object/stub-i.ri
 share/ri/${REV}/system/Object/taint-i.ri
 share/ri/${REV}/system/Object/tainted%3f-i.ri
 share/ri/${REV}/system/Object/timeout-i.ri
@@ -9778,12 +9792,18 @@ share/ri/${REV}/system/RDoc/Parser/C/scan-i.ri
 share/ri/${REV}/system/RDoc/Parser/C/singleton_classes-i.ri
 share/ri/${REV}/system/RDoc/Parser/C/top_level-i.ri
 share/ri/${REV}/system/RDoc/Parser/ChangeLog/
+share/ri/${REV}/system/RDoc/Parser/ChangeLog/Git/
+share/ri/${REV}/system/RDoc/Parser/ChangeLog/Git/cdesc-Git.ri
+share/ri/${REV}/system/RDoc/Parser/ChangeLog/Git/create_entries-i.ri
+share/ri/${REV}/system/RDoc/Parser/ChangeLog/Git/parse_entries-i.ri
+share/ri/${REV}/system/RDoc/Parser/ChangeLog/Git/parse_info-i.ri
 share/ri/${REV}/system/RDoc/Parser/ChangeLog/cdesc-ChangeLog.ri
 share/ri/${REV}/system/RDoc/Parser/ChangeLog/continue_entry_body-i.ri
 share/ri/${REV}/system/RDoc/Parser/ChangeLog/create_document-i.ri
 share/ri/${REV}/system/RDoc/Parser/ChangeLog/create_entries-i.ri
 share/ri/${REV}/system/RDoc/Parser/ChangeLog/create_items-i.ri
 share/ri/${REV}/system/RDoc/Parser/ChangeLog/group_entries-i.ri
+share/ri/${REV}/system/RDoc/Parser/ChangeLog/parse_date-i.ri
 share/ri/${REV}/system/RDoc/Parser/ChangeLog/parse_entries-i.ri
 share/ri/${REV}/system/RDoc/Parser/ChangeLog/scan-i.ri
 share/ri/${REV}/system/RDoc/Parser/Markdown/
@@ -10907,6 +10927,7 @@ share/ri/${REV}/system/Rational/ceil-i.ri
 share/ri/${REV}/system/Rational/denominator-i.ri
 share/ri/${REV}/system/Rational/fdiv-i.ri
 share/ri/${REV}/system/Rational/floor-i.ri
+share/ri/${REV}/system/Rational/hash-i.ri
 share/ri/${REV}/system/Rational/inspect-i.ri
 share/ri/${REV}/system/Rational/json_create-c.ri
 share/ri/${REV}/system/Rational/magnitude-i.ri
