@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.209 2021/04/29 03:57:54 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.210 2021/07/09 10:43:26 sthen Exp $
 
 COMMENT=	audio/video converter and streamer
 
 V=		4.4
 DISTNAME=	ffmpeg-${V}
+REVISION=	0
 EPOCH=		1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	https://ffmpeg.org/releases/
@@ -88,15 +89,9 @@ CONFIGURE_STYLE= simple
 CONFIGURE_ARGS+=--enable-shared \
 		--arch=${MACHINE_ARCH} \
 		--cc=${CC} \
-		--disable-altivec \
 		--disable-debug \
 		--disable-indev=jack \
 		--disable-indev=oss \
-		--disable-mipsdsp \
-		--disable-mipsdspr2 \
-		--disable-mipsfpu \
-		--disable-mmi \
-		--disable-msa \
 		--disable-outdev=oss \
 		--disable-outdev=sdl2 \
 		--enable-avresample \
@@ -132,6 +127,16 @@ CONFIGURE_ARGS+=--enable-shared \
 
 .if ${MACHINE_ARCH} == "arm"
 CONFIGURE_ARGS+=--disable-asm
+.endif
+.if ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "powerpc64"
+CONFIGURE_ARGS+=--disable-altivec
+.endif
+.if ${MACHINE_ARCH} == "mips64"  || ${MACHINE_ARCH} == "mips64el"
+CONFIGURE_ARGS+=--disable-mipsdsp \
+		--disable-mipsdspr2 \
+		--disable-mipsfpu \
+		--disable-mmi \
+		--disable-msa
 .endif
 
 CONFIGURE_ENV+=	TERM=${TERM} \
