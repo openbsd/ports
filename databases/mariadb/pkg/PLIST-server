@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.38 2021/05/09 09:17:13 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.39 2021/07/09 11:35:29 sthen Exp $
 @conflict mariadb-client-<=10.4.12v1
 @newgroup _mysql:502
 @newuser _mysql:502:_mysql:daemon:MySQL Account:/nonexistent:/sbin/nologin
@@ -159,8 +159,11 @@ include/mysql/server/private/compat56.h
 include/mysql/server/private/config.h
 include/mysql/server/private/contributors.h
 include/mysql/server/private/create_options.h
+include/mysql/server/private/create_tmp_table.h
 include/mysql/server/private/custom_conf.h
 include/mysql/server/private/datadict.h
+include/mysql/server/private/ddl_log.h
+include/mysql/server/private/debug.h
 include/mysql/server/private/debug_sync.h
 include/mysql/server/private/derived_handler.h
 include/mysql/server/private/derror.h
@@ -208,6 +211,7 @@ include/mysql/server/private/item_timefunc.h
 include/mysql/server/private/item_vers.h
 include/mysql/server/private/item_windowfunc.h
 include/mysql/server/private/item_xmlfunc.h
+include/mysql/server/private/json_table.h
 include/mysql/server/private/key.h
 include/mysql/server/private/keycaches.h
 include/mysql/server/private/lex.h
@@ -234,7 +238,6 @@ include/mysql/server/private/my_bit.h
 include/mysql/server/private/my_bitmap.h
 include/mysql/server/private/my_check_opt.h
 include/mysql/server/private/my_compare.h
-include/mysql/server/private/my_context.h
 include/mysql/server/private/my_counter.h
 include/mysql/server/private/my_cpu.h
 include/mysql/server/private/my_crypt.h
@@ -258,12 +261,10 @@ include/mysql/server/private/myisam.h
 include/mysql/server/private/myisamchk.h
 include/mysql/server/private/myisammrg.h
 include/mysql/server/private/myisampack.h
-include/mysql/server/private/mysql_async.h
 include/mysql/server/private/mysqld.h
 include/mysql/server/private/mysqld_default_groups.h
 include/mysql/server/private/mysqld_suffix.h
 include/mysql/server/private/mysys_err.h
-include/mysql/server/private/nt_servc.h
 include/mysql/server/private/opt_range.h
 include/mysql/server/private/opt_subselect.h
 include/mysql/server/private/opt_trace.h
@@ -422,9 +423,9 @@ include/mysql/server/private/thr_lock.h
 include/mysql/server/private/thr_malloc.h
 include/mysql/server/private/thr_timer.h
 include/mysql/server/private/thread_cache.h
-include/mysql/server/private/thread_pool_priv.h
 include/mysql/server/private/threadpool.h
 include/mysql/server/private/threadpool_generic.h
+include/mysql/server/private/threadpool_winsockets.h
 include/mysql/server/private/transaction.h
 include/mysql/server/private/tzfile.h
 include/mysql/server/private/tztime.h
@@ -640,6 +641,7 @@ share/mysql/korean/errmsg.sys
 share/mysql/maria_add_gis_sp.sql
 share/mysql/maria_add_gis_sp_bootstrap.sql
 share/mysql/mysql_performance_tables.sql
+share/mysql/mysql_sys_schema.sql
 share/mysql/mysql_system_tables.sql
 share/mysql/mysql_system_tables_data.sql
 share/mysql/mysql_test_data_timezone.sql

@@ -1,4 +1,4 @@
-$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.21 2021/06/27 12:04:21 sthen Exp $
+$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.22 2021/07/09 11:35:29 sthen Exp $
 
 Index: scripts/mysql_install_db.sh
 --- scripts/mysql_install_db.sh.orig
@@ -38,7 +38,7 @@ Index: scripts/mysql_install_db.sh
 -  pamtooldir=$plugindir
 +  plugindir=`find_in_dirs --dir auth_ed25519.so $basedir/lib*/plugin $basedir/lib*/mysql/plugin $basedir/lib/*/mariadb19/plugin`
  # relative from where the script was run for a relocatable install
- elif test -n "$dirname0" -a -x "$rel_mysqld" -a ! "$rel_mysqld" -ef "@sbindir@/mysqld"
+ elif test -n "$dirname0" -a -x "$rel_mysqld" -a ! "$rel_mysqld" -ef "@sbindir@/mariadbd"
  then
 @@ -369,7 +370,6 @@ then
    srcpkgdatadir="$basedir/@INSTALL_MYSQLSHAREDIR@"
@@ -56,7 +56,7 @@ Index: scripts/mysql_install_db.sh
  fi
  
  # Set up paths to SQL scripts required for bootstrap
-@@ -467,11 +466,11 @@ do
+@@ -468,11 +467,11 @@ do
    fi
    if test -n "$user"
    then
@@ -71,7 +71,7 @@ Index: scripts/mysql_install_db.sh
        exit 1
      fi
    fi
-@@ -479,25 +478,6 @@ done
+@@ -480,25 +479,6 @@ done
  
  if test -n "$user"
  then
@@ -97,7 +97,7 @@ Index: scripts/mysql_install_db.sh
    args="$args --user=$user"
  fi
  
-@@ -602,10 +582,6 @@ fi
+@@ -603,10 +583,6 @@ fi
  # the screen.
  if test "$cross_bootstrap" -eq 0 && test -z "$srcdir"
  then
@@ -108,7 +108,7 @@ Index: scripts/mysql_install_db.sh
    if test "$auth_root_authentication_method" = normal
    then
      echo
-@@ -642,10 +618,7 @@ then
+@@ -643,10 +619,7 @@ then
    then
      echo
      echo "You can start the MariaDB daemon with:"
