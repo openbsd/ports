@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.209 2021/06/10 10:01:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.210 2021/07/09 13:16:37 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (core installation)
 COMMENT-extras=		GNOME desktop meta-package (world installation)
@@ -10,6 +10,8 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
+REVISION-main=		0
+
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -17,9 +19,7 @@ MULTI_PACKAGES=		-main -extras
 
 # GNOME spooler is CUPS (gnome-printers-panel in gnome-control-center)
 # add gtk+3-cups so that gtkprint() can see native CUPS printers;
-# add gtk+3-cloudprint, gnome-online-accounts is already a dependency
 RUN_DEPENDS-main +=	x11/gtk+3,-cups
-RUN_DEPENDS-main +=	x11/gtk+3,-cloudprint
 
 # we already depend on samba, libgdata and gnome-online-accounts
 RUN_DEPENDS-main +=	x11/gnome/gvfs,-goa,
