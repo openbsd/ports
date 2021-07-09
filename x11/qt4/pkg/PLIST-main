@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.39 2021/01/26 18:29:01 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.40 2021/07/09 14:33:44 kn Exp $
 @conflict qt4-sqlite-*
 @pkgpath x11/qt4
 @pkgpath x11/qt4,-phonon
 @pkgpath x11/qt4,-sqlite
+@pkgpath x11/qt4,-sqlite2
 bin/assistant4
 bin/designer4
 bin/findtr4

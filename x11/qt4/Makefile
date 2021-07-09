@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.166 2021/05/10 15:02:29 tb Exp $
+# $OpenBSD: Makefile,v 1.167 2021/07/09 14:33:43 kn Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 BROKEN-arm =	invalid instruction, vmov.u32 r2, r3, s8, s9, related to FELightingNEON.cpp
@@ -10,23 +10,20 @@ COMMENT-examples =	examples for qt4
 COMMENT-html =		off-line html documentation for qt4
 COMMENT-postgresql =	PostgresSQL plugin for qt4
 COMMENT-mysql =		MySQL plugin for qt4
-COMMENT-sqlite2 =	sqlite2 plugin for qt4
 COMMENT-tds =		tds plugin for qt4
 
 PKGNAME =		qt4-${PKGVERSION}
 PKGNAME-mysql =		qt4-mysql-${PKGVERSION}
 PKGNAME-postgresql =	qt4-postgresql-${PKGVERSION}
 PKGNAME-examples =	qt4-examples-${PKGVERSION}
-PKGNAME-sqlite2 =	qt4-sqlite2-${PKGVERSION}
 PKGNAME-tds =		qt4-tds-${PKGVERSION}
 PKGNAME-main =		qt4-${PKGVERSION}
 PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
-REVISION-main =		25
+REVISION-main =		26
 REVISION-mysql =	8
 REVISION-postgresql =	7
-REVISION-sqlite2 =	7
 REVISION-tds =		7
 REVISION-debug =	6
 REVISION-examples =	11
@@ -138,7 +135,7 @@ BUILD_DEPENDS +=	databases/postgresql,-server
 BUILD_DEPENDS +=	print/cups,-libs
 
 MULTI_PACKAGES =	-main -examples \
-			-html -mysql -postgresql -sqlite2 -tds
+			-html -mysql -postgresql -tds
 
 .if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS +=	-debug
@@ -182,11 +179,6 @@ WANTLIB-mysql =		${sqlWANTLIB} mariadb
 LIB_DEPENDS-postgresql =${BUILD_PKGPATH} \
 			databases/postgresql
 WANTLIB-postgresql =	${sqlWANTLIB}  pq
-
-
-LIB_DEPENDS-sqlite2 =	${BUILD_PKGPATH} \
-			databases/sqlite
-WANTLIB-sqlite2 =	${sqlWANTLIB} sqlite
 
 
 LIB_DEPENDS-tds =	${BUILD_PKGPATH} \
