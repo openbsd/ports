@@ -1,18 +1,14 @@
-$OpenBSD: patch-setup_py,v 1.9 2020/02/03 12:07:19 benoit Exp $
-
-Index: setup.py
---- setup.py.orig
-+++ setup.py
-@@ -30,10 +30,10 @@ setuptools.setup(
+$OpenBSD: patch-setup_py,v 1.10 2021/07/09 11:24:26 benoit Exp $
+--- setup.py.orig	Fri Jul  9 09:26:38 2021
++++ setup.py	Fri Jul  9 09:28:08 2021
+@@ -30,7 +30,10 @@
      url="http://www.schwarzvogel.de/software-pymetar.shtml",
      packages=setuptools.find_packages(),
      py_modules=["pymetar"],
 -    scripts=["bin/pymetar"],
--    data_files=[("share/doc/pymetar-%s" % pymetar.__version__,
 +    scripts=["bin/pymet"],
 +    data_files=[("share/doc/py-metar",
-                  ['README.md', 'COPYING', 'THANKS']),
--                ("share/man/man1", ['pymetar.1'])],
++                ['README.md', 'COPYING', 'THANKS']),
 +                ("man/man1", ['pymetar.1'])],
      classifiers=(
      "Programming Language :: Python :: 3",
