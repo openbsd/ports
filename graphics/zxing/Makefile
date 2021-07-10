@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.15 2020/11/05 11:30:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/07/10 14:05:25 sthen Exp $
 
 COMMENT=	barcode image processing library
+
+SHARED_LIBS=	zxing 0.0
 
 GH_ACCOUNT=	glassechidna
 GH_PROJECT=	zxing-cpp
 GH_COMMIT=	e0e40ddec63f38405aca5c8c1ff60b85ec8b1f10
 
 DISTNAME=	zxing-20190320
-REVISION=	0
+REVISION=	1
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
@@ -27,6 +29,10 @@ BUILD_DEPENDS=	devel/cppunit
 
 CONFIGURE_ARGS= -DCMAKE_LIBRARY_PATH=${LOCALBASE}/lib \
 		-DBUILD_TESTING=yes
+
+SUBST_VARS+=	LIBzxing_VERSION
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
 
 do-test:
 	${WRKBUILD}/testrunner
