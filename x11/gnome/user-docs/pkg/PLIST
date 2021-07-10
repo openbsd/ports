@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2021/05/09 08:53:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.43 2021/07/10 05:45:03 ajacoutot Exp $
 @conflict gnome2-user-docs-*
 @pkgpath x11/gnome/users-guide
 share/help/
@@ -111,6 +111,7 @@ share/help/C/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/C/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/C/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/C/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/C/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/C/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/C/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/C/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -606,6 +607,7 @@ share/help/as/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/as/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/as/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/as/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/as/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/as/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/as/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/as/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -1043,6 +1045,7 @@ share/help/ca/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/ca/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/ca/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/ca/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/ca/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/ca/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/ca/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/ca/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -1538,6 +1541,7 @@ share/help/cs/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/cs/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/cs/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/cs/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/cs/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/cs/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/cs/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/cs/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -2033,6 +2037,7 @@ share/help/da/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/da/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/da/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/da/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/da/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/da/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/da/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/da/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -2470,6 +2475,7 @@ share/help/de/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/de/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/de/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/de/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/de/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/de/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/de/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/de/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -2965,6 +2971,7 @@ share/help/el/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/el/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/el/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/el/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/el/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/el/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/el/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/el/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -3402,6 +3409,7 @@ share/help/es/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/es/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/es/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/es/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/es/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/es/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/es/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/es/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -3897,6 +3905,7 @@ share/help/fa/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/fa/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/fa/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/fa/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/fa/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/fa/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/fa/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/fa/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -4334,6 +4343,7 @@ share/help/fi/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/fi/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/fi/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/fi/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/fi/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/fi/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/fi/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/fi/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -4771,6 +4781,7 @@ share/help/fr/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/fr/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/fr/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/fr/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/fr/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/fr/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/fr/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/fr/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -5208,6 +5219,7 @@ share/help/gl/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/gl/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/gl/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/gl/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/gl/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/gl/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/gl/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/gl/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -5703,6 +5715,7 @@ share/help/gu/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/gu/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/gu/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/gu/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/gu/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/gu/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/gu/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/gu/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -6140,6 +6153,7 @@ share/help/he/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/he/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/he/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/he/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/he/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/he/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/he/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/he/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -6577,6 +6591,7 @@ share/help/hi/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/hi/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/hi/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/hi/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/hi/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/hi/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/hi/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/hi/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -7014,6 +7029,7 @@ share/help/hr/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/hr/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/hr/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/hr/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/hr/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/hr/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/hr/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/hr/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -7451,6 +7467,7 @@ share/help/hu/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/hu/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/hu/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/hu/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/hu/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/hu/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/hu/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/hu/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -7946,6 +7963,7 @@ share/help/id/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/id/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/id/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/id/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/id/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/id/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/id/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/id/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -8441,6 +8459,7 @@ share/help/it/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/it/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/it/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/it/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/it/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/it/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/it/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/it/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -8878,6 +8897,7 @@ share/help/ja/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/ja/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/ja/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/ja/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/ja/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/ja/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/ja/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/ja/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -9315,6 +9335,7 @@ share/help/kn/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/kn/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/kn/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/kn/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/kn/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/kn/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/kn/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/kn/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -9811,6 +9832,7 @@ share/help/lt/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/lt/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/lt/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/lt/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/lt/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/lt/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/lt/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/lt/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -10248,6 +10270,7 @@ share/help/lv/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/lv/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/lv/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/lv/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/lv/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/lv/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/lv/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/lv/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -10685,6 +10708,7 @@ share/help/mr/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/mr/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/mr/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/mr/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/mr/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/mr/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/mr/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/mr/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -11122,6 +11146,7 @@ share/help/nl/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/nl/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/nl/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/nl/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/nl/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/nl/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/nl/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/nl/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -11559,6 +11584,7 @@ share/help/pa/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/pa/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/pa/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/pa/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/pa/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/pa/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/pa/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/pa/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -11996,6 +12022,7 @@ share/help/pl/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/pl/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/pl/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/pl/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/pl/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/pl/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/pl/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/pl/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -12433,6 +12460,7 @@ share/help/pt/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/pt/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/pt/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/pt/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/pt/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/pt/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/pt/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/pt/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -12870,6 +12898,7 @@ share/help/pt_BR/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/pt_BR/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/pt_BR/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/pt_BR/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/pt_BR/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/pt_BR/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/pt_BR/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/pt_BR/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -13365,6 +13394,7 @@ share/help/ro/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/ro/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/ro/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/ro/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/ro/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/ro/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/ro/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/ro/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -13802,6 +13832,7 @@ share/help/ru/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/ru/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/ru/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/ru/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/ru/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/ru/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/ru/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/ru/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -14239,6 +14270,7 @@ share/help/sl/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/sl/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/sl/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/sl/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/sl/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/sl/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/sl/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/sl/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -14676,6 +14708,7 @@ share/help/sr/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/sr/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/sr/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/sr/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/sr/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/sr/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/sr/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/sr/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -15113,6 +15146,7 @@ share/help/sr@latin/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/sr@latin/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/sr@latin/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/sr@latin/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/sr@latin/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/sr@latin/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/sr@latin/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/sr@latin/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -15550,6 +15584,7 @@ share/help/sv/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/sv/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/sv/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/sv/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/sv/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/sv/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/sv/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/sv/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -16045,6 +16080,7 @@ share/help/ta/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/ta/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/ta/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/ta/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/ta/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/ta/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/ta/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/ta/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -16482,6 +16518,7 @@ share/help/te/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/te/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/te/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/te/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/te/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/te/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/te/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/te/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -16919,6 +16956,7 @@ share/help/tr/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/tr/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/tr/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/tr/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/tr/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/tr/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/tr/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/tr/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -17414,6 +17452,7 @@ share/help/uk/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/uk/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/uk/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/uk/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/uk/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/uk/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/uk/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/uk/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -17909,6 +17948,7 @@ share/help/vi/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/vi/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/vi/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/vi/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/vi/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/vi/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/vi/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/vi/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
@@ -18346,6 +18386,7 @@ share/help/zh_CN/gnome-help/figures/classic-topbar-network-vpn.svg
 share/help/zh_CN/gnome-help/figures/classic-topbar-network-wired-acquiring.svg
 share/help/zh_CN/gnome-help/figures/classic-topbar-network-wired-disconnected.svg
 share/help/zh_CN/gnome-help/figures/classic-topbar-network-wired-no-route.svg
+share/help/zh_CN/gnome-help/figures/classic-topbar-network-wired.svg
 share/help/zh_CN/gnome-help/figures/classic-topbar-network-wireless-acquiring.svg
 share/help/zh_CN/gnome-help/figures/classic-topbar-network-wireless-connected.svg
 share/help/zh_CN/gnome-help/figures/classic-topbar-network-wireless-no-route.svg
