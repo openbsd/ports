@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/07/10 12:03:20 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2021/07/10 17:00:37 landry Exp $
 
 COMMENT =	SIP library supporting voice/video calls and text messaging
 
-V =		4.5.19
 MODULE =	liblinphone
 
 SHARED_LIBS +=	linphone	0.0 \
@@ -12,16 +11,17 @@ CONFIGURE_ARGS =-DENABLE_STATIC=NO \
 		-DENABLE_UNIT_TESTS=NO \
 		-DENABLE_STRICT=NO \
 		-DENABLE_LIME_X3DH=NO \
+		-DENABLE_FLEXIAPI=NO \
 		-DENABLE_DB_STORAGE=NO # needs SOCI
 
 BUILD_DEPENDS = textproc/py-stache \
 		devel/py-six \
 		devel/doxygen
 
-LIB_DEPENDS =	telephony/linphone/bctoolbox \
-		telephony/linphone/mediastreamer2 \
+LIB_DEPENDS =	telephony/linphone/bctoolbox>=${V} \
+		telephony/linphone/mediastreamer2>=${V} \
 		telephony/linphone/ortp \
-		telephony/linphone/belle-sip \
+		telephony/linphone/belle-sip>=${V} \
 		telephony/linphone/belcard \
 		telephony/linphone/belr \
 		textproc/xerces-c
@@ -34,6 +34,6 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
 
 post-install:
-	mv ${PREFIX}/share/doc/liblinphone-4.5.0 ${PREFIX}/share/doc/liblinphone
+	mv ${PREFIX}/share/doc/liblinphone-5.0.0 ${PREFIX}/share/doc/liblinphone
 
 .include <bsd.port.mk>
