@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/07/10 12:03:19 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2021/07/10 16:56:38 landry Exp $
 
 COMMENT =	language recognition library
 
-V =		4.5.15
+V =		5.0.0-alpha
+PKGNAME =	${MODULE}-${V:S/-alpha//}
 MODULE =	belr
 
 SHARED_LIBS +=	belr 0.0 # 1
