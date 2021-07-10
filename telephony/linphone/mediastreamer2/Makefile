@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2021/07/10 14:05:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/07/10 14:07:51 sthen Exp $
 
 COMMENT =	streaming engine for voice/video telephony applications
 
 V =		4.5.16
 MODULE =	mediastreamer2
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS += mediastreamer 0.0 # 11
 
@@ -33,7 +33,7 @@ LIB_DEPENDS =	telephony/linphone/bctoolbox\
 		security/libsrtp \
 		graphics/glew \
 		graphics/ffmpeg \
-		graphics/zxing \
+		graphics/zxing>=20190320p1 \
 		audio/opus \
 		audio/speex \
 		audio/speexdsp \
