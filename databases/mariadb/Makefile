@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2021/07/09 11:35:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.112 2021/07/10 10:54:02 sthen Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
@@ -9,6 +9,7 @@ DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
 PKGNAME-tests=	mariadb-tests-${VERSION}
+REVISION=	0
 EPOCH=		1
 # execinfo WANTLIB was added post-6.9
 # keep REVISION in -current above -stable until 7.0

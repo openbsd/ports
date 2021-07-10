@@ -1,0 +1,15 @@
+$OpenBSD: patch-storage_connect_ioapi_c,v 1.1 2021/07/10 10:54:02 sthen Exp $
+
+Index: storage/connect/ioapi.c
+--- storage/connect/ioapi.c.orig
++++ storage/connect/ioapi.c
+@@ -14,8 +14,7 @@
+         #define _CRT_SECURE_NO_WARNINGS
+ #endif
+ 
+-#if defined(__APPLE__) || defined(IOAPI_NO_64)
+-// In darwin and perhaps other BSD variants off_t is a 64 bit value, hence no need for specific 64 bit functions
++#if defined(IOAPI_NO_64)
+ #define FOPEN_FUNC(filename, mode) fopen(filename, mode)
+ #define FTELLO_FUNC(stream) ftello(stream)
+ #define FSEEKO_FUNC(stream, offset, origin) fseeko(stream, offset, origin)

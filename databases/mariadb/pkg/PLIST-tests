@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.51 2021/07/09 11:35:29 sthen Exp $
+@comment $OpenBSD: PLIST-tests,v 1.52 2021/07/10 10:54:02 sthen Exp $
 @bin bin/mariadb-client-test
 @bin bin/mariadb-test
 bin/mysql_client_test
@@ -5005,6 +5005,7 @@ share/mysql-test/suite/archive/repair.test
 share/mysql-test/suite/archive/rnd_pos.result
 share/mysql-test/suite/archive/rnd_pos.test
 share/mysql-test/suite/archive/suite.pm
+share/mysql-test/suite/atomic/
 share/mysql-test/suite/atomic/README.txt
 share/mysql-test/suite/atomic/alter_table.opt
 share/mysql-test/suite/atomic/alter_table.result
@@ -15847,6 +15848,8 @@ share/mysql-test/suite/sys_vars/t/wsrep_sst_donor_rejects_queries_basic.test
 share/mysql-test/suite/sys_vars/t/wsrep_sst_method_basic.test
 share/mysql-test/suite/sys_vars/t/wsrep_sst_receive_address_basic.test
 share/mysql-test/suite/sys_vars/t/wsrep_sync_wait_basic.test
+share/mysql-test/suite/sysschema/
+share/mysql-test/suite/sysschema/include/
 share/mysql-test/suite/sysschema/include/ps_setup_actors_cleanup.inc
 share/mysql-test/suite/sysschema/include/ps_setup_consumers_cleanup.inc
 share/mysql-test/suite/sysschema/include/ps_setup_instruments_cleanup.inc
@@ -15854,6 +15857,7 @@ share/mysql-test/suite/sysschema/include/ps_setup_reset_to_default_cleanup.inc
 share/mysql-test/suite/sysschema/include/ps_threads_cleanup.inc
 share/mysql-test/suite/sysschema/include/ps_truncate_all_tables.inc
 share/mysql-test/suite/sysschema/include/sys_config_cleanup.inc
+share/mysql-test/suite/sysschema/r/
 share/mysql-test/suite/sysschema/r/all_sys_objects_exist.result
 share/mysql-test/suite/sysschema/r/fn_extract_schema_from_file_name.result
 share/mysql-test/suite/sysschema/r/fn_extract_table_from_file_name.result
@@ -15946,6 +15950,7 @@ share/mysql-test/suite/sysschema/r/v_waits_global_by_latency.result
 share/mysql-test/suite/sysschema/r/version_functions.result
 share/mysql-test/suite/sysschema/suite.opt
 share/mysql-test/suite/sysschema/suite.pm
+share/mysql-test/suite/sysschema/t/
 share/mysql-test/suite/sysschema/t/all_sys_objects_exist.test
 share/mysql-test/suite/sysschema/t/fn_extract_schema_from_file_name.test
 share/mysql-test/suite/sysschema/t/fn_extract_table_from_file_name.test
