@@ -1,24 +1,19 @@
-# $OpenBSD: Makefile,v 1.30 2021/07/04 15:14:07 jca Exp $
+# $OpenBSD: Makefile,v 1.31 2021/07/10 02:12:55 inoguchi Exp $
 
 COMMENT-main=		display the phase of the Sun on a map of the Earth
 COMMENT-maps=		additional maps of the Earth for sunclock
 
-VERSION=		3.56
+VERSION=		3.57
 DISTNAME=		sunclock-${VERSION}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-maps=		sunclock-maps-${VERSION}
-REVISION-main=		5
-REVISION-maps=		0
 CATEGORIES=		astro
 
-HOMEPAGE=		http://www.arvernes.com/wiki/index.php/Sunclock
-
-MASTER_SITES=		ftp://ftp.ac-grenoble.fr/ge/geosciences/sunclock/
-MASTER_SITES0=		ftp://ftp.ac-grenoble.fr/ge/geosciences/sunclock/data_packages/
-SUPDISTFILES=		big_images_270804.tar.bz2:0 \
-			medium_images_270804.tar.bz2:0 \
-			e43_color1_sh_16k.jpg:0 \
-			huge.jpg:0
+MASTER_SITES=		https://raw.githubusercontent.com/nongiach/Sunclock/f4106eb0a81f7594726d6b2859efd8fc64cc1225/
+SUPDISTFILES=		big_images_270804.tar.bz2 \
+			medium_images_270804.tar.bz2 \
+			e43_color1_sh_16k.jpg \
+			huge.jpg
 EXTRACT_SUFX=		.tar.bz2
 
 CONFIGURE_STYLE=	imake
@@ -37,7 +32,7 @@ PKG_ARCH-maps=	*
 PERMIT_PACKAGE=	Yes
 PERMIT_PACKAGE-maps=	no license for additional maps
 
-WANTLIB-main=		X11 Xext Xpm Xau Xdmcp c m z jpeg png
+WANTLIB-main=		X11 Xpm c m z jpeg png
 DIST_SUBDIR=		sunclock
 
 

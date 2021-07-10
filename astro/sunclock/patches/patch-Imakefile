@@ -1,6 +1,6 @@
-$OpenBSD: patch-Imakefile,v 1.6 2013/06/04 15:41:17 naddy Exp $
---- Imakefile.orig	Sun Jun 18 15:58:50 2006
-+++ Imakefile	Tue Jun  4 10:57:37 2013
+$OpenBSD: patch-Imakefile,v 1.7 2021/07/10 02:12:55 inoguchi Exp $
+--- Imakefile.orig	Tue Jul  6 23:07:06 2021
++++ Imakefile	Tue Jul  6 23:05:29 2021
 @@ -1,5 +1,5 @@
  XCOMM Should install to /usr or /usr/local ??
 -DESTDIR=/usr
@@ -15,9 +15,9 @@ $OpenBSD: patch-Imakefile,v 1.6 2013/06/04 15:41:17 naddy Exp $
 -SHAREDIR=/share/sunclock
 +SHAREDIR=${PREFIX}/share/sunclock
  
- XCOMM Name of DOCDIR's subdirectories of DESTDIR:
- DOCDIR=/X11R6/lib/X11/doc 
-@@ -42,31 +42,24 @@ CCOPTIONS = -Ae $(XPMINC) $(JINC) -DZLIB -DSHAREDIR=\"
+ XCOMM Name of library subdirectory of DESTDIR:
+ EMXBINDIR=/share/sunclock/bin
+@@ -48,13 +48,13 @@ CCOPTIONS = -Ae $(XPMINC) $(JINC) -DZLIB -DSHAREDIR=\"
  #CCOPTIONS=-O -DZLIB -DNEW_CTIME -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"
  
  # Solaris, Linux
@@ -32,17 +32,12 @@ $OpenBSD: patch-Imakefile,v 1.6 2013/06/04 15:41:17 naddy Exp $
 +ZLIBDIR=
 +JINC=-I${LOCALBASE}/include
  
--CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"
-+CCOPTIONS+= $(JINC) $(PINC) $(XPMINC) -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"
+-CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\" -DEMXBINDIR=\"$(DESTDIR)$(EMXBINDIR)\"
++CCOPTIONS=$(JINC) $(PINC) $(XPMINC) -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\" -DEMXBINDIR=\"$(DESTDIR)$(EMXBINDIR)\"
  #endif
  
  SRCS=sunclock.c astro.c widgets.c tildepath.c dirlist.c \
-      readvmf.c readxpm.c readgif.c readjpeg.c readpng.c
- OBJS=sunclock.o astro.o widgets.o tildepath.o dirlist.o \
-      readvmf.o readxpm.o readgif.o readjpeg.o readpng.o
--LOCAL_LIBRARIES=$(XLIB) $(XPMLIBDIR) -lXpm $(ZLIBDIR) -lz \
-+LOCAL_LIBRARIES=$(XPMLIBDIR) -lXpm $(XLIB) $(ZLIBDIR) -lz \
-      $(JLIBDIR) -ljpeg -lpng -lm
+@@ -66,14 +66,6 @@ LOCAL_LIBRARIES=-lX11 $(XPMLIBDIR) -lXpm $(ZLIBDIR) -l
  DEPLIBS=		# I don't know what I'm doing, and I hate imake!
  
  ComplexProgramTarget(sunclock)
@@ -50,9 +45,10 @@ $OpenBSD: patch-Imakefile,v 1.6 2013/06/04 15:41:17 naddy Exp $
 -all::
 -	cd editkit ; xmkmf ; make emx \
 -          DESTDIR=$(DESTDIR) \
--	  BINDIR=$(SHAREDIR)/bin \
--	  MANDIR=$(SHAREDIR)/editkit \
--	  SHAREDIR=$(DESTDIR)$(SHAREDIR)/editkit
+-	  BINDIR=$(EMXBINDIR) \
+-	  MANDIR=$(DESTDIR)$(SHAREDIR)/editkit \
+-	  SHAREDIR=$(DESTDIR)$(SHAREDIR)/editkit \
+-          DOCDIR=$(DOCDIR)
  
  install.man::
  	if [ -r $(DESTDIR)$(MANDIR)/sunclock.1x.gz ] ; \

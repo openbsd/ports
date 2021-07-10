@@ -1,6 +1,6 @@
-$OpenBSD: patch-sunclock_c,v 1.4 2013/12/06 16:19:58 naddy Exp $
---- sunclock.c.orig	Thu Jun 22 01:21:40 2006
-+++ sunclock.c	Thu Dec  5 19:46:00 2013
+$OpenBSD: patch-sunclock_c,v 1.5 2021/07/10 02:12:55 inoguchi Exp $
+--- sunclock.c.orig	Thu Aug  7 21:40:24 2008
++++ sunclock.c	Tue Jul  6 23:13:27 2021
 @@ -113,7 +113,6 @@
  #include <stdlib.h>
  #include <stdio.h>
@@ -17,14 +17,3 @@ $OpenBSD: patch-sunclock_c,v 1.4 2013/12/06 16:19:58 naddy Exp $
  #ifdef NEW_CTIME
  extern char *   timezone();
  #endif
-@@ -3142,9 +3140,9 @@ struct Sundata * Context;
- {
-    int ilon, ilat, width, dw = 0;
-    struct TextLabel * label;
--   if(!Context->wintype) return;
-    char *text, *text0, *ptr;
- 
-+   if(!Context->wintype) return;
-    label = Context->label;
-    while (label) if (label->text && *label->text) {
-       ilon = int_longitude(Context, label->lon);
