@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/07/10 12:03:19 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2021/07/10 16:56:03 landry Exp $
 
 COMMENT =	utilities library used by linphone stack
 
-V =		4.5.15
 MODULE =	bctoolbox
 
 SHARED_LIBS +=	bctoolbox 0.0 # 1

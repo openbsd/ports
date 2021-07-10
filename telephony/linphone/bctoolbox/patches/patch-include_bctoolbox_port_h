@@ -1,9 +1,9 @@
-$OpenBSD: patch-include_bctoolbox_port_h,v 1.1.1.1 2021/07/10 12:03:19 landry Exp $
+$OpenBSD: patch-include_bctoolbox_port_h,v 1.2 2021/07/10 16:56:03 landry Exp $
 
 Index: include/bctoolbox/port.h
 --- include/bctoolbox/port.h.orig
 +++ include/bctoolbox/port.h
-@@ -686,7 +686,7 @@ BCTBX_PUBLIC uint64_t bctbx_str_to_uint64(const uint8_
+@@ -780,7 +780,7 @@ BCTBX_PUBLIC uint64_t bctbx_str_to_uint64(const uint8_
  #define IN6_IS_ADDR_MULTICAST(i)	(((uint8_t *) (i))[0] == 0xff)
  #endif
  
