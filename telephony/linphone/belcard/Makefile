@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/07/10 12:03:19 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2021/07/10 16:54:43 landry Exp $
 
 COMMENT =	library to manipulate VCard standard format
 
-V =		4.5.15
+V =		4.5.22
 MODULE =	belcard
 
 SHARED_LIBS +=  belcard 0.0 # 1
