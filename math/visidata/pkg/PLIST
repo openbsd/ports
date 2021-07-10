@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/04/05 13:27:45 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/07/10 07:58:30 sthen Exp $
 bin/vd
 bin/visidata
 lib/python${MODPY_VERSION}/site-packages/visidata/
@@ -20,6 +20,7 @@ lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}_types.${MODPY
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}aggregators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}basesheet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}canvas.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}canvas_text.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}choose.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}clipboard.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}cliptext.${MODPY_PYC_MAGIC_TAG}pyc
@@ -83,6 +84,7 @@ lib/python${MODPY_VERSION}/site-packages/visidata/_types.py
 lib/python${MODPY_VERSION}/site-packages/visidata/aggregators.py
 lib/python${MODPY_VERSION}/site-packages/visidata/basesheet.py
 lib/python${MODPY_VERSION}/site-packages/visidata/canvas.py
+lib/python${MODPY_VERSION}/site-packages/visidata/canvas_text.py
 lib/python${MODPY_VERSION}/site-packages/visidata/choose.py
 lib/python${MODPY_VERSION}/site-packages/visidata/clipboard.py
 lib/python${MODPY_VERSION}/site-packages/visidata/cliptext.py
