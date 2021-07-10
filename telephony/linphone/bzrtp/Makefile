@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/07/10 12:03:20 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2021/07/10 16:57:01 landry Exp $
 
 COMMENT =	implementation of ZRTP keys exchange protocol
 
-V =		4.5.15
 MODULE =	bzrtp
 
 SHARED_LIBS +=  bzrtp 0.0 # 15
