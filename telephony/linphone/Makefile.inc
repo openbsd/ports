@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2021/07/10 12:03:19 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2021/07/10 16:55:23 landry Exp $
 
+V ?=		5.0.0
 CATEGORIES =	telephony
 MODULES +=	devel/cmake
 MASTER_SITES =	https://gitlab.linphone.org/BC/public/${MODULE}/-/archive/${V}/
