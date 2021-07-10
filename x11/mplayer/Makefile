@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.313 2021/04/29 03:57:55 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.314 2021/07/10 11:49:34 cwen Exp $
 
 COMMENT=	movie player supporting many formats
 
 V=		20210124
 FFMPEG_V=	4.4
 DISTNAME=	mplayer-${V}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	x11 multimedia
 MASTER_SITES=	https://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
@@ -144,10 +144,8 @@ CONFIGURE_ARGS+=--enable-runtime-cpudetection
 LDFLAGS+=	-Wl,-znotext
 .endif
 
-# binutils 2.15 assembler missing opcode support
 .if ${MACHINE_ARCH:Mpowerpc}
-CONFIGURE_ARGS+=--disable-altivec \
-		--enable-runtime-cpudetection
+CONFIGURE_ARGS+=--disable-altivec
 .endif
 
 CONFIGURE_ENV+=	LOCALBASE="${LOCALBASE}" TMPDIR="${WRKBUILD}"
