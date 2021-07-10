@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/07/10 12:03:20 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2021/07/10 16:58:38 landry Exp $
 
 COMMENT =	library implementing the RTP protocol
 
-V =		4.5.15
 MODULE =	ortp
 
 SHARED_LIBS +=  ortp 0.0 # 15
