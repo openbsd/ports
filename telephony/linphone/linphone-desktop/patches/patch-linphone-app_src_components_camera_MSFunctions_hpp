@@ -1,0 +1,16 @@
+$OpenBSD: patch-linphone-app_src_components_camera_MSFunctions_hpp,v 1.1 2021/07/10 17:04:01 landry Exp $
+
+Index: linphone-app/src/components/camera/MSFunctions.hpp
+--- linphone-app/src/components/camera/MSFunctions.hpp.orig
++++ linphone-app/src/components/camera/MSFunctions.hpp
+@@ -162,8 +162,8 @@ class MSFunctions { (public)
+     GL_CALL(glPixelStorei(pname, param));
+   }
+ 
+-  static void qtResolveGlShaderSource (GLuint shader, GLsizei count, const char **string, const GLint *length) {
+-    GL_CALL(glShaderSource(shader, count, string, length));
++  static void qtResolveGlShaderSource (GLuint shader, GLsizei count, const char * const *string, const GLint *length) {
++    GL_CALL(glShaderSource(shader, count, (const char **) string, length));
+   }
+ 
+   static void qtResolveGlTexImage2D (GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const GLvoid *pixels) {

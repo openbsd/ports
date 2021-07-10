@@ -1,0 +1,16 @@
+$OpenBSD: patch-linphone-app_src_app_cli_Cli_cpp,v 1.1 2021/07/10 17:04:01 landry Exp $
+
+https://gitlab.linphone.org/BC/public/linphone-desktop/-/commit/89ea3a8cb8c002258b932d4d77fd426f492382b6#4ffbc771f870da769da19839ba8a3b4ab37d33f1
+
+Index: linphone-app/src/app/cli/Cli.cpp
+--- linphone-app/src/app/cli/Cli.cpp.orig
++++ linphone-app/src/app/cli/Cli.cpp
+@@ -147,7 +147,7 @@ static void cliInitiateConference (QHash<QString, QStr
+ 
+   qInfo() << QStringLiteral("Create conference with id: `%1`.").arg(id);
+   auto confParameters = core->createConferenceParams();
+-  confParameters->enableVideo(false);// Video is not yet fully supported by the application in conference
++  confParameters->setVideoEnabled(false);// Video is not yet fully supported by the application in conference
+   conference = core->createConferenceWithParams(confParameters);
+   conference->setId(Utils::appStringToCoreString(id));
+ 

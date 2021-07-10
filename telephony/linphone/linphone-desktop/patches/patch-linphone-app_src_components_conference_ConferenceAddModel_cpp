@@ -1,0 +1,16 @@
+$OpenBSD: patch-linphone-app_src_components_conference_ConferenceAddModel_cpp,v 1.1 2021/07/10 17:04:01 landry Exp $
+
+https://gitlab.linphone.org/BC/public/linphone-desktop/-/commit/89ea3a8cb8c002258b932d4d77fd426f492382b6#4ffbc771f870da769da19839ba8a3b4ab37d33f1
+
+Index: linphone-app/src/components/conference/ConferenceAddModel.cpp
+--- linphone-app/src/components/conference/ConferenceAddModel.cpp.orig
++++ linphone-app/src/components/conference/ConferenceAddModel.cpp
+@@ -137,7 +137,7 @@ void ConferenceHelperModel::ConferenceAddModel::update
+   shared_ptr<linphone::Conference> conference = mConferenceHelperModel->mCore->getConference();
+   if(!conference){
+     auto parameters = mConferenceHelperModel->mCore->createConferenceParams();
+-    parameters->enableVideo(false);// Video is not yet fully supported by the application in conference
++    parameters->setVideoEnabled(false);// Video is not yet fully supported by the application in conference
+     conference = mConferenceHelperModel->mCore->createConferenceWithParams(parameters);
+   }
+   auto currentCalls = CoreManager::getInstance()->getCore()->getCalls();

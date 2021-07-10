@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/07/10 12:03:20 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2021/07/10 17:04:01 landry Exp $
 
 COMMENT =	graphical audio and video SIP phone
 
 V =		4.2.5
+REVISION =	0
 MODULE =	linphone-desktop
 PKGNAME =	linphone-${V}
 
