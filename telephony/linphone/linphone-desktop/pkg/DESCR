@@ -1,0 +1,9 @@
+Linphone is an audio and video internet phone using the SIP protocol.
+
+The main features of linphone are:
+
+- a nice graphical interface;
+- it includes a large variety of codecs with different quality / bandwidths;
+- it uses the well-known and standardised SIP protocol.
+
+This package includes the Qt/QML based graphical desktop client.

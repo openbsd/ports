@@ -1,0 +1,14 @@
+$OpenBSD: patch-cmake_FindV4L_cmake,v 1.1.1.1 2021/07/10 12:03:20 landry Exp $
+
+Index: cmake/FindV4L.cmake
+--- cmake/FindV4L.cmake.orig
++++ cmake/FindV4L.cmake
+@@ -39,7 +39,7 @@ if(V4L1_INCLUDE_DIRS)
+ 	set(HAVE_LINUX_VIDEODEV_H 1)
+ endif()
+ find_path(V4L2_INCLUDE_DIRS
+-	NAMES linux/videodev2.h
++	NAMES sys/videoio.h
+ 	HINTS _V4L_ROOT_PATHS
+ 	PATH_SUFFIXES include
+ )

@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/07/10 12:03:19 landry Exp $
+include/bctoolbox/
+include/bctoolbox/charconv.h
+include/bctoolbox/compiler.h
+include/bctoolbox/crypto.h
+include/bctoolbox/crypto.hh
+include/bctoolbox/defs.h
+include/bctoolbox/exception.hh
+include/bctoolbox/list.h
+include/bctoolbox/logging.h
+include/bctoolbox/map.h
+include/bctoolbox/param_string.h
+include/bctoolbox/parser.h
+include/bctoolbox/port.h
+include/bctoolbox/regex.h
+include/bctoolbox/vconnect.h
+include/bctoolbox/vfs.h
+include/bctoolbox/vfs_encrypted.hh
+include/bctoolbox/vfs_standard.h
+@lib lib/libbctoolbox.so.${LIBbctoolbox_VERSION}
+lib/pkgconfig/bctoolbox.pc
+share/bctoolbox/
+share/bctoolbox/cmake/
+share/bctoolbox/cmake/BcGitVersion.cmake
+share/bctoolbox/cmake/ConfigureSpecfile.cmake
+share/bctoolbox/cmake/MakeArchive.cmake
+share/bctoolbox/cmake/bctoolboxCMakeUtils.cmake
+share/bctoolbox/cmake/bctoolboxConfig.cmake
+share/bctoolbox/cmake/bctoolboxConfigVersion.cmake
+share/bctoolbox/cmake/bctoolboxTargets${MODCMAKE_BUILD_SUFFIX}
+share/bctoolbox/cmake/bctoolboxTargets.cmake
+share/bctoolbox/cmake/gitversion.h.in

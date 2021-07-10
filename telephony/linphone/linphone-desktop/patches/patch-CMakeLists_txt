@@ -1,0 +1,89 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2021/07/10 12:03:20 landry Exp $
+
+https://sources.debian.org/patches/linphone-desktop/4.2.5-3/0001-do-not-build-linphone-sdk.patch/
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -118,7 +118,6 @@ list(APPEND APP_OPTIONS "-DENABLE_RELATIVE_PREFIX=${EN
+ 
+ list(APPEND APP_OPTIONS "-DLINPHONE_OUTPUT_DIR=${LINPHONE_OUTPUT_DIR}")
+ 
+-include(ExternalProject)
+ set(PROJECT_BUILD_COMMAND "")
+ if(CMAKE_BUILD_PARALLEL_LEVEL)
+ 	list(APPEND APP_OPTIONS "-DCMAKE_BUILD_PARALLEL_LEVEL=${CMAKE_BUILD_PARALLEL_LEVEL}")
+@@ -136,29 +135,9 @@ if(UNIX AND NOT APPLE)
+ 	set(CMAKE_INSTALL_RPATH "$ORIGIN:$ORIGIN/lib64:$ORIGIN/../lib64:$ORIGIN/lib:$ORIGIN/../lib:${LINPHONE_OUTPUT_DIR}/${CMAKE_INSTALL_LIBDIR}")
+ 	list(APPEND APP_OPTIONS "-DCMAKE_INSTALL_RPATH=${CMAKE_INSTALL_RPATH}")
+ endif()
+-ExternalProject_Add(sdk PREFIX "${CMAKE_BINARY_DIR}/sdk"
+-    SOURCE_DIR "${CMAKE_SOURCE_DIR}/linphone-sdk"
+-    INSTALL_DIR "${LINPHONE_OUTPUT_DIR}"
+-    STAMP_DIR "${SDK_BUILD_DIR}/stamp"
+-    BINARY_DIR "${SDK_BUILD_DIR}"
+-    STEP_TARGETS build
+-    BUILD_COMMAND ${CMAKE_COMMAND} --build <BINARY_DIR> --config $<CONFIG> ${PROJECT_BUILD_COMMAND}
+-    INSTALL_COMMAND ${CMAKE_COMMAND} -E echo "Install step is already done at build time."
+-    LIST_SEPARATOR | # Use the alternate list separator
+-    CMAKE_ARGS ${APP_OPTIONS} ${USER_ARGS} -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR> -DCMAKE_PREFIX_PATH=${PREFIX_PATH}
+-    #BUILD_ALWAYS NO #${DO_BUILD}
+-)
+-ExternalProject_Add_Step(sdk force_build
+-	COMMENT "Forcing build for 'desktop'"
+-	DEPENDEES configure
+-	DEPENDERS build
+-	ALWAYS 1
+-)
+ include(FindPkgConfig)
+ 
+-set(APP_DEPENDS sdk)
+ 
+-
+ find_package(Qt5 5.12 COMPONENTS Core REQUIRED)
+ 
+ if ( NOT Qt5_FOUND )
+@@ -172,40 +151,6 @@ find_package(belcard CONFIG QUIET)
+ find_package(Mediastreamer2 CONFIG QUIET)
+ find_package(ortp CONFIG QUIET)
+ 
+-
+-if(NOT (LinphoneCxx_FOUND) OR NOT (Linphone_FOUND) OR NOT (bctoolbox_FOUND) OR NOT (belcard_FOUND) OR NOT (Mediastreamer2_FOUND) OR NOT (ortp_FOUND) OR FORCE_APP_EXTERNAL_PROJECTS)
+-	message("Projects are set as External projects. You can start building them by using for example : cmake --build . --target install")
+-	ExternalProject_Add(linphone-qt PREFIX "${CMAKE_BINARY_DIR}/linphone-app"
+-		SOURCE_DIR "${CMAKE_SOURCE_DIR}/linphone-app"
+-		INSTALL_DIR "${APPLICATION_OUTPUT_DIR}"
+-		BINARY_DIR "${CMAKE_BINARY_DIR}/linphone-app"
+-		DEPENDS ${APP_DEPENDS}
+-		BUILD_COMMAND ${CMAKE_COMMAND} --build <BINARY_DIR> --config $<CONFIG> ${PROJECT_BUILD_COMMAND}
+-		INSTALL_COMMAND ${CMAKE_COMMAND} -E echo "Install step will not be done by external project"
+-		LIST_SEPARATOR | # Use the alternate list separator
+-		CMAKE_ARGS ${APP_OPTIONS} ${USER_ARGS} -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR> -DCMAKE_PREFIX_PATH=${PREFIX_PATH}
+-	# ${APP_OPTIONS}
+-		BUILD_ALWAYS ON
+-	)
+-	install(CODE "message(STATUS Running install)")
+-	set(AUTO_REGENERATION auto_regeneration)
+-	add_custom_target(${AUTO_REGENERATION} ALL
+-		COMMAND ${CMAKE_COMMAND} ${CMAKE_CURRENT_SOURCE_DIR}
+-		DEPENDS linphone-qt)
+-else()
+-	message("Adding Linphone Desktop in an IDE-friendly state")
+-	set(CMAKE_INSTALL_PREFIX "${APPLICATION_OUTPUT_DIR}")
+-	add_subdirectory(${CMAKE_SOURCE_DIR}/linphone-app)
+-	add_dependencies(app-library ${APP_DEPENDS})
+-endif()
+-ExternalProject_Add(linphone-qt-only PREFIX "${CMAKE_BINARY_DIR}/linphone-app"
+-    SOURCE_DIR "${CMAKE_SOURCE_DIR}/linphone-app"
+-    INSTALL_DIR "${APPLICATION_OUTPUT_DIR}"
+-    BINARY_DIR "${CMAKE_BINARY_DIR}/linphone-app"
+-    BUILD_COMMAND ${CMAKE_COMMAND} --build <BINARY_DIR> --config $<CONFIG> ${PROJECT_BUILD_COMMAND}
+-#    INSTALL_COMMAND ${CMAKE_COMMAND} -E echo "Install step is already done at build time."
+-    LIST_SEPARATOR | # Use the alternate list separator
+-    CMAKE_ARGS ${APP_OPTIONS} ${USER_ARGS} -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR> -DCMAKE_PREFIX_PATH=${PREFIX_PATH}
+-    EXCLUDE_FROM_ALL ON
+-    BUILD_ALWAYS ON
+-)
++message("Adding Linphone Desktop in an IDE-friendly state")
++set(CMAKE_INSTALL_PREFIX "${APPLICATION_OUTPUT_DIR}")
++add_subdirectory(${CMAKE_SOURCE_DIR}/linphone-app)

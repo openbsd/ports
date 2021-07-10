@@ -1,0 +1,11 @@
+Belle-sip is a modern library implementing SIP (RFC3261) transport, transaction
+and dialog layers. It is written in C, with an object oriented API. It also
+comprises a simple HTTP/HTTPS client implementation.
+
+* RFC3261 compliant implementation of SIP parser, writer, transactions and
+  dialog layers.
+* SIP transaction state machines with lastest updates (RFC6026).
+* fully asynchronous transport layer (UDP, TCP, TLS), comprising DNS resolver.
+* full dual-stack IPv6 support (no AI_V4MAPPED on OpenBSD).
+* automatic management of request refreshes with network disconnection
+  resiliency thanks to the "refresher" object.

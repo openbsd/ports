@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2021/07/10 12:03:20 landry Exp $
+
+we dont have soci so dont try linking against it
+
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -482,8 +482,6 @@ endif()
+ 
+ set(LINPHONE_CXX_OBJECTS_INCLUDE_DIRS
+ 	${LIBXSD_INCLUDE_DIRS}
+-	${SOCI_INCLUDE_DIRS}
+-	${SOCI_MYSQL_INCLUDES}
+ )
+ 
+ set(LINPHONE_PRIVATE_HEADER_FILES)

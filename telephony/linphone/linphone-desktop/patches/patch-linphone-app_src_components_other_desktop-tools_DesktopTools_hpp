@@ -1,0 +1,14 @@
+$OpenBSD: patch-linphone-app_src_components_other_desktop-tools_DesktopTools_hpp,v 1.1.1.1 2021/07/10 12:03:20 landry Exp $
+
+Index: linphone-app/src/components/other/desktop-tools/DesktopTools.hpp
+--- linphone-app/src/components/other/desktop-tools/DesktopTools.hpp.orig
++++ linphone-app/src/components/other/desktop-tools/DesktopTools.hpp
+@@ -23,7 +23,7 @@
+ 
+ #include <QtGlobal>
+ 
+-#ifdef Q_OS_LINUX
++#if defined(Q_OS_LINUX) || defined(Q_OS_OPENBSD)
+   #include "DesktopToolsLinux.hpp"
+ #elif defined(Q_OS_WIN)
+   #include "DesktopToolsWindows.hpp"

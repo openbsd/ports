@@ -1,0 +1,13 @@
+$OpenBSD: patch-mediastreamer-config_h_cmake,v 1.1.1.1 2021/07/10 12:03:20 landry Exp $
+
+Index: mediastreamer-config.h.cmake
+--- mediastreamer-config.h.cmake.orig
++++ mediastreamer-config.h.cmake
+@@ -41,6 +41,7 @@
+ 
+ #cmakedefine __ALSA_ENABLED__
+ #cmakedefine __ARTS_ENABLED__
++#cmakedefine __SNDIO_ENABLED__
+ #cmakedefine __MACSND_ENABLED__
+ #cmakedefine __MAC_AQ_ENABLED__
+ #cmakedefine __PORTAUDIO_ENABLED__

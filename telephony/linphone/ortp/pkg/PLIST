@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/07/10 12:03:20 landry Exp $
+@pkgpath net/ortp
+include/ortp/
+include/ortp/b64.h
+include/ortp/event.h
+include/ortp/logging.h
+include/ortp/nack.h
+include/ortp/ortp.h
+include/ortp/payloadtype.h
+include/ortp/port.h
+include/ortp/rtcp.h
+include/ortp/rtp.h
+include/ortp/rtpprofile.h
+include/ortp/rtpsession.h
+include/ortp/rtpsignaltable.h
+include/ortp/sessionset.h
+include/ortp/str_utils.h
+include/ortp/telephonyevents.h
+include/ortp/utils.h
+lib/cmake/
+lib/cmake/ortp/
+lib/cmake/ortp/ortpConfig.cmake
+lib/cmake/ortp/ortpConfigVersion.cmake
+lib/cmake/ortp/ortpTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/ortp/ortpTargets.cmake
+@lib lib/libortp.so.${LIBortp_VERSION}
+lib/pkgconfig/ortp.pc

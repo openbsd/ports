@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/07/10 12:03:20 landry Exp $
+@bin bin/linphone
+share/applications/linphone.desktop
+share/icons/hicolor/128x128/apps/linphone.png
+share/icons/hicolor/16x16/apps/linphone.png
+share/icons/hicolor/22x22/apps/linphone.png
+share/icons/hicolor/24x24/apps/linphone.png
+share/icons/hicolor/256x256/apps/linphone.png
+share/icons/hicolor/32x32/apps/linphone.png
+share/icons/hicolor/64x64/apps/linphone.png
+share/icons/hicolor/scalable/apps/linphone.svg
+share/linphone/
+share/linphone/assistant/
+share/linphone/assistant/create-app-sip-account.rc
+share/linphone/assistant/use-app-sip-account.rc
+share/linphone/assistant/use-other-sip-account.rc
+share/linphone/linphonerc-factory
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database

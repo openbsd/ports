@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2021/07/10 12:03:20 landry Exp $
+
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -180,6 +180,9 @@ endif()
+ if(ENABLE_PULSEAUDIO)
+ 	list(APPEND VOIP_SOURCE_FILES_C audiofilters/pulseaudio.c)
+ endif()
++if(ENABLE_SNDIO)
++	list(APPEND VOIP_SOURCE_FILES_C audiofilters/sndio.c)
++endif()
+ if(ENABLE_QSA)
+ 	list(APPEND VOIP_SOURCE_FILES_C audiofilters/qsa.c)
+ endif()

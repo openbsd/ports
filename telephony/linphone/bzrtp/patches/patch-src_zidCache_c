@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_zidCache_c,v 1.1.1.1 2021/07/10 12:03:20 landry Exp $
+
+Index: src/zidCache.c
+--- src/zidCache.c.orig
++++ src/zidCache.c
+@@ -33,7 +33,7 @@
+ #ifdef _WIN32
+ #include <malloc.h>
+ #else
+-#include <alloca.h>
++#include <stdlib.h>
+ #endif
+ 
+ /* define a version number for the DB schema as an interger MMmmpp */

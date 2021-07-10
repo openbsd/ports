@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_core_paths_paths_cpp,v 1.1.1.1 2021/07/10 12:03:20 landry Exp $
+
+Index: src/core/paths/paths.cpp
+--- src/core/paths/paths.cpp.orig
++++ src/core/paths/paths.cpp
+@@ -26,7 +26,7 @@
+ 	#include "paths-android.h"
+ #elif defined(_WIN32)
+ 	#include "paths-windows.h"
+-#elif defined(__linux__)
++#elif defined(__linux__) || defined(__OpenBSD__)
+ 	#include "paths-linux.h"
+ #else
+ 	#error "Unsupported system."

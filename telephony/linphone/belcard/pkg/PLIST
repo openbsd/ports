@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/07/10 12:03:19 landry Exp $
+@bin bin/belcard-folder
+@bin bin/belcard-parser
+@bin bin/belcard-unfolder
+include/belcard/
+include/belcard/belcard.hpp
+include/belcard/belcard_addressing.hpp
+include/belcard/belcard_calendar.hpp
+include/belcard/belcard_communication.hpp
+include/belcard/belcard_explanatory.hpp
+include/belcard/belcard_general.hpp
+include/belcard/belcard_generic.hpp
+include/belcard/belcard_geographical.hpp
+include/belcard/belcard_identification.hpp
+include/belcard/belcard_organizational.hpp
+include/belcard/belcard_params.hpp
+include/belcard/belcard_parser.hpp
+include/belcard/belcard_property.hpp
+include/belcard/belcard_rfc6474.hpp
+include/belcard/belcard_security.hpp
+include/belcard/belcard_utils.hpp
+include/belcard/vcard_grammar.hpp
+@lib lib/libbelcard.so.${LIBbelcard_VERSION}
+share/belcard/
+share/belcard/cmake/
+share/belcard/cmake/belcardConfig.cmake
+share/belcard/cmake/belcardTargets${MODCMAKE_BUILD_SUFFIX}
+share/belcard/cmake/belcardTargets.cmake
+share/belr/
+share/belr/grammars/
+share/belr/grammars/vcard_grammar

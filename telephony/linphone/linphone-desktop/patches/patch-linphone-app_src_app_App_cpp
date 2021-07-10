@@ -1,0 +1,32 @@
+$OpenBSD: patch-linphone-app_src_app_App_cpp,v 1.1.1.1 2021/07/10 12:03:20 landry Exp $
+
+Index: linphone-app/src/app/App.cpp
+--- linphone-app/src/app/App.cpp.orig
++++ linphone-app/src/app/App.cpp
+@@ -73,7 +73,7 @@ namespace {
+ 
+   constexpr char AssistantViewName[] = "Assistant";
+ 
+-  #ifdef Q_OS_LINUX
++  #if defined(Q_OS_LINUX) || defined(Q_OS_OPENBSD)
+     const QString AutoStartDirectory(QDir::homePath().append(QStringLiteral("/.config/autostart/")));
+   #elif defined(Q_OS_MACOS)
+     const QString OsascriptExecutable(QStringLiteral("osascript"));
+@@ -86,7 +86,7 @@ namespace {
+ 
+ // -----------------------------------------------------------------------------
+ 
+-#ifdef Q_OS_LINUX
++#if defined(Q_OS_LINUX) || defined(Q_OS_OPENBSD)
+   static inline bool autoStartEnabled () {
+     return QDir(AutoStartDirectory).exists() && QFile(AutoStartDirectory + EXECUTABLE_NAME ".desktop").exists();
+   }
+@@ -679,7 +679,7 @@ QString App::getLocale () const {
+ 
+ // -----------------------------------------------------------------------------
+ 
+-#ifdef Q_OS_LINUX
++#if defined(Q_OS_LINUX) || defined(Q_OS_OPENBSD)
+ 
+ void App::setAutoStart (bool enabled) {
+   if (enabled == mAutoStart)

@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_dns_dns_c,v 1.1.1.1 2021/07/10 12:03:20 landry Exp $
+
+Index: src/dns/dns.c
+--- src/dns/dns.c.orig
++++ src/dns/dns.c
+@@ -4550,10 +4550,12 @@ struct dns_resolv_conf *dns_resconf_local(int *error_)
+ 			goto error;
+ 	}
+ 
++#ifndef __OpenBSD__
+ 	if ((error = dns_nssconf_loadpath(resconf, "/etc/nsswitch.conf"))) {
+ 		if (error != ENOENT)
+ 			goto error;
+ 	}
++#endif
+ 
+ 	return resconf;
+ error:
+@@ -9175,6 +9177,7 @@ static struct dns_resolv_conf *resconf(void) {
+ 			panic("%s: %s", path, dns_strerror(error));
+ 	}
+ 
++#ifndef __OpenBSD__
+ 	for (i = 0; i < MAIN.nssconf.count; i++) {
+ 		path	= MAIN.nssconf.path[i];
+ 
+@@ -9195,7 +9198,7 @@ static struct dns_resolv_conf *resconf(void) {
+ 		else if (error != ENOENT)
+ 			panic("%s: %s", path, dns_strerror(error));
+ 	}
+-
++#endif
+ 	return resconf;
+ } /* resconf() */
+ 

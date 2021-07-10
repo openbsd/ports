@@ -1,0 +1,14 @@
+$OpenBSD: patch-include_bctoolbox_port_h,v 1.1.1.1 2021/07/10 12:03:19 landry Exp $
+
+Index: include/bctoolbox/port.h
+--- include/bctoolbox/port.h.orig
++++ include/bctoolbox/port.h
+@@ -686,7 +686,7 @@ BCTBX_PUBLIC uint64_t bctbx_str_to_uint64(const uint8_
+ #define IN6_IS_ADDR_MULTICAST(i)	(((uint8_t *) (i))[0] == 0xff)
+ #endif
+ 
+-#if defined(_WIN32) || defined(__QNX__)
++#if defined(_WIN32) || defined(__QNX__) || defined (__OpenBSD__)
+ /* Mingw32 does not define AI_V4MAPPED, however it is supported starting from Windows Vista. QNX also does not define AI_V4MAPPED. */
+ #	ifndef AI_V4MAPPED
+ #	define AI_V4MAPPED 0x00000800

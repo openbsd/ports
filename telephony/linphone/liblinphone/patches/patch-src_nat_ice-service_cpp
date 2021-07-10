@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_nat_ice-service_cpp,v 1.1.1.1 2021/07/10 12:03:20 landry Exp $
+
+Index: src/nat/ice-service.cpp
+--- src/nat/ice-service.cpp.orig
++++ src/nat/ice-service.cpp
+@@ -595,8 +595,10 @@ const struct addrinfo *IceService::getIcePreferredStun
+ 		while (it) {
+ 			if (it->ai_family == AF_INET)
+ 				break;
++#ifndef __OpenBSD__
+ 			if ((it->ai_family == AF_INET6) && (it->ai_flags & AI_V4MAPPED))
+ 				break;
++#endif
+ 			it = it->ai_next;
+ 		}
+ 		preferredAi = it;

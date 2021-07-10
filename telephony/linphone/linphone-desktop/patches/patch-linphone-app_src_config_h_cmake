@@ -1,0 +1,10 @@
+$OpenBSD: patch-linphone-app_src_config_h_cmake,v 1.1.1.1 2021/07/10 12:03:20 landry Exp $
+
+Index: linphone-app/src/config.h.cmake
+--- linphone-app/src/config.h.cmake.orig
++++ linphone-app/src/config.h.cmake
+@@ -28,3 +28,4 @@
+ #cmakedefine ENABLE_UPDATE_CHECK 1
+ #cmakedefine EXECUTABLE_NAME "${EXECUTABLE_NAME}"
+ #cmakedefine MSPLUGINS_DIR "${MSPLUGINS_DIR}"
++#define LINPHONE_QT_GIT_VERSION "${PROJECT_VERSION}"

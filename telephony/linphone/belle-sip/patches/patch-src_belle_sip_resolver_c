@@ -1,0 +1,66 @@
+$OpenBSD: patch-src_belle_sip_resolver_c,v 1.1.1.1 2021/07/10 12:03:20 landry Exp $
+
+Index: src/belle_sip_resolver.c
+--- src/belle_sip_resolver.c.orig
++++ src/belle_sip_resolver.c
+@@ -415,12 +415,14 @@ static struct dns_resolv_conf *resconf(belle_sip_simpl
+ 			return NULL;
+ 		}
+ 
++#ifndef __OpenBSD__
+ 		path = "/etc/nsswitch.conf";
+ 		error = dns_nssconf_loadpath(ctx->resconf, path);
+ 		if (error) {
+ 			belle_sip_message("%s dns_nssconf_loadpath error [%s]: %s", __FUNCTION__, path, dns_strerror(error));
+ 		}
+ #endif
++#endif
+ 	}else{
+ 		error = dns_resconf_loadpath(ctx->resconf, path);
+ 		if (error) {
+@@ -676,7 +678,9 @@ static void append_dns_result(belle_sip_simple_resolve
+ 		belle_sip_error("append_dns_result(): getnameinfo() failed: %s",gai_strerror(gai_err));
+ 		return;
+ 	}
++#ifndef __OpenBSD__
+ 	if (ctx->flags & AI_V4MAPPED) family=AF_INET6;
++#endif
+ 	*ai_list = ai_list_append(*ai_list, bctbx_ip_address_to_addrinfo(family, SOCK_STREAM, host, ctx->port));
+ 	belle_sip_message("%s resolved to %s", ctx->name, host);
+ }
+@@ -1748,7 +1752,7 @@ belle_sip_resolver_context_t * belle_sip_stack_resolve
+ 		ctx->name = belle_sip_strdup(name);
+ 		ctx->port=port;
+ 		belle_sip_object_set_name((belle_sip_object_t*)ctx, ctx->name);
+-		if (family == 0) family = AF_UNSPEC;
++		if (family == 0) family = AF_INET;
+ 		ctx->family = family;
+ 		/* Take a ref for the entire duration of the DNS procedure, it will be released when it is finished */
+ 		belle_sip_object_ref(ctx);
+@@ -1786,7 +1790,7 @@ static belle_sip_resolver_context_t * belle_sip_stack_
+ 	belle_sip_object_set_name((belle_sip_object_t*)ctx, ctx->name);
+ 	/* Take a ref for the entire duration of the DNS procedure, it will be released when it is finished */
+ 	belle_sip_object_ref(ctx);
+-	if (family == 0) family = AF_UNSPEC;
++	if (family == 0) family = AF_INET;
+ 	ctx->family = family;
+ #ifdef HAVE_DNS_SERVICE
+ 	ctx->dns_service_queue =  stack->dns_service_queue;
+@@ -1892,7 +1896,7 @@ belle_sip_resolver_context_t * belle_sip_stack_resolve
+ 	if (res == NULL) {
+ 		switch(family){
+ 			case AF_UNSPEC:
+-				family=AF_INET6;
++				family=AF_INET;
+ 				BCTBX_NO_BREAK; /*intentionally no break*/
+ 			case AF_INET6:
+ 				return belle_sip_stack_resolve_dual(stack,name,port,cb,data);
+@@ -2009,7 +2013,7 @@ int belle_sip_get_src_addr_for(const struct sockaddr *
+ 	if (af_type==AF_INET6 && (IN6_IS_ADDR_V4MAPPED(&((struct sockaddr_in6*)dest)->sin6_addr))){
+ 		/*this is actually required only for windows, who is unable to provide an ipv4 mapped local address if the remote is ipv4 mapped,
+ 		and unable to provide a correct local address if the remote address is true ipv6 address when in dual stack mode*/
+-		belle_sip_socket_enable_dual_stack(sock);
++		//belle_sip_socket_enable_dual_stack(sock);
+ 	}
+ 	if (bctbx_connect(sock,dest,destlen)==-1){
+ 	//if (connect(sock,dest,destlen)==-1){

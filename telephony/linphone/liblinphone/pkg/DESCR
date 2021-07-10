@@ -1,0 +1,5 @@
+Liblinphone is a high-level SIP library integrating all calling and instant
+messaging features into an unified easy-to-use API. It is the cross-platform
+VoIP library on which the Linphone application is based on, and that anyone
+can use to add audio and video calls or instant messaging capabilities to an
+application.

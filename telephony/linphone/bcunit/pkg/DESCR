@@ -1,0 +1,5 @@
+BCUnit is a Unit testing framework for C. The basic framework is
+platform/version independent and should be portable to all platforms. BCUnit
+provides various interfaces to the framework, some of which are platform
+dependent (e.g. curses on *nix). Building other interfaces should be
+straightforward with the facilities provided in the framework.

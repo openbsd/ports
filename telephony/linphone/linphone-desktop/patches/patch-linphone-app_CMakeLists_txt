@@ -1,0 +1,26 @@
+$OpenBSD: patch-linphone-app_CMakeLists_txt,v 1.1.1.1 2021/07/10 12:03:20 landry Exp $
+
+https://sources.debian.org/patches/linphone-desktop/4.2.5-3/0002-remove-bc_compute_full_version-usage.patch/
+
+Index: linphone-app/CMakeLists.txt
+--- linphone-app/CMakeLists.txt.orig
++++ linphone-app/CMakeLists.txt
+@@ -21,17 +21,8 @@
+ ################################################################################
+ cmake_minimum_required(VERSION 3.1)
+ 
++include(linphoneqt_version.cmake)
+ find_package(bctoolbox CONFIG)
+-set(FULL_VERSION )
+-bc_compute_full_version(FULL_VERSION)
+-set(version_major )
+-set(version_minor )
+-set(version_patch )
+-set(identifiers )
+-set(metadata )
+-bc_parse_full_version("${FULL_VERSION}" version_major version_minor version_patch identifiers metadata)
+-
+-project(linphoneqt VERSION "${version_major}.${version_minor}.${version_patch}")
+ 
+ if(ENABLE_BUILD_VERBOSE)
+ 	#message("CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH}")

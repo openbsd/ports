@@ -1,0 +1,30 @@
+$OpenBSD: patch-tester_port_c,v 1.1.1.1 2021/07/10 12:03:19 landry Exp $
+
+Index: tester/port.c
+--- tester/port.c.orig
++++ tester/port.c
+@@ -135,21 +135,15 @@ static void time_functions(void) {
+ 
+ static void bctbx_addrinfo_sort_test(void) {
+ 	struct addrinfo * res1 = bctbx_name_to_addrinfo(AF_INET6, SOCK_DGRAM, "sip3.linphone.org", 27256);
+-	struct addrinfo * res2 = bctbx_ip_address_to_addrinfo(AF_INET6, SOCK_DGRAM, "91.121.209.194", 27256);
++	//struct addrinfo * res2 = bctbx_ip_address_to_addrinfo(AF_INET6, SOCK_DGRAM, "2001:41d0:8:6e48::", 27256);
+ 	struct addrinfo * res3 = bctbx_ip_address_to_addrinfo(AF_INET, SOCK_DGRAM, "91.121.209.194", 27256);
+ 	bool_t searching_for_v6=TRUE;
+ 	struct addrinfo * ai =  NULL;
+ 	char printable_ip[256];
+ 	struct addrinfo * res = res3;
+ 	
+-	for ( ai=res2 ; ai !=NULL; ai=ai->ai_next) {
+-		if (IN6_IS_ADDR_V4MAPPED(&((struct sockaddr_in6*)(ai->ai_addr))->sin6_addr)) {
+-			res->ai_next=ai;
+-			break;
+-		}
+-	}
+-	res->ai_next->ai_next=res1;
+-	res->ai_next->ai_next->ai_next=NULL;
++	res->ai_next=res1;
++	res->ai_next->ai_next=NULL;
+ 	
+ 	//So now, res as ipv4 first, then v4 mapped, then v6
+ 	for ( ai=res ; ai !=NULL; ai=ai->ai_next) {

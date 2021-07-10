@@ -1,0 +1,51 @@
+$OpenBSD: patch-src_utils_port_c,v 1.1.1.1 2021/07/10 12:03:19 landry Exp $
+
+no AI_V4MAPPED or AI_ALL
+
+one chunk from https://svnweb.freebsd.org/ports/head/net/bctoolbox/files/patch-src-utils-port.c
+
+Index: src/utils/port.c
+--- src/utils/port.c.orig
++++ src/utils/port.c
+@@ -1090,7 +1090,9 @@ static struct addrinfo *convert_to_v4mapped(const stru
+ 		struct sockaddr_in6 *sin6;
+ 		struct sockaddr_in *sin;
+ 		v4m=_bctbx_alloc_addrinfo(AF_INET6, it->ai_socktype, it->ai_protocol);
++#ifndef __OpenBSD__
+ 		v4m->ai_flags|=AI_V4MAPPED;
++#endif
+ 		sin6=(struct sockaddr_in6*)v4m->ai_addr;
+ 		sin=(struct sockaddr_in*)it->ai_addr;
+ 		sin6->sin6_family=AF_INET6;
+@@ -1108,7 +1110,7 @@ static struct addrinfo *convert_to_v4mapped(const stru
+ 	return res;
+ }
+ 
+-#if defined(__ANDROID__) || defined(_WIN32)
++#if defined(__ANDROID__) || defined(_WIN32) || defined(__OpenBSD__)
+ 
+ /*
+  * SHAME !!! bionic's getaddrinfo does not implement the AI_V4MAPPED flag !
+@@ -1306,11 +1308,12 @@ static struct addrinfo * _bctbx_name_to_addrinfo(int f
+ 	hints.ai_family=family;
+ 	if (numeric_only) hints.ai_flags=AI_NUMERICSERV|AI_NUMERICHOST;
+ 	hints.ai_socktype=socktype;
+-	
++#ifndef __OpenBSD__
+ 	if (family == AF_INET6) {
+ 		hints.ai_flags |= AI_V4MAPPED;
+ 		hints.ai_flags |= AI_ALL;
+ 	}
++#endif
+ 	err=bctbx_getaddrinfo(ipaddress,serv,&hints,&res);
+ 
+ 	if (err!=0){
+@@ -1421,7 +1424,7 @@ void bctbx_sockaddr_remove_nat64_mapping(const struct 
+ 		if (htonl(0x0064ff9b) ==
+ #ifdef _MSC_VER
+ 			((in6->sin6_addr.u.Word[0] << 16) & in6->sin6_addr.u.Word[1])
+-#elif __APPLE__
++#elif __APPLE__ || __OpenBSD__
+ 			in6->sin6_addr.__u6_addr.__u6_addr32[0]
+ #else
+ 			in6->sin6_addr.s6_addr32[0]

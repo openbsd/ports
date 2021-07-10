@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_base_msfactory_c,v 1.1.1.1 2021/07/10 12:03:20 landry Exp $
+
+Index: src/base/msfactory.c
+--- src/base/msfactory.c.orig
++++ src/base/msfactory.c
+@@ -187,7 +187,7 @@ void ms_factory_init(MSFactory *obj){
+ 	GetNativeSystemInfo( &sysinfo );
+ 
+ 	num_cpu = sysinfo.dwNumberOfProcessors;
+-#elif __APPLE__ || __linux__
++#elif __APPLE__ || __linux__ || __OpenBSD__
+ 	num_cpu = sysconf( _SC_NPROCESSORS_CONF); /*check the number of processors configured, not just the one that are currently active.*/
+ #elif __QNX__
+ 	num_cpu = _syspage_ptr->num_cpu;

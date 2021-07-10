@@ -1,0 +1,19 @@
+$OpenBSD: patch-linphone-app_build_CMakeLists_txt,v 1.1.1.1 2021/07/10 12:03:20 landry Exp $
+
+https://sources.debian.org/patches/linphone-desktop/4.2.5-3/0002-remove-bc_compute_full_version-usage.patch/
+
+Index: linphone-app/build/CMakeLists.txt
+--- linphone-app/build/CMakeLists.txt.orig
++++ linphone-app/build/CMakeLists.txt
+@@ -46,11 +46,6 @@ set(CPACK_SOURCE_IGNORE_FILES
+   "libmng.spec"
+ )
+ 
+-bc_compute_full_version(PROJECT_VERSION_BUILD)
+-if(PROJECT_VERSION_BUILD)
+-  set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${PROJECT_VERSION_BUILD}")
+-endif()
+-
+ message("-- Package file name is ${CPACK_PACKAGE_FILE_NAME}")
+ 
+ set(CPACK_SOURCE_PACKAGE_FILE_NAME ${CPACK_PACKAGE_FILE_NAME})

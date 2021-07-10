@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2021/07/10 12:03:19 landry Exp $
+
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -150,6 +150,8 @@ if(ENABLE_SHARED)
+ 		target_compile_definitions(bctoolbox PRIVATE "-DBCTBX_EXPORTS")
+ 	endif()
+ 	set_target_properties(bctoolbox PROPERTIES LINKER_LANGUAGE "CXX")
++	target_include_directories(bctoolbox SYSTEM PRIVATE ${ICONV_INCLUDE_DIRS})
++	target_link_libraries(bctoolbox PRIVATE ${ICONV_LIBRARIES})
+ 	if(NOT ANDROID)
+ 		# Do not version shared library on Android
+ 		set_target_properties(bctoolbox PROPERTIES SOVERSION ${BCTOOLBOX_SO_VERSION})
+@@ -173,6 +175,7 @@ if(ENABLE_SHARED)
+ 	endif()
+ 	if(ENABLE_TESTS_COMPONENT)
+ 		add_library(bctoolbox-tester SHARED ${BCTOOLBOX_TESTER_SOURCE_FILES})
++		target_include_directories(bctoolbox-tester PRIVATE ${LOCALBASE}/include)
+ 		set_target_properties(bctoolbox-tester PROPERTIES LINKER_LANGUAGE "CXX")
+ 		target_link_libraries(bctoolbox-tester PUBLIC bctoolbox PRIVATE ${BCUNIT_TARGETNAME})
+ 		if(WIN32)
