@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1260 2021/07/06 20:15:09 tb Exp $
+# $OpenBSD: Makefile,v 1.1261 2021/07/10 17:08:16 landry Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -335,7 +335,6 @@
      SUBDIR += openvpn,mbedtls
      SUBDIR += openvpn-auth-ldap
      SUBDIR += openvpn_bsdauth
-     SUBDIR += ortp
      SUBDIR += osrtspproxy
      SUBDIR += owamp
      SUBDIR += owncloudclient
