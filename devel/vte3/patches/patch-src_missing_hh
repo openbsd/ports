@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_missing_hh,v 1.1 2021/07/10 05:44:14 visa Exp $
+
+build: Fix build on non-linux systems
+
+Index: src/missing.hh
+--- src/missing.hh.orig
++++ src/missing.hh
+@@ -21,10 +21,13 @@
+ 
+ #include <csignal>
+ #include <fcntl.h>
++
++#ifdef __linux__
+ #include <sys/syscall.h>
+ 
+ #if defined(__mips__) || defined(__mips64__)
+ #include <asm/sgidefs.h>
++#endif
+ #endif
+ 
+ /* NSIG isn't in POSIX, so if it doesn't exist use this here. See bug #759196 */
