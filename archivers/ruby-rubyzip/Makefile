@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/06/20 09:45:43 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2021/07/10 17:56:47 sebastia Exp $
 
 COMMENT =	Ruby module for reading and writing zip files
 
-DISTNAME =	rubyzip-2.3.0
+DISTNAME =	rubyzip-2.3.2
 CATEGORIES =	archivers
 
 HOMEPAGE =	https://github.com/rubyzip/rubyzip
