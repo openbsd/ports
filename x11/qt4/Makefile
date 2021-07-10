@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.167 2021/07/09 14:33:43 kn Exp $
+# $OpenBSD: Makefile,v 1.168 2021/07/10 15:31:22 sthen Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 BROKEN-arm =	invalid instruction, vmov.u32 r2, r3, s8, s9, related to FELightingNEON.cpp
@@ -21,7 +21,7 @@ PKGNAME-main =		qt4-${PKGVERSION}
 PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
-REVISION-main =		26
+REVISION-main =		27
 REVISION-mysql =	8
 REVISION-postgresql =	7
 REVISION-tds =		7
@@ -80,6 +80,7 @@ SEPARATE_BUILD =	Yes
 CONFIGURE_ARGS =	-system-libpng -system-libjpeg -system-zlib \
 			-sm -system-sqlite \
 			-v -stl -xrender -fast \
+			-no-sql-sqlite2 \
 			-no-sql-odbc \
 			-xinput \
 			-xinerama \
