@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_crypto_ms_srtp_c,v 1.1 2021/07/10 17:02:41 landry Exp $
+
+srtp_add_or_update_stream doesnt exist in libsrtp ?
+added in https://gitlab.linphone.org/BC/public/mediastreamer2/-/commit/bfb478f11bcb6da0886ac2808f12fd0a1902795b
+
+Index: src/crypto/ms_srtp.c
+--- src/crypto/ms_srtp.c.orig
++++ src/crypto/ms_srtp.c
+@@ -371,7 +371,7 @@ static int ms_add_srtp_stream(srtp_t srtp, MSCryptoSui
+ 	policy.key = (uint8_t *)key;
+ 	policy.next = NULL;
+ 
+-	err = srtp_add_or_update_stream(srtp, &policy);
++	err = srtp_add_stream(srtp, &policy);
+ 	if (err != err_status_ok) {
+ 		ms_error("Failed to add stream to srtp session (%d)", err);
+ 		return -1;

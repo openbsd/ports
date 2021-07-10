@@ -1,9 +1,9 @@
-$OpenBSD: patch-mediastreamer-config_h_cmake,v 1.1.1.1 2021/07/10 12:03:20 landry Exp $
+$OpenBSD: patch-mediastreamer-config_h_cmake,v 1.2 2021/07/10 17:02:41 landry Exp $
 
 Index: mediastreamer-config.h.cmake
 --- mediastreamer-config.h.cmake.orig
 +++ mediastreamer-config.h.cmake
-@@ -41,6 +41,7 @@
+@@ -42,6 +42,7 @@
  
  #cmakedefine __ALSA_ENABLED__
  #cmakedefine __ARTS_ENABLED__

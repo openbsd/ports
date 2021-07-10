@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2021/07/10 14:07:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/07/10 17:02:41 landry Exp $
 
 COMMENT =	streaming engine for voice/video telephony applications
 
-V =		4.5.16
 MODULE =	mediastreamer2
-REVISION =	1
 
 SHARED_LIBS += mediastreamer 0.0 # 11
 
@@ -46,5 +44,9 @@ WANTLIB += v4l2 v4lconvert vpx xml2 zxing
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
+post-install:
+	# or remove it in include/CMakeLists.txt, as the ones in /usr/X11R6/include are probably more recent
+	# https://gitlab.linphone.org/BC/public/mediastreamer2/-/commit/9529c57
+	rm -Rf ${PREFIX}/include/OpenGL
 
 .include <bsd.port.mk>
