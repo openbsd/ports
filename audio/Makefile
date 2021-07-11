@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.460 2021/05/25 22:19:58 abieber Exp $
+# $OpenBSD: Makefile,v 1.461 2021/07/11 09:42:20 paco Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -229,6 +229,7 @@
      SUBDIR += squeezelite
      SUBDIR += sratom
      SUBDIR += streamripper
+     SUBDIR += subsonic-cli
      SUBDIR += swh-plugins
      SUBDIR += taglib
      SUBDIR += tagtool
