@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/05/22 17:57:33 paco Exp $
+# $OpenBSD: Makefile,v 1.2 2021/07/11 18:03:51 paco Exp $
 
 COMMENT =		command-line interface for Hetzner Cloud
-V =			1.22.1
+V =			1.25.1
 
 MODGO_MODNAME =		github.com/hetznercloud/cli
 MODGO_VERSION =		v${V}
@@ -22,15 +22,14 @@ MODULES =		lang/go
 
 WANTLIB +=		c pthread
 
-# no required module provides package github.com/hetznercloud/cli; to add it:
-#      go get github.com/hetznercloud/cli
-NO_TEST =		yes
-
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/hcloud
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/examples/hcloud
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/hcloud
 	${INSTALL_DATA} ${WRKSRC}/README.md ${PREFIX}/share/doc/hcloud/README.md
+
+do-test:
+	cd  ${WRKSRC} && ${MODGO_TEST_CMD} ./...
 
 .include "./modules.inc"
 
