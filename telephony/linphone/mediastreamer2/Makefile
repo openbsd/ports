@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2021/07/10 17:02:41 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2021/07/11 11:32:31 landry Exp $
 
 COMMENT =	streaming engine for voice/video telephony applications
 
 MODULE =	mediastreamer2
+REVISION =	0
 
 SHARED_LIBS += mediastreamer 0.0 # 11
 
@@ -28,7 +29,7 @@ LIB_DEPENDS =	telephony/linphone/bctoolbox\
 		multimedia/libv4l \
 		multimedia/libvpx \
 		multimedia/libtheora \
-		security/libsrtp \
+		security/libsrtp>=2.3.0p2 \
 		graphics/glew \
 		graphics/ffmpeg \
 		graphics/zxing>=20190320p1 \
