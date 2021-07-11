@@ -1,0 +1,41 @@
+$OpenBSD: patch-include_srtp_h,v 1.1 2021/07/11 11:30:54 landry Exp $
+
+add srtp_add_or_update_stream used by telephony/linphone/mediastreamer2
+
+https://gitlab.linphone.org/BC/public/external/srtp/-/commit/c48e27278e656dc4b883044ec85245fb3d22dc51.patch
+
+Index: include/srtp.h
+--- include/srtp.h.orig
++++ include/srtp.h
+@@ -677,6 +677,31 @@ srtp_err_status_t srtp_update_stream(srtp_t session,
+                                      const srtp_policy_t *policy);
+ 
+ /**
++ * @brief srtp_add_or_update_stream() udpates the SRTP stream if it was already initiated or add and initiate it.
++ *
++ * If the session was already initialized,
++ * then the function call srtp_add_or_update_stream(session, policy) updates
++ * the stream(s) in the session that match applying the given
++ * policy and key by calling srtp_update_stream(session, policy). The existing ROC value of all stream(s) will
++ * be preserved.
++ * If the session was not initialized, function srtp_add_stream(session, policy) will be called
++ *
++ * @param session is the SRTP session that contains the streams
++ *        to be updated or added.
++ *
++ * @param policy is the srtp_policy_t struct that describes the policy
++ * for the session.
++ *
++ * @return
++ *    - srtp_err_status_ok           if stream creation succeded.
++ *    - srtp_err_status_alloc_fail   if stream allocation failed
++ *    - srtp_err_status_init_fail    if stream initialization failed.
++ *    - [other]                      otherwise.
++ *
++ */
++srtp_err_status_t srtp_add_or_update_stream(srtp_t session, const srtp_policy_t *policy);
++
++/**
+  * @brief srtp_crypto_policy_set_rtp_default() sets a crypto policy
+  * structure to the SRTP default policy for RTP protection.
+  *
