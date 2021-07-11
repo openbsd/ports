@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.21 2021/01/19 10:50:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/07/11 09:23:19 bket Exp $
 
 COMMENT =	multicast router utilizing IGMP forwarding
 
-VERSION =	0.3
-REVISION =	0
-DISTNAME =	igmpproxy-${VERSION}
+GH_ACCOUNT =	pali
+GH_PROJECT =	igmpproxy
+GH_COMMIT =	0e7186b300c063ef4015f1551100765ef5537d4c
+DISTNAME =	igmpproxy-0.3.20210705
+
 CATEGORIES =	net
-MASTER_SITES =	https://github.com/pali/igmpproxy/releases/download/${VERSION}/
 
 HOMEPAGE =	https://github.com/pali/igmpproxy/
 
@@ -15,15 +16,18 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c
 
-USE_GMAKE =	Yes
+MAKE_FLAGS =	CFLAGS="${CFLAGS} -Wall" \
+		LDFLAGS="${LDFLAGS}"
 
-CFLAGS +=	-Wall
-MAKE_FLAGS =	LDFLAGS="${LDFLAGS}"
-DEBUG_PACKAGES = ${BUILD_PACKAGES}
+CONFIGURE_STYLE =	autoreconf
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
+AUTOCONF_VERSION =	2.63
+AUTOMAKE_VERSION =	1.12
+AUTORECONF =		./autogen.sh
 
 NO_TEST =	Yes
-
-CONFIGURE_STYLE =	gnu
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/igmpproxy ${PREFIX}/sbin

@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/01/12 17:59:50 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/07/11 09:23:19 bket Exp $
+@newgroup _igmpproxy:868
+@newuser _igmpproxy:868:868:daemon:IGMP multicast routing daemon:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/igmpproxy
 @man man/man5/igmpproxy.conf.5
 @man man/man8/igmpproxy.8

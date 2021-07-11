@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_igmpproxy_c,v 1.1 2021/01/12 17:59:49 sthen Exp $
+$OpenBSD: patch-src_igmpproxy_c,v 1.2 2021/07/11 09:23:19 bket Exp $
 
 Index: src/igmpproxy.c
 --- src/igmpproxy.c.orig
@@ -19,7 +19,7 @@ Index: src/igmpproxy.c
  static const char Usage[] =
  "Usage: igmpproxy [-h] [-n] [-d] [-v [-v]] <configfile>\n"
  "\n"
-@@ -123,6 +120,25 @@ int main( int ArgCn, char *ArgVc[] ) {
+@@ -126,6 +123,25 @@ int main( int ArgCn, char *ArgVc[] ) {
  
      openlog("igmpproxy", LOG_PID, LOG_USER);
  
@@ -45,25 +45,7 @@ Index: src/igmpproxy.c
      // Write debug notice with file path...
      my_log(LOG_DEBUG, 0, "Searching for config file at '%s'" , configFilePath);
  
-@@ -142,16 +158,8 @@ int main( int ArgCn, char *ArgVc[] ) {
- 
-         if ( !NotAsDaemon ) {
- 
--            // Only daemon goes past this line...
--            if (fork()) exit(0);
--
--            // Detach daemon from terminal
--            if ( close( 0 ) < 0 || close( 1 ) < 0 || close( 2 ) < 0
--                || open( "/dev/null", 0 ) != 0 || dup2( 0, 1 ) < 0 || dup2( 0, 2 ) < 0
--                || setpgid( 0, 0 ) < 0
--            ) {
-+            if ( daemon(1, 0 ) < 0 )
-                 my_log( LOG_ERR, errno, "failed to detach daemon" );
--            }
-         }
- 
-         // Go to the main loop.
-@@ -207,6 +215,8 @@ int igmpProxyInit(void) {
+@@ -238,6 +254,8 @@ int igmpProxyInit(void) {
          }
  
          for ( Ix = 0; (Dp = getIfByIx(Ix)); Ix++ ) {

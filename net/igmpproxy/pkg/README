@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.7 2018/09/04 12:46:17 espie Exp $
+$OpenBSD: README,v 1.8 2021/07/11 09:23:19 bket Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -20,3 +20,12 @@ Start igmpproxy at boot time in the usual way:
 
 PF must be configured so that control packets (proto igmp) and
 data packets (destination address within 224.0.0.0/4) are passed.
+
+Running igmpproxy in chroot
+---------------------------
+igmpproxy can run as an unprivileged user inside chroot when the
+chroot and user options are used. To chroot igmpproxy, use the
+following as part of your configuration file:
+
+  chroot /var/empty
+  user _igmpproxy
