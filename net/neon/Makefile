@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.46 2019/07/12 20:48:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2021/07/11 13:12:52 robert Exp $
 
 COMMENT=		HTTP and WebDAV client library, with C interface
 
-DISTNAME=		neon-0.30.2
-SHARED_LIBS +=  neon                 29.0     # 30.1
-REVISION=		2
+DISTNAME=		neon-0.31.2
+SHARED_LIBS +=  neon                 31.2     # 31.2
 
 CATEGORIES=		net www devel
 
-HOMEPAGE=		http://www.webdav.org/neon/
+HOMEPAGE=		https://notroj.github.io/neon/
 
 # LGPLv2+
 PERMIT_PACKAGE=	Yes
@@ -38,7 +37,7 @@ CONFIGURE_ARGS+=	--with-ca-bundle=/etc/ssl/cert.pem \
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/neon/macros
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/neon
-.for i in README NEWS BUGS TODO THANKS
+.for i in README.md NEWS BUGS TODO THANKS
 	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/neon
 .endfor
 	cd ${WRKSRC}/macros && \

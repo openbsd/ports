@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2014/10/12 07:13:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2021/07/11 13:12:52 robert Exp $
 bin/neon-config
 include/neon/
 include/neon/ne_207.h
@@ -25,7 +25,7 @@ include/neon/ne_uri.h
 include/neon/ne_utils.h
 include/neon/ne_xml.h
 include/neon/ne_xmlreq.h
-lib/libneon.a
+@static-lib lib/libneon.a
 lib/libneon.la
 @lib lib/libneon.so.${LIBneon_VERSION}
 lib/pkgconfig/neon.pc
@@ -129,7 +129,7 @@ lib/pkgconfig/neon.pc
 share/doc/neon/
 share/doc/neon/BUGS
 share/doc/neon/NEWS
-share/doc/neon/README
+share/doc/neon/README.md
 share/doc/neon/THANKS
 share/doc/neon/TODO
 share/doc/neon/html/
@@ -191,6 +191,7 @@ share/locale/tr/LC_MESSAGES/neon.mo
 share/locale/zh_CN/LC_MESSAGES/neon.mo
 share/neon/
 share/neon/macros/
+share/neon/macros/.gitignore
 share/neon/macros/ChangeLog
 share/neon/macros/ld-version-script.m4
 share/neon/macros/neon-test.m4
