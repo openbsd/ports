@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2021/01/02 09:47:48 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2021/07/11 05:53:45 kirby Exp $
 
 COMMENT =	gpx file viewer
 
 GH_PROJECT =	GPXSee
 GH_ACCOUNT =	tumic0
-GH_TAGNAME =	8.0
+GH_TAGNAME =	9.2
 PKGNAME =	${DISTNAME:L}
 
 CATEGORIES =	geo x11
