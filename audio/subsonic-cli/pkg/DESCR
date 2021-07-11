@@ -1,0 +1,2 @@
+subsonic-cli sends commands to a subsonic server and returns the
+json response or data stream.
