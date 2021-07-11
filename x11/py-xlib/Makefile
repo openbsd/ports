@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2021/05/21 19:50:39 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2021/07/11 08:05:13 ajacoutot Exp $
 
 COMMENT =	 	X11 library for Python
 
 GH_ACCOUNT =		python-xlib
 GH_PROJECT =		python-xlib
-GH_TAGNAME =		0.25
+GH_TAGNAME =		0.31
 PKGNAME =		py-xlib-${GH_TAGNAME}
-REVISION =		1
 
 CATEGORIES =		x11
 
@@ -24,6 +23,6 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 .include <bsd.port.mk>

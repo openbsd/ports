@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/08/26 12:30:49 mpi Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/07/11 08:05:13 ajacoutot Exp $
+@conflict py-xlib-*
+@pkgpath x11/py-xlib
 lib/python${MODPY_VERSION}/site-packages/Xlib/
 lib/python${MODPY_VERSION}/site-packages/Xlib/X.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/XK.py
@@ -25,10 +27,13 @@ lib/python${MODPY_VERSION}/site-packages/Xlib/ext/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Xlib/ext/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/${MODPY_PYCACHE}composite.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Xlib/ext/${MODPY_PYCACHE}damage.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Xlib/ext/${MODPY_PYCACHE}dpms.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/${MODPY_PYCACHE}ge.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/${MODPY_PYCACHE}nvcontrol.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/${MODPY_PYCACHE}randr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/${MODPY_PYCACHE}record.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Xlib/ext/${MODPY_PYCACHE}res.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/${MODPY_PYCACHE}security.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/${MODPY_PYCACHE}shape.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/${MODPY_PYCACHE}xfixes.${MODPY_PYC_MAGIC_TAG}pyc
@@ -36,10 +41,13 @@ lib/python${MODPY_VERSION}/site-packages/Xlib/ext/${MODPY_PYCACHE}xinerama.${MOD
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/${MODPY_PYCACHE}xinput.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/${MODPY_PYCACHE}xtest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/composite.py
+lib/python${MODPY_VERSION}/site-packages/Xlib/ext/damage.py
+lib/python${MODPY_VERSION}/site-packages/Xlib/ext/dpms.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/ge.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/nvcontrol.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/randr.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/record.py
+lib/python${MODPY_VERSION}/site-packages/Xlib/ext/res.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/security.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/shape.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/ext/xfixes.py
@@ -133,9 +141,9 @@ lib/python${MODPY_VERSION}/site-packages/Xlib/xobject/drawable.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/xobject/fontable.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/xobject/icccm.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/xobject/resource.py
-lib/python${MODPY_VERSION}/site-packages/python_xlib-0.25-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/python_xlib-0.25-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/python_xlib-0.25-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/python_xlib-0.25-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/python_xlib-0.25-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/python_xlib-0.25-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/python_xlib-0.31-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/python_xlib-0.31-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/python_xlib-0.31-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/python_xlib-0.31-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/python_xlib-0.31-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/python_xlib-0.31-py${MODPY_VERSION}.egg-info/top_level.txt
