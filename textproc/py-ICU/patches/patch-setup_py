@@ -1,4 +1,4 @@
-$OpenBSD: patch-setup_py,v 1.8 2020/11/01 08:18:42 ajacoutot Exp $
+$OpenBSD: patch-setup_py,v 1.9 2021/07/11 08:32:19 ajacoutot Exp $
 
 Index: setup.py
 --- setup.py.orig
@@ -27,7 +27,7 @@ Index: setup.py
      'win32': ['c:/icu/include'],
      'sunos5': [],
      'cygwin': [],
-@@ -118,6 +121,7 @@ PEDANTIC_FLAGS = {
+@@ -119,6 +122,7 @@ PEDANTIC_FLAGS = {
      'darwin': ['-pedantic'],
      'linux': ['-pedantic', '-Wno-variadic-macros'],
      'freebsd': ['-pedantic'],
@@ -35,7 +35,7 @@ Index: setup.py
      'win32': [],
      'sunos5': [],
      'cygwin': ['-pedantic'],
-@@ -127,6 +131,7 @@ CFLAGS = {
+@@ -128,6 +132,7 @@ CFLAGS = {
      'darwin': [],
      'linux': [],
      'freebsd': ['-std=c++11'],
@@ -43,7 +43,7 @@ Index: setup.py
      'win32': ['/Zc:wchar_t', '/EHsc'],
      'sunos5': ['-std=c++11'],
      'cygwin': ['-D_GNU_SOURCE=1', '-std=c++11'],
-@@ -137,6 +142,7 @@ DEBUG_CFLAGS = {
+@@ -138,6 +143,7 @@ DEBUG_CFLAGS = {
      'darwin': ['-O0', '-g', '-DDEBUG'],
      'linux': ['-O0', '-g', '-DDEBUG'],
      'freebsd': ['-O0', '-g', '-DDEBUG'],
@@ -51,7 +51,7 @@ Index: setup.py
      'win32': ['/Od', '/DDEBUG'],
      'sunos5': ['-DDEBUG'],
      'cygwin': ['-Og', '-g', '-DDEBUG'],
-@@ -146,6 +152,7 @@ LFLAGS = {
+@@ -147,6 +153,7 @@ LFLAGS = {
      'darwin': [],
      'linux': [],
      'freebsd': ['-L/usr/local/lib'],
@@ -59,7 +59,7 @@ Index: setup.py
      'win32': ['/LIBPATH:c:/icu/lib'],
      'sunos5': [],
      'cygwin': [],
-@@ -155,6 +162,7 @@ LIBRARIES = {
+@@ -156,6 +163,7 @@ LIBRARIES = {
      'darwin': [],
      'linux': [],
      'freebsd': ['icui18n', 'icuuc', 'icudata'],
@@ -67,7 +67,7 @@ Index: setup.py
      'win32': ['icuin', 'icuuc', 'icudt'],
      'sunos5': ['icui18n', 'icuuc', 'icudata'],
      'cygwin': ['icui18n', 'icuuc', 'icudata'],
-@@ -165,6 +173,8 @@ if platform.startswith(('linux', 'gnu')):
+@@ -166,6 +174,8 @@ if platform.startswith(('linux', 'gnu')):
      platform = 'linux'
  elif platform.startswith('freebsd'):
      platform = 'freebsd'
