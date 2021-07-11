@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2019/11/23 14:33:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2021/07/11 07:59:20 ajacoutot Exp $
 
 COMMENT=	display chm files
 
-V=		1.31
+V=		1.32
 DISTNAME=	xchm-$V
 
 CATEGORIES=	devel textproc x11
@@ -30,9 +30,5 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 NO_TEST=	Yes
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${FILESDIR}/xchm.desktop ${PREFIX}/share/applications
 
 .include <bsd.port.mk>
