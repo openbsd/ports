@@ -1,0 +1,17 @@
+$OpenBSD: patch-external_libnumbertext_spellout_patch1,v 1.1 2021/07/11 13:14:06 robert Exp $
+
+Index: external/libnumbertext/spellout.patch1
+--- external/libnumbertext/spellout.patch1.orig
++++ external/libnumbertext/spellout.patch1
+@@ -0,0 +1,11 @@
++--- a/src/Makefile.in.orig	Sun Jul 11 12:09:16 2021
+++++ b/src/Makefile.in	Sun Jul 11 12:09:37 2021
++@@ -147,7 +147,7 @@
++ 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
++ 	$(AM_CXXFLAGS) $(CXXFLAGS) $(libnumbertext_1_0_la_LDFLAGS) \
++ 	$(LDFLAGS) -o $@
++-PROGRAMS = $(bin_PROGRAMS)
+++#PROGRAMS = $(bin_PROGRAMS)
++ am_spellout_OBJECTS = spellout.$(OBJEXT)
++ spellout_OBJECTS = $(am_spellout_OBJECTS)
++ spellout_DEPENDENCIES = libnumbertext-1.0.la

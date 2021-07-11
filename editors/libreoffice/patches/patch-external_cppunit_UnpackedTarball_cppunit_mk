@@ -1,12 +1,12 @@
-$OpenBSD: patch-external_cppunit_UnpackedTarball_cppunit_mk,v 1.7 2020/08/07 07:09:30 robert Exp $
+$OpenBSD: patch-external_cppunit_UnpackedTarball_cppunit_mk,v 1.8 2021/07/11 13:14:06 robert Exp $
 
 Index: external/cppunit/UnpackedTarball_cppunit.mk
 --- external/cppunit/UnpackedTarball_cppunit.mk.orig
 +++ external/cppunit/UnpackedTarball_cppunit.mk
-@@ -19,6 +19,7 @@ $(eval $(call gb_UnpackedTarball_add_patches,cppunit,\
- 	external/cppunit/CPPUNIT_PLUGIN_EXPORT.patch.0 \
- 	external/cppunit/enable-win32-debug.patch \
+@@ -21,6 +21,7 @@ $(eval $(call gb_UnpackedTarball_add_patches,cppunit,\
  	external/cppunit/rtti.patch.0 \
+ 	external/cppunit/order.patch.0 \
+ 	external/cppunit/windows-arm64.patch.1 \
 +	external/cppunit/openbsd-cppunit.patch.0 \
  ))
  ifeq ($(DISABLE_DYNLOADING),TRUE)

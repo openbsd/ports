@@ -1,9 +1,9 @@
-$OpenBSD: patch-sal_osl_unx_system_hxx,v 1.4 2019/03/05 15:38:32 robert Exp $
+$OpenBSD: patch-sal_osl_unx_system_hxx,v 1.5 2021/07/11 13:14:06 robert Exp $
 
 Index: sal/osl/unx/system.hxx
 --- sal/osl/unx/system.hxx.orig
 +++ sal/osl/unx/system.hxx
-@@ -158,7 +158,6 @@
+@@ -160,7 +160,6 @@
  #endif
  
  #ifdef OPENBSD
@@ -11,7 +11,7 @@ Index: sal/osl/unx/system.hxx
  #   include <pthread.h>
  #   include <sys/sem.h>
  #   include <dlfcn.h>
-@@ -168,17 +167,15 @@
+@@ -170,17 +169,15 @@
  #   include <sys/time.h>
  #   include <sys/uio.h>
  #   include <sys/exec.h>

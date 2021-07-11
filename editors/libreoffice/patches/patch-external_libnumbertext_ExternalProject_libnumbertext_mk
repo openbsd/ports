@@ -1,0 +1,14 @@
+$OpenBSD: patch-external_libnumbertext_ExternalProject_libnumbertext_mk,v 1.1 2021/07/11 13:14:06 robert Exp $
+
+Index: external/libnumbertext/ExternalProject_libnumbertext.mk
+--- external/libnumbertext/ExternalProject_libnumbertext.mk.orig
++++ external/libnumbertext/ExternalProject_libnumbertext.mk
+@@ -24,6 +24,8 @@ libnumbertext_CPPFLAGS+=-D_GLIBCXX_DEBUG
+ endif
+ endif
+ 
++libnumbertext_CPPFLAGS+=-fPIC
++
+ $(call gb_ExternalProject_get_state_target,libnumbertext,build):
+ 	$(call gb_Trace_StartRange,libnumbertext,EXTERNAL)
+ 	$(call gb_ExternalProject_run,build,\

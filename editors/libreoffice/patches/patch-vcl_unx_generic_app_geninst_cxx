@@ -1,31 +1,40 @@
-$OpenBSD: patch-vcl_unx_generic_app_geninst_cxx,v 1.3 2020/02/05 19:58:10 robert Exp $
+$OpenBSD: patch-vcl_unx_generic_app_geninst_cxx,v 1.4 2021/07/11 13:14:06 robert Exp $
 
 Index: vcl/unx/generic/app/geninst.cxx
 --- vcl/unx/generic/app/geninst.cxx.orig
 +++ vcl/unx/generic/app/geninst.cxx
-@@ -29,6 +29,10 @@
+@@ -22,7 +22,7 @@
+ #if defined(LINUX)
+ #  include <stdio.h>
  #endif
- #include <unx/geninst.h>
+-#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #  include <sys/utsname.h>
+ #endif
  
-+#if defined(OPENBSD)
-+#include <sys/utsname.h>
-+#endif
-+
- // SalYieldMutex
- 
- SalYieldMutex::SalYieldMutex()
-@@ -70,6 +74,14 @@ OUString SalGenericInstance::getOSVersion()
-         }
+@@ -73,11 +73,15 @@ OUString SalGenericInstance::getOSVersion()
          fclose( pVersion );
      }
-+#elif defined(OPENBSD)
-+    struct utsname uts;
-+
-+    if ( uname( &uts ) < 0 )
-+        return aKernelVer;
-+
-+    aKernelVer = OUString::createFromAscii( uts.sysname ) + " " +
-+        OUString::createFromAscii( uts.release );
- #endif
      return aKernelVer;
+-#elif defined(__FreeBSD__)
++#elif defined(__FreeBSD__) || defined(__OpenBSD__)
+     struct utsname stName;
+     if ( uname( &stName ) != 0 )
+         return aKernelVer;
+ 
++#if defined(__OpenBSD__)
++    return OUString::createFromAscii( stName.sysname ) + " " +
++        OUString::createFromAscii( stName.release );
++#else
+     sal_Int32 nDots = 0;
+     sal_Int32 nIndex = 0;
+     aKernelVer = OUString::createFromAscii( stName.release );
+@@ -89,7 +93,7 @@ OUString SalGenericInstance::getOSVersion()
+     }
+     return OUString::createFromAscii( stName.sysname ) + " " +
+         aKernelVer.copy( 0, nIndex );
+-#else
++#endif
+     return aKernelVer;
+ #endif
  }

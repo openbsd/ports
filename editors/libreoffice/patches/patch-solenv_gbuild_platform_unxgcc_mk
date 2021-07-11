@@ -1,4 +1,4 @@
-$OpenBSD: patch-solenv_gbuild_platform_unxgcc_mk,v 1.11 2020/08/07 07:09:30 robert Exp $
+$OpenBSD: patch-solenv_gbuild_platform_unxgcc_mk,v 1.12 2021/07/11 13:14:06 robert Exp $
 
 Index: solenv/gbuild/platform/unxgcc.mk
 --- solenv/gbuild/platform/unxgcc.mk.orig
@@ -16,13 +16,13 @@ Index: solenv/gbuild/platform/unxgcc.mk
 +		$(foreach extraobjectlist,$(EXTRAOBJECTLISTS),$(shell cat $(extraobjectlist)))) && \
 +	cat $${FILELIST} | tr "[:space:]" "\n" | grep -v '^$$' > $${FILELIST}.1 && \
 +	mv $${FILELIST}.1 $${FILELIST} && \
- 	$(if $(CXXOBJECTS)$(GENCXXOBJECTS)$(EXTRAOBJECTLISTS)$(filter-out XTRUE,X$(ENABLE_RUNTIME_OPTIMIZATIONS)),$(gb_CXX) $(gb_CXX_LINKFLAGS),$(gb_CC)) \
+ 	$(if $(CXXOBJECTS)$(GENCXXOBJECTS)$(EXTRAOBJECTLISTS)$(filter-out XTRUE,X$(ENABLE_RUNTIME_OPTIMIZATIONS)),$(or $(T_CXX),$(gb_CXX)) $(gb_CXX_LINKFLAGS),$(or $(T_CC),$(gb_CC))) \
  		$(if $(filter Library CppunitTest,$(TARGETTYPE)),$(gb_Library_TARGETTYPEFLAGS)) \
  		$(gb_LTOFLAGS) \
 @@ -122,12 +131,7 @@ $(call gb_Helper_abbreviate_dirs,\
  			-Wl$(COMMA)--version-script=$(SOVERSIONSCRIPT)) \
  		$(subst \d,$$,$(RPATH)) \
- 		$(T_LDFLAGS) \
+ 		$(T_USE_LD) $(T_LDFLAGS) \
 -		$(foreach object,$(COBJECTS),$(call gb_CObject_get_target,$(object))) \
 -		$(foreach object,$(CXXOBJECTS),$(call gb_CxxObject_get_target,$(object))) \
 -		$(foreach object,$(ASMOBJECTS),$(call gb_AsmObject_get_target,$(object))) \

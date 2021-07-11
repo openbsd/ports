@@ -1,4 +1,4 @@
-$OpenBSD: patch-sal_osl_unx_thread_cxx,v 1.3 2020/08/07 07:09:30 robert Exp $
+$OpenBSD: patch-sal_osl_unx_thread_cxx,v 1.4 2021/07/11 13:14:06 robert Exp $
 
 Index: sal/osl/unx/thread.cxx
 --- sal/osl/unx/thread.cxx.orig
@@ -9,9 +9,9 @@ Index: sal/osl/unx/thread.cxx
  #include <sched.h>
 +#include <pthread_np.h>
  #endif
- #include <config_options.h>
- #include <o3tl/safeint.hxx>
-@@ -293,11 +294,8 @@ static oslThread osl_thread_create_Impl (
+ #ifdef __FreeBSD__
+ #if __FreeBSD_version <= 1201517
+@@ -299,11 +300,8 @@ static oslThread osl_thread_create_Impl (
      if (pthread_attr_init(&attr) != 0)
          return nullptr;
  
@@ -24,16 +24,16 @@ Index: sal/osl/unx/thread.cxx
      if (pthread_attr_setstacksize(&attr, stacksize) != 0) {
          pthread_attr_destroy(&attr);
          return nullptr;
-@@ -567,6 +565,8 @@ void SAL_CALL osl_setThreadName(char const * name)
+@@ -573,6 +571,8 @@ void SAL_CALL osl_setThreadName(char const * name)
      int err = pthread_setname_np( pthread_self(), shortname );
      if ( 0 != err )
          SAL_WARN("sal.osl", "pthread_setname_np failed with errno " << err);
 +#elif defined __OpenBSD__
 +    pthread_set_name_np( pthread_self(), name );
- #elif defined __FreeBSD_kernel__
+ #elif defined __FreeBSD__
      pthread_setname_np( pthread_self(), name );
  #elif defined MACOSX || defined IOS
-@@ -594,7 +594,7 @@ static const int HashSize = SAL_N_ELEMENTS(HashTable);
+@@ -600,7 +600,7 @@ const int HashSize = SAL_N_ELEMENTS(HashTable);
  
  static pthread_mutex_t HashLock = PTHREAD_MUTEX_INITIALIZER;
  
@@ -42,7 +42,7 @@ Index: sal/osl/unx/thread.cxx
  static oslThreadIdentifier LastIdent = 0;
  #endif
  
-@@ -664,6 +664,8 @@ static oslThreadIdentifier insertThreadId (pthread_t h
+@@ -670,6 +670,8 @@ static oslThreadIdentifier insertThreadId (pthread_t h
          }
  #endif
          pEntry->Ident = tid;

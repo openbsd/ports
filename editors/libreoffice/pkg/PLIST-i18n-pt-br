@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-pt-br,v 1.19 2020/02/05 19:58:10 robert Exp $
+@comment $OpenBSD: PLIST-i18n-pt-br,v 1.20 2021/07/11 13:14:06 robert Exp $
 !%%no_java%%
 lib/libreoffice/program/resource/
 lib/libreoffice/program/resource/pt_BR/
@@ -78,15 +78,15 @@ lib/libreoffice/share/extensions/dict-pt-PT/META-INF/
 lib/libreoffice/share/extensions/dict-pt-PT/META-INF/manifest.xml
 lib/libreoffice/share/extensions/dict-pt-PT/README_hyph_pt_PT.txt
 lib/libreoffice/share/extensions/dict-pt-PT/README_pt_PT.txt
-lib/libreoffice/share/extensions/dict-pt-PT/README_th_pt_PT_v2.txt
+lib/libreoffice/share/extensions/dict-pt-PT/README_th_pt_PT.txt
 lib/libreoffice/share/extensions/dict-pt-PT/description.xml
 lib/libreoffice/share/extensions/dict-pt-PT/dictionaries.xcu
 lib/libreoffice/share/extensions/dict-pt-PT/hyph_pt_PT.dic
 lib/libreoffice/share/extensions/dict-pt-PT/icon.png
 lib/libreoffice/share/extensions/dict-pt-PT/pt_PT.aff
 lib/libreoffice/share/extensions/dict-pt-PT/pt_PT.dic
-lib/libreoffice/share/extensions/dict-pt-PT/th_pt_PT_v2.dat
-lib/libreoffice/share/extensions/dict-pt-PT/th_pt_PT_v2.idx
+lib/libreoffice/share/extensions/dict-pt-PT/th_pt_PT.dat
+lib/libreoffice/share/extensions/dict-pt-PT/th_pt_PT.idx
 lib/libreoffice/share/registry/Langpack-pt-BR.xcd
 lib/libreoffice/share/registry/res/fcfg_langpack_pt-BR.xcd
 lib/libreoffice/share/registry/res/registry_pt-BR.xcd

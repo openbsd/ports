@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.247 2021/06/26 08:06:58 robert Exp $
+# $OpenBSD: Makefile,v 1.248 2021/07/11 13:14:06 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -10,10 +10,10 @@ COMMENT-java=	optional integration of LibreOffice java features
 
 SHARED_LIBS +=  etonyek-0.1-lo            1.9 # 1.9
 SHARED_LIBS +=  langtag-lo                5.1 # 5.1
-SHARED_LIBS +=  mwaw-0.3-lo               3.16 # 3.16
+SHARED_LIBS +=  mwaw-0.3-lo               3.17 # 3.17
 SHARED_LIBS +=  odfgen-0.1-lo             1.6 # 1.6
-SHARED_LIBS +=  orcus-0.15                0.0 # 0.0
-SHARED_LIBS +=  orcus-parser-0.15         0.0 # 0.0
+SHARED_LIBS +=  orcus-0.16                0.0 # 0.0
+SHARED_LIBS +=  orcus-parser-0.16         0.0 # 0.0
 SHARED_LIBS +=  revenge-0.0-lo            0.4 # 0.4
 SHARED_LIBS +=  staroffice-0.0-lo         0.0 # 0.0
 SHARED_LIBS +=  uno_cppu                  3.0 # 3.0
@@ -23,10 +23,10 @@ SHARED_LIBS +=  uno_sal                   3.0 # 3.0
 SHARED_LIBS +=  uno_salhelpergcc3         3.0 # 3.0
 SHARED_LIBS +=  wpd-0.10-lo               10.3 # 10.3
 SHARED_LIBS +=  wpg-0.3-lo                3.3 # 3.3
-SHARED_LIBS +=  wps-0.4-lo                4.11 # 4.11
+SHARED_LIBS +=  wps-0.4-lo                4.12 # 4.12
 
-BV=		7.0
-VERSION=	${BV}.6.2
+BV=		7.1
+VERSION=	${BV}.4.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -77,7 +77,7 @@ DISTFILES += 39bb3fcea1514f1369fcfc87542390fd-sacjava-1.3.zip:0
 DISTFILES += 3bdf40c0d199af31923e900d082ca2dd-libfonts-1.1.6.zip:0
 DISTFILES += 5ade6ae2a99bc1e9e57031ca88d36dad-hyphen-2.8.8.tar.gz:0
 DISTFILES += 798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip:0
-DISTFILES += 884ed41809687c3e168fc7c19b16585149ff058eca79acbf3ee784f6630704cc-opens___.ttf:0
+DISTFILES += f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf:0
 DISTFILES += 8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip:0
 DISTFILES += 907d6e99f241876695c19ff3db0b8923-source-code-pro-2.030R-ro-1.050R-it.tar.gz:0
 DISTFILES += 97b2d4dba862397f446b217e2b623e71-libloader-1.1.6.zip:0
@@ -103,7 +103,7 @@ DISTFILES += commons-logging-1.2-src.tar.gz:0
 DISTFILES += cppunit-1.15.1.tar.gz:0
 DISTFILES += culmus-0.131.tar.gz:0
 DISTFILES += dtoa-20180411.tgz:0
-DISTFILES += language-subtag-registry-2020-09-29.tar.bz2:0
+DISTFILES += language-subtag-registry-2021-03-05.tar.bz2:0
 DISTFILES += libabw-0.1.3.tar.xz:0
 DISTFILES += libcdr-0.1.6.tar.xz:0
 DISTFILES += libcmis-0.5.2.tar.xz:0
@@ -116,9 +116,9 @@ DISTFILES += libexttextcat-3.4.5.tar.xz:0
 DISTFILES += libfreehand-0.1.2.tar.xz:0
 DISTFILES += liblangtag-0.6.2.tar.bz2:0
 DISTFILES += libmspub-0.1.4.tar.xz:0
-DISTFILES += libmwaw-0.3.16.tar.xz:0
+DISTFILES += libmwaw-0.3.17.tar.xz:0
 DISTFILES += libodfgen-0.1.6.tar.bz2:0
-DISTFILES += liborcus-0.15.4.tar.bz2:0
+DISTFILES += liborcus-0.16.1.tar.bz2:0
 DISTFILES += libpagemaker-0.0.4.tar.xz:0
 DISTFILES += libqxp-0.0.2.tar.xz:0
 DISTFILES += libre-hebrew-1.0.tar.gz:0
@@ -127,15 +127,17 @@ DISTFILES += libstaroffice-0.0.7.tar.xz:0
 DISTFILES += libvisio-0.1.7.tar.xz:0
 DISTFILES += libwpd-0.10.3.tar.xz:0
 DISTFILES += libwpg-0.3.3.tar.xz:0
-DISTFILES += libwps-0.4.11.tar.xz:0
+DISTFILES += libwps-0.4.12.tar.xz:0
 DISTFILES += libzmf-0.0.2.tar.xz:0
-DISTFILES += mdds-1.6.0.tar.bz2:0
+DISTFILES += mdds-1.7.0.tar.bz2:0
 DISTFILES += noto-fonts-20171024.tar.gz:0
 DISTFILES += pdfium-4306.tar.bz2:0
-DISTFILES += skia-m85-e684c6daef6bfb774a325a069eda1f76ca6ac26c.tar.xz:0
+DISTFILES += skia-m88-59bafeeaa7de9eb753e3778c414e01dcf013dcd8.tar.xz:0
 DISTFILES += source-serif-pro-3.000R.tar.gz:0
 DISTFILES += ttf-kacst_2.01+mry.tar.gz:0
 DISTFILES += xmlsec1-1.2.30.tar.gz:0
+DISTFILES += libnumbertext-1.0.7.tar.xz:0
+DISTFILES += box2d-2.3.1.tar.gz:0
 
 DIST_SUBDIR=	libreoffice
 
@@ -209,13 +211,13 @@ LIB_DEPENDS-main=databases/openldap \
 		textproc/libxslt \
 		textproc/raptor \
 		net/curl \
-		net/neon \
+		net/neon>=0.31.2 \
 		textproc/icu4c \
 		textproc/redland \
 		textproc/hunspell
 
 WANTLIB-main=	${COMPILER_LIBCXX}
-WANTLIB-main+=	xslt>=3 curl>=7 neon>=24 pq>=2 icuuc>=0 icui18n rdf>=0
+WANTLIB-main+=	xslt>=3 curl>=7 neon>=31 pq>=2 icuuc>=0 icui18n rdf>=0
 WANTLIB-main+=	ICE SM X11
 WANTLIB-main+=	Xext Xrandr Xrender atk-1.0 c cairo
 WANTLIB-main+=	crypto expat fontconfig freetype gio-2.0 glib-2.0
@@ -230,6 +232,7 @@ WANTLIB-main+=	bz2 graphite2 epoxy mariadb png boost_locale-mt
 WANTLIB-main+=	boost_filesystem boost_filesystem-mt boost_iostreams-mt
 WANTLIB-main+=	boost_system boost_system-mt boost_date_time-mt
 WANTLIB-main+=	lber ldap ${MODPY_WANTLIB}
+WANTLIB-main+=	X11-xcb
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
 			devel/xdg-utils \
@@ -275,7 +278,7 @@ PATCHORIG=	.orig.port
 
 CONFIGURE_STYLE=	gnu
 
-AUTOCONF_VERSION=	2.68
+AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.12
 
 CONFIGURE_ENV=	CONFIG_SHELL=${LOCALBASE}/bin/bash \
@@ -297,7 +300,6 @@ CONFIGURE_ARGS+=\
 		--disable-firebird-sdbc \
 		--disable-dependency-tracking \
 		--disable-online-update \
-		--disable-libnumbertext \
 		--enable-mergelibs \
 		--enable-gio \
 		--enable-kf5 \
@@ -366,6 +368,7 @@ CONFIGURE_ARGS+=--enable-debug
 .endif
 
 MAKE_ENV+=	PYTHON="${MODPY_BIN}" verbose=f \
+		PARALLELISM=${MAKE_JOBS} \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
 

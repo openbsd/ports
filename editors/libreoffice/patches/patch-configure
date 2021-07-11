@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.41 2021/06/26 08:06:58 robert Exp $
+$OpenBSD: patch-configure,v 1.42 2021/07/11 13:14:06 robert Exp $
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -6610,8 +6610,12 @@ aix*)
+@@ -6882,8 +6882,12 @@ aix*)
  
  openbsd*)
      test_freetype=yes
@@ -16,7 +16,7 @@ Index: configure
      _os=OpenBSD
      ;;
  
-@@ -20580,9 +20584,6 @@ _ACEOF
+@@ -21046,9 +21050,6 @@ _ACEOF
          rm -fr libconftest*
          { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gccvisinlineshiddenok" >&5
  printf "%s\n" "$gccvisinlineshiddenok" >&6; }
@@ -26,7 +26,7 @@ Index: configure
      fi
  
     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking if $CXX_BASE has a visibility bug with class-level attributes (GCC bug 26905)" >&5
-@@ -27071,7 +27072,7 @@ then :
+@@ -27494,7 +27495,7 @@ then :
    printf %s "(cached) " >&6
  else $as_nop
  
@@ -35,7 +35,7 @@ Index: configure
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
-@@ -27387,7 +27388,7 @@ then :
+@@ -27810,7 +27811,7 @@ then :
    printf %s "(cached) " >&6
  else $as_nop
  
@@ -44,7 +44,7 @@ Index: configure
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
-@@ -27713,7 +27714,7 @@ then :
+@@ -28136,7 +28137,7 @@ then :
    printf %s "(cached) " >&6
  else $as_nop
  
@@ -53,7 +53,7 @@ Index: configure
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
-@@ -35844,7 +35845,7 @@ printf "%s\n" "internal" >&6; }
+@@ -36395,7 +36396,7 @@ printf "%s\n" "internal" >&6; }
      if test "$COM" = "MSC"; then
          HYPHEN_LIB="${WORKDIR}/LinkTarget/StaticLibrary/hyphen.lib"
      else
@@ -62,7 +62,7 @@ Index: configure
      fi
  fi
  
-@@ -36050,7 +36051,7 @@ printf "%s\n" "internal" >&6; }
+@@ -36601,7 +36602,7 @@ printf "%s\n" "internal" >&6; }
      if test "$COM" = "MSC"; then
          MYTHES_LIBS="${WORKDIR}/LinkTarget/StaticLibrary/mythes.lib"
      else
@@ -71,7 +71,7 @@ Index: configure
      fi
  fi
  
-@@ -36881,7 +36882,7 @@ else
+@@ -37415,7 +37416,7 @@ else
      { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking the flex version" >&5
  printf %s "checking the flex version... " >&6; }
      _flex_version=$($FLEX --version | $SED -e 's/^.*\([[:digit:]]\{1,\}\.[[:digit:]]\{1,\}\.[[:digit:]]\{1,\}\).*$/\1/')
@@ -80,7 +80,7 @@ Index: configure
          as_fn_error $? "failed ($FLEX $_flex_version found, but need at least 2.6.0)" "$LINENO" 5
      fi
  fi
-@@ -39824,7 +39825,7 @@ printf "%s\n" "$qt5_incdir" >&6; }
+@@ -40476,7 +40477,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  printf %s "checking for Qt5 libraries... " >&6; }
      qt5_libdir="no"
      for lib_dir in $qt5_libdirs; do
@@ -89,7 +89,7 @@ Index: configure
              qt5_libdir="$lib_dir"
              break
          fi
-@@ -40241,7 +40242,7 @@ printf "%s\n" "$kf5_incdir" >&6; }
+@@ -40893,7 +40894,7 @@ printf "%s\n" "$kf5_incdir" >&6; }
  printf %s "checking for KF5 libraries... " >&6; }
      kf5_libdir="no"
      for kf5_check in $kf5_libdirs; do
@@ -98,7 +98,7 @@ Index: configure
              kf5_libdir="$kf5_check"
              break
          fi
-@@ -41876,7 +41877,7 @@ for i in shasum /usr/local/bin/shasum /usr/sfw/bin/sha
+@@ -42526,7 +42527,7 @@ for i in shasum /usr/local/bin/shasum /usr/sfw/bin/sha
  done
  
  if test -z "$SHA256SUM"; then
@@ -107,7 +107,7 @@ Index: configure
          eval "$i --version" > /dev/null 2>&1
          ret=$?
          if test $ret -eq 0; then
-@@ -42500,7 +42501,7 @@ if test $_os = iOS -o $_os = Android; then
+@@ -43139,7 +43140,7 @@ if test $_os = iOS -o $_os = Android; then
  fi
  
  if test -n "$enable_mergelibs" -a "$enable_mergelibs" != "no"; then

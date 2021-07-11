@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-ru,v 1.19 2020/08/07 07:09:30 robert Exp $
+@comment $OpenBSD: PLIST-i18n-ru,v 1.20 2021/07/11 13:14:07 robert Exp $
 !%%no_java%%
 lib/libreoffice/program/resource/
 lib/libreoffice/program/resource/ru/
@@ -51,6 +51,7 @@ lib/libreoffice/share/extensions/dict-ru/META-INF/
 lib/libreoffice/share/extensions/dict-ru/META-INF/manifest.xml
 lib/libreoffice/share/extensions/dict-ru/README_Lightproof_ru_RU.txt
 lib/libreoffice/share/extensions/dict-ru/README_ru_RU.txt
+lib/libreoffice/share/extensions/dict-ru/README_thes_ru_RU_M_aot_and_v2.txt
 lib/libreoffice/share/extensions/dict-ru/description.xml
 lib/libreoffice/share/extensions/dict-ru/dialog/
 lib/libreoffice/share/extensions/dict-ru/dialog/OptionsDialog.xcs
@@ -87,6 +88,8 @@ lib/libreoffice/share/extensions/dict-ru/pythonpath/lightproof_opts_ru_RU.py
 lib/libreoffice/share/extensions/dict-ru/pythonpath/lightproof_ru_RU.py
 lib/libreoffice/share/extensions/dict-ru/ru_RU.aff
 lib/libreoffice/share/extensions/dict-ru/ru_RU.dic
+lib/libreoffice/share/extensions/dict-ru/th_ru_RU_M_aot_and_v2.dat
+lib/libreoffice/share/extensions/dict-ru/th_ru_RU_M_aot_and_v2.idx
 lib/libreoffice/share/registry/Langpack-ru.xcd
 lib/libreoffice/share/registry/res/fcfg_langpack_ru.xcd
 lib/libreoffice/share/registry/res/registry_ru.xcd
