@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_cmd_internal_objabi_reloctype_go,v 1.1 2021/07/11 14:44:56 jsing Exp $
+
+Index: src/cmd/internal/objabi/reloctype.go
+--- src/cmd/internal/objabi/reloctype.go.orig
++++ src/cmd/internal/objabi/reloctype.go
+@@ -238,6 +238,11 @@ const (
+ 	// TODO(mundaym): remove once variants can be serialized - see issue 14218.
+ 	R_PCRELDBL
+ 
++	R_MIPSGPRELHI
++	R_MIPSGPRELLO
++	R_MIPSCALL16
++	R_MIPSJALR
++
+ 	// R_ADDRMIPSU (only used on mips/mips64) resolves to the sign-adjusted "upper" 16
+ 	// bits (bit 16-31) of an external address, by encoding it into the instruction.
+ 	R_ADDRMIPSU

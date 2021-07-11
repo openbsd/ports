@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_internal_testenv_testenv_go,v 1.1 2021/07/11 14:44:56 jsing Exp $
+
+Index: src/internal/testenv/testenv.go
+--- src/internal/testenv/testenv.go.orig
++++ src/internal/testenv/testenv.go
+@@ -198,13 +198,11 @@ func MustHaveCGO(t testing.TB) {
+ func CanInternalLink() bool {
+ 	switch runtime.GOOS {
+ 	case "android":
+-		if runtime.GOARCH != "arm64" {
+-			return false
+-		}
++		return runtime.GOARCH == "arm64"
+ 	case "ios":
+-		if runtime.GOARCH == "arm64" {
+-			return false
+-		}
++		return runtime.GOARCH != "arm64"
++	case "openbsd":
++		return runtime.GOARCH != "mips64"
+ 	}
+ 	return true
+ }

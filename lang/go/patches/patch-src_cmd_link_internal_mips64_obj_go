@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_cmd_link_internal_mips64_obj_go,v 1.1 2021/07/11 14:44:56 jsing Exp $
+
+Index: src/cmd/link/internal/mips64/obj.go
+--- src/cmd/link/internal/mips64/obj.go.orig
++++ src/cmd/link/internal/mips64/obj.go
+@@ -55,6 +55,7 @@ func Init() (*sys.Arch, ld.Arch) {
+ 		Elfreloc1:        elfreloc1,
+ 		ElfrelocSize:     24,
+ 		Elfsetupplt:      elfsetupplt,
++		Trampoline:       trampoline,
+ 		Gentext:          gentext,
+ 		Machoreloc1:      machoreloc1,
+ 

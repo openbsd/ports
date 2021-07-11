@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_runtime_sys_openbsd2_go,v 1.1 2021/03/02 17:56:41 jsing Exp $
+$OpenBSD: patch-src_runtime_sys_openbsd2_go,v 1.2 2021/07/11 14:44:56 jsing Exp $
 
 Index: src/runtime/sys_openbsd2.go
 --- src/runtime/sys_openbsd2.go.orig
@@ -8,7 +8,21 @@ Index: src/runtime/sys_openbsd2.go
  // license that can be found in the LICENSE file.
  
 -// +build openbsd,amd64 openbsd,arm64
-+// +build openbsd,386 openbsd,amd64 openbsd,arm openbsd,arm64
++// +build openbsd
  
  package runtime
  
+@@ -185,13 +185,6 @@ func sigaction(sig uint32, new *sigactiont, old *sigac
+ 	libcCall(unsafe.Pointer(funcPC(sigaction_trampoline)), unsafe.Pointer(&sig))
+ }
+ func sigaction_trampoline()
+-
+-//go:nosplit
+-//go:cgo_unsafe_args
+-func sigprocmask(how uint32, new *sigset, old *sigset) {
+-	libcCall(unsafe.Pointer(funcPC(sigprocmask_trampoline)), unsafe.Pointer(&how))
+-}
+-func sigprocmask_trampoline()
+ 
+ //go:nosplit
+ //go:cgo_unsafe_args

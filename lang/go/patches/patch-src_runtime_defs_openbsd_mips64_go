@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_runtime_defs_openbsd_386_go,v 1.4 2021/07/11 14:44:56 jsing Exp $
+$OpenBSD: patch-src_runtime_defs_openbsd_mips64_go,v 1.1 2021/07/11 14:44:56 jsing Exp $
 
-Index: src/runtime/defs_openbsd_386.go
---- src/runtime/defs_openbsd_386.go.orig
-+++ src/runtime/defs_openbsd_386.go
-@@ -30,6 +30,13 @@ const (
+Index: src/runtime/defs_openbsd_mips64.go
+--- src/runtime/defs_openbsd_mips64.go.orig
++++ src/runtime/defs_openbsd_mips64.go
+@@ -37,6 +37,13 @@ const (
  	_SA_RESTART = 0x2
  	_SA_ONSTACK = 0x1
  
@@ -17,7 +17,7 @@ Index: src/runtime/defs_openbsd_386.go
  	_SIGHUP    = 0x1
  	_SIGINT    = 0x2
  	_SIGQUIT   = 0x3
-@@ -166,3 +173,10 @@ type keventt struct {
+@@ -165,3 +172,10 @@ type keventt struct {
  	data   int64
  	udata  *byte
  }

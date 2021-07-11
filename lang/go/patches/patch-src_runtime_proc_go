@@ -1,23 +1,57 @@
-$OpenBSD: patch-src_runtime_proc_go,v 1.1 2021/03/02 17:56:41 jsing Exp $
+$OpenBSD: patch-src_runtime_proc_go,v 1.2 2021/07/11 14:44:56 jsing Exp $
 
 Index: src/runtime/proc.go
 --- src/runtime/proc.go.orig
 +++ src/runtime/proc.go
-@@ -1213,7 +1213,7 @@ func usesLibcall() bool {
- 	case "aix", "darwin", "illumos", "ios", "solaris", "windows":
+@@ -1210,10 +1210,8 @@ func startTheWorldWithSema(emitTraceEvent bool) int64 
+ // via libcall.
+ func usesLibcall() bool {
+ 	switch GOOS {
+-	case "aix", "darwin", "illumos", "ios", "solaris", "windows":
++	case "aix", "darwin", "illumos", "ios", "openbsd", "solaris", "windows":
  		return true
- 	case "openbsd":
+-	case "openbsd":
 -		return GOARCH == "amd64" || GOARCH == "arm64"
-+		return GOARCH == "386" || GOARCH == "amd64" || GOARCH == "arm" || GOARCH == "arm64"
  	}
  	return false
  }
-@@ -1226,7 +1226,7 @@ func mStackIsSystemAllocated() bool {
+@@ -1222,13 +1220,8 @@ func usesLibcall() bool {
+ // system-allocated stack.
+ func mStackIsSystemAllocated() bool {
+ 	switch GOOS {
+-	case "aix", "darwin", "plan9", "illumos", "ios", "solaris", "windows":
++	case "aix", "darwin", "illumos", "ios", "openbsd", "plan9", "solaris", "windows":
  		return true
- 	case "openbsd":
- 		switch GOARCH {
+-	case "openbsd":
+-		switch GOARCH {
 -		case "amd64", "arm64":
-+		case "386", "amd64", "arm", "arm64":
- 			return true
- 		}
+-			return true
+-		}
  	}
+ 	return false
+ }
+@@ -2032,7 +2025,7 @@ func lockextra(nilokay bool) *m {
+ 	for {
+ 		old := atomic.Loaduintptr(&extram)
+ 		if old == locked {
+-			osyield()
++			osyield_no_g()
+ 			continue
+ 		}
+ 		if old == 0 && !nilokay {
+@@ -2043,13 +2036,13 @@ func lockextra(nilokay bool) *m {
+ 				atomic.Xadd(&extraMWaiters, 1)
+ 				incr = true
+ 			}
+-			usleep(1)
++			usleep_no_g(1)
+ 			continue
+ 		}
+ 		if atomic.Casuintptr(&extram, old, locked) {
+ 			return (*m)(unsafe.Pointer(old))
+ 		}
+-		osyield()
++		osyield_no_g()
+ 		continue
+ 	}
+ }

@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_syscall_mkall_sh,v 1.1 2021/03/02 17:56:41 jsing Exp $
+$OpenBSD: patch-src_syscall_mkall_sh,v 1.2 2021/07/11 14:44:56 jsing Exp $
 
 Index: src/syscall/mkall.sh
 --- src/syscall/mkall.sh.orig
@@ -39,3 +39,22 @@ Index: src/syscall/mkall.sh
  	;;
  openbsd_arm64)
  	GOOSARCH_in="syscall_openbsd_libc.go syscall_openbsd_$GOARCH.go"
+@@ -325,15 +327,16 @@ openbsd_arm64)
+ 	mkasm="go run mkasm.go"
+ 	;;
+ openbsd_mips64)
+-	GOOSARCH_in="syscall_openbsd1.go syscall_openbsd_$GOARCH.go"
++	GOOSARCH_in="syscall_openbsd_libc.go syscall_openbsd_$GOARCH.go"
+ 	mkerrors="$mkerrors -m64"
+-	mksyscall="./mksyscall.pl -openbsd"
++	mksyscall="./mksyscall.pl -openbsd -libc"
+ 	mksysctl="./mksysctl_openbsd.pl"
+ 	zsysctl="zsysctl_openbsd.go"
+ 	mksysnum="curl -s 'http://cvsweb.openbsd.org/cgi-bin/cvsweb/~checkout~/src/sys/kern/syscalls.master' | ./mksysnum_openbsd.pl"
+ 	# Let the type of C char be signed to make the bare syscall
+ 	# API consistent between platforms.
+ 	mktypes="GOARCH=$GOARCH go tool cgo -godefs -- -fsigned-char"
++	mkasm="go run mkasm.go"
+ 	;;
+ plan9_386)
+ 	mkerrors=

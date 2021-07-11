@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_syscall_exec_bsd_go,v 1.1 2021/03/02 17:56:41 jsing Exp $
+$OpenBSD: patch-src_syscall_exec_bsd_go,v 1.2 2021/07/11 14:44:56 jsing Exp $
 
 Index: src/syscall/exec_bsd.go
 --- src/syscall/exec_bsd.go.orig
@@ -8,7 +8,7 @@ Index: src/syscall/exec_bsd.go
  // license that can be found in the LICENSE file.
  
 -// +build dragonfly freebsd netbsd openbsd,!amd64,!arm64
-+// +build dragonfly freebsd netbsd openbsd,!386,!amd64,!arm,!arm64
++// +build dragonfly freebsd netbsd
  
  package syscall
  

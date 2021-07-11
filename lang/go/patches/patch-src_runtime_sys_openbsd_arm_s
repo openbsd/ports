@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_runtime_sys_openbsd_arm_s,v 1.5 2021/03/02 17:56:41 jsing Exp $
+$OpenBSD: patch-src_runtime_sys_openbsd_arm_s,v 1.6 2021/07/11 14:44:56 jsing Exp $
 
 Index: src/runtime/sys_openbsd_arm.s
 --- src/runtime/sys_openbsd_arm.s.orig

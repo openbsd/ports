@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_cmd_link_link_test_go,v 1.1 2021/03/02 17:56:41 jsing Exp $
+$OpenBSD: patch-src_cmd_link_link_test_go,v 1.2 2021/07/11 14:44:56 jsing Exp $
 
 Index: src/cmd/link/link_test.go
 --- src/cmd/link/link_test.go.orig

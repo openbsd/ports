@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.49 2021/06/07 11:02:54 danj Exp $
+@comment $OpenBSD: PLIST,v 1.50 2021/07/11 14:44:56 jsing Exp $
 bin/go
 bin/gofmt
 go/
@@ -6778,6 +6778,7 @@ go/src/runtime/cgo/gcc_openbsd_386.c
 go/src/runtime/cgo/gcc_openbsd_amd64.c
 go/src/runtime/cgo/gcc_openbsd_arm.c
 go/src/runtime/cgo/gcc_openbsd_arm64.c
+go/src/runtime/cgo/gcc_openbsd_mips64.c
 go/src/runtime/cgo/gcc_ppc64x.c
 go/src/runtime/cgo/gcc_riscv64.S
 go/src/runtime/cgo/gcc_s390x.S
@@ -7483,6 +7484,8 @@ go/src/runtime/sys_nonppc64x.go
 go/src/runtime/sys_openbsd.go
 go/src/runtime/sys_openbsd1.go
 go/src/runtime/sys_openbsd2.go
+go/src/runtime/sys_openbsd2_mips64.go
+go/src/runtime/sys_openbsd2_nonmips64.go
 go/src/runtime/sys_openbsd3.go
 go/src/runtime/sys_openbsd_386.s
 go/src/runtime/sys_openbsd_amd64.s
@@ -7992,6 +7995,7 @@ go/src/syscall/zsyscall_openbsd_arm.s
 go/src/syscall/zsyscall_openbsd_arm64.go
 go/src/syscall/zsyscall_openbsd_arm64.s
 go/src/syscall/zsyscall_openbsd_mips64.go
+go/src/syscall/zsyscall_openbsd_mips64.s
 go/src/syscall/zsyscall_plan9_386.go
 go/src/syscall/zsyscall_plan9_amd64.go
 go/src/syscall/zsyscall_plan9_arm.go

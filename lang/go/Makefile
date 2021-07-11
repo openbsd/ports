@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2021/06/07 11:02:54 danj Exp $
+# $OpenBSD: Makefile,v 1.102 2021/07/11 14:44:56 jsing Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
@@ -8,6 +8,7 @@ BIN_BOOTSTRAP_VERSION = 1.16
 COMMENT =		Go programming language
 
 VERSION =		1.16.5
+REVISION =		0
 DISTNAME =		go${VERSION}.src
 PKGNAME =		go-${VERSION}
 PKGSPEC =		${FULLPKGNAME:S/go-/go-=/}
@@ -56,7 +57,7 @@ GOARCH =		arm
 GOARCH =		arm64
 .elif ${MACHINE_ARCH} == "i386"
 GOARCH =		386
-.elif ${MACHINE_ARCH} == "octeon"
+.elif ${MACHINE_ARCH} == "mips64"
 GOARCH =		mips64
 .endif
 

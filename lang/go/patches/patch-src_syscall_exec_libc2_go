@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_syscall_exec_libc2_go,v 1.1 2021/03/02 17:56:41 jsing Exp $
+$OpenBSD: patch-src_syscall_exec_libc2_go,v 1.2 2021/07/11 14:44:56 jsing Exp $
 
 Index: src/syscall/exec_libc2.go
 --- src/syscall/exec_libc2.go.orig
@@ -8,7 +8,26 @@ Index: src/syscall/exec_libc2.go
  // license that can be found in the LICENSE file.
  
 -// +build darwin openbsd,amd64 openbsd,arm64
-+// +build darwin openbsd,386 openbsd,amd64 openbsd,arm openbsd,arm64
++// +build darwin openbsd
  
  package syscall
  
+@@ -117,14 +117,15 @@ func forkAndExecInChild(argv0 *byte, argv, envv []*byt
+ 	}
+ 
+ 	if sys.Foreground {
+-		pgrp := sys.Pgid
++		// This should really be pid_t, however _C_int (aka int32) is
++		// generally equivalent.
++		pgrp := _C_int(sys.Pgid)
+ 		if pgrp == 0 {
+ 			r1, _, err1 = rawSyscall(funcPC(libc_getpid_trampoline), 0, 0, 0)
+ 			if err1 != 0 {
+ 				goto childerror
+ 			}
+-
+-			pgrp = int(r1)
++			pgrp = _C_int(r1)
+ 		}
+ 
+ 		// Place process group in foreground.

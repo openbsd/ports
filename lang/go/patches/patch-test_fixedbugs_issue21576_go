@@ -1,0 +1,13 @@
+$OpenBSD: patch-test_fixedbugs_issue21576_go,v 1.1 2021/07/11 14:44:56 jsing Exp $
+
+Index: test/fixedbugs/issue21576.go
+--- test/fixedbugs/issue21576.go.orig
++++ test/fixedbugs/issue21576.go
+@@ -1,6 +1,7 @@
+ // run
+ 
+ // +build !nacl,!js,!gccgo
++// +build openbsd,!mips64
+ 
+ // Copyright 2019 The Go Authors. All rights reserved.
+ // Use of this source code is governed by a BSD-style

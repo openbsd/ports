@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_runtime_os_openbsd_libc_go,v 1.1 2021/03/02 17:56:41 jsing Exp $
+$OpenBSD: patch-src_runtime_os_openbsd_libc_go,v 1.2 2021/07/11 14:44:56 jsing Exp $
 
 Index: src/runtime/os_openbsd_libc.go
 --- src/runtime/os_openbsd_libc.go.orig
@@ -8,7 +8,7 @@ Index: src/runtime/os_openbsd_libc.go
  // license that can be found in the LICENSE file.
  
 -// +build openbsd,amd64 openbsd,arm64
-+// +build openbsd,386 openbsd,amd64 openbsd,arm openbsd,arm64
++// +build openbsd
  
  package runtime
  
