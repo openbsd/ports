@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2021/07/02 10:33:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.94 2021/07/11 10:13:24 bket Exp $
 
 COMMENT=	DHCPv4/IPv4LL/IPv6RS/DHCPv6 quad stack client
 
@@ -9,6 +9,7 @@ GH_PROJECT=	dhcpcd
 GH_COMMIT=	01748b315d7093f458b9379bc77f19762c721314
 
 DISTNAME=	dhcpcd-9.4.0pl1
+REVISION=	0
 EPOCH=		0
 
 CATEGORIES=	net

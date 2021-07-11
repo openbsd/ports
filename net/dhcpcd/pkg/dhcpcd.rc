@@ -1,12 +1,12 @@
 #!/bin/ksh
 #
-# $OpenBSD: dhcpcd.rc,v 1.4 2020/04/02 16:33:19 sthen Exp $
+# $OpenBSD: dhcpcd.rc,v 1.5 2021/07/11 10:13:25 bket Exp $
 
 daemon="${TRUEPREFIX}/sbin/dhcpcd"
 daemon_flags="-Mq"
 
 . /etc/rc.d/rc.subr
 
-pexp="dhcpcd:.*master.*"
+pexp="dhcpcd:.*manager.*"
 
 rc_cmd $1
