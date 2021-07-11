@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.191 2021/05/15 17:06:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.192 2021/07/11 07:52:22 ajacoutot Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -9,7 +9,7 @@ COMMENT-hpcups=		HP native CUPS driver
 COMMENT-hpijs=		HP ghostscript driver (spooler independent)
 COMMENT-gui=		HPLIP graphical tools
 
-V=			3.21.4
+V=			3.21.6
 DISTNAME=		hplip-${V}
 SUBST_VARS=		V
 
@@ -65,7 +65,7 @@ WANTLIB-main += ${cWANTLIB}
 WANTLIB-main += avahi-client avahi-common cups dbus-1 hpmud netsnmp
 WANTLIB-main += gmp gnutls hogweed nettle p11-kit tasn1 usb-1.0 z
 WANTLIB-main += hpdiscovery hpipp idn2 iconv intl unistring
-WANTLIB-main += ${COMPILER_LIBCXX} c avahi-core
+WANTLIB-main += ${COMPILER_LIBCXX} c avahi-core execinfo
 
 LIB_DEPENDS-main=	print/cups,-libs \
 			print/hplip,-common
@@ -85,6 +85,7 @@ RUN_DEPENDS-main +=	print/cups
 ### -common
 WANTLIB-common += ${cWANTLIB} netsnmp usb-1.0 avahi-client
 WANTLIB-common += avahi-common avahi-core dbus-1 iconv intl
+WANTLIB-common += execinfo
 
 LIB_DEPENDS-common= 	devel/libusb1 \
 			net/avahi \
@@ -97,7 +98,7 @@ WANTLIB-hpaio += ${cWANTLIB}
 WANTLIB-hpaio += avahi-client avahi-common cups dbus-1 gmp gnutls
 WANTLIB-hpaio += hogweed hpip hpipp hpmud netsnmp nettle p11-kit idn2
 WANTLIB-hpaio += sane tasn1 usb-1.0 z hpdiscovery iconv intl unistring
-WANTLIB-hpaio += lzma xml2 avahi-core
+WANTLIB-hpaio += lzma xml2 avahi-core execinfo
 
 LIB_DEPENDS-hpaio=	print/hplip,-common \
 			print/cups,-libs \
@@ -110,7 +111,7 @@ WANTLIB-hpcups += ${cWANTLIB} z netsnmp hpdiscovery iconv intl
 WANTLIB-hpcups += c jpeg ${COMPILER_LIBCXX} hpip cups cupsimage dbus-1 idn2
 WANTLIB-hpcups += z usb-1.0 avahi-client avahi-common hpmud
 WANTLIB-hpcups += gmp gnutls hogweed nettle p11-kit tasn1
-WANTLIB-hpcups += unistring avahi-core
+WANTLIB-hpcups += unistring avahi-core execinfo
 
 LIB_DEPENDS-hpcups=	graphics/jpeg \
 			print/hplip,-common \
@@ -122,7 +123,7 @@ RUN_DEPENDS-hpcups=	# empty
 ### -hpijs
 WANTLIB-hpijs += ${cWANTLIB} hpip usb-1.0 hpdiscovery avahi-core
 WANTLIB-hpijs += c jpeg netsnmp ${COMPILER_LIBCXX} dbus-1 hpmud
-WANTLIB-hpijs += avahi-client avahi-common iconv intl
+WANTLIB-hpijs += avahi-client avahi-common iconv intl execinfo
 
 LIB_DEPENDS-hpijs=	print/hplip,-common \
 			graphics/jpeg \
