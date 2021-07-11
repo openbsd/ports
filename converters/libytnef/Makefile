@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2019/11/07 10:33:52 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2021/07/11 13:32:27 robert Exp $
 
 COMMENT=		read and convert TNEF files
 
 SHARED_LIBS +=  ytnef                     0.0 # 0.0
 
 DISTNAME=		libytnef-1.9.3
-REVISION=		0
+REVISION=		1
 
 GH_ACCOUNT=		Yeraze
 GH_PROJECT=		ytnef
-GH_COMMIT=		24fe30e592a7a840b415dbbc16ba47c7a882bb38
+GH_COMMIT=		f80f624d373997afa3e3bfc074948b26d171d210
 
 CATEGORIES=		converters mail
 
