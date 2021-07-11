@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2020/10/30 17:17:00 juanfra Exp $
+# $OpenBSD: Makefile,v 1.16 2021/07/11 22:52:40 jca Exp $
 
 COMMENT =		library for manipulating JSON data
 
 DISTNAME =		jansson-2.12
-REVISION =		0
+REVISION =		1
 
-SHARED_LIBS =		jansson 3.2
+SHARED_LIBS =		jansson 4.0
 
 CATEGORIES =		devel
 
@@ -18,10 +18,6 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://digip.org/jansson/releases/
 
-MODULES =		devel/cmake
-
-CONFIGURE_ARGS +=	-DJANSSON_BUILD_SHARED_LIBS=ON \
-			-DJANSSON_BUILD_DOCS=OFF \
-			-DJANSSON_EXAMPLES=OFF
+CONFIGURE_STYLE =	gnu
 
 .include <bsd.port.mk>

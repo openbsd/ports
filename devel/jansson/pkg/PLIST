@@ -1,12 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/12/12 15:09:14 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/07/11 22:52:40 jca Exp $
 include/jansson.h
 include/jansson_config.h
-lib/cmake/
-lib/cmake/jansson/
-lib/cmake/jansson/janssonConfig.cmake
-lib/cmake/jansson/janssonConfigVersion.cmake
-lib/cmake/jansson/janssonTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/jansson/janssonTargets.cmake
-lib/libjansson.a
+@static-lib lib/libjansson.a
+lib/libjansson.la
 @lib lib/libjansson.so.${LIBjansson_VERSION}
 lib/pkgconfig/jansson.pc
