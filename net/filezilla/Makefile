@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.80 2021/05/13 17:05:45 bket Exp $
+# $OpenBSD: Makefile,v 1.81 2021/07/11 09:22:17 bket Exp $
 
 BROKEN-hppa=	serverpath.h:17:19: error: variable 'CServerPath final' has initializer but incomplete type
 BROKEN-alpha=	serverpath.h:17:19: error: variable 'CServerPath final' has initializer but incomplete type
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 
-V=		3.54.1
+V=		3.55.0
 PKGNAME=	filezilla-$V
 DISTNAME=	FileZilla_$V_src
 
-SHARED_LIBS+=	fzclient-commonui-private	0.1	# 3.54.1
-SHARED_LIBS+=	fzclient-private		2.0	# 3.54.1
+SHARED_LIBS+=	fzclient-commonui-private	0.2	# 3.55.0
+SHARED_LIBS+=	fzclient-private		3.0	# 3.55.0
 
 CATEGORIES=	net
 
@@ -44,7 +44,7 @@ COMPILER=	base-clang ports-gcc
 LIB_DEPENDS=	databases/sqlite3 \
 		devel/harfbuzz \
 		devel/libidn \
-		net/libfilezilla>=0.28.0 \
+		net/libfilezilla>=0.30.0 \
 		security/gnutls \
 		textproc/pugixml \
 		x11/dbus \
