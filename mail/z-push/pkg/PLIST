@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2018/09/04 12:46:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.24 2021/07/11 19:07:58 robert Exp $
 @extraunexec rm -rf /var/www/var/db/z-push/*
 @extraunexec rm -rf /var/www/var/log/z-push/*
 @unexec-delete rm -f /var/www/conf/modules/z-push.conf
@@ -70,8 +70,9 @@ z-push/backend/ipcmemcached/ipcmemcachedprovider.php
 z-push/backend/ipcsharedmemory/
 z-push/backend/ipcsharedmemory/ipcsharedmemoryprovider.php
 z-push/backend/ipcwincache/
-z-push/backend/ipcwincache/ipcwincache.php
+z-push/backend/ipcwincache/ipcwincacheprovider.php
 z-push/backend/kopano/
+z-push/backend/kopano/checkshares.php
 z-push/backend/kopano/config.php.dist
 @sample z-push/backend/kopano/config.php
 z-push/backend/kopano/exporter.php
@@ -134,6 +135,7 @@ z-push/config.php.dist
 z-push/include/
 z-push/include/iCalendar.php
 z-push/include/mimeDecode.php
+z-push/include/rtfclass.php
 z-push/include/z_RFC822.php
 z-push/include/z_RTF.php
 z-push/include/z_caldav.php
@@ -159,6 +161,7 @@ z-push/lib/core/streamimporter.php
 z-push/lib/core/synccollections.php
 z-push/lib/core/syncparameters.php
 z-push/lib/core/topcollector.php
+z-push/lib/core/userstoreinfo.php
 z-push/lib/core/zlog.php
 z-push/lib/core/zpush.php
 z-push/lib/core/zpushdefs.php
@@ -174,6 +177,7 @@ z-push/lib/default/searchprovider.php
 z-push/lib/default/simplemutex.php
 z-push/lib/exceptions/
 z-push/lib/exceptions/authenticationrequiredexception.php
+z-push/lib/exceptions/badrequestexception.php
 z-push/lib/exceptions/fatalexception.php
 z-push/lib/exceptions/fatalmisconfigurationexception.php
 z-push/lib/exceptions/fatalnotimplementedexception.php
