@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2021/06/07 15:15:25 jeremy Exp $
+# $OpenBSD: Makefile,v 1.16 2021/07/12 07:44:06 jca Exp $
 
 COMMENT=	PostgreSQL RDBMS (previous version, for pg_upgrade)
 
@@ -62,7 +62,7 @@ CONFIGURE_ARGS=	--with-openssl=/usr \
 # a system to get this working, disable them for now. There is
 # (apparently) a serious performance hit doing this.
 
-.if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "alpha"
+.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "riscv64"
 CONFIGURE_ARGS+=--disable-spinlocks
 .endif
 
