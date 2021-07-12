@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_missing_hh,v 1.1 2021/07/10 05:44:14 visa Exp $
+$OpenBSD: patch-src_missing_hh,v 1.2 2021/07/12 17:34:57 jasper Exp $
 
-build: Fix build on non-linux systems
+https://gitlab.gnome.org/GNOME/vte/-/commit/674f864269d0842376752487f29bfdddc8c7ec9f
 
 Index: src/missing.hh
 --- src/missing.hh.orig
