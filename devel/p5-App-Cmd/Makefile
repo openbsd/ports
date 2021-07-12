@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2021/03/15 15:27:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/07/12 09:36:21 benoit Exp $
 
 COMMENT =		write command line apps with less suffering
 
 MODULES =		cpan
 PKG_ARCH =		*
-DISTNAME =		App-Cmd-0.333
+DISTNAME =		App-Cmd-0.334
 CATEGORIES =		devel
 
 # Perl
