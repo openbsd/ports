@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2020/11/25 08:12:52 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2021/07/12 09:29:17 benoit Exp $
 
 COMMENT=	portability layer for LIMIT emulation
 
-DISTNAME =	SQL-Abstract-Limit-0.142
+DISTNAME =	SQL-Abstract-Limit-0.143
 CATEGORIES=	databases
 MODULES=	cpan
 PKG_ARCH=	*
