@@ -1,14 +1,14 @@
-$OpenBSD: patch-simgear_nasal_cppbind_Ghost_hxx,v 1.1 2017/08/21 17:55:37 rsadowski Exp $
+$OpenBSD: patch-simgear_nasal_cppbind_Ghost_hxx,v 1.2 2021/07/12 20:52:43 pascal Exp $
 
 Index: simgear/nasal/cppbind/Ghost.hxx
 --- simgear/nasal/cppbind/Ghost.hxx.orig
 +++ simgear/nasal/cppbind/Ghost.hxx
-@@ -36,6 +36,8 @@
- #include <boost/shared_ptr.hpp>
- #include <boost/utility/enable_if.hpp>
+@@ -32,6 +32,8 @@
+ #include <boost/call_traits.hpp>
+ #include <boost/mpl/has_xxx.hpp>
  
 +#include <osg/Referenced>
 +
  #include <map>
+ #include <memory>
  
- template<class T>
