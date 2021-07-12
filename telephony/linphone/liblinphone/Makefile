@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/07/10 17:00:37 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2021/07/12 06:08:54 landry Exp $
 
 COMMENT =	SIP library supporting voice/video calls and text messaging
 
@@ -15,7 +15,7 @@ CONFIGURE_ARGS =-DENABLE_STATIC=NO \
 		-DENABLE_DB_STORAGE=NO # needs SOCI
 
 BUILD_DEPENDS = textproc/py-stache \
-		devel/py-six \
+		devel/py-six,python3 \
 		devel/doxygen
 
 LIB_DEPENDS =	telephony/linphone/bctoolbox>=${V} \
