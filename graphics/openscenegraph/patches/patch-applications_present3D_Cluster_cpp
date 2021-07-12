@@ -1,8 +1,8 @@
-$OpenBSD: patch-applications_present3D_Cluster_cpp,v 1.4 2017/11/09 16:36:22 pascal Exp $
+$OpenBSD: patch-applications_present3D_Cluster_cpp,v 1.5 2021/07/12 20:52:19 pascal Exp $
 Index: applications/present3D/Cluster.cpp
 --- applications/present3D/Cluster.cpp.orig
 +++ applications/present3D/Cluster.cpp
-@@ -33,7 +33,7 @@
+@@ -35,7 +35,7 @@
  #if defined(__linux)
      #include <unistd.h>
      #include <linux/sockios.h>
@@ -11,7 +11,7 @@ Index: applications/present3D/Cluster.cpp
      #include <unistd.h>
      #include <sys/sockio.h>
  #elif defined(__sgi)
-@@ -340,7 +340,8 @@ void Receiver::sync( void )
+@@ -351,7 +351,8 @@ void Receiver::sync( void )
      }
  
  #if defined(__linux) || defined(__FreeBSD__) || defined( __APPLE__ ) || \

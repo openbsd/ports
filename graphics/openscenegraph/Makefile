@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2020/06/24 22:50:41 cwen Exp $
+# $OpenBSD: Makefile,v 1.23 2021/07/12 20:52:19 pascal Exp $
 
 # No consumers on macppc, saves 17 build hours in bulks
 NOT_FOR_ARCHS =		powerpc
@@ -7,34 +7,32 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		3D graphics toolkit
 
-V =			3.4.1
+V =			3.6.5
 GH_ACCOUNT =		openscenegraph
 GH_PROJECT =		OpenSceneGraph
 GH_TAGNAME =		OpenSceneGraph-$V
 DISTNAME =		openscenegraph-${V}
-REVISION =		6
 
 SUBST_VARS +=		V
 
-SHARED_LIBS  =  OpenThreads               1.0 # 2.6
-SHARED_LIBS +=  osg                       1.0 # 3.0
-SHARED_LIBS +=  osgAnimation              1.0 # 3.0
-SHARED_LIBS +=  osgDB                     1.0 # 3.0
-SHARED_LIBS +=  osgFX                     1.0 # 3.0
-SHARED_LIBS +=  osgGA                     1.0 # 3.0
-SHARED_LIBS +=  osgManipulator            1.0 # 3.0
-SHARED_LIBS +=  osgParticle               1.0 # 3.0
-SHARED_LIBS +=  osgPresentation           1.0 # 3.0
-SHARED_LIBS +=  osgQt                     1.0 # 3.0
-SHARED_LIBS +=  osgShadow                 1.0 # 3.0
-SHARED_LIBS +=  osgSim                    1.0 # 3.0
-SHARED_LIBS +=  osgTerrain                1.0 # 3.0
-SHARED_LIBS +=  osgText                   1.0 # 3.0
-SHARED_LIBS +=  osgUtil                   1.0 # 3.0
-SHARED_LIBS +=  osgUI                     0.0 # 3.4
-SHARED_LIBS +=  osgViewer                 1.0 # 3.0
-SHARED_LIBS +=  osgVolume                 1.0 # 3.0
-SHARED_LIBS +=  osgWidget                 1.0 # 3.0
+SHARED_LIBS  =  OpenThreads               2.0 # 2.6
+SHARED_LIBS +=  osg                       2.0 # 3.0
+SHARED_LIBS +=  osgAnimation              2.0 # 3.0
+SHARED_LIBS +=  osgDB                     2.0 # 3.0
+SHARED_LIBS +=  osgFX                     2.0 # 3.0
+SHARED_LIBS +=  osgGA                     2.0 # 3.0
+SHARED_LIBS +=  osgManipulator            2.0 # 3.0
+SHARED_LIBS +=  osgParticle               2.0 # 3.0
+SHARED_LIBS +=  osgPresentation           2.0 # 3.0
+SHARED_LIBS +=  osgShadow                 2.0 # 3.0
+SHARED_LIBS +=  osgSim                    2.0 # 3.0
+SHARED_LIBS +=  osgTerrain                2.0 # 3.0
+SHARED_LIBS +=  osgText                   2.0 # 3.0
+SHARED_LIBS +=  osgUtil                   2.0 # 3.0
+SHARED_LIBS +=  osgUI                     1.0 # 3.4
+SHARED_LIBS +=  osgViewer                 2.0 # 3.0
+SHARED_LIBS +=  osgVolume                 2.0 # 3.0
+SHARED_LIBS +=  osgWidget                 2.0 # 3.0
 
 CATEGORIES =		graphics
 
@@ -46,14 +44,13 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Half-2_5 Iex-2_5 IlmImf-2_5 IlmThread-2_5
-WANTLIB += Qt5Core Qt5Gui Qt5OpenGL Qt5Widgets SDL X11 Xrandr
+WANTLIB += SDL X11 Xinerama Xrandr fontconfig
 WANTLIB += avcodec avdevice avformat avresample avutil c cairo
 WANTLIB += curl freetype gdal gdk_pixbuf-2.0 gif gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 intl jasper jpeg m png poppler-glib rsvg-2
 WANTLIB += swresample swscale tiff z
 
-MODULES =		devel/cmake \
-			x11/qt5
+MODULES =		devel/cmake
 LIB_DEPENDS =		devel/sdl \
 			graphics/openexr \
 			graphics/ffmpeg \
@@ -63,9 +60,6 @@ LIB_DEPENDS =		devel/sdl \
 			net/curl \
 			print/poppler \
 			x11/gnome/librsvg
-
-CONFIGURE_ARGS =	-DDESIRED_QT_VERSION=5 \
-			-DOSG_USE_AGGRESSIVE_WARNINGS=OFF
 
 NO_TEST =		Yes
 

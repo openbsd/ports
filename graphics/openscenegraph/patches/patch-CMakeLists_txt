@@ -1,35 +1,13 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.7 2017/11/09 16:36:22 pascal Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.8 2021/07/12 20:52:19 pascal Exp $
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -654,13 +654,15 @@ ELSE()
-     FIND_PACKAGE(COLLADA)
-     FIND_PACKAGE(FBX)
-     FIND_PACKAGE(ZLIB)
--    FIND_PACKAGE(Xine)
-+#    FIND_PACKAGE(Xine)
-+    SET(XINE_FOUND "NO")
-     FIND_PACKAGE(OpenVRML)
-     FIND_PACKAGE(Performer)
+@@ -750,7 +750,7 @@ ELSE()
      FIND_PACKAGE(GDAL)
      FIND_PACKAGE(GTA)
      FIND_PACKAGE(CURL)
 -    FIND_PACKAGE(LibVNCServer)
 +#    FIND_PACKAGE(LibVNCServer)
-+    SET(LIBVNCSERVER_FOUND "NO")
-     FIND_PACKAGE(OurDCMTK)
+     FIND_PACKAGE(DCMTK)
      FIND_PACKAGE(FFmpeg)
      FIND_PACKAGE(GStreamer COMPONENTS app pbutils)
-@@ -844,12 +846,6 @@ IF(CYGWIN)
-   SET(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -D_DEBUG")
- ENDIF()
- 
--IF(UNIX AND NOT WIN32 AND NOT APPLE)
--  IF(CMAKE_SIZEOF_VOID_P MATCHES "8")
--      SET(LIB_POSTFIX "64" CACHE STRING "suffix for 32/64 dir placement")
--      MARK_AS_ADVANCED(LIB_POSTFIX)
--  ENDIF()
--ENDIF()
- IF(NOT DEFINED LIB_POSTFIX)
-     SET(LIB_POSTFIX "")
- ENDIF()
