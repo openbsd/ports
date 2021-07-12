@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.21 2020/04/17 15:49:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2021/07/12 18:23:16 kirby Exp $
 
 COMMENT=	turn-based strategy engine
 
-DISTNAME=	lgeneral-1.4.3
+DISTNAME=	lgeneral-1.4.4
 CATEGORIES=	games x11
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		kukgen-data-1.1.tar.gz
 
-HOMEPAGE=	http://lgames.sourceforge.net/LGeneral/
+HOMEPAGE=	https://lgames.sourceforge.io/LGeneral/
 
 # GPLv2 / CC BY-SA 3.0 (data)
 PERMIT_PACKAGE=   Yes
@@ -23,9 +23,8 @@ LIB_DEPENDS=	devel/gettext,-runtime \
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
-SEPARATE_BUILD=	Yes
-AUTOCONF_VERSION=2.69
-CONFIGURE_STYLE= autoconf
+AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ENV+=		LDFLAGS=-L${LOCALBASE}/lib \
 			CPPFLAGS=-I${LOCALBASE}/include
 CFLAGS += -fgnu89-inline
