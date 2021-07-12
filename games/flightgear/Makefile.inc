@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.7 2019/07/12 20:46:17 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2021/07/12 20:53:07 pascal Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
-V =			2016.3.1
+V =			2020.3.9
 
 CATEGORIES =		games
 
