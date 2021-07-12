@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2020/02/14 11:11:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/07/12 04:23:37 jsg Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 GH_ACCOUNT =		dhewm
 GH_PROJECT =		dhewm3
-GH_TAGNAME =		1.5.0
+GH_TAGNAME =		1.5.1
 
 COMMENT =		open-source version of Doom 3
 
