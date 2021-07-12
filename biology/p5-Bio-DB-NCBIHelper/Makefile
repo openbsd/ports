@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/08/25 23:39:36 cwen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/07/12 09:01:59 benoit Exp $
 
 COMMENT =		collection of routines useful for queries to NCBI databases
 
-DISTNAME =		Bio-DB-NCBIHelper-1.7.6
+DISTNAME =		Bio-DB-NCBIHelper-1.7.7
 
 CATEGORIES =		biology
 
