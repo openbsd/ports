@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/04/04 08:57:15 solene Exp $
+# $OpenBSD: Makefile,v 1.2 2021/07/13 16:33:36 solene Exp $
 
 COMMENT =		gemini server written in C used with inetd
-V =			1.06
+V =			1.07
 DISTNAME =		vger-${V}
 
 CATEGORIES =		net
@@ -18,6 +18,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=		c
 
 MASTER_SITES =		https://tildegit.org/solene/vger/archive/
+
+CFLAGS +=		-std=gnu99
+
 DISTFILES =		vger-{}${V}${EXTRACT_SUFX}
 WRKSRC =		${WRKDIR}/vger
 
