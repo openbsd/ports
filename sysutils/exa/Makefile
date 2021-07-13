@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/07/11 09:08:22 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2021/07/13 06:27:14 landry Exp $
 
 COMMENT =		ls alternative written in Rust
 
@@ -32,8 +32,8 @@ post-install:
 	pandoc --standalone -f markdown -t man ${WRKSRC}/man/exa_colors.5.md > ${PREFIX}/man/man5/exa_colors.5
 	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/completions/
 	${INSTALL_DATA} ${WRKSRC}/completions/completions.fish ${PREFIX}/share/fish/completions/exa.fish
-	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/vendor-completions/
-	${INSTALL_DATA} ${WRKSRC}/completions/completions.zsh ${PREFIX}/share/zsh/vendor-completions/_exa
+	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions/
+	${INSTALL_DATA} ${WRKSRC}/completions/completions.zsh ${PREFIX}/share/zsh/site-functions/_exa
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/
 	${INSTALL_DATA} ${WRKSRC}/completions/completions.bash ${PREFIX}/share/bash-completion/completions/exa
 
