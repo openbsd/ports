@@ -1,5 +1,4 @@
-# $OpenBSD: unveil.gpu,v 1.5 2021/02/13 05:05:54 jsg Exp $
-/dev/drm0 rw
+# $OpenBSD: unveil.gpu,v 1.6 2021/07/13 15:25:30 landry Exp $
 /dev/dri/card0 rw
 
 /usr/local/lib/firefox r

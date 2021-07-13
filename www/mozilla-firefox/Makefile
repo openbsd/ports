@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.463 2021/06/26 07:21:37 landry Exp $
+# $OpenBSD: Makefile,v 1.464 2021/07/13 15:25:29 landry Exp $
 
 COMMENT =	Firefox web browser
 ONLY_FOR_ARCHS =	amd64 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	89.0.2
+MOZILLA_VERSION =	90.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
-SO_VERSION =	102.0
+SO_VERSION =	103.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk xul clearkey lgpllibs mozsqlite3
@@ -39,6 +39,7 @@ BUILD_DEPENDS +=	devel/m4
 
 # uses pledge()
 WANTLIB += X11-xcb Xcursor Xi intl xcb xcb-shm harfbuzz ${COMPILER_LIBCXX}
+WANTLIB += Xcomposite Xdamage Xfixes
 
 # Regression tests are too hard to adapt to run here
 NO_TEST =	Yes
@@ -51,7 +52,7 @@ CONFIGURE_ENV +=	M4=/usr/local/bin/gm4
 
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
-#CONFIGURE_ARGS +=	--enable-forkserver
+CONFIGURE_ARGS +=	--enable-forkserver
 CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/lib
 
 # XXX badly formed debug ?
@@ -87,7 +88,7 @@ post-install:
 	# link default48.png to default.png to be used by default by non-icccm compliant wm
 	ln -f ${PREFIX}/lib/${MOZILLA_PROJECT}/browser/chrome/icons/default/default{48,}.png
 
-.for f in unveil.content unveil.gpu unveil.main pledge.content pledge.gpu pledge.main
+.for f in unveil.content unveil.gpu unveil.main unveil.rdd unveil.socket pledge.content pledge.gpu pledge.main pledge.rdd pledge.socket
 	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/lib/${MOZILLA_PROJECT}/browser/defaults/preferences/
 .endfor
 

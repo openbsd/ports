@@ -1,0 +1,28 @@
+$OpenBSD: patch-toolkit_moz_configure,v 1.1 2021/07/13 15:25:30 landry Exp $
+enable forkserver on OpenBSD
+
+https://hg.mozilla.org/mozilla-central/rev/743a7a76c203
+https://bugzilla.mozilla.org/show_bug.cgi?id=1470591
+https://bugzilla.mozilla.org/show_bug.cgi?id=1713742
+freebsd enabled it in https://bugzilla.mozilla.org/show_bug.cgi?id=1607103
+
+Index: toolkit/moz.configure
+--- toolkit/moz.configure.orig
++++ toolkit/moz.configure
+@@ -2381,7 +2381,7 @@ check_prog(
+ @depends(target, build_project)
+ def forkserver_default(target, build_project):
+     return build_project == "browser" and (
+-        (target.os == "GNU" and target.kernel == "Linux") or target.os == "FreeBSD"
++        (target.os == "GNU" and target.kernel == "Linux") or target.os == "FreeBSD" or target.os == "OpenBSD"
+     )
+ 
+ 
+@@ -2399,6 +2399,7 @@ def forkserver_flag(value, target):
+         target.os == "Android"
+         or (target.os == "GNU" and target.kernel == "Linux")
+         or target.os == "FreeBSD"
++        or target.os == "OpenBSD"
+     ):
+         return bool(value)
+     pass
