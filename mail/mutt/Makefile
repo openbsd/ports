@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.151 2021/06/13 21:04:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.152 2021/07/13 08:43:49 sthen Exp $
 
 COMMENT=	tty-based e-mail client
 
-DISTNAME=	mutt-2.1.0
+DISTNAME=	mutt-2.1.1
 EPOCH=		3
 
 CATEGORIES=	mail
