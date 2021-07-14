@@ -1,12 +1,13 @@
-$OpenBSD: patch-configure,v 1.4 2014/09/08 06:51:48 ajacoutot Exp $
---- configure.orig	Mon Sep  8 08:49:16 2014
-+++ configure	Mon Sep  8 08:49:47 2014
+$OpenBSD: patch-configure,v 1.5 2021/07/14 20:17:00 naddy Exp $
+Index: configure
+--- configure.orig
++++ configure
 @@ -9595,7 +9595,7 @@ fi
  $as_echo "$ne_cv_lib_neon" >&6; }
      if test "$ne_cv_lib_neon" = "yes"; then
         ne_cv_lib_neonver=no
 -       for v in 27 28 29; do
-+       for v in 27 28 29 30; do
++       for v in 27 28 29 30 31; do
            case $ne_libver in
            0.$v.*) ne_cv_lib_neonver=yes ;;
            esac
@@ -16,8 +17,8 @@ $OpenBSD: patch-configure,v 1.4 2014/09/08 06:51:48 ajacoutot Exp $
  else
 -    { $as_echo "$as_me:$LINENO: incompatible neon library version $ne_libver: wanted 0.27 28 29" >&5
 -$as_echo "$as_me: incompatible neon library version $ne_libver: wanted 0.27 28 29" >&6;}
-+    { $as_echo "$as_me:$LINENO: incompatible neon library version $ne_libver: wanted 0.27 28 29 30" >&5
-+$as_echo "$as_me: incompatible neon library version $ne_libver: wanted 0.27 28 29 30" >&6;}
++    { $as_echo "$as_me:$LINENO: incompatible neon library version $ne_libver: wanted 0.27 28 29 30 31" >&5
++$as_echo "$as_me: incompatible neon library version $ne_libver: wanted 0.27 28 29 30 31" >&6;}
      neon_got_library=no
  fi
  
@@ -26,7 +27,7 @@ $OpenBSD: patch-configure,v 1.4 2014/09/08 06:51:48 ajacoutot Exp $
      if test "$ne_cv_lib_neon" = "yes"; then
         ne_cv_lib_neonver=no
 -       for v in 27 28 29; do
-+       for v in 27 28 29 30; do
++       for v in 27 28 29 30 31; do
            case $ne_libver in
            0.$v.*) ne_cv_lib_neonver=yes ;;
            esac
@@ -36,8 +37,8 @@ $OpenBSD: patch-configure,v 1.4 2014/09/08 06:51:48 ajacoutot Exp $
  else
 -    { $as_echo "$as_me:$LINENO: incompatible neon library version $ne_libver: wanted 0.27 28 29" >&5
 -$as_echo "$as_me: incompatible neon library version $ne_libver: wanted 0.27 28 29" >&6;}
-+    { $as_echo "$as_me:$LINENO: incompatible neon library version $ne_libver: wanted 0.27 28 29 30" >&5
-+$as_echo "$as_me: incompatible neon library version $ne_libver: wanted 0.27 28 29 30" >&6;}
++    { $as_echo "$as_me:$LINENO: incompatible neon library version $ne_libver: wanted 0.27 28 29 30 31" >&5
++$as_echo "$as_me: incompatible neon library version $ne_libver: wanted 0.27 28 29 30 31" >&6;}
      neon_got_library=no
  fi
  
