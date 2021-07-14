@@ -1,0 +1,14 @@
+$OpenBSD: patch-tests_Makefile,v 1.1 2021/07/14 03:50:15 kirby Exp $
+
+Index: tests/Makefile
+--- tests/Makefile.orig
++++ tests/Makefile
+@@ -81,7 +81,7 @@ $(shell mkdir -p $(ODIR))
+ 
+ # Adding ../tests/ so that the directory appears in __FILE__ for log messages
+ $(ODIR)/%.o: %.cpp $(PCH_P)
+-	$(CXX) $(CPPFLAGS) $(DEFINES) $(CXXFLAGS) $(subst main-pch,tests-pch,$(PCHFLAGS)) -c ../tests/$< -o $@
++	$(CXX) $(CPPFLAGS) $(DEFINES) $(CXXFLAGS) $(subst main-pch,tests-pch,$(PCHFLAGS)) -I. -c ../tests/$< -o $@
+ 
+ .PHONY: clean check check-single tests precompile_header
+ 
