@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1288 2021/07/11 08:05:24 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1289 2021/07/14 12:55:50 bket Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1391,6 +1391,7 @@ my $cve = {
 	'devel/pcre' => 'pcre-<8.38',
 	'devel/sdl2-image' => 'sdl2-image-<2.0.4',
 	'editors/vim,-main' => 'vim-<8.1.1483',
+	'games/gnuchess' => 'gnuchess-<6.2.9',
 	'graphics/png' => 'png-<1.6.37',
 	'graphics/tiff' => 'tiff-<4.0.4beta',
 	'lang/php/7.1,-main' => 'php->7.1,<7.1.29',
