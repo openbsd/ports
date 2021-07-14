@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2020/11/24 13:08:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/07/14 10:36:41 feinerer Exp $
 
 COMMENT =		QR Code image generator
 
-MODPY_EGG_VERSION =	6.1
+MODPY_EGG_VERSION =	7.1
 DISTNAME =		qrcode-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
 
 CATEGORIES =		graphics textproc
 

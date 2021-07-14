@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/11/24 13:08:43 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/07/14 10:36:41 feinerer Exp $
 @conflict py-qrcode-*
 @pkgpath graphics/py-qrcode
 bin/qr
@@ -50,10 +50,12 @@ lib/python${MODPY_VERSION}/site-packages/qrcode/tests/${MODPY_PYCACHE}test_examp
 lib/python${MODPY_VERSION}/site-packages/qrcode/tests/${MODPY_PYCACHE}test_qrcode.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qrcode/tests/${MODPY_PYCACHE}test_release.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qrcode/tests/${MODPY_PYCACHE}test_script.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qrcode/tests/${MODPY_PYCACHE}test_util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qrcode/tests/svg.py
 lib/python${MODPY_VERSION}/site-packages/qrcode/tests/test_example.py
 lib/python${MODPY_VERSION}/site-packages/qrcode/tests/test_qrcode.py
 lib/python${MODPY_VERSION}/site-packages/qrcode/tests/test_release.py
 lib/python${MODPY_VERSION}/site-packages/qrcode/tests/test_script.py
+lib/python${MODPY_VERSION}/site-packages/qrcode/tests/test_util.py
 lib/python${MODPY_VERSION}/site-packages/qrcode/util.py
 @man man/man1/qr.1
