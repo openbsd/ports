@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.123 2021/04/28 19:39:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.124 2021/07/14 14:53:50 sthen Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
-DISTNAME=	freetds-1.2.21
+DISTNAME=	freetds-1.3
 
 SHARED_LIBS +=  ct                   6.1      # 4.0
 SHARED_LIBS +=  sybdb                8.1      # 6.0
@@ -20,7 +20,7 @@ MASTER_SITES=	https://www.freetds.org/files/stable/ \
 # LGPLv2+ (most things) GPLv2+ (fisql, tdspool) FDL (docs)
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c curses ffi gmp gnutls hogweed iconv idn2 intl iodbc
+WANTLIB += c curses gmp gnutls hogweed iconv idn2 intl iodbc
 WANTLIB += iodbcinst nettle p11-kit pthread readline tasn1 unistring
 
 COMPILER=	base-clang ports-gcc
