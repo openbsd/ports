@@ -1,0 +1,16 @@
+$OpenBSD: patch-CMakeModules_KiCadFullVersion_cmake,v 1.1 2021/07/14 16:28:06 tracey Exp $
+
+Index: CMakeModules/KiCadFullVersion.cmake
+--- CMakeModules/KiCadFullVersion.cmake.orig
++++ CMakeModules/KiCadFullVersion.cmake
+@@ -28,8 +28,8 @@
+ # KICAD_VERSION_EXTRA is then appended to the base version string.
+ 
+ # Use git to determine the version string if it's available.
+-include( ${CMAKE_MODULE_PATH}/CreateGitVersionHeader.cmake )
+-create_git_version_header( ${SRC_PATH} )
++#include( ${CMAKE_MODULE_PATH}/CreateGitVersionHeader.cmake )
++#create_git_version_header( ${SRC_PATH} )
+ 
+ # $KICAD_VERSION is set in KiCadVersion.cmake or by git (if it is available).
+ set( KICAD_VERSION_FULL "${KICAD_VERSION}" )

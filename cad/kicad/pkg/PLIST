@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/02/19 14:48:58 tracey Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/07/14 16:28:07 tracey Exp $
 @pkgpath cad/kicad,-docs
 @pkgpath cad/kicad,-main
 @bin bin/bitmap2component
@@ -256,6 +256,7 @@ share/kicad/demos/simulation/pspice/schematic_libspice.dcm
 share/kicad/demos/simulation/pspice/schematic_libspice.lib
 share/kicad/demos/simulation/pspice/sym-lib-table
 share/kicad/demos/simulation/rectifier/
+share/kicad/demos/simulation/rectifier/diode.mod
 share/kicad/demos/simulation/rectifier/rectifier-cache.lib
 share/kicad/demos/simulation/rectifier/rectifier.pro
 share/kicad/demos/simulation/rectifier/rectifier.sch
