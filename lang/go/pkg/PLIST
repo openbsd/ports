@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.50 2021/07/11 14:44:56 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.51 2021/07/14 12:32:02 jsing Exp $
 bin/go
 bin/gofmt
 go/
@@ -10309,6 +10309,11 @@ go/test/fixedbugs/issue4618.go
 go/test/fixedbugs/issue4620.go
 go/test/fixedbugs/issue4654.go
 go/test/fixedbugs/issue4663.go
+go/test/fixedbugs/issue46653.dir/
+go/test/fixedbugs/issue46653.dir/bad/
+go/test/fixedbugs/issue46653.dir/bad/bad.go
+go/test/fixedbugs/issue46653.dir/main.go
+go/test/fixedbugs/issue46653.go
 go/test/fixedbugs/issue4667.go
 go/test/fixedbugs/issue4734.go
 go/test/fixedbugs/issue4748.go
