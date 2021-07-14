@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2020/08/08 07:39:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2021/07/14 11:10:47 jca Exp $
+
+BROKEN-riscv64 =	Unknown architecture riscv64
 
 COMMENT =	Python bindings for keystone
 
