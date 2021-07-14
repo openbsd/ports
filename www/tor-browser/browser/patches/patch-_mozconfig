@@ -1,14 +1,24 @@
-$OpenBSD: patch-_mozconfig,v 1.7 2020/10/23 07:04:09 landry Exp $
+$OpenBSD: patch-_mozconfig,v 1.8 2021/07/14 19:27:15 sthen Exp $
 
 Disable the updater and related stuff.  Does nothing under OpenBSD
 
 Encrypted Media Extensions is not supported on OpenBSD. Apparently this also
 means we can not pass --disable-eme to configure so comment that out.
 
+Don't use --enable-rust-simd, fails to build.
+
 Index: .mozconfig
 --- .mozconfig.orig
 +++ .mozconfig
-@@ -27,13 +27,15 @@ ac_add_options --disable-crashreporter
+@@ -14,7 +14,6 @@ mk_add_options MOZ_APP_DISPLAYNAME="Tor Browser"
+ export MOZILLA_OFFICIAL=1
+ 
+ ac_add_options --enable-optimize
+-ac_add_options --enable-rust-simd
+ ac_add_options --enable-official-branding
+ 
+ # Let's support GTK3 for ESR60
+@@ -28,13 +27,15 @@ ac_add_options --disable-crashreporter
  ac_add_options --disable-webrtc
  ac_add_options --disable-parental-controls
  # Let's make sure no preference is enabling either Adobe's or Google's CDM.
