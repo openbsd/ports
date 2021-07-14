@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.92 2021/07/03 20:22:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.93 2021/07/14 09:04:59 sthen Exp $
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
 GH_TAGNAME=	2.7
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	mail
 
@@ -24,8 +24,10 @@ FLAVORS=	no_luajit hyperscan
 .if ${MACHINE_ARCH} == "amd64"
 # amd64: any flavour
 FLAVOR?=
-.elif ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
-# i386: no_luajit or unflavoured
+.elif ${MACHINE_ARCH} == "arm" || \
+      ${MACHINE_ARCH} == "i386" || \
+      ${MACHINE_ARCH} == "powerpc"
+# other luajit arches: no_luajit or unflavoured
 FLAVOR?=
 FLAVOR:=	${FLAVOR:Nhyperscan}
 .else
