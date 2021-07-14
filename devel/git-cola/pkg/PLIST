@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.20 2021/02/20 06:10:05 bket Exp $
+@comment $OpenBSD: PLIST,v 1.21 2021/07/14 09:07:21 bket Exp $
 bin/git-cola
 bin/git-cola-sequence-editor
 bin/git-dag
 lib/python${MODPY_VERSION}/site-packages/cola/
 lib/python${MODPY_VERSION}/site-packages/cola/__init__.py
+lib/python${MODPY_VERSION}/site-packages/cola/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}actions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}app.${MODPY_PYC_MAGIC_TAG}pyc
@@ -35,6 +37,7 @@ lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}observable.${MODPY
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}qtcompat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}qtutils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}resources.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}sequenceeditor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}settings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}spellcheck.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}textwrap.${MODPY_PYC_MAGIC_TAG}pyc
@@ -86,6 +89,7 @@ lib/python${MODPY_VERSION}/site-packages/cola/observable.py
 lib/python${MODPY_VERSION}/site-packages/cola/qtcompat.py
 lib/python${MODPY_VERSION}/site-packages/cola/qtutils.py
 lib/python${MODPY_VERSION}/site-packages/cola/resources.py
+lib/python${MODPY_VERSION}/site-packages/cola/sequenceeditor.py
 lib/python${MODPY_VERSION}/site-packages/cola/settings.py
 lib/python${MODPY_VERSION}/site-packages/cola/spellcheck.py
 lib/python${MODPY_VERSION}/site-packages/cola/textwrap.py
@@ -315,8 +319,10 @@ share/git-cola/icons/zoom-out.svg
 share/git-cola/lib/
 share/git-cola/lib/cola/
 share/git-cola/lib/cola/__init__.py
+share/git-cola/lib/cola/__main__.py
 ${MODPY_COMMENT}share/git-cola/lib/cola/${MODPY_PYCACHE}/
 share/git-cola/lib/cola/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+share/git-cola/lib/cola/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 share/git-cola/lib/cola/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 share/git-cola/lib/cola/${MODPY_PYCACHE}actions.${MODPY_PYC_MAGIC_TAG}pyc
 share/git-cola/lib/cola/${MODPY_PYCACHE}app.${MODPY_PYC_MAGIC_TAG}pyc
@@ -346,6 +352,7 @@ share/git-cola/lib/cola/${MODPY_PYCACHE}observable.${MODPY_PYC_MAGIC_TAG}pyc
 share/git-cola/lib/cola/${MODPY_PYCACHE}qtcompat.${MODPY_PYC_MAGIC_TAG}pyc
 share/git-cola/lib/cola/${MODPY_PYCACHE}qtutils.${MODPY_PYC_MAGIC_TAG}pyc
 share/git-cola/lib/cola/${MODPY_PYCACHE}resources.${MODPY_PYC_MAGIC_TAG}pyc
+share/git-cola/lib/cola/${MODPY_PYCACHE}sequenceeditor.${MODPY_PYC_MAGIC_TAG}pyc
 share/git-cola/lib/cola/${MODPY_PYCACHE}settings.${MODPY_PYC_MAGIC_TAG}pyc
 share/git-cola/lib/cola/${MODPY_PYCACHE}spellcheck.${MODPY_PYC_MAGIC_TAG}pyc
 share/git-cola/lib/cola/${MODPY_PYCACHE}textwrap.${MODPY_PYC_MAGIC_TAG}pyc
@@ -397,6 +404,7 @@ share/git-cola/lib/cola/observable.py
 share/git-cola/lib/cola/qtcompat.py
 share/git-cola/lib/cola/qtutils.py
 share/git-cola/lib/cola/resources.py
+share/git-cola/lib/cola/sequenceeditor.py
 share/git-cola/lib/cola/settings.py
 share/git-cola/lib/cola/spellcheck.py
 share/git-cola/lib/cola/textwrap.py
