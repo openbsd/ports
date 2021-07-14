@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/04/24 04:33:53 tb Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/07/14 22:23:41 tb Exp $
 lib/python${MODPY_VERSION}/site-packages/fastecdsa/
 lib/python${MODPY_VERSION}/site-packages/fastecdsa-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/fastecdsa-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -40,6 +40,7 @@ lib/python${MODPY_VERSION}/site-packages/fastecdsa/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fastecdsa/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fastecdsa/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fastecdsa/tests/${MODPY_PYCACHE}test_brainpool_ecdh.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fastecdsa/tests/${MODPY_PYCACHE}test_key_export_import.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fastecdsa/tests/${MODPY_PYCACHE}test_key_recovery.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fastecdsa/tests/${MODPY_PYCACHE}test_keygen.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fastecdsa/tests/${MODPY_PYCACHE}test_nonce_generation.${MODPY_PYC_MAGIC_TAG}pyc
@@ -54,13 +55,12 @@ lib/python${MODPY_VERSION}/site-packages/fastecdsa/tests/encoding/
 lib/python${MODPY_VERSION}/site-packages/fastecdsa/tests/encoding/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fastecdsa/tests/encoding/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fastecdsa/tests/encoding/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/fastecdsa/tests/encoding/${MODPY_PYCACHE}test_asn1.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fastecdsa/tests/encoding/${MODPY_PYCACHE}test_der.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fastecdsa/tests/encoding/${MODPY_PYCACHE}test_sec1.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/fastecdsa/tests/encoding/test_asn1.py
 lib/python${MODPY_VERSION}/site-packages/fastecdsa/tests/encoding/test_der.py
 lib/python${MODPY_VERSION}/site-packages/fastecdsa/tests/encoding/test_sec1.py
 lib/python${MODPY_VERSION}/site-packages/fastecdsa/tests/test_brainpool_ecdh.py
+lib/python${MODPY_VERSION}/site-packages/fastecdsa/tests/test_key_export_import.py
 lib/python${MODPY_VERSION}/site-packages/fastecdsa/tests/test_key_recovery.py
 lib/python${MODPY_VERSION}/site-packages/fastecdsa/tests/test_keygen.py
 lib/python${MODPY_VERSION}/site-packages/fastecdsa/tests/test_nonce_generation.py
