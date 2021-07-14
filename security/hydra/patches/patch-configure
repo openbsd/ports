@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.12 2020/12/09 10:19:53 sthen Exp $
+$OpenBSD: patch-configure,v 1.13 2021/07/14 09:49:09 sebastia Exp $
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -170,6 +170,13 @@ fi
+@@ -172,6 +172,13 @@ fi
  STRIP="strip"
  echo
  
@@ -17,7 +17,7 @@ Index: configure
  echo "Checking for zlib (libz/zlib.h) ..."
  for i in $INCDIRS; do
     if [ -f "$i/zlib.h" ]; then
-@@ -267,13 +274,13 @@ if [ "$SSL_IPATH" = "/usr/include" ]; then
+@@ -269,13 +276,13 @@ if [ "$SSL_IPATH" = "/usr/include" ]; then
  fi
  
  echo "Checking for gcrypt (libgcrypt/gpg-error.h) ..."
@@ -33,7 +33,7 @@ Index: configure
      if [ "X" = "X$GPGERROR_IPATH" ]; then
          TMP_PATH=`/bin/ls $i/$SYSM*/gpg-error.h 2> /dev/null`
          if [ -n "$TMP_PATH" ]; then
-@@ -294,7 +301,7 @@ else
+@@ -296,7 +303,7 @@ else
  fi
  
  echo "Checking for idn (libidn) ..."
@@ -42,7 +42,7 @@ Index: configure
      if [ "X" = "X$IDN_PATH" ]; then
          if [ -f "$i/libidn.so" -o -f "$i/libidn.dylib" -o -f "$i/libidn.a" -o -f "$i/libidn.dll.a" -o -f "$i/libidn.la" ]; then
              IDN_PATH="$i"
-@@ -307,7 +314,7 @@ for i in $LIBDIRS ; do
+@@ -309,7 +316,7 @@ for i in $LIBDIRS ; do
          fi
      fi
  done
@@ -51,7 +51,7 @@ Index: configure
      if [ "X" != "X$IDN_PATH" ]; then
          if [ -f "$i/stringprep.h" ]; then
              IDN_IPATH="$i"
-@@ -379,7 +386,7 @@ if [ "X" = "X$CURSES_PATH" -o "X" = "X$CURSES_IPATH" ]
+@@ -381,7 +388,7 @@ if [ "X" = "X$CURSES_PATH" -o "X" = "X$CURSES_IPATH" ]
  fi
  
  echo "Checking for pcre (libpcre/pcre.h) ..."
@@ -60,7 +60,7 @@ Index: configure
      if [ "X" = "X$PCRE_PATH" ]; then
          if [ -f "$i/libpcre.so" -o -f "$i/libpcre.dylib" -o -f "$i/libpcre.a"   ]; then
              PCRE_PATH="$i"
-@@ -398,7 +405,7 @@ for i in $LIBDIRS ; do
+@@ -400,7 +407,7 @@ for i in $LIBDIRS ; do
          fi
      fi
  done
@@ -69,7 +69,7 @@ Index: configure
      if [ "X" != "X$PCRE_PATH" ]; then
          if [ -f "$i/pcre.h" ]; then
              PCRE_IPATH="$i"
-@@ -424,7 +431,7 @@ echo "Checking for Postgres (libpq/libpq-fe.h) ..."
+@@ -426,7 +433,7 @@ echo "Checking for Postgres (libpq/libpq-fe.h) ..."
  #    POSTGRES_PATH=""
  #    POSTGRES_IPATH=""
  #else
@@ -78,16 +78,16 @@ Index: configure
      if [ "X" = "X$POSTGRES_PATH" ]; then
          if [ -f "$i/libpq.so" -o -f "$i/libpq.dylib" -o -f "$i/libpq.a" ]; then
              POSTGRES_PATH="$i"
-@@ -444,7 +451,7 @@ echo "Checking for Postgres (libpq/libpq-fe.h) ..."
+@@ -446,7 +453,7 @@ echo "Checking for Postgres (libpq/libpq-fe.h) ..."
      fi
    done
    POSTGRES_IPATH=
 -  for i in $INCDIRS \
 +  for i in $INCDIRS_ALL \
-     /opt/p*sql*/include /usr/*p*sql*/include /usr/local/*psql*/include
+     /opt/p*sql*/include /usr/*p*sql*/include /usr/local/*psql*/include /mingw64/include
    do
      if [ "X" = "X$POSTGRES_IPATH" ]; then
-@@ -648,7 +655,7 @@ if [ "X" = "X$FIREBIRD_PATH" -o "X" = "X$FIREBIRD_IPAT
+@@ -650,7 +657,7 @@ if [ "X" = "X$FIREBIRD_PATH" -o "X" = "X$FIREBIRD_IPAT
  fi
  
  echo "Checking for MYSQL client (libmysqlclient/math.h) ..."
@@ -96,7 +96,7 @@ Index: configure
      if [ "X" = "X$MYSQL_PATH" ]; then
          if [ -f "$i/libmysqlclient.so" -o -f "$i/libmysqlclient.dylib" -o -f "$i/libmysqlclient.a" ]; then
              MYSQL_PATH="$i"
-@@ -668,7 +675,7 @@ for i in $LIBDIRS ; do
+@@ -670,7 +677,7 @@ for i in $LIBDIRS ; do
      fi
  done
  MYSQLINSUBDIR=""
@@ -105,7 +105,7 @@ Index: configure
      if [ "X" != "X$MYSQL_PATH" ]; then
          if [ -f "$i/mysql/mysql.h" ]; then
              MYSQL_IPATH="$i/mysql"
-@@ -819,7 +826,7 @@ if [ "$SAPR3_IPATH" = "/usr/include" ]; then
+@@ -821,7 +828,7 @@ if [ "$SAPR3_IPATH" = "/usr/include" ]; then
  fi
  
  echo "Checking for libssh (libssh/libssh.h) ..."
@@ -114,7 +114,7 @@ Index: configure
      if [ "X" = "X$SSH_PATH" ]; then
          if [ -f "$i/libssh.so" -o -f "$i/libssh.dylib" -o -f "$i/libssh.a"  ]; then
              SSH_PATH="$i"
-@@ -838,7 +845,7 @@ for i in $LIBDIRS ; do
+@@ -840,7 +847,7 @@ for i in $LIBDIRS ; do
          fi
      fi
  done
@@ -123,7 +123,7 @@ Index: configure
      if [ "X" = "X$SSH_IPATH" ]; then
          if [ -f "$i/libssh/libssh.h" ]; then
              SSH_IPATH="$i"
-@@ -971,7 +978,7 @@ fi
+@@ -973,7 +980,7 @@ fi
  
  echo "Checking for Memcached (libmemcached/memcached.h) ..."
  
@@ -132,7 +132,7 @@ Index: configure
      if [ "X" = "X$MCACHED_PATH" ]; then
          if [ -f "$i/libmemcached.so" -o -f "$i/libmemcached.dylib" -o -f "$i/libmemcached.a" ]; then
              MCACHED_PATH="$i"
-@@ -992,7 +999,7 @@ echo "Checking for Memcached (libmemcached/memcached.h
+@@ -994,7 +1001,7 @@ echo "Checking for Memcached (libmemcached/memcached.h
    done
  
    MCACHED_IPATH=
@@ -141,7 +141,7 @@ Index: configure
      if [ "X" = "X$MCACHED_IPATH" ]; then
          if [ -f "$i/memcached.h" ]; then
              MCACHED_IPATH="$i"
-@@ -1021,7 +1028,7 @@ fi
+@@ -1023,7 +1030,7 @@ fi
  
  echo "Checking for Freerdp3 (libfreerdp3/freerdp.h/libwinpr3/winpr.h) ..."
  
@@ -150,7 +150,7 @@ Index: configure
      if [ "X" = "X$FREERDP3_PATH" ]; then
          if [ -f "$i/libfreerdp3.so" -o -f "$i/libfreerdp3.dylib" -o -f "$i/libfreerdp3.a" -o -f "$i/libfreerdp3.dll.a" ]; then
              FREERDP3_PATH="$i"
-@@ -1036,7 +1043,7 @@ echo "Checking for Freerdp3 (libfreerdp3/freerdp.h/lib
+@@ -1038,7 +1045,7 @@ echo "Checking for Freerdp3 (libfreerdp3/freerdp.h/lib
    done
  
    FREERDP3_IPATH=
@@ -159,7 +159,7 @@ Index: configure
      if [ "X" = "X$FREERDP3_IPATH" ]; then
          if [ -f "$i/freerdp/freerdp.h" ]; then
              FREERDP3_IPATH="$i/freerdp3"
-@@ -1047,7 +1054,7 @@ echo "Checking for Freerdp3 (libfreerdp3/freerdp.h/lib
+@@ -1049,7 +1056,7 @@ echo "Checking for Freerdp3 (libfreerdp3/freerdp.h/lib
      fi
    done
  
@@ -168,7 +168,7 @@ Index: configure
      if [ "X" = "X$WINPR3_PATH" ]; then
          if [ -f "$i/libwinpr3.so" -o -f "$i/libwinpr3.dylib" -o -f "$i/libwinpr3.a" ]; then
              WINPR3_PATH="$i"
-@@ -1062,7 +1069,7 @@ echo "Checking for Freerdp3 (libfreerdp3/freerdp.h/lib
+@@ -1064,7 +1071,7 @@ echo "Checking for Freerdp3 (libfreerdp3/freerdp.h/lib
    done
  
    WINPR3_IPATH=
@@ -177,7 +177,7 @@ Index: configure
      if [ "X" = "X$WINPR3_IPATH" ]; then
          if [ -f "$i/winpr.h" ]; then
              WINPR3_IPATH="$i"
-@@ -1094,7 +1101,7 @@ echo "Checking for Freerdp3 (libfreerdp3/freerdp.h/lib
+@@ -1096,7 +1103,7 @@ echo "Checking for Freerdp3 (libfreerdp3/freerdp.h/lib
    if [ "X" = "X$FREERDP3_PATH" -o "X" = "X$FREERDP3_IPATH" -o "X" = "X$WINPR3_PATH" -o "X" = "X$WINPR3_IPATH" ]; then
      echo "Checking for Freerdp2 (libfreerdp2/freerdp.h/libwinpr2/winpr.h) ..."
  
@@ -186,7 +186,7 @@ Index: configure
          if [ "X" = "X$FREERDP2_PATH" ]; then
              if [ -f "$i/libfreerdp2.so" -o -f "$i/libfreerdp2.dylib" -o -f "$i/libfreerdp2.a" -o -f "$i/libfreerdp2.dll.a" ]; then
                  FREERDP2_PATH="$i"
-@@ -1109,7 +1116,7 @@ echo "Checking for Freerdp3 (libfreerdp3/freerdp.h/lib
+@@ -1111,7 +1118,7 @@ echo "Checking for Freerdp3 (libfreerdp3/freerdp.h/lib
      done
  
      FREERDP2_IPATH=
@@ -195,7 +195,7 @@ Index: configure
          if [ "X" = "X$FREERDP2_IPATH" ]; then
              if [ -f "$i/freerdp/freerdp.h" ]; then
                  FREERDP2_IPATH="$i/freerdp2"
-@@ -1120,14 +1127,14 @@ echo "Checking for Freerdp3 (libfreerdp3/freerdp.h/lib
+@@ -1122,14 +1129,14 @@ echo "Checking for Freerdp3 (libfreerdp3/freerdp.h/lib
          fi
      done
  
@@ -212,7 +212,7 @@ Index: configure
              if [ -n "$TMP_LIB" ]; then
              WINPR2_PATH="$i"
              fi
-@@ -1135,7 +1142,7 @@ echo "Checking for Freerdp3 (libfreerdp3/freerdp.h/lib
+@@ -1137,7 +1144,7 @@ echo "Checking for Freerdp3 (libfreerdp3/freerdp.h/lib
      done
  
      WINPR2_IPATH=
@@ -221,7 +221,7 @@ Index: configure
          if [ "X" = "X$WINPR2_IPATH" ]; then
              if [ -f "$i/winpr.h" ]; then
                  WINPR2_IPATH="$i"
-@@ -1429,7 +1436,7 @@ if [ -n "$FIREBIRD_PATH" -o \
+@@ -1431,7 +1438,7 @@ if [ -n "$FIREBIRD_PATH" -o \
              XLIBPATHS="-L/usr/lib -L/usr/local/lib"
          fi
      else

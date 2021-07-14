@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.63 2021/02/14 13:42:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.64 2021/07/14 09:49:09 sebastia Exp $
 
 COMMENT-main=	parallelized network logon cracker
 COMMENT-gui=	GTK frontend for hydra
 
-VERSION=	9.1
+VERSION=	9.2
 PKGNAME-main=	hydra-${VERSION}
 PKGNAME-gui=	hydra-gui-${VERSION}
-
-REVISION=	0
 
 CATEGORIES=	security
 
