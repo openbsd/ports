@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2020/11/11 09:57:04 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2021/07/15 17:02:57 sthen Exp $
 
 COMMENT=	European VAT number validator
 
-DISTNAME =	Business-Tax-VAT-Validation-1.12
+DISTNAME =	Business-Tax-VAT-Validation-1.20
 CATEGORIES=	productivity
 
 # perl
