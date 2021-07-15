@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2021/05/16 17:15:25 kmos Exp $
+# $OpenBSD: Makefile,v 1.3 2021/07/15 15:22:41 jca Exp $
 
 BROKEN-sparc64=	error "Need to describe target architecture"
 
 COMMENT=	BBS terminal program
 
 DISTNAME=	syncterm-1.1
+REVISION=	0
+
 HOMEPAGE=	http://syncterm.bbsdev.net/
 
 EXTRACT_SUFX=	-src.tgz

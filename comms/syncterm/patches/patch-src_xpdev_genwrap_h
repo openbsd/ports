@@ -1,14 +1,16 @@
-$OpenBSD: patch-src_xpdev_genwrap_h,v 1.1.1.1 2021/01/02 14:49:18 jcs Exp $
+$OpenBSD: patch-src_xpdev_genwrap_h,v 1.2 2021/07/15 15:22:41 jca Exp $
+
+ARCHITECTURE_DESC is unused, no need to error out for that.
 
 Index: src/xpdev/genwrap.h
 --- src/xpdev/genwrap.h.orig
 +++ src/xpdev/genwrap.h
-@@ -201,7 +201,7 @@ extern "C" {
- 	#define ARCHITECTURE_DESC "x86"
- #elif defined(__mips__)
- 	#define ARCHITECTURE_DESC "mips"
--#elif defined(__arm__)
-+#elif defined(__arm__) || defined(__aarch64__)
- 	#define ARCHITECTURE_DESC "arm"
- #elif defined(_M_PPC) || defined(__ppc__)
- 	#define ARCHITECTURE_DESC "ppc"
+@@ -208,7 +208,7 @@ extern "C" {
+ #elif defined(_M_IA64) || defined(__ia64__)
+ 	#define ARCHITECTURE_DESC "ia64"
+ #else
+-	#error "Need to describe target architecture"
++	#define ARCHITECTURE_DESC "unknown"
+ #endif
+ 
+ /*********************/
