@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_conf_c,v 1.1 2021/07/15 16:51:22 sthen Exp $
+
+for LINE_MAX
+
+Index: src/conf.c
+--- src/conf.c.orig
++++ src/conf.c
+@@ -23,6 +23,8 @@
+  * add new directives to.  Who knows if I'm right though.
+  */
+ 
++#include <limits.h>
++
+ #include "common.h"
+ #include <regex.h>
+ #include "conf.h"
