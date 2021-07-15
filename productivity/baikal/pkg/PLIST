@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/02/19 19:36:14 martin Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/07/15 14:03:34 martin Exp $
 baikal/
 baikal/Core/
 baikal/Core/Distrib.php
@@ -299,11 +299,13 @@ baikal/Core/Resources/Web/TwitterBootstrap/js/jquery.color-2.2.0.min.js
 baikal/LICENSE
 baikal/README.md
 @owner www
+@mode 700
 baikal/Specific/
 baikal/Specific/db/
 baikal/Specific/db/.empty
 baikal/config/
 baikal/config/.empty
+@mode
 baikal/html/
 baikal/html/.htaccess
 baikal/html/admin/
