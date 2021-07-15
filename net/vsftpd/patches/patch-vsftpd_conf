@@ -1,6 +1,8 @@
-$OpenBSD: patch-vsftpd_conf,v 1.9 2012/10/05 02:27:50 brad Exp $
---- vsftpd.conf.orig	Sat Dec 17 13:24:40 2011
-+++ vsftpd.conf	Wed Oct  3 05:16:34 2012
+$OpenBSD: patch-vsftpd_conf,v 1.10 2021/07/15 17:07:07 sthen Exp $
+
+Index: vsftpd.conf
+--- vsftpd.conf.orig
++++ vsftpd.conf
 @@ -8,11 +8,17 @@
  # Please read the vsftpd.conf.5 manual page to get a full idea of vsftpd's
  # capabilities.
