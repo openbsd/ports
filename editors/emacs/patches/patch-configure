@@ -1,4 +1,11 @@
-$OpenBSD: patch-configure,v 1.20 2020/08/23 09:55:01 jca Exp $
+$OpenBSD: patch-configure,v 1.21 2021/07/15 19:26:25 jca Exp $
+
+Don't disable SIGIO, it looks like an old workaround and it's suspected
+to be harmful.
+  https://marc.info/?l=openbsd-ports&m=150996114220295&w=2
+  https://debbugs.gnu.org/cgi/bugreport.cgi?bug=29170
+Introduced in:
+  https://marc.info/?l=openbsd-ports&m=130019184729434&w=2
 
 Use posix_openpt(3).
 https://debbugs.gnu.org/cgi/bugreport.cgi?bug=42059
@@ -6,6 +13,15 @@ https://debbugs.gnu.org/cgi/bugreport.cgi?bug=42059
 Index: configure
 --- configure.orig
 +++ configure
+@@ -19578,7 +19578,7 @@ esac
+ emacs_broken_SIGIO=no
+ 
+ case $opsys in
+-    hpux* | nacl | openbsd | sol2* | unixware )
++    hpux* | nacl | sol2* | unixware )
+     emacs_broken_SIGIO=yes
+     ;;
+ 
 @@ -19668,12 +19668,12 @@ case $opsys in
  
      ;;
