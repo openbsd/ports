@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/03/08 13:59:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/07/15 18:41:24 sthen Exp $
 
 COMMENT =		CloudFlare PKI/TLS command-line toolkit and HTTP API server
 
 GH_ACCOUNT =		cloudflare
 GH_PROJECT =		cfssl
-VERSION =		1.5.0
+VERSION =		1.6.0
 GH_TAGNAME =		v${VERSION}
-REVISION =		0
 
 CATEGORIES =		security
 
