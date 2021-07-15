@@ -1,0 +1,31 @@
+$OpenBSD: patch-hotspot_make_bsd_makefiles_defs_make,v 1.1 2021/07/15 10:28:30 kurt Exp $
+
+Add sparc64 support
+
+Index: hotspot/make/bsd/makefiles/defs.make
+--- hotspot/make/bsd/makefiles/defs.make.orig
++++ hotspot/make/bsd/makefiles/defs.make
+@@ -66,7 +66,7 @@ ifeq ($(ARCH), ia64)
+ endif
+ 
+ # sparc
+-ifeq ($(ARCH), sparc64)
++ifneq (,$(findstring $(ARCH), sparc))
+   ifeq ($(ARCH_DATA_MODEL), 64)
+     ARCH_DATA_MODEL  = 64
+     MAKE_ARGS        += LP64=1
+@@ -388,12 +388,14 @@ ifeq ($(ENABLE_FULL_DEBUG_SYMBOLS),1)
+   ifeq ($(ZIP_DEBUGINFO_FILES),1)
+       ADD_SA_BINARIES/aarch64 += $(EXPORT_JRE_LIB_ARCH_DIR)/libsaproc.diz
+       ADD_SA_BINARIES/ppc += $(EXPORT_JRE_LIB_ARCH_DIR)/libsaproc.diz
++      ADD_SA_BINARIES/sparc += $(EXPORT_JRE_LIB_ARCH_DIR)/libsaproc.diz
+   else
+     ifeq ($(OS_VENDOR), Darwin)
+         ADD_SA_BINARIES/ppc += $(EXPORT_JRE_LIB_ARCH_DIR)/libsaproc.$(LIBRARY_SUFFIX).dSYM
+     else
+         ADD_SA_BINARIES/aarch64 += $(EXPORT_JRE_LIB_ARCH_DIR)/libsaproc.debuginfo
+         ADD_SA_BINARIES/ppc += $(EXPORT_JRE_LIB_ARCH_DIR)/libsaproc.debuginfo
++        ADD_SA_BINARIES/sparc += $(EXPORT_JRE_LIB_ARCH_DIR)/libsaproc.debuginfo
+     endif
+   endif
+ endif

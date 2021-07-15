@@ -1,0 +1,15 @@
+$OpenBSD: patch-hotspot_make_bsd_makefiles_buildtree_make,v 1.1 2021/07/15 10:28:30 kurt Exp $
+
+Add sparc64 support
+
+Index: hotspot/make/bsd/makefiles/buildtree.make
+--- hotspot/make/bsd/makefiles/buildtree.make.orig
++++ hotspot/make/bsd/makefiles/buildtree.make
+@@ -203,6 +203,7 @@ LP64_SETTING/64 = LP64 = 1
+ DATA_MODE/i486 = 32
+ DATA_MODE/amd64 = 64
+ DATA_MODE/aarch64 = 64
++DATA_MODE/sparcv9 = 64
+ 
+ DATA_MODE = $(DATA_MODE/$(BUILDARCH))
+ 

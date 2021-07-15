@@ -1,0 +1,17 @@
+$OpenBSD: patch-hotspot_src_share_vm_runtime_thread_hpp,v 1.1 2021/07/15 10:28:30 kurt Exp $
+
+Add sparc64 support
+
+Index: hotspot/src/share/vm/runtime/thread.hpp
+--- hotspot/src/share/vm/runtime/thread.hpp.orig
++++ hotspot/src/share/vm/runtime/thread.hpp
+@@ -1734,6 +1734,9 @@ class JavaThread: public Thread { (public)
+ #ifdef TARGET_OS_ARCH_bsd_ppc
+ # include "thread_bsd_ppc.hpp"
+ #endif
++#ifdef TARGET_OS_ARCH_bsd_sparc
++# include "thread_bsd_sparc.hpp"
++#endif
+ #ifdef TARGET_OS_ARCH_bsd_x86
+ # include "thread_bsd_x86.hpp"
+ #endif

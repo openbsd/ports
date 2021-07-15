@@ -1,0 +1,24 @@
+$OpenBSD: patch-hotspot_agent_src_share_classes_sun_jvm_hotspot_runtime_Threads_java,v 1.1 2021/07/15 10:28:30 kurt Exp $
+
+Add sparc64 support
+
+Index: hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/Threads.java
+--- hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/Threads.java.orig
++++ hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/Threads.java
+@@ -40,6 +40,7 @@ import sun.jvm.hotspot.runtime.bsd_x86.BsdX86JavaThrea
+ import sun.jvm.hotspot.runtime.bsd_aarch64.BsdAARCH64JavaThreadPDAccess;
+ import sun.jvm.hotspot.runtime.bsd_amd64.BsdAMD64JavaThreadPDAccess;
+ import sun.jvm.hotspot.runtime.bsd_ppc64.BsdPPC64JavaThreadPDAccess;
++import sun.jvm.hotspot.runtime.bsd_sparc.BsdSPARCJavaThreadPDAccess;
+ import sun.jvm.hotspot.utilities.*;
+ 
+ public class Threads {
+@@ -112,6 +113,8 @@ public class Threads {
+                 access = new BsdAARCH64JavaThreadPDAccess();
+             } else if (cpu.equals("ppc64")) {
+                 access = new BsdPPC64JavaThreadPDAccess();
++            } else if (cpu.equals("sparc")) {
++                access = new BsdSPARCJavaThreadPDAccess();
+             }
+         } else if (os.equals("darwin")) {
+             if (cpu.equals("amd64") || cpu.equals("x86_64")) {

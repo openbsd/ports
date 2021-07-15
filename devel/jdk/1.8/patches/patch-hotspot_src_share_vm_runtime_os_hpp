@@ -1,0 +1,17 @@
+$OpenBSD: patch-hotspot_src_share_vm_runtime_os_hpp,v 1.1 2021/07/15 10:28:30 kurt Exp $
+
+Add sparc64 support
+
+Index: hotspot/src/share/vm/runtime/os.hpp
+--- hotspot/src/share/vm/runtime/os.hpp.orig
++++ hotspot/src/share/vm/runtime/os.hpp
+@@ -890,6 +890,9 @@ class os: AllStatic {
+ #ifdef TARGET_OS_ARCH_bsd_ppc
+ # include "os_bsd_ppc.hpp"
+ #endif
++#ifdef TARGET_OS_ARCH_bsd_sparc
++# include "os_bsd_sparc.hpp"
++#endif
+ #ifdef TARGET_OS_ARCH_bsd_x86
+ # include "os_bsd_x86.hpp"
+ #endif

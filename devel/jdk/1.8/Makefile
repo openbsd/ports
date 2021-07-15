@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.60 2021/06/18 19:37:52 kurt Exp $
+# $OpenBSD: Makefile,v 1.61 2021/07/15 10:28:30 kurt Exp $
 
-ONLY_FOR_ARCHS=	i386 amd64 aarch64
+ONLY_FOR_ARCHS=	i386 amd64 aarch64 sparc64
 USE_WXNEEDED=	Yes
 DPB_PROPERTIES=	parallel
 
@@ -13,7 +13,7 @@ V=		${BASE_VER}.${UPDATE_VER}.${BUILD_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${V}
 PKGSTEM=	jdk-${BASE_VER}
 EPOCH=		0
-REVISION=	0
+REVISION=	1
 
 DIST_SUBDIR=	jdk
 DISTNAME=	jdk8u${UPDATE_VER}-${BUILD_VER}.${BSD_PORT_REL}
@@ -45,9 +45,10 @@ APACHE_ANT=	apache-ant-1.9.7-bin.tar.gz
 SUPDISTFILES+=	openjdk-jdk8u-bootjdk-i386-${BOOTJDK_DATE}.tar.gz:1  \
 		openjdk-jdk8u-bootjdk-amd64-${BOOTJDK_DATE}.tar.gz:1 \
 		openjdk-jdk8u-bootjdk-aarch64-${BOOTJDK_DATE}.tar.gz:1 \
+		openjdk-jdk8u-bootjdk-sparc64-${BOOTJDK_DATE}.tar.gz:1 \
 		${APACHE_ANT}:2
 
-COMPILER=	base-clang ports-gcc base-gcc
+COMPILER=	base-clang base-gcc
 
 .include <bsd.port.arch.mk>
 
@@ -61,7 +62,8 @@ BUILD_DEPENDS+=	jdk->=1.8.0.00v0,<1.9v0:devel/jdk/1.8 \
 BOOT_JDK=	${LOCALBASE}/jdk-1.8.0
 .else
 BOOT_JDK_DIST=	openjdk-jdk8u-bootjdk-${MACHINE_ARCH}-${BOOTJDK_DATE}.tar.gz
-.  if (${MACHINE_ARCH}==amd64) || (${MACHINE_ARCH}==i386) || (${MACHINE_ARCH}==aarch64)
+.  if (${MACHINE_ARCH}==amd64) || (${MACHINE_ARCH}==i386) || \
+      (${MACHINE_ARCH}==aarch64) || (${MACHINE_ARCH}==sparc64)
 DISTFILES+=	${BOOT_JDK_DIST}:1
 .  endif
 DISTFILES+=	${APACHE_ANT}:2
@@ -113,18 +115,21 @@ MAKE_ENV+=	DEFAULT_LIBPATH="/usr/lib:${X11BASE}/lib:${LOCALBASE}/lib" \
 		COMPILER_WARNINGS_FATAL=false
 
 .if ${PROPERTIES:Mclang}
-MAKE_ENV+=	USE_CLANG=true
+CONFIGURE_ARGS+=--with-toolchain-type=clang
+.else
+CONFIGURE_ARGS+=--with-toolchain-type=gcc
 .endif
 
 JDKHOME=	jdk-1.8.0
 
-SUBST_VARS=	JDKHOME
-
-JVMARCH=	${MACHINE_ARCH:S/i386/x86/:S/amd64/x86_64/}
+JVMARCH=	${MACHINE_ARCH:S/i386/x86/:S/amd64/x86_64/:S/sparc64/sparcv9/}
+LIBARCH=	${MACHINE_ARCH:S/sparc64/sparcv9/}
 BUILDDIR=	${WRKDIST}/build/bsd-${JVMARCH}-normal-server-release/images
 JDKIMAGEDIR=	${BUILDDIR}/j2sdk-image
 WRKTMP=		${WRKDIR}/tmp
  
+SUBST_VARS=	JDKHOME LIBARCH
+
 post-extract:
 	chmod +x ${WRKDIST}/configure
 
@@ -151,10 +156,10 @@ build-bootjdk: build
 		${_PBUILD} rm -rf demo sample
 	@cd ${WRKTMP}/bootjdk && \
 		${_PBUILD} rm bin/appletviewer bin/policytool jre/bin/policytool
-	@cd ${WRKTMP}/bootjdk/jre/lib/${MACHINE_ARCH} && \
+	@cd ${WRKTMP}/bootjdk/jre/lib/${LIBARCH} && \
 		${_PBUILD} rm libnpt.so libinstrument.so libsplashscreen.so \
 		libjsound.so libawt_xawt.so
-	@LD_LIBRARY_PATH="${WRKTMP}/bootjdk/jre/lib/${MACHINE_ARCH}:${WRKTMP}/bootjdk/jre/lib/${MACHINE_ARCH}/server" \
+	@LD_LIBRARY_PATH="${WRKTMP}/bootjdk/jre/lib/${LIBARCH}:${WRKTMP}/bootjdk/jre/lib/${LIBARCH}/server" \
 		find ${WRKTMP}/bootjdk -type f -exec ldd {} + 2>/dev/null | \
 		grep rlib | cut -d"/" -f 2-20 | sort -u | grep -v "\.so$$" | \
 		xargs -I % ${_PBUILD} cp /% ${WRKTMP}/bootjdk-libs
