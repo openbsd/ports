@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/07/15 07:04:45 jasper Exp $
 
 COMMENT =	command line tracking time tool
 
@@ -6,8 +6,9 @@ VERSION =	1.1.1
 DISTNAME =	timew-${VERSION}
 PKGNAME =	timewarrior-${VERSION}
 CATEGORIES =	productivity
+REVISION =	0
 
-HOMEPAGE =	https://taskwarrior.org/
+HOMEPAGE =	https://timewarrior.net/
 
 # MIT
 PERMIT_PACKAGE =		Yes
