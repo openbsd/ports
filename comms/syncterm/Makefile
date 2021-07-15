@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2021/07/15 15:22:41 jca Exp $
-
-BROKEN-sparc64=	error "Need to describe target architecture"
+# $OpenBSD: Makefile,v 1.4 2021/07/15 15:23:22 jca Exp $
 
 COMMENT=	BBS terminal program
 
 DISTNAME=	syncterm-1.1
 REVISION=	0
 
-HOMEPAGE=	http://syncterm.bbsdev.net/
+CATEGORIES=	comms net
 
-EXTRACT_SUFX=	-src.tgz
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=syncterm/}
+HOMEPAGE=	http://syncterm.bbsdev.net/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -18,7 +15,8 @@ PERMIT_PACKAGE=	Yes
 # sdl2 is dlopen()'d
 WANTLIB +=	SDL2 c curses m ossaudio pthread util
 
-CATEGORIES=	comms net
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=syncterm/}
+EXTRACT_SUFX=	-src.tgz
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes
