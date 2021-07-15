@@ -1,4 +1,4 @@
-$OpenBSD: patch-tests_suites_host_test_function,v 1.7 2021/03/12 17:41:04 bket Exp $
+$OpenBSD: patch-tests_suites_host_test_function,v 1.8 2021/07/15 03:26:29 bket Exp $
 
 Can't take the address of stdout.
 
@@ -7,7 +7,7 @@ Index: tests/suites/host_test.function
 +++ tests/suites/host_test.function
 @@ -402,9 +402,6 @@ int execute_tests( int argc , const char ** argv )
      /* Store for proccessed integer params. */
-     int int_params[50];
+     int32_t int_params[50];
      void *pointer;
 -#if defined(__unix__) || (defined(__APPLE__) && defined(__MACH__))
 -    int stdout_fd = -1;
