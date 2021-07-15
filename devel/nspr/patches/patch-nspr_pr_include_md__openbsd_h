@@ -1,9 +1,9 @@
-$OpenBSD: patch-nspr_pr_include_md__openbsd_h,v 1.4 2021/03/17 18:36:57 landry Exp $
+$OpenBSD: patch-nspr_pr_include_md__openbsd_h,v 1.5 2021/07/15 16:52:55 jca Exp $
 
 Index: nspr/pr/include/md/_openbsd.h
 --- nspr/pr/include/md/_openbsd.h.orig
 +++ nspr/pr/include/md/_openbsd.h
-@@ -26,6 +26,10 @@
+@@ -26,6 +26,12 @@
  #define _PR_SI_ARCHITECTURE "sparc"
  #elif defined(__arm__)
  #define _PR_SI_ARCHITECTURE "arm"
@@ -11,10 +11,12 @@ Index: nspr/pr/include/md/_openbsd.h
 +#define _PR_SI_ARCHITECTURE "hppa"
 +#elif defined(__mips64__) || defined(__mips64el__)
 +#define _PR_SI_ARCHITECTURE "mips64"
++#elif defined(__riscv)
++#define _PR_SI_ARCHITECTURE "riscv64"
  #endif
  
  #define PR_DLL_SUFFIX       ".so"
-@@ -35,7 +39,11 @@
+@@ -35,7 +41,11 @@
  #define _MD_DEFAULT_STACK_SIZE  65536L
  #define _MD_MMAP_FLAGS          MAP_PRIVATE
  
@@ -26,7 +28,7 @@ Index: nspr/pr/include/md/_openbsd.h
  #define HAVE_DLL
  #define USE_DLFCN
  #define _PR_HAVE_SOCKADDR_LEN
-@@ -69,8 +77,10 @@
+@@ -69,8 +79,12 @@
  #define JB_SP_INDEX 34
  #elif defined(__amd64__)
  #define JB_SP_INDEX 6
@@ -35,6 +37,8 @@ Index: nspr/pr/include/md/_openbsd.h
  #define JB_SP_INDEX 23
 +#elif defined(__mips64__) || defined(__mips64el__)
 +#define JB_SP_INDEX 29
++#elif defined(__riscv)
++#define JB_SP_INDEX 1
  #else
  #error "Need to define SP index in jmp_buf here"
  #endif

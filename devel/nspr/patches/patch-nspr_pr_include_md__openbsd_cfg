@@ -1,4 +1,4 @@
-$OpenBSD: patch-nspr_pr_include_md__openbsd_cfg,v 1.2 2017/05/03 07:10:37 sthen Exp $
+$OpenBSD: patch-nspr_pr_include_md__openbsd_cfg,v 1.3 2021/07/15 16:52:55 jca Exp $
 
 Index: nspr/pr/include/md/_openbsd.cfg
 --- nspr/pr/include/md/_openbsd.cfg.orig
@@ -17,7 +17,7 @@ Index: nspr/pr/include/md/_openbsd.cfg
  #define PR_ALIGN_OF_POINTER 4
  
 -#elif defined(__alpha__)
-+#elif defined(__alpha__) || defined(__aarch64__)
++#elif defined(__alpha__) || defined(__aarch64__) || defined(__riscv)
  #define IS_LITTLE_ENDIAN 1
  #undef  IS_BIG_ENDIAN
  #define	HAVE_ALIGNED_DOUBLES
