@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1289 2021/07/14 12:55:50 bket Exp $
+# $OpenBSD: Quirks.pm,v 1.1290 2021/07/15 05:07:45 daniel Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1472,12 +1472,14 @@ my $cve = {
 	'www/p5-CGI-Application' => 'p5-CGI-Application-<4.50p0',
 	'www/p5-Catalyst-Plugin-Static-Simple' => 'p5-Catalyst-Plugin-Static-Simple-<0.36',
 	'www/privoxy' => 'privoxy-<3.0.31',
+	'www/py-bottle' => 'py-bottle-<0.12.19',
+	'www/py-bottle,python3' => 'py3-bottle-<0.12.19',
 	'www/py-django/lts' => 'py-django-lts-<1.11.19',
 	'www/py-django/stable' => 'py-django-<2.1.6',
 	'www/py-requests' => 'py-requests-<2.20.0',
 	'www/py-requests,python3' => 'py3-requests-<2.20.0',
-	'www/py-urllib3' => 'py-urllib3-<1.24.3',
-	'www/py-urllib3,python3' => 'py3-urllib3-<1.24.3',
+	'www/py-urllib3' => 'py-urllib3-<1.26.5',
+	'www/py-urllib3,python3' => 'py3-urllib3-<1.26.5',
 	'www/ruby-rack,ruby24' => 'ruby24-rack-<2.0.6',
 	'www/ruby-rack,ruby25' => 'ruby25-rack-<2.0.6',
 	'www/tomcat/v7' => 'tomcat-<7.0.104',
