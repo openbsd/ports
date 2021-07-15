@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.93 2021/07/14 09:04:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.94 2021/07/15 10:43:21 sthen Exp $
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
 GH_TAGNAME=	2.7
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	mail
 
@@ -70,6 +70,16 @@ CONFIGURE_ARGS+= -DOPENBSD_BUILD=1 \
 		-DMANDIR="${PREFIX}/man" \
 		-DRUNDIR="${LOCALSTATEDIR}/run/rspamd" \
 		-DRSPAMD_USER="_rspamd"
+
+# The check for this pulls in cmake modules which check for LLVM
+# toolchain components (llvm-ar/llvm-ranlib) which are only present
+# in the version of LLVM in ports not the version in base; it then
+# tries to use them in the build, e.g. llvm-ar instead of ar when
+# archiving libraries.
+# There is a cmake variable _CMAKE_TOOLCHAIN_LOCATION which looks like
+# it should force only checking in a certain path, but it doesn't seem
+# to work.
+CONFIGURE_ARGS+= -DENABLE_LTO=off
 
 .if ${FLAVOR:Mno_luajit}
 CONFIGURE_ARGS+= -DENABLE_LUAJIT=0
