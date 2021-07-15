@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2021/05/21 16:03:42 kurt Exp $
+# $OpenBSD: Makefile,v 1.31 2021/07/15 10:40:48 kurt Exp $
 
 COMMENT=	Java Native Access (JNA)
 
@@ -33,7 +33,7 @@ TEST_DEPENDS=	${BASE_PKGPATH} \
 MAKE_ENV=	CC="${CC}" \
 		PORTS_CFLAGS="${CFLAGS}"
 
-GNU_ARCH=	${MACHINE_ARCH:S/amd64/x86-64/:S/i386/x86/}
+GNU_ARCH=	${MACHINE_ARCH:S/amd64/x86-64/:S/i386/x86/:S/sparc64/sparcv9/}
 
 # XXX: remove stale distribution file
 post-extract:
