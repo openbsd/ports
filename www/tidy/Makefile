@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.30 2021/03/25 14:58:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2021/07/15 16:41:50 sthen Exp $
 
 COMMENT =	correct and clean up HTML and XML
 
 GH_ACCOUNT =	htacg
 GH_PROJECT =	tidy-html5
-GH_TAGNAME =	5.7.28
+GH_TAGNAME =	5.8.0
 PKGNAME =	${DISTNAME:S/-html5//}
 EPOCH=		0
 
-SHARED_LIBS +=  tidy                      2.0 # 5.6
+SHARED_LIBS +=  tidy                      3.0 # 5.6
 
 CATEGORIES =	www devel
 HOMEPAGE =	https://www.html-tidy.org/
