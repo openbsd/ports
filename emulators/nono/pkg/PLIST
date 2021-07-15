@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/07/06 17:42:25 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/07/15 05:01:38 daniel Exp $
 @bin bin/nono
 @bin bin/nono-cli
 share/doc/nono/
 share/doc/nono/manual.html
 share/doc/pkg-readmes/${PKGSTEM}
+share/locale/ja/LC_MESSAGES/nono.mo

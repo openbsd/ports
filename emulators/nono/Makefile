@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2021/07/06 16:43:48 daniel Exp $
+# $OpenBSD: Makefile,v 1.16 2021/07/15 05:01:38 daniel Exp $
 
 # Big endian support is not complete as of 0.1.0
 NOT_FOR_ARCHS=		${BE_ARCHS}
 BROKEN-i386=		requires __m128i and similar types; may work if SSE is disabled
 
-COMMENT=		LUNA-I emulator
+COMMENT=		OMRON LUNA-I and LUNA-88K emulator
 
-DISTNAME=		nono-0.1.6
-REVISION=		0
+DISTNAME=		nono-0.2.0
 CATEGORIES=		emulators
 
 MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
@@ -31,9 +30,7 @@ LIB_DEPENDS=		x11/wxWidgets
 NO_TEST=		Yes
 CONFIGURE_STYLE=	gnu
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cli/nono-cli ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/wx/nono ${PREFIX}/bin/
+post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nono
 	${INSTALL_DATA} ${WRKSRC}/doc/index.html ${PREFIX}/share/doc/nono/manual.html
 

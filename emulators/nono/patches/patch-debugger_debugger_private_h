@@ -1,9 +1,9 @@
-$OpenBSD: patch-debugger_debugger_private_h,v 1.1 2021/03/10 18:34:18 naddy Exp $
+$OpenBSD: patch-debugger_debugger_private_h,v 1.2 2021/07/15 05:01:38 daniel Exp $
 
 Index: debugger/debugger_private.h
 --- debugger/debugger_private.h.orig
 +++ debugger/debugger_private.h
-@@ -123,11 +123,11 @@ class Debugger final
+@@ -125,11 +125,11 @@ class Debugger final : public Object
  		Quit,		// デバッガとの接続を終了する
  	};
  	using cmdfunc_t = void (Debugger::*)();
@@ -17,7 +17,7 @@ Index: debugger/debugger_private.h
  
  	// ブレークポイント種別
  	enum BreakpointType {
-@@ -139,7 +139,7 @@ class Debugger final
+@@ -141,7 +141,7 @@ class Debugger final : public Object
  	};
  
  	// ブレークポイント
@@ -26,7 +26,7 @@ Index: debugger/debugger_private.h
  		BreakpointType type {};	// 種別
  		// 種別ごとのパラメータ
  		union {
-@@ -162,7 +162,7 @@ class Debugger final
+@@ -164,7 +164,7 @@ class Debugger final : public Object
  		// n(>0) なら n 回の成立をスキップし、(n+1) 回目でブレークの意。
  		int32 skip {};			// スキップ回数 (ユーザ指定値)
  		int32 skipremain {};	// 残りスキップ回数 (0 で成立)
