@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2021/03/23 06:28:32 bket Exp $
+# $OpenBSD: Makefile,v 1.41 2021/07/15 03:24:34 bket Exp $
 
 COMMENT =		deduplicating backup program
 
-MODPY_EGG_VERSION =	1.1.16
+MODPY_EGG_VERSION =	1.1.17
 DISTNAME =		borgbackup-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils
@@ -29,6 +29,7 @@ LIB_DEPENDS +=		archivers/lz4 \
 			security/libb2 \
 			sysutils/xxhash
 BUILD_DEPENDS +=	devel/py-setuptools_scm${MODPY_FLAVOR}
+RUN_DEPENDS +=		sysutils/py-packaging${MODPY_FLAVOR}
 
 # XXX pytest-benchmark is currently not picked up as plugin by pytest, as result
 # benchmarking fails during 'make test'. For now ignore benchmarking (see

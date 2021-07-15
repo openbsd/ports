@@ -1,0 +1,16 @@
+$OpenBSD: patch-setup_py,v 1.1 2021/07/15 03:24:34 bket Exp $
+
+do not package source files
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -900,7 +900,7 @@ setup(
+     include_package_data=True,
+     # ...except the source files which have been compiled (C extensions):
+     exclude_package_data={
+-        '': ['*.c', '*.h', '*.pyx', ],
++        '': ['*.c', '*.cpp', '*.h', '*.pyx', ],
+     },
+     cmdclass=cmdclass,
+     ext_modules=ext_modules,
