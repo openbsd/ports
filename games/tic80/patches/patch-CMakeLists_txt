@@ -1,5 +1,6 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2021/07/03 20:42:34 bcallah Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2021/07/16 17:14:38 bcallah Exp $
 
+Upstream got the revision number wrong.
 Don't do git stuff.
 Use Lua, SDL2, curl, duktape, giflib, and libpng from ports.
 Put pixmap in correct directory.
@@ -7,6 +8,15 @@ Put pixmap in correct directory.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
+@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.3)
+ 
+ set(VERSION_MAJOR 0)
+ set(VERSION_MINOR 90)
+-set(VERSION_REVISION 0)
++set(VERSION_REVISION 1706)
+ set(VERSION_STATUS "")
+ string(TIMESTAMP VERSION_YEAR "%Y")
+ 
 @@ -10,39 +10,6 @@ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
      set(VERSION_BUILD ".dbg" )
  endif()
@@ -214,7 +224,7 @@ Index: CMakeLists.txt
  
      if(LINUX)
          target_link_libraries(xplode m)
-@@ -655,9 +538,6 @@ if (USE_CURL)
+@@ -656,9 +539,6 @@ if (USE_CURL)
      if(RPI)
          set(CURL_ZLIB OFF CACHE BOOL "" )
      endif()
@@ -224,7 +234,7 @@ Index: CMakeLists.txt
  endif()
  
  ################################
-@@ -681,36 +561,8 @@ endif()
+@@ -682,36 +562,8 @@ endif()
  # PNG
  ################################
  
@@ -262,7 +272,7 @@ Index: CMakeLists.txt
  ################################
  # TIC-80 studio
  ################################
-@@ -756,10 +608,10 @@ endif()
+@@ -757,10 +609,10 @@ endif()
  
  target_include_directories(tic80studio PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
  
@@ -275,7 +285,7 @@ Index: CMakeLists.txt
  endif()
  
  if(USE_LIBUV)
-@@ -846,7 +698,7 @@ if(ANDROID)
+@@ -847,7 +699,7 @@ if(ANDROID)
  endif()
  
  if(NOT EMSCRIPTEN)
@@ -284,7 +294,7 @@ Index: CMakeLists.txt
  endif()
  
  endif()
-@@ -914,7 +766,7 @@ if(BUILD_SDL)
+@@ -915,7 +767,7 @@ if(BUILD_SDL)
          elseif(RPI)
              target_link_libraries(tic80 libSDL2.a bcm_host)
          else()
@@ -293,7 +303,7 @@ Index: CMakeLists.txt
          endif()
      endif()
  
-@@ -925,7 +777,7 @@ if(BUILD_SDL)
+@@ -926,7 +778,7 @@ if(BUILD_SDL)
          install(TARGETS tic80 DESTINATION bin)
  
          SET(TIC80_DESKTOP_DIR     "share/applications/")
@@ -302,7 +312,7 @@ Index: CMakeLists.txt
  
          install (FILES ${PROJECT_SOURCE_DIR}/build/linux/tic80.desktop DESTINATION ${TIC80_DESKTOP_DIR})
          install (FILES ${PROJECT_SOURCE_DIR}/build/linux/tic80.xml DESTINATION ${TIC80_DESKTOP_DIR})
-@@ -1058,7 +910,7 @@ if(BUILD_STUB)
+@@ -1059,7 +911,7 @@ if(BUILD_STUB)
              elseif(RPI)
                  target_link_libraries(tic80${SCRIPT} libSDL2.a bcm_host pthread dl)
              else()

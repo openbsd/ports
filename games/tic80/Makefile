@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/07/03 20:42:34 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2021/07/16 17:14:38 bcallah Exp $
 
 # Upstream does not want to support big endian.
 # See: https://github.com/nesbox/TIC-80/pull/1057/
 NOT_FOR_ARCHS =	${BE_ARCHS}
 
-V =		0.90.1678-dev
+V =		0.90.1706
 COMMENT =	fantasy computer to make, play and share tiny games (TIC-80)
 DISTNAME =	TIC-80-${V}
 PKGNAME =	${DISTNAME:S/TIC-80/tic80/}
@@ -49,7 +49,7 @@ RUN_DEPENDS =	devel/desktop-file-utils
 CONFIGURE_ARGS =	-DBUILD_PRO=ON \
 			-DCMAKE_C_FLAGS="${CFLAGS} `sdl2-config --cflags` -I${MODLUA_INCL_DIR}" \
 			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} `sdl2-config --libs`" \
-			-DVERSION_HASH=74fd7f5
+			-DVERSION_HASH=a838293
 
 NO_TEST =	Yes
 
