@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2020/08/24 14:29:02 bcallah Exp $
+# $OpenBSD: Makefile,v 1.57 2021/07/16 10:26:22 sthen Exp $
 
 BROKEN-hppa =	ICE on moc_qtsingleapplication.cxx
 
@@ -52,6 +52,7 @@ CONFIGURE_ARGS =-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DBUILD_WEBENGINE=OFF \
 		-DUSE_SYSTEM_FREETYPE=ON \
 		-DBUILD_CRASH_REPORTER=OFF \
+		-DDOWNLOAD_SOUNDFONT=OFF \
 		-DBUILD_TELEMETRY_MODULE=OFF
 
 .if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
