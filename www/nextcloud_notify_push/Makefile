@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/05/27 14:49:45 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2021/07/16 07:44:15 landry Exp $
 
 COMMENT =		update notifications for nextcloud clients
 
 GH_ACCOUNT =		nextcloud
 GH_PROJECT =		notify_push
-GH_TAGNAME =		v0.1.7
+GH_TAGNAME =		v0.2.1
 
 CATEGORIES =		www
 
@@ -20,7 +20,7 @@ COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cargo
 
-.include "crates.mk"
+.include "crates.inc"
 
 MODCARGO_CRATES_SQLITE3_BUNDLED = Yes
 PATCHORIG =		.openbsd.orig
