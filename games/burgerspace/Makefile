@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.38 2020/03/26 20:51:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2021/07/16 15:46:10 naddy Exp $
 
 COMMENT=	burgertime clone for X
 
-DISTNAME =	burgerspace-1.9.3
-REVISION =	1
+DISTNAME =	burgerspace-1.9.4
 
 CATEGORIES=	games
 
@@ -12,9 +11,9 @@ HOMEPAGE=	http://perso.b2b2c.ca/~sarrazip/dev/burgerspace.html
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += FLAC SDL SDL_image SDL_mixer c flatzebra-0.1
-WANTLIB += iconv jpeg m mikmod ogg png pthread smpeg sndio ${COMPILER_LIBCXX} tiff
-WANTLIB += usbhid vorbis vorbisfile z webp
+WANTLIB += ${COMPILER_LIBCXX} FLAC SDL SDL_image SDL_mixer c flatzebra-0.1
+WANTLIB += iconv jpeg lzma m mikmod ogg png pthread smpeg sndio tiff
+WANTLIB += usbhid vorbis vorbisfile webp z zstd
 
 COMPILER =		base-clang ports-gcc base-gcc
 
