@@ -1,9 +1,12 @@
-$OpenBSD: patch-ext_mysql_api_mysql_c,v 1.4 2020/11/11 02:39:12 jeremy Exp $
+$OpenBSD: patch-ext_mysql_api_mysql_c,v 1.5 2021/07/16 15:05:47 jeremy Exp $
 
 Allow building with ruby 2.4+.
+
 Allow building with recent mariadb releases, which do not support automatic
 reconnection. This makes the reconnect setting always false. Also, make
 Mysql#close not cause a crash if called more than once.
+
+Remove client version check, which stopped working in MariaDB 10.6.
 
 Index: ext/mysql_api/mysql.c
 --- ext/mysql_api/mysql.c.orig
@@ -76,3 +79,21 @@ Index: ext/mysql_api/mysql.c
  	    s->result.bind[i].buffer_type = MYSQL_TYPE_LONGLONG;
  	else if (argv[i] == rb_cFloat)
  	    s->result.bind[i].buffer_type = MYSQL_TYPE_DOUBLE;
+@@ -1887,17 +1886,6 @@ void Init_mysql_api(void)
+     int i;
+     int dots = 0;
+     const char *lib = mysql_get_client_info();
+-    for (i = 0; lib[i] != 0 && MYSQL_SERVER_VERSION[i] != 0; i++) {
+-        if (lib[i] == '.') {
+-            dots++;
+-            /* we only compare MAJOR and MINOR */
+-            if (dots == 2) break;
+-        }
+-        if (lib[i] != MYSQL_SERVER_VERSION[i]) {
+-            rb_raise(rb_eRuntimeError, "Incorrect MySQL client library version! This gem was compiled for %s but the client library is %s.", MYSQL_SERVER_VERSION, lib);
+-            return;
+-        }
+-    }
+ 
+     cMysql = rb_define_class("Mysql", rb_cObject);
+     cMysqlRes = rb_define_class_under(cMysql, "Result", rb_cObject);
