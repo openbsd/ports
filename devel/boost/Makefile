@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2021/06/22 04:20:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.115 2021/07/16 17:55:10 sthen Exp $
 
 ONLY_FOR_ARCHS-md = aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64 riscv64
 
@@ -9,6 +9,7 @@ VERSION=	1.76.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME-main=	boost-${VERSION}
 PKGNAME-md=	boost-md-${VERSION}
+REVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	https://boostorg.jfrog.io/artifactory/main/release/${VERSION}/source/
 EXTRACT_SUFX=	.tar.bz2
@@ -53,10 +54,10 @@ BOOST_LIBS=	boost_atomic-mt \
 BOOST_LIBS+=	boost_context-mt \
 		boost_coroutine boost_coroutine-mt \
 		boost_fiber-mt \
-		boost_stacktrace_basic \
-		boost_stacktrace_basic-mt \
 		boost_stacktrace_addr2line \
 		boost_stacktrace_addr2line-mt \
+		boost_stacktrace_basic \
+		boost_stacktrace_basic-mt \
 		boost_stacktrace_noop \
 		boost_stacktrace_noop-mt
 
@@ -88,8 +89,8 @@ LIB_DEPENDS=	archivers/bzip2 \
 
 LIB_DEPENDS-md=	devel/boost
 
-WANTLIB-md+=	${COMPILER_LIBCXX} m boost_chrono-mt boost_filesystem-mt
-WANTLIB-md+=	boost_thread-mt
+WANTLIB-md+=	${COMPILER_LIBCXX} m boost_chrono-mt boost_filesystem-mt \
+		boost_thread-mt
 
 .include <bsd.port.arch.mk>
 
@@ -117,10 +118,6 @@ BJAM_CONFIG=	-sICU_PATH=${LOCALBASE} \
 BOOTSTRAP=	--with-bjam=${WRKSRC}/bjam \
 		--with-toolset=${TOOLSET} \
 		--with-python=${MODPY_BIN}
-
-# 'context' and 'coroutine' use MD bits and miss support for Alpha,
-# PA-RISC, SPARC and SuperH. The author does not care
-# about adding support for Alpha and PA-RISC.
 .if !${BUILD_PACKAGES:M-md}
 BOOTSTRAP+=	--without-libraries=context,coroutine,fiber,stacktrace
 .endif
