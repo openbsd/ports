@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/03/01 07:37:59 denis Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/07/16 16:47:39 denis Exp $
 @bin bin/flameshot
+@man man/man1/flameshot.1
 share/applications/org.flameshot.Flameshot.desktop
 share/bash-completion/completions/flameshot
 share/dbus-1/interfaces/org.flameshot.Flameshot.xml
@@ -9,6 +10,7 @@ share/flameshot/translations/
 share/flameshot/translations/Internationalization_ca.qm
 share/flameshot/translations/Internationalization_cs.qm
 share/flameshot/translations/Internationalization_de_DE.qm
+share/flameshot/translations/Internationalization_el.qm
 share/flameshot/translations/Internationalization_es.qm
 share/flameshot/translations/Internationalization_eu.qm
 share/flameshot/translations/Internationalization_fr.qm
@@ -17,6 +19,7 @@ share/flameshot/translations/Internationalization_it_IT.qm
 share/flameshot/translations/Internationalization_ja.qm
 share/flameshot/translations/Internationalization_ka.qm
 share/flameshot/translations/Internationalization_ko.qm
+share/flameshot/translations/Internationalization_nb_NO.qm
 share/flameshot/translations/Internationalization_nl.qm
 share/flameshot/translations/Internationalization_nl_NL.qm
 share/flameshot/translations/Internationalization_pl.qm
