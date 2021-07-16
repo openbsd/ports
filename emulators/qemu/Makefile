@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.210 2021/07/06 16:55:33 daniel Exp $
+# $OpenBSD: Makefile,v 1.211 2021/07/16 17:54:16 sthen Exp $
 
 ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc powerpc64 sparc64
 DPB_PROPERTIES=	parallel
@@ -14,7 +14,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 EXTRACT_SUFX=	.tar.xz
 REVISION-ga=	0
-REVISION-main=	0
+REVISION-main=	1
 
 HOMEPAGE=	https://www.qemu.org/
 
