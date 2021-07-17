@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/06/20 01:36:08 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/07/17 14:45:18 bcallah Exp $
 @bin bin/corsix-th
 @man man/man6/corsix-th.6
-share/applications/com.corsixth.CorsixTH.desktop
+share/applications/com.corsixth.corsixth.desktop
 share/corsix-th/
 share/corsix-th/Bitmap/
 share/corsix-th/Bitmap/aux_ui.dat
@@ -71,6 +71,7 @@ share/corsix-th/Lua/app.lua
 share/corsix-th/Lua/audio.lua
 share/corsix-th/Lua/base_config.lua
 share/corsix-th/Lua/calls_dispatcher.lua
+share/corsix-th/Lua/cheats.lua
 share/corsix-th/Lua/class.lua
 share/corsix-th/Lua/config_finder.lua
 share/corsix-th/Lua/date.lua
@@ -117,7 +118,7 @@ share/corsix-th/Lua/dialogs/queue_dialog.lua
 share/corsix-th/Lua/dialogs/resizable.lua
 share/corsix-th/Lua/dialogs/resizables/
 share/corsix-th/Lua/dialogs/resizables/calls_dispatcher.lua
-share/corsix-th/Lua/dialogs/resizables/cheats.lua
+share/corsix-th/Lua/dialogs/resizables/cheats_dialog.lua
 share/corsix-th/Lua/dialogs/resizables/customise.lua
 share/corsix-th/Lua/dialogs/resizables/directory_browser.lua
 share/corsix-th/Lua/dialogs/resizables/dropdown.lua
@@ -203,6 +204,9 @@ share/corsix-th/Lua/filesystem.lua
 share/corsix-th/Lua/game_ui.lua
 share/corsix-th/Lua/graphics.lua
 share/corsix-th/Lua/hospital.lua
+share/corsix-th/Lua/hospitals/
+share/corsix-th/Lua/hospitals/ai_hospital.lua
+share/corsix-th/Lua/hospitals/player_hospital.lua
 share/corsix-th/Lua/humanoid_action.lua
 share/corsix-th/Lua/humanoid_actions/
 share/corsix-th/Lua/humanoid_actions/answer_call.lua
@@ -247,6 +251,7 @@ share/corsix-th/Lua/languages/english.lua
 share/corsix-th/Lua/languages/finnish.lua
 share/corsix-th/Lua/languages/french.lua
 share/corsix-th/Lua/languages/german.lua
+share/corsix-th/Lua/languages/greek.lua
 share/corsix-th/Lua/languages/hungarian.lua
 share/corsix-th/Lua/languages/iberic_portuguese.lua
 share/corsix-th/Lua/languages/italian.lua
@@ -371,6 +376,6 @@ share/corsix-th/Lua/world.lua
 share/doc/pkg-readmes/${PKGSTEM}
 share/icons/hicolor/scalable/apps/corsix-th.svg
 share/metainfo/
-share/metainfo/com.corsixth.CorsixTH.appdata.xml
+share/metainfo/com.corsixth.corsixth.metainfo.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
