@@ -1,9 +1,9 @@
-$OpenBSD: patch-putty_h,v 1.4 2021/05/08 10:26:22 sthen Exp $
+$OpenBSD: patch-putty_h,v 1.5 2021/07/17 12:01:54 sthen Exp $
 
 Index: putty.h
 --- putty.h.orig
 +++ putty.h
-@@ -1694,6 +1694,7 @@ typedef enum NoiseSourceId {
+@@ -1701,6 +1701,7 @@ typedef enum NoiseSourceId {
      NOISE_SOURCE_THREADTIME,
      NOISE_SOURCE_PROCTIME,
      NOISE_SOURCE_PERFCOUNT,

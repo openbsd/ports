@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2021/05/08 10:26:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2021/07/17 12:01:54 sthen Exp $
 
 COMMENT-main=	SSH and telnet client
 COMMENT-gui=	PuTTY GUI clients
 
-V=		0.75
+V=		0.76
 DISTNAME=	putty-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-gui=	${DISTNAME:S/putty/putty-gui/}
