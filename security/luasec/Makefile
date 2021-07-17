@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2020/06/23 11:08:26 gsoares Exp $
+# $OpenBSD: Makefile,v 1.24 2021/07/17 03:33:14 gsoares Exp $
 
 COMMENT=	lua binding to OpenSSL to provide TLS/SSL communication
 
 GH_ACCOUNT=	brunoos
 GH_PROJECT=	luasec
-GH_TAGNAME=	v0.9
+GH_TAGNAME=	v1.0.1
 
 CATEGORIES=	security
 
