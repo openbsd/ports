@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2021/03/23 11:23:52 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.18 2021/07/17 03:12:30 gsoares Exp $
 @bin bin/cppcheck
 @man man/man1/cppcheck.1
 share/cppcheck/
@@ -12,6 +12,7 @@ share/cppcheck/cfg/cppcheck-cfg.rng
 share/cppcheck/cfg/cppcheck-lib.cfg
 share/cppcheck/cfg/cppunit.cfg
 share/cppcheck/cfg/daca.cfg
+share/cppcheck/cfg/dpdk.cfg
 share/cppcheck/cfg/embedded_sql.cfg
 share/cppcheck/cfg/emscripten.cfg
 share/cppcheck/cfg/ginac.cfg
@@ -45,6 +46,7 @@ share/cppcheck/cfg/sfml.cfg
 share/cppcheck/cfg/sqlite3.cfg
 share/cppcheck/cfg/std.cfg
 share/cppcheck/cfg/tinyxml2.cfg
+share/cppcheck/cfg/vcl.cfg
 share/cppcheck/cfg/windows.cfg
 share/cppcheck/cfg/wxsqlite3.cfg
 share/cppcheck/cfg/wxsvg.cfg
