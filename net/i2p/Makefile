@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/05/23 16:26:43 kmos Exp $
+# $OpenBSD: Makefile,v 1.11 2021/07/18 15:35:08 kurt Exp $
 
 COMMENT=	i2p routing protocol
 
@@ -29,17 +29,16 @@ RUN_DEPENDS=	devel/gettext,-runtime \
 		java/tanukiwrapper
 LIB_DEPENDS=	devel/gmp
 
-.if ${MACHINE_ARCH} == "i386"
-BITS=32
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 PKG_ARGS+=	-Dx86=1
-.elif ${MACHINE_ARCH} == "amd64"
-BITS=64
-PKG_ARGS+=	-Dx86=1
-.elif ${MACHINE_ARCH} == "aarch64"
-BITS=64
-PKG_ARGS+=	-Dx86=0
 .else
 PKG_ARGS+=	-Dx86=0
+.endif
+
+.if ${MACHINE_ARCH} == "i386"
+BITS=32
+.else
+BITS=64
 .endif
 
 DB_DIR=		${LOCALSTATEDIR}/i2p
