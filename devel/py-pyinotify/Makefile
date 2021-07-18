@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2021/05/21 19:50:28 kmos Exp $
+# $OpenBSD: Makefile,v 1.8 2021/07/18 14:17:05 jca Exp $
 
 COMMENT =		filesystem events monitoring
 
 MODPY_EGG_VERSION =	0.9.6
 DISTNAME =		pyinotify-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		devel
 
@@ -19,6 +19,8 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		pthread ${MODPY_WANTLIB} lib/inotify/inotify
 
 LIB_DEPENDS =		devel/libinotify
+MAKE_ENV =		LIBRARY_PATH="${LOCALBASE}/lib/inotify:${LOCALBASE}/lib" \
+			LD_LIBRARY_PATH="${LOCALBASE}/lib/inotify:${LOCALBASE}/lib"
 
 MODULES =		lang/python
 MODPY_PI =		Yes
@@ -29,7 +31,5 @@ FLAVOR ?=
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/setup.py ${WRKSRC}/python*/pyinotify.py
-
-# No tests upstream
 
 .include <bsd.port.mk>
