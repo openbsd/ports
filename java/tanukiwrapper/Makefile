@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2021/05/21 11:51:08 kurt Exp $
+# $OpenBSD: Makefile,v 1.22 2021/07/18 15:34:18 kurt Exp $
 
 COMMENT=	Tanuki Java Service Wrapper
 
 V=		3.5.45
 DISTNAME=	wrapper_${V}_src
 PKGNAME=	java-tanukiwrapper-${V}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	java
 
 HOMEPAGE=	https://wrapper.tanukisoftware.com/
@@ -23,13 +23,18 @@ MODJAVA_BUILD=	ant
 
 .if ${MACHINE_ARCH} == "i386"
 BITS=32
+.else
+BITS=64
+.endif
+
+.if ${MACHINE_ARCH} == "i386"
 MAKE_ARCH=x86-32
 .elif ${MACHINE_ARCH} == "amd64"
-BITS=64
 MAKE_ARCH=x86-64
 .elif ${MACHINE_ARCH} == "aarch64"
-BITS=64
 MAKE_ARCH=armhf-64
+.elif ${MACHINE_ARCH} == "sparc64"
+MAKE_ARCH=sparc-64
 .endif
 
 MODJAVA_BUILD_ARGS= -Dbits=${BITS}
