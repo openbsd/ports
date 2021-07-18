@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2021/02/23 19:39:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2021/07/18 09:18:07 paco Exp $
 
 COMMENT =	continuation and extension of Vim
 
 GH_ACCOUNT =	neovim
 GH_PROJECT =	neovim
-GH_TAGNAME =	v0.4.4
+GH_TAGNAME =	v0.5.0
 
 CATEGORIES =	editors devel
 HOMEPAGE =	https://neovim.io
@@ -23,7 +23,7 @@ PERMIT_PACKAGE =	Yes
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 WANTLIB += c iconv intl ${MODLUA_WANTLIB} m msgpackc pthread termkey
-WANTLIB += unibilium util uv vterm
+WANTLIB += tree-sitter unibilium util uv vterm
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -41,7 +41,8 @@ LIB_DEPENDS =		devel/gettext,-runtime \
 			devel/libuv \
 			devel/libvterm \
 			devel/msgpack \
-			devel/unibilium
+			devel/unibilium \
+			textproc/tree-sitter
 
 RUN_DEPENDS +=		devel/libmpack/lua \
 			devel/libmpack/main \
@@ -85,6 +86,7 @@ pre-configure:
 		-DBUILD_MODULE=OFF \
 		-DCMAKE_COLOR_MAKEFILE=OFF \
 		-DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY=ON \
+		-DCMAKE_SUPPRESS_REGENERATION=ON \
 		-DCMAKE_INSTALL_PREFIX=${WRKBUILD}/deps \
 		-DLUA_BUILD_TYPE=System \
 		-DLUA_INCLUDE_DIR=${MODLUA_INCL_DIR} \
