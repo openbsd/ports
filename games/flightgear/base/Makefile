@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2021/07/12 20:53:07 pascal Exp $
+# $OpenBSD: Makefile,v 1.19 2021/07/19 18:13:38 pascal Exp $
 
 COMMENT =		modern, open-source flight simulator
 
@@ -27,6 +27,7 @@ RUN_DEPENDS =	games/flightgear/data>=${V}
 CONFIGURE_ARGS +=	-DCMAKE_INSTALL_MANDIR="${PREFIX}/man" \
 			-DFG_DATA_DIR="${TRUEPREFIX}/share/flightgear" \
 			-DSYSTEM_SQLITE=ON \
+			-DSYSTEM_FLITE=OFF \
 			-DENABLE_IAX=OFF \
 			-DENABLE_FGCOM=OFF \
 			-DENABLE_QT=OFF
