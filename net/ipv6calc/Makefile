@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2021/03/23 16:35:01 fcambus Exp $
+# $OpenBSD: Makefile,v 1.28 2021/07/19 07:37:57 fcambus Exp $
 
 COMMENT=	tool for manipulating IPv6 addresses
 
-GH_TAGNAME =	3.0.2
+GH_TAGNAME =	3.2.0
 GH_PROJECT =	ipv6calc
 GH_ACCOUNT =	pbiering
 CATEGORIES=	net
