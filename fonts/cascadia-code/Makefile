@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2021/06/05 21:27:01 fcambus Exp $
+# $OpenBSD: Makefile,v 1.6 2021/07/19 07:34:59 fcambus Exp $
 
-V =		2105.24
+V =		2106.17
 COMMENT =	Microsoft programming/terminal font
 DISTNAME =	CascadiaCode-${V}
 PKGNAME =	cascadia-code-${V}
