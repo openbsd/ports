@@ -1,19 +1,24 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:45:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2021/07/20 08:16:00 sthen Exp $
 
 COMMENT=		source code auditing tool
 
-DISTNAME=		rats-2.3
-REVISION=		0
+DISTNAME=		rats-2.4
+EXTRACT_SUFX=		.tgz
+
 CATEGORIES=		devel security
 
-HOMEPAGE=		https://www.fortify.com/ssa-elements/threat-intelligence/rats.html
+# was https://www.fortify.com/ssa-elements/threat-intelligence/rats.html
+HOMEPAGE=		https://github.com/andrew-d/rough-auditing-tool-for-security
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c expat
 
-MASTER_SITES=		https://www.fortify.com/downloads2/public/
+MASTER_SITES=		https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/rough-auditing-tool-for-security/
+
+FIX_CRLF_FILES=		*
+PATCHORIG=		.orig.port
 
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS+=	--libdir=${WRKINST}${PREFIX}/share/rats \
