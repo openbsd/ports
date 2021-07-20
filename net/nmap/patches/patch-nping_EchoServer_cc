@@ -1,11 +1,11 @@
-$OpenBSD: patch-nping_EchoServer_cc,v 1.5 2019/02/05 21:12:07 naddy Exp $
+$OpenBSD: patch-nping_EchoServer_cc,v 1.6 2021/07/20 22:28:24 sthen Exp $
 
 Ambiguous bind(2) call.
 
 Index: nping/EchoServer.cc
 --- nping/EchoServer.cc.orig
 +++ nping/EchoServer.cc
-@@ -281,12 +281,12 @@ int EchoServer::nep_listen_socket(){
+@@ -213,12 +213,12 @@ int EchoServer::nep_listen_socket(){
          server_addr6.sin6_len = sizeof(struct sockaddr_in6);
      #endif
      /* Bind to local address and the specified port */
@@ -20,7 +20,7 @@ Index: nping/EchoServer.cc
                  nping_fatal(QT_3, "Could not bind to port %d (%s).", port, strerror(errno));
              }else{ 
                  nping_print(VB_1, "Server bound to port %d", port);
-@@ -319,12 +319,12 @@ int EchoServer::nep_listen_socket(){
+@@ -251,12 +251,12 @@ int EchoServer::nep_listen_socket(){
  #endif
  
      /* Bind to local address and the specified port */

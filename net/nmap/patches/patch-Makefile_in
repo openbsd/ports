@@ -1,8 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.21 2019/08/24 06:37:13 giovanni Exp $
+$OpenBSD: patch-Makefile_in,v 1.22 2021/07/20 22:28:24 sthen Exp $
+
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -45,7 +45,7 @@ DEFS += -D_FORTIFY_SOURCE=2
+@@ -44,7 +44,7 @@ DEFS += -D_FORTIFY_SOURCE=2
  # Should only be enabled during debugging and not in any real release.
  # DEFS += -DMTRACE=1
  CXXFLAGS = @CXXFLAGS@ $(DBGFLAGS) $(CCOPT)
@@ -11,7 +12,7 @@ Index: Makefile.in
  CFLAGS = @CFLAGS@ $(DBGFLAGS) $(CCOPT)
  STATIC =
  LDFLAGS = @LDFLAGS@ $(DBGFLAGS) $(STATIC)
-@@ -351,8 +351,8 @@ $(NPINGDIR)/nping.h: nmap.h
+@@ -348,8 +348,8 @@ $(NPINGDIR)/nping.h: nmap.h
  	mv -f $@.tmp $@
  
  # Update the version number used by Zenmap.
@@ -20,5 +21,5 @@ Index: Makefile.in
 +#$(ZENMAPDIR)/zenmapCore/Version.py $(ZENMAPDIR)/share/zenmap/config/zenmap_version: nmap.h
 +#	cd $(ZENMAPDIR) && $(PYTHON) install_scripts/utils/version_update.py "$(NMAP_VERSION)"
  
- nmap-update/default_channel.h: nmap.h
- 	sed -e 's/^#[ \t]*define[ \t]\+DEFAULT_CHANNEL[ \t]\+\(".*"\)/#define DEFAULT_CHANNEL "$(NMAP_UPDATE_CHANNEL)"/' $@ > $@.tmp
+ tests/check_dns: $(OBJS)
+ 	 $(CXX) -o $@ $(CPPFLAGS) $(CXXFLAGS) $(LDFLAGS) $^ $(LIBS) tests/nmap_dns_test.cc

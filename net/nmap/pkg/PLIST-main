@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2019/08/24 06:37:13 giovanni Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2021/07/20 22:28:25 sthen Exp $
 @conflict ndiff-*
 @pkgpath net/ndiff
 @pkgpath net/nmap
@@ -99,6 +99,7 @@ share/nmap/nselib/datafiles.lua
 share/nmap/nselib/datetime.lua
 share/nmap/nselib/dhcp.lua
 share/nmap/nselib/dhcp6.lua
+share/nmap/nselib/dicom.lua
 share/nmap/nselib/dns.lua
 share/nmap/nselib/dnsbl.lua
 share/nmap/nselib/dnssd.lua
@@ -157,6 +158,7 @@ share/nmap/nselib/omp2.lua
 share/nmap/nselib/oops.lua
 share/nmap/nselib/openssl.luadoc
 share/nmap/nselib/ospf.lua
+share/nmap/nselib/outlib.lua
 share/nmap/nselib/packet.lua
 share/nmap/nselib/pcre.luadoc
 share/nmap/nselib/pgsql.lua
@@ -301,6 +303,8 @@ share/nmap/scripts/daytime.nse
 share/nmap/scripts/db2-das-info.nse
 share/nmap/scripts/deluge-rpc-brute.nse
 share/nmap/scripts/dhcp-discover.nse
+share/nmap/scripts/dicom-brute.nse
+share/nmap/scripts/dicom-ping.nse
 share/nmap/scripts/dict-info.nse
 share/nmap/scripts/distcc-cve2004-2687.nse
 share/nmap/scripts/dns-blacklist.nse
@@ -791,6 +795,7 @@ share/nmap/scripts/ubiquiti-discovery.nse
 share/nmap/scripts/unittest.nse
 share/nmap/scripts/unusual-port.nse
 share/nmap/scripts/upnp-info.nse
+share/nmap/scripts/uptime-agent-info.nse
 share/nmap/scripts/url-snarf.nse
 share/nmap/scripts/ventrilo-info.nse
 share/nmap/scripts/versant-info.nse

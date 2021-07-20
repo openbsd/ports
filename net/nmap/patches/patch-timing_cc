@@ -1,8 +1,9 @@
-$OpenBSD: patch-timing_cc,v 1.9 2017/09/27 09:50:00 dcoppa Exp $
+$OpenBSD: patch-timing_cc,v 1.10 2021/07/20 22:28:24 sthen Exp $
+
 Index: timing.cc
 --- timing.cc.orig
 +++ timing.cc
-@@ -134,4 +134,6 @@
+@@ -66,4 +66,6 @@
  
 +#include <limits>
 +

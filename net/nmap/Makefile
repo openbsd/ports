@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.139 2021/02/23 19:39:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.140 2021/07/20 22:28:24 sthen Exp $
 
 COMMENT-main=	scan ports and fingerprint stack of network hosts
 COMMENT-zenmap=	graphical frontend for nmap
 
-MODPY_EGG_VERSION=	7.80
+MODPY_EGG_VERSION=	7.91
 DISTNAME=		nmap-${MODPY_EGG_VERSION}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-zenmap=		nmap-zenmap-${MODPY_EGG_VERSION}
-REVISION=		0
 
 CATEGORIES=	net security
 MASTER_SITES=	${HOMEPAGE}/dist/
@@ -15,23 +14,24 @@ EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	https://www.nmap.org/
 
-MAINTAINER=	David Carlier <devnexen@gmail.com>
+MAINTAINER=	JR Aquino <tanawts@gmail.com>
 
-# GPL (v2 only), with additional clarifications and exceptions, see COPYING
+# NPSL, https://nmap.org/npsl/npsl-annotated.html
+# For <=7.91, https://nmap.org/misc/nmap-v7.80-license.txt may be used instead
+# XXX license needs checking over before updating beyond 7.91
 PERMIT_PACKAGE=	Yes
 
 MULTI_PACKAGES=	-main -zenmap
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc base-gcc
 
 USE_GMAKE=	Yes
 MODLUA_SA=	Yes
 MODLUA_VERSION=	5.3
-# added manually for -zenmap
 MODPY_RUNDEP=	No
 MODULES=	lang/python \
 		lang/lua
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_2}
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.69
@@ -51,10 +51,10 @@ CONFIGURE_ARGS=	--with-libpcap=included \
 		--without-nmap-update \
 		--disable-nls
 
-WANTLIB-main=	c crypto m ssl ssh2 ${COMPILER_LIBCXX} pcre \
-		${MODLUA_WANTLIB} z
-LIB_DEPENDS-main=devel/pcre \
-		${MODLUA_LIB_DEPENDS} \
+WANTLIB-main=	${COMPILER_LIBCXX} ${MODLUA_WANTLIB} \
+		c crypto m ssl ssh2 pcre z
+LIB_DEPENDS-main= ${MODLUA_LIB_DEPENDS} \
+		devel/pcre \
 		security/libssh2
 
 RUN_DEPENDS-zenmap=	${MODPY_RUN_DEPENDS} \
