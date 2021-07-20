@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/12 20:47:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2021/07/20 14:13:58 sthen Exp $
 
 COMMENT =	bayesian spam filter
 
-DISTNAME =	bogofilter-1.2.4
+DISTNAME =	bogofilter-1.2.5
+EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	mail
-REVISION =	2
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-HOMEPAGE =	http://bogofilter.sourceforge.net/
+HOMEPAGE =	https://bogofilter.sourceforge.io/
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=bogofilter/}
 
 # GPLv2/GPLv3
@@ -17,15 +17,20 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		c iconv m
 LIB_DEPENDS =		converters/libiconv
 
-FLAVORS =		db4 sqlite3 qdbm
+FLAVORS =		db4 sqlite3 qdbm lmdb
 FLAVOR ?=
 
 DB_ENGINE =		db
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoconf
+AUTOCONF_VERSION =	2.69
 CONFIGURE_ARGS =	--with-included-gsl \
 			--with-database=${DB_ENGINE}
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include/${DB_DIR}" \
-			LDFLAGS="-L${LOCALBASE}/lib/${DB_DIR}"
+CPPFLAGS =		-I${LOCALBASE}/include/${DB_DIR} \
+			-I${LOCALBASE}/include
+LDFLAGS =		-L${LOCALBASE}/lib/${DB_DIR} \
+			-L${LOCALBASE}/lib
+CONFIGURE_ENV =		CPPFLAGS="${CPPFLAGS}" \
+			LDFLAGS="${LDFLAGS}"
 
 .if ${FLAVOR} == "db4"
 BROKEN-aarch64 =	configure stuck on testing if BDB supports shared environments
@@ -34,14 +39,16 @@ LIB_DEPENDS +=		databases/db/v4
 WANTLIB +=		lib/db4/db>=4
 .elif ${FLAVOR} == "sqlite3"
 DB_ENGINE =		sqlite3
-WANTLIB +=		sqlite3 pthread
+WANTLIB +=		sqlite3
 LIB_DEPENDS +=		databases/sqlite3
 .elif ${FLAVOR} == "qdbm"
 DB_ENGINE =		qdbm
 LIB_DEPENDS +=		databases/qdbm
 WANTLIB +=		qdbm z
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include/" \
-			LDFLAGS="-L${LOCALBASE}/lib/ -liconv -lz"
+.elif ${FLAVOR} == "lmdb"
+DB_ENGINE =		lmdb
+LIB_DEPENDS +=		databases/lmdb
+WANTLIB +=		lmdb
 .else
 BROKEN-hppa =		configure stuck on testing if BDB supports shared environments
 BROKEN-aarch64 =	configure stuck on testing if BDB supports shared environments
@@ -52,6 +59,11 @@ WANTLIB +=		lib/db/db=3
 
 SAMPLEDIR =		${PREFIX}/share/examples/bogofilter
 DOCDIR =		${PREFIX}/share/doc/bogofilter
+
+BUILD_DEPENDS =		devel/gettext,-tools
+post-extract:
+	cd ${LOCALBASE}/share/aclocal; \
+	    cp iconv.m4 lib-ld.m4 lib-link.m4 lib-prefix.m4 ${WRKSRC}/m4
 
 post-install:
 	${INSTALL_DATA_DIR} ${SAMPLEDIR}

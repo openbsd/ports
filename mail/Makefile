@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.405 2021/05/03 16:22:12 solene Exp $
+# $OpenBSD: Makefile,v 1.406 2021/07/20 14:13:58 sthen Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -13,6 +13,7 @@
      SUBDIR += bmf,mysql
      SUBDIR += bogofilter
      SUBDIR += bogofilter,db4
+     SUBDIR += bogofilter,lmdb
      SUBDIR += bogofilter,qdbm
      SUBDIR += bogofilter,sqlite3
      SUBDIR += bulk_mailer

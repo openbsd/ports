@@ -13,3 +13,4 @@ Flavors:
 	* db4:		use v4 of the Berkeley database
 	* sqlite3:	use SQLite 3 database backend
 	* qdbm:		use QDBM database backend
+	* lmdb:		use LMDB database backend

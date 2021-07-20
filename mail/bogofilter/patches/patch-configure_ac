@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.4 2020/08/01 17:17:43 naddy Exp $
+$OpenBSD: patch-configure_ac,v 1.1 2021/07/20 14:13:58 sthen Exp $
 
 LLVM 9+ no longer pretends to be gcc 4.2.1
 
-Index: configure
---- configure.orig
-+++ configure
-@@ -5880,7 +5880,7 @@ gcc4=no
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -193,7 +193,7 @@ gcc4=no
  if test "$GCC" = yes && test "$ICC" = no ; then
      case `$CC -dumpversion 2>/dev/null` in
  	""|2.*|3.*) ;;
