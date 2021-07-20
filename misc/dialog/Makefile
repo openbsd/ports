@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.49 2021/03/27 13:59:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2021/07/20 13:39:51 fcambus Exp $
 
 COMMENT =		curses widgets (menus, lists, etc) for shell scripts
 
-V =			1.3-20210324
+V =			1.3-20210621
 DISTNAME =		dialog-${V}
 PKGNAME =		dialog-${V:S/-/./}
 
@@ -32,5 +32,8 @@ CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -liconv"
 FAKE_TARGET =		install install-man install-lib
 
 NO_TEST =		Yes
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/dialog.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
