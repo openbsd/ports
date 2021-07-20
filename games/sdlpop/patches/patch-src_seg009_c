@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_seg009_c,v 1.2 2021/02/28 17:41:20 daniel Exp $
+$OpenBSD: patch-src_seg009_c,v 1.3 2021/07/20 07:48:58 robert Exp $
 Index: src/seg009.c
 --- src/seg009.c.orig
 +++ src/seg009.c
-@@ -334,7 +334,7 @@ static FILE* open_dat_from_root_or_data_dir(const char
+@@ -343,7 +343,7 @@ static FILE* open_dat_from_root_or_data_dir(const char
  	// if failed, try if the DAT file can be opened in the data/ directory, instead of the main folder
  	if (fp == NULL) {
  		char data_path[POP_MAX_PATH];
@@ -11,7 +11,7 @@ Index: src/seg009.c
  
          if (!file_exists(data_path)) {
              find_exe_dir();
-@@ -2069,7 +2069,7 @@ const int sound_channel = 0;
+@@ -2078,7 +2078,7 @@ const int sound_channel = 0;
  const int max_sound_id = 58;
  
  void load_sound_names() {
@@ -20,7 +20,7 @@ Index: src/seg009.c
  	if (sound_names != NULL) return;
  	FILE* fp = fopen(names_path,"rt");
  	if (fp==NULL) return;
-@@ -2119,7 +2119,7 @@ sound_buffer_type* load_sound(int index) {
+@@ -2128,7 +2128,7 @@ sound_buffer_type* load_sound(int index) {
  					fp = fopen(filename, "rb");
  				}
  				if (fp == NULL && !skip_normal_data_files) {
@@ -29,7 +29,7 @@ Index: src/seg009.c
  					fp = fopen(locate_file(filename), "rb");
  				}
  				if (fp == NULL) {
-@@ -2723,7 +2723,7 @@ void load_from_opendats_metadata(int resource_id, cons
+@@ -2754,7 +2754,7 @@ void load_from_opendats_metadata(int resource_id, cons
  			if (len >= 5 && filename_no_ext[len-4] == '.') {
  				filename_no_ext[len-4] = '\0'; // terminate, so ".DAT" is deleted from the filename
  			}

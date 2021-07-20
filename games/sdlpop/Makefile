@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/28 17:41:20 daniel Exp $
+# $OpenBSD: Makefile,v 1.8 2021/07/20 07:48:58 robert Exp $
 
 NOT_FOR_ARCHS=	${BE_ARCHS}
 
 COMMENT=	open-source port of Prince of Persia
 
-# XXX: switching to a tagged release will require bumping EPOCH
-DISTNAME=	sdlpop-20210227
+V=		1.22
 GH_ACCOUNT=	NagyD
 GH_PROJECT=	SDLPoP
-GH_COMMIT=	b91c1d4e8171440b9f47c1b246400509fde76d8c
+GH_TAGNAME=	v${V}
+DISTNAME=	${GH_PROJECT:L}-${V}
+EPOCH=		0
 
 CATEGORIES=	games
 

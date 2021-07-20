@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/02/28 17:41:20 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/07/20 07:48:58 robert Exp $
 @bin bin/sdlpop
 share/doc/sdlpop/
 share/doc/sdlpop/Readme.txt
@@ -1045,34 +1045,6 @@ share/sdlpop/data/font/res1129.png
 share/sdlpop/data/font/res1130.png
 share/sdlpop/data/font/res1131.png
 share/sdlpop/data/icon.png
-share/sdlpop/data/levels-original/
-share/sdlpop/data/levels-original/res2000.bin
-share/sdlpop/data/levels-original/res2001.bin
-share/sdlpop/data/levels-original/res2002.bin
-share/sdlpop/data/levels-original/res2003.bin
-share/sdlpop/data/levels-original/res2004.bin
-share/sdlpop/data/levels-original/res2005.bin
-share/sdlpop/data/levels-original/res2006.bin
-share/sdlpop/data/levels-original/res2007.bin
-share/sdlpop/data/levels-original/res2008.bin
-share/sdlpop/data/levels-original/res2009.bin
-share/sdlpop/data/levels-original/res2010.bin
-share/sdlpop/data/levels-original/res2011.bin
-share/sdlpop/data/levels-original/res2012.bin
-share/sdlpop/data/levels-original/res2013.bin
-share/sdlpop/data/levels-original/res2014.bin
-share/sdlpop/data/levels-original/res2015.bin
-share/sdlpop/data/levels-test/
-share/sdlpop/data/levels-test/01-micro-room-change
-share/sdlpop/data/levels-test/01-weird-room-change
-share/sdlpop/data/levels-test/02-bigpillar-climb
-share/sdlpop/data/levels-test/02-guard-following
-share/sdlpop/data/levels-test/02-random-broken
-share/sdlpop/data/levels-test/02-walls
-share/sdlpop/data/levels-test/04-through-tapestry
-share/sdlpop/data/levels-test/05-stacked-gates
-share/sdlpop/data/levels-test/07-jump
-share/sdlpop/data/levels-test/12-shadow
 share/sdlpop/data/light.png
 share/sdlpop/data/music/
 share/sdlpop/data/music/names.txt
