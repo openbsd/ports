@@ -1,4 +1,4 @@
-$OpenBSD: patch-include_private_gcconfig_h,v 1.2 2021/02/01 22:12:27 sthen Exp $
+$OpenBSD: patch-include_private_gcconfig_h,v 1.3 2021/07/20 17:48:50 jca Exp $
 
 Index: include/private/gcconfig.h
 --- include/private/gcconfig.h.orig
@@ -24,7 +24,38 @@ Index: include/private/gcconfig.h
  # if defined(OPENBSD) && defined(m68k)
  #    define M68K
  #    define mach_type_known
-@@ -1750,6 +1755,86 @@
+@@ -94,6 +99,10 @@
+ #    define POWERPC
+ #    define mach_type_known
+ # endif
++# if defined(OPENBSD) && defined(__riscv)
++#    define RISCV
++#    define mach_type_known
++# endif
+ # if defined(NETBSD) && (defined(m68k) || defined(__m68k__))
+ #    define M68K
+ #    define mach_type_known
+@@ -1334,6 +1343,19 @@
+ #     define LINUX_STACKBOTTOM
+ #     define DYNAMIC_LOADING
+ #   endif
++#   ifdef OPENBSD
++#     define OS_TYPE "OPENBSD"
++#     ifndef GC_OPENBSD_THREADS
++#       include <sys/param.h>
++#       include <uvm/uvm_extern.h>
++#       define STACKBOTTOM ((ptr_t)USRSTACK)
++#     endif
++      extern int __data_start[];
++#     define DATASTART ((ptr_t)__data_start)
++      extern int _end[];
++#     define DATAEND ((ptr_t)(&_end))
++#     define DYNAMIC_LOADING
++#   endif
+ # endif /* RISCV */
+ 
+ # ifdef NS32K
+@@ -1750,6 +1772,86 @@
  #   define DATAEND (_end)
  #   define CACHE_LINE_SIZE 256
  #   define GETPAGESIZE() 4096
