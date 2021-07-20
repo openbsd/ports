@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/06/14 00:25:39 daniel Exp $
+# $OpenBSD: Makefile,v 1.2 2021/07/20 07:43:41 sthen Exp $
 
 # XXX version 1.17.0 and up do not support python2 anymore;
 # python3 support lives in math/py-numpy
 COMMENT=		fast array and numeric programming library for Python 2
+
+PORTROACH=		limit:^1\.16
 
 MODPY_EGG_VERSION=	1.16.6
 DISTNAME=		numpy-${MODPY_EGG_VERSION}
