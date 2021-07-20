@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2021/06/07 16:40:58 jcs Exp $
+# $OpenBSD: Makefile,v 1.12 2021/07/20 21:22:20 jcs Exp $
 
 # Hopefully ${CLANG_ARCHS} at some point.
 ONLY_FOR_ARCHS=	amd64
 
-V =		1.0.0
-V_SHARDS =	0.14.1
+V =		1.1.0
+V_SHARDS =	0.15.0
 V_MOLINILLO =	0.2.0
 COMMENT =	statically typed object oriented language
 DISTNAME =	crystal-${V}
@@ -14,10 +14,10 @@ HOMEPAGE =	https://crystal-lang.org/
 MAINTAINER =	joshua stein <jcs@jcs.org>
 
 # Apache 2.0
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE = Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c event_core event_extra gc iconv
-WANTLIB += m pcre crypto ssl yaml-0 z
+WANTLIB +=	${COMPILER_LIBCXX} c event_core event_extra gc iconv
+WANTLIB +=	m pcre crypto ssl yaml-0 z
 
 #
 # crystal-X-OpenBSDX.X.tar.gz is an archive of a bootstrap compiler object
@@ -54,8 +54,7 @@ LIB_DEPENDS =	converters/libiconv \
 
 USE_GMAKE =	Yes
 ALL_TARGET =	crystal release=1
-
-NO_TEST =	Yes
+TEST_TARGET =	smoke_test
 
 post-extract:
 	mv ${WRKDIR}/shards-${V_SHARDS} ${WRKSRC}/
@@ -65,11 +64,10 @@ do-build:
 	mkdir -p ${WRKSRC}/.build
 	# Link the compiler from the pre-built bootstrap object
 	cd ${WRKSRC} && CXX=${CXX} LLVM_CONFIG=${LLVM_CONFIG} \
-		${MAKE_PROGRAM} llvm_ext libcrystal
+		${MAKE_PROGRAM} llvm_ext
 	cd ${WRKSRC} && ${CXX} -rdynamic -o ${WRKBUILD}/.build/crystal \
 		${WRKSRC}/../crystal.o \
 		${WRKSRC}/src/llvm/ext/llvm_ext.o \
-		${WRKSRC}/src/ext/libcrystal.a \
 		-L${LOCALBASE}/lib \
 		`(${LLVM_CONFIG} --libs --system-libs --ldflags 2> /dev/null)` \
 		-lz -lpcre -lgc -lpthread -levent_core -levent_extra -lssl \
@@ -85,5 +83,10 @@ do-install:
 	cd ${WRKSRC}/src && pax -rw . ${PREFIX}/lib/crystal/
 	${INSTALL_PROGRAM} ${WRKSRC}/shards-${V_SHARDS}/bin/shards \
 		${PREFIX}/bin
+
+do-test:
+	cd ${WRKSRC}; \
+		ulimit -s 5120 -d 4096000 && \
+		${MAKE_PROGRAM} ${TEST_TARGET}
 
 .include <bsd.port.mk>

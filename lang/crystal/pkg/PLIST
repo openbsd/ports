@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/06/07 16:40:58 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/07/20 21:22:20 jcs Exp $
 @bin bin/crystal
 @bin bin/shards
 lib/crystal/
@@ -194,7 +194,6 @@ lib/crystal/compiler/crystal/tools/init/template/license.ecr
 lib/crystal/compiler/crystal/tools/init/template/readme.md.ecr
 lib/crystal/compiler/crystal/tools/init/template/shard.yml.ecr
 lib/crystal/compiler/crystal/tools/init/template/spec_helper.cr.ecr
-lib/crystal/compiler/crystal/tools/init/template/travis.yml.ecr
 lib/crystal/compiler/crystal/tools/playground/
 lib/crystal/compiler/crystal/tools/playground/agent.cr
 lib/crystal/compiler/crystal/tools/playground/agent_instrumentor_transformer.cr
@@ -319,6 +318,7 @@ lib/crystal/crystal/system/mime.cr
 lib/crystal/crystal/system/print_error.cr
 lib/crystal/crystal/system/process.cr
 lib/crystal/crystal/system/random.cr
+lib/crystal/crystal/system/socket.cr
 lib/crystal/crystal/system/thread.cr
 lib/crystal/crystal/system/thread_linked_list.cr
 lib/crystal/crystal/system/thread_mutex.cr
@@ -343,6 +343,7 @@ lib/crystal/crystal/system/unix/process.cr
 lib/crystal/crystal/system/unix/pthread.cr
 lib/crystal/crystal/system/unix/pthread_condition_variable.cr
 lib/crystal/crystal/system/unix/pthread_mutex.cr
+lib/crystal/crystal/system/unix/socket.cr
 lib/crystal/crystal/system/unix/sysconf_cpucount.cr
 lib/crystal/crystal/system/unix/sysctl_cpucount.cr
 lib/crystal/crystal/system/unix/time.cr
@@ -414,11 +415,6 @@ lib/crystal/exception/call_stack/elf.cr
 lib/crystal/exception/call_stack/mach_o.cr
 lib/crystal/exception/call_stack/null.cr
 lib/crystal/exception/lib_unwind.cr
-lib/crystal/ext/
-lib/crystal/ext.cr
-@static-lib lib/crystal/ext/libcrystal.a
-lib/crystal/ext/sigfault.c
-lib/crystal/ext/sigfault.o
 lib/crystal/fiber/
 lib/crystal/fiber.cr
 lib/crystal/fiber/context/
@@ -1067,19 +1063,26 @@ lib/crystal/lib_c/x86_64-portbld-freebsd
 lib/crystal/lib_c/x86_64-unknown-freebsd
 lib/crystal/lib_c/x86_64-windows-msvc/
 lib/crystal/lib_c/x86_64-windows-msvc/c/
+lib/crystal/lib_c/x86_64-windows-msvc/c/afunix.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/basetsd.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/consoleapi.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/corecrt.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/direct.cr
+lib/crystal/lib_c/x86_64-windows-msvc/c/errhandlingapi.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/errno.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/fcntl.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/fileapi.cr
+lib/crystal/lib_c/x86_64-windows-msvc/c/handleapi.cr
+lib/crystal/lib_c/x86_64-windows-msvc/c/in6addr.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/int_safe.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/io.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/libloaderapi.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/memoryapi.cr
+lib/crystal/lib_c/x86_64-windows-msvc/c/minwinbase.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/ntsecapi.cr
+lib/crystal/lib_c/x86_64-windows-msvc/c/processenv.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/processthreadsapi.cr
+lib/crystal/lib_c/x86_64-windows-msvc/c/profileapi.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/stdarg.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/stddef.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/stdint.cr
@@ -1092,9 +1095,16 @@ lib/crystal/lib_c/x86_64-windows-msvc/c/sys/stat.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/sys/types.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/sys/utime.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/sysinfoapi.cr
+lib/crystal/lib_c/x86_64-windows-msvc/c/timezoneapi.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/win_def.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/winbase.cr
+lib/crystal/lib_c/x86_64-windows-msvc/c/windows.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/winnt.cr
+lib/crystal/lib_c/x86_64-windows-msvc/c/winsock2.cr
+lib/crystal/lib_c/x86_64-windows-msvc/c/ws2def.cr
+lib/crystal/lib_c/x86_64-windows-msvc/c/ws2ipdef.cr
+lib/crystal/lib_c/x86_64-windows-msvc/c/ws2tcpip.cr
+lib/crystal/lib_c/x86_64-windows-msvc/c/wtypesbase.cr
 lib/crystal/lib_z/
 lib/crystal/lib_z/lib_z.cr
 lib/crystal/llvm/
@@ -1253,6 +1263,7 @@ lib/crystal/socket/
 lib/crystal/socket.cr
 lib/crystal/socket/address.cr
 lib/crystal/socket/addrinfo.cr
+lib/crystal/socket/common.cr
 lib/crystal/socket/ip_socket.cr
 lib/crystal/socket/server.cr
 lib/crystal/socket/tcp_server.cr
@@ -1262,6 +1273,7 @@ lib/crystal/socket/unix_server.cr
 lib/crystal/socket/unix_socket.cr
 lib/crystal/spec/
 lib/crystal/spec.cr
+lib/crystal/spec/cli.cr
 lib/crystal/spec/context.cr
 lib/crystal/spec/dsl.cr
 lib/crystal/spec/example/
@@ -1272,12 +1284,15 @@ lib/crystal/spec/example_group/procsy.cr
 lib/crystal/spec/expectations.cr
 lib/crystal/spec/filters.cr
 lib/crystal/spec/formatter.cr
+lib/crystal/spec/helpers/
+lib/crystal/spec/helpers/iterate.cr
 lib/crystal/spec/item.cr
 lib/crystal/spec/junit_formatter.cr
 lib/crystal/spec/methods.cr
 lib/crystal/spec/source.cr
 lib/crystal/spec/tap_formatter.cr
 lib/crystal/static_array.cr
+lib/crystal/steppable.cr
 lib/crystal/string/
 lib/crystal/string.cr
 lib/crystal/string/builder.cr
@@ -1324,6 +1339,7 @@ lib/crystal/uri/uri_parser.cr
 lib/crystal/uuid/
 lib/crystal/uuid.cr
 lib/crystal/uuid/json.cr
+lib/crystal/uuid/yaml.cr
 lib/crystal/va_list.cr
 lib/crystal/value.cr
 lib/crystal/weak_ref.cr
