@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_common_channel_info_h,v 1.5 2021/05/27 04:21:01 robert Exp $
+$OpenBSD: patch-chrome_common_channel_info_h,v 1.6 2021/07/21 15:43:32 robert Exp $
 
 Index: chrome/common/channel_info.h
 --- chrome/common/channel_info.h.orig

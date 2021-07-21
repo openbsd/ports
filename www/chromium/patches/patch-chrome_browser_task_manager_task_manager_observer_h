@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_task_manager_task_manager_observer_h,v 1.7 2021/05/27 04:21:01 robert Exp $
+$OpenBSD: patch-chrome_browser_task_manager_task_manager_observer_h,v 1.8 2021/07/21 15:43:32 robert Exp $
 
 Index: chrome/browser/task_manager/task_manager_observer.h
 --- chrome/browser/task_manager/task_manager_observer.h.orig
 +++ chrome/browser/task_manager/task_manager_observer.h
-@@ -47,7 +47,7 @@ enum RefreshType {
+@@ -46,7 +46,7 @@ enum RefreshType {
    // or backgrounded.
    REFRESH_TYPE_PRIORITY = 1 << 13,
  

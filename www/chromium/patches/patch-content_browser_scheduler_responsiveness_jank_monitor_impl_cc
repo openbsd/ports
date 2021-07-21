@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_scheduler_responsiveness_jank_monitor_impl_cc,v 1.5 2021/05/27 04:21:01 robert Exp $
+$OpenBSD: patch-content_browser_scheduler_responsiveness_jank_monitor_impl_cc,v 1.6 2021/07/21 15:43:33 robert Exp $
 
 Index: content/browser/scheduler/responsiveness/jank_monitor_impl.cc
 --- content/browser/scheduler/responsiveness/jank_monitor_impl.cc.orig

@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_graphics_video_frame_submitter_cc,v 1.8 2021/05/27 04:21:02 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_graphics_video_frame_submitter_cc,v 1.9 2021/07/21 15:43:33 robert Exp $
 
 Index: third_party/blink/renderer/platform/graphics/video_frame_submitter.cc
 --- third_party/blink/renderer/platform/graphics/video_frame_submitter.cc.orig
 +++ third_party/blink/renderer/platform/graphics/video_frame_submitter.cc
-@@ -201,7 +201,7 @@ void VideoFrameSubmitter::OnBeginFrame(
+@@ -200,7 +200,7 @@ void VideoFrameSubmitter::OnBeginFrame(
      if (viz::FrameTokenGT(pair.key, *next_frame_token_))
        continue;
      auto& feedback = pair.value.presentation_feedback;

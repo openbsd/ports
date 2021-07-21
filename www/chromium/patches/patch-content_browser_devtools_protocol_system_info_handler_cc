@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_devtools_protocol_system_info_handler_cc,v 1.6 2021/05/27 04:21:01 robert Exp $
+$OpenBSD: patch-content_browser_devtools_protocol_system_info_handler_cc,v 1.7 2021/07/21 15:43:33 robert Exp $
 
 Index: content/browser/devtools/protocol/system_info_handler.cc
 --- content/browser/devtools/protocol/system_info_handler.cc.orig
 +++ content/browser/devtools/protocol/system_info_handler.cc
-@@ -51,7 +51,7 @@ std::unique_ptr<SystemInfo::Size> GfxSizeToSystemInfoS
+@@ -52,7 +52,7 @@ std::unique_ptr<SystemInfo::Size> GfxSizeToSystemInfoS
  // 1153667.
  // Windows builds need more time -- see Issue 873112 and 1004472.
  // ASAN builds need more time -- see Issue 1167875.

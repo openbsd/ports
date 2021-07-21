@@ -1,13 +1,13 @@
-$OpenBSD: patch-net_dns_dns_util_cc,v 1.10 2021/01/20 07:28:11 robert Exp $
+$OpenBSD: patch-net_dns_dns_util_cc,v 1.11 2021/07/21 15:43:33 robert Exp $
 Index: net/dns/dns_util.cc
 --- net/dns/dns_util.cc.orig
 +++ net/dns/dns_util.cc
 @@ -28,6 +28,8 @@
- #include "net/third_party/uri_template/uri_template.h"
+ #include "third_party/abseil-cpp/absl/types/optional.h"
  #include "url/url_canon.h"
  
 +#include <sys/socket.h>
 +
  #if defined(OS_POSIX)
  #include <netinet/in.h>
- #if !defined(OS_NACL)
+ #include <net/if.h>

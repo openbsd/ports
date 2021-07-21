@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.67 2021/05/27 04:21:00 robert Exp $
+$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.68 2021/07/21 15:43:32 robert Exp $
 
 Index: chrome/app/chrome_main_delegate.cc
 --- chrome/app/chrome_main_delegate.cc.orig
@@ -63,7 +63,7 @@ Index: chrome/app/chrome_main_delegate.cc
    // Record the startup process creation time on supported platforms. On Android
    // this is recorded in ChromeMainDelegateAndroid.
    startup_metric_utils::RecordStartupProcessCreationTime(
-@@ -748,7 +748,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
+@@ -752,7 +752,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
    }
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -72,7 +72,7 @@ Index: chrome/app/chrome_main_delegate.cc
    // This will directly exit if the user asked for help.
    HandleHelpSwitches(command_line);
  #endif
-@@ -777,7 +777,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
+@@ -781,7 +781,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
    chromeos::RegisterPathProvider();
    chromeos::dbus_paths::RegisterPathProvider();
  #endif
@@ -81,7 +81,7 @@ Index: chrome/app/chrome_main_delegate.cc
    nacl::RegisterPathProvider();
  #endif
  
-@@ -1088,7 +1088,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -1092,7 +1092,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
          locale;
    }
  
@@ -90,7 +90,7 @@ Index: chrome/app/chrome_main_delegate.cc
    // Zygote needs to call InitCrashReporter() in RunZygote().
    if (process_type != switches::kZygoteProcess) {
  #if defined(OS_ANDROID)
-@@ -1171,7 +1171,7 @@ int ChromeMainDelegate::RunProcess(
+@@ -1175,7 +1175,7 @@ int ChromeMainDelegate::RunProcess(
  
      // This entry is not needed on Linux, where the NaCl loader
      // process is launched via nacl_helper instead.

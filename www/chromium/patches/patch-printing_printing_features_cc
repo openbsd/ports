@@ -1,4 +1,4 @@
-$OpenBSD: patch-printing_printing_features_cc,v 1.4 2021/05/27 04:21:02 robert Exp $
+$OpenBSD: patch-printing_printing_features_cc,v 1.5 2021/07/21 15:43:33 robert Exp $
 
 Index: printing/printing_features.cc
 --- printing/printing_features.cc.orig

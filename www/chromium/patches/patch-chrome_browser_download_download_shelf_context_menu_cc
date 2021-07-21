@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_download_download_shelf_context_menu_cc,v 1.15 2021/05/27 04:21:00 robert Exp $
+$OpenBSD: patch-chrome_browser_download_download_shelf_context_menu_cc,v 1.16 2021/07/21 15:43:32 robert Exp $
 
 Index: chrome/browser/download/download_shelf_context_menu.cc
 --- chrome/browser/download/download_shelf_context_menu.cc.orig

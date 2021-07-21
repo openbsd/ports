@@ -1,4 +1,4 @@
-$OpenBSD: patch-v8_src_base_platform_platform-posix_cc,v 1.32 2021/05/27 04:21:03 robert Exp $
+$OpenBSD: patch-v8_src_base_platform_platform-posix_cc,v 1.33 2021/07/21 15:43:34 robert Exp $
 
 Index: v8/src/base/platform/platform-posix.cc
 --- v8/src/base/platform/platform-posix.cc.orig
@@ -36,7 +36,7 @@ Index: v8/src/base/platform/platform-posix.cc
    return true;
  #else
    // TODO(bbudge) Return true for all POSIX platforms.
-@@ -1016,7 +1024,7 @@ void Thread::SetThreadLocal(LocalStorageKey key, void*
+@@ -1015,7 +1023,7 @@ void Thread::SetThreadLocal(LocalStorageKey key, void*
  // keep this version in POSIX as most Linux-compatible derivatives will
  // support it. MacOS and FreeBSD are different here.
  #if !defined(V8_OS_FREEBSD) && !defined(V8_OS_MACOSX) && !defined(_AIX) && \

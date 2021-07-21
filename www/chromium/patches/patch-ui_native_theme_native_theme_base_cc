@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_native_theme_native_theme_base_cc,v 1.12 2021/05/27 04:21:03 robert Exp $
+$OpenBSD: patch-ui_native_theme_native_theme_base_cc,v 1.13 2021/07/21 15:43:34 robert Exp $
 
 Index: ui/native_theme/native_theme_base.cc
 --- ui/native_theme/native_theme_base.cc.orig
 +++ ui/native_theme/native_theme_base.cc
-@@ -274,7 +274,7 @@ void NativeThemeBase::Paint(cc::PaintCanvas* canvas,
+@@ -280,7 +280,7 @@ void NativeThemeBase::Paint(cc::PaintCanvas* canvas,
        break;
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

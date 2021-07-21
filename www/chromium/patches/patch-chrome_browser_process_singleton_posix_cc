@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_process_singleton_posix_cc,v 1.25 2021/05/27 04:21:00 robert Exp $
+$OpenBSD: patch-chrome_browser_process_singleton_posix_cc,v 1.26 2021/07/21 15:43:32 robert Exp $
 
 Index: chrome/browser/process_singleton_posix.cc
 --- chrome/browser/process_singleton_posix.cc.orig

@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_cpu_h,v 1.5 2021/05/27 04:21:00 robert Exp $
+$OpenBSD: patch-base_cpu_h,v 1.6 2021/07/21 15:43:31 robert Exp $
 
 Index: base/cpu.h
 --- base/cpu.h.orig
 +++ base/cpu.h
-@@ -93,7 +93,7 @@ class BASE_EXPORT CPU final {
+@@ -97,7 +97,7 @@ class BASE_EXPORT CPU final {
    const std::string& cpu_brand() const { return cpu_brand_; }
  
  #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \

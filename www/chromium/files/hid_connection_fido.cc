@@ -41,7 +41,7 @@ public:
     base::internal::AssertBlockingAllowed();
 
     file_watcher_ = base::FileDescriptorWatcher::WatchReadable(
-        fd_.get(), base::Bind(&BlockingTaskHelper::OnFileCanReadWithoutBlocking,
+        fd_.get(), base::BindRepeating(&BlockingTaskHelper::OnFileCanReadWithoutBlocking,
                               base::Unretained(this)));
   }
 

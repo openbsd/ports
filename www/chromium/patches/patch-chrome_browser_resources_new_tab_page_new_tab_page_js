@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_resources_new_tab_page_new_tab_page_js,v 1.4 2021/05/27 04:21:00 robert Exp $
+$OpenBSD: patch-chrome_browser_resources_new_tab_page_new_tab_page_js,v 1.5 2021/07/21 15:43:32 robert Exp $
 
 Index: chrome/browser/resources/new_tab_page/new_tab_page.js
 --- chrome/browser/resources/new_tab_page/new_tab_page.js.orig
 +++ chrome/browser/resources/new_tab_page/new_tab_page.js
-@@ -20,10 +20,6 @@ export {ChromeCartProxy} from './modules/cart/chrome_c
+@@ -19,10 +19,6 @@ export {ChromeCartProxy} from './modules/cart/chrome_c
  export {chromeCartDescriptor} from './modules/cart/module.js';
  export {DriveProxy} from './modules/drive/drive_module_proxy.js';
  export {driveDescriptor} from './modules/drive/module.js';
@@ -11,6 +11,6 @@ Index: chrome/browser/resources/new_tab_page/new_tab_page.js
 -export {FooProxy} from './modules/dummy/foo_proxy.js';
 -export {dummyDescriptor} from './modules/dummy/module.js';
 -// </if>
- export {ModuleDescriptor} from './modules/module_descriptor.js';
+ export {InfoDialogElement} from './modules/info_dialog.js';
+ export {Module, ModuleDescriptor} from './modules/module_descriptor.js';
  export {ModuleHeaderElement} from './modules/module_header.js';
- export {ModuleRegistry} from './modules/module_registry.js';

@@ -1,18 +1,18 @@
-$OpenBSD: patch-content_utility_services_cc,v 1.4 2021/05/27 04:21:01 robert Exp $
+$OpenBSD: patch-content_utility_services_cc,v 1.5 2021/07/21 15:43:33 robert Exp $
 
 Index: content/utility/services.cc
 --- content/utility/services.cc.orig
 +++ content/utility/services.cc
-@@ -62,7 +62,7 @@ extern sandbox::TargetServices* g_utility_target_servi
+@@ -62,7 +62,7 @@
+ extern sandbox::TargetServices* g_utility_target_services;
  #endif  // defined(OS_WIN)
- #endif  // BUILDFLAG(ENABLE_LIBRARY_CDMS)
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  #include "sandbox/linux/services/libc_interceptor.h"
  #include "sandbox/policy/sandbox_type.h"
  #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
-@@ -179,7 +179,7 @@ auto RunAudio(mojo::PendingReceiver<audio::mojom::Audi
+@@ -184,7 +184,7 @@ auto RunAudio(mojo::PendingReceiver<audio::mojom::Audi
        << "task_policy_set TASK_QOS_POLICY";
  #endif
  

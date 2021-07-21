@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_download_download_prefs_cc,v 1.29 2021/05/27 04:21:00 robert Exp $
+$OpenBSD: patch-chrome_browser_download_download_prefs_cc,v 1.30 2021/07/21 15:43:32 robert Exp $
 
 Index: chrome/browser/download/download_prefs.cc
 --- chrome/browser/download/download_prefs.cc.orig
@@ -47,7 +47,7 @@ Index: chrome/browser/download/download_prefs.cc
    registry->RegisterBooleanPref(prefs::kOpenPdfDownloadInSystemReader, false);
  #endif
  #if defined(OS_ANDROID)
-@@ -432,7 +435,7 @@ bool DownloadPrefs::IsDownloadPathManaged() const {
+@@ -439,7 +442,7 @@ bool DownloadPrefs::IsDownloadPathManaged() const {
  
  bool DownloadPrefs::IsAutoOpenByUserUsed() const {
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
@@ -56,7 +56,7 @@ Index: chrome/browser/download/download_prefs.cc
    if (ShouldOpenPdfInSystemReader())
      return true;
  #endif
-@@ -447,7 +450,7 @@ bool DownloadPrefs::IsAutoOpenEnabled(const GURL& url,
+@@ -454,7 +457,7 @@ bool DownloadPrefs::IsAutoOpenEnabled(const GURL& url,
    DCHECK(extension[0] == base::FilePath::kExtensionSeparator);
    extension.erase(0, 1);
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
@@ -65,7 +65,7 @@ Index: chrome/browser/download/download_prefs.cc
    if (base::FilePath::CompareEqualIgnoreCase(extension,
                                               FILE_PATH_LITERAL("pdf")) &&
        ShouldOpenPdfInSystemReader())
-@@ -498,7 +501,7 @@ void DownloadPrefs::DisableAutoOpenByUserBasedOnExtens
+@@ -505,7 +508,7 @@ void DownloadPrefs::DisableAutoOpenByUserBasedOnExtens
  }
  
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
@@ -74,7 +74,7 @@ Index: chrome/browser/download/download_prefs.cc
  void DownloadPrefs::SetShouldOpenPdfInSystemReader(bool should_open) {
    if (should_open_pdf_in_system_reader_ == should_open)
      return;
-@@ -520,7 +523,7 @@ bool DownloadPrefs::ShouldOpenPdfInSystemReader() cons
+@@ -527,7 +530,7 @@ bool DownloadPrefs::ShouldOpenPdfInSystemReader() cons
  
  void DownloadPrefs::ResetAutoOpenByUser() {
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
@@ -83,7 +83,7 @@ Index: chrome/browser/download/download_prefs.cc
    SetShouldOpenPdfInSystemReader(false);
  #endif
    auto_open_by_user_.clear();
-@@ -625,9 +628,13 @@ base::FilePath DownloadPrefs::SanitizeDownloadTargetPa
+@@ -632,9 +635,13 @@ base::FilePath DownloadPrefs::SanitizeDownloadTargetPa
    // Fall back to the default download directory for all other paths.
    return GetDefaultDownloadDirectoryForProfile();
  #else

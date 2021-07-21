@@ -1,8 +1,8 @@
-$OpenBSD: patch-third_party_pdfium_core_fxge_fx_ge_linux_cpp,v 1.14 2021/05/27 04:21:02 robert Exp $
+$OpenBSD: patch-third_party_pdfium_core_fxge_linux_fx_linux_impl_cpp,v 1.1 2021/07/21 15:43:34 robert Exp $
 
-Index: third_party/pdfium/core/fxge/fx_ge_linux.cpp
---- third_party/pdfium/core/fxge/fx_ge_linux.cpp.orig
-+++ third_party/pdfium/core/fxge/fx_ge_linux.cpp
+Index: third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp
+--- third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp.orig
++++ third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp
 @@ -17,7 +17,7 @@
  #include "third_party/base/check.h"
  #include "third_party/base/stl_util.h"

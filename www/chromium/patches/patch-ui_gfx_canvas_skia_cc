@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_canvas_skia_cc,v 1.21 2021/05/27 04:21:03 robert Exp $
+$OpenBSD: patch-ui_gfx_canvas_skia_cc,v 1.22 2021/07/21 15:43:34 robert Exp $
 
 Index: ui/gfx/canvas_skia.cc
 --- ui/gfx/canvas_skia.cc.orig

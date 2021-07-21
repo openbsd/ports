@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_profiles_profiles_state_cc,v 1.4 2021/05/27 04:21:00 robert Exp $
+$OpenBSD: patch-chrome_browser_profiles_profiles_state_cc,v 1.5 2021/07/21 15:43:32 robert Exp $
 
 Index: chrome/browser/profiles/profiles_state.cc
 --- chrome/browser/profiles/profiles_state.cc.orig
 +++ chrome/browser/profiles/profiles_state.cc
-@@ -129,7 +129,7 @@ void RegisterPrefs(PrefRegistrySimple* registry) {
+@@ -87,7 +87,7 @@ void RegisterPrefs(PrefRegistrySimple* registry) {
    registry->RegisterBooleanPref(prefs::kBrowserProfilePickerShown, false);
  // TODO(crbug.com/1179280): Remove OS_LINUX once https://crbug.com/1169547 is
  // done.
@@ -12,7 +12,7 @@ Index: chrome/browser/profiles/profiles_state.cc
    registry->RegisterBooleanPref(prefs::kLacrosSecondaryProfilesAllowed, true);
  #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
  }
-@@ -228,7 +228,7 @@ bool IsGuestModeRequested(const base::CommandLine& com
+@@ -186,7 +186,7 @@ bool IsGuestModeRequested(const base::CommandLine& com
                            PrefService* local_state,
                            bool show_warning) {
  #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_WIN) || \

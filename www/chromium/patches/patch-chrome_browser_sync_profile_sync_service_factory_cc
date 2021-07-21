@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_sync_profile_sync_service_factory_cc,v 1.4 2021/05/27 04:21:01 robert Exp $
+$OpenBSD: patch-chrome_browser_sync_profile_sync_service_factory_cc,v 1.5 2021/07/21 15:43:32 robert Exp $
 
 Index: chrome/browser/sync/profile_sync_service_factory.cc
 --- chrome/browser/sync/profile_sync_service_factory.cc.orig
 +++ chrome/browser/sync/profile_sync_service_factory.cc
-@@ -212,7 +212,7 @@ KeyedService* ProfileSyncServiceFactory::BuildServiceI
+@@ -216,7 +216,7 @@ KeyedService* ProfileSyncServiceFactory::BuildServiceI
  // included
  // in lacros-chrome once build flag switch of lacros-chrome is
  // complete.

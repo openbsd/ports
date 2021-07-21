@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_compositor_compositor_h,v 1.12 2021/05/27 04:21:02 robert Exp $
+$OpenBSD: patch-ui_compositor_compositor_h,v 1.13 2021/07/21 15:43:34 robert Exp $
 
 Index: ui/compositor/compositor.h
 --- ui/compositor/compositor.h.orig
 +++ ui/compositor/compositor.h
-@@ -375,7 +375,7 @@ class COMPOSITOR_EXPORT Compositor : public cc::LayerT
+@@ -377,7 +377,7 @@ class COMPOSITOR_EXPORT Compositor : public cc::LayerT
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

@@ -1,17 +1,23 @@
-$OpenBSD: patch-chrome_browser_ui_views_first_run_dialog_cc,v 1.26 2021/05/27 04:21:01 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_first_run_dialog_cc,v 1.27 2021/07/21 15:43:32 robert Exp $
 
 Index: chrome/browser/ui/views/first_run_dialog.cc
 --- chrome/browser/ui/views/first_run_dialog.cc.orig
 +++ chrome/browser/ui/views/first_run_dialog.cc
-@@ -115,9 +115,11 @@ void FirstRunDialog::Done() {
- bool FirstRunDialog::Accept() {
-   GetWidget()->Hide();
+@@ -33,7 +33,7 @@
  
-+#if !defined(OS_BSD)
+ namespace {
+ 
+-#if !defined(OS_MAC)
++#if !defined(OS_MAC) && !defined(OS_BSD)
+ void InitCrashReporterIfEnabled(bool enabled) {
+   if (!crash_reporter::IsCrashpadEnabled() && enabled)
+     breakpad::InitCrashReporter(std::string());
+@@ -121,7 +121,7 @@ bool FirstRunDialog::Accept() {
+ 
+ #if defined(OS_MAC)
+   ChangeMetricsReportingState(report_crashes_->GetChecked());
+-#else
++#elif !defined(OS_BSD)
    ChangeMetricsReportingStateWithReply(
        report_crashes_->GetChecked(),
        base::BindOnce(&InitCrashReporterIfEnabled));
-+#endif
- 
-   if (make_default_->GetChecked())
-     shell_integration::SetAsDefaultBrowser();

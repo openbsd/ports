@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_tracing_public_cpp_perfetto_trace_time_h,v 1.3 2020/10/22 13:52:55 robert Exp $
+$OpenBSD: patch-base_tracing_trace_time_h,v 1.1 2021/07/21 15:43:32 robert Exp $
 
-Index: services/tracing/public/cpp/perfetto/trace_time.h
---- services/tracing/public/cpp/perfetto/trace_time.h.orig
-+++ services/tracing/public/cpp/perfetto/trace_time.h
-@@ -11,7 +11,7 @@
+Index: base/tracing/trace_time.h
+--- base/tracing/trace_time.h.orig
++++ base/tracing/trace_time.h
+@@ -12,7 +12,7 @@ namespace base {
  namespace tracing {
  
  #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \

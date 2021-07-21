@@ -1,4 +1,4 @@
-$OpenBSD: patch-weblayer_common_weblayer_paths_cc,v 1.7 2021/05/27 04:21:03 robert Exp $
+$OpenBSD: patch-weblayer_common_weblayer_paths_cc,v 1.8 2021/07/21 15:43:34 robert Exp $
 
 Index: weblayer/common/weblayer_paths.cc
 --- weblayer/common/weblayer_paths.cc.orig

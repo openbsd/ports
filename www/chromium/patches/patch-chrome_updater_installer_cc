@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_updater_installer_cc,v 1.6 2021/05/27 04:21:01 robert Exp $
+$OpenBSD: patch-chrome_updater_installer_cc,v 1.7 2021/07/21 15:43:32 robert Exp $
 
 Index: chrome/updater/installer.cc
 --- chrome/updater/installer.cc.orig
 +++ chrome/updater/installer.cc
-@@ -248,7 +248,7 @@ base::Optional<base::FilePath> Installer::GetCurrentIn
+@@ -251,7 +251,7 @@ absl::optional<base::FilePath> Installer::GetCurrentIn
    return path->AppendASCII(pv_.GetString());
  }
  

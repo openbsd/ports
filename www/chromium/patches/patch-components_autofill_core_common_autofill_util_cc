@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_autofill_core_common_autofill_util_cc,v 1.10 2021/05/27 04:21:01 robert Exp $
+$OpenBSD: patch-components_autofill_core_common_autofill_util_cc,v 1.11 2021/07/21 15:43:33 robert Exp $
 
 Index: components/autofill/core/common/autofill_util.cc
 --- components/autofill/core/common/autofill_util.cc.orig
 +++ components/autofill/core/common/autofill_util.cc
-@@ -172,7 +172,7 @@ bool SanitizedFieldIsEmpty(const std::u16string& value
+@@ -162,7 +162,7 @@ bool SanitizedFieldIsEmpty(const std::u16string& value
  
  bool ShouldAutoselectFirstSuggestionOnArrowDown() {
  #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \

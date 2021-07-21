@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_device_hid_hid_service_cc,v 1.5 2021/05/27 04:21:02 robert Exp $
+$OpenBSD: patch-services_device_hid_hid_service_cc,v 1.6 2021/07/21 15:43:33 robert Exp $
 
 Index: services/device/hid/hid_service.cc
 --- services/device/hid/hid_service.cc.orig

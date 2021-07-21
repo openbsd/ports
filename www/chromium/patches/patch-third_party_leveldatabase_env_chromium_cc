@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_leveldatabase_env_chromium_cc,v 1.15 2021/05/27 04:21:02 robert Exp $
+$OpenBSD: patch-third_party_leveldatabase_env_chromium_cc,v 1.16 2021/07/21 15:43:34 robert Exp $
 
 Index: third_party/leveldatabase/env_chromium.cc
 --- third_party/leveldatabase/env_chromium.cc.orig
 +++ third_party/leveldatabase/env_chromium.cc
-@@ -308,7 +308,8 @@ ChromiumWritableFile::ChromiumWritableFile(const std::
+@@ -307,7 +307,8 @@ ChromiumWritableFile::ChromiumWritableFile(const std::
  
  Status ChromiumWritableFile::SyncParent() {
    TRACE_EVENT0("leveldb", "SyncParent");

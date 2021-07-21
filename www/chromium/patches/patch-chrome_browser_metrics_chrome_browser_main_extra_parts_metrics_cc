@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_metrics_chrome_browser_main_extra_parts_metrics_cc,v 1.25 2021/05/27 04:21:00 robert Exp $
+$OpenBSD: patch-chrome_browser_metrics_chrome_browser_main_extra_parts_metrics_cc,v 1.26 2021/07/21 15:43:32 robert Exp $
 
 Index: chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
 --- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig
 +++ chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
-@@ -61,8 +61,10 @@
+@@ -60,8 +60,10 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -15,8 +15,8 @@ Index: chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
  
  #include "base/linux_util.h"
  #include "base/strings/string_split.h"
-@@ -227,7 +229,9 @@ void RecordStartupMetrics() {
-   crypto::MeasureTPMAvailability();
+@@ -224,7 +226,9 @@ void RecordStartupMetrics() {
+   base::UmaHistogramBoolean("Windows.ApplockerRunning", IsApplockerRunning());
  #endif  // defined(OS_WIN)
  
 +#if !defined(OS_BSD)

@@ -1,10 +1,10 @@
-$OpenBSD: patch-ui_base_ui_base_features_h,v 1.17 2021/05/27 04:21:02 robert Exp $
+$OpenBSD: patch-ui_base_ui_base_features_h,v 1.18 2021/07/21 15:43:34 robert Exp $
 
 Index: ui/base/ui_base_features.h
 --- ui/base/ui_base_features.h.orig
 +++ ui/base/ui_base_features.h
-@@ -66,7 +66,7 @@ COMPONENT_EXPORT(UI_BASE_FEATURES) bool IsUsingWMPoint
- #endif  // defined(OS_WIN)
+@@ -78,7 +78,7 @@ bool IsDeprecateAltBasedSixPackEnabled();
+ #endif  // defined(OS_CHROMEOS)
  
  #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)

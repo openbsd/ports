@@ -1,9 +1,9 @@
-$OpenBSD: patch-remoting_host_host_main_cc,v 1.6 2021/05/27 04:21:02 robert Exp $
+$OpenBSD: patch-remoting_host_host_main_cc,v 1.7 2021/07/21 15:43:33 robert Exp $
 
 Index: remoting/host/host_main.cc
 --- remoting/host/host_main.cc.orig
 +++ remoting/host/host_main.cc
-@@ -48,7 +48,7 @@ int DesktopProcessMain();
+@@ -47,7 +47,7 @@ int DesktopProcessMain();
  int FileChooserMain();
  int RdpDesktopSessionMain();
  #endif  // defined(OS_WIN)
@@ -12,7 +12,7 @@ Index: remoting/host/host_main.cc
  int XSessionChooserMain();
  #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
  
-@@ -61,7 +61,7 @@ const char kUsageMessage[] =
+@@ -60,7 +60,7 @@ const char kUsageMessage[] =
      "\n"
      "Options:\n"
  
@@ -21,7 +21,7 @@ Index: remoting/host/host_main.cc
      "  --audio-pipe-name=<pipe> - Sets the pipe name to capture audio on "
      "Linux.\n"
  #endif  // defined(OS_LINUX)
-@@ -148,7 +148,7 @@ MainRoutineFn SelectMainRoutine(const std::string& pro
+@@ -147,7 +147,7 @@ MainRoutineFn SelectMainRoutine(const std::string& pro
    } else if (process_type == kProcessTypeRdpDesktopSession) {
      main_routine = &RdpDesktopSessionMain;
  #endif  // defined(OS_WIN)

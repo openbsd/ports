@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_system_menu_model_builder_cc,v 1.18 2021/05/27 04:21:01 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_system_menu_model_builder_cc,v 1.19 2021/07/21 15:43:32 robert Exp $
 
 Index: chrome/browser/ui/views/frame/system_menu_model_builder.cc
 --- chrome/browser/ui/views/frame/system_menu_model_builder.cc.orig
 +++ chrome/browser/ui/views/frame/system_menu_model_builder.cc
-@@ -70,7 +70,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
+@@ -68,7 +68,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
      ui::SimpleMenuModel* model) {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/views/frame/system_menu_model_builder.cc
    model->AddItemWithStringId(IDC_MINIMIZE_WINDOW, IDS_MINIMIZE_WINDOW_MENU);
    model->AddItemWithStringId(IDC_MAXIMIZE_WINDOW, IDS_MAXIMIZE_WINDOW_MENU);
    model->AddItemWithStringId(IDC_RESTORE_WINDOW, IDS_RESTORE_WINDOW_MENU);
-@@ -87,7 +87,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
+@@ -85,7 +85,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
    }
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -21,7 +21,7 @@ Index: chrome/browser/ui/views/frame/system_menu_model_builder.cc
    model->AddSeparator(ui::NORMAL_SEPARATOR);
    model->AddCheckItemWithStringId(IDC_USE_SYSTEM_TITLE_BAR,
                                    IDS_SHOW_WINDOW_DECORATIONS_MENU);
-@@ -130,7 +130,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForAppOrPo
+@@ -128,7 +128,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForAppOrPo
    }
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

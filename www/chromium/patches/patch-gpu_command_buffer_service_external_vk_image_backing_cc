@@ -1,4 +1,4 @@
-$OpenBSD: patch-gpu_command_buffer_service_external_vk_image_backing_cc,v 1.16 2021/05/27 04:21:02 robert Exp $
+$OpenBSD: patch-gpu_command_buffer_service_external_vk_image_backing_cc,v 1.17 2021/07/21 15:43:33 robert Exp $
 
 Index: gpu/command_buffer/service/external_vk_image_backing.cc
 --- gpu/command_buffer/service/external_vk_image_backing.cc.orig
@@ -12,7 +12,7 @@ Index: gpu/command_buffer/service/external_vk_image_backing.cc
  #include "gpu/command_buffer/service/external_vk_image_dawn_representation.h"
  #endif
  
-@@ -616,7 +616,7 @@ std::unique_ptr<SharedImageRepresentationDawn>
+@@ -601,7 +601,7 @@ std::unique_ptr<SharedImageRepresentationDawn>
  ExternalVkImageBacking::ProduceDawn(SharedImageManager* manager,
                                      MemoryTypeTracker* tracker,
                                      WGPUDevice wgpuDevice) {
@@ -21,9 +21,9 @@ Index: gpu/command_buffer/service/external_vk_image_backing.cc
    auto wgpu_format = viz::ToWGPUFormat(format());
  
    if (wgpu_format == WGPUTextureFormat_Undefined) {
-@@ -648,7 +648,7 @@ GLuint ExternalVkImageBacking::ProduceGLTextureInterna
+@@ -633,7 +633,7 @@ GLuint ExternalVkImageBacking::ProduceGLTextureInterna
    gl::GLApi* api = gl::g_current_gl_context;
-   base::Optional<ScopedDedicatedMemoryObject> memory_object;
+   absl::optional<ScopedDedicatedMemoryObject> memory_object;
    if (!use_separate_gl_texture()) {
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)

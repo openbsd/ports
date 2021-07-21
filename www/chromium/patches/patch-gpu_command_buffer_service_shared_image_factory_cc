@@ -1,9 +1,9 @@
-$OpenBSD: patch-gpu_command_buffer_service_shared_image_factory_cc,v 1.2 2021/05/27 04:21:02 robert Exp $
+$OpenBSD: patch-gpu_command_buffer_service_shared_image_factory_cc,v 1.3 2021/07/21 15:43:33 robert Exp $
 
 Index: gpu/command_buffer/service/shared_image_factory.cc
 --- gpu/command_buffer/service/shared_image_factory.cc.orig
 +++ gpu/command_buffer/service/shared_image_factory.cc
-@@ -29,12 +29,12 @@
+@@ -28,12 +28,12 @@
  #include "ui/gl/gl_implementation.h"
  #include "ui/gl/trace_util.h"
  

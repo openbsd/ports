@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_capture_video_video_capture_buffer_pool_impl_cc,v 1.9 2021/05/27 04:21:02 robert Exp $
+$OpenBSD: patch-media_capture_video_video_capture_buffer_pool_impl_cc,v 1.10 2021/07/21 15:43:33 robert Exp $
 
 Index: media/capture/video/video_capture_buffer_pool_impl.cc
 --- media/capture/video/video_capture_buffer_pool_impl.cc.orig

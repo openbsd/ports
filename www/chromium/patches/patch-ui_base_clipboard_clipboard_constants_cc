@@ -1,11 +1,11 @@
-$OpenBSD: patch-ui_base_clipboard_clipboard_constants_cc,v 1.5 2021/05/27 04:21:02 robert Exp $
+$OpenBSD: patch-ui_base_clipboard_clipboard_constants_cc,v 1.6 2021/07/21 15:43:34 robert Exp $
 
 Index: ui/base/clipboard/clipboard_constants.cc
 --- ui/base/clipboard/clipboard_constants.cc.orig
 +++ ui/base/clipboard/clipboard_constants.cc
-@@ -18,7 +18,7 @@ const char kMimeTypeSvg[] = "image/svg+xml";
- const char kMimeTypeRTF[] = "text/rtf";
- const char kMimeTypePNG[] = "image/png";
+@@ -20,7 +20,7 @@ const char kMimeTypePNG[] = "image/png";
+ // Used for image drag & drop from LaCrOS.
+ const char kMimeTypeOctetStream[] = "application/octet-stream";
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)

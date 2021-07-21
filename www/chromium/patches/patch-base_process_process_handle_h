@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_process_process_handle_h,v 1.4 2021/01/20 07:28:07 robert Exp $
+$OpenBSD: patch-base_process_process_handle_h,v 1.5 2021/07/21 15:43:32 robert Exp $
 
 Index: base/process/process_handle.h
 --- base/process/process_handle.h.orig
 +++ base/process/process_handle.h
-@@ -103,7 +103,7 @@ BASE_EXPORT ProcessId GetCurrentProcId();
+@@ -106,7 +106,7 @@ BASE_EXPORT ProcessId GetCurrentProcId();
  // processes may be reused.
  BASE_EXPORT UniqueProcId GetUniqueIdForProcess();
  

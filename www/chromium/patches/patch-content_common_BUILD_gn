@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_common_BUILD_gn,v 1.21 2021/05/27 04:21:01 robert Exp $
+$OpenBSD: patch-content_common_BUILD_gn,v 1.22 2021/07/21 15:43:33 robert Exp $
 
 Index: content/common/BUILD.gn
 --- content/common/BUILD.gn.orig

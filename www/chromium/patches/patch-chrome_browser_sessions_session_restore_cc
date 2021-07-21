@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_sessions_session_restore_cc,v 1.2 2021/06/18 07:15:49 robert Exp $
+$OpenBSD: patch-chrome_browser_sessions_session_restore_cc,v 1.3 2021/07/21 15:43:32 robert Exp $
 
 Index: chrome/browser/sessions/session_restore.cc
 --- chrome/browser/sessions/session_restore.cc.orig

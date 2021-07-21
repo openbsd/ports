@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_util_python2_action_py,v 1.1 2021/01/20 07:28:07 robert Exp $
+$OpenBSD: patch-build_util_python2_action_py,v 1.2 2021/07/21 15:43:32 robert Exp $
 
 Index: build/util/python2_action.py
 --- build/util/python2_action.py.orig
@@ -16,6 +16,6 @@ Index: build/util/python2_action.py
    exe = 'python2.7'
  
 -sys.exit(subprocess.call([exe] + sys.argv[1:]))
-+env = os.environ.copy()                                                        
++env = os.environ.copy()
 +env["LD_LIBRARY_PATH"] = "${WRKSRC}/out/Release"
 +sys.exit(subprocess.call([exe] + sys.argv[1:], env=env))

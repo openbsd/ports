@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_chrome_features_h,v 1.31 2021/05/27 04:21:01 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_features_h,v 1.32 2021/07/21 15:43:32 robert Exp $
 
 Index: chrome/common/chrome_features.h
 --- chrome/common/chrome_features.h.orig
 +++ chrome/common/chrome_features.h
-@@ -70,7 +70,7 @@ extern const base::Feature kAppShimNewCloseBehavior;
+@@ -69,7 +69,7 @@ extern const base::Feature kAppShimNewCloseBehavior;
  
  COMPONENT_EXPORT(CHROME_FEATURES) extern const base::Feature kAsyncDns;
  
@@ -12,7 +12,7 @@ Index: chrome/common/chrome_features.h
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kBackgroundModeAllowRestart;
  #endif  // defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
-@@ -235,7 +235,7 @@ extern const base::Feature kEnableAmbientAuthenticatio
+@@ -251,7 +251,7 @@ extern const base::Feature kEnableAmbientAuthenticatio
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
@@ -21,8 +21,8 @@ Index: chrome/common/chrome_features.h
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kEnableEphemeralGuestProfilesOnDesktop;
  #endif  // defined(OS_WIN) || (defined(OS_LINUX) ||
-@@ -359,7 +359,7 @@ extern const base::Feature kIncompatibleApplicationsWa
- #endif  // defined(OS_ANDROID)
+@@ -375,7 +375,7 @@ extern const base::Feature kIncognitoBrandConsistencyF
+ #endif
  
  #if defined(OS_MAC) || defined(OS_WIN) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
