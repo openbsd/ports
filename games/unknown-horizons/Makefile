@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/07/21 23:31:48 sthen Exp $
 
 COMMENT =	economic historical real-time strategy game
 
@@ -26,7 +26,6 @@ SEPARATE_BUILD =	Yes
 PORTHOME =		${WRKDIR}
 
 BUILD_DEPENDS =		devel/gettext,-tools \
-			devel/py-pathlib${MODPY_FLAVOR} \
 			graphics/py-Pillow${MODPY_FLAVOR} \
 			sysutils/py-distro
 RUN_DEPENDS =		devel/desktop-file-utils \
