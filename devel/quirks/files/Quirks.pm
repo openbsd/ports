@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1291 2021/07/18 09:23:33 paco Exp $
+# $OpenBSD: Quirks.pm,v 1.1292 2021/07/21 18:31:44 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1218,6 +1218,8 @@ setup_obsolete_reason(
 	3 => 'p5-Puppet-Tidy',
 	6 => 'kf5-icons-baloo',
 	3 => 'canto',
+	6 => 'py-mini-amf',
+	6 => 'py3-mini-amf',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
