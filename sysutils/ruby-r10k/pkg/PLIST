@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2021/06/18 09:07:00 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.25 2021/07/21 21:13:18 sebastia Exp $
 ${GEM_BIN}/r10k${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -259,6 +259,10 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/module/git.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/module/local.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/module/metadata_file.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/module/svn.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/r10k/module_loader/
+${GEM_LIB}/gems/${DISTNAME}/lib/r10k/module_loader/puppetfile/
+${GEM_LIB}/gems/${DISTNAME}/lib/r10k/module_loader/puppetfile.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/r10k/module_loader/puppetfile/dsl.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/puppetfile.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/settings/
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/settings.rb
@@ -330,6 +334,8 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/action/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/action/r10k.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/action/r10k_cachedir.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/action/r10k_creds.yaml
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/action/r10k_forge_auth.yaml
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/action/r10k_forge_auth_no_url.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/action/r10k_generate_types.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/action/r10k_puppet_path.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/
@@ -354,10 +360,14 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/expected_1
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/managed_subdir_1/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/managed_subdir_1/managed_subdir_2/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/managed_subdir_1/managed_subdir_2/ignored_1
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/managed_subdir_1/subdir_expected_1
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/managed_subdir_1/subdir_unmanaged_1
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/unmanaged_1
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_two/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_two/.hidden/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_two/.hidden/unmanaged_3
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_two/expected_2
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_two/unmanaged_2
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/subprocess/
@@ -448,6 +458,8 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/unit/module/forge_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/module/git_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/module/metadata_file_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/module/svn_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/module_loader/
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/module_loader/puppetfile_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/module_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppetfile_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/settings/
