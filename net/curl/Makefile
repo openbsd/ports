@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.162 2021/05/31 20:10:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.163 2021/07/21 19:17:02 naddy Exp $
 
 COMMENT=	transfer files with FTP, HTTP, HTTPS, etc.
 
-DISTNAME=	curl-7.77.0
-SHARED_LIBS=	curl                 26.10    # 11.0
+DISTNAME=	curl-7.78.0
+SHARED_LIBS=	curl                 26.11    # 11.0
 CATEGORIES=	net
 HOMEPAGE=	https://curl.se/
 
