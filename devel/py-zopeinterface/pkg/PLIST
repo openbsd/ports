@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/02/16 23:02:07 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/07/21 14:05:22 sthen Exp $
 @pkgpath devel/py-zopeinterface
 lib/python${MODPY_VERSION}/site-packages/zope/
 lib/python${MODPY_VERSION}/site-packages/zope.interface-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
@@ -8,7 +8,6 @@ lib/python${MODPY_VERSION}/site-packages/zope.interface-${MODPY_EGG_VERSION}-py$
 lib/python${MODPY_VERSION}/site-packages/zope.interface-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/zope.interface-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/namespace_packages.txt
 lib/python${MODPY_VERSION}/site-packages/zope.interface-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
-lib/python${MODPY_VERSION}/site-packages/zope.interface-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/zope.interface-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/zope.interface-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/zope/interface/
@@ -37,24 +36,40 @@ lib/python${MODPY_VERSION}/site-packages/zope/interface/common/
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zope/interface/common/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/zope/interface/common/${MODPY_PYCACHE}builtins.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/zope/interface/common/${MODPY_PYCACHE}collections.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/${MODPY_PYCACHE}idatetime.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/${MODPY_PYCACHE}interfaces.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/zope/interface/common/${MODPY_PYCACHE}io.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/${MODPY_PYCACHE}mapping.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/zope/interface/common/${MODPY_PYCACHE}numbers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/${MODPY_PYCACHE}sequence.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/zope/interface/common/builtins.py
+lib/python${MODPY_VERSION}/site-packages/zope/interface/common/collections.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/idatetime.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/interfaces.py
+lib/python${MODPY_VERSION}/site-packages/zope/interface/common/io.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/mapping.py
+lib/python${MODPY_VERSION}/site-packages/zope/interface/common/numbers.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/sequence.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/${MODPY_PYCACHE}basemapping.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/${MODPY_PYCACHE}test_builtins.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/${MODPY_PYCACHE}test_collections.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/${MODPY_PYCACHE}test_idatetime.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/${MODPY_PYCACHE}test_import_interfaces.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/${MODPY_PYCACHE}test_io.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/${MODPY_PYCACHE}test_numbers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/basemapping.py
+lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/test_builtins.py
+lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/test_collections.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/test_idatetime.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/test_import_interfaces.py
+lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/test_io.py
+lib/python${MODPY_VERSION}/site-packages/zope/interface/common/tests/test_numbers.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/declarations.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/document.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/exceptions.py
@@ -69,10 +84,7 @@ lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/${MODPY_PYCACHE}__
 lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/${MODPY_PYCACHE}advisory_testing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/${MODPY_PYCACHE}dummy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/${MODPY_PYCACHE}idummy.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/${MODPY_PYCACHE}ifoo.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/${MODPY_PYCACHE}ifoo_other.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/${MODPY_PYCACHE}m1.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/${MODPY_PYCACHE}m2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/${MODPY_PYCACHE}odd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/${MODPY_PYCACHE}test_adapter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/${MODPY_PYCACHE}test_advice.${MODPY_PYC_MAGIC_TAG}pyc
@@ -90,10 +102,7 @@ lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/${MODPY_PYCACHE}te
 lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/advisory_testing.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/dummy.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/idummy.py
-lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/ifoo.py
-lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/ifoo_other.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/m1.py
-lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/m2.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/odd.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/test_adapter.py
 lib/python${MODPY_VERSION}/site-packages/zope/interface/tests/test_advice.py
