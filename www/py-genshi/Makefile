@@ -1,32 +1,33 @@
-# $OpenBSD: Makefile,v 1.22 2021/03/15 11:35:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2021/07/21 15:29:53 sthen Exp $
 
-COMMENT =	toolkit for generation of output for the web
+COMMENT=	toolkit for generation of output for the web
 
-MODPY_EGG_VERSION =	0.7.5
-DISTNAME =	Genshi-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME:L}
+MODPY_EGG_VERSION= 0.7.5
+DISTNAME=	Genshi-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME:L}
+REVISION=	0
 
-CATEGORIES =	www
+CATEGORIES=	www
 
-HOMEPAGE =	https://genshi.edgewall.org/
+HOMEPAGE=	https://genshi.edgewall.org/
 
 # BSD
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += pthread
 
-MODULES =	lang/python
-FLAVOR =	python3
-FLAVORS =	python3
+MODULES=	lang/python
+MODPY_SETUPTOOLS= Yes
 
-MODPY_PI =	Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_SETUP_ARGS =	--with-speedups
+FLAVOR=		python3
+FLAVORS=	python3
 
-TEST_DEPENDS =	${BUILD_DEPENDS}
+MODPY_PI=	Yes
+CONFIGURE_ENV=	GENSHI_BUILD_SPEEDUP=1
+
+TEST_DEPENDS=	${BUILD_DEPENDS}
 
 post-install:
-	#	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-genshi
 	cp -r ${WRKSRC}/doc ${PREFIX}/share/doc/py-genshi
 	cp -r ${WRKSRC}/examples ${PREFIX}/share/examples/py-genshi
 

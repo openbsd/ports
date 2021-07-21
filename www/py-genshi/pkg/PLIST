@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/03/15 11:35:05 sthen Exp $
-@pkgpath www/py-genshi
+@comment $OpenBSD: PLIST,v 1.10 2021/07/21 15:29:53 sthen Exp $
 @conflict py-genshi-*
+@pkgpath www/py-genshi
 lib/python${MODPY_VERSION}/site-packages/Genshi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Genshi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Genshi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
