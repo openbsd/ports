@@ -1,32 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/07/06 16:55:33 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/07/21 23:38:03 sthen Exp $
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pathlib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pathlib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pathlib.py
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pathlib.${MODPY_PYC_MAGIC_TAG}pyc
-share/doc/${MODPY_PY_PREFIX}pathlib/
-share/doc/${MODPY_PY_PREFIX}pathlib/_images/
-share/doc/${MODPY_PY_PREFIX}pathlib/_images/pathlib-inheritance.png
-share/doc/${MODPY_PY_PREFIX}pathlib/_sources/
-share/doc/${MODPY_PY_PREFIX}pathlib/_sources/index.rst.txt
-share/doc/${MODPY_PY_PREFIX}pathlib/_static/
-share/doc/${MODPY_PY_PREFIX}pathlib/_static/alabaster.css
-share/doc/${MODPY_PY_PREFIX}pathlib/_static/basic.css
-share/doc/${MODPY_PY_PREFIX}pathlib/_static/custom.css
-share/doc/${MODPY_PY_PREFIX}pathlib/_static/doctools.js
-share/doc/${MODPY_PY_PREFIX}pathlib/_static/documentation_options.js
-share/doc/${MODPY_PY_PREFIX}pathlib/_static/file.png
-share/doc/${MODPY_PY_PREFIX}pathlib/_static/jquery-3.5.1.js
-share/doc/${MODPY_PY_PREFIX}pathlib/_static/jquery.js
-share/doc/${MODPY_PY_PREFIX}pathlib/_static/language_data.js
-share/doc/${MODPY_PY_PREFIX}pathlib/_static/minus.png
-share/doc/${MODPY_PY_PREFIX}pathlib/_static/plus.png
-share/doc/${MODPY_PY_PREFIX}pathlib/_static/pygments.css
-share/doc/${MODPY_PY_PREFIX}pathlib/_static/searchtools.js
-share/doc/${MODPY_PY_PREFIX}pathlib/_static/underscore-1.13.1.js
-share/doc/${MODPY_PY_PREFIX}pathlib/_static/underscore.js
-share/doc/${MODPY_PY_PREFIX}pathlib/genindex.html
-share/doc/${MODPY_PY_PREFIX}pathlib/index.html
-share/doc/${MODPY_PY_PREFIX}pathlib/objects.inv
-share/doc/${MODPY_PY_PREFIX}pathlib/py-modindex.html
-share/doc/${MODPY_PY_PREFIX}pathlib/search.html
-share/doc/${MODPY_PY_PREFIX}pathlib/searchindex.js
