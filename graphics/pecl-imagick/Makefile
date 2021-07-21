@@ -1,24 +1,27 @@
-# $OpenBSD: Makefile,v 1.42 2021/04/30 16:52:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2021/07/21 10:48:24 sthen Exp $
 
 COMMENT=	PHP support for the ImageMagick library
 
-DISTNAME=	imagick-3.4.4
-REVISION=	2
+DISTNAME=	imagick-3.5.0
 CATEGORIES=	graphics
 
 # PHP
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE MagickCore-6.Q16 MagickWand-6.Q16
-WANTLIB += SM X11 Xext Xt bz2 c djvulibre expat fftw3 fontconfig
-WANTLIB += freetype iconv jasper jbig jpeg lcms2 lzma m openjp2
-WANTLIB += png raw_r tiff webp webpmux xcb xml2 z
+WANTLIB += ICE MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xext Xt
+WANTLIB += aom bz2 dav1d de265 djvulibre expat fftw3 fontconfig
+WANTLIB += freetype heif iconv jasper jbig jpeg lcms2 lzma m openjp2
+WANTLIB += png pthread raw_r tiff webp webpdemux webpmux x265
+WANTLIB += xcb xml2 z zstd
 
 MODULES=	lang/php/pecl
-FLAVORS=	php73 php74
 CONFIGURE_STYLE= gnu
 
 LIB_DEPENDS=	converters/libiconv \
 		graphics/ImageMagick
+CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include
+
+# php headers pull in pcre2.h
+BUILD_DEPENDS+=	devel/pcre2
 
 .include <bsd.port.mk>
