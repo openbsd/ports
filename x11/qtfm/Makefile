@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2020/03/14 17:54:57 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2021/07/22 21:01:58 bcallah Exp $
 
 COMMENT =	desktop-independent Unix file manager
 CATEGORIES =	x11
 
 GH_ACCOUNT =	rodlie
 GH_PROJECT =	qtfm
-GH_TAGNAME =	6.2.0
-REVISION =	0
+GH_TAGNAME =	6.2.1
 
 HOMEPAGE =	https://qtfm.eu/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
