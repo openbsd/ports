@@ -1,18 +1,16 @@
-#+ $OpenBSD: Makefile,v 1.48 2020/10/03 15:40:00 ajacoutot Exp $
+#+ $OpenBSD: Makefile,v 1.49 2021/07/22 11:51:07 ajacoutot Exp $
 
 PORTROACH=		limitw:2,even
 
 COMMENT-main =		dbus bindings for Python
 COMMENT-common =	common files for py-dbus
 
-V =			1.2.16
+V =			1.2.18
 DISTNAME =		dbus-python-${V}
-REVISION-main =		1
 
 PKGNAME-main =		py-dbus-${V}
 FULLPKGNAME-common =	py-dbus-common-${V}
 FULLPKGPATH-common =	x11/dbus-python,-common
-REVISION-common =	0
 
 CATEGORIES =		x11
 
@@ -23,7 +21,7 @@ MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 # ISC-like
 PERMIT_PACKAGE =	Yes
 
-WANTLIB-main += dbus-1 glib-2.0 iconv intl pthread
+WANTLIB-main += dbus-1 execinfo glib-2.0 iconv intl pthread
 
 WANTLIB-common +=	#empty
 
