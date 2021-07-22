@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2021/07/22 12:48:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2021/07/22 18:16:32 sthen Exp $
 
 COMMENT=	protect against brute force attacks on sshd and others
 
-DISTNAME=	sshguard-2.4.1
+DISTNAME=	sshguard-2.4.2
 CATEGORIES=	security
-
-REVISION=	0
 
 HOMEPAGE=	https://www.sshguard.net/
 
@@ -19,6 +17,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB+=	c pthread
 
 CONFIGURE_STYLE=gnu
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/doc/sshguard.8 \
