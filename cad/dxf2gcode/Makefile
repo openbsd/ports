@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/23 19:39:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/07/22 18:53:17 sthen Exp $
 
 COMMENT =		tool to convert 2D (dxf, pdf, ps) files to gcode
 
 DISTNAME =		dxf2gcode-20191025
+REVISION =		0
 
 CATEGORIES =		cad
 
@@ -22,6 +23,8 @@ MODULES =		lang/python
 BUILD_DEPENDS =		devel/py-configobj${MODPY_FLAVOR} \
 			graphics/py-opengl${MODPY_FLAVOR} \
 			x11/py-qt5${MODPY_FLAVOR}
+# uses py-setuptools, but it isn't a typical setuptools port.
+BUILD_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR}
 RUN_DEPENDS =		${BUILD_DEPENDS} \
 			print/poppler,-utils \
 			x11/py-qt5${MODPY_FLAVOR}
@@ -29,11 +32,6 @@ RUN_DEPENDS =		${BUILD_DEPENDS} \
 NO_TEST =		Yes
 
 do-build:
-# make files are looking for py3 packages, which have a -3 suffix
-# workaround from sthen
-.for i in pyuic pyrcc pylupdate
-	ln -s ${LOCALBASE}/bin/$i5${MODPY_BIN_SUFFIX} ${WRKDIR}/bin/$i5
-.endfor
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} ./make_tr.py
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} ./make_py_uic.py
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} ./st-setup.py build
