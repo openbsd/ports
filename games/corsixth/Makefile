@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2021/07/17 14:45:18 bcallah Exp $
+# $OpenBSD: Makefile,v 1.12 2021/07/22 20:25:14 bcallah Exp $
 
 ONLY_FOR_ARCHS =	${CXX11_ARCHS}
 
-V =		0.65
+V =		0.65.1
 COMMENT =	open source clone of Theme Hospital
 PKGNAME =	corsixth-${V}
 CATEGORIES =	games x11
