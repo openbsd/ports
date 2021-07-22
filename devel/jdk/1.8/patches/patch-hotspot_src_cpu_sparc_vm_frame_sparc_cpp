@@ -1,4 +1,4 @@
-$OpenBSD: patch-hotspot_src_cpu_sparc_vm_frame_sparc_cpp,v 1.1 2021/07/15 10:28:30 kurt Exp $
+$OpenBSD: patch-hotspot_src_cpu_sparc_vm_frame_sparc_cpp,v 1.2 2021/07/22 00:12:10 kurt Exp $
 
 Add sparc64 support
 
@@ -11,7 +11,7 @@ Index: hotspot/src/cpu/sparc/vm/frame_sparc.cpp
  
 +address frame::sender_pc() const {
 +#ifdef STACKGHOST
-+  return (address)((intptr_t)(*I7_addr() + pc_return_offset) ^ sg_cookie());
++  return (address)((intptr_t)*I7_addr() ^ sg_cookie()) + pc_return_offset;
 +#else
 +  return (*I7_addr() + pc_return_offset);
 +#endif

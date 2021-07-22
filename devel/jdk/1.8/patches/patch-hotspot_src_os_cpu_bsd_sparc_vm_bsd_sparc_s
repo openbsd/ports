@@ -1,4 +1,4 @@
-$OpenBSD: patch-hotspot_src_os_cpu_bsd_sparc_vm_bsd_sparc_s,v 1.1 2021/07/15 10:28:30 kurt Exp $
+$OpenBSD: patch-hotspot_src_os_cpu_bsd_sparc_vm_bsd_sparc_s,v 1.2 2021/07/22 00:12:10 kurt Exp $
 
 Add sparc64 support
 
@@ -74,4 +74,4 @@ Index: hotspot/src/os_cpu/bsd_sparc/vm/bsd_sparc.s
 + _flush_reg_windows:
 +        ta 0x03
 +        retl
-+        mov     %fp, %o0
++        add     %fp, 0x7ff, %o0

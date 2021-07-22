@@ -1,11 +1,11 @@
-$OpenBSD: patch-hotspot_src_os_cpu_bsd_sparc_vm_os_bsd_sparc_cpp,v 1.1 2021/07/15 10:28:30 kurt Exp $
+$OpenBSD: patch-hotspot_src_os_cpu_bsd_sparc_vm_os_bsd_sparc_cpp,v 1.2 2021/07/22 00:12:10 kurt Exp $
 
 Add sparc64 support
 
 Index: hotspot/src/os_cpu/bsd_sparc/vm/os_bsd_sparc.cpp
 --- hotspot/src/os_cpu/bsd_sparc/vm/os_bsd_sparc.cpp.orig
 +++ hotspot/src/os_cpu/bsd_sparc/vm/os_bsd_sparc.cpp
-@@ -0,0 +1,754 @@
+@@ -0,0 +1,762 @@
 +/*
 + * Copyright (c) 1999, 2018, Oracle and/or its affiliates. All rights reserved.
 + * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
@@ -293,7 +293,11 @@ Index: hotspot/src/os_cpu/bsd_sparc/vm/os_bsd_sparc.cpp
 +               sp[I4->sp_offset_in_saved_window()],
 +               sp[I5->sp_offset_in_saved_window()],
 +               sp[I6->sp_offset_in_saved_window()],
++#ifdef STACKGHOST
++               sp[I7->sp_offset_in_saved_window()]^sg_cookie());
++#else
 +               sp[I7->sp_offset_in_saved_window()]);
++#endif
 +
 +  st->print_cr(" PC=" INTPTR_FORMAT " nPC=" INTPTR_FORMAT,
 +               SIG_PC(sc),
@@ -365,7 +369,11 @@ Index: hotspot/src/os_cpu/bsd_sparc/vm/os_bsd_sparc.cpp
 +  st->print("I4="); print_location(st, sp[I4->sp_offset_in_saved_window()]);
 +  st->print("I5="); print_location(st, sp[I5->sp_offset_in_saved_window()]);
 +  st->print("I6="); print_location(st, sp[I6->sp_offset_in_saved_window()]);
++#ifdef STACKGHOST
++  st->print("I7="); print_location(st, sp[I7->sp_offset_in_saved_window()]^sg_cookie());
++#else
 +  st->print("I7="); print_location(st, sp[I7->sp_offset_in_saved_window()]);
++#endif
 +  st->cr();
 +}
 +
