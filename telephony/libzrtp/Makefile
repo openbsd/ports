@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:49:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2021/07/22 23:24:37 jca Exp $
 
 COMMENT =		ZRTP library
 
 DISTNAME =		libzrtp-0.20180617
 CATEGORIES =		telephony security
-REVISION =		0
+REVISION =		1
 
 # AGPLv3
 PERMIT_PACKAGE =	Yes

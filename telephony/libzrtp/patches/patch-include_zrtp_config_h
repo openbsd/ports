@@ -1,0 +1,28 @@
+$OpenBSD: patch-include_zrtp_config_h,v 1.5 2021/07/22 23:24:37 jca Exp $
+
+Prefer endianness detection using endian.h instead of a hardcoded list of architectures. 
+
+Index: include/zrtp_config.h
+--- include/zrtp_config.h.orig
++++ include/zrtp_config.h
+@@ -69,7 +69,19 @@
+  */
+ #if !defined(ZRTP_BYTE_ORDER)
+ 
+-#if defined(_i386_) || defined(i_386_) || defined(_X86_) || defined(x86) || defined(__i386__) || \
++#if 1 /* defined(ZRTP_HAVE_ENDIAN_H) or similar */
++
++/* POSIX-style endian.h, see http://www.opengroup.org/austin/docs/austin_514.txt */
++/* Other approach: autoconf AC_C_BIGENDIAN */
++#	include <endian.h>
++
++#	if BYTE_ORDER == BIG_ENDIAN
++#		define ZRTP_BYTE_ORDER ZBO_BIG_ENDIAN
++#	else
++#		define ZRTP_BYTE_ORDER ZBO_LITTLE_ENDIAN
++#	endif
++
++#elif defined(_i386_) || defined(i_386_) || defined(_X86_) || defined(x86) || defined(__i386__) || \
+ 	defined(__i386) || defined(_M_IX86) || defined(__I86__)
+ /*
+  * Generic i386 processor family, little-endian
