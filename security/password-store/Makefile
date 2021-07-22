@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2020/10/05 19:46:18 jca Exp $
+# $OpenBSD: Makefile,v 1.9 2021/07/22 12:08:24 sthen Exp $
 
 COMMENT =	simple password store
 
-DISTNAME =	password-store-1.7.3
-REVISION =	0
+DISTNAME =	password-store-1.7.4
 
 CATEGORIES =	security
 
