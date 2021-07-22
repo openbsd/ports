@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2021/01/10 08:35:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2021/07/22 09:33:24 sthen Exp $
 
 COMMENT =		Python library for reading and writing PDF files
 
-MODPY_EGG_VERSION =	1.19.3
+MODPY_EGG_VERSION =	2.15.1
 DISTNAME =		pikepdf-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		print
 
@@ -36,6 +35,8 @@ LIB_DEPENDS =		print/qpdf
 TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR} \
 			sysutils/py-psutil${MODPY_FLAVOR}
 
-TEST_ENV =		PYTHONPATH=${WRKSRC}/src/pikepdf:
+do-test:
+	cd ${WRKSRC} && \
+		${MAKE_ENV} ${MODPY_BIN} -m pytest -rs -v -o addopts=
 
 .include <bsd.port.mk>

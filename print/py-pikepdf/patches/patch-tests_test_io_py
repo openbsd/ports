@@ -1,0 +1,14 @@
+$OpenBSD: patch-tests_test_io_py,v 1.1 2021/07/22 09:33:24 sthen Exp $
+
+Index: tests/test_io.py
+--- tests/test_io.py.orig
++++ tests/test_io.py
+@@ -96,7 +96,7 @@ def test_invalid_output_stream(sandwich, bio_class, ex
+ 
+ @pytest.fixture
+ def file_descriptor_is_open_for():
+-    if sys.platform == 'win32' or sys.platform.startswith('freebsd'):
++    if sys.platform == 'win32' or sys.platform.startswith('freebsd') or sys.platform.startswith('openbsd'):
+         pytest.skip(
+             "psutil documentation warns that .open_files() has problems on these"
+         )

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/01/04 14:06:37 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/07/22 09:33:24 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/pikepdf/
 lib/python${MODPY_VERSION}/site-packages/pikepdf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pikepdf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -13,13 +13,16 @@ lib/python${MODPY_VERSION}/site-packages/pikepdf/${MODPY_PYCACHE}__init__.${MODP
 lib/python${MODPY_VERSION}/site-packages/pikepdf/${MODPY_PYCACHE}_cpphelpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pikepdf/${MODPY_PYCACHE}_methods.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pikepdf/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pikepdf/${MODPY_PYCACHE}_xml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pikepdf/${MODPY_PYCACHE}codec.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pikepdf/${MODPY_PYCACHE}jbig2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pikepdf/${MODPY_PYCACHE}objects.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pikepdf/_cpphelpers.py
 lib/python${MODPY_VERSION}/site-packages/pikepdf/_methods.py
 @so lib/python${MODPY_VERSION}/site-packages/pikepdf/_qpdf.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/pikepdf/_qpdf.pyi
 lib/python${MODPY_VERSION}/site-packages/pikepdf/_version.py
+lib/python${MODPY_VERSION}/site-packages/pikepdf/_xml.py
 lib/python${MODPY_VERSION}/site-packages/pikepdf/codec.py
 lib/python${MODPY_VERSION}/site-packages/pikepdf/jbig2.py
 lib/python${MODPY_VERSION}/site-packages/pikepdf/models/
@@ -37,3 +40,4 @@ lib/python${MODPY_VERSION}/site-packages/pikepdf/models/matrix.py
 lib/python${MODPY_VERSION}/site-packages/pikepdf/models/metadata.py
 lib/python${MODPY_VERSION}/site-packages/pikepdf/models/outlines.py
 lib/python${MODPY_VERSION}/site-packages/pikepdf/objects.py
+lib/python${MODPY_VERSION}/site-packages/pikepdf/py.typed
