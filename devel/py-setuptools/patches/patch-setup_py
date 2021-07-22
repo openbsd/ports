@@ -1,8 +1,9 @@
-$OpenBSD: patch-setup_py,v 1.8 2019/11/19 20:26:56 kmos Exp $
+$OpenBSD: patch-setup_py,v 1.9 2021/07/22 09:23:32 sthen Exp $
+
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -52,7 +52,7 @@ package_data = dict(
+@@ -15,7 +15,7 @@ package_data = dict(
  )
  
  force_windows_specific_files = (
