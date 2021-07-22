@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.140 2021/06/18 18:12:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.141 2021/07/22 12:28:53 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
 # Second digits: odd numbers devel, even numbers stable,
 # ESV branched occasionally.  9.16.x is ESV.
-V=		9.16.16
+V=		9.16.19
 SUBST_VARS+=	V
 PORTROACH=	limitw:1,even
 EXTRACT_SUFX=	.tar.xz
@@ -24,6 +24,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto execinfo iconv idn2 json-c lzma m pthread ssl
 WANTLIB += unistring uv xml2 z
+
+FLAVORS=	geoip
+FLAVOR?=
 
 MASTER_SITES=	${MASTER_SITE_ISC:=bind9/$V/}
 
@@ -49,27 +52,17 @@ CONFIGURE_ARGS=	--enable-full-report \
 		--without-readline \
 		--without-cmocka \
 		--with-python=${MODPY_BIN}
+FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/bind9
 
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
+
 .if ${MACHINE_ARCH:Mhppa}
 WANTLIB +=	atomic
 LIB_DEPENDS +=	${MODGCC4_CPPLIBDEP}
 MAKE_FLAGS +=	LDFLAGS="${LDFLAGS} -latomic"
 .endif
 
-.include <bsd.port.arch.mk>
-
-# we don't link with libgcc, use the c++abi unwinder instead
-.if ${PROPERTIES:Mclang}
-MAKE_FLAGS +=	UNWINDERLIB=-lc++abi
-WANTLIB +=	c++abi
-.endif
-
-FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/bind9
-
-FLAVORS=	geoip
-FLAVOR?=
 .if ${FLAVOR:Mgeoip}
 LIB_DEPENDS+=	net/libmaxminddb
 WANTLIB+=	maxminddb
@@ -90,10 +83,12 @@ pre-test:
 post-test:
 	cd ${WRKSRC}/bin/tests/system && ${SUDO} ./ifconfig.sh down
 
+# symlinks to make it easier to use newer dig/etc if /usr/bin is ahead of
+# /usr/local/bin in the path:
 post-install:
 .for i in dig nslookup host
 	ln -fs $i ${PREFIX}/bin/e$i; ln -fs $i.1 ${PREFIX}/man/man1/e$i.1
 .endfor
-	${INSTALL_DATA} ${FILESDIR}/[a-z]* ${PREFIX}/share/examples/bind9/
+	${INSTALL_DATA} ${FILESDIR}/named.conf ${PREFIX}/share/examples/bind9/
 
 .include <bsd.port.mk>

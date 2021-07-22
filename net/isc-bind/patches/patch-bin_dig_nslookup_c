@@ -1,4 +1,7 @@
-$OpenBSD: patch-bin_dig_nslookup_c,v 1.17 2020/09/17 08:16:03 sthen Exp $
+$OpenBSD: patch-bin_dig_nslookup_c,v 1.18 2021/07/22 12:28:53 sthen Exp $
+
+Patch to use pledge on OpenBSD.
+locale is needed for idn2.
 
 Index: bin/dig/nslookup.c
 --- bin/dig/nslookup.c.orig
@@ -8,10 +11,10 @@ Index: bin/dig/nslookup.c
  	check_result(result, "isc_app_start");
  
 +	/*
-+	 * unix: needed for startup check, isc_net_probeunix. can probably be
-+	 *       hardcoded instead? (unix sockets used in controlconf).
++	 * unix: needed for startup check, isc_net_probeunix.
++	 * (unix sockets used in controlconf).
 +	 */
-+	if (pledge("stdio rpath inet unix dns", NULL) == -1) {
++	if (pledge("stdio rpath inet unix dns unveil", NULL) == -1) {
 +		perror("pledge");
 +		exit(1);
 +	}
@@ -19,16 +22,21 @@ Index: bin/dig/nslookup.c
  	setup_libs();
  	progname = argv[0];
  
-@@ -1019,6 +1028,16 @@ main(int argc, char **argv) {
+@@ -1019,6 +1028,21 @@ main(int argc, char **argv) {
  	} else if (keysecret[0] != 0) {
  		setup_text_key();
  	}
 +
++	if (unveil("/usr/share/locale", "r") == -1) {
++		perror("unveil /usr/share/locale");
++		exit(1);
++	}
 +	/*
 +	 * dns:   resolv.conf, also allows port 53 sockets
 +	 * inet:  needed if we query on port != 53
++	 * rpath: locale
 +	 */
-+	if (pledge("stdio inet dns", NULL) == -1) {
++	if (pledge("stdio rpath inet dns", NULL) == -1) {
 +		perror("pledge");
 +		exit(1);
 +	}

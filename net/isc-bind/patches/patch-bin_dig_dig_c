@@ -1,4 +1,7 @@
-$OpenBSD: patch-bin_dig_dig_c,v 1.23 2021/04/29 09:28:31 sthen Exp $
+$OpenBSD: patch-bin_dig_dig_c,v 1.24 2021/07/22 12:28:53 sthen Exp $
+
+Patch to use pledge on OpenBSD.
+locale is needed for idn2.
 
 Index: bin/dig/dig.c
 --- bin/dig/dig.c.orig
@@ -16,10 +19,10 @@ Index: bin/dig/dig.c
  	ISC_LIST_INIT(search_list);
  
 +	/*
-+	 * unix: needed for startup check, isc_net_probeunix. can probably be
-+	 *       hardcoded instead? (unix sockets used in controlconf).
++	 * unix: needed for startup check, isc_net_probeunix.
++	 * (unix sockets used in controlconf).
 +	 */
-+	if (pledge("stdio rpath inet unix dns", NULL) == -1) {
++	if (pledge("stdio rpath inet unix dns unveil", NULL) == -1) {
 +		perror("pledge");
 +		exit(1);
 +	}
@@ -27,16 +30,21 @@ Index: bin/dig/dig.c
  	debug("dig_setup()");
  
  	/* setup dighost callbacks */
-@@ -2670,6 +2680,16 @@ dig_query_setup(bool is_batchfile, bool config_only, i
+@@ -2670,6 +2680,21 @@ dig_query_setup(bool is_batchfile, bool config_only, i
  	} else if (keysecret[0] != 0) {
  		setup_text_key();
  	}
 +
++	if (unveil("/usr/share/locale", "r") == -1) {
++		perror("unveil /usr/share/locale");
++		exit(1);
++	}
 +	/*
 +	 * dns:   resolv.conf, also allows port 53 sockets
 +	 * inet:  needed if we query on port != 53
++	 * rpath: locale
 +	 */
-+	if (pledge("stdio inet dns", NULL) == -1) {
++	if (pledge("stdio rpath inet dns", NULL) == -1) {
 +		perror("pledge");
 +		exit(1);
 +	}
