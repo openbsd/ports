@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2020/08/18 05:06:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.17 2021/07/22 12:48:59 sthen Exp $
 
 COMMENT=	protect against brute force attacks on sshd and others
 
 DISTNAME=	sshguard-2.4.1
 CATEGORIES=	security
+
+REVISION=	0
 
 HOMEPAGE=	https://www.sshguard.net/
 
