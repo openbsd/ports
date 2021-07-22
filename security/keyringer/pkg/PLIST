@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/24 10:01:24 jca Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/07/22 00:48:21 jca Exp $
 bin/keyringer
 lib/keyringer/
 lib/keyringer/actions/
@@ -26,6 +26,7 @@ lib/keyringer/actions/mkdir
 lib/keyringer/actions/mv
 lib/keyringer/actions/open
 lib/keyringer/actions/options
+lib/keyringer/actions/pass
 lib/keyringer/actions/preferences
 lib/keyringer/actions/pwgen
 lib/keyringer/actions/recipients
@@ -38,14 +39,15 @@ lib/keyringer/actions/teardown
 lib/keyringer/actions/tree
 lib/keyringer/actions/usage
 lib/keyringer/actions/xclip
-lib/keyringer/editors/
-lib/keyringer/editors/vim
 lib/keyringer/functions
 @man man/man1/keyringer.1
 share/bash-completion/completions/keyringer
 share/doc/keyringer/
 share/doc/keyringer/LICENSE
 share/doc/keyringer/README.md
+share/keyringer/
+share/keyringer/editors/
+share/keyringer/editors/vim
 share/zsh/
-share/zsh/vendor-completions/
-share/zsh/vendor-completions/_keyringer
+share/zsh/site-functions/
+share/zsh/site-functions/_keyringer

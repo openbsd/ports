@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2021/03/16 23:27:51 jca Exp $
+# $OpenBSD: Makefile,v 1.10 2021/07/22 00:48:21 jca Exp $
 
 COMMENT =	manage and share secrets using GnuPG and Git
 
-DISTNAME =	keyringer-0.5.5
+DISTNAME =	keyringer-0.5.6
 
 CATEGORIES =	security
 
