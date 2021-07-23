@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2021/06/19 18:12:19 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2021/07/23 11:47:11 sthen Exp $
 
 COMMENT =	C++ library to parse/format/validate phone numbers
 
 GH_ACCOUNT =	google
 GH_PROJECT =	libphonenumber
-GH_TAGNAME =	v8.12.25
+GH_TAGNAME =	v8.12.28
 
 SHARED_LIBS +=  geocoding                 0.0 # 8.12
 SHARED_LIBS +=  phonenumber               0.0 # 8.12
