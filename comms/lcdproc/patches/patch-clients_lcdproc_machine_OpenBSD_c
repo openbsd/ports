@@ -1,0 +1,42 @@
+$OpenBSD: patch-clients_lcdproc_machine_OpenBSD_c,v 1.5 2021/07/23 08:04:21 jca Exp $
+
+Allow building on machines without apm(4) support.
+
+Index: clients/lcdproc/machine_OpenBSD.c
+--- clients/lcdproc/machine_OpenBSD.c.orig
++++ clients/lcdproc/machine_OpenBSD.c
+@@ -50,7 +50,9 @@
+ #include <sys/mount.h>
+ #include <sys/time.h>
+ #include <sys/user.h>
++#ifdef WITH_APM
+ #include <machine/apmvar.h>
++#endif
+ #include <kvm.h>
+ #include <errno.h>
+ 
+@@ -97,13 +99,16 @@ machine_close(void)
+ int
+ machine_get_battstat(int *acstat, int *battflag, int *percent)
+ {
++#ifdef WITH_APM
+ 	int apmd;
+ 	struct apm_power_info api;
++#endif
+ 
+ 	*acstat = LCDP_AC_ON;
+ 	*battflag = LCDP_BATT_ABSENT;
+ 	*percent = 100;
+ 
++#ifdef WITH_APM
+ 	if ((apmd = open("/dev/apm", O_RDONLY)) == -1) {
+ 		perror("get_battstat_open");
+ 		return (TRUE);
+@@ -150,6 +155,7 @@ machine_get_battstat(int *acstat, int *battflag, int *
+ 	*percent = api.battery_life;
+ 
+ 	close(apmd);
++#endif
+ 
+ 	return (TRUE);
+ }
