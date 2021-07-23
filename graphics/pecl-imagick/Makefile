@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.43 2021/07/21 10:48:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2021/07/23 11:19:20 sthen Exp $
 
 COMMENT=	PHP support for the ImageMagick library
 
-DISTNAME=	imagick-3.5.0
+DISTNAME=	imagick-3.5.1
 CATEGORIES=	graphics
 
 # PHP
