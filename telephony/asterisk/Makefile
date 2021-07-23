@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.346 2021/06/24 17:12:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.347 2021/07/23 00:55:44 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
-VER=		18.5.0
+VER=		18.5.1
 PJ_V=		2.10
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
@@ -139,7 +139,6 @@ CONFIGURE_ARGS+=	--with-SDL_image=no \
 			--with-codec2=no \
 			--with-cpg=no \
 			--with-dahdi=no \
-			--with-execinfo=no \
 			--with-fftw3=no \
 			--with-gtk2=no \
 			--with-hoard=no \
@@ -163,6 +162,9 @@ CONFIGURE_ARGS+=	--with-SDL_image=no \
 			--with-suppserv=no \
 			--with-tonezone=no \
 			--with-vpb=no
+
+# possible symbol conflict with libestdc++
+CONFIGURE_ARGS+=	--with-execinfo=no
 
 # Some build options (including a useful malloc debug) are available
 # via menuselect. They may be enabled by running 'make menuselect'

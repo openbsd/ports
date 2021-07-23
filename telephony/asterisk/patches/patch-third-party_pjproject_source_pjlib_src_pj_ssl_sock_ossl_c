@@ -1,4 +1,7 @@
-$OpenBSD: patch-third-party_pjproject_source_pjlib_src_pj_ssl_sock_ossl_c,v 1.8 2021/05/07 19:35:11 sthen Exp $
+$OpenBSD: patch-third-party_pjproject_source_pjlib_src_pj_ssl_sock_ossl_c,v 1.9 2021/07/23 00:55:45 sthen Exp $
+
+beware with update-patches! file is also patched in asterisk's
+apply-patches set, don't pick up changes from their patch in here.
 
 Index: third-party/pjproject/source/pjlib/src/pj/ssl_sock_ossl.c
 --- third-party/pjproject/source/pjlib/src/pj/ssl_sock_ossl.c.orig
