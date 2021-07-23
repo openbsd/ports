@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.211 2021/07/16 17:54:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.212 2021/07/23 11:17:17 sthen Exp $
 
-ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc powerpc64 sparc64
+ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc powerpc64 riscv64 sparc64
 DPB_PROPERTIES=	parallel
 
 COMMENT-main=	multi system emulator
