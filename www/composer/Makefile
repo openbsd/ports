@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2021/07/15 16:53:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2021/07/23 11:19:35 sthen Exp $
 
 COMMENT=	dependency manager for PHP
 
@@ -6,7 +6,7 @@ CATEGORIES=	www devel
 
 PORTROACH=	site:https://github.com/composer/composer/archive/
 
-V=		2.1.3
+V=		2.1.4
 EPOCH=		0
 MASTER_SITES=	https://getcomposer.org/download/$V/
 DISTNAME=	composer-$V
