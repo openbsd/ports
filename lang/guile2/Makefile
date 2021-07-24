@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2020/08/03 07:27:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2021/07/24 09:31:03 cwen Exp $
 
-# When updating, check that x11/gnome/aisleriot MODGNOME_CPPFLAGS references the
-# proper guile2 includes directory
+# When updating, check that x11/gnome/aisleriot MODGNOME_CPPFLAGS references
+# the proper guile2 includes directory. Also, 32-bit BE arches bootstraps may
+# need to be rebuilt.
 
 COMMENT=		GNU's Ubiquitous Intelligent Language for Extension
 # '
@@ -25,6 +26,12 @@ WANTLIB += c curses ffi gc gmp iconv intl ltdl m pthread readline
 WANTLIB += unistring
 
 MASTER_SITES=		${MASTER_SITE_GNU:=guile/}
+MASTER_SITES0=		https://charlenew.xyz/distfiles/
+
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
+SUPDISTFILES=		${BOOTSTRAP_32BE}:0
+
+EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 
 # internal compiler error: in unify_nodes, at tree-ssa-structalias.c:1231
 COMPILER =		base-clang ports-gcc
@@ -49,9 +56,22 @@ CONFIGURE_ARGS=		--program-suffix=${V}
 # warning: format '%ji' expects type 'intmax_t', but argument 4 has type 'scm_t_intmax'
 CONFIGURE_ARGS +=	--disable-error-on-warning
 
-# powerpc: Prevent "Segmentation fault (core dumped)" during build.
-post-patch:
-	mv ${WRKSRC}/prebuilt/32-bit-big-endian{,-broken}
+.include <bsd.port.arch.mk>
+
+# The prebuilt bootstrap makes the build segfault on 32-bit BE arches.
+# Provide ours instead.
+BOOTSTRAP_32BE=		g2strap-2.2.7-32be.tgz
+.if !${PROPERTIES:Mlp64} && ${PROPERTIES:Mbe}
+BOOTSTRAP_TARGET=	32-bit-big-endian
+BOOTSTRAP=		${BOOTSTRAP_32BE}
+DISTFILES+=		${SUPDISTFILES}
+.endif
+
+post-extract:
+.if "${BOOTSTRAP_TARGET}" != ""
+	mv ${WRKSRC}/prebuilt/${BOOTSTRAP_TARGET}{,-broken}
+	cd ${WRKSRC} && tar xzf ${FULLDISTDIR}/${BOOTSTRAP}
+.endif
 
 post-install:
 	install -d ${PREFIX}/share/guile/site/${V}/
@@ -59,3 +79,20 @@ post-install:
 	mv ${PREFIX}/share/aclocal/guile{,${V}}.m4
 
 .include <bsd.port.mk>
+
+# The below bits only matter on 32-bit BE archs for now.
+
+G2PKG=	${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME}.tgz
+
+.PHONY: g2strap
+
+g2strap: ${G2PKG}
+.if "${BOOTSTRAP_TARGET}" != ""
+	mkdir -p ${WRKBUILD}/g2strap/prebuilt/${BOOTSTRAP_TARGET}
+	cp -a ${WRKBUILD}/bootstrap/{Makefile.*,ice-9,language,srfi,system} \
+	      ${WRKBUILD}/g2strap/prebuilt/${BOOTSTRAP_TARGET}
+	tar -C ${WRKBUILD}/g2strap -czf ${FULLDISTDIR}/${BOOTSTRAP} .
+	@echo "The bootstrap can be found at: " ${FULLDISTDIR}/${BOOTSTRAP}
+.else
+	@echo "You don't need to build a bootstrap on ${MACHINE_ARCH}."
+.endif
