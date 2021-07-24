@@ -1,0 +1,8 @@
+HKDF - HMAC Key Derivation Function
+
+This module implements the HMAC Key Derivation function, defined at
+http://tools.ietf.org/html/draft-krawczyk-hkdf-01
+
+There are two interfaces: a functional interface, with separate extract and
+expand functions as defined in the draft RFC, and a wrapper class for these
+functions.
