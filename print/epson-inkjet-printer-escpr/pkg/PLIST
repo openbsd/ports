@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/06/30 10:25:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/07/24 08:53:46 ajacoutot Exp $
 @static-lib lib/libescpr.a
 lib/libescpr.la
 @lib lib/libescpr.so.${LIBescpr_VERSION}
@@ -90,6 +90,7 @@ share/ppd/epson-inkjet-printer-escpr/Epson-EP-M553T_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-EP-M570T_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-ET-1110_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-ET-16500_Series-epson-escpr-en.ppd
+share/ppd/epson-inkjet-printer-escpr/Epson-ET-1810_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-ET-2500_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-ET-2550_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-ET-2600_Series-epson-escpr-en.ppd
@@ -100,6 +101,7 @@ share/ppd/epson-inkjet-printer-escpr/Epson-ET-2710_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-ET-2720_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-ET-2750_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-ET-2760_Series-epson-escpr-en.ppd
+share/ppd/epson-inkjet-printer-escpr/Epson-ET-2800_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-ET-2810_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-ET-2820_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-ET-2850_Series-epson-escpr-en.ppd
@@ -129,6 +131,8 @@ share/ppd/epson-inkjet-printer-escpr/Epson-L3100_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L3110_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L3150_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L3160_Series-epson-escpr-en.ppd
+share/ppd/epson-inkjet-printer-escpr/Epson-L3250_Series-epson-escpr-en.ppd
+share/ppd/epson-inkjet-printer-escpr/Epson-L3260_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L364_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L375_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L385_Series-epson-escpr-en.ppd
@@ -138,12 +142,14 @@ share/ppd/epson-inkjet-printer-escpr/Epson-L396_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L405_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L4150_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L4160_Series-epson-escpr-en.ppd
+share/ppd/epson-inkjet-printer-escpr/Epson-L4260_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L455_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L475_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L485_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L486_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L495_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L5190_Series-epson-escpr-en.ppd
+share/ppd/epson-inkjet-printer-escpr/Epson-L5290_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L565_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L575_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L605_Series-epson-escpr-en.ppd
