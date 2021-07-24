@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/05/03 11:47:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/07/24 20:02:04 sthen Exp $
 @pkgpath security/py-M2Crypto
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/
 lib/python${MODPY_VERSION}/site-packages/M2Crypto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/M2Crypto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/M2Crypto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/M2Crypto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/M2Crypto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/M2Crypto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/M2Crypto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/ASN1.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/AuthCookie.py

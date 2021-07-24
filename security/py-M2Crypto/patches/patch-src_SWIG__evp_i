@@ -1,10 +1,10 @@
-$OpenBSD: patch-SWIG__evp_i,v 1.1 2017/10/09 05:57:38 ajacoutot Exp $
+$OpenBSD: patch-src_SWIG__evp_i,v 1.1 2021/07/24 20:02:04 sthen Exp $
 
 Fix build with LibreSSL
 
-Index: SWIG/_evp.i
---- SWIG/_evp.i.orig
-+++ SWIG/_evp.i
+Index: src/SWIG/_evp.i
+--- src/SWIG/_evp.i.orig
++++ src/SWIG/_evp.i
 @@ -19,7 +19,7 @@ Copyright (c) 2009-2010 Heikki Toivonen. All rights re
  #include <openssl/rsa.h>
  #include <openssl/opensslv.h>

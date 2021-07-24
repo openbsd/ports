@@ -1,10 +1,10 @@
-$OpenBSD: patch-SWIG_libcrypto-compat_h,v 1.1 2017/10/09 05:57:38 ajacoutot Exp $
+$OpenBSD: patch-src_SWIG_libcrypto-compat_h,v 1.1 2021/07/24 20:02:04 sthen Exp $
 
 Fix build with LibreSSL
 
-Index: SWIG/libcrypto-compat.h
---- SWIG/libcrypto-compat.h.orig
-+++ SWIG/libcrypto-compat.h
+Index: src/SWIG/libcrypto-compat.h
+--- src/SWIG/libcrypto-compat.h.orig
++++ src/SWIG/libcrypto-compat.h
 @@ -1,7 +1,7 @@
  #ifndef LIBCRYPTO_COMPAT_H
  #define LIBCRYPTO_COMPAT_H

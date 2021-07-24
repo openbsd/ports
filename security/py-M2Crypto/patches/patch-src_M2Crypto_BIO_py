@@ -1,4 +1,4 @@
-$OpenBSD: patch-M2Crypto_BIO_py,v 1.2 2018/04/25 16:49:20 jasper Exp $
+$OpenBSD: patch-src_M2Crypto_BIO_py,v 1.1 2021/07/24 20:02:04 sthen Exp $
 
 Partially revert https://gitlab.com/m2crypto/m2crypto/commit/738cd0bf3dc2ee619f598290d5bf4c2190987f16:
 
@@ -19,9 +19,9 @@ IOError: [Errno 9] Bad file descriptor
 
 https://gitlab.com/m2crypto/m2crypto/issues/211
 
-Index: M2Crypto/BIO.py
---- M2Crypto/BIO.py.orig
-+++ M2Crypto/BIO.py
+Index: src/M2Crypto/BIO.py
+--- src/M2Crypto/BIO.py.orig
++++ src/M2Crypto/BIO.py
 @@ -235,8 +235,9 @@ class File(BIO):
          #
          #  https://docs.python.org/3.3/c-api/file.html

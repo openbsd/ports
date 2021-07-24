@@ -1,10 +1,10 @@
-$OpenBSD: patch-SWIG__lib11_compat_i,v 1.1 2017/10/09 05:57:38 ajacoutot Exp $
+$OpenBSD: patch-src_SWIG__lib11_compat_i,v 1.1 2021/07/24 20:02:04 sthen Exp $
 
 Fix build with LibreSSL
 
-Index: SWIG/_lib11_compat.i
---- SWIG/_lib11_compat.i.orig
-+++ SWIG/_lib11_compat.i
+Index: src/SWIG/_lib11_compat.i
+--- src/SWIG/_lib11_compat.i.orig
++++ src/SWIG/_lib11_compat.i
 @@ -8,7 +8,7 @@
   */
  
