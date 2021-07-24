@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.39 2021/03/16 12:27:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2021/07/24 18:33:32 sthen Exp $
 
 COMMENT=	Python syntax highlighter
 
-MODPY_EGG_VERSION = 2.8.1
+MODPY_EGG_VERSION = 2.9.0
 
 DISTNAME=	Pygments-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:L:S/^/py-/}
@@ -16,10 +16,13 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 
 MODPY_PI=	Yes
-MODPY_SETUPTOOLS=	Yes
+MODPY_SETUPTOOLS= Yes
 MODPY_PYTEST=	Yes
 
 FLAVORS=	python3
 FLAVOR=		python3
+
+# XXX requires py-test >= 6.0
+NO_TEST=	Yes
 
 .include <bsd.port.mk>
