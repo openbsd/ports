@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.21 2019/12/27 22:08:55 jca Exp $
+# $OpenBSD: Makefile,v 1.22 2021/07/24 16:45:24 jca Exp $
 
 COMMENT =		user-level RCU implementation
 
-DISTNAME =		userspace-rcu-0.10.2
-PKGNAME =		liburcu-0.10.2
-REVISION =		0
+DISTNAME =		userspace-rcu-0.13.0
+PKGNAME =		liburcu-0.13.0
 
-SHARED_LIBS +=  urcu-bp                   1.0 # 6.0
-SHARED_LIBS +=  urcu-cds                  1.0 # 6.0
-SHARED_LIBS +=  urcu-common               1.0 # 6.0
-SHARED_LIBS +=  urcu-mb                   1.0 # 6.0
-SHARED_LIBS +=  urcu-qsbr                 1.0 # 6.0
-SHARED_LIBS +=  urcu-signal               1.0 # 6.0
-SHARED_LIBS +=  urcu                      1.0 # 6.0
+SHARED_LIBS +=  urcu-bp                   2.0 # 8.0
+SHARED_LIBS +=  urcu-cds                  2.0 # 8.0
+SHARED_LIBS +=  urcu-common               2.0 # 8.0
+SHARED_LIBS +=  urcu-mb                   2.0 # 8.0
+SHARED_LIBS +=  urcu-memb                 0.0 # 8.0
+SHARED_LIBS +=  urcu-qsbr                 1.0 # 8.0
+SHARED_LIBS +=  urcu-signal               2.0 # 8.0
+SHARED_LIBS +=  urcu                      2.0 # 8.0
 
 CATEGORIES =		devel
 
@@ -30,15 +30,12 @@ EXTRACT_SUFX =		.tar.bz2
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-# For atomic builtins
-MODULES+=		gcc4
-MODGCC4_ARCHS=		alpha hppa
+# atomics, TLS (__thread)
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	gnu
-# Thread-local storage emulation from clang or lang/gcc doesn't work in
-# regress tests.
-CONFIGURE_ENV =		ac_cv_tls=none
 
 .include <bsd.port.mk>
