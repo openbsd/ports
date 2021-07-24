@@ -1,9 +1,9 @@
-$OpenBSD: patch-makefile,v 1.27 2021/07/08 16:29:43 ajacoutot Exp $
+$OpenBSD: patch-makefile,v 1.28 2021/07/24 08:51:03 ajacoutot Exp $
 
 Index: makefile
 --- makefile.orig
 +++ makefile
-@@ -16,14 +16,14 @@ export GO_SPACE
+@@ -17,14 +17,14 @@ export GO_SPACE
  
  checkstyle::
  #   Run checkstyle script
@@ -20,7 +20,7 @@ Index: makefile
  
  prepack:: cpy-plugins copy-win-dep prepack-linux prepack-linux-arm64 prepack-linux-386 prepack-windows prepack-windows-386
  
-@@ -41,6 +41,8 @@ finalize:: build-tests copy-package-dep
+@@ -42,6 +42,8 @@ finalize:: build-tests copy-package-dep
  dev-build-linux: clean quick-integtest checkstyle pre-release build-linux
  .PHONY: dev-build-freebsd
  dev-build-freebsd: clean quick-integtest checkstyle pre-release build-freebsd
@@ -29,7 +29,7 @@ Index: makefile
  .PHONY: dev-build-windows
  dev-build-windows: clean quick-integtest checkstyle pre-release build-windows
  .PHONY: dev-build-linux-386
-@@ -147,6 +149,12 @@ build-freebsd: GOARCH=amd64
+@@ -148,6 +150,12 @@ build-freebsd: GOARCH=amd64
  build-freebsd: GOOS=freebsd
  build-freebsd: GO_BUILD=$(GO_BUILD_NOPIE)
  build-freebsd: build-any-amd64-freebsd
@@ -42,7 +42,7 @@ Index: makefile
  
  .PHONY: build-darwin
  build-darwin: GOARCH=amd64
-@@ -438,4 +446,4 @@ lint-all: copy-package-dep
+@@ -440,4 +448,4 @@ lint-all: copy-package-dep
  
  .PHONY: gen-report
  gen-report:
