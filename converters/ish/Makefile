@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/14 02:16:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2021/07/24 19:26:54 cwen Exp $
 
 COMMENT=	binary-to-text file converter
 
 DISTNAME=	ish201a5
 PKGNAME=	ish-2.01a5
+REVISION=	0
 CATEGORIES=	converters
 
 PERMIT_PACKAGE=		no license
