@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1261 2021/07/10 17:08:16 landry Exp $
+# $OpenBSD: Makefile,v 1.1262 2021/07/24 21:33:15 kn Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -247,6 +247,7 @@
      SUBDIR += luasocket,lua53
      SUBDIR += mac-telnet
      SUBDIR += maclookup
+     SUBDIR += magic-wormhole
      SUBDIR += manubulon-snmp
      SUBDIR += maradns
      SUBDIR += maradns-deadwood
@@ -629,6 +630,7 @@
      SUBDIR += py-tlslite-ng,python3
      SUBDIR += py-transmissionrpc-ng,python3
      SUBDIR += py-twitter,python3
+     SUBDIR += py-txtorcon,python3
      SUBDIR += py-websocket-client
      SUBDIR += py-websocket-client,python3
      SUBDIR += py-xmpppy

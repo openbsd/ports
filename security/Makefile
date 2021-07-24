@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.628 2021/07/02 19:31:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.629 2021/07/24 21:33:15 kn Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -296,6 +296,7 @@
      SUBDIR += py-fickling,python3
      SUBDIR += py-fido2,python3
      SUBDIR += py-gnupg,python3
+     SUBDIR += py-hkdf,python3
      SUBDIR += py-josepy,python3
      SUBDIR += py-keyring,python3
      SUBDIR += py-libnacl,python3
@@ -326,6 +327,7 @@
      SUBDIR += py-scrypt,python3
      SUBDIR += py-secretstorage,python3
      SUBDIR += py-service_identity,python3
+     SUBDIR += py-spake2,python3
      SUBDIR += py-tlsfuzzer,python3
      SUBDIR += py-trustme,python3
      SUBDIR += py-vivisect
