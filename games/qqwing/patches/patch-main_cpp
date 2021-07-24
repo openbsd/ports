@@ -1,0 +1,17 @@
+$OpenBSD: patch-main_cpp,v 1.1 2021/07/24 19:35:41 cwen Exp $
+
+Fix infinite loop while using `qqwing --solve` on unsigned char archs (powerpc
+and arm)
+
+Index: main.cpp
+--- main.cpp.orig
++++ main.cpp
+@@ -488,7 +488,7 @@ void printHelp(){
+ bool readPuzzleFromStdIn(int* puzzle){
+ 	int read = 0;
+ 	while (read < BOARD_SIZE){
+-		char c = getchar();
++		int c = getchar();
+ 		if (c == EOF) return false;
+ 		if (c >= '1' && c <='9'){
+ 			puzzle[read] = c-'0';

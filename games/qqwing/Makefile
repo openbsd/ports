@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:46:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/07/24 19:35:41 cwen Exp $
 
 COMMENT =	Sudoku generator and solver
 DISTNAME =	qqwing-1.3.4
 SHARED_LIBS +=  qqwing                    0.0 # 3.0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	games
 
