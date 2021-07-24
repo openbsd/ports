@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/05/23 16:26:14 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2021/07/24 18:16:26 kmos Exp $
 
 BROKEN-i386 =	java.lang.OutOfMemoryError: Java heap space in kotlinc
 
@@ -6,7 +6,7 @@ COMMENT =	lightweight game library for java
 
 V =		3.2.4alpha1
 DISTNAME =	lwjgl3-${V}
-REVISION =	0
+REVISION =	1
 
 KOTLIN_V =	1.3.61
 
@@ -45,7 +45,7 @@ MASTER_SITES =	\
 	https://github.com/kmosiejczuk/lwjgl3/releases/download/${V}/
 MASTER_SITES1 =	\
 	https://github.com/JetBrains/kotlin/releases/download/v${KOTLIN_V}/
-MASTER_SITES2 =	https://filedump.se.rit.edu/pub/distfiles/
+MASTER_SITES2 =	https://kurt.mosiejcz.uk/pub/distfiles/
 
 # BSD
 PERMIT_PACKAGE =	Yes
