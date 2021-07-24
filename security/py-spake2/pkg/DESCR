@@ -1,0 +1,3 @@
+This library implements the SPAKE2 password-authenticated key exchange ("PAKE")
+algorithm. This allows two parties, who share a weak password, to safely derive
+a strong shared secret (and therefore build an encrypted+authenticated channel).
