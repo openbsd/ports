@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_tls_c,v 1.1 2021/05/11 00:17:53 danj Exp $
+$OpenBSD: patch-src_tls_c,v 1.2 2021/07/24 19:03:14 danj Exp $
 
 Index: src/tls.c
 --- src/tls.c.orig
 +++ src/tls.c
-@@ -174,7 +174,7 @@ void tlsCleanup(void) {
+@@ -176,7 +176,7 @@ void tlsCleanup(void) {
          redis_tls_client_ctx = NULL;
      }
  
