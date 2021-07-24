@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/28 14:50:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/07/24 09:32:44 sthen Exp $
 
 COMMENT=	small epoll implementation using kqueue
 
 GH_ACCOUNT=	jiixyj
 GH_PROJECT=	epoll-shim
-GH_TAGNAME=	v0.0.20210213
+GH_TAGNAME=	v0.0.20210418
 
-SHARED_LIBS=	epoll-shim 0.0
+SHARED_LIBS=	epoll-shim 0.1
 
 CATEGORIES=	devel
 
