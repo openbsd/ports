@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2021/07/24 08:46:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/07/24 08:53:31 sthen Exp $
 
 COMMENT=	multi-format tools and Python module for ReplayGain
 
@@ -25,6 +25,7 @@ RUN_DEPENDS=	audio/py-mutagen${MODPY_FLAVOR} \
 		multimedia/gstreamer1/plugins-base \
 		multimedia/gstreamer1/plugins-good
 
-TEST_DEPENDS=	${BASE_PKGPATH}
+TEST_DEPENDS=	${BASE_PKGPATH} \
+		devel/py-test-cov${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
