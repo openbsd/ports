@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/23 19:39:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/07/24 08:46:43 sthen Exp $
 
 COMMENT=	multi-format tools and Python module for ReplayGain
 
-MODPY_EGG_VERSION= 1.1.0
+MODPY_EGG_VERSION= 1.1.1
 DISTNAME=	rgain3-${MODPY_EGG_VERSION}
 EPOCH=		0
 
