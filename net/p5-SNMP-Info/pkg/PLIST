@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2020/11/28 12:46:24 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/07/24 18:14:28 sthen Exp $
 ${P5SITE}/SNMP/
 ${P5SITE}/SNMP/Info/
 ${P5SITE}/SNMP/Info.pm
@@ -24,6 +24,7 @@ ${P5SITE}/SNMP/Info/EDP.pm
 ${P5SITE}/SNMP/Info/Entity.pm
 ${P5SITE}/SNMP/Info/EtherLike.pm
 ${P5SITE}/SNMP/Info/FDP.pm
+${P5SITE}/SNMP/Info/IEEE802_Bridge.pm
 ${P5SITE}/SNMP/Info/IEEE802dot11.pm
 ${P5SITE}/SNMP/Info/IEEE802dot3ad.pm
 ${P5SITE}/SNMP/Info/IPv6.pm
@@ -74,6 +75,7 @@ ${P5SITE}/SNMP/Info/Layer3/AlteonAD.pm
 ${P5SITE}/SNMP/Info/Layer3/Altiga.pm
 ${P5SITE}/SNMP/Info/Layer3/Arista.pm
 ${P5SITE}/SNMP/Info/Layer3/Aruba.pm
+${P5SITE}/SNMP/Info/Layer3/ArubaCX.pm
 ${P5SITE}/SNMP/Info/Layer3/BayRS.pm
 ${P5SITE}/SNMP/Info/Layer3/BlueCoatSG.pm
 ${P5SITE}/SNMP/Info/Layer3/C3550.pm
@@ -164,6 +166,7 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::Entity.3p
 @man man/man3p/SNMP::Info::EtherLike.3p
 @man man/man3p/SNMP::Info::FDP.3p
+@man man/man3p/SNMP::Info::IEEE802_Bridge.3p
 @man man/man3p/SNMP::Info::IEEE802dot11.3p
 @man man/man3p/SNMP::Info::IEEE802dot3ad.3p
 @man man/man3p/SNMP::Info::IPv6.3p
@@ -211,6 +214,7 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::Layer3::Altiga.3p
 @man man/man3p/SNMP::Info::Layer3::Arista.3p
 @man man/man3p/SNMP::Info::Layer3::Aruba.3p
+@man man/man3p/SNMP::Info::Layer3::ArubaCX.3p
 @man man/man3p/SNMP::Info::Layer3::BayRS.3p
 @man man/man3p/SNMP::Info::Layer3::BlueCoatSG.3p
 @man man/man3p/SNMP::Info::Layer3::C3550.3p
