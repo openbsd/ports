@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2021/01/12 05:21:18 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2021/07/25 14:15:19 rsadowski Exp $
 
 COMMENT =	static source code analyzer for Qt-based C++
 
-V =		1.9
+V =		1.10
 DISTNAME =	clazy-${V}
 
 CATEGORIES =	lang devel

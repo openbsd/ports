@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/01/12 05:21:18 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/07/25 14:15:19 rsadowski Exp $
 bin/clazy
 @bin bin/clazy-standalone
 @so lib/libClazyPlugin.so
@@ -54,7 +54,8 @@ share/doc/clazy/level1/README-qhash-namespace.md
 share/doc/clazy/level1/README-qlatin1string-non-ascii.md
 share/doc/clazy/level1/README-qproperty-without-notify.md
 share/doc/clazy/level1/README-qstring-left.md
-share/doc/clazy/level1/README-range-loop.md
+share/doc/clazy/level1/README-range-loop-detach.md
+share/doc/clazy/level1/README-range-loop-reference.md
 share/doc/clazy/level1/README-returning-data-from-temporary.md
 share/doc/clazy/level1/README-rule-of-two-soft.md
 share/doc/clazy/level1/README-skipped-base-method.md
