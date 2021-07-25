@@ -1,0 +1,16 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2021/07/25 13:29:37 espie Exp $
+
+Remove hardcoded compilation flags
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -25,7 +25,7 @@ else()
+     set(LIBSUFFIX "")
+ endif()
+ 
+-add_definitions( -Wall -O3 -g -Wno-pointer-sign -fPIC -std=gnu99)
++add_definitions( -Wall -Wno-pointer-sign -fPIC -std=gnu99)
+ # add_definitions(  -Wall -O0 -g -Wno-pointer-sign )
+ 
+ ### ORC is not used in any active code at the moment  ###

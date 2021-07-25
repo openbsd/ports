@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/07/25 13:29:37 espie Exp $
+include/vid.stab/
+include/vid.stab/boxblur.h
+include/vid.stab/frameinfo.h
+include/vid.stab/libvidstab.h
+include/vid.stab/localmotion2transform.h
+include/vid.stab/motiondetect.h
+include/vid.stab/motiondetect_internal.h
+include/vid.stab/motiondetect_opt.h
+include/vid.stab/serialize.h
+include/vid.stab/transform.h
+include/vid.stab/transform_internal.h
+include/vid.stab/transformfixedpoint.h
+include/vid.stab/transformfloat.h
+include/vid.stab/transformtype.h
+include/vid.stab/transformtype_operations.h
+include/vid.stab/vidstabdefines.h
+include/vid.stab/vsvector.h
+@lib lib/libvidstab.so.${LIBvidstab_VERSION}
+lib/pkgconfig/vidstab.pc
+share/doc/libvidstab/
+share/doc/libvidstab/README.md

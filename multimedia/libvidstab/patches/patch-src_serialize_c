@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_serialize_c,v 1.1.1.1 2021/07/25 13:29:37 espie Exp $
+
+Fix infinite loops on archs where char is unsigned by default (arm* and powerpc),
+because EOF cannot be reached with an unsigned char there.
+
+Index: src/serialize.c
+--- src/serialize.c.orig
++++ src/serialize.c
+@@ -41,7 +41,7 @@ int storeLocalmotion(FILE* f, const LocalMotion* lm){
+ /// restore local motion from file
+ LocalMotion restoreLocalmotion(FILE* f){
+   LocalMotion lm;
+-  char c;
++  int c;
+   if(fscanf(f,"(LM %i %i %i %i %i %lf %lf", &lm.v.x,&lm.v.y,&lm.f.x,&lm.f.y,&lm.f.size,
+             &lm.contrast, &lm.match) != 7) {
+     vs_log_error(modname, "Cannot parse localmotion!\n");
+@@ -71,7 +71,7 @@ int vsStoreLocalmotions(FILE* f, const LocalMotions* l
+ LocalMotions vsRestoreLocalmotions(FILE* f){
+   LocalMotions lms;
+   int i;
+-  char c;
++  int c;
+   int len;
+   vs_vector_init(&lms,0);
+   if(fscanf(f,"List %i [", &len) != 1) {
+@@ -128,7 +128,7 @@ int vsReadFileVersion(FILE* f){
+ }
+ 
+ int vsReadFromFile(FILE* f, LocalMotions* lms){
+-  char c = fgetc(f);
++  int c = fgetc(f);
+   if(c=='F') {
+     int num;
+     if(fscanf(f,"rame %i (", &num)!=1) {

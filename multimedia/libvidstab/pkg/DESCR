@@ -1,0 +1,3 @@
+video stabilization library, with lots of options.
+
+See ${DOCDIR}/README.md for usage details with ffmpeg.
