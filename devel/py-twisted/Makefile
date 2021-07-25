@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2021/02/16 23:02:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2021/07/25 11:27:26 dtucker Exp $
 
 COMMENT =		asynchronous networking Python framework
 
@@ -7,7 +7,7 @@ MODPY_EGG_VERSION =	20.3.0
 EXTRACT_SUFX =		.tar.bz2
 DISTNAME =		Twisted-${MODPY_EGG_VERSION}
 PKGNAME =		py-twisted-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		devel
 
@@ -32,6 +32,7 @@ RUN_DEPENDS =		devel/py-asn1${MODPY_FLAVOR}		\
 			devel/py-incremental${MODPY_FLAVOR}	\
 			devel/py-zopeinterface${MODPY_FLAVOR}	\
 			net/py-idna${MODPY_FLAVOR}		\
+			security/py-bcrypt${MODPY_FLAVOR}	\
 			security/py-cryptography${MODPY_FLAVOR}	\
 			security/py-openssl${MODPY_FLAVOR}	\
 			security/py-service_identity${MODPY_FLAVOR} \
