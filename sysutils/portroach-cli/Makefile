@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2021/03/12 19:02:45 kn Exp $
+# $OpenBSD: Makefile,v 1.10 2021/07/25 21:46:41 kn Exp $
 
 COMMENT =		query portroach(1)
 CATEGORIES =		sysutils
 DISTFILES =		# empty
 # <portroach API>.rev
-PKGNAME =		portroach-cli-1.5
+PKGNAME =		portroach-cli-1.6
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
-REVISION =		0
 
 # ISC
 PERMIT_PACKAGE =	Yes
@@ -14,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 NO_BUILD =		Yes
 
 RUN_DEPENDS =		textproc/jq
-TEST_DEPENDS =		devel/shellcheck
+TEST_DEPENDS =		devel/shellcheck>=0.7.1
 
 SCRIPT =		${FILESDIR}/portroach-cli
 MAN =			${SCRIPT}.1
@@ -25,7 +24,7 @@ do-install:
 
 do-test:
 	ksh -n ${SCRIPT}
-	shellcheck ${SCRIPT}
+	shellcheck -Cnever -e SC2250 --norc -o all -S style ${SCRIPT}
 	mandoc -Tlint ${MAN}
 
 .include <bsd.port.mk>
