@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.210 2021/07/09 10:43:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.211 2021/07/25 13:30:44 espie Exp $
 
 COMMENT=	audio/video converter and streamer
 
 V=		4.4
 DISTNAME=	ffmpeg-${V}
-REVISION=	0
+REVISION=	1
 EPOCH=		1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	https://ffmpeg.org/releases/
@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tar.xz
 
 SHARED_LIBS=	avcodec		25.0 \
 		avdevice	13.0 \
-		avfilter	10.0 \
+		avfilter	11.0 \
 		avformat	22.0 \
 		avresample	2.0 \
 		avutil		15.0 \
@@ -31,7 +31,7 @@ WANTLIB+=	SDL2 X11 Xext Xv aom ass bz2 c crypto dav1d fontconfig
 WANTLIB+=	freetype fribidi gsm iconv lzma m mp3lame opus
 WANTLIB+=	pthread sndio speex ssl theoradec theoraenc v4l2
 WANTLIB+=	vorbis vorbisenc vpx x264 x265 xcb xcb-shape xcb-shm
-WANTLIB+=	xcb-xfixes xml2 xvidcore z
+WANTLIB+=	xcb-xfixes xml2 xvidcore vidstab z
 
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
@@ -56,6 +56,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 		multimedia/libass \
 		multimedia/libtheora \
 		multimedia/libv4l \
+		multimedia/libvidstab \
 		multimedia/libvpx \
 		multimedia/x264 \
 		multimedia/x265 \
@@ -65,7 +66,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 # inter-library dependencies for the current configuration
 LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -laom -ldav1d -lgsm -liconv -llzma -lmp3lame -lopus -lspeex -ltheoradec -ltheoraenc -lvorbis -lvorbisenc -lvpx -lx264 -lx265 -lxvidcore -lm -lz -pthread
 LIBavdevice_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -lX11 -lXext -lXv -lxcb-shape -lxcb-shm -lxcb-xfixes -lxcb -lsndio -lv4l2 -lm
-LIBavfilter_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -lass -lfontconfig -lfreetype -lfribidi -lm -lz -pthread
+LIBavfilter_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -lass -lfontconfig -lfreetype -lfribidi -lvidstab -lm -lz -pthread
 LIBavformat_EXTRALIBS=-L${LOCALBASE}/lib -lbz2 -lxml2 -lssl -lcrypto -lm -lz
 LIBavresample_EXTRALIBS=-lm
 LIBavutil_EXTRALIBS=-lm -pthread
@@ -118,6 +119,7 @@ CONFIGURE_ARGS+=--enable-shared \
 		--enable-libxvid \
 		--enable-nonfree \
 		--enable-openssl \
+		--enable-libvidstab \
 		--extra-cflags="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		--extra-libs="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		--extra-ldsoflags="${LDLIBFLAGS}" \
