@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2021/07/16 20:03:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/07/25 11:11:44 sthen Exp $
 
 COMMENT =	pass compatible password manager written in go
 
 MODGO_MODNAME =	github.com/gopasspw/gopass
 MODGO_VERSION =	v1.12.7
+REVISION =	0
 
 DISTNAME =	gopass-${MODGO_VERSION}
 
@@ -14,6 +15,8 @@ PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB += c pthread
+
+HOMEPAGE =	https://www.gopass.pw/
 
 MODULES =	lang/go
 MODGO_LDFLAGS =	-X "main.version=${MODGO_VERSION}"
