@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1292 2021/07/21 18:31:44 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1293 2021/07/25 11:57:05 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1220,6 +1220,7 @@ setup_obsolete_reason(
 	3 => 'canto',
 	6 => 'py-mini-amf',
 	6 => 'py3-mini-amf',
+	44 => 'qucs-s',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1273,6 +1274,7 @@ my $obsolete_message = {
 	40 => "ancient software that often crashes and relies on single HTTP (no TLS) connections, use wireshark",
 	41 => "upstream moved to unversioned tarballs, use the plan9port (same upstream) package instead",
 	43 => "using portgen instead is recommended",
+	44 => "qucs-s Qt4 UI not working correctly, suggest xschem or kicad's eeschema instead",
 };
 
 # ->is_base_system($handle, $state):
@@ -1319,7 +1321,7 @@ sub filter_obsolete
 			for my $o (@$obsolete_regexp) {
 				if ($pkgname =~ m/$o->[0]/) {
 					$reason = $o->[1];
-				    	last;
+					last;
 				}
 			}
 		}
@@ -1553,7 +1555,7 @@ sub sanity_check
 	while (my ($k, $v) = each %$obsolete_message) {
 		if (!$pointed->{$k}) {
 			print STDERR "Message key $k ($v) is unused\n";
-		    	$rc = 1;
+			$rc = 1;
 		}
 	}
 	exit $rc if $rc;
