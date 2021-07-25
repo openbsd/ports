@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.611 2021/07/06 08:00:13 landry Exp $
+# $OpenBSD: Makefile,v 1.612 2021/07/25 19:01:54 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -17,6 +17,7 @@
      SUBDIR += awscli
      SUBDIR += backuppc
      SUBDIR += bacula
+     SUBDIR += bat
      SUBDIR += bchunk
      SUBDIR += bdfresize
      SUBDIR += beats
