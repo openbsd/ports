@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_Gui_Spinner_h,v 1.1 2021/07/25 09:27:36 cwen Exp $
+
+From e4478df9389894b6498ffe252310cdecd1e58904 Mon Sep 17 00:00:00 2001
+From: Vicente Bergas
+Date: Sat, 3 Feb 2018 19:02:38 +0100
+Subject: [PATCH] Fix signed vs. unsigned math on ARM
+
+On ARM systems, `char` is not signed, but unsigned, and therefore code
+like qMin(-11, ...) doesn't really do a correct thing.
+
+(impacts other unsigned char archs as well)
+
+Index: src/Gui/Spinner.h
+--- src/Gui/Spinner.h.orig
++++ src/Gui/Spinner.h
+@@ -82,8 +82,8 @@ private slots:
+     void updateAncestors();
+     void updateGeometry();
+ private:
+-    uchar m_step;
+-    char m_fadeStep;
++    int m_step;
++    int m_fadeStep;
+     int m_timer;
+     QTimer *m_startTimer;
+     QList<QWidget*> m_ancestors;
