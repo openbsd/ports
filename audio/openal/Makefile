@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.54 2020/06/09 13:22:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2021/07/25 17:33:48 sthen Exp $
 
 COMMENT =	cross-platform 3D audio API
 
-V =		1.20.1
+V =		1.21.1
 EPOCH =		0
 DISTNAME =	openal-soft-$V
 PKGNAME =	openal-$V
 CATEGORIES =	audio
 
-SHARED_LIBS =	openal	4.0
+SHARED_LIBS =	openal	4.1
 
-HOMEPAGE =	https://kcat.strangesoft.net/openal.html
+HOMEPAGE =	https://openal-soft.org/
 
 MAINTAINER =	David Carlier <devnexen@gmail.com>
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE =Yes
 
 WANTLIB +=	c m mysofa pthread sndio z ${COMPILER_LIBCXX}
 
-MASTER_SITES =	${HOMEPAGE:S,.html,-releases/,}
+MASTER_SITES =	${HOMEPAGE}openal-releases/
 EXTRACT_SUFX =	.tar.bz2
 
 LIB_DEPENDS +=	audio/libmysofa
