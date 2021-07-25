@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 2021/07/24 18:16:26 kmos Exp $
-
-BROKEN-i386 =	java.lang.OutOfMemoryError: Java heap space in kotlinc
+# $OpenBSD: Makefile,v 1.7 2021/07/25 00:04:09 kmos Exp $
 
 COMMENT =	lightweight game library for java
 
-V =		3.2.4alpha1
+V =		3.2.4alpha2
 DISTNAME =	lwjgl3-${V}
-REVISION =	1
 
 KOTLIN_V =	1.3.61
 
 .if ${MACHINE_ARCH} == "i386"
 M_ARCH =	""
 PKG_ARGS +=	-Dx86=1
+MAKE_ENV +=	ANT_OPTS="-Xmx900M -Xms900M"
 .elif ${MACHINE_ARCH} == "amd64"
 M_ARCH =	64
 PKG_ARGS +=	-Dx86=1
@@ -34,11 +32,11 @@ MAINTAINER =	Kurt Mosiejczuk <kmos@openbsd.org>
 
 COMPILER =	base-clang ports-gcc
 
-EXTRACT_ONLY =	${DISTNAME}.tar.gz
+EXTRACT_ONLY =	${DISTNAME}.tgz
 
 # Build downloads kotlin compiler and libraries from maven if not available
 
-DISTFILES +=	${DISTNAME}.tar.gz \
+DISTFILES +=	${DISTNAME}.tgz \
 		kotlin-compiler-${KOTLIN_V}.zip:1 \
 		lwjgl3-maven-20210208.tar.gz:2
 MASTER_SITES =	\
