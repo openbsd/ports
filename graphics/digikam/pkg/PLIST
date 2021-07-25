@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2021/03/23 10:37:35 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.28 2021/07/25 13:39:30 rsadowski Exp $
 @conflict digikam-kde4-*
 @conflict kipi-plugins-<=4
 bin/cleanup_digikamdb
@@ -216,6 +216,7 @@ lib/qt5/plugins/digikam/editor/
 lib/qt5/plugins/digikam/generic/
 @so lib/qt5/plugins/digikam/generic/Generic_Box_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_Calendar_Plugin.so
+@so lib/qt5/plugins/digikam/generic/Generic_DNGConverter_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_DigitalScanner_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_DropBox_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_ExpoBlending_Plugin.so
@@ -247,6 +248,7 @@ lib/qt5/plugins/digikam/generic/
 @so lib/qt5/plugins/digikam/generic/Generic_VKontakte_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_Wallpaper_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_YandexFotki_Plugin.so
+@so lib/qt5/plugins/digikam/generic/Generic_iNaturalist_Plugin.so
 lib/qt5/plugins/digikam/rawimport/
 @so lib/qt5/plugins/digikam/rawimport/RawImport_DarkTable_Plugin.so
 @so lib/qt5/plugins/digikam/rawimport/RawImport_Native_Plugin.so
@@ -701,6 +703,7 @@ share/icons/hicolor/16x16/apps/dk-googledrive.png
 share/icons/hicolor/16x16/apps/dk-googlephoto.png
 share/icons/hicolor/16x16/apps/dk-imageshack.png
 share/icons/hicolor/16x16/apps/dk-imgur.png
+share/icons/hicolor/16x16/apps/dk-inat.png
 share/icons/hicolor/16x16/apps/dk-mediawiki.png
 share/icons/hicolor/16x16/apps/dk-onedrive.png
 share/icons/hicolor/16x16/apps/dk-pinterest.png
@@ -718,6 +721,7 @@ share/icons/hicolor/22x22/apps/dk-googledrive.png
 share/icons/hicolor/22x22/apps/dk-googlephoto.png
 share/icons/hicolor/22x22/apps/dk-imageshack.png
 share/icons/hicolor/22x22/apps/dk-imgur.png
+share/icons/hicolor/22x22/apps/dk-inat.png
 share/icons/hicolor/22x22/apps/dk-mediawiki.png
 share/icons/hicolor/22x22/apps/dk-onedrive.png
 share/icons/hicolor/22x22/apps/dk-pinterest.png
@@ -755,6 +759,7 @@ share/icons/hicolor/32x32/apps/dk-googledrive.png
 share/icons/hicolor/32x32/apps/dk-googlephoto.png
 share/icons/hicolor/32x32/apps/dk-imageshack.png
 share/icons/hicolor/32x32/apps/dk-imgur.png
+share/icons/hicolor/32x32/apps/dk-inat.png
 share/icons/hicolor/32x32/apps/dk-mediawiki.png
 share/icons/hicolor/32x32/apps/dk-onedrive.png
 share/icons/hicolor/32x32/apps/dk-pinterest.png
@@ -772,6 +777,7 @@ share/icons/hicolor/48x48/apps/dk-googledrive.png
 share/icons/hicolor/48x48/apps/dk-googlephoto.png
 share/icons/hicolor/48x48/apps/dk-imageshack.png
 share/icons/hicolor/48x48/apps/dk-imgur.png
+share/icons/hicolor/48x48/apps/dk-inat.png
 share/icons/hicolor/48x48/apps/dk-mediawiki.png
 share/icons/hicolor/48x48/apps/dk-onedrive.png
 share/icons/hicolor/48x48/apps/dk-pinterest.png

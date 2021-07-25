@@ -1,0 +1,20 @@
+$OpenBSD: patch-core_tests_metadataengine_exiftool_exiftoolparserout_cli_cpp,v 1.1 2021/07/25 13:39:30 rsadowski Exp $
+
+Index: core/tests/metadataengine/exiftool/exiftoolparserout_cli.cpp
+--- core/tests/metadataengine/exiftool/exiftoolparserout_cli.cpp.orig
++++ core/tests/metadataengine/exiftool/exiftoolparserout_cli.cpp
+@@ -56,12 +56,12 @@ int main(int argc, char** argv)
+         return false;
+     }
+ 
+-    QByteArray stdout = input.readAll();
++    QByteArray _stdout = input.readAll();
+ 
+     ExifToolParser* const parser = new ExifToolParser(qApp);
+ 
+     parser->setOutputStream(ExifToolProcess::LOAD_METADATA,     // Command action ID
+-                            stdout,                             // Output channel
++                            _stdout,                             // Output channel
+                             QByteArray());                      // Error channel
+ 
+     return 0;
