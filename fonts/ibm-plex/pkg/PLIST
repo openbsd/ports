@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/08/09 00:36:05 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/07/25 21:49:56 uaa Exp $
 share/doc/ibm-plex/
 share/doc/ibm-plex/license.txt
 share/fonts/
@@ -147,6 +147,22 @@ share/fonts/ibm-plex/IBMPlexSansHebrew-Text.otf
 share/fonts/ibm-plex/IBMPlexSansHebrew-Text.ttf
 share/fonts/ibm-plex/IBMPlexSansHebrew-Thin.otf
 share/fonts/ibm-plex/IBMPlexSansHebrew-Thin.ttf
+share/fonts/ibm-plex/IBMPlexSansJP-Bold.otf
+share/fonts/ibm-plex/IBMPlexSansJP-Bold.ttf
+share/fonts/ibm-plex/IBMPlexSansJP-ExtraLight.otf
+share/fonts/ibm-plex/IBMPlexSansJP-ExtraLight.ttf
+share/fonts/ibm-plex/IBMPlexSansJP-Light.otf
+share/fonts/ibm-plex/IBMPlexSansJP-Light.ttf
+share/fonts/ibm-plex/IBMPlexSansJP-Medium.otf
+share/fonts/ibm-plex/IBMPlexSansJP-Medium.ttf
+share/fonts/ibm-plex/IBMPlexSansJP-Regular.otf
+share/fonts/ibm-plex/IBMPlexSansJP-Regular.ttf
+share/fonts/ibm-plex/IBMPlexSansJP-SemiBold.otf
+share/fonts/ibm-plex/IBMPlexSansJP-SemiBold.ttf
+share/fonts/ibm-plex/IBMPlexSansJP-Text.otf
+share/fonts/ibm-plex/IBMPlexSansJP-Text.ttf
+share/fonts/ibm-plex/IBMPlexSansJP-Thin.otf
+share/fonts/ibm-plex/IBMPlexSansJP-Thin.ttf
 share/fonts/ibm-plex/IBMPlexSansKR-Bold.otf
 share/fonts/ibm-plex/IBMPlexSansKR-ExtraLight.otf
 share/fonts/ibm-plex/IBMPlexSansKR-Light.otf

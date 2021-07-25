@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2021/03/11 10:20:12 fcambus Exp $
+# $OpenBSD: Makefile,v 1.13 2021/07/25 21:49:56 uaa Exp $
 
 COMMENT =		IBM's corporate type family
 
 CATEGORIES =		fonts
-V =			5.1.3
+V =			5.2.1
 PKGNAME =		ibm-plex-$V
 
 # SIL OFL 1.1
@@ -30,6 +30,10 @@ do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR}
 	${INSTALL_DATA} ${WRKDIST}/OpenType/*/*.otf ${FONTDIR}
 	${INSTALL_DATA} ${WRKDIST}/TrueType/*/*.ttf ${FONTDIR}
+	# currently JP fonts only have hinted/unhinted directory,
+	# this package use hinted font following Noto fonts.
+	${INSTALL_DATA} ${WRKDIST}/OpenType/IBM-Plex-Sans-JP/hinted/*.otf ${FONTDIR}
+	${INSTALL_DATA} ${WRKDIST}/TrueType/IBM-Plex-Sans-JP/hinted/*.ttf ${FONTDIR}
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
