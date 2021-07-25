@@ -1,9 +1,47 @@
-$OpenBSD: patch-configure,v 1.66 2021/04/29 03:57:55 rsadowski Exp $
+$OpenBSD: patch-configure,v 1.67 2021/07/25 15:12:23 matthieu Exp $
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -5377,7 +5377,6 @@ case $target_os in
+@@ -1992,6 +1992,7 @@ ARCH_LIST="
+     parisc
+     ppc
+     ppc64
++    riscv
+     s390
+     sh4
+     sparc
+@@ -2601,7 +2602,7 @@ for ext in $(filter_out mmx $ARCH_EXT_LIST_X86_SIMD); 
+ done
+ 
+ aligned_stack_if_any="aarch64 ppc x86"
+-fast_64bit_if_any="aarch64 alpha ia64 mips64 parisc64 ppc64 sparc64 x86_64"
++fast_64bit_if_any="aarch64 alpha ia64 mips64 parisc64 ppc64 riscv64 sparc64 x86_64"
+ fast_clz_if_any="aarch64 alpha avr32 mips ppc x86"
+ fast_unaligned_if_any="aarch64 ppc x86"
+ simd_align_16_if_any="altivec neon sse"
+@@ -4914,6 +4915,9 @@ case "$arch" in
+     "Power Macintosh"|ppc*|powerpc*)
+         arch="ppc"
+     ;;
++    riscv*)
++        arch="riscv"
++    ;;
+     s390|s390x)
+         arch="s390"
+     ;;
+@@ -5305,6 +5309,10 @@ case "$arch" in
+         check_64bit ppc ppc64
+         enabled shared && enable_weak pic
+     ;;
++    riscv)
++        check_64bit riscv32 riscv64
++        enabled shared && enable_weak pic
++    ;;
+     s390)
+         check_64bit s390 s390x
+         enabled shared && enable_weak pic
+@@ -5377,7 +5385,6 @@ case $target_os in
          enable section_data_rel_ro
          striptype=""
          SHFLAGS='-shared'
@@ -11,7 +49,7 @@ Index: configure
          SLIB_INSTALL_LINKS=
          oss_indev_extralibs="-lossaudio"
          oss_outdev_extralibs="-lossaudio"
-@@ -5733,7 +5732,7 @@ set_default libdir
+@@ -5733,7 +5740,7 @@ set_default libdir
  set_default $PATHS_LIST
  set_default nm
  
