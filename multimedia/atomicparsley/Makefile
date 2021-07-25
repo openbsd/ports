@@ -1,34 +1,28 @@
-# $OpenBSD: Makefile,v 1.14 2020/02/03 20:40:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/07/25 22:53:09 cwen Exp $
 
 COMMENT=	read and set MPEG-4/3GPP metadata tags
 
-V=		0.9.6
-DISTNAME=	atomicparsley-$V
-REVISION=	4
-DISTFILES=	${DISTNAME}{$V}.tar.bz2
-WRKDIST=	${WRKDIR}/wez-atomicparsley-da2f6e4fc120
+GH_ACCOUNT=	wez
+GH_PROJECT=	atomicparsley
+GH_TAGNAME=	20210715.151551.e7ad03a
+
+DISTNAME=	atomicparsley-20210715
 
 CATEGORIES=	multimedia
-
-HOMEPAGE=	https://bitbucket.org/wez/atomicparsley/
 
 # GPLv2 "or its successor"
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c m ${COMPILER_LIBCXX} z
+WANTLIB += ${COMPILER_LIBCXX} c m z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES=	https://bitbucket.org/wez/atomicparsley/get/
+MODULES =	devel/cmake
 
-CONFIGURE_STYLE=  autoreconf
-CONFIGURE_ENV=    ac_cv_func_lroundf=yes \
-		  OBJCXX="${CXX}"
-AUTOCONF_VERSION= 2.69
-AUTOMAKE_VERSION= 1.15
-AUTORECONF=	  ./autogen.sh
+# Don't use git to retrieve the build version
+CONFIGURE_ARGS +=	-DGIT= \
+			-DPACKAGE_VERSION="${PKGNAME} (${GH_TAGNAME})"
 
-NO_TEST=	Yes
-SEPARATE_BUILD= Yes
+NO_TEST =	Yes
 
 .include <bsd.port.mk>

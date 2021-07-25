@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_parsley_cpp,v 1.1 2021/07/25 22:53:09 cwen Exp $
+
+Fix potential bug on unsigned char archs
+See https://github.com/wez/atomicparsley/pull/41
+
+Index: src/parsley.cpp
+--- src/parsley.cpp.orig
++++ src/parsley.cpp
+@@ -3561,7 +3561,7 @@ AtomicInfo *APar_reverseDNS_atom_Init(const char *rDNS
+ }
+ 
+ AtomicInfo *APar_ID32_atom_Init(const char *frameID_str,
+-                                char meta_area,
++                                signed char meta_area,
+                                 const char *lang_str,
+                                 uint16_t id32_lang) {
+   uint8_t total_tracks = 0;
