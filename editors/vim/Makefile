@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.213 2021/05/16 17:11:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.214 2021/07/26 20:31:16 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
 # if updating, regen plists with a gui flavour so -lang isn't messed up
-V=		8.2.2580
+V=		8.2.3225
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
 GH_TAGNAME=	v$V
-REVISION-main=	0
 
 T=		${V:C/\.0+/./}
 PKGNAME-main=	vim-$T
@@ -25,10 +24,11 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 # donation-ware
 PERMIT_PACKAGE=	Yes
 
-WANTLIB +=	c curses iconv intl m
+WANTLIB +=	c curses iconv intl m sodium
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
-		devel/gettext,-runtime
+		devel/gettext,-runtime \
+		security/libsodium
 
 MULTI_PACKAGES=	-main -lang
 

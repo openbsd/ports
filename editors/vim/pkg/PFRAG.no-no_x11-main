@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_x11-main,v 1.12 2021/03/09 17:58:33 sthen Exp $
+@comment $OpenBSD: PFRAG.no-no_x11-main,v 1.13 2021/07/26 20:31:16 sthen Exp $
 bin/eview
 bin/evim
 bin/gview
@@ -8,6 +8,12 @@ bin/gvimtutor
 bin/rgview
 bin/rgvim
 @man man/man1/evim.1
+@man man/man1/eview.1
+@man man/man1/gview.1
+@man man/man1/gvim.1
+@man man/man1/gvimdiff.1
+@man man/man1/rgview.1
+@man man/man1/rgvim.1
 share/applications/gvim.desktop
 share/applications/vim.desktop
 share/icons/hicolor/48x48/apps/gvim.png
