@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2021/07/26 10:18:26 jca Exp $
+# $OpenBSD: Makefile,v 1.34 2021/07/26 20:57:56 sthen Exp $
 
 COMMENT =	portable, easy to use, and efficient C++ crypto library
 
@@ -29,7 +29,6 @@ SUPDISTFILES =		${DISTFILES}.asc
 EXTRACT_SUFX =		.tgz
 
 MODULES =		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP =		No
 LIB_DEPENDS =		archivers/bzip2 \
 			devel/gmp
