@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_audiofilters_sndio_c,v 1.2 2021/07/10 17:02:41 landry Exp $
+$OpenBSD: patch-src_audiofilters_sndio_c,v 1.3 2021/07/26 07:08:32 ratchov Exp $
 
 https://github.com/BelledonneCommunications/mediastreamer2/pull/30
 
 Index: src/audiofilters/sndio.c
 --- src/audiofilters/sndio.c.orig
 +++ src/audiofilters/sndio.c
-@@ -0,0 +1,462 @@
+@@ -0,0 +1,475 @@
 +/*
 + * Copyright (c) 2021 Landry Breuil
 + *
@@ -162,6 +162,10 @@ Index: src/audiofilters/sndio.c
 +	par.rchan = d->rchan;
 +	par.pchan = d->pchan;
 +	par.rate = d->rate;
++
++	/* Request 10ms of buffer */
++	par.appbufsz = d->rate / 100;
++
 +	ms_message("sndio: calling setpar with rchan=%d, pchan=%d, rate=%d", d->rchan, d->pchan, d->rate);
 +
 +	if (!sio_setpar(d->hdl, &par)) {
@@ -237,19 +241,28 @@ Index: src/audiofilters/sndio.c
 +			prime--;
 +		}
 +
++		data = wbuf;
++		todo = wblksz;
 +		if (d->write_started) {
-+			n = ms_bufferizer_read(d->bufferizer, wbuf, wblksz);
-+			if (n > 0) {
-+				ms_message("sndio_thread: got %zu blocks from bufferizer", n);
-+			} else
-+				ms_message("sndio_thread: bufferizer empty ?");
++			while (todo > 0) {
++				n = ms_bufferizer_read(d->bufferizer, data, todo);
++				if (n != todo)
++					ms_message("sndio_thread: partial buf %zd/%zd, prime = %d", n, todo, prime);
++				if (n > 0) {
++					ms_message("sndio_thread: got %zu blocks from bufferizer", n);
++				} else {
++					ms_warning("sndio_thread: bufferizer empty ?");
++					break;
++				}
++				data += n;
++				todo -= n;
++			}
 +		} else {
-+			n = 0;
 +			ms_message("sndio_thread: write not started, zeroing wbuf");
 +		}
 +
 +		/* fill with silence remaining buffer */
-+		memset(wbuf + n, 0, wblksz - n);
++		memset(data, 0, todo);
 +
 +		n = sio_write(d->hdl, wbuf, wblksz);
 +		ms_message("sndio_thread: wrote %zu blocks to sndio", n);
