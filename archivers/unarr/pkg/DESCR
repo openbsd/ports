@@ -1,0 +1,7 @@
+(lib)unarr is a decompression library for rar, tar, zip and 7z*
+archives.
+
+It was forked from unarr to provide a proper cmake based build system
+suitable for packaging and cross-platform development, but its focus has
+now been extended to provide code maintenance and to continue the
+development of unarr, which is no longer mantained.

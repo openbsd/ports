@@ -1,0 +1,35 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2021/07/26 04:07:03 rsadowski Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -105,27 +105,12 @@ endif()
+ if(UNIX OR MINGW OR MSYS)
+   target_compile_options(unarr PRIVATE -Wall -Wextra -pedantic
+                     -Wstrict-prototypes -Wmissing-prototypes
+-                    -Werror-implicit-function-declaration
+-                    $<$<CONFIG:Release>:-fomit-frame-pointer>
+-                    $<$<OR:$<C_COMPILER_ID:Clang>,$<C_COMPILER_ID:AppleClang>>:
+-                    -Wno-missing-field-initializers>
+-                    -flto)
++                    -Werror-implicit-function-declaration)
+   target_compile_definitions(unarr PRIVATE -D_FILE_OFFSET_BITS=64)
+ 
+   # Linker flags
+ 
+-  # Clang linker needs -flto too when doing lto
+-  if("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
+-    set_target_properties(unarr PROPERTIES LINK_FLAGS
+-                          "-Wl,--no-undefined -Wl,--as-needed -flto")
+-  # Apple ld uses different syntax for undefined symbol check
+-  elseif("${CMAKE_C_COMPILER_ID}" STREQUAL "AppleClang")
+-    set_target_properties(unarr PROPERTIES LINK_FLAGS
+-                          "-Wl,-undefined,error -flto")
+-  else()
+-    set_target_properties(unarr PROPERTIES LINK_FLAGS
+-                          "-Wl,--no-undefined -Wl,--as-needed")
+-  endif()
++
+ endif()
+ 
+ if(MSVC)
