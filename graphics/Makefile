@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.558 2021/07/21 10:48:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.559 2021/07/26 04:31:35 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -323,6 +323,7 @@
      SUBDIR += xsane,gimp
      SUBDIR += xv
      SUBDIR += xzgv
+     SUBDIR += yacreader
      SUBDIR += zbar
      SUBDIR += zint
      SUBDIR += zxing
