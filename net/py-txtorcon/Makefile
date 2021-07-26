@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/07/24 21:21:19 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2021/07/26 20:29:45 kn Exp $
 
 COMMENT =		control-spec implementation for Tor
 
 MODPY_EGG_VERSION =	20.0.0
 DISTNAME =		txtorcon-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 HOMEPAGE =		https://txtorcon.readthedocs.org
 
