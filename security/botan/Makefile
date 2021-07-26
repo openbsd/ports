@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2021/02/23 19:39:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2021/07/26 10:18:26 jca Exp $
 
 COMMENT =	portable, easy to use, and efficient C++ crypto library
 
@@ -64,6 +64,7 @@ PKG_ARGS +=		-Damd64=0
 
 pre-configure:
 	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
+	cp ${FILESDIR}/riscv64.txt ${WRKSRC}/src/build-data/arch
 
 do-test:
 	cd ${WRKBUILD} && \
