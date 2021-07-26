@@ -1,0 +1,2 @@
+The knfmt(1) utility formats source code files to conform to the Kernel Normal
+Form (KNF) in a best effort fashion.
