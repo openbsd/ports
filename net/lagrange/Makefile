@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.22 2021/06/15 16:36:28 solene Exp $
+# $OpenBSD: Makefile,v 1.23 2021/07/26 21:24:48 solene Exp $
 
 COMMENT =	SDL multi protocol navigator
-VERSION =	1.5.2
+VERSION =	1.6.0
 
 DISTNAME =	lagrange-${VERSION}
 
@@ -14,7 +14,7 @@ HOMEPAGE =	https://gmi.skyjake.fi/lagrange/
 # BSD 2-Clause
 PERMIT_PACKAGE =Yes
 
-WANTLIB +=	SDL2 mpg123 pcre unistring
+WANTLIB +=	SDL2 mpg123 pcre unistring fribidi harfbuzz
 WANTLIB +=	c crypto m ssl z pthread
 
 DEBUG_PACKAGES =${BUILD_PACKAGES}
@@ -31,6 +31,8 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 LIB_DEPENDS =	audio/mpg123 \
 		converters/libunistring \
+		devel/fribidi \
+		devel/harfbuzz \
 		devel/pcre \
 		devel/sdl2
 
