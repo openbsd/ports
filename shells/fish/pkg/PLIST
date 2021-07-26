@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/07/06 16:55:34 daniel Exp $
-@shell bin/fish
+@comment $OpenBSD: PLIST,v 1.11 2021/07/26 10:28:58 solene Exp $
+@bin bin/fish
 @bin bin/fish_indent
 @bin bin/fish_key_reader
 @man man/man1/fish.1
@@ -100,6 +100,7 @@ share/doc/fish/cmds/or.html
 share/doc/fish/cmds/popd.html
 share/doc/fish/cmds/prevd.html
 share/doc/fish/cmds/printf.html
+share/doc/fish/cmds/prompt_login.html
 share/doc/fish/cmds/prompt_pwd.html
 share/doc/fish/cmds/psub.html
 share/doc/fish/cmds/pushd.html
@@ -148,6 +149,8 @@ share/doc/fish/faq.html
 share/doc/fish/fish_for_bash_users.html
 share/doc/fish/genindex.html
 share/doc/fish/index.html
+share/doc/fish/interactive.html
+share/doc/fish/language.html
 share/doc/fish/license.html
 share/doc/fish/objects.inv
 share/doc/fish/relnotes.html
@@ -156,7 +159,6 @@ share/doc/fish/searchindex.js
 share/doc/fish/tutorial.html
 share/examples/fish/
 share/examples/fish/config.fish
-@sample ${SYSCONFDIR}/config.fish
 share/fish/
 share/fish/__fish_build_paths.fish
 share/fish/completions/
@@ -396,8 +398,10 @@ share/fish/completions/fgrep.fish
 share/fish/completions/figlet.fish
 share/fish/completions/file.fish
 share/fish/completions/find.fish
+share/fish/completions/firewall-cmd.fish
 share/fish/completions/fish.fish
 share/fish/completions/fish_add_path.fish
+share/fish/completions/fish_config.fish
 share/fish/completions/fish_indent.fish
 share/fish/completions/fish_key_reader.fish
 share/fish/completions/flac.fish
@@ -508,7 +512,6 @@ share/fish/completions/kitchen.fish
 share/fish/completions/kitty.fish
 share/fish/completions/kldload.fish
 share/fish/completions/kldunload.fish
-share/fish/completions/la.fish
 share/fish/completions/latex.fish
 share/fish/completions/latexmk.fish
 share/fish/completions/launchctl.fish
@@ -517,7 +520,6 @@ share/fish/completions/lein.fish
 share/fish/completions/less.fish
 share/fish/completions/light.fish
 share/fish/completions/lightdm.fish
-share/fish/completions/ll.fish
 share/fish/completions/ln.fish
 share/fish/completions/localectl.fish
 share/fish/completions/locate.fish
@@ -800,6 +802,7 @@ share/fish/completions/string.fish
 share/fish/completions/su.fish
 share/fish/completions/subl.fish
 share/fish/completions/sudo.fish
+share/fish/completions/sv.fish
 share/fish/completions/svn.fish
 share/fish/completions/sylpheed.fish
 share/fish/completions/synclient.fish
@@ -1102,6 +1105,8 @@ share/fish/functions/fish_breakpoint_prompt.fish
 share/fish/functions/fish_clipboard_copy.fish
 share/fish/functions/fish_clipboard_paste.fish
 share/fish/functions/fish_command_not_found.fish
+share/fish/functions/fish_commandline_append.fish
+share/fish/functions/fish_commandline_prepend.fish
 share/fish/functions/fish_config.fish
 share/fish/functions/fish_default_key_bindings.fish
 share/fish/functions/fish_default_mode_prompt.fish
@@ -1142,6 +1147,7 @@ share/fish/functions/popd.fish
 share/fish/functions/prevd-or-backward-word.fish
 share/fish/functions/prevd.fish
 share/fish/functions/prompt_hostname.fish
+share/fish/functions/prompt_login.fish
 share/fish/functions/prompt_pwd.fish
 share/fish/functions/psub.fish
 share/fish/functions/pushd.fish
@@ -1195,6 +1201,8 @@ share/fish/man/man1/
 @man share/fish/man/man1/fish-doc.1
 @man share/fish/man/man1/fish-faq.1
 @man share/fish/man/man1/fish-for-bash-users.1
+@man share/fish/man/man1/fish-interactive.1
+@man share/fish/man/man1/fish-language.1
 @man share/fish/man/man1/fish-releasenotes.1
 @man share/fish/man/man1/fish-tutorial.1
 @man share/fish/man/man1/fish.1
@@ -1235,6 +1243,7 @@ share/fish/man/man1/
 @man share/fish/man/man1/popd.1
 @man share/fish/man/man1/prevd.1
 @man share/fish/man/man1/printf.1
+@man share/fish/man/man1/prompt_login.1
 @man share/fish/man/man1/prompt_pwd.1
 @man share/fish/man/man1/psub.1
 @man share/fish/man/man1/pushd.1
@@ -1306,20 +1315,16 @@ share/fish/tools/web_config/partials/prompt.html
 share/fish/tools/web_config/partials/variables.html
 share/fish/tools/web_config/sample_prompts/
 share/fish/tools/web_config/sample_prompts/acidhub.fish
-share/fish/tools/web_config/sample_prompts/classic.fish
-share/fish/tools/web_config/sample_prompts/classic_status.fish
-share/fish/tools/web_config/sample_prompts/classic_vcs.fish
-share/fish/tools/web_config/sample_prompts/debian_chroot.fish
+share/fish/tools/web_config/sample_prompts/arrow.fish
+share/fish/tools/web_config/sample_prompts/default.fish
+share/fish/tools/web_config/sample_prompts/disco.fish
 share/fish/tools/web_config/sample_prompts/informative.fish
 share/fish/tools/web_config/sample_prompts/informative_vcs.fish
-share/fish/tools/web_config/sample_prompts/justadollar.fish
-share/fish/tools/web_config/sample_prompts/lonetwin.fish
 share/fish/tools/web_config/sample_prompts/minimalist.fish
 share/fish/tools/web_config/sample_prompts/nim.fish
 share/fish/tools/web_config/sample_prompts/pythonista.fish
-share/fish/tools/web_config/sample_prompts/robbyrussell.fish
-share/fish/tools/web_config/sample_prompts/screen_savvy.fish
-share/fish/tools/web_config/sample_prompts/sorin.fish
+share/fish/tools/web_config/sample_prompts/scales.fish
+share/fish/tools/web_config/sample_prompts/simple.fish
 share/fish/tools/web_config/sample_prompts/terlar.fish
 share/fish/tools/web_config/webconfig.py
 share/fish/vendor_completions.d/
