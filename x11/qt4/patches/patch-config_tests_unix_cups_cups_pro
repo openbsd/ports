@@ -1,9 +1,0 @@
-$OpenBSD: patch-config_tests_unix_cups_cups_pro,v 1.4 2008/10/21 22:19:59 espie Exp $
---- config.tests/unix/cups/cups.pro.orig	Wed Apr  2 18:29:20 2008
-+++ config.tests/unix/cups/cups.pro	Sat Apr 12 15:48:53 2008
-@@ -1,4 +1,4 @@
- SOURCES = cups.cpp
- CONFIG -= qt dylib
- mac:CONFIG -= app_bundle
--LIBS += -lcups
-+LIBS += `cups-config --libs`

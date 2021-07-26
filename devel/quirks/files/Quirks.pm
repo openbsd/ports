@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1293 2021/07/25 11:57:05 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1294 2021/07/26 04:00:21 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1221,6 +1221,13 @@ setup_obsolete_reason(
 	6 => 'py-mini-amf',
 	6 => 'py3-mini-amf',
 	44 => 'qucs-s',
+	3 => 'qt4',
+	3 => 'qt4-examples',
+	3 => 'qt4-html',
+	3 => 'qt4-mysql',
+	3 => 'qt4-postgresql',
+	3 => 'qt4-sqlite2',
+	3 => 'qt4-tds',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
