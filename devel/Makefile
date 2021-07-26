@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2110 2021/06/20 10:46:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.2111 2021/07/26 18:16:44 anton Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -233,6 +233,7 @@
      SUBDIR += kreport
      SUBDIR += keystone
      SUBDIR += kf5
+     SUBDIR += knfmt
      SUBDIR += kyua-cli
      SUBDIR += kyua-testers
      SUBDIR += leatherman
