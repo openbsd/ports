@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2021/01/19 06:16:29 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2021/07/26 12:54:53 kn Exp $
 @conflict qt5-<5.6
+@pkgpath x11/qt5,-sqlite2
 bin/moc-qt5
 bin/qmake-qt5
 bin/rcc-qt5

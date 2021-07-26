@@ -9,8 +9,7 @@ simple example programs (source + binaries).
 
 There's a debug version of the libraries: qt5-debug.
 
-There are database plugins: qt5-mysql, qt5-postgresql, qt5-sqlite2 and
-qt5-tds.
+There are database plugins: qt5-mysql, qt5-postgresql and qt5-tds.
 
 People who want to use Qt5 to compile applications outside the ports tree
 should note that Qt5's installation conforms to OpenBSD habits, not

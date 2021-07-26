@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2021/06/09 19:50:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2021/07/26 12:54:53 kn Exp $
 
 DISTNAME =		qtbase-everywhere-src-${DIST_VERSION}
 QT5NAME =		Qt5 core
@@ -7,15 +7,13 @@ COMMENT-main =		C++ general-purpose toolkit
 COMMENT-global =	global Qt5 documentation internals
 COMMENT-mysql =		MySQL plugin for Qt5
 COMMENT-psql =		PostgresSQL plugin for Qt5
-COMMENT-sqlite2 =	SQLite 2.x plugin for Qt5
 COMMENT-tds =		TDS plugin for Qt5
 
-REVISION-main =		3
+REVISION-main =		4
 
 PKGNAME-mysql =		qt5-mysql-${VERSION}
 PKGNAME-global =	qt5-global-${VERSION}
 PKGNAME-psql =		qt5-postgresql-${VERSION}
-PKGNAME-sqlite2 =	qt5-sqlite2-${VERSION}
 PKGNAME-tds =		qt5-tds-${VERSION}
 
 PKG_ARCH-global =	*
@@ -57,14 +55,11 @@ WANTLIB-mysql +=	m pthread mariadb
 WANTLIB-psql =		${COMPILER_LIBCXX} Qt5Core Qt5Sql
 WANTLIB-psql +=		m pthread pq
 
-WANTLIB-sqlite2 =	${COMPILER_LIBCXX} Qt5Core Qt5Sql
-WANTLIB-sqlite2 +=	m pthread sqlite
-
 WANTLIB-tds =		${COMPILER_LIBCXX} Qt5Core Qt5Sql
 WANTLIB-tds +=		m pthread sybdb
 
 # there is no -sqlite3 because it's heavily used by Qt itself (.qch files)
-MULTI_PACKAGES =	-main -examples -global -mysql -psql -sqlite2 -tds
+MULTI_PACKAGES =	-main -examples -global -mysql -psql -tds
 
 # qmake module is used only for running tests and setting vars
 MODQT_DEPS =		No
@@ -102,10 +97,6 @@ LIB_DEPENDS-psql =	${BASE_PKGPATH},-main>=${VERSION:R},<${QT5_NEXT_VERSION} \
 			${MODGCC4_CPPLIBDEP} \
 			databases/postgresql
 
-LIB_DEPENDS-sqlite2 =	${BASE_PKGPATH},-main>=${VERSION:R},<${QT5_NEXT_VERSION} \
-			${MODGCC4_CPPLIBDEP} \
-			databases/sqlite
-
 LIB_DEPENDS-tds =	${BASE_PKGPATH},-main>=${VERSION:R},<${QT5_NEXT_VERSION} \
 			${MODGCC4_CPPLIBDEP} \
 			databases/freetds
@@ -121,7 +112,6 @@ RUN_DEPENDS-global =
 RUN_DEPENDS-examples =
 RUN_DEPENDS-mysql =
 RUN_DEPENDS-psql =
-RUN_DEPENDS-sqlite2 =
 RUN_DEPENDS-tds =
 
 CONFIGURE_STYLE =	simple
@@ -219,7 +209,6 @@ CONFIGURE_ARGS +=	-accessibility \
 # database support
 CONFIGURE_ARGS +=	-sql-mysql
 CONFIGURE_ARGS +=	-sql-psql
-CONFIGURE_ARGS +=	-sql-sqlite2
 CONFIGURE_ARGS +=	-sql-tds
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"

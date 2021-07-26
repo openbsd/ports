@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2021/06/09 19:50:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/07/26 12:54:53 kn Exp $
 
 USE_WXNEEDED =		Yes
 
@@ -41,7 +41,6 @@ WANTLIB += xkbcommon xml2 xslt z
 
 MODULES =	lang/python \
 		devel/qmake
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_RUNDEP =	No
 
@@ -109,10 +108,12 @@ MODQMAKE_RECURSIVE =	No
 CHROMESRC =	${WRKDIST}/src/3rdparty/chromium
 
 pre-configure:
+	@ln -sf /nonexistent/legacy-python ${WRKDIR}/bin/python2
+	@ln -sf /nonexistent/legacy-python ${WRKDIR}/bin/python2.7
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 .for _arch in x64 ia32 arm64
 .  for _dir in avcodec avformat avutil
-	@cp -pR ${CHROMESRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/lib${_dir} \
+	@mv -f  ${CHROMESRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/lib${_dir} \
 		${CHROMESRC}/third_party/ffmpeg/chromium/config/Chrome/openbsd/${_arch}/lib${_dir}
 .  endfor
 .endfor
