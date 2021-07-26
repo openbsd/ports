@@ -1,0 +1,69 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/07/26 04:30:40 rsadowski Exp $
+@bin bin/YACReader
+@bin bin/YACReaderLibrary
+@bin bin/YACReaderLibraryServer
+@man man/man1/YACReader.1
+@man man/man1/YACReaderLibrary.1
+share/applications/YACReader.desktop
+share/applications/YACReaderLibrary.desktop
+share/icons/hicolor/scalable/apps/YACReader.svg
+share/icons/hicolor/scalable/apps/YACReaderLibrary.svg
+share/yacreader/
+share/yacreader/languages/
+share/yacreader/languages/yacreader_de.qm
+share/yacreader/languages/yacreader_es.qm
+share/yacreader/languages/yacreader_fr.qm
+share/yacreader/languages/yacreader_it.qm
+share/yacreader/languages/yacreader_nl.qm
+share/yacreader/languages/yacreader_pt.qm
+share/yacreader/languages/yacreader_ru.qm
+share/yacreader/languages/yacreader_tr.qm
+share/yacreader/languages/yacreader_zh.qm
+share/yacreader/languages/yacreaderlibrary_de.qm
+share/yacreader/languages/yacreaderlibrary_es.qm
+share/yacreader/languages/yacreaderlibrary_fr.qm
+share/yacreader/languages/yacreaderlibrary_it.qm
+share/yacreader/languages/yacreaderlibrary_nl.qm
+share/yacreader/languages/yacreaderlibrary_pt.qm
+share/yacreader/languages/yacreaderlibrary_ru.qm
+share/yacreader/languages/yacreaderlibrary_tr.qm
+share/yacreader/languages/yacreaderlibrary_zh.qm
+share/yacreader/server/
+share/yacreader/server/docroot/
+share/yacreader/server/docroot/css/
+share/yacreader/server/docroot/css/reset.css
+share/yacreader/server/docroot/css/styles_ipad.css
+share/yacreader/server/docroot/css/styles_iphone.css
+share/yacreader/server/docroot/images/
+share/yacreader/server/docroot/images/browse.png
+share/yacreader/server/docroot/images/browse@2x.png
+share/yacreader/server/docroot/images/combo.png
+share/yacreader/server/docroot/images/combo@2x.png
+share/yacreader/server/docroot/images/download.png
+share/yacreader/server/docroot/images/download@2x.png
+share/yacreader/server/docroot/images/f.png
+share/yacreader/server/docroot/images/f@2x.png
+share/yacreader/server/docroot/images/imported.png
+share/yacreader/server/docroot/images/imported@2x.png
+share/yacreader/server/docroot/images/indicator.png
+share/yacreader/server/docroot/images/indicator@2x.png
+share/yacreader/server/docroot/images/library.png
+share/yacreader/server/docroot/images/library@2x.png
+share/yacreader/server/docroot/images/next.png
+share/yacreader/server/docroot/images/next@2x.png
+share/yacreader/server/docroot/images/prev.png
+share/yacreader/server/docroot/images/prev@2x.png
+share/yacreader/server/docroot/images/read.png
+share/yacreader/server/docroot/images/read@2x.png
+share/yacreader/server/docroot/images/readMark.png
+share/yacreader/server/docroot/images/readMark@2x.png
+share/yacreader/server/docroot/images/readingMark.png
+share/yacreader/server/docroot/images/readingMark@2x.png
+share/yacreader/server/docroot/images/up.png
+share/yacreader/server/docroot/images/up@2x.png
+share/yacreader/server/docroot/login.html
+share/yacreader/server/templates/
+share/yacreader/server/templates/folder.tpl
+share/yacreader/server/templates/libraries.tpl
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
