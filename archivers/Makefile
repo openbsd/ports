@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2021/06/20 09:46:49 sebastia Exp $
+# $OpenBSD: Makefile,v 1.112 2021/07/26 04:08:45 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += arc
@@ -67,6 +67,7 @@
      SUBDIR += snappy
      SUBDIR += ucl
      SUBDIR += unarj
+     SUBDIR += unarr
      SUBDIR += unrar
      SUBDIR += unshield
      SUBDIR += unzip
