@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2021/01/01 16:04:05 thfr Exp $
+# $OpenBSD: Makefile,v 1.36 2021/07/26 16:27:07 naddy Exp $
 
 BROKEN-alpha =		ICE or OOM on hq_implementation.cpp
 BROKEN-hppa =		ICE or OOM on src/filters/hq/c/hq_base.h:421
@@ -9,7 +9,7 @@ GH_ACCOUNT =		visualboyadvance-m
 GH_PROJECT =		${GH_ACCOUNT}
 GH_TAGNAME =		v2.1.4
 PKGNAME =		vbam-${GH_TAGNAME:S/v//}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		emulators
 

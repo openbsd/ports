@@ -1,4 +1,8 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.3 2019/11/17 00:14:36 cwen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.4 2021/07/26 16:27:07 naddy Exp $
+
+Do not pick up LLVM toolchain components (llvm-ar, llvm-ranlib)
+which are only present in the version of LLVM in ports, not the
+version in base.
 
 Fix build with ports-gcc:
 eg++: error: libgomp.spec: No such file or directory
@@ -6,6 +10,15 @@ eg++: error: libgomp.spec: No such file or directory
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
+@@ -422,7 +422,7 @@ ProcessorCount(num_cpus)
+ # Compiler stuff
+ 
+ if(CMAKE_C_COMPILER_ID STREQUAL Clang AND CMAKE_CXX_COMPILER_ID STREQUAL Clang)
+-    include(LLVMToolchain)
++#    include(LLVMToolchain)
+ endif()
+ 
+ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID STREQUAL Clang)
 @@ -526,7 +526,6 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID S
              endif()
          endif()
