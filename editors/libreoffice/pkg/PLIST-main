@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.61 2021/07/11 13:14:07 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.62 2021/07/27 14:37:41 robert Exp $
 bin/libreoffice
 bin/libreoffice${BV}
 bin/lobase
@@ -3438,7 +3438,7 @@ lib/libreoffice/share/skia/skia_denylist_vulkan.xml
 lib/libreoffice/share/template/
 lib/libreoffice/share/template/common/
 lib/libreoffice/share/template/common/draw/
-lib/libreoffice/share/template/common/draw/bpmn.ott
+lib/libreoffice/share/template/common/draw/bpmn.otg
 lib/libreoffice/share/template/common/internal/
 lib/libreoffice/share/template/common/internal/html.stw
 lib/libreoffice/share/template/common/internal/idxexample.odt
