@@ -1,4 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/07/25 19:00:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2021/07/27 11:55:36 sthen Exp $
+
+# building sys-info fails
+# error[E0308]: mismatched types
+#    --> /pobj/bat-0.18.2/bat-0.18.2/modcargo-crates/sys-info-0.9.0/lib.rs:542:29
+#     |
+# 542 |         if ret < 1 || ret > std::u32::MAX as i64 {
+#     |                             ^^^^^^^^^^^^^^^^^^^^ expected `i32`, found `i64`
+
+ONLY_FOR_ARCHS =	${LP64_ARCHS}
 
 COMMENT =		cat(1) clone with wings
 
