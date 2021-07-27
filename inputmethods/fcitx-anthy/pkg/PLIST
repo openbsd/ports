@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/28 02:58:36 kevlo Exp $
-lib/fcitx/fcitx-anthy.so
+@comment $OpenBSD: PLIST,v 1.2 2021/07/27 01:37:00 kevlo Exp $
+@so lib/fcitx/fcitx-anthy.so
 share/fcitx/addon/fcitx-anthy.conf
 share/fcitx/anthy/
 share/fcitx/anthy/101kana.sty
@@ -36,3 +36,4 @@ share/locale/ko/LC_MESSAGES/fcitx-anthy.mo
 share/locale/ru/LC_MESSAGES/fcitx-anthy.mo
 share/locale/zh_CN/LC_MESSAGES/fcitx-anthy.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx-anthy.mo
+@tag gtk-update-icon-cache %D/share/icons/hicolor

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/07/27 01:37:00 kevlo Exp $
 
 COMMENT =	anthy wrapper for fcitx
 
 GH_ACCOUNT =	fcitx
 GH_PROJECT =	fcitx-anthy
-GH_TAGNAME =	0.2.3
-REVISION =	0
+GH_TAGNAME =	0.2.4
 
 CATEGORIES =	inputmethods japanese
 
@@ -18,7 +17,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	${COMPILER_LIBCXX} anthy
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
 MODULES =	devel/cmake
 
