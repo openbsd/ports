@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.80 2021/02/08 12:33:21 otto Exp $
+# $OpenBSD: Makefile,v 1.81 2021/07/27 16:01:31 otto Exp $
 
 COMMENT-main=		modular authoritative nameserver (with database support)
 COMMENT-mysql=		MySQL database access module for PowerDNS
 COMMENT-pgsql=		PostgreSQL database access module for PowerDNS
 COMMENT-ldap=		LDAP database access module for PowerDNS
 
-V=			4.4.1
+V=			4.5.1
 DISTNAME=		pdns-${V}
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME-main=		powerdns-${V}
@@ -61,7 +61,9 @@ BACKENDS=		gsqlite3
 
 SYSCONFDIR=		${BASESYSCONFDIR}/pdns
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.16
 USE_GMAKE=		Yes
 CONFIGURE_ARGS+=	--disable-shared \
 			--with-modules="bind" \
@@ -70,13 +72,11 @@ CONFIGURE_ARGS+=	--disable-shared \
 			--with-lua=${MODLUA_DEP} \
 			--enable-lua-records \
 			--disable-hardening \
-			--with-protobuf=no \
 			--enable-tools \
 			--enable-ixfrdist
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			CXXFLAGS="-Wno-deprecated-copy"
+			LDFLAGS="-L${LOCALBASE}/lib"
 LIBTOOL_FLAGS=		--tag=disable-static
 
 .include <bsd.port.arch.mk>

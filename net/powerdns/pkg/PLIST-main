@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2020/10/07 21:20:45 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2021/07/27 16:01:31 otto Exp $
 @conflict powerdns-sqlite-*
 @conflict powerdns-sqlite3-*
 @pkgpath net/powerdns,-sqlite
@@ -11,6 +11,7 @@
 @bin bin/dnsbulktest
 @bin bin/dnsgram
 @bin bin/dnspcap2calidns
+@bin bin/dnspcap2protobuf
 @bin bin/dnsreplay
 @bin bin/dnsscan
 @bin bin/dnsscope
@@ -36,6 +37,7 @@ lib/pdns/
 @man man/man1/dnsbulktest.1
 @man man/man1/dnsgram.1
 @man man/man1/dnspcap2calidns.1
+@man man/man1/dnspcap2protobuf.1
 @man man/man1/dnsreplay.1
 @man man/man1/dnsscan.1
 @man man/man1/dnsscope.1
