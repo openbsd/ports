@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2021/05/21 19:50:29 kmos Exp $
+# $OpenBSD: Makefile,v 1.13 2021/07/27 20:42:24 juanfra Exp $
 
 COMMENT =		Python subprocess interface
 
 MODPY_EGG_VERSION =	1.12.14
-REVISION =		3
+REVISION =		4
 DISTNAME =		sh-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-
-MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 
 HOMEPAGE =		https://github.com/amoffat/sh
 
