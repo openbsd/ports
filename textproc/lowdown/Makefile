@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.25 2021/03/19 15:48:29 fcambus Exp $
+# $OpenBSD: Makefile,v 1.26 2021/07/27 10:51:48 sthen Exp $
 
 COMMENT =	simple markdown translator
-DISTNAME =	lowdown-0.8.3
+DISTNAME =	lowdown-0.8.5
 CATEGORIES =	textproc
 
 HOMEPAGE =	https://kristaps.bsd.lv/lowdown/
@@ -20,6 +20,6 @@ CONFIGURE_ARGS =	PREFIX="${PREFIX}"
 
 ALL_TARGET =	lowdown
 
-NO_TEST =	Yes
+TEST_TARGET =	regress
 
 .include <bsd.port.mk>
