@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2021/07/20 21:22:20 jcs Exp $
+# $OpenBSD: Makefile,v 1.13 2021/07/27 02:03:22 jcs Exp $
 
 # Hopefully ${CLANG_ARCHS} at some point.
 ONLY_FOR_ARCHS=	amd64
 
-V =		1.1.0
+V =		1.1.1
 V_SHARDS =	0.15.0
 V_MOLINILLO =	0.2.0
 COMMENT =	statically typed object oriented language
@@ -79,10 +79,12 @@ do-build:
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/crystal
-	${INSTALL_PROGRAM} ${WRKSRC}/.build/crystal ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/.build/crystal ${PREFIX}/libexec/crystal
 	cd ${WRKSRC}/src && pax -rw . ${PREFIX}/lib/crystal/
 	${INSTALL_PROGRAM} ${WRKSRC}/shards-${V_SHARDS}/bin/shards \
 		${PREFIX}/bin
+	${SUBST_PROGRAM} ${FILESDIR}/crystal ${PREFIX}/bin/crystal
+	@chmod ${BINMODE} ${PREFIX}/bin/crystal
 
 do-test:
 	cd ${WRKSRC}; \
