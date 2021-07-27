@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2021/03/23 22:17:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/07/27 16:28:03 sthen Exp $
 
-BROKEN-aarch64=	old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1.1.11
-BROKEN-armv7=	old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1.1.11
+# patched to replace kr/pty with kreack/pty; see modules.inc XXX
+WRKDIST=	${WRKSRC}
+# remove pkg/MESSAGE if colours get fixed for TERM=xterm.
 
 COMMENT=	terminal UI for tshark, inspired by Wireshark
 
 MODGO_MODNAME=	github.com/gcla/termshark/v2
 MODGO_VERSION=	v2.2.0
+REVISION=	0
 
 DISTNAME=	termshark-${MODGO_VERSION}
 
@@ -51,7 +53,6 @@ MODGO_MODULES=	\
 	github.com/kballard/go-shellquote  v0.0.0-20180428030007-95032a82bc51 \
 	github.com/konsorten/go-windows-terminal-sequences  v1.0.2 \
 	github.com/kr/pretty  v0.1.0 \
-	github.com/kr/pty  v1.1.4 \
 	github.com/kr/text  v0.1.0 \
 	github.com/lucasb-eyer/go-colorful  v1.0.3 \
 	github.com/magiconair/properties  v1.8.0 \
@@ -92,7 +93,6 @@ MODGO_MODFILES= \
 	github.com/go-test/deep  v1.0.1 \
 	github.com/hashicorp/golang-lru  v0.5.1 \
 	github.com/konsorten/go-windows-terminal-sequences  v1.0.1 \
-	github.com/kr/pty  v1.1.1 \
 	github.com/stretchr/objx  v0.1.0 \
 	github.com/stretchr/testify  v1.2.2 \
 	github.com/stretchr/testify  v1.3.0 \
@@ -104,6 +104,8 @@ MODGO_MODFILES= \
 	golang.org/x/sys  v0.0.0-20190813064441-fde4db37ae7a \
 	golang.org/x/text  v0.3.0 \
 	gopkg.in/check.v1  v0.0.0-20161208181325-20d25e280405
+
+MODGO_MODULES += github.com/creack/pty v1.1.14
 
 # *shrug* builds ok with "go get" but ports build picks up something broken
 do-build:

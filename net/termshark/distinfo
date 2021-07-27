@@ -20,6 +20,8 @@ SHA256 (go_modules/github.com/coreos/go-etcd/@v/v2.0.0+incompatible.mod) = zl2/x
 SHA256 (go_modules/github.com/coreos/go-etcd/@v/v2.0.0+incompatible.zip) = SyJnMoNbkpivZdtdB1AkpZcaoR70tFaJmjgwvM1DWwc=
 SHA256 (go_modules/github.com/coreos/go-semver/@v/v0.2.0.mod) = 7lARLbikHJ18hSy4jqSgh/IdaONnqPdq1u4Pt5rGvRw=
 SHA256 (go_modules/github.com/coreos/go-semver/@v/v0.2.0.zip) = CtB3vaUUZc6pcRiZV2PZENkcT/5M9DcPlTATrxlSUu0=
+SHA256 (go_modules/github.com/creack/pty/@v/v1.1.14.mod) = BBOkGR3M1sdbDMdMtxrxVkBw8uy/zjq0ujzMnXAf2Cw=
+SHA256 (go_modules/github.com/creack/pty/@v/v1.1.14.zip) = ZtRg1bMCKzdfGy7I+rr2j1UkTFmQ1whgXCx7tXWwOfE=
 SHA256 (go_modules/github.com/davecgh/go-spew/@v/v1.1.0.mod) = vLKTkyUSN7eaF7bBm/KRNPQ+j0OMMZiYj81GGhzfBcw=
 SHA256 (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.mod) = vLKTkyUSN7eaF7bBm/KRNPQ+j0OMMZiYj81GGhzfBcw=
 SHA256 (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.zip) = a0SoQ5UfNxtwEMdU7MPKvv6BXVztHFuUCfstaX6KiQ0=
@@ -58,9 +60,6 @@ SHA256 (go_modules/github.com/konsorten/go-windows-terminal-sequences/@v/v1.0.2.
 SHA256 (go_modules/github.com/konsorten/go-windows-terminal-sequences/@v/v1.0.2.zip) = TQDXG43mC8r0VPj4ZyEOvNBedcCnwnJZBPcaovIPsI4=
 SHA256 (go_modules/github.com/kr/pretty/@v/v0.1.0.mod) = 49XUbS9qyUpmalS16GfsFr8ZnZ9LcAgnzXMWB+/dEJo=
 SHA256 (go_modules/github.com/kr/pretty/@v/v0.1.0.zip) = BgY9IUV+Btwqukpb0JdxFH7D2KtAsiTyblXFp2CJykM=
-SHA256 (go_modules/github.com/kr/pty/@v/v1.1.1.mod) = baTJxzZERolOXvh34Z+YXNUdZxzm6PTKh4YrRJ9t1/Y=
-SHA256 (go_modules/github.com/kr/pty/@v/v1.1.4.mod) = baTJxzZERolOXvh34Z+YXNUdZxzm6PTKh4YrRJ9t1/Y=
-SHA256 (go_modules/github.com/kr/pty/@v/v1.1.4.zip) = mu/49OcxZwGMnr/V6HK7rozRPc6q8q3dfV7fOJvIX7I=
 SHA256 (go_modules/github.com/kr/text/@v/v0.1.0.mod) = L7qVKeXBPd5i83Hvc4O68E1xMlAdrGqgjpEPnsC/hcU=
 SHA256 (go_modules/github.com/kr/text/@v/v0.1.0.zip) = k2OkyPHzOHo2AU3lG0d7gxoTmB/FmlZl+dIWCb6p53w=
 SHA256 (go_modules/github.com/lucasb-eyer/go-colorful/@v/v1.0.3.mod) = hPnDjpiEqwE8g3yxau4TlQDT1cbMqwJDmIHbLs8o9mA=
@@ -163,6 +162,8 @@ SIZE (go_modules/github.com/coreos/go-etcd/@v/v2.0.0+incompatible.mod) = 33
 SIZE (go_modules/github.com/coreos/go-etcd/@v/v2.0.0+incompatible.zip) = 30740
 SIZE (go_modules/github.com/coreos/go-semver/@v/v0.2.0.mod) = 35
 SIZE (go_modules/github.com/coreos/go-semver/@v/v0.2.0.zip) = 10848
+SIZE (go_modules/github.com/creack/pty/@v/v1.1.14.mod) = 38
+SIZE (go_modules/github.com/creack/pty/@v/v1.1.14.zip) = 23944
 SIZE (go_modules/github.com/davecgh/go-spew/@v/v1.1.0.mod) = 34
 SIZE (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.mod) = 34
 SIZE (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.zip) = 60320
@@ -201,9 +202,6 @@ SIZE (go_modules/github.com/konsorten/go-windows-terminal-sequences/@v/v1.0.2.mo
 SIZE (go_modules/github.com/konsorten/go-windows-terminal-sequences/@v/v1.0.2.zip) = 3968
 SIZE (go_modules/github.com/kr/pretty/@v/v0.1.0.mod) = 67
 SIZE (go_modules/github.com/kr/pretty/@v/v0.1.0.zip) = 11159
-SIZE (go_modules/github.com/kr/pty/@v/v1.1.1.mod) = 25
-SIZE (go_modules/github.com/kr/pty/@v/v1.1.4.mod) = 25
-SIZE (go_modules/github.com/kr/pty/@v/v1.1.4.zip) = 14830
 SIZE (go_modules/github.com/kr/text/@v/v0.1.0.mod) = 64
 SIZE (go_modules/github.com/kr/text/@v/v0.1.0.zip) = 12591
 SIZE (go_modules/github.com/lucasb-eyer/go-colorful/@v/v1.0.3.mod) = 51
