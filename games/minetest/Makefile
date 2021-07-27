@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.32 2020/09/09 11:32:12 semarie Exp $
+# $OpenBSD: Makefile,v 1.33 2021/07/27 05:08:39 semarie Exp $
 
 COMMENT =		infinite-world block sandbox game
-GAME_V =		5.3.0
+GAME_V =		5.4.1
 V =			${GAME_V}
 DISTNAME =		minetest-${V}
 CATEGORIES =		games x11
@@ -49,7 +49,8 @@ LIB_DEPENDS =		${MODLUA_LIB_DEPENDS} \
 			x11/irrlicht
 
 TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
-TEST_ENV +=		HOME=${WRKBUILD}/test
+TEST_ENV +=		HOME=${WRKBUILD}/test \
+			LC_CTYPE="en_US.UTF-8"
 
 # Use system cmake modules
 post-patch:
