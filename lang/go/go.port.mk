@@ -1,4 +1,4 @@
-# $OpenBSD: go.port.mk,v 1.43 2021/07/03 02:37:46 abieber Exp $
+# $OpenBSD: go.port.mk,v 1.44 2021/07/27 13:13:02 sthen Exp $
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
@@ -187,6 +187,7 @@ modgo-gen-modules:
 	@exit 1
 .endif
 
+	@printf '# $$%s$$\n\n' OpenBSD
 .if empty(MODGO_VERSION) || ${MODGO_VERSION} == "latest"
 	@${_PERLSCRIPT}/modgo-gen-modules-helper ${MODGO_MODNAME}
 .else
