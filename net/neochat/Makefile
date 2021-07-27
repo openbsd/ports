@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2021/05/26 22:18:54 abieber Exp $
+# $OpenBSD: Makefile,v 1.3 2021/07/27 10:53:30 sthen Exp $
 
 COMMENT =	client for Matrix chat
 VERSION =	1.1.1
 DISTNAME =	neochat-${VERSION}
 
-REVISION =	0
+REVISION =	1
 
 CATEGORIES=	net
 
@@ -24,6 +24,7 @@ MODULES =	devel/kf5
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		graphics/kquickimageeditor \
+		devel/kf5/kitemmodels \
 		x11/gtk+3,-guic
 
 
