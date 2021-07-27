@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2021/05/30 22:33:31 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.26 2021/07/27 20:36:26 juanfra Exp $
 @conflict racket-<6.2
 @pkgpath lang/racket
 %%bc%%
@@ -889,6 +889,8 @@ lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/kw_r
 lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/kw_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/letstx-scheme_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/letstx-scheme_rkt.zo
+lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/link-path_rkt.dep
+lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/link-path_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/list-predicates_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/list-predicates_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/private/compiled/list_rkt.dep
@@ -1836,6 +1838,7 @@ share/racket/collects/racket/private/kw-syntax-binding.rkt
 share/racket/collects/racket/private/kw-syntax-serialize.rkt
 share/racket/collects/racket/private/kw.rkt
 share/racket/collects/racket/private/letstx-scheme.rkt
+share/racket/collects/racket/private/link-path.rkt
 share/racket/collects/racket/private/list-predicates.rkt
 share/racket/collects/racket/private/list.rkt
 share/racket/collects/racket/private/local.rkt

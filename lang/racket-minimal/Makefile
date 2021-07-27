@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.73 2021/05/30 22:33:31 juanfra Exp $
-
-BROKEN-i386 = either build hangs, or dies with "Error: invalid memory reference"
+# $OpenBSD: Makefile,v 1.74 2021/07/27 20:36:26 juanfra Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc powerpc64 sparc64
 
 COMMENT =		multi-paradigm programming language
 
-V =			8.1
-REVISION =		0
+V =			8.2
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-2${EXTRACT_SUFX}
