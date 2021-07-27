@@ -1,3 +1,4 @@
+# $OpenBSD: modules.inc,v 1.2 2021/07/27 12:25:21 danj Exp $
 MODGO_VERSION =	v0.0.0-20210530041642-fdc2020b102d
 
 MODGO_MODULES =	\
