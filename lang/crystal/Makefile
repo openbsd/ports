@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2021/07/27 02:03:22 jcs Exp $
+# $OpenBSD: Makefile,v 1.14 2021/07/27 17:05:38 jcs Exp $
 
 # Hopefully ${CLANG_ARCHS} at some point.
 ONLY_FOR_ARCHS=	amd64
@@ -9,6 +9,7 @@ V_MOLINILLO =	0.2.0
 COMMENT =	statically typed object oriented language
 DISTNAME =	crystal-${V}
 CATEGORIES =	lang
+REVISION =	0
 
 HOMEPAGE =	https://crystal-lang.org/
 MAINTAINER =	joshua stein <jcs@jcs.org>
