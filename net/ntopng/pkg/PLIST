@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/01/18 13:15:40 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/07/27 10:27:48 sthen Exp $
 @newgroup _ntopng:809
 @newuser _ntopng:809:_ntopng:daemon:ntopng user:/nonexistent:/sbin/nologin
 @owner _ntopng
@@ -1926,7 +1926,7 @@ share/ntopng/httpdocs/js/pages/
 share/ntopng/httpdocs/js/pages/datasource_list.js
 share/ntopng/httpdocs/js/pages/endpoint-notifications-list.js
 share/ntopng/httpdocs/js/pages/flowdevice_details.js
-share/ntopng/httpdocs/js/pages/flowdevices_stats.js
+share/ntopng/httpdocs/js/pages/flowdevices_page.js
 share/ntopng/httpdocs/js/pages/import-export-config.js
 share/ntopng/httpdocs/js/pages/manage-configurations.js
 share/ntopng/httpdocs/js/pages/pools/
@@ -2582,6 +2582,7 @@ share/ntopng/scripts/lua/modules/rrd_utils.lua
 share/ntopng/scripts/lua/modules/snmp_consts.lua
 share/ntopng/scripts/lua/modules/stats_utils.lua
 share/ntopng/scripts/lua/modules/storage_utils.lua
+share/ntopng/scripts/lua/modules/sys_utils.lua
 share/ntopng/scripts/lua/modules/syslog_utils.lua
 share/ntopng/scripts/lua/modules/system_utils.lua
 share/ntopng/scripts/lua/modules/tcp_flow_state_utils.lua
@@ -3154,6 +3155,9 @@ share/ntopng/scripts/plugins/endpoints/sqlite_alert_endpoint/templates/sqlite_re
 share/ntopng/scripts/plugins/endpoints/syslog_alert_endpoint/
 share/ntopng/scripts/plugins/endpoints/syslog_alert_endpoint/alert_endpoints/
 share/ntopng/scripts/plugins/endpoints/syslog_alert_endpoint/alert_endpoints/syslog.lua
+share/ntopng/scripts/plugins/endpoints/syslog_alert_endpoint/http_lint.lua
+share/ntopng/scripts/plugins/endpoints/syslog_alert_endpoint/locales/
+share/ntopng/scripts/plugins/endpoints/syslog_alert_endpoint/locales/en.lua
 share/ntopng/scripts/plugins/endpoints/syslog_alert_endpoint/manifest.lua
 share/ntopng/scripts/plugins/endpoints/syslog_alert_endpoint/templates/
 share/ntopng/scripts/plugins/endpoints/syslog_alert_endpoint/templates/syslog_endpoint.template

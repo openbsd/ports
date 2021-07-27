@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_HTTPserver_cpp,v 1.7 2021/01/18 13:15:40 sthen Exp $
+$OpenBSD: patch-src_HTTPserver_cpp,v 1.8 2021/07/27 10:27:48 sthen Exp $
 
 Index: src/HTTPserver.cpp
 --- src/HTTPserver.cpp.orig
@@ -12,7 +12,7 @@ Index: src/HTTPserver.cpp
  #else
    snprintf(random_a, sizeof(random_a), "%d", rand());
    snprintf(random_b, sizeof(random_b), "%lu", time(NULL)*rand());
-@@ -1237,8 +1237,8 @@ bool HTTPserver::check_ssl_cert(char *ssl_cert_path, s
+@@ -1262,8 +1262,8 @@ bool HTTPserver::check_ssl_cert(char *ssl_cert_path, s
    int stat_rc;
    ssl_cert_path[0] = '\0';
  
