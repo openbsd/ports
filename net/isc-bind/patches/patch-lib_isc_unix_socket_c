@@ -1,11 +1,24 @@
-$OpenBSD: patch-lib_isc_unix_socket_c,v 1.29 2021/07/22 12:28:53 sthen Exp $
+$OpenBSD: patch-lib_isc_unix_socket_c,v 1.30 2021/07/27 12:46:56 sthen Exp $
 
-Patch to use pledge on OpenBSD.
+Disable some socket options which pledge doesn't allow.
 
 Index: lib/isc/unix/socket.c
 --- lib/isc/unix/socket.c.orig
 +++ lib/isc/unix/socket.c
-@@ -2385,6 +2385,7 @@ again:
+@@ -2105,10 +2105,12 @@ set_ip_dontfrag(isc_socket_t *sock) {
+ 	 * Set the Don't Fragment flag on IP packets
+ 	 */
+ 	if (sock->pf == AF_INET6) {
++#if !defined(__OpenBSD__) /* pledge doesn't allow "don't fragment" sockopts */
+ #if defined(IPV6_DONTFRAG)
+ 		(void)setsockopt(sock->fd, IPPROTO_IPV6, IPV6_DONTFRAG,
+ 				 &(int){ 1 }, sizeof(int));
+ #endif
++#endif
+ #if defined(IPV6_MTU_DISCOVER)
+ 		(void)setsockopt(sock->fd, IPPROTO_IPV6, IPV6_MTU_DISCOVER,
+ 				 &(int){ IP_PMTUDISC_DO }, sizeof(int));
+@@ -2385,6 +2387,7 @@ again:
  		}
  #endif /* if defined(SO_SNDBUF) */
  	}
@@ -13,7 +26,7 @@ Index: lib/isc/unix/socket.c
  #ifdef IPV6_RECVTCLASS
  	if ((sock->pf == AF_INET6) &&
  	    (setsockopt(sock->fd, IPPROTO_IPV6, IPV6_RECVTCLASS, (void *)&on,
-@@ -2409,6 +2410,7 @@ again:
+@@ -2409,6 +2412,7 @@ again:
  				 sock->fd, strbuf);
  	}
  #endif /* ifdef IP_RECVTOS */
@@ -21,7 +34,7 @@ Index: lib/isc/unix/socket.c
  #endif /* defined(USE_CMSG) || defined(SET_RCVBUF) || defined(SET_SNDBUF) */
  
  	set_ip_dontfrag(sock);
-@@ -5094,6 +5096,13 @@ isc_socket_gettype(isc_socket_t *sock) {
+@@ -5094,6 +5098,13 @@ isc_socket_gettype(isc_socket_t *sock) {
  
  void
  isc_socket_ipv6only(isc_socket_t *sock, bool yes) {
