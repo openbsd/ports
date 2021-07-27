@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/20 15:06:29 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2021/07/27 08:51:18 sthen Exp $
 
-COMMENT =	fast, reliable, and secure dependency management
+COMMENT =	fast, reliable, and secure dependency management for node.js
 
-V =		v1.22.4
+V =		v1.22.11
 DISTNAME =	yarn-${V}
 PKGNAME =	yarn-${V:S/v//}
 

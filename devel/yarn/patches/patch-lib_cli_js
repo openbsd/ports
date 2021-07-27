@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_cli_js,v 1.1.1.1 2021/01/20 15:06:29 abieber Exp $
+$OpenBSD: patch-lib_cli_js,v 1.2 2021/07/27 08:51:18 sthen Exp $
 
 node doesn't know where it is relative to itself when called without the full
 path.
@@ -6,7 +6,7 @@ path.
 Index: lib/cli.js
 --- lib/cli.js.orig
 +++ lib/cli.js
-@@ -34190,11 +34190,11 @@ var getWrappersFolder = exports.getWrappersFolder = fu
+@@ -34194,11 +34194,11 @@ var getWrappersFolder = exports.getWrappersFolder = fu
  
      wrappersFolder = yield (_fs || _load_fs()).makeTempDir();
  
@@ -20,10 +20,3 @@ Index: lib/cli.js
        proxyBasename: 'yarn',
        prependArguments: [process.argv[1]]
      });
-@@ -153385,4 +153385,4 @@ module.exports = require("dns");
- module.exports = require("domain");
- 
- /***/ })
--/******/ ]);
-\ No newline at end of file
-+/******/ ]);
