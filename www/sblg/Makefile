@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2020/07/12 20:40:44 mglocker Exp $
+# $OpenBSD: Makefile,v 1.29 2021/07/27 10:52:29 sthen Exp $
 
 COMMENT =	simple off-line blog utility
 
-DISTNAME =	sblg-0.5.9
+DISTNAME =	sblg-0.5.11
 CATEGORIES =	www
 
 HOMEPAGE =	https://kristaps.bsd.lv/sblg/
@@ -21,7 +21,7 @@ MAKE_FLAGS =		CC="${CC}"
 
 CONFIGURE_STYLE =	simple
 
-NO_TEST =		Yes
+TEST_TARGET = 		regress
 
 ALL_TARGET =		sblg
 
