@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2021/07/27 01:37:00 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2021/07/28 13:38:23 jca Exp $
 
 COMMENT =	anthy wrapper for fcitx
 
 GH_ACCOUNT =	fcitx
 GH_PROJECT =	fcitx-anthy
 GH_TAGNAME =	0.2.4
+REVISION =	0
 
 CATEGORIES =	inputmethods japanese
 
@@ -23,7 +24,8 @@ MODULES =	devel/cmake
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		inputmethods/fcitx,-main
-RUN_DEPENDS =	inputmethods/fcitx,-main
+RUN_DEPENDS =	inputmethods/fcitx,-main \
+		x11/gtk+3,-guic
 LIB_DEPENDS =	inputmethods/anthy
 
 NO_TEST =	Yes
