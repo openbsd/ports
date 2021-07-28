@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2021/07/28 10:38:41 jca Exp $
+# $OpenBSD: Makefile,v 1.6 2021/07/28 10:40:32 jca Exp $
 
 COMMENT=	BBS terminal program
 
 DISTNAME=	syncterm-1.1
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	comms net
 
@@ -33,6 +33,11 @@ MAKE_FLAGS=	RELEASE=1 \
 		QUIET=
 CFLAGS+=	-DN_CURSES_LIB -D_XOPEN_SOURCE_EXTENDED=1
 CFLAGS+=	${PICFLAG}
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mbe}
+CFLAGS+=	-D__BIG_ENDIAN__
+.endif
 
 FAKE_FLAGS=	PREFIX=${PREFIX}
 
