@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.27 2020/06/18 17:42:56 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.28 2021/07/28 07:23:34 landry Exp $
 @option is-branch
 @conflict openldap-client-<=2.4.45p0
 @pkgpath databases/openldap,-server,bdb
@@ -72,9 +72,11 @@ sbin/slappasswd
 sbin/slapschema
 sbin/slaptest
 share/examples/openldap/DB_CONFIG.example
-@mode 600
 @owner _openldap
 @group _openldap
+@mode 700
+@sample /var/openldap-data/
+@mode 600
 @sample /var/openldap-data/DB_CONFIG
 @mode
 @owner
@@ -127,7 +129,3 @@ share/examples/openldap/slapd.ldif
 @mode 0750
 @group _openldap
 @sample ${SYSCONFDIR}/openldap/slapd.d/
-@mode 700
-@owner _openldap
-@group
-@sample /var/openldap-data/
