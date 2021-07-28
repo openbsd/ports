@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/06 09:15:11 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/07/28 08:15:50 fcambus Exp $
 @newgroup _libpostal:816
 @extraunexec rm -rf /var/db/libpostal
-@bin bin/address_parser
+bin/address_parser
 include/libpostal/
 include/libpostal/libpostal.h
-lib/libpostal.a
+@static-lib lib/libpostal.a
 lib/libpostal.la
 @lib lib/libpostal.so.${LIBpostal_VERSION}
 lib/pkgconfig/libpostal.pc
