@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/07/15 15:23:22 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2021/07/28 10:38:41 jca Exp $
 
 COMMENT=	BBS terminal program
 
@@ -32,6 +32,7 @@ MAKE_FLAGS=	RELEASE=1 \
 		SDL_CONFIG=${LOCALBASE}/bin/sdl2-config \
 		QUIET=
 CFLAGS+=	-DN_CURSES_LIB -D_XOPEN_SOURCE_EXTENDED=1
+CFLAGS+=	${PICFLAG}
 
 FAKE_FLAGS=	PREFIX=${PREFIX}
 

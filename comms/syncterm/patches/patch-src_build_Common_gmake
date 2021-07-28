@@ -1,9 +1,20 @@
-$OpenBSD: patch-src_build_Common_gmake,v 1.1.1.1 2021/01/02 14:49:18 jcs Exp $
+$OpenBSD: patch-src_build_Common_gmake,v 1.2 2021/07/28 10:38:41 jca Exp $
+
+Don't hardcode -fpic, some of our architectures need -fPIC.
+Don't hardcode -O2.
 
 Index: src/build/Common.gmake
 --- src/build/Common.gmake.orig
 +++ src/build/Common.gmake
-@@ -433,7 +433,7 @@ ifdef DEBUG
+@@ -225,7 +225,6 @@ endif
+ ifeq ($(machine),x86_64)
+  machine	:= x64
+ endif
+-CFLAGS +=	-fpic
+ ifeq ($(machine),sparc64)
+  CFLAGS +=      -D__BIG_ENDIAN__
+ endif
+@@ -433,7 +432,7 @@ ifdef DEBUG
  else # RELEASE
   # -finline functions breaks the baja build badly.
   # This also means that -O3 won't work either.
