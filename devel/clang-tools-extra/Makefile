@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2021/05/18 06:19:48 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.17 2021/07/28 23:22:33 cwen Exp $
 
 # XXX
 # This port is more or less a copy from devel/llvm and it tries to
@@ -9,7 +9,6 @@
 # patches: rm patches/patch-*lld*
 
 ONLY_FOR_ARCHS =	${LLVM_ARCHS}
-BROKEN-powerpc =	no consumers on powerpc, save 25 build hours in bulks
 
 COMMENT=	Clang extra tools
 
