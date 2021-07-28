@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2021/07/26 12:54:53 kn Exp $
+# $OpenBSD: Makefile,v 1.21 2021/07/28 11:24:24 kn Exp $
 
 USE_WXNEEDED =		Yes
 
@@ -14,7 +14,7 @@ COMMENT =		Chromium-based web engine for Qt5
 
 # Many parts are copied from www/chromium port, so keep in sync
 QT5NAME =		QtWebEngine
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		www
 
@@ -41,6 +41,7 @@ WANTLIB += xkbcommon xml2 xslt z
 
 MODULES =	lang/python \
 		devel/qmake
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_RUNDEP =	No
 
@@ -108,12 +109,10 @@ MODQMAKE_RECURSIVE =	No
 CHROMESRC =	${WRKDIST}/src/3rdparty/chromium
 
 pre-configure:
-	@ln -sf /nonexistent/legacy-python ${WRKDIR}/bin/python2
-	@ln -sf /nonexistent/legacy-python ${WRKDIR}/bin/python2.7
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 .for _arch in x64 ia32 arm64
 .  for _dir in avcodec avformat avutil
-	@mv -f  ${CHROMESRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/lib${_dir} \
+	@cp -pR ${CHROMESRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/lib${_dir} \
 		${CHROMESRC}/third_party/ffmpeg/chromium/config/Chrome/openbsd/${_arch}/lib${_dir}
 .  endfor
 .endfor
