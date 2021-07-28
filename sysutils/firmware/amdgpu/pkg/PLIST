@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/05/24 03:21:48 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/07/28 02:54:39 jsg Exp $
 firmware/amdgpu/
 firmware/amdgpu/amdgpu-license
 firmware/amdgpu/arcturus_asd.bin
@@ -34,6 +34,18 @@ firmware/amdgpu/carrizo_sdma.bin
 firmware/amdgpu/carrizo_sdma1.bin
 firmware/amdgpu/carrizo_uvd.bin
 firmware/amdgpu/carrizo_vce.bin
+firmware/amdgpu/dimgrey_cavefish_ce.bin
+firmware/amdgpu/dimgrey_cavefish_dmcub.bin
+firmware/amdgpu/dimgrey_cavefish_me.bin
+firmware/amdgpu/dimgrey_cavefish_mec.bin
+firmware/amdgpu/dimgrey_cavefish_mec2.bin
+firmware/amdgpu/dimgrey_cavefish_pfp.bin
+firmware/amdgpu/dimgrey_cavefish_rlc.bin
+firmware/amdgpu/dimgrey_cavefish_sdma.bin
+firmware/amdgpu/dimgrey_cavefish_smc.bin
+firmware/amdgpu/dimgrey_cavefish_sos.bin
+firmware/amdgpu/dimgrey_cavefish_ta.bin
+firmware/amdgpu/dimgrey_cavefish_vcn.bin
 firmware/amdgpu/fiji_ce.bin
 firmware/amdgpu/fiji_mc.bin
 firmware/amdgpu/fiji_me.bin
