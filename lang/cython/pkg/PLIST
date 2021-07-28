@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2021/02/19 23:13:04 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.19 2021/07/28 22:40:47 sthen Exp $
 @conflict py-cython-<0.29.21p1
 bin/cygdb${MODPY_BIN_SUFFIX}
 bin/cython${MODPY_BIN_SUFFIX}
@@ -245,9 +245,12 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/bool.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/buffer.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/bytearray.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/bytes.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/cellobject.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/ceval.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/cobject.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/codecs.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/complex.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/conversion.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/datetime.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/dict.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/exc.pxd
@@ -453,6 +456,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/${MODPY_PYCACHE}StringIOTree.${M
 lib/python${MODPY_VERSION}/site-packages/Cython/${MODPY_PYCACHE}TestUtils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/${MODPY_PYCACHE}Utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}cython.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cython.py
 lib/python${MODPY_VERSION}/site-packages/pyximport/
