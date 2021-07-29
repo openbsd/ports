@@ -1,16 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2021/02/19 23:13:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/07/29 15:05:43 bluhm Exp $
 
 COMMENT =	library implementation of OPC UA
 
-VERSION =	1.0.1
-REVISION =	4
+VERSION =	1.0.3
+DISTNAME =	open62541-${VERSION}
 PKGNAME =	open62541-${VERSION}
 
-GH_ACCOUNT =	open62541
-GH_PROJECT =	open62541
-GH_TAGNAME =	v.${VERSION}
-
-SHARED_LIBS =	open62541	0.1
+SHARED_LIBS =	open62541	1.0
 
 CATEGORIES =	misc
 
@@ -22,6 +18,9 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m mbedcrypto mbedtls mbedx509 pthread
+
+MASTER_SITES =		https://github.com/open62541/open62541/
+DISTFILES =		open62541-{archive/refs/tags/v}${VERSION}.tar.gz
 
 MODULES =		devel/cmake
 

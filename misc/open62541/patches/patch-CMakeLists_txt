@@ -1,8 +1,8 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2020/02/16 20:51:46 kmos Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2021/07/29 15:05:43 bluhm Exp $
 
-GCC 4.2.1 doesn't understand "-Wpedantic"
+GCC 4.2.1 doesn't understand "-Wpedantic".
 
-Also move examples to the right place
+Move examples to the right place.
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
@@ -16,7 +16,7 @@ Index: CMakeLists.txt
                      -Wno-static-in-inline # clang doesn't like the use of static inline methods inside static inline methods
                      -Wno-overlength-strings # may happen in the nodeset compiler when complex values are directly encoded
                      -Wno-unused-parameter # some methods may require unused arguments to cast to a method pointer
-@@ -1236,7 +1236,7 @@ if (UA_PACK_DEBIAN)    
+@@ -1239,7 +1239,7 @@ if (UA_PACK_DEBIAN)    
          "examples/nodeset"
          "examples/pubsub")
  
