@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.201 2021/03/05 12:17:00 zhuk Exp $
+# $OpenBSD: Makefile,v 1.202 2021/07/29 23:26:29 bluhm Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -59,6 +59,7 @@
      SUBDIR += most
      SUBDIR += nyancat
      SUBDIR += open62541
+     SUBDIR += open62541,ns0_full
      SUBDIR += openbabel
      SUBDIR += os-test
      SUBDIR += osinfo
