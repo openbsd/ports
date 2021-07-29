@@ -1,19 +1,14 @@
-$OpenBSD: patch-winpr_libwinpr_synch_test_CMakeLists_txt,v 1.2 2021/06/18 07:54:45 tb Exp $
+$OpenBSD: patch-winpr_libwinpr_synch_test_CMakeLists_txt,v 1.3 2021/07/29 12:38:20 sthen Exp $
 
 Index: winpr/libwinpr/synch/test/CMakeLists.txt
 --- winpr/libwinpr/synch/test/CMakeLists.txt.orig
 +++ winpr/libwinpr/synch/test/CMakeLists.txt
-@@ -21,8 +21,12 @@ create_test_sourcelist(${MODULE_PREFIX}_SRCS
+@@ -22,7 +22,7 @@ create_test_sourcelist(${MODULE_PREFIX}_SRCS
  	${${MODULE_PREFIX}_DRIVER}
  	${${MODULE_PREFIX}_TESTS})
  
 -if(FREEBSD)
 +if(EPOLLSHIM)
  	include_directories(${EPOLLSHIM_INCLUDE_DIR})
-+endif()
-+
-+if(EXECINFO)
-+	include_directories(${EXECINFO_INCLUDE_DIR})
  endif()
  
- add_executable(${MODULE_NAME} ${${MODULE_PREFIX}_SRCS})

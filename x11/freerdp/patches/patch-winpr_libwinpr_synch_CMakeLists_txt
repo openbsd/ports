@@ -1,17 +1,19 @@
-$OpenBSD: patch-winpr_libwinpr_synch_CMakeLists_txt,v 1.4 2021/06/18 07:54:45 tb Exp $
+$OpenBSD: patch-winpr_libwinpr_synch_CMakeLists_txt,v 1.5 2021/07/29 12:38:20 sthen Exp $
 
 Index: winpr/libwinpr/synch/CMakeLists.txt
 --- winpr/libwinpr/synch/CMakeLists.txt.orig
 +++ winpr/libwinpr/synch/CMakeLists.txt
-@@ -28,9 +28,11 @@ winpr_module_add(
+@@ -30,9 +30,13 @@ winpr_module_add(
  	timer.c
  	wait.c)
  
 -if(FREEBSD)
-+if(OPENBSD)
++if(EPOLLSHIM)
  	winpr_include_directory_add(${EPOLLSHIM_INCLUDE_DIR})
  	winpr_library_add_private(${EPOLLSHIM_LIBS})
-+	winpr_include_directory_add(${EXECINFO_INCLUDE_DIR})
++endif()
++
++if(EXECINFO_LIBS)
 +	winpr_library_add_private(${EXECINFO_LIBS})
  endif()
  

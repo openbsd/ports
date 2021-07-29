@@ -1,23 +1,22 @@
-# $OpenBSD: Makefile,v 1.48 2021/06/18 07:54:45 tb Exp $
+# $OpenBSD: Makefile,v 1.49 2021/07/29 12:38:20 sthen Exp $
 
 # Also:  __sync_fetch_and_add_4 __sync_add_and_fetch_4 __sync_sub_and_fetch_4
 BROKEN-hppa =		undefined reference to __sync_val_compare_and_swap_4
 
 COMMENT =		client for Microsoft RDP (remote desktop protocol)
-DISTNAME =		freerdp-2.3.2
+DISTNAME =		freerdp-2.4.0
 DPB_PROPERTIES =	parallel
 CATEGORIES =		x11 net
-REVISION =		2
 
 SHARED_LIBS +=  freerdp-client2           1.0
 SHARED_LIBS +=  freerdp2                  1.1
 SHARED_LIBS +=  winpr-tools2              1.0
-SHARED_LIBS +=  winpr2                    1.0
+SHARED_LIBS +=  winpr2                    1.1
 
 HOMEPAGE =		https://www.freerdp.com/
 MASTER_SITES =		https://pub.freerdp.com/releases/
 
-# add sndio patchset
+# add sndio patchset, not yet in stable branch
 MASTER_SITES0 =		https://github.com/FreeRDP/FreeRDP/commit/
 PATCHFILES =		freerdp-sndio{b3a2042103a192d9e4482691ce9e7d73f9475b09}.patch:0
 PATCH_DIST_STRIP =	-p1
