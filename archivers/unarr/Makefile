@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/07/26 04:07:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2021/07/29 22:13:18 kmos Exp $
 
 COMMENT =	decompression library for rar, tar, zip and 7z archives
 
@@ -15,6 +15,9 @@ MAINTAINER =		Omar Polo <op@omarpolo.com>
 
 # LGPLv3
 PERMIT_PACKAGE =	Yes
+
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 WANTLIB += bz2 lzma z
 
