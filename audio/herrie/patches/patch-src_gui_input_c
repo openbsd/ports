@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_gui_input_c,v 1.1 2021/07/29 20:37:13 naddy Exp $
+
+The return value of getch() must be stored in an int to handle KEY_*
+values.
+
+Index: src/gui_input.c
+--- src/gui_input.c.orig
++++ src/gui_input.c
+@@ -601,9 +601,9 @@ gui_input_loop(void)
+ int
+ gui_input_askyesno(const char *question)
+ {
+-	char *msg, input;
++	char *msg;
+ 	const char *yes, *no;
+-	int ret;
++	int input, ret;
+ 
+ 	/* Skip the question if the user really wants so */
+ 	if (!config_getopt_bool("gui.input.confirm"))
