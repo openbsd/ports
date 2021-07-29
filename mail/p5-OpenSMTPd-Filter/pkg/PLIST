@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/07/29 00:38:15 afresh1 Exp $
+${P5SITE}/OpenSMTPd/
+${P5SITE}/OpenSMTPd/Filter.pm
+${P5ARCH}/
+${P5ARCH}/auto/
+${P5ARCH}/auto/OpenSMTPd/
+${P5ARCH}/auto/OpenSMTPd/Filter/
+${P5ARCH}/auto/OpenSMTPd/Filter/.packlist
+@man man/man3p/OpenSMTPd::Filter.3p

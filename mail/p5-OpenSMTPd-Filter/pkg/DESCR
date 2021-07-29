@@ -1,0 +1,2 @@
+This module is a helper to make writing OpenSMTPd
+<https://opensmtpd.org> filters in perl easier.
