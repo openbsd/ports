@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.161 2021/03/28 13:32:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.162 2021/07/29 10:44:07 sthen Exp $
 
 COMMENT=	mail retrieval utility for POP2, POP3, KPOP, IMAP and more
 
-DISTNAME=	fetchmail-6.4.13
+DISTNAME=	fetchmail-6.4.20
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	mail
