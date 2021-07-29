@@ -1,7 +1,11 @@
-$OpenBSD: patch-src_rip_c,v 1.8 2021/01/24 18:24:27 ajacoutot Exp $
+$OpenBSD: patch-src_rip_c,v 1.9 2021/07/29 20:08:30 naddy Exp $
 
---- src/rip.c.orig	Thu Apr 15 20:21:15 2004
-+++ src/rip.c	Tue May 13 16:15:31 2008
+The return value of fgetc() must be stored in an int if it is compared
+against EOF.
+
+Index: src/rip.c
+--- src/rip.c.orig
++++ src/rip.c
 @@ -27,7 +27,7 @@
  #elif defined (HAVE_SYS_VFS_H)
  #include <sys/vfs.h>
@@ -11,3 +15,12 @@ $OpenBSD: patch-src_rip_c,v 1.8 2021/01/24 18:24:27 ajacoutot Exp $
  #include <sys/param.h>
  #include <sys/mount.h>
  #endif
+@@ -663,7 +663,7 @@ void RemoveM3U(GripInfo *ginfo)
+ {
+   FILE *fp;
+   EncodeTrack enc_track;
+-  char testchar;
++  int testchar;
+   GString *str;
+ 
+   if (!ginfo->have_disc)
