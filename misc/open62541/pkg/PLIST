@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/02/11 10:35:25 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/07/29 23:13:25 bluhm Exp $
 include/open62541/
 include/open62541/architecture_base.h
 include/open62541/architecture_definitions.h
@@ -163,3 +163,4 @@ share/open62541/tools/schema/datatypes_query.txt
 share/open62541/tools/schema/datatypes_subscriptions.txt
 share/open62541/tools/schema/datatypes_transport.txt
 share/open62541/tools/ua-nodeset/
+%%ns0_full%%

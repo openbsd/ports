@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2021/07/29 15:05:43 bluhm Exp $
+# $OpenBSD: Makefile,v 1.11 2021/07/29 23:13:24 bluhm Exp $
 
 COMMENT =	library implementation of OPC UA
 
 VERSION =	1.0.3
+REVISION =	0
 DISTNAME =	open62541-${VERSION}
 PKGNAME =	open62541-${VERSION}
 
@@ -20,7 +21,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		c m mbedcrypto mbedtls mbedx509 pthread
 
 MASTER_SITES =		https://github.com/open62541/open62541/
-DISTFILES =		open62541-{archive/refs/tags/v}${VERSION}.tar.gz
+MASTER_SITES0 =		https://github.com/OPCFoundation/UA-Nodeset/archive/
+DISTFILES =		open62541-{archive/refs/tags/v}${VERSION}.tar.gz \
+			UA-1.04.5-2020-03-06.tar.gz:0
 
 MODULES =		devel/cmake
 
@@ -39,7 +42,6 @@ CONFIGURE_ARGS =	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
 			-DOPEN62541_VERSION=v${VERSION} \
 			-DBUILD_SHARED_LIBS=ON \
 			-DUA_ENABLE_ENCRYPTION=ON \
-			-DUA_NAMESPACE_ZERO=REDUCED \
 			-DUA_ENABLE_AMALGAMATION=OFF \
 			-DUA_PACK_DEBIAN=ON \
 			-DUA_BUILD_TOOLS=ON \
@@ -48,5 +50,21 @@ CONFIGURE_ARGS =	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 ALL_TARGET =		all doc_pdf
+
+FLAVORS =		ns0_full
+FLAVOR ?=
+
+.if ${FLAVOR:Mns0_full}
+CONFIGURE_ARGS +=	-DUA_NAMESPACE_ZERO=FULL \
+			-DUA_ENABLE_MICRO_EMB_DEV_PROFILE=ON
+.else
+CONFIGURE_ARGS +=	-DUA_NAMESPACE_ZERO=REDUCED
+.endif
+
+.if ${FLAVOR:Mns0_full}
+post-extract:
+	rmdir ${WRKSRC}/deps/ua-nodeset/
+	mv ${WRKDIR}/UA-Nodeset-UA-*/ ${WRKSRC}/deps/ua-nodeset/
+.endif
 
 .include <bsd.port.mk>
