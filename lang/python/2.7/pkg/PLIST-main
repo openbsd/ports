@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.27 2021/03/22 17:35:26 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.28 2021/07/30 20:01:19 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-${VERSION_SPEC}
@@ -2032,11 +2032,11 @@ lib/python2.7/pipes.pyo
 lib/python2.7/pkgutil.py
 lib/python2.7/pkgutil.pyc
 lib/python2.7/pkgutil.pyo
-lib/python2.7/plat-openbsd6/
-lib/python2.7/plat-openbsd6/IN.py
-lib/python2.7/plat-openbsd6/IN.pyc
-lib/python2.7/plat-openbsd6/IN.pyo
-lib/python2.7/plat-openbsd6/regen
+lib/python2.7/plat-${PY_PLATFORM}/
+lib/python2.7/plat-${PY_PLATFORM}/IN.py
+lib/python2.7/plat-${PY_PLATFORM}/IN.pyc
+lib/python2.7/plat-${PY_PLATFORM}/IN.pyo
+lib/python2.7/plat-${PY_PLATFORM}/regen
 lib/python2.7/platform.py
 lib/python2.7/platform.pyc
 lib/python2.7/platform.pyo
