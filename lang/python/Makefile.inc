@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.136 2021/03/22 17:35:26 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.137 2021/07/30 19:54:18 sthen Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -131,7 +131,7 @@ SUBST_VARS +=	VERSION_SPEC
 USE_WXNEEDED = Yes
 
 .if ${VERSION} == "2.7"
-ALL_TARGET =	all ./Lib/plat-openbsd6
+ALL_TARGET =	all ./Lib/plat-openbsd${OSMAJOR}
 .else
 ALL_TARGET =	all
 .endif
