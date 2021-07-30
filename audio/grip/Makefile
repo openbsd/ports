@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.70 2021/07/29 20:08:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.71 2021/07/30 22:50:19 cwen Exp $
 
 COMMENT=		front-end to external cd audio rippers and mp3 encoders
 
-DISTNAME=		grip-4.2.0
-REVISION=		0
+DISTNAME=		grip-4.2.2
+
 CATEGORIES=		audio
 
 HOMEPAGE=		http://sourceforge.net/projects/grip/
@@ -16,8 +16,9 @@ WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo cdda_interface
 WANTLIB += cdda_paranoia crypto curl expat ffi fontconfig freetype
 WANTLIB += fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gtk-x11-2.0 harfbuzz
-WANTLIB += iconv id3 intl m nghttp2 pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png ssl xcb xcb-render xcb-shm z
+WANTLIB += iconv id3 intl jpeg m nghttp2 pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png ssl xcb xcb-render xcb-shm
+WANTLIB += z
 
 COMPILER=		base-clang ports-gcc base-gcc
 
@@ -32,7 +33,8 @@ LIB_DEPENDS=		audio/cdparanoia \
 			net/curl \
 			x11/gtk+2
 
-RUN_DEPENDS=		audio/vorbis-tools
+RUN_DEPENDS=		audio/vorbis-tools \
+			x11/gtk+3,-guic
 
 BUILD_DEPENDS=		devel/gettext,-tools
 
