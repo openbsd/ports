@@ -1,0 +1,181 @@
+$OpenBSD: patch-alc_backends_sndio_cpp,v 1.1 2021/07/30 12:47:54 brynet Exp $
+
+Revert 5cffe7e50a2885d9b392c15f2cd3941cac49692c and b4a52321c4ad8e8bc0eb29d2cdae2c043fc405e1
+which break the backend.
+
+Index: alc/backends/sndio.cpp
+--- alc/backends/sndio.cpp.orig
++++ alc/backends/sndio.cpp
+@@ -57,7 +57,7 @@ struct SndioPlayback final : public BackendBase {
+ 
+     sio_hdl *mSndHandle{nullptr};
+ 
+-    al::vector<al::byte> mBuffer;
++    al::vector<ALubyte> mBuffer;
+ 
+     std::atomic<bool> mKillNow{true};
+     std::thread mThread;
+@@ -74,24 +74,16 @@ SndioPlayback::~SndioPlayback()
+ 
+ int SndioPlayback::mixerProc()
+ {
+-    sio_par par;
+-    sio_initpar(&par);
+-    if(!sio_getpar(mSndHandle, &par))
+-    {
+-        mDevice->handleDisconnect("Failed to get device parameters");
+-        return 1;
+-    }
+-
+-    const size_t frameStep{par.pchan};
+-    const size_t frameSize{frameStep * par.bps};
+-
+     SetRTPriority();
+     althrd_setname(MIXER_THREAD_NAME);
+ 
+-    while(!mKillNow.load(std::memory_order_acquire)
+-        && mDevice->Connected.load(std::memory_order_acquire))
++    const size_t frameStep{mDevice->channelsFromFmt()};
++    const uint frameSize{mDevice->frameSizeFromFmt()};
++
++    while(!mKillNow.load(std::memory_order_acquire) &&
++          mDevice->Connected.load(std::memory_order_acquire))
+     {
+-        al::byte *WritePtr{mBuffer.data()};
++        ALubyte *WritePtr{mBuffer.data()};
+         size_t len{mBuffer.size()};
+ 
+         mDevice->renderSamples(WritePtr, static_cast<uint>(len/frameSize), frameStep);
+@@ -135,47 +127,35 @@ bool SndioPlayback::reset()
+     sio_initpar(&par);
+ 
+     par.rate = mDevice->Frequency;
+-    switch(mDevice->FmtChans)
+-    {
+-    case DevFmtMono   : par.pchan = 1; break;
+-    case DevFmtQuad   : par.pchan = 4; break;
+-    case DevFmtX51Rear: // fall-through - "Similar to 5.1, except using rear channels instead of sides"
+-    case DevFmtX51    : par.pchan = 6; break;
+-    case DevFmtX61    : par.pchan = 7; break;
+-    case DevFmtX71    : par.pchan = 8; break;
++    par.pchan = ((mDevice->FmtChans != DevFmtMono) ? 2 : 1);
+ 
+-    // fall back to stereo for Ambi3D
+-    case DevFmtAmbi3D : // fall-through
+-    case DevFmtStereo : par.pchan = 2; break;
+-    }
+-
+     switch(mDevice->FmtType)
+     {
+-    case DevFmtByte:
+-        par.bits = 8;
+-        par.sig = 1;
+-        break;
+-    case DevFmtUByte:
+-        par.bits = 8;
+-        par.sig = 0;
+-        break;
+-    case DevFmtFloat:
+-    case DevFmtShort:
+-        par.bits = 16;
+-        par.sig = 1;
+-        break;
+-    case DevFmtUShort:
+-        par.bits = 16;
+-        par.sig = 0;
+-        break;
+-    case DevFmtInt:
+-        par.bits = 32;
+-        par.sig = 1;
+-        break;
+-    case DevFmtUInt:
+-        par.bits = 32;
+-        par.sig = 0;
+-        break;
++        case DevFmtByte:
++            par.bits = 8;
++            par.sig = 1;
++            break;
++        case DevFmtUByte:
++            par.bits = 8;
++            par.sig = 0;
++            break;
++        case DevFmtFloat:
++        case DevFmtShort:
++            par.bits = 16;
++            par.sig = 1;
++            break;
++        case DevFmtUShort:
++            par.bits = 16;
++            par.sig = 0;
++            break;
++        case DevFmtInt:
++            par.bits = 32;
++            par.sig = 1;
++            break;
++        case DevFmtUInt:
++            par.bits = 32;
++            par.sig = 0;
++            break;
+     }
+     par.le = SIO_LE_NATIVE;
+ 
+@@ -202,28 +182,8 @@ bool SndioPlayback::reset()
+     }
+ 
+     mDevice->Frequency = par.rate;
++    mDevice->FmtChans = ((par.pchan==1) ? DevFmtMono : DevFmtStereo);
+ 
+-    if(par.pchan < 2)
+-    {
+-        if(mDevice->FmtChans != DevFmtMono)
+-        {
+-            WARN("Got %u channel for %s\n", par.pchan, DevFmtChannelsString(mDevice->FmtChans));
+-            mDevice->FmtChans = DevFmtMono;
+-        }
+-    }
+-    else if((par.pchan == 2 && mDevice->FmtChans != DevFmtStereo)
+-        || par.pchan == 3
+-        || (par.pchan == 4 && mDevice->FmtChans != DevFmtQuad)
+-        || par.pchan == 5
+-        || (par.pchan == 6 && mDevice->FmtChans != DevFmtX51 && mDevice->FmtChans != DevFmtX51Rear)
+-        || (par.pchan == 7 && mDevice->FmtChans != DevFmtX61)
+-        || (par.pchan == 8 && mDevice->FmtChans != DevFmtX71)
+-        || par.pchan > 8)
+-    {
+-        WARN("Got %u channels for %s\n", par.pchan, DevFmtChannelsString(mDevice->FmtChans));
+-        mDevice->FmtChans = DevFmtStereo;
+-    }
+-
+     if(par.bits == 8 && par.sig == 1)
+         mDevice->FmtType = DevFmtByte;
+     else if(par.bits == 8 && par.sig == 0)
+@@ -247,15 +207,8 @@ bool SndioPlayback::reset()
+     mDevice->UpdateSize = par.round;
+     mDevice->BufferSize = par.bufsz + par.round;
+ 
+-    mBuffer.resize(mDevice->UpdateSize * par.pchan*par.bps);
+-    if(par.sig == 1)
+-        std::fill(mBuffer.begin(), mBuffer.end(), al::byte{});
+-    else if(par.bits == 8)
+-        std::fill_n(mBuffer.data(), mBuffer.size(), al::byte(0x80));
+-    else if(par.bits == 16)
+-        std::fill_n(reinterpret_cast<uint16_t*>(mBuffer.data()), mBuffer.size()/2, 0x8000);
+-    else if(par.bits == 32)
+-        std::fill_n(reinterpret_cast<uint32_t*>(mBuffer.data()), mBuffer.size()/4, 0x80000000u);
++    mBuffer.resize(mDevice->UpdateSize * mDevice->frameSizeFromFmt());
++    std::fill(mBuffer.begin(), mBuffer.end(), 0);
+ 
+     return true;
+ }
+@@ -323,8 +276,8 @@ int SndioCapture::recordProc()
+ 
+     const uint frameSize{mDevice->frameSizeFromFmt()};
+ 
+-    while(!mKillNow.load(std::memory_order_acquire)
+-        && mDevice->Connected.load(std::memory_order_acquire))
++    while(!mKillNow.load(std::memory_order_acquire) &&
++          mDevice->Connected.load(std::memory_order_acquire))
+     {
+         auto data = mRing->getWriteVector();
+         size_t todo{data.first.len + data.second.len};
