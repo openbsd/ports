@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2021/07/30 20:01:19 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2021/07/30 20:04:55 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-${VERSION_SPEC}
@@ -228,9 +228,9 @@ lib/python3.9/__pycache__/_sitebuiltins.cpython-39.pyc
 lib/python3.9/__pycache__/_strptime.cpython-39.opt-1.pyc
 lib/python3.9/__pycache__/_strptime.cpython-39.opt-2.pyc
 lib/python3.9/__pycache__/_strptime.cpython-39.pyc
-lib/python3.9/__pycache__/_sysconfigdata__${PY_PLATFORM}.cpython-39.opt-1.pyc
-lib/python3.9/__pycache__/_sysconfigdata__${PY_PLATFORM}.cpython-39.opt-2.pyc
-lib/python3.9/__pycache__/_sysconfigdata__${PY_PLATFORM}.cpython-39.pyc
+lib/python3.9/__pycache__/_sysconfigdata__${PY_PLATFORM}_.cpython-39.opt-1.pyc
+lib/python3.9/__pycache__/_sysconfigdata__${PY_PLATFORM}_.cpython-39.opt-2.pyc
+lib/python3.9/__pycache__/_sysconfigdata__${PY_PLATFORM}_.cpython-39.pyc
 lib/python3.9/__pycache__/_threading_local.cpython-39.opt-1.pyc
 lib/python3.9/__pycache__/_threading_local.cpython-39.opt-2.pyc
 lib/python3.9/__pycache__/_threading_local.cpython-39.pyc
@@ -715,7 +715,7 @@ lib/python3.9/_pydecimal.py
 lib/python3.9/_pyio.py
 lib/python3.9/_sitebuiltins.py
 lib/python3.9/_strptime.py
-lib/python3.9/_sysconfigdata__${PY_PLATFORM}.py
+lib/python3.9/_sysconfigdata__${PY_PLATFORM}_.py
 lib/python3.9/_threading_local.py
 lib/python3.9/_weakrefset.py
 lib/python3.9/abc.py
