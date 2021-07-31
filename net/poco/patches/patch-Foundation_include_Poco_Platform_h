@@ -1,17 +1,18 @@
-$OpenBSD: patch-Foundation_include_Poco_Platform_h,v 1.1 2017/09/27 08:13:00 phessler Exp $
+$OpenBSD: patch-Foundation_include_Poco_Platform_h,v 1.2 2021/07/31 13:40:15 jca Exp $
 
 Index: Foundation/include/Poco/Platform.h
 --- Foundation/include/Poco/Platform.h.orig
 +++ Foundation/include/Poco/Platform.h
-@@ -145,6 +145,7 @@
+@@ -145,6 +145,8 @@
  #define POCO_ARCH_S390    0x0c
  #define POCO_ARCH_SH      0x0d
  #define POCO_ARCH_NIOS2   0x0e
 +#define POCO_ARCH_AARCH64 0x0f
++#define POCO_ARCH_RISCV64 0x10
  
  
  #if defined(__ALPHA) || defined(__alpha) || defined(__alpha__) || defined(_M_ALPHA)
-@@ -187,6 +188,9 @@
+@@ -187,6 +189,9 @@
  	#else
  		#define POCO_ARCH_LITTLE_ENDIAN 1
  	#endif
@@ -21,3 +22,13 @@ Index: Foundation/include/Poco/Platform.h
  #elif defined(__m68k__)
  	#define POCO_ARCH POCO_ARCH_M68K
  	#define POCO_ARCH_BIG_ENDIAN 1
+@@ -208,6 +213,9 @@
+ 		#define POCO_ARCH_BIG_ENDIAN 1
+ 	#endif
+ 
++#elif defined(__riscv) && (__riscv_xlen == 64)
++	#define POCO_ARCH POCO_ARCH_RISCV64
++	#define POCO_ARCH_LITTLE_ENDIAN 1
+ #endif
+ 
+ 
