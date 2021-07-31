@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2020/11/19 08:01:26 benoit Exp $
+# $OpenBSD: Makefile,v 1.31 2021/07/31 09:05:10 tb Exp $
 
 COMMENT=	c++ compliant CGI applications libraries
 
@@ -22,6 +22,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 CONFIGURE_STYLE = 	autoconf
 AUTOCONF_VERSION = 	2.69
 CONFIGURE_ARGS =	--enable-static
+CONFIGURE_ENV =		ac_cv_prog_DOXYGEN=/bin/echo
 
 FAKE_FLAGS=	docdir=${PREFIX}/share/doc/cgicc
 
