@@ -1,6 +1,15 @@
-$OpenBSD: patch-alc_backends_sndio_cpp,v 1.1 2021/07/30 12:47:54 brynet Exp $
+$OpenBSD: patch-alc_backends_sndio_cpp,v 1.2 2021/07/31 00:27:59 brynet Exp $
 
-Revert 5cffe7e50a2885d9b392c15f2cd3941cac49692c and b4a52321c4ad8e8bc0eb29d2cdae2c043fc405e1
+Revert..
+
+sndio: Support more than 2 channels
+5cffe7e50a2885d9b392c15f2cd3941cac49692c
+
+and
+
+Use a safer layout if sndio changes the channel count
+b4a52321c4ad8e8bc0eb29d2cdae2c043fc405e1
+
 which break the backend.
 
 Index: alc/backends/sndio.cpp
