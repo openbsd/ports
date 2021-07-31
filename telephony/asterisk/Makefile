@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.347 2021/07/23 00:55:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.348 2021/07/31 16:37:56 pascal Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
@@ -7,12 +7,7 @@ PJ_V=		2.10
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
 PKGNAME-main=	asterisk-${VER}
-
-.if ${MACHINE_ARCH} == i386
-# i386 issue linking libasteriskpj.so.0.0:
-# ld: error: cli_telnet.c:(.debug_info+0x1DF087): has non-ABS relocation R_386_GOTOFF against symbol 'CR_LF.6215'
-USE_LLD=	No
-.endif
+REVISION=	0
 
 CATEGORIES=	telephony
 

@@ -1,18 +1,11 @@
-# $OpenBSD: Makefile,v 1.49 2021/01/04 14:06:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2021/07/31 16:37:56 pascal Exp $
 
 COMMENT=		maths, science and engineering modules for Python
 
 MODPY_EGG_VERSION=	1.5.3
-REVISION=		0
+REVISION=		1
 DISTNAME=		scipy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-
-# XXX gcc 8 issue:
-# ld: error: dfft_subr_6.f:(.debug_loc+0x2A7D): has non-ABS relocation R_386_GOTOFF against symbol 'ntryh.3712'
-# ld: error: dfft_subr_6.f:(.debug_loc+0x2A7D): has non-ABS relocation R_386_GOTOFF against symbol 'ntryh.3712'
-.if ${MACHINE_ARCH} == i386
-USE_LLD = No
-.endif
 
 CATEGORIES=		math devel
 
