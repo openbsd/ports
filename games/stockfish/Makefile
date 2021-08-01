@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2021/02/27 03:29:37 bcallah Exp $
+# $OpenBSD: Makefile,v 1.13 2021/08/01 14:23:28 jca Exp $
 
 V =		13
 COMMENT =	open source chess engine
@@ -26,6 +26,7 @@ COMPILER =	base-clang ports-gcc
 USE_GMAKE =	Yes
 MAKE_FLAGS =	CC="${CC}" CXX="${CXX}"
 
+.include <bsd.port.arch.mk>
 # Some archs have platform-specific enhancements.
 .if ${MACHINE_ARCH:Mamd64}
 MAKE_ENV =	ARCH=x86-64
@@ -37,9 +38,7 @@ MAKE_ENV =	ARCH=armv7
 MAKE_ENV =	ARCH=ppc-32
 .elif ${MACHINE_ARCH:Mpowerpc64}
 MAKE_ENV =	ARCH=ppc-64
-.elif ${MACHINE_ARCH:Maarch64} || ${MACHINE_ARCH:Malpha} || \
-	${MACHINE_ARCH:Msparc64} || ${MACHINE_ARCH:Mmips64} || \
-	${MACHINE_ARCH:Mmips64el}
+.elif ${PROPERTIES:Mlp64}
 MAKE_ENV =	ARCH=general-64
 .else
 MAKE_ENV =	ARCH=general-32
