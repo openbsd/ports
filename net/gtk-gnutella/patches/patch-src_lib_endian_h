@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_lib_endian_h,v 1.1 2018/01/13 12:18:46 phessler Exp $
+$OpenBSD: patch-src_lib_endian_h,v 1.2 2021/08/01 08:56:09 jca Exp $
 
 Index: src/lib/endian.h
 --- src/lib/endian.h.orig
@@ -11,3 +11,11 @@ Index: src/lib/endian.h
  	defined(__alpha__) || \
  	defined(__arm__) || \
  	defined(__hppa__) || \
+@@ -254,6 +255,7 @@ poke_le64(gpointer p, guint64 v)
+ 	defined(__ns32k__) || \
+ 	defined(__powerpc__) || \
+ 	defined(__ppc__) || \
++	defined(__riscv) || \
+ 	defined(__s390__) || \
+ 	defined(__sh__) || \
+ 	defined(__sparc__) || \
