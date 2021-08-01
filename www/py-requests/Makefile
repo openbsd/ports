@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.46 2021/07/31 19:52:29 danj Exp $
+# $OpenBSD: Makefile,v 1.47 2021/08/01 11:54:57 sthen Exp $
 
 COMMENT=		elegant and simple HTTP library for Python
 
-MODPY_EGG_VERSION=	2.25.1
+MODPY_EGG_VERSION=	2.26.0
 DISTNAME=		requests-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		1
 
 CATEGORIES=		www
 
@@ -24,17 +23,23 @@ MODPY_PYTEST=		Yes
 MODPY_SETUPTOOLS=	Yes
 TEST_ENV=		PY_IGNORE_IMPORTMISMATCH=1
 
+# upstream prefers charset_normalizer instead of chardet for py3 (but still
+# chardet on py2). maybe switch over if that's added to ports. can also use
+# idna 3.x on py3.
 RUN_DEPENDS=		devel/py-certifi${MODPY_FLAVOR} \
 			net/py-idna${MODPY_FLAVOR} \
 			textproc/py-chardet${MODPY_FLAVOR} \
 			www/py-urllib3${MODPY_FLAVOR}
 
 .if ${FLAVOR:Mpython3}
+RUN_DEPENDS+=		archivers/py-brotli${MODPY_FLAVOR}
+
 TEST_DEPENDS=		devel/py-test-cov${MODPY_FLAVOR} \
 			devel/py-test-mock${MODPY_FLAVOR} \
 			devel/py-test-httpbin${MODPY_FLAVOR} \
 			devel/py-test-xdist${MODPY_FLAVOR} \
 			net/py-socks${MODPY_FLAVOR} \
+			security/py-trustme${MODPY_FLAVOR} \
 			www/py-urllib3${MODPY_FLAVOR}
 .else
 NO_TEST =		Yes
