@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2021/06/17 07:09:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2021/08/01 21:06:54 sthen Exp $
 
 COMMENT=	full-text search engine based on Lucene
 
@@ -36,6 +36,6 @@ do-install:
 	ln -s ../share/solr/bin/solr ${PREFIX}/bin
 	cd ${PREFIX}/share/solr/bin; \
 	    ${SUBST_CMD} solr solr.in.sh; \
-	    rm *.orig *.beforesubst
+	    rm *${PATCHORIG} *.beforesubst
 
 .include <bsd.port.mk>

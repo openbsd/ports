@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2021/02/24 16:49:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2021/08/01 21:06:54 sthen Exp $
 
 COMMENT=	roundcube plugin: context-sensitive menus
 
@@ -33,6 +33,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}/contextmenu
 	cp -Rp ${WRKDIST}/* ${INSTDIR}/contextmenu
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
-	find ${INSTDIR} \( -name \*.orig -or -name \*.src \) -delete
+	find ${INSTDIR} \( -name \*${PATCHORIG} -or -name \*.src \) -delete
 
 .include <bsd.port.mk>

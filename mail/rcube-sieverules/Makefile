@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2021/02/24 16:49:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2021/08/01 21:06:54 sthen Exp $
 
 COMMENT=	roundcube plugin: sieve rules (managesieve)
 
@@ -33,6 +33,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}/sieverules
 	cp -Rp ${WRKDIST}/* ${INSTDIR}/sieverules
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
-	find ${INSTDIR} \( -name \*.orig -or -name \*.src \) -delete
+	find ${INSTDIR} \( -name \*${PATCHORIG} -or -name \*.src \) -delete
 
 .include <bsd.port.mk>

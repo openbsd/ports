@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2021/04/23 21:12:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2021/08/01 21:06:54 sthen Exp $
 
 COMMENT=	monitor webpages for updates
 
@@ -37,7 +37,7 @@ TEST_DEPENDS=	devel/py-codestyle${MODPY_FLAVOR} \
 post-install:
 	mv ${PREFIX}/share/man/* ${PREFIX}/man/
 	mv ${PREFIX}/share/urlwatch/examples ${PREFIX}/share/examples/urlwatch
-	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/urlwatch/config.py.orig
+	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/urlwatch/*${PATCHORIG}
 	rmdir ${PREFIX}/share/{man,urlwatch}
 
 .include <bsd.port.mk>

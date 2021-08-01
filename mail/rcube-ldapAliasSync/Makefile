@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2021/02/24 16:49:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/08/01 21:06:54 sthen Exp $
 
 COMMENT=	roundcube plugin: LDAP Alias Sync
 
@@ -33,6 +33,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}/ldapAliasSync
 	cp -Rp ${WRKDIST}/* ${INSTDIR}/ldapAliasSync
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
-	find ${INSTDIR} \( -name \*.orig -or -name \*.src \) -delete
+	find ${INSTDIR} \( -name \*${PATCHORIG} -or -name \*.src \) -delete
 
 .include <bsd.port.mk>

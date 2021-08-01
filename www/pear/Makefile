@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2021/02/24 16:49:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2021/08/01 21:06:54 sthen Exp $
 
 COMMENT-main=	base classes for common PHP tasks
 COMMENT-utils=	utilities for managing pear extensions
@@ -55,7 +55,7 @@ do-install:
 	perl -pi -e "s,OPENBSD_PEAR_ROOT,'${PREFIX-main}/pear',g" \
 		${WRKINST}${PREFIX-main}/pear/lib/PEAR/Config.php
 	touch ${WRKINST}${PREFIX-main}/pear/{lib/,}.lock
-	rm ${PREFIX}/bin/{pear,peardev,pecl}{.beforesubst,.orig}*
+	rm ${PREFIX}/bin/{pear,peardev,pecl}{.beforesubst,${PATCHORIG}}*
 	rmdir ${WRKINST}${PREFIX-main}/pear/{cfg,htdocs}
 	@printf "\\n*** beware if running 'make plist', the lock file should not be removed!\\n\\n"
 
