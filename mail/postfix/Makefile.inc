@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.95 2020/12/23 21:17:59 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.96 2021/08/01 07:16:37 sthen Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -44,7 +44,7 @@ ALL_TARGET=	default
 
 NO_TEST=	Yes
 
-FLAVORS+=	sasl2 ldap mysql pgsql db4
+FLAVORS+=	sasl2 ldap mysql pgsql
 FLAVOR?=
 
 .if ${FLAVOR:Msasl2}
@@ -73,13 +73,6 @@ LIB_DEPENDS+=	databases/postgresql
 WANTLIB+=	pq>=3
 MAKE_CCARGS+=	-DHAS_PGSQL -I${LOCALBASE}/include/postgresql
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lpq
-.endif
-
-.if ${FLAVOR:Mdb4}
-LIB_DEPENDS+=	databases/db/v4>=4,<5
-WANTLIB+=	lib/db4/db>=4
-MAKE_CCARGS+=	-I${LOCALBASE}/include/db4
-MAKE_AUXLIBS+=	-L${LOCALBASE}/lib/db4 -ldb
 .endif
 
 pre-configure:
