@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:47:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2021/08/01 11:04:35 cwen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 mips64 mips64el powerpc sparc64
 
@@ -40,6 +40,17 @@ SUBST_VARS +=		KERNEL V
 # On i386 LLVM runs crashes/runs out of memory compiling engine.c
 .if ${MACHINE_ARCH} == "i386"
 PATCH_LIST =		patch-* patch_i386-*
+.endif
+
+# With base-clang on powerpc it either runs out of memory with i386 patches or
+# -O1. Using -O0 makes preforth segfault. Use ports-gcc instead.
+MODULES +=		gcc4
+MODGCC4_ARCHS =		powerpc
+MODGCC4_LANGS =		c
+
+# We still need -O0 due to high memory usage though.
+.if ${MACHINE_ARCH} == "powerpc"
+CFLAGS +=		-O0
 .endif
 
 .include <bsd.port.arch.mk>
