@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2111 2021/07/26 18:16:44 anton Exp $
+# $OpenBSD: Makefile,v 1.2112 2021/08/01 12:21:08 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -172,6 +172,7 @@
      SUBDIR += git-cvs
      SUBDIR += git-lfs
      SUBDIR += github-backup
+     SUBDIR += github-cli
      SUBDIR += gitsh
      SUBDIR += glade
      SUBDIR += glib2
