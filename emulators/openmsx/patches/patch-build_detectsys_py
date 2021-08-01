@@ -1,0 +1,14 @@
+$OpenBSD: patch-build_detectsys_py,v 1.6 2021/08/01 00:18:05 jca Exp $
+
+Index: build/detectsys.py
+--- build/detectsys.py.orig
++++ build/detectsys.py
+@@ -48,6 +48,8 @@ def detectCPU():
+ 		return 'sheb' if cpu.endswith('eb') else 'sh'
+ 	elif cpu == 'avr32':
+ 		return 'avr32'
++	elif cpu == 'riscv64':
++		return 'riscv64'
+ 	elif cpu == '':
+ 		# Python couldn't figure it out.
+ 		os = system().lower()
