@@ -1,0 +1,4 @@
+gh is GitHub on the command line. It brings pull requests, issues, and
+other GitHub concepts to the terminal next to where you are already
+working with git and your code. It is available for repositories hosted
+on GitHub.com and GitHub Enterprise Server 2.20+.
