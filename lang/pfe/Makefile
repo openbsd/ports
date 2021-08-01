@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2021/01/23 13:54:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2021/08/01 14:42:18 jca Exp $
 
 BROKEN-powerpc=	does not build, error: lvalue required as increment operand
 BROKEN-powerpc64=	does not build, error: lvalue required as increment operand
-BROKEN-arm=	missing assembly for arch
-BROKEN-aarch64=	missing assembly for arch
+# missing assembly for arch
+NOT_FOR_ARCHS=	arm aarch64 riscv64
 
 COMMENT=	Portable Forth Environment
 
