@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_config_json,v 1.17 2021/07/02 13:52:27 pvk Exp $
+$OpenBSD: patch-config_config_json,v 1.18 2021/08/01 10:01:03 pvk Exp $
 
 Index: config/config.json
 --- config/config.json.orig
@@ -108,8 +108,8 @@ Index: config/config.json
      "Plugins": {},
      "PluginStates": {
        "com.mattermost.nps": {
-@@ -587,11 +587,11 @@
-     "CustomDataRetentionEnabled": false
+@@ -588,11 +588,11 @@
+     "TimedDND": false
    },
    "ImportSettings": {
 -    "Directory": "./import",
