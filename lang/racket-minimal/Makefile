@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2021/07/27 20:36:26 juanfra Exp $
+# $OpenBSD: Makefile,v 1.75 2021/08/02 15:39:40 juanfra Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc powerpc64 sparc64
 
@@ -92,7 +92,7 @@ CFLAGS += -ggdb3
 #   https://github.com/racket/racket/issues/1239
 # - Racket builds fine with -O2 (and -O1 and -Os) on powerpc but
 #   it doesn't pass the tests.
-# - CS only supports OpenBSD on amd64. And maybe i386.
+# - CS only supports OpenBSD on amd64.
 .if ${FLAVOR:Mno_jit}
 ONLY_FOR_ARCHS =	arm amd64 i386 powerpc
 CONFIGURE_ARGS +=	--enable-bcdefault \
@@ -104,7 +104,8 @@ CONFIGURE_ARGS +=	--enable-csdefault \
 			--enable-places \
 			--enable-futures
 .elif ${MACHINE_ARCH} == "i386"
-CONFIGURE_ARGS +=	--enable-csdefault \
+CONFIGURE_ARGS +=	--enable-bcdefault \
+			--enable-jit \
 			--enable-places \
 			--enable-futures
 .elif ${MACHINE_ARCH} == "arm"
