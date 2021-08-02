@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2021/07/14 03:50:15 kirby Exp $
+# $OpenBSD: Makefile,v 1.19 2021/08/02 19:13:28 cwen Exp $
 
 COMMENT=		rogue-like zombie survival game
 CATEGORIES=		games
@@ -30,7 +30,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 
 LIB_DEPENDS=		devel/gettext,-runtime
 
-MAKE_ENV=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+MAKE_ENV=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAKE_FLAGS=		ASTYLE=0 RELEASE=1 USE_XDG_DIR=1 \
 			LINTJSON=0 LANGUAGES=all
@@ -52,6 +52,12 @@ MAN_TILES=		-tiles
 USE_GMAKE=		Yes
 
 NO_TEST=		Yes
+
+# relocation truncated to fit: R_PPC_PLTREL24 -- to be removed once lld is the
+# default linker on powerpc
+.if ${MACHINE_ARCH} == "powerpc"
+LDFLAGS+=		-Wl,-relax
+.endif
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/cataclysm${MAN_TILES}.6 ${PREFIX}/man/man6/
