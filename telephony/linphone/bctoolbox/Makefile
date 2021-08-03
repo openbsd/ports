@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2021/07/10 16:56:03 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2021/08/03 11:15:44 cwen Exp $
 
 COMMENT =	utilities library used by linphone stack
 
 MODULE =	bctoolbox
+REVISION =	0
 
 SHARED_LIBS +=	bctoolbox 0.0 # 1
 #SHARED_LIBS +=	bctoolbox-tester 0.0 # 1
@@ -16,7 +17,7 @@ LIB_DEPENDS =	security/polarssl \
 		converters/libiconv
 
 MODCMAKE_DEBUG=Yes
-WANTLIB +=	${COMPILER_LIBCXX} iconv m mbedcrypto mbedtls mbedx509
+WANTLIB +=	${COMPILER_LIBCXX} execinfo iconv m mbedcrypto mbedtls mbedx509
 # regen PLIST if building with tests
 #LIB_DEPENDS +=	telephony/linphone/bcunit
 #WANTLIB +=	bcunit

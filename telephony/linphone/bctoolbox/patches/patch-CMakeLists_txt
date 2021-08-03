@@ -1,4 +1,6 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2021/07/10 12:03:19 landry Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2021/08/03 11:15:44 cwen Exp $
+
+Hunk #3: ensure that libexecinfo symbols are resolved (fix the build on ld.bfd archs)
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
@@ -25,3 +27,16 @@ Index: CMakeLists.txt
  
  if(ENABLE_MBEDTLS)
  	find_package(MbedTLS)
+@@ -151,7 +149,11 @@ set(EXPORT_TARGETS_NAME "bctoolbox")
+ 
+ check_library_exists("rt" "clock_gettime" "" HAVE_LIBRT)
+ check_library_exists("dl" "dladdr" "" HAVE_LIBDL)
+-check_include_file("execinfo.h" HAVE_EXECINFO)
++
++check_library_exists("execinfo" "backtrace" "" HAVE_EXECINFO)
++if(HAVE_EXECINFO)
++	SET(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -lexecinfo")
++endif()
+ 
+ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h)
+ set_source_files_properties(${CMAKE_CURRENT_BINARY_DIR}/config.h PROPERTIES GENERATED ON)
