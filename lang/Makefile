@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.249 2021/03/01 12:54:02 semarie Exp $
+# $OpenBSD: Makefile,v 1.250 2021/08/03 10:05:00 pascal Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -8,6 +8,7 @@
      SUBDIR += antlr3
      SUBDIR += apl
      SUBDIR += bacon
+     SUBDIR += bootgcc
      SUBDIR += brainfuck
      SUBDIR += brandy
      SUBDIR += chibi-scheme
