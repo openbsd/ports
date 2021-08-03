@@ -1,21 +1,20 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:51:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/08/03 10:29:53 matthieu Exp $
 
 COMMENT=	top-like X server resources usage display tool
-DISTNAME=	xrestop-0.4
-REVISION=	3
+DISTNAME=	xrestop-0.5
 
 CATEGORIES=	x11
 
-HOMEPAGE=	http://www.freedesktop.org/wiki/Software/xrestop
+HOMEPAGE=	https://www.freedesktop.org/wiki/Software/xrestop/
 
 MAINTAINER=	Matthieu Herrb <matthieu@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://projects.o-hand.com/sources/xrestop/
-
 WANTLIB=	XRes Xext X11 Xau Xdmcp curses c xcb
+
+MASTER_SITES =	${MASTER_SITE_XORG:=app/}
 
 SEPARATE_BUILD=	Yes
 
