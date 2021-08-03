@@ -1,0 +1,14 @@
+$OpenBSD: patch-gcc_tree-vect-loop_c,v 1.1.1.1 2021/08/03 10:04:15 pascal Exp $
+
+Index: gcc/tree-vect-loop.c
+--- gcc/tree-vect-loop.c.orig
++++ gcc/tree-vect-loop.c
+@@ -55,6 +55,8 @@ along with GCC; see the file COPYING3.  If not see
+ #include "vec-perm-indices.h"
+ #include "tree-eh.h"
+ 
++#define vec_step vec_step_
++
+ /* Loop Vectorization Pass.
+ 
+    This pass tries to vectorize loops.
