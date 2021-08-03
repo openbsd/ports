@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/07/27 11:55:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/08/03 15:23:46 semarie Exp $
 
 # building sys-info fails
 # error[E0308]: mismatched types
@@ -30,11 +30,9 @@ WANTLIB += c c++abi git2 m onig pthread
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
-MAKE_ENV +=		LIBGIT2_SYS_USE_PKG_CONFIG=1
-
 LIB_DEPENDS +=		devel/libgit2/libgit2 \
 			textproc/oniguruma
 
-.include <crates.inc>
+.include "crates.inc"
 
 .include <bsd.port.mk>
