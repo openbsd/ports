@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2021/07/25 00:04:09 kmos Exp $
+# $OpenBSD: Makefile,v 1.8 2021/08/03 21:09:13 sthen Exp $
 
 COMMENT =	lightweight game library for java
+
+BROKEN-i386 =	ld: error: undefined symbol: __stack_smash_handler
 
 V =		3.2.4alpha2
 DISTNAME =	lwjgl3-${V}
