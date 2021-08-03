@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2021/08/01 17:08:41 bket Exp $
+# $OpenBSD: Makefile,v 1.6 2021/08/03 04:59:15 bket Exp $
 
 COMMENT =		encrypted and deduplicated backup tool
 
-V =			0.10.0
+V =			0.10.2
 DISTNAME =		bupstash-v${V}
 PKGNAME =		bupstash-${V}
 
