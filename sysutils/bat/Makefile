@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/08/03 15:23:46 semarie Exp $
+# $OpenBSD: Makefile,v 1.4 2021/08/03 15:26:05 semarie Exp $
 
 # building sys-info fails
 # error[E0308]: mismatched types
@@ -14,6 +14,8 @@ COMMENT =		cat(1) clone with wings
 GH_ACCOUNT =		sharkdp
 GH_PROJECT =		bat
 GH_TAGNAME =		v0.18.2
+
+REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -32,6 +34,9 @@ SEPARATE_BUILD =	Yes
 
 LIB_DEPENDS +=		devel/libgit2/libgit2 \
 			textproc/oniguruma
+
+# update git2 to cope with rust 1.54.0
+MODCARGO_CRATES_UPDATE += git2 libgit2-sys
 
 .include "crates.inc"
 
