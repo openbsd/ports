@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/08/04 09:45:29 cwen Exp $
 
 COMMENT =		inside-out objects with Moose
 
 DISTNAME =		MooseX-InsideOut-0.106
 CATEGORIES =		devel
-REVISION =		0
-
-MAINTAINER =		Charlene Wendling <julianaito@posteo.jp>
+REVISION =		1
 
 MODULES =		cpan
 PKG_ARCH =		*

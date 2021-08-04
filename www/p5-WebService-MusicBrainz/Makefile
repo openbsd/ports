@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:46:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/08/04 09:45:30 cwen Exp $
 
 COMMENT=		interface to the MusicBrainz v2.0 API
 DISTNAME=		WebService-MusicBrainz-1.0.5
 CATEGORIES=		www
-REVISION=		0
-
-MAINTAINER=		Charlene Wendling <cwen@openbsd.org>
+REVISION=		1
 
 # perl
 PERMIT_PACKAGE=	Yes

@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/08/04 09:45:30 cwen Exp $
 
 COMMENT =		add test failures if warnings are caught
 
 DISTNAME =		Test-FailWarnings-0.008
 CATEGORIES =		devel
-REVISION =		0
-
-MAINTAINER =		Charlene Wendling <julianaito@posteo.jp>
+REVISION =		1
 
 # Apache v2
 PERMIT_PACKAGE =	Yes

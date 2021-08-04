@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/08/04 09:45:30 cwen Exp $
 
 COMMENT =		minimal functions from Net::IP
 
 DISTNAME =		Net-IP-Minimal-0.06
 CATEGORIES =		net
-REVISION =		0
-
-MAINTAINER =		Charlene Wendling <julianaito@posteo.jp>
+REVISION =		1
 
 # perl
 PERMIT_PACKAGE =	Yes
