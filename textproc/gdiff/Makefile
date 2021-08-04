@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:49:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2021/08/04 08:48:24 sthen Exp $
 
 COMMENT=	GNU versions of the diff utilities
 
-VERSION=	3.7
+VERSION=	3.8
 EXTRACT_SUFX=	.tar.xz
 DISTNAME=	diffutils-${VERSION}
 PKGNAME=	gdiff-${VERSION}
 CATEGORIES=	textproc
 HOMEPAGE=	https://www.gnu.org/software/diffutils/
-REVISION=	0
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
