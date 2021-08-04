@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2021/02/03 16:18:33 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.32 2021/08/04 09:04:04 sthen Exp $
 @extraunexec rm -rf /var/log/certbot/* /var/lib/certbot/*
 bin/certbot
 bin/letsencrypt
@@ -14,6 +14,7 @@ lib/python${MODPY_VERSION}/site-packages/certbot/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/certbot/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/certbot/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/${MODPY_PYCACHE}achallenges.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/certbot/${MODPY_PYCACHE}configuration.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/${MODPY_PYCACHE}crypto_util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/${MODPY_PYCACHE}interfaces.${MODPY_PYC_MAGIC_TAG}pyc
@@ -29,7 +30,6 @@ lib/python${MODPY_VERSION}/site-packages/certbot/_internal/${MODPY_PYCACHE}accou
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/${MODPY_PYCACHE}auth_handler.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/${MODPY_PYCACHE}cert_manager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/certbot/_internal/${MODPY_PYCACHE}configuration.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/${MODPY_PYCACHE}eff.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/${MODPY_PYCACHE}error_handler.${MODPY_PYC_MAGIC_TAG}pyc
@@ -66,7 +66,6 @@ lib/python${MODPY_VERSION}/site-packages/certbot/_internal/cli/plugins_parsing.p
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/cli/subparsers.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/cli/verb_help.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/client.py
-lib/python${MODPY_VERSION}/site-packages/certbot/_internal/configuration.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/constants.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/display/
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/display/__init__.py
@@ -74,8 +73,10 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/certbot/_internal/displ
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/display/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/display/${MODPY_PYCACHE}completer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/display/${MODPY_PYCACHE}dummy_readline.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/certbot/_internal/display/${MODPY_PYCACHE}obj.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/display/completer.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/display/dummy_readline.py
+lib/python${MODPY_VERSION}/site-packages/certbot/_internal/display/obj.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/eff.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/error_handler.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/hooks.py
@@ -116,6 +117,7 @@ lib/python${MODPY_VERSION}/site-packages/certbot/compat/_path.py
 lib/python${MODPY_VERSION}/site-packages/certbot/compat/filesystem.py
 lib/python${MODPY_VERSION}/site-packages/certbot/compat/misc.py
 lib/python${MODPY_VERSION}/site-packages/certbot/compat/os.py
+lib/python${MODPY_VERSION}/site-packages/certbot/configuration.py
 lib/python${MODPY_VERSION}/site-packages/certbot/crypto_util.py
 lib/python${MODPY_VERSION}/site-packages/certbot/display/
 lib/python${MODPY_VERSION}/site-packages/certbot/display/__init__.py
