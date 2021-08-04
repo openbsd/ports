@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2021/07/22 00:12:10 kurt Exp $
+# $OpenBSD: Makefile,v 1.63 2021/08/04 22:18:26 kurt Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 aarch64 sparc64
 USE_WXNEEDED=	Yes
@@ -6,20 +6,19 @@ DPB_PROPERTIES=	parallel
 
 COMMENT=	OpenJDK Software Development Kit v${V}
 BASE_VER=	1.8.0
-UPDATE_VER=	292
-BUILD_VER=	b10
-BSD_PORT_REL=	2
+UPDATE_VER=	302
+BUILD_VER=	b08
+BSD_PORT_REL=	1
 V=		${BASE_VER}.${UPDATE_VER}.${BUILD_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${V}
 PKGSTEM=	jdk-${BASE_VER}
 EPOCH=		0
-REVISION=	2
 
 DIST_SUBDIR=	jdk
 DISTNAME=	jdk8u${UPDATE_VER}-${BUILD_VER}.${BSD_PORT_REL}
 BOOTJDK_DATE=	20210615
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-WRKDIST=	${WRKDIR}/openjdk-jdk8u-jdk8u${UPDATE_VER}-${BUILD_VER}.${BSD_PORT_REL}
+WRKDIST=	${WRKDIR}/jdk8u-jdk8u${UPDATE_VER}-${BUILD_VER}.${BSD_PORT_REL}
 
 CATEGORIES=	devel/jdk java
 
@@ -28,7 +27,7 @@ FLAVOR?=
 
 HOMEPAGE=	http://openjdk.java.net/
 
-MASTER_SITES=	https://github.com/battleblow/openjdk-jdk8u/archive/
+MASTER_SITES=	https://github.com/battleblow/jdk8u/archive/
 MASTER_SITES1=	https://spacehopper.org/mirrors/ \
 		http://www.intricatesoftware.com/distfiles/
 MASTER_SITES2=	${MASTER_SITE_APACHE:=ant/binaries/} \
