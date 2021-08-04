@@ -4,4 +4,4 @@ broken down by host, country, port, application (via deep packet inspection),
 AS number, etc. Flow information can also be dumped to ElasticSearch or
 MySQL/MariaDB.
 
-User guide: https://github.com/ntop/ntopng/blob/dev/doc/UserGuide.pdf
+User guide: https://www.ntop.org/guides/ntopng/

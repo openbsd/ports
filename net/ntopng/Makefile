@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2021/07/27 10:27:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2021/08/04 19:14:51 sthen Exp $
 
 COMMENT=	network traffic probe with web ui and deep packet inspection
 
@@ -8,6 +8,7 @@ GH_COMMIT=	025e96e6cbb61e0f7320acf1d4038fafbbf836fa
 NTOPNG_V=	4.2
 NTOPNG_D=	20210727
 DISTNAME=	ntopng-${NTOPNG_V}.${NTOPNG_D}
+REVISION=	0
 
 # ndpi does not have a particularly stable API so is pulled in directly
 # to this port; the shared lib for ndpi is built but not installed
