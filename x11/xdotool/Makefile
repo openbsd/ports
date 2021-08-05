@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.19 2020/01/14 16:28:56 stsp Exp $
+# $OpenBSD: Makefile,v 1.20 2021/08/05 11:26:20 sthen Exp $
 
 COMMENT=	fake keyboard and mouse input
 
-V =		3.20160805.1
+V =		3.20210804.2
 DISTNAME =	xdotool-${V}
 EPOCH=		0
-REVISION=	0
 
-SHARED_LIBS=	xdo 0.1	# 1.1
+SHARED_LIBS=	xdo 0.2
 
 CATEGORIES=	x11
 
-HOMEPAGE=	http://www.semicomplete.com/projects/xdotool/
+HOMEPAGE=	https://www.semicomplete.com/projects/xdotool/
 
 # BSD
 PERMIT_PACKAGE=	Yes
@@ -26,12 +25,10 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 LIB_DEPENDS=	x11/xkbcommon
 
-MAKE_FLAGS=	LIBVER=${LIBxdo_VERSION}
+MAKE_FLAGS=	VERLIBSUFFIX=so.${LIBxdo_VERSION} LIBNAMEFLAG=
 
 FAKE_FLAGS=	PREFIX="${PREFIX}" \
-		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-		INSTALL_DATA="${INSTALL_DATA}" \
-		INSTALL_MAN="${INSTALL_MAN}"
+		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
 # The regression test suite has way too many dependencies, so leave
 # it disabled for now

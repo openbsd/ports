@@ -1,27 +1,9 @@
-$OpenBSD: patch-Makefile,v 1.6 2018/03/05 14:31:37 sthen Exp $
+$OpenBSD: patch-Makefile,v 1.7 2021/08/05 11:26:20 sthen Exp $
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -12,26 +12,25 @@ DINSTALLLIB=$(DESTDIR)$(INSTALLLIB)
- DINSTALLMAN=$(DESTDIR)$(INSTALLMAN)
- DINSTALLINCLUDE=$(DESTDIR)$(INSTALLINCLUDE)
- 
--MAJOR=$(shell sh version.sh --major)
-+MAJOR?=$(shell sh version.sh --major)
-+MINOR?=$(shell sh version.sh --revision)
- VERSION=$(shell sh version.sh)
-+LIBVER?=$(MAJOR).$(MINOR)
- 
- WARNFLAGS+=-pedantic -Wall -W -Wundef \
-            -Wendif-labels -Wshadow -Wpointer-arith -Wbad-function-cast \
-            -Wcast-align -Wwrite-strings -Wstrict-prototypes \
-            -Wmissing-prototypes -Wnested-externs -Winline \
-            -Wdisabled-optimization -Wno-missing-field-initializers
--LIBSUFFIX=$(shell sh platform.sh libsuffix)
--VERLIBSUFFIX=$(shell sh platform.sh libsuffix $(MAJOR))
-+LIBSUFFIX=$(shell sh platform.sh libsuffix $(LIBVER))
- DYNLIBFLAG=$(shell sh platform.sh dynlibflag)
--LIBNAMEFLAG=$(shell sh platform.sh libnameflag $(MAJOR) $(INSTALLLIB))
+@@ -28,12 +28,11 @@ DYNLIBFLAG=$(shell sh platform.sh dynlibflag)
+ LIBNAMEFLAG=$(shell sh platform.sh libnameflag $(MAJOR) $(INSTALLLIB))
  
  CFLAGS?=-pipe -O2 $(WARNFLAGS)
 -CFLAGS+=-g # TODO(sissel): Comment before release
@@ -34,17 +16,17 @@ Index: Makefile
 +DEFAULT_INC=-I${X11BASE}/include -I${PREFIX}/include
  
  XDOTOOL_LIBS=$(shell pkg-config --libs x11 2> /dev/null || echo "$(DEFAULT_LIBS)")  $(shell sh platform.sh extralibs)
- LIBXDO_LIBS=$(shell pkg-config --libs x11 xtst xinerama xkbcommon 2> /dev/null || echo "$(DEFAULT_LIBS)")
-@@ -55,7 +54,7 @@ CMDOBJS= cmd_click.o cmd_mousemove.o cmd_mousemove_rel
+ LIBXDO_LIBS=$(shell pkg-config --libs xi x11 xtst xinerama xkbcommon 2> /dev/null || echo "$(DEFAULT_LIBS)")
+@@ -57,7 +56,7 @@ CMDOBJS= cmd_click.o cmd_mousemove.o cmd_mousemove_rel
           cmd_sleep.o cmd_get_display_geometry.o
  
  .PHONY: all
 -all: xdotool.1 libxdo.$(LIBSUFFIX) libxdo.$(VERLIBSUFFIX) xdotool
-+all: xdotool.1 libxdo.$(LIBSUFFIX) xdotool
++all: xdotool.1 libxdo.$(VERLIBSUFFIX) xdotool
  
  .PHONY: static
  static: xdotool.static
-@@ -87,23 +86,22 @@ post-install:
+@@ -88,13 +87,12 @@ post-install:
  .PHONY: installprog
  installprog: xdotool
  	install -d $(DINSTALLBIN)
@@ -54,39 +36,8 @@ Index: Makefile
  .PHONY: installlib
  installlib: libxdo.$(LIBSUFFIX)
  	install -d $(DINSTALLLIB)
--	install libxdo.$(LIBSUFFIX) $(DINSTALLLIB)/libxdo.$(VERLIBSUFFIX)
+ 	install libxdo.$(LIBSUFFIX) $(DINSTALLLIB)/libxdo.$(VERLIBSUFFIX)
 -	ln -sf libxdo.$(VERLIBSUFFIX) $(DINSTALLLIB)/libxdo.$(LIBSUFFIX)
-+	${INSTALL_DATA} libxdo.$(LIBSUFFIX) $(DINSTALLLIB)/
  
  .PHONY: installheader
  installheader: xdo.h
- 	install -d $(DINSTALLINCLUDE)
--	install xdo.h $(DINSTALLINCLUDE)/xdo.h
-+	${INSTALL_DATA} xdo.h $(DINSTALLINCLUDE)/xdo.h
- 
- .PHONY: installman
- installman: xdotool.1
- 	install -d $(DINSTALLMAN)/man1
--	install -m 644 xdotool.1 $(DINSTALLMAN)/man1/
-+	${INSTALL_MAN} xdotool.1 $(DINSTALLMAN)/man1/
- 
- .PHONY: deinstall
- deinstall: uninstall
-@@ -134,7 +132,7 @@ xdo.c: xdo.h
- xdotool.c: xdo.h
- 
- libxdo.$(LIBSUFFIX): xdo.o xdo_search.o
--	$(CC) $(LDFLAGS) $(DYNLIBFLAG) $(LIBNAMEFLAG) xdo.o xdo_search.o -o $@ $(LIBXDO_LIBS)
-+	$(CC) $(LDFLAGS) $(DYNLIBFLAG) xdo.o xdo_search.o -o $@ $(LIBXDO_LIBS)
- 
- libxdo.a: xdo.o xdo_search.o
- 	ar qv $@ xdo.o xdo_search.o
-@@ -175,7 +173,7 @@ package-deb: test-package-build create-package-deb
- 
- .PHONY: test
- test: WITH_SHELL=/bin/bash
--test: xdotool libxdo.$(VERLIBSUFFIX)
-+test: xdotool libxdo.$(LIBSUFFIX)
- 	echo $(WITH_SHELL)
- 	if [ "$(WITH_SHELL)" = "/bin/sh" ] ; then \
- 		echo "Shell '$(WITH_SHELL)' fails on some Linux distros because it could"; \
