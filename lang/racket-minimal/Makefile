@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2021/08/02 15:39:40 juanfra Exp $
+# $OpenBSD: Makefile,v 1.76 2021/08/05 17:57:59 juanfra Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc powerpc64 sparc64
 
@@ -129,8 +129,6 @@ CONFIGURE_ARGS +=	--enable-bcdefault \
 
 # The embedded versions of BC and CS use different files
 .if ${MACHINE_ARCH} == "amd64" && !${FLAVOR:Mno_jit}
-PKG_ARGS +=		-Dbc=0 -Dcs=1
-.elif ${MACHINE_ARCH} == "i386" && !${FLAVOR:Mno_jit}
 PKG_ARGS +=		-Dbc=0 -Dcs=1
 .else
 PKG_ARGS +=		-Dbc=1 -Dcs=0
