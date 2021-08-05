@@ -1,2 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/25 11:07:54 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/08/05 10:41:22 bket Exp $
 @bin bin/ncspot
+share/doc/ncspot/
+share/doc/ncspot/README.md
