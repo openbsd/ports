@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2021/08/04 22:18:26 kurt Exp $
+# $OpenBSD: Makefile,v 1.64 2021/08/05 15:40:20 kurt Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 aarch64 sparc64
 USE_WXNEEDED=	Yes
@@ -13,6 +13,7 @@ V=		${BASE_VER}.${UPDATE_VER}.${BUILD_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${V}
 PKGSTEM=	jdk-${BASE_VER}
 EPOCH=		0
+REVISION=	0
 
 DIST_SUBDIR=	jdk
 DISTNAME=	jdk8u${UPDATE_VER}-${BUILD_VER}.${BSD_PORT_REL}
@@ -37,6 +38,8 @@ MAINTAINER=	Kurt Miller <kurt@openbsd.org>
 
 # GPLv2 w/CLASSPATH exception
 PERMIT_PACKAGE=	Yes
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 NO_TEST=	Yes
 
@@ -98,8 +101,6 @@ CONFIGURE_ARGS=	--disable-option-checking \
 		--with-debug-level=release \
 		--disable-ccache \
 		--disable-freetype-bundling \
-		--disable-zip-debug-info \
-		--disable-debug-symbols \
 		--enable-static-libjli \
 		--with-zlib=system \
 		--with-giflib=system \
@@ -117,6 +118,12 @@ MAKE_ENV+=	DEFAULT_LIBPATH="/usr/lib:${X11BASE}/lib:${LOCALBASE}/lib" \
 CONFIGURE_ARGS+=--with-toolchain-type=clang
 .else
 CONFIGURE_ARGS+=--with-toolchain-type=gcc
+.endif
+
+.if ${PROPERTIES:Mdebuginfo}
+CONFIGURE_ARGS+=--with-native-debug-symbols=internal
+.else
+CONFIGURE_ARGS+=--with-native-debug-symbols=none
 .endif
 
 JDKHOME=	jdk-1.8.0
