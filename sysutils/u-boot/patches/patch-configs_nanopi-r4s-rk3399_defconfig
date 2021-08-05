@@ -1,0 +1,14 @@
+$OpenBSD: patch-configs_nanopi-r4s-rk3399_defconfig,v 1.1 2021/08/05 08:01:23 jsg Exp $
+
+Index: configs/nanopi-r4s-rk3399_defconfig
+--- configs/nanopi-r4s-rk3399_defconfig.orig
++++ configs/nanopi-r4s-rk3399_defconfig
+@@ -39,7 +39,7 @@ CONFIG_REGULATOR_PWM=y
+ CONFIG_REGULATOR_RK8XX=y
+ CONFIG_PWM_ROCKCHIP=y
+ CONFIG_RAM_RK3399_LPDDR4=y
+-CONFIG_BAUDRATE=1500000
++CONFIG_BAUDRATE=115200
+ CONFIG_DEBUG_UART_SHIFT=2
+ CONFIG_SYSRESET=y
+ CONFIG_USB=y
