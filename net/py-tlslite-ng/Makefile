@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2021/05/27 14:25:00 tb Exp $
+# $OpenBSD: Makefile,v 1.12 2021/08/06 16:02:20 tb Exp $
 
 COMMENT =		Python SSL and TLS library
 
-MODPY_EGG_VERSION =	0.8.0-alpha41
+MODPY_EGG_VERSION =	0.8.0-alpha42
 DISTNAME =		tlslite-ng-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/-alpha/alpha/}
 EPOCH =			0
@@ -30,6 +30,7 @@ MODPY_PYTEST =		Yes
 RUN_DEPENDS +=		security/py-M2Crypto${MODPY_FLAVOR} \
 			security/py-ecdsa${MODPY_FLAVOR}
 
+# A few key exchange and x509 tests fail due to missing Ed25519/Ed448 support
 TEST_DEPENDS +=		devel/py-hypothesis${MODPY_FLAVOR} \
 			devel/py-mock${MODPY_FLAVOR} \
 			security/py-ecdsa${MODPY_FLAVOR}
