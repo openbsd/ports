@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2021/02/23 19:39:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2021/08/06 08:02:10 mestre Exp $
 
 BROKEN-powerpc =CPUCore.cc:2347: error: insn does not satisfy its constraints
 BROKEN-hppa =	OOM when building src/cpu/CPUCore.cc
@@ -6,7 +6,7 @@ BROKEN-alpha =	OOM when building src/cpu/CPUCore.cc
 
 COMMENT =	MSX home computer emulator
 
-V =		0.15.0
+V =		17.0
 DISTNAME =	openmsx-$V
 
 CATEGORIES =	emulators
@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	claims GPLv2, but no copyright notices in source files
 PERMIT_DISTFILES =	claims GPLv2, but no copyright notices in source files
 
 WANTLIB += ${MODTCL_LIB}
-WANTLIB += GL GLEW SDL SDL_ttf c freetype m ogg png
+WANTLIB += GL GLEW SDL2 SDL2_ttf c freetype m ogg png
 WANTLIB += pthread ${COMPILER_LIBCXX} theoradec vorbis z
 
 MASTER_SITES =	https://github.com/openMSX/openMSX/releases/download/RELEASE_${V:S/./_/g}/
@@ -30,7 +30,8 @@ MAKE_ENV +=	INSTALL_BASE=${PREFIX}/share/openmsx \
 
 COMPILER =	base-clang ports-gcc
 LIB_DEPENDS =	audio/libvorbis \
-		devel/sdl-ttf \
+		devel/sdl2 \
+		devel/sdl2-ttf \
 		graphics/glew \
 		graphics/png \
 		multimedia/libtheora \
@@ -40,7 +41,7 @@ NO_TEST =	Yes
 
 MODULES =	lang/python \
 		lang/tcl
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 MODPY_RUNDEP =	No
 MAKE_FILE =	GNUmakefile

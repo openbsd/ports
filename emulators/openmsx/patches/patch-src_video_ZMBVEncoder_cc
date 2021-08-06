@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_video_ZMBVEncoder_cc,v 1.1 2021/08/06 08:02:10 mestre Exp $
+
+Index: src/video/ZMBVEncoder.cc
+--- src/video/ZMBVEncoder.cc.orig
++++ src/video/ZMBVEncoder.cc
+@@ -430,7 +430,7 @@ span<const uint8_t> ZMBVEncoder::compressFrame(bool ke
+ 	auto r = deflate(&zstream, Z_SYNC_FLUSH);
+ 	assert(r == Z_OK); (void)r;
+ 
+-	return {output.data(), writeDone + zstream.total_out};
++	return {output.data(), static_cast<size_t>(writeDone + zstream.total_out)};
+ }
+ 
+ } // namespace openmsx

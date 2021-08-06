@@ -1,9 +1,11 @@
-$OpenBSD: patch-build_detectsys_py,v 1.6 2021/08/01 00:18:05 jca Exp $
+$OpenBSD: patch-build_detectsys_py,v 1.7 2021/08/06 08:02:10 mestre Exp $
+
+https://github.com/openMSX/openMSX/commit/321d1d2f634d10ef72dc71831588540a7c6de59e
 
 Index: build/detectsys.py
 --- build/detectsys.py.orig
 +++ build/detectsys.py
-@@ -48,6 +48,8 @@ def detectCPU():
+@@ -53,6 +53,8 @@ def detectCPU():
  		return 'sheb' if cpu.endswith('eb') else 'sh'
  	elif cpu == 'avr32':
  		return 'avr32'
