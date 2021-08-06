@@ -1,0 +1,14 @@
+$OpenBSD: patch-Teensy_mk,v 1.1 2021/08/06 22:28:09 jcs Exp $
+
+Index: Teensy.mk
+--- Teensy.mk.orig
++++ Teensy.mk
+@@ -204,7 +204,7 @@ MCU := $(shell echo ${CPUFLAGS} | sed -n -e 's/.*-mcpu
+ 
+ do_upload: override get_monitor_port=""
+ AVRDUDE=@true
+-RESET_CMD = nohup $(ARDUINO_DIR)/hardware/tools/teensy_post_compile -board=$(BOARD_TAG) -tools=$(abspath $(ARDUINO_DIR)/hardware/tools) -path=$(abspath $(OBJDIR)) -file=$(TARGET) > /dev/null ; $(ARDUINO_DIR)/hardware/tools/teensy_reboot
++RESET_CMD = teensyloader -w --mcu=$(call PARSE_TEENSY,$(BOARD_TAG),build.board) $(TARGET_HEX)
+ 
+ ########################################################################
+ # automatially include Arduino.mk for the user

@@ -1,4 +1,4 @@
-$OpenBSD: patch-Common_mk,v 1.1.1.1 2018/11/08 01:04:36 jcs Exp $
+$OpenBSD: patch-Common_mk,v 1.2 2021/08/06 22:28:09 jcs Exp $
 
 Index: Common.mk
 --- Common.mk.orig
@@ -12,22 +12,25 @@ Index: Common.mk
  
  # Call with some text, and a prefix tag if desired (like [AUTODETECTED]),
  show_config_info = $(call arduino_output,- $(call space_pad_to,$(2),20) $(1))
-@@ -41,6 +41,18 @@ else
+@@ -41,6 +41,21 @@ else
      endif
      ifeq ($(UNAME_S),Darwin)
          CURRENT_OS = MAC
 +    endif
 +    ifeq ($(UNAME_S),OpenBSD)
 +        CURRENT_OS = OPENBSD
-+	ifndef ARDUINO_DIR
-+	    ARDUINO_DIR = ${LOCALBASE}/share/arduino
-+	endif
-+	ifndef ALTERNATE_CORE_PATH
-+	    ALTERNATE_CORE_PATH = $(ARDUINO_DIR)
-+	endif
-+	ifndef MONITOR_PORT
-+	    MONITOR_PORT = /dev/ttyU0
-+	endif
++        ifndef ARDUINO_DIR
++            ARDUINO_DIR = ${LOCALBASE}/share/arduino
++        endif
++        ifndef ALTERNATE_CORE_PATH
++            ALTERNATE_CORE_PATH = $(ARDUINO_DIR)
++        endif
++        ifndef MONITOR_PORT
++            MONITOR_PORT = /dev/ttyU0
++        endif
++        ifeq ($(AVR_TOOLS_DIR),)
++            AVR_TOOLS_DIR = ${LOCALBASE}
++        endif
      endif
  endif
  $(call show_config_variable,CURRENT_OS,[AUTODETECTED])

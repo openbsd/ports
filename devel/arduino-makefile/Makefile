@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/23 19:39:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/08/06 22:28:08 jcs Exp $
 
 COMMENT=	Makefile to build and upload Arduino sketches
 
@@ -7,6 +7,7 @@ GH_ACCOUNT=	sudar
 GH_PROJECT=	Arduino-Makefile
 GH_TAGNAME=	${V}
 PKGNAME=	arduino-makefile-${V}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -15,7 +16,8 @@ PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/arduino \
 		devel/gmake \
-		devel/py-serial
+		devel/py-serial \
+		devel/teensyloader
 
 MODULES=	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
