@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2021/04/24 04:20:19 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2021/08/06 16:35:26 rsadowski Exp $
 
 COMMENT =	Qt5 configuration tool
 
-DISTNAME =	qt5ct-1.2
+DISTNAME =	qt5ct-1.3
 
 CATEGORIES =	x11
 
