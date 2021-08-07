@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2021/01/04 14:06:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/08/07 15:41:23 kevlo Exp $
 
 COMMENT =	Python bindings for PortAudio
 
-MODPY_EGG_VERSION =	0.2.8
-DISTNAME =	pyaudio-${MODPY_EGG_VERSION}
-PKGNAME =	${DISTNAME:S/py/py-/}
+MODPY_EGG_VERSION =	0.2.11
+DISTNAME =	PyAudio-${MODPY_EGG_VERSION}
+PKGNAME =	py-audio-${MODPY_EGG_VERSION}
 CATEGORIES =	audio devel
-REVISION =	3
 
 HOMEPAGE =	http://people.csail.mit.edu/hubert/pyaudio/
 
@@ -15,15 +14,14 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	portaudio pthread ${MODPY_WANTLIB}
 
-MASTER_SITES =	${HOMEPAGE}packages/
-
 FLAVOR ?=
 FLAVORS =	python3
 
 MODULES =	lang/python
 
-LIB_DEPENDS =	audio/portaudio-svn
+MODPY_PI =	Yes
+MODPY_SETUPTOOLS=	Yes
 
-WRKDIST =	${WRKDIR}/PyAudio-${MODPY_EGG_VERSION}
+LIB_DEPENDS =	audio/portaudio-svn
 
 .include <bsd.port.mk>
