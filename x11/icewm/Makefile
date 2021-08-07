@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.80 2021/05/20 23:27:39 bcallah Exp $
+# $OpenBSD: Makefile,v 1.81 2021/08/07 10:32:11 sthen Exp $
 
 # unconditionally uses machine/apmvar.h and related structures/defines
 ONLY_FOR_ARCHS=	${APM_ARCHS}
 
-V=		2.3.4
+V=		2.7.0
 COMMENT=	small and fast window manager
 DISTNAME=	icewm-${V}
 EXTRACT_SUFX=	.tar.lz
