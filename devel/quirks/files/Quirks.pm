@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1294 2021/07/26 04:00:21 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1295 2021/08/07 11:03:16 pascal Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1055,7 +1055,6 @@ setup_obsolete_reason(
 	5 => 'py-webhelpers',
 	0 => 'hedgewars',
 	0 => 'lazarus',
-	5 => 'fpc',
 	13 => 'exaile',
 	3 => 'instead-launcher',
 	3 => qr{^(ruby(19|2[0-5])-|ruby-[^0-9])},
