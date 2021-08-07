@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2021/05/17 06:31:37 daniel Exp $
+# $OpenBSD: Makefile,v 1.15 2021/08/07 16:46:17 jca Exp $
 
 BROKEN-sparc64 = multiple definition of use_vis3_instructions
+BROKEN-riscv64 = /usr/ports/pobj/py-unicorn-1.0.2-python3/unicorn-1.0.2/src/qemu/tcg/tcg.h:30:10: fatal error: 'tcg-target.h' file not found
 
 COMMENT =	Unicorn CPU emulator engine
 
