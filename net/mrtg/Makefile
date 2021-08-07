@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.94 2021/03/08 16:58:40 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.95 2021/08/07 10:24:57 sthen Exp $
 
 COMMENT=	multi-router traffic grapher
 
-DISTNAME=	mrtg-2.17.7
-REVISION=	2
+DISTNAME=	mrtg-2.17.8
 
 CATEGORIES=	net
 
