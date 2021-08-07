@@ -1,7 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2021/05/05 07:31:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.16 2021/08/07 16:57:07 jca Exp $
 
 # See https://github.com/hrydgard/ppsspp/issues/8823
 NOT_FOR_ARCHS =	${BE_ARCHS}
+
+# FakeJit fallback broken in (at least) 1.10.3
+# ppsspp-1.10.3/Core/MIPS/JitCommon/JitCommon.cpp:75:10: error: cannot initialize return object of type 'MIPSComp::JitInterface *' with an rvalue of type 'MIPSComp::FakeJit *'
+PPSSPP_JIT_ARCHS =	arm aarch64 i386 amd64
+ONLY_FOR_ARCHS =	${PPSSPP_JIT_ARCHS}
 
 COMMENT =	Sony PlayStation Portable emulator
 
