@@ -1,0 +1,16 @@
+$OpenBSD: patch-mu_mu-cmd-server_cc,v 1.1 2021/08/07 18:44:09 abieber Exp $
+
+:: doesn't work on macro expansion
+
+Index: mu/mu-cmd-server.cc
+--- mu/mu-cmd-server.cc.orig
++++ mu/mu-cmd-server.cc
+@@ -109,7 +109,7 @@ Mu::mu_cmd_server (const MuConfig *opts, GError **err)
+                    store.metadata().root_maildir.c_str(),
+                    opts->debug ? "yes" : "no");
+ 
+-        tty = ::isatty(::fileno(stdout));
++        tty = ::isatty(fileno(stdout));
+ 
+         const auto eval = std::string {
+                 opts->commands ? "(help :full t)" : opts->eval ? opts->eval : ""};

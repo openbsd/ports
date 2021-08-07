@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_utils_mu-readline_cc,v 1.1 2021/08/07 18:44:09 abieber Exp $
+
+:: doesn't work on macro expansion
+
+Index: lib/utils/mu-readline.cc
+--- lib/utils/mu-readline.cc.orig
++++ lib/utils/mu-readline.cc
+@@ -68,7 +68,7 @@ static size_t      max_lines{};
+ void
+ Mu::setup_readline (const std::string& histpath, size_t maxlines)
+ {
+-        is_a_tty  = !!::isatty(::fileno(stdout));
++        is_a_tty  = !!::isatty(fileno(stdout));
+         hist_path = histpath;
+         max_lines = maxlines;
+ 
