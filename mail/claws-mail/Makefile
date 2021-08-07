@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2021/06/09 19:50:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.132 2021/08/07 18:35:35 solene Exp $
 
 COMMENT-main=		mail and news client
 COMMENT-bogofilter=	bogofilter plugin
@@ -6,9 +6,8 @@ COMMENT-spamassassin=	spamassassin plugin
 COMMENT-pdfviewer=	pdfviewer plugin
 COMMENT-gdata=		gdata plugin
 
-V=			3.17.8
+V=			4.0.0
 DISTNAME=		claws-mail-${V}
-REVISION=		0
 PKGNAME-main=		${DISTNAME}
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
@@ -22,7 +21,7 @@ HOMEPAGE=		https://www.claws-mail.org/
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		http://www.claws-mail.org/releases/
+MASTER_SITES=		https://www.claws-mail.org/releases/
 
 DIST_SUBDIR=		claws
 
@@ -41,33 +40,35 @@ RUN_DEPENDS-spamassassin=${BUILD_PKGPATH} \
 			mail/p5-Mail-SpamAssassin
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 cairo crypto curl etpan execinfo
-WANTLIB += expat ffi fontconfig freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gtk-x11-2.0 harfbuzz iconv intl m nghttp2 pango-1.0
+WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 cairo cairo-gobject
+WANTLIB += crypto curl etpan execinfo expat ffi fontconfig freetype
+WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += graphite2 gtk-3 harfbuzz iconv intl jpeg m nghttp2 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += sasl2 ssl xcb xcb-render xcb-shm z
+WANTLIB += sasl2 ssl xcb xcb-render xcb-shm z epoxy
+WANTLIB += ${COMPILER_LIBCXX}
 
 WANTLIB-main =  ${WANTLIB}
-WANTLIB-main += ICE SM X11-xcb archive assuan b2 bz2 c canberra canberra-gtk
-WANTLIB-main += charset cairo-gobject db dbus-1 dbus-glib-1 enchant gmp gnutls gpg-error
-WANTLIB-main += gpgme gumbo hogweed ical icalss icalvcal icudata icui18n icuuc idn2
-WANTLIB-main += ltdl lz4 lzma nettle notify ogg p11-kit perl rsvg-2
-WANTLIB-main += startup-notification-1 ${COMPILER_LIBCXX} tasn1 unistring vorbis
-WANTLIB-main += vorbisfile xcb-util xml2 zstd gthread-2.0
+WANTLIB-main += ICE SM X11-xcb archive assuan b2 bz2 c
+WANTLIB-main += charset db dbus-1 dbus-glib-1 enchant
+WANTLIB-main += gmp gnutls gpg-error gpgme gthread-2.0 gumbo hogweed ical icalss
+WANTLIB-main += icalvcal icudata icui18n icuuc idn2 lz4 lzma nettle notify
+WANTLIB-main += p11-kit perl rsvg-2 startup-notification-1 tasn1 unistring
+WANTLIB-main += xcb-util xml2 zstd
 
 WANTLIB-gdata = ${WANTLIB}
-WANTLIB-gdata += brotlicommon brotlidec gck-1 gcr-base-3 gcrypt gdata
-WANTLIB-gdata += goa-1.0 gpg-error gthread-2.0 idn2 json-glib-1.0 lzma
-WANTLIB-gdata += p11-kit psl soup-2.4 sqlite3 unistring xml2
+WANTLIB-gdata += brotlicommon brotlidec gck-1 gcr-base-3
+WANTLIB-gdata += gcrypt gdata goa-1.0 gpg-error idn2 json-glib-1.0
+WANTLIB-gdata += lzma p11-kit psl soup-2.4 sqlite3 unistring xml2
 
 WANTLIB-pdfviewer =  ${WANTLIB}
-WANTLIB-pdfviewer += jpeg lcms2 lzma openjp2 png poppler poppler-glib tiff zstd
-WANTLIB-pdfviewer += ${COMPILER_LIBCXX}
+WANTLIB-pdfviewer += lcms2 lzma openjp2 png poppler poppler-glib tiff zstd
 
-LIB_DEPENDS=		mail/libetpan \
+
+LIB_DEPENDS=		devel/glib2 \
+			mail/libetpan \
 			security/cyrus-sasl2 \
-			x11/gtk+2
+			x11/gtk+3
 
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			devel/desktop-file-utils \
@@ -77,7 +78,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			archivers/libarchive \
 			archivers/xz \
 			archivers/zstd \
-			audio/libcanberra,-gtk \
+			devel/glib2 \
 			devel/libnotify \
 			devel/startup-notification \
 			security/gnutls>=2.2 \
@@ -87,26 +88,22 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			textproc/enchant \
 			textproc/libical \
 			www/gumbo \
-			x11/dbus-glib
+			x11/dbus-glib \
+			x11/gnome/at-spi2-atk
 
 LIB_DEPENDS-pdfviewer=	${LIB_DEPENDS} \
 			print/poppler
 
 LIB_DEPENDS-gdata=	${LIB_DEPENDS} \
-			devel/libgdata \
-			security/nss
+			devel/libgdata
 
-#geolocation looks for champlain <= 0.10
-#python tries to dlopen libpython2.7.so
 CONFIGURE_ARGS+=	--disable-acpi_notifier-plugin \
 			--disable-compface \
 			--disable-fancy-plugin \
-			--disable-geolocation-plugin \
 			--disable-python-plugin \
 			--disable-tnef_parse-plugin \
 			--disable-bsfilter-plugin \
-			--enable-crash-dialog \
-			--enable-new-addrbook
+			--enable-crash-dialog
 
 USE_GMAKE=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static

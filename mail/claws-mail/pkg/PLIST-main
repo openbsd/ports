@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.44 2020/08/20 06:50:33 solene Exp $
+@comment $OpenBSD: PLIST-main,v 1.45 2021/08/07 18:35:35 solene Exp $
 @conflict claws-mail-attremover-*
 @conflict claws-mail-notification-*
 @conflict claws-mail-rssyl-*
@@ -122,7 +122,6 @@ include/claws-mail/gtk/foldersort.h
 include/claws-mail/gtk/gtkaspell.h
 include/claws-mail/gtk/gtkcmclist.h
 include/claws-mail/gtk/gtkcmctree.h
-include/claws-mail/gtk/gtkcmoptionmenu.h
 include/claws-mail/gtk/gtksctree.h
 include/claws-mail/gtk/gtkshruler.h
 include/claws-mail/gtk/gtkunit.h
@@ -178,6 +177,7 @@ include/claws-mail/mutt.h
 include/claws-mail/news.h
 include/claws-mail/news_gtk.h
 include/claws-mail/noticeview.h
+include/claws-mail/oauth2.h
 include/claws-mail/partial_download.h
 include/claws-mail/password.h
 include/claws-mail/password_gtk.h
@@ -363,9 +363,6 @@ share/locale/nb/LC_MESSAGES/claws-mail.mo
 share/locale/nl/LC_MESSAGES/claws-mail.mo
 share/locale/pl/LC_MESSAGES/claws-mail.mo
 share/locale/pt_BR/LC_MESSAGES/claws-mail.mo
-share/locale/pt_PT/
-share/locale/pt_PT/LC_MESSAGES/
-share/locale/pt_PT/LC_MESSAGES/claws-mail.mo
 share/locale/ro/LC_MESSAGES/claws-mail.mo
 share/locale/ru/LC_MESSAGES/claws-mail.mo
 share/locale/sk/LC_MESSAGES/claws-mail.mo
