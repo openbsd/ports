@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.83 2021/06/30 12:23:50 kirby Exp $
+# $OpenBSD: Makefile,v 1.84 2021/08/07 12:41:15 sthen Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
 COMMENT-php=		web-based gpsd monitor in php
 
-VERSION=		3.22
+VERSION=		3.23
 DISTNAME=		gpsd-${VERSION}
 PKGNAME-main=		gpsd-${VERSION}
 PKGNAME-x11=		gpsd-x11-${VERSION}
 PKGNAME-php=		gpsd-php-${VERSION}
 
-SHARED_LIBS +=		gps		21.0	# 27.0
+SHARED_LIBS +=		gps		22.0	# 29.0
 SHARED_LIBS +=		gpsdpacket	0.0	# 21.0
 CATEGORIES=		misc geo
 
@@ -23,6 +23,7 @@ MASTER_SITES =		${MASTER_SITE_SAVANNAH:=gpsd/}
 
 # C++11
 COMPILER =		base-clang ports-gcc
+
 WANTLIB-main +=	c dbus-1 m curses pthread usb-1.0 ${COMPILER_LIBCXX}
 WANTLIB-php =
 
@@ -42,10 +43,7 @@ MULTI_PACKAGES =	-main -php -x11
 
 BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 			devel/py-serial${MODPY_FLAVOR} \
-			textproc/xmlto \
-			textproc/libxslt \
-			textproc/docbook \
-			textproc/docbook-xsl
+			textproc/asciidoctor
 TEST_DEPENDS=		${FULLPKGNAME-main}:${FULLPKGPATH-main} \
 			x11/dbus
 
@@ -69,10 +67,7 @@ PREFIX-php=		${VARBASE}/www
 SUBST_VARS +=		VERSION
 
 pre-configure:
-	@perl -pi -e "s,/usr/share/gpsd/,," ${WRKSRC}/packaging/X11/*.desktop
-	@perl -pi -e "s,http://docbook.sourceforge.net/release/xsl/current/,\
-		${LOCALBASE}/share/xsl/docbook/," \
-		${WRKSRC}/SConstruct
+	@sed -i 's,/usr/local,${TRUEPREFIX},' ${WRKSRC}/packaging/X11/*.desktop
 	${SUBST_CMD} ${WRKSRC}/SConscript
 
 post-install:
@@ -85,6 +80,7 @@ post-install:
 		${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/packaging/X11/gpsd-logo.png \
 		${PREFIX}/share/pixmaps/
+	sed -i 's,${WRKINST},,' ${PREFIX}/include/gpsd_config.h
 
 	@find ${DESTDIR}/${MODPY_SITEPKG}/gps -name "*.py" -exec \
 		${MODPY_BIN} ${MODPY_LIBDIR}/py_compile.py {} \;

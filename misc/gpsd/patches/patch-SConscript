@@ -1,10 +1,10 @@
-$OpenBSD: patch-SConscript,v 1.1 2021/06/30 12:23:50 kirby Exp $
+$OpenBSD: patch-SConscript,v 1.2 2021/08/07 12:41:15 sthen Exp $
 
 Index: SConscript
 --- SConscript.orig
 +++ SConscript
-@@ -272,8 +272,7 @@ api_version_minor = 14
- libgps_version_current = 28
+@@ -209,8 +209,7 @@ api_version_minor = 14
+ libgps_version_current = 29
  libgps_version_revision = 0
  libgps_version_age = 0
 -libgps_version = "%d.%d.%d" % (libgps_version_current, libgps_version_age,
@@ -13,16 +13,7 @@ Index: SConscript
  #
  # Release identification ends here
  
-@@ -805,7 +804,7 @@ def CheckPKG(context, name):
- 
- 
- # Stylesheet URLs for making HTML and man pages from DocBook XML.
--docbook_url_stem = 'http://docbook.sourceforge.net/release/xsl/current/'
-+docbook_url_stem = '${LOCALBASE}/share/xsl/docbook/'
- docbook_man_uri = docbook_url_stem + 'manpages/docbook.xsl'
- docbook_html_uri = docbook_url_stem + 'html/docbook.xsl'
- 
-@@ -1440,6 +1439,10 @@ if not cleaning and not helping:
+@@ -1343,6 +1342,10 @@ if not cleaning and not helping:
      # if not, force qt to off
      if config.env["qt"]:
          qt_net_name = 'Qt%sNetwork' % config.env["qt_versioned"]
@@ -33,7 +24,7 @@ Index: SConscript
          qt_network = config.CheckPKG(qt_net_name)
          if not qt_network:
              config.env["qt"] = False
-@@ -1609,20 +1612,6 @@ if not cleaning and not helping and config.env['python
+@@ -1508,20 +1511,6 @@ if not cleaning and not helping and config.env['python
  
          config.env['xgps_deps'] = True
  
@@ -54,7 +45,7 @@ Index: SConscript
          # gtk+ needed by pygobject
          if not config.CheckPKG('gtk+-3.0'):
              config.env['xgps_deps'] = False
-@@ -1847,7 +1836,7 @@ libgpsd_static = env.StaticLibrary(
+@@ -1748,7 +1737,7 @@ libgpsd_static = env.StaticLibrary(
  packet_ffi_objects = [env.SharedObject(s) for s in packet_ffi_extension]
  packet_ffi_shared = env.SharedLibrary(target="gpsdpacket",
                                        source=packet_ffi_objects,
