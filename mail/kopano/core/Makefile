@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.66 2021/04/02 06:43:01 robert Exp $
+# $OpenBSD: Makefile,v 1.67 2021/08/08 07:34:36 robert Exp $
 
 # undefined ref's to libicon*, libintl* with ld.bfd
 ONLY_FOR_ARCHS=	${LLD_ARCHS}
-USE_LLD=	Yes
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-mapi=	kopano MAPI extensions for PHP
