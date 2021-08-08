@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.613 2021/08/04 13:14:42 abieber Exp $
+# $OpenBSD: Makefile,v 1.614 2021/08/08 09:37:05 jsg Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -408,6 +408,7 @@
      SUBDIR += ttyplot
      SUBDIR += u-boot
      SUBDIR += u-boot,aarch64
+     SUBDIR += u-boot,riscv64
      SUBDIR += udfclient
      SUBDIR += uefitool
      SUBDIR += ugrep
