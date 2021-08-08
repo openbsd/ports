@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/02/27 07:11:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2021/08/08 12:23:47 rsadowski Exp $
 
 PKGNAME =		kde-${MODKDE_VERSION}
 
@@ -155,6 +155,7 @@ LIB_DEPENDS-multimedia =
 RUN_DEPENDS-multimedia = \
 	x11/kde-applications/audiocd-kio \
 	x11/kde-applications/dragon \
+	x11/kde-applications/elisa \
 	x11/kde-applications/ffmpegthumbs \
 	x11/kde-applications/juk \
 	x11/kde-applications/kdenlive \

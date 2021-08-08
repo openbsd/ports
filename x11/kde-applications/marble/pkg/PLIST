@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/06/19 18:34:45 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.14 2021/08/08 12:23:56 rsadowski Exp $
 @conflict marble-<=4.14.3
 @bin bin/marble
 @bin bin/marble-qt
@@ -464,8 +464,6 @@ share/kservices5/marble_thumbnail_kml.desktop
 share/kservices5/marble_thumbnail_kmz.desktop
 share/kservices5/marble_thumbnail_osm.desktop
 share/kservices5/marble_thumbnail_shp.desktop
-share/kservices5/plasma-applet-org.kde.plasma.worldclock.desktop
-share/kservices5/plasma-wallpaper-org.kde.plasma.worldmap.desktop
 share/kxmlgui5/
 share/kxmlgui5/marble/
 share/kxmlgui5/marble/marble_part.rc
@@ -574,7 +572,9 @@ share/locale/km/LC_MESSAGES/marble.mo
 share/locale/km/LC_MESSAGES/marble_qt.qm
 share/locale/ko/LC_MESSAGES/marble.mo
 share/locale/ko/LC_MESSAGES/marble_qt.qm
+share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.plasma.worldclock.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_marble.mo
+share/locale/ko/LC_MESSAGES/plasma_wallpaper_org.kde.plasma.worldmap.mo
 share/locale/lt/LC_MESSAGES/marble.mo
 share/locale/lt/LC_MESSAGES/marble_qt.qm
 share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.plasma.worldclock.mo

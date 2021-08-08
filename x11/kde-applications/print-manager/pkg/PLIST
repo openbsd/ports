@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/06/19 18:34:46 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/08/08 12:23:57 rsadowski Exp $
 @pkgpath x11/kde4/print-manager
 @bin bin/configure-printer
 @bin bin/kde-add-printer
@@ -15,7 +15,6 @@ share/applications/org.kde.PrintQueue.desktop
 share/applications/org.kde.kde-add-printer.desktop
 share/knotifications5/printmanager.notifyrc
 share/kservices5/kcm_printer_manager.desktop
-share/kservices5/plasma-applet-org.kde.plasma.printmanager.desktop
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/ar/LC_MESSAGES/print-manager.mo
 share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo

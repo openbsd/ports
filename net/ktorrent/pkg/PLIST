@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2021/06/19 18:34:30 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.22 2021/08/08 12:23:47 rsadowski Exp $
 @conflict ktorrent-kde4-*
 @pkgpath net/ktorrent-kde4
 @bin bin/ktmagnetdownloader
@@ -61,7 +61,6 @@ share/doc/HTML/sv/ktorrent/index.docbook
 share/doc/HTML/uk/ktorrent/
 share/doc/HTML/uk/ktorrent/index.cache.bz2
 share/doc/HTML/uk/ktorrent/index.docbook
-share/doc/HTML/zh_CN/
 share/doc/HTML/zh_CN/ktorrent/
 share/doc/HTML/zh_CN/ktorrent/index.cache.bz2
 share/doc/HTML/zh_CN/ktorrent/index.docbook

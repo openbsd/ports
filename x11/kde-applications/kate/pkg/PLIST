@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2021/06/19 18:34:34 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.15 2021/08/08 12:23:50 rsadowski Exp $
 @conflict kdebase-*
 @pkgpath x11/kde4/kate
 @bin bin/kate
@@ -403,7 +403,6 @@ share/katexmltools/xhtml1-frameset.dtd.xml
 share/katexmltools/xhtml1-strict.dtd.xml
 share/katexmltools/xhtml1-transitional.dtd.xml
 share/katexmltools/xslt-1.0.dtd.xml
-share/kservices5/plasma-applet-org.kde.plasma.katesessions.desktop
 share/kservices5/plasma-dataengine-katesessions.desktop
 share/locale/ar/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/ar/LC_MESSAGES/kate-replicode-plugin.mo
@@ -653,10 +652,12 @@ share/locale/el/LC_MESSAGES/kate.mo
 share/locale/el/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/el/LC_MESSAGES/katebuild-plugin.mo
 share/locale/el/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/el/LC_MESSAGES/katecolorpickerplugin.mo
 share/locale/el/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/el/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/el/LC_MESSAGES/katefiletree.mo
 share/locale/el/LC_MESSAGES/kategdbplugin.mo
+share/locale/el/LC_MESSAGES/kategitblameplugin.mo
 share/locale/el/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/el/LC_MESSAGES/kateopenheader.mo
 share/locale/el/LC_MESSAGES/kateproject.mo
@@ -1649,8 +1650,10 @@ share/locale/uk/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/vi/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/vi/LC_MESSAGES/kate-replicode-plugin.mo
 share/locale/vi/LC_MESSAGES/kate.mo
+share/locale/vi/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/vi/LC_MESSAGES/katebuild-plugin.mo
 share/locale/vi/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/vi/LC_MESSAGES/katecolorpickerplugin.mo
 share/locale/vi/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/vi/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/vi/LC_MESSAGES/katefiletree.mo
@@ -1660,10 +1663,13 @@ share/locale/vi/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/vi/LC_MESSAGES/kateopenheader.mo
 share/locale/vi/LC_MESSAGES/kateproject.mo
 share/locale/vi/LC_MESSAGES/katesearch.mo
+share/locale/vi/LC_MESSAGES/katesnippetsplugin.mo
 share/locale/vi/LC_MESSAGES/katesql.mo
+share/locale/vi/LC_MESSAGES/katesymbolviewer.mo
 share/locale/vi/LC_MESSAGES/katetextfilter.mo
 share/locale/vi/LC_MESSAGES/katexmlcheck.mo
 share/locale/vi/LC_MESSAGES/katexmltools.mo
+share/locale/vi/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/vi/LC_MESSAGES/kwrite.mo
 share/locale/vi/LC_MESSAGES/lspclient.mo
 share/locale/vi/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/06/19 18:34:31 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/08/08 12:23:48 rsadowski Exp $
 @pkgpath x11/kde4/blinken
 @bin bin/blinken
 share/applications/org.kde.blinken.desktop
@@ -119,6 +119,7 @@ share/locale/he/LC_MESSAGES/blinken.mo
 share/locale/hi/LC_MESSAGES/blinken.mo
 share/locale/hr/LC_MESSAGES/blinken.mo
 share/locale/hu/LC_MESSAGES/blinken.mo
+share/locale/ia/LC_MESSAGES/blinken.mo
 share/locale/is/LC_MESSAGES/blinken.mo
 share/locale/it/LC_MESSAGES/blinken.mo
 share/locale/ja/LC_MESSAGES/blinken.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/06/19 18:34:35 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/08/08 12:23:50 rsadowski Exp $
 @so lib/qt5/plugins/kcm_cron.so
 share/doc/HTML/ca/kcontrol5/kcron/
 share/doc/HTML/ca/kcontrol5/kcron/index.cache.bz2
@@ -73,7 +73,6 @@ share/doc/HTML/uk/kcontrol5/kcron/index.docbook
 share/doc/HTML/uk/kcontrol5/kcron/kcronstart.png
 share/doc/HTML/uk/kcontrol5/kcron/newtask.png
 share/doc/HTML/uk/kcontrol5/kcron/newvariable.png
-share/doc/HTML/zh_CN/
 share/doc/HTML/zh_CN/kcontrol5/
 share/doc/HTML/zh_CN/kcontrol5/kcron/
 share/doc/HTML/zh_CN/kcontrol5/kcron/index.cache.bz2

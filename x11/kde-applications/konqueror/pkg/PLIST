@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/06/19 18:34:41 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/08/08 12:23:54 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @conflict kdebase-*
@@ -710,7 +710,6 @@ share/doc/HTML/uk/konqueror/look.png
 share/doc/HTML/uk/konqueror/parts.png
 share/doc/HTML/uk/konqueror/thumbnails.png
 share/doc/HTML/uk/konqueror/viewproperties-dialog.png
-share/doc/HTML/zh_CN/
 share/doc/HTML/zh_CN/kcontrol5/
 share/doc/HTML/zh_CN/kcontrol5/history/
 share/doc/HTML/zh_CN/kcontrol5/history/index.cache.bz2

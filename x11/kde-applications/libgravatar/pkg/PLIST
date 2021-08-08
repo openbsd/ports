@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/04/27 05:27:15 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/08/08 12:23:55 rsadowski Exp $
 include/KF5/Gravatar/
 include/KF5/Gravatar/GravatarCache
 include/KF5/Gravatar/GravatarConfigWidget
@@ -37,6 +37,7 @@ share/locale/eu/LC_MESSAGES/libgravatar.mo
 share/locale/fi/LC_MESSAGES/libgravatar.mo
 share/locale/fr/LC_MESSAGES/libgravatar.mo
 share/locale/gl/LC_MESSAGES/libgravatar.mo
+share/locale/hi/LC_MESSAGES/libgravatar.mo
 share/locale/hu/LC_MESSAGES/libgravatar.mo
 share/locale/ia/LC_MESSAGES/libgravatar.mo
 share/locale/it/LC_MESSAGES/libgravatar.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/13 19:33:20 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/08/08 12:23:49 rsadowski Exp $
 include/KF5/EventViews/
 include/KF5/EventViews/AgendaView
 include/KF5/EventViews/CalendarDecoration
@@ -57,6 +57,7 @@ share/locale/en_GB/LC_MESSAGES/libeventviews.mo
 share/locale/eo/LC_MESSAGES/libeventviews.mo
 share/locale/es/LC_MESSAGES/libeventviews.mo
 share/locale/et/LC_MESSAGES/libeventviews.mo
+share/locale/eu/LC_MESSAGES/libeventviews.mo
 share/locale/fi/LC_MESSAGES/libeventviews.mo
 share/locale/fr/LC_MESSAGES/libeventviews.mo
 share/locale/ga/LC_MESSAGES/libeventviews.mo

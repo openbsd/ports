@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/06/19 18:34:43 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/08/08 12:23:55 rsadowski Exp $
 @pkgpath x11/kde4/kturtle
 @bin bin/kturtle
 share/applications/org.kde.kturtle.desktop
@@ -117,6 +117,17 @@ share/doc/HTML/ru/kturtle/mainwindow_flower_nrs.png
 share/doc/HTML/ru/kturtle/programming-reference.docbook
 share/doc/HTML/ru/kturtle/translator-guide.docbook
 share/doc/HTML/ru/kturtle/using-kturtle.docbook
+share/doc/HTML/sq/
+share/doc/HTML/sq/kturtle/
+share/doc/HTML/sq/kturtle/getting-started.docbook
+share/doc/HTML/sq/kturtle/glossary.docbook
+share/doc/HTML/sq/kturtle/index.cache.bz2
+share/doc/HTML/sq/kturtle/index.docbook
+share/doc/HTML/sq/kturtle/mainwindow.png
+share/doc/HTML/sq/kturtle/mainwindow_flower_nrs.png
+share/doc/HTML/sq/kturtle/programming-reference.docbook
+share/doc/HTML/sq/kturtle/translator-guide.docbook
+share/doc/HTML/sq/kturtle/using-kturtle.docbook
 share/doc/HTML/sv/kturtle/
 share/doc/HTML/sv/kturtle/getting-started.docbook
 share/doc/HTML/sv/kturtle/glossary.docbook

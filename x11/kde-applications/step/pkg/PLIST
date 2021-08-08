@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/06/19 18:34:46 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.12 2021/08/08 12:23:57 rsadowski Exp $
 @pkgpath x11/kde4/step
 @bin bin/step
 share/applications/org.kde.step.desktop
@@ -58,6 +58,11 @@ share/doc/HTML/pt_BR/step/examples.docbook
 share/doc/HTML/pt_BR/step/index.cache.bz2
 share/doc/HTML/pt_BR/step/index.docbook
 share/doc/HTML/pt_BR/step/tutorials.docbook
+share/doc/HTML/ru/step/
+share/doc/HTML/ru/step/examples.docbook
+share/doc/HTML/ru/step/index.cache.bz2
+share/doc/HTML/ru/step/index.docbook
+share/doc/HTML/ru/step/tutorials.docbook
 share/doc/HTML/sv/step/
 share/doc/HTML/sv/step/examples.docbook
 share/doc/HTML/sv/step/index.cache.bz2
