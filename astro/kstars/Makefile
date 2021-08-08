@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.34 2021/04/26 15:47:07 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.35 2021/08/08 19:46:47 rsadowski Exp $
 
 COMMENT =	planetarium simulator for KDE
 
-DISTNAME =	kstars-3.5.3
+DISTNAME =	kstars-3.5.4
 EPOCH =		0
 
 CATEGORIES =	astro education
@@ -75,5 +75,9 @@ CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_INDI=ON \
 			-DCMAKE_DISABLE_FIND_PACKAGE_AstrometryNet=ON
 
 TEST_IS_INTERACTIVE =	X11
+
+# https://bugs.kde.org/show_bug.cgi?id=439541
+pre-configure:
+	rm ${WRKSRC}/po/de/docs/kstars/index.docbook
 
 .include <bsd.port.mk>
