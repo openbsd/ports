@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/12/19 16:25:07 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/08/08 12:21:38 rsadowski Exp $
 include/KF5/
 include/KF5/KWidgetsAddons/
 include/KF5/KWidgetsAddons/KAcceleratorManager
@@ -74,6 +74,8 @@ include/KF5/KWidgetsAddons/KToolBarLabelAction
 include/KF5/KWidgetsAddons/KToolBarPopupAction
 include/KF5/KWidgetsAddons/KToolBarSpacerAction
 include/KF5/KWidgetsAddons/KToolTipWidget
+include/KF5/KWidgetsAddons/KTwoFingerSwipe
+include/KF5/KWidgetsAddons/KTwoFingerTap
 include/KF5/KWidgetsAddons/KUrlLabel
 include/KF5/KWidgetsAddons/KViewStateMaintainerBase
 include/KF5/KWidgetsAddons/KViewStateSerializer
@@ -147,6 +149,8 @@ include/KF5/KWidgetsAddons/ktoolbarlabelaction.h
 include/KF5/KWidgetsAddons/ktoolbarpopupaction.h
 include/KF5/KWidgetsAddons/ktoolbarspaceraction.h
 include/KF5/KWidgetsAddons/ktooltipwidget.h
+include/KF5/KWidgetsAddons/ktwofingerswipe.h
+include/KF5/KWidgetsAddons/ktwofingertap.h
 include/KF5/KWidgetsAddons/kurllabel.h
 include/KF5/KWidgetsAddons/kviewstatemaintainerbase.h
 include/KF5/KWidgetsAddons/kviewstateserializer.h

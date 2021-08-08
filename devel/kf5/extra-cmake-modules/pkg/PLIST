@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2021/07/06 16:55:32 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.24 2021/08/08 12:21:35 rsadowski Exp $
 @man man/man7/ecm-developer.7
 @man man/man7/ecm-find-modules.7
 @man man/man7/ecm-kde-modules.7
@@ -69,6 +69,7 @@ share/ECM/kde-modules/kde-git-commit-hooks/
 share/ECM/kde-modules/kde-git-commit-hooks/clang-format.sh
 share/ECM/kde-modules/kde-git-commit-hooks/pre-commit.in
 share/ECM/kde-modules/prefix.sh.cmake
+share/ECM/kde-modules/prefix.sh.fish.cmake
 share/ECM/modules/
 share/ECM/modules/CheckAtomic.cmake
 share/ECM/modules/ECMAddAppIcon.cmake

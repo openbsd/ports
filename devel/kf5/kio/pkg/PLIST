@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2021/06/15 09:37:28 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.20 2021/08/08 12:21:37 rsadowski Exp $
 @bin bin/kcookiejar5
 @bin bin/ktelnetservice5
 @bin bin/ktrash5
@@ -1024,6 +1024,11 @@ share/doc/HTML/uk/kioslave5/telnet/index.docbook
 share/doc/HTML/uk/kioslave5/webdav/
 share/doc/HTML/uk/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/uk/kioslave5/webdav/index.docbook
+share/doc/HTML/zh_CN/
+share/doc/HTML/zh_CN/kioslave5/
+share/doc/HTML/zh_CN/kioslave5/telnet/
+share/doc/HTML/zh_CN/kioslave5/telnet/index.cache.bz2
+share/doc/HTML/zh_CN/kioslave5/telnet/index.docbook
 share/examples/kio/
 share/examples/kio/xdg/
 share/examples/kio/xdg/accept-languages.codes
@@ -1044,19 +1049,10 @@ share/kf5/mkspecs/qt_KIOWidgets.pri
 share/kf5/mkspecs/qt_KNTLM.pri
 share/knotifications5/proxyscout.notifyrc
 share/kservices5/cookies.desktop
-share/kservices5/data.protocol
 share/kservices5/http_cache_cleaner.desktop
 share/kservices5/kcmtrash.desktop
-share/kservices5/mailto.protocol
-share/kservices5/mms.protocol
-share/kservices5/mmst.protocol
-share/kservices5/mmsu.protocol
 share/kservices5/netpref.desktop
-share/kservices5/pnm.protocol
 share/kservices5/proxy.desktop
-share/kservices5/rtsp.protocol
-share/kservices5/rtspt.protocol
-share/kservices5/rtspu.protocol
 share/kservices5/searchproviders/
 share/kservices5/searchproviders/7digital.desktop
 share/kservices5/searchproviders/acronym.desktop
