@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.53 2021/05/21 19:50:33 kmos Exp $
+# $OpenBSD: Makefile,v 1.54 2021/08/09 08:47:54 sthen Exp $
 
 COMMENT=	Python interface to cURL library
 
-MODPY_EGG_VERSION=	7.43.0.6
+MODPY_EGG_VERSION=	7.44.0
 DISTNAME=	pycurl-${MODPY_EGG_VERSION}
 PKGNAME=	py-curl-${MODPY_EGG_VERSION}
 CATEGORIES=	net
-REVISION=	0
 
-HOMEPAGE=	http://pycurl.sourceforge.net/
+HOMEPAGE=	http://pycurl.io/
 
 # dual: LGPL or MIT-like
 PERMIT_PACKAGE=	Yes
@@ -21,6 +20,7 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_SETUPTOOLS=	Yes
 
+# py2 used by devel/bzr
 FLAVORS=	python3
 FLAVOR?=
 
