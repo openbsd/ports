@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2020/09/07 14:48:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2021/08/09 20:36:18 rsadowski Exp $
 
 COMMENT =	KDE Breeze-style light and dark icon themes
 DISTNAME =	breeze-icons-${VERSION}
+REVISION =	0
 
 WANTLIB- =
 
@@ -9,7 +10,11 @@ RUN_DEPENDS =	x11/gtk+3,-guic
 
 PKG_ARCH =	*
 
-BUILD_DEPENDS =	shells/bash
+MODULES =		lang/python
+MODPY_RUNDEP =		No
+
+BUILD_DEPENDS =	shells/bash \
+		textproc/libxml
 
 TEST_DEPENDS =	sysutils/fdupes
 
