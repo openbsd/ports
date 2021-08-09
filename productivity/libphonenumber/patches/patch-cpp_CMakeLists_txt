@@ -1,8 +1,10 @@
-$OpenBSD: patch-cpp_CMakeLists_txt,v 1.1.1.1 2021/05/23 14:26:04 rsadowski Exp $
+$OpenBSD: patch-cpp_CMakeLists_txt,v 1.2 2021/08/09 16:08:43 kmos Exp $
 
 CMake Error:
 ninja: error: build.ninja:1485: multiple rules generate ...
 phonenumbers/metadata.h [-w dupbuild=err] 
+
+Also Eliminate -Werror to fix sparc64 build
 
 Index: cpp/CMakeLists.txt
 --- cpp/CMakeLists.txt.orig
@@ -16,3 +18,12 @@ Index: cpp/CMakeLists.txt
  )
  list (APPEND TESTING_LIBRARY_SOURCES "src/phonenumbers/test_metadata.cc")
  
+@@ -381,7 +381,7 @@ if (${USE_ICU_REGEXP} STREQUAL "ON")
+ endif ()
+ 
+ if (NOT WIN32)
+-  add_definitions ("-Wall -Werror")
++  add_definitions ("-Wall")
+ endif ()
+ 
+ include_directories ("src")

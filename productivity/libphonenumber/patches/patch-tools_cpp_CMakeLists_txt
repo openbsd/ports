@@ -1,0 +1,16 @@
+$OpenBSD: patch-tools_cpp_CMakeLists_txt,v 1.1 2021/08/09 16:08:43 kmos Exp $
+
+Strip -Werror to fix sparc64 build
+
+Index: tools/cpp/CMakeLists.txt
+--- tools/cpp/CMakeLists.txt.orig
++++ tools/cpp/CMakeLists.txt
+@@ -32,7 +32,7 @@ set (
+ )
+ 
+ if (NOT WIN32)
+-  add_definitions ("-Wall -Werror")
++  add_definitions ("-Wall")
+ endif ()
+ 
+ include_directories ("src")
