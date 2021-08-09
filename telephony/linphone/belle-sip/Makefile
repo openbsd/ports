@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/07/10 16:58:01 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2021/08/09 20:23:36 kmos Exp $
 
 COMMENT =	library implementing SIP (RFC3261) transport
 
@@ -8,6 +8,7 @@ SHARED_LIBS +=  bellesip 0.0 # 1
 
 CONFIGURE_ARGS= -DENABLE_STATIC=NO
 CONFIGURE_ARGS += -DENABLE_TESTS=NO
+CONFIGURE_ARGS += -DENABLE_STRICT=NO
 
 LIB_DEPENDS =	telephony/linphone/bctoolbox \
 		telephony/linphone/belr
