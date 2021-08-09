@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.110 2021/06/09 19:50:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.111 2021/08/09 06:50:02 ajacoutot Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		3.40.2
 
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 
@@ -56,12 +56,6 @@ LIB_DEPENDS=		devel/glade \
 			x11/gnome/devhelp \
 			x11/gnome/libdazzle \
 			x11/gtksourceview4
-
-.include <bsd.port.arch.mk>
-.if ${ARCH:Mi386}
-# Doesn't build with lld: non-ABS relocation R_386_GOTOFF against symbol '.LC74'
-USE_LLD =		No
-.endif
 
 CONFIGURE_ARGS=		-Dplugin_valgrind=false \
 			-Dplugin_flatpak=false \
