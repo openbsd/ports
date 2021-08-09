@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2021/03/11 08:44:08 bentley Exp $
+# $OpenBSD: Makefile,v 1.74 2021/08/09 08:56:57 bentley Exp $
 
      SUBDIR =
      SUBDIR += abyssinica
@@ -68,6 +68,7 @@
      SUBDIR += mplus-fonts
      SUBDIR += msctfonts
      SUBDIR += msttcorefonts
+     SUBDIR += mononoki
      SUBDIR += noto
      SUBDIR += opendyslexic
      SUBDIR += overpass
