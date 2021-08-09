@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/30 13:09:21 kirby Exp $
+# $OpenBSD: Makefile,v 1.17 2021/08/09 09:10:14 kirby Exp $
 
 COMMENT-main =		free/libre action roleplaying engine
 COMMENT-data =		free/libre action roleplaying engine data
 
-V = 			1.11
+V = 			1.12
 DISTNAME = 		flare.${V}
 PKGNAME-main =		flare-${V}
 PKGNAME-data =		flare-data-${V}
 
 CATEGORIES =		games
 
-HOMEPAGE =		http://flarerpg.org/
+HOMEPAGE =		https://flarerpg.org/
 
 # code GPLv3+, data CC BY-SA 3.0+
 PERMIT_PACKAGE =	Yes

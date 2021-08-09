@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2019/07/30 13:09:21 kirby Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2021/08/09 09:10:14 kirby Exp $
 @pkgpath games/flare
 @bin bin/flare
 @man man/man6/flare.6
@@ -55,8 +55,13 @@ share/flare/mods/default/images/menus/compass_iso.png
 share/flare/mods/default/images/menus/compass_ortho.png
 share/flare/mods/default/images/menus/config.png
 share/flare/mods/default/images/menus/confirm_bg.png
+share/flare/mods/default/images/menus/dev_console.png
 share/flare/mods/default/images/menus/entity_hidden.png
 share/flare/mods/default/images/menus/logo.png
+share/flare/mods/default/images/menus/movement_type.png
+share/flare/mods/default/images/menus/movement_type_joystick.png
+share/flare/mods/default/images/menus/movement_type_keyboard.png
+share/flare/mods/default/images/menus/movement_type_mouse.png
 share/flare/mods/default/images/menus/tab_active.png
 share/flare/mods/default/images/menus/tab_inactive.png
 share/flare/mods/default/languages/
@@ -67,14 +72,16 @@ share/flare/mods/default/languages/data.cs.po
 share/flare/mods/default/languages/data.de.po
 share/flare/mods/default/languages/data.el.po
 share/flare/mods/default/languages/data.es.po
+share/flare/mods/default/languages/data.eu.po
 share/flare/mods/default/languages/data.fi.po
 share/flare/mods/default/languages/data.fr.po
 share/flare/mods/default/languages/data.gd.po
 share/flare/mods/default/languages/data.gl.po
-share/flare/mods/default/languages/data.he.po
 share/flare/mods/default/languages/data.hu.po
+share/flare/mods/default/languages/data.id.po
 share/flare/mods/default/languages/data.it.po
 share/flare/mods/default/languages/data.ja.po
+share/flare/mods/default/languages/data.ko.po
 share/flare/mods/default/languages/data.nb.po
 share/flare/mods/default/languages/data.nl.po
 share/flare/mods/default/languages/data.pl.po
@@ -87,6 +94,7 @@ share/flare/mods/default/languages/data.sv.po
 share/flare/mods/default/languages/data.uk.po
 share/flare/mods/default/languages/data.vi.po
 share/flare/mods/default/languages/data.zh.po
+share/flare/mods/default/languages/data.zh_TW.po
 share/flare/mods/default/languages/engine.be.po
 share/flare/mods/default/languages/engine.bg.po
 share/flare/mods/default/languages/engine.ca.po
@@ -94,14 +102,16 @@ share/flare/mods/default/languages/engine.cs.po
 share/flare/mods/default/languages/engine.de.po
 share/flare/mods/default/languages/engine.el.po
 share/flare/mods/default/languages/engine.es.po
+share/flare/mods/default/languages/engine.eu.po
 share/flare/mods/default/languages/engine.fi.po
 share/flare/mods/default/languages/engine.fr.po
 share/flare/mods/default/languages/engine.gd.po
 share/flare/mods/default/languages/engine.gl.po
-share/flare/mods/default/languages/engine.he.po
 share/flare/mods/default/languages/engine.hu.po
+share/flare/mods/default/languages/engine.id.po
 share/flare/mods/default/languages/engine.it.po
 share/flare/mods/default/languages/engine.ja.po
+share/flare/mods/default/languages/engine.ko.po
 share/flare/mods/default/languages/engine.nb.po
 share/flare/mods/default/languages/engine.nl.po
 share/flare/mods/default/languages/engine.pl.po
@@ -114,13 +124,16 @@ share/flare/mods/default/languages/engine.sv.po
 share/flare/mods/default/languages/engine.uk.po
 share/flare/mods/default/languages/engine.vi.po
 share/flare/mods/default/languages/engine.zh.po
+share/flare/mods/default/languages/engine.zh_TW.po
 share/flare/mods/default/menus/
 share/flare/mods/default/menus/config.txt
 share/flare/mods/default/menus/confirm.txt
+share/flare/mods/default/menus/devconsole.txt
 share/flare/mods/default/menus/fps.txt
 share/flare/mods/default/menus/gameload.txt
 share/flare/mods/default/menus/gamenew.txt
 share/flare/mods/default/menus/gametitle.txt
+share/flare/mods/default/menus/movement_type.txt
 share/flare/mods/gcw0_defaults/
 share/flare/mods/gcw0_defaults/engine/
 share/flare/mods/gcw0_defaults/engine/default_keybindings.txt
