@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/07/11 09:21:35 bket Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/08/10 05:33:05 bket Exp $
 include/libfilezilla/
 include/libfilezilla/apply.hpp
 include/libfilezilla/buffer.hpp
@@ -18,6 +18,8 @@ include/libfilezilla/hash.hpp
 include/libfilezilla/hostname_lookup.hpp
 include/libfilezilla/invoker.hpp
 include/libfilezilla/iputils.hpp
+include/libfilezilla/json.hpp
+include/libfilezilla/jws.hpp
 include/libfilezilla/libfilezilla.hpp
 include/libfilezilla/local_filesys.hpp
 include/libfilezilla/logger.hpp
