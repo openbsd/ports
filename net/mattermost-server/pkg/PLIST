@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2021/08/01 10:01:03 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.40 2021/08/10 17:24:53 pvk Exp $
 @newgroup _mattermost:804
 @newuser _mattermost:804:_mattermost:daemon:Mattermost Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/log/mattermost/*
@@ -38,8 +38,8 @@ share/mattermost/client/145.9722f1204114468e2ce5.js
 share/mattermost/client/145.9722f1204114468e2ce5.js.map
 share/mattermost/client/168.02a9cb0eebe301eeb09f.css
 share/mattermost/client/168.02a9cb0eebe301eeb09f.css.map
-share/mattermost/client/168.02ecd1d862f4916b84ba.js
-share/mattermost/client/168.02ecd1d862f4916b84ba.js.map
+share/mattermost/client/168.a073e62400cd5d1f5300.js
+share/mattermost/client/168.a073e62400cd5d1f5300.js.map
 share/mattermost/client/259.c256c2faf0c55749056c.js
 share/mattermost/client/259.c256c2faf0c55749056c.js.LICENSE.txt
 share/mattermost/client/259.c256c2faf0c55749056c.js.map
@@ -3590,25 +3590,25 @@ share/mattermost/client/files/fc4e48b59849688ac61c0d6daa6c3894.woff2
 share/mattermost/client/files/fd4eccab43b2f46bac37538fc682154d.woff2
 share/mattermost/client/files/fda941417d2ae38748d8901488112326.png
 share/mattermost/client/i18n/
-share/mattermost/client/i18n/bg.206467f002efebb476a89491e55ad212.json
-share/mattermost/client/i18n/de.38e632807d74e795c7e148a164bc0563.json
-share/mattermost/client/i18n/en_AU.dc7e1bcc2b96b8148dc8456157659bf9.json
-share/mattermost/client/i18n/es.1baf7d6021158fde7e13d3e2cb7b7e21.json
-share/mattermost/client/i18n/fr.1b11edf37470cfe9eb0cefb45a785daf.json
-share/mattermost/client/i18n/hu.5c49e4c28f8435cd53adf3fd6bbd38d1.json
-share/mattermost/client/i18n/it.dcddb3158c16287989614ab5f2cb9cef.json
-share/mattermost/client/i18n/ja.2a232e1fd7f6cd4716eab4aaf31b67b7.json
-share/mattermost/client/i18n/ko.f048a8b35edc3b24f0945a692d9a18ea.json
-share/mattermost/client/i18n/nl.3dea2f1ff63548a22d6589c6ac15d1cd.json
-share/mattermost/client/i18n/pl.12f3ff7a0ffc9e949db4ae1d04d17ca4.json
-share/mattermost/client/i18n/pt-BR.0ee62dc925ef2c8918b6377ad2919ee2.json
-share/mattermost/client/i18n/ro.fdd1c7bbfc8d7648aebb2b5080e6b59a.json
-share/mattermost/client/i18n/ru.048d960517a3a196412797ad7e2a5a75.json
-share/mattermost/client/i18n/sv.6c3db0763fe695e1c1a0402f0df0e945.json
-share/mattermost/client/i18n/tr.63bd4a2ffea5e3ee2fe24e474d72c9a1.json
-share/mattermost/client/i18n/uk.61652832ba9b789331648e1bf2a3ed81.json
-share/mattermost/client/i18n/zh-CN.f3582b8b3dc88208e3945e24096dd829.json
-share/mattermost/client/i18n/zh-TW.ac5d7fb74bfb6bdd3c7df412bf94bc3e.json
+share/mattermost/client/i18n/bg.575310c0a967a666316a54385d693378.json
+share/mattermost/client/i18n/de.bdc7aef31e2cc252822ba44ad27a1028.json
+share/mattermost/client/i18n/en_AU.1bee5940326c39540f99a3a76754e422.json
+share/mattermost/client/i18n/es.0684ccbd917d97eb7a0f8088965781d9.json
+share/mattermost/client/i18n/fr.7191be3ea70324d8bcf47e219d4715fe.json
+share/mattermost/client/i18n/hu.05b8a132dfdb248ddfda208362c1f02c.json
+share/mattermost/client/i18n/it.0ca33ee2b58007c57f6d9796db4c173b.json
+share/mattermost/client/i18n/ja.b2f6883f083a5c4b5faaa08cba9b030f.json
+share/mattermost/client/i18n/ko.c7f9fea3ce8c36510c562cf8f27e1c4a.json
+share/mattermost/client/i18n/nl.d50a4ad1a4eddd02b5af87a37b201cbd.json
+share/mattermost/client/i18n/pl.2978cae27b04b2883c3aca61ec450dbe.json
+share/mattermost/client/i18n/pt-BR.a7dba71b15d44c8d0c76a8eceef78e53.json
+share/mattermost/client/i18n/ro.93cb152c6e210446cee7843d851df86d.json
+share/mattermost/client/i18n/ru.540a103a9696e154841217eab479ae6b.json
+share/mattermost/client/i18n/sv.01ddd80abc66b1596248bfd1c7766d37.json
+share/mattermost/client/i18n/tr.398486239aba8ed9e8d2e68481d916a1.json
+share/mattermost/client/i18n/uk.7dbf981e3509fae584765893b529ab59.json
+share/mattermost/client/i18n/zh-CN.01a7381724492183cce066fd63c01c23.json
+share/mattermost/client/i18n/zh-TW.69acca7c00aa4f7e0f8b1b8c2ef2124d.json
 share/mattermost/client/icon_120x120.png
 share/mattermost/client/icon_144x144.png
 share/mattermost/client/icon_152x152.png
@@ -3688,9 +3688,9 @@ share/mattermost/client/images/upgrade.svg
 share/mattermost/client/images/warning.png
 share/mattermost/client/images/waves.svg
 share/mattermost/client/images/welcome_illustration.png
-share/mattermost/client/main.4d6131ad5b5b8826ac27.js
-share/mattermost/client/main.4d6131ad5b5b8826ac27.js.LICENSE.txt
-share/mattermost/client/main.4d6131ad5b5b8826ac27.js.map
+share/mattermost/client/main.016aa97fbf7f98233735.js
+share/mattermost/client/main.016aa97fbf7f98233735.js.LICENSE.txt
+share/mattermost/client/main.016aa97fbf7f98233735.js.map
 share/mattermost/client/main.f3f8262dec28fe9591d7.css
 share/mattermost/client/main.f3f8262dec28fe9591d7.css.map
 share/mattermost/client/manifest.json
