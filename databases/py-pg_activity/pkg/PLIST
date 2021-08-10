@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/04/04 07:50:23 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/08/10 11:00:39 feinerer Exp $
 @conflict py-pg_activity-*
 bin/pg_activity
 lib/python${MODPY_VERSION}/site-packages/pg_activity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -6,6 +6,7 @@ lib/python${MODPY_VERSION}/site-packages/pg_activity-${MODPY_EGG_VERSION}-py${MO
 lib/python${MODPY_VERSION}/site-packages/pg_activity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/pg_activity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/pg_activity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/pg_activity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/pg_activity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/pg_activity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pgactivity/
@@ -45,6 +46,7 @@ lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/get_active_connectio
 lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/get_active_connections_post_90200.sql
 lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/get_blocking.sql
 lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/get_blocking_post_90200.sql
+lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/get_blocking_post_90600.sql
 lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/get_db_info.sql
 lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/get_pg_activity.sql
 lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/get_pg_activity_post_100000.sql

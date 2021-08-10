@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2021/04/27 06:02:16 feinerer Exp $
+# $OpenBSD: Makefile,v 1.9 2021/08/10 11:00:39 feinerer Exp $
 
 COMMENT =		command line tool for PostgreSQL server activity monitoring
 
-MODPY_EGG_VERSION =	2.1.5
+MODPY_EGG_VERSION =	2.2.0
 DISTNAME =		pg_activity-${MODPY_EGG_VERSION}
 
 GH_ACCOUNT =		dalibo
@@ -18,15 +18,11 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
-MODPY_SETUP_ARGS =	--with-man
 RUN_DEPENDS =		databases/py-psycopg2${MODPY_FLAVOR} \
 			devel/py-attrs${MODPY_FLAVOR} \
 			sysutils/py-blessed${MODPY_FLAVOR} \
 			sysutils/py-psutil${MODPY_FLAVOR} \
 			textproc/py-humanize${MODPY_FLAVOR}
-
-post-patch:
-	sed -i 's|/usr/share|${LOCALBASE}|' ${WRKSRC}/setup.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-pg_activity
