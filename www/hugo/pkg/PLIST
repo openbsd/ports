@@ -1,5 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/09/17 07:30:09 paco Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/08/10 08:15:18 paco Exp $
 @bin bin/hugo
+@man man/man1/hugo-completion-bash.1
+@man man/man1/hugo-completion-fish.1
+@man man/man1/hugo-completion-powershell.1
+@man man/man1/hugo-completion-zsh.1
+@man man/man1/hugo-completion.1
 @man man/man1/hugo-config-mounts.1
 @man man/man1/hugo-config.1
 @man man/man1/hugo-convert-toJSON.1
