@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2021/05/19 01:50:30 kurt Exp $
+# $OpenBSD: Makefile,v 1.72 2021/08/10 06:37:05 kevlo Exp $
 
 ONLY_FOR_ARCHS-java =	aarch64 amd64 i386
 
@@ -14,7 +14,7 @@ GH_TAGNAME =		${V}
 PKGNAME-main =		opencv-${V}
 PKGNAME-java =		opencv-java-${V}
 REVISION-java =		1
-REVISION-main =		0
+REVISION-main =		1
 
 HOMEPAGE =		https://www.opencv.org/
 
@@ -84,8 +84,6 @@ WANTLIB-main +=		tomic
 CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS} -latomic"
 .endif
 
-# ATM opencv requires V4L1 compat, ask them to change it,
-# then see WITH_V4L below.
 CONFIGURE_ARGS =	-DBUILD_DOCS=OFF \
 			-DBUILD_EXAMPLES=OFF \
 			-DBUILD_IPP_IW=OFF \
@@ -103,7 +101,7 @@ CONFIGURE_ARGS =	-DBUILD_DOCS=OFF \
 			-DWITH_EIGEN=OFF \
 			-DWITH_IPP=OFF \
 			-DWITH_OPENCL=OFF \
-			-DWITH_V4L=OFF \
+			-DWITH_V4L=ON \
 			-DWITH_VTK=OFF \
 			-DOPENCV_GENERATE_PKGCONFIG=ON
 
