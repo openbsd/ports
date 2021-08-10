@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2021/06/27 23:49:58 namn Exp $
+# $OpenBSD: Makefile,v 1.88 2021/08/10 13:42:34 kmos Exp $
 
 COMMENT =	retrieve files from the web via HTTP, HTTPS and FTP
 
@@ -45,5 +45,11 @@ MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}/build-aux
 
 pre-build:
 	@${SUBST_CMD} ${WRKSRC}/doc/wget.texi ${WRKSRC}/doc/sample.wgetrc
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
+
 
 .include <bsd.port.mk>
