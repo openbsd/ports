@@ -1,3 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/29 19:27:05 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/08/10 02:47:36 abieber Exp $
 @bin bin/age
 @bin bin/age-keygen
+@man man/man1/age-keygen.1
+@man man/man1/age.1
