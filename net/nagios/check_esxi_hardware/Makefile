@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/08/10 08:56:35 sthen Exp $
 
 PKG_ARCH =	*
 
@@ -6,7 +6,7 @@ COMMENT =	monitoring plugin to check the status of ESX/i hardware
 
 GH_ACCOUNT =	Napsty
 GH_PROJECT =	check_esxi_hardware
-GH_TAGNAME =	20200710
+GH_TAGNAME =	20210809
 
 CATEGORIES =	net
 
