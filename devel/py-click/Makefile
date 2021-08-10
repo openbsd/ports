@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2021/05/21 19:50:24 kmos Exp $
+# $OpenBSD: Makefile,v 1.12 2021/08/10 20:43:51 sthen Exp $
 
 COMMENT=	command line library for Python
 
 MODPY_EGG_VERSION=6.7
 DISTNAME=	click-${MODPY_EGG_VERSION}
 PKGNAME=	py-click-${MODPY_EGG_VERSION}
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	devel
 
@@ -22,6 +22,6 @@ MODPY_SETUPTOOLS= Yes
 MODPY_PYTEST=	Yes
 
 FLAVORS=	python3
-FLAVOR?=
+FLAVOR=	python3
 
 .include <bsd.port.mk>

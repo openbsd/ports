@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2021/05/21 19:50:29 kmos Exp $
+# $OpenBSD: Makefile,v 1.15 2021/08/10 20:43:51 sthen Exp $
 
 COMMENT =		early-algorithm context-free grammar parser
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	1.6.1
 DISTNAME =		spark_parser-${MODPY_EGG_VERSION}
 PKGNAME =		py-spark-parser-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
-REVISION =		5
+REVISION =		6
 
 HOMEPAGE =		https://github.com/rocky/python-spark/
 
@@ -23,7 +23,7 @@ MODPY_PYTEST_ARGS =	test
 RUN_DEPENDS =		devel/py-click${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 post-install:
 	mv ${PREFIX}/bin/spark-parser-coverage{,${MODPY_BIN_SUFFIX}}

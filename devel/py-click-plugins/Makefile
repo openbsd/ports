@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2021/05/21 19:50:24 kmos Exp $
+# $OpenBSD: Makefile,v 1.8 2021/08/10 20:43:51 sthen Exp $
 
 COMMENT =		register CLI commands via setuptools entry-points
 
 MODPY_EGG_VERSION =	1.0.4
 DISTNAME =		click-plugins-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		devel
 
@@ -23,6 +23,6 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 .include <bsd.port.mk>

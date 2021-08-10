@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/03/08 02:42:34 danj Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/08/10 20:43:51 sthen Exp $
+@pkgpath devel/py-click-threading
 lib/python${MODPY_VERSION}/site-packages/click_threading/
 lib/python${MODPY_VERSION}/site-packages/click_threading-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/click_threading-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

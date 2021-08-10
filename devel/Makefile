@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2112 2021/08/01 12:21:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.2113 2021/08/10 20:43:51 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1341,13 +1341,9 @@
      SUBDIR += py-characteristic,python3
      SUBDIR += py-cheetah
      SUBDIR += py-cheetah,python3
-     SUBDIR += py-click
      SUBDIR += py-click,python3
-     SUBDIR += py-click-log
      SUBDIR += py-click-log,python3
-     SUBDIR += py-click-plugins
      SUBDIR += py-click-plugins,python3
-     SUBDIR += py-click-threading
      SUBDIR += py-click-threading,python3
      SUBDIR += py-clint
      SUBDIR += py-clint,python3
@@ -1622,7 +1618,6 @@
      SUBDIR += py-smmap,python3
      SUBDIR += py-sortedcontainers
      SUBDIR += py-sortedcontainers,python3
-     SUBDIR += py-spark-parser
      SUBDIR += py-spark-parser,python3
      SUBDIR += py-speg,python3
      SUBDIR += py-stdnum
@@ -1679,7 +1674,6 @@
      SUBDIR += py-tz
      SUBDIR += py-tz,python3
      SUBDIR += py-tzlocal,python3
-     SUBDIR += py-uncompyle6
      SUBDIR += py-uncompyle6,python3
      SUBDIR += py-unicorn,python3
      SUBDIR += py-unittest2
@@ -1704,7 +1698,6 @@
      SUBDIR += py-wurlitzer,python3
      SUBDIR += py-xdg
      SUBDIR += py-xdg,python3
-     SUBDIR += py-xdis
      SUBDIR += py-xdis,python3
      SUBDIR += py-xlsxwriter
      SUBDIR += py-xlsxwriter,python3

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2021/05/21 19:50:31 kmos Exp $
+# $OpenBSD: Makefile,v 1.19 2021/08/10 20:43:52 sthen Exp $
 
 COMMENT =		cross-version byte-code disassembler and marshal routines
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	3.6.11
 DISTNAME =		xdis-${MODPY_EGG_VERSION}
 PKGNAME =		py-xdis-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
-REVISION =		4
+REVISION =		5
 
 HOMEPAGE =		https://github.com/rocky/python-xdis/
 
@@ -25,7 +25,7 @@ TEST_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
 			devel/py-test${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 .if !${FLAVOR:Mpython3}
 TEST_DEPENDS +=		lang/python/${MODPY_VERSION},-tests

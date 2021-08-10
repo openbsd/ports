@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1295 2021/08/07 11:03:16 pascal Exp $
+# $OpenBSD: Quirks.pm,v 1.1296 2021/08/10 20:43:52 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -470,7 +470,14 @@ my $stem_extensions = {
 	'py-minimalmodbus' => 'py3-minimalmodbus',
 	'baresip-gtk2' => 'baresip-gtk',
 	'py-xlib' => 'py3-xlib',
-	'py-neovim' => 'py3-neovim'
+	'py-neovim' => 'py3-neovim',
+	'py-click-log' => 'py3-click-log',
+	'py-click-plugins' => 'py3-click-plugins',
+	'py-click-threading' => 'py3-click-threading',
+	'py-spark-parser' => 'py3-spark-parser',
+	'py-xdis' => 'py3-xdis',
+	'py-uncompyle6' => 'py3-uncompyle6',
+	'py-click' => 'py3-click'
 };
 
 my $obsolete_reason = {};
