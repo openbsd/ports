@@ -1,4 +1,4 @@
-$OpenBSD: patch-makefile,v 1.28 2021/07/24 08:51:03 ajacoutot Exp $
+$OpenBSD: patch-makefile,v 1.29 2021/08/11 11:36:54 ajacoutot Exp $
 
 Index: makefile
 --- makefile.orig
@@ -42,10 +42,3 @@ Index: makefile
  
  .PHONY: build-darwin
  build-darwin: GOARCH=amd64
-@@ -440,4 +448,4 @@ lint-all: copy-package-dep
- 
- .PHONY: gen-report
- gen-report:
--	$(GO_SPACE)/Tools/src/gen-report.sh
-\ No newline at end of file
-+	$(GO_SPACE)/Tools/src/gen-report.sh
