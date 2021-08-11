@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/04/23 20:54:58 tb Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/08/11 19:44:15 tb Exp $
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer-0.0.1-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/__init__.py
@@ -79,6 +79,7 @@ share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-ecdhe-rsa-key-exchange.${MODPY_PYC_
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-ecdhe-rsa-key-share-random.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-ecdsa-in-certificate-verify.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-ecdsa-sig-flexibility.${MODPY_PYC_MAGIC_TAG}pyc
+share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-eddsa-in-certificate-verify.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-empty-extensions.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-encrypt-then-mac-renegotiation.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-encrypt-then-mac.${MODPY_PYC_MAGIC_TAG}pyc
@@ -148,6 +149,7 @@ share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-dhe-shared-secret-padding.${M
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-ecdhe-curves.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-ecdsa-in-certificate-verify.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-ecdsa-support.${MODPY_PYC_MAGIC_TAG}pyc
+share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-eddsa-in-certificate-verify.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-empty-alert.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-ffdhe-groups.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-ffdhe-sanity.${MODPY_PYC_MAGIC_TAG}pyc
@@ -222,6 +224,7 @@ share/tlsfuzzer/scripts/test-ecdhe-rsa-key-exchange.py
 share/tlsfuzzer/scripts/test-ecdhe-rsa-key-share-random.py
 share/tlsfuzzer/scripts/test-ecdsa-in-certificate-verify.py
 share/tlsfuzzer/scripts/test-ecdsa-sig-flexibility.py
+share/tlsfuzzer/scripts/test-eddsa-in-certificate-verify.py
 share/tlsfuzzer/scripts/test-empty-extensions.py
 share/tlsfuzzer/scripts/test-encrypt-then-mac-renegotiation.py
 share/tlsfuzzer/scripts/test-encrypt-then-mac.py
@@ -291,6 +294,7 @@ share/tlsfuzzer/scripts/test-tls13-dhe-shared-secret-padding.py
 share/tlsfuzzer/scripts/test-tls13-ecdhe-curves.py
 share/tlsfuzzer/scripts/test-tls13-ecdsa-in-certificate-verify.py
 share/tlsfuzzer/scripts/test-tls13-ecdsa-support.py
+share/tlsfuzzer/scripts/test-tls13-eddsa-in-certificate-verify.py
 share/tlsfuzzer/scripts/test-tls13-empty-alert.py
 share/tlsfuzzer/scripts/test-tls13-ffdhe-groups.py
 share/tlsfuzzer/scripts/test-tls13-ffdhe-sanity.py
