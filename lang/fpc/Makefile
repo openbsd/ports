@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2021/08/07 11:00:09 pascal Exp $
+# $OpenBSD: Makefile,v 1.23 2021/08/11 18:21:22 pascal Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -7,7 +7,9 @@ COMMENT =		open source compiler for Pascal/Object Pascal
 V =			3.2.2
 DISTNAME =		fpcbuild-${V}
 PKGNAME =		fpc-${V}
-BOOT_GEN =		0
+
+FPCBOOT-amd64 =		fpcboot-openbsd-amd64-$V-0.tar.gz
+FPCBOOT-i386 =		fpcboot-openbsd-i386-$V-0.tar.gz
 
 CATEGORIES =		lang
 
@@ -25,8 +27,8 @@ LIB_DEPENDS =		converters/libiconv
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=freepascal/}
 MASTER_SITES0 =		https://distfiles.stumpf.co/
 DIST_SUBDIR =		fpc
-BOOTSTRAP =		fpcboot-openbsd-$V-${BOOT_GEN}${EXTRACT_SUFX}
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX} ${BOOTSTRAP}:0
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX} ${FPCBOOT-${MACHINE_ARCH}}:0
+SUPDISTFILES =		${FPCBOOT-amd64}:0 ${FPCBOOT-i386}:0
 
 .if ${MACHINE_ARCH} == "amd64"
 COMPNAME =		ppcx64
@@ -48,7 +50,9 @@ MAKE_FLAGS =		NOGDB=1
 COMMON_ENV =		MKDIRPROG=/bin/mkdir ECHO=/bin/echo \
 			GINSTALL=/usr/bin/install DATE=/bin/date \
 			TARPROG=/bin/tar
-MAKE_ENV =		${COMMON_ENV} FPC="${WRKDIR}/bin/${COMPNAME}"
+MAKE_ENV =		${COMMON_ENV} \
+			FPC="${WRKDIR}/bootstrap/bin/${COMPNAME}" \
+			LD_LIBRARY_PATH="${WRKDIR}/bootstrap/lib"
 TEST_ENV =		${COMMON_ENV}
 FAKE_FLAGS =		INSTALLEXE="${INSTALL_PROGRAM}" \
 			MKDIR="${INSTALL_DATA_DIR}" \
@@ -79,5 +83,15 @@ do-test:
 	find ${WRKSRC} -name Package.fpc -delete
 	cd ${WRKSRC}/fpcsrc/tests && \
 		env -i ${ALL_TEST_ENV} ${MAKE_PROGRAM} ${ALL_TEST_FLAGS} full
+
+BOOTSTRAPDIR=${WRKDIR}/bootstrap-prepare
+bootstrap: build
+	mkdir -p ${BOOTSTRAPDIR}/bootstrap/{bin,lib}
+	cp ${WRKSRC}/fpcsrc/compiler/${COMPNAME} ${BOOTSTRAPDIR}/bootstrap/bin
+	ldd ${BOOTSTRAPDIR}/bootstrap/bin/${COMPNAME} \
+		| awk '$$3 == "rlib" { print $$7 }' \
+		| xargs -J % cp % ${BOOTSTRAPDIR}/bootstrap/lib
+	cd ${BOOTSTRAPDIR} && tar cf - bootstrap | \
+		gzip > ${FULLDISTDIR}/${FPCBOOT-${MACHINE_ARCH}}
 
 .include <bsd.port.mk>
