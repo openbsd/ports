@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2021/01/27 18:40:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2021/08/11 14:18:30 ajacoutot Exp $
 
 COMMENT=		free space simulator and planetarium
 
@@ -6,6 +6,7 @@ GH_ACCOUNT=		CelestiaProject
 GH_PROJECT=		Celestia
 GH_TAGNAME=		1.6.2.2
 PKGNAME=		celestia-${GH_TAGNAME}
+REVISION=		0
 
 CATEGORIES=		astro x11
 
