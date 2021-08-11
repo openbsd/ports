@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2021/07/12 20:52:19 pascal Exp $
+# $OpenBSD: Makefile,v 1.24 2021/08/11 18:17:28 kmos Exp $
 
 # No consumers on macppc, saves 17 build hours in bulks
 NOT_FOR_ARCHS =		powerpc
@@ -42,6 +42,8 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # OSGPL (see LICENSE.txt)
 PERMIT_PACKAGE =	Yes
+
+COMPILER =	base-clang ports-gcc
 
 WANTLIB += ${COMPILER_LIBCXX} GL Half-2_5 Iex-2_5 IlmImf-2_5 IlmThread-2_5
 WANTLIB += SDL X11 Xinerama Xrandr fontconfig
