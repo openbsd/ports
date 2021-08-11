@@ -1,4 +1,4 @@
-$OpenBSD: patch-meson_build,v 1.5 2021/07/04 08:04:54 ajacoutot Exp $
+$OpenBSD: patch-meson_build,v 1.6 2021/08/11 11:57:21 ajacoutot Exp $
 
 -fexceptions:
 ld: error: undefined symbol: _Unwind_Resume
@@ -11,7 +11,7 @@ ld: error: undefined symbol: fsync
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -229,7 +229,6 @@ stack_frame_size = get_option('b_sanitize') == 'none' 
+@@ -234,7 +234,6 @@ array_bounds = get_option('b_sanitize') == 'none' ? 2 
  
  cc_flags += [
    '-fasynchronous-unwind-tables',
@@ -19,7 +19,7 @@ Index: meson.build
    '-fipa-pure-const',
    '-fno-common',
    '-Wabsolute-value',
-@@ -492,11 +491,6 @@ libvirt_nodelete = cc.get_supported_link_arguments([
+@@ -497,11 +496,6 @@ libvirt_nodelete = cc.get_supported_link_arguments([
  ])
  
  libvirt_no_undefined = []
@@ -31,7 +31,7 @@ Index: meson.build
  
  libvirt_no_indirect = cc.get_supported_link_arguments([
    '-Wl,--no-copy-dt-needed-entries',
-@@ -915,12 +909,15 @@ if devmapper_dep.found()
+@@ -951,12 +945,15 @@ if devmapper_dep.found()
    conf.set('WITH_DEVMAPPER', 1)
  endif
  
