@@ -1,9 +1,9 @@
-$OpenBSD: patch-bin_smokeping,v 1.5 2019/08/21 12:35:12 sthen Exp $
+$OpenBSD: patch-bin_smokeping,v 1.6 2021/08/11 20:38:42 sthen Exp $
 
 Index: bin/smokeping
 --- bin/smokeping.orig
 +++ bin/smokeping
-@@ -10,7 +10,7 @@ use lib "$FindBin::RealBin/../lib";use lib "$FindBin::
+@@ -9,7 +9,7 @@ use FindBin; use lib "$FindBin::RealBin/../lib";use li
  
  use Smokeping;
   

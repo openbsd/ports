@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2020/07/11 22:37:25 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.23 2021/08/11 20:38:42 sthen Exp $
 @newgroup _smokeping:562
 @newuser _smokeping:562:562:daemon:Smokeping account:/var/empty:/sbin/nologin
 bin/smokeinfo
@@ -24,6 +24,7 @@ lib/Smokeping/matchers/
 lib/Smokeping/matchers/Avgratio.pm
 lib/Smokeping/matchers/CheckLatency.pm
 lib/Smokeping/matchers/CheckLoss.pm
+lib/Smokeping/matchers/ConsecutiveLoss.pm
 lib/Smokeping/matchers/ExpLoss.pm
 lib/Smokeping/matchers/Median.pm
 lib/Smokeping/matchers/Medratio.pm
@@ -83,12 +84,14 @@ lib/Smokeping/sorters/Max.pm
 lib/Smokeping/sorters/Median.pm
 lib/Smokeping/sorters/StdDev.pm
 lib/Smokeping/sorters/base.pm
+@man man/man1/smokeinfo.1
 @man man/man1/smokeping.1
 @man man/man1/smokeping_cgi.1
 @man man/man1/tSmoke.1
 @man man/man3/Smokeping_matchers_Avgratio.3
 @man man/man3/Smokeping_matchers_CheckLatency.3
 @man man/man3/Smokeping_matchers_CheckLoss.3
+@man man/man3/Smokeping_matchers_ConsecutiveLoss.3
 @man man/man3/Smokeping_matchers_ExpLoss.3
 @man man/man3/Smokeping_matchers_Median.3
 @man man/man3/Smokeping_matchers_Medratio.3
@@ -176,11 +179,12 @@ share/examples/smokeping/smokeping_secrets.dist
 share/examples/smokeping/tmail.dist
 @sample ${SYSCONFDIR}/tmail
 @cwd /var/www
+@rcscript ${RCDIR}/smokeping
+@rcscript ${RCDIR}/smokeping_fcgi
 htdocs/smokeping/
-@owner _smokeping
 @mode 755
+@owner _smokeping
 @sample /var/db/smokeping/
-htdocs/smokeping/cache/
 @mode
 @owner
 htdocs/smokeping/css/
@@ -188,23 +192,21 @@ htdocs/smokeping/css/smokeping-print.css
 htdocs/smokeping/css/smokeping-screen.css
 htdocs/smokeping/js/
 htdocs/smokeping/js/cropper/
-htdocs/smokeping/js/cropper/cropper.js
-htdocs/smokeping/js/cropper/licence.txt
-htdocs/smokeping/js/cropper/marqueeVert.gif
-htdocs/smokeping/js/cropper/cropper.uncompressed.js
 htdocs/smokeping/js/cropper/cropper.css
+htdocs/smokeping/js/cropper/cropper.js
+htdocs/smokeping/js/cropper/cropper.uncompressed.js
+htdocs/smokeping/js/cropper/licence.txt
 htdocs/smokeping/js/cropper/marqueeHoriz.gif
+htdocs/smokeping/js/cropper/marqueeVert.gif
+htdocs/smokeping/js/prototype.js
 htdocs/smokeping/js/scriptaculous/
+htdocs/smokeping/js/scriptaculous/builder.js
 htdocs/smokeping/js/scriptaculous/controls.js
+htdocs/smokeping/js/scriptaculous/dragdrop.js
+htdocs/smokeping/js/scriptaculous/effects.js
+htdocs/smokeping/js/scriptaculous/scriptaculous.js
 htdocs/smokeping/js/scriptaculous/slider.js
 htdocs/smokeping/js/scriptaculous/sound.js
-htdocs/smokeping/js/scriptaculous/effects.js
 htdocs/smokeping/js/scriptaculous/unittest.js
-htdocs/smokeping/js/scriptaculous/builder.js
-htdocs/smokeping/js/scriptaculous/scriptaculous.js
-htdocs/smokeping/js/scriptaculous/dragdrop.js
 htdocs/smokeping/js/smokeping.js
-htdocs/smokeping/js/prototype.js
 htdocs/smokeping/smokeping.fcgi
-@rcscript ${RCDIR}/smokeping
-@rcscript ${RCDIR}/smokeping_fcgi

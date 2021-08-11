@@ -1,4 +1,4 @@
-$OpenBSD: patch-etc_config_dist_in,v 1.3 2019/08/21 12:35:12 sthen Exp $
+$OpenBSD: patch-etc_config_dist_in,v 1.4 2021/08/11 20:38:42 sthen Exp $
 
 Index: etc/config.dist.in
 --- etc/config.dist.in.orig
@@ -42,7 +42,7 @@ Index: etc/config.dist.in
  
  +someloss
  type = loss
-@@ -47,7 +47,8 @@ AVERAGE  0.5 144   720
+@@ -47,7 +47,8 @@ AVERAGE  0.5 144   2400
  
  *** Presentation ***
  

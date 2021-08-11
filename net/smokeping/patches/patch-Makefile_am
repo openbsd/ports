@@ -1,21 +1,14 @@
-$OpenBSD: patch-Makefile_am,v 1.1 2019/08/21 12:35:12 sthen Exp $
+$OpenBSD: patch-Makefile_am,v 1.2 2021/08/11 20:38:42 sthen Exp $
 
 Index: Makefile.am
 --- Makefile.am.orig
 +++ Makefile.am
-@@ -16,14 +16,9 @@
+@@ -16,7 +16,7 @@
  
  AUTOMAKE_OPTIONS =  foreign
  
--SUBDIRS = thirdparty doc etc htdocs lib bin
-+SUBDIRS = doc etc htdocs lib bin
+-SUBDIRS = lib thirdparty bin doc etc htdocs
++SUBDIRS = lib bin doc etc htdocs
  
- EXTRA_DIST = COPYRIGHT CHANGES CONTRIBUTORS LICENSE PERL_MODULES
+ EXTRA_DIST = COPYRIGHT CHANGES CONTRIBUTORS LICENSE cpanfile VERSION
  
--THIRDPARTY_DIR := $(shell pwd)/thirdparty
--
- dist-hook:
- 	$(PERL) -i -p -e '"$(PACKAGE_VERSION)" =~ /(\d+)\.(\d+)\.(\d+)/ and $$v = sprintf("%d.%03d%03d",$$1,$$2,$$3) and s/^\$$VERSION\s*=\s*".*?"/\$$VERSION = "$$v"/'  $(distdir)/lib/Smokeping.pm
--
--install-exec-hook:
--	[ ! -d $(THIRDPARTY_DIR)/lib/perl5 ] || $(CP) -fr $(THIRDPARTY_DIR)/lib/perl5/* $(DESTDIR)$(libdir)
