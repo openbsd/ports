@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2021/06/25 15:25:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2021/08/11 11:29:39 ajacoutot Exp $
 share/osinfo/
 share/osinfo/LICENSE
 share/osinfo/VERSION
@@ -141,6 +141,8 @@ share/osinfo/os/altlinux.org/alt-8.1.xml
 share/osinfo/os/altlinux.org/alt-8.2.xml
 share/osinfo/os/altlinux.org/alt-9.0.xml
 share/osinfo/os/altlinux.org/alt-9.1.xml
+share/osinfo/os/altlinux.org/alt-9.2.xml
+share/osinfo/os/altlinux.org/alt-p10.starterkits.xml
 share/osinfo/os/altlinux.org/alt-p8.starterkits.xml
 share/osinfo/os/altlinux.org/alt-p9.starterkits.xml
 share/osinfo/os/altlinux.org/alt-sisyphus.xml
@@ -443,6 +445,8 @@ share/osinfo/os/haiku-os.org/haiku-r1alpha2.xml
 share/osinfo/os/haiku-os.org/haiku-r1alpha3.xml
 share/osinfo/os/haiku-os.org/haiku-r1alpha4.1.xml
 share/osinfo/os/haiku-os.org/haiku-r1beta1.xml
+share/osinfo/os/haiku-os.org/haiku-r1beta2.xml
+share/osinfo/os/haiku-os.org/haiku-r1beta3.xml
 share/osinfo/os/libosinfo.org/
 share/osinfo/os/libosinfo.org/linux-2016.xml
 share/osinfo/os/libosinfo.org/linux-2018.xml
@@ -735,6 +739,7 @@ share/osinfo/os/redhat.com/rhel-8.1.xml
 share/osinfo/os/redhat.com/rhel-8.2.xml
 share/osinfo/os/redhat.com/rhel-8.3.xml
 share/osinfo/os/redhat.com/rhel-8.4.xml
+share/osinfo/os/redhat.com/rhel-8.5.xml
 share/osinfo/os/redhat.com/rhel-9-unknown.xml
 share/osinfo/os/redhat.com/rhel-9.0.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.0.xml
