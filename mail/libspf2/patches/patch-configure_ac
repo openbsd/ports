@@ -1,7 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.1 2016/10/11 20:35:39 sthen Exp $
---- configure.ac.orig	Tue Oct 11 21:28:19 2016
-+++ configure.ac	Tue Oct 11 21:31:12 2016
-@@ -111,39 +111,6 @@ AC_CHECK_HEADER(pthread.h, , [
+$OpenBSD: patch-configure_ac,v 1.2 2021/08/12 10:44:23 sthen Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -112,39 +112,6 @@ AC_CHECK_HEADER(pthread.h, , [
  	exit 1;
  ])
  
