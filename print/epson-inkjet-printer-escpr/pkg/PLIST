@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/07/24 08:53:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/08/13 09:28:10 ajacoutot Exp $
 @static-lib lib/libescpr.a
 lib/libescpr.la
 @lib lib/libescpr.so.${LIBescpr_VERSION}
@@ -286,6 +286,7 @@ share/ppd/epson-inkjet-printer-escpr/Epson-PictureMate_PM_290-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-PictureMate_PM_300-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-PictureMate_PM_310-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-ST-2000_Series-epson-escpr-en.ppd
+share/ppd/epson-inkjet-printer-escpr/Epson-ST-C2100_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-Stylus_CX2800-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-Stylus_CX2900-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-Stylus_CX3700-epson-escpr-en.ppd
