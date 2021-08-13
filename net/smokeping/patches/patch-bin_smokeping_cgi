@@ -1,9 +1,9 @@
-$OpenBSD: patch-bin_smokeping_cgi,v 1.4 2021/08/11 20:38:42 sthen Exp $
+$OpenBSD: patch-bin_smokeping_cgi,v 1.5 2021/08/13 09:47:53 sthen Exp $
 
 Index: bin/smokeping_cgi
 --- bin/smokeping_cgi.orig
 +++ bin/smokeping_cgi
-@@ -16,7 +16,7 @@ use Smokeping;
+@@ -17,7 +17,7 @@ use Smokeping;
  
  use CGI::Fast;
  
