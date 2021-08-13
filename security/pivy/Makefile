@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2020/08/27 10:27:31 jmatthew Exp $
+# $OpenBSD: Makefile,v 1.4 2021/08/13 04:46:21 jmatthew Exp $
 
-V =		0.7.1
+V =		0.8.0
 COMMENT =	tools for using PIV tokens as an SSH agent, encryption, etc.
 DISTNAME =	pivy-$V
 
@@ -27,5 +27,10 @@ NO_TEST =		Yes
 MAKE_FLAGS =		CC="${CC}" \
 			COPTFLAGS="${CFLAGS}" \
 			prefix=${PREFIX}
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pivy
+	${INSTALL_DATA} ${WRKSRC}/README.adoc ${PREFIX}/share/doc/pivy
+			    
 
 .include <bsd.port.mk>
