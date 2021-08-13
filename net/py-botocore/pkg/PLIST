@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.167 2021/08/11 11:32:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.168 2021/08/13 09:26:53 ajacoutot Exp $
 @conflict py-botocore-*
 @pkgpath net/py-botocore
 lib/python${MODPY_VERSION}/site-packages/botocore/
@@ -1332,6 +1332,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/sms/2016-10-24/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sms/2016-10-24/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sms/2016-10-24/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sms/2016-10-24/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/snow-device-management/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/snow-device-management/2021-08-04/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/snow-device-management/2021-08-04/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/snow-device-management/2021-08-04/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/snowball/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/snowball/2016-06-30/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/snowball/2016-06-30/examples-1.json
