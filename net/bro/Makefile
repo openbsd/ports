@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.77 2021/07/07 09:42:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2021/08/13 06:48:53 ajacoutot Exp $
+
+PORTROACH=		skipv:4.1.0
 
 COMMENT=		network analysis and security monitoring framework
 
