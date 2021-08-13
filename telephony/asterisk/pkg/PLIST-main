@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.91 2020/12/23 14:00:53 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.92 2021/08/13 19:08:03 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -272,6 +272,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/app_directed_pickup.so
 @so lib/asterisk/modules/app_directory.so
 @so lib/asterisk/modules/app_disa.so
+@so lib/asterisk/modules/app_dtmfstore.so
 @so lib/asterisk/modules/app_dumpchan.so
 @so lib/asterisk/modules/app_echo.so
 @so lib/asterisk/modules/app_exec.so
@@ -297,6 +298,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/app_read.so
 @so lib/asterisk/modules/app_readexten.so
 @so lib/asterisk/modules/app_record.so
+@so lib/asterisk/modules/app_reload.so
 @so lib/asterisk/modules/app_sayunixtime.so
 @so lib/asterisk/modules/app_senddtmf.so
 @so lib/asterisk/modules/app_sendtext.so
@@ -314,6 +316,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/app_userevent.so
 @so lib/asterisk/modules/app_verbose.so
 @so lib/asterisk/modules/app_voicemail.so
+@so lib/asterisk/modules/app_waitforcond.so
 @so lib/asterisk/modules/app_waitforring.so
 @so lib/asterisk/modules/app_waitforsilence.so
 @so lib/asterisk/modules/app_waituntil.so
