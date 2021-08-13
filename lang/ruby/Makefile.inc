@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.25 2021/08/09 20:13:02 gkoehler Exp $
+# $OpenBSD: Makefile.inc,v 1.26 2021/08/13 18:45:45 jeremy Exp $
 
 COMMENT-main ?=		object oriented script language with threads
 COMMENT-gdbm ?=		gdbm interface for ruby
@@ -33,17 +33,11 @@ CONFIGURE_ARGS +=	--enable-shared \
 			--with-soname=ruby${BINREV} \
 			--with-ruby-version=minor \
 			--with-mantype=doc \
+			--with-setjmp-type=_setjmp \
 			--enable-pthread \
 			--enable-ipv6 \
 			--without-bundled-libffi \
 			--disable-option-checking
-
-.if ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "powerpc64"
-# clang-11's __builtin_setjmp is broken, has chance of SIGSEGV during 
-# "make build" on powerpc with ld.lld, or when passing a wrong option
-# (like "ruby -e" with no -e code) on powerpc64. 
-CONFIGURE_ARGS +=	--with-setjmp-type=_setjmp
-.endif
 
 CONFIGURE_ENV +=	LIBruby${BINREV}_VERSION=${LIBruby${BINREV}_VERSION} \
 			PREFIX="${PREFIX}" \
