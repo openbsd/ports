@@ -1,4 +1,4 @@
-$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.22 2021/07/09 11:35:29 sthen Exp $
+$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.23 2021/08/13 17:24:00 sthen Exp $
 
 Index: scripts/mysql_install_db.sh
 --- scripts/mysql_install_db.sh.orig
@@ -108,7 +108,7 @@ Index: scripts/mysql_install_db.sh
    if test "$auth_root_authentication_method" = normal
    then
      echo
-@@ -643,10 +619,7 @@ then
+@@ -639,10 +615,7 @@ then
    then
      echo
      echo "You can start the MariaDB daemon with:"

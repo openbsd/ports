@@ -1,0 +1,13 @@
+@comment $OpenBSD: PFRAG.le-server,v 1.1 2021/08/13 17:24:00 sthen Exp $
+@so lib/mysql/plugin/ha_mroonga.so
+share/groonga/
+share/groonga-normalizer-mysql/
+share/groonga-normalizer-mysql/README.md
+share/groonga-normalizer-mysql/lgpl-2.0.txt
+share/groonga/COPYING
+share/groonga/README.md
+share/mysql/mroonga/
+share/mysql/mroonga/AUTHORS
+share/mysql/mroonga/COPYING
+share/mysql/mroonga/install.sql
+share/mysql/mroonga/uninstall.sql

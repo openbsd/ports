@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.112 2021/07/10 10:54:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.113 2021/08/13 17:24:00 sthen Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	10.6.3
+VERSION=	10.6.4
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
 PKGNAME-tests=	mariadb-tests-${VERSION}
-REVISION=	0
 EPOCH=		1
 # execinfo WANTLIB was added post-6.9
 # keep REVISION in -current above -stable until 7.0
@@ -97,12 +96,10 @@ CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 # force disabling the PAM auth plugin if OpenPAM is installed
 CONFIGURE_ARGS+=-DHAVE_PAM_APPL_H=0
 
-# The ColumnStore, Mroonga, and RocksDB storage engines are disabled.
+# The ColumnStore and RocksDB storage engines are disabled.
 # ColumnStore is only buildable on X86.
-# Mroonga is only buildable on little endian archs.
 # RocksDB is only buildable on little endian archs and requires POSIX timers.
 CONFIGURE_ARGS+=-DPLUGIN_COLUMNSTORE=NO \
-		-DWITHOUT_MROONGA_STORAGE_ENGINE=1 \
 		-DWITHOUT_ROCKSDB_STORAGE_ENGINE=1
 
 CFLAGS+=	-I${LOCALBASE}/include
@@ -114,6 +111,14 @@ CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 .if ${MACHINE_ARCH} == "hppa"
 LDFLAGS+=	-latomic
 WANTLIB+=	atomic
+.endif
+
+.include <bsd.port.arch.mk>
+
+.if ${PROPERTIES:Mle}
+PKG_ARGS+=	-Dle=1
+.else
+PKG_ARGS+=	-Dle=0
 .endif
 
 pre-configure:
