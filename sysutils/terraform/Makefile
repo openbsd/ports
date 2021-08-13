@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.64 2021/07/24 09:28:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2021/08/13 09:42:33 ajacoutot Exp $
 
 COMMENT=		tool for building, changing, and versioning infrastructure
 
 MODGO_MODNAME=	github.com/hashicorp/terraform
-MODGO_VERSION=	v1.0.3
+MODGO_VERSION=	v1.0.4
 DISTNAME=	terraform-${MODGO_VERSION}
 
 WRKDIST=	${WRKDIR}/github.com/hashicorp/terraform@${MODGO_VERSION}
@@ -324,7 +324,6 @@ MODGO_MODULES =	\
 	rsc.io/sampler						 v1.3.0 \
 	sigs.k8s.io/structured-merge-diff			 v0.0.0-20190525122527-15d366b2352e \
 	sigs.k8s.io/yaml					 v1.1.0
-
 MODGO_MODFILES =	\
 	cloud.google.com/go					 v0.26.0 \
 	cloud.google.com/go					 v0.34.0 \
