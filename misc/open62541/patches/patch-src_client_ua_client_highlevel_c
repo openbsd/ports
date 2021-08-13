@@ -1,11 +1,32 @@
-$OpenBSD: patch-src_client_ua_client_highlevel_c,v 1.1 2020/05/15 09:37:15 bluhm Exp $
+$OpenBSD: patch-src_client_ua_client_highlevel_c,v 1.2 2021/08/13 15:30:13 bluhm Exp $
+
+The user callback should always be called, also in case of an error.
+https://github.com/open62541/open62541/pull/3691
+Although this pull request was not merged, the new callback semantics
+has been implemented during refactoring in AttributeReadCallback().
+https://github.com/open62541/open62541/commit/9e193c3a893765db085ccc75e9d3929b6f7b8f82
 
 https://github.com/open62541/open62541/commit/b172ae033adb5dd2aa6766b9cd6af8fc8c91453c
 
 Index: src/client/ua_client_highlevel.c
 --- src/client/ua_client_highlevel.c.orig
 +++ src/client/ua_client_highlevel.c
-@@ -797,7 +797,8 @@ void ValueAttributeRead(UA_Client *client, void *userd
+@@ -786,18 +786,21 @@ void ValueAttributeRead(UA_Client *client, void *userd
+         }
+     }
+ 
+-    /* Could not process, delete the callback anyway */
+-    if(!done)
++    /* Could not process, run the callback anyway */
++    if(!done) {
+         UA_LOG_INFO(&client->config.logger, UA_LOGCATEGORY_CLIENT,
+                     "Cannot process the response to the async read "
+                     "request %u", requestId);
++        cc->callback(client, userdata, requestId, NULL);
++    }
+ 
+     LIST_REMOVE(cc, pointers);
+     UA_free(cc);
  }
  
  /*Read Attributes*/
@@ -15,7 +36,7 @@ Index: src/client/ua_client_highlevel.c
          const UA_NodeId *nodeId, UA_AttributeId attributeId,
          const UA_DataType *outDataType, UA_ClientAsyncServiceCallback callback,
          void *userdata, UA_UInt32 *reqId) {
-@@ -810,20 +811,21 @@ UA_StatusCode __UA_Client_readAttribute_async(UA_Clien
+@@ -810,20 +813,21 @@ UA_StatusCode __UA_Client_readAttribute_async(UA_Clien
      request.nodesToRead = &item;
      request.nodesToReadSize = 1;
  
