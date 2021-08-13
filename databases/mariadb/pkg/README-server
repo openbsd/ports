@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.6 2019/07/12 21:44:01 sthen Exp $
+$OpenBSD: README-server,v 1.7 2021/08/13 20:19:28 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -29,6 +29,9 @@ For example, add this to the login.conf(5) file:
 Rebuild the login.conf.db file if necessary:
 
 	# [ -f /etc/login.conf.db ] && cap_mkdb /etc/login.conf
+
+If you are using InnoDB and experience an error such as "doesn't exist
+in engine" you will need to increase kern.maxlocksperuid.
 
 For larger servers and dedicated database servers, these numbers
 and memory limits (e.g. datasize and stacksize) may also need to be
