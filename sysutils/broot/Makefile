@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/07/06 07:59:47 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2021/08/14 07:06:31 tb Exp $
 
 COMMENT =		new way to see and navigate directory trees
 
@@ -24,6 +24,6 @@ WANTLIB +=		c m git2 onig
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
-.include <crates.inc>
+.include "crates.inc"
 
 .include <bsd.port.mk>

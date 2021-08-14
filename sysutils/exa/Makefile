@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2021/07/13 06:27:14 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2021/08/14 07:06:31 tb Exp $
 
 COMMENT =		ls alternative written in Rust
 
@@ -16,7 +16,7 @@ DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
 
 MODULES =		devel/cargo
 
-.include <crates.inc>
+.include "crates.inc"
 
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
