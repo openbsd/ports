@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/06/24 02:28:37 abieber Exp $
+# $OpenBSD: Makefile,v 1.5 2021/08/14 07:01:23 tb Exp $
 
 COMMENT =	matrix-WhatsApp puppeting bridge
 
@@ -39,6 +39,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/example-config.yaml \
 	${PREFIX}/share/examples/mautrix-whatsapp
 
-.include "./modules.inc"
+.include "modules.inc"
 
 .include <bsd.port.mk>

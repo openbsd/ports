@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/08/13 17:33:11 tb Exp $
+# $OpenBSD: Makefile,v 1.3 2021/08/14 07:01:23 tb Exp $
 
 COMMENT =		command-line access to github pull requests, issues and more
 
@@ -29,6 +29,6 @@ post-install:
 	${WRKDIR}/go/bin/gen-docs --doc-path ${PREFIX}/man/man1 --man-page
 	rm ${PREFIX}/bin/gen-docs
 
-.include "./modules.inc"
+.include "modules.inc"
 
 .include <bsd.port.mk>

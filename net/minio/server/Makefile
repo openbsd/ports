@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2021/06/08 01:26:59 danj Exp $
+# $OpenBSD: Makefile,v 1.39 2021/08/14 07:01:23 tb Exp $
 
 BROKEN-i386 =	github.com/tklauser/go-sysconf@v0.3.4/sysconf_openbsd.go:22:28: undefined: unix.RLIMIT_NPROC
 
@@ -22,6 +22,6 @@ MODGO_LDFLAGS =	-s -w \
 
 SUBST_VARS =	VARBASE
 
-.include "./modules.inc"
+.include "modules.inc"
 
 .include <bsd.port.mk>

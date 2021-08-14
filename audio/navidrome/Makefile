@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/05/25 22:14:44 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2021/08/14 07:01:22 tb Exp $
 
 COMMENT =	modern music server and streamer
 
@@ -36,6 +36,6 @@ post-extract:
 	cd ${WRKSRC} && tar -C ${WRKSRC}/ui/ -zxf \
 		${FULLDISTDIR}/navidrome-build-${MODGO_VERSION}.tar.gz
 
-.include "./modules.inc"
+.include "modules.inc"
 
 .include <bsd.port.mk>

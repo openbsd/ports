@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/07/11 18:03:51 paco Exp $
+# $OpenBSD: Makefile,v 1.3 2021/08/14 07:01:23 tb Exp $
 
 COMMENT =		command-line interface for Hetzner Cloud
 V =			1.25.1
@@ -31,6 +31,6 @@ post-install:
 do-test:
 	cd  ${WRKSRC} && ${MODGO_TEST_CMD} ./...
 
-.include "./modules.inc"
+.include "modules.inc"
 
 .include <bsd.port.mk>

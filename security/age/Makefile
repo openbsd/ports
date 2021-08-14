@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/08/10 02:47:36 abieber Exp $
+# $OpenBSD: Makefile,v 1.11 2021/08/14 07:01:23 tb Exp $
 
 COMMENT =	simple, modern and secure file encryption tool
 
@@ -28,6 +28,6 @@ pre-install:
 	${INSTALL_MAN} ${WRKDIR}/${MODGO_MODNAME}/doc/*.1 \
 		${DESTDIR}/usr/local/man/man1
 
-.include "./modules.inc"
+.include "modules.inc"
 
 .include <bsd.port.mk>

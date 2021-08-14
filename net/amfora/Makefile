@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/06/24 18:05:09 paco Exp $
+# $OpenBSD: Makefile,v 1.2 2021/08/14 07:01:23 tb Exp $
 
 COMMENT=	terminal browser for gemini protocol
 
@@ -30,6 +30,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/logo.png ${PREFIX}/share/pixmaps/amfora.png
 
-.include "./modules.inc"
+.include "modules.inc"
 
 .include <bsd.port.mk>

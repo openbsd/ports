@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/07/22 16:01:47 abieber Exp $
+# $OpenBSD: Makefile,v 1.12 2021/08/14 07:01:23 tb Exp $
 
 COMMENT =	global, versioned, peer-to-peer filesystem
 
@@ -20,6 +20,6 @@ SUBST_VARS =	VARBASE
 
 NO_TEST =	Yes
 
-.include "./modules.inc"
+.include "modules.inc"
 
 .include <bsd.port.mk>

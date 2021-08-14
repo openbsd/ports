@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/07/08 11:37:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/08/14 07:01:22 tb Exp $
 
 BROKEN-sparc64 =	ring-v0.16.20 does not support sparc64; re-check if an update uses newer ring
 
@@ -25,6 +25,6 @@ CONFIGURE_STYLE =cargo
 
 LIB_DEPENDS =	archivers/bzip2
 
-.include "./modules.inc"
+.include "modules.inc"
 
 .include <bsd.port.mk>

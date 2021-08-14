@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/07/20 02:23:28 abieber Exp $
+# $OpenBSD: Makefile,v 1.8 2021/08/14 07:01:23 tb Exp $
 
 COMMENT =	matrix homeserver written in Go
 
@@ -26,6 +26,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/dendrite-config.yaml \
 		${PREFIX}/share/dendrite/dendrite.yaml
 
-.include "./modules.inc"
+.include "modules.inc"
 
 .include <bsd.port.mk>

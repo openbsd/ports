@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/05/25 22:24:43 abieber Exp $
+# $OpenBSD: Makefile,v 1.10 2021/08/14 07:01:22 tb Exp $
 
 # github.com/kyleconroy/sqlc/internal/engine/sqlite/parser fails on LP32
 ONLY_FOR_ARCHS =	aarch64 amd64
@@ -23,6 +23,6 @@ MODGO_LDFLAGS =	-X "github.com/kyleconroy/sqlc/internal/cmd.version=${MODGO_VERS
 
 NO_TEST =	Yes
 
-.include "./modules.inc"
+.include "modules.inc"
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2021/06/05 12:02:42 danj Exp $
+# $OpenBSD: Makefile,v 1.30 2021/08/14 07:01:23 tb Exp $
 
 # probably also on (32-bit) arm
 BROKEN-i386 =	pkg/disk/stat_other.go:40:91: cannot use st.Atim.Nsec (type int32) as type int64 in argument to strconv.FormatInt
@@ -24,6 +24,6 @@ MODGO_LDFLAGS =	-s -w \
 post-install:
 	mv ${PREFIX}/bin/{mc,minioc}
 
-.include "./modules.inc"
+.include "modules.inc"
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2021/08/05 14:10:14 abieber Exp $
+# $OpenBSD: Makefile,v 1.20 2021/08/14 07:01:23 tb Exp $
 
 COMMENT =	fast, efficient and secure backup program
 
@@ -27,6 +27,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${PREFIX}/man/man1
 
-.include "./modules.inc"
+.include "modules.inc"
 
 .include <bsd.port.mk>

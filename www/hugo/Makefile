@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2021/08/10 08:15:18 paco Exp $
+# $OpenBSD: Makefile,v 1.38 2021/08/14 07:01:23 tb Exp $
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 COMMENT =	fast and flexible static site generator
@@ -44,6 +44,6 @@ do-install:
 	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/hugo ${PREFIX}/bin/
 	${INSTALL_MAN} ${MODGO_WORKSPACE}/bin/man/*.1 ${PREFIX}/man/man1/
 
-.include "./modules.inc"
+.include "modules.inc"
 
 .include <bsd.port.mk>

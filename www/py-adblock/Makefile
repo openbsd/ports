@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/07/08 12:05:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/08/14 07:01:23 tb Exp $
 
 COMMENT =	Brave's adblock library
 
@@ -55,6 +55,6 @@ do-install:
 		--ignore-installed \
 		--no-deps ${WRKSRC}/target/wheels/*.whl
 
-.include "./modules.inc"
+.include "modules.inc"
 
 .include <bsd.port.mk>
