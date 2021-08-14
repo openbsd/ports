@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.91 2021/06/04 21:45:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.92 2021/08/14 10:24:26 sthen Exp $
 
 COMMENT =		ebook management application
 
-V =			5.20.0
+V =			5.25.0
 DISTNAME =		calibre-$V
 
 CATEGORIES =		textproc
@@ -12,10 +12,10 @@ HOMEPAGE =		https://calibre-ebook.com/
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5DBus Qt5Gui Qt5Widgets
-WANTLIB += crypto fontconfig freetype glib-2.0 gthread-2.0 hunspell-1.7
-WANTLIB += hyphen icudata icui18n icuio icuuc intl m podofo ${MODPY_WANTLIB}
-WANTLIB += z
+WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
+WANTLIB += GL Qt5Core Qt5DBus Qt5Gui Qt5Widgets crypto fontconfig
+WANTLIB += freetype glib-2.0 gthread-2.0 hunspell-1.7 hyphen icudata
+WANTLIB += icui18n icuio icuuc intl m podofo stemmer z
 
 MASTER_SITES =	https://github.com/kovidgoyal/calibre/releases/download/v${V}/
 EXTRACT_SUFX =	.tar.xz
@@ -23,7 +23,7 @@ EXTRACT_SUFX =	.tar.xz
 MODULES =	lang/python \
 		x11/qt5
 
-COMMON_DEPENDS =	databases/py-apsw${MODPY_FLAVOR}>=3.34.0 \
+COMMON_DEPENDS =	databases/py-apsw${MODPY_FLAVOR}>=3.35.4 \
 			devel/py-dateutil${MODPY_FLAVOR} \
 			devel/py-html5lib${MODPY_FLAVOR} \
 			devel/py-regex${MODPY_FLAVOR} \
@@ -54,6 +54,7 @@ LIB_DEPENDS =		devel/gettext,-runtime \
 			textproc/hunspell \
 			textproc/hyphen \
 			textproc/icu4c \
+			textproc/libstemmer \
 			textproc/podofo
 
 BUILD_DEPENDS =		${COMMON_DEPENDS} \

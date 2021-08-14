@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_calibre_constants_py,v 1.9 2021/04/28 20:23:06 sthen Exp $
+$OpenBSD: patch-src_calibre_constants_py,v 1.10 2021/08/14 10:24:26 sthen Exp $
 
 - add OpenBSD to list of recognized BSDs.
 
@@ -18,7 +18,7 @@ Index: src/calibre/constants.py
  ishaiku = 'haiku1' in _plat
  islinux   = not(iswindows or ismacos or isbsd or ishaiku)
  isfrozen  = hasattr(sys, 'frozen')
-@@ -255,7 +256,7 @@ class ExtensionsImporter:
+@@ -256,7 +257,7 @@ class ExtensionsImporter:
              extra = ('winutil', 'wpd', 'winfonts', 'winsapi')
          elif ismacos:
              extra = ('usbobserver', 'cocoa', 'libusb', 'libmtp')

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2021/05/25 19:21:32 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.42 2021/08/14 10:24:26 sthen Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -69,6 +69,7 @@ lib/calibre/calibre/db/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/db/${MODPY_PYCACHE}fields.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/db/${MODPY_PYCACHE}lazy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/db/${MODPY_PYCACHE}legacy.${MODPY_PYC_MAGIC_TAG}pyc
+lib/calibre/calibre/db/${MODPY_PYCACHE}listeners.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/db/${MODPY_PYCACHE}locking.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/db/${MODPY_PYCACHE}restore.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/db/${MODPY_PYCACHE}schema_upgrades.${MODPY_PYC_MAGIC_TAG}pyc
@@ -142,6 +143,7 @@ lib/calibre/calibre/db/errors.py
 lib/calibre/calibre/db/fields.py
 lib/calibre/calibre/db/lazy.py
 lib/calibre/calibre/db/legacy.py
+lib/calibre/calibre/db/listeners.py
 lib/calibre/calibre/db/locking.py
 lib/calibre/calibre/db/restore.py
 lib/calibre/calibre/db/schema_upgrades.py
@@ -154,6 +156,7 @@ lib/calibre/calibre/db/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/db/tests/${MODPY_PYCACHE}add_remove.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/db/tests/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/db/tests/${MODPY_PYCACHE}filesystem.${MODPY_PYC_MAGIC_TAG}pyc
+lib/calibre/calibre/db/tests/${MODPY_PYCACHE}fts.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/db/tests/${MODPY_PYCACHE}legacy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/db/tests/${MODPY_PYCACHE}locking.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/db/tests/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
@@ -164,6 +167,7 @@ lib/calibre/calibre/db/tests/${MODPY_PYCACHE}writing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/db/tests/add_remove.py
 lib/calibre/calibre/db/tests/base.py
 lib/calibre/calibre/db/tests/filesystem.py
+lib/calibre/calibre/db/tests/fts.py
 lib/calibre/calibre/db/tests/legacy.py
 lib/calibre/calibre/db/tests/locking.py
 lib/calibre/calibre/db/tests/main.py
@@ -410,11 +414,13 @@ lib/calibre/calibre/devices/usbms/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/devices/usbms/${MODPY_PYCACHE}device.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/devices/usbms/${MODPY_PYCACHE}deviceconfig.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/devices/usbms/${MODPY_PYCACHE}driver.${MODPY_PYC_MAGIC_TAG}pyc
+lib/calibre/calibre/devices/usbms/${MODPY_PYCACHE}hal.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/devices/usbms/books.py
 lib/calibre/calibre/devices/usbms/cli.py
 lib/calibre/calibre/devices/usbms/device.py
 lib/calibre/calibre/devices/usbms/deviceconfig.py
 lib/calibre/calibre/devices/usbms/driver.py
+lib/calibre/calibre/devices/usbms/hal.py
 lib/calibre/calibre/devices/user_defined/
 lib/calibre/calibre/devices/user_defined/__init__.py
 ${MODPY_COMMENT}lib/calibre/calibre/devices/user_defined/${MODPY_PYCACHE}/
@@ -1742,24 +1748,6 @@ lib/calibre/calibre/gui2/cover_flow.py
 lib/calibre/calibre/gui2/covers.py
 lib/calibre/calibre/gui2/css_transform_rules.py
 lib/calibre/calibre/gui2/custom_column_widgets.py
-lib/calibre/calibre/gui2/dbus_export/
-lib/calibre/calibre/gui2/dbus_export/__init__.py
-${MODPY_COMMENT}lib/calibre/calibre/gui2/dbus_export/${MODPY_PYCACHE}/
-lib/calibre/calibre/gui2/dbus_export/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/calibre/calibre/gui2/dbus_export/${MODPY_PYCACHE}demo.${MODPY_PYC_MAGIC_TAG}pyc
-lib/calibre/calibre/gui2/dbus_export/${MODPY_PYCACHE}gtk.${MODPY_PYC_MAGIC_TAG}pyc
-lib/calibre/calibre/gui2/dbus_export/${MODPY_PYCACHE}menu.${MODPY_PYC_MAGIC_TAG}pyc
-lib/calibre/calibre/gui2/dbus_export/${MODPY_PYCACHE}menu2.${MODPY_PYC_MAGIC_TAG}pyc
-lib/calibre/calibre/gui2/dbus_export/${MODPY_PYCACHE}tray.${MODPY_PYC_MAGIC_TAG}pyc
-lib/calibre/calibre/gui2/dbus_export/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
-lib/calibre/calibre/gui2/dbus_export/${MODPY_PYCACHE}widgets.${MODPY_PYC_MAGIC_TAG}pyc
-lib/calibre/calibre/gui2/dbus_export/demo.py
-lib/calibre/calibre/gui2/dbus_export/gtk.py
-lib/calibre/calibre/gui2/dbus_export/menu.py
-lib/calibre/calibre/gui2/dbus_export/menu2.py
-lib/calibre/calibre/gui2/dbus_export/tray.py
-lib/calibre/calibre/gui2/dbus_export/utils.py
-lib/calibre/calibre/gui2/dbus_export/widgets.py
 lib/calibre/calibre/gui2/device.py
 lib/calibre/calibre/gui2/device_drivers/
 lib/calibre/calibre/gui2/device_drivers/__init__.py
@@ -2581,6 +2569,7 @@ lib/calibre/calibre/plugins/
 @so lib/calibre/calibre/plugins/progress_indicator.so
 @so lib/calibre/calibre/plugins/speedup.so
 @so lib/calibre/calibre/plugins/sqlite_custom.so
+@so lib/calibre/calibre/plugins/sqlite_extension.so
 @so lib/calibre/calibre/plugins/tokenizer.so
 @so lib/calibre/calibre/plugins/unicode_names.so
 lib/calibre/calibre/prints.py
@@ -2710,7 +2699,6 @@ lib/calibre/calibre/utils/${MODPY_PYCACHE}complete.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/utils/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/utils/${MODPY_PYCACHE}config_base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/utils/${MODPY_PYCACHE}date.${MODPY_PYC_MAGIC_TAG}pyc
-lib/calibre/calibre/utils/${MODPY_PYCACHE}dbus_service.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/utils/${MODPY_PYCACHE}exim.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/utils/${MODPY_PYCACHE}file_type_icons.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/utils/${MODPY_PYCACHE}filenames.${MODPY_PYC_MAGIC_TAG}pyc
@@ -2775,7 +2763,6 @@ lib/calibre/calibre/utils/complete.py
 lib/calibre/calibre/utils/config.py
 lib/calibre/calibre/utils/config_base.py
 lib/calibre/calibre/utils/date.py
-lib/calibre/calibre/utils/dbus_service.py
 lib/calibre/calibre/utils/exim.py
 lib/calibre/calibre/utils/file_type_icons.py
 lib/calibre/calibre/utils/filenames.py
@@ -3774,7 +3761,6 @@ share/calibre/recipes/bbcvietnamese.recipe
 share/calibre/recipes/benchmark_pl.png
 share/calibre/recipes/benchmark_pl.recipe
 share/calibre/recipes/beppe_grillo.recipe
-share/calibre/recipes/berlin_policy_journal.recipe
 share/calibre/recipes/berliner_zeitung.recipe
 share/calibre/recipes/berlingske_dk.png
 share/calibre/recipes/berlingske_dk.recipe
@@ -4604,7 +4590,6 @@ share/calibre/recipes/hrt.png
 share/calibre/recipes/hrt.recipe
 share/calibre/recipes/huffingtonpost.recipe
 share/calibre/recipes/huffingtonpost_uk.png
-share/calibre/recipes/huffingtonpost_uk.recipe
 share/calibre/recipes/hurriyet.png
 share/calibre/recipes/hurriyet.recipe
 share/calibre/recipes/hvg.png
@@ -4892,6 +4877,7 @@ share/calibre/recipes/le_monde_diplomatique_fr.png
 share/calibre/recipes/le_monde_diplomatique_fr.recipe
 share/calibre/recipes/le_monde_sub.png
 share/calibre/recipes/le_monde_sub.recipe
+share/calibre/recipes/le_monde_sub_paper.png
 share/calibre/recipes/le_monde_sub_paper.recipe
 share/calibre/recipes/le_nouvel_observateur.png
 share/calibre/recipes/le_nouvel_observateur.recipe
