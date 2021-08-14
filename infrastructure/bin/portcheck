@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.138 2021/06/02 13:07:23 paco Exp $
+# $OpenBSD: portcheck,v 1.139 2021/08/14 06:56:18 tb Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -612,9 +612,9 @@ check_port_dir() {
 			portmk_exists=true
 			;;
 
-		modules.inc)
+		crates.inc|modules.inc)
 			test -f "$F" || err "$F is not a file"
-			fgrep -qx '.include "./modules.inc"' "$dir"/Makefile ||
+			fgrep -qx ".include \"$F\"" "$dir"/Makefile ||
 				err "$F not included in Makefile"
 			((++non_portmk))
 			;;
