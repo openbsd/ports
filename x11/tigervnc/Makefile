@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2020/09/10 09:56:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/08/14 13:16:57 sthen Exp $
 
 COMMENT=	high performance, multi-platform VNC client and server
 
+# outdated; 1af1cfdf8709 breaks non-PAM systems
 GH_ACCOUNT=	TigerVNC
 GH_PROJECT=	tigervnc
 GH_TAGNAME=	v1.10.1
-REVISION=	2
+REVISION=	3
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} xorg-server-1.20.8.tar.bz2:0
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} xorg-server-1.20.10.tar.bz2:0
 
 CATEGORIES=	x11 net
 
