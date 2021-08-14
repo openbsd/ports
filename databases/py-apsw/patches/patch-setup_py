@@ -1,9 +1,9 @@
-$OpenBSD: patch-setup_py,v 1.2 2021/02/24 14:10:48 rsadowski Exp $
+$OpenBSD: patch-setup_py,v 1.3 2021/08/14 10:21:03 sthen Exp $
 
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -166,7 +166,7 @@ class build_test_extension(Command):
+@@ -168,7 +168,7 @@ class build_test_extension(Command):
          shared = "shared"
          if sys.platform.startswith("darwin"):
              shared = "bundle"

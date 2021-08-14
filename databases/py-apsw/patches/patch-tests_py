@@ -1,4 +1,4 @@
-$OpenBSD: patch-tests_py,v 1.3 2021/02/24 14:10:48 rsadowski Exp $
+$OpenBSD: patch-tests_py,v 1.4 2021/08/14 10:21:03 sthen Exp $
 
 >>> print apsw.sqlite3_sourceid()
 OpenBSD
@@ -6,7 +6,7 @@ OpenBSD
 Index: tests.py
 --- tests.py.orig
 +++ tests.py
-@@ -8677,9 +8677,9 @@ def setup(write=write):
+@@ -8694,9 +8694,9 @@ def setup(write=write):
      if getattr(memdb, "enableloadextension", None) and not os.path.exists(LOADEXTENSIONFILENAME):
          write("Not doing LoadExtension test.  You need to compile the extension first\n")
          if sys.platform.startswith("darwin"):

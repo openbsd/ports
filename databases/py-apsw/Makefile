@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2021/02/24 14:10:48 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2021/08/14 10:21:03 sthen Exp $
 
 COMMENT =	thin SQLite wrapper for Python
 
-MODPY_EGG_VERSION = 3.34.0
+# version 3.XX.Y of apsw usually needs sqlite3 of at least 3.XX
+MODPY_EGG_VERSION = 3.35.4
 DISTVERSIONSUFFIX = -r1
 DISTNAME =	apsw-${MODPY_EGG_VERSION}${DISTVERSIONSUFFIX}
 PKGNAME =	py-apsw-${MODPY_EGG_VERSION}
@@ -25,7 +26,7 @@ MODULES =	lang/python
 FLAVORS =	python3
 FLAVOR =	python3
 
-MODPY_DISTUTILS_BUILDARGS = build_ext -I${LOCALBASE}/include
+MODPY_DISTUTILS_BUILDARGS = build_ext -I${LOCALBASE}/include --enable=load_extension
 
 do-test: fake
 	@cd ${WRKSRC} && ${SETENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
