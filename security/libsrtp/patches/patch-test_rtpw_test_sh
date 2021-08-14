@@ -1,9 +1,9 @@
-$OpenBSD: patch-test_rtpw_test_sh,v 1.4 2019/12/24 15:34:21 sthen Exp $
+$OpenBSD: patch-test_rtpw_test_sh,v 1.5 2021/08/14 08:27:29 sthen Exp $
 
 Index: test/rtpw_test.sh
 --- test/rtpw_test.sh.orig
 +++ test/rtpw_test.sh
-@@ -59,13 +59,13 @@ key=Ky7cUDT2GnI0XKWYbXv9AYmqbcLsqzL9mvdN9t/G
+@@ -66,13 +66,13 @@ key=Ky7cUDT2GnI0XKWYbXv9AYmqbcLsqzL9mvdN9t/G
  
  ARGS="-b $key -a -e 128"
  
@@ -17,5 +17,5 @@ Index: test/rtpw_test.sh
 -killall rtpw 2>/dev/null
 +pkill rtpw 2>/dev/null
  
- if test -x $RTPW; then
+ if test -n $MESON_EXE_WRAPPER || test -x $RTPW; then
  
