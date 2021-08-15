@@ -1,0 +1,57 @@
+$OpenBSD: patch-libgcc_config_host,v 1.1.1.1 2021/08/15 18:42:11 pascal Exp $
+Index: libgcc/config.host
+--- libgcc/config.host.orig
++++ libgcc/config.host
+@@ -377,6 +377,13 @@ aarch64*-*-netbsd*)
+ 	tmake_file="${tmake_file} ${cpu_type}/t-softfp t-softfp t-crtfm"
+ 	md_unwind_header=aarch64/aarch64-unwind.h
+ 	;;
++aarch64-*-openbsd*)
++	extra_parts="$extra_parts crtfastmath.o"
++	tmake_file="${tmake_file} ${cpu_type}/t-aarch64"
++	tmake_file="${tmake_file} ${cpu_type}/t-lse"
++	tmake_file="${tmake_file} ${cpu_type}/t-softfp t-softfp t-crtfm"
++	md_unwind_header=aarch64/aarch64-unwind.h
++	;;
+ aarch64*-*-fuchsia*)
+ 	tmake_file="${tmake_file} ${cpu_type}/t-aarch64"
+ 	tmake_file="${tmake_file} ${cpu_type}/t-lse t-slibgcc-libgcc"
+@@ -468,8 +475,13 @@ arm*-*-netbsdelf*)
+ 	    ;;
+ 	esac
+ 	;;
+-arm*-*-linux* | arm*-*-uclinuxfdpiceabi)
+-	tmake_file="${tmake_file} arm/t-arm t-fixedpoint-gnu-prefix t-crtfm"
++arm-*-openbsd*)
++	tmake_file="$tmake_file arm/t-arm arm/t-elf arm/t-bpabi"
++	tmake_file="$tmake_file t-softfp-sfdf t-softfp-excl arm/t-softfp t-softfp"
++	unwind_header=config/arm/unwind-arm.h
++	;;
++arm*-*-linux*	| arm*-*-uclinuxfdpiceabi)
++	tmake_file="${tmake_file}	arm/t-arm t-fixedpoint-gnu-prefix t-crtfm"
+ 	tmake_file="${tmake_file} arm/t-elf arm/t-bpabi arm/t-linux-eabi t-slibgcc-libgcc"
+ 	tm_file="$tm_file arm/bpabi-lib.h"
+ 	unwind_header=config/arm/unwind-arm.h
+@@ -976,6 +988,12 @@ microblaze*-*-rtems*)
+ 	;;
+ mips*-*-netbsd*)			# NetBSD/mips, either endian.
+ 	;;
++mips64-*-openbsd*)
++       set
++       ;;
++mips64el-*-openbsd*)
++       set
++       ;;
+ mips*-*-linux*)				# Linux MIPS, either endian.
+ 	extra_parts="$extra_parts crtfastmath.o"
+ 	tmake_file="${tmake_file} t-crtfm"
+@@ -1159,6 +1177,9 @@ powerpc*-*-freebsd*)
+ 	;;
+ powerpc-*-netbsd*)
+ 	tmake_file="$tmake_file rs6000/t-netbsd rs6000/t-crtstuff"
++	;;
++powerpc*-*-openbsd*)
++	tmake_file="${tmake_file} rs6000/t-ppccomm rs6000/t-crtstuff rs6000/t-openbsd"
+ 	;;
+ powerpc-*-eabispe*)
+ 	tmake_file="${tmake_file} rs6000/t-ppccomm rs6000/t-savresfgpr rs6000/t-crtstuff t-crtstuff-pic t-fdpbit"

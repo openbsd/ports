@@ -1,0 +1,16 @@
+$OpenBSD: patch-libphobos_libdruntime_core_sys_posix_setjmp_d,v 1.1.1.1 2021/08/15 18:42:11 pascal Exp $
+
+Index: libphobos/libdruntime/core/sys/posix/setjmp.d
+--- libphobos/libdruntime/core/sys/posix/setjmp.d.orig
++++ libphobos/libdruntime/core/sys/posix/setjmp.d
+@@ -277,6 +277,10 @@ else version (OpenBSD)
+     {
+         enum _JBLEN = 14;
+     }
++    else version (AArch64)
++    {
++        enum _JBLEN = 64;
++    }
+     else
+         static assert(0);
+ 

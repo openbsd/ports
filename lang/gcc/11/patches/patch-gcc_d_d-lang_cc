@@ -1,0 +1,18 @@
+$OpenBSD: patch-gcc_d_d-lang_cc,v 1.1.1.1 2021/08/15 18:42:11 pascal Exp $
+
+Index: gcc/d/d-lang.cc
+--- gcc/d/d-lang.cc.orig
++++ gcc/d/d-lang.cc
+@@ -1729,6 +1729,12 @@ d_enum_underlying_base_type (const_tree type)
+   return TREE_TYPE (type);
+ }
+ 
++const char *
++fname_as_string(int pretty_p __attribute__((__unused__)))
++{
++	return NULL;
++}
++
+ /* Definitions for our language-specific hooks.  */
+ 
+ #undef LANG_HOOKS_NAME

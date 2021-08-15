@@ -1,0 +1,21 @@
+$OpenBSD: patch-libphobos_src_std_system_d,v 1.1.1.1 2021/08/15 18:42:11 pascal Exp $
+
+Index: libphobos/src/std/system.d
+--- libphobos/src/std/system.d.orig
++++ libphobos/src/std/system.d
+@@ -35,6 +35,7 @@ immutable
+         watchOS,   /// watchOS
+         freeBSD,   /// FreeBSD
+         netBSD,    /// NetBSD
++        openBSD,    /// OpenBSD
+         dragonFlyBSD, /// DragonFlyBSD
+         solaris,   /// Solaris
+         android,   /// Android
+@@ -52,6 +53,7 @@ immutable
+     else version (watchOS) OS os = OS.watchOS;
+     else version (FreeBSD) OS os = OS.freeBSD;
+     else version (NetBSD)  OS os = OS.netBSD;
++    else version (OpenBSD)  OS os = OS.openBSD;
+     else version (DragonFlyBSD) OS os = OS.dragonFlyBSD;
+     else version (Posix)   OS os = OS.otherPosix;
+     else static assert(0, "Unknown OS.");

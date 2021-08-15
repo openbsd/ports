@@ -1,0 +1,16 @@
+$OpenBSD: patch-libphobos_src_Makefile_in,v 1.1.1.1 2021/08/15 18:42:11 pascal Exp $
+
+Index: libphobos/src/Makefile.in
+--- libphobos/src/Makefile.in.orig
++++ libphobos/src/Makefile.in
+@@ -501,8 +501,9 @@ toolexeclib_DATA = libgphobos.spec
+ toolexeclib_LTLIBRARIES = libgphobos.la
+ libgphobos_la_SOURCES = $(ALL_PHOBOS_SOURCES)
+ libgphobos_la_LIBTOOLFLAGS = 
++include $(top_srcdir)/../libversions
+ libgphobos_la_LDFLAGS = -Wc,-nophoboslib,-dstartfiles,-B../libdruntime/gcc \
+-    -version-info $(libtool_VERSION)
++    $(LIBgphobos_LTVERSION)
+ 
+ libgphobos_la_LIBADD = \
+     ../libdruntime/libgdruntime_convenience.la $(LIBZ)

@@ -1,0 +1,69 @@
+$OpenBSD: patch-gcc_builtins_c,v 1.1.1.1 2021/08/15 18:42:09 pascal Exp $
+Index: gcc/builtins.c
+--- gcc/builtins.c.orig
++++ gcc/builtins.c
+@@ -138,10 +138,12 @@ static rtx expand_builtin_memory_copy_args (tree dest,
+ static rtx expand_builtin_memmove (tree, rtx);
+ static rtx expand_builtin_mempcpy (tree, rtx);
+ static rtx expand_builtin_mempcpy_args (tree, tree, tree, rtx, tree, memop_ret);
++#ifndef NO_UNSAFE_BUILTINS
+ static rtx expand_builtin_strcat (tree);
+ static rtx expand_builtin_strcpy (tree, rtx);
+ static rtx expand_builtin_strcpy_args (tree, tree, tree, rtx);
+ static rtx expand_builtin_stpcpy (tree, rtx, machine_mode);
++#endif
+ static rtx expand_builtin_stpncpy (tree, rtx);
+ static rtx expand_builtin_strncat (tree, rtx);
+ static rtx expand_builtin_strncpy (tree, rtx);
+@@ -6133,6 +6135,7 @@ expand_builtin_mempcpy_args (tree dest, tree src, tree
+ 					  retmode, false);
+ }
+ 
++#ifndef NO_UNSAFE_BUILTINS
+ /* Expand into a movstr instruction, if one is available.  Return NULL_RTX if
+    we failed, the caller should emit a normal call, otherwise try to
+    get the result in TARGET, if convenient.
+@@ -6382,6 +6385,7 @@ expand_builtin_stpcpy (tree exp, rtx target, machine_m
+ 
+   return NULL_RTX;
+ }
++#endif
+ 
+ /* Check a call EXP to the stpncpy built-in for validity.
+    Return NULL_RTX on both success and failure.  */
+@@ -9914,9 +9918,11 @@ expand_builtin (tree exp, rtx target, rtx subtarget, m
+       break;
+ 
+     case BUILT_IN_STRCAT:
++#ifndef NO_UNSAFE_BUILTINS
+       target = expand_builtin_strcat (exp);
+       if (target)
+ 	return target;
++#endif
+       break;
+ 
+     case BUILT_IN_GETTEXT:
+@@ -9959,9 +9965,11 @@ expand_builtin (tree exp, rtx target, rtx subtarget, m
+       break;
+ 
+     case BUILT_IN_STRCPY:
++#ifndef NO_UNSAFE_BUILTINS
+       target = expand_builtin_strcpy (exp, target);
+       if (target)
+ 	return target;
++#endif
+       break;
+ 
+     case BUILT_IN_STRNCAT:
+@@ -9977,9 +9985,11 @@ expand_builtin (tree exp, rtx target, rtx subtarget, m
+       break;
+ 
+     case BUILT_IN_STPCPY:
++#ifndef NO_UNSAFE_BUILTINS
+       target = expand_builtin_stpcpy (exp, target, mode);
+       if (target)
+ 	return target;
++#endif
+       break;
+ 
+     case BUILT_IN_STPNCPY:

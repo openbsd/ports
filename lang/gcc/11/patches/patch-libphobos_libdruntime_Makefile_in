@@ -1,0 +1,16 @@
+$OpenBSD: patch-libphobos_libdruntime_Makefile_in,v 1.1.1.1 2021/08/15 18:42:11 pascal Exp $
+
+Index: libphobos/libdruntime/Makefile.in
+--- libphobos/libdruntime/Makefile.in.orig
++++ libphobos/libdruntime/Makefile.in
+@@ -775,8 +775,9 @@ ALL_DRUNTIME_SOURCES = $(DRUNTIME_DSOURCES) $(DRUNTIME
+ toolexeclib_LTLIBRARIES = libgdruntime.la
+ libgdruntime_la_SOURCES = $(ALL_DRUNTIME_SOURCES)
+ libgdruntime_la_LIBTOOLFLAGS = 
++include $(top_srcdir)/../libversions
+ libgdruntime_la_LDFLAGS = -Wc,-nophoboslib,-dstartfiles,-B../src,-Bgcc \
+-    -version-info $(libtool_VERSION)
++    $(LIBgdruntime_LTVERSION)
+ 
+ libgdruntime_la_LIBADD = $(LIBATOMIC) $(LIBBACKTRACE)
+ libgdruntime_la_DEPENDENCIES = $(DRTSTUFF)

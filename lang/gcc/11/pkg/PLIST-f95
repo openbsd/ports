@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST-f95,v 1.1.1.1 2021/08/15 18:42:12 pascal Exp $
+@option is-branch
+@conflict gfortran-*
+@conflict libgfortran-*
+@conflict g95-<12
+@pkgpath lang/gcc/4.9,-f95
+@bin bin/egfortran
+@bin bin/${CONFIG}-egfortran
+@info info/gfortran.info
+lib/gcc/${CONFIG}/${V}/finclude/
+lib/gcc/${CONFIG}/${V}/finclude/ieee_arithmetic.mod
+lib/gcc/${CONFIG}/${V}/finclude/ieee_exceptions.mod
+lib/gcc/${CONFIG}/${V}/finclude/ieee_features.mod
+lib/gcc/${CONFIG}/${V}/include/ISO_Fortran_binding.h
+@static-lib lib/gcc/${CONFIG}/${V}/libcaf_single.a
+lib/gcc/${CONFIG}/${V}/libcaf_single.la
+@static-lib lib/libgfortran.a
+lib/libgfortran.spec
+@bin libexec/gcc/${CONFIG}/${V}/f951
+@man man/man1/egfortran.1

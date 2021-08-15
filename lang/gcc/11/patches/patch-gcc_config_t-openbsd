@@ -1,0 +1,19 @@
+$OpenBSD: patch-gcc_config_t-openbsd,v 1.1.1.1 2021/08/15 18:42:11 pascal Exp $
+
+Make sure to include standard headers that are tightly bound
+to the compiler, such as stdatomic.h
+
+Index: gcc/config/t-openbsd
+--- gcc/config/t-openbsd.orig
++++ gcc/config/t-openbsd
+@@ -1,5 +1,9 @@
+ # We don't need GCC's own include files.
+-USER_H = $(EXTRA_HEADERS)
++USER_H = $(srcdir)/ginclude/stdfix.h \
++	 $(srcdir)/ginclude/stdnoreturn.h \
++	 $(srcdir)/ginclude/stdalign.h \
++	 $(srcdir)/ginclude/stdatomic.h \
++	 $(EXTRA_HEADERS)
+ 
+ # OpenBSD-specific D support.
+ openbsd-d.o: $(srcdir)/config/openbsd-d.c

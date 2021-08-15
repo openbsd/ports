@@ -1,0 +1,15 @@
+$OpenBSD: patch-libphobos_configure_tgt,v 1.1.1.1 2021/08/15 18:42:11 pascal Exp $
+
+Index: libphobos/configure.tgt
+--- libphobos/configure.tgt.orig
++++ libphobos/configure.tgt
+@@ -27,6 +27,9 @@ case "${target}" in
+   *-*-dragonfly*)
+ 	LIBPHOBOS_SUPPORTED=yes
+ 	;;
++  *-*-openbsd*)
++	LIBPHOBOS_SUPPORTED=yes
++	;;
+   aarch64*-*-linux*)
+ 	LIBPHOBOS_SUPPORTED=yes
+ 	;;

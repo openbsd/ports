@@ -1,0 +1,13 @@
+$OpenBSD: patch-gcc_ginclude_stddef_h,v 1.1.1.1 2021/08/15 18:42:10 pascal Exp $
+
+Index: gcc/ginclude/stddef.h
+--- gcc/ginclude/stddef.h.orig
++++ gcc/ginclude/stddef.h
+@@ -197,6 +197,7 @@ typedef __PTRDIFF_TYPE__ ptrdiff_t;
+ #if defined (__FreeBSD__) \
+   || defined(__DragonFly__) \
+   || defined(__FreeBSD_kernel__) \
++  || defined(__OpenBSD__) \
+   || defined(__VMS__)
+ /* __size_t is a typedef, must not trash it.  */
+ #else

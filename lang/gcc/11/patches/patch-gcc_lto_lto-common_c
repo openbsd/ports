@@ -1,0 +1,16 @@
+$OpenBSD: patch-gcc_lto_lto-common_c,v 1.1.1.1 2021/08/15 18:42:11 pascal Exp $
+
+Index: gcc/lto/lto-common.c
+--- gcc/lto/lto-common.c.orig
++++ gcc/lto/lto-common.c
+@@ -3102,4 +3102,10 @@ lto_fe_init (void)
+ #endif
+ }
+ 
++const char *
++fname_as_string(int pretty_p __attribute__((__unused__)))
++{
++	return NULL;
++}
++
+ #include "gt-lto-lto-common.h"

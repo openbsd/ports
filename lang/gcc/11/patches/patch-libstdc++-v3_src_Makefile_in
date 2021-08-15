@@ -1,0 +1,38 @@
+$OpenBSD: patch-libstdc++-v3_src_Makefile_in,v 1.1.1.1 2021/08/15 18:42:11 pascal Exp $
+Index: libstdc++-v3/src/Makefile.in
+--- libstdc++-v3/src/Makefile.in.orig
++++ libstdc++-v3/src/Makefile.in
+@@ -467,13 +467,14 @@ CONFIG_CXXFLAGS = \
+ WARN_CXXFLAGS = \
+ 	$(WARN_FLAGS) $(WERROR_FLAG) -fdiagnostics-show-location=once 
+ 
++include $(top_srcdir)/../libversions
+ 
+ # -I/-D flags to pass when compiling.
+ AM_CPPFLAGS = $(GLIBCXX_INCLUDES) $(CPPFLAGS)
+ @ENABLE_FILESYSTEM_TS_FALSE@filesystem_dir = 
+ @ENABLE_FILESYSTEM_TS_TRUE@filesystem_dir = filesystem
+ SUBDIRS = c++98 c++11 c++17 c++20 $(filesystem_dir)
+-@VTV_CYGMIN_FALSE@toolexeclib_LTLIBRARIES = libstdc++.la
++@VTV_CYGMIN_FALSE@toolexeclib_LTLIBRARIES = libestdc++.la
+ 
+ # Cross compiler support.
+ @VTV_CYGMIN_TRUE@toolexeclib_LTLIBRARIES = libvtv.la libstdc++.la
+@@ -535,7 +536,7 @@ libstdc___la_DEPENDENCIES = \
+ 	$(top_builddir)/src/c++20/libc++20convenience.la
+ 
+ libstdc___la_LDFLAGS = \
+-	-version-info $(libtool_VERSION) ${version_arg} -lm
++	$(LIBestdc++_LTVERSION) ${version_arg} -lm
+ 
+ libstdc___la_LINK = $(CXXLINK) $(libstdc___la_LDFLAGS) $(lt_host_flags)
+ @GLIBCXX_LDBL_ALT128_COMPAT_FALSE@@GLIBCXX_LDBL_COMPAT_TRUE@LTCXXCOMPILE64 = $(LTCXXCOMPILE)
+@@ -728,7 +729,7 @@ clean-toolexeclibLTLIBRARIES:
+ 	  rm -f $${locs}; \
+ 	}
+ 
+-libstdc++.la: $(libstdc___la_OBJECTS) $(libstdc___la_DEPENDENCIES) $(EXTRA_libstdc___la_DEPENDENCIES) 
++libestdc++.la: $(libstdc___la_OBJECTS) $(libstdc___la_DEPENDENCIES) $(EXTRA_libstdc___la_DEPENDENCIES) 
+ 	$(AM_V_GEN)$(libstdc___la_LINK) $(am_libstdc___la_rpath) $(libstdc___la_OBJECTS) $(libstdc___la_LIBADD) $(LIBS)
+ 
+ libvtv.la: $(libvtv_la_OBJECTS) $(libvtv_la_DEPENDENCIES) $(EXTRA_libvtv_la_DEPENDENCIES) 
