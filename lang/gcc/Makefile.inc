@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.18 2019/09/07 19:32:44 daniel Exp $
+# $OpenBSD: Makefile.inc,v 1.19 2021/08/15 18:43:03 pascal Exp $
 
 # common stuff for all gcc ports
 # we assume each one defines a V variable.
@@ -17,6 +17,7 @@ COMMENT-f95=	${COM}: f95 compiler
 COMMENT-objc=	${COM}: obj C compiler
 COMMENT-ada=	${COM}: Ada compiler
 COMMENT-go=	${COM}: Go compiler
+COMMENT-dlang=	${COM}: D compiler
 
 PKGNAME?=	gcc-${FULL_PKGVERSION}
 PKGNAME-libs?=	gcc-libs-${FULL_PKGVERSION}
@@ -26,6 +27,7 @@ PKGNAME-f95?=	g95-${FULL_PKGVERSION}
 PKGNAME-objc?=	gobjc-${FULL_PKGVERSION}
 PKGNAME-ada?=	gnat-${FULL_PKGVERSION}
 PKGNAME-go?=	gccgo-${FULL_PKGVERSION}
+PKGNAME-dlang?=	gdc-${FULL_PKGVERSION}
 
 DESCR-main ?=	${PORTSDIR}/lang/gcc/DESCR
 DESCR-libs ?=	${PORTSDIR}/lang/gcc/DESCR-libs
@@ -35,6 +37,7 @@ DESCR-f95 ?=	${PORTSDIR}/lang/gcc/DESCR-f95
 DESCR-objc ?=	${PORTSDIR}/lang/gcc/DESCR-objc
 DESCR-ada ?=	${PORTSDIR}/lang/gcc/DESCR-ada
 DESCR-go ?=	${PORTSDIR}/lang/gcc/DESCR-go
+DESCR-dlang ?=	${PORTSDIR}/lang/gcc/DESCR-dlang
 
 HOMEPAGE?=	https://gcc.gnu.org/
 
