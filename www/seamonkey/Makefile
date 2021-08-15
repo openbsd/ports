@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.258 2021/07/23 07:50:02 landry Exp $
+# $OpenBSD: Makefile,v 1.259 2021/08/15 13:36:49 semarie Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -63,6 +63,11 @@ MAKE_ENV +=	RUSTC_BOOTSTRAP="packed_simd,encoding_rs"
 
 # build lightning xpi
 CONFIGURE_ARGS +=	--enable-calendar
+
+post-configure:
+	sed -i 's/"files":{[^}]*}/"files":{}/' \
+		${WRKSRC}/third_party/rust/packed_simd/.cargo-checksum.json
+
 post-install:
 	${INSTALL_MAN} ${WRKBUILD}/dist/man/man1/seamonkey.1 ${PREFIX}/man/man1/
 
