@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.111 2021/08/09 06:50:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.112 2021/08/15 17:38:39 ajacoutot Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		3.40.2
 
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		devel
 
@@ -77,7 +77,7 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 # disable meson's default of using "-Wl,--as-needed" with ld.bfd;
 # build failures due to undefined references are often seen.
 .include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mlld} || ${ARCH:Mi386}
+.if !${PROPERTIES:Mlld}
 CONFIGURE_ARGS +=	-Db_asneeded=false
 .endif
 
