@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_bootstrap_bootstrap_py,v 1.14 2021/06/20 18:07:09 semarie Exp $
+$OpenBSD: patch-src_bootstrap_bootstrap_py,v 1.15 2021/08/15 13:38:04 semarie Exp $
 Workaround for sparc64: bootstrap segfaults without -O3
 
 Index: src/bootstrap/bootstrap.py
 --- src/bootstrap/bootstrap.py.orig
 +++ src/bootstrap/bootstrap.py
-@@ -903,6 +903,9 @@ class RustBuild(object):
+@@ -907,6 +907,9 @@ class RustBuild(object):
          if self.get_toml("deny-warnings", "rust") != "false":
              env["RUSTFLAGS"] += " -Dwarnings"
  

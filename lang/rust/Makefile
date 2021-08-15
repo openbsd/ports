@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2021/06/20 18:07:09 semarie Exp $
+# $OpenBSD: Makefile,v 1.130 2021/08/15 13:38:04 semarie Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -13,14 +13,14 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.53.0
+V =			1.54.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.53.0-20210618
-BV-amd64 =		1.53.0-20210616
-BV-i386 =		1.53.0-20210616
-BV-sparc64 =		1.53.0-20210619
+BV-aarch64 =		1.54.0-20210802
+BV-amd64 =		1.54.0-20210801
+BV-i386 =		1.54.0-20210802
+BV-sparc64 =		1.54.0-20210803
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -68,46 +68,6 @@ BOOTSTRAP-$m =		rustc-bootstrap-${m}-${BV-$m}${EXTRACT_SUFX}:0
 SUPDISTFILES +=		${BOOTSTRAP-$m}
 .endfor
 
-# list of libraries with a hash in plist
-# the second field is used to have a different hash for each library
-LIBRUST_WITH_HASHES =	addr2line			01 \
-			adler				02 \
-			alloc 				03 \
-			cfg_if 				04 \
-			compiler_builtins 		05 \
-			core 				06 \
-			getopts 			07 \
-			gimli				08 \
-			hashbrown 			09 \
-			libc 				0a \
-			miniz_oxide			0b \
-			object				0c \
-			panic_abort 			0d \
-			panic_unwind 			0e \
-			proc_macro 			0f \
-			rustc_demangle 			10 \
-			rustc_driver			11 \
-			rustc_std_workspace_alloc 	12 \
-			rustc_std_workspace_core 	13 \
-			rustc_std_workspace_std 	14 \
-			std 				15 \
-			std_detect			16 \
-			term 				17 \
-			test 				18 \
-			tracing_attributes		19 \
-			unicode_width 			20 \
-			unwind				21
-
-# generate a stable hash mostly conforming to rust expectations
-# (it should change if anything changed)
-# and pass it to build environment
-LIBRUST_HASH !=	echo '${FULLPKGNAME}:${BOOTSTRAP}' | sha1 | cut -c1-14
-.for _name _number in ${LIBRUST_WITH_HASHES}
-LIBR_METADATA_${_name} =	${LIBRUST_HASH}${_number}
-MAKE_ENV +=	LIBR_METADATA_${_name}=${LIBRUST_HASH}${_number}
-SUBST_VARS +=	LIBR_METADATA_${_name}
-.endfor
-
 # per MACHINE_ARCH configuration
 .if "${MACHINE_ARCH}" == "aarch64"
 TRIPLE_ARCH =		aarch64-unknown-openbsd
@@ -121,6 +81,44 @@ TRIPLE_ARCH =		sparc64-unknown-openbsd
 
 SUBST_VARS +=		TRIPLE_ARCH \
 			V
+
+# list of libraries with a hash in plist
+# the last field is used to have a different hash for each library
+LIBRUST_HASHES =	\
+	addr2line		01 \
+	adler			02 \
+	alloc			03 \
+	cfg_if			04 \
+	compiler_builtins	05 \
+	core			06 \
+	getopts			07 \
+	gimli			08 \
+	hashbrown		09 \
+	libc			0a \
+	miniz_oxide		0b \
+	object			0c \
+	panic_abort		0d \
+	panic_unwind		0e \
+	proc_macro		0f \
+	rustc_demangle		10 \
+	rustc_driver		11 \
+	rustc_std_workspace_alloc	12 \
+	rustc_std_workspace_core 	13 \
+	rustc_std_workspace_std 	14 \
+	std 			15 \
+	std_detect		16 \
+	term 			17 \
+	test 			18 \
+	unicode_width 		19 \
+	unwind			1a
+
+# generate a stable hash and pass it to build environment
+LIBRUST_HASH !=	echo '${FULLPKGNAME}:${TRIPLE_ARCH}' | sha1 | cut -c1-14
+.for _name _number in ${LIBRUST_HASHES}
+SUBST_VARS +=	LIBR_METADATA_${_name}
+LIBR_METADATA_${_name} =	${LIBRUST_HASH}${_number}
+LIBRUST_ARGS +=	${_name}=${LIBRUST_HASH}${_number}
+.endfor
 
 # on arches where the base compiler is clang: base-clang or ports-clang should be fine,
 # as we need devel/llvm only for libs.
@@ -193,7 +191,8 @@ pre-configure:
 
 # - generate config.toml file
 do-configure:
-	echo '[build]' >${WRKBUILD}/config.toml
+	echo 'changelog-seen = 2' >${WRKBUILD}/config.toml
+	echo '[build]' >>${WRKBUILD}/config.toml
 .if ${FLAVOR} == native_bootstrap
 	echo 'rustc = "${LOCALBASE}/bin/rustc"' >>${WRKBUILD}/config.toml
 	echo 'cargo = "${LOCALBASE}/bin/cargo"' >>${WRKBUILD}/config.toml
@@ -207,6 +206,7 @@ do-configure:
 	echo 'gdb = "${LOCALBASE}/bin/egdb"' >>${WRKBUILD}/config.toml
 	echo 'vendor = true' >>${WRKBUILD}/config.toml
 	echo 'extended = true' >>${WRKBUILD}/config.toml
+	echo 'tools = ["cargo", "clippy", "rustfmt"]' >>${WRKBUILD}/config.toml
 	echo 'docs = false' >>${WRKBUILD}/config.toml
 	echo 'verbose = 2' >>${WRKBUILD}/config.toml
 
@@ -223,6 +223,7 @@ do-configure:
 
 	echo '[dist]' >>${WRKBUILD}/config.toml
 	echo 'src-tarball = false' >>${WRKBUILD}/config.toml
+	echo 'compression-formats = ["gz"]' >>${WRKBUILD}/config.toml
 
 	echo '[llvm]' >>${WRKBUILD}/config.toml
 	echo 'static-libstdcpp = false' >>${WRKBUILD}/config.toml
@@ -240,7 +241,7 @@ TEST_BIN = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${TEST_ENV} \
 do-build:
 	${BUILD_BIN} dist --jobs=${MAKE_JOBS} \
 		library/std src/librustc cargo clippy rustfmt
-	rm -rf -- ${WRKBUILD}/build/tmp/dist
+	rm -rf -- ${WRKBUILD}/build/tmp
 
 COMPONENTS ?=	rustc-${V} rust-std-${V} cargo-${V} \
 		clippy-${V} rustfmt-${V}
@@ -256,6 +257,14 @@ do-install:
 		--mandir="${PREFIX}/man"
 	rm -rf ${WRKBUILD}/_extractdist
 .endfor
+	# cleanup
+	rm ${PREFIX}/bin/rust-lldb \
+		${PREFIX}/lib/rustlib/{install.log,uninstall.sh,rust-installer-version} \
+		${PREFIX}/lib/rustlib/components \
+		${PREFIX}/lib/rustlib/manifest-*
+	# rehash libraries to have stables filenames
+	cd ${PREFIX} && /bin/sh "${.CURDIR}/files/rehash.sh" ${TRIPLE_ARCH} ${LIBRUST_ARGS}
+	# replace libraries by link
 	for lib in ${PREFIX}/lib/lib*.* ; do \
 		libname=$${lib##*/} ; \
 		if [ -e ${PREFIX}/lib/rustlib/${TRIPLE_ARCH}/lib/$${libname} ] ; then \
@@ -263,13 +272,6 @@ do-install:
 				${PREFIX}/lib/$${libname} ; \
 		fi ; \
 	done
-
-post-install:
-	# cleanup
-	rm ${PREFIX}/bin/rust-lldb \
-		${PREFIX}/lib/rustlib/{install.log,uninstall.sh,rust-installer-version} \
-		${PREFIX}/lib/rustlib/components \
-		${PREFIX}/lib/rustlib/manifest-*
 	# install cargo bash-completion
 	mkdir -p ${PREFIX}/share/bash-completion/completions
 	mv ${PREFIX}${SYSCONFDIR}/bash_completion.d/cargo \
@@ -294,17 +296,19 @@ bootstrap: build
 		FAKE_SETUP=""
 	${_PBUILD} rm -rf ${BOOTSTRAPDIR}/{man,share} \
 		${BOOTSTRAPDIR}/bin/rust-gdb*
-	${_PBUILD} strip ${BOOTSTRAPDIR}/lib/lib*.so \
+	${_PBUILD} llvm-strip ${BOOTSTRAPDIR}/lib/lib*.so \
 		${BOOTSTRAPDIR}/lib/rustlib/${TRIPLE_ARCH}/lib/lib*.so
 .for _bin in rustc rustdoc cargo
 	${_PBUILD} mv ${BOOTSTRAPDIR}/bin/${_bin} \
 		${BOOTSTRAPDIR}/bin/${_bin}.bin
-	${_PBUILD} strip ${BOOTSTRAPDIR}/bin/${_bin}.bin
+	${_PBUILD} llvm-strip ${BOOTSTRAPDIR}/bin/${_bin}.bin
 	${_PBUILD} cp ${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${BV}/bin/${_bin} \
 		${BOOTSTRAPDIR}/bin/${_bin}
 	LD_LIBRARY_PATH="${BOOTSTRAPDIR}/lib" \
 	ldd ${BOOTSTRAPDIR}/bin/${_bin}.bin \
 		| sed -ne 's,.* \(/.*/lib/lib.*\.so.[.0-9]*\)$$,\1,p' \
 		| xargs -r -J % ${_PBUILD} cp % ${BOOTSTRAPDIR}/lib || true
+	${BOOTSTRAPDIR}/bin/${_bin} -vV >/dev/null
 .endfor
+
 .include <bsd.port.mk>
