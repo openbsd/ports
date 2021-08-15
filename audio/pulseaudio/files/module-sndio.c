@@ -1,4 +1,4 @@
-/* $OpenBSD: module-sndio.c,v 1.12 2021/02/26 07:11:45 eric Exp $ */
+/* $OpenBSD: module-sndio.c,v 1.13 2021/08/15 16:36:56 ajacoutot Exp $ */
 /*
  * Copyright (c) 2012 Eric Faurot <eric@openbsd.org>
  *
@@ -47,7 +47,7 @@
 
 PA_MODULE_AUTHOR("Eric Faurot");
 PA_MODULE_DESCRIPTION("OpenBSD sndio sink/source");
-PA_MODULE_VERSION("0.0");
+PA_MODULE_VERSION(PACKAGE_VERSION);
 PA_MODULE_LOAD_ONCE(false);
 PA_MODULE_USAGE(
 	"sink_name=<name for the sink> "

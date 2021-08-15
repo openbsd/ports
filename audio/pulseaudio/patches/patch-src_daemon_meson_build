@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_daemon_meson_build,v 1.1 2021/08/15 16:36:56 ajacoutot Exp $
+
+ld: error: undefined symbol: sched_get_priority_max
+
+Index: src/daemon/meson.build
+--- src/daemon/meson.build.orig
++++ src/daemon/meson.build
+@@ -31,7 +31,7 @@ executable('pulseaudio',
+   include_directories : [configinc, topinc],
+   link_args : ['-ffast-math'],
+   link_with : [libpulsecore, libpulsecommon, libpulse],
+-  dependencies : [ltdl_dep, cap_dep, dbus_dep, libsystemd_dep, dl_dep, libintl_dep, platform_dep, platform_socket_dep],
++  dependencies : [libpthread_dep, ltdl_dep, cap_dep, dbus_dep, libsystemd_dep, dl_dep, libintl_dep, platform_dep, platform_socket_dep],
+   c_args : pa_c_args,
+ )
+ 

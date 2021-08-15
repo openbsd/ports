@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_modules_module-detect_c,v 1.12 2019/09/16 06:04:27 ajacoutot Exp $
+$OpenBSD: patch-src_modules_module-detect_c,v 1.13 2021/08/15 16:36:56 ajacoutot Exp $
 
 Index: src/modules/module-detect.c
 --- src/modules/module-detect.c.orig
@@ -14,7 +14,7 @@ Index: src/modules/module-detect.c
  #include <pulsecore/core-error.h>
  #include <pulsecore/module.h>
  #include <pulsecore/modargs.h>
-@@ -207,6 +211,20 @@ static int detect_solaris(pa_core *c, int just_one) {
+@@ -236,6 +240,20 @@ static int detect_solaris(pa_core *c, int just_one) {
  }
  #endif
  
@@ -35,7 +35,7 @@ Index: src/modules/module-detect.c
  #ifdef OS_IS_WIN32
  static int detect_waveout(pa_core *c, int just_one) {
      pa_module *m = NULL;
-@@ -249,6 +267,9 @@ int pa__init(pa_module*m) {
+@@ -278,6 +296,9 @@ int pa__init(pa_module*m) {
  #endif
  #ifdef OS_IS_WIN32
      if ((n = detect_waveout(m->core, just_one)) <= 0)

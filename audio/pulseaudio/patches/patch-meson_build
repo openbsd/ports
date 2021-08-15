@@ -1,0 +1,29 @@
+$OpenBSD: patch-meson_build,v 1.1 2021/08/15 16:36:56 ajacoutot Exp $
+
+/var/lib -> /var/db
+
+ld: error: undefined symbol: sched_get_priority_max
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -145,8 +145,8 @@ cdata.set_quoted('PA_DEFAULT_CONFIG_DIR', pulsesysconf
+ cdata.set('PA_DEFAULT_CONFIG_DIR_UNQUOTED', pulsesysconfdir)
+ cdata.set_quoted('PA_BINARY', join_paths(bindir, 'pulseaudio'))
+ cdata.set_quoted('PA_SYSTEM_RUNTIME_PATH', join_paths(localstatedir, 'run', 'pulse'))
+-cdata.set_quoted('PA_SYSTEM_CONFIG_PATH', join_paths(localstatedir, 'lib', 'pulse'))
+-cdata.set_quoted('PA_SYSTEM_STATE_PATH', join_paths(localstatedir, 'lib', 'pulse'))
++cdata.set_quoted('PA_SYSTEM_CONFIG_PATH', join_paths(localstatedir, 'db', 'pulse'))
++cdata.set_quoted('PA_SYSTEM_STATE_PATH', join_paths(localstatedir, 'db', 'pulse'))
+ cdata.set_quoted('PA_DLSEARCHPATH', modlibexecdir)
+ cdata.set_quoted('PA_SYSTEM_USER', get_option('system_user'))
+ cdata.set_quoted('PA_SYSTEM_GROUP', get_option('system_group'))
+@@ -432,6 +432,8 @@ foreach f : [
+     cdata.set(define, 1)
+   endif
+ endforeach
++
++libpthread_dep = cc.find_library('pthread', required : true)
+ 
+ cap_dep = cc.find_library('cap', required : false)
+ 

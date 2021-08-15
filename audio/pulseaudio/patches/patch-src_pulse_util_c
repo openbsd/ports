@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_pulse_util_c,v 1.10 2019/09/16 06:04:27 ajacoutot Exp $
+$OpenBSD: patch-src_pulse_util_c,v 1.11 2021/08/15 16:36:56 ajacoutot Exp $
 
 Implement pa_get_binary_name().
 
@@ -17,7 +17,7 @@ Index: src/pulse/util.c
  #include <pulse/xmalloc.h>
  #include <pulse/timeval.h>
  
-@@ -248,6 +253,30 @@ char *pa_get_binary_name(char *s, size_t l) {
+@@ -253,6 +258,30 @@ char *pa_get_binary_name(char *s, size_t l) {
          }
      }
  #endif

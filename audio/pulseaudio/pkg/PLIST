@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2021/02/07 20:20:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.31 2021/08/15 16:36:56 ajacoutot Exp $
 @newgroup _pulse:683
 @newgroup _pulse-access:684
 @newuser _pulse:683:683:daemon:PulseAudio System Daemon:/var/run/pulse:/sbin/nologin
@@ -50,14 +50,8 @@ include/pulse/xmalloc.h
 lib/cmake/PulseAudio/
 lib/cmake/PulseAudio/PulseAudioConfig.cmake
 lib/cmake/PulseAudio/PulseAudioConfigVersion.cmake
-@static-lib lib/libpulse-mainloop-glib.a
-lib/libpulse-mainloop-glib.la
 @lib lib/libpulse-mainloop-glib.so.${LIBpulse-mainloop-glib_VERSION}
-@static-lib lib/libpulse-simple.a
-lib/libpulse-simple.la
 @lib lib/libpulse-simple.so.${LIBpulse-simple_VERSION}
-@static-lib lib/libpulse.a
-lib/libpulse.la
 @lib lib/libpulse.so.${LIBpulse_VERSION}
 lib/pkgconfig/libpulse-mainloop-glib.pc
 lib/pkgconfig/libpulse-simple.pc
@@ -128,20 +122,14 @@ lib/pulse-${VERSION}/modules/
 @so lib/pulse-${VERSION}/modules/module-tunnel-source.so
 @so lib/pulse-${VERSION}/modules/module-virtual-sink.so
 @so lib/pulse-${VERSION}/modules/module-virtual-source.so
-@so lib/pulse-${VERSION}/modules/module-virtual-surround-sink.so
 @so lib/pulse-${VERSION}/modules/module-volume-restore.so
 @so lib/pulse-${VERSION}/modules/module-x11-bell.so
 @so lib/pulse-${VERSION}/modules/module-x11-cork-request.so
 @so lib/pulse-${VERSION}/modules/module-x11-publish.so
 @so lib/pulse-${VERSION}/modules/module-x11-xsmp.so
 lib/pulseaudio/
-@static-lib lib/pulseaudio/libpulsecommon-${VERSION}.a
-lib/pulseaudio/libpulsecommon-${VERSION}.la
 @so lib/pulseaudio/libpulsecommon-${VERSION}.so
-@static-lib lib/pulseaudio/libpulsecore-${VERSION}.a
-lib/pulseaudio/libpulsecore-${VERSION}.la
 @so lib/pulseaudio/libpulsecore-${VERSION}.so
-libexec/pulse/
 @man man/man1/pacat.1
 @man man/man1/pacmd.1
 @man man/man1/pactl.1
@@ -183,6 +171,8 @@ share/examples/pulseaudio/pulse/system.pa
 @sample ${SYSCONFDIR}/pulse/system.pa
 share/examples/pulseaudio/xdg/
 @sample ${SYSCONFDIR}/xdg/
+share/examples/pulseaudio/xdg/Xwayland-session.d/
+share/examples/pulseaudio/xdg/Xwayland-session.d/00-pulseaudio-x11
 share/examples/pulseaudio/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/pulseaudio/xdg/autostart/pulseaudio.desktop
@@ -200,6 +190,7 @@ share/locale/de_CH/
 share/locale/de_CH/LC_MESSAGES/
 share/locale/de_CH/LC_MESSAGES/pulseaudio.mo
 share/locale/el/LC_MESSAGES/pulseaudio.mo
+share/locale/eo/LC_MESSAGES/pulseaudio.mo
 share/locale/es/LC_MESSAGES/pulseaudio.mo
 share/locale/fi/LC_MESSAGES/pulseaudio.mo
 share/locale/fr/LC_MESSAGES/pulseaudio.mo
@@ -227,6 +218,7 @@ share/locale/pl/LC_MESSAGES/pulseaudio.mo
 share/locale/pt/LC_MESSAGES/pulseaudio.mo
 share/locale/pt_BR/LC_MESSAGES/pulseaudio.mo
 share/locale/ru/LC_MESSAGES/pulseaudio.mo
+share/locale/si/LC_MESSAGES/pulseaudio.mo
 share/locale/sk/LC_MESSAGES/pulseaudio.mo
 share/locale/sr/LC_MESSAGES/pulseaudio.mo
 share/locale/sr@latin/LC_MESSAGES/pulseaudio.mo
@@ -246,5 +238,5 @@ share/vala/vapi/libpulse-simple.vapi
 share/vala/vapi/libpulse.deps
 share/vala/vapi/libpulse.vapi
 share/zsh/
-share/zsh/site-functions/
-share/zsh/site-functions/_pulseaudio
+share/zsh/vendor-completions/
+share/zsh/vendor-completions/_pulseaudio
