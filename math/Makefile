@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.201 2021/06/14 01:02:27 daniel Exp $
+# $OpenBSD: Makefile,v 1.202 2021/08/16 20:20:02 tb Exp $
 
      SUBDIR =
      SUBDIR += 4ti2
@@ -45,6 +45,7 @@
      SUBDIR += jacal
      SUBDIR += kst
      SUBDIR += lapack
+     SUBDIR += lean
      SUBDIR += libcerf
      SUBDIR += libqalculate
      SUBDIR += libtommath
