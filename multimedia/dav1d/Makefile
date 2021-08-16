@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.26 2021/03/28 09:54:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2021/08/16 17:48:31 sthen Exp $
 
 COMMENT=	small and fast AV1 decoder
 
-VER=		0.8.2
+VER=		0.9.1
 DISTNAME=	dav1d-${VER}
 CATEGORIES=	multimedia
 MASTER_SITES=	https://downloads.videolan.org/pub/videolan/dav1d/${VER}/
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	dav1d	2.0
+SHARED_LIBS=	dav1d	2.1
 
 HOMEPAGE=	https://code.videolan.org/videolan/dav1d/
 
