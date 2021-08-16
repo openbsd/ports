@@ -1,4 +1,4 @@
-# $OpenBSD: mariadb.port.mk,v 1.4 2015/07/19 12:42:20 zhuk Exp $
+# $OpenBSD: mariadb.port.mk,v 1.5 2021/08/16 17:49:56 sthen Exp $
 #
 # Helps testing MySQL/MariaDB-based software, no B/L/R-DEPS here.
 
@@ -37,24 +37,24 @@ TEST_ENV += \
 MODMARIADB_TEST_TARGET = \
 	rm -Rf ${_MODMARIADB_TEST_DATA_DIR}; \
 	export ${ALL_TEST_ENV}; \
-	${LOCALBASE}/bin/mysql_install_db \
+	${LOCALBASE}/bin/mariadb-install-db \
 		--skip-name-resolve \
 		${MODMARIADB_SERVER_ARGS}; \
-	${LOCALBASE}/libexec/mysqld \
+	${LOCALBASE}/libexec/mariadbd \
 		${MODMARIADB_SERVER_ARGS} & \
 	started=false; \
 	for i in $$(jot 10); do \
 		sleep 1; \
-		if mysqladmin ${MODMARIADB_ADMIN_ARGS} \
+		if mariadb-admin ${MODMARIADB_ADMIN_ARGS} \
 		    ping >/dev/null 2>&1; then \
 			started=true; \
 			break; \
 		fi; \
 	done; \
-	$$started || { echo "mysqld didn't start" >&2; kill $$!; exit 1; };
+	$$started || { echo "mariadbd didn't start" >&2; kill $$!; exit 1; };
 .if !empty(MODMARIADB_TEST_DBNAME)
 MODMARIADB_TEST_TARGET += \
-	${LOCALBASE}/bin/mysqladmin ${MODMARIADB_ADMIN_ARGS} \
+	${LOCALBASE}/bin/mariadb-admin ${MODMARIADB_ADMIN_ARGS} \
 	    create ${MODMARIADB_TEST_DBNAME} || \
 	    { kill $$!; exit 1; };
 .endif

@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.7 2021/08/13 20:19:28 sthen Exp $
+$OpenBSD: README-server,v 1.8 2021/08/16 17:49:56 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -9,7 +9,7 @@ Initial setup
 
 If you are installing MariaDB for the first time, you have to create
 a default database first. In order to create the database, please run
-${TRUEPREFIX}/bin/mysql_install_db
+${TRUEPREFIX}/bin/mariadb-install-db
 
 You will need to tune the values in the my.cnf file (examples
 available in ${TRUEPREFIX}/share/examples/mysql).
@@ -41,7 +41,7 @@ maintainers so that we can update this file for future versions.
 Upgrades
 ========
 
-mysql_upgrade(1) should be run after updating the MariaDB server.
+mariadb-upgrade(1) should be run after updating the MariaDB server.
 
 chrooted daemons and MariaDB socket
 ===================================
