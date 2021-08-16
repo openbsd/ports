@@ -1,11 +1,11 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2020/08/02 14:58:09 naddy Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2021/08/16 10:15:15 sthen Exp $
 
 Make sure to link in libm.
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -265,7 +265,7 @@ include_directories(${CMAKE_SOURCE_DIR})
+@@ -267,7 +267,7 @@ include_directories(${CMAKE_SOURCE_DIR})
  if(NOT WIN32)
    # Create and install shared library on non-windows
    add_library(pano13 SHARED ${pano13_hdr} ${pano13_res} ${pano13_src})
