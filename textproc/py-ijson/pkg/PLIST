@@ -1,0 +1,37 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/08/16 15:10:21 landry Exp $
+lib/python${MODPY_VERSION}/site-packages/ijson/
+lib/python${MODPY_VERSION}/site-packages/ijson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/ijson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/ijson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/ijson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/ijson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/ijson/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ijson/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ijson/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ijson/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ijson/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ijson/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ijson/${MODPY_PYCACHE}utils35.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ijson/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ijson/backends/
+lib/python${MODPY_VERSION}/site-packages/ijson/backends/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ijson/backends/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ijson/backends/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ijson/backends/${MODPY_PYCACHE}_yajl2_ctypes_common.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ijson/backends/${MODPY_PYCACHE}python.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ijson/backends/${MODPY_PYCACHE}yajl.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ijson/backends/${MODPY_PYCACHE}yajl2.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ijson/backends/${MODPY_PYCACHE}yajl2_c.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ijson/backends/${MODPY_PYCACHE}yajl2_cffi.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/ijson/backends/_yajl2.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/ijson/backends/_yajl2_ctypes_common.py
+lib/python${MODPY_VERSION}/site-packages/ijson/backends/python.py
+lib/python${MODPY_VERSION}/site-packages/ijson/backends/yajl.py
+lib/python${MODPY_VERSION}/site-packages/ijson/backends/yajl2.py
+lib/python${MODPY_VERSION}/site-packages/ijson/backends/yajl2_c.py
+lib/python${MODPY_VERSION}/site-packages/ijson/backends/yajl2_cffi.py
+lib/python${MODPY_VERSION}/site-packages/ijson/common.py
+lib/python${MODPY_VERSION}/site-packages/ijson/compat.py
+lib/python${MODPY_VERSION}/site-packages/ijson/utils.py
+lib/python${MODPY_VERSION}/site-packages/ijson/utils35.py
+lib/python${MODPY_VERSION}/site-packages/ijson/version.py

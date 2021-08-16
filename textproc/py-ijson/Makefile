@@ -1,0 +1,30 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2021/08/16 15:10:21 landry Exp $
+
+COMMENT =		iterative JSON parser
+
+MODPY_EGG_VERSION =	3.1.4
+DISTNAME =		ijson-${MODPY_EGG_VERSION}
+PKGNAME =		py-ijson-${MODPY_EGG_VERSION}
+
+CATEGORIES =		textproc
+
+HOMEPAGE =		https://github.com/ICRAR/ijson
+
+MAINTAINER =		Renaud Allard <renaud@allard.it>
+
+# BSD License
+PERMIT_PACKAGE =	Yes
+
+WANTLIB += pthread yajl
+
+MODULES =		lang/python
+MODPY_SETUPTOOLS =	Yes
+MODPY_PI =		Yes
+MODPY_PYTEST =		Yes
+FLAVORS =		python3
+FLAVOR =		python3
+
+CFLAGS =		-I${LOCALBASE}/include
+LIB_DEPENDS =		devel/libyajl
+
+.include <bsd.port.mk>

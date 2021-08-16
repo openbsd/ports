@@ -1,0 +1,5 @@
+Ijson is an iterative JSON parser with standard Python iterator
+interfaces. High level interfaces are provided to have ijson yield
+native Python objects out of a JSON stream located under a prefix and
+to iterate over object members. Some lower level interfaces are also
+available. C and pure-Python backends are available.
