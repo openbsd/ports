@@ -1,0 +1,17 @@
+$OpenBSD: patch-tests_lean_test_single_sh,v 1.1.1.1 2021/08/16 20:19:23 tb Exp $
+
+Index: tests/lean/test_single.sh
+--- tests/lean/test_single.sh.orig
++++ tests/lean/test_single.sh
+@@ -20,9 +20,9 @@ if [[ "$OSTYPE" == "msys" ]]; then
+     ff=$(echo $ff  | sed 's|^/\([a-z]\)/|\1:/|' | sed 's|/|\\\\|g')
+ fi
+ 
+-DIFF=diff
++DIFF=gdiff
+ if diff --color --help >/dev/null 2>&1; then
+-  DIFF="diff --color";
++  DIFF="gdiff --color";
+ fi
+ 
+ echo "-- testing $f"
