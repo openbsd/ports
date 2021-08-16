@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2021/08/10 06:37:05 kevlo Exp $
+# $OpenBSD: Makefile,v 1.73 2021/08/16 07:43:40 rsadowski Exp $
 
 ONLY_FOR_ARCHS-java =	aarch64 amd64 i386
 
@@ -6,15 +6,13 @@ CATEGORIES =		graphics devel
 COMMENT-main =		library for computer vision real-time processing
 COMMENT-java =		Java bindings for OpenCV
 
-V =			4.5.2
+V =			4.5.3
 GH_ACCOUNT =		opencv
 GH_PROJECT =		opencv
 GH_TAGNAME =		${V}
 
 PKGNAME-main =		opencv-${V}
 PKGNAME-java =		opencv-java-${V}
-REVISION-java =		1
-REVISION-main =		1
 
 HOMEPAGE =		https://www.opencv.org/
 
@@ -24,7 +22,7 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
   opencv_flann opencv_highgui opencv_imgproc opencv_ml opencv_objdetect \
   opencv_photo opencv_stitching opencv_video opencv_imgcodecs \
   opencv_videoio opencv_dnn
-SHARED_LIBS += $i 9.1
+SHARED_LIBS += $i 9.2
 .endfor
 
 WANTLIB-main += ${COMPILER_LIBCXX} IlmImf-2_5 avcodec avformat avutil
