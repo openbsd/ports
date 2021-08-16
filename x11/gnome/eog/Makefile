@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.164 2021/06/05 18:10:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.165 2021/08/16 15:07:08 jasper Exp $
 
 # Need librsvg>=2.44.0 that is rust only
 ONLY_FOR_ARCHS=		${RUST_ARCHS}
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=		${RUST_ARCHS}
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
 GNOME_PROJECT=		eog
-GNOME_VERSION=		40.2
+GNOME_VERSION=		40.3
 
 CATEGORIES=		graphics
 
