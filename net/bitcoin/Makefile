@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2021/05/02 04:43:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.31 2021/08/16 05:40:11 rsadowski Exp $
 
 BROKEN-sparc64 =	clang problem, probably needs newer binutils
 
@@ -7,6 +7,7 @@ COMMENT =		P2P payment system
 GH_ACCOUNT =		bitcoin
 GH_PROJECT =		bitcoin
 GH_TAGNAME =		v0.21.1
+REVISION =		0
 
 SHARED_LIBS +=  bitcoinconsensus          4.0 # 0.0
 SHARED_LIBS +=  secp256k1                 0.1 # 0.0
@@ -59,11 +60,11 @@ CONFIGURE_ARGS +=	--without-gui
 .else
 
 WANTLIB += GL Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets X11
-WANTLIB += X11-xcb Xau Xdamage Xdmcp Xext Xfixes Xxf86vm crypto
-WANTLIB += dbus-1 double-conversion drm execinfo expat freetype
-WANTLIB += glapi glib-2.0 graphite2 gthread-2.0 harfbuzz iconv
-WANTLIB += icudata icui18n icuuc intl miniupnpc pcre pcre2-16
-WANTLIB += png qrencode ssl xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present
+WANTLIB += X11-xcb Xau Xdmcp Xext Xfixes Xxf86vm crypto dbus-1
+WANTLIB += double-conversion drm execinfo expat freetype glapi
+WANTLIB += glib-2.0 graphite2 gthread-2.0 harfbuzz iconv icudata
+WANTLIB += icui18n icuuc intl miniupnpc pcre pcre2-16 png qrencode
+WANTLIB += ssl xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-shm
 WANTLIB += xcb-sync xcb-xfixes xshmfence zstd
 
 MODULES +=		x11/qt5
