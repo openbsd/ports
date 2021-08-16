@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2021/07/16 07:44:15 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2021/08/16 15:00:14 landry Exp $
 
 COMMENT =		update notifications for nextcloud clients
 
 GH_ACCOUNT =		nextcloud
 GH_PROJECT =		notify_push
-GH_TAGNAME =		v0.2.1
+GH_TAGNAME =		v0.2.2
 
 CATEGORIES =		www
 
