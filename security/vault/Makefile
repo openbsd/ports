@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2021/08/16 17:24:52 pvk Exp $
+# $OpenBSD: Makefile,v 1.59 2021/08/16 22:06:12 naddy Exp $
 
 COMMENT=		secure secret storage
 
@@ -13,7 +13,7 @@ MODGO_FLAGS=		-tags=ui
 MASTER_SITES=		https://distfiles.tristero.se/
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
-			vault-${VERSION}-bindata_assetfs.go:0
+			vault-${VERSION}-bindata_assetfs.go
 PKGNAME=		vault-${VERSION}
 
 CATEGORIES=		security net
