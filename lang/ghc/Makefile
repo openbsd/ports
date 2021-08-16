@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.187 2021/07/06 16:55:33 daniel Exp $
+# $OpenBSD: Makefile,v 1.188 2021/08/16 21:23:18 gnezdo Exp $
 
 # Not yet ported to other architectures
 ONLY_FOR_ARCHS =	i386 amd64
@@ -14,11 +14,10 @@ COMMENT =		compiler for the functional language Haskell
 # ghc hardcodes ${WRKDIR}/bin/gcc when the package is compiled with ccache
 NO_CCACHE =		Yes
 
-GHC_VERSION =		8.10.5
+GHC_VERSION =		8.10.6
 DISTNAME =		ghc-${GHC_VERSION}
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
-REVISION =		0
 
 # Version of the precompiled binaries
 BIN_VER =		8.10.3.20210429
@@ -73,24 +72,24 @@ SUPDISTFILES +=		${BINDISTFILE-$m}
 GHC_ITEMS = \
         CABAL			3.2.1.0          \
         ARRAY			0.5.4.0    	 \
-        BASE			4.14.2.0   	 \
+        BASE			4.14.3.0   	 \
         BINARY			0.8.8.0 	 \
         BYTESTRING		0.10.12.0	 \
-        CONTAINERS		0.6.4.1		 \
+        CONTAINERS		0.6.5.1		 \
         DEEPSEQ			1.4.4.0		 \
         DIRECTORY		1.3.6.0		 \
         EXCEPTIONS		0.10.4		 \
         FILEPATH		1.4.2.1		 \
-        GHC			8.10.5		 \
+        GHC			8.10.6		 \
         GHC_COMPACT		0.1.0.0		 \
         GHC_PRIM		0.6.1		 \
-        HASKELINE		0.8.0.1		 \
+        HASKELINE		0.8.2		 \
         HPC			0.6.1.0		 \
         INTEGER_GMP		1.0.3.0		 \
         MTL			2.2.2		 \
         PARSEC			3.1.14.0	 \
         PRETTY			1.1.3.6		 \
-        PROCESS			1.6.9.0		 \
+        PROCESS			1.6.13.2	 \
         STM			2.5.0.1		 \
 	TEMPLATE-HASKELL	2.16.0.0	 \
 	TERMINFO		0.4.1.4		 \
@@ -108,7 +107,7 @@ SUBST_VARS +=	${_i}_VER
 USE_GMAKE =		Yes
 USE_GROFF =		Yes
 
-AUTOCONF_VERSION =	2.69
+AUTOCONF_VERSION =	2.71
 CONFIGURE_STYLE =	gnu autoconf no-autoheader
 CONFIGURE_ARGS +=	--with-ffi-includes=${LOCALBASE}/include \
 			--with-ffi-libraries=${LOCALBASE}/lib \
