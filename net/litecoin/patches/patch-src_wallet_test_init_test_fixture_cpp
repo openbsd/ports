@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_wallet_test_init_test_fixture_cpp,v 1.1 2021/08/16 05:39:15 rsadowski Exp $
+
+Index: src/wallet/test/init_test_fixture.cpp
+--- src/wallet/test/init_test_fixture.cpp.orig
++++ src/wallet/test/init_test_fixture.cpp
+@@ -29,7 +29,11 @@ InitWalletDirTestingSetup::InitWalletDirTestingSetup(c
+     fs::create_directories(m_walletdir_path_cases["default"]);
+     fs::create_directories(m_walletdir_path_cases["custom"]);
+     fs::create_directories(m_walletdir_path_cases["relative"]);
++#if BOOST_VERSION >= 107700
++    std::ofstream f(BOOST_FILESYSTEM_C_STR(m_walletdir_path_cases["file"]));
++#else
+     std::ofstream f(m_walletdir_path_cases["file"].BOOST_FILESYSTEM_C_STR);
++#endif // BOOST_VERSION >= 107700
+     f.close();
+ }
+ 
+@@ -41,4 +45,4 @@ InitWalletDirTestingSetup::~InitWalletDirTestingSetup(
+ void InitWalletDirTestingSetup::SetWalletDir(const fs::path& walletdir_path)
+ {
+     gArgs.ForceSetArg("-walletdir", walletdir_path.string());
+-}
+\ No newline at end of file
++}

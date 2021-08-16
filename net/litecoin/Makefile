@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/06/22 04:13:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2021/08/16 05:39:15 rsadowski Exp $
 
 BROKEN-sparc64 =	clang problem, probably needs newer binutils
 
@@ -7,6 +7,7 @@ COMMENT =		P2P payment system
 GH_ACCOUNT =		litecoin-project
 GH_PROJECT =		litecoin
 GH_TAGNAME =		v0.18.1
+REVISION =		0
 
 SHARED_LIBS +=  bitcoinconsensus          2.0 # 0.0
 SHARED_LIBS +=  secp256k1                 0.0 # 0.0
@@ -21,9 +22,8 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} boost_filesystem
-WANTLIB += boost_system boost_system-mt boost_thread-mt c crypto
-WANTLIB += db_cxx event_core event_extra event_pthreads icuio
+WANTLIB += ${COMPILER_LIBCXX} boost_filesystem boost_system boost_thread-mt
+WANTLIB += c crypto db_cxx event_core event_extra event_pthreads
 WANTLIB += m sodium ssl zmq zstd
 
 LIB_DEPENDS =		archivers/zstd \
@@ -59,13 +59,13 @@ FLAVOR ?=
 CONFIGURE_ARGS +=	--without-gui
 .else
 
-WANTLIB += GL Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets X11
-WANTLIB += Qt5Test boost_chrono-mt boost_timer-mt boost_unit_test_framework-mt
-WANTLIB += X11-xcb Xdamage Xext Xfixes Xxf86vm dbus-1 drm execinfo
-WANTLIB += expat freetype glapi glib-2.0 graphite2 gthread-2.0
-WANTLIB += harfbuzz iconv icudata icui18n icuuc intl miniupnpc
-WANTLIB += pcre pcre2-16 png qrencode xcb xcb-dri2 double-conversion
-WANTLIB += xcb-dri3 xcb-glx xcb-present xcb-sync xcb-xfixes xshmfence
+WANTLIB += GL Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Test Qt5Widgets
+WANTLIB += X11 X11-xcb Xau Xdmcp Xext Xfixes Xxf86vm boost_chrono-mt
+WANTLIB += boost_unit_test_framework-mt dbus-1 double-conversion
+WANTLIB += drm execinfo expat freetype glapi glib-2.0 graphite2
+WANTLIB += gthread-2.0 harfbuzz iconv icudata icui18n icuuc intl
+WANTLIB += miniupnpc pcre pcre2-16 png qrencode xcb xcb-dri2 xcb-dri3
+WANTLIB += xcb-glx xcb-present xcb-shm xcb-sync xcb-xfixes xshmfence
 WANTLIB += z
 
 MODULES +=		x11/qt5
