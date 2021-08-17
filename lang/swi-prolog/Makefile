@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2021/06/09 19:50:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.90 2021/08/17 20:22:02 naddy Exp $
 
 BROKEN-hppa =		undefined reference to __sync_fetch_and_add_4
 BROKEN-sparc64 =	infinite loop or aborts during build
@@ -6,7 +6,7 @@ BROKEN-sparc64 =	infinite loop or aborts during build
 COMMENT =		Prolog for the real world
 
 V =			7.6.0
-REVISION =		10
+REVISION =		11
 DISTNAME =		swipl-$V
 PKGNAME =		swi-prolog-$V
 CATEGORIES =		lang
