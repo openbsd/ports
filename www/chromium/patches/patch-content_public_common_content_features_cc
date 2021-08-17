@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_public_common_content_features_cc,v 1.22 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-content_public_common_content_features_cc,v 1.23 2021/08/17 11:19:04 robert Exp $
 
 Index: content/public/common/content_features.cc
 --- content/public/common/content_features.cc.orig
@@ -60,7 +60,7 @@ Index: content/public/common/content_features.cc
  
  // Controls whether the WebXR Device API is enabled.
  const base::Feature kWebXr{"WebXR", base::FEATURE_ENABLED_BY_DEFAULT};
-@@ -1035,7 +1039,7 @@ const base::Feature kWindowCaptureMacV2{"WindowCapture
+@@ -1029,7 +1033,7 @@ const base::Feature kRetryGetVideoCaptureDeviceInfos{
  
  #endif  // defined(OS_MAC)
  
