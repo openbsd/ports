@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2021/05/17 01:54:15 kmos Exp $
+# $OpenBSD: Makefile,v 1.23 2021/08/17 13:51:32 abieber Exp $
 
 COMMENT =	open network for secure, decentralized communication
 
-MODPY_EGG_VERSION =	1.33.2
+MODPY_EGG_VERSION =	1.40.0
 
 GH_ACCOUNT =	matrix-org
 GH_PROJECT =	synapse
@@ -27,6 +27,7 @@ RUN_DEPENDS =	textproc/py-lxml${MODPY_FLAVOR} \
 		textproc/py-unpaddedbase64${MODPY_FLAVOR} \
 		textproc/py-signedjson${MODPY_FLAVOR} \
 		textproc/py-canonicaljson${MODPY_FLAVOR} \
+		textproc/py-ijson${MODPY_FLAVOR} \
 		devel/py-asn1${MODPY_FLAVOR} \
 		devel/py-blist${MODPY_FLAVOR} \
 		devel/py-jsonschema${MODPY_FLAVOR} \
