@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.47 2021/07/26 20:31:16 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.48 2021/08/17 20:41:17 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk3%%
 bin/ex
@@ -172,9 +172,11 @@ share/vim/${P}/compiler/ruby.vim
 share/vim/${P}/compiler/rubyunit.vim
 share/vim/${P}/compiler/rustc.vim
 share/vim/${P}/compiler/sass.vim
+share/vim/${P}/compiler/scdoc.vim
 share/vim/${P}/compiler/se.vim
 share/vim/${P}/compiler/shellcheck.vim
 share/vim/${P}/compiler/sml.vim
+share/vim/${P}/compiler/spectral.vim
 share/vim/${P}/compiler/splint.vim
 share/vim/${P}/compiler/stack.vim
 share/vim/${P}/compiler/standard.vim
@@ -189,6 +191,7 @@ share/vim/${P}/compiler/xbuild.vim
 share/vim/${P}/compiler/xmllint.vim
 share/vim/${P}/compiler/xmlwf.vim
 share/vim/${P}/compiler/xo.vim
+share/vim/${P}/compiler/yamllint.vim
 share/vim/${P}/compiler/zsh.vim
 share/vim/${P}/defaults.vim
 share/vim/${P}/delmenu.vim
@@ -447,6 +450,7 @@ share/vim/${P}/ftplugin/jproperties.vim
 share/vim/${P}/ftplugin/json.vim
 share/vim/${P}/ftplugin/jsonc.vim
 share/vim/${P}/ftplugin/jsp.vim
+share/vim/${P}/ftplugin/julia.vim
 share/vim/${P}/ftplugin/kconfig.vim
 share/vim/${P}/ftplugin/kwt.vim
 share/vim/${P}/ftplugin/ld.vim
@@ -532,6 +536,7 @@ share/vim/${P}/ftplugin/rust.vim
 share/vim/${P}/ftplugin/sass.vim
 share/vim/${P}/ftplugin/sbt.vim
 share/vim/${P}/ftplugin/scala.vim
+share/vim/${P}/ftplugin/scdoc.vim
 share/vim/${P}/ftplugin/scheme.vim
 share/vim/${P}/ftplugin/screen.vim
 share/vim/${P}/ftplugin/scss.vim
@@ -651,6 +656,7 @@ share/vim/${P}/indent/javascriptreact.vim
 share/vim/${P}/indent/json.vim
 share/vim/${P}/indent/jsonc.vim
 share/vim/${P}/indent/jsp.vim
+share/vim/${P}/indent/julia.vim
 share/vim/${P}/indent/ld.vim
 share/vim/${P}/indent/less.vim
 share/vim/${P}/indent/lifelines.vim
@@ -1215,6 +1221,7 @@ share/vim/${P}/syntax/jproperties.vim
 share/vim/${P}/syntax/json.vim
 share/vim/${P}/syntax/jsonc.vim
 share/vim/${P}/syntax/jsp.vim
+share/vim/${P}/syntax/julia.vim
 share/vim/${P}/syntax/kconfig.vim
 share/vim/${P}/syntax/kivy.vim
 share/vim/${P}/syntax/kix.vim
@@ -1409,6 +1416,7 @@ share/vim/${P}/syntax/sass.vim
 share/vim/${P}/syntax/sather.vim
 share/vim/${P}/syntax/sbt.vim
 share/vim/${P}/syntax/scala.vim
+share/vim/${P}/syntax/scdoc.vim
 share/vim/${P}/syntax/scheme.vim
 share/vim/${P}/syntax/scilab.vim
 share/vim/${P}/syntax/screen.vim
