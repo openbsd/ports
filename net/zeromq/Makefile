@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.36 2021/01/18 20:07:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2021/08/17 19:16:23 jasper Exp $
 
 COMMENT =		open source message queue optimised for performance
 
 V =			4.3.4
 DISTNAME =		zeromq-${V}
+REVISION =		0
 
 SHARED_LIBS +=  zmq                  5.2      # 7.3
 
 CATEGORIES =		net
 HOMEPAGE =		https://zeromq.org/
 
-MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER =		Robert Nagy <robert@openbsd.org>
 
 # LGPLv3
 PERMIT_PACKAGE =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2021/02/23 19:39:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2021/08/17 19:16:23 jasper Exp $
 
 COMMENT =		common testing tools used in the Salt Stack projects
 
@@ -7,13 +7,13 @@ DISTNAME =		salt-testing-${MODPY_EGG_VERSION}
 GH_ACCOUNT =		saltstack
 GH_PROJECT =		salt-testing
 GH_COMMIT =		70145afcc5eb96bf15b22631dcb364caf19b1fc1
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://saltstack.org/
 
-MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER =		Robert Nagy <robert@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
