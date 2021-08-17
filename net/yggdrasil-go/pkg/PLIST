@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/21 03:32:25 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/08/17 14:01:45 abieber Exp $
 @rcscript ${RCDIR}/yggdrasil
 @bin bin/yggdrasil
 @bin bin/yggdrasil-genkeys
 @bin bin/yggdrasilctl
 share/doc/yggdrasil/
-share/doc/yggdrasil/Whitepaper.md
 share/examples/yggdrasil/
 share/examples/yggdrasil/yggdrasil.conf
 @sample ${SYSCONFDIR}/yggdrasil.conf
