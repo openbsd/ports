@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2021/08/11 18:21:22 pascal Exp $
+# $OpenBSD: Makefile,v 1.24 2021/08/18 09:59:57 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -27,7 +27,10 @@ LIB_DEPENDS =		converters/libiconv
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=freepascal/}
 MASTER_SITES0 =		https://distfiles.stumpf.co/
 DIST_SUBDIR =		fpc
+
+.if ${MACHINE_ARCH:Mamd64} || ${MACHINE_ARCH:Mi386}
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} ${FPCBOOT-${MACHINE_ARCH}}:0
+.endif
 SUPDISTFILES =		${FPCBOOT-amd64}:0 ${FPCBOOT-i386}:0
 
 .if ${MACHINE_ARCH} == "amd64"
