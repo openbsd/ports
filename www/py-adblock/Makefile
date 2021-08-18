@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2021/08/14 07:01:23 tb Exp $
+# $OpenBSD: Makefile,v 1.6 2021/08/18 17:09:16 sthen Exp $
+
+# looks like it uses too much ram now;
+# libc++abi: terminating with uncaught exception of type std::bad_alloc: std::bad_alloc
+NOT_FOR_ARCHS =	i386
 
 COMMENT =	Brave's adblock library
 
