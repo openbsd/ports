@@ -1,23 +1,23 @@
-$OpenBSD: patch-lib_isc_unix_socket_c,v 1.30 2021/07/27 12:46:56 sthen Exp $
+$OpenBSD: patch-lib_isc_unix_socket_c,v 1.31 2021/08/18 19:55:36 sthen Exp $
 
 Disable some socket options which pledge doesn't allow.
 
 Index: lib/isc/unix/socket.c
 --- lib/isc/unix/socket.c.orig
 +++ lib/isc/unix/socket.c
-@@ -2105,10 +2105,12 @@ set_ip_dontfrag(isc_socket_t *sock) {
- 	 * Set the Don't Fragment flag on IP packets
+@@ -2105,10 +2105,12 @@ set_ip_disable_pmtud(isc_socket_t *sock) {
+ 	 * Disable Path MTU Discover on IP packets
  	 */
  	if (sock->pf == AF_INET6) {
 +#if !defined(__OpenBSD__) /* pledge doesn't allow "don't fragment" sockopts */
  #if defined(IPV6_DONTFRAG)
  		(void)setsockopt(sock->fd, IPPROTO_IPV6, IPV6_DONTFRAG,
- 				 &(int){ 1 }, sizeof(int));
+ 				 &(int){ 0 }, sizeof(int));
  #endif
 +#endif
- #if defined(IPV6_MTU_DISCOVER)
+ #if defined(IPV6_MTU_DISCOVER) && defined(IP_PMTUDISC_OMIT)
  		(void)setsockopt(sock->fd, IPPROTO_IPV6, IPV6_MTU_DISCOVER,
- 				 &(int){ IP_PMTUDISC_DO }, sizeof(int));
+ 				 &(int){ IP_PMTUDISC_OMIT }, sizeof(int));
 @@ -2385,6 +2387,7 @@ again:
  		}
  #endif /* if defined(SO_SNDBUF) */
@@ -33,8 +33,8 @@ Index: lib/isc/unix/socket.c
 +#endif
  #endif /* defined(USE_CMSG) || defined(SET_RCVBUF) || defined(SET_SNDBUF) */
  
- 	set_ip_dontfrag(sock);
-@@ -5094,6 +5098,13 @@ isc_socket_gettype(isc_socket_t *sock) {
+ 	set_ip_disable_pmtud(sock);
+@@ -5091,6 +5095,13 @@ isc_socket_gettype(isc_socket_t *sock) {
  
  void
  isc_socket_ipv6only(isc_socket_t *sock, bool yes) {
