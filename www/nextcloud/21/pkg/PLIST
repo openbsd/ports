@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/07/06 12:25:02 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/08/18 15:48:01 gonzalo Exp $
 @option is-branch
 @conflict nextcloud-*
 @unexec-delete rm -f ${PREFIX}/conf/modules/httpd-nextcloud.conf
@@ -8730,12 +8730,16 @@ nextcloud/apps/activity/l10n/sr@latin.js
 nextcloud/apps/activity/l10n/sr@latin.json
 nextcloud/apps/activity/l10n/sv.js
 nextcloud/apps/activity/l10n/sv.json
+nextcloud/apps/activity/l10n/ta.js
+nextcloud/apps/activity/l10n/ta.json
 nextcloud/apps/activity/l10n/th.js
 nextcloud/apps/activity/l10n/th.json
 nextcloud/apps/activity/l10n/tk.js
 nextcloud/apps/activity/l10n/tk.json
 nextcloud/apps/activity/l10n/tr.js
 nextcloud/apps/activity/l10n/tr.json
+nextcloud/apps/activity/l10n/ug.js
+nextcloud/apps/activity/l10n/ug.json
 nextcloud/apps/activity/l10n/uk.js
 nextcloud/apps/activity/l10n/uk.json
 nextcloud/apps/activity/l10n/uz.js
@@ -8858,6 +8862,8 @@ nextcloud/apps/admin_audit/l10n/es_CO.js
 nextcloud/apps/admin_audit/l10n/es_CO.json
 nextcloud/apps/admin_audit/l10n/es_DO.js
 nextcloud/apps/admin_audit/l10n/es_DO.json
+nextcloud/apps/admin_audit/l10n/es_MX.js
+nextcloud/apps/admin_audit/l10n/es_MX.json
 nextcloud/apps/admin_audit/l10n/eu.js
 nextcloud/apps/admin_audit/l10n/eu.json
 nextcloud/apps/admin_audit/l10n/fi.js
@@ -8886,6 +8892,8 @@ nextcloud/apps/admin_audit/l10n/nb.js
 nextcloud/apps/admin_audit/l10n/nb.json
 nextcloud/apps/admin_audit/l10n/nl.js
 nextcloud/apps/admin_audit/l10n/nl.json
+nextcloud/apps/admin_audit/l10n/nn_NO.js
+nextcloud/apps/admin_audit/l10n/nn_NO.json
 nextcloud/apps/admin_audit/l10n/oc.js
 nextcloud/apps/admin_audit/l10n/oc.json
 nextcloud/apps/admin_audit/l10n/pl.js
@@ -11382,6 +11390,8 @@ nextcloud/apps/files_external/l10n/ro.js
 nextcloud/apps/files_external/l10n/ro.json
 nextcloud/apps/files_external/l10n/ru.js
 nextcloud/apps/files_external/l10n/ru.json
+nextcloud/apps/files_external/l10n/sc.js
+nextcloud/apps/files_external/l10n/sc.json
 nextcloud/apps/files_external/l10n/si_LK.js
 nextcloud/apps/files_external/l10n/si_LK.json
 nextcloud/apps/files_external/l10n/sk.js
@@ -13220,8 +13230,6 @@ nextcloud/apps/firstrunwizard/l10n/ca.js
 nextcloud/apps/firstrunwizard/l10n/ca.json
 nextcloud/apps/firstrunwizard/l10n/cs.js
 nextcloud/apps/firstrunwizard/l10n/cs.json
-nextcloud/apps/firstrunwizard/l10n/cy_GB.js
-nextcloud/apps/firstrunwizard/l10n/cy_GB.json
 nextcloud/apps/firstrunwizard/l10n/cy_GB.php
 nextcloud/apps/firstrunwizard/l10n/da.js
 nextcloud/apps/firstrunwizard/l10n/da.json
@@ -13290,8 +13298,6 @@ nextcloud/apps/firstrunwizard/l10n/hr.js
 nextcloud/apps/firstrunwizard/l10n/hr.json
 nextcloud/apps/firstrunwizard/l10n/hu.js
 nextcloud/apps/firstrunwizard/l10n/hu.json
-nextcloud/apps/firstrunwizard/l10n/hy.js
-nextcloud/apps/firstrunwizard/l10n/hy.json
 nextcloud/apps/firstrunwizard/l10n/ia.js
 nextcloud/apps/firstrunwizard/l10n/ia.json
 nextcloud/apps/firstrunwizard/l10n/id.js
@@ -13304,8 +13310,6 @@ nextcloud/apps/firstrunwizard/l10n/ja.js
 nextcloud/apps/firstrunwizard/l10n/ja.json
 nextcloud/apps/firstrunwizard/l10n/ka_GE.js
 nextcloud/apps/firstrunwizard/l10n/ka_GE.json
-nextcloud/apps/firstrunwizard/l10n/km.js
-nextcloud/apps/firstrunwizard/l10n/km.json
 nextcloud/apps/firstrunwizard/l10n/km.php
 nextcloud/apps/firstrunwizard/l10n/ko.js
 nextcloud/apps/firstrunwizard/l10n/ko.json
@@ -15310,6 +15314,8 @@ nextcloud/apps/serverinfo/l10n/ro.js
 nextcloud/apps/serverinfo/l10n/ro.json
 nextcloud/apps/serverinfo/l10n/ru.js
 nextcloud/apps/serverinfo/l10n/ru.json
+nextcloud/apps/serverinfo/l10n/sc.js
+nextcloud/apps/serverinfo/l10n/sc.json
 nextcloud/apps/serverinfo/l10n/si.js
 nextcloud/apps/serverinfo/l10n/si.json
 nextcloud/apps/serverinfo/l10n/sk.js
@@ -15429,12 +15435,12 @@ nextcloud/apps/settings/js/vue-settings-personal-security.js
 nextcloud/apps/settings/js/vue-settings-personal-security.js.map
 nextcloud/apps/settings/js/vue-settings-personal-webauthn.js
 nextcloud/apps/settings/js/vue-settings-personal-webauthn.js.map
-nextcloud/apps/settings/js/vue-settings-users-94e0c1953ca75b42b8ee.js
-nextcloud/apps/settings/js/vue-settings-users-94e0c1953ca75b42b8ee.js.map
-nextcloud/apps/settings/js/vue-vendors-settings-apps-22524a229c790977c17e.js
-nextcloud/apps/settings/js/vue-vendors-settings-apps-22524a229c790977c17e.js.map
-nextcloud/apps/settings/js/vue-vendors-settings-apps-settings-users-a17b8f67d4a6673d779c.js
-nextcloud/apps/settings/js/vue-vendors-settings-apps-settings-users-a17b8f67d4a6673d779c.js.map
+nextcloud/apps/settings/js/vue-settings-users-bcb6cd8906b66d602fba.js
+nextcloud/apps/settings/js/vue-settings-users-bcb6cd8906b66d602fba.js.map
+nextcloud/apps/settings/js/vue-vendors-settings-apps-9acf75d1900805c662bd.js
+nextcloud/apps/settings/js/vue-vendors-settings-apps-9acf75d1900805c662bd.js.map
+nextcloud/apps/settings/js/vue-vendors-settings-apps-settings-users-878026a4418d8a330c02.js
+nextcloud/apps/settings/js/vue-vendors-settings-apps-settings-users-878026a4418d8a330c02.js.map
 nextcloud/apps/settings/js/vue-vendors-settings-users-f490719a1ba1d0f2c8d7.js
 nextcloud/apps/settings/js/vue-vendors-settings-users-f490719a1ba1d0f2c8d7.js.map
 nextcloud/apps/settings/l10n/
@@ -17133,6 +17139,8 @@ nextcloud/apps/theming/l10n/pt_PT.js
 nextcloud/apps/theming/l10n/pt_PT.json
 nextcloud/apps/theming/l10n/ru.js
 nextcloud/apps/theming/l10n/ru.json
+nextcloud/apps/theming/l10n/sc.js
+nextcloud/apps/theming/l10n/sc.json
 nextcloud/apps/theming/l10n/sk.js
 nextcloud/apps/theming/l10n/sk.json
 nextcloud/apps/theming/l10n/sl.js
@@ -17522,6 +17530,8 @@ nextcloud/apps/updatenotification/l10n/ro.js
 nextcloud/apps/updatenotification/l10n/ro.json
 nextcloud/apps/updatenotification/l10n/ru.js
 nextcloud/apps/updatenotification/l10n/ru.json
+nextcloud/apps/updatenotification/l10n/sc.js
+nextcloud/apps/updatenotification/l10n/sc.json
 nextcloud/apps/updatenotification/l10n/sk.js
 nextcloud/apps/updatenotification/l10n/sk.json
 nextcloud/apps/updatenotification/l10n/sk_SK.js
@@ -17833,6 +17843,8 @@ nextcloud/apps/user_ldap/l10n/ro.js
 nextcloud/apps/user_ldap/l10n/ro.json
 nextcloud/apps/user_ldap/l10n/ru.js
 nextcloud/apps/user_ldap/l10n/ru.json
+nextcloud/apps/user_ldap/l10n/sc.js
+nextcloud/apps/user_ldap/l10n/sc.json
 nextcloud/apps/user_ldap/l10n/si_LK.js
 nextcloud/apps/user_ldap/l10n/si_LK.json
 nextcloud/apps/user_ldap/l10n/sk.js
@@ -18403,6 +18415,8 @@ nextcloud/apps/weather_status/l10n/it.js
 nextcloud/apps/weather_status/l10n/it.json
 nextcloud/apps/weather_status/l10n/ja.js
 nextcloud/apps/weather_status/l10n/ja.json
+nextcloud/apps/weather_status/l10n/ko.js
+nextcloud/apps/weather_status/l10n/ko.json
 nextcloud/apps/weather_status/l10n/lt_LT.js
 nextcloud/apps/weather_status/l10n/lt_LT.json
 nextcloud/apps/weather_status/l10n/mk.js
@@ -18580,6 +18594,8 @@ nextcloud/apps/workflowengine/l10n/pt_PT.js
 nextcloud/apps/workflowengine/l10n/pt_PT.json
 nextcloud/apps/workflowengine/l10n/ru.js
 nextcloud/apps/workflowengine/l10n/ru.json
+nextcloud/apps/workflowengine/l10n/sc.js
+nextcloud/apps/workflowengine/l10n/sc.json
 nextcloud/apps/workflowengine/l10n/sk.js
 nextcloud/apps/workflowengine/l10n/sk.json
 nextcloud/apps/workflowengine/l10n/sk_SK.js
@@ -19322,6 +19338,7 @@ nextcloud/core/doc/user/_images/KOrganizer_pick_resources.png
 nextcloud/core/doc/user/_images/KOrganizer_server_address.png
 nextcloud/core/doc/user/_images/KOrganizer_test1.png
 nextcloud/core/doc/user/_images/KOrganizer_test2.png
+nextcloud/core/doc/user/_images/add-participants.png
 nextcloud/core/doc/user/_images/addressbook_name.png
 nextcloud/core/doc/user/_images/anonym_click_sharing.png
 nextcloud/core/doc/user/_images/anonym_hide_file_listing.png
@@ -19339,7 +19356,14 @@ nextcloud/core/doc/user/_images/calendar_event_repeat.png
 nextcloud/core/doc/user/_images/calendar_new-event_month.gif
 nextcloud/core/doc/user/_images/calendar_new-event_week.gif
 nextcloud/core/doc/user/_images/calendar_settings.png
+nextcloud/core/doc/user/_images/call-menu.png
+nextcloud/core/doc/user/_images/call-settings.png
 nextcloud/core/doc/user/_images/cardbook_icon.png
+nextcloud/core/doc/user/_images/change-name.png
+nextcloud/core/doc/user/_images/chat-message-menu.png
+nextcloud/core/doc/user/_images/chat-room-settings.png
+nextcloud/core/doc/user/_images/chat-with-one-user.png
+nextcloud/core/doc/user/_images/command-help.png
 nextcloud/core/doc/user/_images/contact_bottombar.png
 nextcloud/core/doc/user/_images/contact_manageaddressbook.png
 nextcloud/core/doc/user/_images/contact_new.png
@@ -19354,11 +19378,20 @@ nextcloud/core/doc/user/_images/contacts_popup.png
 nextcloud/core/doc/user/_images/create_public_share-6.png
 nextcloud/core/doc/user/_images/create_public_share-8.png
 nextcloud/core/doc/user/_images/create_public_share-9.png
+nextcloud/core/doc/user/_images/creating-group-room.png
+nextcloud/core/doc/user/_images/deck-talk-create-card-dialog.png
+nextcloud/core/doc/user/_images/deck-talk-create-card-menu.png
+nextcloud/core/doc/user/_images/deck-talk-share-card-to-chat-in-talk.png
+nextcloud/core/doc/user/_images/deck-talk-share-card-to-chat-menu.png
 nextcloud/core/doc/user/_images/direct-share-1.png
+nextcloud/core/doc/user/_images/drag-and-drop.png
+nextcloud/core/doc/user/_images/editing-document-in-chat-room.png
+nextcloud/core/doc/user/_images/emoji-picker.png
 nextcloud/core/doc/user/_images/encryption1.png
 nextcloud/core/doc/user/_images/encryption2.png
 nextcloud/core/doc/user/_images/encryption3.png
 nextcloud/core/doc/user/_images/explorer_webdav.png
+nextcloud/core/doc/user/_images/file-room.png
 nextcloud/core/doc/user/_images/file_menu_comments_2.png
 nextcloud/core/doc/user/_images/files_page-1.png
 nextcloud/core/doc/user/_images/files_page-3.png
@@ -19372,32 +19405,45 @@ nextcloud/core/doc/user/_images/files_versioning.png
 nextcloud/core/doc/user/_images/gnome-online-accounts.png
 nextcloud/core/doc/user/_images/goa-add-nextcloud-account.png
 nextcloud/core/doc/user/_images/goa-nextcloud-select.png
+nextcloud/core/doc/user/_images/guest-room-menu.png
+nextcloud/core/doc/user/_images/guest-settings.png
+nextcloud/core/doc/user/_images/guest-view.png
 nextcloud/core/doc/user/_images/hidden_files.png
+nextcloud/core/doc/user/_images/join-call.png
+nextcloud/core/doc/user/_images/join-chat.png
 nextcloud/core/doc/user/_images/korganizer_credentials.png
 nextcloud/core/doc/user/_images/korganizer_resource_choice.png
+nextcloud/core/doc/user/_images/lobby-in-talk.png
 nextcloud/core/doc/user/_images/login_page.png
 nextcloud/core/doc/user/_images/macos_1.png
 nextcloud/core/doc/user/_images/macos_2.png
 nextcloud/core/doc/user/_images/macos_3.png
 nextcloud/core/doc/user/_images/macos_4.png
+nextcloud/core/doc/user/_images/matterbridge-settings.png
 nextcloud/core/doc/user/_images/multi_sharing.png
+nextcloud/core/doc/user/_images/new-room.png
 nextcloud/core/doc/user/_images/new_addressbook.png
 nextcloud/core/doc/user/_images/new_calendar.png
 nextcloud/core/doc/user/_images/oc_personal_settings_dropdown.png
+nextcloud/core/doc/user/_images/open-settings.png
 nextcloud/core/doc/user/_images/osx_webdav1.png
 nextcloud/core/doc/user/_images/osx_webdav2.png
+nextcloud/core/doc/user/_images/participant-menu.png
 nextcloud/core/doc/user/_images/personal_settings.png
 nextcloud/core/doc/user/_images/projects1.png
 nextcloud/core/doc/user/_images/projects2.png
 nextcloud/core/doc/user/_images/projects3.png
 nextcloud/core/doc/user/_images/projects4.png
 nextcloud/core/doc/user/_images/quota1.png
+nextcloud/core/doc/user/_images/reply.png
 nextcloud/core/doc/user/_images/settings_devices.png
 nextcloud/core/doc/user/_images/settings_devices_add.png
 nextcloud/core/doc/user/_images/settings_sessions.png
 nextcloud/core/doc/user/_images/share-federation-1.png
 nextcloud/core/doc/user/_images/share-federation-2-notification.png
 nextcloud/core/doc/user/_images/share-federation-3-public.png
+nextcloud/core/doc/user/_images/share-files-in-chat-selection.png
+nextcloud/core/doc/user/_images/share-files-in-chat.png
 nextcloud/core/doc/user/_images/sharing_autoAcceptSetting.png
 nextcloud/core/doc/user/_images/sharing_internal.png
 nextcloud/core/doc/user/_images/sharing_internal_acceptNotification.png
@@ -19405,7 +19451,13 @@ nextcloud/core/doc/user/_images/sharing_others-with-access__collapsed.png
 nextcloud/core/doc/user/_images/sharing_others-with-access__details.png
 nextcloud/core/doc/user/_images/sharing_public_file.png
 nextcloud/core/doc/user/_images/sharing_public_folder.png
+nextcloud/core/doc/user/_images/sidebar-chat.png
 nextcloud/core/doc/user/_images/synchronize_cardbook.png
+nextcloud/core/doc/user/_images/talk-grid-view.png
+nextcloud/core/doc/user/_images/talk-promoted-view.png
+nextcloud/core/doc/user/_images/talk-settings.png
+nextcloud/core/doc/user/_images/talk-upload-files.png
+nextcloud/core/doc/user/_images/text-and-talk.png
 nextcloud/core/doc/user/_images/totp_enable.png
 nextcloud/core/doc/user/_images/totp_login_1.png
 nextcloud/core/doc/user/_images/totp_login_2.png
@@ -19546,6 +19598,11 @@ nextcloud/core/doc/user/pim/sync_windows10.html
 nextcloud/core/doc/user/search.html
 nextcloud/core/doc/user/searchindex.js
 nextcloud/core/doc/user/session_management.html
+nextcloud/core/doc/user/talk/
+nextcloud/core/doc/user/talk/advanced_features.html
+nextcloud/core/doc/user/talk/index.html
+nextcloud/core/doc/user/talk/join_a_call_or_chat_as_guest.html
+nextcloud/core/doc/user/talk/talk_basics.html
 nextcloud/core/doc/user/universal_access.html
 nextcloud/core/doc/user/user_2fa.html
 nextcloud/core/doc/user/userpreferences.html
@@ -19576,6 +19633,7 @@ nextcloud/core/img/actions/
 nextcloud/core/img/actions/add.svg
 nextcloud/core/img/actions/address.png
 nextcloud/core/img/actions/address.svg
+nextcloud/core/img/actions/alert-outline.svg
 nextcloud/core/img/actions/arrow-left.svg
 nextcloud/core/img/actions/arrow-right.svg
 nextcloud/core/img/actions/audio-off.svg
