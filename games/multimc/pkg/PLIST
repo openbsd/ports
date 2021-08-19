@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/03/05 21:03:50 phessler Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/08/19 18:41:40 phessler Exp $
 @bin bin/multimc
 @so lib/libMultiMC_gui.so
 @so lib/libMultiMC_iconfix.so
@@ -6,7 +6,6 @@
 @so lib/libMultiMC_nbt++.so
 @so lib/libMultiMC_quazip.so
 @so lib/libMultiMC_rainbow.so
-@so lib/libMultiMC_unpack200.so
 share/doc/pkg-readmes/${PKGSTEM}
 share/multimc/
 share/multimc/jars/

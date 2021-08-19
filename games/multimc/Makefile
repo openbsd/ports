@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2021/03/05 21:03:50 phessler Exp $
+# $OpenBSD: Makefile,v 1.4 2021/08/19 18:41:39 phessler Exp $
 
 COMMENT =		free and open-source launcher for Minecraft
 
-# git clone --recurse-submodules -b 0.6.11 https://github.com/MultiMC/MultiMC5
-DISTNAME =		multimc-0.6.11
+# git clone --recurse-submodules -b 0.6.12 https://github.com/MultiMC/MultiMC5
+DISTNAME =		multimc-0.6.12
 MASTER_SITES =		https://distfiles.yukiisbo.red/
-REVISION =		1
 
 CATEGORIES =		games
 
