@@ -1,23 +1,20 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2021/08/19 16:07:54 rsadowski Exp $
 
 COMMENT=		commandline screen capture util
 
-DISTNAME=		scrot-0.8
-REVISION =		4
-CATEGORIES=		graphics
+V=			1.6
+DISTNAME=		scrot-${V}
 
-HOMEPAGE=		http://www.linuxbrit.co.uk/scrot/
+CATEGORIES=		graphics
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		X11 Xext c freetype m z \
-			giblib>=1 Imlib2>=1
+WANTLIB += Imlib2 X11 Xcomposite Xext Xfixes c
 
-MASTER_SITES=		http://www.linuxbrit.co.uk/downloads/
+MASTER_SITES=		https://github.com/resurrecting-open-source-projects/scrot/releases/download/${V}/
 
-LIB_DEPENDS=            devel/giblib \
-			graphics/imlib2
+LIB_DEPENDS=		graphics/imlib2
 
 CONFIGURE_STYLE=	gnu
 

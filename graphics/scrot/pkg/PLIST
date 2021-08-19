@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/07/08 12:20:49 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/08/19 16:07:54 rsadowski Exp $
 @bin bin/scrot
 @man man/man1/scrot.1
 share/doc/scrot/
 share/doc/scrot/AUTHORS
 share/doc/scrot/ChangeLog
-share/doc/scrot/README
-share/doc/scrot/TODO
+share/doc/scrot/README.md
+share/doc/scrot/scrot.png
