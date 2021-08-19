@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/08/19 08:20:36 sebastia Exp $
 
 COMMENT =	analyze MIME files
 
-MODPY_EGG_VERSION =	0.0.10
+MODPY_EGG_VERSION =	0.0.11
 DISTNAME =	emldump_V${MODPY_EGG_VERSION:S/./_/g}
 PKGNAME =	emldump-${MODPY_EGG_VERSION}
-REVISION =	1
 
 CATEGORIES =	security
 
