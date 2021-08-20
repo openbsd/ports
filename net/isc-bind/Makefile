@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.143 2021/08/18 19:55:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.144 2021/08/20 17:46:19 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
@@ -9,6 +9,9 @@ SUBST_VARS+=	V
 PORTROACH=	limitw:1,even
 EXTRACT_SUFX=	.tar.xz
 EPOCH=		3
+REVISION=	0
+PATCHFILES=	bind-9.16.20-map-format-fix.patch:0
+PATCH_DIST_STRIP= -p1
 
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
@@ -29,6 +32,7 @@ FLAVORS=	geoip
 FLAVOR?=
 
 MASTER_SITES=	${MASTER_SITE_ISC:=bind9/$V/}
+MASTER_SITES0=	${MASTER_SITE_ISC:=bind9/$V/patches/}
 
 MODULES=	lang/python
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
@@ -43,7 +47,7 @@ LIB_DEPENDS=	converters/libiconv \
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.69
+AUTOCONF_VERSION= 2.71
 LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_ARGS=	--enable-full-report \
 		--with-libtool \
