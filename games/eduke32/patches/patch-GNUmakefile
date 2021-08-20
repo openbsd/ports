@@ -1,4 +1,4 @@
-$OpenBSD: patch-GNUmakefile,v 1.4 2021/01/08 23:58:29 jsg Exp $
+$OpenBSD: patch-GNUmakefile,v 1.5 2021/08/20 11:20:38 jsg Exp $
 
 Index: GNUmakefile
 --- GNUmakefile.orig
@@ -47,3 +47,12 @@ Index: GNUmakefile
  
  ifneq (0,$(USE_PHYSFS))
      COMPILERFLAGS += -I$(physfs_inc) -DUSE_PHYSFS
+@@ -826,7 +826,7 @@ endif
+ 
+ #### Targets
+ 
+-all: duke3d
++all: duke3d sw
+ 
+ start:
+ 	$(BUILD_STARTED)

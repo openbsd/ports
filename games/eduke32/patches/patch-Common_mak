@@ -1,9 +1,29 @@
-$OpenBSD: patch-Common_mak,v 1.3 2021/01/08 23:58:29 jsg Exp $
+$OpenBSD: patch-Common_mak,v 1.4 2021/08/20 11:20:38 jsg Exp $
 
 Index: Common.mak
 --- Common.mak.orig
 +++ Common.mak
-@@ -693,7 +693,7 @@ ifeq (0,$(RELEASE))
+@@ -188,9 +188,6 @@ ifeq ($(PLATFORM),WII)
+     CCFULLPATH = $(DEVKITPPC)/bin/$(CC)
+ endif
+ 
+-CC := $(CROSS)gcc$(CROSS_SUFFIX)
+-CXX := $(CROSS)g++$(CROSS_SUFFIX)
+-
+ ifeq ($(PLATFORM),DARWIN)
+     CC := $(CROSS)clang$(CROSS_SUFFIX)
+     CXX := $(CROSS)clang++$(CROSS_SUFFIX)
+@@ -213,9 +210,6 @@ PKG_CONFIG := pkg-config
+ ELF2DOL := elf2dol
+ 
+ # Override defaults that absolutely will not work.
+-ifeq ($(CC),cc)
+-    override CC := gcc
+-endif
+ ifeq ($(AS),as)
+     override AS := nasm
+ endif
+@@ -693,7 +687,7 @@ ifeq (0,$(RELEASE))
      F_NO_STACK_PROTECTOR :=
  else
      ifeq (0,$(CLANG))
@@ -12,7 +32,16 @@ Index: Common.mak
      endif
  
      ifeq (0,$(FORCEDEBUG))
-@@ -1017,7 +1017,8 @@ ifeq (,$(VC_HASH))
+@@ -722,7 +716,7 @@ W_UNINITIALIZED := -Wuninitialized
+ W_GCC_4_1 := -Wno-attributes
+ W_GCC_4_2 := $(W_STRICT_OVERFLOW)
+ W_GCC_4_4 := -Wno-unused-result
+-W_GCC_4_5 := -Wlogical-op -Wcast-qual
++W_GCC_4_5 := -Wcast-qual
+ W_GCC_6 := -Wduplicated-cond -Wnull-dereference
+ W_GCC_7 := -Wduplicated-branches
+ W_GCC_8 := -Warray-bounds=2
+@@ -1014,7 +1008,8 @@ ifeq (,$(VC_HASH))
      VC_HASH := $(shell git rev-parse --short=9 HEAD 2>&1)
  endif
  ifeq (,$(VC_BRANCH))

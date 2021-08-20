@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.28 2021/06/09 19:50:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2021/08/20 11:20:38 jsg Exp $
 
 COMMENT =	Enhanced Duke Nukem 3D engine
-RDATE =		20201221
-RTAG =		9297-2bb6cbcae
+RDATE =		20210816
+RTAG =		9511-d032a9949
 DISTNAME =	eduke32_src_${RDATE}-${RTAG}
 PKGNAME =	eduke32-2.0.0.${RTAG:C/-.*$//}
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	games x11
-
-REVISION =	0
 
 HOMEPAGE =	https://www.eduke32.com/
 
@@ -74,6 +72,7 @@ post-extract:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/eduke32 ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKBUILD}/voidsw ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKBUILD}/mapster32 ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/duke3d
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/eduke32

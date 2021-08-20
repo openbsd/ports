@@ -1,23 +1,23 @@
-$OpenBSD: patch-source_duke3d_src_game_cpp,v 1.3 2021/08/20 11:20:38 jsg Exp $
+$OpenBSD: patch-source_sw_src_game_cpp,v 1.1 2021/08/20 11:20:38 jsg Exp $
 
-store log file in ~/.config/eduke32/
+store log file in ~/.config/voidsw/
 
-Index: source/duke3d/src/game.cpp
---- source/duke3d/src/game.cpp.orig
-+++ source/duke3d/src/game.cpp
-@@ -6323,6 +6323,9 @@ void G_DrawFrame(void)
+Index: source/sw/src/game.cpp
+--- source/sw/src/game.cpp.orig
++++ source/sw/src/game.cpp
+@@ -3393,6 +3393,9 @@ void CommandLineHelp(char const * const * argv)
  
- int app_main(int argc, char const* const* argv)
+ int32_t app_main(int32_t argc, char const * const * argv)
  {
 +    char logpath[BMAX_PATH];
 +    char *homedir;
 +    int r;
- #ifndef NETCODE_DISABLE
-     if (enet_initialize() != 0)
-         initprintf("An error occurred while initializing ENet.\n");
-@@ -6349,21 +6352,22 @@ int app_main(int argc, char const* const* argv)
- 
-     G_ExtPreInit(argc, argv);
+     int i;
+     extern int MovesPerPacket;
+     void DoSector(void);
+@@ -3457,21 +3460,22 @@ int32_t app_main(int32_t argc, char const * const * ar
+     }
+ #endif
  
 -#ifdef __APPLE__
 -    if (!g_useCwd)
@@ -47,5 +47,5 @@ Index: source/duke3d/src/game.cpp
 +        OSD_SetLogFile(APPBASENAME ".log");
 +    Bfree(homedir);
  
-     OSD_SetFunctions(GAME_drawosdchar,
-                      GAME_drawosdstr,
+     wm_setapptitle(APPNAME);
+ 
