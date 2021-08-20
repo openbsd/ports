@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/07/28 02:54:39 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/08/20 03:42:28 jsg Exp $
 firmware/amdgpu/
 firmware/amdgpu/amdgpu-license
 firmware/amdgpu/arcturus_asd.bin
@@ -355,6 +355,17 @@ firmware/amdgpu/topaz_rlc.bin
 firmware/amdgpu/topaz_sdma.bin
 firmware/amdgpu/topaz_sdma1.bin
 firmware/amdgpu/topaz_smc.bin
+firmware/amdgpu/vangogh_asd.bin
+firmware/amdgpu/vangogh_ce.bin
+firmware/amdgpu/vangogh_dmcub.bin
+firmware/amdgpu/vangogh_me.bin
+firmware/amdgpu/vangogh_mec.bin
+firmware/amdgpu/vangogh_mec2.bin
+firmware/amdgpu/vangogh_pfp.bin
+firmware/amdgpu/vangogh_rlc.bin
+firmware/amdgpu/vangogh_sdma.bin
+firmware/amdgpu/vangogh_toc.bin
+firmware/amdgpu/vangogh_vcn.bin
 firmware/amdgpu/vega10_acg_smc.bin
 firmware/amdgpu/vega10_asd.bin
 firmware/amdgpu/vega10_ce.bin
