@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/13 06:25:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2021/08/20 21:24:48 sthen Exp $
 
 COMMENT=	HEIF and AVIF file format decoder and encoder
 
-V=		1.11.0
+V=		1.12.0
 DISTNAME=	libheif-$V
 
-SHARED_LIBS +=  heif                      1.1 # 9.0
+SHARED_LIBS +=  heif                      1.2 # 9.0
 
 CATEGORIES=	multimedia graphics
 
