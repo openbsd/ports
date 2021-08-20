@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2020/02/03 20:40:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/08/20 21:18:07 sthen Exp $
 
 COMMENT=	light-weight, simple and fast XML parser for C++
 
-V=		1.9
+V=		1.11
 DISTNAME=	pugixml-$V
-REVISION=	0
 
-SHARED_LIBS +=	pugixml                   1.0 # 1.9
+SHARED_LIBS +=	pugixml                   1.1 # 1.9
 
 CATEGORIES=	textproc devel
 
@@ -17,9 +16,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += m ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =		base-clang ports-gcc
 
-MASTER_SITES=	http://github.com/zeux/pugixml/releases/download/v$V/
+MASTER_SITES=	https://github.com/zeux/pugixml/releases/download/v$V/
 
 MODULES=	devel/cmake
 
