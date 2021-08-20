@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2021/04/27 06:25:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/08/20 11:26:15 sthen Exp $
 
 COMMENT =	generate access/prefix lists for BGP config (fork of bgpq3)
 
 GH_ACCOUNT =		bgp
 GH_PROJECT =		bgpq4
-GH_TAGNAME =		0.0.7
+GH_TAGNAME =		1.4
 
 CATEGORIES =		net
 
@@ -19,13 +19,15 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 COMPILER =		base-clang ports-gcc
 
 CONFIGURE_STYLE =	autoreconf
-AUTOCONF_VERSION =	2.69
+AUTOCONF_VERSION =	2.71
 AUTOMAKE_VERSION =	1.16
+SEPARATE_BUILD =	Yes
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 NO_TEST =		Yes
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bgpq4 ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKBUILD}/bgpq4 ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/bgpq4.8 ${PREFIX}/man/man8
 
 .include <bsd.port.mk>
