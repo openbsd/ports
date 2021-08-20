@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.20 2020/11/29 12:59:25 kirby Exp $
+# $OpenBSD: Makefile,v 1.21 2021/08/20 09:14:28 kirby Exp $
 
 COMMENT-main =		library for encoding data in several barcode variants
 COMMENT-x11 = 		graphical interface for the zint barcode generator
 
-V = 			2.9.1
+V = 			2.10.0
 DISTNAME =		zint-${V}-src
 PKGNAME-main = 		zint-${V}
 PKGNAME-x11 = 		zint-gui-${V}
 
-SHARED_LIBS += 		QZint	4.0 # 2.9
-SHARED_LIBS += 		zint	4.0 # 2.9
+SHARED_LIBS += 		zint	4.1 # 2.9
 
 CATEGORIES =		graphics
 
@@ -22,7 +21,7 @@ PERMIT_PACKAGE =	Yes
 
 cWANTLIB = c m png z
 WANTLIB-main = ${cWANTLIB}
-WANTLIB-x11 += ${cWANTLIB} GL Qt5Core Qt5Gui Qt5Widgets zint pthread
+WANTLIB-x11 += ${cWANTLIB} GL Qt5Core Qt5Gui Qt5Widgets Qt5Xml zint pthread
 WANTLIB-x11 += ${COMPILER_LIBCXX}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=zint/}
@@ -50,7 +49,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
 	${INSTALL_DATA} ${WRKSRC}/zint-qt.desktop ${PREFIX}/share/applications/
-	${INSTALL_DATA} ${WRKSRC}/zint.png ${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${WRKSRC}/zint-qt.png ${PREFIX}/share/pixmaps/
 .endif
 
 do-test:
