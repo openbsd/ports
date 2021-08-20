@@ -1,0 +1,29 @@
+$OpenBSD: patch-dooble_pro,v 1.1.1.1 2021/08/20 13:55:35 bcallah Exp $
+
+Remove -O3 and -Werror.
+
+Index: dooble.pro
+--- dooble.pro.orig
++++ dooble.pro
+@@ -276,12 +276,11 @@ QMAKE_CXXFLAGS_RELEASE += -O3 \
+ QMAKE_CXXFLAGS_RELEASE -= -O2
+ } else:win32 {
+ } else {
+-QMAKE_CXXFLAGS_RELEASE += -O3 \
++QMAKE_CXXFLAGS_RELEASE += \
+                           -Wall \
+                           -Wcast-align \
+                           -Wcast-qual \
+                           -Wdouble-promotion \
+-                          -Werror \
+                           -Wextra \
+                           -Wformat-overflow=2 \
+                           -Wformat-truncation=2 \
+@@ -301,7 +300,6 @@ QMAKE_CXXFLAGS_RELEASE += -O3 \
+                           -pedantic \
+                           -pie \
+                           -std=c++17
+-QMAKE_CXXFLAGS_RELEASE -= -O2
+ }
+ 
+ QMAKE_DISTCLEAN += -r qtwebengine_dictionaries \

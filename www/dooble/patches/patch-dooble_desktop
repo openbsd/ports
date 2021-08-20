@@ -1,0 +1,16 @@
+$OpenBSD: patch-dooble_desktop,v 1.1.1.1 2021/08/20 13:55:35 bcallah Exp $
+
+Make sure Exec points to the correct place.
+
+Index: dooble.desktop
+--- dooble.desktop.orig
++++ dooble.desktop
+@@ -3,7 +3,7 @@
+ [Desktop Entry]
+ Categories=Network;WebBrowser;
+ Comment=Dooble Web Browser
+-Exec=/usr/bin/dooble
++Exec=${TRUEPREFIX}/bin/dooble
+ GenericName=Dooble Web Browser
+ Icon=dooble
+ Name=Dooble Web Browser
