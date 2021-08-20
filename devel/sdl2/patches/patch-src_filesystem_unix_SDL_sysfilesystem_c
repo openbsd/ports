@@ -1,30 +1,56 @@
-$OpenBSD: patch-src_filesystem_unix_SDL_sysfilesystem_c,v 1.2 2018/01/07 22:56:46 awolk Exp $
+$OpenBSD: patch-src_filesystem_unix_SDL_sysfilesystem_c,v 1.3 2021/08/20 16:59:32 thfr Exp $
 
 Disable SDL_GetBasePath implementation, not functional.
 
 Index: src/filesystem/unix/SDL_sysfilesystem.c
 --- src/filesystem/unix/SDL_sysfilesystem.c.orig
 +++ src/filesystem/unix/SDL_sysfilesystem.c
-@@ -95,24 +95,6 @@ SDL_GetBasePath(void)
+@@ -149,50 +149,6 @@ SDL_GetBasePath(void)
          }
      }
  #endif
 -#if defined(__OPENBSD__)
--    char **retvalargs;
+-    /* Please note that this will fail if the process was launched with a relative path and the cwd has changed, or argv is altered. So don't do that. Or add a new sysctl to OpenBSD. */
+-    char **cmdline;
 -    size_t len;
 -    const int mib[] = { CTL_KERN, KERN_PROC_ARGS, getpid(), KERN_PROC_ARGV };
 -    if (sysctl(mib, 4, NULL, &len, NULL, 0) != -1) {
--        retvalargs = SDL_malloc(len);
--        if (!retvalargs) {
+-        char *exe;
+-        char *realpathbuf = (char *) SDL_malloc(PATH_MAX + 1);
+-        if (!realpathbuf) {
 -            SDL_OutOfMemory();
 -            return NULL;
 -        }
--        sysctl(mib, 4, retvalargs, &len, NULL, 0);
--        retval = SDL_malloc(PATH_MAX + 1);
--        if (retval)
--            realpath(retvalargs[0], retval);
 -
--        SDL_free(retvalargs);
+-        cmdline = SDL_malloc(len);
+-        if (!cmdline) {
+-            SDL_free(realpathbuf);
+-            SDL_OutOfMemory();
+-            return NULL;
+-        }
+-
+-        sysctl(mib, 4, cmdline, &len, NULL, 0);
+-
+-        exe = cmdline[0];
+-        if (SDL_strchr(exe, '/') == NULL) {  /* not a relative or absolute path, check $PATH for it */
+-            exe = search_path_for_binary(cmdline[0]);
+-        }
+-
+-        if (exe) {
+-            if (realpath(exe, realpathbuf) != NULL) {
+-                retval = realpathbuf;
+-            }
+-
+-            if (exe != cmdline[0]) {
+-                SDL_free(exe);
+-            }
+-        }
+-
+-        if (!retval) {
+-            SDL_free(realpathbuf);
+-        }
+-
+-        SDL_free(cmdline);
 -    }
 -#endif
  #if defined(__SOLARIS__)

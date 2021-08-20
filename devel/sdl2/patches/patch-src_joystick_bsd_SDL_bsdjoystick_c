@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_joystick_bsd_SDL_bsdjoystick_c,v 1.2 2021/01/23 17:47:43 thfr Exp $
+$OpenBSD: patch-src_joystick_bsd_SDL_bsdjoystick_c,v 1.3 2021/08/20 16:59:32 thfr Exp $
 
 assign buttons correctly
 get GUID using USB_GET_DEVICEINFO
@@ -80,7 +80,7 @@ Index: src/joystick/bsd/SDL_bsdjoystick.c
 +    int actualbutton;
  #endif
  
- #if defined(__FREEBSD__) || SDL_JOYSTICK_USBHID_MACHINE_JOYSTICK_H || defined(__FreeBSD_kernel__) || defined(__DragonFly_)
+ #if defined(__FREEBSD__) || SDL_HAVE_MACHINE_JOYSTICK_H || defined(__FreeBSD_kernel__) || defined(__DragonFly_)
 @@ -618,6 +642,18 @@ BSD_JoystickUpdate(SDL_Joystick *joy)
                              naxe = joy->hwdata->axis_map[joyaxe];
                              /* scaleaxe */
