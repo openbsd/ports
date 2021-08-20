@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1035 2021/06/20 22:53:49 jca Exp $
+# $OpenBSD: Makefile,v 1.1036 2021/08/20 13:55:54 bcallah Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -30,6 +30,7 @@
      SUBDIR += darkhttpd
      SUBDIR += dillo
      SUBDIR += dokuwiki
+     SUBDIR += dooble
      SUBDIR += drush
      SUBDIR += e2guardian
      SUBDIR += edbrowse
