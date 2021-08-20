@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:47:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/08/20 02:17:48 jturner Exp $
 
+BROKEN =		needs a new sys+openbsd:7:0-x64.myr generated
 ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		systems language that is both powerful and fun to use
 
 DISTNAME =		myrddin-0.3.1
+REVISION =		0
 CATEGORIES =		lang
 
 MAINTAINER =		James Turner <james@calminferno.net>
