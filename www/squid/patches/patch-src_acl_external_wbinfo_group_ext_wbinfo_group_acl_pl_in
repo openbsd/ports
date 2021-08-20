@@ -1,24 +1,24 @@
-$OpenBSD: patch-src_acl_external_wbinfo_group_ext_wbinfo_group_acl_pl_in,v 1.1 2019/02/05 23:03:16 sthen Exp $
+$OpenBSD: patch-src_acl_external_wbinfo_group_ext_wbinfo_group_acl_pl_in,v 1.2 2021/08/20 21:25:05 sthen Exp $
 
 Index: src/acl/external/wbinfo_group/ext_wbinfo_group_acl.pl.in
 --- src/acl/external/wbinfo_group/ext_wbinfo_group_acl.pl.in.orig
 +++ src/acl/external/wbinfo_group/ext_wbinfo_group_acl.pl.in
 @@ -146,14 +146,14 @@ sub check {
- 		@tmpuser = split(/\@/, $user);
- 		$user = "$tmpuser[1]\\$tmpuser[0]";
- 	}
--        $groupSID = `wbinfo -n "$group" | cut -d" " -f1`;
-+        $groupSID = `/usr/local/bin/wbinfo -n "$group" | cut -d" " -f1`;
-         chop  $groupSID;
--        $groupGID = `wbinfo -Y "$groupSID"`;
-+        $groupGID = `/usr/local/bin/wbinfo -Y "$groupSID"`;
-         chop $groupGID;
-         &debug( "User:  -$user-\nGroup: -$group-\nSID:   -$groupSID-\nGID:   -$groupGID-");
-         return 'ERR' if($groupGID eq ""); # Verify if groupGID variable is empty.
--        return 'ERR' if(`wbinfo -r \Q$user\E` eq ""); # Verify if "wbinfo -r" command returns no value.
--        return 'OK' if(`wbinfo -r \Q$user\E` =~ /^$groupGID$/m);
-+        return 'ERR' if(`/usr/local/bin/wbinfo -r \Q$user\E` eq ""); # Verify if "wbinfo -r" command returns no value.
-+        return 'OK' if(`/usr/local/bin/wbinfo -r \Q$user\E` =~ /^$groupGID$/m);
-         return 'ERR';
+         @tmpuser = split(/\@/, $user);
+         $user = "$tmpuser[1]\\$tmpuser[0]";
+     }
+-    $groupSID = `wbinfo -n "$group" | cut -d" " -f1`;
++    $groupSID = `/usr/local/bin/wbinfo -n "$group" | cut -d" " -f1`;
+     chop  $groupSID;
+-    $groupGID = `wbinfo -Y "$groupSID"`;
++    $groupGID = `/usr/local/bin/wbinfo -Y "$groupSID"`;
+     chop $groupGID;
+     &debug( "User:  -$user-\nGroup: -$group-\nSID:   -$groupSID-\nGID:   -$groupGID-");
+     return 'ERR' if($groupGID eq ""); # Verify if groupGID variable is empty.
+-    return 'ERR' if(`wbinfo -r \Q$user\E` eq ""); # Verify if "wbinfo -r" command returns no value.
+-    return 'OK' if(`wbinfo -r \Q$user\E` =~ /^$groupGID$/m);
++    return 'ERR' if(`/usr/local/bin/wbinfo -r \Q$user\E` eq ""); # Verify if "wbinfo -r" command returns no value.
++    return 'OK' if(`/usr/local/bin/wbinfo -r \Q$user\E` =~ /^$groupGID$/m);
+     return 'ERR';
  }
  

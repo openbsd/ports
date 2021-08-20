@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.235 2021/07/09 09:32:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.236 2021/08/20 21:25:04 sthen Exp $
 
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
 COMMENT-ntlm=	NTLM authentication/ACL support for Squid
 
-V=		4.16
+V=		5.1
 DISTNAME=	squid-$V
 EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	squid-$V
 PKGNAME-ldap=	squid-ldap-$V
 PKGNAME-ntlm=	squid-ntlm-$V
-REVISION=	0
+DPB_PROPERTIES=	parallel
 
 .for i in -ldap -ntlm
 # subpackages aren't flavoured, so overwrite the default name/path
@@ -34,14 +34,16 @@ MASTER_SITES=	${HOMEPAGE}Versions/v${V:R}/ \
 		https://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/archive/${V:R}/
 
 # C++11
-COMPILER =	base-clang ports-gcc
+COMPILER=	base-clang ports-gcc
 
 BUILD_DEPENDS+=	devel/cppunit
-
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/cfgaux
+
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 CONFIGURE_ARGS=	--disable-strict-error-checking \
 		--disable-arch-native \
@@ -50,10 +52,10 @@ CONFIGURE_ARGS=	--disable-strict-error-checking \
 EXTERNAL_ACL=	SQL_session file_userip time_quota \
 		unix_group wbinfo_group
 
-WANTLIB-main +=	${cWANTLIB} crypto db expat lzma xml2 z
+WANTLIB-main +=	${cWANTLIB} crypto expat lzma tdb xml2 z
 
 LIB_DEPENDS-main += \
-		databases/db/v4 \
+		databases/tdb \
 		devel/gettext,-runtime \
 		security/gnutls \
 		security/libnettle \
@@ -162,5 +164,7 @@ post-install:
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/snmp/mibs
 	-cd ${PREFIX}/share; mv squid/mib.txt snmp/mibs/SQUID-MIB.txt
+	# XXX pkg_add -u can't cope with symlinks changing to real files
+	rm -r ${PREFIX}/share/squid/errors/es-mx; ln -s es ${PREFIX}/share/squid/errors/es-mx
 
 .include <bsd.port.mk>
