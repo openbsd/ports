@@ -1,9 +1,9 @@
-$OpenBSD: patch-cmake_config_h_in,v 1.5 2021/03/28 20:00:04 sthen Exp $
+$OpenBSD: patch-cmake_config_h_in,v 1.6 2021/08/20 08:04:49 sthen Exp $
 
 Index: cmake/config.h.in
 --- cmake/config.h.in.orig
 +++ cmake/config.h.in
-@@ -12,6 +12,10 @@
+@@ -20,6 +20,10 @@
  #define _GNU_SOURCE 1
  
  // The later definition of _XOPEN_SOURCE and _POSIX_C_SOURCE disables certain
@@ -14,7 +14,7 @@ Index: cmake/config.h.in
  // features on NetBSD, so we need _NETBSD_SOURCE to re-enable them.
  #define _NETBSD_SOURCE 1
  
-@@ -32,7 +36,7 @@
+@@ -40,7 +44,7 @@
  
  #if defined(__SunOS_5_8) || defined(__SunOS_5_9) || defined(__SunOS_5_10)
  #  define _XOPEN_SOURCE 500

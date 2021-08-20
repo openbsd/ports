@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.71 2021/05/24 17:24:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.72 2021/08/20 08:04:49 sthen Exp $
 
 COMMENT =	compiler cache
 
-V =		4.3
+V =		4.4
 DISTNAME =	ccache-$V
 
 CATEGORIES =	devel
@@ -12,7 +12,7 @@ HOMEPAGE =	https://ccache.dev/
 # GPLv3+
 PERMIT_PACKAGE =	 Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c m zstd
+WANTLIB += ${COMPILER_LIBCXX} c hiredis m zstd
 
 MASTER_SITES =	https://github.com/ccache/ccache/releases/download/v$V/
 
@@ -24,7 +24,8 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS =		textproc/asciidoc
-LIB_DEPENDS =		archivers/zstd
+LIB_DEPENDS =		archivers/zstd \
+			databases/libhiredis
 
 # Failure in cpp1 test suite appears to be due to an embedded filename
 # in a .o file present in one file, and not present in the file being
