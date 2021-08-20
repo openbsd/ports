@@ -1,4 +1,5 @@
-$OpenBSD: patch-src_rspamadm_CMakeLists_txt,v 1.11 2019/10/29 22:50:14 sthen Exp $
+$OpenBSD: patch-src_rspamadm_CMakeLists_txt,v 1.12 2021/08/20 12:12:07 sthen Exp $
+
 Index: src/rspamadm/CMakeLists.txt
 --- src/rspamadm/CMakeLists.txt.orig
 +++ src/rspamadm/CMakeLists.txt
@@ -12,5 +13,5 @@ Index: src/rspamadm/CMakeLists.txt
 -ENDIF (NOT DEBIAN_BUILD)
 +ENDIF (NOT DEBIAN_BUILD AND NOT OPENBSD_BUILD)
  
- IF(USE_CXX_LINKER)
-     SET_TARGET_PROPERTIES(rspamadm PROPERTIES LINKER_LANGUAGE CXX)
+ SET_TARGET_PROPERTIES(rspamadm PROPERTIES LINKER_LANGUAGE CXX)
+ INSTALL(TARGETS rspamadm RUNTIME DESTINATION bin)

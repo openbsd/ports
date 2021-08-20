@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.40 2021/01/09 12:50:09 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.41 2021/08/20 12:12:07 sthen Exp $
 @newgroup _rspamd:756
 @newuser _rspamd:756:_rspamd:daemon:Rspamd Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/rspamd
-@sample ${SYSCONFDIR}/rspamd/
+@sample ${RSPAMDCONF}/
 @bin bin/rspamadm
 @bin bin/rspamc
 @bin bin/rspamd
@@ -19,179 +19,183 @@ lib/rspamd/
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/rspamd/
 share/examples/rspamd/actions.conf
-@sample ${SYSCONFDIR}/rspamd/actions.conf
+@sample ${RSPAMDCONF}/actions.conf
 share/examples/rspamd/cgp.inc
-@sample ${SYSCONFDIR}/rspamd/cgp.inc
+@sample ${RSPAMDCONF}/cgp.inc
 share/examples/rspamd/common.conf
-@sample ${SYSCONFDIR}/rspamd/common.conf
+@sample ${RSPAMDCONF}/common.conf
 share/examples/rspamd/composites.conf
-@sample ${SYSCONFDIR}/rspamd/composites.conf
+@sample ${RSPAMDCONF}/composites.conf
 share/examples/rspamd/groups.conf
-@sample ${SYSCONFDIR}/rspamd/groups.conf
+@sample ${RSPAMDCONF}/groups.conf
 share/examples/rspamd/local.d/
-@sample ${SYSCONFDIR}/rspamd/local.d/
+@sample ${RSPAMDCONF}/local.d/
 share/examples/rspamd/local.d/redis.conf
-@sample ${SYSCONFDIR}/rspamd/local.d/redis.conf
+@sample ${RSPAMDCONF}/local.d/redis.conf
 share/examples/rspamd/logging.inc
-@sample ${SYSCONFDIR}/rspamd/logging.inc
+@sample ${RSPAMDCONF}/logging.inc
 share/examples/rspamd/maps.d/
-@sample ${SYSCONFDIR}/rspamd/maps.d/
+@sample ${RSPAMDCONF}/maps.d/
 share/examples/rspamd/maps.d/dmarc_whitelist.inc
-@sample ${SYSCONFDIR}/rspamd/maps.d/dmarc_whitelist.inc
+@sample ${RSPAMDCONF}/maps.d/dmarc_whitelist.inc
 share/examples/rspamd/maps.d/maillist.inc
-@sample ${SYSCONFDIR}/rspamd/maps.d/maillist.inc
+@sample ${RSPAMDCONF}/maps.d/maillist.inc
 share/examples/rspamd/maps.d/mid.inc
-@sample ${SYSCONFDIR}/rspamd/maps.d/mid.inc
+@sample ${RSPAMDCONF}/maps.d/mid.inc
 share/examples/rspamd/maps.d/mime_types.inc
-@sample ${SYSCONFDIR}/rspamd/maps.d/mime_types.inc
+@sample ${RSPAMDCONF}/maps.d/mime_types.inc
 share/examples/rspamd/maps.d/redirectors.inc
-@sample ${SYSCONFDIR}/rspamd/maps.d/redirectors.inc
+@sample ${RSPAMDCONF}/maps.d/redirectors.inc
 share/examples/rspamd/maps.d/spf_dkim_whitelist.inc
-@sample ${SYSCONFDIR}/rspamd/maps.d/spf_dkim_whitelist.inc
+@sample ${RSPAMDCONF}/maps.d/spf_dkim_whitelist.inc
 share/examples/rspamd/maps.d/surbl-whitelist.inc
-@sample ${SYSCONFDIR}/rspamd/maps.d/surbl-whitelist.inc
+@sample ${RSPAMDCONF}/maps.d/surbl-whitelist.inc
 share/examples/rspamd/metrics.conf
-@sample ${SYSCONFDIR}/rspamd/metrics.conf
+@sample ${RSPAMDCONF}/metrics.conf
 share/examples/rspamd/modules.conf
-@sample ${SYSCONFDIR}/rspamd/modules.conf
+@sample ${RSPAMDCONF}/modules.conf
 share/examples/rspamd/modules.d/
-@sample ${SYSCONFDIR}/rspamd/modules.d/
+@sample ${RSPAMDCONF}/modules.d/
 share/examples/rspamd/modules.d/antivirus.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/antivirus.conf
+@sample ${RSPAMDCONF}/modules.d/antivirus.conf
 share/examples/rspamd/modules.d/arc.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/arc.conf
+@sample ${RSPAMDCONF}/modules.d/arc.conf
 share/examples/rspamd/modules.d/asn.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/asn.conf
+@sample ${RSPAMDCONF}/modules.d/asn.conf
+share/examples/rspamd/modules.d/aws_s3.conf
+@sample ${RSPAMDCONF}/modules.d/aws_s3.conf
 share/examples/rspamd/modules.d/chartable.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/chartable.conf
+@sample ${RSPAMDCONF}/modules.d/chartable.conf
 share/examples/rspamd/modules.d/clickhouse.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/clickhouse.conf
+@sample ${RSPAMDCONF}/modules.d/clickhouse.conf
 share/examples/rspamd/modules.d/dcc.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/dcc.conf
+@sample ${RSPAMDCONF}/modules.d/dcc.conf
 share/examples/rspamd/modules.d/dkim.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/dkim.conf
+@sample ${RSPAMDCONF}/modules.d/dkim.conf
 share/examples/rspamd/modules.d/dkim_signing.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/dkim_signing.conf
+@sample ${RSPAMDCONF}/modules.d/dkim_signing.conf
 share/examples/rspamd/modules.d/dmarc.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/dmarc.conf
+@sample ${RSPAMDCONF}/modules.d/dmarc.conf
 share/examples/rspamd/modules.d/elastic.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/elastic.conf
+@sample ${RSPAMDCONF}/modules.d/elastic.conf
 share/examples/rspamd/modules.d/emails.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/emails.conf
+@sample ${RSPAMDCONF}/modules.d/emails.conf
+share/examples/rspamd/modules.d/external_relay.conf
+@sample ${RSPAMDCONF}/modules.d/external_relay.conf
 share/examples/rspamd/modules.d/external_services.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/external_services.conf
+@sample ${RSPAMDCONF}/modules.d/external_services.conf
 share/examples/rspamd/modules.d/force_actions.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/force_actions.conf
+@sample ${RSPAMDCONF}/modules.d/force_actions.conf
 share/examples/rspamd/modules.d/forged_recipients.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/forged_recipients.conf
+@sample ${RSPAMDCONF}/modules.d/forged_recipients.conf
 share/examples/rspamd/modules.d/fuzzy_check.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/fuzzy_check.conf
+@sample ${RSPAMDCONF}/modules.d/fuzzy_check.conf
 share/examples/rspamd/modules.d/greylist.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/greylist.conf
+@sample ${RSPAMDCONF}/modules.d/greylist.conf
 share/examples/rspamd/modules.d/hfilter.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/hfilter.conf
+@sample ${RSPAMDCONF}/modules.d/hfilter.conf
 share/examples/rspamd/modules.d/history_redis.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/history_redis.conf
+@sample ${RSPAMDCONF}/modules.d/history_redis.conf
 share/examples/rspamd/modules.d/http_headers.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/http_headers.conf
+@sample ${RSPAMDCONF}/modules.d/http_headers.conf
 share/examples/rspamd/modules.d/maillist.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/maillist.conf
+@sample ${RSPAMDCONF}/modules.d/maillist.conf
 share/examples/rspamd/modules.d/metadata_exporter.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/metadata_exporter.conf
+@sample ${RSPAMDCONF}/modules.d/metadata_exporter.conf
 share/examples/rspamd/modules.d/metric_exporter.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/metric_exporter.conf
+@sample ${RSPAMDCONF}/modules.d/metric_exporter.conf
 share/examples/rspamd/modules.d/mid.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/mid.conf
+@sample ${RSPAMDCONF}/modules.d/mid.conf
 share/examples/rspamd/modules.d/milter_headers.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/milter_headers.conf
+@sample ${RSPAMDCONF}/modules.d/milter_headers.conf
 share/examples/rspamd/modules.d/mime_types.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/mime_types.conf
+@sample ${RSPAMDCONF}/modules.d/mime_types.conf
 share/examples/rspamd/modules.d/multimap.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/multimap.conf
+@sample ${RSPAMDCONF}/modules.d/multimap.conf
 share/examples/rspamd/modules.d/mx_check.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/mx_check.conf
+@sample ${RSPAMDCONF}/modules.d/mx_check.conf
 share/examples/rspamd/modules.d/neural.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/neural.conf
+@sample ${RSPAMDCONF}/modules.d/neural.conf
 share/examples/rspamd/modules.d/once_received.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/once_received.conf
+@sample ${RSPAMDCONF}/modules.d/once_received.conf
 share/examples/rspamd/modules.d/p0f.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/p0f.conf
+@sample ${RSPAMDCONF}/modules.d/p0f.conf
 share/examples/rspamd/modules.d/phishing.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/phishing.conf
+@sample ${RSPAMDCONF}/modules.d/phishing.conf
 share/examples/rspamd/modules.d/ratelimit.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/ratelimit.conf
+@sample ${RSPAMDCONF}/modules.d/ratelimit.conf
 share/examples/rspamd/modules.d/rbl.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/rbl.conf
+@sample ${RSPAMDCONF}/modules.d/rbl.conf
 share/examples/rspamd/modules.d/redis.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/redis.conf
+@sample ${RSPAMDCONF}/modules.d/redis.conf
 share/examples/rspamd/modules.d/regexp.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/regexp.conf
+@sample ${RSPAMDCONF}/modules.d/regexp.conf
 share/examples/rspamd/modules.d/replies.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/replies.conf
+@sample ${RSPAMDCONF}/modules.d/replies.conf
 share/examples/rspamd/modules.d/reputation.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/reputation.conf
+@sample ${RSPAMDCONF}/modules.d/reputation.conf
 share/examples/rspamd/modules.d/rspamd_update.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/rspamd_update.conf
+@sample ${RSPAMDCONF}/modules.d/rspamd_update.conf
 share/examples/rspamd/modules.d/spamassassin.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/spamassassin.conf
+@sample ${RSPAMDCONF}/modules.d/spamassassin.conf
 share/examples/rspamd/modules.d/spamtrap.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/spamtrap.conf
+@sample ${RSPAMDCONF}/modules.d/spamtrap.conf
 share/examples/rspamd/modules.d/spf.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/spf.conf
+@sample ${RSPAMDCONF}/modules.d/spf.conf
 share/examples/rspamd/modules.d/surbl.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/surbl.conf
+@sample ${RSPAMDCONF}/modules.d/surbl.conf
 share/examples/rspamd/modules.d/trie.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/trie.conf
+@sample ${RSPAMDCONF}/modules.d/trie.conf
 share/examples/rspamd/modules.d/url_redirector.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/url_redirector.conf
+@sample ${RSPAMDCONF}/modules.d/url_redirector.conf
 share/examples/rspamd/modules.d/whitelist.conf
-@sample ${SYSCONFDIR}/rspamd/modules.d/whitelist.conf
+@sample ${RSPAMDCONF}/modules.d/whitelist.conf
 share/examples/rspamd/options.inc
-@sample ${SYSCONFDIR}/rspamd/options.inc
+@sample ${RSPAMDCONF}/options.inc
 share/examples/rspamd/override.d/
-@sample ${SYSCONFDIR}/rspamd/override.d/
+@sample ${RSPAMDCONF}/override.d/
 share/examples/rspamd/rspamd.conf
-@sample ${SYSCONFDIR}/rspamd/rspamd.conf
+@sample ${RSPAMDCONF}/rspamd.conf
 share/examples/rspamd/scores.d/
-@sample ${SYSCONFDIR}/rspamd/scores.d/
+@sample ${RSPAMDCONF}/scores.d/
 share/examples/rspamd/scores.d/content_group.conf
-@sample ${SYSCONFDIR}/rspamd/scores.d/content_group.conf
+@sample ${RSPAMDCONF}/scores.d/content_group.conf
 share/examples/rspamd/scores.d/fuzzy_group.conf
-@sample ${SYSCONFDIR}/rspamd/scores.d/fuzzy_group.conf
+@sample ${RSPAMDCONF}/scores.d/fuzzy_group.conf
 share/examples/rspamd/scores.d/headers_group.conf
-@sample ${SYSCONFDIR}/rspamd/scores.d/headers_group.conf
+@sample ${RSPAMDCONF}/scores.d/headers_group.conf
 share/examples/rspamd/scores.d/hfilter_group.conf
-@sample ${SYSCONFDIR}/rspamd/scores.d/hfilter_group.conf
+@sample ${RSPAMDCONF}/scores.d/hfilter_group.conf
 share/examples/rspamd/scores.d/mime_types_group.conf
-@sample ${SYSCONFDIR}/rspamd/scores.d/mime_types_group.conf
+@sample ${RSPAMDCONF}/scores.d/mime_types_group.conf
 share/examples/rspamd/scores.d/mua_group.conf
-@sample ${SYSCONFDIR}/rspamd/scores.d/mua_group.conf
+@sample ${RSPAMDCONF}/scores.d/mua_group.conf
 share/examples/rspamd/scores.d/phishing_group.conf
-@sample ${SYSCONFDIR}/rspamd/scores.d/phishing_group.conf
+@sample ${RSPAMDCONF}/scores.d/phishing_group.conf
 share/examples/rspamd/scores.d/policies_group.conf
-@sample ${SYSCONFDIR}/rspamd/scores.d/policies_group.conf
+@sample ${RSPAMDCONF}/scores.d/policies_group.conf
 share/examples/rspamd/scores.d/rbl_group.conf
-@sample ${SYSCONFDIR}/rspamd/scores.d/rbl_group.conf
+@sample ${RSPAMDCONF}/scores.d/rbl_group.conf
 share/examples/rspamd/scores.d/statistics_group.conf
-@sample ${SYSCONFDIR}/rspamd/scores.d/statistics_group.conf
+@sample ${RSPAMDCONF}/scores.d/statistics_group.conf
 share/examples/rspamd/scores.d/subject_group.conf
-@sample ${SYSCONFDIR}/rspamd/scores.d/subject_group.conf
+@sample ${RSPAMDCONF}/scores.d/subject_group.conf
 share/examples/rspamd/scores.d/surbl_group.conf
-@sample ${SYSCONFDIR}/rspamd/scores.d/surbl_group.conf
+@sample ${RSPAMDCONF}/scores.d/surbl_group.conf
 share/examples/rspamd/scores.d/whitelist_group.conf
-@sample ${SYSCONFDIR}/rspamd/scores.d/whitelist_group.conf
+@sample ${RSPAMDCONF}/scores.d/whitelist_group.conf
 share/examples/rspamd/settings.conf
-@sample ${SYSCONFDIR}/rspamd/settings.conf
+@sample ${RSPAMDCONF}/settings.conf
 share/examples/rspamd/statistic.conf
-@sample ${SYSCONFDIR}/rspamd/statistic.conf
+@sample ${RSPAMDCONF}/statistic.conf
 share/examples/rspamd/worker-controller.inc
-@sample ${SYSCONFDIR}/rspamd/worker-controller.inc
+@sample ${RSPAMDCONF}/worker-controller.inc
 share/examples/rspamd/worker-fuzzy.inc
-@sample ${SYSCONFDIR}/rspamd/worker-fuzzy.inc
+@sample ${RSPAMDCONF}/worker-fuzzy.inc
 share/examples/rspamd/worker-normal.inc
-@sample ${SYSCONFDIR}/rspamd/worker-normal.inc
+@sample ${RSPAMDCONF}/worker-normal.inc
 share/examples/rspamd/worker-proxy.inc
-@sample ${SYSCONFDIR}/rspamd/worker-proxy.inc
+@sample ${RSPAMDCONF}/worker-proxy.inc
 share/rspamd/
 share/rspamd/effective_tld_names.dat
 share/rspamd/elastic/
@@ -252,6 +256,7 @@ share/rspamd/lualib/fun.lua
 share/rspamd/lualib/global_functions.lua
 share/rspamd/lualib/lpegre.lua
 share/rspamd/lualib/lua_auth_results.lua
+share/rspamd/lualib/lua_aws.lua
 share/rspamd/lualib/lua_bayes_learn.lua
 share/rspamd/lualib/lua_cfg_transform.lua
 share/rspamd/lualib/lua_clickhouse.lua
@@ -259,6 +264,7 @@ share/rspamd/lualib/lua_content/
 share/rspamd/lualib/lua_content/ical.lua
 share/rspamd/lualib/lua_content/init.lua
 share/rspamd/lualib/lua_content/pdf.lua
+share/rspamd/lualib/lua_content/vcard.lua
 share/rspamd/lualib/lua_dkim_tools.lua
 share/rspamd/lualib/lua_ffi/
 share/rspamd/lualib/lua_ffi/common.lua
@@ -277,6 +283,7 @@ share/rspamd/lualib/lua_maps.lua
 share/rspamd/lualib/lua_maps_expressions.lua
 share/rspamd/lualib/lua_meta.lua
 share/rspamd/lualib/lua_mime.lua
+share/rspamd/lualib/lua_mime_types.lua
 share/rspamd/lualib/lua_redis.lua
 share/rspamd/lualib/lua_scanners/
 share/rspamd/lualib/lua_scanners/avast.lua
@@ -290,6 +297,7 @@ share/rspamd/lualib/lua_scanners/kaspersky_av.lua
 share/rspamd/lualib/lua_scanners/kaspersky_se.lua
 share/rspamd/lualib/lua_scanners/oletools.lua
 share/rspamd/lualib/lua_scanners/p0f.lua
+share/rspamd/lualib/lua_scanners/pyzor.lua
 share/rspamd/lualib/lua_scanners/razor.lua
 share/rspamd/lualib/lua_scanners/savapi.lua
 share/rspamd/lualib/lua_scanners/sophos.lua
@@ -311,6 +319,7 @@ share/rspamd/lualib/lua_util.lua
 share/rspamd/lualib/lua_verdict.lua
 share/rspamd/lualib/lupa.lua
 share/rspamd/lualib/plugins/
+share/rspamd/lualib/plugins/dmarc.lua
 share/rspamd/lualib/plugins/neural.lua
 share/rspamd/lualib/plugins/rbl.lua
 share/rspamd/lualib/plugins_stats.lua
@@ -322,6 +331,7 @@ share/rspamd/lualib/rspamadm/confighelp.lua
 share/rspamd/lualib/rspamadm/configwizard.lua
 share/rspamd/lualib/rspamadm/cookie.lua
 share/rspamd/lualib/rspamadm/corpus_test.lua
+share/rspamd/lualib/rspamadm/dmarc_report.lua
 share/rspamd/lualib/rspamadm/dns_tool.lua
 share/rspamd/lualib/rspamadm/fuzzy_convert.lua
 share/rspamd/lualib/rspamadm/fuzzy_stat.lua
@@ -330,6 +340,7 @@ share/rspamd/lualib/rspamadm/keypair.lua
 share/rspamd/lualib/rspamadm/mime.lua
 share/rspamd/lualib/rspamadm/rescore.lua
 share/rspamd/lualib/rspamadm/stat_convert.lua
+share/rspamd/lualib/rspamadm/statistics_dump.lua
 share/rspamd/lualib/rspamadm/template.lua
 share/rspamd/lualib/rspamadm/vault.lua
 share/rspamd/lualib/tableshape.lua
@@ -337,6 +348,7 @@ share/rspamd/plugins/
 share/rspamd/plugins/antivirus.lua
 share/rspamd/plugins/arc.lua
 share/rspamd/plugins/asn.lua
+share/rspamd/plugins/aws_s3.lua
 share/rspamd/plugins/bayes_expiry.lua
 share/rspamd/plugins/clickhouse.lua
 share/rspamd/plugins/clustering.lua
@@ -346,6 +358,7 @@ share/rspamd/plugins/dmarc.lua
 share/rspamd/plugins/dynamic_conf.lua
 share/rspamd/plugins/elastic.lua
 share/rspamd/plugins/emails.lua
+share/rspamd/plugins/external_relay.lua
 share/rspamd/plugins/external_services.lua
 share/rspamd/plugins/force_actions.lua
 share/rspamd/plugins/forged_recipients.lua
@@ -445,7 +458,7 @@ share/rspamd/www/js/lib/d3evolution.min.js
 share/rspamd/www/js/lib/d3pie.min.js
 share/rspamd/www/js/lib/fontawesome.min.js
 share/rspamd/www/js/lib/footable.min.js
-share/rspamd/www/js/lib/jquery-3.5.1.min.js
+share/rspamd/www/js/lib/jquery-3.6.0.min.js
 share/rspamd/www/js/lib/jquery.stickytabs.min.js
 share/rspamd/www/js/lib/linenumbers.min.js
 share/rspamd/www/js/lib/nprogress.min.js

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.94 2021/07/15 10:43:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.95 2021/08/20 12:12:07 sthen Exp $
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
-GH_TAGNAME=	2.7
-REVISION=	3
+GH_TAGNAME=	3.0
 
 CATEGORIES=	mail
 
@@ -71,6 +70,10 @@ CONFIGURE_ARGS+= -DOPENBSD_BUILD=1 \
 		-DRUNDIR="${LOCALSTATEDIR}/run/rspamd" \
 		-DRSPAMD_USER="_rspamd"
 
+# to line up @samples in plist
+RSPAMDCONF=	${SYSCONFDIR}/rspamd
+SUBST_VARS+=	RSPAMDCONF
+
 # The check for this pulls in cmake modules which check for LLVM
 # toolchain components (llvm-ar/llvm-ranlib) which are only present
 # in the version of LLVM in ports not the version in base; it then
@@ -127,7 +130,7 @@ pre-configure:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/rspamd/{,local.d,override.d}
 	mv ${WRKINST}${SYSCONFDIR}/rspamd/* ${PREFIX}/share/examples/rspamd
-	rm ${PREFIX}/share/rspamd/www/README.md.{beforesubst,orig}
+	rm ${PREFIX}/share/rspamd/www/README.md{.beforesubst,${PATCHORIG}}
 	[ -r ${PREFIX}/share/examples/rspamd/local.d/redis.conf ] || \
 	    echo 'servers = "127.0.0.1";' > \
 	    ${PREFIX}/share/examples/rspamd/local.d/redis.conf
