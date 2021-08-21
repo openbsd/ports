@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_check-symbols_py,v 1.1 2020/06/06 09:54:45 ajacoutot Exp $
+$OpenBSD: patch-src_check-symbols_py,v 1.2 2021/08/21 08:15:22 ajacoutot Exp $
 
 Index: src/check-symbols.py
 --- src/check-symbols.py.orig
 +++ src/check-symbols.py
-@@ -22,7 +22,7 @@ tested = False
+@@ -23,7 +23,7 @@ tested = False
  stat = 0
  
  for soname in ['harfbuzz', 'harfbuzz-subset', 'harfbuzz-icu', 'harfbuzz-gobject']:
