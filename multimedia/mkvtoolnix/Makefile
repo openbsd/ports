@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2021/05/23 11:59:42 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.105 2021/08/21 08:03:29 rsadowski Exp $
 
 COMMENT=	create, alter and inspect Matroska files
 
@@ -6,9 +6,9 @@ DISTNAME=	mkvtoolnix-57.0.0
 
 CATEGORIES=	multimedia x11
 
-HOMEPAGE =	https://www.bunkus.org/videotools/mkvtoolnix/
+HOMEPAGE=	https://www.bunkus.org/videotools/mkvtoolnix/
 
-MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
+MAINTAINER=	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -25,12 +25,12 @@ MODULES=	lang/ruby
 MODRUBY_RUNDEP=	No
 
 # C++17
-COMPILER =	base-clang ports-gcc
+COMPILER=	base-clang ports-gcc
 
 # need to add this for gcc
 # revisit when gcc drops it
-EXTRA_ports-gcc =	-lstdc++fs
-LDFLAGS +=		${EXTRA_${CHOSEN_COMPILER}}
+EXTRA_ports-gcc=	-lstdc++fs
+LDFLAGS+=		${EXTRA_${CHOSEN_COMPILER}}
 
 BUILD_DEPENDS=	devel/boost \
 		devel/gettext,-tools \
@@ -55,6 +55,7 @@ MAKE_ENV+=	V=1
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
+
 CONFIGURE_ARGS=	--disable-optimization \
 		--disable-update-check \
 		--with-boost-libdir=${LOCALBASE}/lib \
@@ -70,15 +71,20 @@ FLAVOR?=
 CONFIGURE_ARGS+= --disable-gui
 .else
 MODULES+=	x11/qt5
+
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia Qt5Network
 WANTLIB += Qt5Widgets cmark
-LIB_DEPENDS +=	x11/qt5/qtmultimedia \
+
+LIB_DEPENDS+=	x11/qt5/qtmultimedia \
 		textproc/cmark
+
 RUN_DEPENDS+=	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		x11/gtk+3,-guic
+
 CPPFLAGS+=	-I${X11BASE}/include
 LDFLAGS+=	-L${X11BASE}/lib -L${MODQT5_LIBDIR}
+
 CONFIGURE_ENV+=	LCONVERT="${LOCALBASE}/lib/qt5/bin/lconvert"
 .endif
 
