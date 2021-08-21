@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2021/05/18 19:15:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.28 2021/08/21 07:19:28 rsadowski Exp $
 
 COMMENT =	compares and merges multiple files or directories
 
-DISTNAME =	kdiff3-1.9.2
+DISTNAME =	kdiff3-1.9.3
 
 CATEGORIES =	devel
 
@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5Crash KF5I18n KF5IconThemes KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOGui KF5KIOWidgets KF5Parts KF5Service KF5SonnetUi
+WANTLIB += KF5Crash KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui
+WANTLIB += KF5KIOWidgets KF5Parts KF5Service KF5Solid KF5SonnetUi
 WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Widgets Qt5Xml c m
@@ -44,13 +44,13 @@ LIB_DEPENDS =		devel/kf5/kauth \
 			devel/kf5/kcoreaddons \
 			devel/kf5/kcrash \
 			devel/kf5/ki18n \
-			devel/kf5/kiconthemes \
 			devel/kf5/kio \
 			devel/kf5/kparts \
 			devel/kf5/kservice \
 			devel/kf5/ktextwidgets \
 			devel/kf5/kwidgetsaddons \
 			devel/kf5/kxmlgui \
+			devel/kf5/solid \
 			devel/kf5/sonnet
 
 .include <bsd.port.mk>
