@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2021/07/14 20:56:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.124 2021/08/21 03:25:05 gkoehler Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
@@ -119,10 +119,6 @@ BUILD_PACKAGES := ${BUILD_PACKAGES:N-main}
 MODULES +=	x11/qt5
 .else
 CONFIGURE_ARGS +=	-DBUILD_wireshark=false
-.endif
-
-.if ${MACHINE_ARCH:Mpowerpc}
-CONFIGURE_ENV += LDFLAGS="-Wl,--relax"
 .endif
 
 .if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"

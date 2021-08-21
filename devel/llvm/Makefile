@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.282 2021/08/17 20:22:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.283 2021/08/21 03:25:05 gkoehler Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
@@ -110,11 +110,6 @@ CXXFLAGS+=	-mno-retpoline
 # Omit frame pointer to improve performance.
 .if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
 CXXFLAGS+=	-fomit-frame-pointer
-.endif
-
-.if ${MACHINE_ARCH} == "powerpc"
-CONFIGURE_ARGS +=	-DCMAKE_EXE_LINKER_FLAGS="-Wl,-relax"
-CONFIGURE_ARGS +=	-DCMAKE_SHARED_LINKER_FLAGS="-Wl,-relax"
 .endif
 
 TEST_TARGET =		check check-clang

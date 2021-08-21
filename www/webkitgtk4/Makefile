@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2021/07/24 07:32:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.145 2021/08/21 03:25:05 gkoehler Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -122,7 +122,6 @@ LDFLAGS +=		-Wl,--no-keep-memory
 .if ${MACHINE_ARCH} == "powerpc"
 # XXX fix colors being off, it would be nice to fix the code
 CONFIGURE_ARGS +=	-DUSE_OPENGL_OR_ES=OFF
-LDFLAGS +=		-Wl,--relax
 .endif
 
 post-extract:

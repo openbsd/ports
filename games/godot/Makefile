@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2021/07/04 14:34:25 tb Exp $
+# $OpenBSD: Makefile,v 1.23 2021/08/21 03:25:05 gkoehler Exp $
 
 BROKEN-powerpc =	fails at runtime, the UI is totally blank
 BROKEN-powerpc64 =	Unknown ISA
@@ -77,11 +77,6 @@ NO_TEST =		Yes
 .if ${MACHINE_ARCH:Mhppa}
 LDFLAGS +=     -latomic
 WANTLIB +=     atomic
-.endif
-
-# Fix relocation overflows
-.if ${MACHINE_ARCH:Mpowerpc}
-LDFLAGS +=     -Wl,--relax
 .endif
 
 post-extract:

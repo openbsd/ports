@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.17 2021/01/19 09:06:34 rsadowski Exp $
+# $OpenBSD: Makefile.inc,v 1.18 2021/08/21 03:25:05 gkoehler Exp $
 
 ONLY_FOR_ARCHS ?=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -83,10 +83,6 @@ QT_CMAKEDIR =	${QT_BASEDIR}/cmake
 CONFIGURE_ENV +=	MAKE=make \
 			MAKEFLAGS="-j ${MAKE_JOBS}" \
 			EXTRA_CPPFLAGS="-DLOCALBASE=\\\"${LOCALBASE}\\\" -DX11BASE=\\\"${X11BASE}\\\""
-
-.if ${MACHINE_ARCH} == "powerpc"
-CONFIGURE_ENV += LDFLAGS="-Wl,--relax"
-.endif
 
 # QtWebkit (at least, maybe others) plays dirty games with inter-target
 # dependencies, so we'd better use the target qmake always creates

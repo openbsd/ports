@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.84 2021/07/11 16:38:44 jsing Exp $
+# $OpenBSD: arch-defines.mk,v 1.85 2021/08/21 03:25:05 gkoehler Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -32,7 +32,7 @@ RUST_ARCHS = aarch64 amd64 i386 sparc64
 # arches where the base compiler is clang
 CLANG_ARCHS = aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64 riscv64
 # arches using LLVM's linker (ld.lld); others use binutils' ld.bfd
-LLD_ARCHS = aarch64 amd64 arm i386 powerpc64 riscv64
+LLD_ARCHS = aarch64 amd64 arm i386 powerpc powerpc64 riscv64
 
 # arches where ports devel/llvm builds - populates llvm ONLY_FOR_ARCHS
 # as well as available for PROPERTIES checks.
@@ -90,7 +90,7 @@ _SYSTEM_VERSION-arm = 5
 _SYSTEM_VERSION-i386 = 3
 _SYSTEM_VERSION-mips64 = 2
 _SYSTEM_VERSION-mips64el = 1
-_SYSTEM_VERSION-powerpc = 2
+_SYSTEM_VERSION-powerpc = 3
 _SYSTEM_VERSION-powerpc64 = 1
 _SYSTEM_VERSION-${MACHINE_ARCH} ?= 0
 _SYSTEM_VERSION-${ARCH} ?= 0

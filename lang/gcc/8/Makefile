@@ -1,10 +1,15 @@
-# $OpenBSD: Makefile,v 1.44 2021/08/17 20:22:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2021/08/21 03:25:05 gkoehler Exp $
 
 ONLY_FOR_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el \
 	powerpc powerpc64 sparc64
 
 # XXX: sparc64
 ONLY_FOR_ARCHS-ada = amd64 hppa i386 mips64 powerpc
+
+# powerpc lld can't link C++ code from gcc
+.if ${MACHINE_ARCH:Mpowerpc}
+USE_LLD = No
+.endif
 
 DPB_PROPERTIES = parallel
 

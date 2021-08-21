@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2021/08/17 20:22:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2021/08/21 03:25:05 gkoehler Exp $
 
 # XXX
 # This port is more or less a copy from devel/llvm and it tries to
@@ -65,11 +65,6 @@ CONFIGURE_ARGS +=	-DCLANG_ENABLE_STATIC_ANALYZER=ON \
 			-DLLVM_INCLUDE_BENCHMARKS=OFF \
 			-DLLVM_INCLUDE_EXAMPLES=OFF \
 			-DLLVM_INCLUDE_TESTS=OFF
-
-.if ${MACHINE_ARCH} == "powerpc"
-CONFIGURE_ARGS +=	-DCMAKE_EXE_LINKER_FLAGS="-Wl,--relax"
-CONFIGURE_ARGS +=	-DCMAKE_SHARED_LINKER_FLAGS="-Wl,--relax"
-.endif
 
 GCC_VER =		8.4.0
 .if ${MACHINE_ARCH} == "amd64"

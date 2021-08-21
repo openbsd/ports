@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2021/01/04 17:43:02 cwen Exp $
+# $OpenBSD: Makefile,v 1.89 2021/08/21 03:25:05 gkoehler Exp $
 
 COMMENT=	graphical adventure game interpreter
 V=		2.2.0
@@ -38,11 +38,6 @@ LIB_DEPENDS=	audio/fluidsynth \
 
 .if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
 CXXFLAGS+=	-mxgot
-.endif
-
-# Fix relocation overflows
-.if ${MACHINE_ARCH} == "powerpc"
-LDFLAGS+=	-Wl,--relax
 .endif
 
 CONFIGURE_STYLE=simple
