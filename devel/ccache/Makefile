@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2021/08/20 08:04:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2021/08/21 18:05:37 sthen Exp $
 
 COMMENT =	compiler cache
 
@@ -23,7 +23,7 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 COMPILER =		base-clang ports-gcc
 
-BUILD_DEPENDS =		textproc/asciidoc
+BUILD_DEPENDS =		textproc/asciidoctor
 LIB_DEPENDS =		archivers/zstd \
 			databases/libhiredis
 
