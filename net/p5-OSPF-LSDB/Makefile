@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/08/21 14:53:19 bluhm Exp $
 
 COMMENT =		ospf link-state database viewer
 
-DISTNAME =		OSPF-LSDB-1.11
-REVISION =		0
+DISTNAME =		OSPF-LSDB-1.13
 
 CATEGORIES =		net
 
@@ -13,7 +12,6 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
-PKG_ARCH =		*
 RUN_DEPENDS =		devel/p5-Data-Validate \
 			devel/p5-Data-Validate-Struct \
 			devel/p5-File-Slurp \
@@ -22,9 +20,13 @@ RUN_DEPENDS =		devel/p5-Data-Validate \
 			devel/p5-YAML-Syck \
 			textproc/p5-Regexp-Common \
 			www/p5-CGI
-TEST_DEPENDS =		devel/p5-Test-NoWarnings \
+TEST_DEPENDS =		devel/p5-Test-EOL \
+			devel/p5-Test-NoWarnings \
 			devel/p5-Test-Pod \
+			devel/p5-Test-Requires \
 			devel/p5-Test-Strict \
 			math/graphviz
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
