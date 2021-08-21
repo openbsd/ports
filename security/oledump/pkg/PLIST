@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/02/05 09:17:33 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/08/21 21:57:23 sebastia Exp $
 bin/oledump
 share/oledump/
 share/oledump/decoder_add1.py
@@ -8,19 +8,23 @@ share/oledump/decoder_rol1.py
 share/oledump/decoder_xor1.py
 share/oledump/oledump.py
 share/oledump/plugin_biff.py
+share/oledump/plugin_clsid.py
 share/oledump/plugin_dridex.py
 share/oledump/plugin_hifo.py
 share/oledump/plugin_http_heuristics.py
 share/oledump/plugin_jumplist.py
 share/oledump/plugin_linear.py
 share/oledump/plugin_msg.py
+share/oledump/plugin_msg_summary.py
 share/oledump/plugin_msi.py
 share/oledump/plugin_office_crypto.py
 share/oledump/plugin_ppt.py
 share/oledump/plugin_str_sub.py
 share/oledump/plugin_stream_o.py
 share/oledump/plugin_stream_sample.py
+share/oledump/plugin_vba.py
 share/oledump/plugin_vba_dco.py
 share/oledump/plugin_vba_routines.py
 share/oledump/plugin_vba_summary.py
+share/oledump/plugin_vbaproject.py
 share/oledump/plugin_version_vba.py
