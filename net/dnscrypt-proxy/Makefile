@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.56 2021/03/08 13:59:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2021/08/22 01:54:11 namn Exp $
 
 COMMENT =	flexible DNS proxy with support for encrypted DNS protocols
 
 GH_ACCOUNT =	jedisct1
 GH_PROJECT =	dnscrypt-proxy
-GH_TAGNAME =	2.0.45
-REVISION =	0
+GH_TAGNAME =	2.1.0
 
 CATEGORIES =	net
 
@@ -23,7 +22,9 @@ MODGO_TYPE =	bin
 INSTDIR =	${PREFIX}/share/examples/dnscrypt-proxy
 
 post-patch:
-	${SUBST_CMD} ${WRKDIST}/dnscrypt-proxy/example-dnscrypt-proxy.toml
+	sed -i "s;cache_file = '\(.*\)\.md';cache_file =\
+		'${LOCALSTATEDIR}/dnscrypt-proxy/\1.md';g" \
+		${MODGO_SUBDIR}/dnscrypt-proxy/example-dnscrypt-proxy.toml
 
 do-build:
 	cd ${WRKSRC}/dnscrypt-proxy && ${MODGO_CMD} build
@@ -35,6 +36,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dnscrypt-proxy/dnscrypt-proxy ${PREFIX}/bin/
 	${INSTALL_DATA_DIR} ${INSTDIR}
 	${INSTALL_DATA} ${WRKSRC}/dnscrypt-proxy/example-* ${INSTDIR}
-	rm -f ${INSTDIR}/example-dnscrypt-proxy.toml.{beforesubst,orig}
+	rm -f ${INSTDIR}/example-dnscrypt-proxy.toml.orig
 
 .include <bsd.port.mk>

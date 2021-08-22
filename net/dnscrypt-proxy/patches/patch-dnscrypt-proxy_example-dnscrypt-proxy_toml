@@ -1,9 +1,9 @@
-$OpenBSD: patch-dnscrypt-proxy_example-dnscrypt-proxy_toml,v 1.15 2021/01/12 05:18:25 bket Exp $
+$OpenBSD: patch-dnscrypt-proxy_example-dnscrypt-proxy_toml,v 1.16 2021/08/22 01:54:11 namn Exp $
 
 Index: dnscrypt-proxy/example-dnscrypt-proxy.toml
 --- dnscrypt-proxy/example-dnscrypt-proxy.toml.orig
 +++ dnscrypt-proxy/example-dnscrypt-proxy.toml
-@@ -49,7 +49,7 @@ max_clients = 250
+@@ -52,7 +52,7 @@ max_clients = 250
  ## Note (2): this feature is not compatible with systemd socket activation.
  ## Note (3): when using -pidfile, the PID file directory must be writable by the new user
  
@@ -11,22 +11,4 @@ Index: dnscrypt-proxy/example-dnscrypt-proxy.toml
 +user_name = '_dnscrypt-proxy'
  
  
- ## Require servers (from static + remote sources) to satisfy specific properties
-@@ -654,7 +654,7 @@ cache_neg_max_ttl = 600
- 
-   [sources.'public-resolvers']
-   urls = ['https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/public-resolvers.md', 'https://download.dnscrypt.info/resolvers-list/v3/public-resolvers.md', 'https://ipv6.download.dnscrypt.info/resolvers-list/v3/public-resolvers.md', 'https://download.dnscrypt.net/resolvers-list/v3/public-resolvers.md']
--  cache_file = 'public-resolvers.md'
-+  cache_file = '${LOCALSTATEDIR}/dnscrypt-proxy/public-resolvers.md'
-   minisign_key = 'RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3'
-   refresh_delay = 72
-   prefix = ''
-@@ -663,7 +663,7 @@ cache_neg_max_ttl = 600
- 
-   [sources.'relays']
-   urls = ['https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/relays.md', 'https://download.dnscrypt.info/resolvers-list/v3/relays.md', 'https://ipv6.download.dnscrypt.info/resolvers-list/v3/relays.md', 'https://download.dnscrypt.net/resolvers-list/v3/relays.md']
--  cache_file = 'relays.md'
-+  cache_file = '${LOCALSTATEDIR}/dnscrypt-proxy/relays.md'
-   minisign_key = 'RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3'
-   refresh_delay = 72
-   prefix = ''
+ ## Require servers (from remote sources) to satisfy specific properties
