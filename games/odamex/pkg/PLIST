@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/05 21:07:37 edd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/08/22 19:48:24 edd Exp $
 @bin bin/odalaunch
-@bin bin/odamast
 @bin bin/odamex
 @bin bin/odasrv
 share/doc/pkg-readmes/${PKGSTEM}
@@ -9,6 +8,7 @@ share/examples/odamex/coop-doom.cfg
 share/examples/odamex/coop-masterlevels.cfg
 share/examples/odamex/coop-modern.cfg
 share/examples/odamex/coop-zdoom.cfg
+share/examples/odamex/ctf-attackdefend.cfg
 share/examples/odamex/ctf-doom.cfg
 share/examples/odamex/ctf-pub.cfg
 share/examples/odamex/ctf-wdl.cfg
@@ -20,6 +20,10 @@ share/examples/odamex/duel-ddl.cfg
 share/examples/odamex/duel-doom.cfg
 share/examples/odamex/duel-zddl.cfg
 share/examples/odamex/duel-zdoom.cfg
+share/examples/odamex/lms-2team.cfg
+share/examples/odamex/lms-3team.cfg
+share/examples/odamex/lms-ffa.cfg
+share/examples/odamex/survival-modern.cfg
 share/examples/odamex/tdm-doom.cfg
 share/examples/odamex/tdm-modern.cfg
 share/examples/odamex/tdm-zdoom.cfg

@@ -1,9 +1,9 @@
-$OpenBSD: patch-client_CMakeLists_txt,v 1.1.1.1 2020/10/05 21:07:37 edd Exp $
+$OpenBSD: patch-client_CMakeLists_txt,v 1.2 2021/08/22 19:48:24 edd Exp $
 
 Index: client/CMakeLists.txt
 --- client/CMakeLists.txt.orig
 +++ client/CMakeLists.txt
-@@ -234,7 +234,7 @@ if(SDL_VERSION)
+@@ -220,7 +220,7 @@ if(TARGET SDL2::SDL2 OR TARGET SDL::SDL)
    endif()
  
    if(UNIX AND NOT APPLE)
