@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2021/08/14 07:01:23 tb Exp $
+# $OpenBSD: Makefile,v 1.4 2021/08/22 08:06:22 paco Exp $
 
 COMMENT =		command-line interface for Hetzner Cloud
-V =			1.25.1
+V =			1.28.0
 
 MODGO_MODNAME =		github.com/hetznercloud/cli
 MODGO_VERSION =		v${V}
@@ -21,6 +21,9 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/go
 
 WANTLIB +=		c pthread
+
+MODGO_LDFLAGS =	\
+	-X github.com/hetznercloud/cli/internal/version.Version=${MODGO_VERSION}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/hcloud
