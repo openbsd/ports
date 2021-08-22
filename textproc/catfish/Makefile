@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2021/08/02 06:29:17 landry Exp $
+# $OpenBSD: Makefile,v 1.46 2021/08/22 18:27:21 matthieu Exp $
 
 COMMENT =	versatile file searching tool
 
 XFCE_GOODIE =	catfish
 XFCE_VERSION =	4.16.2
+REVISION =	0
 MODPY_EGG_VERSION =	${XFCE_VERSION}
 CATEGORIES =	textproc
 
