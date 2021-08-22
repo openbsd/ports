@@ -1,4 +1,4 @@
-$OpenBSD: patch-platform_x11_detect_py,v 1.5 2021/06/09 15:56:32 cwen Exp $
+$OpenBSD: patch-platform_x11_detect_py,v 1.6 2021/08/22 01:43:49 thfr Exp $
 
 remove hardcoded -O2, found by bcallah@. Add sndio
 
@@ -33,7 +33,7 @@ Index: platform/x11/detect.py
      elif env["target"] == "debug":
          env.Prepend(CCFLAGS=["-ggdb"])
          env.Prepend(CCFLAGS=["-g3"])
-@@ -325,6 +308,10 @@ def configure(env):
+@@ -323,6 +306,10 @@ def configure(env):
          env.Append(CPPDEFINES=["ALSA_ENABLED", "ALSAMIDI_ENABLED"])
      else:
          print("ALSA libraries not found, disabling driver")

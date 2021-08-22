@@ -1,4 +1,4 @@
-$OpenBSD: patch-platform_x11_os_x11_cpp,v 1.5 2021/05/03 19:10:25 thfr Exp $
+$OpenBSD: patch-platform_x11_os_x11_cpp,v 1.6 2021/08/22 01:43:49 thfr Exp $
 
 fix libXrandr library name and load sndio
 
@@ -14,7 +14,7 @@ Index: platform/x11/os_x11.cpp
  	if (!xrandr_handle) {
  		err = dlerror();
  		// For some arcane reason, NetBSD now ships libXrandr.so.3 while the rest of the world has libXrandr.so.2...
-@@ -3972,6 +3972,10 @@ void OS_X11::update_real_mouse_position() {
+@@ -3973,6 +3973,10 @@ void OS_X11::update_real_mouse_position() {
  }
  
  OS_X11::OS_X11() {
