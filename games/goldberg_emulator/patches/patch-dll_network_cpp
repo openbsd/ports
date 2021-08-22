@@ -1,0 +1,16 @@
+$OpenBSD: patch-dll_network_cpp,v 1.1.1.1 2021/08/22 02:01:47 thfr Exp $
+
+enable get_broadcast_info for OpenBSD
+
+Index: dll/network.cpp
+--- dll/network.cpp.orig
++++ dll/network.cpp
+@@ -120,7 +120,7 @@ static void get_broadcast_info(uint16 port)
+     }
+ }
+ 
+-#elif defined(__linux__)
++#elif defined(__linux__) || defined(__OpenBSD__)
+ 
+ static void get_broadcast_info(uint16 port)
+ {

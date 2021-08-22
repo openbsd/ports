@@ -1,0 +1,121 @@
+$OpenBSD: patch-dll_wrap_cpp,v 1.1.1.1 2021/08/22 02:01:47 thfr Exp $
+
+work around *64 function names linuxisms
+use OpenBSD's mount(2) syntax (need to drop const for *data)
+__xstat{,64} => stat(2)
+__xlstat{,64} => lstat(2)
+__xmknod => mknod(2)
+dlmopen => dlopen(3)
+
+Index: dll/wrap.cpp
+--- dll/wrap.cpp.orig
++++ dll/wrap.cpp
+@@ -21,6 +21,14 @@
+ 	#define __WINDOWS_32__
+ #endif
+ 
++#if defined(__OpenBSD__)
++    #define dirent64	dirent
++    #define fopen64	fopen
++    #define open64	open
++    #define readdir64	readdir
++    #define scandir64	scandir
++#endif
++
+ #if defined(__WINDOWS_32__) || defined(__WINDOWS_64__)
+ // Nothing to be done here
+ #else
+@@ -290,7 +298,7 @@ STEAMAPI_API int __wrap_access(const char *path, int m
+ STEAMAPI_API int __wrap___xstat(int ver, const char * path, struct stat * stat_buf)
+ {
+     const char *path_lowercased = lowercase_path(path, false, false);
+-    int result = __xstat(ver, path_lowercased, stat_buf);
++    int result = stat(path_lowercased, stat_buf);
+     if (path_lowercased != path) {
+         free((void *)path_lowercased);
+     }
+@@ -305,7 +313,7 @@ STEAMAPI_API int __wrap_stat(const char * path, struct
+ STEAMAPI_API int __wrap___lxstat(int ver, const char * path, struct stat * stat_buf)
+ {
+     const char *path_lowercased = lowercase_path(path, false, false);
+-    int result = __lxstat(ver, path_lowercased, stat_buf);
++    int result = lstat(path_lowercased, stat_buf);
+     if (path_lowercased != path) {
+         free((void *)path_lowercased);
+     }
+@@ -347,20 +355,20 @@ STEAMAPI_API DIR *__wrap_opendir(const char *path)
+     return result;
+ }
+ 
+-STEAMAPI_API int __wrap___xstat64(int ver, const char *path, struct stat64 *stat_buf)
++STEAMAPI_API int __wrap___xstat64(int ver, const char *path, struct stat *stat_buf)
+ {
+     const char *path_lowercased = lowercase_path(path, false, false);
+-    int result = __xstat64(ver, path_lowercased, stat_buf);
++    int result = stat(path_lowercased, stat_buf);
+     if (path_lowercased != path) {
+         free((void *)path_lowercased);
+     }
+     return result;
+ }
+ 
+-STEAMAPI_API int __wrap___lxstat64(int ver, const char *path, struct stat64 *stat_buf)
++STEAMAPI_API int __wrap___lxstat64(int ver, const char *path, struct stat *stat_buf)
+ {
+     const char *path_lowercased = lowercase_path(path, false, false);
+-    int result = __lxstat64(ver, path_lowercased, stat_buf);
++    int result = lstat(path_lowercased, stat_buf);
+     if (path_lowercased != path) {
+         free((void *)path_lowercased);
+     }
+@@ -377,10 +385,10 @@ STEAMAPI_API int __wrap_statvfs(const char *path, stru
+     return result;
+ }
+ 
+-STEAMAPI_API int __wrap_statvfs64(const char *path, struct statvfs64 *buf)
++STEAMAPI_API int __wrap_statvfs64(const char *path, struct statvfs *buf)
+ {
+     const char *path_lowercased = lowercase_path(path, false, false);
+-    int result = statvfs64(path_lowercased, buf);
++    int result = statvfs(path_lowercased, buf);
+     if (path_lowercased != path) {
+         free((void *)path_lowercased);
+     }
+@@ -448,18 +456,22 @@ STEAMAPI_API int __wrap_link(const char *path1, const 
+ STEAMAPI_API int __wrap_mknod(const char *path, mode_t mode, dev_t dev)
+ {
+     const char *path_lowercased = lowercase_path(path, true, true);
+-    int result = __xmknod(1, path_lowercased, mode, &dev);
++    int result = mknod(path_lowercased, mode, dev);
+     if (path_lowercased != path) {
+         free((void *)path_lowercased);
+     }
+     return result;
+ }
+ 
+-STEAMAPI_API int __wrap_mount(const char *source, const char *target, const char *filesystemtype, unsigned long mountflags, const void *data)
++STEAMAPI_API int __wrap_mount(const char *source, const char *target, const char *filesystemtype, unsigned long mountflags, void *data)
+ {
+     const char *source_lowercased = lowercase_path(source, false, false);
+     const char *target_lowercased = lowercase_path(target, false, false);
++#if defined(__OpenBSD__)
++    int result = mount(filesystemtype, target_lowercased, mountflags, data);
++#else
+     int result = mount(source_lowercased, target_lowercased, filesystemtype, mountflags, data);
++#endif
+     if (source_lowercased != source) {
+         free((void *)source_lowercased);
+     }
+@@ -553,10 +565,10 @@ STEAMAPI_API void *__wrap_dlopen(const char *path, int
+     return result;
+ }
+ 
+-STEAMAPI_API void *__wrap_dlmopen(Lmid_t lmid, const char *path, int flags)
++STEAMAPI_API void *__wrap_dlmopen(char *lmid, const char *path, int flags)
+ {
+     const char *path_lowercased = lowercase_path(path, false, false);
+-    void * result = dlmopen(lmid, path_lowercased, flags);
++    void * result = dlopen(path_lowercased, flags);
+     if (path_lowercased != path) {
+         free((void *)path_lowercased);
+     }

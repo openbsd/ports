@@ -1,0 +1,32 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2021/08/22 02:01:47 thfr Exp $
+
+don't link libdl
+look in LOCALBASE for libs and headers
+remove -Ofast
+honor CXXFLAGS
+don't hardcode clang++
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -1,8 +1,8 @@
+ .DEFAULT_GOAL := all
+ 
+-CXX=clang++
+-CXX_FLAGS += -fPIC -std=c++11
+-LD_FLAGS += -shared -lprotobuf-lite -ldl -Wl,--no-undefined
++CXX=c++
++CXX_FLAGS += ${CXXFLAGS} -fPIC -std=c++11 -I${LOCALBASE}/include
++LD_FLAGS += -shared -L${LOCALBASE}/lib -lprotobuf-lite -Wl
+ LIBRARY_NAME=libsteam_api.so
+ RM = rm -f
+ 
+@@ -21,7 +21,7 @@ $(PROTO_HEADERS) : $(PROTO_CC)
+ $(OBJ_NOPROTO) : $(PROTO_CC) $(PROTO_HEADERS)
+ $(OBJ) : $(HEADERS)
+ 
+-release: CXX_FLAGS += -DNDEBUG -DEMU_RELEASE_BUILD -Ofast
++release: CXX_FLAGS += -DNDEBUG -DEMU_RELEASE_BUILD
+ release: LD_FLAGS += -lpthread
+ release32: CXX_FLAGS += -m32
+ release32: LD_FLAGS += -m32

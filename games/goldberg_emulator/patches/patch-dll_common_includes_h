@@ -1,0 +1,36 @@
+$OpenBSD: patch-dll_common_includes_h,v 1.1.1.1 2021/08/22 02:01:47 thfr Exp $
+
+add OpenBSD includes
+
+Index: dll/common_includes.h
+--- dll/common_includes.h.orig
++++ dll/common_includes.h
+@@ -105,7 +105,7 @@ inline std::wstring utf8_decode(const std::string &str
+     return wstrTo;
+ }
+ 
+-#elif defined(__LINUX__)
++#elif defined(__LINUX__) || defined(__OpenBSD__)
+     #include <arpa/inet.h>
+ 
+     #include <sys/types.h>
+@@ -118,7 +118,11 @@ inline std::wstring utf8_decode(const std::string &str
+     #include <sys/time.h>
+ 
+     #include <netinet/in.h>
+-    #include <linux/netdevice.h>
++    #if defined(__LINUX__)
++        #include <linux/netdevice.h>
++    #elif defined(__OpenBSD__)
++        #include <net/if.h>
++    #endif
+ 
+     #include <fcntl.h>
+     #include <unistd.h>
+@@ -190,4 +194,4 @@ inline std::wstring utf8_decode(const std::string &str
+ 
+ #define LOBBY_CONNECT_APPID ((uint32)-2)
+ 
+-#endif//__INCLUDED_COMMON_INCLUDES__
+\ No newline at end of file
++#endif//__INCLUDED_COMMON_INCLUDES__

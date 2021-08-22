@@ -1,0 +1,11 @@
+Steam emulator that emulates steam online features. Lets you play games that use
+the steam multiplayer apis on a LAN without steam or an internet connection.
+
+How to use:
+
+Replace the steam_api(64).dll (libsteam_api.so on linux) from the game with
+mine. For linux make sure that if the original api is 32 bit you use a 32 bit
+build and if it's 64 bit you use a 64 bit build.
+
+Put a steam_appid.txt file that contains the appid of the game right beside it
+if there isn't one already.

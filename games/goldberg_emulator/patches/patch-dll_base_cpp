@@ -1,0 +1,44 @@
+$OpenBSD: patch-dll_base_cpp,v 1.1.1.1 2021/08/22 02:01:47 thfr Exp $
+
+use getwd(3), realpath(3)
+return "." for get_lib_path
+
+Index: dll/base.cpp
+--- dll/base.cpp.orig
++++ dll/base.cpp
+@@ -188,6 +188,10 @@ std::string get_lib_path() {
+ 
+   return ".";
+ }
++#elif defined(__OpenBSD__)
++std::string get_lib_path() {
++  return ".";
++}
+ #endif
+ 
+ std::string get_full_lib_path()
+@@ -224,6 +228,9 @@ std::string get_current_path()
+     std::string path;
+ #if defined(STEAM_WIN32)
+     char *buffer = _getcwd( NULL, 0 );
++#elif defined(__OpenBSD__)
++    char *buffer;
++    buffer = getwd(buffer);
+ #else
+     char *buffer = get_current_dir_name();
+ #endif
+@@ -246,7 +253,13 @@ std::string canonical_path(std::string path)
+         free(buffer);
+     }
+ #else
+-    char *buffer = canonicalize_file_name(path.c_str());
++    #if defined(__OpenBSD__)
++        char *buffer;
++        const char *c_path = path.c_str();
++        buffer = realpath(c_path, NULL);
++    #else
++        char *buffer = canonicalize_file_name(path.c_str());
++    #endif
+     if (buffer) {
+         output = buffer;
+         free(buffer);
