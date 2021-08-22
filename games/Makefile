@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.439 2021/07/03 20:42:52 bcallah Exp $
+# $OpenBSD: Makefile,v 1.440 2021/08/22 02:02:57 thfr Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -143,6 +143,7 @@
      SUBDIR += gnushogi
      SUBDIR += godot
      SUBDIR += gogrepo
+     SUBDIR += goldberg_emulator
      SUBDIR += golly
      SUBDIR += gottcode
      SUBDIR += grhino
