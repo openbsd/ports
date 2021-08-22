@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2021/05/03 19:04:49 thfr Exp $
+# $OpenBSD: Makefile,v 1.8 2021/08/22 01:49:33 thfr Exp $
 
 # versions are in sync with FNA versions
-V =		21.05
+V =		21.08
 COMMENT =	3D graphics library for FNA
 DISTNAME =	fna-${V:S/.//g}
 PKGNAME =	fna3d-${V}
