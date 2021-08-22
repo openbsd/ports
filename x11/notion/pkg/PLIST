@@ -1,0 +1,140 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/08/22 01:57:26 thfr Exp $
+@sample ${NOTION_DIR}/
+@bin bin/notion
+@bin bin/notionflux
+lib/notion/
+lib/notion/bin/
+@bin lib/notion/bin/ion-completefile
+@bin lib/notion/bin/ion-statusd
+lib/notion/lc/
+lib/notion/lc/de.lc
+lib/notion/lc/ioncore_bindings.lc
+lib/notion/lc/ioncore_efbb.lc
+lib/notion/lc/ioncore_ext.lc
+lib/notion/lc/ioncore_luaext.lc
+lib/notion/lc/ioncore_menudb.lc
+lib/notion/lc/ioncore_misc.lc
+lib/notion/lc/ioncore_wd.lc
+lib/notion/lc/ioncore_winprops.lc
+lib/notion/lc/mod_dock.lc
+lib/notion/lc/mod_menu.lc
+lib/notion/lc/mod_mgmtmode.lc
+lib/notion/lc/mod_notionflux.lc
+lib/notion/lc/mod_query.lc
+lib/notion/lc/mod_query_chdir.lc
+lib/notion/lc/mod_sm.lc
+lib/notion/lc/mod_sp.lc
+lib/notion/lc/mod_statusbar.lc
+lib/notion/lc/mod_tiling.lc
+lib/notion/lc/mod_xinerama.lc
+lib/notion/lc/mod_xkbevents.lc
+lib/notion/lc/mod_xrandr.lc
+lib/notion/lc/statusd_date.lc
+lib/notion/lc/statusd_load.lc
+lib/notion/lc/statusd_mail.lc
+lib/notion/mod/
+@so lib/notion/mod/de.so
+@so lib/notion/mod/mod_dock.so
+@so lib/notion/mod/mod_menu.so
+@so lib/notion/mod/mod_mgmtmode.so
+@so lib/notion/mod/mod_notionflux.so
+@so lib/notion/mod/mod_query.so
+@so lib/notion/mod/mod_sm.so
+@so lib/notion/mod/mod_sp.so
+@so lib/notion/mod/mod_statusbar.so
+@so lib/notion/mod/mod_tiling.so
+@so lib/notion/mod/mod_xinerama.so
+@so lib/notion/mod/mod_xkbevents.so
+@so lib/notion/mod/mod_xrandr.so
+@man man/man1/notion.1
+@man man/man1/notionflux.1
+share/doc/notion/
+share/doc/notion/AUTHORS
+share/doc/notion/CONTRIBUTING.md
+share/doc/notion/LICENSE
+share/doc/notion/README.md
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/notion/
+share/examples/notion/cfg_bindings.lua
+@sample ${NOTION_DIR}/cfg_bindings.lua
+share/examples/notion/cfg_defaults.lua
+@sample ${NOTION_DIR}/cfg_defaults.lua
+share/examples/notion/cfg_dock.lua
+@sample ${NOTION_DIR}/cfg_dock.lua
+share/examples/notion/cfg_kludges.lua
+@sample ${NOTION_DIR}/cfg_kludges.lua
+share/examples/notion/cfg_layouts.lua
+@sample ${NOTION_DIR}/cfg_layouts.lua
+share/examples/notion/cfg_menu.lua
+@sample ${NOTION_DIR}/cfg_menu.lua
+share/examples/notion/cfg_notion.lua
+@sample ${NOTION_DIR}/cfg_notion.lua
+share/examples/notion/cfg_notion3_keybindings.lua
+@sample ${NOTION_DIR}/cfg_notion3_keybindings.lua
+share/examples/notion/cfg_notion3_tiling.lua
+@sample ${NOTION_DIR}/cfg_notion3_tiling.lua
+share/examples/notion/cfg_notioncore.lua
+@sample ${NOTION_DIR}/cfg_notioncore.lua
+share/examples/notion/cfg_query.lua
+@sample ${NOTION_DIR}/cfg_query.lua
+share/examples/notion/cfg_sp.lua
+@sample ${NOTION_DIR}/cfg_sp.lua
+share/examples/notion/cfg_statusbar.lua
+@sample ${NOTION_DIR}/cfg_statusbar.lua
+share/examples/notion/cfg_tiling.lua
+@sample ${NOTION_DIR}/cfg_tiling.lua
+share/examples/notion/cfg_xrandr.lua
+@sample ${NOTION_DIR}/cfg_xrandr.lua
+share/examples/notion/look.lua
+@sample ${NOTION_DIR}/look.lua
+share/examples/notion/look_brownsteel.lua
+@sample ${NOTION_DIR}/look_brownsteel.lua
+share/examples/notion/look_clean.lua
+@sample ${NOTION_DIR}/look_clean.lua
+share/examples/notion/look_cleanios.lua
+@sample ${NOTION_DIR}/look_cleanios.lua
+share/examples/notion/look_cleanviolet.lua
+@sample ${NOTION_DIR}/look_cleanviolet.lua
+share/examples/notion/look_dusky.lua
+@sample ${NOTION_DIR}/look_dusky.lua
+share/examples/notion/look_greenlight.lua
+@sample ${NOTION_DIR}/look_greenlight.lua
+share/examples/notion/look_greyviolet.lua
+@sample ${NOTION_DIR}/look_greyviolet.lua
+share/examples/notion/look_ios.lua
+@sample ${NOTION_DIR}/look_ios.lua
+share/examples/notion/look_newviolet.lua
+@sample ${NOTION_DIR}/look_newviolet.lua
+share/examples/notion/look_newviolet_hidpi.lua
+@sample ${NOTION_DIR}/look_newviolet_hidpi.lua
+share/examples/notion/look_paper.lua
+@sample ${NOTION_DIR}/look_paper.lua
+share/examples/notion/look_simpleblue.lua
+@sample ${NOTION_DIR}/look_simpleblue.lua
+share/examples/notion/lookcommon_clean.lua
+@sample ${NOTION_DIR}/lookcommon_clean.lua
+share/examples/notion/lookcommon_clean_frame.lua
+@sample ${NOTION_DIR}/lookcommon_clean_frame.lua
+share/examples/notion/lookcommon_clean_stdisp.lua
+@sample ${NOTION_DIR}/lookcommon_clean_stdisp.lua
+share/examples/notion/lookcommon_clean_tab.lua
+@sample ${NOTION_DIR}/lookcommon_clean_tab.lua
+share/examples/notion/lookcommon_emboss.lua
+@sample ${NOTION_DIR}/lookcommon_emboss.lua
+share/examples/notion/lookcommon_emboss_frame.lua
+@sample ${NOTION_DIR}/lookcommon_emboss_frame.lua
+share/examples/notion/lookcommon_emboss_stdisp.lua
+@sample ${NOTION_DIR}/lookcommon_emboss_stdisp.lua
+share/examples/notion/lookcommon_emboss_tab.lua
+@sample ${NOTION_DIR}/lookcommon_emboss_tab.lua
+share/examples/notion/net_client_list.lua
+@sample ${NOTION_DIR}/net_client_list.lua
+share/locale/cs/LC_MESSAGES/notion.mo
+share/locale/fi/LC_MESSAGES/notion.mo
+share/notion/
+share/notion/ion-completeman
+share/notion/ion-runinxterm
+share/notion/notion-lock
+share/notion/notion.1
+share/notion/notionflux.1
+share/notion/welcome.txt

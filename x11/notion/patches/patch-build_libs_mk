@@ -1,0 +1,29 @@
+$OpenBSD: patch-build_libs_mk,v 1.1.1.1 2021/08/22 01:57:26 thfr Exp $
+
+libtu,libext need want gettext
+
+Index: build/libs.mk
+--- build/libs.mk.orig
++++ build/libs.mk
+@@ -19,8 +19,8 @@ else
+ LIBS_SUBDIRS += libtu
+ 
+ LIBTU_DIR = $(TOPDIR)/libtu
+-LIBTU_INCLUDES = -I$(TOPDIR)
+-LIBTU_LIBS = -L$(LIBTU_DIR) -ltu
++LIBTU_INCLUDES = -I$(TOPDIR) -I${LOCALBASE}/include
++LIBTU_LIBS = -L$(LIBTU_DIR) -L${LOCALBASE}/lib -lintl -liconv -ltu
+ 
+ endif
+ 
+@@ -39,8 +39,8 @@ else
+ LIBS_SUBDIRS += libextl
+ 
+ LIBEXTL_DIR = $(TOPDIR)/libextl
+-LIBEXTL_INCLUDES = -I$(TOPDIR)
+-LIBEXTL_LIBS = -L$(LIBEXTL_DIR) -lextl
++LIBEXTL_INCLUDES = -I$(TOPDIR) -I${LOCALBASE}/include
++LIBEXTL_LIBS = -L$(LIBEXTL_DIR) -L${LOCALBASE}/lib -lintl -liconv -lextl
+ 
+ MKEXPORTS = $(LUA) $(LIBEXTL_DIR)/libextl-mkexports
+ 

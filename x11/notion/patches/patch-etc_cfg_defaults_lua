@@ -1,0 +1,16 @@
+$OpenBSD: patch-etc_cfg_defaults_lua,v 1.1.1.1 2021/08/22 01:57:26 thfr Exp $
+
+Disable "remote control" modules, which per readme is a "gaping security hole"
+
+Index: etc/cfg_defaults.lua
+--- etc/cfg_defaults.lua.orig
++++ etc/cfg_defaults.lua
+@@ -10,7 +10,7 @@ dopath("mod_menu")
+ dopath("mod_tiling")
+ dopath("mod_dock")
+ dopath("mod_sp")
+-dopath("mod_notionflux")
++-- dopath("mod_notionflux")
+ dopath("mod_xrandr")
+ 
+ dopath("net_client_list")

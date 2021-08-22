@@ -1,0 +1,23 @@
+$OpenBSD: patch-libtu_test_Makefile,v 1.1.1.1 2021/08/22 01:57:26 thfr Exp $
+
+Index: libtu/test/Makefile
+--- libtu/test/Makefile.orig
++++ libtu/test/Makefile
+@@ -6,7 +6,7 @@ include $(TOPDIR)/build/system-inc.mk
+ 
+ SOURCES=../misc.c ../tokenizer.c ../util.c ../output.c
+ 
+-LIBS += $(LUA_LIBS) $(DL_LIBS) -lm
++LIBS += $(LUA_LIBS) $(DL_LIBS) $(LIBTU_LIBS) -lm
+ INCLUDES += $(LIBTU_INCLUDES)
+ CFLAGS += $(XOPEN_SOURCE) $(C99_SOURCE)
+ 
+@@ -17,6 +17,6 @@ include $(TOPDIR)/build/rules.mk
+ ######################################
+ 
+ test: $(SOURCES)
+-	$(CC) $(CFLAGS) -o tutest $(SOURCES) tutest.c $(LIBS)
++	$(CC) $(CFLAGS) $(INCLUDES) -o tutest $(SOURCES) tutest.c $(LIBS)
+ 	./tutest
+ 	$(RM) ./tutest
+\ No newline at end of file

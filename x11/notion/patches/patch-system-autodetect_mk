@@ -1,0 +1,34 @@
+$OpenBSD: patch-system-autodetect_mk,v 1.1.1.1 2021/08/22 01:57:26 thfr Exp $
+
+Configure for OpenBSD
+
+Index: system-autodetect.mk
+--- system-autodetect.mk.orig
++++ system-autodetect.mk
+@@ -61,7 +61,7 @@ endif
+ #PRELOAD_MODULES=1
+ 
+ # Flags to link with libdl.
+-DL_LIBS=-ldl
++#DL_LIBS=-ldl
+ 
+ 
+ ##
+@@ -84,7 +84,7 @@ X11_INCLUDES:=$(shell $(PKG_CONFIG) --cflags-only-I x1
+ 
+ # XFree86 libraries up to 4.3.0 have a bug that can cause a segfault.
+ # The following setting  should  work around that situation.
+-DEFINES += -DCF_XFREE86_TEXTPROP_BUG_WORKAROUND
++#DEFINES += -DCF_XFREE86_TEXTPROP_BUG_WORKAROUND
+ 
+ # Use the Xutf8 routines (XFree86 extension) instead of the Xmb routines
+ # in an UTF-8 locale. (No, you don't need this in UTF-8 locales, and
+@@ -158,7 +158,7 @@ HAS_SYSTEM_ASPRINTF ?= 1
+ # The following setting is needed with GNU libc for clock_gettime and the
+ # monotonic clock. Other systems may not need it, or may not provide a
+ # monotonic clock at all (which Ion can live with, and usually detect).
+-EXTRA_LIBS += -lrt
++#EXTRA_LIBS += -lrt
+ 
+ # Cygwin needs this. Also when you disable _BSD_SOURCE you may need it.
+ #DEFINES += -DCF_NO_GETLOADAVG

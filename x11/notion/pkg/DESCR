@@ -1,0 +1,8 @@
+Notion is a static tiling, tabbed window manager for the X window system.
+
+Notion simply divides the screen into frames that take the whole screen.
+Big displays have so much space that this is convenient and smaller
+displays couldn't show more than one window at a time anyway. The frames
+can be split and growing the size of one will shrink others.
+
+Notion is the successor of Ion3, which has been discontinued in 2009.

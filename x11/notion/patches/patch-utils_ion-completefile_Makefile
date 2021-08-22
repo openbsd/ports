@@ -1,0 +1,26 @@
+$OpenBSD: patch-utils_ion-completefile_Makefile,v 1.1.1.1 2021/08/22 01:57:26 thfr Exp $
+
+Use includes/libs constructed earlier.
+Fixe sparc64 compilation
+
+Index: utils/ion-completefile/Makefile
+--- utils/ion-completefile/Makefile.orig
++++ utils/ion-completefile/Makefile
+@@ -10,7 +10,7 @@ include $(TOPDIR)/build/system-inc.mk
+ 
+ LIBS += $(LIBTU_LIBS)
+ INCLUDES += $(LIBTU_INCLUDES)
+-CFLAGS += $(XOPEN_SOURCE)
++CFLAGS += $(XOPEN_SOURCE) $(INCLUDES)
+ 
+ SOURCES=ion-completefile.c
+ 
+@@ -23,7 +23,7 @@ include $(TOPDIR)/build/rules.mk
+ ######################################
+ 
+ ion-completefile: $(SOURCES)
+-	$(CC) $< $(CFLAGS) $(LDFLAGS) -o $@
++	$(CC) $< $(CFLAGS) $(LDFLAGS) -o $@ $(LIBS)
+ 
+ _install:
+ 	$(INSTALLDIR) $(DESTDIR)$(EXTRABINDIR)

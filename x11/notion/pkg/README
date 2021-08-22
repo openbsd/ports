@@ -1,0 +1,30 @@
+$OpenBSD: README,v 1.1.1.1 2021/08/22 01:57:26 thfr Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Default Keybindings
+===================
+
+The notion default keybindings assume a standard US keyboard layout. In
+some situations, default keys cannot be mapped because they are either
+not available (for example grave key on a Germany layout) or Caps_Lock
+(when you mapped Ctrl or Esc to it).
+
+When starting notion, a popup will show you which key bindings it was
+not able to map.
+
+You can adjust bindings system wide by editing
+${SYSCONFDIR}/notion/cfg_bindings.lua or only for your user by copying
+${LOCALBASE}/share/examples/notion/cfg_bindings.lua to ~/.notion.
+
+$ mkdir ~/.notion/
+$ cp ${LOCALBASE}/share/examples/notion/cfg_bindings.lua ~/.notion/
+
+Then adjust the binding that causes trouble. For example by searching
+for "grave" or "Caps_Lock" and assigning another key.
+
+Extensive documentation on keybindings and general notion configuration
+can be found in the "Documentation" section on the notion website:
+https://notionwm.net
