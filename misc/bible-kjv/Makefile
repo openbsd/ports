@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2021/04/03 15:09:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2021/08/22 13:49:39 naddy Exp $
 
 COMMENT=	Bible reading, browsing, and searching tool
 
-DISTNAME=	bible-kjv_4.32
+DISTNAME=	bible-kjv_4.35
 PKGNAME=	${DISTNAME:S/_/-/}
 CATEGORIES=	misc
 
@@ -15,12 +15,13 @@ WANTLIB=	c curses readline
 
 MASTER_SITES=	${MASTER_SITE_DEBIAN:=main/b/bible-kjv/}
 
-#WRKDIST=	${WRKDIR}/bible-kjv
 WRKDIST=	${WRKDIR}/work
 
 MAKE_FLAGS=	DEST=${PREFIX} \
 		CFLAGS='${CFLAGS} -DDESTLIB=\"${PREFIX}/lib\"' \
 		LDFLAGS='-lreadline -lcurses'
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 post-build:
 	perl -i.bak -pe 's:/usr/lib:${PREFIX}/lib:g' ${WRKSRC}/bible.1
