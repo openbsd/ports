@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2021/08/07 18:35:35 solene Exp $
+# $OpenBSD: Makefile,v 1.133 2021/08/22 19:48:50 ajacoutot Exp $
 
 COMMENT-main=		mail and news client
 COMMENT-bogofilter=	bogofilter plugin
@@ -13,6 +13,8 @@ PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 PKGNAME-pdfviewer=	claws-mail-pdfviewer-${V}
 PKGNAME-gdata=		claws-mail-gdata-${V}
+
+REVISION-main=		0
 
 CATEGORIES=		mail news
 
@@ -49,12 +51,12 @@ WANTLIB += sasl2 ssl xcb xcb-render xcb-shm z epoxy
 WANTLIB += ${COMPILER_LIBCXX}
 
 WANTLIB-main =  ${WANTLIB}
-WANTLIB-main += ICE SM X11-xcb archive assuan b2 bz2 c
-WANTLIB-main += charset db dbus-1 dbus-glib-1 enchant
-WANTLIB-main += gmp gnutls gpg-error gpgme gthread-2.0 gumbo hogweed ical icalss
-WANTLIB-main += icalvcal icudata icui18n icuuc idn2 lz4 lzma nettle notify
-WANTLIB-main += p11-kit perl rsvg-2 startup-notification-1 tasn1 unistring
-WANTLIB-main += xcb-util xml2 zstd
+WANTLIB-main += ICE SM X11-xcb archive assuan b2 bz2 c canberra canberra-gtk3
+WANTLIB-main += charset db dbus-1 dbus-glib-1 enchant gmp gnutls gpg-error
+WANTLIB-main += gpgme gthread-2.0 gumbo hogweed ical icalss icalvcal
+WANTLIB-main += icudata icui18n icuuc idn2 ltdl lz4 lzma nettle notify
+WANTLIB-main += ogg p11-kit perl rsvg-2 startup-notification-1 tasn1
+WANTLIB-main += unistring vorbis vorbisfile xcb-util xml2 zstd
 
 WANTLIB-gdata = ${WANTLIB}
 WANTLIB-gdata += brotlicommon brotlidec gck-1 gcr-base-3
@@ -78,6 +80,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			archivers/libarchive \
 			archivers/xz \
 			archivers/zstd \
+			audio/libcanberra,-gtk3 \
 			devel/glib2 \
 			devel/libnotify \
 			devel/startup-notification \
