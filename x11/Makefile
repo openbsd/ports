@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.711 2021/07/26 04:00:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.712 2021/08/22 01:58:21 thfr Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -189,6 +189,7 @@
      SUBDIR += neXtaw
      SUBDIR += netwmpager
      SUBDIR += nitrogen
+     SUBDIR += notion
      SUBDIR += numlockx
      SUBDIR += nx
      SUBDIR += obconf
