@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2021/07/14 19:27:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2021/08/23 21:25:55 sthen Exp $
 # Some of this comes from www/firefox-esr as apropos, since Tor
 # browser is a fork of ESR.  It is a good idea to look at that
 # Makefile when editing this one (ESR versions not always the same).
@@ -16,7 +16,7 @@ EXTRACT_SUFX =		.tar.xz
 PATCHORIG =		.pat.orig
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION}
-DISTNAME =		src-firefox-tor-browser-78.12.0esr-10.5-1-build1
+DISTNAME =		src-firefox-tor-browser-78.13.0esr-10.5-2-build1
 
 FIX_EXTRACT_PERMISSIONS	= Yes
 EXTRACT_ONLY +=		${DISTNAME}.tar.xz \
@@ -79,7 +79,7 @@ BUILD_DEPENDS +=	devel/py-virtualenv
 
 BUILD_DEPENDS +=	archivers/unzip archivers/zip
 
-RUN_DEPENDS +=		net/tor>=0.4.5.8
+RUN_DEPENDS +=		net/tor>=0.4.6.7
 
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
@@ -135,6 +135,10 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
 	${SUBST_DATA} ${FILESDIR}/${BROWSER_NAME}.desktop \
 		${PREFIX}/share/applications/${BROWSER_NAME}.desktop
+	# install icon for desktop file
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${BROWSER_DIR}/browser/chrome/icons/default/default128.png \
+		${PREFIX}/share/pixmaps/${BROWSER_NAME}.png
 	# link default48.png to default.png to be used by default
 	# by non-icccm compliant wm
 	ln -f ${BROWSER_DIR}/browser/chrome/icons/default/default{48,}.png
@@ -155,7 +159,7 @@ post-install:
 
 	# Include HTTPS Everywhere in omni.ja
 	mkdir -p ${WRKSRC}/https-everywhere/chrome/torbutton/content/extensions/https-everywhere/
-	unzip ${FULLDISTDIR}/https-everywhere-${HE_VERSION}-eff.xpi \
+	unzip -o ${FULLDISTDIR}/https-everywhere-${HE_VERSION}-eff.xpi \
 	    -d ${WRKSRC}/https-everywhere/chrome/torbutton/content/extensions/https-everywhere/
 	cd ${WRKSRC}/https-everywhere && find chrome/ | zip -X -@ ${BROWSER_DIR}/omni.ja
 
