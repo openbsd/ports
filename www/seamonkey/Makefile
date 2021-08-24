@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.259 2021/08/15 13:36:49 semarie Exp $
+# $OpenBSD: Makefile,v 1.260 2021/08/24 06:06:34 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -12,6 +12,8 @@ MOZILLA_CODENAME =	comm/suite
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-seamonkey-5.8.8
+REVISION-main =		0
+REVISION-lightning =	0
 EPOCH-lightning =	0
 
 HOMEPAGE =	http://www.seamonkey-project.org/
@@ -48,11 +50,11 @@ CONFIGURE_ARGS +=	--with-system-hunspell
 # https://bugzilla.mozilla.org/show_bug.cgi?id=983843
 CONFIGURE_ARGS +=	--with-system-cairo
 
-# lld blows when linking libxul
+# lld blows when linking libxul; limit threads
 .if ${MACHINE_ARCH:Mi386}
-CONFIGURE_ARGS +=	--enable-linker=bfd
-USE_LLD=No
+CONFIGURE_ENV +=	LDFLAGS="-Wl,--threads=2"
 .endif
+
 RUN_DEPENDS-lightning = STEM->=${MOZILLA_VERSION:S/b/beta/}:${BUILD_PKGPATH},-main
 WANTLIB += X11-xcb intl pixman-1 xcb xcb-shm
 WANTLIB += Xcursor Xi harfbuzz
