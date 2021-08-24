@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.140 2021/07/13 15:24:00 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.141 2021/08/24 06:09:11 landry Exp $
 
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
 # ppc: seamonkey/firefox - failure to link for atomic ops on 64 bits
@@ -99,9 +99,6 @@ MODMOZ_WANTLIB +=	X11 Xcomposite Xdamage Xext Xfixes Xrender Xt atk-1.0 c cairo 
 		gobject-2.0 gthread-2.0 m \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pthread sndio ${LIBCXX} z
-
-# --no-keep-memory avoids OOM when linking libxul
-CONFIGURE_ENV +=	LDFLAGS="-Wl,--no-keep-memory"
 
 WANTLIB +=	${MODMOZ_WANTLIB}
 BUILD_DEPENDS +=${MODMOZ_BUILD_DEPENDS}
