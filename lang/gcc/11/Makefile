@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/08/17 20:22:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2021/08/24 18:13:19 gkoehler Exp $
 
 #
 # When updating/switching to a new version, remember to adapt devel/llvm!
@@ -128,6 +128,10 @@ CONFIGURE_ENV += ${EXTRA_ENV}
 MAKE_ENV += ${EXTRA_ENV}
 
 .if ${MACHINE_ARCH} == "powerpc"
+# powerpc lld can't link C++ code from gcc, "ld: error: relocation
+# refers to a discarded section:" .data.rel.ro.* or
+# .sdata.DW.ref.__gxx_personality_v0
+USE_LLD = No
 CONFIGURE_ENV += LDFLAGS="-Wl,--relax"
 .endif
 
