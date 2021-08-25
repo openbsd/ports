@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/02/20 16:24:23 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/08/25 22:05:14 sthen Exp $
 @bin bin/convertzone
 @bin bin/dnscontrol
 share/doc/dnscontrol/
@@ -24,6 +24,7 @@ share/doc/dnscontrol/opinions.md
 share/doc/dnscontrol/provider-list.md
 share/doc/dnscontrol/providers/
 share/doc/dnscontrol/providers/activedir.md
+share/doc/dnscontrol/providers/akamaiedgedns.md
 share/doc/dnscontrol/providers/axfrddns.md
 share/doc/dnscontrol/providers/azuredns.md
 share/doc/dnscontrol/providers/bind.md
@@ -33,12 +34,14 @@ share/doc/dnscontrol/providers/cscglobal.md
 share/doc/dnscontrol/providers/desec.md
 share/doc/dnscontrol/providers/digitalocean.md
 share/doc/dnscontrol/providers/dnsimple.md
+share/doc/dnscontrol/providers/dnsmadeeasy.md
 share/doc/dnscontrol/providers/doh.md
 share/doc/dnscontrol/providers/gandi_v5.md
 share/doc/dnscontrol/providers/gcloud.md
 share/doc/dnscontrol/providers/hedns.md
 share/doc/dnscontrol/providers/hetzner.md
 share/doc/dnscontrol/providers/hexonet.md
+share/doc/dnscontrol/providers/hostingde.md
 share/doc/dnscontrol/providers/internetbs.md
 share/doc/dnscontrol/providers/inwx.md
 share/doc/dnscontrol/providers/linode.md
@@ -52,6 +55,7 @@ share/doc/dnscontrol/providers/ovh.md
 share/doc/dnscontrol/providers/powerdns.md
 share/doc/dnscontrol/providers/route53.md
 share/doc/dnscontrol/providers/softlayer.md
+share/doc/dnscontrol/providers/transip.md
 share/doc/dnscontrol/providers/vultr.md
 share/doc/dnscontrol/release-engineering.md
 share/doc/dnscontrol/spf-optimizer.md
