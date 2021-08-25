@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/07/20 21:22:20 jcs Exp $
-@bin bin/crystal
+@comment $OpenBSD: PLIST,v 1.6 2021/08/25 12:07:55 jcs Exp $
+bin/crystal
 @bin bin/shards
 lib/crystal/
 lib/crystal/VERSION
@@ -1386,3 +1386,4 @@ lib/crystal/yaml/schema/core/parser.cr
 lib/crystal/yaml/schema/fail_safe.cr
 lib/crystal/yaml/serialization.cr
 lib/crystal/yaml/to_yaml.cr
+@bin libexec/crystal
