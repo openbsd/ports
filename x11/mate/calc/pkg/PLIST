@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/03/21 16:14:54 robert Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/08/25 12:05:51 robert Exp $
 @bin bin/mate-calc
 @bin bin/mate-calc-cmd
 bin/mate-calculator
@@ -3504,6 +3504,7 @@ share/locale/is/LC_MESSAGES/mate-calc.mo
 share/locale/it/LC_MESSAGES/mate-calc.mo
 share/locale/ja/LC_MESSAGES/mate-calc.mo
 share/locale/ka/LC_MESSAGES/mate-calc.mo
+share/locale/kab/LC_MESSAGES/mate-calc.mo
 share/locale/kk/LC_MESSAGES/mate-calc.mo
 share/locale/km/LC_MESSAGES/mate-calc.mo
 share/locale/kn/LC_MESSAGES/mate-calc.mo

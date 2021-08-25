@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/08/21 14:44:57 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2021/08/25 12:05:50 robert Exp $
 
      SUBDIR =
      SUBDIR += atril
@@ -15,7 +15,7 @@
      SUBDIR += libmateweather
      SUBDIR += marco
      SUBDIR += media
-     SUBDIR += menu-advanced
+#     SUBDIR += menu-advanced
      SUBDIR += menus
      SUBDIR += notification-daemon
      SUBDIR += panel

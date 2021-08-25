@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/03/21 16:14:56 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2021/08/25 12:05:52 robert Exp $
 
 COMMENT=		PolicyKit authentication agent for MATE
 
@@ -16,6 +16,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gtk-3 harfbuzz iconv intl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png polkit-agent-1
 WANTLIB += polkit-gobject-1 pthread xcb xcb-render xcb-shm z
+WANTLIB += ${COMPILER_LIBCXX} execinfo jpeg
 
 MODULES=		x11/gnome
 

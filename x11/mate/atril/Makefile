@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2020/03/21 16:14:53 robert Exp $
+# $OpenBSD: Makefile,v 1.30 2021/08/25 12:05:50 robert Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -36,6 +36,7 @@ WANTLIB += Xau Xdmcp b2 charset
 WANTLIB += brotlicommon brotlidec fribidi webpdemux woff2common
 WANTLIB += woff2dec
 WANTLIB += xcb-dri3 xcb-present xcb-sync xshmfence zstd
+WANTLIB += execinfo gstallocators-1.0
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -56,7 +57,8 @@ LIB_DEPENDS=		databases/sqlite3 \
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas
 RUN_DEPENDS=		devel/gsettings-desktop-schemas
 
-MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
+MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
+			gtk-update-icon-cache yelp
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-pixbuf

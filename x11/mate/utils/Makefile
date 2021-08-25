@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2020/03/21 16:14:57 robert Exp $
+# $OpenBSD: Makefile,v 1.18 2021/08/25 12:05:53 robert Exp $
 
 COMMENT=		MATE support utilities
 
@@ -19,6 +19,7 @@ WANTLIB += canberra-gtk3 canberra gdk-3 graphite2 gtk-3
 WANTLIB += gtop-2.0 harfbuzz ltdl mate-panel-applet-4 ogg pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 vorbis vorbisfile
 WANTLIB += fribidi
+WANTLIB += ${COMPILER_LIBCXX} execinfo jpeg
 
 MODULES=		devel/dconf \
 			x11/gnome

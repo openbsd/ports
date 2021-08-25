@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/03/21 16:14:57 robert Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/08/25 12:05:53 robert Exp $
 @bin bin/mate-session
 @bin bin/mate-session-inhibit
 @bin bin/mate-session-properties
@@ -102,6 +102,7 @@ share/locale/ks/LC_MESSAGES/mate-session-manager.mo
 share/locale/ku/LC_MESSAGES/mate-session-manager.mo
 share/locale/ku_IQ/LC_MESSAGES/mate-session-manager.mo
 share/locale/ky/LC_MESSAGES/mate-session-manager.mo
+share/locale/la/LC_MESSAGES/mate-session-manager.mo
 share/locale/li/LC_MESSAGES/mate-session-manager.mo
 share/locale/lo/LC_MESSAGES/mate-session-manager.mo
 share/locale/lt/LC_MESSAGES/mate-session-manager.mo

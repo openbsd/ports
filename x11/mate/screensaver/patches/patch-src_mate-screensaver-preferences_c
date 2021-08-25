@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_mate-screensaver-preferences_c,v 1.1 2020/03/21 16:14:57 robert Exp $
+$OpenBSD: patch-src_mate-screensaver-preferences_c,v 1.2 2021/08/25 12:05:52 robert Exp $
 
 Index: src/mate-screensaver-preferences.c
 --- src/mate-screensaver-preferences.c.orig
 +++ src/mate-screensaver-preferences.c
-@@ -1337,7 +1337,7 @@ setup_for_root_user (void)
+@@ -1344,7 +1344,7 @@ setup_for_root_user (void)
  }
  
  /* copied from gs-window-x11.c */

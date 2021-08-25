@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2020/08/20 06:40:19 robert Exp $
+# $OpenBSD: Makefile,v 1.22 2021/08/25 12:05:51 robert Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -7,7 +7,6 @@ COMMENT=		image viewer for the MATE desktop
 CATEGORIES=		graphics
 
 MATE_PROJECT=		eom
-MATE_VERSION=		1.24.1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -25,7 +24,8 @@ WANTLIB += mate-desktop-2 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += peas-1.0 peas-gtk-1.0 rsvg-2 startup-notification-1
 WANTLIB += SM Xt bz2 jasper openjp2 tiff webp webpdemux webpmux
 WANTLIB += zstd MagickCore-6.Q16 MagickWand-6.Q16
-WANTLIB += djvulibre fftw3 jbig raw_r
+WANTLIB += djvulibre jbig raw_r
+WANTLIB += ${COMPILER_LIBCXX} aom dav1d de265 execinfo heif x265
 
 MODULES=		devel/dconf \
 			x11/gnome
@@ -37,7 +37,8 @@ LIB_DEPENDS=		devel/libpeas \
 			textproc/exempi \
 			x11/mate/desktop
 
-MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
+MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
+			gtk-update-icon-cache yelp
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-thumbnailer \

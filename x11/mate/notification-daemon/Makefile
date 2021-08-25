@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2020/08/14 12:06:35 robert Exp $
+# $OpenBSD: Makefile,v 1.19 2021/08/25 12:05:52 robert Exp $
 
 COMMENT=		MATE notification daemon
 
 MATE_PROJECT=		mate-notification-daemon
-MATE_VERSION=		1.24.1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -16,13 +15,18 @@ WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl
 WANTLIB += ltdl m notify ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread vorbis vorbisfile wnck-3 xcb xcb-render
 WANTLIB += xcb-shm z
+WANTLIB += ${COMPILER_LIBCXX} X11-xcb dconf execinfo jpeg lzma
+WANTLIB += startup-notification-1 xcb-util xml2
+WANTLIB += mate-desktop-2 mate-panel-applet-4 
 
 MODULES=		devel/dconf \
 			x11/gnome
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			devel/libnotify \
-			devel/libwnck3
+			devel/libwnck3 \
+			x11/mate/desktop \
+			x11/mate/panel
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 

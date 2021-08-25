@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/03/21 16:14:56 robert Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/08/25 12:05:52 robert Exp $
 @bin bin/mate-notification-properties
 lib/mate-notification-daemon/
 lib/mate-notification-daemon/engines/
@@ -14,10 +14,12 @@ lib/mate-notification-daemon/engines/
 @comment lib/mate-notification-daemon/engines/libstandard.a
 @comment lib/mate-notification-daemon/engines/libstandard.la
 @so lib/mate-notification-daemon/engines/libstandard.so
+@bin libexec/mate-notification-applet
 @bin libexec/mate-notification-daemon
 @man man/man1/mate-notification-properties.1
 share/applications/mate-notification-properties.desktop
 share/dbus-1/services/org.freedesktop.mate.Notifications.service
+share/dbus-1/services/org.mate.panel.applet.MateNotificationAppletFactory.service
 share/glib-2.0/schemas/org.mate.NotificationDaemon.gschema.xml
 share/icons/hicolor/16x16/apps/mate-notification-properties.png
 share/icons/hicolor/22x22/apps/mate-notification-properties.png
@@ -162,6 +164,9 @@ share/locale/yo/LC_MESSAGES/mate-notification-daemon.mo
 share/locale/zh_CN/LC_MESSAGES/mate-notification-daemon.mo
 share/locale/zh_HK/LC_MESSAGES/mate-notification-daemon.mo
 share/locale/zh_TW/LC_MESSAGES/mate-notification-daemon.mo
+share/mate-panel/
+share/mate-panel/applets/
+share/mate-panel/applets/org.mate.applets.MateNotificationApplet.mate-panel-applet
 @tag update-desktop-database
 @tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor

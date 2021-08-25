@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2020/08/20 06:40:19 robert Exp $
+# $OpenBSD: Makefile,v 1.21 2021/08/25 12:05:51 robert Exp $
 
 COMMENT=		the MATE window manager
-REVISION=		1
 
 SHARED_LIBS +=  marco-private             1.0 # 1.0
 
 MATE_PROJECT=		marco
-MATE_VERSION=		1.24.1
 
 CATEGORIES=		x11
 
@@ -21,6 +19,7 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
 WANTLIB += harfbuzz iconv intl ltdl m ogg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread startup-notification-1
 WANTLIB += vorbis vorbisfile xcb xcb-render xcb-shm xcb-util z
+WANTLIB += ${COMPILER_LIBCXX} execinfo jpeg
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			devel/startup-notification
