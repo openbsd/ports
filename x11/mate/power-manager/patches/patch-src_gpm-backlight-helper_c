@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_gpm-backlight-helper_c,v 1.1 2021/08/25 12:05:52 robert Exp $
+$OpenBSD: patch-src_gpm-backlight-helper_c,v 1.2 2021/08/25 12:35:20 robert Exp $
 
 Index: src/gpm-backlight-helper.c
 --- src/gpm-backlight-helper.c.orig
@@ -60,7 +60,7 @@ Index: src/gpm-backlight-helper.c
  	filename = gcm_backlight_helper_get_best_backlight ();
  	if (filename == NULL) {
 +#elif defined(__OpenBSD__)
-+	if ((fd = open("/dev/ttyC0", O_RDWR)) < 0) {
++	if ((fd = open("/dev/ttyC4", O_RDWR)) < 0) {
 +#endif
  		/* TRANSLATORS: no backlights found */
  		g_print ("%s\n", _("No backlights were found on your system"));
