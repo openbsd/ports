@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.130 2021/07/17 09:29:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.131 2021/08/25 23:46:02 sthen Exp $
 
 COMMENT=	auto-discovering network management/monitoring system
 
 # changelogs at https://github.com/librenms/librenms/releases
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
-GH_TAGNAME=	21.7.0
+GH_TAGNAME=	21.8.0
 DISTFILES=	librenms-${GH_TAGNAME}.tar.gz librenms-vendor-${GH_TAGNAME}.tar.xz:0
 EPOCH=		0
 
