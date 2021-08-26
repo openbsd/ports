@@ -1,72 +1,11 @@
-$OpenBSD: patch-data_scripts_pekwm_screenshot_sh,v 1.1 2016/10/31 17:07:30 ajacoutot Exp $
-No need for bash here, use /bin/sh
---- data/scripts/pekwm_screenshot.sh.orig	Sun May 26 15:01:18 2013
-+++ data/scripts/pekwm_screenshot.sh	Tue Mar 22 09:16:26 2016
-@@ -1,30 +1,30 @@
--#!/usr/bin/env bash
-+#!/bin/sh
- #
- # Copyright © 2013 the pekwm development team
- #
- 
--function screenshot_scrot
-+screenshot_scrot()
- {
-     scrot -z "$1"
- }
- 
--function screenshot_xwd_netpbm
-+screenshot_xwd_netpbm()
- {
-     xwd -root | xwdtopnm 2>/dev/null | pnmtopng > "$1"
- }
- 
--function screenshot_imagemagick
-+screenshot_imagemagick()
- {
-     import -window root "$1"
- }
- 
--function is_in_path
-+is_in_path()
- {
-     which $1 >/dev/null 2>&1
-     return $?
- }
- 
--function detect_command
-+detect_command()
- {
-     is_in_path "scrot"
-     if test $? -eq 0; then
-@@ -45,7 +45,7 @@ function detect_command
-     fi
- }
- 
--function usage
-+usage()
- {
-     echo "usage: pekwm_screenshot.sh [-c scrot|netpbm|magick] [-d delay] [-o output.png]"
-     echo ""
-@@ -61,7 +61,7 @@ function usage
-     exit 0
- }
- 
--function usage_command
-+usage_command()
- {
-     echo "Unable to find any supported commands for taking screenshots"
-     echo ""
-@@ -74,7 +74,7 @@ function usage_command
-     exit 1
- }
- 
--function main
-+main()
- {
-     # Initialize for strict mode
-     command=""
-@@ -146,6 +146,6 @@ function main
+$OpenBSD: patch-data_scripts_pekwm_screenshot_sh,v 1.2 2021/08/26 04:23:03 semarie Exp $
+
+Fix getopt: unknown option -- n
+
+Index: data/scripts/pekwm_screenshot.sh
+--- data/scripts/pekwm_screenshot.sh.orig
++++ data/scripts/pekwm_screenshot.sh
+@@ -151,6 +151,6 @@ main()
      exit 0
  }
  
