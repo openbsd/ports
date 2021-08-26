@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2113 2021/08/10 20:43:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.2114 2021/08/26 20:31:13 jeremy Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1820,7 +1820,6 @@
      SUBDIR += ruby-subset_sum,ruby30
      SUBDIR += ruby-sync
      SUBDIR += ruby-systemu
-     SUBDIR += ruby-sys-proctable
      SUBDIR += ruby-therubyracer,ruby27
      SUBDIR += ruby-therubyracer,ruby30
      SUBDIR += ruby-thor
