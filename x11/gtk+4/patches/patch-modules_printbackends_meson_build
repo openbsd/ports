@@ -1,4 +1,4 @@
-$OpenBSD: patch-modules_printbackends_meson_build,v 1.8 2021/03/31 13:42:46 ajacoutot Exp $
+$OpenBSD: patch-modules_printbackends_meson_build,v 1.9 2021/08/26 10:46:47 ajacoutot Exp $
 
 Always enable the lpr print backend.
 
@@ -33,5 +33,5 @@ Index: modules/printbackends/meson.build
 +  install: true,
 +)
  
- rest_dep = dependency('rest-0.7', required : get_option('print-cloudprint'))
- json_glib_dep = dependency('json-glib-1.0', required : get_option('print-cloudprint'))
+ # The 'file' print backend cannot be disabled
+ print_backends += 'file'
