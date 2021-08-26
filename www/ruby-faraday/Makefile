@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2019/11/21 10:36:32 sebastia Exp $
+# $OpenBSD: Makefile,v 1.6 2021/08/26 20:01:39 jeremy Exp $
 
 COMMENT =	HTTP/REST API client library
 
-DISTNAME =	faraday-0.14.0
+DISTNAME =	faraday-0.17.4
 CATEGORIES =	www
 HOMEPAGE =	https://github.com/lostisland/faraday
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
