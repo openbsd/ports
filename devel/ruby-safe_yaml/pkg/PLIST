@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/09/09 10:42:13 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/08/26 19:39:47 jeremy Exp $
 ${GEM_BIN}/safe_yaml${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -26,6 +26,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/safe_yaml/psych_handler.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/safe_yaml/psych_resolver.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/safe_yaml/resolver.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/safe_yaml/safe_to_ruby_visitor.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/safe_yaml/store.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/safe_yaml/syck_hack.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/safe_yaml/syck_node_monkeypatch.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/safe_yaml/syck_resolver.rb
@@ -51,6 +52,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/psych_resolver_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/resolver_specs.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/safe_yaml_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/store_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/exploitable_back_door.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/syck_resolver_spec.rb
