@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:43:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/08/26 22:20:05 sthen Exp $
 
 COMMENT=	portable lossless data compression library
 
@@ -13,10 +13,6 @@ HOMEPAGE=	https://www.oberhumer.com/opensource/ucl/
 PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://www.oberhumer.com/opensource/ucl/download/
-
-.if ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS=	devel/nasm
-.endif
 
 CONFIGURE_STYLE=	gnu
 SEPARATE_BUILD=		Yes
