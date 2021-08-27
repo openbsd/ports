@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2021/06/12 13:19:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2021/08/27 08:51:15 ajacoutot Exp $
 
 COMMENT=	template rendering and notifications with Consul
 
 MODGO_MODNAME=	github.com/hashicorp/consul-template
-MODGO_VERSION=	v0.26.0
+MODGO_VERSION=	v0.27.0
 DISTNAME=	consul-template-${MODGO_VERSION}
 
 CATEGORIES=	sysutils net
@@ -85,6 +85,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/vault/api				 v1.0.5-0.20190730042357-746c0b111519 \
 	github.com/hashicorp/vault/sdk				 v0.1.14-0.20190730042320-0dc007d98cc8 \
 	github.com/hashicorp/yamux				 v0.0.0-20181012175058-2f1d1f20f75d \
+	github.com/imdario/mergo				 v0.3.12 \
 	github.com/json-iterator/go				 v1.1.9 \
 	github.com/julienschmidt/httprouter			 v1.2.0 \
 	github.com/konsorten/go-windows-terminal-sequences	 v1.0.1 \
@@ -94,7 +95,6 @@ MODGO_MODULES =	\
 	github.com/kr/text					 v0.1.0 \
 	github.com/mattn/go-colorable				 v0.1.7 \
 	github.com/mattn/go-isatty				 v0.0.12 \
-	github.com/mattn/go-shellwords				 v1.0.12 \
 	github.com/matttproud/golang_protobuf_extensions	 v1.0.1 \
 	github.com/miekg/dns					 v1.1.26 \
 	github.com/mitchellh/cli				 v1.1.0 \
