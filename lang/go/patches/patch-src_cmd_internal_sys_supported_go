@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_cmd_internal_sys_supported_go,v 1.1 2021/07/11 14:44:56 jsing Exp $
+$OpenBSD: patch-src_cmd_internal_sys_supported_go,v 1.2 2021/08/27 18:33:27 jsing Exp $
 
 Index: src/cmd/internal/sys/supported.go
 --- src/cmd/internal/sys/supported.go.orig
 +++ src/cmd/internal/sys/supported.go
-@@ -38,13 +38,11 @@ func MSanSupported(goos, goarch string) bool {
+@@ -39,13 +39,11 @@ func MSanSupported(goos, goarch string) bool {
  func MustLinkExternal(goos, goarch string) bool {
  	switch goos {
  	case "android":

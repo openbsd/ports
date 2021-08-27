@@ -1,28 +1,36 @@
-$OpenBSD: patch-src_runtime_sys_openbsd2_go,v 1.2 2021/07/11 14:44:56 jsing Exp $
+$OpenBSD: patch-src_runtime_sys_openbsd2_go,v 1.3 2021/08/27 18:33:27 jsing Exp $
 
 Index: src/runtime/sys_openbsd2.go
 --- src/runtime/sys_openbsd2.go.orig
 +++ src/runtime/sys_openbsd2.go
-@@ -2,7 +2,7 @@
+@@ -2,8 +2,8 @@
  // Use of this source code is governed by a BSD-style
  // license that can be found in the LICENSE file.
  
--// +build openbsd,amd64 openbsd,arm64
+-//go:build openbsd && !mips64
+-// +build openbsd,!mips64
++//go:build openbsd
 +// +build openbsd
  
  package runtime
  
-@@ -185,13 +185,6 @@ func sigaction(sig uint32, new *sigactiont, old *sigac
- 	libcCall(unsafe.Pointer(funcPC(sigaction_trampoline)), unsafe.Pointer(&sig))
- }
- func sigaction_trampoline()
--
--//go:nosplit
--//go:cgo_unsafe_args
--func sigprocmask(how uint32, new *sigset, old *sigset) {
--	libcCall(unsafe.Pointer(funcPC(sigprocmask_trampoline)), unsafe.Pointer(&how))
--}
--func sigprocmask_trampoline()
- 
+@@ -36,6 +36,8 @@ func raiseproc_trampoline()
  //go:nosplit
  //go:cgo_unsafe_args
+ func thrkill(tid int32, sig int) {
++	// TODO(jsing): sig should really be uint32 rather than a Go int,
++	// which switches between int32 and int64 depending on arch.
+ 	libcCall(unsafe.Pointer(funcPC(thrkill_trampoline)), unsafe.Pointer(&tid))
+ }
+ func thrkill_trampoline()
+@@ -196,7 +198,9 @@ func sigaction_trampoline()
+ //go:nosplit
+ //go:cgo_unsafe_args
+ func sigprocmask(how uint32, new *sigset, old *sigset) {
+-	libcCall(unsafe.Pointer(funcPC(sigprocmask_trampoline)), unsafe.Pointer(&how))
++	// sigprocmask is called from sigsave, which is called from needm.
++	// As such, we have to be able to run with no g here.
++	asmcgocall_no_g(unsafe.Pointer(funcPC(sigprocmask_trampoline)), unsafe.Pointer(&how))
+ }
+ func sigprocmask_trampoline()
+ 

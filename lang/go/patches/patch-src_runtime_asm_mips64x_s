@@ -1,25 +1,9 @@
-$OpenBSD: patch-src_runtime_asm_mips64x_s,v 1.1 2021/07/11 14:44:56 jsing Exp $
+$OpenBSD: patch-src_runtime_asm_mips64x_s,v 1.2 2021/08/27 18:33:27 jsing Exp $
 
 Index: src/runtime/asm_mips64x.s
 --- src/runtime/asm_mips64x.s.orig
 +++ src/runtime/asm_mips64x.s
-@@ -427,6 +427,15 @@ TEXT gosave<>(SB),NOSPLIT|NOFRAME,$0
- 	JAL	runtime·badctxt(SB)
- 	RET
- 
-+// func asmcgocall_no_g(fn, arg unsafe.Pointer)
-+// Call fn(arg) aligned appropriately for the gcc ABI.
-+// Called on a system stack, and there may be no g yet (during needm).
-+TEXT ·asmcgocall_no_g(SB),NOSPLIT,$0-16
-+	MOVV	fn+0(FP), R25
-+	MOVV	arg+8(FP), R4
-+	JAL	(R25)
-+	RET
-+
- // func asmcgocall(fn, arg unsafe.Pointer) int32
- // Call fn(arg) on the scheduler stack,
- // aligned appropriately for the gcc ABI.
-@@ -442,6 +451,8 @@ TEXT ·asmcgocall(SB),NOSPLIT,$0-20
+@@ -443,6 +443,8 @@ TEXT ·asmcgocall(SB),NOSPLIT,$0-20
  	// We get called to create new OS threads too, and those
  	// come in on the m->g0 stack already.
  	MOVV	g_m(g), R5
@@ -28,3 +12,16 @@ Index: src/runtime/asm_mips64x.s
  	MOVV	m_g0(R5), R6
  	BEQ	R6, g, g0
  
+@@ -478,9 +480,12 @@ TEXT ·cgocallback(SB),NOSPLIT,$24-24
+ 	NO_LOCAL_POINTERS
+ 
+ 	// Load m and g from thread-local storage.
++#ifndef GOOS_openbsd
+ 	MOVB	runtime·iscgo(SB), R1
+ 	BEQ	R1, nocgo
++#endif
+ 	JAL	runtime·load_g(SB)
++
+ nocgo:
+ 
+ 	// If g is nil, Go did not create the current thread.

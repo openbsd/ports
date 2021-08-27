@@ -1,17 +1,14 @@
-$OpenBSD: patch-test_nilptr_go,v 1.1 2021/07/11 14:44:56 jsing Exp $
+$OpenBSD: patch-test_nilptr_go,v 1.2 2021/08/27 18:33:27 jsing Exp $
 
 Index: test/nilptr.go
 --- test/nilptr.go.orig
 +++ test/nilptr.go
-@@ -9,7 +9,10 @@
- 
+@@ -10,6 +10,8 @@
  // +build !aix
  // +build !darwin !arm64
--// Address space starts at 1<<32 on AIX and on darwin/arm64, so dummy is too far.
-+// +build !windows !arm64
+ // +build !windows !arm64
 +// +build openbsd,!mips64
 +
-+// Address space starts at 1<<32 on AIX and on darwin/arm64 and on windows/arm64, so dummy is too far.
+ // Address space starts at 1<<32 on AIX and on darwin/arm64 and on windows/arm64, so dummy is too far.
  
  package main
- 

@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_runtime_sys_openbsd_mips64_s,v 1.1 2021/07/11 14:44:56 jsing Exp $
+$OpenBSD: patch-src_runtime_sys_openbsd_mips64_s,v 1.2 2021/08/27 18:33:27 jsing Exp $
 
 Index: src/runtime/sys_openbsd_mips64.s
 --- src/runtime/sys_openbsd_mips64.s.orig
@@ -454,8 +454,8 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	MOVV	8(R29), RSB
  	RET
  
--// func walltime1() (sec int64, nsec int32)
--TEXT runtime·walltime1(SB), NOSPLIT, $32
+-// func walltime() (sec int64, nsec int32)
+-TEXT runtime·walltime(SB), NOSPLIT, $32
 -	MOVW	CLOCK_REALTIME, R4	// arg 1 - clock_id
 -	MOVV	$8(R29), R5		// arg 2 - tp
 -	MOVV	$87, R2			// sys_clock_gettime

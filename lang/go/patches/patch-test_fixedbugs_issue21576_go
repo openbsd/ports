@@ -1,4 +1,4 @@
-$OpenBSD: patch-test_fixedbugs_issue21576_go,v 1.1 2021/07/11 14:44:56 jsing Exp $
+$OpenBSD: patch-test_fixedbugs_issue21576_go,v 1.2 2021/08/27 18:33:27 jsing Exp $
 
 Index: test/fixedbugs/issue21576.go
 --- test/fixedbugs/issue21576.go.orig
