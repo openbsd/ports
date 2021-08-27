@@ -1,0 +1,21 @@
+$OpenBSD: patch-libarchive_archive_write_set_format_cpio_binary_c,v 1.1 2021/08/27 14:37:59 naddy Exp $
+
+Index: libarchive/archive_write_set_format_cpio_binary.c
+--- libarchive/archive_write_set_format_cpio_binary.c.orig
++++ libarchive/archive_write_set_format_cpio_binary.c
+@@ -124,6 +124,7 @@ PACKED(struct cpio_binary_header {
+  * ...but it feels a little better to do it like this:
+  */
+ 
++#undef swap16	/* OpenBSD endian.h */
+ static uint16_t swap16(uint16_t in) {
+ 	union {
+ 		uint16_t s[2];
+@@ -141,6 +142,7 @@ static uint16_t swap16(uint16_t in) {
+ 	/* NOTREACHED */
+ }
+ 
++#undef swap32	/* OpenBSD endian.h */
+ static uint32_t swap32(uint32_t in) {
+ 	union {
+ 		uint32_t l;
