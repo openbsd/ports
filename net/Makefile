@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1263 2021/08/27 15:33:29 jeremy Exp $
+# $OpenBSD: Makefile,v 1.1264 2021/08/27 16:33:07 abieber Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -132,6 +132,7 @@
      SUBDIR += gupnp
      SUBDIR += h323plus
      SUBDIR += haproxy
+     SUBDIR += headscale
      SUBDIR += hexchat
      SUBDIR += honeyd
      SUBDIR += hping
@@ -708,6 +709,7 @@
      SUBDIR += syncthing
      SUBDIR += synergy
      SUBDIR += tacacs+
+     SUBDIR += tailscale
      SUBDIR += tcl-snmptools
      SUBDIR += tclcurl
      SUBDIR += tcludp
