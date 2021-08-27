@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.168 2021/08/13 09:26:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.169 2021/08/27 07:34:43 ajacoutot Exp $
 @conflict py-botocore-*
 @pkgpath net/py-botocore
 lib/python${MODPY_VERSION}/site-packages/botocore/
@@ -1010,6 +1010,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/mediatailor/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mediatailor/2018-04-23/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mediatailor/2018-04-23/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mediatailor/2018-04-23/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/memorydb/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/memorydb/2021-01-01/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/memorydb/2021-01-01/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/memorydb/2021-01-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/meteringmarketplace/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/meteringmarketplace/2016-01-14/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/meteringmarketplace/2016-01-14/examples-1.json
