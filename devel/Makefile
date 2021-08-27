@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2114 2021/08/26 20:31:13 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2115 2021/08/27 15:33:29 jeremy Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1766,7 +1766,6 @@
      SUBDIR += ruby-gettext
      SUBDIR += ruby-gettext-setup
      SUBDIR += ruby-get_process_mem
-     SUBDIR += ruby-gir_ffi
      SUBDIR += ruby-git
      SUBDIR += ruby-highline
      SUBDIR += ruby-hoe
@@ -1797,8 +1796,6 @@
      SUBDIR += ruby-prof,ruby27
      SUBDIR += ruby-prof,ruby30
      SUBDIR += ruby-puppet_forge
-     SUBDIR += ruby-racc,ruby27
-     SUBDIR += ruby-racc,ruby30
      SUBDIR += ruby-rake-compiler
      SUBDIR += ruby-rake-remote_task
      SUBDIR += ruby-regexp_parser

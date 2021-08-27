@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1036 2021/08/20 13:55:54 bcallah Exp $
+# $OpenBSD: Makefile,v 1.1037 2021/08/27 15:33:29 jeremy Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -537,7 +537,6 @@
      SUBDIR += ruby-fcgi,ruby27
      SUBDIR += ruby-fcgi,ruby30
      SUBDIR += ruby-httpclient
-     SUBDIR += ruby-mechanize
      SUBDIR += ruby-multipart-post
      SUBDIR += ruby-mustermann
      SUBDIR += ruby-ntlm,ruby27
