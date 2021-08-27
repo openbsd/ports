@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2021/08/27 14:27:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2021/08/27 14:28:41 ajacoutot Exp $
 
 COMMENT=		secure secret storage
 
@@ -21,6 +21,7 @@ CATEGORIES=		security net
 HOMEPAGE=		https://www.vaultproject.io/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
+
 # MPLv2
 PERMIT_PACKAGE=		Yes
 
