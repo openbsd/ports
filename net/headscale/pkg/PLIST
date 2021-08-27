@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/08/27 16:29:34 abieber Exp $
+@newgroup _headscale:869
+@newuser _headscale:869:_headscale:daemon:headscale user:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/headscale
+@mode 750
+@group _headscale
+@sample ${SYSCONFDIR}/headscale/
+@owner _headscale
+@sample ${VARBASE}/headscale/
+@mode
+@owner
+@group
+@bin bin/headscale
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/headscale/
+share/examples/headscale/config.json.postgres.example
+share/examples/headscale/config.json.sqlite.example
+@mode 640
+@group _headscale
+@sample ${SYSCONFDIR}/headscale/config.json
+@mode
+@group
+share/examples/headscale/derp.yaml
+@mode 644
+@group _headscale
+@sample ${SYSCONFDIR}/headscale/derp.yaml

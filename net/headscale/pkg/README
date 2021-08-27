@@ -1,0 +1,22 @@
+$OpenBSD: README,v 1.1.1.1 2021/08/27 16:29:34 abieber Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Initial Setup
+=============
+
+Generate a private key:
+
+    # openssl rand -base64 32 > ${SYSCONFDIR}/headscale/private.key
+
+Create an initial namespace:
+
+    # su -s/bin/sh _headscale
+    $ headscale namespaces create myfirstnamespace
+
+Enable and start the service
+
+    # rcctl enable headscale
+    # rcctl start headscale
