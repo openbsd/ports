@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2021/08/14 07:01:22 tb Exp $
+# $OpenBSD: Makefile,v 1.3 2021/08/27 13:56:30 abieber Exp $
 
 COMMENT =	modern music server and streamer
 
 MODGO_MODNAME =	github.com/navidrome/navidrome
-MODGO_VERSION =	v0.42.1
+MODGO_VERSION =	v0.45.1
 
 DISTNAME =	navidrome-${MODGO_VERSION}
 
@@ -14,6 +14,7 @@ HOMEPAGE =	https://www.navidrome.org/
 MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 
 # Built by running "npm i; npm run build" in ${WRKSRC}/ui;
+# rm -rf ${WRKSRC}/ui/node_modules; 
 # tar -czvf navidrome-build-${MODGO_VERSION}.tar.gz build/
 DISTFILES +=		navidrome-build-${MODGO_VERSION}.tar.gz:0
 
