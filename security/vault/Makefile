@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2021/08/16 22:06:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.60 2021/08/27 14:27:56 ajacoutot Exp $
 
 COMMENT=		secure secret storage
 
@@ -7,6 +7,7 @@ VERSION=		1.8.1
 # https://github.com/hashicorp/vault/archive/v$VERSION/vault-$VERSION.tar.gz
 # and running "go mod tidy" + "go mod vendor"
 DISTNAME=		vault-vendored-${VERSION}
+PKGNAME=		vault-${VERSION}
 
 ### Vault UI
 MODGO_FLAGS=		-tags=ui
@@ -14,7 +15,6 @@ MASTER_SITES=		https://distfiles.tristero.se/
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
 			vault-${VERSION}-bindata_assetfs.go
-PKGNAME=		vault-${VERSION}
 
 CATEGORIES=		security net
 
