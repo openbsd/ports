@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2021/06/21 14:30:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2021/08/27 08:28:02 ajacoutot Exp $
 
 # Reenable that port on non-rust archs at the cost of pulseaudio support:
 # pulseaudio -> [...] -> spidermonkey>=78 -> rust
@@ -13,7 +13,7 @@ PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-good-${V}
 PKGNAME-main=		${PKGNAME}
 PKGNAME-pulse=		${GST_PKGNAME_PREFIX}-plugins-pulse-${V}
 
-REVISION-main=		0
+REVISION-main=		1
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-good/}
 
@@ -75,13 +75,9 @@ CONFIGURE_ARGS=		-Daalib=disabled \
 			-Dv4l2-gudev=disabled \
 			-Drpicamsrc=disabled
 
-# XXX
-# ../gst-plugins-good-1.18.0/gst/deinterlace/x86/yadif.asm:28: error: segment name `.rodata align=16' not recognized
-# ../gst-plugins-good-1.18.0/gst/deinterlace/x86/yadif.asm:124: ... from macro `SECTION_RODATA' defined here
-#.if ${MACHINE_ARCH} == "amd64"
-#BUILD_DEPENDS +=	devel/nasm
-#.endif
-CONFIGURE_ARGS +=	-Dasm=disabled
+.if ${MACHINE_ARCH} == "amd64"
+BUILD_DEPENDS +=	devel/nasm
+.endif
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
