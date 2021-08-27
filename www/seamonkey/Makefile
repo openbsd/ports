@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.260 2021/08/24 06:06:34 landry Exp $
+# $OpenBSD: Makefile,v 1.261 2021/08/27 11:32:00 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # version = (TB version - 3) / 100 + 2
-MOZILLA_VERSION =	2.53.8.1
+MOZILLA_VERSION =	2.53.9
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	comm/suite
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-5.8.8
-REVISION-main =		0
-REVISION-lightning =	0
+PKGNAME-lightning =	lightning-seamonkey-5.8.9
 EPOCH-lightning =	0
 
 HOMEPAGE =	http://www.seamonkey-project.org/
@@ -46,9 +44,6 @@ LIB_DEPENDS +=	textproc/hunspell>=1.7
 WANTLIB +=	hunspell-1.7
 # option removed in 62, cf #1460600
 CONFIGURE_ARGS +=	--with-system-hunspell
-
-# https://bugzilla.mozilla.org/show_bug.cgi?id=983843
-CONFIGURE_ARGS +=	--with-system-cairo
 
 # lld blows when linking libxul; limit threads
 .if ${MACHINE_ARCH:Mi386}
