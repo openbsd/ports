@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.136 2021/07/24 08:36:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.137 2021/08/27 07:35:14 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -1929,6 +1929,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/deregister-instance
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/deregister-transit-gateway-multicast-group-members.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/deregister-transit-gateway-multicast-group-source.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-account-attributes.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-addresses-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-addresses.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-aggregate-id-format.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-availability-zones.rst
@@ -2083,6 +2084,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-console-screens
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-default-credit-specification.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-ebs-default-kms-key-id.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-ebs-encryption-by-default.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-flow-logs-integration-template.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-groups-for-capacity-reservation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-host-reservation-purchase-preview.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-launch-template-data.rst
@@ -2099,6 +2101,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/import-client-vpn-c
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/import-image.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/import-key-pair.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/import-snapshot.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-address-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-availability-zone-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-capacity-reservation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-client-vpn-endpoint.rst
@@ -2168,6 +2171,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/replace-transit-gat
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/report-instance-status.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/request-spot-fleet.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/request-spot-instances.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/reset-address-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/reset-ebs-default-kms-key-id.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/reset-fpga-image-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/reset-image-attribute.rst
@@ -2814,6 +2818,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrass/update-resou
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrass/update-subscription-definition.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrass/update-thing-runtime-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/batch-associate-client-device-with-core-device.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/batch-disassociate-client-device-from-core-device.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/cancel-deployment.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/create-component-version.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/create-deployment.rst
@@ -2824,6 +2830,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/get-compon
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/get-component.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/get-core-device.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/get-deployment.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/list-client-devices-associated-with-core-device.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/list-component-versions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/list-components.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/greengrassv2/list-core-devices.rst
@@ -2869,8 +2876,13 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/healthlake/describe-fhi
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/healthlake/describe-fhir-export-job.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/healthlake/describe-fhir-import-job.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/healthlake/list-fhir-datastores.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/healthlake/list-fhir-export-jobs.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/healthlake/list-fhir-import-jobs.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/healthlake/list-tags-for-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/healthlake/start-fhir-export-job.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/healthlake/start-fhir-import-job.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/healthlake/tag-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/healthlake/untag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iam/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iam/add-client-id-to-open-id-connect-provider.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iam/add-role-to-instance-profile.rst
@@ -4136,6 +4148,17 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/pricing/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/pricing/describe-services.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/pricing/get-attribute-values.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/pricing/get-products.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/proton/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/proton/cancel-service-instance-deployment.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/proton/cancel-service-pipeline-deployment.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/proton/create-service.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/proton/delete-service.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/proton/get-service-instance.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/proton/get-service.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/proton/list-service-instances.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/proton/update-service-instance.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/proton/update-service-pipeline.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/proton/update-service.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/qldb/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/qldb/cancel-journal-kinesis-stream.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/qldb/create-ledger.rst
@@ -4155,6 +4178,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/qldb/list-tags-for-reso
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/qldb/stream-journal-to-kinesis.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/qldb/tag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/qldb/untag-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/qldb/update-ledger-permissions-mode.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/qldb/update-ledger.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ram/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ram/accept-resource-share-invitation.rst
@@ -5079,6 +5103,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/list-command-invoca
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/list-commands.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/list-compliance-items.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/list-compliance-summaries.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/list-document-metadata-history.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/list-document-versions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/list-documents.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/list-inventory-entries.rst
@@ -5107,6 +5132,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/unlabel-parameter-v
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/update-association-status.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/update-association.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/update-document-default-version.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/update-document-metadata.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/update-document.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/update-maintenance-window-target.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/update-maintenance-window-task.rst
