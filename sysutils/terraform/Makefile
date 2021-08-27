@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.65 2021/08/13 09:42:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2021/08/27 09:46:07 ajacoutot Exp $
 
 COMMENT=		tool for building, changing, and versioning infrastructure
 
 MODGO_MODNAME=	github.com/hashicorp/terraform
-MODGO_VERSION=	v1.0.4
+MODGO_VERSION=	v1.0.5
 DISTNAME=	terraform-${MODGO_VERSION}
 
 WRKDIST=	${WRKDIR}/github.com/hashicorp/terraform@${MODGO_VERSION}
@@ -268,7 +268,7 @@ MODGO_MODULES =	\
 	github.com/xiang90/probing				 v0.0.0-20190116061207-43a291ad63a2 \
 	github.com/xlab/treeprint				 v0.0.0-20161029104018-1d6e34225557 \
 	github.com/yuin/goldmark				 v1.2.1 \
-	github.com/zclconf/go-cty				 v1.9.0 \
+	github.com/zclconf/go-cty				 v1.9.1 \
 	github.com/zclconf/go-cty-debug				 v0.0.0-20191215020915-b22d67c1ba0b \
 	github.com/zclconf/go-cty-yaml				 v1.0.2 \
 	go.etcd.io/bbolt					 v1.3.3 \
