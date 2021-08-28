@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.232 2021/06/10 22:38:00 kn Exp $
+# $OpenBSD: Makefile,v 1.233 2021/08/28 11:02:23 kn Exp $
 
 COMMENT-main =	distributed version control system
 COMMENT-svn =	subversion interoperability tools
 COMMENT-x11 =	graphical tools
 
-V =		2.32.0
+V =		2.33.0
 DISTNAME =	git-${V}
 PKGNAME-main =	${DISTNAME}
 PKGNAME-svn =	git-svn-${V}
@@ -30,12 +30,6 @@ MODULES =		lang/python \
 			x11/tk
 
 MODTK_VERSION =		8.6
-
-MODPY_BUILDDEP =	No
-MODPY_RUNDEP =		No
-MODPY_ADJ_FILES =	contrib/hooks/multimail/git_multimail.py \
-			contrib/hooks/multimail/migrate-mailhook-config \
-			contrib/hooks/multimail/post-receive.example
 
 BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/p5-Error \
@@ -66,8 +60,6 @@ RUN_DEPENDS-x11 =	${BASE_PKGPATH},-main \
 LIB_DEPENDS-x11 =
 WANTLIB-x11 =
 PKG_ARCH-x11 =		*
-
-UPDATE_PLIST_ARGS += -i MODPY_VERSION
 
 MAKE_FLAGS =		V=1 \
 			gitexecdir=${TRUEPREFIX}/libexec/git \
@@ -116,11 +108,6 @@ post-install:
 		pax -rw . ${PREFIX}/man
 	${INSTALL_DATA} ${WRKBUILD}/contrib/hooks/post-receive-email \
 		${PREFIX}/share/git-core/templates/hooks/post-receive-email.sample
-	${INSTALL_DATA_DIR} ${PREFIX}/share/git-core/templates/hooks/multimail
-.for f in git_multimail.py migrate-mailhook-config post-receive.example
-	${INSTALL_DATA} ${WRKBUILD}/contrib/hooks/multimail/$f \
-		${PREFIX}/share/git-core/templates/hooks/multimail
-.endfor
 	${INSTALL_DATA} ${WRKBUILD}/contrib/hooks/setgitperms.perl \
 		${PREFIX}/share/git-core/templates/hooks/setgitperms.perl
 	chown -R ${BINOWN}:${BINGRP} ${PREFIX}/libexec/git
