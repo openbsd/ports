@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.234 2021/08/28 11:06:24 kn Exp $
+# $OpenBSD: Makefile,v 1.235 2021/08/28 11:17:22 kn Exp $
 
 COMMENT-main =	distributed version control system
 COMMENT-svn =	subversion interoperability tools
@@ -88,6 +88,22 @@ TEST_DEPENDS =		archivers/unzip \
 			devel/cvsps \
 			devel/subversion,-perl
 
+# "test" is too verbose and parallel jobs print out of order, get a simple
+# `make GIT_TEST_TARGET=prove test' to use prove(1) with better output
+GIT_TEST_TARGET ?=	test
+
+GIT_TEST_OPTS =		--root=${WRKDIR}/t/ \
+			--immediate
+
+GIT_PROVE_OPTS =	-j${MAKE_JOBS} \
+			--nocolor \
+			--norc \
+			-W
+
+TEST_ENV =		GIT_TEST_OPTS=${GIT_TEST_OPTS:Q} \
+			GIT_PROVE_OPTS=${GIT_PROVE_OPTS:Q} \
+			DEFAULT_TEST_TARGET=${GIT_TEST_TARGET}
+
 # ${WRKSRC}/t/t4256/1/mailinfo.c.orig
 PATCHORIG =		.pat.orig
 
@@ -116,9 +132,5 @@ post-install:
 	perl -pi -e "s|${WRKINST}||g" ${PREFIX}/share/gitweb/gitweb.cgi
 	${INSTALL_DATA} ${WRKBUILD}/gitweb/README ${PREFIX}/share/gitweb
 	${MODTCL_WISH_ADJ} ${PREFIX}/libexec/git/git-gui--askpass
-
--do-test:
-	${MAKE_ENV} GIT_TEST_OPTS="--immediate" ${MAKE_PROGRAM} -C ${WRKSRC}/t \
-		HOME=${WRKDIST}/t test
 
 .include <bsd.port.mk>
