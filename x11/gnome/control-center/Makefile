@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2021/05/13 09:49:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2021/08/28 08:48:38 ajacoutot Exp $
 
 # XXX change proxy settings without network-manager?
 
@@ -6,6 +6,7 @@ COMMENT=		GNOME settings
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		40.0
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -25,7 +26,7 @@ MODULES=		devel/meson \
 			x11/gnome
 
 # Needed to build on base-gcc architectures
-CFLAGS=			-std=gnu99
+CFLAGS +=		-std=gnu99
 
 LIB_DEPENDS=		audio/gsound \
 			audio/pulseaudio \
