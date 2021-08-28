@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/05/27 16:12:16 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2021/08/28 11:18:58 kn Exp $
 
 COMMENT =	utility for modifying existing ELF executables and libraries
 
-V =			0.12
+V =			0.13
 DISTNAME =		patchelf-${V}
 MASTER_SITES =		https://github.com/NixOS/patchelf/releases/download/${V}/
 EXTRACT_SUFX =		.tar.bz2
@@ -19,16 +19,18 @@ WANTLIB +=		${COMPILER_LIBCXX} c m
 # -std=c++11
 COMPILER =		base-clang ports-gcc
 
-SEPARATE_BUILD =	Yes
+# XXX 0.13 broke test target:
+# ld: error: cannot find linker script contiguous_note_sections.ld
+SEPARATE_BUILD =	No
 USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--mandir=${PREFIX}/man
 
-WRKDIST =		${WRKDIR}/${DISTNAME}.20200827.8d3a16e
+WRKDIST =		${WRKDIR}/${DISTNAME}.20210805.a949ff2
 
 # XXX investigate
-# TOTAL: 29, PASS: 28, FAIL: build-id.sh
+# TOTAL: 34, PASS: 33, FAIL: build-id.sh
 TEST_TARGET =		check
 
 .include <bsd.port.mk>
