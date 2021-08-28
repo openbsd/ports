@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2021/08/25 12:05:51 robert Exp $
+# $OpenBSD: Makefile,v 1.27 2021/08/28 06:48:54 robert Exp $
 
 COMMENT=		MATE control center
 
@@ -6,6 +6,7 @@ SHARED_LIBS +=  mate-slab                 0.0 # 0.0
 SHARED_LIBS +=  mate-window-settings      1.0 # 1.0
 
 MATE_PROJECT=		mate-control-center
+REVISION=		0
 
 CATEGORIES=		x11
 
