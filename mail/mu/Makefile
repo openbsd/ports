@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2021/08/25 13:36:48 abieber Exp $
+# $OpenBSD: Makefile,v 1.28 2021/08/28 23:05:40 abieber Exp $
 
 COMMENT=	maildir indexer and searcher with emacs frontend
 
-V=		1.6.4
+V=		1.6.5
 GUILE_V=	2.2
 
 DISTNAME=	mu-$V
