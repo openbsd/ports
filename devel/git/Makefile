@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.233 2021/08/28 11:02:23 kn Exp $
+# $OpenBSD: Makefile,v 1.234 2021/08/28 11:06:24 kn Exp $
 
 COMMENT-main =	distributed version control system
 COMMENT-svn =	subversion interoperability tools
@@ -67,7 +67,6 @@ MAKE_FLAGS =		V=1 \
 			NO_PERL_CPAN_FALLBACKS=1 \
 			TCLTK_PATH=${MODTK_BIN} \
 			TCL_PATH=${MODTCL_BIN}
-MAKE_ENV =		TEST_TAR=${LOCALBASE}/bin/gtar
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--sysconfdir=${SYSCONFDIR} \
@@ -84,8 +83,7 @@ DEBUG_PACKAGES =	-main
 
 USE_GMAKE =		Yes
 
-TEST_DEPENDS =		archivers/gtar \
-			archivers/unzip \
+TEST_DEPENDS =		archivers/unzip \
 			archivers/zip \
 			devel/cvsps \
 			devel/subversion,-perl
@@ -119,7 +117,7 @@ post-install:
 	${INSTALL_DATA} ${WRKBUILD}/gitweb/README ${PREFIX}/share/gitweb
 	${MODTCL_WISH_ADJ} ${PREFIX}/libexec/git/git-gui--askpass
 
-do-test:
+-do-test:
 	${MAKE_ENV} GIT_TEST_OPTS="--immediate" ${MAKE_PROGRAM} -C ${WRKSRC}/t \
 		HOME=${WRKDIST}/t test
 
