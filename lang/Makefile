@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.251 2021/08/07 11:01:14 pascal Exp $
+# $OpenBSD: Makefile,v 1.252 2021/08/29 22:22:03 ian Exp $
 
      SUBDIR =
      SUBDIR += STk
      SUBDIR += a60
      SUBDIR += abcl
      SUBDIR += algol68g
-     SUBDIR += antlr3
      SUBDIR += apl
      SUBDIR += bacon
      SUBDIR += bootgcc
