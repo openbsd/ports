@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.78 2021/08/13 06:48:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2021/08/29 18:42:30 jasper Exp $
 
 PORTROACH=		skipv:4.1.0
+
+BROKEN-powerpc64 =	vec_mule and vec_rl calls are ambiguous in highwayhash
 
 COMMENT=		network analysis and security monitoring framework
 
