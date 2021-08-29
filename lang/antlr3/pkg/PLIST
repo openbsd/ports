@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/09/11 18:24:24 jasper Exp $
-@pkgpath lang/antlr2
-share/java/
-share/java/classes/
-share/java/classes/antlr3.jar
