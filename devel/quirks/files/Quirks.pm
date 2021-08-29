@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1297 2021/08/29 08:47:29 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.1298 2021/08/29 23:11:57 ian Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1235,6 +1235,7 @@ setup_obsolete_reason(
 	3 => 'qt4-postgresql',
 	3 => 'qt4-sqlite2',
 	3 => 'qt4-tds',
+	1 => 'antlr3',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
