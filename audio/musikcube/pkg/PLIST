@@ -1,0 +1,77 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/08/29 13:04:47 solene Exp $
+bin/musikcube
+bin/musikcubed
+include/musikcube/
+include/musikcube/musikcore/
+include/musikcube/musikcore/sdk/
+include/musikcube/musikcore/sdk/DataBuffer.h
+include/musikcube/musikcore/sdk/Filesystem.h
+include/musikcube/musikcore/sdk/HttpClient.h
+include/musikcube/musikcore/sdk/IAllocator.h
+include/musikcube/musikcore/sdk/IAnalyzer.h
+include/musikcube/musikcore/sdk/IBlockingEncoder.h
+include/musikcube/musikcore/sdk/IBuffer.h
+include/musikcube/musikcore/sdk/IBufferProvider.h
+include/musikcube/musikcore/sdk/IDSP.h
+include/musikcube/musikcore/sdk/IDataStream.h
+include/musikcube/musikcore/sdk/IDataStreamFactory.h
+include/musikcube/musikcore/sdk/IDebug.h
+include/musikcube/musikcore/sdk/IDecoder.h
+include/musikcube/musikcore/sdk/IDecoderFactory.h
+include/musikcube/musikcore/sdk/IDevice.h
+include/musikcube/musikcore/sdk/IEncoder.h
+include/musikcube/musikcore/sdk/IEncoderFactory.h
+include/musikcube/musikcore/sdk/IEnvironment.h
+include/musikcube/musikcore/sdk/IIndexerNotifier.h
+include/musikcube/musikcore/sdk/IIndexerSource.h
+include/musikcube/musikcore/sdk/IIndexerWriter.h
+include/musikcube/musikcore/sdk/IMap.h
+include/musikcube/musikcore/sdk/IMapList.h
+include/musikcube/musikcore/sdk/IMetadataProxy.h
+include/musikcube/musikcore/sdk/IOutput.h
+include/musikcube/musikcore/sdk/IPcmVisualizer.h
+include/musikcube/musikcore/sdk/IPlaybackRemote.h
+include/musikcube/musikcore/sdk/IPlaybackService.h
+include/musikcube/musikcore/sdk/IPlugin.h
+include/musikcube/musikcore/sdk/IPreferences.h
+include/musikcube/musikcore/sdk/IResource.h
+include/musikcube/musikcore/sdk/ISchema.h
+include/musikcube/musikcore/sdk/ISpectrumVisualizer.h
+include/musikcube/musikcore/sdk/IStreamingEncoder.h
+include/musikcube/musikcore/sdk/ITagReader.h
+include/musikcube/musikcore/sdk/ITagStore.h
+include/musikcube/musikcore/sdk/ITrack.h
+include/musikcube/musikcore/sdk/ITrackList.h
+include/musikcube/musikcore/sdk/ITrackListEditor.h
+include/musikcube/musikcore/sdk/IValue.h
+include/musikcube/musikcore/sdk/IValueList.h
+include/musikcube/musikcore/sdk/IVisualizer.h
+include/musikcube/musikcore/sdk/ReplayGain.h
+include/musikcube/musikcore/sdk/String.h
+include/musikcube/musikcore/sdk/constants.h
+share/musikcube/
+@so share/musikcube/libmusikcore.so
+share/musikcube/locales/
+share/musikcube/locales/en_US.json
+share/musikcube/locales/fr_FR.json
+share/musikcube/locales/it_IT.json
+share/musikcube/locales/ja_JP.json
+share/musikcube/locales/ru_RU.json
+share/musikcube/locales/zh_CN.json
+@bin share/musikcube/musikcube
+@bin share/musikcube/musikcubed
+share/musikcube/plugins/
+@so share/musikcube/plugins/libffmpegdecoder.so
+@so share/musikcube/plugins/libgmedecoder.so
+@so share/musikcube/plugins/libhttpdatastream.so
+@so share/musikcube/plugins/libnullout.so
+@so share/musikcube/plugins/libopenmptdecoder.so
+@so share/musikcube/plugins/libserver.so
+@so share/musikcube/plugins/libsndioout.so
+@so share/musikcube/plugins/libstockencoders.so
+@so share/musikcube/plugins/libsupereqdsp.so
+@so share/musikcube/plugins/libtaglibreader.so
+share/musikcube/themes/
+share/musikcube/themes/gruvbox_dark.json
+share/musikcube/themes/solarized_dark.json
+share/musikcube/themes/solarized_light.json

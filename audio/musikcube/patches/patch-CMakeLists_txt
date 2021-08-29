@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2021/08/29 13:04:47 solene Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -98,7 +98,7 @@ endif()
+ # we use a bundled version of taglib because the latest release is from 2016,
+ # and the upstream git repo is hundreds of commits ahead and has a number of
+ # important bugfixes.
+-set(USE_BUNDLED_TAGLIB "true")
++set(USE_BUNDLED_TAGLIB "false")
+ 
+ add_subdirectory(src/musikcore)
+ add_subdirectory(src/core_c_demo)
