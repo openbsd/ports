@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.53 2021/08/28 07:45:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2021/08/29 10:32:01 sthen Exp $
 
 COMMENT=	mailfilter to identify and mark spam
 
 DISTNAME=	mimedefang-2.85
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	mail
 
@@ -20,8 +20,9 @@ WANTLIB += c m milter perl pthread
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	mail/p5-Mail-Tools \
 		mail/p5-MIME-tools \
-		security/p5-Digest-SHA1 \
 		security/p5-Crypt-OpenSSL-Random \
+		security/p5-Digest-SHA1 \
+		security/p5-IO-Socket-SSL \
 		sysutils/p5-Unix-Syslog
 
 # useful optional dependencies
