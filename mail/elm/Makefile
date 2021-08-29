@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:47:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2021/08/29 08:09:47 jasper Exp $
 
 COMMENT=	once-popular mail user agent
 
@@ -22,6 +22,10 @@ CONFIGURE_ENV+=	PREFIX='$${DESTDIR}${PREFIX}' \
 FIX_EXTRACT_PERMISSIONS = Yes
 
 MAKE_FLAGS=	CC="${CC}"
+
+.if ${MACHINE_ARCH} == "powerpc64"
+CFLAGS +=	-O0
+.endif
 
 WRKDIST=	${WRKDIR}/elm2.4.ME+.66
 
