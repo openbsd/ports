@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_daemon_protocols_cdp_c,v 1.1 2021/08/29 12:41:09 sthen Exp $
+
+Silence noisy logs seen sometimes if interface is admin-up but hw-down
+"unable to send packet on real device for ix1: No buffer space available"
+
+Index: src/daemon/protocols/cdp.c
+--- src/daemon/protocols/cdp.c.orig
++++ src/daemon/protocols/cdp.c
+@@ -282,7 +282,8 @@ cdp_send(struct lldpd *global,
+ 
+ 	if (interfaces_send_helper(global, hardware,
+ 		(char *)packet, end - packet) == -1) {
+-		log_warn("cdp", "unable to send packet on real device for %s",
++		if (errno != ENOBUFS)
++			log_warn("cdp", "unable to send packet on real device for %s",
+ 			   hardware->h_ifname);
+ 		free(packet);
+ 		return ENETDOWN;

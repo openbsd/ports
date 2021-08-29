@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_daemon_protocols_edp_c,v 1.1 2021/08/29 12:41:09 sthen Exp $
+
+Silence noisy logs seen sometimes if interface is admin-up but hw-down
+"unable to send packet on real device for ix1: No buffer space available"
+
+Index: src/daemon/protocols/edp.c
+--- src/daemon/protocols/edp.c.orig
++++ src/daemon/protocols/edp.c
+@@ -201,8 +201,9 @@ edp_send(struct lldpd *global,
+ 
+ 		if (interfaces_send_helper(global, hardware,
+ 			(char *)packet, end - packet) == -1) {
+-			log_warn("edp", "unable to send packet on real device for %s",
+-			    hardware->h_ifname);
++			if (errno != ENOBUFS)
++				log_warn("edp", "unable to send packet on real device for %s",
++				    hardware->h_ifname);
+ 			free(packet);
+ 			return ENETDOWN;
+ 		}
