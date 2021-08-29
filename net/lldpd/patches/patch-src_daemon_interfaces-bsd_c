@@ -1,0 +1,46 @@
+$OpenBSD: patch-src_daemon_interfaces-bsd_c,v 1.4 2021/08/29 21:27:23 sthen Exp $
+
+From 922b3fb68eebf36c1880cd8868f786744848aa8a Mon Sep 17 00:00:00 2001
+From: Vincent Bernat <vincent@bernat.ch>
+Date: Sun, 29 Aug 2021 21:57:07 +0200
+Subject: [PATCH] interfaces-bsd: do not consider an interface when it is down
+
+At least on OpenBSD, an interface can be oper down while
+`IFF_RUNNING`. Check the link state and removes the `IFF_RUNNING` flag
+in this case. This should also work for FreeBSD and NetBSD, but it may
+not be needed.
+
+Fix #474
+
+Index: src/daemon/interfaces-bsd.c
+--- src/daemon/interfaces-bsd.c.orig
++++ src/daemon/interfaces-bsd.c
+@@ -417,6 +417,10 @@ ifbsd_extract_device(struct lldpd *cfg,
+ 	return iface;
+ }
+ 
++#ifndef LINK_STATE_IS_UP
++#define LINK_STATE_IS_UP(s) ((s) >= LINK_STATE_UP || (s) == LINK_STATE_UNKNOWN)
++#endif
++
+ static void
+ ifbsd_extract(struct lldpd *cfg,
+     struct interfaces_device_list *interfaces,
+@@ -425,6 +429,7 @@ ifbsd_extract(struct lldpd *cfg,
+ {
+ 	struct interfaces_address *address = NULL;
+ 	struct interfaces_device *device = NULL;
++	struct if_data *ifdata;
+ 	if (!ifaddr->ifa_name) return;
+ 	if (!ifaddr->ifa_addr) return;
+ 	switch (ifaddr->ifa_addr->sa_family) {
+@@ -433,6 +438,9 @@ ifbsd_extract(struct lldpd *cfg,
+ 		    "grabbing information on interface %s",
+ 		    ifaddr->ifa_name);
+ 		device = ifbsd_extract_device(cfg, ifaddr);
++		ifdata = ifaddr->ifa_data;
++		if (!LINK_STATE_IS_UP(ifdata->ifi_link_state))
++			device->flags &= ~IFF_RUNNING;
+ 		if (device)
+ 			TAILQ_INSERT_TAIL(interfaces, device, next);
+ 		break;
