@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2021/05/23 17:47:00 kirby Exp $
+# $OpenBSD: Makefile,v 1.39 2021/08/29 21:02:05 kirby Exp $
 
 COMMENT =	toolkit for developing mapping applications
 
@@ -13,7 +13,7 @@ CATEGORIES =	graphics geo
 
 HOMEPAGE =	https://mapnik.org/
 
-DPB_PROPERTIES = nojunk
+DPB_PROPERTIES = nojunk parallel
 
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes
