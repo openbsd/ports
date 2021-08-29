@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/05/22 22:00:31 jca Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/08/29 07:35:39 jca Exp $
 @newgroup _knot:751
 @newuser _knot:751:_knot::Knot DNS Server:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/knot
@@ -13,6 +13,7 @@ include/knot/module.h
 include/libdnssec/
 include/libdnssec/binary.h
 include/libdnssec/crypto.h
+include/libdnssec/digest.h
 include/libdnssec/dnssec.h
 include/libdnssec/error.h
 include/libdnssec/key.h
@@ -38,6 +39,7 @@ include/libknot/db/db_lmdb.h
 include/libknot/db/db_trie.h
 include/libknot/descriptor.h
 include/libknot/dname.h
+include/libknot/dynarray.h
 include/libknot/endian.h
 include/libknot/errcode.h
 include/libknot/error.h
@@ -68,10 +70,12 @@ include/libknot/rrtype/rdname.h
 include/libknot/rrtype/rrsig.h
 include/libknot/rrtype/soa.h
 include/libknot/rrtype/tsig.h
+include/libknot/rrtype/zonemd.h
 include/libknot/tsig-op.h
 include/libknot/tsig.h
 include/libknot/version.h
 include/libknot/wire.h
+include/libknot/xdp.h
 include/libknot/yparser/
 include/libknot/yparser/yparser.h
 include/libknot/yparser/ypformat.h
