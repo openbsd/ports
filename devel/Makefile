@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2115 2021/08/27 15:33:29 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2116 2021/08/29 08:47:28 jca Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1561,7 +1561,6 @@
      SUBDIR += py-py
      SUBDIR += py-py,python3
      SUBDIR += py-pybind11,python3
-     SUBDIR += py-pyinotify
      SUBDIR += py-pyinotify,python3
      SUBDIR += py-pyprof2calltree
      SUBDIR += py-pyprof2calltree,python3

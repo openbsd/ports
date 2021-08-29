@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1296 2021/08/10 20:43:52 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1297 2021/08/29 08:47:29 jca Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -477,7 +477,8 @@ my $stem_extensions = {
 	'py-spark-parser' => 'py3-spark-parser',
 	'py-xdis' => 'py3-xdis',
 	'py-uncompyle6' => 'py3-uncompyle6',
-	'py-click' => 'py3-click'
+	'py-click' => 'py3-click',
+	'py-pyinotify' => 'py3-pyinotify',
 };
 
 my $obsolete_reason = {};
