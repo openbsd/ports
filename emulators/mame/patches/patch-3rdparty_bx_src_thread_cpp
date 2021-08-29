@@ -1,9 +1,9 @@
-$OpenBSD: patch-3rdparty_bx_src_thread_cpp,v 1.4 2019/11/28 20:29:59 fcambus Exp $
+$OpenBSD: patch-3rdparty_bx_src_thread_cpp,v 1.5 2021/08/29 15:51:02 fcambus Exp $
 
 Index: 3rdparty/bx/src/thread.cpp
 --- 3rdparty/bx/src/thread.cpp.orig
 +++ 3rdparty/bx/src/thread.cpp
-@@ -21,9 +21,10 @@
+@@ -22,9 +22,10 @@
  	|| BX_PLATFORM_IOS     \
  	|| BX_PLATFORM_OSX     \
  	|| BX_PLATFORM_PS4     \
