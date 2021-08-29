@@ -1,8 +1,17 @@
-$OpenBSD: patch-client_CMakeLists_txt,v 1.2 2021/08/22 19:48:24 edd Exp $
+$OpenBSD: patch-client_CMakeLists_txt,v 1.3 2021/08/29 22:09:09 sthen Exp $
 
 Index: client/CMakeLists.txt
 --- client/CMakeLists.txt.orig
 +++ client/CMakeLists.txt
+@@ -163,7 +163,7 @@ if(TARGET SDL2::SDL2 OR TARGET SDL::SDL)
+     elseif(ODAMEX_TARGET_ARCH STREQUAL "i386")
+       if(NOT MSVC)
+         # Pentium M has SSE2.
+-        target_compile_definitions(odamex PRIVATE -march=pentium-m)
++        target_compile_options(odamex PRIVATE -march=pentium-m)
+       else()
+         target_compile_definitions(odamex PRIVATE /arch:SSE2)
+       endif()
 @@ -220,7 +220,7 @@ if(TARGET SDL2::SDL2 OR TARGET SDL::SDL)
    endif()
  
