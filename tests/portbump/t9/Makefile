@@ -10,7 +10,7 @@ HOMEPAGE =		http://sequel.jeremyevans.net/
 MAINTAINER =		Jeremy Evans <jeremy@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MODULES =		lang/ruby
 

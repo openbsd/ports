@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.9 2018/07/15 08:36:39 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2021/08/29 07:55:17 jca Exp $
 
 COMMENT-main=		server-side HTML-embedded scripting language
 COMMENT-fastcgi=	stand-alone FastCGI version of PHP
@@ -28,7 +28,7 @@ MASTER_SITES0=		http://spacehopper.org/mirrors/ \
 
 # UPGRADERS: please read BOTH the PHP and Zend licenses
 # and make sure they are safe before an upgrade
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=   Yes
 
 MODPHP_CONFIG_PATH=	/var/www/conf
 

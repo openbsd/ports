@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/20 22:15:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2021/08/29 07:55:17 jca Exp $
 
 COMMENT-main =	another eDonkey P2P file sharing client
 COMMENT-web =	webserver interface to amuled
@@ -18,7 +18,7 @@ PKGNAME-daemon =amuled-$V
 PKGNAME-web =	amuleweb-$V
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=amule/}

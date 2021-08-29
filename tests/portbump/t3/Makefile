@@ -12,7 +12,7 @@ SHARED_LIBS +=  nautilus-extension   3.0      # 5.0
 CATEGORIES=		x11
 
 # GPLv2 - LGPLv2 - GFPLv1.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi

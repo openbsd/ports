@@ -1,2 +1,2 @@
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 CATEGORIES +=		tests/portbump
