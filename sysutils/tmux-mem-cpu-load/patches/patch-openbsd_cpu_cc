@@ -1,16 +1,16 @@
-$OpenBSD: patch-openbsd_cpu_cc,v 1.1 2020/02/24 07:26:59 jasper Exp $
+$OpenBSD: patch-openbsd_cpu_cc,v 1.2 2021/08/29 08:55:15 jasper Exp $
 
-https://github.com/thewtex/tmux-mem-cpu-load/commit/2107ea84f10bd5aa260dd84365bb85b7eab1dfdf
+Fix return type of get_cpu_count().
 
 Index: openbsd/cpu.cc
 --- openbsd/cpu.cc.orig
 +++ openbsd/cpu.cc
-@@ -27,7 +27,7 @@
- uint8_t get_cpu_count()
+@@ -24,7 +24,7 @@
+ #include "error.h"
+ #include "cpu.h"
+ 
+-uint8_t get_cpu_count()
++uint32_t get_cpu_count()
  {
    int cpu_count = 1; // default to 1
--  int mib[2] = { CTL_HW, HW_NCPU };
-+  int mib[2] = { CTL_HW, HW_NCPUONLINE };
-   size_t len = sizeof( cpu_count );
- 
-   if( sysctl( mib, 2, &cpu_count, &len, NULL, 0 ) < 0 )
+   int mib[2] = { CTL_HW, HW_NCPUONLINE };

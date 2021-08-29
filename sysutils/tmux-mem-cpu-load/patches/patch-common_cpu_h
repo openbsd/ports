@@ -1,0 +1,19 @@
+$OpenBSD: patch-common_cpu_h,v 1.1 2021/08/29 08:55:15 jasper Exp $
+
+Fix CP_STATES definition
+
+Index: common/cpu.h
+--- common/cpu.h.orig
++++ common/cpu.h
+@@ -36,7 +36,11 @@
+     // *BSD or OSX
+     #define CP_INTR   3
+     #define CP_IDLE   4
++  #if defined(__OpenBSD__)
++    #define CP_STATES 6
++  #else
+     #define CP_STATES 5
++  #endif
+   #else
+     //linux
+     #define CP_IDLE 3
