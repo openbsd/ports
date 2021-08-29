@@ -1,0 +1,16 @@
+$OpenBSD: patch-t_local_43_misc_functions_t,v 1.1 2021/08/29 18:17:19 bluhm Exp $
+
+Index: t/local/43_misc_functions.t
+--- t/local/43_misc_functions.t.orig
++++ t/local/43_misc_functions.t
+@@ -43,6 +43,10 @@ our %tls_1_3_aead_cipher_to_keyblock_size = (
+      'TLS_AES_128_GCM_SHA256' => 56,
+      'TLS_AES_256_GCM_SHA384' => 88,
+      'TLS_CHACHA20_POLY1305_SHA256' => 88,
++     # LibreSSL uses different names
++     'AEAD-AES128-GCM-SHA256' => 56,
++     'AEAD-AES256-GCM-SHA384' => 88,
++     'AEAD-CHACHA20-POLY1305-SHA256' => 88,
+     );
+ 
+ # Combine the AEAD hashes
