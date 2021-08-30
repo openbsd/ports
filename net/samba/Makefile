@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.300 2021/07/15 11:13:46 jca Exp $
+# $OpenBSD: Makefile,v 1.301 2021/08/30 11:01:42 jca Exp $
 
-VERSION =		4.14.6
+VERSION =		4.14.7
 DISTNAME =		samba-${VERSION}
 EPOCH =			0
 
@@ -58,7 +58,7 @@ SHARED_LIBS =		asn1-samba4		1.0 \
 			tevent-util		2.0 \
 			wbclient		5.0 \
 			wind-samba4		1.0 \
-			replace			12.0 \
+			replace			12.1 \
 			util-setid		12.0
 
 # Those have to be handled specially, see "Python ABI" below.
