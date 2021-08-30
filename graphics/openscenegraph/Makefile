@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2021/08/11 18:17:28 kmos Exp $
+# $OpenBSD: Makefile,v 1.25 2021/08/30 17:32:06 ajacoutot Exp $
 
 # No consumers on macppc, saves 17 build hours in bulks
 NOT_FOR_ARCHS =		powerpc
@@ -12,6 +12,7 @@ GH_ACCOUNT =		openscenegraph
 GH_PROJECT =		OpenSceneGraph
 GH_TAGNAME =		OpenSceneGraph-$V
 DISTNAME =		openscenegraph-${V}
+REVISION =		0
 
 SUBST_VARS +=		V
 
