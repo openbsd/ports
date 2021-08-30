@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2020/12/21 21:27:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2021/08/30 19:53:56 ajacoutot Exp $
 @bin bin/lou_allround
 @bin bin/lou_checkhyphens
 @bin bin/lou_checktable
@@ -59,9 +59,13 @@ share/liblouis/tables/aw-in-g1.utb
 share/liblouis/tables/awa.tbl
 share/liblouis/tables/ba.utb
 share/liblouis/tables/be-in-g1.utb
+share/liblouis/tables/bel-comp.utb
+share/liblouis/tables/bel.utb
 share/liblouis/tables/bengali.cti
 share/liblouis/tables/bg.ctb
+share/liblouis/tables/bg.dis
 share/liblouis/tables/bg.tbl
+share/liblouis/tables/bg.utb
 share/liblouis/tables/bh.ctb
 share/liblouis/tables/bh.tbl
 share/liblouis/tables/bn.tbl
@@ -201,8 +205,6 @@ share/liblouis/tables/gurumuki.cti
 share/liblouis/tables/haw-us-g1.ctb
 share/liblouis/tables/he-IL-comp8.utb
 share/liblouis/tables/he-IL.utb
-share/liblouis/tables/he.ctb
-share/liblouis/tables/he.tbl
 share/liblouis/tables/hi-in-g1.utb
 share/liblouis/tables/hi.tbl
 share/liblouis/tables/hr-chardefs.cti
@@ -252,6 +254,9 @@ share/liblouis/tables/ka-in-g1.utb
 share/liblouis/tables/kannada.cti
 share/liblouis/tables/kh-in-g1.utb
 share/liblouis/tables/kha.tbl
+share/liblouis/tables/kk.utb
+share/liblouis/tables/km-g1.utb
+share/liblouis/tables/kmr.tbl
 share/liblouis/tables/kn.tbl
 share/liblouis/tables/ko-2006-g1.ctb
 share/liblouis/tables/ko-2006-g2.ctb
@@ -298,6 +303,8 @@ share/liblouis/tables/mun.ctb
 share/liblouis/tables/mun.tbl
 share/liblouis/tables/mwr.ctb
 share/liblouis/tables/mwr.tbl
+share/liblouis/tables/my-g1.utb
+share/liblouis/tables/my-g2.ctb
 share/liblouis/tables/ne.ctb
 share/liblouis/tables/ne.tbl
 share/liblouis/tables/nemethdefs.cti
@@ -324,6 +331,8 @@ share/liblouis/tables/no-no-latinLetterDef6Dots_diacritics.uti
 share/liblouis/tables/no-no.dis
 share/liblouis/tables/no.tbl
 share/liblouis/tables/np-in-g1.utb
+share/liblouis/tables/nso-za-g1.utb
+share/liblouis/tables/nso-za-g2.ctb
 share/liblouis/tables/or-in-g1.utb
 share/liblouis/tables/or.tbl
 share/liblouis/tables/oriya.cti
@@ -350,6 +359,7 @@ share/liblouis/tables/ru-unicode.dis
 share/liblouis/tables/ru.ctb
 share/liblouis/tables/sa-in-g1.utb
 share/liblouis/tables/sa.tbl
+share/liblouis/tables/sah.utb
 share/liblouis/tables/sd.tbl
 share/liblouis/tables/se-se.ctb
 share/liblouis/tables/se-se.dis
@@ -366,6 +376,7 @@ share/liblouis/tables/sl-si-comp8.ctb
 share/liblouis/tables/sl-si-g1.utb
 share/liblouis/tables/sl.tbl
 share/liblouis/tables/sot-za-g1.ctb
+share/liblouis/tables/sot-za-g2.ctb
 share/liblouis/tables/spaces.uti
 share/liblouis/tables/sr-chardefs.cti
 share/liblouis/tables/sr-g1.ctb
@@ -387,6 +398,8 @@ share/liblouis/tables/tr-g2.tbl
 share/liblouis/tables/tr.ctb
 share/liblouis/tables/tr.tbl
 share/liblouis/tables/tsn-za-g1.ctb
+share/liblouis/tables/tsn-za-g2.ctb
+share/liblouis/tables/tt.utb
 share/liblouis/tables/uk-comp.utb
 share/liblouis/tables/uk.utb
 share/liblouis/tables/ukchardefs.cti
@@ -400,11 +413,18 @@ share/liblouis/tables/ur-pk-g1.utb
 share/liblouis/tables/ur-pk-g2.ctb
 share/liblouis/tables/us-table.dis
 share/liblouis/tables/uz-g1.utb
-share/liblouis/tables/vi-g1.ctb
+share/liblouis/tables/vi-charsdef.uti
+share/liblouis/tables/vi-lettersdef.uti
+share/liblouis/tables/vi-puncsdef.uti
+share/liblouis/tables/vi-saigon-g1.ctb
+share/liblouis/tables/vi-vn-g0.utb
+share/liblouis/tables/vi-vn-g1.ctb
+share/liblouis/tables/vi-vn-g2.ctb
 share/liblouis/tables/vi.ctb
-share/liblouis/tables/vi.tbl
 share/liblouis/tables/wiskunde-chardefs.cti
 share/liblouis/tables/wordcx.dis
+share/liblouis/tables/xh-za-g1.utb
+share/liblouis/tables/xh-za-g2.ctb
 share/liblouis/tables/zh-chn.ctb
 share/liblouis/tables/zh-hk.ctb
 share/liblouis/tables/zh-tw.ctb
@@ -413,3 +433,5 @@ share/liblouis/tables/zh_HK.tbl
 share/liblouis/tables/zh_TW.tbl
 share/liblouis/tables/zhcn-g1.ctb
 share/liblouis/tables/zhcn-g2.ctb
+share/liblouis/tables/zu-za-g1.utb
+share/liblouis/tables/zu-za-g2.ctb
