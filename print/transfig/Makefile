@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2019/12/04 22:07:50 fcambus Exp $
+# $OpenBSD: Makefile,v 1.50 2021/08/30 13:56:26 fcambus Exp $
 
 COMMENT=	tools to convert Xfig's .fig files  #'
 
@@ -33,7 +33,5 @@ FLAVOR?=
 .if !${FLAVOR:Ma4}
 CONFIGURE_ARGS += --enable-letterpaper
 .endif
-
-NO_TEST=	Yes
 
 .include <bsd.port.mk>
