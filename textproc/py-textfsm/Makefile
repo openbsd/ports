@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/08/30 07:11:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2021/08/30 10:44:34 jasper Exp $
 
 COMMENT =		parse semi-structured text into Python table
 
@@ -21,6 +21,7 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =		python3
 FLAVOR =		python3
 
+BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/py-future${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR}
 
