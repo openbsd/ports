@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2021/03/13 13:36:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2021/08/30 19:27:23 ajacoutot Exp $
 
 # when gtk+4 support is added, split into multi packages (gtk+{2,3,4})
 
@@ -8,15 +8,13 @@ COMMENT-gtk4 =		IBus IM module for GTK4
 
 GH_PROJECT =		ibus
 GH_ACCOUNT =		ibus
-GH_TAGNAME =		1.5.24
+GH_TAGNAME =		1.5.25
 
 PKGNAME-main =		ibus-${GH_TAGNAME}
 PKGNAME-gtk2 =		ibus-gtk2-${GH_TAGNAME}
 PKGNAME-gtk4 =		ibus-gtk4-${GH_TAGNAME}
 
-REVISION-main =		0
-
-SHARED_LIBS +=  ibus-1.0             4.2      # 5.524
+SHARED_LIBS +=  ibus-1.0             4.3      # 5.525
 
 CATEGORIES =		inputmethods chinese japanese korean
 
@@ -27,19 +25,20 @@ PERMIT_PACKAGE =	Yes
 
 MULTI_PACKAGES =	-main -gtk2 -gtk4
 
-WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
+WANTLIB += ${COMPILER_LIBCXX} X11 Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender cairo expat ffi fontconfig
 WANTLIB += freetype fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 harfbuzz iconv intl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png xcb xcb-render
-WANTLIB += xcb-shm z
+WANTLIB += xcb-shm z execinfo jpeg
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += atk-1.0 atk-bridge-2.0 c cairo-gobject dbus-1 dconf
-WANTLIB-main += epoxy gdk-3 gthread-2.0 gtk-3
+WANTLIB-main += epoxy gdk-3 gthread-2.0 gtk-3 Xcomposite
 
 WANTLIB-gtk2 += ${WANTLIB}
 WANTLIB-gtk2 += atk-1.0 dbus-1 gdk-x11-2.0 gtk-x11-2.0 ibus-1.0
+WANTLIB-gtk2 += Xcomposite
 
 WANTLIB-gtk4 += ${WANTLIB}
 WANTLIB-gtk4 += cairo-gobject cairo-script-interpreter dbus-1 epoxy
