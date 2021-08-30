@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_meson_build,v 1.1 2021/08/30 19:10:43 ajacoutot Exp $
+
+Index: src/meson.build
+--- src/meson.build.orig
++++ src/meson.build
+@@ -26,8 +26,8 @@ deps = [
+ cflags = [
+   '-DLOCALSTATEDIR="@0@"'.format(act_localstatedir),
+   '-DDATADIR="@0@"'.format(act_datadir),
+-  '-DICONDIR="@0@"'.format(join_paths(act_localstatedir, 'lib', 'AccountsService', 'icons')),
+-  '-DUSERDIR="@0@"'.format(join_paths(act_localstatedir, 'lib', 'AccountsService', 'users')),
++  '-DICONDIR="@0@"'.format(join_paths(act_localstatedir, 'db', 'AccountsService', 'icons')),
++  '-DUSERDIR="@0@"'.format(join_paths(act_localstatedir, 'db', 'AccountsService', 'users')),
+ ]
+ 
+ libaccounts_generated = static_library(
