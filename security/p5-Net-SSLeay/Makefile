@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2021/08/29 18:17:19 bluhm Exp $
+# $OpenBSD: Makefile,v 1.4 2021/08/30 19:13:26 bluhm Exp $
 
 COMMENT =	perl module for using OpenSSL
 
-DISTNAME =	Net-SSLeay-1.88
-REVISION =	3
+DISTNAME =	Net-SSLeay-1.90
 
 CATEGORIES =	security
 
@@ -18,8 +17,8 @@ MODULES =		cpan
 TEST_DEPENDS =		devel/p5-Test-Exception \
 			devel/p5-Test-Warn \
 			devel/p5-Test-NoWarnings \
-			devel/p5-Test-Pod \
-			devel/p5-Test-Pod-Coverage
+			devel/p5-Test-Pod>=1.41 \
+			devel/p5-Test-Pod-Coverage>=1.00
 
 MODCPAN_EXAMPLES =	Yes
 SRCDIR = 		${WRKSRC}/${MODCPAN_EXAMPLES_DIST}

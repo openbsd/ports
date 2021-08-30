@@ -1,9 +1,9 @@
-$OpenBSD: patch-SSLeay_xs,v 1.1 2021/04/28 17:57:58 tb Exp $
+$OpenBSD: patch-SSLeay_xs,v 1.2 2021/08/30 19:13:26 bluhm Exp $
 
 Index: SSLeay.xs
 --- SSLeay.xs.orig
 +++ SSLeay.xs
-@@ -6065,7 +6065,7 @@ SSL_total_renegotiations(ssl)
+@@ -6172,7 +6172,7 @@ SSL_total_renegotiations(ssl)
    OUTPUT:
    RETVAL
  
