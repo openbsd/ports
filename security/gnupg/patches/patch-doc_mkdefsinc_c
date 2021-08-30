@@ -1,0 +1,19 @@
+$OpenBSD: patch-doc_mkdefsinc_c,v 1.1 2021/08/30 17:09:19 jca Exp $
+
+Don't use printf %n.
+
+Index: doc/mkdefsinc.c
+--- doc/mkdefsinc.c.orig
++++ doc/mkdefsinc.c
+@@ -286,8 +286,9 @@ main (int argc, char **argv)
+         }
+       n = strlen (opt_date) + strlen (month) + 2 + 1;
+       p = xmalloc (n);
+-      snprintf (p, n, "%d %n%s %d",
+-                atoi (opt_date+8), &monthoff, month, atoi (opt_date));
++      snprintf (p, n, "%d %s %d",
++                atoi (opt_date+8), month, atoi (opt_date));
++      monthoff = strchr (p, ' ') - p + 1;
+       xfree (opt_date);
+       opt_date = p;
+     }
