@@ -1,0 +1,52 @@
+$OpenBSD: patch-install_rb,v 1.1 2021/08/30 19:23:38 jeremy Exp $
+
+Work on ruby 3.0+.
+
+Index: install.rb
+--- install.rb.orig
++++ install.rb
+@@ -60,7 +60,7 @@ def do_configs(configs, target, strip = 'conf/')
+   Dir.mkdir(target) unless File.directory? target
+   configs.each do |cf|
+     ocf = File.join(InstallOptions.config_dir, cf.gsub(/#{strip}/, ''))
+-    FileUtils.install(cf, ocf, {:mode => 0644, :preserve => true, :verbose => true})
++    FileUtils.install(cf, ocf, :mode => 0644, :preserve => true, :verbose => true)
+   end
+ end
+ 
+@@ -77,9 +77,9 @@ def do_libs(libs, strip = 'lib/')
+     next if File.directory? lf
+     olf = File.join(InstallOptions.site_dir, lf.sub(/^#{strip}/, ''))
+     op = File.dirname(olf)
+-    FileUtils.makedirs(op, {:mode => 0755, :verbose => true})
++    FileUtils.makedirs(op, :mode => 0755, :verbose => true)
+     FileUtils.chmod(0755, op)
+-    FileUtils.install(lf, olf, {:mode => 0644, :preserve => true, :verbose => true})
++    FileUtils.install(lf, olf, :mode => 0644, :preserve => true, :verbose => true)
+   end
+ end
+ 
+@@ -87,9 +87,9 @@ def do_man(man, strip = 'man/')
+   man.each do |mf|
+     omf = File.join(InstallOptions.man_dir, mf.gsub(/#{strip}/, ''))
+     om = File.dirname(omf)
+-    FileUtils.makedirs(om, {:mode => 0755, :verbose => true})
++    FileUtils.makedirs(om, :mode => 0755, :verbose => true)
+     FileUtils.chmod(0755, om)
+-    FileUtils.install(mf, omf, {:mode => 0644, :preserve => true, :verbose => true})
++    FileUtils.install(mf, omf, :mode => 0644, :preserve => true, :verbose => true)
+     # Solaris does not support gzipped man pages. When called with
+     # --no-check-prereqs/without facter the default gzip behavior still applies
+     unless $operatingsystem == "Solaris"
+@@ -105,9 +105,9 @@ def do_locales(locale, strip = 'locales/')
+     next if File.directory? lf
+     olf = File.join(InstallOptions.locale_dir, lf.sub(/^#{strip}/, ''))
+     op = File.dirname(olf)
+-    FileUtils.makedirs(op, {:mode => 0755, :verbose => true})
++    FileUtils.makedirs(op, :mode => 0755, :verbose => true)
+     FileUtils.chmod(0755, op)
+-    FileUtils.install(lf, olf, {:mode => 0644, :preserve => true, :verbose => true})
++    FileUtils.install(lf, olf, :mode => 0644, :preserve => true, :verbose => true)
+   end
+ end
+ 

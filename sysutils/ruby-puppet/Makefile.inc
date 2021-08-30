@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.50 2021/02/23 19:39:43 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.51 2021/08/30 19:23:38 jeremy Exp $
 
 PKG_ARCH ?=	*
 COMMENT ?=	centralised configuration management for networks
@@ -37,6 +37,7 @@ MODULES +=		lang/ruby \
 			lang/python
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
+MODRUBY_REV =		2.7
 
 BUILD_DEPENDS +=${RUN_DEPENDS}
 RUN_DEPENDS +=	archivers/gtar \

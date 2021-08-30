@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2021/07/23 18:56:19 sebastia Exp $
+# $OpenBSD: Makefile,v 1.91 2021/08/30 19:23:38 jeremy Exp $
 
 ONLY_FOR_ARCHS =	${CLANG_ARCHS} ${LLVM_ARCHS}
 
@@ -11,7 +11,6 @@ SHARED_LIBS +=  	facter                    3.3
 PKGSPEC =		facter->=3.0,<4.0
 CATEGORIES =		sysutils
 
-
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
 # Apache2
@@ -19,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://downloads.puppetlabs.com/facter/
 
+MODRUBY_REV =		2.7
 MODULES +=		devel/cmake \
 			lang/ruby
 

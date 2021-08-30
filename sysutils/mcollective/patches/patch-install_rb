@@ -1,0 +1,41 @@
+$OpenBSD: patch-install_rb,v 1.1 2021/08/30 19:23:38 jeremy Exp $
+
+Work on ruby 3.0+.
+
+Index: install.rb
+--- install.rb.orig
++++ install.rb
+@@ -48,7 +48,7 @@ end
+ if (defined?(RbConfig) ? RbConfig : Config)::CONFIG['host_os'] =~ /mswin|win32|dos|mingw|cygwin/i
+   WINDOWS = TRUE
+ else
+-  WINDOWS = FALSE
++  WINDOWS = false
+ end
+ 
+ PREREQS = %w{}
+@@ -79,8 +79,8 @@ def do_configs(configs, target, strip = 'etc/')
+   configs.each do |cf|
+     ocf = File.join(target, cf.gsub(Regexp.new(strip), ''))
+     oc = File.dirname(ocf)
+-    makedirs(oc, {:mode => 0755, :verbose => true})
+-    install(cf, ocf, {:mode => 0644, :preserve => true, :verbose => true})
++    makedirs(oc, :mode => 0755, :verbose => true)
++    install(cf, ocf, :mode => 0644, :preserve => true, :verbose => true)
+   end
+ end
+ 
+@@ -97,10 +97,10 @@ def do_libs(libs, target, strip = 'lib/')
+     olf = File.join(target, lf.sub(/^#{strip}/, ''))
+     op = File.dirname(olf)
+     if File.directory?(lf)
+-      makedirs(olf, {:mode => 0755, :verbose => true})
++      makedirs(olf, :mode => 0755, :verbose => true)
+     else
+-      makedirs(op, {:mode => 0755, :verbose => true})
+-      install(lf, olf, {:mode => 0644, :preserve => true, :verbose => true})
++      makedirs(op, :mode => 0755, :verbose => true)
++      install(lf, olf, :mode => 0644, :preserve => true, :verbose => true)
+     end
+   end
+ end
