@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1298 2021/08/29 23:11:57 ian Exp $
+# $OpenBSD: Quirks.pm,v 1.1299 2021/08/30 14:40:05 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1435,6 +1435,7 @@ my $cve = {
 	'multimedia/libquicktime' => 'libquicktime-<1.2.4p13',
 	'net/curl' => 'curl-<7.65.0',
 	'net/dhcpcd' => 'dhcpcd-<7.2.2',
+	'net/dino' => 'dino-<0.2.1',
 	'net/haproxy' => 'haproxy-<2.0.14',
 	'net/icecast' => 'icecast-<2.4.4',
 	'net/irssi' => 'irssi-<1.2.1',

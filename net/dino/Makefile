@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2021/08/29 12:59:17 solene Exp $
+# $OpenBSD: Makefile,v 1.4 2021/08/30 14:40:05 kn Exp $
 
 COMMENT=	XMPP desktop client
-VERSION=	0.2.0
+VERSION=	0.2.1
 DISTNAME=	dino-${VERSION}
 CATEGORIES=	net x11
-REVISION=	0
 
 SHARED_LIBS +=	dino                      0.0 # 0.0
 SHARED_LIBS +=	qlite                     0.0 # 0.1
@@ -31,8 +30,8 @@ LIB_DEPENDS=	x11/gtk+3 \
 		textproc/icu4c \
 		net/libsignal-protocol-c
 
-WANTLIB += atk-1.0 c cairo cairo-gobject gcrypt gdk-3 gdk_pixbuf-2.0
-WANTLIB += gee-0.8 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpgme
+WANTLIB += assuan atk-1.0 c cairo cairo-gobject gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB += gee-0.8 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error gpgme
 WANTLIB += gtk-3 harfbuzz icudata icuuc intl m pango-1.0 pangocairo-1.0
 WANTLIB += qrencode signal-protocol-c soup-2.4 sqlite3
 
