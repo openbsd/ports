@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/01 01:46:00 kn Exp $
+# $OpenBSD: Makefile,v 1.6 2021/08/31 19:38:20 fcambus Exp $
 
 COMMENT =	command-line editor and web browser
 
 GH_ACCOUNT =	CMB
 GH_PROJECT =	edbrowse
 GH_TAGNAME =	v3.7.7
+REVISION =	0
 
 CATEGORIES =	www
 
-HOMEPAGE =	http://edbrowse.org/
+HOMEPAGE =	https://edbrowse.org/
 
 # GPL
 PERMIT_PACKAGE =	Yes
