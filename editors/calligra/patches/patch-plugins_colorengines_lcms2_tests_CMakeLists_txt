@@ -1,8 +1,19 @@
-$OpenBSD: patch-plugins_colorengines_lcms2_tests_CMakeLists_txt,v 1.1 2017/05/30 18:57:20 rsadowski Exp $
+$OpenBSD: patch-plugins_colorengines_lcms2_tests_CMakeLists_txt,v 1.2 2021/08/31 07:31:43 ajacoutot Exp $
+
+Fix build with OpenEXR>=3
 
 Index: plugins/colorengines/lcms2/tests/CMakeLists.txt
 --- plugins/colorengines/lcms2/tests/CMakeLists.txt.orig
 +++ plugins/colorengines/lcms2/tests/CMakeLists.txt
+@@ -12,7 +12,7 @@ include_directories( ../colorspaces/cmyk_u16
+     ../colorprofiles
+     ..
+ )
+-if(OPENEXR_FOUND)
++if(OpenEXR_FOUND)
+     include_directories(${OPENEXR_INCLUDE_DIR})
+ endif()
+ include_directories( ${PIGMENT_INCLUDES} ${LCMS2_INCLUDE_DIR} )
 @@ -33,14 +33,14 @@ endmacro()
  
  ########### next target ###############

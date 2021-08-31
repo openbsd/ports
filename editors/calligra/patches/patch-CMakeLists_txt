@@ -1,4 +1,11 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2020/05/14 19:42:36 rsadowski Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2021/08/31 07:31:43 ajacoutot Exp $
+
+Fix build with OpenEXR>=3
+
+From 62f510702ef9c34ac50f8d8601a4290ab558464c Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?=C3=96mer=20Fad=C4=B1l=20Usta?= <omerusta@gmail.com>
+Date: Sun, 6 Jun 2021 08:41:05 +0000
+Subject: [PATCH] Update Cmake and deps, Fix Freetype and FontConfig Linkage
 
 Enforce -std=c++14 *after* -std=c++0x to let it build with poppler.
 From sthen@
@@ -6,13 +13,40 @@ From sthen@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -913,6 +913,9 @@ set(KOPAGEAPP_INCLUDES ${TEXTLAYOUT_INCLUDES}
+@@ -391,8 +391,13 @@ endif ()
+ ## Check for OpenEXR
+ ##
+ 
+-macro_optional_find_package(OpenEXR)
+-macro_bool_to_01(OPENEXR_FOUND HAVE_OPENEXR)
++macro_optional_find_package(Imath 3.0 CONFIG QUIET)
++if(TARGET Imath::Imath)
++    set(OPENEXR_LIBRARIES Imath::Imath)
++else()
++    macro_optional_find_package(OpenEXR)
++endif()
++macro_bool_to_01(OpenEXR_FOUND HAVE_OPENEXR)
+ 
+ ##
+ ## Test for GNU Scientific Library
+@@ -641,8 +646,8 @@ if(NOT WIN32 AND NOT APPLE)
+ 	)
+ endif()
+ 
+-if(NOT FONTCONFIG_FOUND OR NOT FREETYPE_FOUND)
+-    set(FONTCONFIG_INCLUDE_DIR "")
++if(NOT Fontconfig_FOUND OR NOT FREETYPE_FOUND)
++    set(Fontconfig_INCLUDE_DIRS "")
+     set(FREETYPE_INCLUDE_DIRS "")
+ else()
+     add_definitions( -DSHOULD_BUILD_FONT_CONVERSION )
+@@ -912,6 +917,9 @@ set(KOPAGEAPP_INCLUDES ${TEXTLAYOUT_INCLUDES}
+     ${CMAKE_SOURCE_DIR}/libs/pageapp
      ${CMAKE_SOURCE_DIR}/libs/pageapp/commands
      ${CMAKE_BINARY_DIR}/libs/pageapp )
- 
++
 +
 +set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
-+
+ 
  #############################################
  ####           filter libraries          ####
- #############################################
