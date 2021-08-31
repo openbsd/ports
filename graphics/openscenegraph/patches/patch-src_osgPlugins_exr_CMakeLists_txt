@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_osgPlugins_exr_CMakeLists_txt,v 1.1 2021/08/31 09:57:53 ajacoutot Exp $
+
+Fix build with OpenEXR>=3
+
+Index: src/osgPlugins/exr/CMakeLists.txt
+--- src/osgPlugins/exr/CMakeLists.txt.orig
++++ src/osgPlugins/exr/CMakeLists.txt
+@@ -1,5 +1,5 @@
+ INCLUDE_DIRECTORIES( ${ILMBASE_INCLUDE_DIR}/OpenEXR )
+-INCLUDE_DIRECTORIES( ${OPENEXR_INCLUDE_DIR}/OpenEXR )
++INCLUDE_DIRECTORIES( ${OPENEXR_INCLUDE_DIR} )
+ 
+ SET(TARGET_SRC ReaderWriterEXR.cpp )
+ 
+@@ -12,3 +12,8 @@ ENDIF()
+ 
+ #### end var setup  ###
+ SETUP_PLUGIN(exr)
++
++# Force linking with OpenEXR/Imath until upstream fixes their config.
++if(TARGET Imath::Imath)
++    target_link_libraries(osgdb_exr OpenEXR::OpenEXR Imath::Imath)
++endif()
