@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_gui_InteractiveCamera_h,v 1.1 2021/08/31 07:31:14 ajacoutot Exp $
+
+Fix build with OpenEXR>=3
+
+Index: src/gui/InteractiveCamera.h
+--- src/gui/InteractiveCamera.h.orig
++++ src/gui/InteractiveCamera.h
+@@ -23,8 +23,8 @@
+ #pragma GCC diagnostic ignored "-Wdeprecated-register"
+ #endif
+ 
+-#include <OpenEXR/ImathVec.h>
+-#include <OpenEXR/ImathMatrix.h>
++#include <Imath/ImathVec.h>
++#include <Imath/ImathMatrix.h>
+ 
+ #ifdef __clang__
+ #pragma GCC diagnostic pop

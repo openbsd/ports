@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_main_cpp,v 1.1 2021/08/31 07:31:14 ajacoutot Exp $
+
+Fix build with OpenEXR>=3: error: use of undeclared identifier 'DBL_MAX'
+
+Index: src/main.cpp
+--- src/main.cpp.orig
++++ src/main.cpp
+@@ -8,6 +8,8 @@
+ #include <QTextCodec>
+ #include <QUuid>
+ 
++#include <float.h>
++
+ #include "argparse.h"
+ #include "config.h"
+ #include "IpcChannel.h"

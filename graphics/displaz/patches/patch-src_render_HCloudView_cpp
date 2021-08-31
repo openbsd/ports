@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_render_HCloudView_cpp,v 1.1 2021/08/31 07:31:14 ajacoutot Exp $
+
+Fix build with OpenEXR>=3: error: use of undeclared identifier 'DBL_MAX'
+
+Index: src/render/HCloudView.cpp
+--- src/render/HCloudView.cpp.orig
++++ src/render/HCloudView.cpp
+@@ -1,6 +1,8 @@
+ // Copyright 2015, Christopher J. Foster and the other displaz contributors.
+ // Use of this code is governed by the BSD-style license found in LICENSE.txt
+ 
++#include <float.h>
++
+ #include "HCloudView.h"
+ 
+ #include "hcloud.h"

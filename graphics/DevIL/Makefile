@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2020/05/14 12:35:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2021/08/31 07:31:13 ajacoutot Exp $
 
 COMMENT=		library for powerful image loading capabilities
 
 DISTNAME=		DevIL-1.7.8
-REVISION=		17
+REVISION=		18
 SHARED_LIBS+=		IL	1.0 # 2.0
 SHARED_LIBS+=		ILU	1.0 # 2.0
 SHARED_LIBS+=		ILUT	1.0 # 2.0
@@ -18,9 +18,10 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=openil/}
 EXTRACT_SUFX=		.zip
 
-WANTLIB += ${COMPILER_LIBCXX} GL GLU Half-2_5 ICE Iex-2_5 IexMath-2_5
-WANTLIB += IlmImf-2_5 IlmThread-2_5 Imath-2_5 SDL SM X11 X11-xcb
-WANTLIB += Xdamage Xext Xfixes Xi Xmu Xrandr Xrender Xt Xxf86vm
+WANTLIB += ${COMPILER_LIBCXX} GL GLU ICE Xau Xdmcp lzma xcb-shm zstd
+WANTLIB += Iex-3_1 OpenEXR-3_1 OpenEXRCore-3_1 OpenEXRUtil-3_1
+WANTLIB += IlmThread-3_1 Imath-3_1 SDL SM X11 X11-xcb
+WANTLIB += Xext Xfixes Xi Xmu Xrandr Xrender Xt Xxf86vm
 WANTLIB += c drm expat glapi glut iconv jasper jpeg lcms m mng
 WANTLIB += png sndio tiff usbhid xcb xcb-dri2 xcb-dri3 xcb-glx
 WANTLIB += xcb-present xcb-sync xcb-xfixes xshmfence z
