@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/08/29 08:30:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2021/08/31 07:30:29 ajacoutot Exp $
 
 BROKEN-powerpc64 =	update297.gmic is not a valid G'MIC update file
 
@@ -6,6 +6,7 @@ COMMENT = 	image processing framework
 
 V = 2.9.7
 DISTNAME = 	gmic-$V
+REVISION =	0
 
 SHARED_LIBS +=  gmic 0.0 # 1
 
@@ -16,9 +17,9 @@ HOMEPAGE = 	https://gmic.eu/
 PERMIT_PACKAGE = Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 c m z
-WANTLIB += GraphicsMagick GraphicsMagick++ Half-2_5 Iex-2_5 IexMath-2_5
-WANTLIB += IlmImf-2_5 IlmThread-2_5 Imath-2_5 curl fftw3 fftw3_threads
-WANTLIB += jpeg png tiff
+WANTLIB += GraphicsMagick GraphicsMagick++ Iex-3_1
+WANTLIB += IlmThread-3_1 Imath-3_1 curl fftw3 fftw3_threads
+WANTLIB += jpeg png tiff OpenEXR-3_1 OpenEXRCore-3_1 OpenEXRUtil-3_1
 
 WANTLIB += opencv_calib3d opencv_core opencv_dnn opencv_features2d
 WANTLIB += opencv_flann opencv_highgui opencv_imgcodecs opencv_imgproc

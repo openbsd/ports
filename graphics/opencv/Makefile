@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2021/08/22 07:00:15 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.75 2021/08/31 07:30:29 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-java =	aarch64 amd64 i386
 
@@ -14,6 +14,9 @@ GH_TAGNAME =		${V}
 PKGNAME-main =		opencv-${V}
 PKGNAME-java =		opencv-java-${V}
 
+REVISION-main =		0
+REVISION-java =		0
+
 HOMEPAGE =		https://www.opencv.org/
 
 MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
@@ -25,14 +28,14 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 SHARED_LIBS += $i 9.2
 .endfor
 
-WANTLIB-main += ${COMPILER_LIBCXX} IlmImf-2_5 avcodec avformat avutil
+WANTLIB-main += ${COMPILER_LIBCXX} avcodec avformat avutil OpenEXR-3_1
 WANTLIB-main += c cairo gdk-3 gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gstapp-1.0
 WANTLIB-main += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gstriff-1.0
 WANTLIB-main += gstvideo-1.0 gtk-3 jpeg m openjp2 png swscale tiff
 WANTLIB-main += webp z
 
-WANTLIB-java += ${COMPILER_LIBCXX} m opencv_calib3d opencv_core opencv_dnn
-WANTLIB-java += opencv_features2d opencv_flann opencv_highgui opencv_imgcodecs
+WANTLIB-java += ${COMPILER_LIBCXX} opencv_calib3d opencv_core opencv_dnn
+WANTLIB-java += opencv_features2d opencv_flann opencv_imgcodecs
 WANTLIB-java += opencv_imgproc opencv_ml opencv_objdetect opencv_photo
 WANTLIB-java += opencv_video opencv_videoio
 

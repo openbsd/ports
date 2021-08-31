@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2021/07/15 07:02:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2021/08/31 07:30:29 ajacoutot Exp $
 
 BROKEN-powerpc =	segfault in multi-threaded mode, synfigstudio can't be built
 BROKEN-powerpc64 =	segfault in multi-threaded mode, synfigstudio can't be built
@@ -8,7 +8,7 @@ COMMENT =		2D animation software
 V=			1.2.1
 DISTNAME =		synfig-$V
 API_V =			1.0
-REVISION =		7
+REVISION =		8
 
 SHARED_LIBS +=  synfig                    2.0 # 0.0
 
@@ -19,8 +19,9 @@ HOMEPAGE =		https://www.synfig.org/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Half-2_5 ICE Iex-2_5 IexMath-2_5
-WANTLIB += IlmImf-2_5 IlmThread-2_5 Imath-2_5 Magick++-6.Q16 MagickCore-6.Q16
+WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += ICE Iex-3_1 OpenEXR-3_1 OpenEXRCore-3_1 OpenEXRUtil-3_1
+WANTLIB += IlmThread-3_1 Imath-3_1 Magick++-6.Q16 MagickCore-6.Q16
 WANTLIB += MagickWand-6.Q16 SM X11 Xext Xrender Xt aom boost_chrono-mt
 WANTLIB += boost_filesystem boost_program_options-mt boost_system
 WANTLIB += bz2 c cairo dav1d de265 djvulibre expat ffi fftw3 fontconfig

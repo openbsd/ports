@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2021/02/26 18:20:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2021/08/31 07:30:29 ajacoutot Exp $
 
 COMMENT=		2D games framework for use with Lua
 
 V=			0.8.0
 DISTNAME=		love-$V-linux-src
 PKGNAME=		love-$V
-REVISION=		12
+REVISION=		13
 
 HOMEPAGE=		https://love2d.org/
 
@@ -15,14 +15,14 @@ CATEGORIES=		games lang/lua
 # docs: freebsd license
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${MODLUA_WANTLIB}
-WANTLIB += ${COMPILER_LIBCXX} GL Half-2_5 IL Iex-2_5 IexMath-2_5
-WANTLIB += IlmImf-2_5 IlmThread-2_5 Imath-2_5 SDL X11 X11-xcb
-WANTLIB += Xdamage Xext Xfixes Xxf86vm c drm expat freetype glapi
-WANTLIB += iconv jasper jpeg lcms m mng modplug mpg123 ogg openal
-WANTLIB += physfs png sndio tiff usbhid vorbis vorbisfile xcb
-WANTLIB += xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-sync xcb-xfixes
-WANTLIB += xshmfence z
+WANTLIB += ${MODLUA_WANTLIB} ${COMPILER_LIBCXX}
+WANTLIB += GL IL Iex-3_1 IlmThread-3_1 Imath-3_1 OpenEXR-3_1 OpenEXRCore-3_1
+WANTLIB += OpenEXRUtil-3_1 SDL X11 X11-xcb Xau Xdmcp Xext Xfixes
+WANTLIB += Xxf86vm c drm expat freetype glapi iconv jasper jpeg
+WANTLIB += lcms lzma m mng modplug mpg123 ogg openal physfs png
+WANTLIB += sndio tiff usbhid vorbis vorbisfile xcb xcb-dri2 xcb-dri3
+WANTLIB += xcb-glx xcb-present xcb-shm xcb-sync xcb-xfixes xshmfence
+WANTLIB += z zstd
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -38,7 +38,6 @@ LIB_DEPENDS=		audio/libmodplug \
 			devel/physfs \
 			devel/sdl \
 			graphics/DevIL \
-			graphics/openexr \
 			${MODLUA_LIB_DEPENDS}
 
 CONFIGURE_STYLE=	gnu

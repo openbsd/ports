@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2021/05/23 19:46:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2021/08/31 07:30:29 ajacoutot Exp $
 
 COMMENT =		2D animation software studio
 BROKEN-alpha =		[keyframe_lock_past_on_icon.png] Bus error (core dumped)
@@ -8,7 +8,7 @@ BROKEN-sparc64 =	terminate called after throwing an instance of 'synfig::Excepti
 V =			1.2.1
 DISTNAME =		synfigstudio-$V
 API_V =			0.0
-REVISION =		5
+REVISION =		6
 
 SHARED_LIBS +=  synfigapp                 2.0 # 0.0
 
@@ -19,19 +19,20 @@ HOMEPAGE =		https://www.synfig.org/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Half-2_5 ICE Iex-2_5 IexMath-2_5
-WANTLIB += IlmImf-2_5 IlmThread-2_5 Imath-2_5 Magick++-6.Q16 MagickCore-6.Q16
-WANTLIB += MagickWand-6.Q16 SM X11 Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 atk-bridge-2.0
-WANTLIB += atkmm-1.6 bz2 c cairo cairo-gobject cairomm-1.0 db
-WANTLIB += djvulibre epoxy expat ffi fftw3 fontconfig freetype
-WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0 giomm-2.4
-WANTLIB += glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gthread-2.0 gtk-3 gtkmm-3.0 harfbuzz iconv intl jack
-WANTLIB += jasper jbig jpeg lcms2 ltdl lzma m mlt mlt++ openjp2
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre
-WANTLIB += pixman-1 png raw_r sigc-2.0 synfig tiff webp webpmux
-WANTLIB += xcb xcb-render xcb-shm xml++-2.6 xml2 z
+WANTLIB += ${COMPILER_LIBCXX} ICE Iex-3_1 IlmThread-3_1 Imath-3_1
+WANTLIB += Magick++-6.Q16 MagickCore-6.Q16 MagickWand-6.Q16 OpenEXR-3_1
+WANTLIB += OpenEXRCore-3_1 OpenEXRUtil-3_1 SM X11 Xcomposite Xcursor
+WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xt aom
+WANTLIB += atk-1.0 atk-bridge-2.0 atkmm-1.6 bz2 c cairo cairo-gobject
+WANTLIB += cairomm-1.0 dav1d db de265 djvulibre epoxy execinfo
+WANTLIB += expat ffi fftw3 fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
+WANTLIB += gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
+WANTLIB += gobject-2.0 graphite2 gtk-3 gtkmm-3.0 harfbuzz heif
+WANTLIB += iconv intl jack jasper jbig jpeg lcms2 ltdl lzma m
+WANTLIB += mlt mlt++ openjp2 pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pangomm-1.4 pcre pixman-1 png raw_r sigc-2.0 synfig
+WANTLIB += tiff webp webpdemux webpmux x265 xcb xcb-render xcb-shm
+WANTLIB += xml++-2.6 xml2 z zstd
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=synfig/}
 

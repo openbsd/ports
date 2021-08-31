@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.146 2021/06/09 19:50:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.147 2021/08/31 07:30:29 ajacoutot Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 DISTNAME =	gimp-2.10.24
-REVISION =	1
+REVISION =	2
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets
@@ -25,8 +25,8 @@ EXTRACT_SUFX=	.tar.bz2
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += Half-2_5 ICE Iex-2_5 IexMath-2_5 IlmImf-2_5 IlmThread-2_5
-WANTLIB += Imath-2_5 SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += ICE Iex-3_1 IlmThread-3_1 OpenEXR-3_1 OpenEXRCore-3_1 OpenEXRUtil-3_1
+WANTLIB += Imath-3_1 SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xmu Xpm Xrandr Xrender Xt aa aom atk-1.0
 WANTLIB += avahi-client avahi-common babl-0.1 bz2 c cairo cairo-gobject
 WANTLIB += cups curses dav1d dbus-1 de265 execinfo exiv2 expat
