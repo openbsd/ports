@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_Makefile_in,v 1.11 2019/11/17 13:11:58 kn Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.12 2021/08/31 08:00:12 sthen Exp $
 
 - avoid udev
 - fix examples directory
@@ -6,7 +6,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.11 2019/11/17 13:11:58 kn Exp $
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -517,7 +517,6 @@ EXTRA_DIST = Info.plist.src create_Info_plist.pl reade
+@@ -513,7 +513,6 @@ EXTRA_DIST = Info.plist.src create_Info_plist.pl reade
  	towitoko/COPYING towitoko/README openct/LICENSE openct/README \
  	convert_version.pl 92_pcscd_ccid.rules
  
@@ -14,7 +14,7 @@ Index: src/Makefile.in
  DISTCLEANFILES = tokenparser.c Info.plist
  all: all-am
  
-@@ -1299,13 +1298,12 @@ install_ccid: libccid.la Info.plist
+@@ -1295,13 +1294,12 @@ install_ccid: libccid.la Info.plist
  	$(mkinstalldirs) "$(DESTDIR)$(usbdropdir)/$(CCID_BUNDLE)/Contents/$(BUNDLE_HOST)/"
  	cp Info.plist "$(DESTDIR)$(usbdropdir)/$(CCID_BUNDLE)/Contents/"
  	cp .libs/$(CCID_LIB) "$(DESTDIR)$(usbdropdir)/$(CCID_BUNDLE)/Contents/$(BUNDLE_HOST)/$(CCID_LIB)"
