@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/02/14 20:27:33 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/08/31 11:05:07 ajacoutot Exp $
+@conflict py-virtualdisplay-*
+@pkgpath x11/py-virtualdisplay
 lib/python${MODPY_VERSION}/site-packages/PyVirtualDisplay-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/PyVirtualDisplay-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/PyVirtualDisplay-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -13,6 +15,7 @@ lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/${MODPY_PYCACHE}about.
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/${MODPY_PYCACHE}abstractdisplay.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/${MODPY_PYCACHE}display.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/${MODPY_PYCACHE}smartdisplay.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/${MODPY_PYCACHE}xauth.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/${MODPY_PYCACHE}xephyr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/${MODPY_PYCACHE}xvfb.${MODPY_PYC_MAGIC_TAG}pyc
@@ -24,15 +27,20 @@ lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/${MODPY_PYCACHE}headless.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/${MODPY_PYCACHE}lowres.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/${MODPY_PYCACHE}screenshot1.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/${MODPY_PYCACHE}screenshot3.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/${MODPY_PYCACHE}nested.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/${MODPY_PYCACHE}screenshot.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/${MODPY_PYCACHE}threadsafe.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/${MODPY_PYCACHE}vncserver.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/headless.py
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/lowres.py
-lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/screenshot1.py
-lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/screenshot3.py
+lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/nested.py
+lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/screenshot.py
+lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/threadsafe.py
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/vncserver.py
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/smartdisplay.py
+lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/util.py
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/xauth.py
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/xephyr.py
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/xvfb.py

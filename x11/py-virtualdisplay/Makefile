@@ -1,26 +1,26 @@
-# $OpenBSD: Makefile,v 1.5 2021/05/21 19:50:39 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2021/08/31 11:05:07 ajacoutot Exp $
 
-COMMENT =	Python wrapper for Xvfb, Xephyr and Xvnc
+COMMENT =		Python wrapper for Xvfb, Xephyr and Xvnc
 
-MODPY_EGG_VERSION = 0.2.1
-DISTNAME =	PyVirtualDisplay-${MODPY_EGG_VERSION}
-PKGNAME =	${DISTNAME:L:S/^py/py-/}
-REVISION =	2
+MODPY_EGG_VERSION =	2.2
+DISTNAME =		PyVirtualDisplay-${MODPY_EGG_VERSION}
+PKGNAME =		${DISTNAME:L:S/^py/py-/}
 
-CATEGORIES =	x11
+CATEGORIES =		x11
 
-HOMEPAGE =	https://github.com/ponty/pyvirtualdisplay
+HOMEPAGE =		https://github.com/ponty/pyvirtualdisplay
 
 # BSD 2-clauses
 PERMIT_PACKAGE =	Yes
 
-MODULES =	lang/python
-MODPY_PI =	Yes
-MODPY_SETUPTOOLS = Yes
+MODULES =		lang/python
 
-FLAVORS =	python3
-FLAVOR ?=
+MODPY_PI =		Yes
+MODPY_SETUPTOOLS	 = Yes
 
-RUN_DEPENDS =	devel/py-easyprocess${MODPY_FLAVOR}
+FLAVORS =		python3
+FLAVOR =		python3
+
+RUN_DEPENDS =		devel/py-easyprocess${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
