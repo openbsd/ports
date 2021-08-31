@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2021/02/23 19:39:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2021/08/31 11:36:13 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 ONLY_FOR_ARCHS =	${CLANG_ARCHS} ${LLVM_ARCHS}
@@ -7,15 +7,15 @@ COMMENT-main =		syntactic parser of different languages
 COMMENT-java =		Java bindings for link-grammar
 COMMENT-python =	Python bindings for link-grammar
 
-VERSION =		5.8.1
+VERSION =		5.9.1
 DISTNAME =		link-grammar-${VERSION}
 
 PKGNAME-main =		${DISTNAME}
 PKGNAME-java =		link-grammar-java-${VERSION}
 PKGNAME-python =	py3-link-grammar-${VERSION}
 
-SHARED_LIBS +=  link-grammar         8.0      # 12.0
-SHARED_LIBS +=  link-grammar-java    6.0      # 12.0
+SHARED_LIBS +=  link-grammar         9.0      # 14.1
+SHARED_LIBS +=  link-grammar-java    7.0      # 14.1
 
 CATEGORIES =		textproc
 
@@ -24,7 +24,7 @@ HOMEPAGE =		http://www.abisource.com/projects/link-grammar/
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += curses hunspell-1.7 m minisat pcre2-8 sqlite3 z ${COMPILER_LIBCXX}
+WANTLIB += curses hunspell-1.7 m pcre2-8 sqlite3 z ${COMPILER_LIBCXX}
 
 WANTLIB-main += ${WANTLIB} c perl pthread
 
@@ -51,8 +51,7 @@ PSEUDO_FLAVORS =	no_java
 
 BUILD_DEPENDS =		devel/swig
 
-LIB_DEPENDS=		databases/sqlite3 \
-			math/minisat
+LIB_DEPENDS=		databases/sqlite3
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			devel/pcre2 \
