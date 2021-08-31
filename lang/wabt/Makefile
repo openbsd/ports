@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2021/05/13 05:00:36 semarie Exp $
+# $OpenBSD: Makefile,v 1.5 2021/08/31 19:10:40 fcambus Exp $
 
 COMMENT =	WebAssembly binary toolkit
 
 DISTNAME =	wabt-${V}
-V =		1.0.23
+V =		1.0.24
 
 CATEGORIES =	lang
 

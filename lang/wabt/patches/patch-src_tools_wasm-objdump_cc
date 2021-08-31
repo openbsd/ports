@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_tools_wasm-objdump_cc,v 1.1 2021/05/13 05:00:36 semarie Exp $
+$OpenBSD: patch-src_tools_wasm-objdump_cc,v 1.2 2021/08/31 19:10:40 fcambus Exp $
 
 Index: src/tools/wasm-objdump.cc
 --- src/tools/wasm-objdump.cc.orig
@@ -13,7 +13,7 @@ Index: src/tools/wasm-objdump.cc
  #include "src/common.h"
  #include "src/option-parser.h"
  #include "src/stream.h"
-@@ -117,6 +120,9 @@ Result dump_file(const char* filename) {
+@@ -121,6 +124,9 @@ Result dump_file(const char* filename) {
  
  int ProgramMain(int argc, char** argv) {
    InitStdio();
