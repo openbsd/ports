@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2021/03/27 17:22:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2021/08/31 17:41:19 jca Exp $
 
 COMMENT =	tools to access human-editable plaintext record files
 
 DISTNAME =	recutils-1.8
+REVISION =	0
 
 SHARED_LIBS +=  rec                       0.0 # 1.0
 
