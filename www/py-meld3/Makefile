@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2021/05/21 19:50:38 kmos Exp $
+# $OpenBSD: Makefile,v 1.20 2021/08/31 11:20:14 ajacoutot Exp $
 
 COMMENT =		html/xml templating engine
 
-MODPY_EGG_VERSION =	1.0.2
+MODPY_EGG_VERSION =	2.0.1
 DISTNAME =		meld3-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		3
 
 CATEGORIES =		www textproc
 
@@ -19,11 +18,12 @@ MODPY_PI =		Yes
 MODULES =		lang/python
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 MODPY_SETUPTOOLS =	Yes
 
 DOCS =		${PREFIX}/share/doc/${MODPY_PY_PREFIX}meld3
+
 post-install:
 	${INSTALL_DATA_DIR} ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCS}

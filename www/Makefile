@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1037 2021/08/27 15:33:29 jeremy Exp $
+# $OpenBSD: Makefile,v 1.1038 2021/08/31 11:20:13 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -465,7 +465,6 @@
      SUBDIR += py-mako,python3
      SUBDIR += py-mastodon.py
      SUBDIR += py-mechanize,python3
-     SUBDIR += py-meld3
      SUBDIR += py-meld3,python3
      SUBDIR += py-metallum,python3
      SUBDIR += py-multidict,python3

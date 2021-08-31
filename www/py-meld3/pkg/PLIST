@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/10/03 23:02:46 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/08/31 11:20:14 ajacoutot Exp $
+@conflict py-meld3-*
+@pkgpath www/py-meld3
 lib/python${MODPY_VERSION}/site-packages/meld3/
 lib/python${MODPY_VERSION}/site-packages/meld3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/meld3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
