@@ -1,0 +1,64 @@
+$OpenBSD: README,v 1.1 2021/08/31 15:37:39 ajacoutot Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Hashicorp does not build terraform-providers for OpenBSD (yet?).
+Our MODGO framework doesn't play well with how the providers repositories are
+populated, meaning it's hard to automate ports creation and package building.
+
+For now, the recommended way is to manually build the required providers.
+
+Example: Terraform AWS provider; version 3.56.0
+===============================================
+
+Building
+--------
+
+The lang/go package is required for building:
+    # pkg_add go
+
+Go eats a lot of memory and you may need to bump your limits (`ulimit -d`).
+
+    $ git clone https://github.com/hashicorp/terraform-provider-aws
+    $ cd terraform-provider-aws
+    $ git fetch --all --tags && git checkout tags/v3.56.0 -b 3.56.0
+    $ gmake build
+
+The provider will be available at ${GOPATH}/bin/terraform-provider-aws.
+GOPATH defaults to ${HOME}/go/bin.
+
+Installing
+----------
+
+Providers can be installed under any of these directories:
+    ${PWD}/terraform.d/plugins
+    ~/.terraform.d/plugins
+    ~/.local/share/terraform/plugins
+    /usr/local/share/terraform/plugins
+
+They must follow the sub-hierarchy according to the plugin configuration.
+
+Using this code in the Terraform configuration...
+
+---8<-------------------------
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "3.56.0"
+    }
+  }
+}
+
+provider "aws" {
+  # Configuration options
+}
+---8<-------------------------
+
+... means that the Terraform AWS provider must be installed as:
+    ${PLUGINSDIR}/registry.terraform.io/hashicorp/aws/3.56.0/openbsd_amd64/terraform-provider-aws_v3.56.0
+(see the official documentation about "in-house providers").
+
+`terraform init` should now be able to detect this provider plugin.
