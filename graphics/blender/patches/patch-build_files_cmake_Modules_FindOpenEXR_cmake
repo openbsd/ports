@@ -1,0 +1,18 @@
+$OpenBSD: patch-build_files_cmake_Modules_FindOpenEXR_cmake,v 1.1 2021/08/31 07:32:17 ajacoutot Exp $
+
+Fix build with OpenEXR>=3
+
+Index: build_files/cmake/Modules/FindOpenEXR.cmake
+--- build_files/cmake/Modules/FindOpenEXR.cmake.orig
++++ build_files/cmake/Modules/FindOpenEXR.cmake
+@@ -34,9 +34,8 @@ ENDIF()
+ SET(_openexr_libs_ver_init "2.0")
+ 
+ SET(_openexr_FIND_COMPONENTS
+-  Half
+   Iex
+-  IlmImf
++  OpenEXR
+   IlmThread
+   Imath
+ )

@@ -1,0 +1,29 @@
+$OpenBSD: patch-cmake_modules_FindIlmBase_cmake,v 1.1 2021/08/31 07:32:18 ajacoutot Exp $
+
+Fix build with OpenEXR>=3
+
+Index: cmake/modules/FindIlmBase.cmake
+--- cmake/modules/FindIlmBase.cmake.orig
++++ cmake/modules/FindIlmBase.cmake
+@@ -4,7 +4,7 @@
+ 
+ find_package(PkgConfig QUIET)
+ if(PKG_CONFIG_FOUND)
+-  pkg_check_modules(PC_ILMBASE QUIET IlmBase)
++  pkg_check_modules(PC_ILMBASE QUIET Imath)
+ endif()
+ 
+ if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+@@ -49,11 +49,7 @@ if(IlmBase_INCLUDE_DIR AND EXISTS "${IlmBase_INCLUDE_D
+     endif()
+ endif()
+ 
+-if("${IlmBase_VERSION}" VERSION_LESS "2.0.0")
+-  set(IlmBase_ALL_LIBRARIES Imath Half Iex IlmThread)
+-else()
+-  set(IlmBase_ALL_LIBRARIES Imath Half Iex IexMath IlmThread)
+-endif()
++set(IlmBase_ALL_LIBRARIES Imath Iex IlmThread)
+ foreach(ILMBASE_LIB ${IlmBase_ALL_LIBRARIES})
+   string(TOUPPER ${ILMBASE_LIB} _upper_ilmbase_lib)
+   find_library(IlmBase_${_upper_ilmbase_lib}_LIBRARY

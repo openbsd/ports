@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.72 2021/02/23 19:39:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2021/08/31 07:32:18 ajacoutot Exp $
 
 BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 
 COMMENT =	panorama image stitcher
 
 DISTNAME =	hugin-2020.0.0
+REVISION =	0
 EXTRACT_SUFX =	.tar.bz2
 
 # not needed for releases, but makes RCs/betas easier to work with
@@ -28,8 +29,8 @@ MAINTAINER =	Kirill Bychkov <kirby@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU Half-2_5 Iex-2_5 IlmImf-2_5
-WANTLIB += IlmThread-2_5 Imath-2_5 X11 boost_filesystem-mt boost_system-mt
+WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU Iex-3_1 OpenEXR-3_1
+WANTLIB += IlmThread-3_1 Imath-3_1 X11 boost_filesystem-mt boost_system-mt
 WANTLIB += c exiv2 fftw3 jpeg lcms2 m pano13 png ${MODPY_WANTLIB} sqlite3
 WANTLIB += tiff vigraimpex wx_baseu-3.0 wx_baseu_net-3.0 wx_baseu_xml-3.0
 WANTLIB += wx_gtk3u_adv-3.0 wx_gtk3u_aui-3.0 wx_gtk3u_core-3.0
@@ -66,6 +67,9 @@ CONFIGURE_ENV =		MANDIR=man
 CONFIGURE_ARGS +=	-DBUILD_HSI=ON \
 			-Wno-dev
 NO_TEST =		Yes
+
+# Fix build with OpeEXR>=3 (Imath split)
+CXXFLAGS +=		-I${LOCALBASE}/include/Imath
 
 MODPY_ADJ_FILES =	src/hugin_script_interface/hpi.py \
 			src/hugin_script_interface/plugins/shooting_pattern.py \
