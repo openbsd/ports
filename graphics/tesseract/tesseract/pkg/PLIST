@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/02/19 08:55:34 rapha Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/08/31 12:26:42 ajacoutot Exp $
 @pkgpath graphics/tesseract,-main
 @pkgpath graphics/tesseract
 @bin bin/ambiguous_words
@@ -26,7 +26,6 @@ include/tesseract/baseapi.h
 include/tesseract/capi.h
 include/tesseract/genericvector.h
 include/tesseract/helpers.h
-include/tesseract/host.h
 include/tesseract/ltrresultiterator.h
 include/tesseract/ocrclass.h
 include/tesseract/osdetect.h
@@ -41,7 +40,7 @@ include/tesseract/tess_version.h
 include/tesseract/tesscallback.h
 include/tesseract/thresholder.h
 include/tesseract/unichar.h
-lib/libtesseract.a
+@static-lib lib/libtesseract.a
 lib/libtesseract.la
 @lib lib/libtesseract.so.${LIBtesseract_VERSION}
 lib/pkgconfig/tesseract.pc
@@ -65,18 +64,21 @@ lib/pkgconfig/tesseract.pc
 @man man/man5/unicharset.5
 share/doc/pkg-readmes/${PKGSTEM}
 share/tessdata/configs/
+share/tessdata/configs/alto
 share/tessdata/configs/ambigs.train
 share/tessdata/configs/api_config
 share/tessdata/configs/bigram
 share/tessdata/configs/box.train
 share/tessdata/configs/box.train.stderr
 share/tessdata/configs/digits
+share/tessdata/configs/get.images
 share/tessdata/configs/hocr
 share/tessdata/configs/inter
 share/tessdata/configs/kannada
 share/tessdata/configs/linebox
 share/tessdata/configs/logfile
 share/tessdata/configs/lstm.train
+share/tessdata/configs/lstmbox
 share/tessdata/configs/lstmdebug
 share/tessdata/configs/makebox
 share/tessdata/configs/pdf
@@ -86,6 +88,7 @@ share/tessdata/configs/strokewidth
 share/tessdata/configs/tsv
 share/tessdata/configs/txt
 share/tessdata/configs/unlv
+share/tessdata/configs/wordstrbox
 share/tessdata/pdf.ttf
 share/tessdata/tessconfigs/
 share/tessdata/tessconfigs/batch
