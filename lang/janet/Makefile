@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2021/08/22 23:29:08 jturner Exp $
+# $OpenBSD: Makefile,v 1.40 2021/08/31 17:23:24 jturner Exp $
 
 COMMENT =	functional and imperative programming language
 CATEGORIES =	lang
 
 GH_ACCOUNT =	janet-lang
 GH_PROJECT =	janet
-GH_TAGNAME =	v1.17.0
+GH_TAGNAME =	v1.17.1
 
 SHARED_LIBS +=	janet		5.0 # 1.17
 
