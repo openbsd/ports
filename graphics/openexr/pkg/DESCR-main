@@ -1,12 +1,10 @@
 OpenEXR is a high dynamic-range (HDR) image file format developed
 by Industrial Light & Magic for use in computer imaging applications.
 
-
 OpenEXR is used by ILM on all motion pictures currently in production.
 The first movies to employ OpenEXR were Harry Potter and the Sorcerers
 Stone, Men in Black II, Gangs of New York, and Signs. Since then,
 OpenEXR has become ILM's main image file format.
-
 
 OpenEXR's features include:
 
