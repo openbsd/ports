@@ -1,0 +1,29 @@
+$OpenBSD: patch-gcc_genmodes_c,v 1.1 2021/08/31 18:01:10 jca Exp $
+
+Don't use printf %n.
+
+Index: gcc/genmodes.c
+--- gcc/genmodes.c.orig
++++ gcc/genmodes.c
+@@ -786,7 +786,9 @@ calc_wider_mode (void)
+ 
+ #define tagged_printf(FMT, ARG, TAG) do {		\
+   int count_;						\
+-  printf ("  " FMT ",%n", ARG, &count_);		\
++  count_ = printf ("  " FMT ",", ARG);			\
++  if (count_ < 0)					\
++    count_ = 0;						\
+   printf ("%*s/* %s */\n", 27 - count_, "", TAG);	\
+ } while (0)
+ 
+@@ -821,7 +823,9 @@ enum machine_mode\n{");
+     for (m = modes[c]; m; m = m->next)
+       {
+ 	int count_;
+-	printf ("  %smode,%n", m->name, &count_);
++	count_ = printf ("  %smode,", m->name);
++	if (count_ < 0)
++	  count_ = 0;
+ 	printf ("%*s/* %s:%d */\n", 27 - count_, "",
+ 		 trim_filename (m->file), m->line);
+       }
