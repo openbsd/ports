@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.72 2021/02/12 13:44:00 kirby Exp $
+# $OpenBSD: Makefile,v 1.73 2021/08/31 11:17:52 fcambus Exp $
 
 COMMENT=		free Norton Commander clone with many useful features
 
-DISTNAME=		mc-4.8.26
+DISTNAME=		mc-4.8.27
 CATEGORIES=		misc
 
 HOMEPAGE=		https://www.midnight-commander.org/

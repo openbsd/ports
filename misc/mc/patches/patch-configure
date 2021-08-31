@@ -1,17 +1,17 @@
-$OpenBSD: patch-configure,v 1.21 2021/02/12 13:44:00 kirby Exp $
+$OpenBSD: patch-configure,v 1.22 2021/08/31 11:17:52 fcambus Exp $
 Index: configure
 --- configure.orig
 +++ configure
-@@ -16398,7 +16398,7 @@ if ${ac_cv_lib_slang_SLang_init_tty+:} false; then :
-   $as_echo_n "(cached) " >&6
+@@ -16251,7 +16251,7 @@ if ${mc_cv_slang_termcap+:} false; then :
  else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lslang  $LIBS"
-+LIBS="-lslang -ltermcap  $LIBS"
- cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ 
+ 	ac_save_LIBS="$LIBS"
+-	LIBS="$LIBS -lslang"
++	LIBS="$LIBS -lslang -ltermcap"
+ 	cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -24134,7 +24134,7 @@ if test -n "$EXT2FS_CFLAGS"; then
+@@ -23277,7 +23277,7 @@ if test -n "$EXT2FS_CFLAGS"; then
    ac_status=$?
    $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
    test $ac_status = 0; }; then
@@ -20,7 +20,7 @@ Index: configure
  		      test "x$?" != "x0" && pkg_failed=yes
  else
    pkg_failed=yes
-@@ -24384,7 +24384,7 @@ done
+@@ -23527,7 +23527,7 @@ done
    done
  IFS=$as_save_IFS
  
@@ -29,7 +29,7 @@ Index: configure
    ;;
  esac
  fi
-@@ -24425,7 +24425,7 @@ done
+@@ -23568,7 +23568,7 @@ done
    done
  IFS=$as_save_IFS
  
