@@ -1,9 +1,9 @@
-$OpenBSD: patch-main_c,v 1.1 2020/02/06 10:37:26 fcambus Exp $
+$OpenBSD: patch-main_c,v 1.2 2021/08/31 12:35:50 fcambus Exp $
 
 Index: main.c
 --- main.c.orig
 +++ main.c
-@@ -654,7 +654,7 @@ int Init_program(int argc,char * argv[])
+@@ -640,7 +640,7 @@ int Init_program(int argc,char * argv[])
    Init_list_of_pages(Spare.backups);
  
    // Determine the executable directory
