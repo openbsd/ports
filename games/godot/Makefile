@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2021/08/22 01:43:49 thfr Exp $
+# $OpenBSD: Makefile,v 1.25 2021/08/31 11:59:56 kirby Exp $
 
 BROKEN-powerpc =	fails at runtime, the UI is totally blank
 BROKEN-powerpc64 =	Unknown ISA
@@ -71,6 +71,8 @@ LIB_DEPENDS =		archivers/zstd \
 			security/polarssl
 
 NO_TEST =		Yes
+
+DPB_PROPERTIES =	parallel
 
 .if ${MACHINE_ARCH:Mhppa}
 LDFLAGS +=     -latomic
