@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1299 2021/08/30 14:40:05 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1300 2021/08/31 08:30:32 landry Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1236,6 +1236,8 @@ setup_obsolete_reason(
 	3 => 'qt4-sqlite2',
 	3 => 'qt4-tds',
 	1 => 'antlr3',
+	6 => 'enigmail',
+	6 => 'enigmail-seamonkey',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
