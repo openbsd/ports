@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.614 2021/08/08 09:37:05 jsg Exp $
+# $OpenBSD: Makefile,v 1.615 2021/08/31 21:02:03 tb Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -56,6 +56,7 @@
      SUBDIR += cpdup
      SUBDIR += cpuid
      SUBDIR += crashme
+     SUBDIR += czkawka
      SUBDIR += curlftpfs
      SUBDIR += d-feet
      SUBDIR += dateutils
