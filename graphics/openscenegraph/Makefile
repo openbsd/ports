@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.25 2021/08/30 17:32:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2021/08/31 07:33:34 ajacoutot Exp $
+
+BROKEN =		does not build with OpenEXR>=3
 
 # No consumers on macppc, saves 17 build hours in bulks
 NOT_FOR_ARCHS =		powerpc
