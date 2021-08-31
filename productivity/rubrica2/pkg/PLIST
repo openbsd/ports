@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/07/01 18:33:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/08/31 11:56:51 ajacoutot Exp $
 @bin bin/rubrica2
 include/libral-1.0/
 include/libral-1.0/libral/
@@ -27,22 +27,22 @@ include/libral-1.0/libral/types.h
 include/libral-1.0/libral/utils.h
 include/libral-1.0/libral/work.h
 lib/libral/
-lib/libral.a
+@static-lib lib/libral.a
 lib/libral.la
 @lib lib/libral.so.${LIBral_VERSION}
 lib/libral/plugins/
 @comment lib/libral/plugins/libcsv.a
 @comment lib/libral/plugins/libcsv.la
-lib/libral/plugins/libcsv.so
+@so lib/libral/plugins/libcsv.so
 @comment lib/libral/plugins/libcsvgmail.a
 @comment lib/libral/plugins/libcsvgmail.la
-lib/libral/plugins/libcsvgmail.so
+@so lib/libral/plugins/libcsvgmail.so
 @comment lib/libral/plugins/librubrica.a
 @comment lib/libral/plugins/librubrica.la
-lib/libral/plugins/librubrica.so
+@so lib/libral/plugins/librubrica.so
 @comment lib/libral/plugins/libvcard.a
 @comment lib/libral/plugins/libvcard.la
-lib/libral/plugins/libvcard.so
+@so lib/libral/plugins/libvcard.so
 lib/pkgconfig/libral.pc
 share/applications/rubrica2.desktop
 share/gtk-doc/html/libRAL/
@@ -65,13 +65,13 @@ share/locale/uk/LC_MESSAGES/rubrica2.mo
 share/mime-info/
 share/mime-info/rubrica2.keys
 share/mime-info/rubrica2.mime
+share/pixmaps/
 share/pixmaps/rubrica2/
 share/pixmaps/rubrica2/16x16/
 share/pixmaps/rubrica2/16x16/ccare.png
 share/pixmaps/rubrica2/16x16/green.png
 share/pixmaps/rubrica2/16x16/operator.png
 share/pixmaps/rubrica2/22x22/
-share/pixmaps/rubrica2/22x22/hicolor
 share/pixmaps/rubrica2/24x24/
 share/pixmaps/rubrica2/24x24/stuffs.png
 share/pixmaps/rubrica2/24x24/university.png
