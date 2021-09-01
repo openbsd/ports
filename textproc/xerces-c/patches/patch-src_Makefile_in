@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2018/03/13 21:07:42 jasper Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.2 2021/09/01 21:13:28 ajacoutot Exp $
 
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -1514,7 +1514,7 @@ lib_LTLIBRARIES = libxerces-c.la
+@@ -1841,7 +1841,7 @@ lib_LTLIBRARIES = libxerces-c.la
  # make pretty-printing won't work.
  #
  AM_CPPFLAGS = $(am__append_3) $(am__append_12) $(am__append_25)

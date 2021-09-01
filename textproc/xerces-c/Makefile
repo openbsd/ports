@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2020/03/30 11:15:12 fcambus Exp $
+# $OpenBSD: Makefile,v 1.20 2021/09/01 21:13:28 ajacoutot Exp $
 
 COMMENT =	validating XML parser written in a portable subset of C++
 
-DISTNAME =	xerces-c-3.2.1
+DISTNAME =	xerces-c-3.2.3
 CATEGORIES =	textproc devel
-REVISION =	1
 
 SHARED_LIBS +=  xerces-c             0.0
 
