@@ -1,11 +1,12 @@
-$OpenBSD: patch-Makefile_PL,v 1.1 2002/02/07 12:21:39 naddy Exp $
---- Makefile.PL.orig	Mon Feb  4 18:06:50 2002
-+++ Makefile.PL	Mon Feb  4 18:07:26 2002
+$OpenBSD: patch-Makefile_PL,v 1.2 2021/09/01 20:30:18 ajacoutot Exp $
+Index: Makefile.PL
+--- Makefile.PL.orig
++++ Makefile.PL
 @@ -10,7 +10,6 @@ WriteMakefile(
      PREREQ_PM		=> {
- 			    MP3::Info  => 0.8,
- 			    Apache     => 1.14,
--			    Audio::Wav => 0.02,
- 			    Ogg::Vorbis =>0.02,
- 			   }, # e.g., Module::Name => 1.1
- );
+ 			    MP3::Info             => 0.8,
+ 			    Apache2::RequestRec   => 2.000001,
+-			    Audio::Wav            => 0.02,
+ 			    Ogg::Vorbis::Header   => 0.02, # b/c Ogg::Vorbis can't be found by CPAN shell
+ 			    Inline::MakeMaker     => 0.01, # required by Ogg::Vorbis, but not specified in it's makefile, causing CPAN shell install to fail.
+ 			    Locale::Maketext      => 1.03,
