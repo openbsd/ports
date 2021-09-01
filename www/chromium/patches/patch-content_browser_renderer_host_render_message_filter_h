@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_renderer_host_render_message_filter_h,v 1.20 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_render_message_filter_h,v 1.21 2021/09/01 16:54:39 robert Exp $
 
 Index: content/browser/renderer_host/render_message_filter.h
 --- content/browser/renderer_host/render_message_filter.h.orig
 +++ content/browser/renderer_host/render_message_filter.h
-@@ -76,14 +76,14 @@ class CONTENT_EXPORT RenderMessageFilter
+@@ -75,14 +75,14 @@ class CONTENT_EXPORT RenderMessageFilter
    void GenerateRoutingID(GenerateRoutingIDCallback routing_id) override;
    void GenerateFrameRoutingID(GenerateFrameRoutingIDCallback callback) override;
    void HasGpuProcess(HasGpuProcessCallback callback) override;

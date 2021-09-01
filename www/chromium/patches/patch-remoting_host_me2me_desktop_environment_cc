@@ -1,4 +1,4 @@
-$OpenBSD: patch-remoting_host_me2me_desktop_environment_cc,v 1.11 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-remoting_host_me2me_desktop_environment_cc,v 1.12 2021/09/01 16:54:40 robert Exp $
 
 Index: remoting/host/me2me_desktop_environment.cc
 --- remoting/host/me2me_desktop_environment.cc.orig
@@ -7,11 +7,11 @@ Index: remoting/host/me2me_desktop_environment.cc
    }
  #endif  // defined(OS_WIN)
  
--#if !defined(NDEBUG) && defined(OS_LINUX)
-+#if !defined(NDEBUG) && (defined(OS_LINUX) || defined(OS_BSD))
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
    capabilities += " ";
    capabilities += protocol::kRemoteOpenUrlCapability;
- #endif  // !defined(NDEBUG) && defined(OS_LINUX)
+ #endif  // defined(OS_LINUX)
 @@ -136,7 +136,7 @@ bool Me2MeDesktopEnvironment::InitializeSecurity(
  
    // Otherwise, if the session is shared with the local user start monitoring

@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_network_session_configurator_browser_network_session_configurator_cc,v 1.26 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-components_network_session_configurator_browser_network_session_configurator_cc,v 1.27 2021/09/01 16:54:39 robert Exp $
 
 Index: components/network_session_configurator/browser/network_session_configurator.cc
 --- components/network_session_configurator/browser/network_session_configurator.cc.orig

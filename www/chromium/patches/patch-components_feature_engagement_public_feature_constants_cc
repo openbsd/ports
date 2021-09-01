@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_feature_engagement_public_feature_constants_cc,v 1.7 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-components_feature_engagement_public_feature_constants_cc,v 1.8 2021/09/01 16:54:39 robert Exp $
 
 Index: components/feature_engagement/public/feature_constants.cc
 --- components/feature_engagement/public/feature_constants.cc.orig
@@ -12,3 +12,12 @@ Index: components/feature_engagement/public/feature_constants.cc
  const base::Feature kIPHDesktopTabGroupsNewGroupFeature{
      "IPH_DesktopTabGroupsNewGroup", base::FEATURE_DISABLED_BY_DEFAULT};
  const base::Feature kIPHFocusModeFeature{"IPH_FocusMode",
+@@ -204,7 +204,7 @@ const base::Feature kIPHDiscoverFeedHeaderFeature{
+ #endif  // defined(OS_IOS)
+ 
+ #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS) || defined(OS_ANDROID)
++    defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)
+ const base::Feature kIPHUpdatedConnectionSecurityIndicatorsFeature{
+     "IPH_UpdatedConnectionSecurityIndicators",
+     base::FEATURE_DISABLED_BY_DEFAULT};

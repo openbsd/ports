@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_node_node_py,v 1.4 2021/07/21 15:43:34 robert Exp $
+$OpenBSD: patch-third_party_node_node_py,v 1.5 2021/09/01 16:54:40 robert Exp $
 Index: third_party/node/node.py
 --- third_party/node/node.py.orig
 +++ third_party/node/node.py

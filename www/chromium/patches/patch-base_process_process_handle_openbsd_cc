@@ -1,14 +1,13 @@
-$OpenBSD: patch-base_process_process_handle_openbsd_cc,v 1.5 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-base_process_process_handle_openbsd_cc,v 1.6 2021/09/01 16:54:38 robert Exp $
 
 Index: base/process/process_handle_openbsd.cc
 --- base/process/process_handle_openbsd.cc.orig
 +++ base/process/process_handle_openbsd.cc
-@@ -3,9 +3,12 @@
+@@ -3,8 +3,11 @@
  // found in the LICENSE file.
  
  #include "base/process/process_handle.h"
 +#include "base/files/file_util.h"
- #include "base/stl_util.h"
  
  #include <stddef.h>
 +#include <sys/param.h>
@@ -16,7 +15,7 @@ Index: base/process/process_handle_openbsd.cc
  #include <sys/sysctl.h>
  #include <sys/types.h>
  #include <unistd.h>
-@@ -13,39 +16,59 @@
+@@ -14,39 +17,59 @@
  namespace base {
  
  ProcessId GetParentProcessId(ProcessHandle process) {

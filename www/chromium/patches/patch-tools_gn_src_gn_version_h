@@ -1,9 +1,9 @@
-$OpenBSD: patch-tools_gn_src_gn_version_h,v 1.1 2020/09/22 11:47:42 robert Exp $
+$OpenBSD: patch-tools_gn_src_gn_version_h,v 1.2 2021/09/01 16:54:40 robert Exp $
 
 Index: tools/gn/src/gn/version.h
 --- tools/gn/src/gn/version.h.orig
 +++ tools/gn/src/gn/version.h
-@@ -15,9 +15,9 @@ class Version {
+@@ -22,9 +22,9 @@ class Version {
  
    static std::optional<Version> FromString(std::string s);
  

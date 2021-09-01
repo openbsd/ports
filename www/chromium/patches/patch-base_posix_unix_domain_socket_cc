@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_posix_unix_domain_socket_cc,v 1.3 2020/10/22 13:52:53 robert Exp $
+$OpenBSD: patch-base_posix_unix_domain_socket_cc,v 1.4 2021/09/01 16:54:38 robert Exp $
 
 Index: base/posix/unix_domain_socket.cc
 --- base/posix/unix_domain_socket.cc.orig
@@ -14,7 +14,7 @@ Index: base/posix/unix_domain_socket.cc
  #if !defined(OS_NACL_NONSFI)
  #include <sys/un.h>
  #endif
-@@ -29,6 +32,14 @@ namespace base {
+@@ -28,6 +31,14 @@ namespace base {
  
  const size_t UnixDomainSocket::kMaxFileDescriptors = 16;
  
@@ -29,7 +29,7 @@ Index: base/posix/unix_domain_socket.cc
  #if !defined(OS_NACL_NONSFI)
  bool CreateSocketPair(ScopedFD* one, ScopedFD* two) {
    int raw_socks[2];
-@@ -183,7 +194,7 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
+@@ -182,7 +193,7 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
            cmsg->cmsg_type == SCM_CREDENTIALS) {
          DCHECK_EQ(payload_len, sizeof(struct ucred));
          DCHECK_EQ(pid, -1);

@@ -1,17 +1,17 @@
-$OpenBSD: patch-chrome_browser_send_tab_to_self_receiving_ui_handler_registry_cc,v 1.4 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-chrome_browser_send_tab_to_self_receiving_ui_handler_registry_cc,v 1.5 2021/09/01 16:54:38 robert Exp $
 
 Index: chrome/browser/send_tab_to_self/receiving_ui_handler_registry.cc
 --- chrome/browser/send_tab_to_self/receiving_ui_handler_registry.cc.orig
 +++ chrome/browser/send_tab_to_self/receiving_ui_handler_registry.cc
-@@ -14,7 +14,7 @@
+@@ -13,7 +13,7 @@
  #include "components/send_tab_to_self/features.h"
  
  #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
 -    defined(OS_WIN)
 +    defined(OS_WIN) || defined(OS_BSD)
  #include "chrome/browser/send_tab_to_self/desktop_notification_handler.h"
+ #include "chrome/browser/ui/send_tab_to_self/send_tab_to_self_toolbar_icon_controller.h"
  #endif
- 
 @@ -36,7 +36,7 @@ ReceivingUiHandlerRegistry* ReceivingUiHandlerRegistry
  void ReceivingUiHandlerRegistry::InstantiatePlatformSpecificHandlers(
      Profile* profile) {
@@ -21,3 +21,12 @@ Index: chrome/browser/send_tab_to_self/receiving_ui_handler_registry.cc
  
    // If STTS 2.0 is enabled the handler will be created when the toolbar
    // button registers itself as the delegate.
+@@ -55,7 +55,7 @@ SendTabToSelfToolbarIconController*
+ ReceivingUiHandlerRegistry::GetToolbarButtonControllerForProfile(
+     Profile* profile) {
+ #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
+-    defined(OS_WIN)
++    defined(OS_WIN) || defined(OS_BSD)
+   for (const std::unique_ptr<ReceivingUiHandler>& handler :
+        applicable_handlers_) {
+     auto* button_controller =

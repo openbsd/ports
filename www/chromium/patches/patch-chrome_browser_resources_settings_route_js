@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_resources_settings_route_js,v 1.5 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-chrome_browser_resources_settings_route_js,v 1.6 2021/09/01 16:54:38 robert Exp $
 
 Index: chrome/browser/resources/settings/route.js
 --- chrome/browser/resources/settings/route.js.orig

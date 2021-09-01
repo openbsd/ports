@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_brotli_common_platform_h,v 1.6 2021/07/21 15:43:34 robert Exp $
+$OpenBSD: patch-third_party_brotli_common_platform_h,v 1.7 2021/09/01 16:54:40 robert Exp $
 
 Index: third_party/brotli/common/platform.h
 --- third_party/brotli/common/platform.h.orig

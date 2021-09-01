@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_web_applications_components_web_app_shortcut_cc,v 1.5 2021/01/20 07:28:09 robert Exp $
+$OpenBSD: patch-chrome_browser_web_applications_components_web_app_shortcut_cc,v 1.6 2021/09/01 16:54:39 robert Exp $
 
 Index: chrome/browser/web_applications/components/web_app_shortcut.cc
 --- chrome/browser/web_applications/components/web_app_shortcut.cc.orig
 +++ chrome/browser/web_applications/components/web_app_shortcut.cc
-@@ -33,7 +33,7 @@ namespace {
+@@ -34,7 +34,7 @@ namespace {
  
  #if defined(OS_MAC)
  const int kDesiredIconSizesForShortcut[] = {16, 32, 128, 256, 512};

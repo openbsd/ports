@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_media_galleries_media_file_system_registry_cc,v 1.31 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-chrome_browser_media_galleries_media_file_system_registry_cc,v 1.32 2021/09/01 16:54:38 robert Exp $
 Index: chrome/browser/media_galleries/media_file_system_registry.cc
 --- chrome/browser/media_galleries/media_file_system_registry.cc.orig
 +++ chrome/browser/media_galleries/media_file_system_registry.cc

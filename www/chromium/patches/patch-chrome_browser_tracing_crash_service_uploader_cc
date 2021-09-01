@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_tracing_crash_service_uploader_cc,v 1.22 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-chrome_browser_tracing_crash_service_uploader_cc,v 1.23 2021/09/01 16:54:38 robert Exp $
 
 Index: chrome/browser/tracing/crash_service_uploader.cc
 --- chrome/browser/tracing/crash_service_uploader.cc.orig
 +++ chrome/browser/tracing/crash_service_uploader.cc
-@@ -161,6 +161,8 @@ void TraceCrashServiceUploader::DoCompressOnBackground
+@@ -162,6 +162,8 @@ void TraceCrashServiceUploader::DoCompressOnBackground
    const char product[] = "Chrome_Linux";
  #elif defined(OS_ANDROID)
    const char product[] = "Chrome_Android";

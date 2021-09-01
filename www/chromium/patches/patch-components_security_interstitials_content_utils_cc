@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_security_interstitials_content_utils_cc,v 1.7 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-components_security_interstitials_content_utils_cc,v 1.8 2021/09/01 16:54:39 robert Exp $
 
 Index: components/security_interstitials/content/utils.cc
 --- components/security_interstitials/content/utils.cc.orig

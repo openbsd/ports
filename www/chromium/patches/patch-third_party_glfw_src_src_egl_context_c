@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_glfw_src_src_egl_context_c,v 1.1 2020/09/22 11:47:42 robert Exp $
+$OpenBSD: patch-third_party_glfw_src_src_egl_context_c,v 1.2 2021/09/01 16:54:40 robert Exp $
 
 Index: third_party/glfw/src/src/egl_context.c
 --- third_party/glfw/src/src/egl_context.c.orig
 +++ third_party/glfw/src/src/egl_context.c
-@@ -655,7 +655,7 @@ GLFWbool _glfwCreateContextEGL(_GLFWwindow* window,
+@@ -712,7 +712,7 @@ GLFWbool _glfwCreateContextEGL(_GLFWwindow* window,
  #elif defined(_GLFW_WIN32)
  #elif defined(_GLFW_COCOA)
  #else

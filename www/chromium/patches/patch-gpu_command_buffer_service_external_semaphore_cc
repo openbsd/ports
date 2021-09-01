@@ -1,4 +1,4 @@
-$OpenBSD: patch-gpu_command_buffer_service_external_semaphore_cc,v 1.4 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-gpu_command_buffer_service_external_semaphore_cc,v 1.5 2021/09/01 16:54:39 robert Exp $
 
 Index: gpu/command_buffer/service/external_semaphore.cc
 --- gpu/command_buffer/service/external_semaphore.cc.orig

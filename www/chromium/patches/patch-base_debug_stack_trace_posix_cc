@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_debug_stack_trace_posix_cc,v 1.39 2021/07/21 15:43:31 robert Exp $
+$OpenBSD: patch-base_debug_stack_trace_posix_cc,v 1.40 2021/09/01 16:54:37 robert Exp $
 
 Index: base/debug/stack_trace_posix.cc
 --- base/debug/stack_trace_posix.cc.orig

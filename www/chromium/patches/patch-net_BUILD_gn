@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_BUILD_gn,v 1.42 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-net_BUILD_gn,v 1.43 2021/09/01 16:54:40 robert Exp $
 
 Index: net/BUILD.gn
 --- net/BUILD.gn.orig
@@ -12,7 +12,7 @@ Index: net/BUILD.gn
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1354,7 +1354,7 @@ component("net") {
+@@ -1348,7 +1348,7 @@ component("net") {
      }
    }
  
@@ -21,7 +21,7 @@ Index: net/BUILD.gn
      sources += [
        "base/network_change_notifier_posix.cc",
        "base/network_change_notifier_posix.h",
-@@ -1387,13 +1387,20 @@ component("net") {
+@@ -1381,13 +1381,20 @@ component("net") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.
@@ -43,7 +43,7 @@ Index: net/BUILD.gn
    if (use_nss_certs) {
      sources += [
        "cert/internal/system_trust_store_nss.h",
-@@ -1501,6 +1508,15 @@ component("net") {
+@@ -1495,6 +1502,15 @@ component("net") {
      ]
    }
  

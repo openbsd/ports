@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_cpu_h,v 1.6 2021/07/21 15:43:31 robert Exp $
+$OpenBSD: patch-base_cpu_h,v 1.7 2021/09/01 16:54:37 robert Exp $
 
 Index: base/cpu.h
 --- base/cpu.h.orig

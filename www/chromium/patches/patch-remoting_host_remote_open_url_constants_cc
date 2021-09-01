@@ -1,4 +1,4 @@
-$OpenBSD: patch-remoting_host_remote_open_url_constants_cc,v 1.1 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-remoting_host_remote_open_url_constants_cc,v 1.2 2021/09/01 16:54:40 robert Exp $
 
 Index: remoting/host/remote_open_url_constants.cc
 --- remoting/host/remote_open_url_constants.cc.orig

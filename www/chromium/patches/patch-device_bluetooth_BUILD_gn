@@ -1,4 +1,4 @@
-$OpenBSD: patch-device_bluetooth_BUILD_gn,v 1.29 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-device_bluetooth_BUILD_gn,v 1.30 2021/09/01 16:54:39 robert Exp $
 Index: device/bluetooth/BUILD.gn
 --- device/bluetooth/BUILD.gn.orig
 +++ device/bluetooth/BUILD.gn
@@ -11,7 +11,7 @@ Index: device/bluetooth/BUILD.gn
    use_real_dbus_clients = false
  }
  
-@@ -303,7 +303,7 @@ component("bluetooth") {
+@@ -307,7 +307,7 @@ component("bluetooth") {
      ]
    }
  
@@ -19,4 +19,4 @@ Index: device/bluetooth/BUILD.gn
 +  if (is_chromeos || (is_linux && !is_openbsd)) {
      if (use_dbus) {
        sources += [
-         "bluez/bluetooth_adapter_bluez.cc",
+         "bluetooth_adapter_chromeos.cc",

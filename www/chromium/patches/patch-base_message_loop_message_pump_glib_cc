@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_message_loop_message_pump_glib_cc,v 1.1 2020/10/22 13:52:53 robert Exp $
+$OpenBSD: patch-base_message_loop_message_pump_glib_cc,v 1.2 2021/09/01 16:54:38 robert Exp $
 
 Index: base/message_loop/message_pump_glib.cc
 --- base/message_loop/message_pump_glib.cc.orig
@@ -13,9 +13,9 @@ Index: base/message_loop/message_pump_glib.cc
 +#endif
 +
  #include "base/logging.h"
+ #include "base/notreached.h"
  #include "base/numerics/safe_conversions.h"
- #include "base/posix/eintr_wrapper.h"
-@@ -48,9 +53,13 @@ int GetTimeIntervalMilliseconds(TimeTicks next_task_ti
+@@ -49,9 +54,13 @@ int GetTimeIntervalMilliseconds(TimeTicks next_task_ti
  }
  
  bool RunningOnMainThread() {

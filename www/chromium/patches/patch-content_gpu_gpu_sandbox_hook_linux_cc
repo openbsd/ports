@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_gpu_gpu_sandbox_hook_linux_cc,v 1.22 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-content_gpu_gpu_sandbox_hook_linux_cc,v 1.23 2021/09/01 16:54:39 robert Exp $
 
 Index: content/gpu/gpu_sandbox_hook_linux.cc
 --- content/gpu/gpu_sandbox_hook_linux.cc.orig
@@ -30,7 +30,7 @@ Index: content/gpu/gpu_sandbox_hook_linux.cc
  }
  
  bool LoadAmdGpuLibraries() {
-@@ -457,12 +461,14 @@ void LoadV4L2Libraries(
+@@ -464,12 +468,14 @@ void LoadV4L2Libraries(
  }
  
  void LoadChromecastV4L2Libraries() {
@@ -45,7 +45,7 @@ Index: content/gpu/gpu_sandbox_hook_linux.cc
  }
  
  bool LoadLibrariesForGpu(
-@@ -488,6 +494,7 @@ bool LoadLibrariesForGpu(
+@@ -495,6 +501,7 @@ bool LoadLibrariesForGpu(
    return true;
  }
  
@@ -53,7 +53,7 @@ Index: content/gpu/gpu_sandbox_hook_linux.cc
  sandbox::syscall_broker::BrokerCommandSet CommandSetForGPU(
      const sandbox::policy::SandboxLinux::Options& options) {
    sandbox::syscall_broker::BrokerCommandSet command_set;
-@@ -510,13 +517,17 @@ bool BrokerProcessPreSandboxHook(
+@@ -517,13 +524,17 @@ bool BrokerProcessPreSandboxHook(
    SetProcessTitleFromCommandLine(nullptr);
    return true;
  }

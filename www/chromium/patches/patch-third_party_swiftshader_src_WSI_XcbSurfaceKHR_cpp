@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_swiftshader_src_WSI_XcbSurfaceKHR_cpp,v 1.1 2021/07/21 15:43:34 robert Exp $
+$OpenBSD: patch-third_party_swiftshader_src_WSI_XcbSurfaceKHR_cpp,v 1.2 2021/09/01 16:54:40 robert Exp $
 
 Index: third_party/swiftshader/src/WSI/XcbSurfaceKHR.cpp
 --- third_party/swiftshader/src/WSI/XcbSurfaceKHR.cpp.orig

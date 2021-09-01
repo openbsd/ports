@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_renderer_host_pepper_pepper_file_io_host_cc,v 1.9 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_pepper_pepper_file_io_host_cc,v 1.10 2021/09/01 16:54:39 robert Exp $
 
 Index: content/browser/renderer_host/pepper/pepper_file_io_host.cc
 --- content/browser/renderer_host/pepper/pepper_file_io_host.cc.orig

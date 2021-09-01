@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_ffmpeg_libavcodec_x86_cabac_h,v 1.7 2021/07/21 15:43:34 robert Exp $
+$OpenBSD: patch-third_party_ffmpeg_libavcodec_x86_cabac_h,v 1.8 2021/09/01 16:54:40 robert Exp $
 Index: third_party/ffmpeg/libavcodec/x86/cabac.h
 --- third_party/ffmpeg/libavcodec/x86/cabac.h.orig
 +++ third_party/ffmpeg/libavcodec/x86/cabac.h

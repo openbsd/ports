@@ -1,4 +1,4 @@
-$OpenBSD: patch-gpu_ipc_common_gpu_memory_buffer_support_h,v 1.9 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-gpu_ipc_common_gpu_memory_buffer_support_h,v 1.10 2021/09/01 16:54:39 robert Exp $
 
 Index: gpu/ipc/common/gpu_memory_buffer_support.h
 --- gpu/ipc/common/gpu_memory_buffer_support.h.orig

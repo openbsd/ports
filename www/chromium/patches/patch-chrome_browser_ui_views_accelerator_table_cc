@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_accelerator_table_cc,v 1.21 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_accelerator_table_cc,v 1.22 2021/09/01 16:54:38 robert Exp $
 
 Index: chrome/browser/ui/views/accelerator_table.cc
 --- chrome/browser/ui/views/accelerator_table.cc.orig

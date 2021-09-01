@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_viz_service_display_embedder_software_output_surface_h,v 1.7 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-components_viz_service_display_embedder_software_output_surface_h,v 1.8 2021/09/01 16:54:39 robert Exp $
 
 Index: components/viz/service/display_embedder/software_output_surface.h
 --- components/viz/service/display_embedder/software_output_surface.h.orig

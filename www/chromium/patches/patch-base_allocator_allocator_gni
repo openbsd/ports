@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_allocator_allocator_gni,v 1.10 2021/07/21 15:43:31 robert Exp $
+$OpenBSD: patch-base_allocator_allocator_gni,v 1.11 2021/09/01 16:54:37 robert Exp $
 
 Index: base/allocator/allocator.gni
 --- base/allocator/allocator.gni.orig
@@ -10,5 +10,5 @@ Index: base/allocator/allocator.gni
 -_is_using_sanitizers = is_asan || is_hwasan || is_lsan || is_tsan || is_msan
 +_is_using_sanitizers = is_asan || is_hwasan || is_lsan || is_tsan || is_msan || is_openbsd
  
- # - Windows: shims don't work for component builds and debug CRT is not
- # compatible, see below.
+ # - Component build support is disabled on all platforms. It is known to cause
+ #   issues on some (e.g. Windows with shims, Android with non-universal symbol

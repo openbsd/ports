@@ -1,4 +1,4 @@
-$OpenBSD: patch-remoting_codec_webrtc_video_encoder_vpx_cc,v 1.4 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-remoting_codec_webrtc_video_encoder_vpx_cc,v 1.5 2021/09/01 16:54:40 robert Exp $
 
 Index: remoting/codec/webrtc_video_encoder_vpx.cc
 --- remoting/codec/webrtc_video_encoder_vpx.cc.orig

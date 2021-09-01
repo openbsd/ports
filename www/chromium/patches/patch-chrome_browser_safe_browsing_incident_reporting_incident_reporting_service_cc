@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_safe_browsing_incident_reporting_incident_reporting_service_cc,v 1.26 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-chrome_browser_safe_browsing_incident_reporting_incident_reporting_service_cc,v 1.27 2021/09/01 16:54:38 robert Exp $
 
 Index: chrome/browser/safe_browsing/incident_reporting/incident_reporting_service.cc
 --- chrome/browser/safe_browsing/incident_reporting/incident_reporting_service.cc.orig

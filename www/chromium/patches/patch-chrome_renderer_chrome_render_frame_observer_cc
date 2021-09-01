@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_renderer_chrome_render_frame_observer_cc,v 1.1 2021/09/01 16:54:39 robert Exp $
+
+Index: chrome/renderer/chrome_render_frame_observer.cc
+--- chrome/renderer/chrome_render_frame_observer.cc.orig
++++ chrome/renderer/chrome_render_frame_observer.cc
+@@ -281,7 +281,7 @@ void ChromeRenderFrameObserver::OnDestruct() {
+ }
+ 
+ void ChromeRenderFrameObserver::DraggableRegionsChanged() {
+-#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
+   // Only the main frame is allowed to control draggable regions, to avoid other
+   // frames manipulate the regions in the browser process.
+   if (!render_frame()->IsMainFrame())

@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_web_applications_web_app_install_task_cc,v 1.1 2021/09/01 16:54:39 robert Exp $
+
+Index: chrome/browser/web_applications/web_app_install_task.cc
+--- chrome/browser/web_applications/web_app_install_task.cc.orig
++++ chrome/browser/web_applications/web_app_install_task.cc
+@@ -861,7 +861,7 @@ void WebAppInstallTask::OnInstallFinalizedCreateShortc
+   options.os_hooks[OsHookType::kFileHandlers] = true;
+   options.os_hooks[OsHookType::kProtocolHandlers] = true;
+   options.os_hooks[OsHookType::kUninstallationViaOsSettings] = true;
+-#if defined(OS_WIN) || defined(OS_MAC) || \
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
+     (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
+   options.os_hooks[OsHookType::kUrlHandlers] = true;
+ #else

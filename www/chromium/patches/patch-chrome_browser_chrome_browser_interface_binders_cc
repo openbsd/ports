@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_chrome_browser_interface_binders_cc,v 1.12 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-chrome_browser_chrome_browser_interface_binders_cc,v 1.13 2021/09/01 16:54:38 robert Exp $
 
 Index: chrome/browser/chrome_browser_interface_binders.cc
 --- chrome/browser/chrome_browser_interface_binders.cc.orig
 +++ chrome/browser/chrome_browser_interface_binders.cc
-@@ -147,7 +147,7 @@
+@@ -150,7 +150,7 @@
  #endif  // defined(OS_ANDROID)
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -12,16 +12,16 @@ Index: chrome/browser/chrome_browser_interface_binders.cc
  #include "chrome/browser/ui/webui/discards/discards.mojom.h"
  #include "chrome/browser/ui/webui/discards/discards_ui.h"
  #include "chrome/browser/ui/webui/discards/site_data.mojom.h"
-@@ -612,7 +612,7 @@ void PopulateChromeFrameBinders(
+@@ -616,7 +616,7 @@ void PopulateChromeFrameBinders(
        base::BindRepeating(&BindSpeechRecognitionRecognizerClientHandler));
  #endif
  
 -#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
-   if (base::FeatureList::IsEnabled(features::kWebAppWindowControlsOverlay) &&
-       !render_frame_host->GetParent()) {
+   if (!render_frame_host->GetParent()) {
      map->Add<chrome::mojom::DraggableRegions>(
-@@ -855,7 +855,7 @@ void PopulateChromeWebUIFrameBinders(
+         base::BindRepeating(&DraggableRegionsHostImpl::CreateIfAllowed));
+@@ -889,7 +889,7 @@ void PopulateChromeWebUIFrameBinders(
  #endif
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \

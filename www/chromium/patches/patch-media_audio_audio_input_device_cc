@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_audio_audio_input_device_cc,v 1.7 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-media_audio_audio_input_device_cc,v 1.8 2021/09/01 16:54:40 robert Exp $
 
 Index: media/audio/audio_input_device.cc
 --- media/audio/audio_input_device.cc.orig

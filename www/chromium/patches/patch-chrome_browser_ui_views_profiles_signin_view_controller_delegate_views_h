@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_ui_views_profiles_signin_view_controller_delegate_views_h,v 1.1 2021/09/01 16:54:39 robert Exp $
+
+Index: chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.h
+--- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.h.orig
++++ chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.h
+@@ -62,7 +62,7 @@ class SigninViewControllerDelegateViews
+       signin_metrics::ReauthAccessPoint);
+ 
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS_LACROS)
++    BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
+   static std::unique_ptr<views::WebView> CreateEnterpriseConfirmationWebView(
+       Browser* browser,
+       const std::string& domain_name,

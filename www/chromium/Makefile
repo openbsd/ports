@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.581 2021/08/19 10:20:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.582 2021/09/01 16:54:37 robert Exp $
 
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
 BROKEN-i386 =		../../third_party/angle/src/libANGLE/validationEGL.h:137:12: error: reference to type 'const egl::AttributeMap' could not bind to an lvalue of type 'const long *'
@@ -14,8 +14,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser
 
-V=			92.0.4515.159
-REVISION=		0
+V=			93.0.4577.63
 
 DISTNAME=		chromium-${V}
 
@@ -38,8 +37,6 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
 MASTER_SITES0=	http://nerd.hu/distfiles/
-
-FIX_CRLF_FILES=	third_party/vulkan_memory_allocator/src/vk_mem_alloc.h
 
 MODULES=	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
@@ -150,7 +147,8 @@ GN_ARGS=	enable_nacl=false \
 		clang_use_chrome_plugins=false \
 		use_allocator=\"none\" \
 		fieldtrial_testing_like_official_build=true \
-		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\"
+		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
+		fatal_linker_warnings=false
 
 # notyet
 GN_ARGS+=	use_vaapi=false

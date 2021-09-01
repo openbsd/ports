@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_perfetto_src_base_periodic_task_cc,v 1.1 2021/07/21 15:43:34 robert Exp $
+$OpenBSD: patch-third_party_perfetto_src_base_periodic_task_cc,v 1.2 2021/09/01 16:54:40 robert Exp $
 
 Index: third_party/perfetto/src/base/periodic_task.cc
 --- third_party/perfetto/src/base/periodic_task.cc.orig

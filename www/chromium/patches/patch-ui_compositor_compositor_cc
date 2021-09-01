@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_compositor_compositor_cc,v 1.13 2021/07/21 15:43:34 robert Exp $
+$OpenBSD: patch-ui_compositor_compositor_cc,v 1.14 2021/09/01 16:54:40 robert Exp $
 
 Index: ui/compositor/compositor.cc
 --- ui/compositor/compositor.cc.orig
 +++ ui/compositor/compositor.cc
-@@ -792,7 +792,7 @@ void Compositor::CancelThroughtputTracker(TrackerId tr
+@@ -800,7 +800,7 @@ void Compositor::CancelThroughtputTracker(TrackerId tr
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

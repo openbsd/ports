@@ -1,14 +1,14 @@
-$OpenBSD: patch-build_config_c++_c++_gni,v 1.10 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-build_config_c++_c++_gni,v 1.11 2021/09/01 16:54:38 robert Exp $
 
 Index: build/config/c++/c++.gni
 --- build/config/c++/c++.gni.orig
 +++ build/config/c++/c++.gni
-@@ -13,7 +13,7 @@ declare_args() {
-   # is not supported.
-   use_custom_libcxx = is_fuchsia || is_android || is_mac ||
-                       (is_ios && !use_xcode_clang) || (is_win && is_clang) ||
--                      ((is_linux || is_chromeos) &&
-+                      (((is_linux && !is_openbsd) || is_chromeos) &&
-                        (!is_chromeos_ash ||
-                         default_toolchain != "//build/toolchain/cros:target"))
+@@ -14,7 +14,7 @@ declare_args() {
+   # We always use system installed libc++ on building chrome (incl. both Ash
+   # and Lacros Chrome) running on Chrome OS devices with cros-toolchain.
+   use_custom_libcxx =
+-      is_fuchsia || is_android || is_mac || is_linux ||
++      is_fuchsia || is_android || is_mac || (is_linux && !is_openbsd) ||
+       (is_ios && !use_xcode_clang) || (is_win && is_clang) ||
+       (is_chromeos && default_toolchain != "//build/toolchain/cros:target")
  

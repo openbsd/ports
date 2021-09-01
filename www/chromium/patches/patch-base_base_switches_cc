@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_base_switches_cc,v 1.11 2021/07/21 15:43:31 robert Exp $
+$OpenBSD: patch-base_base_switches_cc,v 1.12 2021/09/01 16:54:37 robert Exp $
 
 Index: base/base_switches.cc
 --- base/base_switches.cc.orig

@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_events_ozone_keyboard_hook_ozone_cc,v 1.3 2021/07/21 15:43:34 robert Exp $
+$OpenBSD: patch-ui_events_ozone_keyboard_hook_ozone_cc,v 1.4 2021/09/01 16:54:41 robert Exp $
 
 Index: ui/events/ozone/keyboard_hook_ozone.cc
 --- ui/events/ozone/keyboard_hook_ozone.cc.orig

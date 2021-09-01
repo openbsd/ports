@@ -1,4 +1,4 @@
-$OpenBSD: patch-chromecast_browser_cast_browser_main_parts_cc,v 1.33 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-chromecast_browser_cast_browser_main_parts_cc,v 1.34 2021/09/01 16:54:39 robert Exp $
 
 Index: chromecast/browser/cast_browser_main_parts.cc
 --- chromecast/browser/cast_browser_main_parts.cc.orig

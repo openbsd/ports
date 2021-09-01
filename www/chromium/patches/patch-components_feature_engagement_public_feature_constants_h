@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_feature_engagement_public_feature_constants_h,v 1.7 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-components_feature_engagement_public_feature_constants_h,v 1.8 2021/09/01 16:54:39 robert Exp $
 
 Index: components/feature_engagement/public/feature_constants.h
 --- components/feature_engagement/public/feature_constants.h.orig
@@ -12,3 +12,12 @@ Index: components/feature_engagement/public/feature_constants.h
  extern const base::Feature kIPHDesktopTabGroupsNewGroupFeature;
  extern const base::Feature kIPHFocusModeFeature;
  extern const base::Feature kIPHGlobalMediaControlsFeature;
+@@ -124,7 +124,7 @@ extern const base::Feature kIPHDiscoverFeedHeaderFeatu
+ #endif  // defined(OS_IOS)
+ 
+ #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS) || defined(OS_ANDROID)
++    defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)
+ extern const base::Feature kIPHUpdatedConnectionSecurityIndicatorsFeature;
+ #endif
+ 

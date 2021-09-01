@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_utility_utility_main_cc,v 1.25 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-content_utility_utility_main_cc,v 1.26 2021/09/01 16:54:39 robert Exp $
 
 Index: content/utility/utility_main.cc
 --- content/utility/utility_main.cc.orig

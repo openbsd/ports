@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_metrics_chrome_browser_main_extra_parts_metrics_cc,v 1.26 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-chrome_browser_metrics_chrome_browser_main_extra_parts_metrics_cc,v 1.27 2021/09/01 16:54:38 robert Exp $
 
 Index: chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
 --- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig

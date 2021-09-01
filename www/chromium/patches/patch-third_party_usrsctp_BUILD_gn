@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_usrsctp_BUILD_gn,v 1.13 2021/07/21 15:43:34 robert Exp $
+$OpenBSD: patch-third_party_usrsctp_BUILD_gn,v 1.14 2021/09/01 16:54:40 robert Exp $
 
 Index: third_party/usrsctp/BUILD.gn
 --- third_party/usrsctp/BUILD.gn.orig

@@ -1,4 +1,4 @@
-$OpenBSD: patch-device_fido_features_cc,v 1.8 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-device_fido_features_cc,v 1.9 2021/09/01 16:54:39 robert Exp $
 
 Index: device/fido/features.cc
 --- device/fido/features.cc.orig
@@ -12,3 +12,12 @@ Index: device/fido/features.cc
        base::FEATURE_DISABLED_BY_DEFAULT
  #else
        base::FEATURE_ENABLED_BY_DEFAULT
+@@ -35,7 +35,7 @@ extern const base::Feature kWebAuthCableServerLink {
+ 
+ extern const base::Feature kWebAuthCableSecondFactor {
+   "WebAuthenticationCableSecondFactor",
+-#if BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_LINUX) || defined(OS_ANDROID)
++#if BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+       // This is default-disabled on Android because it involves changes that
+       // alter the interaction with the Sync service and thus needs to be rolled
+       // out gradually.
