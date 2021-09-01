@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2021/05/14 17:42:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.43 2021/09/01 09:00:46 ajacoutot Exp $
 @pkgpath mail/cyrus-imapd,-main,kerberos
 @pkgpath mail/cyrus-imapd,-main
 @pkgpath mail/cyrus-imapd,-perl
@@ -456,6 +456,7 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.12.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.13.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.14.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.15.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.16.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.2.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.3.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.4.html
@@ -491,6 +492,7 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.4.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.5.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.6.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.7.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.8.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.3/
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.3/index.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.3/x/
@@ -505,6 +507,7 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/3.4/x/3.4.0-beta3.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.4/x/3.4.0-rc1.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.4/x/3.4.0.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.4/x/3.4.1.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.4/x/3.4.2.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.5/
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.5/index.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/index.html
@@ -689,7 +692,6 @@ share/doc/cyrus-imapd/html/imap/reference/manpages/usercommands/synctest.html
 share/doc/cyrus-imapd/html/imap/rfc-support.html
 share/doc/cyrus-imapd/html/imap/support/
 share/doc/cyrus-imapd/html/imap/support/feedback-bugs.html
-share/doc/cyrus-imapd/html/imap/support/feedback-irc.html
 share/doc/cyrus-imapd/html/imap/support/feedback-mailing-lists.html
 share/doc/cyrus-imapd/html/imap/support/feedback-meetings.html
 share/doc/cyrus-imapd/html/index.html

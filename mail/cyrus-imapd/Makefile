@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.133 2021/05/14 17:42:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.134 2021/09/01 09:00:46 ajacoutot Exp $
 
 PORTROACH=		limitw:1,even
 
 COMMENT=		Cyrus IMAP server
 
-V=			3.4.1
+V=			3.4.2
 DISTNAME=		cyrus-imapd-${V}
 
 SHARED_LIBS +=	cyrus                     0.0 # 0.0
@@ -21,9 +21,9 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # CMU - see COPYING file in package
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c com_err crypto icudata icui18n
-WANTLIB += icuuc jansson m pcre pcreposix perl sasl2 sqlite3 ssl
-WANTLIB += uuid z
+WANTLIB += ${COMPILER_LIBCXX} c com_err crypto execinfo icudata
+WANTLIB += icui18n icuuc jansson m pcre pcreposix perl sasl2 sqlite3
+WANTLIB += ssl uuid z
 
 MASTER_SITES=		https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-${V}/
 
