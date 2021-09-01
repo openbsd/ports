@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2020/06/22 10:25:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/09/01 20:22:24 jeremy Exp $
 
 COMMENT=		ruby application dependency manager
 
 DISTNAME=		bundler-1.15.1
-REVISION=		1
+REVISION=		2
 CATEGORIES=		devel
 
-HOMEPAGE=		http://gembundler.com/
+HOMEPAGE=		https://bundler.io/
 
 # MIT
 PERMIT_PACKAGE=	Yes
@@ -14,11 +14,6 @@ PERMIT_PACKAGE=	Yes
 MODULES=		lang/ruby
 
 CONFIGURE_STYLE=	ruby gem
-
-.if !defined(FLAVOR) || ${FLAVOR:L:Mruby26}
-# Ruby 2.6 includes bundler binaries
-PLIST =		${PKGDIR}/PLIST.nobin
-.endif
 
 RUN_DEPENDS=		security/sudo
 
