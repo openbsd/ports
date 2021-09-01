@@ -1,0 +1,23 @@
+$OpenBSD: patch-Source_WebCore_page_NavigatorBase_cpp,v 1.1 2021/09/01 09:01:57 robert Exp $
+
+Index: Source/WebCore/page/NavigatorBase.cpp
+--- Source/WebCore/page/NavigatorBase.cpp.orig
++++ Source/WebCore/page/NavigatorBase.cpp
+@@ -36,7 +36,7 @@
+ #include <wtf/NumberOfCores.h>
+ #include <wtf/text/WTFString.h>
+ 
+-#if OS(LINUX)
++#if OS(LINUX) || OS(OPENBSD)
+ #include "sys/utsname.h"
+ #include <wtf/StdLibExtras.h>
+ #endif
+@@ -84,7 +84,7 @@ String NavigatorBase::appVersion() const
+ 
+ String NavigatorBase::platform() const
+ {
+-#if OS(LINUX)
++#if OS(LINUX) || OS(OPENBSD)
+     static LazyNeverDestroyed<String> platformName;
+     static std::once_flag onceKey;
+     std::call_once(onceKey, [] {
