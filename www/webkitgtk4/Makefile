@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2021/09/01 09:01:57 robert Exp $
+# $OpenBSD: Makefile,v 1.147 2021/09/01 09:08:46 ajacoutot Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -86,20 +86,20 @@ LIB_DEPENDS =		archivers/woff2 \
 			x11/gnome/libsecret \
 			x11/gtk+3
 
+CONFIGURE_ENV =		WK_USE_CCACHE=NO
+CONFIGURE_ARGS =	-DPORT=GTK \
+			-DENABLE_MINIBROWSER=ON \
+			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS}" \
+			-DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS}" \
+			-DUSE_SYSTEMD=OFF
+
 # required for faking a better user-agent
 .if ${MACHINE_ARCH} == "amd64"
 CPUARCH =		x86_64
 .else
 CPUARCH =		${ARCH}
 .endif
-
-CONFIGURE_ENV =		WK_USE_CCACHE=NO
-CONFIGURE_ARGS =	-DPORT=GTK \
-			-DENABLE_MINIBROWSER=ON \
-			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS}" \
-			-DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS}" \
-			-DUSER_AGENT_BRANDING="Linux ${CPUARCH}" \
-			-DUSE_SYSTEMD=OFF
+CONFIGURE_ARGS +=	-DUSER_AGENT_BRANDING="Linux ${CPUARCH}"
 
 # needs Wayland (libwpe -> WPEBackend-fdo -> Wayland)
 CONFIGURE_ARGS +=	-DUSE_WPE_RENDERER=OFF
