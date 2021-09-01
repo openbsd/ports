@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1264 2021/08/27 16:33:07 abieber Exp $
+# $OpenBSD: Makefile,v 1.1265 2021/09/01 22:41:28 sthen Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -226,6 +226,7 @@
      SUBDIR += libsignal-protocol-c
      SUBDIR += libsmi
      SUBDIR += libst
+     SUBDIR += libstrophe
      SUBDIR += libtorrent
      SUBDIR += libtorrent-rasterbar
      SUBDIR += libunbound
@@ -556,8 +557,6 @@
      SUBDIR += py-IP
      SUBDIR += py-IP,python3
      SUBDIR += py-aiodns,python3
-     SUBDIR += py-boto
-     SUBDIR += py-boto,python3
      SUBDIR += py-boto3,python3
      SUBDIR += py-botocore,python3
      SUBDIR += py-cares,python3
