@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.615 2021/08/31 21:02:03 tb Exp $
+# $OpenBSD: Makefile,v 1.616 2021/09/01 22:32:25 sthen Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -92,7 +92,7 @@
      SUBDIR += exfat-fuse
      SUBDIR += exa
      SUBDIR += exoscale-cli
-     SUBDIR += fabric
+     #SUBDIR += fabric
      SUBDIR += facter
      SUBDIR += facette
      SUBDIR += faubackup
@@ -123,7 +123,6 @@
      SUBDIR += glide
      SUBDIR += go-cs
      SUBDIR += google-cloud-sdk
-     SUBDIR += google-compute-engine
      SUBDIR += gource
      SUBDIR += govmomi
      SUBDIR += gpioflicker
