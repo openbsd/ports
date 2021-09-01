@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2117 2021/09/01 13:54:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2118 2021/09/01 15:32:36 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1588,6 +1588,7 @@
      SUBDIR += py-ruamel.ordereddict
      SUBDIR += py-schema,python3
      SUBDIR += py-selectors2
+     SUBDIR += py-semantic-version,python3
      SUBDIR += py-send2trash
      SUBDIR += py-send2trash,python3
      SUBDIR += py-serial
@@ -1597,6 +1598,7 @@
      SUBDIR += py-setuptools,python3
      SUBDIR += py-setuptools_git
      SUBDIR += py-setuptools_git,python3
+     SUBDIR += py-setuptools-rust,python3
      SUBDIR += py-setuptools_scm
      SUBDIR += py-setuptools_scm,python3
      SUBDIR += py-setuptools_scm_git_archive
