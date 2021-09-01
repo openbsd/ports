@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2021/08/20 10:28:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.95 2021/09/01 13:59:14 ajacoutot Exp $
 
 COMMENT=		next-generation build system
 
@@ -46,7 +46,8 @@ TEST_DEPENDS=		devel/git \
 			lang/mono \
 			lang/rust \
 			lang/vala \
-			shells/bash
+			shells/bash \
+			textproc/hotdoc
 
 # clang-format
 TEST_DEPENDS +=		devel/llvm
