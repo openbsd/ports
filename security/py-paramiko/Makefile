@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2021/05/21 19:50:35 kmos Exp $
+# $OpenBSD: Makefile,v 1.57 2021/09/01 22:44:04 sthen Exp $
 
 COMMENT =	Python module that implements the SSH2 protocol
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	2.6.0
 DISTNAME =		paramiko-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		security
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		https://github.com/paramiko/paramiko/
 
@@ -29,7 +29,7 @@ RUN_DEPENDS =		devel/py-asn1${MODPY_FLAVOR} \
 TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 MODPY_ADJ_FILES =	demos/*.py
 
