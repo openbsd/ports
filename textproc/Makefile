@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.684 2021/08/16 15:11:07 landry Exp $
+# $OpenBSD: Makefile,v 1.685 2021/09/01 13:55:19 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -73,6 +73,7 @@
      SUBDIR += hfst
      SUBDIR += hgrep
      SUBDIR += highlight
+     SUBDIR += hotdoc
      SUBDIR += html
      SUBDIR += html-xml-utils
      SUBDIR += hunspell
@@ -379,6 +380,7 @@
      SUBDIR += py-black
      SUBDIR += py-bracex,python3
      SUBDIR += py-canonicaljson,python3
+     SUBDIR += py-cchardet,python3
      SUBDIR += py-chardet
      SUBDIR += py-chardet,python3
      SUBDIR += py-colored
