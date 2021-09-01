@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1303 2021/09/01 15:01:43 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1304 2021/09/01 22:24:51 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1241,6 +1241,7 @@ setup_obsolete_reason(
 	1 => 'antlr3',
 	6 => 'enigmail',
 	6 => 'enigmail-seamonkey',
+	29 => 'google-compute-engine',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
