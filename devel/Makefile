@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2118 2021/09/01 15:32:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2119 2021/09/01 22:37:41 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -53,8 +53,6 @@
      SUBDIR += boris
      SUBDIR += bpython,python3
      SUBDIR += bullet
-     SUBDIR += bzr
-     SUBDIR += bzr-svn
      SUBDIR += cabal-bundler
      SUBDIR += cabal-install
      SUBDIR += capstone

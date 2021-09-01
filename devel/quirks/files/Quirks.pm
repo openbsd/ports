@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1304 2021/09/01 22:24:51 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1305 2021/09/01 22:37:41 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -482,6 +482,8 @@ my $stem_extensions = {
 	'py-virtualdisplay' => 'py3-virtualdisplay',
 	'py-meld3' => 'py3-meld3',
 	'py-cryptography_vectors' => 'py3-cryptography_vectors',
+	#'py-boto' => 'py3-boto3',
+	#'py3-boto' => 'py3-boto3',
 };
 
 my $obsolete_reason = {};
@@ -1242,6 +1244,8 @@ setup_obsolete_reason(
 	6 => 'enigmail',
 	6 => 'enigmail-seamonkey',
 	29 => 'google-compute-engine',
+	3 => 'bzr',
+	3 => 'bzr-svn',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
