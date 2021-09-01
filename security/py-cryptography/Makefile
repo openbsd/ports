@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.46 2021/09/01 15:03:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2021/09/01 23:05:04 sthen Exp $
 
 COMMENT=	cryptographic recipes and primitives for Python
 
-MODPY_EGG_VERSION=	3.3.2
+MODPY_EGG_VERSION=	3.4.8
 DISTNAME=	cryptography-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
 CATEGORIES=	security devel
-REVISION=	2
 
 HOMEPAGE=	https://cryptography.io/
 
@@ -23,32 +22,26 @@ MODPY_SETUPTOOLS= Yes
 MODPY_PI=	Yes
 
 FLAVORS=	python3
-FLAVOR?=
+FLAVOR=		python3
 
 RUN_DEPENDS=	devel/py-cffi${MODPY_FLAVOR}>=1.4.2 \
 		devel/py-six${MODPY_FLAVOR} \
 		net/py-idna${MODPY_FLAVOR} \
 		security/py-asn1crypto${MODPY_FLAVOR}
 
-.if ! ${FLAVOR:Mpython3}
-RUN_DEPENDS+=	devel/py-enum34 \
-		net/py-ipaddress
-.endif
-
 BUILD_DEPENDS=	${RUN_DEPENDS}
+PORTHOME=	${WRKDIR}
 
 MODPY_PYTEST=	Yes
-# XXX needs *loads* of RAM
 TEST_DEPENDS=	${FULLPKGNAME}:${FULLPKGPATH} \
 		devel/py-coverage${MODPY_FLAVOR} \
 		devel/py-hypothesis${MODPY_FLAVOR} \
 		devel/py-pretend${MODPY_FLAVOR} \
-		devel/py-test${MODPY_FLAVOR} \
 		devel/py-tz${MODPY_FLAVOR} \
+		security/py-cryptography_vectors${MODPY_FLAVOR} \
 		textproc/py-iso8601${MODPY_FLAVOR}
+# devel/py-test-subtests${MODPY_FLAVOR} not yet imported
 
-.if ${FLAVOR:Mpython3}
-TEST_DEPENDS +=	security/py-cryptography_vectors${MODPY_FLAVOR}
-.endif
+MAKE_ENV=	CRYPTOGRAPHY_DONT_BUILD_RUST=1
 
 .include <bsd.port.mk>

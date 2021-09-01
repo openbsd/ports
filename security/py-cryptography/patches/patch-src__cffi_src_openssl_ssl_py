@@ -1,9 +1,9 @@
-$OpenBSD: patch-src__cffi_src_openssl_ssl_py,v 1.7 2021/03/31 17:18:54 tb Exp $
+$OpenBSD: patch-src__cffi_src_openssl_ssl_py,v 1.8 2021/09/01 23:05:04 sthen Exp $
 
 Index: src/_cffi_src/openssl/ssl.py
 --- src/_cffi_src/openssl/ssl.py.orig
 +++ src/_cffi_src/openssl/ssl.py
-@@ -581,8 +581,6 @@ static const long TLS_ST_OK = 0;
+@@ -586,8 +586,6 @@ static const long TLS_ST_OK = 0;
  #endif
  
  #if CRYPTOGRAPHY_IS_LIBRESSL
@@ -12,7 +12,7 @@ Index: src/_cffi_src/openssl/ssl.py
  long (*DTLS_set_link_mtu)(SSL *, long) = NULL;
  long (*DTLS_get_link_min_mtu)(SSL *) = NULL;
  #endif
-@@ -676,7 +674,8 @@ int (*SSL_set_tlsext_use_srtp)(SSL *, const char *) = 
+@@ -681,7 +679,8 @@ int (*SSL_set_tlsext_use_srtp)(SSL *, const char *) = 
  SRTP_PROTECTION_PROFILE * (*SSL_get_selected_srtp_profile)(SSL *) = NULL;
  #endif
  
@@ -20,5 +20,5 @@ Index: src/_cffi_src/openssl/ssl.py
 +#if CRYPTOGRAPHY_OPENSSL_LESS_THAN_111 && \
 +    !(CRYPTOGRAPHY_IS_LIBRESSL && defined(TLS1_3_VERSION))
  static const long Cryptography_HAS_TLSv1_3 = 0;
+ static const long TLS1_3_VERSION = 0;
  static const long SSL_OP_NO_TLSv1_3 = 0;
- static const long SSL_VERIFY_POST_HANDSHAKE = 0;
