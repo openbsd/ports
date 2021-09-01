@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2021/08/31 22:42:23 jca Exp $
+# $OpenBSD: Makefile,v 1.31 2021/09/01 08:20:22 jca Exp $
 
 COMMENT =	fast, small, webkit based browser written in lua
 
 GH_ACCOUNT =	luakit
 GH_PROJECT =	luakit
 GH_TAGNAME =	2.3
-REVISION =	0
+REVISION =	1
 
 EPOCH =		1
 
