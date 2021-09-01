@@ -1,4 +1,4 @@
 SHA256 (firmware/seabios-1.14.0.tar.gz) = 63DMYrKaqD4QplMjOs6/S7FU0A0Mh9wqLG4tp15egf0=
-SHA256 (firmware/sgabios-20100422.tar.gz) = +GidGDnBpBFHhvTWaR61NL95A18Y1Lm93Ijp7+biDg4=
+SHA256 (firmware/sgabios-20180715.tar.gz) = a9r+PdIplwrxyPRinx3TbRGUvu/wU+/6PBh7Sj1iGLA=
 SIZE (firmware/seabios-1.14.0.tar.gz) = 628985
-SIZE (firmware/sgabios-20100422.tar.gz) = 31191
+SIZE (firmware/sgabios-20180715.tar.gz) = 31205

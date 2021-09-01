@@ -1,5 +1,8 @@
---- ../sgabios/sgabios.S.orig	Thu Apr 22 02:03:40 2010
-+++ ../sgabios/sgabios.S	Tue Jul 10 15:58:01 2018
+$OpenBSD: patch-sgabios_sgabios_S,v 1.2 2021/09/01 11:04:21 sthen Exp $
+
+Index: ../sgabios/sgabios.S
+--- ../sgabios/sgabios.S.orig	Wed Apr 21 20:03:40 2010
++++ ../sgabios/sgabios.S	Sun May 16 20:29:58 2021
 @@ -2360,6 +2360,7 @@ resize_end:
    popw %ds                             /* ds = cs */
    call get_byte                        /* flush any remaining "wrong" input */
