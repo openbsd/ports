@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2116 2021/08/29 08:47:28 jca Exp $
+# $OpenBSD: Makefile,v 1.2117 2021/09/01 13:54:15 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1376,6 +1376,7 @@
      SUBDIR += py-curtsies,python3
      SUBDIR += py-dateutil
      SUBDIR += py-dateutil,python3
+     SUBDIR += py-dbus-deviation,python3
      SUBDIR += py-decorator
      SUBDIR += py-decorator,python3
      SUBDIR += py-decoratortools
@@ -1585,6 +1586,7 @@
      SUBDIR += py-robotframework,python3
      SUBDIR += py-rope,python3
      SUBDIR += py-ruamel.ordereddict
+     SUBDIR += py-schema,python3
      SUBDIR += py-selectors2
      SUBDIR += py-send2trash
      SUBDIR += py-send2trash,python3
@@ -1661,6 +1663,7 @@
      SUBDIR += py-testtools,python3
      SUBDIR += py-texscythe
      SUBDIR += py-toolz,python3
+     SUBDIR += py-toposort,python3
      SUBDIR += py-tox
      SUBDIR += py-tox,python3
      SUBDIR += py-tqdm,python3
@@ -1691,6 +1694,7 @@
      SUBDIR += py-wcwidth,python3
      SUBDIR += py-wheel
      SUBDIR += py-wheel,python3
+     SUBDIR += py-wheezy.template,python3
      SUBDIR += py-wrapt
      SUBDIR += py-wrapt,python3
      SUBDIR += py-wsgiutils
