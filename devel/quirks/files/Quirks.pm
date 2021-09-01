@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1302 2021/08/31 11:21:26 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1303 2021/09/01 15:01:43 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -481,6 +481,7 @@ my $stem_extensions = {
 	'py-pyinotify' => 'py3-pyinotify',
 	'py-virtualdisplay' => 'py3-virtualdisplay',
 	'py-meld3' => 'py3-meld3',
+	'py-cryptography_vectors' => 'py3-cryptography_vectors',
 };
 
 my $obsolete_reason = {};
