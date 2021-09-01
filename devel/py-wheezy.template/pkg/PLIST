@@ -1,0 +1,63 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/09/01 13:50:50 ajacoutot Exp $
+bin/wheezy.template
+lib/python${MODPY_VERSION}/site-packages/wheezy/
+lib/python${MODPY_VERSION}/site-packages/wheezy.template-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
+lib/python${MODPY_VERSION}/site-packages/wheezy.template-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/wheezy.template-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/wheezy.template-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/wheezy.template-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/wheezy.template-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/wheezy.template-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/namespace_packages.txt
+lib/python${MODPY_VERSION}/site-packages/wheezy.template-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/wheezy.template-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wheezy/template/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/${MODPY_PYCACHE}builder.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/${MODPY_PYCACHE}comp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/${MODPY_PYCACHE}compiler.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/${MODPY_PYCACHE}console.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/${MODPY_PYCACHE}engine.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/${MODPY_PYCACHE}lexer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/${MODPY_PYCACHE}loader.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/${MODPY_PYCACHE}preprocessor.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/${MODPY_PYCACHE}typing.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/wheezy/template/builder.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/builder.py
+@so lib/python${MODPY_VERSION}/site-packages/wheezy/template/comp.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/comp.py
+@so lib/python${MODPY_VERSION}/site-packages/wheezy/template/compiler.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/compiler.py
+@so lib/python${MODPY_VERSION}/site-packages/wheezy/template/console.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/console.py
+@so lib/python${MODPY_VERSION}/site-packages/wheezy/template/engine.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/engine.py
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/${MODPY_PYCACHE}code.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/${MODPY_PYCACHE}determined.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/code.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/code.py
+@so lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/core.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/core.py
+@so lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/determined.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/ext/determined.py
+@so lib/python${MODPY_VERSION}/site-packages/wheezy/template/lexer.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/lexer.py
+@so lib/python${MODPY_VERSION}/site-packages/wheezy/template/loader.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/loader.py
+@so lib/python${MODPY_VERSION}/site-packages/wheezy/template/parser.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/parser.py
+@so lib/python${MODPY_VERSION}/site-packages/wheezy/template/preprocessor.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/preprocessor.py
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/py.typed
+@so lib/python${MODPY_VERSION}/site-packages/wheezy/template/typing.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/typing.py
+@so lib/python${MODPY_VERSION}/site-packages/wheezy/template/utils.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/wheezy/template/utils.py
