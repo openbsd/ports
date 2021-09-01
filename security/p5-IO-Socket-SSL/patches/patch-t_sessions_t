@@ -1,0 +1,16 @@
+$OpenBSD: patch-t_sessions_t,v 1.1 2021/09/01 15:04:37 bluhm Exp $
+
+LibreSSL does not support session resume with TLS 1.3.
+
+Index: t/sessions.t
+--- t/sessions.t.orig
++++ t/sessions.t
+@@ -48,6 +48,8 @@ sub client {
+ 	 SSL_session_cache_size => 100,
+ 	# versions of Net::SSLeay with support for SESSION_up_ref have also the
+ 	# other functionality needed for proper TLS 1.3 session handling
++	Net::SSLeay::constant("LIBRESSL_VERSION_NUMBER") ?
++	    (SSL_version => 'TLSv1_2') :
+ 	defined(&Net::SSLeay::SESSION_up_ref) ? ()
+ 	    : (SSL_version => 'SSLv23:!TLSv1_3:!SSLv3:!SSLv2'),
+     );
