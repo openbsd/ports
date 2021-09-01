@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2021/09/01 18:28:24 jeremy Exp $
+# $OpenBSD: Makefile,v 1.20 2021/09/01 20:30:29 jeremy Exp $
 
 BROKEN-arm =		SIGBUS
 
@@ -7,6 +7,7 @@ COMMENT =		lightweight, embeddable implementation of ruby
 GH_ACCOUNT =		mruby
 GH_PROJECT =		mruby
 GH_TAGNAME =		3.0.0
+REVISION =		0
 
 CATEGORIES =		lang
 HOMEPAGE =		https://mruby.org/
@@ -17,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c curses m readline
 
 MODULES =		lang/ruby
-BUILD_DEPENDS =		devel/bison \
-			lang/ruby/${MODRUBY_REV}
+BUILD_DEPENDS =		devel/bison
+MODRUBY_RUNDEP =	No
 
 MAKE_ENV =		CC="${CC}" \
 			LD="${CC}"
