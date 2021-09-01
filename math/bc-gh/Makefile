@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2021/08/16 14:29:11 bcallah Exp $
+# $OpenBSD: Makefile,v 1.15 2021/09/01 02:35:39 bcallah Exp $
 
-V =		5.0.1
+V =		5.0.2
 COMMENT =	implementation of POSIX bc with GNU and BSD extensions
 DISTNAME =	bc-${V}
 PKGNAME =	bc-gh-${V}
