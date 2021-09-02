@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2120 2021/09/02 08:06:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2121 2021/09/02 08:37:40 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1712,6 +1712,7 @@
      SUBDIR += py-yapf,python3
      SUBDIR += py-zc-lockfile
      SUBDIR += py-zc-lockfile,python3
+     SUBDIR += py-zipp,python3
      SUBDIR += py-zopecomponent,python3
      SUBDIR += py-zopeevent,python3
      SUBDIR += py-zopeinterface,python3
