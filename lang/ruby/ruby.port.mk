@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.103 2020/12/28 16:48:27 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.104 2021/09/02 14:59:44 jeremy Exp $
 
 # ruby module
 
@@ -45,9 +45,9 @@ FULLPKGNAME?=		${MODRUBY_PKG_PREFIX}-${PKGNAME}
 SUBST_VARS+=		GEM_BIN_SUFFIX GEM_MAN_SUFFIX
 
 FLAVOR?=
-# Without a FLAVOR, assume the use of ruby 2.7.
+# Without a FLAVOR, assume the use of ruby 3.0.
 .    if empty(FLAVOR)
-FLAVOR =		ruby27
+FLAVOR =		ruby30
 .    endif
 
 # Check for conflicting FLAVORs and set MODRUBY_REV appropriately based
@@ -67,8 +67,8 @@ ERRORS += "Fatal: Conflicting flavors used: ${FLAVOR}"
 .endif
 
 # The default ruby version to use for non-gem ports.  Defaults to ruby
-# 2.7 for consistency with the default ruby27 FLAVOR for gem ports.
-MODRUBY_REV?=		2.7
+# 3.0 for consistency with the default ruby30 FLAVOR for gem ports.
+MODRUBY_REV?=		3.0
 
 # Because the jruby FLAVORs use same binary names but in
 # different directories, GEM_MAN_SUFFIX is used for the man pages to avoid

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2021/07/06 16:55:32 daniel Exp $
+# $OpenBSD: Makefile,v 1.35 2021/09/02 14:59:44 jeremy Exp $
 
 COMMENT-main=	perl bindings for Xapian
 COMMENT-python=	python bindings for Xapian
@@ -7,6 +7,7 @@ COMMENT-ruby=	ruby bindings for Xapian
 V=		1.4.18
 DISTNAME=	xapian-bindings-${V}
 REVISION-python= 1
+REVISION-ruby = 0
 
 PKGNAME-main=	xapian-bindings-perl-${V}
 PKGNAME-python=	xapian-bindings-python-${V}
@@ -50,7 +51,8 @@ SUBST_VARS+=		MODRUBY_BINREV
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69
-CONFIGURE_ENV=		RUBY="${RUBY}" RDOC="${RUBY:S/ruby/rdoc/}"
+CONFIGURE_ENV=		RUBY="${RUBY}" RDOC="${RUBY:S/ruby/rdoc/}" \
+			CXXFLAGS="${CXXFLAGS} -fdeclspec"
 CONFIGURE_ARGS=		--with-perl \
 			--with-python3 \
 			--with-ruby \
