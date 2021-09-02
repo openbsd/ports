@@ -1,0 +1,61 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/09/02 20:14:58 ajacoutot Exp $
+@conflict docbook2x-<0.8.8p4
+bin/docbook2dvi
+bin/docbook2html
+bin/docbook2man
+bin/docbook2pdf
+bin/docbook2ps
+bin/docbook2rtf
+bin/docbook2tex
+bin/docbook2texi
+bin/docbook2txt
+bin/jw
+bin/sgmldiff
+@man man/man1/docbook2dvi.1
+@man man/man1/docbook2html.1
+@man man/man1/docbook2man-spec.pl.1
+@man man/man1/docbook2man.1
+@man man/man1/docbook2pdf.1
+@man man/man1/docbook2ps.1
+@man man/man1/docbook2rtf.1
+@man man/man1/docbook2tex.1
+@man man/man1/docbook2texi-spec.pl.1
+@man man/man1/docbook2texi.1
+@man man/man1/jw.1
+@man man/man1/sgmldiff.1
+@man man/man7/backend-spec.7
+@man man/man7/frontend-spec.7
+share/doc/html/
+share/doc/html/docbook-utils-0.6.14/
+share/doc/html/docbook-utils-0.6.14/api.html
+share/doc/html/docbook-utils-0.6.14/backend-spec.html
+share/doc/html/docbook-utils-0.6.14/docbook2man.html
+share/doc/html/docbook-utils-0.6.14/docbook2texi.html
+share/doc/html/docbook-utils-0.6.14/fdl.html
+share/doc/html/docbook-utils-0.6.14/frontend-spec.html
+share/doc/html/docbook-utils-0.6.14/helpers.html
+share/doc/html/docbook-utils-0.6.14/index.html
+share/doc/html/docbook-utils-0.6.14/intro-jw.html
+share/doc/html/docbook-utils-0.6.14/intro-sgmldiff.html
+share/doc/html/docbook-utils-0.6.14/introduction.html
+share/doc/html/docbook-utils-0.6.14/jw.html
+share/doc/html/docbook-utils-0.6.14/sgmldiff.html
+share/sgml/
+share/sgml/docbook/
+share/sgml/docbook/utils-0.6.14/
+share/sgml/docbook/utils-0.6.14/backends/
+share/sgml/docbook/utils-0.6.14/backends/dvi
+share/sgml/docbook/utils-0.6.14/backends/html
+share/sgml/docbook/utils-0.6.14/backends/man
+share/sgml/docbook/utils-0.6.14/backends/pdf
+share/sgml/docbook/utils-0.6.14/backends/ps
+share/sgml/docbook/utils-0.6.14/backends/rtf
+share/sgml/docbook/utils-0.6.14/backends/tex
+share/sgml/docbook/utils-0.6.14/backends/texi
+share/sgml/docbook/utils-0.6.14/backends/txt
+share/sgml/docbook/utils-0.6.14/docbook-utils.dsl
+share/sgml/docbook/utils-0.6.14/frontends/
+share/sgml/docbook/utils-0.6.14/frontends/docbook
+share/sgml/docbook/utils-0.6.14/helpers/
+share/sgml/docbook/utils-0.6.14/helpers/docbook2man-spec.pl
+share/sgml/docbook/utils-0.6.14/helpers/docbook2texi-spec.pl

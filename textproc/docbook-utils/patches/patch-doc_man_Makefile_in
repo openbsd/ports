@@ -1,0 +1,14 @@
+$OpenBSD: patch-doc_man_Makefile_in,v 1.1.1.1 2021/09/02 20:14:58 ajacoutot Exp $
+
+Index: doc/man/Makefile.in
+--- doc/man/Makefile.in.orig
++++ doc/man/Makefile.in
+@@ -356,7 +356,7 @@ uninstall-man: uninstall-man1 uninstall-man7
+ 
+ $(man1_MANS) $(man7_MANS): $(top_srcdir)/doc/docbook-utils.sgml \
+ 		$(top_srcdir)/helpers/docbook2man-spec.pl
+-	SGML_CATALOG_FILES=/etc/sgml/catalog \
++	SGML_CATALOG_FILES=/usr/local/share/sgml/catalog \
+ 	SGML_SEARCH_PATH=$(top_srcdir)/doc:.. \
+ 		nsgmls $< | \
+ 		sgmlspl $(top_srcdir)/helpers/docbook2man-spec.pl

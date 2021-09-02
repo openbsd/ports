@@ -1,0 +1,14 @@
+$OpenBSD: patch-doc_HTML_Makefile_in,v 1.1.1.1 2021/09/02 20:14:58 ajacoutot Exp $
+
+Index: doc/HTML/Makefile.in
+--- doc/HTML/Makefile.in.orig
++++ doc/HTML/Makefile.in
+@@ -297,7 +297,7 @@ $(html_DATA): $(top_srcdir)/doc/docbook-utils.sgml \
+ 		$(top_srcdir)/doc/refentry/docbook2texi-spec.pl.sgml \
+ 		$(top_srcdir)/doc/refentry/frontend-spec.sgml \
+ 		$(top_srcdir)/doc/refentry/sgmldiff.sgml
+-	SGML_CATALOG_FILES=/etc/sgml/catalog \
++	SGML_CATALOG_FILES=/usr/local/share/sgml/catalog \
+ 	SGML_SEARCH_PATH=$(top_srcdir):$(top_srcdir)/doc:.. \
+ 		jade -t sgml -i html -d $(top_srcdir)/docbook-utils.dsl\#html \
+ 			-V '%use-id-as-filename%' $<
