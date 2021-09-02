@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.60 2021/08/13 09:47:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2021/09/02 13:13:27 sthen Exp $
 
 COMMENT=	latency logging and graphing system
 
-V=		2.8.1
+V=		2.8.2
 DISTNAME=	smokeping-$V
 
 CATEGORIES=	net
@@ -34,8 +34,8 @@ NO_TEST=	Yes
 USE_GMAKE=	Yes
 PKG_ARCH=	*
 
-AUTOCONF_VERSION= 2.69
-AUTOMAKE_VERSION= 1.15
+AUTOCONF_VERSION= 2.71
+AUTOMAKE_VERSION= 1.16
 CONFIGURE_STYLE= autoreconf
 CONFIGURE_ENV=	PERL5LIB=${LOCALBASE}/libdata/perl5/site_perl
 CONFIGURE_ARGS=	--enable-pkgonly \
