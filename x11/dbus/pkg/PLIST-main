@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2019/11/10 19:12:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2021/09/02 19:32:39 ajacoutot Exp $
 @pkgpath x11/dbus
 @newgroup _dbus:572
 @newuser _dbus:572:_dbus:daemon:dbus user:/nonexistent:/sbin/nologin
@@ -89,6 +89,7 @@ share/examples/dbus/dbus-1/session.conf
 @sample ${SYSCONFDIR}/dbus-1/session.conf
 share/examples/dbus/dbus-1/system.conf
 @sample ${SYSCONFDIR}/dbus-1/system.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/
 share/xml/
 share/xml/dbus-1/
 share/xml/dbus-1/busconfig.dtd
