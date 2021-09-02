@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2119 2021/09/01 22:37:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.2120 2021/09/02 08:06:42 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1469,6 +1469,7 @@
      SUBDIR += py-jaraco-functools
      SUBDIR += py-jaraco-functools,python3
      SUBDIR += py-jedi,python3
+     SUBDIR += py-jeepney,python3
      SUBDIR += py-jmespath
      SUBDIR += py-jmespath,python3
      SUBDIR += py-jsonrpclib
