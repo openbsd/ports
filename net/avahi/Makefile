@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2021/02/23 19:39:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.142 2021/09/02 19:23:20 ajacoutot Exp $
 
 COMMENT-main=		framework for Multicast DNS Service Discovery
 COMMENT-gtk3=		gtk+3 avahi-ui libraries
@@ -14,7 +14,7 @@ GH_TAGNAME=		v${V}
 REVISION-python=	1
 REVISION-gui=		1
 REVISION-gtk3=		0
-REVISION-main=		0
+REVISION-main=		1
 REVISION-ui=		0
 
 PKGNAME-main=		avahi-${V}
