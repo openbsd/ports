@@ -1,4 +1,5 @@
-$OpenBSD: patch-makefile_common,v 1.5 2021/02/26 18:20:31 naddy Exp $
+$OpenBSD: patch-makefile_common,v 1.6 2021/09/02 17:51:27 fcambus Exp $
+
 Index: makefile.common
 --- makefile.common.orig
 +++ makefile.common
@@ -6,8 +7,8 @@ Index: makefile.common
  
  CC?=gcc
  CXX?=g++
--CFLAGS+=-Ibme -Iasm -O3 -fpermissive
-+CFLAGS+=-Ibme -Iasm -fpermissive
- CXXFLAGS+=$(CFLAGS)
+-CFLAGS+=-Ibme -Iasm -O3
++CFLAGS+=-Ibme -Iasm
+ CXXFLAGS+=$(CFLAGS) -fpermissive
  
  EXE=	$(PREFIX)goattrk2$(SUFFIX) \
