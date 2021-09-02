@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/09/02 08:41:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/09/02 15:15:33 ajacoutot Exp $
 
 COMMENT =	unittest subTest() support and subtests fixture
 
@@ -21,6 +21,8 @@ MODPY_SETUPTOOLS =	Yes
 
 FLAVOR =		python3
 FLAVORS =		python3
+
+BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 
 RUN_DEPENDS =		devel/py-test${MODPY_FLAVOR}
 MODPY_PYTEST =		Yes
