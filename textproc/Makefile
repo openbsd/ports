@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.685 2021/09/01 13:55:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.686 2021/09/02 20:15:36 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -38,6 +38,7 @@
      SUBDIR += docbook
      SUBDIR += docbook-dsssl
      SUBDIR += docbook-to-man
+     SUBDIR += docbook-utils
      SUBDIR += docbook-xsl
      SUBDIR += docbook2mdoc
      SUBDIR += docbook2x
