@@ -1,4 +1,5 @@
-$OpenBSD: patch-style_MultiLineInlineNote_cxx,v 1.1 2017/04/15 20:33:04 naddy Exp $
+$OpenBSD: patch-style_MultiLineInlineNote_cxx,v 1.2 2021/09/02 17:57:04 ajacoutot Exp $
+
 --- style/MultiLineInlineNote.cxx.orig	Fri Apr 18 21:54:56 2003
 +++ style/MultiLineInlineNote.cxx	Sat Apr 15 22:04:26 2017
 @@ -1,6 +1,6 @@
