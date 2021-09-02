@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2021/09/01 09:17:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.149 2021/09/02 07:37:41 ajacoutot Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -117,6 +117,8 @@ CONFIGURE_ARGS +=	-DENABLE_GAMEPAD=OFF
 CONFIGURE_ARGS +=	-DENABLE_JIT=OFF
 CONFIGURE_ARGS +=	-DENABLE_LLINT_C_LOOP=ON
 .endif
+
+CXXFLAGS +=		-DFIXED_EXECUTABLE_MEMORY_POOL_SIZE_IN_MB=32
 
 # XXX fatal error: 'X11/Xlib.h' file not found
 CXXFLAGS +=		-I${X11BASE}/include
