@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.630 2021/09/01 22:44:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.631 2021/09/02 13:07:31 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -282,7 +282,6 @@
      SUBDIR += py-bcrypt,python3
      SUBDIR += py-cryptodome
      SUBDIR += py-cryptodome,python3
-     SUBDIR += py-cryptography
      SUBDIR += py-cryptography,python3
      SUBDIR += py-cryptography_vectors
      SUBDIR += py-cryptography_vectors,python3
@@ -320,7 +319,6 @@
      SUBDIR += py-requests-aws4auth,python3
      SUBDIR += py-ropper,python3
      SUBDIR += py-rsa,python3
-     SUBDIR += py-scp
      SUBDIR += py-scp,python3
      SUBDIR += py-scrypt
      SUBDIR += py-scrypt,python3
