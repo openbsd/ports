@@ -1,0 +1,14 @@
+$OpenBSD: patch-invoke_runners_py,v 1.1.1.1 2021/09/02 08:45:37 sthen Exp $
+
+Index: invoke/runners.py
+--- invoke/runners.py.orig
++++ invoke/runners.py
+@@ -320,7 +320,7 @@ class Runner(object):
+             Default: ``False``.
+ 
+         :param str shell:
+-            Which shell binary to use. Default: ``/bin/bash`` (on Unix;
++            Which shell binary to use. Default: ``/bin/sh`` (on Unix;
+             ``COMSPEC`` or ``cmd.exe`` on Windows.)
+ 
+         :param timeout:

@@ -1,0 +1,14 @@
+$OpenBSD: patch-tests_runners_py,v 1.1.1.1 2021/09/02 08:45:37 sthen Exp $
+
+Index: tests/runners.py
+--- tests/runners.py.orig
++++ tests/runners.py
+@@ -82,7 +82,7 @@ def _expect_platform_shell(shell):
+     if WINDOWS:
+         assert shell.endswith("cmd.exe")
+     else:
+-        assert shell == "/bin/bash"
++        assert shell == "/bin/sh"
+ 
+ 
+ def make_tcattrs(cc_is_ints=True, echo=False):
