@@ -1,8 +1,0 @@
-Varnish has a default configuration built in, however see vcl(7)
-or the following link for more information:
-
-	${HOMEPAGE}wiki/VCLExamples
-
-and for further information:
-
-	${HOMEPAGE}docs/
