@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:46:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/09/02 12:56:31 sthen Exp $
 
 COMMENT=	module to parse the content of tables in HTML text
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	HTML-TableContentParser-0.302
+DISTNAME =	HTML-TableContentParser-0.305
 CATEGORIES=	www devel
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE=	Yes
