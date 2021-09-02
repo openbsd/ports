@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.48 2021/08/17 20:41:17 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.49 2021/09/02 16:08:43 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk3%%
 bin/ex
@@ -1146,6 +1146,7 @@ share/vim/${P}/syntax/fvwm2m4.vim
 share/vim/${P}/syntax/gdb.vim
 share/vim/${P}/syntax/gdmo.vim
 share/vim/${P}/syntax/gedcom.vim
+share/vim/${P}/syntax/gemtext.vim
 share/vim/${P}/syntax/gift.vim
 share/vim/${P}/syntax/git.vim
 share/vim/${P}/syntax/gitcommit.vim
@@ -1483,6 +1484,7 @@ share/vim/${P}/syntax/st.vim
 share/vim/${P}/syntax/stata.vim
 share/vim/${P}/syntax/stp.vim
 share/vim/${P}/syntax/strace.vim
+share/vim/${P}/syntax/structurizr.vim
 share/vim/${P}/syntax/sudoers.vim
 share/vim/${P}/syntax/svg.vim
 share/vim/${P}/syntax/svn.vim

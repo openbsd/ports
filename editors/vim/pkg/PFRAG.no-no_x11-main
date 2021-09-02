@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_x11-main,v 1.13 2021/07/26 20:31:16 sthen Exp $
+@comment $OpenBSD: PFRAG.no-no_x11-main,v 1.14 2021/09/02 16:08:43 sthen Exp $
 bin/eview
 bin/evim
 bin/gview
@@ -7,8 +7,8 @@ bin/gvimdiff
 bin/gvimtutor
 bin/rgview
 bin/rgvim
-@man man/man1/evim.1
 @man man/man1/eview.1
+@man man/man1/evim.1
 @man man/man1/gview.1
 @man man/man1/gvim.1
 @man man/man1/gvimdiff.1
