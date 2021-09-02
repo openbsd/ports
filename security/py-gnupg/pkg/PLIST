@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/02/19 21:00:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/09/02 13:07:56 sthen Exp $
 @conflict py-gnupg-*
 @pkgpath security/py-gnupg
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}gnupg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnupg.py
 lib/python${MODPY_VERSION}/site-packages/python_gnupg-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

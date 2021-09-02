@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2021/02/27 11:13:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2021/09/02 13:07:56 sthen Exp $
 
 COMMENT=		Python module for GnuPG interface
 
-MODPY_EGG_VERSION=	0.4.6
+MODPY_EGG_VERSION=	0.4.7
 DISTNAME=		python-gnupg-${MODPY_EGG_VERSION}
 PKGNAME=		py-gnupg-${MODPY_EGG_VERSION}
 
