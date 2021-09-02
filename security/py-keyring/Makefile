@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2021/09/02 08:38:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2021/09/02 13:27:04 ajacoutot Exp $
 
 COMMENT=		store and access your passwords safely
 
@@ -17,7 +17,8 @@ MODPY_ADJ_FILES=	keyring/cli.py
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 
-BUILD_DEPENDS=		devel/py-setuptools_scm${MODPY_FLAVOR}
+BUILD_DEPENDS=		devel/py-setuptools_scm${MODPY_FLAVOR} \
+			textproc/py-toml${MODPY_FLAVOR}
 
 RUN_DEPENDS=		devel/py-entrypoints${MODPY_FLAVOR} \
 			devel/py-importlib-metadata${MODPY_FLAVOR} \
