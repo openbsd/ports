@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2021/01/24 18:30:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2021/09/02 09:37:57 ajacoutot Exp $
 @bin bin/addmoddel
 @bin bin/exifcomment
 @bin bin/exifdata
@@ -19,7 +19,7 @@
 include/exiv2/
 include/exiv2/asfvideo.hpp
 include/exiv2/basicio.hpp
-include/exiv2/bigtiffimage.hpp
+include/exiv2/bmffimage.hpp
 include/exiv2/bmpimage.hpp
 include/exiv2/config.h
 include/exiv2/convert.hpp
