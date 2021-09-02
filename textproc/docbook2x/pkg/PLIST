@@ -1,19 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/06/29 09:58:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/09/02 18:26:14 ajacoutot Exp $
+bin/db2x_docbook2man
+bin/db2x_docbook2texi
 bin/db2x_manxml
 bin/db2x_texixml
 bin/db2x_xsltproc
-bin/docbook2man
-bin/docbook2texi
 bin/sgml2xml-isoent
 @bin bin/utf8trans
 @info info/docbook2X.info
 @info info/docbook2man-xslt.info
 @info info/docbook2texi-xslt.info
+@man man/man1/db2x_docbook2man.1
+@man man/man1/db2x_docbook2texi.1
 @man man/man1/db2x_manxml.1
 @man man/man1/db2x_texixml.1
 @man man/man1/db2x_xsltproc.1
-@man man/man1/docbook2man.1
-@man man/man1/docbook2texi.1
 @man man/man1/sgml2xml-isoent.1
 @man man/man1/utf8trans.1
 share/doc/docbook2X/
