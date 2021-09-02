@@ -1,4 +1,5 @@
-$OpenBSD: patch-external_libfreehand_ExternalProject_libfreehand_mk,v 1.4 2020/08/07 07:09:30 robert Exp $
+$OpenBSD: patch-external_libfreehand_ExternalProject_libfreehand_mk,v 1.5 2021/09/02 11:11:58 robert Exp $
+
 Index: external/libfreehand/ExternalProject_libfreehand.mk
 --- external/libfreehand/ExternalProject_libfreehand.mk.orig
 +++ external/libfreehand/ExternalProject_libfreehand.mk
@@ -6,8 +7,8 @@ Index: external/libfreehand/ExternalProject_libfreehand.mk
  	$(call gb_Trace_StartRange,libfreehand,EXTERNAL)
  	$(call gb_ExternalProject_run,build,\
  		export PKG_CONFIG="" \
--		&& MAKE=$(MAKE) ./configure \
-+		&& MAKE=$(MAKE) CPPFLAGS="-fPIC -DPIC" ./configure \
+-		&& MAKE=$(MAKE) $(gb_RUN_CONFIGURE) ./configure \
++		&& MAKE=$(MAKE) $(gb_RUN_CONFIGURE) CPPFLAGS="-fPIC -DPIC" ./configure \
  			--with-pic \
  			--enable-static \
  			--disable-shared \

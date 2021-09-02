@@ -1,9 +1,9 @@
-$OpenBSD: patch-external_pdfium_Library_pdfium_mk,v 1.1 2021/06/26 08:06:58 robert Exp $
+$OpenBSD: patch-external_pdfium_Library_pdfium_mk,v 1.2 2021/09/02 11:11:58 robert Exp $
 
 Index: external/pdfium/Library_pdfium.mk
 --- external/pdfium/Library_pdfium.mk.orig
 +++ external/pdfium/Library_pdfium.mk
-@@ -682,7 +682,7 @@ $(eval $(call gb_Library_add_generated_exception_objec
+@@ -685,7 +685,7 @@ $(eval $(call gb_Library_add_generated_exception_objec
  ))
  endif
  
@@ -11,4 +11,4 @@ Index: external/pdfium/Library_pdfium.mk
 +ifneq (,$(filter LINUX OPENBSD,$(OS)))
  # fxge
  $(eval $(call gb_Library_add_generated_exception_objects,pdfium,\
-     UnpackedTarball/pdfium/core/fxge/fx_ge_linux \
+     UnpackedTarball/pdfium/core/fxge/linux/fx_linux_impl \
