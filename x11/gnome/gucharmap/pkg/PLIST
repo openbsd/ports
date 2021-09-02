@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2021/05/06 10:42:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.39 2021/09/02 14:32:38 jasper Exp $
 @pkgpath x11/gnome/gucharmap,gtk2
 @bin bin/gucharmap
 include/gucharmap-2.90/
@@ -111,6 +111,7 @@ share/locale/xh/LC_MESSAGES/gucharmap.mo
 share/locale/zh_CN/LC_MESSAGES/gucharmap.mo
 share/locale/zh_HK/LC_MESSAGES/gucharmap.mo
 share/locale/zh_TW/LC_MESSAGES/gucharmap.mo
+share/metainfo/
 share/metainfo/gucharmap.metainfo.xml
 share/vala/vapi/gucharmap-2.90.deps
 share/vala/vapi/gucharmap-2.90.vapi
