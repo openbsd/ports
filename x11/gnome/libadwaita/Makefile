@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2021/05/29 08:57:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2021/09/02 09:43:44 ajacoutot Exp $
 
 COMMENT=		building blocks for modern adaptive GNOME apps
 
 GNOME_PROJECT=		libadwaita
-GNOME_VERSION=		1.0.0alpha1
+GNOME_VERSION=		1.0.0alpha2
 
 # no official release yet
-COMMIT=			faa9f26a2b8a89923c0b83d42e84078f672c19ec
+COMMIT=			f5932ab4250c8e709958c6e75a1a4941a5f0f386
 MASTER_SITES=		https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${COMMIT}/
 WRKDIST=		${WRKDIR}/${GNOME_PROJECT}-${COMMIT}
 EXTRACT_SUFX=		.tar.gz
