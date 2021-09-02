@@ -1,3 +1,6 @@
 This module provides a way for securely storing passwords and other
 secrets. It uses D-Bus Secret Service API that is supported by GNOME
 Keyring and KSecretsService.
+
+In OpenBSD, a few packages are providing the org.freedesktop.secrets interface:
+gnome-keyring, keepassxc etc.
