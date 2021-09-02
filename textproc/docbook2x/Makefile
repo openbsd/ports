@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2021/09/02 18:26:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2021/09/02 18:33:06 ajacoutot Exp $
 
 COMMENT =	convert DocBook to man pages and Texinfo
 
 DISTNAME =	docbook2X-0.8.8
 PKGNAME =	${DISTNAME:L}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	textproc
 
@@ -31,10 +31,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--datadir=${PREFIX}/share
 
 # prevent conflict with docbook-utils
-CONFIGURE_ARGS =	--program-transform-name='s/docbook2/db2x_docbook2/'
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/perl/db2x_xsltproc.pl
+CONFIGURE_ARGS +=	--program-transform-name='s/docbook2/db2x_docbook2/'
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/libxml2
