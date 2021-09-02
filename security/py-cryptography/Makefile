@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2021/09/02 08:29:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2021/09/02 08:44:12 sthen Exp $
 
 COMMENT=	cryptographic recipes and primitives for Python
 
@@ -39,10 +39,10 @@ TEST_DEPENDS=	${FULLPKGNAME}:${FULLPKGPATH} \
 		devel/py-coverage${MODPY_FLAVOR} \
 		devel/py-hypothesis${MODPY_FLAVOR} \
 		devel/py-pretend${MODPY_FLAVOR} \
+		devel/py-test-subtests${MODPY_FLAVOR} \
 		devel/py-tz${MODPY_FLAVOR} \
 		security/py-cryptography_vectors${MODPY_FLAVOR}=${MODPY_EGG_VERSION} \
 		textproc/py-iso8601${MODPY_FLAVOR}
-# devel/py-test-subtests${MODPY_FLAVOR} not yet imported
 
 MAKE_ENV=	CRYPTOGRAPHY_DONT_BUILD_RUST=1
 
