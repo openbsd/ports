@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2021/01/04 14:06:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2021/09/02 10:46:27 ajacoutot Exp $
 
 COMMENT =		data analysis and manipulation library
 
@@ -48,13 +48,15 @@ TEST_DEPENDS +=		databases/py-mysqlclient${MODPY_FLAVOR} \
 			math/py-bottleneck${MODPY_FLAVOR} \
 			math/py-numexpr${MODPY_FLAVOR} \
 			math/py-scipy${MODPY_FLAVOR} \
-			net/py-boto${MODPY_FLAVOR} \
 			textproc/py-lxml${MODPY_FLAVOR} \
 			textproc/py-xlrd${MODPY_FLAVOR} \
 			www/py-beautifulsoup4${MODPY_FLAVOR} \
 			www/py-httplib2${MODPY_FLAVOR} \
 			www/py-jinja2${MODPY_FLAVOR} \
 			x11/xclip
+
+# py-boto has been removed from ports on 20200902
+#TEST_DEPENDS +=		net/py-boto${MODPY_FLAVOR}
 
 TEST_ENV +=		TZ=UTC
 
