@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/07/16 23:57:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/09/02 12:55:44 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/HTML/
 ${P5ARCH}/HTML/Entities.pm
@@ -11,7 +11,7 @@ ${P5ARCH}/HTML/TokeParser.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/HTML/
 ${P5ARCH}/auto/HTML/Parser/
-${P5ARCH}/auto/HTML/Parser/Parser.so
+@so ${P5ARCH}/auto/HTML/Parser/Parser.so
 @man man/man3p/HTML::Entities.3p
 @man man/man3p/HTML::Filter.3p
 @man man/man3p/HTML::HeadParser.3p
