@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.95 2021/08/20 12:12:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.96 2021/09/02 18:40:04 sthen Exp $
+
+# https://github.com/rspamd/rspamd/issues/3858
+ONLY_FOR_ARCHS=	${LP64_ARCHS}
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
