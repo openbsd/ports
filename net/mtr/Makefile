@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.72 2021/02/23 19:39:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2021/09/02 17:06:14 fcambus Exp $
 
 COMMENT=	network diagnostic tool, similar to ping and traceroute
 
 GH_ACCOUNT=	traviscross
 GH_PROJECT=	mtr
-GH_TAGNAME=	v0.93
+GH_TAGNAME=	v0.94
 EPOCH=		0
-REVISION=	0
 
 CATEGORIES=	net
 
@@ -16,12 +15,14 @@ HOMEPAGE=	https://www.bitwizard.nl/mtr/
 PERMIT_PACKAGE=	yes
 
 # diff for pledge(), not yet enabled
-WANTLIB += c m curses
+WANTLIB += c m curses jansson
 
 FLAVORS=	gtk
 FLAVOR?=
 
 BUILD_DEPENDS=	shells/bash-completion
+
+LIB_DEPENDS=	devel/jansson
 
 CONFIGURE_STYLE= autoreconf
 AUTORECONF=	${WRKSRC}/bootstrap.sh
@@ -31,18 +32,16 @@ AUTOMAKE_VERSION= 1.15
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
 MODULES=	lang/python # for tests only
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_BUILDDEP=	No
 MODPY_RUNDEP=	No
 TEST_DEPENDS=	${MODPY_RUN_DEPENDS}
 
 .if ${FLAVOR} == "gtk"
 CONFIGURE_ARGS+=	--with-gtk-prefix=${LOCALBASE}
-LIB_DEPENDS+=		x11/gtk+2
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 cairo fontconfig freetype gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
-WANTLIB += intl pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread z
+LIB_DEPENDS+=		x11/gtk+3
+WANTLIB += atk-1.0 cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gobject-2.0 gtk-3 harfbuzz intl pango-1.0
+WANTLIB += pangocairo-1.0 pthread
 .else
 CONFIGURE_ARGS+=	--without-glib \
 			--without-gtk
