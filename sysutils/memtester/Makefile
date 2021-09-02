@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2021/01/31 19:55:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/09/02 12:59:19 sthen Exp $
 
 COMMENT=	utility to test for memory faults
 
-DISTNAME=	memtester-4.5.0
+DISTNAME=	memtester-4.5.1
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://pyropus.ca/software/memtester/
