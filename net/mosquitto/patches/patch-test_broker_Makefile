@@ -1,11 +1,11 @@
-$OpenBSD: patch-test_broker_Makefile,v 1.6 2021/06/10 08:38:48 sthen Exp $
+$OpenBSD: patch-test_broker_Makefile,v 1.7 2021/09/02 13:13:50 sthen Exp $
 
 don't terminate make if these result in an error exit code
 
 Index: test/broker/Makefile
 --- test/broker/Makefile.orig
 +++ test/broker/Makefile
-@@ -156,8 +156,8 @@ test : test-compile 01 02 03 04 05 06 07 08 09 10 11 1
+@@ -142,8 +142,8 @@ msg_sequence_test:
  ifeq ($(WITH_TLS),yes)
  	./08-ssl-bridge.py
  	./08-ssl-connect-cert-auth-crl.py
