@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:12:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/09/02 08:38:03 ajacoutot Exp $
 
 COMMENT =		library providing an API for accessing packages metadata
 
 MODPY_EGG_VERSION =	1.5.0
 DISTNAME =		importlib_metadata-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		http://importlib-metadata.readthedocs.io/
 
@@ -18,11 +18,13 @@ PERMIT_PACKAGE =	Yes
 
 BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 
+RUN_DEPENDS =		devel/py-zipp${MODPY_FLAVOR}
+
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-# XXX broken, needs zipp and pyfakefs (not in ports)
+# XXX broken, needs pyfakefs (not in ports)
 MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
