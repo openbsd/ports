@@ -1,0 +1,2 @@
+A pathlib-compatible Zipfile object wrapper. Official backport of the standard
+library Path object.
