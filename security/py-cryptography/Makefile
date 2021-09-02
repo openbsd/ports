@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2021/09/02 07:39:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2021/09/02 08:29:47 ajacoutot Exp $
 
 COMMENT=	cryptographic recipes and primitives for Python
 
@@ -29,7 +29,9 @@ RUN_DEPENDS=	devel/py-cffi${MODPY_FLAVOR}>=1.4.2 \
 		net/py-idna${MODPY_FLAVOR} \
 		security/py-asn1crypto${MODPY_FLAVOR}
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		devel/py-setuptools-rust${MODPY_FLAVOR}
+
 PORTHOME=	${WRKDIR}
 
 MODPY_PYTEST=	Yes
