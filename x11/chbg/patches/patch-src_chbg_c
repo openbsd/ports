@@ -1,4 +1,5 @@
-$OpenBSD: patch-src_chbg_c,v 1.1 2017/05/03 12:50:50 jca Exp $
+$OpenBSD: patch-src_chbg_c,v 1.2 2021/09/02 20:53:12 ajacoutot Exp $
+
 --- src/chbg.c.orig
 +++ src/chbg.c
 @@ -2178,11 +2178,12 @@ static void chbg_cleanup()
