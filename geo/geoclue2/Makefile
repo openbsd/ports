@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.42 2021/09/03 11:47:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2021/09/03 12:51:35 ajacoutot Exp $
 
 COMMENT=		modular geoinformation service on top of D-Bus
 
 VERSION=		2.4.13
 DISTNAME=		geoclue-${VERSION}
 PKGNAME=		geoclue2-${VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		geo devel
 
@@ -34,7 +34,7 @@ MODULES=		textproc/intltool \
 LIB_DEPENDS=		devel/libsoup \
 			devel/libnotify \
 			devel/json-glib \
-			net/avahi,-libs
+			net/avahi,-glib
 
 # XXX requires DBus support in wpa_supplicant
 # (wpa_supplicant in OpenBSD is also crippled in other ways)

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.74 2021/09/03 11:47:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2021/09/03 12:51:35 ajacoutot Exp $
 
 COMMENT=		GNOME desktop sharing server
 
 GNOME_PROJECT=		vino
 GNOME_VERSION=		3.22.0
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		net
 
@@ -36,7 +36,7 @@ MODULES=		devel/dconf \
 MODGNOME_TOOLS=		desktop-file-utils
 
 LIB_DEPENDS=		devel/libnotify \
-			net/avahi,-libs \
+			net/avahi,-glib \
 			net/telepathy/telepathy-glib \
 			security/gnutls \
 			x11/gnome/libsecret \

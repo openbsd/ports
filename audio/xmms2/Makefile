@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.57 2021/09/03 11:47:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2021/09/03 12:51:35 ajacoutot Exp $
 
 COMMENT =		audio player daemon with library management
 
 V =			0.8
 DISTNAME =		xmms2-${V}DrO_o
 PKGNAME =		xmms2-${V}
-REVISION =		15
+REVISION =		16
 
 SHARED_LIBS +=		xmmsclient++		2.0 # 4.0.0
 SHARED_LIBS +=		xmmsclient++-glib	1.0 # 1.0.0
@@ -48,7 +48,7 @@ LIB_DEPENDS =		devel/glib2 \
 			textproc/libxml \
 			net/curl \
 			audio/mpg123 \
-			net/avahi,-libs \
+			net/avahi,-glib \
 			audio/libsndfile
 
 WSCRIPT_PATCHES =	src/clients/lib/xmmsclient++/wscript \

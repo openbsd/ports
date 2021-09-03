@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2021/09/03 11:48:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2021/09/03 12:51:35 ajacoutot Exp $
 
 COMMENT=		PGP public keys sharing via DNS-SD and HKP
 
 GNOME_PROJECT=		seahorse-sharing
 GNOME_VERSION=		3.8.0
-REVISION=		13
+REVISION=		14
 
 CATEGORIES=		net security
 
@@ -26,7 +26,7 @@ MODULES=		x11/gnome
 
 LIB_DEPENDS=		devel/libsoup \
 			security/gpgme \
-			net/avahi,-libs \
+			net/avahi,-glib \
 			x11/gtk+3
 
 CONFIGURE_STYLE=	gnu
