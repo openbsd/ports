@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:43:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/09/03 11:47:41 ajacoutot Exp $
 
 COMMENT=	multi-threaded DAAP server
 
 DISTNAME=	mt-daapd-0.2.4.2
-REVISION=	6
+REVISION=	7
+
 CATEGORIES=	audio net
 
 HOMEPAGE=	http://www.mt-daapd.org/
@@ -15,8 +16,9 @@ WANTLIB += avahi-client avahi-common c gdbm id3tag>=3 pthread z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mt-daapd/}
 
-LIB_DEPENDS=	net/avahi \
-		audio/libid3tag
+LIB_DEPENDS=	net/avahi,-libs \
+		audio/libid3tag \
+		databases/gdbm
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-gdbm-includes=${LOCALBASE}/include \

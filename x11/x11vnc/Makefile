@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.53 2021/02/03 23:08:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2021/09/03 11:47:42 ajacoutot Exp $
 
 COMMENT =		VNC server for real X displays
 
 GH_ACCOUNT =		LibVNC
 GH_PROJECT =		x11vnc
 GH_TAGNAME =		0.9.16
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		x11
 
@@ -14,13 +14,13 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xtst avahi-client avahi-common c cairo crypto
-WANTLIB += pthread ssl vncclient vncserver
+WANTLIB += ssl vncclient vncserver
 
 MODULES =		x11/tk
 RUN_DEPENDS =		devel/desktop-file-utils \
 			${MODTK_RUN_DEPENDS}
 LIB_DEPENDS =		graphics/cairo \
-			net/avahi \
+			net/avahi,-libs \
 			net/libvncserver
 
 USE_GMAKE =		Yes

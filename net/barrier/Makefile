@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/05/06 19:13:11 tb Exp $
+# $OpenBSD: Makefile,v 1.4 2021/09/03 11:47:41 ajacoutot Exp $
 
 COMMENT =		mouse and keyboard sharing utility
 
 V =			2.3.3
 DISTNAME =		barrier-${V}-release
 PKGNAME =		barrier-${V}
-REVISION =		0
+REVISION =		1
 CATEGORIES =		net x11
 
 MASTER_SITES =		https://github.com/debauchee/barrier/releases/download/v${V}/
@@ -23,7 +23,7 @@ MODULES =		devel/cmake \
 BUILD_DEPENDS =		devel/gtest
 
 LIB_DEPENDS =		net/curl \
-			net/avahi
+			net/avahi,-libs
 
 NO_TEST =		Yes
 
