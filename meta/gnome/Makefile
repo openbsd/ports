@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.212 2021/08/19 10:32:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.213 2021/09/03 11:50:22 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (core installation)
 COMMENT-extras=		GNOME desktop meta-package (world installation)
@@ -9,6 +9,8 @@ PKGNAME=		gnome-${V}
 
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
+
+REVISION-main=		0
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -26,6 +28,10 @@ RUN_DEPENDS-main +=	x11/gnome/gvfs,-smb,
 
 # create "well known" user directories and default gtk bookmarks file
 RUN_DEPENDS-main +=	x11/xdg-user-dirs-gtk
+
+# all Avahi dependencies are already fulfilled;
+# add avahi-daemon for convenience as a few GNOME apps can make use of it
+RUN_DEPENDS-main +=	net/avahi
 
 ################################################################################
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core.bst
