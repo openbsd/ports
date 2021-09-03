@@ -1,4 +1,4 @@
-# $OpenBSD: cargo.port.mk,v 1.22 2021/04/27 06:51:10 semarie Exp $
+# $OpenBSD: cargo.port.mk,v 1.23 2021/09/03 08:27:43 semarie Exp $
 
 CATEGORIES +=	lang/rust
 
@@ -185,7 +185,9 @@ MODCARGO_post-patch += \
 MODCARGO_configure = \
 	mkdir -p ${WRKDIR}/.cargo; \
 	\
-	echo "[source.modcargo]" >${WRKDIR}/.cargo/config; \
+	echo "[net]" >${WRKDIR}/.cargo/config; \
+	echo "offline = true" >>${WRKDIR}/.cargo/config; \
+	echo "[source.modcargo]" >>${WRKDIR}/.cargo/config; \
 	echo "directory = '${MODCARGO_VENDOR_DIR}'" \
 		>>${WRKDIR}/.cargo/config; \
 	echo "[source.crates-io]" >>${WRKDIR}/.cargo/config; \
