@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-libs,v 1.1 2021/09/03 11:46:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST-libs,v 1.2 2021/09/03 12:51:03 ajacoutot Exp $
 @conflict avahi-<0.8p2
 @conflict avahi-gtk-*
 @conflict avahi-qt4-*
@@ -57,17 +57,6 @@ include/avahi-core/log.h
 include/avahi-core/lookup.h
 include/avahi-core/publish.h
 include/avahi-core/rr.h
-include/avahi-glib/
-include/avahi-glib/glib-malloc.h
-include/avahi-glib/glib-watch.h
-include/avahi-gobject/
-include/avahi-gobject/ga-client.h
-include/avahi-gobject/ga-entry-group.h
-include/avahi-gobject/ga-enums.h
-include/avahi-gobject/ga-error.h
-include/avahi-gobject/ga-record-browser.h
-include/avahi-gobject/ga-service-browser.h
-include/avahi-gobject/ga-service-resolver.h
 include/avahi-libevent/
 include/avahi-libevent/libevent-watch.h
 lib/girepository-1.0/
@@ -82,12 +71,6 @@ lib/libavahi-common.la
 @static-lib lib/libavahi-core.a
 lib/libavahi-core.la
 @lib lib/libavahi-core.so.${LIBavahi-core_VERSION}
-@static-lib lib/libavahi-glib.a
-lib/libavahi-glib.la
-@lib lib/libavahi-glib.so.${LIBavahi-glib_VERSION}
-@static-lib lib/libavahi-gobject.a
-lib/libavahi-gobject.la
-@lib lib/libavahi-gobject.so.${LIBavahi-gobject_VERSION}
 @static-lib lib/libavahi-libevent.a
 lib/libavahi-libevent.la
 @lib lib/libavahi-libevent.so.${LIBavahi-libevent_VERSION}
@@ -101,8 +84,6 @@ lib/pkgconfig/avahi-client.pc
 lib/pkgconfig/avahi-compat-howl.pc
 lib/pkgconfig/avahi-compat-libdns_sd.pc
 lib/pkgconfig/avahi-core.pc
-lib/pkgconfig/avahi-glib.pc
-lib/pkgconfig/avahi-gobject.pc
 lib/pkgconfig/avahi-libevent.pc
 share/gir-1.0/
 share/gir-1.0/Avahi-0.6.gir
@@ -110,51 +91,129 @@ share/gir-1.0/AvahiCore-0.6.gir
 share/locale/ach/
 share/locale/ach/LC_MESSAGES/
 share/locale/ach/LC_MESSAGES/avahi.mo
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/avahi.mo
+share/locale/bg/
+share/locale/bg/LC_MESSAGES/
 share/locale/bg/LC_MESSAGES/avahi.mo
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/avahi.mo
+share/locale/cs/
+share/locale/cs/LC_MESSAGES/
 share/locale/cs/LC_MESSAGES/avahi.mo
+share/locale/da/
+share/locale/da/LC_MESSAGES/
 share/locale/da/LC_MESSAGES/avahi.mo
+share/locale/de/
+share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/avahi.mo
+share/locale/el/
+share/locale/el/LC_MESSAGES/
 share/locale/el/LC_MESSAGES/avahi.mo
 share/locale/en_AU/
 share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/avahi.mo
+share/locale/en_CA/
+share/locale/en_CA/LC_MESSAGES/
 share/locale/en_CA/LC_MESSAGES/avahi.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/avahi.mo
 share/locale/en_NZ/
 share/locale/en_NZ/LC_MESSAGES/
 share/locale/en_NZ/LC_MESSAGES/avahi.mo
+share/locale/eo/
+share/locale/eo/LC_MESSAGES/
 share/locale/eo/LC_MESSAGES/avahi.mo
+share/locale/es/
+share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/avahi.mo
+share/locale/et/
+share/locale/et/LC_MESSAGES/
 share/locale/et/LC_MESSAGES/avahi.mo
+share/locale/fa/
+share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/avahi.mo
+share/locale/fi/
+share/locale/fi/LC_MESSAGES/
 share/locale/fi/LC_MESSAGES/avahi.mo
 share/locale/fo/
 share/locale/fo/LC_MESSAGES/
 share/locale/fo/LC_MESSAGES/avahi.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/avahi.mo
+share/locale/gl/
+share/locale/gl/LC_MESSAGES/
 share/locale/gl/LC_MESSAGES/avahi.mo
+share/locale/he/
+share/locale/he/LC_MESSAGES/
 share/locale/he/LC_MESSAGES/avahi.mo
+share/locale/hu/
+share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/avahi.mo
+share/locale/id/
+share/locale/id/LC_MESSAGES/
 share/locale/id/LC_MESSAGES/avahi.mo
+share/locale/it/
+share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/avahi.mo
+share/locale/ja/
+share/locale/ja/LC_MESSAGES/
 share/locale/ja/LC_MESSAGES/avahi.mo
+share/locale/ko/
+share/locale/ko/LC_MESSAGES/
 share/locale/ko/LC_MESSAGES/avahi.mo
+share/locale/lv/
+share/locale/lv/LC_MESSAGES/
 share/locale/lv/LC_MESSAGES/avahi.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/avahi.mo
+share/locale/nl/
+share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/avahi.mo
+share/locale/oc/
+share/locale/oc/LC_MESSAGES/
 share/locale/oc/LC_MESSAGES/avahi.mo
+share/locale/pl/
+share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/avahi.mo
+share/locale/pt_BR/
+share/locale/pt_BR/LC_MESSAGES/
 share/locale/pt_BR/LC_MESSAGES/avahi.mo
+share/locale/ro/
+share/locale/ro/LC_MESSAGES/
 share/locale/ro/LC_MESSAGES/avahi.mo
+share/locale/ru/
+share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/avahi.mo
+share/locale/sk/
+share/locale/sk/LC_MESSAGES/
 share/locale/sk/LC_MESSAGES/avahi.mo
+share/locale/sl/
+share/locale/sl/LC_MESSAGES/
 share/locale/sl/LC_MESSAGES/avahi.mo
+share/locale/sr/
+share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/avahi.mo
+share/locale/sr@latin/
+share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/avahi.mo
+share/locale/sv/
+share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/avahi.mo
+share/locale/tr/
+share/locale/tr/LC_MESSAGES/
 share/locale/tr/LC_MESSAGES/avahi.mo
+share/locale/uk/
+share/locale/uk/LC_MESSAGES/
 share/locale/uk/LC_MESSAGES/avahi.mo
+share/locale/zh_CN/
+share/locale/zh_CN/LC_MESSAGES/
 share/locale/zh_CN/LC_MESSAGES/avahi.mo
+share/locale/zh_TW/
+share/locale/zh_TW/LC_MESSAGES/
 share/locale/zh_TW/LC_MESSAGES/avahi.mo

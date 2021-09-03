@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.143 2021/09/03 11:46:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.144 2021/09/03 12:51:02 ajacoutot Exp $
 
 COMMENT-main=		framework for Multicast DNS Service Discovery
+COMMENT-glib=		GLib and GObject integration libraries for avahi
 COMMENT-gtk3=		gtk+3 avahi-ui libraries
 COMMENT-gui=		GUI client utilities for avahi
 COMMENT-libs=		libraries and common data files for avahi
@@ -12,6 +13,7 @@ GH_PROJECT=		avahi
 GH_TAGNAME=		v${V}
 
 PKGNAME-main=		avahi-${V}
+PKGNAME-glib=		avahi-glib-${V}
 PKGNAME-gtk3=		avahi-gtk3-${V}
 PKGNAME-gui=		avahi-gui-${V}
 PKGNAME-libs=		avahi-libs-${V}
@@ -19,8 +21,9 @@ PKGNAME-python=		py3-avahi-${V}
 
 REVISION-python=	2
 REVISION-gui=		2
-REVISION-gtk3=		1
+REVISION-gtk3=		2
 REVISION-main=		2
+REVISION-libs=		0
 
 CATEGORIES=		net devel
 
@@ -44,8 +47,8 @@ PERMIT_PACKAGE=	Yes
 PSEUDO_FLAVORS=		no_gui bootstrap
 FLAVOR?=		no_gui bootstrap
 
-MULTI_PACKAGES= 	-main -gui -gtk3 -libs -python
-DEBUG_PACKAGES=		-main -gui -gtk3 -libs -python
+MULTI_PACKAGES= 	-main -glib -gui -gtk3 -libs -python
+DEBUG_PACKAGES=		-main -glib -gui -gtk3 -libs -python
 
 MODULES=		textproc/intltool
 
@@ -62,10 +65,10 @@ LIB_DEPENDS-main=	${BUILD_PKGPATH},-libs \
 # /usr/local/share/dbus-1/system-services/
 RUN_DEPENDS-main +=	x11/dbus,-suid
 
-WANTLIB-libs += glib-2.0 gobject-2.0 pcre pthread dbus-1 execinfo
-WANTLIB-libs += ffi iconv intl event_core event_extra
+WANTLIB-libs += pthread dbus-1 execinfo iconv intl event_core
+WANTLIB-libs += event_extra
 
-LIB_DEPENDS-libs=	devel/glib2 \
+LIB_DEPENDS-libs=	devel/gettext,-runtime \
 			devel/libevent2 \
 			x11/dbus
 
@@ -73,6 +76,14 @@ RUN_DEPENDS-libs=	# empty
 
 CONFIGURE_ARGS=		--disable-mono \
 			--disable-monodoc
+
+WANTLIB-glib += avahi-client avahi-common dbus-1 execinfo ffi glib-2.0
+WANTLIB-glib += gobject-2.0 iconv intl pcre pthread
+
+LIB_DEPENDS-glib=	devel/glib2 \
+			${BUILD_PKGPATH},-libs
+
+RUN_DEPENDS-glib=	# empty
 
 .include <bsd.port.arch.mk>
 
@@ -91,7 +102,7 @@ BUILD_DEPENDS+=		devel/py-gobject3${MODPY_FLAVOR} \
 ### -gtk3
 LIB_DEPENDS-gtk3=	databases/gdbm \
 			x11/gtk+3 \
-			${BUILD_PKGPATH},-libs
+			${BUILD_PKGPATH},-glib
 RUN_DEPENDS-gtk3=	# empty
 WANTLIB-gtk3 += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB-gtk3 += Xi Xinerama Xrandr Xrender atk-1.0 avahi-client
