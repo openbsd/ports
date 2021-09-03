@@ -1,4 +1,4 @@
-$OpenBSD: patch-meson_build,v 1.1 2021/05/02 08:15:19 landry Exp $
+$OpenBSD: patch-meson_build,v 1.2 2021/09/03 23:04:49 sthen Exp $
 
 - Fix curses build on OpenBSD
 - sndio module
@@ -7,7 +7,7 @@ $OpenBSD: patch-meson_build,v 1.1 2021/05/02 08:15:19 landry Exp $
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -444,6 +444,11 @@ jack = not_found
+@@ -441,6 +441,11 @@ jack = not_found
  if 'CONFIG_LIBJACK' in config_host
    jack = declare_dependency(link_args: config_host['JACK_LIBS'].split())
  endif
@@ -18,8 +18,8 @@ Index: meson.build
 +endif
  spice = not_found
  spice_headers = not_found
- if 'CONFIG_SPICE' in config_host
-@@ -590,7 +595,7 @@ if have_system and not get_option('curses').disabled()
+ spice_protocol = not_found
+@@ -596,7 +601,7 @@ if have_system and not get_option('curses').disabled()
      endif
    endforeach
    msg = get_option('curses').enabled() ? 'curses library not found' : ''
@@ -28,9 +28,9 @@ Index: meson.build
    if curses.found()
      if cc.links(curses_test, args: curses_compile_args, dependencies: [curses])
        curses = declare_dependency(compile_args: curses_compile_args, dependencies: [curses])
-@@ -2510,11 +2515,9 @@ if targetos == 'windows'
+@@ -2907,11 +2912,9 @@ if targetos == 'windows'
+   endif
  endif
- summary_info += {'ARFLAGS':           config_host['ARFLAGS']}
  summary_info += {'CFLAGS':            ' '.join(get_option('c_args')
 -                                               + ['-O' + get_option('optimization')]
                                                 + (get_option('debug') ? ['-g'] : []))}

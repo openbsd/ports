@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.212 2021/07/23 11:17:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.213 2021/09/03 23:04:49 sthen Exp $
 
 ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc powerpc64 riscv64 sparc64
 DPB_PROPERTIES=	parallel
@@ -6,15 +6,13 @@ DPB_PROPERTIES=	parallel
 COMMENT-main=	multi system emulator
 COMMENT-ga=	QEMU guest agent
 
-VERSION=	6.0.0
+VERSION=	6.1.0
 DISTNAME=	qemu-${VERSION}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-ga=	qemu-ga-${VERSION}
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 EXTRACT_SUFX=	.tar.xz
-REVISION-ga=	0
-REVISION-main=	1
 
 HOMEPAGE=	https://www.qemu.org/
 
@@ -24,11 +22,10 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c glib-2.0 pthread
-WANTLIB-main=	${COMPILER_LIBCXX} ${WANTLIB} SDL2 X11 bz2 cairo capstone \
-		curl curses epoxy fdt gbm gdk-3 gdk_pixbuf-2.0 gio-2.0 \
-		gnutls gobject-2.0 gtk-3 iconv intl iscsi jpeg lzo2 m \
-		nettle nfs pixman-1 png sndio ssh usb-1.0 util vte-2.91 \
-		xkbcommon z zstd
+WANTLIB-main=	${COMPILER_LIBCXX} ${WANTLIB} SDL2 X11 bz2 cairo capstone curl \
+		curses epoxy fdt gbm gdk-3 gdk_pixbuf-2.0 gio-2.0 gmodule-2.0 \
+		gnutls gobject-2.0 gtk-3 iconv intl iscsi jpeg lzo2 m nfs \
+		pixman-1 png sndio ssh usb-1.0 util vte-2.91 xkbcommon z zstd
 WANTLIB-ga=	${WANTLIB}
 
 MULTI_PACKAGES=	-main -ga
@@ -63,7 +60,6 @@ LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		graphics/png \
 		net/curl \
 		security/gnutls \
-		security/libnettle \
 		security/libssh \
 		x11/gtk+3 \
 		x11/xkbcommon
@@ -93,7 +89,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--disable-bsd-user \
 		--enable-capstone=system \
 		--disable-auth-pam \
-		--disable-gcrypt \
 		--disable-sdl-image \
 		--disable-smartcard \
 		--disable-snappy \

@@ -1,9 +1,9 @@
-$OpenBSD: patch-qemu-options_hx,v 1.8 2021/05/02 08:15:19 landry Exp $
+$OpenBSD: patch-qemu-options_hx,v 1.9 2021/09/03 23:04:49 sthen Exp $
 
 Index: qemu-options.hx
 --- qemu-options.hx.orig
 +++ qemu-options.hx
-@@ -614,6 +614,9 @@ DEF("audiodev", HAS_ARG, QEMU_OPTION_audiodev,
+@@ -643,6 +643,9 @@ DEF("audiodev", HAS_ARG, QEMU_OPTION_audiodev,
      "-audiodev sdl,id=id[,prop[=value][,...]]\n"
      "                in|out.buffer-count= number of buffers\n"
  #endif
@@ -13,7 +13,7 @@ Index: qemu-options.hx
  #ifdef CONFIG_SPICE
      "-audiodev spice,id=id[,prop[=value][,...]]\n"
  #endif
-@@ -776,6 +779,11 @@ SRST
+@@ -805,6 +808,11 @@ SRST
  
      ``in|out.buffer-count=count``
          Sets the count of the buffers.

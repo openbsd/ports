@@ -1,9 +1,9 @@
-$OpenBSD: patch-audio_audio_c,v 1.9 2021/05/02 08:15:19 landry Exp $
+$OpenBSD: patch-audio_audio_c,v 1.10 2021/09/03 23:04:49 sthen Exp $
 
 Index: audio/audio.c
 --- audio/audio.c.orig
 +++ audio/audio.c
-@@ -1994,6 +1994,7 @@ void audio_create_pdos(Audiodev *dev)
+@@ -2005,6 +2005,7 @@ void audio_create_pdos(Audiodev *dev)
          CASE(OSS, oss, Oss);
          CASE(PA, pa, Pa);
          CASE(SDL, sdl, Sdl);

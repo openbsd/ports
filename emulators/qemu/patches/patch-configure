@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.67 2021/05/02 08:15:19 landry Exp $
+$OpenBSD: patch-configure,v 1.68 2021/09/03 23:04:49 sthen Exp $
 
 sndio module
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -763,8 +763,8 @@ NetBSD)
+@@ -743,8 +743,8 @@ NetBSD)
  OpenBSD)
    bsd="yes"
    make="${MAKE-gmake}"
@@ -16,7 +16,7 @@ Index: configure
  ;;
  Darwin)
    bsd="yes"
-@@ -3246,6 +3246,24 @@ for drv in $audio_drv_list; do
+@@ -3066,6 +3066,24 @@ for drv in $audio_drv_list; do
      fi
      ;;
  
@@ -41,7 +41,7 @@ Index: configure
      coreaudio | try-coreaudio)
      if test "$coreaudio" = "no"; then
        if test "$drv" = "try-coreaudio"; then
-@@ -5299,7 +5317,6 @@ write_c_skeleton
+@@ -4299,7 +4317,6 @@ write_c_skeleton
  if test "$gcov" = "yes" ; then
    :
  elif test "$fortify_source" = "yes" ; then
@@ -49,7 +49,7 @@ Index: configure
    debug=no
  fi
  
-@@ -5562,6 +5579,11 @@ echo "PULSE_CFLAGS=$pulse_cflags" >> $config_host_mak
+@@ -4565,6 +4582,11 @@ echo "PULSE_CFLAGS=$pulse_cflags" >> $config_host_mak
  echo "COREAUDIO_LIBS=$coreaudio_libs" >> $config_host_mak
  echo "DSOUND_LIBS=$dsound_libs" >> $config_host_mak
  echo "OSS_LIBS=$oss_libs" >> $config_host_mak
