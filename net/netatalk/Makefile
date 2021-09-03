@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.69 2021/02/17 15:57:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.70 2021/09/03 11:48:53 ajacoutot Exp $
 
 PORTROACH=	limit:^2
 
 COMMENT=	AFP file and print services for IP networks
 
 DISTNAME=	netatalk-2.2.6
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netatalk/}
 EXTRACT_SUFX=	.tar.bz2
@@ -36,7 +36,8 @@ FLAVOR?=
 
 .if ${FLAVOR:Mavahi}
 WANTLIB+=	avahi-client avahi-common dbus-1 pthread
-LIB_DEPENDS+=	net/avahi
+LIB_DEPENDS +=	net/avahi,-libs
+RUN_DEPENDS +=	net/avahi
 .else
 CONFIGURE_ARGS+= --disable-zeroconf
 .endif

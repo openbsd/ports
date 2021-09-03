@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.192 2021/07/11 07:52:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.193 2021/09/03 11:48:54 ajacoutot Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -26,6 +26,9 @@ PKGNAME-hpaio=		hpaio-${V}
 PKGNAME-hpcups=		hpcups-${V}
 PKGNAME-hpijs=		hpijs-${V}
 PKGNAME-gui=		hplip-gui-${V}
+
+REVISION-main=		0
+REVISION-common=	0
 
 SHARED_LIBS +=  hpdiscovery          0.0      # 0.1
 SHARED_LIBS +=  hpmud                2.0      # 0.6
@@ -73,6 +76,7 @@ LIB_DEPENDS-main=	print/cups,-libs \
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS} \
 			devel/py-gobject3${MODPY_FLAVOR} \
 			graphics/py-Pillow${MODPY_FLAVOR} \
+			net/avahi \
 			print/hplip,-hpaio \
 			print/hplip,-hpcups \
 			print/py-reportlab${MODPY_FLAVOR} \
@@ -88,7 +92,7 @@ WANTLIB-common += avahi-common avahi-core dbus-1 iconv intl
 WANTLIB-common += execinfo
 
 LIB_DEPENDS-common= 	devel/libusb1 \
-			net/avahi \
+			net/avahi,-libs \
 			net/net-snmp
 
 RUN_DEPENDS-common=	# empty

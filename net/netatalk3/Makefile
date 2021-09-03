@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2021/02/23 19:39:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/09/03 11:48:53 ajacoutot Exp $
 
 COMMENT=		AFP file and print services for IP networks
 
@@ -6,7 +6,7 @@ V=			3.1.12
 DISTNAME=		netatalk-${V}
 EXTRACT_SUFX=		.tar.bz2
 PKGSPEC=		netatalk->=3,<4
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=  atalk                16.0     # 16.0
 
@@ -22,7 +22,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += avahi-client avahi-common c crypto db dbus-1 dbus-glib-1
 WANTLIB += event_core event_extra ffi gcrypt gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gpg-error gthread-2.0 iconv intl pcre pthread
-WANTLIB += tdb
+WANTLIB += tdb execinfo
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=netatalk/}
 
@@ -34,9 +34,11 @@ MODPY_BUILDDEP=		No
 LIB_DEPENDS=		databases/db/v4 \
 			databases/tdb \
 			devel/libevent2 \
-			net/avahi \
+			net/avahi,-libs \
 			security/libgcrypt \
 			x11/dbus-glib
+
+RUN_DEPENDS=		net/avahi
 
 # afpstats(1)
 RUN_DEPENDS +=		x11/dbus-python${MODPY_FLAVOR}
