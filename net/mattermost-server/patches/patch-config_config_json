@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_config_json,v 1.18 2021/08/01 10:01:03 pvk Exp $
+$OpenBSD: patch-config_config_json,v 1.19 2021/09/03 23:25:22 pvk Exp $
 
 Index: config/config.json
 --- config/config.json.orig
@@ -97,7 +97,7 @@ Index: config/config.json
      "EnableDaily": false,
      "BatchSize": 30000
    },
-@@ -539,8 +539,8 @@
+@@ -540,8 +540,8 @@
      "EnableUploads": false,
      "AllowInsecureDownloadUrl": false,
      "EnableHealthCheck": true,
@@ -108,7 +108,7 @@ Index: config/config.json
      "Plugins": {},
      "PluginStates": {
        "com.mattermost.nps": {
-@@ -588,11 +588,11 @@
+@@ -589,11 +589,11 @@
      "TimedDND": false
    },
    "ImportSettings": {
