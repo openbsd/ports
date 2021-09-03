@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST-ui,v 1.1 2011/07/14 18:48:15 ajacoutot Exp $
-@conflict avahi-gtk-<0.6.30p2
-include/avahi-ui/
-include/avahi-ui/avahi-ui.h

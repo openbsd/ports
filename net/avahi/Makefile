@@ -1,27 +1,26 @@
-# $OpenBSD: Makefile,v 1.142 2021/09/02 19:23:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.143 2021/09/03 11:46:03 ajacoutot Exp $
 
 COMMENT-main=		framework for Multicast DNS Service Discovery
 COMMENT-gtk3=		gtk+3 avahi-ui libraries
 COMMENT-gui=		GUI client utilities for avahi
+COMMENT-libs=		libraries and common data files for avahi
 COMMENT-python=		python bindings for avahi
-COMMENT-ui=		common avahi-ui header for gtk+2 and gtk+3
 
 V=			0.8
 GH_ACCOUNT=		lathiat
 GH_PROJECT=		avahi
 GH_TAGNAME=		v${V}
 
-REVISION-python=	1
-REVISION-gui=		1
-REVISION-gtk3=		0
-REVISION-main=		1
-REVISION-ui=		0
-
 PKGNAME-main=		avahi-${V}
 PKGNAME-gtk3=		avahi-gtk3-${V}
 PKGNAME-gui=		avahi-gui-${V}
+PKGNAME-libs=		avahi-libs-${V}
 PKGNAME-python=		py3-avahi-${V}
-PKGNAME-ui=		avahi-ui-${V}
+
+REVISION-python=	2
+REVISION-gui=		2
+REVISION-gtk3=		1
+REVISION-main=		2
 
 CATEGORIES=		net devel
 
@@ -45,27 +44,32 @@ PERMIT_PACKAGE=	Yes
 PSEUDO_FLAVORS=		no_gui bootstrap
 FLAVOR?=		no_gui bootstrap
 
-MULTI_PACKAGES= 	-main -gui -gtk3 -python -ui
-DEBUG_PACKAGES=		-main -gui -gtk3 -python
+MULTI_PACKAGES= 	-main -gui -gtk3 -libs -python
+DEBUG_PACKAGES=		-main -gui -gtk3 -libs -python
 
 MODULES=		textproc/intltool
 
 BUILD_DEPENDS=		converters/xmltoman \
 			devel/gobject-introspection \
 
-WANTLIB-main += c expat glib-2.0 gobject-2.0 pcre pthread gdbm daemon
-WANTLIB-main += dbus-1 ffi iconv intl event_core event_extra
+WANTLIB-main += avahi-client avahi-common c dbus-1 execinfo gdbm iconv
+WANTLIB-main += intl pthread avahi-core daemon expat
 
-RUN_DEPENDS-main=	${RUN_DEPENDS}
+LIB_DEPENDS-main=	${BUILD_PKGPATH},-libs \
+			databases/gdbm \
+			devel/libdaemon
 
 # /usr/local/share/dbus-1/system-services/
 RUN_DEPENDS-main +=	x11/dbus,-suid
 
-LIB_DEPENDS-main=	devel/glib2 \
-			databases/gdbm \
-			devel/libdaemon \
+WANTLIB-libs += glib-2.0 gobject-2.0 pcre pthread dbus-1 execinfo
+WANTLIB-libs += ffi iconv intl event_core event_extra
+
+LIB_DEPENDS-libs=	devel/glib2 \
 			devel/libevent2 \
 			x11/dbus
+
+RUN_DEPENDS-libs=	# empty
 
 CONFIGURE_ARGS=		--disable-mono \
 			--disable-monodoc
@@ -74,7 +78,7 @@ CONFIGURE_ARGS=		--disable-mono \
 
 .if !${BUILD_PACKAGES:M-gui}
 # all these vanish together
-BUILD_PACKAGES :=	${BUILD_PACKAGES:N-gtk3:N-python:N-ui}
+BUILD_PACKAGES :=	${BUILD_PACKAGES:N-gtk3:N-python}
 .endif
 
 .if ${BUILD_PACKAGES:M-gui}
@@ -85,9 +89,10 @@ BUILD_DEPENDS+=		devel/py-gobject3${MODPY_FLAVOR} \
 			x11/dbus-python${MODPY_FLAVOR}
 
 ### -gtk3
-LIB_DEPENDS-gtk3=	x11/gtk+3 \
-			${BUILD_PKGPATH}
-RUN_DEPENDS-gtk3=	${BUILD_PKGPATH},-ui
+LIB_DEPENDS-gtk3=	databases/gdbm \
+			x11/gtk+3 \
+			${BUILD_PKGPATH},-libs
+RUN_DEPENDS-gtk3=	# empty
 WANTLIB-gtk3 += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB-gtk3 += Xi Xinerama Xrandr Xrender atk-1.0 avahi-client
 WANTLIB-gtk3 += avahi-common avahi-glib cairo cairo-gobject
@@ -96,6 +101,7 @@ WANTLIB-gtk3 += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 epoxy
 WANTLIB-gtk3 += gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-gtk3 += pcre pixman-1 png pthread xcb xcb-render graphite2
 WANTLIB-gtk3 += xcb-shm z ffi iconv intl fribidi atk-bridge-2.0 harfbuzz
+WANTLIB-gtk3 += ${COMPILER_LIBCXX} execinfo jpeg
 
 ### -gui
 LIB_DEPENDS-gui=	${BUILD_PKGPATH},-gtk3
@@ -116,19 +122,15 @@ WANTLIB-gui += gdbm gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB-gui += gobject-2.0 gtk-3 m pango-1.0 fribidi atk-bridge-2.0
 WANTLIB-gui += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB-gui += xcb xcb-render xcb-shm z ffi graphite2 epoxy iconv intl
+WANTLIB-gui += ${COMPILER_LIBCXX} execinfo jpeg
 
 ### -python
 LIB_DEPENDS-python=	#empty
-RUN_DEPENDS-python=	${BUILD_PKGPATH} \
+RUN_DEPENDS-python=	${BUILD_PKGPATH},-libs \
 			${MODPY_RUN_DEPENDS} \
 			lang/python/${MODPY_VERSION},-gdbm
 WANTLIB-python += 	#empty
 
-### -ui
-LIB_DEPENDS-ui= 	#empty
-RUN_DEPENDS-ui= 	${BUILD_PKGPATH}
-WANTLIB-ui +=		#empty
-PKG_ARCH-ui=		*
 .else
 CONFIGURE_ARGS+=	--disable-gtk \
 			--disable-gtk3 \
