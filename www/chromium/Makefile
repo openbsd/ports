@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.582 2021/09/01 16:54:37 robert Exp $
+# $OpenBSD: Makefile,v 1.583 2021/09/04 06:11:45 robert Exp $
 
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
 BROKEN-i386 =		../../third_party/angle/src/libANGLE/validationEGL.h:137:12: error: reference to type 'const egl::AttributeMap' could not bind to an lvalue of type 'const long *'
@@ -15,6 +15,7 @@ DPB_PROPERTIES=		parallel parallel2
 COMMENT=		Chromium browser
 
 V=			93.0.4577.63
+REVISION=		0
 
 DISTNAME=		chromium-${V}
 
