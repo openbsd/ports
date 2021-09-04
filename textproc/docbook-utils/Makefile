@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/09/02 20:14:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2021/09/04 12:23:48 ajacoutot Exp $
 
 COMMENT=		generates various output formats from DocBook SGML documents
 
 DISTNAME=		docbook-utils-0.6.14
+REVISION=		0
 
 CATEGORIES=		textproc
 
@@ -15,7 +16,10 @@ MASTER_SITES=		https://sourceware.org/ftp/docbook-tools/new-trials/SOURCES/
 
 USE_GMAKE=		Yes
 
-BUILD_DEPENDS=		textproc/docbook-dsssl \
+BUILD_DEPENDS=		${RUN_DEPENDS}
+
+RUN_DEPENDS=		textproc/docbook \
+			textproc/docbook-dsssl \
 			textproc/openjade
 
 CONFIGURE_STYLE=	gnu
