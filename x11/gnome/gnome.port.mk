@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.118 2021/05/08 10:10:30 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.119 2021/09/04 05:36:55 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -25,7 +25,11 @@ MASTER_SITES ?=		http://pub.mate-desktop.org/releases/${MATE_VERSION:C/^([0-9]+\
 CATEGORIES +=		x11/mate
 .  endif
 .  if ${NO_BUILD:L} == "no"
+.    if ${CONFIGURE_STYLE:Mmeson}
+BUILD_DEPENDS +=	devel/gettext,-tools
+.    else
 MODULES+=		textproc/intltool
+.    endif
 .    if ${CONFIGURE_STYLE:Mgnu} || ${CONFIGURE_STYLE:Msimple}
 USE_GMAKE?=		Yes
 .    endif
