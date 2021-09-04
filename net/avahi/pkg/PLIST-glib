@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-glib,v 1.1 2021/09/03 12:51:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST-glib,v 1.2 2021/09/04 21:39:14 ajacoutot Exp $
 @conflict avahi-libs-<0.8p0
+@conflict avahi-<0.8p2
 include/avahi-glib/
 include/avahi-glib/glib-malloc.h
 include/avahi-glib/glib-watch.h
