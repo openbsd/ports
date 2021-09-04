@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_mongo_db_storage_mmap_v1_file_allocator_h,v 1.1 2021/09/04 20:27:53 sthen Exp $
+
+Fix build with Boost > 1.72.0
+
+Index: src/mongo/db/storage/mmap_v1/file_allocator.h
+--- src/mongo/db/storage/mmap_v1/file_allocator.h.orig
++++ src/mongo/db/storage/mmap_v1/file_allocator.h
+@@ -30,6 +30,7 @@
+ #include "mongo/platform/basic.h"
+ 
+ #include <list>
++#include <map>
+ #include <boost/filesystem/path.hpp>
+ 
+ #include "mongo/stdx/condition_variable.h"
