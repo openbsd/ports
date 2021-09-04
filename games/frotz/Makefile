@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2021/09/04 12:36:23 bcallah Exp $
+# $OpenBSD: Makefile,v 1.24 2021/09/04 19:28:36 bcallah Exp $
 
 V =			2.52
 COMMENT=		interpreter for Infocom-compatible games
 
 DISTNAME=		frotz-${V}
-REVISION=		1
+REVISION=		2
 CATEGORIES=     	games
 
 HOMEPAGE=		https://davidgriffith.gitlab.io/frotz/
@@ -22,6 +22,7 @@ MASTER_SITES=		https://gitlab.com/DavidGriffith/frotz/-/archive/${V}/
 LIB_DEPENDS=		audio/libao \
 			audio/libmodplug \
 			audio/libsamplerate \
+			audio/libsndfile \
 			devel/sdl2-mixer \
 			graphics/jpeg \
 			graphics/png
