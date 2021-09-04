@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2021/03/15 21:00:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2021/09/04 21:04:03 ajacoutot Exp $
 
 PORTROACH=		limit:^2
 
@@ -24,6 +24,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 MODULES=		devel/dconf \
 			devel/meson \
 			lang/python \
+			textproc/intltool \
 			x11/gnome
 
 MODPY_BUILDDEP=		No
