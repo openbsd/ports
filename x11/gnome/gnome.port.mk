@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.120 2021/09/04 12:51:15 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.121 2021/09/04 12:54:36 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -11,12 +11,12 @@ DISTNAME=		${GNOME_PROJECT}-${GNOME_VERSION}
 VERSION=		${GNOME_VERSION}
 HOMEPAGE ?=		https://wiki.gnome.org/
 # XXX make it more generic
-.if ${GNOME_VERSION:R:R:R} == "40" || ${GNOME_VERSION:R:R:R} == "41" || \
-    ${GNOME_VERSION:R:R:R} == "42" || ${GNOME_VERSION:R:R:R} == "43"
+.    if ${GNOME_VERSION:R:R:R} == "40" || ${GNOME_VERSION:R:R:R} == "41" || \
+        ${GNOME_VERSION:R:R:R} == "42" || ${GNOME_VERSION:R:R:R} == "43"
 MASTER_SITES ?=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:R:R:R}/}
-.else
+.    else
 MASTER_SITES ?=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/}
-.endif
+.    endif
 CATEGORIES +=		x11/gnome
 .  elif (defined(MATE_PROJECT) && defined(MATE_VERSION))
 DISTNAME=		${MATE_PROJECT}-${MATE_VERSION}
