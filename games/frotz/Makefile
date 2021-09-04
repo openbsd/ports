@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2021/02/03 02:04:56 bcallah Exp $
+# $OpenBSD: Makefile,v 1.23 2021/09/04 12:36:23 bcallah Exp $
 
 V =			2.52
 COMMENT=		interpreter for Infocom-compatible games
 
 DISTNAME=		frotz-${V}
-REVISION=		0
+REVISION=		1
 CATEGORIES=     	games
 
 HOMEPAGE=		https://davidgriffith.gitlab.io/frotz/
@@ -13,8 +13,9 @@ MAINTAINER=		Brian Callahan <bcallah@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += SDL2 SDL2_mixer ao c curses freetype jpeg m modplug
-WANTLIB += png pthread samplerate sndfile vorbisfile z
+WANTLIB += SDL2 SDL2_mixer ao c curses execinfo freetype jpeg
+WANTLIB += m modplug png pthread samplerate sndfile vorbisfile
+WANTLIB += z
 
 MASTER_SITES=		https://gitlab.com/DavidGriffith/frotz/-/archive/${V}/
 
