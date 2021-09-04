@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.51 2021/09/01 16:54:38 robert Exp $
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.52 2021/09/04 08:59:45 robert Exp $
 
 Index: build/config/compiler/BUILD.gn
 --- build/config/compiler/BUILD.gn.orig
@@ -14,7 +14,7 @@ Index: build/config/compiler/BUILD.gn
 -      "-Wl,--as-needed",
 -    ]
 +  if (current_cpu == "x86" && is_openbsd) {
-+    ldflags += [ "-Wl,-z,notext" ]
++    ldflags = [ "-Wl,-z,notext" ]
    }
  }
  
