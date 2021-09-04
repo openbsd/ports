@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.213 2021/09/03 23:04:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.214 2021/09/04 20:25:22 sthen Exp $
 
 ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc powerpc64 riscv64 sparc64
 DPB_PROPERTIES=	parallel
@@ -39,7 +39,8 @@ MODPY_RUNDEP=	No
 BUILD_DEPENDS=	devel/gettext,-tools \
 		devel/ninja \
 		shells/bash \
-		textproc/py-sphinx${MODPY_FLAVOR}>=4.0.2
+		textproc/py-sphinx${MODPY_FLAVOR}>=4.0.2 \
+		textproc/py-sphinx_rtd_theme${MODPY_FLAVOR}
 
 RUN_DEPENDS-main=	${BUILD_PKGPATH}-ga
 LIB_DEPENDS=	devel/glib2
