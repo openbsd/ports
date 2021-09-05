@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2021/09/05 12:12:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.147 2021/09/05 12:34:45 ajacoutot Exp $
 
 COMMENT-main=		framework for Multicast DNS Service Discovery
 COMMENT-glib=		GLib and GObject integration libraries for avahi
@@ -22,8 +22,8 @@ PKGNAME-python=		py3-avahi-${V}
 REVISION-python=	2
 REVISION-gui=		2
 REVISION-gtk3=		2
-REVISION-main=		3
-REVISION-libs=		0
+REVISION-main=		4
+REVISION-libs=		1
 REVISION-glib=		0
 
 CATEGORIES=		net devel
@@ -166,7 +166,7 @@ AUTOMAKE_VERSION=	1.16
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -lintl -L${X11BASE}/lib"
 
-CONFIGURE_ARGS+=	--with-dbus-sys="${SYSCONFDIR}/dbus-1/" \
+CONFIGURE_ARGS+=	--with-dbus-sys="${SYSCONFDIR}/dbus-1/system.d" \
 			--with-avahi-user=_avahi \
 			--with-avahi-group=_avahi \
 			--with-avahi-priv-access-group=wheel \

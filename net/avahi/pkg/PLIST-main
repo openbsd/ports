@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.22 2021/09/05 12:12:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.23 2021/09/05 12:34:45 ajacoutot Exp $
 @conflict howl-*
 @newgroup _avahi:629
 @newuser _avahi:629:629:daemon:Avahi User:/var/empty:/sbin/nologin
@@ -51,7 +51,8 @@ share/examples/avahi/avahi-daemon.conf
 share/examples/avahi/avahi-dnsconfd.action
 @sample ${SYSCONFDIR}/avahi/avahi-dnsconfd.action
 share/examples/avahi/dbus-1/
-share/examples/avahi/dbus-1/avahi-dbus.conf
+share/examples/avahi/dbus-1/system.d/
+share/examples/avahi/dbus-1/system.d/avahi-dbus.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/avahi-dbus.conf
 share/examples/avahi/hosts
 @sample ${SYSCONFDIR}/avahi/hosts
