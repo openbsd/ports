@@ -1,0 +1,17 @@
+$OpenBSD: patch-gnuradio-runtime_include_gnuradio_CMakeLists_txt,v 1.1 2021/09/05 08:13:33 ajacoutot Exp $
+
+[PATCH] boost: remove deprecated math/common_factor.hpp
+
+2c767bb260a25b415e8c9c4b3ea37280b2127cec
+
+Index: gnuradio-runtime/include/gnuradio/CMakeLists.txt
+--- gnuradio-runtime/include/gnuradio/CMakeLists.txt.orig
++++ gnuradio-runtime/include/gnuradio/CMakeLists.txt
+@@ -43,6 +43,7 @@ install(FILES
+   gr_complex.h
+   hier_block2.h
+   high_res_timer.h
++  integer_math.h
+   io_signature.h
+   logger.h
+   math.h
