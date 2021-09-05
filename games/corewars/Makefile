@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2021/02/28 06:13:34 bket Exp $
+# $OpenBSD: Makefile,v 1.30 2021/09/05 13:26:20 cwen Exp $
 
 COMMENT=	computer simulation game
 
 DISTNAME=	corewars-0.9.13
-REVISION=	10
+REVISION=	11
 
 CATEGORIES=	games x11
 
@@ -23,7 +23,10 @@ LIB_DEPENDS=	x11/gtk+2
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=corewars/}
 
 AUTOCONF_VERSION=	2.59
-CONFIGURE_STYLE=autoconf
+CONFIGURE_STYLE=	autoconf
+
+# Needed for architectures not inlining sqrt(3), like powerpc
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -lm"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/corewars
