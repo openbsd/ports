@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2021/08/30 19:10:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2021/09/05 12:12:43 ajacoutot Exp $
 @unexec-delete rm -rf /var/db/AccountsService/icons/*
 @unexec-delete rm -rf /var/db/AccountsService/users/*
 include/accountsservice-1.0/
@@ -17,7 +17,6 @@ share/dbus-1/system-services/org.freedesktop.Accounts.service
 share/examples/accountsservice/
 share/examples/accountsservice/dbus-1/
 share/examples/accountsservice/dbus-1/system.d/
-@sample ${SYSCONFDIR}/dbus-1/system.d/
 share/examples/accountsservice/dbus-1/system.d/org.freedesktop.Accounts.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.freedesktop.Accounts.conf
 share/gir-1.0/AccountsService-1.0.gir
