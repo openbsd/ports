@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2021/04/07 06:36:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.145 2021/09/05 09:02:48 ajacoutot Exp $
 
 PORTROACH=		skipv:5.90.1
 
@@ -33,6 +33,9 @@ COMPILER=		base-clang ports-gcc base-gcc
 
 MODULES=		devel/meson \
 			x11/gnome
+
+# until upstream moves to gettext-tools
+MODULES +=		textproc/intltool
 
 MODGNOME_TOOLS=		gobject-introspection vala
 
