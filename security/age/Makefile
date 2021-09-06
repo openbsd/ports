@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2021/08/14 07:01:23 tb Exp $
+# $OpenBSD: Makefile,v 1.12 2021/09/06 19:45:06 abieber Exp $
 
 COMMENT =	simple, modern and secure file encryption tool
 
 MODGO_MODNAME =	filippo.io/age
-MODGO_VERSION =	v1.0.0-rc.3
-REVISION =	1
+MODGO_VERSION =	v1.0.0
 
 DISTNAME =	age-${MODGO_VERSION}
-PKGNAME =	${DISTNAME:S/-rc./rc/:S/-v/-/}
 
 CATEGORIES =	security
 
