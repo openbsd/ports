@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.261 2021/08/27 11:32:00 landry Exp $
+# $OpenBSD: Makefile,v 1.262 2021/09/06 08:20:20 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -48,6 +48,8 @@ CONFIGURE_ARGS +=	--with-system-hunspell
 # lld blows when linking libxul; limit threads
 .if ${MACHINE_ARCH:Mi386}
 CONFIGURE_ENV +=	LDFLAGS="-Wl,--threads=2"
+# make sure we dont look for libatomic from gcc-libs
+CONFIGURE_ENV +=	ac_cv_needs_atomic=no
 .endif
 
 RUN_DEPENDS-lightning = STEM->=${MOZILLA_VERSION:S/b/beta/}:${BUILD_PKGPATH},-main
