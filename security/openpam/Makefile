@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/25 09:47:59 robert Exp $
+# $OpenBSD: Makefile,v 1.11 2021/09/06 10:59:24 robert Exp $
 
 COMMENT=	Pluggable Authentication Module
 
 V=		20200510
 DISTNAME=	freebsd_pam-${V}
 PKGNAME=	openpam-${V}
+
+REVISION=	0
 
 CATEGORIES=	security
 
