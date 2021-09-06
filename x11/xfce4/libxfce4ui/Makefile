@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2020/12/29 14:36:23 landry Exp $
+# $OpenBSD: Makefile,v 1.36 2021/09/06 09:30:56 landry Exp $
 
 COMMENT=	Xfce4 widget library
 
 XFCE_PROJECT=	libxfce4ui
+XFCE_VERSION=	4.16.1
 
 SHARED_LIBS=	xfce4ui-2		0.2	\
 		xfce4kbd-private-3	0.0	# 0.0
@@ -34,7 +35,7 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-3 harfbuzz iconv intl lzma m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += startup-notification-1 xcb xcb-render xcb-shm xcb-util
-WANTLIB += xfce4util xfconf-0 xml2 z Xau gtop-2.0 kvm
+WANTLIB += xfce4util xfconf-0 xml2 z Xau gtop-2.0 kvm execinfo jpeg
 WANTLIB += ${COMPILER_LIBCXX}
 
 FAKE_FLAGS=	settingsdir=${PREFIX}/share/examples/xfconf
