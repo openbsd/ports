@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2021/07/03 13:00:38 landry Exp $
+@comment $OpenBSD: PLIST,v 1.37 2021/09/06 07:32:47 landry Exp $
 @bin bin/pgsql2shp
 @bin bin/raster2pgsql
 @bin bin/shp2pgsql
@@ -324,9 +324,11 @@ share/postgresql/extension/address_standardizer--3.0.0--${V}.sql
 share/postgresql/extension/address_standardizer--3.0.1--${V}.sql
 share/postgresql/extension/address_standardizer--3.0.2--${V}.sql
 share/postgresql/extension/address_standardizer--3.0.3--${V}.sql
+share/postgresql/extension/address_standardizer--3.0.4--${V}.sql
 share/postgresql/extension/address_standardizer--3.1.0--${V}.sql
 share/postgresql/extension/address_standardizer--3.1.1--${V}.sql
 share/postgresql/extension/address_standardizer--3.1.2--${V}.sql
+share/postgresql/extension/address_standardizer--3.1.3--${V}.sql
 share/postgresql/extension/address_standardizer--${V}--${V}next.sql
 share/postgresql/extension/address_standardizer--${V}.sql
 share/postgresql/extension/address_standardizer--${V}next--${V}.sql
@@ -397,9 +399,11 @@ share/postgresql/extension/postgis--3.0.0--${V}.sql
 share/postgresql/extension/postgis--3.0.1--${V}.sql
 share/postgresql/extension/postgis--3.0.2--${V}.sql
 share/postgresql/extension/postgis--3.0.3--${V}.sql
+share/postgresql/extension/postgis--3.0.4--${V}.sql
 share/postgresql/extension/postgis--3.1.0--${V}.sql
 share/postgresql/extension/postgis--3.1.1--${V}.sql
 share/postgresql/extension/postgis--3.1.2--${V}.sql
+share/postgresql/extension/postgis--3.1.3--${V}.sql
 share/postgresql/extension/postgis--${V}--${V}next.sql
 share/postgresql/extension/postgis--${V}.sql
 share/postgresql/extension/postgis--${V}next--${V}.sql
@@ -466,9 +470,11 @@ share/postgresql/extension/postgis_raster--3.0.0--${V}.sql
 share/postgresql/extension/postgis_raster--3.0.1--${V}.sql
 share/postgresql/extension/postgis_raster--3.0.2--${V}.sql
 share/postgresql/extension/postgis_raster--3.0.3--${V}.sql
+share/postgresql/extension/postgis_raster--3.0.4--${V}.sql
 share/postgresql/extension/postgis_raster--3.1.0--${V}.sql
 share/postgresql/extension/postgis_raster--3.1.1--${V}.sql
 share/postgresql/extension/postgis_raster--3.1.2--${V}.sql
+share/postgresql/extension/postgis_raster--3.1.3--${V}.sql
 share/postgresql/extension/postgis_raster--${V}--${V}next.sql
 share/postgresql/extension/postgis_raster--${V}.sql
 share/postgresql/extension/postgis_raster--${V}next--${V}.sql
@@ -535,9 +541,11 @@ share/postgresql/extension/postgis_tiger_geocoder--3.0.0--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--3.0.1--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--3.0.2--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--3.0.3--${V}.sql
+share/postgresql/extension/postgis_tiger_geocoder--3.0.4--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--3.1.0--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--3.1.1--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--3.1.2--${V}.sql
+share/postgresql/extension/postgis_tiger_geocoder--3.1.3--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--${V}--${V}next.sql
 share/postgresql/extension/postgis_tiger_geocoder--${V}.sql
 share/postgresql/extension/postgis_tiger_geocoder--${V}next--${V}.sql
@@ -603,9 +611,11 @@ share/postgresql/extension/postgis_topology--3.0.0--${V}.sql
 share/postgresql/extension/postgis_topology--3.0.1--${V}.sql
 share/postgresql/extension/postgis_topology--3.0.2--${V}.sql
 share/postgresql/extension/postgis_topology--3.0.3--${V}.sql
+share/postgresql/extension/postgis_topology--3.0.4--${V}.sql
 share/postgresql/extension/postgis_topology--3.1.0--${V}.sql
 share/postgresql/extension/postgis_topology--3.1.1--${V}.sql
 share/postgresql/extension/postgis_topology--3.1.2--${V}.sql
+share/postgresql/extension/postgis_topology--3.1.3--${V}.sql
 share/postgresql/extension/postgis_topology--${V}--${V}next.sql
 share/postgresql/extension/postgis_topology--${V}.sql
 share/postgresql/extension/postgis_topology--${V}next--${V}.sql
