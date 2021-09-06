@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2021/07/25 13:30:11 espie Exp $
+# $OpenBSD: Makefile,v 1.138 2021/09/06 09:42:05 bentley Exp $
 
      SUBDIR =
      SUBDIR += aom
@@ -11,6 +11,7 @@
      SUBDIR += dvdbackup
      SUBDIR += dvdstyler
      SUBDIR += frei0r-plugins
+     SUBDIR += gaupol
      SUBDIR += get_flash_videos
      SUBDIR += get_iplayer
      SUBDIR += gnome-twitch
