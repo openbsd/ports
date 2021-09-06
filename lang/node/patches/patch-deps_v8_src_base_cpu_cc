@@ -1,9 +1,9 @@
-$OpenBSD: patch-deps_v8_src_base_cpu_cc,v 1.2 2019/01/21 23:46:01 abieber Exp $
+$OpenBSD: patch-deps_v8_src_base_cpu_cc,v 1.3 2021/09/06 13:27:41 sthen Exp $
 
 Index: deps/v8/src/base/cpu.cc
 --- deps/v8/src/base/cpu.cc.orig
 +++ deps/v8/src/base/cpu.cc
-@@ -424,6 +424,8 @@ CPU::CPU()
+@@ -427,6 +427,8 @@ CPU::CPU()
  
  #if V8_OS_LINUX
  
@@ -12,7 +12,7 @@ Index: deps/v8/src/base/cpu.cc
    CPUInfo cpu_info;
  
    // Extract implementor from the "CPU implementer" field.
-@@ -457,6 +459,8 @@ CPU::CPU()
+@@ -460,6 +462,8 @@ CPU::CPU()
      }
      delete[] part;
    }
