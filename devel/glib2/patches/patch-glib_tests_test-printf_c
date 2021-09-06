@@ -1,0 +1,23 @@
+$OpenBSD: patch-glib_tests_test-printf_c,v 1.1 2021/09/06 11:04:03 ajacoutot Exp $
+
+Don't use printf %n.
+
+Index: glib/tests/test-printf.c
+--- glib/tests/test-printf.c.orig
++++ glib/tests/test-printf.c
+@@ -576,6 +576,7 @@ test_s (void)
+ static void
+ test_n (void)
+ {
++#if 0
+   gchar buf[128];
+   gint res;
+   gint i;
+@@ -590,6 +591,7 @@ test_n (void)
+   g_assert_cmpint (res, ==, 3);
+   g_assert_cmpstr (buf, ==, "abc");
+   g_assert_cmpint (l, ==, 3);
++#endif
+ }
+ 
+ static void
