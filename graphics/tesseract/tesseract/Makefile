@@ -1,24 +1,28 @@
-# $OpenBSD: Makefile,v 1.21 2021/08/31 12:26:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2021/09/06 21:18:21 ajacoutot Exp $
 
 COMMENT=	OCR Engine developed at HP Labs
 
 GH_PROJECT=	tesseract
+REVISION=	0
 
 SHARED_LIBS +=  tesseract            4.0
 
-WANTLIB += ${COMPILER_LIBCXX} X11 Xext Xrender bz2 c cairo charset
-WANTLIB += crypto expat ffi fontconfig freetype fribidi gif gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 harfbuzz
-WANTLIB += iconv icudata icui18n icuuc intl jpeg lept lz4 lzma
-WANTLIB += m openjp2 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png ssl tiff webp webpmux xcb xcb-render xcb-shm
-WANTLIB += z zstd
+WANTLIB += ${COMPILER_LIBCXX} X11 Xext Xrender archive b2 bz2
+WANTLIB += c cairo charset crypto curl expat ffi fontconfig freetype
+WANTLIB += fribidi gif gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += graphite2 harfbuzz iconv icudata icui18n icuuc intl
+WANTLIB += jpeg lept lz4 lzma m nghttp2 openjp2 pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png ssl tiff webp webpmux
+WANTLIB += xcb xcb-render xcb-shm z zstd
 
 # c++11: needed to build the training tools
 COMPILER=		base-clang ports-gcc
 
-LIB_DEPENDS=		devel/pango \
+LIB_DEPENDS=		archivers/libarchive \
+			devel/pango \
 			graphics/leptonica \
+			net/curl \
+			security/libb2 \
 			textproc/icu4c
 
 RUN_DEPENDS=		graphics/tesseract/tessdata,-main
