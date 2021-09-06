@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2021/09/01 23:05:04 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.19 2021/09/06 20:56:50 sthen Exp $
 @pkgpath security/py-cryptography
 lib/python${MODPY_VERSION}/site-packages/cryptography/
 lib/python${MODPY_VERSION}/site-packages/cryptography-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -84,6 +84,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bin
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_openssl${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_padding${MODPY_ABI3SO}.so
+${RUST_COMMENT}@so lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/openssl/
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/openssl/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/openssl/${MODPY_PYCACHE}/
