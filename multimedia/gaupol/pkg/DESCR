@@ -1,0 +1,3 @@
+This package provides Gaupol, an editor for text-based subtitle files. It
+supports multiple subtitle file formats and provides means of creating, editing
+and translating subtitles and timing subtitles to match video.
