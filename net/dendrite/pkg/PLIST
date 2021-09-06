@@ -1,23 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/08/27 13:57:32 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/09/06 19:46:48 abieber Exp $
 @newgroup _dendrite:860
 @newuser _dendrite:860:860:daemon:Matrix.org Daemon:/var/dendrite:/sbin/nologin
 @rcscript ${RCDIR}/dendrite
-@bin bin/client-api-proxy
-@bin bin/create-account
-@bin bin/dendrite-demo-libp2p
-@bin bin/dendrite-demo-pinecone
-@bin bin/dendrite-demo-yggdrasil
+@comment bin/client-api-proxy
+@bin bin/dendrite-create-account
+@comment bin/dendrite-demo-libp2p
+@comment bin/dendrite-demo-pinecone
+@comment bin/dendrite-demo-yggdrasil
+@bin bin/dendrite-generate-config
+@bin bin/dendrite-generate-keys
 @bin bin/dendrite-monolith-server
 @bin bin/dendrite-polylith-multi
-@bin bin/dendrite-upgrade-tests
-@bin bin/dendritejs
-@bin bin/dendritejs-pinecone
-@bin bin/federation-api-proxy
-@bin bin/furl
-@bin bin/generate-config
-@bin bin/generate-keys
-@bin bin/goose
-@bin bin/resolve-state
+@comment bin/dendrite-upgrade-tests
+@comment bin/dendritejs
+@comment bin/dendritejs-pinecone
+@comment bin/federation-api-proxy
+@comment bin/furl
+@comment bin/goose
+@comment bin/resolve-state
 share/dendrite/
 share/dendrite/dendrite.yaml
 @mode 640
