@@ -1,9 +1,12 @@
-# $OpenBSD: unveil.main,v 1.2 2021/01/15 11:00:50 sthen Exp $
+# $OpenBSD: unveil.main,v 1.3 2021/09/07 13:43:04 landry Exp $
 # for uuid generation?
 /dev/urandom r
 /dev/video rw
 /dev/video0 rw
 /dev/fido rw
+# for webgl info in about:support
+/dev/dri/card0 rw
+/usr/lib r
 
 /etc/fonts r
 /etc/machine-id r
@@ -24,7 +27,6 @@
 # printing
 /usr/bin/lpr rx
 
-# for launching registered 3rd party applications like pdf readers
 /etc/mailcap r
 ~/.mailcap r
 ~/.mime.types r
@@ -50,7 +52,7 @@
 # $XDG_CACHE_HOME, $XDG_CONFIG_HOME, and $XDG_DATA_HOME will expand to the
 # given variable if it exists in the environment, otherwise defaulting to
 # ~/.cache, ~/.config, and ~/.local/share
-$XDG_CACHE_HOME/dconf rwc
+$XDG_RUNTIME_DIR/dconf rwc
 $XDG_CACHE_HOME/thumbnails rwc
 $XDG_CACHE_HOME/mozilla/firefox rwc
 $XDG_CONFIG_HOME/dconf rw

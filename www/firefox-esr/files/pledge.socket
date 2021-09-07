@@ -1,0 +1,8 @@
+# $OpenBSD: pledge.socket,v 1.1 2021/09/07 13:43:04 landry Exp $
+# wait until network.process.enabled and network.http.network_access_on_socket_process.enabled
+stdio
+rpath # at least for /etc/resolv.conf & /etc/localtime
+recvfd
+sendfd
+inet
+dns

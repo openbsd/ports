@@ -1,4 +1,4 @@
-$OpenBSD: patch-toolkit_system_gnome_nsGIOService_cpp,v 1.1 2020/07/28 14:21:48 landry Exp $
+$OpenBSD: patch-toolkit_system_gnome_nsGIOService_cpp,v 1.2 2021/09/07 13:43:04 landry Exp $
 
 Try to fix opening downloaded files with registered external mimetype handlers
 after gio-launch-desktop removal in glib 2.64.
@@ -10,7 +10,7 @@ unveiled.
 Index: toolkit/system/gnome/nsGIOService.cpp
 --- toolkit/system/gnome/nsGIOService.cpp.orig
 +++ toolkit/system/gnome/nsGIOService.cpp
-@@ -243,10 +243,21 @@ nsGIOMimeApp::LaunchWithURI(nsIURI* aUri,
+@@ -240,10 +240,21 @@ nsGIOMimeApp::LaunchWithURI(nsIURI* aUri,
    uris.data = const_cast<char*>(spec.get());
  
    GError* error = nullptr;
@@ -34,7 +34,7 @@ Index: toolkit/system/gnome/nsGIOService.cpp
      g_error_free(error);
      return NS_ERROR_FAILURE;
    }
-@@ -501,20 +512,15 @@ nsGIOService::GetAppForMimeType(const nsACString& aMim
+@@ -497,20 +508,15 @@ nsGIOService::GetAppForMimeType(const nsACString& aMim
      return NS_ERROR_NOT_AVAILABLE;
    }
  
@@ -60,9 +60,9 @@ Index: toolkit/system/gnome/nsGIOService.cpp
 +      g_warning("%s is registered as handler for %s but not available in PATH (missing unveil ?)", g_app_info_get_executable(app_info), content_type);
 +    }
      nsGIOMimeApp* mozApp = new nsGIOMimeApp(app_info);
-     NS_ENSURE_TRUE(mozApp, NS_ERROR_OUT_OF_MEMORY);
      NS_ADDREF(*aApp = mozApp);
-@@ -551,7 +557,24 @@ nsGIOService::ShowURI(nsIURI* aURI) {
+   } else {
+@@ -546,7 +552,24 @@ nsGIOService::ShowURI(nsIURI* aURI) {
    nsresult rv = aURI->GetSpec(spec);
    NS_ENSURE_SUCCESS(rv, rv);
    GError* error = nullptr;
@@ -88,7 +88,7 @@ Index: toolkit/system/gnome/nsGIOService.cpp
      g_warning("Could not launch default application for URI: %s",
                error->message);
      g_error_free(error);
-@@ -567,7 +590,22 @@ nsGIOService::ShowURIForInput(const nsACString& aUri) 
+@@ -562,7 +585,22 @@ nsGIOService::ShowURIForInput(const nsACString& aUri) 
    nsresult rv = NS_ERROR_FAILURE;
    GError* error = nullptr;
  
@@ -112,7 +112,7 @@ Index: toolkit/system/gnome/nsGIOService.cpp
    if (error) {
      g_warning("Cannot launch default application: %s", error->message);
      g_error_free(error);
-@@ -576,6 +614,7 @@ nsGIOService::ShowURIForInput(const nsACString& aUri) 
+@@ -571,6 +609,7 @@ nsGIOService::ShowURIForInput(const nsACString& aUri) 
    }
    g_object_unref(file);
    g_free(spec);
