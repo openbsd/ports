@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2021/07/07 23:50:58 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/09/07 21:27:31 tb Exp $
 @option no-default-conflict
 @option is-branch
 @conflict openssl->=3.0,<3.1
@@ -691,6 +691,7 @@ ${MAN_PREFIX}/man3/BN_MONT_CTX_set.3
 ${MAN_PREFIX}/man3/BN_RECP_CTX_free.3
 ${MAN_PREFIX}/man3/BN_RECP_CTX_new.3
 ${MAN_PREFIX}/man3/BN_RECP_CTX_set.3
+${MAN_PREFIX}/man3/BN_abs_is_word.3
 ${MAN_PREFIX}/man3/BN_add.3
 ${MAN_PREFIX}/man3/BN_add_word.3
 ${MAN_PREFIX}/man3/BN_bin2bn.3
@@ -1401,7 +1402,6 @@ ${MAN_PREFIX}/man3/ENGINE_unregister_ciphers.3
 ${MAN_PREFIX}/man3/ENGINE_unregister_digests.3
 ${MAN_PREFIX}/man3/ENGINE_up_ref.3
 ${MAN_PREFIX}/man3/ERR_FATAL_ERROR.3
-${MAN_PREFIX}/man3/ERR_GET_FUNC.3
 ${MAN_PREFIX}/man3/ERR_GET_LIB.3
 ${MAN_PREFIX}/man3/ERR_GET_REASON.3
 ${MAN_PREFIX}/man3/ERR_PACK.3
@@ -1817,6 +1817,7 @@ ${MAN_PREFIX}/man3/EVP_PKEY_CTX_get0_dh_kdf_ukm.3
 ${MAN_PREFIX}/man3/EVP_PKEY_CTX_get0_ecdh_kdf_ukm.3
 ${MAN_PREFIX}/man3/EVP_PKEY_CTX_get0_libctx.3
 ${MAN_PREFIX}/man3/EVP_PKEY_CTX_get0_propq.3
+${MAN_PREFIX}/man3/EVP_PKEY_CTX_get0_provider.3
 ${MAN_PREFIX}/man3/EVP_PKEY_CTX_get0_rsa_oaep_label.3
 ${MAN_PREFIX}/man3/EVP_PKEY_CTX_get1_id.3
 ${MAN_PREFIX}/man3/EVP_PKEY_CTX_get1_id_len.3
@@ -1987,6 +1988,7 @@ ${MAN_PREFIX}/man3/EVP_PKEY_get0_description.3
 ${MAN_PREFIX}/man3/EVP_PKEY_get0_engine.3
 ${MAN_PREFIX}/man3/EVP_PKEY_get0_hmac.3
 ${MAN_PREFIX}/man3/EVP_PKEY_get0_poly1305.3
+${MAN_PREFIX}/man3/EVP_PKEY_get0_provider.3
 ${MAN_PREFIX}/man3/EVP_PKEY_get0_siphash.3
 ${MAN_PREFIX}/man3/EVP_PKEY_get0_type_name.3
 ${MAN_PREFIX}/man3/EVP_PKEY_get1_DH.3
@@ -2763,6 +2765,7 @@ ${MAN_PREFIX}/man3/OSSL_CMP_LOG_WARNING.3
 ${MAN_PREFIX}/man3/OSSL_CMP_MSG_dup.3
 ${MAN_PREFIX}/man3/OSSL_CMP_MSG_free.3
 ${MAN_PREFIX}/man3/OSSL_CMP_MSG_get0_header.3
+${MAN_PREFIX}/man3/OSSL_CMP_MSG_get_bodytype.3
 ${MAN_PREFIX}/man3/OSSL_CMP_MSG_http_perform.3
 ${MAN_PREFIX}/man3/OSSL_CMP_MSG_it.3
 ${MAN_PREFIX}/man3/OSSL_CMP_MSG_read.3
@@ -2824,8 +2827,10 @@ ${MAN_PREFIX}/man3/OSSL_CRMF_CERTID_it.3
 ${MAN_PREFIX}/man3/OSSL_CRMF_CERTID_new.3
 ${MAN_PREFIX}/man3/OSSL_CRMF_CERTTEMPLATE_fill.3
 ${MAN_PREFIX}/man3/OSSL_CRMF_CERTTEMPLATE_free.3
+${MAN_PREFIX}/man3/OSSL_CRMF_CERTTEMPLATE_get0_extensions.3
 ${MAN_PREFIX}/man3/OSSL_CRMF_CERTTEMPLATE_get0_issuer.3
 ${MAN_PREFIX}/man3/OSSL_CRMF_CERTTEMPLATE_get0_serialNumber.3
+${MAN_PREFIX}/man3/OSSL_CRMF_CERTTEMPLATE_get0_subject.3
 ${MAN_PREFIX}/man3/OSSL_CRMF_CERTTEMPLATE_it.3
 ${MAN_PREFIX}/man3/OSSL_CRMF_CERTTEMPLATE_new.3
 ${MAN_PREFIX}/man3/OSSL_CRMF_ENCRYPTEDVALUE_free.3
@@ -2840,6 +2845,13 @@ ${MAN_PREFIX}/man3/OSSL_CRMF_MSG_PKIPublicationInfo_push0_SinglePubInfo.3
 ${MAN_PREFIX}/man3/OSSL_CRMF_MSG_create_popo.3
 ${MAN_PREFIX}/man3/OSSL_CRMF_MSG_dup.3
 ${MAN_PREFIX}/man3/OSSL_CRMF_MSG_free.3
+${MAN_PREFIX}/man3/OSSL_CRMF_MSG_get0_regCtrl_authenticator.3
+${MAN_PREFIX}/man3/OSSL_CRMF_MSG_get0_regCtrl_oldCertID.3
+${MAN_PREFIX}/man3/OSSL_CRMF_MSG_get0_regCtrl_pkiPublicationInfo.3
+${MAN_PREFIX}/man3/OSSL_CRMF_MSG_get0_regCtrl_protocolEncrKey.3
+${MAN_PREFIX}/man3/OSSL_CRMF_MSG_get0_regCtrl_regToken.3
+${MAN_PREFIX}/man3/OSSL_CRMF_MSG_get0_regInfo_certReq.3
+${MAN_PREFIX}/man3/OSSL_CRMF_MSG_get0_regInfo_utf8Pairs.3
 ${MAN_PREFIX}/man3/OSSL_CRMF_MSG_get0_tmpl.3
 ${MAN_PREFIX}/man3/OSSL_CRMF_MSG_get_certReqId.3
 ${MAN_PREFIX}/man3/OSSL_CRMF_MSG_it.3
@@ -5475,11 +5487,13 @@ ${MAN_PREFIX}/man7/EVP_CIPHER-SM4.7
 ${MAN_PREFIX}/man7/EVP_KDF-HKDF.7
 ${MAN_PREFIX}/man7/EVP_KDF-KB.7
 ${MAN_PREFIX}/man7/EVP_KDF-KRB5KDF.7
+${MAN_PREFIX}/man7/EVP_KDF-PBKDF1.7
 ${MAN_PREFIX}/man7/EVP_KDF-PBKDF2.7
 ${MAN_PREFIX}/man7/EVP_KDF-PKCS12KDF.7
 ${MAN_PREFIX}/man7/EVP_KDF-SCRYPT.7
 ${MAN_PREFIX}/man7/EVP_KDF-SS.7
 ${MAN_PREFIX}/man7/EVP_KDF-SSHKDF.7
+${MAN_PREFIX}/man7/EVP_KDF-TLS13_KDF.7
 ${MAN_PREFIX}/man7/EVP_KDF-TLS1_PRF.7
 ${MAN_PREFIX}/man7/EVP_KDF-X942-ASN1.7
 ${MAN_PREFIX}/man7/EVP_KDF-X942-CONCAT.7
