@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2021/09/03 20:47:30 denis Exp $
+# $OpenBSD: Makefile,v 1.91 2021/09/07 21:12:52 tb Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -16,6 +16,7 @@ PLEDGE_VER =		1.1.2
 DISTFILES =		node-pledge-{}${PLEDGE_VER}.tar.gz:0 \
 			${DISTNAME}-headers.tar.gz \
 			${DISTNAME}.tar.gz
+REVISION =		0
 
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
