@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2020/07/03 21:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2021/09/07 08:21:05 sthen Exp $
 
 COMMENT=	perl module for an IMAP Client API
 
-DISTNAME =	Mail-IMAPClient-3.40
+DISTNAME =	Mail-IMAPClient-3.43
 CATEGORIES=	mail
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE=	Yes
