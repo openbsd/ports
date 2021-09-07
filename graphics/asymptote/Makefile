@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2021/06/20 10:54:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2021/09/07 21:08:15 sthen Exp $
 
 COMMENT=		powerful descriptive vector graphics language
 
 DISTNAME=		asymptote-2.70
-REVISION=		1
+REVISION=		2
 EXTRACT_SUFX=		.src.tgz
 CATEGORIES=		graphics
 
@@ -13,7 +13,7 @@ HOMEPAGE=		https://asymptote.sourceforge.io/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += GL c curses fftw3 gc glut gsl gslcblas m readline sigsegv z
+WANTLIB += GL c curl curses fftw3 gc glut gsl gslcblas m readline sigsegv z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=asymptote/}
 
