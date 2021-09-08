@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2021/05/21 19:50:34 kmos Exp $
+# $OpenBSD: Makefile,v 1.24 2021/09/08 07:19:52 sthen Exp $
 
 COMMENT=	bcrypt blowfish password hashing for Python
 
-MODPY_EGG_VERSION= 3.1.7
+MODPY_EGG_VERSION= 3.2.0
 DISTNAME=	bcrypt-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	2
 
 CATEGORIES=	security
 
@@ -19,7 +18,7 @@ MODPY_PI=	Yes
 MODPY_SETUPTOOLS= Yes
 
 FLAVORS=        python3
-FLAVOR?=
+FLAVOR=		python3
 
 RUN_DEPENDS=	devel/py-cffi${MODPY_FLAVOR} \
 		devel/py-six${MODPY_FLAVOR}
