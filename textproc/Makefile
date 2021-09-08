@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.686 2021/09/02 20:15:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.687 2021/09/08 19:58:24 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -408,7 +408,6 @@
      SUBDIR += py-feedparser,python3
      SUBDIR += py-humanize,python3
      SUBDIR += py-ijson,python3
-     SUBDIR += py-iso8601
      SUBDIR += py-iso8601,python3
      SUBDIR += py-jellyfish
      SUBDIR += py-jellyfish,python3
