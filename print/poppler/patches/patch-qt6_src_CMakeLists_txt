@@ -1,4 +1,4 @@
-$OpenBSD: patch-qt6_src_CMakeLists_txt,v 1.2 2021/05/19 19:57:03 kili Exp $
+$OpenBSD: patch-qt6_src_CMakeLists_txt,v 1.3 2021/09/08 17:50:37 kili Exp $
 
 - Remove hardcoded SOVERSION
 
@@ -9,7 +9,7 @@ Index: qt6/src/CMakeLists.txt
  )
  add_library(poppler-qt6 ${poppler_qt6_SRCS})
  generate_export_header(poppler-qt6 BASE_NAME poppler-qt6 EXPORT_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/poppler-export.h")
--set_target_properties(poppler-qt6 PROPERTIES VERSION 1.2.0 SOVERSION 1)
+-set_target_properties(poppler-qt6 PROPERTIES VERSION 3.0.0 SOVERSION 3)
  if(MINGW AND BUILD_SHARED_LIBS)
      get_target_property(POPPLER_QT6_SOVERSION poppler-qt6 SOVERSION)
      set_target_properties(poppler-qt6 PROPERTIES SUFFIX "-${POPPLER_QT6_SOVERSION}${CMAKE_SHARED_LIBRARY_SUFFIX}")
