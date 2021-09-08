@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/09/08 09:13:58 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2021/09/08 18:54:38 jca Exp $
 
 COMMENT=	ncurses toolkit for text-mode graphical user interfaces
 
@@ -21,7 +21,8 @@ WANTLIB=	curses glib-2.0 gmodule-2.0 gobject-2.0 panel xml2
 
 MODULES=	devel/meson
 
-BUILD_DEPENDS=	devel/gettext,-tools
+BUILD_DEPENDS=	devel/gettext,-tools \
+		textproc/gtk-doc
 LIB_DEPENDS=	devel/glib2 \
 		textproc/libxml
 
