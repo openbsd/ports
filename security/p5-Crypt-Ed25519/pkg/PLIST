@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/09/08 22:01:30 bluhm Exp $
+${P5ARCH}/
+${P5ARCH}/Crypt/
+${P5ARCH}/Crypt/Ed25519.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Crypt/
+${P5ARCH}/auto/Crypt/Ed25519/
+@so ${P5ARCH}/auto/Crypt/Ed25519/Ed25519.so
+@man man/man3p/Crypt::Ed25519.3p

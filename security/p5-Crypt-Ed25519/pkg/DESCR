@@ -1,0 +1,4 @@
+This module implements Ed25519 public key generation, message signing
+and verification. It is a pretty bare-bones implementation that
+implements the standard Ed25519 variant with SHA512 hash, as well as a
+slower API compatible with the upcoming EdDSA RFC.
