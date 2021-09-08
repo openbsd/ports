@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/08/28 19:06:35 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/09/08 17:49:54 kili Exp $
 share/pkgconfig/poppler-data.pc
 share/poppler/
 share/poppler/cMap/
@@ -132,6 +132,7 @@ share/poppler/cMap/Adobe-Japan1/Adobe-Japan1-3
 share/poppler/cMap/Adobe-Japan1/Adobe-Japan1-4
 share/poppler/cMap/Adobe-Japan1/Adobe-Japan1-5
 share/poppler/cMap/Adobe-Japan1/Adobe-Japan1-6
+share/poppler/cMap/Adobe-Japan1/Adobe-Japan1-7
 share/poppler/cMap/Adobe-Japan1/Adobe-Japan1-90ms-RKSJ
 share/poppler/cMap/Adobe-Japan1/Adobe-Japan1-90pv-RKSJ
 share/poppler/cMap/Adobe-Japan1/Adobe-Japan1-H-CID
@@ -196,6 +197,21 @@ share/poppler/cMap/Adobe-Japan1/V
 share/poppler/cMap/Adobe-Japan1/WP-Symbol
 share/poppler/cMap/Adobe-Japan2/
 share/poppler/cMap/Adobe-Japan2/Adobe-Japan2-0
+share/poppler/cMap/Adobe-KR/
+share/poppler/cMap/Adobe-KR/Adobe-KR-0
+share/poppler/cMap/Adobe-KR/Adobe-KR-1
+share/poppler/cMap/Adobe-KR/Adobe-KR-2
+share/poppler/cMap/Adobe-KR/Adobe-KR-3
+share/poppler/cMap/Adobe-KR/Adobe-KR-4
+share/poppler/cMap/Adobe-KR/Adobe-KR-5
+share/poppler/cMap/Adobe-KR/Adobe-KR-6
+share/poppler/cMap/Adobe-KR/Adobe-KR-7
+share/poppler/cMap/Adobe-KR/Adobe-KR-8
+share/poppler/cMap/Adobe-KR/Adobe-KR-9
+share/poppler/cMap/Adobe-KR/Adobe-KR-UCS2
+share/poppler/cMap/Adobe-KR/UniAKR-UTF16-H
+share/poppler/cMap/Adobe-KR/UniAKR-UTF32-H
+share/poppler/cMap/Adobe-KR/UniAKR-UTF8-H
 share/poppler/cMap/Adobe-Korea1/
 share/poppler/cMap/Adobe-Korea1/Adobe-Korea1-0
 share/poppler/cMap/Adobe-Korea1/Adobe-Korea1-1
