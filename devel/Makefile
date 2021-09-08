@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2123 2021/09/02 08:46:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.2124 2021/09/08 09:14:32 landry Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -272,6 +272,7 @@
      SUBDIR += libgee
      SUBDIR += libgit2
      SUBDIR += libglade2
+     SUBDIR += libgnt
      SUBDIR += libgsf
      SUBDIR += libgtop2
      SUBDIR += libguess
