@@ -1,0 +1,18 @@
+$OpenBSD: patch-t_pty_t,v 1.1 2021/09/08 21:23:22 bluhm Exp $
+
+Make t/pty.t test pass on OpenBSD.
+
+Index: t/pty.t
+--- t/pty.t.orig
++++ t/pty.t
+@@ -141,6 +141,10 @@ SKIP: {
+     is( _map_fds, $fd_map );
+ }
+ 
++# OpenBSD libc devname(3) opens /var/run/dev.db and keeps it open.
++# As this would confuse open file descriptor checks, open it in advance.
++IO::Pty->new();
++
+ ##
+ ## stdout, stderr
+ ##
