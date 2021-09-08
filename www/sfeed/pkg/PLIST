@@ -1,0 +1,35 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/09/08 08:05:37 fcambus Exp $
+@bin bin/sfeed
+@bin bin/sfeed_atom
+@bin bin/sfeed_frames
+@bin bin/sfeed_gopher
+@bin bin/sfeed_html
+@bin bin/sfeed_mbox
+bin/sfeed_opml_export
+@bin bin/sfeed_opml_import
+@bin bin/sfeed_plain
+@bin bin/sfeed_twtxt
+bin/sfeed_update
+@bin bin/sfeed_web
+@bin bin/sfeed_xmlenc
+@man man/man1/sfeed.1
+@man man/man1/sfeed_atom.1
+@man man/man1/sfeed_frames.1
+@man man/man1/sfeed_gopher.1
+@man man/man1/sfeed_html.1
+@man man/man1/sfeed_mbox.1
+@man man/man1/sfeed_opml_export.1
+@man man/man1/sfeed_opml_import.1
+@man man/man1/sfeed_plain.1
+@man man/man1/sfeed_twtxt.1
+@man man/man1/sfeed_update.1
+@man man/man1/sfeed_web.1
+@man man/man1/sfeed_xmlenc.1
+@man man/man5/sfeed.5
+@man man/man5/sfeedrc.5
+share/doc/sfeed/
+share/doc/sfeed/README
+share/doc/sfeed/README.xml
+share/doc/sfeed/style.css
+share/examples/sfeed/
+share/examples/sfeed/sfeedrc.example

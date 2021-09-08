@@ -1,0 +1,19 @@
+#sfeedpath="$HOME/.sfeed/feeds"
+
+# override default client (curl) with ftp from OpenBSD base.
+# fetch(name, uri, feedfile)
+fetch() {
+	ftp -M -V -w 15 -o - "$2"
+}
+
+# list of feeds to fetch:
+feeds() {
+	# feed <name> <feedurl> [basesiteurl] [encoding]
+	feed "undeadly" "https://undeadly.org/cgi?action=rss"
+	feed "xkcd" "https://xkcd.com/atom.xml" "https://xkcd.com"
+	feed "FreeBSD news" "https://www.freebsd.org/news/rss.xml" "" "iso-8859-1"
+	feed "DragonflyBSD digest" "https://www.dragonflydigest.com/feed"
+	feed "NetBSD changes" "https://www.netbsd.org/changes/rss-netbsd.xml"
+	# get youtube Atom feed: curl -s -L 'https://www.youtube.com/user/gocoding/videos' | sfeed_web | cut -f 1
+	feed "youtube golang" "https://www.youtube.com/feeds/videos.xml?channel_id=UCO3LEtymiLrgvpb59cNsb8A"
+}
