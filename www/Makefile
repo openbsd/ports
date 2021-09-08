@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1039 2021/09/03 07:40:24 sebastia Exp $
+# $OpenBSD: Makefile,v 1.1040 2021/09/08 08:09:22 fcambus Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -573,6 +573,8 @@
      SUBDIR += seamonkey
      SUBDIR += seamonkey-i18n
      SUBDIR += selfoss
+     SUBDIR += sfeed
+     SUBDIR += sfeed_curses
      SUBDIR += slowhttptest
      SUBDIR += snownews
      SUBDIR += sogo
