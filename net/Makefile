@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1266 2021/09/02 13:07:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.1267 2021/09/08 20:00:15 sthen Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -617,6 +617,7 @@
      SUBDIR += py-slixmpp,python3
      SUBDIR += py-smbc,python3
      SUBDIR += py-snmp
+     SUBDIR += py-snmp,python3
      SUBDIR += py-socketio-client,python3
      SUBDIR += py-socks
      SUBDIR += py-socks,python3
