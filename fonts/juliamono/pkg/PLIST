@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/09/08 08:07:48 sthen Exp $
+share/doc/juliamono/
+share/doc/juliamono/LICENSE
+share/fonts/
+@fontdir share/fonts/juliamono/
+share/fonts/juliamono/JuliaMono-Black.ttf
+share/fonts/juliamono/JuliaMono-BlackItalic.ttf
+share/fonts/juliamono/JuliaMono-Bold.ttf
+share/fonts/juliamono/JuliaMono-BoldItalic.ttf
+share/fonts/juliamono/JuliaMono-ExtraBold.ttf
+share/fonts/juliamono/JuliaMono-ExtraBoldItalic.ttf
+share/fonts/juliamono/JuliaMono-Light.ttf
+share/fonts/juliamono/JuliaMono-LightItalic.ttf
+share/fonts/juliamono/JuliaMono-Medium.ttf
+share/fonts/juliamono/JuliaMono-MediumItalic.ttf
+share/fonts/juliamono/JuliaMono-Regular.ttf
+share/fonts/juliamono/JuliaMono-RegularItalic.ttf
+share/fonts/juliamono/JuliaMono-SemiBold.ttf
+share/fonts/juliamono/JuliaMono-SemiBoldItalic.ttf
