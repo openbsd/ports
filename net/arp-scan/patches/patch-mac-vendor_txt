@@ -1,17 +1,17 @@
-$OpenBSD: patch-mac-vendor_txt,v 1.3 2019/07/03 20:38:57 sthen Exp $
+$OpenBSD: patch-mac-vendor_txt,v 1.4 2021/09/08 21:49:05 sthen Exp $
 
 Adapt for a normal OpenBSD environment.
 
 Index: mac-vendor.txt
 --- mac-vendor.txt.orig
 +++ mac-vendor.txt
-@@ -42,8 +42,11 @@
+@@ -41,8 +41,11 @@
  525400	QEMU
  B0C420	Bochs
  
 -# From RFC 2338: 00-00-5E-00-01-{VRID}
 -00005E0001	VRRP (last octet is VRID)
-+# La Dee Dee, 1, 2, 3. VRRP ain't free.
++# La Dee Dee, 1, 2, 3, VRRP ain't free.
 +00005E0001	CARP (last octet is VHID)
 +
 +# ether_fakeaddr()

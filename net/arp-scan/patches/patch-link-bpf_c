@@ -1,9 +1,9 @@
-$OpenBSD: patch-link-bpf_c,v 1.4 2019/07/03 20:38:57 sthen Exp $
+$OpenBSD: patch-link-bpf_c,v 1.5 2021/09/08 21:49:05 sthen Exp $
 
 Index: link-bpf.c
 --- link-bpf.c.orig
 +++ link-bpf.c
-@@ -96,6 +96,10 @@ get_hardware_address(const char *if_name, unsigned cha
+@@ -91,6 +91,10 @@ get_hardware_address(const char *if_name, unsigned cha
   */
     for (p = buf; p < buf + len; p += ifm->ifm_msglen) {
        ifm = (struct if_msghdr *)p;
