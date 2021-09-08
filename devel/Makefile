@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2124 2021/09/08 09:14:32 landry Exp $
+# $OpenBSD: Makefile,v 1.2125 2021/09/08 20:04:40 bluhm Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -744,6 +744,7 @@
      SUBDIR += p5-File-Tail
      SUBDIR += p5-File-Tempdir
      SUBDIR += p5-File-Touch
+     SUBDIR += p5-File-TreeCreate
      SUBDIR += p5-File-Type
      SUBDIR += p5-File-chdir
      SUBDIR += p5-File-chmod
