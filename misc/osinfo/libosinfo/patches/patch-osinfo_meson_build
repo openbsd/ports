@@ -1,6 +1,7 @@
-$OpenBSD: patch-osinfo_meson_build,v 1.1 2020/05/31 10:36:47 ajacoutot Exp $
+$OpenBSD: patch-osinfo_meson_build,v 1.2 2021/09/09 12:58:03 ajacoutot Exp $
 
-1st chunk: should default to the value of b_lundef.
+1st chunk:
+Should match b_lundef in meson(1).
 
 Index: osinfo/meson.build
 --- osinfo/meson.build.orig
