@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/06/12 05:35:01 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/09/09 08:49:04 martin Exp $
 @conflict py-minimalmodbus-*
 @pkgpath net/py-minimalmodbus
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}minimalmodbus.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/minimalmodbus-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/minimalmodbus-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
