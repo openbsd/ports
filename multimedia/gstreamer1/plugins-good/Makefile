@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2021/08/27 08:28:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2021/09/09 10:12:20 ajacoutot Exp $
 
 # Reenable that port on non-rust archs at the cost of pulseaudio support:
 # pulseaudio -> [...] -> spidermonkey>=78 -> rust
@@ -12,8 +12,6 @@ PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-good-${V}
 
 PKGNAME-main=		${PKGNAME}
 PKGNAME-pulse=		${GST_PKGNAME_PREFIX}-plugins-pulse-${V}
-
-REVISION-main=		1
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-good/}
 
