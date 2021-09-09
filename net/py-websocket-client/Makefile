@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2021/05/21 19:50:34 kmos Exp $
+# $OpenBSD: Makefile,v 1.12 2021/09/09 14:37:25 kn Exp $
 
 COMMENT =		WebSocket client for Python
 
 MODPY_EGG_VERSION =	0.37.0
 DISTNAME =		websocket_client-${MODPY_EGG_VERSION}
 PKGNAME =		py-websocket-client-${MODPY_EGG_VERSION}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		net
 
@@ -20,11 +20,8 @@ MODPY_SETUPTOOLS =	Yes
 
 MODULES =		lang/python
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
-
-post-install:
-	mv ${PREFIX}/bin/wsdump.py ${PREFIX}/bin/wsdump.py${MODPY_BIN_SUFFIX}
 
 .include <bsd.port.mk>
