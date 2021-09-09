@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.34 2021/06/20 18:07:10 semarie Exp $
+@comment $OpenBSD: PLIST-main,v 1.35 2021/09/09 15:07:40 semarie Exp $
 @conflict cargo-<0.20.0
 @pkgpath devel/cargo
 @bin bin/cargo
@@ -34,7 +34,6 @@ lib/rustlib/${TRIPLE_ARCH}/lib/librustc_std_workspace_std-${LIBR_METADATA_rustc_
 lib/rustlib/${TRIPLE_ARCH}/lib/libstd-${LIBR_METADATA_std}.rlib
 @so lib/rustlib/${TRIPLE_ARCH}/lib/libstd-${LIBR_METADATA_std}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/libstd_detect-${LIBR_METADATA_std_detect}.rlib
-lib/rustlib/${TRIPLE_ARCH}/lib/libterm-${LIBR_METADATA_term}.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/libtest-${LIBR_METADATA_test}.rlib
 @so lib/rustlib/${TRIPLE_ARCH}/lib/libtest-${LIBR_METADATA_test}.so
 lib/rustlib/${TRIPLE_ARCH}/lib/libunicode_width-${LIBR_METADATA_unicode_width}.rlib

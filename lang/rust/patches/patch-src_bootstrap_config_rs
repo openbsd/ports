@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_bootstrap_config_rs,v 1.5 2021/06/20 18:07:09 semarie Exp $
+$OpenBSD: patch-src_bootstrap_config_rs,v 1.6 2021/09/09 15:07:40 semarie Exp $
 
 Override initial_cargo value to use ".../cargo" instead of the
 executable path as returned by env::current_exe() to avoid using
@@ -7,7 +7,7 @@ bootstrap binary without the shell wrapper.
 Index: src/bootstrap/config.rs
 --- src/bootstrap/config.rs.orig
 +++ src/bootstrap/config.rs
-@@ -938,6 +938,9 @@ impl Config {
+@@ -947,6 +947,9 @@ impl Config {
              }
          });
  

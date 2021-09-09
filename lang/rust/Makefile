@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.130 2021/08/15 13:38:04 semarie Exp $
+# $OpenBSD: Makefile,v 1.131 2021/09/09 15:07:39 semarie Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -13,14 +13,14 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.54.0
+V =			1.55.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.54.0-20210802
-BV-amd64 =		1.54.0-20210801
-BV-i386 =		1.54.0-20210802
-BV-sparc64 =		1.54.0-20210803
+BV-aarch64 =		1.55.0-20210908
+BV-amd64 =		1.55.0-20210907
+BV-i386 =		1.55.0-20210907
+BV-sparc64 =		1.55.0-20210907
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -107,10 +107,9 @@ LIBRUST_HASHES =	\
 	rustc_std_workspace_std 	14 \
 	std 			15 \
 	std_detect		16 \
-	term 			17 \
-	test 			18 \
-	unicode_width 		19 \
-	unwind			1a
+	test 			17 \
+	unicode_width 		18 \
+	unwind			19
 
 # generate a stable hash and pass it to build environment
 LIBRUST_HASH !=	echo '${FULLPKGNAME}:${TRIPLE_ARCH}' | sha1 | cut -c1-14
