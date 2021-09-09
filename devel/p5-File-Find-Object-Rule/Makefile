@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:44:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/09/09 00:14:13 bluhm Exp $
 
 COMMENT =	alternative interface to File::Find::Object
 
-DISTNAME =	File-Find-Object-Rule-0.0312
-REVISION =	0
+DISTNAME =	File-Find-Object-Rule-0.0313
 
 CATEGORIES =	devel
 
@@ -18,6 +17,7 @@ RUN_DEPENDS =		devel/p5-Class-XSAccessor \
 			devel/p5-File-Find-Object \
 			devel/p5-Number-Compare \
 			textproc/p5-Text-Glob
+TEST_DEPENDS =		devel/p5-File-TreeCreate
 
 CONFIGURE_STYLE =	modbuild
 
