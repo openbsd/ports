@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.28 2021/03/08 09:22:09 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2021/09/09 18:25:25 rsadowski Exp $
 
 COMMENT-main =		multimedia transformations framework
 COMMENT-gpl2 =		GPLv2-licensed modules for mlt
-VERSION =		6.22.1
+VERSION =		6.26.1
 DISTNAME =		mlt-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-gpl2 =		mlt-gpl2-${VERSION}
-REVISION =		0
 
 # XXX versions should be kept in sync together
-SHARED_LIBS =		mlt		3.2
-SHARED_LIBS +=		mlt++		3.2
+SHARED_LIBS =		mlt		4.0
+SHARED_LIBS +=		mlt++		4.0
 
 CATEGORIES =		multimedia devel
 HOMEPAGE =		https://www.mltframework.org/
@@ -22,15 +21,16 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 PERMIT_PACKAGE =	Yes
 
 WANTLIB-main += ${COMPILER_LIBCXX} SDL SDL2 SDL_image X11 avcodec avdevice
-WANTLIB-main += avfilter avformat avutil c exif fftw3 fontconfig gdk-x11-2.0
+WANTLIB-main += avfilter avformat avutil c ebur128 exif fftw3 fontconfig
 WANTLIB-main += gdk_pixbuf-2.0 glib-2.0 gobject-2.0 jack m pango-1.0
-WANTLIB-main += pangoft2-1.0 sox swresample swscale vorbisfile xml2
-WANTLIB-main += ebur128
+WANTLIB-main += pangoft2-1.0 sox swresample swscale vidstab vorbisfile
+WANTLIB-main += xml2
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Svg Qt5Widgets
-WANTLIB += Qt5Xml SDL2 exif m mlt samplerate
+WANTLIB-gpl2 += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Svg Qt5Widgets
+WANTLIB-gpl2 += Qt5Xml SDL2 m mlt samplerate
 
-MASTER_SITES =		https://github.com/mltframework/mlt/releases/download/v${VERSION}/
+MASTER_SITES =		\
+	https://github.com/mltframework/mlt/releases/download/v${VERSION}/
 
 MULTI_PACKAGES =	-main -gpl2
 
@@ -47,18 +47,19 @@ RUN_DEPENDS-main =	audio/ladspa \
 LIB_DEPENDS-main =	audio/jack \
 			audio/libebur128 \
 			audio/sox \
+			devel/pango \
+			devel/sdl \
 			devel/sdl-image \
 			devel/sdl2 \
 			graphics/ffmpeg \
+			graphics/gdk-pixbuf2 \
 			graphics/libexif \
-			math/fftw3 \
-			x11/gtk+2,-main
+			math/fftw3
 
 LIB_DEPENDS-gpl2 =	${BUILD_PKGPATH},-main \
 			${MODQT5_LIB_DEPENDS} \
 			audio/libsamplerate \
 			devel/sdl2 \
-			graphics/libexif \
 			x11/qt5/qtsvg
 
 MAKE_FLAGS =		soversion=${LIBmlt_VERSION}

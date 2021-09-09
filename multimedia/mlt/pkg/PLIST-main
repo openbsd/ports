@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2020/08/24 14:09:54 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2021/09/09 18:25:25 rsadowski Exp $
 @conflict freeze-<2.5p2
 @bin bin/melt
 include/mlt/
@@ -74,6 +74,7 @@ lib/mlt/
 @so lib/mlt/libmltplus.so
 @so lib/mlt/libmltsdl.so
 @so lib/mlt/libmltsox.so
+@so lib/mlt/libmltvidstab.so
 @so lib/mlt/libmltvmfx.so
 @so lib/mlt/libmltvorbis.so
 @so lib/mlt/libmltxml.so
@@ -93,6 +94,7 @@ share/mlt/core/filter_audiomap.yml
 share/mlt/core/filter_audiowave.yml
 share/mlt/core/filter_brightness.yml
 share/mlt/core/filter_channelcopy.yml
+share/mlt/core/filter_choppy.yml
 share/mlt/core/filter_crop.yml
 share/mlt/core/filter_data_show.yml
 share/mlt/core/filter_fieldorder.yml
@@ -194,9 +196,11 @@ share/mlt/plus/filter_lift_gamma_gain.yml
 share/mlt/plus/filter_loudness.yml
 share/mlt/plus/filter_loudness_meter.yml
 share/mlt/plus/filter_lumakey.yml
+share/mlt/plus/filter_pillar_echo.yml
 share/mlt/plus/filter_rgblut.yml
 share/mlt/plus/filter_sepia.yml
 share/mlt/plus/filter_spot_remover.yml
+share/mlt/plus/filter_strobe.yml
 share/mlt/plus/filter_text.yml
 share/mlt/plus/filter_timer.yml
 share/mlt/plus/producer_blipflash.yml
@@ -207,6 +211,7 @@ share/mlt/presets/consumer/
 share/mlt/presets/consumer/avformat/
 share/mlt/presets/consumer/avformat/AAC
 share/mlt/presets/consumer/avformat/ALAC
+share/mlt/presets/consumer/avformat/AV1
 share/mlt/presets/consumer/avformat/FLAC
 share/mlt/presets/consumer/avformat/Flash
 share/mlt/presets/consumer/avformat/GIF
@@ -416,7 +421,9 @@ share/mlt/profiles/vcd_pal
 share/mlt/profiles/vertical_hd_30
 share/mlt/profiles/vertical_hd_60
 share/mlt/qt/
+share/mlt/qt/filter_qtcrop.yml
 share/mlt/qt/filter_qtext.yml
+share/mlt/qt/filter_typewriter.yml
 share/mlt/sdl/
 share/mlt/sdl/consumer_sdl.yml
 share/mlt/sdl/consumer_sdl_audio.yml
@@ -426,6 +433,9 @@ share/mlt/sdl/producer_sdl_image.yml
 share/mlt/sox/
 share/mlt/sox/filter_sox.yml
 share/mlt/sox/filter_sox_effect.yml
+share/mlt/vid.stab/
+share/mlt/vid.stab/filter_deshake.yml
+share/mlt/vid.stab/filter_vidstab.yml
 share/mlt/vmfx/
 share/mlt/vmfx/filter_chroma.yml
 share/mlt/vmfx/filter_chroma_hold.yml
