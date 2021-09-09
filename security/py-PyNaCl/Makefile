@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2021/05/21 19:50:34 kmos Exp $
+# $OpenBSD: Makefile,v 1.11 2021/09/09 19:35:38 sthen Exp $
 
 COMMENT =		Python binding to the NaCl library
 
 MODPY_EGG_VERSION =	1.4.0
 DISTNAME =		PyNaCl-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		security
 
@@ -22,7 +22,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 WANTLIB += ${MODPY_WANTLIB} pthread sodium
 
