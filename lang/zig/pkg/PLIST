@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/08/26 04:37:15 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/09/09 15:10:31 semarie Exp $
 @bin bin/zig
 lib/zig/
 lib/zig/include/
@@ -6404,6 +6404,7 @@ lib/zig/libc/mingw/lib-common/d3d12.def
 lib/zig/libc/mingw/lib-common/d3d9.def
 lib/zig/libc/mingw/lib-common/d3dcompiler_47.def
 lib/zig/libc/mingw/lib-common/davclnt.def
+lib/zig/libc/mingw/lib-common/dbghelp.def
 lib/zig/libc/mingw/lib-common/dcomp.def
 lib/zig/libc/mingw/lib-common/ddraw.def
 lib/zig/libc/mingw/lib-common/dfscli.def
@@ -6466,6 +6467,7 @@ lib/zig/libc/mingw/lib-common/netutils.def
 lib/zig/libc/mingw/lib-common/normaliz.def
 lib/zig/libc/mingw/lib-common/ntdll.def.in
 lib/zig/libc/mingw/lib-common/ntdsapi.def
+lib/zig/libc/mingw/lib-common/odbc32.def
 lib/zig/libc/mingw/lib-common/ole32.def.in
 lib/zig/libc/mingw/lib-common/oleacc.def
 lib/zig/libc/mingw/lib-common/oleaut32.def.in
@@ -6594,6 +6596,7 @@ lib/zig/libc/mingw/lib32/d3d12.def
 lib/zig/libc/mingw/lib32/d3d9.def
 lib/zig/libc/mingw/lib32/d3dcompiler_47.def
 lib/zig/libc/mingw/lib32/davclnt.def
+lib/zig/libc/mingw/lib32/dbghelp.def
 lib/zig/libc/mingw/lib32/dcomp.def
 lib/zig/libc/mingw/lib32/ddraw.def
 lib/zig/libc/mingw/lib32/dfscli.def
@@ -6657,6 +6660,7 @@ lib/zig/libc/mingw/lib32/newdev.def
 lib/zig/libc/mingw/lib32/normaliz.def
 lib/zig/libc/mingw/lib32/ntdll.def
 lib/zig/libc/mingw/lib32/ntdsapi.def
+lib/zig/libc/mingw/lib32/odbc32.def
 lib/zig/libc/mingw/lib32/ole32.def
 lib/zig/libc/mingw/lib32/oleacc.def
 lib/zig/libc/mingw/lib32/oleaut32.def
@@ -6749,6 +6753,7 @@ lib/zig/libc/mingw/lib64/msctfmonitor.def
 lib/zig/libc/mingw/lib64/msvfw32.def
 lib/zig/libc/mingw/lib64/newdev.def
 lib/zig/libc/mingw/lib64/ntlanman.def
+lib/zig/libc/mingw/lib64/odbc32gt.def
 lib/zig/libc/mingw/lib64/opengl32.def
 lib/zig/libc/mingw/lib64/pdh.def
 lib/zig/libc/mingw/lib64/quartz.def

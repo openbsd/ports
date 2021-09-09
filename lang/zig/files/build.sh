@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: build.sh,v 1.3 2021/04/24 13:59:21 semarie Exp $
+# $OpenBSD: build.sh,v 1.4 2021/09/09 15:10:31 semarie Exp $
 
 set -eux
 
@@ -8,17 +8,14 @@ LLVMINST="${WRKBUILD}/llvm-install"
 ZIG1BUILD="${WRKBUILD}/zig-stage1"
 ZIG2BUILD="${WRKBUILD}/zig-stage2"
 
-# extract zig version
-TARGET_VERSION=$(sed -ne 's/^ZIG_VERSION="\([^"]*\)"$/\1/p' < "${WRKSRC}/build")
-
 # disable some llvm protections in the llvm compiler to regain performance
 case $(machine) in
-aarch64)	CXXFLAGS="-fno-ret-protector ${CXXFLAGS:-}" ;;
-amd64)		CXXFLAGS="-fno-ret-protector -mno-retpoline ${CXXFLAGS:-}" ;;
-i386)		CXXFLAGS="-fno-ret-protector -mno-retpoline ${CXXFLAGS:-}" ;;
-mips64)		CXXFLAGS="-fno-ret-protector -fomit-frame-pointer ${CXXFLAGS:-}" ;;
-mips64el)	CXXFLAGS="-fno-ret-protector -fomit-frame-pointer ${CXXFLAGS:-}" ;;
-powerpc)	CXXFLAGS="-fno-ret-protector ${CXXFLAGS:-}"
+aarch64)	XFLAGS="-fno-ret-protector" ;;
+amd64)		XFLAGS="-fno-ret-protector -mno-retpoline" ;;
+i386)		XFLAGS="-fno-ret-protector -mno-retpoline" ;;
+mips64)		XFLAGS="-fno-ret-protector -fomit-frame-pointer" ;;
+mips64el)	XFLAGS="-fno-ret-protector -fomit-frame-pointer" ;;
+powerpc)	XFLAGS="-fno-ret-protector"
 		CMAKE_SHARED_LINKER_FLAGS="-Wl,-relax"
 		;;
 esac
@@ -28,8 +25,10 @@ llvm_configure() {
 	[ ! -d "${LLVMBUILD}" ] && mkdir "${LLVMBUILD}" "${LLVMINST}"
 
 	cd "${LLVMBUILD}"
-	env CXXFLAGS="${CXXFLAGS:-}" VERBOSE=1 MODCMAKE_PORT_BUILD=yes \
-	    cmake -GNinja "${WRKSRC}/llvm" \
+	env CXXFLAGS="${XFLAGS:-} ${CXXFLAGS:-}" \
+	    VERBOSE=1 \
+	    MODCMAKE_PORT_BUILD=yes \
+	    cmake -GNinja "${WRKSRC}/llvm-project/llvm" \
 		-DLLVM_ENABLE_PROJECTS="clang;lld" \
 		-DLLVM_ENABLE_LIBXML2=OFF \
 		-DLLVM_ENABLE_TERMINFO=OFF \
@@ -67,7 +66,10 @@ zig1_configure() {
 
 	# configure zig stage1
 	cd "${ZIG1BUILD}"
-	env CXXFLAGS="${CXXFLAGS:-}" VERBOSE=1 MODCMAKE_PORT_BUILD=yes \
+	env CFLAGS="${XFLAGS:-} ${CFLAGS:-}" \
+	    CXXFLAGS="${XFLAGS:-} ${CXXFLAGS:-}" \
+	    VERBOSE=1 \
+	    MODCMAKE_PORT_BUILD=yes \
 	    cmake -GNinja "${WRKSRC}/zig" \
 		-DCMAKE_BUILD_TYPE=Release \
 		-DCMAKE_C_COMPILER="${CC:-cc}" \
@@ -149,11 +151,19 @@ zig_test() {
 		--verbose-link
 }
 
-case "${1:-help}" in
-help)
-	echo "$0 [build|install|test]"
-	exit 1
-	;;
+usage() {
+    	echo "$0 version [build|install|test]"
+    	exit 1
+}
+
+if [ $# -ne 2 ]; then
+	usage
+fi
+
+# set zig version
+TARGET_VERSION=${1}
+
+case "${2}" in
 build)
 	llvm_configure
 	llvm_build
@@ -168,5 +178,8 @@ test)
 	zig2_build
 	# zig testsuite
 	zig_test
+	;;
+*)
+	usage
 	;;
 esac
