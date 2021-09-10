@@ -1,0 +1,36 @@
+$OpenBSD: patch-lua-nginx-module_src_ngx_http_lua_ssl_certby_c,v 1.1 2021/09/10 15:19:00 tb Exp $
+
+Use SSL_version() instead of TLS1_get_version().
+https://github.com/openresty/lua-nginx-module/commit/bb76eb123b4a80324e527062d71fe9d3f4c86d25
+
+Index: lua-nginx-module/src/ngx_http_lua_ssl_certby.c
+--- lua-nginx-module/src/ngx_http_lua_ssl_certby.c.orig
++++ lua-nginx-module/src/ngx_http_lua_ssl_certby.c
+@@ -549,13 +549,6 @@ ngx_http_lua_ssl_cert_by_chunk(lua_State *L, ngx_http_
+ int
+ ngx_http_lua_ffi_ssl_get_tls1_version(ngx_http_request_t *r, char **err)
+ {
+-#ifndef TLS1_get_version
+-
+-    *err = "no TLS1 support";
+-    return NGX_ERROR;
+-
+-#else
+-
+     ngx_ssl_conn_t    *ssl_conn;
+ 
+     if (r->connection == NULL || r->connection->ssl == NULL) {
+@@ -569,11 +562,9 @@ ngx_http_lua_ffi_ssl_get_tls1_version(ngx_http_request
+         return NGX_ERROR;
+     }
+ 
+-    dd("tls1 ver: %d", (int) TLS1_get_version(ssl_conn));
++    dd("tls1 ver: %d", SSL_version(ssl_conn));
+ 
+-    return (int) TLS1_get_version(ssl_conn);
+-
+-#endif
++    return SSL_version(ssl_conn);
+ }
+ 
+ 

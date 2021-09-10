@@ -1,0 +1,23 @@
+$OpenBSD: patch-lua-nginx-module_src_ngx_http_lua_ssl_ocsp_c,v 1.1 2021/09/10 15:19:00 tb Exp $
+
+Index: lua-nginx-module/src/ngx_http_lua_ssl_ocsp.c
+--- lua-nginx-module/src/ngx_http_lua_ssl_ocsp.c.orig
++++ lua-nginx-module/src/ngx_http_lua_ssl_ocsp.c
+@@ -456,6 +456,7 @@ ngx_http_lua_ffi_ssl_set_ocsp_status_resp(ngx_http_req
+     u_char                  *p;
+     SSL_CTX                 *ctx;
+     ngx_ssl_conn_t          *ssl_conn;
++    int                      tlsext_status_type;
+ 
+     if (r->connection == NULL || r->connection->ssl == NULL) {
+         *err = "bad request";
+@@ -468,7 +469,8 @@ ngx_http_lua_ffi_ssl_set_ocsp_status_resp(ngx_http_req
+         return NGX_ERROR;
+     }
+ 
+-    if (ssl_conn->tlsext_status_type == -1) {
++    tlsext_status_type = SSL_get_tlsext_status_type(ssl_conn);
++    if (tlsext_status_type == -1) {
+         dd("no ocsp status req from client");
+         return NGX_DECLINED;
+     }
