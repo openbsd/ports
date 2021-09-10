@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1313 2021/09/10 01:17:07 danj Exp $
+# $OpenBSD: Quirks.pm,v 1.1314 2021/09/10 04:39:17 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -494,6 +494,7 @@ my $stem_extensions = {
 	'py-snmp' => 'py3-snmp',
 	'py-PyNaCl' => 'py3-PyNaCl',
 	'py-websocket-client' => 'py3-websocket-client',
+	'libmesode' => 'libstrophe',
 };
 
 my $obsolete_reason = {};
@@ -663,7 +664,6 @@ setup_obsolete_reason(
 	6 => 'suricata-update',
 	1 => 'exploitdb-papers',
 	3 => 'nautilus-sendto',
-	5 => 'libstrophe',
 	2 => 'ghostview',
 	7 => 'libcudf',
 	7 => 'ocaml-cudf',
