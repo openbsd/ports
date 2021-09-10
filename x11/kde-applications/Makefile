@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2021/05/03 15:35:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.64 2021/09/10 12:51:48 rsadowski Exp $
 
      SUBDIR =
 
@@ -254,5 +254,6 @@
      # net/ktorrent
      # net/libktorrent
      # x11/yakuake
+     # graphics/skanlite
 
 .include <bsd.port.subdir.mk>
