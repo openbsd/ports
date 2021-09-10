@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2021/04/30 07:52:33 feinerer Exp $
+# $OpenBSD: Makefile,v 1.9 2021/09/10 15:20:41 tb Exp $
 
 COMMENT =	coturn STUN/TURN server
 
 V =		4.5.2
 DISTNAME =	turnserver-${V}
+REVISION =	0
 
 CATEGORIES =	telephony
 
