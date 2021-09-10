@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.101 2021/06/07 15:14:27 jeremy Exp $
+@comment $OpenBSD: PLIST-docs,v 1.102 2021/09/10 14:07:45 sthen Exp $
 share/doc/postgresql/
 share/doc/postgresql/COPYRIGHT
 share/doc/postgresql/HISTORY
@@ -383,6 +383,9 @@ share/doc/postgresql/html/git.html
 share/doc/postgresql/html/glossary.html
 share/doc/postgresql/html/gssapi-auth.html
 share/doc/postgresql/html/gssapi-enc.html
+share/doc/postgresql/html/hash-implementation.html
+share/doc/postgresql/html/hash-index.html
+share/doc/postgresql/html/hash-intro.html
 share/doc/postgresql/html/high-availability.html
 share/doc/postgresql/html/history.html
 share/doc/postgresql/html/hot-standby.html
@@ -691,6 +694,7 @@ share/doc/postgresql/html/regress.html
 share/doc/postgresql/html/release-13-1.html
 share/doc/postgresql/html/release-13-2.html
 share/doc/postgresql/html/release-13-3.html
+share/doc/postgresql/html/release-13-4.html
 share/doc/postgresql/html/release-13.html
 share/doc/postgresql/html/release-prior.html
 share/doc/postgresql/html/release.html
