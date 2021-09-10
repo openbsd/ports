@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2019/07/25 22:07:47 sthen Exp $
+$OpenBSD: patch-Makefile_in,v 1.5 2021/09/10 18:20:31 sthen Exp $
 
 Index: Makefile.in
 --- Makefile.in.orig
@@ -6,7 +6,7 @@ Index: Makefile.in
 @@ -36,3 +36,9 @@ distclean: veryclean FORCE
  check: test
  test: FORCE
- 	cd tests; $(MAKE) test
+ 	cd tests && $(MAKE) test
 +
 +test-ldbm: FORCE
 +	cd tests; $(MAKE) ldbm

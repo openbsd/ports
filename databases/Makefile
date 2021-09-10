@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.426 2021/06/09 10:30:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.427 2021/09/10 18:20:30 sthen Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -41,7 +41,6 @@
      SUBDIR += openldap,aci
      SUBDIR += openldap,aci,gssapi
      SUBDIR += openldap,gssapi
-     SUBDIR += openldap23
      SUBDIR += p5-AnyEvent-CouchDB
      SUBDIR += p5-AsciiDB-TagFile
      SUBDIR += p5-BerkeleyDB

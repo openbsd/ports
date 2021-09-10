@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.188 2021/07/28 07:23:34 landry Exp $
+# $OpenBSD: Makefile,v 1.189 2021/09/10 18:20:31 sthen Exp $
 
 DPB_PROPERTIES =	parallel
 
 COMMENT-main =		open-source LDAP software (client)
 COMMENT-server =	open-source LDAP software (server)
 
-# 2.5 requires openssl 1.1.1+
-PORTROACH =		limit:^2\.4\.
+PORTROACH =		limit:^2\.5\.
 
-DISTNAME =		openldap-2.4.59
+DISTNAME =		openldap-2.5.7
 PKGNAME-main =		${DISTNAME:S/-/-client-/}
 PKGNAME-server =	${DISTNAME:S/-/-server-/}
 REVISION-server =	0
@@ -17,13 +16,10 @@ REVISION-server =	0
 FULLPKGNAME-main =	${DISTNAME:S/-/-client-/}${FLAVOR_EXT:S/-aci//}
 FULLPKGPATH-main =	databases/openldap,-main${FLAVOR_EXT:S/-aci//:S/-/,/g}
 
-SHARED_LIBS +=	lber                 12.0     # 12.14
-SHARED_LIBS +=	lber-2.4             12.0
-
-SHARED_LIBS +=	ldap                 13.2     # 12.14
-SHARED_LIBS +=	ldap-2.4             13.2
-SHARED_LIBS +=	ldap_r               13.2
-SHARED_LIBS +=	ldap_r-2.4           13.2
+SHARED_LIBS +=	lber                 14.0
+SHARED_LIBS +=	lber-2.5             14.0
+SHARED_LIBS +=	ldap                 14.0
+SHARED_LIBS +=	ldap-2.5             14.0
 
 CATEGORIES =	databases net
 
@@ -34,7 +30,7 @@ MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 # OpenLDAP Public License
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c crypto ssl
+WANTLIB += c crypto pthread sasl2 ssl
 
 MASTER_SITES =	https://openldap.org/software/download/OpenLDAP/openldap-release/ \
 		https://mirror.eu.oneandone.net/software/openldap/ \
@@ -46,8 +42,9 @@ COMPILER =		base-clang ports-gcc base-gcc
 EXTRACT_SUFX =		.tgz
 
 SEPARATE_BUILD =	Yes
-AUTOCONF_VERSION =	2.65
+AUTOCONF_VERSION =	2.69
 CONFIGURE_STYLE =	autoconf
+USE_GMAKE =		Yes
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 FLAVOR ?=
@@ -61,25 +58,27 @@ CONFIGURE_ARGS +=	--enable-dynamic \
 CONFIGURE_ARGS +=	--enable-slapd \
 			--enable-cleartext \
 			--enable-crypt \
-			--enable-rewrite \
 			--with-cyrus-sasl \
+			--enable-modules \
 			--enable-spasswd
 
-# slapd modules
-CONFIGURE_ARGS +=	--enable-bdb \
-			--enable-dnssrv \
-			--enable-hdb \
-			--enable-ldap \
-			--enable-meta \
-			--enable-monitor \
-			--enable-null \
-			--enable-overlays \
-			--enable-passwd \
-			--enable-perl \
-			--enable-shell
-
+# slapd compiled-in
 # Enable MDB support, N.B. patch-servers_slapd_back-mdb_init_c.
 CONFIGURE_ARGS +=	--enable-mdb
+
+# slapd modules
+CONFIGURE_ARGS +=	--enable-dnssrv=mod \
+			--enable-ldap=mod \
+			--enable-meta=mod \
+			--enable-null=mod \
+			--enable-passwd=mod \
+			--enable-perl=mod
+
+# overlays
+CONFIGURE_ARGS +=	--enable-overlays=mod
+
+# Requires OpenSSL 1.1.1+
+CONFIGURE_ARGS +=	--disable-autoca
 
 .if ${FLAVOR:Maci}
 CONFIGURE_ARGS +=	--enable-aci
@@ -102,21 +101,23 @@ MULTI_PACKAGES =	-main -server
 
 # formatting is ok with mandoc, but soelim is used at build time
 BUILD_DEPENDS +=	textproc/groff
+
 LIB_DEPENDS +=		security/cyrus-sasl2
-WANTLIB +=		pthread sasl2
-CPPFLAGS =		-I${LOCALBASE}/include/sasl \
-			-I${LOCALBASE}/include/db4 \
-			-I${LOCALBASE}/include
-CFLAGS +=		-Wno-format-extra-args
 
 LIB_DEPENDS-server =	${LIB_DEPENDS-main} \
-			databases/db/v4,no_java,no_tcl \
-			databases/openldap,-main
+			databases/openldap,-main \
+			devel/libtool,-ltdl
+WANTLIB-server +=	${WANTLIB} lber ldap ltdl m perl
 
+CPPFLAGS =		-I${LOCALBASE}/include/sasl \
+			-I${LOCALBASE}/include
+CFLAGS +=		-Wno-format-extra-args
 CONFIGURE_ENV +=	CPPFLAGS="${CPPFLAGS}" \
-			LDFLAGS="-L${LOCALBASE}/lib/db4 -L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -Wl,--export-dynamic"
 
-WANTLIB-server +=	${WANTLIB} lber ldap_r lib/db4/db>=4 m perl
+# Bypass autoconf check for OpenSSL 1.1.1+ function, other than autoca
+# at this point other parts of OpenLDAP 2.5 do seem OK with LibreSSL.
+CONFIGURE_ENV +=	ac_cv_lib_ssl_SSL_export_keying_material_early=yes
 
 FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/openldap
 
@@ -125,8 +126,8 @@ pre-build:
 
 post-install:
 	rm ${PREFIX}/share/examples/openldap/{slapd.conf,slapd.ldif,ldap.conf}.default
-.for i in lber ldap ldap_r
-	ln -s lib$i.so.${LIB$i_VERSION} ${PREFIX}/lib/lib$i-2.4.so.${LIB$i_VERSION}
+.for i in lber ldap
+	ln -s lib$i.so.${LIB$i_VERSION} ${PREFIX}/lib/lib$i-2.5.so.${LIB$i_VERSION}
 .endfor
 
 pre-test:
