@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2021/09/02 17:57:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2021/09/10 17:41:30 naddy Exp $
 
 COMMENT=	object-oriented DSSSL engine
 
 DISTNAME=	openjade-1.3.3-pre1
 PKGNAME=	openjade-1.3.3pre1
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	textproc
 
@@ -29,6 +29,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--datadir=${PREFIX}/share/sgml/openjade
 
 USE_GMAKE=		Yes
+NO_TEST=		Yes
 
 INSTALL_TARGET=		install install-man
 

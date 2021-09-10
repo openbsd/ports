@@ -1,0 +1,14 @@
+$OpenBSD: patch-jade_TeXFOTBuilder_cxx,v 1.1 2021/09/10 17:41:30 naddy Exp $
+
+Index: jade/TeXFOTBuilder.cxx
+--- jade/TeXFOTBuilder.cxx.orig
++++ jade/TeXFOTBuilder.cxx
+@@ -1004,7 +1004,7 @@ OutputByteStream &operator<<( OutputByteStream &os, Le
+ 
+   char buf[32];
+   int i;
+-  sprintf( buf, "%li.%.3i%n", long(length.l)/1000, abs(long(length.l)%1000), &i );
++  i = sprintf( buf, "%li.%.3i", long(length.l)/1000, abs(long(length.l)%1000) );
+   while( buf[--i] == '0' ) {}; if( buf[i] == '.' ) i--;
+     buf[i+1] = '\0';
+   os << buf << "\\p@";
