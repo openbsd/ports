@@ -1,0 +1,21 @@
+$OpenBSD: patch-lib_sigsegv_c,v 1.1 2021/09/10 18:44:55 jasper Exp $
+
+Index: lib/sigsegv.c
+--- lib/sigsegv.c.orig
++++ lib/sigsegv.c
+@@ -511,7 +511,14 @@ int libsigsegv_version = LIBSIGSEGV_VERSION;
+ 
+ #  define SIGSEGV_FAULT_STACKPOINTER  scp->sc_regs[29]
+ 
+-# elif defined __powerpc__ || defined __powerpc64__
++# elif defined(__powerpc64__)
++
++/* See the definition of 'struct sigcontext' and 'struct trapframe' in
++   openbsd-src/sys/arch/powerpc64/include/signal.h.  */
++
++#  define SIGSEGV_FAULT_STACKPOINTER  scp->sc_sp
++
++# elif defined __powerpc__
+ 
+ /* See the definition of 'struct sigcontext' and 'struct trapframe' in
+    openbsd-src/sys/arch/powerpc/include/signal.h.  */
