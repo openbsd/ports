@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2021/05/09 14:31:58 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.18 2021/09/10 08:42:03 rsadowski Exp $
 
 COMMENT =	utility classes for KDE control modules
 DISTNAME =	kcmutils-${VERSION}
 
-SHARED_LIBS =	KF5KCMUtils	6.4
+SHARED_LIBS =	KF5KCMUtils	6.5
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Declarative

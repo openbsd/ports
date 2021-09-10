@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2021/08/08 12:21:34 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.25 2021/09/10 08:42:02 rsadowski Exp $
 share/icons/breeze/
 share/icons/breeze-dark/
 share/icons/breeze-dark/actions/
@@ -1278,6 +1278,7 @@ share/icons/breeze-dark/actions/16/set-language.svg
 share/icons/breeze-dark/actions/16/settings-configure.svg
 share/icons/breeze-dark/actions/16/shallow-history.svg
 share/icons/breeze-dark/actions/16/shape-choose.svg
+share/icons/breeze-dark/actions/16/shape-cuboid.svg
 share/icons/breeze-dark/actions/16/shapes.svg
 share/icons/breeze-dark/actions/16/shear.svg
 share/icons/breeze-dark/actions/16/show-dialogs.svg
@@ -3148,6 +3149,7 @@ share/icons/breeze-dark/actions/22/set-language.svg
 share/icons/breeze-dark/actions/22/settings-configure.svg
 share/icons/breeze-dark/actions/22/shallow-history.svg
 share/icons/breeze-dark/actions/22/shape-choose.svg
+share/icons/breeze-dark/actions/22/shape-cuboid.svg
 share/icons/breeze-dark/actions/22/shapes.svg
 share/icons/breeze-dark/actions/22/sharpenimage.svg
 share/icons/breeze-dark/actions/22/shear.svg
@@ -3656,6 +3658,7 @@ share/icons/breeze-dark/actions/22/zoom-2-to-1.svg
 share/icons/breeze-dark/actions/22/zoom-draw.svg
 share/icons/breeze-dark/actions/22/zoom-fit-best.svg
 share/icons/breeze-dark/actions/22/zoom-fit-height.svg
+share/icons/breeze-dark/actions/22/zoom-fit-page.svg
 share/icons/breeze-dark/actions/22/zoom-fit-selection.svg
 share/icons/breeze-dark/actions/22/zoom-fit-width.svg
 share/icons/breeze-dark/actions/22/zoom-in-large.svg
@@ -5066,6 +5069,7 @@ share/icons/breeze-dark/actions/24/set-language.svg
 share/icons/breeze-dark/actions/24/settings-configure.svg
 share/icons/breeze-dark/actions/24/shallow-history.svg
 share/icons/breeze-dark/actions/24/shape-choose.svg
+share/icons/breeze-dark/actions/24/shape-cuboid.svg
 share/icons/breeze-dark/actions/24/shapes.svg
 share/icons/breeze-dark/actions/24/sharpenimage.svg
 share/icons/breeze-dark/actions/24/shear.svg
@@ -5574,6 +5578,7 @@ share/icons/breeze-dark/actions/24/zoom-2-to-1.svg
 share/icons/breeze-dark/actions/24/zoom-draw.svg
 share/icons/breeze-dark/actions/24/zoom-fit-best.svg
 share/icons/breeze-dark/actions/24/zoom-fit-height.svg
+share/icons/breeze-dark/actions/24/zoom-fit-page.svg
 share/icons/breeze-dark/actions/24/zoom-fit-selection.svg
 share/icons/breeze-dark/actions/24/zoom-fit-width.svg
 share/icons/breeze-dark/actions/24/zoom-in-large.svg
@@ -5864,6 +5869,7 @@ share/icons/breeze-dark/actions/32/zoom-2-to-1.svg
 share/icons/breeze-dark/actions/32/zoom-draw.svg
 share/icons/breeze-dark/actions/32/zoom-fit-best.svg
 share/icons/breeze-dark/actions/32/zoom-fit-height.svg
+share/icons/breeze-dark/actions/32/zoom-fit-page.svg
 share/icons/breeze-dark/actions/32/zoom-fit-selection.svg
 share/icons/breeze-dark/actions/32/zoom-fit-width.svg
 share/icons/breeze-dark/actions/32/zoom-in-large.svg
@@ -6628,7 +6634,9 @@ share/icons/breeze-dark/apps/48/okteta.svg
 share/icons/breeze-dark/apps/48/okular.svg
 share/icons/breeze-dark/apps/48/openbravo-erp.svg
 share/icons/breeze-dark/apps/48/org.fedoraproject.AnacondaInstaller.svg
+share/icons/breeze-dark/apps/48/org.inkscape.Inkscape.svg
 share/icons/breeze-dark/apps/48/org.kde.Ikona.svg
+share/icons/breeze-dark/apps/48/org.telegram.desktop.svg
 share/icons/breeze-dark/apps/48/partitionmanager.svg
 share/icons/breeze-dark/apps/48/phonon-gstreamer.svg
 share/icons/breeze-dark/apps/48/photolayoutseditor.svg
@@ -10531,6 +10539,9 @@ share/icons/breeze-dark/status/16/state-warning.svg
 share/icons/breeze-dark/status/16/task-complete.svg
 share/icons/breeze-dark/status/16/task-recurring.svg
 share/icons/breeze-dark/status/16/task-reminder.svg
+share/icons/breeze-dark/status/16/temperature-cold.svg
+share/icons/breeze-dark/status/16/temperature-normal.svg
+share/icons/breeze-dark/status/16/temperature-warm.svg
 share/icons/breeze-dark/status/16/user-available.svg
 share/icons/breeze-dark/status/16/user-away-extended.svg
 share/icons/breeze-dark/status/16/user-away.svg
@@ -10690,6 +10701,9 @@ share/icons/breeze-dark/status/22/task-reminder.svg
 share/icons/breeze-dark/status/22/telegram-attention-panel.svg
 share/icons/breeze-dark/status/22/telegram-mute-panel.svg
 share/icons/breeze-dark/status/22/telegram-panel.svg
+share/icons/breeze-dark/status/22/temperature-cold.svg
+share/icons/breeze-dark/status/22/temperature-normal.svg
+share/icons/breeze-dark/status/22/temperature-warm.svg
 share/icons/breeze-dark/status/22/transmission-tray-icon.svg
 share/icons/breeze-dark/status/22/uninstall.svg
 share/icons/breeze-dark/status/22/update-high.svg
@@ -10856,6 +10870,9 @@ share/icons/breeze-dark/status/24/task-reminder.svg
 share/icons/breeze-dark/status/24/telegram-attention-panel.svg
 share/icons/breeze-dark/status/24/telegram-mute-panel.svg
 share/icons/breeze-dark/status/24/telegram-panel.svg
+share/icons/breeze-dark/status/24/temperature-cold.svg
+share/icons/breeze-dark/status/24/temperature-normal.svg
+share/icons/breeze-dark/status/24/temperature-warm.svg
 share/icons/breeze-dark/status/24/transmission-tray-icon.svg
 share/icons/breeze-dark/status/24/uninstall.svg
 share/icons/breeze-dark/status/24/update-high.svg
@@ -12271,6 +12288,7 @@ share/icons/breeze/actions/16/set-language.svg
 share/icons/breeze/actions/16/settings-configure.svg
 share/icons/breeze/actions/16/shallow-history.svg
 share/icons/breeze/actions/16/shape-choose.svg
+share/icons/breeze/actions/16/shape-cuboid.svg
 share/icons/breeze/actions/16/shapes.svg
 share/icons/breeze/actions/16/shear.svg
 share/icons/breeze/actions/16/show-dialogs.svg
@@ -14134,6 +14152,7 @@ share/icons/breeze/actions/22/set-language.svg
 share/icons/breeze/actions/22/settings-configure.svg
 share/icons/breeze/actions/22/shallow-history.svg
 share/icons/breeze/actions/22/shape-choose.svg
+share/icons/breeze/actions/22/shape-cuboid.svg
 share/icons/breeze/actions/22/shapes.svg
 share/icons/breeze/actions/22/sharpenimage.svg
 share/icons/breeze/actions/22/shear.svg
@@ -14647,6 +14666,7 @@ share/icons/breeze/actions/22/zoom-2-to-1.svg
 share/icons/breeze/actions/22/zoom-draw.svg
 share/icons/breeze/actions/22/zoom-fit-best.svg
 share/icons/breeze/actions/22/zoom-fit-height.svg
+share/icons/breeze/actions/22/zoom-fit-page.svg
 share/icons/breeze/actions/22/zoom-fit-selection.svg
 share/icons/breeze/actions/22/zoom-fit-width.svg
 share/icons/breeze/actions/22/zoom-in-large.svg
@@ -16055,6 +16075,7 @@ share/icons/breeze/actions/24/set-language.svg
 share/icons/breeze/actions/24/settings-configure.svg
 share/icons/breeze/actions/24/shallow-history.svg
 share/icons/breeze/actions/24/shape-choose.svg
+share/icons/breeze/actions/24/shape-cuboid.svg
 share/icons/breeze/actions/24/shapes.svg
 share/icons/breeze/actions/24/sharpenimage.svg
 share/icons/breeze/actions/24/shear.svg
@@ -16568,6 +16589,7 @@ share/icons/breeze/actions/24/zoom-2-to-1.svg
 share/icons/breeze/actions/24/zoom-draw.svg
 share/icons/breeze/actions/24/zoom-fit-best.svg
 share/icons/breeze/actions/24/zoom-fit-height.svg
+share/icons/breeze/actions/24/zoom-fit-page.svg
 share/icons/breeze/actions/24/zoom-fit-selection.svg
 share/icons/breeze/actions/24/zoom-fit-width.svg
 share/icons/breeze/actions/24/zoom-in-large.svg
@@ -16856,6 +16878,7 @@ share/icons/breeze/actions/32/zoom-2-to-1.svg
 share/icons/breeze/actions/32/zoom-draw.svg
 share/icons/breeze/actions/32/zoom-fit-best.svg
 share/icons/breeze/actions/32/zoom-fit-height.svg
+share/icons/breeze/actions/32/zoom-fit-page.svg
 share/icons/breeze/actions/32/zoom-fit-selection.svg
 share/icons/breeze/actions/32/zoom-fit-width.svg
 share/icons/breeze/actions/32/zoom-in-large.svg
@@ -17644,9 +17667,11 @@ share/icons/breeze/apps/48/okteta.svg
 share/icons/breeze/apps/48/okular.svg
 share/icons/breeze/apps/48/openbravo-erp.svg
 share/icons/breeze/apps/48/org.fedoraproject.AnacondaInstaller.svg
+share/icons/breeze/apps/48/org.inkscape.Inkscape.svg
 share/icons/breeze/apps/48/org.kde.Ikona.svg
 share/icons/breeze/apps/48/org.kde.kontrast.svg
 share/icons/breeze/apps/48/org.kde.neochat.svg
+share/icons/breeze/apps/48/org.telegram.desktop.svg
 share/icons/breeze/apps/48/parley.svg
 share/icons/breeze/apps/48/partitionmanager.svg
 share/icons/breeze/apps/48/phonon-gstreamer.svg
@@ -21571,6 +21596,9 @@ share/icons/breeze/status/16/state-warning.svg
 share/icons/breeze/status/16/task-complete.svg
 share/icons/breeze/status/16/task-recurring.svg
 share/icons/breeze/status/16/task-reminder.svg
+share/icons/breeze/status/16/temperature-cold.svg
+share/icons/breeze/status/16/temperature-normal.svg
+share/icons/breeze/status/16/temperature-warm.svg
 share/icons/breeze/status/16/user-available.svg
 share/icons/breeze/status/16/user-away-extended.svg
 share/icons/breeze/status/16/user-away.svg
@@ -21834,6 +21862,9 @@ share/icons/breeze/status/22/task-reminder.svg
 share/icons/breeze/status/22/telegram-attention-panel.svg
 share/icons/breeze/status/22/telegram-mute-panel.svg
 share/icons/breeze/status/22/telegram-panel.svg
+share/icons/breeze/status/22/temperature-cold.svg
+share/icons/breeze/status/22/temperature-normal.svg
+share/icons/breeze/status/22/temperature-warm.svg
 share/icons/breeze/status/22/transmission-tray-icon.svg
 share/icons/breeze/status/22/uninstall.svg
 share/icons/breeze/status/22/update-high.svg
@@ -22104,6 +22135,9 @@ share/icons/breeze/status/24/task-reminder.svg
 share/icons/breeze/status/24/telegram-attention-panel.svg
 share/icons/breeze/status/24/telegram-mute-panel.svg
 share/icons/breeze/status/24/telegram-panel.svg
+share/icons/breeze/status/24/temperature-cold.svg
+share/icons/breeze/status/24/temperature-normal.svg
+share/icons/breeze/status/24/temperature-warm.svg
 share/icons/breeze/status/24/transmission-tray-icon.svg
 share/icons/breeze/status/24/uninstall.svg
 share/icons/breeze/status/24/update-high.svg

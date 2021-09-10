@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/02/14 06:22:32 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/09/10 08:42:07 rsadowski Exp $
 lib/cmake/KF5QQC2DeskopStyle/
 lib/cmake/KF5QQC2DeskopStyle/KF5QQC2DeskopStyleConfig.cmake
 lib/cmake/KF5QQC2DeskopStyle/KF5QQC2DeskopStyleConfigVersion.cmake
@@ -26,6 +26,7 @@ lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/GroupBox.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/ItemDelegate.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/Label.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/Menu.qml
+lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/MenuBar.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/MenuBarItem.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/MenuItem.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/MenuSeparator.qml

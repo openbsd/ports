@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2021/07/06 16:55:32 daniel Exp $
+# $OpenBSD: Makefile,v 1.18 2021/09/10 08:42:03 rsadowski Exp $
 
 COMMENT =		CMake modules required by KDE5
 DISTNAME =		extra-cmake-modules-${VERSION}
 HOMEPAGE =		https://projects.kde.org/projects/kdesupport/extra-cmake-modules
-REVISION =		0
 
 MODULES =		lang/python
 MODPY_RUNDEP =		No
