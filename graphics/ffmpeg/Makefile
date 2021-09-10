@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.213 2021/08/10 21:32:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.214 2021/09/10 21:47:55 sthen Exp $
 
 COMMENT=	audio/video converter and streamer
 
 V=		4.4
 DISTNAME=	ffmpeg-${V}
-REVISION=	3
+REVISION=	4
 EPOCH=		1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	https://ffmpeg.org/releases/
@@ -130,7 +130,7 @@ CONFIGURE_ARGS+=--enable-shared \
 .if ${MACHINE_ARCH} == "arm"
 CONFIGURE_ARGS+=--disable-asm
 .endif
-.if ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "powerpc64"
+.if ${MACHINE_ARCH} == "powerpc"
 CONFIGURE_ARGS+=--disable-altivec
 .endif
 .if ${MACHINE_ARCH} == "mips64"  || ${MACHINE_ARCH} == "mips64el"
