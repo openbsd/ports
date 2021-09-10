@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2021/09/10 18:20:31 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2021/09/10 20:44:27 sthen Exp $
 bin/ldapadd
 @bin bin/ldapcompare
 @bin bin/ldapdelete
@@ -8,7 +8,6 @@ bin/ldapadd
 @bin bin/ldappasswd
 @bin bin/ldapsearch
 @bin bin/ldapurl
-@bin bin/ldapvc
 @bin bin/ldapwhoami
 include/lber.h
 include/lber_types.h
@@ -20,16 +19,18 @@ include/ldap_utf8.h
 include/ldif.h
 include/openldap.h
 include/slapi-plugin.h
-@lib lib/liblber-2.5.so.${LIBlber-2.5_VERSION}
+@lib lib/liblber-2.4.so.${LIBlber-2.4_VERSION}
 @static-lib lib/liblber.a
 lib/liblber.la
 @lib lib/liblber.so.${LIBlber_VERSION}
-@lib lib/libldap-2.5.so.${LIBldap-2.5_VERSION}
+@lib lib/libldap-2.4.so.${LIBldap-2.4_VERSION}
 @static-lib lib/libldap.a
 lib/libldap.la
 @lib lib/libldap.so.${LIBldap_VERSION}
-lib/pkgconfig/lber.pc
-lib/pkgconfig/ldap.pc
+@lib lib/libldap_r-2.4.so.${LIBldap_r-2.4_VERSION}
+@static-lib lib/libldap_r.a
+lib/libldap_r.la
+@lib lib/libldap_r.so.${LIBldap_r_VERSION}
 @man man/man1/ldapadd.1
 @man man/man1/ldapcompare.1
 @man man/man1/ldapdelete.1
@@ -133,7 +134,6 @@ lib/pkgconfig/ldap.pc
 @man man/man3/ldap_first_message.3
 @man man/man3/ldap_first_reference.3
 @man man/man3/ldap_free_urldesc.3
-@man man/man3/ldap_get_attribute_ber.3
 @man man/man3/ldap_get_dn.3
 @man man/man3/ldap_get_option.3
 @man man/man3/ldap_get_values.3

@@ -1,9 +1,9 @@
-$OpenBSD: patch-build_top_mk,v 1.9 2021/09/10 18:20:31 sthen Exp $
+$OpenBSD: patch-build_top_mk,v 1.10 2021/09/10 20:44:27 sthen Exp $
 
 Index: build/top.mk
 --- build/top.mk.orig
 +++ build/top.mk
-@@ -75,7 +75,7 @@ MKVERSION = $(top_srcdir)/build/mkversion -v "$(VERSIO
+@@ -74,7 +74,7 @@ MKVERSION = $(top_srcdir)/build/mkversion -v "$(VERSIO
  LIBTOOL = @LIBTOOL@
  LIBRELEASE = @OPENLDAP_LIBRELEASE@
  LIBVERSION = @OPENLDAP_LIBVERSION@
@@ -12,7 +12,7 @@ Index: build/top.mk
  
  # libtool --only flag for libraries: platform specific
  NT_LTONLY_LIB = # --only-$(BUILD_LIBS_DYNAMIC)
-@@ -91,7 +91,7 @@ LTONLY_MOD = $(LTONLY_$(BUILD_MOD))
+@@ -90,7 +90,7 @@ LTONLY_MOD = $(LTONLY_$(BUILD_MOD))
  NT_LTFLAGS_LIB = -no-undefined -avoid-version -rpath $(libdir)
  NT_LTFLAGS_MOD = -no-undefined -avoid-version -rpath $(moduledir)
  UNIX_LTFLAGS_LIB = $(LTVERSION) -rpath $(libdir)

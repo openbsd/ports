@@ -1,4 +1,4 @@
-$OpenBSD: patch-libraries_libldap_tls_o_c,v 1.7 2021/09/10 18:20:31 sthen Exp $
+$OpenBSD: patch-libraries_libldap_tls_o_c,v 1.8 2021/09/10 20:44:27 sthen Exp $
 
 requires SSL_CTX_set_ciphersuites/SSL_set_ciphersuites API which are
 present in src/lib/libssl and headers, but the symbols are not yet
@@ -7,7 +7,7 @@ exported to the library
 Index: libraries/libldap/tls_o.c
 --- libraries/libldap/tls_o.c.orig
 +++ libraries/libldap/tls_o.c
-@@ -275,7 +275,7 @@ tlso_ctx_free ( tls_ctx *ctx )
+@@ -273,7 +273,7 @@ tlso_ctx_free ( tls_ctx *ctx )
  	SSL_CTX_free( c );
  }
  
@@ -16,12 +16,12 @@ Index: libraries/libldap/tls_o.c
  static char *
  tlso_stecpy( char *dst, const char *src, const char *end )
  {
-@@ -411,7 +411,7 @@ tlso_ctx_init( struct ldapoptions *lo, struct ldaptls 
- 	}
+@@ -382,7 +382,7 @@ tlso_ctx_init( struct ldapoptions *lo, struct ldaptls 
+ 		SSL_CTX_set_options( ctx, SSL_OP_NO_SSLv2 );
  
  	if ( lo->ldo_tls_ciphersuite ) {
 -#if OPENSSL_VERSION_NUMBER >= 0x10101000
 +#if OPENSSL_VERSION_NUMBER >= 0x10101000 && !defined(LIBRESSL_VERSION_NUMBER)
  		tlso_ctx_cipher13( ctx, lt->lt_ciphersuite );
- #endif
+ #endif /* OpenSSL 1.1.1 */
  		if ( !SSL_CTX_set_cipher_list( ctx, lt->lt_ciphersuite ) )

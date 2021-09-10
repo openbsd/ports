@@ -1,9 +1,9 @@
-$OpenBSD: patch-servers_slapd_back-mdb_init_c,v 1.7 2021/09/10 18:20:31 sthen Exp $
+$OpenBSD: patch-servers_slapd_back-mdb_init_c,v 1.8 2021/09/10 20:44:27 sthen Exp $
 
 Index: servers/slapd/back-mdb/init.c
 --- servers/slapd/back-mdb/init.c.orig
 +++ servers/slapd/back-mdb/init.c
-@@ -168,6 +168,32 @@ mdb_db_open( BackendDB *be, ConfigReply *cr )
+@@ -166,6 +166,32 @@ mdb_db_open( BackendDB *be, ConfigReply *cr )
  
  	flags = mdb->mi_dbenv_flags;
  
