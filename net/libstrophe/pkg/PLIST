@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/04/25 17:43:39 tb Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/09/10 04:30:50 rsadowski Exp $
 include/strophe.h
-lib/libstrophe.a
+@static-lib lib/libstrophe.a
 lib/libstrophe.la
 @lib lib/libstrophe.so.${LIBstrophe_VERSION}
 lib/pkgconfig/libstrophe.pc
