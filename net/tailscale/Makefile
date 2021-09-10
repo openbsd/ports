@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/08/27 16:32:04 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2021/09/10 22:49:13 sthen Exp $
+
+BROKEN-i386 =	unix.EPROTO not defined
 
 COMMENT =	modern overlay-like VPN built on top of WireGuard
 
