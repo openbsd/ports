@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/11/20 12:57:05 landry Exp $
+@comment $OpenBSD: PLIST,v 1.14 2021/09/10 06:45:01 landry Exp $
 @bin bin/merkaartor
 lib/merkaartor/
 lib/merkaartor/plugins/
@@ -39,28 +39,25 @@ share/merkaartor/Projections.xml
 share/merkaartor/TmsServersList.xml
 share/merkaartor/WmsServersList.xml
 share/merkaartor/translations/
-share/merkaartor/translations/merkaartor_ar.qm
 share/merkaartor/translations/merkaartor_cs.qm
 share/merkaartor/translations/merkaartor_de.qm
-share/merkaartor/translations/merkaartor_de_AT.qm
 share/merkaartor/translations/merkaartor_en.qm
 share/merkaartor/translations/merkaartor_es.qm
-share/merkaartor/translations/merkaartor_et.qm
+share/merkaartor/translations/merkaartor_fi.qm
 share/merkaartor/translations/merkaartor_fr.qm
 share/merkaartor/translations/merkaartor_hr.qm
 share/merkaartor/translations/merkaartor_hu.qm
+share/merkaartor/translations/merkaartor_id_ID.qm
 share/merkaartor/translations/merkaartor_it.qm
 share/merkaartor/translations/merkaartor_ja.qm
 share/merkaartor/translations/merkaartor_nl.qm
 share/merkaartor/translations/merkaartor_pl.qm
-share/merkaartor/translations/merkaartor_pt.qm
 share/merkaartor/translations/merkaartor_pt_BR.qm
 share/merkaartor/translations/merkaartor_ru.qm
-share/merkaartor/translations/merkaartor_sk.qm
 share/merkaartor/translations/merkaartor_sv.qm
 share/merkaartor/translations/merkaartor_uk.qm
-share/merkaartor/translations/merkaartor_vi.qm
-share/merkaartor/translations/merkaartor_zh_CN.qm
 share/merkaartor/translations/merkaartor_zh_TW.qm
+share/metainfo/
+share/metainfo/org.merkaartor.merkaartor.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
