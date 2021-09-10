@@ -1,0 +1,43 @@
+$OpenBSD: patch-engine_readconnect_c,v 1.1 2021/09/10 18:04:06 tb Exp $
+
+Index: engine/readconnect.c
+--- engine/readconnect.c.orig
++++ engine/readconnect.c
+@@ -1879,11 +1879,11 @@ order_connection_moves(int *moves, int str1, int str2,
+     char buf[500];
+     char *pos;
+     int chars;
+-    sprintf(buf, "Move order for %s: %n", funcname, &chars);
++    chars = sprintf(buf, "Move order for %s: ", funcname);
+     pos = buf + chars;
+     for (i = 1; i <= moves[0]; i++) {
+-      sprintf(pos, "%c%d (%d) %n", J(moves[i]) + 'A' + (J(moves[i]) >= 8),
+-	      board_size - I(moves[i]), scores[i], &chars);
++      chars = sprintf(pos, "%c%d (%d) ", J(moves[i]) + 'A' + (J(moves[i]) >= 8),
++	      board_size - I(moves[i]), scores[i]);
+       pos += chars;
+     }
+     sgftreeAddComment(sgf_dumptree, buf);
+@@ -2580,17 +2580,16 @@ find_connection_moves(int str1, int str2, int color_to
+     char buf[500];
+     char *pos;
+     int chars;
+-    sprintf(buf, "Move order for %sconnect: %n",
+-	    connect_move ? "" : "dis", &chars);
++    chars = sprintf(buf, "Move order for %sconnect: ",
++	    connect_move ? "" : "dis");
+     pos = buf + chars;
+     for (i = 0; i < num_moves; i++) {
+-      sprintf(pos, "%c%d (%4.2f) %n", J(moves[i]) + 'A' + (J(moves[i]) >= 8),
+-	      board_size - I(moves[i]), FIXED_TO_FLOAT(distances[i]),
+-	      &chars);
++      chars = sprintf(pos, "%c%d (%4.2f) ", J(moves[i]) + 'A' + (J(moves[i]) >= 8),
++	      board_size - I(moves[i]), FIXED_TO_FLOAT(distances[i]));
+       pos += chars;
+     }
+     if (cutoff < HUGE_CONNECTION_DISTANCE) {
+-      sprintf(pos, "(cutoff %f)%n", FIXED_TO_FLOAT(cutoff), &chars);
++      chars = sprintf(pos, "(cutoff %f)", FIXED_TO_FLOAT(cutoff));
+       pos += chars;
+     }
+     sgftreeAddComment(sgf_dumptree, buf);

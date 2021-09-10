@@ -1,0 +1,21 @@
+$OpenBSD: patch-engine_reading_c,v 1.1 2021/09/10 18:04:06 tb Exp $
+
+Index: engine/reading.c
+--- engine/reading.c.orig
++++ engine/reading.c
+@@ -5060,12 +5060,12 @@ sgf_dumpmoves(struct reading_moves *moves, const char 
+   char buf[500];
+   char *pos;
+   int i, chars;
+-  sprintf(buf, "Move order for %s: %n", funcname, &chars);
++  chars = sprintf(buf, "Move order for %s: ", funcname);
+   pos = buf + chars;
+   for (i = moves->num_tried; i < moves->num; i++) {
+-    sprintf(pos, "%c%d (%d) %n",
++    chars = sprintf(pos, "%c%d (%d) ",
+ 	    J(moves->pos[i]) + 'A' + (J(moves->pos[i]) >= 8),
+-	    board_size - I(moves->pos[i]), moves->score[i], &chars);
++	    board_size - I(moves->pos[i]), moves->score[i]);
+     pos += chars;
+   }
+   sgftreeAddComment(sgf_dumptree, buf);
