@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2021/05/15 09:56:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.29 2021/09/10 08:43:47 rsadowski Exp $
 
 COMMENT =	KTorrent engine
 
@@ -6,7 +6,7 @@ DISTNAME =	libktorrent-${MODKDE_VERSION}
 
 CATEGORIES =	net
 
-SHARED_LIBS +=  KF5Torrent                2.0 # 6.0
+SHARED_LIBS +=  KF5Torrent                3.0 # 6.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Completion KF5ConfigCore
 WANTLIB += KF5CoreAddons KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui

@@ -1,18 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/06/19 18:34:32 rsadowski Exp $
-@so lib/qt5/plugins/fileviewbazaarplugin.so
-@so lib/qt5/plugins/fileviewdropboxplugin.so
-@so lib/qt5/plugins/fileviewgitplugin.so
-@so lib/qt5/plugins/fileviewhgplugin.so
-@so lib/qt5/plugins/fileviewsvnplugin.so
+@comment $OpenBSD: PLIST,v 1.14 2021/09/10 08:43:49 rsadowski Exp $
+lib/qt5/plugins/dolphin/
+lib/qt5/plugins/dolphin/vcs/
+@so lib/qt5/plugins/dolphin/vcs/fileviewbazaarplugin.so
+@so lib/qt5/plugins/dolphin/vcs/fileviewdropboxplugin.so
+@so lib/qt5/plugins/dolphin/vcs/fileviewgitplugin.so
+@so lib/qt5/plugins/dolphin/vcs/fileviewhgplugin.so
+@so lib/qt5/plugins/dolphin/vcs/fileviewsvnplugin.so
 @so lib/qt5/plugins/kf5/kfileitemaction/mountisoaction.so
 share/config.kcfg/fileviewgitpluginsettings.kcfg
 share/config.kcfg/fileviewhgpluginsettings.kcfg
 share/config.kcfg/fileviewsvnpluginsettings.kcfg
-share/kservices5/fileviewbazaarplugin.desktop
-share/kservices5/fileviewdropboxplugin.desktop
-share/kservices5/fileviewgitplugin.desktop
-share/kservices5/fileviewhgplugin.desktop
-share/kservices5/fileviewsvnplugin.desktop
 share/locale/ast/LC_MESSAGES/mountisoaction.mo
 share/locale/az/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/az/LC_MESSAGES/fileviewgitplugin.mo
@@ -190,6 +187,7 @@ share/locale/sv/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/sv/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/sv/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/sv/LC_MESSAGES/mountisoaction.mo
+share/locale/ta/LC_MESSAGES/mountisoaction.mo
 share/locale/tr/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/tr/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/tr/LC_MESSAGES/fileviewhgplugin.mo
@@ -203,6 +201,7 @@ share/locale/uk/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/uk/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/uk/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/uk/LC_MESSAGES/mountisoaction.mo
+share/locale/vi/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/vi/LC_MESSAGES/mountisoaction.mo
 share/locale/zh_CN/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/zh_CN/LC_MESSAGES/fileviewgitplugin.mo

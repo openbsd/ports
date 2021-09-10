@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2021/04/27 05:27:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.19 2021/09/10 08:43:59 rsadowski Exp $
 
 COMMENT =	KDE document viewer
 DISTNAME =	okular-${VERSION}
@@ -6,7 +6,7 @@ CATEGORIES =	textproc
 
 HOMEPAGE =	https://okular.kde.org/
 
-SHARED_LIBS +=  Okular5Core               2.2 # 9.0
+SHARED_LIBS +=  Okular5Core               2.3 # 9.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Archive KF5Auth
 WANTLIB += KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore

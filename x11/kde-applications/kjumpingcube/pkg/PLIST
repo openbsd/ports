@@ -1,9 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/06/19 18:34:38 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/09/10 08:43:54 rsadowski Exp $
 @pkgpath x11/kde4/kjumpingcube
 @bin bin/kjumpingcube
 share/applications/org.kde.kjumpingcube.desktop
 share/config.kcfg/
 share/config.kcfg/kjumpingcube.kcfg
+share/doc/HTML/ca/kjumpingcube/
+share/doc/HTML/ca/kjumpingcube/index.cache.bz2
+share/doc/HTML/ca/kjumpingcube/index.docbook
+share/doc/HTML/ca/kjumpingcube/settings.png
 share/doc/HTML/de/kjumpingcube/
 share/doc/HTML/de/kjumpingcube/index.cache.bz2
 share/doc/HTML/de/kjumpingcube/index.docbook

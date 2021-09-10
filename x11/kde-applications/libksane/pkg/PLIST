@@ -1,8 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/06/19 18:34:44 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/09/10 08:43:59 rsadowski Exp $
 @conflict libksane-<=4
 include/KF5/KSane/
+include/KF5/KSane/KSaneCore
+include/KF5/KSane/KSaneOption
 include/KF5/KSane/KSaneWidget
 include/KF5/KSane/ksane_export.h
+include/KF5/KSane/ksanecore.h
+include/KF5/KSane/ksaneoption.h
 include/KF5/KSane/ksanewidget.h
 include/KF5/ksane_version.h
 lib/cmake/KF5Sane/

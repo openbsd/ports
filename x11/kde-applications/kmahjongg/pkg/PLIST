@@ -1,9 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/06/19 18:34:39 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/09/10 08:43:55 rsadowski Exp $
 @pkgpath x11/kde4/kmahjongg
 @bin bin/kmahjongg
 share/applications/org.kde.kmahjongg.desktop
 share/config.kcfg/
 share/config.kcfg/kmahjongg.kcfg
+share/doc/HTML/ca/kmahjongg/
+share/doc/HTML/ca/kmahjongg/config.png
+share/doc/HTML/ca/kmahjongg/config_background.png
+share/doc/HTML/ca/kmahjongg/config_layout.png
+share/doc/HTML/ca/kmahjongg/config_tiles.png
+share/doc/HTML/ca/kmahjongg/gamescreen.png
+share/doc/HTML/ca/kmahjongg/index.cache.bz2
+share/doc/HTML/ca/kmahjongg/index.docbook
+share/doc/HTML/ca/kmahjongg/numbered.png
 share/doc/HTML/cs/kmahjongg/
 share/doc/HTML/cs/kmahjongg/index.cache.bz2
 share/doc/HTML/cs/kmahjongg/index.docbook

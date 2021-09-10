@@ -1,25 +1,27 @@
-$OpenBSD: patch-messageviewer_src_CMakeLists_txt,v 1.4 2021/04/27 05:27:20 rsadowski Exp $
+$OpenBSD: patch-messageviewer_src_CMakeLists_txt,v 1.5 2021/09/10 08:43:59 rsadowski Exp $
 
 Index: messageviewer/src/CMakeLists.txt
 --- messageviewer/src/CMakeLists.txt.orig
 +++ messageviewer/src/CMakeLists.txt
-@@ -34,8 +34,6 @@ set_package_properties(Qca-qt5 PROPERTIES DESCRIPTION 
+@@ -34,9 +34,6 @@ set_package_properties(Qca-qt5 PROPERTIES DESCRIPTION 
  
  configure_file(config-messageviewer.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-messageviewer.h)
  
 -# target_include_directories does not handle empty include paths
 -include_directories(${GPGME_INCLUDES})
+-
+ add_library(KF5MessageViewer)
+ add_library(KF5::MessageViewer ALIAS KF5MessageViewer)
  
- if(BUILD_TESTING)
-     add_subdirectory(header/autotests)
-@@ -313,6 +311,10 @@ ki18n_wrap_ui(libmessageviewer_SRCS
- 
- 
- add_library(KF5MessageViewer ${libmessageviewer_SRCS})
+@@ -235,6 +232,11 @@ ki18n_wrap_ui(KF5MessageViewer
+     ui/invitationsettings.ui
+     ui/printingsettings.ui
+     )
++
 +target_include_directories(KF5MessageViewer PUBLIC "${CMAKE_INSTALL_PREFIX}/include"
 +                    "${CMAKE_INSTALL_PREFIX}/include/inotify"
 +                    "${CMAKE_INSTALL_PREFIX}/include/gpgme++"
 +                    "${CMAKE_INSTALL_PREFIX}/include/qgpgme")
+ 
+ 
  if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-     set_target_properties(KF5MessageViewer PROPERTIES UNITY_BUILD ON)
- endif()

@@ -1,7 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/06/19 18:34:37 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/09/10 08:43:53 rsadowski Exp $
 @pkgpath x11/kde4/kgoldrunner
 @bin bin/kgoldrunner
 share/applications/org.kde.kgoldrunner.desktop
+share/doc/HTML/ca/kgoldrunner/
+share/doc/HTML/ca/kgoldrunner/index.cache.bz2
+share/doc/HTML/ca/kgoldrunner/index.docbook
+share/doc/HTML/ca/kgoldrunner/select.png
+share/doc/HTML/ca/kgoldrunner/tute008.png
 share/doc/HTML/de/kgoldrunner/
 share/doc/HTML/de/kgoldrunner/editbar.png
 share/doc/HTML/de/kgoldrunner/index.cache.bz2
@@ -64,6 +69,7 @@ share/kgoldrunner/system/game_CM.txt
 share/kgoldrunner/system/game_GMEP.txt
 share/kgoldrunner/system/game_GMGR.txt
 share/kgoldrunner/system/game_GRII.txt
+share/kgoldrunner/system/game_GotD.txt
 share/kgoldrunner/system/game_MAZ.txt
 share/kgoldrunner/system/game_blb.txt
 share/kgoldrunner/system/game_cnt.txt
@@ -84,6 +90,7 @@ share/kgoldrunner/system/hi_wad.dat
 share/kgoldrunner/system/rec_GMGR.txt
 share/kgoldrunner/system/rec_GRII.txt
 share/kgoldrunner/system/rec_demo.txt
+share/kgoldrunner/system/sol_GotD.txt
 share/kgoldrunner/system/sol_blb.txt
 share/kgoldrunner/system/sol_fd.txt
 share/kgoldrunner/system/sol_kgr.txt

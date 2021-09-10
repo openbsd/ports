@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/06/19 18:34:45 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2021/09/10 08:43:59 rsadowski Exp $
 
 COMMENT =	sieve script library
 DISTNAME =	libksieve-${VERSION}
@@ -6,7 +6,7 @@ CATEGORIES =	devel
 
 SHARED_LIBS +=  KF5KManageSieve   1.0 # 5.13.2
 SHARED_LIBS +=  KF5KSieve         1.0 # 5.13.2
-SHARED_LIBS +=  KF5KSieveUi       2.0 # 5.13.2
+SHARED_LIBS +=  KF5KSieveUi       3.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5AuthCore
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui

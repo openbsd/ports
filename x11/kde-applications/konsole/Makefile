@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2021/06/19 18:34:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2021/09/10 08:43:56 rsadowski Exp $
 
 COMMENT =	KDE terminal emulator
 DISTNAME =	konsole-${VERSION}
 CATEGORIES =	editors x11
 
-SHARED_LIBS +=  konsoleprivate            4.0 # 17.08
+SHARED_LIBS +=  konsoleprivate            5.0 # 17.08
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui

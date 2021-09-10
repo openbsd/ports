@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/06/19 18:34:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2021/09/10 08:43:53 rsadowski Exp $
 
 COMMENT =	download manager for KDE
 DISTNAME =	kget-${VERSION}
@@ -18,7 +18,8 @@ WANTLIB += KF5Parts KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
 WANTLIB += KF5Torrent KF5UnitConversion KF5Wallet KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Sql Qt5Widgets
-WANTLIB += Qt5Xml c gcrypt gmp gpgmepp m mms qca-qt5 qgpgme
+WANTLIB += Qt5Xml assuan c gcrypt gmp gpgme gpgmepp m mms qca-qt5
+WANTLIB += qgpgme
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes

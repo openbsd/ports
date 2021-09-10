@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/04/27 05:26:57 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/09/10 08:43:49 rsadowski Exp $
 @pkgpath x11/kde4/cantor
 @bin bin/cantor
 @bin bin/cantor_pythonserver
@@ -65,11 +65,12 @@ lib/qt5/plugins/cantor/backends/
 @so lib/qt5/plugins/cantor/backends/cantor_sagebackend.so
 @so lib/qt5/plugins/cantor/backends/cantor_scilabbackend.so
 lib/qt5/plugins/cantor/panels/
+@so lib/qt5/plugins/cantor/panels/cantor_documentationpanelplugin.so
 @so lib/qt5/plugins/cantor/panels/cantor_filebrowserpanelplugin.so
 @so lib/qt5/plugins/cantor/panels/cantor_helppanelplugin.so
 @so lib/qt5/plugins/cantor/panels/cantor_tocpanelplugin.so
 @so lib/qt5/plugins/cantor/panels/cantor_variablemanagerplugin.so
-@so lib/qt5/plugins/libcantorpart.so
+@so lib/qt5/plugins/kf5/parts/cantorpart.so
 share/applications/org.kde.cantor.desktop
 share/cantor/
 share/cantor/latex/
@@ -95,7 +96,7 @@ share/config.kcfg/cantor_libs.kcfg
 share/config.kcfg/kalgebrabackend.kcfg
 share/config.kcfg/luabackend.kcfg
 share/config.kcfg/maximabackend.kcfg
-share/config.kcfg/octavebackend.kcfg
+share/config.kcfg/octavebackend.kcfg.in
 share/config.kcfg/pythonbackend.kcfg
 share/config.kcfg/qalculatebackend.kcfg
 share/config.kcfg/rserver.kcfg
@@ -197,6 +198,7 @@ share/icons/hicolor/48x48/apps/sagebackend.png
 share/icons/hicolor/48x48/apps/scilabbackend.png
 share/icons/hicolor/64x64/apps/cantor.png
 share/knsrcfiles/
+share/knsrcfiles/cantor-documentation.knsrc
 share/knsrcfiles/cantor.knsrc
 share/knsrcfiles/cantor_kalgebra.knsrc
 share/knsrcfiles/cantor_lua.knsrc

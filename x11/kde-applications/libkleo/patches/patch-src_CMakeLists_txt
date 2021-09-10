@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.6 2021/06/19 18:34:44 rsadowski Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.7 2021/09/10 08:43:58 rsadowski Exp $
 
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
@@ -7,27 +7,9 @@ Index: src/CMakeLists.txt
  
  # target_include_directories does not handle empty include paths
 -include_directories(${GPGME_INCLUDES})
-+include_directories("${CMAKE_INSTALL_PREFIX}/include"
++include_directories(${GPGME_INCLUDES}
 +                    "${CMAKE_INSTALL_PREFIX}/include/gpgme++"
 +                    "${CMAKE_INSTALL_PREFIX}/include/qgpgme")
  
  add_definitions(-DTRANSLATION_DOMAIN=\"libkleopatra\")
  
-@@ -87,7 +89,7 @@ ki18n_wrap_ui(libkleo_ui_common_SRCS
- set(kleo_LIB_SRCS ${libkleo_core_SRCS} ${libkleo_ui_SRCS}
-                                        ${libkleo_ui_common_SRCS})
- 
--set(kleo_LIB_LIBS PUBLIC QGpgme Gpgmepp PRIVATE Qt5::Widgets
-+set(kleo_LIB_LIBS PUBLIC gpgmepp qgpgme PRIVATE Qt5::Widgets
-                                                 KF5::I18n
-                                                 KF5::Completion
-                                                 KF5::ConfigCore
-@@ -131,7 +133,7 @@ install(TARGETS
- 
- 
- 
--target_include_directories(KF5Libkleo PUBLIC "$<BUILD_INTERFACE:${libkleo_SOURCE_DIR}/src;${libkleo_BINARY_DIR}/src>")
-+target_include_directories(KF5Libkleo PUBLIC "$<BUILD_INTERFACE:${libkleo_SOURCE_DIR}/src;${libkleo_BINARY_DIR}/src;${CMAKE_INSTALL_PREFIX}/lib>")
- target_include_directories(KF5Libkleo INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/Libkleo/;${KDE_INSTALL_INCLUDEDIR_KF5}/libkleo>")
- 
- ecm_generate_headers(libkleo_CamelCase_HEADERS

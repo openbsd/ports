@@ -1,4 +1,4 @@
-$OpenBSD: patch-mimetreeparser_src_CMakeLists_txt,v 1.3 2021/04/27 05:27:20 rsadowski Exp $
+$OpenBSD: patch-mimetreeparser_src_CMakeLists_txt,v 1.4 2021/09/10 08:43:59 rsadowski Exp $
 
 Index: mimetreeparser/src/CMakeLists.txt
 --- mimetreeparser/src/CMakeLists.txt.orig
@@ -10,18 +10,17 @@ Index: mimetreeparser/src/CMakeLists.txt
 -# target_include_directories does not handle empty include paths
 -include_directories(${GPGME_INCLUDES})
 -
- set(libmimetreeparser_main_SRCS
-     bodyformatter/applicationpgpencrypted.cpp
-     bodyformatter/applicationpkcs7mime.cpp
-@@ -124,6 +121,11 @@ if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+ add_library(KF5MimeTreeParser)
+ add_library(KF5::MimeTreeParser ALIAS KF5MimeTreeParser)
+ 
+@@ -116,6 +113,10 @@ if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
      set_target_properties(KF5MimeTreeParser PROPERTIES UNITY_BUILD ON)
  endif()
  
-+
 +target_include_directories(KF5MimeTreeParser PUBLIC "${CMAKE_INSTALL_PREFIX}/include"
 +                    "${CMAKE_INSTALL_PREFIX}/include/inotify"
 +                    "${CMAKE_INSTALL_PREFIX}/include/gpgme++"
 +                    "${CMAKE_INSTALL_PREFIX}/include/qgpgme")
  
  generate_export_header(KF5MimeTreeParser BASE_NAME mimetreeparser)
- add_library(KF5::MimeTreeParser ALIAS KF5MimeTreeParser)
+ 

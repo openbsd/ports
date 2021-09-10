@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2021/06/19 18:34:46 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2021/09/10 08:44:00 rsadowski Exp $
 
 COMMENT =	graph theory IDE for KDE
 DISTNAME =	rocs-${VERSION}
@@ -6,7 +6,7 @@ CATEGORIES =	games education
 
 HOMEPAGE =	https://www.kde.org/applications/education/rocs/
 
-SHARED_LIBS +=  rocsgraphtheory        2.1 # 0.0
+SHARED_LIBS +=  rocsgraphtheory        3.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Archive KF5Auth
 WANTLIB += KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui

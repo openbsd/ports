@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/06/19 18:34:44 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/09/10 08:43:58 rsadowski Exp $
 include/KF5/KCompactDisc/
 include/KF5/KCompactDisc/KCompactDisc
 include/KF5/KCompactDisc/kcompactdisc.h
@@ -10,7 +10,6 @@ lib/cmake/KF5CompactDisc/KF5CompactDiscConfigVersion.cmake
 lib/cmake/KF5CompactDisc/KF5CompactDiscTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5CompactDisc/KF5CompactDiscTargets.cmake
 @lib lib/libKF5CompactDisc.so.${LIBKF5CompactDisc_VERSION}
-share/kf5/mkspecs/qt_KCompactDisc.pri
 share/locale/ar/LC_MESSAGES/libkcompactdisc.mo
 share/locale/be/LC_MESSAGES/libkcompactdisc.mo
 share/locale/bg/LC_MESSAGES/libkcompactdisc.mo

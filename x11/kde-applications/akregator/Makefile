@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2021/06/19 18:34:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2021/09/10 08:43:48 rsadowski Exp $
 
 COMMENT =	news feed reader
 DISTNAME =	akregator-${VERSION}
 CATEGORIES =	net www
 
 SHARED_LIBS +=  akregatorinterfaces       1.0 # 5.13.2
-SHARED_LIBS +=  akregatorprivate          2.0 # 5.13.2
+SHARED_LIBS +=  akregatorprivate          2.1 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiCore
 WANTLIB += KF5AkonadiMime KF5Auth KF5AuthCore KF5Codecs KF5Completion
@@ -20,7 +20,7 @@ WANTLIB += KF5WebEngineViewer KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
 WANTLIB += Qt5Quick Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
-WANTLIB += Qt5Widgets Qt5Xml c gpgmepp m qgpgme
+WANTLIB += Qt5Widgets Qt5Xml assuan c gpgme gpgmepp m qgpgme
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_ICON_CACHE = yes

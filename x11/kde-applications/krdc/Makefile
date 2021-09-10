@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2020/11/03 16:12:38 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2021/09/10 08:43:56 rsadowski Exp $
 
 COMMENT =	VNC and RDP  desktop client
 DISTNAME =	krdc-${VERSION}
 CATEGORIES =	net x11
 
-SHARED_LIBS +=  krdccore               2.0 # 5.0
+SHARED_LIBS +=  krdccore               2.1 # 5.0
 
 HOMEPAGE =	https://kde.org/applications/internet/org.kde.krdc
 

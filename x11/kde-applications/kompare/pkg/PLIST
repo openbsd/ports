@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/08/08 12:23:54 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/09/10 08:43:56 rsadowski Exp $
 @bin bin/kompare
 include/kompare/
 include/kompare/kompareinterface.h
@@ -48,9 +48,6 @@ share/doc/HTML/pt/kompare/index.docbook
 share/doc/HTML/pt_BR/kompare/
 share/doc/HTML/pt_BR/kompare/index.cache.bz2
 share/doc/HTML/pt_BR/kompare/index.docbook
-share/doc/HTML/ru/kompare/
-share/doc/HTML/ru/kompare/index.cache.bz2
-share/doc/HTML/ru/kompare/index.docbook
 share/doc/HTML/sv/kompare/
 share/doc/HTML/sv/kompare/index.cache.bz2
 share/doc/HTML/sv/kompare/index.docbook

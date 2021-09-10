@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/08 20:00:46 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2021/09/10 08:43:56 rsadowski Exp $
 
 COMMENT =	KDE File Manager & Web Browser
 DISTNAME =	konqueror-${VERSION}
 CATEGORIES =	www
 
-SHARED_LIBS +=  KF5Konq              1.0 # 5.97.0
+SHARED_LIBS +=  KF5Konq              1.1 # 5.97.0
 SHARED_LIBS +=  konquerorprivate     1.1 # 5.97.0
 SHARED_LIBS +=  konqsidebarplugin    1.1 # 20.08.0
 

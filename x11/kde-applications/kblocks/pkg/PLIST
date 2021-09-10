@@ -1,9 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/06/19 18:34:34 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/09/10 08:43:51 rsadowski Exp $
 @pkgpath x11/kde4/kblocks
 @bin bin/kblocks
 share/applications/org.kde.kblocks.desktop
 share/config.kcfg/
 share/config.kcfg/kblocks.kcfg
+share/doc/HTML/ca/kblocks/
+share/doc/HTML/ca/kblocks/gameboard.png
+share/doc/HTML/ca/kblocks/index.cache.bz2
+share/doc/HTML/ca/kblocks/index.docbook
 share/doc/HTML/de/kblocks/
 share/doc/HTML/de/kblocks/index.cache.bz2
 share/doc/HTML/de/kblocks/index.docbook

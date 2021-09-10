@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/06/19 18:34:32 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/09/10 08:43:49 rsadowski Exp $
 @conflict dolphin-plugins-<=4.14.3
 @bin bin/dolphin
 @bin bin/servicemenuinstaller
@@ -15,7 +15,6 @@ lib/cmake/DolphinVcs/DolphinVcsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/DolphinVcs/DolphinVcsTargets.cmake
 @lib lib/libdolphinprivate.so.${LIBdolphinprivate_VERSION}
 @lib lib/libdolphinvcs.so.${LIBdolphinvcs_VERSION}
-@so lib/libkdeinit5_dolphin.so
 @so lib/qt5/plugins/kcm_dolphingeneral.so
 @so lib/qt5/plugins/kcm_dolphinnavigation.so
 @so lib/qt5/plugins/kcm_dolphinviewmodes.so
@@ -83,6 +82,7 @@ share/doc/HTML/en/dolphin/preferences-general-behavior.png
 share/doc/HTML/en/dolphin/preferences-navigation.png
 share/doc/HTML/en/dolphin/preferences-startup.png
 share/doc/HTML/en/dolphin/preferences-trash.png
+share/doc/HTML/en/dolphin/preferences-user-feedback.png
 share/doc/HTML/en/dolphin/preferences-viewmodes-icons.png
 share/doc/HTML/en/dolphin/toolbar-navigation.png
 share/doc/HTML/en/dolphin/toolbar-view-appearance.png
@@ -187,6 +187,7 @@ share/doc/HTML/uk/dolphin/preferences-navigation.png
 share/doc/HTML/uk/dolphin/preferences-services.png
 share/doc/HTML/uk/dolphin/preferences-startup.png
 share/doc/HTML/uk/dolphin/preferences-trash.png
+share/doc/HTML/uk/dolphin/preferences-user-feedback.png
 share/doc/HTML/uk/dolphin/preferences-viewmodes-icons.png
 share/doc/HTML/uk/dolphin/toolbar-view-appearance.png
 share/doc/HTML/uk/dolphin/toolbar.png
@@ -200,6 +201,7 @@ share/kservices5/kcmdolphinnavigation.desktop
 share/kservices5/kcmdolphinviewmodes.desktop
 share/kservicetypes5/fileviewversioncontrolplugin.desktop
 share/locale/ar/LC_MESSAGES/dolphin.mo
+share/locale/ar/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/ast/LC_MESSAGES/dolphin.mo
 share/locale/az/LC_MESSAGES/dolphin.mo
 share/locale/az/LC_MESSAGES/dolphin_servicemenuinstaller.mo
@@ -290,6 +292,7 @@ share/locale/sr/LC_MESSAGES/dolphin.mo
 share/locale/sv/LC_MESSAGES/dolphin.mo
 share/locale/sv/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/ta/LC_MESSAGES/dolphin.mo
+share/locale/ta/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/tg/LC_MESSAGES/dolphin.mo
 share/locale/tr/LC_MESSAGES/dolphin.mo
 share/locale/tr/LC_MESSAGES/dolphin_servicemenuinstaller.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/06/19 18:34:31 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/09/10 08:43:48 rsadowski Exp $
 @conflict kdebase-<4
 include/audiocdencoder.h
 include/audiocdplugins_export.h
@@ -14,12 +14,14 @@ share/config.kcfg/audiocd_flac_encoder.kcfg
 share/config.kcfg/audiocd_lame_encoder.kcfg
 share/config.kcfg/audiocd_opus_encoder.kcfg
 share/config.kcfg/audiocd_vorbis_encoder.kcfg
+share/doc/HTML/ca/kcontrol/
 share/doc/HTML/ca/kcontrol/kcmaudiocd/
 share/doc/HTML/ca/kcontrol/kcmaudiocd/index.cache.bz2
 share/doc/HTML/ca/kcontrol/kcmaudiocd/index.docbook
 share/doc/HTML/ca/kioslave5/audiocd/
 share/doc/HTML/ca/kioslave5/audiocd/index.cache.bz2
 share/doc/HTML/ca/kioslave5/audiocd/index.docbook
+share/doc/HTML/de/kcontrol/
 share/doc/HTML/de/kcontrol/kcmaudiocd/
 share/doc/HTML/de/kcontrol/kcmaudiocd/index.cache.bz2
 share/doc/HTML/de/kcontrol/kcmaudiocd/index.docbook
@@ -38,6 +40,7 @@ share/doc/HTML/en/kcontrol/audiocd/opus.png
 share/doc/HTML/en/kioslave5/audiocd/
 share/doc/HTML/en/kioslave5/audiocd/index.cache.bz2
 share/doc/HTML/en/kioslave5/audiocd/index.docbook
+share/doc/HTML/es/kcontrol/
 share/doc/HTML/es/kcontrol/kcmaudiocd/
 share/doc/HTML/es/kcontrol/kcmaudiocd/index.cache.bz2
 share/doc/HTML/es/kcontrol/kcmaudiocd/index.docbook
@@ -50,12 +53,14 @@ share/doc/HTML/et/kioslave5/audiocd/index.docbook
 share/doc/HTML/fr/kioslave5/audiocd/
 share/doc/HTML/fr/kioslave5/audiocd/index.cache.bz2
 share/doc/HTML/fr/kioslave5/audiocd/index.docbook
+share/doc/HTML/it/kcontrol/
 share/doc/HTML/it/kcontrol/kcmaudiocd/
 share/doc/HTML/it/kcontrol/kcmaudiocd/index.cache.bz2
 share/doc/HTML/it/kcontrol/kcmaudiocd/index.docbook
 share/doc/HTML/it/kioslave5/audiocd/
 share/doc/HTML/it/kioslave5/audiocd/index.cache.bz2
 share/doc/HTML/it/kioslave5/audiocd/index.docbook
+share/doc/HTML/nl/kcontrol/
 share/doc/HTML/nl/kcontrol/kcmaudiocd/
 share/doc/HTML/nl/kcontrol/kcmaudiocd/index.cache.bz2
 share/doc/HTML/nl/kcontrol/kcmaudiocd/index.docbook
@@ -78,12 +83,14 @@ share/doc/HTML/ru/kioslave5/audiocd/index.docbook
 share/doc/HTML/sr/kioslave5/audiocd/
 share/doc/HTML/sr/kioslave5/audiocd/index.cache.bz2
 share/doc/HTML/sr/kioslave5/audiocd/index.docbook
+share/doc/HTML/sv/kcontrol/
 share/doc/HTML/sv/kcontrol/kcmaudiocd/
 share/doc/HTML/sv/kcontrol/kcmaudiocd/index.cache.bz2
 share/doc/HTML/sv/kcontrol/kcmaudiocd/index.docbook
 share/doc/HTML/sv/kioslave5/audiocd/
 share/doc/HTML/sv/kioslave5/audiocd/index.cache.bz2
 share/doc/HTML/sv/kioslave5/audiocd/index.docbook
+share/doc/HTML/uk/kcontrol/
 share/doc/HTML/uk/kcontrol/kcmaudiocd/
 share/doc/HTML/uk/kcontrol/kcmaudiocd/flac.png
 share/doc/HTML/uk/kcontrol/kcmaudiocd/general.png
@@ -101,13 +108,17 @@ share/konqsidebartng/virtual_folders/
 share/konqsidebartng/virtual_folders/services/
 share/konqsidebartng/virtual_folders/services/audiocd.desktop
 share/kservices5/audiocd.desktop
-share/kservices5/audiocd.protocol
 share/locale/ar/LC_MESSAGES/audiocd_encoder_lame.mo
 share/locale/ar/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/ar/LC_MESSAGES/kcmaudiocd.mo
 share/locale/ar/LC_MESSAGES/kio_audiocd.mo
 share/locale/ast/LC_MESSAGES/audiocd_encoder_flac.mo
+share/locale/az/LC_MESSAGES/audiocd_encoder_flac.mo
+share/locale/az/LC_MESSAGES/audiocd_encoder_lame.mo
+share/locale/az/LC_MESSAGES/audiocd_encoder_opus.mo
+share/locale/az/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/az/LC_MESSAGES/kcmaudiocd.mo
+share/locale/az/LC_MESSAGES/kio_audiocd.mo
 share/locale/be/LC_MESSAGES/audiocd_encoder_lame.mo
 share/locale/be/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/be/LC_MESSAGES/kcmaudiocd.mo
@@ -224,6 +235,7 @@ share/locale/hr/LC_MESSAGES/kcmaudiocd.mo
 share/locale/hr/LC_MESSAGES/kio_audiocd.mo
 share/locale/hu/LC_MESSAGES/audiocd_encoder_flac.mo
 share/locale/hu/LC_MESSAGES/audiocd_encoder_lame.mo
+share/locale/hu/LC_MESSAGES/audiocd_encoder_opus.mo
 share/locale/hu/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/hu/LC_MESSAGES/kcmaudiocd.mo
 share/locale/hu/LC_MESSAGES/kio_audiocd.mo

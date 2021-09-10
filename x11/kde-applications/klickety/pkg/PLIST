@@ -1,8 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/04/27 05:27:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/09/10 08:43:54 rsadowski Exp $
 @pkgpath x11/kde4/klickety
 @bin bin/klickety
 share/applications/org.kde.klickety.desktop
 share/applications/org.kde.ksame.desktop
+share/doc/HTML/ca/klickety/
+share/doc/HTML/ca/klickety/config-background.png
+share/doc/HTML/ca/klickety/config-customgame.png
+share/doc/HTML/ca/klickety/config-general.png
+share/doc/HTML/ca/klickety/config-theme.png
+share/doc/HTML/ca/klickety/gamescreen.png
+share/doc/HTML/ca/klickety/index.cache.bz2
+share/doc/HTML/ca/klickety/index.docbook
+share/doc/HTML/ca/klickety/numbered.png
 share/doc/HTML/de/klickety/
 share/doc/HTML/de/klickety/index.cache.bz2
 share/doc/HTML/de/klickety/index.docbook

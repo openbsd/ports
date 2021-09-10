@@ -1,12 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/06/19 18:34:40 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/09/10 08:43:55 rsadowski Exp $
 @bin bin/akonadi_notes_agent
 @bin bin/knotes
 @lib lib/libknotesprivate.so.${LIBknotesprivate_VERSION}
 @lib lib/libnotesharedprivate.so.${LIBnotesharedprivate_VERSION}
-@so lib/qt5/plugins/kcm_knote.so
-@so lib/qt5/plugins/kcm_knotessummary.so
 lib/qt5/plugins/kontact5/
 @so lib/qt5/plugins/kontact5/kontact_knotesplugin.so
+lib/qt5/plugins/pim/kcms/knotes/
+@so lib/qt5/plugins/pim/kcms/knotes/kcm_knote_action.so
+@so lib/qt5/plugins/pim/kcms/knotes/kcm_knote_collection.so
+@so lib/qt5/plugins/pim/kcms/knotes/kcm_knote_display.so
+@so lib/qt5/plugins/pim/kcms/knotes/kcm_knote_editor.so
+@so lib/qt5/plugins/pim/kcms/knotes/kcm_knote_misc.so
+@so lib/qt5/plugins/pim/kcms/knotes/kcm_knote_network.so
+@so lib/qt5/plugins/pim/kcms/knotes/kcm_knote_print.so
+lib/qt5/plugins/pim/kcms/summary/
+@so lib/qt5/plugins/pim/kcms/summary/kcmknotessummary.so
 share/akonadi/agents/notesagent.desktop
 share/applications/org.kde.knotes.desktop
 share/config.kcfg/knotesglobalconfig.kcfg
@@ -117,14 +125,14 @@ share/knsrcfiles/knotes_printing_theme.knsrc
 share/kontact/
 share/kontact/ksettingsdialog/
 share/kontact/ksettingsdialog/knotes.setdlg
+share/kservices5/kcm_knote_action.desktop
+share/kservices5/kcm_knote_collection.desktop
+share/kservices5/kcm_knote_display.desktop
+share/kservices5/kcm_knote_editor.desktop
+share/kservices5/kcm_knote_misc.desktop
+share/kservices5/kcm_knote_network.desktop
+share/kservices5/kcm_knote_print.desktop
 share/kservices5/kcmknotessummary.desktop
-share/kservices5/knote_config_action.desktop
-share/kservices5/knote_config_collection.desktop
-share/kservices5/knote_config_display.desktop
-share/kservices5/knote_config_editor.desktop
-share/kservices5/knote_config_misc.desktop
-share/kservices5/knote_config_network.desktop
-share/kservices5/knote_config_print.desktop
 share/kservices5/kontact/
 share/kservices5/kontact/knotesplugin.desktop
 share/kxmlgui5/

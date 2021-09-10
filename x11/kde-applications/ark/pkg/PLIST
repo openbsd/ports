@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/06/19 18:34:31 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/09/10 08:43:48 rsadowski Exp $
 @pkgpath x11/kde4/ark
 @bin bin/ark
 @lib lib/libkerfuffle.so.${LIBkerfuffle_VERSION}
-@so lib/qt5/plugins/arkpart.so
 lib/qt5/plugins/kerfuffle/
 @so lib/qt5/plugins/kerfuffle/kerfuffle_cli7z.so
 @so lib/qt5/plugins/kerfuffle/kerfuffle_clirar.so
@@ -14,11 +13,14 @@ lib/qt5/plugins/kerfuffle/
 @so lib/qt5/plugins/kerfuffle/kerfuffle_libgz.so
 @so lib/qt5/plugins/kerfuffle/kerfuffle_libxz.so
 @so lib/qt5/plugins/kerfuffle/kerfuffle_libzip.so
+@so lib/qt5/plugins/kerfuffle/kerfuffle_libzstd.so
 lib/qt5/plugins/kf5/kfileitemaction/
 @so lib/qt5/plugins/kf5/kfileitemaction/compressfileitemaction.so
 @so lib/qt5/plugins/kf5/kfileitemaction/extractfileitemaction.so
 lib/qt5/plugins/kf5/kio_dnd/
 @so lib/qt5/plugins/kf5/kio_dnd/extracthere.so
+lib/qt5/plugins/kf5/parts/
+@so lib/qt5/plugins/kf5/parts/arkpart.so
 @man man/man1/ark.1
 share/applications/org.kde.ark.desktop
 share/config.kcfg/

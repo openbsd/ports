@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/06/19 18:34:37 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/09/10 08:43:53 rsadowski Exp $
 include/KF5/KIdentityManagement/
 include/KF5/KIdentityManagement/KIdentityManagement/
 include/KF5/KIdentityManagement/KIdentityManagement/Identity
@@ -25,6 +25,7 @@ lib/cmake/KF5IdentityManagement/KF5IdentityManagementTargets.cmake
 share/dbus-1/interfaces/kf5_org.kde.pim.IdentityManager.xml
 share/kf5/mkspecs/qt_KIdentityManagement.pri
 share/locale/ar/LC_MESSAGES/libkpimidentities5.mo
+share/locale/az/LC_MESSAGES/libkpimidentities5.mo
 share/locale/be/LC_MESSAGES/libkpimidentities5.mo
 share/locale/bs/LC_MESSAGES/libkpimidentities5.mo
 share/locale/ca/LC_MESSAGES/libkpimidentities5.mo

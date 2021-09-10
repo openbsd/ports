@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/11/03 16:12:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2021/09/10 08:43:51 rsadowski Exp $
 
 COMMENT =	KDE backup program with an easy to use user interface
 DISTNAME =	kbackup-${VERSION}
@@ -8,12 +8,12 @@ HOMEPAGE =	https://kde.org/applications/utilities/org.kde.kbackup
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5I18n KF5IconThemes
-WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
-WANTLIB += KF5KIOGui KF5KIOWidgets KF5Notifications KF5Service
-WANTLIB += KF5Solid KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
-WANTLIB += Qt5Xml c m
+WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5GuiAddons KF5I18n
+WANTLIB += KF5IconThemes KF5ItemViews KF5JobWidgets KF5KIOCore
+WANTLIB += KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets KF5Notifications
+WANTLIB += KF5Service KF5Solid KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5Widgets Qt5Xml c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

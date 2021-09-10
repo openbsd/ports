@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/06/19 18:34:41 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/09/10 08:43:56 rsadowski Exp $
 @pkgpath x11/kde4/krdc
 @bin bin/krdc
 include/krdc/
@@ -102,10 +102,7 @@ share/doc/HTML/uk/krdc/
 share/doc/HTML/uk/krdc/index.cache.bz2
 share/doc/HTML/uk/krdc/index.docbook
 share/kservices5/krdc_vnc_config.desktop
-share/kservices5/vnc.protocol
-share/kxmlgui5/
-share/kxmlgui5/krdc/
-share/kxmlgui5/krdc/krdcui.rc
+share/kservicetypes5/krdc_plugin.desktop
 share/locale/ar/LC_MESSAGES/krdc.mo
 share/locale/be/LC_MESSAGES/krdc.mo
 share/locale/bg/LC_MESSAGES/krdc.mo
@@ -166,3 +163,4 @@ share/locale/zh_CN/LC_MESSAGES/krdc.mo
 share/locale/zh_TW/LC_MESSAGES/krdc.mo
 share/metainfo/
 share/metainfo/org.kde.krdc.appdata.xml
+share/qlogging-categories5/krdc.categories

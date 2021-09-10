@@ -1,11 +1,11 @@
-$OpenBSD: patch-vnc_vncsshtunnelthread_cpp,v 1.1.1.1 2019/11/23 07:52:48 rsadowski Exp $
+$OpenBSD: patch-vnc_vncsshtunnelthread_cpp,v 1.2 2021/09/10 08:43:56 rsadowski Exp $
 
 Missing include
 
 Index: vnc/vncsshtunnelthread.cpp
 --- vnc/vncsshtunnelthread.cpp.orig
 +++ vnc/vncsshtunnelthread.cpp
-@@ -28,6 +28,7 @@
+@@ -10,6 +10,7 @@
  
  #include <KLocalizedString>
  

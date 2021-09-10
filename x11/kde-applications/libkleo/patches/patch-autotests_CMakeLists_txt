@@ -1,9 +1,9 @@
-$OpenBSD: patch-autotests_CMakeLists_txt,v 1.1 2021/04/27 05:27:17 rsadowski Exp $
+$OpenBSD: patch-autotests_CMakeLists_txt,v 1.2 2021/09/10 08:43:58 rsadowski Exp $
 
 Index: autotests/CMakeLists.txt
 --- autotests/CMakeLists.txt.orig
 +++ autotests/CMakeLists.txt
-@@ -4,6 +4,11 @@ include(ECMAddTests)
+@@ -4,6 +4,12 @@ include(ECMAddTests)
  
  find_package(Qt5Test ${REQUIRED_QT_VERSION} CONFIG QUIET)
  
@@ -12,21 +12,24 @@ Index: autotests/CMakeLists.txt
 +                    "${CMAKE_INSTALL_PREFIX}/include/gpgme++"
 +                    "${CMAKE_INSTALL_PREFIX}/include/qgpgme")
 +
++
  if(NOT Qt5Test_FOUND)
      message(STATUS "Qt5Test not found, autotests will not be built.")
      return()
-@@ -13,12 +18,12 @@ ecm_add_test(
+@@ -13,14 +19,14 @@ ecm_add_test(
      flatkeylistmodeltest.cpp
      abstractkeylistmodeltest.cpp
      TEST_NAME flatkeylistmodeltest
--    LINK_LIBRARIES KF5::Libkleo Qt5::Test
-+    LINK_LIBRARIES KF5::Libkleo Qt5::Test gpgmepp qgpgme
+-    LINK_LIBRARIES KF5::Libkleo Qt::Test
++    LINK_LIBRARIES KF5::Libkleo Qt::Test gpgmepp qgpgme
  )
  
  ecm_add_test(
      hierarchicalkeylistmodeltest.cpp
      abstractkeylistmodeltest.cpp
      TEST_NAME hierarchicalkeylistmodeltest
--    LINK_LIBRARIES KF5::Libkleo Qt5::Test
-+    LINK_LIBRARIES KF5::Libkleo Qt5::Test gpgmepp qgpgme
+-    LINK_LIBRARIES KF5::Libkleo Qt::Test
++    LINK_LIBRARIES KF5::Libkleo Qt::Test gpgmepp qgpgme
  )
+ 
+ ecm_add_test(

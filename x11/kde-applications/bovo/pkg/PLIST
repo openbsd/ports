@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/06/19 18:34:32 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/09/10 08:43:48 rsadowski Exp $
 @pkgpath x11/kde4/bovo
 @bin bin/bovo
 share/applications/org.kde.bovo.desktop
@@ -16,6 +16,10 @@ share/bovo/themes/scribble/themerc
 share/bovo/themes/spacy/
 share/bovo/themes/spacy/theme.svg
 share/bovo/themes/spacy/themerc
+share/doc/HTML/ca/bovo/
+share/doc/HTML/ca/bovo/index.cache.bz2
+share/doc/HTML/ca/bovo/index.docbook
+share/doc/HTML/ca/bovo/mainscreen.png
 share/doc/HTML/cs/bovo/
 share/doc/HTML/cs/bovo/index.cache.bz2
 share/doc/HTML/cs/bovo/index.docbook

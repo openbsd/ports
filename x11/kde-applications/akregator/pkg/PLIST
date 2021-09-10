@@ -1,20 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/06/19 18:34:31 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/09/10 08:43:48 rsadowski Exp $
 @conflict kdepimlibs-<=4
 @pkgpath x11/kde4/akregator
 @bin bin/akregator
 @bin bin/akregatorstorageexporter
 @lib lib/libakregatorinterfaces.so.${LIBakregatorinterfaces_VERSION}
 @lib lib/libakregatorprivate.so.${LIBakregatorprivate_VERSION}
-@so lib/qt5/plugins/akregator_config_advanced.so
-@so lib/qt5/plugins/akregator_config_appearance.so
-@so lib/qt5/plugins/akregator_config_archive.so
-@so lib/qt5/plugins/akregator_config_browser.so
-@so lib/qt5/plugins/akregator_config_general.so
-@so lib/qt5/plugins/akregator_config_plugins.so
 @so lib/qt5/plugins/akregator_mk4storage_plugin.so
 @so lib/qt5/plugins/akregatorpart.so
 lib/qt5/plugins/kontact5/
 @so lib/qt5/plugins/kontact5/kontact_akregatorplugin.so
+lib/qt5/plugins/pim/kcms/akregator/
+@so lib/qt5/plugins/pim/kcms/akregator/akregator_config_advanced.so
+@so lib/qt5/plugins/pim/kcms/akregator/akregator_config_appearance.so
+@so lib/qt5/plugins/pim/kcms/akregator/akregator_config_archive.so
+@so lib/qt5/plugins/pim/kcms/akregator/akregator_config_browser.so
+@so lib/qt5/plugins/pim/kcms/akregator/akregator_config_general.so
+@so lib/qt5/plugins/pim/kcms/akregator/akregator_config_plugins.so
+@so lib/qt5/plugins/pim/kcms/akregator/akregator_config_security.so
 share/akregator/
 share/akregator/grantleetheme/
 share/akregator/grantleetheme/5.2/
@@ -129,8 +131,8 @@ share/kservices5/akregator_config_archive.desktop
 share/kservices5/akregator_config_browser.desktop
 share/kservices5/akregator_config_general.desktop
 share/kservices5/akregator_config_plugins.desktop
+share/kservices5/akregator_config_security.desktop
 share/kservices5/akregator_mk4storage_plugin.desktop
-share/kservices5/feed.protocol
 share/kservices5/kontact/
 share/kservices5/kontact/akregatorplugin.desktop
 share/kservicetypes5/akregator_plugin.desktop

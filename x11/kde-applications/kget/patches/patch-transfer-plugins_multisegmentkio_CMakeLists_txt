@@ -1,14 +1,15 @@
-$OpenBSD: patch-transfer-plugins_multisegmentkio_CMakeLists_txt,v 1.1.1.1 2020/06/14 03:52:06 rsadowski Exp $
+$OpenBSD: patch-transfer-plugins_multisegmentkio_CMakeLists_txt,v 1.2 2021/09/10 08:43:53 rsadowski Exp $
 
 Index: transfer-plugins/multisegmentkio/CMakeLists.txt
 --- transfer-plugins/multisegmentkio/CMakeLists.txt.orig
 +++ transfer-plugins/multisegmentkio/CMakeLists.txt
-@@ -1,5 +1,8 @@
- include_directories(
-    ../../
+@@ -6,6 +6,9 @@ target_sources(kget_multisegkiofactory PRIVATE
+   transfermultisegkio.cpp
+   transfermultisegkiofactory.cpp
+   ../../kget_debug.cpp
 +    ${CMAKE_INSTALL_PREFIX}/include/
 +    ${CMAKE_INSTALL_PREFIX}/include/gpgme++/
 +    ${CMAKE_INSTALL_PREFIX}/include/qgpgme/
  )
  
- set(kget_multisegkiofactory_PART_SRCS
+ kconfig_add_kcfg_files(kget_multisegkiofactory multisegkiosettings.kcfgc)

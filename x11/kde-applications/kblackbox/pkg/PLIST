@@ -1,7 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/06/19 18:34:34 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/09/10 08:43:51 rsadowski Exp $
 @pkgpath x11/kde4/kblackbox
 @bin bin/kblackbox
 share/applications/org.kde.kblackbox.desktop
+share/doc/HTML/ca/kblackbox/
+share/doc/HTML/ca/kblackbox/gameboard.png
+share/doc/HTML/ca/kblackbox/index.cache.bz2
+share/doc/HTML/ca/kblackbox/index.docbook
 share/doc/HTML/de/kblackbox/
 share/doc/HTML/de/kblackbox/index.cache.bz2
 share/doc/HTML/de/kblackbox/index.docbook

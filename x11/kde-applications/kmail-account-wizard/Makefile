@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/01/23 18:10:22 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2021/09/10 08:43:55 rsadowski Exp $
 
 COMMENT =	KMail account wizard
 DISTNAME =	kmail-account-wizard-${VERSION}
@@ -15,7 +15,8 @@ WANTLIB += KF5Ldap KF5Libkdepim KF5Libkleo KF5MailTransport KF5MailTransportAkon
 WANTLIB += KF5Mime KF5NewStuff KF5NewStuffCore KF5Notifications
 WANTLIB += KF5PimCommon KF5PimTextEdit KF5Service KF5Wallet KF5WidgetsAddons
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Script Qt5Widgets Qt5Xml c gpgmepp m qgpgme
+WANTLIB += Qt5Script Qt5Widgets Qt5Xml assuan c gpgme gpgmepp
+WANTLIB += m qgpgme
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes

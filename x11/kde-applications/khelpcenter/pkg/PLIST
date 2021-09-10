@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/06/19 18:34:37 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/09/10 08:43:53 rsadowski Exp $
 @conflict kde-baseapps-*
 @bin bin/khelpcenter
-@so lib/libkdeinit5_khelpcenter.so
 libexec/khc_mansearch.pl
 @bin libexec/khc_xapianindexer
 @bin libexec/khc_xapiansearch
@@ -437,9 +436,6 @@ share/khelpcenter/templates/glossary.html
 share/khelpcenter/templates/index.html
 share/khelpcenter/templates/search.html
 share/kservices5/khelpcenter.desktop
-share/kxmlgui5/
-share/kxmlgui5/khelpcenter/
-share/kxmlgui5/khelpcenter/khelpcenterui.rc
 share/locale/ar/LC_MESSAGES/khelpcenter5.mo
 share/locale/ast/LC_MESSAGES/khelpcenter5.mo
 share/locale/be/LC_MESSAGES/khelpcenter5.mo

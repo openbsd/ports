@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2021/04/27 05:26:55 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.58 2021/09/10 08:43:47 rsadowski Exp $
 
 COMMENT =	BitTorrent Client
 
@@ -86,6 +86,7 @@ post-install:
 	2to3 -w -n ${PREFIX}/share/ktorrent/scripts/email_notifications/
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/share/ktorrent/scripts/auto_remove/ \
+		${PREFIX}/share/ktorrent/scripts/auto_resume/ \
 		${PREFIX}/share/ktorrent/scripts/email_notifications/ \
 		${PREFIX}/share/ktorrent/scripts/tracker_groups/
 

@@ -1,7 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/06/19 18:34:38 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/09/10 08:43:54 rsadowski Exp $
 @pkgpath x11/kde4/kiriki
 @bin bin/kiriki
 share/applications/org.kde.kiriki.desktop
+share/doc/HTML/ca/kiriki/
+share/doc/HTML/ca/kiriki/configuration.png
+share/doc/HTML/ca/kiriki/gameboard.png
+share/doc/HTML/ca/kiriki/index.cache.bz2
+share/doc/HTML/ca/kiriki/index.docbook
 share/doc/HTML/de/kiriki/
 share/doc/HTML/de/kiriki/index.cache.bz2
 share/doc/HTML/de/kiriki/index.docbook

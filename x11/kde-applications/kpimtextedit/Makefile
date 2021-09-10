@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2021/06/19 18:34:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2021/09/10 08:43:56 rsadowski Exp $
 
 COMMENT =	textedit with PIM-specific features
 DISTNAME =	kpimtextedit-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KF5PimTextEdit            4.0 # 5.6
+SHARED_LIBS +=  KF5PimTextEdit            4.1 # 5.6
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

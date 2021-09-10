@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/06/19 18:34:36 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/09/10 08:43:52 rsadowski Exp $
 @pkgpath x11/kde4/kdiamond
 @bin bin/kdiamond
 share/applications/org.kde.kdiamond.desktop
+share/doc/HTML/ca/kdiamond/
+share/doc/HTML/ca/kdiamond/index.cache.bz2
+share/doc/HTML/ca/kdiamond/index.docbook
 share/doc/HTML/de/kdiamond/
 share/doc/HTML/de/kdiamond/index.cache.bz2
 share/doc/HTML/de/kdiamond/index.docbook

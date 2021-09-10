@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2021/06/19 18:34:32 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.23 2021/09/10 08:43:49 rsadowski Exp $
 
 COMMENT =	KDE File Manager
 DISTNAME =	dolphin-${VERSION}
 PKGNAME =	dolphin-kf5-${VERSION}
 CATEGORIES =	x11
 
-SHARED_LIBS +=  dolphinprivate            3.1 # 5.0
+SHARED_LIBS +=  dolphinprivate            4.0 # 5.0
 SHARED_LIBS +=  dolphinvcs                2.1 # 5.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Attica KF5Auth

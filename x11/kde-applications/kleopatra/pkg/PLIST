@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/06/19 18:34:38 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/09/10 08:43:54 rsadowski Exp $
 @conflict kdepim-*
 @bin bin/kleopatra
 @bin bin/kwatchgnupg
 @lib lib/libkleopatraclientcore.so.${LIBkleopatraclientcore_VERSION}
 @lib lib/libkleopatraclientgui.so.${LIBkleopatraclientgui_VERSION}
-@so lib/qt5/plugins/kcm_kleopatra.so
+lib/qt5/plugins/pim/
+lib/qt5/plugins/pim/kcms/
+lib/qt5/plugins/pim/kcms/kleopatra/
+@so lib/qt5/plugins/pim/kcms/kleopatra/kleopatra_config_gnupgsystem.so
 share/applications/kleopatra_import.desktop
 share/applications/org.kde.kleopatra.desktop
 share/doc/HTML/ca/kleopatra/
@@ -88,15 +91,12 @@ share/kleopatra/pics/kleopatra_splashscreen.png
 share/kleopatra/pics/kleopatra_splashscreen.svgz
 share/kleopatra/pics/kleopatra_wizard.png
 share/kleopatra/pics/kleopatra_wizard.svgz
-share/kservices5/kleopatra_config_appear.desktop
-share/kservices5/kleopatra_config_cryptooperations.desktop
-share/kservices5/kleopatra_config_dirserv.desktop
+share/kservices5/ServiceMenus/
+share/kservices5/ServiceMenus/kleopatra_decryptverifyfiles.desktop
+share/kservices5/ServiceMenus/kleopatra_decryptverifyfolders.desktop
+share/kservices5/ServiceMenus/kleopatra_signencryptfiles.desktop
+share/kservices5/ServiceMenus/kleopatra_signencryptfolders.desktop
 share/kservices5/kleopatra_config_gnupgsystem.desktop
-share/kservices5/kleopatra_config_smimevalidation.desktop
-share/kservices5/kleopatra_decryptverifyfiles.desktop
-share/kservices5/kleopatra_decryptverifyfolders.desktop
-share/kservices5/kleopatra_signencryptfiles.desktop
-share/kservices5/kleopatra_signencryptfolders.desktop
 share/kwatchgnupg/
 share/kwatchgnupg/pics/
 share/kwatchgnupg/pics/kwatchgnupg.png

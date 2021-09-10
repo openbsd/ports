@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/06/19 18:34:45 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/09/10 08:43:59 rsadowski Exp $
 include/KF5/KManageSieve/
 include/KF5/KManageSieve/SieveJob
 include/KF5/KSieveUi/
@@ -110,7 +110,6 @@ share/kf5/mkspecs/qt_KSieve.pri
 share/kf5/mkspecs/qt_KSieveUi.pri
 share/knsrcfiles/
 share/knsrcfiles/ksieve_script.knsrc
-share/kservices5/sieve.protocol
 share/locale/ar/LC_MESSAGES/kio_sieve.mo
 share/locale/ar/LC_MESSAGES/libksieve.mo
 share/locale/be/LC_MESSAGES/kio_sieve.mo

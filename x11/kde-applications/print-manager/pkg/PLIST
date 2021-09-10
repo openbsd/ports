@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/08/08 12:23:57 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/09/10 08:44:00 rsadowski Exp $
 @pkgpath x11/kde4/print-manager
 @bin bin/configure-printer
 @bin bin/kde-add-printer
@@ -121,12 +121,10 @@ share/plasma/plasmoids/
 share/plasma/plasmoids/org.kde.plasma.printmanager/
 share/plasma/plasmoids/org.kde.plasma.printmanager/contents/
 share/plasma/plasmoids/org.kde.plasma.printmanager/contents/config/
-share/plasma/plasmoids/org.kde.plasma.printmanager/contents/config/config.qml
 share/plasma/plasmoids/org.kde.plasma.printmanager/contents/config/main.xml
 share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/
 share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/PopupDialog.qml
 share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/PrinterItem.qml
-share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/config.qml
 share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/printmanager.qml
 share/plasma/plasmoids/org.kde.plasma.printmanager/metadata.desktop
 share/plasma/plasmoids/org.kde.plasma.printmanager/metadata.json

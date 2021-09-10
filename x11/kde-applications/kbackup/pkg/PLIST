@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/01/23 18:10:17 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/09/10 08:43:51 rsadowski Exp $
 @bin bin/kbackup
 @man man/man1/kbackup.1
 share/applications/org.kde.kbackup.desktop
@@ -13,6 +13,9 @@ share/doc/HTML/en/kbackup/
 share/doc/HTML/en/kbackup/index.cache.bz2
 share/doc/HTML/en/kbackup/index.docbook
 share/doc/HTML/en/kbackup/mainwindow.png
+share/doc/HTML/es/kbackup/
+share/doc/HTML/es/kbackup/index.cache.bz2
+share/doc/HTML/es/kbackup/index.docbook
 share/doc/HTML/it/kbackup/
 share/doc/HTML/it/kbackup/index.cache.bz2
 share/doc/HTML/it/kbackup/index.docbook
@@ -36,6 +39,7 @@ share/icons/hicolor/32x32/mimetypes/text-x-kbp.png
 share/kxmlgui5/
 share/kxmlgui5/kbackup/
 share/kxmlgui5/kbackup/kbackupui.rc
+share/locale/ar/LC_MESSAGES/kbackup.mo
 share/locale/ca/LC_MESSAGES/kbackup.mo
 share/locale/ca@valencia/LC_MESSAGES/kbackup.mo
 share/locale/cs/LC_MESSAGES/kbackup.mo

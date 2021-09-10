@@ -1,9 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/01/23 18:10:21 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/09/10 08:43:54 rsadowski Exp $
 @pkgpath x11/kde4/killbots
 @bin bin/killbots
 share/applications/org.kde.killbots.desktop
 share/config.kcfg/
 share/config.kcfg/killbots.kcfg
+share/doc/HTML/ca/killbots/
+share/doc/HTML/ca/killbots/index.cache.bz2
+share/doc/HTML/ca/killbots/index.docbook
 share/doc/HTML/de/killbots/
 share/doc/HTML/de/killbots/index.cache.bz2
 share/doc/HTML/de/killbots/index.docbook

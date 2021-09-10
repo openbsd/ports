@@ -1,7 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/06/19 18:34:34 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/09/10 08:43:51 rsadowski Exp $
 @pkgpath x11/kde4/kbreakout
 @bin bin/kbreakout
 share/applications/org.kde.kbreakout.desktop
+share/doc/HTML/ca/kbreakout/
+share/doc/HTML/ca/kbreakout/gameboard.png
+share/doc/HTML/ca/kbreakout/index.cache.bz2
+share/doc/HTML/ca/kbreakout/index.docbook
 share/doc/HTML/de/kbreakout/
 share/doc/HTML/de/kbreakout/index.cache.bz2
 share/doc/HTML/de/kbreakout/index.docbook

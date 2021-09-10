@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2021/06/19 18:34:36 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.20 2021/09/10 08:43:52 rsadowski Exp $
 
 # Qt5WebEngine
 USE_WXNEEDED =	Yes
 
 COMMENT =	non-linear video editor for KDE
+VERSION =	21.04.3
 DISTNAME =	kdenlive-${VERSION}
 CATEGORIES =	multimedia
 

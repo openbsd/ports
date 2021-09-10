@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/06/19 18:34:30 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/09/10 08:43:48 rsadowski Exp $
 include/KF5/Akonadi/
 include/KF5/Akonadi/Contact/
 include/KF5/Akonadi/Contact/AbstractContactFormatter
@@ -103,7 +103,10 @@ lib/qt5/plugins/akonadi/contacts/plugins/
 @so lib/qt5/plugins/akonadi/contacts/plugins/categorieseditwidgetplugin.so
 @so lib/qt5/plugins/akonadi_serializer_addressee.so
 @so lib/qt5/plugins/akonadi_serializer_contactgroup.so
-@so lib/qt5/plugins/kcm_akonadicontact_actions.so
+lib/qt5/plugins/pim/
+lib/qt5/plugins/pim/kcms/
+lib/qt5/plugins/pim/kcms/kaddressbook/
+@so lib/qt5/plugins/pim/kcms/kaddressbook/kcm_akonadicontact_actions.so
 share/akonadi/plugins/
 share/akonadi/plugins/serializer/
 share/akonadi/plugins/serializer/akonadi_serializer_addressee.desktop
