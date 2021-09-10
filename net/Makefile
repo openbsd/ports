@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1268 2021/09/09 14:37:24 kn Exp $
+# $OpenBSD: Makefile,v 1.1269 2021/09/10 04:35:07 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -210,7 +210,6 @@
      SUBDIR += libircclient
      SUBDIR += libktorrent
      SUBDIR += libmaxminddb
-     SUBDIR += libmesode
      SUBDIR += libmygpo-qt
      SUBDIR += libnet
      SUBDIR += libnids
