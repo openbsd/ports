@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2021/09/10 08:43:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.21 2021/09/11 22:26:51 rsadowski Exp $
 
 # Qt5WebEngine
 USE_WXNEEDED =	Yes
@@ -66,14 +66,12 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/purpose \
 		devel/kf5/solid \
 		devel/kf5/sonnet \
-		devel/rttr \
 		multimedia/mlt,-main \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtmultimedia \
 		x11/qt5/qtquickcontrols2 \
 		x11/qt5/qtnetworkauth \
-		x11/qt5/qtsvg \
-		x11/qt5/qtwebengine
+		x11/qt5/qtsvg
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_LibV4L2=Yes
 
