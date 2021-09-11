@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2021/06/19 04:22:17 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.26 2021/09/11 18:19:17 rsadowski Exp $
 
 COMMENT=	Google WebP image format conversion tool
 
 CATEGORIES=	graphics
 GH_ACCOUNT=	webmproject
 GH_PROJECT=	libwebp
-GH_TAGNAME=	v1.2.0
+GH_TAGNAME=	v1.2.1
 
 SHARED_LIBS +=  webp                 4.3      # 6.0
 SHARED_LIBS +=  webpdecoder          2.1      # 2.0
@@ -40,5 +40,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
+
+NO_TEST=	Yes
 
 .include <bsd.port.mk>
