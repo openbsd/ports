@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2019/07/12 20:47:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2021/09/11 14:11:51 ajacoutot Exp $
 
 COMMENT-main=	fully featured POP3 and IMAP4 proxy server
 COMMENT-ldap=	LDAP backend for perdition mail proxy
@@ -11,7 +11,7 @@ PKGNAME-main=	perdition-${DISTVER:S/-//}
 PKGNAME-ldap=	perdition-ldap-${DISTVER:S/-//}
 PKGNAME-mysql=	perdition-mysql-${DISTVER:S/-//}
 PKGNAME-pgsql=	perdition-pgsql-${DISTVER:S/-//}
-REVISION-ldap=	2
+REVISION-ldap=	3
 REVISION-main=	2
 REVISION-mysql=	2
 REVISION-pgsql=	2
@@ -74,7 +74,7 @@ LIB_DEPENDS-main=	${cLIB_DEPENDS} \
 			vanessa_socket->=0.0.12:devel/vanessa/socket
 
 LIB_DEPENDS-ldap=	${cLIB_DEPENDS} security/cyrus-sasl2 \
-			openldap-client->=2,<3:databases/openldap
+			databases/openldap
 WANTLIB-ldap=		crypto lber-2.4 ldap-2.4 sasl2 ssl util ${cWANTLIB}
 
 .if !${BUILD_PACKAGES:M-ldap}

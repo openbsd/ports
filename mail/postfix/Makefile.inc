@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.96 2021/08/01 07:16:37 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.97 2021/09/11 14:11:51 ajacoutot Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -55,7 +55,7 @@ MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2
 .endif
 
 .if ${FLAVOR:Mldap}
-LIB_DEPENDS+=	databases/openldap>=2,<3
+LIB_DEPENDS+=	databases/openldap
 WANTLIB+=	ldap>=2 lber
 MAKE_CCARGS+=	-DHAS_LDAP -I${LOCALBASE}/include
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lldap -llber
