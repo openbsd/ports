@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/01/19 14:03:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/09/11 09:19:19 ajacoutot Exp $
 include/libspectre/
 include/libspectre/spectre-document.h
 include/libspectre/spectre-exporter.h
@@ -8,7 +8,7 @@ include/libspectre/spectre-render-context.h
 include/libspectre/spectre-status.h
 include/libspectre/spectre-version.h
 include/libspectre/spectre.h
-lib/libspectre.a
+@static-lib lib/libspectre.a
 lib/libspectre.la
 @lib lib/libspectre.so.${LIBspectre_VERSION}
 lib/pkgconfig/libspectre.pc
