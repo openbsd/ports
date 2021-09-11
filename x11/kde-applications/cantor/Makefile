@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2021/09/10 08:43:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.25 2021/09/11 16:15:02 rsadowski Exp $
 
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${VERSION}
 CATEGORIES =	education math
+REVISION =	0
 
 SHARED_LIBS +=  cantorlibs                54.0 # 17.08
 
@@ -14,10 +15,12 @@ WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOFileWidgets KF5KIOGui
 WANTLIB += KF5KIOWidgets KF5NewStuff KF5NewStuffCore KF5Parts
 WANTLIB += KF5Pty KF5Service KF5Solid KF5SonnetUi KF5SyntaxHighlighting
 WANTLIB += KF5TextEditor KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5PrintSupport Qt5Svg Qt5Widgets Qt5Xml Qt5XmlPatterns
-WANTLIB += c intl luajit-5.1 m poppler poppler-qt5 ${MODPY_WANTLIB} qalculate
-WANTLIB += spectre util
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Help
+WANTLIB += Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
+WANTLIB += Qt5Quick Qt5Sql Qt5Svg Qt5WebChannel Qt5WebEngine Qt5WebEngineCore
+WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml Qt5XmlPatterns
+WANTLIB += c intl luajit-5.1 m poppler poppler-qt5 qalculate spectre util
+WANTLIB += ${MODPY_WANTLIB}
 
 MODULES +=	fortran \
 		lang/lua \
@@ -33,9 +36,7 @@ MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
-BUILD_DEPENDS =	math/R
-RUN_DEPENDS =	math/R \
-		misc/shared-mime-info
+RUN_DEPENDS =	misc/shared-mime-info
 
 LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kcrash \
@@ -49,11 +50,13 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kxmlgui \
 		devel/kf5/syntax-highlighting \
 		lang/luajit \
+		math/R \
 		math/libqalculate \
 		print/libspectre \
 		print/poppler,-qt5 \
 		x11/kde-applications/analitza \
 		x11/qt5/qtsvg \
+		x11/qt5/qtwebengine \
 		x11/qt5/qtxmlpatterns
 
 TEST_IS_INTERACTIVE =	X11
