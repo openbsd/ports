@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2021/09/06 05:38:56 kevlo Exp $
+# $OpenBSD: Makefile,v 1.16 2021/09/11 09:44:46 kevlo Exp $
 
 COMMENT =		weighted finite-state transducers library
 
@@ -48,5 +48,9 @@ CONFIGURE_ARGS =	--enable-bin		\
 			--enable-ngram-fsts	\
 			--enable-pdt		\
 			--enable-special
+
+.if ${MACHINE_ARCH} == "i386"
+CONFIGURE_ENV +=	CXXFLAGS="${CXXFLAGS} -msse -msse2 -mfpmath=sse"
+.endif
 
 .include <bsd.port.mk>
