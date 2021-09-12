@@ -1,0 +1,19 @@
+$OpenBSD: patch-tools_smidump_c,v 1.1 2021/09/12 19:58:10 naddy Exp $
+
+Index: tools/smidump.c
+--- tools/smidump.c.orig
++++ tools/smidump.c
+@@ -233,11 +233,10 @@ static void usage()
+ 	    printf_state=_set_printf_count_output(1);
+     #endif
+ #endif
+-	    fprintf(stderr, "  --%s-%s%s%s%n",
++	    n = fprintf(stderr, "  --%s-%s%s%s",
+ 		    driver->name, driver->opt[i].name,
+ 		    value ? "=" : "",
+-		    value ? value : "",
+-		    &n);
++		    value ? value : "");
+ #ifdef _MSC_VER
+     #if _MSC_VER >= 1400
+ 	    (void)_set_printf_count_output(printf_state);
