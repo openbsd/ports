@@ -1,0 +1,25 @@
+$OpenBSD: patch-link-parser_command-line_c,v 1.1 2021/09/12 20:21:25 naddy Exp $
+
+Index: link-parser/command-line.c
+--- link-parser/command-line.c.orig
++++ link-parser/command-line.c
+@@ -443,7 +443,7 @@ void display_1line_help(const Switch *sp, bool is_comp
+ 	}
+ 
+ 	int n; /* actual varname and optional varvalue print length */
+-	printf("%s%s%s%n", sp->string, display_eq ? "=" : " ", value, &n);
++	n = printf("%s%s%s", sp->string, display_eq ? "=" : " ", value);
+ 	if (is_completion) printf("%*s", MAX(0, vnw - n), "");
+ 	printf("%*s- %s\n", vtw, value_type[sp->param_type], sp->description+undoc);
+ }
+@@ -640,8 +640,8 @@ void setup_panic_parse_options(Command_Options *copts,
+ 
+ 	if (local.verbosity > 1)
+ 	{
+-		int n = 0;
+-		fprintf(stdout, "Panic mode setup: %n", &n); /* Remember alignment. */
++		int n;
++		n = fprintf(stdout, "Panic mode setup: "); /* Remember alignment. */
+ 		fprintf(stdout,
+ 		        "!cost-max=%.2f !limit=%d !timeout=%d " "!spell=%d !short=%d\n"
+ 		        "%*s(all_short=%d min_null_count=%d max_null_count=%d)\n",
