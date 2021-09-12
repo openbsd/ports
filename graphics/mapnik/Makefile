@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2021/08/29 21:02:05 kirby Exp $
+# $OpenBSD: Makefile,v 1.40 2021/09/12 22:07:27 kirby Exp $
 
 COMMENT =	toolkit for developing mapping applications
 
@@ -26,9 +26,7 @@ WANTLIB += intl jpeg m pcre pixman-1 png>=17.0 pq pthread
 WANTLIB += sqlite3 tiff xcb xcb-render xcb-shm xml2 z ${COMPILER_LIBCXX}
 
 MASTER_SITES =	https://github.com/mapnik/mapnik/releases/download/v${V}/
-MODULES =	devel/scons \
-		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+MODULES =	devel/scons
 
 # C++14
 COMPILER =	base-clang ports-gcc
@@ -52,6 +50,7 @@ MODSCONS_FLAGS =	PREFIX="${TRUEPREFIX}" \
 			HB_INCLUDES=${LOCALBASE}/include \
 			HB_LIBS=${LOCALBASE}/lib \
 			WARNING_CXXFLAGS="-I${X11BASE}/include/freetype2" \
+			CUSTOM_CXXFLAGS="-fPIC" \
 			SYSTEM_FONTS=${X11BASE}/lib/X11/fonts/TTF/ \
 			CUSTOM_LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			FAST=yes \
@@ -63,7 +62,7 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/build.py
 
 do-test:
-	# Test data cuold be fetched from github and extracted to test subdir.
+	# Test data could be fetched from github and extracted to test subdir.
 	# https://github.com/mapnik/test-data
 	# https://github.com/mapnik/test-data-visual
 	# warning: some tests may swap your machine to death

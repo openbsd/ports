@@ -1,9 +1,20 @@
-$OpenBSD: patch-SConstruct,v 1.8 2021/05/23 17:47:01 kirby Exp $
-2nd chunk is needed for proper boost_thread detection
+$OpenBSD: patch-SConstruct,v 1.9 2021/09/12 22:07:27 kirby Exp $
+
+1st chuck is for scons 4
+3rd chunk is needed for proper boost_thread detection
+
 Index: SConstruct
 --- SConstruct.orig
 +++ SConstruct
-@@ -297,7 +297,7 @@ opts.AddVariables(
+@@ -126,7 +126,6 @@ PLUGINS = { # plugins with external dependencies
+ 
+ def init_environment(env):
+     env.Decider('MD5-timestamp')
+-    env.SourceCode(".", None)
+     if os.environ.get('RANLIB'):
+         env['RANLIB'] = os.environ['RANLIB']
+     if os.environ.get('AR'):
+@@ -297,7 +296,7 @@ opts.AddVariables(
      ('CUSTOM_LDFLAGS', 'Custom linker flags, e.g. -L<lib dir> if you have libraries in a nonstandard directory <lib dir>', ''),
      EnumVariable('LINKING', "Set library format for libmapnik",'shared', ['shared','static']),
      EnumVariable('RUNTIME_LINK', "Set preference for linking dependencies",'shared', ['shared','static']),
@@ -12,7 +23,7 @@ Index: SConstruct
      # Note: setting DEBUG=True will override any custom OPTIMIZATION level
      BoolVariable('DEBUG', 'Compile a debug version of Mapnik', 'False'),
      BoolVariable('COVERAGE', 'Compile a libmapnik and plugins with --coverage', 'False'),
-@@ -1364,6 +1364,9 @@ if not preconfigured:
+@@ -1364,6 +1363,9 @@ if not preconfigured:
  
      thread_suffix = 'mt'
      if env['PLATFORM'] == 'FreeBSD':
