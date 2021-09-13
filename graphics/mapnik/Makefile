@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2021/09/12 22:07:27 kirby Exp $
+# $OpenBSD: Makefile,v 1.41 2021/09/13 11:20:20 ajacoutot Exp $
 
 COMMENT =	toolkit for developing mapping applications
 
@@ -7,6 +7,7 @@ V =		3.1.0
 DISTNAME =	mapnik-v${V}
 PKGNAME =	${DISTNAME:S/v//}
 EXTRACT_SUFX =	.tar.bz2
+REVISION =	0
 
 SHARED_LIBS =	mapnik 4.0 #3.0
 CATEGORIES =	graphics geo
