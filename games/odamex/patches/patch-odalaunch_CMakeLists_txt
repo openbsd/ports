@@ -1,16 +1,17 @@
-$OpenBSD: patch-odalaunch_CMakeLists_txt,v 1.1 2021/08/22 19:48:24 edd Exp $
+$OpenBSD: patch-odalaunch_CMakeLists_txt,v 1.2 2021/09/13 19:51:30 edd Exp $
 
 Make odalaunch find the odamex executable.
 
 Index: odalaunch/CMakeLists.txt
 --- odalaunch/CMakeLists.txt.orig
 +++ odalaunch/CMakeLists.txt
-@@ -1,5 +1,8 @@
+@@ -1,6 +1,9 @@
  include(OdalaunchCopyLibs)
  include(OdamexTargetSettings)
-+
+ 
 +add_definitions(-DINSTALL_PREFIX="${CMAKE_INSTALL_PREFIX}")
 +
- 
++
  # API
  set(API_DIR ../odalpapi)
+ file(GLOB API_HEADERS ${API_DIR}/*.h ${API_DIR}/threads/*.h)
