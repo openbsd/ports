@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/09/13 09:17:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/09/13 13:54:54 sthen Exp $
 
 COMMENT=		full text search plugin for Dovecot using Xapian
 
@@ -19,7 +19,7 @@ MAINTAINER=		Stuart Henderson <stu.ports@spacehopper.org>
 
 # drop the version after a bit of time, to allow falling back to the
 # default from PKGSPEC in dovecot
-BUILD_DEPENDS=		mail/dovecot->=2.3.16p1v0
+BUILD_DEPENDS=		mail/dovecot>=2.3.16p1v0
 RUN_DEPENDS=		mail/dovecot
 
 LIB_DEPENDS=		databases/xapian-core
