@@ -1,0 +1,20 @@
+$OpenBSD: patch-cargo-audit-0_13_1_modcargo-crates_canonical-path-2_0_2_src_lib_rs,v 1.1.1.1 2021/09/13 20:51:37 abieber Exp $
+
+Index: cargo-audit-0.13.1/modcargo-crates/canonical-path-2.0.2/src/lib.rs
+--- cargo-audit-0.13.1/modcargo-crates/canonical-path-2.0.2/src/lib.rs.orig
++++ cargo-audit-0.13.1/modcargo-crates/canonical-path-2.0.2/src/lib.rs
+@@ -327,7 +329,13 @@ impl ToOwned for CanonicalPath {
+ /// Returns the full, canonicalized filesystem path of the current running
+ /// executable.
+ pub fn current_exe() -> Result<CanonicalPathBuf> {
+-    let p = env::current_exe()?;
++    let argv0 = env::args()
++        .next()
++        .ok_or_else(|| Error::new(ErrorKind::InvalidInput, "can't get argv[0]"))?;
++    let exe_name = Path::new(&argv0)
++        .file_name()
++        .ok_or_else(|| Error::new(ErrorKind::InvalidInput, "can't get file name from argv[0]"))?;
++    let p = PathBuf::from("${LOCALBASE}").join("bin").join(exe_name);
+     Ok(CanonicalPathBuf::canonicalize(p)?)
+ }
+ 
