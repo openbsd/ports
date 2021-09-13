@@ -1854,7 +1854,7 @@ SHA256 (go_modules/sourcegraph.com/sourcegraph/appdash/@v/v0.0.0-20190731080439-
 SHA256 (go_modules/sourcegraph.com/sourcegraph/appdash/@v/v0.0.0-20190731080439-ebfcffb1b5c0.zip) = vSSS2dsFNiwv7NCz0PYALImm2Q1nj7k7QVgpiriDc28=
 SHA256 (go_modules/tailscale.com/@v/v1.10.0.mod) = whPTLbH2fsZ1k2EsMA8OmH4nqNrCSN1WfsOp3/2rnAk=
 SHA256 (go_modules/tailscale.com/@v/v1.10.0.zip) = iZ7rXy28NtbOPiJH2l/Dxm+sEoUFaacgmeqLCk/ph3Y=
-SHA256 (headscale-v0.7.1.zip) = Pqf8Akg48J0UT/gqCh7ilbMHhQxH+KsDpSIDvJ7vsxk=
+SHA256 (headscale-v0.8.0.zip) = 5Ul4XkLA35VpflX7KopxVs2q4dwylLJlFcE54DDBVM8=
 SIZE (go_modules/4d63.com/gochecknoglobals/@v/v0.0.0-20201008074935-acfc0b28355a.mod) = 105
 SIZE (go_modules/4d63.com/gochecknoglobals/@v/v0.0.0-20201008074935-acfc0b28355a.zip) = 14082
 SIZE (go_modules/bazil.org/fuse/@v/v0.0.0-20160811212531-371fbbdaa898.mod) = 22
@@ -3711,4 +3711,4 @@ SIZE (go_modules/sourcegraph.com/sourcegraph/appdash/@v/v0.0.0-20190731080439-eb
 SIZE (go_modules/sourcegraph.com/sourcegraph/appdash/@v/v0.0.0-20190731080439-ebfcffb1b5c0.zip) = 158069
 SIZE (go_modules/tailscale.com/@v/v1.10.0.mod) = 2044
 SIZE (go_modules/tailscale.com/@v/v1.10.0.zip) = 963595
-SIZE (headscale-v0.7.1.zip) = 129332
+SIZE (headscale-v0.8.0.zip) = 131947
