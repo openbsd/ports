@@ -340,7 +340,8 @@ SHA256 (go_modules/github.com/kr/text/@v/v0.1.0.zip) = k2OkyPHzOHo2AU3lG0d7gxoTm
 SHA256 (go_modules/github.com/lib/pq/@v/v1.0.0.mod) = TIrIOpiVeYUwFf3mEuZWOybLZ9G5N2SbvgoYd6wkkRQ=
 SHA256 (go_modules/github.com/lib/pq/@v/v1.1.0.mod) = TIrIOpiVeYUwFf3mEuZWOybLZ9G5N2SbvgoYd6wkkRQ=
 SHA256 (go_modules/github.com/lib/pq/@v/v1.10.2.mod) = lMFIhoiyuYIqluE3XjIAKmUswa7nFSD2v6h77I63nAY=
-SHA256 (go_modules/github.com/lib/pq/@v/v1.10.2.zip) = D1DPyNTtS7s5dnqswE1rI+EQXS+lDcuOSuIEsskAGPA=
+SHA256 (go_modules/github.com/lib/pq/@v/v1.10.3.mod) = lMFIhoiyuYIqluE3XjIAKmUswa7nFSD2v6h77I63nAY=
+SHA256 (go_modules/github.com/lib/pq/@v/v1.10.3.zip) = x2OBMyzfE9M6h3IMYlncFfxjx5diSxMiH/dV8/e8d40=
 SHA256 (go_modules/github.com/lib/pq/@v/v1.2.0.mod) = TIrIOpiVeYUwFf3mEuZWOybLZ9G5N2SbvgoYd6wkkRQ=
 SHA256 (go_modules/github.com/magiconair/properties/@v/v1.8.5.mod) = LL3CBRNhd7xmdtvY+WU2VEAwo5xkzTT5BCWLqv5ChQc=
 SHA256 (go_modules/github.com/magiconair/properties/@v/v1.8.5.zip) = +gVrPHLfajbJkenyIoWBiwfjd78Hx760Qdmgl7LWJj4=
@@ -883,7 +884,7 @@ SHA256 (go_modules/rsc.io/quote/v3/@v/v3.1.0.mod) = shHZ8WtVQpcPA6LmJJ30UDgwSjeh
 SHA256 (go_modules/rsc.io/quote/v3/@v/v3.1.0.zip) = tDTLv8MsF7UijQsO3erqib707JvZC1yPxVtk+M4T7rk=
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = oq5uhUCkC4XldwPMYYuZxbEHU4bZWOiZmg4tTALzpwU=
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 2iArDagDqyZhq5imgLuk9kEjoyblQMJVgrbNu53BFKo=
-SHA256 (sqlc-v1.9.0.zip) = cDfps5kVAScQ0QFKxIPMhYP5KdgW2gUylTO7erIIO4c=
+SHA256 (sqlc-v1.10.0.zip) = v2H16XbTsk3/7n1WgEZot4VL0JJ2zR4NQEHq6Smv4w8=
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.34.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.38.0.mod) = 1006
@@ -1226,7 +1227,8 @@ SIZE (go_modules/github.com/kr/text/@v/v0.1.0.zip) = 12591
 SIZE (go_modules/github.com/lib/pq/@v/v1.0.0.mod) = 25
 SIZE (go_modules/github.com/lib/pq/@v/v1.1.0.mod) = 25
 SIZE (go_modules/github.com/lib/pq/@v/v1.10.2.mod) = 34
-SIZE (go_modules/github.com/lib/pq/@v/v1.10.2.zip) = 120769
+SIZE (go_modules/github.com/lib/pq/@v/v1.10.3.mod) = 34
+SIZE (go_modules/github.com/lib/pq/@v/v1.10.3.zip) = 124624
 SIZE (go_modules/github.com/lib/pq/@v/v1.2.0.mod) = 25
 SIZE (go_modules/github.com/magiconair/properties/@v/v1.8.5.mod) = 49
 SIZE (go_modules/github.com/magiconair/properties/@v/v1.8.5.zip) = 39629
@@ -1769,4 +1771,4 @@ SIZE (go_modules/rsc.io/quote/v3/@v/v3.1.0.mod) = 55
 SIZE (go_modules/rsc.io/quote/v3/@v/v3.1.0.zip) = 2223
 SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = 88
 SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 14308
-SIZE (sqlc-v1.9.0.zip) = 614051
+SIZE (sqlc-v1.10.0.zip) = 618968

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/08/27 13:58:24 abieber Exp $
+# $OpenBSD: Makefile,v 1.12 2021/09/13 15:19:23 abieber Exp $
 
 # github.com/kyleconroy/sqlc/internal/engine/sqlite/parser fails on LP32
 ONLY_FOR_ARCHS =	aarch64 amd64
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	aarch64 amd64
 COMMENT =	create type safe go from SQL
 
 MODGO_MODNAME =	github.com/kyleconroy/sqlc
-MODGO_VERSION =	v1.9.0
+MODGO_VERSION =	v1.10.0
 
 DISTNAME =	sqlc-${MODGO_VERSION}
 

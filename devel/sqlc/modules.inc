@@ -1,4 +1,4 @@
-# $OpenBSD: modules.inc,v 1.2 2021/08/27 13:58:24 abieber Exp $
+# $OpenBSD: modules.inc,v 1.3 2021/09/13 15:19:23 abieber Exp $
 
 MODGO_MODULES =	\
 	cloud.google.com/go					 v0.81.0 \
@@ -109,7 +109,7 @@ MODGO_MODULES =	\
 	github.com/kr/pretty					 v0.2.1 \
 	github.com/kr/pty					 v1.1.8 \
 	github.com/kr/text					 v0.1.0 \
-	github.com/lib/pq					 v1.10.2 \
+	github.com/lib/pq					 v1.10.3 \
 	github.com/magiconair/properties			 v1.8.5 \
 	github.com/mattn/go-colorable				 v0.1.6 \
 	github.com/mattn/go-isatty				 v0.0.12 \
@@ -325,6 +325,7 @@ MODGO_MODFILES =	\
 	github.com/kr/pty					 v1.1.1 \
 	github.com/lib/pq					 v1.0.0 \
 	github.com/lib/pq					 v1.1.0 \
+	github.com/lib/pq					 v1.10.2 \
 	github.com/lib/pq					 v1.2.0 \
 	github.com/mattn/go-colorable				 v0.0.9 \
 	github.com/mattn/go-colorable				 v0.1.1 \
