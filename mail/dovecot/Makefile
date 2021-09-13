@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.301 2021/09/02 21:44:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.302 2021/09/13 09:20:18 sthen Exp $
 
 COMMENT-server=	compact IMAP/POP3 server
 COMMENT-ldap=	LDAP authentication / dictionary support for Dovecot
@@ -8,6 +8,8 @@ COMMENT-postgresql= PostgreSQL authentication / dictionary support for Dovecot
 # XXX -stable package builds can't detect PKGSPEC updates properly;
 # if backporting an update to stable, ensure all ports depending on
 # this are bumped and that -current is same/newer version than -stable
+# (dovecot-fts-xapian, dovecot-fts-flatcurve, dovecot-pigeonhole if
+# not updated anyway)
 V_MAJOR=	2.3
 V_DOVECOT=	2.3.16
 REVISION=	1
