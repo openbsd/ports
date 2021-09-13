@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2126 2021/09/10 16:01:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.2127 2021/09/13 20:52:10 abieber Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -56,6 +56,7 @@
      SUBDIR += cabal-bundler
      SUBDIR += cabal-install
      SUBDIR += capstone
+     SUBDIR += cargo-audit
      SUBDIR += cargo-generate-vendor
      SUBDIR += catalyst
      SUBDIR += catalyst-tutorial
