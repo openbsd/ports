@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.149 2021/09/02 07:37:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.150 2021/09/13 16:31:09 robert Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -118,6 +118,9 @@ CONFIGURE_ARGS +=	-DENABLE_JIT=OFF
 CONFIGURE_ARGS +=	-DENABLE_LLINT_C_LOOP=ON
 .endif
 
+
+# We don't want an initial allocation of 1GB, it's above the default ulimit,
+# so let's do 32M instead.
 CXXFLAGS +=		-DFIXED_EXECUTABLE_MEMORY_POOL_SIZE_IN_MB=32
 
 # XXX fatal error: 'X11/Xlib.h' file not found

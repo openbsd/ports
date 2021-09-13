@@ -1,0 +1,37 @@
+$OpenBSD: patch-Source_JavaScriptCore_jit_ExecutableAllocator_cpp,v 1.9 2021/09/13 16:31:09 robert Exp $
+
+Index: Source/JavaScriptCore/jit/ExecutableAllocator.cpp
+--- Source/JavaScriptCore/jit/ExecutableAllocator.cpp.orig
++++ Source/JavaScriptCore/jit/ExecutableAllocator.cpp
+@@ -95,6 +95,17 @@ static constexpr size_t fixedExecutableMemoryPoolSize 
+ #elif CPU(ARM64)
+ #if ENABLE(JUMP_ISLANDS)
+ static constexpr size_t fixedExecutableMemoryPoolSize = 1 * GB;
++#else
++static constexpr size_t fixedExecutableMemoryPoolSize = 128 * MB;
++#endif
++#elif CPU(X86_64)
++static constexpr size_t fixedExecutableMemoryPoolSize = 1 * GB;
++#else
++static constexpr size_t fixedExecutableMemoryPoolSize = 32 * MB;
++#endif
++
++#if CPU(ARM64)
++#if ENABLE(JUMP_ISLANDS)
+ // These sizes guarantee that any jump within an island can jump forwards or backwards
+ // to the adjacent island in a single instruction.
+ static constexpr size_t regionSize = 112 * MB;
+@@ -102,13 +113,7 @@ static constexpr size_t islandRegionSize = 16 * MB;
+ static constexpr size_t numberOfRegions = fixedExecutableMemoryPoolSize / regionSize;
+ static constexpr size_t islandSizeInBytes = 4;
+ static constexpr size_t maxIslandsPerRegion = islandRegionSize / islandSizeInBytes;
+-#else
+-static constexpr size_t fixedExecutableMemoryPoolSize = 128 * MB;
+ #endif
+-#elif CPU(X86_64)
+-static constexpr size_t fixedExecutableMemoryPoolSize = 1 * GB;
+-#else
+-static constexpr size_t fixedExecutableMemoryPoolSize = 32 * MB;
+ #endif
+ 
+ #if CPU(ARM)
