@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:44:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/09/13 06:57:54 rsadowski Exp $
 
 COMMENT =	framework for generation of reports in multiple formats
 
 VERSION =	3.2.0
 DISTNAME =	kreport-${VERSION}
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -24,7 +25,10 @@ WANTLIB += Qt5WebKitWidgets Qt5Widgets Qt5Xml m marblewidget-qt5
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/kreport/src/}}
 EXTRACT_SUFX =	.tar.xz
 
-MODULES =		devel/kf5
+MODULES =		devel/kf5 \
+			lang/python
+
+MODPY_RUNDEP =		No
 
 BUILD_DEPENDS =		shells/bash \
 			devel/kf5/kguiaddons \
