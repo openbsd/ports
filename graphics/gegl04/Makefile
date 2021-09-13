@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2021/09/09 09:29:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2021/09/13 16:36:16 ajacoutot Exp $
 
 COMMENT=		graph based image processing framework (API version 0.4)
 
@@ -49,7 +49,8 @@ LIB_DEPENDS=		devel/json-glib \
 			print/poppler \
 			x11/gnome/librsvg
 
-CONFIGURE_ARGS=		-Dgraphviz=disabled \
+CONFIGURE_ARGS=		-Ddocs=false \
+			-Dgraphviz=disabled \
 			-Dlensfun=disabled \
 			-Dlibav=disabled \
 			-Dlibspiro=disabled \
