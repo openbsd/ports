@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1314 2021/09/10 04:39:17 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1315 2021/09/14 10:40:30 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1256,6 +1256,7 @@ setup_obsolete_reason(
 	29 => 'google-compute-engine',
 	3 => 'bzr',
 	3 => 'bzr-svn',
+	6 => 'libvstr',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1271,7 +1272,7 @@ my $obsolete_suggestion = {
 	'qlandkartegt' => 'qmapshack',
 	'keepassx' => 'keepassxc',
 	'lives' => [qw(kdenlive shotcut)],
-	'pdfshuffler' => 'pdfarranger', 
+	'pdfshuffler' => 'pdfarranger',
 };
 
 # reasons for obsolete packages

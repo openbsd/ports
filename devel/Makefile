@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2127 2021/09/13 20:52:10 abieber Exp $
+# $OpenBSD: Makefile,v 1.2128 2021/09/14 10:40:30 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -322,7 +322,6 @@
      SUBDIR += libuv
      SUBDIR += libvirt-glib
      SUBDIR += libvmime
-     SUBDIR += libvstr
      SUBDIR += libvterm
      SUBDIR += libwnck
      SUBDIR += libwnck3
@@ -1294,7 +1293,6 @@
      SUBDIR += py-argcomplete,python3
      SUBDIR += py-argh
      SUBDIR += py-argh,python3
-     SUBDIR += py-asn1
      SUBDIR += py-asn1,python3
      SUBDIR += py-asn1-modules,python3
      SUBDIR += py-astroid,python3
