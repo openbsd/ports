@@ -1,0 +1,34 @@
+$OpenBSD: patch-includes_rts_Messages_h,v 1.1 2021/09/14 17:53:11 kili Exp $
+
+The debug message function has to return the number of bytes written
+(like printf(3)), to allow killing a %n format specifier in one in
+one invocation of statsPrintf() in report_summary() (rts/Stats.c).
+
+Index: includes/rts/Messages.h
+--- includes/rts/Messages.h.orig
++++ includes/rts/Messages.h
+@@ -85,20 +85,21 @@ void vsysErrorBelch(const char *s, va_list ap);
+ void debugBelch(const char *s, ...)
+    GNUC3_ATTRIBUTE(format (PRINTF, 1, 2));
+ 
+-void vdebugBelch(const char *s, va_list ap);
++int vdebugBelch(const char *s, va_list ap);
+ 
+ 
+ /* Hooks for redirecting message generation: */
+ 
+ typedef void RtsMsgFunction(const char *, va_list);
++typedef int RtsMsgFunctionRetLen(const char *, va_list);
+ 
+ extern RtsMsgFunction *fatalInternalErrorFn;
+-extern RtsMsgFunction *debugMsgFn;
++extern RtsMsgFunctionRetLen *debugMsgFn;
+ extern RtsMsgFunction *errorMsgFn;
+ 
+ /* Default stdio implementation of the message hooks: */
+ 
+ extern RtsMsgFunction rtsFatalInternalErrorFn;
+-extern RtsMsgFunction rtsDebugMsgFn;
++extern RtsMsgFunctionRetLen rtsDebugMsgFn;
+ extern RtsMsgFunction rtsErrorMsgFn;
+ extern RtsMsgFunction rtsSysErrorMsgFn;
