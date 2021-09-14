@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2021/09/13 16:31:09 robert Exp $
+# $OpenBSD: Makefile,v 1.151 2021/09/14 14:03:32 robert Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -16,7 +16,7 @@ COMMENT =		GTK+ port of the WebKit rendering engine
 V =			2.32.3
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk4-${V}
-REVISION =		0
+REVISION =		1
 
 EXTRACT_SUFX =		.tar.xz
 API =			4.0
@@ -119,9 +119,11 @@ CONFIGURE_ARGS +=	-DENABLE_LLINT_C_LOOP=ON
 .endif
 
 
-# We don't want an initial allocation of 1GB, it's above the default ulimit,
-# so let's do 32M instead.
-CXXFLAGS +=		-DFIXED_EXECUTABLE_MEMORY_POOL_SIZE_IN_MB=32
+.if ${MACHINE_ARCH} == "amd64"
+# On amd64 we don't want an initial allocation of 1GB,
+# it's above the default ulimit, so let's do 128M instead.
+CXXFLAGS +=		-DFIXED_EXECUTABLE_MEMORY_POOL_SIZE_IN_MB=128
+.endif
 
 # XXX fatal error: 'X11/Xlib.h' file not found
 CXXFLAGS +=		-I${X11BASE}/include
