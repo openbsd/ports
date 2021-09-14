@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.31 2021/09/01 08:20:22 jca Exp $
+# $OpenBSD: Makefile,v 1.32 2021/09/14 10:34:18 sthen Exp $
 
 COMMENT =	fast, small, webkit based browser written in lua
 
 GH_ACCOUNT =	luakit
 GH_PROJECT =	luakit
+# used in MAKE_FLAGS
 GH_TAGNAME =	2.3
-REVISION =	1
+REVISION =	2
 
 EPOCH =		1
 
@@ -56,6 +57,7 @@ MAKE_FLAGS +=	LUA_BIN_NAME=${MODLUA_BIN} \
 		PIXMAPDIR=${PREFIX}/share/pixmaps/ \
 		APPDIR=${PREFIX}/share/applications/ \
 		PREFIX=${PREFIX} \
-		DEVELOPMENT_PATHS=0
+		DEVELOPMENT_PATHS=0 \
+		VERSION=${GH_TAGNAME}
 
 .include <bsd.port.mk>
