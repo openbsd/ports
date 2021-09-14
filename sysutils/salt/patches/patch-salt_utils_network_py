@@ -1,4 +1,4 @@
-$OpenBSD: patch-salt_utils_network_py,v 1.7 2020/11/05 14:56:04 jasper Exp $
+$OpenBSD: patch-salt_utils_network_py,v 1.8 2021/09/14 07:23:12 robert Exp $
 
 TypeError: a bytes-like object is required, not 'str'
 https://github.com/saltstack/salt/pull/58158
@@ -6,7 +6,7 @@ https://github.com/saltstack/salt/pull/58158
 Index: salt/utils/network.py
 --- salt/utils/network.py.orig
 +++ salt/utils/network.py
-@@ -1818,7 +1818,7 @@ def _openbsd_remotes_on(port, which_end):
+@@ -1896,7 +1896,7 @@ def _openbsd_remotes_on(port, which_end):
          log.error("Failed netstat")
          raise
  

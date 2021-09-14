@@ -1,4 +1,4 @@
-$OpenBSD: patch-salt_grains_core_py,v 1.8 2020/11/05 14:56:04 jasper Exp $
+$OpenBSD: patch-salt_grains_core_py,v 1.9 2021/09/14 07:23:12 robert Exp $
 
 - Unbreak minion without swap configured
 - Fix swap_total calculation on OpenBSD
@@ -8,7 +8,7 @@ https://github.com/saltstack/salt/pull/58155
 Index: salt/grains/core.py
 --- salt/grains/core.py.orig
 +++ salt/grains/core.py
-@@ -532,13 +532,15 @@ def _bsd_memdata(osdata):
+@@ -552,13 +552,15 @@ def _bsd_memdata(osdata):
          if osdata["kernel"] in ["OpenBSD", "NetBSD"]:
              swapctl = salt.utils.path.which("swapctl")
              swap_data = __salt__["cmd.run"]("{} -sk".format(swapctl))
