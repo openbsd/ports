@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/03/02 20:14:11 solene Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/09/14 19:53:00 fcambus Exp $
 bin/yle-dl
 lib/python${MODPY_VERSION}/site-packages/yle_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/yle_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -19,6 +19,7 @@ lib/python${MODPY_VERSION}/site-packages/yledl/${MODPY_PYCACHE}ffprobe.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/yledl/${MODPY_PYCACHE}geolocation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yledl/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yledl/${MODPY_PYCACHE}io.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yledl/${MODPY_PYCACHE}jsonhelpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yledl/${MODPY_PYCACHE}kaltura.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yledl/${MODPY_PYCACHE}localization.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yledl/${MODPY_PYCACHE}streamfilters.${MODPY_PYC_MAGIC_TAG}pyc
@@ -38,6 +39,7 @@ lib/python${MODPY_VERSION}/site-packages/yledl/ffprobe.py
 lib/python${MODPY_VERSION}/site-packages/yledl/geolocation.py
 lib/python${MODPY_VERSION}/site-packages/yledl/http.py
 lib/python${MODPY_VERSION}/site-packages/yledl/io.py
+lib/python${MODPY_VERSION}/site-packages/yledl/jsonhelpers.py
 lib/python${MODPY_VERSION}/site-packages/yledl/kaltura.py
 lib/python${MODPY_VERSION}/site-packages/yledl/localization.py
 lib/python${MODPY_VERSION}/site-packages/yledl/streamfilters.py
