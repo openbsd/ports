@@ -1,9 +1,9 @@
-$OpenBSD: patch-Tests_Unit_GNUmakefile,v 1.9 2020/09/09 07:53:09 sebastia Exp $
+$OpenBSD: patch-Tests_Unit_GNUmakefile,v 1.10 2021/09/14 12:21:58 sebastia Exp $
 Do not hardcode libobjc library name, ask GNUstep what to use.
 Index: Tests/Unit/GNUmakefile
 --- Tests/Unit/GNUmakefile.orig
 +++ Tests/Unit/GNUmakefile
-@@ -43,8 +43,8 @@ $(TEST_TOOL)_CPPFLAGS += \
+@@ -45,8 +45,8 @@ $(TEST_TOOL)_CPPFLAGS += \
  	-Wall -D_GNU_SOURCE -I../../SOPE/ -I../../SoObjects/ -I../../UI/ -I../../OpenChange
  
  ADDITIONAL_LIB_DIRS += \

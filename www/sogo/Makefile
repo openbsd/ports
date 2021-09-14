@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.93 2021/07/09 19:54:25 sebastia Exp $
+# $OpenBSD: Makefile,v 1.94 2021/09/14 12:21:58 sebastia Exp $
 
 COMMENT = 	web based groupware server
 
-VERSION =	5.1.1
+VERSION =	5.2.0
 DISTNAME =	SOGo-${VERSION}
 PKGNAME =	sogo-${VERSION}
 
@@ -25,10 +25,11 @@ MODGNUSTEP_NEEDS_GUI =	No
 WANTLIB +=		c m pthread crypto memcached SBJson
 WANTLIB +=		DOM EOControl GDLAccess NGExtensions NGLdap
 WANTLIB +=		NGMime NGObjWeb NGStreams SaxObjC WEExtensions
-WANTLIB +=		objc2 gnustep-base curl oath sodium zip
+WANTLIB +=		objc2 gnustep-base curl oath sodium ytnef zip
 WANTLIB += ${COMPILER_LIBCXX}
 
 LIB_DEPENDS +=		archivers/libzip \
+			converters/libytnef \
 			devel/libmemcached \
 			net/curl \
 			security/libsodium \
