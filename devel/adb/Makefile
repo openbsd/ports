@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/17 14:49:20 danj Exp $
+# $OpenBSD: Makefile,v 1.4 2021/09/14 01:30:10 ian Exp $
 
 COMMENT =		Android Debug Bridge
 
 V =			5.1.1_r4
 DISTNAME =		adb-${V}
 PKGNAME =		${DISTNAME:S/_r/./}
-REVISION =		0
+REVISION =		1
 
 GH_ACCOUNT =		android
 GH_PROJECT =		platform_system_core

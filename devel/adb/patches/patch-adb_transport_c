@@ -1,0 +1,26 @@
+$OpenBSD: patch-adb_transport_c,v 1.1 2021/09/14 01:30:10 ian Exp $
+
+Add error checking and avoid %n
+
+Index: adb/transport.c
+--- adb/transport.c.orig
++++ adb/transport.c
+@@ -910,13 +910,15 @@ static const char *statename(atransport *t)
+ static void add_qual(char **buf, size_t *buf_size,
+                      const char *prefix, const char *qual, int sanitize_qual)
+ {
+-    size_t len;
+-    int prefix_len;
++    size_t len, prefix_len;
+ 
+     if (!buf || !*buf || !buf_size || !*buf_size || !qual || !*qual)
+         return;
+ 
+-    len = snprintf(*buf, *buf_size, "%s%n%s", prefix, &prefix_len, qual);
++    prefix_len = strlen(prefix);
++    if (prefix_len + strlen(qual) >= *buf_size)
++        return;
++    len = snprintf(*buf, *buf_size, "%s%s", prefix, qual);
+ 
+     if (sanitize_qual) {
+         char *cp;
