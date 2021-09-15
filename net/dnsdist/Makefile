@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2021/05/12 05:49:04 otto Exp $
+# $OpenBSD: Makefile,v 1.23 2021/09/15 17:52:20 otto Exp $
 
 COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
-DISTNAME=		dnsdist-1.6.0
+DISTNAME=		dnsdist-1.6.1
 EXTRACT_SUFX=		.tar.bz2
 
 CATEGORIES=		net
@@ -36,7 +36,6 @@ CONFIGURE_ARGS+=	--without-gnutls \
 			--enable-dnstap \
 			--enable-dns-over-https
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
-			CXXFLAGS="-Wno-deprecated-copy -Wno-deprecated-declarations" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			LIBEDIT_LIBS='-ledit -lcurses' \
 			LIBEDIT_CFLAGS=' '
