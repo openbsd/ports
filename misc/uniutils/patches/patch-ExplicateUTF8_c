@@ -1,0 +1,30 @@
+$OpenBSD: patch-ExplicateUTF8_c,v 1.1 2021/09/15 14:14:22 schwarze Exp $
+
+Remove %n format specifier
+and stop using the platform-dependent function binfmtl().
+We want 32 bits here, not whatever sizeof(long) might be.
+
+Index: ExplicateUTF8.c
+--- ExplicateUTF8.c.orig
++++ ExplicateUTF8.c
+@@ -87,7 +87,7 @@ main(int ac, char **av){
+   int UsefulBits;
+   unsigned char c[6];
+   int i;
+-  UTF32 ch;
++  UTF32 ch, mask;
+   unsigned char *cptr;
+   unsigned char ShiftedByte;
+   char tempstr[33];
+@@ -214,7 +214,10 @@ main(int ac, char **av){
+     printf("%s ",tempstr); 
+   }
+   printf("\n");
+-  printf("This is padded to 32 places with %d zeros: %n%s\n",(32-GotBits),&spaces,binfmtl(ch));
++  spaces = printf("This is padded to 32 places with %d zeros: ",(32-GotBits));
++  for (mask = 1UL << 31; mask; mask >>= 1)
++    putchar(ch & mask ? '1' : '0');
++  putchar('\n');
+   sprintf(tempstr,"                                ");
+   sprintf(tempstr,"%08lX",ch);
+   tempstr[28] = tempstr[7];

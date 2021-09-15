@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2021/06/28 21:34:19 cwen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/09/15 14:14:22 schwarze Exp $
 
 COMMENT=	Unicode utilities
 
 DISTNAME=	uniutils-2.27
-REVISION=	3
+REVISION=	4
 CATEGORIES=	misc
 
 HOMEPAGE=	http://billposer.org/Software/unidesc.html
