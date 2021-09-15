@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.73 2021/08/22 06:59:18 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.74 2021/09/15 05:16:24 rsadowski Exp $
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.33.1
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=		mpv		0.2 # 1.109
 
@@ -21,14 +21,13 @@ EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += EGL GL SDL2 X11 X11-xcb Xau Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xinerama Xrandr Xrender Xss Xv Xxf86vm archive ass
-WANTLIB += avcodec avdevice avfilter avformat avresample avutil
-WANTLIB += bluray c cdio cdio_cdda cdio_paranoia drm dvdnav dvdread
-WANTLIB += epoxy expat fontconfig freetype fribidi gbm glib-2.0
-WANTLIB += graphite2 harfbuzz iconv intl jpeg lcms2 ${MODLUA_WANTLIB}
-WANTLIB += m pcre placebo postproc pthread sndio swresample swscale
-WANTLIB += xcb xcb-dri2 xcb-glx xml2 z
+WANTLIB += EGL GL SDL2 X11 X11-xcb Xau Xdmcp Xext Xfixes Xinerama
+WANTLIB += Xrandr Xrender Xss Xv Xxf86vm archive ass avcodec avdevice
+WANTLIB += avfilter avformat avresample avutil bluray c cdio cdio_cdda
+WANTLIB += cdio_paranoia drm dvdnav dvdread epoxy expat fontconfig
+WANTLIB += freetype fribidi gbm glib-2.0 graphite2 harfbuzz iconv
+WANTLIB += intl jpeg lcms2 ${MODLUA_WANTLIB} m pcre placebo postproc pthread
+WANTLIB += swresample swscale xcb xcb-dri2 xcb-glx xml2 z
 
 MODULES =		lang/lua \
 			lang/python
@@ -67,7 +66,6 @@ CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
 			--enable-dvdnav \
 			--enable-libmpv-shared \
 			--enable-sdl2 \
-			--enable-sndio \
 			--disable-alsa \
 			--disable-caca \
 			--disable-cuda-hwaccel \
@@ -79,7 +77,6 @@ CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
 			--disable-optimize \
 			--disable-pulse \
 			--disable-sixel \
-			--disable-sdl2-audio \
 			--disable-uchardet \
 			--disable-vaapi \
 			--disable-vaapi-drm \
