@@ -1,0 +1,16 @@
+$OpenBSD: patch-modules_regexp_Makefile_in,v 1.1 2021/09/15 19:13:46 naddy Exp $
+
+Fix rules for parallel make.
+
+Index: modules/regexp/Makefile.in
+--- modules/regexp/Makefile.in.orig
++++ modules/regexp/Makefile.in
+@@ -44,7 +44,7 @@ preload.lisp : $(srcdir)/preload.lisp
+ am--refresh :
+ 
+ # regexp relies on src/gllib, so we must also include files in the build dir
+-gllib libgnu_rx.a : force
++gllib libgnu_rx.a &: force
+ 	rm -f libgnu_rx.a
+ 	mkdir -p gllib
+ 	test -f gllib/Makefile || sh config.status gllib/Makefile depfiles
