@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.25 2020/02/22 14:51:48 ajacoutot Exp $
+$OpenBSD: README-main,v 1.26 2021/09/15 12:48:52 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -62,8 +62,10 @@ device must be accessed by both the _cups user and the _saned group:
 e.g. chown _cups:_saned /dev/ugen1.* /dev/usb0 && chmod 660 /dev/ugen1.*
 
 *** WARNING ***
-ulpt(4) needs to be disabled in the kernel (see config(8)) or the printer
-will not be available to libusb.
+ulpt(4) needs to be disabled in the kernel (see bsd.re-config(5)) or the printer
+will not be available to libusb:
+# echo 'disable ulpt' >>/etc/bsd.re-config
+# reboot
 
 PARALLEL
 ========
