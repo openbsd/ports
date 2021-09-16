@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2019/03/19 17:28:32 steven Exp $
+# $OpenBSD: Makefile,v 1.21 2021/09/16 08:54:27 sthen Exp $
 
 COMMENT=	UPnP IGD daemon
 
 DISTNAME=	miniupnpd-2.1
-REVISION=	1
+REVISION=	2
 
 WANTLIB += c crypto kvm ssl
 
