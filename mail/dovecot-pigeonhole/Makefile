@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2021/08/07 12:03:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.79 2021/09/16 19:36:11 sthen Exp $
 
 COMMENT=	Sieve mail filtering for Dovecot
 
@@ -12,7 +12,13 @@ CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}releases/${V_DOVECOT}/
 DPB_PROPERTIES=	parallel
 
-SHARED_LIBS=	dovecot-sieve	3.0
+PATCHFILES=	dovecot-pigeonhole-implicit_keep{9f3002393fe1c1fe317121d03591569dac120739%5E..4596d39908a868783fae9a0c2fd264409c0aaa96}.patch:0
+PATCH_DIST_STRIP= -p1
+MASTER_SITES0=	https://github.com/dovecot/pigeonhole/compare/
+
+REVISION=	0
+
+SHARED_LIBS=	dovecot-sieve	4.0
 
 HOMEPAGE=	https://pigeonhole.dovecot.org/
 
