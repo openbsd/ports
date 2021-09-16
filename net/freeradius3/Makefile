@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2021/07/07 12:28:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2021/09/16 10:18:53 sthen Exp $
 
 PORTROACH=	limit:^3\.
 
@@ -188,7 +188,7 @@ FAKE_FLAGS=	VERBOSE=1 R=${WRKINST} \
 post-configure:
 	sed -i -e 's,/etc/raddb,${SYSCONFDIR}/raddb,g' ${WRKSRC}/man/*/*
 	sed -i -e 's,/usr/local,${TRUEPREFIX},g' ${WRKSRC}/doc/README
-	rm ${WRKSRC}/doc/README.orig
+	rm ${WRKSRC}/doc/README${PATCHORIG}
 
 # pre-create examples dir, otherwise build tries to create it twice and fails.
 pre-install:
