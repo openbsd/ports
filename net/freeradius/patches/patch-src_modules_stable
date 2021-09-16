@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_modules_stable,v 1.1 2021/07/07 12:28:42 sthen Exp $
+$OpenBSD: patch-src_modules_stable,v 1.1 2021/09/16 10:36:39 sthen Exp $
 
 Index: src/modules/stable
 --- src/modules/stable.orig

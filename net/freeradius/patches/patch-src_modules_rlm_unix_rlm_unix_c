@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_modules_rlm_unix_rlm_unix_c,v 1.1 2015/11/19 14:19:05 sthen Exp $
---- src/modules/rlm_unix/rlm_unix.c.orig	Thu Nov 19 14:13:04 2015
-+++ src/modules/rlm_unix/rlm_unix.c	Thu Nov 19 14:13:38 2015
-@@ -211,7 +211,7 @@ static int unix_getpw(UNUSED void *instance, REQUEST *
+$OpenBSD: patch-src_modules_rlm_unix_rlm_unix_c,v 1.2 2021/09/16 10:36:39 sthen Exp $
+--- src/modules/rlm_unix/rlm_unix.c.orig	Thu Nov 19 14:13:59 2015
++++ src/modules/rlm_unix/rlm_unix.c	Thu Nov 19 14:14:18 2015
+@@ -218,7 +218,7 @@ static rlm_rcode_t CC_HINT(nonnull) mod_authorize(UNUS
  		return RLM_MODULE_USERLOCK;
  	}
  #else /* OSFC2 */

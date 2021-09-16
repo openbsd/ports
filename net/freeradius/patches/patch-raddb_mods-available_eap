@@ -1,4 +1,4 @@
-$OpenBSD: patch-raddb_mods-available_eap,v 1.1 2021/07/07 12:28:42 sthen Exp $
+$OpenBSD: patch-raddb_mods-available_eap,v 1.1 2021/09/16 10:36:38 sthen Exp $
 
 This text appears to be to cover OS like Debian where unless overridden
 the default cipher list is "DEFAULT@SECLEVEL=2" which disables TLS 1.0/1.1

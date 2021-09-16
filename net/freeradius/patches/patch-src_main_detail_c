@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_main_detail_c,v 1.6 2021/05/26 12:12:38 sthen Exp $
+$OpenBSD: patch-src_main_detail_c,v 1.1 2021/09/16 10:36:39 sthen Exp $
 
 Cope with 32-bit arch with 64-bit time variables.
 

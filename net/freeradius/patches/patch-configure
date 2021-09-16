@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.10 2021/05/26 12:12:38 sthen Exp $
+$OpenBSD: patch-configure,v 1.9 2021/09/16 10:36:38 sthen Exp $
 
 Don't allow picking up collectdclient, freeradius autoconf's "smart"
 library detection doesn't offer a nice way to do it.

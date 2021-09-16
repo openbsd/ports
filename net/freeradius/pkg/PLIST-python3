@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-python3,v 1.1 2021/07/07 12:28:42 sthen Exp $
+@comment $OpenBSD: PLIST-python3,v 1.1 2021/09/16 10:36:39 sthen Exp $
+@pkgpath net/freeradius3,-python3
 @so lib/freeradius/rlm_python3.so
 share/examples/freeradius/mods-available/python3
 @sample ${FREERADIUS_ETC}/mods-available/python3

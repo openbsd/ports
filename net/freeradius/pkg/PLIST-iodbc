@@ -1,9 +1,34 @@
-@comment $OpenBSD: PLIST-iodbc,v 1.6 2016/06/29 16:14:43 espie Exp $
-@option is-branch
-@conflict freeradius-iodbc-*
-lib/freeradius/rlm_sql_iodbc.so
-share/doc/freeradius/mssql
-share/examples/freeradius/sql/mssql/
-@mode 640
-share/examples/freeradius/sql/mssql/dialup.conf
-share/examples/freeradius/sql/mssql/schema.sql
+@comment $OpenBSD: PLIST-iodbc,v 1.7 2021/09/16 10:36:39 sthen Exp $
+@pkgpath net/freeradius3,-iodbc
+@so lib/freeradius/rlm_sql_iodbc.so
+@group _freeradius
+share/examples/freeradius/mods-config/sql/dhcp/mssql/
+@sample ${FREERADIUS_ETC}/mods-config/sql/dhcp/mssql/
+share/examples/freeradius/mods-config/sql/dhcp/mssql/queries.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/dhcp/mssql/queries.conf
+share/examples/freeradius/mods-config/sql/dhcp/mssql/schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/dhcp/mssql/schema.sql
+share/examples/freeradius/mods-config/sql/ippool-dhcp/mssql/
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool-dhcp/mssql/
+share/examples/freeradius/mods-config/sql/ippool-dhcp/mssql/procedure.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool-dhcp/mssql/procedure.sql
+share/examples/freeradius/mods-config/sql/ippool-dhcp/mssql/queries.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool-dhcp/mssql/queries.conf
+share/examples/freeradius/mods-config/sql/ippool-dhcp/mssql/schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool-dhcp/mssql/schema.sql
+share/examples/freeradius/mods-config/sql/ippool/mssql/
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool/mssql/
+share/examples/freeradius/mods-config/sql/ippool/mssql/procedure.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool/mssql/procedure.sql
+share/examples/freeradius/mods-config/sql/ippool/mssql/queries.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool/mssql/queries.conf
+share/examples/freeradius/mods-config/sql/ippool/mssql/schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool/mssql/schema.sql
+share/examples/freeradius/mods-config/sql/main/mssql/
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/mssql/
+share/examples/freeradius/mods-config/sql/main/mssql/process-radacct.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/mssql/process-radacct.sql
+share/examples/freeradius/mods-config/sql/main/mssql/queries.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/mssql/queries.conf
+share/examples/freeradius/mods-config/sql/main/mssql/schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/mssql/schema.sql

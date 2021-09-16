@@ -1,4 +1,4 @@
-$OpenBSD: patch-scripts_libtool_mk,v 1.2 2015/12/10 09:56:45 sthen Exp $
+$OpenBSD: patch-scripts_libtool_mk,v 1.1 2021/09/16 10:36:38 sthen Exp $
 
 Don't hide command lines.
 

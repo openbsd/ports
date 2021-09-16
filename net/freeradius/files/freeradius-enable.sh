@@ -7,6 +7,15 @@ if [[ $1 != firstrun ]]; then
   exit 1
 fi
 
+if [[ -e ${FREERADIUS_ETC}/attrs ]]; then
+  echo You have a file indicating that you are trying to upgrade from
+  echo FreeRADIUS 2.x to 3.x with existing configuration. You should move
+  echo ${FREERADIUS_ETC} out of the way, reinstall, and rebuild configuration
+  echo based on your old setup. For more information, see
+  echo https://github.com/FreeRADIUS/freeradius-server/blob/v3.0.x/raddb/README.rst
+  exit 1
+fi
+
 # if any of these exist, we are already configured and should bail out
 if [[ -e ${FREERADIUS_ETC}/hints || -e ${FREERADIUS_ETC}/huntgroups || \
 	-e ${FREERADIUS_ETC}/users || -e ${FREERADIUS_ETC}/certs/server.pem || \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1269 2021/09/10 04:35:07 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.1270 2021/09/16 10:36:38 sthen Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -106,7 +106,6 @@
      SUBDIR += fpdns
      SUBDIR += fping
      SUBDIR += freeradius
-     SUBDIR += freeradius3
      SUBDIR += freetalk
      SUBDIR += ftpcopy
      SUBDIR += ftpsesame
@@ -615,7 +614,6 @@
      SUBDIR += py-siphon,python3
      SUBDIR += py-slixmpp,python3
      SUBDIR += py-smbc,python3
-     SUBDIR += py-snmp
      SUBDIR += py-snmp,python3
      SUBDIR += py-socketio-client,python3
      SUBDIR += py-socks
