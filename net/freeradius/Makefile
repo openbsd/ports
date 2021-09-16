@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2021/09/16 10:36:38 sthen Exp $
-
-PORTROACH=	limit:^3\.
+# $OpenBSD: Makefile,v 1.82 2021/09/16 10:38:07 sthen Exp $
 
 COMMENT-main=	RADIUS server implementation
 COMMENT-freetds= freeradius freetds rlm addon
