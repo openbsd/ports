@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2021/09/11 08:14:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2021/09/16 12:04:40 ajacoutot Exp $
 
 BROKEN-aarch64=	old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1.1.11
 BROKEN-armv7=	old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1.1.11
@@ -6,7 +6,7 @@ BROKEN-armv7=	old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1
 COMMENT=	thin wrapper for Terraform that provides extra tools
 
 MODGO_MODNAME=	github.com/gruntwork-io/terragrunt
-MODGO_VERSION=	v0.31.10
+MODGO_VERSION=	v0.32.1
 DISTNAME=	terragrunt-${MODGO_VERSION}
 
 WRKDIST=	${WRKDIR}/github.com/gruntwork-io/terragrunt@${MODGO_VERSION}
@@ -466,6 +466,7 @@ MODGO_MODULES =	\
 	sigs.k8s.io/structured-merge-diff			 v1.0.1-0.20191108220359-b1b620dd3f06 \
 	sigs.k8s.io/structured-merge-diff/v4			 v4.0.1 \
 	sigs.k8s.io/yaml					 v1.2.0
+
 MODGO_MODFILES =	\
 	cloud.google.com/go					 v0.26.0 \
 	cloud.google.com/go					 v0.34.0 \
