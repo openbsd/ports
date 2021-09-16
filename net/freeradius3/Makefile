@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2021/09/16 10:18:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2021/09/16 10:21:20 sthen Exp $
 
 PORTROACH=	limit:^3\.
 
@@ -203,6 +203,6 @@ post-install:
 	chmod -R u+rwX,og+rX ${PREFIX}/share/examples/freeradius/
 	${SUBST_CMD} -c -m 555 ${FILESDIR}/freeradius-enable.sh \
 	    ${PREFIX}/share/freeradius/freeradius-enable.sh
-	rm ${PREFIX}/share/examples/freeradius/mods-available/eap.orig
+	rm ${PREFIX}/share/examples/freeradius/mods-available/eap${PATCHORIG}
 
 .include <bsd.port.mk>
