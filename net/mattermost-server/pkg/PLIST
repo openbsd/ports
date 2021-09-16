@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2021/09/03 23:25:22 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.42 2021/09/16 18:34:53 pvk Exp $
 @newgroup _mattermost:804
 @newuser _mattermost:804:_mattermost:daemon:Mattermost Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/log/mattermost/*
@@ -40,22 +40,22 @@ share/mattermost/client/271.0f868952fcf241879432.js
 share/mattermost/client/271.0f868952fcf241879432.js.map
 share/mattermost/client/385.c10ac832631c219a90f4.js
 share/mattermost/client/385.c10ac832631c219a90f4.js.map
-share/mattermost/client/422.2f04066eb2b815e4d267.js
-share/mattermost/client/422.2f04066eb2b815e4d267.js.map
+share/mattermost/client/422.8c46c12b6bc7569662a8.js
+share/mattermost/client/422.8c46c12b6bc7569662a8.js.map
 share/mattermost/client/424.dcadf390f7a31d3c9282.js
 share/mattermost/client/424.dcadf390f7a31d3c9282.js.map
 share/mattermost/client/507.1ab632e3862fcc05c314.js
 share/mattermost/client/507.1ab632e3862fcc05c314.js.map
-share/mattermost/client/511.7cae08c3db0333498012.css
-share/mattermost/client/511.7cae08c3db0333498012.css.map
-share/mattermost/client/511.ad477da10aa469ba1d64.js
-share/mattermost/client/511.ad477da10aa469ba1d64.js.map
+share/mattermost/client/511.b84b720b7cbf7ae7422c.css
+share/mattermost/client/511.b84b720b7cbf7ae7422c.css.map
+share/mattermost/client/511.c5ac09470241e7749564.js
+share/mattermost/client/511.c5ac09470241e7749564.js.map
 share/mattermost/client/557.51a6e1ac34b811e4c186.js
 share/mattermost/client/557.51a6e1ac34b811e4c186.js.map
-share/mattermost/client/558.24ec78c766879889803b.js
-share/mattermost/client/558.24ec78c766879889803b.js.map
-share/mattermost/client/558.bf27f7c79814074df1ee.css
-share/mattermost/client/558.bf27f7c79814074df1ee.css.map
+share/mattermost/client/558.4a7cfb8ccb38980f1c71.css
+share/mattermost/client/558.4a7cfb8ccb38980f1c71.css.map
+share/mattermost/client/558.5e574bf81d86a50f78b8.js
+share/mattermost/client/558.5e574bf81d86a50f78b8.js.map
 share/mattermost/client/594.f7c0e32448a309ef1b1b.js
 share/mattermost/client/594.f7c0e32448a309ef1b1b.js.map
 share/mattermost/client/6.bba44d03a3270104c0ea.js
@@ -68,8 +68,8 @@ share/mattermost/client/637.c57adc46019d2df8de6a.js
 share/mattermost/client/637.c57adc46019d2df8de6a.js.map
 share/mattermost/client/679.82c82806c6a7da2fe0cb.js
 share/mattermost/client/679.82c82806c6a7da2fe0cb.js.map
-share/mattermost/client/765.4dfe3d9b7bd1e0b9db4f.js
-share/mattermost/client/765.4dfe3d9b7bd1e0b9db4f.js.map
+share/mattermost/client/765.5055e11fc9a6eb5e4d75.js
+share/mattermost/client/765.5055e11fc9a6eb5e4d75.js.map
 share/mattermost/client/765.e0bfc5fc84bf7d953394.css
 share/mattermost/client/765.e0bfc5fc84bf7d953394.css.map
 share/mattermost/client/77.bdb45976c5ed1b56bae2.js
@@ -90,8 +90,8 @@ share/mattermost/client/865.fcd61e46c17b6264fe53.js.map
 share/mattermost/client/881.f6e0b8de4e7205995bea.js
 share/mattermost/client/881.f6e0b8de4e7205995bea.js.LICENSE.txt
 share/mattermost/client/881.f6e0b8de4e7205995bea.js.map
-share/mattermost/client/920.8e794e12fde6065f7cb3.js
-share/mattermost/client/920.8e794e12fde6065f7cb3.js.map
+share/mattermost/client/920.c30ddf4d1b6a8ad6bf0a.js
+share/mattermost/client/920.c30ddf4d1b6a8ad6bf0a.js.map
 share/mattermost/client/930.db71c0ff2c7f7b4ff516.js
 share/mattermost/client/930.db71c0ff2c7f7b4ff516.js.map
 share/mattermost/client/emoji/
@@ -3689,11 +3689,11 @@ share/mattermost/client/images/upgrade.svg
 share/mattermost/client/images/warning.png
 share/mattermost/client/images/waves.svg
 share/mattermost/client/images/welcome_illustration.png
-share/mattermost/client/main.e298fd1f822f98d211d9.css
-share/mattermost/client/main.e298fd1f822f98d211d9.css.map
-share/mattermost/client/main.f843da368468ef26a464.js
-share/mattermost/client/main.f843da368468ef26a464.js.LICENSE.txt
-share/mattermost/client/main.f843da368468ef26a464.js.map
+share/mattermost/client/main.0dd1967286f087f9765f.css
+share/mattermost/client/main.0dd1967286f087f9765f.css.map
+share/mattermost/client/main.b5253df6ae1f2b51cb60.js
+share/mattermost/client/main.b5253df6ae1f2b51cb60.js.LICENSE.txt
+share/mattermost/client/main.b5253df6ae1f2b51cb60.js.map
 share/mattermost/client/manifest.json
 share/mattermost/client/pdfjsWorker.607c45ab589db9be5567.js
 share/mattermost/client/pdfjsWorker.607c45ab589db9be5567.js.LICENSE.txt
