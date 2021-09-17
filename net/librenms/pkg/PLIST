@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.83 2021/08/25 23:46:02 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.84 2021/09/17 10:46:15 sthen Exp $
 @ask-update librenms-<1.60v0 pkg_add cannot handle this update directly. Cancel now, pkg_delete librenms, then install the new version.
 @newgroup _librenms:755
 @newuser _librenms:755:_librenms:daemon:librenms user:${INSTDIR}:/sbin/nologin
@@ -176,6 +176,7 @@ librenms/LibreNMS/Interfaces/Data/Datastore.php
 librenms/LibreNMS/Interfaces/Discovery/
 librenms/LibreNMS/Interfaces/Discovery/DiscoveryItem.php
 librenms/LibreNMS/Interfaces/Discovery/DiscoveryModule.php
+librenms/LibreNMS/Interfaces/Discovery/IsIsDiscovery.php
 librenms/LibreNMS/Interfaces/Discovery/MempoolsDiscovery.php
 librenms/LibreNMS/Interfaces/Discovery/MplsDiscovery.php
 librenms/LibreNMS/Interfaces/Discovery/OSDetection.php
@@ -215,6 +216,7 @@ librenms/LibreNMS/Interfaces/Models/
 librenms/LibreNMS/Interfaces/Models/Keyable.php
 librenms/LibreNMS/Interfaces/Module.php
 librenms/LibreNMS/Interfaces/Polling/
+librenms/LibreNMS/Interfaces/Polling/IsIsPolling.php
 librenms/LibreNMS/Interfaces/Polling/MempoolsPolling.php
 librenms/LibreNMS/Interfaces/Polling/MplsPolling.php
 librenms/LibreNMS/Interfaces/Polling/NacPolling.php
@@ -333,7 +335,9 @@ librenms/LibreNMS/OS/Gepulsar.php
 librenms/LibreNMS/OS/HarmonyEnhanced.php
 librenms/LibreNMS/OS/Helios.php
 librenms/LibreNMS/OS/HiveosWireless.php
-librenms/LibreNMS/OS/Horizon.php
+librenms/LibreNMS/OS/HorizonCompact.php
+librenms/LibreNMS/OS/HorizonCompactplus.php
+librenms/LibreNMS/OS/HorizonDuo.php
 librenms/LibreNMS/OS/Hpmsm.php
 librenms/LibreNMS/OS/Ifotec.php
 librenms/LibreNMS/OS/InfineraGroove.php
@@ -628,6 +632,8 @@ librenms/app/Console/Commands/BashCompletionCommand.php
 librenms/app/Console/Commands/DevCheckCommand.php
 librenms/app/Console/Commands/DevSimulate.php
 librenms/app/Console/Commands/GetConfigCommand.php
+librenms/app/Console/Commands/InternalHttpRequest.php
+librenms/app/Console/Commands/KeyRotate.php
 librenms/app/Console/Commands/SchemaDumpCommand.php
 librenms/app/Console/Commands/SetConfigCommand.php
 librenms/app/Console/Commands/SmokepingGenerateCommand.php
@@ -739,6 +745,7 @@ librenms/app/Http/Controllers/Select/GraphController.php
 librenms/app/Http/Controllers/Select/GraylogStreamsController.php
 librenms/app/Http/Controllers/Select/LocationController.php
 librenms/app/Http/Controllers/Select/MuninPluginController.php
+librenms/app/Http/Controllers/Select/PollerGroupController.php
 librenms/app/Http/Controllers/Select/PortController.php
 librenms/app/Http/Controllers/Select/PortFieldController.php
 librenms/app/Http/Controllers/Select/PortGroupController.php
@@ -947,7 +954,12 @@ librenms/app/Providers/TokenUserProvider.php
 librenms/app/StreamedOutput.php
 librenms/app/View/
 librenms/app/View/Components/
+librenms/app/View/Components/DeviceLink.php
+librenms/app/View/Components/Graph.php
+librenms/app/View/Components/GraphRow.php
 librenms/app/View/Components/Panel.php
+librenms/app/View/Components/Popup.php
+librenms/app/View/Components/PortLink.php
 librenms/app/View/Components/Submenu.php
 librenms/artisan
 librenms/billing-calculate.php
@@ -1186,6 +1198,7 @@ librenms/database/migrations/2020_05_24_212054_poller_cluster_settings.php
 librenms/database/migrations/2020_05_30_162638_remove_mib_polling_tables.php
 librenms/database/migrations/2020_06_06_222222_create_device_outages_table.php
 librenms/database/migrations/2020_06_23_00522_alter_availability_perc_column.php
+librenms/database/migrations/2020_06_24_155119_drop_ports_if_high_speed.php
 librenms/database/migrations/2020_07_27_00522_alter_devices_snmp_algo_columns.php
 librenms/database/migrations/2020_07_29_143221_add_device_perf_index.php
 librenms/database/migrations/2020_08_28_212054_drop_uptime_column_outages.php
@@ -1227,7 +1240,10 @@ librenms/database/migrations/2021_06_07_123600_create_sessions_table.php
 librenms/database/migrations/2021_06_11_084830_slas_add_rtt_field.php
 librenms/database/migrations/2021_07_06_1845_alter_bill_history_max_min.php
 librenms/database/migrations/2021_08_04_102914_add_syslog_indexes.php
+librenms/database/migrations/2021_08_26_093522_config_value_to_medium_text.php
 librenms/database/migrations/2021_25_01_0127_create_isis_adjacencies_table.php
+librenms/database/migrations/2021_25_01_0128_isis_adjacencies_add_admin_status.php
+librenms/database/migrations/2021_25_01_0129_isis_adjacencies_nullable.php
 librenms/database/schema/
 librenms/database/schema/mysql-schema.dump
 librenms/database/schema/testing-schema.dump
@@ -1448,7 +1464,9 @@ librenms/doc/img/varnish_block.png
 librenms/doc/img/webui_add_device.png
 librenms/doc/img/world-map-widget-settings.png
 librenms/doc/index.md
-librenms/doc/librenms-docs.js
+librenms/doc/js/
+librenms/doc/js/docs-install-tab.js
+librenms/doc/js/docs-settings-links.js
 librenms/doc/librenms.css
 librenms/doc/robots.txt
 librenms/html/
@@ -1521,7 +1539,9 @@ librenms/html/css/select2.min.css
 librenms/html/css/styles-wide.css
 librenms/html/css/styles.css
 librenms/html/css/tagmanager.css
+librenms/html/css/tailwind.min.css
 librenms/html/css/toastr.min.css
+librenms/html/css/vendor.css
 librenms/html/css/vis.min.css
 librenms/html/csv.php
 librenms/html/data.php
@@ -2059,6 +2079,7 @@ librenms/html/images/os/viprinux.png
 librenms/html/images/os/vivotek.svg
 librenms/html/images/os/vmware.svg
 librenms/html/images/os/voswall.png
+librenms/html/images/os/vpp.png
 librenms/html/images/os/vubiq.png
 librenms/html/images/os/vyatta.png
 librenms/html/images/os/vyos.svg
@@ -2094,6 +2115,7 @@ librenms/html/js/RrdGraphJS/MoveCursor.cur
 librenms/html/js/RrdGraphJS/moment-timezone-with-data.js
 librenms/html/js/RrdGraphJS/q-5.0.2.min.js
 librenms/html/js/RrdGraphJS/rrdGraphPng.js
+librenms/html/js/alpine.min.js
 librenms/html/js/app.js
 librenms/html/js/boot.js
 librenms/html/js/bootstrap-datetimepicker.min.js
@@ -2560,6 +2582,9 @@ librenms/includes/definitions/discovery/hikvision-nvr.yaml
 librenms/includes/definitions/discovery/himoinsa-gensets.yaml
 librenms/includes/definitions/discovery/hirschmann.yaml
 librenms/includes/definitions/discovery/hiveos-wireless.yaml
+librenms/includes/definitions/discovery/horizon-compact.yaml
+librenms/includes/definitions/discovery/horizon-compactplus.yaml
+librenms/includes/definitions/discovery/horizon-duo.yaml
 librenms/includes/definitions/discovery/hpblmos.yaml
 librenms/includes/definitions/discovery/hpe-ilo.yaml
 librenms/includes/definitions/discovery/hpe-ipdu.yaml
@@ -2781,6 +2806,7 @@ librenms/includes/definitions/discovery/xirrus_aos.yaml
 librenms/includes/definitions/discovery/xos.yaml
 librenms/includes/definitions/discovery/zmtel.yaml
 librenms/includes/definitions/discovery/zxdsl.yaml
+librenms/includes/definitions/discovery/zxr10.yaml
 librenms/includes/definitions/discovery/zynos.yaml
 librenms/includes/definitions/discovery/zywall.yaml
 librenms/includes/definitions/discovery/zyxelac.yaml
@@ -2894,7 +2920,9 @@ librenms/includes/definitions/himoinsa-gensets.yaml
 librenms/includes/definitions/hirschmann.yaml
 librenms/includes/definitions/hiveos-network.yaml
 librenms/includes/definitions/hiveos-wireless.yaml
-librenms/includes/definitions/horizon.yaml
+librenms/includes/definitions/horizon-compact.yaml
+librenms/includes/definitions/horizon-compactplus.yaml
+librenms/includes/definitions/horizon-duo.yaml
 librenms/includes/definitions/hpblmos.yaml
 librenms/includes/definitions/hpe-ilo.yaml
 librenms/includes/definitions/hpe-ipdu.yaml
@@ -5426,7 +5454,6 @@ librenms/includes/polling/os/geist-pdu.inc.php
 librenms/includes/polling/os/geist-watchdog.inc.php
 librenms/includes/polling/os/gestetner.inc.php
 librenms/includes/polling/os/halon.inc.php
-librenms/includes/polling/os/horizon.inc.php
 librenms/includes/polling/os/hpe-ipdu.inc.php
 librenms/includes/polling/os/hpe-msa.inc.php
 librenms/includes/polling/os/hpe-msl.inc.php
@@ -7439,8 +7466,13 @@ librenms/mibs/drac/
 librenms/mibs/drac/IDRAC-MIB
 librenms/mibs/drac/IDRAC-MIB-SMIv2
 librenms/mibs/dragonwave/
+librenms/mibs/dragonwave/DRAGONWAVE-HCP-MIB
+librenms/mibs/dragonwave/DRAGONWAVE-HORIZON-IDU-MIB
 librenms/mibs/dragonwave/DWI-HARMONY-PRIVATE-MIB
 librenms/mibs/dragonwave/EQUIPMENT-COMMON-MIB
+librenms/mibs/dragonwave/HORIZON-EQUIPMENT-LOG-MIB
+librenms/mibs/dragonwave/HORIZON-MIB
+librenms/mibs/dragonwave/HORIZON-ODU-MIB
 librenms/mibs/dragonwave/MWR-ETHERNET-MIB
 librenms/mibs/dragonwave/MWR-RADIO-MC-MIB
 librenms/mibs/eaton/
@@ -10067,6 +10099,8 @@ librenms/mibs/xirrus_aos/
 librenms/mibs/xirrus_aos/XIRRUS-MIB
 librenms/mibs/zmtel/
 librenms/mibs/zmtel/ZMTEL-ODU-MIB
+librenms/mibs/zte/
+librenms/mibs/zte/ZXR10-MIB
 librenms/mibs/zyxel/
 librenms/mibs/zyxel/IES5206-MIB
 librenms/mibs/zyxel/IES5206-TRAPS-MIB
@@ -10124,6 +10158,8 @@ librenms/poller.php
 librenms/renamehost.php
 librenms/requirements.txt
 librenms/resources/
+librenms/resources/css/
+librenms/resources/css/app.css
 librenms/resources/js/
 librenms/resources/js/app.js
 librenms/resources/js/bootstrap.js
@@ -10137,7 +10173,6 @@ librenms/resources/js/components/LibrenmsSettings.vue
 librenms/resources/js/components/PollerSettings.vue
 librenms/resources/js/components/SettingArray.vue
 librenms/resources/js/components/SettingBoolean.vue
-librenms/resources/js/components/SettingDashboardSelect.vue
 librenms/resources/js/components/SettingDirectory.vue
 librenms/resources/js/components/SettingEmail.vue
 librenms/resources/js/components/SettingExecutable.vue
@@ -10148,6 +10183,7 @@ librenms/resources/js/components/SettingNull.vue
 librenms/resources/js/components/SettingOxidizedMaps.vue
 librenms/resources/js/components/SettingPassword.vue
 librenms/resources/js/components/SettingSelect.vue
+librenms/resources/js/components/SettingSelectDynamic.vue
 librenms/resources/js/components/SettingSnmp3auth.vue
 librenms/resources/js/components/SettingText.vue
 librenms/resources/js/components/Tab.vue
@@ -10275,7 +10311,13 @@ librenms/resources/views/auth/login-form.blade.php
 librenms/resources/views/auth/login.blade.php
 librenms/resources/views/auth/public-status.blade.php
 librenms/resources/views/components/
+librenms/resources/views/components/device-link-no-access.blade.php
+librenms/resources/views/components/device-link.blade.php
+librenms/resources/views/components/graph-row.blade.php
+librenms/resources/views/components/graph.blade.php
 librenms/resources/views/components/panel.blade.php
+librenms/resources/views/components/popup.blade.php
+librenms/resources/views/components/port-link.blade.php
 librenms/resources/views/components/submenu.blade.php
 librenms/resources/views/device/
 librenms/resources/views/device-group/
@@ -10283,8 +10325,12 @@ librenms/resources/views/device-group/create.blade.php
 librenms/resources/views/device-group/edit.blade.php
 librenms/resources/views/device-group/form.blade.php
 librenms/resources/views/device-group/index.blade.php
+librenms/resources/views/device/action-icon.blade.php
+librenms/resources/views/device/actions.blade.php
 librenms/resources/views/device/header.blade.php
 librenms/resources/views/device/index.blade.php
+librenms/resources/views/device/list/
+librenms/resources/views/device/list/hostname.blade.php
 librenms/resources/views/device/submenu.blade.php
 librenms/resources/views/device/tabs/
 librenms/resources/views/device/tabs/latency.blade.php
@@ -10748,6 +10794,7 @@ librenms/storage/logs/
 @owner
 @group
 librenms/syslog.php
+librenms/tailwind.config.js
 librenms/validate.php
 librenms/vendor/
 librenms/vendor/amenadiel/
