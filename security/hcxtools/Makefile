@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2021/05/22 21:54:07 sebastia Exp $
+# $OpenBSD: Makefile,v 1.13 2021/09/17 12:28:14 sebastia Exp $
 
 COMMENT =	convert pcap dumps to hashcat or John the Ripper input
 
 GH_ACCOUNT =	ZerBea
 GH_PROJECT =	hcxtools
-GH_TAGNAME =	6.2.0
+GH_TAGNAME =	6.2.4
 DISTNAME =	hcxtools-${GH_TAGNAME}
 
 CATEGORIES =	security
