@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.250 2021/09/02 11:11:58 robert Exp $
+# $OpenBSD: Makefile,v 1.251 2021/09/17 06:31:57 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -26,7 +26,7 @@ SHARED_LIBS +=  wpg-0.3-lo                3.3 # 3.3
 SHARED_LIBS +=  wps-0.4-lo                4.12 # 4.12
 
 BV=		7.2
-VERSION=	${BV}.0.4
+VERSION=	${BV}.1.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
