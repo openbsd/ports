@@ -1,12 +1,56 @@
-@comment $OpenBSD: PLIST,v 1.17 2020/12/02 06:44:11 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.18 2021/09/17 19:53:27 sthen Exp $
+@pkgpath multimedia/mkvtoolnix,no_x11
 @bin bin/mkvextract
 @bin bin/mkvinfo
 @bin bin/mkvmerge
 @bin bin/mkvpropedit
+@bin bin/mkvtoolnix-gui
 @man man/man1/mkvextract.1
 @man man/man1/mkvinfo.1
 @man man/man1/mkvmerge.1
 @man man/man1/mkvpropedit.1
+@man man/man1/mkvtoolnix-gui.1
+share/applications/org.bunkus.mkvtoolnix-gui.desktop
+share/icons/hicolor/128x128/apps/mkvextract.png
+share/icons/hicolor/128x128/apps/mkvinfo.png
+share/icons/hicolor/128x128/apps/mkvmerge.png
+share/icons/hicolor/128x128/apps/mkvpropedit.png
+share/icons/hicolor/128x128/apps/mkvtoolnix-gui.png
+share/icons/hicolor/16x16/apps/mkvextract.png
+share/icons/hicolor/16x16/apps/mkvinfo.png
+share/icons/hicolor/16x16/apps/mkvmerge.png
+share/icons/hicolor/16x16/apps/mkvpropedit.png
+share/icons/hicolor/16x16/apps/mkvtoolnix-gui.png
+share/icons/hicolor/24x24/apps/mkvextract.png
+share/icons/hicolor/24x24/apps/mkvinfo.png
+share/icons/hicolor/24x24/apps/mkvmerge.png
+share/icons/hicolor/24x24/apps/mkvpropedit.png
+share/icons/hicolor/24x24/apps/mkvtoolnix-gui.png
+share/icons/hicolor/256x256/apps/mkvextract.png
+share/icons/hicolor/256x256/apps/mkvinfo.png
+share/icons/hicolor/256x256/apps/mkvmerge.png
+share/icons/hicolor/256x256/apps/mkvpropedit.png
+share/icons/hicolor/256x256/apps/mkvtoolnix-gui.png
+share/icons/hicolor/32x32/apps/mkvextract.png
+share/icons/hicolor/32x32/apps/mkvinfo.png
+share/icons/hicolor/32x32/apps/mkvmerge.png
+share/icons/hicolor/32x32/apps/mkvpropedit.png
+share/icons/hicolor/32x32/apps/mkvtoolnix-gui.png
+share/icons/hicolor/48x48/apps/mkvextract.png
+share/icons/hicolor/48x48/apps/mkvinfo.png
+share/icons/hicolor/48x48/apps/mkvmerge.png
+share/icons/hicolor/48x48/apps/mkvpropedit.png
+share/icons/hicolor/48x48/apps/mkvtoolnix-gui.png
+share/icons/hicolor/64x64/apps/mkvextract.png
+share/icons/hicolor/64x64/apps/mkvinfo.png
+share/icons/hicolor/64x64/apps/mkvmerge.png
+share/icons/hicolor/64x64/apps/mkvpropedit.png
+share/icons/hicolor/64x64/apps/mkvtoolnix-gui.png
+share/icons/hicolor/96x96/apps/mkvextract.png
+share/icons/hicolor/96x96/apps/mkvinfo.png
+share/icons/hicolor/96x96/apps/mkvmerge.png
+share/icons/hicolor/96x96/apps/mkvpropedit.png
+share/icons/hicolor/96x96/apps/mkvtoolnix-gui.png
 share/locale/bg/LC_MESSAGES/mkvtoolnix.mo
 share/locale/ca/LC_MESSAGES/mkvtoolnix.mo
 share/locale/cs/LC_MESSAGES/mkvtoolnix.mo
@@ -35,4 +79,14 @@ share/locale/tr/LC_MESSAGES/mkvtoolnix.mo
 share/locale/uk/LC_MESSAGES/mkvtoolnix.mo
 share/locale/zh_CN/LC_MESSAGES/mkvtoolnix.mo
 share/locale/zh_TW/LC_MESSAGES/mkvtoolnix.mo
-!%%no_x11%%
+share/metainfo/
+share/metainfo/org.bunkus.mkvtoolnix-gui.appdata.xml
+share/mime/packages/org.bunkus.mkvtoolnix-gui.xml
+share/mkvtoolnix/
+share/mkvtoolnix/sounds/
+share/mkvtoolnix/sounds/finished-1.ogg
+share/mkvtoolnix/sounds/finished-2.ogg
+share/mkvtoolnix/sounds/finished-3.ogg
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-mime-database
+@tag update-desktop-database

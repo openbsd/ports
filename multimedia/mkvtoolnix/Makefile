@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.106 2021/09/07 05:58:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.107 2021/09/17 19:53:27 sthen Exp $
 
 COMMENT=	create, alter and inspect Matroska files
 
 DISTNAME=	mkvtoolnix-60.0.0
+REVISION=	0
 
 CATEGORIES=	multimedia x11
 
@@ -13,8 +14,10 @@ MAINTAINER=	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} FLAC Qt5Core c dvdread ebml fmt
-WANTLIB += gmp iconv intl m matroska ogg pugixml vorbis z
+WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += FLAC Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
+WANTLIB += Qt5Network Qt5Widgets c cmark dvdread ebml fmt gmp
+WANTLIB += iconv intl m matroska ogg pugixml vorbis z
 
 MASTER_SITES=	https://www.bunkus.org/videotools/mkvtoolnix/sources/
 
@@ -47,13 +50,17 @@ LIB_DEPENDS=	audio/flac \
 		devel/gmp \
 		devel/libdvdread \
 		multimedia/libmatroska>=1.6.2 \
+		textproc/cmark \
 		textproc/libebml>=1.4.0 \
-		textproc/pugixml
+		textproc/pugixml \
+		x11/qt5/qtmultimedia
 
-MAKE_ENV+=	V=1
+RUN_DEPENDS=	devel/desktop-file-utils \
+		misc/shared-mime-info \
+		x11/gtk+3,-guic
 
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.69
+AUTOCONF_VERSION= 2.71
 
 CONFIGURE_ARGS=	--disable-optimization \
 		--disable-update-check \
@@ -64,30 +71,13 @@ CONFIGURE_ARGS=	--disable-optimization \
 		--with-boost-regex=boost_regex \
 		--with-docbook-xsl-root=${LOCALBASE}/share/xsl/docbook
 
+MAKE_ENV+=	V=1
 CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib -L${MODQT5_LIBDIR}
 
 CONFIGURE_ENV+=	LCONVERT="${LOCALBASE}/lib/qt5/bin/lconvert" \
 		CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
-
-FLAVORS=	no_x11
-FLAVOR?=
-
-.if ${FLAVOR:Mno_x11}
-CONFIGURE_ARGS+=	--disable-gui
-.else
-
-WANTLIB += Qt5Concurrent Qt5DBus Qt5Gui Qt5Multimedia
-WANTLIB += Qt5Network Qt5Widgets cmark
-
-LIB_DEPENDS+=	textproc/cmark \
-		x11/qt5/qtmultimedia
-
-RUN_DEPENDS+=	devel/desktop-file-utils \
-		misc/shared-mime-info \
-		x11/gtk+3,-guic
-.endif
 
 pre-patch:
 	@cd ${WRKSRC}/src/mkvtoolnix-gui/jobs/program_runner/ && \
