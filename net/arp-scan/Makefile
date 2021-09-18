@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.61 2021/09/08 21:49:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2021/09/18 08:58:31 sthen Exp $
 
 GH_ACCOUNT =	royhills
 GH_PROJECT =	arp-scan
-GH_COMMIT =	22f2650d80b9b82a652a63c5a5558c4c5178b821
-DISTNAME =	arp-scan-1.9.7pl20210904
+GH_COMMIT =	7aaa3a67a885dfa507ce27bc700b12697f32b6c4
+DISTNAME =	arp-scan-1.9.7pl20210914
 
 COMMENT-main =	ARP scanning and fingerprinting tool
 PKGNAME-main =	${DISTNAME}
