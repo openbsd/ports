@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2021/09/03 23:04:49 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2021/09/18 11:06:41 sthen Exp $
 @pkgpath emulators/qemu
 @bin bin/elf2dmp
 @bin bin/qemu-edid
@@ -37,7 +37,7 @@
 @bin bin/qemu-system-x86_64
 @bin bin/qemu-system-xtensa
 @bin bin/qemu-system-xtensaeb
-include/qemu-plugin.h
+%%plugins%%
 @man man/man1/qemu-img.1
 @man man/man1/qemu-storage-daemon.1
 @man man/man1/qemu.1

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.214 2021/09/04 20:25:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.215 2021/09/18 11:06:40 sthen Exp $
 
 ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc powerpc64 riscv64 sparc64
 DPB_PROPERTIES=	parallel
@@ -13,6 +13,8 @@ PKGNAME-ga=	qemu-ga-${VERSION}
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 EXTRACT_SUFX=	.tar.xz
+
+REVISION-main=	0
 
 HOMEPAGE=	https://www.qemu.org/
 
@@ -113,6 +115,15 @@ TEST_TARGET=	check
 # XXX Optimizer bug, using -O2 causes segfaults, -O1 linking errors
 .if ${MACHINE_ARCH:Mpowerpc}
 CFLAGS+=	-O0
+.endif
+
+.include <bsd.port.arch.mk>
+
+# Only lld has --dynamic-list
+.if ${PROPERTIES:Mlld}
+PKG_ARGS+=	-Dplugins=1
+.else
+PKG_ARGS+=	-Dplugins=0
 .endif
 
 post-install:
