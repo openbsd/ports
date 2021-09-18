@@ -2,6 +2,3 @@ MKVToolnix: cross-platform tools for Matroska.
 With these tools one can get information about (mkvinfo) Matroska files,
 extract tracks/data from (mkvextract) Matroska files and create
 (mkvmerge) Matroska files from other media files.
-
-Available flavor:
-	no_x11 - do not build the Qt 5 frontend
