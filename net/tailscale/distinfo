@@ -1113,7 +1113,7 @@ SHA256 (go_modules/mvdan.cc/unparam/@v/v0.0.0-20200501210554-b37ab49443f7.mod) =
 SHA256 (go_modules/mvdan.cc/unparam/@v/v0.0.0-20200501210554-b37ab49443f7.zip) = n8gd/yYIO/fkIVCEuUDf7ylbhiXL5o71tOLhzTrJ4ks=
 SHA256 (go_modules/rsc.io/binaryregexp/@v/v0.2.0.mod) = AyRzu+VUpUpEX6hVu7K/piNNeG9h8ZJt6WtaqF6R8T0=
 SHA256 (go_modules/rsc.io/binaryregexp/@v/v0.2.0.zip) = s+cGqiePp/iA0y+hzEDvgoLR/H1uADVlee0NuI87AEc=
-SHA256 (tailscale.com-v1.14.0.zip) = KRMzjflqKXRpH8i695D6OT22cNJfiNiXkTRHj9teI1Y=
+SHA256 (tailscale.com-v1.14.3.zip) = pkm9wJMJ3JcVT59VRCCXWiQc17hTqEwKYgHzlr68ejQ=
 SIZE (go_modules/4d63.com/gochecknoglobals/@v/v0.0.0-20201008074935-acfc0b28355a.mod) = 105
 SIZE (go_modules/4d63.com/gochecknoglobals/@v/v0.0.0-20201008074935-acfc0b28355a.zip) = 14082
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
@@ -2229,4 +2229,4 @@ SIZE (go_modules/mvdan.cc/unparam/@v/v0.0.0-20200501210554-b37ab49443f7.mod) = 2
 SIZE (go_modules/mvdan.cc/unparam/@v/v0.0.0-20200501210554-b37ab49443f7.zip) = 28247
 SIZE (go_modules/rsc.io/binaryregexp/@v/v0.2.0.mod) = 36
 SIZE (go_modules/rsc.io/binaryregexp/@v/v0.2.0.zip) = 450232
-SIZE (tailscale.com-v1.14.0.zip) = 1084547
+SIZE (tailscale.com-v1.14.3.zip) = 1087553
