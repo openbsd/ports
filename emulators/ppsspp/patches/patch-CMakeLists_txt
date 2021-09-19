@@ -1,10 +1,14 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.5 2020/08/07 22:54:09 bentley Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.6 2021/09/19 00:34:55 bentley Exp $
+
+- fix includes
+- honor CFLAGS and DEBUG
+- set _POSIX_C_SOURCE=200809L for locale_t (build fails otherwise)
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -188,6 +188,8 @@ endif()
- if(NOT LIBRETRO)
+@@ -202,6 +202,8 @@ endif()
+ if(NOT LIBRETRO AND NOT IOS)
  	find_package(SDL2)
  endif()
 +include_directories(${X11BASE}/include)
@@ -12,25 +16,25 @@ Index: CMakeLists.txt
  include(FindThreads)
  
  if(APPLE)
-@@ -254,13 +256,13 @@ if(NOT MSVC)
- 		add_definitions(-DUSE_ADDRESS_SANITIZER)
+@@ -293,13 +295,13 @@ if(NOT MSVC)
+ 		endif()
  	endif()
  
 -	set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -D_DEBUG")
 +	set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -D_DEBUG")
  	set(CMAKE_CXX_FLAGS_MINSIZEREL "${CMAKE_CXX_FLAGS_MINSIZEREL} -Os -D_NDEBUG")
--	set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3 -D_NDEBUG")
+-	set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O2 -D_NDEBUG")
 +	set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -D_NDEBUG")
  	set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO} -O2 -g -D_NDEBUG")
 -	set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -g -D_DEBUG")
 +	set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -D_DEBUG")
  	set(CMAKE_C_FLAGS_MINSIZEREL "${CMAKE_C_FLAGS_MINSIZEREL} -Os -D_NDEBUG")
--	set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -O3 -D_NDEBUG")
+-	set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -O2 -D_NDEBUG")
 +	set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -D_NDEBUG")
  	set(CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELWITHDEBINFO} -O2 -g -D_NDEBUG")
  	#TODO: Remove this and include the file properly everywhere it makes sense
  	# First step is too use the macros everywhere
-@@ -301,7 +303,6 @@ if(NOT MSVC)
+@@ -335,7 +337,6 @@ if(NOT MSVC)
  		if(NOT ${CMAKE_C_COMPILER_ID} STREQUAL "Intel" AND NOT ${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang")
  			add_definitions(-Wno-psabi)
  		endif()
@@ -38,11 +42,20 @@ Index: CMakeLists.txt
  		add_definitions(-D_XOPEN_SOURCE_EXTENDED -D__BSD_VISIBLE=1)
  		add_definitions(-D_LARGEFILE64_SOURCE=1 -D_FILE_OFFSET_BITS=64)
  	elseif(ANDROID)
-@@ -597,6 +598,7 @@ endif()
- find_package(LibZip)
+@@ -792,6 +793,7 @@ endif()
+ find_package(LIBZIP)
  if(LIBZIP_FOUND AND USE_SYSTEM_LIBZIP)
  	add_definitions(-DSHARED_LIBZIP)
 +	include_directories(${LIBZIP_INCLUDE_DIRS})
  else()
  	add_library(libzip STATIC
- 		ext/native/ext/libzip/zip.h
+ 		ext/libzip/zip.h
+@@ -1873,7 +1875,7 @@ if(USE_MINIUPNPC)
+ 	
+ 	if (NOT WIN32)
+ 	  add_definitions (-DMINIUPNPC_SET_SOCKET_TIMEOUT)
+-	  add_definitions (-D_BSD_SOURCE -D_DEFAULT_SOURCE -D_POSIX_C_SOURCE=200112L)
++	  add_definitions (-D_BSD_SOURCE -D_DEFAULT_SOURCE -D_POSIX_C_SOURCE=200809L)
+ 	endif()
+ 	if (MACOSX)
+ 	  add_definitions (-D_DARWIN_C_SOURCE)

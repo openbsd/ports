@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2021/08/07 16:57:07 jca Exp $
+# $OpenBSD: Makefile,v 1.17 2021/09/19 00:34:55 bentley Exp $
 
 # See https://github.com/hrydgard/ppsspp/issues/8823
 NOT_FOR_ARCHS =	${BE_ARCHS}
@@ -12,24 +12,26 @@ COMMENT =	Sony PlayStation Portable emulator
 
 GH_ACCOUNT =	hrydgard
 GH_PROJECT =	ppsspp
-GH_TAGNAME =	v1.10.3
-REVISION =	0
+GH_TAGNAME =	v1.11.3
 
 GLSLANG =	d0850f875ec392a130ccf00018dab458b546f27c
-PPSSPP_LANG =	1c64b8fbd3cb6bd87935eb53f302f7de6f86e209
+PPSSPP_LANG =	6bd5b4bc983917ea8402f73c726b46e36f3de0b4
 SPIRV_CROSS =	a1f7c8dc8ea2f94443951ee27003bffa562c1f13
 ARMIPS =	7885552b208493a6a0f21663770c446c3ba65576
+MINIUPNP =	7e229ddd635933239583ab190d9b614bde018157
 
 MASTER_SITES0 =	https://github.com/hrydgard/glslang/archive/
 MASTER_SITES1 =	https://github.com/hrydgard/ppsspp-lang/archive/
 MASTER_SITES2 =	https://github.com/hrydgard/SPIRV-Cross/archive/
 MASTER_SITES3 =	https://github.com/Kingcom/armips/archive/
+MASTER_SITES4 =	https://github.com/hrydgard/miniupnp/archive/
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		${GLSLANG}.tar.gz:0 \
 		${PPSSPP_LANG}.tar.gz:1 \
 		${SPIRV_CROSS}.tar.gz:2 \
-		${ARMIPS}.tar.gz:3
+		${ARMIPS}.tar.gz:3 \
+		${MINIUPNP}.tar.gz:4
 
 CATEGORIES =	emulators
 
@@ -72,11 +74,13 @@ post-extract:
 	rmdir	${WRKSRC}/assets/lang \
 		${WRKSRC}/ext/armips \
 		${WRKSRC}/ext/glslang \
-		${WRKSRC}/ext/SPIRV-Cross
+		${WRKSRC}/ext/SPIRV-Cross \
+		${WRKSRC}/ext/miniupnp
 	ln -s ${WRKDIR}/ppsspp-lang-${PPSSPP_LANG} ${WRKSRC}/assets/lang
 	ln -s ${WRKDIR}/armips-${ARMIPS} ${WRKSRC}/ext/armips
 	ln -s ${WRKDIR}/glslang-${GLSLANG} ${WRKSRC}/ext/glslang
 	ln -s ${WRKDIR}/SPIRV-Cross-${SPIRV_CROSS} ${WRKSRC}/ext/SPIRV-Cross
+	ln -s ${WRKDIR}/miniupnp-${MINIUPNP} ${WRKSRC}/ext/miniupnp
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt ${WRKSRC}/UI/NativeApp.cpp

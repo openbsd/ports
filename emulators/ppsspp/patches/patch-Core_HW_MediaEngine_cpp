@@ -1,60 +1,11 @@
-$OpenBSD: patch-Core_HW_MediaEngine_cpp,v 1.1 2021/05/04 03:50:07 rsadowski Exp $
+$OpenBSD: patch-Core_HW_MediaEngine_cpp,v 1.2 2021/09/19 00:34:55 bentley Exp $
 
 Fix build with ffmpeg-4.4 from upstream
 
 Index: Core/HW/MediaEngine.cpp
 --- Core/HW/MediaEngine.cpp.orig
 +++ Core/HW/MediaEngine.cpp
-@@ -131,6 +131,7 @@ MediaEngine::MediaEngine(): m_pdata(0) {
- 	m_videoStream = -1;
- 	m_audioStream = -1;
- 
-+	m_expectedVideoStreams = 0;
- 	m_desWidth = 0;
- 	m_desHeight = 0;
- 	m_decodingsize = 0;
-@@ -186,6 +187,11 @@ void MediaEngine::DoState(PointerWrap &p) {
- 	} else {
- 		m_mpegheaderReadPos = m_mpegheaderSize;
- 	}
-+	if (s >= 6) {
-+		p.Do(m_expectedVideoStreams);
-+	} else {
-+		m_expectedVideoStreams = 0;
-+	}
- 
- 	p.Do(m_ringbuffersize);
- 
-@@ -257,21 +263,21 @@ bool MediaEngine::SetupStreams() {
- 	}
- 
- 	// Looking good.  Let's add those streams.
--	const AVCodec *h264_codec = avcodec_find_decoder(AV_CODEC_ID_H264);
-+	int videoStreamNum = -1;
- 	for (int i = 0; i < numStreams; i++) {
- 		const u8 *const currentStreamAddr = m_mpegheader + 0x82 + i * 16;
- 		int streamId = currentStreamAddr[0];
- 
- 		// We only set video streams.  We demux the audio stream separately.
- 		if ((streamId & PSMF_VIDEO_STREAM_ID) == PSMF_VIDEO_STREAM_ID) {
--			AVStream *stream = avformat_new_stream(m_pFormatCtx, h264_codec);
--			stream->id = 0x00000100 | streamId;
--			stream->request_probe = 0;
--			stream->need_parsing = AVSTREAM_PARSE_FULL;
--			// We could set the width here, but we don't need to.
-+			++videoStreamNum;
-+			addVideoStream(videoStreamNum, streamId);
- 		}
- 	}
--
-+	// Add the streams to meet the expectation.
-+	for (int i = videoStreamNum + 1; i < m_expectedVideoStreams; i++) {
-+		addVideoStream(i);
-+	}
- #endif
- 	return true;
- }
-@@ -304,8 +310,10 @@ bool MediaEngine::openContext(bool keepReadPos) {
+@@ -314,8 +314,10 @@ bool MediaEngine::openContext(bool keepReadPos) {
  	av_dict_free(&open_opt);
  
  	if (!SetupStreams()) {
@@ -67,7 +18,7 @@ Index: Core/HW/MediaEngine.cpp
  			closeContext();
  			return false;
  		}
-@@ -318,8 +326,14 @@ bool MediaEngine::openContext(bool keepReadPos) {
+@@ -328,8 +330,14 @@ bool MediaEngine::openContext(bool keepReadPos) {
  
  	if (m_videoStream == -1) {
  		// Find the first video stream
@@ -84,7 +35,7 @@ Index: Core/HW/MediaEngine.cpp
  				m_videoStream = i;
  				break;
  			}
-@@ -351,8 +365,13 @@ void MediaEngine::closeContext()
+@@ -361,8 +369,13 @@ void MediaEngine::closeContext()
  		av_free(m_pIOContext->buffer);
  	if (m_pIOContext)
  		av_free(m_pIOContext);
@@ -100,50 +51,20 @@ Index: Core/HW/MediaEngine.cpp
  	m_pCodecCtxs.clear();
  	if (m_pFormatCtx)
  		avformat_close_input(&m_pFormatCtx);
-@@ -385,6 +404,42 @@ bool MediaEngine::reloadStream()
- 	return loadStream(m_mpegheader, 2048, m_ringbuffersize);
- }
+@@ -411,7 +424,12 @@ bool MediaEngine::addVideoStream(int streamNum, int st
+ 				streamId = PSMF_VIDEO_STREAM_ID | streamNum;
  
-+bool MediaEngine::addVideoStream(int streamNum, int streamId) {
-+#ifdef USE_FFMPEG
-+	if (m_pFormatCtx) {
-+		// no need to add an existing stream.
-+		if ((u32)streamNum < m_pFormatCtx->nb_streams)
-+			return true;
-+		const AVCodec *h264_codec = avcodec_find_decoder(AV_CODEC_ID_H264);
-+		if (!h264_codec)
-+			return false;
-+		AVStream *stream = avformat_new_stream(m_pFormatCtx, h264_codec);
-+		if (stream) {
-+			// Reference ISO/IEC 13818-1.
-+			if (streamId == -1)
-+				streamId = PSMF_VIDEO_STREAM_ID | streamNum;
-+
-+			stream->id = 0x00000100 | streamId;
+ 			stream->id = 0x00000100 | streamId;
 +#if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(57, 33, 100)
 +			stream->codecpar->codec_type = AVMEDIA_TYPE_VIDEO;
 +			stream->codecpar->codec_id = AV_CODEC_ID_H264;
 +#else
-+			stream->request_probe = 0;
+ 			stream->request_probe = 0;
 +#endif
-+			stream->need_parsing = AVSTREAM_PARSE_FULL;
-+			// We could set the width here, but we don't need to.
-+			if (streamNum >= m_expectedVideoStreams) {
-+				++m_expectedVideoStreams;
-+			}
-+			return true;
-+		}
-+	}
-+#endif
-+	if (streamNum >= m_expectedVideoStreams) {
-+		++m_expectedVideoStreams;
-+	}
-+	return false;
-+}
- int MediaEngine::addStreamData(const u8 *buffer, int addSize) {
- 	int size = addSize;
- 	if (size > 0 && m_pdata) {
-@@ -454,22 +509,31 @@ bool MediaEngine::setVideoStream(int streamNum, bool f
+ 			stream->need_parsing = AVSTREAM_PARSE_FULL;
+ 			// We could set the width here, but we don't need to.
+ 			if (streamNum >= m_expectedVideoStreams) {
+@@ -496,22 +514,31 @@ bool MediaEngine::setVideoStream(int streamNum, bool f
  		if ((u32)streamNum >= m_pFormatCtx->nb_streams) {
  			return false;
  		}
@@ -182,7 +103,7 @@ Index: Core/HW/MediaEngine.cpp
  		AVDictionary *opt = nullptr;
  		// Allow ffmpeg to use any number of threads it wants.  Without this, it doesn't use threads.
  		av_dict_set(&opt, "threads", "0", 0);
-@@ -609,7 +673,22 @@ bool MediaEngine::stepVideo(int videoPixelMode, bool s
+@@ -651,7 +678,22 @@ bool MediaEngine::stepVideo(int videoPixelMode, bool s
  				av_free_packet(&packet);
  #endif
  
@@ -205,7 +126,7 @@ Index: Core/HW/MediaEngine.cpp
  			if (frameFinished) {
  				if (!m_pFrameRGB) {
  					setVideoDim();
-@@ -624,10 +703,13 @@ bool MediaEngine::stepVideo(int videoPixelMode, bool s
+@@ -666,10 +708,28 @@ bool MediaEngine::stepVideo(int videoPixelMode, bool s
  						m_pCodecCtx->height, m_pFrameRGB->data, m_pFrameRGB->linesize);
  				}
  
@@ -220,6 +141,21 @@ Index: Core/HW/MediaEngine.cpp
 +				int64_t bestPts = av_frame_get_best_effort_timestamp(m_pFrame);
 +				int64_t ptsDuration = av_frame_get_pkt_duration(m_pFrame);
 +#endif
++				if (ptsDuration == 0) {
++					if (m_lastPts == bestPts - m_firstTimeStamp || bestPts == AV_NOPTS_VALUE) {
++						// TODO: Assuming 29.97 if missing.
++						m_videopts += 3003;
++					} else {
++						m_videopts = bestPts - m_firstTimeStamp;
++						m_lastPts = m_videopts;
++					}
++				} else if (bestPts != AV_NOPTS_VALUE) {
++					m_videopts = bestPts + ptsDuration - m_firstTimeStamp;
++					m_lastPts = m_videopts;
++				} else {
++					m_videopts += ptsDuration;
++					m_lastPts = m_videopts;
++				}
  				bGetFrame = true;
  			}
  			if (result <= 0 && dataEnd) {

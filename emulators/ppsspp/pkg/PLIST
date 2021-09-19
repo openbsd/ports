@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/08/07 22:54:09 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/09/19 00:34:55 bentley Exp $
 @bin bin/PPSSPPSDL
 share/ppsspp/
 share/ppsspp/assets/
@@ -76,6 +76,11 @@ share/ppsspp/assets/langregion.ini
 share/ppsspp/assets/ppge_atlas.meta
 share/ppsspp/assets/ppge_atlas.zim
 share/ppsspp/assets/rargray.png
+share/ppsspp/assets/sfx_back.wav
+share/ppsspp/assets/sfx_confirm.wav
+share/ppsspp/assets/sfx_select.wav
+share/ppsspp/assets/sfx_toggle_off.wav
+share/ppsspp/assets/sfx_toggle_on.wav
 share/ppsspp/assets/shaders/
 share/ppsspp/assets/shaders/4xhqglsl.fsh
 share/ppsspp/assets/shaders/4xhqglsl.vsh
@@ -98,8 +103,12 @@ share/ppsspp/assets/shaders/inversecolors.fsh
 share/ppsspp/assets/shaders/natural.fsh
 share/ppsspp/assets/shaders/natural.vsh
 share/ppsspp/assets/shaders/naturalA.fsh
+share/ppsspp/assets/shaders/naturalA.vsh
+share/ppsspp/assets/shaders/psp_color.fsh
 share/ppsspp/assets/shaders/scanlines.fsh
 share/ppsspp/assets/shaders/sharpen.fsh
+share/ppsspp/assets/shaders/tex_4xbrz.csh
+share/ppsspp/assets/shaders/tex_mmpx.csh
 share/ppsspp/assets/shaders/upscale_spline36.fsh
 share/ppsspp/assets/shaders/upscale_spline36.vsh
 share/ppsspp/assets/shaders/videoAA.fsh
