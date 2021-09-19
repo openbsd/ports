@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_include_clang_Basic_DiagnosticSemaKinds_td,v 1.9 2021/05/13 23:54:25 jca Exp $
+$OpenBSD: patch-tools_clang_include_clang_Basic_DiagnosticSemaKinds_td,v 1.10 2021/09/19 17:49:23 jca Exp $
 
 - Disable -Waddress-of-packed-member by default.
 
@@ -8,6 +8,8 @@ false positives right now.
 - Disable -Wpointer-sign warnings per default
 
 base gcc does the same.
+
+- Add a new warning for %n format specifier usage in printf(3) family functions
 
 Index: tools/clang/include/clang/Basic/DiagnosticSemaKinds.td
 --- tools/clang/include/clang/Basic/DiagnosticSemaKinds.td.orig
@@ -30,3 +32,13 @@ Index: tools/clang/include/clang/Basic/DiagnosticSemaKinds.td
  def err_typecheck_convert_incompatible_pointer_sign : Error<
    "%select{%diff{assigning to $ from $|assigning to different types}0,1"
    "|%diff{passing $ to parameter of type $|"
+@@ -9103,6 +9103,9 @@ def err_os_log_argument_too_big : Error<
+   "os_log() argument %0 is too big (%1 bytes, max %2)">;
+ def warn_os_log_format_narg : Error<
+  "os_log() '%%n' format specifier is not allowed">, DefaultError;
++
++def warn_format_narg : Warning<
++  "'%%n' format specifier support is deactivated and will call abort(3)">;
+ 
+ // Statements.
+ def err_continue_not_in_loop : Error<
