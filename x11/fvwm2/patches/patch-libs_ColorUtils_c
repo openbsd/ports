@@ -1,0 +1,27 @@
+$OpenBSD: patch-libs_ColorUtils_c,v 1.1 2021/09/19 21:11:55 tb Exp $
+
+Index: libs/ColorUtils.c
+--- libs/ColorUtils.c.orig
++++ libs/ColorUtils.c
+@@ -405,15 +405,15 @@ int pixel_to_color_string(
+ 	XQueryColor(dpy, cmap, &color);
+ 	if (!use_hash)
+ 	{
+-		sprintf(
+-			output, "rgb:%04x/%04x/%04x%n", (int)color.red,
+-			(int)color.green, (int)color.blue, &n);
++		n = sprintf(
++			output, "rgb:%04x/%04x/%04x", (int)color.red,
++			(int)color.green, (int)color.blue);
+ 	}
+ 	else
+ 	{
+-		sprintf(
+-			output, "#%04x%04x%04x%n", (int)color.red,
+-			(int)color.green, (int)color.blue, &n);
++		n = sprintf(
++			output, "#%04x%04x%04x", (int)color.red,
++			(int)color.green, (int)color.blue);
+ 	}
+ 
+ 	return n;
