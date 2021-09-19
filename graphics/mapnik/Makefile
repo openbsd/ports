@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2021/09/13 11:20:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2021/09/19 05:24:30 rsadowski Exp $
 
 COMMENT =	toolkit for developing mapping applications
 
@@ -7,7 +7,7 @@ V =		3.1.0
 DISTNAME =	mapnik-v${V}
 PKGNAME =	${DISTNAME:S/v//}
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	mapnik 4.0 #3.0
 CATEGORIES =	graphics geo
@@ -35,7 +35,7 @@ COMPILER =	base-clang ports-gcc
 TEST_DEPENDS =	shells/bash \
 		${BUILD_PKGPATH}
 
-LIB_DEPENDS =	devel/boost>=1.58 \
+LIB_DEPENDS =	devel/boost \
 		databases/sqlite3 \
 		graphics/cairo \
 		graphics/libwebp \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2021/01/23 15:19:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2021/09/19 05:24:30 rsadowski Exp $
 
 NOT_FOR_ARCHS=	${BE_ARCHS}
 
@@ -7,6 +7,7 @@ COMMENT =	free J-RPG game
 DISTNAME =	ValyriaTear-src-with-deps-${V}
 PKGNAME =	valyriatear-${V}
 CATEGORIES =	games x11
+REVISION =	0
 
 HOMEPAGE =	https://valyriatear.blogspot.com/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -29,7 +30,7 @@ COMPILER =	base-clang ports-gcc
 MODULES =	devel/cmake \
 		lang/lua
 
-BUILD_DEPENDS =	devel/boost>=1.52 \
+BUILD_DEPENDS =	devel/boost \
 		devel/gettext,-tools
 
 LIB_DEPENDS =	audio/libogg \

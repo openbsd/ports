@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.73 2021/08/31 07:32:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2021/09/19 05:24:30 rsadowski Exp $
 
 BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 
 COMMENT =	panorama image stitcher
 
 DISTNAME =	hugin-2020.0.0
-REVISION =	0
+REVISION =	1
 EXTRACT_SUFX =	.tar.bz2
 
 # not needed for releases, but makes RCs/betas easier to work with
@@ -51,7 +51,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 RUN_DEPENDS +=		x11/py-wxPython # required for launching python scripts
 
-LIB_DEPENDS =		devel/boost>=1.58 \
+LIB_DEPENDS =		devel/boost \
 			graphics/exiv2>=0.12 \
 			graphics/glew \
 			graphics/lcms2 \

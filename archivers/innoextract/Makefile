@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2021/08/24 20:32:52 cwen Exp $
+# $OpenBSD: Makefile,v 1.19 2021/09/19 05:24:30 rsadowski Exp $
 
 COMMENT=	unpack Inno Setup installers
 
 DISTNAME=	innoextract-1.9
-REVISION=	1
+REVISION=	2
 CATEGORIES=	archivers
 HOMEPAGE=	https://constexpr.org/innoextract/
 MAINTAINER=	Thomas Frohwein <thfr@openbsd.org>
@@ -23,7 +23,7 @@ COMPILER=	base-clang ports-gcc
 
 LIB_DEPENDS=	archivers/xz \
 		converters/libiconv \
-		devel/boost>=1.70.0
+		devel/boost
 
 RUN_DEPENDS=	archivers/unrar
 
