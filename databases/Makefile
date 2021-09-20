@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.427 2021/09/10 18:20:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.428 2021/09/20 14:50:53 sebastia Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -200,9 +200,12 @@
      SUBDIR += ruby-amalgalite,ruby27
      SUBDIR += ruby-amalgalite,ruby30
      SUBDIR += ruby-hiera3
-     SUBDIR += ruby-hiera-eyaml
-     SUBDIR += ruby-hiera-eyaml-gpg
-     SUBDIR += ruby-hiera-file
+     SUBDIR += ruby-hiera-eyaml,ruby27
+     SUBDIR += ruby-hiera-eyaml,ruby30
+     SUBDIR += ruby-hiera-eyaml-gpg,ruby27
+     SUBDIR += ruby-hiera-eyaml-gpg,ruby30
+     SUBDIR += ruby-hiera-file,ruby27
+     SUBDIR += ruby-hiera-file,ruby30
      SUBDIR += ruby-kirbybase
      SUBDIR += ruby-ldap,ruby27
      SUBDIR += ruby-ldap,ruby30
