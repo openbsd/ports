@@ -1,12 +1,12 @@
-$OpenBSD: README,v 1.1.1.1 2020/04/19 19:28:56 pvk Exp $
+$OpenBSD: README,v 1.2 2021/09/20 20:42:38 pvk Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 To allow interaction with vmd(8) for unprivileged users, create VM template
-and assign permissions for user accounts. This template will be used as parent
-VM for VM instances created by Packer.
+in vm.conf(5) and assign permissions for user accounts.
+This template will be used as parent VM for VM instances created by Packer.
 
 For more infornation, see VM INSTANCES section in vm.conf(5) and example files
 provided with the package.
@@ -76,7 +76,7 @@ Example workflow
 1) Configure VM template in ${SYSCONFDIR}/vm.conf
 2) Create directories for Packer's templates, http server, logs, and output
 3) Configure Packer by setting environment variables/editing config files
-4) Create build templates
+4) Create build templates ($PACKER_CONFIG_DIR/*.pkr files)
 5) Copy ISO images and installation files to configured locations
 6) Create base OS image with minimal necessary configurations changes
 7) Create and deploy customized images using base OS images
@@ -86,7 +86,13 @@ found in ${PREFIX}/share/examples/${PKGSTEM}.
 
 Caveats
 =======
-Provided sample templates are written in HashiCorp configuration language HCL2,
-which is considered a beta feature.
-More information on HCL2 support:
-https://hashicorp.com/blog/announcing-hashicorp-packer-1-5-with-hcl2-support
+If VM template uses an ISO image for build, make sure that parent template
+in vm.conf(5) specifies cdrom as boot device, e.g.:
+      vm generic {
+            disable
+            boot device cdrom
+            owner vm_user
+            allow instance { boot, cdrom, disk, instance, interface, memory }
+            memory 1G
+            disk /dev/null
+      }

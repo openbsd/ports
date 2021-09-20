@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/04/19 19:28:56 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/09/20 20:42:38 pvk Exp $
 @bin bin/packer-builder-openbsd-vmm
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/packer-vmm/
@@ -16,25 +16,14 @@ share/examples/packer-vmm/packer/
 share/examples/packer-vmm/packer.env.sample
 share/examples/packer-vmm/packer/_http/
 share/examples/packer-vmm/packer/_http/.gitignore
-share/examples/packer-vmm/packer/_http/alpine.autoinstall.pkr.in
+share/examples/packer-vmm/packer/_http/authorized_keys
 share/examples/packer-vmm/packer/_http/centos.autoinstall.pkr.in
 share/examples/packer-vmm/packer/_http/openbsd.autoinstall.pkr.in
 share/examples/packer-vmm/packer/_http/openbsd_20G.disklabel
-share/examples/packer-vmm/packer/_vars.auto.pkrvars.hcl
 share/examples/packer-vmm/packer/_vars.pkr.hcl
-share/examples/packer-vmm/packer/alpine-base/
-share/examples/packer-vmm/packer/alpine-base/_vars.auto.pkrvars.hcl
-share/examples/packer-vmm/packer/alpine-base/_vars.pkr.hcl
-share/examples/packer-vmm/packer/alpine-base/alpine-base.pkr.hcl
 share/examples/packer-vmm/packer/centos-base/
-share/examples/packer-vmm/packer/centos-base/_vars.auto.pkrvars.hcl
-share/examples/packer-vmm/packer/centos-base/_vars.pkr.hcl
 share/examples/packer-vmm/packer/centos-base/centos-base.pkr.hcl
 share/examples/packer-vmm/packer/openbsd-base/
-share/examples/packer-vmm/packer/openbsd-base/_vars.auto.pkrvars.hcl
-share/examples/packer-vmm/packer/openbsd-base/_vars.pkr.hcl
 share/examples/packer-vmm/packer/openbsd-base/openbsd-base.pkr.hcl
 share/examples/packer-vmm/packer/openbsd-dev/
-share/examples/packer-vmm/packer/openbsd-dev/_vars.auto.pkrvars.hcl
-share/examples/packer-vmm/packer/openbsd-dev/_vars.pkr.hcl
 share/examples/packer-vmm/packer/openbsd-dev/openbsd-dev.pkr.hcl
