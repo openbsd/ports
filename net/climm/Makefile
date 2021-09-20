@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/09/20 15:47:12 tb Exp $
 
 COMMENT =		simple, command-line multi messenger
 
 DISTNAME =		climm-0.7.1
-REVISION = 		2
+REVISION = 		3
 
 CATEGORIES =		net
 

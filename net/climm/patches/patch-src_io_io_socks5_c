@@ -1,0 +1,46 @@
+$OpenBSD: patch-src_io_io_socks5_c,v 1.1 2021/09/20 15:47:12 tb Exp $
+
+Index: src/io/io_socks5.c
+--- src/io/io_socks5.c.orig
++++ src/io/io_socks5.c
+@@ -178,7 +178,7 @@ static io_err_t io_socks5_connecting (Connection *conn
+         if (!socks5name || !socks5pass)
+             return io_socks5_seterr (d, IO_RW, i18n (1599, "[SOCKS] Authentication method incorrect"));
+ 
+-        send = s_sprintf ("%c%c%s%c%s%n", 1, (char) strlen (socks5name), socks5name, (char) strlen (socks5pass), socks5pass, &len);
++        send = s_sprintf_len (&len, "%c%c%s%c%s", 1, (char) strlen (socks5name), socks5name, (char) strlen (socks5pass), socks5pass);
+         e = io_util_write (conn, d->next, send, len);
+         d->flags = FLAG_CRED_SENT;
+         d->read = 0;
+@@ -231,24 +231,24 @@ static io_err_t io_socks5_connecting (Connection *conn
+         if (d->funcs->f_accept)
+         {
+             if (d->flags == FLAG_SEND_REQ)
+-                send = s_sprintf ("%c%c%c%c%c%c%c%c%c%c%n", 5, 2, 0, 1, 0, 0, 0, 0,
+-                                   (char)(conn->port >> 8), (char)(conn->port & 255), &len);
++                send = s_sprintf_len (&len, "%c%c%c%c%c%c%c%c%c%c", 5, 2, 0, 1, 0, 0, 0, 0,
++                                   (char)(conn->port >> 8), (char)(conn->port & 255));
+             else
+             {
+-                send = s_sprintf ("%c%c%c%c%c%c%c%c%c%c%n", 5, 2, 0, 1, 0, 0, 0, 0, 0, 0, &len);
++                send = s_sprintf_len (&len, "%c%c%c%c%c%c%c%c%c%c", 5, 2, 0, 1, 0, 0, 0, 0, 0, 0);
+                 d->flags = FLAG_REQ_NOPORT_SENT;
+             }
+         }
+         else
+         {
+             if (conn->server)
+-                send = s_sprintf ("%c%c%c%c%c%s%c%c%n", 5, 1, 0, 3,
++                send = s_sprintf_len (&len, "%c%c%c%c%c%s%c%c", 5, 1, 0, 3,
+                                    (char)strlen (conn->server), conn->server,
+-                                   (char)(conn->port >> 8), (char)(conn->port & 255), &len);
++                                   (char)(conn->port >> 8), (char)(conn->port & 255));
+             else
+-                send = s_sprintf ("%c%c%c%c%c%c%c%c%c%c%n", 5, 1, 0, 1,
++                send = s_sprintf_len (&len, "%c%c%c%c%c%c%c%c%c%c", 5, 1, 0, 1,
+                                    (char)(conn->ip >> 24), (char)(conn->ip >> 16), (char)(conn->ip >> 8), (char)conn->ip,
+-                                   (char)(conn->port >> 8), (char)(conn->port & 255), &len);
++                                   (char)(conn->port >> 8), (char)(conn->port & 255));
+         }
+         e = io_util_write (conn, d->next, send, len);
+         d->read = 0;
