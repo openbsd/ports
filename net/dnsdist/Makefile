@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2021/09/15 17:52:20 otto Exp $
+# $OpenBSD: Makefile,v 1.24 2021/09/21 10:00:05 sthen Exp $
 
 COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
@@ -20,7 +20,7 @@ WANTLIB +=		${MODLUA_WANTLIB} c curses edit m \
 
 MASTER_SITES=		https://downloads.powerdns.com/releases/
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69
 USE_GMAKE=		Yes
 
