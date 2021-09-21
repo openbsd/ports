@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_caja-application_c,v 1.4 2021/09/21 06:00:47 robert Exp $
+
+Index: src/caja-application.c
+--- src/caja-application.c.orig
++++ src/caja-application.c
+@@ -368,13 +368,13 @@ caja_application_open (GApplication *app,
+     gboolean browser_window = FALSE;
+     gboolean open_in_tabs = FALSE;
+     const gchar *geometry = NULL;
+-    const char splitter = '=';
++    const gchar *splitter = "=";
+ 
+     g_debug ("Open called on the GApplication instance; %d files", n_files);
+ 
+     /* Check if local command line passed --browser, --geometry or --tabs */
+     if (strlen (options) > 0) {
+-        gchar** splitedOptions = g_strsplit (options, &splitter, 3);
++        gchar** splitedOptions = g_strsplit (options, splitter, 3);
+         sscanf (splitedOptions[0], "%d", &browser_window);
+         if (strcmp (splitedOptions[1], "NULL") != 0) {
+             geometry = splitedOptions[1];
