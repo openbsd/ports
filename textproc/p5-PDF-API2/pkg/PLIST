@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/01/27 14:34:24 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/09/21 08:37:10 sthen Exp $
 ${P5SITE}/PDF/
 ${P5SITE}/PDF/API2/
 ${P5SITE}/PDF/API2.pm
@@ -131,6 +131,7 @@ ${P5SITE}/PDF/API2/Resource/XObject/Image/TIFF/File.pm
 ${P5SITE}/PDF/API2/Resource/uniglyph.txt
 ${P5SITE}/PDF/API2/UniWrap.pm
 ${P5SITE}/PDF/API2/Util.pm
+${P5SITE}/PDF/API2/ViewerPreferences.pm
 ${P5SITE}/PDF/API2/Win32.pm
 @man man/man3p/PDF::API2.3p
 @man man/man3p/PDF::API2::Annotation.3p
@@ -164,14 +165,13 @@ ${P5SITE}/PDF/API2/Win32.pm
 @man man/man3p/PDF::API2::Resource::Font::BdFont.3p
 @man man/man3p/PDF::API2::Resource::Font::CoreFont.3p
 @man man/man3p/PDF::API2::Resource::Font::SynFont.3p
-@man man/man3p/PDF::API2::Resource::UniFont.3p
 @man man/man3p/PDF::API2::Resource::XObject.3p
 @man man/man3p/PDF::API2::Resource::XObject::Form.3p
 @man man/man3p/PDF::API2::Resource::XObject::Form::BarCode.3p
 @man man/man3p/PDF::API2::Resource::XObject::Form::BarCode::code128.3p
 @man man/man3p/PDF::API2::Resource::XObject::Image.3p
 @man man/man3p/PDF::API2::Resource::XObject::Image::TIFF.3p
-@man man/man3p/PDF::API2::Util.3p
+@man man/man3p/PDF::API2::ViewerPreferences.3p
 share/examples/p5-PDF-API2/
 share/examples/p5-PDF-API2/combine_pdfs.pl
 share/examples/p5-PDF-API2/pdf-debug.pl
