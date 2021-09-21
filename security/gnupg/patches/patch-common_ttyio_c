@@ -1,0 +1,55 @@
+$OpenBSD: patch-common_ttyio_c,v 1.1 2021/09/21 19:14:37 tb Exp $
+
+Index: common/ttyio.c
+--- common/ttyio.c.orig
++++ common/ttyio.c
+@@ -293,21 +293,22 @@ tty_printf (const char *fmt, ... )
+ 
+ /* Same as tty_printf but if FP is not NULL, behave like a regular
+    fprintf. */
+-void
++int
+ tty_fprintf (estream_t fp, const char *fmt, ... )
+ {
+   va_list arg_ptr;
++  int ret;
+ 
+   if (fp)
+     {
+       va_start (arg_ptr, fmt) ;
+-      es_vfprintf (fp, fmt, arg_ptr );
++      ret = es_vfprintf (fp, fmt, arg_ptr );
+       va_end (arg_ptr);
+-      return;
++      return ret;
+     }
+ 
+   if (no_terminal)
+-    return;
++    return 0;
+ 
+   if (!initialized)
+     init_ttyfp ();
+@@ -318,18 +319,20 @@ tty_fprintf (estream_t fp, const char *fmt, ... )
+   {
+     char *buf = NULL;
+ 
+-    vasprintf (&buf, fmt, arg_ptr);
++    ret = vasprintf (&buf, fmt, arg_ptr);
+     if (!buf)
+       log_bug ("vasprintf() failed\n");
+     w32_write_console (buf);
+     xfree (buf);
+   }
+ #else /* Unix */
+-  last_prompt_len += vfprintf(ttyfp,fmt,arg_ptr) ;
++  ret = vfprintf(ttyfp,fmt,arg_ptr) ;
++  last_prompt_len += ret ;
+   fflush(ttyfp);
+ #endif /* Unix */
+ 
+   va_end(arg_ptr);
++  return ret;
+ }
+ 
+ 

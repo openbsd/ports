@@ -1,0 +1,20 @@
+$OpenBSD: patch-g10_keylist_c,v 1.1 2021/09/21 19:14:37 tb Exp $
+
+Index: g10/keylist.c
+--- g10/keylist.c.orig
++++ g10/keylist.c
+@@ -255,12 +255,11 @@ print_card_key_info (estream_t fp, kbnode_t keyblock)
+           else
+             s2k_char = '#';  /* Key not found.  */
+ 
+-          tty_fprintf (fp, "%s%c  %s/%s  %n",
++          indent = tty_fprintf (fp, "%s%c  %s/%s  ",
+                        node->pkt->pkttype == PKT_PUBLIC_KEY ? "sec" : "ssb",
+                        s2k_char,
+                        pubkey_string (pk, pkstrbuf, sizeof pkstrbuf),
+-                       keystr_from_pk (pk),
+-                       &indent);
++                       keystr_from_pk (pk));
+           tty_fprintf (fp, _("created: %s"), datestr_from_pk (pk));
+           tty_fprintf (fp, "  ");
+           tty_fprintf (fp, _("expires: %s"), expirestr_from_pk (pk));
