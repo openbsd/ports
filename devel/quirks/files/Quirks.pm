@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1315 2021/09/14 10:40:30 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1316 2021/09/21 10:35:22 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -495,6 +495,7 @@ my $stem_extensions = {
 	'py-PyNaCl' => 'py3-PyNaCl',
 	'py-websocket-client' => 'py3-websocket-client',
 	'libmesode' => 'libstrophe',
+	'py-stem' => 'py3-stem',
 };
 
 my $obsolete_reason = {};

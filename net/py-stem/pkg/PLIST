@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/02/19 23:13:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/09/21 10:35:22 sthen Exp $
 @conflict py-stem-<1.7.1p2
 @conflict stem-*
-!%%python3%%
-bin/tor-prompt${MODPY_BIN_SUFFIX}
+@pkgpath net/stem
+@pkgpath net/py-stem
+bin/tor-prompt
 lib/python${MODPY_VERSION}/site-packages/stem/
 lib/python${MODPY_VERSION}/site-packages/stem-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/stem/__init__.py
@@ -33,9 +34,12 @@ lib/python${MODPY_VERSION}/site-packages/stem/descriptor/
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/stem/descriptor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/stem/descriptor/${MODPY_PYCACHE}bandwidth_file.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/${MODPY_PYCACHE}certificate.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/stem/descriptor/${MODPY_PYCACHE}collector.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/${MODPY_PYCACHE}export.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/${MODPY_PYCACHE}extrainfo_descriptor.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/stem/descriptor/${MODPY_PYCACHE}hidden_service.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/${MODPY_PYCACHE}hidden_service_descriptor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/${MODPY_PYCACHE}microdescriptor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/${MODPY_PYCACHE}networkstatus.${MODPY_PYC_MAGIC_TAG}pyc
@@ -44,9 +48,12 @@ lib/python${MODPY_VERSION}/site-packages/stem/descriptor/${MODPY_PYCACHE}remote.
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/${MODPY_PYCACHE}router_status_entry.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/${MODPY_PYCACHE}server_descriptor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/${MODPY_PYCACHE}tordnsel.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/stem/descriptor/bandwidth_file.py
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/certificate.py
+lib/python${MODPY_VERSION}/site-packages/stem/descriptor/collector.py
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/export.py
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/extrainfo_descriptor.py
+lib/python${MODPY_VERSION}/site-packages/stem/descriptor/hidden_service.py
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/hidden_service_descriptor.py
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/microdescriptor.py
 lib/python${MODPY_VERSION}/site-packages/stem/descriptor/networkstatus.py
@@ -99,6 +106,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/stem/util/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/stem/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stem/util/${MODPY_PYCACHE}conf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stem/util/${MODPY_PYCACHE}connection.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/stem/util/${MODPY_PYCACHE}ed25519.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stem/util/${MODPY_PYCACHE}enum.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stem/util/${MODPY_PYCACHE}log.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stem/util/${MODPY_PYCACHE}lru_cache.${MODPY_PYC_MAGIC_TAG}pyc
@@ -111,6 +119,7 @@ lib/python${MODPY_VERSION}/site-packages/stem/util/${MODPY_PYCACHE}test_tools.${
 lib/python${MODPY_VERSION}/site-packages/stem/util/${MODPY_PYCACHE}tor_tools.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stem/util/conf.py
 lib/python${MODPY_VERSION}/site-packages/stem/util/connection.py
+lib/python${MODPY_VERSION}/site-packages/stem/util/ed25519.py
 lib/python${MODPY_VERSION}/site-packages/stem/util/enum.py
 lib/python${MODPY_VERSION}/site-packages/stem/util/log.py
 lib/python${MODPY_VERSION}/site-packages/stem/util/lru_cache.py
