@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2021/05/21 19:50:22 kmos Exp $
+# $OpenBSD: Makefile,v 1.13 2021/09/21 16:34:24 solene Exp $
 
 COMMENT =		Gnu All Mobile Management Utilities GUI
 
 MODPY_EGG_VERSION = 	0.44
 DISTNAME =		wammu-${MODPY_EGG_VERSION}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		comms x11
 
@@ -23,6 +23,7 @@ MODPY_SETUPTOOLS = 	Yes
 
 RUN_DEPENDS =		comms/py-gammu \
 			devel/desktop-file-utils \
+			devel/py-six${MODPY_FLAVOR} \
 			x11/py-wxPython
 
 NO_TEST = 		Yes
