@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/03/10 01:34:06 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.4 2021/09/22 20:47:23 solene Exp $
 
 COMMENT =	use git to manage files without checking them in
 
@@ -16,7 +16,8 @@ LIB_DEPENDS =		converters/libiconv \
 			devel/libffi \
 			devel/libmagic
 
-RUN_DEPENDS =		net/rsync
+RUN_DEPENDS =		devel/git \
+			net/rsync
 
 BUILD_DEPENDS =		devel/git
 
@@ -27,7 +28,7 @@ MAKE_ENV =	LC_ALL=en_US.UTF-8
 
 MODCABAL_STEM =		git-annex
 MODCABAL_VERSION =	8.20210223
-REVISION =		0
+REVISION =		1
 
 MAN1_STAGING_DIR = ${WRKBUILD}/man1_staging
 
