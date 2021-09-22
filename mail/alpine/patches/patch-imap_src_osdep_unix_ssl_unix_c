@@ -1,4 +1,4 @@
-$OpenBSD: patch-imap_src_osdep_unix_ssl_unix_c,v 1.3 2021/02/04 22:13:23 sthen Exp $
+$OpenBSD: patch-imap_src_osdep_unix_ssl_unix_c,v 1.4 2021/09/22 20:57:10 sthen Exp $
 
 * some popular mail services enforce SNI for TLSv1.3 clients, so send it
 * retry SSL_write on blocking socket if we're told to do so.
@@ -14,7 +14,7 @@ Index: imap/src/osdep/unix/ssl_unix.c
    unsigned long sl,tl;
    int minv, maxv;
    int masklow, maskhigh;
-@@ -459,7 +460,13 @@ static char *ssl_start_work (SSLSTREAM *stream,char *h
+@@ -465,7 +466,13 @@ static char *ssl_start_work (SSLSTREAM *stream,char *h
    SSL_set_connect_state (stream->con);
    if (SSL_in_init (stream->con)) SSL_total_renegotiations (stream->con);
  				/* now negotiate SSL */
@@ -28,4 +28,4 @@ Index: imap/src/osdep/unix/ssl_unix.c
 +  if (ssl_err < 0)
      return ssl_last_error ? ssl_last_error : "SSL negotiation failed";
  				/* need to validate host names? */
-   if (!(flags & NET_NOVALIDATECERT) &&
+   cert = SSL_get_peer_certificate (stream->con);

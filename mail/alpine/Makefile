@@ -1,4 +1,5 @@
-# $OpenBSD: Makefile,v 1.49 2021/02/04 22:13:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2021/09/22 20:57:10 sthen Exp $
+COMPILER=ports-gcc
 
 COMMENT-main=		UW e-mail client
 COMMENT-c-client=	UW c-client mail access routines
@@ -8,11 +9,11 @@ COMMENT-pico=		UW text editor
 COMMENT-pilot=		UW file system navigator
 FIX_EXTRACT_PERMISSIONS =	Yes
 
-V=			2.24
+V=			2.25
 DISTNAME=		alpine-${V}
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS=		c-client 8.0
+SHARED_LIBS=		c-client 9.0
 
 # grep "PICO version" ${WRKSRC}/pico/pico.h
 PICO_V=			5.09
@@ -26,8 +27,8 @@ PKGNAME-mailutil=	mailutil-uw-${V}
 PKGNAME-pico=		pico-${PICO_V}
 PKGNAME-pilot=		pilot-${PILOT_V}
 
-REVISION-pico=		21
-REVISION-pilot=		21
+REVISION-pico=		22
+REVISION-pilot=		22
 
 EPOCH-c-client=		0
 EPOCH-imap=		0
@@ -87,13 +88,6 @@ CONFIGURE_ARGS=		--with-system-pinerc=${SYSCONFDIR}/pine.conf \
 			--without-npa \
 			--enable-quotas
 
-HEADERS=		c-client.h dummy.h env.h env_unix.h fdstring.h \
-			flockcyg.h flocksim.h flstring.h fs.h ftl.h \
-			imap4r1.h linkage.c linkage.h mail.h misc.h \
-			netmsg.h newsrc.h nl.h nntp.h osdep.h pseudo.h \
-			rfc822.h smtp.h sslio.h tcp.h tcp_unix.h unix.h \
-			utf8.h utf8aux.h
-
 post-install:
 	# alpine, pico, pilot
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/alpine
@@ -104,9 +98,12 @@ post-install:
 	${WRKBUILD}/alpine/alpine -conf > \
 		${PREFIX}/share/examples/alpine/pine.conf
 	# c-client
+	# the relevant os_*.h is copied to osdep.h in build; others not needed
+	# XXX unsure if linkage.c actually needed
 	${INSTALL_DATA_DIR} ${PREFIX}/include/c-client
-	cd ${WRKSRC}/c-client; ${INSTALL_DATA} ${HEADERS} \
+	cd ${WRKSRC}/c-client; ${INSTALL_DATA} *.h linkage.c \
 		${PREFIX}/include/c-client
+	rm -f ${PREFIX}/include/c-client/os_*.h
 	${INSTALL_DATA} ${WRKBUILD}/c-client/c-client.a \
 		${PREFIX}/lib/libc-client.a
 	@if [ -f ${WRKBUILD}/imap/c-client/${SHLIB} ]; then \

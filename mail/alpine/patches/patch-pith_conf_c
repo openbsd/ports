@@ -1,11 +1,11 @@
-$OpenBSD: patch-pith_conf_c,v 1.6 2021/02/04 22:13:23 sthen Exp $
+$OpenBSD: patch-pith_conf_c,v 1.7 2021/09/22 20:57:10 sthen Exp $
 
 By default, check "Do Not Send Flowed Text".
 
 Index: pith/conf.c
 --- pith/conf.c.orig
 +++ pith/conf.c
-@@ -2967,7 +2967,7 @@ feature_list(int index)
+@@ -2972,7 +2972,7 @@ feature_list(int index)
  	{"use-sender-not-x-sender", "Use Sender Instead of X-X-Sender",
  	 F_USE_SENDER_NOT_X, h_config_use_sender_not_x, PREF_SEND, 0},
  	{"quell-flowed-text", "Do Not Send Flowed Text",

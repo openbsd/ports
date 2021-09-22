@@ -1,8 +1,9 @@
-$OpenBSD: patch-imap_src_osdep_unix_env_unix_c,v 1.4 2021/02/04 22:13:23 sthen Exp $
+$OpenBSD: patch-imap_src_osdep_unix_env_unix_c,v 1.5 2021/09/22 20:57:10 sthen Exp $
+
 Index: imap/src/osdep/unix/env_unix.c
 --- imap/src/osdep/unix/env_unix.c.orig
 +++ imap/src/osdep/unix/env_unix.c
-@@ -668,11 +668,11 @@ long server_input_wait (long seconds)
+@@ -676,11 +676,11 @@ long server_input_wait (long seconds)
  static struct passwd *pwuser (unsigned char *user)
  {
    unsigned char *s;
@@ -16,7 +17,7 @@ Index: imap/src/osdep/unix/env_unix.c
        fs_give ((void **) &s);
      }
    }
-@@ -991,15 +991,12 @@ char *myhomedir ()
+@@ -999,15 +999,12 @@ char *myhomedir ()
  static char *mymailboxdir ()
  {
    char *home = myhomedir ();
