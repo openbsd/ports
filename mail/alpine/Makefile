@@ -1,5 +1,9 @@
-# $OpenBSD: Makefile,v 1.50 2021/09/22 20:57:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2021/09/29 18:33:58 sthen Exp $
+
+# XXX mistake in 7.0
+.if ${MACHINE_ARCH} != aarch64 && ${MACHINE_ARCH} != arm
 COMPILER=ports-gcc
+.endif
 
 COMMENT-main=		UW e-mail client
 COMMENT-c-client=	UW c-client mail access routines
