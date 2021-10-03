@@ -1,9 +1,9 @@
-$OpenBSD: patch-auxil_highwayhash_highwayhash_os_specific_cc,v 1.3 2021/07/07 09:42:06 ajacoutot Exp $
+$OpenBSD: patch-auxil_highwayhash_highwayhash_os_specific_cc,v 1.4 2021/10/03 19:54:51 ajacoutot Exp $
 
 Index: auxil/highwayhash/highwayhash/os_specific.cc
 --- auxil/highwayhash/highwayhash/os_specific.cc.orig
 +++ auxil/highwayhash/highwayhash/os_specific.cc
-@@ -60,6 +60,12 @@
+@@ -62,6 +62,12 @@
  #define OS_FREEBSD 0
  #endif
  
@@ -16,7 +16,7 @@ Index: auxil/highwayhash/highwayhash/os_specific.cc
  namespace highwayhash {
  
  #define CHECK(condition)                                       \
-@@ -104,7 +110,7 @@ void RaiseThreadPriority() {
+@@ -106,7 +112,7 @@ void RaiseThreadPriority() {
  #elif OS_LINUX
    // omit: SCHED_RR and SCHED_FIFO with sched_priority max, max-1 and max/2
    // lead to 2-3x runtime and higher variability!
@@ -25,7 +25,7 @@ Index: auxil/highwayhash/highwayhash/os_specific.cc
  #else
  #error "port"
  #endif
-@@ -174,6 +180,7 @@ void SetThreadAffinity(ThreadAffinity* affinity) {
+@@ -176,6 +182,7 @@ void SetThreadAffinity(ThreadAffinity* affinity) {
  #elif OS_MAC
    const int err = mac_setaffinity(&affinity->set);
    CHECK(err == 0);
@@ -33,7 +33,7 @@ Index: auxil/highwayhash/highwayhash/os_specific.cc
  #else
  #error "port"
  #endif
-@@ -207,6 +214,7 @@ std::vector<int> AvailableCPUs() {
+@@ -209,6 +216,7 @@ std::vector<int> AvailableCPUs() {
        cpus.push_back(cpu);
      }
    }
@@ -41,7 +41,7 @@ Index: auxil/highwayhash/highwayhash/os_specific.cc
  #else
  #error "port"
  #endif
-@@ -226,6 +234,7 @@ void PinThreadToCPU(const int cpu) {
+@@ -228,6 +236,7 @@ void PinThreadToCPU(const int cpu) {
  #elif OS_MAC
    CPU_ZERO(&affinity.set);
    CPU_SET(cpu, &affinity.set);
