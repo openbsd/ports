@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.34 2021/09/16 10:36:39 sthen Exp $
-@ask-update freeradius-<3 Major update. You should move away existing FreeRADIUS configuration (${SYSCONFIDR}/raddb) and create new, see https://github.com/FreeRADIUS/freeradius-server/blob/v3.0.x/raddb/README.rst
-@pkgpath net/freeradius3,-main
+@comment $OpenBSD: PLIST-main,v 1.35 2021/10/03 20:28:43 sthen Exp $
 @conflict radiusd-cistron-*
 @conflict radiusd-lucent-*
+@pkgpath net/freeradius3,-main
+@ask-update freeradius-<3 Major update. You should move away existing FreeRADIUS configuration (${SYSCONFIDR}/raddb) and create new, see https://github.com/FreeRADIUS/freeradius-server/blob/v3.0.x/raddb/README.rst
 @newgroup _freeradius:559
 @newuser _freeradius:559:559:daemon:Freeradius:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/freeradius
@@ -570,6 +570,8 @@ share/examples/freeradius/mods-config/sql/counter/sqlite/monthlycounter.conf
 @sample ${FREERADIUS_ETC}/mods-config/sql/counter/sqlite/monthlycounter.conf
 share/examples/freeradius/mods-config/sql/counter/sqlite/noresetcounter.conf
 @sample ${FREERADIUS_ETC}/mods-config/sql/counter/sqlite/noresetcounter.conf
+share/examples/freeradius/mods-config/sql/counter/sqlite/weeklycounter.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/counter/sqlite/weeklycounter.conf
 share/examples/freeradius/mods-config/sql/cui/
 @sample ${FREERADIUS_ETC}/mods-config/sql/cui/
 share/examples/freeradius/mods-config/sql/cui/sqlite/
@@ -806,6 +808,7 @@ share/freeradius/dictionary.bskyb
 share/freeradius/dictionary.bt
 share/freeradius/dictionary.cablelabs
 share/freeradius/dictionary.cabletron
+share/freeradius/dictionary.cambium
 share/freeradius/dictionary.camiant
 share/freeradius/dictionary.centec
 share/freeradius/dictionary.checkpoint

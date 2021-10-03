@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pgsql,v 1.8 2021/09/16 10:36:39 sthen Exp $
+@comment $OpenBSD: PLIST-pgsql,v 1.9 2021/10/03 20:28:43 sthen Exp $
 @pkgpath net/freeradius3,-pgsql
 @so lib/freeradius/rlm_sql_postgresql.so
 @group _freeradius
@@ -12,6 +12,8 @@ share/examples/freeradius/mods-config/sql/counter/postgresql/monthlycounter.conf
 @sample ${FREERADIUS_ETC}/mods-config/sql/counter/postgresql/monthlycounter.conf
 share/examples/freeradius/mods-config/sql/counter/postgresql/noresetcounter.conf
 @sample ${FREERADIUS_ETC}/mods-config/sql/counter/postgresql/noresetcounter.conf
+share/examples/freeradius/mods-config/sql/counter/postgresql/weeklycounter.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/counter/postgresql/weeklycounter.conf
 share/examples/freeradius/mods-config/sql/cui/postgresql/
 @sample ${FREERADIUS_ETC}/mods-config/sql/cui/postgresql/
 share/examples/freeradius/mods-config/sql/cui/postgresql/queries.conf

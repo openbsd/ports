@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.9 2021/09/16 10:36:38 sthen Exp $
+$OpenBSD: patch-configure,v 1.10 2021/10/03 20:28:43 sthen Exp $
 
 Don't allow picking up collectdclient, freeradius autoconf's "smart"
 library detection doesn't offer a nice way to do it.
@@ -6,7 +6,7 @@ library detection doesn't offer a nice way to do it.
 Index: configure
 --- configure.orig
 +++ configure
-@@ -7533,7 +7533,7 @@ if test "x$smart_lib" != "x"; then
+@@ -7614,7 +7614,7 @@ if test "x$smart_lib" != "x"; then
    SMART_LIBS="$smart_ldflags $smart_lib $SMART_LIBS"
  fi
  

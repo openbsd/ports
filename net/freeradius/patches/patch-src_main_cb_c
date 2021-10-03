@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_main_cb_c,v 1.1 2021/09/16 10:36:39 sthen Exp $
+$OpenBSD: patch-src_main_cb_c,v 1.2 2021/10/03 20:28:43 sthen Exp $
 
 Index: src/main/cb.c
 --- src/main/cb.c.orig
@@ -12,7 +12,7 @@ Index: src/main/cb.c
  			if (SSL_get_state(s) == TLS_ST_SR_CLNT_HELLO) {
  				int i;
  				int num_ciphers;
-@@ -174,7 +174,7 @@ void cbtls_msg(int write_p, int msg_version, int conte
+@@ -192,7 +192,7 @@ void cbtls_msg(int write_p, int msg_version, int conte
  		state->info.alert_level = 0x00;
  		state->info.alert_description = 0x00;
  

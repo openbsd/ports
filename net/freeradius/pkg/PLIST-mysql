@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-mysql,v 1.11 2021/09/16 10:36:39 sthen Exp $
+@comment $OpenBSD: PLIST-mysql,v 1.12 2021/10/03 20:28:43 sthen Exp $
 @pkgpath net/freeradius3,-mysql
 @so lib/freeradius/rlm_sql_mysql.so
 @group _freeradius
@@ -12,6 +12,8 @@ share/examples/freeradius/mods-config/sql/counter/mysql/monthlycounter.conf
 @sample ${FREERADIUS_ETC}/mods-config/sql/counter/mysql/monthlycounter.conf
 share/examples/freeradius/mods-config/sql/counter/mysql/noresetcounter.conf
 @sample ${FREERADIUS_ETC}/mods-config/sql/counter/mysql/noresetcounter.conf
+share/examples/freeradius/mods-config/sql/counter/mysql/weeklycounter.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/counter/mysql/weeklycounter.conf
 share/examples/freeradius/mods-config/sql/cui/mysql/
 @sample ${FREERADIUS_ETC}/mods-config/sql/cui/mysql/
 share/examples/freeradius/mods-config/sql/cui/mysql/queries.conf
