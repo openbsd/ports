@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2021/09/18 14:55:54 pvk Exp $
+# $OpenBSD: Makefile,v 1.46 2021/10/03 19:56:02 ajacoutot Exp $
 
 # [...]/network/mgmt/2018-01-01/network/expressroutecircuitpeerings.go:53:159:
 # constant 4294967295 overflows int
@@ -7,7 +7,7 @@ ONLY_FOR_ARCHS=		${LP64_ARCHS}
 COMMENT=		tool for building machine images
 
 MODGO_MODNAME=		github.com/hashicorp/packer
-MODGO_VERSION=		v1.7.5
+MODGO_VERSION=		v1.7.6
 DISTNAME=		packer-${MODGO_VERSION}
 
 CATEGORIES=		sysutils
