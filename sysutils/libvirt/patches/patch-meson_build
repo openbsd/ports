@@ -1,4 +1,4 @@
-$OpenBSD: patch-meson_build,v 1.7 2021/09/09 12:58:03 ajacoutot Exp $
+$OpenBSD: patch-meson_build,v 1.8 2021/10/03 19:53:21 ajacoutot Exp $
 
 -fexceptions:
 ld: error: undefined symbol: _Unwind_Resume
@@ -28,7 +28,7 @@ Index: meson.build
  
  libvirt_no_indirect = cc.get_supported_link_arguments([
    '-Wl,--no-copy-dt-needed-entries',
-@@ -951,12 +945,15 @@ if devmapper_dep.found()
+@@ -949,12 +943,15 @@ if devmapper_dep.found()
    conf.set('WITH_DEVMAPPER', 1)
  endif
  
