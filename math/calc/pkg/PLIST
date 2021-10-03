@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2021/04/28 19:39:27 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.16 2021/10/03 19:20:31 sthen Exp $
 @bin bin/calc
 bin/cscript/
 bin/cscript/4dsphere
@@ -153,6 +153,10 @@ share/calc/help/cscript
 share/calc/help/ctime
 share/calc/help/custom
 share/calc/help/custom_cal
+share/calc/help/d2dm
+share/calc/help/d2dms
+share/calc/help/d2g
+share/calc/help/d2r
 share/calc/help/define
 share/calc/help/delete
 share/calc/help/den
@@ -161,6 +165,7 @@ share/calc/help/det
 share/calc/help/digit
 share/calc/help/digits
 share/calc/help/display
+share/calc/help/dms2d
 share/calc/help/dp
 share/calc/help/environment
 share/calc/help/epsilon
@@ -214,16 +219,24 @@ share/calc/help/fseek
 share/calc/help/fsize
 share/calc/help/ftell
 share/calc/help/full
+share/calc/help/g2d
+share/calc/help/g2gm
+share/calc/help/g2gms
+share/calc/help/g2r
 share/calc/help/gcd
 share/calc/help/gcdrem
 share/calc/help/gd
 share/calc/help/getenv
+share/calc/help/gms2g
+share/calc/help/h2hm
+share/calc/help/h2hms
 share/calc/help/hash
 share/calc/help/head
 share/calc/help/help
 share/calc/help/highbit
 share/calc/help/history
 share/calc/help/hmean
+share/calc/help/hms2h
 share/calc/help/hnrmod
 share/calc/help/hypot
 share/calc/help/ilog
@@ -347,6 +360,8 @@ share/calc/help/putenv
 share/calc/help/questions
 share/calc/help/quo
 share/calc/help/quomod
+share/calc/help/r2d
+share/calc/help/r2g
 share/calc/help/rand
 share/calc/help/randbit
 share/calc/help/random
