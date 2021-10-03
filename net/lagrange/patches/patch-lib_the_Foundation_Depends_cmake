@@ -1,6 +1,4 @@
-$OpenBSD: patch-lib_the_Foundation_Depends_cmake,v 1.1.1.1 2020/12/12 14:22:17 solene Exp $
-
-Stick with base libressl even if openssl is installed
+$OpenBSD: patch-lib_the_Foundation_Depends_cmake,v 1.2 2021/10/03 21:16:59 solene Exp $
 
 Index: lib/the_Foundation/Depends.cmake
 --- lib/the_Foundation/Depends.cmake.orig
@@ -10,7 +8,7 @@ Index: lib/the_Foundation/Depends.cmake
      endif ()
      if (TFDN_ENABLE_TLSREQUEST)
 -        pkg_check_modules (OPENSSL eopenssl11)  # BSD
--	if (NOT OPENSSL_FOUND)
+-        if (NOT OPENSSL_FOUND)
 -            pkg_check_modules (OPENSSL openssl)
 -        endif ()
 +        pkg_check_modules (OPENSSL openssl)
