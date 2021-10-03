@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2021/02/23 19:39:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2021/10/03 19:17:10 sthen Exp $
 
 COMMENT =	command-line HTTP client
 
-MODPY_EGG_VERSION =	2.4.0
+MODPY_EGG_VERSION =	2.5.0
 GH_TAGNAME =		${MODPY_EGG_VERSION}
 GH_ACCOUNT =		jakubroztocil
 GH_PROJECT =		httpie
@@ -23,6 +23,7 @@ MODPY_PYTEST =		Yes
 RUN_DEPENDS =		net/py-socks${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR} \
 			www/py-requests-toolbelt${MODPY_FLAVOR} \
+			textproc/py-defusedxml${MODPY_FLAVOR} \
 			textproc/py-pygments${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-test-httpbin${MODPY_FLAVOR} \
 			devel/py-mock${MODPY_FLAVOR}
@@ -36,6 +37,6 @@ pre-test:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/httpie
-	${INSTALL_DATA} ${WRKSRC}/README.rst ${PREFIX}/share/doc/httpie/
+	${INSTALL_DATA} ${WRKSRC}/README.md ${PREFIX}/share/doc/httpie/
 
 .include <bsd.port.mk>

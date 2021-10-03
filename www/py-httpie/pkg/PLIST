@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/01/07 08:33:13 paco Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/10/03 19:17:10 sthen Exp $
 bin/http
 bin/https
 lib/python${MODPY_VERSION}/site-packages/httpie/
@@ -17,6 +17,7 @@ lib/python${MODPY_VERSION}/site-packages/httpie/${MODPY_PYCACHE}__main__.${MODPY
 lib/python${MODPY_VERSION}/site-packages/httpie/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httpie/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httpie/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/httpie/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httpie/${MODPY_PYCACHE}context.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httpie/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httpie/${MODPY_PYCACHE}downloads.${MODPY_PYC_MAGIC_TAG}pyc
@@ -47,6 +48,7 @@ lib/python${MODPY_VERSION}/site-packages/httpie/cli/requestitems.py
 lib/python${MODPY_VERSION}/site-packages/httpie/client.py
 lib/python${MODPY_VERSION}/site-packages/httpie/compat.py
 lib/python${MODPY_VERSION}/site-packages/httpie/config.py
+lib/python${MODPY_VERSION}/site-packages/httpie/constants.py
 lib/python${MODPY_VERSION}/site-packages/httpie/context.py
 lib/python${MODPY_VERSION}/site-packages/httpie/core.py
 lib/python${MODPY_VERSION}/site-packages/httpie/downloads.py
@@ -65,9 +67,11 @@ lib/python${MODPY_VERSION}/site-packages/httpie/output/formatters/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/httpie/output/formatters/${MODPY_PYCACHE}colors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httpie/output/formatters/${MODPY_PYCACHE}headers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httpie/output/formatters/${MODPY_PYCACHE}json.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/httpie/output/formatters/${MODPY_PYCACHE}xml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httpie/output/formatters/colors.py
 lib/python${MODPY_VERSION}/site-packages/httpie/output/formatters/headers.py
 lib/python${MODPY_VERSION}/site-packages/httpie/output/formatters/json.py
+lib/python${MODPY_VERSION}/site-packages/httpie/output/formatters/xml.py
 lib/python${MODPY_VERSION}/site-packages/httpie/output/processing.py
 lib/python${MODPY_VERSION}/site-packages/httpie/output/streams.py
 lib/python${MODPY_VERSION}/site-packages/httpie/output/writer.py
@@ -89,4 +93,4 @@ lib/python${MODPY_VERSION}/site-packages/httpie/status.py
 lib/python${MODPY_VERSION}/site-packages/httpie/uploads.py
 lib/python${MODPY_VERSION}/site-packages/httpie/utils.py
 share/doc/httpie/
-share/doc/httpie/README.rst
+share/doc/httpie/README.md
