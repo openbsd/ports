@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/09/01 13:51:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2021/10/03 19:53:07 ajacoutot Exp $
 
 COMMENT=		documentation tool micro-framework
 
-MODPY_EGG_VERSION=	0.13.5
+MODPY_EGG_VERSION=	0.13.7
 DISTNAME=		hotdoc-${MODPY_EGG_VERSION}
 #PKGNAME=		py-${DISTNAME}
 
