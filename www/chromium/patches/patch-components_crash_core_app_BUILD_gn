@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_crash_core_app_BUILD_gn,v 1.10 2021/09/01 16:54:39 robert Exp $
+$OpenBSD: patch-components_crash_core_app_BUILD_gn,v 1.11 2021/10/03 21:26:52 robert Exp $
 
 Index: components/crash/core/app/BUILD.gn
 --- components/crash/core/app/BUILD.gn.orig
@@ -41,12 +41,15 @@ Index: components/crash/core/app/BUILD.gn
      deps += [ "//third_party/breakpad:client" ]
    }
  
-@@ -129,7 +133,7 @@ static_library("app") {
-     sources += [ "crashpad_ios.mm" ]
-   }
+@@ -215,11 +219,6 @@ if (is_mac || is_android || is_linux || is_chromeos) {
+   # define custom UserStreamDataSources.
+   executable("chrome_crashpad_handler") {
+     sources = [ "chrome_crashpad_handler.cc" ]
+-
+-    deps = [
+-      ":crashpad_handler_main",
+-      "//third_party/crashpad/crashpad/handler",
+-    ]
  
--  if (is_linux || is_chromeos) {
-+  if ((is_linux || is_chromeos) && !is_openbsd) {
-     data_deps = [ "//third_party/crashpad/crashpad/handler:crashpad_handler" ]
-   }
- }
+     if (is_mac && is_component_build) {
+       ldflags = [

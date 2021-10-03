@@ -1,23 +1,23 @@
-$OpenBSD: patch-v8_src_compiler_backend_ia32_instruction-selector-ia32_cc,v 1.1 2021/09/04 08:59:46 robert Exp $
+$OpenBSD: patch-v8_src_compiler_backend_ia32_instruction-selector-ia32_cc,v 1.2 2021/10/03 21:26:52 robert Exp $
 
 Index: v8/src/compiler/backend/ia32/instruction-selector-ia32.cc
 --- v8/src/compiler/backend/ia32/instruction-selector-ia32.cc.orig
 +++ v8/src/compiler/backend/ia32/instruction-selector-ia32.cc
-@@ -2993,6 +2993,7 @@ void InstructionSelector::VisitI8x16Shuffle(Node* node
- void InstructionSelector::VisitI8x16Shuffle(Node* node) { UNREACHABLE(); }
- #endif  // V8_ENABLE_WEBASSEMBLY
+@@ -2990,6 +2990,7 @@ void InstructionSelector::VisitI8x16Shuffle(Node* node
+   Emit(opcode, 1, &dst, input_count, inputs, temp_count, temps);
+ }
  
 +#if V8_ENABLE_WEBASSEMBLY
  void InstructionSelector::VisitI8x16Swizzle(Node* node) {
    InstructionCode op = kIA32I8x16Swizzle;
  
-@@ -3012,6 +3013,9 @@ void InstructionSelector::VisitI8x16Swizzle(Node* node
-        g.UseRegister(node->InputAt(0)), g.UseRegister(node->InputAt(1)),
-        arraysize(temps), temps);
+@@ -3031,6 +3032,9 @@ void VisitPminOrPmax(InstructionSelector* selector, No
+ void InstructionSelector::VisitF32x4Pmin(Node* node) {
+   VisitPminOrPmax(this, node, kIA32F32x4Pmin);
  }
 +#else
 +void InstructionSelector::VisitI8x16Swizzle(Node* node) { UNREACHABLE(); }
 +#endif  // V8_ENABLE_WEBASSEMBLY
  
- namespace {
- void VisitPminOrPmax(InstructionSelector* selector, Node* node,
+ void InstructionSelector::VisitF32x4Pmax(Node* node) {
+   VisitPminOrPmax(this, node, kIA32F32x4Pmax);

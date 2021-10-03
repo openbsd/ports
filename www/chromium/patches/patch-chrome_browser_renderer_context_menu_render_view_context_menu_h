@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_renderer_context_menu_render_view_context_menu_h,v 1.1 2021/09/01 16:54:38 robert Exp $
+$OpenBSD: patch-chrome_browser_renderer_context_menu_render_view_context_menu_h,v 1.2 2021/10/03 21:26:51 robert Exp $
 
 Index: chrome/browser/renderer_context_menu/render_view_context_menu.h
 --- chrome/browser/renderer_context_menu/render_view_context_menu.h.orig
 +++ chrome/browser/renderer_context_menu/render_view_context_menu.h
-@@ -31,7 +31,7 @@
+@@ -32,7 +32,7 @@
  #include "ui/base/window_open_disposition.h"
  #include "ui/gfx/geometry/vector2d.h"
  
@@ -12,7 +12,7 @@ Index: chrome/browser/renderer_context_menu/render_view_context_menu.h
  #include "chrome/browser/lens/region_search/lens_region_search_controller.h"
  #endif
  
-@@ -353,7 +353,7 @@ class RenderViewContextMenu : public RenderViewContext
+@@ -359,7 +359,7 @@ class RenderViewContextMenu : public RenderViewContext
    // The type of system app (if any) associated with the WebContents we're in.
    absl::optional<web_app::SystemAppType> system_app_type_;
  

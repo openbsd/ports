@@ -1,4 +1,4 @@
-$OpenBSD: patch-remoting_host_url_forwarder_configurator_cc,v 1.1 2021/09/01 16:54:40 robert Exp $
+$OpenBSD: patch-remoting_host_url_forwarder_configurator_cc,v 1.2 2021/10/03 21:26:52 robert Exp $
 
 Index: remoting/host/url_forwarder_configurator.cc
 --- remoting/host/url_forwarder_configurator.cc.orig
@@ -7,8 +7,8 @@ Index: remoting/host/url_forwarder_configurator.cc
  
  UrlForwarderConfigurator::~UrlForwarderConfigurator() = default;
  
--#if !defined(OS_LINUX)
-+#if !defined(OS_LINUX) && !defined(OS_BSD)
+-#if !defined(OS_LINUX) && !defined(OS_WIN)
++#if !defined(OS_LINUX) && !defined(OS_WIN) && !defined(OS_BSD)
  
  // static
- UrlForwarderConfigurator* UrlForwarderConfigurator::GetInstance() {
+ std::unique_ptr<UrlForwarderConfigurator> UrlForwarderConfigurator::Create() {

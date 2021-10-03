@@ -21,6 +21,7 @@ public:
 
   void Connect(const std::string &device_guid,
                bool allow_protected_reports,
+               bool allow_fido_reports,
                ConnectCallback connect) override;
   base::WeakPtr<HidService> GetWeakPtr() override;
 

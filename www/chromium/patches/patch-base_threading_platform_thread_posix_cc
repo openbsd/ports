@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_threading_platform_thread_posix_cc,v 1.18 2021/09/01 16:54:38 robert Exp $
+$OpenBSD: patch-base_threading_platform_thread_posix_cc,v 1.19 2021/10/03 21:26:51 robert Exp $
 
 XXX pledge(2)
 
@@ -14,7 +14,7 @@ Index: base/threading/platform_thread_posix.cc
  #if BUILDFLAG(USE_PARTITION_ALLOC_AS_MALLOC)
      internal::PCScan::NotifyThreadCreated(internal::GetStackPointer());
  #endif
-@@ -322,6 +322,9 @@ bool PlatformThread::CanIncreaseThreadPriority(ThreadP
+@@ -327,6 +327,9 @@ bool PlatformThread::CanIncreaseThreadPriority(ThreadP
  // static
  void PlatformThread::SetCurrentThreadPriorityImpl(ThreadPriority priority) {
  #if defined(OS_NACL)

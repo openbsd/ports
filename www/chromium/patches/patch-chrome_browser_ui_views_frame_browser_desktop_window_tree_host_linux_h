@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_browser_desktop_window_tree_host_linux_h,v 1.1 2021/09/01 16:54:38 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_browser_desktop_window_tree_host_linux_h,v 1.2 2021/10/03 21:26:52 robert Exp $
 
 Index: chrome/browser/ui/views/frame/browser_desktop_window_tree_host_linux.h
 --- chrome/browser/ui/views/frame/browser_desktop_window_tree_host_linux.h.orig
 +++ chrome/browser/ui/views/frame/browser_desktop_window_tree_host_linux.h
-@@ -67,7 +67,7 @@ class BrowserDesktopWindowTreeHostLinux
+@@ -76,7 +76,7 @@ class BrowserDesktopWindowTreeHostLinux
  // browser_desktop_window_tree_host_lacros.cc.
  #if BUILDFLAG(IS_CHROMEOS_LACROS)
    using DesktopBrowserFrameAuraPlatform = DesktopBrowserFrameLacros;

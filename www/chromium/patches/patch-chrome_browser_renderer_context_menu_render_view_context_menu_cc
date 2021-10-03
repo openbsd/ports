@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_renderer_context_menu_render_view_context_menu_cc,v 1.1 2021/09/01 16:54:38 robert Exp $
+$OpenBSD: patch-chrome_browser_renderer_context_menu_render_view_context_menu_cc,v 1.2 2021/10/03 21:26:51 robert Exp $
 
 Index: chrome/browser/renderer_context_menu/render_view_context_menu.cc
 --- chrome/browser/renderer_context_menu/render_view_context_menu.cc.orig
 +++ chrome/browser/renderer_context_menu/render_view_context_menu.cc
-@@ -227,7 +227,7 @@
+@@ -229,7 +229,7 @@
  #include "ui/base/resource/resource_bundle.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: chrome/browser/renderer_context_menu/render_view_context_menu.cc
  #include "chrome/browser/lens/region_search/lens_region_search_controller.h"
  #endif
  
-@@ -978,7 +978,7 @@ void RenderViewContextMenu::InitMenu() {
+@@ -982,7 +982,7 @@ void RenderViewContextMenu::InitMenu() {
      AppendCurrentExtensionItems();
    }
  
@@ -21,7 +21,7 @@ Index: chrome/browser/renderer_context_menu/render_view_context_menu.cc
    if (content_type_->SupportsGroup(
            ContextMenuContentType::ITEM_GROUP_LENS_REGION_SEARCH)) {
      if (IsLensRegionSearchEnabled()) {
-@@ -3249,7 +3249,7 @@ void RenderViewContextMenu::ExecSearchLensForImage() {
+@@ -3298,7 +3298,7 @@ void RenderViewContextMenu::ExecSearchLensForImage() {
  }
  
  void RenderViewContextMenu::ExecLensRegionSearch() {

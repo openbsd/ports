@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_public_common_content_features_h,v 1.6 2021/09/01 16:54:39 robert Exp $
+$OpenBSD: patch-content_public_common_content_features_h,v 1.7 2021/10/03 21:26:52 robert Exp $
 
 Index: content/public/common/content_features.h
 --- content/public/common/content_features.h.orig
 +++ content/public/common/content_features.h
-@@ -229,7 +229,7 @@ CONTENT_EXPORT extern const base::Feature
+@@ -228,7 +228,7 @@ CONTENT_EXPORT extern const base::Feature
  CONTENT_EXPORT extern const base::Feature kWebAppWindowControlsOverlay;
  CONTENT_EXPORT extern const base::Feature kWebAssemblyBaseline;
  CONTENT_EXPORT extern const base::Feature kWebAssemblyCodeProtection;
@@ -12,7 +12,7 @@ Index: content/public/common/content_features.h
  CONTENT_EXPORT extern const base::Feature kWebAssemblyCodeProtectionPku;
  #endif  // (defined(OS_LINUX) || defined(OS_CHROMEOS)) &&
          // defined(ARCH_CPU_X86_64)
-@@ -274,7 +274,7 @@ CONTENT_EXPORT extern const base::Feature kMacSyscallS
+@@ -273,7 +273,7 @@ CONTENT_EXPORT extern const base::Feature kMacSyscallS
  CONTENT_EXPORT extern const base::Feature kRetryGetVideoCaptureDeviceInfos;
  #endif  // defined(OS_MAC)
  

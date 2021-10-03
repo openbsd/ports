@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_signin_view_controller_delegate_h,v 1.1 2021/09/01 16:54:38 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_signin_view_controller_delegate_h,v 1.2 2021/10/03 21:26:51 robert Exp $
 
 Index: chrome/browser/ui/signin_view_controller_delegate.h
 --- chrome/browser/ui/signin_view_controller_delegate.h.orig
 +++ chrome/browser/ui/signin_view_controller_delegate.h
-@@ -63,7 +63,7 @@ class SigninViewControllerDelegate {
+@@ -64,7 +64,7 @@ class SigninViewControllerDelegate {
        signin_metrics::ReauthAccessPoint access_point);
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \

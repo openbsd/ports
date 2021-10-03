@@ -1,9 +1,9 @@
-$OpenBSD: patch-build_config_linux_BUILD_gn,v 1.7 2021/09/01 16:54:38 robert Exp $
+$OpenBSD: patch-build_config_linux_BUILD_gn,v 1.8 2021/10/03 21:26:51 robert Exp $
 
 Index: build/config/linux/BUILD.gn
 --- build/config/linux/BUILD.gn.orig
 +++ build/config/linux/BUILD.gn
-@@ -30,7 +30,7 @@ config("runtime_library") {
+@@ -39,7 +39,7 @@ config("runtime_library") {
  
    if ((!(is_chromeos_ash || is_chromeos_lacros) ||
         default_toolchain != "//build/toolchain/cros:target") &&

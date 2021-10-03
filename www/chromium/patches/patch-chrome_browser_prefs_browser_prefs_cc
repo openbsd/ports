@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_prefs_browser_prefs_cc,v 1.25 2021/09/14 06:19:48 robert Exp $
+$OpenBSD: patch-chrome_browser_prefs_browser_prefs_cc,v 1.26 2021/10/03 21:26:51 robert Exp $
 
 Index: chrome/browser/prefs/browser_prefs.cc
 --- chrome/browser/prefs/browser_prefs.cc.orig
 +++ chrome/browser/prefs/browser_prefs.cc
-@@ -404,13 +404,13 @@
+@@ -405,13 +405,13 @@
  #endif
  
  #if defined(OS_WIN) || defined(OS_MAC) || \
@@ -19,7 +19,7 @@ Index: chrome/browser/prefs/browser_prefs.cc
      (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
  #include "chrome/browser/browser_switcher/browser_switcher_prefs.h"
  #endif
-@@ -1000,7 +1000,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
+@@ -1013,7 +1013,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
  // TODO(crbug/1169547) Remove `BUILDFLAG(IS_CHROMEOS_LACROS)` once the
  // migration is complete.
  #if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) || \
@@ -28,7 +28,7 @@ Index: chrome/browser/prefs/browser_prefs.cc
    enterprise_connectors::RegisterLocalPrefs(registry);
  #endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN)
  
-@@ -1029,7 +1029,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
+@@ -1042,7 +1042,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
  #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
  #endif  // defined(OS_WIN)
  
@@ -37,7 +37,7 @@ Index: chrome/browser/prefs/browser_prefs.cc
      (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
    web_app::url_handler_prefs::RegisterLocalStatePrefs(registry);
  #endif
-@@ -1320,7 +1320,7 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
+@@ -1334,7 +1334,7 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

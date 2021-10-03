@@ -1,9 +1,9 @@
-$OpenBSD: patch-net_url_request_url_request_context_builder_cc,v 1.45 2021/09/01 16:54:40 robert Exp $
+$OpenBSD: patch-net_url_request_url_request_context_builder_cc,v 1.46 2021/10/03 21:26:52 robert Exp $
 
 Index: net/url_request/url_request_context_builder.cc
 --- net/url_request/url_request_context_builder.cc.orig
 +++ net/url_request/url_request_context_builder.cc
-@@ -430,7 +430,7 @@ std::unique_ptr<URLRequestContext> URLRequestContextBu
+@@ -431,7 +431,7 @@ std::unique_ptr<URLRequestContext> URLRequestContextBu
    }
  
    if (!proxy_resolution_service_) {

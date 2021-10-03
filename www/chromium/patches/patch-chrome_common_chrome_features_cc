@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_chrome_features_cc,v 1.34 2021/09/01 16:54:39 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_features_cc,v 1.35 2021/10/03 21:26:52 robert Exp $
 
 Index: chrome/common/chrome_features.cc
 --- chrome/common/chrome_features.cc.orig
 +++ chrome/common/chrome_features.cc
-@@ -84,7 +84,7 @@ const base::Feature kAsyncDns {
+@@ -82,7 +82,7 @@ const base::Feature kAsyncDns {
  #endif
  };
  
@@ -12,7 +12,31 @@ Index: chrome/common/chrome_features.cc
  // Enables the Restart background mode optimization. When all Chrome UI is
  // closed and it goes in the background, allows to restart the browser to
  // discard memory.
-@@ -264,7 +264,7 @@ const base::Feature kDesktopPWAsNotificationIconAndTit
+@@ -99,7 +99,7 @@ const base::Feature kBorealis{"Borealis", base::FEATUR
+ const base::Feature kChangePictureVideoMode{"ChangePictureVideoMode",
+                                             base::FEATURE_ENABLED_BY_DEFAULT};
+ 
+-#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
+ // Controls whether Chrome Apps are supported. See https://crbug.com/1221251.
+ // If the feature is disabled, Chrome Apps continue to work. If enabled, Chrome
+ // Apps will not launch and will be marked in the UI as deprecated.
+@@ -216,12 +216,12 @@ const base::Feature kDefaultPinnedAppsUpdate2021Q2{
+     "DefaultPinnedAppsUpdate2021Q2", base::FEATURE_ENABLED_BY_DEFAULT};
+ #endif
+ 
+-#if BUILDFLAG(IS_CHROMEOS_ASH) || defined(OS_MAC) || defined(OS_LINUX)
++#if BUILDFLAG(IS_CHROMEOS_ASH) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
+ // Enables Desktop PWAs shortcuts menu to be visible and executable in ChromeOS,
+ // MacOS and Linux.
+ const base::Feature kDesktopPWAsAppIconShortcutsMenuUI{
+   "DesktopPWAsAppIconShortcutsMenuUI",
+-#if defined(OS_MAC) || defined(OS_LINUX)
++#if defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
+       base::FEATURE_DISABLED_BY_DEFAULT
+ #else
+       base::FEATURE_ENABLED_BY_DEFAULT
+@@ -273,7 +273,7 @@ const base::Feature kDesktopPWAsNotificationIconAndTit
  // Enables or disables Desktop PWAs to be auto-started on OS login.
  const base::Feature kDesktopPWAsRunOnOsLogin {
    "DesktopPWAsRunOnOsLogin",
@@ -21,12 +45,12 @@ Index: chrome/common/chrome_features.cc
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -535,7 +535,7 @@ const base::Feature kIncognitoBrandConsistencyForAndro
- #endif
+@@ -559,7 +559,7 @@ const base::Feature kIncognitoNtpRevamp{"IncognitoNtpR
+                                         base::FEATURE_DISABLED_BY_DEFAULT};
  
  #if defined(OS_MAC) || defined(OS_WIN) || defined(OS_LINUX) || \
--    defined(OS_CHROMEOS)
-+    defined(OS_CHROMEOS) || defined(OS_BSD)
+-    defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
++    defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
  // When enabled, removes any theme or background customization done by the user
  // on the Incognito UI.
  const base::Feature kIncognitoBrandConsistencyForDesktop{

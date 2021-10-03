@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_web_applications_extensions_extension_status_utils_cc,v 1.1 2021/10/03 21:26:52 robert Exp $
+
+Index: chrome/browser/web_applications/extensions/extension_status_utils.cc
+--- chrome/browser/web_applications/extensions/extension_status_utils.cc.orig
++++ chrome/browser/web_applications/extensions/extension_status_utils.cc
+@@ -75,7 +75,7 @@ bool IsExternalExtensionUninstalled(content::BrowserCo
+   return prefs && prefs->IsExternalExtensionUninstalled(extension_id);
+ }
+ 
+-#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
+ bool IsExtensionUnsupportedDeprecatedApp(content::BrowserContext* context,
+                                          const std::string& extension_id) {
+   auto* registry = ExtensionRegistry::Get(context);

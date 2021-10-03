@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_extensions_api_enterprise_reporting_private_enterprise_reporting_private_api_cc,v 1.1 2021/09/01 16:54:38 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_api_enterprise_reporting_private_enterprise_reporting_private_api_cc,v 1.2 2021/10/03 21:26:51 robert Exp $
 
 Index: chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.cc
 --- chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.cc.orig
 +++ chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.cc
-@@ -149,7 +149,7 @@ EnterpriseReportingPrivateGetDeviceIdFunction::
+@@ -154,7 +154,7 @@ EnterpriseReportingPrivateGetDeviceIdFunction::
  
  // getPersistentSecret
  

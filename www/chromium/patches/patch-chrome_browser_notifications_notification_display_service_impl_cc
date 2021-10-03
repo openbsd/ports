@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_notifications_notification_display_service_impl_cc,v 1.15 2021/09/01 16:54:38 robert Exp $
+$OpenBSD: patch-chrome_browser_notifications_notification_display_service_impl_cc,v 1.16 2021/10/03 21:26:51 robert Exp $
 
 Index: chrome/browser/notifications/notification_display_service_impl.cc
 --- chrome/browser/notifications/notification_display_service_impl.cc.orig
@@ -7,8 +7,8 @@ Index: chrome/browser/notifications/notification_display_service_impl.cc
  #endif
  
  #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
--    defined(OS_WIN)
-+    defined(OS_WIN) || defined(OS_BSD)
+-    defined(OS_WIN) || defined(OS_FUCHSIA)
++    defined(OS_WIN) || defined(OS_FUCHSIA) || defined(OS_BSD)
  #include "chrome/browser/send_tab_to_self/desktop_notification_handler.h"
  #include "chrome/browser/sharing/sharing_notification_handler.h"
  #endif

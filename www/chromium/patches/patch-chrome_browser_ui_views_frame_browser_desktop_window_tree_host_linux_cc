@@ -1,14 +1,14 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_browser_desktop_window_tree_host_linux_cc,v 1.1 2021/09/01 16:54:38 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_browser_desktop_window_tree_host_linux_cc,v 1.2 2021/10/03 21:26:52 robert Exp $
 
 Index: chrome/browser/ui/views/frame/browser_desktop_window_tree_host_linux.cc
 --- chrome/browser/ui/views/frame/browser_desktop_window_tree_host_linux.cc.orig
 +++ chrome/browser/ui/views/frame/browser_desktop_window_tree_host_linux.cc
-@@ -60,7 +60,7 @@ BrowserDesktopWindowTreeHostLinux::BrowserDesktopWindo
-       browser_frame_(browser_frame) {
- #if BUILDFLAG(IS_CHROMEOS_LACROS)
-   using DesktopBrowserFrameAuraPlatform = DesktopBrowserFrameLacros;
--#elif defined(OS_LINUX)
-+#elif defined(OS_LINUX) || defined(OS_BSD)
-   using DesktopBrowserFrameAuraPlatform = DesktopBrowserFrameAuraLinux;
- #else
- #error Unknown platform
+@@ -146,7 +146,7 @@ bool BrowserDesktopWindowTreeHostLinux::SupportsClient
+ }
+ 
+ void BrowserDesktopWindowTreeHostLinux::UpdateFrameHints() {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   auto* view = static_cast<BrowserFrameViewLinux*>(
+       native_frame_->browser_frame()->GetFrameView());
+   auto* layout = view->layout();

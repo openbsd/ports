@@ -1,4 +1,4 @@
-$OpenBSD: patch-v8_src_base_atomicops_h,v 1.1 2021/09/04 08:59:46 robert Exp $
+$OpenBSD: patch-v8_src_base_atomicops_h,v 1.2 2021/10/03 21:26:52 robert Exp $
 
 Index: v8/src/base/atomicops.h
 --- v8/src/base/atomicops.h.orig
@@ -25,7 +25,7 @@ Index: v8/src/base/atomicops.h
  
  inline Atomic64 Relaxed_CompareAndSwap(volatile Atomic64* ptr,
                                         Atomic64 old_value, Atomic64 new_value) {
-@@ -321,7 +321,7 @@ inline void Relaxed_Memcpy(volatile Atomic8* dst, vola
+@@ -358,7 +358,7 @@ inline void Relaxed_Memmove(volatile Atomic8* dst, vol
  
  // On some platforms we need additional declarations to make
  // AtomicWord compatible with our other Atomic* types.

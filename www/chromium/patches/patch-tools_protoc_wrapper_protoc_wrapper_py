@@ -1,9 +1,9 @@
-$OpenBSD: patch-tools_protoc_wrapper_protoc_wrapper_py,v 1.13 2021/09/01 16:54:40 robert Exp $
+$OpenBSD: patch-tools_protoc_wrapper_protoc_wrapper_py,v 1.14 2021/10/03 21:26:52 robert Exp $
 
 Index: tools/protoc_wrapper/protoc_wrapper.py
 --- tools/protoc_wrapper/protoc_wrapper.py.orig
 +++ tools/protoc_wrapper/protoc_wrapper.py
-@@ -183,7 +183,7 @@ def main(argv):
+@@ -190,7 +190,7 @@ def main(argv):
      with open(options.descriptor_set_dependency_file, 'rb') as f:
        dependency_file_data = f.read().decode('utf-8')
  

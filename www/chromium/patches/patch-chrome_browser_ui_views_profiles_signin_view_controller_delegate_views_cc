@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_profiles_signin_view_controller_delegate_views_cc,v 1.1 2021/09/01 16:54:39 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_profiles_signin_view_controller_delegate_views_cc,v 1.2 2021/10/03 21:26:52 robert Exp $
 
 Index: chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc
 --- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc.orig
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc
  // static
  std::unique_ptr<views::WebView>
  SigninViewControllerDelegateViews::CreateEnterpriseConfirmationWebView(
-@@ -335,7 +335,7 @@ SigninViewControllerDelegate::CreateReauthConfirmation
+@@ -346,7 +346,7 @@ SigninViewControllerDelegate::CreateReauthConfirmation
  }
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \

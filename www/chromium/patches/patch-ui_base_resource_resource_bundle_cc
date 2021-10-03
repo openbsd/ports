@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_base_resource_resource_bundle_cc,v 1.45 2021/09/01 16:54:40 robert Exp $
+$OpenBSD: patch-ui_base_resource_resource_bundle_cc,v 1.46 2021/10/03 21:26:52 robert Exp $
 
 Index: ui/base/resource/resource_bundle.cc
 --- ui/base/resource/resource_bundle.cc.orig
@@ -6,7 +6,7 @@ Index: ui/base/resource/resource_bundle.cc
 @@ -814,7 +814,7 @@ void ResourceBundle::ReloadFonts() {
  }
  
- ResourceScaleFactor ResourceBundle::GetMaxScaleFactor() const {
+ ResourceScaleFactor ResourceBundle::GetMaxResourceScaleFactor() const {
 -#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    return max_scale_factor_;

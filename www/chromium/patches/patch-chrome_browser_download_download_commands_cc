@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_download_download_commands_cc,v 1.25 2021/09/01 16:54:38 robert Exp $
+$OpenBSD: patch-chrome_browser_download_download_commands_cc,v 1.26 2021/10/03 21:26:51 robert Exp $
 
 Index: chrome/browser/download/download_commands.cc
 --- chrome/browser/download/download_commands.cc.orig
@@ -7,8 +7,8 @@ Index: chrome/browser/download/download_commands.cc
  #include "ui/base/clipboard/scoped_clipboard_writer.h"
  
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
--    defined(OS_MAC)
-+    defined(OS_MAC) || defined(OS_BSD)
+-    defined(OS_MAC) || defined(OS_FUCHSIA)
++    defined(OS_MAC) || defined(OS_FUCHSIA) || defined(OS_BSD)
  #include "chrome/browser/ui/browser.h"
  #include "chrome/browser/ui/browser_finder.h"
  #include "chrome/browser/ui/scoped_tabbed_browser_displayer.h"
@@ -16,17 +16,8 @@ Index: chrome/browser/download/download_commands.cc
  }
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
--    defined(OS_CHROMEOS)
-+    defined(OS_CHROMEOS) || defined(OS_BSD)
+-    defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
++    defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
  
  Browser* DownloadCommands::GetBrowser() const {
    if (!model_)
-@@ -195,7 +195,7 @@ bool DownloadCommands::CanOpenPdfInSystemViewer() cons
-   return IsDownloadPdf() &&
-          (IsAdobeReaderDefaultPDFViewer() ? is_adobe_pdf_reader_up_to_date
-                                           : true);
--#elif defined(OS_MAC) || defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#elif defined(OS_MAC) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
-   return IsDownloadPdf();
- #endif
- }

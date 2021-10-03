@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_renderer_host_render_widget_host_view_aura_cc,v 1.61 2021/09/01 16:54:39 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_render_widget_host_view_aura_cc,v 1.62 2021/10/03 21:26:52 robert Exp $
 
 Index: content/browser/renderer_host/render_widget_host_view_aura.cc
 --- content/browser/renderer_host/render_widget_host_view_aura.cc.orig
@@ -21,7 +21,7 @@ Index: content/browser/renderer_host/render_widget_host_view_aura.cc
    BrowserAccessibilityManager* manager =
        host()->GetOrCreateRootBrowserAccessibilityManager();
    if (manager && manager->GetRoot())
-@@ -2268,7 +2268,7 @@ bool RenderWidgetHostViewAura::NeedsInputGrab() {
+@@ -2272,7 +2272,7 @@ bool RenderWidgetHostViewAura::NeedsInputGrab() {
  }
  
  bool RenderWidgetHostViewAura::NeedsMouseCapture() {
@@ -30,7 +30,7 @@ Index: content/browser/renderer_host/render_widget_host_view_aura.cc
    return NeedsInputGrab();
  #else
    return false;
-@@ -2434,7 +2434,7 @@ void RenderWidgetHostViewAura::ForwardKeyboardEventWit
+@@ -2438,7 +2438,7 @@ void RenderWidgetHostViewAura::ForwardKeyboardEventWit
    if (!target_host)
      return;
  

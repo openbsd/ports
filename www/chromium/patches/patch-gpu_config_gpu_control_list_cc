@@ -1,9 +1,9 @@
-$OpenBSD: patch-gpu_config_gpu_control_list_cc,v 1.4 2021/09/01 16:54:39 robert Exp $
+$OpenBSD: patch-gpu_config_gpu_control_list_cc,v 1.5 2021/10/03 21:26:52 robert Exp $
 
 Index: gpu/config/gpu_control_list.cc
 --- gpu/config/gpu_control_list.cc.orig
 +++ gpu/config/gpu_control_list.cc
-@@ -278,7 +278,7 @@ GpuControlList::GLType GpuControlList::More::GetDefaul
+@@ -263,7 +263,7 @@ GpuControlList::GLType GpuControlList::More::GetDefaul
  #if BUILDFLAG(IS_CHROMEOS_ASH)
    return kGLTypeGL;
  #elif (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
@@ -12,7 +12,7 @@ Index: gpu/config/gpu_control_list.cc
    return kGLTypeGL;
  #elif defined(OS_MAC)
    return kGLTypeGL;
-@@ -784,7 +784,7 @@ GpuControlList::OsType GpuControlList::GetOsType() {
+@@ -769,7 +769,7 @@ GpuControlList::OsType GpuControlList::GetOsType() {
  #elif defined(OS_FUCHSIA)
    return kOsFuchsia;
  #elif (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \

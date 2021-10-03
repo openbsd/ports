@@ -1,12 +1,12 @@
-$OpenBSD: patch-ui_gl_gl_features_cc,v 1.7 2021/09/01 16:54:41 robert Exp $
+$OpenBSD: patch-ui_gl_gl_features_cc,v 1.8 2021/10/03 21:26:52 robert Exp $
 
 Index: ui/gl/gl_features.cc
 --- ui/gl/gl_features.cc.orig
 +++ ui/gl/gl_features.cc
 @@ -72,7 +72,7 @@ bool IsDeviceBlocked(const char* field, const std::str
- const base::Feature kDefaultPassthroughCommandDecoder{
+ const base::Feature kDefaultPassthroughCommandDecoder {
    "DefaultPassthroughCommandDecoder",
- #if defined(OS_WIN) ||                                       \
+ #if defined(OS_WIN) || defined(OS_FUCHSIA) ||                \
 -    ((defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) && \
 +    ((defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)) && \
       !defined(CHROMECAST_BUILD))

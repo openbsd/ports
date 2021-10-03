@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_pdfium_core_fxge_cfx_fontmapper_cpp,v 1.6 2021/09/01 16:54:40 robert Exp $
+$OpenBSD: patch-third_party_pdfium_core_fxge_cfx_fontmapper_cpp,v 1.7 2021/10/03 21:26:52 robert Exp $
 
 Index: third_party/pdfium/core/fxge/cfx_fontmapper.cpp
 --- third_party/pdfium/core/fxge/cfx_fontmapper.cpp.orig
 +++ third_party/pdfium/core/fxge/cfx_fontmapper.cpp
-@@ -157,7 +157,7 @@ const AltFontFamily g_AltFontFamilies[] = {
+@@ -157,7 +157,7 @@ constexpr AltFontFamily kAltFontFamilies[] = {
      {"ForteMT", "Forte"},
  };
  

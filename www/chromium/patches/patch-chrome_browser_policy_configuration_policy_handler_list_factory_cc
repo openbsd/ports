@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_policy_configuration_policy_handler_list_factory_cc,v 1.23 2021/09/01 16:54:38 robert Exp $
+$OpenBSD: patch-chrome_browser_policy_configuration_policy_handler_list_factory_cc,v 1.24 2021/10/03 21:26:51 robert Exp $
 
 Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
 --- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig
 +++ chrome/browser/policy/configuration_policy_handler_list_factory.cc
-@@ -1326,7 +1326,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1363,7 +1363,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      base::Value::Type::BOOLEAN },
  #endif // !defined(OS_MAC) && !defined(OS_CHROMEOS)
  
@@ -12,25 +12,25 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
    { key::kAuthNegotiateDelegateByKdcPolicy,
      prefs::kAuthNegotiateDelegateByKdcPolicy,
      base::Value::Type::BOOLEAN },
-@@ -1696,7 +1696,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -1729,7 +1729,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
  #endif  // defined(OS_ANDROID)
  
  #if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) || \
--    defined(OS_CHROMEOS)
-+    defined(OS_CHROMEOS) || defined(OS_BSD)
+-    defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
++    defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
    handlers->AddHandler(
        std::make_unique<
            enterprise_connectors::EnterpriseConnectorsPolicyHandler>(
-@@ -2060,7 +2060,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
-       SimpleSchemaValidatingPolicyHandler::RECOMMENDED_PROHIBITED,
+@@ -2092,7 +2092,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
        SimpleSchemaValidatingPolicyHandler::MANDATORY_ALLOWED));
  
--#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_FUCHSIA)
++    defined(OS_FUCHSIA) || defined(OS_BSD)
    handlers->AddHandler(std::make_unique<SimpleSchemaValidatingPolicyHandler>(
        key::kWebAppSettings, prefs::kWebAppSettings, chrome_schema,
        SCHEMA_ALLOW_UNKNOWN,
-@@ -2086,7 +2086,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -2119,7 +2119,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
            policy::key::kSpellcheckLanguageBlocklist));
  #endif  // BUILDFLAG(ENABLE_SPELLCHECK)
  

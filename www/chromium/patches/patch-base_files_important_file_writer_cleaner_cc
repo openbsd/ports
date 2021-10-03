@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_files_important_file_writer_cleaner_cc,v 1.1 2021/01/20 07:28:07 robert Exp $
+$OpenBSD: patch-base_files_important_file_writer_cleaner_cc,v 1.2 2021/10/03 21:26:51 robert Exp $
 
 Index: base/files/important_file_writer_cleaner.cc
 --- base/files/important_file_writer_cleaner.cc.orig
 +++ base/files/important_file_writer_cleaner.cc
-@@ -25,7 +25,8 @@ namespace base {
+@@ -24,7 +24,8 @@ namespace base {
  namespace {
  
  base::Time GetUpperBoundTime() {

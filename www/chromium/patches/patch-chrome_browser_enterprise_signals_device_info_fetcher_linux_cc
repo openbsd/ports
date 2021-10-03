@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_enterprise_signals_device_info_fetcher_linux_cc,v 1.5 2021/09/01 16:54:38 robert Exp $
+$OpenBSD: patch-chrome_browser_enterprise_signals_device_info_fetcher_linux_cc,v 1.6 2021/10/03 21:26:51 robert Exp $
 
 Index: chrome/browser/enterprise/signals/device_info_fetcher_linux.cc
 --- chrome/browser/enterprise/signals/device_info_fetcher_linux.cc.orig
@@ -27,7 +27,7 @@ Index: chrome/browser/enterprise/signals/device_info_fetcher_linux.cc
  #include <string>
  
  #include "base/environment.h"
-@@ -113,6 +124,7 @@ SettingValue GetScreenlockSecured() {
+@@ -112,6 +123,7 @@ SettingValue GetScreenlockSecured() {
  // Implements the logic from the native host installation script. First find the
  // root device identifier, then locate its parent and get its type.
  SettingValue GetDiskEncrypted() {
@@ -35,7 +35,7 @@ Index: chrome/browser/enterprise/signals/device_info_fetcher_linux.cc
    struct stat info;
    // First figure out the device identifier. Fail fast if this fails.
    if (stat("/", &info) != 0)
-@@ -134,11 +146,35 @@ SettingValue GetDiskEncrypted() {
+@@ -133,11 +145,35 @@ SettingValue GetDiskEncrypted() {
      }
      return SettingValue::UNKNOWN;
    }
@@ -71,7 +71,7 @@ Index: chrome/browser/enterprise/signals/device_info_fetcher_linux.cc
    base::DirReaderPosix reader("/sys/class/net");
    if (!reader.IsValid())
      return result;
-@@ -161,6 +197,7 @@ std::vector<std::string> GetMacAddresses() {
+@@ -160,6 +196,7 @@ std::vector<std::string> GetMacAddresses() {
                                &address);
      result.push_back(address);
    }

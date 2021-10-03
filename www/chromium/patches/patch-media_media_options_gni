@@ -1,9 +1,9 @@
-$OpenBSD: patch-media_media_options_gni,v 1.33 2021/09/01 16:54:40 robert Exp $
+$OpenBSD: patch-media_media_options_gni,v 1.34 2021/10/03 21:26:52 robert Exp $
 
 Index: media/media_options.gni
 --- media/media_options.gni.orig
 +++ media/media_options.gni
-@@ -106,9 +106,12 @@ declare_args() {
+@@ -113,9 +113,12 @@ declare_args() {
    # Enables runtime selection of ALSA library for audio.
    use_alsa = false
  
@@ -17,7 +17,7 @@ Index: media/media_options.gni
        (!is_chromecast || is_cast_desktop_build || is_cast_audio_only)) {
      use_alsa = true
  
-@@ -123,6 +126,10 @@ declare_args() {
+@@ -130,6 +133,10 @@ declare_args() {
      if (!use_cras && !is_chromecast && !is_asan && !is_tsan) {
        use_pulseaudio = true
      }

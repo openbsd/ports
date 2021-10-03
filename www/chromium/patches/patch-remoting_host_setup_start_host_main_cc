@@ -1,4 +1,4 @@
-$OpenBSD: patch-remoting_host_setup_start_host_main_cc,v 1.1 2021/09/01 16:54:40 robert Exp $
+$OpenBSD: patch-remoting_host_setup_start_host_main_cc,v 1.2 2021/10/03 21:26:52 robert Exp $
 
 Index: remoting/host/setup/start_host_main.cc
 --- remoting/host/setup/start_host_main.cc.orig
@@ -12,7 +12,7 @@ Index: remoting/host/setup/start_host_main.cc
  #include "remoting/host/setup/daemon_controller_delegate_linux.h"
  #include "remoting/host/setup/start_host_as_root.h"
  #endif  // defined(OS_LINUX)
-@@ -124,7 +124,7 @@ void OnDone(HostStarter::Result result) {
+@@ -126,7 +126,7 @@ void OnDone(HostStarter::Result result) {
  }  // namespace
  
  int StartHostMain(int argc, char** argv) {
@@ -21,7 +21,7 @@ Index: remoting/host/setup/start_host_main.cc
    // Minimize the amount of code that runs as root on Posix systems.
    if (getuid() == 0) {
      return remoting::StartHostAsRoot(argc, argv);
-@@ -161,7 +161,7 @@ int StartHostMain(int argc, char** argv) {
+@@ -163,7 +163,7 @@ int StartHostMain(int argc, char** argv) {
    // for the account which generated |code|.
    std::string host_owner = command_line->GetSwitchValueASCII("host-owner");
  

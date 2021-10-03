@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_net_system_network_context_manager_cc,v 1.23 2021/09/01 16:54:38 robert Exp $
+$OpenBSD: patch-chrome_browser_net_system_network_context_manager_cc,v 1.24 2021/10/03 21:26:51 robert Exp $
 
 Index: chrome/browser/net/system_network_context_manager.cc
 --- chrome/browser/net/system_network_context_manager.cc.orig
@@ -21,7 +21,7 @@ Index: chrome/browser/net/system_network_context_manager.cc
    auth_dynamic_params->delegate_by_kdc_policy =
        local_state->GetBoolean(prefs::kAuthNegotiateDelegateByKdcPolicy);
  #endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS)
-@@ -364,7 +364,7 @@ SystemNetworkContextManager::SystemNetworkContextManag
+@@ -376,7 +376,7 @@ SystemNetworkContextManager::SystemNetworkContextManag
    pref_change_registrar_.Add(prefs::kBasicAuthOverHttpEnabled,
                               auth_pref_callback);
  
@@ -30,7 +30,7 @@ Index: chrome/browser/net/system_network_context_manager.cc
    pref_change_registrar_.Add(prefs::kAuthNegotiateDelegateByKdcPolicy,
                               auth_pref_callback);
  #endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS)
-@@ -422,7 +422,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
+@@ -434,7 +434,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
    registry->RegisterStringPref(prefs::kAuthServerAllowlist, std::string());
    registry->RegisterStringPref(prefs::kAuthNegotiateDelegateAllowlist,
                                 std::string());
@@ -39,7 +39,7 @@ Index: chrome/browser/net/system_network_context_manager.cc
    registry->RegisterBooleanPref(prefs::kAuthNegotiateDelegateByKdcPolicy,
                                  false);
  #endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS)
-@@ -553,7 +553,7 @@ void SystemNetworkContextManager::OnNetworkServiceCrea
+@@ -566,7 +566,7 @@ void SystemNetworkContextManager::OnNetworkServiceCrea
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

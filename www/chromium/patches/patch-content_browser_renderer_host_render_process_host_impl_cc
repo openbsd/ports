@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_renderer_host_render_process_host_impl_cc,v 1.42 2021/09/01 16:54:39 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_render_process_host_impl_cc,v 1.43 2021/10/03 21:26:52 robert Exp $
 
 Index: content/browser/renderer_host/render_process_host_impl.cc
 --- content/browser/renderer_host/render_process_host_impl.cc.orig
 +++ content/browser/renderer_host/render_process_host_impl.cc
-@@ -229,7 +229,7 @@
+@@ -231,7 +231,7 @@
  #include "third_party/blink/public/mojom/android_font_lookup/android_font_lookup.mojom.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: content/browser/renderer_host/render_process_host_impl.cc
  #include <sys/resource.h>
  #include <sys/time.h>
  
-@@ -1413,7 +1413,7 @@ static constexpr size_t kUnknownPlatformProcessLimit =
+@@ -1376,7 +1376,7 @@ static constexpr size_t kUnknownPlatformProcessLimit =
  // to indicate failure and std::numeric_limits<size_t>::max() to indicate
  // unlimited.
  size_t GetPlatformProcessLimit() {
@@ -21,7 +21,7 @@ Index: content/browser/renderer_host/render_process_host_impl.cc
    struct rlimit limit;
    if (getrlimit(RLIMIT_NPROC, &limit) != 0)
      return kUnknownPlatformProcessLimit;
-@@ -1500,7 +1500,7 @@ class RenderProcessHostImpl::IOThreadHostImpl : public
+@@ -1463,7 +1463,7 @@ class RenderProcessHostImpl::IOThreadHostImpl : public
          return;
      }
  
@@ -30,7 +30,7 @@ Index: content/browser/renderer_host/render_process_host_impl.cc
      if (auto font_receiver = receiver.As<font_service::mojom::FontService>()) {
        ConnectToFontService(std::move(font_receiver));
        return;
-@@ -3451,6 +3451,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
+@@ -3414,6 +3414,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
      switches::kDisableSpeechAPI,
      switches::kDisableThreadedCompositing,
      switches::kDisableTouchDragDrop,

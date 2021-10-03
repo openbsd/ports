@@ -1,4 +1,4 @@
-$OpenBSD: patch-gpu_ipc_service_gpu_init_cc,v 1.36 2021/09/01 16:54:39 robert Exp $
+$OpenBSD: patch-gpu_ipc_service_gpu_init_cc,v 1.37 2021/10/03 21:26:52 robert Exp $
 
 Index: gpu/ipc/service/gpu_init.cc
 --- gpu/ipc/service/gpu_init.cc.orig
@@ -21,7 +21,7 @@ Index: gpu/ipc/service/gpu_init.cc
    if (gpu_info_.gpu.vendor_id == 0x10de &&  // NVIDIA
        gpu_info_.gpu.driver_vendor == "NVIDIA" && !CanAccessNvidiaDeviceFile())
      return false;
-@@ -269,7 +269,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -281,7 +281,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
    delayed_watchdog_enable = true;
  #endif
  
@@ -30,7 +30,7 @@ Index: gpu/ipc/service/gpu_init.cc
    // PreSandbox is mainly for resource handling and not related to the GPU
    // driver, it doesn't need the GPU watchdog. The loadLibrary may take long
    // time that killing and restarting the GPU process will not help.
-@@ -309,7 +309,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -321,7 +321,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
    }
  
    bool attempted_startsandbox = false;
@@ -39,16 +39,16 @@ Index: gpu/ipc/service/gpu_init.cc
    // On Chrome OS ARM Mali, GPU driver userspace creates threads when
    // initializing a GL context, so start the sandbox early.
    // TODO(zmo): Need to collect OS version before this.
-@@ -360,7 +360,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -372,7 +372,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
    }
    if (gl_initialized && gl_use_swiftshader_ &&
-       gl::GetGLImplementation() != gl::kGLImplementationSwiftShaderGL) {
+       !gl::IsSoftwareGLImplementation(gl::GetGLImplementationParts())) {
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
      VLOG(1) << "Quit GPU process launch to fallback to SwiftShader cleanly "
              << "on Linux";
      return false;
-@@ -394,7 +394,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -406,7 +406,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
      }
    }
  
@@ -57,7 +57,7 @@ Index: gpu/ipc/service/gpu_init.cc
    // The ContentSandboxHelper is currently the only one implementation of
    // GpuSandboxHelper and it has no dependency. Except on Linux where
    // VaapiWrapper checks the GL implementation to determine which display
-@@ -459,7 +459,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -473,7 +473,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
            command_line, gpu_feature_info_,
            gpu_preferences_.disable_software_rasterizer, false);
        if (gl_use_swiftshader_) {
@@ -66,7 +66,7 @@ Index: gpu/ipc/service/gpu_init.cc
          VLOG(1) << "Quit GPU process launch to fallback to SwiftShader cleanly "
                  << "on Linux";
          return false;
-@@ -550,7 +550,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -564,7 +564,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
  
    InitializePlatformOverlaySettings(&gpu_info_, gpu_feature_info_);
  
@@ -75,7 +75,7 @@ Index: gpu/ipc/service/gpu_init.cc
    // Driver may create a compatibility profile context when collect graphics
    // information on Linux platform. Try to collect graphics information
    // based on core profile context after disabling platform extensions.
-@@ -781,7 +781,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
+@@ -795,7 +795,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
  
    InitializePlatformOverlaySettings(&gpu_info_, gpu_feature_info_);
  

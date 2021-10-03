@@ -1,10 +1,10 @@
-$OpenBSD: patch-chrome_browser_web_applications_components_web_app_file_handler_registration_h,v 1.6 2021/09/01 16:54:39 robert Exp $
+$OpenBSD: patch-chrome_browser_web_applications_components_web_app_file_handler_registration_h,v 1.7 2021/10/03 21:26:52 robert Exp $
 
 Index: chrome/browser/web_applications/components/web_app_file_handler_registration.h
 --- chrome/browser/web_applications/components/web_app_file_handler_registration.h.orig
 +++ chrome/browser/web_applications/components/web_app_file_handler_registration.h
-@@ -42,7 +42,7 @@ void UnregisterFileHandlersWithOs(const AppId& app_id,
-                                   std::unique_ptr<ShortcutInfo> info,
+@@ -40,7 +40,7 @@ void UnregisterFileHandlersWithOs(const AppId& app_id,
+                                   Profile* profile,
                                    base::OnceCallback<void(bool)> callback);
  
 -#if defined(OS_LINUX)

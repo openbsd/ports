@@ -1,20 +1,15 @@
-$OpenBSD: patch-content_app_content_main_runner_impl_cc,v 1.25 2021/09/01 16:54:39 robert Exp $
+$OpenBSD: patch-content_app_content_main_runner_impl_cc,v 1.26 2021/10/03 21:26:52 robert Exp $
 
 Index: content/app/content_main_runner_impl.cc
 --- content/app/content_main_runner_impl.cc.orig
 +++ content/app/content_main_runner_impl.cc
-@@ -128,17 +128,17 @@
+@@ -130,13 +130,13 @@
  #include "base/posix/global_descriptors.h"
  #include "content/public/common/content_descriptors.h"
  
 -#if !defined(OS_MAC)
 +#if !defined(OS_MAC) && !defined(OS_BSD)
  #include "content/public/common/zygote/zygote_fork_delegate_linux.h"
- #endif
--#if !defined(OS_MAC) && !defined(OS_ANDROID)
-+#if !defined(OS_MAC) && !defined(OS_ANDROID) && !defined(S_BSD)
- #include "content/zygote/zygote_main.h"
- #include "sandbox/linux/services/libc_interceptor.h"
  #endif
  
  #endif  // OS_POSIX || OS_FUCHSIA
@@ -74,7 +69,7 @@ Index: content/app/content_main_runner_impl.cc
    // Set the android SkFontMgr for blink. We need to ensure this is done
    // before the sandbox is initialized to allow the font manager to access
    // font configuration files on disk.
-@@ -530,7 +544,7 @@ int RunZygote(ContentMainDelegate* delegate) {
+@@ -532,7 +546,7 @@ int NO_STACK_PROTECTOR RunZygote(ContentMainDelegate* 
    delegate->ZygoteStarting(&zygote_fork_delegates);
    media::InitializeMediaLibrary();
  
@@ -83,7 +78,7 @@ Index: content/app/content_main_runner_impl.cc
    PreSandboxInit();
  #endif
  
-@@ -688,10 +702,10 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
+@@ -704,10 +718,10 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
               kFieldTrialDescriptor + base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !OS_ANDROID
  
@@ -96,7 +91,7 @@ Index: content/app/content_main_runner_impl.cc
  
  #endif  // !OS_WIN
  
-@@ -881,6 +895,16 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
+@@ -897,6 +911,16 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
    }
  #endif
  
@@ -113,7 +108,7 @@ Index: content/app/content_main_runner_impl.cc
    delegate_->SandboxInitialized(process_type);
  
  #if BUILDFLAG(USE_ZYGOTE_HANDLE)
-@@ -925,7 +949,7 @@ int ContentMainRunnerImpl::Run(bool start_minimal_brow
+@@ -943,7 +967,7 @@ int NO_STACK_PROTECTOR ContentMainRunnerImpl::Run(bool
        mojo::core::InitFeatures();
      }
  
@@ -122,7 +117,7 @@ Index: content/app/content_main_runner_impl.cc
      // If dynamic Mojo Core is being used, ensure that it's loaded very early in
      // the child/zygote process, before any sandbox is initialized. The library
      // is not fully initialized with IPC support until a ChildProcess is later
-@@ -948,6 +972,11 @@ int ContentMainRunnerImpl::Run(bool start_minimal_brow
+@@ -966,6 +990,11 @@ int NO_STACK_PROTECTOR ContentMainRunnerImpl::Run(bool
  #endif
  
    RegisterMainThreadFactories();

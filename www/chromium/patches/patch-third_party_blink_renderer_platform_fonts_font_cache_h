@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_fonts_font_cache_h,v 1.19 2021/09/01 16:54:40 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_fonts_font_cache_h,v 1.20 2021/10/03 21:26:52 robert Exp $
 
 Index: third_party/blink/renderer/platform/fonts/font_cache.h
 --- third_party/blink/renderer/platform/fonts/font_cache.h.orig
@@ -21,8 +21,8 @@ Index: third_party/blink/renderer/platform/fonts/font_cache.h
    // These are needed for calling QueryRenderStyleForStrike, since
    // gfx::GetFontRenderParams makes distinctions based on DSF.
    static float DeviceScaleFactor() { return device_scale_factor_; }
-@@ -252,7 +252,7 @@ class PLATFORM_EXPORT FontCache {
-       const FontDescription&);
+@@ -259,7 +259,7 @@ class PLATFORM_EXPORT FontCache {
+       const char* locale_family_name);
  #endif  // defined(OS_ANDROID)
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
@@ -30,7 +30,7 @@ Index: third_party/blink/renderer/platform/fonts/font_cache.h
    static bool GetFontForCharacter(UChar32,
                                    const char* preferred_locale,
                                    gfx::FallbackFontData*);
-@@ -332,7 +332,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -339,7 +339,7 @@ class PLATFORM_EXPORT FontCache {
                                     const FontFaceCreationParams&,
                                     std::string& name);
  
@@ -39,7 +39,7 @@ Index: third_party/blink/renderer/platform/fonts/font_cache.h
    static AtomicString GetFamilyNameForCharacter(SkFontMgr*,
                                                  UChar32,
                                                  const FontDescription&,
-@@ -378,7 +378,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -385,7 +385,7 @@ class PLATFORM_EXPORT FontCache {
    std::unique_ptr<FallbackFamilyStyleCache> fallback_params_cache_;
  #endif  // defined(OS_WIN)
  

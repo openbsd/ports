@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.52 2021/09/04 08:59:45 robert Exp $
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.53 2021/10/03 21:26:51 robert Exp $
 
 Index: build/config/compiler/BUILD.gn
 --- build/config/compiler/BUILD.gn.orig
@@ -35,7 +35,7 @@ Index: build/config/compiler/BUILD.gn
      cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
  
      # TODO(hans): Remove this once Clang generates better optimized debug info
-@@ -853,7 +850,7 @@ config("compiler_cpu_abi") {
+@@ -865,7 +862,7 @@ config("compiler_cpu_abi") {
          ]
        }
      } else if (current_cpu == "arm") {
@@ -44,7 +44,7 @@ Index: build/config/compiler/BUILD.gn
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
        }
-@@ -867,7 +864,7 @@ config("compiler_cpu_abi") {
+@@ -879,7 +876,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -53,7 +53,16 @@ Index: build/config/compiler/BUILD.gn
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1600,11 +1597,6 @@ config("default_warnings") {
+@@ -1223,7 +1220,7 @@ config("compiler_deterministic") {
+     # different build directory like "out/feature_a" and "out/feature_b" if
+     # we build same files with same compile flag.
+     # Other paths are already given in relative, no need to normalize them.
+-    if (is_nacl) {
++    if (is_nacl || is_openbsd) {
+       # TODO(https://crbug.com/1231236): Use -ffile-compilation-dir= here.
+       cflags += [
+         "-Xclang",
+@@ -1616,11 +1613,6 @@ config("default_warnings") {
          cflags += [
            "-Wenum-compare-conditional",
  
@@ -65,22 +74,16 @@ Index: build/config/compiler/BUILD.gn
            # Ignore warnings about MSVC optimization pragmas.
            # TODO(thakis): Only for no_chromium_code? http://crbug.com/912662
            "-Wno-ignored-pragma-optimize",
-@@ -1617,13 +1609,6 @@ config("default_warnings") {
- 
+@@ -1631,17 +1623,10 @@ config("default_warnings") {
            # TODO(https://crbug.com/1028110): Evaluate and possible enable.
            "-Wno-deprecated-copy",
--
--          # TODO(https://crbug.com/1050281): Clean up, enable.
--          "-Wno-non-c-typedef-for-linkage",
--
+ 
 -          # TODO(https://crbug.com/1203071): Clean up and enable.
 -          "-Wno-unused-but-set-parameter",
 -          "-Wno-unused-but-set-variable",
-         ]
- 
-         cflags_c += [
-@@ -1631,9 +1616,6 @@ config("default_warnings") {
-           "-Wno-implicit-fallthrough",
+-
+           # TODO(https://crbug.com/1239077): Fix and re-enable.
+           "-Wno-inline-asm",
          ]
  
 -        if (enable_wmax_tokens) {
@@ -89,7 +92,7 @@ Index: build/config/compiler/BUILD.gn
        }
      }
    }
-@@ -1773,7 +1755,7 @@ config("no_chromium_code") {
+@@ -1781,7 +1766,7 @@ config("no_chromium_code") {
        # third-party libraries.
        "-Wno-c++11-narrowing",
      ]
@@ -98,7 +101,7 @@ Index: build/config/compiler/BUILD.gn
        cflags += [
          # TODO(https://crbug.com/1202159): Clean up and enable.
          "-Wno-misleading-indentation",
-@@ -1853,7 +1835,7 @@ config("thin_archive") {
+@@ -1861,7 +1846,7 @@ config("thin_archive") {
    # archives.
    # TODO(crbug.com/1221615): Enable on is_apple if use_lld once that no longer
    # confuses lldb.
@@ -107,7 +110,7 @@ Index: build/config/compiler/BUILD.gn
      arflags = [ "-T" ]
    } else if (is_win && use_lld) {
      arflags = [ "/llvmlibthin" ]
-@@ -2291,7 +2273,7 @@ config("afdo_optimize_size") {
+@@ -2255,7 +2240,7 @@ config("afdo_optimize_size") {
  # between //base/allocator:tcmalloc and AFDO on GCC), so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -116,7 +119,7 @@ Index: build/config/compiler/BUILD.gn
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2307,7 +2289,7 @@ config("afdo") {
+@@ -2271,7 +2256,7 @@ config("afdo") {
        cflags += [ "-fprofile-sample-use=${rebased_clang_sample_profile}" ]
        inputs = [ _clang_sample_profile ]
      }

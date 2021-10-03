@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_core_exported_web_view_impl_cc,v 1.7 2021/09/14 06:19:48 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_core_exported_web_view_impl_cc,v 1.8 2021/10/03 21:26:52 robert Exp $
 
 Index: third_party/blink/renderer/core/exported/web_view_impl.cc
 --- third_party/blink/renderer/core/exported/web_view_impl.cc.orig
@@ -12,7 +12,7 @@ Index: third_party/blink/renderer/core/exported/web_view_impl.cc
    if (!prefs.should_antialias_text) {
      // When anti-aliasing is off, GTK maps all non-zero hinting settings to
      // 'Normal' hinting so we do the same. Otherwise, folks who have 'Slight'
-@@ -3135,7 +3135,7 @@ void WebViewImpl::UpdateFontRenderingFromRendererPrefs
+@@ -3132,7 +3132,7 @@ void WebViewImpl::UpdateFontRenderingFromRendererPrefs
        renderer_preferences_.use_subpixel_positioning);
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.

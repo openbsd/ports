@@ -1,14 +1,14 @@
-$OpenBSD: patch-ui_gl_init_gl_factory_cc,v 1.1 2021/09/01 16:54:41 robert Exp $
+$OpenBSD: patch-ui_gl_init_gl_factory_cc,v 1.2 2021/10/03 21:26:52 robert Exp $
 
 Index: ui/gl/init/gl_factory.cc
 --- ui/gl/init/gl_factory.cc.orig
 +++ ui/gl/init/gl_factory.cc
-@@ -139,7 +139,7 @@ bool InitializeGLOneOffPlatformHelper(bool init_extens
+@@ -171,7 +171,7 @@ bool InitializeGLOneOffPlatformHelper(bool init_extens
  }  // namespace
  
  GLImplementationParts GetSoftwareGLForTestsImplementation() {
 -#if defined(OS_WIN) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
- #if defined(USE_OZONE)
-   if (!features::IsUsingOzonePlatform() ||
-       ((ui::OzonePlatform::GetPlatformNameForTest() != "wayland") &&
+   return GetSoftwareGLImplementation();
+ #else
+   return GetLegacySoftwareGLImplementation();

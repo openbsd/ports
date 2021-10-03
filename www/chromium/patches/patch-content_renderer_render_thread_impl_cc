@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.53 2021/09/01 16:54:39 robert Exp $
+$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.54 2021/10/03 21:26:52 robert Exp $
 
 Index: content/renderer/render_thread_impl.cc
 --- content/renderer/render_thread_impl.cc.orig
 +++ content/renderer/render_thread_impl.cc
-@@ -182,7 +182,7 @@
+@@ -184,7 +184,7 @@
  
  #if defined(OS_MAC)
  #include <malloc/malloc.h>
@@ -12,7 +12,7 @@ Index: content/renderer/render_thread_impl.cc
  #include <malloc.h>
  #endif
  
-@@ -694,7 +694,7 @@ void RenderThreadImpl::Init() {
+@@ -696,7 +696,7 @@ void RenderThreadImpl::Init() {
                         compositor_thread_pipeline_.get()));
    }
  
@@ -21,7 +21,7 @@ Index: content/renderer/render_thread_impl.cc
    categorized_worker_pool_->SetBackgroundingCallback(
        main_thread_scheduler_->DefaultTaskRunner(),
        base::BindOnce(
-@@ -717,7 +717,7 @@ void RenderThreadImpl::Init() {
+@@ -719,7 +719,7 @@ void RenderThreadImpl::Init() {
    base::DiscardableMemoryAllocator::SetInstance(
        discardable_memory_allocator_.get());
  
@@ -30,7 +30,7 @@ Index: content/renderer/render_thread_impl.cc
    if (base::FeatureList::IsEnabled(
            blink::features::kBlinkCompositorUseDisplayThreadPriority)) {
      render_message_filter()->SetThreadPriority(
-@@ -1040,7 +1040,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
+@@ -1048,7 +1048,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
  
    const bool enable_video_accelerator =
  

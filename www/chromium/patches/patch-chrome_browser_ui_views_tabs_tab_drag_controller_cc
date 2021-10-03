@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_tabs_tab_drag_controller_cc,v 1.50 2021/09/01 16:54:39 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_tabs_tab_drag_controller_cc,v 1.51 2021/10/03 21:26:52 robert Exp $
 
 Index: chrome/browser/ui/views/tabs/tab_drag_controller.cc
 --- chrome/browser/ui/views/tabs/tab_drag_controller.cc.orig
@@ -21,7 +21,7 @@ Index: chrome/browser/ui/views/tabs/tab_drag_controller.cc
      // EndMoveLoop is going to snap the window back to its original location.
      // Hide it so users don't see this. Hiding a window in Linux aura causes
      // it to lose capture so skip it.
-@@ -2209,7 +2209,7 @@ TabDragController::Liveness TabDragController::GetLoca
+@@ -2214,7 +2214,7 @@ TabDragController::Liveness TabDragController::GetLoca
    }
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

@@ -1,14 +1,17 @@
-$OpenBSD: patch-build_config_c++_c++_gni,v 1.11 2021/09/01 16:54:38 robert Exp $
+$OpenBSD: patch-build_config_c++_c++_gni,v 1.12 2021/10/03 21:26:51 robert Exp $
 
 Index: build/config/c++/c++.gni
 --- build/config/c++/c++.gni.orig
 +++ build/config/c++/c++.gni
-@@ -14,7 +14,7 @@ declare_args() {
-   # We always use system installed libc++ on building chrome (incl. both Ash
-   # and Lacros Chrome) running on Chrome OS devices with cros-toolchain.
-   use_custom_libcxx =
--      is_fuchsia || is_android || is_mac || is_linux ||
-+      is_fuchsia || is_android || is_mac || (is_linux && !is_openbsd) ||
-       (is_ios && !use_xcode_clang) || (is_win && is_clang) ||
-       (is_chromeos && default_toolchain != "//build/toolchain/cros:target")
+@@ -11,10 +11,7 @@ declare_args() {
+   # standard library support.
+   # Don't check in changes that set this to false for more platforms; doing so
+   # is not supported.
+-  use_custom_libcxx =
+-      is_fuchsia || is_android || is_mac || is_linux || is_chromeos_lacros ||
+-      (is_ios && !use_xcode_clang) || (is_win && is_clang) ||
+-      (is_chromeos && default_toolchain != "//build/toolchain/cros:target")
++  use_custom_libcxx = false
  
+   # Use libc++ instead of stdlibc++ when using the host_cpu toolchain, even if
+   # use_custom_libcxx is false. This is useful for cross-compiles where a custom
