@@ -1,10 +1,11 @@
-$OpenBSD: patch-src_FilePanel_cpp,v 1.3 2016/07/01 08:46:52 landry Exp $
+$OpenBSD: patch-src_FilePanel_cpp,v 1.4 2021/10/03 21:19:58 bcallah Exp $
 
 onCmdDirUsage is linux-only for now
 
---- src/FilePanel.cpp.orig	Fri Jul  1 10:17:59 2016
-+++ src/FilePanel.cpp	Fri Jul  1 10:18:06 2016
-@@ -124,7 +124,6 @@ FXDEFMAP(FilePanel) FilePanelMap[] =
+Index: src/FilePanel.cpp
+--- src/FilePanel.cpp.orig
++++ src/FilePanel.cpp
+@@ -127,7 +127,6 @@ FXDEFMAP(FilePanel) FilePanelMap[] =
      FXMAPFUNC(SEL_COMMAND, FilePanel::ID_RUN_SCRIPT, FilePanel::onCmdRunScript),
      FXMAPFUNC(SEL_UPDATE, FilePanel::ID_RUN_SCRIPT, FilePanel::onUpdRunScript),
      FXMAPFUNC(SEL_COMMAND, FilePanel::ID_GO_SCRIPTDIR, FilePanel::onCmdGoScriptDir),
@@ -12,7 +13,7 @@ onCmdDirUsage is linux-only for now
      FXMAPFUNC(SEL_RIGHTBUTTONRELEASE, FilePanel::ID_FILELIST, FilePanel::onCmdPopupMenu),
      FXMAPFUNC(SEL_COMMAND, FilePanel::ID_POPUP_MENU, FilePanel::onCmdPopupMenu),
      FXMAPFUNC(SEL_DOUBLECLICKED, FilePanel::ID_FILELIST, FilePanel::onCmdItemDoubleClicked),
-@@ -155,6 +154,7 @@ FXDEFMAP(FilePanel) FilePanelMap[] =
+@@ -158,6 +157,7 @@ FXDEFMAP(FilePanel) FilePanelMap[] =
      FXMAPFUNC(SEL_UPDATE, FilePanel::ID_TOGGLE_THUMBNAILS, FilePanel::onUpdToggleThumbnails),
      FXMAPFUNC(SEL_UPDATE, FilePanel::ID_DIR_USAGE, FilePanel::onUpdDirUsage),
  #if defined(linux)

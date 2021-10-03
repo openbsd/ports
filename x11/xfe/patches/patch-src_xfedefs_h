@@ -1,20 +1,21 @@
-$OpenBSD: patch-src_xfedefs_h,v 1.5 2016/09/04 09:04:39 giovanni Exp $
+$OpenBSD: patch-src_xfedefs_h,v 1.6 2021/10/03 21:19:58 bcallah Exp $
 
 Unbreak launching Xfe as root with sudo or su (fix gnuisms)
 
---- src/xfedefs.h.orig	Wed Jul 27 13:27:41 2016
-+++ src/xfedefs.h	Sun Sep  4 10:20:49 2016
+Index: src/xfedefs.h
+--- src/xfedefs.h.orig
++++ src/xfedefs.h
 @@ -172,11 +172,11 @@
  
  // Command to launch Xfe as root with sudo or su, using st as a terminal
- #ifndef SUDOCMD
--#define SUDOCMD    " -g 60x4 -e sudo su -c 'nohup xfe >& /dev/null & sleep 1'"
-+#define SUDOCMD    " -g 60x4 -e doas su root -c 'nohup xfe >/dev/null 2>&1 & sleep 1'"
+ #ifndef DEFAULT_SUDO_CMD
+-#define DEFAULT_SUDO_CMD    "sudo -b xfe"
++#define DEFAULT_SUDO_CMD    "doas su root -c 'nohup xfe >/dev/null 2>&1 & sleep 1'"
  #endif
  
- #ifndef SUCMD
--#define SUCMD    " -g 60x4 -e su -c 'nohup xfe >& /dev/null & sleep 1'"
-+#define SUCMD    " -g 60x4 -e su root -c 'nohup xfe >/dev/null 2>&1 & sleep 1'"
+ #ifndef DEFAULT_SU_CMD
+-#define DEFAULT_SU_CMD    "su -c 'nohup xfe >& /dev/null &'"
++#define DEFAULT_SU_CMD    "su root -c 'nohup xfe >/dev/null 2>&1 & sleep 1'"
  #endif
  
  // Tooltips setup time and duration
