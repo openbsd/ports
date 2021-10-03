@@ -1,4 +1,4 @@
-$OpenBSD: patch-LibreNMS_OS_Routeros_php,v 1.1 2021/06/25 16:29:54 sthen Exp $
+$OpenBSD: patch-LibreNMS_OS_Routeros_php,v 1.2 2021/10/03 19:30:52 sthen Exp $
 
 From 1125750d3c7c332f2ca43f4518a4588b0c708392 Mon Sep 17 00:00:00 2001
 From: Stuart Henderson <stu@spacehopper.org>
@@ -10,7 +10,7 @@ https://github.com/librenms/librenms/pull/12976
 Index: LibreNMS/OS/Routeros.php
 --- LibreNMS/OS/Routeros.php.orig
 +++ LibreNMS/OS/Routeros.php
-@@ -221,8 +221,9 @@ class Routeros extends OS implements
+@@ -222,8 +222,9 @@ class Routeros extends OS implements
          if (is_null($this->data)) {
              $wl60 = snmpwalk_cache_oid($this->getDeviceArray(), 'mtxrWl60GTable', [], 'MIKROTIK-MIB');
              $wlap = snmpwalk_cache_oid($this->getDeviceArray(), 'mtxrWlApTable', [], 'MIKROTIK-MIB');
@@ -21,7 +21,7 @@ Index: LibreNMS/OS/Routeros.php
              $this->data = $this->data + $wl60sta;
          }
  
-@@ -265,6 +266,18 @@ class Routeros extends OS implements
+@@ -266,6 +267,18 @@ class Routeros extends OS implements
                      'SSID: ' . $entry['mtxrWlApSsid'],
                      $entry[$oid]
                  );
@@ -40,7 +40,7 @@ Index: LibreNMS/OS/Routeros.php
              } else {
                  $sensors[] = new WirelessSensor(
                      $type,
-@@ -281,55 +294,82 @@ class Routeros extends OS implements
+@@ -282,55 +295,82 @@ class Routeros extends OS implements
          return $sensors;
      }
  
