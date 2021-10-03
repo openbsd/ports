@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.51 2021/07/19 11:07:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2021/10/03 19:17:48 sthen Exp $
 
 COMMENT=	library for HTTP/2
 
-V=		1.44.0
+V=		1.45.1
 DISTNAME=	nghttp2-$V
 
-SHARED_LIBS +=	nghttp2              0.17     # 33.0
+SHARED_LIBS +=	nghttp2              0.18     # 33.0
 
 CATEGORIES=	www
 
@@ -20,7 +20,7 @@ SEPARATE_BUILD=		Yes
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.69
+AUTOCONF_VERSION=	2.71
 # - examples have conflicts (libevent, libevent2, libev)
 # - hpack-tools require a C++11 compiler (array)
 # Both of these pull in additional libraries; deliberately trying to keep
