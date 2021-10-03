@@ -1,9 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2021/09/29 18:33:58 sthen Exp $
-
-# XXX mistake in 7.0
-.if ${MACHINE_ARCH} != aarch64 && ${MACHINE_ARCH} != arm
-COMPILER=ports-gcc
-.endif
+# $OpenBSD: Makefile,v 1.52 2021/10/03 19:03:48 sthen Exp $
 
 COMMENT-main=		UW e-mail client
 COMMENT-c-client=	UW c-client mail access routines
@@ -24,15 +19,16 @@ PICO_V=			5.09
 # grep PILOT_VERSION ${WRKSRC}/pico/pilot.c
 PILOT_V=		2.99
 
+REVISION-main=		1
+REVISION-pico=		24
+REVISION-pilot=		24
+
 PKGNAME-main=		alpine-${V}
 PKGNAME-c-client=	c-client-${V}
 PKGNAME-imap=		imap-uw-${V}
 PKGNAME-mailutil=	mailutil-uw-${V}
 PKGNAME-pico=		pico-${PICO_V}
 PKGNAME-pilot=		pilot-${PILOT_V}
-
-REVISION-pico=		22
-REVISION-pilot=		22
 
 EPOCH-c-client=		0
 EPOCH-imap=		0
