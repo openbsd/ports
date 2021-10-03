@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2020/07/06 07:52:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2021/10/03 19:52:18 ajacoutot Exp $
 
 COMMENT=		library implementing the Unicode Bidirectional Algorithm
 
-V=			1.0.10
+V=			1.0.11
 
 GH_PROJECT=		fribidi
 GH_ACCOUNT=		fribidi
