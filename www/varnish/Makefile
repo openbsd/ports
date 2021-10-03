@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.61 2021/09/02 21:28:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2021/10/03 21:14:21 kn Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
-DISTNAME =		varnish-6.6.1
-REVISION =		0
+DISTNAME =		varnish-7.0.0
 
 CATEGORIES =		www
 
-SHARED_LIBS =		varnishapi      3.1     # 2.6
+SHARED_LIBS =		varnishapi      4.0     # 3.0
 
 HOMEPAGE =		https://www.varnish-cache.org/
 
@@ -21,7 +20,7 @@ MASTER_SITES =		https://varnish-cache.org/_downloads/
 
 EXTRACT_SUFX =		.tgz
 
-WANTLIB += c curses execinfo m pcre pthread readline
+WANTLIB += c curses execinfo m pcre2-8 pthread readline
 
 MODULES =		lang/python
 MODPY_RUNDEP =		No
@@ -29,7 +28,7 @@ MODPY_ADJ_FILES =	lib/libvcc/{vsc,vmod}tool.py
 
 BUILD_DEPENDS =		textproc/py-docutils${MODPY_FLAVOR} \
 			textproc/py-sphinx${MODPY_FLAVOR}
-LIB_DEPENDS =		devel/pcre
+LIB_DEPENDS =		devel/pcre2
 
 USE_GMAKE =		Yes
 SEPARATE_BUILD =	Yes
