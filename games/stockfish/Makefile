@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2021/08/01 14:23:28 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2021/10/03 21:06:38 bcallah Exp $
 
-V =		13
+V =		14
 COMMENT =	open source chess engine
 PKGNAME =	stockfish-${V}
+NNUE =		nn-3475407dc199.nnue
 CATEGORIES =	games
 
 HOMEPAGE =	https://stockfishchess.org/
@@ -15,9 +16,9 @@ WANTLIB += ${COMPILER_LIBCXX} c m
 
 # XXX: Ports does not permit GH_* and MASTER_SITES together.
 MASTER_SITES0 =	https://github.com/official-stockfish/Stockfish/archive/
-MASTER_SITES1 =	https://tests.stockfishchess.org/api/nn/
+MASTER_SITES1 =	https://github.com/daylen/stockfish-mac/raw/b1de3922d481969cb4fbc9c32952a8e01ca0c3e1/
 DISTFILES =	sf_${V}.tar.gz:0 \
-		nn-62ef826d1a6d.nnue:1
+		${NNUE}:1
 EXTRACT_ONLY =	sf_${V}.tar.gz
 
 # C++17
@@ -50,7 +51,7 @@ WRKDIST =	${WRKDIR}/Stockfish-sf_${V}
 WRKSRC =	${WRKDIST}/src
 
 post-extract:
-	cp ${DISTDIR}/nn-62ef826d1a6d.nnue ${WRKSRC}
+	cp ${DISTDIR}/${NNUE} ${WRKSRC}
 
 pre-configure:
 	sed -i 's,-O3,${CXXFLAGS},g' ${WRKSRC}/Makefile
