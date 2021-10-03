@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2020/02/12 22:04:32 kn Exp $
+# $OpenBSD: Makefile,v 1.18 2021/10/03 22:01:54 kn Exp $
 
 COMMENT =	simple X Image Viewer
 
 GH_PROJECT =	sxiv
 GH_ACCOUNT =	muennich
 GH_TAGNAME =	v26
+REVISION =	0
 
 CATEGORIES =	graphics x11
 
@@ -39,5 +40,6 @@ post-install:
 	${MAKE_PROGRAM} -C ${WRKSRC}/icon/ DESTDIR='' ${FAKE_TARGET}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/sxiv.desktop ${PREFIX}/share/applications
+	${SUBST_CMD} ${PREFIX}/man/man1/sxiv.1
 
 .include <bsd.port.mk>

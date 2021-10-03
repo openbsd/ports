@@ -1,20 +1,11 @@
-$OpenBSD: patch-sxiv_1,v 1.4 2020/02/12 22:04:32 kn Exp $
+$OpenBSD: patch-sxiv_1,v 1.5 2021/10/03 22:01:54 kn Exp $
 
-Substitute paths.
+Substitute paths (this port handles PREFIX and VERSION itself).
 
 Index: sxiv.1
 --- sxiv.1.orig
 +++ sxiv.1
-@@ -397,7 +397,7 @@ and the arguments given to it are: 1) path to image fi
- 3) image height.
- .P
- There is also an example script installed together with sxiv as
--.IR PREFIX/share/sxiv/exec/image-info .
-+.IR ${PREFIX}/share/sxiv/exec/image-info .
- .SH EXTERNAL KEY HANDLER
- Additional external keyboard commands can be defined using a handler program
- located in
-@@ -412,10 +412,10 @@ have been modified and reloads them.
+@@ -412,7 +412,7 @@ have been modified and reloads them.
  
  The key combo argument has the following form: "[C-][M-][S-]KEY",
  where C/M/S indicate Ctrl/Meta(Alt)/Shift modifier states and KEY is the X
@@ -22,8 +13,4 @@ Index: sxiv.1
 +keysym as listed in ${X11BASE}/include/X11/keysymdef.h without the "XK_" prefix.
  
  There is also an example script installed together with sxiv as
--.IR PREFIX/share/sxiv/exec/key-handler .
-+.IR {PREFIX}/share/sxiv/exec/key-handler .
- .SH THUMBNAIL CACHING
- sxiv stores all thumbnails under
- .IR $XDG_CACHE_HOME/sxiv/ .
+ .IR PREFIX/share/sxiv/exec/key-handler .
