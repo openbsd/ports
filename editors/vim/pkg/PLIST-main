@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.49 2021/09/02 16:08:43 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.50 2021/10/03 19:04:52 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk3%%
 bin/ex
@@ -498,6 +498,7 @@ share/vim/${P}/ftplugin/nsis.vim
 share/vim/${P}/ftplugin/objc.vim
 share/vim/${P}/ftplugin/ocaml.vim
 share/vim/${P}/ftplugin/occam.vim
+share/vim/${P}/ftplugin/octave.vim
 share/vim/${P}/ftplugin/pamconf.vim
 share/vim/${P}/ftplugin/pascal.vim
 share/vim/${P}/ftplugin/passwd.vim
