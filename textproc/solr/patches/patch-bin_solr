@@ -1,4 +1,4 @@
-$OpenBSD: patch-bin_solr,v 1.14 2021/06/17 07:09:57 sthen Exp $
+$OpenBSD: patch-bin_solr,v 1.15 2021/10/03 19:29:09 sthen Exp $
 
 Index: bin/solr
 --- bin/solr.orig
@@ -14,7 +14,7 @@ Index: bin/solr
  fi
  
  if [ -z "$SOLR_STOP_WAIT" ]; then
-@@ -2280,13 +2280,13 @@ function start_solr() {
+@@ -2284,13 +2284,13 @@ function start_solr() {
  	echo ""
      fi
      # no lsof on cygwin though
