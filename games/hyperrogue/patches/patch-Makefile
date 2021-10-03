@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.1 2021/07/03 15:00:57 cwen Exp $
+$OpenBSD: patch-Makefile,v 1.2 2021/10/03 19:41:43 bcallah Exp $
 
 Remove hardcoded optimisation flags and -Werror, add a consistent
 flag set for clang and ports-gcc
@@ -22,20 +22,22 @@ Index: Makefile
  
  ifeq (${OS},mingw)
    CXXFLAGS_EARLY += -DWINDOWS -mwindows -D_A_VOLID=8
-@@ -79,28 +77,11 @@ ifeq (${OS},osx)
+@@ -79,29 +77,12 @@ ifeq (${OS},osx)
    hyper_RES :=
  endif
  
 -ifeq (${TOOLCHAIN},clang)
 -  CXXFLAGS_STD = -std=c++11
 -  CXXFLAGS_EARLY += -march=native -fPIC
--  CXXFLAGS_EARLY += -W -Wall -Wextra -Werror -pedantic
+-  CXXFLAGS_EARLY += -W -Wall -Wextra -Wsuggest-override -Werror -pedantic
 -  CXXFLAGS_EARLY += -Wno-unused-parameter -Wno-implicit-fallthrough -Wno-maybe-uninitialized -Wno-unknown-warning-option
+-  CXXFLAGS_EARLY += -Wno-invalid-offsetof
 -endif
 +CXXFLAGS_STD = -std=c++11
 +CXXFLAGS_EARLY += -fPIC
-+CXXFLAGS_EARLY += -W -Wall -Wextra -pedantic
++CXXFLAGS_EARLY += -W -Wall -Wextra -Wsuggest-override -pedantic
 +CXXFLAGS_EARLY += -Wno-unused-parameter -Wno-implicit-fallthrough -Wno-maybe-uninitialized -Wno-unknown-warning-option
++CXXFLAGS_EARLY += -Wno-invalid-offsetof
  
 -ifeq (${TOOLCHAIN},gcc)
 -  CXXFLAGS_STD = -std=c++11
@@ -55,7 +57,7 @@ Index: Makefile
  ## We have now finished OS-specific and TOOLCHAIN-specific computations.
  ## Begin customization points for user-specifiable HYPERROGUE_USE_XXX macros.
  
-@@ -138,19 +119,19 @@ override CXXFLAGS := $(CXXFLAGS_STD) $(CXXFLAGS_EARLY)
+@@ -139,19 +120,19 @@ override CXXFLAGS := $(CXXFLAGS_STD) $(CXXFLAGS_EARLY)
  override LDFLAGS := $(LDFLAGS_EARLY) $(LDFLAGS) ${EXTRA_LDFLAGS}
  
  hyperrogue$(EXE_EXTENSION): $(hyper_OBJS) $(hyper_RES)
@@ -79,7 +81,7 @@ Index: Makefile
  
  autohdr.h: makeh$(EXE_EXTENSION) language-data.cpp *.cpp
  	./makeh classes.cpp locations.cpp colors.cpp hyperpoint.cpp geometry.cpp goldberg.cpp init.cpp floorshapes.cpp cell.cpp multi.cpp shmup.cpp pattern2.cpp mapeditor.cpp graph.cpp textures.cpp hprint.cpp language.cpp util.cpp complex.cpp *.cpp > autohdr.h
-@@ -159,10 +140,10 @@ language-data.cpp: langen$(EXE_EXTENSION)
+@@ -160,10 +141,10 @@ language-data.cpp: langen$(EXE_EXTENSION)
  	./langen > language-data.cpp
  
  savepng$(OBJ_EXTENSION): savepng.cpp
