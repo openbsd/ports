@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2021/09/05 21:00:36 bcallah Exp $
+# $OpenBSD: Makefile,v 1.7 2021/10/03 20:11:34 bcallah Exp $
 
 ONLY_FOR_ARCHS =	amd64 arm64 armv7 i386 riscv64
 
 COMMENT =	tiny C compiler
-DISTNAME =	tcc-0.9.27.20210801
+DISTNAME =	tcc-0.9.27.20210916
 CATEGORIES =	lang
 
 # 0.9.27 release pre-dates OpenBSD support; use GH_COMMIT
-GH_ACCOUNT =	TinyCC
+GH_ACCOUNT =	mirror
 GH_PROJECT =	tinycc
-GH_COMMIT =	dda95e9b0b30771369efe66b4a47e94cf0ca7dc0
+GH_COMMIT =	15e9b7384e7091200aa33499b1ddcbf6e2f6a959
 
 HOMEPAGE =	https://bellard.org/tcc/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -31,6 +31,6 @@ CONFIGURE_ARGS =	--cc="${CC}" \
 
 USE_GMAKE =	Yes
 
-GIT_HASH =	-DTCC_GITHASH='\\\"`echo ${GH_COMMIT} | cut -c1-7`\\\"'
+GIT_HASH =	-DTCC_GITHASH='\\\"mob:`echo ${GH_COMMIT} | cut -c1-7`\\\"'
 
 .include <bsd.port.mk>
