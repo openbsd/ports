@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2021/10/03 22:01:54 kn Exp $
+# $OpenBSD: Makefile,v 1.19 2021/10/03 22:16:43 kn Exp $
 
 COMMENT =	simple X Image Viewer
 
@@ -32,6 +32,9 @@ MAKE_FLAGS =	CC="${CC}" \
 
 NO_TEST =	Yes
 
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/sxiv.1
+
 # Git errors break version.h build; this makes it fall back to a hardcoded value
 pre-build:
 	ln -sf /usr/bin/true ${WRKDIR}/bin/git
@@ -40,6 +43,6 @@ post-install:
 	${MAKE_PROGRAM} -C ${WRKSRC}/icon/ DESTDIR='' ${FAKE_TARGET}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/sxiv.desktop ${PREFIX}/share/applications
-	${SUBST_CMD} ${PREFIX}/man/man1/sxiv.1
+	rm -f -- ${PREFIX}/share/sxiv/exec/*${PATCHORIG}
 
 .include <bsd.port.mk>
