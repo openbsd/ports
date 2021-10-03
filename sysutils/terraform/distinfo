@@ -1140,7 +1140,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/@v/v0.0.0-20190525122527-15
 SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/@v/v0.0.0-20190525122527-15d366b2352e.zip) = bfT2TH3pDi8StbfvnZU5cHD3v4bJq3P6LY/0yuc3v1k=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRelO2IPjOKMKW5R06o=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.zip) = oNOSUuhmWkKKjLnU38nL6ge3rpCuYufPNlG+cZrfUVo=
-SHA256 (terraform-v1.0.7.zip) = eDjAIRg+b15GJELk6jFB13MhW+PKCDtaJRV1IdLBv0c=
+SHA256 (terraform-v1.0.8.zip) = wRvE9DaRoALnGA72CXpRiqrHBpGAYziM9ADi6yTILhY=
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.34.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.38.0.mod) = 1006
@@ -2283,4 +2283,4 @@ SIZE (go_modules/sigs.k8s.io/structured-merge-diff/@v/v0.0.0-20190525122527-15d3
 SIZE (go_modules/sigs.k8s.io/structured-merge-diff/@v/v0.0.0-20190525122527-15d366b2352e.zip) = 113591
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.zip) = 18120
-SIZE (terraform-v1.0.7.zip) = 4183820
+SIZE (terraform-v1.0.8.zip) = 4185947
