@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.70 2021/03/31 07:56:43 espie Exp $
+# $OpenBSD: proot,v 1.71 2021/10/04 13:42:21 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -266,10 +266,13 @@ sub handle_options
 	$state->{sets} = {
 		base => 1,
 		comp => 1,
+		game => 1,
+		man => 1,
 		etc => 1,
 		xetc => 1,
 		xbase => 1,
 		xfont => 1,
+		xserv => 1,
 		xshare => 1,
 	};
 
