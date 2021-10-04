@@ -1,4 +1,4 @@
-$OpenBSD: patch-ltnasm_sh,v 1.1 2021/09/02 20:44:44 sthen Exp $
+$OpenBSD: patch-ltnasm_sh,v 1.2 2021/10/04 05:46:11 rsadowski Exp $
 
 Use a libtool-wrapper script for NASM.
 
@@ -15,19 +15,19 @@ https://github.com/libass/libass/issues/539
 Index: ltnasm.sh
 --- ltnasm.sh.orig
 +++ ltnasm.sh
-@@ -0,0 +1,29 @@
+@@ -0,0 +1,28 @@
 +#!/bin/sh
 +
 +# Translate libtool supplied C-compiler options for NASM.
 +# libtool treats NASM like the C compiler, and may supply -f… options
 +# which are interpreted as the output file format by NASM, causing errors.
-+# Notably libtool will set -DPIC -fPIC and -fno-common; we want to keep
-+# -DPIC but remove everything else.
++# Notably libtool will set -DPIC -fPIC and -fno-common;
++# we want to use -DPIC by translating it to -DPIC=1, but remove everything else
 +#
-+# Filtering the options as done here in this plain POSIX shell script would
-+# mess up if there were any spaces in the arguments, but this will never happen
-+# since our filenames or options do not contain spaces and source paths are
-+# also not allowed to contain spaces.
++# Theoretically the way the filtering is done here in a plain POSIX shell script,
++# does mess up if there were spaces in any argument. However this will never happen
++# since neither our filenames nor options do not contain spaces and source paths
++# are not allowed to contain spaces by configure.
 +
 +cmd=""
 +while [ "$#" -gt 0 ] ; do
@@ -43,5 +43,4 @@ Index: ltnasm.sh
 +    shift
 +done
 +
-+#echo "$cmd"
 +exec $cmd

@@ -1,4 +1,4 @@
-$OpenBSD: patch-libass_Makefile_in,v 1.1 2021/09/02 20:44:44 sthen Exp $
+$OpenBSD: patch-libass_Makefile_in,v 1.2 2021/10/04 05:46:11 rsadowski Exp $
 
 Use a libtool-wrapper script for NASM.
 
@@ -15,7 +15,7 @@ https://github.com/libass/libass/issues/539
 Index: libass/Makefile.in
 --- libass/Makefile.in.orig
 +++ libass/Makefile.in
-@@ -844,7 +844,7 @@ uninstall-am: uninstall-dist_assheadersHEADERS \
+@@ -845,7 +845,7 @@ uninstall-am: uninstall-dist_assheadersHEADERS \
  
  
  .asm.lo:
