@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2020/05/14 19:36:05 bket Exp $
+# $OpenBSD: Makefile,v 1.3 2021/10/04 04:27:06 bket Exp $
 
 COMMENT =	unionfs filesystem implementation
 
 GH_ACCOUNT =	rpodgorny
 GH_PROJECT =	unionfs-fuse
-GH_TAGNAME =	v2.1
+GH_TAGNAME =	v2.2
 
 CATEGORIES =	sysutils
 
