@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.52 2021/06/11 05:33:27 kirby Exp $
+# $OpenBSD: Makefile,v 1.53 2021/10/04 11:15:20 kirby Exp $
 
 COMMENT =		owncloud sync client
 
-V = 			2.8.2.4246
+V = 			2.9.0.5150
 DISTNAME =		ownCloud-${V}
 PKGNAME =  		owncloudclient-${V}
 
-SHARED_LIBS +=		owncloudsync	6.0
-SHARED_LIBS +=		owncloud_csync	0.0
+SHARED_LIBS +=		owncloudsync	7.0
+SHARED_LIBS +=		owncloud_csync	1.0
 
 CATEGORIES =		net
 
@@ -19,8 +19,8 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
-WANTLIB += Qt5Xml c glib-2.0 gobject-2.0 intl m qt5keychain
-WANTLIB += sqlite3 z ${COMPILER_LIBCXX}
+WANTLIB += Qt5Xml c gio-2.0 glib-2.0 gobject-2.0 intl m qt5keychain
+WANTLIB += secret-1 sqlite3 z ${COMPILER_LIBCXX}
 
 MASTER_SITES =		https://download.owncloud.com/desktop/ownCloud/stable/latest/source/ \
 			https://download.owncloud.com/desktop/ownCloud/stable/${V}/
