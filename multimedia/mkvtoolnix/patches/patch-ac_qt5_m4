@@ -1,11 +1,11 @@
-$OpenBSD: patch-ac_qt5_m4,v 1.9 2021/09/07 05:58:12 rsadowski Exp $
+$OpenBSD: patch-ac_qt5_m4,v 1.10 2021/10/04 05:48:53 rsadowski Exp $
 
 Workaround for OpenBSD's pkg-config.
 
 Index: ac/qt5.m4
 --- ac/qt5.m4.orig
 +++ ac/qt5.m4
-@@ -78,21 +78,20 @@ check_qt5() {
+@@ -78,17 +78,16 @@ check_qt5() {
    fi
  
    if test "x$with_qt_pkg_config" = xyes; then
@@ -18,12 +18,16 @@ Index: ac/qt5.m4
 -    orig_with_qt_pkg_config_modules="$with_qt_pkg_config_modules,"
 +    orig_with_qt_pkg_config_modules="$with_qt_pkg_config_modules"
  
--    with_qt_pkg_config_modules="$with_qt_pkg_config_modules,Qt5Core,Qt5Gui,Qt5Widgets,Qt5Multimedia,Qt5Network,Qt5Concurrent"
-+    with_qt_pkg_config_modules="$with_qt_pkg_config_modules Qt5Core,Qt5Gui,Qt5Widgets,Qt5Multimedia,Qt5Network,Qt5Concurrent"
+-    with_qt_pkg_config_modules="$with_qt_pkg_config_modules,Qt5Core"
++    with_qt_pkg_config_modules="$with_qt_pkg_config_modules Qt5Core"
+ 
+     if test x"$enable_gui" = xyes; then
+-        with_qt_pkg_config_modules="$with_qt_pkg_config_modules,Qt5Gui,Qt5Widgets,Qt5Multimedia,Qt5Network,Qt5Concurrent"
++        with_qt_pkg_config_modules="$with_qt_pkg_config_modules Qt5Gui Qt5Widgets Qt5Multimedia Qt5Network Qt5Concurrent"
+     fi
  
      if test x"$MINGW" = x1; then
--      with_qt_pkg_config_modules="$with_qt_pkg_config_modules,Qt5WinExtras"
-+      with_qt_pkg_config_modules="$with_qt_pkg_config_modules Qt5WinExtras"
+@@ -96,7 +95,7 @@ check_qt5() {
      fi
  
      PKG_CHECK_EXISTS([$with_qt_pkg_config_modules],[ok=1],[ok=0])
@@ -32,7 +36,16 @@ Index: ac/qt5.m4
  
      if test $ok = 0; then
        AC_MSG_CHECKING(for Qt 5)
-@@ -111,7 +110,7 @@ check_qt5() {
+@@ -107,7 +106,7 @@ check_qt5() {
+     if test x"$MINGW" != x1 && ! echo "$host" | grep -q -i apple ; then
+       PKG_CHECK_EXISTS([Qt5DBus],[dbus_found=yes],[dbus_found=no])
+       if test x"$dbus_found" = xyes; then
+-        with_qt_pkg_config_modules="$with_qt_pkg_config_modules,Qt5DBus"
++        with_qt_pkg_config_modules="$with_qt_pkg_config_modules Qt5DBus"
+         AC_DEFINE(HAVE_QTDBUS, 1, [Define if QtDBus is present])
+       fi
+     fi
+@@ -115,7 +114,7 @@ check_qt5() {
      with_qt_pkg_config_modules="`echo "$with_qt_pkg_config_modules" | sed -e 's/,/ /g'`"
      QT_CFLAGS="`$PKG_CONFIG --cflags $with_qt_pkg_config_modules $QT_PKG_CONFIG_STATIC`"
      QT_LIBS="`$PKG_CONFIG --libs $with_qt_pkg_config_modules $QT_PKG_CONFIG_STATIC`"
