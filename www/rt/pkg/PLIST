@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2021/02/25 11:09:17 robert Exp $
+@comment $OpenBSD: PLIST,v 1.28 2021/10/04 18:18:52 robert Exp $
 @newgroup _rt:841
 @newuser _rt:841:_rt:daemon:RT Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/rt
@@ -87,6 +87,7 @@ libdata/perl5/site_perl/RT/Condition/SLA_RequireStartsSet.pm
 libdata/perl5/site_perl/RT/Condition/StatusChange.pm
 libdata/perl5/site_perl/RT/Condition/TimeWorkedChange.pm
 libdata/perl5/site_perl/RT/Condition/UserDefined.pm
+libdata/perl5/site_perl/RT/Condition/ViaInterface.pm
 libdata/perl5/site_perl/RT/Config.pm
 libdata/perl5/site_perl/RT/Configuration.pm
 libdata/perl5/site_perl/RT/Configurations.pm
@@ -240,6 +241,8 @@ libdata/perl5/site_perl/RT/REST2/Resource/Collection/
 libdata/perl5/site_perl/RT/REST2/Resource/Collection.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Collection/ProcessPOSTasGET.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Collection/QueryByJSON.pm
+libdata/perl5/site_perl/RT/REST2/Resource/Collection/QueryBySQL.pm
+libdata/perl5/site_perl/RT/REST2/Resource/Collection/Search.pm
 libdata/perl5/site_perl/RT/REST2/Resource/CustomField.pm
 libdata/perl5/site_perl/RT/REST2/Resource/CustomFieldValue.pm
 libdata/perl5/site_perl/RT/REST2/Resource/CustomFieldValues.pm
@@ -264,6 +267,8 @@ libdata/perl5/site_perl/RT/REST2/Resource/Record/WithETag.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Record/Writable.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Role/
 libdata/perl5/site_perl/RT/REST2/Resource/Role/RequestBodyIsJSON.pm
+libdata/perl5/site_perl/RT/REST2/Resource/Search.pm
+libdata/perl5/site_perl/RT/REST2/Resource/Searches.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Ticket.pm
 libdata/perl5/site_perl/RT/REST2/Resource/Tickets.pm
 libdata/perl5/site_perl/RT/REST2/Resource/TicketsBulk.pm
@@ -345,6 +350,7 @@ libdata/perl5/site_perl/RT/Test/
 libdata/perl5/site_perl/RT/Test.pm
 libdata/perl5/site_perl/RT/Test/Apache.pm
 libdata/perl5/site_perl/RT/Test/Assets.pm
+libdata/perl5/site_perl/RT/Test/Crypt.pm
 libdata/perl5/site_perl/RT/Test/Email.pm
 libdata/perl5/site_perl/RT/Test/ExternalStorage.pm
 libdata/perl5/site_perl/RT/Test/GnuPG.pm
@@ -362,6 +368,7 @@ libdata/perl5/site_perl/RT/URI/
 libdata/perl5/site_perl/RT/URI.pm
 libdata/perl5/site_perl/RT/URI/a.pm
 libdata/perl5/site_perl/RT/URI/asset.pm
+libdata/perl5/site_perl/RT/URI/attribute.pm
 libdata/perl5/site_perl/RT/URI/base.pm
 libdata/perl5/site_perl/RT/URI/fsck_com_article.pm
 libdata/perl5/site_perl/RT/URI/fsck_com_rt.pm
@@ -491,6 +498,7 @@ share/doc/rt/images/sorting-display-columns.png
 share/doc/rt/images/status-change-condition.png
 share/doc/rt/images/subscriptions.png
 share/doc/rt/images/theme_editor_defaults.png
+share/doc/rt/images/user-time-worked-report.png
 share/doc/rt/images/with-created-before.png
 share/doc/rt/images/with-newline.png
 share/doc/rt/images/without-newline.png
@@ -504,6 +512,7 @@ share/doc/rt/query_builder.pod
 share/doc/rt/reminders.pod
 share/doc/rt/reporting/
 share/doc/rt/reporting/feeds.pod
+share/doc/rt/reporting/user_time_worked.pod
 share/doc/rt/rt_perl.pod
 share/doc/rt/schema.dot
 share/doc/rt/security.pod
@@ -1152,6 +1161,10 @@ share/examples/rt/upgrade/4.4.2/schema.SQLite
 @sample ${SYSCONFDIR}/rt/upgrade/4.4.2/schema.SQLite
 share/examples/rt/upgrade/4.4.2/schema.mysql
 @sample ${SYSCONFDIR}/rt/upgrade/4.4.2/schema.mysql
+share/examples/rt/upgrade/4.4.5/
+@sample ${SYSCONFDIR}/rt/upgrade/4.4.5/
+share/examples/rt/upgrade/4.4.5/content
+@sample ${SYSCONFDIR}/rt/upgrade/4.4.5/content
 share/examples/rt/upgrade/4.5.0/
 @sample ${SYSCONFDIR}/rt/upgrade/4.5.0/
 share/examples/rt/upgrade/4.5.0/schema.Oracle
@@ -1216,6 +1229,10 @@ share/examples/rt/upgrade/4.5.8/
 @sample ${SYSCONFDIR}/rt/upgrade/4.5.8/
 share/examples/rt/upgrade/4.5.8/content
 @sample ${SYSCONFDIR}/rt/upgrade/4.5.8/content
+share/examples/rt/upgrade/5.0.2/
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.2/
+share/examples/rt/upgrade/5.0.2/content
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.2/content
 share/examples/rt/upgrade/generate-rtaddressregexp
 @sample ${SYSCONFDIR}/rt/upgrade/generate-rtaddressregexp
 share/examples/rt/upgrade/reset-sequences
@@ -1316,6 +1333,7 @@ share/rt/html/Admin/Elements/EditCustomFieldValues
 share/rt/html/Admin/Elements/EditCustomFieldValuesCanonicalizer
 share/rt/html/Admin/Elements/EditCustomFieldValuesSource
 share/rt/html/Admin/Elements/EditCustomFields
+share/rt/html/Admin/Elements/EditCustomRoles
 share/rt/html/Admin/Elements/EditLinks
 share/rt/html/Admin/Elements/EditQueueWatcherGroup
 share/rt/html/Admin/Elements/EditQueueWatchers
@@ -1374,6 +1392,8 @@ share/rt/html/Admin/Groups/ModifyLinks.html
 share/rt/html/Admin/Groups/UserRights.html
 share/rt/html/Admin/Groups/autohandler
 share/rt/html/Admin/Groups/index.html
+share/rt/html/Admin/Helpers/
+share/rt/html/Admin/Helpers/ClearMasonCache
 share/rt/html/Admin/Lifecycles/
 share/rt/html/Admin/Lifecycles/Actions.html
 share/rt/html/Admin/Lifecycles/Advanced.html
@@ -1386,6 +1406,7 @@ share/rt/html/Admin/Lifecycles/index.html
 share/rt/html/Admin/Queues/
 share/rt/html/Admin/Queues/CustomField.html
 share/rt/html/Admin/Queues/CustomFields.html
+share/rt/html/Admin/Queues/CustomRoles.html
 share/rt/html/Admin/Queues/DefaultValues.html
 share/rt/html/Admin/Queues/GroupRights.html
 share/rt/html/Admin/Queues/History.html
@@ -1415,6 +1436,7 @@ share/rt/html/Admin/Tools/Config/Elements/Tab
 share/rt/html/Admin/Tools/ConfigHistory.html
 share/rt/html/Admin/Tools/Configuration.html
 share/rt/html/Admin/Tools/EditConfig.html
+share/rt/html/Admin/Tools/GnuPG.html
 share/rt/html/Admin/Tools/Queries.html
 share/rt/html/Admin/Tools/RightsInspector.html
 share/rt/html/Admin/Tools/Shredder/
@@ -1543,6 +1565,9 @@ share/rt/html/Asset/Search/
 share/rt/html/Asset/Search/Bulk.html
 share/rt/html/Asset/Search/index.html
 share/rt/html/Asset/index.html
+share/rt/html/Crypt/
+share/rt/html/Crypt/GetGPGPubkey.html
+share/rt/html/Crypt/GetSMIMECert.html
 share/rt/html/Dashboards/
 share/rt/html/Dashboards/Elements/
 share/rt/html/Dashboards/Elements/DashboardsForObject
@@ -1601,6 +1626,7 @@ share/rt/html/Elements/EditCustomFieldCombobox
 share/rt/html/Elements/EditCustomFieldCustomGroupings
 share/rt/html/Elements/EditCustomFieldDate
 share/rt/html/Elements/EditCustomFieldDateTime
+share/rt/html/Elements/EditCustomFieldDisplay
 share/rt/html/Elements/EditCustomFieldFreeform
 share/rt/html/Elements/EditCustomFieldIPAddress
 share/rt/html/Elements/EditCustomFieldIPAddressRange
@@ -1638,6 +1664,7 @@ share/rt/html/Elements/Logo
 share/rt/html/Elements/MakeClicky
 share/rt/html/Elements/Menu
 share/rt/html/Elements/MessageBox
+share/rt/html/Elements/MultiUserRoleInput
 share/rt/html/Elements/MyAdminQueues
 share/rt/html/Elements/MyAssets
 share/rt/html/Elements/MyRT
@@ -1648,6 +1675,7 @@ share/rt/html/Elements/PersonalQuickbar
 share/rt/html/Elements/QueriesAsComment
 share/rt/html/Elements/QueryString
 share/rt/html/Elements/QueueList
+share/rt/html/Elements/QueueListAllStatuses
 share/rt/html/Elements/QueueSummaryByLifecycle
 share/rt/html/Elements/QueueSummaryByStatus
 share/rt/html/Elements/QuickCreate
@@ -1697,6 +1725,7 @@ share/rt/html/Elements/SelectBoolean
 share/rt/html/Elements/SelectCustomDateRangeField
 share/rt/html/Elements/SelectCustomFieldOperator
 share/rt/html/Elements/SelectCustomFieldValue
+share/rt/html/Elements/SelectDashboard
 share/rt/html/Elements/SelectDate
 share/rt/html/Elements/SelectDateRelation
 share/rt/html/Elements/SelectDateType
@@ -1789,9 +1818,11 @@ share/rt/html/Helpers/Admin/
 share/rt/html/Helpers/Admin/EditCustomFieldValue
 share/rt/html/Helpers/Autocomplete/
 share/rt/html/Helpers/Autocomplete/Articles
+share/rt/html/Helpers/Autocomplete/Assets
 share/rt/html/Helpers/Autocomplete/CustomFieldValues
 share/rt/html/Helpers/Autocomplete/Groups
 share/rt/html/Helpers/Autocomplete/Owners
+share/rt/html/Helpers/Autocomplete/Principals
 share/rt/html/Helpers/Autocomplete/Queues
 share/rt/html/Helpers/Autocomplete/Tickets
 share/rt/html/Helpers/Autocomplete/Users
@@ -1913,6 +1944,7 @@ share/rt/html/Reports/
 share/rt/html/Reports/CreatedByDates.html
 share/rt/html/Reports/ResolvedByDates.html
 share/rt/html/Reports/ResolvedByOwner.html
+share/rt/html/Reports/TimeWorkedReport.html
 share/rt/html/Reports/index.html
 share/rt/html/Search/
 share/rt/html/Search/Article.html

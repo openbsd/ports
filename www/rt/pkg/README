@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2021/01/18 13:52:23 robert Exp $
+$OpenBSD: README,v 1.4 2021/10/04 18:18:52 robert Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -20,3 +20,7 @@ ${PREFIX}/share/doc/rt/README
 If you are upgrading your installation, don't forget to run:
 # rt-setup-database --dba <yourdbauser> --prompt-for-dba-password \
 	--action upgrade
+
+It is also recommended to clear the mason cache on every package update
+by simply removing the whole cache directory:
+# rm -rf /var/www/rt/mason_data/obj/*
