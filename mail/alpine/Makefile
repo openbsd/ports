@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2021/10/04 07:03:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2021/10/04 20:29:08 sthen Exp $
 
 COMMENT-main=		UW e-mail client
 COMMENT-c-client=	UW c-client mail access routines
@@ -24,6 +24,7 @@ REVISION-pico=		24
 REVISION-pilot=		24
 REVISION-c-client=	0
 REVISION-mailutil=	0
+REVISION-imap=		0
 
 PKGNAME-main=		alpine-${V}
 PKGNAME-c-client=	c-client-${V}
