@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2021/08/20 21:25:05 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2021/10/04 20:11:18 sthen Exp $
 @pkgpath www/squid/snapshot,-main
 @pkgpath www/squid/stable,-main
 @newgroup _squid:515
@@ -579,6 +579,7 @@ share/squid/errors/es-es
 share/squid/errors/es-gt
 share/squid/errors/es-hn
 share/squid/errors/es-mx
+share/squid/errors/es-ni
 share/squid/errors/es-pa
 share/squid/errors/es-pe
 share/squid/errors/es-pr
