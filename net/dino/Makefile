@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2021/08/30 14:40:05 kn Exp $
+# $OpenBSD: Makefile,v 1.5 2021/10/04 16:32:34 paco Exp $
 
 COMMENT=	XMPP desktop client
-VERSION=	0.2.1
+VERSION=	0.2.2
 DISTNAME=	dino-${VERSION}
 CATEGORIES=	net x11
 
@@ -12,6 +12,8 @@ SHARED_LIBS +=	xmpp-vala                 0.0 # 0.1
 HOMEPAGE=	https://dino.im/
 
 MASTER_SITES=	https://github.com/dino/dino/releases/download/v${VERSION}/
+
+MAINTAINER=	Paco Esteban <paco@openbsd.org>
 
 # GPLv3 only
 PERMIT_PACKAGE=	Yes
