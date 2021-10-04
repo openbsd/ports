@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2021/09/08 18:54:38 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2021/10/04 06:44:19 landry Exp $
 
 COMMENT=	ncurses toolkit for text-mode graphical user interfaces
 
-VER=		2.14.2
+VER=		2.14.3
 DISTNAME=	libgnt-${VER}
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/libgnt/${VER}/}
@@ -25,6 +25,8 @@ BUILD_DEPENDS=	devel/gettext,-tools \
 		textproc/gtk-doc
 LIB_DEPENDS=	devel/glib2 \
 		textproc/libxml
+
+CONFIGURE_ARGS+=-Dpython2=false
 
 NO_TEST=	Yes
 
