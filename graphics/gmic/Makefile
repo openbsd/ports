@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2021/09/06 14:54:05 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2021/10/04 13:28:27 espie Exp $
 
 BROKEN-powerpc64 =	update297.gmic is not a valid G'MIC update file
 
 COMMENT = 	image processing framework
 
-V = 2.9.8
+V = 2.9.9
 DISTNAME = 	gmic-$V
-REVISION =	0
 
 SHARED_LIBS +=  gmic 1.0 # 1
 

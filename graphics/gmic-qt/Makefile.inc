@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile.inc,v 1.2 2021/09/06 14:54:05 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2021/10/04 13:28:27 espie Exp $
 
 COMMENT = 	gmic-qt ${GMIC_WHAT}
-V = 2.9.8
+V = 2.9.9
 
 DISTNAME ?= 	gmic-qt-${QT_HOST}-$V
 CATEGORIES = 	graphics
@@ -54,3 +54,4 @@ GMIC_WHAT ?=	plugin for ${QT_HOST}
 CHECKSUM_FILE = ${.CURDIR}/../distinfo
 DESCR = ${.CURDIR}/../pkg/DESCR
 PATCHDIR = ${.CURDIR}/../patches
+UPDATE_PLIST_ARGS = -i QT_HOST
