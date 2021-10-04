@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.39 2021/07/10 06:16:13 kirby Exp $
+# $OpenBSD: Makefile,v 1.40 2021/10/04 14:35:40 kirby Exp $
 
 COMMENT =		seafile daemon
 
-GH_ACCOUNT =		haiwen
 GH_PROJECT =		seafile
 # upstream keep on sliding tags to pull in new commits
-# this commit is from the "v8.0.3" tag
-GH_COMMIT =		0fdc14d5175979919b7c741f6bb97bfaaacbbfbe
-DISTNAME =		seafile-daemon-8.0.3pl20210710
+# this commit is from the "v8.0.4" tag
+GH_COMMIT =		d01b8de6d378c69525e6ed57b84bd22579b96444
+DISTNAME =		seafile-daemon-8.0.4pl20210923
 
 SHARED_LIBS =		seafile 4.0
 
 WANTLIB += c crypto curl event_core event_extra event_pthreads
-WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 iconv
-WANTLIB += intl jansson m nghttp2 pcre pthread searpc sqlite3
+WANTLIB += execinfo ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += iconv intl jansson m nghttp2 pcre pthread searpc sqlite3
 WANTLIB += ssl uuid z lib/inotify/inotify
 
 MODULES =		lang/python

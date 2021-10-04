@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/10/04 14:35:40 kirby Exp $
 
 COMMENT =		simple RPC framework based on GObject system
 
-GH_ACCOUNT =		haiwen
 GH_PROJECT =		libsearpc
 # upstream keep on sliding tags to pull in new commits
 # this commit is from the "v3.2-latest" tag
