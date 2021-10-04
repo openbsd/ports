@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/06/09 19:50:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/10/04 18:47:25 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -16,7 +16,7 @@ COMMENT=		cross-platform desktop applications
 
 ECV=			80.0.3987.158
 ELECTRON_V=		8.2.0
-REVISION=		3
+REVISION=		4
 
 DISTFILES+=		chromium-${ECV}${EXTRACT_SUFX} \
 			electron-${ELECTRON_V}_${ECV}${EXTRACT_SUFX}:0 \
@@ -141,7 +141,7 @@ GN_ARGS=	enable_nacl=false \
 		use_cups=true \
 		use_system_libdrm=true \
 		use_bundled_fontconfig=false \
-		use_system_harfbuzz=true \
+		use_system_harfbuzz=false \
 		use_system_freetype=true \
 		is_clang=true \
 		use_sysroot=false \
