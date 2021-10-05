@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2021/08/31 11:59:56 kirby Exp $
+# $OpenBSD: Makefile,v 1.26 2021/10/05 07:00:08 thfr Exp $
 
 BROKEN-powerpc =	fails at runtime, the UI is totally blank
 BROKEN-powerpc64 =	Unknown ISA
 
 COMMENT =	2D and 3D game engine
 
-V =		3.3.3
+V =		3.3.4
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot-${V}
 CATEGORIES =	games
