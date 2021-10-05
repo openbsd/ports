@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2021/10/04 20:29:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2021/10/05 10:37:41 sthen Exp $
 
 COMMENT-main=		UW e-mail client
 COMMENT-c-client=	UW c-client mail access routines
@@ -22,7 +22,7 @@ PILOT_V=		2.99
 REVISION-main=		1
 REVISION-pico=		24
 REVISION-pilot=		24
-REVISION-c-client=	0
+REVISION-c-client=	1
 REVISION-mailutil=	0
 REVISION-imap=		0
 
@@ -57,7 +57,7 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 WANTLIB += c crypto iconv intl curses ssl
 
 WANTLIB-main=		${WANTLIB} pthread
-WANTLIB-c-client=	# empty
+WANTLIB-c-client=	crypto ssl
 WANTLIB-pico=		${WANTLIB} pthread
 WANTLIB-pilot=		${WANTLIB} pthread
 
