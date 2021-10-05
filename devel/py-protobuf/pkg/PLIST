@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/03/21 12:22:09 tb Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/10/05 05:01:15 tb Exp $
 @conflict py-protobuf-*
 @pkgpath devel/py-protobuf
 lib/python${MODPY_VERSION}/site-packages/google/
@@ -106,5 +106,4 @@ lib/python${MODPY_VERSION}/site-packages/protobuf-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/protobuf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/protobuf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/protobuf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/namespace_packages.txt
-lib/python${MODPY_VERSION}/site-packages/protobuf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/protobuf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
