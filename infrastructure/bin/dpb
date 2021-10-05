@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.141 2020/02/27 11:48:17 espie Exp $
+# $OpenBSD: dpb,v 1.142 2021/10/05 12:31:34 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -158,6 +158,11 @@ $state->interpret_paths(@{$state->{xpaths}},
 	$p->{dontjunk} = 1;
     });
 
+if ($state->{bad_paths}) {
+	$state->usage("Bad package path #1",
+	    join(" ", @{$state->{bad_paths}}));
+}
+	
 if ($state->opt('a')) {
 	$state->{all} = 1;
 }
