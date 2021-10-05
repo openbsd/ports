@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_Makefile,v 1.42 2021/07/24 19:03:14 danj Exp $
+$OpenBSD: patch-src_Makefile,v 1.43 2021/10/05 05:29:56 tb Exp $
 
 Changes in this file:
 - do not use -funwind-tables and -latomic on armv7
@@ -25,7 +25,7 @@ Index: src/Makefile
  endif
  
  ifeq ($(uname_S),SunOS)
-@@ -382,7 +382,7 @@ distclean: clean
+@@ -388,7 +388,7 @@ distclean: clean
  .PHONY: distclean
  
  test: $(REDIS_SERVER_NAME) $(REDIS_CHECK_AOF_NAME) $(REDIS_CLI_NAME) $(REDIS_BENCHMARK_NAME)
@@ -34,7 +34,7 @@ Index: src/Makefile
  
  test-modules: $(REDIS_SERVER_NAME)
  	@(cd ..; ./runtest-moduleapi)
-@@ -425,7 +425,7 @@ src/help.h:
+@@ -431,7 +431,7 @@ src/help.h:
  	@../utils/generate-command-help.rb > help.h
  
  install: all
