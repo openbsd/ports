@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/09/17 13:41:50 thfr Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/05 13:19:46 thfr Exp $
+bin/fsb5-extract
 lib/python${MODPY_VERSION}/site-packages/fsb5/
 lib/python${MODPY_VERSION}/site-packages/fsb5-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/fsb5-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
