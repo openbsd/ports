@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2021/07/20 22:28:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.141 2021/10/05 05:21:27 tb Exp $
 
 COMMENT-main=	scan ports and fingerprint stack of network hosts
 COMMENT-zenmap=	graphical frontend for nmap
@@ -7,6 +7,7 @@ MODPY_EGG_VERSION=	7.91
 DISTNAME=		nmap-${MODPY_EGG_VERSION}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-zenmap=		nmap-zenmap-${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=	net security
 MASTER_SITES=	${HOMEPAGE}/dist/
@@ -17,8 +18,8 @@ HOMEPAGE=	https://www.nmap.org/
 MAINTAINER=	JR Aquino <tanawts@gmail.com>
 
 # NPSL, https://nmap.org/npsl/npsl-annotated.html
-# For <=7.91, https://nmap.org/misc/nmap-v7.80-license.txt may be used instead
-# XXX license needs checking over before updating beyond 7.91
+# For <=7.92, https://nmap.org/misc/nmap-v7.80-license.txt may be used instead
+# XXX license needs checking over before updating beyond 7.92
 PERMIT_PACKAGE=	Yes
 
 MULTI_PACKAGES=	-main -zenmap
@@ -33,6 +34,7 @@ MODULES=	lang/python \
 		lang/lua
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_2}
 
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.69
 
