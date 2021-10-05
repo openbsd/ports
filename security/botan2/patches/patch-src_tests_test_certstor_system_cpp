@@ -1,0 +1,63 @@
+$OpenBSD: patch-src_tests_test_certstor_system_cpp,v 1.1 2021/10/05 05:32:30 tb Exp $
+
+Use ISRG Root X1 instead of DST Root CA X3
+
+Index: src/tests/test_certstor_system.cpp
+--- src/tests/test_certstor_system.cpp.orig
++++ src/tests/test_certstor_system.cpp
+@@ -33,7 +33,7 @@ Test::Result find_certificate_by_pubkey_sha1(Botan::Ce
+          {
+          auto cns = cert->subject_dn().get_attribute("CN");
+          result.test_is_eq("exactly one CN", cns.size(), size_t(1));
+-         result.test_eq("CN", cns.front(), "DST Root CA X3");
++         result.test_eq("CN", cns.front(), "ISRG Root X1");
+          }
+       }
+    catch(std::exception& e)
+@@ -65,7 +65,7 @@ Test::Result find_cert_by_subject_dn(Botan::Certificat
+          {
+          auto cns = cert->subject_dn().get_attribute("CN");
+          result.test_is_eq("exactly one CN", cns.size(), size_t(1));
+-         result.test_eq("CN", cns.front(), "DST Root CA X3");
++         result.test_eq("CN", cns.front(), "ISRG Root X1");
+          }
+       }
+    catch(std::exception& e)
+@@ -126,7 +126,7 @@ Test::Result find_cert_by_subject_dn_and_key_id(Botan:
+          {
+          auto cns = cert->subject_dn().get_attribute("CN");
+          result.test_is_eq("exactly one CN", cns.size(), size_t(1));
+-         result.test_eq("CN", cns.front(), "DST Root CA X3");
++         result.test_eq("CN", cns.front(), "ISRG Root X1");
+          }
+       }
+    catch(std::exception& e)
+@@ -154,7 +154,7 @@ Test::Result find_certs_by_subject_dn_and_key_id(Botan
+          {
+          auto cns = certs.front()->subject_dn().get_attribute("CN");
+          result.test_is_eq("exactly one CN", cns.size(), size_t(1));
+-         result.test_eq("CN", cns.front(), "DST Root CA X3");
++         result.test_eq("CN", cns.front(), "ISRG Root X1");
+          }
+       }
+    catch(std::exception& e)
+@@ -191,7 +191,7 @@ Test::Result find_all_certs_by_subject_dn(Botan::Certi
+          {
+          auto cns = certs.front()->subject_dn().get_attribute("CN");
+          result.test_gte("at least one CN", cns.size(), size_t(1));
+-         result.test_eq("CN", cns.front(), "DST Root CA X3");
++         result.test_eq("CN", cns.front(), "ISRG Root X1");
+          }
+       }
+    catch(std::exception& e)
+@@ -281,8 +281,8 @@ Test::Result certificate_matching_with_dn_normalizatio
+       if(result.confirm("find_all_certs did find the skewed DN", !certs.empty()) &&
+             result.confirm("find_cert did find the skewed DN", cert != nullptr))
+          {
+-         result.test_eq("it is the correct cert", certs.front()->subject_dn().get_first_attribute("CN"), "DST Root CA X3");
+-         result.test_eq("it is the correct cert", cert->subject_dn().get_first_attribute("CN"), "DST Root CA X3");
++         result.test_eq("it is the correct cert", certs.front()->subject_dn().get_first_attribute("CN"), "ISRG Root X1");
++         result.test_eq("it is the correct cert", cert->subject_dn().get_first_attribute("CN"), "ISRG Root X1");
+          }
+       }
+    catch(std::exception& e)
