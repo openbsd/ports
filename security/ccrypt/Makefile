@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.27 2021/01/16 22:51:21 cwen Exp $
+# $OpenBSD: Makefile,v 1.28 2021/10/05 15:46:43 cwen Exp $
 
 PORTROACH=	skipv:1.11.mac-x86_64
 
 COMMENT=	encrypt and decrypt AES files and streams
 
 V=		1.11
-REVISION=	1
+REVISION=	2
 DISTNAME=	ccrypt-${V}
 CATEGORIES=	security
 
 HOMEPAGE=	http://ccrypt.sourceforge.net/
-
-MAINTAINER=	Charlene Wendling <julianaito@posteo.jp>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
