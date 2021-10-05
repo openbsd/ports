@@ -1,0 +1,15 @@
+$OpenBSD: patch-xpcom_build_BinaryPath_h,v 1.1 2021/10/05 13:08:43 landry Exp $
+
+avoid pledge sysctl 4: 1 55 29028 1 ?
+
+Index: xpcom/build/BinaryPath.h
+--- xpcom/build/BinaryPath.h.orig
++++ xpcom/build/BinaryPath.h
+@@ -204,6 +204,7 @@ class BinaryPath {
+     mib[1] = KERN_PROC_ARGS;
+     mib[2] = getpid();
+     mib[3] = KERN_PROC_ARGV;
++    return GetFromArgv0("${TRUEPREFIX}/lib/${MOZILLA_PROJECT}/firefox", aResult);
+ 
+     size_t len = 0;
+     if (sysctl(mib, 4, nullptr, &len, nullptr, 0) < 0) {

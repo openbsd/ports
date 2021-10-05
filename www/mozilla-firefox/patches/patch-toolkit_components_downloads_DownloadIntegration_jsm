@@ -1,4 +1,4 @@
-$OpenBSD: patch-toolkit_components_downloads_DownloadIntegration_jsm,v 1.1 2021/03/23 13:25:36 landry Exp $
+$OpenBSD: patch-toolkit_components_downloads_DownloadIntegration_jsm,v 1.2 2021/10/05 13:08:43 landry Exp $
 
 https://bugzilla.mozilla.org/show_bug.cgi?id=1696958
 revert parts of https://hg.mozilla.org/mozilla-central/rev/aadba76932ea
@@ -23,9 +23,9 @@ Index: toolkit/components/downloads/DownloadIntegration.jsm
 -          });
 +          await OS.File.makeDir(directoryPath, { ignoreExisting: true });
          } catch (ex) {
+           Cu.reportError(ex);
            // Either the preference isn't set or the directory cannot be created.
-           directoryPath = await this.getSystemDownloadsDirectory();
-@@ -943,8 +942,8 @@ var DownloadIntegration = {
+@@ -944,8 +943,8 @@ var DownloadIntegration = {
      );
  
      // Create the Downloads folder and ignore if it already exists.
