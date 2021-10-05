@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/06/12 10:25:10 tb Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/10/05 05:00:27 tb Exp $
 @bin bin/protoc
 include/google/
 include/google/protobuf/
@@ -55,6 +55,7 @@ include/google/protobuf/field_mask.pb.h
 include/google/protobuf/field_mask.proto
 include/google/protobuf/generated_enum_reflection.h
 include/google/protobuf/generated_enum_util.h
+include/google/protobuf/generated_message_bases.h
 include/google/protobuf/generated_message_reflection.h
 include/google/protobuf/generated_message_table_driven.h
 include/google/protobuf/generated_message_tctable_decl.h
@@ -63,6 +64,7 @@ include/google/protobuf/generated_message_tctable_impl.inc
 include/google/protobuf/generated_message_util.h
 include/google/protobuf/has_bits.h
 include/google/protobuf/implicit_weak_message.h
+include/google/protobuf/inlined_string_field.h
 include/google/protobuf/io/
 include/google/protobuf/io/coded_stream.h
 include/google/protobuf/io/gzip_stream.h
@@ -94,6 +96,7 @@ include/google/protobuf/repeated_field.h
 include/google/protobuf/service.h
 include/google/protobuf/source_context.pb.h
 include/google/protobuf/source_context.proto
+include/google/protobuf/string_member_robber.h
 include/google/protobuf/struct.pb.h
 include/google/protobuf/struct.proto
 include/google/protobuf/stubs/
