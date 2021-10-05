@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.634 2021/09/08 22:04:27 bluhm Exp $
+# $OpenBSD: Makefile,v 1.635 2021/10/05 13:17:35 landry Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -341,6 +341,7 @@
      SUBDIR += regripper
      SUBDIR += reop
      SUBDIR += rhash
+     SUBDIR += rnp
      SUBDIR += routersploit
      SUBDIR += ruby-argon2,ruby27
      SUBDIR += ruby-argon2,ruby30
