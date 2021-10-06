@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.27 2020/06/28 10:58:25 espie Exp $
+# $OpenBSD: register-plist,v 1.28 2021/10/06 13:56:50 espie Exp $
 # Copyright (c) 2005,2012
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -147,9 +147,25 @@ sub save_stuff
 	require File::Path;
 	require File::Copy;
 	require File::Basename;
+	require File::Compare;
+	use OpenBSD::MkTemp;
 	my $dest = "$state->{saveman}/$fname";
-	File::Path::mkpath(File::Basename::dirname($dest));
-	File::Copy::copy("$state->{fakedir}/$fname", $dest);
+	my $dir = File::Basename::dirname($dest);
+	File::Path::mkpath($dir);
+	if (my @l = OpenBSD::MkTemp::mkstemp("$dir/file.XXXXXXXXX")) {
+		my ($fh, $file) = @l;
+		chmod 0664, $fh;
+		File::Copy::copy("$state->{fakedir}/$fname", $file);
+		if (-e $dest) {
+			if (File::Compare::compare($file, $dest) != 0) {
+				print STDERR 
+				    "EXISTING $file DIFFERS from $dest\n";
+			}
+			unlink $file;
+		} else {
+			rename($file, $dest);
+		}
+	} 
 }
 
 package OpenBSD::PackingElement::DigitalSignature;
