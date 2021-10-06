@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2021/10/03 21:16:59 solene Exp $
+# $OpenBSD: Makefile,v 1.29 2021/10/06 11:55:36 solene Exp $
 
 COMMENT =	SDL multi protocol navigator
 VERSION =	1.7.0
+REVISION =	0
 
 DISTNAME =	lagrange-${VERSION}
 
@@ -15,7 +16,7 @@ HOMEPAGE =	https://gmi.skyjake.fi/lagrange/
 PERMIT_PACKAGE =Yes
 
 WANTLIB +=	SDL2 mpg123 pcre unistring fribidi harfbuzz
-WANTLIB +=	c crypto m ssl z pthread
+WANTLIB +=	c crypto m ssl z pthread webp
 
 DEBUG_PACKAGES =${BUILD_PACKAGES}
 
@@ -34,7 +35,8 @@ LIB_DEPENDS =	audio/mpg123 \
 		devel/fribidi \
 		devel/harfbuzz \
 		devel/pcre \
-		devel/sdl2
+		devel/sdl2 \
+		graphics/libwebp
 
 # Don't enable SSE4.1, it fails at runtime on old amd64 machines and i386
 CONFIGURE_ARGS +=	-DTFDN_ENABLE_SSE41=No
