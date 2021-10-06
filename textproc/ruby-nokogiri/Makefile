@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2021/06/18 08:57:51 sebastia Exp $
+# $OpenBSD: Makefile,v 1.40 2021/10/06 21:11:58 jeremy Exp $
 
 COMMENT=		HTML, XML, SAX and Reader parser
 
@@ -18,11 +18,6 @@ LIB_DEPENDS=		textproc/libxslt
 MODULES=		lang/ruby
 
 FLAVOR ?=
-
-.if ${FLAVOR:Mruby26}
-BUILD_DEPENDS +=	${RUN_DEPENDS}
-RUN_DEPENDS +=		devel/ruby-racc,${MODRUBY_FLAVOR}
-.endif
 
 CONFIGURE_STYLE=	ruby gem ext
 
