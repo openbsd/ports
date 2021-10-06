@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2021/09/12 18:36:59 tb Exp $
+# $OpenBSD: Makefile,v 1.13 2021/10/06 07:32:15 tb Exp $
 
 COMMENT =		sources of the Ruby OpenSSL gem for regression testing
 
 # Follows HEAD
-VERSION =		20210912
+VERSION =		20210927
 DISTNAME =		openssl-ruby-tests-${VERSION}
 
 GH_ACCOUNT =		ruby
 GH_PROJECT =		openssl
-GH_COMMIT =		5c85b4385f114400d901ed7dd89ce43489b9bceb
+GH_COMMIT =		e3a40937ac2b18ac02203e3539c4e90c539a36f9
 
 CATEGORIES =		security devel
 
