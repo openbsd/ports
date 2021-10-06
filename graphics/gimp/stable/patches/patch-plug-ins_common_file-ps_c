@@ -1,0 +1,16 @@
+$OpenBSD: patch-plug-ins_common_file-ps_c,v 1.1 2021/10/06 07:37:02 espie Exp $
+see comment, remove when ghostscript gets updated
+
+Index: plug-ins/common/file-ps.c
+--- plug-ins/common/file-ps.c.orig
++++ plug-ins/common/file-ps.c
+@@ -1765,7 +1765,8 @@ ps_open (const gchar      *filename,
+ 
+   code = gsapi_new_instance (&instance, NULL);
+   if (code == 0) {
+-    code = gsapi_set_arg_encoding(instance, GS_ARG_ENCODING_UTF8);
++    //requires a ghostscript update !
++    //code = gsapi_set_arg_encoding(instance, GS_ARG_ENCODING_UTF8);
+     code = gsapi_init_with_args (instance, cmdA->len - 1, pcmdA);
+     code = gsapi_exit (instance);
+     gsapi_delete_instance (instance);

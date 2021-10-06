@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.147 2021/08/31 07:30:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.148 2021/10/06 07:37:02 espie Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
-DISTNAME =	gimp-2.10.24
-REVISION =	2
+DISTNAME =	gimp-2.10.28
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets
-SHARED_LIBS +=  $i-2.0 273.0
+SHARED_LIBS +=  $i-2.0 274.0
 .endfor
 
 CATEGORIES=	graphics
@@ -103,6 +102,8 @@ CONFIGURE_ARGS+= \
 		--with-pdbgen \
 		--without-alsa \
 		--without-webkit
+
+UPDATE_PLIST_ARGS +=	-i MODPY_PY_PREFIX -i MODPY_BIN_SUFFIX
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
