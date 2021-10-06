@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.78 2021/10/04 11:12:22 solene Exp $
+# $OpenBSD: Makefile,v 1.79 2021/10/06 14:36:11 ajacoutot Exp $
 
 DPB_PROPERTIES=	parallel
 
 COMMENT=	desktop publishing program
 DISTNAME=	scribus-1.5.7
 CATEGORIES=	print
+REVISION=	0
 
 HOMEPAGE=	https://www.scribus.net/
 
@@ -16,7 +17,7 @@ WANTLIB += Qt5Core Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport
 WANTLIB += Qt5Widgets Qt5Xml c cairo cups execinfo fontconfig
 WANTLIB += freetype harfbuzz harfbuzz-icu hunspell-1.7 icudata
 WANTLIB += icuuc jpeg lcms2 m png podofo poppler tiff util xml2
-WANTLIB += z
+WANTLIB += z harfbuzz-subset
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scribus/}
 EXTRACT_SUFX=	.tar.xz
