@@ -1,15 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/12 18:13:38 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/06 01:43:28 bcallah Exp $
 @bin bin/armagetronad
 share/armagetronad/
 share/armagetronad/desktop/
+share/armagetronad/desktop/armagetronad.appdata.xml
 share/armagetronad/desktop/armagetronad.desktop
 share/armagetronad/desktop/icons/
-share/armagetronad/desktop/icons/large/
-share/armagetronad/desktop/icons/large/armagetronad.png
-share/armagetronad/desktop/icons/medium/
-share/armagetronad/desktop/icons/medium/armagetronad.png
-share/armagetronad/desktop/icons/small/
-share/armagetronad/desktop/icons/small/armagetronad.png
+share/armagetronad/desktop/icons/16x16/
+share/armagetronad/desktop/icons/16x16/armagetronad.png
+share/armagetronad/desktop/icons/32x32/
+share/armagetronad/desktop/icons/32x32/armagetronad.png
+share/armagetronad/desktop/icons/48x48/
+share/armagetronad/desktop/icons/48x48/armagetronad.png
 share/armagetronad/language/
 share/armagetronad/language/american.txt
 share/armagetronad/language/british.txt
@@ -56,6 +57,8 @@ share/armagetronad/resource/included/map-0.1-exp.dtd
 share/armagetronad/resource/included/map-0.1.dtd
 share/armagetronad/resource/included/map-0.2.8_beta3.dtd
 share/armagetronad/scripts/
+share/armagetronad/scripts/rcd_config
+share/armagetronad/scripts/rcd_startstop
 share/armagetronad/scripts/relocate
 share/armagetronad/scripts/sysinstall
 share/armagetronad/sound/
@@ -78,6 +81,9 @@ share/armagetronad/textures/shadow.png
 share/armagetronad/textures/sky.png
 share/armagetronad/textures/title.jpg
 share/doc/armagetronad/
+share/doc/armagetronad/COPYING.txt
+share/doc/armagetronad/Howto-Maps.txt
+share/doc/armagetronad/commands.txt
 share/doc/armagetronad/html/
 share/doc/armagetronad/html/bugs.html
 share/doc/armagetronad/html/changelog.html
@@ -129,6 +135,18 @@ share/examples/armagetronad/examples/single_use_turbo.cfg
 @sample ${SYSCONFDIR}/armagetronad/examples/single_use_turbo.cfg
 share/examples/armagetronad/examples/teamsumo.cfg
 @sample ${SYSCONFDIR}/armagetronad/examples/teamsumo.cfg
+share/examples/armagetronad/keys_cursor.cfg
+@sample ${SYSCONFDIR}/armagetronad/examples/keys_cursor.cfg
+share/examples/armagetronad/keys_cursor_single.cfg
+@sample ${SYSCONFDIR}/armagetronad/examples/keys_cursor_single.cfg
+share/examples/armagetronad/keys_twohand.cfg
+@sample ${SYSCONFDIR}/armagetronad/examples/keys_twohand.cfg
+share/examples/armagetronad/keys_wasd.cfg
+@sample ${SYSCONFDIR}/armagetronad/examples/keys_wasd.cfg
+share/examples/armagetronad/keys_x.cfg
+@sample ${SYSCONFDIR}/armagetronad/examples/keys_x.cfg
+share/examples/armagetronad/keys_zqsd.cfg
+@sample ${SYSCONFDIR}/armagetronad/examples/keys_zqsd.cfg
 share/examples/armagetronad/master.srv
 @sample ${SYSCONFDIR}/armagetronad/master.srv
 share/examples/armagetronad/rc.config
