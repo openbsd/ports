@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2021/08/31 07:29:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2021/10/06 09:01:26 ajacoutot Exp $
 @conflict ilmbase-*
 @pkgpath graphics/openexr
 @pkgpath graphics/ilmbase
@@ -142,7 +142,6 @@ include/OpenEXR/openexr_encode.h
 include/OpenEXR/openexr_errors.h
 include/OpenEXR/openexr_part.h
 include/OpenEXR/openexr_std_attr.h
-lib/cmake/
 lib/cmake/OpenEXR/
 lib/cmake/OpenEXR/OpenEXRConfig.cmake
 lib/cmake/OpenEXR/OpenEXRConfigVersion.cmake

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.51 2021/08/31 07:29:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2021/10/06 09:01:26 ajacoutot Exp $
 
 COMMENT-main=		high dynamic range image format
 COMMENT-tools=		image viewing tools for OpenEXR
 COMMENT-doc=		developer documentation for OpenEXR
 
-V=			3.1.1
+V=			3.1.2
 GH_ACCOUNT=		AcademySoftwareFoundation
 GH_PROJECT=		openexr
 GH_TAGNAME=		v${V}
