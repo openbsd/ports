@@ -1,4 +1,4 @@
-$OpenBSD: patch-setup_py,v 1.1 2019/09/15 21:46:45 ajacoutot Exp $
+$OpenBSD: patch-setup_py,v 1.2 2021/10/06 09:08:16 ajacoutot Exp $
 
 Index: setup.py
 --- setup.py.orig
@@ -10,5 +10,5 @@ Index: setup.py
 -                ('share/man/man1', ['man/asciinema.1'])],
 +                ('man/man1', ['man/asciinema.1'])],
      install_requires=requirements,
-     tests_require=test_requirements,
      classifiers=[
+         'Development Status :: 5 - Production/Stable',
