@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2021/09/07 21:08:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2021/10/06 07:31:22 tb Exp $
 
 COMMENT=		powerful descriptive vector graphics language
 
 DISTNAME=		asymptote-2.70
-REVISION=		2
+REVISION=		3
 EXTRACT_SUFX=		.src.tgz
 CATEGORIES=		graphics
 
@@ -21,7 +21,8 @@ MODULES=		lang/python
 
 COMPILER =		base-clang ports-gcc
 
-BUILD_DEPENDS=		print/texinfo \
+BUILD_DEPENDS=		graphics/glm \
+			print/texinfo \
 			print/texlive/base \
 			print/texlive/texmf,-main
 RUN_DEPENDS=		print/texlive/texmf,-full \
