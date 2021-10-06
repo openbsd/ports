@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.86 2021/06/04 07:46:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2021/10/06 09:08:50 ajacoutot Exp $
 
 COMMENT=		framework for granting privileged operations to users
 
-DISTNAME=		polkit-0.119
+DISTNAME=		polkit-0.120
 
-SHARED_LIBS +=  polkit-gobject-1	2.0 # .0.0
-SHARED_LIBS +=  polkit-agent-1		2.0 # .0.0
+SHARED_LIBS += polkit-gobject-1          2.0 # 0.0.0
+SHARED_LIBS += polkit-agent-1            2.0 # 0.0.0
 
 CATEGORIES=		sysutils security
 
@@ -24,18 +24,16 @@ MASTER_SITES=		https://www.freedesktop.org/software/polkit/releases/
 # C++11
 COMPILER=		base-clang ports-gcc
 
-MODULES=		lang/python \
-			textproc/intltool
+MODULES=		devel/meson \
+			lang/python
 
 MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
 
 USE_GMAKE=		Yes
 
-BUILD_DEPENDS=		devel/gobject-introspection
-
-# man pages
-BUILD_DEPENDS+=		textproc/docbook-xsl
+BUILD_DEPENDS=		devel/gettext,-tools \
+			devel/gobject-introspection
 
 LIB_DEPENDS=		devel/glib2 \
 			devel/spidermonkey78
@@ -47,21 +45,16 @@ RUN_DEPENDS +=		x11/dbus,-suid
 # XXX cyclic dependency: consolekit -> polkit -> consolekit
 #RUN_DEPENDS +=		sysutils/consolekit
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=		--disable-libelogind \
-			--disable-libsystemd-login \
-			--with-os-type=openbsd \
-			--with-authfw=bsdauth \
-			--with-polkitd-user=_polkitd
+CONFIGURE_ARGS=		-Dsession_tracking=ConsoleKit \
+			-Dpolkitd_user=_polkitd \
+			-Dauthfw=bsdauth
+#			-Dos_type=openbsd
 
-# fgetgrent, fgetpwent
-CONFIGURE_ARGS +=	--disable-test
+# man pages
+BUILD_DEPENDS +=	textproc/docbook-xsl
+CONFIGURE_ARGS +=	-Dman=true
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
-
-FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/polkit
 
 pre-configure:
 	sed -i \
@@ -79,5 +72,9 @@ pre-configure:
 		${WRKSRC}/docs/man/polkit.xml \
 		${WRKSRC}/docs/extensiondir.xml.in \
 		${WRKSRC}/src/examples/org.freedesktop.policykit.examples.pkexec.policy.in
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/polkit
+	mv ${WRKINST}${SYSCONFDIR}/polkit-1 ${PREFIX}/share/examples/polkit
 
 .include <bsd.port.mk>
