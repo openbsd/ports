@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.24 2021/03/07 08:03:48 bentley Exp $
+# $OpenBSD: Makefile,v 1.25 2021/10/07 13:35:23 visa Exp $
 
 BROKEN-m88k=	out of memory compiling cmu_us_kal_diphone.c
-BROKEN-mips64=	GCC hangs compiling cmu_us_kal_diphone.c
-BROKEN-mips64el= GCC hangs compiling cmu_us_kal_diphone.c
 
 COMMENT=	text to speech utility
 
