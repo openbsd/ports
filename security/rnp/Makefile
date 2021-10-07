@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/10/05 13:17:02 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2021/10/07 07:08:40 landry Exp $
 
 COMMENT =	high performance C++ OpenPGP library and tools
 
@@ -28,7 +28,8 @@ MODULES =	devel/cmake \
 
 MODPY_RUNDEP =	No
 
-CONFIGURE_ARGS +=	-DDOWNLOAD_GTEST=Off \
+CONFIGURE_ARGS +=	-DGIT_EXECUTABLE=true \
+			-DDOWNLOAD_GTEST=Off \
 			-DDOWNLOAD_RUBYRNP=Off
 
 .include <bsd.port.mk>
