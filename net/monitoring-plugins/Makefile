@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2021/10/03 19:01:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2021/10/07 12:17:54 sthen Exp $
 
 COMMENT-main=	monitoring plugins (for Nagios, Icinga, etc)
 COMMENT-dbi=	dbi monitoring plugin
@@ -12,7 +12,7 @@ COMMENT-snmp=	monitoring plugins using snmp
 COMMENT-radius=	RADIUS monitoring plugin
 
 V=		2.3.1
-REVISION-main=	0
+REVISION-main=	1
 
 DISTNAME=	monitoring-plugins-$V
 PKGNAME-main=	monitoring-plugins-$V
@@ -61,7 +61,7 @@ CONFIGURE_ARGS+= --libexecdir=${PREFIX}/libexec/nagios \
 # builds done with proot on a nosuid filesystem can't run ping so the parameter
 # autodetection fails; hardcode it instead
 CONFIGURE_ARGS+= --with-ping-command="/sbin/ping -n -c %d %s" \
-		--with-ping6-command="/sbin/ping -n -c %d %s"
+		--with-ping6-command="/sbin/ping6 -n -c %d %s"
 # can autodetect command paths, but hard-coding avoids build dependencies
 # or a detection which relies on being able to run ping (
 CONFIGURE_ARGS+= --with-fping-command="${LOCALBASE}/sbin/fping -4" \
