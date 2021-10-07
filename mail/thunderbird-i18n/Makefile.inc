@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.138 2021/09/17 07:43:40 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.139 2021/10/07 08:22:03 landry Exp $
 
 # keep in sync with www/mozilla/mozilla.port.mk
 ONLY_FOR_ARCHS =	amd64 aarch64
 
 PKG_ARCH =	*
 
-FV =		91.1.1
+FV =		91.2.0
 V =		${FV:C/b.$//}
 NAME =		thunderbird-i18n
 
