@@ -1,4 +1,4 @@
-$OpenBSD: patch-jruby-launcher_unixlauncher_cpp,v 1.5 2019/05/18 16:05:27 jeremy Exp $
+$OpenBSD: patch-jruby-launcher_unixlauncher_cpp,v 1.6 2021/10/07 22:24:06 jeremy Exp $
 
 Attempt to replicate the following shell code:
 
@@ -10,14 +10,15 @@ defined, bin/jruby will segfault when run.
 Index: jruby-launcher/unixlauncher.cpp
 --- jruby-launcher/unixlauncher.cpp.orig
 +++ jruby-launcher/unixlauncher.cpp
-@@ -1,5 +1,6 @@
- #include <stdlib.h>
+@@ -3,6 +3,7 @@
  #include <unistd.h>
+ #include <limits.h>
+ #include <string.h>
 +#include <string.h>
  #include "unixlauncher.h"
  #include "utilsfuncs.h"
  
-@@ -43,6 +44,44 @@ int UnixLauncher::run(int argc, char* argv[], char* en
+@@ -46,6 +47,44 @@ int UnixLauncher::run(int argc, char* argv[], char* en
      }
  
      string java("");
