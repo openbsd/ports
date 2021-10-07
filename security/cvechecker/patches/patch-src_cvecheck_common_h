@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_cvecheck_common_h,v 1.1 2021/10/07 10:05:59 sthen Exp $
+
+Index: src/cvecheck_common.h
+--- src/cvecheck_common.h.orig
++++ src/cvecheck_common.h
+@@ -1,7 +1,6 @@
+ #include <stdio.h>
+ #include <libconfig.h>
+ #include <string.h>
+-#include <bsd/string.h>
+ 
+ #ifdef _USE_SQLITE3
+ #include <sqlite3.h>

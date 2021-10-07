@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_output_stringscmd_h,v 1.1 2021/10/07 10:05:59 sthen Exp $
+
+Index: src/output/stringscmd.h
+--- src/output/stringscmd.h.orig
++++ src/output/stringscmd.h
+@@ -1,7 +1,6 @@
+ #include <regex.h>
+ #include <stdio.h>
+ #include <string.h>
+-#include <bsd/string.h>
+ #include "../cvecheck_common.h"
+ #include "../swstring.h"
+ 
