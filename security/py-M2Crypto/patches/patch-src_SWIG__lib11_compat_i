@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_SWIG__lib11_compat_i,v 1.1 2021/07/24 20:02:04 sthen Exp $
+$OpenBSD: patch-src_SWIG__lib11_compat_i,v 1.2 2021/10/07 22:32:54 tb Exp $
 
-Fix build with LibreSSL
+Provide CRYPTO_zalloc to fix build with LibreSSL
 
 Index: src/SWIG/_lib11_compat.i
 --- src/SWIG/_lib11_compat.i.orig
@@ -14,3 +14,12 @@ Index: src/SWIG/_lib11_compat.i
  
  #include <string.h>
  #include <openssl/engine.h>
+@@ -24,6 +24,8 @@ static void *CRYPTO_zalloc(size_t num, const char *fil
+       return ret;
+ }
+ 
++#endif
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ #include <openssl/bn.h>
+ 
+ #ifndef BN_F_BN_GENCB_NEW
