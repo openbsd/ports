@@ -1,0 +1,2 @@
+NOTE: yubikey-manager (ykman) is only partially functional on OpenBSD.
+Most of the "ykman fido xxx" commands (pin-setting and others) stall.
