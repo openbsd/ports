@@ -1,0 +1,16 @@
+$OpenBSD: patch-static-deps_luajit_src_host_buildvm_asm_c,v 1.1 2021/10/08 22:10:27 edd Exp $
+
+.gnu_attribute requires binutils 2.18
+
+Index: static-deps/luajit/src/host/buildvm_asm.c
+--- static-deps/luajit/src/host/buildvm_asm.c.orig
++++ static-deps/luajit/src/host/buildvm_asm.c
+@@ -327,7 +327,7 @@ void emit_asm(BuildCtx *ctx)
+ #if !(LJ_TARGET_PS3 || LJ_TARGET_PSVITA)
+     fprintf(ctx->fp, "\t.section .note.GNU-stack,\"\"," ELFASM_PX "progbits\n");
+ #endif
+-#if LJ_TARGET_PPC && !LJ_TARGET_PS3 && !LJ_ABI_SOFTFP
++#if 0 || LJ_TARGET_PPC && !LJ_TARGET_PS3 && !LJ_ABI_SOFTFP
+     /* Hard-float ABI. */
+     fprintf(ctx->fp, "\t.gnu_attribute 4, 1\n");
+ #endif
