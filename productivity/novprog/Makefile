@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2020/05/20 14:20:19 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2021/10/08 03:45:23 bcallah Exp $
 
 COMMENT =	graphical wordcount grapher
-DISTNAME =	novprog-3.1.7
+DISTNAME =	novprog-3.2.0
 EXTRACT_SUFX =	-src.tar.bz2
 CATEGORIES =	productivity x11
 
