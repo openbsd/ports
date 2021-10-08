@@ -1,22 +1,23 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:44:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2021/10/08 09:39:22 tb Exp $
 
 BROKEN-macppc =	make: don't know how to make all
 
 COMMENT =	object-relational SQL database
 DISTNAME =	virtuoso-opensource-6.1.6
-REVISION =	8
+REVISION =	9
 PKGNAME =	${DISTNAME:C/-opensource//}
 
 CATEGORIES =	databases
-HOMEPAGE =	http://www.openlinksw.com/
+HOMEPAGE =	https://www.openlinksw.com/
 
 # GPLv2, plus some more rights given
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ICE MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xext Xt
-WANTLIB += bz2 c crypto djvulibre expat fftw3 fontconfig freetype
-WANTLIB += iconv jbig jpeg lcms2 lzma m openjp2 png pthread
-WANTLIB += ssl tiff webp xcb xml2 z
+WANTLIB += aom bz2 c crypto dav1d de265 djvulibre expat fontconfig
+WANTLIB += freetype heif iconv jasper jbig jpeg lcms2 lzma m openjp2
+WANTLIB += png pthread raw_r ssl tiff webp webpdemux webpmux xcb
+WANTLIB += x265 xml2 z zstd
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=virtuoso/}
 

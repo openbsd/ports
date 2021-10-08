@@ -1,0 +1,73 @@
+$OpenBSD: patch-libsrc_Wi_bif_crypto_c,v 1.1 2021/10/08 09:39:22 tb Exp $
+
+Index: libsrc/Wi/bif_crypto.c
+--- libsrc/Wi/bif_crypto.c.orig
++++ libsrc/Wi/bif_crypto.c
+@@ -1419,7 +1419,7 @@ bif_get_certificate_info (caddr_t * qst, caddr_t * err
+ 	int i;
+ 	char tmp[1024];
+ 	char *ext_oid = (char *) (BOX_ELEMENTS (args) > 4 ? bif_string_arg (qst, args, 4, "get_certificate_info") : VIRT_CERT_EXT);
+-	STACK_OF (X509_EXTENSION) * exts = cert->cert_info->extensions;
++	STACK_OF (X509_EXTENSION) * exts = X509_get0_extensions(cert);
+ 	for (i = 0; i < sk_X509_EXTENSION_num (exts); i++)
+ 	  {
+ 	    X509_EXTENSION *ex = sk_X509_EXTENSION_value (exts, i);
+@@ -1431,7 +1431,7 @@ bif_get_certificate_info (caddr_t * qst, caddr_t * err
+ 		char *data_ptr;
+ 		BIO *mem = BIO_new (BIO_s_mem ());
+ 		if (!X509V3_EXT_print (mem, ex, 0, 0))
+-		  M_ASN1_OCTET_STRING_print (mem, ex->value);
++		  M_ASN1_OCTET_STRING_print (mem, X509_EXTENSION_get_data(ex));
+ 		len = BIO_get_mem_data (mem, &data_ptr);
+ 		if (len > 0 && data_ptr)
+ 		  {
+@@ -1488,13 +1488,13 @@ bif_get_certificate_info (caddr_t * qst, caddr_t * err
+ 	int n, i, len;
+ 	char *s, *data_ptr;
+ 	BIO *mem = BIO_new (BIO_s_mem ());
+-	for (i = 0; NULL != subj && i < sk_X509_NAME_ENTRY_num(subj->entries); i++)
++	for (i = 0; NULL != subj && i < X509_NAME_entry_count(subj); i++)
+ 	  {
+-	    ne = sk_X509_NAME_ENTRY_value(subj->entries,i);
+-	    n = OBJ_obj2nid (ne->object);
++	    ne = X509_NAME_get_entry(subj, i);
++	    n = OBJ_obj2nid (X509_NAME_ENTRY_get_object(ne));
+ 	    if ((n == NID_undef) || ((s = OBJ_nid2sn (n)) == NULL))
+ 	      {
+-		i2t_ASN1_OBJECT (buffer, sizeof (buffer), ne->object);
++		i2t_ASN1_OBJECT (buffer, sizeof (buffer), X509_NAME_ENTRY_get_object(ne));
+ 		s = buffer;
+ 	      }
+ 	    if (!strcmp (s, attr))
+@@ -1505,7 +1505,7 @@ bif_get_certificate_info (caddr_t * qst, caddr_t * err
+ 	  }
+ 	if (ne_ret)
+ 	  {
+-	    ASN1_STRING_print (mem, ne_ret->value);
++	    ASN1_STRING_print (mem, X509_NAME_ENTRY_get_data(ne_ret));
+ 	    len = BIO_get_mem_data (mem, &data_ptr);
+ 	    if (len > 0 && data_ptr)
+ 	      {
+@@ -1526,17 +1526,17 @@ bif_get_certificate_info (caddr_t * qst, caddr_t * err
+ 	dk_set_t set = NULL; 
+ 	caddr_t val;
+ 	BIO *mem = BIO_new (BIO_s_mem ());
+-	for (i = 0; NULL != subj && i < sk_X509_NAME_ENTRY_num(subj->entries); i++)
++	for (i = 0; NULL != subj && i < X509_NAME_entry_count(subj); i++)
+ 	  {
+ 	    val = NULL;
+-	    ne = sk_X509_NAME_ENTRY_value(subj->entries,i);
+-	    n = OBJ_obj2nid (ne->object);
++	    ne = X509_NAME_get_entry(subj, i);
++	    n = OBJ_obj2nid (X509_NAME_ENTRY_get_object(ne));
+ 	    if ((n == NID_undef) || ((s = OBJ_nid2sn (n)) == NULL))
+ 	      {
+-		i2t_ASN1_OBJECT (buffer, sizeof (buffer), ne->object);
++		i2t_ASN1_OBJECT (buffer, sizeof (buffer), X509_NAME_ENTRY_get_object(ne));
+ 		s = buffer;
+ 	      }
+-	    ASN1_STRING_print (mem, ne->value);
++	    ASN1_STRING_print (mem, X509_NAME_ENTRY_get_data(ne));
+ 	    len = BIO_get_mem_data (mem, &data_ptr);
+ 	    if (len > 0 && data_ptr)
+ 	      {
