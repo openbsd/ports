@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2021/08/13 18:45:45 jeremy Exp $
+# $OpenBSD: Makefile,v 1.15 2021/10/08 14:12:36 jeremy Exp $
 
 VERSION =		2.7.4
-REVISION-main =		1
+REVISION-main =		2
 DISTNAME =		ruby-${VERSION}
 SHARED_LIBS =		ruby27	0.0
 NEXTVER =		2.8
