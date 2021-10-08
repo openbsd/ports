@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.152 2021/08/16 15:17:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.153 2021/10/08 19:10:15 ajacoutot Exp $
 
 COMMENT-main=		compiler for the GObject type system
 COMMENT-valadoc=	Vala documentation generator
 
 GNOME_PROJECT=		vala
-GNOME_VERSION=		0.52.5
+GNOME_VERSION=		0.52.6
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-valadoc=	valadoc-${GNOME_VERSION}
@@ -43,7 +43,9 @@ TEST_DEPENDS=		shells/bash
 
 SUBST_VARS+=		API_V
 
-CONFIGURE_STYLE =	gnu
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.16
+CONFIGURE_STYLE=	autoreconf
 
 # multiple dep loops like:
 # lang/vala -> math/graphviz -> x11/gnome/librsvg -> lang/vala
