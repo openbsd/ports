@@ -1,4 +1,4 @@
-$OpenBSD: patch-raddb_radiusd_conf_in,v 1.16 2021/10/03 20:28:43 sthen Exp $
+$OpenBSD: patch-raddb_radiusd_conf_in,v 1.17 2021/10/08 20:20:21 sthen Exp $
 
 Index: raddb/radiusd.conf.in
 --- raddb/radiusd.conf.in.orig
@@ -12,7 +12,7 @@ Index: raddb/radiusd.conf.in
  
  #  pidfile: Where to place the PID of the RADIUS server.
  #
-@@ -510,8 +510,8 @@ security {
+@@ -531,8 +531,8 @@ security {
  	#  member.  This can allow for some finer-grained access
  	#  controls.
  	#

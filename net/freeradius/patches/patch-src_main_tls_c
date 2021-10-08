@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_main_tls_c,v 1.2 2021/10/03 20:28:43 sthen Exp $
+$OpenBSD: patch-src_main_tls_c,v 1.3 2021/10/08 20:20:22 sthen Exp $
 
 Index: src/main/tls.c
 --- src/main/tls.c.orig
@@ -91,7 +91,7 @@ Index: src/main/tls.c
  		/*
  		 *	See if there are any untrusted certificates.
  		 *	If so, complain about them.
-@@ -4170,7 +4170,7 @@ post_ca:
+@@ -4169,7 +4169,7 @@ post_ca:
  	 *	disable early data.
  	 *
  	 */
