@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.171 2021/10/06 09:25:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.172 2021/10/08 18:25:56 ajacoutot Exp $
 @conflict py-botocore-*
 @pkgpath net/py-botocore
 lib/python${MODPY_VERSION}/site-packages/botocore/
@@ -723,6 +723,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/glue/2017-03-31/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/glue/2017-03-31/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/glue/2017-03-31/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/glue/2017-03-31/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/grafana/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/grafana/2020-08-18/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/grafana/2020-08-18/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/grafana/2020-08-18/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/greengrass/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/greengrass/2017-06-07/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/greengrass/2017-06-07/paginators-1.json
