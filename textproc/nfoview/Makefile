@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2021/02/23 19:39:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2021/10/08 03:30:36 bcallah Exp $
 
 COMMENT =	simple viewer for NFO files
-MODPY_EGG_VERSION =	1.28
+MODPY_EGG_VERSION =	1.28.1
 DISTNAME =	nfoview-${MODPY_EGG_VERSION}
 CATEGORIES =	textproc x11
-REVISION =	1
 
 GH_ACCOUNT =	otsaloma
 GH_PROJECT =	nfoview
@@ -35,7 +34,7 @@ post-patch:
 	sed -i "s,share/man,man,g" ${WRKSRC}/setup.py
 
 do-test:
-	cd ${WRKSRC}/nfoview && ${LOCALBASE}/bin/py.test-3 unittest.py
-	cd ${WRKSRC}/nfoview/test && ${LOCALBASE}/bin/py.test-3 test_*
+	cd ${WRKSRC}/nfoview && ${LOCALBASE}/bin/py.test unittest.py
+	cd ${WRKSRC}/nfoview/test && ${LOCALBASE}/bin/py.test test_*
 
 .include <bsd.port.mk>
