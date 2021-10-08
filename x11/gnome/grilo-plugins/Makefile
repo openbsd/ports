@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.85 2021/09/03 12:51:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2021/10/08 18:42:04 ajacoutot Exp $
 
 # XXX: PORTROACH overriden at end of this file.
 
 COMMENT=	plugins for Grilo
 
 GNOME_PROJECT=	grilo-plugins
-GNOME_VERSION=	0.3.13
-REVISION=	0
+GNOME_VERSION=	0.3.14
 
 API=		0.3
 SUBST_VARS=	API

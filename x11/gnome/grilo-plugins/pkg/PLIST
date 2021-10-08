@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2021/03/31 17:59:44 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.34 2021/10/08 18:42:04 ajacoutot Exp $
 @so lib/grilo-${API}/libgrlchromaprint.so
 @so lib/grilo-${API}/libgrldleyna.so
 @so lib/grilo-${API}/libgrlfilesystem.so
@@ -74,6 +74,12 @@ share/help/es/examples/example-tmdb.c
 share/help/es/grilo-plugins/
 share/help/es/grilo-plugins/grilo-plugins.xml
 share/help/es/grilo-plugins/legal.xml
+share/help/eu/
+share/help/eu/examples/
+share/help/eu/examples/example-tmdb.c
+share/help/eu/grilo-plugins/
+share/help/eu/grilo-plugins/grilo-plugins.xml
+share/help/eu/grilo-plugins/legal.xml
 share/help/pl/
 share/help/pl/examples/
 share/help/pl/examples/example-tmdb.c
@@ -99,6 +105,7 @@ share/help/uk/grilo-plugins/
 share/help/uk/grilo-plugins/grilo-plugins.xml
 share/help/uk/grilo-plugins/legal.xml
 share/locale/as/LC_MESSAGES/grilo-plugins.mo
+share/locale/be/LC_MESSAGES/grilo-plugins.mo
 share/locale/bg/LC_MESSAGES/grilo-plugins.mo
 share/locale/bs/LC_MESSAGES/grilo-plugins.mo
 share/locale/ca/LC_MESSAGES/grilo-plugins.mo
