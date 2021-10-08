@@ -1,0 +1,13 @@
+$OpenBSD: patch-sgp_FileMan_cc,v 1.1 2021/10/08 07:13:56 kirby Exp $
+
+Index: sgp/FileMan.cc
+--- sgp/FileMan.cc.orig
++++ sgp/FileMan.cc
+@@ -5,6 +5,7 @@
+ #include <stdlib.h>
+ #include <sys/stat.h>
+ #include <sys/types.h>
++#include <algorithm>
+ #include "FileMan.h"
+ #include "LibraryDataBase.h"
+ #include "MemMan.h"
