@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2020/02/15 10:43:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.24 2021/10/08 18:41:54 ajacoutot Exp $
 @bin bin/grilo-test-ui-${API}
 @bin bin/grl-inspect-${API}
 @bin bin/grl-launch-${API}
@@ -44,6 +44,7 @@ share/gir-1.0/Grl-${API}.gir
 share/gir-1.0/GrlNet-${API}.gir
 share/gir-1.0/GrlPls-${API}.gir
 share/locale/as/LC_MESSAGES/grilo.mo
+share/locale/be/LC_MESSAGES/grilo.mo
 share/locale/bg/LC_MESSAGES/grilo.mo
 share/locale/bs/LC_MESSAGES/grilo.mo
 share/locale/ca/LC_MESSAGES/grilo.mo
