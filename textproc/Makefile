@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.687 2021/09/08 19:58:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.688 2021/10/08 15:32:16 bket Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -442,6 +442,7 @@
      SUBDIR += py-pygments,python3
      SUBDIR += py-pykwalify
      SUBDIR += py-pykwalify,python3
+     SUBDIR += py-rebulk,python3
      SUBDIR += py-recommonmark,python3
      SUBDIR += py-ruamel.yaml
      SUBDIR += py-ruamel.yaml,python3
