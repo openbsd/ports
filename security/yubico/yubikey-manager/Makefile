@@ -1,12 +1,20 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/10/08 20:21:36 sthen Exp $
 
 COMMENT =	library and CLI tool (ykman) for configuring a YubiKey
 
-MODPY_EGG_VERSION =	3.1.1
-REVISION =	2
+# 4.x stops using libusb/libykpersonalize, but whatever it changes to
+# doesn't work directly with openbsd's usb stack
+PORTROACH =	site:https://github.com/Yubico/yubikey-manager/releases/
+
+MODPY_EGG_VERSION =	3.1.2
 
 DISTNAME =	yubikey-manager-${MODPY_EGG_VERSION}
 YK_PROJECT =	yubikey-manager
+
+# normally would be GH_* with a url like this, but MASTER_SITES is overridden
+# in ../Makefile.inc
+MASTER_SITES =	https://github.com/Yubico/yubikey-manager/archive/
+WRKDIST =	${WRKDIR}/yubikey-manager-${DISTNAME}
 
 CATEGORIES =	sysutils
 
