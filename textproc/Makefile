@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.688 2021/10/08 15:32:16 bket Exp $
+# $OpenBSD: Makefile,v 1.689 2021/10/08 22:39:27 thfr Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -55,6 +55,7 @@
      SUBDIR += filepp
      SUBDIR += foliate
      SUBDIR += fragistics
+     SUBDIR += fstrcmp
      SUBDIR += fzy
      SUBDIR += gdiff
      SUBDIR += go-text
