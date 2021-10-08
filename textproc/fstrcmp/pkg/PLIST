@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/10/08 22:34:41 thfr Exp $
+@bin bin/fstrcmp
+include/fstrcmp.h
+@static-lib lib/libfstrcmp.a
+lib/libfstrcmp.la
+@lib lib/libfstrcmp.so.${LIBfstrcmp_VERSION}
+lib/pkgconfig/fstrcmp.pc
+@man man/man1/fstrcmp.1
+@man man/man3/fmemcmp.3
+@man man/man3/fmemcmpi.3
+@man man/man3/fstrcasecmp.3
+@man man/man3/fstrcasecmpi.3
+@man man/man3/fstrcmp.3
+@man man/man3/fstrcmpi.3
+@man man/man3/fstrcoll.3
+@man man/man3/fstrcolli.3
+@man man/man3/fwcscmp.3
+@man man/man3/fwcscmpi.3
