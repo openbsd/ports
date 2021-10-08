@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2021/10/03 19:55:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2021/10/08 19:22:21 ajacoutot Exp $
 
 COMMENT=	fast and flexible DNS server/forwarder
 
 MODGO_MODNAME=	github.com/coredns/coredns
-MODGO_VERSION=	v1.8.5
+MODGO_VERSION=	v1.8.6
 DISTNAME=	coredns-${MODGO_VERSION}
 
 CATEGORIES=	net sysutils
@@ -60,7 +60,7 @@ MODGO_MODULES =	\
 	github.com/antihax/optional				 v1.0.0 \
 	github.com/apparentlymart/go-cidr			 v1.1.0 \
 	github.com/asaskevich/govalidator			 v0.0.0-20190424111038-f61b66f89f4a \
-	github.com/aws/aws-sdk-go				 v1.40.45 \
+	github.com/aws/aws-sdk-go				 v1.40.54 \
 	github.com/beorn7/perks					 v1.0.1 \
 	github.com/census-instrumentation/opencensus-proto	 v0.2.1 \
 	github.com/cespare/xxhash				 v1.1.0 \
@@ -70,7 +70,7 @@ MODGO_MODULES =	\
 	github.com/chzyer/test					 v0.0.0-20180213035817-a1ea475d72b1 \
 	github.com/client9/misspell				 v0.3.4 \
 	github.com/cncf/udpa/go					 v0.0.0-20201120205902-5459f2c99403 \
-	github.com/cncf/xds/go					 v0.0.0-20210312221358-fbca930ec8ed \
+	github.com/cncf/xds/go					 v0.0.0-20210805033703-aa0b78936158 \
 	github.com/coredns/caddy				 v1.1.1 \
 	github.com/coreos/go-semver				 v0.3.0 \
 	github.com/coreos/go-systemd/v22			 v22.3.2 \
@@ -85,7 +85,7 @@ MODGO_MODULES =	\
 	github.com/eapache/queue				 v1.1.0 \
 	github.com/elazarl/goproxy				 v0.0.0-20180725130230-947c36da3153 \
 	github.com/emicklei/go-restful				 v0.0.0-20170410110728-ff4f55a20633 \
-	github.com/envoyproxy/go-control-plane			 v0.9.9-0.20210512163311-63b5d3c536b0 \
+	github.com/envoyproxy/go-control-plane			 v0.9.10-0.20210907150352-cf90f659a021 \
 	github.com/envoyproxy/protoc-gen-validate		 v0.1.0 \
 	github.com/evanphx/json-patch				 v4.11.0+incompatible \
 	github.com/farsightsec/golang-framestream		 v0.3.0 \
@@ -119,7 +119,7 @@ MODGO_MODULES =	\
 	github.com/google/pprof					 v0.0.0-20210720184732-4bb14d4b1be1 \
 	github.com/google/renameio				 v0.1.0 \
 	github.com/google/uuid					 v1.1.2 \
-	github.com/googleapis/gax-go/v2				 v2.1.0 \
+	github.com/googleapis/gax-go/v2				 v2.1.1 \
 	github.com/googleapis/gnostic				 v0.5.5 \
 	github.com/gorilla/context				 v1.1.1 \
 	github.com/gorilla/mux					 v1.7.3 \
@@ -176,7 +176,7 @@ MODGO_MODULES =	\
 	github.com/pmezard/go-difflib				 v1.0.0 \
 	github.com/prometheus/client_golang			 v1.11.0 \
 	github.com/prometheus/client_model			 v0.2.0 \
-	github.com/prometheus/common				 v0.30.0 \
+	github.com/prometheus/common				 v0.31.1 \
 	github.com/prometheus/procfs				 v0.6.0 \
 	github.com/rcrowley/go-metrics				 v0.0.0-20181016184325-3113b8401b8a \
 	github.com/rogpeppe/fastuuid				 v1.2.0 \
@@ -208,16 +208,16 @@ MODGO_MODULES =	\
 	golang.org/x/net					 v0.0.0-20210614182718-04defd469f4e \
 	golang.org/x/oauth2					 v0.0.0-20210819190943-2bc19b11175f \
 	golang.org/x/sync					 v0.0.0-20210220032951-036812b2e83c \
-	golang.org/x/sys					 v0.0.0-20210908233432-aa78b53d3365 \
+	golang.org/x/sys					 v0.0.0-20210917161153-d61c044b1678 \
 	golang.org/x/term					 v0.0.0-20210220032956-6a3ed077a48d \
 	golang.org/x/text					 v0.3.6 \
 	golang.org/x/time					 v0.0.0-20210723032227-1f47c861a9ac \
 	golang.org/x/tools					 v0.1.5 \
 	golang.org/x/xerrors					 v0.0.0-20200804184101-5ec99f83aff1 \
-	google.golang.org/api					 v0.57.0 \
+	google.golang.org/api					 v0.58.0 \
 	google.golang.org/appengine				 v1.6.7 \
-	google.golang.org/genproto				 v0.0.0-20210903162649-d08c68adba83 \
-	google.golang.org/grpc					 v1.40.0 \
+	google.golang.org/genproto				 v0.0.0-20210917145530-b395a37504d4 \
+	google.golang.org/grpc					 v1.41.0 \
 	google.golang.org/grpc/cmd/protoc-gen-go-grpc		 v1.1.0 \
 	google.golang.org/protobuf				 v1.27.1 \
 	gopkg.in/!data!dog/dd-trace-go.v1			 v1.33.0 \
@@ -295,6 +295,7 @@ MODGO_MODFILES =	\
 	github.com/beorn7/perks					 v1.0.0 \
 	github.com/cncf/udpa/go					 v0.0.0-20191209042840-269d4d468f6f \
 	github.com/cncf/udpa/go					 v0.0.0-20200629203442-efcf912fb354 \
+	github.com/cncf/xds/go					 v0.0.0-20210312221358-fbca930ec8ed \
 	github.com/davecgh/go-spew				 v1.1.0 \
 	github.com/dimchansky/utfbom				 v1.1.0 \
 	github.com/envoyproxy/go-control-plane			 v0.6.9 \
@@ -304,6 +305,7 @@ MODGO_MODFILES =	\
 	github.com/envoyproxy/go-control-plane			 v0.9.7 \
 	github.com/envoyproxy/go-control-plane			 v0.9.9-0.20201210154907-fd9021fe5dad \
 	github.com/envoyproxy/go-control-plane			 v0.9.9-0.20210217033140-668b12f5399d \
+	github.com/envoyproxy/go-control-plane			 v0.9.9-0.20210512163311-63b5d3c536b0 \
 	github.com/form3tech-oss/jwt-go				 v3.2.2+incompatible \
 	github.com/fsnotify/fsnotify				 v1.4.7 \
 	github.com/go-gl/glfw/v3.3/glfw				 v0.0.0-20191125211704-12ad95a8df72 \
@@ -376,6 +378,7 @@ MODGO_MODFILES =	\
 	github.com/google/uuid					 v1.1.1 \
 	github.com/googleapis/gax-go/v2				 v2.0.4 \
 	github.com/googleapis/gax-go/v2				 v2.0.5 \
+	github.com/googleapis/gax-go/v2				 v2.1.0 \
 	github.com/googleapis/gnostic				 v0.5.1 \
 	github.com/gorilla/mux					 v1.6.2 \
 	github.com/hashicorp/golang-lru				 v0.5.0 \
@@ -696,6 +699,7 @@ MODGO_MODFILES =	\
 	google.golang.org/api					 v0.51.0 \
 	google.golang.org/api					 v0.54.0 \
 	google.golang.org/api					 v0.55.0 \
+	google.golang.org/api					 v0.56.0 \
 	google.golang.org/api					 v0.7.0 \
 	google.golang.org/api					 v0.8.0 \
 	google.golang.org/api					 v0.9.0 \
@@ -759,6 +763,7 @@ MODGO_MODFILES =	\
 	google.golang.org/genproto				 v0.0.0-20210821163610-241b8fcbd6c8 \
 	google.golang.org/genproto				 v0.0.0-20210828152312-66f60bf46e71 \
 	google.golang.org/genproto				 v0.0.0-20210831024726-fe130286e0e2 \
+	google.golang.org/genproto				 v0.0.0-20210909211513-a8c4777a87af \
 	google.golang.org/grpc					 v1.19.0 \
 	google.golang.org/grpc					 v1.20.0 \
 	google.golang.org/grpc					 v1.20.1 \
@@ -785,6 +790,7 @@ MODGO_MODFILES =	\
 	google.golang.org/grpc					 v1.38.0 \
 	google.golang.org/grpc					 v1.39.0 \
 	google.golang.org/grpc					 v1.39.1 \
+	google.golang.org/grpc					 v1.40.0 \
 	google.golang.org/protobuf				 v0.0.0-20200109180630-ec00e32a8dfd \
 	google.golang.org/protobuf				 v0.0.0-20200221191635-4d8936d0db64 \
 	google.golang.org/protobuf				 v0.0.0-20200228230310-ab0ca4ff8a60 \
