@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_openvpn_route_c,v 1.15 2021/03/02 10:39:38 jca Exp $
+$OpenBSD: patch-src_openvpn_route_c,v 1.16 2021/10/09 15:36:06 jca Exp $
 
 - #1: add support for on-link routes
 
@@ -7,7 +7,7 @@ $OpenBSD: patch-src_openvpn_route_c,v 1.15 2021/03/02 10:39:38 jca Exp $
 Index: src/openvpn/route.c
 --- src/openvpn/route.c.orig
 +++ src/openvpn/route.c
-@@ -1808,12 +1808,17 @@ add_route(struct route_ipv4 *r,
+@@ -1809,12 +1809,17 @@ add_route(struct route_ipv4 *r,
      }
  #endif
  
@@ -28,7 +28,7 @@ Index: src/openvpn/route.c
  
      argv_msg(D_ROUTE, &argv);
      status = openvpn_execve_check(&argv, es, 0, "ERROR: OpenBSD/NetBSD route add command failed");
-@@ -3480,7 +3485,7 @@ get_default_gateway(struct route_gateway_info *rgi, op
+@@ -3482,7 +3487,7 @@ get_default_gateway(struct route_gateway_info *rgi, op
      /* setup data to send to routing socket */
      pid = getpid();
      seq = 0;
@@ -37,7 +37,7 @@ Index: src/openvpn/route.c
  
      bzero(&m_rtmsg, sizeof(m_rtmsg));
      bzero(&so_dst, sizeof(so_dst));
-@@ -3698,7 +3703,7 @@ get_default_gateway_ipv6(struct route_ipv6_gateway_inf
+@@ -3700,7 +3705,7 @@ get_default_gateway_ipv6(struct route_ipv6_gateway_inf
      /* setup data to send to routing socket */
      pid = getpid();
      seq = 0;
