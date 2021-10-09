@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2021/08/31 07:32:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.112 2021/10/09 22:05:09 jca Exp $
 
 ONLY_FOR_ARCHS=	amd64 aarch64
 
@@ -8,7 +8,7 @@ V=		3.6.0
 DISTNAME=	darktable-$V
 PORTROACH=	limitw:1,even skipv:release-$V
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	graphics x11
 
@@ -67,6 +67,7 @@ SEPARATE_BUILD=	Yes
 CONFIGURE_ARGS=	-DBINARY_PACKAGE_BUILD=1 \
 		-DCUSTOM_CFLAGS=1 \
 		-DUSE_OPENMP=OFF \
+		-DUSE_GMIC=OFF \
 		-DTESTBUILD_OPENCL_PROGRAMS=OFF
 
 # picks up LLVM at build time
