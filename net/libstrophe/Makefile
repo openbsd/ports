@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2021/09/10 04:30:50 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2021/10/10 19:53:27 sthen Exp $
 
 COMMENT =	simple, lightweight XMPP C library
 
 V =		0.10.1
 DISTNAME =	libstrophe-${V}
+REVISION =	0
 
 SHARED_LIBS =	strophe                 3.0 # 1.0
 
