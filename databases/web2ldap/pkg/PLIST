@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/05/28 15:12:48 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/10/10 08:59:24 landry Exp $
 @newgroup _web2ldap:857
 @newuser _web2ldap:857:_web2ldap:daemon:web2ldap service account:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/web2ldap
@@ -583,6 +583,7 @@ share/examples/web2ldap/templates/read_msPwdResetPolicy.html
 share/examples/web2ldap/templates/read_musician.html
 share/examples/web2ldap/templates/read_namedObject.html
 share/examples/web2ldap/templates/read_namedPolicy.html
+share/examples/web2ldap/templates/read_olmSyncReplInstance.html
 share/examples/web2ldap/templates/read_organization.html
 share/examples/web2ldap/templates/read_organizationalUnit.html
 share/examples/web2ldap/templates/read_posixAccount.html
@@ -609,8 +610,8 @@ share/examples/web2ldap/tls/
 @comment share/examples/web2ldap/tls/ca-bundle.pem
 share/examples/web2ldap/tls/cacerts/
 @sample ${SYSCONFDIR}/web2ldap/tls/cacerts/
-share/examples/web2ldap/tls/cacerts/DST_Root_CA_X3.pem
-@sample ${SYSCONFDIR}/web2ldap/tls/cacerts/DST_Root_CA_X3.pem
+share/examples/web2ldap/tls/cacerts/ISRG_Root_X1.pem
+@sample ${SYSCONFDIR}/web2ldap/tls/cacerts/ISRG_Root_X1.pem
 share/examples/web2ldap/web2ldap.schema
 @sample ${SYSCONFDIR}/web2ldap/web2ldap.schema
 share/examples/web2ldap/web2ldapcnf/
