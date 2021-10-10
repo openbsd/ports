@@ -1,8 +1,8 @@
-$OpenBSD: patch-Makefile_common,v 1.11 2020/10/03 10:42:49 jsg Exp $
+$OpenBSD: patch-Makefile_common,v 1.12 2021/10/10 03:12:02 jsg Exp $
 Index: Makefile.common
 --- Makefile.common.orig
 +++ Makefile.common
-@@ -207,22 +207,6 @@ AMIGA_DATE = $(shell date +"%-d.%-m.%Y")
+@@ -264,27 +264,6 @@ AMIGA_DATE = $(shell date +"%-d.%-m.%Y")
  VERFLAGS += -DAMIGA_DATE=\"$(AMIGA_DATE)\"
  endif
  
@@ -13,10 +13,15 @@ Index: Makefile.common
 -ifneq ($(shell cd $(srcdir); git rev-parse --verify HEAD 1>/dev/null 2>&1 || echo "error"),error)
 -GITROOT := $(srcdir)
 -ifeq ($(origin VER_REV), undefined)
+-GIT_VER_MAJOR = $(shell git --version | sed 's/^git version //' | cut -d. -f 1)
 -# Are there uncommitted changes? (describe --dirty is only available since 1.6.6)
+-ifeq ($(GIT_VER_MAJOR),1)
 -VER_DIRTY := $(shell cd $(srcdir); git update-index --refresh --unmerged 1>/dev/null 2>&1; git diff-index --quiet HEAD || echo "-dirty")
+-else
+-GIT_DIRTY_FLAG = --dirty
+-endif
 -# Get the working copy base revision
--VER_REV := $(shell cd $(srcdir); git describe --long --match desc/\* | cut -d '-' -f 2-)$(VER_DIRTY)
+-VER_REV := $(shell cd $(srcdir); git describe $(GIT_DIRTY_FLAG) --long --match desc/\* | cut -d '-' -f 2-)$(VER_DIRTY)
 -endif
 -else
 -GITROOT := git://github.com/scummvm/scummvm.git

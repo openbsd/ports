@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.89 2021/08/21 03:25:05 gkoehler Exp $
+# $OpenBSD: Makefile,v 1.90 2021/10/10 03:12:02 jsg Exp $
 
 COMMENT=	graphical adventure game interpreter
-V=		2.2.0
+V=		2.5.0
 DISTNAME=	scummvm-${V}
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	https://downloads.scummvm.org/frs/scummvm/${V}/

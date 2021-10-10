@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2020/10/03 10:42:49 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.17 2021/10/10 03:12:02 jsg Exp $
 @bin bin/scummvm
 @man man/man6/scummvm.6
 share/applications/scummvm.desktop
@@ -8,8 +8,12 @@ share/doc/scummvm/CONTRIBUTING.md
 share/doc/scummvm/COPYING
 share/doc/scummvm/COPYING.BSD
 share/doc/scummvm/COPYING.FREEFONT
+share/doc/scummvm/COPYING.ISC
 share/doc/scummvm/COPYING.LGPL
+share/doc/scummvm/COPYING.LUA
+share/doc/scummvm/COPYING.MIT
 share/doc/scummvm/COPYING.OFL
+share/doc/scummvm/COPYING.TINYGL
 share/doc/scummvm/COPYRIGHT
 share/doc/scummvm/NEWS.md
 share/doc/scummvm/README.md
@@ -20,16 +24,22 @@ share/pixmaps/
 share/pixmaps/scummvm.xpm
 share/scummvm/
 share/scummvm/access.dat
+share/scummvm/achievements.dat
 share/scummvm/cryomni3d.dat
 share/scummvm/drascula.dat
+share/scummvm/encoding.dat
 share/scummvm/fonts.dat
+share/scummvm/grim-patch.lab
 share/scummvm/hugo.dat
 share/scummvm/kyra.dat
 share/scummvm/lure.dat
+share/scummvm/macgui.dat
 share/scummvm/mort.dat
+share/scummvm/myst3.dat
 share/scummvm/neverhood.dat
 share/scummvm/pred.dic
 share/scummvm/queen.tbl
+share/scummvm/residualvm.zip
 share/scummvm/scummclassic.zip
 share/scummvm/scummmodern.zip
 share/scummvm/scummremastered.zip
