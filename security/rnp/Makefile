@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2021/10/07 07:08:40 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2021/10/11 08:43:00 landry Exp $
 
 COMMENT =	high performance C++ OpenPGP library and tools
 
 GH_ACCOUNT =	rnpgp
 GH_PROJECT =	rnp
 GH_TAGNAME =	v0.15.2
+REVISION =	0
+SHARED_LIBS =	rnp 0.0
 
 CATEGORIES =	security
 
@@ -29,6 +31,7 @@ MODULES =	devel/cmake \
 MODPY_RUNDEP =	No
 
 CONFIGURE_ARGS +=	-DGIT_EXECUTABLE=true \
+			-DBUILD_SHARED_LIBS=on \
 			-DDOWNLOAD_GTEST=Off \
 			-DDOWNLOAD_RUBYRNP=Off
 

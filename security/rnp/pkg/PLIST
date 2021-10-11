@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/10/05 13:17:02 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/11 08:43:00 landry Exp $
 @bin bin/rnp
 @bin bin/rnpkeys
 include/rnp/
@@ -11,7 +11,7 @@ lib/cmake/rnp/rnp-config-version.cmake
 lib/cmake/rnp/rnp-config.cmake
 lib/cmake/rnp/rnp-targets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/rnp/rnp-targets.cmake
-@static-lib lib/librnp.a
+@lib lib/librnp.so.${LIBrnp_VERSION}
 lib/pkgconfig/librnp.pc
 @man man/man1/rnp.1
 @man man/man1/rnpkeys.1
