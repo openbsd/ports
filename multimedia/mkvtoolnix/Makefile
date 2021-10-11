@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.109 2021/10/04 05:48:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.110 2021/10/11 15:16:39 rsadowski Exp $
 
 COMMENT=	create, alter and inspect Matroska files
 
-DISTNAME=	mkvtoolnix-61.0.0
+DISTNAME=	mkvtoolnix-62.0.0
 
 CATEGORIES=	multimedia x11
 
