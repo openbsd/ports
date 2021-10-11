@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/10/11 10:59:35 sthen Exp $
+lib/imlib2/
+lib/imlib2/loaders/
+@so lib/imlib2/loaders/heic.so

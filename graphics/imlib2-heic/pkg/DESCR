@@ -1,0 +1,4 @@
+imlib2-heic is an Imlib2 loader which allows loading HEIC files
+(High Efficiency Image File Format).
+
+This allows programs using Imlib2 (e.g. feh) to open these images.
