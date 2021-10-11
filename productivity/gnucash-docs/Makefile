@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/10/09 05:58:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2021/10/11 11:07:25 sthen Exp $
 
 COMMENT =		user documentation module for GnuCash
 
@@ -19,6 +19,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gnucash/}
 
 MODULES =		devel/cmake \
 			x11/gnome
+BUILD_DEPENDS =		shells/bash
 
 MODGNOME_TOOLS =	yelp
 
