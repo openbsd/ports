@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.560 2021/08/27 04:15:07 kmos Exp $
+# $OpenBSD: Makefile,v 1.561 2021/10/11 11:03:50 sthen Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -103,6 +103,7 @@
      SUBDIR += iec16022
      SUBDIR += img2pdf
      SUBDIR += imlib2
+     SUBDIR += imlib2-heic
      SUBDIR += imv
      SUBDIR += indexpage
      SUBDIR += inkscape
