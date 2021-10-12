@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2018/11/30 11:40:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/10/12 11:31:03 tb Exp $
 
 VERSION =	2.1.28
-REVISION =	1
+REVISION =	2
 
 post-extract:
 	sed -i 's,"/usr/sbin/%s","${TRUEPREFIX}/sbin/%s",' \
