@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_json_postgres_example,v 1.1.1.1 2021/08/27 16:29:34 abieber Exp $
+$OpenBSD: patch-config_json_postgres_example,v 1.2 2021/10/12 13:14:01 abieber Exp $
 
 Index: config.json.postgres.example
 --- config.json.postgres.example.orig
@@ -6,16 +6,17 @@ Index: config.json.postgres.example
 @@ -1,8 +1,8 @@
  {
      "server_url": "http://127.0.0.1:8080",
-     "listen_addr": "0.0.0.0:8080",
+-    "listen_addr": "0.0.0.0:8080",
 -    "private_key_path": "private.key",
 -    "derp_map_path": "derp.yaml",
++    "listen_addr": "127.0.0.1:8080",
 +    "private_key_path": "${SYSCONFDIR}/headscale/private.key",
 +    "derp_map_path": "${SYSCONFDIR}/headscale/derp.yaml",
      "ephemeral_node_inactivity_timeout": "30m",
      "db_type": "postgres",
      "db_host": "localhost",
-@@ -12,7 +12,7 @@
-     "db_pass": "bar",
+@@ -14,7 +14,7 @@
+     "acme_email": "",
      "tls_letsencrypt_hostname": "",
      "tls_letsencrypt_listen": ":http",
 -    "tls_letsencrypt_cache_dir": ".cache",
