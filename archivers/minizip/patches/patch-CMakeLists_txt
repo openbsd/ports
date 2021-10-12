@@ -1,55 +1,24 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2020/10/23 16:20:20 landry Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2021/10/12 04:11:25 rsadowski Exp $
 
 install headers in include/minizip to avoid conflicts with libzip
-disable -Os
-use pkg-config to detect zstd
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -59,7 +59,7 @@ include(FeatureSummary)
+@@ -81,7 +81,7 @@ include(FeatureSummary)
  
- set(INSTALL_BIN_DIR ${CMAKE_INSTALL_FULL_BINDIR} CACHE PATH "Installation directory for executables")
- set(INSTALL_LIB_DIR ${CMAKE_INSTALL_FULL_LIBDIR} CACHE PATH "Installation directory for libraries")
--set(INSTALL_INC_DIR ${CMAKE_INSTALL_FULL_INCLUDEDIR} CACHE PATH "Installation directory for headers")
-+set(INSTALL_INC_DIR ${CMAKE_INSTALL_FULL_INCLUDEDIR}/minizip CACHE PATH "Installation directory for headers")
- set(INSTALL_MAN_DIR ${CMAKE_INSTALL_FULL_MANDIR} CACHE PATH "Installation directory for manual pages")
+ set(INSTALL_BIN_DIR ${CMAKE_INSTALL_BINDIR} CACHE PATH "Installation directory for executables")
+ set(INSTALL_LIB_DIR ${CMAKE_INSTALL_LIBDIR} CACHE PATH "Installation directory for libraries")
+-set(INSTALL_INC_DIR ${CMAKE_INSTALL_INCLUDEDIR} CACHE PATH "Installation directory for headers")
++set(INSTALL_INC_DIR ${CMAKE_INSTALL_INCLUDEDIR}/minizip CACHE PATH "Installation directory for headers")
+ set(INSTALL_MAN_DIR ${CMAKE_INSTALL_MANDIR} CACHE PATH "Installation directory for manual pages")
  
  set(STDLIB_DEF)
-@@ -115,7 +115,8 @@ endif()
- # Check if zstd installation is present
- if(MZ_ZSTD)
-     if(NOT ZSTD_FORCE_FETCH)
--        find_package(ZSTD QUIET)
-+        find_package(PkgConfig)
-+        pkg_check_modules(ZSTD libzstd)
-     endif()
-     if(ZSTD_FOUND AND NOT ZSTD_FORCE_FETCH)
-         message(STATUS "Using ZSTD")
-@@ -249,8 +250,7 @@ else()
-             $<$<CONFIG:Release>:/Os>)
-     else()
-         add_compile_options(
--            $<$<CONFIG:Debug>:-g>
--            $<$<CONFIG:Release>:-Os>)
-+            $<$<CONFIG:Debug>:-g>)
-     endif()
- endif()
- 
-@@ -295,7 +295,6 @@ endif()
+@@ -449,7 +449,6 @@ endif()
  
  # Unix specific
  if(UNIX)
 -    list(APPEND STDLIB_DEF -D_POSIX_C_SOURCE=200112L)
-     list(APPEND MINIZIP_SRC "mz_os_posix.c" "mz_strm_os_posix.c")
+     list(APPEND MINIZIP_SRC mz_os_posix.c mz_strm_os_posix.c)
  
-     if((MZ_PKCRYPT OR MZ_WZAES) AND NOT (MZ_OPENSSL AND OPENSSL_FOUND))
-@@ -681,7 +680,7 @@ set(INSTALL_CMAKE_DIR "${CMAKE_INSTALL_FULL_LIBDIR}/cm
- set(INSTALL_PKGCONFIG_DIR "${CMAKE_INSTALL_FULL_LIBDIR}/pkgconfig"
-     CACHE PATH "Installation directory for pkgconfig (.pc) files")
- 
--add_library(${PROJECT_NAME}
-+add_library(${PROJECT_NAME} SHARED
-                 ${MINIZIP_SRC} ${MINIZIP_PUBLIC_HEADERS}
-                 ${BRG_SRC} ${BRG_PUBLIC_HEADERS}
-                 ${BZIP2_SRC} ${BZIP2_PUBLIC_HEADERS}
+     if(MZ_PKCRYPT OR MZ_WZAES OR MZ_SIGNING)

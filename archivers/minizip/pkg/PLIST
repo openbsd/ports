@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/10/23 16:22:33 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/10/12 04:11:25 rsadowski Exp $
 @bin bin/minigzip
 @bin bin/minizip
 include/minizip/
@@ -9,6 +9,7 @@ include/minizip/mz_os.h
 include/minizip/mz_strm.h
 include/minizip/mz_strm_buf.h
 include/minizip/mz_strm_bzip.h
+include/minizip/mz_strm_lzma.h
 include/minizip/mz_strm_mem.h
 include/minizip/mz_strm_os.h
 include/minizip/mz_strm_pkcrypt.h

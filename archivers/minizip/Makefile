@@ -1,29 +1,35 @@
-# $OpenBSD: Makefile,v 1.3 2020/10/23 16:22:32 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2021/10/12 04:11:25 rsadowski Exp $
 
 COMMENT =	zip manipulation library
 
-GH_ACCOUNT =	nmoinvaz
-GH_PROJECT =	minizip
-GH_TAGNAME =	2.10.1
+GH_ACCOUNT =	zlib-ng
+GH_PROJECT =	minizip-ng
+GH_TAGNAME =	3.0.3
 
-SHARED_LIBS +=	minizip 0.1 #2.5
+PKGNAME =	minizip-${GH_TAGNAME}
+
+SHARED_LIBS +=	minizip 1.0 # 3
+
 CATEGORIES =	archivers
 
+WANTLIB += bz2 c crypto iconv lzma ssl z zstd
+
 # zlib
-PERMIT_PACKAGE =Yes
+PERMIT_PACKAGE =	Yes
 
-MODULES =	devel/cmake
+MODULES =		devel/cmake
 
-# tries to fetch zstd source during build
-# bundled lzma is patched
-CONFIGURE_ARGS =-DMZ_LZMA=OFF \
-		-DMZ_BUILD_TEST=ON \
-		-DMZ_BUILD_UNIT_TEST=ON
+CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON \
+			-DMZ_BUILD_TEST=ON \
+			-DMZ_BUILD_UNIT_TEST=ON
 
-LIB_DEPENDS =	converters/libiconv \
-		archivers/zstd \
-		archivers/bzip2
+LIB_DEPENDS =		archivers/bzip2 \
+			archivers/xz \
+			archivers/zstd \
+			converters/libiconv
 
-WANTLIB +=	bz2 c iconv z zstd
+# For the signing-related tests to succeed, you need to add the contents of
+# test/test.pem to /etc/ssl/cert.pem.
+NO_TEST =		No
 
 .include <bsd.port.mk>
