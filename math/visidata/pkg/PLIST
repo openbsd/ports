@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/07/10 07:58:30 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/10/12 13:39:10 sthen Exp $
 bin/vd
 bin/visidata
 lib/python${MODPY_VERSION}/site-packages/visidata/
@@ -17,6 +17,7 @@ lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}__main__.${MOD
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}_input.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}_open.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}_types.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}_urlcache.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}aggregators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}basesheet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}canvas.${MODPY_PYC_MAGIC_TAG}pyc
@@ -43,7 +44,9 @@ lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}graph.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}help.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}incr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}join.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}keys.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}layout.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}macos.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}macros.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}mainloop.${MODPY_PYC_MAGIC_TAG}pyc
@@ -74,13 +77,13 @@ lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}threads.${MODP
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}transpose.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}undo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}unfurl.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}urlcache.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}vdobj.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}wrappers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/_input.py
 lib/python${MODPY_VERSION}/site-packages/visidata/_open.py
 lib/python${MODPY_VERSION}/site-packages/visidata/_types.py
+lib/python${MODPY_VERSION}/site-packages/visidata/_urlcache.py
 lib/python${MODPY_VERSION}/site-packages/visidata/aggregators.py
 lib/python${MODPY_VERSION}/site-packages/visidata/basesheet.py
 lib/python${MODPY_VERSION}/site-packages/visidata/canvas.py
@@ -107,6 +110,7 @@ lib/python${MODPY_VERSION}/site-packages/visidata/graph.py
 lib/python${MODPY_VERSION}/site-packages/visidata/help.py
 lib/python${MODPY_VERSION}/site-packages/visidata/incr.py
 lib/python${MODPY_VERSION}/site-packages/visidata/join.py
+lib/python${MODPY_VERSION}/site-packages/visidata/keys.py
 lib/python${MODPY_VERSION}/site-packages/visidata/layout.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/__init__.py
@@ -188,6 +192,7 @@ lib/python${MODPY_VERSION}/site-packages/visidata/loaders/xlsx.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/xml.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/xword.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/yaml.py
+lib/python${MODPY_VERSION}/site-packages/visidata/macos.py
 lib/python${MODPY_VERSION}/site-packages/visidata/macros.py
 lib/python${MODPY_VERSION}/site-packages/visidata/main.py
 lib/python${MODPY_VERSION}/site-packages/visidata/mainloop.py
@@ -234,7 +239,6 @@ lib/python${MODPY_VERSION}/site-packages/visidata/threads.py
 lib/python${MODPY_VERSION}/site-packages/visidata/transpose.py
 lib/python${MODPY_VERSION}/site-packages/visidata/undo.py
 lib/python${MODPY_VERSION}/site-packages/visidata/unfurl.py
-lib/python${MODPY_VERSION}/site-packages/visidata/urlcache.py
 lib/python${MODPY_VERSION}/site-packages/visidata/utils.py
 lib/python${MODPY_VERSION}/site-packages/visidata/vdobj.py
 lib/python${MODPY_VERSION}/site-packages/visidata/wrappers.py
