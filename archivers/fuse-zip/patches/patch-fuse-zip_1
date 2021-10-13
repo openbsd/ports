@@ -1,8 +1,8 @@
-$OpenBSD: patch-fuse-zip_1,v 1.2 2018/12/07 13:20:31 bket Exp $
+$OpenBSD: patch-fuse-zip_1,v 1.3 2021/10/13 08:49:03 sdk Exp $
 Index: fuse-zip.1
 --- fuse-zip.1.orig
 +++ fuse-zip.1
-@@ -75,10 +75,6 @@ Be patient. Wait for fuse-zip process finish after unm
+@@ -86,10 +86,6 @@ Be patient. Wait for fuse-zip process finish after unm
  .SH "PERMISSIONS"
  Access check will not be performed unless
  \fB-o default_permissions\fP mount option is given.

@@ -1,0 +1,13 @@
+$OpenBSD: patch-tests_whitebox_fuseInterfaceTest_cpp,v 1.1 2021/10/13 08:49:03 sdk Exp $
+
+Index: tests/whitebox/fuseInterfaceTest.cpp
+--- tests/whitebox/fuseInterfaceTest.cpp.orig
++++ tests/whitebox/fuseInterfaceTest.cpp
+@@ -4,7 +4,6 @@
+ #include <fuse.h>
+ 
+ #include <sys/stat.h>
+-#include <sys/sysmacros.h>
+ 
+ #include <cassert>
+ #include <cstdlib>
