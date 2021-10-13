@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.62 2021/10/03 21:14:21 kn Exp $
+# $OpenBSD: Makefile,v 1.63 2021/10/13 08:30:46 kn Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
 DISTNAME =		varnish-7.0.0
+REVISION =		0
 
 CATEGORIES =		www
 
@@ -32,14 +33,13 @@ LIB_DEPENDS =		devel/pcre2
 
 USE_GMAKE =		Yes
 SEPARATE_BUILD =	Yes
-CONFIGURE_STYLE =	autoreconf
-AUTOCONF_VERSION =	2.71
-AUTOMAKE_VERSION =	1.16
-AUTORECONF =		./autogen.sh
+CONFIGURE_STYLE =	simple
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}" \
 			PYTHON="${MODPY_BIN}"
-CONFIGURE_ARGS =	--docdir=${PREFIX}/share/examples/varnish
+CONFIGURE_ARGS =	--docdir=${PREFIX}/share/examples/varnish \
+			--mandir=${PREFIX}/man \
+			--localstatedir=${LOCALSTATEDIR}
 
 TEST_TARGET =		check
 
