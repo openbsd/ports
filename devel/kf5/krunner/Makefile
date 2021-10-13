@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2021/09/10 08:42:06 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.22 2021/10/13 15:02:06 rsadowski Exp $
 
 COMMENT =		KDE framework for Plasma runners
 DISTNAME =		krunner-${VERSION}
 
-SHARED_LIBS =		KF5Runner		8.0
+SHARED_LIBS =		KF5Runner		8.1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5ConfigCore KF5CoreAddons
 WANTLIB += KF5I18n KF5KIOCore KF5Package KF5Plasma KF5Service

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/09/07 14:48:52 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/10/13 15:02:07 rsadowski Exp $
 @bin bin/kate-syntax-highlighter
 include/KF5/
 include/KF5/KSyntaxHighlighting/
@@ -11,6 +11,7 @@ include/KF5/KSyntaxHighlighting/Repository
 include/KF5/KSyntaxHighlighting/State
 include/KF5/KSyntaxHighlighting/SyntaxHighlighter
 include/KF5/KSyntaxHighlighting/Theme
+include/KF5/KSyntaxHighlighting/WildcardMatcher
 include/KF5/KSyntaxHighlighting/abstracthighlighter.h
 include/KF5/KSyntaxHighlighting/definition.h
 include/KF5/KSyntaxHighlighting/definitiondownloader.h
@@ -21,6 +22,7 @@ include/KF5/KSyntaxHighlighting/repository.h
 include/KF5/KSyntaxHighlighting/state.h
 include/KF5/KSyntaxHighlighting/syntaxhighlighter.h
 include/KF5/KSyntaxHighlighting/theme.h
+include/KF5/KSyntaxHighlighting/wildcardmatcher.h
 include/KF5/ksyntaxhighlighting_version.h
 lib/cmake/KF5SyntaxHighlighting/
 lib/cmake/KF5SyntaxHighlighting/KF5SyntaxHighlightingConfig.cmake
@@ -28,6 +30,12 @@ lib/cmake/KF5SyntaxHighlighting/KF5SyntaxHighlightingConfigVersion.cmake
 lib/cmake/KF5SyntaxHighlighting/KF5SyntaxHighlightingTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5SyntaxHighlighting/KF5SyntaxHighlightingTargets.cmake
 @lib lib/libKF5SyntaxHighlighting.so.${LIBKF5SyntaxHighlighting_VERSION}
+lib/qt5/qml/
+lib/qt5/qml/org/
+lib/qt5/qml/org/kde/
+lib/qt5/qml/org/kde/syntaxhighlighting/
+@so lib/qt5/qml/org/kde/syntaxhighlighting/libkquicksyntaxhighlightingplugin.so
+lib/qt5/qml/org/kde/syntaxhighlighting/qmldir
 share/kf5/
 share/kf5/mkspecs/
 share/kf5/mkspecs/qt_KSyntaxHighlighting.pri

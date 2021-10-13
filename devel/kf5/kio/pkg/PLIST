@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2021/09/10 08:42:05 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.22 2021/10/13 15:02:05 rsadowski Exp $
 @bin bin/kcookiejar5
 @bin bin/ktelnetservice5
 @bin bin/ktrash5
@@ -179,12 +179,14 @@ include/KF5/KIOFileWidgets/krecentdirs.h
 include/KF5/KIOFileWidgets/kstatusbarofflineindicator.h
 include/KF5/KIOFileWidgets/kurlnavigator.h
 include/KF5/KIOGui/
+include/KF5/KIOGui/KEMailClientLauncherJob
 include/KF5/KIOGui/KIO/
 include/KF5/KIOGui/KIO/ApplicationLauncherJob
 include/KF5/KIOGui/KIO/CommandLauncherJob
 include/KF5/KIOGui/KIO/FavIconRequestJob
 include/KF5/KIOGui/KIO/OpenUrlJob
 include/KF5/KIOGui/KTerminalLauncherJob
+include/KF5/KIOGui/kemailclientlauncherjob.h
 include/KF5/KIOGui/kio/
 include/KF5/KIOGui/kio/applicationlauncherjob.h
 include/KF5/KIOGui/kio/commandlauncherjob.h
@@ -819,6 +821,9 @@ share/doc/HTML/ru/kcontrol5/proxy/index.docbook
 share/doc/HTML/ru/kcontrol5/trash/
 share/doc/HTML/ru/kcontrol5/trash/index.cache.bz2
 share/doc/HTML/ru/kcontrol5/trash/index.docbook
+share/doc/HTML/ru/kcontrol5/webshortcuts/
+share/doc/HTML/ru/kcontrol5/webshortcuts/index.cache.bz2
+share/doc/HTML/ru/kcontrol5/webshortcuts/index.docbook
 share/doc/HTML/ru/kioslave5/
 share/doc/HTML/ru/kioslave5/data/
 share/doc/HTML/ru/kioslave5/data/index.cache.bz2
@@ -1241,6 +1246,7 @@ share/locale/mk/LC_MESSAGES/kio5.mo
 share/locale/ml/LC_MESSAGES/kio5.mo
 share/locale/mr/LC_MESSAGES/kio5.mo
 share/locale/ms/LC_MESSAGES/kio5.mo
+share/locale/my/LC_MESSAGES/kio5.mo
 share/locale/nb/LC_MESSAGES/kio5.mo
 share/locale/nds/LC_MESSAGES/kio5.mo
 share/locale/ne/LC_MESSAGES/kio5.mo

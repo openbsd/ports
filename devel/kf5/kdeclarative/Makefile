@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2021/06/15 09:37:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.21 2021/10/13 15:02:04 rsadowski Exp $
 
 COMMENT =	integration of QML and KDE workspaces
 DISTNAME =	kdeclarative-${VERSION}
@@ -12,7 +12,8 @@ WANTLIB += KF5CoreAddons KF5GlobalAccel KF5GuiAddons KF5I18n KF5IconThemes
 WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Notifications
 WANTLIB += KF5Package KF5Service KF5Solid KF5WidgetsAddons KF5WindowSystem
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml
-WANTLIB += Qt5QmlModels Qt5Quick Qt5Widgets Qt5Xml c epoxy m
+WANTLIB += Qt5QmlModels Qt5Quick Qt5Widgets Qt5Xml X11 c epoxy
+WANTLIB += m
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		x11/qt5/qtquickcontrols \

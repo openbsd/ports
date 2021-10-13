@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2021/09/10 08:42:05 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.23 2021/10/13 15:02:06 rsadowski Exp $
 
 COMMENT =	KDE framework for sharing additional application data
 DISTNAME =	knewstuff-${VERSION}
 
 SHARED_LIBS +=  KF5NewStuff               6.1
-SHARED_LIBS +=  KF5NewStuffCore           5.6
+SHARED_LIBS +=  KF5NewStuffCore           5.8
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5AuthCore
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
@@ -13,7 +13,7 @@ WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5Package KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5QmlModels
-WANTLIB += Qt5Quick Qt5Widgets Qt5Xml c m
+WANTLIB += Qt5Quick Qt5Widgets Qt5Xml X11 c m
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf5/kirigami2>=${MODKF5_VERSION}

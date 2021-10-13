@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2020/09/07 14:48:50 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2021/10/13 15:02:06 rsadowski Exp $
 
 COMMENT =	embedding of scripting into KDE applications
 DISTNAME =	kross-${VERSION}
@@ -13,7 +13,7 @@ WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
 WANTLIB += KF5KIOGui KF5KIOWidgets KF5Parts KF5Service KF5Solid
 WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Script Qt5Widgets Qt5Xml c m
+WANTLIB += Qt5Script Qt5Widgets Qt5Xml X11 c m
 
 BUILD_DEPENDS =	devel/gettext,-tools
 

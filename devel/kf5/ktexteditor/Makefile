@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2021/08/08 12:21:38 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.28 2021/10/13 15:02:06 rsadowski Exp $
 
 COMMENT =		fully featured text editor component
 DISTNAME =		ktexteditor-${VERSION}
 
-SHARED_LIBS =		KF5TextEditor		13.0
+SHARED_LIBS =		KF5TextEditor		14.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
@@ -12,7 +12,7 @@ WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Parts KF5Service
 WANTLIB += KF5Solid KF5SonnetCore KF5SonnetUi KF5SyntaxHighlighting
 WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5Widgets Qt5Xml c git2 m
+WANTLIB += Qt5Qml Qt5Widgets Qt5Xml X11 c git2 m
 
 BUILD_DEPENDS =	archivers/gtar \
 		devel/gettext,-tools \

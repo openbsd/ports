@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2021/06/15 09:37:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.20 2021/10/13 15:02:06 rsadowski Exp $
 
 COMMENT =	KDE configuration dialog for desktop notifications
 DISTNAME =	knotifyconfig-${VERSION}
@@ -9,7 +9,7 @@ WANTLIB += ${COMPILER_LIBCXX} KF5Completion KF5ConfigCore KF5CoreAddons
 WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5Service KF5Solid KF5WidgetsAddons KF5WindowSystem
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
-WANTLIB += canberra m
+WANTLIB += X11 canberra m
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf5/kconfigwidgets>=${MODKF5_VERSION} \
