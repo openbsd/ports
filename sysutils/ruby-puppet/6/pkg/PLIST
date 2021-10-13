@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/01/24 20:25:11 kn Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/10/13 05:50:56 kn Exp $
 @option is-branch
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
@@ -127,6 +127,7 @@ ${MODRUBY_SITEDIR}/puppet/face/plugin.rb
 ${MODRUBY_SITEDIR}/puppet/face/report.rb
 ${MODRUBY_SITEDIR}/puppet/face/resource.rb
 ${MODRUBY_SITEDIR}/puppet/face/status.rb
+${MODRUBY_SITEDIR}/puppet/facter_impl.rb
 ${MODRUBY_SITEDIR}/puppet/feature/
 ${MODRUBY_SITEDIR}/puppet/feature/base.rb
 ${MODRUBY_SITEDIR}/puppet/feature/bolt.rb
@@ -167,6 +168,7 @@ ${MODRUBY_SITEDIR}/puppet/file_serving/mount/locales.rb
 ${MODRUBY_SITEDIR}/puppet/file_serving/mount/modules.rb
 ${MODRUBY_SITEDIR}/puppet/file_serving/mount/pluginfacts.rb
 ${MODRUBY_SITEDIR}/puppet/file_serving/mount/plugins.rb
+${MODRUBY_SITEDIR}/puppet/file_serving/mount/scripts.rb
 ${MODRUBY_SITEDIR}/puppet/file_serving/mount/tasks.rb
 ${MODRUBY_SITEDIR}/puppet/file_serving/terminus_helper.rb
 ${MODRUBY_SITEDIR}/puppet/file_serving/terminus_selector.rb

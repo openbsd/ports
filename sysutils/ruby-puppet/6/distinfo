@@ -1,4 +1,4 @@
-SHA256 (puppet-6.24.0.tar.gz) = 5PwFS4bBM0a+aSlTu+WbxvpR1VjZngK9wUvAnVMb2tQ=
+SHA256 (puppet-6.25.0.tar.gz) = 6e/e4logC11hjPdSN+zM2JOXJnsPsrL7wB2qC5B8qQ0=
 SHA256 (puppet-uri-encode-fix.patch) = ZhX/jy84ifAwkEhTsqSGKHVQ8dtx35VhKnuJWn1tpC0=
-SIZE (puppet-6.24.0.tar.gz) = 3003557
+SIZE (puppet-6.25.0.tar.gz) = 2963388
 SIZE (puppet-uri-encode-fix.patch) = 3038
