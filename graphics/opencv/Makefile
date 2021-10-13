@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2021/08/31 07:30:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2021/10/13 19:11:02 rsadowski Exp $
 
 ONLY_FOR_ARCHS-java =	aarch64 amd64 i386
 
@@ -6,16 +6,13 @@ CATEGORIES =		graphics devel
 COMMENT-main =		library for computer vision real-time processing
 COMMENT-java =		Java bindings for OpenCV
 
-V =			4.5.3
+V =			4.5.4
 GH_ACCOUNT =		opencv
 GH_PROJECT =		opencv
 GH_TAGNAME =		${V}
 
 PKGNAME-main =		opencv-${V}
 PKGNAME-java =		opencv-java-${V}
-
-REVISION-main =		0
-REVISION-java =		0
 
 HOMEPAGE =		https://www.opencv.org/
 
@@ -128,7 +125,6 @@ NO_TEST =	Yes
 #
 #CONFIGURE_ARGS +=	-DDBUILD_TESTS=ON \
 #			-DBUILD_PERF_TESTS=ON
-
 
 post-patch:
 	perl -pi -e 's@^.*(#\s*include)@$$1@' \
