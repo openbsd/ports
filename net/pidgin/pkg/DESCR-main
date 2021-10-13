@@ -1,15 +1,14 @@
 Pidgin is a GTK+-based multi-protocol instant messaging client. It is
-compatible with AIM, ICQ, IRC, Jabber, Gadu-Gadu, Novell GroupWise,
-and Zephyr networks.
+compatible with IRC, Jabber, Gadu-Gadu, Novell GroupWise, and Zephyr
+networks.
 
 Pidgin supports many features of the various networks, such as file
-transfer, away messages, typing notification, and MSN window closing
-notification. It also goes beyond that and provides many unique
-features. A few popular features are Buddy Pounces, which give the
-ability to notify you, send a message, play a sound, or run a program
-when a specific buddy goes away, signs online, or returns from idle;
-and plugins, consisting of text replacement, a buddy ticker, extended
-message notification, iconify on away, and more.
+transfer, away messages, typing notification. It also goes beyond that
+and provides many unique features. A few popular features are Buddy
+Pounces, which give the ability to notify you, send a message, play a
+sound, or run a program when a specific buddy goes away, signs online,
+or returns from idle; and plugins, consisting of text replacement, a
+buddy ticker, extended message notification, iconify on away, and more.
 
 Pidgin integrates well with GNOME and KDE's system trays.  This allows
 you to work with Pidgin without requiring the buddy list window to

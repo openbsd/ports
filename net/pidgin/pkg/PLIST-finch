@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-finch,v 1.7 2011/12/13 14:42:55 jasper Exp $
+@comment $OpenBSD: PLIST-finch,v 1.8 2021/10/13 13:56:07 sthen Exp $
 @conflict pidgin-<2.5.6p3
 @pkgpath net/pidgin
 @bin bin/finch
@@ -23,47 +23,12 @@ include/finch/gntroomlist.h
 include/finch/gntsound.h
 include/finch/gntstatus.h
 include/finch/gntui.h
-include/gnt/
-include/gnt/gnt.h
-include/gnt/gntbindable.h
-include/gnt/gntbox.h
-include/gnt/gntbutton.h
-include/gnt/gntcheckbox.h
-include/gnt/gntclipboard.h
-include/gnt/gntcolors.h
-include/gnt/gntcombobox.h
-include/gnt/gntentry.h
-include/gnt/gntfilesel.h
-include/gnt/gntkeys.h
-include/gnt/gntlabel.h
-include/gnt/gntline.h
-include/gnt/gntmarshal.h
-include/gnt/gntmenu.h
-include/gnt/gntmenuitem.h
-include/gnt/gntmenuitemcheck.h
-include/gnt/gntprogressbar.h
-include/gnt/gntslider.h
-include/gnt/gntstyle.h
-include/gnt/gnttextview.h
-include/gnt/gnttree.h
-include/gnt/gntutils.h
-include/gnt/gntwidget.h
-include/gnt/gntwindow.h
-include/gnt/gntwm.h
-include/gnt/gntws.h
 lib/finch/
-lib/finch/gntclipboard.so
-lib/finch/gntgf.so
-lib/finch/gnthistory.so
-lib/finch/gntlastlog.so
-lib/finch/gnttinyurl.so
-lib/finch/grouping.so
-lib/gnt/
-lib/gnt/irssi.so
-lib/gnt/s.so
-lib/libgnt.a
-lib/libgnt.la
-@lib lib/libgnt.so.${LIBgnt_VERSION}
+@so lib/finch/gntclipboard.so
+@so lib/finch/gntgf.so
+@so lib/finch/gnthistory.so
+@so lib/finch/gntlastlog.so
+@so lib/finch/gnttinyurl.so
+@so lib/finch/grouping.so
 lib/pkgconfig/finch.pc
-lib/pkgconfig/gnt.pc
 @man man/man1/finch.1

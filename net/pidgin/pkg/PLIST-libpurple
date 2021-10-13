@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-libpurple,v 1.25 2017/09/01 09:53:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST-libpurple,v 1.26 2021/10/13 13:56:07 sthen Exp $
 @conflict pidgin-<2.5.6p3
 @pkgpath net/pidgin
 @pkgpath net/pidgin,-libpurple,gtkspell
@@ -34,6 +34,7 @@ include/libpurple/dnssrv.h
 include/libpurple/eventloop.h
 include/libpurple/ft.h
 include/libpurple/gaim-compat.h
+include/libpurple/glibcompat.h
 include/libpurple/idle.h
 include/libpurple/imgstore.h
 include/libpurple/log.h
@@ -81,38 +82,35 @@ include/libpurple/value.h
 include/libpurple/version.h
 include/libpurple/whiteboard.h
 include/libpurple/xmlnode.h
-lib/libpurple-client.a
+@static-lib lib/libpurple-client.a
 lib/libpurple-client.la
 @lib lib/libpurple-client.so.${LIBpurple-client_VERSION}
-lib/libpurple.a
+@static-lib lib/libpurple.a
 lib/libpurple.la
 @lib lib/libpurple.so.${LIBpurple_VERSION}
 lib/pkgconfig/purple.pc
 lib/purple-2/
-lib/purple-2/autoaccept.so
-lib/purple-2/buddynote.so
-lib/purple-2/dbus-example.so
-lib/purple-2/idle.so
-lib/purple-2/joinpart.so
-lib/purple-2/libaim.so
-lib/purple-2/libgg.so
-lib/purple-2/libicq.so
-lib/purple-2/libirc.so
+@so lib/purple-2/autoaccept.so
+@so lib/purple-2/buddynote.so
+@so lib/purple-2/dbus-example.so
+@so lib/purple-2/idle.so
+@so lib/purple-2/joinpart.so
+@so lib/purple-2/libgg.so
+@so lib/purple-2/libirc.so
 @lib lib/purple-2/libjabber.so.${LIBjabber_VERSION}
-lib/purple-2/libnovell.so
-@lib lib/purple-2/liboscar.so.${LIBoscar_VERSION}
-lib/purple-2/libsametime.so
-lib/purple-2/libsilcpurple.so
-lib/purple-2/libsimple.so
-lib/purple-2/libxmpp.so
-lib/purple-2/libzephyr.so
-lib/purple-2/log_reader.so
-lib/purple-2/newline.so
-lib/purple-2/offlinemsg.so
-lib/purple-2/psychic.so
-lib/purple-2/ssl-openssl.so
-lib/purple-2/ssl.so
-lib/purple-2/statenotify.so
+@so lib/purple-2/libnovell.so
+@so lib/purple-2/libsametime.so
+@so lib/purple-2/libsilcpurple.so
+@so lib/purple-2/libsimple.so
+@so lib/purple-2/libxmpp.so
+@so lib/purple-2/libzephyr.so
+@so lib/purple-2/log_reader.so
+@so lib/purple-2/newline.so
+@so lib/purple-2/offlinemsg.so
+@so lib/purple-2/psychic.so
+@so lib/purple-2/ssl-openssl.so
+@so lib/purple-2/ssl.so
+@so lib/purple-2/statenotify.so
 share/aclocal/purple.m4
 share/dbus-1/services/purple.service
 share/purple/
@@ -120,10 +118,10 @@ share/purple/ca-certs/
 share/purple/ca-certs/CAcert_Class3.pem
 share/purple/ca-certs/CAcert_Root.pem
 share/purple/ca-certs/mozilla.pem
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool${MODPY_BIN_SUFFIX} --get-default-source` %D/bin/gconftool${MODPY_BIN_SUFFIX} --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/purple.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool${MODPY_BIN_SUFFIX} --get-default-source` %D/bin/gconftool${MODPY_BIN_SUFFIX} --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
 share/sounds/
 share/sounds/purple/
 share/sounds/purple/alert.wav
