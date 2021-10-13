@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.63 2021/10/13 08:30:46 kn Exp $
+# $OpenBSD: Makefile,v 1.64 2021/10/13 10:29:29 kn Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
 DISTNAME =		varnish-7.0.0
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 
@@ -46,6 +46,15 @@ TEST_TARGET =		check
 .ifdef DEBUG
 CONFIGURE_ARGS +=	--enable-debugging-symbols
 .endif
+
+# varnishd(1) default is localhost:0 (random port);
+# set arbitrary port to make varnishreload(1) work out of the box.
+MGTSOCK =		localhost:9999
+# varnish(1) default value;  required for varnishreload(1)/varnishadm(1).
+MGTSEC =		${LOCALSTATEDIR}/varnish/varnishd/_.secret
+
+SUBST_VARS +=		MGTSOCK \
+			MGTSEC
 
 # XXX ${WRKSRC}/doc/sphinx/Makefile.{am,in}
 pre-build:

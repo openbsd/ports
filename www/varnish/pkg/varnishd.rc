@@ -1,9 +1,9 @@
 #!/bin/ksh
 #
-# $OpenBSD: varnishd.rc,v 1.6 2019/05/20 20:02:27 kn Exp $
+# $OpenBSD: varnishd.rc,v 1.7 2021/10/13 10:29:29 kn Exp $
 
 daemon="${PREFIX}/sbin/varnishd"
-daemon_flags="-j unix,user=_varnish,ccgroup=_varnish -f ${SYSCONFDIR}/varnish/default.vcl"
+daemon_flags="-j unix,user=_varnish,ccgroup=_varnish -f ${SYSCONFDIR}/varnish/default.vcl -T ${MGTSOCK}"
 
 . /etc/rc.d/rc.subr
 
