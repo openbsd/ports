@@ -1,4 +1,4 @@
-$OpenBSD: patch-Make_openbsd,v 1.5 2019/05/11 14:17:51 naddy Exp $
+$OpenBSD: patch-Make_openbsd,v 1.6 2021/10/13 00:25:47 abieber Exp $
 Index: Make.openbsd
 --- Make.openbsd.orig
 +++ Make.openbsd
@@ -22,5 +22,5 @@ Index: Make.openbsd
  
  libmachdep.a:
 -	arch=`uname -m|sed 's/i.86/386/; s/macppc/power/; s/socppc/power/; s/x86_64/amd64/; s/sparc64/sun4u/'`; \
-+	arch=`uname -m|sed 's/i.86/386/; s/macppc/power/; s/x86_64/amd64/; s/sparc64/sun4u/; s/arm.*/arm/; s/mips64.*/mips/'`; \
++	arch=`uname -m|sed 's/i.86/386/; s/macppc/power/; s/x86_64/amd64/; s/sparc64/sun4u/; s/mips64.*/mips/'`; \
  	(cd posix-$$arch &&  make)
