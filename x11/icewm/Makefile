@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.81 2021/08/07 10:32:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.82 2021/10/13 06:14:47 bket Exp $
 
 # unconditionally uses machine/apmvar.h and related structures/defines
 ONLY_FOR_ARCHS=	${APM_ARCHS}
 
-V=		2.7.0
+V=		2.8.0
 COMMENT=	small and fast window manager
 DISTNAME=	icewm-${V}
 EXTRACT_SUFX=	.tar.lz
@@ -56,7 +56,9 @@ CONFIGURE_ARGS=	--with-libdir=${PREFIX}/share/icewm \
 #CONFIGURE_ARGS+=--with-icesound=sndio
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+
+TEST_ENV=	FAKED_MODE=True
 
 # make: don't know how to make %.html: (prerequisite of: icewm.html)
 USE_GMAKE=	Yes
