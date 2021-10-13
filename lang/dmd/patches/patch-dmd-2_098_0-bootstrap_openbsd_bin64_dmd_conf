@@ -1,0 +1,13 @@
+$OpenBSD: patch-dmd-2_098_0-bootstrap_openbsd_bin64_dmd_conf,v 1.1.1.1 2021/10/13 04:38:52 bcallah Exp $
+
+Use the bootstrap libphobos2.a when linking the initially built dmd.
+
+Index: dmd-2.098.0-bootstrap/openbsd/bin64/dmd.conf
+--- dmd-2.098.0-bootstrap/openbsd/bin64/dmd.conf.orig
++++ dmd-2.098.0-bootstrap/openbsd/bin64/dmd.conf
+@@ -2,4 +2,4 @@
+ DFLAGS=-I/usr/local/include/dmd/phobos -I/usr/local/include/dmd/druntime/import -L-L/usr/lib -L-L/usr/local/lib -L--export-dynamic -fPIC
+ 
+ [Environment64]
+-DFLAGS=-I/usr/local/include/dmd/phobos -I/usr/local/include/dmd/druntime/import -L-L/usr/lib -L-L/usr/local/lib -L--export-dynamic -fPIC
++DFLAGS=-I%@P%/../../../druntime-2.098.0/src -I%@P%/../../../phobos-2.098.0 -L-L%@P%/../../../phobos-2.098.0/generated/openbsd/release/64 -L--export-dynamic -fPIC -L-L%@P%/../../../dmd-2.098.0-bootstrap/openbsd/lib64
