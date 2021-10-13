@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.57 2021/08/22 01:54:11 namn Exp $
+# $OpenBSD: Makefile,v 1.58 2021/10/13 23:31:43 namn Exp $
 
 COMMENT =	flexible DNS proxy with support for encrypted DNS protocols
 
 GH_ACCOUNT =	jedisct1
 GH_PROJECT =	dnscrypt-proxy
-GH_TAGNAME =	2.1.0
+GH_TAGNAME =	2.1.1
 
 CATEGORIES =	net
 
