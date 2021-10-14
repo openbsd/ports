@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2021/08/22 08:06:22 paco Exp $
+# $OpenBSD: Makefile,v 1.5 2021/10/14 21:09:34 sdk Exp $
 
 COMMENT =		command-line interface for Hetzner Cloud
-V =			1.28.0
+V =			1.28.1
 
 MODGO_MODNAME =		github.com/hetznercloud/cli
 MODGO_VERSION =		v${V}
