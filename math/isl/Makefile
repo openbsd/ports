@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/10/13 19:49:45 tracey Exp $
+# $OpenBSD: Makefile,v 1.2 2021/10/14 07:15:32 naddy Exp $
 
 COMMENT =	manipulate integer points bounded by linear constraints
 
@@ -20,7 +20,7 @@ EXTRACT_SUFX =		.tar.bz2
 
 LIB_DEPENDS =		devel/gmp
 
-SEPERATE_BUILD =	Yes
+SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
 
 CONFIGURE_STYLE ?=	gnu
