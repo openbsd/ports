@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_config_json,v 1.19 2021/09/03 23:25:22 pvk Exp $
+$OpenBSD: patch-config_config_json,v 1.20 2021/10/14 12:57:56 pvk Exp $
 
 Index: config/config.json
 --- config/config.json.orig
@@ -12,7 +12,7 @@ Index: config/config.json
      "Forward80To443": false,
      "TrustedProxyIPHeader": [],
      "ReadTimeout": 300,
-@@ -92,7 +92,7 @@
+@@ -84,7 +84,7 @@
      "EnableLatex": false,
      "EnableAPIChannelDeletion": false,
      "EnableLocalMode": false,
@@ -21,7 +21,7 @@ Index: config/config.json
      "EnableAWSMetering": false,
      "SplitKey": "",
      "FeatureFlagSyncIntervalSeconds": 30,
-@@ -162,14 +162,14 @@
+@@ -141,14 +141,14 @@
      "ReplicaLagSettings": []
    },
    "LogSettings": {
@@ -38,7 +38,7 @@ Index: config/config.json
      "EnableWebhookDebugging": true,
      "EnableDiagnostics": true,
      "EnableSentry": true,
-@@ -186,14 +186,14 @@
+@@ -165,14 +165,14 @@
      "AdvancedLoggingConfig": ""
    },
    "NotificationLogSettings": {
@@ -55,16 +55,16 @@ Index: config/config.json
      "AdvancedLoggingConfig": ""
    },
    "PasswordSettings": {
-@@ -209,7 +209,7 @@
-     "EnableMobileDownload": true,
+@@ -189,7 +189,7 @@
      "MaxFileSize": 104857600,
+     "MaxImageResolution": 33177600,
      "DriverName": "local",
 -    "Directory": "./data/",
 +    "Directory": "${LOCALSTATEDIR}/mattermost/data/",
      "EnablePublicLink": false,
      "ExtractContent": true,
      "ArchiveRecursion": false,
-@@ -240,11 +240,11 @@
+@@ -220,11 +220,11 @@
      "EnableSMTPAuth": false,
      "SMTPUsername": "",
      "SMTPPassword": "",
@@ -79,7 +79,7 @@ Index: config/config.json
      "PushNotificationServer": "https://push-test.mattermost.com",
      "PushNotificationContents": "full",
      "PushNotificationBuffer": 1000,
-@@ -280,7 +280,7 @@
+@@ -260,7 +260,7 @@
      "SupportEmail": "",
      "CustomTermsOfServiceEnabled": false,
      "CustomTermsOfServiceReAcceptancePeriod": 365,
@@ -88,7 +88,7 @@ Index: config/config.json
    },
    "AnnouncementSettings": {
      "EnableBanner": false,
-@@ -386,7 +386,7 @@
+@@ -366,7 +366,7 @@
    },
    "ComplianceSettings": {
      "Enable": false,
@@ -97,9 +97,9 @@ Index: config/config.json
      "EnableDaily": false,
      "BatchSize": 30000
    },
-@@ -540,8 +540,8 @@
+@@ -519,8 +519,8 @@
      "EnableUploads": false,
-     "AllowInsecureDownloadUrl": false,
+     "AllowInsecureDownloadURL": false,
      "EnableHealthCheck": true,
 -    "Directory": "./plugins",
 -    "ClientDirectory": "./client/plugins",
@@ -108,8 +108,8 @@ Index: config/config.json
      "Plugins": {},
      "PluginStates": {
        "com.mattermost.nps": {
-@@ -589,11 +589,11 @@
-     "TimedDND": false
+@@ -577,11 +577,11 @@
+     "AddChannelButton": "by_team_name"
    },
    "ImportSettings": {
 -    "Directory": "./import",

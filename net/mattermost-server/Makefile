@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.54 2021/09/16 18:34:53 pvk Exp $
+# $OpenBSD: Makefile,v 1.55 2021/10/14 12:57:56 pvk Exp $
 
 COMMENT =	open source Slack-alternative
 
-V =		5.39.0
+V =		6.0.0
 GH_ACCOUNT =	mattermost
 GH_PROJECT =	mattermost-server
 GH_TAGNAME =	v${V}
@@ -33,7 +33,7 @@ post-extract:
 
 pre-configure:
 	${SUBST_CMD} ${WRKDIST}/config/config.json ${WRKDIST}/utils/fileutils/fileutils.go \
-		${WRKDIST}/config/file.go ${WRKDIST}/cmd/mattermost/commands/logs.go
+		${WRKDIST}/config/file.go
 
 do-build:
 	cd ${WRKSRC}/cmd/mattermost && \
