@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2021/10/05 10:37:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2021/10/14 14:29:03 sthen Exp $
 
 COMMENT-main=		UW e-mail client
 COMMENT-c-client=	UW c-client mail access routines
@@ -22,7 +22,7 @@ PILOT_V=		2.99
 REVISION-main=		1
 REVISION-pico=		24
 REVISION-pilot=		24
-REVISION-c-client=	1
+REVISION-c-client=	2
 REVISION-mailutil=	0
 REVISION-imap=		0
 
@@ -62,6 +62,7 @@ WANTLIB-pico=		${WANTLIB} pthread
 WANTLIB-pilot=		${WANTLIB} pthread
 
 LIB_DEPENDS=		devel/gettext,-runtime
+LIB_DEPENDS-c-client=
 BUILD_DEPENDS=		textproc/aspell/core
 RUN_DEPENDS-main=	textproc/aspell/core
 RUN_DEPENDS-pico=	textproc/aspell/core
