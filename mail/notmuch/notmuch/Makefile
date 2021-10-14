@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2021/07/04 19:02:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/10/14 04:18:26 bket Exp $
 
 COMMENT-main =		mail indexer, tagger and threader
 COMMENT-emacs =		Emacs bindings for notmuch
@@ -6,9 +6,7 @@ COMMENT-emacs =		Emacs bindings for notmuch
 PKGNAME-main =		notmuch-${V}
 PKGNAME-emacs =		notmuch-emacs-${V}
 
-REVISION =		0
-
-SHARED_LIBS +=		notmuch	1.0
+SHARED_LIBS +=		notmuch	1.1
 
 MULTI_PACKAGES =	-main -emacs
 DEBUG_PACKAGES =	-main

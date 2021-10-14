@@ -1,0 +1,14 @@
+$OpenBSD: patch-test_T400-hooks_sh,v 1.1 2021/10/14 04:18:26 bket Exp $
+
+Index: test/T400-hooks.sh
+--- test/T400-hooks.sh.orig
++++ test/T400-hooks.sh
+@@ -194,7 +194,7 @@ EOF
+     generate_message '[subject]="add msg in new"'
+     NOTMUCH_NEW
+     notmuch search id:$id1 or id:$gen_msg_id | notmuch_search_sanitize > OUTPUT
+-    cat <<EOF | sed s'/^[ \t]*//' > EXPECTED
++    cat <<EOF | sed s'/^[ 	]*//' > EXPECTED
+     thread:XXX   2001-01-05 [1/1] Notmuch Test Suite; add msg in pre-new (inbox unread)
+     thread:XXX   2001-01-05 [1/1] Notmuch Test Suite; add msg in new (inbox unread)
+ EOF
