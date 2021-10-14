@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2021/10/13 10:29:29 kn Exp $
+# $OpenBSD: Makefile,v 1.65 2021/10/14 20:57:55 kn Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
@@ -56,14 +56,21 @@ MGTSEC =		${LOCALSTATEDIR}/varnish/varnishd/_.secret
 SUBST_VARS +=		MGTSOCK \
 			MGTSEC
 
+RC =			${FILESDIR}/varnishreload
+MAN =			${RC}.1
+RCINST =		${PREFIX}/bin/${RC:T}
+MANINST =		${PREFIX}/man/man1/${MAN:T}
+
 # XXX ${WRKSRC}/doc/sphinx/Makefile.{am,in}
 pre-build:
 	echo 'readlink -f "$$@"' >| ${WRKDIR}/bin/realpath
 	chmod +x ${WRKDIR}/bin/realpath
 
 post-install:
-	${SUBST_PROGRAM} ${FILESDIR}/varnishreload ${PREFIX}/bin/varnishreload
-	${SUBST_MAN} ${FILESDIR}/varnishreload.1 ${PREFIX}/man/man1/varnishreload.1
+	${SUBST_PROGRAM} ${RC} ${RCINST}
+	@ksh -n ${RCINST}
+	${SUBST_MAN} ${MAN} ${MANINST}
+	@mandoc -Tlint -Wstyle ${MAN}
 	rm -f ${PREFIX}/lib/varnish/{vmods,}/*.{a,la}
 
 .include <bsd.port.mk>
