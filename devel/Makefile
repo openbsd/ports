@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2129 2021/10/08 15:27:22 bket Exp $
+# $OpenBSD: Makefile,v 1.2130 2021/10/14 13:41:10 tracey Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -406,6 +406,7 @@
      SUBDIR += mercurial
      SUBDIR += meson
      SUBDIR += metaauto
+     SUBDIR += mklittlefs
      SUBDIR += mkspiffs
      SUBDIR += mm
      SUBDIR += mm-common
