@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2021/10/05 07:00:08 thfr Exp $
+# $OpenBSD: Makefile,v 1.27 2021/10/14 14:33:29 thfr Exp $
 
 BROKEN-powerpc =	fails at runtime, the UI is totally blank
 BROKEN-powerpc64 =	Unknown ISA
+BROKEN-riscv64 =	Unknown ISA
+BROKEN-mips64 =		Unknown ISA
 
 COMMENT =	2D and 3D game engine
 
