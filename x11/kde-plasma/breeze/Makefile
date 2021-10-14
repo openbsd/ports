@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/06 06:36:22 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2021/10/14 18:06:58 rsadowski Exp $
 
 COMMENT =		Breeze KDE desktop theme
 DISTNAME =		breeze-${VERSION}
@@ -10,7 +10,7 @@ WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5GuiAddons
 WANTLIB += KF5I18n KF5IconThemes KF5KCMUtils KF5Service KF5Style
 WANTLIB += KF5WidgetsAddons KF5WindowSystem Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5Widgets
-WANTLIB += Qt5X11Extras Qt5Xml c kdecorations2 m xcb
+WANTLIB += Qt5X11Extras Qt5Xml X11 c kdecorations2 m xcb
 
 MODKDE5_TRANSLATIONS = Yes
 MODKDE5_ICON_CACHE = Yes

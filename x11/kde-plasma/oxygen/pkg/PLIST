@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/03/07 13:31:48 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/14 18:06:59 rsadowski Exp $
 @bin bin/oxygen-demo5
 @bin bin/oxygen-settings5
 @lib lib/liboxygenstyle5.so.${LIBoxygenstyle5_VERSION}
@@ -322,6 +322,7 @@ share/sounds/Oxygen-Sys-List-Match-No.ogg
 share/sounds/Oxygen-Sys-Log-In-Long.ogg
 share/sounds/Oxygen-Sys-Log-In-Short.ogg
 share/sounds/Oxygen-Sys-Log-In.ogg
+share/sounds/Oxygen-Sys-Log-Out-Long.ogg
 share/sounds/Oxygen-Sys-Log-Out.ogg
 share/sounds/Oxygen-Sys-Question.ogg
 share/sounds/Oxygen-Sys-Special.ogg

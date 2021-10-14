@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/08/08 12:22:55 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/10/14 18:06:58 rsadowski Exp $
 @bin bin/breeze-settings5
 lib/cmake/Breeze/
 lib/cmake/Breeze/BreezeConfig.cmake
@@ -356,27 +356,6 @@ share/locale/zh_CN/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/zh_CN/LC_MESSAGES/breeze_style_config.mo
 share/locale/zh_TW/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/zh_TW/LC_MESSAGES/breeze_style_config.mo
-share/metainfo/
-share/metainfo/org.kde.breezedark.desktop.appdata.xml
-share/metainfo/org.kde.breezetwilight.desktop.appdata.xml
-share/plasma/
-share/plasma/look-and-feel/
-share/plasma/look-and-feel/org.kde.breezedark.desktop/
-share/plasma/look-and-feel/org.kde.breezedark.desktop/contents/
-share/plasma/look-and-feel/org.kde.breezedark.desktop/contents/defaults
-share/plasma/look-and-feel/org.kde.breezedark.desktop/contents/previews/
-share/plasma/look-and-feel/org.kde.breezedark.desktop/contents/previews/fullscreenpreview.jpg
-share/plasma/look-and-feel/org.kde.breezedark.desktop/contents/previews/preview.png
-share/plasma/look-and-feel/org.kde.breezedark.desktop/metadata.desktop
-share/plasma/look-and-feel/org.kde.breezedark.desktop/metadata.json
-share/plasma/look-and-feel/org.kde.breezetwilight.desktop/
-share/plasma/look-and-feel/org.kde.breezetwilight.desktop/contents/
-share/plasma/look-and-feel/org.kde.breezetwilight.desktop/contents/defaults
-share/plasma/look-and-feel/org.kde.breezetwilight.desktop/contents/previews/
-share/plasma/look-and-feel/org.kde.breezetwilight.desktop/contents/previews/fullscreenpreview.jpg
-share/plasma/look-and-feel/org.kde.breezetwilight.desktop/contents/previews/preview.png
-share/plasma/look-and-feel/org.kde.breezetwilight.desktop/metadata.desktop
-share/plasma/look-and-feel/org.kde.breezetwilight.desktop/metadata.json
 share/wallpapers/
 share/wallpapers/Next/
 share/wallpapers/Next/contents/
@@ -397,6 +376,7 @@ share/wallpapers/Next/contents/images/3200x1800.png
 share/wallpapers/Next/contents/images/3200x2000.png
 share/wallpapers/Next/contents/images/360x720.png
 share/wallpapers/Next/contents/images/3840x2160.png
+share/wallpapers/Next/contents/images/440x247.png
 share/wallpapers/Next/contents/images/5120x2880.png
 share/wallpapers/Next/contents/images/720x1440.png
 share/wallpapers/Next/contents/images/base_size.png
