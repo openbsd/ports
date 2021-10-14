@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.253 2021/10/13 04:39:43 bcallah Exp $
+# $OpenBSD: Makefile,v 1.254 2021/10/14 03:45:51 bcallah Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -38,6 +38,7 @@
      SUBDIR += gambit
      SUBDIR += gawk
      SUBDIR += gcc
+     SUBDIR += gdmd
      SUBDIR += gerbil
      SUBDIR += gforth
      SUBDIR += ghc
