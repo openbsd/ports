@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.92 2021/08/13 19:08:03 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.93 2021/10/14 14:32:55 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -283,6 +283,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/app_getcpeid.so
 @so lib/asterisk/modules/app_ices.so
 @so lib/asterisk/modules/app_image.so
+@so lib/asterisk/modules/app_mf.so
 @so lib/asterisk/modules/app_milliwatt.so
 @so lib/asterisk/modules/app_minivm.so
 @so lib/asterisk/modules/app_mixmonitor.so
@@ -391,6 +392,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/func_enum.so
 @so lib/asterisk/modules/func_env.so
 @so lib/asterisk/modules/func_extstate.so
+@so lib/asterisk/modules/func_frame_drop.so
 @so lib/asterisk/modules/func_frame_trace.so
 @so lib/asterisk/modules/func_global.so
 @so lib/asterisk/modules/func_groupcount.so
@@ -411,6 +413,8 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/func_presencestate.so
 @so lib/asterisk/modules/func_rand.so
 @so lib/asterisk/modules/func_realtime.so
+@so lib/asterisk/modules/func_sayfiles.so
+@so lib/asterisk/modules/func_scramble.so
 @so lib/asterisk/modules/func_sha1.so
 @so lib/asterisk/modules/func_shell.so
 @so lib/asterisk/modules/func_sorcery.so
@@ -548,6 +552,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/res_stir_shaken.so
 @so lib/asterisk/modules/res_stun_monitor.so
 @so lib/asterisk/modules/res_timing_pthread.so
+@so lib/asterisk/modules/res_tonedetect.so
 @so lib/asterisk/modules/res_xmpp.so
 @comment lib/libasteriskpj.so
 @lib lib/libasteriskpj.so.${LIBasteriskpj_VERSION}

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.350 2021/08/13 19:08:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.351 2021/10/14 14:32:54 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
-VER=		18.6.0
+VER=		18.7.1
 PJ_V=		2.10
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
@@ -317,6 +317,7 @@ post-configure:
 .if defined(MENUSELECT)
 	@echo "enabling menuselect options: ${MENUSELECT}"
 	cd ${WRKSRC}; menuselect/menuselect ${MENUSELECT}
+	@echo "menuselect options available/not enabled:"
 	@cd ${WRKSRC}; diff -u0 menuselect.makeopts{.orig,} || true
 .endif
 
