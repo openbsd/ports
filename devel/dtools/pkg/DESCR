@@ -1,0 +1,15 @@
+This package contains various tools redistributed with DMD or used
+internally during various build tasks.
+
+Programs include:
+catdocd		Concatenates Ddoc files.
+changed		Change log generator.
+checkwhitespace	Check for trailing whitespace.
+contributors	Query contributors between two D releases.
+ddemangle	D symbol demangler.
+detab		Replaces tabs with spaces.
+dget		D source code downloader.
+dustmite	Test case minimization tool.
+rdmd		D build tool.
+tolf		Line endings converter.
+updatecopyright	Update the copyright notices in DMD
