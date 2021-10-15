@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2021/05/19 16:09:17 paco Exp $
+# $OpenBSD: Makefile,v 1.18 2021/10/15 07:49:04 ajacoutot Exp $
 
 COMMENT =	Open On-Chip Debugging
 
@@ -39,7 +39,8 @@ CONFIGURE_ARGS = --disable-werror \
 		--enable-presto \
 		--enable-aice \
 		--enable-buspirate \
-		--disable-internal-jimtcl
+		--disable-internal-jimtcl \
+		--without-capstone
 
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/jim" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread"
