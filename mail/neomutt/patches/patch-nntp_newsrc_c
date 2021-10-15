@@ -1,9 +1,9 @@
-$OpenBSD: patch-nntp_newsrc_c,v 1.5 2020/09/01 10:50:55 sthen Exp $
+$OpenBSD: patch-nntp_newsrc_c,v 1.6 2021/10/15 11:09:00 sthen Exp $
 
 Index: nntp/newsrc.c
 --- nntp/newsrc.c.orig
 +++ nntp/newsrc.c
-@@ -623,7 +623,7 @@ static int active_get_cache(struct NntpAccountData *ad
+@@ -625,7 +625,7 @@ static int active_get_cache(struct NntpAccountData *ad
    if (!fp)
      return -1;
  
