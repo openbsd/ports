@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.616 2021/09/01 22:32:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.617 2021/10/15 11:17:04 denis Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -142,6 +142,7 @@
      SUBDIR += iucode-tool
      SUBDIR += iwatch
      SUBDIR += jefferson
+     SUBDIR += kopia
      SUBDIR += krename
      SUBDIR += ktsuss
      SUBDIR += kubectl
