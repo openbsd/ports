@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2130 2021/10/14 13:41:10 tracey Exp $
+# $OpenBSD: Makefile,v 1.2131 2021/10/15 13:45:02 bcallah Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -131,6 +131,7 @@
      SUBDIR += doxygen-gui
      SUBDIR += droplet
      SUBDIR += dtc
+     SUBDIR += dtools
      SUBDIR += dune
      SUBDIR += dwz
      SUBDIR += dyncall
