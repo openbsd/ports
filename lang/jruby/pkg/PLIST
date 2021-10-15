@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.54 2021/10/07 22:24:06 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.55 2021/10/15 20:27:51 jeremy Exp $
 bin/jruby
 jruby/
 jruby/bin/
@@ -38,10 +38,10 @@ jruby/lib/ruby/gems/1.8/cache/rake-12.3.3.gem
 jruby/lib/ruby/gems/1.8/cache/test-unit-3.2.9.gem
 jruby/lib/ruby/gems/1.8/cache/xmlrpc-0.3.0.gem
 jruby/lib/ruby/gems/1.8/gems/
-jruby/lib/ruby/gems/1.8/gems/bundler-2.2.14/
-jruby/lib/ruby/gems/1.8/gems/bundler-2.2.14/exe/
-jruby/lib/ruby/gems/1.8/gems/bundler-2.2.14/exe/bundle
-jruby/lib/ruby/gems/1.8/gems/bundler-2.2.14/exe/bundler
+jruby/lib/ruby/gems/1.8/gems/bundler-2.2.29/
+jruby/lib/ruby/gems/1.8/gems/bundler-2.2.29/exe/
+jruby/lib/ruby/gems/1.8/gems/bundler-2.2.29/exe/bundle
+jruby/lib/ruby/gems/1.8/gems/bundler-2.2.29/exe/bundler
 jruby/lib/ruby/gems/1.8/gems/did_you_mean-1.3.0/
 jruby/lib/ruby/gems/1.8/gems/did_you_mean-1.3.0/.ruby-version
 jruby/lib/ruby/gems/1.8/gems/did_you_mean-1.3.0/.travis.yml
@@ -270,9 +270,9 @@ jruby/lib/ruby/gems/1.8/gems/rdoc-6.1.2.1/
 jruby/lib/ruby/gems/1.8/gems/rdoc-6.1.2.1/exe/
 jruby/lib/ruby/gems/1.8/gems/rdoc-6.1.2.1/exe/rdoc
 jruby/lib/ruby/gems/1.8/gems/rdoc-6.1.2.1/exe/ri
-jruby/lib/ruby/gems/1.8/gems/rubygems-update-3.2.14/
-jruby/lib/ruby/gems/1.8/gems/rubygems-update-3.2.14/bin/
-jruby/lib/ruby/gems/1.8/gems/rubygems-update-3.2.14/bin/update_rubygems
+jruby/lib/ruby/gems/1.8/gems/rubygems-update-3.2.29/
+jruby/lib/ruby/gems/1.8/gems/rubygems-update-3.2.29/bin/
+jruby/lib/ruby/gems/1.8/gems/rubygems-update-3.2.29/bin/update_rubygems
 jruby/lib/ruby/gems/1.8/gems/test-unit-3.2.9/
 jruby/lib/ruby/gems/1.8/gems/test-unit-3.2.9/COPYING
 jruby/lib/ruby/gems/1.8/gems/test-unit-3.2.9/GPL
@@ -419,7 +419,7 @@ jruby/lib/ruby/gems/1.8/gems/xmlrpc-0.3.0/lib/xmlrpc/utils.rb
 jruby/lib/ruby/gems/1.8/gems/xmlrpc-0.3.0/xmlrpc.gemspec
 jruby/lib/ruby/gems/1.8/specifications/
 jruby/lib/ruby/gems/1.8/specifications/default/
-jruby/lib/ruby/gems/1.8/specifications/default/bundler-2.2.14.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/bundler-2.2.29.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/cmath-1.0.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/csv-3.1.2.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/e2mmap-0.1.0.gemspec
@@ -444,7 +444,7 @@ jruby/lib/ruby/gems/1.8/specifications/default/rake-ant-1.0.4.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/rdoc-6.1.2.1.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/rexml-3.1.9.1.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/rss-0.2.7.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/rubygems-update-3.2.14.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/rubygems-update-3.2.29.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/scanf-1.0.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/shell-0.7.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/sync-0.5.0.gemspec
@@ -651,7 +651,9 @@ jruby/lib/ruby/stdlib/bundler/source/path/installer.rb
 jruby/lib/ruby/stdlib/bundler/source/rubygems/
 jruby/lib/ruby/stdlib/bundler/source/rubygems.rb
 jruby/lib/ruby/stdlib/bundler/source/rubygems/remote.rb
+jruby/lib/ruby/stdlib/bundler/source/rubygems_aggregate.rb
 jruby/lib/ruby/stdlib/bundler/source_list.rb
+jruby/lib/ruby/stdlib/bundler/source_map.rb
 jruby/lib/ruby/stdlib/bundler/spec_set.rb
 jruby/lib/ruby/stdlib/bundler/stub_specification.rb
 jruby/lib/ruby/stdlib/bundler/templates/
@@ -1678,7 +1680,6 @@ jruby/lib/ruby/stdlib/rubygems/install_default_message.rb
 jruby/lib/ruby/stdlib/rubygems/install_message.rb
 jruby/lib/ruby/stdlib/rubygems/install_update_options.rb
 jruby/lib/ruby/stdlib/rubygems/installer.rb
-jruby/lib/ruby/stdlib/rubygems/installer_test_case.rb
 jruby/lib/ruby/stdlib/rubygems/installer_uninstaller_utils.rb
 jruby/lib/ruby/stdlib/rubygems/local_remote_options.rb
 jruby/lib/ruby/stdlib/rubygems/mock_gem_ui.rb
@@ -1695,7 +1696,6 @@ jruby/lib/ruby/stdlib/rubygems/package/tar_header.rb
 jruby/lib/ruby/stdlib/rubygems/package/tar_reader/
 jruby/lib/ruby/stdlib/rubygems/package/tar_reader.rb
 jruby/lib/ruby/stdlib/rubygems/package/tar_reader/entry.rb
-jruby/lib/ruby/stdlib/rubygems/package/tar_test_case.rb
 jruby/lib/ruby/stdlib/rubygems/package/tar_writer.rb
 jruby/lib/ruby/stdlib/rubygems/package_task.rb
 jruby/lib/ruby/stdlib/rubygems/path_support.rb
@@ -1801,14 +1801,10 @@ jruby/lib/ruby/stdlib/rubygems/ssl_certs/rubygems.org/
 jruby/lib/ruby/stdlib/rubygems/ssl_certs/rubygems.org/GlobalSignRootCA.pem
 jruby/lib/ruby/stdlib/rubygems/ssl_certs/rubygems.org/GlobalSignRootCA_R3.pem
 jruby/lib/ruby/stdlib/rubygems/stub_specification.rb
-jruby/lib/ruby/stdlib/rubygems/syck_hack.rb
-jruby/lib/ruby/stdlib/rubygems/test_case.rb
-jruby/lib/ruby/stdlib/rubygems/test_utilities.rb
 jruby/lib/ruby/stdlib/rubygems/text.rb
 jruby/lib/ruby/stdlib/rubygems/uninstaller.rb
+jruby/lib/ruby/stdlib/rubygems/uri.rb
 jruby/lib/ruby/stdlib/rubygems/uri_formatter.rb
-jruby/lib/ruby/stdlib/rubygems/uri_parser.rb
-jruby/lib/ruby/stdlib/rubygems/uri_parsing.rb
 jruby/lib/ruby/stdlib/rubygems/user_interaction.rb
 jruby/lib/ruby/stdlib/rubygems/util/
 jruby/lib/ruby/stdlib/rubygems/util.rb
