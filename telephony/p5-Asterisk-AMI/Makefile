@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/10/15 10:46:19 sthen Exp $
 
 COMMENT=	interact with Asterisk Manager Interface from perl
 
 DISTNAME=	Asterisk-AMI-v0.2.8
 PKGNAME=	p5-${DISTNAME:S/-v/-/}
 CATEGORIES=	telephony perl5
+REVISION=	0
 
 HOMEPAGE=	https://github.com/rrb3942/perl-Asterisk-AMI/
 
@@ -15,7 +16,8 @@ CPAN_AUTHOR=	GREENBEAN
 # Artistic 2.0
 PERMIT_PACKAGE=	Yes
 
-RUN_DEPENDS=	devel/p5-AnyEvent>=5.2
+RUN_DEPENDS=	devel/p5-AnyEvent>=5.2 \
+		security/p5-Net-SSLeay
 
 MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIR=	${PREFIX}/share/examples/p5-Asterisk-AMI
