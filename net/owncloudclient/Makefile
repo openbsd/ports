@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.53 2021/10/04 11:15:20 kirby Exp $
+# $OpenBSD: Makefile,v 1.54 2021/10/15 05:40:23 kirby Exp $
 
 COMMENT =		owncloud sync client
 
 V = 			2.9.0.5150
 DISTNAME =		ownCloud-${V}
 PKGNAME =  		owncloudclient-${V}
+REVISION =              0
 
 SHARED_LIBS +=		owncloudsync	7.0
 SHARED_LIBS +=		owncloud_csync	1.0
@@ -20,7 +21,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
 WANTLIB += Qt5Xml c gio-2.0 glib-2.0 gobject-2.0 intl m qt5keychain
-WANTLIB += secret-1 sqlite3 z ${COMPILER_LIBCXX}
+WANTLIB += secret-1 sqlite3 z ${COMPILER_LIBCXX} lib/inotify/inotify
 
 MASTER_SITES =		https://download.owncloud.com/desktop/ownCloud/stable/latest/source/ \
 			https://download.owncloud.com/desktop/ownCloud/stable/${V}/
