@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.251 2021/09/17 06:31:57 robert Exp $
+# $OpenBSD: Makefile,v 1.252 2021/10/15 05:29:56 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -26,7 +26,7 @@ SHARED_LIBS +=  wpg-0.3-lo                3.3 # 3.3
 SHARED_LIBS +=  wps-0.4-lo                4.12 # 4.12
 
 BV=		7.2
-VERSION=	${BV}.1.2
+VERSION=	${BV}.2.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -103,13 +103,13 @@ DISTFILES += commons-logging-1.2-src.tar.gz:0
 DISTFILES += cppunit-1.15.1.tar.gz:0
 DISTFILES += culmus-0.133.tar.gz:0
 DISTFILES += dtoa-20180411.tgz:0
-DISTFILES += language-subtag-registry-2021-03-05.tar.bz2:0
+DISTFILES += language-subtag-registry-2021-08-06.tar.bz2:0
 DISTFILES += libabw-0.1.3.tar.xz:0
 DISTFILES += libcdr-0.1.7.tar.xz:0
 DISTFILES += libcmis-0.5.2.tar.xz:0
 DISTFILES += libe-book-0.1.3.tar.xz:0
 DISTFILES += libepubgen-0.1.1.tar.xz:0
-DISTFILES += liberation-fonts-ttf-2.00.4.tar.gz:0
+DISTFILES += liberation-fonts-ttf-2.1.4.tar.gz:0
 DISTFILES += liberation-narrow-fonts-ttf-1.07.6.tar.gz:0
 DISTFILES += libetonyek-0.1.10.tar.xz:0
 DISTFILES += libexttextcat-3.4.5.tar.xz:0

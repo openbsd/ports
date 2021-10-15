@@ -1,9 +1,9 @@
-$OpenBSD: patch-external_skia_Library_skia_mk,v 1.3 2021/09/02 11:11:58 robert Exp $
+$OpenBSD: patch-external_skia_Library_skia_mk,v 1.4 2021/10/15 05:29:57 robert Exp $
 
 Index: external/skia/Library_skia.mk
 --- external/skia/Library_skia.mk.orig
 +++ external/skia/Library_skia.mk
-@@ -73,10 +73,10 @@ $(eval $(call gb_Library_use_externals,skia,\
+@@ -84,10 +84,10 @@ $(eval $(call gb_Library_use_externals,skia,\
      libpng \
  ))
  
