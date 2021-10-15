@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2021/10/14 20:57:55 kn Exp $
+# $OpenBSD: Makefile,v 1.66 2021/10/15 21:51:53 kn Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
@@ -70,7 +70,7 @@ post-install:
 	${SUBST_PROGRAM} ${RC} ${RCINST}
 	@ksh -n ${RCINST}
 	${SUBST_MAN} ${MAN} ${MANINST}
-	@mandoc -Tlint -Wstyle ${MAN}
+	@mandoc -Tlint -Wwarning ${MAN}
 	rm -f ${PREFIX}/lib/varnish/{vmods,}/*.{a,la}
 
 .include <bsd.port.mk>
