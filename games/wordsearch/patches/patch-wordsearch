@@ -1,0 +1,19 @@
+$OpenBSD: patch-wordsearch,v 1.1 2021/10/16 11:36:04 bcallah Exp $
+
+Fix spurious startup error.
+
+Index: wordsearch
+--- wordsearch.orig
++++ wordsearch
+@@ -290,7 +290,10 @@ def Main(window):
+   CompletedList = []
+ 
+   # Initialize curses
+-  curses.curs_set(2)
++  try:
++    curses.curs_set(2)
++  except:
++    pass
+ 
+   # Theme picker
+   if (theme == "green"):

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/10/15 14:12:09 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2021/10/16 11:36:04 bcallah Exp $
 
 V =		2.0
 COMMENT =	classic word search game that you can play in your terminal
 DISTNAME =	wordsearch-${V}
+REVISION =	0
 CATEGORIES =	games
 
 HOMEPAGE =	https://github.com/jensenpat/wordsearch/
