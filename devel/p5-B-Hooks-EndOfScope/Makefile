@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/03 21:44:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2021/10/16 08:11:34 benoit Exp $
 
 COMMENT =	execute code after a scope finished compilation
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	B-Hooks-EndOfScope-0.24
+DISTNAME =	B-Hooks-EndOfScope-0.25
 CATEGORIES =	devel
 FIX_EXTRACT_PERMISSIONS =	Yes
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =		Yes
