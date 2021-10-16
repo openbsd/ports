@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/06/29 03:48:20 thfr Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/10/16 14:50:40 thfr Exp $
 include/spirv/
 include/spirv/1.0/
 include/spirv/1.0/GLSL.std.450.h
@@ -77,3 +77,4 @@ share/cmake/SPIRV-Headers/
 share/cmake/SPIRV-Headers/SPIRV-HeadersConfig.cmake
 share/cmake/SPIRV-Headers/SPIRV-HeadersConfigVersion.cmake
 share/cmake/SPIRV-Headers/SPIRV-HeadersTargets.cmake
+share/pkgconfig/SPIRV-Headers.pc

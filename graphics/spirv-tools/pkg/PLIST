@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/07/07 08:08:05 thfr Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/10/16 14:50:40 thfr Exp $
 @bin bin/spirv-as
 @bin bin/spirv-cfg
 @bin bin/spirv-dis
 bin/spirv-lesspipe.sh
 @bin bin/spirv-link
+@bin bin/spirv-lint
 @bin bin/spirv-opt
 @bin bin/spirv-reduce
 @bin bin/spirv-val
@@ -19,6 +20,10 @@ lib/cmake/SPIRV-Tools-link/
 lib/cmake/SPIRV-Tools-link/SPIRV-Tools-linkConfig.cmake
 lib/cmake/SPIRV-Tools-link/SPIRV-Tools-linkTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/SPIRV-Tools-link/SPIRV-Tools-linkTargets.cmake
+lib/cmake/SPIRV-Tools-lint/
+lib/cmake/SPIRV-Tools-lint/SPIRV-Tools-lintConfig.cmake
+lib/cmake/SPIRV-Tools-lint/SPIRV-Tools-lintTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/SPIRV-Tools-lint/SPIRV-Tools-lintTargets.cmake
 lib/cmake/SPIRV-Tools-opt/
 lib/cmake/SPIRV-Tools-opt/SPIRV-Tools-optConfig.cmake
 lib/cmake/SPIRV-Tools-opt/SPIRV-Tools-optTargets${MODCMAKE_BUILD_SUFFIX}
@@ -31,6 +36,7 @@ lib/cmake/SPIRV-Tools/SPIRV-ToolsConfig.cmake
 lib/cmake/SPIRV-Tools/SPIRV-ToolsTarget${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/SPIRV-Tools/SPIRV-ToolsTarget.cmake
 @static-lib lib/libSPIRV-Tools-link.a
+@static-lib lib/libSPIRV-Tools-lint.a
 @static-lib lib/libSPIRV-Tools-opt.a
 @static-lib lib/libSPIRV-Tools-reduce.a
 @so lib/libSPIRV-Tools-shared.so

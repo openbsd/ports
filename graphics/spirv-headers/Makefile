@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2021/06/29 03:48:20 thfr Exp $
+# $OpenBSD: Makefile,v 1.6 2021/10/16 14:50:40 thfr Exp $
 
 COMMENT =	SPIRV-Headers
 
-DISTNAME =	spirv-headers-1.5.4pl2
-# commit from 2021-06-23
-GH_COMMIT =	f95c3b3761ee1b1903f54ae69b526ed6f0edc3b9
+DISTNAME =	spirv-headers-1.5.4pl3
+# commit from 2021-10-07
+GH_COMMIT =	5ea2d62e8c0ddd9e2a7d0ca5e3f2335e09e5f408
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	SPIRV-Headers
 
