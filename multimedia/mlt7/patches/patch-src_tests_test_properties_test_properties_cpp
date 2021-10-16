@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tests_test_properties_test_properties_cpp,v 1.1.1.1 2021/10/16 18:08:17 rsadowski Exp $
+Index: src/tests/test_properties/test_properties.cpp
+--- src/tests/test_properties/test_properties.cpp.orig
++++ src/tests/test_properties/test_properties.cpp
+@@ -24,7 +24,6 @@
+ using namespace Mlt;
+ 
+ extern "C" {
+-#define __APPLE__
+ #include <framework/mlt_property.h>
+ #include <framework/mlt_animation.h>
+ }
