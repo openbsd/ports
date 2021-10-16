@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2021/10/08 15:39:10 bket Exp $
+# $OpenBSD: Makefile,v 1.141 2021/10/16 18:09:05 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += aom
@@ -47,6 +47,7 @@
      SUBDIR += mjpegtools,quicktime
      SUBDIR += mkvtoolnix
      SUBDIR += mlt
+     SUBDIR += mlt7
      SUBDIR += motion
      SUBDIR += motion,mysql
      SUBDIR += motion,pgsql
