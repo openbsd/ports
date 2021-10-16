@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2021/08/16 17:53:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/10/16 07:59:50 rsadowski Exp $
 
 COMMENT=	Alliance for Open Media AV1 video codec
 
 GH_ACCOUNT=	jbeich
 GH_PROJECT=	aom
-GH_TAGNAME=	v3.1.2
+GH_TAGNAME=	v3.1.3
 CATEGORIES=	multimedia
 
 SHARED_LIBS=	aom	3.0
