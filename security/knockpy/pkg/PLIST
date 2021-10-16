@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/04/24 04:23:59 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/10/16 09:44:57 rsadowski Exp $
 bin/knockpy
 lib/python${MODPY_VERSION}/site-packages/knockpy/
-lib/python${MODPY_VERSION}/site-packages/knockpy-5.1.0-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/knockpy-5.1.0-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/knockpy-5.1.0-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/knockpy-5.1.0-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/knockpy-5.1.0-py${MODPY_VERSION}.egg-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/knockpy-5.1.0-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/knockpy-5.1.0-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/knockpy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/knockpy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/knockpy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/knockpy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/knockpy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/knockpy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/knockpy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/knockpy/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/knockpy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/knockpy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc

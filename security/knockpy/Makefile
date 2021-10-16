@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2021/04/24 04:23:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2021/10/16 09:44:57 rsadowski Exp $
 
 COMMENT =	subdomain scanner
 
-VERSION = 	5.1.0
-MODPY_EGG_VERSION =	5.1.0
+MODPY_EGG_VERSION =	5.2.0
 
-DISTNAME =	knockpy-${VERSION}
+DISTNAME =	knockpy-${MODPY_EGG_VERSION}
 
 GH_ACCOUNT =	guelfoweb
 GH_PROJECT =	knock
-GH_TAGNAME =	${VERSION}
+GH_TAGNAME =	${MODPY_EGG_VERSION}
 
 CATEGORIES =	security
 
