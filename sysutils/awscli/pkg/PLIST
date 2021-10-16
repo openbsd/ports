@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.137 2021/08/27 07:35:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.138 2021/10/16 15:39:11 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -741,6 +741,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/delete-noti
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/delete-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/delete-scheduled-action.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/delete-tags.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/delete-warm-pool.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/describe-account-limits.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/describe-adjustment-types.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/describe-auto-scaling-groups.rst
@@ -760,6 +761,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/describe-sc
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/describe-scheduled-actions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/describe-tags.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/describe-termination-policy-types.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/describe-warm-pool.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/detach-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/detach-load-balancer-target-groups.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/detach-load-balancers.rst
@@ -772,6 +774,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/put-lifecyc
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/put-notification-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/put-scaling-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/put-scheduled-update-group-action.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/put-warm-pool.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/record-lifecycle-action-heartbeat.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/resume-processes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/set-desired-capacity.rst
@@ -1843,13 +1846,17 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-network-insi
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-network-interface-permission.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-network-interface.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-placement-group.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-replace-root-volume-task.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-reserved-instances-listing.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-restore-image-task.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-route-table.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-route.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-security-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-snapshot.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-snapshots.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-spot-datafeed-subscription.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-store-image-task.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-subnet-cidr-reservation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-subnet.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-tags.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-traffic-mirror-filter-rule.rst
@@ -1901,6 +1908,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-route.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-security-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-snapshot.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-spot-datafeed-subscription.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-subnet-cidr-reservation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-subnet.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-tags.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-traffic-mirror-filter-rule.rst
@@ -2000,6 +2008,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-prefix-lis
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-principal-id-format.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-public-ipv4-pools.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-regions.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-replace-root-volume-tasks.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-reserved-instances-listings.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-reserved-instances-modifications.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-reserved-instances-offerings.rst
@@ -2018,6 +2027,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-spot-fleet
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-spot-instance-requests.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-spot-price-history.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-stale-security-groups.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-store-image-tasks.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-subnets.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-tags.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-traffic-mirror-filters.rst
@@ -2054,6 +2064,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/detach-volume.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/detach-vpn-gateway.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-ebs-encryption-by-default.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-fast-snapshot-restores.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-serial-console-access.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-transit-gateway-route-table-propagation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-vgw-route-propagation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-vpc-classic-link-dns-support.rst
@@ -2068,6 +2079,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disassociate-transi
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disassociate-vpc-cidr-block.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-ebs-encryption-by-default.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-fast-snapshot-restores.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-serial-console-access.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-transit-gateway-route-table-propagation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-vgw-route-propagation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-volume-io.rst
@@ -2092,6 +2104,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-managed-prefix-
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-managed-prefix-list-entries.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-password-data.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-reserved-instances-exchange-quote.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-serial-console-access-status.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-subnet-cidr-reservations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-transit-gateway-attachment-propagations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-transit-gateway-multicast-domain-associations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-transit-gateway-prefix-list-references.rst
@@ -5018,6 +5032,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm-incidents/update-re
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm-incidents/update-response-plan.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm-incidents/update-timeline-event.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/add-tags-to-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/associate-ops-item-related-item.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/cancel-command.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/cancel-maintenance-window-execution.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/create-activation.rst
@@ -5073,6 +5088,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/describe-patch-grou
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/describe-patch-groups.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/describe-patch-properties.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/describe-sessions.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/disassociate-ops-item-related-item.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/get-automation-execution.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/get-calendar-state.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/get-command-invocation.rst
@@ -5107,6 +5123,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/list-document-metad
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/list-document-versions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/list-documents.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/list-inventory-entries.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/list-ops-item-related-items.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/list-resource-compliance-summaries.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/list-resource-data-sync.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/list-tags-for-resource.rst
@@ -5125,6 +5142,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/send-automation-sig
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/send-command.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/start-associations-once.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/start-automation-execution.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/start-change-request-execution.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/start-session.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/stop-automation-execution.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/terminate-session.rst
