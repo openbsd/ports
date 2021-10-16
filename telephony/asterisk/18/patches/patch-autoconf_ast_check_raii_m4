@@ -1,0 +1,16 @@
+$OpenBSD: patch-autoconf_ast_check_raii_m4,v 1.1.1.1 2021/10/16 10:55:00 sthen Exp $
+
+Index: autoconf/ast_check_raii.m4
+--- autoconf/ast_check_raii.m4.orig
++++ autoconf/ast_check_raii.m4
+@@ -41,6 +41,10 @@ AC_DEFUN([AST_CHECK_RAII], [
+ 				AST_CLANG_BLOCKS_LIBS="-lBlocksRuntime"
+ 				AST_CLANG_BLOCKS="-fblocks"
+ 				AC_MSG_RESULT(yes)
++			elif test "`echo 'int main(){return ^{return 42;}();}' | ${CC} -o /dev/null -L/usr/local/lib -fblocks -x c -lBlocksRuntime - 2>&1`" = ""; then
++				AST_CLANG_BLOCKS_LIBS="-L/usr/local/lib -lBlocksRuntime"
++				AST_CLANG_BLOCKS="-fblocks"
++				AC_MSG_RESULT(yes)
+ 			else
+ 				AC_MSG_ERROR([BlocksRuntime is required for clang, please install libblocksruntime])
+ 			fi

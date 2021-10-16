@@ -1,0 +1,16 @@
+$OpenBSD: patch-apps_app_voicemail_exports_in,v 1.1.1.1 2021/10/16 10:55:00 sthen Exp $
+
+test for alpine-2.22's c-client and cope with API change.
+parts borrowed from slackware patch for PHP with alpine-2.22.
+
+Index: apps/app_voicemail.exports.in
+--- apps/app_voicemail.exports.in.orig
++++ apps/app_voicemail.exports.in
+@@ -10,6 +10,7 @@
+ 		LINKER_SYMBOL_PREFIXmm_list;
+ 		LINKER_SYMBOL_PREFIXmm_log;
+ 		LINKER_SYMBOL_PREFIXmm_login;
++		LINKER_SYMBOL_PREFIXmm_login_method;
+ 		LINKER_SYMBOL_PREFIXmm_lsub;
+ 		LINKER_SYMBOL_PREFIXmm_nocritical;
+ 		LINKER_SYMBOL_PREFIXmm_notify;

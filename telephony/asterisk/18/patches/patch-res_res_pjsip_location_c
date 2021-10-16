@@ -1,0 +1,14 @@
+$OpenBSD: patch-res_res_pjsip_location_c,v 1.1.1.1 2021/10/16 10:55:00 sthen Exp $
+
+Index: res/res_pjsip/location.c
+--- res/res_pjsip/location.c.orig
++++ res/res_pjsip/location.c
+@@ -489,7 +489,7 @@ static int expiration_str2struct(const struct aco_opti
+ static int expiration_struct2str(const void *obj, const intptr_t *args, char **buf)
+ {
+ 	const struct ast_sip_contact *contact = obj;
+-	return (ast_asprintf(buf, "%ld", contact->expiration_time.tv_sec) < 0) ? -1 : 0;
++	return (ast_asprintf(buf, "%lld", (long long)contact->expiration_time.tv_sec) < 0) ? -1 : 0;
+ }
+ 
+ static int permanent_uri_sort_fn(const void *obj_left, const void *obj_right, int flags)

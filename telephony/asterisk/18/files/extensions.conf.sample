@@ -1,0 +1,14 @@
+; $OpenBSD: extensions.conf.sample,v 1.1.1.1 2021/10/16 10:55:00 sthen Exp $
+; Longer example available in ${TRUEPREFIX}/share/examples/asterisk/default
+; For new installations, you may prefer to use extensions.ael rather than
+; this file.
+
+[default]
+exten => *99,1,VoiceMailMain(${FILTER(0-9,${CALLERID(NUM)})})
+
+exten => *98,1,Answer()
+exten => *98,n,ConfBridge(*98,c,M)
+
+exten => _XXX,1,Dial(SIP/${FILTER(0-9,${EXTEN})},12,tr)
+exten => _XXX,n,Voicemail(${FILTER(0-9,${EXTEN})})
+exten => _XXX,n,Hangup

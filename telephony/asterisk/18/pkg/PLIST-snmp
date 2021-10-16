@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-snmp,v 1.1.1.1 2021/10/16 10:55:00 sthen Exp $
+@option is-branch
+@pkgpath telephony/asterisk,-snmp
+@so lib/asterisk/modules/res_snmp.so
+share/examples/asterisk/default/res_snmp.conf
+@sample ${SYSCONFDIR}/asterisk/res_snmp.conf

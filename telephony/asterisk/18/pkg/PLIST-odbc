@@ -1,0 +1,42 @@
+@comment $OpenBSD: PLIST-odbc,v 1.1.1.1 2021/10/16 10:55:00 sthen Exp $
+@option is-branch
+@pkgpath telephony/asterisk,-odbc
+include/asterisk/res_odbc.h
+@so lib/asterisk/modules/cdr_adaptive_odbc.so
+@so lib/asterisk/modules/cdr_odbc.so
+@so lib/asterisk/modules/cel_odbc.so
+@so lib/asterisk/modules/func_odbc.so
+@so lib/asterisk/modules/res_config_odbc.so
+@so lib/asterisk/modules/res_odbc.so
+@so lib/asterisk/modules/res_odbc_transaction.so
+share/examples/asterisk/default/cdr_adaptive_odbc.conf
+@mode 640
+@owner root
+@group _asterisk
+@sample ${SYSCONFDIR}/asterisk/cdr_adaptive_odbc.conf
+@mode
+@owner
+@group
+share/examples/asterisk/default/cdr_odbc.conf
+@mode 640
+@owner root
+@group _asterisk
+@sample ${SYSCONFDIR}/asterisk/cdr_odbc.conf
+@mode
+@owner
+@group
+share/examples/asterisk/default/cel_odbc.conf
+@mode 640
+@owner root
+@group _asterisk
+@sample ${SYSCONFDIR}/asterisk/cel_odbc.conf
+@mode
+@owner
+@group
+share/examples/asterisk/default/func_odbc.conf
+@sample ${SYSCONFDIR}/asterisk/func_odbc.conf
+share/examples/asterisk/default/res_odbc.conf
+@mode 640
+@owner root
+@group _asterisk
+@sample ${SYSCONFDIR}/asterisk/res_odbc.conf

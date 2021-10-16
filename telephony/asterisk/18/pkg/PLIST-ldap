@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST-ldap,v 1.1.1.1 2021/10/16 10:55:00 sthen Exp $
+@option is-branch
+@pkgpath telephony/asterisk,-ldap
+@so lib/asterisk/modules/res_config_ldap.so
+share/examples/asterisk/asterisk.ldap-schema
+share/examples/asterisk/asterisk.ldif
+share/examples/asterisk/default/res_ldap.conf
+@sample ${SYSCONFDIR}/asterisk/res_ldap.conf

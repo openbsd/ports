@@ -1,0 +1,40 @@
+$OpenBSD: patch-configs_samples_asterisk_conf_sample,v 1.1.1.1 2021/10/16 10:55:00 sthen Exp $
+
+Index: configs/samples/asterisk.conf.sample
+--- configs/samples/asterisk.conf.sample.orig
++++ configs/samples/asterisk.conf.sample
+@@ -72,8 +72,8 @@ astsbindir => /usr/sbin
+ 				; not otherwise require one.
+ ;transcode_via_sln = yes	; Build transcode paths via SLINEAR, instead of
+ 				; directly.
+-;runuser = asterisk		; The user to run as.
+-;rungroup = asterisk		; The group to run as.
++runuser = _asterisk		; The user to run as.
++rungroup = _asterisk		; The group to run as.
+ ;lightbackground = yes		; If your terminal is set for a light-colored
+ 				; background.
+ ;forceblackbackground = yes     ; Force the background of the terminal to be
+@@ -94,7 +94,8 @@ documentation_language = en_US	; Set the language you 
+ 				; gosub - Invoke the stdexten using a gosub as
+ 				;         documented in extensions.conf.sample.
+ 				; Default gosub.
+-;live_dangerously = no		; Enable the execution of 'dangerous' dialplan
++live_dangerously = no
++;live_dangerously = yes		; Enable the execution of 'dangerous' dialplan
+ 				; functions from external sources (AMI,
+ 				; etc.) These functions (such as SHELL) are
+ 				; considered dangerous because they can allow
+@@ -127,8 +128,8 @@ documentation_language = en_US	; Set the language you 
+                 ; when the Digium Phone Module for Asterisk is in use.
+ 
+ ; Changing the following lines may compromise your security.
+-;[files]
+-;astctlpermissions = 0660
+-;astctlowner = root
+-;astctlgroup = apache
+-;astctl = asterisk.ctl
++[files]
++astctlpermissions = 0660
++astctlowner = _asterisk
++astctlgroup = wheel
++astctl = asterisk.ctl

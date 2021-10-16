@@ -1,0 +1,101 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2021/10/16 10:55:00 sthen Exp $
+
+test for alpine-2.22's c-client and cope with API change.
+parts borrowed from slackware patch for PHP with alpine-2.22.
+
+last hunk: adapt to openbsd's lua directory naming
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -2120,6 +2120,67 @@ if test "${USE_IMAP_TK}" != "no"; then
+ 				[ac_cv_imap_tk="no"]
+ 	   		)
+ 			if test "${ac_cv_imap_tk}" = "no"; then
++				AC_LINK_IFELSE(
++					[AC_LANG_PROGRAM(
++						[#include <stdio.h>
++						#include <c-client/c-client.h>
++						void mm_searched (MAILSTREAM *stream,unsigned long number)
++						{
++						}
++						void mm_exists (MAILSTREAM *stream,unsigned long number)
++						{
++						}
++						void mm_expunged (MAILSTREAM *stream,unsigned long number)
++						{
++						}
++						void mm_flags (MAILSTREAM *stream,unsigned long number)
++						{
++						}
++						void mm_notify (MAILSTREAM *stream,char *string,long errflg)
++						{
++						}
++						void mm_list (MAILSTREAM *stream,int delimiter,char *mailbox,long attributes)
++						{
++						}
++						void mm_lsub (MAILSTREAM *stream,int delimiter,char *mailbox,long attributes)
++						{
++						}
++						void mm_status (MAILSTREAM *stream,char *mailbox,MAILSTATUS *status)
++						{
++						}
++						void mm_log (char *string,long errflg)
++						{
++						}
++						void mm_dlog (char *string)
++						{
++						}
++						void mm_login (NETMBX *mb,char *user,char **pwd,long trial)
++						{
++						}
++						void mm_login_method (NETMBX *mb, char *user, void *pwd, long trial, char *method)
++						{
++						}
++						void mm_critical (MAILSTREAM *stream)
++						{
++						}
++						void mm_nocritical (MAILSTREAM *stream)
++						{
++						}
++						long mm_diskerror (MAILSTREAM *stream,long errcode,long serious)
++						{
++						}
++						void mm_fatal (char *string)
++						{
++						}],
++						[
++						mm_login_method(NULL, "", NULL, 0, "");
++						]
++					)],
++					[ac_cv_imap_alpine2_22="yes" ac_cv_imap_tk="yes"],
++					[ac_cv_imap_alpine2_22="no"]
++				)
++			fi
++			if test "${ac_cv_imap_tk}" = "no"; then
+ 				imap_libs="-lcrypto -lssl -lc-client4"
+ 				LIBS="${saved_libs} ${imap_libs} "`echo ${imap_ldflags}`
+ 				AC_LINK_IFELSE(
+@@ -2248,6 +2309,9 @@ if test "${USE_IMAP_TK}" != "no"; then
+ 		if test "${ac_cv_imap_tk2006}" = "yes"; then
+ 			AC_DEFINE([HAVE_IMAP_TK2006], 1, [Define if your system has the UW IMAP Toolkit c-client library version 2006 or greater.])
+ 		fi
++		if test "${ac_cv_imap_alpine2_22}" = "yes"; then
++			AC_DEFINE([HAVE_IMAP_ALPINE2_22], 1, [Define if your system has the c-client library from Alpine version 2.22 or greater.])
++		fi
+ 	else
+ 		AC_MSG_RESULT(no)
+ 	fi
+@@ -2557,10 +2621,10 @@ fi
+ AST_EXT_LIB_CHECK([OPUSFILE], [opusfile], [op_open_callbacks], [opus/opusfile.h], [], [$__opus_include])
+ 
+ for ver in ${LUA_VERSIONS:-5.4 5.3 5.2 5.1}; do
+-	AST_EXT_LIB_CHECK([LUA], lua${ver}, [luaL_newstate], lua${ver}/lua.h, [-lm])
++	AST_EXT_LIB_CHECK([LUA], lua${ver}, [luaL_newstate], lua-${ver}/lua.h, [-lm])
+ 	if test "x${PBX_LUA}" = "x1" ; then
+ 		if test x"${LUA_DIR}" = x; then
+-			LUA_INCLUDE="${LUA_INCLUDE} -I/usr/include/lua${ver}"
++			LUA_INCLUDE="${LUA_INCLUDE} -I/usr/local/include/lua-${ver}"
+ 		else
+ 			LUA_INCLUDE="${LUA_INCLUDE} -I${LUA_DIR}/lua${ver}"
+ 		fi

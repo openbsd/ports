@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-http_post,v 1.1.1.1 2021/10/16 10:55:00 sthen Exp $
+@option is-branch
+@pkgpath telephony/asterisk,-http_post
+@so lib/asterisk/modules/res_http_post.so
