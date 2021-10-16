@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2021/09/11 22:26:51 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.15 2021/10/16 19:20:55 rsadowski Exp $
 @pkgpath multimedia/kdenlive
 @bin bin/kdenlive
 @bin bin/kdenlive_render
@@ -241,7 +241,6 @@ share/kdenlive/effects/audiopan.xml
 share/kdenlive/effects/audiospectrum.xml
 share/kdenlive/effects/audiowave.xml
 share/kdenlive/effects/audiowaveform.xml
-share/kdenlive/effects/automask.xml
 share/kdenlive/effects/avfilter_atadenoise.xml
 share/kdenlive/effects/avfilter_avgblur.xml
 share/kdenlive/effects/avfilter_boxblur.xml
@@ -430,6 +429,10 @@ share/kdenlive/effects/lightshow.xml
 share/kdenlive/effects/loudness.xml
 share/kdenlive/effects/luma.xml
 share/kdenlive/effects/lumaliftgaingamma.xml
+share/kdenlive/effects/mask_apply.xml
+share/kdenlive/effects/mask_start_frei0r_alphaspot.xml
+share/kdenlive/effects/mask_start_rotoscoping.xml
+share/kdenlive/effects/mask_start_shape.xml
 share/kdenlive/effects/mirror.xml
 share/kdenlive/effects/mono.xml
 share/kdenlive/effects/movit_blur.xml
