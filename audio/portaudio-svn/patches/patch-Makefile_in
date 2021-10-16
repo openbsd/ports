@@ -1,15 +1,17 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2013/03/12 00:59:50 brad Exp $
---- Makefile.in.orig	Thu Jul  5 23:44:34 2012
-+++ Makefile.in	Thu Jul  5 23:49:34 2012
-@@ -146,6 +146,7 @@ SRC_DIRS = \
- 	src/hostapi/dsound \
+$OpenBSD: patch-Makefile_in,v 1.5 2021/10/16 19:59:28 sthen Exp $
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -147,6 +147,7 @@ SRC_DIRS = \
  	src/hostapi/jack \
  	src/hostapi/oss \
+ 	src/hostapi/skeleton \
 +	src/hostapi/sndio \
  	src/hostapi/wasapi \
  	src/hostapi/wdmks \
  	src/hostapi/wmme \
-@@ -155,7 +156,7 @@ SRC_DIRS = \
+@@ -156,7 +157,7 @@ SRC_DIRS = \
  SUBDIRS =
  @ENABLE_CXX_TRUE@SUBDIRS += bindings/cpp
  

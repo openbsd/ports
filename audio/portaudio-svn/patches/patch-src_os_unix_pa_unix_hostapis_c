@@ -1,6 +1,8 @@
-$OpenBSD: patch-src_os_unix_pa_unix_hostapis_c,v 1.2 2013/03/12 00:59:50 brad Exp $
---- src/os/unix/pa_unix_hostapis.c.orig	Thu Jul  5 23:44:45 2012
-+++ src/os/unix/pa_unix_hostapis.c	Thu Jul  5 23:49:33 2012
+$OpenBSD: patch-src_os_unix_pa_unix_hostapis_c,v 1.3 2021/10/16 19:59:28 sthen Exp $
+
+Index: src/os/unix/pa_unix_hostapis.c
+--- src/os/unix/pa_unix_hostapis.c.orig
++++ src/os/unix/pa_unix_hostapis.c
 @@ -44,6 +44,7 @@
  
  PaError PaJack_Initialize( PaUtilHostApiRepresentation **hostApi, PaHostApiIndex index );
