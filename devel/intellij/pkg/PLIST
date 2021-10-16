@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.49 2021/10/10 20:02:02 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.50 2021/10/16 08:25:31 rsadowski Exp $
 bin/idea
 bin/idea-lightedit
 bin/intellij
@@ -98,7 +98,7 @@ intellij/lib/asm-tree-7.1.jar
 intellij/lib/asm-util-7.1.jar
 intellij/lib/async-profiler-2.1-ea-2.jar
 intellij/lib/bootstrap.jar
-intellij/lib/build-marker-IC-212.5284.40
+intellij/lib/build-marker-IC-212.5457.46
 intellij/lib/byte-buddy-agent-1.10.1.jar
 intellij/lib/cds/
 intellij/lib/cds/classesLogAgent.jar
@@ -146,7 +146,7 @@ intellij/lib/jsp-base-openapi.jar
 intellij/lib/junit.jar
 intellij/lib/junit4.jar
 intellij/lib/kotlin-gradle-plugin-model-1.4.32.jar
-intellij/lib/kotlin-reflect-1.5.10-release-896.jar
+intellij/lib/kotlin-reflect-1.5.10-release-931.jar
 intellij/lib/kotlin-stdlib-jdk8.jar
 intellij/lib/kotlin-test.jar
 intellij/lib/kotlinx-coroutines-debug-1.5.0.jar
