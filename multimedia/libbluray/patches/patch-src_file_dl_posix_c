@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_file_dl_posix_c,v 1.1 2021/08/14 09:52:04 sthen Exp $
+$OpenBSD: patch-src_file_dl_posix_c,v 1.2 2021/10/16 17:57:34 rsadowski Exp $
 
 Fix loading dlopen'd libraries on OpenBSD.
+7bc73fd5cbd567ba128eec1f061323bed7a9c5d7
 
 Index: src/file/dl_posix.c
 --- src/file/dl_posix.c.orig

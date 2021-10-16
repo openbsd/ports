@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_dvd_input_c,v 1.6 2021/10/11 06:11:29 rsadowski Exp $
+$OpenBSD: patch-src_dvd_input_c,v 1.7 2021/10/16 17:57:34 rsadowski Exp $
+
+Use correct name of the libdvdcss shared library on OpenBSD.
+1c031048907b72c4757926a06f2bc5fac42fba15
 
 Index: src/dvd_input.c
 --- src/dvd_input.c.orig
