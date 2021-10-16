@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/02 21:51:19 jca Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/16 08:02:18 rsadowski Exp $
 include/fmt/
+include/fmt/args.h
 include/fmt/chrono.h
 include/fmt/color.h
 include/fmt/compile.h
@@ -9,9 +10,9 @@ include/fmt/format.h
 include/fmt/locale.h
 include/fmt/os.h
 include/fmt/ostream.h
-include/fmt/posix.h
 include/fmt/printf.h
 include/fmt/ranges.h
+include/fmt/xchar.h
 lib/cmake/
 lib/cmake/fmt/
 lib/cmake/fmt/fmt-config-version.cmake

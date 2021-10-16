@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2021/01/30 15:37:05 cwen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2021/10/16 08:02:18 rsadowski Exp $
 
 Allow linking without '-Wl,--as-needed', fix the build on clang+ld.bfd archs.
 It's needed to do it like this since target_link_libraries takes preference
@@ -7,15 +7,15 @@ over LDFLAGS.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -59,6 +59,7 @@ set_verbose(FMT_INC_DIR ${CMAKE_INSTALL_INCLUDEDIR} CA
+@@ -72,6 +72,7 @@ set_verbose(FMT_INC_DIR ${CMAKE_INSTALL_INCLUDEDIR} CA
  option(FMT_PEDANTIC "Enable extra warnings and expensive tests." OFF)
  option(FMT_WERROR "Halt the compilation with an error on compiler warnings."
         OFF)
 +option(AS_NEEDED "Use -Wl,--as-needed for linking." ON)
  
  # Options that control generation of various targets.
- option(FMT_DOC "Generate the doc target." ${MASTER_PROJECT})
-@@ -233,7 +234,7 @@ endif ()
+ option(FMT_DOC "Generate the doc target." ${FMT_MASTER_PROJECT})
+@@ -281,7 +282,7 @@ endif ()
  
  if (BUILD_SHARED_LIBS)
    if (UNIX AND NOT APPLE AND NOT ${CMAKE_SYSTEM_NAME} MATCHES "SunOS" AND
