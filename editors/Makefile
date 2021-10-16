@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.147 2021/03/03 11:27:35 bentley Exp $
+# $OpenBSD: Makefile,v 1.148 2021/10/16 13:45:46 sdk Exp $
 
      SUBDIR =
      SUBDIR += abiword
+     SUBDIR += apostrophe
      SUBDIR += axe
      SUBDIR += beav
      SUBDIR += bvi
