@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_c_wrapper_c,v 1.4 2021/07/18 15:34:18 kurt Exp $
+$OpenBSD: patch-src_c_wrapper_c,v 1.5 2021/10/16 08:07:39 rsadowski Exp $
 
 add OpenBSD support
 
 Index: src/c/wrapper.c
 --- src/c/wrapper.c.orig
 +++ src/c/wrapper.c
-@@ -104,7 +104,7 @@
+@@ -105,7 +105,7 @@
    #include <sys/errno.h>
    #include <sys/fcntl.h>
   #elif defined(AIX) || defined(HPUX) || defined(MACOSX)
@@ -14,7 +14,7 @@ Index: src/c/wrapper.c
    #include <sys/param.h>
    #include <errno.h>
   #else /* LINUX */
-@@ -5885,7 +5885,7 @@ int wrapperRunCommonInner() {
+@@ -5886,7 +5886,7 @@ int wrapperRunCommonInner() {
          tz1 = tzname[0];
          tz2 = tzname[1];
  #endif
@@ -23,7 +23,7 @@ Index: src/c/wrapper.c
                  log_printf(WRAPPER_SOURCE_WRAPPER, LEVEL_DEBUG, TEXT("Timezone:     %s (%s) Offset: %ld, hasDaylight: %d"),
                          tz1, tz2, timezone, daylight);
  #else
-@@ -6560,7 +6560,7 @@ int checkIfBinary(const TCHAR *filename) {
+@@ -6561,7 +6561,7 @@ int checkIfBinary(const TCHAR *filename) {
              log_printf(WRAPPER_SOURCE_WRAPPER, LEVEL_DEBUG, TEXT("Magic number for file %s: 0x%02x%02x%02x%02x"), filename, head[0], head[1], head[2], head[3]);
          }
  
@@ -32,7 +32,7 @@ Index: src/c/wrapper.c
          if (head[1] == 'E' && head[2] == 'L' && head[3] == 'F') {
              return 1; /*ELF */
  #elif defined(AIX)
-@@ -8226,7 +8226,7 @@ int wrapperBuildJavaCommandArrayInner(TCHAR **strings,
+@@ -8282,7 +8282,7 @@ int wrapperBuildJavaCommandArrayInner(TCHAR **strings,
  
      /* See if the auto bits parameter is set.  Ignored by all but the following platforms. */
  
@@ -41,7 +41,7 @@ Index: src/c/wrapper.c
  
      if (wrapperData->javaVersion->major < 9) {
          if (getBooleanProperty(properties,
-@@ -8241,6 +8241,8 @@ int wrapperBuildJavaCommandArrayInner(TCHAR **strings,
+@@ -8297,6 +8297,8 @@ int wrapperBuildJavaCommandArrayInner(TCHAR **strings,
                                TEXT("wrapper.java.additional.auto_bits.solaris"),
  #elif defined(FREEBSD)
                                TEXT("wrapper.java.additional.auto_bits.freebsd"),
