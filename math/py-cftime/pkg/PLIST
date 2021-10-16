@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/06/15 09:39:49 martin Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/10/16 13:20:24 martin Exp $
 @conflict py-cftime-*
 @pkgpath math/py-cftime
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/cftime/
 lib/python${MODPY_VERSION}/site-packages/cftime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cftime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
