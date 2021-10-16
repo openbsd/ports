@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_platform_sdl_main_c,v 1.4 2020/04/13 02:53:05 bentley Exp $
+$OpenBSD: patch-src_platform_sdl_main_c,v 1.5 2021/10/16 08:51:35 bentley Exp $
 
 Add option to drop privileges with pledge().
 From https://github.com/mgba-emu/mgba/pull/1271.
@@ -6,7 +6,7 @@ From https://github.com/mgba-emu/mgba/pull/1271.
 Index: src/platform/sdl/main.c
 --- src/platform/sdl/main.c.orig
 +++ src/platform/sdl/main.c
-@@ -44,6 +44,11 @@ static void mSDLDeinit(struct mSDLRenderer* renderer);
+@@ -43,6 +43,11 @@ static void mSDLDeinit(struct mSDLRenderer* renderer);
  
  static int mSDLRun(struct mSDLRenderer* renderer, struct mArguments* args);
  
@@ -18,7 +18,7 @@ Index: src/platform/sdl/main.c
  static struct VFile* _state = NULL;
  
  static void _loadState(struct mCoreThread* thread) {
-@@ -149,6 +154,15 @@ int main(int argc, char** argv) {
+@@ -164,6 +169,15 @@ int main(int argc, char** argv) {
  	renderer.player.bindings = &renderer.core->inputMap;
  	mSDLInitBindingsGBA(&renderer.core->inputMap);
  	mSDLInitEvents(&renderer.events);
@@ -34,7 +34,7 @@ Index: src/platform/sdl/main.c
  	mSDLEventsLoadConfig(&renderer.events, mCoreConfigGetInput(&renderer.core->config));
  	mSDLAttachPlayer(&renderer.events, &renderer.player);
  	mSDLPlayerLoadConfig(&renderer.player, mCoreConfigGetInput(&renderer.core->config));
-@@ -264,6 +278,12 @@ int mSDLRun(struct mSDLRenderer* renderer, struct mArg
+@@ -282,6 +296,12 @@ int mSDLRun(struct mSDLRenderer* renderer, struct mArg
  					state->close(state);
  				}
  			}
@@ -47,7 +47,7 @@ Index: src/platform/sdl/main.c
  			renderer->runloop(renderer, &thread);
  			mSDLPauseAudio(&renderer->audio);
  			if (mCoreThreadHasCrashed(&thread)) {
-@@ -312,3 +332,43 @@ static void mSDLDeinit(struct mSDLRenderer* renderer) 
+@@ -321,3 +341,43 @@ static void mSDLDeinit(struct mSDLRenderer* renderer) 
  
  	SDL_Quit();
  }

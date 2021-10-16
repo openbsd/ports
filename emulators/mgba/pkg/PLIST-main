@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2020/09/24 07:31:51 bentley Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2021/10/16 08:51:36 bentley Exp $
 @bin bin/mgba
 include/mgba/
 include/mgba-util/
-include/mgba-util/arm-algo.h
 include/mgba-util/circle-buffer.h
 include/mgba-util/common.h
 include/mgba-util/configuration.h
 include/mgba-util/crc32.h
+include/mgba-util/dllexports.h
 include/mgba-util/elf-read.h
 include/mgba-util/export.h
 include/mgba-util/formatting.h
@@ -73,7 +73,6 @@ include/mgba/core/timing.h
 include/mgba/core/version.h
 include/mgba/debugger/
 include/mgba/debugger/debugger.h
-include/mgba/dllexports.h
 include/mgba/feature/
 include/mgba/feature/commandline.h
 include/mgba/feature/thread-proxy.h
@@ -105,6 +104,7 @@ include/mgba/internal/debugger/
 include/mgba/internal/debugger/cli-debugger.h
 include/mgba/internal/debugger/gdb-stub.h
 include/mgba/internal/debugger/parser.h
+include/mgba/internal/debugger/stack-trace.h
 include/mgba/internal/debugger/symbols.h
 include/mgba/internal/gb/
 include/mgba/internal/gb/audio.h
@@ -115,6 +115,7 @@ include/mgba/internal/gb/debugger/symbols.h
 include/mgba/internal/gb/extra/
 include/mgba/internal/gb/extra/cli.h
 include/mgba/internal/gb/gb.h
+include/mgba/internal/gb/input.h
 include/mgba/internal/gb/io.h
 include/mgba/internal/gb/mbc.h
 include/mgba/internal/gb/memory.h
@@ -151,15 +152,12 @@ include/mgba/internal/gba/renderers/common.h
 include/mgba/internal/gba/renderers/gl.h
 include/mgba/internal/gba/renderers/proxy.h
 include/mgba/internal/gba/renderers/video-software.h
-include/mgba/internal/gba/rr/
-include/mgba/internal/gba/rr/mgm.h
-include/mgba/internal/gba/rr/rr.h
-include/mgba/internal/gba/rr/vbm.h
 include/mgba/internal/gba/savedata.h
 include/mgba/internal/gba/serialize.h
 include/mgba/internal/gba/sharkport.h
 include/mgba/internal/gba/sio/
 include/mgba/internal/gba/sio.h
+include/mgba/internal/gba/sio/dolphin.h
 include/mgba/internal/gba/sio/lockstep.h
 include/mgba/internal/gba/timer.h
 include/mgba/internal/gba/vfame.h
@@ -181,6 +179,8 @@ share/doc/mGBA/CHANGES
 share/doc/mGBA/LICENSE
 share/doc/mGBA/README.md
 share/doc/mGBA/README_DE.md
+share/doc/mGBA/README_ES.md
+share/doc/mGBA/README_ZH_CN.md
 share/doc/mGBA/licenses/
 share/doc/mGBA/licenses/blip_buf.txt
 share/doc/mGBA/licenses/discord-rpc.txt

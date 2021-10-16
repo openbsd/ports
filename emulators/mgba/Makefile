@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2020/12/13 12:31:54 mestre Exp $
+# $OpenBSD: Makefile,v 1.44 2021/10/16 08:51:35 bentley Exp $
 
 COMMENT-main =		Game Boy Color/Advance emulator
 COMMENT-qt =		Game Boy Color/Advance emulator with GUI
 COMMENT-libretro =	Game Boy Color/Advance core for retroarch
 
-V =			0.8.4
+V =			0.9.2
 GH_ACCOUNT =		mgba-emu
 GH_PROJECT =		mgba
 GH_TAGNAME =		$V
@@ -17,7 +17,7 @@ DEBUG_PACKAGES =	-main -qt -libretro
 
 .include <bsd.port.arch.mk>
 
-SHARED_LIBS +=  mgba                      1.0 # 0.1
+SHARED_LIBS +=  mgba                      2.0 # 0.1
 
 CATEGORIES =		emulators
 
@@ -28,13 +28,12 @@ MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 # MPL 2.0
 PERMIT_PACKAGE =	Yes
 
-cWANTLIB =		GL GLU SDL2 avfilter \
+cWANTLIB =		GL SDL2 avfilter \
 			avcodec avformat avutil c curses edit m png \
-			pthread sqlite3 swresample swscale z zip elf \
-			avresample
+			pthread sqlite3 swresample swscale z zip elf
 WANTLIB-main =		${cWANTLIB}
 WANTLIB-qt =		${cWANTLIB} mgba Qt5Core Qt5Gui Qt5Multimedia \
-			Qt5Network Qt5OpenGL Qt5Widgets ${COMPILER_LIBCXX}
+			Qt5Network Qt5Widgets ${COMPILER_LIBCXX}
 WANTLIB-libretro =	m pthread z
 
 MODULES =		devel/cmake
@@ -53,7 +52,8 @@ RUN_DEPENDS-qt =	devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
 CONFIGURE_ARGS +=	-DBUILD_LIBRETRO=ON \
-			-DUSE_PLEDGE_UNVEIL=ON
+			-DUSE_PLEDGE_UNVEIL=ON \
+			-DUSE_MINIZIP=OFF
 
 .if ${BUILD_PACKAGES:M-qt}
 MODULES +=		x11/qt5

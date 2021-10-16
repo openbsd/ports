@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.5 2020/09/24 07:31:51 bentley Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.6 2021/10/16 08:51:35 bentley Exp $
 
 Add option to drop privileges with pledge().
 From https://github.com/mgba-emu/mgba/pull/1271.
@@ -6,7 +6,7 @@ From https://github.com/mgba-emu/mgba/pull/1271.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -35,6 +35,7 @@ if(NOT LIBMGBA_ONLY)
+@@ -50,6 +50,7 @@ if(NOT LIBMGBA_ONLY)
  		set(USE_EDITLINE ON CACHE BOOL "Whether or not to enable the CLI-mode debugger")
  	endif()
  	set(USE_GDB_STUB ON CACHE BOOL "Whether or not to enable the GDB stub ARM debugger")
@@ -14,29 +14,22 @@ Index: CMakeLists.txt
  	set(USE_FFMPEG ON CACHE BOOL "Whether or not to enable FFmpeg support")
  	set(USE_ZLIB ON CACHE BOOL "Whether or not to enable zlib support")
  	set(USE_MINIZIP ON CACHE BOOL "Whether or not to enable external minizip support")
-@@ -477,6 +478,10 @@ find_feature(USE_SQLITE3 "sqlite3")
- find_feature(USE_ELF "libelf")
- find_feature(ENABLE_PYTHON "PythonLibs")
+@@ -547,6 +548,14 @@ if(USE_GDB_STUB)
+ endif()
+ source_group("Debugger" FILES ${DEBUGGER_SRC})
  
 +if(USE_PLEDGE_UNVEIL)
 +	set(USE_EPOXY OFF)
 +endif()
 +
- if(USE_FFMPEG)
- 	set(USE_LIBAVRESAMPLE ON)
- 	set(USE_LIBSWRESAMPLE ON)
-@@ -508,6 +513,10 @@ if(USE_GDB_STUB)
- endif()
- source_group("Debugger" FILES ${DEBUGGER_SRC})
- 
 +if(USE_PLEDGE_UNVEIL)
 +	list(APPEND FEATURES PLEDGE_UNVEIL)
 +endif()
 +
  if(USE_FFMPEG)
  	list(APPEND FEATURES FFMPEG)
- 	if(USE_LIBSWRESAMPLE)
-@@ -1228,6 +1237,7 @@ if(NOT QUIET AND NOT LIBMGBA_ONLY)
+ 	if(LIBSWRESAMPLE_FOUND)
+@@ -1231,6 +1240,7 @@ if(NOT QUIET AND NOT LIBMGBA_ONLY)
  		message(STATUS "	CLI debugger: ${USE_EDITLINE}")
  	endif()
  	message(STATUS "	GDB stub: ${USE_GDB_STUB}")
