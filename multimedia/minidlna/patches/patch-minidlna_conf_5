@@ -1,0 +1,16 @@
+$OpenBSD: patch-minidlna_conf_5,v 1.1 2021/10/16 15:38:13 edd Exp $
+
+Silence a mandoc warning.
+
+Index: minidlna.conf.5
+--- minidlna.conf.5.orig
++++ minidlna.conf.5
+@@ -1,7 +1,7 @@
+ .\" minidlna.conf man page
+ .TH minidlna.conf 5 "October 2012"
+ .SH NAME
+-minidlna
++minidlna.conf \- minidlnad configuration file
+ .SH DESCRIPTION
+ .PP
+ .B minidlna
