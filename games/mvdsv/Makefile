@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2020/12/22 20:53:25 solene Exp $
+# $OpenBSD: Makefile,v 1.4 2021/10/16 14:43:12 thfr Exp $
 
 COMMENT =	QuakeWorld server
 
 GH_ACCOUNT =	deurk
 GH_PROJECT =	mvdsv
-GH_TAGNAME =	0.33
+GH_TAGNAME =	0.34
 
 CATEGORIES =	games
 
