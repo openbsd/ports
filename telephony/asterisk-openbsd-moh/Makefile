@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2021/05/01 12:25:42 ian Exp $
+# $OpenBSD: Makefile,v 1.33 2021/10/16 10:57:40 sthen Exp $
 
 # strictly speaking not, as they are just sound files, but packaging
 # these on arch which don't build asterisk is a waste of cycles on build
 # machines and disk space on mirrors
-BUILD_DEPENDS =	telephony/asterisk
+BUILD_DEPENDS =	telephony/asterisk/18
 
 # No distfiles here that can get outdated, skip it.
 PORTROACH=		ignore:1
