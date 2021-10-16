@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-http_post,v 1.2 2019/11/11 21:25:20 sthen Exp $
-@so lib/asterisk/modules/res_http_post.so

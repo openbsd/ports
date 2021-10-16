@@ -1,2 +1,0 @@
-This is the HTTP POST module for Asterisk, packaged separately to avoid
-additional dependencies for the main package.

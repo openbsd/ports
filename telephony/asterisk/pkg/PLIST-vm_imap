@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-vm_imap,v 1.1 2020/12/16 23:57:26 sthen Exp $
-@so lib/asterisk/modules/app_voicemail_imap.so
