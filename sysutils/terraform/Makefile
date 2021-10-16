@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.70 2021/10/03 19:56:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2021/10/16 15:49:02 ajacoutot Exp $
 
 COMMENT=		tool for building, changing, and versioning infrastructure
 
 MODGO_MODNAME=		github.com/hashicorp/terraform
-MODGO_VERSION=		v1.0.8
+MODGO_VERSION=		v1.0.9
 DISTNAME=		terraform-${MODGO_VERSION}
 
 WRKDIST=		${WRKDIR}/github.com/hashicorp/terraform@${MODGO_VERSION}
