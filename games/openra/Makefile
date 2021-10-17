@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2021/05/12 13:52:49 patrick Exp $
+# $OpenBSD: Makefile,v 1.9 2021/10/17 13:06:59 kn Exp $
 
 COMMENT =		open-source real-time strategy game engine
 V =			20210321
+REVISION =		0
 DISTNAME =		openra-${V}
 CATEGORIES =		games x11
 HOMEPAGE =		https://www.openra.net

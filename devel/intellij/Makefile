@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.77 2021/10/16 08:25:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.78 2021/10/17 13:06:59 kn Exp $
 
 COMMENT=		IntelliJ IDEA Java IDE
 
 V=			2021.2.3
+REVISION=		0
 DISTNAME=		ideaIC-${V}-no-jbr
 PKGNAME=		intellij-${V}
 CATEGORIES=		devel

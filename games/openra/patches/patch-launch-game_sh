@@ -1,4 +1,8 @@
-$OpenBSD: patch-launch-game_sh,v 1.3 2021/05/12 13:52:49 patrick Exp $
+$OpenBSD: patch-launch-game_sh,v 1.4 2021/10/17 13:06:59 kn Exp $
+
+- replace python script with realpath(1) call
+- fix argument parsing.
+- set OpenRA.exe path.
 
 Index: launch-game.sh
 --- launch-game.sh.orig
@@ -10,7 +14,7 @@ Index: launch-game.sh
 -else
 -	 MODLAUNCHER=$(python -c "import os; print(os.path.realpath('$0'))")
 -fi
-+MODLAUNCHER=$(readlink -f $0)
++MODLAUNCHER=$(realpath "$0")
  
  # Prompt for a mod to launch if one is not already specified
  MODARG=''

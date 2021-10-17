@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2021/10/15 21:51:53 kn Exp $
+# $OpenBSD: Makefile,v 1.67 2021/10/17 13:06:59 kn Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
@@ -60,11 +60,6 @@ RC =			${FILESDIR}/varnishreload
 MAN =			${RC}.1
 RCINST =		${PREFIX}/bin/${RC:T}
 MANINST =		${PREFIX}/man/man1/${MAN:T}
-
-# XXX ${WRKSRC}/doc/sphinx/Makefile.{am,in}
-pre-build:
-	echo 'readlink -f "$$@"' >| ${WRKDIR}/bin/realpath
-	chmod +x ${WRKDIR}/bin/realpath
 
 post-install:
 	${SUBST_PROGRAM} ${RC} ${RCINST}

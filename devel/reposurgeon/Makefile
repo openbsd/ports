@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2021/02/23 19:39:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/10/17 13:06:59 kn Exp $
 
 COMMENT=	tool for editing version-control repository history
 
@@ -39,9 +39,7 @@ pre-test:
 	sed -i s,/usr/local,${LOCALBASE},g ${WRKSRC}/test/setpython
 	-ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 	-ln -s ${LOCALBASE}/python${MODPY_DEFAULT_VERSION_3} ${WRKDIR}/bin/python3
-.for i in realpath make
-	-ln -s ${LOCALBASE}/bin/g$i ${WRKDIR}/bin/$i
-.endfor
+	-ln -s ${LOCALBASE}/bin/gmake ${WRKDIR}/bin/make
 
 MODPY_ADJ_FILES= repocutter repodiffer repomapper reposurgeon
 

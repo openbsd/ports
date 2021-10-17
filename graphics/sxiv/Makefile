@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2021/10/03 22:16:43 kn Exp $
+# $OpenBSD: Makefile,v 1.20 2021/10/17 13:06:59 kn Exp $
 
 COMMENT =	simple X Image Viewer
 
 GH_PROJECT =	sxiv
 GH_ACCOUNT =	muennich
 GH_TAGNAME =	v26
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	graphics x11
 
