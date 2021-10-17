@@ -1,7 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/10/15 13:44:26 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2021/10/17 01:43:18 bcallah Exp $
+
+# Can't use gdc yet
+ONLY_FOR_ARCHS =	amd64
 
 COMMENT =	ancillary tools for the D programming language compiler
 DISTNAME =	d${GH_PROJECT}-${GH_TAGNAME:S/^v//}
+REVISION =	0
 CATEGORIES =	devel
 
 # Keep GH_TAGNAME in sync with lang/dmd
@@ -15,13 +19,13 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # Boost Software License 1.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c m pthread
+WANTLIB += c c++abi execinfo m pthread
 
-BUILD_DEPENDS =	lang/gdmd
+BUILD_DEPENDS =	lang/dmd
 
 USE_GMAKE =	Yes
 MAKE_FILE =	posix.mak
-MAKE_FLAGS =	DMD="${LOCALBASE}/bin/gdmd"
+MAKE_FLAGS =	DMD="${LOCALBASE}/bin/dmd"
 
 .if ${MACHINE_ARCH} == "powerpc"
 # ld: error: relocation refers to a discarded section
