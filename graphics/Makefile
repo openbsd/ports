@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.561 2021/10/11 11:03:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.562 2021/10/17 21:14:09 espie Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -238,6 +238,7 @@
      SUBDIR += pinta
      SUBDIR += png
      SUBDIR += png2ico
+     SUBDIR += pngcheck
      SUBDIR += pngcrush
      SUBDIR += pngquant
      SUBDIR += posterazor
