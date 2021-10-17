@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2021/09/04 05:33:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.36 2021/10/17 10:08:13 ajacoutot Exp $
 share/osinfo/
 share/osinfo/LICENSE
 share/osinfo/VERSION
@@ -770,6 +770,13 @@ share/osinfo/os/redhat.com/rhl-7.3.xml
 share/osinfo/os/redhat.com/rhl-7.xml
 share/osinfo/os/redhat.com/rhl-8.0.xml
 share/osinfo/os/redhat.com/rhl-9.xml
+share/osinfo/os/rockylinux.org/
+share/osinfo/os/rockylinux.org/rocky-8-unknown.xml
+share/osinfo/os/rockylinux.org/rocky-8.4.xml
+share/osinfo/os/rockylinux.org/rocky-8.5.xml
+share/osinfo/os/rockylinux.org/rocky-9-unknown.xml
+share/osinfo/os/rockylinux.org/rocky-9.0.xml
+share/osinfo/os/rockylinux.org/rocky-unknown.xml
 share/osinfo/os/scientificlinux.org/
 share/osinfo/os/scientificlinux.org/scientificlinux-5.0.xml
 share/osinfo/os/scientificlinux.org/scientificlinux-5.1.xml
