@@ -1,0 +1,13 @@
+$OpenBSD: patch-gpl_pngsplit_1,v 1.1.1.1 2021/10/17 21:11:20 espie Exp $
+
+Index: gpl/pngsplit.1
+--- gpl/pngsplit.1.orig
++++ gpl/pngsplit.1
+@@ -1,6 +1,6 @@
+ .TH PNGSPLIT "1" "October 2020" "pngsplit 1.0" "User Commands"
+ .SH NAME
+-pngsplit \- manual page for pngsplit 1.0
++pngsplit \- split PNG/MNG/JNG into chunks
+ .SH SYNOPSIS
+ .B pngsplit
+ .RI [ options ]
