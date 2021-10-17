@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/07 08:05:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/10/17 10:32:12 sthen Exp $
 
 COMMENT =	dead simple tool to sign files and verify digital signatures
 
 GH_ACCOUNT =	jedisct1
 GH_PROJECT =	minisign
-GH_TAGNAME =	0.9
+GH_TAGNAME =	0.10
 
 CATEGORIES =	security sysutils
 
