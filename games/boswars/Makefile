@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:46:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2021/10/17 12:19:12 sthen Exp $
 
 COMMENT=	real-time strategy game
 
@@ -7,7 +7,7 @@ DISTNAME=	boswars-${V}-src
 PKGNAME=	boswars-${V}
 CATEGORIES=	games x11
 MASTER_SITES=	http://www.boswars.org/dist/releases/
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	http://www.boswars.org/
 
@@ -24,7 +24,8 @@ MODULES=	devel/scons \
 MODSCONS_FLAGS=	CPPPATH="${LOCALBASE}/include ${X11BASE}/include" \
 		opengl=1
 
-BUILD_DEPENDS=	devel/sdl-image
+BUILD_DEPENDS=	devel/sdl-image \
+		graphics/optipng
 LIB_DEPENDS=	devel/sdl \
 		multimedia/libtheora \
 		audio/libvorbis \
@@ -38,6 +39,10 @@ DATA_DIR=	campaigns graphics intro languages maps patches scripts sounds units
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/SConstruct \
 		${WRKSRC}/engine/include/stratagus.h
+.for f in maps/antarticum.map/terrain.png graphics/ui/ui_*.png \
+		units/radar/radar*.png units/tree*/tree*.png
+	optipng -force -fix ${WRKSRC}/${f}
+.endfor
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/boswars
