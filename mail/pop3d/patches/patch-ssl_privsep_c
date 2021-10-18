@@ -1,11 +1,29 @@
-$OpenBSD: patch-ssl_privsep_c,v 1.2 2021/04/28 19:53:00 tb Exp $
+$OpenBSD: patch-ssl_privsep_c,v 1.3 2021/10/18 22:12:23 tb Exp $
 
 https://github.com/snimmagadda/pop3d/pull/12
+
+Use LibreSSL-specific API for by_mem lookup.
 
 Index: ssl_privsep.c
 --- ssl_privsep.c.orig
 +++ ssl_privsep.c
-@@ -111,8 +111,8 @@ ssl_ctx_use_private_key(SSL_CTX *ctx, char *buf, off_t
+@@ -81,6 +81,7 @@ int	 ssl_ctx_use_certificate_chain(SSL_CTX *, char *, 
+ int	 ssl_ctx_load_verify_memory(SSL_CTX *, char *, off_t);
+ int	 ssl_by_mem_ctrl(X509_LOOKUP *, int, const char *, long, char **);
+ 
++#if 0
+ X509_LOOKUP_METHOD x509_mem_lookup = {
+ 	"Load cert from memory",
+ 	NULL,			/* new */
+@@ -95,6 +96,7 @@ X509_LOOKUP_METHOD x509_mem_lookup = {
+ };
+ 
+ #define X509_L_ADD_MEM	3
++#endif
+ 
+ int
+ ssl_ctx_use_private_key(SSL_CTX *ctx, char *buf, off_t len)
+@@ -111,8 +113,8 @@ ssl_ctx_use_private_key(SSL_CTX *ctx, char *buf, off_t
  	}
  
  	pkey = PEM_read_bio_PrivateKey(in, NULL,
@@ -16,7 +34,7 @@ Index: ssl_privsep.c
  
  	if (pkey == NULL) {
  		SSLerr(SSL_F_SSL_CTX_USE_PRIVATEKEY_FILE, ERR_R_PEM_LIB);
-@@ -145,8 +145,8 @@ ssl_ctx_use_certificate_chain(SSL_CTX *ctx, char *buf,
+@@ -145,8 +147,8 @@ ssl_ctx_use_certificate_chain(SSL_CTX *ctx, char *buf,
  	}
  
  	if ((x = PEM_read_bio_X509(in, NULL,
@@ -27,7 +45,7 @@ Index: ssl_privsep.c
  		SSLerr(SSL_F_SSL_CTX_USE_CERTIFICATE_CHAIN_FILE, ERR_R_PEM_LIB);
  		goto end;
  	}
-@@ -158,14 +158,11 @@ ssl_ctx_use_certificate_chain(SSL_CTX *ctx, char *buf,
+@@ -158,14 +160,11 @@ ssl_ctx_use_certificate_chain(SSL_CTX *ctx, char *buf,
  	 * the CA certificates.
  	 */
  
@@ -45,12 +63,33 @@ Index: ssl_privsep.c
  
  		if (!SSL_CTX_add_extra_chain_cert(ctx, ca))
  			goto end;
-@@ -195,7 +192,7 @@ ssl_ctx_load_verify_memory(SSL_CTX *ctx, char *buf, of
+@@ -195,20 +194,20 @@ ssl_ctx_load_verify_memory(SSL_CTX *ctx, char *buf, of
  	X509_LOOKUP		*lu;
  	struct iovec		 iov;
  
 -	if ((lu = X509_STORE_add_lookup(ctx->cert_store,
+-	    &x509_mem_lookup)) == NULL)
 +	if ((lu = X509_STORE_add_lookup(SSL_CTX_get_cert_store(ctx),
- 	    &x509_mem_lookup)) == NULL)
++	    X509_LOOKUP_mem())) == NULL)
  		return (0);
  
+ 	iov.iov_base = buf;
+ 	iov.iov_len = len;
+ 
+-	if (!ssl_by_mem_ctrl(lu, X509_L_ADD_MEM,
+-	    (const char *)&iov, X509_FILETYPE_PEM, NULL))
++	if (!X509_LOOKUP_add_mem(lu, &iov, X509_FILETYPE_PEM))
+ 		return (0);
+ 
+ 	return (1);
+ }
+ 
++#if 0
+ int
+ ssl_by_mem_ctrl(X509_LOOKUP *lu, int cmd, const char *buf,
+     long type, char **ret)
+@@ -251,3 +250,4 @@ ssl_by_mem_ctrl(X509_LOOKUP *lu, int cmd, const char *
+ 		BIO_free(in);
+ 	return (count);
+ }
++#endif
