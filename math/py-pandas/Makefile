@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2021/10/18 10:07:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/10/18 10:07:51 sthen Exp $
 
 COMMENT =		data analysis and manipulation library
 
@@ -55,13 +55,10 @@ TEST_DEPENDS +=		databases/py-mysqlclient${MODPY_FLAVOR} \
 			www/py-jinja2${MODPY_FLAVOR} \
 			x11/xclip
 
-# py-boto has been removed from ports on 20210902
-#TEST_DEPENDS +=		net/py-boto${MODPY_FLAVOR}
-
 TEST_ENV +=		TZ=UTC
 
 # XXX tarball does not include all files required for the test suite, as such
-# numerous tests fail.
+# numerous tests fail. pytest 5.0.1 is also needed.
 do-test:
 	cd ${WRKSRC} && ${MODPY_CMD} build_ext --inplace
 	@${MODPY_TEST_TARGET}
