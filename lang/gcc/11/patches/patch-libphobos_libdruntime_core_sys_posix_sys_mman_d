@@ -1,0 +1,15 @@
+$OpenBSD: patch-libphobos_libdruntime_core_sys_posix_sys_mman_d,v 1.1 2021/10/18 00:25:49 gkoehler Exp $
+
+Fiber needs mmap(2) MAP_STACK.
+
+Index: libphobos/libdruntime/core/sys/posix/sys/mman.d
+--- libphobos/libdruntime/core/sys/posix/sys/mman.d.orig
++++ libphobos/libdruntime/core/sys/posix/sys/mman.d
+@@ -460,6 +460,7 @@ else version (OpenBSD)
+     enum MAP_PRIVATE    = 0x0002;
+     enum MAP_FIXED      = 0x0010;
+     enum MAP_ANON       = 0x1000;
++    enum MAP_STACK      = 0x4000;
+ 
+     enum MAP_FAILED     = cast(void*)-1;
+ 

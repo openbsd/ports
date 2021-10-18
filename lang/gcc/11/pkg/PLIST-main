@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2021/08/15 18:42:13 pascal Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2021/10/18 00:25:49 gkoehler Exp $
 @option is-branch
 @conflict gcc-<12
 @pkgpath lang/gcc/4.9,-main
@@ -109,6 +109,7 @@ lib/gcc/${CONFIG}/${V}/plugin/include/config.h
 %%mips64%%
 %%mips64el%%
 %%powerpc%%
+%%powerpc64%%
 %%sparc64%%
 %%X86%%
 lib/gcc/${CONFIG}/${V}/plugin/include/configargs.h

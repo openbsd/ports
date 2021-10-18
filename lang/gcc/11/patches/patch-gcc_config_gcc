@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_config_gcc,v 1.1.1.1 2021/08/15 18:42:10 pascal Exp $
+$OpenBSD: patch-gcc_config_gcc,v 1.2 2021/10/18 00:25:48 gkoehler Exp $
 
 Index: gcc/config.gcc
 --- gcc/config.gcc.orig
@@ -123,7 +123,7 @@ Index: gcc/config.gcc
 +	;;
 +powerpc64*-*-openbsd*)
 +	tm_defines="${tm_defines} DEFAULT_FLAG_PIE=2"
-+	tm_file="${tm_file} dbxelf.h elfos.h openbsd.h openbsd-stdint.h openbsd-libpthread.h freebsd-spec.h rs6000/sysv4.h rs6000/default64.h rs6000/openbsd64.h"
++	tm_file="${tm_file} dbxelf.h elfos.h gnu-user.h openbsd.h openbsd-stdint.h openbsd-libpthread.h freebsd-spec.h rs6000/sysv4.h rs6000/default64.h rs6000/openbsd64.h"
 +	tmake_file="${tmake_file} rs6000/t-openbsd64"
 +	extra_options="${extra_options} rs6000/sysv4.opt rs6000/linux64.opt openbsd.opt"
 +	;;

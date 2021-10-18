@@ -1,0 +1,82 @@
+$OpenBSD: patch-libphobos_libdruntime_core_thread_fiber_d,v 1.1 2021/10/18 00:25:49 gkoehler Exp $
+
+Fiber needs mmap(2) MAP_STACK.
+
+Add fibers for powerpc64 ELFv2, and fix fibers for 32-bit powerpc ELF.
+The old code was for some other platform (AIX?), not BSD nor Linux.
+This patch fixes OpenBSD but might break the other platform.
+
+Index: libphobos/libdruntime/core/thread/fiber.d
+--- libphobos/libdruntime/core/thread/fiber.d.orig
++++ libphobos/libdruntime/core/thread/fiber.d
+@@ -125,6 +125,7 @@ private
+         {
+             version = AsmPPC_Posix;
+             version = AsmExternal;
++            version = AlignFiberStackTo16Byte;
+         }
+     }
+     else version (PPC64)
+@@ -137,6 +138,8 @@ private
+         }
+         else version (Posix)
+         {
++            version = AsmPPC_Posix;
++            version = AsmExternal;
+             version = AlignFiberStackTo16Byte;
+         }
+     }
+@@ -1033,10 +1036,13 @@ class Fiber (private)
+                 // Allocate more for the memory guard
+                 sz += guardPageSize;
+ 
++                int mmap_flags = MAP_PRIVATE | MAP_ANON;
++                version (OpenBSD)
++                    mmap_flags |= MAP_STACK;
+                 m_pmem = mmap( null,
+                                sz,
+                                PROT_READ | PROT_WRITE,
+-                               MAP_PRIVATE | MAP_ANON,
++                               mmap_flags,
+                                -1,
+                                0 );
+                 if ( m_pmem == MAP_FAILED )
+@@ -1338,27 +1344,22 @@ class Fiber (private)
+         }
+         else version (AsmPPC_Posix)
+         {
+-            version (StackGrowsDown)
+-            {
+-                pstack -= int.sizeof * 5;
+-            }
+-            else
+-            {
+-                pstack += int.sizeof * 5;
+-            }
++            version (StackGrowsDown) {} else static assert (false);
+ 
+-            push( cast(size_t) &fiber_entryPoint );     // link register
+-            push( 0x00000000 );                         // control register
+-            push( 0x00000000 );                         // old stack pointer
+-
+-            // GPR values
+-            version (StackGrowsDown)
++            version (PPC64)
+             {
+-                pstack -= int.sizeof * 20;
++                pstack -= size_t.sizeof * 5;
++                push( cast(size_t) &fiber_entryPoint);  // link register
++                push( 0x00000000_00000000 );            // condition register
++                push( 0x00000000_00000000 );            // old stack pointer
++                pstack -= size_t.sizeof * 18;           // GPRs
+             }
+             else
+             {
+-                pstack += int.sizeof * 20;
++                pstack -= size_t.sizeof * 6;
++                push( cast(size_t) &fiber_entryPoint);  // link register
++                push( 0x00000000 );                     // old stack pointer
++                pstack -= size_t.sizeof * 20;           // GPRs and CR
+             }
+ 
+             assert( (cast(size_t) pstack & 0x0f) == 0 );

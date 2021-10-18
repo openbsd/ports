@@ -1,0 +1,31 @@
+$OpenBSD: patch-libphobos_libdruntime_core_sys_posix_ucontext_d,v 1.1 2021/10/18 00:25:49 gkoehler Exp $
+
+Index: libphobos/libdruntime/core/sys/posix/ucontext.d
+--- libphobos/libdruntime/core/sys/posix/ucontext.d.orig
++++ libphobos/libdruntime/core/sys/posix/ucontext.d
+@@ -1381,6 +1381,25 @@ else version (OpenBSD)
+             trapframe sc_frame;
+         }
+     }
++    else version (PPC64)
++    {
++        struct sigcontext
++        {
++            c_long       sc_cookie;
++            int          sc_mask;
++            c_long[32]   sc_reg;
++            c_long       sc_lr;
++            c_long       sc_cr;
++            c_long       sc_xer;
++            c_long       sc_ctr;
++            c_long       sc_pc;
++            c_long       sc_ps;
++            c_long       sc_vrsave;
++            ulong[2][64] sc_vsx; // __uint128_t
++            ulong        sc_fpscr;
++            ulong        sc_vcsr;
++        }
++    }
+     else version (SPARC64)
+     {
+         struct sigcontext
