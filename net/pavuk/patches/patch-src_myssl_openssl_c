@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_myssl_openssl_c,v 1.3 2021/05/05 17:04:18 tb Exp $
+$OpenBSD: patch-src_myssl_openssl_c,v 1.4 2021/10/18 22:19:20 tb Exp $
 
 Retrieve session ID via accessors instead of reaching inside the struct.
+Fix verify callback with opaque X509 structs.
 Allow building against OpenSSL without SSLv2/v3 support.
 
 Index: src/myssl_openssl.c
@@ -29,6 +30,19 @@ Index: src/myssl_openssl.c
    }
    DEBUG_SSL("]\n");
    return;
+@@ -394,10 +396,10 @@ static int my_ssl_verify_callback(int ok, X509_STORE_C
+     else
+       ok = 0;
+   }
+-  switch (ctx->error)
++  switch (err)
+   {
+   case X509_V_ERR_UNABLE_TO_GET_ISSUER_CERT:
+-    X509_NAME_oneline(X509_get_issuer_name(ctx->current_cert), buf, 256);
++    X509_NAME_oneline(X509_get_issuer_name(err_cert), buf, 256);
+     DEBUG_SSL("Issuer: %s\n", buf);
+     break;
+   case X509_V_ERR_CERT_NOT_YET_VALID:
 @@ -543,12 +545,16 @@ bufio *my_ssl_do_connect(doc * docp, bufio * socket,
  
    switch (cfg.ssl_version)
