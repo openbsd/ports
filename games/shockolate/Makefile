@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/09/07 12:14:33 thfr Exp $
+# $OpenBSD: Makefile,v 1.2 2021/10/18 13:39:44 thfr Exp $
 
 COMMENT =	source port of 3D game System Shock
 
-V =		0.7.8pl20200610
+V =		0.7.8pl20210504
 DISTNAME =	shockolate-v${V}
 PKGNAME =	shockolate-${V}
 GH_ACCOUNT =	Interrupt
 GH_PROJECT =	systemshock
-GH_COMMIT =	25081d5033ca7dde50d17cb76d4ffaf73de27bb0
+GH_COMMIT =	bcdb119b0c1b2e17820abf0fbe594378da603fd5
 
 CATEGORIES =	games x11
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>

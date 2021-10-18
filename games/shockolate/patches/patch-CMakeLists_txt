@@ -1,9 +1,11 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2020/09/07 12:14:33 thfr Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2021/10/18 13:39:44 thfr Exp $
+
+disable debug symbols (-g) for default build
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -9,6 +9,10 @@ include(FeatureSummary)
+@@ -9,14 +9,17 @@ include(FeatureSummary)
  set_property(GLOBAL PROPERTY FIND_LIBRARY_USE_LIB32_PATHS OFF)
  set_property(GLOBAL PROPERTY FIND_LIBRARY_USE_LIB64_PATHS ON)
  
@@ -14,3 +16,12 @@ Index: CMakeLists.txt
  # Required for stdbool.h
  set(CMAKE_C_STANDARD 99)
  # For nullptr in C++
+ set(CMAKE_CXX_STANDARD 11)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ 
+-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g ")
+-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -D__STDC_LIMIT_MACROS")
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__STDC_LIMIT_MACROS")
+ 
+ option(ENABLE_EXAMPLES "Enable example applications" OFF)
+ add_feature_info(ENABLE_EXAMPLES ENABLE_EXAMPLES "Enable example application (can be broken!)")
