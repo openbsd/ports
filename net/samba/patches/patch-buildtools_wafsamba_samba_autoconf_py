@@ -1,4 +1,4 @@
-$OpenBSD: patch-buildtools_wafsamba_samba_autoconf_py,v 1.13 2021/05/12 23:33:24 jca Exp $
+$OpenBSD: patch-buildtools_wafsamba_samba_autoconf_py,v 1.14 2021/10/18 12:25:20 jca Exp $
 
 1. Sort -L flags to unbreak linking when any other version of Samba is installed.
 
@@ -35,7 +35,7 @@ Index: buildtools/wafsamba/samba_autoconf.py
      return flags
  
  
-@@ -956,7 +977,7 @@ def SAMBA_CHECK_UNDEFINED_SYMBOL_FLAGS(conf):
+@@ -962,7 +983,7 @@ def SAMBA_CHECK_UNDEFINED_SYMBOL_FLAGS(conf):
          # symbols used for fuzzers are only defined by compiler wrappers.
          return
  

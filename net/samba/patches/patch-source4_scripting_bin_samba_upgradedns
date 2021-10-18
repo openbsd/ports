@@ -1,11 +1,11 @@
-$OpenBSD: patch-source4_scripting_bin_samba_upgradedns,v 1.6 2021/05/12 23:33:24 jca Exp $
+$OpenBSD: patch-source4_scripting_bin_samba_upgradedns,v 1.7 2021/10/18 12:25:20 jca Exp $
 
 - net/isc-bind group name
 
 Index: source4/scripting/bin/samba_upgradedns
 --- source4/scripting/bin/samba_upgradedns.orig
 +++ source4/scripting/bin/samba_upgradedns
-@@ -76,7 +76,7 @@ __docformat__ = 'restructuredText'
+@@ -77,7 +77,7 @@ __docformat__ = 'restructuredText'
  def find_bind_gid():
      """Find system group id for bind9
      """
