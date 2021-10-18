@@ -1,0 +1,2 @@
+This library allows reading UDF filesystems, like raw devices and image
+files.
