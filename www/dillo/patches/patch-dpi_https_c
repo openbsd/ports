@@ -1,6 +1,7 @@
-$OpenBSD: patch-dpi_https_c,v 1.6 2015/07/03 14:33:26 bcallah Exp $
---- dpi/https.c.orig	Tue Jun 30 10:06:08 2015
-+++ dpi/https.c	Wed Jul  1 10:37:09 2015
+$OpenBSD: patch-dpi_https_c,v 1.7 2021/10/19 10:20:08 tb Exp $
+Index: dpi/https.c
+--- dpi/https.c.orig
++++ dpi/https.c
 @@ -169,7 +169,7 @@ static void yes_ssl_support(void)
     /*FIXME - provide for sysconfdir variables and such*/
     if (exit_error == 0){
@@ -10,3 +11,12 @@ $OpenBSD: patch-dpi_https_c,v 1.6 2015/07/03 14:33:26 bcallah Exp $
           MSG("Error opening system x509 certificate location\n");
           exit_error = 1;
        }
+@@ -476,7 +476,7 @@ static int handle_certificate_problem(SSL * ssl_connec
+       case X509_V_ERR_DEPTH_ZERO_SELF_SIGNED_CERT:
+          /*Either self signed and untrusted*/
+          /*Extract CN from certificate name information*/
+-         if ((cn = strstr(remote_cert->name, "/CN=")) == NULL) {
++         if ((cn = strstr(X509_get_subject_name(remote_cert), "/CN=")) == NULL) {
+             strcpy(buf, "(no CN given)");
+          } else {
+             char *cn_end;
