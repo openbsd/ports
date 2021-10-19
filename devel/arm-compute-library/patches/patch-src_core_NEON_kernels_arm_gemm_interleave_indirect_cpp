@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_core_NEON_kernels_arm_gemm_interleave_indirect_cpp,v 1.1.1.1 2021/10/19 03:54:58 kevlo Exp $
+
+Index: src/core/NEON/kernels/arm_gemm/interleave_indirect.cpp
+--- src/core/NEON/kernels/arm_gemm/interleave_indirect.cpp.orig
++++ src/core/NEON/kernels/arm_gemm/interleave_indirect.cpp
+@@ -28,7 +28,9 @@
+ #include "interleave_indirect.hpp"
+ #include "bfloat.hpp"
+ 
++#if !defined(__OpenBSD__)
+ #include <alloca.h>
++#endif /* !defined(__OpenBSD__) */
+ 
+ #include <algorithm>
+ #include <cstddef>

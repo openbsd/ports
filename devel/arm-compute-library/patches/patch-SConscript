@@ -1,0 +1,15 @@
+$OpenBSD: patch-SConscript,v 1.1.1.1 2021/10/19 03:54:58 kevlo Exp $
+
+Index: SConscript
+--- SConscript.orig
++++ SConscript
+@@ -385,7 +385,8 @@ undefined_flag = '-Wl,-undefined,error' if 'macos' in 
+ arm_compute_env.Append(LINKFLAGS=[undefined_flag])
+ arm_compute_env.Append(CPPPATH =[Dir("./src/core/").path] )
+ 
+-arm_compute_env.Append(LIBS = ['dl'])
++if env['os'] != 'openbsd':
++    arm_compute_env.Append(LIBS = ['dl'])
+ 
+ with (open(Dir('#').path + '/filelist.json')) as fp:
+     filelist = json.load(fp)

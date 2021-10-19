@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_core_NEON_kernels_arm_gemm_transform_cpp,v 1.1.1.1 2021/10/19 03:54:58 kevlo Exp $
+
+Index: src/core/NEON/kernels/arm_gemm/transform.cpp
+--- src/core/NEON/kernels/arm_gemm/transform.cpp.orig
++++ src/core/NEON/kernels/arm_gemm/transform.cpp
+@@ -25,7 +25,9 @@
+ 
+ #include "bfloat.hpp"
+ 
++#if !defined(__OpenBSD__)
+ #include <alloca.h>
++#endif /* !defined(__OpenBSD__) */
+ 
+ namespace arm_gemm {
+ 
