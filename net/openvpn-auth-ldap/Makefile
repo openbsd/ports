@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2021/06/06 15:11:18 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2021/10/19 19:44:31 sebastia Exp $
 
 COMMENT =		LDAP authentication plugin for OpenVPN 2.x
 
 VERSION =		2.0.4
+REVISION =		0
 GH_ACCOUNT =		threerings
 GH_PROJECT =		openvpn-auth-ldap
 GH_TAGNAME =		auth-ldap-${VERSION}
