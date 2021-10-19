@@ -1,0 +1,18 @@
+$OpenBSD: patch-conn_getdomain_c,v 1.1 2021/10/19 03:12:11 bket Exp $
+
+Fix segfault. Taken from https://github.com/neomutt/neomutt/pull/3077
+
+Index: conn/getdomain.c
+--- conn/getdomain.c.orig
++++ conn/getdomain.c
+@@ -149,7 +149,9 @@ int getdnsdomainname(struct Buffer *result)
+     rc = 0;
+     mutt_debug(LL_DEBUG1, "Hostname: %s\n", mutt_buffer_string(result));
+   }
+-  freeaddrinfo(lookup_result);
++
++  if (lookup_result != NULL)
++    freeaddrinfo(lookup_result);
+ #endif
+ 
+   return rc;
