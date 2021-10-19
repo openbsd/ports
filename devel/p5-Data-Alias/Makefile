@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2020/07/03 21:44:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2021/10/19 05:59:47 benoit Exp $
 
 COMMENT =	comprehensive set of aliasing operations
 
 MODULES =	cpan
-DISTNAME =	Data-Alias-1.21
+DISTNAME =	Data-Alias-1.25
 CATEGORIES =	devel
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =		Yes
