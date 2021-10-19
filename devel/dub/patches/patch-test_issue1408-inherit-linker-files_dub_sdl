@@ -1,0 +1,14 @@
+$OpenBSD: patch-test_issue1408-inherit-linker-files_dub_sdl,v 1.1.1.1 2021/10/19 13:35:27 bcallah Exp $
+
+Make sure the tested dub executable can be found.
+
+Index: test/issue1408-inherit-linker-files/dub.sdl
+--- test/issue1408-inherit-linker-files/dub.sdl.orig
++++ test/issue1408-inherit-linker-files/dub.sdl
+@@ -10,5 +10,5 @@ subPackage {
+ 	sourceFiles "dep.d"
+ 	sourceFiles "lib/liblib.a" platform="posix"
+ 	sourceFiles "lib/lib.lib" platform="windows"
+-	preBuildCommands "dub build --root=\"$PACKAGE_DIR/lib\""
++	preBuildCommands "../../bin/dub build --cache=local --root=\"$PACKAGE_DIR/lib\""
+ }
