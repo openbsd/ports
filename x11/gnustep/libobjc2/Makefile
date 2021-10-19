@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2020/04/13 21:43:55 jca Exp $
+# $OpenBSD: Makefile,v 1.27 2021/10/19 19:43:37 sebastia Exp $
 
 BROKEN-hppa =	missing asm impl in block_trampolines.S
 BROKEN-mips64 =	binutils < 2.18 lack support for symbolic register naming
@@ -13,7 +13,7 @@ GH_PROJECT =	libobjc2
 GH_TAGNAME =	v${VERSION}
 DISTNAME =	libobjc2-${VERSION:S/_//}
 PKGNAME =	gnustep-${DISTNAME}
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS +=	objc2	1.1
 SHARED_LIBS +=  objcxx	0.0

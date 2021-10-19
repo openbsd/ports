@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2021/02/25 21:38:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2021/10/19 19:43:38 sebastia Exp $
 
 COMMENT=	terminal emulator for GNUstep
 
 DISTNAME=	Terminal-0.9.9
 PKGNAME=	gnustep-${DISTNAME:L}
-REVISION=	5
+REVISION=	6
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://gap.nongnu.org/terminal

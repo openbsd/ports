@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2020/08/16 20:35:18 sebastia Exp $
+# $OpenBSD: Makefile,v 1.23 2021/10/19 19:43:36 sebastia Exp $
 
 COMMENT =	GNUstep client for salesforce.com
 
 DISTNAME =	DataBasin-1.0
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE =	http://gap.nongnu.org/databasin/
 MASTER_SITES =	${MASTER_SITE_SAVANNAH:=gap/}

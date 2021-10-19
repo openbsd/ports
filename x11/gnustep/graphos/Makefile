@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2020/08/16 20:35:19 sebastia Exp $
+# $OpenBSD: Makefile,v 1.22 2021/10/19 19:43:37 sebastia Exp $
 
 COMMENT =	vector drawing application
 
 DISTNAME =	Graphos-0.7
-REVISION =	3
+REVISION =	4
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://gap.nongnu.org/graphos/

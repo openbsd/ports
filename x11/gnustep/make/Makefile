@@ -1,21 +1,23 @@
-# $OpenBSD: Makefile,v 1.58 2021/06/14 21:06:55 sebastia Exp $
+# $OpenBSD: Makefile,v 1.59 2021/10/19 19:43:37 sebastia Exp $
 
 # WARNING: this port does NOT use the x11/gnustep MODULE
 
 COMMENT=	GNUstep makefile package
 
 DISTNAME =	gnustep-make-2.9.0
+REVISION=	0
 CATEGORIES=	devel x11/gnustep
 
 HOMEPAGE=	http://www.gnustep.org/
 
 MASTER_SITES=	http://ftp.gnustep.org/pub/gnustep/core/
 
+WANTLIB=	${COMPILER_LIBCXX}
+
 BUILD_DEPENDS =	x11/gnustep/libobjc2
 RUN_DEPENDS=	archivers/gtar
 
 COMPILER =	base-clang ports-clang
-MODCLANG_ARCHS =	amd64 i386
 
 USE_GMAKE=	Yes
 MAKE_FILE=	GNUmakefile
@@ -33,15 +35,14 @@ CONFIGURE_ARGS=	--with-layout=openbsd \
 		--enable-multi-platform \
 		--with-library-combo="${LIBRARY_COMBO}" \
 		--with-objc-lib-flag=-lobjc2 \
-		--enable-strict-v2-mode \
+		--enable-strict-v2-mode
+
 #		--with-runtime-abi=gnustep-2.0
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
-WANTLIB =	${COMPILER_LIBCXX}
 LIBRARY_COMBO =		"ng-gnu-gnu"
 CONFIGURE_ENV +=	GS_WITH_ARC=1 AS=llvm-as
 .else
-WANTLIB =	${COMPILER_LIBCXX}
 LIBRARY_COMBO =		"gnu-gnu-gnu"
 .endif
 

@@ -1,7 +1,7 @@
-# $OpenBSD: gnustep.port.mk,v 1.35 2020/08/16 20:35:18 sebastia Exp $
+# $OpenBSD: gnustep.port.mk,v 1.36 2021/10/19 19:43:35 sebastia Exp $
 
 # until tested on others
-ONLY_FOR_ARCHS ?=	alpha i386 amd64 macppc
+ONLY_FOR_ARCHS ?=	amd64 i386 powerpc
 
 CATEGORIES +=	x11/gnustep
 
@@ -12,12 +12,8 @@ BUILD_DEPENDS +=		x11/gnustep/make
 MODGNUSTEP_RUN_DEPENDS +=	x11/gnustep/make
 
 COMPILER =		base-clang ports-clang
-MODCLANG_ARCHS =	amd64 i386
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
-# Force using ld.bfd, there's a still unknown problem loading Bundles when
-# ld.lld is used
-USE_LLD =		No
 CONFIGURE_ENV +=	OPTFLAG="${CFLAGS}"
 # Not yet GS_WITH_ARC
 #MAKE_FLAGS +=		GS_WITH_ARC=1
@@ -29,7 +25,7 @@ MAKE_FLAGS +=  		CC="${CC}" CPP="${CC} -E" OPTFLAG="${CFLAGS}"
 MAKE_ENV +=	GNUSTEP_MAKEFILES=`gnustep-config --variable=GNUSTEP_MAKEFILES`
 MAKE_ENV +=	INSTALL_AS_USER=${BINOWN}
 MAKE_ENV +=	INSTALL_AS_GROUP=${BINGRP}
-MAKE_ENV +=     GNUSTEP_CONFIG_FILE=${PORTSDIR}/x11/gnustep/GNUstep.conf
+MAKE_ENV +=	GNUSTEP_CONFIG_FILE=${PORTSDIR}/x11/gnustep/GNUstep.conf
 
 MODGNUSTEP_IS_FRAMEWORK ?=	No
 MODGNUSTEP_NEEDS_C ?=		Yes

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2020/08/16 20:35:20 sebastia Exp $
+# $OpenBSD: Makefile,v 1.14 2021/10/19 19:43:37 sebastia Exp $
 
 COMMENT =	GNUstep theme following NeXT look and feel
 
 V =		0.1
-REVISION =	10
+REVISION =	11
 DISTNAME =	Neos-${V}.theme
 PKGNAME =	gnustep-neos-theme-${V}
 
