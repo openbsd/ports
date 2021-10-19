@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2021/10/19 03:12:11 bket Exp $
+# $OpenBSD: Makefile,v 1.69 2021/10/19 10:49:21 sthen Exp $
 
 COMMENT=	tty-based e-mail client, Mutt with patches
 
@@ -45,6 +45,7 @@ CONFIGURE_ARGS+= --mandir="${PREFIX}/man" \
 
 CONFIGURE_ENV=	autosetup_tclsh="${LOCALBASE}/bin/jimsh" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		CCACHE=none \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 SYSCONFDIR=	${BASESYSCONFDIR}/mutt

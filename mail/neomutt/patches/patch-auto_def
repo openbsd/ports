@@ -1,4 +1,4 @@
-$OpenBSD: patch-auto_def,v 1.14 2021/10/15 11:09:00 sthen Exp $
+$OpenBSD: patch-auto_def,v 1.15 2021/10/19 10:49:21 sthen Exp $
 
 Index: auto.def
 --- auto.def.orig
@@ -19,17 +19,3 @@ Index: auto.def
      if {![get-define USE_SASL]} {
        user-error "Unable to find SASL"
      }
-@@ -1311,13 +1313,6 @@ set bare_rep {
- }
- set str_rep {
-   PACKAGE_VERSION
--}
--
--###############################################################################
--# Use ccache - don't do it earlier than here
--if {[get-define CCACHE] ne {none}} {
--  define CC "[get-define CCACHE] [get-define CC]"
--  define CC_FOR_BUILD "[get-define CCACHE] [get-define CC_FOR_BUILD]"
- }
- 
- ###############################################################################
