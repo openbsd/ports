@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.90 2021/10/10 03:12:02 jsg Exp $
+# $OpenBSD: Makefile,v 1.91 2021/10/19 09:15:33 jsg Exp $
 
 COMMENT=	graphical adventure game interpreter
 V=		2.5.0
+REVISION=	0
 DISTNAME=	scummvm-${V}
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	https://downloads.scummvm.org/frs/scummvm/${V}/
@@ -13,7 +14,7 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += FLAC SDL2 a52 c faad fluidsynth freetype fribidi iconv jpeg
+WANTLIB += FLAC SDL2 a52 c faad fluidsynth freetype fribidi gif iconv jpeg
 WANTLIB += m mad mpeg2 png ogg sndio ${COMPILER_LIBCXX} theoradec vorbis
 WANTLIB += vorbisfile z
 
@@ -31,6 +32,7 @@ LIB_DEPENDS=	audio/fluidsynth \
 		audio/faad>=2.7 \
 		devel/fribidi \
 		devel/sdl2 \
+		graphics/giflib \
 		graphics/libmpeg2 \
 		graphics/png \
 		graphics/jpeg \
