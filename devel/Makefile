@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2132 2021/10/19 03:55:30 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2133 2021/10/19 13:37:08 bcallah Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -133,6 +133,8 @@
      SUBDIR += droplet
      SUBDIR += dtc
      SUBDIR += dtools
+#    SUBDIR += dub
+     SUBDIR += dub,dmd
      SUBDIR += dune
      SUBDIR += dwz
      SUBDIR += dyncall
