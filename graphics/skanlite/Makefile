@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/09/10 12:54:15 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2021/10/19 20:08:35 rsadowski Exp $
 
 COMMENT =	scanning application for KDE
 
@@ -20,7 +20,7 @@ WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5Sane KF5Service KF5Solid KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5Xml c m
+WANTLIB += Qt5Widgets Qt5Xml X11 c m
 
 MODULES =	x11/kde-applications \
 		devel/kf5

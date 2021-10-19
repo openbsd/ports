@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2021/06/19 18:34:47 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.20 2021/10/19 20:08:46 rsadowski Exp $
 @pkgpath x11/yakuake-kde4
 @bin bin/yakuake
 share/applications/org.kde.yakuake.desktop
@@ -55,6 +55,7 @@ share/locale/pt_BR/LC_MESSAGES/yakuake.mo
 share/locale/ro/LC_MESSAGES/yakuake.mo
 share/locale/ru/LC_MESSAGES/yakuake.mo
 share/locale/sk/LC_MESSAGES/yakuake.mo
+share/locale/sl/LC_MESSAGES/yakuake.mo
 share/locale/sr/LC_MESSAGES/yakuake.mo
 share/locale/sv/LC_MESSAGES/yakuake.mo
 share/locale/tr/LC_MESSAGES/yakuake.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/09/10 08:43:49 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.14 2021/10/19 20:08:36 rsadowski Exp $
 @conflict dolphin-plugins-<=4.14.3
 @bin bin/dolphin
 @bin bin/servicemenuinstaller
@@ -156,6 +156,9 @@ share/doc/HTML/pt_BR/dolphin/toolbar-navigation.png
 share/doc/HTML/pt_BR/dolphin/toolbar-view-appearance.png
 share/doc/HTML/pt_BR/dolphin/toolbar.png
 share/doc/HTML/pt_BR/dolphin/viewproperties-dialog.png
+share/doc/HTML/ru/dolphin/
+share/doc/HTML/ru/dolphin/index.cache.bz2
+share/doc/HTML/ru/dolphin/index.docbook
 share/doc/HTML/sr/dolphin/
 share/doc/HTML/sr/dolphin/index.cache.bz2
 share/doc/HTML/sr/dolphin/index.docbook

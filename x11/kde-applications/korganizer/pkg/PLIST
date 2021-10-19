@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/09/10 08:43:56 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/10/19 20:08:42 rsadowski Exp $
 @conflict kdepimlibs-<=4
 @bin bin/korgac
 @bin bin/korganizer
@@ -96,6 +96,9 @@ share/doc/HTML/nl/korganizer/index.docbook
 share/doc/HTML/pt_BR/korganizer/
 share/doc/HTML/pt_BR/korganizer/index.cache.bz2
 share/doc/HTML/pt_BR/korganizer/index.docbook
+share/doc/HTML/ru/korganizer/
+share/doc/HTML/ru/korganizer/index.cache.bz2
+share/doc/HTML/ru/korganizer/index.docbook
 share/doc/HTML/sv/korganizer/
 share/doc/HTML/sv/korganizer/index.cache.bz2
 share/doc/HTML/sv/korganizer/index.docbook

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/09/10 08:43:52 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/10/19 20:08:39 rsadowski Exp $
 @conflict kdepimlibs-<=4
 bin/kmail_antivir.sh
 bin/kmail_clamav.sh
@@ -14,7 +14,7 @@ lib/contacteditor/editorpageplugins/
 @lib lib/libgrammarcommon.so.${LIBgrammarcommon_VERSION}
 @lib lib/libkaddressbookmergelibprivate.so.${LIBkaddressbookmergelibprivate_VERSION}
 lib/libkmailconfirmbeforedeleting.so.5
-lib/libkmailconfirmbeforedeleting.so.5.18.1
+lib/libkmailconfirmbeforedeleting.so.5.18.2
 @lib lib/libkmailgrammalecte.so.${LIBkmailgrammalecte_VERSION}
 @lib lib/libkmaillanguagetool.so.${LIBkmaillanguagetool_VERSION}
 @lib lib/libkmailmarkdown.so.${LIBkmailmarkdown_VERSION}

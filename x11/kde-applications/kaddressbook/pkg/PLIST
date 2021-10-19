@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/09/10 08:43:50 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/10/19 20:08:37 rsadowski Exp $
 @conflict kdepimlibs-<=4
 @pkgpath x11/kde4/akregator
 @bin bin/kaddressbook
@@ -193,6 +193,10 @@ share/doc/HTML/nl/kaddressbook/
 share/doc/HTML/nl/kaddressbook/docbook-reference.docbook
 share/doc/HTML/nl/kaddressbook/index.cache.bz2
 share/doc/HTML/nl/kaddressbook/index.docbook
+share/doc/HTML/ru/kaddressbook/
+share/doc/HTML/ru/kaddressbook/docbook-reference.docbook
+share/doc/HTML/ru/kaddressbook/index.cache.bz2
+share/doc/HTML/ru/kaddressbook/index.docbook
 share/doc/HTML/sv/kaddressbook/
 share/doc/HTML/sv/kaddressbook/docbook-reference.docbook
 share/doc/HTML/sv/kaddressbook/index.cache.bz2

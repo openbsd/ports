@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/09/10 08:43:53 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/10/19 20:08:40 rsadowski Exp $
 @conflict kde-baseapps-*
 @bin bin/khelpcenter
 libexec/khc_mansearch.pl
@@ -332,6 +332,10 @@ share/doc/HTML/ru/fundamentals/visualdict-tree-view.png
 share/doc/HTML/ru/fundamentals/visualdict-window.png
 share/doc/HTML/ru/fundamentals/visualdict-window2.png
 share/doc/HTML/ru/khelpcenter/
+share/doc/HTML/ru/khelpcenter/glossary/
+share/doc/HTML/ru/khelpcenter/glossary/index.cache.bz2
+share/doc/HTML/ru/khelpcenter/glossary/index.docbook
+share/doc/HTML/ru/khelpcenter/glossary/kdeprintingglossary.docbook
 share/doc/HTML/ru/khelpcenter/index.cache.bz2
 share/doc/HTML/ru/khelpcenter/index.docbook
 share/doc/HTML/ru/onlinehelp/

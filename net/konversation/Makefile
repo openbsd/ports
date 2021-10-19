@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2021/05/15 09:56:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.26 2021/10/19 20:08:35 rsadowski Exp $
 
 COMMENT =	IRC client for KDE
 
@@ -17,7 +17,7 @@ WANTLIB += KF5KIOWidgets KF5NewStuff KF5NewStuffCore KF5Notifications
 WANTLIB += KF5NotifyConfig KF5Parts KF5Service KF5Solid KF5SonnetUi
 WANTLIB += KF5TextWidgets KF5Wallet KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5Xml c m phonon4qt5 qca-qt5
+WANTLIB += Qt5Widgets Qt5Xml X11 c m phonon4qt5 qca-qt5
 
 # usual KDE rules:
 # LGPLv2.1+, GPLv2+, GPLv3

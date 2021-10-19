@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/06/19 18:34:45 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/10/19 20:08:44 rsadowski Exp $
 @pkgpath x11/kde4/kmix
 @bin bin/lokalize
 share/applications/org.kde.lokalize.desktop
@@ -30,6 +30,9 @@ share/doc/HTML/et/lokalize/index.docbook
 share/doc/HTML/fr/lokalize/
 share/doc/HTML/fr/lokalize/index.cache.bz2
 share/doc/HTML/fr/lokalize/index.docbook
+share/doc/HTML/hu/lokalize/
+share/doc/HTML/hu/lokalize/index.cache.bz2
+share/doc/HTML/hu/lokalize/index.docbook
 share/doc/HTML/id/
 share/doc/HTML/id/lokalize/
 share/doc/HTML/id/lokalize/index.cache.bz2

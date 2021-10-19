@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/06/19 18:34:37 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/10/19 20:08:40 rsadowski Exp $
 @conflict kpgp-<=4
 @pkgpath x11/kde4/kgpg
 @bin bin/kgpg
@@ -80,6 +80,9 @@ share/doc/HTML/pt_BR/kgpg/keyserver.png
 share/doc/HTML/pt_BR/kgpg/options.png
 share/doc/HTML/pt_BR/kgpg/select-secret-key.png
 share/doc/HTML/pt_BR/kgpg/systray.png
+share/doc/HTML/ru/kgpg/
+share/doc/HTML/ru/kgpg/index.cache.bz2
+share/doc/HTML/ru/kgpg/index.docbook
 share/doc/HTML/sr/kgpg/
 share/doc/HTML/sr/kgpg/index.cache.bz2
 share/doc/HTML/sr/kgpg/index.docbook
