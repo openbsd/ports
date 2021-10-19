@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2021/10/08 09:39:22 tb Exp $
+# $OpenBSD: Makefile,v 1.19 2021/10/19 06:26:04 tb Exp $
 
 BROKEN-macppc =	make: don't know how to make all
 
 COMMENT =	object-relational SQL database
 DISTNAME =	virtuoso-opensource-6.1.6
-REVISION =	9
+REVISION =	10
 PKGNAME =	${DISTNAME:C/-opensource//}
 
 CATEGORIES =	databases

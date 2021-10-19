@@ -1,18 +1,94 @@
-$OpenBSD: patch-libsrc_Wi_bif_crypto_c,v 1.1 2021/10/08 09:39:22 tb Exp $
+$OpenBSD: patch-libsrc_Wi_bif_crypto_c,v 1.2 2021/10/19 06:26:04 tb Exp $
 
 Index: libsrc/Wi/bif_crypto.c
 --- libsrc/Wi/bif_crypto.c.orig
 +++ libsrc/Wi/bif_crypto.c
-@@ -1419,7 +1419,7 @@ bif_get_certificate_info (caddr_t * qst, caddr_t * err
+@@ -824,6 +824,7 @@ bif_smime_sign (caddr_t * qst, caddr_t * err_ret, stat
+   X509 *signer_cert = NULL;
+   EVP_PKEY *signer_key = NULL;
+   STACK_OF (X509) * certs = NULL;
++  STACK_OF (X509_OBJECT) * objs = NULL;
+   int inx;
+   char err_buf[512];
+   char *ptr = NULL;
+@@ -854,13 +855,15 @@ bif_smime_sign (caddr_t * qst, caddr_t * err_ret, stat
+     }
+ 
+   certs = sk_X509_new_null ();
+-  if (store && store->objs)
++  if (store)
++    objs = X509_STORE_get0_objects(store);
++  if (objs)
+     {
+-      for (inx = 0; inx < sk_X509_OBJECT_num (store->objs); inx++)
++      for (inx = 0; inx < sk_X509_OBJECT_num (objs); inx++)
+ 	{
+-	  X509_OBJECT *obj = sk_X509_OBJECT_value (store->objs, inx);
+-	  if (obj->type == X509_LU_X509)
+-	    sk_X509_push (certs, X509_dup (obj->data.x509));
++	  X509_OBJECT *obj = sk_X509_OBJECT_value (objs, inx);
++	  if (X509_OBJECT_get_type(obj) == X509_LU_X509)
++	    sk_X509_push (certs, X509_dup (X509_OBJECT_get0_X509(obj)));
+ 	}
+ 
+     }
+@@ -919,6 +922,7 @@ bif_smime_encrypt (caddr_t * qst, caddr_t * err_ret, s
+   PKCS7 *p7 = NULL;
+   X509_STORE *store = NULL;
+   STACK_OF (X509) * certs = NULL;
++  STACK_OF (X509_OBJECT) * objs = NULL;
+   int inx;
+   char err_buf[512];
+   char *ptr = NULL;
+@@ -935,13 +939,15 @@ bif_smime_encrypt (caddr_t * qst, caddr_t * err_ret, s
+     sqlr_new_error ("42000", "CR006", "No recipient certificates");
+ 
+   certs = sk_X509_new_null ();
+-  if (store && store->objs)
++  if (store)
++    objs = X509_STORE_get0_objects(store);
++  if (objs)
+     {
+-      for (inx = 0; inx < sk_X509_OBJECT_num (store->objs); inx++)
++      for (inx = 0; inx < sk_X509_OBJECT_num (objs); inx++)
+ 	{
+-	  X509_OBJECT *obj = sk_X509_OBJECT_value (store->objs, inx);
+-	  if (obj->type == X509_LU_X509)
+-	    sk_X509_push (certs, X509_dup (obj->data.x509));
++	  X509_OBJECT *obj = sk_X509_OBJECT_value (objs, inx);
++	  if (X509_OBJECT_get_type(obj) == X509_LU_X509)
++	    sk_X509_push (certs, X509_dup (X509_OBJECT_get0_X509(obj)));
+ 	}
+     }
+   if (store)
+@@ -1111,7 +1117,7 @@ x509_certificate_verify_cb (int ok, X509_STORE_CTX * c
+   char *opts = (char *) X509_STORE_CTX_get_app_data (ctx);
+   if (!ok && opts)
+     {
+-      switch (ctx->error)
++      switch (X509_STORE_CTX_get_error(ctx))
+ 	{
+ 	case X509_V_ERR_CERT_HAS_EXPIRED:
+ 	  if (strstr (opts, "expired"))
+@@ -1208,7 +1214,7 @@ bif_x509_certificate_verify (caddr_t * qst, caddr_t * 
+   if (!i)
+     {
+       const char *err_str;
+-      err_str = X509_verify_cert_error_string (csc->error);
++      err_str = X509_verify_cert_error_string (X509_STORE_CTX_get_error(csc));
+       *err_ret = srv_make_new_error ("22023", "CR015", "X509 error: %s", err_str);
+     }
+ 
+@@ -1419,7 +1425,7 @@ bif_get_certificate_info (caddr_t * qst, caddr_t * err
  	int i;
  	char tmp[1024];
  	char *ext_oid = (char *) (BOX_ELEMENTS (args) > 4 ? bif_string_arg (qst, args, 4, "get_certificate_info") : VIRT_CERT_EXT);
 -	STACK_OF (X509_EXTENSION) * exts = cert->cert_info->extensions;
-+	STACK_OF (X509_EXTENSION) * exts = X509_get0_extensions(cert);
++	const STACK_OF (X509_EXTENSION) * exts = X509_get0_extensions(cert);
  	for (i = 0; i < sk_X509_EXTENSION_num (exts); i++)
  	  {
  	    X509_EXTENSION *ex = sk_X509_EXTENSION_value (exts, i);
-@@ -1431,7 +1431,7 @@ bif_get_certificate_info (caddr_t * qst, caddr_t * err
+@@ -1431,7 +1437,7 @@ bif_get_certificate_info (caddr_t * qst, caddr_t * err
  		char *data_ptr;
  		BIO *mem = BIO_new (BIO_s_mem ());
  		if (!X509V3_EXT_print (mem, ex, 0, 0))
@@ -21,7 +97,7 @@ Index: libsrc/Wi/bif_crypto.c
  		len = BIO_get_mem_data (mem, &data_ptr);
  		if (len > 0 && data_ptr)
  		  {
-@@ -1488,13 +1488,13 @@ bif_get_certificate_info (caddr_t * qst, caddr_t * err
+@@ -1488,13 +1494,13 @@ bif_get_certificate_info (caddr_t * qst, caddr_t * err
  	int n, i, len;
  	char *s, *data_ptr;
  	BIO *mem = BIO_new (BIO_s_mem ());
@@ -39,7 +115,7 @@ Index: libsrc/Wi/bif_crypto.c
  		s = buffer;
  	      }
  	    if (!strcmp (s, attr))
-@@ -1505,7 +1505,7 @@ bif_get_certificate_info (caddr_t * qst, caddr_t * err
+@@ -1505,7 +1511,7 @@ bif_get_certificate_info (caddr_t * qst, caddr_t * err
  	  }
  	if (ne_ret)
  	  {
@@ -48,7 +124,7 @@ Index: libsrc/Wi/bif_crypto.c
  	    len = BIO_get_mem_data (mem, &data_ptr);
  	    if (len > 0 && data_ptr)
  	      {
-@@ -1526,17 +1526,17 @@ bif_get_certificate_info (caddr_t * qst, caddr_t * err
+@@ -1526,17 +1532,17 @@ bif_get_certificate_info (caddr_t * qst, caddr_t * err
  	dk_set_t set = NULL; 
  	caddr_t val;
  	BIO *mem = BIO_new (BIO_s_mem ());
