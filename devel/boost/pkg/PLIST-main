@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2021/09/19 05:23:29 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2021/10/19 16:02:41 sthen Exp $
 @pkgpath devel/boost
+@conflict boost-md-<1.76.0v0
 @conflict leatherman-<1.12.4p0
 include/boost/
 include/boost/accumulators/
@@ -16111,6 +16112,18 @@ include/boost/yap/yap.hpp
 @lib lib/libboost_serialization-mt.so.${LIBboost_serialization-mt_VERSION}
 @static-lib lib/libboost_serialization.a
 @lib lib/libboost_serialization.so.${LIBboost_serialization_VERSION}
+@static-lib lib/libboost_stacktrace_addr2line-mt.a
+@lib lib/libboost_stacktrace_addr2line-mt.so.${LIBboost_stacktrace_addr2line-mt_VERSION}
+@static-lib lib/libboost_stacktrace_addr2line.a
+@lib lib/libboost_stacktrace_addr2line.so.${LIBboost_stacktrace_addr2line_VERSION}
+@static-lib lib/libboost_stacktrace_basic-mt.a
+@lib lib/libboost_stacktrace_basic-mt.so.${LIBboost_stacktrace_basic-mt_VERSION}
+@static-lib lib/libboost_stacktrace_basic.a
+@lib lib/libboost_stacktrace_basic.so.${LIBboost_stacktrace_basic_VERSION}
+@static-lib lib/libboost_stacktrace_noop-mt.a
+@lib lib/libboost_stacktrace_noop-mt.so.${LIBboost_stacktrace_noop-mt_VERSION}
+@static-lib lib/libboost_stacktrace_noop.a
+@lib lib/libboost_stacktrace_noop.so.${LIBboost_stacktrace_noop_VERSION}
 @static-lib lib/libboost_system-mt.a
 @lib lib/libboost_system-mt.so.${LIBboost_system-mt_VERSION}
 @static-lib lib/libboost_system.a

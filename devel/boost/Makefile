@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2021/09/19 05:23:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.118 2021/10/19 16:02:41 sthen Exp $
 
 ONLY_FOR_ARCHS-md = aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64 riscv64
 
@@ -10,6 +10,8 @@ EPOCH =		0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME-main=	boost-${VERSION}
 PKGNAME-md=	boost-md-${VERSION}
+REVISION-main=	0
+REVISION-md=	0
 CATEGORIES=	devel
 MASTER_SITES=	https://boostorg.jfrog.io/artifactory/main/release/${VERSION}/source/
 EXTRACT_SUFX=	.tar.bz2
@@ -42,6 +44,9 @@ BOOST_LIBS=	boost_atomic-mt \
 		boost_random-mt boost_random \
 		boost_regex-mt boost_regex \
 		boost_serialization-mt boost_serialization \
+		boost_stacktrace_addr2line-mt boost_stacktrace_addr2line \
+		boost_stacktrace_basic-mt boost_stacktrace_basic \
+		boost_stacktrace_noop-mt boost_stacktrace_noop \
 		boost_system-mt boost_system \
 		boost_thread-mt \
 		boost_timer-mt boost_timer \
@@ -52,14 +57,8 @@ BOOST_LIBS=	boost_atomic-mt \
 
 # MD
 BOOST_LIBS+=	boost_context-mt \
-		boost_coroutine boost_coroutine-mt \
-		boost_fiber-mt \
-		boost_stacktrace_addr2line \
-		boost_stacktrace_addr2line-mt \
-		boost_stacktrace_basic \
-		boost_stacktrace_basic-mt \
-		boost_stacktrace_noop \
-		boost_stacktrace_noop-mt
+		boost_coroutine-mt boost_coroutine \
+		boost_fiber-mt
 
 .for _lib in ${BOOST_LIBS}
 SHARED_LIBS+=	${_lib} ${SO_VERSION}
@@ -119,7 +118,7 @@ BOOTSTRAP=	--with-bjam=${WRKSRC}/bjam \
 		--with-toolset=${TOOLSET} \
 		--with-python=${MODPY_BIN}
 .if !${BUILD_PACKAGES:M-md}
-BOOTSTRAP+=	--without-libraries=context,coroutine,fiber,stacktrace
+BOOTSTRAP+=	--without-libraries=context,coroutine,fiber
 .endif
 
 # python.port.mk makes assumptions about an empty CONFIGURE_STYLE
