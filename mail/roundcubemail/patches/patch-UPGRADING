@@ -1,9 +1,9 @@
-$OpenBSD: patch-UPGRADING,v 1.13 2020/01/03 11:29:59 sthen Exp $
+$OpenBSD: patch-UPGRADING,v 1.14 2021/10/19 07:55:12 sthen Exp $
  
 Index: UPGRADING
 --- UPGRADING.orig
 +++ UPGRADING
-@@ -45,14 +45,13 @@ it on a unix system, you need to do the following oper
+@@ -48,14 +48,13 @@ it on a unix system, you need to do the following oper
     ./vendor/
  4. Update dependencies:
  4a. If you previously installed plugins through composer, update dependencies

@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.161 2021/08/01 21:06:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.162 2021/10/19 07:55:12 sthen Exp $
 
 COMMENT=	imap4 webmail client
 
-V=		1.4.11
+V=		1.5.0
 DISTNAME=	roundcubemail-$V
-PKGNAME=	roundcubemail-${V:S/-rc/rc/}
-REVISION=	0
+PKGNAME=	roundcubemail-${V:S/-//}
 EXTRACT_SUFX=	-complete.tar.gz
 
 FIX_EXTRACT_PERMISSIONS= Yes
 
 CATEGORIES=	mail www
 
-HOMEPAGE=	http://www.roundcube.net/
+HOMEPAGE=	https://roundcube.net/
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
@@ -31,6 +30,7 @@ TINSTDIR=	${TRUEPREFIX}/roundcubemail
 SUBST_VARS=	INSTDIR TINSTDIR MODPHP_BIN
 
 MODULES=	lang/php
+MODPHP_VERSION=	8.0
 
 RUN_DEPENDS=	${MODPHP_PDO_DEPENDS} \
 		lang/php/${MODPHP_VERSION},-pspell \
@@ -39,8 +39,7 @@ RUN_DEPENDS=	${MODPHP_PDO_DEPENDS} \
 do-configure:
 	cd ${WRKSRC}; ${SUBST_CMD} bin/update.sh bin/installto.sh; \
 	 sed -i 's,^#! */usr/bin/env php,#!${MODPHP_BIN},' \
-	    bin/* vendor/pear/crypt_gpg/scripts/crypt-gpg-pinentry \
-	    vendor/roundcube/plugin-installer/src/bin/rcubeinitdb.sh
+	    bin/* vendor/pear/crypt_gpg/scripts/crypt-gpg-pinentry
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}

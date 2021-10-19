@@ -1,8 +1,9 @@
-$OpenBSD: patch-config_config_inc_php_sample,v 1.5 2019/11/22 12:38:28 sthen Exp $
+$OpenBSD: patch-config_config_inc_php_sample,v 1.6 2021/10/19 07:55:12 sthen Exp $
 
---- config/config.inc.php.sample.orig	Wed Apr 26 19:52:25 2017
-+++ config/config.inc.php.sample	Wed Apr 26 22:18:17 2017
-@@ -25,7 +25,8 @@ $config = array();
+Index: config/config.inc.php.sample
+--- config/config.inc.php.sample.orig
++++ config/config.inc.php.sample
+@@ -25,7 +25,8 @@ $config = [];
  // For examples see http://pear.php.net/manual/en/package.database.mdb2.intro-dsn.php
  // NOTE: for SQLite use absolute path (Linux): 'sqlite:////full/path/to/sqlite.db?mode=0646'
  //       or (Windows): 'sqlite:///C:/full/path/to/sqlite.db'
