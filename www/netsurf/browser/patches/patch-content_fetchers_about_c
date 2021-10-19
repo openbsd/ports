@@ -1,0 +1,14 @@
+$OpenBSD: patch-content_fetchers_about_c,v 1.1 2021/10/19 19:42:22 tb Exp $
+
+Index: content/fetchers/about.c
+--- content/fetchers/about.c.orig
++++ content/fetchers/about.c
+@@ -541,7 +541,7 @@ static nserror free_ns_cert_info(struct ns_cert_info *
+ #if (defined(LIBRESSL_VERSION_NUMBER) || (OPENSSL_VERSION_NUMBER < 0x1010000fL))
+ /* 1.0.x */
+ 
+-#if (defined(LIBRESSL_VERSION_NUMBER) || (OPENSSL_VERSION_NUMBER < 0x1000200fL))
++#if (OPENSSL_VERSION_NUMBER < 0x1000200fL)
+ /* pre 1.0.2 */
+ static int ns_X509_get_signature_nid(X509 *cert)
+ {

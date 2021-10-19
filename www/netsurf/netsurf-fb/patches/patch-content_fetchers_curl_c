@@ -1,0 +1,14 @@
+$OpenBSD: patch-content_fetchers_curl_c,v 1.1 2021/10/19 19:42:22 tb Exp $
+
+Index: content/fetchers/curl.c
+--- content/fetchers/curl.c.orig
++++ content/fetchers/curl.c
+@@ -149,7 +149,7 @@ static bool inside_curl = false;
+ /* OpenSSL 1.0.x to 1.1.0 certificate reference counting changed
+  * LibreSSL declares its OpenSSL version as 2.1 but only supports the old way
+  */
+-#if (defined(LIBRESSL_VERSION_NUMBER) || (OPENSSL_VERSION_NUMBER < 0x1010000fL))
++#if (OPENSSL_VERSION_NUMBER < 0x1010000fL)
+ static int ns_X509_up_ref(X509 *cert)
+ {
+ 	cert->references++;
