@@ -1,7 +1,0 @@
-Please note that some users will need to set the following environment
-variable to fix erratic mouse behaviour on their system:
-	export SDL_VIDEO_X11_DGAMOUSE=0
-
-Users of ati video chipset will need to add the following line in
-~/.teeworlds/settings.cfg:
-	gfx_noclip 1

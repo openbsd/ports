@@ -1,0 +1,86 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2021/10/19 07:22:09 sdk Exp $
+
+- fstack-clash-protection is unused
+- don't execute git
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -155,7 +155,7 @@ if(NOT MSVC)
+   add_c_compiler_flag_if_supported(OUR_FLAGS -fstack-protector-strong)
+ 
+   # Protect the stack from clashing.
+-  add_c_compiler_flag_if_supported(OUR_FLAGS -fstack-clash-protection)
++  # add_c_compiler_flag_if_supported(OUR_FLAGS -fstack-clash-protection)
+ 
+   # Control-flow protection. Should protect against ROP.
+   add_c_compiler_flag_if_supported(OUR_FLAGS -fcf-protection)
+@@ -1222,29 +1222,29 @@ function(generate_source output_file script_parameter)
+ endfunction()
+ 
+ file(MAKE_DIRECTORY "${PROJECT_BINARY_DIR}/src/generated/")
+-if(GIT_FOUND)
+-  execute_process(COMMAND ${GIT_EXECUTABLE} rev-parse --git-dir
+-    ERROR_QUIET
+-    OUTPUT_VARIABLE PROJECT_GIT_DIR
+-    OUTPUT_STRIP_TRAILING_WHITESPACE
+-    RESULT_VARIABLE PROJECT_GIT_DIR_ERROR
+-  )
+-  if(NOT PROJECT_GIT_DIR_ERROR)
+-    set(GIT_REVISION_EXTRA_DEPS
+-      ${PROJECT_GIT_DIR}/index
+-      ${PROJECT_GIT_DIR}/logs/HEAD
+-    )
+-  endif()
+-endif()
+-add_custom_command(OUTPUT ${PROJECT_BINARY_DIR}/src/generated/git_revision.cpp
+-  COMMAND ${PYTHON_EXECUTABLE}
+-    scripts/git_revision.py
+-    > ${PROJECT_BINARY_DIR}/src/generated/git_revision.cpp
+-  WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
+-  DEPENDS
+-    ${GIT_REVISION_EXTRA_DEPS}
+-    scripts/git_revision.py
+-)
++#if(GIT_FOUND)
++#  execute_process(COMMAND ${GIT_EXECUTABLE} rev-parse --git-dir
++#    ERROR_QUIET
++#    OUTPUT_VARIABLE PROJECT_GIT_DIR
++#    OUTPUT_STRIP_TRAILING_WHITESPACE
++#    RESULT_VARIABLE PROJECT_GIT_DIR_ERROR
++#  )
++#  if(NOT PROJECT_GIT_DIR_ERROR)
++#    set(GIT_REVISION_EXTRA_DEPS
++#      ${PROJECT_GIT_DIR}/index
++#      ${PROJECT_GIT_DIR}/logs/HEAD
++#    )
++#  endif()
++#endif()
++#add_custom_command(OUTPUT ${PROJECT_BINARY_DIR}/src/generated/git_revision.cpp
++#  COMMAND ${PYTHON_EXECUTABLE}
++#    scripts/git_revision.py
++#    > ${PROJECT_BINARY_DIR}/src/generated/git_revision.cpp
++#  WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
++#  DEPENDS
++#    ${GIT_REVISION_EXTRA_DEPS}
++#    scripts/git_revision.py
++#)
+ chash("src/generated/nethash.cpp"
+   "src/engine/shared/protocol.h"
+   "src/game/tuning.h"
+@@ -1375,7 +1375,6 @@ set_src(GAME_SHARED GLOB src/game
+   voting.h
+ )
+ set(GAME_GENERATED_SHARED
+-  src/generated/git_revision.cpp
+   src/generated/nethash.cpp
+   src/generated/protocol.h
+ )
+@@ -1724,7 +1723,6 @@ if(GTEST_FOUND OR DOWNLOAD_GTEST)
+   set_src(TESTS GLOB src/test
+     datafile.cpp
+     fs.cpp
+-    git_revision.cpp
+     hash.cpp
+     jsonwriter.cpp
+     storage.cpp

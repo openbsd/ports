@@ -1,15 +1,16 @@
-$OpenBSD: patch-src_base_detect_h,v 1.1 2015/12/27 17:56:22 jasper Exp $
+$OpenBSD: patch-src_base_detect_h,v 1.2 2021/10/19 07:22:09 sdk Exp $
 
 Fix endianness detection.
 
---- src/base/detect.h.orig	Wed Nov 19 23:08:22 2014
-+++ src/base/detect.h	Sat Aug 22 16:44:40 2015
-@@ -78,15 +78,15 @@
+Index: src/base/detect.h
+--- src/base/detect.h.orig
++++ src/base/detect.h
+@@ -85,15 +85,15 @@
  
  /* use gcc endianness definitions when available */
  #if defined(__GNUC__) && !defined(__APPLE__) && !defined(__MINGW32__) && !defined(__sun)
--	#if defined(__FreeBSD__) || defined(__OpenBSD__)
-+	#if defined(__FreeBSD__)
+-	#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
++	#if defined(__FreeBSD__) || defined(__NetBSD__)
  		#include <sys/endian.h>
  	#else
  		#include <endian.h>
