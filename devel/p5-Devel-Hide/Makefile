@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2021/04/29 18:27:56 cwen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/10/20 05:54:15 benoit Exp $
 
 COMMENT =		forces the unavailability of specified Perl modules
 
-DISTNAME =		Devel-Hide-0.0014
+DISTNAME =		Devel-Hide-0.0015
 CATEGORIES =		devel
 
 MODULES =		cpan
