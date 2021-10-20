@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.161 2021/10/20 20:45:58 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.162 2021/10/20 21:55:59 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -132,12 +132,14 @@ MULTI_PACKAGES=		${SAPI} ${PHP_EXTENSIONS}
 # larger dependencies;
 PSEUDO_FLAVORS=		${PHP_EXTENSIONS:C/-(pdo_)?mysqli?//:C/-(pcntl|shmop|zip)//:C/-/no_/g}
 
-PSEUDO_FLAVORS+=	no_apache no_embed
-FLAVOR ?=		no_apache
+# cannot build both apache and embed SAPIs in a single build.
+# FLAVOR=no_apache builds embed.
+PSEUDO_FLAVORS+=	no_apache
+FLAVOR ?=
 
 .include <bsd.port.arch.mk>
-.if ${BUILD_PACKAGES:M-apache} && ${BUILD_PACKAGES:M-embed}
-ERRORS += "Fatal: cannot build both apache and embed SAPIs in a single build. Select FLAVOR=no_apache or FLAVOR=no_embed."
+.if ${BUILD_PACKAGES:M-apache}
+BUILD_PACKAGES := ${BUILD_PACKAGES:N-embed}
 .endif
 
 CONFIGURE_ARGS+=	--enable-cli \
