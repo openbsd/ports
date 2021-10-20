@@ -1,9 +1,18 @@
-$OpenBSD: patch-printing_printing_features_cc,v 1.6 2021/09/01 16:54:40 robert Exp $
+$OpenBSD: patch-printing_printing_features_cc,v 1.7 2021/10/20 10:27:47 robert Exp $
 
 Index: printing/printing_features.cc
 --- printing/printing_features.cc.orig
 +++ printing/printing_features.cc
-@@ -44,7 +44,7 @@ bool ShouldPrintUsingXps(bool source_is_pdf) {
+@@ -7,7 +7,7 @@
+ #include "build/chromeos_buildflags.h"
+ 
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+ #include "base/metrics/field_trial_params.h"
+ #endif
+ 
+@@ -54,7 +54,7 @@ bool ShouldPrintUsingXps(bool source_is_pdf) {
  #endif  // defined(OS_WIN)
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \

@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_renderer_render_process_impl_cc,v 1.20 2021/10/03 21:26:52 robert Exp $
+$OpenBSD: patch-content_renderer_render_process_impl_cc,v 1.21 2021/10/20 10:27:47 robert Exp $
 
 Index: content/renderer/render_process_impl.cc
 --- content/renderer/render_process_impl.cc.orig
@@ -21,7 +21,7 @@ Index: content/renderer/render_process_impl.cc
    SetV8FlagIfFeature(features::kWebAssemblyCodeProtectionPku,
                       "--wasm-memory-protection-keys");
    SetV8FlagIfNotFeature(features::kWebAssemblyCodeProtectionPku,
-@@ -228,7 +228,7 @@ RenderProcessImpl::RenderProcessImpl()
+@@ -230,7 +230,7 @@ RenderProcessImpl::RenderProcessImpl()
    SetV8FlagIfFeature(features::kWebAssemblyTiering, "--wasm-tier-up");
    SetV8FlagIfNotFeature(features::kWebAssemblyTiering, "--no-wasm-tier-up");
  

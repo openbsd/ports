@@ -1,9 +1,9 @@
-$OpenBSD: patch-build_config_compiler_compiler_gni,v 1.25 2021/09/01 16:54:38 robert Exp $
+$OpenBSD: patch-build_config_compiler_compiler_gni,v 1.26 2021/10/20 10:27:44 robert Exp $
 
 Index: build/config/compiler/compiler.gni
 --- build/config/compiler/compiler.gni.orig
 +++ build/config/compiler/compiler.gni
-@@ -67,11 +67,7 @@ declare_args() {
+@@ -71,11 +71,7 @@ declare_args() {
    # Use it by default on official-optimized android and Chrome OS builds, but
    # not ARC or linux-chromeos since it's been seen to not play nicely with
    # Chrome's clang. crbug.com/1033839

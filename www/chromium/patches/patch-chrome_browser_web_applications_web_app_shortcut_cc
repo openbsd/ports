@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_web_applications_components_web_app_shortcut_cc,v 1.6 2021/09/01 16:54:39 robert Exp $
+$OpenBSD: patch-chrome_browser_web_applications_web_app_shortcut_cc,v 1.1 2021/10/20 10:27:46 robert Exp $
 
-Index: chrome/browser/web_applications/components/web_app_shortcut.cc
---- chrome/browser/web_applications/components/web_app_shortcut.cc.orig
-+++ chrome/browser/web_applications/components/web_app_shortcut.cc
+Index: chrome/browser/web_applications/web_app_shortcut.cc
+--- chrome/browser/web_applications/web_app_shortcut.cc.orig
++++ chrome/browser/web_applications/web_app_shortcut.cc
 @@ -34,7 +34,7 @@ namespace {
  
  #if defined(OS_MAC)

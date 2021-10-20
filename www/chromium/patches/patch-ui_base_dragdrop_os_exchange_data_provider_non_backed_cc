@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_base_dragdrop_os_exchange_data_provider_non_backed_cc,v 1.6 2021/09/01 16:54:40 robert Exp $
+$OpenBSD: patch-ui_base_dragdrop_os_exchange_data_provider_non_backed_cc,v 1.7 2021/10/20 10:27:48 robert Exp $
 
 Index: ui/base/dragdrop/os_exchange_data_provider_non_backed.cc
 --- ui/base/dragdrop/os_exchange_data_provider_non_backed.cc.orig
 +++ ui/base/dragdrop/os_exchange_data_provider_non_backed.cc
-@@ -103,7 +103,7 @@ void OSExchangeDataProviderNonBacked::SetPickledData(
+@@ -85,7 +85,7 @@ void OSExchangeDataProviderNonBacked::SetPickledData(
  }
  
  bool OSExchangeDataProviderNonBacked::GetString(std::u16string* data) const {

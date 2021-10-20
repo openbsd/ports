@@ -1,9 +1,9 @@
-$OpenBSD: patch-printing_sandbox_print_backend_sandbox_hook_linux_cc,v 1.2 2021/09/01 16:54:40 robert Exp $
+$OpenBSD: patch-printing_sandbox_print_backend_sandbox_hook_linux_cc,v 1.3 2021/10/20 10:27:48 robert Exp $
 
 Index: printing/sandbox/print_backend_sandbox_hook_linux.cc
 --- printing/sandbox/print_backend_sandbox_hook_linux.cc.orig
 +++ printing/sandbox/print_backend_sandbox_hook_linux.cc
-@@ -9,16 +9,23 @@
+@@ -9,20 +9,27 @@
  #include "base/files/file_path.h"
  #include "base/files/file_util.h"
  #include "base/path_service.h"
@@ -16,6 +16,10 @@ Index: printing/sandbox/print_backend_sandbox_hook_linux.cc
 +#include "sandbox/policy/openbsd/sandbox_openbsd.h"
 +#endif
  
+ #if defined(OS_CHROMEOS) && defined(USE_CUPS)
+ #include "printing/backend/cups_connection_pool.h"
+ #endif
+ 
 +#if !defined(OS_BSD)
  using sandbox::syscall_broker::BrokerFilePermission;
  using sandbox::syscall_broker::MakeBrokerCommandSet;
@@ -27,7 +31,7 @@ Index: printing/sandbox/print_backend_sandbox_hook_linux.cc
  namespace {
  
  sandbox::syscall_broker::BrokerCommandSet GetPrintBackendBrokerCommandSet() {
-@@ -73,9 +80,11 @@ std::vector<BrokerFilePermission> GetPrintBackendFileP
+@@ -83,9 +90,11 @@ std::vector<BrokerFilePermission> GetPrintBackendFileP
  }
  
  }  // namespace
@@ -36,10 +40,10 @@ Index: printing/sandbox/print_backend_sandbox_hook_linux.cc
  bool PrintBackendPreSandboxHook(
      sandbox::policy::SandboxLinux::Options options) {
 +#if !defined(OS_BSD)
-   auto* instance = sandbox::policy::SandboxLinux::GetInstance();
- 
-   instance->StartBrokerProcess(
-@@ -83,6 +92,7 @@ bool PrintBackendPreSandboxHook(
+ #if defined(OS_CHROMEOS) && defined(USE_CUPS)
+   // Create the socket connections to the CUPS server before engaging the
+   // sandbox, since new connections cannot be made after that.
+@@ -99,6 +108,7 @@ bool PrintBackendPreSandboxHook(
        sandbox::policy::SandboxLinux::PreSandboxHook(), options);
  
    instance->EngageNamespaceSandboxIfPossible();

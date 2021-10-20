@@ -1,9 +1,9 @@
-$OpenBSD: patch-gpu_command_buffer_service_shared_image_factory_cc,v 1.5 2021/10/03 21:26:52 robert Exp $
+$OpenBSD: patch-gpu_command_buffer_service_shared_image_factory_cc,v 1.6 2021/10/20 10:27:47 robert Exp $
 
 Index: gpu/command_buffer/service/shared_image_factory.cc
 --- gpu/command_buffer/service/shared_image_factory.cc.orig
 +++ gpu/command_buffer/service/shared_image_factory.cc
-@@ -29,12 +29,12 @@
+@@ -31,12 +31,12 @@
  #include "ui/gl/gl_implementation.h"
  #include "ui/gl/trace_util.h"
  
@@ -18,7 +18,7 @@ Index: gpu/command_buffer/service/shared_image_factory.cc
      BUILDFLAG(ENABLE_VULKAN)
  #include "gpu/command_buffer/service/external_vk_image_factory.h"
  #elif defined(OS_ANDROID) && BUILDFLAG(ENABLE_VULKAN)
-@@ -68,7 +68,7 @@
+@@ -70,7 +70,7 @@
  
  namespace gpu {
  
@@ -27,7 +27,7 @@ Index: gpu/command_buffer/service/shared_image_factory.cc
      !BUILDFLAG(IS_CHROMEOS_LACROS) && !BUILDFLAG(IS_CHROMECAST) && \
      BUILDFLAG(ENABLE_VULKAN)
  
-@@ -162,7 +162,7 @@ SharedImageFactory::SharedImageFactory(
+@@ -168,7 +168,7 @@ SharedImageFactory::SharedImageFactory(
    // |gr_context_type|.
    if (gr_context_type_ == GrContextType::kVulkan) {
  #if BUILDFLAG(ENABLE_VULKAN)

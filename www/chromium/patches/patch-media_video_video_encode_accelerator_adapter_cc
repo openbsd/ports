@@ -1,9 +1,9 @@
-$OpenBSD: patch-media_video_video_encode_accelerator_adapter_cc,v 1.7 2021/10/03 21:26:52 robert Exp $
+$OpenBSD: patch-media_video_video_encode_accelerator_adapter_cc,v 1.8 2021/10/20 10:27:47 robert Exp $
 
 Index: media/video/video_encode_accelerator_adapter.cc
 --- media/video/video_encode_accelerator_adapter.cc.orig
 +++ media/video/video_encode_accelerator_adapter.cc
-@@ -73,7 +73,7 @@ VideoEncodeAccelerator::Config SetUpVeaConfig(
+@@ -88,7 +88,7 @@ VideoEncodeAccelerator::Config SetUpVeaConfig(
    if (is_rgb)
      config.input_format = PIXEL_FORMAT_I420;
  
@@ -12,7 +12,7 @@ Index: media/video/video_encode_accelerator_adapter.cc
    if (storage_type == VideoFrame::STORAGE_DMABUFS ||
        storage_type == VideoFrame::STORAGE_GPU_MEMORY_BUFFER) {
      if (is_rgb)
-@@ -213,7 +213,7 @@ void VideoEncodeAcceleratorAdapter::InitializeInternal
+@@ -228,7 +228,7 @@ void VideoEncodeAcceleratorAdapter::InitializeInternal
    auto vea_config =
        SetUpVeaConfig(profile_, options_, format, first_frame->storage_type());
  

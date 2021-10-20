@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_tracing_crash_service_uploader_cc,v 1.24 2021/10/03 21:26:51 robert Exp $
+$OpenBSD: patch-chrome_browser_tracing_crash_service_uploader_cc,v 1.25 2021/10/20 10:27:45 robert Exp $
 
 Index: chrome/browser/tracing/crash_service_uploader.cc
 --- chrome/browser/tracing/crash_service_uploader.cc.orig

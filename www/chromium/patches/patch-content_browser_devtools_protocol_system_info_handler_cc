@@ -1,14 +1,14 @@
-$OpenBSD: patch-content_browser_devtools_protocol_system_info_handler_cc,v 1.9 2021/10/03 21:26:52 robert Exp $
+$OpenBSD: patch-content_browser_devtools_protocol_system_info_handler_cc,v 1.10 2021/10/20 10:27:47 robert Exp $
 
 Index: content/browser/devtools/protocol/system_info_handler.cc
 --- content/browser/devtools/protocol/system_info_handler.cc.orig
 +++ content/browser/devtools/protocol/system_info_handler.cc
 @@ -55,7 +55,7 @@ std::unique_ptr<SystemInfo::Size> GfxSizeToSystemInfoS
- // ASAN builds need more time -- see Issue 1167875.
+ // Windows builds need more time -- see Issue 873112 and 1004472.
+ // Mac builds need more time - see Issue angleproject:6182.
  #if ((defined(OS_LINUX) || defined(OS_CHROMEOS)) && !defined(NDEBUG)) || \
-     defined(OS_WIN) || defined(OS_MAC) || defined(ADDRESS_SANITIZER) ||  \
--    defined(USE_OZONE)
-+    defined(USE_OZONE) || defined(OS_BSD)
- const int kGPUInfoWatchdogTimeoutMs = 30000;
+-    defined(OS_WIN) || defined(OS_MAC) || defined(USE_OZONE)
++    defined(OS_WIN) || defined(OS_MAC) || defined(USE_OZONE) || defined(OS_BSD)
+ static constexpr int kGPUInfoWatchdogTimeoutMultiplierOS = 3;
  #else
- // Increased from 5000 to 10000 -- see Issue 1220072.
+ static constexpr int kGPUInfoWatchdogTimeoutMultiplierOS = 1;

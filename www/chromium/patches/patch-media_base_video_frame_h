@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_base_video_frame_h,v 1.38 2021/10/03 21:26:52 robert Exp $
+$OpenBSD: patch-media_base_video_frame_h,v 1.39 2021/10/20 10:27:47 robert Exp $
 
 Index: media/base/video_frame.h
 --- media/base/video_frame.h.orig
@@ -21,7 +21,7 @@ Index: media/base/video_frame.h
      // TODO(mcasas): Consider turning this type into STORAGE_NATIVE
      // based on the idea of using this same enum value for both DMA
      // buffers on Linux and CVPixelBuffers on Mac (which currently use
-@@ -268,7 +268,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -275,7 +275,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
        ReleaseMailboxAndGpuMemoryBufferCB mailbox_holder_and_gmb_release_cb,
        base::TimeDelta timestamp);
  
@@ -30,7 +30,7 @@ Index: media/base/video_frame.h
    // Wraps provided dmabufs
    // (https://www.kernel.org/doc/html/latest/driver-api/dma-buf.html) with a
    // VideoFrame. The frame will take ownership of |dmabuf_fds|, and will
-@@ -527,7 +527,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -534,7 +534,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    // mailbox, the caller must wait for the included sync point.
    const gpu::MailboxHolder& mailbox_holder(size_t texture_index) const;
  
@@ -39,7 +39,7 @@ Index: media/base/video_frame.h
    // Returns a vector containing the backing DmaBufs for this frame. The number
    // of returned DmaBufs will be equal or less than the number of planes of
    // the frame. If there are less, this means that the last FD contains the
-@@ -734,7 +734,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -741,7 +741,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    // GPU memory buffer, if this frame is STORAGE_GPU_MEMORY_BUFFER.
    std::unique_ptr<gfx::GpuMemoryBuffer> gpu_memory_buffer_;
  

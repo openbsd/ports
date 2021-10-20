@@ -1,4 +1,4 @@
-$OpenBSD: patch-BUILD_gn,v 1.45 2021/10/03 21:26:51 robert Exp $
+$OpenBSD: patch-BUILD_gn,v 1.46 2021/10/20 10:27:44 robert Exp $
 
 Index: BUILD.gn
 --- BUILD.gn.orig
@@ -12,7 +12,7 @@ Index: BUILD.gn
  }
  
  # This file defines the following two main targets:
-@@ -449,7 +449,7 @@ group("gn_all") {
+@@ -452,7 +452,7 @@ group("gn_all") {
      ]
    }
  
@@ -21,7 +21,7 @@ Index: BUILD.gn
      deps += [
        "//third_party/breakpad:breakpad_unittests",
        "//third_party/breakpad:core-2-minidump",
-@@ -494,8 +494,6 @@ group("gn_all") {
+@@ -498,8 +498,6 @@ group("gn_all") {
        "//net:disk_cache_memory_test",
        "//net:quic_client",
        "//net:quic_server",
@@ -30,7 +30,7 @@ Index: BUILD.gn
        "//testing:empty_main",
      ]
  
-@@ -550,10 +548,6 @@ group("gn_all") {
+@@ -554,10 +552,6 @@ group("gn_all") {
          "//chrome/test:load_library_perf_tests",
          "//chrome/test:sync_performance_tests",
          "//chrome/test/chromedriver:chromedriver",
@@ -41,7 +41,7 @@ Index: BUILD.gn
          "//media/cast:generate_barcode_video",
          "//media/cast:generate_timecode_audio",
          "//net:crash_cache",
-@@ -612,10 +606,6 @@ group("gn_all") {
+@@ -616,10 +610,6 @@ group("gn_all") {
        "//mojo:mojo_perftests",
        "//services/service_manager/public/cpp",
        "//testing/gmock:gmock_main",
@@ -52,7 +52,7 @@ Index: BUILD.gn
      ]
  
      if (!is_android) {
-@@ -693,7 +683,7 @@ group("gn_all") {
+@@ -697,7 +687,7 @@ group("gn_all") {
          host_os == "win") {
        deps += [ "//chrome/test/mini_installer:mini_installer_tests" ]
      }
@@ -61,7 +61,7 @@ Index: BUILD.gn
      deps += [ "//third_party/breakpad:symupload($host_toolchain)" ]
    }
  
-@@ -1131,7 +1121,7 @@ if (!is_ios) {
+@@ -1144,7 +1134,7 @@ if (!is_ios) {
        data_deps += [ "//content/web_test:web_test_common_mojom_js_data_deps" ]
      }
  
@@ -70,7 +70,7 @@ Index: BUILD.gn
        data_deps +=
            [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
      }
-@@ -1140,7 +1130,7 @@ if (!is_ios) {
+@@ -1153,7 +1143,7 @@ if (!is_ios) {
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
@@ -79,7 +79,7 @@ Index: BUILD.gn
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -1386,9 +1376,6 @@ group("chromium_builder_perf") {
+@@ -1533,9 +1523,6 @@ group("chromium_builder_perf") {
  
      if (is_win) {
        data_deps += [ "//chrome/installer/mini_installer:mini_installer" ]

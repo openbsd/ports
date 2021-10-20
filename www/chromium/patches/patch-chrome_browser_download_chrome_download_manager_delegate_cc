@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_download_chrome_download_manager_delegate_cc,v 1.46 2021/10/03 21:26:51 robert Exp $
+$OpenBSD: patch-chrome_browser_download_chrome_download_manager_delegate_cc,v 1.47 2021/10/20 10:27:45 robert Exp $
 
 Index: chrome/browser/download/chrome_download_manager_delegate.cc
 --- chrome/browser/download/chrome_download_manager_delegate.cc.orig
 +++ chrome/browser/download/chrome_download_manager_delegate.cc
-@@ -1395,7 +1395,7 @@ void ChromeDownloadManagerDelegate::OnDownloadTargetDe
+@@ -1402,7 +1402,7 @@ void ChromeDownloadManagerDelegate::OnDownloadTargetDe
          target_info->is_filetype_handled_safely)
        DownloadItemModel(item).SetShouldPreferOpeningInBrowser(true);
  
@@ -12,7 +12,7 @@ Index: chrome/browser/download/chrome_download_manager_delegate.cc
      if (item->GetOriginalMimeType() == "application/x-x509-user-cert")
        DownloadItemModel(item).SetShouldPreferOpeningInBrowser(true);
  #endif
-@@ -1451,7 +1451,7 @@ void ChromeDownloadManagerDelegate::OnDownloadTargetDe
+@@ -1458,7 +1458,7 @@ void ChromeDownloadManagerDelegate::OnDownloadTargetDe
  bool ChromeDownloadManagerDelegate::IsOpenInBrowserPreferreredForFile(
      const base::FilePath& path) {
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
@@ -21,7 +21,7 @@ Index: chrome/browser/download/chrome_download_manager_delegate.cc
    if (path.MatchesExtension(FILE_PATH_LITERAL(".pdf"))) {
      return !download_prefs_->ShouldOpenPdfInSystemReader();
    }
-@@ -1555,7 +1555,7 @@ void ChromeDownloadManagerDelegate::CheckDownloadAllow
+@@ -1562,7 +1562,7 @@ void ChromeDownloadManagerDelegate::CheckDownloadAllow
      content::CheckDownloadAllowedCallback check_download_allowed_cb) {
    DCHECK_CURRENTLY_ON(BrowserThread::UI);
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
@@ -30,7 +30,7 @@ Index: chrome/browser/download/chrome_download_manager_delegate.cc
    // Don't download pdf if it is a file URL, as that might cause an infinite
    // download loop if Chrome is not the system pdf viewer.
    if (url.SchemeIsFile() && download_prefs_->ShouldOpenPdfInSystemReader()) {
-@@ -1597,7 +1597,7 @@ std::unique_ptr<download::DownloadItemRenameHandler>
+@@ -1604,7 +1604,7 @@ std::unique_ptr<download::DownloadItemRenameHandler>
  ChromeDownloadManagerDelegate::GetRenameHandlerForDownload(
      download::DownloadItem* download_item) {
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \

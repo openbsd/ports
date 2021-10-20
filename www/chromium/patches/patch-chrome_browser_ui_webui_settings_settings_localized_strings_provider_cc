@@ -1,10 +1,10 @@
-$OpenBSD: patch-chrome_browser_ui_webui_settings_settings_localized_strings_provider_cc,v 1.18 2021/09/01 16:54:39 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_webui_settings_settings_localized_strings_provider_cc,v 1.19 2021/10/20 10:27:46 robert Exp $
 
 Index: chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
 --- chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc.orig
 +++ chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
-@@ -112,7 +112,7 @@
- #include "ui/accessibility/accessibility_features.h"
+@@ -115,7 +115,7 @@
+ #include "chrome/browser/ui/webui/settings/chromeos/constants/routes.mojom.h"
  #endif
  
 -#if defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
  #include "ui/display/screen.h"
  #endif
  
-@@ -361,7 +361,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
+@@ -364,7 +364,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
      {"huge", IDS_SETTINGS_HUGE_FONT_SIZE},
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -21,7 +21,7 @@ Index: chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
      {"systemTheme", IDS_SETTINGS_SYSTEM_THEME},
      {"useSystemTheme", IDS_SETTINGS_USE_SYSTEM_THEME},
      {"classicTheme", IDS_SETTINGS_CLASSIC_THEME},
-@@ -369,7 +369,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
+@@ -372,7 +372,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
  #else
      {"resetToDefaultTheme", IDS_SETTINGS_RESET_TO_DEFAULT_THEME},
  #endif
@@ -30,12 +30,12 @@ Index: chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
      {"showWindowDecorations", IDS_SHOW_WINDOW_DECORATIONS},
  #endif
  #if defined(OS_MAC)
-@@ -390,7 +390,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
+@@ -393,7 +393,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
 -#if defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)
 +#if (defined(OS_LINUX) || defined(OS_BSD)) && !BUILDFLAG(IS_CHROMEOS_LACROS)
  #if defined(USE_OZONE)
-   const bool show_custom_chrome_frame =
-       features::IsUsingOzonePlatform() &&
+   bool show_custom_chrome_frame = true;
+   if (features::IsUsingOzonePlatform()) {

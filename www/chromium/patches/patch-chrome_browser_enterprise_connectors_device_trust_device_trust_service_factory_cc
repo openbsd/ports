@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_enterprise_connectors_device_trust_device_trust_service_factory_cc,v 1.1 2021/10/03 21:26:51 robert Exp $
+$OpenBSD: patch-chrome_browser_enterprise_connectors_device_trust_device_trust_service_factory_cc,v 1.2 2021/10/20 10:27:45 robert Exp $
 
 Index: chrome/browser/enterprise/connectors/device_trust/device_trust_service_factory.cc
 --- chrome/browser/enterprise/connectors/device_trust/device_trust_service_factory.cc.orig
 +++ chrome/browser/enterprise/connectors/device_trust/device_trust_service_factory.cc
-@@ -13,7 +13,7 @@
+@@ -16,7 +16,7 @@
  #include "components/keyed_service/content/browser_context_dependency_manager.h"
  #include "components/keyed_service/core/keyed_service.h"
  #include "content/public/browser/browser_context.h"

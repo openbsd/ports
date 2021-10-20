@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_app_content_main_runner_impl_cc,v 1.26 2021/10/03 21:26:52 robert Exp $
+$OpenBSD: patch-content_app_content_main_runner_impl_cc,v 1.27 2021/10/20 10:27:47 robert Exp $
 
 Index: content/app/content_main_runner_impl.cc
 --- content/app/content_main_runner_impl.cc.orig

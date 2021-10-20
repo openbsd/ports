@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_browser_frame_cc,v 1.30 2021/10/03 21:26:52 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_browser_frame_cc,v 1.31 2021/10/20 10:27:46 robert Exp $
 
 Index: chrome/browser/ui/views/frame/browser_frame.cc
 --- chrome/browser/ui/views/frame/browser_frame.cc.orig
 +++ chrome/browser/ui/views/frame/browser_frame.cc
-@@ -44,11 +44,11 @@
+@@ -47,11 +47,11 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -17,7 +17,7 @@ Index: chrome/browser/ui/views/frame/browser_frame.cc
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
  
-@@ -57,7 +57,7 @@ namespace {
+@@ -60,7 +60,7 @@ namespace {
  bool IsUsingGtkTheme(Profile* profile) {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -26,7 +26,7 @@ Index: chrome/browser/ui/views/frame/browser_frame.cc
    return ThemeServiceFactory::GetForProfile(profile)->UsingSystemTheme();
  #else
    return false;
-@@ -244,7 +244,7 @@ void BrowserFrame::OnNativeWidgetWorkspaceChanged() {
+@@ -247,7 +247,7 @@ void BrowserFrame::OnNativeWidgetWorkspaceChanged() {
                                             IsVisibleOnAllWorkspaces());
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -35,7 +35,7 @@ Index: chrome/browser/ui/views/frame/browser_frame.cc
    // If the window was sent to a different workspace, prioritize it if
    // it was sent to the current workspace and deprioritize it
    // otherwise.  This is done by MoveBrowsersInWorkspaceToFront()
-@@ -365,7 +365,7 @@ void BrowserFrame::SelectNativeTheme() {
+@@ -370,7 +370,7 @@ void BrowserFrame::SelectNativeTheme() {
      }
    }
  
@@ -44,7 +44,7 @@ Index: chrome/browser/ui/views/frame/browser_frame.cc
    const views::LinuxUI* linux_ui = views::LinuxUI::instance();
    // Ignore GTK+ for web apps with window-controls-overlay as the
    // display_override so the web contents can blend with the overlay by using
-@@ -384,7 +384,7 @@ bool BrowserFrame::RegenerateFrameOnThemeChange(
+@@ -389,7 +389,7 @@ bool BrowserFrame::RegenerateFrameOnThemeChange(
    bool need_regenerate = false;
    // TODO(crbug.com/1052397): Revisit the macro expression once build flag
    // switch of lacros-chrome is complete.

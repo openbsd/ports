@@ -1,9 +1,9 @@
-$OpenBSD: patch-remoting_host_chromoting_host_context_cc,v 1.3 2021/09/01 16:54:40 robert Exp $
+$OpenBSD: patch-remoting_host_chromoting_host_context_cc,v 1.4 2021/10/20 10:27:48 robert Exp $
 
 Index: remoting/host/chromoting_host_context.cc
 --- remoting/host/chromoting_host_context.cc.orig
 +++ remoting/host/chromoting_host_context.cc
-@@ -139,7 +139,7 @@ std::unique_ptr<ChromotingHostContext> ChromotingHostC
+@@ -143,7 +143,7 @@ std::unique_ptr<ChromotingHostContext> ChromotingHostC
    // on a UI thread.
    scoped_refptr<AutoThreadTaskRunner> input_task_runner =
        AutoThread::CreateWithType("ChromotingInputThread", ui_task_runner,

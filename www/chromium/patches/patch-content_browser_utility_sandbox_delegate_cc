@@ -1,0 +1,14 @@
+$OpenBSD: patch-content_browser_utility_sandbox_delegate_cc,v 1.1 2021/10/20 10:27:47 robert Exp $
+
+Index: content/browser/utility_sandbox_delegate.cc
+--- content/browser/utility_sandbox_delegate.cc.orig
++++ content/browser/utility_sandbox_delegate.cc
+@@ -57,7 +57,7 @@ UtilitySandboxedProcessLauncherDelegate::
+ #if BUILDFLAG(ENABLE_PLUGINS)
+       sandbox_type_ == sandbox::policy::SandboxType::kPpapi ||
+ #endif
+-#if defined(OS_FUCHSIA)
++#if defined(OS_FUCHSIA) || defined(OS_BSD)
+       sandbox_type_ == sandbox::policy::SandboxType::kVideoCapture ||
+ #endif
+ #if BUILDFLAG(IS_CHROMEOS_ASH)

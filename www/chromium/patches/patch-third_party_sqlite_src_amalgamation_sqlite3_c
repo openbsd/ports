@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_sqlite_src_amalgamation_sqlite3_c,v 1.8 2021/10/03 21:26:52 robert Exp $
+$OpenBSD: patch-third_party_sqlite_src_amalgamation_sqlite3_c,v 1.9 2021/10/20 10:27:48 robert Exp $
 
 Index: third_party/sqlite/src/amalgamation/sqlite3.c
 --- third_party/sqlite/src/amalgamation/sqlite3.c.orig

@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_media_options_gni,v 1.34 2021/10/03 21:26:52 robert Exp $
+$OpenBSD: patch-media_media_options_gni,v 1.35 2021/10/20 10:27:47 robert Exp $
 
 Index: media/media_options.gni
 --- media/media_options.gni.orig

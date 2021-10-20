@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_gpu_gpu_data_manager_impl_private_cc,v 1.23 2021/10/03 21:26:52 robert Exp $
+$OpenBSD: patch-content_browser_gpu_gpu_data_manager_impl_private_cc,v 1.24 2021/10/20 10:27:47 robert Exp $
 
 Index: content/browser/gpu/gpu_data_manager_impl_private.cc
 --- content/browser/gpu/gpu_data_manager_impl_private.cc.orig

@@ -1,9 +1,9 @@
-$OpenBSD: patch-weblayer_browser_content_browser_client_impl_h,v 1.16 2021/10/03 21:26:52 robert Exp $
+$OpenBSD: patch-weblayer_browser_content_browser_client_impl_h,v 1.17 2021/10/20 10:27:49 robert Exp $
 
 Index: weblayer/browser/content_browser_client_impl.h
 --- weblayer/browser/content_browser_client_impl.h.orig
 +++ weblayer/browser/content_browser_client_impl.h
-@@ -172,7 +172,7 @@ class ContentBrowserClientImpl : public content::Conte
+@@ -176,7 +176,7 @@ class ContentBrowserClientImpl : public content::Conte
        override;
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.

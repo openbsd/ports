@@ -1,9 +1,9 @@
-$OpenBSD: patch-sandbox_policy_switches_cc,v 1.6 2021/09/01 16:54:40 robert Exp $
+$OpenBSD: patch-sandbox_policy_switches_cc,v 1.7 2021/10/20 10:27:48 robert Exp $
 
 Index: sandbox/policy/switches.cc
 --- sandbox/policy/switches.cc.orig
 +++ sandbox/policy/switches.cc
-@@ -93,7 +93,9 @@ const char kGpuSandboxFailuresFatal[] = "gpu-sandbox-f
+@@ -92,7 +92,9 @@ const char kGpuSandboxFailuresFatal[] = "gpu-sandbox-f
  // Meant to be used as a browser-level switch for testing purposes only.
  const char kNoSandbox[] = "no-sandbox";
  

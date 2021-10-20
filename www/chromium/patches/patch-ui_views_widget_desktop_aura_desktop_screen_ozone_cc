@@ -1,12 +1,12 @@
-$OpenBSD: patch-ui_views_widget_desktop_aura_desktop_screen_ozone_cc,v 1.4 2021/09/01 16:54:41 robert Exp $
+$OpenBSD: patch-ui_views_widget_desktop_aura_desktop_screen_ozone_cc,v 1.5 2021/10/20 10:27:49 robert Exp $
 
 Index: ui/views/widget/desktop_aura/desktop_screen_ozone.cc
 --- ui/views/widget/desktop_aura/desktop_screen_ozone.cc.orig
 +++ ui/views/widget/desktop_aura/desktop_screen_ozone.cc
-@@ -28,7 +28,7 @@ gfx::NativeWindow DesktopScreenOzone::GetNativeWindowF
- // To avoid multiple definitions when use_x11 && use_ozone is true, disable this
- // factory method for OS_LINUX as Linux has a factory method that decides what
- // screen to use based on IsUsingOzonePlatform feature flag.
+@@ -25,7 +25,7 @@ gfx::NativeWindow DesktopScreenOzone::GetNativeWindowF
+       widget);
+ }
+ 
 -#if !defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if !defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_BSD)
  std::unique_ptr<display::Screen> CreateDesktopScreen() {

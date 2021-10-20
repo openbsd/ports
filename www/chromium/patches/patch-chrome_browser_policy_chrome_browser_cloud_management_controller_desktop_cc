@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_policy_chrome_browser_cloud_management_controller_desktop_cc,v 1.6 2021/10/03 21:26:51 robert Exp $
+$OpenBSD: patch-chrome_browser_policy_chrome_browser_cloud_management_controller_desktop_cc,v 1.7 2021/10/20 10:27:45 robert Exp $
 
 Index: chrome/browser/policy/chrome_browser_cloud_management_controller_desktop.cc
 --- chrome/browser/policy/chrome_browser_cloud_management_controller_desktop.cc.orig
 +++ chrome/browser/policy/chrome_browser_cloud_management_controller_desktop.cc
-@@ -44,7 +44,7 @@
+@@ -47,7 +47,7 @@
  #include "chrome/browser/policy/browser_dm_token_storage_mac.h"
  #endif  // defined(OS_MAC)
  
@@ -12,7 +12,7 @@ Index: chrome/browser/policy/chrome_browser_cloud_management_controller_desktop.
  #include "chrome/browser/policy/browser_dm_token_storage_linux.h"
  #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
  
-@@ -80,7 +80,7 @@ void ChromeBrowserCloudManagementControllerDesktop::
+@@ -83,7 +83,7 @@ void ChromeBrowserCloudManagementControllerDesktop::
  
  #if defined(OS_MAC)
    storage_delegate = std::make_unique<BrowserDMTokenStorageMac>();

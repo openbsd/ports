@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_core_paint_paint_layer_cc,v 1.10 2021/09/01 16:54:40 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_core_paint_paint_layer_cc,v 1.11 2021/10/20 10:27:48 robert Exp $
 
 Index: third_party/blink/renderer/core/paint/paint_layer.cc
 --- third_party/blink/renderer/core/paint/paint_layer.cc.orig
@@ -9,6 +9,6 @@ Index: third_party/blink/renderer/core/paint/paint_layer.cc
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
- struct SameSizeAsPaintLayer : DisplayItemClient {
+ struct SameSizeAsPaintLayer : GarbageCollected<PaintLayer>, DisplayItemClient {
    // The bit fields may fit into the machine word of DisplayItemClient which
    // has only 8-bit data.

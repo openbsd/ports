@@ -1,9 +1,9 @@
-$OpenBSD: patch-chromecast_renderer_cast_content_renderer_client_cc,v 1.10 2021/09/01 16:54:39 robert Exp $
+$OpenBSD: patch-chromecast_renderer_cast_content_renderer_client_cc,v 1.11 2021/10/20 10:27:46 robert Exp $
 
 Index: chromecast/renderer/cast_content_renderer_client.cc
 --- chromecast/renderer/cast_content_renderer_client.cc.orig
 +++ chromecast/renderer/cast_content_renderer_client.cc
-@@ -205,7 +205,7 @@ void CastContentRendererClient::RenderFrameCreated(
+@@ -207,7 +207,7 @@ void CastContentRendererClient::RenderFrameCreated(
    dispatcher->OnRenderFrameCreated(render_frame);
  #endif
  

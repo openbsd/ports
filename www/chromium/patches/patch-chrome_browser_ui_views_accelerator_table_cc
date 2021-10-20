@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_accelerator_table_cc,v 1.22 2021/09/01 16:54:38 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_accelerator_table_cc,v 1.23 2021/10/20 10:27:46 robert Exp $
 
 Index: chrome/browser/ui/views/accelerator_table.cc
 --- chrome/browser/ui/views/accelerator_table.cc.orig
@@ -21,7 +21,7 @@ Index: chrome/browser/ui/views/accelerator_table.cc
      {ui::VKEY_1, ui::EF_ALT_DOWN, IDC_SELECT_TAB_0},
      {ui::VKEY_NUMPAD1, ui::EF_ALT_DOWN, IDC_SELECT_TAB_0},
      {ui::VKEY_2, ui::EF_ALT_DOWN, IDC_SELECT_TAB_1},
-@@ -138,7 +138,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
+@@ -139,7 +139,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
       IDC_SHOW_AVATAR_MENU},
  
  // Platform-specific key maps.

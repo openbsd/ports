@@ -1,0 +1,14 @@
+$OpenBSD: patch-sandbox_policy_mojom_sandbox_mojom,v 1.1 2021/10/20 10:27:48 robert Exp $
+
+Index: sandbox/policy/mojom/sandbox.mojom
+--- sandbox/policy/mojom/sandbox.mojom.orig
++++ sandbox/policy/mojom/sandbox.mojom
+@@ -45,7 +45,7 @@ enum Sandbox {
+ 
+   // Equivalent to no sandbox on all non-Fuchsia platforms.
+   // Minimally privileged sandbox on Fuchsia.
+-  [EnableIf=is_fuchsia]
++  [EnableIf=is_openbsd]
+   kVideoCapture,
+ 
+   // Allows access to file contents and Windows APIs for parsing icons from PE

@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_flag_descriptions_h,v 1.43 2021/10/03 21:26:51 robert Exp $
+$OpenBSD: patch-chrome_browser_flag_descriptions_h,v 1.44 2021/10/20 10:27:45 robert Exp $
 
 Index: chrome/browser/flag_descriptions.h
 --- chrome/browser/flag_descriptions.h.orig
@@ -12,7 +12,7 @@ Index: chrome/browser/flag_descriptions.h
  #include "base/allocator/buildflags.h"
  #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
  
-@@ -2955,7 +2955,7 @@ extern const char kDownloadShelfWebUIDescription[];
+@@ -3034,7 +3034,7 @@ extern const char kDownloadShelfWebUIDescription[];
  // Random platform combinations -----------------------------------------------
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -21,7 +21,7 @@ Index: chrome/browser/flag_descriptions.h
  
  extern const char kEnableOopPrintDriversName[];
  extern const char kEnableOopPrintDriversDescription[];
-@@ -2972,7 +2972,7 @@ extern const char kSettingsLandingPageRedesignDescript
+@@ -3051,7 +3051,7 @@ extern const char kSettingsLandingPageRedesignDescript
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) ||
          // defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
  
@@ -30,7 +30,7 @@ Index: chrome/browser/flag_descriptions.h
  
  extern const char kCommanderName[];
  extern const char kCommanderDescription[];
-@@ -2985,7 +2985,7 @@ extern const char kDesktopDetailedLanguageSettingsDesc
+@@ -3064,7 +3064,7 @@ extern const char kDesktopDetailedLanguageSettingsDesc
  
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
  
@@ -39,16 +39,7 @@ Index: chrome/browser/flag_descriptions.h
  #if BUILDFLAG(USE_TCMALLOC)
  extern const char kDynamicTcmallocName[];
  extern const char kDynamicTcmallocDescription[];
-@@ -3002,7 +3002,7 @@ extern const char kWebShareName[];
- extern const char kWebShareDescription[];
- #endif  // defined(OS_WIN) || BUILDFLAG(IS_CHROMEOS_ASH) || defined(OS_MAC)
- 
--#if defined(OS_LINUX) && defined(USE_OZONE)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && defined(USE_OZONE)
- extern const char kUseOzonePlatformName[];
- extern const char kUseOzonePlatformDescription[];
- #endif  // defined(OS_LINUX) && defined(USE_OZONE)
-@@ -3062,7 +3062,7 @@ extern const char kElasticOverscrollDescription[];
+@@ -3136,7 +3136,7 @@ extern const char kElasticOverscrollDescription[];
  #endif  // defined(OS_WIN) || defined(OS_ANDROID)
  
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \

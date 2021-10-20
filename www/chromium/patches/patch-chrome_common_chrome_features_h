@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_chrome_features_h,v 1.34 2021/10/03 21:26:52 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_features_h,v 1.35 2021/10/20 10:27:46 robert Exp $
 
 Index: chrome/common/chrome_features.h
 --- chrome/common/chrome_features.h.orig
 +++ chrome/common/chrome_features.h
-@@ -67,7 +67,7 @@ extern const base::Feature kAppShimNewCloseBehavior;
+@@ -72,7 +72,7 @@ extern const base::Feature kAppShimNewCloseBehavior;
  
  COMPONENT_EXPORT(CHROME_FEATURES) extern const base::Feature kAsyncDns;
  
@@ -12,7 +12,7 @@ Index: chrome/common/chrome_features.h
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kBackgroundModeAllowRestart;
  #endif  // defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
-@@ -79,7 +79,7 @@ COMPONENT_EXPORT(CHROME_FEATURES) extern const base::F
+@@ -84,7 +84,7 @@ COMPONENT_EXPORT(CHROME_FEATURES) extern const base::F
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kChangePictureVideoMode;
  
@@ -21,7 +21,7 @@ Index: chrome/common/chrome_features.h
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kChromeAppsDeprecation;
  #endif
-@@ -158,7 +158,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+@@ -153,7 +153,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kDefaultPinnedAppsUpdate2021Q2;
  #endif
  
@@ -30,7 +30,7 @@ Index: chrome/common/chrome_features.h
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kDesktopPWAsAppIconShortcutsMenuUI;
  #endif
-@@ -368,7 +368,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+@@ -360,7 +360,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kIncognitoNtpRevamp;
  
  #if defined(OS_MAC) || defined(OS_WIN) || defined(OS_LINUX) || \
@@ -39,3 +39,12 @@ Index: chrome/common/chrome_features.h
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kIncognitoBrandConsistencyForDesktop;
  
+@@ -389,7 +389,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+ extern const base::Feature kLinkDoctorDeprecationAndroid;
+ #endif  // defined(OS_ANDROID)
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ COMPONENT_EXPORT(CHROME_FEATURES)
+ extern const base::Feature kLinuxLowMemoryMonitor;
+ COMPONENT_EXPORT(CHROME_FEATURES)

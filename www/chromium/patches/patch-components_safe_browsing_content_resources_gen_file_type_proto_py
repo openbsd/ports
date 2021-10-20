@@ -1,22 +1,22 @@
-$OpenBSD: patch-components_safe_browsing_content_resources_gen_file_type_proto_py,v 1.1 2021/09/01 16:54:39 robert Exp $
+$OpenBSD: patch-components_safe_browsing_content_resources_gen_file_type_proto_py,v 1.2 2021/10/20 10:27:47 robert Exp $
 
 Index: components/safe_browsing/content/resources/gen_file_type_proto.py
 --- components/safe_browsing/content/resources/gen_file_type_proto.py.orig
 +++ components/safe_browsing/content/resources/gen_file_type_proto.py
-@@ -33,6 +33,7 @@ def PlatformTypes():
-     "android": download_file_types_pb2.DownloadFileType.PLATFORM_ANDROID,
-     "chromeos": download_file_types_pb2.DownloadFileType.PLATFORM_CHROME_OS,
-     "linux": download_file_types_pb2.DownloadFileType.PLATFORM_LINUX,
-+    "openbsd": download_file_types_pb2.DownloadFileType.PLATFORM_LINUX,
-     "mac": download_file_types_pb2.DownloadFileType.PLATFORM_MAC,
-     "win": download_file_types_pb2.DownloadFileType.PLATFORM_WINDOWS,
-   }
-@@ -171,7 +172,7 @@ class DownloadFileTypeProtoGenerator(BinaryProtoGenera
-                       'Outfile must have a %d for version and %s for platform.')
-     parser.add_option('-t', '--type',
-                       help='The platform type. One of android, chromeos, ' +
--                      'linux, mac, win')
-+                      'linux, mac, win, openbsd')
+@@ -34,6 +34,7 @@ def PlatformTypes():
+         "chromeos":
+         download_file_types_pb2.DownloadFileType.PLATFORM_CHROME_OS,
+         "linux": download_file_types_pb2.DownloadFileType.PLATFORM_LINUX,
++        "openbsd": download_file_types_pb2.DownloadFileType.PLATFORM_LINUX,
+         "mac": download_file_types_pb2.DownloadFileType.PLATFORM_MAC,
+         "win": download_file_types_pb2.DownloadFileType.PLATFORM_WINDOWS,
+     }
+@@ -178,7 +179,7 @@ class DownloadFileTypeProtoGenerator(BinaryProtoGenera
+             '-t',
+             '--type',
+             help='The platform type. One of android, chromeos, ' +
+-            'linux, mac, win')
++            'linux, mac, win, openbsd')
  
-   def AddExtraCommandLineArgsForVirtualEnvRun(self, opts, command):
-     if opts.type is not None:
+     def AddExtraCommandLineArgsForVirtualEnvRun(self, opts, command):
+         if opts.type is not None:

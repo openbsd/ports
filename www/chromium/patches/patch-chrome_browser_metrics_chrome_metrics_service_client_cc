@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_metrics_chrome_metrics_service_client_cc,v 1.25 2021/10/03 21:26:51 robert Exp $
+$OpenBSD: patch-chrome_browser_metrics_chrome_metrics_service_client_cc,v 1.26 2021/10/20 10:27:45 robert Exp $
 
 Index: chrome/browser/metrics/chrome_metrics_service_client.cc
 --- chrome/browser/metrics/chrome_metrics_service_client.cc.orig
 +++ chrome/browser/metrics/chrome_metrics_service_client.cc
-@@ -720,7 +720,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
+@@ -737,7 +737,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -12,7 +12,7 @@ Index: chrome/browser/metrics/chrome_metrics_service_client.cc
      (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
    metrics_service_->RegisterMetricsProvider(
        std::make_unique<DesktopPlatformFeaturesMetricsProvider>());
-@@ -819,7 +819,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
+@@ -836,7 +836,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
        std::make_unique<PowerMetricsProvider>());
  #endif
  
@@ -21,7 +21,7 @@ Index: chrome/browser/metrics/chrome_metrics_service_client.cc
    metrics_service_->RegisterMetricsProvider(
        metrics::CreateDesktopSessionMetricsProvider());
  #endif  // defined(OS_WIN) || defined(OS_MAC) || (defined(OS_LINUX)
-@@ -995,7 +995,7 @@ bool ChromeMetricsServiceClient::RegisterForProfileEve
+@@ -1012,7 +1012,7 @@ bool ChromeMetricsServiceClient::RegisterForProfileEve
  #endif
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

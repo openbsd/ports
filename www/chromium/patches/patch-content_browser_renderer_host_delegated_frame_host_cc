@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_renderer_host_delegated_frame_host_cc,v 1.7 2021/10/03 21:26:52 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_delegated_frame_host_cc,v 1.8 2021/10/20 10:27:47 robert Exp $
 
 Index: content/browser/renderer_host/delegated_frame_host.cc
 --- content/browser/renderer_host/delegated_frame_host.cc.orig
