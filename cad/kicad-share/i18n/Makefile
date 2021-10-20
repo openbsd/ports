@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/19 14:48:11 tracey Exp $
+# $OpenBSD: Makefile,v 1.5 2021/10/20 11:47:48 sthen Exp $
+
+REVISION =	0
 
 KICAD_PROJECT =	i18n
 COMMENT =	language translations for KiCad
 
 BUILD_DEPENDS =	devel/gettext,-tools
 
-HOMEPAGE =	http://www.kicad-pcb.org/
+HOMEPAGE =	https://www.kicad.org
 
 MASTER_SITES =	https://gitlab.com/kicad/code/kicad-i18n/-/archive/${V}/
 
