@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/07/01 18:33:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/10/20 16:31:58 mbuhl Exp $
 @pkgpath graphics/djvulibre,no_x11
 @comment bin/any2djvu
 @bin bin/bzz
@@ -22,7 +22,7 @@
 include/libdjvu/
 include/libdjvu/ddjvuapi.h
 include/libdjvu/miniexp.h
-lib/libdjvulibre.a
+@static-lib lib/libdjvulibre.a
 lib/libdjvulibre.la
 @lib lib/libdjvulibre.so.${LIBdjvulibre_VERSION}
 lib/pkgconfig/ddjvuapi.pc
@@ -72,20 +72,19 @@ share/djvu/pubtext/
 share/djvu/pubtext/DjVuMessages.dtd
 share/djvu/pubtext/DjVuOCR.dtd
 share/djvu/pubtext/DjVuXML-s.dtd
-share/icons/hicolor/128x128/mimetypes/djvu.png
-share/icons/hicolor/16x16/mimetypes/djvu.png
+share/icons/hicolor/128x128/mimetypes/image-vnd.djvu.png
+share/icons/hicolor/16x16/mimetypes/image-vnd.djvu.png
 share/icons/hicolor/20x20/
 share/icons/hicolor/20x20/mimetypes/
-share/icons/hicolor/20x20/mimetypes/djvu.png
-share/icons/hicolor/22x22/mimetypes/djvu.png
-share/icons/hicolor/24x24/mimetypes/djvu.png
-share/icons/hicolor/256x256/mimetypes/djvu.png
-share/icons/hicolor/32x32/mimetypes/djvu.png
-share/icons/hicolor/48x48/mimetypes/djvu.png
-share/icons/hicolor/64x64/mimetypes/djvu.png
-share/icons/hicolor/72x72/mimetypes/djvu.png
-share/icons/hicolor/96x96/mimetypes/djvu.png
-share/icons/hicolor/scalable/mimetypes/djvu.svgz
-share/mime/packages/djvulibre-mime.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database
+share/icons/hicolor/20x20/mimetypes/image-vnd.djvu.png
+share/icons/hicolor/22x22/mimetypes/image-vnd.djvu.png
+share/icons/hicolor/24x24/mimetypes/image-vnd.djvu.png
+share/icons/hicolor/256x256/mimetypes/image-vnd.djvu.png
+share/icons/hicolor/32x32/mimetypes/image-vnd.djvu.png
+share/icons/hicolor/48x48/mimetypes/image-vnd.djvu.png
+share/icons/hicolor/64x64/mimetypes/image-vnd.djvu.png
+share/icons/hicolor/72x72/mimetypes/image-vnd.djvu.png
+share/icons/hicolor/96x96/mimetypes/image-vnd.djvu.png
+share/icons/hicolor/scalable/mimetypes/image-vnd.djvu.svgz

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2019/07/12 20:46:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2021/10/20 16:31:58 mbuhl Exp $
 
 COMMENT=	view, decode and encode DjVu files
 
-DISTNAME=	djvulibre-3.5.27
-REVISION=	6
-SHARED_LIBS=	djvulibre	26.0	# 27.0
+DISTNAME=	djvulibre-3.5.28
+SHARED_LIBS=	djvulibre	27.0	# 28.0
 CATEGORIES=	graphics print
 
 HOMEPAGE=	http://djvu.sourceforge.net/

@@ -1,0 +1,28 @@
+$OpenBSD: patch-libdjvu_DjVuPort_cpp,v 1.1 2021/10/20 16:31:58 mbuhl Exp $
+
+Fix CVE-2021-3500: Stack-Based Buffer Overflow
+https://bugzilla.redhat.com/show_bug.cgi?id=1943411
+
+Index: libdjvu/DjVuPort.cpp
+--- libdjvu/DjVuPort.cpp.orig
++++ libdjvu/DjVuPort.cpp
+@@ -507,10 +507,19 @@ GP<DjVuFile>
+ DjVuPortcaster::id_to_file(const DjVuPort * source, const GUTF8String &id)
+ {
+    GPList<DjVuPort> list;
++
++   if (!!opening_id && opening_id == id)
++      G_THROW( ERR_MSG("DjVuPortcaster.recursive_open") );
++   else
++      opening_id = id;
++
+    compute_closure(source, list, true);
+    GP<DjVuFile> file;
+    for(GPosition pos=list;pos;++pos)
+       if ((file=list[pos]->id_to_file(source, id))) break;
++
++   opening_id = GUTF8String();
++
+    return file;
+ }
+ 

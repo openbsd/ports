@@ -1,11 +1,12 @@
-$OpenBSD: patch-libdjvu_DjVuPalette_cpp,v 1.1 2017/04/20 01:40:33 espie Exp $
---- libdjvu/DjVuPalette.cpp.orig	Thu Apr 20 03:30:12 2017
-+++ libdjvu/DjVuPalette.cpp	Thu Apr 20 03:38:11 2017
-@@ -98,6 +98,7 @@ inline unsigned char 
+$OpenBSD: patch-libdjvu_DjVuPalette_cpp,v 1.2 2021/10/20 16:31:58 mbuhl Exp $
+Index: libdjvu/DjVuPalette.cpp
+--- libdjvu/DjVuPalette.cpp.orig
++++ libdjvu/DjVuPalette.cpp
+@@ -99,6 +99,7 @@ inline unsigned char 
  umin(unsigned char a, unsigned char b) 
  { return (a>b) ? b : a; }
  
 +#define fmin myfmin
  inline float 
- fmin(float a, float b) 
+ fmin(float a, float b)
  { return (a>b) ? b : a; }

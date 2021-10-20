@@ -1,0 +1,22 @@
+$OpenBSD: patch-tools_ddjvu_cpp,v 1.1 2021/10/20 16:31:58 mbuhl Exp $
+
+Fix CVE-2021-32491: Integer Overflow Leading to Heap-Based Buffer Overflow
+https://sourceforge.net/p/djvu/djvulibre-git/ci/cd8b5c97b27a5c1dc83046498b6ca49ad20aa9b6
+
+Index: tools/ddjvu.cpp
+--- tools/ddjvu.cpp.orig
++++ tools/ddjvu.cpp
+@@ -393,8 +393,11 @@ render(ddjvu_page_t *page, int pageno)
+   } else if (style == DDJVU_FORMAT_GREY8)
+     rowsize = rrect.w;
+   else
+-    rowsize = rrect.w * 3; 
+-  if (! (image = (char*)malloc(rowsize * rrect.h)))
++    rowsize = rrect.w * 3;
++  size_t bufsize = (size_t)rowsize * rrect.h;
++  if (bufsize / rowsize != rrect.h)
++    die(i18n("Integer overflow when allocating image buffer for page %d"), pageno);
++  if (! (image = (char*)malloc(bufsize)))
+     die(i18n("Cannot allocate image buffer for page %d"), pageno);
+ 
+   /* Render */
