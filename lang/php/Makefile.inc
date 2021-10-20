@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.160 2021/04/30 18:20:59 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.161 2021/10/20 20:45:58 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -46,7 +46,7 @@ INI_TEMPLATES?=		development production
 PATCHORIG=		.orig.port
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION?=	2.69
-COMPILER=		base-clang ports-gcc base-gcc
+COMPILER=		base-clang ports-gcc
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include -pthread" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread" \
 			EXTENSION_DIR=${MODULES_DIR} \
@@ -69,6 +69,7 @@ CONFIGURE_ARGS+=	--disable-rpath \
 			--program-suffix=-${PV} \
 			--with-config-file-path=${SYSCONFDIR} \
 			--with-config-file-scan-dir=${SYSCONFDIR}/php-${PV} \
+			--with-layout=GNU \
 			--with-pcre-jit=no \
 			--with-pear=${LOCALBASE}/share/php-${PV} \
 			--with-pic \
@@ -124,17 +125,21 @@ PHP_EXTENSIONS+=	-bz2 -curl -dba -enchant -gd -gmp -intl -imap -ldap \
 			-pdo_sqlite -pgsql -pspell -shmop -soap -snmp \
 			-sqlite3 -pdo_dblib -tidy -xsl -zip
 
-SAPI+=			-main -apache -cgi -dbg
+SAPI+=			-main -apache -cgi -dbg -embed
 MULTI_PACKAGES=		${SAPI} ${PHP_EXTENSIONS}
 
 # setup for no_* build options to allow disabling extensions with
 # larger dependencies;
 PSEUDO_FLAVORS=		${PHP_EXTENSIONS:C/-(pdo_)?mysqli?//:C/-(pcntl|shmop|zip)//:C/-/no_/g}
-PSEUDO_FLAVORS+=	no_apache
+
+PSEUDO_FLAVORS+=	no_apache no_embed
+FLAVOR ?=		no_apache
 
 .include <bsd.port.arch.mk>
+.if ${BUILD_PACKAGES:M-apache} && ${BUILD_PACKAGES:M-embed}
+ERRORS += "Fatal: cannot build both apache and embed SAPIs in a single build. Select FLAVOR=no_apache or FLAVOR=no_embed."
+.endif
 
-# sapi
 CONFIGURE_ARGS+=	--enable-cli \
 			--enable-fpm \
 			--with-fpm-user=www \
@@ -144,6 +149,11 @@ CONFIGURE_ARGS+=	--enable-cli \
 COMMENT-cgi=		php CGI binary
 CONFIGURE_ARGS+=	--enable-cgi
 
+# phpdbg
+COMMENT-dbg=		interactive php debugger
+HOMEPAGE-dbg=		https://www.php.net/phpdbg
+CONFIGURE_ARGS+=	--enable-phpdbg
+
 # apache
 COMMENT-apache=		php module for Apache httpd
 RUN_DEPENDS-apache=	www/apache-httpd
@@ -152,17 +162,19 @@ CONFIGURE_ARGS+=	--with-apxs2=${LOCALBASE}/sbin/apxs
 BUILD_DEPENDS+=		www/apache-httpd
 .endif
 
-# phpdbg
-COMMENT-dbg=		interactive php debugger
-HOMEPAGE-dbg=		https://www.php.net/phpdbg
-CONFIGURE_ARGS+=	--enable-phpdbg
+# embed
+COMMENT-embed=		embeddable php library
+.if ${BUILD_PACKAGES:M-embed}
+CONFIGURE_ARGS+=	--enable-embed
+.endif
+
+.for i in ${SAPI:N-apache:N-embed}
+WANTLIB$i +=		c
+.endfor
 
 .for i in ${SAPI}
 WANTLIB$i +=		argon2 crypto curses iconv intl lzma m onig
 WANTLIB$i +=		pthread readline sodium ssl xml2 z
-.  if !("$i"=="-apache")
-WANTLIB$i +=		c
-.  endif
 LIB_DEPENDS$i +=	devel/gettext,-runtime \
 			security/argon2 \
 			security/libsodium \
@@ -478,7 +490,9 @@ PHPXS_SUBST+= -e 's,${i},${${i}},'
 pre-fake:
 	${INSTALL_DATA_DIR} ${PREFIX}/${APACHE_MODULE_SUBDIR}/modules
 
-INSTALL_TARGET=	install-headers install-build install-programs
+INSTALL_TARGET=	install-binaries install-build install-headers install-programs
+# not: install-modules install-pear install-sapi install-pharcmd
+
 DESTDIRNAME=	INSTALL_ROOT
 
 pre-configure:
@@ -505,47 +519,33 @@ BUILD_DEPENDS+=		devel/re2c
 post-install:
 	${SUBST_DATA} ${.CURDIR}/../files/README-main \
 		${PREFIX}/share/doc/pkg-readmes/${PKGSTEM-main}
-.if ${BUILD_PACKAGES:M-apache}
-	${INSTALL_DATA} ${WRKBUILD}/.libs/libphp${MV}.so \
-		${PREFIX}/${APACHE_MODULE_SUBDIR}/
-.endif
 	${INSTALL_DATA_DIR} ${WRKINST}/${CHROOT_DIR}/conf/php-${PV}.sample
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/php-${PV}
-	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/cli/php ${PREFIX}/bin/php-${PV}
-	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/cgi/php-cgi ${PREFIX}/bin/php-cgi-${PV}
-	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/phpdbg/phpdbg ${PREFIX}/bin/phpdbg-${PV}
-	${INSTALL_MAN} ${WRKBUILD}/sapi/phpdbg/phpdbg.1 ${PREFIX}/man/man1/phpdbg-${PV}.1
-# Make sure that php-cgi.1 still just sources php.1 when importing a new major version.
-	${INSTALL_MAN} ${WRKSRC}/sapi/cli/php.1 ${PREFIX}/man/man1/php-cgi-${PV}.1
-	${INSTALL_PROGRAM} ${WRKBUILD}/ext/phar/phar.phar ${PREFIX}/bin/phar-${PV}
-	${INSTALL_MAN} ${WRKBUILD}/ext/phar/phar.1 ${PREFIX}/man/man1/phar-${PV}.1
-	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/fpm/php-fpm ${PREFIX}/sbin/php-fpm-${PV}
-	${INSTALL_MAN} ${WRKBUILD}/sapi/fpm/php-fpm.8 ${PREFIX}/man/man8/php-fpm-${PV}.8
-	${INSTALL_DATA} ${WRKBUILD}/sapi/fpm/php-fpm.conf \
-		${PREFIX}/share/examples/php-${PV}/php-fpm.conf
-	cat ${WRKBUILD}/sapi/fpm/www.conf >> \
-		${PREFIX}/share/examples/php-${PV}/php-fpm.conf
-	${SUBST_CMD} -m 644 -c ${.CURDIR}/../files/php.conf \
-		${PREFIX}/share/examples/php-${PV}/modphp.conf
-
-.for m in ${PHP_EXTENSIONS:S/-//g}
-.if ${BUILD_PACKAGES:M-$m}
-	${INSTALL_DATA} ${WRKBUILD}/modules/${m}.so \
-		${PREFIX}/${MODULES_SUBDIR}/${m}.so
-	echo "extension=${m}.so" > \
-		${PREFIX}/share/examples/php-${PV}/${m}.ini
-.endif
-.endfor
-.for m in ${ZEND_EXTENSIONS:S/-//g}
-	${INSTALL_DATA} ${WRKBUILD}/modules/${m}.so \
-		${PREFIX}/${MODULES_SUBDIR}/${m}.so
-	echo "zend_extension=${m}.so" > \
-		${PREFIX}/share/examples/php-${PV}/${m}.ini
-.endfor
 	${INSTALL_DATA_DIR} ${WRKINST}/${CHROOT_DIR}/etc
 	echo "www:*:67:67::0:0:dummy user to appease c-client:/nonexistent:/sbin/nologin" > \
 		${WRKINST}/${CHROOT_DIR}/etc/master.passwd.imap
 	pwd_mkdb -d ${WRKINST}/${CHROOT_DIR}/etc master.passwd.imap
+
+	${INSTALL_DATA} ${WRKBUILD}/sapi/fpm/php-fpm.conf \
+		${PREFIX}/share/examples/php-${PV}/php-fpm.conf
+	cat ${WRKBUILD}/sapi/fpm/www.conf >> \
+		${PREFIX}/share/examples/php-${PV}/php-fpm.conf
+	mv ${PREFIX}/share/php/* ${PREFIX}/share/php-${PV}/
+	rmdir ${PREFIX}/share/php
+
+.for m in ${ZEND_EXTENSIONS:S/-//g}
+	cd ${PREFIX}; \
+	${INSTALL_DATA} ${WRKBUILD}/modules/$m.so ${MODULES_SUBDIR}/$m.so; \
+	echo "zend_extension=$m.so" > share/examples/php-${PV}/$m.ini
+.endfor
+
+.for m in ${PHP_EXTENSIONS:S/-//g}
+.    if ${BUILD_PACKAGES:M-$m}
+	cd ${PREFIX}; \
+	${INSTALL_DATA} ${WRKBUILD}/modules/$m.so ${MODULES_SUBDIR}/$m.so; \
+	echo "extension=$m.so" > share/examples/php-${PV}/$m.ini
+.    endif
+.endfor
 
 .for i in ${INI_TEMPLATES}
 	@sed -e 's,MODULES_DIR,${MODULES_DIR},' \
@@ -553,10 +553,29 @@ post-install:
 		<${WRKSRC}/php.ini-${i} \
 		>${PREFIX}/share/examples/php-${PV}/php.ini-${i}
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/sapi/cli/php.1 ${PREFIX}/man/man1/php-${PV}.1
+
+.if ${BUILD_PACKAGES:M-apache}
+	${SUBST_CMD} -m 644 -c ${.CURDIR}/../files/php.conf \
+		${PREFIX}/share/examples/php-${PV}/modphp.conf
+	${INSTALL_DATA} ${WRKBUILD}/.libs/libphp${MV}.so \
+		${PREFIX}/${APACHE_MODULE_SUBDIR}/
+.endif
+
+.if ${BUILD_PACKAGES:M-embed}
+	${INSTALL_DATA} ${WRKBUILD}/.libs/libphp${MV}.so \
+		${PREFIX}/lib/php-${PV}/
+.endif
 
 .if ${DEFAULT_PHP:L} == yes
-.for p in phar php
+.    for p in phar php
 	ln -s $p-${PV} ${PREFIX}/bin/$p
-.endfor
+.    endfor
 .endif
+
+	@if [[ $$((`cat ${WRKSRC}/sapi/cgi/php-cgi.1 | wc -l`+0)) != 1 ]]; then \
+	  echo "Error: php-cgi.1 is expected to only source php.1, port needs updating"; \
+	  exit 1; fi
+	${INSTALL_MAN} ${WRKSRC}/sapi/cli/php.1 ${PREFIX}/man/man1/php-cgi-${PV}.1
+
+	${INSTALL_PROGRAM} ${WRKBUILD}/ext/phar/phar.phar ${PREFIX}/bin/phar-${PV}
+	${INSTALL_MAN} ${WRKBUILD}/ext/phar/phar.1 ${PREFIX}/man/man1/phar-${PV}.1

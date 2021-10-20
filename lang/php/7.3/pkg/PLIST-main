@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2021/04/30 17:00:26 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2021/10/20 20:45:58 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict php-${PHP_PKGSPEC}
@@ -16,6 +16,7 @@
 @mode
 @owner
 @group
+@sample ${SYSCONFDIR}/php-fpm.d/
 @rcscript ${RCDIR}/php${SV}_fpm
 bin/phar-${PV}
 @bin bin/php-${PV}
@@ -33,7 +34,6 @@ lib/php-${PV}/modules/
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/php-${PV}/
 @sample ${SYSCONFDIR}/php-${PV}.sample/
-@sample ${SYSCONFDIR}/php-fpm.d/
 share/examples/php-${PV}/opcache.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/opcache.ini
 share/examples/php-${PV}/php-fpm.conf
@@ -56,6 +56,8 @@ share/php-${PV}/build/phpize.m4
 share/php-${PV}/build/run-tests.php
 share/php-${PV}/build/scan_makefile_in.awk
 share/php-${PV}/build/shtool
+share/php-${PV}/fpm/
+share/php-${PV}/fpm/status.html
 share/php-${PV}/include/
 share/php-${PV}/include/TSRM/
 share/php-${PV}/include/TSRM/TSRM.h

@@ -1,0 +1,18 @@
+$OpenBSD: patch-ext_openssl_openssl_c,v 1.3 2021/10/20 20:45:59 sthen Exp $
+
+This check doesn't make sense for EC keys. (Also it ignores the default
+key size compiled into libcrypto, only looks at default_bits in openssl.cnf
+and any settings in the php file, which results in bogus failures).
+
+Index: ext/openssl/openssl.c
+--- ext/openssl/openssl.c.orig
++++ ext/openssl/openssl.c
+@@ -3661,7 +3661,7 @@ static EVP_PKEY * php_openssl_generate_private_key(str
+ 	int egdsocket, seeded;
+ 	EVP_PKEY * return_val = NULL;
+ 
+-	if (req->priv_key_bits < MIN_KEY_LENGTH) {
++	if (req->priv_key_type != OPENSSL_KEYTYPE_EC && req->priv_key_bits < MIN_KEY_LENGTH) {
+ 		php_error_docref(NULL, E_WARNING, "Private key length must be at least %d bits, configured to %d",
+ 			MIN_KEY_LENGTH, req->priv_key_bits);
+ 		return NULL;
