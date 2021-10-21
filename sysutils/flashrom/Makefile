@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2021/10/20 12:07:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/10/21 08:07:27 sthen Exp $
 
 COMMENT=	flash ROM programmer for BIOS etc
 
@@ -7,7 +7,7 @@ DISTNAME=	flashrom-v${V}
 PKGNAME=	flashrom-${V}
 EXTRACT_SUFX=	.tar.bz2
 # portroach finds flashrom-1.0 but ignores flashrom-v1.0.1+
-PORTROACH=	limit:v?(1\.[1-9]|[2-9])
+PORTROACH=	limit:^v?(1\.[1-9]|[2-9])
 REVISION=	1
 
 CATEGORIES=	sysutils
