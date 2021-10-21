@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2133 2021/10/19 13:37:08 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2134 2021/10/21 08:59:33 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1480,7 +1480,6 @@
      SUBDIR += py-jmespath
      SUBDIR += py-jmespath,python3
      SUBDIR += py-jsonrpclib
-     SUBDIR += py-jsonschema
      SUBDIR += py-jsonschema,python3
      SUBDIR += py-jupyter_client,python3
      SUBDIR += py-jupyter_core,python3

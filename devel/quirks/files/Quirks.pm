@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1317 2021/10/06 21:13:29 jeremy Exp $
+# $OpenBSD: Quirks.pm,v 1.1318 2021/10/21 08:59:34 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -496,6 +496,7 @@ my $stem_extensions = {
 	'py-websocket-client' => 'py3-websocket-client',
 	'libmesode' => 'libstrophe',
 	'py-stem' => 'py3-stem',
+	'py-jsonschema' => 'py3-jsonschema',
 };
 
 my $obsolete_reason = {};
