@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2021/07/12 20:52:43 pascal Exp $
+# $OpenBSD: Makefile,v 1.19 2021/10/21 17:16:01 kirby Exp $
 
 COMMENT =		library set for simulations, games and visualizations
 
@@ -30,6 +30,9 @@ LIB_DEPENDS =		graphics/openscenegraph \
 			audio/openal
 
 CONFIGURE_ARGS +=	-DSYSTEM_EXPAT=ON
+.if ${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "amd64"
+CONFIGURE_ARGS +=	-DENABLE_SIMD=OFF
+.endif
 
 CFLAGS +=		-I${X11BASE}/include -pthread
 CXXFLAGS +=		-I${X11BASE}/include -pthread
