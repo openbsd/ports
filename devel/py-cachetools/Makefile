@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2021/03/31 18:15:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2021/10/21 20:41:21 sthen Exp $
 
 COMMENT =		extensible memoizing collections and decorators
 
-MODPY_EGG_VERSION =	4.2.1
+MODPY_EGG_VERSION =	4.2.4
 DISTNAME =		cachetools-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -14,6 +14,9 @@ HOMEPAGE =		https://github.com/tkem/cachetools
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+
+FLAVOR =		python3
+FLAVORS =		python3
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes

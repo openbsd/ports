@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2134 2021/10/21 08:59:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.2135 2021/10/21 20:41:21 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1333,7 +1333,7 @@
      SUBDIR += py-bytecodeassembler
      SUBDIR += py-cached-property
      SUBDIR += py-cached-property,python3
-     SUBDIR += py-cachetools
+     SUBDIR += py-cachetools,python3
      SUBDIR += py-cairocffi
      SUBDIR += py-cairocffi,python3
      SUBDIR += py-certifi
