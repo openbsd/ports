@@ -1,20 +1,20 @@
-$OpenBSD: patch-arch_arm_dts_rk3399-rockpro64_dtsi,v 1.1 2020/07/07 08:26:26 jsg Exp $
+$OpenBSD: patch-arch_arm_dts_rk3399-rockpro64_dtsi,v 1.2 2021/10/21 12:58:29 jsg Exp $
 
 Set baud rate, enable fan control and PCIe gen2.
 
 Index: arch/arm/dts/rk3399-rockpro64.dtsi
 --- arch/arm/dts/rk3399-rockpro64.dtsi.orig
 +++ arch/arm/dts/rk3399-rockpro64.dtsi
-@@ -11,7 +11,7 @@
+@@ -17,7 +17,7 @@
+ 	};
  
- / {
  	chosen {
 -		stdout-path = "serial2:1500000n8";
 +		stdout-path = "serial2:115200n8";
  	};
  
  	clkin_gmac: external-gmac-clock {
-@@ -56,6 +56,7 @@
+@@ -69,6 +69,7 @@
  
  	fan: pwm-fan {
  		compatible = "pwm-fan";
@@ -22,7 +22,7 @@ Index: arch/arm/dts/rk3399-rockpro64.dtsi
  		#cooling-cells = <2>;
  		fan-supply = <&vcc12v_dcin>;
  		pwms = <&pwm1 0 50000 0>;
-@@ -525,6 +526,7 @@
+@@ -573,6 +574,7 @@
  
  &pcie0 {
  	ep-gpios = <&gpio2 RK_PD4 GPIO_ACTIVE_HIGH>;
@@ -30,7 +30,7 @@ Index: arch/arm/dts/rk3399-rockpro64.dtsi
  	num-lanes = <4>;
  	pinctrl-names = "default";
  	pinctrl-0 = <&pcie_perst>;
-@@ -794,4 +796,43 @@
+@@ -867,4 +869,43 @@
  
  &vopl_mmu {
  	status = "okay";
