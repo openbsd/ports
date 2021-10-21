@@ -1,4 +1,4 @@
-$OpenBSD: patch-certificates_c,v 1.1 2021/10/11 12:05:26 tb Exp $
+$OpenBSD: patch-certificates_c,v 1.2 2021/10/21 09:33:34 tb Exp $
 
 Index: certificates.c
 --- certificates.c.orig
@@ -65,16 +65,29 @@ Index: certificates.c
  		ERROR("couldn't set subject's name");
  
  	if (ca_new_serial_number(ca, X509_get_serialNumber(cert)) == 0)
-@@ -768,7 +769,7 @@ ca_load(const char *ca_dir, const char *crl_dir, const
+@@ -768,9 +769,9 @@ ca_load(const char *ca_dir, const char *crl_dir, const
  {
  	DIR			*dir;
  	struct dirent		*entry;
 -	char			 file[PATH_MAX], *subjname;
 +	char			 file[PATH_MAX], *certname, *subjname;
  	STACK_OF(X509_OBJECT)	*h;
- 	X509_STORE_CTX		csc;
+-	X509_STORE_CTX		csc;
++	X509_STORE_CTX		*csc;
  	X509_STORE		*st;
-@@ -813,7 +814,7 @@ ca_load(const char *ca_dir, const char *crl_dir, const
+ 	X509_OBJECT		*xo;
+ 	X509			*x509;
+@@ -805,15 +806,15 @@ ca_load(const char *ca_dir, const char *crl_dir, const
+ 		}
+ 
+ 		/* retreive which one was it and store it in own SLIST */
+-		h = store.ca_cas->objs;
++		h = X509_STORE_get0_objects(store.ca_cas);
+ 		/* LINTED BAD_BAD_OPENSSL */
+ 		xo = sk_X509_OBJECT_value(h, sk_X509_OBJECT_num(h) - 1);
+ 
+-		if (fill_ca(&ca, xo->data.x509, entry->d_name) != EXIT_SUCCESS)
++		if (fill_ca(&ca, X509_OBJECT_get0_X509(xo), entry->d_name) != EXIT_SUCCESS)
  			ERROR("fill_ca");
  
  		log_debug("%s: loaded ca %s from file %s", __func__,
@@ -83,13 +96,18 @@ Index: certificates.c
  	}
  	if (closedir(dir) == -1)
  		ERROR(strerror(errno));
-@@ -849,11 +850,17 @@ ca_load(const char *ca_dir, const char *crl_dir, const
+@@ -845,22 +846,28 @@ ca_load(const char *ca_dir, const char *crl_dir, const
+ 		X509_STORE_set_flags(store.ca_cas, X509_V_FLAG_CRL_CHECK);
+ 
+ 		/* Find out which CA does this CRL belong to */
+-		h = store.ca_cas->objs;
++		h = X509_STORE_get0_objects(store.ca_cas);
  		/* LINTED BAD_BAD_OPENSSL */
  		xo = sk_X509_OBJECT_value(h, sk_X509_OBJECT_num(h) - 1);
  		SLIST_FOREACH(ca, &cas, cas) {
 -			subjname = X509_NAME_oneline(xo->data.crl->crl->issuer,
 +			certname = X509_NAME_oneline(X509_get_subject_name(ca->x509), NULL, 0);
-+			subjname = X509_NAME_oneline(X509_CRL_get_issuer(xo->data.crl),
++			subjname = X509_NAME_oneline(X509_CRL_get_issuer(X509_OBJECT_get0_X509_CRL(xo)),
  			    NULL, 0);
  
 +			if (certname == NULL || subjname == NULL) {
@@ -99,10 +117,19 @@ Index: certificates.c
 +			}
  			/* Try matching by issuer's name, then make sure */ 
 -			if (!strcmp(ca->x509->name, subjname) &&
+-			    crl_matching_ca(xo->data.crl, ca->x509) > 0) {
 +			if (!strcmp(certname, subjname) &&
- 			    crl_matching_ca(xo->data.crl, ca->x509) > 0) {
++			    crl_matching_ca(X509_OBJECT_get0_X509_CRL(xo), ca->x509) > 0) {
  				ca->num_crls_ok++;
  
+ 				if ((crl = calloc(1, sizeof(*crl))) == NULL)
+ 					ERROR("calloc ikeman_crl");
+ 
+-				crl->x509 = xo->data.crl;
++				crl->x509 = X509_OBJECT_get0_X509_CRL(xo);
+ 				crl->filename = strdup(entry->d_name);
+ 				if (crl->filename == NULL)
+ 					ERROR("strdup crl filename");
 @@ -873,9 +880,11 @@ ca_load(const char *ca_dir, const char *crl_dir, const
  				fill_crl_attributes(crl->x509, crl->attrs);
  
@@ -115,3 +142,71 @@ Index: certificates.c
  			OPENSSL_free(subjname);
  		}
  		if (ca)
+@@ -908,10 +917,10 @@ ca_load(const char *ca_dir, const char *crl_dir, const
+ 			continue;
+ 		}
+ 
+-		h = store.ca_certs->objs;
++		h = X509_STORE_get0_objects(store.ca_certs);
+ 		/* LINTED BAD_BAD_OPENSSL */
+ 		xo = sk_X509_OBJECT_value(h, sk_X509_OBJECT_num(h) - 1);
+-		x509 = xo->data.x509;
++		x509 = X509_OBJECT_get0_X509(xo);
+ 
+ 		/* Certificate needs a valid subjectName */
+ 		if (X509_get_subject_name(x509) == NULL) {
+@@ -958,21 +967,22 @@ ca_load(const char *ca_dir, const char *crl_dir, const
+ 		}
+ #endif
+ 
+-			memset(&csc, 0, sizeof csc);
+-			X509_STORE_CTX_init(&csc, st, x509, NULL);
++			if ((csc = X509_STORE_CTX_new()) == NULL)
++				ERROR("X509_STORE_CTX_new");
++			X509_STORE_CTX_init(csc, st, x509, NULL);
+ 
+ 			if (! SLIST_EMPTY(&(ca->crls))) {
+-				X509_STORE_CTX_set_flags(&csc,
++				X509_STORE_CTX_set_flags(csc,
+ 				    X509_V_FLAG_CRL_CHECK);
+-				X509_STORE_CTX_set_flags(&csc,
++				X509_STORE_CTX_set_flags(csc,
+ 				    X509_V_FLAG_CRL_CHECK_ALL);
+ 			}
+ 
+-			X509_verify_cert(&csc);
+-			X509_STORE_CTX_cleanup(&csc);
++			X509_verify_cert(csc);
++			X509_STORE_CTX_cleanup(csc);
+ 			X509_STORE_free(st);
+ 
+-			switch (csc.error) {
++			switch (X509_STORE_CTX_get_error(csc)) {
+ 			case X509_V_ERR_CERT_HAS_EXPIRED:
+ 				ca->num_certs_expired++;
+ 				matches_at_least_a_bit++;
+@@ -1000,7 +1010,7 @@ ca_load(const char *ca_dir, const char *crl_dir, const
+ 
+ 				cert->x509 = x509;
+ 				cert->ca = ca;
+-				cert->state = csc.error;
++				cert->state = X509_STORE_CTX_get_error(csc);
+ 				cert->filename = strdup(entry->d_name);
+ 				if (cert->filename == NULL)
+ 					ERROR("strdup cert filename");
+@@ -1017,13 +1027,14 @@ ca_load(const char *ca_dir, const char *crl_dir, const
+ 				 * Don't forget revoked certs - find the
+ 				 * appropriate CRL and fill in the info.
+ 				 */
+-				if (csc.error == X509_V_ERR_CERT_REVOKED)
++				if (X509_STORE_CTX_get_error(csc) == X509_V_ERR_CERT_REVOKED)
+ 					add_cert_to_crls(cert, ca);
+ 
+ 				log_debug("cert %s has CA in file %s",
+ 				    cert->attrs->subject, ca->filename);
+ 				break;
+ 			}
++			X509_STORE_CTX_free(csc);
+ 		}
+ 		log_debug("%s: loaded cert file %s", __func__, entry->d_name);
+ 	}

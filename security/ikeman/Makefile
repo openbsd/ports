@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2021/10/11 12:05:26 tb Exp $
+# $OpenBSD: Makefile,v 1.10 2021/10/21 09:33:34 tb Exp $
 
 COMMENT =		interactive PKI manager for isakmpd(8) or iked(8)
 DISTNAME =		ikeman-0.2
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		security
 
