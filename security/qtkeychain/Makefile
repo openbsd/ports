@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2020/04/15 12:42:21 kirby Exp $
+# $OpenBSD: Makefile,v 1.16 2021/10/21 05:49:43 kirby Exp $
 
 COMMENT =		Qt API to store passwords and other secret data
 
 GH_ACCOUNT =		frankosterfeld
 GH_PROJECT =		qtkeychain
-GH_TAGNAME =		v0.10.0
+GH_TAGNAME =		v0.12.0
 
 SHARED_LIBS +=		qt5keychain	2.0 # 0.4
 
@@ -30,8 +30,6 @@ CONFIGURE_ARGS += 	-DCMAKE_SHARED_LINKER_FLAGS="-L${PREFIX}/lib" \
 LIBNAME = 		Qt5Keychain
 LIBNAME_L = 		qt5keychain
 QT = 			qt5
-
-CONFIGURE_ARGS += 	-DBUILD_WITH_QT4=OFF
 
 SUBST_VARS += 		LIBNAME LIBNAME_L QT
 

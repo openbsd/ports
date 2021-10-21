@@ -1,3 +1,4 @@
 QtKeychain is a Qt API to store passwords and other secret data
 securely. If running, GNOME Keyring is used, otherwise qtkeychain tries
-to use KWallet (via D-Bus), if available.
+to use KWallet (via D-Bus), if available. Libsecret (common API for
+desktop-specific solutions) is also supported.
