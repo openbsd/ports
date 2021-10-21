@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2020/05/18 22:11:43 tracey Exp $
+# $OpenBSD: Makefile,v 1.3 2021/10/21 14:03:04 tracey Exp $
 
 COMMENT =		makefile for ESP8266 and ESP32 Arduino projects
 
 GH_ACCOUNT =		plerup
 GH_PROJECT =		makeEspArduino
-GH_TAGNAME =		5.0.2
+GH_TAGNAME =		6.5.0
 
 PKGNAME =		makeesparduino-${GH_TAGNAME}
 
@@ -15,18 +15,22 @@ MAINTAINER =		Tracey Emery <tracey@openbsd.org>
 #LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
+MODULES =		lang/python
+
 RUN_DEPENDS +=		devel/arduino \
 			devel/gmake
 
 NO_TEST =		Yes
 NO_BUILD =		Yes
 
-post-patch:
-	${SUBST_CMD} ${WRKDIST}/makeEspArduino.mk
-
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/makeEspArduino
 	cp -r ${WRKDIST}/*.mk ${PREFIX}/share/makeEspArduino/
+	cp -r ${WRKDIST}/os ${PREFIX}/share/makeEspArduino/
 	cp -r ${WRKDIST}/tools ${PREFIX}/share/makeEspArduino/
+
+post-install:
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${PREFIX}/share/makeEspArduino/tools
 
 .include <bsd.port.mk>

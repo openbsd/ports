@@ -1,9 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/05/18 22:11:43 tracey Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/10/21 14:03:04 tracey Exp $
 share/makeEspArduino/
 share/makeEspArduino/makeEspArduino.mk
+share/makeEspArduino/os/
+share/makeEspArduino/os/Darwin.mk
+share/makeEspArduino/os/OpenBSD.mk
+share/makeEspArduino/os/Windows_NT.mk
 share/makeEspArduino/tools/
+${MODPY_COMMENT}share/makeEspArduino/tools/${MODPY_PYCACHE}/
+share/makeEspArduino/tools/${MODPY_PYCACHE}py_wrap.${MODPY_PYC_MAGIC_TAG}pyc
 share/makeEspArduino/tools/board_op.pl
-share/makeEspArduino/tools/find_inc.pl
+share/makeEspArduino/tools/crash_tool.pl
+share/makeEspArduino/tools/find_src.pl
 share/makeEspArduino/tools/mem_use.pl
+share/makeEspArduino/tools/obj_info.pl
 share/makeEspArduino/tools/parse_arduino.pl
+share/makeEspArduino/tools/py_wrap.py
 share/makeEspArduino/tools/vscode.pl
