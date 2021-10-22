@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1271 2021/10/03 19:16:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.1272 2021/10/22 20:49:30 sthen Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -597,7 +597,6 @@
      SUBDIR += py-nxos,python3
      SUBDIR += py-paho-mqtt
      SUBDIR += py-paho-mqtt,python3
-     SUBDIR += py-pcapy
      SUBDIR += py-pcapy,python3
      SUBDIR += py-pf
      SUBDIR += py-pf,python3
