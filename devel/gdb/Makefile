@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.74 2021/03/22 17:33:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.75 2021/10/22 18:30:35 jca Exp $
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
 
-DISTNAME=	gdb-7.12.1
-REVISION=	16
+DISTNAME=	gdb-9.2
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 
@@ -19,25 +18,34 @@ EXTRACT_SUFX=	.tar.xz
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/gdb
 
-WANTLIB = c expat kvm m curses pthread ${MODPY_WANTLIB} ${COMPILER_LIBCXX} util
+WANTLIB = c curses expat kvm intl m pthread ${MODPY_WANTLIB} ${COMPILER_LIBCXX} util
 
-COMPILER=	base-clang ports-gcc base-gcc
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
+
+# C++11
+COMPILER=	base-clang ports-gcc
 
 SEPARATE_BUILD= Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--program-prefix=e \
 		--disable-nls \
 		--disable-sim \
+		--without-gmp \
 		--without-guile \
+		--without-isl \
 		--without-lzma \
+		--without-mpc \
+		--without-mpfr \
 		--with-auto-load-dir=${TRUEPREFIX}/share/gdb/auto-load \
 		--enable-target=all \
 		--with-python=${MODPY_BIN}
 
 USE_GMAKE=	Yes
+MAKE_FLAGS=	V=1 LDFLAGS="${LDFLAGS}"
 
 MODULES +=	lang/python
 
+BUILD_DEPENDS =	sysutils/xxhash
 LIB_DEPENDS +=	${MODPY_LIB_DEPENDS}
 TEST_DEPENDS +=	devel/dejagnu
 

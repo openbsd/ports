@@ -1,9 +1,9 @@
-$OpenBSD: patch-gdb_ppc64obsd-nat_c,v 1.2 2020/10/18 18:49:10 kettenis Exp $
+$OpenBSD: patch-gdb_ppc64-obsd-nat_c,v 1.1 2021/10/22 18:30:36 jca Exp $
 
-Index: gdb/ppc64obsd-nat.c
---- gdb/ppc64obsd-nat.c.orig
-+++ gdb/ppc64obsd-nat.c
-@@ -0,0 +1,224 @@
+Index: gdb/ppc64-obsd-nat.c
+--- gdb/ppc64-obsd-nat.c.orig
++++ gdb/ppc64-obsd-nat.c
+@@ -0,0 +1,219 @@
 +/* Native-dependent code for OpenBSD/powerpc64.
 +
 +   Copyright (C) 2004-2020 Free Software Foundation, Inc.
@@ -37,10 +37,18 @@ Index: gdb/ppc64obsd-nat.c
 +
 +#include "ppc-tdep.h"
 +#include "ppc64-tdep.h"
-+#include "ppc64obsd-tdep.h"
++#include "ppc64-obsd-tdep.h"
 +#include "inf-ptrace.h"
 +#include "obsd-nat.h"
 +#include "bsd-kvm.h"
++
++struct ppc64_obsd_nat_target final : public obsd_nat_target
++{
++  void fetch_registers (struct regcache *, int) override;
++  void store_registers (struct regcache *, int) override;
++};
++
++static ppc64_obsd_nat_target the_ppc64_obsd_nat_target;
 +
 +#if 0
 +
@@ -73,9 +81,8 @@ Index: gdb/ppc64obsd-nat.c
 +/* Fetch register REGNUM from the inferior.  If REGNUM is -1, do this
 +   for all registers.  */
 +
-+static void
-+ppc64obsd_fetch_registers (struct target_ops *ops,
-+			   struct regcache *regcache, int regnum)
++void
++ppc64_obsd_nat_target::fetch_registers (struct regcache *regcache, int regnum)
 +{
 +  struct reg regs;
 +
@@ -88,7 +95,7 @@ Index: gdb/ppc64obsd-nat.c
 +
 +#if 0
 +  if (regnum == -1
-+      || getfpregs_supplies (get_regcache_arch (regcache), regnum))
++      || getfpregs_supplies (regcache->arch (), regnum))
 +    {
 +      struct fpreg fpregs;
 +
@@ -105,9 +112,8 @@ Index: gdb/ppc64obsd-nat.c
 +/* Store register REGNUM back into the inferior.  If REGNUM is -1, do
 +   this for all registers.  */
 +
-+static void
-+ppc64obsd_store_registers (struct target_ops *ops,
-+			 struct regcache *regcache, int regnum)
++void
++ppc64_obsd_nat_target::store_registers (struct regcache *regcache, int regnum)
 +{
 +  struct reg regs;
 +
@@ -124,7 +130,7 @@ Index: gdb/ppc64obsd-nat.c
 +
 +#if 0
 +  if (regnum == -1
-+      || getfpregs_supplies (get_regcache_arch (regcache), regnum))
++      || getfpregs_supplies (regcache->arch (), regnum))
 +    {
 +      struct fpreg fpregs;
 +
@@ -148,7 +154,7 @@ Index: gdb/ppc64obsd-nat.c
 +static int
 +ppc64obsd_supply_pcb (struct regcache *regcache, struct pcb *pcb)
 +{
-+  struct gdbarch *gdbarch = get_regcache_arch (regcache);
++  struct gdbarch *gdbarch = regcache->arch ();
 +  struct gdbarch_tdep *tdep = gdbarch_tdep (gdbarch);
 +  struct switchframe sf;
 +  struct callframe cf;
@@ -168,16 +174,16 @@ Index: gdb/ppc64obsd-nat.c
 +    return 0;
 +
 +  read_memory (pcb->pcb_sp, (gdb_byte *)&sf, sizeof sf);
-+  regcache_raw_supply (regcache, gdbarch_sp_regnum (gdbarch), &sf.sp);
-+  regcache_raw_supply (regcache, tdep->ppc_cr_regnum, &sf.cr);
-+  regcache_raw_supply (regcache, tdep->ppc_gp0_regnum + 2, &sf.fixreg2);
++  regcache->raw_supply (gdbarch_sp_regnum (gdbarch), &sf.sp);
++  regcache->raw_supply (tdep->ppc_cr_regnum, &sf.cr);
++  regcache->raw_supply (tdep->ppc_gp0_regnum + 2, &sf.fixreg2);
 +  for (i = 0, regnum = tdep->ppc_gp0_regnum + 13; i < 19; i++, regnum++)
-+    regcache_raw_supply (regcache, regnum, &sf.fixreg[i]);
++    regcache->raw_supply (regnum, &sf.fixreg[i]);
 +
 +  read_memory (sf.sp, (gdb_byte *)&cf, sizeof cf);
-+  regcache_raw_supply (regcache, gdbarch_pc_regnum (gdbarch), &cf.lr);
-+  regcache_raw_supply (regcache, tdep->ppc_gp0_regnum + 30, &cf.r30);
-+  regcache_raw_supply (regcache, tdep->ppc_gp0_regnum + 31, &cf.r31);
++  regcache->raw_supply (gdbarch_pc_regnum (gdbarch), &cf.lr);
++  regcache->raw_supply (tdep->ppc_gp0_regnum + 30, &cf.r30);
++  regcache->raw_supply (tdep->ppc_gp0_regnum + 31, &cf.r31);
 +
 +  return 1;
 +}
@@ -191,13 +197,7 @@ Index: gdb/ppc64obsd-nat.c
 +void
 +_initialize_ppc64obsd_nat (void)
 +{
-+  struct target_ops *t;
-+
-+  /* Add in local overrides.  */
-+  t = inf_ptrace_target ();
-+  t->to_fetch_registers = ppc64obsd_fetch_registers;
-+  t->to_store_registers = ppc64obsd_store_registers;
-+  obsd_add_target (t);
++  add_inf_child_target (&the_ppc64_obsd_nat_target);
 +
 +  /* General-purpose registers.  */
 +  ppc64obsd_reg_offsets.r0_offset = offsetof (struct reg, r_reg[0]);
@@ -217,11 +217,6 @@ Index: gdb/ppc64obsd-nat.c
 +  ppc64obsd_fpreg_offsets.f0_offset = -1;
 +  ppc64obsd_fpreg_offsets.fpscr_offset = -1;
 +  ppc64obsd_fpreg_offsets.fpscr_size = 8;
-+
-+  /* AltiVec registers.  */
-+  ppc64obsd_reg_offsets.vr0_offset = -1;
-+  ppc64obsd_reg_offsets.vscr_offset = -1;
-+  ppc64obsd_reg_offsets.vrsave_offset = -1;
 +
 +#if 0
 +  /* Support debugging kernel virtual memory images.  */

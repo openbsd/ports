@@ -1,8 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.22 2020/12/09 21:41:43 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.23 2021/10/22 18:30:36 jca Exp $
 @bin bin/egdb
+bin/egdb-add-index
 include/ansidecl.h
 include/bfd.h
+include/bfd_stdint.h
 include/bfdlink.h
+include/ctf-api.h
+include/ctf.h
+include/diagnostics.h
 include/dis-asm.h
 include/gdb/
 include/gdb/jit-reader.h
@@ -15,12 +20,16 @@ include/symcat.h
 @comment lib/charset.alias
 @static-lib lib/libbfd.a
 lib/libbfd.la
+@static-lib lib/libctf-nobfd.a
+lib/libctf-nobfd.la
+@static-lib lib/libctf.a
+lib/libctf.la
 @static-lib lib/libopcodes.a
 lib/libopcodes.la
+@man man/man1/egdb-add-index.1
 @man man/man1/egdb.1
 @man man/man1/egdbserver.1
 @man man/man5/egdbinit.5
-share/gdb/
 share/gdb/python/
 share/gdb/python/gdb/
 share/gdb/python/gdb/FrameDecorator.py

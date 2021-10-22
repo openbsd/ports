@@ -1,8 +1,8 @@
-$OpenBSD: patch-gdb_ppc64obsd-tdep_h,v 1.1 2020/10/09 19:22:42 kettenis Exp $
+$OpenBSD: patch-gdb_ppc64-obsd-tdep_h,v 1.1 2021/10/22 18:30:36 jca Exp $
 
-Index: gdb/ppc64obsd-tdep.h
---- gdb/ppc64obsd-tdep.h.orig
-+++ gdb/ppc64obsd-tdep.h
+Index: gdb/ppc64-obsd-tdep.h
+--- gdb/ppc64-obsd-tdep.h.orig
++++ gdb/ppc64-obsd-tdep.h
 @@ -0,0 +1,54 @@
 +/* Target-dependent code for OpenBSD/powerpc64.
 +

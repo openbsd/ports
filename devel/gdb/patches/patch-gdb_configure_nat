@@ -1,0 +1,99 @@
+$OpenBSD: patch-gdb_configure_nat,v 1.1 2021/10/22 18:30:36 jca Exp $
+
+All our targets need obsd-nat.o and kvm etc -> dedup.
+Add aarch64 and riscv64 support.
+
+Index: gdb/configure.nat
+--- gdb/configure.nat.orig
++++ gdb/configure.nat
+@@ -48,7 +48,6 @@
+ #
+ # - nat_makefile_frag must contain the full path of the file.
+ 
+-
+ # This first case is useful for filling default values for each
+ # gdb_host.
+ case ${gdb_host} in
+@@ -72,7 +71,8 @@ case ${gdb_host} in
+ 	HAVE_NATIVE_GCORE_HOST=1
+ 	;;
+     obsd*)
+-	NATDEPFILES='fork-child.o nat/fork-inferior.o inf-ptrace.o'
++	NATDEPFILES='fork-child.o nat/fork-inferior.o inf-ptrace.o bsd-kvm.o obsd-nat.o'
++	LOADLIBES='-lkvm'
+ 	;;
+     cygwin*)
+ 	NATDEPFILES='x86-nat.o nat/x86-dregs.o windows-nat.o'
+@@ -416,49 +416,54 @@ case ${gdb_host} in
+ 	case ${gdb_host_cpu} in
+ 	    i386)
+ 		# Host: OpenBSD/i386 ELF
+-		NATDEPFILES="${NATDEPFILES} obsd-nat.o x86-bsd-nat.o \
+-		i386-bsd-nat.o i386-obsd-nat.o bsd-kvm.o"
+-		LOADLIBES='-lkvm'
++		NATDEPFILES="${NATDEPFILES} x86-bsd-nat.o \
++		i386-bsd-nat.o i386-obsd-nat.o"
+ 		;;
+ 	    m68k)
+ 		# Host: OpenBSD/m68k
+-		NATDEPFILES="${NATDEPFILES} m68k-bsd-nat.o bsd-kvm.o"
+-		LOADLIBES='-lkvm'
++		NATDEPFILES="${NATDEPFILES} m68k-bsd-nat.o"
+ 		;;
+ 	    pa)
+ 		# Host: OpenBSD/hppa
+-		NATDEPFILES="${NATDEPFILES} obsd-nat.o hppa-obsd-nat.o"
++		NATDEPFILES="${NATDEPFILES} hppa-obsd-nat.o"
+ 		;;
+ 	    powerpc)
+ 		# Host: OpenBSD/powerpc
+-		NATDEPFILES="${NATDEPFILES} obsd-nat.o ppc-obsd-nat.o bsd-kvm.o"
+-		LOADLIBES='-lkvm'
++		NATDEPFILES="${NATDEPFILES} ppc-obsd-nat.o"
+ 		;;
+ 	    vax)
+ 		# Host: OpenBSD/vax
+-		NATDEPFILES="${NATDEPFILES} vax-bsd-nat.o bsd-kvm.o"
+-		LOADLIBES='-lkvm'
++		NATDEPFILES="${NATDEPFILES} vax-bsd-nat.o"
+ 		;;
+ 	esac
+ 	;;
+     obsd64)
+ 	case ${gdb_host_cpu} in
++	    aarch64)
++		# Host: OpenBSD/arm64
++		NATDEPFILES="${NATDEPFILES} aarch64-obsd-nat.o"
++		;;
+ 	    i386)
+ 		# Host: OpenBSD/amd64
+-		NATDEPFILES="${NATDEPFILES} obsd-nat.o amd64-nat.o x86-nat.o \
+-		x86-bsd-nat.o amd64-bsd-nat.o amd64-obsd-nat.o bsd-kvm.o \
+-		nat/x86-dregs.o"
+-		LOADLIBES='-lkvm'
++		NATDEPFILES="${NATDEPFILES} amd64-nat.o \
++		x86-bsd-nat.o amd64-bsd-nat.o amd64-obsd-nat.o"
+ 		;;
+ 	    mips)
+ 		# Host: OpenBSD/mips64
+-		NATDEPFILES="${NATDEPFILES} obsd-nat.o mips64-obsd-nat.o"
++		NATDEPFILES="${NATDEPFILES} mips64-obsd-nat.o"
+ 		;;
++	    powerpc)
++		# Host: OpenBSD/powerpc64
++		NATDEPFILES="${NATDEPFILES} ppc64-obsd-nat.o"
++		;;
++	    riscv64)
++		# Host: OpenBSD/riscv64
++		NATDEPFILES="${NATDEPFILES} riscv-obsd-nat.o"
++		;;
+ 	    sparc)
+ 		# Host: OpenBSD/sparc64
+-		NATDEPFILES="${NATDEPFILES} obsd-nat.o sparc64-obsd-nat.o \
+-		sparc-nat.o bsd-kvm.o"
+-		LOADLIBES='-lkvm'
++		NATDEPFILES="${NATDEPFILES} sparc64-obsd-nat.o \
++		sparc-nat.o"
+ 		;;
+ 	esac
+ 	;;

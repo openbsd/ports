@@ -1,10 +1,10 @@
-$OpenBSD: patch-gdb_config_aarch64_obsd_mh,v 1.1 2018/07/10 11:03:46 kettenis Exp $
+$OpenBSD: patch-gdb_config_aarch64_obsd_mh,v 1.2 2021/10/22 18:30:36 jca Exp $
 Index: gdb/config/aarch64/obsd.mh
 --- gdb/config/aarch64/obsd.mh.orig
 +++ gdb/config/aarch64/obsd.mh
 @@ -0,0 +1,5 @@
 +# Host: OpenBSD/arm64
 +NATDEPFILES= fork-child.o inf-ptrace.o obsd-nat.o \
-+	aarch64obsd-nat.o bsd-kvm.o
++	aarch64-obsd-nat.o bsd-kvm.o
 +
 +LOADLIBES= -lkvm

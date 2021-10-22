@@ -1,6 +1,7 @@
-$OpenBSD: patch-libiberty_Makefile_in,v 1.7 2015/09/09 19:47:17 pascal Exp $
---- libiberty/Makefile.in.orig	Mon Jul  6 21:57:46 2015
-+++ libiberty/Makefile.in	Tue Sep  1 10:51:15 2015
+$OpenBSD: patch-libiberty_Makefile_in,v 1.8 2021/10/22 18:30:36 jca Exp $
+Index: libiberty/Makefile.in
+--- libiberty/Makefile.in.orig
++++ libiberty/Makefile.in
 @@ -355,7 +355,7 @@ libiberty.html : $(srcdir)/libiberty.texi $(TEXISRC)
  @MAINT@	echo stamp > stamp-functions
  

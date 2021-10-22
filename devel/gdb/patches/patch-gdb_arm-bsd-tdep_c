@@ -1,8 +1,8 @@
-$OpenBSD: patch-gdb_armbsd-tdep_c,v 1.1 2018/06/18 14:53:12 kettenis Exp $
+$OpenBSD: patch-gdb_arm-bsd-tdep_c,v 1.1 2021/10/22 18:30:36 jca Exp $
 
-Index: gdb/armbsd-tdep.c
---- gdb/armbsd-tdep.c.orig
-+++ gdb/armbsd-tdep.c
+Index: gdb/arm-bsd-tdep.c
+--- gdb/arm-bsd-tdep.c.orig
++++ gdb/arm-bsd-tdep.c
 @@ -30,15 +30,12 @@
  #define ARMBSD_SIZEOF_GREGS	(17 * 4)
  
@@ -29,13 +29,13 @@ Index: gdb/armbsd-tdep.c
 +  for (i = ARM_D0_REGNUM; i <= ARM_FPSCR_REGNUM; i++)
      {
        if (regnum == i || regnum == -1)
- 	regcache_raw_supply (regcache, i, regs + armbsd_fpreg_offset (i));
+ 	regcache->raw_supply (i, regs + armbsd_fpreg_offset (i));
 @@ -83,7 +80,7 @@ armbsd_supply_gregset (const struct regset *regset,
      }
  
    if (regnum == ARM_PS_REGNUM || regnum == -1)
--    regcache_raw_supply (regcache, i, regs + 16 * 4);
-+    regcache_raw_supply (regcache, ARM_PS_REGNUM, regs + 16 * 4);
+-    regcache->raw_supply (i, regs + 16 * 4);
++    regcache->raw_supply (ARM_PS_REGNUM, regs + 16 * 4);
  
    if (len >= ARMBSD_SIZEOF_GREGS + ARMBSD_SIZEOF_FPREGS)
      {

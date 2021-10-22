@@ -1,9 +1,9 @@
-$OpenBSD: patch-gdb_ppc64obsd-tdep_c,v 1.2 2020/10/18 18:49:10 kettenis Exp $
+$OpenBSD: patch-gdb_ppc64-obsd-tdep_c,v 1.1 2021/10/22 18:30:36 jca Exp $
 
-Index: gdb/ppc64obsd-tdep.c
---- gdb/ppc64obsd-tdep.c.orig
-+++ gdb/ppc64obsd-tdep.c
-@@ -0,0 +1,415 @@
+Index: gdb/ppc64-obsd-tdep.c
+--- gdb/ppc64-obsd-tdep.c.orig
++++ gdb/ppc64-obsd-tdep.c
+@@ -0,0 +1,411 @@
 +/* Target-dependent code for OpenBSD/powerpc64.
 +
 +   Copyright (C) 2004, 2005, 2006 Free Software Foundation, Inc.
@@ -26,6 +26,7 @@ Index: gdb/ppc64obsd-tdep.c
 +   Boston, MA 02110-1301, USA.  */
 +
 +#include "defs.h"
++#include "gdbarch.h"
 +#include "arch-utils.h"
 +#include "floatformat.h"
 +#include "frame.h"
@@ -38,7 +39,7 @@ Index: gdb/ppc64obsd-tdep.c
 +
 +#include "obsd-tdep.h"
 +#include "ppc-tdep.h"
-+#include "ppc64obsd-tdep.h"
++#include "ppc64-obsd-tdep.h"
 +#include "solib-svr4.h"
 +
 +/* Register offsets from <machine/reg.h>.  */
@@ -53,7 +54,7 @@ Index: gdb/ppc64obsd-tdep.c
 +		  const gdb_byte *regs, size_t offset)
 +{
 +  if (regnum != -1 && offset != -1)
-+    regcache_raw_supply (regcache, regnum, regs + offset);
++    regcache->raw_supply (regnum, regs + offset);
 +}
 +
 +static void
@@ -61,18 +62,18 @@ Index: gdb/ppc64obsd-tdep.c
 +		   gdb_byte *regs, size_t offset)
 +{
 +  if (regnum != -1 && offset != -1)
-+    regcache_raw_collect (regcache, regnum, regs + offset);
++    regcache->raw_collect (regnum, regs + offset);
 +}
 +    
 +/* Supply register REGNUM in the general-purpose register set REGSET
 +   from the buffer specified by GREGS and LEN to register cache
 +   REGCACHE.  If REGNUM is -1, do this for all registers in REGSET.  */
 +
-+void
++static void
 +ppc64_supply_gregset (const struct regset *regset, struct regcache *regcache,
 +		      int regnum, const void *gregs, size_t len)
 +{
-+  struct gdbarch *gdbarch = get_regcache_arch (regcache);
++  struct gdbarch *gdbarch = regcache->arch ();
 +  struct gdbarch_tdep *tdep = gdbarch_tdep (gdbarch);
 +  const struct ppc_reg_offsets *offsets
 +    = (const struct ppc_reg_offsets *) regset->regmap;
@@ -112,12 +113,12 @@ Index: gdb/ppc64obsd-tdep.c
 +   GREGS and LEN.  If REGNUM is -1, do this for all registers in
 +   REGSET.  */
 +
-+void
++static void
 +ppc64_collect_gregset (const struct regset *regset,
 +		       const struct regcache *regcache,
 +		       int regnum, void *gregs, size_t len)
 +{
-+  struct gdbarch *gdbarch = get_regcache_arch (regcache);
++  struct gdbarch *gdbarch = regcache->arch ();
 +  struct gdbarch_tdep *tdep = gdbarch_tdep (gdbarch);
 +  const struct ppc_reg_offsets *offsets
 +    = (const struct ppc_reg_offsets *) regset->regmap;
@@ -202,8 +203,8 @@ Index: gdb/ppc64obsd-tdep.c
 +					void *cb_data,
 +					const struct regcache *regcache)
 +{
-+  cb (".reg", 304, &ppc64obsd_gregset, NULL, cb_data);
-+  cb (".reg2", 1056, &ppc64obsd_fpregset, NULL, cb_data);
++  cb (".reg", 304, 304, &ppc64obsd_gregset, NULL, cb_data);
++  cb (".reg2", 1056, 1056, &ppc64obsd_fpregset, NULL, cb_data);
 +}
 +
 +
@@ -382,10 +383,10 @@ Index: gdb/ppc64obsd-tdep.c
 +void
 +_initialize_ppc64obsd_tdep (void)
 +{
-+  gdbarch_register_osabi (bfd_arch_rs6000, 0, GDB_OSABI_OPENBSD_ELF,
++  gdbarch_register_osabi (bfd_arch_rs6000, 0, GDB_OSABI_OPENBSD,
 +			  ppc64obsd_init_abi);
 +  gdbarch_register_osabi (bfd_arch_powerpc, bfd_mach_ppc64,
-+			  GDB_OSABI_OPENBSD_ELF, ppc64obsd_init_abi);
++			  GDB_OSABI_OPENBSD, ppc64obsd_init_abi);
 +
 +  /* Avoid initializing the register offsets again if they were
 +     already initailized by ppc64obsd-nat.c.  */
@@ -404,11 +405,6 @@ Index: gdb/ppc64obsd-tdep.c
 +      /* Floating-point registers.  */
 +      ppc64obsd_reg_offsets.f0_offset = -1;
 +      ppc64obsd_reg_offsets.fpscr_offset = -1;
-+
-+      /* AltiVec registers.  */
-+      ppc64obsd_reg_offsets.vr0_offset = -1;
-+      ppc64obsd_reg_offsets.vscr_offset = -1;
-+      ppc64obsd_reg_offsets.vrsave_offset = -1;
 +    }
 +
 +  if (ppc64obsd_fpreg_offsets.fpscr_offset == 0)

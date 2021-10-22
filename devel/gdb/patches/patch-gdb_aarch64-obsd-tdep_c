@@ -1,8 +1,9 @@
-$OpenBSD: patch-gdb_aarch64obsd-tdep_c,v 1.2 2019/10/17 17:10:26 kurt Exp $
-Index: gdb/aarch64obsd-tdep.c
---- gdb/aarch64obsd-tdep.c.orig
-+++ gdb/aarch64obsd-tdep.c
-@@ -0,0 +1,299 @@
+$OpenBSD: patch-gdb_aarch64-obsd-tdep_c,v 1.1 2021/10/22 18:30:36 jca Exp $
+
+Index: gdb/aarch64-obsd-tdep.c
+--- gdb/aarch64-obsd-tdep.c.orig
++++ gdb/aarch64-obsd-tdep.c
+@@ -0,0 +1,301 @@
 +/* Target-dependent code for OpenBSD/aarch64.
 +
 +   Copyright (C) 2006-2017 Free Software Foundation, Inc.
@@ -23,6 +24,7 @@ Index: gdb/aarch64obsd-tdep.c
 +   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 +
 +#include "defs.h"
++#include "gdbarch.h"
 +#include "frame-unwind.h"
 +#include "osabi.h"
 +#include "regset.h"
@@ -30,6 +32,7 @@ Index: gdb/aarch64obsd-tdep.c
 +#include "tramp-frame.h"
 +
 +#include "aarch64-tdep.h"
++#include "aarch64-obsd-tdep.h"
 +#include "obsd-tdep.h"
 +#include "solib-svr4.h"
 +
@@ -264,10 +267,10 @@ Index: gdb/aarch64obsd-tdep.c
 +					   void *cb_data,
 +					   const struct regcache *regcache)
 +{
-+  cb (".reg", AARCH64_OBSD_SIZEOF_GREGSET, &aarch64_obsd_gregset,
-+      NULL, cb_data);
-+  cb (".reg2", AARCH64_OBSD_SIZEOF_FPREGSET, &aarch64_obsd_fpregset,
-+      NULL, cb_data);
++  cb (".reg", AARCH64_OBSD_SIZEOF_GREGSET, AARCH64_OBSD_SIZEOF_GREGSET,
++      &aarch64_obsd_gregset, NULL, cb_data);
++  cb (".reg2", AARCH64_OBSD_SIZEOF_FPREGSET, AARCH64_OBSD_SIZEOF_FPREGSET,
++      &aarch64_obsd_fpregset, NULL, cb_data);
 +}
 +
 +
@@ -299,6 +302,6 @@ Index: gdb/aarch64obsd-tdep.c
 +void
 +_initialize_aarch64obsd_tdep (void)
 +{
-+  gdbarch_register_osabi (bfd_arch_aarch64, 0, GDB_OSABI_OPENBSD_ELF,
++  gdbarch_register_osabi (bfd_arch_aarch64, 0, GDB_OSABI_OPENBSD,
 +			  aarch64obsd_init_abi);
 +}

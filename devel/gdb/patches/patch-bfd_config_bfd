@@ -1,7 +1,16 @@
-$OpenBSD: patch-bfd_config_bfd,v 1.3 2018/07/10 11:03:46 kettenis Exp $
---- bfd/config.bfd.orig	Sat Jan 21 05:48:42 2017
-+++ bfd/config.bfd	Tue Mar  7 22:55:11 2017
-@@ -202,6 +202,11 @@ case "${targ}" in
+$OpenBSD: patch-bfd_config_bfd,v 1.4 2021/10/22 18:30:35 jca Exp $
+Index: bfd/config.bfd
+--- bfd/config.bfd.orig
++++ bfd/config.bfd
+@@ -81,7 +81,6 @@ case $targ in
+  arm*-*-aout | \
+  arm-*-coff | \
+  arm-*-netbsd* | \
+- arm-*-openbsd* | \
+  arm-*-oabi | \
+  arm-*-riscix* | \
+  arm-epoc-pe* | \
+@@ -257,6 +256,11 @@ case "${targ}" in
      targ_selvecs="aarch64_elf64_be_vec aarch64_elf32_le_vec aarch64_elf32_be_vec arm_elf32_le_vec arm_elf32_be_vec"
      want64=true
      ;;
@@ -13,3 +22,12 @@ $OpenBSD: patch-bfd_config_bfd,v 1.3 2018/07/10 11:03:46 kettenis Exp $
    aarch64_be-*-linux*)
      targ_defvec=aarch64_elf64_be_vec
      targ_selvecs="aarch64_elf64_le_vec aarch64_elf32_le_vec aarch64_elf32_be_vec arm_elf32_be_vec arm_elf32_le_vec"
+@@ -352,7 +356,7 @@ case "${targ}" in
+     targ_defvec=arm_elf32_be_vec
+     targ_selvecs="arm_elf32_le_vec"
+     ;;
+-  arm-*-netbsdelf*)
++  arm-*-netbsdelf* | arm-*-openbsd*)
+     targ_defvec=arm_elf32_le_vec
+     targ_selvecs="arm_elf32_be_vec"
+     ;;

@@ -1,0 +1,16 @@
+$OpenBSD: patch-gdb_i386-bsd-nat_h,v 1.1 2021/10/22 18:30:36 jca Exp $
+
+Missing include.
+
+Index: gdb/i386-bsd-nat.h
+--- gdb/i386-bsd-nat.h.orig
++++ gdb/i386-bsd-nat.h
+@@ -20,6 +20,8 @@
+ #ifndef I386_BSD_NAT_H
+ #define I386_BSD_NAT_H
+ 
++#include "x86-bsd-nat.h"
++
+ /* Helper functions.  See definitions.  */
+ extern void i386bsd_fetch_inferior_registers (struct regcache *regcache,
+ 					      int regnum);

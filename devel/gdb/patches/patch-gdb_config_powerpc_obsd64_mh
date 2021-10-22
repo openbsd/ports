@@ -1,10 +1,10 @@
-$OpenBSD: patch-gdb_config_powerpc_obsd64_mh,v 1.1 2020/10/09 19:22:42 kettenis Exp $
+$OpenBSD: patch-gdb_config_powerpc_obsd64_mh,v 1.2 2021/10/22 18:30:36 jca Exp $
 
 Index: gdb/config/powerpc/obsd64.mh
 --- gdb/config/powerpc/obsd64.mh.orig
 +++ gdb/config/powerpc/obsd64.mh
 @@ -0,0 +1,4 @@
 +# Host: OpenBSD/powerpc
-+NATDEPFILES= fork-child.o inf-ptrace.o obsd-nat.o ppc64obsd-nat.o bsd-kvm.o
++NATDEPFILES= fork-child.o inf-ptrace.o obsd-nat.o ppc64-obsd-nat.o bsd-kvm.o
 +
 +LOADLIBES= -lkvm

@@ -1,24 +1,46 @@
-$OpenBSD: patch-gdb_Makefile_in,v 1.3 2018/07/10 11:03:46 kettenis Exp $
+$OpenBSD: patch-gdb_Makefile_in,v 1.4 2021/10/22 18:30:35 jca Exp $
 Index: gdb/Makefile.in
 --- gdb/Makefile.in.orig
 +++ gdb/Makefile.in
-@@ -644,7 +644,8 @@ TARGET_OBS = @TARGET_OBS@
- # All target-dependent objects files that require 64-bit CORE_ADDR
- # (used with --enable-targets=all --enable-64-bit-bfd).
- ALL_64_TARGET_OBS = \
--	aarch64-tdep.o aarch64-linux-tdep.o aarch64-newlib-tdep.o aarch64-insn.o \
-+	aarch64-tdep.o aarch64-linux-tdep.o \
-+	aarch64-newlib-tdep.o aarch64obsd-tdep.o aarch64-insn.o \
- 	alphabsd-tdep.o alphafbsd-tdep.o alpha-linux-tdep.o alpha-mdebug-tdep.o \
- 	alphanbsd-tdep.o alphaobsd-tdep.o alpha-tdep.o \
- 	amd64fbsd-tdep.o amd64-darwin-tdep.o amd64-dicos-tdep.o \
-@@ -1663,7 +1664,8 @@ MAKEOVERRIDES=
- 
- ALLDEPFILES = \
- 	aarch64-tdep.c aarch64-linux-tdep.c aarch64-newlib-tdep.c \
--	aarch64-linux-nat.c \
-+	aarch64obsd-tdep.c \
-+	aarch64-linux-nat.c aarch64obsd-nat.c \
+@@ -651,6 +651,7 @@ ALL_64_TARGET_OBS = \
+ 	aarch64-fbsd-tdep.o \
+ 	aarch64-linux-tdep.o \
+ 	aarch64-newlib-tdep.o \
++	aarch64-obsd-tdep.o \
+ 	aarch64-ravenscar-thread.o \
+ 	aarch64-tdep.o \
+ 	alpha-bsd-tdep.o \
+@@ -675,6 +676,7 @@ ALL_64_TARGET_OBS = \
+ 	ia64-tdep.o \
+ 	ia64-vms-tdep.o \
+ 	mips64-obsd-tdep.o \
++	riscv-obsd-tdep.o \
+ 	sparc64-fbsd-tdep.o \
+ 	sparc64-linux-tdep.o \
+ 	sparc64-nbsd-tdep.o \
+@@ -1381,6 +1383,7 @@ HFILES_NO_SRCDIR = \
+ 	remote-notif.h \
+ 	riscv-fbsd-tdep.h \
+ 	riscv-tdep.h \
++	riscv-obsd-tdep.h \
+ 	rs6000-aix-tdep.h \
+ 	rs6000-tdep.h \
+ 	run-on-main-thread.h \
+@@ -2157,6 +2160,8 @@ ALLDEPFILES = \
+ 	aarch64-linux-nat.c \
+ 	aarch64-linux-tdep.c \
+ 	aarch64-newlib-tdep.c \
++	aarch64-obsd-nat.c \
++	aarch64-obsd-tdep.c \
+ 	aarch64-ravenscar-thread.c \
+ 	aarch64-tdep.c \
  	aix-thread.c \
- 	alphabsd-nat.c alpha-linux-nat.c \
- 	alpha-tdep.c alpha-mdebug-tdep.c \
+@@ -2300,6 +2305,8 @@ ALLDEPFILES = \
+ 	riscv-linux-nat.c \
+ 	riscv-linux-tdep.c \
+ 	riscv-tdep.c \
++	riscv-obsd-nat.c \
++	riscv-obsd-tdep.c \
+ 	rl78-tdep.c \
+ 	rs6000-lynx178-tdep.c \
+ 	rs6000-nat.c \
