@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2021/10/19 19:44:31 sebastia Exp $
+# $OpenBSD: Makefile,v 1.28 2021/10/22 07:47:14 sthen Exp $
+
+.if ${MACHINE_ARCH} == "i386"
+USE_LLD =		No
+.endif
 
 COMMENT =		LDAP authentication plugin for OpenVPN 2.x
 
