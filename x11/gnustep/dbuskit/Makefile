@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2021/10/19 19:43:36 sebastia Exp $
-
-BROKEN-alpha =	DKEndpointManager.m:282: error: unrecognizable insn
+# $OpenBSD: Makefile,v 1.21 2021/10/22 08:50:48 sebastia Exp $
 
 COMMENT =	GNUstep dbus interface
 

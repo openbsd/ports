@@ -1,4 +1,4 @@
-# $OpenBSD: gnustep.port.mk,v 1.36 2021/10/19 19:43:35 sebastia Exp $
+# $OpenBSD: gnustep.port.mk,v 1.37 2021/10/22 08:50:47 sebastia Exp $
 
 # until tested on others
 ONLY_FOR_ARCHS ?=	amd64 i386 powerpc
@@ -13,14 +13,10 @@ MODGNUSTEP_RUN_DEPENDS +=	x11/gnustep/make
 
 COMPILER =		base-clang ports-clang
 
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 CONFIGURE_ENV +=	OPTFLAG="${CFLAGS}"
 # Not yet GS_WITH_ARC
 #MAKE_FLAGS +=		GS_WITH_ARC=1
 MAKE_FLAGS +=		OPTFLAG="${CFLAGS}"
-.else
-MAKE_FLAGS +=  		CC="${CC}" CPP="${CC} -E" OPTFLAG="${CFLAGS}"
-.endif
 
 MAKE_ENV +=	GNUSTEP_MAKEFILES=`gnustep-config --variable=GNUSTEP_MAKEFILES`
 MAKE_ENV +=	INSTALL_AS_USER=${BINOWN}
