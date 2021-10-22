@@ -1,36 +1,27 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:43:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2021/10/22 19:51:02 sthen Exp $
 
 COMMENT=	audio sample rate conversion library
 
-DISTNAME=	libsamplerate-0.1.9
-SHARED_LIBS=	samplerate	2.1
+VER=		0.2.2
+DISTNAME=	libsamplerate-${VER}
 CATEGORIES=	audio
+EXTRACT_SUFX=	.tar.xz
 
-HOMEPAGE=	http://mega-nerd.com/SRC/
+SHARED_LIBS=	samplerate	3.0
+
+HOMEPAGE=	http://libsndfile.github.io/libsamplerate/
 MAINTAINER=	Jan Stary <hans@stare.cz>
 
 # 2-BSD license
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	https://github.com/libsndfile/libsamplerate/releases/download/${VER}/
 
-WANTLIB=	FLAC c m ogg sndfile>=1 vorbis vorbisenc
-
-LIB_DEPENDS=	audio/libsndfile
+WANTLIB=	m
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-cpu-clip \
-		--disable-fftw
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/libsamplerate
-	${INSTALL_DATA} ${WRKSRC}/doc/*.css \
-	    ${PREFIX}/share/doc/libsamplerate
-	${INSTALL_DATA} ${WRKSRC}/doc/*.png \
-	    ${PREFIX}/share/doc/libsamplerate
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html \
-	    ${PREFIX}/share/doc/libsamplerate
+		--disable-fftw \
+		--disable-sndfile
 
 .include <bsd.port.mk>
