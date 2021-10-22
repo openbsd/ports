@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.136 2021/09/13 05:36:50 landry Exp $
+# $OpenBSD: Makefile,v 1.137 2021/10/22 21:32:34 sthen Exp $
 
 BROKEN-hppa =		no atomic ops
 COMMENT =		Music Player Daemon
 VER =			0.22.11
 DISTNAME =		mpd-${VER}
+REVISION =		0
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		audio
 HOMEPAGE =		https://www.musicpd.org/
@@ -35,6 +36,7 @@ LIB_DEPENDS =		audio/faad>=2.6.1p0 \
 			audio/libmikmod \
 			audio/libmpdclient \
 			audio/libsamplerate \
+			audio/libsndfile \
 			audio/libvorbis \
 			audio/musepack \
 			audio/opus \
