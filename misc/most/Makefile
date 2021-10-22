@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.24 2019/09/22 09:20:44 fcambus Exp $
+# $OpenBSD: Makefile,v 1.25 2021/10/22 11:45:46 fcambus Exp $
 
 COMMENT=	browse or page through a text file
 
 DISTNAME=	most-5.1.0
 CATEGORIES=	misc
+REVISION=	0
+
+HOMEPAGE=	https://www.jedsoft.org/most/
 
 MASTER_SITES=	https://www.jedsoft.org/releases/most/
 
