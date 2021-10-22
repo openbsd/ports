@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.713 2021/08/31 11:05:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.714 2021/10/22 17:26:17 fcambus Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -10,6 +10,7 @@
      SUBDIR += aewm
      SUBDIR += afterstep
      SUBDIR += agar
+     SUBDIR += alacritty
      SUBDIR += amiwm
      SUBDIR += arandr
      SUBDIR += asapm
