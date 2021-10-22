@@ -1,0 +1,26 @@
+$OpenBSD: patch-alacritty_yml,v 1.1.1.1 2021/10/22 17:24:59 fcambus Exp $
+
+Index: alacritty.yml
+--- alacritty.yml.orig
++++ alacritty.yml
+@@ -407,7 +407,7 @@
+   #thickness: 0.15
+ 
+ # Live config reload (changes require restart)
+-#live_config_reload: true
++live_config_reload: false
+ 
+ # Shell
+ #
+@@ -420,9 +420,9 @@
+ #   - (Linux/BSD) user login shell
+ #   - (Windows) powershell
+ #shell:
+-#  program: /bin/bash
++#  program: /bin/ksh
+ #  args:
+-#    - --login
++#    - -l
+ 
+ # Startup directory
+ #
