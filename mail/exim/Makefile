@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.136 2021/05/05 15:08:15 tb Exp $
+# $OpenBSD: Makefile,v 1.137 2021/10/22 17:24:53 sthen Exp $
 
 COMMENT-main =		flexible mail transfer agent
 COMMENT-eximon =	X11 monitor tool for Exim MTA
 
-VERSION =		4.94.2
+VERSION =		4.95
 DISTNAME =		exim-${VERSION}
 PKGNAME-main =		exim-${VERSION}
 FULLPKGNAME-eximon =	exim-eximon-${VERSION}
 FULLPKGPATH-eximon =	${PKGPATH},-eximon
-REVISION-main =		1
 
 CATEGORIES =		mail
 
@@ -90,8 +89,6 @@ EXIM_EXTRA_LIBS +=	-L${LOCALBASE}/lib -lsasl2
 LIB_DEPENDS-main +=	security/cyrus-sasl2
 WANTLIB-main +=		sasl2
 .endif
-
-CFLAGS +=		-DEXIM_HAVE_OPENSSL_CIPHER_GET_ID
 
 # Needed to build with base-gcc
 .if !${PROPERTIES:Mclang}
