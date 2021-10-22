@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2021/10/15 11:09:00 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.18 2021/10/22 13:06:02 sthen Exp $
 @bin bin/neomutt
 libexec/neomutt/
 @bin libexec/neomutt/pgpewrap
@@ -80,6 +80,7 @@ share/examples/neomutt/colors.default
 share/examples/neomutt/colors.linux
 share/examples/neomutt/gpg.rc
 share/examples/neomutt/mairix_filter.pl
+share/examples/neomutt/markdown2html.py
 share/examples/neomutt/neomuttrc
 share/examples/neomutt/sample.mailcap
 share/examples/neomutt/sample.neomuttrc

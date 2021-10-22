@@ -1,11 +1,11 @@
-$OpenBSD: patch-conn_sasl_c,v 1.8 2020/11/20 17:17:21 sthen Exp $
+$OpenBSD: patch-conn_sasl_c,v 1.9 2021/10/22 13:06:02 sthen Exp $
 
 Index: conn/sasl.c
 --- conn/sasl.c.orig
 +++ conn/sasl.c
-@@ -273,7 +273,7 @@ static int mutt_sasl_cb_log(void *context, int priorit
+@@ -276,7 +276,7 @@ static int mutt_sasl_cb_log(void *context, int priorit
   *
-  * Call before doing an SASL exchange - initialises library (if necessary).
+  * Call before doing an SASL exchange (initialises library if necessary).
   */
 -static int mutt_sasl_start(void)
 +int mutt_sasl_start(void)
