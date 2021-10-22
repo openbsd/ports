@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/03/15 21:00:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2021/10/22 19:29:20 sthen Exp $
 
 COMMENT=		GNU units conversion program
 
@@ -6,7 +6,7 @@ DISTNAME=		units-2.16
 PKGNAME=		g${DISTNAME}
 CATEGORIES=		math
 MASTER_SITES=		${MASTER_SITE_GNU:=units/}
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		https://www.gnu.org/software/units/
 
@@ -16,9 +16,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c curses m readline
 
 MODULES =		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
-
-RUN_DEPENDS =		textproc/py-unidecode${MODPY_FLAVOR}
+RUN_DEPENDS =		www/py-requests${MODPY_FLAVOR}
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--program-prefix=g
