@@ -1,73 +1,55 @@
-# $OpenBSD: Makefile,v 1.3 2021/01/09 21:41:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2021/10/22 21:41:26 tracey Exp $
 
 COMMENT =	bootstrap compiler for ${CONFIG} cross-development
 
-VERSION =	5.2.0
+VERSION =	10.2.0
 DISTNAME =	gcc-${VERSION}
 PKGNAME =	${CONFIG}-gcc-bootstrap-${VERSION}
 
-GH_ACCOUNT =	jcmvbkbc
-GH_PROJECT =	gcc-xtensa
-GH_COMMIT =	4a86aa4eb36ae95cf42f99251965f4a3a8f45f88
-
-WANTLIB =	${COMPILER_LIBCXX} c gmp m mpc mpfr
+WANTLIB += ${COMPILER_LIBCXX} c gmp isl m mpc mpfr
 
 SUBST_VARS +=	VERSION
 
-COMPILER=	base-clang ports-gcc base-gcc
+MASTER_SITES = 	${MASTER_SITE_GCC:=releases/gcc-$(VERSION)/}
+MASTER_SITES0 =	https://raw.githubusercontent.com/earlephilhower/esp-quick-toolchain/master/patches/gcc10.2/
+PATCHFILES = 	gcc-ctype-inline-pgmread.patch:0 \
+		gcc-eh-alloc.patch:0 \
+		gcc-enable-mforcel32-eh.patch:0 \
+		gcc-exception-what-to-pmem.patch:0 \
+		gcc-file-shortname.patch:0 \
+		gcc-func-sect.patch:0 \
+		gcc-mforce-l32.patch:0 \
+		gcc-regex-what-to-pmem.patch:0 \
+		gcc-stdcsupp-safe.patch:0 \
+		gcc-unwind-safe.patch:0 \
+		gcc-xtensa-add-optimizations-for-shift-operations.patch:0 \
+		gcc-xtensa-fix-PR-target-98285.patch:0 \
+		gcc-xtensa-implement-bswapsi2-bswapdi2-and-helpers.patch:0 \
+		gcc-xtensa-rearrange-DI-mode-constant-loading.patch:0
+PATCH_DIST_STRIP = -p1
 
 .if ${MACHINE_ARCH} == "powerpc64"
 PATCH_LIST =	patch-* vecstep-*
 .endif
 
-BUILD_DEPENDS +=	devel/bison \
-			devel/${CONFIG}/binutils
-RUN_DEPENDS =		devel/${CONFIG}/binutils
-LIB_DEPENDS =		devel/mpfr \
-			devel/libmpc
+BUILD_DEPENDS +=	devel/${CONFIG}/binutils
+LIB_DEPENDS =		devel/gmp \
+			devel/libmpc \
+			devel/mpfr \
+			math/isl
 
-# cope with user settings in /etc/mk.conf
-MAKE_FLAGS =	LANGUAGES="c" CFLAGS="-I${LOCALBASE}/include"
-MAKE_ENV =	MACHINE_ARCH=${CONFIG}
-MAKE_GXX =	No
-MAKE_FORTRAN =	No
-MAKE_OBJC =	No
-MAKE_JAVA =	No
-MAKE_ADA =	No
+CONFIGURE_ARGS +=	--exec-prefix="${INSTALLDIR}/bootstrap" \
+			--with-as="${INSTALLDIR}/bin/${CONFIG}-as" \
+			--with-ld="${INSTALLDIR}/bin/${CONFIG}-ld" \
+			--with-gmp="${LOCALBASE}" \
+			--with-isl="${LOCALBASE}" \
+			--disable-multilib
 
-SEPARATE_BUILD =	Yes
-USE_GMAKE =		Yes
-YACC =			bison
-
-CONFIGURE_ARGS +=	--exec-prefix=${LOCALBASE}/${CONFIG}/bootstrap \
-			--with-local-prefix=${LOCALBASE}/${CONFIG} \
-			--with-as="${LOCALBASE}/bin/${CONFIG}-as" \
-			--with-ld="${LOCALBASE}/bin/${CONFIG}-ld" \
-			--with-newlib \
-			--enable-threads=no \
-			--disable-shared \
-			--disable-__cxa_atexit \
-			--disable-libgomp \
-			--disable-libmudflap \
-			--disable-libmpx \
-			--disable-libssp \
-			--disable-libquadmath \
-			--disable-libquadmath-support \
-			--disable-lto \
-			--enable-target-optspace \
-			--without-long-double-128 \
-			--disable-nls \
-			--disable-multilib \
-			--enable-languages=c \
-			--disable-option-checking
-CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-
-ALL_TARGET =		all-gcc all-target-libgcc
-INSTALL_TARGET =	install-gcc install-target-libgcc
+ALL_TARGET =		all-gcc
+INSTALL_TARGET =	install-gcc
 
 post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} \
-		${PREFIX}/lib/gcc/${CONFIG}/${VERSION}/
+		${PREFIX}/${CONFIG}/lib/gcc/${CONFIG}/${VERSION}/
 
 .include <bsd.port.mk>

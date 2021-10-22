@@ -1,29 +1,33 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/12 15:05:21 tracey Exp $
+# $OpenBSD: Makefile,v 1.2 2021/10/22 21:41:27 tracey Exp $
 
 COMMENT =		hardware abstraction library for xtensa lx106
 VERSION	=		1.0
+REVISION =		0
 
 DISTNAME =		lx106-hal
 PKGNAME =		xtensa-${DISTNAME}-${VERSION}
 
-GH_ACCOUNT =		tommie
+GH_ACCOUNT =		earlephilhower
 GH_PROJECT =		lx106-hal
 GH_COMMIT =		e4bcc63c9c016e4f8848e7e8f512438ca857531d
 
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/xtensa-lx106-elf/gcc
-RUN_DEPENDS =		devel/xtensa-lx106-elf/gcc
+RUN_DEPENDS =		devel/xtensa-lx106-elf/binutils \
+			devel/xtensa-lx106-elf/newlib \
+			devel/xtensa-lx106-elf/gcc
 
-CONFIGURE_ENV =		CC="${LOCALBASE}/bin/${CONFIG}-gcc"
-
-USE_GMAKE =		Yes
+CONFIGURE_ENV =		CC="${INSTALLDIR}/bin/${CONFIG}-cc"
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.11
 
 CONFIGURE_STYLE =	autoreconf
-CONFIGURE_ARGS +=	--host=${CONFIG}
+CONFIGURE_ARGS +=	--host=${CONFIG} \
+			--exec-prefix=${INSTALLDIR}/${CONFIG} \
+			--includedir="${INSTALLDIR}/${CONFIG}/include" \
+			--libdir="${INSTALLDIR}/${CONFIG}/lib"
 
 pre-configure:
 	@cd ${WRKSRC} && ${AUTOCONF_ENV} autoreconf -i

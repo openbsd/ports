@@ -1,27 +1,20 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/12 15:05:19 tracey Exp $
+# $OpenBSD: Makefile,v 1.2 2021/10/22 21:41:26 tracey Exp $
 
 COMMENT =	binutils for ${CONFIG} cross-development
 
 VERSION =	2.32
+DISTNAME =	binutils-${VERSION}
 PKGNAME =	${CONFIG}-binutils-${VERSION}
+REVISION =	0
 
-GH_ACCOUNT =	jcmvbkbc
-GH_PROJECT =	binutils-gdb-xtensa
-GH_TAGNAME =	binutils-2_32
+GH_ACCOUNT =	bminor
+GH_PROJECT =	binutils-gdb
+GH_COMMIT =	2846942c7c83d007106cdcf1108ceedb50e1d4ec
 
-WANTLIB =	c z
+WANTLIB += ${COMPILER_LIBCXX} c curses expat m
 
-USE_LIBTOOL =	No
-
-CONFIGURE_ARGS +=	--disable-werror \
-			--with-system-zlib \
-			--enable-ld=yes \
-			--enable-gold=no \
-			--disable-multilib \
-			--disable-sim \
-			--disable-gdb \
-			--disable-nls \
-			--with-sysroot=${LOCALBASE}/${CONFIG} \
-			--disable-option-checking
+CONFIGURE_ARGS +=	--disable-multilib \
+			--with-gnu-as \
+			--with-gnu-ld
 
 .include <bsd.port.mk>

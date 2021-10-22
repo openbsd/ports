@@ -1,0 +1,23 @@
+$OpenBSD: patch-gcc_config_xtensa_xtensa_h,v 1.1 2021/10/22 21:41:26 tracey Exp $
+
+Index: gcc/config/xtensa/xtensa.h
+--- gcc/config/xtensa/xtensa.h.orig
++++ gcc/config/xtensa/xtensa.h
+@@ -724,7 +724,7 @@ typedef struct xtensa_args
+ 
+ /* Indicate that jump tables go in the text section.  This is
+    necessary when compiling PIC code.  */
+-#define JUMP_TABLES_IN_TEXT_SECTION (flag_pic)
++#define JUMP_TABLES_IN_TEXT_SECTION 1
+ 
+ 
+ /* Define the strings to put out for each section in the object file.  */
+@@ -801,3 +801,8 @@ typedef struct xtensa_args
+ 	callx0\ta0\n" \
+ 	TEXT_SECTION_ASM_OP);
+ #endif
++
++
++/* Use int, instead of long int, for int32_t and uint32_t.  */
++#undef STDINT_LONG32
++#define STDINT_LONG32 0

@@ -1,34 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/04/05 21:55:01 tracey Exp $
-@comment @man man/man1/xtensa-lx106-elf-g++.1
-@comment @man man/man1/xtensa-lx106-elf-gcov-dump.1
-@comment @man man/man1/xtensa-lx106-elf-gcov-tool.1
-@comment @info info/cpp.info
-@comment @info info/cppinternals.info
-@comment @info info/gcc.info
-@comment @info info/gccinstall.info
-@comment @info info/gccint.info
-@comment @man man/man1/xtensa-lx106-elf-cpp.1
-@comment @man man/man1/xtensa-lx106-elf-gcc.1
-@comment @man man/man1/xtensa-lx106-elf-gcov.1
-@comment @man man/man7/fsf-funding.7
-@comment @man man/man7/gfdl.7
-@comment @man man/man7/gpl.7
+@comment $OpenBSD: PLIST,v 1.3 2021/10/22 21:41:26 tracey Exp $
+xtensa-lx106-elf/
 xtensa-lx106-elf/bootstrap/
 xtensa-lx106-elf/bootstrap/bin/
+@bin xtensa-lx106-elf/bootstrap/bin/xtensa-lx106-elf-c++
 @bin xtensa-lx106-elf/bootstrap/bin/xtensa-lx106-elf-cpp
+@bin xtensa-lx106-elf/bootstrap/bin/xtensa-lx106-elf-g++
 @bin xtensa-lx106-elf/bootstrap/bin/xtensa-lx106-elf-gcc
 @bin xtensa-lx106-elf/bootstrap/bin/xtensa-lx106-elf-gcc-${VERSION}
 @bin xtensa-lx106-elf/bootstrap/bin/xtensa-lx106-elf-gcc-ar
 @bin xtensa-lx106-elf/bootstrap/bin/xtensa-lx106-elf-gcc-nm
 @bin xtensa-lx106-elf/bootstrap/bin/xtensa-lx106-elf-gcc-ranlib
+@bin xtensa-lx106-elf/bootstrap/bin/xtensa-lx106-elf-gcov
+@bin xtensa-lx106-elf/bootstrap/bin/xtensa-lx106-elf-gcov-dump
+@bin xtensa-lx106-elf/bootstrap/bin/xtensa-lx106-elf-gcov-tool
 xtensa-lx106-elf/bootstrap/lib/
 xtensa-lx106-elf/bootstrap/lib/gcc/
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/
-xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/crtbegin.o
-xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/crtend.o
-xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/crti.o
-xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/crtn.o
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/include/
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/include-fixed/
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/include-fixed/README
@@ -46,7 +34,6 @@ xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/include/stdint-gc
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/include/stdint.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/include/stdnoreturn.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/include/tgmath.h
-xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/include/unwind.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/include/varargs.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/install-tools/
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/install-tools/fixinc_list
@@ -56,8 +43,6 @@ xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/install-tools/inc
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/install-tools/include/limits.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/install-tools/macro_list
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/install-tools/mkheaders.conf
-@static-lib xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/libgcc.a
-@static-lib xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/libgcov.a
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/gtype.state
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/
@@ -66,17 +51,21 @@ xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/ad
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/ada/gcc-interface/ada-tree.def
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/addresses.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/alias.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/align.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/all-tree.def
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/alloc-pool.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/ansidecl.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/array-traits.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/asan.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/attribs.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/auto-host.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/auto-profile.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/b-header-vars
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/backend.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/basic-block.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/bb-reorder.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/bitmap.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/brig-builtins.def
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/builtin-attrs.def
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/builtin-types.def
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/builtins.def
@@ -102,14 +91,11 @@ xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/cf
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/cfgloopmanip.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/cfgrtl.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/cgraph.h
-xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/chkp-builtins.def
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/cif-code.def
-xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/cilk-builtins.def
-xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/cilk.h
-xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/cilkplus.def
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/collect-utils.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/collect2-aix.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/collect2.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/color-macros.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/conditions.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/config/
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/config.h
@@ -125,13 +111,21 @@ xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/co
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/context.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/convert.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/coretypes.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/coroutine-builtins.def
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/coverage.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/cp/
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/cp/cp-tree.def
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/cp/cp-tree.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/cp/cxx-pretty-print.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/cp/name-lookup.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/cp/operators.def
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/cp/type-utils.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/cppbuiltin.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/cppdefault.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/cpplib.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/cselib.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/d/
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/d/d-tree.def
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/data-streamer.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/dbgcnt.def
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/dbgcnt.h
@@ -144,17 +138,25 @@ xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/df
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/dfp.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/diagnostic-color.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/diagnostic-core.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/diagnostic-event-id.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/diagnostic-metadata.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/diagnostic-path.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/diagnostic-url.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/diagnostic.def
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/diagnostic.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/digraph.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/dojump.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/dominance.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/domwalk.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/double-int.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/dump-context.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/dumpfile.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/dwarf2asm.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/dwarf2out.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/edit-context.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/emit-rtl.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/errors.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/escaped_string.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/et-forest.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/except.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/explow.h
@@ -162,13 +164,17 @@ xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/ex
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/expr.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/fibonacci_heap.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/file-find.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/file-prefix-map.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/filenames.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/fixed-value.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/flag-types.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/flags.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/fold-const-call.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/fold-const.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/function-abi.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/function.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/gcc-plugin.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/gcc-rich-location.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/gcc-symtab.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/gcc.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/gcov-counter.def
@@ -187,7 +193,10 @@ xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/gi
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/gimple-iterator.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/gimple-low.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/gimple-match.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/gimple-predict.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/gimple-pretty-print.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/gimple-ssa-evrp-analyze.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/gimple-ssa-warn-restrict.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/gimple-ssa.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/gimple-streamer.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/gimple-walk.h
@@ -198,10 +207,8 @@ xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/gi
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/glimits.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/graph.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/graphds.h
-xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/graphite-isl-ast-to-gimple.h
-xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/graphite-poly.h
-xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/graphite-scop-detection.h
-xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/graphite-sese-to-poly.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/graphite.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/graphviz.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/gsstruct.def
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/gstab.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/gsyms.h
@@ -209,14 +216,19 @@ xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/gs
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/gtm-builtins.def
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/gtype-desc.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/hard-reg-set.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/hash-map-traits.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/hash-map.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/hash-set.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/hash-table.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/hash-traits.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/hashtab.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/highlev-plugin-common.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/hooks.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/hosthooks-def.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/hosthooks.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/hsa-brig-format.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/hsa-builtins.def
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/hsa-common.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/hw-doloop.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/hwint.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/ifcvt.h
@@ -224,18 +236,24 @@ xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/in
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/incpath.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/input.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/insn-addr.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/insn-attr-common.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/insn-attr.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/insn-codes.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/insn-constants.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/insn-flags.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/insn-modes-inline.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/insn-modes.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/insn-notes.def
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/int-vector-builder.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/internal-fn.def
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/internal-fn.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/intl.h
-xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/ipa-chkp.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/ipa-fnsummary.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/ipa-icf-gimple.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/ipa-icf.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/ipa-inline.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/ipa-param-manipulation.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/ipa-predicate.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/ipa-prop.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/ipa-ref.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/ipa-reference.h
@@ -243,8 +261,7 @@ xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/ip
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/ira-int.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/ira.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/is-a.h
-xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/java/
-xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/java/java-tree.def
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/json.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/langhooks-def.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/langhooks.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/lcm.h
@@ -263,21 +280,35 @@ xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/lt
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/machmode.def
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/machmode.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/md5.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/mem-stats-traits.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/mem-stats.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/memmodel.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/memory-block.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/mode-classes.def
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/objc/
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/objc/objc-tree.def
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/obstack.h
-xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/omega.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/omp-builtins.def
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/omp-expand.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/omp-general.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/omp-grid.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/omp-low.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/omp-offload.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/omp-simd-clone.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/opt-problem.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/opt-suggestions.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/optabs-libfuncs.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/optabs-query.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/optabs-tree.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/optabs.def
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/optabs.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/optinfo-emit-json.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/optinfo.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/options.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/opts-diagnostic.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/opts.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/ordered-hash-map.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/output.h
-xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/params.def
-xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/params.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/pass-instances.def
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/pass_manager.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/passes.def
@@ -285,14 +316,20 @@ xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/pl
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/plugin-version.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/plugin.def
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/plugin.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/poly-int-types.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/poly-int.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/predict.def
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/predict.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/prefix.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/pretty-print.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/print-rtl.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/print-tree.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/profile-count.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/profile.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/range-op.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/range.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/read-md.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/read-rtl-function.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/real.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/realmpfr.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/recog.h
@@ -303,34 +340,42 @@ xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/re
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/regset.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/reload.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/resource.h
-xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/rtl-chkp.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/rtl-error.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/rtl-iter.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/rtl.def
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/rtl.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/rtlhash.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/rtlhooks-def.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/rtx-vector-builder.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/run-rtl-passes.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/safe-ctype.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/sanitizer.def
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/sbitmap.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/sched-int.h
-xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/sdbout.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/sel-sched-dump.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/sel-sched-ir.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/sel-sched.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/selftest-diagnostic.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/selftest-rtl.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/selftest.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/sese.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/shortest-paths.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/shrink-wrap.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/signop.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/sparseset.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/spellcheck-tree.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/spellcheck.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/splay-tree.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/sreal.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/ssa-iterators.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/ssa.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/stab.def
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/statistics.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/stmt.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/stor-layout.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/streamer-hooks.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/stringpool.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/substring-locations.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/symbol-summary.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/symtab.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/sync-builtins.def
@@ -338,6 +383,7 @@ xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/sy
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/target-def.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/target-globals.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/target-hooks-macros.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/target-insns.def
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/target.def
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/target.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/targhooks.h
@@ -347,13 +393,12 @@ xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tm
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tm.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tm_p.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/toplev.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tracer.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/trans-mem.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-affine.h
-xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-browser.def
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-cfg.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-cfgcleanup.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-check.h
-xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-chkp.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-chrec.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-core.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-data-ref.h
@@ -361,7 +406,9 @@ xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tr
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-diagnostic.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-dump.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-eh.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-hash-traits.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-hasher.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-if-conv.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-inline.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-into-ssa.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-iterator.h
@@ -373,10 +420,14 @@ xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tr
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-phinodes.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-pretty-print.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-scalar-evolution.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-sra.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-ssa-address.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-ssa-alias.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-ssa-ccp.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-ssa-coalesce.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-ssa-dce.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-ssa-dom.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-ssa-dse.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-ssa-live.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-ssa-loop-ivopts.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-ssa-loop-manip.h
@@ -385,6 +436,8 @@ xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tr
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-ssa-operands.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-ssa-propagate.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-ssa-sccvn.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-ssa-scopedtables.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-ssa-strlen.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-ssa-ter.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-ssa-threadedge.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-ssa-threadupdate.h
@@ -392,10 +445,14 @@ xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tr
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-ssanames.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-stdarg.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-streamer.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-switch-conversion.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-vector-builder.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-vectorizer.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree-vrp.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree.def
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tree.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/treestruct.def
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tristate.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tsan.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/tsystem.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/typeclass.h
@@ -403,11 +460,16 @@ xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/ty
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/ubsan.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/valtrack.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/value-prof.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/value-range.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/varasm.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/vec-perm-indices.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/vec.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/vector-builder.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/version.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/vmsdbg.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/vr-values.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/vtable-verify.h
+xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/wide-int-bitmask.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/wide-int-print.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/wide-int.h
 xtensa-lx106-elf/bootstrap/lib/gcc/xtensa-lx106-elf/${VERSION}/plugin/include/xcoff.h
@@ -417,6 +479,7 @@ xtensa-lx106-elf/bootstrap/libexec/gcc/
 xtensa-lx106-elf/bootstrap/libexec/gcc/xtensa-lx106-elf/
 xtensa-lx106-elf/bootstrap/libexec/gcc/xtensa-lx106-elf/${VERSION}/
 @bin xtensa-lx106-elf/bootstrap/libexec/gcc/xtensa-lx106-elf/${VERSION}/cc1
+@bin xtensa-lx106-elf/bootstrap/libexec/gcc/xtensa-lx106-elf/${VERSION}/cc1plus
 @bin xtensa-lx106-elf/bootstrap/libexec/gcc/xtensa-lx106-elf/${VERSION}/collect2
 xtensa-lx106-elf/bootstrap/libexec/gcc/xtensa-lx106-elf/${VERSION}/install-tools/
 xtensa-lx106-elf/bootstrap/libexec/gcc/xtensa-lx106-elf/${VERSION}/install-tools/fixinc.sh
@@ -426,3 +489,23 @@ xtensa-lx106-elf/bootstrap/libexec/gcc/xtensa-lx106-elf/${VERSION}/install-tools
 @bin xtensa-lx106-elf/bootstrap/libexec/gcc/xtensa-lx106-elf/${VERSION}/lto-wrapper
 xtensa-lx106-elf/bootstrap/libexec/gcc/xtensa-lx106-elf/${VERSION}/plugin/
 @bin xtensa-lx106-elf/bootstrap/libexec/gcc/xtensa-lx106-elf/${VERSION}/plugin/gengtype
+@comment xtensa-lx106-elf/include/
+@comment xtensa-lx106-elf/share/
+@comment @info xtensa-lx106-elf/share/info/
+@comment @info xtensa-lx106-elf/share/info/cpp.info
+@comment @info xtensa-lx106-elf/share/info/cppinternals.info
+@comment @info xtensa-lx106-elf/share/info/gcc.info
+@comment @info xtensa-lx106-elf/share/info/gccinstall.info
+@comment @info xtensa-lx106-elf/share/info/gccint.info
+@comment @mandir xtensa-lx106-elf/share/man/
+@comment xtensa-lx106-elf/share/man/man1/
+@comment @man xtensa-lx106-elf/share/man/man1/xtensa-lx106-elf-cpp.1
+@comment @man xtensa-lx106-elf/share/man/man1/xtensa-lx106-elf-g++.1
+@comment @man xtensa-lx106-elf/share/man/man1/xtensa-lx106-elf-gcc.1
+@comment @man xtensa-lx106-elf/share/man/man1/xtensa-lx106-elf-gcov-dump.1
+@comment @man xtensa-lx106-elf/share/man/man1/xtensa-lx106-elf-gcov-tool.1
+@comment @man xtensa-lx106-elf/share/man/man1/xtensa-lx106-elf-gcov.1
+@comment xtensa-lx106-elf/share/man/man7/
+@comment @man xtensa-lx106-elf/share/man/man7/fsf-funding.7
+@comment @man xtensa-lx106-elf/share/man/man7/gfdl.7
+@comment @man xtensa-lx106-elf/share/man/man7/gpl.7
