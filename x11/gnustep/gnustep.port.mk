@@ -1,7 +1,7 @@
-# $OpenBSD: gnustep.port.mk,v 1.37 2021/10/22 08:50:47 sebastia Exp $
+# $OpenBSD: gnustep.port.mk,v 1.38 2021/10/23 17:48:21 jca Exp $
 
 # until tested on others
-ONLY_FOR_ARCHS ?=	amd64 i386 powerpc
+ONLY_FOR_ARCHS ?=	${LLD_ARCHS}
 
 CATEGORIES +=	x11/gnustep
 
