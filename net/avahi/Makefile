@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.147 2021/09/05 12:34:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.148 2021/10/23 10:00:16 ajacoutot Exp $
 
 COMMENT-main=		framework for Multicast DNS Service Discovery
 COMMENT-glib=		GLib and GObject integration libraries for avahi
@@ -20,7 +20,7 @@ PKGNAME-libs=		avahi-libs-${V}
 PKGNAME-python=		py3-avahi-${V}
 
 REVISION-python=	2
-REVISION-gui=		2
+REVISION-gui=		3
 REVISION-gtk3=		2
 REVISION-main=		4
 REVISION-libs=		1
@@ -122,9 +122,6 @@ RUN_DEPENDS-gui=	${MODPY_RUN_DEPENDS} \
 			x11/dbus-python${MODPY_FLAVOR} \
 			devel/py-twisted${MODPY_FLAVOR} \
 			devel/desktop-file-utils
-
-# pygobject GTK2 introspection (not provided by indirect dependencies)
-RUN_DEPENDS-gui +=	x11/gtk+2
 
 WANTLIB-gui += X11 Xcomposite Xcursor Xdamage Xext Xfixes harfbuzz
 WANTLIB-gui += Xi Xinerama Xrandr Xrender atk-1.0 avahi-client
