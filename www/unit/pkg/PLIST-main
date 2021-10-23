@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2021/10/23 16:02:51 sthen Exp $
+@newgroup _unit:870
+@newuser _unit:870:870:daemon:NGINX Unit Daemon:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/unit
+lib/unit/
+lib/unit/modules/
+@man man/man8/unitd.8
+@bin sbin/unitd
+@mode 700
+@owner _unit
+@group _unit
+@sample ${LOCALSTATEDIR}/db/unit/
+@mode 750
+@group wheel
+@sample ${LOCALSTATEDIR}/log/unit/

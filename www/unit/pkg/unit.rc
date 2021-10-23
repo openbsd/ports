@@ -1,0 +1,16 @@
+#!/bin/ksh
+#
+# $OpenBSD: unit.rc,v 1.1.1.1 2021/10/23 16:02:51 sthen Exp $
+
+daemon="${PREFIX}/sbin/unitd"
+
+. /etc/rc.d/rc.subr
+
+pexp="unitd: unit: main.*"
+
+rc_pre() {
+	install -d -o _unit -g _unit \
+	    ${LOCALSTATEDIR}/run/unit/ ${LOCALSTATEDIR}/tmp/unit/
+}
+
+rc_cmd $1
