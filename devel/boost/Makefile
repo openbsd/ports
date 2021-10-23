@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.118 2021/10/19 16:02:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.119 2021/10/23 16:04:43 sthen Exp $
 
-ONLY_FOR_ARCHS-md = aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64 riscv64
+NOT_FOR_ARCHS-md = alpha hppa sparc64
 
 COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
