@@ -1,9 +1,9 @@
-$OpenBSD: patch-tools_geos-config_in,v 1.1 2021/02/21 07:36:49 landry Exp $
+$OpenBSD: patch-tools_geos-config_in,v 1.2 2021/10/23 09:15:12 landry Exp $
 
 Index: tools/geos-config.in
 --- tools/geos-config.in.orig
 +++ tools/geos-config.in
-@@ -49,7 +49,7 @@ while test $# -gt 0; do
+@@ -44,7 +44,7 @@ while test $# -gt 0; do
      --libs)
        # TODO: make an alias for --clibs
        # see http://trac.osgeo.org/geos/ticket/497

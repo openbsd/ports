@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.35 2021/03/24 10:53:30 landry Exp $
-
-BROKEN-hppa =	undefined reference to 'std::auto_ptr<geos::geom::Envelope>::~auto_ptr()'
-BROKEN-arm =	ld: error: duplicate symbol: typeinfo for geos::noding::BasicSegmentString
+# $OpenBSD: Makefile,v 1.36 2021/10/23 09:15:12 landry Exp $
 
 COMMENT=	2d geometry and topology engine
-DISTNAME=	geos-3.9.1
+DISTNAME=	geos-3.10.0
+
 CATEGORIES=	geo
-REVISION=	0
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
-SHARED_LIBS=	geos	16.0 \
-		geos_c	4.5
+SHARED_LIBS=	geos	17.0 \
+		geos_c	4.6
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
@@ -21,7 +18,7 @@ MASTER_SITES=		http://download.osgeo.org/geos/
 
 EXTRACT_SUFX=		.tar.bz2
 
-WANTLIB=	m ${COMPILER_LIBCXX}
+WANTLIB=	c m ${COMPILER_LIBCXX}
 
 # cf https://trac.osgeo.org/geos/wiki/RFC7
 MODULES =	devel/cmake
