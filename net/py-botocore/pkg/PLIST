@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.172 2021/10/08 18:25:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.173 2021/10/23 07:14:15 ajacoutot Exp $
 @conflict py-botocore-*
 @pkgpath net/py-botocore
 lib/python${MODPY_VERSION}/site-packages/botocore/
@@ -1112,6 +1112,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/outposts/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/outposts/2019-12-03/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/outposts/2019-12-03/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/outposts/2019-12-03/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/panorama/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/panorama/2019-07-24/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/panorama/2019-07-24/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/panorama/2019-07-24/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/personalize/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/personalize-events/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/personalize-events/2018-03-22/
