@@ -3,8 +3,3 @@ desired Espressif chipset.
 
 If you haven't already, please use pkg_add to install arduino-esp8266,
 arduino-esp32, or both.
-
-Also, the LOCALBASE path will need to be added to your environment. For
-temporary usage, do:
-
-$ env LOCALBASE=${LOCALBASE} gmake -f ${LOCALBASE}/share/makeEspArduino/makeEspArduino.mk
