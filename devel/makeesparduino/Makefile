@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/10/21 14:03:04 tracey Exp $
+# $OpenBSD: Makefile,v 1.4 2021/10/23 07:03:29 ajacoutot Exp $
 
 COMMENT =		makefile for ESP8266 and ESP32 Arduino projects
 
@@ -21,6 +21,9 @@ RUN_DEPENDS +=		devel/arduino \
 			devel/gmake
 
 NO_TEST =		Yes
+
+# NO_BUILD clears all BDEP, so explicitely add MODPY_BUILDDEP
+MODPY_BUILDDEP =	Yes
 NO_BUILD =		Yes
 
 do-install:
