@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/10/15 10:53:43 denis Exp $
+@bin bin/kopia

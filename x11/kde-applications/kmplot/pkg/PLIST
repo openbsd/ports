@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/06/19 18:34:40 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/09/10 08:43:55 rsadowski Exp $
 @pkgpath x11/kde4/kmplot
 @bin bin/kmplot
-@so lib/qt5/plugins/kmplotpart.so
+lib/qt5/plugins/kf5/parts/
+@so lib/qt5/plugins/kf5/parts/kmplotpart.so
 @man man/man1/kmplot.1
 share/applications/org.kde.kmplot.desktop
 share/config.kcfg/

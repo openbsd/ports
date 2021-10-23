@@ -1,0 +1,23 @@
+Imath is a basic, light-weight, and efficient C++ representation of 2D and 3D
+vectors and matrices and other simple but useful mathematical objects,
+functions, and data types common in computer graphics applications, including
+the "half" 16-bit floating-point type.
+
+Imath also includes python bindings for all types and functions, including
+optimized implementations of vector and matrix arrays.
+
+Features:
+* half: 16-bit floating-point type
+* Vector: V2s, V2i, V2i64, V2f, V2d, V3s, V3i, V4i64, V3f, V3d, V4s, V4i, V4i64, V4f, V4d 
+* Matrix: M22f, M22d, M33f, M33d, M44f, M44d 
+* Bounding box: Box2s, Box2i, Box2i64, Box2f, Box2d, Box3s, Box3i, Box3i64, Box3f, Box3d
+* Color: C3h, C3f, C3c, C4f, C4h, C4c 
+* Euler angles: Eulerf, Eulerd
+* Quaternion: Quatf, Quatd
+* Viewing frustum: Frustrumf, Frustumd
+* Interval: Intervals, Intervali, Intervalf, Intervald
+* Line: Line3f, Line3d
+* Plane: Plane3f, Plane3d
+* Sphere: Sphere3f, Sphere3d
+* Shear: Shear3f, Shear3d, Shear6f, Shear6
+* Miscellaneous math functions

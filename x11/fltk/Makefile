@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2019/07/12 20:51:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2021/10/04 04:44:38 thfr Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS=	m88k
@@ -8,7 +8,7 @@ COMMENT=	Fast-Light Tool Kit
 VER=		1.3.3
 DISTNAME=	fltk-${VER}-source
 PKGNAME=	fltk-${VER}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	x11
 
@@ -18,7 +18,7 @@ SHARED_LIBS=	fltk		8.0 \
 		fltk_gl		8.0 \
 		fltk_images	8.0
 
-HOMEPAGE=	http://www.fltk.org/
+HOMEPAGE=	https://www.fltk.org/
 
 # LGPLv2 with exceptions (see COPYING)
 PERMIT_PACKAGE=	Yes
@@ -28,7 +28,7 @@ WANTLIB += c fontconfig jpeg m png pthread ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=	http://fltk.org/pub/fltk/${VER}/
+MASTER_SITES=	https://fltk.org/pub/fltk/${VER}/
 
 LIB_DEPENDS=	graphics/jpeg \
 		graphics/png

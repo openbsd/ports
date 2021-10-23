@@ -1,9 +1,0 @@
-$OpenBSD: patch-src_tests_runtests_sh,v 1.1 2010/05/17 16:39:25 sthen Exp $
---- src/tests/runtests.sh.orig	Mon May 10 23:28:35 2010
-+++ src/tests/runtests.sh	Mon May 10 23:28:20 2010
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/bin/sh
- 
- PORT=12340
- HOME_PORT=12350

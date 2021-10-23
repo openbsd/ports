@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2021/03/18 13:44:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2021/08/31 18:07:55 jca Exp $
 
 COMMENT =	program for statistical analysis of sampled data
 DISTNAME =	pspp-1.4.1
+REVISION =	0
 CATEGORIES =	math x11
 
 HOMEPAGE =	https://www.gnu.org/software/pspp/

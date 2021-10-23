@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.7 2020/06/18 21:36:11 sthen Exp $
+$OpenBSD: patch-configure_in,v 1.9 2021/09/10 20:44:27 sthen Exp $
 
 OpenLDAP's first choice uuid functions are close to but not quite the same
 as we have in libc, differences being that we don't have uuid_to_str() (in

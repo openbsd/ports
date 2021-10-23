@@ -1,0 +1,14 @@
+$OpenBSD: patch-minizip_pc_cmakein,v 1.1 2021/10/12 04:11:25 rsadowski Exp $
+
+Index: minizip.pc.cmakein
+--- minizip.pc.cmakein.orig
++++ minizip.pc.cmakein
+@@ -2,7 +2,7 @@ prefix=@CMAKE_INSTALL_PREFIX@
+ exec_prefix=@CMAKE_INSTALL_PREFIX@
+ libdir=@CMAKE_INSTALL_FULL_LIBDIR@
+ sharedlibdir=@CMAKE_INSTALL_FULL_LIBDIR@
+-includedir=@CMAKE_INSTALL_FULL_INCLUDEDIR@
++includedir=@CMAKE_INSTALL_FULL_INCLUDEDIR@/minizip
+ 
+ Name: @PROJECT_NAME@
+ Description: Minizip zip file manipulation library

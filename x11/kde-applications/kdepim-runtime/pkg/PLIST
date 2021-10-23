@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/06/19 18:34:36 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/09/10 08:43:52 rsadowski Exp $
 @bin bin/akonadi_akonotes_resource
 @bin bin/akonadi_birthdays_resource
 @bin bin/akonadi_contacts_resource
@@ -47,9 +47,9 @@ lib/qt5/plugins/akonadi/config/
 @so lib/qt5/plugins/akonadi/config/tomboynotesconfig.so
 @so lib/qt5/plugins/akonadi/config/vcardconfig.so
 @so lib/qt5/plugins/akonadi/config/vcarddirconfig.so
-@so lib/qt5/plugins/kcm_ldap.so
 @so lib/qt5/plugins/kf5/kio/akonadi.so
 @so lib/qt5/plugins/kf5/kio/pop3.so
+@so lib/qt5/plugins/pim/kcms/kaddressbook/kcm_ldap.so
 share/akonadi/accountwizard/
 share/akonadi/accountwizard/contacts/
 share/akonadi/accountwizard/contacts/contactswizard.desktop
@@ -182,7 +182,6 @@ share/knotifications5/akonadi_maildispatcher_agent.notifyrc
 share/knotifications5/akonadi_newmailnotifier_agent.notifyrc
 share/knotifications5/akonadi_pop3_resource.notifyrc
 share/kservices5/akonadi/
-share/kservices5/akonadi.protocol
 share/kservices5/akonadi/davgroupware-providers/
 share/kservices5/akonadi/davgroupware-providers/citadel.desktop
 share/kservices5/akonadi/davgroupware-providers/davical.desktop
@@ -198,8 +197,6 @@ share/kservices5/akonadi/davgroupware-providers/yahoo.desktop
 share/kservices5/akonadi/davgroupware-providers/zarafa.desktop
 share/kservices5/akonadi/davgroupware-providers/zimbra.desktop
 share/kservices5/kcmldap.desktop
-share/kservices5/pop3.protocol
-share/kservices5/pop3s.protocol
 share/kservicetypes5/davgroupwareprovider.desktop
 share/locale/ar/LC_MESSAGES/accountwizard_contacts.mo
 share/locale/ar/LC_MESSAGES/accountwizard_ews.mo

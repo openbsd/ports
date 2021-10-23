@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_capture_video_video_capture_device_client_cc,v 1.25 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-media_capture_video_video_capture_device_client_cc,v 1.26 2021/09/01 16:54:40 robert Exp $
 
 Index: media/capture/video/video_capture_device_client.cc
 --- media/capture/video/video_capture_device_client.cc.orig

@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_config_h,v 1.1 2018/07/11 09:09:46 reyk Exp $
+$OpenBSD: patch-src_config_h,v 1.2 2021/09/01 11:04:21 sthen Exp $
 
---- src/config.h.orig	Fri Nov 10 17:49:19 2017
-+++ src/config.h	Tue Jul 10 16:53:16 2018
+Index: src/config.h
+--- src/config.h.orig
++++ src/config.h
 @@ -9,7 +9,13 @@
  //#define BUILD_CPUNAME8 "QEMUCPU "
  //#define BUILD_APPNAME6 "QEMU  "

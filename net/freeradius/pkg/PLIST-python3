@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST-python3,v 1.1 2021/09/16 10:36:39 sthen Exp $
+@pkgpath net/freeradius3,-python3
+@so lib/freeradius/rlm_python3.so
+share/examples/freeradius/mods-available/python3
+@sample ${FREERADIUS_ETC}/mods-available/python3
+share/examples/freeradius/mods-config/python3/
+@sample ${FREERADIUS_ETC}/mods-config/python3/
+share/examples/freeradius/mods-config/python3/example.py
+@sample ${FREERADIUS_ETC}/mods-config/python3/example.py
+share/examples/freeradius/mods-config/python3/radiusd.py
+@sample ${FREERADIUS_ETC}/mods-config/python3/radiusd.py

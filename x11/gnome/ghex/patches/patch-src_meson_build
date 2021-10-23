@@ -1,7 +1,6 @@
-$OpenBSD: patch-src_meson_build,v 1.1 2019/07/13 11:38:18 ajacoutot Exp $
+$OpenBSD: patch-src_meson_build,v 1.2 2021/09/09 12:58:03 ajacoutot Exp $
 
-XXX fix and push upstream (ifndef OpenBSD)
-Undefined references to libc functions.
+Should match b_lundef in meson(1).
 
 Index: src/meson.build
 --- src/meson.build.orig

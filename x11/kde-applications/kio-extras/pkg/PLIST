@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/06/19 18:34:38 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.12 2021/09/10 08:43:54 rsadowski Exp $
 include/KF5/kio_archivebase.h
 include/KF5/libkioarchive_export.h
 lib/cmake/KioArchive/
@@ -7,7 +7,6 @@ lib/cmake/KioArchive/KioArchiveConfigVersion.cmake
 lib/cmake/KioArchive/KioArchiveTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KioArchive/KioArchiveTargets.cmake
 @lib lib/libkioarchive.so.${LIBkioarchive_VERSION}
-@lib lib/libmolletnetwork5.so.${LIBmolletnetwork5_VERSION}
 @so lib/qt5/plugins/audiothumbnail.so
 @so lib/qt5/plugins/comicbookthumbnail.so
 @so lib/qt5/plugins/cursorthumbnail.so
@@ -17,7 +16,6 @@ lib/cmake/KioArchive/KioArchiveTargets.cmake
 @so lib/qt5/plugins/imagethumbnail.so
 @so lib/qt5/plugins/jpegthumbnail.so
 @so lib/qt5/plugins/kf5/kded/filenamesearchmodule.so
-@so lib/qt5/plugins/kf5/kded/networkwatcher.so
 @so lib/qt5/plugins/kf5/kded/recentdocumentsnotifier.so
 @so lib/qt5/plugins/kf5/kded/smbwatcher.so
 lib/qt5/plugins/kf5/kfileitemaction/
@@ -32,7 +30,6 @@ lib/qt5/plugins/kf5/kfileitemaction/
 @so lib/qt5/plugins/kf5/kio/info.so
 @so lib/qt5/plugins/kf5/kio/man.so
 @so lib/qt5/plugins/kf5/kio/mtp.so
-@so lib/qt5/plugins/kf5/kio/network.so
 @so lib/qt5/plugins/kf5/kio/recentdocuments.so
 @so lib/qt5/plugins/kf5/kio/recentlyused.so
 @so lib/qt5/plugins/kf5/kio/settings.so
@@ -50,8 +47,7 @@ lib/qt5/plugins/kf5/kfileitemaction/
 @bin libexec/kf5/smbnotifier
 share/config.kcfg/
 share/config.kcfg/jpegcreatorsettings5.kcfg
-share/dbus-1/interfaces/kf5_org.kde.network.kioslavenotifier.xml
-share/dbus-1/services/org.kde.kmtp.daemon.service
+share/dbus-1/services/org.kde.kmtpd5.service
 share/doc/HTML/ca/kioslave5/bookmarks/
 share/doc/HTML/ca/kioslave5/bookmarks/index.cache.bz2
 share/doc/HTML/ca/kioslave5/bookmarks/index.docbook
@@ -70,9 +66,6 @@ share/doc/HTML/ca/kioslave5/info/index.docbook
 share/doc/HTML/ca/kioslave5/man/
 share/doc/HTML/ca/kioslave5/man/index.cache.bz2
 share/doc/HTML/ca/kioslave5/man/index.docbook
-share/doc/HTML/ca/kioslave5/network/
-share/doc/HTML/ca/kioslave5/network/index.cache.bz2
-share/doc/HTML/ca/kioslave5/network/index.docbook
 share/doc/HTML/ca/kioslave5/nfs/
 share/doc/HTML/ca/kioslave5/nfs/index.cache.bz2
 share/doc/HTML/ca/kioslave5/nfs/index.docbook
@@ -94,6 +87,9 @@ share/doc/HTML/ca/kioslave5/thumbnail/index.docbook
 share/doc/HTML/ca/kioslave5/xz/
 share/doc/HTML/ca/kioslave5/xz/index.cache.bz2
 share/doc/HTML/ca/kioslave5/xz/index.docbook
+share/doc/HTML/ca/kioslave5/zstd/
+share/doc/HTML/ca/kioslave5/zstd/index.cache.bz2
+share/doc/HTML/ca/kioslave5/zstd/index.docbook
 share/doc/HTML/de/kioslave5/bookmarks/
 share/doc/HTML/de/kioslave5/bookmarks/index.cache.bz2
 share/doc/HTML/de/kioslave5/bookmarks/index.docbook
@@ -112,9 +108,6 @@ share/doc/HTML/de/kioslave5/info/index.docbook
 share/doc/HTML/de/kioslave5/man/
 share/doc/HTML/de/kioslave5/man/index.cache.bz2
 share/doc/HTML/de/kioslave5/man/index.docbook
-share/doc/HTML/de/kioslave5/network/
-share/doc/HTML/de/kioslave5/network/index.cache.bz2
-share/doc/HTML/de/kioslave5/network/index.docbook
 share/doc/HTML/de/kioslave5/nfs/
 share/doc/HTML/de/kioslave5/nfs/index.cache.bz2
 share/doc/HTML/de/kioslave5/nfs/index.docbook
@@ -154,9 +147,6 @@ share/doc/HTML/en/kioslave5/info/index.docbook
 share/doc/HTML/en/kioslave5/man/
 share/doc/HTML/en/kioslave5/man/index.cache.bz2
 share/doc/HTML/en/kioslave5/man/index.docbook
-share/doc/HTML/en/kioslave5/network/
-share/doc/HTML/en/kioslave5/network/index.cache.bz2
-share/doc/HTML/en/kioslave5/network/index.docbook
 share/doc/HTML/en/kioslave5/nfs/
 share/doc/HTML/en/kioslave5/nfs/index.cache.bz2
 share/doc/HTML/en/kioslave5/nfs/index.docbook
@@ -178,6 +168,9 @@ share/doc/HTML/en/kioslave5/thumbnail/index.docbook
 share/doc/HTML/en/kioslave5/xz/
 share/doc/HTML/en/kioslave5/xz/index.cache.bz2
 share/doc/HTML/en/kioslave5/xz/index.docbook
+share/doc/HTML/en/kioslave5/zstd/
+share/doc/HTML/en/kioslave5/zstd/index.cache.bz2
+share/doc/HTML/en/kioslave5/zstd/index.docbook
 share/doc/HTML/es/kioslave5/bookmarks/
 share/doc/HTML/es/kioslave5/bookmarks/index.cache.bz2
 share/doc/HTML/es/kioslave5/bookmarks/index.docbook
@@ -196,9 +189,6 @@ share/doc/HTML/es/kioslave5/info/index.docbook
 share/doc/HTML/es/kioslave5/man/
 share/doc/HTML/es/kioslave5/man/index.cache.bz2
 share/doc/HTML/es/kioslave5/man/index.docbook
-share/doc/HTML/es/kioslave5/network/
-share/doc/HTML/es/kioslave5/network/index.cache.bz2
-share/doc/HTML/es/kioslave5/network/index.docbook
 share/doc/HTML/es/kioslave5/nfs/
 share/doc/HTML/es/kioslave5/nfs/index.cache.bz2
 share/doc/HTML/es/kioslave5/nfs/index.docbook
@@ -238,9 +228,6 @@ share/doc/HTML/et/kioslave5/info/index.docbook
 share/doc/HTML/et/kioslave5/man/
 share/doc/HTML/et/kioslave5/man/index.cache.bz2
 share/doc/HTML/et/kioslave5/man/index.docbook
-share/doc/HTML/et/kioslave5/network/
-share/doc/HTML/et/kioslave5/network/index.cache.bz2
-share/doc/HTML/et/kioslave5/network/index.docbook
 share/doc/HTML/et/kioslave5/nfs/
 share/doc/HTML/et/kioslave5/nfs/index.cache.bz2
 share/doc/HTML/et/kioslave5/nfs/index.docbook
@@ -277,9 +264,6 @@ share/doc/HTML/fr/kioslave5/info/index.docbook
 share/doc/HTML/fr/kioslave5/man/
 share/doc/HTML/fr/kioslave5/man/index.cache.bz2
 share/doc/HTML/fr/kioslave5/man/index.docbook
-share/doc/HTML/fr/kioslave5/network/
-share/doc/HTML/fr/kioslave5/network/index.cache.bz2
-share/doc/HTML/fr/kioslave5/network/index.docbook
 share/doc/HTML/fr/kioslave5/nfs/
 share/doc/HTML/fr/kioslave5/nfs/index.cache.bz2
 share/doc/HTML/fr/kioslave5/nfs/index.docbook
@@ -343,9 +327,6 @@ share/doc/HTML/it/kioslave5/info/index.docbook
 share/doc/HTML/it/kioslave5/man/
 share/doc/HTML/it/kioslave5/man/index.cache.bz2
 share/doc/HTML/it/kioslave5/man/index.docbook
-share/doc/HTML/it/kioslave5/network/
-share/doc/HTML/it/kioslave5/network/index.cache.bz2
-share/doc/HTML/it/kioslave5/network/index.docbook
 share/doc/HTML/it/kioslave5/nfs/
 share/doc/HTML/it/kioslave5/nfs/index.cache.bz2
 share/doc/HTML/it/kioslave5/nfs/index.docbook
@@ -367,6 +348,9 @@ share/doc/HTML/it/kioslave5/thumbnail/index.docbook
 share/doc/HTML/it/kioslave5/xz/
 share/doc/HTML/it/kioslave5/xz/index.cache.bz2
 share/doc/HTML/it/kioslave5/xz/index.docbook
+share/doc/HTML/it/kioslave5/zstd/
+share/doc/HTML/it/kioslave5/zstd/index.cache.bz2
+share/doc/HTML/it/kioslave5/zstd/index.docbook
 share/doc/HTML/nb/kioslave5/
 share/doc/HTML/nb/kioslave5/man/
 share/doc/HTML/nb/kioslave5/man/index.cache.bz2
@@ -392,9 +376,6 @@ share/doc/HTML/nl/kioslave5/info/index.docbook
 share/doc/HTML/nl/kioslave5/man/
 share/doc/HTML/nl/kioslave5/man/index.cache.bz2
 share/doc/HTML/nl/kioslave5/man/index.docbook
-share/doc/HTML/nl/kioslave5/network/
-share/doc/HTML/nl/kioslave5/network/index.cache.bz2
-share/doc/HTML/nl/kioslave5/network/index.docbook
 share/doc/HTML/nl/kioslave5/nfs/
 share/doc/HTML/nl/kioslave5/nfs/index.cache.bz2
 share/doc/HTML/nl/kioslave5/nfs/index.docbook
@@ -416,6 +397,9 @@ share/doc/HTML/nl/kioslave5/thumbnail/index.docbook
 share/doc/HTML/nl/kioslave5/xz/
 share/doc/HTML/nl/kioslave5/xz/index.cache.bz2
 share/doc/HTML/nl/kioslave5/xz/index.docbook
+share/doc/HTML/nl/kioslave5/zstd/
+share/doc/HTML/nl/kioslave5/zstd/index.cache.bz2
+share/doc/HTML/nl/kioslave5/zstd/index.docbook
 share/doc/HTML/pt/kioslave5/bookmarks/
 share/doc/HTML/pt/kioslave5/bookmarks/index.cache.bz2
 share/doc/HTML/pt/kioslave5/bookmarks/index.docbook
@@ -434,9 +418,6 @@ share/doc/HTML/pt/kioslave5/info/index.docbook
 share/doc/HTML/pt/kioslave5/man/
 share/doc/HTML/pt/kioslave5/man/index.cache.bz2
 share/doc/HTML/pt/kioslave5/man/index.docbook
-share/doc/HTML/pt/kioslave5/network/
-share/doc/HTML/pt/kioslave5/network/index.cache.bz2
-share/doc/HTML/pt/kioslave5/network/index.docbook
 share/doc/HTML/pt/kioslave5/nfs/
 share/doc/HTML/pt/kioslave5/nfs/index.cache.bz2
 share/doc/HTML/pt/kioslave5/nfs/index.docbook
@@ -476,9 +457,6 @@ share/doc/HTML/pt_BR/kioslave5/info/index.docbook
 share/doc/HTML/pt_BR/kioslave5/man/
 share/doc/HTML/pt_BR/kioslave5/man/index.cache.bz2
 share/doc/HTML/pt_BR/kioslave5/man/index.docbook
-share/doc/HTML/pt_BR/kioslave5/network/
-share/doc/HTML/pt_BR/kioslave5/network/index.cache.bz2
-share/doc/HTML/pt_BR/kioslave5/network/index.docbook
 share/doc/HTML/pt_BR/kioslave5/nfs/
 share/doc/HTML/pt_BR/kioslave5/nfs/index.cache.bz2
 share/doc/HTML/pt_BR/kioslave5/nfs/index.docbook
@@ -497,48 +475,21 @@ share/doc/HTML/pt_BR/kioslave5/thumbnail/index.docbook
 share/doc/HTML/pt_BR/kioslave5/xz/
 share/doc/HTML/pt_BR/kioslave5/xz/index.cache.bz2
 share/doc/HTML/pt_BR/kioslave5/xz/index.docbook
-share/doc/HTML/ru/kioslave5/bookmarks/
-share/doc/HTML/ru/kioslave5/bookmarks/index.cache.bz2
-share/doc/HTML/ru/kioslave5/bookmarks/index.docbook
-share/doc/HTML/ru/kioslave5/bzip2/
-share/doc/HTML/ru/kioslave5/bzip2/index.cache.bz2
-share/doc/HTML/ru/kioslave5/bzip2/index.docbook
-share/doc/HTML/ru/kioslave5/fish/
-share/doc/HTML/ru/kioslave5/fish/index.cache.bz2
-share/doc/HTML/ru/kioslave5/fish/index.docbook
 share/doc/HTML/ru/kioslave5/gzip/
 share/doc/HTML/ru/kioslave5/gzip/index.cache.bz2
 share/doc/HTML/ru/kioslave5/gzip/index.docbook
-share/doc/HTML/ru/kioslave5/info/
-share/doc/HTML/ru/kioslave5/info/index.cache.bz2
-share/doc/HTML/ru/kioslave5/info/index.docbook
-share/doc/HTML/ru/kioslave5/man/
-share/doc/HTML/ru/kioslave5/man/index.cache.bz2
-share/doc/HTML/ru/kioslave5/man/index.docbook
-share/doc/HTML/ru/kioslave5/network/
-share/doc/HTML/ru/kioslave5/network/index.cache.bz2
-share/doc/HTML/ru/kioslave5/network/index.docbook
 share/doc/HTML/ru/kioslave5/nfs/
 share/doc/HTML/ru/kioslave5/nfs/index.cache.bz2
 share/doc/HTML/ru/kioslave5/nfs/index.docbook
-share/doc/HTML/ru/kioslave5/recentdocuments/
-share/doc/HTML/ru/kioslave5/recentdocuments/index.cache.bz2
-share/doc/HTML/ru/kioslave5/recentdocuments/index.docbook
 share/doc/HTML/ru/kioslave5/sftp/
 share/doc/HTML/ru/kioslave5/sftp/index.cache.bz2
 share/doc/HTML/ru/kioslave5/sftp/index.docbook
-share/doc/HTML/ru/kioslave5/smb/
-share/doc/HTML/ru/kioslave5/smb/index.cache.bz2
-share/doc/HTML/ru/kioslave5/smb/index.docbook
 share/doc/HTML/ru/kioslave5/tar/
 share/doc/HTML/ru/kioslave5/tar/index.cache.bz2
 share/doc/HTML/ru/kioslave5/tar/index.docbook
 share/doc/HTML/ru/kioslave5/thumbnail/
 share/doc/HTML/ru/kioslave5/thumbnail/index.cache.bz2
 share/doc/HTML/ru/kioslave5/thumbnail/index.docbook
-share/doc/HTML/ru/kioslave5/xz/
-share/doc/HTML/ru/kioslave5/xz/index.cache.bz2
-share/doc/HTML/ru/kioslave5/xz/index.docbook
 share/doc/HTML/sr/kioslave5/bookmarks/
 share/doc/HTML/sr/kioslave5/bookmarks/index.cache.bz2
 share/doc/HTML/sr/kioslave5/bookmarks/index.docbook
@@ -557,9 +508,6 @@ share/doc/HTML/sr/kioslave5/info/index.docbook
 share/doc/HTML/sr/kioslave5/man/
 share/doc/HTML/sr/kioslave5/man/index.cache.bz2
 share/doc/HTML/sr/kioslave5/man/index.docbook
-share/doc/HTML/sr/kioslave5/network/
-share/doc/HTML/sr/kioslave5/network/index.cache.bz2
-share/doc/HTML/sr/kioslave5/network/index.docbook
 share/doc/HTML/sr/kioslave5/nfs/
 share/doc/HTML/sr/kioslave5/nfs/index.cache.bz2
 share/doc/HTML/sr/kioslave5/nfs/index.docbook
@@ -599,9 +547,6 @@ share/doc/HTML/sv/kioslave5/info/index.docbook
 share/doc/HTML/sv/kioslave5/man/
 share/doc/HTML/sv/kioslave5/man/index.cache.bz2
 share/doc/HTML/sv/kioslave5/man/index.docbook
-share/doc/HTML/sv/kioslave5/network/
-share/doc/HTML/sv/kioslave5/network/index.cache.bz2
-share/doc/HTML/sv/kioslave5/network/index.docbook
 share/doc/HTML/sv/kioslave5/nfs/
 share/doc/HTML/sv/kioslave5/nfs/index.cache.bz2
 share/doc/HTML/sv/kioslave5/nfs/index.docbook
@@ -623,6 +568,9 @@ share/doc/HTML/sv/kioslave5/thumbnail/index.docbook
 share/doc/HTML/sv/kioslave5/xz/
 share/doc/HTML/sv/kioslave5/xz/index.cache.bz2
 share/doc/HTML/sv/kioslave5/xz/index.docbook
+share/doc/HTML/sv/kioslave5/zstd/
+share/doc/HTML/sv/kioslave5/zstd/index.cache.bz2
+share/doc/HTML/sv/kioslave5/zstd/index.docbook
 share/doc/HTML/uk/kioslave5/bookmarks/
 share/doc/HTML/uk/kioslave5/bookmarks/index.cache.bz2
 share/doc/HTML/uk/kioslave5/bookmarks/index.docbook
@@ -641,9 +589,6 @@ share/doc/HTML/uk/kioslave5/info/index.docbook
 share/doc/HTML/uk/kioslave5/man/
 share/doc/HTML/uk/kioslave5/man/index.cache.bz2
 share/doc/HTML/uk/kioslave5/man/index.docbook
-share/doc/HTML/uk/kioslave5/network/
-share/doc/HTML/uk/kioslave5/network/index.cache.bz2
-share/doc/HTML/uk/kioslave5/network/index.docbook
 share/doc/HTML/uk/kioslave5/nfs/
 share/doc/HTML/uk/kioslave5/nfs/index.cache.bz2
 share/doc/HTML/uk/kioslave5/nfs/index.docbook
@@ -665,6 +610,9 @@ share/doc/HTML/uk/kioslave5/thumbnail/index.docbook
 share/doc/HTML/uk/kioslave5/xz/
 share/doc/HTML/uk/kioslave5/xz/index.cache.bz2
 share/doc/HTML/uk/kioslave5/xz/index.docbook
+share/doc/HTML/uk/kioslave5/zstd/
+share/doc/HTML/uk/kioslave5/zstd/index.cache.bz2
+share/doc/HTML/uk/kioslave5/zstd/index.docbook
 share/kio_bookmarks/
 share/kio_bookmarks/kio_bookmarks.css
 share/kio_docfilter/
@@ -672,48 +620,26 @@ share/kio_docfilter/kio_docfilter.css
 share/kio_info/
 share/kio_info/kde-info2html
 share/kio_info/kde-info2html.conf
-share/konqsidebartng/
-share/konqsidebartng/virtual_folders/
-share/konqsidebartng/virtual_folders/remote/
-share/konqsidebartng/virtual_folders/remote/virtualfolder_network.desktop
 share/konqueror/
 share/konqueror/dirtree/
 share/konqueror/dirtree/remote/
 share/konqueror/dirtree/remote/mtp-network.desktop
 share/konqueror/dirtree/remote/smb-network.desktop
-share/kservices5/about.protocol
-share/kservices5/activities.protocol
 share/kservices5/audiothumbnail.desktop
-share/kservices5/bookmarks.protocol
-share/kservices5/bzip.protocol
-share/kservices5/bzip2.protocol
 share/kservices5/comicbookthumbnail.desktop
 share/kservices5/cursorthumbnail.desktop
 share/kservices5/directorythumbnail.desktop
 share/kservices5/djvuthumbnail.desktop
 share/kservices5/ebookthumbnail.desktop
 share/kservices5/exrthumbnail.desktop
-share/kservices5/filenamesearch.protocol
-share/kservices5/fish.protocol
-share/kservices5/gzip.protocol
 share/kservices5/imagethumbnail.desktop
-share/kservices5/info.protocol
 share/kservices5/jpegthumbnail.desktop
 share/kservices5/kraorathumbnail.desktop
-share/kservices5/lzma.protocol
-share/kservices5/man.protocol
-share/kservices5/mtp.protocol
-share/kservices5/network.protocol
 share/kservices5/opendocumentthumbnail.desktop
-share/kservices5/recentdocuments.protocol
-share/kservices5/settings.protocol
-share/kservices5/sftp.protocol
 share/kservices5/svgthumbnail.desktop
 share/kservices5/textthumbnail.desktop
-share/kservices5/thumbnail.protocol
 share/kservices5/windowsexethumbnail.desktop
 share/kservices5/windowsimagethumbnail.desktop
-share/kservices5/xz.protocol
 share/kservicetypes5/thumbcreator.desktop
 share/locale/ar/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/ar/LC_MESSAGES/kio5_activities.mo
@@ -731,7 +657,6 @@ share/locale/ar/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/ast/LC_MESSAGES/kio5_fish.mo
 share/locale/ast/LC_MESSAGES/kio5_info.mo
 share/locale/ast/LC_MESSAGES/kio5_mtp.mo
-share/locale/ast/LC_MESSAGES/kio5_network.mo
 share/locale/ast/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/be/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/be/LC_MESSAGES/kio5_archive.mo
@@ -774,7 +699,6 @@ share/locale/ca/LC_MESSAGES/kio5_fish.mo
 share/locale/ca/LC_MESSAGES/kio5_info.mo
 share/locale/ca/LC_MESSAGES/kio5_man.mo
 share/locale/ca/LC_MESSAGES/kio5_mtp.mo
-share/locale/ca/LC_MESSAGES/kio5_network.mo
 share/locale/ca/LC_MESSAGES/kio5_nfs.mo
 share/locale/ca/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/ca/LC_MESSAGES/kio5_sftp.mo
@@ -788,7 +712,6 @@ share/locale/ca@valencia/LC_MESSAGES/kio5_fish.mo
 share/locale/ca@valencia/LC_MESSAGES/kio5_info.mo
 share/locale/ca@valencia/LC_MESSAGES/kio5_man.mo
 share/locale/ca@valencia/LC_MESSAGES/kio5_mtp.mo
-share/locale/ca@valencia/LC_MESSAGES/kio5_network.mo
 share/locale/ca@valencia/LC_MESSAGES/kio5_nfs.mo
 share/locale/ca@valencia/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/ca@valencia/LC_MESSAGES/kio5_sftp.mo
@@ -802,7 +725,6 @@ share/locale/cs/LC_MESSAGES/kio5_fish.mo
 share/locale/cs/LC_MESSAGES/kio5_info.mo
 share/locale/cs/LC_MESSAGES/kio5_man.mo
 share/locale/cs/LC_MESSAGES/kio5_mtp.mo
-share/locale/cs/LC_MESSAGES/kio5_network.mo
 share/locale/cs/LC_MESSAGES/kio5_nfs.mo
 share/locale/cs/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/cs/LC_MESSAGES/kio5_sftp.mo
@@ -816,7 +738,6 @@ share/locale/da/LC_MESSAGES/kio5_fish.mo
 share/locale/da/LC_MESSAGES/kio5_info.mo
 share/locale/da/LC_MESSAGES/kio5_man.mo
 share/locale/da/LC_MESSAGES/kio5_mtp.mo
-share/locale/da/LC_MESSAGES/kio5_network.mo
 share/locale/da/LC_MESSAGES/kio5_nfs.mo
 share/locale/da/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/da/LC_MESSAGES/kio5_sftp.mo
@@ -830,7 +751,6 @@ share/locale/de/LC_MESSAGES/kio5_fish.mo
 share/locale/de/LC_MESSAGES/kio5_info.mo
 share/locale/de/LC_MESSAGES/kio5_man.mo
 share/locale/de/LC_MESSAGES/kio5_mtp.mo
-share/locale/de/LC_MESSAGES/kio5_network.mo
 share/locale/de/LC_MESSAGES/kio5_nfs.mo
 share/locale/de/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/de/LC_MESSAGES/kio5_sftp.mo
@@ -844,7 +764,6 @@ share/locale/el/LC_MESSAGES/kio5_fish.mo
 share/locale/el/LC_MESSAGES/kio5_info.mo
 share/locale/el/LC_MESSAGES/kio5_man.mo
 share/locale/el/LC_MESSAGES/kio5_mtp.mo
-share/locale/el/LC_MESSAGES/kio5_network.mo
 share/locale/el/LC_MESSAGES/kio5_nfs.mo
 share/locale/el/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/el/LC_MESSAGES/kio5_sftp.mo
@@ -858,7 +777,6 @@ share/locale/en_GB/LC_MESSAGES/kio5_fish.mo
 share/locale/en_GB/LC_MESSAGES/kio5_info.mo
 share/locale/en_GB/LC_MESSAGES/kio5_man.mo
 share/locale/en_GB/LC_MESSAGES/kio5_mtp.mo
-share/locale/en_GB/LC_MESSAGES/kio5_network.mo
 share/locale/en_GB/LC_MESSAGES/kio5_nfs.mo
 share/locale/en_GB/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/en_GB/LC_MESSAGES/kio5_sftp.mo
@@ -882,7 +800,6 @@ share/locale/es/LC_MESSAGES/kio5_fish.mo
 share/locale/es/LC_MESSAGES/kio5_info.mo
 share/locale/es/LC_MESSAGES/kio5_man.mo
 share/locale/es/LC_MESSAGES/kio5_mtp.mo
-share/locale/es/LC_MESSAGES/kio5_network.mo
 share/locale/es/LC_MESSAGES/kio5_nfs.mo
 share/locale/es/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/es/LC_MESSAGES/kio5_sftp.mo
@@ -896,7 +813,6 @@ share/locale/et/LC_MESSAGES/kio5_fish.mo
 share/locale/et/LC_MESSAGES/kio5_info.mo
 share/locale/et/LC_MESSAGES/kio5_man.mo
 share/locale/et/LC_MESSAGES/kio5_mtp.mo
-share/locale/et/LC_MESSAGES/kio5_network.mo
 share/locale/et/LC_MESSAGES/kio5_nfs.mo
 share/locale/et/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/et/LC_MESSAGES/kio5_sftp.mo
@@ -910,7 +826,6 @@ share/locale/eu/LC_MESSAGES/kio5_fish.mo
 share/locale/eu/LC_MESSAGES/kio5_info.mo
 share/locale/eu/LC_MESSAGES/kio5_man.mo
 share/locale/eu/LC_MESSAGES/kio5_mtp.mo
-share/locale/eu/LC_MESSAGES/kio5_network.mo
 share/locale/eu/LC_MESSAGES/kio5_nfs.mo
 share/locale/eu/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/eu/LC_MESSAGES/kio5_sftp.mo
@@ -935,7 +850,6 @@ share/locale/fi/LC_MESSAGES/kio5_fish.mo
 share/locale/fi/LC_MESSAGES/kio5_info.mo
 share/locale/fi/LC_MESSAGES/kio5_man.mo
 share/locale/fi/LC_MESSAGES/kio5_mtp.mo
-share/locale/fi/LC_MESSAGES/kio5_network.mo
 share/locale/fi/LC_MESSAGES/kio5_nfs.mo
 share/locale/fi/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/fi/LC_MESSAGES/kio5_sftp.mo
@@ -949,7 +863,6 @@ share/locale/fr/LC_MESSAGES/kio5_fish.mo
 share/locale/fr/LC_MESSAGES/kio5_info.mo
 share/locale/fr/LC_MESSAGES/kio5_man.mo
 share/locale/fr/LC_MESSAGES/kio5_mtp.mo
-share/locale/fr/LC_MESSAGES/kio5_network.mo
 share/locale/fr/LC_MESSAGES/kio5_nfs.mo
 share/locale/fr/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/fr/LC_MESSAGES/kio5_sftp.mo
@@ -975,7 +888,6 @@ share/locale/gl/LC_MESSAGES/kio5_fish.mo
 share/locale/gl/LC_MESSAGES/kio5_info.mo
 share/locale/gl/LC_MESSAGES/kio5_man.mo
 share/locale/gl/LC_MESSAGES/kio5_mtp.mo
-share/locale/gl/LC_MESSAGES/kio5_network.mo
 share/locale/gl/LC_MESSAGES/kio5_nfs.mo
 share/locale/gl/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/gl/LC_MESSAGES/kio5_sftp.mo
@@ -1023,7 +935,6 @@ share/locale/hu/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/hu/LC_MESSAGES/kio5_fish.mo
 share/locale/hu/LC_MESSAGES/kio5_info.mo
 share/locale/hu/LC_MESSAGES/kio5_man.mo
-share/locale/hu/LC_MESSAGES/kio5_network.mo
 share/locale/hu/LC_MESSAGES/kio5_nfs.mo
 share/locale/hu/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/hu/LC_MESSAGES/kio5_sftp.mo
@@ -1037,7 +948,6 @@ share/locale/ia/LC_MESSAGES/kio5_fish.mo
 share/locale/ia/LC_MESSAGES/kio5_info.mo
 share/locale/ia/LC_MESSAGES/kio5_man.mo
 share/locale/ia/LC_MESSAGES/kio5_mtp.mo
-share/locale/ia/LC_MESSAGES/kio5_network.mo
 share/locale/ia/LC_MESSAGES/kio5_nfs.mo
 share/locale/ia/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/ia/LC_MESSAGES/kio5_sftp.mo
@@ -1074,7 +984,6 @@ share/locale/it/LC_MESSAGES/kio5_fish.mo
 share/locale/it/LC_MESSAGES/kio5_info.mo
 share/locale/it/LC_MESSAGES/kio5_man.mo
 share/locale/it/LC_MESSAGES/kio5_mtp.mo
-share/locale/it/LC_MESSAGES/kio5_network.mo
 share/locale/it/LC_MESSAGES/kio5_nfs.mo
 share/locale/it/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/it/LC_MESSAGES/kio5_sftp.mo
@@ -1088,7 +997,6 @@ share/locale/ja/LC_MESSAGES/kio5_fish.mo
 share/locale/ja/LC_MESSAGES/kio5_info.mo
 share/locale/ja/LC_MESSAGES/kio5_man.mo
 share/locale/ja/LC_MESSAGES/kio5_mtp.mo
-share/locale/ja/LC_MESSAGES/kio5_network.mo
 share/locale/ja/LC_MESSAGES/kio5_nfs.mo
 share/locale/ja/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/ja/LC_MESSAGES/kio5_sftp.mo
@@ -1126,7 +1034,6 @@ share/locale/ko/LC_MESSAGES/kio5_fish.mo
 share/locale/ko/LC_MESSAGES/kio5_info.mo
 share/locale/ko/LC_MESSAGES/kio5_man.mo
 share/locale/ko/LC_MESSAGES/kio5_mtp.mo
-share/locale/ko/LC_MESSAGES/kio5_network.mo
 share/locale/ko/LC_MESSAGES/kio5_nfs.mo
 share/locale/ko/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/ko/LC_MESSAGES/kio5_sftp.mo
@@ -1140,7 +1047,6 @@ share/locale/lt/LC_MESSAGES/kio5_fish.mo
 share/locale/lt/LC_MESSAGES/kio5_info.mo
 share/locale/lt/LC_MESSAGES/kio5_man.mo
 share/locale/lt/LC_MESSAGES/kio5_mtp.mo
-share/locale/lt/LC_MESSAGES/kio5_network.mo
 share/locale/lt/LC_MESSAGES/kio5_nfs.mo
 share/locale/lt/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/lt/LC_MESSAGES/kio5_sftp.mo
@@ -1212,7 +1118,6 @@ share/locale/nl/LC_MESSAGES/kio5_fish.mo
 share/locale/nl/LC_MESSAGES/kio5_info.mo
 share/locale/nl/LC_MESSAGES/kio5_man.mo
 share/locale/nl/LC_MESSAGES/kio5_mtp.mo
-share/locale/nl/LC_MESSAGES/kio5_network.mo
 share/locale/nl/LC_MESSAGES/kio5_nfs.mo
 share/locale/nl/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/nl/LC_MESSAGES/kio5_sftp.mo
@@ -1226,7 +1131,6 @@ share/locale/nn/LC_MESSAGES/kio5_fish.mo
 share/locale/nn/LC_MESSAGES/kio5_info.mo
 share/locale/nn/LC_MESSAGES/kio5_man.mo
 share/locale/nn/LC_MESSAGES/kio5_mtp.mo
-share/locale/nn/LC_MESSAGES/kio5_network.mo
 share/locale/nn/LC_MESSAGES/kio5_nfs.mo
 share/locale/nn/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/nn/LC_MESSAGES/kio5_sftp.mo
@@ -1253,7 +1157,6 @@ share/locale/pl/LC_MESSAGES/kio5_fish.mo
 share/locale/pl/LC_MESSAGES/kio5_info.mo
 share/locale/pl/LC_MESSAGES/kio5_man.mo
 share/locale/pl/LC_MESSAGES/kio5_mtp.mo
-share/locale/pl/LC_MESSAGES/kio5_network.mo
 share/locale/pl/LC_MESSAGES/kio5_nfs.mo
 share/locale/pl/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/pl/LC_MESSAGES/kio5_sftp.mo
@@ -1267,7 +1170,6 @@ share/locale/pt/LC_MESSAGES/kio5_fish.mo
 share/locale/pt/LC_MESSAGES/kio5_info.mo
 share/locale/pt/LC_MESSAGES/kio5_man.mo
 share/locale/pt/LC_MESSAGES/kio5_mtp.mo
-share/locale/pt/LC_MESSAGES/kio5_network.mo
 share/locale/pt/LC_MESSAGES/kio5_nfs.mo
 share/locale/pt/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/pt/LC_MESSAGES/kio5_sftp.mo
@@ -1281,7 +1183,6 @@ share/locale/pt_BR/LC_MESSAGES/kio5_fish.mo
 share/locale/pt_BR/LC_MESSAGES/kio5_info.mo
 share/locale/pt_BR/LC_MESSAGES/kio5_man.mo
 share/locale/pt_BR/LC_MESSAGES/kio5_mtp.mo
-share/locale/pt_BR/LC_MESSAGES/kio5_network.mo
 share/locale/pt_BR/LC_MESSAGES/kio5_nfs.mo
 share/locale/pt_BR/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/pt_BR/LC_MESSAGES/kio5_sftp.mo
@@ -1295,7 +1196,6 @@ share/locale/ro/LC_MESSAGES/kio5_fish.mo
 share/locale/ro/LC_MESSAGES/kio5_info.mo
 share/locale/ro/LC_MESSAGES/kio5_man.mo
 share/locale/ro/LC_MESSAGES/kio5_mtp.mo
-share/locale/ro/LC_MESSAGES/kio5_network.mo
 share/locale/ro/LC_MESSAGES/kio5_nfs.mo
 share/locale/ro/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/ro/LC_MESSAGES/kio5_sftp.mo
@@ -1309,7 +1209,6 @@ share/locale/ru/LC_MESSAGES/kio5_fish.mo
 share/locale/ru/LC_MESSAGES/kio5_info.mo
 share/locale/ru/LC_MESSAGES/kio5_man.mo
 share/locale/ru/LC_MESSAGES/kio5_mtp.mo
-share/locale/ru/LC_MESSAGES/kio5_network.mo
 share/locale/ru/LC_MESSAGES/kio5_nfs.mo
 share/locale/ru/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/ru/LC_MESSAGES/kio5_sftp.mo
@@ -1331,7 +1230,6 @@ share/locale/sk/LC_MESSAGES/kio5_fish.mo
 share/locale/sk/LC_MESSAGES/kio5_info.mo
 share/locale/sk/LC_MESSAGES/kio5_man.mo
 share/locale/sk/LC_MESSAGES/kio5_mtp.mo
-share/locale/sk/LC_MESSAGES/kio5_network.mo
 share/locale/sk/LC_MESSAGES/kio5_nfs.mo
 share/locale/sk/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/sk/LC_MESSAGES/kio5_sftp.mo
@@ -1345,7 +1243,6 @@ share/locale/sl/LC_MESSAGES/kio5_fish.mo
 share/locale/sl/LC_MESSAGES/kio5_info.mo
 share/locale/sl/LC_MESSAGES/kio5_man.mo
 share/locale/sl/LC_MESSAGES/kio5_mtp.mo
-share/locale/sl/LC_MESSAGES/kio5_network.mo
 share/locale/sl/LC_MESSAGES/kio5_nfs.mo
 share/locale/sl/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/sl/LC_MESSAGES/kio5_sftp.mo
@@ -1382,7 +1279,6 @@ share/locale/sv/LC_MESSAGES/kio5_fish.mo
 share/locale/sv/LC_MESSAGES/kio5_info.mo
 share/locale/sv/LC_MESSAGES/kio5_man.mo
 share/locale/sv/LC_MESSAGES/kio5_mtp.mo
-share/locale/sv/LC_MESSAGES/kio5_network.mo
 share/locale/sv/LC_MESSAGES/kio5_nfs.mo
 share/locale/sv/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/sv/LC_MESSAGES/kio5_sftp.mo
@@ -1440,19 +1336,21 @@ share/locale/uk/LC_MESSAGES/kio5_fish.mo
 share/locale/uk/LC_MESSAGES/kio5_info.mo
 share/locale/uk/LC_MESSAGES/kio5_man.mo
 share/locale/uk/LC_MESSAGES/kio5_mtp.mo
-share/locale/uk/LC_MESSAGES/kio5_network.mo
 share/locale/uk/LC_MESSAGES/kio5_nfs.mo
 share/locale/uk/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/uk/LC_MESSAGES/kio5_sftp.mo
 share/locale/uk/LC_MESSAGES/kio5_smb.mo
 share/locale/uk/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/vi/LC_MESSAGES/kfileaudiopreview5.mo
+share/locale/vi/LC_MESSAGES/kio5_activities.mo
 share/locale/vi/LC_MESSAGES/kio5_archive.mo
 share/locale/vi/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/vi/LC_MESSAGES/kio5_fish.mo
 share/locale/vi/LC_MESSAGES/kio5_info.mo
 share/locale/vi/LC_MESSAGES/kio5_man.mo
+share/locale/vi/LC_MESSAGES/kio5_mtp.mo
 share/locale/vi/LC_MESSAGES/kio5_nfs.mo
+share/locale/vi/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/vi/LC_MESSAGES/kio5_sftp.mo
 share/locale/vi/LC_MESSAGES/kio5_smb.mo
 share/locale/vi/LC_MESSAGES/kio5_thumbnail.mo
@@ -1475,7 +1373,6 @@ share/locale/zh_CN/LC_MESSAGES/kio5_fish.mo
 share/locale/zh_CN/LC_MESSAGES/kio5_info.mo
 share/locale/zh_CN/LC_MESSAGES/kio5_man.mo
 share/locale/zh_CN/LC_MESSAGES/kio5_mtp.mo
-share/locale/zh_CN/LC_MESSAGES/kio5_network.mo
 share/locale/zh_CN/LC_MESSAGES/kio5_nfs.mo
 share/locale/zh_CN/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/zh_CN/LC_MESSAGES/kio5_sftp.mo
@@ -1489,17 +1386,15 @@ share/locale/zh_TW/LC_MESSAGES/kio5_fish.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_info.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_man.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_mtp.mo
-share/locale/zh_TW/LC_MESSAGES/kio5_network.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_nfs.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_sftp.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_smb.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_thumbnail.mo
-share/mime/packages/kf5_network.xml
 share/qlogging-categories5/kio-extras.categories
+share/qlogging-categories5/kio-extras.renamecategories
 share/remoteview/
 share/remoteview/mtp-network.desktop
-share/remoteview/network.desktop
 share/remoteview/smb-network.desktop
 share/solid/
 share/solid/actions/

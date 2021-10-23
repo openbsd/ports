@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/11/14 11:53:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/08/23 21:25:55 sthen Exp $
 @conflict tor-launcher-*
 @conflict torbutton-*
 @pkgpath www/tor-browser/https-everywhere
@@ -122,5 +122,7 @@ lib/${BROWSER_NAME}/removed-files
 lib/${BROWSER_NAME}/${BROWSER_NAME}.cfg
 share/applications/${BROWSER_NAME}.desktop
 @tag update-desktop-database
+share/pixmaps/
+share/pixmaps/tor-browser.png
 share/tor-browser/
 share/tor-browser/torrc-defaults

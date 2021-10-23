@@ -1,8 +1,8 @@
 #!/bin/ksh
 #
-# $OpenBSD: mysqld.rc,v 1.6 2020/07/07 12:40:45 sthen Exp $
+# $OpenBSD: mysqld.rc,v 1.7 2021/08/25 23:23:14 sthen Exp $
 
-daemon="${TRUEPREFIX}/bin/mysqld_safe"
+daemon="${TRUEPREFIX}/bin/mariadbd-safe"
 
 . /etc/rc.d/rc.subr
 

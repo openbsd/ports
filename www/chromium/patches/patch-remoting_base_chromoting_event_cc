@@ -1,4 +1,4 @@
-$OpenBSD: patch-remoting_base_chromoting_event_cc,v 1.12 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-remoting_base_chromoting_event_cc,v 1.13 2021/09/01 16:54:40 robert Exp $
 
 Index: remoting/base/chromoting_event.cc
 --- remoting/base/chromoting_event.cc.orig

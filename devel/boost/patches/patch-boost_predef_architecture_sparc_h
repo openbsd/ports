@@ -1,4 +1,4 @@
-$OpenBSD: patch-boost_predef_architecture_sparc_h,v 1.1 2021/06/22 05:19:25 rsadowski Exp $
+$OpenBSD: patch-boost_predef_architecture_sparc_h,v 1.3 2021/09/19 05:23:29 rsadowski Exp $
 
 [PATCH] added missing brackets (#118)
 

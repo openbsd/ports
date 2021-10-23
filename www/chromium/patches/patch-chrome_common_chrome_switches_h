@@ -1,14 +1,14 @@
-$OpenBSD: patch-chrome_common_chrome_switches_h,v 1.67 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_switches_h,v 1.70 2021/10/20 10:27:46 robert Exp $
 
 Index: chrome/common/chrome_switches.h
 --- chrome/common/chrome_switches.h.orig
 +++ chrome/common/chrome_switches.h
-@@ -255,7 +255,7 @@ extern const char kAllowNaClSocketAPI[];
+@@ -252,7 +252,7 @@ extern const char kAllowNaClSocketAPI[];
  #endif
  
  #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
--    defined(OS_WIN)
-+    defined(OS_WIN) || defined(OS_BSD)
+-    defined(OS_WIN) || defined(OS_FUCHSIA)
++    defined(OS_WIN) || defined(OS_FUCHSIA) || defined(OS_BSD)
  extern const char kEnableNewAppMenuIcon[];
  extern const char kGuest[];
  #endif

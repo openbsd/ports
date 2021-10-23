@@ -1,13 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.15 2021/08/08 12:21:37 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.17 2021/10/13 15:02:05 rsadowski Exp $
 include/KF5/
 include/KF5/Kirigami2/
 include/KF5/Kirigami2/KirigamiPluginFactory
 include/KF5/Kirigami2/PlatformTheme
 include/KF5/Kirigami2/TabletModeWatcher
+include/KF5/Kirigami2/Units
 include/KF5/Kirigami2/kirigami2_export.h
 include/KF5/Kirigami2/kirigamipluginfactory.h
 include/KF5/Kirigami2/platformtheme.h
 include/KF5/Kirigami2/tabletmodewatcher.h
+include/KF5/Kirigami2/units.h
 lib/cmake/KF5Kirigami2/
 lib/cmake/KF5Kirigami2/KF5Kirigami2Config.cmake
 lib/cmake/KF5Kirigami2/KF5Kirigami2ConfigVersion.cmake
@@ -18,6 +20,7 @@ lib/cmake/KF5Kirigami2/KF5Kirigami2Targets.cmake
 lib/qt5/qml/org/
 lib/qt5/qml/org/kde/
 lib/qt5/qml/org/kde/kirigami.2/
+lib/qt5/qml/org/kde/kirigami.2/AboutItem.qml
 lib/qt5/qml/org/kde/kirigami.2/AboutPage.qml
 lib/qt5/qml/org/kde/kirigami.2/AbstractApplicationHeader.qml
 lib/qt5/qml/org/kde/kirigami.2/AbstractApplicationItem.qml
@@ -50,6 +53,8 @@ lib/qt5/qml/org/kde/kirigami.2/Label.qml
 lib/qt5/qml/org/kde/kirigami.2/LinkButton.qml
 lib/qt5/qml/org/kde/kirigami.2/ListItemDragHandle.qml
 lib/qt5/qml/org/kde/kirigami.2/ListSectionHeader.qml
+lib/qt5/qml/org/kde/kirigami.2/NavigationTabBar.qml
+lib/qt5/qml/org/kde/kirigami.2/NavigationTabButton.qml
 lib/qt5/qml/org/kde/kirigami.2/OverlayDrawer.qml
 lib/qt5/qml/org/kde/kirigami.2/OverlaySheet.qml
 lib/qt5/qml/org/kde/kirigami.2/Page.qml
@@ -64,7 +69,6 @@ lib/qt5/qml/org/kde/kirigami.2/Separator.qml
 lib/qt5/qml/org/kde/kirigami.2/ShadowedImage.qml
 lib/qt5/qml/org/kde/kirigami.2/SwipeListItem.qml
 lib/qt5/qml/org/kde/kirigami.2/ToolBarApplicationHeader.qml
-lib/qt5/qml/org/kde/kirigami.2/Units.qml
 lib/qt5/qml/org/kde/kirigami.2/UrlButton.qml
 @so lib/qt5/qml/org/kde/kirigami.2/libkirigamiplugin.so
 lib/qt5/qml/org/kde/kirigami.2/plugins.qmltypes
@@ -94,6 +98,9 @@ lib/qt5/qml/org/kde/kirigami.2/private/globaltoolbar/TabBarControl.qml
 lib/qt5/qml/org/kde/kirigami.2/private/globaltoolbar/TitlesPageHeader.qml
 lib/qt5/qml/org/kde/kirigami.2/private/globaltoolbar/ToolBarPageHeader.qml
 lib/qt5/qml/org/kde/kirigami.2/qmldir
+lib/qt5/qml/org/kde/kirigami.2/settingscomponents/
+lib/qt5/qml/org/kde/kirigami.2/settingscomponents/CategorizedSettings.qml
+lib/qt5/qml/org/kde/kirigami.2/settingscomponents/SettingAction.qml
 lib/qt5/qml/org/kde/kirigami.2/styles/
 lib/qt5/qml/org/kde/kirigami.2/styles/Material/
 lib/qt5/qml/org/kde/kirigami.2/styles/Material/AbstractListItem.qml
@@ -106,7 +113,6 @@ lib/qt5/qml/org/kde/kirigami.2/styles/org.kde.desktop/AbstractApplicationHeader.
 lib/qt5/qml/org/kde/kirigami.2/styles/org.kde.desktop/AbstractListItem.qml
 lib/qt5/qml/org/kde/kirigami.2/styles/org.kde.desktop/SwipeListItem.qml
 lib/qt5/qml/org/kde/kirigami.2/styles/org.kde.desktop/Theme.qml
-lib/qt5/qml/org/kde/kirigami.2/styles/org.kde.desktop/Units.qml
 lib/qt5/qml/org/kde/kirigami.2/swipenavigator/
 lib/qt5/qml/org/kde/kirigami.2/swipenavigator/PageTab.qml
 lib/qt5/qml/org/kde/kirigami.2/swipenavigator/PrivateSwipeHighlight.qml
@@ -161,6 +167,7 @@ share/locale/eu/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/fi/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/fr/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/gl/LC_MESSAGES/libkirigami2plugin_qt.qm
+share/locale/hi/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/hu/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ia/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/id/LC_MESSAGES/libkirigami2plugin_qt.qm

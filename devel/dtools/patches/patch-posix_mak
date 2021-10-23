@@ -1,0 +1,53 @@
+$OpenBSD: patch-posix_mak,v 1.1.1.1 2021/10/15 13:44:26 bcallah Exp $
+
+Use our own compiler instead of cloning a new one.
+Set proper compiler flags for the build.
+
+Index: posix.mak
+--- posix.mak.orig
++++ posix.mak
+@@ -1,42 +1,8 @@
+-DMD_DIR = ../dmd
+-BUILD = release
+-DMD = $(DMD_DIR)/generated/$(OS)/$(BUILD)/$(MODEL)/dmd
+-CC = gcc
+-INSTALL_DIR = ../install
+-DRUNTIME_PATH = ../druntime
+-PHOBOS_PATH = ../phobos
+-DUB=dub
++ROOT = .
+ 
+-WITH_DOC = no
+-DOC = ../dlang.org
+-
+-# Load operating system $(OS) (e.g. linux, osx, ...) and $(MODEL) (e.g. 32, 64) detection Makefile from dmd
+-$(shell [ ! -d $(DMD_DIR) ] && git clone --depth=1 https://github.com/dlang/dmd $(DMD_DIR))
+-include $(DMD_DIR)/src/osmodel.mak
+-
+-# Build folder for all binaries
+-GENERATED = generated
+-ROOT = $(GENERATED)/$(OS)/$(MODEL)
+-
+-# Set DRUNTIME name and full path
+-ifeq (,$(findstring win,$(OS)))
+-	DRUNTIME = $(DRUNTIME_PATH)/lib/libdruntime-$(OS)$(MODEL).a
+-	DRUNTIMESO = $(DRUNTIME_PATH)/lib/libdruntime-$(OS)$(MODEL)so.a
+-else
+-	DRUNTIME = $(DRUNTIME_PATH)/lib/druntime.lib
+-endif
+-
+-# Set PHOBOS name and full path
+-ifeq (,$(findstring win,$(OS)))
+-	PHOBOS = $(PHOBOS_PATH)/generated/$(OS)/$(BUILD)/$(MODEL)/libphobos2.a
+-	PHOBOSSO = $(PHOBOS_PATH)/generated/$(OS)/$(BUILD)/$(MODEL)/libphobos2.so
+-endif
+-
+ # default to warnings and deprecations as errors, override via e.g. make -f posix.mak WARNINGS=-wi
+ WARNINGS = -w -de
+-# default include/link paths, override by setting DFLAGS (e.g. make -f posix.mak DFLAGS=-I/foo)
+-DFLAGS = -I$(DRUNTIME_PATH)/import -I$(PHOBOS_PATH) \
+-		 -L-L$(PHOBOS_PATH)/generated/$(OS)/$(BUILD)/$(MODEL) $(MODEL_FLAG) -fPIC -preview=dip1000
++DFLAGS = -O -release -inline
+ DFLAGS += $(WARNINGS)
+ 
+ # Default DUB flags (DUB uses a different architecture format)

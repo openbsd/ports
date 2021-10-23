@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_profiles_chrome_browser_main_extra_parts_profiles_cc,v 1.20 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-chrome_browser_profiles_chrome_browser_main_extra_parts_profiles_cc,v 1.23 2021/10/20 10:27:45 robert Exp $
 
 Index: chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
 --- chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc.orig
 +++ chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
-@@ -360,7 +360,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -363,7 +363,7 @@ void ChromeBrowserMainExtraPartsProfiles::
  #endif
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

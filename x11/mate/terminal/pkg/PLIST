@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/08/20 06:40:19 robert Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/08/25 12:05:53 robert Exp $
 @bin bin/mate-terminal
 bin/mate-terminal.wrapper
 @man man/man1/mate-terminal.1
@@ -404,6 +404,13 @@ share/help/ka/mate-terminal/figures/mate-terminal-default.png
 share/help/ka/mate-terminal/figures/mate-terminal-tabbed.png
 share/help/ka/mate-terminal/index.docbook
 share/help/ka/mate-terminal/legal.xml
+share/help/kab/
+share/help/kab/mate-terminal/
+share/help/kab/mate-terminal/figures/
+share/help/kab/mate-terminal/figures/mate-terminal-default.png
+share/help/kab/mate-terminal/figures/mate-terminal-tabbed.png
+share/help/kab/mate-terminal/index.docbook
+share/help/kab/mate-terminal/legal.xml
 share/help/kk/
 share/help/kk/mate-terminal/
 share/help/kk/mate-terminal/figures/

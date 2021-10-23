@@ -1,20 +1,30 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/06/19 18:34:41 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/10/19 20:08:42 rsadowski Exp $
 @conflict kdepimlibs-<=4
 @bin bin/korgac
 @bin bin/korganizer
 @lib lib/libkorganizer_core.so.${LIBkorganizer_core_VERSION}
 @lib lib/libkorganizer_interfaces.so.${LIBkorganizer_interfaces_VERSION}
 @lib lib/libkorganizerprivate.so.${LIBkorganizerprivate_VERSION}
-@so lib/qt5/plugins/kcm_apptsummary.so
-@so lib/qt5/plugins/kcm_korganizer.so
-@so lib/qt5/plugins/kcm_sdsummary.so
-@so lib/qt5/plugins/kcm_todosummary.so
 lib/qt5/plugins/kontact5/
 @so lib/qt5/plugins/kontact5/kontact_journalplugin.so
 @so lib/qt5/plugins/kontact5/kontact_korganizerplugin.so
 @so lib/qt5/plugins/kontact5/kontact_specialdatesplugin.so
 @so lib/qt5/plugins/kontact5/kontact_todoplugin.so
 @so lib/qt5/plugins/korganizerpart.so
+lib/qt5/plugins/pim/kcms/korganizer/
+@so lib/qt5/plugins/pim/kcms/korganizer/korganizer_configcolorsandfonts.so
+@so lib/qt5/plugins/pim/kcms/korganizer/korganizer_configdesignerfields.so
+@so lib/qt5/plugins/pim/kcms/korganizer/korganizer_configfreebusy.so
+@so lib/qt5/plugins/pim/kcms/korganizer/korganizer_configgroupscheduling.so
+@so lib/qt5/plugins/pim/kcms/korganizer/korganizer_configmain.so
+@so lib/qt5/plugins/pim/kcms/korganizer/korganizer_configplugins.so
+@so lib/qt5/plugins/pim/kcms/korganizer/korganizer_configtime.so
+@so lib/qt5/plugins/pim/kcms/korganizer/korganizer_configviews.so
+@so lib/qt5/plugins/pim/kcms/korganizer/korganizer_userfeedback.so
+lib/qt5/plugins/pim/kcms/summary/
+@so lib/qt5/plugins/pim/kcms/summary/kcmapptsummary.so
+@so lib/qt5/plugins/pim/kcms/summary/kcmsdsummary.so
+@so lib/qt5/plugins/pim/kcms/summary/kcmtodosummary.so
 share/applications/korganizer-import.desktop
 share/applications/korganizer-view.desktop
 share/applications/org.kde.korganizer.desktop
@@ -86,6 +96,9 @@ share/doc/HTML/nl/korganizer/index.docbook
 share/doc/HTML/pt_BR/korganizer/
 share/doc/HTML/pt_BR/korganizer/index.cache.bz2
 share/doc/HTML/pt_BR/korganizer/index.docbook
+share/doc/HTML/ru/korganizer/
+share/doc/HTML/ru/korganizer/index.cache.bz2
+share/doc/HTML/ru/korganizer/index.docbook
 share/doc/HTML/sv/korganizer/
 share/doc/HTML/sv/korganizer/index.cache.bz2
 share/doc/HTML/sv/korganizer/index.docbook
@@ -99,19 +112,24 @@ share/examples/korganizer/xdg/autostart/org.kde.korgac.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/org.kde.korgac.desktop
 share/icons/hicolor/128x128/apps/korg-journal.png
 share/icons/hicolor/128x128/apps/korg-todo.png
+share/icons/hicolor/128x128/apps/korgac.png
 share/icons/hicolor/128x128/apps/korganizer.png
 share/icons/hicolor/128x128/apps/quickview.png
 share/icons/hicolor/16x16/apps/korg-journal.png
 share/icons/hicolor/16x16/apps/korg-todo.png
+share/icons/hicolor/16x16/apps/korgac.png
 share/icons/hicolor/16x16/apps/korganizer.png
 share/icons/hicolor/16x16/apps/quickview.png
 share/icons/hicolor/22x22/apps/korg-journal.png
 share/icons/hicolor/22x22/apps/korg-todo.png
+share/icons/hicolor/22x22/apps/korgac.png
 share/icons/hicolor/22x22/apps/korganizer.png
 share/icons/hicolor/22x22/apps/quickview.png
+share/icons/hicolor/256x256/apps/korgac.png
 share/icons/hicolor/256x256/apps/quickview.png
 share/icons/hicolor/32x32/apps/korg-journal.png
 share/icons/hicolor/32x32/apps/korg-todo.png
+share/icons/hicolor/32x32/apps/korgac.png
 share/icons/hicolor/32x32/apps/korganizer.png
 share/icons/hicolor/32x32/apps/quickview.png
 share/icons/hicolor/48x48/apps/korg-journal.png
@@ -120,6 +138,7 @@ share/icons/hicolor/48x48/apps/korganizer.png
 share/icons/hicolor/48x48/apps/quickview.png
 share/icons/hicolor/64x64/apps/korg-journal.png
 share/icons/hicolor/64x64/apps/korg-todo.png
+share/icons/hicolor/64x64/apps/korgac.png
 share/icons/hicolor/64x64/apps/korganizer.png
 share/icons/hicolor/64x64/apps/quickview.png
 share/icons/hicolor/scalable/apps/korg-journal.svgz
@@ -134,27 +153,6 @@ share/kontact/
 share/kontact/ksettingsdialog/
 share/kontact/ksettingsdialog/korganizer.setdlg
 share/kontact/ksettingsdialog/specialdates.setdlg
-share/korgac/
-share/korgac/icons/
-share/korgac/icons/hicolor/
-share/korgac/icons/hicolor/128x128/
-share/korgac/icons/hicolor/128x128/apps/
-share/korgac/icons/hicolor/128x128/apps/korgac.png
-share/korgac/icons/hicolor/16x16/
-share/korgac/icons/hicolor/16x16/apps/
-share/korgac/icons/hicolor/16x16/apps/korgac.png
-share/korgac/icons/hicolor/22x22/
-share/korgac/icons/hicolor/22x22/apps/
-share/korgac/icons/hicolor/22x22/apps/korgac.png
-share/korgac/icons/hicolor/256x256/
-share/korgac/icons/hicolor/256x256/apps/
-share/korgac/icons/hicolor/256x256/apps/korgac.png
-share/korgac/icons/hicolor/32x32/
-share/korgac/icons/hicolor/32x32/apps/
-share/korgac/icons/hicolor/32x32/apps/korgac.png
-share/korgac/icons/hicolor/64x64/
-share/korgac/icons/hicolor/64x64/apps/
-share/korgac/icons/hicolor/64x64/apps/korgac.png
 share/korganizer/
 share/korganizer/sounds/
 share/korganizer/sounds/alert.wav
@@ -180,7 +178,6 @@ share/kservices5/korganizer_configtime.desktop
 share/kservices5/korganizer_configviews.desktop
 share/kservices5/korganizer_part.desktop
 share/kservices5/korganizer_userfeedback.desktop
-share/kservices5/webcal.protocol
 share/kservicetypes5/korganizerpart.desktop
 share/locale/ar/LC_MESSAGES/korgac.mo
 share/locale/ar/LC_MESSAGES/korganizer.mo

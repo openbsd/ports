@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/05/25 03:40:08 bentley Exp $
+# $OpenBSD: Makefile,v 1.8 2021/10/21 20:47:23 sthen Exp $
 
 PKG_ARCH =		*
 
@@ -6,9 +6,8 @@ COMMENT =		font family inspired by Highway Gothic
 
 GH_ACCOUNT =		RedHatBrand
 GH_PROJECT =		Overpass
-GH_TAGNAME =		3.0.4
-DISTNAME =		overpass-${GH_TAGNAME}
-REVISION =		0
+GH_TAGNAME =		v3.0.5
+PKGNAME =		${DISTNAME:L}
 
 CATEGORIES =		fonts
 

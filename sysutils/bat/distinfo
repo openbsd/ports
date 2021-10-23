@@ -1,4 +1,4 @@
-SHA256 (bat-0.18.2.tar.gz) = sXZ4fifaH5ILZVvNcbZsFWnSQeInK7mk9qZOZQHAzyo=
+SHA256 (bat-0.18.3.tar.gz) = 3/f6UiL0DHs8eD086ww/+zVmLxGYsA14X4Dz8VIzmd0=
 SHA256 (cargo/adler-1.0.2.tar.gz) = 8mIBYEyHseAb09mPjV2aj8u4FejO20H/zL60v1k6Nf4=
 SHA256 (cargo/aho-corasick-0.7.18.tar.gz) = HjfP1edletpF90LW6ZyleIWAtcUp3Hj68R7ObccCZW8=
 SHA256 (cargo/ansi_colours-1.0.4.tar.gz) = YOL7YTikmtnxyzxtj4zL3V5itNqzF8G0NaR+zX2h0o8=
@@ -13,7 +13,7 @@ SHA256 (cargo/bit-set-0.5.2.tar.gz) = bhHhYDXqNeTlmXs5Pqy/b2OYMYj3oq0lv7E0ZfWtWd
 SHA256 (cargo/bit-vec-0.6.3.tar.gz) = NJ+bahee1gcwVSbKSJs0rQpBrtX3mA+pDrAxYLaVmPs=
 SHA256 (cargo/bitflags-1.2.1.tar.gz) = zx3i/ox1vBRaL1d63ZUfgTSIm0eV1HRmpUpchG1pFpM=
 SHA256 (cargo/bstr-0.2.16.tar.gz) = kGgsjWE60zc+Zt6MZBHgriqyVx6HnS779zVYzGbyEnk=
-SHA256 (cargo/bugreport-0.4.0.tar.gz) = oOl+U4hkp8ldM6zL9kyNNUAYujtuAyUC/Q/nJZzxqj0=
+SHA256 (cargo/bugreport-0.4.1.tar.gz) = ABS0srT2O/5pw4OEcBISkMxDf9x5eF1AinYaIeiyQEw=
 SHA256 (cargo/byteorder-1.4.3.tar.gz) = FMGJxT0JiUVJnN+n7MY1Z884hrMzKzEqW0WF2NOmphA=
 SHA256 (cargo/cc-1.0.67.tar.gz) = 48abB3rUNClNPOnx9hQ6KkuJqKLVTvgT2FADpP0RN/0=
 SHA256 (cargo/cfg-if-1.0.0.tar.gz) = uvHeQzl2FYi8Bhnjy8ASDuWC67dLU7Tvv3kRe9LaQP0=
@@ -146,7 +146,7 @@ SHA256 (cargo/winapi-util-0.1.5.tar.gz) = cOxs6FuxWBUcrl5ch/lajpfSwMSwASI/M6M048
 SHA256 (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = cS4ieEHQV8HuHNL7Ivp+WlRhro5I+iynnsQs/BkxGD8=
 SHA256 (cargo/xml-rs-0.8.3.tar.gz) = sH2wZaXPYafkumTynmfbkG+xeHMWUWxObl/w/qHvzYo=
 SHA256 (cargo/yaml-rust-0.4.5.tar.gz) = VsGTbEzHocmrIaHrtgLrlCuoaMvUSpnLfNxYkjNeHIU=
-SIZE (bat-0.18.2.tar.gz) = 1486920
+SIZE (bat-0.18.3.tar.gz) = 1486928
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/aho-corasick-0.7.18.tar.gz) = 112923
 SIZE (cargo/ansi_colours-1.0.4.tar.gz) = 10525
@@ -161,7 +161,7 @@ SIZE (cargo/bit-set-0.5.2.tar.gz) = 14093
 SIZE (cargo/bit-vec-0.6.3.tar.gz) = 19927
 SIZE (cargo/bitflags-1.2.1.tar.gz) = 16745
 SIZE (cargo/bstr-0.2.16.tar.gz) = 330346
-SIZE (cargo/bugreport-0.4.0.tar.gz) = 13237
+SIZE (cargo/bugreport-0.4.1.tar.gz) = 13793
 SIZE (cargo/byteorder-1.4.3.tar.gz) = 22512
 SIZE (cargo/cc-1.0.67.tar.gz) = 53486
 SIZE (cargo/cfg-if-1.0.0.tar.gz) = 7934

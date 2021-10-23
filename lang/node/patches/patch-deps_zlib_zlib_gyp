@@ -1,0 +1,27 @@
+$OpenBSD: patch-deps_zlib_zlib_gyp,v 1.2 2021/09/06 13:49:44 sthen Exp $
+
+node has a patch to add SIMD etc optimizations to zlib on i386/amd64;
+disable on i386, it breaks build. it uses cpuid to detect features so
+_should_ work on amd64.
+
+Index: deps/zlib/zlib.gyp
+--- deps/zlib/zlib.gyp.orig
++++ deps/zlib/zlib.gyp
+@@ -64,7 +64,7 @@
+                 'USE_FILE32API'
+               ],
+             }],
+-            ['(target_arch in "ia32 x64 x32" and OS!="ios") or arm_fpu=="neon"', {
++            ['(target_arch in "x64" and OS!="ios") or arm_fpu=="neon"', {
+               'sources': [
+                 'adler32_simd.c',
+                 'adler32_simd.h',
+@@ -77,7 +77,7 @@
+               'sources': [ 'inflate.c', ],
+             }],
+             # Incorporate optimizations where possible
+-            ['target_arch in "ia32 x64 x32" and OS!="ios"', {
++            ['target_arch in "x64" and OS!="ios"', {
+               'defines': [
+                 'ADLER32_SIMD_SSSE3',
+                 'INFLATE_CHUNK_SIMD_SSE2',

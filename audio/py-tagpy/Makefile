@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2021/01/04 14:06:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2021/09/19 05:24:30 rsadowski Exp $
 
 COMMENT=		Python bindings to TagLib audio file tag library
 
 MODPY_EGG_VERSION =	2013.1
 DISTNAME =		tagpy-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		14
+REVISION =		15
 
 CATEGORIES =		audio devel
 
@@ -29,7 +29,7 @@ FLAVOR =		python3
 
 LIB_DEPENDS =		lang/python/${MODPY_VERSION} \
 			audio/taglib \
-			devel/boost>=1.67.0
+			devel/boost
 
 CONFIGURE_ARGS +=	--boost-compiler=gcc42 \
 			--boost-lib-dir=${LOCALBASE}/lib \

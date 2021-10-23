@@ -1,16 +1,19 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:44:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/09/08 21:23:22 bluhm Exp $
 
-COMMENT= 	run a subprocess
+COMMENT =	run a subprocess
 
-MODULES=	cpan
-PKG_ARCH=	*
-DISTNAME =	IPC-Run-0.96
-CATEGORIES=	devel
-REVISION =	0
+DISTNAME =	IPC-Run-20200505.0
 
-# perl
-PERMIT_PACKAGE=	Yes
+CATEGORIES =	devel
 
-TEST_DEPENDS =	devel/p5-IO-Tty
+# Perl
+PERMIT_PACKAGE =	Yes
+
+MODULES =		cpan
+
+RUN_DEPENDS =		devel/p5-IO-Tty>=1.08
+TEST_DEPENDS =		devel/p5-Readonly
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>

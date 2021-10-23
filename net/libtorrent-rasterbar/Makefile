@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2021/05/22 21:47:28 namn Exp $
+# $OpenBSD: Makefile,v 1.17 2021/09/19 05:24:31 rsadowski Exp $
 
 COMMENT =		C++ library implementing a BitTorrent client
 
 MODPY_EGG_VERSION =	1.2.13
 DISTNAME =		libtorrent-rasterbar-${MODPY_EGG_VERSION}
+REVISION =		0
 
 SHARED_LIBS +=  	torrent-rasterbar 4.0	# 10.0.0
 
@@ -24,7 +25,7 @@ MODULES =		lang/python
 BUILD_DEPENDS =		devel/libtool
 
 LIB_DEPENDS =		converters/libiconv \
-			devel/boost>=1.67.0
+			devel/boost
 
 # boost
 COMPILER =		base-clang ports-gcc

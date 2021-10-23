@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.581 2021/08/19 10:20:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.589 2021/10/20 10:27:44 robert Exp $
 
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
-BROKEN-i386 =		../../third_party/angle/src/libANGLE/validationEGL.h:137:12: error: reference to type 'const egl::AttributeMap' could not bind to an lvalue of type 'const long *'
 
 USE_WXNEEDED=		Yes
 
@@ -14,8 +13,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser
 
-V=			92.0.4515.159
-REVISION=		0
+V=			95.0.4638.54
 
 DISTNAME=		chromium-${V}
 
@@ -38,8 +36,6 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
 MASTER_SITES0=	http://nerd.hu/distfiles/
-
-FIX_CRLF_FILES=	third_party/vulkan_memory_allocator/src/vk_mem_alloc.h
 
 MODULES=	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
@@ -149,8 +145,9 @@ GN_ARGS=	enable_nacl=false \
 		treat_warnings_as_errors=false \
 		clang_use_chrome_plugins=false \
 		use_allocator=\"none\" \
-		fieldtrial_testing_like_official_build=true \
-		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\"
+		disable_fieldtrial_testing_config=true \
+		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
+		fatal_linker_warnings=false
 
 # notyet
 GN_ARGS+=	use_vaapi=false
@@ -210,7 +207,6 @@ pre-configure:
 	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
 	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py ${WRKSRC}/v8/tools/run.py \
 		${WRKSRC}/tools/protoc_wrapper/protoc_wrapper.py \
-		${WRKSRC}/build/util/python2_action.py \
 		${WRKSRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py
 
 # Configuration consists of three steps:

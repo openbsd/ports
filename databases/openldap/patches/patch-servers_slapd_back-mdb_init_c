@@ -1,4 +1,4 @@
-$OpenBSD: patch-servers_slapd_back-mdb_init_c,v 1.6 2019/07/25 22:07:47 sthen Exp $
+$OpenBSD: patch-servers_slapd_back-mdb_init_c,v 1.8 2021/09/10 20:44:27 sthen Exp $
 
 Index: servers/slapd/back-mdb/init.c
 --- servers/slapd/back-mdb/init.c.orig

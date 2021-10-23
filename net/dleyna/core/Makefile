@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2021/05/15 16:41:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2021/09/19 13:36:24 ajacoutot Exp $
 
 COMMENT=		dLeyna utility functions library
 
 GH_PROJECT=		dleyna-core
+GH_TAGNAME=		0.7.0
 
 LIB_DEPENDS=		net/gupnp/core
 

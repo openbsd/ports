@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_gfx_BUILD_gn,v 1.23 2021/07/21 15:43:34 robert Exp $
+$OpenBSD: patch-ui_gfx_BUILD_gn,v 1.26 2021/10/20 10:27:48 robert Exp $
 
 Index: ui/gfx/BUILD.gn
 --- ui/gfx/BUILD.gn.orig
 +++ ui/gfx/BUILD.gn
-@@ -607,7 +607,7 @@ source_set("memory_buffer_sources") {
+@@ -606,7 +606,7 @@ source_set("memory_buffer_sources") {
      deps += [ "//build/config/linux/libdrm" ]
    }
  

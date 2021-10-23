@@ -1,0 +1,8 @@
+This is a Dovecot FTS plugin to enable message indexing using the
+Xapian search engine library. It is intended to act as a simple
+interface to the Xapian storage/search query functionality.
+
+Unlike the other Xapian-based FTS plugin "dovecot-fts-xapian",
+flatcurve relies on Dovecot to do the necessary stemming, and supports
+match scoring and substring matches - it is RFC 3501 (IMAP4rev1)
+compliant. It does not support fuzzy searches.

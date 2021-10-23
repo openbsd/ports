@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/11/07 09:47:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/09/11 07:00:02 ajacoutot Exp $
 @bin bin/dazzle-list-counters
 include/libdazzle-1.0/
 include/libdazzle-1.0/actions/
@@ -169,5 +169,7 @@ lib/girepository-1.0/Dazzle-1.0.typelib
 @lib lib/libdazzle-1.0.so.${LIBdazzle-1.0_VERSION}
 lib/pkgconfig/libdazzle-1.0.pc
 share/gir-1.0/Dazzle-1.0.gir
+share/locale/de/LC_MESSAGES/libdazzle-1.0.mo
+share/locale/zh_CN/LC_MESSAGES/libdazzle-1.0.mo
 share/vala/vapi/libdazzle-1.0.deps
 share/vala/vapi/libdazzle-1.0.vapi

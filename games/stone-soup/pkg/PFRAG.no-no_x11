@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.9 2021/03/06 08:13:44 daniel Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.10 2021/09/02 17:03:30 fcambus Exp $
 share/applications/crawl-tiles.desktop
 share/crawl/dat/tiles/
 share/crawl/dat/tiles/feat.png
@@ -10,9 +10,12 @@ share/crawl/dat/tiles/logosmall.png
 share/crawl/dat/tiles/main.png
 share/crawl/dat/tiles/player.png
 share/crawl/dat/tiles/stone_soup_icon-32x32.png
+share/crawl/dat/tiles/stone_soup_icon-48x48.png
 share/crawl/dat/tiles/stone_soup_icon-512x512.png
 share/crawl/dat/tiles/stone_soup_icon-win32.png
 share/crawl/dat/tiles/title_Cws_Minotauros.png
+share/crawl/dat/tiles/title_anon_octopus_wizard.png
+share/crawl/dat/tiles/title_arbituhhh_tesu.png
 share/crawl/dat/tiles/title_baconkid_duvessa_dowan.png
 share/crawl/dat/tiles/title_baconkid_gastronok.png
 share/crawl/dat/tiles/title_baconkid_mnoleg.png
@@ -22,6 +25,7 @@ share/crawl/dat/tiles/title_denzi_invasion.png
 share/crawl/dat/tiles/title_denzi_kitchen_duty.png
 share/crawl/dat/tiles/title_denzi_summoner.png
 share/crawl/dat/tiles/title_denzi_undead_warrior.png
+share/crawl/dat/tiles/title_e_m_fields.png
 share/crawl/dat/tiles/title_firemage.png
 share/crawl/dat/tiles/title_froggy_goodgod_tengu_gold.png
 share/crawl/dat/tiles/title_froggy_jiyva_felid.png
@@ -35,6 +39,7 @@ share/crawl/dat/tiles/title_ploomutoo_ijyb.png
 share/crawl/dat/tiles/title_pooryurik_knight.png
 share/crawl/dat/tiles/title_psiweapon_kiku.png
 share/crawl/dat/tiles/title_psiweapon_roxanne.png
+share/crawl/dat/tiles/title_sastrei_chei.png
 share/crawl/dat/tiles/title_shadyamish_octm.png
 share/crawl/dat/tiles/title_white_noise_entering_the_dungeon.png
 share/crawl/dat/tiles/title_white_noise_grabbing_the_orb.png

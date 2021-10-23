@@ -1,4 +1,4 @@
-$OpenBSD: patch-dateutil_test_test_parser_py,v 1.3 2019/12/12 16:21:23 jasper Exp $
+$OpenBSD: patch-dateutil_test_test_parser_py,v 1.4 2021/09/02 13:26:36 sthen Exp $
 
 our strftime doesn't error out with %-d but just outputs -d rather
 than doing whatever this test wants
@@ -6,7 +6,7 @@ than doing whatever this test wants
 Index: dateutil/test/test_parser.py
 --- dateutil/test/test_parser.py.orig
 +++ dateutil/test/test_parser.py
-@@ -103,6 +103,8 @@ PARSER_TEST_CASES = [
+@@ -104,6 +104,8 @@ PARSER_TEST_CASES = [
  # Check that we don't have any duplicates
  assert len(set([x[0] for x in PARSER_TEST_CASES])) == len(PARSER_TEST_CASES)
  

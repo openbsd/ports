@@ -1,8 +1,9 @@
-$OpenBSD: patch-configure,v 1.10 2021/02/04 22:13:23 sthen Exp $
+$OpenBSD: patch-configure,v 1.11 2021/09/22 20:57:10 sthen Exp $
+
 Index: configure
 --- configure.orig
 +++ configure
-@@ -13714,6 +13714,7 @@ fi
+@@ -13717,6 +13717,7 @@ fi
    fi
  
  
@@ -10,7 +11,7 @@ Index: configure
  
  
  
-@@ -14859,6 +14860,7 @@ $as_echo "$ac_res" >&6; }
+@@ -14862,6 +14863,7 @@ $as_echo "$ac_res" >&6; }
            INCINTL=
          fi
  

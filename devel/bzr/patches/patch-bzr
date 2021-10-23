@@ -1,9 +1,0 @@
-$OpenBSD: patch-bzr,v 1.5 2011/12/23 17:12:04 eric Exp $
---- bzr.orig	Thu Oct 27 15:21:20 2011
-+++ bzr	Thu Dec 22 17:15:46 2011
-@@ -1,4 +1,4 @@
--#! /usr/bin/env python
-+#! ${MODPY_BIN}
- 
- # Copyright (C) 2005-2011 Canonical Ltd
- #

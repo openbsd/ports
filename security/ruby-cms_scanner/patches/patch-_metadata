@@ -1,0 +1,16 @@
+$OpenBSD: patch-_metadata,v 1.1 2021/08/26 20:29:47 jeremy Exp $
+
+Remove sys-proctable dependency, only needed on Windows.
+
+Index: .metadata
+--- .metadata.orig
++++ .metadata
+@@ -155,7 +155,7 @@ dependencies:
+     - - "~>"
+       - !ruby/object:Gem::Version
+         version: 1.2.2
+-  type: :runtime
++  type: :development
+   prerelease: false
+   version_requirements: !ruby/object:Gem::Requirement
+     requirements:

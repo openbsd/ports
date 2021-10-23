@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.300 2021/08/16 17:43:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.302 2021/09/13 09:20:18 sthen Exp $
 
 COMMENT-server=	compact IMAP/POP3 server
 COMMENT-ldap=	LDAP authentication / dictionary support for Dovecot
@@ -8,9 +8,11 @@ COMMENT-postgresql= PostgreSQL authentication / dictionary support for Dovecot
 # XXX -stable package builds can't detect PKGSPEC updates properly;
 # if backporting an update to stable, ensure all ports depending on
 # this are bumped and that -current is same/newer version than -stable
+# (dovecot-fts-xapian, dovecot-fts-flatcurve, dovecot-pigeonhole if
+# not updated anyway)
 V_MAJOR=	2.3
 V_DOVECOT=	2.3.16
-REVISION-server=0
+REVISION=	1
 EPOCH=		0
 
 DISTNAME=	dovecot-${V_DOVECOT}
@@ -41,8 +43,8 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # LGPLv2.1 and MIT
 PERMIT_PACKAGE=	Yes
 
-WANTLIB-server=	bz2 c crypto expat exttextcat-2.0 iconv lz4 lzma m \
-		pthread sodium sqlite3 ssl stemmer z zstd
+WANTLIB-server=	bz2 c crypto expat exttextcat-2.0 iconv icudata icui18n \
+		icuuc lz4 lzma m pthread sodium sqlite3 ssl stemmer z zstd
 WANTLIB-ldap=	crypto iconv lber ldap sasl2 ssl lib/dovecot/dovecot
 WANTLIB-mysql=	crypto m mariadb pthread ssl z
 WANTLIB-postgresql= crypto m pq ssl
@@ -54,6 +56,7 @@ LIB_DEPENDS+=	archivers/bzip2 \
 		converters/libiconv \
 		databases/sqlite3 \
 		security/libsodium \
+		textproc/icu4c \
 		textproc/libexttextcat \
 		textproc/libstemmer
 LIB_DEPENDS-ldap= ${BASE_PKGPATH} \
@@ -68,7 +71,6 @@ CONFIGURE_ARGS=	--with-rundir=/var/dovecot \
 		--with-sql=plugin \
 		--with-sqlite \
 		--with-statedir=/var/dovecot \
-		--without-icu \
 		--without-nss \
 		--without-pam \
 		--without-shadow \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2021/01/10 16:59:03 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.15 2021/10/11 02:18:32 bcallah Exp $
 bin/diffoscope
 lib/python${MODPY_VERSION}/site-packages/diffoscope/
 lib/python${MODPY_VERSION}/site-packages/diffoscope-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -89,6 +89,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}png.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}ppu.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}ps.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}python.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}rdata.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}rpm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}rpm_fallback.${MODPY_PYC_MAGIC_TAG}pyc
@@ -161,6 +162,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/pgp.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/png.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/ppu.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/ps.py
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/python.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/rdata.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/rpm.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/rpm_fallback.py

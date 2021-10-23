@@ -1,0 +1,14 @@
+$OpenBSD: patch-filesel_Makefile,v 1.1 2021/08/30 14:20:31 fcambus Exp $
+
+Index: filesel/Makefile
+--- filesel/Makefile.orig
++++ filesel/Makefile
+@@ -50,7 +50,7 @@ cdrom$(LIB_SUFFIX): $(cdrom_so)
+ 	$(CC) $(SHARED_FLAGS) -o $@ $^
+ 
+ pfilesel$(LIB_SUFFIX): $(pfilesel_so)
+-	$(CC) $(SHARED_FLAGS) $(MATH_LIBS) $(ICONV_LIBS) -o $@ $^ -lbz2 -lz
++	$(CC) $(LDFLAGS) $(SHARED_FLAGS) $(MATH_LIBS) $(ICONV_LIBS) -o $@ $^ -lbz2 -lz
+ 
+ clean:
+ 	rm -f *.o *$(LIB_SUFFIX) adbmeta-test dirdb-test filesystem-bzip2-test filesystem-filehandle-cache-test filesystem-gzip-test filesystem-tar-test

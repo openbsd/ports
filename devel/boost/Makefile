@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2021/07/16 17:55:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.118 2021/10/19 16:02:41 sthen Exp $
 
 ONLY_FOR_ARCHS-md = aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64 riscv64
 
@@ -6,16 +6,18 @@ COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
 
 VERSION=	1.76.0
+EPOCH =		0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME-main=	boost-${VERSION}
 PKGNAME-md=	boost-md-${VERSION}
-REVISION=	0
+REVISION-main=	0
+REVISION-md=	0
 CATEGORIES=	devel
 MASTER_SITES=	https://boostorg.jfrog.io/artifactory/main/release/${VERSION}/source/
 EXTRACT_SUFX=	.tar.bz2
 FIX_EXTRACT_PERMISSIONS =	Yes
 
-SO_VERSION=	15.0
+SO_VERSION=	17.0
 BOOST_LIBS=	boost_atomic-mt \
 		boost_chrono-mt boost_chrono \
 		boost_container-mt boost_container \
@@ -42,6 +44,9 @@ BOOST_LIBS=	boost_atomic-mt \
 		boost_random-mt boost_random \
 		boost_regex-mt boost_regex \
 		boost_serialization-mt boost_serialization \
+		boost_stacktrace_addr2line-mt boost_stacktrace_addr2line \
+		boost_stacktrace_basic-mt boost_stacktrace_basic \
+		boost_stacktrace_noop-mt boost_stacktrace_noop \
 		boost_system-mt boost_system \
 		boost_thread-mt \
 		boost_timer-mt boost_timer \
@@ -52,14 +57,8 @@ BOOST_LIBS=	boost_atomic-mt \
 
 # MD
 BOOST_LIBS+=	boost_context-mt \
-		boost_coroutine boost_coroutine-mt \
-		boost_fiber-mt \
-		boost_stacktrace_addr2line \
-		boost_stacktrace_addr2line-mt \
-		boost_stacktrace_basic \
-		boost_stacktrace_basic-mt \
-		boost_stacktrace_noop \
-		boost_stacktrace_noop-mt
+		boost_coroutine-mt boost_coroutine \
+		boost_fiber-mt
 
 .for _lib in ${BOOST_LIBS}
 SHARED_LIBS+=	${_lib} ${SO_VERSION}
@@ -119,7 +118,7 @@ BOOTSTRAP=	--with-bjam=${WRKSRC}/bjam \
 		--with-toolset=${TOOLSET} \
 		--with-python=${MODPY_BIN}
 .if !${BUILD_PACKAGES:M-md}
-BOOTSTRAP+=	--without-libraries=context,coroutine,fiber,stacktrace
+BOOTSTRAP+=	--without-libraries=context,coroutine,fiber
 .endif
 
 # python.port.mk makes assumptions about an empty CONFIGURE_STYLE

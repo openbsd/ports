@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.146 2021/06/09 19:50:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.148 2021/10/06 07:37:02 espie Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
-DISTNAME =	gimp-2.10.24
-REVISION =	1
+DISTNAME =	gimp-2.10.28
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets
-SHARED_LIBS +=  $i-2.0 273.0
+SHARED_LIBS +=  $i-2.0 274.0
 .endfor
 
 CATEGORIES=	graphics
@@ -25,8 +24,8 @@ EXTRACT_SUFX=	.tar.bz2
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += Half-2_5 ICE Iex-2_5 IexMath-2_5 IlmImf-2_5 IlmThread-2_5
-WANTLIB += Imath-2_5 SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += ICE Iex-3_1 IlmThread-3_1 OpenEXR-3_1 OpenEXRCore-3_1 OpenEXRUtil-3_1
+WANTLIB += Imath-3_1 SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xmu Xpm Xrandr Xrender Xt aa aom atk-1.0
 WANTLIB += avahi-client avahi-common babl-0.1 bz2 c cairo cairo-gobject
 WANTLIB += cups curses dav1d dbus-1 de265 execinfo exiv2 expat
@@ -103,6 +102,8 @@ CONFIGURE_ARGS+= \
 		--with-pdbgen \
 		--without-alsa \
 		--without-webkit
+
+UPDATE_PLIST_ARGS +=	-i MODPY_PY_PREFIX -i MODPY_BIN_SUFFIX
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2021/05/23 17:47:00 kirby Exp $
+# $OpenBSD: Makefile,v 1.42 2021/09/19 05:24:30 rsadowski Exp $
 
 COMMENT =	toolkit for developing mapping applications
 
@@ -7,13 +7,14 @@ V =		3.1.0
 DISTNAME =	mapnik-v${V}
 PKGNAME =	${DISTNAME:S/v//}
 EXTRACT_SUFX =	.tar.bz2
+REVISION =	1
 
 SHARED_LIBS =	mapnik 4.0 #3.0
 CATEGORIES =	graphics geo
 
 HOMEPAGE =	https://mapnik.org/
 
-DPB_PROPERTIES = nojunk
+DPB_PROPERTIES = nojunk parallel
 
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes
@@ -26,9 +27,7 @@ WANTLIB += intl jpeg m pcre pixman-1 png>=17.0 pq pthread
 WANTLIB += sqlite3 tiff xcb xcb-render xcb-shm xml2 z ${COMPILER_LIBCXX}
 
 MASTER_SITES =	https://github.com/mapnik/mapnik/releases/download/v${V}/
-MODULES =	devel/scons \
-		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+MODULES =	devel/scons
 
 # C++14
 COMPILER =	base-clang ports-gcc
@@ -36,7 +35,7 @@ COMPILER =	base-clang ports-gcc
 TEST_DEPENDS =	shells/bash \
 		${BUILD_PKGPATH}
 
-LIB_DEPENDS =	devel/boost>=1.58 \
+LIB_DEPENDS =	devel/boost \
 		databases/sqlite3 \
 		graphics/cairo \
 		graphics/libwebp \
@@ -52,6 +51,7 @@ MODSCONS_FLAGS =	PREFIX="${TRUEPREFIX}" \
 			HB_INCLUDES=${LOCALBASE}/include \
 			HB_LIBS=${LOCALBASE}/lib \
 			WARNING_CXXFLAGS="-I${X11BASE}/include/freetype2" \
+			CUSTOM_CXXFLAGS="-fPIC" \
 			SYSTEM_FONTS=${X11BASE}/lib/X11/fonts/TTF/ \
 			CUSTOM_LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			FAST=yes \
@@ -63,7 +63,7 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/build.py
 
 do-test:
-	# Test data cuold be fetched from github and extracted to test subdir.
+	# Test data could be fetched from github and extracted to test subdir.
 	# https://github.com/mapnik/test-data
 	# https://github.com/mapnik/test-data-visual
 	# warning: some tests may swap your machine to death

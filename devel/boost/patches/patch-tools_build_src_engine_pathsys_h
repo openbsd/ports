@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_build_src_engine_pathsys_h,v 1.1 2021/06/22 04:20:13 rsadowski Exp $
+$OpenBSD: patch-tools_build_src_engine_pathsys_h,v 1.3 2021/09/19 05:23:29 rsadowski Exp $
 
 [PATCH] Add a default exec path logic.
 

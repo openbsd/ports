@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2021/04/23 21:12:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2021/10/07 12:17:54 sthen Exp $
 
 COMMENT-main=	monitoring plugins (for Nagios, Icinga, etc)
 COMMENT-dbi=	dbi monitoring plugin
@@ -12,6 +12,8 @@ COMMENT-snmp=	monitoring plugins using snmp
 COMMENT-radius=	RADIUS monitoring plugin
 
 V=		2.3.1
+REVISION-main=	1
+
 DISTNAME=	monitoring-plugins-$V
 PKGNAME-main=	monitoring-plugins-$V
 PKGNAME-dbi=	monitoring-plugins-dbi-$V
@@ -23,6 +25,7 @@ PKGNAME-pgsql=	monitoring-plugins-pgsql-$V
 PKGNAME-samba=	monitoring-plugins-samba-$V
 PKGNAME-snmp=	monitoring-plugins-snmp-$V
 PKGNAME-radius=	monitoring-plugins-radius-$V
+
 CATEGORIES=	net
 
 HOMEPAGE=	https://www.monitoring-plugins.org/
@@ -55,7 +58,12 @@ CONFIGURE_ARGS+= --libexecdir=${PREFIX}/libexec/nagios \
 		--with-cgiurl=/cgi-bin/nagios \
 		--with-openssl=/usr \
 		--without-gnutls
+# builds done with proot on a nosuid filesystem can't run ping so the parameter
+# autodetection fails; hardcode it instead
+CONFIGURE_ARGS+= --with-ping-command="/sbin/ping -n -c %d %s" \
+		--with-ping6-command="/sbin/ping6 -n -c %d %s"
 # can autodetect command paths, but hard-coding avoids build dependencies
+# or a detection which relies on being able to run ping (
 CONFIGURE_ARGS+= --with-fping-command="${LOCALBASE}/sbin/fping -4" \
 		--with-fping6-command="${LOCALBASE}/sbin/fping -6" \
 		--with-smbclient-command=${LOCALBASE}/bin/smbclient \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2021/08/08 12:23:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.21 2021/09/10 08:43:59 rsadowski Exp $
 
 COMMENT =	virtual globe and world atlas
 DISTNAME =	marble-${VERSION}
@@ -8,8 +8,8 @@ CATEGORIES =	geo
 HOMEPAGE =	https://marble.kde.org/
 
 SHARED_LIBS +=  astro                     2.0 # 0.17
-SHARED_LIBS +=  marblewidget-qt5          3.0 # 0.28
-SHARED_LIBS +=  marbledeclarative         1.0 # 0.28
+SHARED_LIBS +=  marblewidget-qt5          3.1 # 0.28
+SHARED_LIBS +=  marbledeclarative         1.1 # 0.28
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets

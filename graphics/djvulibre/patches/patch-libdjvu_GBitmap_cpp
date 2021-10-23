@@ -1,0 +1,17 @@
+$OpenBSD: patch-libdjvu_GBitmap_cpp,v 1.1 2021/10/20 16:31:58 mbuhl Exp $
+
+Fix CVE-2021-32493: Integer Overflow Leading to Heap Buffer Overflow
+https://sourceforge.net/p/djvu/djvulibre-git/ci/cd8b5c97b27a5c1dc83046498b6ca49ad20aa9b6
+
+Index: libdjvu/GBitmap.cpp
+--- libdjvu/GBitmap.cpp.orig
++++ libdjvu/GBitmap.cpp
+@@ -1284,6 +1284,8 @@ GBitmap::decode(unsigned char *runs)
+   // initialize pixel array
+   if (nrows==0 || ncolumns==0)
+     G_THROW( ERR_MSG("GBitmap.not_init") );
++  if (ncolumns + border != (unsigned short)(ncolumns+border))
++    G_THROW("GBitmap: image size exceeds maximum (corrupted file?)");
+   bytes_per_row = ncolumns + border;
+   if (runs==0)
+     G_THROW( ERR_MSG("GBitmap.null_arg") );

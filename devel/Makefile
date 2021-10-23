@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2113 2021/08/10 20:43:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.2135 2021/10/21 20:41:21 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -25,6 +25,7 @@
      SUBDIR += arduino-makefile
      SUBDIR += argp-standalone
      SUBDIR += argtable
+     SUBDIR += arm-compute-library
      SUBDIR += arm-none-eabi
      SUBDIR += armips
      SUBDIR += asm6
@@ -53,11 +54,10 @@
      SUBDIR += boris
      SUBDIR += bpython,python3
      SUBDIR += bullet
-     SUBDIR += bzr
-     SUBDIR += bzr-svn
      SUBDIR += cabal-bundler
      SUBDIR += cabal-install
      SUBDIR += capstone
+     SUBDIR += cargo-audit
      SUBDIR += cargo-generate-vendor
      SUBDIR += catalyst
      SUBDIR += catalyst-tutorial
@@ -132,6 +132,9 @@
      SUBDIR += doxygen-gui
      SUBDIR += droplet
      SUBDIR += dtc
+     SUBDIR += dtools
+#    SUBDIR += dub
+     SUBDIR += dub,dmd
      SUBDIR += dune
      SUBDIR += dwz
      SUBDIR += dyncall
@@ -274,6 +277,7 @@
      SUBDIR += libgee
      SUBDIR += libgit2
      SUBDIR += libglade2
+     SUBDIR += libgnt
      SUBDIR += libgsf
      SUBDIR += libgtop2
      SUBDIR += libguess
@@ -322,7 +326,6 @@
      SUBDIR += libuv
      SUBDIR += libvirt-glib
      SUBDIR += libvmime
-     SUBDIR += libvstr
      SUBDIR += libvterm
      SUBDIR += libwnck
      SUBDIR += libwnck3
@@ -407,6 +410,7 @@
      SUBDIR += mercurial
      SUBDIR += meson
      SUBDIR += metaauto
+     SUBDIR += mklittlefs
      SUBDIR += mkspiffs
      SUBDIR += mm
      SUBDIR += mm-common
@@ -745,6 +749,7 @@
      SUBDIR += p5-File-Tail
      SUBDIR += p5-File-Tempdir
      SUBDIR += p5-File-Touch
+     SUBDIR += p5-File-TreeCreate
      SUBDIR += p5-File-Type
      SUBDIR += p5-File-chdir
      SUBDIR += p5-File-chmod
@@ -1293,7 +1298,6 @@
      SUBDIR += py-argcomplete,python3
      SUBDIR += py-argh
      SUBDIR += py-argh,python3
-     SUBDIR += py-asn1
      SUBDIR += py-asn1,python3
      SUBDIR += py-asn1-modules,python3
      SUBDIR += py-astroid,python3
@@ -1329,7 +1333,7 @@
      SUBDIR += py-bytecodeassembler
      SUBDIR += py-cached-property
      SUBDIR += py-cached-property,python3
-     SUBDIR += py-cachetools
+     SUBDIR += py-cachetools,python3
      SUBDIR += py-cairocffi
      SUBDIR += py-cairocffi,python3
      SUBDIR += py-certifi
@@ -1376,6 +1380,7 @@
      SUBDIR += py-curtsies,python3
      SUBDIR += py-dateutil
      SUBDIR += py-dateutil,python3
+     SUBDIR += py-dbus-deviation,python3
      SUBDIR += py-decorator
      SUBDIR += py-decorator,python3
      SUBDIR += py-decoratortools
@@ -1456,6 +1461,7 @@
      SUBDIR += py-incremental,python3
      SUBDIR += py-intervaltree
      SUBDIR += py-intervaltree,python3
+     SUBDIR += py-invoke,python3
      SUBDIR += py-ipykernel,python3
      SUBDIR += py-ipython_genutils
      SUBDIR += py-ipython_genutils,python3
@@ -1470,10 +1476,10 @@
      SUBDIR += py-jaraco-functools
      SUBDIR += py-jaraco-functools,python3
      SUBDIR += py-jedi,python3
+     SUBDIR += py-jeepney,python3
      SUBDIR += py-jmespath
      SUBDIR += py-jmespath,python3
      SUBDIR += py-jsonrpclib
-     SUBDIR += py-jsonschema
      SUBDIR += py-jsonschema,python3
      SUBDIR += py-jupyter_client,python3
      SUBDIR += py-jupyter_core,python3
@@ -1558,14 +1564,15 @@
      SUBDIR += py-prompt_toolkit,python3
      SUBDIR += py-protobuf,python3
      SUBDIR += py-ptyprocess,python3
+     SUBDIT += py-puremagic,python3
      SUBDIR += py-py
      SUBDIR += py-py,python3
      SUBDIR += py-pybind11,python3
-     SUBDIR += py-pyinotify
      SUBDIR += py-pyinotify,python3
      SUBDIR += py-pyprof2calltree
      SUBDIR += py-pyprof2calltree,python3
      SUBDIR += py-pyro
+     SUBDIR += py-pyrsistent,python3
      SUBDIR += py-pyte
      SUBDIR += py-pyte,python3
      SUBDIR += py-python2-pythondialog
@@ -1586,7 +1593,9 @@
      SUBDIR += py-robotframework,python3
      SUBDIR += py-rope,python3
      SUBDIR += py-ruamel.ordereddict
+     SUBDIR += py-schema,python3
      SUBDIR += py-selectors2
+     SUBDIR += py-semantic-version,python3
      SUBDIR += py-send2trash
      SUBDIR += py-send2trash,python3
      SUBDIR += py-serial
@@ -1596,6 +1605,7 @@
      SUBDIR += py-setuptools,python3
      SUBDIR += py-setuptools_git
      SUBDIR += py-setuptools_git,python3
+     SUBDIR += py-setuptools-rust,python3
      SUBDIR += py-setuptools_scm
      SUBDIR += py-setuptools_scm,python3
      SUBDIR += py-setuptools_scm_git_archive
@@ -1652,6 +1662,7 @@
      SUBDIR += py-test-runner,python3
      SUBDIR += py-test-subtesthack
      SUBDIR += py-test-subtesthack,python3
+     SUBDIR += py-test-subtests,python3
      SUBDIR += py-test-timeout,python3
      SUBDIR += py-test-vcr,python3
      SUBDIR += py-test-xdist
@@ -1662,6 +1673,7 @@
      SUBDIR += py-testtools,python3
      SUBDIR += py-texscythe
      SUBDIR += py-toolz,python3
+     SUBDIR += py-toposort,python3
      SUBDIR += py-tox
      SUBDIR += py-tox,python3
      SUBDIR += py-tqdm,python3
@@ -1692,6 +1704,7 @@
      SUBDIR += py-wcwidth,python3
      SUBDIR += py-wheel
      SUBDIR += py-wheel,python3
+     SUBDIR += py-wheezy.template,python3
      SUBDIR += py-wrapt
      SUBDIR += py-wrapt,python3
      SUBDIR += py-wsgiutils
@@ -1708,6 +1721,7 @@
      SUBDIR += py-yapf,python3
      SUBDIR += py-zc-lockfile
      SUBDIR += py-zc-lockfile,python3
+     SUBDIR += py-zipp,python3
      SUBDIR += py-zopecomponent,python3
      SUBDIR += py-zopeevent,python3
      SUBDIR += py-zopeinterface,python3
@@ -1766,7 +1780,6 @@
      SUBDIR += ruby-gettext
      SUBDIR += ruby-gettext-setup
      SUBDIR += ruby-get_process_mem
-     SUBDIR += ruby-gir_ffi
      SUBDIR += ruby-git
      SUBDIR += ruby-highline
      SUBDIR += ruby-hoe
@@ -1797,8 +1810,6 @@
      SUBDIR += ruby-prof,ruby27
      SUBDIR += ruby-prof,ruby30
      SUBDIR += ruby-puppet_forge
-     SUBDIR += ruby-racc,ruby27
-     SUBDIR += ruby-racc,ruby30
      SUBDIR += ruby-rake-compiler
      SUBDIR += ruby-rake-remote_task
      SUBDIR += ruby-regexp_parser
@@ -1820,7 +1831,6 @@
      SUBDIR += ruby-subset_sum,ruby30
      SUBDIR += ruby-sync
      SUBDIR += ruby-systemu
-     SUBDIR += ruby-sys-proctable
      SUBDIR += ruby-therubyracer,ruby27
      SUBDIR += ruby-therubyracer,ruby30
      SUBDIR += ruby-thor

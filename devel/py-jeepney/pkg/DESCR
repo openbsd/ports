@@ -1,0 +1,2 @@
+Jeepney is a pure Python implementation of D-Bus messaging. It has an I/O-free
+core, and integration modules for different event loops.

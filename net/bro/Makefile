@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.78 2021/08/13 06:48:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2021/10/03 19:54:51 ajacoutot Exp $
 
-PORTROACH=		skipv:4.1.0
+PORTROACH=		skipv:4.1.0,4.1.1
+
+BROKEN-powerpc64 =	vec_mule and vec_rl calls are ambiguous in highwayhash
 
 COMMENT=		network analysis and security monitoring framework
 
-V=			4.0.3
+V=			4.0.4
 DISTNAME=		zeek-${V}
 
 SHARED_LIBS +=	binpac                    2.0

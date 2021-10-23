@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-server,v 1.28 2021/07/28 07:23:34 landry Exp $
+@comment $OpenBSD: PLIST-server,v 1.30 2021/09/10 20:44:27 sthen Exp $
 @option is-branch
 @conflict openldap-client-<=2.4.45p0
 @pkgpath databases/openldap,-server,bdb
-@ask-update openldap-server-<2.4 Make sure your existing database is backed up
+@pkgpath databases/openldap23
+@ask-update openldap-server-<2.4 You will need to recreate the database. Make sure your existing database is backed up
 @newgroup _openldap:544
 @newuser _openldap:544:_openldap:daemon:OpenLDAP Account:/nonexistent:/sbin/nologin
 @extraunexec rm -Rf ${SYSCONFDIR}/openldap/slapd.d/*

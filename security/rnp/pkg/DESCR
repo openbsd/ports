@@ -1,0 +1,6 @@
+librnp is a cross-platform C++ library providing an implementation of
+OpenPGP (RFC4880). Unlike GPGME, it is standalone and doesn't call out
+to the gnupg binary.
+RNP is a set of tools built using this library providing key management
+and the usual encrypt/decrypt/sign/verify functions - it can replace
+gnupg for some uses.

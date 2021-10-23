@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_main_detail_c,v 1.1 2021/09/16 10:36:39 sthen Exp $
+
+Cope with 32-bit arch with 64-bit time variables.
+
+Index: src/main/detail.c
+--- src/main/detail.c.orig
++++ src/main/detail.c
+@@ -789,7 +789,7 @@ open_file:
+ 	 */
+  alloc_packet:
+ 	if (data->done_entry) {
+-		DEBUG2("detail (%s): Skipping record for timestamp %lu", data->name, data->timestamp);
++		DEBUG2("detail (%s): Skipping record for timestamp %lld", data->name, (long long)data->timestamp);
+ 		fr_pair_list_free(&data->vps);
+ 		TALLOC_FREE(data->ctx);
+ 		data->state = STATE_HEADER;

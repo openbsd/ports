@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2018/03/13 21:07:42 jasper Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2021/09/01 21:13:28 ajacoutot Exp $
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -414,7 +414,7 @@ target_alias = @target_alias@
+@@ -415,7 +415,7 @@ target_alias = @target_alias@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@

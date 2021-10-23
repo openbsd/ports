@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_permissions_prediction_service_prediction_service_common_cc,v 1.5 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-components_permissions_prediction_service_prediction_service_common_cc,v 1.6 2021/09/01 16:54:39 robert Exp $
 
 Index: components/permissions/prediction_service/prediction_service_common.cc
 --- components/permissions/prediction_service/prediction_service_common.cc.orig

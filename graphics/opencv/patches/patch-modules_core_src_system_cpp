@@ -1,16 +1,14 @@
-$OpenBSD: patch-modules_core_src_system_cpp,v 1.9 2021/08/16 07:43:40 rsadowski Exp $
+$OpenBSD: patch-modules_core_src_system_cpp,v 1.10 2021/10/13 19:11:02 rsadowski Exp $
 Fix build on i386.
 Index: modules/core/src/system.cpp
 --- modules/core/src/system.cpp.orig
 +++ modules/core/src/system.cpp
-@@ -216,9 +216,12 @@ std::wstring GetTempFileNameWinRT(std::wstring prefix)
- 
- #endif
- #else
-+#include <fcntl.h>
+@@ -235,8 +235,10 @@ std::wstring GetTempFileNameWinRT(std::wstring prefix)
+ #ifndef OPENCV_DISABLE_THREAD_SUPPORT
  #include <pthread.h>
+ #endif
++#include <fcntl.h>
  #include <sys/time.h>
-+#include <stdlib.h>
  #include <time.h>
 +#include <unistd.h>
  

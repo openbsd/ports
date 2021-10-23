@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2020/07/27 08:08:25 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.39 2021/09/15 17:09:05 gonzalo Exp $
 
 USE_WXNEEDED =		Yes
 
 COMMENT =		browse and download YouTube videos
 
-DISTNAME =		smtube-20.6.0
+DISTNAME =		smtube-21.7.0
 
 CATEGORIES =		multimedia x11
 
@@ -27,8 +27,7 @@ RUN_DEPENDS =		x11/smplayer \
 			devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
-LIB_DEPENDS =		x11/qt5/qtscript \
-			x11/qt5/qtwebkit
+LIB_DEPENDS =		x11/qt5/qtwebkit
 
 USE_GMAKE =		Yes
 

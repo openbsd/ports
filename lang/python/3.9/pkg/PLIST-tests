@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.4 2021/06/12 04:00:22 kmos Exp $
+@comment $OpenBSD: PLIST-tests,v 1.5 2021/09/01 17:41:48 kmos Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-tests-${VERSION_SPEC}
@@ -519,6 +519,9 @@ lib/python3.9/test/__pycache__/__main__.cpython-39.pyc
 lib/python3.9/test/__pycache__/_test_multiprocessing.cpython-39.opt-1.pyc
 lib/python3.9/test/__pycache__/_test_multiprocessing.cpython-39.opt-2.pyc
 lib/python3.9/test/__pycache__/_test_multiprocessing.cpython-39.pyc
+lib/python3.9/test/__pycache__/_typed_dict_helper.cpython-39.opt-1.pyc
+lib/python3.9/test/__pycache__/_typed_dict_helper.cpython-39.opt-2.pyc
+lib/python3.9/test/__pycache__/_typed_dict_helper.cpython-39.pyc
 lib/python3.9/test/__pycache__/ann_module.cpython-39.opt-1.pyc
 lib/python3.9/test/__pycache__/ann_module.cpython-39.opt-2.pyc
 lib/python3.9/test/__pycache__/ann_module.cpython-39.pyc
@@ -1963,6 +1966,7 @@ lib/python3.9/test/__pycache__/xmltests.cpython-39.opt-1.pyc
 lib/python3.9/test/__pycache__/xmltests.cpython-39.opt-2.pyc
 lib/python3.9/test/__pycache__/xmltests.cpython-39.pyc
 lib/python3.9/test/_test_multiprocessing.py
+lib/python3.9/test/_typed_dict_helper.py
 lib/python3.9/test/allsans.pem
 lib/python3.9/test/ann_module.py
 lib/python3.9/test/ann_module2.py
@@ -2444,12 +2448,16 @@ lib/python3.9/test/support/__pycache__/socket_helper.cpython-39.pyc
 lib/python3.9/test/support/__pycache__/testresult.cpython-39.opt-1.pyc
 lib/python3.9/test/support/__pycache__/testresult.cpython-39.opt-2.pyc
 lib/python3.9/test/support/__pycache__/testresult.cpython-39.pyc
+lib/python3.9/test/support/__pycache__/warnings_helper.cpython-39.opt-1.pyc
+lib/python3.9/test/support/__pycache__/warnings_helper.cpython-39.opt-2.pyc
+lib/python3.9/test/support/__pycache__/warnings_helper.cpython-39.pyc
 lib/python3.9/test/support/bytecode_helper.py
 lib/python3.9/test/support/hashlib_helper.py
 lib/python3.9/test/support/logging_helper.py
 lib/python3.9/test/support/script_helper.py
 lib/python3.9/test/support/socket_helper.py
 lib/python3.9/test/support/testresult.py
+lib/python3.9/test/support/warnings_helper.py
 lib/python3.9/test/talos-2019-0758.pem
 lib/python3.9/test/test___all__.py
 lib/python3.9/test/test___future__.py

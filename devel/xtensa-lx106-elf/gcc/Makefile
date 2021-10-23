@@ -1,76 +1,81 @@
-# $OpenBSD: Makefile,v 1.4 2021/01/21 19:36:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2021/10/22 21:41:26 tracey Exp $
 
 COMMENT =	gcc for ${CONFIG} cross-development
 
-VERSION =	5.2.0
+VERSION =	10.2.0
 DISTNAME =	gcc-${VERSION}
 PKGNAME =	${CONFIG}-gcc-${VERSION}
 
-GH_ACCOUNT =	jcmvbkbc
-GH_PROJECT =	gcc-xtensa
-GH_COMMIT =	4a86aa4eb36ae95cf42f99251965f4a3a8f45f88
+SHARED_LIBS +=  cc1plugin                 0.0 # 0.0
+SHARED_LIBS +=  cp1plugin                 0.0 # 0.0
+SHARED_LIBS +=  cc1                       0.0 # 0.0
 
-WANTLIB =	${COMPILER_LIBCXX} c gmp m mpc mpfr
+WANTLIB += ${COMPILER_LIBCXX} c gmp isl m mpc mpfr
 
 SUBST_VARS +=	VERSION
 
-COMPILER =	base-clang ports-gcc base-gcc
+MASTER_SITES = 	${MASTER_SITE_GCC:=releases/gcc-$(VERSION)/}
+MASTER_SITES0 =	https://raw.githubusercontent.com/earlephilhower/esp-quick-toolchain/master/patches/gcc10.2/
+PATCHFILES = 	gcc-ctype-inline-pgmread.patch:0 \
+		gcc-eh-alloc.patch:0 \
+		gcc-enable-mforcel32-eh.patch:0 \
+		gcc-exception-what-to-pmem.patch:0 \
+		gcc-file-shortname.patch:0 \
+		gcc-func-sect.patch:0 \
+		gcc-mforce-l32.patch:0 \
+		gcc-regex-what-to-pmem.patch:0 \
+		gcc-stdcsupp-safe.patch:0 \
+		gcc-unwind-safe.patch:0 \
+		gcc-xtensa-add-optimizations-for-shift-operations.patch:0 \
+		gcc-xtensa-fix-PR-target-98285.patch:0 \
+		gcc-xtensa-implement-bswapsi2-bswapdi2-and-helpers.patch:0 \
+		gcc-xtensa-rearrange-DI-mode-constant-loading.patch:0
+PATCH_DIST_STRIP = -p1
+
+LIBELF =	libelf-0.8.13
+MASTER_SITES1 =	https://github.com/earlephilhower/esp-quick-toolchain/raw/master/blobs/
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES +=	${LIBELF}${EXTRACT_SUFX}:1
 
 .if ${MACHINE_ARCH} == "powerpc64"
 PATCH_LIST =	patch-* vecstep-*
 .endif
 
-BUILD_DEPENDS +=	devel/bison \
-			devel/${CONFIG}/binutils \
+MODULES =	lang/python
+
+BUILD_DEPENDS +=	devel/${CONFIG}/binutils \
 			devel/${CONFIG}/newlib
-RUN_DEPENDS =		devel/${CONFIG}/binutils \
-			devel/${CONFIG}/newlib
-LIB_DEPENDS =		devel/mpfr \
-			devel/libmpc
+RUN_DEPENDS =		${BUILD_DEPENDS}
+LIB_DEPENDS =		devel/gmp \
+			devel/libmpc \
+			devel/mpfr \
+			math/isl
 
-# cope with user settings in /etc/mk.conf
-MAKE_FLAGS =	LANGUAGES="c c++" CFLAGS="-I${LOCALBASE}/include"
-MAKE_ENV =	MACHINE_ARCH=${CONFIG}
-MAKE_GXX =	Yes
-MAKE_FORTRAN =	No
-MAKE_OBJC =	No
-MAKE_JAVA =	No
-MAKE_ADA =	No
+CONFIGURE_ENV +=	AR_FOR_TARGET="${INSTALLDIR}/bin/${CONFIG}-ar" \
+			RANLIB_FOR_TARGET="${INSTALLDIR}/bin/${CONFIG}-ranlib"
+CONFIGURE_ARGS +=	--with-as="${INSTALLDIR}/bin/${CONFIG}-as" \
+			--with-ld="${INSTALLDIR}/bin/${CONFIG}-ld" \
+			--with-sysroot="${INSTALLDIR}/${CONFIG}" \
+			--with-gmp="${LOCALBASE}" \
+			--with-isl="${LOCALBASE}" \
+			--disable-multilib
 
-SEPARATE_BUILD =	Yes
-USE_GMAKE =		Yes
-YACC =			bison
+post-extract:
+	mv ${WRKDIR}/${LIBELF} ${WRKSRC}/libelf
 
-CONFIGURE_ARGS +=	--with-headers=${LOCALBASE}/${CONFIG}/include  \
-			--with-local-prefix=${LOCALBASE}/${CONFIG} \
-			--with-as="${LOCALBASE}/bin/${CONFIG}-as" \
-			--with-ld="${LOCALBASE}/bin/${CONFIG}-ld" \
-			--with-newlib \
-			--enable-threads=no \
-			--disable-shared \
-			--disable-__cxa_atexit \
-			--enable-cxx-flags="-fno-rtti -ffunction-sections -mlongcalls -mtext-section-literals" \
-			--disable-lto \
-			--enable-target-optspace \
-			--without-long-double-128 \
-			--disable-libgomp \
-			--disable-libmudflap \
-			--disable-libssp \
-			--disable-libquadmath \
-			--disable-libquadmath-support \
-			--disable-nls \
-			--disable-multilib \
-			--enable-languages=c,c++ \
-			--disable-option-checking
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ENV +=	MACHINE_ARCH=${CONFIG}
-
-ALL_TARGET =		all-gcc all-target-libgcc all-target-libstdc++-v3
-INSTALL_TARGET =	install-gcc install-target-libgcc install-target-libstdc++-v3
+post-build:
+.for OBJ in _divsi3.o _udivsi3.o _umodsi3.o _umulsidi3.o _addsubsf3.o \
+	_mulsf3.o _fixunssfsi.o _floatsisf.o _addsubdf3.o _muldf3.o _divdf3.o \
+	_fixdfsi.o _fixunsdfsi.o _floatsidf.o _truncdfsf2.o _extendsfdf2.o \
+	_muldi3.o _divdi3.o _udivdi3.o _umoddi3.o
+	${LOCALBASE}/${CONFIG}/bin/${CONFIG}-ar d \
+		${WRKBUILD}/${CONFIG}/libgcc/libgcc.a ${OBJ}
+.endfor
 
 post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} \
-		${PREFIX}/lib/gcc/${CONFIG}/${VERSION}/
+		${PREFIX}/${CONFIG}/lib/gcc/${CONFIG}/${VERSION}/
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/${CONFIG}/
+	@cd ${PREFIX}/${CONFIG}/bin && ln -s ${CONFIG}-gcc ${CONFIG}-cc
 
 .include <bsd.port.mk>

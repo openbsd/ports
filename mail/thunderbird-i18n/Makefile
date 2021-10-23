@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2018/10/03 06:43:10 landry Exp $
+# $OpenBSD: Makefile,v 1.57 2021/09/08 08:39:39 landry Exp $
 
 SUBDIR = ar
 SUBDIR += ast
@@ -44,7 +44,6 @@ SUBDIR += pt-PT
 SUBDIR += rm
 SUBDIR += ro
 SUBDIR += ru
-SUBDIR += si
 SUBDIR += sk
 SUBDIR += sl
 SUBDIR += sq

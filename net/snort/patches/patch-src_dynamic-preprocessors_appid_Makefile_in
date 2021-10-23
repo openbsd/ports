@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_dynamic-preprocessors_appid_Makefile_in,v 1.7 2021/07/11 02:11:34 lteo Exp $
+$OpenBSD: patch-src_dynamic-preprocessors_appid_Makefile_in,v 1.8 2021/09/19 10:18:25 sthen Exp $
  
 libsf_appid_preproc.so needs to link against libc++abi so that luajit can access
 libunwind symbols.
@@ -6,7 +6,7 @@ libunwind symbols.
 Index: src/dynamic-preprocessors/appid/Makefile.in
 --- src/dynamic-preprocessors/appid/Makefile.in.orig
 +++ src/dynamic-preprocessors/appid/Makefile.in
-@@ -575,8 +575,8 @@ APPID_SOURCES = $(APPID_SRC_DIR)/commonAppMatcher.c \
+@@ -586,8 +586,8 @@ APPID_SOURCES = $(APPID_SRC_DIR)/commonAppMatcher.c \
  	$(APPID_SRC_DIR)/util/sfutil.c $(APPID_SRC_DIR)/util/sfutil.h
  dynamicpreprocessordir = ${libdir}/snort_dynamicpreprocessor
  dynamicpreprocessor_LTLIBRARIES = libsf_appid_preproc.la

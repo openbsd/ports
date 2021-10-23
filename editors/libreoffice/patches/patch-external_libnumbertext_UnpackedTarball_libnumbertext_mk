@@ -1,13 +1,13 @@
-$OpenBSD: patch-external_libnumbertext_UnpackedTarball_libnumbertext_mk,v 1.1 2021/07/11 13:14:06 robert Exp $
+$OpenBSD: patch-external_libnumbertext_UnpackedTarball_libnumbertext_mk,v 1.2 2021/09/02 11:11:58 robert Exp $
 
 Index: external/libnumbertext/UnpackedTarball_libnumbertext.mk
 --- external/libnumbertext/UnpackedTarball_libnumbertext.mk.orig
 +++ external/libnumbertext/UnpackedTarball_libnumbertext.mk
-@@ -17,6 +17,7 @@ $(eval $(call gb_UnpackedTarball_set_patchlevel,libnum
- 
+@@ -18,6 +18,7 @@ $(eval $(call gb_UnpackedTarball_set_patchlevel,libnum
  $(eval $(call gb_UnpackedTarball_add_patches,libnumbertext, \
      external/libnumbertext/MSVCNonBMPBug.patch1 \
-+    external/libnumbertext/spellout.patch1 \
+     external/libnumbertext/WinUnicodePath.patch1 \
++	external/libnumbertext/spellout.patch1 \
  ))
  
  # vim: set noet sw=4 ts=4:

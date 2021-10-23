@@ -1,9 +1,9 @@
-$OpenBSD: patch-UI_NativeApp_cpp,v 1.5 2020/08/07 22:54:09 bentley Exp $
+$OpenBSD: patch-UI_NativeApp_cpp,v 1.6 2021/09/19 00:34:55 bentley Exp $
 
 Index: UI/NativeApp.cpp
 --- UI/NativeApp.cpp.orig
 +++ UI/NativeApp.cpp
-@@ -468,10 +468,7 @@ void NativeInit(int argc, const char *argv[], const ch
+@@ -470,10 +470,7 @@ void NativeInit(int argc, const char *argv[], const ch
  #if !defined(MOBILE_DEVICE) && !defined(_WIN32) && !PPSSPP_PLATFORM(SWITCH)
  	VFSRegister("", new DirectoryAssetReader((File::GetExeDirectory() + "assets/").c_str()));
  	VFSRegister("", new DirectoryAssetReader((File::GetExeDirectory()).c_str()));

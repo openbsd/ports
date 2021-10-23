@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.24 2021/08/22 01:43:49 thfr Exp $
+# $OpenBSD: Makefile,v 1.27 2021/10/14 14:33:29 thfr Exp $
 
 BROKEN-powerpc =	fails at runtime, the UI is totally blank
 BROKEN-powerpc64 =	Unknown ISA
+BROKEN-riscv64 =	Unknown ISA
+BROKEN-mips64 =		Unknown ISA
 
 COMMENT =	2D and 3D game engine
 
-V =		3.3.3
+V =		3.3.4
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot-${V}
 CATEGORIES =	games
@@ -71,6 +73,8 @@ LIB_DEPENDS =		archivers/zstd \
 			security/polarssl
 
 NO_TEST =		Yes
+
+DPB_PROPERTIES =	parallel
 
 .if ${MACHINE_ARCH:Mhppa}
 LDFLAGS +=     -latomic

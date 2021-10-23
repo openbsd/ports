@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/05/06 19:13:11 tb Exp $
+# $OpenBSD: Makefile,v 1.5 2021/09/16 14:23:37 abieber Exp $
 
 COMMENT =		mouse and keyboard sharing utility
 
 V =			2.3.3
 DISTNAME =		barrier-${V}-release
 PKGNAME =		barrier-${V}
-REVISION =		0
+REVISION =		2
 CATEGORIES =		net x11
 
 MASTER_SITES =		https://github.com/debauchee/barrier/releases/download/v${V}/
@@ -23,7 +23,7 @@ MODULES =		devel/cmake \
 BUILD_DEPENDS =		devel/gtest
 
 LIB_DEPENDS =		net/curl \
-			net/avahi
+			net/avahi,-libs
 
 NO_TEST =		Yes
 
@@ -36,6 +36,12 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/build-*/bin/barrier* ${PREFIX}/bin/
 	mv ${PREFIX}/bin/barrier ${PREFIX}/bin/barrier-gui
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/barrier
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/scalable/apps
+	${INSTALL_DATA} ${WRKSRC}/res/barrier.desktop \
+		${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/res/barrier.svg \
+		${PREFIX}/share/icons/hicolor/scalable/apps/
 	${INSTALL_DATA} ${WRKSRC}/doc/barrier.conf.exampl* \
 		${PREFIX}/share/examples/barrier/
 	${INSTALL_MAN} ${WRKSRC}/doc/barrierc.1 \

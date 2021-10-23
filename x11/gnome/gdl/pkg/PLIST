@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2017/10/28 17:23:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2021/08/27 08:38:47 ajacoutot Exp $
 include/libgdl-3.0/
 include/libgdl-3.0/gdl/
 include/libgdl-3.0/gdl/gdl-dock-bar.h
@@ -12,7 +12,7 @@ include/libgdl-3.0/gdl/gdl-dock.h
 include/libgdl-3.0/gdl/gdl.h
 include/libgdl-3.0/gdl/libgdltypebuiltins.h
 lib/girepository-1.0/Gdl-3.typelib
-lib/libgdl-3.a
+@static-lib lib/libgdl-3.a
 lib/libgdl-3.la
 @lib lib/libgdl-3.so.${LIBgdl-3_VERSION}
 lib/pkgconfig/gdl-3.0.pc

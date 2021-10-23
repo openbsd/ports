@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.144 2021/06/09 19:50:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.146 2021/10/19 11:17:23 sthen Exp $
 
 COMMENT=	virus scanner
-DISTNAME=	clamav-0.103.2
-REVISION=	0
+DISTNAME=	clamav-0.104.0
 
 CATEGORIES=	security
 
-SHARED_LIBS +=	clamav               24.0     # 9.4
-SHARED_LIBS +=	clamunrar            4.0      # 9.4
-SHARED_LIBS +=	clamunrar_iface      4.0
-SHARED_LIBS +=  freshclam            0.0      # 2.0
+SHARED_LIBS +=	clamav               25.0
+SHARED_LIBS +=	clamunrar            5.0
+SHARED_LIBS +=	clamunrar_iface      5.0
+SHARED_LIBS +=  freshclam            1.0
 
 HOMEPAGE=	https://www.clamav.net/
 
@@ -19,17 +18,14 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += bz2 c charset crypto curl curses iconv json-c ltdl lzma m
-WANTLIB += milter mspack nghttp2 pcre2-8 pthread ssl xml2 z
+WANTLIB += bz2 c crypto curl curses iconv json-c m milter mspack
+WANTLIB += pcre2-8 ssl xml2 z
 
-COMPILER =		base-clang ports-gcc base-gcc
-
-BUILD_DEPENDS=		devel/check
+COMPILER=		base-clang ports-gcc
 
 LIB_DEPENDS=		archivers/bzip2 \
 			archivers/libmspack \
 			devel/json-c \
-			devel/libtool,-ltdl \
 			devel/pcre2 \
 			mail/sendmail,-libmilter \
 			net/curl \
@@ -38,36 +34,26 @@ TEST_DEPENDS=		security/clamav
 
 MASTER_SITES=		https://www.clamav.net/downloads/production/
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--disable-cr \
-			--enable-bigstack \
-			--enable-milter \
-			--with-dbdir=/var/db/clamav \
-			--with-group=_clamav \
-			--with-ltdl-include=${LOCALBASE}/include \
-			--with-ltdl-lib=${LOCALBASE}/lib \
-			--with-system-libmspack \
-			--with-user=_clamav
+MODULES=		devel/cmake
+CONFIGURE_ARGS+=	-DCLAMAV_USER=_clamav \
+			-DCLAMAV_GROUP=_clamav \
+			-DENABLE_EXTERNAL_MSPACK=ON \
+			-DDATABASE_DIRECTORY=/var/db/clamav \
+			-DAPP_CONFIG_DIRECTORY=${SYSCONFDIR} \
+			-DCMAKE_INSTALL_DOCDIR=${PREFIX}/share/doc/clamav
 
-TEST_TARGET=	check
+# the LLVM bytecode runtime uses W+X-maps (and often doesn't support
+# current LLVM versions anyway)
+CONFIGURE_ARGS+=	-DBYTECODE_RUNTIME=interpreter
 
-CPPFLAGS+=	-I/usr/include -I${LOCALBASE}/include
-LDFLAGS+=	-pthread -L/usr/lib \
-		-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CC="${CC}" OBJC="${CC}" CXX="${CXX}" \
-		LDFLAGS="${LDFLAGS}" \
-		CPPFLAGS="${CPPFLAGS}"
-FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/clamav
-
-# This is used for a JIT bytecode compiler. Disabling it should
-# still allow bytecode to work, just without the W|X-mapping JIT.
-CONFIGURE_ARGS+= --disable-llvm
+# for tests
+MODULES+=		lang/python
+MODPY_RUNDEP=		No
+BUILD_DEPENDS=		devel/check
+CONFIGURE_ARGS+=	-DENABLE_TESTS=on
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/clamav
-	cd ${WRKSRC}/docs/html; \
-	    cp -rp * ${PREFIX}/share/doc/clamav/
-	cd ${WRKSRC}/examples; \
-	    ${INSTALL_DATA} ex1.c ${PREFIX}/share/examples/clamav
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/clamav
+	mv ${WRKINST}/etc/*sample ${PREFIX}/share/examples/clamav
 
 .include <bsd.port.mk>

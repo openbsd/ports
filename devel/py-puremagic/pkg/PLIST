@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/10/08 15:24:00 bket Exp $
+lib/python${MODPY_VERSION}/site-packages/puremagic/
+lib/python${MODPY_VERSION}/site-packages/puremagic-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/puremagic-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/puremagic-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/puremagic-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/puremagic-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/puremagic/__init__.py
+lib/python${MODPY_VERSION}/site-packages/puremagic/__main__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/puremagic/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/puremagic/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/puremagic/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/puremagic/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/puremagic/magic_data.json
+lib/python${MODPY_VERSION}/site-packages/puremagic/main.py

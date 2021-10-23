@@ -1,33 +1,39 @@
-# $OpenBSD: gnome.port.mk,v 1.118 2021/05/08 10:10:30 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.122 2021/09/04 13:06:31 ajacoutot Exp $
 #
-# Module for GNOME related ports
+# Module for GNOME ports
 
 .if (defined(GNOME_PROJECT) && defined(GNOME_VERSION)) || \
     (defined(MATE_PROJECT) && defined(MATE_VERSION))
-PORTROACH +=		limitw:1,even
 EXTRACT_SUFX ?=		.tar.xz
 .  if (defined(GNOME_PROJECT) && defined(GNOME_VERSION))
 DISTNAME=		${GNOME_PROJECT}-${GNOME_VERSION}
 VERSION=		${GNOME_VERSION}
 HOMEPAGE ?=		https://wiki.gnome.org/
 # XXX make it more generic
-.if ${GNOME_VERSION:R:R:R} == "40"
+.    if ${GNOME_VERSION:R:R:R} == "40" || ${GNOME_VERSION:R:R:R} == "41" || \
+        ${GNOME_VERSION:R:R:R} == "42" || ${GNOME_VERSION:R:R:R} == "43"
 MASTER_SITES ?=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:R:R:R}/}
-.else
+.    else
+PORTROACH +=		limitw:1,even
 MASTER_SITES ?=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/}
-.endif
+.    endif
 CATEGORIES +=		x11/gnome
 .  elif (defined(MATE_PROJECT) && defined(MATE_VERSION))
 DISTNAME=		${MATE_PROJECT}-${MATE_VERSION}
 VERSION=		${MATE_VERSION}
 HOMEPAGE ?=		http://mate-desktop.org/
+PORTROACH +=		limitw:1,even
 MASTER_SITES ?=		http://pub.mate-desktop.org/releases/${MATE_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
 CATEGORIES +=		x11/mate
 .  endif
 .  if ${NO_BUILD:L} == "no"
-MODULES+=		textproc/intltool
+.    if ${CONFIGURE_STYLE:Mmeson}
+BUILD_DEPENDS +=	devel/gettext,-tools
+.    else
+MODULES +=		textproc/intltool
+.    endif
 .    if ${CONFIGURE_STYLE:Mgnu} || ${CONFIGURE_STYLE:Msimple}
-USE_GMAKE?=		Yes
+USE_GMAKE ?=		Yes
 .    endif
 .  endif
 .endif

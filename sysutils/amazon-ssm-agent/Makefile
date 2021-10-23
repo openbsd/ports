@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.104 2021/08/13 09:20:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.107 2021/09/15 13:35:36 ajacoutot Exp $
 
 # i386: pty_openbsd.go:24:10: undefined: ptmget
 ONLY_FOR_ARCHS=		amd64
 
 COMMENT=		AWS SSM agent
 
-GH_TAGNAME=		3.1.192.0
+GH_TAGNAME=		3.1.338.0
 GH_ACCOUNT=		aws
 GH_PROJECT=		amazon-ssm-agent
 
@@ -39,12 +39,13 @@ pre-configure:
 		${WRKSRC}/agent/log/log_unix.go
 
 do-install:
+# INSTALL_SCRIPT: don't strip(1) go binaries
+	${INSTALL_SCRIPT} \
+			${WRKBUILD}/bin/openbsd_${MACHINE_ARCH:S/i386/386/}/* \
+			${PREFIX}/bin
+	rm ${PREFIX}/bin/updater
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/amazon-ssm-agent \
 		${PREFIX}/share/examples/amazon-ssm-agent/amazon/ssm
-# don't strip(1) go binaries
-	${INSTALL_SCRIPT} \
-			${WRKBUILD}/bin/openbsd_${MACHINE_ARCH:S/i386/386/}/{amazon-ssm-agent,ssm-cli} \
-			${PREFIX}/bin
 	${INSTALL_DATA} \
 		${WRKBUILD}/bin/{seelog_unix.xml,amazon-ssm-agent.json.template} \
 		${PREFIX}/share/examples/amazon-ssm-agent/amazon/ssm

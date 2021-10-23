@@ -1,4 +1,4 @@
-$OpenBSD: patch-examples_mimedefang-filter-openbsd-ports,v 1.7 2017/10/31 07:34:01 ajacoutot Exp $
+$OpenBSD: patch-examples_mimedefang-filter-openbsd-ports,v 1.8 2021/08/27 15:58:30 giovanni Exp $
 Index: examples/mimedefang-filter-openbsd-ports
 --- examples/mimedefang-filter-openbsd-ports.orig
 +++ examples/mimedefang-filter-openbsd-ports
@@ -13,7 +13,7 @@ Index: examples/mimedefang-filter-openbsd-ports
  #
  # This program may be distributed under the terms of the GNU General
 @@ -20,7 +17,7 @@
- # MIMEDefang policy.  A good example would be 'defang-admin@mydomain.com'
+ # MIMEDefang policy.    A good example would be 'defang-admin@mydomain.com'
  #***********************************************************************
  $AdminAddress = 'postmaster@localhost';
 -$AdminName = "MIMEDefang Administrator's Full Name";
@@ -22,7 +22,7 @@ Index: examples/mimedefang-filter-openbsd-ports
  #***********************************************************************
  # Set the e-mail address from which MIMEDefang quarantine warnings and
 @@ -28,7 +25,7 @@ $AdminName = "MIMEDefang Administrator's Full Name";
- # 'mimedefang@mydomain.com'.  Make sure to have an alias for this
+ # 'mimedefang@mydomain.com'.    Make sure to have an alias for this
  # address if you want replies to it to work.
  #***********************************************************************
 -$DaemonAddress = 'mimedefang@localhost';
@@ -43,50 +43,7 @@ Index: examples/mimedefang-filter-openbsd-ports
  # Set various stupid things your mail client does below.
  #***********************************************************************
  
-@@ -137,6 +140,8 @@ sub filter_begin {
-     if ($FoundVirus) {
- 	md_graphdefang_log('virus', $VirusName, $RelayAddr);
- 	md_syslog('warning', "Discarding because of virus $VirusName");
-+	# Uncomment to copy the message to quarantine before discarding it.
-+	# action_quarantine_entire_message();
- 	return action_discard();
-     }
- 
-@@ -180,10 +185,11 @@ sub filter {
- 	return action_bounce("MIME type message/partial not accepted here");
-     }
- 
--    if (filter_bad_filename($entity)) {
--        md_graphdefang_log('bad_filename', $fname, $type);
--	return action_drop_with_warning("An attachment named $fname was removed from this document as it\nconstituted a security hazard.  If you require this document, please contact\nthe sender and arrange an alternate means of receiving it.\n");
--    }
-+    # Uncomment to enable bad extension filtering for MIME messages.
-+#    if (filter_bad_filename($entity)) {
-+#        md_graphdefang_log('bad_filename', $fname, $type);
-+#	return action_drop_with_warning("An attachment named $fname was removed from this document as it\nconstituted a security hazard.  If you require this document, please contact\nthe sender and arrange an alternate means of receiving it.\n");
-+#    }
- 
-     return action_accept();
- }
-@@ -209,11 +215,12 @@ sub filter_multipart {
- 
-     return if message_rejected(); # Avoid unnecessary work
- 
--    if (filter_bad_filename($entity)) {
--        md_graphdefang_log('bad_filename', $fname, $type);
--	action_notify_administrator("A MULTIPART attachment of type $type, named $fname was dropped.\n");
--	return action_drop_with_warning("An attachment of type $type, named $fname was removed from this document as it\nconstituted a security hazard.  If you require this document, please contact\nthe sender and arrange an alternate means of receiving it.\n");
--    }
-+    # Uncomment to enable bad extension filtering for multipart messages.
-+#    if (filter_bad_filename($entity)) {
-+#        md_graphdefang_log('bad_filename', $fname, $type);
-+#	action_notify_administrator("A MULTIPART attachment of type $type, named $fname was dropped.\n");
-+#	return action_drop_with_warning("An attachment of type $type, named $fname was removed from this document as it\nconstituted a security hazard.  If you require this document, please contact\nthe sender and arrange an alternate means of receiving it.\n");
-+#    }
- 
-     # Block message/partial parts
-     if (lc($type) eq "message/partial") {
-@@ -260,6 +267,9 @@ sub filter_end {
+@@ -259,6 +262,9 @@ sub filter_end {
      # No sense doing any extra work
      return if message_rejected();
  
@@ -95,8 +52,8 @@ Index: examples/mimedefang-filter-openbsd-ports
 +
      # Spam checks if SpamAssassin is installed
      if ($Features{"SpamAssassin"}) {
- 	if (-s "./INPUTMSG" < 100*1024) {
-@@ -314,7 +324,40 @@ sub filter_end {
+         if (-s "./INPUTMSG" < 100*1024) {
+@@ -328,7 +334,40 @@ sub filter_end {
      # by marginal software.  Your call.
  
      # action_rebuild();

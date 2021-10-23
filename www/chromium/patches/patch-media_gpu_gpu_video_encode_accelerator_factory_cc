@@ -1,9 +1,9 @@
-$OpenBSD: patch-media_gpu_gpu_video_encode_accelerator_factory_cc,v 1.3 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-media_gpu_gpu_video_encode_accelerator_factory_cc,v 1.4 2021/09/01 16:54:40 robert Exp $
 
 Index: media/gpu/gpu_video_encode_accelerator_factory.cc
 --- media/gpu/gpu_video_encode_accelerator_factory.cc.orig
 +++ media/gpu/gpu_video_encode_accelerator_factory.cc
-@@ -93,7 +93,7 @@ std::vector<VEAFactoryFunction> GetVEAFactoryFunctions
+@@ -94,7 +94,7 @@ std::vector<VEAFactoryFunction> GetVEAFactoryFunctions
      return vea_factory_functions;
  
  #if BUILDFLAG(USE_VAAPI)

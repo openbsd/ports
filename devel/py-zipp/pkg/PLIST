@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/09/02 08:37:02 ajacoutot Exp $
+lib/python${MODPY_VERSION}/site-packages/Misc/
+lib/python${MODPY_VERSION}/site-packages/Misc/NEWS.d/
+lib/python${MODPY_VERSION}/site-packages/Misc/NEWS.d/next/
+lib/python${MODPY_VERSION}/site-packages/Misc/NEWS.d/next/Library/
+lib/python${MODPY_VERSION}/site-packages/Misc/NEWS.d/next/Library/2021-05-14-16-06-02.bpo-44095.v_pLwY.rst
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}zipp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/lib/${MODPY_PYCACHE}zipp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lib/zipp.py
+lib/python${MODPY_VERSION}/site-packages/zipp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/zipp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/zipp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/zipp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/zipp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/zipp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/zipp.py

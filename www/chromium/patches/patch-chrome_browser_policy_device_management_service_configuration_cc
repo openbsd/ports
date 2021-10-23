@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_policy_device_management_service_configuration_cc,v 1.7 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-chrome_browser_policy_device_management_service_configuration_cc,v 1.8 2021/09/01 16:54:38 robert Exp $
 
 Index: chrome/browser/policy/device_management_service_configuration.cc
 --- chrome/browser/policy/device_management_service_configuration.cc.orig
@@ -15,7 +15,7 @@ Index: chrome/browser/policy/device_management_service_configuration.cc
 @@ -97,7 +97,7 @@ DeviceManagementServiceConfiguration::GetEncryptedRepo
  std::string
  DeviceManagementServiceConfiguration::GetReportingConnectorServerUrl(
-     content::BrowserContext* context) {
+     content::BrowserContext* context) const {
 -#if defined(OS_WIN) || defined(OS_MAC) || \
 +#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
      ((defined(OS_LINUX) || defined(OS_CHROMEOS)) && !defined(OS_ANDROID))

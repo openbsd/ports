@@ -1,4 +1,4 @@
-$OpenBSD: patch-source3_wscript,v 1.12 2021/05/12 23:33:24 jca Exp $
+$OpenBSD: patch-source3_wscript,v 1.13 2021/10/18 12:25:20 jca Exp $
 
 - avoid using glib (only useful for spotlight?)
 - use more generic check for OpenBSD.
@@ -7,7 +7,7 @@ $OpenBSD: patch-source3_wscript,v 1.12 2021/05/12 23:33:24 jca Exp $
 Index: source3/wscript
 --- source3/wscript.orig
 +++ source3/wscript
-@@ -102,6 +102,7 @@ def options(opt):
+@@ -100,6 +100,7 @@ def options(opt):
  
      # default = None means autodetection
      opt.samba_add_onoff_option('spotlight', with_name="enable", without_name="disable", default=None)
@@ -15,7 +15,7 @@ Index: source3/wscript
  
  def configure(conf):
      default_static_modules = []
-@@ -114,7 +115,7 @@ def configure(conf):
+@@ -112,7 +113,7 @@ def configure(conf):
          conf.ADD_CFLAGS('-DDEVELOPER -DDEBUG_PASSWORD')
          conf.env.developer = True
  
@@ -24,7 +24,7 @@ Index: source3/wscript
          conf.ADD_LDFLAGS("-Wl,--export-dynamic", testflags=True)
  
      # We crash without vfs_default
-@@ -1694,6 +1695,7 @@ main() {
+@@ -1677,6 +1678,7 @@ main() {
  
      conf.CHECK_CODE('void seekdir(DIR *d, long loc) { return; }',
                      'SEEKDIR_RETURNS_VOID',
@@ -32,7 +32,7 @@ Index: source3/wscript
                      headers='sys/types.h dirent.h',
                      msg='Checking whether seekdir returns void')
  
-@@ -1807,7 +1809,7 @@ main() {
+@@ -1790,7 +1792,7 @@ main() {
          else:
              conf.fatal('AFS headers not available, but --with-fake-kaserver was specified')
  

@@ -1,0 +1,73 @@
+$OpenBSD: patch-src_sv_ccmds_c,v 1.1 2021/10/16 14:43:12 thfr Exp $
+
+Remove dangerous localcommand function even if it it not turned on
+by default and needs a command-line option. There is a pull request
+at: https://github.com/deurk/mvdsv/pull/69
+
+Index: src/sv_ccmds.c
+--- src/sv_ccmds.c.orig
++++ src/sv_ccmds.c
+@@ -738,54 +738,6 @@ void SV_ChmodFile_f (void)
+ }
+ #endif //_WIN32
+ 
+-/*==================
+-SV_LocalCommand_f
+-Execute system command
+-==================*/
+-//bliP: REMOVE ME REMOVE ME REMOVE ME REMOVE ME REMOVE ME ->
+-void SV_LocalCommand_f (void)
+-{
+-	int i, c;
+-	char str[1024], *temp_file = "__output_temp_file__";
+-
+-	if ((c = Cmd_Argc()) < 2)
+-	{
+-		Con_Printf("localcommand [command]\n");
+-		return;
+-	}
+-
+-	str[0] = 0;
+-	for (i = 1; i < c; i++)
+-	{
+-		strlcat (str, Cmd_Argv(i), sizeof(str));
+-		strlcat (str, " ", sizeof(str));
+-	}
+-	strlcat (str, va("> %s 2>&1\n", temp_file), sizeof(str));
+-
+-	if (system(str) == -1)
+-		Con_Printf("command failed\n");
+-	else
+-	{
+-		char	buf[512];
+-		FILE	*f;
+-		if ((f = fopen(temp_file, "rt")) == NULL)
+-			Con_Printf("(empty)\n");
+-		else
+-		{
+-			while (!feof(f))
+-			{
+-				buf[fread (buf, 1, sizeof(buf) - 1, f)] = 0;
+-				Con_Printf("%s", buf);
+-			}
+-			fclose(f);
+-			if (Sys_remove(temp_file))
+-				Con_Printf("Unable to remove file %s\n", temp_file);
+-		}
+-	}
+-
+-}
+-//REMOVE ME REMOVE ME REMOVE ME REMOVE ME REMOVE ME
+-
+ /*
+ ==================
+ SV_Kick_f
+@@ -1844,8 +1796,6 @@ void SV_InitOperatorCommands (void)
+ 	Cmd_AddCommand ("chmod", SV_ChmodFile_f);
+ #endif //_WIN32
+ 	//<-
+-	if (SV_CommandLineEnableLocalCommand())
+-		Cmd_AddCommand ("localcommand", SV_LocalCommand_f);
+ 
+ 	Cmd_AddCommand ("map", SV_Map_f);
+ #ifdef SERVERONLY

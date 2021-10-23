@@ -1,0 +1,150 @@
+$OpenBSD: patch-src_gpm-backlight-helper_c,v 1.2 2021/08/25 12:35:20 robert Exp $
+
+Index: src/gpm-backlight-helper.c
+--- src/gpm-backlight-helper.c.orig
++++ src/gpm-backlight-helper.c
+@@ -30,6 +30,11 @@
+ #include <sys/stat.h>
+ #include <fcntl.h>
+ 
++#if defined(__OpenBSD__)
++#include <sys/ioctl.h>
++#include <dev/wscons/wsconsio.h>
++#endif
++
+ #define GCM_BACKLIGHT_HELPER_EXIT_CODE_SUCCESS			0
+ #define GCM_BACKLIGHT_HELPER_EXIT_CODE_FAILED			1
+ #define GCM_BACKLIGHT_HELPER_EXIT_CODE_ARGUMENTS_INVALID	3
+@@ -37,6 +42,7 @@
+ 
+ #define GCM_BACKLIGHT_HELPER_SYSFS_LOCATION			"/sys/class/backlight"
+ 
++#if !defined(__OpenBSD__)
+ /**
+  * gcm_backlight_helper_get_best_backlight:
+  **/
+@@ -140,6 +146,7 @@ out:
+ 	g_free (text);
+ 	return ret;
+ }
++#endif
+ 
+ /**
+  * main:
+@@ -152,13 +159,20 @@ main (gint argc, gchar *argv[])
+ 	gint euid;
+ 	guint retval = 0;
+ 	const gchar *pkexec_uid_str;
++#if defined(__linux__)
+ 	GError *error = NULL;
+ 	gboolean ret = FALSE;
++#endif
+ 	gint set_brightness = -1;
+ 	gboolean get_brightness = FALSE;
+ 	gboolean get_max_brightness = FALSE;
++#if defined(__linux__)
+ 	gchar *filename = NULL;
+ 	gchar *filename_file = NULL;
++#elif defined(__OpenBSD__)
++	gint fd = -1;
++	struct wsdisplay_param wdp;
++#endif
+ 	gchar *contents = NULL;
+ 
+ 	const GOptionEntry options[] = {
+@@ -196,16 +210,31 @@ main (gint argc, gchar *argv[])
+ 	}
+ 
+ 	/* find device */
++#if defined(__linux__)
+ 	filename = gcm_backlight_helper_get_best_backlight ();
+ 	if (filename == NULL) {
++#elif defined(__OpenBSD__)
++	if ((fd = open("/dev/ttyC4", O_RDWR)) < 0) {
++#endif
+ 		/* TRANSLATORS: no backlights found */
+ 		g_print ("%s\n", _("No backlights were found on your system"));
+ 		retval = GCM_BACKLIGHT_HELPER_EXIT_CODE_INVALID_USER;
+ 		goto out;
+ 	}
+ 
++#if defined(__OpenBSD__)
++	wdp.param = WSDISPLAYIO_PARAM_BRIGHTNESS;
++	if (ioctl(fd, WSDISPLAYIO_GETPARAM, &wdp) < 0) {
++		/* TRANSLATORS: failed to access backlight file */
++		g_print ("%s: %s\n", _("Could not get the value of the backlight"), g_strerror(errno));
++		retval = GCM_BACKLIGHT_HELPER_EXIT_CODE_ARGUMENTS_INVALID;
++		goto out;
++	}
++#endif
++
+ 	/* GetBrightness */
+ 	if (get_brightness) {
++#if defined(__linux__)
+ 		filename_file = g_build_filename (filename, "brightness", NULL);
+ 		ret = g_file_get_contents (filename_file, &contents, NULL, &error);
+ 		if (!ret) {
+@@ -215,6 +244,9 @@ main (gint argc, gchar *argv[])
+ 			retval = GCM_BACKLIGHT_HELPER_EXIT_CODE_ARGUMENTS_INVALID;
+ 			goto out;
+ 		}
++#elif defined(__OpenBSD__)
++		contents = g_strdup_printf ("%d", wdp.curval);
++#endif
+ 
+ 		/* just print the contents to stdout */
+ 		g_print ("%s", contents);
+@@ -224,6 +256,7 @@ main (gint argc, gchar *argv[])
+ 
+ 	/* GetSteps */
+ 	if (get_max_brightness) {
++#if defined(__linux__)
+ 		filename_file = g_build_filename (filename, "max_brightness", NULL);
+ 		ret = g_file_get_contents (filename_file, &contents, NULL, &error);
+ 		if (!ret) {
+@@ -233,6 +266,9 @@ main (gint argc, gchar *argv[])
+ 			retval = GCM_BACKLIGHT_HELPER_EXIT_CODE_ARGUMENTS_INVALID;
+ 			goto out;
+ 		}
++#elif defined(__OpenBSD__)
++		contents = g_strdup_printf ("%d", wdp.max);
++#endif
+ 
+ 		/* just print the contents to stdout */
+ 		g_print ("%s", contents);
+@@ -261,6 +297,7 @@ main (gint argc, gchar *argv[])
+ 
+ 	/* SetBrightness */
+ 	if (set_brightness != -1) {
++#if defined(__linux__) 
+ 		filename_file = g_build_filename (filename, "brightness", NULL);
+ 		ret = gcm_backlight_helper_write (filename_file, set_brightness, &error);
+ 		if (!ret) {
+@@ -270,13 +307,27 @@ main (gint argc, gchar *argv[])
+ 			retval = GCM_BACKLIGHT_HELPER_EXIT_CODE_ARGUMENTS_INVALID;
+ 			goto out;
+ 		}
++#elif defined(__OpenBSD__)
++		wdp.curval = set_brightness;
++		if (ioctl(fd, WSDISPLAYIO_SETPARAM, &wdp) < 0) {
++			/* TRANSLATORS: failed to access backlight file */
++			g_print ("%s: %s\n", _("Could not set the value of the backlight"), g_strerror(errno));
++			retval = GCM_BACKLIGHT_HELPER_EXIT_CODE_ARGUMENTS_INVALID;
++			goto out;
++		}
++#endif
+ 	}
+ 
+ 	/* success */
+ 	retval = GCM_BACKLIGHT_HELPER_EXIT_CODE_SUCCESS;
+ out:
++#if defined(__linux__)
+ 	g_free (filename);
+ 	g_free (filename_file);
++#elif defined(__OpenBSD__)
++	if (fd >= 0)
++		close (fd);
++#endif
+ 	g_free (contents);
+ 	return retval;
+ }

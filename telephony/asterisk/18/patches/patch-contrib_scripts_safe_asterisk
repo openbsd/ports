@@ -1,0 +1,75 @@
+$OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.1.1.1 2021/10/16 10:55:00 sthen Exp $
+
+Index: contrib/scripts/safe_asterisk
+--- contrib/scripts/safe_asterisk.orig
++++ contrib/scripts/safe_asterisk
+@@ -6,21 +6,22 @@ ASTVARRUNDIR="__ASTERISK_VARRUN_DIR__"
+ ASTVARLOGDIR="__ASTERISK_LOG_DIR__"
+ 
+ CLIARGS="$*"			# Grab any args passed to safe_asterisk
+-TTY=9				# TTY (if you want one) for Asterisk to run on
+-CONSOLE=yes			# Whether or not you want a console
+-#NOTIFY=root@localhost		# Who to notify about crashes
++TTY=				# TTY (if you want one) for Asterisk to run on
++CONSOLE=no			# Whether or not you want a console
++NOTIFY=root			# Who to notify about crashes
+ #EXEC=/path/to/somescript	# Run this command if Asterisk crashes
+ #LOGFILE="${ASTVARLOGDIR}/safe_asterisk.log"	# Where to place the normal logfile (disabled if blank)
+-#SYSLOG=local0			# Which syslog facility to use (disabled if blank)
++SYSLOG=daemon			# Which syslog facility to use (disabled if blank)
+ MACHINE=`hostname`		# To specify which machine has crashed when getting the mail
+ DUMPDROP="${DUMPDROP:-/tmp}"
+ RUNDIR="${RUNDIR:-/tmp}"
+ SLEEPSECS=4
+ ASTPIDFILE="${ASTVARRUNDIR}/asterisk.pid"
++VARRUNOWNER="_asterisk:wheel"  # chown __ASTERISK_VARRUN_DIR__ if it's created.
+ 
+ # comment this line out to have this script _not_ kill all mpg123 processes when
+ # asterisk exits
+-KILLALLMPG123=1
++# KILLALLMPG123=1
+ 
+ # run asterisk with this priority
+ PRIORITY=0
+@@ -48,6 +49,19 @@ message() {
+ 	fi
+ }
+ 
++# Create the directory for the control socket if required. As of 1.6.0.26,
++# Asterisk tries to create this itself at startup but doesn't give suitable
++# ownership. This must be created before the 'check if asterisk is already
++# running' below, since that is enough to get the dir created.
++if test `id -u` == 0 ; then
++	varrundir=`dirname $ASTPIDFILE`
++	if [ ! -d $varrundir ]; then
++		mkdir -p $varrundir
++		[ -n "$VARRUNOWNER" ] && chown $VARRUNOWNER $varrundir
++		chmod 770 $varrundir
++	fi
++fi
++
+ # Check if Asterisk is already running.  If it is, then bug out, because
+ # starting safe_asterisk when Asterisk is running is very bad.
+ VERSION=`"${ASTSBINDIR}/asterisk" -nrx 'core show version' 2>/dev/null`
+@@ -81,7 +95,7 @@ else
+ 			fi
+ 		fi
+ 		SYSCTL_MAXFILES="fs.file-max"
+-	elif `uname -s | grep Darwin /dev/null 2>&1`; then
++	elif `uname -s | grep -E '(BSD|Darwin)' /dev/null 2>&1`; then
+ 		SYSCTL_MAXFILES="kern.maxfiles"
+ 	fi
+ 
+@@ -92,8 +106,10 @@ else
+ 		fi
+ 	fi
+ 
+-	# set the process's filemax to whatever set above
+-	ulimit -n $MAXFILES
++	if ! test "x$MAXFILES" = "x" ; then
++		# set the process's filemax to whatever set above
++		ulimit -n $MAXFILES
++	fi
+ 
+ 	if test ! -d "${ASTVARRUNDIR}"; then
+ 		mkdir -p "${ASTVARRUNDIR}"

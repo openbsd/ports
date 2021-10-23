@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2021/08/11 18:17:28 kmos Exp $
+# $OpenBSD: Makefile,v 1.27 2021/08/31 09:57:53 ajacoutot Exp $
 
 # No consumers on macppc, saves 17 build hours in bulks
 NOT_FOR_ARCHS =		powerpc
@@ -12,6 +12,7 @@ GH_ACCOUNT =		openscenegraph
 GH_PROJECT =		OpenSceneGraph
 GH_TAGNAME =		OpenSceneGraph-$V
 DISTNAME =		openscenegraph-${V}
+REVISION =		1
 
 SUBST_VARS +=		V
 
@@ -45,12 +46,12 @@ PERMIT_PACKAGE =	Yes
 
 COMPILER =	base-clang ports-gcc
 
-WANTLIB += ${COMPILER_LIBCXX} GL Half-2_5 Iex-2_5 IlmImf-2_5 IlmThread-2_5
+WANTLIB += ${COMPILER_LIBCXX} GL Iex-3_1 IlmThread-3_1
 WANTLIB += SDL X11 Xinerama Xrandr fontconfig
 WANTLIB += avcodec avdevice avformat avresample avutil c cairo
 WANTLIB += curl freetype gdal gdk_pixbuf-2.0 gif gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 intl jasper jpeg m png poppler-glib rsvg-2
-WANTLIB += swresample swscale tiff z
+WANTLIB += swresample swscale tiff z Imath-3_1 OpenEXR-3_1
 
 MODULES =		devel/cmake
 LIB_DEPENDS =		devel/sdl \
@@ -64,5 +65,8 @@ LIB_DEPENDS =		devel/sdl \
 			x11/gnome/librsvg
 
 NO_TEST =		Yes
+
+# Fix build with OpenEXR>=3 (Imath split)
+CXXFLAGS +=		-I${LOCALBASE}/include/Imath
 
 .include <bsd.port.mk>

@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.20 2020/11/08 07:55:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2021/08/25 12:05:53 robert Exp $
 
 COMMENT=		MATE settings daemon
 
 MATE_PROJECT=		mate-settings-daemon
-MATE_VERSION=		1.24.1
-REVISION=		0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += FLAC ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xtst atk-1.0 atk-bridge-2.0
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
 WANTLIB += c cairo cairo-gobject canberra canberra-gtk3 dbus-1
 WANTLIB += dbus-glib-1 dconf epoxy execinfo expat ffi fontconfig
 WANTLIB += freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
@@ -21,6 +19,7 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4 png
 WANTLIB += polkit-gobject-1 pthread pulse smime3 sndfile ssl3
 WANTLIB += startup-notification-1 vorbis vorbisenc vorbisfile xcb
 WANTLIB += xcb-render xcb-shm xcb-util xkbfile xklavier xml2 z
+WANTLIB += ${COMPILER_LIBCXX} Xau Xdmcp atspi jpeg opus
 
 MODULES=		devel/dconf \
 			x11/gnome

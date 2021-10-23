@@ -1,12 +1,19 @@
-$OpenBSD: patch-src_makemake_in,v 1.12 2015/10/06 11:37:06 jca Exp $
+$OpenBSD: patch-src_makemake_in,v 1.13 2021/09/15 19:13:46 naddy Exp $
 
 Override broken compiler test, attempting to build 32-bit clisp on a
 64-bit patform will not work out very well.
 
 Use the correct recipe to build shared modules on OpenBSD.
 
---- src/makemake.in.orig	Wed Jul  7 17:15:35 2010
-+++ src/makemake.in	Tue Sep 29 00:28:57 2015
+Fix intparam.h/floatparam.h Makefile rule for parallel make.
+https://sourceforge.net/p/clisp/clisp/ci/72d3cffbc699cc0d46c81b6180109f4f6205657b/
+
+Fix text file processing Makefile rules for parallel make.
+https://sourceforge.net/p/clisp/clisp/ci/ff4fe3d1b89cc23826f98233858308f6da610de4/
+
+Index: src/makemake.in
+--- src/makemake.in.orig
++++ src/makemake.in
 @@ -1150,6 +1150,7 @@ esac
  # esac
  
@@ -37,7 +44,22 @@ Use the correct recipe to build shared modules on OpenBSD.
  echol
  echol '# Directories used by "make install":'
  echol "prefix = ${PREFIX}"
-@@ -2931,7 +2932,7 @@ fi
+@@ -2404,11 +2405,10 @@ for parf in ${PARAMS}; do
+     echotab '$(TOUCH) '"${parf}.h"
+   else
+     echol "${parf}.h : ${SRCDIR}${parf}.c config.h"
+-    echotab "echo '#include \"config.h\"' > tmp.c"
+-    echotab "cat '${SRCDIR}${parf}.c' >> tmp.c"
+-    echotab_to_HEXE "\$(CC)" "tmp.c" "${parf}"
++    echotab "{ echo '#include \"config.h\"' && cat '${SRCDIR}${parf}.c'; } > gen-${parf}.c"
++    echotab_to_HEXE "\$(CC)" "gen-${parf}.c" "${parf}"
+     echotab "${HERE}${parf}${HEXE} ${parf}.h"
+-    echotab "\$(RM) ${parf}${HEXE} tmp.c"
++    echotab "\$(RM) ${parf}${HEXE} gen-${parf}.c"
+   fi
+   echol
+ done
+@@ -2931,7 +2931,7 @@ fi
  CLISP_="${HERE_}lisp${LEXE} -M ${HERE_}lispinit.mem ${localeflags}${someflags}"
  
  if [ $CROSS = false ] ; then
@@ -46,3 +68,31 @@ Use the correct recipe to build shared modules on OpenBSD.
  
    echol "# check the sources:"
    echol "# 1. subr.d, fsubr.d, subrkw.d and all the LISPFUNs must add up"
+@@ -3458,9 +3458,9 @@ for f in $TXT_FILES ; do
+     *) sourcedir=${SRCDIR} ;;
+   esac
+   echol "${f} : ${sourcedir}_${f}${TXT_INCLUDES}${depends} txt2c${HEXE}"
+-  echotab "\$(TXT2C) < ${sourcedir}_${f} > txt.c"
+-  echotab_to_HEXE "\$(CC) \$(CPPFLAGS) \$(CFLAGS)${flags} \$(CLFLAGS)${XCC_NOOPTFLAGS}" "txt.c" "txt"
+-  line="${HERE}txt"
++  echotab "\$(TXT2C) < ${sourcedir}_${f} > gen-${f}.c"
++  echotab_to_HEXE "\$(CC) \$(CPPFLAGS) \$(CFLAGS)${flags} \$(CLFLAGS)${XCC_NOOPTFLAGS}" "gen-${f}.c" "gen-${f}"
++  line="${HERE}gen-${f}"
+   test $f = clisp.1 -o $f = clisp-link.1 && \
+     line=$line" | \$(GREP) -v ${ARGQ1}^ *\$\$${ARGQ1}"
+   # *-1.html is for chunked impnotes and does not depend on user hyperspec
+@@ -3470,11 +3470,11 @@ for f in $TXT_FILES ; do
+   test $f = distmakefile && line=$line" | sed -e \"s,@@LEXE@@,${LEXE},g\" -e \"s:@@EXPORT_DYNAMIC_FLAG_SPEC@@:${EXPORT_DYNAMIC_FLAG_SPEC}:g\""
+   line=$line$platform_line
+   echotabpipe "${line} > ${f}"
+-  echotab "\$(RM) txt.c"
+-  echotab "\$(RM) txt${HEXE}"
++  echotab "\$(RM) gen-${f}.c"
++  echotab "\$(RM) gen-${f}${HEXE}"
+   echol
++  OBSOLETE=$OBSOLETE" gen-${f}.c gen-${f}${HEXE}"
+ done
+-OBSOLETE=$OBSOLETE" txt.c txt${HEXE}"
+ 
+ for f in ${MANPAGES}; do
+   if test -n "$GROFF"; then

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/08/08 12:21:36 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/09/10 08:42:04 rsadowski Exp $
 @pkgpath x11/kde-applications/kdav
 include/KF5/KDAV/
 include/KF5/KDAV/DavCollection
@@ -61,6 +61,7 @@ share/locale/el/LC_MESSAGES/libkdav.mo
 share/locale/en_GB/LC_MESSAGES/libkdav.mo
 share/locale/es/LC_MESSAGES/libkdav.mo
 share/locale/et/LC_MESSAGES/libkdav.mo
+share/locale/eu/LC_MESSAGES/libkdav.mo
 share/locale/fi/LC_MESSAGES/libkdav.mo
 share/locale/fr/LC_MESSAGES/libkdav.mo
 share/locale/gl/LC_MESSAGES/libkdav.mo

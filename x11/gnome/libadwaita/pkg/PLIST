@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/14 13:51:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/10/03 19:52:04 ajacoutot Exp $
 @bin bin/adwaita-1-demo
 include/libadwaita-1/
 include/libadwaita-1/adw-action-row.h
-include/libadwaita-1/adw-animation.h
+include/libadwaita-1/adw-animation-util.h
 include/libadwaita-1/adw-application-window.h
+include/libadwaita-1/adw-application.h
 include/libadwaita-1/adw-avatar.h
 include/libadwaita-1/adw-bin.h
+include/libadwaita-1/adw-button-content.h
 include/libadwaita-1/adw-carousel-indicator-dots.h
 include/libadwaita-1/adw-carousel-indicator-lines.h
 include/libadwaita-1/adw-carousel.h
@@ -15,10 +17,10 @@ include/libadwaita-1/adw-clamp.h
 include/libadwaita-1/adw-combo-row.h
 include/libadwaita-1/adw-deprecation-macros.h
 include/libadwaita-1/adw-enum-list-model.h
-include/libadwaita-1/adw-enum-value-object.h
 include/libadwaita-1/adw-enums.h
 include/libadwaita-1/adw-expander-row.h
 include/libadwaita-1/adw-flap.h
+include/libadwaita-1/adw-fold-threshold-policy.h
 include/libadwaita-1/adw-header-bar.h
 include/libadwaita-1/adw-leaflet.h
 include/libadwaita-1/adw-main.h
@@ -27,14 +29,16 @@ include/libadwaita-1/adw-preferences-group.h
 include/libadwaita-1/adw-preferences-page.h
 include/libadwaita-1/adw-preferences-row.h
 include/libadwaita-1/adw-preferences-window.h
+include/libadwaita-1/adw-split-button.h
 include/libadwaita-1/adw-squeezer.h
 include/libadwaita-1/adw-status-page.h
+include/libadwaita-1/adw-style-manager.h
 include/libadwaita-1/adw-swipe-tracker.h
 include/libadwaita-1/adw-swipeable.h
 include/libadwaita-1/adw-tab-bar.h
 include/libadwaita-1/adw-tab-view.h
-include/libadwaita-1/adw-value-object.h
 include/libadwaita-1/adw-version.h
+include/libadwaita-1/adw-view-stack.h
 include/libadwaita-1/adw-view-switcher-bar.h
 include/libadwaita-1/adw-view-switcher-title.h
 include/libadwaita-1/adw-view-switcher.h
@@ -42,26 +46,36 @@ include/libadwaita-1/adw-window-title.h
 include/libadwaita-1/adw-window.h
 include/libadwaita-1/adwaita.h
 lib/girepository-1.0/Adw-1.typelib
+lib/gtk-4.0/inspector/
+@lib lib/gtk-4.0/inspector/libadwaita-inspector-module1.so.${LIBadwaita-inspector-module1_VERSION}
 @lib lib/libadwaita-1.so.${LIBadwaita-1_VERSION}
 lib/pkgconfig/libadwaita-1.pc
 share/gir-1.0/Adw-1.gir
 share/locale/ca/LC_MESSAGES/libadwaita.mo
+share/locale/cs/LC_MESSAGES/libadwaita.mo
+share/locale/da/LC_MESSAGES/libadwaita.mo
+share/locale/de/LC_MESSAGES/libadwaita.mo
 share/locale/en_GB/LC_MESSAGES/libadwaita.mo
 share/locale/es/LC_MESSAGES/libadwaita.mo
 share/locale/eu/LC_MESSAGES/libadwaita.mo
 share/locale/fi/LC_MESSAGES/libadwaita.mo
 share/locale/fr/LC_MESSAGES/libadwaita.mo
 share/locale/fur/LC_MESSAGES/libadwaita.mo
+share/locale/gl/LC_MESSAGES/libadwaita.mo
 share/locale/id/LC_MESSAGES/libadwaita.mo
 share/locale/it/LC_MESSAGES/libadwaita.mo
+share/locale/ko/LC_MESSAGES/libadwaita.mo
+share/locale/lt/LC_MESSAGES/libadwaita.mo
 share/locale/nl/LC_MESSAGES/libadwaita.mo
 share/locale/pl/LC_MESSAGES/libadwaita.mo
 share/locale/pt/LC_MESSAGES/libadwaita.mo
 share/locale/pt_BR/LC_MESSAGES/libadwaita.mo
 share/locale/ro/LC_MESSAGES/libadwaita.mo
 share/locale/sl/LC_MESSAGES/libadwaita.mo
+share/locale/sr/LC_MESSAGES/libadwaita.mo
 share/locale/sv/LC_MESSAGES/libadwaita.mo
 share/locale/tr/LC_MESSAGES/libadwaita.mo
 share/locale/uk/LC_MESSAGES/libadwaita.mo
+share/locale/zh_CN/LC_MESSAGES/libadwaita.mo
 share/vala/vapi/libadwaita-1.deps
 share/vala/vapi/libadwaita-1.vapi

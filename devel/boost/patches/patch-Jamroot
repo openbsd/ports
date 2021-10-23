@@ -1,4 +1,4 @@
-$OpenBSD: patch-Jamroot,v 1.11 2021/06/22 04:20:13 rsadowski Exp $
+$OpenBSD: patch-Jamroot,v 1.13 2021/09/19 05:23:29 rsadowski Exp $
 
 Index: Jamroot
 --- Jamroot.orig

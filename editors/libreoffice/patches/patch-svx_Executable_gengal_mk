@@ -1,11 +1,11 @@
-$OpenBSD: patch-svx_Executable_gengal_mk,v 1.4 2018/02/05 17:15:05 robert Exp $
+$OpenBSD: patch-svx_Executable_gengal_mk,v 1.5 2021/09/02 11:11:58 robert Exp $
 
 Index: svx/Executable_gengal.mk
 --- svx/Executable_gengal.mk.orig
 +++ svx/Executable_gengal.mk
-@@ -29,6 +29,8 @@ $(eval $(call gb_Executable_use_external,gengal,boost_
- 
- $(eval $(call gb_Executable_use_sdk_api,gengal))
+@@ -33,6 +33,8 @@ ifneq (,$(filter-out MACOSX WNT,$(OS)))
+ $(eval $(call gb_Executable_use_package,gengal,svx_gengal))
+ endif
  
 +$(eval $(call gb_Executable_use_externals,gengal,orcus))
 +

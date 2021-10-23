@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2021/08/21 21:57:23 sebastia Exp $
+# $OpenBSD: Makefile,v 1.21 2021/08/23 16:13:38 sebastia Exp $
 
 COMMENT =	analyze OLE files
 
 MODPY_EGG_VERSION =	0.0.60
 DISTNAME =	oledump_V${MODPY_EGG_VERSION:S/./_/g}
 PKGNAME =	oledump-${MODPY_EGG_VERSION}
+REVISION =	0
 
 
 CATEGORIES =	security
@@ -21,8 +22,8 @@ MASTER_SITES =	https://didierstevens.com/files/software/
 EXTRACT_SUFX =	.zip
 
 MODULES =	lang/python
-RUN_DEPENDS =	security/yara/python \
-		devel/py-olefile
+RUN_DEPENDS =	security/yara/python${MODPY_FLAVOR} \
+		devel/py-olefile${MODPY_FLAVOR}
 
 NO_BUILD =	Yes
 NO_TEST =	Yes

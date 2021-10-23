@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2021/08/22 01:51:16 thfr Exp $
+# $OpenBSD: Makefile,v 1.9 2021/10/05 07:02:44 thfr Exp $
 
-V =		21.08
+V =		21.10
 COMMENT =	XNA4 reimplementation for open platforms
 DISTNAME =	fna-${V:S/.//g}
 PKGNAME =	fna-${V}

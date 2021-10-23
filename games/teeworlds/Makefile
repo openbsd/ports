@@ -1,76 +1,51 @@
-# $OpenBSD: Makefile,v 1.28 2021/02/23 19:39:23 sthen Exp $
-
-# Crashes on strict-alignment archs, see: src/base/system.c:164
-ONLY_FOR_ARCHS=	amd64 i386 powerpc
+# $OpenBSD: Makefile,v 1.29 2021/10/19 07:22:08 sdk Exp $
 
 COMMENT=	platform game featuring buggers equipped with weapons
 
-V=		0.6.4
-DISTNAME=	teeworlds-${V}-src
+V=		0.7.5
 PKGNAME=	teeworlds-${V}
+DISTNAME=	${PKGNAME}-src
+
 CATEGORIES=	games
-REVISION=	3
 
-HOMEPAGE=	https://www.teeworlds.com/
+HOMEPAGE=	https://www.teeworlds.com
 
-BAM_VERSION=	0.4.0
-BAM_WRKSRC=	${WRKSRC}/bam-${BAM_VERSION}
+MAINTAINER=	Stefan Hagen <sh+ports@codevoid.de>
 
-MASTER_SITES=	https://downloads.teeworlds.com/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} bam-${BAM_VERSION}${EXTRACT_SUFX}
+MASTER_SITES=	https://github.com/teeworlds/teeworlds/releases/download/${V}/
+# maps repo without tags/releases on https://github.com/teeworlds/teeworlds-maps
+# therefore hosted as archive on perso.pw
+MASTER_SITES0=	http://distfiles-openbsd.perso.pw/
+
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		teeworlds-${V}-data.tar.gz{teeworlds-data.tar.gz}:0
 
 # BSD-like
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	GL GLU SDL X11 c freetype m pthread ${COMPILER_LIBCXX} wavpack z
+WANTLIB=	GL SDL2 X11 c crypto freetype m pthread ${COMPILER_LIBCXX}
+WANTLIB+=	wavpack z
 
 COMPILER =	base-clang ports-gcc
 
 LIB_DEPENDS=	audio/wavpack \
-		devel/sdl
+		devel/sdl2
 
-MODULES=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+MODULES=	devel/cmake lang/python
 MODPY_RUNDEP=	No
 
-SUBST_VARS=	CC CXX CFLAGS CXXFLAGS X11BASE
+CONFIGURE_STYLE=	cmake
+CONFIGURE_ARGS=		-DPYTHON_EXECUTABLE="${MODPY_BIN}"
 
 NO_TEST=	Yes
 
 # Give it a chance on ppc
 CXXFLAGS+=	-fsigned-char
 
-post-extract:
-	@mv ${WRKDIR}/bam-${BAM_VERSION} ${BAM_WRKSRC}
-
-pre-configure:
-	@${SUBST_CMD} ${WRKSRC}/src/engine/shared/storage.cpp \
-		${WRKSRC}/src/game/client/gameclient.cpp \
-		${WRKSRC}/scripts/build.py \
-		${WRKSRC}/scripts/compiler.py \
-		${WRKSRC}/scripts/font_installer.sh \
-		${WRKSRC}/scripts/make_src.py \
-		${WRKSRC}/bam.lua \
-		${WRKSRC}/configure.lua \
-		${BAM_WRKSRC}/make_unix.sh \
-		${BAM_WRKSRC}/src/driver_gcc.lua \
-		${BAM_WRKSRC}/src/base.lua
-	# Make sure internal wavpack and zlib can't be picked up
-	rm -rf ${WRKSRC}/src/engine/external/{wavpack,zlib}
-	# Don't provide an extra copy of DejaVu
-	rm -rf ${WRKSRC}/data/fonts
-
-# build bam executable - teeworlds own build system
-pre-build:
-	cd ${BAM_WRKSRC} && /bin/sh -v make_unix.sh
-
-do-build:
-	cd ${WRKSRC} && CC=${CC} ${BAM_WRKSRC}/bam -a -v release wavpack=${LOCALBASE}
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/teeworlds ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/teeworlds_srv ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/share/teeworlds
-	cd ${WRKSRC}; tar cf - data | tar xf - -C ${PREFIX}/share/teeworlds
+post-install:
+	${INSTALL_DATA_DIR} ${WRKDIST}/datasrc/maps
+	${INSTALL_DATA_DIR} ${WRKDIST}/datasrc/maps
+	${INSTALL_DATA} ${WRKDIR}/maps/* ${WRKDIST}/datasrc/maps/
+	${INSTALL_DATA} ${WRKDIR}/languages/* ${WRKDIST}/datasrc/languages/
 
 .include <bsd.port.mk>

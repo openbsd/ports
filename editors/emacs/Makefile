@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.101 2021/07/15 19:26:25 jca Exp $
+# $OpenBSD: Makefile,v 1.103 2021/08/29 07:28:05 jca Exp $
 
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
 VERSION=		27.2
 DISTNAME=		emacs-${VERSION}
-REVISION=		1
+REVISION=		3
 
 CATEGORIES=		editors
 
@@ -15,7 +15,7 @@ MAINTAINER=		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 # GPLv3+
 PERMIT_PACKAGE=		Yes
 
-WANTLIB =		c curses jansson gmp gnutls m pthread xml2 z
+WANTLIB =		c curses execinfo jansson gmp gnutls m pthread xml2 z
 
 MASTER_SITES=		${MASTER_SITE_GNU:=emacs/}
 EXTRACT_SUFX=		.tar.xz
@@ -98,13 +98,6 @@ WANTLIB += xcb
 . else
 ERRORS+=		"Fatal: Conflicting flavor: ${FLAVOR}"
 . endif
-.endif
-
-# backtrace() crashes at build time on powerpc
-.if ${MACHINE_ARCH} == "powerpc"
-CONFIGURE_ENV +=	ac_cv_header_execinfo_h=no
-.else
-WANTLIB +=		execinfo
 .endif
 
 post-install:

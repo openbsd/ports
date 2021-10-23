@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/06/19 18:34:43 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/09/10 08:43:58 rsadowski Exp $
 @conflict kdebase-<4
 include/KF5/KCddb/
 include/KF5/KCddb/Categories
@@ -25,16 +25,6 @@ lib/cmake/KF5Cddb/KF5CddbTargets.cmake
 @so lib/qt5/plugins/kcm_cddb.so
 share/config.kcfg/
 share/config.kcfg/libkcddb5.kcfg
-share/doc/HTML/ca/kcontrol/
-share/doc/HTML/ca/kcontrol/cddbretrieval5/
-share/doc/HTML/ca/kcontrol/cddbretrieval5/index.cache.bz2
-share/doc/HTML/ca/kcontrol/cddbretrieval5/index.docbook
-share/doc/HTML/de/kcontrol/
-share/doc/HTML/de/kcontrol/cddbretrieval5/
-share/doc/HTML/de/kcontrol/cddbretrieval5/index.cache.bz2
-share/doc/HTML/de/kcontrol/cddbretrieval5/index.docbook
-share/doc/HTML/de/kcontrol/cddbretrieval5/kscd14.png
-share/doc/HTML/de/kcontrol/cddbretrieval5/kscd16.png
 share/doc/HTML/en/kcontrol/
 share/doc/HTML/en/kcontrol/cddbretrieval5/
 share/doc/HTML/en/kcontrol/cddbretrieval5/index.cache.bz2
@@ -42,44 +32,6 @@ share/doc/HTML/en/kcontrol/cddbretrieval5/index.docbook
 share/doc/HTML/en/kcontrol/cddbretrieval5/kscd13.png
 share/doc/HTML/en/kcontrol/cddbretrieval5/kscd14.png
 share/doc/HTML/en/kcontrol/cddbretrieval5/kscd16.png
-share/doc/HTML/es/kcontrol/
-share/doc/HTML/es/kcontrol/cddbretrieval5/
-share/doc/HTML/es/kcontrol/cddbretrieval5/index.cache.bz2
-share/doc/HTML/es/kcontrol/cddbretrieval5/index.docbook
-share/doc/HTML/fr/kcontrol/
-share/doc/HTML/fr/kcontrol/cddbretrieval5/
-share/doc/HTML/fr/kcontrol/cddbretrieval5/index.cache.bz2
-share/doc/HTML/fr/kcontrol/cddbretrieval5/index.docbook
-share/doc/HTML/it/kcontrol/
-share/doc/HTML/it/kcontrol/cddbretrieval5/
-share/doc/HTML/it/kcontrol/cddbretrieval5/index.cache.bz2
-share/doc/HTML/it/kcontrol/cddbretrieval5/index.docbook
-share/doc/HTML/nl/kcontrol/
-share/doc/HTML/nl/kcontrol/cddbretrieval5/
-share/doc/HTML/nl/kcontrol/cddbretrieval5/index.cache.bz2
-share/doc/HTML/nl/kcontrol/cddbretrieval5/index.docbook
-share/doc/HTML/pt/kcontrol/
-share/doc/HTML/pt/kcontrol/cddbretrieval5/
-share/doc/HTML/pt/kcontrol/cddbretrieval5/index.cache.bz2
-share/doc/HTML/pt/kcontrol/cddbretrieval5/index.docbook
-share/doc/HTML/pt_BR/kcontrol/
-share/doc/HTML/pt_BR/kcontrol/cddbretrieval5/
-share/doc/HTML/pt_BR/kcontrol/cddbretrieval5/index.cache.bz2
-share/doc/HTML/pt_BR/kcontrol/cddbretrieval5/index.docbook
-share/doc/HTML/pt_BR/kcontrol/cddbretrieval5/kscd14.png
-share/doc/HTML/pt_BR/kcontrol/cddbretrieval5/kscd16.png
-share/doc/HTML/sr/kcontrol/
-share/doc/HTML/sr/kcontrol/cddbretrieval5/
-share/doc/HTML/sr/kcontrol/cddbretrieval5/index.cache.bz2
-share/doc/HTML/sr/kcontrol/cddbretrieval5/index.docbook
-share/doc/HTML/sv/kcontrol/
-share/doc/HTML/sv/kcontrol/cddbretrieval5/
-share/doc/HTML/sv/kcontrol/cddbretrieval5/index.cache.bz2
-share/doc/HTML/sv/kcontrol/cddbretrieval5/index.docbook
-share/doc/HTML/uk/kcontrol/
-share/doc/HTML/uk/kcontrol/cddbretrieval5/
-share/doc/HTML/uk/kcontrol/cddbretrieval5/index.cache.bz2
-share/doc/HTML/uk/kcontrol/cddbretrieval5/index.docbook
 share/kf5/mkspecs/qt_KCddb.pri
 share/kservices5/libkcddb.desktop
 share/locale/ar/LC_MESSAGES/kcmcddb.mo

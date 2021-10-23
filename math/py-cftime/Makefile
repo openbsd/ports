@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2021/06/15 09:39:49 martin Exp $
+# $OpenBSD: Makefile,v 1.16 2021/10/16 13:20:24 martin Exp $
 
 COMMENT=	time and date handling utility functions from netcdf4-python
 
-MODPY_EGG_VERSION= 	1.5.0
+MODPY_EGG_VERSION= 	1.5.1
 DISTNAME=		cftime-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
@@ -35,9 +35,5 @@ TEST_DEPENDS=		devel/py-test${MODPY_FLAVOR} \
 			devel/py-test-cov${MODPY_FLAVOR} \
 			security/py-cryptography${MODPY_FLAVOR} \
 			security/py-openssl${MODPY_FLAVOR}
-
-# not needed for python3, also messes with relative imports in tests
-pre-test:
-	rm -f ${WRKSRC}/cftime/__init__.py
 
 .include <bsd.port.mk>

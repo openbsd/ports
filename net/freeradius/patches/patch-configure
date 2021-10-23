@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure,v 1.10 2021/10/03 20:28:43 sthen Exp $
+
+Don't allow picking up collectdclient, freeradius autoconf's "smart"
+library detection doesn't offer a nice way to do it.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -7614,7 +7614,7 @@ if test "x$smart_lib" != "x"; then
+   SMART_LIBS="$smart_ldflags $smart_lib $SMART_LIBS"
+ fi
+ 
+-if test "x$ac_cv_lib_collectdclient_lcc_connect" != "xyes"; then
++if true || test "x$ac_cv_lib_collectdclient_lcc_connect" != "xyes"; then
+   { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: collectdclient library not found. Use --with-collectdclient-lib-dir=<path>." >&5
+ $as_echo "$as_me: WARNING: collectdclient library not found. Use --with-collectdclient-lib-dir=<path>." >&2;}
+ else

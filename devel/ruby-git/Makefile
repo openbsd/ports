@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/08/26 18:12:43 jeremy Exp $
 
 COMMENT =		ruby library wrapping calls to git CLI
 
 DISTNAME =		git-1.2.5
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/schacon/ruby-git
@@ -16,5 +16,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
+
+RUN_DEPENDS =		devel/git
 
 .include <bsd.port.mk>

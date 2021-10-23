@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2020/11/08 20:12:55 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2021/09/10 08:43:56 rsadowski Exp $
 
 COMMENT =	KDE raster image editor
 DISTNAME =	kolourpaint-${VERSION}
 CATEGORIES =	graphics
 
-SHARED_LIBS +=  kolourpaint_lgpl           2.0 # 0.0
+SHARED_LIBS +=  kolourpaint_lgpl           2.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui

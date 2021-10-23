@@ -1,4 +1,4 @@
-$OpenBSD: patch-alc_backends_sndio_cpp,v 1.3 2021/08/20 21:54:22 brynet Exp $
+$OpenBSD: patch-alc_backends_sndio_cpp,v 1.4 2021/10/16 07:59:12 rsadowski Exp $
 
 Simplify channel handling in the sndio backend
 620836f173ae6fc4505d0634984e0f2c46166367
@@ -6,6 +6,8 @@ Simplify channel handling in the sndio backend
 Use non-block mode for sndio capture
 1fd4c865fc084f134363db5155361d5483679235
 
+Fix crashes in SndioCapture::recordProc
+a4b0a3d7b3ec271243cfda4780e567e49f2b37b7
 
 Index: alc/backends/sndio.cpp
 --- alc/backends/sndio.cpp.orig
@@ -269,7 +271,19 @@ Index: alc/backends/sndio.cpp
      RingBufferPtr mRing;
  
      std::atomic<bool> mKillNow{true};
-@@ -326,37 +309,53 @@ int SndioCapture::recordProc()
+@@ -323,40 +306,65 @@ int SndioCapture::recordProc()
+ 
+     const uint frameSize{mDevice->frameSizeFromFmt()};
+ 
++    int nfds_pre{sio_nfds(mSndHandle)};
++    if (nfds_pre <= 0)
++    {
++        mDevice->handleDisconnect("Incorrect return value from sio_nfds(): %d", nfds_pre);
++        return 1;
++    }
++
++    mFds.resize(nfds_pre);
++
      while(!mKillNow.load(std::memory_order_acquire)
          && mDevice->Connected.load(std::memory_order_acquire))
      {
@@ -345,7 +359,7 @@ Index: alc/backends/sndio.cpp
      }
  
      return 0;
-@@ -371,76 +370,80 @@ void SndioCapture::open(const char *name)
+@@ -371,76 +379,80 @@ void SndioCapture::open(const char *name)
          throw al::backend_exception{al::backend_error::NoDevice, "Device name \"%s\" not found",
              name};
  

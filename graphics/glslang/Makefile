@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2021/06/29 03:48:20 thfr Exp $
+# $OpenBSD: Makefile,v 1.9 2021/10/16 14:50:40 thfr Exp $
 
-PORTROACH =	^[0-9]
+PORTROACH =	limit:^[0-9]
 
 COMMENT =	reference front-end for GLSL and ESSL
 
-GH_TAGNAME =	11.5.0
+GH_TAGNAME =	11.6.0
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	glslang
 

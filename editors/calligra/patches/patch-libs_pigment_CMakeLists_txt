@@ -1,0 +1,16 @@
+$OpenBSD: patch-libs_pigment_CMakeLists_txt,v 1.1 2021/08/31 07:31:43 ajacoutot Exp $
+
+Fix build with OpenEXR>=3
+
+Index: libs/pigment/CMakeLists.txt
+--- libs/pigment/CMakeLists.txt.orig
++++ libs/pigment/CMakeLists.txt
+@@ -12,7 +12,7 @@ include_directories( ${PIGMENT_INCLUDES}  ${Boost_INCL
+ 
+ set(FILE_OPENEXR_SOURCES)
+ set(LINK_OPENEXR_LIB)
+-if(OPENEXR_FOUND)
++if(OpenEXR_FOUND)
+     include_directories(${OPENEXR_INCLUDE_DIR})
+     set(LINK_OPENEXR_LIB ${OPENEXR_LIBRARIES})
+     add_definitions(${OPENEXR_DEFINITIONS})

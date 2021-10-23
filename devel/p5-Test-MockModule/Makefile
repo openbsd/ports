@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.18 2020/07/03 21:45:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2021/09/08 18:52:13 bluhm Exp $
 
 COMMENT =	override subroutines in a module for unit testing
 
-MODULES =	cpan
-PKG_ARCH =	*
-DISTNAME =	Test-MockModule-v0.173.0
+DISTNAME =	Test-MockModule-v0.177.0
 PKGNAME =	p5-${DISTNAME:S/-v/-/}
-CATEGORIES =	devel
-REVISION =	0
 
-# Artistic
+CATEGORIES =	devel
+
+# Perl
 PERMIT_PACKAGE =	Yes
+
+MODULES =		cpan
+
+BUILD_DEPENDS =		devel/p5-Module-Build>=0.38
+RUN_DEPENDS =		devel/p5-SUPER>=1.20
+TEST_DEPENDS =		devel/p5-Test-Warnings
 
 CONFIGURE_STYLE =	modbuild
 
-MAKE_ENV =		TEST_POD=yes AUTHOR_TESTING=yes
-
-RUN_DEPENDS =		devel/p5-SUPER
-
-TEST_DEPENDS =		devel/p5-Test-Warnings
+PKG_ARCH =		*
 
 .include <bsd.port.mk>

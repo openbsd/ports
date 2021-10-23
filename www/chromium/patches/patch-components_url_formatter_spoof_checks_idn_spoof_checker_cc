@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_url_formatter_spoof_checks_idn_spoof_checker_cc,v 1.10 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-components_url_formatter_spoof_checks_idn_spoof_checker_cc,v 1.11 2021/09/01 16:54:39 robert Exp $
 
 Index: components/url_formatter/spoof_checks/idn_spoof_checker.cc
 --- components/url_formatter/spoof_checks/idn_spoof_checker.cc.orig
 +++ components/url_formatter/spoof_checks/idn_spoof_checker.cc
-@@ -291,7 +291,7 @@ IDNSpoofChecker::IDNSpoofChecker() {
+@@ -292,7 +292,7 @@ IDNSpoofChecker::IDNSpoofChecker() {
    // The ideal fix would be to change the omnibox font used for Thai. In
    // that case, the Linux-only list should be revisited and potentially
    // removed.

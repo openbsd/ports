@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_gtk_gtk_compat_cc,v 1.2 2021/07/21 15:43:34 robert Exp $
+$OpenBSD: patch-ui_gtk_gtk_compat_cc,v 1.5 2021/10/20 10:27:48 robert Exp $
 
 Index: ui/gtk/gtk_compat.cc
 --- ui/gtk/gtk_compat.cc.orig
 +++ ui/gtk/gtk_compat.cc
-@@ -58,27 +58,47 @@ auto DlCast(void* symbol) {
+@@ -62,27 +62,47 @@ auto DlCast(void* symbol) {
  }
  
  void* GetLibGio() {
@@ -42,11 +42,11 @@ Index: ui/gtk/gtk_compat.cc
    return libgtk3;
  }
  
- void* GetLibGtk4() {
+ void* GetLibGtk4(bool check = true) {
 +#if defined(OS_BSD)
-+  static void* libgtk4 = DlOpen("libgtk-4.so");
++  static void* libgtk4 = DlOpen("libgtk-4.so", check);
 +#else
-   static void* libgtk4 = DlOpen("libgtk-4.so.1");
+   static void* libgtk4 = DlOpen("libgtk-4.so.1", check);
 +#endif
    return libgtk4;
  }

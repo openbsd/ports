@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_dns_host_resolver_proc_cc,v 1.9 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-net_dns_host_resolver_proc_cc,v 1.10 2021/09/01 16:54:40 robert Exp $
 Index: net/dns/host_resolver_proc.cc
 --- net/dns/host_resolver_proc.cc.orig
 +++ net/dns/host_resolver_proc.cc

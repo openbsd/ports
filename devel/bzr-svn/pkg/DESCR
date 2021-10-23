@@ -1,7 +1,0 @@
-bzr-svn is a plugin that allows Bazaar direct access to Subversion
-repositories. It allows most bzr commands to work directly against
-Subversion repositories, as if you were using bzr with a native bzr
-repository.
-
-The plugin can at the moment be used to commit to, pull from, merge
-from, push to and view logs of Subversion branches from Bazaar.

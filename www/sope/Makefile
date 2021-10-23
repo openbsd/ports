@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.88 2021/07/09 19:52:45 sebastia Exp $
+# $OpenBSD: Makefile,v 1.90 2021/10/19 19:44:50 sebastia Exp $
 
 COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
 COMMENT-postgres=	SOPE PostgreSQL adaptor
 
-VERSION =		5.1.1
+VERSION =		5.2.0
+REVISION =		0
 DISTNAME =		SOPE-${VERSION}
 PKGNAME-main =		sope-${VERSION}
 PKGNAME-mysql =		sope-mysql-${VERSION}
@@ -57,7 +58,6 @@ MAKE_ENV+=	OBJC_INCLUDE_PATH="${LOCALBASE}/include/postgresql;${LOCALBASE}/inclu
 		SBJson_INTERFACE_VERSION=${LIBSBJson_VERSION}
 MAKE_FLAGS+=	MAJOR_VERSION=${SO_MAJOR} MINOR_VERSION=${SO_MINOR}
 MAKE_FLAGS+=	SOPE_MAJOR_VERSION=4 SOPE_MINOR_VERSION=9
-MAKE_FLAGS+=	LDFLAGS="-fuse-ld=bfd"
 CONFIGURE_ENV+=	${MAKE_ENV}
 NO_TEST=	Yes
 

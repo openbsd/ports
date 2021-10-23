@@ -1,37 +1,82 @@
-@comment $OpenBSD: PLIST-mysql,v 1.10 2016/06/29 16:14:43 espie Exp $
-@option is-branch
-@conflict freeradius-mysql-*
-@conflict freeradius-server-<2.2.9p1
-lib/freeradius/rlm_sql_mysql.so
-@mode 640
-share/examples/freeradius/modules/dhcp_sqlippool
-@sample ${SYSCONFDIR}/raddb/modules/dhcp_sqlippool
-@mode
-share/examples/freeradius/sql/mysql/
-@mode 750
-@sample ${SYSCONFDIR}/raddb/sql/mysql/
-@mode 640
-share/examples/freeradius/sql/mysql/admin.sql
-share/examples/freeradius/sql/mysql/counter.conf
-@sample ${SYSCONFDIR}/raddb/sql/mysql/counter.conf
-share/examples/freeradius/sql/mysql/cui.conf
-@sample ${SYSCONFDIR}/raddb/sql/mysql/cui.conf
-share/examples/freeradius/sql/mysql/cui.sql
-share/examples/freeradius/sql/mysql/dialup.conf
-@sample ${SYSCONFDIR}/raddb/sql/mysql/dialup.conf
-share/examples/freeradius/sql/mysql/ippool-dhcp.conf
-@sample ${SYSCONFDIR}/raddb/sql/mysql/ippool-dhcp.conf
-share/examples/freeradius/sql/mysql/ippool.conf
-@sample ${SYSCONFDIR}/raddb/sql/mysql/ippool.conf
-share/examples/freeradius/sql/mysql/ippool.sql
-share/examples/freeradius/sql/mysql/nas.sql
-share/examples/freeradius/sql/mysql/schema.sql
-share/examples/freeradius/sql/mysql/wimax.conf
-@sample ${SYSCONFDIR}/raddb/sql/mysql/wimax.conf
-share/examples/freeradius/sql/mysql/wimax.sql
-@mode 750
-share/examples/freeradius/sql/ndb/
-@mode 640
-share/examples/freeradius/sql/ndb/README
-share/examples/freeradius/sql/ndb/admin.sql
-share/examples/freeradius/sql/ndb/schema.sql
+@comment $OpenBSD: PLIST-mysql,v 1.12 2021/10/03 20:28:43 sthen Exp $
+@pkgpath net/freeradius3,-mysql
+@so lib/freeradius/rlm_sql_mysql.so
+@group _freeradius
+share/examples/freeradius/mods-config/sql/counter/mysql/
+@sample ${FREERADIUS_ETC}/mods-config/sql/counter/mysql/
+share/examples/freeradius/mods-config/sql/counter/mysql/dailycounter.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/counter/mysql/dailycounter.conf
+share/examples/freeradius/mods-config/sql/counter/mysql/expire_on_login.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/counter/mysql/expire_on_login.conf
+share/examples/freeradius/mods-config/sql/counter/mysql/monthlycounter.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/counter/mysql/monthlycounter.conf
+share/examples/freeradius/mods-config/sql/counter/mysql/noresetcounter.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/counter/mysql/noresetcounter.conf
+share/examples/freeradius/mods-config/sql/counter/mysql/weeklycounter.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/counter/mysql/weeklycounter.conf
+share/examples/freeradius/mods-config/sql/cui/mysql/
+@sample ${FREERADIUS_ETC}/mods-config/sql/cui/mysql/
+share/examples/freeradius/mods-config/sql/cui/mysql/queries.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/cui/mysql/queries.conf
+share/examples/freeradius/mods-config/sql/cui/mysql/schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/cui/mysql/schema.sql
+share/examples/freeradius/mods-config/sql/dhcp/mysql/
+@sample ${FREERADIUS_ETC}/mods-config/sql/dhcp/mysql/
+share/examples/freeradius/mods-config/sql/dhcp/mysql/queries.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/dhcp/mysql/queries.conf
+share/examples/freeradius/mods-config/sql/dhcp/mysql/schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/dhcp/mysql/schema.sql
+share/examples/freeradius/mods-config/sql/dhcp/mysql/setup.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/dhcp/mysql/setup.sql
+share/examples/freeradius/mods-config/sql/ippool-dhcp/mysql/
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool-dhcp/mysql/
+share/examples/freeradius/mods-config/sql/ippool-dhcp/mysql/procedure-no-skip-locked.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool-dhcp/mysql/procedure-no-skip-locked.sql
+share/examples/freeradius/mods-config/sql/ippool-dhcp/mysql/procedure.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool-dhcp/mysql/procedure.sql
+share/examples/freeradius/mods-config/sql/ippool-dhcp/mysql/queries.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool-dhcp/mysql/queries.conf
+share/examples/freeradius/mods-config/sql/ippool-dhcp/mysql/schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool-dhcp/mysql/schema.sql
+share/examples/freeradius/mods-config/sql/ippool/mysql/
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool/mysql/
+share/examples/freeradius/mods-config/sql/ippool/mysql/procedure-no-skip-locked.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool/mysql/procedure-no-skip-locked.sql
+share/examples/freeradius/mods-config/sql/ippool/mysql/procedure.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool/mysql/procedure.sql
+share/examples/freeradius/mods-config/sql/ippool/mysql/queries.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool/mysql/queries.conf
+share/examples/freeradius/mods-config/sql/ippool/mysql/schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool/mysql/schema.sql
+share/examples/freeradius/mods-config/sql/main/mysql/
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/mysql/
+share/examples/freeradius/mods-config/sql/main/mysql/extras/
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/mysql/extras/
+share/examples/freeradius/mods-config/sql/main/mysql/extras/wimax/
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/mysql/extras/wimax/
+share/examples/freeradius/mods-config/sql/main/mysql/extras/wimax/queries.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/mysql/extras/wimax/queries.conf
+share/examples/freeradius/mods-config/sql/main/mysql/extras/wimax/schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/mysql/extras/wimax/schema.sql
+share/examples/freeradius/mods-config/sql/main/mysql/process-radacct.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/mysql/process-radacct.sql
+share/examples/freeradius/mods-config/sql/main/mysql/queries.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/mysql/queries.conf
+share/examples/freeradius/mods-config/sql/main/mysql/schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/mysql/schema.sql
+share/examples/freeradius/mods-config/sql/main/mysql/setup.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/mysql/setup.sql
+share/examples/freeradius/mods-config/sql/main/ndb/
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/ndb/
+share/examples/freeradius/mods-config/sql/main/ndb/README
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/ndb/README
+share/examples/freeradius/mods-config/sql/main/ndb/schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/ndb/schema.sql
+share/examples/freeradius/mods-config/sql/main/ndb/setup.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/ndb/setup.sql
+share/examples/freeradius/mods-config/sql/moonshot-targeted-ids/mysql/
+@sample ${FREERADIUS_ETC}/mods-config/sql/moonshot-targeted-ids/mysql/
+share/examples/freeradius/mods-config/sql/moonshot-targeted-ids/mysql/queries.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/moonshot-targeted-ids/mysql/queries.conf
+share/examples/freeradius/mods-config/sql/moonshot-targeted-ids/mysql/schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/moonshot-targeted-ids/mysql/schema.sql

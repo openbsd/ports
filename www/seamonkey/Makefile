@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.259 2021/08/15 13:36:49 semarie Exp $
+# $OpenBSD: Makefile,v 1.262 2021/09/06 08:20:20 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # version = (TB version - 3) / 100 + 2
-MOZILLA_VERSION =	2.53.8.1
+MOZILLA_VERSION =	2.53.9
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	comm/suite
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-5.8.8
+PKGNAME-lightning =	lightning-seamonkey-5.8.9
 EPOCH-lightning =	0
 
 HOMEPAGE =	http://www.seamonkey-project.org/
@@ -45,14 +45,13 @@ WANTLIB +=	hunspell-1.7
 # option removed in 62, cf #1460600
 CONFIGURE_ARGS +=	--with-system-hunspell
 
-# https://bugzilla.mozilla.org/show_bug.cgi?id=983843
-CONFIGURE_ARGS +=	--with-system-cairo
-
-# lld blows when linking libxul
+# lld blows when linking libxul; limit threads
 .if ${MACHINE_ARCH:Mi386}
-CONFIGURE_ARGS +=	--enable-linker=bfd
-USE_LLD=No
+CONFIGURE_ENV +=	LDFLAGS="-Wl,--threads=2"
+# make sure we dont look for libatomic from gcc-libs
+CONFIGURE_ENV +=	ac_cv_needs_atomic=no
 .endif
+
 RUN_DEPENDS-lightning = STEM->=${MOZILLA_VERSION:S/b/beta/}:${BUILD_PKGPATH},-main
 WANTLIB += X11-xcb intl pixman-1 xcb xcb-shm
 WANTLIB += Xcursor Xi harfbuzz

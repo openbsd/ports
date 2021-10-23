@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2021/06/09 09:22:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/10/09 13:50:54 sdk Exp $
 
 COMMENT =	menu library inspired by dmenu
 CATEGORIES =	x11
 
-SHARED_LIBS +=	bemenu                    1.0 # 0.6.2
+SHARED_LIBS +=	bemenu                    1.0 # 0.6.3
 
 GH_ACCOUNT =	Cloudef
 GH_PROJECT =	bemenu
-GH_TAGNAME =	0.6.2
+GH_TAGNAME =	0.6.3
 
 MAINTAINER =	Dimitri Karamazov <deserter666@danwin1210.me>
 
@@ -18,7 +18,8 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += X11 Xinerama c cairo curses glib-2.0 gobject-2.0 harfbuzz
 WANTLIB += intl m pango-1.0 pangocairo-1.0
 
-LIB_DEPENDS =	devel/pango
+LIB_DEPENDS =	devel/harfbuzz \
+		devel/pango
 
 USE_GMAKE =	Yes
 MAKE_FILE =	GNUmakefile

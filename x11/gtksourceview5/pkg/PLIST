@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/04/02 09:27:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/09/05 12:43:43 jasper Exp $
 include/gtksourceview-5/
 include/gtksourceview-5/gtksourceview/
 include/gtksourceview-5/gtksourceview/completion-providers/
@@ -36,6 +36,7 @@ include/gtksourceview-5/gtksourceview/gtksourcemark.h
 include/gtksourceview-5/gtksourceview/gtksourcemarkattributes.h
 include/gtksourceview-5/gtksourceview/gtksourceprintcompositor.h
 include/gtksourceview-5/gtksourceview/gtksourceregion.h
+include/gtksourceview-5/gtksourceview/gtksourcescheduler.h
 include/gtksourceview-5/gtksourceview/gtksourcesearchcontext.h
 include/gtksourceview-5/gtksourceview/gtksourcesearchsettings.h
 include/gtksourceview-5/gtksourceview/gtksourcesnippet.h
@@ -236,8 +237,8 @@ share/gtksourceview-5/snippets/
 share/gtksourceview-5/snippets/licenses.snippets
 share/gtksourceview-5/snippets/snippets.rng
 share/gtksourceview-5/styles/
-share/gtksourceview-5/styles/Adwaita-dark.style-scheme.xml
-share/gtksourceview-5/styles/Adwaita.style-scheme.xml
+share/gtksourceview-5/styles/Adwaita-dark.xml
+share/gtksourceview-5/styles/Adwaita.xml
 share/gtksourceview-5/styles/classic.xml
 share/gtksourceview-5/styles/cobalt.xml
 share/gtksourceview-5/styles/kate.xml

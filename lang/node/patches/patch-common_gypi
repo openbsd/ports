@@ -1,9 +1,9 @@
-$OpenBSD: patch-common_gypi,v 1.15 2020/07/22 17:30:24 jasper Exp $
+$OpenBSD: patch-common_gypi,v 1.16 2021/09/06 13:27:41 sthen Exp $
 
 Index: common.gypi
 --- common.gypi.orig
 +++ common.gypi
-@@ -390,7 +390,7 @@
+@@ -396,7 +396,7 @@
              'cflags': [ '-m32' ],
              'ldflags': [ '-m32' ],
            }],
@@ -12,7 +12,7 @@ Index: common.gypi
              'cflags': [ '-m64', '-mminimal-toc' ],
              'ldflags': [ '-m64' ],
            }],
-@@ -497,6 +497,10 @@
+@@ -524,6 +524,10 @@
          'ldflags': [
            '-Wl,--export-dynamic',
          ],

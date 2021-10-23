@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_modules_rlm_pap_rlm_pap_c,v 1.1 2021/09/16 10:36:39 sthen Exp $
+
+Index: src/modules/rlm_pap/rlm_pap.c
+--- src/modules/rlm_pap/rlm_pap.c.orig
++++ src/modules/rlm_pap/rlm_pap.c
+@@ -927,7 +927,7 @@ static inline rlm_rcode_t CC_HINT(nonnull) pap_auth_pb
+ 		digest_len = SHA512_DIGEST_LENGTH;
+ 		break;
+ 
+-#  if OPENSSL_VERSION_NUMBER >= 0x10101000L
++#  if OPENSSL_VERSION_NUMBER >= 0x10101000L && !defined(LIBRESSL_VERSION_NUMBER)
+ 	case PW_SSHA3_224_PASSWORD:
+ 		evp_md = EVP_sha3_224();
+ 		digest_len = SHA224_DIGEST_LENGTH;

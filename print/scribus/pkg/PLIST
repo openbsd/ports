@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2021/04/07 14:08:35 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.21 2021/10/04 11:12:22 solene Exp $
 @bin bin/scribus
 lib/scribus/
 lib/scribus/plugins/
@@ -1874,6 +1874,8 @@ share/scribus/editorconfig/200_gnuplot.xml
 share/scribus/editorconfig/300_lilypond.xml
 share/scribus/editorconfig/400_dot.xml
 share/scribus/editorconfig/500_povray.xml
+share/scribus/editorconfig/600_xelatex.tar
+share/scribus/editorconfig/600_xelatex.xml
 share/scribus/editorconfig/dot.svg
 share/scribus/editorconfig/gnuplot.png
 share/scribus/editorconfig/lilypond.png
@@ -1949,6 +1951,7 @@ share/scribus/icons/1_5_0/16/draw-triangle4.png
 share/scribus/icons/1_5_0/16/edit-clear.png
 share/scribus/icons/1_5_0/16/edit-copy.png
 share/scribus/icons/1_5_0/16/edit-cut.png
+share/scribus/icons/1_5_0/16/edit-delete-all.png
 share/scribus/icons/1_5_0/16/edit-delete.png
 share/scribus/icons/1_5_0/16/edit-find-replace.png
 share/scribus/icons/1_5_0/16/edit-guides.png
@@ -2489,6 +2492,7 @@ share/scribus/icons/1_5_1/16/draw-triangle4.png
 share/scribus/icons/1_5_1/16/edit-clear.png
 share/scribus/icons/1_5_1/16/edit-copy.png
 share/scribus/icons/1_5_1/16/edit-cut.png
+share/scribus/icons/1_5_1/16/edit-delete-all.png
 share/scribus/icons/1_5_1/16/edit-delete.png
 share/scribus/icons/1_5_1/16/edit-find-replace.png
 share/scribus/icons/1_5_1/16/edit-guides.png
@@ -2580,6 +2584,7 @@ share/scribus/icons/1_5_1/22/align-vertical-center.png
 share/scribus/icons/1_5_1/22/align-vertical-top-out.png
 share/scribus/icons/1_5_1/22/align-vertical-top.png
 share/scribus/icons/1_5_1/22/annot3d.png
+share/scribus/icons/1_5_1/22/character-style.png
 share/scribus/icons/1_5_1/22/checkbox.png
 share/scribus/icons/1_5_1/22/close.png
 share/scribus/icons/1_5_1/22/color-picker.png
@@ -2641,9 +2646,12 @@ share/scribus/icons/1_5_1/22/insert-table-columns.png
 share/scribus/icons/1_5_1/22/insert-table-rows.png
 share/scribus/icons/1_5_1/22/insert-table.png
 share/scribus/icons/1_5_1/22/insert-text-frame.png
+share/scribus/icons/1_5_1/22/language.png
 share/scribus/icons/1_5_1/22/list-box.png
 share/scribus/icons/1_5_1/22/measure.png
 share/scribus/icons/1_5_1/22/merge-table-cells.png
+share/scribus/icons/1_5_1/22/orphan.png
+share/scribus/icons/1_5_1/22/paragraph-style.png
 share/scribus/icons/1_5_1/22/pdf-annotations.png
 share/scribus/icons/1_5_1/22/pointer.png
 share/scribus/icons/1_5_1/22/preflight-verifier.png
@@ -2652,6 +2660,7 @@ share/scribus/icons/1_5_1/22/split-table-cells.png
 share/scribus/icons/1_5_1/22/story-editor.png
 share/scribus/icons/1_5_1/22/swap-left.png
 share/scribus/icons/1_5_1/22/swap-right.png
+share/scribus/icons/1_5_1/22/text-align.png
 share/scribus/icons/1_5_1/22/text-field.png
 share/scribus/icons/1_5_1/22/text-frame-link.png
 share/scribus/icons/1_5_1/22/text-frame-unlink.png
@@ -2661,6 +2670,7 @@ share/scribus/icons/1_5_1/22/transform-shear-down.png
 share/scribus/icons/1_5_1/22/transform-shear-left.png
 share/scribus/icons/1_5_1/22/transform-shear-right.png
 share/scribus/icons/1_5_1/22/transform-shear-up.png
+share/scribus/icons/1_5_1/22/widow.png
 share/scribus/icons/1_5_1/22/zoom-in.png
 share/scribus/icons/1_5_1/22/zoom-original.png
 share/scribus/icons/1_5_1/22/zoom-out.png
@@ -2718,6 +2728,7 @@ share/scribus/icons/1_5_1/docattributes_16.png
 share/scribus/icons/1_5_1/document2.png
 share/scribus/icons/1_5_1/documentinfo.png
 share/scribus/icons/1_5_1/editm.png
+share/scribus/icons/1_5_1/ellipsis.png
 share/scribus/icons/1_5_1/exit.png
 share/scribus/icons/1_5_1/exit22.png
 share/scribus/icons/1_5_1/expand.png
@@ -2874,6 +2885,7 @@ share/scribus/icons/1_5_1_dark/16/draw-triangle4.png
 share/scribus/icons/1_5_1_dark/16/edit-clear.png
 share/scribus/icons/1_5_1_dark/16/edit-copy.png
 share/scribus/icons/1_5_1_dark/16/edit-cut.png
+share/scribus/icons/1_5_1_dark/16/edit-delete-all.png
 share/scribus/icons/1_5_1_dark/16/edit-delete.png
 share/scribus/icons/1_5_1_dark/16/edit-find-replace.png
 share/scribus/icons/1_5_1_dark/16/edit-guides.png
@@ -2965,6 +2977,7 @@ share/scribus/icons/1_5_1_dark/22/align-vertical-center.png
 share/scribus/icons/1_5_1_dark/22/align-vertical-top-out.png
 share/scribus/icons/1_5_1_dark/22/align-vertical-top.png
 share/scribus/icons/1_5_1_dark/22/annot3d.png
+share/scribus/icons/1_5_1_dark/22/character-style.png
 share/scribus/icons/1_5_1_dark/22/checkbox.png
 share/scribus/icons/1_5_1_dark/22/close.png
 share/scribus/icons/1_5_1_dark/22/color-picker.png
@@ -3027,9 +3040,12 @@ share/scribus/icons/1_5_1_dark/22/insert-table-columns.png
 share/scribus/icons/1_5_1_dark/22/insert-table-rows.png
 share/scribus/icons/1_5_1_dark/22/insert-table.png
 share/scribus/icons/1_5_1_dark/22/insert-text-frame.png
+share/scribus/icons/1_5_1_dark/22/language.png
 share/scribus/icons/1_5_1_dark/22/list-box.png
 share/scribus/icons/1_5_1_dark/22/measure.png
 share/scribus/icons/1_5_1_dark/22/merge-table-cells.png
+share/scribus/icons/1_5_1_dark/22/orphan.png
+share/scribus/icons/1_5_1_dark/22/paragraph-style.png
 share/scribus/icons/1_5_1_dark/22/pdf-annotations.png
 share/scribus/icons/1_5_1_dark/22/pointer.png
 share/scribus/icons/1_5_1_dark/22/preflight-verifier.png
@@ -3038,6 +3054,7 @@ share/scribus/icons/1_5_1_dark/22/split-table-cells.png
 share/scribus/icons/1_5_1_dark/22/story-editor.png
 share/scribus/icons/1_5_1_dark/22/swap-left.png
 share/scribus/icons/1_5_1_dark/22/swap-right.png
+share/scribus/icons/1_5_1_dark/22/text-align.png
 share/scribus/icons/1_5_1_dark/22/text-field.png
 share/scribus/icons/1_5_1_dark/22/text-frame-link.png
 share/scribus/icons/1_5_1_dark/22/text-frame-unlink.png
@@ -3047,6 +3064,7 @@ share/scribus/icons/1_5_1_dark/22/transform-shear-down.png
 share/scribus/icons/1_5_1_dark/22/transform-shear-left.png
 share/scribus/icons/1_5_1_dark/22/transform-shear-right.png
 share/scribus/icons/1_5_1_dark/22/transform-shear-up.png
+share/scribus/icons/1_5_1_dark/22/widow.png
 share/scribus/icons/1_5_1_dark/22/zoom-in.png
 share/scribus/icons/1_5_1_dark/22/zoom-original.png
 share/scribus/icons/1_5_1_dark/22/zoom-out.png
@@ -3104,6 +3122,7 @@ share/scribus/icons/1_5_1_dark/docattributes_16.png
 share/scribus/icons/1_5_1_dark/document2.png
 share/scribus/icons/1_5_1_dark/documentinfo.png
 share/scribus/icons/1_5_1_dark/editm.png
+share/scribus/icons/1_5_1_dark/ellipsis.png
 share/scribus/icons/1_5_1_dark/exit.png
 share/scribus/icons/1_5_1_dark/exit22.png
 share/scribus/icons/1_5_1_dark/expand.png
@@ -3606,6 +3625,7 @@ share/scribus/translations/scribus.pms.qm
 share/scribus/translations/scribus.pt.qm
 share/scribus/translations/scribus.pt_BR.qm
 share/scribus/translations/scribus.pt_PT.qm
+share/scribus/translations/scribus.ro.qm
 share/scribus/translations/scribus.ru.qm
 share/scribus/translations/scribus.sa.qm
 share/scribus/translations/scribus.si.qm
@@ -3620,6 +3640,7 @@ share/scribus/translations/scribus.te.qm
 share/scribus/translations/scribus.th_TH.qm
 share/scribus/translations/scribus.tr.qm
 share/scribus/translations/scribus.uk.qm
+share/scribus/translations/scribus.untranslated.qm
 share/scribus/translations/scribus.zh_CN.qm
 share/scribus/translations/scribus.zh_TW.qm
 share/scribus/unicodenameslist.txt

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.407 2021/07/29 01:09:08 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.409 2021/09/13 09:18:18 sthen Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -32,10 +32,10 @@
      SUBDIR += dkimproxy
      SUBDIR += dma
      SUBDIR += dovecot
+     SUBDIR += dovecot-fts-flatcurve
      SUBDIR += dovecot-fts-xapian
      SUBDIR += dovecot-pigeonhole
      SUBDIR += elm
-     SUBDIR += enigmail
      SUBDIR += evolution
      SUBDIR += evolution-ews
      SUBDIR += evolution-rss

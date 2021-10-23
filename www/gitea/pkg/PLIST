@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2021/04/13 22:37:51 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.21 2021/09/03 22:46:02 pvk Exp $
 @newgroup _gitea:787
 @newuser _gitea:787:_gitea:daemon:Gitea Account:/var/gitea:/bin/sh
 @rcscript ${RCDIR}/gitea
@@ -26,6 +26,7 @@ share/gitea/options/gitignore/
 share/gitea/options/gitignore/Actionscript
 share/gitea/options/gitignore/Ada
 share/gitea/options/gitignore/Agda
+share/gitea/options/gitignore/AltiumDesigner
 share/gitea/options/gitignore/Android
 share/gitea/options/gitignore/Anjuta
 share/gitea/options/gitignore/Ansible
@@ -99,6 +100,7 @@ share/gitea/options/gitignore/Go
 share/gitea/options/gitignore/Godot
 share/gitea/options/gitignore/Gradle
 share/gitea/options/gitignore/Grails
+share/gitea/options/gitignore/Gretl
 share/gitea/options/gitignore/Haskell
 share/gitea/options/gitignore/Hugo
 share/gitea/options/gitignore/IAR_EWARM
@@ -187,6 +189,7 @@ share/gitea/options/gitignore/Qooxdoo
 share/gitea/options/gitignore/Qt
 share/gitea/options/gitignore/R
 share/gitea/options/gitignore/ROS
+share/gitea/options/gitignore/ROS2
 share/gitea/options/gitignore/Racket
 share/gitea/options/gitignore/Rails
 share/gitea/options/gitignore/Raku
@@ -199,6 +202,7 @@ share/gitea/options/gitignore/Rust
 share/gitea/options/gitignore/SAM
 share/gitea/options/gitignore/SBT
 share/gitea/options/gitignore/SCons
+share/gitea/options/gitignore/SPFx
 share/gitea/options/gitignore/SVN
 share/gitea/options/gitignore/Sass
 share/gitea/options/gitignore/Scala
@@ -213,6 +217,7 @@ share/gitea/options/gitignore/Snap
 share/gitea/options/gitignore/Splunk
 share/gitea/options/gitignore/Stata
 share/gitea/options/gitignore/Stella
+share/gitea/options/gitignore/Strapi
 share/gitea/options/gitignore/SublimeText
 share/gitea/options/gitignore/SugarCRM
 share/gitea/options/gitignore/Swift
@@ -227,10 +232,12 @@ share/gitea/options/gitignore/Textpattern
 share/gitea/options/gitignore/ThinkPHP
 share/gitea/options/gitignore/TortoiseGit
 share/gitea/options/gitignore/TurboGears2
+share/gitea/options/gitignore/TwinCAT3
 share/gitea/options/gitignore/Typo3
 share/gitea/options/gitignore/Umbraco
 share/gitea/options/gitignore/Unity
 share/gitea/options/gitignore/UnrealEngine
+share/gitea/options/gitignore/V
 share/gitea/options/gitignore/VVVV
 share/gitea/options/gitignore/Vagrant
 share/gitea/options/gitignore/Vim
@@ -306,6 +313,7 @@ share/gitea/options/license/BSD-3-Clause-Attribution
 share/gitea/options/license/BSD-3-Clause-Clear
 share/gitea/options/license/BSD-3-Clause-LBNL
 share/gitea/options/license/BSD-3-Clause-Modification
+share/gitea/options/license/BSD-3-Clause-No-Military-License
 share/gitea/options/license/BSD-3-Clause-No-Nuclear-License
 share/gitea/options/license/BSD-3-Clause-No-Nuclear-License-2014
 share/gitea/options/license/BSD-3-Clause-No-Nuclear-Warranty
@@ -332,6 +340,7 @@ share/gitea/options/license/CAL-1.0-Combined-Work-Exception
 share/gitea/options/license/CATOSL-1.1
 share/gitea/options/license/CC-BY-1.0
 share/gitea/options/license/CC-BY-2.0
+share/gitea/options/license/CC-BY-2.5-AU
 share/gitea/options/license/CC-BY-3.0
 share/gitea/options/license/CC-BY-3.0-AT
 share/gitea/options/license/CC-BY-3.0-US
@@ -364,6 +373,7 @@ share/gitea/options/license/CC-PDDC
 share/gitea/options/license/CC0-1.0
 share/gitea/options/license/CDDL-1.0
 share/gitea/options/license/CDDL-1.1
+share/gitea/options/license/CDL-1.0
 share/gitea/options/license/CDLA-Permissive-1.0
 share/gitea/options/license/CDLA-Sharing-1.0
 share/gitea/options/license/CECILL-1.0
@@ -588,6 +598,7 @@ share/gitea/options/license/OLDAP-2.4
 share/gitea/options/license/OLDAP-2.7
 share/gitea/options/license/OML
 share/gitea/options/license/OPL-1.0
+share/gitea/options/license/OPUBL-1.0
 share/gitea/options/license/OSET-PL-2.1
 share/gitea/options/license/OSL-1.0
 share/gitea/options/license/OSL-1.1
@@ -751,7 +762,6 @@ share/gitea/public/css/
 share/gitea/public/css/dropzone.css
 share/gitea/public/css/easymde.css
 share/gitea/public/css/index.css
-share/gitea/public/css/index.css.map
 share/gitea/public/css/minicolors.css
 share/gitea/public/css/monaco.css
 share/gitea/public/css/swagger.css
@@ -784,7 +794,12 @@ share/gitea/public/img/checkmark.png
 share/gitea/public/img/dingtalk.ico
 share/gitea/public/img/discord.png
 share/gitea/public/img/emoji/
+share/gitea/public/img/emoji/codeberg.png
+share/gitea/public/img/emoji/git.png
 share/gitea/public/img/emoji/gitea.png
+share/gitea/public/img/emoji/github.png
+share/gitea/public/img/emoji/gitlab.png
+share/gitea/public/img/emoji/gogs.png
 share/gitea/public/img/failed.png
 share/gitea/public/img/favicon.png
 share/gitea/public/img/favicon.svg
@@ -800,6 +815,8 @@ share/gitea/public/img/openid-16x16.png
 share/gitea/public/img/repo_default.png
 share/gitea/public/img/slack.png
 share/gitea/public/img/svg/
+share/gitea/public/img/svg/fontawesome-openid.svg
+share/gitea/public/img/svg/fontawesome-windows.svg
 share/gitea/public/img/svg/gitea-double-chevron-left.svg
 share/gitea/public/img/svg/gitea-double-chevron-right.svg
 share/gitea/public/img/svg/gitea-git.svg
@@ -823,6 +840,7 @@ share/gitea/public/img/svg/octicon-arrow-up.svg
 share/gitea/public/img/svg/octicon-beaker.svg
 share/gitea/public/img/svg/octicon-bell-slash.svg
 share/gitea/public/img/svg/octicon-bell.svg
+share/gitea/public/img/svg/octicon-blocked.svg
 share/gitea/public/img/svg/octicon-bold.svg
 share/gitea/public/img/svg/octicon-book.svg
 share/gitea/public/img/svg/octicon-bookmark-slash.svg
@@ -847,6 +865,9 @@ share/gitea/public/img/svg/octicon-clock.svg
 share/gitea/public/img/svg/octicon-code-review.svg
 share/gitea/public/img/svg/octicon-code-square.svg
 share/gitea/public/img/svg/octicon-code.svg
+share/gitea/public/img/svg/octicon-codescan-checkmark.svg
+share/gitea/public/img/svg/octicon-codescan.svg
+share/gitea/public/img/svg/octicon-codespaces.svg
 share/gitea/public/img/svg/octicon-comment-discussion.svg
 share/gitea/public/img/svg/octicon-comment.svg
 share/gitea/public/img/svg/octicon-container.svg
@@ -855,6 +876,7 @@ share/gitea/public/img/svg/octicon-credit-card.svg
 share/gitea/public/img/svg/octicon-cross-reference.svg
 share/gitea/public/img/svg/octicon-dash.svg
 share/gitea/public/img/svg/octicon-database.svg
+share/gitea/public/img/svg/octicon-dependabot.svg
 share/gitea/public/img/svg/octicon-desktop-download.svg
 share/gitea/public/img/svg/octicon-device-camera-video.svg
 share/gitea/public/img/svg/octicon-device-camera.svg
@@ -869,6 +891,7 @@ share/gitea/public/img/svg/octicon-diff.svg
 share/gitea/public/img/svg/octicon-dot-fill.svg
 share/gitea/public/img/svg/octicon-dot.svg
 share/gitea/public/img/svg/octicon-download.svg
+share/gitea/public/img/svg/octicon-duplicate.svg
 share/gitea/public/img/svg/octicon-ellipsis.svg
 share/gitea/public/img/svg/octicon-eye-closed.svg
 share/gitea/public/img/svg/octicon-eye.svg
@@ -934,10 +957,12 @@ share/gitea/public/img/svg/octicon-milestone.svg
 share/gitea/public/img/svg/octicon-mirror.svg
 share/gitea/public/img/svg/octicon-moon.svg
 share/gitea/public/img/svg/octicon-mortar-board.svg
+share/gitea/public/img/svg/octicon-multi-select.svg
 share/gitea/public/img/svg/octicon-mute.svg
 share/gitea/public/img/svg/octicon-no-entry.svg
 share/gitea/public/img/svg/octicon-north-star.svg
 share/gitea/public/img/svg/octicon-note.svg
+share/gitea/public/img/svg/octicon-number.svg
 share/gitea/public/img/svg/octicon-octoface.svg
 share/gitea/public/img/svg/octicon-organization.svg
 share/gitea/public/img/svg/octicon-package-dependencies.svg
@@ -947,6 +972,7 @@ share/gitea/public/img/svg/octicon-paintbrush.svg
 share/gitea/public/img/svg/octicon-paper-airplane.svg
 share/gitea/public/img/svg/octicon-pencil.svg
 share/gitea/public/img/svg/octicon-people.svg
+share/gitea/public/img/svg/octicon-person-add.svg
 share/gitea/public/img/svg/octicon-person.svg
 share/gitea/public/img/svg/octicon-pin.svg
 share/gitea/public/img/svg/octicon-play.svg
@@ -978,6 +1004,8 @@ share/gitea/public/img/svg/octicon-shield-check.svg
 share/gitea/public/img/svg/octicon-shield-lock.svg
 share/gitea/public/img/svg/octicon-shield-x.svg
 share/gitea/public/img/svg/octicon-shield.svg
+share/gitea/public/img/svg/octicon-sidebar-collapse.svg
+share/gitea/public/img/svg/octicon-sidebar-expand.svg
 share/gitea/public/img/svg/octicon-sign-in.svg
 share/gitea/public/img/svg/octicon-sign-out.svg
 share/gitea/public/img/svg/octicon-skip.svg
@@ -992,6 +1020,7 @@ share/gitea/public/img/svg/octicon-stopwatch.svg
 share/gitea/public/img/svg/octicon-strikethrough.svg
 share/gitea/public/img/svg/octicon-sun.svg
 share/gitea/public/img/svg/octicon-sync.svg
+share/gitea/public/img/svg/octicon-table.svg
 share/gitea/public/img/svg/octicon-tag.svg
 share/gitea/public/img/svg/octicon-tasklist.svg
 share/gitea/public/img/svg/octicon-telescope.svg
@@ -1000,7 +1029,7 @@ share/gitea/public/img/svg/octicon-three-bars.svg
 share/gitea/public/img/svg/octicon-thumbsdown.svg
 share/gitea/public/img/svg/octicon-thumbsup.svg
 share/gitea/public/img/svg/octicon-tools.svg
-share/gitea/public/img/svg/octicon-trashcan.svg
+share/gitea/public/img/svg/octicon-trash.svg
 share/gitea/public/img/svg/octicon-triangle-down.svg
 share/gitea/public/img/svg/octicon-triangle-left.svg
 share/gitea/public/img/svg/octicon-triangle-right.svg
@@ -1013,6 +1042,7 @@ share/gitea/public/img/svg/octicon-unverified.svg
 share/gitea/public/img/svg/octicon-upload.svg
 share/gitea/public/img/svg/octicon-verified.svg
 share/gitea/public/img/svg/octicon-versions.svg
+share/gitea/public/img/svg/octicon-video.svg
 share/gitea/public/img/svg/octicon-workflow.svg
 share/gitea/public/img/svg/octicon-x-circle-fill.svg
 share/gitea/public/img/svg/octicon-x-circle.svg
@@ -1022,12 +1052,10 @@ share/gitea/public/img/telegram.png
 share/gitea/public/img/webpack/
 share/gitea/public/img/webpack/jquery.minicolors.png
 share/gitea/public/js/
-share/gitea/public/js/clipboard.js
 share/gitea/public/js/dropzone.js
 share/gitea/public/js/easymde.js
 share/gitea/public/js/eventsource.sharedworker.js
 share/gitea/public/js/index.js
-share/gitea/public/js/index.js.map
 share/gitea/public/js/licenses.txt
 share/gitea/public/js/mermaid.js
 share/gitea/public/js/minicolors.js
@@ -1039,6 +1067,7 @@ share/gitea/public/js/monaco-language-abap.js
 share/gitea/public/js/monaco-language-apex.js
 share/gitea/public/js/monaco-language-azcli.js
 share/gitea/public/js/monaco-language-bat.js
+share/gitea/public/js/monaco-language-bicep.js
 share/gitea/public/js/monaco-language-cameligo.js
 share/gitea/public/js/monaco-language-clojure.js
 share/gitea/public/js/monaco-language-coffee.js
@@ -1049,6 +1078,8 @@ share/gitea/public/js/monaco-language-css.js
 share/gitea/public/js/monaco-language-cssmode.js
 share/gitea/public/js/monaco-language-dart.js
 share/gitea/public/js/monaco-language-dockerfile.js
+share/gitea/public/js/monaco-language-ecl.js
+share/gitea/public/js/monaco-language-elixir.js
 share/gitea/public/js/monaco-language-fsharp.js
 share/gitea/public/js/monaco-language-go.js
 share/gitea/public/js/monaco-language-graphql.js
@@ -1064,7 +1095,9 @@ share/gitea/public/js/monaco-language-julia.js
 share/gitea/public/js/monaco-language-kotlin.js
 share/gitea/public/js/monaco-language-less.js
 share/gitea/public/js/monaco-language-lexon.js
+share/gitea/public/js/monaco-language-liquid.js
 share/gitea/public/js/monaco-language-lua.js
+share/gitea/public/js/monaco-language-m3.js
 share/gitea/public/js/monaco-language-markdown.js
 share/gitea/public/js/monaco-language-mips.js
 share/gitea/public/js/monaco-language-msdax.js
@@ -2263,6 +2296,7 @@ share/gitea/templates/repo/diff/comment_form_datahandler.tmpl
 share/gitea/templates/repo/diff/comments.tmpl
 share/gitea/templates/repo/diff/compare.tmpl
 share/gitea/templates/repo/diff/conversation.tmpl
+share/gitea/templates/repo/diff/csv_diff.tmpl
 share/gitea/templates/repo/diff/image_diff.tmpl
 share/gitea/templates/repo/diff/new_comment.tmpl
 share/gitea/templates/repo/diff/new_review.tmpl
@@ -2330,6 +2364,7 @@ share/gitea/templates/repo/migrate/gitlab.tmpl
 share/gitea/templates/repo/migrate/gogs.tmpl
 share/gitea/templates/repo/migrate/migrate.tmpl
 share/gitea/templates/repo/migrate/migrating.tmpl
+share/gitea/templates/repo/migrate/options.tmpl
 share/gitea/templates/repo/projects/
 share/gitea/templates/repo/projects/list.tmpl
 share/gitea/templates/repo/projects/new.tmpl
@@ -2359,6 +2394,7 @@ share/gitea/templates/repo/settings/nav.tmpl
 share/gitea/templates/repo/settings/navbar.tmpl
 share/gitea/templates/repo/settings/options.tmpl
 share/gitea/templates/repo/settings/protected_branch.tmpl
+share/gitea/templates/repo/settings/tags.tmpl
 share/gitea/templates/repo/settings/webhook/
 share/gitea/templates/repo/settings/webhook/base.tmpl
 share/gitea/templates/repo/settings/webhook/base_list.tmpl
@@ -2408,6 +2444,7 @@ share/gitea/templates/user/auth/forgot_passwd.tmpl
 share/gitea/templates/user/auth/grant.tmpl
 share/gitea/templates/user/auth/grant_error.tmpl
 share/gitea/templates/user/auth/link_account.tmpl
+share/gitea/templates/user/auth/oidc_wellknown.tmpl
 share/gitea/templates/user/auth/prohibit_login.tmpl
 share/gitea/templates/user/auth/reset_passwd.tmpl
 share/gitea/templates/user/auth/signin.tmpl

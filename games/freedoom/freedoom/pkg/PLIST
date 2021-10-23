@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/11/02 18:39:44 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/10/14 16:08:54 sdk Exp $
 share/doc/freedoom/
 share/doc/freedoom/COPYING.txt
 share/doc/freedoom/CREDITS.txt
 share/doc/freedoom/NEWS.html
 share/doc/freedoom/README.html
+share/doc/freedoom/freedoom-manual.pdf
 share/doom/
 share/doom/freedoom1.wad
 share/doom/freedoom2.wad

@@ -1,6 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/11 19:25:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/09/13 17:06:45 solene Exp $
 @bin bin/swirc
 @man man/man1/swirc.1
 @man man/man5/swirc.conf.5
+share/locale/de/LC_MESSAGES/swirc.mo
+share/locale/fi/LC_MESSAGES/swirc.mo
+share/locale/fr/LC_MESSAGES/swirc.mo
+share/locale/sv/LC_MESSAGES/swirc.mo
 @comment share/swirc/
 @comment share/swirc/swirc-royal.png

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/06/19 18:34:40 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/10/19 20:08:41 rsadowski Exp $
 @pkgpath x11/kde4/kmix
 @bin bin/kmix
 @bin bin/kmixctrl
@@ -208,6 +208,7 @@ share/locale/ug/LC_MESSAGES/kmix.mo
 share/locale/uk/LC_MESSAGES/kmix.mo
 share/locale/zh_CN/LC_MESSAGES/kmix.mo
 share/locale/zh_TW/LC_MESSAGES/kmix.mo
+share/metainfo/
 share/metainfo/org.kde.kmix.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

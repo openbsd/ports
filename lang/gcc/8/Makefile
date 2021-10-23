@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2021/08/21 03:25:05 gkoehler Exp $
+# $OpenBSD: Makefile,v 1.46 2021/08/24 18:13:19 gkoehler Exp $
 
 ONLY_FOR_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el \
 	powerpc powerpc64 sparc64
@@ -6,7 +6,9 @@ ONLY_FOR_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el \
 # XXX: sparc64
 ONLY_FOR_ARCHS-ada = amd64 hppa i386 mips64 powerpc
 
-# powerpc lld can't link C++ code from gcc
+# powerpc lld can't link C++ code from gcc, "ld: error: relocation
+# refers to a discarded section:" .data.rel.ro.* or
+# .sdata.DW.ref.__gxx_personality_v0
 .if ${MACHINE_ARCH:Mpowerpc}
 USE_LLD = No
 .endif

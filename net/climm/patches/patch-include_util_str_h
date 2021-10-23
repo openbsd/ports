@@ -1,0 +1,13 @@
+$OpenBSD: patch-include_util_str_h,v 1.1 2021/09/20 15:47:12 tb Exp $
+
+Index: include/util_str.h
+--- include/util_str.h.orig
++++ include/util_str.h
+@@ -36,6 +36,7 @@ str_t       s_deln    (str_t str, size_t pos, size_t l
+ void        s_done    (str_t str);
+ 
+ const char *s_sprintf (const char *fmt, ...) __attribute__ ((format (__printf__, 1, 2)));
++const char *s_sprintf_len (int *len, const char *fmt, ...) __attribute__ ((format (__printf__, 2, 3)));
+ const char *s_ip      (UDWORD ip);
+ const char *s_status  (status_t status, UDWORD nativestatus);
+ const char *s_status_short  (status_t status);

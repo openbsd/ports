@@ -1,9 +1,9 @@
-$OpenBSD: patch-vcl_skia_gdiimpl_cxx,v 1.4 2021/07/11 13:14:06 robert Exp $
+$OpenBSD: patch-vcl_skia_gdiimpl_cxx,v 1.5 2021/09/02 11:11:58 robert Exp $
 
 Index: vcl/skia/gdiimpl.cxx
 --- vcl/skia/gdiimpl.cxx.orig
 +++ vcl/skia/gdiimpl.cxx
-@@ -917,7 +917,7 @@ void SkiaSalGraphicsImpl::performDrawPolyPolygon(const
+@@ -920,7 +920,7 @@ void SkiaSalGraphicsImpl::performDrawPolyPolygon(const
          getDrawCanvas()->drawPath(polygonPath, aPaint);
      }
      postDraw();

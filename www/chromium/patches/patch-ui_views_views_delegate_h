@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_views_views_delegate_h,v 1.23 2021/07/21 15:43:34 robert Exp $
+$OpenBSD: patch-ui_views_views_delegate_h,v 1.24 2021/09/01 16:54:41 robert Exp $
 
 Index: ui/views/views_delegate.h
 --- ui/views/views_delegate.h.orig

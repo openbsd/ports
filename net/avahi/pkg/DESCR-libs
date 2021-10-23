@@ -1,0 +1,4 @@
+Avahi is a free, standards-compliant implementation of the Zeroconf
+protocols Multicast DNS and DNS-SD.
+
+This package provides the avahi libraries and common data files.

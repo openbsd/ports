@@ -1,7 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/06/19 18:34:34 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/09/10 08:43:51 rsadowski Exp $
 @pkgpath x11/kde4/kbounce
 @bin bin/kbounce
 share/applications/org.kde.kbounce.desktop
+share/doc/HTML/ca/kbounce/
+share/doc/HTML/ca/kbounce/index.cache.bz2
+share/doc/HTML/ca/kbounce/index.docbook
+share/doc/HTML/ca/kbounce/kbounce_corridor1.png
+share/doc/HTML/ca/kbounce/kbounce_corridor2.png
 share/doc/HTML/de/kbounce/
 share/doc/HTML/de/kbounce/button-new.png
 share/doc/HTML/de/kbounce/button-pause.png

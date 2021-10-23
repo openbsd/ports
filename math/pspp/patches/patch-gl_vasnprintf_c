@@ -1,0 +1,21 @@
+$OpenBSD: patch-gl_vasnprintf_c,v 1.1 2021/08/31 18:07:55 jca Exp $
+
+Don't use printf %n.
+https://git.savannah.gnu.org/cgit/gnulib.git/commit/lib/vasnprintf.c?id=b954346c6101860c7b462d1b286641d1307afd6c
+
+Index: gl/vasnprintf.c
+--- gl/vasnprintf.c.orig
++++ gl/vasnprintf.c
+@@ -5117,11 +5117,7 @@ VASNPRINTF (DCHAR_T *resultbuf, size_t *lengthp,
+ #endif
+                   *fbp = dp->conversion;
+ #if USE_SNPRINTF
+-# if ! (((__GLIBC__ > 2 || (__GLIBC__ == 2 && __GLIBC_MINOR__ >= 3))        \
+-         && !defined __UCLIBC__)                                            \
+-        || (defined __APPLE__ && defined __MACH__)                          \
+-        || defined __ANDROID__                                              \
+-        || (defined _WIN32 && ! defined __CYGWIN__))
++# if 0
+                 fbp[1] = '%';
+                 fbp[2] = 'n';
+                 fbp[3] = '\0';

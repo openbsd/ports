@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_common_BUILD_gn,v 1.22 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-content_common_BUILD_gn,v 1.25 2021/10/20 10:27:47 robert Exp $
 
 Index: content/common/BUILD.gn
 --- content/common/BUILD.gn.orig
 +++ content/common/BUILD.gn
-@@ -408,6 +408,9 @@ if (is_linux || is_chromeos) {
+@@ -406,6 +406,9 @@ if (is_linux || is_chromeos) {
      public = [ "set_process_title_linux.h" ]
      sources = [ "set_process_title_linux.cc" ]
      deps = [ "//base" ]

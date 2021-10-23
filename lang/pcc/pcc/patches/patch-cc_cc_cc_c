@@ -1,9 +1,9 @@
-$OpenBSD: patch-cc_cc_cc_c,v 1.1 2021/02/18 02:26:43 daniel Exp $
+$OpenBSD: patch-cc_cc_cc_c,v 1.2 2021/10/04 00:03:00 daniel Exp $
 
 Index: cc/cc/cc.c
 --- cc/cc/cc.c.orig
 +++ cc/cc/cc.c
-@@ -1787,7 +1787,7 @@ static char *gcppflags[] = {
+@@ -1801,7 +1801,7 @@ static char *gcppflags[] = {
  #ifndef os_win32
  #ifdef GCC_COMPAT
  	"-D__GNUC__=4",

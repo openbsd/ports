@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.426 2021/06/09 10:30:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.429 2021/10/11 09:36:30 kn Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -41,7 +41,6 @@
      SUBDIR += openldap,aci
      SUBDIR += openldap,aci,gssapi
      SUBDIR += openldap,gssapi
-     SUBDIR += openldap23
      SUBDIR += p5-AnyEvent-CouchDB
      SUBDIR += p5-AsciiDB-TagFile
      SUBDIR += p5-BerkeleyDB
@@ -201,9 +200,12 @@
      SUBDIR += ruby-amalgalite,ruby27
      SUBDIR += ruby-amalgalite,ruby30
      SUBDIR += ruby-hiera3
-     SUBDIR += ruby-hiera-eyaml
-     SUBDIR += ruby-hiera-eyaml-gpg
-     SUBDIR += ruby-hiera-file
+     SUBDIR += ruby-hiera-eyaml,ruby27
+     SUBDIR += ruby-hiera-eyaml,ruby30
+     SUBDIR += ruby-hiera-eyaml-gpg,ruby27
+     SUBDIR += ruby-hiera-eyaml-gpg,ruby30
+     SUBDIR += ruby-hiera-file,ruby27
+     SUBDIR += ruby-hiera-file,ruby30
      SUBDIR += ruby-kirbybase
      SUBDIR += ruby-ldap,ruby27
      SUBDIR += ruby-ldap,ruby30
@@ -227,7 +229,6 @@
      SUBDIR += skytools
      SUBDIR += sqlbox
      SUBDIR += sqlcipher
-     SUBDIR += sqlite
      SUBDIR += sqlite3
      SUBDIR += sqlite3-odbc
      SUBDIR += sqlite3-tcl

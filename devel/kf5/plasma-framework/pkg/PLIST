@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2021/08/08 12:21:39 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.21 2021/10/13 15:02:07 rsadowski Exp $
 @bin bin/plasmapkg2
 include/KF5/Plasma/
 include/KF5/Plasma/Applet
@@ -68,13 +68,15 @@ lib/cmake/KF5PlasmaQuick/KF5PlasmaQuickTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5PlasmaQuick/KF5PlasmaQuickTargets.cmake
 @lib lib/libKF5Plasma.so.${LIBKF5Plasma_VERSION}
 @lib lib/libKF5PlasmaQuick.so.${LIBKF5PlasmaQuick_VERSION}
+lib/qt5/plugins/kf5/kirigami/
+@so lib/qt5/plugins/kf5/kirigami/KirigamiPlasmaStyle.so
 lib/qt5/plugins/kpackage/
 lib/qt5/plugins/kpackage/packagestructure/
-@so lib/qt5/plugins/kpackage/packagestructure/containmentactions_packagestructure.so
-@so lib/qt5/plugins/kpackage/packagestructure/dataengine_packagestructure.so
-@so lib/qt5/plugins/kpackage/packagestructure/plasmageneric_packagestructure.so
-@so lib/qt5/plugins/kpackage/packagestructure/plasmatheme_packagestructure.so
-@so lib/qt5/plugins/kpackage/packagestructure/plasmoid_packagestructure.so
+@so lib/qt5/plugins/kpackage/packagestructure/plasma_applet.so
+@so lib/qt5/plugins/kpackage/packagestructure/plasma_containmentactions.so
+@so lib/qt5/plugins/kpackage/packagestructure/plasma_dataengine.so
+@so lib/qt5/plugins/kpackage/packagestructure/plasma_generic.so
+@so lib/qt5/plugins/kpackage/packagestructure/plasma_theme.so
 lib/qt5/plugins/plasma/
 lib/qt5/plugins/plasma/dataengine/
 @so lib/qt5/plugins/plasma/dataengine/plasma_dataengine_example_customDataContainers.so
@@ -188,9 +190,6 @@ lib/qt5/qml/org/kde/kirigami.2/styles/Plasma/
 lib/qt5/qml/org/kde/kirigami.2/styles/Plasma/AbstractApplicationHeader.qml
 lib/qt5/qml/org/kde/kirigami.2/styles/Plasma/Icon.qml
 lib/qt5/qml/org/kde/kirigami.2/styles/Plasma/Theme.qml
-lib/qt5/qml/org/kde/kirigami.2/styles/Plasma/Units.qml
-lib/qt5/qml/org/kde/kirigami.2/styles/org.kde.desktop.plasma/
-lib/qt5/qml/org/kde/kirigami.2/styles/org.kde.desktop.plasma/Units.qml
 lib/qt5/qml/org/kde/plasma/
 lib/qt5/qml/org/kde/plasma/accessdenied/
 lib/qt5/qml/org/kde/plasma/accessdenied/qmldir

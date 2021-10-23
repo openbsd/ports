@@ -1,41 +1,56 @@
-$OpenBSD: patch-ac_qt5_m4,v 1.8 2020/12/02 06:44:11 rsadowski Exp $
+$OpenBSD: patch-ac_qt5_m4,v 1.10 2021/10/04 05:48:53 rsadowski Exp $
 
 Workaround for OpenBSD's pkg-config.
 
 Index: ac/qt5.m4
 --- ac/qt5.m4.orig
 +++ ac/qt5.m4
-@@ -151,20 +151,18 @@ if test x"$enable_qt" = "xyes" -a \
+@@ -78,17 +78,16 @@ check_qt5() {
    fi
  
-   if test $ok = 1 -a "x$with_qt_pkg_config" = xyes; then
+   if test "x$with_qt_pkg_config" = xyes; then
 -    with_qt_pkg_config_modules="`echo "$with_qt_pkg_config_modules" | sed -e 's/ /,/g'`"
      if test x"$with_qt_pkg_config_modules" != x ; then
 -      with_qt_pkg_config_modules="$with_qt_pkg_config_modules,"
 +      with_qt_pkg_config_modules="$with_qt_pkg_config_modules"
      fi
  
--    with_qt_pkg_config_modules="$with_qt_pkg_config_modules,Qt5Core,Qt5Gui,Qt5Widgets,Qt5Multimedia,Qt5Network,Qt5Concurrent"
-+    with_qt_pkg_config_modules="$with_qt_pkg_config_modules Qt5Core,Qt5Gui,Qt5Widgets,Qt5Multimedia,Qt5Network,Qt5Concurrent"
+-    orig_with_qt_pkg_config_modules="$with_qt_pkg_config_modules,"
++    orig_with_qt_pkg_config_modules="$with_qt_pkg_config_modules"
+ 
+-    with_qt_pkg_config_modules="$with_qt_pkg_config_modules,Qt5Core"
++    with_qt_pkg_config_modules="$with_qt_pkg_config_modules Qt5Core"
+ 
+     if test x"$enable_gui" = xyes; then
+-        with_qt_pkg_config_modules="$with_qt_pkg_config_modules,Qt5Gui,Qt5Widgets,Qt5Multimedia,Qt5Network,Qt5Concurrent"
++        with_qt_pkg_config_modules="$with_qt_pkg_config_modules Qt5Gui Qt5Widgets Qt5Multimedia Qt5Network Qt5Concurrent"
+     fi
  
      if test x"$MINGW" = x1; then
--      with_qt_pkg_config_modules="$with_qt_pkg_config_modules,Qt5WinExtras"
-+      with_qt_pkg_config_modules="$with_qt_pkg_config_modules Qt5WinExtras"
+@@ -96,7 +95,7 @@ check_qt5() {
      fi
  
-     PKG_CHECK_EXISTS([$with_qt_pkg_config_modules],,[ok=0])
+     PKG_CHECK_EXISTS([$with_qt_pkg_config_modules],[ok=1],[ok=0])
 -    PKG_CHECK_EXISTS([Qt5PlatformSupport],[with_qt_pkg_config_modules="$with_qt_pkg_config_modules,Qt5PlatformSupport"])
--
 +    PKG_CHECK_EXISTS([Qt5PlatformSupport],[with_qt_pkg_config_modules="$with_qt_pkg_config_modules Qt5PlatformSupport"])
+ 
      if test $ok = 0; then
-       AC_MSG_RESULT(no: not found by pkg-config)
+       AC_MSG_CHECKING(for Qt 5)
+@@ -107,7 +106,7 @@ check_qt5() {
+     if test x"$MINGW" != x1 && ! echo "$host" | grep -q -i apple ; then
+       PKG_CHECK_EXISTS([Qt5DBus],[dbus_found=yes],[dbus_found=no])
+       if test x"$dbus_found" = xyes; then
+-        with_qt_pkg_config_modules="$with_qt_pkg_config_modules,Qt5DBus"
++        with_qt_pkg_config_modules="$with_qt_pkg_config_modules Qt5DBus"
+         AC_DEFINE(HAVE_QTDBUS, 1, [Define if QtDBus is present])
+       fi
      fi
-@@ -305,7 +303,7 @@ EOF
-     unset problem
+@@ -115,7 +114,7 @@ check_qt5() {
+     with_qt_pkg_config_modules="`echo "$with_qt_pkg_config_modules" | sed -e 's/,/ /g'`"
+     QT_CFLAGS="`$PKG_CONFIG --cflags $with_qt_pkg_config_modules $QT_PKG_CONFIG_STATIC`"
+     QT_LIBS="`$PKG_CONFIG --libs $with_qt_pkg_config_modules $QT_PKG_CONFIG_STATIC`"
+-    QT_LIBS_NON_GUI="`$PKG_CONFIG --libs $orig_with_qt_pkg_config_modules,Qt5Core $QT_PKG_CONFIG_STATIC`"
++    QT_LIBS_NON_GUI="`$PKG_CONFIG --libs $orig_with_qt_pkg_config_modules Qt5Core $QT_PKG_CONFIG_STATIC`"
    fi
  
--  AC_PATH_PROG(LCONVERT, lconvert)
-+  AC_PATH_PROG(LCONVERT, lconvert,, $PATH)
- 
- else
-   echo '*** Not checking for Qt: disabled by user request'
+   dnl compile test program

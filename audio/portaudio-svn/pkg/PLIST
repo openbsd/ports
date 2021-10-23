@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/09/13 04:56:28 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/10/16 19:59:29 sthen Exp $
 include/portaudio.h
-lib/libportaudio.a
+@static-lib lib/libportaudio.a
 lib/libportaudio.la
 @lib lib/libportaudio.so.${LIBportaudio_VERSION}
 lib/pkgconfig/portaudio-2.0.pc

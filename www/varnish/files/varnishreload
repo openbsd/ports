@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: varnishreload,v 1.3 2020/11/07 17:17:22 kn Exp $
+# $OpenBSD: varnishreload,v 1.4 2021/10/13 10:29:29 kn Exp $
 #
 # Reload active VCL.
 set -Cefu
@@ -15,5 +15,5 @@ FILE=${1:-${SYSCONFDIR}/varnish/default.vcl}
 NAME=${FILE##*/}
 NAME=${NAME%%.*}_$(date -u +%Y%m%d%H%M%S)
 
-${TRUEPREFIX}/bin/varnishadm -- vcl.load "$NAME" "$FILE"
-${TRUEPREFIX}/bin/varnishadm -- vcl.use "$NAME"
+${TRUEPREFIX}/bin/varnishadm -T ${MGTSOCK} -S ${MGTSEC} -- vcl.load "$NAME" "$FILE"
+${TRUEPREFIX}/bin/varnishadm -T ${MGTSOCK} -S ${MGTSEC} -- vcl.use "$NAME"

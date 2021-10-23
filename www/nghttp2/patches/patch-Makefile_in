@@ -1,14 +1,14 @@
-$OpenBSD: patch-Makefile_in,v 1.9 2021/07/19 11:07:06 sthen Exp $
+$OpenBSD: patch-Makefile_in,v 1.10 2021/10/03 19:17:48 sthen Exp $
 
 not very useful without tools, and the contrib Makefile has a gnu-ism
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -451,7 +451,7 @@ top_srcdir = @top_srcdir@
+@@ -462,7 +462,7 @@ top_srcdir = @top_srcdir@
  # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- SUBDIRS = lib third-party src examples python tests integration-tests \
+ SUBDIRS = lib third-party src bpf examples python tests integration-tests \
 -	doc contrib script
 +	doc script
  

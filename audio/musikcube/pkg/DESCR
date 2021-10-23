@@ -1,0 +1,5 @@
+musikcube is a fully functional terminal-based music player, library
+with filters and rating, themes and streaming audio server. It
+supports ReplayGain and can be extended with plugins. The Android
+app musikdroid can be used to remote controle musikcube and
+stream/transcode music to the android device.

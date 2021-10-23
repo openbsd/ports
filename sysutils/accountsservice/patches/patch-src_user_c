@@ -1,69 +1,39 @@
-$OpenBSD: patch-src_user_c,v 1.28 2015/11/19 10:07:45 ajacoutot Exp $
---- src/user.c.orig	Thu Mar 20 19:16:44 2014
-+++ src/user.c	Sun Mar 30 14:47:24 2014
-@@ -123,7 +123,12 @@ account_type_from_pwent (struct passwd *pwent)
- {
-         struct group *grp;
-         gid_t wheel;
-+#ifndef __OpenBSD__
-         gid_t *groups;
-+#else
-+        gid_t groups[NGROUPS_MAX + 1];
-+#endif
-+
-         gint ngroups;
-         gint i;
- 
-@@ -139,16 +144,28 @@ account_type_from_pwent (struct passwd *pwent)
-         }
-         wheel = grp->gr_gid;
- 
-+#ifdef __OpenBSD__
-+        ngroups = sizeof(groups) / sizeof(gid_t);
-+        if (getgrouplist (pwent->pw_name, pwent->pw_gid, groups, &ngroups) == -1) {
-+                g_warning ("too many groups");
-+                return ACCOUNT_TYPE_STANDARD;
-+        }
-+#else
-         ngroups = get_user_groups (pwent->pw_name, pwent->pw_gid, &groups);
-+#endif
- 
-         for (i = 0; i < ngroups; i++) {
-                 if (groups[i] == wheel) {
-+#ifndef __OpenBSD__
-                         g_free (groups);
-+#endif
-                         return ACCOUNT_TYPE_ADMINISTRATOR;
-                 }
-         }
- 
-+#ifndef __OpenBSD__
-         g_free (groups);
-+#endif
- 
-         return ACCOUNT_TYPE_STANDARD;
+$OpenBSD: patch-src_user_c,v 1.29 2021/08/30 19:10:43 ajacoutot Exp $
+
+Index: src/user.c
+--- src/user.c.orig
++++ src/user.c
+@@ -138,9 +138,14 @@ user_reset_icon_file (User *user)
  }
-@@ -159,6 +176,8 @@ user_update_from_pwent (User          *user,
- {
- #ifdef HAVE_SHADOW_H
-         struct spwd *spent;
+ 
+ void
++#ifdef HAVE_SHADOW_H
+ user_update_from_pwent (User          *user,
+                         struct passwd *pwent,
+                         struct spwd   *spent)
 +#else
-+	struct passwd *pw;
- #endif
-         gchar *real_name;
-         gboolean changed;
-@@ -264,7 +283,20 @@ user_update_from_pwent (User          *user,
++user_update_from_pwent (User          *user,
++                        struct passwd *pwent)
++#endif
+ {
+         g_autofree gchar *real_name = NULL;
+         gboolean is_system_account;
+@@ -199,10 +204,24 @@ user_update_from_pwent (User          *user,
+         accounts_user_set_shell (ACCOUNTS_USER (user), pwent->pw_shell);
+ 
+         passwd = NULL;
++#ifdef HAVE_SHADOW_H
+         if (spent)
                  passwd = spent->sp_pwdp;
- #endif
++#endif
  
 +#ifdef __OpenBSD__
-+        pw = getpwnam_shadow (pwent->pw_name);
++        struct passwd *pw = getpwnam_shadow (pwent->pw_name);
 +        if (pw)
 +                passwd = pw->pw_passwd;
 +        if (g_strcmp0(passwd, "skey") == 0)
 +                passwd = NULL;
 +#endif
-+
 +
 +#ifdef __OpenBSD__
 +        if (passwd && passwd[0] == '*') {
@@ -73,9 +43,27 @@ $OpenBSD: patch-src_user_c,v 1.28 2015/11/19 10:07:45 ajacoutot Exp $
                  locked = TRUE;
          }
          else {
-@@ -1553,7 +1585,11 @@ user_change_locked_authorized_cb (Daemon              
-                          "%s account of user '%s' (%d)",
-                          locked ? "locking" : "unlocking", user->user_name, user->uid);
+@@ -218,6 +237,7 @@ user_update_from_pwent (User          *user,
+                 mode = PASSWORD_MODE_NONE;
+         }
+ 
++#ifdef HAVE_SHADOW_H
+         if (spent) {
+                 if (spent->sp_lstchg == 0) {
+                         mode = PASSWORD_MODE_SET_AT_LOGIN;
+@@ -231,6 +251,9 @@ user_update_from_pwent (User          *user,
+                 user->days_after_expiration_until_lock = spent->sp_inact;
+                 user->account_expiration_policy_known = TRUE;
+         }
++#else
++	user->expiration_time = pwent->pw_expire;
++#endif
+ 
+         accounts_user_set_password_mode (ACCOUNTS_USER (user), mode);
+         is_system_account = !user_classify_is_human (accounts_user_get_uid (ACCOUNTS_USER (user)),
+@@ -1602,7 +1625,11 @@ user_change_locked_authorized_cb (Daemon              
+                          accounts_user_get_user_name (ACCOUNTS_USER (user)),
+                          accounts_user_get_uid (ACCOUNTS_USER (user)));
                  argv[0] = "/usr/sbin/usermod";
 +#ifdef __OpenBSD__
 +                argv[1] = locked ? "-Z" : "-U";
@@ -83,12 +71,12 @@ $OpenBSD: patch-src_user_c,v 1.28 2015/11/19 10:07:45 ajacoutot Exp $
                  argv[1] = locked ? "-L" : "-U";
 +#endif
                  argv[2] = "--";
-                 argv[3] = user->user_name;
+                 argv[3] = accounts_user_get_user_name (ACCOUNTS_USER (user));
                  argv[4] = NULL;
-@@ -1624,13 +1660,23 @@ user_change_account_type_authorized_cb (Daemon        
+@@ -1671,14 +1698,24 @@ user_change_account_type_authorized_cb (Daemon        
  {
          AccountType account_type = GPOINTER_TO_INT (data);
-         GError *error;
+         g_autoptr(GError) error = NULL;
 +#ifndef __OpenBSD__
          gid_t *groups;
 +#else
@@ -96,8 +84,9 @@ $OpenBSD: patch-src_user_c,v 1.28 2015/11/19 10:07:45 ajacoutot Exp $
 +        struct group *obsdgrp;
 +#endif
          gint ngroups;
-         GString *str;
-         gid_t wheel;
+         g_autoptr(GString) str = NULL;
+         g_auto(GStrv) extra_admin_groups = NULL;
+         gid_t admin_gid;
          struct group *grp;
          gint i;
 +#ifndef __OpenBSD__
@@ -107,25 +96,25 @@ $OpenBSD: patch-src_user_c,v 1.28 2015/11/19 10:07:45 ajacoutot Exp $
 +        gchar *class = "\0";
 +#endif
  
-         if (user->account_type != account_type) {
+         if (((AccountType) accounts_user_get_account_type (ACCOUNTS_USER (user))) != account_type) {
                  sys_log (context,
-@@ -1644,17 +1690,35 @@ user_change_account_type_authorized_cb (Daemon        
+@@ -1694,17 +1731,33 @@ user_change_account_type_authorized_cb (Daemon        
                  }
-                 wheel = grp->gr_gid;
+                 admin_gid = grp->gr_gid;
  
 +#ifdef __OpenBSD__
 +                ngroups = sizeof(groups) / sizeof(gid_t);
-+                if (getgrouplist (user->user_name, user->gid, groups, &ngroups) == -1) {
++                if (getgrouplist (accounts_user_get_user_name (ACCOUNTS_USER (user)), user->gid, groups, &ngroups) == -1) {
 +                        g_warning ("too many groups");
 +                        account_type = ACCOUNT_TYPE_STANDARD;
 +                }
 +#else
-                 ngroups = get_user_groups (user->user_name, user->gid, &groups);
+                 ngroups = get_user_groups (accounts_user_get_user_name (ACCOUNTS_USER (user)), user->gid, &groups);
 +#endif
  
                  str = g_string_new ("");
                  for (i = 0; i < ngroups; i++) {
-                         if (groups[i] == wheel)
+                         if (groups[i] == admin_gid)
                                  continue;
 +#ifdef __OpenBSD__
 +                        obsdgrp = getgrgid(groups[i]);
@@ -136,16 +125,33 @@ $OpenBSD: patch-src_user_c,v 1.28 2015/11/19 10:07:45 ajacoutot Exp $
                  }
                  switch (account_type) {
                  case ACCOUNT_TYPE_ADMINISTRATOR:
+                         extra_admin_groups = g_strsplit (EXTRA_ADMIN_GROUPS, ",", 0);
 +#ifdef __OpenBSD__
-+                        g_string_append_printf (str, "%s", "wheel");
 +                        class = "staff";
++#endif
+ 
+                         for (i = 0; extra_admin_groups[i] != NULL; i++) {
+                                 struct group *extra_group;
+@@ -1712,10 +1765,18 @@ user_change_account_type_authorized_cb (Daemon        
+                                 if (extra_group == NULL || extra_group->gr_gid == admin_gid)
+                                         continue;
+ 
++#ifdef __OpenBSD__
++                                g_string_append_printf (str, "%s,", extra_group->gr_name);
 +#else
-                         g_string_append_printf (str, "%d", wheel);
+                                 g_string_append_printf (str, "%d,", extra_group->gr_gid);
++#endif
+                         }
+ 
++#ifdef __OpenBSD__
++                        g_string_append_printf (str, "%s", ADMIN_GROUP);
++#else
+                         g_string_append_printf (str, "%d", admin_gid);
 +#endif
                          break;
                  case ACCOUNT_TYPE_STANDARD:
                  default:
-@@ -1663,14 +1727,26 @@ user_change_account_type_authorized_cb (Daemon        
+@@ -1724,14 +1785,26 @@ user_change_account_type_authorized_cb (Daemon        
                          break;
                  }
  
@@ -160,15 +166,15 @@ $OpenBSD: patch-src_user_c,v 1.28 2015/11/19 10:07:45 ajacoutot Exp $
 +                argv[3] = "-L";
 +                argv[4] = class;
 +                argv[5] = "--";
-+                argv[6] = user->user_name;
++                argv[4] = accounts_user_get_user_name (ACCOUNTS_USER (user));
 +                argv[7] = NULL;
 +#else
                  argv[1] = "-G";
                  argv[2] = str->str;
                  argv[3] = "--";
-                 argv[4] = user->user_name;
+                 argv[4] = accounts_user_get_user_name (ACCOUNTS_USER (user));
                  argv[5] = NULL;
 +#endif
  
-                 g_string_free (str, FALSE);
- 
+                 if (!spawn_with_login_uid (context, argv, &error)) {
+                         throw_error (context, ERROR_FAILED, "running '%s' failed: %s", argv[0], error->message);

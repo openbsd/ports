@@ -1,0 +1,163 @@
+$OpenBSD: patch-src_framework_mlt_property_c,v 1.1.1.1 2021/10/16 18:08:17 rsadowski Exp $
+note: if/when OpenBSD gets LC_NUMERIC locale support, the code should be
+revisited to use threads locale functions (see uselocale(3)), because a
+mutex is not enough to prevent unsupported usage of non thread-safe 
+locale functions from dumping core!
+
+Index: src/framework/mlt_property.c
+--- src/framework/mlt_property.c.orig
++++ src/framework/mlt_property.c
+@@ -315,7 +315,7 @@ static int time_clock_to_frames( mlt_property self, co
+ 	s = copy;
+ 	pos = strrchr( s, ':' );
+ 
+-#if !defined(__GLIBC__) && !defined(__APPLE__) && !defined(_WIN32) && !defined(HAVE_STRTOD_L)
++#if !defined(__GLIBC__) && !defined(__APPLE__) && !defined(_WIN32) && !defined(HAVE_STRTOD_L) && !defined(__OpenBSD__)
+ 	char *orig_localename = NULL;
+ 	if ( locale )
+ 	{
+@@ -331,7 +331,7 @@ static int time_clock_to_frames( mlt_property self, co
+ #endif
+ 
+ 	if ( pos ) {
+-#if defined(__GLIBC__) || defined(__APPLE__) || defined(HAVE_STRTOD_L)
++#if defined(__GLIBC__) || defined(__APPLE__) || defined(HAVE_STRTOD_L) && !defined(__OpenBSD__)
+ 		if ( locale )
+ 			seconds = strtod_l( pos + 1, NULL, locale );
+ 		else
+@@ -349,7 +349,7 @@ static int time_clock_to_frames( mlt_property self, co
+ 		}
+ 	}
+ 	else {
+-#if defined(__GLIBC__) || defined(__APPLE__) || defined(HAVE_STRTOD_L)
++#if defined(__GLIBC__) || defined(__APPLE__) || defined(HAVE_STRTOD_L) && !defined(__OpenBSD__)
+ 		if ( locale )
+ 			seconds = strtod_l( s, NULL, locale );
+ 		else
+@@ -357,7 +357,7 @@ static int time_clock_to_frames( mlt_property self, co
+ 			seconds = strtod( s, NULL );
+ 	}
+ 
+-#if !defined(__GLIBC__) && !defined(__APPLE__) && !defined(_WIN32) && !defined(HAVE_STRTOD_L)
++#if !defined(__GLIBC__) && !defined(__APPLE__) && !defined(_WIN32) && !defined(HAVE_STRTOD_L) && !defined(__OpenBSD__)
+ 	if ( locale ) {
+ 		// Restore the current locale
+ 		setlocale( LC_NUMERIC, orig_localename );
+@@ -534,11 +534,11 @@ static double mlt_property_atof( mlt_property self, do
+ 		char *end = NULL;
+ 		double result;
+ 
+-#if defined(__GLIBC__) || defined(__APPLE__) || defined(HAVE_STRTOD_L)
++#if defined(__GLIBC__) || defined(__APPLE__) || defined(HAVE_STRTOD_L) && !defined(__OpenBSD__)
+ 		if ( locale )
+ 			result = strtod_l( value, &end, locale );
+ 		else
+-#elif !defined(_WIN32)
++#elif !defined(_WIN32) && !defined(__OpenBSD__)
+ 		char *orig_localename = NULL;
+ 		if ( locale ) {
+ 			// Protect damaging the global locale from a temporary locale on another thread.
+@@ -556,7 +556,7 @@ static double mlt_property_atof( mlt_property self, do
+ 		if ( end && end[0] == '%' )
+ 			result /= 100.0;
+ 
+-#if !defined(__GLIBC__) && !defined(__APPLE__) && !defined(_WIN32) && !defined(HAVE_STRTOD_L)
++#if !defined(__GLIBC__) && !defined(__APPLE__) && !defined(_WIN32) && !defined(HAVE_STRTOD_L) && !defined(__OpenBSD__)
+ 		if ( locale ) {
+ 			// Restore the current locale
+ 			setlocale( LC_NUMERIC, orig_localename );
+@@ -799,7 +799,7 @@ char *mlt_property_get_string_l_tf( mlt_property self,
+ 	}
+ 	else if ( ! ( self->types & mlt_prop_string ) )
+ 	{
+-#if !defined(_WIN32)
++#if !defined(_WIN32) && !defined(__OpenBSD__)
+ 		// TODO: when glibc gets sprintf_l, start using it! For now, hack on setlocale.
+ 		// Save the current locale
+ #if defined(__APPLE__)
+@@ -845,7 +845,7 @@ char *mlt_property_get_string_l_tf( mlt_property self,
+ 			self->types |= mlt_prop_string;
+ 			self->prop_string = self->serialiser( self->data, self->length );
+ 		}
+-#if !defined(_WIN32)
++#if !defined(_WIN32) && !defined(__OpenBSD__)
+ 		// Restore the current locale
+ 		setlocale( LC_NUMERIC, orig_localename );
+ 		free( orig_localename );
+@@ -1057,7 +1057,7 @@ static void time_clock_from_frames( int frames, double
+ 
+ char *mlt_property_get_time( mlt_property self, mlt_time_format format, double fps, locale_t locale )
+ {
+-#if !defined(_WIN32)
++#if !defined(_WIN32) && !defined(__OpenBSD__)
+ 	char *orig_localename = NULL;
+ #endif
+ 	int frames = 0;
+@@ -1070,7 +1070,7 @@ char *mlt_property_get_time( mlt_property self, mlt_ti
+ 	if ( format == mlt_time_frames )
+ 		return mlt_property_get_string_l( self, locale );
+ 
+-#if !defined(_WIN32)
++#if !defined(_WIN32) && !defined(__OpenBSD__)
+ 	// Use the specified locale
+ 	if ( locale )
+ 	{
+@@ -1129,7 +1129,7 @@ char *mlt_property_get_time( mlt_property self, mlt_ti
+ 	else // Use smpte drop frame by default
+ 		time_smpte_from_frames( frames, fps, self->prop_string, 1 );
+ 
+-#if !defined(_WIN32)
++#if !defined(_WIN32) && !defined(__OpenBSD__)
+ 	// Restore the current locale
+ 	if ( locale )
+ 	{
+@@ -1169,11 +1169,11 @@ static int is_property_numeric( mlt_property self, loc
+ 	{
+ 		char *p = NULL;
+ 
+-#if defined(__GLIBC__) || defined(__APPLE__) || defined(HAVE_STRTOD_L)
++#if defined(__GLIBC__) || defined(__APPLE__) || defined(HAVE_STRTOD_L) && !defined(__OpenBSD__)
+ 		if ( locale )
+ 			strtod_l( self->prop_string, &p, locale );
+ 		else
+-#elif !defined(_WIN32)
++#elif !defined(_WIN32) && !defined(__OpenBSD__)
+ 		char *orig_localename = NULL;
+ 		if ( locale ) {
+ 			// Protect damaging the global locale from a temporary locale on another thread.
+@@ -1189,7 +1189,7 @@ static int is_property_numeric( mlt_property self, loc
+ 
+ 		strtod( self->prop_string, &p );
+ 
+-#if !defined(__GLIBC__) && !defined(__APPLE__) && !defined(_WIN32) && !defined(HAVE_STRTOD_L)
++#if !defined(__GLIBC__) && !defined(__APPLE__) && !defined(_WIN32) && !defined(HAVE_STRTOD_L) && !defined(__OpenBSD__)
+ 		if ( locale ) {
+ 			// Restore the current locale
+ 			setlocale( LC_NUMERIC, orig_localename );
+@@ -1683,7 +1683,7 @@ mlt_rect mlt_property_get_rect( mlt_property self, loc
+ 		char *p = NULL;
+ 		int count = 0;
+ 
+-#if !defined(__GLIBC__) && !defined(__APPLE__) && !defined(_WIN32) && !defined(HAVE_STRTOD_L)
++#if !defined(__GLIBC__) && !defined(__APPLE__) && !defined(_WIN32) && !defined(HAVE_STRTOD_L) && !defined(__OpenBSD__)
+ 		char *orig_localename = NULL;
+ 		if ( locale ) {
+ 			// Protect damaging the global locale from a temporary locale on another thread.
+@@ -1700,7 +1700,7 @@ mlt_rect mlt_property_get_rect( mlt_property self, loc
+ 		while ( *value )
+ 		{
+ 			double temp;
+-#if defined(__GLIBC__) || defined(__APPLE__) || defined(HAVE_STRTOD_L)
++#if defined(__GLIBC__) || defined(__APPLE__) || defined(HAVE_STRTOD_L) && !defined(__OpenBSD__)
+ 			if ( locale )
+ 				temp = strtod_l( value, &p, locale );
+             else
+@@ -1735,7 +1735,7 @@ mlt_rect mlt_property_get_rect( mlt_property self, loc
+ 			count ++;
+ 		}
+ 
+-#if !defined(__GLIBC__) && !defined(__APPLE__) && !defined(_WIN32) && !defined(HAVE_STRTOD_L)
++#if !defined(__GLIBC__) && !defined(__APPLE__) && !defined(_WIN32) && !defined(HAVE_STRTOD_L) && !defined(__OpenBSD__)
+ 		if ( locale ) {
+ 			// Restore the current locale
+ 			setlocale( LC_NUMERIC, orig_localename );

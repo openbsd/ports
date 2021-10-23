@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/08/10 21:27:07 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/08 03:45:23 bcallah Exp $
 @bin bin/novprog
 @man man/man1/novprog.1
 share/applications/novprog.desktop
@@ -32,7 +32,6 @@ share/novprog/translations/novprog_pt.qm
 share/novprog/translations/novprog_ro.qm
 share/novprog/translations/novprog_ru.qm
 share/novprog/translations/novprog_tr.qm
-share/pixmaps/
-share/pixmaps/novprog.xpm
+share/novprog/translations/novprog_uk.qm
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

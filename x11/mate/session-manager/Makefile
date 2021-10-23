@@ -1,11 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2021/06/09 19:50:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/08/25 12:05:53 robert Exp $
 
 COMMENT=		MATE session manager
 
 MATE_PROJECT=		mate-session-manager
-MATE_VERSION=		1.24.1
-
-REVISION=		0
 
 CATEGORIES=		x11
 
@@ -21,6 +18,7 @@ WANTLIB += harfbuzz iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread xcb xcb-render xcb-shm z
 WANTLIB += EGL GL GLESv2 X11-xcb Xxf86vm drm gbm glapi xcb-dri2
 WANTLIB += xcb-dri3 xcb-glx xcb-present xcb-sync xcb-xfixes xshmfence
+WANTLIB += ${COMPILER_LIBCXX} Xdmcp jpeg
 
 MODULES=		devel/dconf \
 			x11/gnome

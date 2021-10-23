@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.389 2021/07/11 09:20:54 bket Exp $
+$OpenBSD: user.list,v 1.391 2021/10/22 20:01:23 sthen Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -377,3 +377,5 @@ id  user		group		port
 866 _navidrome		_navidrome	audio/navidrome
 867 _notify_push			www/nextcloud_notify_push
 868 _igmpproxy		_igmpproxy	net/igmpproxy
+869 _headscale		_headscale	net/headscale
+870 _unit		_unit		www/unit

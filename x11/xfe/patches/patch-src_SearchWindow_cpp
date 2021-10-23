@@ -1,10 +1,11 @@
-$OpenBSD: patch-src_SearchWindow_cpp,v 1.4 2016/10/20 21:12:38 giovanni Exp $
+$OpenBSD: patch-src_SearchWindow_cpp,v 1.5 2021/10/03 21:19:58 bcallah Exp $
 
 Remove gnuisms. The Find Hidden checkbox does nothing now.
 
---- src/SearchWindow.cpp.orig	Tue Dec 15 14:54:20 2015
-+++ src/SearchWindow.cpp	Sun Oct  9 20:50:02 2016
-@@ -639,7 +639,7 @@ long SearchWindow::onCmdStart(FXObject*, FXSelector, v
+Index: src/SearchWindow.cpp
+--- src/SearchWindow.cpp.orig
++++ src/SearchWindow.cpp
+@@ -644,7 +644,7 @@ long SearchWindow::onCmdStart(FXObject*, FXSelector, v
      }
      else
      {
@@ -13,7 +14,7 @@ Remove gnuisms. The Find Hidden checkbox does nothing now.
      }
  
      // Ignore case
-@@ -745,7 +745,7 @@ long SearchWindow::onCmdStart(FXObject*, FXSelector, v
+@@ -750,7 +750,7 @@ long SearchWindow::onCmdStart(FXObject*, FXSelector, v
      // Hidden files
      if (!findhidden->getCheck())
      {

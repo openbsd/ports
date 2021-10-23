@@ -1,9 +1,0 @@
-$OpenBSD: patch-scripts_compiler_py,v 1.1 2015/12/27 17:56:22 jasper Exp $
---- scripts/compiler.py.orig	Sun Jul 31 23:17:00 2011
-+++ scripts/compiler.py	Sat Mar 17 15:22:43 2012
-@@ -1,4 +1,4 @@
--#!/usr/bin/python
-+#!${MODPY_BIN}
- 
- import sys
- import struct

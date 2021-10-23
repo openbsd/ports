@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/23 19:39:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/09/12 06:51:23 rsadowski Exp $
 
 #Qt5Webkit
 USE_WXNEEDED =		Yes
@@ -7,7 +7,7 @@ COMMENT =	visual database applications creator
 
 VERSION =	3.2.0
 DISTNAME =	kexi-${VERSION}
-REVISION =	1
+REVISION =	3
 
 SHARED_LIBS +=  kexicore3.2               0.0 # 3.2
 SHARED_LIBS +=  kexidatatable3.2          0.0 # 3.2
@@ -35,8 +35,9 @@ WANTLIB += ${COMPILER_LIBCXX} GL KDb3 KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5GuiAddons
 WANTLIB += KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOFileWidgets KF5KIOWidgets KF5Parts KF5Service
-WANTLIB += KF5Solid KF5SonnetUi KF5TextEditor KF5TextWidgets KF5WidgetsAddons
+WANTLIB += KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets KF5Parts
+WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5SyntaxHighlighting
+WANTLIB += KF5TextEditor KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui KPropertyCore3 KPropertyWidgets3 KReport3
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Test Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml
@@ -46,9 +47,7 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/kexi/src/}
 EXTRACT_SUFX =	.tar.xz
 
 MODULES =		devel/cmake \
-			lang/python \
 			devel/kf5
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS =		databases/postgresql,-server \
 			devel/gettext,-tools \
@@ -78,6 +77,7 @@ LIB_DEPENDS =		databases/kdb>=3.2.0 \
 			devel/kf5/kxmlgui \
 			devel/kproperty>=3.2.0 \
 			devel/kreport>=3.2.0 \
+			databases/mariadb \
 			x11/qt5/qtwebkit
 
 CONFIGURE_ARGS =	-DBUILD_TESTING=On \

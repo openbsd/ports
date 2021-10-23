@@ -1,0 +1,15 @@
+$OpenBSD: patch-toolkit_components_downloads_DownloadUIHelper_jsm,v 1.1 2021/09/07 13:43:04 landry Exp $
+
+Make sure DownloadUIHelper.strings.downloadsFolder isnt translated
+
+Index: toolkit/components/downloads/DownloadUIHelper.jsm
+--- toolkit/components/downloads/DownloadUIHelper.jsm.orig
++++ toolkit/components/downloads/DownloadUIHelper.jsm
+@@ -154,6 +154,7 @@ XPCOMUtils.defineLazyGetter(DownloadUIHelper, "strings
+       strings[stringName] = string.value;
+     }
+   }
++  strings["downloadsFolder"] = "Downloads";
+   return strings;
+ });
+ 

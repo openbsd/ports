@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_metrics_perf_cpu_identity_cc,v 1.1 2021/09/01 16:54:38 robert Exp $
+
+Index: chrome/browser/metrics/perf/cpu_identity.cc
+--- chrome/browser/metrics/perf/cpu_identity.cc.orig
++++ chrome/browser/metrics/perf/cpu_identity.cc
+@@ -106,7 +106,7 @@ CPUIdentity GetCPUIdentity() {
+   result.release =
+ #if BUILDFLAG(IS_CHROMEOS_ASH)
+       base::SysInfo::KernelVersion();
+-#elif defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#elif defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
+       base::SysInfo::OperatingSystemVersion();
+ #else
+ #error "Unsupported configuration"

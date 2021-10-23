@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2021/08/21 03:25:05 gkoehler Exp $
+# $OpenBSD: Makefile,v 1.154 2021/09/21 10:44:46 ajacoutot Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -13,9 +13,11 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit rendering engine
 
-V =			2.32.3
+V =			2.32.4
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk4-${V}
+REVISION =		0
+
 EXTRACT_SUFX =		.tar.xz
 API =			4.0
 SUBST_VARS =		API
@@ -93,6 +95,14 @@ CONFIGURE_ARGS =	-DPORT=GTK \
 			-DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS}" \
 			-DUSE_SYSTEMD=OFF
 
+# required for faking a better user-agent
+.if ${MACHINE_ARCH} == "amd64"
+CPUARCH =		x86_64
+.else
+CPUARCH =		${ARCH}
+.endif
+CONFIGURE_ARGS +=	-DUSER_AGENT_BRANDING="Linux ${CPUARCH}"
+
 # needs Wayland (libwpe -> WPEBackend-fdo -> Wayland)
 CONFIGURE_ARGS +=	-DUSE_WPE_RENDERER=OFF
 
@@ -108,6 +118,13 @@ CONFIGURE_ARGS +=	-DENABLE_JIT=OFF
 CONFIGURE_ARGS +=	-DENABLE_LLINT_C_LOOP=ON
 .endif
 
+
+.if ${MACHINE_ARCH} == "amd64"
+# On amd64 we don't want an initial allocation of 1GB,
+# it's above the default ulimit, so let's do 128M instead.
+CXXFLAGS +=		-DFIXED_EXECUTABLE_MEMORY_POOL_SIZE_IN_MB=128
+.endif
+
 # XXX fatal error: 'X11/Xlib.h' file not found
 CXXFLAGS +=		-I${X11BASE}/include
 
@@ -120,6 +137,8 @@ LDFLAGS +=		-Wl,--no-keep-memory
 .endif
 
 .if ${MACHINE_ARCH} == "powerpc"
+# Don't make LLVM run out of memory
+DPB_PROPERTIES =       lonesome
 # XXX fix colors being off, it would be nice to fix the code
 CONFIGURE_ARGS +=	-DUSE_OPENGL_OR_ES=OFF
 .endif

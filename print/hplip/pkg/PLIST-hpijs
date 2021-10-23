@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hpijs,v 1.67 2021/05/15 17:06:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST-hpijs,v 1.68 2021/09/11 08:39:12 ajacoutot Exp $
 @conflict hplip-libs-<=3.9.8
 @conflict hpcups-<=3.2.11
 @pkgpath print/hpijs
@@ -350,6 +350,7 @@ share/foomatic/db/source/PPD/HP/hp-deskjet_4620_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_4640_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_4670_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_4720_series.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-deskjet_4800_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_500.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_5000_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_500c.ppd.gz
@@ -1234,7 +1235,15 @@ share/foomatic/db/source/PPD/HP/hp-smart_tank_350_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-smart_tank_500_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-smart_tank_510_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-smart_tank_530_series.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-smart_tank_6000_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-smart_tank_610_series.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-smart_tank_660-670_series.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-smart_tank_7000_series.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-smart_tank_710-720_series.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-smart_tank_7300_series.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-smart_tank_750_series.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-smart_tank_7600_series.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-smart_tank_790_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-smart_tank_plus_550_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-smart_tank_plus_570_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-smart_tank_plus_650_series.ppd.gz

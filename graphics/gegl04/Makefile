@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.29 2021/06/10 13:21:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2021/09/13 16:36:16 ajacoutot Exp $
 
 COMMENT=		graph based image processing framework (API version 0.4)
 
-V=			0.4.30
+V=			0.4.32
 DISTNAME=		gegl-${V}
 PKGNAME=		gegl04-${V}
 EXTRACT_SUFX=		.tar.xz
-REVISION =		1
 
-SHARED_LIBS += gegl-0.4                  0.5 # 0.427.1
+SHARED_LIBS += gegl-0.4                  0.5 # 0.431.1
 
 API_VERSION=		${V:R}
 SUBST_VARS=		API_VERSION
@@ -50,7 +49,8 @@ LIB_DEPENDS=		devel/json-glib \
 			print/poppler \
 			x11/gnome/librsvg
 
-CONFIGURE_ARGS=		-Dgraphviz=disabled \
+CONFIGURE_ARGS=		-Ddocs=false \
+			-Dgraphviz=disabled \
 			-Dlensfun=disabled \
 			-Dlibav=disabled \
 			-Dlibspiro=disabled \

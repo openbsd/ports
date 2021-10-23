@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_extraField_cpp,v 1.1 2021/10/13 08:49:03 sdk Exp $
+
+Index: lib/extraField.cpp
+--- lib/extraField.cpp.orig
++++ lib/extraField.cpp
+@@ -21,7 +21,7 @@
+ 
+ #include <sys/stat.h>
+ 
+-#if ! __APPLE__
++#if ! __APPLE__ && ! __OpenBSD__
+ #   include <sys/sysmacros.h>
+ #endif // !__APPLE__
+ 

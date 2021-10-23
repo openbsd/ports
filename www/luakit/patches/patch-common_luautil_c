@@ -1,0 +1,19 @@
+$OpenBSD: patch-common_luautil_c,v 1.2 2021/09/01 08:20:22 jca Exp $
+
+Don't use printf %n.
+
+Index: common/luautil.c
+--- common/luautil.c.orig
++++ common/luautil.c
+@@ -72,7 +72,10 @@ luaH_traceback(lua_State *L, lua_State *T, gint min_le
+         } else {
+             const char *src = AR_SRC(ar);
+             int n;
+-            g_string_append_printf(tb, "%s:%d%n", src, ar.currentline, &n);
++            char tmp[10] = "";
++            snprintf(tmp, sizeof(tmp), "%d", ar.currentline);
++            n = strlen(src) + strlen(tmp) + 1;
++            g_string_append_printf(tb, "%s:%d", src, ar.currentline);
+             g_string_append_printf(tb, "%*.*s", loc_pad-n, loc_pad-n, "");
+         }
+ 

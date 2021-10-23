@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/04/24 05:03:24 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/10/13 15:02:06 rsadowski Exp $
 include/KF5/KJobWidgets/
 include/KF5/KJobWidgets/KAbstractWidgetJobTracker
 include/KF5/KJobWidgets/KDialogJobUiDelegate
@@ -22,6 +22,7 @@ lib/cmake/KF5JobWidgets/KF5JobWidgetsConfigVersion.cmake
 lib/cmake/KF5JobWidgets/KF5JobWidgetsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5JobWidgets/KF5JobWidgetsTargets.cmake
 @lib lib/libKF5JobWidgets.so.${LIBKF5JobWidgets_VERSION}
+share/dbus-1/interfaces/
 share/dbus-1/interfaces/kf5_org.kde.JobView.xml
 share/dbus-1/interfaces/kf5_org.kde.JobViewServer.xml
 share/dbus-1/interfaces/kf5_org.kde.JobViewV2.xml

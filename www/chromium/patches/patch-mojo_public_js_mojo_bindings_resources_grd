@@ -1,9 +1,9 @@
-$OpenBSD: patch-mojo_public_js_mojo_bindings_resources_grd,v 1.12 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-mojo_public_js_mojo_bindings_resources_grd,v 1.13 2021/09/01 16:54:40 robert Exp $
 
 Index: mojo/public/js/mojo_bindings_resources.grd
 --- mojo/public/js/mojo_bindings_resources.grd.orig
 +++ mojo/public/js/mojo_bindings_resources.grd
-@@ -95,7 +95,7 @@
+@@ -105,7 +105,7 @@
            use_base_dir="false"
            resource_path="mojo/mojo/public/mojom/base/unguessable_token.mojom-webui.js"
            type="BINDATA" />

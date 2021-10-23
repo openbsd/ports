@@ -1,0 +1,16 @@
+$OpenBSD: patch-Core_HLE_sceNet_cpp,v 1.1 2021/09/19 00:34:55 bentley Exp $
+
+ensure that u_int32_t and friends are defined
+
+Index: Core/HLE/sceNet.cpp
+--- Core/HLE/sceNet.cpp.orig
++++ Core/HLE/sceNet.cpp
+@@ -15,7 +15,7 @@
+ // Official git repository and contact information can be found at
+ // https://github.com/hrydgard/ppsspp and http://www.ppsspp.org/.
+ 
+-#if __linux__ || __APPLE__
++#if __linux__ || __APPLE__ || defined(__OpenBSD__)
+ #include <unistd.h>
+ #include <sys/types.h>
+ #include <sys/mman.h>

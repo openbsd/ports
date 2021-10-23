@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2020/08/17 19:58:02 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2021/09/10 20:44:27 sthen Exp $
 bin/ldapadd
 @bin bin/ldapcompare
 @bin bin/ldapdelete

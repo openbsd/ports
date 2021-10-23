@@ -1,5 +1,0 @@
-Avahi is a free, standards-compliant implementation of the Zeroconf
-protocols Multicast DNS and DNS-SD.
-
-This package provides the common avahi-ui.h header file for avahi-gtk
-and avahi-gtk3.

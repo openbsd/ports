@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.188 2021/07/28 07:23:34 landry Exp $
+# $OpenBSD: Makefile,v 1.190 2021/09/10 20:44:27 sthen Exp $
 
 DPB_PROPERTIES =	parallel
 
@@ -11,19 +11,20 @@ PORTROACH =		limit:^2\.4\.
 DISTNAME =		openldap-2.4.59
 PKGNAME-main =		${DISTNAME:S/-/-client-/}
 PKGNAME-server =	${DISTNAME:S/-/-server-/}
-REVISION-server =	0
+
+EPOCH =			0
 
 # overwrite -main pkgname/path to strip FLAVOR, aci only affects the server
 FULLPKGNAME-main =	${DISTNAME:S/-/-client-/}${FLAVOR_EXT:S/-aci//}
 FULLPKGPATH-main =	databases/openldap,-main${FLAVOR_EXT:S/-aci//:S/-/,/g}
 
-SHARED_LIBS +=	lber                 12.0     # 12.14
-SHARED_LIBS +=	lber-2.4             12.0
+SHARED_LIBS +=	lber                 15.0     # 12.14
+SHARED_LIBS +=	lber-2.4             15.0
 
-SHARED_LIBS +=	ldap                 13.2     # 12.14
-SHARED_LIBS +=	ldap-2.4             13.2
-SHARED_LIBS +=	ldap_r               13.2
-SHARED_LIBS +=	ldap_r-2.4           13.2
+SHARED_LIBS +=	ldap                 15.0     # 12.14
+SHARED_LIBS +=	ldap-2.4             15.0
+SHARED_LIBS +=	ldap_r               15.0
+SHARED_LIBS +=	ldap_r-2.4           15.0
 
 CATEGORIES =	databases net
 

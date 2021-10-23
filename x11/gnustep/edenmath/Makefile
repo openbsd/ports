@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2020/08/16 20:35:19 sebastia Exp $
+# $OpenBSD: Makefile,v 1.17 2021/10/19 19:43:36 sebastia Exp $
 
 COMMENT =	GNUstep based scientific calcualtor
 
 DISTNAME =	EdenMath_GNUstep-1.1.1
-REVISION =	13
+REVISION =	14
 
 HOMEPAGE =	http://www.eskimo.com/~pburns/EdenMath/
 MASTER_SITES =	${HOMEPAGE}/files/

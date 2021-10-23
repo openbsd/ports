@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2021/04/29 08:23:19 martin Exp $
+# $OpenBSD: Makefile,v 1.20 2021/09/08 07:18:47 martin Exp $
 
 COMMENT =	geospatial raster data API and CLI
 
-MODPY_EGG_VERSION =	1.2.3
+MODPY_EGG_VERSION =	1.2.7
 DISTNAME =	rasterio-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
@@ -26,7 +26,7 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PI =	Yes
 
 LIB_DEPENDS =	geo/gdal
-WANTLIB +=	${COMPILER_LIBCXX} gdal m ${MODPY_WANTLIB}
+WANTLIB +=	${COMPILER_LIBCXX} gdal m
 
 BUILD_DEPENDS +=	math/py-numpy${MODPY_FLAVOR}
 

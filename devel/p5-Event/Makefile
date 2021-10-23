@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2020/07/03 21:44:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2021/10/20 06:04:24 benoit Exp $
 
 COMMENT=	event loop processing
 
 MODULES=	cpan
-DISTNAME=	Event-1.27
-REVISION =	1
+DISTNAME =	Event-1.28
 CATEGORIES=	devel
 
 # perl

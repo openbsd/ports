@@ -1,0 +1,29 @@
+$OpenBSD: patch-src-IL_include_il_exr_h,v 1.1 2021/08/31 07:31:13 ajacoutot Exp $
+
+Fix build with OpenEXR>=3
+
+Index: src-IL/include/il_exr.h
+--- src-IL/include/il_exr.h.orig
++++ src-IL/include/il_exr.h
+@@ -63,8 +63,8 @@ class ilIStream : public Imf::IStream
+ 		virtual bool	read (char c[/*n*/], int n);
+ 		// I don't think I need this one, since we are taking care of the file handles ourselves.
+ 		//virtual char *	readMemoryMapped (int n);
+-		virtual Imf::Int64	tellg ();
+-		virtual void	seekg (Imf::Int64 Pos);
++		virtual uint64_t	tellg ();
++		virtual void	seekg (uint64_t Pos);
+ 		virtual void	clear ();
+ 
+ 	protected:
+@@ -79,8 +79,8 @@ class ilOStream : public Imf::OStream
+ 		virtual void	write (const char c[/*n*/], int n);
+ 		// I don't think I need this one, since we are taking care of the file handles ourselves.
+ 		//virtual char *	readMemoryMapped (int n);
+-		virtual Imf::Int64	tellp ();
+-		virtual void	seekp (Imf::Int64 Pos);
++		virtual uint64_t	tellp ();
++		virtual void	seekp (uint64_t Pos);
+ 
+ 	protected:
+ 

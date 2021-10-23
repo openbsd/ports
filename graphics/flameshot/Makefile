@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2021/07/16 16:47:38 denis Exp $
+# $OpenBSD: Makefile,v 1.6 2021/10/17 18:35:53 denis Exp $
 
 COMMENT =	powerful yet simple to use screenshot software
 CATEGORIES =	graphics x11
 
 GH_ACCOUNT =	flameshot-org
 GH_PROJECT =	flameshot
-GH_TAGNAME =	v0.10.0
+GH_TAGNAME =	v0.10.1
 
 HOMEPAGE =	https://flameshot.org/
 MAINTAINER =	Denis Fondras <denis@openbsd.org>

@@ -1,24 +1,68 @@
-@comment $OpenBSD: PLIST-pgsql,v 1.7 2016/06/29 16:14:43 espie Exp $
-@option is-branch
-@conflict freeradius-pgsql-*
-@conflict freeradius-<2.1.8
-lib/freeradius/rlm_sql_postgresql.so
-share/doc/freeradius/examples/postgresql_update_radacct_group_trigger.sql
-share/examples/freeradius/sql/postgresql/
-@mode 750
-@sample ${SYSCONFDIR}/raddb/sql/postgresql/
-@mode 640
-share/examples/freeradius/sql/postgresql/admin.sql
-share/examples/freeradius/sql/postgresql/cisco_h323_db_schema.sql
-share/examples/freeradius/sql/postgresql/counter.conf
-@sample ${SYSCONFDIR}/raddb/sql/postgresql/counter.conf
-share/examples/freeradius/sql/postgresql/dialup.conf
-@sample ${SYSCONFDIR}/raddb/sql/postgresql/dialup.conf
-share/examples/freeradius/sql/postgresql/ippool.conf
-@sample ${SYSCONFDIR}/raddb/sql/postgresql/ippool.conf
-share/examples/freeradius/sql/postgresql/ippool.sql
-share/examples/freeradius/sql/postgresql/nas.sql
-share/examples/freeradius/sql/postgresql/schema.sql
-share/examples/freeradius/sql/postgresql/update_radacct_group_trigger.sql
-share/examples/freeradius/sql/postgresql/voip-postpaid.conf
-@sample ${SYSCONFDIR}/raddb/sql/postgresql/voip-postpaid.conf
+@comment $OpenBSD: PLIST-pgsql,v 1.9 2021/10/03 20:28:43 sthen Exp $
+@pkgpath net/freeradius3,-pgsql
+@so lib/freeradius/rlm_sql_postgresql.so
+@group _freeradius
+share/examples/freeradius/mods-config/sql/counter/postgresql/
+@sample ${FREERADIUS_ETC}/mods-config/sql/counter/postgresql/
+share/examples/freeradius/mods-config/sql/counter/postgresql/dailycounter.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/counter/postgresql/dailycounter.conf
+share/examples/freeradius/mods-config/sql/counter/postgresql/expire_on_login.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/counter/postgresql/expire_on_login.conf
+share/examples/freeradius/mods-config/sql/counter/postgresql/monthlycounter.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/counter/postgresql/monthlycounter.conf
+share/examples/freeradius/mods-config/sql/counter/postgresql/noresetcounter.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/counter/postgresql/noresetcounter.conf
+share/examples/freeradius/mods-config/sql/counter/postgresql/weeklycounter.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/counter/postgresql/weeklycounter.conf
+share/examples/freeradius/mods-config/sql/cui/postgresql/
+@sample ${FREERADIUS_ETC}/mods-config/sql/cui/postgresql/
+share/examples/freeradius/mods-config/sql/cui/postgresql/queries.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/cui/postgresql/queries.conf
+share/examples/freeradius/mods-config/sql/cui/postgresql/schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/cui/postgresql/schema.sql
+share/examples/freeradius/mods-config/sql/dhcp/postgresql/
+@sample ${FREERADIUS_ETC}/mods-config/sql/dhcp/postgresql/
+share/examples/freeradius/mods-config/sql/dhcp/postgresql/queries.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/dhcp/postgresql/queries.conf
+share/examples/freeradius/mods-config/sql/dhcp/postgresql/schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/dhcp/postgresql/schema.sql
+share/examples/freeradius/mods-config/sql/dhcp/postgresql/setup.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/dhcp/postgresql/setup.sql
+share/examples/freeradius/mods-config/sql/ippool-dhcp/postgresql/
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool-dhcp/postgresql/
+share/examples/freeradius/mods-config/sql/ippool-dhcp/postgresql/procedure.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool-dhcp/postgresql/procedure.sql
+share/examples/freeradius/mods-config/sql/ippool-dhcp/postgresql/queries.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool-dhcp/postgresql/queries.conf
+share/examples/freeradius/mods-config/sql/ippool-dhcp/postgresql/schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool-dhcp/postgresql/schema.sql
+share/examples/freeradius/mods-config/sql/ippool/postgresql/
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool/postgresql/
+share/examples/freeradius/mods-config/sql/ippool/postgresql/procedure.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool/postgresql/procedure.sql
+share/examples/freeradius/mods-config/sql/ippool/postgresql/queries.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool/postgresql/queries.conf
+share/examples/freeradius/mods-config/sql/ippool/postgresql/schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool/postgresql/schema.sql
+share/examples/freeradius/mods-config/sql/main/postgresql/
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/postgresql/
+share/examples/freeradius/mods-config/sql/main/postgresql/extras/
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/postgresql/extras/
+share/examples/freeradius/mods-config/sql/main/postgresql/extras/cisco_h323_db_schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/postgresql/extras/cisco_h323_db_schema.sql
+share/examples/freeradius/mods-config/sql/main/postgresql/extras/voip-postpaid.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/postgresql/extras/voip-postpaid.conf
+share/examples/freeradius/mods-config/sql/main/postgresql/process-radacct.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/postgresql/process-radacct.sql
+share/examples/freeradius/mods-config/sql/main/postgresql/queries.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/postgresql/queries.conf
+share/examples/freeradius/mods-config/sql/main/postgresql/schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/postgresql/schema.sql
+share/examples/freeradius/mods-config/sql/main/postgresql/setup.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/postgresql/setup.sql
+share/examples/freeradius/mods-config/sql/moonshot-targeted-ids/postgresql/
+@sample ${FREERADIUS_ETC}/mods-config/sql/moonshot-targeted-ids/postgresql/
+share/examples/freeradius/mods-config/sql/moonshot-targeted-ids/postgresql/queries.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/moonshot-targeted-ids/postgresql/queries.conf
+share/examples/freeradius/mods-config/sql/moonshot-targeted-ids/postgresql/schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/moonshot-targeted-ids/postgresql/schema.sql

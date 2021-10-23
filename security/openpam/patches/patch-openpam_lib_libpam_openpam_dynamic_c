@@ -1,0 +1,30 @@
+$OpenBSD: patch-openpam_lib_libpam_openpam_dynamic_c,v 1.2 2021/09/06 11:00:06 robert Exp $
+
+Don't use printf %n.
+
+Index: openpam/lib/libpam/openpam_dynamic.c
+--- openpam/lib/libpam/openpam_dynamic.c.orig
++++ openpam/lib/libpam/openpam_dynamic.c
+@@ -229,14 +229,16 @@ openpam_dynamic(const char *modname)
+ 		 * note of where the suffix begins so we can cut it off later.
+ 		 */
+ 		if (has_ver)
+-			len = snprintf(modpath, sizeof modpath, "%s/%s%n",
+-			    *path, modname, &dot);
++			len = snprintf(modpath, sizeof modpath, "%s/%s",
++			    *path, modname);
+ 		else if (has_so)
+-			len = snprintf(modpath, sizeof modpath, "%s/%s%n.%d",
+-			    *path, modname, &dot, LIB_MAJ);
++			len = snprintf(modpath, sizeof modpath, "%s/%s.%d",
++			    *path, modname, LIB_MAJ);
+ 		else
+-			len = snprintf(modpath, sizeof modpath, "%s/%s%s%n.%d",
+-			    *path, modname, PAM_SOEXT, &dot, LIB_MAJ);
++			len = snprintf(modpath, sizeof modpath, "%s/%s%s.%d",
++			    *path, modname, PAM_SOEXT, LIB_MAJ);
++		if (!has_ver)
++			dot = strrchr(modpath, '.') - modpath;
+ 		/* check for overflow */
+ 		if (len < 0 || (unsigned int)len >= sizeof modpath) {
+ 			errno = ENOENT;

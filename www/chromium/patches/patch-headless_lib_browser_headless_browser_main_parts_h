@@ -1,9 +1,9 @@
-$OpenBSD: patch-headless_lib_browser_headless_browser_main_parts_h,v 1.6 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-headless_lib_browser_headless_browser_main_parts_h,v 1.8 2021/10/20 10:27:47 robert Exp $
 
 Index: headless/lib/browser/headless_browser_main_parts.h
 --- headless/lib/browser/headless_browser_main_parts.h.orig
 +++ headless/lib/browser/headless_browser_main_parts.h
-@@ -44,7 +44,7 @@ class HeadlessBrowserMainParts : public content::Brows
+@@ -46,7 +46,7 @@ class HEADLESS_EXPORT HeadlessBrowserMainParts
  #if defined(OS_MAC)
    void PreCreateMainMessageLoop() override;
  #endif

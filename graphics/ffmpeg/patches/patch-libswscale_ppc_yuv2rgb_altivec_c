@@ -1,0 +1,16 @@
+$OpenBSD: patch-libswscale_ppc_yuv2rgb_altivec_c,v 1.1 2021/09/10 21:47:56 sthen Exp $
+
+error: redeclaration of 'vec_xl' must have the 'overloadable' attribute
+
+Index: libswscale/ppc/yuv2rgb_altivec.c
+--- libswscale/ppc/yuv2rgb_altivec.c.orig
++++ libswscale/ppc/yuv2rgb_altivec.c
+@@ -284,7 +284,7 @@ static inline void cvtyuvtoRGB(SwsContext *c, vector s
+  * ------------------------------------------------------------------------------
+  */
+ 
+-#if !HAVE_VSX
++#if !HAVE_VSX && !defined(__clang__)
+ static inline vector unsigned char vec_xl(signed long long offset, const ubyte *addr)
+ {
+     const vector unsigned char *v_addr = (const vector unsigned char *) (addr + offset);

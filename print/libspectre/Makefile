@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:48:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2021/09/11 09:19:19 ajacoutot Exp $
 
 # libgs from ghostscript is only provided on shared libs archs
 
 COMMENT=	library for rendering Postscript documents
 
-DISTNAME=	libspectre-0.2.8
+DISTNAME=	libspectre-0.2.9
 CATEGORIES=	print
-REVISION=	3
 
-SHARED_LIBS +=  spectre              0.1      # 2.8
+SHARED_LIBS +=  spectre              1.0      # 2.8
 
 HOMEPAGE=	http://libspectre.freedesktop.org/
 
@@ -17,12 +16,12 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ICE SM X11 Xext Xt avahi-client avahi-common cups cupsimage
-WANTLIB += dbus-1 ffi freetype gmp gnutls gs hogweed iconv idn2
-WANTLIB += ijs intl jbig2dec jpeg lcms2 m nettle p11-kit png pthread
-WANTLIB += tasn1 tiff unistring xcb z
+WANTLIB += ICE SM X11 Xext Xt avahi-client avahi-common cups dbus-1
+WANTLIB += execinfo freetype gmp gnutls gs hogweed iconv idn2
+WANTLIB += ijs intl jbig2dec jpeg lcms2 lzma m nettle p11-kit
+WANTLIB += png pthread tasn1 tiff unistring xcb z zstd
 
-MASTER_SITES=	${HOMEPAGE}/releases/
+MASTER_SITES=	http://libspectre.freedesktop.org/releases/
 
 # we want the 'display' device from ghostscript, which is not available
 # in the no_x11 FLAVOR
@@ -41,5 +40,7 @@ CONFIGURE_ARGS+=--enable-test
 .else
 CONFIGURE_ARGS+=--disable-test
 .endif
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>

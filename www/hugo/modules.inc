@@ -1,4 +1,4 @@
-# $OpenBSD: modules.inc,v 1.3 2021/08/10 08:15:18 paco Exp $
+# $OpenBSD: modules.inc,v 1.4 2021/09/05 13:53:13 paco Exp $
 
 MODGO_MODULES =	\
 	bazil.org/fuse						 v0.0.0-20180421153158-65cc252bf669 \
@@ -70,6 +70,7 @@ MODGO_MODULES =	\
 	github.com/coreos/go-semver				 v0.3.0 \
 	github.com/coreos/go-systemd/v22			 v22.3.2 \
 	github.com/cpuguy83/go-md2man/v2			 v2.0.0 \
+	github.com/creack/pty					 v1.1.9 \
 	github.com/daaku/go.zipexe				 v1.0.0 \
 	github.com/danwakefield/fnmatch				 v0.0.0-20160403171240-cbb64ac3d964 \
 	github.com/davecgh/go-spew				 v1.1.1 \
@@ -81,12 +82,12 @@ MODGO_MODULES =	\
 	github.com/dustin/go-humanize				 v1.0.0 \
 	github.com/envoyproxy/go-control-plane			 v0.9.9-0.20210512163311-63b5d3c536b0 \
 	github.com/envoyproxy/protoc-gen-validate		 v0.1.0 \
-	github.com/evanw/esbuild				 v0.12.17 \
+	github.com/evanw/esbuild				 v0.12.24 \
 	github.com/fatih/color					 v1.7.0 \
 	github.com/fortytw2/leaktest				 v1.3.0 \
-	github.com/frankban/quicktest				 v1.13.0 \
+	github.com/frankban/quicktest				 v1.13.1 \
 	github.com/fsnotify/fsnotify				 v1.4.9 \
-	github.com/getkin/kin-openapi				 v0.68.0 \
+	github.com/getkin/kin-openapi				 v0.75.0 \
 	github.com/ghodss/yaml					 v1.0.0 \
 	github.com/go-gl/glfw					 v0.0.0-20190409004039-e6da0acd62b1 \
 	github.com/go-gl/glfw/v3.3/glfw				 v0.0.0-20200222043503-6f7a984d4dc4 \
@@ -159,9 +160,9 @@ MODGO_MODULES =	\
 	github.com/kisielk/errcheck				 v1.5.0 \
 	github.com/kisielk/gotool				 v1.0.0 \
 	github.com/kr/fs					 v0.1.0 \
-	github.com/kr/pretty					 v0.2.1 \
+	github.com/kr/pretty					 v0.3.0 \
 	github.com/kr/pty					 v1.1.1 \
-	github.com/kr/text					 v0.1.0 \
+	github.com/kr/text					 v0.2.0 \
 	github.com/kylelemons/godebug				 v1.1.0 \
 	github.com/kyokomi/emoji/v2				 v2.2.8 \
 	github.com/lib/pq					 v1.1.1 \
@@ -214,7 +215,7 @@ MODGO_MODULES =	\
 	github.com/smartystreets/assertions			 v0.0.0-20180927180507-b2de0cb4f26d \
 	github.com/smartystreets/goconvey			 v1.6.4 \
 	github.com/spf13/afero					 v1.6.0 \
-	github.com/spf13/cast					 v1.4.0 \
+	github.com/spf13/cast					 v1.4.1 \
 	github.com/spf13/cobra					 v1.2.1 \
 	github.com/spf13/fsync					 v0.9.0 \
 	github.com/spf13/jwalterweatherman			 v1.1.0 \
@@ -250,7 +251,7 @@ MODGO_MODULES =	\
 	golang.org/x/sync					 v0.0.0-20210220032951-036812b2e83c \
 	golang.org/x/sys					 v0.0.0-20210630005230-0f9fa26af87c \
 	golang.org/x/term					 v0.0.0-20201126162022-7de9c90e9dd1 \
-	golang.org/x/text					 v0.3.6 \
+	golang.org/x/text					 v0.3.7 \
 	golang.org/x/time					 v0.0.0-20191024005414-555d28b269f0 \
 	golang.org/x/tools					 v0.1.5 \
 	golang.org/x/xerrors					 v0.0.0-20200804184101-5ec99f83aff1 \
@@ -345,6 +346,7 @@ MODGO_MODFILES =	\
 	github.com/envoyproxy/go-control-plane			 v0.9.9-0.20201210154907-fd9021fe5dad \
 	github.com/envoyproxy/go-control-plane			 v0.9.9-0.20210217033140-668b12f5399d \
 	github.com/frankban/quicktest				 v1.11.2 \
+	github.com/frankban/quicktest				 v1.13.0 \
 	github.com/frankban/quicktest				 v1.4.1 \
 	github.com/frankban/quicktest				 v1.7.2 \
 	github.com/fsnotify/fsnotify				 v1.4.7 \
@@ -414,6 +416,8 @@ MODGO_MODFILES =	\
 	github.com/jmespath/go-jmespath				 v0.3.0 \
 	github.com/jstemmer/go-junit-report			 v0.0.0-20190106144839-af01ea7f8024 \
 	github.com/kr/pretty					 v0.1.0 \
+	github.com/kr/pretty					 v0.2.1 \
+	github.com/kr/text					 v0.1.0 \
 	github.com/mailru/easyjson				 v0.0.0-20190614124828-94de47d64c63 \
 	github.com/mattn/go-colorable				 v0.0.9 \
 	github.com/mattn/go-ieproxy				 v0.0.0-20190610004146-91bb50d98149 \
@@ -429,6 +433,7 @@ MODGO_MODFILES =	\
 	github.com/pkg/errors					 v0.8.1 \
 	github.com/pmezard/go-difflib				 v0.0.0-20151028094244-d8ed2627bdf0 \
 	github.com/rogpeppe/go-internal				 v1.3.0 \
+	github.com/rogpeppe/go-internal				 v1.6.1 \
 	github.com/spf13/cast					 v1.3.1 \
 	github.com/stretchr/objx				 v0.1.0 \
 	github.com/stretchr/testify				 v0.0.0-20161117074351-18a02ba4a312 \
@@ -614,6 +619,7 @@ MODGO_MODFILES =	\
 	golang.org/x/text					 v0.3.3 \
 	golang.org/x/text					 v0.3.4 \
 	golang.org/x/text					 v0.3.5 \
+	golang.org/x/text					 v0.3.6 \
 	golang.org/x/time					 v0.0.0-20181108054448-85acf8d2951c \
 	golang.org/x/time					 v0.0.0-20190308202827-9d24e82272b4 \
 	golang.org/x/tools					 v0.0.0-20180917221912-90fa682c2a6e \

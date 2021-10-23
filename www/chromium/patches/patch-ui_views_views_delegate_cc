@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_views_views_delegate_cc,v 1.19 2021/07/21 15:43:34 robert Exp $
+$OpenBSD: patch-ui_views_views_delegate_cc,v 1.22 2021/10/20 10:27:49 robert Exp $
 
 Index: ui/views/views_delegate.cc
 --- ui/views/views_delegate.cc.orig
 +++ ui/views/views_delegate.cc
-@@ -90,7 +90,7 @@ bool ViewsDelegate::IsWindowInMetro(gfx::NativeWindow 
+@@ -95,7 +95,7 @@ bool ViewsDelegate::IsWindowInMetro(gfx::NativeWindow 
    return false;
  }
  #elif BUILDFLAG(ENABLE_DESKTOP_AURA) && \

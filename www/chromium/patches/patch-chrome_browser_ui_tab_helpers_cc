@@ -1,18 +1,18 @@
-$OpenBSD: patch-chrome_browser_ui_tab_helpers_cc,v 1.38 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_tab_helpers_cc,v 1.41 2021/10/20 10:27:46 robert Exp $
 
 Index: chrome/browser/ui/tab_helpers.cc
 --- chrome/browser/ui/tab_helpers.cc.orig
 +++ chrome/browser/ui/tab_helpers.cc
-@@ -156,7 +156,7 @@
+@@ -161,7 +161,7 @@
  #endif
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
--    defined(OS_CHROMEOS)
-+    defined(OS_CHROMEOS) || defined(OS_BSD)
+-    defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
++    defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
  #include "chrome/browser/ui/blocked_content/framebust_block_tab_helper.h"
  #include "chrome/browser/ui/hats/hats_helper.h"
  #endif
-@@ -422,13 +422,13 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
+@@ -431,13 +431,13 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -26,5 +26,5 @@ Index: chrome/browser/ui/tab_helpers.cc
 -    defined(OS_CHROMEOS)
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
    if (base::FeatureList::IsEnabled(
-           features::kHappinessTrackingSurveysForDesktopDemo)) {
-     HatsHelper::CreateForWebContents(web_contents);
+           features::kHappinessTrackingSurveysForDesktopDemo) ||
+       base::FeatureList::IsEnabled(features::kTrustSafetySentimentSurvey) ||

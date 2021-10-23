@@ -1,9 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/04/27 05:26:57 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/09/10 08:43:49 rsadowski Exp $
 @pkgpath x11/kde4/granatier
 @bin bin/granatier
 share/applications/org.kde.granatier.desktop
 share/config.kcfg/
 share/config.kcfg/granatier.kcfg
+share/doc/HTML/ca/granatier/
+share/doc/HTML/ca/granatier/config_arena.png
+share/doc/HTML/ca/granatier/config_arena_random_mode.png
+share/doc/HTML/ca/granatier/config_general.png
+share/doc/HTML/ca/granatier/config_player.png
+share/doc/HTML/ca/granatier/config_theme.png
+share/doc/HTML/ca/granatier/granatier.png
+share/doc/HTML/ca/granatier/index.cache.bz2
+share/doc/HTML/ca/granatier/index.docbook
 share/doc/HTML/cs/granatier/
 share/doc/HTML/cs/granatier/index.cache.bz2
 share/doc/HTML/cs/granatier/index.docbook

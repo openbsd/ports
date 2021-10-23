@@ -1,7 +1,9 @@
-$OpenBSD: patch-pico_osdep_terminal_c,v 1.1 2013/10/17 09:08:10 ajacoutot Exp $
---- pico/osdep/terminal.c.orig	Thu Aug 15 06:36:22 2013
-+++ pico/osdep/terminal.c	Thu Oct 17 10:47:12 2013
-@@ -190,6 +190,12 @@ setup_dflt_esc_seq(void)
+$OpenBSD: patch-pico_osdep_terminal_c,v 1.2 2021/09/22 20:57:10 sthen Exp $
+
+Index: pico/osdep/terminal.c
+--- pico/osdep/terminal.c.orig
++++ pico/osdep/terminal.c
+@@ -192,6 +192,12 @@ setup_dflt_esc_seq(void)
      kpinsert("\033[H", KEY_HOME, 1);
      kpinsert("\033[F", KEY_END, 1);
  

@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_vulkan-deps_vulkan-loader_src_loader_vk_loader_platform_h,v 1.4 2021/07/21 15:43:34 robert Exp $
+$OpenBSD: patch-third_party_vulkan-deps_vulkan-loader_src_loader_vk_loader_platform_h,v 1.5 2021/09/01 16:54:40 robert Exp $
 
 Index: third_party/vulkan-deps/vulkan-loader/src/loader/vk_loader_platform.h
 --- third_party/vulkan-deps/vulkan-loader/src/loader/vk_loader_platform.h.orig

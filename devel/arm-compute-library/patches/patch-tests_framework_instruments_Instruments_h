@@ -1,0 +1,20 @@
+$OpenBSD: patch-tests_framework_instruments_Instruments_h,v 1.1.1.1 2021/10/19 03:54:58 kevlo Exp $
+
+Index: tests/framework/instruments/Instruments.h
+--- tests/framework/instruments/Instruments.h.orig
++++ tests/framework/instruments/Instruments.h
+@@ -24,12 +24,12 @@
+ #ifndef ARM_COMPUTE_TEST_INSTRUMENTS
+ #define ARM_COMPUTE_TEST_INSTRUMENTS
+ 
+-#if !defined(BARE_METAL) && !defined(__APPLE__)
++#if !defined(BARE_METAL) && !defined(__APPLE__) && !defined(__OpenBSD__)
+ #include "MaliCounter.h"
+ #include "OpenCLMemoryUsage.h"
+ #include "OpenCLTimer.h"
+ #include "PMUCounter.h"
+-#endif /* !defined(BARE_METAL) && !defined(__APPLE__) */
++#endif /* !defined(BARE_METAL) && !defined(__APPLE__) && !defined(__OpenBSD__) */
+ #include "SchedulerTimer.h"
+ #include "WallClockTimer.h"
+ 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2021/06/05 04:08:50 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2021/09/18 07:52:34 rsadowski Exp $
 #
 COMMENT =	Qt Cryptographic Architecture
 
-V =		2.3.3
+V =		2.3.4
 DISTNAME =	qca-${V}
 PKGNAME =	qca-qt5-${V}
 CATEGORIES =	security

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/08/08 12:21:38 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.14 2021/10/13 15:02:07 rsadowski Exp $
 @pkgpath x11/kde4/oxygen-icons
 share/icons/oxygen/
 share/icons/oxygen/base/
@@ -215,6 +215,7 @@ share/icons/oxygen/base/128x128/apps/preferences-desktop-icons.png
 share/icons/oxygen/base/128x128/apps/preferences-desktop-keyboard.png
 share/icons/oxygen/base/128x128/apps/preferences-desktop-locale.png
 share/icons/oxygen/base/128x128/apps/preferences-desktop-mouse.png
+share/icons/oxygen/base/128x128/apps/preferences-desktop-notification-bell.png
 share/icons/oxygen/base/128x128/apps/preferences-desktop-notification.png
 share/icons/oxygen/base/128x128/apps/preferences-desktop-printer.png
 share/icons/oxygen/base/128x128/apps/preferences-desktop-screensaver.png
@@ -1405,6 +1406,8 @@ share/icons/oxygen/base/16x16/actions/meeting-participant-request-response.png
 share/icons/oxygen/base/16x16/actions/milestone.png
 share/icons/oxygen/base/16x16/actions/network-connect.png
 share/icons/oxygen/base/16x16/actions/network-disconnect.png
+share/icons/oxygen/base/16x16/actions/new-audio-alarm.png
+share/icons/oxygen/base/16x16/actions/new-command-alarm.png
 share/icons/oxygen/base/16x16/actions/news-subscribe.png
 share/icons/oxygen/base/16x16/actions/news-unsubscribe.png
 share/icons/oxygen/base/16x16/actions/node-add.png
@@ -3067,6 +3070,8 @@ share/icons/oxygen/base/22x22/actions/irc-operator.png
 share/icons/oxygen/base/22x22/actions/irc-remove-operator.png
 share/icons/oxygen/base/22x22/actions/irc-unvoice.png
 share/icons/oxygen/base/22x22/actions/irc-voice.png
+share/icons/oxygen/base/22x22/actions/kalarm-disabled.png
+share/icons/oxygen/base/22x22/actions/kalarm-partdisabled.png
 share/icons/oxygen/base/22x22/actions/kdenlive-add-slide-clip.png
 share/icons/oxygen/base/22x22/actions/kdenlive-align-bottom.png
 share/icons/oxygen/base/22x22/actions/kdenlive-align-hor.png
@@ -3210,6 +3215,8 @@ share/icons/oxygen/base/22x22/actions/mixer-surround.png
 share/icons/oxygen/base/22x22/actions/mixer-video.png
 share/icons/oxygen/base/22x22/actions/network-connect.png
 share/icons/oxygen/base/22x22/actions/network-disconnect.png
+share/icons/oxygen/base/22x22/actions/new-audio-alarm.png
+share/icons/oxygen/base/22x22/actions/new-command-alarm.png
 share/icons/oxygen/base/22x22/actions/news-subscribe.png
 share/icons/oxygen/base/22x22/actions/news-unsubscribe.png
 share/icons/oxygen/base/22x22/actions/node-add.png
@@ -4561,6 +4568,7 @@ share/icons/oxygen/base/256x256/apps/planner.png
 share/icons/oxygen/base/256x256/apps/preferences-desktop-display-color.png
 share/icons/oxygen/base/256x256/apps/preferences-desktop-display.png
 share/icons/oxygen/base/256x256/apps/preferences-desktop-locale.png
+share/icons/oxygen/base/256x256/apps/preferences-desktop-notification-bell.png
 share/icons/oxygen/base/256x256/apps/preferences-desktop-screensaver.png
 share/icons/oxygen/base/256x256/apps/preferences-desktop-search.png
 share/icons/oxygen/base/256x256/apps/preferences-desktop-thunderbolt.png
@@ -4590,6 +4598,7 @@ share/icons/oxygen/base/256x256/categories/preferences-desktop.png
 share/icons/oxygen/base/256x256/categories/preferences-devices-printer.png
 share/icons/oxygen/base/256x256/categories/preferences-kde-connect.png
 share/icons/oxygen/base/256x256/categories/preferences-other.png
+share/icons/oxygen/base/256x256/categories/preferences-system-network-ethernet.png
 share/icons/oxygen/base/256x256/categories/preferences-system-network.png
 share/icons/oxygen/base/256x256/categories/preferences-system-users.png
 share/icons/oxygen/base/256x256/categories/preferences-system.png
@@ -8209,6 +8218,7 @@ share/icons/oxygen/base/64x64/apps/preferences-desktop-icons.png
 share/icons/oxygen/base/64x64/apps/preferences-desktop-keyboard.png
 share/icons/oxygen/base/64x64/apps/preferences-desktop-locale.png
 share/icons/oxygen/base/64x64/apps/preferences-desktop-mouse.png
+share/icons/oxygen/base/64x64/apps/preferences-desktop-notification-bell.png
 share/icons/oxygen/base/64x64/apps/preferences-desktop-notification.png
 share/icons/oxygen/base/64x64/apps/preferences-desktop-printer.png
 share/icons/oxygen/base/64x64/apps/preferences-desktop-screensaver.png

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2021/02/19 19:28:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2021/08/30 19:44:42 ajacoutot Exp $
 bin/duplicity
 bin/rdiffdir
 lib/python${MODPY_VERSION}/site-packages/duplicity/
@@ -57,12 +57,15 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}_cf_
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}adbackend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}azurebackend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}b2backend.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}boxbackend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}cfbackend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}dpbxbackend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}gdocsbackend.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}gdrivebackend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}giobackend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}hsibackend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}hubicbackend.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}idrivedbackend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}imapbackend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}jottacloudbackend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}lftpbackend.${MODPY_PYC_MAGIC_TAG}pyc
@@ -70,6 +73,7 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}loca
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}mediafirebackend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}megabackend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}megav2backend.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}megav3backend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}multibackend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}ncftpbackend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}onedrivebackend.${MODPY_PYC_MAGIC_TAG}pyc
@@ -93,12 +97,15 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/backends/_cf_pyrax.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/adbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/azurebackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/b2backend.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/boxbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/cfbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/dpbxbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/gdocsbackend.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/gdrivebackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/giobackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/hsibackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/hubicbackend.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/idrivedbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/imapbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/jottacloudbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/lftpbackend.py
@@ -106,6 +113,7 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/backends/localbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/mediafirebackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/megabackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/megav2backend.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/megav3backend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/multibackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/ncftpbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/onedrivebackend.py

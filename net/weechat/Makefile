@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2021/06/16 04:53:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.58 2021/10/04 04:22:36 rsadowski Exp $
 
 COMMENT-main=	fast, light and extensible chat client
 COMMENT-lua=	Lua bindings for weechat
@@ -6,7 +6,7 @@ COMMENT-python=	Python bindings for weechat
 COMMENT-ruby=	Ruby bindings for weechat
 COMMENT-tcl=	Tcl bindings for weechat
 
-V=		3.2
+V=		3.3
 DISTNAME=	weechat-${V}
 
 PKGNAME-main=	weechat-${V}
@@ -80,6 +80,8 @@ CONFIGURE_ARGS+=	-DCA_FILE=/etc/ssl/cert.pem \
 			-DTCL_TCLSH=${MODTCL_BIN} \
 			-DTCL_INCLUDE_PATH=${MODTCL_INCDIR} \
 			-DMODTCL_LIB=${MODTCL_LIB}
+
+CONFIGURE_ENV=		CFLAGS="${CFLAGS} -fdeclspec"
 
 pre-configure:
 	rm -f ${WRKSRC}/cmake/{FindLua,FindRuby,FindTCL}.cmake

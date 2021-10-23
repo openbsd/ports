@@ -1,4 +1,4 @@
-# $OpenBSD: modules.inc,v 1.3 2021/08/22 08:06:22 paco Exp $
+# $OpenBSD: modules.inc,v 1.4 2021/10/14 21:09:34 sdk Exp $
 
 MODGO_MODULES =	\
 	cloud.google.com/go					 v0.46.3 \
@@ -77,7 +77,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/mdns				 v1.0.0 \
 	github.com/hashicorp/memberlist				 v0.1.3 \
 	github.com/hashicorp/serf				 v0.8.2 \
-	github.com/hetznercloud/hcloud-go			 v1.31.0 \
+	github.com/hetznercloud/hcloud-go			 v1.31.1 \
 	github.com/inconshreveable/mousetrap			 v1.0.0 \
 	github.com/jonboulle/clockwork				 v0.1.0 \
 	github.com/json-iterator/go				 v1.1.6 \

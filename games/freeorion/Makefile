@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2021/08/20 16:24:25 kirby Exp $
+# $OpenBSD: Makefile,v 1.13 2021/09/19 05:24:30 rsadowski Exp $
 
 V =		0.4.10.2
 COMMENT =	turn-based space empire and galactic conquest computer game
 DISTNAME =	FreeOrion_v${V}_2021-08-01.f663dad_Source
 PKGNAME =	freeorion-${V}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.freeorion.org/
 MAINTAINER =	Tom Murphy <openbsd@pertho.net>
@@ -39,7 +40,7 @@ LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		audio/libvorbis \
 		audio/openal \
 		devel/sdl2 \
-		devel/boost>=1.67.0 \
+		devel/boost \
 		graphics/glew \
 		graphics/png
 

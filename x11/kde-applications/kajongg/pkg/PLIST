@@ -1,7 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/01/23 18:10:16 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/09/10 08:43:50 rsadowski Exp $
 bin/kajongg
 bin/kajonggserver
 share/applications/org.kde.kajongg.desktop
+share/doc/HTML/ca/kajongg/
+share/doc/HTML/ca/kajongg/config_background.png
+share/doc/HTML/ca/kajongg/config_play.png
+share/doc/HTML/ca/kajongg/config_tiles.png
+share/doc/HTML/ca/kajongg/index.cache.bz2
+share/doc/HTML/ca/kajongg/index.docbook
 share/doc/HTML/de/kajongg/
 share/doc/HTML/de/kajongg/index.cache.bz2
 share/doc/HTML/de/kajongg/index.docbook

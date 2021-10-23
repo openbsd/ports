@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_sharing_sharing_handler_registry_impl_cc,v 1.9 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-chrome_browser_sharing_sharing_handler_registry_impl_cc,v 1.10 2021/09/01 16:54:38 robert Exp $
 
 Index: chrome/browser/sharing/sharing_handler_registry_impl.cc
 --- chrome/browser/sharing/sharing_handler_registry_impl.cc.orig

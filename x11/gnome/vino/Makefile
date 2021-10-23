@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.73 2020/11/07 10:18:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2021/09/03 12:51:35 ajacoutot Exp $
 
 COMMENT=		GNOME desktop sharing server
 
 GNOME_PROJECT=		vino
 GNOME_VERSION=		3.22.0
-REVISION=		0
+REVISION=		2
 
 CATEGORIES=		net
 
@@ -28,7 +28,7 @@ WANTLIB += gtk-3 harfbuzz hogweed iconv intl jpeg
 WANTLIB += m nettle notify p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread secret-1 tasn1
 WANTLIB += telepathy-glib xcb xcb-render xcb-shm z
-WANTLIB += fribidi idn2 unistring
+WANTLIB += fribidi idn2 unistring ${COMPILER_LIBCXX} execinfo
 
 MODULES=		devel/dconf \
 			x11/gnome
@@ -36,7 +36,7 @@ MODULES=		devel/dconf \
 MODGNOME_TOOLS=		desktop-file-utils
 
 LIB_DEPENDS=		devel/libnotify \
-			net/avahi \
+			net/avahi,-glib \
 			net/telepathy/telepathy-glib \
 			security/gnutls \
 			x11/gnome/libsecret \

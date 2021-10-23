@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST-glib,v 1.2 2021/09/04 21:39:14 ajacoutot Exp $
+@conflict avahi-libs-<0.8p0
+@conflict avahi-<0.8p2
+include/avahi-glib/
+include/avahi-glib/glib-malloc.h
+include/avahi-glib/glib-watch.h
+include/avahi-gobject/
+include/avahi-gobject/ga-client.h
+include/avahi-gobject/ga-entry-group.h
+include/avahi-gobject/ga-enums.h
+include/avahi-gobject/ga-error.h
+include/avahi-gobject/ga-record-browser.h
+include/avahi-gobject/ga-service-browser.h
+include/avahi-gobject/ga-service-resolver.h
+@static-lib lib/libavahi-glib.a
+lib/libavahi-glib.la
+@lib lib/libavahi-glib.so.${LIBavahi-glib_VERSION}
+@static-lib lib/libavahi-gobject.a
+lib/libavahi-gobject.la
+@lib lib/libavahi-gobject.so.${LIBavahi-gobject_VERSION}
+lib/pkgconfig/avahi-glib.pc
+lib/pkgconfig/avahi-gobject.pc

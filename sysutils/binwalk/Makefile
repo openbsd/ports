@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2021/03/28 13:50:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2021/08/29 09:00:35 jasper Exp $
 
 COMMENT =	tool for reverse-engineering and analysing firmware blobs
 
-MODPY_EGG_VERSION = 2.3.1
+MODPY_EGG_VERSION = 2.3.2
 GH_ACCOUNT =	ReFirmLabs
 GH_PROJECT =	binwalk
 GH_TAGNAME =	v${MODPY_EGG_VERSION}

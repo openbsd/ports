@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2021/05/23 14:27:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.101 2021/10/09 05:58:16 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += aqbanking
@@ -12,6 +12,7 @@
      SUBDIR += fet
      SUBDIR += glabels
      SUBDIR += gnucash
+     SUBDIR += gnucash-docs
      SUBDIR += grisbi
      SUBDIR += gsimplecal
      SUBDIR += gtg

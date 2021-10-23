@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2021/01/23 18:10:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2021/09/10 08:43:57 rsadowski Exp $
 
 COMMENT =	world domination strategy game
 DISTNAME =	ksirk-${VERSION}
@@ -33,7 +33,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kcrash \
 		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
 		devel/kf5/kio \
 		devel/kf5/knewstuff \
 		devel/kf5/kwallet \

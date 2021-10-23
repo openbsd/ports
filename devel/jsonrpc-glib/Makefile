@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2020/11/01 08:24:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2021/10/03 19:51:14 ajacoutot Exp $
 
 COMMENT=		JSON-RPC library for GLib
 
 GNOME_PROJECT=		jsonrpc-glib
-GNOME_VERSION=		3.38.0
+GNOME_VERSION=		3.40.0
 
-SHARED_LIBS += jsonrpc-glib-1.0          0.1 # 1.3800.0
+SHARED_LIBS += jsonrpc-glib-1.0          0.1 # 1.4000.0
 
 CATEGORIES=		devel
 

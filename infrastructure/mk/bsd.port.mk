@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1555 2021/05/03 17:53:15 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1556 2021/09/13 15:40:02 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2664,15 +2664,24 @@ ${_WRKDIR_COOKIE}:
 .if !empty(WRKDIR_LINKNAME)
 	@${_PBUILD} ln -sf ${WRKDIR} ${.CURDIR}/${WRKDIR_LINKNAME}
 .endif
-# poison some common gettext-tools binaries
+# poison some common binaries unless the relevant BUILD_DEPENDS is used
 .if empty(_BUILD_DEP:Mdevel/gettext,-tools) && \
 		empty(_BUILD_DEP:Mtextproc/intltool)
 	@printf '#!/bin/sh\n\
 		echo "*** $$0 was called without devel/gettext,-tools dependency ***" >&2\n\
 		exit 1\n' ${_PREDIR} ${WRKDIR}/bin/msgfmt
 	@${_PBUILD} chmod 555 ${WRKDIR}/bin/msgfmt
-.  for name in msgcat msginit autopoint xgettext gettextize
+.  for name in msgcat msgconv msginit msgmerge autopoint xgettext gettextize
 	@${_PBUILD} ln -sf msgfmt ${WRKDIR}/bin/${name}
+.  endfor
+.endif
+.if empty(_BUILD_DEP:Mtextproc/asciidoc)
+	@printf '#!/bin/sh\n\
+		echo "*** $$0 was called without textproc/asciidoc dependency ***" >&2\n\
+		exit 1\n' ${_PREDIR} ${WRKDIR}/bin/asciidoc
+	@${_PBUILD} chmod 555 ${WRKDIR}/bin/asciidoc
+.  for name in a2x a2x.py asciidoc.py
+	@${_PBUILD} ln -sf asciidoc ${WRKDIR}/bin/${name}
 .  endfor
 .endif
 	@${_PMAKE_COOKIE} $@

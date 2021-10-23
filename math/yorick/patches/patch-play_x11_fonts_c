@@ -1,0 +1,14 @@
+$OpenBSD: patch-play_x11_fonts_c,v 1.1 2021/09/15 21:53:13 tb Exp $
+
+Index: play/x11/fonts.c
+--- play/x11/fonts.c.orig
++++ play/x11/fonts.c
+@@ -100,7 +100,7 @@ x_font(x_display *xdpy, int font, int pixsize)
+       char *pnm = nm;
+       int n = 7;
+       while (n--) while ((*(pnm++)= *(name++))!='-');
+-      sprintf(pnm, "%d%n", pixsize, &n);
++      n = sprintf(pnm, "%d", pixsize);
+       strcpy(pnm+n, name);
+       tmp_fonts = XListFonts(xdpy->dpy, nm, 4, &n);
+       if (n<=0) return xdpy->font;  /* should never happen (X server bug) */

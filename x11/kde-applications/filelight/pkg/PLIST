@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/06/19 18:34:32 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/09/10 08:43:49 rsadowski Exp $
 @pkgpath x11/kde4/filelight
 @bin bin/filelight
 share/applications/org.kde.filelight.desktop
@@ -67,6 +67,7 @@ share/icons/hicolor/64x64/apps/filelight.png
 share/kxmlgui5/
 share/kxmlgui5/filelight/
 share/kxmlgui5/filelight/filelightui.rc
+share/locale/ar/LC_MESSAGES/filelight.mo
 share/locale/ast/LC_MESSAGES/filelight.mo
 share/locale/az/LC_MESSAGES/filelight.mo
 share/locale/bg/LC_MESSAGES/filelight.mo

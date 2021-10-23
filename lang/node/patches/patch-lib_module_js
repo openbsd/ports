@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_module_js,v 1.13 2020/04/04 16:42:57 abieber Exp $
+$OpenBSD: patch-lib_module_js,v 1.14 2021/09/06 13:27:41 sthen Exp $
 
 Index: lib/internal/modules/cjs/loader.js
 --- lib/internal/modules/cjs/loader.js.orig
 +++ lib/internal/modules/cjs/loader.js
-@@ -1260,7 +1260,10 @@ Module._initPaths = function() {
+@@ -1109,7 +1109,10 @@ Module._initPaths = function() {
      path.resolve(process.execPath, '..') :
      path.resolve(process.execPath, '..', '..');
  

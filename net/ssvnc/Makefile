@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2020/02/03 20:40:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2021/09/03 11:41:38 ajacoutot Exp $
 
 COMMENT-gui =		enhanced TightVNC client GUI and wrappers
 COMMENT-main =		enhanced TightVNC client
@@ -10,7 +10,7 @@ PKGNAME =		ssvnc-$V
 EPOCH =			0
 FULLPKGNAME-gui =	ssvnc-$V
 FULLPKGNAME-main =	ssvnc-viewer-$V
-REVISION-gui =		4
+REVISION-gui =		5
 REVISION-main =		2
 
 CATEGORIES =		net x11
@@ -38,7 +38,6 @@ LIB_DEPENDS-main =	graphics/jpeg
 
 WANTLIB-gui =		c crypto ssl
 RUN_DEPENDS-gui =	devel/desktop-file-utils \
-			net/avahi \
 			net/ssvnc,-main \
 			security/stunnel \
 			${MODTK_RUN_DEPENDS}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2021/06/09 23:33:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2021/10/23 08:12:43 sthen Exp $
 
 # XXX python module is linked with wrong libraries if an old version is
 # installed during build
@@ -11,11 +11,11 @@ COMMENT =		library for reading and writing images
 GH_ACCOUNT =		OpenImageIO
 GH_PROJECT =		oiio
 GH_TAGNAME =		Release-$V
-V =			2.2.15.1
+V =			2.2.18.0
 DISTNAME =		openimageio-${V}
 
-SHARED_LIBS +=		OpenImageIO		10.2 # 2.2.15
-SHARED_LIBS +=		OpenImageIO_Util	6.1 # 2.2.15
+SHARED_LIBS +=		OpenImageIO		11.0 # 2.2.18
+SHARED_LIBS +=		OpenImageIO_Util	7.0 # 2.2.18
 
 CATEGORIES =		graphics devel
 
@@ -27,12 +27,12 @@ MAINTAINER =		Dimitri Karamazov <deserter666@danwin1210.me>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += GL GLU Half-2_5 Iex-2_5 IexMath-2_5 IlmImf-2_5 IlmThread-2_5
-WANTLIB += Imath-2_5 OpenColorIO Qt5Core Qt5Gui Qt5OpenGL Qt5Widgets
+WANTLIB += GL GLU Iex-3_1 IlmThread-3_1 OpenEXR-3_1
+WANTLIB += Imath-3_1 OpenColorIO Qt5Core Qt5Gui Qt5OpenGL Qt5Widgets
 WANTLIB += avcodec avformat avutil boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_system-mt
-WANTLIB += boost_thread-mt bz2 c freetype gif jpeg m openjp2 png
-WANTLIB += pugixml raw_r swscale tiff webp webpdemux z
+WANTLIB += boost_thread-mt bz2 c freetype gif heif iconv jpeg m
+WANTLIB += openjp2 png pugixml raw_r swscale tiff webp webpdemux z
 
 MODULES =		devel/cmake \
 			lang/python \
@@ -55,6 +55,7 @@ LIB_DEPENDS =		devel/boost \
 			graphics/openjp2 \
 			graphics/png \
 			graphics/tiff \
+			multimedia/libheif \
 			textproc/pugixml
 
 CONFIGURE_ARGS +=	-DCMAKE_INSTALL_MANDIR="man/man1" \
@@ -66,7 +67,6 @@ CONFIGURE_ARGS +=	-DCMAKE_INSTALL_MANDIR="man/man1" \
 			-DUSE_OPENCV=OFF \
 			-DUSE_OPENVDB=OFF \
 			-DUSE_HDF5=OFF \
-			-DUSE_LIBHEIF=OFF \
 			-Dpybind11_DIR=${MODPY_SITEPKG}/pybind11/share/cmake/pybind11/
 
 # Fix undefined reference to __atomic_*

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2021/02/23 19:39:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2021/09/02 08:14:35 ajacoutot Exp $
 
 COMMENT=		library for storing and retrieving passwords and secrets
 
@@ -21,7 +21,7 @@ LIB_DEPENDS=		devel/glib2 \
 			security/libgcrypt
 
 # XXX circular dependency, see x11/gnome/keyring
-# org.freedesktop.secrets
+# org.freedesktop.secrets; gnome-keyring-*|keepassxc-*:x11/gnome/keyring
 #RUN_DEPENDS +=		x11/gnome/keyring
 
 CONFIGURE_ARGS=		-Dgtk_doc=false

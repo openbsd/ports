@@ -1,7 +1,7 @@
 curl is a command line tool for transferring data with URL syntax,
-supporting DICT, FILE, FTP, FTPS, Gopher, HTTP, HTTPS, IMAP, IMAPS,
-MQTT, POP3, POP3S, RTSP, SMB, SMBS, SMTP, SMTPS, Telnet and TFTP.
-curl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading,
-HTTP form based upload, proxies, cookies, user+password authentication
+supporting DICT, FILE, FTP, FTPS, GOPHER, GOPHERS, HTTP, HTTPS, IMAP,
+IMAPS, MQTT, POP3, POP3S, RTSP, SMB, SMBS, SMTP, SMTPS, TELNET and TFTP.
+curl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP
+form based upload, proxies, cookies, user+password authentication
 (Basic, Digest, NTLM, Negotiate, ...), file transfer resume, proxy
 tunneling and a busload of other useful tricks.

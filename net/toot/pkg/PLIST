@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/09/22 15:25:15 kn Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/08/29 14:04:44 kn Exp $
 bin/toot
 lib/python${MODPY_VERSION}/site-packages/toot/
 lib/python${MODPY_VERSION}/site-packages/toot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -51,15 +51,5 @@ lib/python${MODPY_VERSION}/site-packages/toot/tui/overlays.py
 lib/python${MODPY_VERSION}/site-packages/toot/tui/timeline.py
 lib/python${MODPY_VERSION}/site-packages/toot/tui/utils.py
 lib/python${MODPY_VERSION}/site-packages/toot/tui/widgets.py
-lib/python${MODPY_VERSION}/site-packages/toot/ui/
-lib/python${MODPY_VERSION}/site-packages/toot/ui/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/toot/ui/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/toot/ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/toot/ui/${MODPY_PYCACHE}app.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/toot/ui/${MODPY_PYCACHE}parsers.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/toot/ui/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/toot/ui/app.py
-lib/python${MODPY_VERSION}/site-packages/toot/ui/parsers.py
-lib/python${MODPY_VERSION}/site-packages/toot/ui/utils.py
 lib/python${MODPY_VERSION}/site-packages/toot/utils.py
 lib/python${MODPY_VERSION}/site-packages/toot/wcstring.py

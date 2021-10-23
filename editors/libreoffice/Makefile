@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.249 2021/07/27 14:37:41 robert Exp $
+# $OpenBSD: Makefile,v 1.252 2021/10/15 05:29:56 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -8,10 +8,10 @@ COMMENT-main=	multi-platform productivity suite
 COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
-SHARED_LIBS +=  etonyek-0.1-lo            1.9 # 1.9
+SHARED_LIBS +=  etonyek-0.1-lo            1.10 # 1.10
 SHARED_LIBS +=  langtag-lo                5.1 # 5.1
-SHARED_LIBS +=  mwaw-0.3-lo               3.17 # 3.17
-SHARED_LIBS +=  odfgen-0.1-lo             1.6 # 1.6
+SHARED_LIBS +=  mwaw-0.3-lo               3.19 # 3.19
+SHARED_LIBS +=  odfgen-0.1-lo             1.8 # 1.8
 SHARED_LIBS +=  orcus-0.16                0.0 # 0.0
 SHARED_LIBS +=  orcus-parser-0.16         0.0 # 0.0
 SHARED_LIBS +=  revenge-0.0-lo            0.4 # 0.4
@@ -25,8 +25,8 @@ SHARED_LIBS +=  wpd-0.10-lo               10.3 # 10.3
 SHARED_LIBS +=  wpg-0.3-lo                3.3 # 3.3
 SHARED_LIBS +=  wps-0.4-lo                4.12 # 4.12
 
-BV=		7.1
-VERSION=	${BV}.5.2
+BV=		7.2
+VERSION=	${BV}.2.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -101,23 +101,23 @@ DISTFILES += Scheherazade-2.100.zip:0
 DISTFILES += alef-1.001.tar.gz:0
 DISTFILES += commons-logging-1.2-src.tar.gz:0
 DISTFILES += cppunit-1.15.1.tar.gz:0
-DISTFILES += culmus-0.131.tar.gz:0
+DISTFILES += culmus-0.133.tar.gz:0
 DISTFILES += dtoa-20180411.tgz:0
-DISTFILES += language-subtag-registry-2021-03-05.tar.bz2:0
+DISTFILES += language-subtag-registry-2021-08-06.tar.bz2:0
 DISTFILES += libabw-0.1.3.tar.xz:0
-DISTFILES += libcdr-0.1.6.tar.xz:0
+DISTFILES += libcdr-0.1.7.tar.xz:0
 DISTFILES += libcmis-0.5.2.tar.xz:0
 DISTFILES += libe-book-0.1.3.tar.xz:0
 DISTFILES += libepubgen-0.1.1.tar.xz:0
-DISTFILES += liberation-fonts-ttf-2.00.4.tar.gz:0
+DISTFILES += liberation-fonts-ttf-2.1.4.tar.gz:0
 DISTFILES += liberation-narrow-fonts-ttf-1.07.6.tar.gz:0
-DISTFILES += libetonyek-0.1.9.tar.xz:0
+DISTFILES += libetonyek-0.1.10.tar.xz:0
 DISTFILES += libexttextcat-3.4.5.tar.xz:0
 DISTFILES += libfreehand-0.1.2.tar.xz:0
 DISTFILES += liblangtag-0.6.2.tar.bz2:0
 DISTFILES += libmspub-0.1.4.tar.xz:0
-DISTFILES += libmwaw-0.3.17.tar.xz:0
-DISTFILES += libodfgen-0.1.6.tar.bz2:0
+DISTFILES += libmwaw-0.3.19.tar.xz:0
+DISTFILES += libodfgen-0.1.8.tar.xz:0
 DISTFILES += liborcus-0.16.1.tar.bz2:0
 DISTFILES += libpagemaker-0.0.4.tar.xz:0
 DISTFILES += libqxp-0.0.2.tar.xz:0
@@ -131,13 +131,14 @@ DISTFILES += libwps-0.4.12.tar.xz:0
 DISTFILES += libzmf-0.0.2.tar.xz:0
 DISTFILES += mdds-1.7.0.tar.bz2:0
 DISTFILES += noto-fonts-20171024.tar.gz:0
-DISTFILES += pdfium-4306.tar.bz2:0
-DISTFILES += skia-m88-59bafeeaa7de9eb753e3778c414e01dcf013dcd8.tar.xz:0
+DISTFILES += pdfium-4500.tar.bz2:0
+DISTFILES += skia-m90-45c57e116ee0ce214bdf78405a4762722e4507d9.tar.xz:0
 DISTFILES += source-serif-pro-3.000R.tar.gz:0
 DISTFILES += ttf-kacst_2.01+mry.tar.gz:0
-DISTFILES += xmlsec1-1.2.30.tar.gz:0
+DISTFILES += xmlsec1-1.2.32.tar.gz:0
 DISTFILES += libnumbertext-1.0.7.tar.xz:0
 DISTFILES += box2d-2.3.1.tar.gz:0
+DISTFILES += zxing-cpp-1.1.1.tar.gz:0
 
 DIST_SUBDIR=	libreoffice
 
@@ -206,6 +207,7 @@ LIB_DEPENDS-main=databases/openldap \
 		graphics/lcms2 \
 		graphics/graphite2 \
 		${MODGCC4_CPPLIBDEP} \
+		multimedia/gstreamer1/plugins-base \
 		print/cups,-libs \
 		print/poppler \
 		textproc/libxslt \
@@ -233,6 +235,8 @@ WANTLIB-main+=	boost_filesystem boost_filesystem-mt boost_iostreams-mt
 WANTLIB-main+=	boost_system boost_system-mt boost_date_time-mt
 WANTLIB-main+=	lber ldap ${MODPY_WANTLIB}
 WANTLIB-main+=	X11-xcb
+WANTLIB-main+=	gstaudio-1.0 gstbase-1.0 gstreamer-1.0 gstpbutils-1.0
+WANTLIB-main+=	gsttag-1.0 gstvideo-1.0
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
 			devel/xdg-utils \
@@ -256,6 +260,7 @@ WANTLIB-kde+=		cairo graphite2 epoxy harfbuzz harfbuzz-icu
 WANTLIB-kde+=		KF5ConfigCore KF5CoreAddons KF5I18n KF5KIOCore
 WANTLIB-kde+=		KF5KIOFileWidgets KF5KIOWidgets KF5WindowSystem
 WANTLIB-kde+=		Qt5Core Qt5Gui Qt5Network Qt5Widgets Qt5X11Extras
+WANTLIB-kde+=		glib-2.0 gobject-2.0 intl
 
 .include <bsd.port.arch.mk>
 

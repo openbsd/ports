@@ -1,0 +1,16 @@
+$OpenBSD: patch-cdrecord_cdr_drv_c,v 1.1 2021/09/19 20:58:44 tb Exp $
+
+Index: cdrecord/cdr_drv.c
+--- cdrecord/cdr_drv.c.orig
++++ cdrecord/cdr_drv.c
+@@ -283,8 +283,8 @@ set_cdrcmds(name, dpp)
+ 
+ 	error("Driver types:\n");
+ 	for (d = drivers; *d != (cdr_t *)NULL; d++) {
+-		error("%s%n",
+-			(*d)->cdr_drname, &n);
++		n = error("%s",
++			(*d)->cdr_drname);
+ 		error("%*s%s\n",
+ 			20-n, "",
+ 			(*d)->cdr_drtext);

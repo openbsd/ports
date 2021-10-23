@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/03/13 20:58:55 kmos Exp $
-@pkgpath textproc/py-emoji
+@comment $OpenBSD: PLIST,v 1.4 2021/10/22 02:08:03 kmos Exp $
 @conflict py-emoji-*
+@pkgpath textproc/py-emoji
 lib/python${MODPY_VERSION}/site-packages/emoji/
 lib/python${MODPY_VERSION}/site-packages/emoji-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/emoji-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -18,11 +18,5 @@ lib/python${MODPY_VERSION}/site-packages/emoji/unicode_codes/
 lib/python${MODPY_VERSION}/site-packages/emoji/unicode_codes/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/emoji/unicode_codes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/emoji/unicode_codes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/emoji/unicode_codes/${MODPY_PYCACHE}en.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/emoji/unicode_codes/${MODPY_PYCACHE}es.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/emoji/unicode_codes/${MODPY_PYCACHE}it.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/emoji/unicode_codes/${MODPY_PYCACHE}pt.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/emoji/unicode_codes/en.py
-lib/python${MODPY_VERSION}/site-packages/emoji/unicode_codes/es.py
-lib/python${MODPY_VERSION}/site-packages/emoji/unicode_codes/it.py
-lib/python${MODPY_VERSION}/site-packages/emoji/unicode_codes/pt.py
+lib/python${MODPY_VERSION}/site-packages/emoji/unicode_codes/${MODPY_PYCACHE}data_dict.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/emoji/unicode_codes/data_dict.py

@@ -1,0 +1,30 @@
+$OpenBSD: patch-dmd-script,v 1.1.1.1 2021/10/14 03:45:11 bcallah Exp $
+
+The GDC compiler is named egdc on OpenBSD.
+Only look for /etc/dmd.conf
+
+Index: dmd-script
+--- dmd-script.orig
++++ dmd-script
+@@ -73,7 +73,7 @@ my @run_args;
+ basename($0) =~ m/^(.*-)?g?dmd(-.*)?$/;
+ my $target_prefix = $1?$1:"";
+ my $gdc_dir = abs_path(dirname($0));
+-my $gdc = File::Spec->catfile( $gdc_dir, $target_prefix . "gdc" . ($2?$2:""));
++my $gdc = File::Spec->catfile( $gdc_dir, $target_prefix . "egdc" . ($2?$2:""));
+ 
+ sub osHasEXE() {
+     return $^O =~ m/MS(DOS|Win32)|os2/i; # taken from File::Basename
+@@ -178,11 +178,8 @@ use subs qw(errorExit);
+ 
+ sub readINI {
+     # look for dmd.conf in the following sequence of directories:
+-    #   - current working directory
+-    #   - directory specified by the HOME environment variable
+-    #   - directory gdmd resides in
+     #   - /etc directory
+-    my @confpaths = ("./", "$ENV{HOME}/", "$Bin/", "/etc/");
++    my @confpaths = ("/etc/");
+     my $dmdconfpath = "";
+     my $dmdconf = "";
+ 

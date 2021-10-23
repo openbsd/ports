@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/10/20 05:57:47 benoit Exp $
 
 COMMENT=	C style enumerated types and bitmask flags
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	enum-1.11
+DISTNAME =	enum-1.12
 CATEGORIES=	devel
 EPOCH=		0
-REVISION=	0
 
 # perl
 PERMIT_PACKAGE=	Yes

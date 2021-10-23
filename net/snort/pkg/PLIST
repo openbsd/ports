@@ -1,21 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.34 2021/02/16 03:02:38 lteo Exp $
+@comment $OpenBSD: PLIST,v 1.35 2021/09/19 10:18:25 sthen Exp $
 @pkgpath net/snort[,flexresp][,mysql][,prelude][,postgresql]
 @newgroup _snort:557
 @newuser _snort:557:_snort:daemon:Snort Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/snort
-bin/appid_detector_builder.sh
+${APPID_COMMENT}bin/appid_detector_builder.sh
 @bin bin/snort
 @bin bin/u2boat
-@bin bin/u2openappid
+${APPID_COMMENT}@bin bin/u2openappid
 @bin bin/u2spewfoo
-@bin bin/u2streamer
+${APPID_COMMENT}@bin bin/u2streamer
 lib/pkgconfig/snort.pc
 lib/snort_dynamicengine/
 @comment lib/snort_dynamicengine/libsf_engine.la
 @so lib/snort_dynamicengine/libsf_engine.so
 lib/snort_dynamicpreprocessor/
-lib/snort_dynamicpreprocessor/libsf_appid_preproc.la
-@so lib/snort_dynamicpreprocessor/libsf_appid_preproc.so
+${APPID_COMMENT}lib/snort_dynamicpreprocessor/libsf_appid_preproc.la
+${APPID_COMMENT}@so lib/snort_dynamicpreprocessor/libsf_appid_preproc.so
 @comment lib/snort_dynamicpreprocessor/libsf_dce2_preproc.la
 @so lib/snort_dynamicpreprocessor/libsf_dce2_preproc.so
 @comment lib/snort_dynamicpreprocessor/libsf_dnp3_preproc.la

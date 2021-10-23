@@ -1,9 +1,9 @@
-$OpenBSD: patch-vcl_source_app_svapp_cxx,v 1.7 2021/07/11 13:14:06 robert Exp $
+$OpenBSD: patch-vcl_source_app_svapp_cxx,v 1.8 2021/09/02 11:11:58 robert Exp $
 
 Index: vcl/source/app/svapp.cxx
 --- vcl/source/app/svapp.cxx.orig
 +++ vcl/source/app/svapp.cxx
-@@ -1180,7 +1180,7 @@ OUString Application::GetHWOSConfInfo(const int bSelec
+@@ -1195,7 +1195,7 @@ OUString Application::GetHWOSConfInfo(const int bSelec
  #endif
              appendDetails(u"", Localize(SV_APP_DEFAULT, bLocalize));
  

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.110 2021/07/11 02:11:34 lteo Exp $
+# $OpenBSD: Makefile,v 1.111 2021/09/19 10:18:25 sthen Exp $
 
 COMMENT =		highly flexible sniffer/NIDS
 
-DISTNAME =		snort-2.9.18
-RULESV =		29180
-SUBST_VARS =		RULESV
+DISTNAME =		snort-2.9.18.1
+RULESV =		29181
+SUBST_VARS =		RULESV APPID_COMMENT
 
 CATEGORIES =		net security
 
@@ -15,8 +15,17 @@ MAINTAINER =		Markus Lude <markus.lude@gmx.de>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c c++abi crypto daq dnet luajit-5.1 lzma m nghttp2
-WANTLIB += pcap pcre pthread z
+WANTLIB += c crypto daq dnet lzma m nghttp2 pcap pcre pthread z
+
+FLAVORS =		no_luajit
+.if ${MACHINE_ARCH} == arm || \
+    ${MACHINE_ARCH} == amd64 || \
+    ${MACHINE_ARCH} == i386 || \
+    ${MACHINE_ARCH} == powerpc
+FLAVOR ?=
+.else
+FLAVOR =		no_luajit
+.endif
 
 MASTER_SITES =		https://www.snort.org/downloads/snort/
 
@@ -29,10 +38,18 @@ LIBTOOL_FLAGS =		--tag=disable-static
 
 LIB_DEPENDS =		archivers/xz \
 			devel/pcre \
-			lang/luajit \
 			net/daq \
 			net/libdnet \
 			www/nghttp2
+
+.if ${FLAVOR:Mno_luajit}
+CONFIGURE_ARGS +=	--disable-open-appid
+APPID_COMMENT =		"@comment "
+.else
+LIB_DEPENDS +=		lang/luajit
+WANTLIB +=		c++abi luajit-5.1
+APPID_COMMENT =
+.endif
 
 CONFIGS	=		classification.config gen-msg.map reference.config \
 			snort.conf threshold.conf unicode.map

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/05/09 14:31:59 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.12 2021/09/10 08:42:04 rsadowski Exp $
 @bin bin/kpackagelauncherqml
 include/KF5/KDeclarative/
 include/KF5/KDeclarative/CalendarEvents/
@@ -51,6 +51,13 @@ lib/cmake/KF5Declarative/KF5DeclarativeTargets.cmake
 lib/qt5/qml/org/kde/draganddrop/
 @so lib/qt5/qml/org/kde/draganddrop/libdraganddropplugin.so
 lib/qt5/qml/org/kde/draganddrop/qmldir
+lib/qt5/qml/org/kde/graphicaleffects/
+lib/qt5/qml/org/kde/graphicaleffects/Lanczos.qml
+lib/qt5/qml/org/kde/graphicaleffects/lanczos2sharp.frag
+lib/qt5/qml/org/kde/graphicaleffects/lanczos2sharp_core.frag
+lib/qt5/qml/org/kde/graphicaleffects/preserveaspect.vert
+lib/qt5/qml/org/kde/graphicaleffects/preserveaspect_core.vert
+lib/qt5/qml/org/kde/graphicaleffects/qmldir
 lib/qt5/qml/org/kde/kcm/
 lib/qt5/qml/org/kde/kcm/AbstractKCM.qml
 lib/qt5/qml/org/kde/kcm/ContextualHelpButton.qml

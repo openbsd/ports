@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_marisa-test_cc,v 1.1 2021/09/11 07:55:18 inoguchi Exp $
+
+Fix test on OpenBSD
+
+Index: tests/marisa-test.cc
+--- tests/marisa-test.cc.orig
++++ tests/marisa-test.cc
+@@ -18,7 +18,7 @@ void TestEmptyTrie() {
+ #ifdef _MSC_VER
+   EXCEPT(trie.write(::_fileno(stdout)), MARISA_STATE_ERROR);
+ #else  // _MSC_VER
+-  EXCEPT(trie.write(::fileno(stdout)), MARISA_STATE_ERROR);
++  EXCEPT(trie.write(fileno(stdout)), MARISA_STATE_ERROR);
+ #endif  // _MSC_VER
+   EXCEPT(std::cout << trie, MARISA_STATE_ERROR);
+   EXCEPT(marisa::fwrite(stdout, trie), MARISA_STATE_ERROR);

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/08/29 07:50:15 jasper Exp $
 
 COMMENT =		hardcore 3D space shmup
 BROKEN-sparc64 =	SIGABRT terminate called after throwing an instance of 'std::bad_alloc'
 BROKEN-powerpc =	SIGABRT terminate called after throwing an instance of 'std::bad_alloc'
+BROKEN-powerpc64 =	SIGABRT terminate called after throwing an instance of 'std::bad_alloc'
 
 V =			1.3.2
 DISTNAME =		astromenace-src-$V

@@ -1,0 +1,16 @@
+$OpenBSD: patch-gdb_top_c,v 1.1 2021/10/22 21:41:26 tracey Exp $
+
+Ambiguous indent fix.
+
+Index: gdb/top.c
+--- gdb/top.c.orig
++++ gdb/top.c
+@@ -1468,7 +1468,7 @@ This GDB was configured as follows:\n\
+ "), SYSTEM_GDBINIT, SYSTEM_GDBINIT_RELOCATABLE ? " (relocatable)" : "");
+     /* We assume "relocatable" will be printed at least once, thus we always
+        print this text.  It's a reasonably safe assumption for now.  */
+-    fprintf_filtered (stream, _("\n\
++fprintf_filtered (stream, _("\n\
+ (\"Relocatable\" means the directory can be moved with the GDB installation\n\
+ tree, and GDB will still find it.)\n\
+ "));

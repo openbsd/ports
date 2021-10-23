@@ -1,8 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/10/25 02:37:27 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/09/06 05:38:57 kevlo Exp $
+@bin bin/farcompilestrings
+@bin bin/farconvert
+@bin bin/farcreate
+@bin bin/farequal
+@bin bin/farextract
+@bin bin/farinfo
+@bin bin/farisomorphic
+@bin bin/farprintstrings
 @bin bin/fstarcsort
 @bin bin/fstclosure
 @bin bin/fstcompile
 @bin bin/fstcompose
+@bin bin/fstcompress
 @bin bin/fstconcat
 @bin bin/fstconnect
 @bin bin/fstconvert
@@ -18,6 +27,8 @@
 @bin bin/fstintersect
 @bin bin/fstinvert
 @bin bin/fstisomorphic
+@bin bin/fstlinear
+@bin bin/fstloglinearapply
 @bin bin/fstmap
 @bin bin/fstminimize
 @bin bin/fstprint
@@ -32,10 +43,21 @@
 @bin bin/fstrmepsilon
 @bin bin/fstshortestdistance
 @bin bin/fstshortestpath
+@bin bin/fstspecial
 @bin bin/fstsymbols
 @bin bin/fstsynchronize
 @bin bin/fsttopsort
 @bin bin/fstunion
+@bin bin/mpdtcompose
+@bin bin/mpdtexpand
+@bin bin/mpdtinfo
+@bin bin/mpdtreverse
+@bin bin/pdtcompose
+@bin bin/pdtexpand
+@bin bin/pdtinfo
+@bin bin/pdtreplace
+@bin bin/pdtreverse
+@bin bin/pdtshortestpath
 include/fst/
 include/fst/accumulator.h
 include/fst/add-on.h
@@ -65,8 +87,69 @@ include/fst/encode.h
 include/fst/epsnormalize.h
 include/fst/equal.h
 include/fst/equivalent.h
+include/fst/error-weight.h
 include/fst/expanded-fst.h
+include/fst/expander-cache.h
 include/fst/expectation-weight.h
+include/fst/extensions/
+include/fst/extensions/compress/
+include/fst/extensions/compress/compress.h
+include/fst/extensions/compress/compressscript.h
+include/fst/extensions/compress/elias.h
+include/fst/extensions/far/
+include/fst/extensions/far/compile-strings.h
+include/fst/extensions/far/convert.h
+include/fst/extensions/far/create.h
+include/fst/extensions/far/equal.h
+include/fst/extensions/far/extract.h
+include/fst/extensions/far/far-class.h
+include/fst/extensions/far/far.h
+include/fst/extensions/far/farlib.h
+include/fst/extensions/far/farscript.h
+include/fst/extensions/far/getters.h
+include/fst/extensions/far/info.h
+include/fst/extensions/far/isomorphic.h
+include/fst/extensions/far/print-strings.h
+include/fst/extensions/far/script-impl.h
+include/fst/extensions/far/stlist.h
+include/fst/extensions/far/sttable.h
+include/fst/extensions/linear/
+include/fst/extensions/linear/linear-fst-data-builder.h
+include/fst/extensions/linear/linear-fst-data.h
+include/fst/extensions/linear/linear-fst.h
+include/fst/extensions/linear/linearscript.h
+include/fst/extensions/linear/loglinear-apply.h
+include/fst/extensions/linear/trie.h
+include/fst/extensions/mpdt/
+include/fst/extensions/mpdt/compose.h
+include/fst/extensions/mpdt/expand.h
+include/fst/extensions/mpdt/info.h
+include/fst/extensions/mpdt/mpdt.h
+include/fst/extensions/mpdt/mpdtlib.h
+include/fst/extensions/mpdt/mpdtscript.h
+include/fst/extensions/mpdt/read_write_utils.h
+include/fst/extensions/mpdt/reverse.h
+include/fst/extensions/ngram/
+include/fst/extensions/ngram/bitmap-index.h
+include/fst/extensions/ngram/ngram-fst.h
+include/fst/extensions/ngram/nthbit.h
+include/fst/extensions/pdt/
+include/fst/extensions/pdt/collection.h
+include/fst/extensions/pdt/compose.h
+include/fst/extensions/pdt/expand.h
+include/fst/extensions/pdt/getters.h
+include/fst/extensions/pdt/info.h
+include/fst/extensions/pdt/paren.h
+include/fst/extensions/pdt/pdt.h
+include/fst/extensions/pdt/pdtlib.h
+include/fst/extensions/pdt/pdtscript.h
+include/fst/extensions/pdt/replace.h
+include/fst/extensions/pdt/reverse.h
+include/fst/extensions/pdt/shortest-path.h
+include/fst/extensions/special/
+include/fst/extensions/special/phi-fst.h
+include/fst/extensions/special/rho-fst.h
+include/fst/extensions/special/sigma-fst.h
 include/fst/factor-weight.h
 include/fst/filter-state.h
 include/fst/flags.h
@@ -96,6 +179,7 @@ include/fst/minimize.h
 include/fst/mutable-fst.h
 include/fst/pair-weight.h
 include/fst/partition.h
+include/fst/power-weight-mappers.h
 include/fst/power-weight.h
 include/fst/product-weight.h
 include/fst/project.h
@@ -155,7 +239,6 @@ include/fst/script/prune.h
 include/fst/script/push.h
 include/fst/script/randequivalent.h
 include/fst/script/randgen.h
-include/fst/script/register.h
 include/fst/script/relabel.h
 include/fst/script/replace.h
 include/fst/script/reverse.h
@@ -189,6 +272,7 @@ include/fst/synchronize.h
 include/fst/test/
 include/fst/test-properties.h
 include/fst/test/algo_test.h
+include/fst/test/compactors.h
 include/fst/test/fst_test.h
 include/fst/test/rand-fst.h
 include/fst/test/weight-tester.h
@@ -203,9 +287,125 @@ include/fst/vector-fst.h
 include/fst/verify.h
 include/fst/visit.h
 include/fst/weight.h
-lib/libfst.a
+include/fst/windows_defs.inc
+lib/fst/
+lib/fst/arc_lookahead-fst.a
+lib/fst/arc_lookahead-fst.la
+@so lib/fst/arc_lookahead-fst.so
+lib/fst/compact16_acceptor-fst.a
+lib/fst/compact16_acceptor-fst.la
+@so lib/fst/compact16_acceptor-fst.so
+lib/fst/compact16_string-fst.a
+lib/fst/compact16_string-fst.la
+@so lib/fst/compact16_string-fst.so
+lib/fst/compact16_unweighted-fst.a
+lib/fst/compact16_unweighted-fst.la
+@so lib/fst/compact16_unweighted-fst.so
+lib/fst/compact16_unweighted_acceptor-fst.a
+lib/fst/compact16_unweighted_acceptor-fst.la
+@so lib/fst/compact16_unweighted_acceptor-fst.so
+lib/fst/compact16_weighted_string-fst.a
+lib/fst/compact16_weighted_string-fst.la
+@so lib/fst/compact16_weighted_string-fst.so
+lib/fst/compact64_acceptor-fst.a
+lib/fst/compact64_acceptor-fst.la
+@so lib/fst/compact64_acceptor-fst.so
+lib/fst/compact64_string-fst.a
+lib/fst/compact64_string-fst.la
+@so lib/fst/compact64_string-fst.so
+lib/fst/compact64_unweighted-fst.a
+lib/fst/compact64_unweighted-fst.la
+@so lib/fst/compact64_unweighted-fst.so
+lib/fst/compact64_unweighted_acceptor-fst.a
+lib/fst/compact64_unweighted_acceptor-fst.la
+@so lib/fst/compact64_unweighted_acceptor-fst.so
+lib/fst/compact64_weighted_string-fst.a
+lib/fst/compact64_weighted_string-fst.la
+@so lib/fst/compact64_weighted_string-fst.so
+lib/fst/compact8_acceptor-fst.a
+lib/fst/compact8_acceptor-fst.la
+@so lib/fst/compact8_acceptor-fst.so
+lib/fst/compact8_string-fst.a
+lib/fst/compact8_string-fst.la
+@so lib/fst/compact8_string-fst.so
+lib/fst/compact8_unweighted-fst.a
+lib/fst/compact8_unweighted-fst.la
+@so lib/fst/compact8_unweighted-fst.so
+lib/fst/compact8_unweighted_acceptor-fst.a
+lib/fst/compact8_unweighted_acceptor-fst.la
+@so lib/fst/compact8_unweighted_acceptor-fst.so
+lib/fst/compact8_weighted_string-fst.a
+lib/fst/compact8_weighted_string-fst.la
+@so lib/fst/compact8_weighted_string-fst.so
+lib/fst/const16-fst.a
+lib/fst/const16-fst.la
+@so lib/fst/const16-fst.so
+lib/fst/const64-fst.a
+lib/fst/const64-fst.la
+@so lib/fst/const64-fst.so
+lib/fst/const8-fst.a
+lib/fst/const8-fst.la
+@so lib/fst/const8-fst.so
+lib/fst/ilabel_lookahead-fst.a
+lib/fst/ilabel_lookahead-fst.la
+@so lib/fst/ilabel_lookahead-fst.so
+lib/fst/linear_classifier-fst.a
+lib/fst/linear_classifier-fst.la
+@so lib/fst/linear_classifier-fst.so
+lib/fst/linear_tagger-fst.a
+lib/fst/linear_tagger-fst.la
+@so lib/fst/linear_tagger-fst.so
+lib/fst/ngram-fst.a
+lib/fst/ngram-fst.la
+@so lib/fst/ngram-fst.so
+lib/fst/olabel_lookahead-fst.a
+lib/fst/olabel_lookahead-fst.la
+@so lib/fst/olabel_lookahead-fst.so
+lib/fst/phi-fst.a
+lib/fst/phi-fst.la
+@so lib/fst/phi-fst.so
+lib/fst/rho-fst.a
+lib/fst/rho-fst.la
+@so lib/fst/rho-fst.so
+lib/fst/sigma-fst.a
+lib/fst/sigma-fst.la
+@so lib/fst/sigma-fst.so
+@static-lib lib/libfst.a
 lib/libfst.la
 @lib lib/libfst.so.${LIBfst_VERSION}
-lib/libfstscript.a
+@static-lib lib/libfstcompact.a
+lib/libfstcompact.la
+@lib lib/libfstcompact.so.${LIBfstcompact_VERSION}
+@static-lib lib/libfstcompressscript.a
+lib/libfstcompressscript.la
+@lib lib/libfstcompressscript.so.${LIBfstcompressscript_VERSION}
+@static-lib lib/libfstconst.a
+lib/libfstconst.la
+@lib lib/libfstconst.so.${LIBfstconst_VERSION}
+@static-lib lib/libfstfar.a
+lib/libfstfar.la
+@lib lib/libfstfar.so.${LIBfstfar_VERSION}
+@static-lib lib/libfstfarscript.a
+lib/libfstfarscript.la
+@lib lib/libfstfarscript.so.${LIBfstfarscript_VERSION}
+@static-lib lib/libfstlinearscript.a
+lib/libfstlinearscript.la
+@lib lib/libfstlinearscript.so.${LIBfstlinearscript_VERSION}
+@static-lib lib/libfstlookahead.a
+lib/libfstlookahead.la
+@lib lib/libfstlookahead.so.${LIBfstlookahead_VERSION}
+@static-lib lib/libfstmpdtscript.a
+lib/libfstmpdtscript.la
+@lib lib/libfstmpdtscript.so.${LIBfstmpdtscript_VERSION}
+@static-lib lib/libfstngram.a
+lib/libfstngram.la
+@lib lib/libfstngram.so.${LIBfstngram_VERSION}
+@static-lib lib/libfstpdtscript.a
+lib/libfstpdtscript.la
+@lib lib/libfstpdtscript.so.${LIBfstpdtscript_VERSION}
+@static-lib lib/libfstscript.a
 lib/libfstscript.la
 @lib lib/libfstscript.so.${LIBfstscript_VERSION}
+@static-lib lib/libfstspecial.a
+lib/libfstspecial.la
+@lib lib/libfstspecial.so.${LIBfstspecial_VERSION}

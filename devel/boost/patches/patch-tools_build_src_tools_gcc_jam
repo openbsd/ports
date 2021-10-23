@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_build_src_tools_gcc_jam,v 1.12 2021/06/22 04:20:13 rsadowski Exp $
+$OpenBSD: patch-tools_build_src_tools_gcc_jam,v 1.14 2021/09/19 05:23:29 rsadowski Exp $
 
 Index: tools/build/src/tools/gcc.jam
 --- tools/build/src/tools/gcc.jam.orig

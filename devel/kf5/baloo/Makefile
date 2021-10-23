@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.27 2021/06/16 18:20:19 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.28 2021/09/10 08:42:02 rsadowski Exp $
 
 COMMENT =	KDE file search and metadata handling framework
 DISTNAME =	baloo-${VERSION}
 PKGNAME =	kf5-${DISTNAME}
 EPOCH =		0
-REVISION =	0
 
-SHARED_LIBS +=  KF5Baloo                  4.0 # 4.0
-SHARED_LIBS +=  KF5BalooEngine            5.0 # 5.0
+SHARED_LIBS +=  KF5Baloo                  4.1 # 4.0
+SHARED_LIBS +=  KF5BalooEngine            5.1 # 5.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5FileMetaData
 WANTLIB += KF5I18n KF5Solid Qt5Core Qt5DBus Qt5Network Qt5Qml

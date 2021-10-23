@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2021/03/31 13:42:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2021/08/26 10:46:47 ajacoutot Exp $
+@conflict gtk+4-cloudprint-*
+@pkgpath x11/gtk+4,-cloudprint
 @bin bin/gtk4-builder-tool
 @bin bin/gtk4-encode-symbolic-svg
 @bin bin/gtk4-launch
@@ -258,6 +260,7 @@ include/gtk-4.0/gtk/gtkpagesetup.h
 include/gtk-4.0/gtk/gtkpaned.h
 include/gtk-4.0/gtk/gtkpapersize.h
 include/gtk-4.0/gtk/gtkpasswordentry.h
+include/gtk-4.0/gtk/gtkpasswordentrybuffer.h
 include/gtk-4.0/gtk/gtkpicture.h
 include/gtk-4.0/gtk/gtkpopover.h
 include/gtk-4.0/gtk/gtkpopovermenu.h

@@ -1,0 +1,102 @@
+$OpenBSD: patch-src_main_tls_c,v 1.3 2021/10/08 20:20:22 sthen Exp $
+
+Index: src/main/tls.c
+--- src/main/tls.c.orig
++++ src/main/tls.c
+@@ -622,7 +622,7 @@ tls_session_t *tls_new_session(TALLOC_CTX *ctx, fr_tls
+ 				/*
+ 				 * Swap empty store with the old one.
+ 				 */
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L
+ 				conf->old_x509_store = SSL_CTX_get_cert_store(conf->ctx);
+ 				/* Bump refcnt so the store is kept allocated till next store replacement */
+ 				X509_STORE_up_ref(conf->old_x509_store);
+@@ -1340,7 +1340,7 @@ void tls_session_information(tls_session_t *tls_sessio
+ 					if ((tls_session->info.version > tls_session->conf->max_version) &&
+ 					    (rad_debug_lvl > 0)) {
+ 						WARN("TLS 1.3 has been negotiated even though it was disabled.  This is an OpenSSL Bug.");
+-						WARN("Please set: cipher_list = \"DEFAULT@SECLEVEL=1\" in the tls {...} section.");
++						WARN("Setting cipher_list in the tls {...} section might help.");
+ 					}
+ #endif
+ 					break;
+@@ -1697,7 +1697,7 @@ static int load_dh_params(SSL_CTX *ctx, char *file)
+ 	 *
+ 	 * Change suggested by @t8m
+ 	 */
+-#if OPENSSL_VERSION_NUMBER >= 0x10101000L
++#if OPENSSL_VERSION_NUMBER >= 0x10101000L && !defined(LIBRESSL_VERSION_NUMBER)
+ 	if (FIPS_mode() > 0) {
+ 		WARN(LOG_PREFIX ": Ignoring user-selected DH parameters in FIPS mode. Using defaults.");
+ 		return 0;
+@@ -1920,7 +1920,7 @@ done:
+ 	return 0;
+ }
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ static SSL_SESSION *cbtls_get_session(SSL *ssl, unsigned char *data, int len, int *copy)
+ #else
+ static SSL_SESSION *cbtls_get_session(SSL *ssl, const unsigned char *data, int len, int *copy)
+@@ -2304,7 +2304,7 @@ static int cbtls_cache_refresh(SSL *ssl, SSL_SESSION *
+ 	return 0;
+ }
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ static SSL_SESSION *cbtls_cache_load(SSL *ssl, unsigned char *data, int len, int *copy)
+ #else
+ static SSL_SESSION *cbtls_cache_load(SSL *ssl, const unsigned char *data, int len, int *copy)
+@@ -2840,7 +2840,7 @@ int cbtls_verify(int ok, X509_STORE_CTX *ctx)
+ 	char		cn_str[1024];
+ 	char		buf[64];
+ 	X509		*client_cert;
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L
+ 	const STACK_OF(X509_EXTENSION) *ext_list;
+ #else
+ 	STACK_OF(X509_EXTENSION) *ext_list;
+@@ -3058,7 +3058,7 @@ int cbtls_verify(int ok, X509_STORE_CTX *ctx)
+ 	}
+ 
+ 	if (lookup == 0) {
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L
+ 		ext_list = X509_get0_extensions(client_cert);
+ #else
+ 		X509_CINF	*client_inf;
+@@ -3111,7 +3111,7 @@ int cbtls_verify(int ok, X509_STORE_CTX *ctx)
+ 				value[0] = '0';
+ 				value[1] = 'x';
+ 				const unsigned char *srcp;
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L
+ 				const ASN1_STRING *srcasn1p;
+ 				srcasn1p = X509_EXTENSION_get_data(ext);
+ 				srcp = ASN1_STRING_get0_data(srcasn1p);
+@@ -3203,13 +3203,13 @@ int cbtls_verify(int ok, X509_STORE_CTX *ctx)
+ 	 */
+ 	if (depth == 0) {
+ 		tls_session_t *ssn = SSL_get_ex_data(ssl, FR_TLS_EX_INDEX_SSN);
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ 		STACK_OF(X509)* untrusted = NULL;
+ #endif
+ 
+ 		rad_assert(ssn != NULL);
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ 		/*
+ 		 *	See if there are any untrusted certificates.
+ 		 *	If so, complain about them.
+@@ -4169,7 +4169,7 @@ post_ca:
+ 	 *	disable early data.
+ 	 *
+ 	 */
+-#if OPENSSL_VERSION_NUMBER >= 0x10101000L
++#if OPENSSL_VERSION_NUMBER >= 0x10101000L && !defined(LIBRESSL_VERSION_NUMBER)
+ 	SSL_CTX_set_max_early_data(ctx, 0);
+ #endif
+ 

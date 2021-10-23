@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/05/16 14:56:43 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2021/09/10 08:43:48 rsadowski Exp $
 
 COMMENT =	Akonadi management and debugging console
 DISTNAME =	akonadiconsole-${VERSION}
@@ -18,7 +18,8 @@ WANTLIB += KF5Libkleo KF5MessageCore KF5MessageViewer KF5Mime
 WANTLIB += KF5MimeTreeParser KF5PimCommon KF5PimTextEdit KF5Service
 WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Sql Qt5Widgets Qt5Xml c gpgmepp m qgpgme xapian
+WANTLIB += Qt5Sql Qt5Widgets Qt5Xml assuan c gpgme gpgmepp m qgpgme
+WANTLIB += xapian
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes

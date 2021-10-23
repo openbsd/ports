@@ -1,0 +1,24 @@
+$OpenBSD: patch-raddb_mods-available_eap,v 1.2 2021/10/03 20:28:43 sthen Exp $
+
+This text appears to be to cover OS like Debian where unless overridden
+the default cipher list is "DEFAULT@SECLEVEL=2" which disables TLS 1.0/1.1
+ciphers, and it needs weakening to SECLEVEL=1 if you do want those.
+
+libressl doesn't have the DEFAULT@SECLEVEL=1 syntax; looking at "openssl
+ciphers DEFAULT" from libressl, missing old ciphers are unlikely to be an
+issue at this time, so just skip making a suggestion here.
+
+Index: raddb/mods-available/eap
+--- raddb/mods-available/eap.orig
++++ raddb/mods-available/eap
+@@ -451,9 +451,7 @@ eap {
+ 		#  Older TLS versions are insecure and deprecated.
+ 		#
+ 		#  In order to enable TLS 1.0 and TLS 1.1, you may
+-		#  also need to update cipher_list below to:
+-		#
+-		#	cipher_list = "DEFAULT@SECLEVEL=1"
++		#  also need to update cipher_list.
+ 		#
+ 		#  The values must be in quotes.
+ 		#

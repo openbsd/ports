@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2018/09/04 12:46:17 espie Exp $
+$OpenBSD: README,v 1.3 2021/09/16 08:54:27 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -9,7 +9,12 @@ needs to be generated for the gateway and "uuid=" set accordingly in
 ${SYSCONFDIR}/miniupnpd.conf. To do so, either uuid(1) from the uuid
 package or uuidgen(1) from the e2fsprogs package can be used.
 
-Then the following pf(4) anchor needs to be added to pf.conf(5):
+Many BitTorrent programs use NAT-PMP to request a forwarded port, which
+needs to be enabled in the config file. NAT-PMP listens on port 5351,
+which should be allowed on the internal interfaces, i.e., in pf.conf(5):
+pass in on $internal_interface proto udp to self port 5351
+
+Then the following pf(4) anchor needs to be added:
 anchor "miniupnpd"
 
 At last, multicast needs to be allowed on the internal interface of the

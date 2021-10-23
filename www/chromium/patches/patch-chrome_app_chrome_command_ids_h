@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_app_chrome_command_ids_h,v 1.15 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-chrome_app_chrome_command_ids_h,v 1.16 2021/09/01 16:54:38 robert Exp $
 
 Index: chrome/app/chrome_command_ids.h
 --- chrome/app/chrome_command_ids.h.orig

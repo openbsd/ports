@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.51 2019/07/12 20:47:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2021/08/29 10:32:01 sthen Exp $
 
 COMMENT=	mailfilter to identify and mark spam
 
-DISTNAME=	mimedefang-2.84
-CATEGORIES=	mail
-REVISION=	0
+DISTNAME=	mimedefang-2.85
+REVISION=	1
 
-HOMEPAGE=	http://www.mimedefang.org/
-MASTER_SITES=	${HOMEPAGE}static/
+CATEGORIES=	mail
+
+HOMEPAGE=	https://www.mimedefang.org/
+MASTER_SITES=	${HOMEPAGE}releases/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -17,10 +18,11 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c m milter perl pthread
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/p5-IO-stringy \
-		mail/p5-Mail-Tools \
+RUN_DEPENDS=	mail/p5-Mail-Tools \
 		mail/p5-MIME-tools \
+		security/p5-Crypt-OpenSSL-Random \
 		security/p5-Digest-SHA1 \
+		security/p5-IO-Socket-SSL \
 		sysutils/p5-Unix-Syslog
 
 # useful optional dependencies
@@ -36,7 +38,10 @@ CONFIGURE_ARGS=	--with-user=_mdefang \
 		--disable-anti-virus \
 		--enable-poll
 
-NO_TEST=	Yes
+TEST_DEPENDS=	devel/p5-Test-Class \
+		devel/p5-Test-Most
+
+TEST_TARGET=	test
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/mimedefang
 

@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST-main,v 1.1 2021/09/14 10:51:53 inoguchi Exp $
+@pkgpath textproc/libmarisa
+@bin bin/marisa-benchmark
+@bin bin/marisa-build
+@bin bin/marisa-common-prefix-search
+@bin bin/marisa-dump
+@bin bin/marisa-lookup
+@bin bin/marisa-predictive-search
+@bin bin/marisa-reverse-lookup
+include/marisa/
+include/marisa.h
+include/marisa/agent.h
+include/marisa/base.h
+include/marisa/exception.h
+include/marisa/iostream.h
+include/marisa/key.h
+include/marisa/keyset.h
+include/marisa/query.h
+include/marisa/scoped-array.h
+include/marisa/scoped-ptr.h
+include/marisa/stdio.h
+include/marisa/trie.h
+@static-lib lib/libmarisa.a
+lib/libmarisa.la
+@lib lib/libmarisa.so.${LIBmarisa_VERSION}
+lib/pkgconfig/marisa.pc

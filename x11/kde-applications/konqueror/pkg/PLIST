@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/08/08 12:23:54 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/09/10 08:43:56 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @conflict kdebase-*
@@ -786,7 +786,6 @@ share/konqsidebartng/entries/places.desktop
 share/konqsidebartng/entries/remote.desktop
 share/konqsidebartng/entries/root.desktop
 share/konqsidebartng/entries/services.desktop
-share/konqsidebartng/entries/settings.desktop
 share/konqsidebartng/plugins/
 share/konqsidebartng/plugins/konqsidebar_bookmarks.desktop
 share/konqsidebartng/plugins/konqsidebar_history.desktop

@@ -1,0 +1,16 @@
+$OpenBSD: patch-libdjvu_DjVuPort_h,v 1.1 2021/10/20 16:31:58 mbuhl Exp $
+
+Fix CVE-2021-3500: Stack-Based Buffer Overflow
+https://bugzilla.redhat.com/show_bug.cgi?id=1943411
+
+Index: libdjvu/DjVuPort.h
+--- libdjvu/DjVuPort.h.orig
++++ libdjvu/DjVuPort.h
+@@ -484,6 +484,7 @@ class DJVUAPI DjVuPortcaster (private)
+                        const DjVuPort *dst, int distance);
+    void compute_closure(const DjVuPort *src, GPList<DjVuPort> &list,
+                         bool sorted=false);
++   GUTF8String opening_id;
+ };
+ 
+ 

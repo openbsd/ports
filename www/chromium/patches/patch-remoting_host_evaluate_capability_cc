@@ -1,4 +1,4 @@
-$OpenBSD: patch-remoting_host_evaluate_capability_cc,v 1.7 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-remoting_host_evaluate_capability_cc,v 1.8 2021/09/01 16:54:40 robert Exp $
 
 Index: remoting/host/evaluate_capability.cc
 --- remoting/host/evaluate_capability.cc.orig

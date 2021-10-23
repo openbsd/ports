@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2021/01/09 21:41:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2021/09/08 06:02:59 martin Exp $
 
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers' XGCC #'
 
-V=		5.4.0
-REVISION=	3
+V=		8.5.0
 DISTNAME =	gcc-$V
 PKGNAME=	avr-gcc-${V}
-SHARED_LIBS +=  cc1plugin                 0.0 # 0.0
-SHARED_LIBS +=  cc1                       0.0 # 0.0
 
 # GPLv3
 PERMIT_PACKAGE=	Yes
@@ -17,7 +14,7 @@ WANTLIB=		c gmp mpfr ${COMPILER_LIBCXX} m mpc
 COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES= 	${MASTER_SITE_GCC:=releases/gcc-$(V)/}
-EXTRACT_SUFX=	.tar.bz2
+EXTRACT_SUFX=	.tar.xz
 DIST_SUBDIR=	gcc
 
 .if ${MACHINE_ARCH} == "powerpc64"

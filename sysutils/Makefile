@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.614 2021/08/08 09:37:05 jsg Exp $
+# $OpenBSD: Makefile,v 1.617 2021/10/15 11:17:04 denis Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -56,6 +56,7 @@
      SUBDIR += cpdup
      SUBDIR += cpuid
      SUBDIR += crashme
+     SUBDIR += czkawka
      SUBDIR += curlftpfs
      SUBDIR += d-feet
      SUBDIR += dateutils
@@ -91,7 +92,7 @@
      SUBDIR += exfat-fuse
      SUBDIR += exa
      SUBDIR += exoscale-cli
-     SUBDIR += fabric
+     #SUBDIR += fabric
      SUBDIR += facter
      SUBDIR += facette
      SUBDIR += faubackup
@@ -122,7 +123,6 @@
      SUBDIR += glide
      SUBDIR += go-cs
      SUBDIR += google-cloud-sdk
-     SUBDIR += google-compute-engine
      SUBDIR += gource
      SUBDIR += govmomi
      SUBDIR += gpioflicker
@@ -142,6 +142,7 @@
      SUBDIR += iucode-tool
      SUBDIR += iwatch
      SUBDIR += jefferson
+     SUBDIR += kopia
      SUBDIR += krename
      SUBDIR += ktsuss
      SUBDIR += kubectl

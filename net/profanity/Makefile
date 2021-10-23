@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.20 2021/02/23 19:39:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/09/10 04:30:58 rsadowski Exp $
 
 COMMENT =	console based XMPP client
-DISTNAME =	profanity-0.10.0
+DISTNAME =	profanity-0.11.0
 CATEGORIES =	net
-REVISION =	0
 
 HOMEPAGE =	https://profanity-im.github.io/
 
 MAINTAINER =	Florian Viehweger <openbsd@out-of-creativity.de>
 
-SHARED_LIBS +=  profanity                 0.0 # 0.0
+SHARED_LIBS +=  profanity                 1.0 # 0.0
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
@@ -18,7 +17,7 @@ MASTER_SITES =	https://profanity-im.github.io/
 
 WANTLIB += assuan c crypto curl curses ereadline expat ffi gcrypt
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
-WANTLIB += gpgme iconv intl m mesode nghttp2 otr pcre pthread
+WANTLIB += gpgme iconv intl m strophe nghttp2 otr pcre pthread
 WANTLIB += ${MODPY_WANTLIB} signal-protocol-c sqlite3 ssl util z
 
 MODULES +=	lang/python
@@ -27,7 +26,7 @@ LIB_DEPENDS +=	databases/sqlite3 \
 		devel/glib2 \
 		devel/readline \
 		net/curl \
-		net/libmesode \
+		net/libstrophe \
 		net/libsignal-protocol-c \
 		security/gpgme \
 		security/libotr

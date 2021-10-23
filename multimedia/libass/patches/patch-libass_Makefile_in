@@ -1,0 +1,26 @@
+$OpenBSD: patch-libass_Makefile_in,v 1.2 2021/10/04 05:46:11 rsadowski Exp $
+
+Use a libtool-wrapper script for NASM.
+
+Libtool thinks NASM acts just like the C-compiler, which isn't true
+for e.g. -f options. Previously we used -prefer-non-pic to avoid libtool
+passing any additional flags, which worked well on all tested platforms
+but as it turns out at least on OpenBSD this does not work.
+This now also means we'll automatically get the -DPIC flag as needed,
+which might perhaps also help some platforms we didn't test yet; before
+we fully relied on x86inc's automatic setting for PIC in assembly.
+
+https://github.com/libass/libass/issues/539
+
+Index: libass/Makefile.in
+--- libass/Makefile.in.orig
++++ libass/Makefile.in
+@@ -845,7 +845,7 @@ uninstall-am: uninstall-dist_assheadersHEADERS \
+ 
+ 
+ .asm.lo:
+-	$(nasm_verbose)$(LIBTOOL) $(AM_V_lt) --tag=CC --mode=compile $(AS) $(ASFLAGS) -I$(srcdir)/ -o $@ $< -prefer-non-pic
++	$(nasm_verbose)$(LIBTOOL) $(AM_V_lt) --tag=CC --mode=compile $(top_srcdir)/ltnasm.sh $(AS) $(ASFLAGS) -I$(srcdir)/ -o $@ $<
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

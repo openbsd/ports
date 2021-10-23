@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2021/04/27 05:27:18 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2021/09/10 08:43:59 rsadowski Exp $
 
 COMMENT =	KDE SANE (scanner) wrapper library
 DISTNAME =	libksane-${VERSION}
 PKGNAME =	libksane-kf5-${VERSION}
 CATEGORIES =	graphics devel
 
-SHARED_LIBS +=  KF5Sane                   2.1 # 5.1
+SHARED_LIBS +=  KF5Sane                   2.2 # 5.1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5I18n KF5SonnetUi KF5TextWidgets
 WANTLIB += KF5Wallet KF5WidgetsAddons Qt5Core Qt5Gui Qt5Widgets

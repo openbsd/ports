@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2021/08/13 09:28:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2021/08/29 07:24:27 ajacoutot Exp $
 
 # MASTER_SITES changes at each version; when looking for updates, try searching
 # ${HOMEPAGE} for a linux driver, for e.g. sx200
 PORTROACH=		ignore:1
-MASTER_SITES=		https://download3.ebz.epson.net/dsc/f/03/00/12/97/30/97f146010d33b9a55badbc23429296f6b9b46011/
+MASTER_SITES=		https://download3.ebz.epson.net/dsc/f/03/00/12/99/78/73605b3f8aac63694fdabee6bd43389731696cd9/
 
 COMMENT=		printer driver for Epson ESC/P-R inkjets
 
-DISTNAME=		epson-inkjet-printer-escpr-1.7.16
+DISTNAME=		epson-inkjet-printer-escpr-1.7.17
 EXTRACT_SUFX=		-1lsb3.2.tar.gz
 
 SHARED_LIBS +=	escpr                     0.0 # 1.0

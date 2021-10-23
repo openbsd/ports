@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1296 2021/08/10 20:43:52 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1318 2021/10/21 08:59:34 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -477,7 +477,26 @@ my $stem_extensions = {
 	'py-spark-parser' => 'py3-spark-parser',
 	'py-xdis' => 'py3-xdis',
 	'py-uncompyle6' => 'py3-uncompyle6',
-	'py-click' => 'py3-click'
+	'py-click' => 'py3-click',
+	'py-pyinotify' => 'py3-pyinotify',
+	'py-virtualdisplay' => 'py3-virtualdisplay',
+	'py-meld3' => 'py3-meld3',
+	'py-cryptography_vectors' => 'py3-cryptography_vectors',
+	'py-boto' => 'py3-boto3',
+	'py3-boto' => 'py3-boto3',
+	'py-paramiko' => 'py3-paramiko',
+	'py-nxos' => 'py3-nxos',
+	'py-scp' => 'py3-scp',
+	'py-bcrypt' => 'py3-bcrypt',
+	'py-iso8601' => 'py3-iso8601',
+	'py-asn1crypto' => 'py3-asn1crypto',
+	'py-asn1' => 'py3-asn1',
+	'py-snmp' => 'py3-snmp',
+	'py-PyNaCl' => 'py3-PyNaCl',
+	'py-websocket-client' => 'py3-websocket-client',
+	'libmesode' => 'libstrophe',
+	'py-stem' => 'py3-stem',
+	'py-jsonschema' => 'py3-jsonschema',
 };
 
 my $obsolete_reason = {};
@@ -647,7 +666,6 @@ setup_obsolete_reason(
 	6 => 'suricata-update',
 	1 => 'exploitdb-papers',
 	3 => 'nautilus-sendto',
-	5 => 'libstrophe',
 	2 => 'ghostview',
 	7 => 'libcudf',
 	7 => 'ocaml-cudf',
@@ -1064,7 +1082,7 @@ setup_obsolete_reason(
 	0 => 'lazarus',
 	13 => 'exaile',
 	3 => 'instead-launcher',
-	3 => qr{^(ruby(19|2[0-5])-|ruby-[^0-9])},
+	3 => qr{^(ruby(19|2[0-6])-|ruby-[^0-9])},
 # 6.9
 	3 => 'py-notify',
 	3 => 'glimpse',
@@ -1234,6 +1252,13 @@ setup_obsolete_reason(
 	3 => 'qt4-postgresql',
 	3 => 'qt4-sqlite2',
 	3 => 'qt4-tds',
+	1 => 'antlr3',
+	6 => 'enigmail',
+	6 => 'enigmail-seamonkey',
+	29 => 'google-compute-engine',
+	3 => 'bzr',
+	3 => 'bzr-svn',
+	6 => 'libvstr',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1249,7 +1274,7 @@ my $obsolete_suggestion = {
 	'qlandkartegt' => 'qmapshack',
 	'keepassx' => 'keepassxc',
 	'lives' => [qw(kdenlive shotcut)],
-	'pdfshuffler' => 'pdfarranger', 
+	'pdfshuffler' => 'pdfarranger',
 };
 
 # reasons for obsolete packages
@@ -1433,7 +1458,8 @@ my $cve = {
 	'multimedia/libquicktime' => 'libquicktime-<1.2.4p13',
 	'net/curl' => 'curl-<7.65.0',
 	'net/dhcpcd' => 'dhcpcd-<7.2.2',
-	'net/haproxy' => 'haproxy-<2.0.14',
+	'net/dino' => 'dino-<0.2.1',
+	'net/haproxy' => 'haproxy-<2.4.4',
 	'net/icecast' => 'icecast-<2.4.4',
 	'net/irssi' => 'irssi-<1.2.1',
 	'net/isc-bind' => 'isc-bind-<9.16.3',

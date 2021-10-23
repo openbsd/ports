@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2021/02/12 13:44:00 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.29 2021/08/31 11:17:52 fcambus Exp $
 @pkgpath misc/mc,no_x11
 @bin bin/mc
 bin/mcdiff
@@ -310,6 +310,7 @@ share/mc/syntax/j.syntax
 share/mc/syntax/jal.syntax
 share/mc/syntax/java.syntax
 share/mc/syntax/js.syntax
+share/mc/syntax/json.syntax
 share/mc/syntax/kotlin.syntax
 share/mc/syntax/latex.syntax
 share/mc/syntax/lisp.syntax

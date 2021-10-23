@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/01/23 18:10:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2021/09/10 08:43:59 rsadowski Exp $
 
 COMMENT =	KMail mbox importer
 DISTNAME =	mbox-importer-${VERSION}
@@ -14,7 +14,8 @@ WANTLIB += KF5MailImporter KF5MailImporterAkonadi KF5MessageComposer
 WANTLIB += KF5MessageCore KF5MessageViewer KF5Mime KF5MimeTreeParser
 WANTLIB += KF5PimCommon KF5PimCommonAkonadi KF5PimTextEdit KF5Service
 WANTLIB += KF5WidgetsAddons Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Network Qt5Widgets Qt5Xml c gpgmepp m qgpgme
+WANTLIB += Qt5Network Qt5Widgets Qt5Xml assuan c gpgme gpgmepp
+WANTLIB += m qgpgme
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes

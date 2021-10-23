@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.35 2021/05/24 21:13:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2021/09/02 21:23:38 sthen Exp $
 
 COMMENT=	C-based regular expression scanner generator
 
-V=		2.1.1
+V=		2.2
 DISTNAME=	re2c-$V
 EXTRACT_SUFX=	.tar.xz
 CATEGORIES=	devel

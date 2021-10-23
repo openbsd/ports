@@ -1,0 +1,7 @@
+The docbook-utils is a set of a few small programs intended to ease
+everyday's use of technical documentation software and more generally
+use of SGML and XML.
+
+Tasks they currently accomplish are:
+  - jw: convert SGML files to other formats (HTML, RTF, Postscript, PDF)
+  - sgmldiff: detect the differerences in markup between two SGML files

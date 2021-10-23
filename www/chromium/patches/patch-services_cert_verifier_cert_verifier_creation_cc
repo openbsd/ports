@@ -1,9 +1,27 @@
-$OpenBSD: patch-services_cert_verifier_cert_verifier_creation_cc,v 1.3 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-services_cert_verifier_cert_verifier_creation_cc,v 1.6 2021/10/20 10:27:48 robert Exp $
 
 Index: services/cert_verifier/cert_verifier_creation.cc
 --- services/cert_verifier/cert_verifier_creation.cc.orig
 +++ services/cert_verifier/cert_verifier_creation.cc
-@@ -71,7 +71,7 @@ scoped_refptr<net::CertVerifyProc> CreateCertVerifyPro
+@@ -86,7 +86,7 @@ scoped_refptr<net::CertVerifyProc> CreateCertVerifyPro
+ scoped_refptr<net::CertVerifyProc> CreateOldDefaultWithoutCaching(
+     scoped_refptr<net::CertNetFetcher> cert_net_fetcher) {
+   scoped_refptr<net::CertVerifyProc> verify_proc;
+-#if defined(OS_FUCHSIA) || defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_FUCHSIA) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   verify_proc =
+       net::CertVerifyProc::CreateBuiltinVerifyProc(std::move(cert_net_fetcher));
+ #else
+@@ -104,7 +104,7 @@ scoped_refptr<net::CertVerifyProc> CreateNewDefaultWit
+     scoped_refptr<net::CertNetFetcher> cert_net_fetcher) {
+   scoped_refptr<net::CertVerifyProc> verify_proc;
+ #if BUILDFLAG(CHROME_ROOT_STORE_SUPPORTED) && \
+-    (defined(OS_LINUX) || defined(OS_WIN))
++    (defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD))
+   verify_proc = net::CreateCertVerifyProcBuiltin(
+       std::move(cert_net_fetcher), net::CreateSslSystemTrustStoreChromeRoot());
+ #elif BUILDFLAG(BUILTIN_CERT_VERIFIER_FEATURE_SUPPORTED)
+@@ -120,7 +120,7 @@ scoped_refptr<net::CertVerifyProc> CreateNewDefaultWit
  
  bool IsUsingCertNetFetcher() {
  #if defined(OS_ANDROID) || defined(OS_FUCHSIA) || defined(OS_CHROMEOS) || \

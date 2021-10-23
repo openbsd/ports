@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_emacs_c,v 1.1 2021/08/29 07:24:50 jca Exp $
+
+Don't use printf %n.
+
+Index: src/emacs.c
+--- src/emacs.c.orig
++++ src/emacs.c
+@@ -2445,21 +2445,13 @@ shut_down_emacs (int sig, Lisp_Object stuff)
+       reset_all_sys_modes ();
+       if (sig && sig != SIGTERM)
+ 	{
+-	  static char const fmt[] = "Fatal error %d: %n%s\n";
+-	  char buf[max ((sizeof fmt - sizeof "%d%n%s\n"
+-			 + INT_STRLEN_BOUND (int) + 1),
+-			min (PIPE_BUF, MAX_ALLOCA))];
++	  static char const fmt[] = "Fatal error %d: ";
++	  char buf[sizeof fmt - strlen ("%d") + INT_STRLEN_BOUND (int) + 1];
+ 	  char const *sig_desc = safe_strsignal (sig);
+-	  int nlen;
+-	  int buflen = snprintf (buf, sizeof buf, fmt, sig, &nlen, sig_desc);
+-	  if (0 <= buflen && buflen < sizeof buf)
+-	    emacs_write (STDERR_FILENO, buf, buflen);
+-	  else
+-	    {
+-	      emacs_write (STDERR_FILENO, buf, nlen);
+-	      emacs_write (STDERR_FILENO, sig_desc, strlen (sig_desc));
+-	      emacs_write (STDERR_FILENO, fmt + sizeof fmt - 2, 1);
+-	    }
++	  snprintf (buf, sizeof buf, fmt, sig);
++	  emacs_write (STDERR_FILENO, buf, strlen (buf));
++	  emacs_write (STDERR_FILENO, sig_desc, strlen (sig_desc));
++	  emacs_write (STDERR_FILENO, "\n", 1);
+ 	}
+     }
+ #else

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/03/03 07:31:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/10/18 15:23:11 ajacoutot Exp $
 include/ibus-anthy-1.0/
 include/ibus-anthy-1.0/anthygcontext.h
 lib/girepository-1.0/Anthy-9000.typelib
@@ -72,9 +72,11 @@ share/locale/cs/LC_MESSAGES/ibus-anthy.mo
 share/locale/de/LC_MESSAGES/ibus-anthy.mo
 share/locale/el/LC_MESSAGES/ibus-anthy.mo
 share/locale/es/LC_MESSAGES/ibus-anthy.mo
+share/locale/fi/LC_MESSAGES/ibus-anthy.mo
 share/locale/fr/LC_MESSAGES/ibus-anthy.mo
 share/locale/hu/LC_MESSAGES/ibus-anthy.mo
 share/locale/ja/LC_MESSAGES/ibus-anthy.mo
+share/locale/ko/LC_MESSAGES/ibus-anthy.mo
 share/locale/pt_BR/LC_MESSAGES/ibus-anthy.mo
 share/locale/pt_PT/
 share/locale/pt_PT/LC_MESSAGES/

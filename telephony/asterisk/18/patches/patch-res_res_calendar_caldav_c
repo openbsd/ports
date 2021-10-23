@@ -1,0 +1,14 @@
+$OpenBSD: patch-res_res_calendar_caldav_c,v 1.1.1.1 2021/10/16 10:55:00 sthen Exp $
+
+Index: res/res_calendar_caldav.c
+--- res/res_calendar_caldav.c.orig
++++ res/res_calendar_caldav.c
+@@ -405,7 +405,7 @@ static void caldav_add_event(icalcomponent *comp, stru
+ 			ast_string_field_set(event, uid, event->summary);
+ 		} else {
+ 			char tmp[100];
+-			snprintf(tmp, sizeof(tmp), "%ld", event->start);
++			snprintf(tmp, sizeof(tmp), "%lld", (long long)event->start);
+ 			ast_string_field_set(event, uid, tmp);
+ 		}
+ 	}

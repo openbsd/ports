@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2020/05/19 01:23:08 kmos Exp $
+# $OpenBSD: Makefile,v 1.20 2021/09/21 06:00:47 robert Exp $
 
 COMMENT=		file manager for the MATE desktop
 
 SHARED_LIBS +=  caja-extension            5.0 # 5.0
 
 MATE_PROJECT=		caja
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -19,6 +20,7 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
 WANTLIB += harfbuzz iconv intl lzma m mate-desktop-2 notify pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += startup-notification-1 xcb xcb-render xcb-shm xcb-util xml2 z
+WANTLIB += ${COMPILER_LIBCXX} execinfo jpeg
 
 MODULES=		devel/dconf \
 			x11/gnome

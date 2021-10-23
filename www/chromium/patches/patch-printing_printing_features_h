@@ -1,9 +1,9 @@
-$OpenBSD: patch-printing_printing_features_h,v 1.5 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-printing_printing_features_h,v 1.7 2021/10/20 10:27:47 robert Exp $
 
 Index: printing/printing_features.h
 --- printing/printing_features.h.orig
 +++ printing/printing_features.h
-@@ -40,7 +40,7 @@ bool ShouldPrintUsingXps(bool source_is_pdf);
+@@ -42,7 +42,7 @@ bool ShouldPrintUsingXps(bool source_is_pdf);
  #endif  // defined(OS_WIN)
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -11,4 +11,4 @@ Index: printing/printing_features.h
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
  COMPONENT_EXPORT(PRINTING_BASE)
  extern const base::Feature kEnableOopPrintDrivers;
- #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) ||
+ COMPONENT_EXPORT(PRINTING_BASE)

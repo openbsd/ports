@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.51 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.52 2021/09/01 16:54:39 robert Exp $
 
 Index: content/gpu/gpu_main.cc
 --- content/gpu/gpu_main.cc.orig

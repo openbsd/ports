@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2017/06/02 16:50:16 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/09/02 17:06:14 fcambus Exp $
 @newgroup _mtr:790
 @newuser _mtr:790:_mtr::mtr user:/nonexistent:/sbin/nologin
 !%%gtk%%
@@ -8,6 +8,4 @@
 @mode 4555
 @bin sbin/mtr-packet
 @mode
-share/bash-completion/
-share/bash-completion/completions/
 share/bash-completion/completions/mtr

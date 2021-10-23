@@ -1,9 +1,9 @@
-$OpenBSD: patch-cmake_FindLibSpectre_cmake,v 1.1.1.1 2018/06/26 05:34:23 rsadowski Exp $
+$OpenBSD: patch-cmake_FindLibSpectre_cmake,v 1.2 2021/09/10 08:43:49 rsadowski Exp $
 
 Index: cmake/FindLibSpectre.cmake
 --- cmake/FindLibSpectre.cmake.orig
 +++ cmake/FindLibSpectre.cmake
-@@ -41,12 +41,16 @@ if(_pc_LIBSPECTRE_FOUND)
+@@ -39,12 +39,16 @@ if(_pc_LIBSPECTRE_FOUND)
      HINTS ${_pc_LIBSPECTRE_LIBRARY_DIRS} ${CMAKE_LIBRARY_PATH}
    )
  

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.629 2021/07/24 21:33:15 kn Exp $
+# $OpenBSD: Makefile,v 1.635 2021/10/05 13:17:35 landry Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -178,6 +178,7 @@
      SUBDIR += p5-Crypt-DES
      SUBDIR += p5-Crypt-DES-EDE3
      SUBDIR += p5-Crypt-DSA
+     SUBDIR += p5-Crypt-Ed25519
      SUBDIR += p5-Crypt-Eksblowfish
      SUBDIR += p5-Crypt-IDEA
      SUBDIR += p5-Crypt-LE
@@ -273,16 +274,13 @@
      SUBDIR += py-aes,python3
      SUBDIR += py-argon2-cffi,python3
      SUBDIR += py-artifacts,python3
-     SUBDIR += py-asn1crypto
      SUBDIR += py-asn1crypto,python3
      SUBDIR += py-axolotl,python3
      SUBDIR += py-axolotl-curve25519
      SUBDIR += py-axolotl-curve25519,python3
-     SUBDIR += py-bcrypt
      SUBDIR += py-bcrypt,python3
      SUBDIR += py-cryptodome
      SUBDIR += py-cryptodome,python3
-     SUBDIR += py-cryptography
      SUBDIR += py-cryptography,python3
      SUBDIR += py-cryptography_vectors
      SUBDIR += py-cryptography_vectors,python3
@@ -303,7 +301,6 @@
      SUBDIR += py-miasm
      SUBDIR += py-openssl,python3
      SUBDIR += py-oauthlib,python3
-     SUBDIR += py-paramiko
      SUBDIR += py-paramiko,python3
      SUBDIR += py-passlib,python3
      SUBDIR += py-pbkdf2
@@ -321,7 +318,6 @@
      SUBDIR += py-requests-aws4auth,python3
      SUBDIR += py-ropper,python3
      SUBDIR += py-rsa,python3
-     SUBDIR += py-scp
      SUBDIR += py-scp,python3
      SUBDIR += py-scrypt
      SUBDIR += py-scrypt,python3
@@ -345,6 +341,7 @@
      SUBDIR += regripper
      SUBDIR += reop
      SUBDIR += rhash
+     SUBDIR += rnp
      SUBDIR += routersploit
      SUBDIR += ruby-argon2,ruby27
      SUBDIR += ruby-argon2,ruby30

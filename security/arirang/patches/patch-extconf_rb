@@ -1,11 +1,19 @@
-$OpenBSD: patch-extconf_rb,v 1.1 2017/08/28 00:46:07 jeremy Exp $
+$OpenBSD: patch-extconf_rb,v 1.2 2021/09/02 14:59:45 jeremy Exp $
 
-Support ruby 2.0+.
+Support ruby 3.0+.
 
 Index: extconf.rb
 --- extconf.rb.orig
 +++ extconf.rb
-@@ -23,7 +23,7 @@ makefile += "OBJS=       $(SRCS:.c=.o)\n\n"
+@@ -16,14 +16,14 @@ libruby = CONFIG['RUBY_SO_NAME']
+ makefile =  "all: arirang\n"
+ makefile += "exec_prefix = /usr/local\n"
+ makefile += "CC=         cc\n"
+-makefile += "CFLAGS+=-Wall -pedantic\n"
++makefile += "CFLAGS+=-Wall -pedantic -fdeclspec\n"
+ makefile += "TARGET=     arirang\n"
+ makefile += "SRCS=       arirang.c grabhead.c rule.c screen.c report.c arissl.c ariruby.c proxy.c debug.c\n"
+ makefile += "OBJS=       $(SRCS:.c=.o)\n\n"
  
  makefile += ".c.o:\n"
  

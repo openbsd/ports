@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_gmcerts_c,v 1.1 2021/09/12 08:23:46 solene Exp $
+
+time_t is 64 bits on OpenBSD and NetBSD, so avoid truncation on those
+platforms in a portable way.
+
+Index: src/gmcerts.c
+--- src/gmcerts.c.orig
++++ src/gmcerts.c
+@@ -341,8 +341,8 @@ static void load_GmCerts_(iGmCerts *d) {
+                 const iRangecc key    = capturedRange_RegExpMatch(&m, 1);
+                 const iRangecc until  = capturedRange_RegExpMatch(&m, 2);
+                 const iRangecc fp     = capturedRange_RegExpMatch(&m, 3);
+-                time_t sec;
+-                sscanf(until.start, "%ld", &sec);
++                long long sec;
++                sscanf(until.start, "%lld", &sec);
+                 iDate untilDate;
+                 initSinceEpoch_Date(&untilDate, sec);
+                 insert_StringHash(d->trusted,

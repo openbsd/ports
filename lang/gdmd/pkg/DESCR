@@ -1,0 +1,2 @@
+gdmd is a DMD-like wrapper for GDC. It lets you use DMD-style command
+line flags with GDC.

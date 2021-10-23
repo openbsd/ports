@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_modules_qt_Makefile,v 1.4 2019/04/26 13:39:16 rsadowski Exp $
+$OpenBSD: patch-src_modules_qt_Makefile,v 1.5 2021/09/09 18:25:25 rsadowski Exp $
 XXX Dirty hack
 Index: src/modules/qt/Makefile
 --- src/modules/qt/Makefile.orig
 +++ src/modules/qt/Makefile
-@@ -34,6 +34,10 @@ ifdef USE_FFTW
+@@ -37,6 +37,10 @@ ifdef USE_FFTW
  	CFLAGS += -DUSE_FFTW
  endif
  

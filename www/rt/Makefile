@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.49 2021/02/25 11:09:17 robert Exp $
+# $OpenBSD: Makefile,v 1.50 2021/10/04 18:18:52 robert Exp $
 
 COMMENT=		industrial-grade ticketing system
 
-DISTNAME=		rt-5.0.1
+DISTNAME=		rt-5.0.2
 CATEGORIES=		www
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
@@ -42,6 +42,7 @@ RUN_DEPENDS=		converters/p5-Convert-ASN1 \
 			devel/p5-Module-Versions-Report \
 			devel/p5-MooseX-NonMoose \
 			devel/p5-MooseX-Role-Parameterized \
+			devel/p5-Parallel-ForkManager \
 			devel/p5-Path-Dispatcher \
 			devel/p5-PerlIO-eol \
 			devel/p5-Regexp-IPv6 \
@@ -75,6 +76,7 @@ RUN_DEPENDS=		converters/p5-Convert-ASN1 \
 			textproc/p5-Encode-Detect \
 			textproc/p5-Encode-HanExtra \
 			textproc/p5-List-UtilsBy \
+			textproc/p5-Pod-Parser \
 			textproc/p5-Regexp-Common \
 			textproc/p5-String-ShellQuote \
 			textproc/p5-Text-Quoted \
@@ -120,6 +122,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS=		--with-rt-group=bin \
+			--with-libs-group=bin \
 			--enable-layout=OpenBSD \
 			--enable-gpg \
 			--enable-graphviz \

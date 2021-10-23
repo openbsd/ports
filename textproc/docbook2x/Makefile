@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2020/06/09 07:14:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2021/09/02 18:33:06 ajacoutot Exp $
 
 COMMENT =	convert DocBook to man pages and Texinfo
 
 DISTNAME =	docbook2X-0.8.8
 PKGNAME =	${DISTNAME:L}
-REVISION =	3
+REVISION =	5
 
 CATEGORIES =	textproc
 
@@ -13,14 +13,15 @@ HOMEPAGE =	http://docbook2x.sourceforge.net/
 # MIT-like
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c iconv
+WANTLIB += c
 
 MASTER_SITES = ${MASTER_SITE_SOURCEFORGE:=docbook2x/}
 
-LIB_DEPENDS +=		converters/libiconv
-RUN_DEPENDS =		textproc/libxml \
+RUN_DEPENDS =		converters/libiconv \
+			textproc/libxml \
 			textproc/libxslt \
 			textproc/p5-XML-SAX
+
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
 SEPARATE_BUILD =	Yes
@@ -28,6 +29,9 @@ USE_GMAKE =		Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--datadir=${PREFIX}/share
+
+# prevent conflict with docbook-utils
+CONFIGURE_ARGS +=	--program-transform-name='s/docbook2/db2x_docbook2/'
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/libxml2

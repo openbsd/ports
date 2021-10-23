@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/07/04 18:38:36 stu Exp $
-bin/cm2rem.tcl
+@comment $OpenBSD: PLIST,v 1.7 2021/10/15 10:50:31 sthen Exp $
 bin/rem
+bin/rem2html
 @bin bin/rem2ps
 @bin bin/remind
 bin/tkremind
-@man man/man1/cm2rem.1
 @man man/man1/rem.1
 @man man/man1/rem2ps.1
 @man man/man1/remind.1

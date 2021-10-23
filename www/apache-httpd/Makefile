@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.108 2021/06/04 08:48:37 giovanni Exp $
+# $OpenBSD: Makefile,v 1.111 2021/10/07 17:19:18 sthen Exp $
 
 COMMENT=		apache HTTP server
 
-V=			2.4.48
+V=			2.4.51
 DISTNAME=		httpd-${V}
 PKGNAME=		apache-httpd-${V}
 

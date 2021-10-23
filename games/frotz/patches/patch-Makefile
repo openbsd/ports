@@ -1,7 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1 2021/01/03 16:12:02 bcallah Exp $
+$OpenBSD: patch-Makefile,v 1.2 2021/09/04 12:36:23 bcallah Exp $
 
 Remove hardcoded optimizations
-Remove -lexecinfo
 
 Index: Makefile
 --- Makefile.orig
@@ -15,11 +14,3 @@ Index: Makefile
  
  # Define your optimization flags.
  #
-@@ -161,7 +161,6 @@ NO_IMMINTRIN_H = yes
- CFLAGS += -I/usr/local/include
- LDFLAGS += -L/usr/local/lib
- SDL_CFLAGS += -DSDL_DISABLE_IMMINTRIN_H
--SDL_LDFLAGS += -lexecinfo
- endif
- 
- # Linux

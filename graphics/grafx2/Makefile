@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2020/04/15 13:31:42 fcambus Exp $
+# $OpenBSD: Makefile,v 1.12 2021/08/31 12:35:50 fcambus Exp $
 
 COMMENT =	bitmap paint program inspired by Deluxe Paint and Brilliance
 
-V =		2.7
-DISTNAME =	grafx2-${V}.2945-src
+V =		2.8
+DISTNAME =	grafx2-${V}.3091-HEAD-src
 PKGNAME =	grafx2-${V}
 EXTRACT_SUFX =	.tgz
-REVISION =	0
 
 CATEGORIES =	graphics
 
@@ -17,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	SDL2 SDL2_image X11 c iconv m png tiff z ${MODLUA_WANTLIB}
 
-MASTER_SITES =	https://gitlab.com/GrafX2/grafX2/-/jobs/422881812/artifacts/raw/
+MASTER_SITES =	https://pulkomandy.tk/projects/GrafX2/downloads/
 
 MODULES =	lang/lua
 MODLUA_VERSION = 5.3

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2020/08/15 06:34:14 robert Exp $
+# $OpenBSD: Makefile,v 1.17 2021/08/25 12:05:52 robert Exp $
 
 COMMENT=		media tools for the MATE desktop
 
 MATE_PROJECT=		mate-media
-MATE_VERSION=		1.24.1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -20,8 +19,8 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 vorbis vorbisfile
 WANTLIB += dconf lzma mate-desktop-2 matemixer xml2
 WANTLIB += X11-xcb startup-notification-1 xcb-util
 WANTLIB += fribidi
-WANTLIB += Xau
 WANTLIB += mate-panel-applet-4
+WANTLIB += ${COMPILER_LIBCXX} execinfo jpeg
 
 MODULES=		devel/dconf \
 			x11/gnome

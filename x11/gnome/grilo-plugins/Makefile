@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.84 2021/03/31 17:59:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.86 2021/10/08 18:42:04 ajacoutot Exp $
 
 # XXX: PORTROACH overriden at end of this file.
 
 COMMENT=	plugins for Grilo
 
 GNOME_PROJECT=	grilo-plugins
-GNOME_VERSION=	0.3.13
+GNOME_VERSION=	0.3.14
 
 API=		0.3
 SUBST_VARS=	API
@@ -28,6 +28,7 @@ MODULES=	devel/meson \
 BUILD_DEPENDS=	devel/gperf
 
 LIB_DEPENDS=	devel/libgdata \
+		net/avahi,-glib \
 		x11/gnome/grilo \
 		x11/gnome/libmediaart \
 		x11/gnome/tracker3

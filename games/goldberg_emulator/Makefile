@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/08/22 02:01:47 thfr Exp $
+# $OpenBSD: Makefile,v 1.2 2021/08/23 14:24:40 thfr Exp $
 
 COMMENT =	emulator for Steam online features
 
@@ -9,6 +9,7 @@ GL_PROJECT =	goldberg_emulator
 GL_COMMIT =	c5f50ddb3261cca857f220440313df80010291bd
 DISTNAME =	${GL_PROJECT}-${GL_V}{${GL_COMMIT}}
 PKGNAME =	${GL_PROJECT}-${GL_V}
+REVISION =	0
 
 SHARED_LIBS +=	steam_api	0.0	# 2.5
 CATEGORIES =	games
@@ -20,6 +21,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} m protobuf-lite
 MASTER_SITES =		https://gitlab.com/${GL_ACCOUNT}/${GL_PROJECT}/-/archive/${GL_COMMIT}/
+FIX_CRLF_FILES =	${WRKSRC}/sdk_includes/steamclientpublic.h
 COMPILER =		base-clang ports-gcc
 LIB_DEPENDS =		devel/protobuf
 USE_GMAKE =		Yes
@@ -34,7 +36,7 @@ do-install:
 	${INSTALL_DATA} ${WRKBUILD}/libsteam_api.so \
 		${PREFIX}/lib/libsteam_api.so.${LIBsteam_api_VERSION}
 	${INSTALL_DATA_DIR} ${PREFIX}/include/goldberg_emulator/sdk_includes/
-	cp ${WRKBUILD}/sdk_includes/* \
+	cp ${WRKBUILD}/sdk_includes/*.h \
 		${PREFIX}/include/goldberg_emulator/sdk_includes/
 
 .include <bsd.port.mk>

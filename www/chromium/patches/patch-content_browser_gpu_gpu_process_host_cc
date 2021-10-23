@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_gpu_gpu_process_host_cc,v 1.24 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-content_browser_gpu_gpu_process_host_cc,v 1.27 2021/10/20 10:27:47 robert Exp $
 
 Index: content/browser/gpu/gpu_process_host.cc
 --- content/browser/gpu/gpu_process_host.cc.orig
@@ -10,4 +10,4 @@ Index: content/browser/gpu/gpu_process_host.cc
 +    switches::kDisableUnveil,
      switches::kEnableDeJelly,
      switches::kDeJellyScreenWidth,
-     switches::kDoubleBufferCompositing,
+     switches::kDocumentTransitionSlowdownFactor,

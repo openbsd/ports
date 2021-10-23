@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2021/06/12 13:19:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2021/10/03 19:55:17 ajacoutot Exp $
 
 COMMENT=	template rendering and notifications with Consul
 
 MODGO_MODNAME=	github.com/hashicorp/consul-template
-MODGO_VERSION=	v0.26.0
+MODGO_VERSION=	v0.27.1
 DISTNAME=	consul-template-${MODGO_VERSION}
 
 CATEGORIES=	sysutils net
@@ -85,6 +85,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/vault/api				 v1.0.5-0.20190730042357-746c0b111519 \
 	github.com/hashicorp/vault/sdk				 v0.1.14-0.20190730042320-0dc007d98cc8 \
 	github.com/hashicorp/yamux				 v0.0.0-20181012175058-2f1d1f20f75d \
+	github.com/imdario/mergo				 v0.3.12 \
 	github.com/json-iterator/go				 v1.1.9 \
 	github.com/julienschmidt/httprouter			 v1.2.0 \
 	github.com/konsorten/go-windows-terminal-sequences	 v1.0.1 \
@@ -94,7 +95,6 @@ MODGO_MODULES =	\
 	github.com/kr/text					 v0.1.0 \
 	github.com/mattn/go-colorable				 v0.1.7 \
 	github.com/mattn/go-isatty				 v0.0.12 \
-	github.com/mattn/go-shellwords				 v1.0.12 \
 	github.com/matttproud/golang_protobuf_extensions	 v1.0.1 \
 	github.com/miekg/dns					 v1.1.26 \
 	github.com/mitchellh/cli				 v1.1.0 \
@@ -127,13 +127,14 @@ MODGO_MODULES =	\
 	github.com/stretchr/objx				 v0.1.1 \
 	github.com/stretchr/testify				 v1.4.0 \
 	github.com/tv42/httpunix				 v0.0.0-20150427012821-b75d8614f926 \
-	golang.org/x/crypto					 v0.0.0-20201002170205-7f63de1d35b0 \
+	golang.org/x/crypto					 v0.0.0-20210817164053-32db794688a5 \
 	golang.org/x/exp					 v0.0.0-20190121172915-509febef88a4 \
 	golang.org/x/lint					 v0.0.0-20190313153728-d0100b6bd8b3 \
-	golang.org/x/net					 v0.0.0-20201002202402-0a1ea396d57c \
+	golang.org/x/net					 v0.0.0-20210226172049-e18ecbb05110 \
 	golang.org/x/oauth2					 v0.0.0-20180821212333-d2e6202438be \
 	golang.org/x/sync					 v0.0.0-20190911185100-cd5d95a43a6e \
-	golang.org/x/sys					 v0.0.0-20200930185726-fdedc70b468f \
+	golang.org/x/sys					 v0.0.0-20210615035016-665e8c7367d1 \
+	golang.org/x/term					 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/text					 v0.3.3 \
 	golang.org/x/time					 v0.0.0-20200630173020-3af7569d3a1e \
 	golang.org/x/tools					 v0.0.0-20190907020128-2ca718005c18 \
@@ -224,7 +225,6 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto				 v0.0.0-20181029021203-45a5f77698d3 \
 	golang.org/x/crypto				 v0.0.0-20190308221718-c2843e01d9a2 \
 	golang.org/x/crypto				 v0.0.0-20190923035154-9ee001bba392 \
-	golang.org/x/crypto				 v0.0.0-20200622213623-75b288015ac9 \
 	golang.org/x/lint				 v0.0.0-20181026193005-c67002cb31c3 \
 	golang.org/x/lint				 v0.0.0-20190227174305-5b3e6a55c961 \
 	golang.org/x/net				 v0.0.0-20180724234803-3673e40ba225 \
@@ -252,7 +252,6 @@ MODGO_MODFILES =	\
 	golang.org/x/sys				 v0.0.0-20190215142949-d0b11bdaac8a \
 	golang.org/x/sys				 v0.0.0-20190222072716-a9d3bda3a223 \
 	golang.org/x/sys				 v0.0.0-20190403152447-81d4e9dc473e \
-	golang.org/x/sys				 v0.0.0-20190412213103-97732733099d \
 	golang.org/x/sys				 v0.0.0-20190422165155-953cdadca894 \
 	golang.org/x/sys				 v0.0.0-20190922100055-0a153f010e69 \
 	golang.org/x/sys				 v0.0.0-20190924154521-2837fb4f24fe \
@@ -262,6 +261,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys				 v0.0.0-20200122134326-e047566fdf82 \
 	golang.org/x/sys				 v0.0.0-20200124204421-9fbb57f87de9 \
 	golang.org/x/sys				 v0.0.0-20200223170610-d5e6a3e2c0ae \
+	golang.org/x/sys				 v0.0.0-20201119102817-f84b799fce68 \
 	golang.org/x/text				 v0.3.0 \
 	golang.org/x/text				 v0.3.1-0.20181227161524-e6919f6577db \
 	golang.org/x/text				 v0.3.2 \

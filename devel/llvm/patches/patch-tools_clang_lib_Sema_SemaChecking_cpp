@@ -1,10 +1,11 @@
-$OpenBSD: patch-tools_clang_lib_Sema_SemaChecking_cpp,v 1.9 2021/05/13 23:54:25 jca Exp $
+$OpenBSD: patch-tools_clang_lib_Sema_SemaChecking_cpp,v 1.10 2021/09/19 17:49:23 jca Exp $
 
 - Teach Clang about syslog format attribute
 - Enable the kprintf format attribute
 - The %b printf extension in the kernel is not fixed to a int type. On sparc64
   there are various %llb formats. Adjust the code to handle the length
   specifiers and type check like it is used by the regular case.
+- Add a new warning for %n format specifier usage in printf(3) family functions
 
 Index: tools/clang/lib/Sema/SemaChecking.cpp
 --- tools/clang/lib/Sema/SemaChecking.cpp.orig
@@ -70,7 +71,23 @@ Index: tools/clang/lib/Sema/SemaChecking.cpp
      // Type check the second argument (char * for both %b and %D)
      Ex = getDataArg(argIndex + 1);
      const analyze_printf::ArgType &AT2 = ArgType::CStrTy;
-@@ -8810,8 +8826,9 @@ static void CheckFormatString(Sema &S, const FormatStr
+@@ -8067,6 +8083,15 @@ CheckPrintfHandler::HandlePrintfSpecifier(const analyz
+     return true;
+   }
+ 
++  // %n is not allowed anywhere
++  if (CS.getKind() == ConversionSpecifier::nArg) {
++    EmitFormatDiagnostic(S.PDiag(diag::warn_format_narg),
++                         getLocationOfByte(CS.getStart()),
++                         /*IsStringLocation*/ false,
++                         getSpecifierRange(startSpecifier, specifierLen));
++    return true;
++  }
++
+   // Only scalars are allowed for os_trace.
+   if (FSType == Sema::FST_OSTrace &&
+       (CS.getKind() == ConversionSpecifier::PArg ||
+@@ -8810,8 +8835,9 @@ static void CheckFormatString(Sema &S, const FormatStr
    }
  
    if (Type == Sema::FST_Printf || Type == Sema::FST_NSString ||
@@ -82,7 +99,7 @@ Index: tools/clang/lib/Sema/SemaChecking.cpp
      CheckPrintfHandler H(
          S, FExpr, OrigFormatExpr, Type, firstDataArg, numDataArgs,
          (Type == Sema::FST_NSString || Type == Sema::FST_OSTrace), Str,
-@@ -8821,7 +8838,7 @@ static void CheckFormatString(Sema &S, const FormatStr
+@@ -8821,7 +8847,7 @@ static void CheckFormatString(Sema &S, const FormatStr
      if (!analyze_format_string::ParsePrintfString(H, Str, Str + StrLen,
                                                    S.getLangOpts(),
                                                    S.Context.getTargetInfo(),

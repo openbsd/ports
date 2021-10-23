@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_ldb_wscript,v 1.13 2021/05/12 23:33:24 jca Exp $
+$OpenBSD: patch-lib_ldb_wscript,v 1.14 2021/10/18 12:25:20 jca Exp $
 
 1. Force building standalone library (e.g., put headers in appropriate place).
 
@@ -7,7 +7,7 @@ $OpenBSD: patch-lib_ldb_wscript,v 1.13 2021/05/12 23:33:24 jca Exp $
 Index: lib/ldb/wscript
 --- lib/ldb/wscript.orig
 +++ lib/ldb/wscript
-@@ -68,6 +68,7 @@ def configure(conf):
+@@ -69,6 +69,7 @@ def configure(conf):
      conf.CONFIG_PATH('LDB_MODULESDIR', conf.SUBST_ENV_VAR('MODULESDIR') + '/ldb')
  
      conf.env.standalone_ldb = conf.IN_LAUNCH_DIR()
@@ -15,7 +15,7 @@ Index: lib/ldb/wscript
  
      if not conf.env.standalone_ldb:
          max_ldb_version = [int(x) for x in VERSION.split(".")]
-@@ -151,8 +152,7 @@ def configure(conf):
+@@ -152,8 +153,7 @@ def configure(conf):
  
          # we don't want any libraries or modules to rely on runtime
          # resolution of symbols

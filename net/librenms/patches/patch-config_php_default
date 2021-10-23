@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_php_default,v 1.10 2020/07/04 19:51:43 sthen Exp $
+$OpenBSD: patch-config_php_default,v 1.11 2021/10/19 15:09:29 sthen Exp $
 
 Index: config.php.default
 --- config.php.default.orig
@@ -7,12 +7,12 @@ Index: config.php.default
  
  // This is the user LibreNMS will run as
  //Please ensure this user is created and has the correct permissions to your install
--$config['user'] = 'librenms';
+-#$config['user'] = 'librenms';
 +$config['user'] = '_librenms';
  
  ### This should *only* be set if you want to *force* a particular hostname/port
  ### It will prevent the web interface being usable form any other hostname
-@@ -12,7 +12,7 @@ $config['user'] = 'librenms';
+@@ -12,7 +12,7 @@
  
  ### Enable this to use rrdcached. Be sure rrd_dir is within the rrdcached dir
  ### and that your web server has permission to talk to rrdcached.
@@ -20,8 +20,8 @@ Index: config.php.default
 +#$config['rrdcached']    = "unix:/var/run/rrd/rrdcached.sock";
  
  ### Default community
- $config['snmp']['community'] = array('public');
-@@ -26,8 +26,8 @@ $config['auth_mechanism'] = "mysql"; # default, other 
+ #$config['snmp']['community'] = array('public');
+@@ -26,8 +26,8 @@
  #$config['nets'][] = "172.16.0.0/12";
  #$config['nets'][] = "192.168.0.0/16";
  
@@ -31,4 +31,4 @@ Index: config.php.default
 +$config['update'] = 0;
  
  # Number in days of how long to keep old rrd files. 0 disables this feature
- $config['rrd_purge'] = 0;
+ #$config['rrd_purge'] = 0;

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2021/06/14 21:10:08 sebastia Exp $
+# $OpenBSD: Makefile,v 1.26 2021/10/19 19:43:38 sebastia Exp $
 
 COMMENT =	framework for accessing and rendering PDF content
 
 DISTNAME =	PDFKit-1.2.0
+REVISION =	0
 SHARED_LIBS +=	PDFKit	0.0
 
 HOMEPAGE =	http://wiki.gnustep.org/index.php/PDFKit

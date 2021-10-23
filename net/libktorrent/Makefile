@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2021/05/15 09:56:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.30 2021/10/19 20:08:35 rsadowski Exp $
 
 COMMENT =	KTorrent engine
 
@@ -6,13 +6,13 @@ DISTNAME =	libktorrent-${MODKDE_VERSION}
 
 CATEGORIES =	net
 
-SHARED_LIBS +=  KF5Torrent                2.0 # 6.0
+SHARED_LIBS +=  KF5Torrent                3.0 # 6.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Completion KF5ConfigCore
 WANTLIB += KF5CoreAddons KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui
 WANTLIB += KF5KIOWidgets KF5Service KF5Solid KF5WidgetsAddons
 WANTLIB += KF5WindowSystem Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Network Qt5Widgets Qt5Xml gcrypt gmp m qca-qt5
+WANTLIB += Qt5Network Qt5Widgets Qt5Xml X11 gcrypt gmp m qca-qt5
 
 # usual KDE rules:
 # LGPLv2.1+, GPLv2+, GPLv3

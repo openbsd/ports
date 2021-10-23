@@ -1,14 +1,14 @@
-$OpenBSD: patch-gpu_command_buffer_service_webgpu_decoder_impl_cc,v 1.5 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-gpu_command_buffer_service_webgpu_decoder_impl_cc,v 1.8 2021/10/20 10:27:47 robert Exp $
 
 Index: gpu/command_buffer/service/webgpu_decoder_impl.cc
 --- gpu/command_buffer/service/webgpu_decoder_impl.cc.orig
 +++ gpu/command_buffer/service/webgpu_decoder_impl.cc
-@@ -823,7 +823,7 @@ error::Error WebGPUDecoderImpl::HandleRequestAdapter(
+@@ -935,7 +935,7 @@ error::Error WebGPUDecoderImpl::HandleRequestAdapter(
        static_cast<DawnRequestAdapterSerial>(c.request_adapter_serial);
  
    if (gr_context_type_ != GrContextType::kVulkan) {
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
      SendAdapterProperties(request_adapter_serial, -1, nullptr,
                            "WebGPU on Linux requires command-line flag "
                            "--enable-features=Vulkan,UseSkiaRenderer");

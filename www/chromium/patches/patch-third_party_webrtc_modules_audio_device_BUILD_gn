@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_webrtc_modules_audio_device_BUILD_gn,v 1.30 2021/07/21 15:43:34 robert Exp $
+$OpenBSD: patch-third_party_webrtc_modules_audio_device_BUILD_gn,v 1.31 2021/09/01 16:54:40 robert Exp $
 
 Index: third_party/webrtc/modules/audio_device/BUILD.gn
 --- third_party/webrtc/modules/audio_device/BUILD.gn.orig

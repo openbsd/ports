@@ -1,8 +1,20 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.7 2021/07/06 10:32:18 kirby Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.8 2021/10/04 14:35:40 kirby Exp $
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -185,7 +186,7 @@ IF (BUILD_SHIBBOLETH_SUPPORT)
+@@ -161,9 +161,9 @@ SET(QT_VERSION_MAJOR 5)
+ # have to keep using QtWebKit on windows because QtWebEngine can't be
+ # compiled in msys2/mingw (QtWebEnigne is based on chrome, which has to be
+ # compiled with MSVC.)
+-FIND_PROGRAM(qmake_executable NAMES qmake qmake.exe)
++FIND_PROGRAM(qmake_executable NAMES qmake qmake.exe qmake-qt5)
+ EXECUTE_PROCESS(COMMAND
+-    bash -c "${qmake_executable} --version | grep -iE '^using qt version [0-9.]+' | awk '{print $4}'"
++    sh -c "${qmake_executable} --version | grep -iE '^using qt version [0-9.]+' | awk '{print $4}'"
+     OUTPUT_VARIABLE DETECTED_QT_VERSION
+     OUTPUT_STRIP_TRAILING_WHITESPACE)
+ MESSAGE("qt5 version: ${DETECTED_QT_VERSION}")
+@@ -186,7 +186,7 @@ IF (BUILD_SHIBBOLETH_SUPPORT)
      ADD_DEFINITIONS(-DHAVE_SHIBBOLETH_SUPPORT)
  ENDIF()
  
@@ -11,7 +23,7 @@ Index: CMakeLists.txt
      SET(USE_QT_LIBRARIES ${USE_QT_LIBRARIES} "DBus")
  ENDIF()
  
-@@ -797,7 +798,7 @@ ENDIF()
+@@ -798,7 +798,7 @@ ENDIF()
  
  ## QtBus
  IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD")

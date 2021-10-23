@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/11/11 11:42:36 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/09/01 18:28:24 jeremy Exp $
 @bin bin/mirb
 @bin bin/mrbc
-@bin bin/mrdb
 @bin bin/mruby
+bin/mruby-config
 @bin bin/mruby-strip
 include/mrbconf.h
 include/mruby/
@@ -17,6 +17,7 @@ include/mruby/compile.h
 include/mruby/data.h
 include/mruby/debug.h
 include/mruby/dump.h
+include/mruby/endian.h
 include/mruby/error.h
 include/mruby/gc.h
 include/mruby/hash.h
@@ -27,6 +28,11 @@ include/mruby/numeric.h
 include/mruby/object.h
 include/mruby/opcode.h
 include/mruby/ops.h
+include/mruby/presym/
+include/mruby/presym.h
+include/mruby/presym/disable.h
+include/mruby/presym/enable.h
+include/mruby/presym/scanning.h
 include/mruby/proc.h
 include/mruby/range.h
 include/mruby/re.h
@@ -37,8 +43,12 @@ include/mruby/variable.h
 include/mruby/version.h
 lib/mruby/
 lib/mruby/mrbgems/
+lib/mruby/mrbgems/default-no-fpu.gembox
+lib/mruby/mrbgems/default-no-stdio.gembox
 lib/mruby/mrbgems/default.gembox
 lib/mruby/mrbgems/full-core.gembox
+lib/mruby/mrbgems/math.gembox
+lib/mruby/mrbgems/metaprog.gembox
 lib/mruby/mrbgems/mruby-array-ext/
 lib/mruby/mrbgems/mruby-array-ext/mrbgem.rake
 lib/mruby/mrbgems/mruby-array-ext/mrblib/
@@ -80,6 +90,8 @@ lib/mruby/mrbgems/mruby-bin-mirb/tools/
 lib/mruby/mrbgems/mruby-bin-mirb/tools/mirb/
 lib/mruby/mrbgems/mruby-bin-mirb/tools/mirb/mirb.c
 lib/mruby/mrbgems/mruby-bin-mrbc/
+lib/mruby/mrbgems/mruby-bin-mrbc/bintest/
+lib/mruby/mrbgems/mruby-bin-mrbc/bintest/mrbc.rb
 lib/mruby/mrbgems/mruby-bin-mrbc/mrbgem.rake
 lib/mruby/mrbgems/mruby-bin-mrbc/tools/
 lib/mruby/mrbgems/mruby-bin-mrbc/tools/mrbc/
@@ -98,6 +110,10 @@ lib/mruby/mrbgems/mruby-bin-strip/mrbgem.rake
 lib/mruby/mrbgems/mruby-bin-strip/tools/
 lib/mruby/mrbgems/mruby-bin-strip/tools/mruby-strip/
 lib/mruby/mrbgems/mruby-bin-strip/tools/mruby-strip/mruby-strip.c
+lib/mruby/mrbgems/mruby-catch/
+lib/mruby/mrbgems/mruby-catch/mrbgem.rake
+lib/mruby/mrbgems/mruby-catch/mrblib/
+lib/mruby/mrbgems/mruby-catch/mrblib/catch.rb
 lib/mruby/mrbgems/mruby-class-ext/
 lib/mruby/mrbgems/mruby-class-ext/mrbgem.rake
 lib/mruby/mrbgems/mruby-class-ext/mrblib/
@@ -111,15 +127,22 @@ lib/mruby/mrbgems/mruby-compar-ext/mrbgem.rake
 lib/mruby/mrbgems/mruby-compar-ext/mrblib/
 lib/mruby/mrbgems/mruby-compar-ext/mrblib/compar.rb
 lib/mruby/mrbgems/mruby-compiler/
-lib/mruby/mrbgems/mruby-compiler/bintest/
-lib/mruby/mrbgems/mruby-compiler/bintest/mrbc.rb
 lib/mruby/mrbgems/mruby-compiler/core/
 lib/mruby/mrbgems/mruby-compiler/core/codegen.c
 lib/mruby/mrbgems/mruby-compiler/core/keywords
 lib/mruby/mrbgems/mruby-compiler/core/lex.def
 lib/mruby/mrbgems/mruby-compiler/core/node.h
 lib/mruby/mrbgems/mruby-compiler/core/parse.y
+lib/mruby/mrbgems/mruby-compiler/core/y.tab.c
 lib/mruby/mrbgems/mruby-compiler/mrbgem.rake
+lib/mruby/mrbgems/mruby-complex/
+lib/mruby/mrbgems/mruby-complex/mrbgem.rake
+lib/mruby/mrbgems/mruby-complex/mrblib/
+lib/mruby/mrbgems/mruby-complex/mrblib/complex.rb
+lib/mruby/mrbgems/mruby-complex/src/
+lib/mruby/mrbgems/mruby-complex/src/complex.c
+lib/mruby/mrbgems/mruby-complex/test/
+lib/mruby/mrbgems/mruby-complex/test/complex.rb
 lib/mruby/mrbgems/mruby-enum-chain/
 lib/mruby/mrbgems/mruby-enum-chain/mrbgem.rake
 lib/mruby/mrbgems/mruby-enum-chain/mrblib/
@@ -181,8 +204,6 @@ lib/mruby/mrbgems/mruby-inline-struct/test/
 lib/mruby/mrbgems/mruby-inline-struct/test/inline.c
 lib/mruby/mrbgems/mruby-inline-struct/test/inline.rb
 lib/mruby/mrbgems/mruby-io/
-lib/mruby/mrbgems/mruby-io/.gitignore
-lib/mruby/mrbgems/mruby-io/.travis.yml
 lib/mruby/mrbgems/mruby-io/README.md
 lib/mruby/mrbgems/mruby-io/include/
 lib/mruby/mrbgems/mruby-io/include/mruby/
@@ -194,7 +215,6 @@ lib/mruby/mrbgems/mruby-io/mrblib/file.rb
 lib/mruby/mrbgems/mruby-io/mrblib/file_constants.rb
 lib/mruby/mrbgems/mruby-io/mrblib/io.rb
 lib/mruby/mrbgems/mruby-io/mrblib/kernel.rb
-lib/mruby/mrbgems/mruby-io/run_test.rb
 lib/mruby/mrbgems/mruby-io/src/
 lib/mruby/mrbgems/mruby-io/src/file.c
 lib/mruby/mrbgems/mruby-io/src/file_test.c
@@ -207,8 +227,6 @@ lib/mruby/mrbgems/mruby-io/test/io.rb
 lib/mruby/mrbgems/mruby-io/test/mruby_io_test.c
 lib/mruby/mrbgems/mruby-kernel-ext/
 lib/mruby/mrbgems/mruby-kernel-ext/mrbgem.rake
-lib/mruby/mrbgems/mruby-kernel-ext/mrblib/
-lib/mruby/mrbgems/mruby-kernel-ext/mrblib/kernel.rb
 lib/mruby/mrbgems/mruby-kernel-ext/src/
 lib/mruby/mrbgems/mruby-kernel-ext/src/kernel.c
 lib/mruby/mrbgems/mruby-kernel-ext/test/
@@ -231,7 +249,6 @@ lib/mruby/mrbgems/mruby-method/mrbgem.rake
 lib/mruby/mrbgems/mruby-method/mrblib/
 lib/mruby/mrbgems/mruby-method/mrblib/kernel.rb
 lib/mruby/mrbgems/mruby-method/mrblib/method.rb
-lib/mruby/mrbgems/mruby-method/mrblib/unbound_method.rb
 lib/mruby/mrbgems/mruby-method/src/
 lib/mruby/mrbgems/mruby-method/src/method.c
 lib/mruby/mrbgems/mruby-method/test/
@@ -259,13 +276,15 @@ lib/mruby/mrbgems/mruby-objectspace/src/
 lib/mruby/mrbgems/mruby-objectspace/src/mruby_objectspace.c
 lib/mruby/mrbgems/mruby-objectspace/test/
 lib/mruby/mrbgems/mruby-objectspace/test/objectspace.rb
+lib/mruby/mrbgems/mruby-os-memsize/
+lib/mruby/mrbgems/mruby-os-memsize/mrbgem.rake
+lib/mruby/mrbgems/mruby-os-memsize/src/
+lib/mruby/mrbgems/mruby-os-memsize/src/memsize.c
+lib/mruby/mrbgems/mruby-os-memsize/test/
+lib/mruby/mrbgems/mruby-os-memsize/test/memsize.rb
 lib/mruby/mrbgems/mruby-pack/
-lib/mruby/mrbgems/mruby-pack/.gitignore
-lib/mruby/mrbgems/mruby-pack/.travis.yml
 lib/mruby/mrbgems/mruby-pack/README.md
 lib/mruby/mrbgems/mruby-pack/mrbgem.rake
-lib/mruby/mrbgems/mruby-pack/packtest.rb
-lib/mruby/mrbgems/mruby-pack/run_test.rb
 lib/mruby/mrbgems/mruby-pack/src/
 lib/mruby/mrbgems/mruby-pack/src/pack.c
 lib/mruby/mrbgems/mruby-pack/test/
@@ -288,10 +307,7 @@ lib/mruby/mrbgems/mruby-proc-ext/test/proc.rb
 lib/mruby/mrbgems/mruby-random/
 lib/mruby/mrbgems/mruby-random/mrbgem.rake
 lib/mruby/mrbgems/mruby-random/src/
-lib/mruby/mrbgems/mruby-random/src/mt19937ar.c
-lib/mruby/mrbgems/mruby-random/src/mt19937ar.h
 lib/mruby/mrbgems/mruby-random/src/random.c
-lib/mruby/mrbgems/mruby-random/src/random.h
 lib/mruby/mrbgems/mruby-random/test/
 lib/mruby/mrbgems/mruby-random/test/random.rb
 lib/mruby/mrbgems/mruby-range-ext/
@@ -302,12 +318,16 @@ lib/mruby/mrbgems/mruby-range-ext/src/
 lib/mruby/mrbgems/mruby-range-ext/src/range.c
 lib/mruby/mrbgems/mruby-range-ext/test/
 lib/mruby/mrbgems/mruby-range-ext/test/range.rb
+lib/mruby/mrbgems/mruby-rational/
+lib/mruby/mrbgems/mruby-rational/mrbgem.rake
+lib/mruby/mrbgems/mruby-rational/mrblib/
+lib/mruby/mrbgems/mruby-rational/mrblib/rational.rb
+lib/mruby/mrbgems/mruby-rational/src/
+lib/mruby/mrbgems/mruby-rational/src/rational.c
+lib/mruby/mrbgems/mruby-rational/test/
+lib/mruby/mrbgems/mruby-rational/test/rational.rb
 lib/mruby/mrbgems/mruby-sleep/
-lib/mruby/mrbgems/mruby-sleep/.gitignore
-lib/mruby/mrbgems/mruby-sleep/.travis.yml
-lib/mruby/mrbgems/mruby-sleep/.travis_build_config.rb
 lib/mruby/mrbgems/mruby-sleep/README.md
-lib/mruby/mrbgems/mruby-sleep/Rakefile
 lib/mruby/mrbgems/mruby-sleep/example/
 lib/mruby/mrbgems/mruby-sleep/example/sleep.rb
 lib/mruby/mrbgems/mruby-sleep/mrbgem.rake
@@ -316,12 +336,10 @@ lib/mruby/mrbgems/mruby-sleep/src/mrb_sleep.c
 lib/mruby/mrbgems/mruby-sleep/test/
 lib/mruby/mrbgems/mruby-sleep/test/sleep_test.rb
 lib/mruby/mrbgems/mruby-socket/
-lib/mruby/mrbgems/mruby-socket/.travis.yml
 lib/mruby/mrbgems/mruby-socket/README.md
 lib/mruby/mrbgems/mruby-socket/mrbgem.rake
 lib/mruby/mrbgems/mruby-socket/mrblib/
 lib/mruby/mrbgems/mruby-socket/mrblib/socket.rb
-lib/mruby/mrbgems/mruby-socket/run_test.rb
 lib/mruby/mrbgems/mruby-socket/src/
 lib/mruby/mrbgems/mruby-socket/src/const.cstub
 lib/mruby/mrbgems/mruby-socket/src/const.def
@@ -341,7 +359,6 @@ lib/mruby/mrbgems/mruby-sprintf/mrbgem.rake
 lib/mruby/mrbgems/mruby-sprintf/mrblib/
 lib/mruby/mrbgems/mruby-sprintf/mrblib/string.rb
 lib/mruby/mrbgems/mruby-sprintf/src/
-lib/mruby/mrbgems/mruby-sprintf/src/kernel.c
 lib/mruby/mrbgems/mruby-sprintf/src/sprintf.c
 lib/mruby/mrbgems/mruby-sprintf/test/
 lib/mruby/mrbgems/mruby-sprintf/test/sprintf.rb
@@ -352,6 +369,8 @@ lib/mruby/mrbgems/mruby-string-ext/mrblib/string.rb
 lib/mruby/mrbgems/mruby-string-ext/src/
 lib/mruby/mrbgems/mruby-string-ext/src/string.c
 lib/mruby/mrbgems/mruby-string-ext/test/
+lib/mruby/mrbgems/mruby-string-ext/test/numeric.rb
+lib/mruby/mrbgems/mruby-string-ext/test/range.rb
 lib/mruby/mrbgems/mruby-string-ext/test/string.rb
 lib/mruby/mrbgems/mruby-struct/
 lib/mruby/mrbgems/mruby-struct/mrbgem.rake
@@ -373,6 +392,7 @@ lib/mruby/mrbgems/mruby-test/
 lib/mruby/mrbgems/mruby-test/README.md
 lib/mruby/mrbgems/mruby-test/driver.c
 lib/mruby/mrbgems/mruby-test/mrbgem.rake
+lib/mruby/mrbgems/mruby-test/vformat.c
 lib/mruby/mrbgems/mruby-time/
 lib/mruby/mrbgems/mruby-time/include/
 lib/mruby/mrbgems/mruby-time/include/mruby/
@@ -390,6 +410,9 @@ lib/mruby/mrbgems/mruby-toplevel-ext/mrblib/
 lib/mruby/mrbgems/mruby-toplevel-ext/mrblib/toplevel.rb
 lib/mruby/mrbgems/mruby-toplevel-ext/test/
 lib/mruby/mrbgems/mruby-toplevel-ext/test/toplevel.rb
+lib/mruby/mrbgems/stdlib-ext.gembox
+lib/mruby/mrbgems/stdlib-io.gembox
+lib/mruby/mrbgems/stdlib.gembox
 lib/mruby/mrblib/
 lib/mruby/mrblib/00class.rb
 lib/mruby/mrblib/10error.rb
@@ -399,7 +422,6 @@ lib/mruby/mrblib/enum.rb
 lib/mruby/mrblib/hash.rb
 lib/mruby/mrblib/init_mrblib.c
 lib/mruby/mrblib/kernel.rb
-lib/mruby/mrblib/mrblib.rake
 lib/mruby/mrblib/numeric.rb
 lib/mruby/mrblib/range.rb
 lib/mruby/mrblib/string.rb
@@ -410,3 +432,4 @@ share/doc/mruby/debugger.md
 share/doc/mruby/gc-arena-howto.md
 share/doc/mruby/mrbconf.md
 share/doc/mruby/mrbgems.md
+share/doc/mruby/symbol.md

@@ -1,13 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/07/18 09:18:07 paco Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/10/08 22:10:27 edd Exp $
 @bin bin/nvim
 lib/nvim/
 @man man/man1/nvim.1
 share/applications/nvim.desktop
 share/doc/pkg-readmes/${PKGSTEM}
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/nvim.png
 share/locale/af/LC_MESSAGES/nvim.mo
 share/locale/ca/LC_MESSAGES/nvim.mo
@@ -844,6 +840,7 @@ share/nvim/runtime/lua/vim/highlight.lua
 share/nvim/runtime/lua/vim/inspect.lua
 share/nvim/runtime/lua/vim/lsp/
 share/nvim/runtime/lua/vim/lsp.lua
+share/nvim/runtime/lua/vim/lsp/_snippet.lua
 share/nvim/runtime/lua/vim/lsp/buf.lua
 share/nvim/runtime/lua/vim/lsp/codelens.lua
 share/nvim/runtime/lua/vim/lsp/diagnostic.lua
@@ -1610,3 +1607,4 @@ share/nvim/runtime/tutor/en/vim-01-beginner.tutor.json
 share/nvim/runtime/tutor/tutor.tutor
 share/nvim/runtime/tutor/tutor.tutor.json
 @tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

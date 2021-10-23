@@ -1,0 +1,14 @@
+$OpenBSD: patch-ikeman_h,v 1.1 2021/10/11 12:05:26 tb Exp $
+
+Index: ikeman.h
+--- ikeman.h.orig
++++ ikeman.h
+@@ -174,7 +174,7 @@ struct ikeman_ncurses_window {
+ 
+ 
+ /* asn1_time_t.c */
+-time_t	asn1_time_to_timestamp(ASN1_TIME *);
++time_t	asn1_time_to_timestamp(const ASN1_TIME *);
+ 
+ /* certificates.c */
+ int	altname_guess_and_fill(struct ikeman_x509v3_altname *, char *);

@@ -1,0 +1,17 @@
+$OpenBSD: patch-libphobos_configure,v 1.1 2021/10/18 00:25:49 gkoehler Exp $
+
+Add fiber asm for powerpc64, to avoid
+"configure: error: setcontext required but not found"
+
+Index: libphobos/configure
+--- libphobos/configure.orig
++++ libphobos/configure
+@@ -15196,7 +15196,7 @@ fi
+     aarch64* | \
+     arm* | \
+     i[34567]86|x86_64 | \
+-    powerpc)
++    powerpc*)
+       druntime_fiber_asm_external=yes
+       ;;
+   esac

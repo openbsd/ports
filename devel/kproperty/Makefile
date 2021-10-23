@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/09/12 06:28:06 rsadowski Exp $
 
 COMMENT =	property editing framework with editor widget
 
 VERSION =	3.2.0
 DISTNAME =	kproperty-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  KPropertyCore3            1.1 # 3.0
 SHARED_LIBS +=  KPropertyWidgets3         1.1 # 3.0
@@ -24,9 +25,7 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/kproperty/src/}}
 EXTRACT_SUFX =	.tar.xz
 
 MODULES =		devel/cmake \
-			lang/python \
 			devel/kf5
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS =		x11/qt5/qttools \
 			devel/kf5/kcoreaddons

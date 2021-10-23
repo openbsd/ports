@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2021/08/14 10:24:26 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.43 2021/10/04 20:36:16 sthen Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -5236,6 +5236,7 @@ share/calibre/recipes/nypost.png
 share/calibre/recipes/nypost.recipe
 share/calibre/recipes/nytimes.png
 share/calibre/recipes/nytimes.recipe
+share/calibre/recipes/nytimes_cooking.recipe
 share/calibre/recipes/nytimes_sports.png
 share/calibre/recipes/nytimes_sports.recipe
 share/calibre/recipes/nytimes_sub.png
@@ -5795,6 +5796,7 @@ share/calibre/recipes/the_scotsman.png
 share/calibre/recipes/the_scotsman.recipe
 share/calibre/recipes/the_sun.recipe
 share/calibre/recipes/the_verge.recipe
+share/calibre/recipes/the_week.recipe
 share/calibre/recipes/the_week_magazine_free.png
 share/calibre/recipes/the_week_magazine_free.recipe
 share/calibre/recipes/the_workingham_times.png

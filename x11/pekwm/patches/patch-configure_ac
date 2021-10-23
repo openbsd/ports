@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.1 2017/12/20 17:22:37 jca Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2021/08/26 04:23:03 semarie Exp $
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -31,6 +31,9 @@ CXXFLAGS="$CXXFLAGS $INCICONV"
+@@ -32,6 +32,9 @@ CXXFLAGS="$CXXFLAGS $INCICONV"
  dnl Check for iconvctl
  AC_CHECK_FUNC(iconvctl, [AC_DEFINE(HAVE_ICONVCTL, [1], [Define to 1 if you the iconvctl call])], )
  

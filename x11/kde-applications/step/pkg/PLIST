@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/08/08 12:23:57 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/09/10 08:44:00 rsadowski Exp $
 @pkgpath x11/kde4/step
 @bin bin/step
 share/applications/org.kde.step.desktop
@@ -58,11 +58,6 @@ share/doc/HTML/pt_BR/step/examples.docbook
 share/doc/HTML/pt_BR/step/index.cache.bz2
 share/doc/HTML/pt_BR/step/index.docbook
 share/doc/HTML/pt_BR/step/tutorials.docbook
-share/doc/HTML/ru/step/
-share/doc/HTML/ru/step/examples.docbook
-share/doc/HTML/ru/step/index.cache.bz2
-share/doc/HTML/ru/step/index.docbook
-share/doc/HTML/ru/step/tutorials.docbook
 share/doc/HTML/sv/step/
 share/doc/HTML/sv/step/examples.docbook
 share/doc/HTML/sv/step/index.cache.bz2
@@ -163,6 +158,8 @@ share/locale/ja/LC_MESSAGES/step_example_files.mo
 share/locale/ja/LC_MESSAGES/step_objinfo_files.mo
 share/locale/kk/LC_MESSAGES/step.mo
 share/locale/km/LC_MESSAGES/step.mo
+share/locale/ko/LC_MESSAGES/step.mo
+share/locale/ko/LC_MESSAGES/step_objinfo_files.mo
 share/locale/lt/LC_MESSAGES/step.mo
 share/locale/lt/LC_MESSAGES/step_example_files.mo
 share/locale/lt/LC_MESSAGES/step_objinfo_files.mo
@@ -994,6 +991,26 @@ share/step/objinfo/l10n/ja/softbody.html
 share/step/objinfo/l10n/ja/spring.html
 share/step/objinfo/l10n/ja/weightforce.html
 share/step/objinfo/l10n/ja/world.html
+share/step/objinfo/l10n/ko/
+share/step/objinfo/l10n/ko/anchor.html
+share/step/objinfo/l10n/ko/box.html
+share/step/objinfo/l10n/ko/chargedparticle.html
+share/step/objinfo/l10n/ko/coulombforce.html
+share/step/objinfo/l10n/ko/disk.html
+share/step/objinfo/l10n/ko/gas.html
+share/step/objinfo/l10n/ko/gasljforce.html
+share/step/objinfo/l10n/ko/gasparticle.html
+share/step/objinfo/l10n/ko/gravitationforce.html
+share/step/objinfo/l10n/ko/linearmotor.html
+share/step/objinfo/l10n/ko/meter.html
+share/step/objinfo/l10n/ko/note.html
+share/step/objinfo/l10n/ko/particle.html
+share/step/objinfo/l10n/ko/pin.html
+share/step/objinfo/l10n/ko/polygon.html
+share/step/objinfo/l10n/ko/softbody.html
+share/step/objinfo/l10n/ko/spring.html
+share/step/objinfo/l10n/ko/weightforce.html
+share/step/objinfo/l10n/ko/world.html
 share/step/objinfo/l10n/lt/
 share/step/objinfo/l10n/lt/anchor.html
 share/step/objinfo/l10n/lt/box.html

@@ -1,4 +1,4 @@
-$OpenBSD: patch-loader_CMakeLists_txt,v 1.6 2021/06/29 03:48:21 thfr Exp $
+$OpenBSD: patch-loader_CMakeLists_txt,v 1.7 2021/10/16 14:50:40 thfr Exp $
 
 don't define _XOPEN_SOURCE=500, otherwise alloca from stdlib.h isn't
 visible and libvulkan won't run
@@ -15,7 +15,7 @@ Index: loader/CMakeLists.txt
  
  # Check for the existance of the secure_getenv or __secure_getenv commands
  include(CheckFunctionExists)
-@@ -197,7 +197,6 @@ else(UNIX AND NOT APPLE) # i.e.: Linux
+@@ -202,7 +202,6 @@ else(UNIX AND NOT APPLE) # i.e.: Linux
          target_link_libraries(asm_offset Vulkan::Headers)
          add_custom_command(OUTPUT gen_defines.asm DEPENDS asm_offset COMMAND asm_offset GAS)
          add_custom_target(loader_asm_gen_files DEPENDS gen_defines.asm)
@@ -23,7 +23,7 @@ Index: loader/CMakeLists.txt
      else()
          message(WARNING "Could not find working x86 GAS assembler\n${ASM_FAILURE_MSG}")
          set(OPT_LOADER_SRCS ${OPT_LOADER_SRCS} unknown_ext_chain.c)
-@@ -297,7 +296,7 @@ else()
+@@ -300,7 +299,7 @@ else()
              add_library(vulkan-framework SHARED ${NORMAL_LOADER_SRCS} ${OPT_LOADER_SRCS} ${FRAMEWORK_HEADERS})
          endif()
          add_dependencies(vulkan-framework loader_asm_gen_files)
@@ -32,7 +32,7 @@ Index: loader/CMakeLists.txt
          target_link_libraries(vulkan-framework Vulkan::Headers)
  
          # The FRAMEWORK_VERSION needs to be "A" here so that Xcode code-signing works when a user adds their framework to an Xcode
-@@ -322,9 +321,6 @@ else()
+@@ -325,9 +324,6 @@ else()
  # cmake-format: on
      endif()
  

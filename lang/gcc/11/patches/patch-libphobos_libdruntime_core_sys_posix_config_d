@@ -1,0 +1,18 @@
+$OpenBSD: patch-libphobos_libdruntime_core_sys_posix_config_d,v 1.1 2021/10/18 00:25:49 gkoehler Exp $
+
+Index: libphobos/libdruntime/core/sys/posix/config.d
+--- libphobos/libdruntime/core/sys/posix/config.d.orig
++++ libphobos/libdruntime/core/sys/posix/config.d
+@@ -169,6 +169,12 @@ else version (OpenBSD)
+         enum _STACKALIGNBYTES = 15;
+         enum _MAX_PAGE_SHIFT = 12;
+     }
++    else version (PPC64)
++    {
++        enum _ALIGNBYTES = 7;
++        enum _STACKALIGNBYTES = 15;
++        enum _MAX_PAGE_SHIFT = 12;
++    }
+     else version (SPARC64)
+     {
+         enum _ALIGNBYTES = 15;

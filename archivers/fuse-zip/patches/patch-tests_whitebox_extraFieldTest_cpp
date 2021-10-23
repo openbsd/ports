@@ -1,0 +1,24 @@
+$OpenBSD: patch-tests_whitebox_extraFieldTest_cpp,v 1.1 2021/10/13 08:49:03 sdk Exp $
+
+Device major on OpenBSD is different
+
+Index: tests/whitebox/extraFieldTest.cpp
+--- tests/whitebox/extraFieldTest.cpp.orig
++++ tests/whitebox/extraFieldTest.cpp
+@@ -6,7 +6,6 @@
+ #include <cstring>
+ 
+ #include <sys/stat.h>
+-#include <sys/sysmacros.h>
+ #include <zip.h>
+ 
+ #define private public
+@@ -407,7 +406,7 @@ void pkware_create_device () {
+         0x72, 0xE3, 0xC7, 0x52, // mtime
+         0x02, 0x01,             // UID
+         0x04, 0x03,             // GID
+-        0x34, 0x12, 0x00, 0x00, // device major
++        0x34, 0x00, 0x00, 0x00, // device major
+         0x78, 0x56, 0x00, 0x00  // device minor
+     };
+ 

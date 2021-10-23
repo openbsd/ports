@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_renderer_render_process_impl_cc,v 1.18 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-content_renderer_render_process_impl_cc,v 1.21 2021/10/20 10:27:47 robert Exp $
 
 Index: content/renderer/render_process_impl.cc
 --- content/renderer/render_process_impl.cc.orig
@@ -16,15 +16,15 @@ Index: content/renderer/render_process_impl.cc
    SetV8FlagIfNotFeature(features::kWebAssemblyCodeProtection,
                          "--no-wasm-write-protect-code-memory");
  
--#if defined(OS_LINUX) && defined(ARCH_CPU_X86_64)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && defined(ARCH_CPU_X86_64)
+-#if (defined(OS_LINUX) || defined(OS_CHROMEOS)) && defined(ARCH_CPU_X86_64)
++#if (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)) && defined(ARCH_CPU_X86_64)
    SetV8FlagIfFeature(features::kWebAssemblyCodeProtectionPku,
                       "--wasm-memory-protection-keys");
    SetV8FlagIfNotFeature(features::kWebAssemblyCodeProtectionPku,
-@@ -207,7 +207,7 @@ RenderProcessImpl::RenderProcessImpl()
+@@ -230,7 +230,7 @@ RenderProcessImpl::RenderProcessImpl()
+   SetV8FlagIfFeature(features::kWebAssemblyTiering, "--wasm-tier-up");
+   SetV8FlagIfNotFeature(features::kWebAssemblyTiering, "--no-wasm-tier-up");
  
-   SetV8FlagIfNotFeature(features::kWebAssemblyTrapHandler,
-                         "--no-wasm-trap-handler");
 -#if (defined(OS_LINUX) || defined(OS_CHROMEOS)) && defined(ARCH_CPU_X86_64)
 +#if (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)) && defined(ARCH_CPU_X86_64)
    if (base::FeatureList::IsEnabled(features::kWebAssemblyTrapHandler)) {

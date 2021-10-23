@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.201 2021/05/14 19:03:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.203 2021/09/03 12:51:35 ajacoutot Exp $
 
 COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba
@@ -14,6 +14,8 @@ PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
 PKGNAME-goa=		${GNOME_PROJECT}-goa-${GNOME_VERSION}
 PKGNAME-nfs=		${GNOME_PROJECT}-nfs-${GNOME_VERSION}
 PKGNAME-google=		${GNOME_PROJECT}-google-${GNOME_VERSION}
+
+REVISION-main=		1
 
 # LGPLv2
 PERMIT_PACKAGE=		Yes
@@ -45,7 +47,7 @@ MODGNOME_TOOLS=		docbook
 
 LIB_DEPENDS-main=	archivers/libarchive \
 			devel/libsoup \
-			net/avahi \
+			net/avahi,-glib \
 			x11/gnome/gcr \
 			x11/gnome/libsecret
 

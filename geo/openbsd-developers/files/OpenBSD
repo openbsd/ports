@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.170 2021/03/25 21:39:29 dv Exp $
+# $OpenBSD: OpenBSD,v 1.171 2021/10/07 21:03:38 sdk Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -124,6 +124,7 @@
 49.0816		-0.2885		"eric"		# Eric Faurot
 49.22		-123.10		"hugh"		# Hugh Graham
 49.313446	-123.063975	"mjc"		# Michael Coulter
+49.31		8.56		"sdk"		# Stefan Hagen
 49.48		8.42		"naddy"		# Christian Weisgerber
 49.5557300	22.2056000	"awolk"		# Adam Wolk
 49.866667	8.65		"kn"		# Klemens Nanni

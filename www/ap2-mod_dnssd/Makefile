@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/09/03 11:48:54 ajacoutot Exp $
 
 COMMENT=	Apache2 Zeroconf module
 
 DISTNAME=	mod_dnssd-0.6
 PKGNAME=	ap2-${DISTNAME}
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	www net
 
@@ -13,14 +13,16 @@ HOMEPAGE=	http://0pointer.de/lennart/projects/mod_dnssd/
 # Apache 2.0
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  apr-1 avahi-client avahi-common dbus-1 iconv intl pthread
+WANTLIB += apr-1 avahi-client avahi-common dbus-1 execinfo iconv
+WANTLIB += intl pthread
 
 MASTER_SITES=	${HOMEPAGE}
 
 LIB_DEPENDS=	devel/apr \
-		net/avahi
+		net/avahi,-libs
 
-RUN_DEPENDS=	www/apache-httpd
+RUN_DEPENDS=	net/avahi \
+		www/apache-httpd
 BUILD_DEPENDS=	www/apache-httpd
 
 CONFIGURE_STYLE=gnu

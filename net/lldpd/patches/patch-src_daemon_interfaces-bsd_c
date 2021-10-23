@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_daemon_interfaces-bsd_c,v 1.5 2021/09/21 18:34:25 sthen Exp $
+
+From b78587a4c4942fa56b7ac78293bb67ef70f834f7 Mon Sep 17 00:00:00 2001
+From: Vincent Bernat <vincent@bernat.ch>
+Date: Sun, 29 Aug 2021 21:57:07 +0200
+Subject: [PATCH] interfaces-bsd: do not consider an interface when it is down
+
+At least on OpenBSD, an interface can be oper down while
+`IFF_RUNNING`. Check the link state and removes the `IFF_RUNNING` flag
+in this case. Something similar may work with FreeBSD and NetBSD, but
+it may not be needed. It does not work with MacOS.
+
+Fix #474
+---
+ src/daemon/interfaces-bsd.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+Index: src/daemon/interfaces-bsd.c
+--- src/daemon/interfaces-bsd.c.orig
++++ src/daemon/interfaces-bsd.c
+@@ -433,8 +433,16 @@ ifbsd_extract(struct lldpd *cfg,
+ 		    "grabbing information on interface %s",
+ 		    ifaddr->ifa_name);
+ 		device = ifbsd_extract_device(cfg, ifaddr);
+-		if (device)
++		if (device) {
++#if defined HOST_OS_OPENBSD
++		/* On OpenBSD, the interface can have IFF_RUNNING but be down. */
++			struct if_data *ifdata;
++			ifdata = ifaddr->ifa_data;
++			if (!LINK_STATE_IS_UP(ifdata->ifi_link_state))
++				device->flags &= ~IFF_RUNNING;
++#endif
+ 			TAILQ_INSERT_TAIL(interfaces, device, next);
++		}
+ 		break;
+ 	case AF_INET:
+ 	case AF_INET6:

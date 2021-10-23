@@ -1,9 +1,9 @@
-$OpenBSD: patch-ext_openssl_ossl_ts_c,v 1.1.1.1 2021/05/03 17:46:37 tb Exp $
+$OpenBSD: patch-ext_openssl_ossl_ts_c,v 1.2 2021/09/12 18:36:59 tb Exp $
 
 Index: ext/openssl/ossl_ts.c
 --- ext/openssl/ossl_ts.c.orig
 +++ ext/openssl/ossl_ts.c
-@@ -1071,9 +1071,9 @@ ossl_tsfac_serial_cb(struct TS_resp_ctx *ctx, void *da
+@@ -1077,9 +1077,9 @@ ossl_tsfac_serial_cb(struct TS_resp_ctx *ctx, void *da
  }
  
  static int

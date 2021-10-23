@@ -1,16 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/05/20 20:08:40 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/09/08 19:58:25 sthen Exp $
+@pkgpath security/py-asn1crypto
 lib/python${MODPY_VERSION}/site-packages/asn1crypto/
 lib/python${MODPY_VERSION}/site-packages/asn1crypto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/asn1crypto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/asn1crypto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/asn1crypto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/asn1crypto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/asn1crypto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/asn1crypto/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/asn1crypto/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/asn1crypto/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/asn1crypto/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/asn1crypto/${MODPY_PYCACHE}_elliptic_curve.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asn1crypto/${MODPY_PYCACHE}_errors.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/asn1crypto/${MODPY_PYCACHE}_ffi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asn1crypto/${MODPY_PYCACHE}_inet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asn1crypto/${MODPY_PYCACHE}_int.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asn1crypto/${MODPY_PYCACHE}_iri.${MODPY_PYC_MAGIC_TAG}pyc
@@ -32,19 +32,11 @@ lib/python${MODPY_VERSION}/site-packages/asn1crypto/${MODPY_PYCACHE}tsp.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/asn1crypto/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asn1crypto/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asn1crypto/${MODPY_PYCACHE}x509.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/asn1crypto/_elliptic_curve.py
 lib/python${MODPY_VERSION}/site-packages/asn1crypto/_errors.py
-lib/python${MODPY_VERSION}/site-packages/asn1crypto/_ffi.py
 lib/python${MODPY_VERSION}/site-packages/asn1crypto/_inet.py
 lib/python${MODPY_VERSION}/site-packages/asn1crypto/_int.py
 lib/python${MODPY_VERSION}/site-packages/asn1crypto/_iri.py
 lib/python${MODPY_VERSION}/site-packages/asn1crypto/_ordereddict.py
-lib/python${MODPY_VERSION}/site-packages/asn1crypto/_perf/
-lib/python${MODPY_VERSION}/site-packages/asn1crypto/_perf/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/asn1crypto/_perf/${MODPY_PYCACHE}
-lib/python${MODPY_VERSION}/site-packages/asn1crypto/_perf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/asn1crypto/_perf/${MODPY_PYCACHE}_big_num_ctypes.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/asn1crypto/_perf/_big_num_ctypes.py
 lib/python${MODPY_VERSION}/site-packages/asn1crypto/_teletex_codec.py
 lib/python${MODPY_VERSION}/site-packages/asn1crypto/_types.py
 lib/python${MODPY_VERSION}/site-packages/asn1crypto/algos.py

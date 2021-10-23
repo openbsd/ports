@@ -1,6 +1,8 @@
-$OpenBSD: patch-src_os_unix_pa_unix_util_c,v 1.2 2013/03/12 00:59:50 brad Exp $
---- src/os/unix/pa_unix_util.c.orig	Thu Jul  5 23:44:45 2012
-+++ src/os/unix/pa_unix_util.c	Thu Jul  5 23:49:33 2012
+$OpenBSD: patch-src_os_unix_pa_unix_util_c,v 1.3 2021/10/16 19:59:28 sthen Exp $
+
+Index: src/os/unix/pa_unix_util.c
+--- src/os/unix/pa_unix_util.c.orig
++++ src/os/unix/pa_unix_util.c
 @@ -251,6 +251,7 @@ static PaError BoostPriority( PaUnixThread* self )
  
      assert( self );
@@ -23,7 +25,7 @@ $OpenBSD: patch-src_os_unix_pa_unix_util_c,v 1.2 2013/03/12 00:59:50 brad Exp $
      PA_UNLESS( !pthread_attr_init( &attr ), paInternalError );
 +#if defined(_POSIX_THREAD_PRIORITY_SCHEDULING) && (_POSIX_THREAD_PRIORITY_SCHEDULING > 0)
      /* Priority relative to other processes */
-     PA_UNLESS( !pthread_attr_setscope( &attr, PTHREAD_SCOPE_SYSTEM ), paInternalError );   
+     PA_UNLESS( !pthread_attr_setscope( &attr, PTHREAD_SCOPE_SYSTEM ), paInternalError );
 +#endif
  
      PA_UNLESS( !pthread_create( &self->thread, &attr, threadFunc, threadArg ), paInternalError );
@@ -37,4 +39,4 @@ $OpenBSD: patch-src_os_unix_pa_unix_util_c,v 1.2 2013/03/12 00:59:50 brad Exp $
 +#endif
          }
      }
-     
+ 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2021/02/23 19:39:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2021/09/02 14:59:45 jeremy Exp $
 
 COMMENT-main=		Redland librdf Perl Bindings
 COMMENT-python=		Redland librdf Python Bindings
@@ -11,6 +11,7 @@ PKGNAME-main=		p5-librdf-$V
 PKGNAME-python=		py-librdf-$V
 PKGNAME-ruby=		ruby${MODRUBY_BINREV}-librdf-$V
 REVISION=		4
+REVISION-ruby=		5
 
 HOMEPAGE=		http://librdf.org/bindings/
 
@@ -47,7 +48,7 @@ MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 CONFIGURE_ARGS+=	--with-ruby \
 			--with-ruby-linking=so
 MODRUBY_RUNDEP=		No
-CONFIGURE_ENV+=		RUBY=${RUBY}
+CONFIGURE_ENV+=		RUBY=${RUBY} CFLAGS="${CFLAGS} -fdeclspec"
 LIB_DEPENDS-ruby=	${LIB_DEPENDS} ${MODRUBY_LIB_DEPENDS}
 RUN_DEPENDS-ruby=	${MODRUBY_RUN_DEPENDS}
 WANTLIB-ruby=		${WANTLIB} ${MODRUBY_WANTLIB}

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2021/08/22 19:48:24 edd Exp $
+# $OpenBSD: Makefile,v 1.7 2021/09/13 19:51:30 edd Exp $
 
 COMMENT =	online multiplayer doom
 
-V =		0.9.4
+V =		0.9.5
 DISTNAME =	odamex-src-${V}
 PKGNAME =	odamex-${V}
 

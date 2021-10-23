@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/08/31 15:17:58 fcambus Exp $
 
 COMMENT =	collection of CLI tools for ARM devices with Allwinner SoCs
 
 GH_ACCOUNT =	linux-sunxi
 GH_PROJECT =	sunxi-tools
 GH_TAGNAME =	v1.4
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	sysutils
-HOMEPAGE =	http://linux-sunxi.org/Sunxi-tools
+HOMEPAGE =	https://linux-sunxi.org/Sunxi-tools
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 

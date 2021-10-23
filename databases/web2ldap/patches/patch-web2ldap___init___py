@@ -1,0 +1,14 @@
+$OpenBSD: patch-web2ldap___init___py,v 1.1 2021/10/11 09:25:16 landry Exp $
+
+Index: web2ldap/__init__.py
+--- web2ldap/__init__.py.orig
++++ web2ldap/__init__.py
+@@ -29,7 +29,7 @@ if 'WEB2LDAP_HOME' in os.environ:
+ elif (
+         platform.uname().system == 'Linux'
+         and sys.prefix == '/usr'
+-    ):
++    ) or platform.uname().system == 'OpenBSD':
+     # OS-wide installation on GNU/Linux,
+     # assume configuration is in global /etc/web2ldap
+     ETC_DIR = '/etc/web2ldap'

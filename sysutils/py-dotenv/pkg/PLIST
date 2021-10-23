@@ -1,13 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/18 09:50:00 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/19 14:53:48 sthen Exp $
 bin/dotenv
 lib/python${MODPY_VERSION}/site-packages/dotenv/
-lib/python${MODPY_VERSION}/site-packages/dotenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/dotenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/dotenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/dotenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/dotenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/dotenv/__init__.py
-lib/python${MODPY_VERSION}/site-packages/dotenv/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dotenv/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dotenv/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/dotenv/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dotenv/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dotenv/${MODPY_PYCACHE}ipython.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dotenv/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dotenv/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dotenv/${MODPY_PYCACHE}variables.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dotenv/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dotenv/cli.py
+lib/python${MODPY_VERSION}/site-packages/dotenv/ipython.py
+lib/python${MODPY_VERSION}/site-packages/dotenv/main.py
+lib/python${MODPY_VERSION}/site-packages/dotenv/parser.py
+lib/python${MODPY_VERSION}/site-packages/dotenv/py.typed
+lib/python${MODPY_VERSION}/site-packages/dotenv/variables.py
+lib/python${MODPY_VERSION}/site-packages/dotenv/version.py
+lib/python${MODPY_VERSION}/site-packages/python_dotenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/python_dotenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/python_dotenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/python_dotenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/python_dotenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/python_dotenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/python_dotenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt

@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-vm_odbc,v 1.1.1.1 2021/10/16 10:55:00 sthen Exp $
+@option is-branch
+@pkgpath telephony/asterisk,-vm_odbc
+@so lib/asterisk/modules/app_voicemail_odbc.so

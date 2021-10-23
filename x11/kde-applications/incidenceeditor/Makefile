@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2021/06/19 18:34:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2021/09/10 08:43:50 rsadowski Exp $
 
 COMMENT =	KDE PIM incidence editor
 DISTNAME =	incidenceeditor-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KF5IncidenceEditor    1.0 # 5.13.2
+SHARED_LIBS +=  KF5IncidenceEditor    1.1 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCalendar KF5AkonadiContact
 WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiWidgets KF5Auth

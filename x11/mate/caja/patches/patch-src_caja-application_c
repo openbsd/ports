@@ -1,14 +1,21 @@
-$OpenBSD: patch-src_caja-application_c,v 1.2 2020/03/21 16:14:54 robert Exp $
+$OpenBSD: patch-src_caja-application_c,v 1.4 2021/09/21 06:00:47 robert Exp $
 
 Index: src/caja-application.c
 --- src/caja-application.c.orig
 +++ src/caja-application.c
-@@ -2005,7 +2005,7 @@ caja_application_local_command_line (GApplication *app
-     if (len > 0)  {
-         gchar* concatOptions = g_malloc0(64);
-         if (self->priv->geometry == NULL) {
--            g_snprintf (concatOptions, 64, "%d=NULL=%d", browser_window, open_in_tabs);
-+            g_snprintf (concatOptions, 64, "");
-         } else {
-             g_snprintf (concatOptions, 64, "%d=%s=%d", browser_window, self->priv->geometry, open_in_tabs);
-         }
+@@ -368,13 +368,13 @@ caja_application_open (GApplication *app,
+     gboolean browser_window = FALSE;
+     gboolean open_in_tabs = FALSE;
+     const gchar *geometry = NULL;
+-    const char splitter = '=';
++    const gchar *splitter = "=";
+ 
+     g_debug ("Open called on the GApplication instance; %d files", n_files);
+ 
+     /* Check if local command line passed --browser, --geometry or --tabs */
+     if (strlen (options) > 0) {
+-        gchar** splitedOptions = g_strsplit (options, &splitter, 3);
++        gchar** splitedOptions = g_strsplit (options, splitter, 3);
+         sscanf (splitedOptions[0], "%d", &browser_window);
+         if (strcmp (splitedOptions[1], "NULL") != 0) {
+             geometry = splitedOptions[1];

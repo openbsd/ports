@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/09/02 10:34:28 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2021/09/12 20:00:26 naddy Exp $
 
 COMMENT =	tools to manipulate font files
 
 DISTNAME =	lcdf-typetools-2.108
+REVISION =	0
 
 CATEGORIES =	print
 

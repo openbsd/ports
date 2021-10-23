@@ -1,23 +1,14 @@
-$OpenBSD: patch-components_feature_engagement_public_event_constants_h,v 1.10 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-components_feature_engagement_public_event_constants_h,v 1.12 2021/10/20 10:27:46 robert Exp $
 
 Index: components/feature_engagement/public/event_constants.h
 --- components/feature_engagement/public/event_constants.h.orig
 +++ components/feature_engagement/public/event_constants.h
 @@ -13,7 +13,7 @@ namespace events {
  
- // Desktop and IOS.
+ // Desktop
  #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
--    defined(OS_CHROMEOS)
-+    defined(OS_CHROMEOS) || defined(OS_BSD)
+-    defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
++    defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
  // The user has explicitly opened a new tab via an entry point from inside of
  // Chrome.
  extern const char kNewTabOpened[];
-@@ -22,7 +22,7 @@ extern const char kNewTabOpened[];
- 
- // Desktop
- #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
--    defined(OS_CHROMEOS)
-+    defined(OS_CHROMEOS) || defined(OS_BSD)
- // A new tab was opened when 5 (or more) tabs were already open.
- extern const char kSixthTabOpened[];
- // The user made a new tab group.

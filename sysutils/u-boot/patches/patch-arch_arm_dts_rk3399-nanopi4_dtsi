@@ -1,11 +1,11 @@
-$OpenBSD: patch-arch_arm_dts_rk3399-nanopi4_dtsi,v 1.1 2020/09/05 02:14:46 jsg Exp $
+$OpenBSD: patch-arch_arm_dts_rk3399-nanopi4_dtsi,v 1.2 2021/10/21 12:58:29 jsg Exp $
 
 Index: arch/arm/dts/rk3399-nanopi4.dtsi
 --- arch/arm/dts/rk3399-nanopi4.dtsi.orig
 +++ arch/arm/dts/rk3399-nanopi4.dtsi
-@@ -18,7 +18,7 @@
+@@ -24,7 +24,7 @@
+ 	};
  
- / {
  	chosen {
 -		stdout-path = "serial2:1500000n8";
 +		stdout-path = "serial2:115200n8";

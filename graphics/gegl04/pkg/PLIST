@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/04/12 14:47:34 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2021/09/09 09:29:33 ajacoutot Exp $
 @conflict gegl-*
 @conflict gegl03-*
 @pkgpath graphics/gegl,-main
@@ -6,6 +6,7 @@
 @bin bin/gegl
 @bin bin/gegl-imgcmp
 include/gegl-${API_VERSION}/
+include/gegl-${API_VERSION}/ctx.h
 include/gegl-${API_VERSION}/gegl-apply.h
 include/gegl-${API_VERSION}/gegl-audio-fragment.h
 include/gegl-${API_VERSION}/gegl-buffer-backend.h
@@ -127,7 +128,6 @@ lib/gegl-${API_VERSION}/grey2.json
 @so lib/gegl-${API_VERSION}/tiff-load.so
 @so lib/gegl-${API_VERSION}/tiff-save.so
 @so lib/gegl-${API_VERSION}/transformops.so
-@so lib/gegl-${API_VERSION}/vector-fill.so
 @so lib/gegl-${API_VERSION}/vector-stroke.so
 @so lib/gegl-${API_VERSION}/webp-load.so
 @so lib/gegl-${API_VERSION}/webp-save.so

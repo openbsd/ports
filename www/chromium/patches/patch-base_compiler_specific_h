@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_compiler_specific_h,v 1.3 2021/07/21 15:43:31 robert Exp $
+$OpenBSD: patch-base_compiler_specific_h,v 1.6 2021/10/20 10:27:44 robert Exp $
 
 Index: base/compiler_specific.h
 --- base/compiler_specific.h.orig
 +++ base/compiler_specific.h
-@@ -340,7 +340,7 @@ inline constexpr bool AnalyzerAssumeTrue(bool arg) {
+@@ -365,7 +365,7 @@ inline constexpr bool AnalyzerAssumeTrue(bool arg) {
  #endif  // defined(__clang_analyzer__)
  
  // Use nomerge attribute to disable optimization of merging multiple same calls.

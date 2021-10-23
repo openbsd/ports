@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_webui_web_ui_main_frame_observer_cc,v 1.5 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-content_browser_webui_web_ui_main_frame_observer_cc,v 1.7 2021/10/20 10:27:47 robert Exp $
 
 Index: content/browser/webui/web_ui_main_frame_observer.cc
 --- content/browser/webui/web_ui_main_frame_observer.cc.orig
 +++ content/browser/webui/web_ui_main_frame_observer.cc
-@@ -10,7 +10,7 @@
+@@ -11,7 +11,7 @@
  #include "content/browser/webui/web_ui_impl.h"
  #include "content/public/browser/navigation_handle.h"
  
@@ -12,7 +12,7 @@ Index: content/browser/webui/web_ui_main_frame_observer.cc
  #include "base/callback_helpers.h"
  #include "base/feature_list.h"
  #include "base/logging.h"
-@@ -31,7 +31,7 @@ namespace content {
+@@ -30,7 +30,7 @@ namespace content {
  
  namespace {
  
@@ -21,7 +21,7 @@ Index: content/browser/webui/web_ui_main_frame_observer.cc
  // Remove the pieces of the URL we don't want to send back with the error
  // reports. In particular, do not send query or fragments as those can have
  // privacy-sensitive information in them.
-@@ -67,7 +67,7 @@ void WebUIMainFrameObserver::DidFinishNavigation(
+@@ -66,7 +66,7 @@ void WebUIMainFrameObserver::DidFinishNavigation(
    web_ui_->DisallowJavascriptOnAllHandlers();
  }
  
@@ -30,3 +30,12 @@ Index: content/browser/webui/web_ui_main_frame_observer.cc
  void WebUIMainFrameObserver::OnDidAddMessageToConsole(
      RenderFrameHost* source_frame,
      blink::mojom::ConsoleMessageLevel log_level,
+@@ -183,7 +183,7 @@ void WebUIMainFrameObserver::ReadyToCommitNavigation(
+ 
+ // TODO(crbug.com/1129544) This is currently disabled due to Windows DLL
+ // thunking issues. Fix & re-enable.
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   MaybeEnableWebUIJavaScriptErrorReporting(navigation_handle);
+ #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
+ }

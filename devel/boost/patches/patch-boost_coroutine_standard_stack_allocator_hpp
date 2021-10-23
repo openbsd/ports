@@ -1,4 +1,4 @@
-$OpenBSD: patch-boost_coroutine_standard_stack_allocator_hpp,v 1.1 2019/07/18 20:27:25 sthen Exp $
+$OpenBSD: patch-boost_coroutine_standard_stack_allocator_hpp,v 1.3 2021/09/19 05:23:29 rsadowski Exp $
 
 Index: boost/coroutine/standard_stack_allocator.hpp
 --- boost/coroutine/standard_stack_allocator.hpp.orig

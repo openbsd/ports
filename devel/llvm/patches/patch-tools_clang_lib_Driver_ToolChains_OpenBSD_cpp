@@ -1,8 +1,8 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_OpenBSD_cpp,v 1.18 2021/08/01 10:37:26 jca Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_OpenBSD_cpp,v 1.19 2021/09/19 17:49:23 jca Exp $
 
 - Add support for building against libestdc++ from ports-gcc.
-- Use more *_p.a libraries from base when profiling is requested.
-- Make clang emit the proper path to our libcompiler_rt.a when asked to.
+- Allow the compiler driver to link the libclang_rt.profile library.
+- Use Component in OpenBSD::getCompilerRT to find libraries.
 
 Index: tools/clang/lib/Driver/ToolChains/OpenBSD.cpp
 --- tools/clang/lib/Driver/ToolChains/OpenBSD.cpp.orig
@@ -43,7 +43,16 @@ Index: tools/clang/lib/Driver/ToolChains/OpenBSD.cpp
    }
  
    if (!Args.hasArg(options::OPT_nostdlib, options::OPT_nostartfiles)) {
-@@ -288,14 +299,7 @@ void OpenBSD::addLibCxxIncludePaths(const llvm::opt::A
+@@ -220,6 +231,8 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+     CmdArgs.push_back(Args.MakeArgString(ToolChain.GetFilePath(crtend)));
+   }
+ 
++  ToolChain.addProfileRTLibs(Args, CmdArgs);
++
+   const char *Exec = Args.MakeArgString(ToolChain.GetLinkerPath());
+   C.addCommand(std::make_unique<Command>(
+       JA, *this, ResponseFileSupport::AtFileCurCP(), Exec, CmdArgs, Inputs));
+@@ -288,20 +301,21 @@ void OpenBSD::addLibCxxIncludePaths(const llvm::opt::A
                     getDriver().SysRoot + "/usr/include/c++/v1");
  }
  
@@ -58,7 +67,24 @@ Index: tools/clang/lib/Driver/ToolChains/OpenBSD.cpp
  std::string OpenBSD::getCompilerRT(const ArgList &Args,
                                     StringRef Component,
                                     FileType Type) const {
-@@ -311,3 +315,70 @@ Tool *OpenBSD::buildAssembler() const {
+-  SmallString<128> Path(getDriver().SysRoot);
+-  llvm::sys::path::append(Path, "/usr/lib/libcompiler_rt.a");
+-  return std::string(Path.str());
++  if (Component == "builtins") {
++    SmallString<128> Path(getDriver().SysRoot);
++    llvm::sys::path::append(Path, "/usr/lib/libcompiler_rt.a");
++    return std::string(Path.str());
++  } else {
++    SmallString<128> P(getDriver().ResourceDir);
++    std::string CRTBasename =
++        getCompilerRTBasename(Args, Component, Type, /*AddArch=*/false);
++    llvm::sys::path::append(P, "lib", CRTBasename);
++    return std::string(P.str());
++  }
+ }
+ 
+ Tool *OpenBSD::buildAssembler() const {
+@@ -311,3 +325,70 @@ Tool *OpenBSD::buildAssembler() const {
  Tool *OpenBSD::buildLinker() const { return new tools::openbsd::Linker(*this); }
  
  bool OpenBSD::HasNativeLLVMSupport() const { return true; }

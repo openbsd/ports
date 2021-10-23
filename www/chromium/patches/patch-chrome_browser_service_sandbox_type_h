@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_service_sandbox_type_h,v 1.1 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-chrome_browser_service_sandbox_type_h,v 1.3 2021/10/20 10:27:45 robert Exp $
 
 Index: chrome/browser/service_sandbox_type.h
 --- chrome/browser/service_sandbox_type.h.orig
 +++ chrome/browser/service_sandbox_type.h
-@@ -13,7 +13,7 @@
+@@ -11,7 +11,7 @@
  #include "sandbox/policy/sandbox_type.h"
  
  #if (defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -12,7 +12,7 @@ Index: chrome/browser/service_sandbox_type.h
      BUILDFLAG(ENABLE_PRINTING)
  #include "chrome/browser/printing/print_backend_service_manager.h"
  #endif
-@@ -128,7 +128,7 @@ content::GetServiceSandboxType<printing::mojom::Printi
+@@ -21,7 +21,7 @@
  
  // printing::mojom::PrintBackendService
  #if (defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \

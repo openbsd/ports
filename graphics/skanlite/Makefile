@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2020/09/16 12:10:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2021/10/19 20:08:35 rsadowski Exp $
 
 COMMENT =	scanning application for KDE
 
-VERSION =	2.2.0
-DISTNAME =	skanlite-${VERSION}
-REVISION =	0
+DISTNAME =	skanlite-${MODKDE_VERSION}
 
 CATEGORIES =	graphics
 
 HOMEPAGE =	https://kde.org/applications/graphics/org.kde.skanlite
+
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
@@ -18,13 +18,12 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
-WANTLIB += KF5Sane KF5Service KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5Sane KF5Service KF5Solid KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5Xml c m png
+WANTLIB += Qt5Widgets Qt5Xml X11 c m
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/skanlite/2.2/}
-
-MODULES =	devel/kf5
+MODULES =	x11/kde-applications \
+		devel/kf5
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
@@ -44,7 +43,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
-		graphics/png \
+		devel/kf5/solid \
 		x11/kde-applications/libksane
 
 TEST_IS_INTERACTIVE =	X11

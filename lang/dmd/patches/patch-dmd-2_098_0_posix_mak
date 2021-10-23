@@ -1,0 +1,11 @@
+$OpenBSD: patch-dmd-2_098_0_posix_mak,v 1.1.1.1 2021/10/13 04:38:51 bcallah Exp $
+
+Index: dmd-2.098.0/posix.mak
+--- dmd-2.098.0/posix.mak.orig
++++ dmd-2.098.0/posix.mak
+@@ -1,4 +1,4 @@
+-INSTALL_DIR=$(PWD)/../install
++INSTALL_DIR=../install
+ ECTAGS_LANGS = Make,C,C++,D,Sh
+ ECTAGS_FILES = src/dmd/*.[chd] src/dmd/backend/*.[chd] src/dmd/root/*.[chd]
+ 

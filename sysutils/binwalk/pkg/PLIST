@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/03/28 13:50:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/08/29 09:00:35 jasper Exp $
 bin/binwalk
 lib/python${MODPY_VERSION}/site-packages/binwalk/
-lib/python${MODPY_VERSION}/site-packages/binwalk-2.2.1-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/binwalk-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/binwalk/__init__.py
 lib/python${MODPY_VERSION}/site-packages/binwalk/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/binwalk/${MODPY_PYCACHE}/
@@ -87,11 +87,9 @@ lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/${MODPY_PYCACHE}cpio.${
 lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/${MODPY_PYCACHE}dlromfsextract.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/${MODPY_PYCACHE}gzipextract.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/${MODPY_PYCACHE}gzipvalid.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/${MODPY_PYCACHE}hilink.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/${MODPY_PYCACHE}jffs2valid.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/${MODPY_PYCACHE}lzmaextract.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/${MODPY_PYCACHE}lzmavalid.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/${MODPY_PYCACHE}pgp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/${MODPY_PYCACHE}tar.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/${MODPY_PYCACHE}ubivalid.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/${MODPY_PYCACHE}unjffs2.${MODPY_PYC_MAGIC_TAG}pyc
@@ -104,11 +102,9 @@ lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/cpio.py
 lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/dlromfsextract.py
 lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/gzipextract.py
 lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/gzipvalid.py
-lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/hilink.py
 lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/jffs2valid.py
 lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/lzmaextract.py
 lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/lzmavalid.py
-lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/pgp.py
 lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/tar.py
 lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/ubivalid.py
 lib/python${MODPY_VERSION}/site-packages/binwalk/plugins/unjffs2.py

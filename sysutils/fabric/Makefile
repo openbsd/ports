@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2021/05/21 19:50:35 kmos Exp $
+# $OpenBSD: Makefile,v 1.10 2021/09/01 22:32:25 sthen Exp $
+
+BROKEN =		requires update to fabric 2.x for python 3
+# N.B. commented-out in ../Makefile to avoid breaking dpb; if updating/unbreaking, that must be reenabled.
 
 COMMENT =		simple, pythonic tool for remote execution and deployment
 
@@ -9,7 +12,7 @@ REVISION =		0
 
 CATEGORIES =		sysutils
 
-HOMEPAGE =		http://www.fabfile.org/
+HOMEPAGE =		https://www.fabfile.org/
 
 MAINTAINER =		Pablo Mendez Hernandez <pablomh@gmail.com>
 

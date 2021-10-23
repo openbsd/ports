@@ -1,4 +1,4 @@
-$OpenBSD: patch-servers_slapd_Makefile_in,v 1.4 2019/07/25 22:07:47 sthen Exp $
+$OpenBSD: patch-servers_slapd_Makefile_in,v 1.6 2021/09/10 20:44:27 sthen Exp $
 
 Index: servers/slapd/Makefile.in
 --- servers/slapd/Makefile.in.orig

@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_enterprise_signals_device_info_fetcher_cc,v 1.3 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-chrome_browser_enterprise_signals_device_info_fetcher_cc,v 1.5 2021/10/20 10:27:45 robert Exp $
 
 Index: chrome/browser/enterprise/signals/device_info_fetcher.cc
 --- chrome/browser/enterprise/signals/device_info_fetcher.cc.orig
@@ -12,7 +12,7 @@ Index: chrome/browser/enterprise/signals/device_info_fetcher.cc
  #include "chrome/browser/enterprise/signals/device_info_fetcher_linux.h"
  #endif
  
-@@ -59,7 +59,7 @@ std::unique_ptr<DeviceInfoFetcher> DeviceInfoFetcher::
+@@ -61,7 +61,7 @@ std::unique_ptr<DeviceInfoFetcher> DeviceInfoFetcher::
    return std::make_unique<DeviceInfoFetcherMac>();
  #elif defined(OS_WIN)
    return std::make_unique<DeviceInfoFetcherWin>();

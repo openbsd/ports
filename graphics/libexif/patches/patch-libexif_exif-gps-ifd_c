@@ -1,0 +1,19 @@
+$OpenBSD: patch-libexif_exif-gps-ifd_c,v 1.1 2021/09/20 08:16:18 sthen Exp $
+
+libexif/exif-gps-ifd.c: fix build with gcc 4.8
+
+179610d17dfd1880eafd65cea71cb54af4b403f4
+
+Index: libexif/exif-gps-ifd.c
+--- libexif/exif-gps-ifd.c.orig
++++ libexif/exif-gps-ifd.c
+@@ -59,7 +59,8 @@ const static struct ExifGPSIfdTagInfo exif_gps_ifd_tag
+ };
+ 
+ const ExifGPSIfdTagInfo *exif_get_gps_tag_info(ExifTag tag) {
+-  for (int i = 0; i < sizeof(exif_gps_ifd_tags) / sizeof(ExifGPSIfdTagInfo); ++i) {
++  int i;
++  for (i = 0; i < sizeof(exif_gps_ifd_tags) / sizeof(ExifGPSIfdTagInfo); ++i) {
+     if (tag==exif_gps_ifd_tags[i].tag)
+       return &exif_gps_ifd_tags[i];
+   }

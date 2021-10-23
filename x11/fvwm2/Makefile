@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.70 2021/01/08 15:53:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2021/09/19 21:11:55 tb Exp $
 
 COMMENT=	multiple virtual desktop window manager
 
 VERSION=	2.6.9
-REVISION=	0
+REVISION=	1
 DISTNAME=	fvwm-${VERSION}
 PKGNAME=	fvwm2-${VERSION}
 

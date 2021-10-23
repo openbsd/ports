@@ -1,3 +1,4 @@
-gmic is full-featured open-source framework for digital image processing,
+gmic is a full-featured open-source framework for digital image processing,
+which includes some qt interface
 
-This package is the plugin for ${QT_HOST}
+This package is the ${GMIC_WHAT}

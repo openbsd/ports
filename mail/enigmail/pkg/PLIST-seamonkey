@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST-seamonkey,v 1.10 2020/09/24 15:52:09 landry Exp $
-@conflict enigmail-seamonkey-<=1.6v0p1
-@pkgpath www/seamonkey,-enigmail
-lib/seamonkey/
-lib/seamonkey/distribution/
-lib/seamonkey/distribution/extensions/
-lib/seamonkey/distribution/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}.xpi

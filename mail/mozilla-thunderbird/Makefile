@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.357 2021/08/15 06:30:24 landry Exp $
+# $OpenBSD: Makefile,v 1.361 2021/10/22 07:56:13 landry Exp $
 
 ONLY_FOR_ARCHS =	amd64 aarch64
 COMMENT =		Mozilla e-mail, calendar, rss and usenet client
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-MOZILLA_VERSION =	78.13.0
+MOZILLA_VERSION =	91.2.1
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	comm/mail
@@ -17,7 +17,7 @@ DWZ = :
 
 HOMEPAGE =	https://www.thunderbird.net/
 
-SO_VERSION =	35.0
+SO_VERSION =	36.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
@@ -41,12 +41,19 @@ MOZILLA_USE_BUNDLED_ICU =	Yes
 BUILD_DEPENDS +=	lang/node
 # 63 requires cbindgen #1478813
 BUILD_DEPENDS +=	devel/cbindgen
+.if (${MACHINE_ARCH}==amd64) || (${MACHINE_ARCH}==i386)
+# 67 requires nasm for bundled libdav1d
+BUILD_DEPENDS +=	devel/nasm
+.endif
+#1670807
+BUILD_DEPENDS +=	devel/m4
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 
 NO_TEST =	Yes
 
 CONFIGURE_STYLE =	simple
+CONFIGURE_SCRIPT =	${MODPY_BIN} ${WRKSRC}/configure.py
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
 # pledge strings to be defined, and no multiprocess anyway..
 CONFIGURE_ARGS +=	--disable-sandbox
@@ -62,15 +69,13 @@ CONFIGURE_ARGS +=	--disable-debug-symbols
 DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
 			--disable-install-strip
 MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
+CONFIGURE_ENV +=	M4=/usr/local/bin/gm4
 
 LIB_DEPENDS +=	security/botan2 \
 		devel/libffi \
 		devel/json-c
 
 WANTLIB += X11-xcb Xcursor Xi botan-2 bz2 ffi harfbuzz intl json-c xcb xcb-shm
-
-# build lightning
-CONFIGURE_ARGS +=	--enable-calendar
 
 ALL_TARGET =	default
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1262 2021/07/24 21:33:15 kn Exp $
+# $OpenBSD: Makefile,v 1.1272 2021/10/22 20:49:30 sthen Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -106,7 +106,6 @@
      SUBDIR += fpdns
      SUBDIR += fping
      SUBDIR += freeradius
-     SUBDIR += freeradius3
      SUBDIR += freetalk
      SUBDIR += ftpcopy
      SUBDIR += ftpsesame
@@ -132,6 +131,7 @@
      SUBDIR += gupnp
      SUBDIR += h323plus
      SUBDIR += haproxy
+     SUBDIR += headscale
      SUBDIR += hexchat
      SUBDIR += honeyd
      SUBDIR += hping
@@ -209,7 +209,6 @@
      SUBDIR += libircclient
      SUBDIR += libktorrent
      SUBDIR += libmaxminddb
-     SUBDIR += libmesode
      SUBDIR += libmygpo-qt
      SUBDIR += libnet
      SUBDIR += libnids
@@ -225,6 +224,7 @@
      SUBDIR += libsignal-protocol-c
      SUBDIR += libsmi
      SUBDIR += libst
+     SUBDIR += libstrophe
      SUBDIR += libtorrent
      SUBDIR += libtorrent-rasterbar
      SUBDIR += libunbound
@@ -555,8 +555,6 @@
      SUBDIR += py-IP
      SUBDIR += py-IP,python3
      SUBDIR += py-aiodns,python3
-     SUBDIR += py-boto
-     SUBDIR += py-boto,python3
      SUBDIR += py-boto3,python3
      SUBDIR += py-botocore,python3
      SUBDIR += py-cares,python3
@@ -596,11 +594,9 @@
      SUBDIR += py-netifaces,python3
      SUBDIR += py-netmiko,python3
      SUBDIR += py-nmap
-     SUBDIR += py-nxos
      SUBDIR += py-nxos,python3
      SUBDIR += py-paho-mqtt
      SUBDIR += py-paho-mqtt,python3
-     SUBDIR += py-pcapy
      SUBDIR += py-pcapy,python3
      SUBDIR += py-pf
      SUBDIR += py-pf,python3
@@ -617,11 +613,10 @@
      SUBDIR += py-siphon,python3
      SUBDIR += py-slixmpp,python3
      SUBDIR += py-smbc,python3
-     SUBDIR += py-snmp
+     SUBDIR += py-snmp,python3
      SUBDIR += py-socketio-client,python3
      SUBDIR += py-socks
      SUBDIR += py-socks,python3
-     SUBDIR += py-stem
      SUBDIR += py-stem,python3
      SUBDIR += py-telegram,python3
      SUBDIR += py-tinytuya,python3
@@ -631,7 +626,6 @@
      SUBDIR += py-transmissionrpc-ng,python3
      SUBDIR += py-twitter,python3
      SUBDIR += py-txtorcon,python3
-     SUBDIR += py-websocket-client
      SUBDIR += py-websocket-client,python3
      SUBDIR += py-xmpppy
      SUBDIR += py-zeroconf,python3
@@ -654,7 +648,6 @@
      SUBDIR += rtg
      SUBDIR += rtmpdump
      SUBDIR += rtorrent
-     SUBDIR += ruby-agcaldav
      SUBDIR += ruby-cbor,ruby27
      SUBDIR += ruby-cbor,ruby30
      SUBDIR += ruby-eventmachine,ruby27
@@ -709,6 +702,7 @@
      SUBDIR += syncthing
      SUBDIR += synergy
      SUBDIR += tacacs+
+     SUBDIR += tailscale
      SUBDIR += tcl-snmptools
      SUBDIR += tclcurl
      SUBDIR += tcludp

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2020/11/23 14:54:35 benoit Exp $
+# $OpenBSD: Makefile,v 1.21 2021/09/08 07:13:51 sthen Exp $
 
 COMMENT =		low-calorie MIME generator
 
-DISTNAME =		MIME-Lite-3.031
+DISTNAME =		MIME-Lite-3.033
 CATEGORIES =		mail
 
 PERMIT_PACKAGE =	Yes
@@ -11,7 +11,7 @@ RUN_DEPENDS =		mail/p5-Email-Date-Format \
 			mail/p5-MIME-Types \
 			mail/p5-Mail-Tools
 
-BUILD_DEPENDS = 	${RUN_DEPENDS}
+BUILD_DEPENDS =		${RUN_DEPENDS}
 
 MODULES =		cpan
 PKG_ARCH =		*

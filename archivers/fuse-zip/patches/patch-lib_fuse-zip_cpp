@@ -1,0 +1,26 @@
+$OpenBSD: patch-lib_fuse-zip_cpp,v 1.1 2021/10/13 08:49:03 sdk Exp $
+
+Required xattr.h defines from linux
+
+Index: lib/fuse-zip.cpp
+--- lib/fuse-zip.cpp.orig
++++ lib/fuse-zip.cpp
+@@ -35,7 +35,6 @@
+ #include <syslog.h>
+ #include <sys/types.h>
+ #include <sys/statvfs.h>
+-#include <sys/xattr.h>
+ 
+ #include <cerrno>
+ #include <cstring>
+@@ -47,6 +46,10 @@
+ #include "types.h"
+ #include "fileNode.h"
+ #include "fuseZipData.h"
++
++/* xattr.h */
++#define XATTR_CREATE      0x1
++#define XATTR_REPLACE     0x2
+ 
+ static const char FILE_COMMENT_XATTR_NAME[] = "user.comment";
+ static const size_t FILE_COMMENT_XATTR_NAME_LENZ = 13; // length including NULL-byte

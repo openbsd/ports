@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.105 2021/08/21 08:03:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.110 2021/10/11 15:16:39 rsadowski Exp $
 
 COMMENT=	create, alter and inspect Matroska files
 
-DISTNAME=	mkvtoolnix-57.0.0
+DISTNAME=	mkvtoolnix-62.0.0
 
 CATEGORIES=	multimedia x11
 
@@ -13,14 +13,17 @@ MAINTAINER=	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} FLAC c dvdread ebml fmt iconv intl
-WANTLIB += m magic matroska ogg pcre2-8 pugixml vorbis z
+WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += FLAC Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
+WANTLIB += Qt5Network Qt5Widgets c cmark dvdread ebml fmt gmp
+WANTLIB += iconv intl m matroska ogg pugixml vorbis z
 
 MASTER_SITES=	https://www.bunkus.org/videotools/mkvtoolnix/sources/
 
 EXTRACT_SUFX=	.tar.xz
 
-MODULES=	lang/ruby
+MODULES=	x11/qt5 \
+		lang/ruby
 
 MODRUBY_RUNDEP=	No
 
@@ -36,59 +39,43 @@ BUILD_DEPENDS=	devel/boost \
 		devel/gettext,-tools \
 		devel/gtest \
 		textproc/docbook \
-		textproc/docbook-xsl \
-		x11/qt5/qttools
+		textproc/docbook-xsl
 
 LIB_DEPENDS=	audio/flac \
 		audio/libogg \
 		audio/libvorbis \
 		devel/fmt \
 		devel/gettext,-runtime \
+		devel/gmp \
 		devel/libdvdread \
-		devel/libmagic \
-		devel/pcre2 \
 		multimedia/libmatroska>=1.6.2 \
+		textproc/cmark \
 		textproc/libebml>=1.4.0 \
-		textproc/pugixml
+		textproc/pugixml \
+		x11/qt5/qtmultimedia
 
-MAKE_ENV+=	V=1
-
-CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.69
-
-CONFIGURE_ARGS=	--disable-optimization \
-		--disable-update-check \
-		--with-boost-libdir=${LOCALBASE}/lib \
-		--with-docbook-xsl-root=${LOCALBASE}/share/xsl/docbook
-
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
-
-FLAVORS=	no_x11
-FLAVOR?=
-
-.if ${FLAVOR:Mno_x11}
-CONFIGURE_ARGS+= --disable-gui
-.else
-MODULES+=	x11/qt5
-
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia Qt5Network
-WANTLIB += Qt5Widgets cmark
-
-LIB_DEPENDS+=	x11/qt5/qtmultimedia \
-		textproc/cmark
-
-RUN_DEPENDS+=	devel/desktop-file-utils \
+RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		x11/gtk+3,-guic
 
-CPPFLAGS+=	-I${X11BASE}/include
-LDFLAGS+=	-L${X11BASE}/lib -L${MODQT5_LIBDIR}
+CONFIGURE_STYLE= autoconf
+AUTOCONF_VERSION= 2.71
 
-CONFIGURE_ENV+=	LCONVERT="${LOCALBASE}/lib/qt5/bin/lconvert"
-.endif
+CONFIGURE_ARGS=	--disable-optimization \
+		--disable-update-check \
+		--disable-qt6 \
+		--with-boost=${LOCALBASE} \
+		--with-boost-filesystem=boost_filesystem \
+		--with-boost-system=boost_system \
+		--with-boost-regex=boost_regex \
+		--with-docbook-xsl-root=${LOCALBASE}/share/xsl/docbook
 
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
+MAKE_ENV+=	V=1
+CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib -L${MODQT5_LIBDIR}
+
+CONFIGURE_ENV+=	LCONVERT="${LOCALBASE}/lib/qt5/bin/lconvert" \
+		CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 
 pre-patch:

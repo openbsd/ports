@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2021/05/12 23:30:53 jca Exp $
+# $OpenBSD: Makefile,v 1.38 2021/10/19 12:06:57 jca Exp $
 
 COMMENT-main=	trivial database library
 COMMENT-python=	Python ${MODPY_VERSION} bindings for tdb
 
 # Keep in sync with the version bundled in net/samba
-V=		1.4.3
+V=		1.4.5
 
 DISTNAME=	tdb-$V
 PKGNAME-main=	${DISTNAME}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.163 2021/08/17 19:16:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.165 2021/09/21 06:09:40 robert Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py
@@ -17,7 +17,7 @@
 
 COMMENT =		remote execution and configuration management system
 
-MODPY_EGG_VERSION =	3002.6
+MODPY_EGG_VERSION =	3003.3
 DISTNAME =		salt-${MODPY_EGG_VERSION}
 REVISION =		0
 
@@ -79,6 +79,7 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/salt/returners/zabbix_return.py
 	sed -i 's,share/man,man,g' ${WRKSRC}/setup.py
 	sed -i 's,^#user: root,user: _salt,' ${WRKSRC}/conf/{master,proxy}
+	sed -i '/^contextvars/d' ${WRKSRC}/requirements/base.txt
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples

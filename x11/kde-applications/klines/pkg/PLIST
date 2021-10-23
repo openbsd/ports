@@ -1,9 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/06/19 18:34:39 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/09/10 08:43:54 rsadowski Exp $
 @pkgpath x11/kde4/klines
 @bin bin/klines
 share/applications/org.kde.klines.desktop
 share/config.kcfg/
 share/config.kcfg/klines.kcfg
+share/doc/HTML/ca/klines/
+share/doc/HTML/ca/klines/gamescreen.png
+share/doc/HTML/ca/klines/index.cache.bz2
+share/doc/HTML/ca/klines/index.docbook
 share/doc/HTML/de/klines/
 share/doc/HTML/de/klines/gamescreen.png
 share/doc/HTML/de/klines/index.cache.bz2

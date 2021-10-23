@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/10/10 19:53:27 sthen Exp $
 
 COMMENT =	simple, lightweight XMPP C library
 
-V =		0.9.2
+V =		0.10.1
 DISTNAME =	libstrophe-${V}
+REVISION =	0
 
-SHARED_LIBS =	strophe                 2.0 # 1.0
+SHARED_LIBS =	strophe                 3.0 # 1.0
 
 CATEGORIES =	net devel
 
-HOMEPAGE =	http://strophe.im/libstrophe/
+HOMEPAGE =	https://strophe.im/libstrophe/
 
-MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
+MAINTAINER =	Florian Viehweger <openbsd@out-of-creativity.de>
 
 # Dual licensed: MIT and GPLv3
 PERMIT_PACKAGE =	Yes

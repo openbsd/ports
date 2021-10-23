@@ -1,0 +1,47 @@
+$OpenBSD: patch-examples_autochangers_chio-changer-openbsd,v 1.5 2021/08/31 05:56:19 robert Exp $
+
+Index: examples/autochangers/chio-changer-openbsd
+--- examples/autochangers/chio-changer-openbsd.orig
++++ examples/autochangers/chio-changer-openbsd
+@@ -90,28 +90,23 @@ case ${cmd} in 
+ 		exit ${rtn}
+ 		;;
+ 	list)
+-		${CHIO} -f ${ctl} status -v slot | \
+-			sed -ne 's/^slot *\([0-9]*:\).*FULL.*voltag.*<\(.*\):.*/\1\2/p' | \
++		${CHIO} -f ${ctl} status -vS | \
++			sed -ne 's/.*FULL.*voltag.*<\(.*\):.*source.*<slot \([0-9]*\)>.*/\2:\1/p' | \
+ 			awk -F: '{ print $1 + 1 ":" $2 }'
+ 		exit $?
+ 		;;
+ 	listall)
+-		# XXX only one drive is queried
+-		_list=$(${0} ${1} list)
+-		_loaded_s=$(${0} ${1} loaded ${slot} ${device} ${drive})
+-		_loaded_t=$(${CHIO} -f ${ctl} status -v | grep "drive ${drive}" | awk '{ print $NF }' | sed -e 's,<,,' -e 's,:.*,,')
+-
+-		[ -n "${_list}" -a -n "${_loaded_s}" -a -n "${_loaded_t}" ] || exit 1
+-
+-		(for i in ${_list}; do
+-			echo "S:${i}" | sed 's/\(.*\):/\1:F:/'
+-		done
+-		echo S:${_loaded_s}:E
+-		if [ "${_loaded_s}" -ne 0 ]; then
+-			echo D:${drive}:F:${_loaded_s}:${_loaded_t}
+-		else
+-			echo D:${drive}:E
+-		fi) | sort
++		${CHIO} -f ${ctl} status -vS | \
++			sed -ne '
++			s/^slot *\([0-9]*\):.*ENAB.*FULL.*voltag.*<\([^:]*\):.*/I:\1:F:\2/p;t
++			s/^slot *\([0-9]*\):.*FULL.*voltag.*<\([^:]*\):.*/S:\1:F:\2/p;t
++			s/^drive *\([0-9]*\):.*FULL.*voltag.*<\([^:]*\):.*source.*<[^0-9]*\([0-9]*\)>.*/D:\1:F:\3:\2/p;t
++			s/^slot *\([0-9]*\):.*ENAB.*voltag.*<\([^:]*\):.*/I:\1:E/p;t
++			s/^slot *\([0-9]*\):.*voltag.*<\([^:]*\):.*/S:\1:E/p;t
++			s/^drive *\([0-9]*\):.*voltag.*<\([^:]*\):.*/D:\1:E/p' | \
++			awk -F: '{ for (n = 1; n <= NF; n++) printf "%s%s",
++			(n == ($1 == "D" ? 4 : 2)) ? ($n == "" ? 0 : $n + 1) : $n,
++			(n == NF) ? "\n" : ":" }'
+ 		;;
+ 	loaded)
+ 		# XXX output the first empty slot if the drive is loaded

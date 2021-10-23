@@ -1,18 +1,18 @@
-$OpenBSD: patch-content_public_common_content_features_h,v 1.5 2021/08/17 11:19:04 robert Exp $
+$OpenBSD: patch-content_public_common_content_features_h,v 1.8 2021/10/20 10:27:47 robert Exp $
 
 Index: content/public/common/content_features.h
 --- content/public/common/content_features.h.orig
 +++ content/public/common/content_features.h
-@@ -219,7 +219,7 @@ CONTENT_EXPORT extern const base::Feature
+@@ -234,7 +234,7 @@ CONTENT_EXPORT extern const base::Feature
  CONTENT_EXPORT extern const base::Feature kWebAppWindowControlsOverlay;
  CONTENT_EXPORT extern const base::Feature kWebAssemblyBaseline;
  CONTENT_EXPORT extern const base::Feature kWebAssemblyCodeProtection;
--#if defined(OS_LINUX) && defined(ARCH_CPU_X86_64)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && defined(ARCH_CPU_X86_64)
+-#if (defined(OS_LINUX) || defined(OS_CHROMEOS)) && defined(ARCH_CPU_X86_64)
++#if (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)) && defined(ARCH_CPU_X86_64)
  CONTENT_EXPORT extern const base::Feature kWebAssemblyCodeProtectionPku;
- #endif  // defined(OS_LINUX) && defined(ARCH_CPU_X86_64)
- CONTENT_EXPORT extern const base::Feature kWebAssemblyLazyCompilation;
-@@ -263,7 +263,7 @@ CONTENT_EXPORT extern const base::Feature kMacSyscallS
+ #endif  // (defined(OS_LINUX) || defined(OS_CHROMEOS)) &&
+         // defined(ARCH_CPU_X86_64)
+@@ -280,7 +280,7 @@ CONTENT_EXPORT extern const base::Feature kMacSyscallS
  CONTENT_EXPORT extern const base::Feature kRetryGetVideoCaptureDeviceInfos;
  #endif  // defined(OS_MAC)
  

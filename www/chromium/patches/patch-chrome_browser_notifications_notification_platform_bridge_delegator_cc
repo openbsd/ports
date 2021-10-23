@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_notifications_notification_platform_bridge_delegator_cc,v 1.5 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-chrome_browser_notifications_notification_platform_bridge_delegator_cc,v 1.6 2021/09/01 16:54:38 robert Exp $
 
 Index: chrome/browser/notifications/notification_platform_bridge_delegator.cc
 --- chrome/browser/notifications/notification_platform_bridge_delegator.cc.orig
@@ -7,8 +7,8 @@ Index: chrome/browser/notifications/notification_platform_bridge_delegator.cc
  #elif defined(OS_WIN)
    return NotificationPlatformBridgeWin::SystemNotificationEnabled();
  #else
--#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
    if (profile) {
      // Prefs take precedence over flags.
      PrefService* prefs = profile->GetPrefs();

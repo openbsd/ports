@@ -1,9 +1,9 @@
-$OpenBSD: patch-v8_include_v8config_h,v 1.6 2021/07/21 15:43:34 robert Exp $
+$OpenBSD: patch-v8_include_v8config_h,v 1.9 2021/10/20 10:27:49 robert Exp $
 
 Index: v8/include/v8config.h
 --- v8/include/v8config.h.orig
 +++ v8/include/v8config.h
-@@ -152,6 +152,7 @@ path. Add it with -I<path> to the command line
+@@ -181,6 +181,7 @@ path. Add it with -I<path> to the command line
    && !defined(V8_TARGET_OS_FUCHSIA) \
    && !defined(V8_TARGET_OS_IOS) \
    && !defined(V8_TARGET_OS_LINUX) \
@@ -11,7 +11,7 @@ Index: v8/include/v8config.h
    && !defined(V8_TARGET_OS_MACOSX) \
    && !defined(V8_TARGET_OS_WIN)
  #  error No known target OS defined.
-@@ -163,6 +164,7 @@ path. Add it with -I<path> to the command line
+@@ -192,6 +193,7 @@ path. Add it with -I<path> to the command line
    || defined(V8_TARGET_OS_FUCHSIA) \
    || defined(V8_TARGET_OS_IOS) \
    || defined(V8_TARGET_OS_LINUX) \
@@ -19,7 +19,7 @@ Index: v8/include/v8config.h
    || defined(V8_TARGET_OS_MACOSX) \
    || defined(V8_TARGET_OS_WIN)
  #  error A target OS is defined but V8_HAVE_TARGET_OS is unset.
-@@ -183,6 +185,10 @@ path. Add it with -I<path> to the command line
+@@ -212,6 +214,10 @@ path. Add it with -I<path> to the command line
  
  #ifdef V8_OS_LINUX
  # define V8_TARGET_OS_LINUX

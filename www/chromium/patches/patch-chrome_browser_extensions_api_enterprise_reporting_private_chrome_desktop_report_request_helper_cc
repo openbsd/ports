@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_extensions_api_enterprise_reporting_private_chrome_desktop_report_request_helper_cc,v 1.7 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_api_enterprise_reporting_private_chrome_desktop_report_request_helper_cc,v 1.8 2021/09/01 16:54:38 robert Exp $
 
 Index: chrome/browser/extensions/api/enterprise_reporting_private/chrome_desktop_report_request_helper.cc
 --- chrome/browser/extensions/api/enterprise_reporting_private/chrome_desktop_report_request_helper.cc.orig

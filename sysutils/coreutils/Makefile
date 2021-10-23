@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2020/11/19 00:17:49 jca Exp $
+# $OpenBSD: Makefile,v 1.23 2021/10/05 23:26:51 bcallah Exp $
 
 COMMENT =		file, shell and text manipulation utilities
 
-DISTNAME =		coreutils-8.32
-REVISION =		0
+DISTNAME =		coreutils-9.0
 CATEGORIES =		sysutils
 
 MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
@@ -24,7 +23,7 @@ LIB_DEPENDS =		devel/gettext,-runtime
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--program-prefix=g \
-			--without-gmp
+			--without-libgmp
 
 # Fixes a spurrious test failure
 PORTHOME =		${WRKDIR}

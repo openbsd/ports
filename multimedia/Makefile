@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2021/07/25 13:30:11 espie Exp $
+# $OpenBSD: Makefile,v 1.142 2021/10/18 04:13:49 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += aom
@@ -11,6 +11,7 @@
      SUBDIR += dvdbackup
      SUBDIR += dvdstyler
      SUBDIR += frei0r-plugins
+     SUBDIR += gaupol
      SUBDIR += get_flash_videos
      SUBDIR += get_iplayer
      SUBDIR += gnome-twitch
@@ -36,6 +37,7 @@
      SUBDIR += libtheora
      SUBDIR += libtheorafile
      SUBDIR += libtheoraplay
+     SUBDIR += libudfread
      SUBDIR += libv4l
      SUBDIR += libvidstab
      SUBDIR += libvpx
@@ -45,8 +47,8 @@
      SUBDIR += mjpegtools
      SUBDIR += mjpegtools,quicktime
      SUBDIR += mkvtoolnix
-     SUBDIR += mkvtoolnix,no_x11
      SUBDIR += mlt
+     SUBDIR += mlt7
      SUBDIR += motion
      SUBDIR += motion,mysql
      SUBDIR += motion,pgsql
@@ -64,6 +66,7 @@
      SUBDIR += py-caption,python3
      SUBDIR += py-casttube,python3
      SUBDIR += py-chromecast,python3
+     SUBDIR += py-guessit,python3
      SUBDIR += py-pafy
      SUBDIR += qtav
      SUBDIR += regionset

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/06/19 18:34:33 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/09/10 08:43:50 rsadowski Exp $
 @bin bin/kalzium
 include/libkdeedu/
 include/libkdeedu/chemicaldataobject.h
@@ -813,9 +813,12 @@ share/locale/et/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/et/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
 share/locale/et/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/eu/LC_MESSAGES/kalzium.mo
+share/locale/eu/LC_MESSAGES/plasma_applet_Molmasscalculator.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_concentrationCalculator.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_gasCalculator.mo
+share/locale/eu/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
+share/locale/eu/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/fa/LC_MESSAGES/kalzium.mo
 share/locale/fi/LC_MESSAGES/kalzium.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_Molmasscalculator.mo

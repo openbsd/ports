@@ -1,0 +1,8 @@
+Open Source, self-hosted implementation of the Tailscale control server.
+
+The control server works as an exchange point of Wireguard public keys for the
+nodes in the Tailscale network. It also assigns the IP addresses of the
+clients, creates the boundaries between each user, enables sharing machines
+between users, and exposes the advertised routes of your nodes.
+
+Headscale implements this coordination server.

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2021/03/26 12:35:15 kn Exp $
+@comment $OpenBSD: PLIST,v 1.22 2021/10/13 10:29:29 kn Exp $
 @newgroup _varnish:625
 @newuser _varnish:625:_varnish:daemon:Varnish Cache:/var/varnish:/bin/sh
 @rcscript ${RCDIR}/varnishd
@@ -83,6 +83,7 @@ include/varnish/vdef.h
 include/varnish/vmod_abi.h
 include/varnish/vqueue.h
 include/varnish/vre.h
+include/varnish/vre_pcre2.h
 include/varnish/vrnd.h
 include/varnish/vrt.h
 include/varnish/vrt_obj.h
@@ -141,8 +142,6 @@ lib/varnish/vmods/
 share/aclocal/
 share/aclocal/varnish-legacy.m4
 share/aclocal/varnish.m4
-@exec-add mkdir -p /var/varnish
-@extraunexec rm -fr /var/varnish
 share/examples/varnish/
 @sample ${SYSCONFDIR}/varnish/
 share/examples/varnish/builtin.vcl
@@ -153,3 +152,5 @@ share/varnish/vcl/
 share/varnish/vcl/devicedetect.vcl
 share/varnish/vmodtool.py
 share/varnish/vsctool.py
+@sample ${LOCALSTATEDIR}/varnish/
+@extraunexec rm -fr ${LOCALSTATEDIR}/varnish

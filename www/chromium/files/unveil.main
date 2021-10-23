@@ -1,4 +1,4 @@
-# $OpenBSD: unveil.main,v 1.8 2020/01/06 16:05:06 robert Exp $
+# $OpenBSD: unveil.main,v 1.9 2021/09/10 13:36:51 kevlo Exp $
 
 # needed for video(4)
 /dev/video rw
@@ -61,6 +61,7 @@
 
 ~/.config/chromium rwc
 ~/.config/dconf r
+~/.config/fcitx r
 ~/.config/fontconfig r
 ~/.config/gtk-3.0 r
 ~/.config/mimeapps.list r

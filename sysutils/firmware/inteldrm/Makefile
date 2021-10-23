@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2021/01/20 06:40:59 jsg Exp $
+# $OpenBSD: Makefile,v 1.6 2021/10/04 09:19:34 jsg Exp $
 
 FW_DRIVER=	inteldrm
-FW_VER=		20201218
+FW_VER=		20210919
 DISTNAME=	linux-firmware-${FW_VER}
 EXTRACT_SUFX=	.tar.xz
 EXTRACT_FILES=	${DISTNAME}/{LICENSE.\*,i915}
@@ -11,18 +11,9 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 HOMEPAGE=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/i915
 MASTER_SITES=	https://cdn.kernel.org/pub/linux/kernel/firmware/
 
-# referenced only by drm 5.7
-FW57=		tgl_dmc_ver2_06.bin \
-		tgl_huc_7.0.12.bin
-
-# referenced by drm 5.10
-FIRMWARE=	bxt_dmc_ver1_07.bin \
-		cnl_dmc_ver1_07.bin \
-		glk_dmc_ver1_04.bin \
-		icl_dmc_ver1_09.bin \
-		kbl_dmc_ver1_04.bin \
+# referenced only by drm 5.10
+FW510=		cnl_dmc_ver1_07.bin \
 		rkl_dmc_ver2_02.bin \
-		skl_dmc_ver1_27.bin \
 		tgl_dmc_ver2_08.bin \
 		bxt_guc_33.0.0.bin \
 		cml_guc_33.0.0.bin \
@@ -32,6 +23,28 @@ FIRMWARE=	bxt_dmc_ver1_07.bin \
 		kbl_guc_33.0.0.bin \
 		skl_guc_33.0.0.bin \
 		tgl_guc_35.2.0.bin \
+		tgl_huc_7.5.0.bin 
+
+# referenced by drm 5.15
+FIRMWARE=	adlp_dmc_ver2_10.bin \
+		adls_dmc_ver2_01.bin \
+		bxt_dmc_ver1_07.bin \
+		dg1_dmc_ver2_02.bin \
+		glk_dmc_ver1_04.bin \
+		icl_dmc_ver1_09.bin \
+		kbl_dmc_ver1_04.bin \
+		rkl_dmc_ver2_03.bin \
+		skl_dmc_ver1_27.bin \
+		tgl_dmc_ver2_12.bin \
+		adlp_guc_62.0.3.bin \
+		bxt_guc_62.0.0.bin \
+		cml_guc_62.0.0.bin \
+		ehl_guc_62.0.0.bin \
+		glk_guc_62.0.0.bin \
+		icl_guc_62.0.0.bin \
+		kbl_guc_62.0.0.bin \
+		skl_guc_62.0.0.bin \
+		tgl_guc_62.0.0.bin \
 		bxt_huc_2.0.0.bin \
 		cml_huc_4.0.0.bin \
 		ehl_huc_9.0.0.bin \
@@ -39,8 +52,8 @@ FIRMWARE=	bxt_dmc_ver1_07.bin \
 		icl_huc_9.0.0.bin \
 		kbl_huc_4.0.0.bin \
 		skl_huc_2.0.0.bin \
-		tgl_huc_7.5.0.bin \
-		${FW57}
+		tgl_huc_7.9.3.bin \
+		${FW510}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/firmware/i915

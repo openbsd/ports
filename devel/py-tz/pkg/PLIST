@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2020/11/21 16:53:37 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.28 2021/10/21 20:44:43 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/pytz/
 lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -583,6 +583,7 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Pacific/Guadalcanal
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Pacific/Guam
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Pacific/Honolulu
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Pacific/Johnston
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Pacific/Kanton
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Pacific/Kiritimati
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Pacific/Kosrae
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Pacific/Kwajalein

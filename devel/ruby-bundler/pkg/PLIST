@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/06/08 07:20:51 anton Exp $
-${GEM_BIN}/bundle${GEM_BIN_SUFFIX}
-${GEM_BIN}/bundler${GEM_BIN_SUFFIX}
+@comment $OpenBSD: PLIST,v 1.7 2021/09/01 20:22:25 jeremy Exp $
+@comment ${GEM_BIN}/bundle${GEM_BIN_SUFFIX}
+@comment ${GEM_BIN}/bundler${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.codeclimate.yml

@@ -1,0 +1,49 @@
+$OpenBSD: patch-src-IL_src_il_exr_cpp,v 1.1 2021/08/31 07:31:13 ajacoutot Exp $
+
+Fix build with OpenEXR>=3
+
+Index: src-IL/src/il_exr.cpp
+--- src-IL/src/il_exr.cpp.orig
++++ src-IL/src/il_exr.cpp
+@@ -143,9 +143,9 @@ bool ilIStream::read(char c[], int n)
+ 
+ 
+ //@TODO: Make this work with 64-bit values.
+-Imf::Int64 ilIStream::tellg()
++uint64_t ilIStream::tellg()
+ {
+-	Imf::Int64 Pos;
++	uint64_t Pos;
+ 
+ 	// itell only returns a 32-bit value!
+ 	Pos = itell();
+@@ -156,7 +156,7 @@ Imf::Int64 ilIStream::tellg()
+ 
+ // Note that there is no return value here, even though there probably should be.
+ //@TODO: Make this work with 64-bit values.
+-void ilIStream::seekg(Imf::Int64 Pos)
++void ilIStream::seekg(uint64_t Pos)
+ {
+ 	// iseek only uses a 32-bit value!
+ 	iseek((ILint)Pos, IL_SEEK_SET);  // I am assuming this is seeking from the beginning.
+@@ -309,9 +309,9 @@ void ilOStream::write(const char c[], int n)
+ }
+ 
+ //@TODO: Make this work with 64-bit values.
+-Imf::Int64 ilOStream::tellp()
++uint64_t ilOStream::tellp()
+ {
+-	Imf::Int64 Pos;
++	uint64_t Pos;
+ 
+ 	// itellw only returns a 32-bit value!
+ 	Pos = itellw();
+@@ -321,7 +321,7 @@ Imf::Int64 ilOStream::tellp()
+ 
+ // Note that there is no return value here, even though there probably should be.
+ //@TODO: Make this work with 64-bit values.
+-void ilOStream::seekp(Imf::Int64 Pos)
++void ilOStream::seekp(uint64_t Pos)
+ {
+ 	// iseekw only uses a 32-bit value!
+ 	iseekw((ILint)Pos, IL_SEEK_SET);  // I am assuming this is seeking from the beginning.

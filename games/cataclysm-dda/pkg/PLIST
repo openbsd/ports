@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/07/14 03:50:15 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/10/18 08:23:19 kirby Exp $
 %%no_x11%%
 !%%no_x11%%
 share/cataclysm-dda/
@@ -141,6 +141,7 @@ share/cataclysm-dda/json/itemgroups/SUS/evac_shelter.json
 share/cataclysm-dda/json/itemgroups/SUS/fridges.json
 share/cataclysm-dda/json/itemgroups/SUS/garage.json
 share/cataclysm-dda/json/itemgroups/SUS/library.json
+share/cataclysm-dda/json/itemgroups/SUS/mre_packages.json
 share/cataclysm-dda/json/itemgroups/SUS/office.json
 share/cataclysm-dda/json/itemgroups/Weapons_Mods_Ammo/
 share/cataclysm-dda/json/itemgroups/Weapons_Mods_Ammo/ammo.json
@@ -1290,6 +1291,7 @@ share/cataclysm-dda/json/mapgen_palettes/necropolis/necropolis_b2.json
 share/cataclysm-dda/json/mapgen_palettes/necropolis/necropolis_b3.json
 share/cataclysm-dda/json/mapgen_palettes/office.json
 share/cataclysm-dda/json/mapgen_palettes/office_doctor.json
+share/cataclysm-dda/json/mapgen_palettes/orchard_apple.json
 share/cataclysm-dda/json/mapgen_palettes/park_palette.json
 share/cataclysm-dda/json/mapgen_palettes/prison.json
 share/cataclysm-dda/json/mapgen_palettes/private_resort.json
@@ -1822,7 +1824,6 @@ share/cataclysm-dda/json/recipes/other/vehicle.json
 share/cataclysm-dda/json/recipes/recipe_ammo.json
 share/cataclysm-dda/json/recipes/recipe_companion.json
 share/cataclysm-dda/json/recipes/recipe_deconstruction.json
-share/cataclysm-dda/json/recipes/recipe_deconstruction_package.json
 share/cataclysm-dda/json/recipes/recipe_food.json
 share/cataclysm-dda/json/recipes/recipe_medsandchemicals.json
 share/cataclysm-dda/json/recipes/recipe_obsolete.json
@@ -2759,6 +2760,7 @@ share/cataclysm-dda/mods/Magiclysm/items/spellbooks.json
 share/cataclysm-dda/mods/Magiclysm/items/tools.json
 share/cataclysm-dda/mods/Magiclysm/items/vehicle/
 share/cataclysm-dda/mods/Magiclysm/items/vehicle/frames.json
+share/cataclysm-dda/mods/Magiclysm/items/vehicle/vehicle_parts.json
 share/cataclysm-dda/mods/Magiclysm/items/vehicle_parts.json
 share/cataclysm-dda/mods/Magiclysm/items/weapons.json
 share/cataclysm-dda/mods/Magiclysm/lore.md

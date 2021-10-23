@@ -1,0 +1,14 @@
+$OpenBSD: patch-invoke_config_py,v 1.1.1.1 2021/09/02 08:45:37 sthen Exp $
+
+Index: invoke/config.py
+--- invoke/config.py.orig
++++ invoke/config.py
+@@ -448,7 +448,7 @@ class Config(DataProxy):
+         # TODO: consider an automatic fallback to /bin/sh for systems lacking
+         # /bin/bash; however users may configure run.shell quite easily, so...
+         else:
+-            shell = "/bin/bash"
++            shell = "/bin/sh"
+ 
+         return {
+             # TODO: we document 'debug' but it's not truly implemented outside

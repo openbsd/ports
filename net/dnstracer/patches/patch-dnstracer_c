@@ -1,0 +1,16 @@
+$OpenBSD: patch-dnstracer_c,v 1.1 2021/09/10 15:57:53 jcs Exp $
+
+Index: dnstracer.c
+--- dnstracer.c.orig
++++ dnstracer.c
+@@ -1014,8 +1014,8 @@ display_arecords(void)
+ 
+     arecord = arecords;
+     while (arecord != NULL) {
+-	printf("%s (%s)%n",
+-	    arecord->server_name, arecord->server_ip, &i);
++	i = printf("%s (%s)",
++	    arecord->server_name, arecord->server_ip);
+ 	if (40 - i < 1)
+ 	    printf(" ");
+ 	else {

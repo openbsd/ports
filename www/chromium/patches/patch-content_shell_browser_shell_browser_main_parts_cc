@@ -1,18 +1,18 @@
-$OpenBSD: patch-content_shell_browser_shell_browser_main_parts_cc,v 1.25 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-content_shell_browser_shell_browser_main_parts_cc,v 1.26 2021/09/01 16:54:39 robert Exp $
 
 Index: content/shell/browser/shell_browser_main_parts.cc
 --- content/shell/browser/shell_browser_main_parts.cc.orig
 +++ content/shell/browser/shell_browser_main_parts.cc
-@@ -57,7 +57,7 @@
- #if defined(USE_AURA) && defined(USE_X11)
+@@ -60,7 +60,7 @@
  #include "ui/events/devices/x11/touch_factory_x11.h"  // nogncheck
  #endif
+ 
 -#if defined(USE_AURA) && (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
 +#if defined(USE_AURA) && (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD))
  #include "ui/base/ime/init/input_method_initializer.h"
  #endif
- #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -137,7 +137,7 @@ void ShellBrowserMainParts::PostCreateMainMessageLoop(
+ 
+@@ -148,7 +148,7 @@ void ShellBrowserMainParts::PostCreateMainMessageLoop(
  }
  
  int ShellBrowserMainParts::PreEarlyInitialization() {

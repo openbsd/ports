@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/06 06:36:22 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2021/10/14 18:06:59 rsadowski Exp $
 
 COMMENT =	plugin-based library to create KDE window decorations
 DISTNAME =	kdecoration-${VERSION}
 
-SHARED_LIBS +=  kdecorations2         0.0 # 5.12.0
+SHARED_LIBS +=  kdecorations2         0.1 # 5.12.0
 SHARED_LIBS +=  kdecorations2private  0.0 # 5.12.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5I18n Qt5Core Qt5Gui m

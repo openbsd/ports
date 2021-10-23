@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2021/07/19 05:22:41 daniel Exp $
+# $OpenBSD: Makefile,v 1.7 2021/09/05 02:35:03 thfr Exp $
 
 COMMENT =	port of Quake 1 using Vulkan instead of OpenGL
 
-V =		1.05.3
+V =		1.11.0
 PKGNAME =	vkquake-${V}
 GH_ACCOUNT =	Novum
 GH_PROJECT =	vkQuake
@@ -14,7 +14,7 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += SDL2 X11-xcb c m mad ogg vorbis vorbisfile vulkan
+WANTLIB += SDL2 c m mad ogg vorbis vorbisfile vulkan
 
 COMPILER =	base-clang base-gcc gcc3
 LIB_DEPENDS =	audio/libmad \

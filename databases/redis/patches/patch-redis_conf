@@ -1,13 +1,9 @@
-$OpenBSD: patch-redis_conf,v 1.27 2021/05/11 00:17:53 danj Exp $
-
-Redis TLSv1.3 support is conditional on TLS1_3_VERSION being public.
-This is not currently the case and the ciphersuites config is a no-op.
+$OpenBSD: patch-redis_conf,v 1.28 2021/09/17 01:39:38 tb Exp $
 
 Main changes in this file:
 
 * Redis socket and pid files were moved to /var/run/redis
 * Suggest using the system-wide root certificates /etc/ssl/certs.pem
-* Using TLSv1.3 will currently trigger a log warning
 * redis will daemonize and use syslog
 
 Index: redis.conf

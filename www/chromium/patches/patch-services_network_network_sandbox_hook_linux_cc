@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_network_network_sandbox_hook_linux_cc,v 1.5 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-services_network_network_sandbox_hook_linux_cc,v 1.6 2021/09/01 16:54:40 robert Exp $
 
 Index: services/network/network_sandbox_hook_linux.cc
 --- services/network/network_sandbox_hook_linux.cc.orig

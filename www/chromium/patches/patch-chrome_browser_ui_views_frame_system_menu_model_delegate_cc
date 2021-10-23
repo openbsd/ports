@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_system_menu_model_delegate_cc,v 1.7 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_system_menu_model_delegate_cc,v 1.10 2021/10/20 10:27:46 robert Exp $
 
 Index: chrome/browser/ui/views/frame/system_menu_model_delegate.cc
 --- chrome/browser/ui/views/frame/system_menu_model_delegate.cc.orig
@@ -21,7 +21,7 @@ Index: chrome/browser/ui/views/frame/system_menu_model_delegate.cc
    if (command_id == IDC_USE_SYSTEM_TITLE_BAR) {
      PrefService* prefs = browser_->profile()->GetPrefs();
      return !prefs->GetBoolean(prefs::kUseCustomChromeFrame);
-@@ -60,7 +60,7 @@ bool SystemMenuModelDelegate::IsCommandIdEnabled(int c
+@@ -62,7 +62,7 @@ bool SystemMenuModelDelegate::IsCommandIdEnabled(int c
  bool SystemMenuModelDelegate::IsCommandIdVisible(int command_id) const {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

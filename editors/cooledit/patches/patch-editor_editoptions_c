@@ -1,0 +1,28 @@
+$OpenBSD: patch-editor_editoptions_c,v 1.1 2021/09/19 21:54:18 schwarze Exp $
+
+Do not use sprintf(3) %n.
+
+Index: editor/editoptions.c
+--- editor/editoptions.c.orig
++++ editor/editoptions.c
+@@ -378,15 +378,15 @@ int save_user_defined_keys (struct key_list k_list[], 
+ 
+     for (i = 0; k_list[i].key_name[0]; i++) {
+ 	if (k_list[i].keycode2) {
+-	    sprintf (p, "%s\t%x %x %x %x %x %x\n%n", k_list[i].key_name, k_list[i].state0, k_list[i].keycode0,
+-		     k_list[i].state1, k_list[i].keycode1, k_list[i].state2, k_list[i].keycode2, &n);
++	    n = sprintf (p, "%s\t%x %x %x %x %x %x\n", k_list[i].key_name, k_list[i].state0, k_list[i].keycode0,
++		     k_list[i].state1, k_list[i].keycode1, k_list[i].state2, k_list[i].keycode2);
+ 	    p += n;
+ 	} else if (k_list[i].keycode1) {
+-	    sprintf (p, "%s\t%x %x %x %x\n%n", k_list[i].key_name, k_list[i].state0, k_list[i].keycode0,
+-		     k_list[i].state1, k_list[i].keycode1, &n);
++	    n = sprintf (p, "%s\t%x %x %x %x\n", k_list[i].key_name, k_list[i].state0, k_list[i].keycode0,
++		     k_list[i].state1, k_list[i].keycode1);
+ 	    p += n;
+ 	} else if (k_list[i].keycode0) {
+-	    sprintf (p, "%s\t%x %x\n%n", k_list[i].key_name, k_list[i].state0, k_list[i].keycode0, &n);
++	    n = sprintf (p, "%s\t%x %x\n", k_list[i].key_name, k_list[i].state0, k_list[i].keycode0);
+ 	    p += n;
+ 	}
+     }

@@ -1,0 +1,41 @@
+$OpenBSD: patch-sandbox_policy_sandbox_type_cc,v 1.1 2021/10/20 10:27:48 robert Exp $
+
+Index: sandbox/policy/sandbox_type.cc
+--- sandbox/policy/sandbox_type.cc.orig
++++ sandbox/policy/sandbox_type.cc
+@@ -34,7 +34,7 @@ bool IsUnsandboxedSandboxType(SandboxType sandbox_type
+ #endif
+     case SandboxType::kAudio:
+       return false;
+-#if defined(OS_FUCHSIA)
++#if defined(OS_FUCHSIA) || defined(OS_BSD)
+     case SandboxType::kVideoCapture:
+       return false;
+ #endif
+@@ -120,7 +120,7 @@ void SetCommandLineFlagsForSandboxType(base::CommandLi
+ #endif
+     case SandboxType::kPrintCompositor:
+     case SandboxType::kAudio:
+-#if defined(OS_FUCHSIA)
++#if defined(OS_FUCHSIA) || defined(OS_BSD)
+     case SandboxType::kVideoCapture:
+ #endif
+ #if defined(OS_WIN)
+@@ -248,7 +248,7 @@ std::string StringFromUtilitySandboxType(SandboxType s
+       return switches::kUtilitySandbox;
+     case SandboxType::kAudio:
+       return switches::kAudioSandbox;
+-#if defined(OS_FUCHSIA)
++#if defined(OS_FUCHSIA) || defined(OS_BSD)
+     case SandboxType::kVideoCapture:
+       return switches::kVideoCaptureSandbox;
+ #endif
+@@ -350,7 +350,7 @@ SandboxType UtilitySandboxTypeFromString(const std::st
+     return SandboxType::kAudio;
+   if (sandbox_string == switches::kSpeechRecognitionSandbox)
+     return SandboxType::kSpeechRecognition;
+-#if defined(OS_FUCHSIA)
++#if defined(OS_FUCHSIA) || defined(OS_BSD)
+   if (sandbox_string == switches::kVideoCaptureSandbox)
+     return SandboxType::kVideoCapture;
+ #endif

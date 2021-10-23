@@ -1,28 +1,37 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:50:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2021/09/10 17:41:30 naddy Exp $
 
 COMMENT=	object-oriented DSSSL engine
 
 DISTNAME=	openjade-1.3.3-pre1
 PKGNAME=	openjade-1.3.3pre1
-REVISION=	6
-CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openjade/}
+REVISION=	8
 
-SHARED_LIBS=	ospgrove 0.0 \
-		ogrove 0.0 \
-		ostyle 0.0 # 0.1
+CATEGORIES=	textproc
+
+SHARED_LIBS +=  ogrove               0.0      # 0.1
+SHARED_LIBS +=  ospgrove             0.0      # 0.1
+SHARED_LIBS +=  ostyle               0.0      # 0.1
+
 HOMEPAGE=	http://openjade.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-LIB_DEPENDS=		textproc/opensp
-WANTLIB=		c iconv intl m pthread ${COMPILER_LIBCXX} osp
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openjade/}
 
-COMPILER =		base-clang ports-gcc base-gcc
+WANTLIB += c iconv intl m pthread ${COMPILER_LIBCXX} osp
+
+COMPILER=		base-clang ports-gcc base-gcc
+
+LIB_DEPENDS=		textproc/opensp
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		--datadir=${PREFIX}/share/sgml/openjade
+
 USE_GMAKE=		Yes
+NO_TEST=		Yes
+
+INSTALL_TARGET=		install install-man
 
 DOCDIR=		${PREFIX}/share/doc/openjade
 SGMLDIR=	${PREFIX}/share/sgml/openjade
@@ -30,16 +39,15 @@ SGMLFILES= 	fot.dtd catalog dsssl.dtd style-sheet.dtd builtins.dsl \
 		demo.sgm demo.dsl
 
 post-install:
-	${INSTALL_DATA_DIR} ${DOCDIR}/sp
-	${INSTALL_DATA_DIR} ${DOCDIR}/images
-	${INSTALL_DATA} ${WRKSRC}/jadedoc/copying.txt ${DOCDIR}
+	${INSTALL_DATA_DIR} ${DOCDIR}/{images,sp} ${SGMLDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.htm ${DOCDIR}/sp
+	${INSTALL_DATA} ${WRKSRC}/jadedoc/copying.txt ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/jadedoc/*.htm ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/jadedoc/images/*.gif ${DOCDIR}/images
-	${INSTALL_DATA_DIR} ${SGMLDIR}
 .for i in ${SGMLFILES}
 	${INSTALL_DATA} ${WRKSRC}/dsssl/$i ${SGMLDIR}
 .endfor
-	rm ${PREFIX}/share/builtins.dsl
+	cd ${PREFIX}/bin && ln -sf openjade jade
+	cd ${PREFIX}/man/man1 && ln -sf openjade.1 jade.1
 
 .include <bsd.port.mk>

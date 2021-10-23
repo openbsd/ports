@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.102 2021/06/10 22:38:00 kn Exp $
+@comment $OpenBSD: PLIST-main,v 1.104 2021/10/13 06:10:20 kn Exp $
 @pkgpath devel/git
 @newgroup _gitdaemon:778
 @newuser _gitdaemon:778:_gitdaemon:daemon:Git Daemon:/nonexistent:/sbin/nologin
@@ -362,6 +362,7 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-verify-commit.1
 @man man/man1/git-verify-pack.1
 @man man/man1/git-verify-tag.1
+@man man/man1/git-version.1
 @man man/man1/git-web--browse.1
 @man man/man1/git-whatchanged.1
 @man man/man1/git-worktree.1
@@ -403,10 +404,6 @@ share/git-core/templates/hooks/
 share/git-core/templates/hooks/applypatch-msg.sample
 share/git-core/templates/hooks/commit-msg.sample
 share/git-core/templates/hooks/fsmonitor-watchman.sample
-share/git-core/templates/hooks/multimail/
-share/git-core/templates/hooks/multimail/git_multimail.py
-share/git-core/templates/hooks/multimail/migrate-mailhook-config
-share/git-core/templates/hooks/multimail/post-receive.example
 share/git-core/templates/hooks/post-receive-email.sample
 share/git-core/templates/hooks/post-update.sample
 share/git-core/templates/hooks/pre-applypatch.sample

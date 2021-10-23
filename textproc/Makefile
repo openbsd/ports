@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.684 2021/08/16 15:11:07 landry Exp $
+# $OpenBSD: Makefile,v 1.690 2021/10/16 12:47:12 sdk Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -38,6 +38,7 @@
      SUBDIR += docbook
      SUBDIR += docbook-dsssl
      SUBDIR += docbook-to-man
+     SUBDIR += docbook-utils
      SUBDIR += docbook-xsl
      SUBDIR += docbook2mdoc
      SUBDIR += docbook2x
@@ -54,6 +55,7 @@
      SUBDIR += filepp
      SUBDIR += foliate
      SUBDIR += fragistics
+     SUBDIR += fstrcmp
      SUBDIR += fzy
      SUBDIR += gdiff
      SUBDIR += go-text
@@ -73,6 +75,7 @@
      SUBDIR += hfst
      SUBDIR += hgrep
      SUBDIR += highlight
+     SUBDIR += hotdoc
      SUBDIR += html
      SUBDIR += html-xml-utils
      SUBDIR += hunspell
@@ -379,6 +382,7 @@
      SUBDIR += py-black
      SUBDIR += py-bracex,python3
      SUBDIR += py-canonicaljson,python3
+     SUBDIR += py-cchardet,python3
      SUBDIR += py-chardet
      SUBDIR += py-chardet,python3
      SUBDIR += py-colored
@@ -405,7 +409,6 @@
      SUBDIR += py-feedparser,python3
      SUBDIR += py-humanize,python3
      SUBDIR += py-ijson,python3
-     SUBDIR += py-iso8601
      SUBDIR += py-iso8601,python3
      SUBDIR += py-jellyfish
      SUBDIR += py-jellyfish,python3
@@ -440,6 +443,8 @@
      SUBDIR += py-pygments,python3
      SUBDIR += py-pykwalify
      SUBDIR += py-pykwalify,python3
+     SUBDIR += py-pypandoc,python3
+     SUBDIR += py-rebulk,python3
      SUBDIR += py-recommonmark,python3
      SUBDIR += py-ruamel.yaml
      SUBDIR += py-ruamel.yaml,python3

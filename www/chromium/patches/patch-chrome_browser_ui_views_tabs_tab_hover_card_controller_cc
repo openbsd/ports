@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_ui_views_tabs_tab_hover_card_controller_cc,v 1.2 2021/10/20 10:27:46 robert Exp $
+
+Index: chrome/browser/ui/views/tabs/tab_hover_card_controller.cc
+--- chrome/browser/ui/views/tabs/tab_hover_card_controller.cc.orig
++++ chrome/browser/ui/views/tabs/tab_hover_card_controller.cc
+@@ -304,7 +304,7 @@ void TabHoverCardController::ShowHoverCard(bool is_ini
+   slide_animator_->UpdateTargetBounds();
+   MaybeStartThumbnailObservation(target_tab_, is_initial);
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // Ensure the hover card Widget assumes the highest z-order to avoid occlusion
+   // by other secondary UI Widgets (such as the omnibox Widget, see
+   // crbug.com/1226536).

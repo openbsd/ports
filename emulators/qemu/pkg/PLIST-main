@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2021/07/06 16:55:33 daniel Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2021/09/18 11:06:41 sthen Exp $
 @pkgpath emulators/qemu
 @bin bin/elf2dmp
 @bin bin/qemu-edid
@@ -21,7 +21,6 @@
 @bin bin/qemu-system-mips64
 @bin bin/qemu-system-mips64el
 @bin bin/qemu-system-mipsel
-@bin bin/qemu-system-moxie
 @bin bin/qemu-system-nios2
 @bin bin/qemu-system-or1k
 @bin bin/qemu-system-ppc
@@ -38,6 +37,7 @@
 @bin bin/qemu-system-x86_64
 @bin bin/qemu-system-xtensa
 @bin bin/qemu-system-xtensaeb
+%%plugins%%
 @man man/man1/qemu-img.1
 @man man/man1/qemu-storage-daemon.1
 @man man/man1/qemu.1
@@ -52,39 +52,74 @@ share/doc/pkg-readmes/${PKGSTEM}
 share/doc/qemu/
 share/doc/qemu/.buildinfo
 share/doc/qemu/_static/
-share/doc/qemu/_static/alabaster.css
 share/doc/qemu/_static/basic.css
-share/doc/qemu/_static/custom.css
+share/doc/qemu/_static/css/
+share/doc/qemu/_static/css/badge_only.css
+share/doc/qemu/_static/css/fonts/
+share/doc/qemu/_static/css/fonts/Roboto-Slab-Bold.woff
+share/doc/qemu/_static/css/fonts/Roboto-Slab-Bold.woff2
+share/doc/qemu/_static/css/fonts/Roboto-Slab-Regular.woff
+share/doc/qemu/_static/css/fonts/Roboto-Slab-Regular.woff2
+share/doc/qemu/_static/css/fonts/fontawesome-webfont.eot
+share/doc/qemu/_static/css/fonts/fontawesome-webfont.svg
+share/doc/qemu/_static/css/fonts/fontawesome-webfont.ttf
+share/doc/qemu/_static/css/fonts/fontawesome-webfont.woff
+share/doc/qemu/_static/css/fonts/fontawesome-webfont.woff2
+share/doc/qemu/_static/css/fonts/lato-bold-italic.woff
+share/doc/qemu/_static/css/fonts/lato-bold-italic.woff2
+share/doc/qemu/_static/css/fonts/lato-bold.woff
+share/doc/qemu/_static/css/fonts/lato-bold.woff2
+share/doc/qemu/_static/css/fonts/lato-normal-italic.woff
+share/doc/qemu/_static/css/fonts/lato-normal-italic.woff2
+share/doc/qemu/_static/css/fonts/lato-normal.woff
+share/doc/qemu/_static/css/fonts/lato-normal.woff2
+share/doc/qemu/_static/css/theme.css
 share/doc/qemu/_static/doctools.js
 share/doc/qemu/_static/documentation_options.js
 share/doc/qemu/_static/file.png
 share/doc/qemu/_static/jquery-3.5.1.js
 share/doc/qemu/_static/jquery.js
+share/doc/qemu/_static/js/
+share/doc/qemu/_static/js/badge_only.js
+share/doc/qemu/_static/js/theme.js
 share/doc/qemu/_static/language_data.js
 share/doc/qemu/_static/minus.png
 share/doc/qemu/_static/plus.png
 share/doc/qemu/_static/pygments.css
+share/doc/qemu/_static/qemu_128x128.png
+share/doc/qemu/_static/qemu_32x32.png
 share/doc/qemu/_static/searchtools.js
+share/doc/qemu/_static/theme_overrides.css
 share/doc/qemu/_static/underscore-1.13.1.js
 share/doc/qemu/_static/underscore.js
+share/doc/qemu/about/
+share/doc/qemu/about/build-platforms.html
+share/doc/qemu/about/deprecated.html
+share/doc/qemu/about/index.html
+share/doc/qemu/about/license.html
+share/doc/qemu/about/removed-features.html
 share/doc/qemu/devel/
 share/doc/qemu/devel/atomics.html
 share/doc/qemu/devel/bitops.html
 share/doc/qemu/devel/block-coroutine-wrapper.html
 share/doc/qemu/devel/build-system.html
+share/doc/qemu/devel/ci.html
 share/doc/qemu/devel/clocks.html
 share/doc/qemu/devel/code-of-conduct.html
 share/doc/qemu/devel/conflict-resolution.html
 share/doc/qemu/devel/control-flow-integrity.html
 share/doc/qemu/devel/decodetree.html
+share/doc/qemu/devel/ebpf_rss.html
 share/doc/qemu/devel/fuzzing.html
 share/doc/qemu/devel/index.html
 share/doc/qemu/devel/kconfig.html
 share/doc/qemu/devel/loads-stores.html
 share/doc/qemu/devel/memory.html
 share/doc/qemu/devel/migration.html
+share/doc/qemu/devel/modules.html
 share/doc/qemu/devel/multi-process.html
 share/doc/qemu/devel/multi-thread-tcg.html
+share/doc/qemu/devel/qapi-code-gen.html
 share/doc/qemu/devel/qgraph.html
 share/doc/qemu/devel/qom.html
 share/doc/qemu/devel/qtest.html
@@ -98,9 +133,13 @@ share/doc/qemu/devel/tcg-plugins.html
 share/doc/qemu/devel/tcg.html
 share/doc/qemu/devel/testing.html
 share/doc/qemu/devel/tracing.html
+share/doc/qemu/devel/ui.html
+share/doc/qemu/devel/vfio-migration.html
+share/doc/qemu/devel/writing-qmp-commands.html
 share/doc/qemu/genindex.html
 share/doc/qemu/index.html
 share/doc/qemu/interop/
+share/doc/qemu/interop/barrier.html
 share/doc/qemu/interop/bitmaps.html
 share/doc/qemu/interop/dbus-vmstate.html
 share/doc/qemu/interop/dbus.html
@@ -128,12 +167,20 @@ share/doc/qemu/system/arm/
 share/doc/qemu/system/arm/aspeed.html
 share/doc/qemu/system/arm/collie.html
 share/doc/qemu/system/arm/cpu-features.html
+share/doc/qemu/system/arm/cubieboard.html
 share/doc/qemu/system/arm/digic.html
+share/doc/qemu/system/arm/emcraft-sf2.html
+share/doc/qemu/system/arm/emulation.html
 share/doc/qemu/system/arm/gumstix.html
+share/doc/qemu/system/arm/highbank.html
+share/doc/qemu/system/arm/imx25-pdk.html
 share/doc/qemu/system/arm/integratorcp.html
+share/doc/qemu/system/arm/kzm.html
+share/doc/qemu/system/arm/mainstone.html
 share/doc/qemu/system/arm/mps2.html
 share/doc/qemu/system/arm/musca.html
 share/doc/qemu/system/arm/musicpal.html
+share/doc/qemu/system/arm/nrf.html
 share/doc/qemu/system/arm/nseries.html
 share/doc/qemu/system/arm/nuvoton.html
 share/doc/qemu/system/arm/orangepi.html
@@ -143,15 +190,25 @@ share/doc/qemu/system/arm/realview.html
 share/doc/qemu/system/arm/sabrelite.html
 share/doc/qemu/system/arm/sbsa.html
 share/doc/qemu/system/arm/stellaris.html
+share/doc/qemu/system/arm/stm32.html
 share/doc/qemu/system/arm/sx1.html
 share/doc/qemu/system/arm/versatile.html
 share/doc/qemu/system/arm/vexpress.html
 share/doc/qemu/system/arm/virt.html
 share/doc/qemu/system/arm/xlnx-versal-virt.html
 share/doc/qemu/system/arm/xscale.html
-share/doc/qemu/system/build-platforms.html
+share/doc/qemu/system/authz.html
+share/doc/qemu/system/barrier.html
+share/doc/qemu/system/bootindex.html
 share/doc/qemu/system/cpu-hotplug.html
-share/doc/qemu/system/deprecated.html
+share/doc/qemu/system/device-emulation.html
+share/doc/qemu/system/devices/
+share/doc/qemu/system/devices/ivshmem.html
+share/doc/qemu/system/devices/net.html
+share/doc/qemu/system/devices/nvme.html
+share/doc/qemu/system/devices/usb.html
+share/doc/qemu/system/devices/vhost-user.html
+share/doc/qemu/system/devices/virtio-pmem.html
 share/doc/qemu/system/gdb.html
 share/doc/qemu/system/generic-loader.html
 share/doc/qemu/system/guest-loader.html
@@ -161,20 +218,17 @@ share/doc/qemu/system/i386/pc.html
 share/doc/qemu/system/images.html
 share/doc/qemu/system/index.html
 share/doc/qemu/system/invocation.html
-share/doc/qemu/system/ivshmem.html
 share/doc/qemu/system/keys.html
-share/doc/qemu/system/license.html
 share/doc/qemu/system/linuxboot.html
 share/doc/qemu/system/managed-startup.html
 share/doc/qemu/system/monitor.html
 share/doc/qemu/system/multi-process.html
 share/doc/qemu/system/mux-chardev.html
-share/doc/qemu/system/net.html
-share/doc/qemu/system/nvme.html
 share/doc/qemu/system/ppc/
 share/doc/qemu/system/ppc/embedded.html
 share/doc/qemu/system/ppc/powermac.html
 share/doc/qemu/system/ppc/powernv.html
+share/doc/qemu/system/ppc/ppce500.html
 share/doc/qemu/system/ppc/prep.html
 share/doc/qemu/system/ppc/pseries.html
 share/doc/qemu/system/pr-manager.html
@@ -182,10 +236,11 @@ share/doc/qemu/system/qemu-block-drivers.html
 share/doc/qemu/system/qemu-cpu-models.html
 share/doc/qemu/system/qemu-manpage.html
 share/doc/qemu/system/quickstart.html
-share/doc/qemu/system/removed-features.html
 share/doc/qemu/system/riscv/
 share/doc/qemu/system/riscv/microchip-icicle-kit.html
+share/doc/qemu/system/riscv/shakti-c.html
 share/doc/qemu/system/riscv/sifive_u.html
+share/doc/qemu/system/riscv/virt.html
 share/doc/qemu/system/s390x/
 share/doc/qemu/system/s390x/3270.html
 share/doc/qemu/system/s390x/bootdevices.html
@@ -193,6 +248,7 @@ share/doc/qemu/system/s390x/css.html
 share/doc/qemu/system/s390x/protvirt.html
 share/doc/qemu/system/s390x/vfio-ap.html
 share/doc/qemu/system/s390x/vfio-ccw.html
+share/doc/qemu/system/secrets.html
 share/doc/qemu/system/security.html
 share/doc/qemu/system/target-arm.html
 share/doc/qemu/system/target-avr.html
@@ -208,9 +264,7 @@ share/doc/qemu/system/target-sparc64.html
 share/doc/qemu/system/target-xtensa.html
 share/doc/qemu/system/targets.html
 share/doc/qemu/system/tls.html
-share/doc/qemu/system/usb.html
 share/doc/qemu/system/virtio-net-failover.html
-share/doc/qemu/system/virtio-pmem.html
 share/doc/qemu/system/vnc-security.html
 share/doc/qemu/tools/
 share/doc/qemu/tools/index.html

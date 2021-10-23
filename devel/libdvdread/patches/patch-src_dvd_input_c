@@ -1,14 +1,17 @@
-$OpenBSD: patch-src_dvd_input_c,v 1.5 2020/12/15 18:57:38 rsadowski Exp $
+$OpenBSD: patch-src_dvd_input_c,v 1.7 2021/10/16 17:57:34 rsadowski Exp $
+
+Use correct name of the libdvdcss shared library on OpenBSD.
+1c031048907b72c4757926a06f2bc5fac42fba15
 
 Index: src/dvd_input.c
 --- src/dvd_input.c.orig
 +++ src/dvd_input.c
-@@ -324,7 +324,7 @@ int dvdinput_setup(void *priv, dvd_logger_cb *logcb)
+@@ -346,6 +346,8 @@ int dvdinput_setup(void *priv, dvd_logger_cb *logcb)
+   #define CSS_LIB "libdvdcss-2.dll"
  #elif defined(__OS2__)
    #define CSS_LIB "dvdcss2.dll"
++#elif defined(__OpenBSD__)
++  #define CSS_LIB "libdvdcss.so"
  #else
--  #define CSS_LIB "libdvdcss.so.2"
-+  #define CSS_LIB "libdvdcss.so.4"
+   #define CSS_LIB "libdvdcss.so.2"
  #endif
-   dvdcss_library = dlopen(CSS_LIB, RTLD_LAZY);
- 

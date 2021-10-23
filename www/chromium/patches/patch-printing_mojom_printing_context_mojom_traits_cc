@@ -1,0 +1,23 @@
+$OpenBSD: patch-printing_mojom_printing_context_mojom_traits_cc,v 1.1 2021/10/20 10:27:47 robert Exp $
+
+Index: printing/mojom/printing_context_mojom_traits.cc
+--- printing/mojom/printing_context_mojom_traits.cc.orig
++++ printing/mojom/printing_context_mojom_traits.cc
+@@ -16,7 +16,7 @@
+ #include "ui/gfx/geometry/mojom/geometry_mojom_traits.h"
+ #include "ui/gfx/geometry/size.h"
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ #include "mojo/public/mojom/base/values.mojom.h"
+ #endif
+ 
+@@ -163,7 +163,7 @@ bool StructTraits<
+   }
+ 
+   out->set_pages_per_sheet(data.pages_per_sheet());
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   DCHECK(out->advanced_settings().empty());
+   if (!data.ReadAdvancedSettings(&out->advanced_settings()))
+     return false;

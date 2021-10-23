@@ -1,7 +1,8 @@
-$OpenBSD: patch-engines_draci_draci_h,v 1.1 2012/10/06 19:24:32 jsg Exp $
---- engines/draci/draci.h.orig	Sun Oct  7 00:35:56 2012
-+++ engines/draci/draci.h	Sun Oct  7 00:42:40 2012
-@@ -121,8 +121,7 @@ enum {
+$OpenBSD: patch-engines_draci_draci_h,v 1.2 2021/10/10 03:12:02 jsg Exp $
+Index: engines/draci/draci.h
+--- engines/draci/draci.h.orig
++++ engines/draci/draci.h
+@@ -118,8 +118,7 @@ enum {
  	kDraciWalkingDebugLevel   = 1 << 6
  };
  

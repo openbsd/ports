@@ -1,12 +1,13 @@
-$OpenBSD: patch-scripts_buildversion_py,v 1.1 2017/03/23 23:31:51 sthen Exp $
+$OpenBSD: patch-scripts_buildversion_py,v 1.2 2021/09/01 11:04:21 sthen Exp $
 
-fixup "clean version" strings for packaging; it only allows this if there's
+Fixup "clean version" strings for packaging; it only allows this if there's
 a consistent version number detected for all binutils tools, however this
 detection is too simplistic to cope with older binutils (mix of
 "GNU assembler 2.17" and "GNU ld version 2.17" etc).
 
---- scripts/buildversion.py.orig	Thu Mar 23 23:16:58 2017
-+++ scripts/buildversion.py	Thu Mar 23 23:22:58 2017
+Index: scripts/buildversion.py
+--- scripts/buildversion.py.orig
++++ scripts/buildversion.py
 @@ -4,7 +4,7 @@
  # Copyright (C) 2015  Kevin O'Connor <kevin@koconnor.net>
  #

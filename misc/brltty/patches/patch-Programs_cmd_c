@@ -1,0 +1,17 @@
+$OpenBSD: patch-Programs_cmd_c,v 1.1 2021/09/19 20:45:12 tb Exp $
+
+Index: Programs/cmd.c
+--- Programs/cmd.c.orig
++++ Programs/cmd.c
+@@ -87,8 +87,9 @@ describeCommand (int command, char *buffer, int size) 
+              candidate->name, number, candidate->description);
+   } else {
+     int offset;
+-    snprintf(buffer, size, "%s: %n%s",
+-             candidate->name, &offset, candidate->description);
++    offset = strlen(candidate->name) + 2;
++    snprintf(buffer, size, "%s: %s",
++             candidate->name, candidate->description);
+ 
+     if ((blk == 0) && (command & BRL_FLG_TOGGLE_MASK)) {
+       char *description = buffer + offset;

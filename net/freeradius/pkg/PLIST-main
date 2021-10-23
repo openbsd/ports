@@ -1,16 +1,16 @@
-@comment $OpenBSD: PLIST-main,v 1.33 2017/11/15 13:54:07 sthen Exp $
-@option is-branch
-@conflict freeradius-*
+@comment $OpenBSD: PLIST-main,v 1.35 2021/10/03 20:28:43 sthen Exp $
 @conflict radiusd-cistron-*
 @conflict radiusd-lucent-*
-@pkgpath net/freeradius
+@pkgpath net/freeradius3,-main
+@ask-update freeradius-<3 Major update. You should move away existing FreeRADIUS configuration (${SYSCONFIDR}/raddb) and create new, see https://github.com/FreeRADIUS/freeradius-server/blob/v3.0.x/raddb/README.rst
 @newgroup _freeradius:559
 @newuser _freeradius:559:559:daemon:Freeradius:/nonexistent:/sbin/nologin
-@extraunexec rm -rf ${SYSCONFDIR}/raddb/*
-@extraunexec rm -rf /var/log/radius/*
+@rcscript ${RCDIR}/freeradius
+@bin bin/dhcpclient
+@bin bin/map_unit
 bin/rad_counter
+@bin bin/radattr
 @bin bin/radclient
-@bin bin/radconf2xml
 bin/radcrypt
 @bin bin/radeapclient
 bin/radlast
@@ -19,22 +19,24 @@ bin/radsqlrelay
 bin/radtest
 @bin bin/radwho
 bin/radzap
-@bin bin/rlm_dbm_cat
-@bin bin/rlm_dbm_parser
 @bin bin/rlm_ippool_tool
+bin/rlm_sqlippool_tool
 @bin bin/smbencrypt
 include/freeradius/
+include/freeradius/attributes.h
 include/freeradius/autoconf.h
 include/freeradius/base64.h
+include/freeradius/build.h
 include/freeradius/conf.h
 include/freeradius/conffile.h
 include/freeradius/detail.h
-include/freeradius/dhcp.h
 include/freeradius/event.h
+include/freeradius/features.h
+include/freeradius/freeradius.h
 include/freeradius/hash.h
 include/freeradius/heap.h
-include/freeradius/ident.h
 include/freeradius/libradius.h
+include/freeradius/map.h
 include/freeradius/md4.h
 include/freeradius/md5.h
 include/freeradius/missing.h
@@ -47,69 +49,116 @@ include/freeradius/radiusd.h
 include/freeradius/radpaths.h
 include/freeradius/radutmp.h
 include/freeradius/realms.h
+include/freeradius/regex.h
+include/freeradius/rfc2865.h
+include/freeradius/rfc2866.h
+include/freeradius/rfc2867.h
+include/freeradius/rfc2868.h
+include/freeradius/rfc2869.h
+include/freeradius/rfc3162.h
+include/freeradius/rfc3576.h
+include/freeradius/rfc3580.h
+include/freeradius/rfc4072.h
+include/freeradius/rfc4372.h
+include/freeradius/rfc4603.h
+include/freeradius/rfc4675.h
+include/freeradius/rfc4679.h
+include/freeradius/rfc4818.h
+include/freeradius/rfc4849.h
+include/freeradius/rfc5090.h
+include/freeradius/rfc5176.h
+include/freeradius/rfc5447.h
+include/freeradius/rfc5580.h
+include/freeradius/rfc5607.h
+include/freeradius/rfc5904.h
+include/freeradius/rfc6519.h
+include/freeradius/rfc6572.h
+include/freeradius/rfc6677.h
+include/freeradius/rfc6911.h
+include/freeradius/rfc6929.h
+include/freeradius/rfc6930.h
+include/freeradius/rfc7055.h
+include/freeradius/rfc7155.h
+include/freeradius/rfc7268.h
+include/freeradius/rfc7499.h
+include/freeradius/rfc7930.h
+include/freeradius/rfc8045.h
+include/freeradius/rfc8559.h
 include/freeradius/sha1.h
 include/freeradius/stats.h
 include/freeradius/sysutmp.h
+include/freeradius/tcp.h
 include/freeradius/threads.h
+include/freeradius/tls.h
 include/freeradius/token.h
 include/freeradius/udpfromto.h
-include/freeradius/vmps.h
 include/freeradius/vqp.h
 lib/freeradius/
-lib/freeradius/rlm_acct_unique.so
-lib/freeradius/rlm_acctlog.so
-lib/freeradius/rlm_always.so
-lib/freeradius/rlm_attr_filter.so
-lib/freeradius/rlm_attr_rewrite.so
-lib/freeradius/rlm_cache.so
-lib/freeradius/rlm_chap.so
-lib/freeradius/rlm_checkval.so
-lib/freeradius/rlm_copy_packet.so
-lib/freeradius/rlm_counter.so
-lib/freeradius/rlm_dbm.so
-lib/freeradius/rlm_detail.so
-lib/freeradius/rlm_digest.so
-lib/freeradius/rlm_dynamic_clients.so
-lib/freeradius/rlm_eap.so
-lib/freeradius/rlm_eap_gtc.so
-lib/freeradius/rlm_eap_leap.so
-lib/freeradius/rlm_eap_md5.so
-lib/freeradius/rlm_eap_mschapv2.so
-lib/freeradius/rlm_eap_peap.so
-lib/freeradius/rlm_eap_sim.so
-lib/freeradius/rlm_eap_tls.so
-lib/freeradius/rlm_eap_ttls.so
-lib/freeradius/rlm_exec.so
-lib/freeradius/rlm_expiration.so
-lib/freeradius/rlm_expr.so
-lib/freeradius/rlm_fastusers.so
-lib/freeradius/rlm_files.so
-lib/freeradius/rlm_ippool.so
-lib/freeradius/rlm_linelog.so
-lib/freeradius/rlm_logintime.so
-lib/freeradius/rlm_mschap.so
-lib/freeradius/rlm_otp.so
-lib/freeradius/rlm_pap.so
-lib/freeradius/rlm_passwd.so
-lib/freeradius/rlm_policy.so
-lib/freeradius/rlm_preprocess.so
-lib/freeradius/rlm_radutmp.so
-lib/freeradius/rlm_realm.so
-lib/freeradius/rlm_replicate.so
-lib/freeradius/rlm_soh.so
-lib/freeradius/rlm_sql.so
-lib/freeradius/rlm_sql_log.so
-lib/freeradius/rlm_sqlcounter.so
-lib/freeradius/rlm_sqlippool.so
-lib/freeradius/rlm_unix.so
-lib/freeradius/rlm_wimax.so
-lib/libfreeradius-eap.a
-lib/libfreeradius-eap.la
-@lib lib/libfreeradius-eap.so.${LIBfreeradius-eap_VERSION}
-lib/libfreeradius-radius-020210.la
-lib/libfreeradius-radius.a
-lib/libfreeradius-radius.la
-@lib lib/libfreeradius-radius.so.${LIBfreeradius-radius_VERSION}
+@so lib/freeradius/libfreeradius-dhcp.so
+@so lib/freeradius/libfreeradius-eap.so
+@so lib/freeradius/libfreeradius-radius.so
+@so lib/freeradius/libfreeradius-server.so
+@so lib/freeradius/proto_dhcp.so
+@so lib/freeradius/proto_vmps.so
+@so lib/freeradius/rlm_always.so
+@so lib/freeradius/rlm_attr_filter.so
+@so lib/freeradius/rlm_cache.so
+@so lib/freeradius/rlm_cache_rbtree.so
+@so lib/freeradius/rlm_chap.so
+@so lib/freeradius/rlm_counter.so
+@so lib/freeradius/rlm_cram.so
+@so lib/freeradius/rlm_date.so
+@so lib/freeradius/rlm_detail.so
+@so lib/freeradius/rlm_dhcp.so
+@so lib/freeradius/rlm_digest.so
+@so lib/freeradius/rlm_dynamic_clients.so
+@so lib/freeradius/rlm_eap.so
+@so lib/freeradius/rlm_eap_fast.so
+@so lib/freeradius/rlm_eap_gtc.so
+@so lib/freeradius/rlm_eap_md5.so
+@so lib/freeradius/rlm_eap_mschapv2.so
+@so lib/freeradius/rlm_eap_peap.so
+@so lib/freeradius/rlm_eap_pwd.so
+@so lib/freeradius/rlm_eap_sim.so
+@so lib/freeradius/rlm_eap_tls.so
+@so lib/freeradius/rlm_eap_ttls.so
+@so lib/freeradius/rlm_exec.so
+@so lib/freeradius/rlm_expiration.so
+@so lib/freeradius/rlm_expr.so
+@so lib/freeradius/rlm_files.so
+@so lib/freeradius/rlm_ippool.so
+@so lib/freeradius/rlm_linelog.so
+@so lib/freeradius/rlm_logintime.so
+@so lib/freeradius/rlm_mschap.so
+@so lib/freeradius/rlm_otp.so
+@comment lib/freeradius/rlm_pam.so
+@so lib/freeradius/rlm_pap.so
+@so lib/freeradius/rlm_passwd.so
+@so lib/freeradius/rlm_perl.so
+@so lib/freeradius/rlm_preprocess.so
+@so lib/freeradius/rlm_radutmp.so
+@so lib/freeradius/rlm_realm.so
+@so lib/freeradius/rlm_redis.so
+@so lib/freeradius/rlm_rediswho.so
+@so lib/freeradius/rlm_replicate.so
+@so lib/freeradius/rlm_rest.so
+@so lib/freeradius/rlm_soh.so
+@so lib/freeradius/rlm_sometimes.so
+@so lib/freeradius/rlm_sql.so
+@so lib/freeradius/rlm_sql_map.so
+@so lib/freeradius/rlm_sql_null.so
+@so lib/freeradius/rlm_sql_sqlite.so
+@so lib/freeradius/rlm_sqlcounter.so
+@so lib/freeradius/rlm_sqlippool.so
+@so lib/freeradius/rlm_test.so
+@so lib/freeradius/rlm_totp.so
+@so lib/freeradius/rlm_unix.so
+@so lib/freeradius/rlm_unpack.so
+@so lib/freeradius/rlm_utf8.so
+@so lib/freeradius/rlm_wimax.so
+@so lib/freeradius/rlm_yubikey.so
+@man man/man1/dhcpclient.1
+@man man/man1/rad_counter.1
 @man man/man1/radclient.1
 @man man/man1/radeapclient.1
 @man man/man1/radlast.1
@@ -117,33 +166,28 @@ lib/libfreeradius-radius.la
 @man man/man1/radwho.1
 @man man/man1/radzap.1
 @man man/man1/smbencrypt.1
-@man man/man5/acct_users.5
 @man man/man5/checkrad.5
 @man man/man5/clients.conf.5
 @man man/man5/dictionary.5
 @man man/man5/radiusd.conf.5
 @man man/man5/radrelay.conf.5
-@man man/man5/rlm_acct_unique.5
 @man man/man5/rlm_always.5
 @man man/man5/rlm_attr_filter.5
-@man man/man5/rlm_attr_rewrite.5
 @man man/man5/rlm_chap.5
 @man man/man5/rlm_counter.5
 @man man/man5/rlm_detail.5
 @man man/man5/rlm_digest.5
 @man man/man5/rlm_expr.5
 @man man/man5/rlm_files.5
+@man man/man5/rlm_idn.5
 @man man/man5/rlm_mschap.5
 @man man/man5/rlm_pap.5
 @man man/man5/rlm_passwd.5
-@man man/man5/rlm_policy.5
 @man man/man5/rlm_realm.5
 @man man/man5/rlm_sql.5
-@man man/man5/rlm_sql_log.5
 @man man/man5/rlm_unix.5
 @man man/man5/unlang.5
 @man man/man5/users.5
-@man man/man8/radconf2xml.8
 @man man/man8/radcrypt.8
 @man man/man8/raddebug.8
 @man man/man8/radiusd.8
@@ -151,54 +195,68 @@ lib/libfreeradius-radius.la
 @man man/man8/radrelay.8
 @man man/man8/radsniff.8
 @man man/man8/radsqlrelay.8
-@man man/man8/radwatch.8
-@man man/man8/rlm_dbm_cat.8
-@man man/man8/rlm_dbm_parser.8
 @man man/man8/rlm_ippool_tool.8
+@man man/man8/rlm_sqlippool_tool.8
 sbin/checkrad
 sbin/raddebug
 @bin sbin/radiusd
 @bin sbin/radmin
-sbin/radwatch
 @comment sbin/rc.radiusd
 share/doc/freeradius/
-share/doc/freeradius/Acct-Type.rst
-share/doc/freeradius/Autz-Type.rst
-share/doc/freeradius/CYGWIN.rst
 share/doc/freeradius/ChangeLog
-share/doc/freeradius/DIFFS.rst
-@comment share/doc/freeradius/MACOSX
 share/doc/freeradius/Makefile.sphinx
-@comment share/doc/freeradius/OS2
-share/doc/freeradius/Post-Auth-Type
-share/doc/freeradius/RADIUS-LDAP-eDirectory
-share/doc/freeradius/RADIUS-SQL.schema
 share/doc/freeradius/README
-share/doc/freeradius/Session-Type
-share/doc/freeradius/Simultaneous-Use
-share/doc/freeradius/SoH.txt
-share/doc/freeradius/aaa.rst
-share/doc/freeradius/ascend
-share/doc/freeradius/bay
 share/doc/freeradius/bugs
-share/doc/freeradius/cisco.rst
-share/doc/freeradius/coding-methods.rst
-share/doc/freeradius/configurable_failover.rst
-share/doc/freeradius/examples/
+share/doc/freeradius/concepts/
+share/doc/freeradius/concepts/aaa.rst
+share/doc/freeradius/concepts/proxy.rst
+share/doc/freeradius/configuration/
+share/doc/freeradius/configuration/acct_type.rst
+share/doc/freeradius/configuration/autz_type.rst
+share/doc/freeradius/configuration/configurable_failover.rst
+share/doc/freeradius/configuration/dynamic_home_servers.md
+share/doc/freeradius/configuration/load_balance.rst
+share/doc/freeradius/configuration/post_auth_type
+share/doc/freeradius/configuration/session_type
+share/doc/freeradius/configuration/simultaneous_use
+share/doc/freeradius/configuration/snmp
+share/doc/freeradius/configuration/variables.rst
+share/doc/freeradius/deployment/
+share/doc/freeradius/deployment/CYGWIN.rst
+share/doc/freeradius/deployment/MACOSX
+share/doc/freeradius/deployment/OS2
+share/doc/freeradius/deployment/performance-testing
+share/doc/freeradius/deployment/supervise-radiusd.rst
+share/doc/freeradius/deployment/tuning_guide
+share/doc/freeradius/developer/
+share/doc/freeradius/developer/coding-methods.rst
+share/doc/freeradius/developer/contributing.rst
+share/doc/freeradius/developer/module_interface.rst
+share/doc/freeradius/developer/release-method.rst
 share/doc/freeradius/index.rst
-share/doc/freeradius/load-balance.rst
-share/doc/freeradius/misc-nas.rst
-share/doc/freeradius/module_interface.rst
-share/doc/freeradius/performance-testing
-share/doc/freeradius/processing_users_file.rst
-share/doc/freeradius/proxy.rst
-share/doc/freeradius/release-method.rst
+share/doc/freeradius/modules/
+share/doc/freeradius/modules/RADIUS-LDAP-eDirectory
+share/doc/freeradius/modules/ldap_howto.rst
+share/doc/freeradius/modules/mschap.rst
+share/doc/freeradius/modules/rlm_dbm
+share/doc/freeradius/modules/rlm_eap
+share/doc/freeradius/modules/rlm_expiration
+@comment share/doc/freeradius/modules/rlm_krb5
+@comment share/doc/freeradius/modules/rlm_pam
+share/doc/freeradius/modules/rlm_passwd
+share/doc/freeradius/modules/rlm_soh
+share/doc/freeradius/modules/rlm_sql
+share/doc/freeradius/modules/rlm_sqlcounter
+share/doc/freeradius/modules/rlm_sqlippool
 share/doc/freeradius/rfc/
+share/doc/freeradius/rfc/Makefile
 share/doc/freeradius/rfc/attributes.html
 share/doc/freeradius/rfc/draft-kamath-pppext-eap-mschapv2-00.txt
 share/doc/freeradius/rfc/draft-sterman-aaa-sip-00.txt
+share/doc/freeradius/rfc/genref.pl
 share/doc/freeradius/rfc/leap.txt
-share/doc/freeradius/rfc/pppext-eap-sim-12.txt
+share/doc/freeradius/rfc/per-rfc.pl
+share/doc/freeradius/rfc/rewrite.pl
 share/doc/freeradius/rfc/rfc1157.txt
 share/doc/freeradius/rfc/rfc1227.txt
 share/doc/freeradius/rfc/rfc1448.txt
@@ -225,11 +283,14 @@ share/doc/freeradius/rfc/rfc2869.txt
 share/doc/freeradius/rfc/rfc2924.txt
 share/doc/freeradius/rfc/rfc3079.txt
 share/doc/freeradius/rfc/rfc3162.txt
+share/doc/freeradius/rfc/rfc3539.txt
 share/doc/freeradius/rfc/rfc3575.txt
 share/doc/freeradius/rfc/rfc3576.txt
 share/doc/freeradius/rfc/rfc3579.txt
 share/doc/freeradius/rfc/rfc3580.txt
 share/doc/freeradius/rfc/rfc3748.txt
+share/doc/freeradius/rfc/rfc4072.txt
+share/doc/freeradius/rfc/rfc4186.txt
 share/doc/freeradius/rfc/rfc4282.txt
 share/doc/freeradius/rfc/rfc4372.txt
 share/doc/freeradius/rfc/rfc4590.txt
@@ -251,266 +312,458 @@ share/doc/freeradius/rfc/rfc5281.txt
 share/doc/freeradius/rfc/rfc5580.txt
 share/doc/freeradius/rfc/rfc5607.txt
 share/doc/freeradius/rfc/rfc5904.txt
+share/doc/freeradius/rfc/rfc5931.txt
 share/doc/freeradius/rfc/rfc5997.txt
 share/doc/freeradius/rfc/rfc6158.txt
 share/doc/freeradius/rfc/rfc6519.txt
 share/doc/freeradius/rfc/rfc6572.txt
+share/doc/freeradius/rfc/rfc6613.txt
+share/doc/freeradius/rfc/rfc6614.txt
 share/doc/freeradius/rfc/rfc6677.txt
 share/doc/freeradius/rfc/rfc6911.txt
 share/doc/freeradius/rfc/rfc6929.txt
 share/doc/freeradius/rfc/rfc6930.txt
-share/doc/freeradius/rlm_dbm
-share/doc/freeradius/rlm_eap
-share/doc/freeradius/rlm_expiration
-share/doc/freeradius/rlm_fastusers
-share/doc/freeradius/rlm_jradius
-share/doc/freeradius/rlm_krb5
-@comment share/doc/freeradius/rlm_pam
-share/doc/freeradius/rlm_passwd
-@comment share/doc/freeradius/rlm_python
-share/doc/freeradius/rlm_sim_triplets
-share/doc/freeradius/rlm_sql
-share/doc/freeradius/rlm_sqlcounter
-share/doc/freeradius/rlm_sqlippool
-share/doc/freeradius/snmp
-share/doc/freeradius/supervise-radiusd.rst
-share/doc/freeradius/tuning_guide
-share/doc/freeradius/variables.rst
+share/doc/freeradius/rfc/rfc7055.txt
+share/doc/freeradius/rfc/rfc7268.txt
+share/doc/freeradius/rfc/rfc7542.txt
+share/doc/freeradius/rfc/rfc7599.txt
+share/doc/freeradius/schemas/
+share/doc/freeradius/schemas/logstash/
+share/doc/freeradius/schemas/logstash/README
+share/doc/freeradius/schemas/logstash/kibana4-dashboard.json
+share/doc/freeradius/schemas/logstash/log-courier.conf
+share/doc/freeradius/schemas/logstash/logstash-radius.conf
+share/doc/freeradius/schemas/logstash/radius-mapping.sh
+share/doc/freeradius/schemas/sql
+share/doc/freeradius/vendor/
+share/doc/freeradius/vendor/ascend
+share/doc/freeradius/vendor/bay
+share/doc/freeradius/vendor/cisco.rst
+share/doc/freeradius/vendor/proxim
 share/examples/freeradius/
-@mode 755
+@mode 750
 @group _freeradius
-@sample ${SYSCONFDIR}/raddb/
-@mode 640
-share/examples/freeradius/acct_users
-@sample ${SYSCONFDIR}/raddb/acct_users
-share/examples/freeradius/attrs
-@sample ${SYSCONFDIR}/raddb/attrs
-share/examples/freeradius/attrs.access_challenge
-@sample ${SYSCONFDIR}/raddb/attrs.access_challenge
-share/examples/freeradius/attrs.access_reject
-@sample ${SYSCONFDIR}/raddb/attrs.access_reject
-share/examples/freeradius/attrs.accounting_response
-@sample ${SYSCONFDIR}/raddb/attrs.accounting_response
-share/examples/freeradius/attrs.pre-proxy
-@sample ${SYSCONFDIR}/raddb/attrs.pre-proxy
+@sample ${FREERADIUS_ETC}/
 @mode
+share/examples/freeradius/README.rst
 share/examples/freeradius/certs/
-@mode 770
-@sample ${SYSCONFDIR}/raddb/certs/
-@mode 640
+@mode 700
+@owner _freeradius
+@group wheel
+@sample ${FREERADIUS_ETC}/certs/
+@mode
+@owner
+@group _freeradius
 share/examples/freeradius/certs/Makefile
-@sample ${SYSCONFDIR}/raddb/certs/Makefile
-share/examples/freeradius/certs/README
-@sample ${SYSCONFDIR}/raddb/certs/README
-@mode 750
+@sample ${FREERADIUS_ETC}/certs/Makefile
+share/examples/freeradius/certs/README.md
+@sample ${FREERADIUS_ETC}/certs/README.md
 share/examples/freeradius/certs/bootstrap
-@sample ${SYSCONFDIR}/raddb/certs/bootstrap
-@mode 640
+@mode 555
+@sample ${FREERADIUS_ETC}/certs/bootstrap
+@mode
 share/examples/freeradius/certs/ca.cnf
-@sample ${SYSCONFDIR}/raddb/certs/ca.cnf
+@sample ${FREERADIUS_ETC}/certs/ca.cnf
 share/examples/freeradius/certs/client.cnf
-@sample ${SYSCONFDIR}/raddb/certs/client.cnf
+@sample ${FREERADIUS_ETC}/certs/client.cnf
+share/examples/freeradius/certs/inner-server.cnf
+@sample ${FREERADIUS_ETC}/certs/inner-server.cnf
 share/examples/freeradius/certs/server.cnf
-@sample ${SYSCONFDIR}/raddb/certs/server.cnf
+@sample ${FREERADIUS_ETC}/certs/server.cnf
 share/examples/freeradius/certs/xpextensions
-@sample ${SYSCONFDIR}/raddb/certs/xpextensions
+@sample ${FREERADIUS_ETC}/certs/xpextensions
 share/examples/freeradius/clients.conf
-@sample ${SYSCONFDIR}/raddb/clients.conf
-@mode 644
+@sample ${FREERADIUS_ETC}/clients.conf
 share/examples/freeradius/dictionary
-@sample ${SYSCONFDIR}/raddb/dictionary
-@mode 640
-share/examples/freeradius/eap.conf
-@sample ${SYSCONFDIR}/raddb/eap.conf
+@sample ${FREERADIUS_ETC}/dictionary
 share/examples/freeradius/experimental.conf
-@sample ${SYSCONFDIR}/raddb/experimental.conf
+@sample ${FREERADIUS_ETC}/experimental.conf
 share/examples/freeradius/hints
-@sample ${SYSCONFDIR}/raddb/hints
+@comment hints is intentionally not sampled, see freeradius-enable.sh
 share/examples/freeradius/huntgroups
-@sample ${SYSCONFDIR}/raddb/huntgroups
-share/examples/freeradius/modules/
-@mode 750
-@sample ${SYSCONFDIR}/raddb/modules/
-@mode 640
-share/examples/freeradius/modules/acct_unique
-@sample ${SYSCONFDIR}/raddb/modules/acct_unique
-share/examples/freeradius/modules/always
-@sample ${SYSCONFDIR}/raddb/modules/always
-share/examples/freeradius/modules/attr_filter
-@sample ${SYSCONFDIR}/raddb/modules/attr_filter
-share/examples/freeradius/modules/attr_rewrite
-@sample ${SYSCONFDIR}/raddb/modules/attr_rewrite
-share/examples/freeradius/modules/cache
-@sample ${SYSCONFDIR}/raddb/modules/cache
-share/examples/freeradius/modules/chap
-@sample ${SYSCONFDIR}/raddb/modules/chap
-share/examples/freeradius/modules/checkval
-@sample ${SYSCONFDIR}/raddb/modules/checkval
-share/examples/freeradius/modules/counter
-@sample ${SYSCONFDIR}/raddb/modules/counter
-share/examples/freeradius/modules/cui
-@sample ${SYSCONFDIR}/raddb/modules/cui
-share/examples/freeradius/modules/detail
-@sample ${SYSCONFDIR}/raddb/modules/detail
-share/examples/freeradius/modules/detail.example.com
-@sample ${SYSCONFDIR}/raddb/modules/detail.example.com
-share/examples/freeradius/modules/detail.log
-@sample ${SYSCONFDIR}/raddb/modules/detail.log
-share/examples/freeradius/modules/digest
-@sample ${SYSCONFDIR}/raddb/modules/digest
-share/examples/freeradius/modules/dynamic_clients
-@sample ${SYSCONFDIR}/raddb/modules/dynamic_clients
-share/examples/freeradius/modules/echo
-@sample ${SYSCONFDIR}/raddb/modules/echo
-share/examples/freeradius/modules/etc_group
-@sample ${SYSCONFDIR}/raddb/modules/etc_group
-share/examples/freeradius/modules/exec
-@sample ${SYSCONFDIR}/raddb/modules/exec
-share/examples/freeradius/modules/expiration
-@sample ${SYSCONFDIR}/raddb/modules/expiration
-share/examples/freeradius/modules/expr
-@sample ${SYSCONFDIR}/raddb/modules/expr
-share/examples/freeradius/modules/files
-@sample ${SYSCONFDIR}/raddb/modules/files
-share/examples/freeradius/modules/inner-eap
-@sample ${SYSCONFDIR}/raddb/modules/inner-eap
-share/examples/freeradius/modules/ippool
-@sample ${SYSCONFDIR}/raddb/modules/ippool
-@comment share/examples/freeradius/modules/krb5
-share/examples/freeradius/modules/linelog
-@sample ${SYSCONFDIR}/raddb/modules/linelog
-share/examples/freeradius/modules/logintime
-@sample ${SYSCONFDIR}/raddb/modules/logintime
-share/examples/freeradius/modules/mac2ip
-@sample ${SYSCONFDIR}/raddb/modules/mac2ip
-share/examples/freeradius/modules/mac2vlan
-@sample ${SYSCONFDIR}/raddb/modules/mac2vlan
-share/examples/freeradius/modules/mschap
-@sample ${SYSCONFDIR}/raddb/modules/mschap
-share/examples/freeradius/modules/ntlm_auth
-@sample ${SYSCONFDIR}/raddb/modules/ntlm_auth
-share/examples/freeradius/modules/opendirectory
-@sample ${SYSCONFDIR}/raddb/modules/opendirectory
-share/examples/freeradius/modules/otp
-@sample ${SYSCONFDIR}/raddb/modules/otp
-@comment share/examples/freeradius/modules/pam
-share/examples/freeradius/modules/pap
-@sample ${SYSCONFDIR}/raddb/modules/pap
-share/examples/freeradius/modules/passwd
-@sample ${SYSCONFDIR}/raddb/modules/passwd
-@comment share/examples/freeradius/modules/perl
-share/examples/freeradius/modules/policy
-@sample ${SYSCONFDIR}/raddb/modules/policy
-share/examples/freeradius/modules/preprocess
-@sample ${SYSCONFDIR}/raddb/modules/preprocess
-share/examples/freeradius/modules/radrelay
-@sample ${SYSCONFDIR}/raddb/modules/radrelay
-share/examples/freeradius/modules/radutmp
-@sample ${SYSCONFDIR}/raddb/modules/radutmp
-share/examples/freeradius/modules/realm
-@sample ${SYSCONFDIR}/raddb/modules/realm
-share/examples/freeradius/modules/redis
-@sample ${SYSCONFDIR}/raddb/modules/redis
-share/examples/freeradius/modules/rediswho
-@sample ${SYSCONFDIR}/raddb/modules/rediswho
-share/examples/freeradius/modules/replicate
-@sample ${SYSCONFDIR}/raddb/modules/replicate
-share/examples/freeradius/modules/smbpasswd
-@sample ${SYSCONFDIR}/raddb/modules/smbpasswd
-share/examples/freeradius/modules/smsotp
-@sample ${SYSCONFDIR}/raddb/modules/smsotp
-share/examples/freeradius/modules/soh
-@sample ${SYSCONFDIR}/raddb/modules/soh
-share/examples/freeradius/modules/sql_log
-@sample ${SYSCONFDIR}/raddb/modules/sql_log
-share/examples/freeradius/modules/sqlcounter_expire_on_login
-@sample ${SYSCONFDIR}/raddb/modules/sqlcounter_expire_on_login
-share/examples/freeradius/modules/sradutmp
-@sample ${SYSCONFDIR}/raddb/modules/sradutmp
-share/examples/freeradius/modules/unix
-@sample ${SYSCONFDIR}/raddb/modules/unix
-share/examples/freeradius/modules/wimax
-@sample ${SYSCONFDIR}/raddb/modules/wimax
+@comment huntgroups is intentionally not sampled, see freeradius-enable.sh
+share/examples/freeradius/mods-available/
+@sample ${FREERADIUS_ETC}/mods-available/
+share/examples/freeradius/mods-available/README.rst
+@sample ${FREERADIUS_ETC}/mods-available/README.rst
+share/examples/freeradius/mods-available/abfab_psk_sql
+@sample ${FREERADIUS_ETC}/mods-available/abfab_psk_sql
+share/examples/freeradius/mods-available/always
+@sample ${FREERADIUS_ETC}/mods-available/always
+share/examples/freeradius/mods-available/attr_filter
+@sample ${FREERADIUS_ETC}/mods-available/attr_filter
+share/examples/freeradius/mods-available/cache
+@sample ${FREERADIUS_ETC}/mods-available/cache
+share/examples/freeradius/mods-available/cache_eap
+@sample ${FREERADIUS_ETC}/mods-available/cache_eap
+share/examples/freeradius/mods-available/chap
+@sample ${FREERADIUS_ETC}/mods-available/chap
+share/examples/freeradius/mods-available/couchbase
+@sample ${FREERADIUS_ETC}/mods-available/couchbase
+share/examples/freeradius/mods-available/counter
+@sample ${FREERADIUS_ETC}/mods-available/counter
+share/examples/freeradius/mods-available/cui
+@sample ${FREERADIUS_ETC}/mods-available/cui
+share/examples/freeradius/mods-available/date
+@sample ${FREERADIUS_ETC}/mods-available/date
+share/examples/freeradius/mods-available/detail
+@sample ${FREERADIUS_ETC}/mods-available/detail
+share/examples/freeradius/mods-available/detail.example.com
+@sample ${FREERADIUS_ETC}/mods-available/detail.example.com
+share/examples/freeradius/mods-available/detail.log
+@sample ${FREERADIUS_ETC}/mods-available/detail.log
+share/examples/freeradius/mods-available/dhcp
+@sample ${FREERADIUS_ETC}/mods-available/dhcp
+share/examples/freeradius/mods-available/dhcp_files
+@sample ${FREERADIUS_ETC}/mods-available/dhcp_files
+share/examples/freeradius/mods-available/dhcp_passwd
+@sample ${FREERADIUS_ETC}/mods-available/dhcp_passwd
+share/examples/freeradius/mods-available/dhcp_sql
+@sample ${FREERADIUS_ETC}/mods-available/dhcp_sql
+share/examples/freeradius/mods-available/dhcp_sqlippool
+@sample ${FREERADIUS_ETC}/mods-available/dhcp_sqlippool
+share/examples/freeradius/mods-available/digest
+@sample ${FREERADIUS_ETC}/mods-available/digest
+share/examples/freeradius/mods-available/dynamic_clients
+@sample ${FREERADIUS_ETC}/mods-available/dynamic_clients
+share/examples/freeradius/mods-available/eap
+@sample ${FREERADIUS_ETC}/mods-available/eap
+share/examples/freeradius/mods-available/echo
+@sample ${FREERADIUS_ETC}/mods-available/echo
+share/examples/freeradius/mods-available/etc_group
+@sample ${FREERADIUS_ETC}/mods-available/etc_group
+share/examples/freeradius/mods-available/exec
+@sample ${FREERADIUS_ETC}/mods-available/exec
+share/examples/freeradius/mods-available/expiration
+@sample ${FREERADIUS_ETC}/mods-available/expiration
+share/examples/freeradius/mods-available/expr
+@sample ${FREERADIUS_ETC}/mods-available/expr
+share/examples/freeradius/mods-available/files
+@sample ${FREERADIUS_ETC}/mods-available/files
+share/examples/freeradius/mods-available/idn
+@sample ${FREERADIUS_ETC}/mods-available/idn
+share/examples/freeradius/mods-available/inner-eap
+@sample ${FREERADIUS_ETC}/mods-available/inner-eap
+share/examples/freeradius/mods-available/ippool
+@sample ${FREERADIUS_ETC}/mods-available/ippool
+share/examples/freeradius/mods-available/krb5
+@sample ${FREERADIUS_ETC}/mods-available/krb5
+share/examples/freeradius/mods-available/linelog
+@sample ${FREERADIUS_ETC}/mods-available/linelog
+share/examples/freeradius/mods-available/logintime
+@sample ${FREERADIUS_ETC}/mods-available/logintime
+share/examples/freeradius/mods-available/mac2ip
+@sample ${FREERADIUS_ETC}/mods-available/mac2ip
+share/examples/freeradius/mods-available/mac2vlan
+@sample ${FREERADIUS_ETC}/mods-available/mac2vlan
+share/examples/freeradius/mods-available/moonshot-targeted-ids
+@sample ${FREERADIUS_ETC}/mods-available/moonshot-targeted-ids
+share/examples/freeradius/mods-available/mschap
+@sample ${FREERADIUS_ETC}/mods-available/mschap
+share/examples/freeradius/mods-available/ntlm_auth
+@sample ${FREERADIUS_ETC}/mods-available/ntlm_auth
+share/examples/freeradius/mods-available/opendirectory
+@sample ${FREERADIUS_ETC}/mods-available/opendirectory
+share/examples/freeradius/mods-available/otp
+@sample ${FREERADIUS_ETC}/mods-available/otp
+@comment share/examples/freeradius/mods-available/pam
+share/examples/freeradius/mods-available/pap
+@sample ${FREERADIUS_ETC}/mods-available/pap
+share/examples/freeradius/mods-available/passwd
+@sample ${FREERADIUS_ETC}/mods-available/passwd
+share/examples/freeradius/mods-available/perl
+@sample ${FREERADIUS_ETC}/mods-available/perl
+share/examples/freeradius/mods-available/preprocess
+@sample ${FREERADIUS_ETC}/mods-available/preprocess
+share/examples/freeradius/mods-available/radutmp
+@sample ${FREERADIUS_ETC}/mods-available/radutmp
+share/examples/freeradius/mods-available/realm
+@sample ${FREERADIUS_ETC}/mods-available/realm
+share/examples/freeradius/mods-available/redis
+@sample ${FREERADIUS_ETC}/mods-available/redis
+share/examples/freeradius/mods-available/rediswho
+@sample ${FREERADIUS_ETC}/mods-available/rediswho
+share/examples/freeradius/mods-available/replicate
+@sample ${FREERADIUS_ETC}/mods-available/replicate
+share/examples/freeradius/mods-available/rest
+@sample ${FREERADIUS_ETC}/mods-available/rest
+share/examples/freeradius/mods-available/smbpasswd
+@sample ${FREERADIUS_ETC}/mods-available/smbpasswd
+share/examples/freeradius/mods-available/smsotp
+@sample ${FREERADIUS_ETC}/mods-available/smsotp
+share/examples/freeradius/mods-available/soh
+@sample ${FREERADIUS_ETC}/mods-available/soh
+share/examples/freeradius/mods-available/sometimes
+@sample ${FREERADIUS_ETC}/mods-available/sometimes
+share/examples/freeradius/mods-available/sql
+@sample ${FREERADIUS_ETC}/mods-available/sql
+share/examples/freeradius/mods-available/sql_map
+@sample ${FREERADIUS_ETC}/mods-available/sql_map
+share/examples/freeradius/mods-available/sqlcounter
+@sample ${FREERADIUS_ETC}/mods-available/sqlcounter
+share/examples/freeradius/mods-available/sqlippool
+@sample ${FREERADIUS_ETC}/mods-available/sqlippool
+share/examples/freeradius/mods-available/sradutmp
+@sample ${FREERADIUS_ETC}/mods-available/sradutmp
+share/examples/freeradius/mods-available/totp
+@sample ${FREERADIUS_ETC}/mods-available/totp
+@comment share/examples/freeradius/mods-available/unbound
+share/examples/freeradius/mods-available/unix
+@sample ${FREERADIUS_ETC}/mods-available/unix
+share/examples/freeradius/mods-available/unpack
+@sample ${FREERADIUS_ETC}/mods-available/unpack
+share/examples/freeradius/mods-available/utf8
+@sample ${FREERADIUS_ETC}/mods-available/utf8
+share/examples/freeradius/mods-available/wimax
+@sample ${FREERADIUS_ETC}/mods-available/wimax
+share/examples/freeradius/mods-available/yubikey
+@sample ${FREERADIUS_ETC}/mods-available/yubikey
+share/examples/freeradius/mods-config/
+@sample ${FREERADIUS_ETC}/mods-config/
+share/examples/freeradius/mods-config/README.rst
+@sample ${FREERADIUS_ETC}/mods-config/README.rst
+share/examples/freeradius/mods-config/attr_filter/
+@sample ${FREERADIUS_ETC}/mods-config/attr_filter/
+share/examples/freeradius/mods-config/attr_filter/access_challenge
+@sample ${FREERADIUS_ETC}/mods-config/attr_filter/access_challenge
+share/examples/freeradius/mods-config/attr_filter/access_reject
+@sample ${FREERADIUS_ETC}/mods-config/attr_filter/access_reject
+share/examples/freeradius/mods-config/attr_filter/accounting_response
+@sample ${FREERADIUS_ETC}/mods-config/attr_filter/accounting_response
+share/examples/freeradius/mods-config/attr_filter/coa
+@sample ${FREERADIUS_ETC}/mods-config/attr_filter/coa
+share/examples/freeradius/mods-config/attr_filter/post-proxy
+@sample ${FREERADIUS_ETC}/mods-config/attr_filter/post-proxy
+share/examples/freeradius/mods-config/attr_filter/pre-proxy
+@sample ${FREERADIUS_ETC}/mods-config/attr_filter/pre-proxy
+share/examples/freeradius/mods-config/files/
+@sample ${FREERADIUS_ETC}/mods-config/files/
+share/examples/freeradius/mods-config/files/accounting
+@sample ${FREERADIUS_ETC}/mods-config/files/accounting
+share/examples/freeradius/mods-config/files/authorize
+@sample ${FREERADIUS_ETC}/mods-config/files/authorize
+share/examples/freeradius/mods-config/files/dhcp
+@sample ${FREERADIUS_ETC}/mods-config/files/dhcp
+share/examples/freeradius/mods-config/files/pre-proxy
+@sample ${FREERADIUS_ETC}/mods-config/files/pre-proxy
+share/examples/freeradius/mods-config/perl/
+@sample ${FREERADIUS_ETC}/mods-config/perl/
+share/examples/freeradius/mods-config/perl/example.pl
+@sample ${FREERADIUS_ETC}/mods-config/perl/example.pl
+share/examples/freeradius/mods-config/preprocess/
+@sample ${FREERADIUS_ETC}/mods-config/preprocess/
+share/examples/freeradius/mods-config/preprocess/hints
+@sample ${FREERADIUS_ETC}/mods-config/preprocess/hints
+share/examples/freeradius/mods-config/preprocess/huntgroups
+@sample ${FREERADIUS_ETC}/mods-config/preprocess/huntgroups
+share/examples/freeradius/mods-config/sql/
+@sample ${FREERADIUS_ETC}/mods-config/sql/
+share/examples/freeradius/mods-config/sql/counter/
+@sample ${FREERADIUS_ETC}/mods-config/sql/counter/
+share/examples/freeradius/mods-config/sql/counter/sqlite/
+@sample ${FREERADIUS_ETC}/mods-config/sql/counter/sqlite/
+share/examples/freeradius/mods-config/sql/counter/sqlite/dailycounter.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/counter/sqlite/dailycounter.conf
+share/examples/freeradius/mods-config/sql/counter/sqlite/expire_on_login.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/counter/sqlite/expire_on_login.conf
+share/examples/freeradius/mods-config/sql/counter/sqlite/monthlycounter.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/counter/sqlite/monthlycounter.conf
+share/examples/freeradius/mods-config/sql/counter/sqlite/noresetcounter.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/counter/sqlite/noresetcounter.conf
+share/examples/freeradius/mods-config/sql/counter/sqlite/weeklycounter.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/counter/sqlite/weeklycounter.conf
+share/examples/freeradius/mods-config/sql/cui/
+@sample ${FREERADIUS_ETC}/mods-config/sql/cui/
+share/examples/freeradius/mods-config/sql/cui/sqlite/
+@sample ${FREERADIUS_ETC}/mods-config/sql/cui/sqlite/
+share/examples/freeradius/mods-config/sql/cui/sqlite/queries.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/cui/sqlite/queries.conf
+share/examples/freeradius/mods-config/sql/cui/sqlite/schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/cui/sqlite/schema.sql
+share/examples/freeradius/mods-config/sql/dhcp/
+@sample ${FREERADIUS_ETC}/mods-config/sql/dhcp/
+share/examples/freeradius/mods-config/sql/dhcp/sqlite/
+@sample ${FREERADIUS_ETC}/mods-config/sql/dhcp/sqlite/
+share/examples/freeradius/mods-config/sql/dhcp/sqlite/queries.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/dhcp/sqlite/queries.conf
+share/examples/freeradius/mods-config/sql/dhcp/sqlite/schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/dhcp/sqlite/schema.sql
+share/examples/freeradius/mods-config/sql/ippool/
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool/
+share/examples/freeradius/mods-config/sql/ippool-dhcp/
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool-dhcp/
+share/examples/freeradius/mods-config/sql/ippool-dhcp/sqlite/
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool-dhcp/sqlite/
+share/examples/freeradius/mods-config/sql/ippool-dhcp/sqlite/queries.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool-dhcp/sqlite/queries.conf
+share/examples/freeradius/mods-config/sql/ippool-dhcp/sqlite/schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool-dhcp/sqlite/schema.sql
+@comment share/examples/freeradius/mods-config/sql/ippool/mongo/
+@comment @sample ${FREERADIUS_ETC}/mods-config/sql/ippool/mongo/
+@comment share/examples/freeradius/mods-config/sql/ippool/mongo/queries.conf
+@comment @sample ${FREERADIUS_ETC}/mods-config/sql/ippool/mongo/queries.conf
+share/examples/freeradius/mods-config/sql/ippool/sqlite/
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool/sqlite/
+share/examples/freeradius/mods-config/sql/ippool/sqlite/queries.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool/sqlite/queries.conf
+share/examples/freeradius/mods-config/sql/ippool/sqlite/schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool/sqlite/schema.sql
+share/examples/freeradius/mods-config/sql/main/
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/
+@comment share/examples/freeradius/mods-config/sql/main/mongo/
+@comment @sample ${FREERADIUS_ETC}/mods-config/sql/main/mongo/
+@comment share/examples/freeradius/mods-config/sql/main/mongo/queries.conf
+@comment @sample ${FREERADIUS_ETC}/mods-config/sql/main/mongo/queries.conf
+share/examples/freeradius/mods-config/sql/main/sqlite/
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/sqlite/
+share/examples/freeradius/mods-config/sql/main/sqlite/process-radacct-refresh.sh
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/sqlite/process-radacct-refresh.sh
+share/examples/freeradius/mods-config/sql/main/sqlite/process-radacct-schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/sqlite/process-radacct-schema.sql
+share/examples/freeradius/mods-config/sql/main/sqlite/queries.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/sqlite/queries.conf
+share/examples/freeradius/mods-config/sql/main/sqlite/schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/sqlite/schema.sql
+share/examples/freeradius/mods-config/sql/moonshot-targeted-ids/
+@sample ${FREERADIUS_ETC}/mods-config/sql/moonshot-targeted-ids/
+share/examples/freeradius/mods-config/sql/moonshot-targeted-ids/sqlite/
+@sample ${FREERADIUS_ETC}/mods-config/sql/moonshot-targeted-ids/sqlite/
+share/examples/freeradius/mods-config/sql/moonshot-targeted-ids/sqlite/queries.conf
+@sample ${FREERADIUS_ETC}/mods-config/sql/moonshot-targeted-ids/sqlite/queries.conf
+share/examples/freeradius/mods-config/sql/moonshot-targeted-ids/sqlite/schema.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/moonshot-targeted-ids/sqlite/schema.sql
+@comment share/examples/freeradius/mods-config/unbound/
+@comment share/examples/freeradius/mods-config/unbound/default.conf
+share/examples/freeradius/mods-enabled/
+share/examples/freeradius/mods-enabled/always
+share/examples/freeradius/mods-enabled/attr_filter
+share/examples/freeradius/mods-enabled/cache_eap
+share/examples/freeradius/mods-enabled/chap
+share/examples/freeradius/mods-enabled/date
+share/examples/freeradius/mods-enabled/detail
+share/examples/freeradius/mods-enabled/detail.log
+share/examples/freeradius/mods-enabled/digest
+share/examples/freeradius/mods-enabled/dynamic_clients
+share/examples/freeradius/mods-enabled/eap
+share/examples/freeradius/mods-enabled/echo
+share/examples/freeradius/mods-enabled/exec
+share/examples/freeradius/mods-enabled/expiration
+share/examples/freeradius/mods-enabled/expr
+share/examples/freeradius/mods-enabled/files
+share/examples/freeradius/mods-enabled/linelog
+share/examples/freeradius/mods-enabled/logintime
+share/examples/freeradius/mods-enabled/mschap
+share/examples/freeradius/mods-enabled/ntlm_auth
+share/examples/freeradius/mods-enabled/pap
+share/examples/freeradius/mods-enabled/passwd
+share/examples/freeradius/mods-enabled/preprocess
+share/examples/freeradius/mods-enabled/radutmp
+share/examples/freeradius/mods-enabled/realm
+share/examples/freeradius/mods-enabled/replicate
+share/examples/freeradius/mods-enabled/soh
+share/examples/freeradius/mods-enabled/sradutmp
+share/examples/freeradius/mods-enabled/totp
+share/examples/freeradius/mods-enabled/unix
+share/examples/freeradius/mods-enabled/unpack
+share/examples/freeradius/mods-enabled/utf8
 share/examples/freeradius/panic.gdb
-@sample ${SYSCONFDIR}/raddb/panic.gdb
-share/examples/freeradius/policy.conf
-@sample ${SYSCONFDIR}/raddb/policy.conf
-share/examples/freeradius/policy.txt
-share/examples/freeradius/preproxy_users
-@sample ${SYSCONFDIR}/raddb/preproxy_users
+@sample ${FREERADIUS_ETC}/panic.gdb
+share/examples/freeradius/policy.d/
+@sample ${FREERADIUS_ETC}/policy.d/
+share/examples/freeradius/policy.d/abfab-tr
+@sample ${FREERADIUS_ETC}/policy.d/abfab-tr
+share/examples/freeradius/policy.d/accounting
+@sample ${FREERADIUS_ETC}/policy.d/accounting
+share/examples/freeradius/policy.d/canonicalization
+@sample ${FREERADIUS_ETC}/policy.d/canonicalization
+share/examples/freeradius/policy.d/control
+@sample ${FREERADIUS_ETC}/policy.d/control
+share/examples/freeradius/policy.d/cui
+@sample ${FREERADIUS_ETC}/policy.d/cui
+share/examples/freeradius/policy.d/debug
+@sample ${FREERADIUS_ETC}/policy.d/debug
+share/examples/freeradius/policy.d/dhcp
+@sample ${FREERADIUS_ETC}/policy.d/dhcp
+share/examples/freeradius/policy.d/eap
+@sample ${FREERADIUS_ETC}/policy.d/eap
+share/examples/freeradius/policy.d/filter
+@sample ${FREERADIUS_ETC}/policy.d/filter
+share/examples/freeradius/policy.d/moonshot-targeted-ids
+@sample ${FREERADIUS_ETC}/policy.d/moonshot-targeted-ids
+share/examples/freeradius/policy.d/operator-name
+@sample ${FREERADIUS_ETC}/policy.d/operator-name
+share/examples/freeradius/policy.d/rfc7542
+@sample ${FREERADIUS_ETC}/policy.d/rfc7542
 share/examples/freeradius/proxy.conf
-@sample ${SYSCONFDIR}/raddb/proxy.conf
+@sample ${FREERADIUS_ETC}/proxy.conf
 share/examples/freeradius/radiusd.conf
-@sample ${SYSCONFDIR}/raddb/radiusd.conf
+@sample ${FREERADIUS_ETC}/radiusd.conf
 share/examples/freeradius/sites-available/
-@mode 750
-@sample ${SYSCONFDIR}/raddb/sites-available/
-@mode 640
+@sample ${FREERADIUS_ETC}/sites-available/
 share/examples/freeradius/sites-available/README
-@sample ${SYSCONFDIR}/raddb/sites-available/README
+@sample ${FREERADIUS_ETC}/sites-available/README
+share/examples/freeradius/sites-available/abfab-tls
+@sample ${FREERADIUS_ETC}/sites-available/abfab-tls
+share/examples/freeradius/sites-available/abfab-tr-idp
+@sample ${FREERADIUS_ETC}/sites-available/abfab-tr-idp
 share/examples/freeradius/sites-available/buffered-sql
-@sample ${SYSCONFDIR}/raddb/sites-available/buffered-sql
+@sample ${FREERADIUS_ETC}/sites-available/buffered-sql
+share/examples/freeradius/sites-available/challenge
+@sample ${FREERADIUS_ETC}/sites-available/challenge
+share/examples/freeradius/sites-available/channel_bindings
+@sample ${FREERADIUS_ETC}/sites-available/channel_bindings
+share/examples/freeradius/sites-available/check-eap-tls
+@sample ${FREERADIUS_ETC}/sites-available/check-eap-tls
 share/examples/freeradius/sites-available/coa
-@sample ${SYSCONFDIR}/raddb/sites-available/coa
+@sample ${FREERADIUS_ETC}/sites-available/coa
+share/examples/freeradius/sites-available/coa-relay
+@sample ${FREERADIUS_ETC}/sites-available/coa-relay
 share/examples/freeradius/sites-available/control-socket
-@sample ${SYSCONFDIR}/raddb/sites-available/control-socket
+@sample ${FREERADIUS_ETC}/sites-available/control-socket
 share/examples/freeradius/sites-available/copy-acct-to-home-server
-@sample ${SYSCONFDIR}/raddb/sites-available/copy-acct-to-home-server
+@sample ${FREERADIUS_ETC}/sites-available/copy-acct-to-home-server
 share/examples/freeradius/sites-available/decoupled-accounting
-@sample ${SYSCONFDIR}/raddb/sites-available/decoupled-accounting
+@sample ${FREERADIUS_ETC}/sites-available/decoupled-accounting
 share/examples/freeradius/sites-available/default
-@sample ${SYSCONFDIR}/raddb/sites-available/default
+@sample ${FREERADIUS_ETC}/sites-available/default
 share/examples/freeradius/sites-available/dhcp
-@sample ${SYSCONFDIR}/raddb/sites-available/dhcp
+@sample ${FREERADIUS_ETC}/sites-available/dhcp
 share/examples/freeradius/sites-available/dhcp.relay
-@sample ${SYSCONFDIR}/raddb/sites-available/dhcp.relay
+@sample ${FREERADIUS_ETC}/sites-available/dhcp.relay
 share/examples/freeradius/sites-available/dynamic-clients
-@sample ${SYSCONFDIR}/raddb/sites-available/dynamic-clients
+@sample ${FREERADIUS_ETC}/sites-available/dynamic-clients
 share/examples/freeradius/sites-available/example
-@sample ${SYSCONFDIR}/raddb/sites-available/example
+@sample ${FREERADIUS_ETC}/sites-available/example
 share/examples/freeradius/sites-available/inner-tunnel
-@sample ${SYSCONFDIR}/raddb/sites-available/inner-tunnel
+@sample ${FREERADIUS_ETC}/sites-available/inner-tunnel
 share/examples/freeradius/sites-available/originate-coa
-@sample ${SYSCONFDIR}/raddb/sites-available/originate-coa
+@sample ${FREERADIUS_ETC}/sites-available/originate-coa
 share/examples/freeradius/sites-available/proxy-inner-tunnel
-@sample ${SYSCONFDIR}/raddb/sites-available/proxy-inner-tunnel
+@sample ${FREERADIUS_ETC}/sites-available/proxy-inner-tunnel
+share/examples/freeradius/sites-available/resource-check
+@sample ${FREERADIUS_ETC}/sites-available/resource-check
 share/examples/freeradius/sites-available/robust-proxy-accounting
-@sample ${SYSCONFDIR}/raddb/sites-available/robust-proxy-accounting
+@sample ${FREERADIUS_ETC}/sites-available/robust-proxy-accounting
 share/examples/freeradius/sites-available/soh
-@sample ${SYSCONFDIR}/raddb/sites-available/soh
+@sample ${FREERADIUS_ETC}/sites-available/soh
 share/examples/freeradius/sites-available/status
-@sample ${SYSCONFDIR}/raddb/sites-available/status
+@sample ${FREERADIUS_ETC}/sites-available/status
+share/examples/freeradius/sites-available/tls
+@sample ${FREERADIUS_ETC}/sites-available/tls
+share/examples/freeradius/sites-available/totp
+@sample ${FREERADIUS_ETC}/sites-available/totp
 share/examples/freeradius/sites-available/virtual.example.com
-@sample ${SYSCONFDIR}/raddb/sites-available/virtual.example.com
+@sample ${FREERADIUS_ETC}/sites-available/virtual.example.com
 share/examples/freeradius/sites-available/vmps
-@sample ${SYSCONFDIR}/raddb/sites-available/vmps
+@sample ${FREERADIUS_ETC}/sites-available/vmps
 share/examples/freeradius/sites-enabled/
-@mode 750
-@sample ${SYSCONFDIR}/raddb/sites-enabled/
-@mode 640
-share/examples/freeradius/sites-enabled/control-socket
 share/examples/freeradius/sites-enabled/default
 share/examples/freeradius/sites-enabled/inner-tunnel
-share/examples/freeradius/sql/
-@mode 750
-@sample ${SYSCONFDIR}/raddb/sql/
-@mode 640
-share/examples/freeradius/sql.conf
-@sample ${SYSCONFDIR}/raddb/sql.conf
-@comment share/examples/freeradius/sql/oracle/
-@comment share/examples/freeradius/sql/oracle/dialup.conf
-@comment share/examples/freeradius/sql/oracle/ippool.conf
-@comment share/examples/freeradius/sql/oracle/ippool.sql
-@comment share/examples/freeradius/sql/oracle/msqlippool.txt
-@comment share/examples/freeradius/sql/oracle/nas.sql
-@comment share/examples/freeradius/sql/oracle/schema.sql
-share/examples/freeradius/sqlippool.conf
-@sample ${SYSCONFDIR}/raddb/sqlippool.conf
 share/examples/freeradius/templates.conf
-@sample ${SYSCONFDIR}/raddb/templates.conf
+@sample ${FREERADIUS_ETC}/templates.conf
+share/examples/freeradius/trigger.conf
+@sample ${FREERADIUS_ETC}/trigger.conf
 share/examples/freeradius/users
-@sample ${SYSCONFDIR}/raddb/users
-@mode
 @group
 share/freeradius/
 share/freeradius/dictionary
@@ -519,6 +772,8 @@ share/freeradius/dictionary.3gpp
 share/freeradius/dictionary.3gpp2
 share/freeradius/dictionary.acc
 share/freeradius/dictionary.acme
+share/freeradius/dictionary.actelis
+share/freeradius/dictionary.adtran
 share/freeradius/dictionary.aerohive
 share/freeradius/dictionary.airespace
 share/freeradius/dictionary.alcatel
@@ -528,8 +783,12 @@ share/freeradius/dictionary.alcatel.sr
 share/freeradius/dictionary.alteon
 share/freeradius/dictionary.altiga
 share/freeradius/dictionary.alvarion
+share/freeradius/dictionary.alvarion.wimax.v2_2
 share/freeradius/dictionary.apc
+share/freeradius/dictionary.aptilo
 share/freeradius/dictionary.aptis
+share/freeradius/dictionary.arbor
+share/freeradius/dictionary.arista
 share/freeradius/dictionary.aruba
 share/freeradius/dictionary.ascend
 share/freeradius/dictionary.ascend.illegal
@@ -538,8 +797,10 @@ share/freeradius/dictionary.audiocodes
 share/freeradius/dictionary.avaya
 share/freeradius/dictionary.azaire
 share/freeradius/dictionary.bay
+share/freeradius/dictionary.bigswitch
 share/freeradius/dictionary.bintec
 share/freeradius/dictionary.bluecoat
+share/freeradius/dictionary.boingo
 share/freeradius/dictionary.bristol
 share/freeradius/dictionary.broadsoft
 share/freeradius/dictionary.brocade
@@ -547,20 +808,26 @@ share/freeradius/dictionary.bskyb
 share/freeradius/dictionary.bt
 share/freeradius/dictionary.cablelabs
 share/freeradius/dictionary.cabletron
+share/freeradius/dictionary.cambium
 share/freeradius/dictionary.camiant
+share/freeradius/dictionary.centec
+share/freeradius/dictionary.checkpoint
 share/freeradius/dictionary.chillispot
 share/freeradius/dictionary.cisco
+share/freeradius/dictionary.cisco.asa
 share/freeradius/dictionary.cisco.bbsm
 share/freeradius/dictionary.cisco.vpn3000
 share/freeradius/dictionary.cisco.vpn5000
 share/freeradius/dictionary.citrix
 share/freeradius/dictionary.clavister
+share/freeradius/dictionary.cnergee
 share/freeradius/dictionary.colubris
 share/freeradius/dictionary.columbia_university
 share/freeradius/dictionary.compat
 share/freeradius/dictionary.compatible
 share/freeradius/dictionary.cosine
 share/freeradius/dictionary.dante
+share/freeradius/dictionary.dellemc
 share/freeradius/dictionary.dhcp
 share/freeradius/dictionary.digium
 share/freeradius/dictionary.dlink
@@ -568,14 +835,18 @@ share/freeradius/dictionary.dragonwave
 share/freeradius/dictionary.efficientip
 share/freeradius/dictionary.eltex
 share/freeradius/dictionary.epygi
+share/freeradius/dictionary.equallogic
 share/freeradius/dictionary.ericsson
+share/freeradius/dictionary.ericsson.ab
 share/freeradius/dictionary.ericsson.packet.core.networks
 share/freeradius/dictionary.erx
 share/freeradius/dictionary.extreme
 share/freeradius/dictionary.f5
 share/freeradius/dictionary.fdxtended
+share/freeradius/dictionary.force10
 share/freeradius/dictionary.fortinet
 share/freeradius/dictionary.foundry
+share/freeradius/dictionary.freedhcp
 share/freeradius/dictionary.freeradius
 share/freeradius/dictionary.freeradius.internal
 share/freeradius/dictionary.freeswitch
@@ -583,30 +854,39 @@ share/freeradius/dictionary.gandalf
 share/freeradius/dictionary.garderos
 share/freeradius/dictionary.gemtek
 share/freeradius/dictionary.h3c
+share/freeradius/dictionary.hillstone
 share/freeradius/dictionary.hp
 share/freeradius/dictionary.huawei
+share/freeradius/dictionary.iana
 share/freeradius/dictionary.iea
+share/freeradius/dictionary.infinera
+share/freeradius/dictionary.infoblox
 share/freeradius/dictionary.infonet
 share/freeradius/dictionary.ipunplugged
 share/freeradius/dictionary.issanni
 share/freeradius/dictionary.itk
-share/freeradius/dictionary.jradius
 share/freeradius/dictionary.juniper
 share/freeradius/dictionary.karlnet
 share/freeradius/dictionary.kineto
 share/freeradius/dictionary.lancom
+share/freeradius/dictionary.lantronix
 share/freeradius/dictionary.livingston
 share/freeradius/dictionary.localweb
 share/freeradius/dictionary.lucent
 share/freeradius/dictionary.manzara
+share/freeradius/dictionary.meinberg
+share/freeradius/dictionary.meraki
 share/freeradius/dictionary.merit
 share/freeradius/dictionary.meru
+share/freeradius/dictionary.microsemi
 share/freeradius/dictionary.microsoft
 share/freeradius/dictionary.mikrotik
+share/freeradius/dictionary.mimosa
 share/freeradius/dictionary.motorola
 share/freeradius/dictionary.motorola.illegal
 share/freeradius/dictionary.motorola.wimax
 share/freeradius/dictionary.navini
+share/freeradius/dictionary.net
 share/freeradius/dictionary.netscreen
 share/freeradius/dictionary.networkphysics
 share/freeradius/dictionary.nexans
@@ -619,13 +899,16 @@ share/freeradius/dictionary.openser
 share/freeradius/dictionary.packeteer
 share/freeradius/dictionary.paloalto
 share/freeradius/dictionary.patton
+share/freeradius/dictionary.perle
+share/freeradius/dictionary.pfsense
+share/freeradius/dictionary.pica8
 share/freeradius/dictionary.propel
 share/freeradius/dictionary.prosoft
 share/freeradius/dictionary.proxim
 share/freeradius/dictionary.purewave
 share/freeradius/dictionary.quiconnect
 share/freeradius/dictionary.quintum
-share/freeradius/dictionary.redback
+share/freeradius/dictionary.rcntec
 share/freeradius/dictionary.redcreek
 share/freeradius/dictionary.rfc2865
 share/freeradius/dictionary.rfc2866
@@ -652,29 +935,42 @@ share/freeradius/dictionary.rfc6519
 share/freeradius/dictionary.rfc6572
 share/freeradius/dictionary.rfc6677
 share/freeradius/dictionary.rfc6911
+share/freeradius/dictionary.rfc6929
 share/freeradius/dictionary.rfc6930
 share/freeradius/dictionary.rfc7055
+share/freeradius/dictionary.rfc7155
 share/freeradius/dictionary.rfc7268
+share/freeradius/dictionary.rfc7499
+share/freeradius/dictionary.rfc7930
+share/freeradius/dictionary.rfc8045
+share/freeradius/dictionary.rfc8559
 share/freeradius/dictionary.riverbed
 share/freeradius/dictionary.riverstone
 share/freeradius/dictionary.roaringpenguin
 share/freeradius/dictionary.ruckus
+share/freeradius/dictionary.ruggedcom
+share/freeradius/dictionary.sangoma
 share/freeradius/dictionary.sg
 share/freeradius/dictionary.shasta
 share/freeradius/dictionary.shiva
 share/freeradius/dictionary.siemens
 share/freeradius/dictionary.slipstream
 share/freeradius/dictionary.sofaware
+share/freeradius/dictionary.softbank
 share/freeradius/dictionary.sonicwall
 share/freeradius/dictionary.springtide
 share/freeradius/dictionary.starent
 share/freeradius/dictionary.starent.vsa1
+share/freeradius/dictionary.surfnet
 share/freeradius/dictionary.symbol
 share/freeradius/dictionary.t_systems_nova
 share/freeradius/dictionary.telebit
 share/freeradius/dictionary.telkom
+share/freeradius/dictionary.telrad
 share/freeradius/dictionary.terena
 share/freeradius/dictionary.trapeze
+share/freeradius/dictionary.travelping
+share/freeradius/dictionary.tripplite
 share/freeradius/dictionary.tropos
 share/freeradius/dictionary.ukerna
 share/freeradius/dictionary.unix
@@ -682,27 +978,28 @@ share/freeradius/dictionary.usr
 share/freeradius/dictionary.usr.illegal
 share/freeradius/dictionary.utstarcom
 share/freeradius/dictionary.valemount
+share/freeradius/dictionary.vasexperts
+share/freeradius/dictionary.verizon
 share/freeradius/dictionary.versanet
 share/freeradius/dictionary.vqp
 share/freeradius/dictionary.walabi
 share/freeradius/dictionary.waverider
 share/freeradius/dictionary.wichorus
+share/freeradius/dictionary.wifialliance
 share/freeradius/dictionary.wimax
+share/freeradius/dictionary.wimax.alvarion
 share/freeradius/dictionary.wimax.wichorus
 share/freeradius/dictionary.wispr
 share/freeradius/dictionary.xedia
 share/freeradius/dictionary.xylan
+share/freeradius/dictionary.yubico
 share/freeradius/dictionary.zeus
 share/freeradius/dictionary.zte
 share/freeradius/dictionary.zyxel
+@mode 555
+share/freeradius/freeradius-enable.sh
+@mode
 @owner _freeradius
 @sample /var/log/radius/
 @sample /var/log/radius/radacct/
-@exec-add ln -s ../sites-available/control-socket ${SYSCONFDIR}/raddb/sites-enabled/
-@exec-add ln -s ../sites-available/default ${SYSCONFDIR}/raddb/sites-enabled/
-@exec-add ln -s ../sites-available/inner-tunnel ${SYSCONFDIR}/raddb/sites-enabled/
-@extra /var/log/radius/radwtmp
-@owner
-@group
-@mode
-@rcscript ${RCDIR}/freeradius
+@exec-add %D/share/freeradius/freeradius-enable.sh firstrun

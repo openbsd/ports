@@ -1,7 +1,11 @@
-$OpenBSD: patch-configure_cmake,v 1.1 2015/09/22 18:38:10 pascal Exp $
---- configure.cmake.orig	Fri Sep 11 13:22:14 2015
-+++ configure.cmake	Fri Sep 11 13:22:35 2015
-@@ -1,6 +1,6 @@
+$OpenBSD: patch-configure_cmake,v 1.2 2021/08/31 07:32:18 ajacoutot Exp $
+
+Fix build with OpenEXR>=3
+
+Index: configure.cmake
+--- configure.cmake.orig
++++ configure.cmake
+@@ -1,25 +1,25 @@
  # Until we get some of these modules into the upstream packages, put them here
  set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/modules/")
 -set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_INSTALL_PREFIX}/share/CMake")
@@ -9,3 +13,34 @@ $OpenBSD: patch-configure_cmake,v 1.1 2015/09/22 18:38:10 pascal Exp $
  
  find_package( PkgConfig QUIET )
  
+-find_package( IlmBase QUIET )
+-if(IlmBase_FOUND)
+-  message( STATUS "found IlmBase, version ${IlmBase_VERSION}" )
++find_package( Imath QUIET )
++if(Imath_FOUND)
++  message( STATUS "found Imath, version ${Imath_VERSION}" )
+   ###
+-  ### Everyone (well, except for DPX) uses IlmBase, so
++  ### Everyone (well, except for DPX) uses Imath (formerly IlmBase), so
+   ### make that a global setting
+   ###
+-  include_directories( ${IlmBase_INCLUDE_DIRS} )
+-  link_directories( ${IlmBase_LIBRARY_DIRS} )
+-  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${IlmBase_CFLAGS}" )
+-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${IlmBase_CFLAGS}" )
+-  set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${IlmBase_LDFLAGS}" )
+-  set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} ${IlmBase_LDFLAGS}" )
+-  set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} ${IlmBase_LDFLAGS}" )
++  include_directories( ${Imath_INCLUDE_DIRS} )
++  link_directories( ${Imath_LIBRARY_DIRS} "${LOCALBASE}/lib" )
++  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${Imath_CFLAGS}" )
++  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${Imath_CFLAGS}" )
++  set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${Imath_LDFLAGS}" )
++  set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} ${Imath_LDFLAGS}" )
++  set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} ${Imath_LDFLAGS}" )
+ else()
+-  message( SEND_ERROR "IlmBase not found, please set the include and library paths manually" )
++  message( SEND_ERROR "Imath not found, please set the include and library paths manually" )
+ endif()
+ 
+ find_package( TIFF QUIET )

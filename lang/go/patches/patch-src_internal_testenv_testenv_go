@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_internal_testenv_testenv_go,v 1.1 2021/07/11 14:44:56 jsing Exp $
+$OpenBSD: patch-src_internal_testenv_testenv_go,v 1.2 2021/08/27 18:33:27 jsing Exp $
 
 Index: src/internal/testenv/testenv.go
 --- src/internal/testenv/testenv.go.orig

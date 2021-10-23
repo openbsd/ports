@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/04/27 05:27:11 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2021/09/10 08:43:57 rsadowski Exp $
 
 COMMENT =	Kross interpreter plugins for programming
 DISTNAME =	kross-interpreters-${VERSION}
@@ -14,6 +14,7 @@ MODULES +=	lang/ruby
 
 LIB_DEPENDS =	devel/kf5/kross \
 		x11/qt5/qtscript
+CONFIGURE_ENV =	CXXFLAGS="${CXXFLAGS} -fdeclspec"
 
 TEST_IS_INTERACTIVE =	X11
 

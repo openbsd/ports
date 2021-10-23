@@ -1,0 +1,38 @@
+$OpenBSD: patch-toolkit_components_downloads_DownloadIntegration_jsm,v 1.1 2021/09/07 13:43:04 landry Exp $
+
+https://bugzilla.mozilla.org/show_bug.cgi?id=1696958
+revert parts of https://hg.mozilla.org/mozilla-central/rev/aadba76932ea
+
+Index: toolkit/components/downloads/DownloadIntegration.jsm
+--- toolkit/components/downloads/DownloadIntegration.jsm.orig
++++ toolkit/components/downloads/DownloadIntegration.jsm
+@@ -68,6 +68,7 @@ ChromeUtils.defineModuleGetter(
+   "NetUtil",
+   "resource://gre/modules/NetUtil.jsm"
+ );
++ChromeUtils.defineModuleGetter(this, "OS", "resource://gre/modules/osfile.jsm");
+ ChromeUtils.defineModuleGetter(
+   this,
+   "CloudStorage",
+@@ -365,9 +366,7 @@ var DownloadIntegration = {
+             Ci.nsIFile
+           );
+           directoryPath = directory.path;
+-          await IOUtils.makeDirectory(directoryPath, {
+-            createAncestors: false,
+-          });
++          await OS.File.makeDir(directoryPath, { ignoreExisting: true });
+         } catch (ex) {
+           // Either the preference isn't set or the directory cannot be created.
+           directoryPath = await this.getSystemDownloadsDirectory();
+@@ -943,8 +942,8 @@ var DownloadIntegration = {
+     );
+ 
+     // Create the Downloads folder and ignore if it already exists.
+-    return IOUtils.makeDirectory(directoryPath, {
+-      createAncestors: false,
++    return OS.File.makeDir(directoryPath, {
++      ignoreExisting: true
+     }).then(() => directoryPath);
+   },
+ 

@@ -1,7 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/06/19 18:34:34 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/09/10 08:43:50 rsadowski Exp $
 @pkgpath x11/kde4/kapman
 @bin bin/kapman
 share/applications/org.kde.kapman.desktop
+share/doc/HTML/ca/kapman/
+share/doc/HTML/ca/kapman/config.png
+share/doc/HTML/ca/kapman/index.cache.bz2
+share/doc/HTML/ca/kapman/index.docbook
+share/doc/HTML/ca/kapman/kapman.png
 share/doc/HTML/de/kapman/
 share/doc/HTML/de/kapman/config.png
 share/doc/HTML/de/kapman/index.cache.bz2

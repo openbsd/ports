@@ -1,0 +1,4 @@
+pngcheck basically checks png files for corruption
+png-fix-IDAT-windowsize repairs minor zlib header breakage
+	from an older libpng
+pngsplit breaks a png into constituent

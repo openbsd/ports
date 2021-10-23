@@ -1,9 +1,9 @@
-$OpenBSD: patch-deps_openssl_openssl_asm_gypi,v 1.1 2019/01/21 23:46:01 abieber Exp $
+$OpenBSD: patch-deps_openssl_openssl_asm_gypi,v 1.2 2021/09/06 13:27:41 sthen Exp $
 
 Index: deps/openssl/openssl_asm.gypi
 --- deps/openssl/openssl_asm.gypi.orig
 +++ deps/openssl/openssl_asm.gypi
-@@ -22,6 +22,8 @@
+@@ -24,6 +24,8 @@
        'includes': ['config/archs/linux-elf/asm/openssl.gypi'],
      }, 'target_arch=="ia32" and OS=="mac"', {
        'includes': ['config/archs/darwin-i386-cc/asm/openssl.gypi'],
@@ -12,7 +12,7 @@ Index: deps/openssl/openssl_asm.gypi
      }, 'target_arch=="ia32" and OS=="solaris"', {
        'includes': ['config/archs/solaris-x86-gcc/asm/openssl.gypi'],
      }, 'target_arch=="ia32" and OS=="win"', {
-@@ -48,6 +50,8 @@
+@@ -50,6 +52,8 @@
        'includes': ['config/archs/BSD-x86_64/asm/openssl.gypi'],
      }, 'target_arch=="x64" and OS=="mac"', {
        'includes': ['config/archs/darwin64-x86_64-cc/asm/openssl.gypi'],

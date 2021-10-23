@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2021/02/26 18:20:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2021/09/02 17:51:27 fcambus Exp $
 
 COMMENT =	crossplatform music editor for creating Commodore 64 music
 
-V =		2.75
+V =		2.76
 DISTNAME =	GoatTracker_${V}
 PKGNAME =	goattracker-${V}
-REVISION =	0
 
 CATEGORIES =	audio
 
@@ -24,7 +23,8 @@ COMPILER =	base-clang ports-gcc base-gcc
 
 LIB_DEPENDS =	devel/sdl
 
-WRKDIST =	${WRKDIR}/goattrk2/src
+WRKDIST =	${WRKDIR}/src
+
 FIX_CRLF_FILES =	makefile.common
 
 USE_GMAKE =	Yes
@@ -35,15 +35,12 @@ MAKE_FILE =	makefile
 
 NO_TEST =	Yes
 
-pre-configure:
-	rm ${WRKSRC}/*.o ${WRKSRC}/*/*.o
-
 do-install:
 	for f in goattrk2 gt2reloc ins2snd2 mod2sng sngspli2; do \
-		${INSTALL_PROGRAM} ${WRKDIR}/goattrk2/linux/$$f ${PREFIX}/bin; \
+		${INSTALL_PROGRAM} ${WRKDIR}/linux/$$f ${PREFIX}/bin; \
 	done
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/goattracker
-	${INSTALL_DATA} ${WRKDIR}/goattrk2/readme.txt \
+	${INSTALL_DATA} ${WRKDIR}/readme.txt \
 		${PREFIX}/share/doc/goattracker
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2020/08/20 06:40:19 robert Exp $
+@comment $OpenBSD: PLIST,v 1.12 2021/08/25 12:05:51 robert Exp $
 @bin bin/engrampa
 lib/caja/
 lib/caja/extensions-2.0/
@@ -13,8 +13,6 @@ share/applications/engrampa.desktop
 share/caja/extensions/
 share/caja/extensions/libcaja-engrampa.caja-extension
 share/dbus-1/services/org.mate.Engrampa.service
-share/engrampa/
-share/engrampa/packages.match
 share/glib-2.0/schemas/org.mate.engrampa.gschema.xml
 share/help/
 share/help/C/

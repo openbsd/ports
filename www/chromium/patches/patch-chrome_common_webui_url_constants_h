@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_webui_url_constants_h,v 1.27 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-chrome_common_webui_url_constants_h,v 1.30 2021/10/20 10:27:46 robert Exp $
 
 Index: chrome/common/webui_url_constants.h
 --- chrome/common/webui_url_constants.h.orig
 +++ chrome/common/webui_url_constants.h
-@@ -309,13 +309,13 @@ extern const char kChromeUIOSSettingsHost[];
+@@ -318,13 +318,13 @@ extern const char kChromeUIOSSettingsHost[];
  extern const char kChromeUIOSSettingsURL[];
  #endif
  
@@ -14,12 +14,12 @@ Index: chrome/common/webui_url_constants.h
  #endif
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
--    defined(OS_CHROMEOS)
-+    defined(OS_CHROMEOS) || defined(OS_BSD)
+-    defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
++    defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
  extern const char kChromeUIDiscardsHost[];
  extern const char kChromeUIDiscardsURL[];
  #endif
-@@ -330,13 +330,13 @@ extern const char kChromeUILinuxProxyConfigHost[];
+@@ -339,14 +339,14 @@ extern const char kChromeUILinuxProxyConfigHost[];
  #endif
  
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
@@ -30,12 +30,13 @@ Index: chrome/common/webui_url_constants.h
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
--#if defined(OS_WIN) || defined(OS_MAC) || \
-+#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
-     (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_FUCHSIA) || \
+-    (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
++    (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD)
  extern const char kChromeUIBrowserSwitchHost[];
  extern const char kChromeUIBrowserSwitchURL[];
-@@ -349,7 +349,7 @@ extern const char kChromeUIProfilePickerUrl[];
+ extern const char kChromeUIEnterpriseProfileWelcomeHost[];
+@@ -358,7 +358,7 @@ extern const char kChromeUIProfilePickerUrl[];
  extern const char kChromeUIProfilePickerStartupQuery[];
  #endif
  

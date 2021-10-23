@@ -1,0 +1,2 @@
+A pure ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT)
+standard.

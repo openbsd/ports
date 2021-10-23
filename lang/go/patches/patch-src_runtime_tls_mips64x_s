@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_runtime_tls_mips64x_s,v 1.1 2021/07/11 14:44:56 jsing Exp $
+$OpenBSD: patch-src_runtime_tls_mips64x_s,v 1.2 2021/08/27 18:33:27 jsing Exp $
 
 Index: src/runtime/tls_mips64x.s
 --- src/runtime/tls_mips64x.s.orig
 +++ src/runtime/tls_mips64x.s
-@@ -13,8 +13,10 @@
+@@ -14,8 +14,10 @@
  //
  // NOTE: mcall() assumes this clobbers only R23 (REGTMP).
  TEXT runtime·save_g(SB),NOSPLIT|NOFRAME,$0-0

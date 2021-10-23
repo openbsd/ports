@@ -1,82 +1,25 @@
-$OpenBSD: patch-raddb_radiusd_conf_in,v 1.14 2015/06/23 21:38:06 sthen Exp $
---- raddb/radiusd.conf.in.orig	Wed Apr 22 18:31:54 2015
-+++ raddb/radiusd.conf.in	Mon Jun 22 09:30:57 2015
-@@ -103,7 +103,7 @@ db_dir = ${raddbdir}
+$OpenBSD: patch-raddb_radiusd_conf_in,v 1.17 2021/10/08 20:20:21 sthen Exp $
+
+Index: raddb/radiusd.conf.in
+--- raddb/radiusd.conf.in.orig
++++ raddb/radiusd.conf.in
+@@ -135,7 +135,7 @@ db_dir = ${raddbdir}
  #	make
  #	make install
  #
 -libdir = @libdir@
-+libdir = @libdir@/freeradius 
++libdir = @libdir@/freeradius
  
  #  pidfile: Where to place the PID of the RADIUS server.
  #
-@@ -164,8 +164,8 @@ pidfile = ${run_dir}/${name}.pid
- #  It will join all groups where "user" is a member.  This can allow
- #  for some finer-grained access controls.
- #
--#user = radius
--#group = radius
-+user = _freeradius
-+group = _freeradius
- 
- #  panic_action: Command to execute if the server dies unexpectedly.
- #
-@@ -576,8 +576,8 @@ security {
- #
- #  allowed values: {no, yes}
- #
--proxy_requests  = yes
--$INCLUDE proxy.conf
-+proxy_requests  = no 
-+#$INCLUDE ${confdir}/proxy.conf
- 
- 
- # CLIENTS CONFIGURATION
-@@ -593,7 +593,7 @@ $INCLUDE proxy.conf
- #  Anything listed in 'clients.conf' will take precedence over the
- #  information from the old-style configuration files.
- #
--$INCLUDE clients.conf
-+$INCLUDE ${confdir}/clients.conf
- 
- 
- # THREAD POOL CONFIGURATION
-@@ -727,12 +727,12 @@ modules {
- 	#  For all EAP related authentications.
- 	#  Now in another file, because it is very large.
+@@ -531,8 +531,8 @@ security {
+ 	#  member.  This can allow for some finer-grained access
+ 	#  controls.
  	#
--	$INCLUDE eap.conf
-+	$INCLUDE ${confdir}/eap.conf
+-#	user = radius
+-#	group = radius
++	user = _freeradius
++	group = _freeradius
  
- 	#  Include another file that has the SQL-related configuration.
- 	#  This is another file only because it tends to be big.
- 	#
--#	$INCLUDE sql.conf
-+#	$INCLUDE ${confdir}/sql.conf
- 
- 	#
- 	#  This module is an SQL enabled version of the counter module.
-@@ -744,12 +744,12 @@ modules {
- 	#  totally dependent on the SQL module to process Accounting
- 	#  packets.
- 	#
--#	$INCLUDE sql/mysql/counter.conf
-+#	$INCLUDE ${confdir}/sql/mysql/counter.conf
- 
- 	#
- 	#  IP addresses managed in an SQL table.
- 	#
--#	$INCLUDE sqlippool.conf
-+#	$INCLUDE ${confdir}/sqlippool.conf
- }
- 
- # Instantiation
-@@ -823,7 +823,7 @@ instantiate {
- #	to multiple times.
- #
- ######################################################################
--$INCLUDE policy.conf
-+$INCLUDE ${confdir}/policy.conf 
- 
- ######################################################################
- #
+ 	#  Core dumps are a bad thing.  This should only be set to
+ 	#  'yes' if you're debugging a problem with the server.

@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_views_widget_widget_cc,v 1.1 2021/07/21 15:43:34 robert Exp $
+$OpenBSD: patch-ui_views_widget_widget_cc,v 1.4 2021/10/20 10:27:49 robert Exp $
 
 Index: ui/views/widget/widget.cc
 --- ui/views/widget/widget.cc.orig
 +++ ui/views/widget/widget.cc
-@@ -48,7 +48,7 @@
+@@ -51,7 +51,7 @@
  #include "ui/views/window/custom_frame_view.h"
  #include "ui/views/window/dialog_delegate.h"
  
@@ -12,7 +12,7 @@ Index: ui/views/widget/widget.cc
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
  
-@@ -1664,7 +1664,7 @@ const ui::NativeTheme* Widget::GetNativeTheme() const 
+@@ -1780,7 +1780,7 @@ const ui::NativeTheme* Widget::GetNativeTheme() const 
        parent_)
      return parent_->GetNativeTheme();
  

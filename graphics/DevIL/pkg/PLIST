@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/05/22 11:31:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/08/31 07:31:13 ajacoutot Exp $
 @bin bin/ilur
 include/IL/
 include/IL/devil_cpp_wrapper.hpp
@@ -7,13 +7,13 @@ include/IL/ilu.h
 include/IL/ilu_region.h
 include/IL/ilut.h
 @info info/DevIL_manual.info
-lib/libIL.a
+@static-lib lib/libIL.a
 lib/libIL.la
 @lib lib/libIL.so.${LIBIL_VERSION}
-lib/libILU.a
+@static-lib lib/libILU.a
 lib/libILU.la
 @lib lib/libILU.so.${LIBILU_VERSION}
-lib/libILUT.a
+@static-lib lib/libILUT.a
 lib/libILUT.la
 @lib lib/libILUT.so.${LIBILUT_VERSION}
 lib/pkgconfig/IL.pc

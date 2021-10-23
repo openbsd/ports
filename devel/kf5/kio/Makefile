@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.27 2021/08/08 12:21:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.28 2021/10/13 15:02:05 rsadowski Exp $
 
 # XXX has some internal dependency problems, look for kpasswdserver.json
 
 COMMENT =	network transparent access to files and data in KDE
 DISTNAME =	kio-${VERSION}
 
-SHARED_LIBS =	KF5KIOCore		9.4 # 5.20
-SHARED_LIBS +=	KF5KIOGui		10.1 # 5.20
-SHARED_LIBS +=	KF5KIOFileWidgets	8.0 # 5.20
+SHARED_LIBS =	KF5KIOCore		9.5 # 5.20
+SHARED_LIBS +=	KF5KIOGui		10.2 # 5.20
+SHARED_LIBS +=	KF5KIOFileWidgets	8.1 # 5.20
 SHARED_LIBS +=	KF5KIONTLM		7.0 # 5.20
-SHARED_LIBS +=	KF5KIOWidgets		8.4 # 5.20
+SHARED_LIBS +=	KF5KIOWidgets		8.5 # 5.20
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
@@ -19,7 +19,7 @@ WANTLIB += KF5JobWidgets KF5Notifications KF5Service KF5Solid
 WANTLIB += KF5SonnetUi KF5TextWidgets KF5Wallet KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5Widgets Qt5X11Extras Qt5Xml
-WANTLIB += c exslt m xml2 xslt
+WANTLIB += X11 c exslt m xml2 xslt
 
 BUILD_DEPENDS =	archivers/gtar \
 		devel/gettext,-tools \

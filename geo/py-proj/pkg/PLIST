@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/03/17 18:43:34 landry Exp $
+@comment $OpenBSD: PLIST,v 1.12 2021/10/18 07:58:39 benoit Exp $
 @conflict py-proj-*
 @pkgpath geo/py-proj
 bin/pyproj
@@ -18,7 +18,6 @@ lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}__init__.${MODPY
 lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}_show_versions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}aoi.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}datadir.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}enums.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
@@ -29,6 +28,7 @@ lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}sync.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}transformer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/pyproj/_compat.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/pyproj/_compat.pyi
 @so lib/python${MODPY_VERSION}/site-packages/pyproj/_crs.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pyproj/_crs.pyi
 @so lib/python${MODPY_VERSION}/site-packages/pyproj/_datadir.${MODPY_PYC_MAGIC_TAG}so
@@ -43,7 +43,6 @@ lib/python${MODPY_VERSION}/site-packages/pyproj/_sync.pyi
 @so lib/python${MODPY_VERSION}/site-packages/pyproj/_transformer.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pyproj/_transformer.pyi
 lib/python${MODPY_VERSION}/site-packages/pyproj/aoi.py
-lib/python${MODPY_VERSION}/site-packages/pyproj/compat.py
 lib/python${MODPY_VERSION}/site-packages/pyproj/crs/
 lib/python${MODPY_VERSION}/site-packages/pyproj/crs/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyproj/crs/${MODPY_PYCACHE}/

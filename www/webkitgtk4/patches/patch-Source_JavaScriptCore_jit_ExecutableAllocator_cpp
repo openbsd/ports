@@ -1,15 +1,16 @@
-$OpenBSD: patch-Source_JavaScriptCore_jit_ExecutableAllocator_cpp,v 1.7 2021/03/28 07:26:33 ajacoutot Exp $
+$OpenBSD: patch-Source_JavaScriptCore_jit_ExecutableAllocator_cpp,v 1.10 2021/09/14 14:03:32 robert Exp $
+
+https://trac.webkit.org/changeset/276855/webkit
 
 Index: Source/JavaScriptCore/jit/ExecutableAllocator.cpp
 --- Source/JavaScriptCore/jit/ExecutableAllocator.cpp.orig
 +++ Source/JavaScriptCore/jit/ExecutableAllocator.cpp
-@@ -105,7 +105,8 @@ static constexpr size_t maxIslandsPerRegion = islandRe
- #else
- static constexpr size_t fixedExecutableMemoryPoolSize = 128 * MB;
- #endif
--#elif CPU(X86_64)
-+// We don't want an initial allocation of 1GB, it's above the default ulimit
-+#elif CPU(X86_64) && !defined(__OpenBSD__)
- static constexpr size_t fixedExecutableMemoryPoolSize = 1 * GB;
- #else
- static constexpr size_t fixedExecutableMemoryPoolSize = 32 * MB;
+@@ -94,7 +94,7 @@ static constexpr size_t fixedExecutableMemoryPoolSize 
+ static constexpr size_t fixedExecutableMemoryPoolSize = 16 * MB;
+ #elif CPU(ARM64)
+ #if ENABLE(JUMP_ISLANDS)
+-static constexpr size_t fixedExecutableMemoryPoolSize = 1 * GB;
++static constexpr size_t fixedExecutableMemoryPoolSize = 512 * MB;
+ // These sizes guarantee that any jump within an island can jump forwards or backwards
+ // to the adjacent island in a single instruction.
+ static constexpr size_t regionSize = 112 * MB;

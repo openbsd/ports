@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_BUILD_gn,v 1.42 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-net_BUILD_gn,v 1.45 2021/10/20 10:27:47 robert Exp $
 
 Index: net/BUILD.gn
 --- net/BUILD.gn.orig
@@ -12,38 +12,7 @@ Index: net/BUILD.gn
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1354,7 +1354,7 @@ component("net") {
-     }
-   }
- 
--  if (is_android || is_chromeos_ash) {
-+  if (is_android || is_chromeos_ash || is_openbsd) {
-     sources += [
-       "base/network_change_notifier_posix.cc",
-       "base/network_change_notifier_posix.h",
-@@ -1387,13 +1387,20 @@ component("net") {
-   }
- 
-   # Use getifaddrs() on POSIX platforms, except Linux.
--  if (is_posix && !is_linux && !is_chromeos) {
-+  if (is_posix && !is_linux && !is_chromeos && !is_openbsd) {
-     sources += [
-       "base/network_interfaces_getifaddrs.cc",
-       "base/network_interfaces_getifaddrs.h",
-     ]
-   }
- 
-+  if (is_openbsd) {
-+    sources += [
-+      "base/network_interfaces_getifaddrs.cc",
-+      "base/network_interfaces_getifaddrs.h",
-+    ]
-+  }
-+
-   if (use_nss_certs) {
-     sources += [
-       "cert/internal/system_trust_store_nss.h",
-@@ -1501,6 +1508,15 @@ component("net") {
+@@ -1211,6 +1211,15 @@ component("net") {
      ]
    }
  
@@ -56,10 +25,28 @@ Index: net/BUILD.gn
 +    ]
 +  }
 +
-   if (!disable_ftp_support) {
+   if (is_mac) {
      sources += [
-       "ftp/ftp_auth_cache.cc",
-@@ -4708,7 +4724,7 @@ test("net_unittests") {
+       "base/network_notification_thread_mac.cc",
+@@ -1347,7 +1356,7 @@ component("net") {
+     }
+   }
+ 
+-  if (is_android || is_chromeos_ash) {
++  if (is_android || is_chromeos_ash || is_openbsd) {
+     sources += [
+       "base/network_change_notifier_posix.cc",
+       "base/network_change_notifier_posix.h",
+@@ -1380,7 +1389,7 @@ component("net") {
+   }
+ 
+   # Use getifaddrs() on POSIX platforms, except Linux.
+-  if (is_posix && !is_linux && !is_chromeos) {
++  if ((is_posix && !is_linux && !is_chromeos) || is_openbsd) {
+     sources += [
+       "base/network_interfaces_getifaddrs.cc",
+       "base/network_interfaces_getifaddrs.h",
+@@ -4687,7 +4696,7 @@ test("net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux and Android.

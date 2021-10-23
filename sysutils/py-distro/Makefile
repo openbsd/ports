@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2020/11/05 14:50:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2021/08/31 11:30:48 ajacoutot Exp $
 
 COMMENT=	provide information about the OS platform
 
-MODPY_EGG_VERSION=	1.5.0
+MODPY_EGG_VERSION=	1.6.0
 DISTNAME=	distro-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 

@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.17 2021/02/14 17:42:51 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.18 2021/09/01 15:01:32 ajacoutot Exp $
+@conflict py-cryptography_vectors-*
+@pkgpath security/py-cryptography_vectors
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

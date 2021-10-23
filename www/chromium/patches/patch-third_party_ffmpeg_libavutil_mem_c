@@ -1,13 +1,14 @@
-$OpenBSD: patch-third_party_ffmpeg_libavutil_mem_c,v 1.2 2013/05/30 18:42:18 robert Exp $
---- third_party/ffmpeg/libavutil/mem.c.orig.port	Fri May 17 22:46:42 2013
-+++ third_party/ffmpeg/libavutil/mem.c	Thu May 30 00:10:49 2013
-@@ -32,9 +32,6 @@
- #include <stdint.h>
+$OpenBSD: patch-third_party_ffmpeg_libavutil_mem_c,v 1.4 2021/10/20 10:27:48 robert Exp $
+Index: third_party/ffmpeg/libavutil/mem.c
+--- third_party/ffmpeg/libavutil/mem.c.orig
++++ third_party/ffmpeg/libavutil/mem.c
+@@ -33,9 +33,6 @@
  #include <stdlib.h>
+ #include <stdatomic.h>
  #include <string.h>
 -#if HAVE_MALLOC_H
 -#include <malloc.h>
 -#endif
  
- #include "avassert.h"
  #include "avutil.h"
+ #include "common.h"

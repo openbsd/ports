@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.8 2021/07/18 14:17:05 jca Exp $
+# $OpenBSD: Makefile,v 1.9 2021/08/29 08:47:29 jca Exp $
 
 COMMENT =		filesystem events monitoring
 
 MODPY_EGG_VERSION =	0.9.6
 DISTNAME =		pyinotify-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/seb-m/pyinotify
 
-MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
-
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		pthread ${MODPY_WANTLIB} lib/inotify/inotify
+# dlopen()ed
+WANTLIB =		lib/inotify/inotify
 
 LIB_DEPENDS =		devel/libinotify
 MAKE_ENV =		LIBRARY_PATH="${LOCALBASE}/lib/inotify:${LOCALBASE}/lib" \
@@ -27,7 +26,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR ?=		python3
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/setup.py ${WRKSRC}/python*/pyinotify.py

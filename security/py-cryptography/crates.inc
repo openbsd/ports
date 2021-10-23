@@ -1,0 +1,32 @@
+# $OpenBSD: crates.inc,v 1.1 2021/09/06 20:56:50 sthen Exp $
+
+MODCARGO_CRATES +=	bitflags	1.2.1	# MIT/Apache-2.0
+MODCARGO_CRATES +=	cfg-if	1.0.0	# MIT/Apache-2.0
+MODCARGO_CRATES +=	ctor	0.1.19	# Apache-2.0 OR MIT
+MODCARGO_CRATES +=	ghost	0.1.2	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	indoc	0.3.6	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	indoc-impl	0.3.6	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	instant	0.1.9	# BSD-3-Clause
+MODCARGO_CRATES +=	inventory	0.1.10	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	inventory-impl	0.1.10	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	libc	0.2.85	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	lock_api	0.4.2	# Apache-2.0/MIT
+MODCARGO_CRATES +=	parking_lot	0.11.1	# Apache-2.0/MIT
+MODCARGO_CRATES +=	parking_lot_core	0.8.3	# Apache-2.0/MIT
+MODCARGO_CRATES +=	paste	0.1.18	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	paste-impl	0.1.18	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	proc-macro-hack	0.5.19	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	proc-macro2	1.0.24	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	pyo3	0.13.2	# Apache-2.0
+MODCARGO_CRATES +=	pyo3-macros	0.13.2	# Apache-2.0
+MODCARGO_CRATES +=	pyo3-macros-backend	0.13.2	# Apache-2.0
+MODCARGO_CRATES +=	quote	1.0.9	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	redox_syscall	0.2.4	# MIT
+MODCARGO_CRATES +=	scopeguard	1.1.0	# MIT/Apache-2.0
+MODCARGO_CRATES +=	smallvec	1.6.1	# MIT/Apache-2.0
+MODCARGO_CRATES +=	syn	1.0.60	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	unicode-xid	0.2.1	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	unindent	0.1.7	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	winapi	0.3.9	# MIT/Apache-2.0
+MODCARGO_CRATES +=	winapi-i686-pc-windows-gnu	0.4.0	# MIT/Apache-2.0
+MODCARGO_CRATES +=	winapi-x86_64-pc-windows-gnu	0.4.0	# MIT/Apache-2.0

@@ -1,0 +1,14 @@
+$OpenBSD: patch-tests_config_py,v 1.1.1.1 2021/09/02 08:45:37 sthen Exp $
+
+Index: tests/config.py
+--- tests/config.py.orig
++++ tests/config.py
+@@ -107,7 +107,7 @@ class Config_:
+                     "out_stream": None,
+                     "pty": False,
+                     "replace_env": False,
+-                    "shell": "/bin/bash",
++                    "shell": "/bin/sh",
+                     "warn": False,
+                     "watchers": [],
+                 },

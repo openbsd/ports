@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_system_menu_model_builder_cc,v 1.19 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_system_menu_model_builder_cc,v 1.22 2021/10/20 10:27:46 robert Exp $
 
 Index: chrome/browser/ui/views/frame/system_menu_model_builder.cc
 --- chrome/browser/ui/views/frame/system_menu_model_builder.cc.orig
 +++ chrome/browser/ui/views/frame/system_menu_model_builder.cc
-@@ -68,7 +68,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
+@@ -78,7 +78,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
      ui::SimpleMenuModel* model) {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -12,16 +12,16 @@ Index: chrome/browser/ui/views/frame/system_menu_model_builder.cc
    model->AddItemWithStringId(IDC_MINIMIZE_WINDOW, IDS_MINIMIZE_WINDOW_MENU);
    model->AddItemWithStringId(IDC_MAXIMIZE_WINDOW, IDS_MAXIMIZE_WINDOW_MENU);
    model->AddItemWithStringId(IDC_RESTORE_WINDOW, IDS_RESTORE_WINDOW_MENU);
-@@ -85,7 +85,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
+@@ -94,7 +94,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
    }
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
 -#if defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)
 +#if (defined(OS_LINUX) || defined(OS_BSD)) && !BUILDFLAG(IS_CHROMEOS_LACROS)
    model->AddSeparator(ui::NORMAL_SEPARATOR);
-   model->AddCheckItemWithStringId(IDC_USE_SYSTEM_TITLE_BAR,
-                                   IDS_SHOW_WINDOW_DECORATIONS_MENU);
-@@ -128,7 +128,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForAppOrPo
+   bool supports_server_side_decorations = true;
+ #if defined(USE_OZONE) && \
+@@ -151,7 +151,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForAppOrPo
    }
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

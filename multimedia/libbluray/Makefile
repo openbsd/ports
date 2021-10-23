@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2021/08/14 09:52:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2021/10/18 04:14:52 rsadowski Exp $
 
 COMMENT =		library supporting Blu-ray playback
 
 V =			1.3.0
 DISTNAME =		libbluray-${V}
-REVISION =		0
+REVISION =		1
 CATEGORIES =		multimedia
 
 HOMEPAGE =		https://www.videolan.org/developers/libbluray.html
@@ -17,11 +17,12 @@ EXTRACT_SUFX =		.tar.bz2
 PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c expat fontconfig freetype iconv lzma m pthread
-WANTLIB +=		xml2 z
+WANTLIB +=		udfread xml2 z
 
 SHARED_LIBS +=		bluray		3.2	# 11.0
 
 LIB_DEPENDS =		converters/libiconv \
+			multimedia/libudfread \
 			textproc/libxml
 BUILD_DEPENDS =		devel/bison
 

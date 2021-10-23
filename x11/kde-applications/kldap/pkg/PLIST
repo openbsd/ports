@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/06/19 18:34:38 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/09/10 08:43:54 rsadowski Exp $
 include/KF5/KLDAP/
 include/KF5/KLDAP/KLDAP/
 include/KF5/KLDAP/KLDAP/AddHostDialog
@@ -101,8 +101,6 @@ share/doc/HTML/uk/kioslave5/ldap/
 share/doc/HTML/uk/kioslave5/ldap/index.cache.bz2
 share/doc/HTML/uk/kioslave5/ldap/index.docbook
 share/kf5/mkspecs/qt_Ldap.pri
-share/kservices5/ldap.protocol
-share/kservices5/ldaps.protocol
 share/locale/ar/LC_MESSAGES/kio_ldap.mo
 share/locale/ar/LC_MESSAGES/libkldap5.mo
 share/locale/be/LC_MESSAGES/kio_ldap.mo

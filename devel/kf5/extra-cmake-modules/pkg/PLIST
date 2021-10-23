@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2021/08/08 12:21:35 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.25 2021/09/10 08:42:03 rsadowski Exp $
 @man man/man7/ecm-developer.7
 @man man/man7/ecm-find-modules.7
 @man man/man7/ecm-kde-modules.7
@@ -11,6 +11,7 @@ share/ECM/cmake/ECMConfig.cmake
 share/ECM/cmake/ECMConfigVersion.cmake
 share/ECM/find-modules/
 share/ECM/find-modules/ECMFindModuleHelpersStub.cmake
+share/ECM/find-modules/Find7z.cmake
 share/ECM/find-modules/FindCanberra.cmake
 share/ECM/find-modules/FindEGL.cmake
 share/ECM/find-modules/FindGLIB2.cmake
@@ -43,6 +44,7 @@ share/ECM/find-modules/FindWaylandScanner.cmake
 share/ECM/find-modules/FindX11_XCB.cmake
 share/ECM/find-modules/FindXCB.cmake
 share/ECM/find-modules/Findepoxy.cmake
+share/ECM/find-modules/Findgzip.cmake
 share/ECM/find-modules/GeneratePythonBindingUmbrellaModule.cmake
 share/ECM/find-modules/Qt5Ruleset.py
 ${MODPY_COMMENT}share/ECM/find-modules/${MODPY_PYCACHE}/
@@ -59,6 +61,7 @@ share/ECM/kde-modules/
 share/ECM/kde-modules/KDECMakeSettings.cmake
 share/ECM/kde-modules/KDEClangFormat.cmake
 share/ECM/kde-modules/KDECompilerSettings.cmake
+share/ECM/kde-modules/KDEFrameworkCompilerLegacySettings.cmake
 share/ECM/kde-modules/KDEFrameworkCompilerSettings.cmake
 share/ECM/kde-modules/KDEGitCommitHooks.cmake
 share/ECM/kde-modules/KDEInstallDirs.cmake
@@ -127,6 +130,7 @@ share/doc/ECM/ExtraCMakeModules.qch
 share/doc/ECM/html/
 share/doc/ECM/html/_sources/
 share/doc/ECM/html/_sources/find-module/
+share/doc/ECM/html/_sources/find-module/Find7z.rst.txt
 share/doc/ECM/html/_sources/find-module/FindCanberra.rst.txt
 share/doc/ECM/html/_sources/find-module/FindEGL.rst.txt
 share/doc/ECM/html/_sources/find-module/FindGLIB2.rst.txt
@@ -156,6 +160,7 @@ share/doc/ECM/html/_sources/find-module/FindWaylandScanner.rst.txt
 share/doc/ECM/html/_sources/find-module/FindX11_XCB.rst.txt
 share/doc/ECM/html/_sources/find-module/FindXCB.rst.txt
 share/doc/ECM/html/_sources/find-module/Findepoxy.rst.txt
+share/doc/ECM/html/_sources/find-module/Findgzip.rst.txt
 share/doc/ECM/html/_sources/index.rst.txt
 share/doc/ECM/html/_sources/kde-module/
 share/doc/ECM/html/_sources/kde-module/KDECMakeSettings.rst.txt
@@ -225,6 +230,7 @@ share/doc/ECM/html/_static/sidebar.js
 share/doc/ECM/html/_static/underscore-1.13.1.js
 share/doc/ECM/html/_static/underscore.js
 share/doc/ECM/html/find-module/
+share/doc/ECM/html/find-module/Find7z.html
 share/doc/ECM/html/find-module/FindCanberra.html
 share/doc/ECM/html/find-module/FindEGL.html
 share/doc/ECM/html/find-module/FindGLIB2.html
@@ -254,6 +260,7 @@ share/doc/ECM/html/find-module/FindWaylandScanner.html
 share/doc/ECM/html/find-module/FindX11_XCB.html
 share/doc/ECM/html/find-module/FindXCB.html
 share/doc/ECM/html/find-module/Findepoxy.html
+share/doc/ECM/html/find-module/Findgzip.html
 share/doc/ECM/html/genindex.html
 share/doc/ECM/html/index.html
 share/doc/ECM/html/kde-module/

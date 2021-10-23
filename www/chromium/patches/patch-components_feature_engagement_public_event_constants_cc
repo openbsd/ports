@@ -1,21 +1,14 @@
-$OpenBSD: patch-components_feature_engagement_public_event_constants_cc,v 1.14 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-components_feature_engagement_public_event_constants_cc,v 1.17 2021/10/20 10:27:46 robert Exp $
 
 Index: components/feature_engagement/public/event_constants.cc
 --- components/feature_engagement/public/event_constants.cc.orig
 +++ components/feature_engagement/public/event_constants.cc
-@@ -11,13 +11,13 @@ namespace feature_engagement {
+@@ -11,7 +11,7 @@ namespace feature_engagement {
  namespace events {
  
  #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
--    defined(OS_CHROMEOS)
-+    defined(OS_CHROMEOS) || defined(OS_BSD)
+-    defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
++    defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
  const char kNewTabOpened[] = "new_tab_opened";
- #endif  // defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) ||
-         // defined(OS_CHROMEOS)
- 
- #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
--    defined(OS_CHROMEOS)
-+    defined(OS_CHROMEOS) || defined(OS_BSD)
  const char kSixthTabOpened[] = "sixth_tab_opened";
  const char kTabGroupCreated[] = "tab_group_created";
- 

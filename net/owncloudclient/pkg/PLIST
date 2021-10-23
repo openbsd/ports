@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/01/10 20:30:15 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.14 2021/10/04 11:15:20 kirby Exp $
 @conflict ocsync-*
 @conflict mirall-*
 @pkgpath net/ocsync
@@ -105,40 +105,6 @@ share/nautilus-python/extensions/syncstate-ownCloud.py
 share/nemo-python/
 share/nemo-python/extensions/
 share/nemo-python/extensions/syncstate-ownCloud.py
-share/owncloud/
-share/owncloud/i18n/
-share/owncloud/i18n/client_TW.qm
-share/owncloud/i18n/client_ca.qm
-share/owncloud/i18n/client_cs.qm
-share/owncloud/i18n/client_de.qm
-share/owncloud/i18n/client_el.qm
-share/owncloud/i18n/client_en.qm
-share/owncloud/i18n/client_es.qm
-share/owncloud/i18n/client_es_AR.qm
-share/owncloud/i18n/client_et.qm
-share/owncloud/i18n/client_eu.qm
-share/owncloud/i18n/client_fa.qm
-share/owncloud/i18n/client_fi.qm
-share/owncloud/i18n/client_fr.qm
-share/owncloud/i18n/client_gl.qm
-share/owncloud/i18n/client_hu.qm
-share/owncloud/i18n/client_it.qm
-share/owncloud/i18n/client_ja.qm
-share/owncloud/i18n/client_nb_NO.qm
-share/owncloud/i18n/client_nl.qm
-share/owncloud/i18n/client_pl.qm
-share/owncloud/i18n/client_pt.qm
-share/owncloud/i18n/client_pt_BR.qm
-share/owncloud/i18n/client_ru.qm
-share/owncloud/i18n/client_sk.qm
-share/owncloud/i18n/client_sl.qm
-share/owncloud/i18n/client_sr.qm
-share/owncloud/i18n/client_sv.qm
-share/owncloud/i18n/client_th.qm
-share/owncloud/i18n/client_tr.qm
-share/owncloud/i18n/client_uk.qm
-share/owncloud/i18n/client_zh_CN.qm
-share/owncloud/i18n/client_zh_TW.qm
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database

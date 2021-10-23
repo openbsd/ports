@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/06/28 07:26:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.14 2021/10/19 10:47:56 kn Exp $
 bin/gpo
 bin/gpodder
 bin/gpodder-migrate2tres
@@ -334,6 +334,7 @@ share/locale/pt/LC_MESSAGES/gpodder.mo
 share/locale/pt_BR/LC_MESSAGES/gpodder.mo
 share/locale/ro/LC_MESSAGES/gpodder.mo
 share/locale/ru/LC_MESSAGES/gpodder.mo
+share/locale/sk/LC_MESSAGES/gpodder.mo
 share/locale/sv/LC_MESSAGES/gpodder.mo
 share/locale/tr/LC_MESSAGES/gpodder.mo
 share/locale/uk/LC_MESSAGES/gpodder.mo

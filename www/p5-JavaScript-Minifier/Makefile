@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/03 21:46:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/10/17 10:29:09 sthen Exp $
 
 COMMENT=	Perl extension for minifying JavaScript code
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	JavaScript-Minifier-1.05
-REVISION=	2
+DISTNAME=	JavaScript-Minifier-1.16
 CATEGORIES=	www
 
 # perl

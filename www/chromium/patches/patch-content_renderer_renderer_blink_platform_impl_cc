@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_renderer_renderer_blink_platform_impl_cc,v 1.31 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-content_renderer_renderer_blink_platform_impl_cc,v 1.33 2021/10/20 10:27:47 robert Exp $
 
 Index: content/renderer/renderer_blink_platform_impl.cc
 --- content/renderer/renderer_blink_platform_impl.cc.orig
 +++ content/renderer/renderer_blink_platform_impl.cc
-@@ -106,7 +106,7 @@
+@@ -108,7 +108,7 @@
  
  #if defined(OS_MAC)
  #include "content/child/child_process_sandbox_support_impl_mac.h"
@@ -12,7 +12,7 @@ Index: content/renderer/renderer_blink_platform_impl.cc
  #include "content/child/child_process_sandbox_support_impl_linux.h"
  #endif
  
-@@ -175,7 +175,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
+@@ -177,7 +177,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
        main_thread_scheduler_(main_thread_scheduler) {
    // RenderThread may not exist in some tests.
    if (RenderThreadImpl::current()) {
@@ -21,7 +21,7 @@ Index: content/renderer/renderer_blink_platform_impl.cc
      mojo::PendingRemote<font_service::mojom::FontService> font_service;
      RenderThreadImpl::current()->BindHostReceiver(
          font_service.InitWithNewPipeAndPassReceiver());
-@@ -185,7 +185,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
+@@ -187,7 +187,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
  #endif
    }
  

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/08/08 12:21:35 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/09/10 08:42:03 rsadowski Exp $
 @conflict kcalcore-*
 @pkgpath x11/kde-applications/kcalcore
 include/KF5/
@@ -11,6 +11,7 @@ include/KF5/KCalendarCore/KCalCore/CalFilter
 include/KF5/KCalendarCore/KCalCore/CalFormat
 include/KF5/KCalendarCore/KCalCore/CalStorage
 include/KF5/KCalendarCore/KCalCore/Calendar
+include/KF5/KCalendarCore/KCalCore/CalendarPlugin
 include/KF5/KCalendarCore/KCalCore/Conference
 include/KF5/KCalendarCore/KCalCore/CustomProperties
 include/KF5/KCalendarCore/KCalCore/Duration
@@ -43,6 +44,7 @@ include/KF5/KCalendarCore/KCalendarCore/CalFilter
 include/KF5/KCalendarCore/KCalendarCore/CalFormat
 include/KF5/KCalendarCore/KCalendarCore/CalStorage
 include/KF5/KCalendarCore/KCalendarCore/Calendar
+include/KF5/KCalendarCore/KCalendarCore/CalendarPlugin
 include/KF5/KCalendarCore/KCalendarCore/Conference
 include/KF5/KCalendarCore/KCalendarCore/CustomProperties
 include/KF5/KCalendarCore/KCalendarCore/Duration
@@ -72,6 +74,7 @@ include/KF5/KCalendarCore/kcalcore/alarm.h
 include/KF5/KCalendarCore/kcalcore/attachment.h
 include/KF5/KCalendarCore/kcalcore/attendee.h
 include/KF5/KCalendarCore/kcalcore/calendar.h
+include/KF5/KCalendarCore/kcalcore/calendarplugin.h
 include/KF5/KCalendarCore/kcalcore/calfilter.h
 include/KF5/KCalendarCore/kcalcore/calformat.h
 include/KF5/KCalendarCore/kcalcore/calstorage.h
@@ -105,6 +108,7 @@ include/KF5/KCalendarCore/kcalendarcore/alarm.h
 include/KF5/KCalendarCore/kcalendarcore/attachment.h
 include/KF5/KCalendarCore/kcalendarcore/attendee.h
 include/KF5/KCalendarCore/kcalendarcore/calendar.h
+include/KF5/KCalendarCore/kcalendarcore/calendarplugin.h
 include/KF5/KCalendarCore/kcalendarcore/calfilter.h
 include/KF5/KCalendarCore/kcalendarcore/calformat.h
 include/KF5/KCalendarCore/kcalendarcore/calstorage.h

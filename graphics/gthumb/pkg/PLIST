@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2021/02/05 09:36:10 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.40 2021/08/29 09:56:34 jasper Exp $
 @bin bin/gthumb
 include/gthumb/
 include/gthumb/cairo-scale.h
@@ -201,6 +201,7 @@ lib/gthumb/extensions/webalbums.extension
 lib/pkgconfig/gthumb-3.10.pc
 @man man/man1/gthumb.1
 share/aclocal/gthumb.m4
+share/applications/org.gnome.gThumb.Import.desktop
 share/applications/org.gnome.gThumb.desktop
 share/glib-2.0/schemas/org.gnome.gthumb.catalogs.gschema.xml
 share/glib-2.0/schemas/org.gnome.gthumb.change-date.gschema.xml

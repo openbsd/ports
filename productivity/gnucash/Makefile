@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.132 2021/07/01 11:51:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.133 2021/10/09 05:58:16 ajacoutot Exp $
 
 COMMENT =		personal and small-business financial-accounting software
 
 GNOME_PROJECT =		gnucash
-GNOME_VERSION =		4.6
+GNOME_VERSION =		4.8
 EXTRACT_SUFX =		.tar.bz2
-
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			gnucash-docs-${GNOME_VERSION}.tar.gz
 
 SHARED_LIBS +=  gnc-core-utils       1.1      # unknown
 SHARED_LIBS +=  gnc-module           1.0      # unknown
@@ -21,7 +18,7 @@ HOMEPAGE =		https://www.gnucash.org/
 
 MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# GPLv3
+# GPLv2+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} aqbanking atk-1.0 boost_date_time-mt
@@ -41,13 +38,14 @@ MODULES =		devel/dconf \
 			devel/cmake \
 			x11/gnome
 
-MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache yelp
+MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache
 
 BUILD_DEPENDS =		databases/libdbi-drivers,-sqlite3 \
 			devel/gtest \
 			devel/swig
 
-RUN_DEPENDS =		databases/libdbi-drivers,-sqlite3
+RUN_DEPENDS =		databases/libdbi-drivers,-sqlite3 \
+			productivity/gnucash-docs=${GNOME_VERSION}
 
 # gnc-fq-helper(1)
 RUN_DEPENDS +=		converters/p5-DateManip \
@@ -77,23 +75,12 @@ CXXFLAGS +=		-Wno-error
 
 MAKE_ENV =		GUILE_AUTO_COMPILE=0
 
-DOC_DIR =		${WRKDIR}/gnucash-docs-${GNOME_VERSION}
-
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/libgnucash/core-utils/gnc-path.c
 
-post-configure:
-	cd ${DOC_DIR} && ${SETENV} ${CONFIGURE_ENV} MKDIR_P="mkdir -p" \
-		/bin/sh ./configure
-
-post-build:
-	cd ${DOC_DIR} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS}
-
 post-install:
-	cd ${DOC_DIR} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} install
 # requires hardcoded gnucash sources path to work
 	rm ${PREFIX}/bin/gnucash-valgrind
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples

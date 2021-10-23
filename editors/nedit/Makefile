@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.82 2020/04/12 14:46:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.83 2021/09/18 11:21:52 tb Exp $
 
 COMMENT=		a fast, compact Motif/X11 plain text editor
 
 DISTNAME=		nedit-5.7
 P_V=			0.5
 EPOCH=			0
-REVISION =		0
+REVISION =		1
 DISTFILES=		${DISTNAME}-src${EXTRACT_SUFX} \
 			nedit_patterns-${P_V}.tgz:0
 

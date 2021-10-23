@@ -1,0 +1,224 @@
+$OpenBSD: patch-libphobos_libdruntime_config_powerpc_switchcontext_S,v 1.1 2021/10/18 00:25:49 gkoehler Exp $
+
+Add fibers for powerpc64 ELFv2, and fix fibers for 32-bit powerpc ELF.
+The old code was for some other platform (AIX?), not BSD nor Linux.
+This patch fixes OpenBSD but might break the other platform.
+
+This patch doesn't save altivec registers v20..v31, because gcc
+disables altivec by default.
+
+Index: libphobos/libdruntime/config/powerpc/switchcontext.S
+--- libphobos/libdruntime/config/powerpc/switchcontext.S.orig
++++ libphobos/libdruntime/config/powerpc/switchcontext.S
+@@ -24,7 +24,210 @@ see the files COPYING3 and COPYING.RUNTIME respectivel
+ 
+ #include "../common/threadasm.S"
+ 
+-#if !defined(__PPC64__) && !defined(__MACH__)
++#if defined(__ELF__)
++
++/**
++ * Performs a context switch.
++ *
++ * r3 - old context pointer
++ * r4 - new context pointer
++ *
++ */
++    .text
++    .globl CSYM(fiber_switchContext)
++    .type CSYM(fiber_switchContext), @function
++    .align 2
++CSYM(fiber_switchContext):
++    .cfi_startproc
++#ifdef __PPC64__
++    /* ELF64 - Save linkage area */
++    mflr        0
++    mfcr        5
++    std     0, 16(1)
++    stw     5, 8(1)
++
++    /* Make room for 18 GPRs, 18 FPRs */
++    addi    6, 1, -18 * 8
++    addi    1, 6, -18 * 8
++
++    /* Save GPRs */
++    std     31, (17 * 8)(6)
++    std     30, (16 * 8)(6)
++    std     29, (15 * 8)(6)
++    std     28, (14 * 8)(6)
++    std     27, (13 * 8)(6)
++    std     26, (12 * 8)(6)
++    std     25, (11 * 8)(6)
++    std     24, (10 * 8)(6)
++    std     23, (9 * 8)(6)
++    std     22, (8 * 8)(6)
++    std     21, (7 * 8)(6)
++    std     20, (6 * 8)(6)
++    std     19, (5 * 8)(6)
++    std     18, (4 * 8)(6)
++    std     17, (3 * 8)(6)
++    std     16, (2 * 8)(6)
++    std     15, (1 * 8)(6)
++    std     14, (0 * 8)(6)
++#else
++    /* ELF32 - Save linkage area */
++    mflr        0
++    mfcr        5
++    stw     0, 4(1)
++
++    /* Make room for 18 GPRs, CR, 18 FPRs; rounding up so r1 stays
++       16-byte aligned.  We must move r1, because ELF32 allows
++       signals to clobber below r1 (no red zone). */
++    addi    6, 1, -20 * 4
++    addi    1, 6, -18 * 8
++
++    /* Save GPRs */
++    stw     31, (19 * 4)(6)
++    stw     30, (18 * 4)(6)
++    stw     29, (17 * 4)(6)
++    stw     28, (16 * 4)(6)
++    stw     27, (15 * 4)(6)
++    stw     26, (14 * 4)(6)
++    stw     25, (13 * 4)(6)
++    stw     24, (12 * 4)(6)
++    stw     23, (11 * 4)(6)
++    stw     22, (10 * 4)(6)
++    stw     21, (9 * 4)(6)
++    stw     20, (8 * 4)(6)
++    stw     19, (7 * 4)(6)
++    stw     18, (6 * 4)(6)
++    stw     17, (5 * 4)(6)
++    stw     16, (4 * 4)(6)
++    stw     15, (3 * 4)(6)
++    stw     14, (2 * 4)(6)
++
++    /* Save condition register */
++    stw     5, 0(6)
++#endif
++
++    /* ELF32 and ELF64 - Save FPRs */
++    stfd    31, (-1 * 8)(6)
++    stfd    30, (-2 * 8)(6)
++    stfd    29, (-3 * 8)(6)
++    stfd    28, (-4 * 8)(6)
++    stfd    27, (-5 * 8)(6)
++    stfd    26, (-6 * 8)(6)
++    stfd    25, (-7 * 8)(6)
++    stfd    24, (-8 * 8)(6)
++    stfd    23, (-9 * 8)(6)
++    stfd    22, (-10 * 8)(6)
++    stfd    21, (-11 * 8)(6)
++    stfd    20, (-12 * 8)(6)
++    stfd    19, (-13 * 8)(6)
++    stfd    18, (-14 * 8)(6)
++    stfd    17, (-15 * 8)(6)
++    stfd    16, (-16 * 8)(6)
++    stfd    15, (-17 * 8)(6)
++    stfd    14, (-18 * 8)(6)
++
++    /* Save r6 in the old context, since we do not want the GC to
++       scan the floating point registers. */
++
++#ifdef __PPC64__
++    /* ELF64 - Update the old stack pointer */
++    std     6, 0(3)
++
++    /* Set new stack pointer */
++    addi    1, 4, -18 * 8
++
++    /* Set condition and link register.  If lr is &fiber_entryPoint,
++       then ELFv2 ABI needs the same address in r12. */
++    lwz     5, (18 * 8 + 8)(4)
++    ld      12, (18 * 8 + 16)(4)
++    mtcr        5
++    mtlr        12
++#else
++    /* ELF32 - Update the old stack pointer */
++    stw     6, 0(3)
++
++    /* Set new stack pointer */
++    addi    1, 4, -18 * 8
++
++    /* Set condition and link register */
++    lwz     5, 0(4)
++    lwz     12, (20 * 4 + 4)(4)
++    mtcr        5
++    mtlr        12
++#endif
++
++    /* PPC32 and PPC64 - Restore FPRs */
++    lfd     14, (-18 * 8)(4)
++    lfd     15, (-17 * 8)(4)
++    lfd     16, (-16 * 8)(4)
++    lfd     17, (-15 * 8)(4)
++    lfd     18, (-14 * 8)(4)
++    lfd     19, (-13 * 8)(4)
++    lfd     20, (-12 * 8)(4)
++    lfd     21, (-11 * 8)(4)
++    lfd     22, (-10 * 8)(4)
++    lfd     23, (-9 * 8)(4)
++    lfd     24, (-8 * 8)(4)
++    lfd     25, (-7 * 8)(4)
++    lfd     26, (-6 * 8)(4)
++    lfd     27, (-5 * 8)(4)
++    lfd     28, (-4 * 8)(4)
++    lfd     29, (-3 * 8)(4)
++    lfd     30, (-2 * 8)(4)
++    lfd     31, (-1 * 8)(4)
++
++#ifdef __PPC64__
++    /* PPC64 - Restore GPRs */
++    ld      14, (0 * 8)(4)
++    ld      15, (1 * 8)(4)
++    ld      16, (2 * 8)(4)
++    ld      17, (3 * 8)(4)
++    ld      18, (4 * 8)(4)
++    ld      19, (5 * 8)(4)
++    ld      20, (6 * 8)(4)
++    ld      21, (7 * 8)(4)
++    ld      22, (8 * 8)(4)
++    ld      23, (9 * 8)(4)
++    ld      24, (10 * 8)(4)
++    ld      25, (11 * 8)(4)
++    ld      26, (12 * 8)(4)
++    ld      27, (13 * 8)(4)
++    ld      28, (14 * 8)(4)
++    ld      29, (15 * 8)(4)
++    ld      30, (16 * 8)(4)
++    ld      31, (17 * 8)(4)
++
++    /* Return and switch context */
++    addi    1, 4, 18 * 8
++    blr
++#else
++    /* PPC32 - Restore GPRs */
++    lwz     14, (2 * 4)(4)
++    lwz     15, (3 * 4)(4)
++    lwz     16, (4 * 4)(4)
++    lwz     17, (5 * 4)(4)
++    lwz     18, (6 * 4)(4)
++    lwz     19, (7 * 4)(4)
++    lwz     20, (8 * 4)(4)
++    lwz     21, (9 * 4)(4)
++    lwz     22, (10 * 4)(4)
++    lwz     23, (11 * 4)(4)
++    lwz     24, (12 * 4)(4)
++    lwz     25, (13 * 4)(4)
++    lwz     26, (14 * 4)(4)
++    lwz     27, (15 * 4)(4)
++    lwz     28, (16 * 4)(4)
++    lwz     29, (17 * 4)(4)
++    lwz     30, (18 * 4)(4)
++    lwz     31, (19 * 4)(4)
++
++    /* Return and switch context */
++    addi    1, 4, 20 * 4
++    blr
++#endif
++    .cfi_endproc
++    .size CSYM(fiber_switchContext),.-CSYM(fiber_switchContext)
++
++#elif !defined(__PPC64__) && !defined(__MACH__)
+ 
+ /**
+  * Performs a context switch.

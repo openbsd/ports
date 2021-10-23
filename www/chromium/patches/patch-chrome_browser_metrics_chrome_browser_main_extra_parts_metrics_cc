@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_metrics_chrome_browser_main_extra_parts_metrics_cc,v 1.26 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-chrome_browser_metrics_chrome_browser_main_extra_parts_metrics_cc,v 1.29 2021/10/20 10:27:45 robert Exp $
 
 Index: chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
 --- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig
@@ -15,13 +15,19 @@ Index: chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
  
  #include "base/linux_util.h"
  #include "base/strings/string_split.h"
-@@ -224,7 +226,9 @@ void RecordStartupMetrics() {
+@@ -226,6 +228,7 @@ void RecordStartupMetrics() {
    base::UmaHistogramBoolean("Windows.ApplockerRunning", IsApplockerRunning());
  #endif  // defined(OS_WIN)
  
 +#if !defined(OS_BSD)
-   bluetooth_utility::ReportBluetoothAvailability();
-+#endif
- 
+   // TODO(crbug.com/1216328) Remove logging.
+   LOG(ERROR) << "crbug.com/1216328: Checking Bluetooth availability started. "
+                 "Please report if there is no report that this ends.";
+@@ -235,6 +238,7 @@ void RecordStartupMetrics() {
    // Record whether Chrome is the default browser or not.
+   LOG(ERROR) << "crbug.com/1216328: Checking default browser status started. "
+                 "Please report if there is no report that this ends.";
++#endif
    shell_integration::DefaultWebClientState default_state =
+       shell_integration::GetDefaultBrowser();
+   LOG(ERROR) << "crbug.com/1216328: Checking default browser status ended.";

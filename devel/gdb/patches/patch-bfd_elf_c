@@ -1,7 +1,8 @@
-$OpenBSD: patch-bfd_elf_c,v 1.9 2016/10/09 11:39:20 pascal Exp $
---- bfd/elf.c.orig	Fri Oct  7 19:09:21 2016
-+++ bfd/elf.c	Fri Oct  7 20:53:14 2016
-@@ -9866,6 +9866,11 @@ elfcore_grok_openbsd_procinfo (bfd *abfd, Elf_Internal
+$OpenBSD: patch-bfd_elf_c,v 1.10 2021/10/22 18:30:35 jca Exp $
+Index: bfd/elf.c
+--- bfd/elf.c.orig
++++ bfd/elf.c
+@@ -10758,6 +10758,11 @@ elfcore_grok_openbsd_procinfo (bfd *abfd, Elf_Internal
  static bfd_boolean
  elfcore_grok_openbsd_note (bfd *abfd, Elf_Internal_Note *note)
  {

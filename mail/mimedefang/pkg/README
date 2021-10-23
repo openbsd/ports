@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.9 2018/09/04 12:46:15 espie Exp $
+$OpenBSD: README,v 1.10 2021/08/28 07:45:22 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -31,7 +31,7 @@ This will create a 256M tmpfs filesystem under /var/spool/MIMEDefang.
 
 SpamAssassin
 ------------
-SpamAssassin can be used my mimedefang(8) in which case some maintenance
+SpamAssassin can be used by mimedefang(8) in which case some maintenance
 tasks are required and cron(8) jobs must be setup in root's crontab(5):
 
 - Automating SpamAssassin rule updates:

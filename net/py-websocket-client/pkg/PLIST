@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/02/19 23:13:05 sthen Exp $
-@conflict py-websocket-client-<0.37.0p4
-bin/wsdump.py${MODPY_BIN_SUFFIX}
+@comment $OpenBSD: PLIST,v 1.4 2021/09/09 14:37:25 kn Exp $
+@conflict py-websocket-client-*
+@pkgpath net/py-websocket-client
+bin/wsdump.py
 lib/python${MODPY_VERSION}/site-packages/websocket/
 lib/python${MODPY_VERSION}/site-packages/websocket/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/websocket/${MODPY_PYCACHE}/

@@ -1,0 +1,15 @@
+$OpenBSD: patch-druntime-2_098_0_src_core_sys_posix_sys_mman_d,v 1.1.1.1 2021/10/13 04:38:52 bcallah Exp $
+
+Fibers need mmap(2) MAP_STACK.
+
+Index: druntime-2.098.0/src/core/sys/posix/sys/mman.d
+--- druntime-2.098.0/src/core/sys/posix/sys/mman.d.orig
++++ druntime-2.098.0/src/core/sys/posix/sys/mman.d
+@@ -460,6 +460,7 @@ else version (OpenBSD)
+     enum MAP_PRIVATE    = 0x0002;
+     enum MAP_FIXED      = 0x0010;
+     enum MAP_ANON       = 0x1000;
++    enum MAP_STACK      = 0x4000;
+ 
+     enum MAP_FAILED     = cast(void*)-1;
+ 

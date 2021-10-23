@@ -1,15 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:45:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/09/02 18:18:45 sthen Exp $
 @pkgpath x11/msttcorefonts
 share/fonts/
 @fontdir share/fonts/mscorefonts/
+!%%no_comic%%
 share/fonts/mscorefonts/andalemo.ttf
 share/fonts/mscorefonts/arial.ttf
 share/fonts/mscorefonts/arialbd.ttf
 share/fonts/mscorefonts/arialbi.ttf
 share/fonts/mscorefonts/ariali.ttf
 share/fonts/mscorefonts/ariblk.ttf
-share/fonts/mscorefonts/comic.ttf
-share/fonts/mscorefonts/comicbd.ttf
 share/fonts/mscorefonts/cour.ttf
 share/fonts/mscorefonts/courbd.ttf
 share/fonts/mscorefonts/courbi.ttf

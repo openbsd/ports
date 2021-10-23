@@ -1,4 +1,4 @@
-$OpenBSD: patch-RepositoryExternal_mk,v 1.14 2021/07/11 13:14:06 robert Exp $
+$OpenBSD: patch-RepositoryExternal_mk,v 1.15 2021/09/02 11:11:58 robert Exp $
 
 Index: RepositoryExternal.mk
 --- RepositoryExternal.mk.orig
@@ -11,7 +11,7 @@ Index: RepositoryExternal.mk
  $(call gb_LinkTarget_set_include,$(1),\
  	$$(INCLUDE) \
  	$(BOOST_CPPFLAGS) \
-@@ -3638,6 +3639,10 @@ gb_LinkTarget__use_libgpg-error :=
+@@ -3645,6 +3646,10 @@ gb_LinkTarget__use_libgpg-error :=
  endif # ENABLE_GPGMEPP
  
  define gb_LinkTarget__use_dconf

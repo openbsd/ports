@@ -3,3 +3,7 @@ http://www.microsoft.com/typography/fontpack/. The port is constructed
 so that the actual fonts are downloaded from Sourceforge's site at
 build time so this port does not 'redistribute' the fonts, it just
 makes it easy to install them on an OpenBSD system.
+
+Optional flavour:
+
+	no_comic - for those who are not fans of Comic Sans

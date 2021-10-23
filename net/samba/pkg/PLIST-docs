@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.27 2021/05/12 23:33:24 jca Exp $
+@comment $OpenBSD: PLIST-docs,v 1.28 2021/10/18 12:25:20 jca Exp $
 @pkgpath net/samba,-docs
 share/examples/samba/LDAP/
 share/examples/samba/LDAP/README
@@ -31,12 +31,9 @@ share/examples/samba/ad-bench/time_ldap.sh
 share/examples/samba/ad-bench/time_user.sh
 share/examples/samba/ad-bench/utils.sh
 share/examples/samba/auth/
-share/examples/samba/auth/Makefile
-share/examples/samba/auth/auth_skel.c
 share/examples/samba/auth/crackcheck/
 share/examples/samba/auth/crackcheck/Makefile
 share/examples/samba/auth/crackcheck/crackcheck.c
-share/examples/samba/auth/wscript_build
 share/examples/samba/autofs/
 share/examples/samba/autofs/auto.smb
 share/examples/samba/dce-dfs/
@@ -161,6 +158,9 @@ share/examples/samba/scripts/idmap/README
 share/examples/samba/scripts/idmap/idmap_nis.sh
 @comment share/examples/samba/scripts/mount/
 @comment share/examples/samba/scripts/mount/mount.smbfs
+share/examples/samba/scripts/nmb/
+share/examples/samba/scripts/nmb/findsmb
+share/examples/samba/scripts/nmb/findsmb.1.xml
 share/examples/samba/scripts/printing/
 share/examples/samba/scripts/printing/cups/
 share/examples/samba/scripts/printing/cups/smbaddprinter.pl

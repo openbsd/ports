@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/24 16:49:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/10/20 19:40:23 naddy Exp $
 
 COMMENT=	roundcube plugin: add HTML5 notifications for new mail
 
@@ -6,7 +6,7 @@ GH_ACCOUNT=	stremlau
 GH_PROJECT=	html5_notifier
 GH_TAGNAME=	v0.6.4
 PKGNAME=	rcube-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	mail www
 
@@ -22,7 +22,6 @@ INSTDIR=	${PREFIX}/roundcubemail/plugins
 TINSTDIR=	${TRUEPREFIX}/roundcubemail/plugins
 SUBST_VARS=	INSTDIR TINSTDIR
 
-MODULES=	lang/php
 RUN_DEPENDS=	mail/roundcubemail>=1.1
 
 do-install:

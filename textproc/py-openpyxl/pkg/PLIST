@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/01/15 14:46:55 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/10/18 08:49:09 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/openpyxl/
 lib/python${MODPY_VERSION}/site-packages/openpyxl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/openpyxl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -283,7 +283,6 @@ lib/python${MODPY_VERSION}/site-packages/openpyxl/utils/
 lib/python${MODPY_VERSION}/site-packages/openpyxl/utils/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/openpyxl/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/openpyxl/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/openpyxl/utils/${MODPY_PYCACHE}_accel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/openpyxl/utils/${MODPY_PYCACHE}bound_dictionary.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/openpyxl/utils/${MODPY_PYCACHE}cell.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/openpyxl/utils/${MODPY_PYCACHE}dataframe.${MODPY_PYC_MAGIC_TAG}pyc
@@ -295,7 +294,6 @@ lib/python${MODPY_VERSION}/site-packages/openpyxl/utils/${MODPY_PYCACHE}indexed_
 lib/python${MODPY_VERSION}/site-packages/openpyxl/utils/${MODPY_PYCACHE}inference.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/openpyxl/utils/${MODPY_PYCACHE}protection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/openpyxl/utils/${MODPY_PYCACHE}units.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/openpyxl/utils/_accel.py
 lib/python${MODPY_VERSION}/site-packages/openpyxl/utils/bound_dictionary.py
 lib/python${MODPY_VERSION}/site-packages/openpyxl/utils/cell.py
 lib/python${MODPY_VERSION}/site-packages/openpyxl/utils/dataframe.py

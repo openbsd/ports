@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2021/01/30 13:07:20 kn Exp $
+# $OpenBSD: Makefile,v 1.19 2021/08/30 03:35:16 jsg Exp $
 
 COMMENT=		Device Tree Compiler
 
-DISTNAME=		dtc-1.6.0
+DISTNAME=		dtc-1.6.1
 CATEGORIES=		sysutils devel
 MASTER_SITES=		https://www.kernel.org/pub/software/utils/dtc/
 EXTRACT_SUFX=		.tar.xz

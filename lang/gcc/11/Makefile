@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/08/17 20:22:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2021/10/18 00:25:48 gkoehler Exp $
 
 #
 # When updating/switching to a new version, remember to adapt devel/llvm!
@@ -12,7 +12,7 @@ ONLY_FOR_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el \
 	powerpc powerpc64 sparc64
 
 ONLY_FOR_ARCHS-ada = amd64 i386 mips64 powerpc
-ONLY_FOR_ARCHS-dlang = aarch64 amd64 arm i386 powerpc
+ONLY_FOR_ARCHS-dlang = aarch64 amd64 arm i386 powerpc powerpc64
 
 DPB_PROPERTIES = parallel
 
@@ -20,6 +20,7 @@ V = 11.2.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 REVISION = 0
+REVISION-dlang = 1
 
 ADASTRAP-amd64 = adastrap-amd64-$V-0.tar.xz
 ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
@@ -128,6 +129,10 @@ CONFIGURE_ENV += ${EXTRA_ENV}
 MAKE_ENV += ${EXTRA_ENV}
 
 .if ${MACHINE_ARCH} == "powerpc"
+# powerpc lld can't link C++ code from gcc, "ld: error: relocation
+# refers to a discarded section:" .data.rel.ro.* or
+# .sdata.DW.ref.__gxx_personality_v0
+USE_LLD = No
 CONFIGURE_ENV += LDFLAGS="-Wl,--relax"
 .endif
 

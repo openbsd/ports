@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.14 2019/06/28 12:33:45 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.15 2021/10/15 09:47:37 benoit Exp $
 include/libssh2.h
 include/libssh2_publickey.h
 include/libssh2_sftp.h
-lib/libssh2.a
+@static-lib lib/libssh2.a
 lib/libssh2.la
 @lib lib/libssh2.so.${LIBssh2_VERSION}
 lib/pkgconfig/libssh2.pc

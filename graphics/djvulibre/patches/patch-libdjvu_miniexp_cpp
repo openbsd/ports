@@ -1,7 +1,8 @@
-$OpenBSD: patch-libdjvu_miniexp_cpp,v 1.2 2015/05/12 16:10:27 shadchin Exp $
---- libdjvu/miniexp.cpp.orig	Wed Feb 11 09:35:37 2015
-+++ libdjvu/miniexp.cpp	Sat Mar 28 21:24:09 2015
-@@ -1241,7 +1241,7 @@ static int stdio_fputs(miniexp_io_t *io, const char *s
+$OpenBSD: patch-libdjvu_miniexp_cpp,v 1.3 2021/10/20 16:31:58 mbuhl Exp $
+Index: libdjvu/miniexp.cpp
+--- libdjvu/miniexp.cpp.orig
++++ libdjvu/miniexp.cpp
+@@ -1300,7 +1300,7 @@ static int stdio_fputs(miniexp_io_t *io, const char *s
  
  static int true_stdio_fgetc(miniexp_io_t *io) {
    FILE *f = (io->data[0]) ? (FILE*)(io->data[0]) : stdin;

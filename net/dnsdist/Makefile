@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2021/05/12 05:49:04 otto Exp $
+# $OpenBSD: Makefile,v 1.24 2021/09/21 10:00:05 sthen Exp $
 
 COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
-DISTNAME=		dnsdist-1.6.0
+DISTNAME=		dnsdist-1.6.1
 EXTRACT_SUFX=		.tar.bz2
 
 CATEGORIES=		net
@@ -20,7 +20,7 @@ WANTLIB +=		${MODLUA_WANTLIB} c curses edit m \
 
 MASTER_SITES=		https://downloads.powerdns.com/releases/
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69
 USE_GMAKE=		Yes
 
@@ -36,7 +36,6 @@ CONFIGURE_ARGS+=	--without-gnutls \
 			--enable-dnstap \
 			--enable-dns-over-https
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
-			CXXFLAGS="-Wno-deprecated-copy -Wno-deprecated-declarations" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			LIBEDIT_LIBS='-ledit -lcurses' \
 			LIBEDIT_CFLAGS=' '

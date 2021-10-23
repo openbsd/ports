@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2021/07/23 18:56:19 sebastia Exp $
+# $OpenBSD: Makefile,v 1.92 2021/09/19 05:24:31 rsadowski Exp $
 
 ONLY_FOR_ARCHS =	${CLANG_ARCHS} ${LLVM_ARCHS}
 
@@ -10,7 +10,7 @@ DISTNAME =		facter-${VERSION}
 SHARED_LIBS +=  	facter                    3.3
 PKGSPEC =		facter->=3.0,<4.0
 CATEGORIES =		sysutils
-
+REVISION =		0
 
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
@@ -19,6 +19,7 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://downloads.puppetlabs.com/facter/
 
+MODRUBY_REV =		2.7
 MODULES +=		devel/cmake \
 			lang/ruby
 
@@ -35,7 +36,7 @@ WANTLIB += leatherman_curl leatherman_dynamic_library
 WANTLIB += leatherman_execution leatherman_file_util leatherman_locale
 WANTLIB += leatherman_logging leatherman_ruby leatherman_util
 
-LIB_DEPENDS =		devel/boost>=1.58 \
+LIB_DEPENDS =		devel/boost \
 			devel/cpp-hocon \
 			devel/leatherman>=0.12.1p1 \
 			devel/yaml-cpp \

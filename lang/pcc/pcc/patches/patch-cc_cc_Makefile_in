@@ -1,9 +1,9 @@
-$OpenBSD: patch-cc_cc_Makefile_in,v 1.1 2021/02/18 02:26:43 daniel Exp $
+$OpenBSD: patch-cc_cc_Makefile_in,v 1.2 2021/10/04 00:03:00 daniel Exp $
 
 Index: cc/cc/Makefile.in
 --- cc/cc/Makefile.in.orig
 +++ cc/cc/Makefile.in
-@@ -45,7 +45,7 @@ MDIR=$(top_srcdir)/arch/$(TARGMACHDIR)
+@@ -46,7 +46,7 @@ MDIR=$(top_srcdir)/arch/$(TARGMACHDIR)
  COMMONDIR=$(top_srcdir)/common
  
  DEST=cc$(EXEEXT)

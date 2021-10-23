@@ -1,4 +1,4 @@
-$OpenBSD: README-common,v 1.10 2020/10/11 15:45:31 ajacoutot Exp $
+$OpenBSD: README-common,v 1.11 2021/09/03 11:48:54 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -21,7 +21,7 @@ Installing a printer automatically using the HP tools
 (req. hplip, opt. hplip-gui)
 
 To add a CUPS printer, run the following command as root
-(prerequisite: the DBus and CUPS daemons must be running):
+(the DBus, Avahi -for network printer- and CUPS daemons must be running):
     hp-setup -i
 
 Alternatively, if you have hplip-gui installed, you can use the

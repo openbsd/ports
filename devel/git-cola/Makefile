@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2021/07/14 09:07:21 bket Exp $
+# $OpenBSD: Makefile,v 1.41 2021/10/20 04:45:01 bket Exp $
 
 COMMENT =	python powered git gui
 
-MODPY_EGG_VERSION=	3.10.1
+MODPY_EGG_VERSION=	3.11.0
 
 GH_ACCOUNT =	git-cola
 GH_PROJECT =	git-cola

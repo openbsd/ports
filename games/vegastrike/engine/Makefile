@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2021/02/26 18:20:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2021/09/19 05:24:30 rsadowski Exp $
 
 COMMENT =		3D space simulator
 
 DISTNAME =		vegastrike-src-${V}
 PKGNAME =		vegastrike-${V}
-REVISION =		8
+REVISION =		9
 
 WANTLIB += GL GLU OgreMain SDL X11 Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xmu Xrandr Xrender atk-1.0
@@ -24,7 +24,7 @@ MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 RUN_DEPENDS =		games/vegastrike/data>=${V}
 LIB_DEPENDS =		x11/gtk+2 \
 			audio/openal \
-			devel/boost>=1.67.0 \
+			devel/boost \
 			audio/libvorbis \
 			x11/ogre \
 			graphics/freeglut \

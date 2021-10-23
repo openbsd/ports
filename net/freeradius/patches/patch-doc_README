@@ -1,0 +1,25 @@
+$OpenBSD: patch-doc_README,v 1.1 2021/09/16 10:36:38 sthen Exp $
+
+Be explicit about the path; there is also /usr/sbin/radiusd in base.
+
+Index: doc/README
+--- doc/README.orig
++++ doc/README
+@@ -120,7 +120,7 @@
+   detailed and clear description of the problem, together with
+   full debug output from FreeRADIUS, obtained by running
+ 
+-    radiusd -X
++    /usr/local/sbin/radiusd -X
+ 
+   Developers only discussion is to be had on the devel list:
+ 
+@@ -166,7 +166,7 @@
+   the server, then run it in debugging mode, as root, from the
+   command line:
+ 
+-  # radiusd -X
++  # /usr/local/sbin/radiusd -X
+ 
+   It will produce a large number of messages.  The answers to many
+   questions, and the solution to many problems, can usually be found in

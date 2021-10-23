@@ -1,0 +1,17 @@
+$OpenBSD: patch-minidlna_c,v 1.11 2021/10/16 15:38:13 edd Exp $
+
+Ensure kqueue monitoring can be disabled.
+https://sourceforge.net/p/minidlna/bugs/337/
+
+Index: minidlna.c
+--- minidlna.c.orig
++++ minidlna.c
+@@ -1150,7 +1150,7 @@ main(int argc, char **argv)
+ #endif /* HAVE_INOTIFY */
+ 
+ #ifdef HAVE_KQUEUE
+-	if (!GETFLAG(SCANNING_MASK)) {
++	if (GETFLAG(INOTIFY_MASK) && !GETFLAG(SCANNING_MASK)) {
+ 		lav_register_all();
+ 		kqueue_monitor_start();
+ 	}

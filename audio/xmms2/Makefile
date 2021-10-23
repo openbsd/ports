@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.56 2021/03/03 17:07:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2021/09/03 12:51:35 ajacoutot Exp $
 
 COMMENT =		audio player daemon with library management
 
 V =			0.8
 DISTNAME =		xmms2-${V}DrO_o
 PKGNAME =		xmms2-${V}
-REVISION =		14
+REVISION =		16
 
 SHARED_LIBS +=		xmmsclient++		2.0 # 4.0.0
 SHARED_LIBS +=		xmmsclient++-glib	1.0 # 1.0.0
@@ -19,11 +19,11 @@ HOMEPAGE =		https://xmms2.org/
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += FLAC ao avahi-client avahi-common avahi-glib avcodec
-WANTLIB += avutil c curl curses gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 intl jack m mpg123 ogg pcre perl pthread readline
-WANTLIB += sndfile speex sqlite3 ${COMPILER_LIBCXX} vorbis vorbisfile
-WANTLIB += vpx x264 xml2 opus swresample x265 ${MODPY_WANTLIB}
+WANTLIB += ${COMPILER_LIBCXX} FLAC ao avahi-client avahi-common
+WANTLIB += avahi-glib avcodec avutil c curl ffi gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 intl jack m mpg123
+WANTLIB += ogg opus pcre perl python2.7 readline sndfile sqlite3
+WANTLIB += swresample vorbis vorbisenc vorbisfile xml2 z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=xmms2/}
 
@@ -48,7 +48,7 @@ LIB_DEPENDS =		devel/glib2 \
 			textproc/libxml \
 			net/curl \
 			audio/mpg123 \
-			net/avahi \
+			net/avahi,-glib \
 			audio/libsndfile
 
 WSCRIPT_PATCHES =	src/clients/lib/xmmsclient++/wscript \

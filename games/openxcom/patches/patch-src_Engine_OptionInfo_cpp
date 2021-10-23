@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_Engine_OptionInfo_cpp,v 1.1 2021/09/17 21:04:11 kirby Exp $
+
+Index: src/Engine/OptionInfo.cpp
+--- src/Engine/OptionInfo.cpp.orig
++++ src/Engine/OptionInfo.cpp
+@@ -16,6 +16,7 @@
+  * You should have received a copy of the GNU General Public License
+  * along with OpenXcom.  If not, see <http://www.gnu.org/licenses/>.
+  */
++#include <algorithm>
+ #include "OptionInfo.h"
+ #include "Exception.h"
+ 

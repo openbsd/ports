@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2021/08/20 07:52:19 pvk Exp $
+# $OpenBSD: Makefile,v 1.6 2021/10/14 12:55:11 pvk Exp $
 
 COMMENT =		radically simple IT automation
 
-MODPY_EGG_VERSION =	2.11.4
+MODPY_EGG_VERSION =	2.11.6
 DISTNAME =		ansible-core-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils

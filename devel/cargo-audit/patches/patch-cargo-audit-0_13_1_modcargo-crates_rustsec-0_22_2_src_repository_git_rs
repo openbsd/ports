@@ -1,0 +1,16 @@
+$OpenBSD: patch-cargo-audit-0_13_1_modcargo-crates_rustsec-0_22_2_src_repository_git_rs,v 1.1.1.1 2021/09/13 20:51:37 abieber Exp $
+
+Index: cargo-audit-0.13.1/modcargo-crates/rustsec-0.22.2/src/repository/git.rs
+--- cargo-audit-0.13.1/modcargo-crates/rustsec-0.22.2/src/repository/git.rs.orig
++++ cargo-audit-0.13.1/modcargo-crates/rustsec-0.22.2/src/repository/git.rs
+@@ -20,8 +20,8 @@ pub const DAYS_UNTIL_STALE: usize = 90;
+ /// Directory under ~/.cargo where the advisory-db repo will be kept
+ pub(crate) const ADVISORY_DB_DIRECTORY: &str = "advisory-db";
+ 
+-/// Ref for master in the local repository
+-const LOCAL_MASTER_REF: &str = "refs/heads/master";
++/// Ref for main in the local repository
++const LOCAL_MASTER_REF: &str = "refs/heads/main";
+ 
+ /// Ref for master in the remote repository
+ const REMOTE_MASTER_REF: &str = "refs/remotes/origin/master";

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2021/06/09 19:50:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.92 2021/10/16 08:00:54 rsadowski Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -11,12 +11,11 @@ USE_WXNEEDED =		Yes
 
 COMMENT =		V8 JavaScript for clients and servers
 
-NODE_VERSION =		v12.16.1
+NODE_VERSION =		v12.22.7
 PLEDGE_VER =		1.1.2
 DISTFILES =		node-pledge-{}${PLEDGE_VER}.tar.gz:0 \
 			${DISTNAME}-headers.tar.gz \
 			${DISTNAME}.tar.gz
-REVISION =		2
 
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
@@ -25,7 +24,8 @@ MASTER_SITES0 =		https://github.com/qbit/node-pledge/archive/
 
 CATEGORIES =		lang devel
 
-HOMEPAGE =		http://nodejs.org/
+HOMEPAGE =		https://nodejs.org/
+MAINTAINER =		Volker Schlecht <openbsd-ports@schlecht.dev>
 
 # MIT
 PERMIT_PACKAGE =	Yes

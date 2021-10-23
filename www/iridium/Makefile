@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2021/07/07 23:49:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.115 2021/10/04 14:55:17 robert Exp $
 
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
 BROKEN-i386 =		zlib_inflate_chunk_simd fails ("would be inlined into function 'v_load8_dup' that is compiled without support for 'sse2'", etc)
@@ -16,6 +16,7 @@ DPB_PROPERTIES=		parallel parallel2
 COMMENT=		Iridium browser
 
 V=			2021.06.91
+REVISION=		0
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}

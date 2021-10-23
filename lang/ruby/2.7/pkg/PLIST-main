@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2021/07/09 17:05:03 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2021/10/08 14:12:36 jeremy Exp $
 @option no-default-conflict
+@option is-branch
 @conflict ruby->=2.7,<2.8
 bin/bundle27
 bin/bundler27

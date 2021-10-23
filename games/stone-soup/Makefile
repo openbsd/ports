@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2021/03/06 08:13:44 daniel Exp $
+# $OpenBSD: Makefile,v 1.42 2021/09/02 17:03:29 fcambus Exp $
 
 BROKEN-hppa =	ICE on dgn-shoals.cc:638
 
 COMMENT = 	dungeon crawl stone soup
 
-VERSION = 	0.26.1
+VERSION = 	0.27.1
 
 DISTNAME=	stone_soup-${VERSION}-nodeps
 PKGNAME=	stone-soup-${VERSION}

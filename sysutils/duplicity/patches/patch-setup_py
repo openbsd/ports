@@ -1,9 +1,9 @@
-$OpenBSD: patch-setup_py,v 1.10 2021/02/19 19:28:45 ajacoutot Exp $
+$OpenBSD: patch-setup_py,v 1.11 2021/08/30 19:44:42 ajacoutot Exp $
 
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -87,22 +87,11 @@ def get_data_files():
+@@ -88,22 +88,11 @@ def get_data_files():
  
      # static data files
      data_files = [

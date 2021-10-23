@@ -1,4 +1,4 @@
-$OpenBSD: patch-boost_asio_ssl_impl_context_ipp,v 1.5 2021/07/16 17:55:10 sthen Exp $
+$OpenBSD: patch-boost_asio_ssl_impl_context_ipp,v 1.7 2021/09/19 05:23:29 rsadowski Exp $
 
 Fix compatibility with recent LibreSSL when OPENSSL_NO_SSL_INTERN is defined.
 

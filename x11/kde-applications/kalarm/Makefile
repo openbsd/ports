@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/08 20:00:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2021/09/10 08:43:50 rsadowski Exp $
 
 COMMENT =	personal alarm message, command and email scheduler
 DISTNAME =	kalarm-${VERSION}
@@ -73,7 +73,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		x11/kde-applications/kmailtransport \
 		x11/kde-applications/kpimtextedit \
 		x11/kde-applications/pimcommon \
-		x11/kde-applications/mailcommon \
 		x11/qt5/qtx11extras
 
 pre-configure:

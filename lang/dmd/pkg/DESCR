@@ -1,0 +1,7 @@
+DMD is the reference compiler for the D programming language.
+D is a general-purpose programming language with static typing,
+systems-level access, and C-like syntax.
+
+This package contains the following:
+* dmd: the D compiler
+* libphobos2.a: the D standard library (with headers)

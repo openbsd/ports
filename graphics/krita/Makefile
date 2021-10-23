@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.51 2021/08/06 17:07:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.53 2021/09/07 13:55:42 rsadowski Exp $
 
 COMMENT =		advanced drawing and image manipulation
 
-VERSION =		4.4.7
+VERSION =		4.4.8
 DISTNAME =		krita-${VERSION}
 
 SHARED_LIBS +=  kritabasicflakes          4.0 # 16.0
@@ -43,8 +43,8 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2+, LGPLv2+ and GNU FDLv1.2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Half-2_5 ICE Iex-2_5 IlmImf-2_5
-WANTLIB += IlmThread-2_5 Imath-2_5 KF5Completion KF5ConfigCore
+WANTLIB += ${COMPILER_LIBCXX} ICE Iex-3_1 OpenEXR-3_1
+WANTLIB += IlmThread-3_1 Imath-3_1 KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5CoreAddons KF5Crash KF5GuiAddons KF5I18n
 WANTLIB += KF5ItemViews KF5WidgetsAddons KF5WindowSystem OpenColorIO
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
@@ -108,6 +108,9 @@ CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_SIP=ON \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Vc=ON \
 			-DCMAKE_DISABLE_FIND_PACKAGE_PyQt5=ON \
 			-DCMAKE_DISABLE_FIND_PACKAGE_SeExpr2=ON
+
+# Fix build with OpenEXR>=3 (Imath split)
+CXXFLAGS +=		-I${LOCALBASE}/include/Imath
 
 TEST_IS_INTERACTIVE =	X11
 

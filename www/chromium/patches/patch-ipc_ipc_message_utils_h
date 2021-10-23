@@ -1,4 +1,4 @@
-$OpenBSD: patch-ipc_ipc_message_utils_h,v 1.18 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-ipc_ipc_message_utils_h,v 1.19 2021/09/01 16:54:40 robert Exp $
 
 Index: ipc/ipc_message_utils.h
 --- ipc/ipc_message_utils.h.orig

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/14 02:16:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2021/09/02 18:18:44 sthen Exp $
 
 COMMENT=		Microsoft TrueType core fonts
 
 DISTNAME=		msttcorefonts-2.0
-REVISION=		2
+REVISION=		3
 CATEGORIES=		fonts x11
 
 HOMEPAGE=		http://corefonts.sourceforge.net/
@@ -20,6 +20,9 @@ BUILD_DEPENDS=		archivers/cabextract
 NO_BUILD=		Yes
 NO_TEST=		Yes
 PKG_ARCH=		*
+
+FLAVORS=		no_comic
+FLAVOR?=
 
 DISTFILES=		andale32.exe \
 			arial32.exe \

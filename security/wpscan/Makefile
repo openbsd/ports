@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2021/06/18 09:08:07 sebastia Exp $
+# $OpenBSD: Makefile,v 1.21 2021/09/01 20:05:55 jeremy Exp $
 
 COMMENT =	WordPress security scanner
 
@@ -17,6 +17,7 @@ RUN_DEPENDS +=		security/ruby-cms_scanner,${MODRUBY_FLAVOR},>=0.13.5,<0.14
 
 
 MODULES =	lang/ruby
+MODRUBY_REV =	2.7
 MODRUBY_HANDLE_FLAVORS =	No
 GEM_FLAGS =			--no-format-executable
 

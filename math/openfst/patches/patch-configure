@@ -1,0 +1,50 @@
+$OpenBSD: patch-configure,v 1.1 2021/09/06 05:38:57 kevlo Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -12125,7 +12125,7 @@ if ${ac_cv_lib_dld_shl_load+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldld  $LIBS"
++LIBS="$LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -12168,7 +12168,7 @@ if ${ac_cv_lib_dl_dlopen+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
++LIBS="$LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -12246,7 +12246,7 @@ if ${ac_cv_lib_dld_dld_link+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldld  $LIBS"
++LIBS="$LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -16915,7 +16915,7 @@ if ${ac_cv_lib_dl_dlopen+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
++LIBS="$LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -16946,7 +16946,7 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_dl_dlopen" >&5
+ $as_echo "$ac_cv_lib_dl_dlopen" >&6; }
+ if test "x$ac_cv_lib_dl_dlopen" = xyes; then :
+-  DL_LIBS=-ldl
++  DL_LIBS=
+ fi
+ 
+ 

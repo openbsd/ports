@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/06/14 19:28:45 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/09/16 07:42:33 pvk Exp $
 @conflict ansible-<4.0.0
 bin/ansible
 bin/ansible-config
@@ -922,6 +922,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/${MODPY_PYCACHE}action_common_attributes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/${MODPY_PYCACHE}backup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/${MODPY_PYCACHE}connection_pipelining.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/${MODPY_PYCACHE}constructed.${MODPY_PYC_MAGIC_TAG}pyc
@@ -937,6 +938,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/${MODPY_PYCACHE}url_windows.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/${MODPY_PYCACHE}validate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/${MODPY_PYCACHE}vars_plugin_staging.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/action_common_attributes.py
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/backup.py
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/connection_pipelining.py
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/doc_fragments/constructed.py

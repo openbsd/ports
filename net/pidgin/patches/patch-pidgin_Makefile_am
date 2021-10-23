@@ -1,0 +1,14 @@
+$OpenBSD: patch-pidgin_Makefile_am,v 1.1 2021/10/13 13:56:07 sthen Exp $
+
+Index: pidgin/Makefile.am
+--- pidgin/Makefile.am.orig
++++ pidgin/Makefile.am
+@@ -31,6 +31,8 @@ EXTRA_DIST = \
+ 		win32/nsis/create_nsis_translations.pl \
+ 		win32/nsis/nsis_translations.desktop.in
+ 
++CCLD = $(CXX)
++
+ if ENABLE_GTK
+ 
+ SUBDIRS = pixmaps plugins

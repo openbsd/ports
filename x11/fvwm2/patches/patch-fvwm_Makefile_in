@@ -1,18 +1,18 @@
-$OpenBSD: patch-fvwm_Makefile_in,v 1.8 2020/12/13 21:17:02 sthen Exp $
+$OpenBSD: patch-fvwm_Makefile_in,v 1.9 2021/09/19 21:11:55 tb Exp $
 
 Index: fvwm/Makefile.in
 --- fvwm/Makefile.in.orig
 +++ fvwm/Makefile.in
-@@ -79,7 +79,7 @@ PRE_UNINSTALL = :
+@@ -89,7 +89,7 @@ PRE_UNINSTALL = :
  POST_UNINSTALL = :
  build_triplet = @build@
  host_triplet = @host@
 -bin_PROGRAMS = fvwm$(EXEEXT)
 +bin_PROGRAMS = fvwm2$(EXEEXT)
  subdir = fvwm
- DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
- 	$(top_srcdir)/etc/depcomp
-@@ -549,7 +549,7 @@ uninstall-binPROGRAMS:
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/acinclude.m4 \
+@@ -576,7 +576,7 @@ uninstall-binPROGRAMS:
  clean-binPROGRAMS:
  	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
  
@@ -21,7 +21,7 @@ Index: fvwm/Makefile.in
  	@rm -f fvwm$(EXEEXT)
  	$(AM_V_CCLD)$(LINK) $(fvwm_OBJECTS) $(fvwm_LDADD) $(LIBS)
  
-@@ -795,7 +795,7 @@ install-dvi: install-dvi-am
+@@ -881,7 +881,7 @@ install-dvi: install-dvi-am
  
  install-dvi-am:
  

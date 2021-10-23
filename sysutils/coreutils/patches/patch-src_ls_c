@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_ls_c,v 1.1 2021/10/05 23:26:51 bcallah Exp $
+
+https://github.com/coreutils/coreutils/commit/4cfd48481da0486e2bad193495bc38e7d5ead7e4
+
+Index: src/ls.c
+--- src/ls.c.orig
++++ src/ls.c
+@@ -2273,7 +2273,7 @@ decode_switches (int argc, char **argv)
+       if (linelen < 0)
+         {
+           /* Suppress bogus warning re comparing ws.ws_col to big integer.  */
+-# if __GNUC_PREREQ (4, 6)
++# if 4 < __GNUC__ + (6 <= __GNUC_MINOR__)
+ #  pragma GCC diagnostic push
+ #  pragma GCC diagnostic ignored "-Wtype-limits"
+ # endif
+@@ -2282,7 +2282,7 @@ decode_switches (int argc, char **argv)
+               && 0 <= ioctl (STDOUT_FILENO, TIOCGWINSZ, &ws)
+               && 0 < ws.ws_col)
+             linelen = ws.ws_col <= MIN (PTRDIFF_MAX, SIZE_MAX) ? ws.ws_col : 0;
+-# if __GNUC_PREREQ (4, 6)
++# if 4 < __GNUC__ + (6 <= __GNUC_MINOR__)
+ #  pragma GCC diagnostic pop
+ # endif
+         }

@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_crash_core_common_BUILD_gn,v 1.15 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-components_crash_core_common_BUILD_gn,v 1.17 2021/10/20 10:27:46 robert Exp $
 
 Index: components/crash/core/common/BUILD.gn
 --- components/crash/core/common/BUILD.gn.orig
 +++ components/crash/core/common/BUILD.gn
-@@ -8,7 +8,7 @@ import("//ios/features.gni")
+@@ -8,7 +8,7 @@ import("//components/gwp_asan/buildflags/buildflags.gn
  
  declare_args() {
    # If set to true, this will stub out and disable the entire crash key system.

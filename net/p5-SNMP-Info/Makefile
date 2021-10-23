@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2021/07/24 18:14:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2021/09/04 07:18:30 sthen Exp $
 
 COMMENT =	perl5 interface to network devices and MIBs through SNMP
 
 MODULES =	cpan
 PKG_ARCH =	*
 
-DISTNAME =	SNMP-Info-3.73
+DISTNAME =	SNMP-Info-3.76
 CATEGORIES =	net
 
 # BSD

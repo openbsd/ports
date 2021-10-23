@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2021/08/17 13:51:32 abieber Exp $
+# $OpenBSD: Makefile,v 1.25 2021/10/21 09:00:05 sthen Exp $
 
 COMMENT =	open network for secure, decentralized communication
 
-MODPY_EGG_VERSION =	1.40.0
+MODPY_EGG_VERSION =	1.45.1
 
 GH_ACCOUNT =	matrix-org
 GH_PROJECT =	synapse
@@ -30,7 +30,7 @@ RUN_DEPENDS =	textproc/py-lxml${MODPY_FLAVOR} \
 		textproc/py-ijson${MODPY_FLAVOR} \
 		devel/py-asn1${MODPY_FLAVOR} \
 		devel/py-blist${MODPY_FLAVOR} \
-		devel/py-jsonschema${MODPY_FLAVOR} \
+		devel/py-jsonschema${MODPY_FLAVOR}>=3.0.0 \
 		devel/py-twisted${MODPY_FLAVOR} \
 		devel/py-simplejson${MODPY_FLAVOR} \
 		devel/py-typing-extensions${MODPY_FLAVOR} \
@@ -66,6 +66,6 @@ TEST_DEPENDS =	${RUN_DEPENDS} \
 		www/py-jwt${MODPY_FLAVOR}
 
 do-test:
-	cd ${WRKSRC} && ${SETENV} PYTHONPATH=. ${LOCALBASE}/bin/trial tests
+	cd ${WRKSRC} && ${SETENV} PYTHONPATH=. ${LOCALBASE}/bin/trial-3 tests
 
 .include <bsd.port.mk>

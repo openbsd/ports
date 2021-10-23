@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.47 2021/08/11 11:29:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2021/10/17 10:08:13 ajacoutot Exp $
 
 COMMENT=		osinfo database files
 
-V=			20210809
+V=			20211013
 DISTNAME=		osinfo-db-${V}
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 PKG_ARCH=		*
 NO_BUILD=		Yes

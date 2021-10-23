@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2021/04/30 16:52:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2021/09/02 08:53:36 sthen Exp $
 
 COMMENT=	PHP extension for parsing and working with plain/MIME email
 
-DISTNAME=	mailparse-3.1.1
+DISTNAME=	mailparse-3.1.2
 CATEGORIES=	mail
-REVISION=	1
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 

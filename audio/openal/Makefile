@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2021/08/20 21:54:22 brynet Exp $
+# $OpenBSD: Makefile,v 1.58 2021/10/16 07:59:12 rsadowski Exp $
 
 COMMENT =	cross-platform 3D audio API
 
@@ -6,7 +6,7 @@ V =		1.21.1
 EPOCH =		0
 DISTNAME =	openal-soft-$V
 PKGNAME =	openal-$V
-REVISION =	1
+REVISION =	2
 CATEGORIES =	audio
 
 SHARED_LIBS =	openal	4.1

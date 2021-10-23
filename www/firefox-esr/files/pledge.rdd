@@ -1,0 +1,7 @@
+# $OpenBSD: pledge.rdd,v 1.1 2021/09/07 13:43:04 landry Exp $
+stdio
+rpath # gtk tries to access /usr/local/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
+tmppath
+recvfd
+sendfd
+unix # getsockopt

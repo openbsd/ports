@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:45:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/10/06 21:11:01 jeremy Exp $
 
 COMMENT =	small and fast replacement for test/unit
 
 DISTNAME =	minitest-5.11.3
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 # MIT
@@ -14,11 +14,6 @@ MODULES =	lang/ruby
 CONFIGURE_STYLE = ruby gem
 
 MODRUBY_TEST = rake
-
-.if !defined(FLAVOR) || ${FLAVOR:L:Mruby26}
-# Ruby 2.6 includes this version of minitest
-PLIST =		${PKGDIR}/PLIST.empty
-.endif
 
 TEST_DEPENDS = devel/ruby-hoe,${MODRUBY_FLAVOR}
 

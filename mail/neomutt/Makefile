@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.66 2021/02/05 13:18:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2021/10/22 13:06:02 sthen Exp $
 
 COMMENT=	tty-based e-mail client, Mutt with patches
 
 GH_ACCOUNT=	neomutt
 GH_PROJECT=	neomutt
-GH_TAGNAME=	20210205
+GH_TAGNAME=	20211022
 
 CATEGORIES=	mail
 HOMEPAGE=	https://neomutt.org/
@@ -44,6 +44,7 @@ CONFIGURE_ARGS+= --mandir="${PREFIX}/man" \
 
 CONFIGURE_ENV=	autosetup_tclsh="${LOCALBASE}/bin/jimsh" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		CCACHE=none \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 SYSCONFDIR=	${BASESYSCONFDIR}/mutt

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/07/06 16:55:34 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/08/29 09:25:55 jasper Exp $
 @bin bin/polybar
 @bin bin/polybar-msg
 @man man/man1/polybar.1
@@ -48,5 +48,6 @@ share/doc/polybar/user/
 share/doc/polybar/user/actions.html
 share/examples/polybar/
 share/examples/polybar/config
+share/zsh/site-functions/
 share/zsh/site-functions/_polybar
 share/zsh/site-functions/_polybar_msg

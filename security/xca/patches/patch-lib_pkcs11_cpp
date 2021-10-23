@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_pkcs11_cpp,v 1.4 2021/10/13 14:05:35 tb Exp $
+
+Index: lib/pkcs11.cpp
+--- lib/pkcs11.cpp.orig
++++ lib/pkcs11.cpp
+@@ -656,7 +656,7 @@ int pkcs11::encrypt(int flen, const unsigned char *fro
+ }
+ 
+ #if OPENSSL_VERSION_NUMBER < 0x10000000L || \
+-    OPENSSL_VERSION_NUMBER >= 0x10100000L && ! defined LIBRESSL_VERSION_NUMBER
++    OPENSSL_VERSION_NUMBER >= 0x10100000L
+ static int rsa_privdata_free(RSA *rsa)
+ {
+ 	pkcs11 *priv = (pkcs11*)RSA_get_app_data(rsa);

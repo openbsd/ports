@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2021/06/19 18:34:45 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2021/09/10 08:43:59 rsadowski Exp $
 
 COMMENT =	KDE PIM common mail library
 DISTNAME =	mailcommon-${VERSION}
 CATEGORIES =	devel mail
 
-SHARED_LIBS +=  KF5MailCommon       2.0 # 5.13.2
+SHARED_LIBS +=  KF5MailCommon       2.1 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiContact KF5AkonadiCore
 WANTLIB += KF5AkonadiMime KF5AkonadiWidgets KF5Archive KF5Auth
@@ -19,7 +19,8 @@ WANTLIB += KF5PimCommon KF5PimCommonAkonadi KF5PimTextEdit KF5Service
 WANTLIB += KF5Solid KF5SonnetUi KF5SyntaxHighlighting KF5TemplateParser
 WANTLIB += KF5TextWidgets KF5Wallet KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5Xml gpgmepp m phonon4qt5 qgpgme
+WANTLIB += Qt5Widgets Qt5Xml assuan gpgme gpgmepp m phonon4qt5
+WANTLIB += qgpgme
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes

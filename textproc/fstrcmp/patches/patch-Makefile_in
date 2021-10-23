@@ -1,0 +1,32 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2021/10/08 22:34:41 thfr Exp $
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -588,7 +588,7 @@ bin/test_user$(EXEEXT): $(test_user_obj) .bin lib/libf
+ 	$(LIBTOOL) --mode=link --tag=CC $(CC) $(CPPFLAGS) $(CFLAGS) -o $@ \
+ 		$(test_user_obj) lib/libfstrcmp.la $(LDFLAGS) $(LIBS)
+ 
+-all: all-bin all-doc
++all: all-bin
+ 
+ all-bin: bin/fstrcmp$(EXEEXT) bin/test_prelude$(EXEEXT) bin/test_user$(EXEEXT)
+ 
+@@ -657,7 +657,7 @@ distclean-files:
+ distclean-directories:
+ 	rm -rf bin fstrcmp/.libs lib/.libs lib/ac/.libs test_user/.libs
+ 
+-install: install-bin install-doc install-include install-libdir install-man
++install: install-bin install-include install-libdir install-man
+ 
+ install-bin: $(bindir)/fstrcmp$(EXEEXT)
+ 
+@@ -674,7 +674,7 @@ install-include: $(includedir)/fstrcmp.h
+ #
+ install-libdir: $(libdir)/libfstrcmp.la $(libdir)/pkgconfig/fstrcmp.pc
+ 
+-install-man: $(mandir)/man1/fstrcmp.1 $(mandir)/man1/fstrcmp_license.1 \
++install-man: $(mandir)/man1/fstrcmp.1 \
+ 		$(mandir)/man3/fmemcmp.3 $(mandir)/man3/fmemcmpi.3 \
+ 		$(mandir)/man3/fstrcasecmp.3 $(mandir)/man3/fstrcasecmpi.3 \
+ 		$(mandir)/man3/fstrcmp.3 $(mandir)/man3/fstrcmpi.3 \

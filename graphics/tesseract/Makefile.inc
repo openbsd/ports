@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile.inc,v 1.4 2019/07/12 20:47:10 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2021/08/31 12:26:42 ajacoutot Exp $
 
 
-GH_TAGNAME ?=	4.0.0
+GH_TAGNAME ?=	4.1.1
 GH_ACCOUNT=	tesseract-ocr
 
 CATEGORIES +=	graphics textproc

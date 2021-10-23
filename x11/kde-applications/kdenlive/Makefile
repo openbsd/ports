@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2021/06/19 18:34:36 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.22 2021/10/16 19:20:55 rsadowski Exp $
 
 # Qt5WebEngine
 USE_WXNEEDED =	Yes
@@ -19,7 +19,7 @@ WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
 WANTLIB += Qt5Network Qt5NetworkAuth Qt5Qml Qt5QmlModels Qt5Quick
 WANTLIB += Qt5QuickControls2 Qt5QuickWidgets Qt5Svg Qt5Widgets
-WANTLIB += Qt5Xml c m mlt mlt++
+WANTLIB += Qt5Xml X11 c m mlt++-7 mlt-7
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -32,7 +32,7 @@ RUN_DEPENDS =	devel/kf5/breeze-icons \
 		misc/shared-mime-info \
 		multimedia/dvdauthor \
 		multimedia/frei0r-plugins \
-		multimedia/mlt,-gpl2 \
+		multimedia/mlt7,-gpl2 \
 		sysutils/cdrtools \
 		x11/qt5/qtquickcontrols
 
@@ -65,14 +65,12 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/purpose \
 		devel/kf5/solid \
 		devel/kf5/sonnet \
-		devel/rttr \
-		multimedia/mlt,-main \
+		multimedia/mlt7,-main \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtmultimedia \
 		x11/qt5/qtquickcontrols2 \
 		x11/qt5/qtnetworkauth \
-		x11/qt5/qtsvg \
-		x11/qt5/qtwebengine
+		x11/qt5/qtsvg
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_LibV4L2=Yes
 

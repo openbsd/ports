@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2021/08/16 07:43:40 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2021/10/13 19:11:02 rsadowski Exp $
 @bin bin/opencv_annotation
 @bin bin/opencv_interactive-calibration
 @bin bin/opencv_model_diagnostics
@@ -160,6 +160,7 @@ include/opencv4/opencv2/dnn/layer.details.hpp
 include/opencv4/opencv2/dnn/layer.hpp
 include/opencv4/opencv2/dnn/shape_utils.hpp
 include/opencv4/opencv2/dnn/utils/
+include/opencv4/opencv2/dnn/utils/debug_utils.hpp
 include/opencv4/opencv2/dnn/utils/inference_engine.hpp
 include/opencv4/opencv2/dnn/version.hpp
 include/opencv4/opencv2/features2d/
@@ -236,6 +237,7 @@ include/opencv4/opencv2/ml/ml.inl.hpp
 include/opencv4/opencv2/objdetect/
 include/opencv4/opencv2/objdetect.hpp
 include/opencv4/opencv2/objdetect/detection_based_tracker.hpp
+include/opencv4/opencv2/objdetect/face.hpp
 include/opencv4/opencv2/objdetect/objdetect.hpp
 include/opencv4/opencv2/opencv.hpp
 include/opencv4/opencv2/opencv_modules.hpp
@@ -306,16 +308,26 @@ lib/python${MODPY_VERSION}/site-packages/cv2/${MODPY_PYCACHE}config-${MODPY_VERS
 lib/python${MODPY_VERSION}/site-packages/cv2/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cv2/${MODPY_PYCACHE}load_config_py2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cv2/${MODPY_PYCACHE}load_config_py3.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/cv2/_extra_py_code/
-lib/python${MODPY_VERSION}/site-packages/cv2/_extra_py_code/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cv2/_extra_py_code/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/cv2/_extra_py_code/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cv2/config-${MODPY_VERSION}.py
 lib/python${MODPY_VERSION}/site-packages/cv2/config.py
 lib/python${MODPY_VERSION}/site-packages/cv2/load_config_py2.py
 lib/python${MODPY_VERSION}/site-packages/cv2/load_config_py3.py
+lib/python${MODPY_VERSION}/site-packages/cv2/mat_wrapper/
+lib/python${MODPY_VERSION}/site-packages/cv2/mat_wrapper/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cv2/mat_wrapper/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cv2/mat_wrapper/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cv2/misc/
+lib/python${MODPY_VERSION}/site-packages/cv2/misc/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cv2/misc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cv2/misc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cv2/misc/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cv2/misc/version.py
 lib/python${MODPY_VERSION}/site-packages/cv2/python-${MODPY_VERSION}/
 @so lib/python${MODPY_VERSION}/site-packages/cv2/python-${MODPY_VERSION}/cv2.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/cv2/utils/
+lib/python${MODPY_VERSION}/site-packages/cv2/utils/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cv2/utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cv2/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/licenses/
 share/licenses/opencv4/
 share/licenses/opencv4/SoftFloat-COPYING.txt

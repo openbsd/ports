@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.300 2021/07/15 11:13:46 jca Exp $
+# $OpenBSD: Makefile,v 1.303 2021/10/18 12:25:20 jca Exp $
 
-VERSION =		4.14.6
+VERSION =		4.15.0
 DISTNAME =		samba-${VERSION}
 EPOCH =			0
 
@@ -18,18 +18,15 @@ PKGNAME-docs =		samba-docs-${VERSION}
 
 PKG_ARCH-docs =		*
 
-LDB_V =			2.3.0
-TEVENT_V =		0.10.2
-
-REVISION-ldb =		1
-REVISION-tevent =	1
+LDB_V =			2.4.0
+TEVENT_V =		0.11.0
 
 SHARED_LIBS =		asn1-samba4		1.0 \
 			com_err-samba4		1.0 \
 			dcerpc			1.0 \
-			dcerpc-binding		3.0 \
+			dcerpc-binding		4.0 \
 			dcerpc-samr		1.0 \
-			dcerpc-server-core	1.0 \
+			dcerpc-server-core	2.0 \
 			gssapi-samba4		1.0 \
 			hcrypto-samba4		1.0 \
 			hdb-samba4		1.0 \
@@ -39,26 +36,26 @@ SHARED_LIBS =		asn1-samba4		1.0 \
 			kdc-samba4		1.0 \
 			krb5-samba4		1.0 \
 			ldb			2.0 \
-			ndr			2.0 \
+			ndr			3.0 \
 			ndr-krb5pac		1.0 \
 			ndr-nbt			1.0 \
 			ndr-standard		4.0 \
-			netapi			3.0 \
+			netapi			3.1 \
 			roken-samba4		1.0 \
-			samba-credentials	1.0 \
-			samba-errors		2.0 \
-			samba-hostconfig	7.0 \
+			samba-credentials	1.1 \
+			samba-errors		2.1 \
+			samba-hostconfig	8.0 \
 			samba-passdb		3.0 \
-			samba-util		6.0 \
+			samba-util		7.0 \
 			samdb			1.0 \
 			smbclient		6.0 \
-			smbconf			9.0 \
+			smbconf			10.0 \
 			smbldap			1.0 \
-			tevent			1.0 \
+			tevent			2.0 \
 			tevent-util		2.0 \
 			wbclient		5.0 \
 			wind-samba4		1.0 \
-			replace			12.0 \
+			replace			12.1 \
 			util-setid		12.0
 
 # Those have to be handled specially, see "Python ABI" below.
@@ -106,6 +103,7 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 MODULES =		lang/python perl
 
 BUILD_DEPENDS =		databases/tdb,-python \
+			devel/bison \
 			devel/cmocka \
 			devel/p5-Parse-Yapp>=1.0.5 \
 			net/py-dnspython${MODPY_FLAVOR} \
@@ -120,13 +118,13 @@ LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb>=${LDB_V} \
 			${BUILD_PKGPATH},-util>=${VERSION} \
 			converters/libiconv \
 			databases/openldap \
-			databases/tdb>=1.4.3 \
+			databases/tdb>=1.4.4 \
 			devel/gettext,-runtime \
 			devel/jansson \
-			devel/libtalloc>=2.1.16 \
+			devel/libtalloc>=2.3.3 \
 			devel/libtalloc,-python \
 			devel/popt \
-			net/avahi \
+			net/avahi,-libs \
 			print/cups,-libs \
 			security/gnutls \
 			security/openpam \
@@ -136,11 +134,11 @@ LIB_DEPENDS-ldb =	${BUILD_PKGPATH},-tevent>=${TEVENT_V} \
 			${BUILD_PKGPATH},-util>=${VERSION} \
 			devel/popt \
 			databases/openldap \
-			databases/tdb>=1.4.3 \
-			devel/libtalloc>=2.3.2
+			databases/tdb>=1.4.4 \
+			devel/libtalloc>=2.3.3
 
 LIB_DEPENDS-tevent =	${BUILD_PKGPATH},-util>=${VERSION} \
-			devel/libtalloc>=2.3.2
+			devel/libtalloc>=2.3.3
 
 LIB_DEPENDS-docs =
 
@@ -255,6 +253,5 @@ post-install:
 	     -e 's:MYGROUP:WORKGROUP:' \
 	     ${WRKDIST}/examples/smb.conf.default > ${SAMBA_CONFIG}.tmp && \
 	    mv ${SAMBA_CONFIG}.tmp ${SAMBA_CONFIG}
-	[ -x "${PREFIX}/bin/mdfind" ] && mv "${PREFIX}/bin/mdfind" "${PREFIX}/bin/samba-mdfind"
 
 .include <bsd.port.mk>

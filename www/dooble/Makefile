@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/08/20 13:55:35 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2021/09/01 02:58:15 bcallah Exp $
 
 COMMENT =	small, lightweight QtWebEngine web browser
 CATEGORIES =	www x11
 
 GH_ACCOUNT =	textbrowser
 GH_PROJECT =	dooble
-GH_TAGNAME =	2021.08.05
+GH_TAGNAME =	2021.08.30
 
 HOMEPAGE =	https://textbrowser.github.io/dooble/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -16,15 +16,14 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Charts Qt5Concurrent Qt5Core
 WANTLIB += Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml
 WANTLIB += Qt5QmlModels Qt5Quick Qt5Sql Qt5WebChannel Qt5WebEngine
-WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5WebKit Qt5Widgets
+WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5Xml
 WANTLIB += c m
 
 MODULES =	devel/qmake \
 		x11/qt5
 
 LIB_DEPENDS =	x11/qt5/qtcharts \
-		x11/qt5/qtwebengine \
-		x11/qt5/qtwebkit
+		x11/qt5/qtwebengine
 
 RUN_DEPENDS =	devel/desktop-file-utils
 

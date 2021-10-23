@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2020/09/04 03:43:29 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.4 2021/08/31 06:45:37 solene Exp $
 
 COMMENT =		modal code editor with a focus on interactivity
 
-V =			2020.09.01
+V =			2021.08.28
 DISTNAME =		kakoune-${V}
 
 CATEGORIES =		editors
@@ -11,7 +11,7 @@ HOMEPAGE =		https://kakoune.org/
 
 MAINTAINER =		Frederic Galusik <openbsd@galusik.fr>
 
-WANTLIB =		${COMPILER_LIBCXX} c curses m
+WANTLIB =		${COMPILER_LIBCXX} c m
 
 MASTER_SITES =		https://github.com/mawww/kakoune/releases/download/v${V}/
 

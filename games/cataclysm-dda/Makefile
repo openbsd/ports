@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.20 2021/08/21 17:18:28 gkoehler Exp $
+# $OpenBSD: Makefile,v 1.21 2021/10/18 08:23:18 kirby Exp $
 
 COMMENT=		rogue-like zombie survival game
 CATEGORIES=		games
 
 GH_ACCOUNT=		CleverRaven
 GH_PROJECT=		Cataclysm-DDA
-GH_TAGNAME=		0.F
-DISTNAME=		cataclysm-dda-0.F
+GH_TAGNAME=		0.F-2
+DISTNAME=		cataclysm-dda-0.F.2
 EPOCH=			0
 
 HOMEPAGE=		https://cataclysmdda.org
-MAINTAINER=		Tim Meunier <trondd@kagu-tsuchi.com>
+MAINTAINER=		Kirill Bychkov <kirby@openbsd.org>
 
 # Creative Commons 3.0
 PERMIT_PACKAGE=	Yes

@@ -1,0 +1,2 @@
+Audit Cargo.lock files for crates with security vulnerabilities reported to
+the RustSec Advisory Database.

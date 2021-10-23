@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2021/08/15 16:36:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.119 2021/09/24 14:12:09 tb Exp $
 
 COMMENT=		cross-platform networked sound server
 
@@ -99,9 +99,14 @@ CONFIGURE_ARGS +=	-Dstream-restore-clear-old-devices=false
 post-extract:
 	cp ${FILESDIR}/module-sndio*.{c,h} ${WRKSRC}/src/modules/
 
+.include <bsd.port.arch.mk>
 pre-configure:
 	sed -i 's,/bin/bash,/usr/bin/env bash,' \
 		${WRKSRC}/shell-completion/bash/pulseaudio
+.if !${PROPERTIES:Mclang}
+	sed -i "/libintl_dep = \[\]/ s/\[\]/cc.find_library('intl')/" \
+		${WRKSRC}/meson.build
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pulseaudio

@@ -1,4 +1,4 @@
-# $OpenBSD: scons.port.mk,v 1.6 2013/07/02 08:36:16 espie Exp $
+# $OpenBSD: scons.port.mk,v 1.7 2021/08/29 19:46:17 kirby Exp $
 
 BUILD_DEPENDS+=	devel/scons
 
@@ -20,7 +20,8 @@ NO_CCACHE?=Yes
 
 MODSCONS_BUILD_TARGET = \
 	${SETENV} ${MAKE_ENV} ${MODSCONS_BIN} -C ${WRKSRC} \
-		${MODSCONS_ENV} ${MODSCONS_FLAGS} ${ALL_TARGET}
+		${MODSCONS_ENV} ${MODSCONS_FLAGS} -j ${MAKE_JOBS} \
+		${ALL_TARGET}
 
 MODSCONS_INSTALL_TARGET = \
 	${SETENV} ${MAKE_ENV} ${MODSCONS_BIN} -C ${WRKSRC} \

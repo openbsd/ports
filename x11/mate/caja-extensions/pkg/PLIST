@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/03/21 16:14:54 robert Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/08/25 12:05:50 robert Exp $
 @bin bin/caja-sendto
 include/caja-sendto/
 include/caja-sendto/caja-sendto-plugin.h
@@ -48,8 +48,6 @@ lib/caja/extensions-2.0/
 lib/pkgconfig/caja-sendto.pc
 @man man/man1/caja-sendto.1
 share/caja-extensions/
-share/caja-extensions/caja-image-resize.ui
-share/caja-extensions/caja-image-rotate.ui
 share/caja-extensions/share-dialog.ui
 share/caja/extensions/
 share/caja/extensions/libcaja-gksu.caja-extension
@@ -106,6 +104,7 @@ share/locale/es/LC_MESSAGES/caja-extensions.mo
 share/locale/es_AR/LC_MESSAGES/caja-extensions.mo
 share/locale/es_CL/LC_MESSAGES/caja-extensions.mo
 share/locale/es_CO/LC_MESSAGES/caja-extensions.mo
+share/locale/es_ES/LC_MESSAGES/caja-extensions.mo
 share/locale/es_MX/LC_MESSAGES/caja-extensions.mo
 share/locale/et/LC_MESSAGES/caja-extensions.mo
 share/locale/eu/LC_MESSAGES/caja-extensions.mo
@@ -139,6 +138,7 @@ share/locale/ko/LC_MESSAGES/caja-extensions.mo
 share/locale/ku/LC_MESSAGES/caja-extensions.mo
 share/locale/ku_IQ/LC_MESSAGES/caja-extensions.mo
 share/locale/ky/LC_MESSAGES/caja-extensions.mo
+share/locale/li/LC_MESSAGES/caja-extensions.mo
 share/locale/lt/LC_MESSAGES/caja-extensions.mo
 share/locale/lv/LC_MESSAGES/caja-extensions.mo
 share/locale/mai/LC_MESSAGES/caja-extensions.mo

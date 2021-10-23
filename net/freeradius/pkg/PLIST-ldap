@@ -1,15 +1,24 @@
-@comment $OpenBSD: PLIST-ldap,v 1.7 2016/06/29 16:14:43 espie Exp $
-@option is-branch
-@conflict freeradius-ldap-*
-@conflict freeradius-server-<2.1.8
-lib/freeradius/rlm_ldap.so
-share/doc/freeradius/examples/iplanet.ldif
-share/doc/freeradius/examples/iplanet.schema
-share/doc/freeradius/examples/openldap.schema
-share/doc/freeradius/ldap_howto.rst
-share/doc/freeradius/rlm_ldap
-@mode 640
-share/examples/freeradius/ldap.attrmap
-@sample ${SYSCONFDIR}/raddb/ldap.attrmap
-share/examples/freeradius/modules/ldap
-@sample ${SYSCONFDIR}/raddb/modules/ldap
+@comment $OpenBSD: PLIST-ldap,v 1.8 2021/09/16 10:36:39 sthen Exp $
+@pkgpath net/freeradius3,-ldap
+@so lib/freeradius/rlm_ldap.so
+share/doc/freeradius/schemas/ldap/
+share/doc/freeradius/schemas/ldap/edir/
+share/doc/freeradius/schemas/ldap/edir/freeradius-clients.ldif
+share/doc/freeradius/schemas/ldap/iplanet/
+share/doc/freeradius/schemas/ldap/iplanet/freeradius.ldif
+share/doc/freeradius/schemas/ldap/iplanet/freeradius.schema
+share/doc/freeradius/schemas/ldap/openldap/
+share/doc/freeradius/schemas/ldap/openldap/freeradius-clients.ldif
+share/doc/freeradius/schemas/ldap/openldap/freeradius-clients.schema
+share/doc/freeradius/schemas/ldap/openldap/freeradius.ldif
+share/doc/freeradius/schemas/ldap/openldap/freeradius.schema
+share/doc/freeradius/schemas/ldap/samba/
+share/doc/freeradius/schemas/ldap/samba/README.txt
+share/doc/freeradius/schemas/ldap/samba/freeradius-attrs.ldif
+share/doc/freeradius/schemas/ldap/samba/freeradius-classes.ldif
+share/doc/freeradius/schemas/ldap/samba/freeradius-clients-attrs.ldif
+share/doc/freeradius/schemas/ldap/samba/freeradius-clients-classes.ldif
+share/doc/freeradius/schemas/ldap/samba/freeradius-user.ldif
+@group _freeradius
+share/examples/freeradius/mods-available/ldap
+@sample ${FREERADIUS_ETC}/mods-available/ldap

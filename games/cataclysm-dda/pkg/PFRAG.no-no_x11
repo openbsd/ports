@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.8 2021/07/14 03:50:15 kirby Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.9 2021/10/18 08:23:18 kirby Exp $
 @bin bin/cataclysm-tiles
 @man man/man6/cataclysm-tiles.6
 share/applications/org.cataclysmdda.CataclysmDDA.desktop
@@ -137,7 +137,6 @@ share/cataclysm-dda/gfx/UltimateCataclysm/tileset.txt
 share/cataclysm-dda/gfx/tile_config.json
 share/cataclysm-dda/gfx/tile_config_template.json
 share/cataclysm-dda/gfx/tinytile.png
-share/icons/hicolor/scalable/apps/org.cataclysmdda.CataclysmDDA.svg
 share/cataclysm-dda/sound/
 share/cataclysm-dda/sound/Basic/
 share/cataclysm-dda/sound/Basic/menu_error.ogg
@@ -145,4 +144,5 @@ share/cataclysm-dda/sound/Basic/menu_move.ogg
 share/cataclysm-dda/sound/Basic/musicset.json
 share/cataclysm-dda/sound/Basic/soundpack.txt
 share/cataclysm-dda/sound/Basic/soundset.json
+share/icons/hicolor/scalable/apps/org.cataclysmdda.CataclysmDDA.svg
 share/metainfo/org.cataclysmdda.CataclysmDDA.appdata.xml

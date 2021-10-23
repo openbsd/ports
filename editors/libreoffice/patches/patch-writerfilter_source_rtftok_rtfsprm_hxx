@@ -1,9 +1,9 @@
-$OpenBSD: patch-writerfilter_source_rtftok_rtfsprm_hxx,v 1.6 2018/08/18 07:07:17 robert Exp $
+$OpenBSD: patch-writerfilter_source_rtftok_rtfsprm_hxx,v 1.7 2021/09/02 11:11:58 robert Exp $
 
 Index: writerfilter/source/rtftok/rtfsprm.hxx
 --- writerfilter/source/rtftok/rtfsprm.hxx.orig
 +++ writerfilter/source/rtftok/rtfsprm.hxx
-@@ -14,6 +14,7 @@
+@@ -13,6 +13,7 @@
  #include <utility>
  #include <vector>
  #include <map>

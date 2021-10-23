@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2021/08/08 12:21:37 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.22 2021/10/13 15:02:05 rsadowski Exp $
 @bin bin/kcookiejar5
 @bin bin/ktelnetservice5
 @bin bin/ktrash5
@@ -179,12 +179,14 @@ include/KF5/KIOFileWidgets/krecentdirs.h
 include/KF5/KIOFileWidgets/kstatusbarofflineindicator.h
 include/KF5/KIOFileWidgets/kurlnavigator.h
 include/KF5/KIOGui/
+include/KF5/KIOGui/KEMailClientLauncherJob
 include/KF5/KIOGui/KIO/
 include/KF5/KIOGui/KIO/ApplicationLauncherJob
 include/KF5/KIOGui/KIO/CommandLauncherJob
 include/KF5/KIOGui/KIO/FavIconRequestJob
 include/KF5/KIOGui/KIO/OpenUrlJob
 include/KF5/KIOGui/KTerminalLauncherJob
+include/KF5/KIOGui/kemailclientlauncherjob.h
 include/KF5/KIOGui/kio/
 include/KF5/KIOGui/kio/applicationlauncherjob.h
 include/KF5/KIOGui/kio/commandlauncherjob.h
@@ -291,7 +293,10 @@ lib/cmake/KF5KIO/KF5KIOTargets.cmake
 @lib lib/libKF5KIONTLM.so.${LIBKF5KIONTLM_VERSION}
 @lib lib/libKF5KIOWidgets.so.${LIBKF5KIOWidgets_VERSION}
 @so lib/qt5/plugins/designer/kio5widgets.so
-@so lib/qt5/plugins/kcm_kio.so
+@so lib/qt5/plugins/kcm_cookies.so
+@so lib/qt5/plugins/kcm_netpref.so
+@so lib/qt5/plugins/kcm_proxy.so
+@so lib/qt5/plugins/kcm_smb.so
 @so lib/qt5/plugins/kcm_trash.so
 @so lib/qt5/plugins/kcm_webshortcuts.so
 lib/qt5/plugins/kf5/kded/
@@ -299,13 +304,13 @@ lib/qt5/plugins/kf5/kded/
 @so lib/qt5/plugins/kf5/kded/proxyscout.so
 @so lib/qt5/plugins/kf5/kded/remotenotifier.so
 lib/qt5/plugins/kf5/kio/
-@so lib/qt5/plugins/kf5/kio/file.so
-@so lib/qt5/plugins/kf5/kio/ftp.so
-@so lib/qt5/plugins/kf5/kio/ghelp.so
-@so lib/qt5/plugins/kf5/kio/help.so
-@so lib/qt5/plugins/kf5/kio/http.so
-@so lib/qt5/plugins/kf5/kio/remote.so
-@so lib/qt5/plugins/kf5/kio/trash.so
+@so lib/qt5/plugins/kf5/kio/kio_file.so
+@so lib/qt5/plugins/kf5/kio/kio_ftp.so
+@so lib/qt5/plugins/kf5/kio/kio_ghelp.so
+@so lib/qt5/plugins/kf5/kio/kio_help.so
+@so lib/qt5/plugins/kf5/kio/kio_http.so
+@so lib/qt5/plugins/kf5/kio/kio_remote.so
+@so lib/qt5/plugins/kf5/kio/kio_trash.so
 lib/qt5/plugins/kf5/kiod/
 @so lib/qt5/plugins/kf5/kiod/kioexecd.so
 @so lib/qt5/plugins/kf5/kiod/kpasswdserver.so
@@ -816,6 +821,9 @@ share/doc/HTML/ru/kcontrol5/proxy/index.docbook
 share/doc/HTML/ru/kcontrol5/trash/
 share/doc/HTML/ru/kcontrol5/trash/index.cache.bz2
 share/doc/HTML/ru/kcontrol5/trash/index.docbook
+share/doc/HTML/ru/kcontrol5/webshortcuts/
+share/doc/HTML/ru/kcontrol5/webshortcuts/index.cache.bz2
+share/doc/HTML/ru/kcontrol5/webshortcuts/index.docbook
 share/doc/HTML/ru/kioslave5/
 share/doc/HTML/ru/kioslave5/data/
 share/doc/HTML/ru/kioslave5/data/index.cache.bz2
@@ -1238,6 +1246,7 @@ share/locale/mk/LC_MESSAGES/kio5.mo
 share/locale/ml/LC_MESSAGES/kio5.mo
 share/locale/mr/LC_MESSAGES/kio5.mo
 share/locale/ms/LC_MESSAGES/kio5.mo
+share/locale/my/LC_MESSAGES/kio5.mo
 share/locale/nb/LC_MESSAGES/kio5.mo
 share/locale/nds/LC_MESSAGES/kio5.mo
 share/locale/ne/LC_MESSAGES/kio5.mo

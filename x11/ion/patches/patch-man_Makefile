@@ -1,0 +1,14 @@
+$OpenBSD: patch-man_Makefile,v 1.1 2021/09/14 12:16:15 sthen Exp $
+
+Index: man/Makefile
+--- man/Makefile.orig
++++ man/Makefile
+@@ -25,7 +25,7 @@ ifeq ($(RELOCATABLE),1)
+ REL="/..."
+ endif
+ 
+-NROFF=nroff -man -Tlatin1
++NROFF=mandoc
+ #FILTERCRAP=perl -p -i -e 's/.\10//g'
+ FILTERCRAP=$(LUA) -e 'io.write((string.gsub(io.read("*a"), ".\8", "")))'
+ 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2021/03/18 09:07:18 fcambus Exp $
+# $OpenBSD: Makefile,v 1.19 2021/09/10 15:57:53 jcs Exp $
 
 DISTNAME=	dnstracer-1.9
 CATEGORIES=	net
-REVISION=	1
+REVISION=	2
 
 # bsd
 PERMIT_PACKAGE=	Yes

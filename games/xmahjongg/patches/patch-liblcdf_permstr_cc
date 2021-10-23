@@ -1,0 +1,14 @@
+$OpenBSD: patch-liblcdf_permstr_cc,v 1.1 2021/09/10 16:41:24 tb Exp $
+
+Index: liblcdf/permstr.cc
+--- liblcdf/permstr.cc.orig
++++ liblcdf/permstr.cc
+@@ -309,7 +309,7 @@ vpermprintf(const char *s, va_list val)
+ 		  double x = va_arg(val, double);
+ 		  char buffer[1000];
+ 		  int len;
+-		  sprintf(buffer, "%.10g%n", x, &len);
++		  len = sprintf(buffer, "%.10g", x);
+ 		  extend(len);
+ 		  strcpy(psc + pspos, buffer);
+ 		  pspos += len;

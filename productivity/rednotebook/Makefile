@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2021/02/23 19:39:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2021/08/30 19:36:13 ajacoutot Exp $
 
 COMMENT=		diary and journal application
 
-MODPY_EGG_VERSION=	2.21
+MODPY_EGG_VERSION=	2.22
 GH_TAGNAME=		v${MODPY_EGG_VERSION}
 GH_ACCOUNT=		jendrikseipp
 GH_PROJECT=		rednotebook

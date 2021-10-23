@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.559 2021/07/26 04:31:35 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.562 2021/10/17 21:14:09 espie Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -103,6 +103,7 @@
      SUBDIR += iec16022
      SUBDIR += img2pdf
      SUBDIR += imlib2
+     SUBDIR += imlib2-heic
      SUBDIR += imv
      SUBDIR += indexpage
      SUBDIR += inkscape
@@ -237,6 +238,7 @@
      SUBDIR += pinta
      SUBDIR += png
      SUBDIR += png2ico
+     SUBDIR += pngcheck
      SUBDIR += pngcrush
      SUBDIR += pngquant
      SUBDIR += posterazor
@@ -272,6 +274,8 @@
      SUBDIR += ruby-gruff
      SUBDIR += ruby-rmagick,ruby27
      SUBDIR += ruby-rmagick,ruby30
+     SUBDIR += ruby-rqrcode-core,ruby27
+     SUBDIR += ruby-rqrcode-core,ruby30
      SUBDIR += s10sh
      SUBDIR += sane-backends
      SUBDIR += sane-backends,escl

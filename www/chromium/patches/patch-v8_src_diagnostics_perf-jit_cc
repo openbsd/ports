@@ -1,4 +1,4 @@
-$OpenBSD: patch-v8_src_diagnostics_perf-jit_cc,v 1.6 2021/07/21 15:43:34 robert Exp $
+$OpenBSD: patch-v8_src_diagnostics_perf-jit_cc,v 1.7 2021/09/01 16:54:41 robert Exp $
 
 Index: v8/src/diagnostics/perf-jit.cc
 --- v8/src/diagnostics/perf-jit.cc.orig

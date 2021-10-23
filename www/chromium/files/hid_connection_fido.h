@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef SERVICE_EVICE_HID_HID_CONNECTION_FIDO_H_
+#ifndef SERVICE_DEVICE_HID_HID_CONNECTION_FIDO_H_
 #define SERVICE_DEVICE_HID_HID_CONNECTION_FIDO_H_
 
 #include "base/files/scoped_file.h"
@@ -20,7 +20,7 @@ public:
   HidConnectionFido(
       scoped_refptr<HidDeviceInfo> device_info, base::ScopedFD fd,
       scoped_refptr<base::SequencedTaskRunner> blocking_task_runner,
-      bool allow_protected_reports);
+      bool allow_protected_reports, bool allow_fido_reports);
 
 private:
   friend class base::RefCountedThreadSafe<HidConnectionFido>;

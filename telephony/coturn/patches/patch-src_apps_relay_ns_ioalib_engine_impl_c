@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_apps_relay_ns_ioalib_engine_impl_c,v 1.1 2021/09/10 15:20:41 tb Exp $
+
+Do not leak rbio and use SSL_set0_rbio()
+
+Index: src/apps/relay/ns_ioalib_engine_impl.c
+--- src/apps/relay/ns_ioalib_engine_impl.c.orig
++++ src/apps/relay/ns_ioalib_engine_impl.c
+@@ -1833,7 +1833,7 @@ int ssl_read(evutil_socket_t fd, SSL* ssl, ioa_network
+ 	BIO* rbio = BIO_new_mem_buf(buffer, old_buffer_len);
+ 	BIO_set_mem_eof_return(rbio, -1);
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined LIBRESSL_VERSION_NUMBER
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ 	ssl->rbio = rbio;
+ #else
+ 	SSL_set0_rbio(ssl,rbio);
+@@ -1928,7 +1928,7 @@ int ssl_read(evutil_socket_t fd, SSL* ssl, ioa_network
+ 	if(ret>0) {
+ 		ioa_network_buffer_add_offset_size(nbh, (uint16_t)buf_size, 0, (size_t)ret);
+ 	}
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined LIBRESSL_VERSION_NUMBER
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ 	ssl->rbio = NULL;
+ 	BIO_free(rbio);
+ #else

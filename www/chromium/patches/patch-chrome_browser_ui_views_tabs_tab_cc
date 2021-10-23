@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_tabs_tab_cc,v 1.13 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_tabs_tab_cc,v 1.16 2021/10/20 10:27:46 robert Exp $
 
 Index: chrome/browser/ui/views/tabs/tab.cc
 --- chrome/browser/ui/views/tabs/tab.cc.orig

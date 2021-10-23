@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.157 2021/06/04 07:25:09 robert Exp $
+# $OpenBSD: Makefile,v 1.159 2021/09/10 12:59:05 sthen Exp $
 
 # XXX building this port while a version is already installed on the
 # system will lead to unexpected hidden dependencies!!!
@@ -18,6 +18,9 @@ PKGNAME-bat=		bacula-bat-$V
 PKGNAME-mysql=		bacula-mysql-$V
 PKGNAME-pgsql=		bacula-pgsql-$V
 PKGNAME-sqlite3=	bacula-sqlite3-$V
+
+REVISION-server=	0
+REVISION-bat=		0
 
 CATEGORIES=		sysutils
 
@@ -126,7 +129,7 @@ MODULES +=		x11/qt5
 MODQT_DEPS =		No
 
 WANTLIB-bat += ${WANTLIB} bac baccfg bacfind
-WANTLIB-bat += GL Qt5Core Qt5Gui Qt5Widgets
+WANTLIB-bat += GL Qt5Core Qt5Gui Qt5Widgets qwt
 WANTLIB-bat += lib/inotify/inotify
 
 RUN_DEPENDS-bat=	${RUN_DEPENDS} \
@@ -134,7 +137,8 @@ RUN_DEPENDS-bat=	${RUN_DEPENDS} \
 LIB_DEPENDS-bat=	${LIB_DEPENDS} \
 			${MODQT_LIB_DEPENDS} \
 			devel/libinotify \
-			sysutils/bacula,-main
+			sysutils/bacula,-main \
+			x11/qwt
 
 RUN_DEPENDS-server=	lang/gawk
 
@@ -144,6 +148,10 @@ RUN_DEPENDS-server=	lang/gawk
 CONFIGURE_ARGS +=	--disable-bat
 .else
 CONFIGURE_ARGS +=	--enable-bat
+# something in tray-monitor seems to still depend on this (at least,
+# it complains if junked during the build), though it looks like the dep
+# is supposed to have been removed by now.
+BUILD_DEPENDS +=	x11/qwt
 .endif
 
 .if !${BUILD_PACKAGES:M-mysql}

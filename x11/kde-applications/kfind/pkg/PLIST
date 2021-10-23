@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/06/19 18:34:36 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/09/10 08:43:53 rsadowski Exp $
 @conflict kde-baseapps-*
 @bin bin/kfind
 @man man/man1/kfind.1
@@ -51,6 +51,9 @@ share/doc/HTML/sv/kfind/index.docbook
 share/doc/HTML/uk/kfind/
 share/doc/HTML/uk/kfind/index.cache.bz2
 share/doc/HTML/uk/kfind/index.docbook
+share/doc/HTML/zh_CN/kfind/
+share/doc/HTML/zh_CN/kfind/index.cache.bz2
+share/doc/HTML/zh_CN/kfind/index.docbook
 share/icons/hicolor/128x128/apps/kfind.png
 share/icons/hicolor/16x16/apps/kfind.png
 share/icons/hicolor/22x22/apps/kfind.png

@@ -1,0 +1,16 @@
+$OpenBSD: patch-modules_wildcard_Makefile_in,v 1.1 2021/09/15 19:13:46 naddy Exp $
+
+Fix rules for parallel make.
+
+Index: modules/wildcard/Makefile.in
+--- modules/wildcard/Makefile.in.orig
++++ modules/wildcard/Makefile.in
+@@ -34,7 +34,7 @@ wildcard.o : wildcard.c config.h gllib
+ am--refresh :
+ 
+ # wildcard relies on src/gllib, so we must also include files in the build dir
+-gllib libgnu_wc.a : force
++gllib libgnu_wc.a &: force
+ 	rm -f libgnu_wc.a
+ 	mkdir -p gllib
+ 	test -f gllib/Makefile || sh config.status gllib/Makefile depfiles

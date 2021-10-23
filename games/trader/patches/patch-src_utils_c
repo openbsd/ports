@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_utils_c,v 1.1 2021/08/30 14:02:07 fcambus Exp $
+
+Index: src/utils.c
+--- src/utils.c.orig
++++ src/utils.c
+@@ -682,8 +682,7 @@ ssize_t xwcsfmon (wchar_t *restrict buf, size_t maxsiz
+        produce "12345" instead of something like "-$123.45"!  The
+        following code overcomes these limitations by using snprintf(). */
+ 
+-    if (! is_posix_locale) {
+-	n = strfmon(s, BUFSIZE, format, val);
++    if (0) {
+     } else {
+ 	/* The current implementation assumes the monetary decimal point
+ 	   is overridden to "." (ie, MOD_POSIX_MON_DECIMAL_POINT == "."),

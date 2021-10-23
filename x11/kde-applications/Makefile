@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2021/05/03 15:35:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.65 2021/09/11 05:28:35 rsadowski Exp $
 
      SUBDIR =
 
@@ -74,7 +74,6 @@
      SUBDIR += kolf
      SUBDIR += kollision
      SUBDIR += konquest
-     #SUBDIR += kpatience
      SUBDIR += kreversi
      SUBDIR += kshisen
      SUBDIR += ksirk
@@ -106,7 +105,6 @@
      SUBDIR += ffmpegthumbs
      SUBDIR += juk
      #SUBDIR += k3b
-     #SUBDIR += kamoso
      SUBDIR += kdenlive
      SUBDIR += kmix
      #SUBDIR += kwave
@@ -116,6 +114,7 @@
      SUBDIR += kdenetwork-filesharing
      SUBDIR += kget
      SUBDIR += kio-extras
+     #SUBDIR += kio-gdrive
      SUBDIR += kmailtransport
      #SUBDIR += kopete
      SUBDIR += krdc
@@ -243,16 +242,25 @@
      # Former projects under the hat of KDE Applications
      SUBDIR += okteta
 
-     # Gone upstream?
-     #SUBDIR += kdav
-     #SUBDIR += kblog
-     #SUBDIR += kdepim-apps-libs
-
      # XXX keep in sync
      # life outside of x11/kde-applications
      # net/konversation
      # net/ktorrent
      # net/libktorrent
      # x11/yakuake
+     # graphics/skanlite
+
+     # TODO
+     # kdeconnect-kde
+     # kipi-plugins
+     # kirigami-gallery
+     # kontrast
+     # kopeninghours
+     # kosmindoormap
+     # kpmcore
+     # kpublictransport
+     # markdownpart
+     # partitionmanager
+
 
 .include <bsd.port.subdir.mk>

@@ -1,8 +1,8 @@
-$OpenBSD: patch-source_Makefile,v 1.6 2021/03/06 08:13:44 daniel Exp $
+$OpenBSD: patch-source_Makefile,v 1.7 2021/09/02 17:03:29 fcambus Exp $
 Index: source/Makefile
 --- source/Makefile.orig
 +++ source/Makefile
-@@ -240,9 +240,6 @@ ifdef msys
+@@ -260,9 +260,6 @@ ifdef msys
  		BUILD_LIBPNG = YesPlease
  		COPY_FONTS = yes
  	endif
@@ -11,8 +11,8 @@ Index: source/Makefile
 -	endif
  endif
  ifeq ($(uname_S),Darwin)
- 	STRIP := strip -x
-@@ -345,11 +342,8 @@ endif
+ ifdef MAC_TARGET
+@@ -371,11 +368,8 @@ endif
  #
  ifndef NO_APPLE_PLATFORM
  ifeq ($(uname_S),Darwin)
@@ -24,7 +24,7 @@ Index: source/Makefile
  
  
  ifdef WIN32
-@@ -457,15 +451,7 @@ ifneq ($(GCC_VER),)
+@@ -501,15 +495,7 @@ ifneq ($(GCC_VER),)
  GCC_VER_SUFFIX:=-$(GCC_VER)
  endif
  
@@ -40,7 +40,7 @@ Index: source/Makefile
  
  ifneq ($(FORCE_CC),)
  GCC := $(FORCE_CC)
-@@ -1107,51 +1093,6 @@ ifndef NO_OPTIMIZE
+@@ -1151,51 +1137,6 @@ ifndef NO_OPTIMIZE
      endif
    endif
  endif

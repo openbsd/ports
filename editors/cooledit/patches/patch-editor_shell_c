@@ -1,0 +1,25 @@
+$OpenBSD: patch-editor_shell_c,v 1.1 2021/09/19 21:54:18 schwarze Exp $
+
+Do not use printf(3) %n.
+
+Index: editor/shell.c
+--- editor/shell.c.orig
++++ editor/shell.c
+@@ -928,7 +928,7 @@ static void save_scripts (void)
+ 	for (r = t; *r; r++)
+ 	    if (*r == '\n')
+ 		*r = 129;	/* replace newlines with 129 */
+-	sprintf (p, "%s\n%s\n%c\n%d\n%d\n%s\n%d\n%s\n%s\n%n",
++	n = sprintf (p, "%s\n%s\n%c\n%d\n%d\n%s\n%d\n%s\n%s\n",
+ 		 scripts[i]->name ? scripts[i]->name : 0,
+ 		 scripts[i]->menu ? scripts[i]->menu : 0,
+ 	       scripts[i]->menu_hot_key ? scripts[i]->menu_hot_key : ' ',
+@@ -937,7 +937,7 @@ static void save_scripts (void)
+ 		 scripts[i]->prompt ? scripts[i]->prompt : "",
+ 		 (int) scripts[i]->options,
+ 		 scripts[i]->last_options ? scripts[i]->last_options : "",
+-		 t, &n);
++		 t);
+ 	free (t);
+ 	p += n;
+ 	i++;

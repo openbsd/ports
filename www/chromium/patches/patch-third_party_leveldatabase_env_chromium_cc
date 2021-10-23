@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_leveldatabase_env_chromium_cc,v 1.16 2021/07/21 15:43:34 robert Exp $
+$OpenBSD: patch-third_party_leveldatabase_env_chromium_cc,v 1.17 2021/09/01 16:54:40 robert Exp $
 
 Index: third_party/leveldatabase/env_chromium.cc
 --- third_party/leveldatabase/env_chromium.cc.orig

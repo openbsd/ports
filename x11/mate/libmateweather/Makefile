@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2020/08/20 06:40:19 robert Exp $
+# $OpenBSD: Makefile,v 1.15 2021/08/25 12:05:51 robert Exp $
 
 COMMENT=		weather library for MATE
 
 SHARED_LIBS +=  mateweather               7.9 # 7.9
 
 MATE_PROJECT=		libmateweather
-MATE_VERSION=		1.24.1
 
 CATEGORIES=		net
 
@@ -20,6 +19,7 @@ WANTLIB += gtk-3 harfbuzz iconv idn2 intl lzma m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png psl pthread
 WANTLIB += soup-2.4 sqlite3 unistring xcb xcb-render xcb-shm xml2 z
 WANTLIB += brotlicommon brotlidec
+WANTLIB += ${COMPILER_LIBCXX} execinfo jpeg
 
 MODULES=		x11/gnome
 

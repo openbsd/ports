@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.130 2021/06/07 07:25:58 cwen Exp $
+# $OpenBSD: Makefile,v 1.132 2021/09/03 12:51:35 ajacoutot Exp $
 
 COMMENT=		GNOME encryption interface
 
 GNOME_PROJECT=		seahorse
 GNOME_VERSION=		40.0
+REVISION=		1
 
 CATEGORIES=		security
 
@@ -34,7 +35,7 @@ CONFIGURE_ARGS +=	-Db_asneeded=false
 
 LIB_DEPENDS=		databases/openldap \
 			devel/libsoup \
-			net/avahi \
+			net/avahi,-glib \
 			security/gpgme \
 			security/libpwquality \
 			x11/gnome/gcr \

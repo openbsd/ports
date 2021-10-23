@@ -1,14 +1,23 @@
-$OpenBSD: patch-components_feature_engagement_public_feature_constants_h,v 1.7 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-components_feature_engagement_public_feature_constants_h,v 1.10 2021/10/20 10:27:46 robert Exp $
 
 Index: components/feature_engagement/public/feature_constants.h
 --- components/feature_engagement/public/feature_constants.h.orig
 +++ components/feature_engagement/public/feature_constants.h
-@@ -17,7 +17,7 @@ extern const base::Feature kIPHDemoMode;
+@@ -20,7 +20,7 @@ extern const base::Feature kIPHSnooze;
  extern const base::Feature kIPHDummyFeature;
  
  #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
--    defined(OS_CHROMEOS)
-+    defined(OS_CHROMEOS) || defined(OS_BSD)
+-    defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
++    defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
  extern const base::Feature kIPHDesktopTabGroupsNewGroupFeature;
  extern const base::Feature kIPHFocusModeFeature;
  extern const base::Feature kIPHGlobalMediaControlsFeature;
+@@ -130,7 +130,7 @@ extern const base::Feature kIPHBadgedTranslateManualTr
+ extern const base::Feature kIPHDiscoverFeedHeaderFeature;
+ #endif  // defined(OS_IOS)
+ 
+-#if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
++#if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || defined(OS_BSD) || \
+     defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_FUCHSIA)
+ extern const base::Feature kIPHUpdatedConnectionSecurityIndicatorsFeature;
+ #endif

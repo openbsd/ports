@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_server_ca_c,v 1.1 2021/10/12 11:31:03 tb Exp $
+
+Cope with opaque structs in <openssl/x509.h>
+
+Index: src/server/ca.c
+--- src/server/ca.c.orig
++++ src/server/ca.c
+@@ -573,7 +573,7 @@ int ca_x509_verify_crl(struct conf **confs,
+ 		revoked=(X509_REVOKED *)
+ 			sk_X509_REVOKED_value(X509_CRL_get_REVOKED(crl), i);
+ 		if(!ASN1_INTEGER_cmp(
+-#if OPENSSL_VERSION_NUMBER < 0x1010000fL || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x1010000fL
+ 			revoked->serialNumber,
+ #else
+ 			X509_REVOKED_get0_serialNumber(revoked),

@@ -2,9 +2,9 @@ SHA256 (go-openbsd-386-bootstrap-1.16.tar.gz) = 0/nf//xxkwg1gMgWLAd4PdpFfcaBMLIL
 SHA256 (go-openbsd-arm-bootstrap-1.16.tar.gz) = DjjCEzU/FnndIrKC8gh5PKAZkKp9Lt49aT3XPqhEWNM=
 SHA256 (go-openbsd-arm64-bootstrap-1.16.tar.gz) = qqc/TtaBfoq5oJcOHoqNZ6+bO+OOIRZoW1zlj19uBVw=
 SHA256 (go-openbsd-mips64-bootstrap-1.16.tar.gz) = dwojdjHgxrLlKC8QbseRYnOf8s/wN/Wx+UkPhH2aeJY=
-SHA256 (go1.16.6.src.tar.gz) = o6XUvEAbUdsGXk+TtSM0ek00OuDAsIplw0I7BaE4A30=
+SHA256 (go1.17.src.tar.gz) = OnDlBVUJ80fA+4McoHor87UxBo80mxSjxlLptbZ7610=
 SIZE (go-openbsd-386-bootstrap-1.16.tar.gz) = 131493298
 SIZE (go-openbsd-arm-bootstrap-1.16.tar.gz) = 128073881
 SIZE (go-openbsd-arm64-bootstrap-1.16.tar.gz) = 126892240
 SIZE (go-openbsd-mips64-bootstrap-1.16.tar.gz) = 129935270
-SIZE (go1.16.6.src.tar.gz) = 20923044
+SIZE (go1.17.src.tar.gz) = 22178549

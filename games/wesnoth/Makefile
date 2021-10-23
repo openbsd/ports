@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2021/06/22 12:11:53 kirby Exp $
+# $OpenBSD: Makefile,v 1.91 2021/09/19 05:24:30 rsadowski Exp $
 
 PORTROACH = 	limitw:1,even
 
@@ -6,6 +6,7 @@ BROKEN-hppa =	missing atomic ops
 COMMENT=	fantasy turn-based strategy game
 
 DISTNAME=	wesnoth-1.14.17
+REVISION=	0
 
 CATEGORIES=	games x11
 
@@ -32,7 +33,7 @@ MODULES=	devel/cmake
 COMPILER = 	base-clang ports-gcc
 
 BUILD_DEPENDS=	devel/gettext,-tools
-LIB_DEPENDS=	devel/boost>=1.66.0p0 \
+LIB_DEPENDS=	devel/boost \
 		devel/sdl2-image \
 		devel/sdl2-mixer \
 		devel/sdl2-ttf \

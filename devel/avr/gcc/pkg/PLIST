@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2019/04/18 17:32:33 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/09/08 06:02:59 martin Exp $
 @bin bin/avr-c++
 @bin bin/avr-cpp
 @bin bin/avr-g++
@@ -16,50 +16,56 @@ lib/gcc/
 lib/gcc/avr/
 lib/gcc/avr/${V}/
 lib/gcc/avr/${V}/avr25/
-lib/gcc/avr/${V}/avr25/libgcc.a
-lib/gcc/avr/${V}/avr25/libgcov.a
+@static-lib lib/gcc/avr/${V}/avr25/libgcc.a
+@static-lib lib/gcc/avr/${V}/avr25/libgcov.a
 lib/gcc/avr/${V}/avr25/tiny-stack/
-lib/gcc/avr/${V}/avr25/tiny-stack/libgcc.a
-lib/gcc/avr/${V}/avr25/tiny-stack/libgcov.a
+@static-lib lib/gcc/avr/${V}/avr25/tiny-stack/libgcc.a
+@static-lib lib/gcc/avr/${V}/avr25/tiny-stack/libgcov.a
 lib/gcc/avr/${V}/avr3/
-lib/gcc/avr/${V}/avr3/libgcc.a
-lib/gcc/avr/${V}/avr3/libgcov.a
+@static-lib lib/gcc/avr/${V}/avr3/libgcc.a
+@static-lib lib/gcc/avr/${V}/avr3/libgcov.a
 lib/gcc/avr/${V}/avr31/
-lib/gcc/avr/${V}/avr31/libgcc.a
-lib/gcc/avr/${V}/avr31/libgcov.a
+@static-lib lib/gcc/avr/${V}/avr31/libgcc.a
+@static-lib lib/gcc/avr/${V}/avr31/libgcov.a
 lib/gcc/avr/${V}/avr35/
-lib/gcc/avr/${V}/avr35/libgcc.a
-lib/gcc/avr/${V}/avr35/libgcov.a
+@static-lib lib/gcc/avr/${V}/avr35/libgcc.a
+@static-lib lib/gcc/avr/${V}/avr35/libgcov.a
 lib/gcc/avr/${V}/avr4/
-lib/gcc/avr/${V}/avr4/libgcc.a
-lib/gcc/avr/${V}/avr4/libgcov.a
+@static-lib lib/gcc/avr/${V}/avr4/libgcc.a
+@static-lib lib/gcc/avr/${V}/avr4/libgcov.a
 lib/gcc/avr/${V}/avr5/
-lib/gcc/avr/${V}/avr5/libgcc.a
-lib/gcc/avr/${V}/avr5/libgcov.a
+@static-lib lib/gcc/avr/${V}/avr5/libgcc.a
+@static-lib lib/gcc/avr/${V}/avr5/libgcov.a
 lib/gcc/avr/${V}/avr51/
-lib/gcc/avr/${V}/avr51/libgcc.a
-lib/gcc/avr/${V}/avr51/libgcov.a
+@static-lib lib/gcc/avr/${V}/avr51/libgcc.a
+@static-lib lib/gcc/avr/${V}/avr51/libgcov.a
 lib/gcc/avr/${V}/avr6/
-lib/gcc/avr/${V}/avr6/libgcc.a
-lib/gcc/avr/${V}/avr6/libgcov.a
+@static-lib lib/gcc/avr/${V}/avr6/libgcc.a
+@static-lib lib/gcc/avr/${V}/avr6/libgcov.a
 lib/gcc/avr/${V}/avrtiny/
-lib/gcc/avr/${V}/avrtiny/libgcc.a
-lib/gcc/avr/${V}/avrtiny/libgcov.a
+@static-lib lib/gcc/avr/${V}/avrtiny/libgcc.a
+@static-lib lib/gcc/avr/${V}/avrtiny/libgcov.a
 lib/gcc/avr/${V}/avrxmega2/
-lib/gcc/avr/${V}/avrxmega2/libgcc.a
-lib/gcc/avr/${V}/avrxmega2/libgcov.a
+@static-lib lib/gcc/avr/${V}/avrxmega2/libgcc.a
+@static-lib lib/gcc/avr/${V}/avrxmega2/libgcov.a
+lib/gcc/avr/${V}/avrxmega3/
+@static-lib lib/gcc/avr/${V}/avrxmega3/libgcc.a
+@static-lib lib/gcc/avr/${V}/avrxmega3/libgcov.a
+lib/gcc/avr/${V}/avrxmega3/short-calls/
+@static-lib lib/gcc/avr/${V}/avrxmega3/short-calls/libgcc.a
+@static-lib lib/gcc/avr/${V}/avrxmega3/short-calls/libgcov.a
 lib/gcc/avr/${V}/avrxmega4/
-lib/gcc/avr/${V}/avrxmega4/libgcc.a
-lib/gcc/avr/${V}/avrxmega4/libgcov.a
+@static-lib lib/gcc/avr/${V}/avrxmega4/libgcc.a
+@static-lib lib/gcc/avr/${V}/avrxmega4/libgcov.a
 lib/gcc/avr/${V}/avrxmega5/
-lib/gcc/avr/${V}/avrxmega5/libgcc.a
-lib/gcc/avr/${V}/avrxmega5/libgcov.a
+@static-lib lib/gcc/avr/${V}/avrxmega5/libgcc.a
+@static-lib lib/gcc/avr/${V}/avrxmega5/libgcov.a
 lib/gcc/avr/${V}/avrxmega6/
-lib/gcc/avr/${V}/avrxmega6/libgcc.a
-lib/gcc/avr/${V}/avrxmega6/libgcov.a
+@static-lib lib/gcc/avr/${V}/avrxmega6/libgcc.a
+@static-lib lib/gcc/avr/${V}/avrxmega6/libgcov.a
 lib/gcc/avr/${V}/avrxmega7/
-lib/gcc/avr/${V}/avrxmega7/libgcc.a
-lib/gcc/avr/${V}/avrxmega7/libgcov.a
+@static-lib lib/gcc/avr/${V}/avrxmega7/libgcc.a
+@static-lib lib/gcc/avr/${V}/avrxmega7/libgcov.a
 lib/gcc/avr/${V}/device-specs/
 lib/gcc/avr/${V}/device-specs/specs-at43usb320
 lib/gcc/avr/${V}/device-specs/specs-at43usb355
@@ -102,6 +108,7 @@ lib/gcc/avr/${V}/device-specs/specs-ata5702m322
 lib/gcc/avr/${V}/device-specs/specs-ata5782
 lib/gcc/avr/${V}/device-specs/specs-ata5790
 lib/gcc/avr/${V}/device-specs/specs-ata5790n
+lib/gcc/avr/${V}/device-specs/specs-ata5791
 lib/gcc/avr/${V}/device-specs/specs-ata5795
 lib/gcc/avr/${V}/device-specs/specs-ata5831
 lib/gcc/avr/${V}/device-specs/specs-ata6285
@@ -113,6 +120,8 @@ lib/gcc/avr/${V}/device-specs/specs-ata6614q
 lib/gcc/avr/${V}/device-specs/specs-ata6616c
 lib/gcc/avr/${V}/device-specs/specs-ata6617c
 lib/gcc/avr/${V}/device-specs/specs-ata664251
+lib/gcc/avr/${V}/device-specs/specs-ata8210
+lib/gcc/avr/${V}/device-specs/specs-ata8510
 lib/gcc/avr/${V}/device-specs/specs-atmega103
 lib/gcc/avr/${V}/device-specs/specs-atmega128
 lib/gcc/avr/${V}/device-specs/specs-atmega1280
@@ -124,6 +133,8 @@ lib/gcc/avr/${V}/device-specs/specs-atmega128a
 lib/gcc/avr/${V}/device-specs/specs-atmega128rfa1
 lib/gcc/avr/${V}/device-specs/specs-atmega128rfr2
 lib/gcc/avr/${V}/device-specs/specs-atmega16
+lib/gcc/avr/${V}/device-specs/specs-atmega1608
+lib/gcc/avr/${V}/device-specs/specs-atmega1609
 lib/gcc/avr/${V}/device-specs/specs-atmega161
 lib/gcc/avr/${V}/device-specs/specs-atmega162
 lib/gcc/avr/${V}/device-specs/specs-atmega163
@@ -138,6 +149,7 @@ lib/gcc/avr/${V}/device-specs/specs-atmega168
 lib/gcc/avr/${V}/device-specs/specs-atmega168a
 lib/gcc/avr/${V}/device-specs/specs-atmega168p
 lib/gcc/avr/${V}/device-specs/specs-atmega168pa
+lib/gcc/avr/${V}/device-specs/specs-atmega168pb
 lib/gcc/avr/${V}/device-specs/specs-atmega169
 lib/gcc/avr/${V}/device-specs/specs-atmega169a
 lib/gcc/avr/${V}/device-specs/specs-atmega169p
@@ -155,6 +167,8 @@ lib/gcc/avr/${V}/device-specs/specs-atmega2561
 lib/gcc/avr/${V}/device-specs/specs-atmega2564rfr2
 lib/gcc/avr/${V}/device-specs/specs-atmega256rfr2
 lib/gcc/avr/${V}/device-specs/specs-atmega32
+lib/gcc/avr/${V}/device-specs/specs-atmega3208
+lib/gcc/avr/${V}/device-specs/specs-atmega3209
 lib/gcc/avr/${V}/device-specs/specs-atmega323
 lib/gcc/avr/${V}/device-specs/specs-atmega324a
 lib/gcc/avr/${V}/device-specs/specs-atmega324p
@@ -169,6 +183,7 @@ lib/gcc/avr/${V}/device-specs/specs-atmega325p
 lib/gcc/avr/${V}/device-specs/specs-atmega325pa
 lib/gcc/avr/${V}/device-specs/specs-atmega328
 lib/gcc/avr/${V}/device-specs/specs-atmega328p
+lib/gcc/avr/${V}/device-specs/specs-atmega328pb
 lib/gcc/avr/${V}/device-specs/specs-atmega329
 lib/gcc/avr/${V}/device-specs/specs-atmega3290
 lib/gcc/avr/${V}/device-specs/specs-atmega3290a
@@ -187,9 +202,12 @@ lib/gcc/avr/${V}/device-specs/specs-atmega32u4
 lib/gcc/avr/${V}/device-specs/specs-atmega32u6
 lib/gcc/avr/${V}/device-specs/specs-atmega406
 lib/gcc/avr/${V}/device-specs/specs-atmega48
+lib/gcc/avr/${V}/device-specs/specs-atmega4808
+lib/gcc/avr/${V}/device-specs/specs-atmega4809
 lib/gcc/avr/${V}/device-specs/specs-atmega48a
 lib/gcc/avr/${V}/device-specs/specs-atmega48p
 lib/gcc/avr/${V}/device-specs/specs-atmega48pa
+lib/gcc/avr/${V}/device-specs/specs-atmega48pb
 lib/gcc/avr/${V}/device-specs/specs-atmega64
 lib/gcc/avr/${V}/device-specs/specs-atmega640
 lib/gcc/avr/${V}/device-specs/specs-atmega644
@@ -216,12 +234,15 @@ lib/gcc/avr/${V}/device-specs/specs-atmega64hve2
 lib/gcc/avr/${V}/device-specs/specs-atmega64m1
 lib/gcc/avr/${V}/device-specs/specs-atmega64rfr2
 lib/gcc/avr/${V}/device-specs/specs-atmega8
+lib/gcc/avr/${V}/device-specs/specs-atmega808
+lib/gcc/avr/${V}/device-specs/specs-atmega809
 lib/gcc/avr/${V}/device-specs/specs-atmega8515
 lib/gcc/avr/${V}/device-specs/specs-atmega8535
 lib/gcc/avr/${V}/device-specs/specs-atmega88
 lib/gcc/avr/${V}/device-specs/specs-atmega88a
 lib/gcc/avr/${V}/device-specs/specs-atmega88p
 lib/gcc/avr/${V}/device-specs/specs-atmega88pa
+lib/gcc/avr/${V}/device-specs/specs-atmega88pb
 lib/gcc/avr/${V}/device-specs/specs-atmega8a
 lib/gcc/avr/${V}/device-specs/specs-atmega8hva
 lib/gcc/avr/${V}/device-specs/specs-atmega8u2
@@ -231,9 +252,19 @@ lib/gcc/avr/${V}/device-specs/specs-attiny12
 lib/gcc/avr/${V}/device-specs/specs-attiny13
 lib/gcc/avr/${V}/device-specs/specs-attiny13a
 lib/gcc/avr/${V}/device-specs/specs-attiny15
+lib/gcc/avr/${V}/device-specs/specs-attiny1604
+lib/gcc/avr/${V}/device-specs/specs-attiny1606
+lib/gcc/avr/${V}/device-specs/specs-attiny1607
+lib/gcc/avr/${V}/device-specs/specs-attiny1614
+lib/gcc/avr/${V}/device-specs/specs-attiny1616
+lib/gcc/avr/${V}/device-specs/specs-attiny1617
 lib/gcc/avr/${V}/device-specs/specs-attiny1634
 lib/gcc/avr/${V}/device-specs/specs-attiny167
 lib/gcc/avr/${V}/device-specs/specs-attiny20
+lib/gcc/avr/${V}/device-specs/specs-attiny202
+lib/gcc/avr/${V}/device-specs/specs-attiny204
+lib/gcc/avr/${V}/device-specs/specs-attiny212
+lib/gcc/avr/${V}/device-specs/specs-attiny214
 lib/gcc/avr/${V}/device-specs/specs-attiny22
 lib/gcc/avr/${V}/device-specs/specs-attiny2313
 lib/gcc/avr/${V}/device-specs/specs-attiny2313a
@@ -244,8 +275,18 @@ lib/gcc/avr/${V}/device-specs/specs-attiny26
 lib/gcc/avr/${V}/device-specs/specs-attiny261
 lib/gcc/avr/${V}/device-specs/specs-attiny261a
 lib/gcc/avr/${V}/device-specs/specs-attiny28
+lib/gcc/avr/${V}/device-specs/specs-attiny3214
+lib/gcc/avr/${V}/device-specs/specs-attiny3216
+lib/gcc/avr/${V}/device-specs/specs-attiny3217
 lib/gcc/avr/${V}/device-specs/specs-attiny4
 lib/gcc/avr/${V}/device-specs/specs-attiny40
+lib/gcc/avr/${V}/device-specs/specs-attiny402
+lib/gcc/avr/${V}/device-specs/specs-attiny404
+lib/gcc/avr/${V}/device-specs/specs-attiny406
+lib/gcc/avr/${V}/device-specs/specs-attiny412
+lib/gcc/avr/${V}/device-specs/specs-attiny414
+lib/gcc/avr/${V}/device-specs/specs-attiny416
+lib/gcc/avr/${V}/device-specs/specs-attiny417
 lib/gcc/avr/${V}/device-specs/specs-attiny4313
 lib/gcc/avr/${V}/device-specs/specs-attiny43u
 lib/gcc/avr/${V}/device-specs/specs-attiny44
@@ -256,6 +297,12 @@ lib/gcc/avr/${V}/device-specs/specs-attiny461
 lib/gcc/avr/${V}/device-specs/specs-attiny461a
 lib/gcc/avr/${V}/device-specs/specs-attiny48
 lib/gcc/avr/${V}/device-specs/specs-attiny5
+lib/gcc/avr/${V}/device-specs/specs-attiny804
+lib/gcc/avr/${V}/device-specs/specs-attiny806
+lib/gcc/avr/${V}/device-specs/specs-attiny807
+lib/gcc/avr/${V}/device-specs/specs-attiny814
+lib/gcc/avr/${V}/device-specs/specs-attiny816
+lib/gcc/avr/${V}/device-specs/specs-attiny817
 lib/gcc/avr/${V}/device-specs/specs-attiny828
 lib/gcc/avr/${V}/device-specs/specs-attiny84
 lib/gcc/avr/${V}/device-specs/specs-attiny841
@@ -323,6 +370,7 @@ lib/gcc/avr/${V}/device-specs/specs-avr51
 lib/gcc/avr/${V}/device-specs/specs-avr6
 lib/gcc/avr/${V}/device-specs/specs-avrtiny
 lib/gcc/avr/${V}/device-specs/specs-avrxmega2
+lib/gcc/avr/${V}/device-specs/specs-avrxmega3
 lib/gcc/avr/${V}/device-specs/specs-avrxmega4
 lib/gcc/avr/${V}/device-specs/specs-avrxmega5
 lib/gcc/avr/${V}/device-specs/specs-avrxmega6
@@ -334,6 +382,7 @@ lib/gcc/avr/${V}/include-fixed/README
 lib/gcc/avr/${V}/include-fixed/limits.h
 lib/gcc/avr/${V}/include-fixed/syslimits.h
 lib/gcc/avr/${V}/include/float.h
+lib/gcc/avr/${V}/include/gcov.h
 lib/gcc/avr/${V}/include/iso646.h
 lib/gcc/avr/${V}/include/stdalign.h
 lib/gcc/avr/${V}/include/stdarg.h
@@ -355,8 +404,8 @@ lib/gcc/avr/${V}/install-tools/include/README
 lib/gcc/avr/${V}/install-tools/include/limits.h
 lib/gcc/avr/${V}/install-tools/macro_list
 lib/gcc/avr/${V}/install-tools/mkheaders.conf
-lib/gcc/avr/${V}/libgcc.a
-lib/gcc/avr/${V}/libgcov.a
+@static-lib lib/gcc/avr/${V}/libgcc.a
+@static-lib lib/gcc/avr/${V}/libgcov.a
 lib/gcc/avr/${V}/plugin/
 lib/gcc/avr/${V}/plugin/gtype.state
 lib/gcc/avr/${V}/plugin/include/
@@ -373,9 +422,11 @@ lib/gcc/avr/${V}/plugin/include/attribs.h
 lib/gcc/avr/${V}/plugin/include/auto-host.h
 lib/gcc/avr/${V}/plugin/include/auto-profile.h
 lib/gcc/avr/${V}/plugin/include/b-header-vars
+lib/gcc/avr/${V}/plugin/include/backend.h
 lib/gcc/avr/${V}/plugin/include/basic-block.h
 lib/gcc/avr/${V}/plugin/include/bb-reorder.h
 lib/gcc/avr/${V}/plugin/include/bitmap.h
+lib/gcc/avr/${V}/plugin/include/brig-builtins.def
 lib/gcc/avr/${V}/plugin/include/builtin-attrs.def
 lib/gcc/avr/${V}/plugin/include/builtin-types.def
 lib/gcc/avr/${V}/plugin/include/builtins.def
@@ -403,12 +454,10 @@ lib/gcc/avr/${V}/plugin/include/cfgrtl.h
 lib/gcc/avr/${V}/plugin/include/cgraph.h
 lib/gcc/avr/${V}/plugin/include/chkp-builtins.def
 lib/gcc/avr/${V}/plugin/include/cif-code.def
-lib/gcc/avr/${V}/plugin/include/cilk-builtins.def
-lib/gcc/avr/${V}/plugin/include/cilk.h
-lib/gcc/avr/${V}/plugin/include/cilkplus.def
 lib/gcc/avr/${V}/plugin/include/collect-utils.h
 lib/gcc/avr/${V}/plugin/include/collect2-aix.h
 lib/gcc/avr/${V}/plugin/include/collect2.h
+lib/gcc/avr/${V}/plugin/include/color-macros.h
 lib/gcc/avr/${V}/plugin/include/conditions.h
 lib/gcc/avr/${V}/plugin/include/config/
 lib/gcc/avr/${V}/plugin/include/config.h
@@ -433,6 +482,7 @@ lib/gcc/avr/${V}/plugin/include/cp/cp-tree.def
 lib/gcc/avr/${V}/plugin/include/cp/cp-tree.h
 lib/gcc/avr/${V}/plugin/include/cp/cxx-pretty-print.h
 lib/gcc/avr/${V}/plugin/include/cp/name-lookup.h
+lib/gcc/avr/${V}/plugin/include/cp/operators.def
 lib/gcc/avr/${V}/plugin/include/cp/type-utils.h
 lib/gcc/avr/${V}/plugin/include/cppbuiltin.h
 lib/gcc/avr/${V}/plugin/include/cppdefault.h
@@ -459,6 +509,7 @@ lib/gcc/avr/${V}/plugin/include/double-int.h
 lib/gcc/avr/${V}/plugin/include/dumpfile.h
 lib/gcc/avr/${V}/plugin/include/dwarf2asm.h
 lib/gcc/avr/${V}/plugin/include/dwarf2out.h
+lib/gcc/avr/${V}/plugin/include/edit-context.h
 lib/gcc/avr/${V}/plugin/include/emit-rtl.h
 lib/gcc/avr/${V}/plugin/include/errors.h
 lib/gcc/avr/${V}/plugin/include/et-forest.h
@@ -468,13 +519,16 @@ lib/gcc/avr/${V}/plugin/include/expmed.h
 lib/gcc/avr/${V}/plugin/include/expr.h
 lib/gcc/avr/${V}/plugin/include/fibonacci_heap.h
 lib/gcc/avr/${V}/plugin/include/file-find.h
+lib/gcc/avr/${V}/plugin/include/file-prefix-map.h
 lib/gcc/avr/${V}/plugin/include/filenames.h
 lib/gcc/avr/${V}/plugin/include/fixed-value.h
 lib/gcc/avr/${V}/plugin/include/flag-types.h
 lib/gcc/avr/${V}/plugin/include/flags.h
+lib/gcc/avr/${V}/plugin/include/fold-const-call.h
 lib/gcc/avr/${V}/plugin/include/fold-const.h
 lib/gcc/avr/${V}/plugin/include/function.h
 lib/gcc/avr/${V}/plugin/include/gcc-plugin.h
+lib/gcc/avr/${V}/plugin/include/gcc-rich-location.h
 lib/gcc/avr/${V}/plugin/include/gcc-symtab.h
 lib/gcc/avr/${V}/plugin/include/gcc.h
 lib/gcc/avr/${V}/plugin/include/gcov-counter.def
@@ -493,7 +547,10 @@ lib/gcc/avr/${V}/plugin/include/gimple-fold.h
 lib/gcc/avr/${V}/plugin/include/gimple-iterator.h
 lib/gcc/avr/${V}/plugin/include/gimple-low.h
 lib/gcc/avr/${V}/plugin/include/gimple-match.h
+lib/gcc/avr/${V}/plugin/include/gimple-predict.h
 lib/gcc/avr/${V}/plugin/include/gimple-pretty-print.h
+lib/gcc/avr/${V}/plugin/include/gimple-ssa-evrp-analyze.h
+lib/gcc/avr/${V}/plugin/include/gimple-ssa-warn-restrict.h
 lib/gcc/avr/${V}/plugin/include/gimple-ssa.h
 lib/gcc/avr/${V}/plugin/include/gimple-streamer.h
 lib/gcc/avr/${V}/plugin/include/gimple-walk.h
@@ -504,10 +561,7 @@ lib/gcc/avr/${V}/plugin/include/gimplify.h
 lib/gcc/avr/${V}/plugin/include/glimits.h
 lib/gcc/avr/${V}/plugin/include/graph.h
 lib/gcc/avr/${V}/plugin/include/graphds.h
-lib/gcc/avr/${V}/plugin/include/graphite-isl-ast-to-gimple.h
-lib/gcc/avr/${V}/plugin/include/graphite-poly.h
-lib/gcc/avr/${V}/plugin/include/graphite-scop-detection.h
-lib/gcc/avr/${V}/plugin/include/graphite-sese-to-poly.h
+lib/gcc/avr/${V}/plugin/include/graphite.h
 lib/gcc/avr/${V}/plugin/include/gsstruct.def
 lib/gcc/avr/${V}/plugin/include/gstab.h
 lib/gcc/avr/${V}/plugin/include/gsyms.h
@@ -515,14 +569,19 @@ lib/gcc/avr/${V}/plugin/include/gsyslimits.h
 lib/gcc/avr/${V}/plugin/include/gtm-builtins.def
 lib/gcc/avr/${V}/plugin/include/gtype-desc.h
 lib/gcc/avr/${V}/plugin/include/hard-reg-set.h
+lib/gcc/avr/${V}/plugin/include/hash-map-traits.h
 lib/gcc/avr/${V}/plugin/include/hash-map.h
 lib/gcc/avr/${V}/plugin/include/hash-set.h
 lib/gcc/avr/${V}/plugin/include/hash-table.h
+lib/gcc/avr/${V}/plugin/include/hash-traits.h
 lib/gcc/avr/${V}/plugin/include/hashtab.h
 lib/gcc/avr/${V}/plugin/include/highlev-plugin-common.h
 lib/gcc/avr/${V}/plugin/include/hooks.h
 lib/gcc/avr/${V}/plugin/include/hosthooks-def.h
 lib/gcc/avr/${V}/plugin/include/hosthooks.h
+lib/gcc/avr/${V}/plugin/include/hsa-brig-format.h
+lib/gcc/avr/${V}/plugin/include/hsa-builtins.def
+lib/gcc/avr/${V}/plugin/include/hsa-common.h
 lib/gcc/avr/${V}/plugin/include/hw-doloop.h
 lib/gcc/avr/${V}/plugin/include/hwint.h
 lib/gcc/avr/${V}/plugin/include/ifcvt.h
@@ -533,15 +592,20 @@ lib/gcc/avr/${V}/plugin/include/insn-addr.h
 lib/gcc/avr/${V}/plugin/include/insn-codes.h
 lib/gcc/avr/${V}/plugin/include/insn-constants.h
 lib/gcc/avr/${V}/plugin/include/insn-flags.h
+lib/gcc/avr/${V}/plugin/include/insn-modes-inline.h
 lib/gcc/avr/${V}/plugin/include/insn-modes.h
 lib/gcc/avr/${V}/plugin/include/insn-notes.def
+lib/gcc/avr/${V}/plugin/include/int-vector-builder.h
 lib/gcc/avr/${V}/plugin/include/internal-fn.def
 lib/gcc/avr/${V}/plugin/include/internal-fn.h
 lib/gcc/avr/${V}/plugin/include/intl.h
 lib/gcc/avr/${V}/plugin/include/ipa-chkp.h
+lib/gcc/avr/${V}/plugin/include/ipa-fnsummary.h
 lib/gcc/avr/${V}/plugin/include/ipa-icf-gimple.h
 lib/gcc/avr/${V}/plugin/include/ipa-icf.h
 lib/gcc/avr/${V}/plugin/include/ipa-inline.h
+lib/gcc/avr/${V}/plugin/include/ipa-param-manipulation.h
+lib/gcc/avr/${V}/plugin/include/ipa-predicate.h
 lib/gcc/avr/${V}/plugin/include/ipa-prop.h
 lib/gcc/avr/${V}/plugin/include/ipa-ref.h
 lib/gcc/avr/${V}/plugin/include/ipa-reference.h
@@ -549,8 +613,6 @@ lib/gcc/avr/${V}/plugin/include/ipa-utils.h
 lib/gcc/avr/${V}/plugin/include/ira-int.h
 lib/gcc/avr/${V}/plugin/include/ira.h
 lib/gcc/avr/${V}/plugin/include/is-a.h
-lib/gcc/avr/${V}/plugin/include/java/
-lib/gcc/avr/${V}/plugin/include/java/java-tree.def
 lib/gcc/avr/${V}/plugin/include/langhooks-def.h
 lib/gcc/avr/${V}/plugin/include/langhooks.h
 lib/gcc/avr/${V}/plugin/include/lcm.h
@@ -569,21 +631,36 @@ lib/gcc/avr/${V}/plugin/include/lto-streamer.h
 lib/gcc/avr/${V}/plugin/include/machmode.def
 lib/gcc/avr/${V}/plugin/include/machmode.h
 lib/gcc/avr/${V}/plugin/include/md5.h
+lib/gcc/avr/${V}/plugin/include/mem-stats-traits.h
+lib/gcc/avr/${V}/plugin/include/mem-stats.h
+lib/gcc/avr/${V}/plugin/include/memmodel.h
+lib/gcc/avr/${V}/plugin/include/memory-block.h
 lib/gcc/avr/${V}/plugin/include/mode-classes.def
 lib/gcc/avr/${V}/plugin/include/objc/
 lib/gcc/avr/${V}/plugin/include/objc/objc-tree.def
 lib/gcc/avr/${V}/plugin/include/obstack.h
-lib/gcc/avr/${V}/plugin/include/omega.h
 lib/gcc/avr/${V}/plugin/include/omp-builtins.def
+lib/gcc/avr/${V}/plugin/include/omp-expand.h
+lib/gcc/avr/${V}/plugin/include/omp-general.h
+lib/gcc/avr/${V}/plugin/include/omp-grid.h
 lib/gcc/avr/${V}/plugin/include/omp-low.h
+lib/gcc/avr/${V}/plugin/include/omp-offload.h
+lib/gcc/avr/${V}/plugin/include/omp-simd-clone.h
+lib/gcc/avr/${V}/plugin/include/optabs-libfuncs.h
+lib/gcc/avr/${V}/plugin/include/optabs-query.h
+lib/gcc/avr/${V}/plugin/include/optabs-tree.h
 lib/gcc/avr/${V}/plugin/include/optabs.def
 lib/gcc/avr/${V}/plugin/include/optabs.h
 lib/gcc/avr/${V}/plugin/include/options.h
 lib/gcc/avr/${V}/plugin/include/opts-diagnostic.h
 lib/gcc/avr/${V}/plugin/include/opts.h
 lib/gcc/avr/${V}/plugin/include/output.h
+lib/gcc/avr/${V}/plugin/include/params-enum.h
+lib/gcc/avr/${V}/plugin/include/params-list.h
+lib/gcc/avr/${V}/plugin/include/params-options.h
 lib/gcc/avr/${V}/plugin/include/params.def
 lib/gcc/avr/${V}/plugin/include/params.h
+lib/gcc/avr/${V}/plugin/include/params.list
 lib/gcc/avr/${V}/plugin/include/pass-instances.def
 lib/gcc/avr/${V}/plugin/include/pass_manager.h
 lib/gcc/avr/${V}/plugin/include/passes.def
@@ -591,14 +668,18 @@ lib/gcc/avr/${V}/plugin/include/plugin-api.h
 lib/gcc/avr/${V}/plugin/include/plugin-version.h
 lib/gcc/avr/${V}/plugin/include/plugin.def
 lib/gcc/avr/${V}/plugin/include/plugin.h
+lib/gcc/avr/${V}/plugin/include/poly-int-types.h
+lib/gcc/avr/${V}/plugin/include/poly-int.h
 lib/gcc/avr/${V}/plugin/include/predict.def
 lib/gcc/avr/${V}/plugin/include/predict.h
 lib/gcc/avr/${V}/plugin/include/prefix.h
 lib/gcc/avr/${V}/plugin/include/pretty-print.h
 lib/gcc/avr/${V}/plugin/include/print-rtl.h
 lib/gcc/avr/${V}/plugin/include/print-tree.h
+lib/gcc/avr/${V}/plugin/include/profile-count.h
 lib/gcc/avr/${V}/plugin/include/profile.h
 lib/gcc/avr/${V}/plugin/include/read-md.h
+lib/gcc/avr/${V}/plugin/include/read-rtl-function.h
 lib/gcc/avr/${V}/plugin/include/real.h
 lib/gcc/avr/${V}/plugin/include/realmpfr.h
 lib/gcc/avr/${V}/plugin/include/recog.h
@@ -616,27 +697,35 @@ lib/gcc/avr/${V}/plugin/include/rtl.def
 lib/gcc/avr/${V}/plugin/include/rtl.h
 lib/gcc/avr/${V}/plugin/include/rtlhash.h
 lib/gcc/avr/${V}/plugin/include/rtlhooks-def.h
+lib/gcc/avr/${V}/plugin/include/rtx-vector-builder.h
+lib/gcc/avr/${V}/plugin/include/run-rtl-passes.h
 lib/gcc/avr/${V}/plugin/include/safe-ctype.h
 lib/gcc/avr/${V}/plugin/include/sanitizer.def
 lib/gcc/avr/${V}/plugin/include/sbitmap.h
 lib/gcc/avr/${V}/plugin/include/sched-int.h
-lib/gcc/avr/${V}/plugin/include/sdbout.h
 lib/gcc/avr/${V}/plugin/include/sel-sched-dump.h
 lib/gcc/avr/${V}/plugin/include/sel-sched-ir.h
 lib/gcc/avr/${V}/plugin/include/sel-sched.h
+lib/gcc/avr/${V}/plugin/include/selftest-diagnostic.h
+lib/gcc/avr/${V}/plugin/include/selftest-rtl.h
+lib/gcc/avr/${V}/plugin/include/selftest.h
 lib/gcc/avr/${V}/plugin/include/sese.h
 lib/gcc/avr/${V}/plugin/include/shrink-wrap.h
 lib/gcc/avr/${V}/plugin/include/signop.h
 lib/gcc/avr/${V}/plugin/include/sparseset.h
+lib/gcc/avr/${V}/plugin/include/spellcheck-tree.h
+lib/gcc/avr/${V}/plugin/include/spellcheck.h
 lib/gcc/avr/${V}/plugin/include/splay-tree.h
 lib/gcc/avr/${V}/plugin/include/sreal.h
 lib/gcc/avr/${V}/plugin/include/ssa-iterators.h
+lib/gcc/avr/${V}/plugin/include/ssa.h
 lib/gcc/avr/${V}/plugin/include/stab.def
 lib/gcc/avr/${V}/plugin/include/statistics.h
 lib/gcc/avr/${V}/plugin/include/stmt.h
 lib/gcc/avr/${V}/plugin/include/stor-layout.h
 lib/gcc/avr/${V}/plugin/include/streamer-hooks.h
 lib/gcc/avr/${V}/plugin/include/stringpool.h
+lib/gcc/avr/${V}/plugin/include/substring-locations.h
 lib/gcc/avr/${V}/plugin/include/symbol-summary.h
 lib/gcc/avr/${V}/plugin/include/symtab.h
 lib/gcc/avr/${V}/plugin/include/sync-builtins.def
@@ -644,6 +733,7 @@ lib/gcc/avr/${V}/plugin/include/system.h
 lib/gcc/avr/${V}/plugin/include/target-def.h
 lib/gcc/avr/${V}/plugin/include/target-globals.h
 lib/gcc/avr/${V}/plugin/include/target-hooks-macros.h
+lib/gcc/avr/${V}/plugin/include/target-insns.def
 lib/gcc/avr/${V}/plugin/include/target.def
 lib/gcc/avr/${V}/plugin/include/target.h
 lib/gcc/avr/${V}/plugin/include/targhooks.h
@@ -653,9 +743,9 @@ lib/gcc/avr/${V}/plugin/include/tm-preds.h
 lib/gcc/avr/${V}/plugin/include/tm.h
 lib/gcc/avr/${V}/plugin/include/tm_p.h
 lib/gcc/avr/${V}/plugin/include/toplev.h
+lib/gcc/avr/${V}/plugin/include/tracer.h
 lib/gcc/avr/${V}/plugin/include/trans-mem.h
 lib/gcc/avr/${V}/plugin/include/tree-affine.h
-lib/gcc/avr/${V}/plugin/include/tree-browser.def
 lib/gcc/avr/${V}/plugin/include/tree-cfg.h
 lib/gcc/avr/${V}/plugin/include/tree-cfgcleanup.h
 lib/gcc/avr/${V}/plugin/include/tree-check.h
@@ -667,7 +757,9 @@ lib/gcc/avr/${V}/plugin/include/tree-dfa.h
 lib/gcc/avr/${V}/plugin/include/tree-diagnostic.h
 lib/gcc/avr/${V}/plugin/include/tree-dump.h
 lib/gcc/avr/${V}/plugin/include/tree-eh.h
+lib/gcc/avr/${V}/plugin/include/tree-hash-traits.h
 lib/gcc/avr/${V}/plugin/include/tree-hasher.h
+lib/gcc/avr/${V}/plugin/include/tree-if-conv.h
 lib/gcc/avr/${V}/plugin/include/tree-inline.h
 lib/gcc/avr/${V}/plugin/include/tree-into-ssa.h
 lib/gcc/avr/${V}/plugin/include/tree-iterator.h
@@ -681,7 +773,9 @@ lib/gcc/avr/${V}/plugin/include/tree-pretty-print.h
 lib/gcc/avr/${V}/plugin/include/tree-scalar-evolution.h
 lib/gcc/avr/${V}/plugin/include/tree-ssa-address.h
 lib/gcc/avr/${V}/plugin/include/tree-ssa-alias.h
+lib/gcc/avr/${V}/plugin/include/tree-ssa-ccp.h
 lib/gcc/avr/${V}/plugin/include/tree-ssa-coalesce.h
+lib/gcc/avr/${V}/plugin/include/tree-ssa-dce.h
 lib/gcc/avr/${V}/plugin/include/tree-ssa-dom.h
 lib/gcc/avr/${V}/plugin/include/tree-ssa-live.h
 lib/gcc/avr/${V}/plugin/include/tree-ssa-loop-ivopts.h
@@ -691,6 +785,8 @@ lib/gcc/avr/${V}/plugin/include/tree-ssa-loop.h
 lib/gcc/avr/${V}/plugin/include/tree-ssa-operands.h
 lib/gcc/avr/${V}/plugin/include/tree-ssa-propagate.h
 lib/gcc/avr/${V}/plugin/include/tree-ssa-sccvn.h
+lib/gcc/avr/${V}/plugin/include/tree-ssa-scopedtables.h
+lib/gcc/avr/${V}/plugin/include/tree-ssa-strlen.h
 lib/gcc/avr/${V}/plugin/include/tree-ssa-ter.h
 lib/gcc/avr/${V}/plugin/include/tree-ssa-threadedge.h
 lib/gcc/avr/${V}/plugin/include/tree-ssa-threadupdate.h
@@ -698,7 +794,9 @@ lib/gcc/avr/${V}/plugin/include/tree-ssa.h
 lib/gcc/avr/${V}/plugin/include/tree-ssanames.h
 lib/gcc/avr/${V}/plugin/include/tree-stdarg.h
 lib/gcc/avr/${V}/plugin/include/tree-streamer.h
+lib/gcc/avr/${V}/plugin/include/tree-vector-builder.h
 lib/gcc/avr/${V}/plugin/include/tree-vectorizer.h
+lib/gcc/avr/${V}/plugin/include/tree-vrp.h
 lib/gcc/avr/${V}/plugin/include/tree.def
 lib/gcc/avr/${V}/plugin/include/tree.h
 lib/gcc/avr/${V}/plugin/include/treestruct.def
@@ -710,17 +808,21 @@ lib/gcc/avr/${V}/plugin/include/ubsan.h
 lib/gcc/avr/${V}/plugin/include/valtrack.h
 lib/gcc/avr/${V}/plugin/include/value-prof.h
 lib/gcc/avr/${V}/plugin/include/varasm.h
+lib/gcc/avr/${V}/plugin/include/vec-perm-indices.h
 lib/gcc/avr/${V}/plugin/include/vec.h
+lib/gcc/avr/${V}/plugin/include/vector-builder.h
 lib/gcc/avr/${V}/plugin/include/version.h
 lib/gcc/avr/${V}/plugin/include/vmsdbg.h
+lib/gcc/avr/${V}/plugin/include/vr-values.h
 lib/gcc/avr/${V}/plugin/include/vtable-verify.h
+lib/gcc/avr/${V}/plugin/include/wide-int-bitmask.h
 lib/gcc/avr/${V}/plugin/include/wide-int-print.h
 lib/gcc/avr/${V}/plugin/include/wide-int.h
 lib/gcc/avr/${V}/plugin/include/xcoff.h
 lib/gcc/avr/${V}/plugin/include/xcoffout.h
 lib/gcc/avr/${V}/tiny-stack/
-lib/gcc/avr/${V}/tiny-stack/libgcc.a
-lib/gcc/avr/${V}/tiny-stack/libgcov.a
+@static-lib lib/gcc/avr/${V}/tiny-stack/libgcc.a
+@static-lib lib/gcc/avr/${V}/tiny-stack/libgcov.a
 libexec/gcc/
 libexec/gcc/avr/
 libexec/gcc/avr/${V}/
@@ -741,6 +843,8 @@ libexec/gcc/avr/${V}/plugin/
 @man man/man1/avr-cpp.1
 @man man/man1/avr-g++.1
 @man man/man1/avr-gcc.1
+@man man/man1/avr-gcov-dump.1
+@man man/man1/avr-gcov-tool.1
 @man man/man1/avr-gcov.1
 @comment @man man/man7/fsf-funding.7
 @comment @man man/man7/gfdl.7

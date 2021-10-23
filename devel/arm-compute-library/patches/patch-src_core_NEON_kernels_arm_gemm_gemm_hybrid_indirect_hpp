@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_core_NEON_kernels_arm_gemm_gemm_hybrid_indirect_hpp,v 1.1.1.1 2021/10/19 03:54:58 kevlo Exp $
+
+Index: src/core/NEON/kernels/arm_gemm/gemm_hybrid_indirect.hpp
+--- src/core/NEON/kernels/arm_gemm/gemm_hybrid_indirect.hpp.orig
++++ src/core/NEON/kernels/arm_gemm/gemm_hybrid_indirect.hpp
+@@ -23,7 +23,9 @@
+  */
+ #pragma once
+ 
++#if !defined(__OpenBSD__)
+ #include <alloca.h>
++#endif /* !defined(__OpenBSD__) */
+ 
+ #include <algorithm>
+ #include <cassert>

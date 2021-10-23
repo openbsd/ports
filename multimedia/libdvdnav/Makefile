@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2020/12/26 19:02:45 kmos Exp $
+# $OpenBSD: Makefile,v 1.30 2021/10/11 06:11:31 rsadowski Exp $
 
 COMMENT=	DVD navigation library
 
-VER=		6.1.0
+VER=		6.1.1
 DISTNAME=	libdvdnav-${VER}
 EPOCH=		0
 CATEGORIES=	multimedia
@@ -18,7 +18,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	dvdread>=9.0 pthread
 
-LIB_DEPENDS=	devel/libdvdread>=6.1.1
+LIB_DEPENDS=	devel/libdvdread>=6.1.2
 
 CONFIGURE_STYLE= gnu
 

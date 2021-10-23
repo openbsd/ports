@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2020/12/14 15:56:36 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.27 2021/10/04 05:46:11 rsadowski Exp $
 
 COMMENT=	portable ASS/SSA subtitle renderer
 
-VER=		0.15.0
+VER=		0.15.2
 DISTNAME=	libass-${VER}
 CATEGORIES=	multimedia devel
 MASTER_SITES=	https://github.com/libass/libass/releases/download/${VER}/
@@ -23,13 +23,20 @@ WANTLIB=	${COMPILER_LIBCXX} expat fontconfig freetype fribidi \
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+BUILD_DEPENDS+=	devel/nasm
+.endif
+
 LIB_DEPENDS=	converters/libiconv \
 		devel/fribidi \
 		devel/harfbuzz
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--disable-asm
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		ASFLAGS="-DPIC=1 "
+
+post-patch:
+	chmod ${BINMODE} ${WRKSRC}/ltnasm.sh
 
 .include <bsd.port.mk>

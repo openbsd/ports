@@ -1,3 +1,4 @@
+# $OpenBSD: crates.inc,v 1.5 2021/09/11 07:36:14 semarie Exp $
 MODCARGO_CRATES +=	adler	1.0.2	# 0BSD OR MIT OR Apache-2.0
 MODCARGO_CRATES +=	aho-corasick	0.7.18	# Unlicense/MIT
 MODCARGO_CRATES +=	ansi_colours	1.0.4	# LGPL-3.0-or-later
@@ -12,7 +13,7 @@ MODCARGO_CRATES +=	bit-set	0.5.2	# MIT/Apache-2.0
 MODCARGO_CRATES +=	bit-vec	0.6.3	# MIT/Apache-2.0
 MODCARGO_CRATES +=	bitflags	1.2.1	# MIT/Apache-2.0
 MODCARGO_CRATES +=	bstr	0.2.16	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	bugreport	0.4.0	# MIT/Apache-2.0
+MODCARGO_CRATES +=	bugreport	0.4.1	# MIT/Apache-2.0
 MODCARGO_CRATES +=	byteorder	1.4.3	# Unlicense OR MIT
 MODCARGO_CRATES +=	cc	1.0.67	# MIT/Apache-2.0
 MODCARGO_CRATES +=	cfg-if	1.0.0	# MIT/Apache-2.0

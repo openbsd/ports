@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.114 2021/06/09 19:50:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.115 2021/09/06 21:32:19 tb Exp $
 
 COMMENT=		highly configurable framework window manager
 
 V=			4.3
 DISTNAME=		awesome-${V}
 CATEGORIES=		x11
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=		https://awesomewm.org/
 
@@ -42,7 +42,8 @@ BUILD_DEPENDS=		devel/pango \
 
 MODLUA_RUN_DEPENDS=	devel/lua-lgi
 
-RUN_DEPENDS=		misc/rlwrap \
+RUN_DEPENDS=		devel/pango \
+			misc/rlwrap \
 			shells/bash
 
 CONFIGURE_ARGS=		-DCOMPRESS_MANPAGES=OFF \

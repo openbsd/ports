@@ -1,0 +1,44 @@
+$OpenBSD: patch-druntime-2_098_0_posix_mak,v 1.1.1.1 2021/10/13 04:38:52 bcallah Exp $
+
+Index: druntime-2.098.0/posix.mak
+--- druntime-2.098.0/posix.mak.orig
++++ druntime-2.098.0/posix.mak
+@@ -5,7 +5,7 @@
+ 
+ QUIET:=
+ 
+-DMD_DIR=../dmd
++DMD_DIR=TOPDIR/dmd-2.098.0
+ DUB=dub
+ TOOLS_DIR=../tools
+ 
+@@ -64,11 +64,9 @@ MAKEFILE = $(firstword $(MAKEFILE_LIST))
+ DDOCFLAGS=-conf= -c -w -o- -Isrc -Iimport -version=CoreDdoc
+ 
+ # Set CFLAGS
+-CFLAGS=$(MODEL_FLAG) -fPIC -DHAVE_UNISTD_H
++CFLAGS+=$(MODEL_FLAG) -fPIC -DHAVE_UNISTD_H
+ ifeq ($(BUILD),debug)
+ 	CFLAGS += -g
+-else
+-	CFLAGS += -O3
+ endif
+ ifeq (solaris,$(OS))
+ 	CFLAGS+=-D_REENTRANT  # for thread-safe errno
+@@ -342,7 +340,7 @@ $(IMPDIR)/%.d : src/%.d
+ ######################## Build DMD if non-existent ##############################
+ 
+ $(DMD):
+-	$(MAKE) -C $(DMD_DIR)/src -f posix.mak BUILD=$(BUILD) OS=$(OS) MODEL=$(MODEL)
++	$(MAKE) -C $(DMD_DIR) -f posix.mak BUILD=$(BUILD) OS=$(OS) MODEL=$(MODEL)
+ 
+ ################### C/ASM Targets ############################
+ 
+@@ -464,7 +462,6 @@ benchmark-compile-only: $(ROOT)/benchmark $(DMD)
+ 	DMD=$(DMD) $< --repeat=0 --dflags="$(PHOBOS_DFLAGS) -de"
+ 
+ #################### test for undesired white spaces ##########################
+-MANIFEST = $(shell git ls-tree --name-only -r HEAD)
+ 
+ CWS_MAKEFILES = $(filter mak/% %.mak %/Makefile,$(MANIFEST))
+ NOT_MAKEFILES = $(filter-out $(CWS_MAKEFILES) src/rt/minit.obj test/%.exp,$(MANIFEST))

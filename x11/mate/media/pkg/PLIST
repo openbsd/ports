@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/10/03 14:36:30 robert Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/08/25 12:05:52 robert Exp $
 @bin bin/mate-volume-control
 @bin bin/mate-volume-control-status-icon
 @bin libexec/mate-volume-control-applet
-@man man/man1/mate-volume-control-applet.1
+@man man/man1/mate-volume-control-status-icon.1
 @man man/man1/mate-volume-control.1
 share/applications/mate-volume-control.desktop
 share/dbus-1/services/org.mate.panel.applet.GvcAppletFactory.service

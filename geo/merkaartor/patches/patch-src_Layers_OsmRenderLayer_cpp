@@ -1,16 +1,0 @@
-$OpenBSD: patch-src_Layers_OsmRenderLayer_cpp,v 1.1 2021/04/12 10:17:11 landry Exp $
-
-Index: src/Layers/OsmRenderLayer.cpp
---- src/Layers/OsmRenderLayer.cpp.orig
-+++ src/Layers/OsmRenderLayer.cpp
-@@ -96,8 +96,8 @@ class RenderTile (public)
-         projR.setTop(projR.top()+dlat);
-         projR.setRight(projR.right()+dlon);
- 
--        Coord tl = p->theProjection.inverse2Coord(projR.topLeft());
--        Coord br = p->theProjection.inverse2Coord(projR.bottomRight());
-+        Coord tl = p->theProjection.inverse(projR.topLeft());
-+        Coord br = p->theProjection.inverse(projR.bottomRight());
-         CoordBox invalidRect(tl, br);
- 
-         QMap<RenderPriority, QSet <Feature*> > theFeatures;

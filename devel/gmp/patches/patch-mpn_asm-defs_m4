@@ -1,0 +1,25 @@
+$OpenBSD: patch-mpn_asm-defs_m4,v 1.1 2021/09/10 20:29:04 gkoehler Exp $
+
+Fix libgmp.a on powerpc, which needs the PIC asm, because OpenBSD uses
+PIE position-independent executables.  powerpc and powerpc64 define
+PIC_ALWAYS to `yes', but the quotes on `PIC_ALWAYS' broke the macro
+expansion.  This fix prevents text relocation errors on powerpc when
+ld.lld links gdb >= 8 with libgmp.a.
+
+ld: error: can't create dynamic relocation R_PPC_ADDR16_HA against local symbol in readonly segment; recompile object files with -fPIC or pass '-Wl,-z,notext' to allow text relocations in the output
+>>> defined in /usr/local/lib/libgmp.a(invert_limb.o)
+>>> referenced by tmp-invert_limb.s
+>>>               invert_limb.o:(__gmpn_invert_limb) in archive /usr/local/lib/libgmp.a
+
+Index: mpn/asm-defs.m4
+--- mpn/asm-defs.m4.orig
++++ mpn/asm-defs.m4
+@@ -1051,7 +1051,7 @@ dnl  Normally PIC is defined (or not) by libtool, but 
+ dnl  systems which are always PIC.  PIC_ALWAYS established in config.m4
+ dnl  identifies these for us.
+ 
+-ifelse(`PIC_ALWAYS',`yes',`define(`PIC')')
++ifelse(PIC_ALWAYS,`yes',`define(`PIC')')
+ 
+ 
+ dnl  Various possible defines passed from the Makefile that are to be tested

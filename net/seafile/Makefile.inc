@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.38 2019/08/02 16:44:41 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.39 2021/10/04 14:35:40 kirby Exp $
+
+GH_ACCOUNT = 		haiwen
 
 CATEGORIES =		net net/seafile
 

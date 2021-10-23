@@ -1,0 +1,45 @@
+$OpenBSD: patch-gdb_riscv-obsd-tdep_h,v 1.1 2021/10/22 18:30:36 jca Exp $
+
+Index: gdb/riscv-obsd-tdep.h
+--- gdb/riscv-obsd-tdep.h.orig
++++ gdb/riscv-obsd-tdep.h
+@@ -0,0 +1,39 @@
++/* OpenBSD/riscv64 target support, prototypes.
++
++   Copyright (C) 2018-2021 Free Software Foundation, Inc.
++
++   This file is part of GDB.
++
++   This program is free software; you can redistribute it and/or modify
++   it under the terms of the GNU General Public License as published by
++   the Free Software Foundation; either version 3 of the License, or
++   (at your option) any later version.
++
++   This program is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++   GNU General Public License for more details.
++
++   You should have received a copy of the GNU General Public License
++   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
++
++#ifndef RISCV_OBSD_TDEP_H
++#define RISCV_OBSD_TDEP_H
++
++#include "regset.h"
++
++/* The general-purpose regset consists of 31 X registers, EPC, and
++   SSTATUS.  */
++#define RISCV_OBSD_NUM_GREGS		33
++
++/* The fp regset always consists of 32 128-bit registers, plus a
++   64-bit CSR_FCSR.  If 'Q' is not supported, only the low 64-bits of
++   each floating point register are valid.  If 'D' is not supported,
++   only the low 32-bits of each floating point register are valid.  */
++/* XXX on OpenBSD only 64 bits floating point registers are considered. */
++#define RISCV_OBSD_SIZEOF_FPREGSET (32 * 8 + 8)
++
++extern const struct regset riscv_obsd_gregset;
++extern const struct regset riscv_obsd_fpregset;
++
++#endif /* RISCV_OBSD_TDEP_H */

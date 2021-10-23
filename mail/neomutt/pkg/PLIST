@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2020/11/20 17:17:21 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.18 2021/10/22 13:06:02 sthen Exp $
 @bin bin/neomutt
 libexec/neomutt/
 @bin libexec/neomutt/pgpewrap
@@ -60,6 +60,9 @@ share/doc/neomutt/mime.types
 @sample ${SYSCONFDIR}/mime.types
 share/doc/neomutt/mimesupport.html
 share/doc/neomutt/miscellany.html
+share/doc/neomutt/oauth2/
+share/doc/neomutt/oauth2/mutt_oauth2.py
+share/doc/neomutt/oauth2/mutt_oauth2.py.README
 share/doc/neomutt/optionalfeatures.html
 share/doc/neomutt/reference.html
 share/doc/neomutt/samples/
@@ -77,6 +80,7 @@ share/examples/neomutt/colors.default
 share/examples/neomutt/colors.linux
 share/examples/neomutt/gpg.rc
 share/examples/neomutt/mairix_filter.pl
+share/examples/neomutt/markdown2html.py
 share/examples/neomutt/neomuttrc
 share/examples/neomutt/sample.mailcap
 share/examples/neomutt/sample.neomuttrc
@@ -110,11 +114,15 @@ share/locale/ko/LC_MESSAGES/neomutt.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/neomutt.mo
+share/locale/nb_NO/
+share/locale/nb_NO/LC_MESSAGES/
+share/locale/nb_NO/LC_MESSAGES/neomutt.mo
 share/locale/nl/LC_MESSAGES/neomutt.mo
 share/locale/pl/LC_MESSAGES/neomutt.mo
 share/locale/pt_BR/LC_MESSAGES/neomutt.mo
 share/locale/ru/LC_MESSAGES/neomutt.mo
 share/locale/sk/LC_MESSAGES/neomutt.mo
+share/locale/sr/LC_MESSAGES/neomutt.mo
 share/locale/sv/LC_MESSAGES/neomutt.mo
 share/locale/tr/LC_MESSAGES/neomutt.mo
 share/locale/uk/LC_MESSAGES/neomutt.mo

@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_renderer_host_render_process_host_impl_h,v 1.30 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_render_process_host_impl_h,v 1.33 2021/10/20 10:27:47 robert Exp $
 
 Index: content/browser/renderer_host/render_process_host_impl.h
 --- content/browser/renderer_host/render_process_host_impl.h.orig
 +++ content/browser/renderer_host/render_process_host_impl.h
-@@ -465,7 +465,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
+@@ -459,7 +459,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
    // Sets this RenderProcessHost to be guest only. For Testing only.
    void SetForGuestsOnlyForTesting();
  

@@ -1,9 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/04/27 05:27:01 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/09/10 08:43:53 rsadowski Exp $
 @pkgpath x11/kde4/kigo
 @bin bin/kigo
 share/applications/org.kde.kigo.desktop
 share/config.kcfg/
 share/config.kcfg/kigo.kcfg
+share/doc/HTML/ca/kigo/
+share/doc/HTML/ca/kigo/index.cache.bz2
+share/doc/HTML/ca/kigo/index.docbook
 share/doc/HTML/de/kigo/
 share/doc/HTML/de/kigo/get-new-games.png
 share/doc/HTML/de/kigo/hint.png

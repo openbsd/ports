@@ -1,0 +1,4 @@
+glmark2 is an OpenGL 2.0 and ES 2.0 benchmark.
+
+glmark2 is developed by Alexandros Frantzis and Jesse Barker based on the
+original glmark benchmark by Ben Smith.

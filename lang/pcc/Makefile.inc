@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.4 2021/06/29 21:43:07 kmos Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2021/10/10 13:52:19 phessler Exp $
 
 # Other architectures not fully supported yet
-ONLY_FOR_ARCHS = aarch64 amd64 i386 powerpc mips64
+ONLY_FOR_ARCHS = amd64 i386 powerpc mips64
 
-DISTVER =	20210608
+DISTVER =	20210921
 PKGVER =	1.1.0.${DISTVER}
 PCCVER =	1.2.0.DEVEL
 

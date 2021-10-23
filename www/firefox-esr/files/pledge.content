@@ -1,4 +1,4 @@
-# $OpenBSD: pledge.content,v 1.1 2020/07/28 14:21:48 landry Exp $
+# $OpenBSD: pledge.content,v 1.2 2021/09/07 13:43:04 landry Exp $
 stdio
 rpath
 wpath

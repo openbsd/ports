@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.102 2021/05/18 09:52:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.103 2021/09/03 11:48:53 ajacoutot Exp $
 
 BROKEN-alpha=		ICE hp5590.c:1141: error: unrecognizable insn
 
 COMMENT=		API for accessing scanners, backends
 
 DISTNAME=		sane-backends-1.0.32
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  sane                 2.1      # unknown
 
@@ -59,9 +59,10 @@ CONFIGURE_ARGS=		--sbindir=${PREFIX}/libexec \
 			--enable-pthread
 
 .if ${FLAVOR:Mescl}
-LIB_DEPENDS +=		net/avahi \
+LIB_DEPENDS +=		net/avahi,-libs \
 			net/curl \
 			print/poppler
+RUN_DEPENDS +=		net/avahi
 WANTLIB += X11 Xext Xrender avahi-client avahi-common cairo crypto
 WANTLIB += curl dbus-1 expat ffi fontconfig freetype gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 intl lcms2 nghttp2 openjp2

@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_py,v 1.1.1.1 2021/10/16 12:01:46 sdk Exp $
+
+Tests aren't allowed to make remote connection
+
+Index: tests.py
+--- tests.py.orig
++++ tests.py
+@@ -180,7 +180,7 @@ class TestPypandoc(unittest.TestCase):
+             self.assertEqualExceptForNewlineEnd(expected, received)
+ 
+     def test_basic_conversion_from_http_url(self):
+-        url = 'https://raw.githubusercontent.com/bebraw/pypandoc/master/README.md'
++        url = 'file://'+ os.getcwd() + '/README.md'
+         received = pypandoc.convert_file(url, 'html')
+         assert "GPL2 license" in received
+ 

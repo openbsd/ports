@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.95 2021/06/17 22:20:04 jeremy Exp $
+# $OpenBSD: Makefile,v 1.97 2021/10/15 20:27:51 jeremy Exp $
 
 # Runtime failures on i386 in IO#pos and IO#rewind
 ONLY_FOR_ARCHS = amd64
 
 COMMENT =	pure-Java implementation of the Ruby language
 
-V =		9.2.19.0
+V =		9.3.1.0
 DISTNAME =	jruby-dist-${V}-bin
 PKGNAME =	jruby-${V}
 CATEGORIES =	lang lang/ruby
 DISTFILES =	${DISTNAME}.tar.gz \
-		jffi-1.2.18.tar.gz:0 \
+		jffi-1.3.5.tar.gz:0 \
 		${JRUBY_LAUNCHER_GEM}:1
 
 HOMEPAGE =	http://www.jruby.org/
@@ -21,7 +21,7 @@ MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://repo1.maven.org/maven2/org/jruby/jruby-dist/${V}/
-MASTER_SITES0 =	https://filedump.se.rit.edu/pub/distfiles/
+MASTER_SITES0 =	https://github.com/jnr/jffi/archive/refs/tags/
 MASTER_SITES1 =	${MASTER_SITE_RUBYGEMS}
 
 MODULES =	java
@@ -43,7 +43,7 @@ WRKDIST =	${WRKDIR}/jruby-${V}
 JFFI_HOME =	${WRKDIST}/jffi
 JFFI_ARCH =	${MACHINE_ARCH:S/amd64/x86_64/}-OpenBSD
 FFI_ARCH =	${JFFI_ARCH:L}
-JRUBY_LAUNCHER_GEM = jruby-launcher-1.1.9-java.gem
+JRUBY_LAUNCHER_GEM = jruby-launcher-1.1.19-java.gem
 SUBST_VARS =	JRUBY_HOME JFFI_ARCH FFI_ARCH RAKE_V RDOC_V JAVA_HOME
 
 MODJAVA_BUILD_DIR = ${JFFI_HOME}
@@ -79,7 +79,7 @@ do-install:
 	ln -s ${TRUEPREFIX}/jruby/bin/jruby ${PREFIX}/bin/jruby
 	${INSTALL_DATA_DIR} ${JRUBY_HOME}
 	${INSTALL_DATA_DIR} ${JRUBY_HOME}/bin
-	for file in ast gem jgem jirb jirb_swing jruby rake rdoc ri testrb; \
+	for file in ast bundle bundler gem jgem jirb jirb_swing jruby jrubyc racc rake rdoc ri; \
 	  do ${INSTALL_SCRIPT} ${WRKBUILD}/bin/$$file ${JRUBY_HOME}/bin/$$file; \
 	done
 	${INSTALL_DATA_DIR} ${JRUBY_HOME}/lib

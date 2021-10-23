@@ -1,0 +1,14 @@
+$OpenBSD: patch-link-grammar_parse_count_c,v 1.1 2021/09/12 20:21:25 naddy Exp $
+
+Index: link-grammar/parse/count.c
+--- link-grammar/parse/count.c.orig
++++ link-grammar/parse/count.c
+@@ -408,7 +408,7 @@ static void table_stat(count_context_t *ctxt)
+ 				{
+ 					if (t->null_count != nc) continue;
+ 
+-					printf("[%u]%n", i, &n);
++					n = printf("[%u]", i);
+ 					printf("%*d %5d c=%lld\n",  15-n, t->l_id, t->r_id, t->count);
+ 				}
+ 			}

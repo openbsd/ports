@@ -1,0 +1,13 @@
+$OpenBSD: patch-gpl_png-fix-IDAT-windowsize_1,v 1.1.1.1 2021/10/17 21:11:20 espie Exp $
+
+Index: gpl/png-fix-IDAT-windowsize.1
+--- gpl/png-fix-IDAT-windowsize.1.orig
++++ gpl/png-fix-IDAT-windowsize.1
+@@ -1,6 +1,6 @@
+ .TH PNG-FIX-IDAT-WINDOWSIZE "1" "October 2020" "png-fix-IDAT-windowsize 1.0" "User Commands"
+ .SH NAME
+-png-fix-IDAT-windowsize \- manual page for png-fix-IDAT-windowsize 1.0
++png-fix-IDAT-windowsize \- fix corrupt libpng 1.2.6 output
+ .SH SYNOPSIS
+ .B png\-fix\-IDAT\-windowsize
+ .RI [ options ]

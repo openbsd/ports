@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2021/04/25 06:07:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2021/09/12 07:32:26 ajacoutot Exp $
 
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
@@ -9,6 +9,9 @@ VERSION=		69.1
 DISTNAME=		icu4c-${VERSION:S/./_/g}-src
 PKGNAME-main=		icu4c-${VERSION}
 PKGNAME-wwwdata=	icu4c-wwwdata-${VERSION}
+
+REVISION-main=		0
+REVISION-wwwdata=	0
 
 EPOCH-main=		0
 EPOCH-wwwdata=		0
@@ -27,7 +30,7 @@ SUBST_VARS+=		MAJ_V VERSION
 CATEGORIES=		textproc devel
 DPB_PROPERTIES=		parallel
 
-HOMEPAGE=		http://www.icu-project.org
+HOMEPAGE=		https://icu.unicode.org
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

@@ -1,0 +1,15 @@
+$OpenBSD: patch-meson_build,v 1.1.1.1 2021/10/16 14:34:46 thfr Exp $
+
+remove libdl
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -23,7 +23,6 @@ if extras_path != ''
+ endif
+ 
+ m_dep = cpp.find_library('m', required : false)
+-dl_dep = cpp.find_library('dl')
+ libjpeg_dep = dependency('libjpeg')
+ libpng_dep = dependency('libpng')
+ 

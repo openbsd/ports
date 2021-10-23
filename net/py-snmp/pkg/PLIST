@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/02/26 23:26:49 awolk Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/09/09 19:35:39 sthen Exp $
+@pkgpath net/py-snmp
 lib/python${MODPY_VERSION}/site-packages/pysnmp/
 lib/python${MODPY_VERSION}/site-packages/pysnmp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pysnmp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

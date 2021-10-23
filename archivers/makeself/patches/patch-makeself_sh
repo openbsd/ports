@@ -1,16 +1,16 @@
-$OpenBSD: patch-makeself_sh,v 1.1 2018/09/10 01:15:32 bcallah Exp $
+$OpenBSD: patch-makeself_sh,v 1.2 2021/09/11 18:02:15 rsadowski Exp $
 
 Our utility is called sha256.
 
 Index: makeself.sh
 --- makeself.sh.orig
 +++ makeself.sh
-@@ -598,7 +598,7 @@ if test "$SHA256" = y; then
+@@ -724,7 +724,7 @@ if test "$SHA256" = y; then
  	if test -x "$SHA_PATH"; then
- 		shasum=`cat "$tmpfile" | eval "$SHA_PATH -a 256" | cut -b-64`
+ 		shasum=`eval "$SHA_PATH -a 256" < "$tmpfile" | cut -b-64`
  	else
 -		SHA_PATH=`exec <&- 2>&-; which sha256sum || command -v sha256sum || type sha256sum`
 +		SHA_PATH=`exec <&- 2>&-; which sha256 || command -v sha256 || type sha256`
- 		shasum=`cat "$tmpfile" | eval "$SHA_PATH" | cut -b-64`
+ 		shasum=`eval "$SHA_PATH" < "$tmpfile" | cut -b-64`
  	fi
  	if test "$QUIET" = "n"; then

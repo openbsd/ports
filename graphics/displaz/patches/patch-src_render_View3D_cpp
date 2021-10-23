@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_render_View3D_cpp,v 1.1 2021/08/31 07:31:14 ajacoutot Exp $
+
+Fix build with OpenEXR>=3: error: use of undeclared identifier 'DBL_MAX'
+
+Index: src/render/View3D.cpp
+--- src/render/View3D.cpp.orig
++++ src/render/View3D.cpp
+@@ -7,6 +7,8 @@
+ #include "glutil.h"
+ #include "View3D.h"
+ 
++#include <float.h>
++
+ #include <QTimer>
+ #include <QTime>
+ #include <QKeyEvent>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/06/19 18:34:40 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/09/10 08:43:55 rsadowski Exp $
 @pkgpath x11/kde4/knavalbattle
 @bin bin/knavalbattle
 share/applications/org.kde.knavalbattle.desktop
@@ -66,10 +66,6 @@ share/knavalbattle/sounds/ship-player-shoot-water.ogg
 share/knavalbattle/sounds/ship-player1-shoot.ogg
 share/knavalbattle/sounds/ship-player2-shoot.ogg
 share/knavalbattle/sounds/ship-sink.ogg
-share/kservices5/knavalbattle.protocol
-share/kxmlgui5/
-share/kxmlgui5/knavalbattle/
-share/kxmlgui5/knavalbattle/knavalbattleui.rc
 share/locale/ar/LC_MESSAGES/knavalbattle.mo
 share/locale/be/LC_MESSAGES/knavalbattle.mo
 share/locale/bg/LC_MESSAGES/knavalbattle.mo

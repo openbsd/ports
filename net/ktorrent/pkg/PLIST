@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2021/08/08 12:23:47 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.23 2021/09/10 08:43:47 rsadowski Exp $
 @conflict ktorrent-kde4-*
 @pkgpath net/ktorrent-kde4
 @bin bin/ktmagnetdownloader
@@ -157,6 +157,8 @@ share/ktorrent/scripts/auto_remove/auto_remove.desktop
 share/ktorrent/scripts/auto_remove/auto_remove.py
 share/ktorrent/scripts/auto_remove/auto_remove.ui
 share/ktorrent/scripts/auto_resume/
+${MODPY_COMMENT}share/ktorrent/scripts/auto_resume/${MODPY_PYCACHE}/
+share/ktorrent/scripts/auto_resume/${MODPY_PYCACHE}auto_resume.${MODPY_PYC_MAGIC_TAG}pyc
 share/ktorrent/scripts/auto_resume/auto_resume.desktop
 share/ktorrent/scripts/auto_resume/auto_resume.py
 share/ktorrent/scripts/auto_resume/auto_resume.ui

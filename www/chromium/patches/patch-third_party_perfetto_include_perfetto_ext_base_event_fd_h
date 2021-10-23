@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_perfetto_include_perfetto_ext_base_event_fd_h,v 1.5 2021/07/21 15:43:34 robert Exp $
+$OpenBSD: patch-third_party_perfetto_include_perfetto_ext_base_event_fd_h,v 1.6 2021/09/01 16:54:40 robert Exp $
 
 Index: third_party/perfetto/include/perfetto/ext/base/event_fd.h
 --- third_party/perfetto/include/perfetto/ext/base/event_fd.h.orig

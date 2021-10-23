@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_tracing_public_cpp_perfetto_perfetto_config_cc,v 1.10 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-services_tracing_public_cpp_perfetto_perfetto_config_cc,v 1.13 2021/10/20 10:27:48 robert Exp $
 
 Index: services/tracing/public/cpp/perfetto/perfetto_config.cc
 --- services/tracing/public/cpp/perfetto/perfetto_config.cc.orig
 +++ services/tracing/public/cpp/perfetto/perfetto_config.cc
-@@ -88,7 +88,7 @@ void AddDataSourceConfigs(
+@@ -124,7 +124,7 @@ void AddDataSourceConfigs(
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.
  #if BUILDFLAG(IS_CHROMEOS_ASH) || \

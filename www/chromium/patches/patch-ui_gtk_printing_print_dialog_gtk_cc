@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gtk_printing_print_dialog_gtk_cc,v 1.5 2021/07/21 15:43:34 robert Exp $
+$OpenBSD: patch-ui_gtk_printing_print_dialog_gtk_cc,v 1.6 2021/09/01 16:54:41 robert Exp $
 
 Index: ui/gtk/printing/print_dialog_gtk.cc
 --- ui/gtk/printing/print_dialog_gtk.cc.orig

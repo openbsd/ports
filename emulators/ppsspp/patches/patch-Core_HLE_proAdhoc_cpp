@@ -1,0 +1,27 @@
+$OpenBSD: patch-Core_HLE_proAdhoc_cpp,v 1.1 2021/09/19 00:34:55 bentley Exp $
+
+support compilation without TCP_KEEPALIVE support
+
+Index: Core/HLE/proAdhoc.cpp
+--- Core/HLE/proAdhoc.cpp.orig
++++ Core/HLE/proAdhoc.cpp
+@@ -2013,6 +2013,7 @@ int setUDPConnReset(int udpsock, bool enabled) {
+ 	return -1;
+ }
+ 
++#if defined(TCP_KEEPALIVE)
+ #if !defined(TCP_KEEPIDLE)
+ #define TCP_KEEPIDLE	TCP_KEEPALIVE //TCP_KEEPIDLE on Linux is equivalent to TCP_KEEPALIVE on macOS
+ #endif
+@@ -2042,6 +2043,11 @@ int setSockKeepAlive(int sock, bool keepalive, const i
+ 	}
+ 	return result;
+ }
++#else /* TCP_KEEPALIVE */
++int setSockKeepAlive(int sock, bool keepalive, const int keepinvl, const int keepcnt, const int keepidle) {
++	return 0;
++}
++#endif
+ 
+ /**
+ * Return the Number of Players with the chosen Nickname in the Local Users current Network

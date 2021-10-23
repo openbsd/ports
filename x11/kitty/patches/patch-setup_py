@@ -1,36 +1,35 @@
-$OpenBSD: patch-setup_py,v 1.3 2021/01/01 16:00:46 thfr Exp $
+$OpenBSD: patch-setup_py,v 1.4 2021/08/23 17:58:45 thfr Exp $
 
-remove libdl and librt linking
-disable -O3 optimization
+remove -O3 and -march=native optimizations
 fix man directory
-add linking of libcanberra
 
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -264,7 +264,6 @@ def init_env(
+@@ -293,7 +293,6 @@ def init_env(
          df += ' -Og'
          float_conversion = '-Wfloat-conversion'
-     fortify_source = '-D_FORTIFY_SOURCE=2'
+     fortify_source = '' if sanitize and is_macos else '-D_FORTIFY_SOURCE=2'
 -    optimize = df if debug or sanitize else '-O3'
      sanitize_args = get_sanitize_args(cc, ccver) if sanitize else set()
      cppflags_ = os.environ.get(
          'OVERRIDE_CPPFLAGS', '-D{}DEBUG'.format('' if debug else 'N'),
-@@ -279,11 +278,11 @@ def init_env(
-         ).format(
-             float_conversion,
-             '' if is_openbsd else '-std=c11',
--            optimize,
-+            '',
-             ' '.join(sanitize_args),
-             stack_protector,
-             missing_braces,
--            '-march=native' if native_optimizations else '',
-+            '',
-             fortify_source
+@@ -304,12 +303,11 @@ def init_env(
+     werror = '' if ignore_compiler_warnings else '-pedantic-errors -Werror'
+     std = '' if is_openbsd else '-std=c11'
+     sanitize_flag = ' '.join(sanitize_args)
+-    march = '-march=native' if native_optimizations else ''
+     cflags_ = os.environ.get(
+         'OVERRIDE_CFLAGS', (
+             f'-Wextra {float_conversion} -Wno-missing-field-initializers -Wall -Wstrict-prototypes {std}'
+-            f' {werror} {optimize} {sanitize_flag} -fwrapv {stack_protector} {missing_braces}'
+-            f' -pipe {march} -fvisibility=hidden {fortify_source}'
++            f' {werror} {sanitize_flag} -fwrapv {stack_protector} {missing_braces}'
++            f' -pipe -fvisibility=hidden {fortify_source}'
          )
      )
-@@ -292,7 +291,7 @@ def init_env(
+     cflags = shlex.split(cflags_) + shlex.split(
+@@ -317,7 +315,7 @@ def init_env(
      )
      ldflags_ = os.environ.get(
          'OVERRIDE_LDFLAGS',
@@ -39,16 +38,7 @@ Index: setup.py
      )
      ldflags = shlex.split(ldflags_)
      ldflags.append('-shared')
-@@ -344,6 +343,8 @@ def kitty_env() -> Env:
-     cppflags.append('-DSECONDARY_VERSION={}'.format(version[1]))
-     at_least_version('harfbuzz', 1, 5)
-     cflags.extend(pkg_config('libpng', '--cflags-only-I'))
-+    cflags.extend(pkg_config('libcanberra', '--cflags-only-I'))
-+    ans.ldpaths += pkg_config('libcanberra', '--libs')
-     cflags.extend(pkg_config('lcms2', '--cflags-only-I'))
-     if is_macos:
-         platform_libs = [
-@@ -762,8 +763,6 @@ def build_launcher(args: Options, launcher_dir: str = 
+@@ -805,8 +803,6 @@ def build_launcher(args: Options, launcher_dir: str = 
              cflags.append('-g')
          if args.profile:
              libs.append('-lprofiler')
@@ -57,12 +47,12 @@ Index: setup.py
      if bundle_type.endswith('-freeze'):
          cppflags.append('-DFOR_BUNDLE')
          cppflags.append('-DPYVER="{}"'.format(sysconfig.get_python_version()))
-@@ -800,7 +799,7 @@ def build_launcher(args: Options, launcher_dir: str = 
+@@ -845,7 +841,7 @@ def build_launcher(args: Options, launcher_dir: str = 
  
  
  def copy_man_pages(ddir: str) -> None:
 -    mandir = os.path.join(ddir, 'share', 'man')
 +    mandir = os.path.join(ddir, 'man')
      safe_makedirs(mandir)
+     man_levels = '15'
      with suppress(FileNotFoundError):
-         shutil.rmtree(os.path.join(mandir, 'man1'))

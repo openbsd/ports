@@ -1,0 +1,29 @@
+$OpenBSD: patch-meson_build,v 1.1 2021/08/30 19:10:43 ajacoutot Exp $
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -82,8 +82,8 @@ if cc.has_header_symbol('utmpx.h', 'WTMPX_FILENAME', p
+ elif cc.has_header_symbol('paths.h', '_PATH_WTMPX')
+   config_h.set('PATH_WTMP', '_PATH_WTMPX')
+ else
+-  assert(run_command('test', '-e', '/var/log/utx.log').returncode() == 0, 'Do not know which filename to watch for wtmp changes')
+-  config_h.set_quoted('PATH_WTMP', '/var/log/utx.log')
++  assert(run_command('test', '-e', '/var/log/wtmp').returncode() == 0, 'Do not know which filename to watch for wtmp changes')
++  config_h.set_quoted('PATH_WTMP', '/var/log/wtmp')
+ endif
+ 
+ # compiler flags
+@@ -123,7 +123,11 @@ gio_unix_dep = dependency('gio-unix-2.0')
+ glib_dep = dependency('glib-2.0', version: '>= 2.44')
+ polkit_gobject_dep = dependency('polkit-gobject-1')
+ 
+-crypt_dep = cc.find_library('crypt')
++if host_machine.system() == 'linux'
++  crypt_dep = cc.find_library('crypt')
++else
++  crypt_dep = declare_dependency()
++endif
+ 
+ dbus_dep = dependency('dbus-1')
+ dbus_conf_dir = join_paths(dbus_dep.get_pkgconfig_variable('sysconfdir', define_variable: ['sysconfdir', act_sysconfdir]), 'dbus-1', 'system.d')

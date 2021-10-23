@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2021/10/14 03:45:11 bcallah Exp $
+
+Fix manual page directory.
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -23,7 +23,7 @@ target_prefix = 
+ program_suffix =
+ prefix = /usr/local
+ bindir = $(prefix)/bin
+-man1dir = $(prefix)/share/man/man1
++man1dir = $(prefix)/man/man1
+ 
+ src = dmd-script
+ man = dmd-script.1

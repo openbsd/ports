@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_pref_names_h,v 1.68 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-chrome_common_pref_names_h,v 1.71 2021/10/20 10:27:46 robert Exp $
 
 Index: chrome/common/pref_names.h
 --- chrome/common/pref_names.h.orig
 +++ chrome/common/pref_names.h
-@@ -360,7 +360,7 @@ extern const char kForceYouTubeRestrict[];
+@@ -362,7 +362,7 @@ extern const char kForceYouTubeRestrict[];
  extern const char kAllowedDomainsForApps[];
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -12,7 +12,7 @@ Index: chrome/common/pref_names.h
  extern const char kUsesSystemTheme[];
  #endif
  extern const char kCurrentThemePackFilename[];
-@@ -389,7 +389,7 @@ extern const char kShowUpdatePromotionInfoBar[];
+@@ -391,7 +391,7 @@ extern const char kShowUpdatePromotionInfoBar[];
  #endif
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -21,7 +21,7 @@ Index: chrome/common/pref_names.h
  extern const char kUseCustomChromeFrame[];
  #endif
  #if BUILDFLAG(ENABLE_PLUGINS)
-@@ -562,7 +562,7 @@ extern const char kDownloadExtensionsToOpenByPolicy[];
+@@ -575,7 +575,7 @@ extern const char kDownloadExtensionsToOpenByPolicy[];
  extern const char kDownloadAllowedURLsForOpenByPolicy[];
  extern const char kDownloadDirUpgraded[];
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
@@ -30,16 +30,16 @@ Index: chrome/common/pref_names.h
  extern const char kOpenPdfDownloadInSystemReader[];
  #endif
  #if defined(OS_ANDROID)
-@@ -664,7 +664,7 @@ extern const char kWebAppsDidMigrateDefaultChromeApps[
- extern const char kWebAppsUninstalledDefaultChromeApps[];
+@@ -678,7 +678,7 @@ extern const char kWebAppsUninstalledDefaultChromeApps
  extern const char kWebAppsPreferences[];
+ extern const char kWebAppsIsolationState[];
  
 -#if defined(OS_WIN) || defined(OS_MAC) || \
 +#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
      (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
  extern const char kWebAppsUrlHandlerInfo[];
  #endif
-@@ -801,7 +801,7 @@ extern const char kGloballyScopeHTTPAuthCacheEnabled[]
+@@ -821,7 +821,7 @@ extern const char kGloballyScopeHTTPAuthCacheEnabled[]
  extern const char kAmbientAuthenticationInPrivateModesEnabled[];
  extern const char kBasicAuthOverHttpEnabled[];
  
@@ -48,21 +48,12 @@ Index: chrome/common/pref_names.h
  extern const char kAuthNegotiateDelegateByKdcPolicy[];
  #endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS)
  
-@@ -924,7 +924,7 @@ extern const char kSigninAllowedOnNextStartup[];
- extern const char kSigninInterceptionEnabled[];
- // TODO(crbug.com/1179280): Remove OS_LINUX once https://crbug.com/1169547 is
- // done.
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
- extern const char kLacrosSecondaryProfilesAllowed[];
- #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
+@@ -1068,7 +1068,7 @@ extern const char kAutoplayWhitelist[];
+ extern const char kBlockAutoplayEnabled[];
+ #endif
  
-@@ -1039,7 +1039,7 @@ extern const char kBlockAutoplayEnabled[];
- 
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
  extern const char kAllowNativeNotifications[];
  extern const char kAllowSystemNotifications[];
  #endif

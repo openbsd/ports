@@ -1,0 +1,31 @@
+$OpenBSD: patch-deps_openssl_openssl_apps_rehash_c,v 1.1 2021/09/07 21:12:52 tb Exp $
+
+Avoid printf %n
+
+Index: deps/openssl/openssl/apps/rehash.c
+--- deps/openssl/openssl/apps/rehash.c.orig
++++ deps/openssl/openssl/apps/rehash.c
+@@ -404,8 +404,9 @@ static int do_dir(const char *dirname, enum Hash h)
+                     while (bit_isset(idmask, nextid))
+                         nextid++;
+ 
+-                    BIO_snprintf(buf, buflen, "%s%s%n%08x.%s%d",
+-                                 dirname, pathsep, &n, bp->hash,
++                    n = BIO_snprintf(buf, buflen, "%s%s", dirname, pathsep);
++                    BIO_snprintf(&buf[n], buflen - n, "%08x.%s%d",
++                                 bp->hash,
+                                  suffixes[bp->type], nextid);
+                     if (verbose)
+                         BIO_printf(bio_out, "link %s -> %s\n",
+@@ -426,8 +427,9 @@ static int do_dir(const char *dirname, enum Hash h)
+                     bit_set(idmask, nextid);
+                 } else if (remove_links) {
+                     /* Link to be deleted */
+-                    BIO_snprintf(buf, buflen, "%s%s%n%08x.%s%d",
+-                                 dirname, pathsep, &n, bp->hash,
++                    n = BIO_snprintf(buf, buflen, "%s%s", dirname, pathsep);
++                    BIO_snprintf(&buf[n], buflen - n, "%08x.%s%d",
++                                 bp->hash,
+                                  suffixes[bp->type], ep->old_id);
+                     if (verbose)
+                         BIO_printf(bio_out, "unlink %s\n",

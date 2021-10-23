@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/07/01 10:07:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/10/07 00:11:52 daniel Exp $
 @pkgpath sysutils/py-joblib
 lib/python${MODPY_VERSION}/site-packages/joblib/
 lib/python${MODPY_VERSION}/site-packages/joblib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -53,8 +53,10 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/joblib/externals/cloudp
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/cloudpickle/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/cloudpickle/${MODPY_PYCACHE}cloudpickle.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/cloudpickle/${MODPY_PYCACHE}cloudpickle_fast.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/joblib/externals/cloudpickle/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/cloudpickle/cloudpickle.py
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/cloudpickle/cloudpickle_fast.py
+lib/python${MODPY_VERSION}/site-packages/joblib/externals/cloudpickle/compat.py
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/${MODPY_PYCACHE}/

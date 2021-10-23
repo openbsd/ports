@@ -1,20 +1,28 @@
-$OpenBSD: patch-gdb_configure_host,v 1.2 2020/10/09 19:22:42 kettenis Exp $
+$OpenBSD: patch-gdb_configure_host,v 1.3 2021/10/22 18:30:36 jca Exp $
+
 Index: gdb/configure.host
 --- gdb/configure.host.orig
 +++ gdb/configure.host
-@@ -82,6 +82,7 @@ case "${host}" in
- *-*-darwin*)		gdb_host=darwin ;;
+@@ -85,6 +85,7 @@ case "${host}" in
  
  aarch64*-*-linux*)	gdb_host=linux ;;
-+aarch64*-*-openbsd*)	gdb_host=obsd ;;
+ aarch64*-*-freebsd*)	gdb_host=fbsd ;;
++aarch64*-*-openbsd*)	gdb_host=obsd64 ;;
  
  alpha*-*-linux*)	gdb_host=alpha-linux ;;
- alpha*-*-freebsd* | alpha*-*-kfreebsd*-gnu)
-@@ -137,6 +138,7 @@ powerpc*-*-freebsd*)	gdb_host=fbsd ;;
+ alpha*-*-netbsd* | alpha*-*-knetbsd*-gnu)
+@@ -139,12 +140,14 @@ powerpc*-*-freebsd*)	gdb_host=fbsd ;;
  powerpc-*-netbsd* | powerpc-*-knetbsd*-gnu)
  			gdb_host=nbsd ;;
  powerpc-*-openbsd*)	gdb_host=obsd ;;
 +powerpc64-*-openbsd*)	gdb_host=obsd64 ;;
  
- powerpc64*-*-linux*)	gdb_host=ppc64-linux
-                         # Support 'pseudo-native' debugging on the Cell BE
+ powerpc64*-*-linux*)	gdb_host=ppc64-linux ;;
+ powerpc*-*-linux*)	gdb_host=linux ;;
+ 
+ riscv*-*-freebsd*)	gdb_host=fbsd ;;
+ riscv*-*-linux*)	gdb_host=linux ;;
++riscv64-*-openbsd*)	gdb_host=obsd64 ;;
+ 
+ s390*-*-linux*)		gdb_host=linux ;;
+ 

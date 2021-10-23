@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_compute_pressure_cpu_probe_cc,v 1.1 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-content_browser_compute_pressure_cpu_probe_cc,v 1.2 2021/09/01 16:54:39 robert Exp $
 
 Index: content/browser/compute_pressure/cpu_probe.cc
 --- content/browser/compute_pressure/cpu_probe.cc.orig
 +++ content/browser/compute_pressure/cpu_probe.cc
-@@ -103,6 +103,7 @@ std::unique_ptr<CpuProbe> CpuProbe::Create() {
+@@ -52,6 +52,7 @@ std::unique_ptr<CpuProbe> CpuProbe::Create() {
  #elif defined(OS_LINUX) || defined(OS_CHROMEOS)
    return CpuProbeLinux::Create();
  #else

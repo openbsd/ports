@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-java,v 1.21 2020/08/07 07:09:30 robert Exp $
+@comment $OpenBSD: PLIST-java,v 1.23 2021/09/17 06:31:57 robert Exp $
 lib/libreoffice/program/JREProperties.class
 lib/libreoffice/program/classes/
 lib/libreoffice/program/classes/ScriptFramework.jar
@@ -7,7 +7,6 @@ lib/libreoffice/program/classes/ScriptProviderForJava.jar
 lib/libreoffice/program/classes/ScriptProviderForJavaScript.jar
 lib/libreoffice/program/classes/XMergeBridge.jar
 lib/libreoffice/program/classes/bsh.jar
-lib/libreoffice/program/classes/commons-logging-1.2.jar
 lib/libreoffice/program/classes/commonwizards.jar
 lib/libreoffice/program/classes/flow-engine.jar
 lib/libreoffice/program/classes/flute-1.1.6.jar
@@ -22,6 +21,7 @@ lib/libreoffice/program/classes/libfonts-1.1.6.jar
 lib/libreoffice/program/classes/libformula-1.1.7.jar
 lib/libreoffice/program/classes/liblayout.jar
 lib/libreoffice/program/classes/libloader-1.1.6.jar
+lib/libreoffice/program/classes/libreoffice.jar
 lib/libreoffice/program/classes/librepository-1.1.6.jar
 lib/libreoffice/program/classes/libserializer-1.1.6.jar
 lib/libreoffice/program/classes/libxml-1.1.7.jar

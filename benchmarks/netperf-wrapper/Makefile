@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2021/03/07 19:34:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/10/21 20:35:22 sthen Exp $
 
 COMMENT-main=	test network latency under load via netperf
 COMMENT-gui=	GUI for flent (test network latency under load via netperf)
 
-MODPY_EGG_VERSION= 2.0.0
+MODPY_EGG_VERSION= 2.0.1
 DISTNAME=	flent-${MODPY_EGG_VERSION}
 PKGNAME-main=	flent-${MODPY_EGG_VERSION}
 PKGNAME-gui=	flent-gui-${MODPY_EGG_VERSION}
@@ -27,9 +27,10 @@ RUN_DEPENDS-main= ${MODPY_RUN_DEPENDS} \
 		net/fping>=5.0p0 \
 		graphics/py-matplotlib${MODPY_FLAVOR}
 
-RUN_DEPENDS-gui= ${RUN_DEPENDS-main} \
+RUN_DEPENDS-gui= ${BUILD_PKGPATH} \
 		devel/desktop-file-utils \
 		misc/shared-mime-info \
+		x11/py-qtpy${MODPY_FLAVOR} \
 		x11/py-qt5${MODPY_FLAVOR}
 
 NO_TEST=	Yes

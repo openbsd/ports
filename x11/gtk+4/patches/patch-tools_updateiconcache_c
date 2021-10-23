@@ -1,9 +1,9 @@
-$OpenBSD: patch-tools_updateiconcache_c,v 1.1 2021/03/31 13:42:46 ajacoutot Exp $
+$OpenBSD: patch-tools_updateiconcache_c,v 1.2 2021/08/26 10:46:47 ajacoutot Exp $
 
 Index: tools/updateiconcache.c
 --- tools/updateiconcache.c.orig
 +++ tools/updateiconcache.c
-@@ -1721,6 +1721,11 @@ main (int argc, char **argv)
+@@ -1720,6 +1720,11 @@ main (int argc, char **argv)
    path = g_locale_to_utf8 (path, -1, NULL, NULL, NULL);
  #endif
  

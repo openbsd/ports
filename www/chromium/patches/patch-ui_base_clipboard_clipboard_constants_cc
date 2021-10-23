@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_base_clipboard_clipboard_constants_cc,v 1.6 2021/07/21 15:43:34 robert Exp $
+$OpenBSD: patch-ui_base_clipboard_clipboard_constants_cc,v 1.7 2021/09/01 16:54:40 robert Exp $
 
 Index: ui/base/clipboard/clipboard_constants.cc
 --- ui/base/clipboard/clipboard_constants.cc.orig

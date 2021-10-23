@@ -1,0 +1,18 @@
+$OpenBSD: patch-static-deps_luajit_src_lj_arch_h,v 1.1 2021/10/08 22:10:27 edd Exp $
+
+Our base-clang poses as gcc-4.2.1, but building with clang on powerpc
+"requires" gcc>=4.3, unlike other archs requiring lower versions. Instead,
+ignore the gcc version check ifdef hell for all base-clang arches.
+
+Index: static-deps/luajit/src/lj_arch.h
+--- static-deps/luajit/src/lj_arch.h.orig
++++ static-deps/luajit/src/lj_arch.h
+@@ -427,7 +427,7 @@
+ /* -- Checks for requirements --------------------------------------------- */
+ 
+ /* Check for minimum required compiler versions. */
+-#if defined(__GNUC__)
++#if defined(__GNUC__) && !defined(__clang__)
+ #if LJ_TARGET_X86
+ #if (__GNUC__ < 3) || ((__GNUC__ == 3) && __GNUC_MINOR__ < 4)
+ #error "Need at least GCC 3.4 or newer"

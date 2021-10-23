@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.303 2021/07/08 08:08:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.305 2021/09/14 19:09:38 phessler Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
-GNOME_VERSION=		40.0
-REVISION=		4
+GNOME_VERSION=		40.1
+REVISION=		0
 
 GH_ACCOUNT=		rnagy
 GH_PROJECT=		gdm
-GH_COMMIT=		5afc6cfa4cb84b0671d3f2f4d55c4ce697985aa8
+GH_COMMIT=		d8c9b29a6397278e4906d443136bd9b78350284d
 EXTRACT_SUFX=		.tar.gz
 
 # bsd.port.mk:1288
@@ -59,7 +59,7 @@ RUN_DEPENDS +=		x11/gnome/orca
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			security/openpam \
-			sysutils/accountsservice
+			sysutils/accountsservice>=0.6.55
 
 MODGNOME_TOOLS=		gobject-introspection yelp
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.192 2021/07/11 07:52:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.194 2021/09/11 08:39:12 ajacoutot Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -9,7 +9,7 @@ COMMENT-hpcups=		HP native CUPS driver
 COMMENT-hpijs=		HP ghostscript driver (spooler independent)
 COMMENT-gui=		HPLIP graphical tools
 
-V=			3.21.6
+V=			3.21.8
 DISTNAME=		hplip-${V}
 SUBST_VARS=		V
 
@@ -73,6 +73,7 @@ LIB_DEPENDS-main=	print/cups,-libs \
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS} \
 			devel/py-gobject3${MODPY_FLAVOR} \
 			graphics/py-Pillow${MODPY_FLAVOR} \
+			net/avahi \
 			print/hplip,-hpaio \
 			print/hplip,-hpcups \
 			print/py-reportlab${MODPY_FLAVOR} \
@@ -88,7 +89,7 @@ WANTLIB-common += avahi-common avahi-core dbus-1 iconv intl
 WANTLIB-common += execinfo
 
 LIB_DEPENDS-common= 	devel/libusb1 \
-			net/avahi \
+			net/avahi,-libs \
 			net/net-snmp
 
 RUN_DEPENDS-common=	# empty

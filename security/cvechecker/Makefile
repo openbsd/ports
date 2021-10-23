@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2020/07/31 13:28:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2021/10/07 10:05:59 sthen Exp $
 
 COMMENT=	local CVE checker tool
 
 GH_ACCOUNT=	sjvermeu
 GH_PROJECT=	cvechecker
-GH_TAGNAME=	v3.9
-REVISION=	1
+GH_TAGNAME=	cvechecker-4.0
+PKGNAME=	${GH_TAGNAME}
 
 CATEGORIES=	security sysutils
 
@@ -21,6 +21,7 @@ LIB_DEPENDS=	devel/libconfig \
 
 RUN_DEPENDS=	net/wget \
 		sysutils/coreutils \
+		textproc/jq \
 		textproc/libxslt
 
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/db

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2021/07/12 07:44:06 jca Exp $
+# $OpenBSD: Makefile,v 1.17 2021/09/10 14:19:36 sthen Exp $
 
 COMMENT=	PostgreSQL RDBMS (previous version, for pg_upgrade)
 
-VERSION=	12.7
+VERSION=	12.8
 DISTNAME=	postgresql-${VERSION}
 PKGNAME=	postgresql-previous-${VERSION}
 
@@ -12,7 +12,7 @@ SHARED_LIBS=	ecpg		7.10 \
 		pgtypes		4.9 \
 		pq		6.11
 
-HOMEPAGE=	http://www.postgresql.org/
+HOMEPAGE=	https://www.postgresql.org/
 
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 

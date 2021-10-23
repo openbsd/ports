@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_scheduler_common_thread_cc,v 1.4 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_scheduler_common_thread_cc,v 1.5 2021/09/01 16:54:40 robert Exp $
 
 Index: third_party/blink/renderer/platform/scheduler/common/thread.cc
 --- third_party/blink/renderer/platform/scheduler/common/thread.cc.orig

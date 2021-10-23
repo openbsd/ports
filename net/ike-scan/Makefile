@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:48:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/10/19 07:40:08 sthen Exp $
 
 GH_ACCOUNT=	royhills
 GH_PROJECT=	ike-scan
-GH_COMMIT=	692163bd7e3de4bf5e802b1e30ade38134033c44
+GH_TAGNAME=	1.9.5
 
 COMMENT=	VPN scanner and identifier
-DISTNAME=	ike-scan-1.9.4pl20170804
+
 CATEGORIES=	net
 
 # GPLv3+
@@ -14,8 +14,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	c crypto
 
 CONFIGURE_STYLE=	autoreconf
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.15
+AUTOCONF_VERSION=	2.71
+AUTOMAKE_VERSION=	1.16
 CONFIGURE_ARGS+=	--with-openssl
 
 post-install:

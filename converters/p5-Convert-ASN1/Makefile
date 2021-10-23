@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.29 2020/07/03 21:44:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2021/10/16 08:01:38 benoit Exp $
 
-COMMENT=	module to encode and decode ASN.1 data structures
+COMMENT =	module to encode and decode ASN.1 data structures
 
-DISTNAME=	Convert-ASN1-0.27
-CATEGORIES=	converters
-MODULES=	cpan
-PKG_ARCH=	*
-REVISION=	0
+DISTNAME =	Convert-ASN1-0.33
+
+CATEGORIES =	converters
 
 # Perl
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
+
+MODULES =		cpan
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>

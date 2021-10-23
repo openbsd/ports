@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/10/31 17:07:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/08/26 04:23:03 semarie Exp $
 @bin bin/pekwm
 @man man/man1/pekwm.1
 share/examples/pekwm/
@@ -44,6 +44,15 @@ share/pekwm/themes/default/bottom-left.png
 share/pekwm/themes/default/bottom-left_unfocus.png
 share/pekwm/themes/default/bottom-right.png
 share/pekwm/themes/default/bottom-right_unfocus.png
+share/pekwm/themes/default/button-close.png
+share/pekwm/themes/default/button-close_hover.png
+share/pekwm/themes/default/button-close_press.png
+share/pekwm/themes/default/button-max.png
+share/pekwm/themes/default/button-max_hover.png
+share/pekwm/themes/default/button-max_press.png
+share/pekwm/themes/default/button-min.png
+share/pekwm/themes/default/button-min_hover.png
+share/pekwm/themes/default/button-min_press.png
 share/pekwm/themes/default/button.png
 share/pekwm/themes/default/button_hover.png
 share/pekwm/themes/default/button_press.png
@@ -66,5 +75,8 @@ share/pekwm/themes/default/top-border.png
 share/pekwm/themes/default/top-border_unfocus.png
 share/pekwm/themes/default/top-left.png
 share/pekwm/themes/default/top-left_unfocus.png
+share/pekwm/themes/default/top-right-no-buttons.png
 share/pekwm/themes/default/top-right.png
 share/pekwm/themes/default/top-right_unfocus.png
+share/pekwm/themes/pion/
+share/pekwm/themes/pion/theme

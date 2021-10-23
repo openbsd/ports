@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2020/08/21 14:40:54 robert Exp $
+# $OpenBSD: Makefile,v 1.20 2021/08/25 12:05:52 robert Exp $
 
 COMMENT=		MATE screensaver
 
 MATE_PROJECT=		mate-screensaver
-MATE_VERSION=		1.24.1
 
 # LGPLv2
 PERMIT_PACKAGE=	Yes
@@ -19,6 +18,7 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread startup-notification-1
 WANTLIB += xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-render xcb-shm
 WANTLIB += xcb-sync xcb-util xcb-xfixes xkbfile xklavier xml2 xshmfence
 WANTLIB += z
+WANTLIB += ${COMPILER_LIBCXX} Xau Xdmcp execinfo jpeg
 
 MODULES=		devel/dconf \
 			x11/gnome

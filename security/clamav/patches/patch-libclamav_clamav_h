@@ -1,14 +1,14 @@
-$OpenBSD: patch-libclamav_clamav_h,v 1.4 2019/01/07 22:49:14 sthen Exp $
+$OpenBSD: patch-libclamav_clamav_h,v 1.5 2021/10/19 11:17:24 sthen Exp $
 
 Index: libclamav/clamav.h
 --- libclamav/clamav.h.orig
 +++ libclamav/clamav.h
-@@ -38,7 +38,7 @@
- #define STAT64_BLACKLIST 0
- #endif
+@@ -32,7 +32,7 @@
+ #include <openssl/err.h>
  
--#if defined(HAVE_STAT64) && STAT64_BLACKLIST
-+#if defined(HAVE_STAT64) && !defined(__FreeBSD__) && !defined(__APPLE__)
- 
- #include <unistd.h>
- 
+ /* Certain OSs already use 64bit variables in their stat struct */
+-#if (!defined(__FreeBSD__) && !defined(__APPLE__))
++#if (!defined(__FreeBSD__) && !defined(__APPLE__)) && !defined(__OpenBSD__)
+ #define STAT64_OK 1
+ #else
+ #define STAT64_OK 0

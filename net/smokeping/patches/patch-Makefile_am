@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_am,v 1.2 2021/08/11 20:38:42 sthen Exp $
+$OpenBSD: patch-Makefile_am,v 1.3 2021/09/02 13:13:28 sthen Exp $
 
 Index: Makefile.am
 --- Makefile.am.orig
@@ -10,5 +10,5 @@ Index: Makefile.am
 -SUBDIRS = lib thirdparty bin doc etc htdocs
 +SUBDIRS = lib bin doc etc htdocs
  
- EXTRA_DIST = COPYRIGHT CHANGES CONTRIBUTORS LICENSE cpanfile VERSION
+ EXTRA_DIST = COPYRIGHT CHANGES CONTRIBUTORS LICENSE cpanfile VERSION README.md
  

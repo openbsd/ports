@@ -1,5 +1,0 @@
-Bazaar-NG allows you to keep old versions of files and directories, keep
-a log of who, when, and why changes occurred, etc., like SVN, CVS, or
-RCS.  Bazaar-NG is distributed, which gives it significant advantages
-and some disadvantages compared to SVN and CVS.  Bazaar-NG is written in
-Python.

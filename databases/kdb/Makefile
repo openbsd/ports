@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2021/02/23 19:39:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/09/12 06:45:11 rsadowski Exp $
 
 COMMENT =	database connectivity and creation framework
 
 VERSION =	3.2.0
 DISTNAME =	kdb-${VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=  KDb3                      1.1 # 3.0
 
@@ -26,7 +26,6 @@ EXTRACT_SUFX =	.tar.xz
 MODULES =		devel/cmake \
 			lang/python \
 			devel/kf5
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_RUNDEP =		No
 

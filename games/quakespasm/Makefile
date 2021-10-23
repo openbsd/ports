@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2019/11/21 00:15:37 jsg Exp $
+# $OpenBSD: Makefile,v 1.12 2021/09/06 01:08:31 jsg Exp $
 
 COMMENT=	SDL Quake port
 CATEGORIES=	games
-DISTNAME=	quakespasm-0.93.2
-EXTRACT_SUFX=	.tgz
+DISTNAME=	quakespasm-0.94.1
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=quakespasm/}
 HOMEPAGE=	http://quakespasm.sourceforge.net
 

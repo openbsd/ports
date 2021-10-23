@@ -1,14 +1,12 @@
-This port is an almost carbon-copy of the compiler in-tree, with a few
-differences:
+The GNU Compiler Collection (GCC) includes front ends for C, C++,
+Objective-C, Fortran, Java, and Ada, as well as libraries for these
+languages (libstdc++, libgcj,...).
 
-- it's taken off a more recent snapshot from gcc 3.3 branch.
+GCC development is a part of the GNU Project and uses an open
+development environment. Its supports many other platforms in order to
+foster a world-class optimizing compiler, to attract a larger team of
+developers, to ensure that GCC and the GNU system work on multiple
+architectures and diverse environments, and to more thoroughly test and
+extend the features of GCC.
 
-- it's not the system compiler, and so it looks for includes in
-  /usr/local, and for libraries in /usr/local/lib.
-
-- it can bootstrap itself fully, including ada on i386, and java (though
-  java does not yet work. There's an issue with boehm-gc).
-
-- it may build on platforms for which system gcc is still 2.95.3.
-
-- it's a cross-compiler, targetting avr machines
+This package contains the C compiler targetting avr machines.

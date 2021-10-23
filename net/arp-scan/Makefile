@@ -1,26 +1,25 @@
-# $OpenBSD: Makefile,v 1.60 2021/07/15 21:13:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2021/09/18 08:58:31 sthen Exp $
+
+GH_ACCOUNT =	royhills
+GH_PROJECT =	arp-scan
+GH_COMMIT =	7aaa3a67a885dfa507ce27bc700b12697f32b6c4
+DISTNAME =	arp-scan-1.9.7pl20210914
 
 COMMENT-main =	ARP scanning and fingerprinting tool
-COMMENT-mac =	MAC address vendor list
-
-V =		1.9
-DISTNAME =	arp-scan-$V
 PKGNAME-main =	${DISTNAME}
-REVISION-main =	14
 
-M =		20210715
+M =		20210908
+COMMENT-mac =	MAC address vendor list
 PKGNAME-mac =	mac-vendor-$M
 
 CATEGORIES =	net
 
-HOMEPAGE =	https://github.com/royhills/arp-scan
-
 MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 
-MASTER_SITES =	https://github.com/royhills/arp-scan/releases/download/$V/
 MASTER_SITES0 =	https://spacehopper.org/mirrors/
 
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
+# if tagged -> ${DISTNAME}${EXTRACT_SUFX}
+DISTFILES =	${DISTNAME}-${GH_COMMIT:C/(........).*/\1/}${EXTRACT_SUFX}{${GH_COMMIT}${EXTRACT_SUFX}} \
 		oui-iab-$M.tar.xz:0
 
 # GPLv3+
@@ -31,7 +30,9 @@ RUN_DEPENDS-main =	${BASE_PKGPATH},-mac
 
 MULTI_PACKAGES =	-main -mac
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
+AUTOCONF_VERSION =	2.71
+AUTOMAKE_VERSION =	1.16
 
 # for local format-ma script
 BUILD_DEPENDS =		textproc/p5-Text-CSV

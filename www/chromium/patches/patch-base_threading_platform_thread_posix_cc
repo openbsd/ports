@@ -1,11 +1,11 @@
-$OpenBSD: patch-base_threading_platform_thread_posix_cc,v 1.17 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-base_threading_platform_thread_posix_cc,v 1.20 2021/10/20 10:27:44 robert Exp $
 
 XXX pledge(2)
 
 Index: base/threading/platform_thread_posix.cc
 --- base/threading/platform_thread_posix.cc.orig
 +++ base/threading/platform_thread_posix.cc
-@@ -72,7 +72,7 @@ void* ThreadFunc(void* params) {
+@@ -71,7 +71,7 @@ void* ThreadFunc(void* params) {
      if (!thread_params->joinable)
        base::ThreadRestrictions::SetSingletonAllowed(false);
  
@@ -14,7 +14,7 @@ Index: base/threading/platform_thread_posix.cc
  #if BUILDFLAG(USE_PARTITION_ALLOC_AS_MALLOC)
      internal::PCScan::NotifyThreadCreated(internal::GetStackPointer());
  #endif
-@@ -323,6 +323,9 @@ bool PlatformThread::CanIncreaseThreadPriority(ThreadP
+@@ -327,6 +327,9 @@ bool PlatformThread::CanIncreaseThreadPriority(ThreadP
  // static
  void PlatformThread::SetCurrentThreadPriorityImpl(ThreadPriority priority) {
  #if defined(OS_NACL)

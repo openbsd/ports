@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:13:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/10/19 14:53:48 sthen Exp $
 
 COMMENT =	handle .env files
 
-MODPY_EGG_VERSION =	0.0.5
+MODPY_EGG_VERSION =	0.19.1
 
-DISTNAME =	dotenv-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME}
-REVISION =	0
+DISTNAME =	python-dotenv-${MODPY_EGG_VERSION}
+PKGNAME =	${DISTNAME:S/python-/py-/}
 
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://github.com/pedroburon/dotenv
 
-# MIT, added in https://github.com/pedroburon/dotenv/commit/81923e7e901ed512ec91fa27058e0cb9d6b4ac6c
+# MIT
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
@@ -22,11 +21,10 @@ FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-
-# not in pypi distfile
-NO_TEST =		Yes
-
-post-configure:
-	${SUBST_CMD} ${WRKSRC}/scripts/dotenv
+MODPY_PYTEST =		Yes
+TEST_DEPENDS =		${BUILD_PKGPATH} \
+			devel/py-mock${MODPY_FLAVOR} \
+			devel/py-sh${MODPY_FLAVOR} \
+			devel/ipython${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

@@ -1,23 +1,15 @@
-$OpenBSD: patch-Core_HW_MediaEngine_h,v 1.1 2021/05/04 03:50:07 rsadowski Exp $
-
-Fix build with ffmpeg-4.4 from upstream
+$OpenBSD: patch-Core_HW_MediaEngine_h,v 1.2 2021/09/19 00:34:55 bentley Exp $
 
 Index: Core/HW/MediaEngine.h
 --- Core/HW/MediaEngine.h.orig
 +++ Core/HW/MediaEngine.h
-@@ -59,6 +59,7 @@ class MediaEngine (public)
- 	void closeMedia();
- 	bool loadStream(const u8 *buffer, int readSize, int RingbufferSize);
- 	bool reloadStream();
-+    bool addVideoStream(int streamNum, int streamId = -1);
- 	// open the mpeg context
- 	bool openContext(bool keepReadPos = false);
- 	void closeContext();
-@@ -114,6 +115,7 @@ class MediaEngine (public)
- 	int m_sws_fmt;
- 	u8 *m_buffer;
- 	int m_videoStream;
-+    int m_expectedVideoStreams;
+@@ -124,7 +124,8 @@ class MediaEngine (public)
+ 	int m_desHeight;
+ 	int m_decodingsize;
+ 	int m_bufSize;
+-	s64 m_videopts;
++	s64 m_videopts = 0;
++	s64 m_lastPts = -1;
+ 	BufferQueue *m_pdata;
  
- 	// Used by the demuxer.
- 	int m_audioStream;
+ 	MpegDemux *m_demux;

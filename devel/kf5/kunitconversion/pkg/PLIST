@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:48:50 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/09/10 08:42:06 rsadowski Exp $
 include/KF5/KUnitConversion/
 include/KF5/KUnitConversion/KUnitConversion/
 include/KF5/KUnitConversion/KUnitConversion/Converter
@@ -80,3 +80,4 @@ share/locale/ug/LC_MESSAGES/kunitconversion5.mo
 share/locale/uk/LC_MESSAGES/kunitconversion5.mo
 share/locale/zh_CN/LC_MESSAGES/kunitconversion5.mo
 share/locale/zh_TW/LC_MESSAGES/kunitconversion5.mo
+share/qlogging-categories5/kunitconversion.categories

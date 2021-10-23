@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2021/03/01 17:44:29 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.35 2021/09/13 14:40:47 jeremy Exp $
 ${GEM_BIN}/sequel${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -69,6 +69,12 @@ ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.4.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.40.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.41.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.42.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.43.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.44.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.45.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.46.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.47.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.48.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.5.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.6.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.7.0.txt
@@ -279,6 +285,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/association_pks.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/association_proxies.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/async_thread_pool.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/auto_validations.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/auto_validations_constraint_validations_presence_message.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/before_after_save.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/blacklist_security.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/boolean_readers.rb
@@ -286,9 +293,11 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/boolean_subsets.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/caching.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/class_table_inheritance.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/column_conflicts.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/column_encryption.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/column_select.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/columns_updated.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/composition.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/concurrent_eager_loading.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/constraint_validations.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/csv_serializer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/dataset_associations.rb
@@ -346,6 +355,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/touch.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/tree.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/typecast_on_load.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/unlimited_update.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/unused_associations.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/update_or_create.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/update_primary_key.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/update_refresh.rb

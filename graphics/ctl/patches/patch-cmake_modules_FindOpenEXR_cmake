@@ -1,0 +1,24 @@
+$OpenBSD: patch-cmake_modules_FindOpenEXR_cmake,v 1.1 2021/08/31 07:32:18 ajacoutot Exp $
+
+Fix build with OpenEXR>=3
+
+Index: cmake/modules/FindOpenEXR.cmake
+--- cmake/modules/FindOpenEXR.cmake.orig
++++ cmake/modules/FindOpenEXR.cmake
+@@ -52,14 +52,14 @@ if(OpenEXR_INCLUDE_DIR AND EXISTS "${OpenEXR_INCLUDE_D
+     endif()
+ endif()
+ 
+-find_library(OpenEXR_LIBRARY NAMES IlmImf libIlmImf HINTS ${_OpenEXR_HINT_LIB})
++find_library(OpenEXR_LIBRARY NAMES OpenEXR libOpenEXR HINTS ${_OpenEXR_HINT_LIB})
+ 
+ find_package(IlmBase QUIET)
+ 
+ unset(_OpenEXR_HINT_INCLUDE)
+ unset(_OpenEXR_HINT_LIB)
+ 
+-set(OpenEXR_LIBRARIES ${OpenEXR_LIBRARY} ${IlmBase_LIBRARIES} )
++set(OpenEXR_LIBRARIES ${OpenEXR_LIBRARY} ${Imath_LIBRARIES} )
+ set(OpenEXR_INCLUDE_DIRS ${OpenEXR_INCLUDE_DIR} )
+ 
+ if(NOT PC_OPENEXR_FOUND)

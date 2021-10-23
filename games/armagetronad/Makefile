@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2020/02/22 19:56:05 bcallah Exp $
+# $OpenBSD: Makefile,v 1.16 2021/10/06 01:43:28 bcallah Exp $
 
+V =			0.2.9
+P =			1.0
 COMMENT =		3D light cycle game
 
-DISTNAME =		armagetronad-0.2.8.3.5.src
-PKGNAME =		${DISTNAME:S/.src//}
+DISTNAME =		armagetronad-${V}.${P}
+EXTRACT_SUFX =		.tbz
 
-CATEGORIES =		games
+CATEGORIES =		games x11
 
 HOMEPAGE =		http://armagetronad.org/
 MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
@@ -13,27 +15,24 @@ MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =		Yes
 
-WANTLIB += GL GLU SDL SDL_image c iconv jpeg lzma m png pthread ${COMPILER_LIBCXX}
-WANTLIB += xml2 z
+WANTLIB += ${COMPILER_LIBCXX} GL GLU SDL SDL_image c m png xml2
 
-COMPILER =		base-clang ports-gcc base-gcc
+# C++11
+COMPILER =		base-clang ports-gcc
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=armagetronad/}
+MASTER_SITES =	https://launchpad.net/armagetronad/${V}/${V}.${P}/+download/
 
 BUILD_DEPENDS =		shells/bash
-LIB_DEPENDS =		converters/libiconv \
-			devel/sdl-image \
+LIB_DEPENDS =		devel/sdl-image \
 			textproc/libxml
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--enable-games=no \
+CONFIGURE_ARGS =	--enable-games=no \
 			--enable-uninstall=no \
 			--disable-useradd \
 			--disable-initscripts \
 			--disable-sysinstall \
 			--disable-binreloc
-
-WRKDIST =		${WRKDIR}/${DISTNAME:S/.src//}
 
 .include <bsd.port.mk>

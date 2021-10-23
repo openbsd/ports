@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.251 2021/08/07 11:01:14 pascal Exp $
+# $OpenBSD: Makefile,v 1.255 2021/10/17 01:43:18 bcallah Exp $
 
      SUBDIR =
      SUBDIR += STk
      SUBDIR += a60
      SUBDIR += abcl
      SUBDIR += algol68g
-     SUBDIR += antlr3
      SUBDIR += apl
      SUBDIR += bacon
      SUBDIR += bootgcc
@@ -23,6 +22,7 @@
      SUBDIR += cython
      SUBDIR += cython,python3
      SUBDIR += datalog
+     SUBDIR += dmd
      SUBDIR += duktape
      SUBDIR += eagle
      SUBDIR += ecl
@@ -38,6 +38,7 @@
      SUBDIR += gambit
      SUBDIR += gawk
      SUBDIR += gcc
+#    SUBDIR += gdmd
      SUBDIR += gerbil
      SUBDIR += gforth
      SUBDIR += ghc

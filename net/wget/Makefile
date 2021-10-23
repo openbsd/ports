@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.88 2021/08/10 13:42:34 kmos Exp $
+# $OpenBSD: Makefile,v 1.89 2021/09/11 22:48:21 namn Exp $
 
 COMMENT =	retrieve files from the web via HTTP, HTTPS and FTP
 
-DISTNAME =	wget-1.21.1
+DISTNAME =	wget-1.21.2
 CATEGORIES =	net
 
 HOMEPAGE =	https://www.gnu.org/software/wget/
@@ -25,7 +25,6 @@ MASTER_SITES =		${MASTER_SITE_GNU:=wget/}
 
 # some regression tests require python3
 MODULES +=		lang/python
-MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
 
 TEST_DEPENDS =		www/p5-HTTP-Daemon ${MODPY_RUN_DEPENDS}
@@ -36,9 +35,6 @@ FAKE_FLAGS =		sysconfdir="${PREFIX}/share/examples/wget"
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-ssl=openssl
-# hack to avoid depending on python3 at build time
-CONFIGURE_ARGS +=	PYTHON="" \
-			am_cv_pathless_PYTHON="${MODPY_BIN}"
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}/build-aux

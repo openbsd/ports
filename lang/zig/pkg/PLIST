@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/06/05 09:19:50 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/09/09 15:10:31 semarie Exp $
 @bin bin/zig
 lib/zig/
 lib/zig/include/
@@ -757,8 +757,11 @@ lib/zig/libc/include/aarch64-macos-gnu/Availability.h
 lib/zig/libc/include/aarch64-macos-gnu/AvailabilityInternal.h
 lib/zig/libc/include/aarch64-macos-gnu/AvailabilityMacros.h
 lib/zig/libc/include/aarch64-macos-gnu/AvailabilityVersions.h
+lib/zig/libc/include/aarch64-macos-gnu/CommonCrypto/
+lib/zig/libc/include/aarch64-macos-gnu/CommonCrypto/CommonDigest.h
 lib/zig/libc/include/aarch64-macos-gnu/TargetConditionals.h
 lib/zig/libc/include/aarch64-macos-gnu/_ctermid.h
+lib/zig/libc/include/aarch64-macos-gnu/ar.h
 lib/zig/libc/include/aarch64-macos-gnu/arm/
 lib/zig/libc/include/aarch64-macos-gnu/arm/_limits.h
 lib/zig/libc/include/aarch64-macos-gnu/arm/_mcontext.h
@@ -793,8 +796,19 @@ lib/zig/libc/include/aarch64-macos-gnu/libkern/arm/OSByteOrder.h
 lib/zig/libc/include/aarch64-macos-gnu/libproc.h
 lib/zig/libc/include/aarch64-macos-gnu/mach/
 lib/zig/libc/include/aarch64-macos-gnu/mach-o/
+lib/zig/libc/include/aarch64-macos-gnu/mach-o/arch.h
+lib/zig/libc/include/aarch64-macos-gnu/mach-o/arm64/
+lib/zig/libc/include/aarch64-macos-gnu/mach-o/arm64/reloc.h
+lib/zig/libc/include/aarch64-macos-gnu/mach-o/compact_unwind_encoding.h
 lib/zig/libc/include/aarch64-macos-gnu/mach-o/dyld.h
+lib/zig/libc/include/aarch64-macos-gnu/mach-o/fat.h
 lib/zig/libc/include/aarch64-macos-gnu/mach-o/loader.h
+lib/zig/libc/include/aarch64-macos-gnu/mach-o/nlist.h
+lib/zig/libc/include/aarch64-macos-gnu/mach-o/ranlib.h
+lib/zig/libc/include/aarch64-macos-gnu/mach-o/reloc.h
+lib/zig/libc/include/aarch64-macos-gnu/mach-o/stab.h
+lib/zig/libc/include/aarch64-macos-gnu/mach-o/x86_64/
+lib/zig/libc/include/aarch64-macos-gnu/mach-o/x86_64/reloc.h
 lib/zig/libc/include/aarch64-macos-gnu/mach/arm/
 lib/zig/libc/include/aarch64-macos-gnu/mach/arm/_structs.h
 lib/zig/libc/include/aarch64-macos-gnu/mach/arm/boolean.h
@@ -913,6 +927,7 @@ lib/zig/libc/include/aarch64-macos-gnu/sys/mount.h
 lib/zig/libc/include/aarch64-macos-gnu/sys/param.h
 lib/zig/libc/include/aarch64-macos-gnu/sys/proc.h
 lib/zig/libc/include/aarch64-macos-gnu/sys/proc_info.h
+lib/zig/libc/include/aarch64-macos-gnu/sys/random.h
 lib/zig/libc/include/aarch64-macos-gnu/sys/resource.h
 lib/zig/libc/include/aarch64-macos-gnu/sys/shm.h
 lib/zig/libc/include/aarch64-macos-gnu/sys/socket.h
@@ -6028,6 +6043,8 @@ lib/zig/libc/include/x86_64-macos-gnu/mach/
 lib/zig/libc/include/x86_64-macos-gnu/mach-o/
 lib/zig/libc/include/x86_64-macos-gnu/mach-o/dyld.h
 lib/zig/libc/include/x86_64-macos-gnu/mach-o/loader.h
+lib/zig/libc/include/x86_64-macos-gnu/mach/exception_types.h
+lib/zig/libc/include/x86_64-macos-gnu/mach/host_special_ports.h
 lib/zig/libc/include/x86_64-macos-gnu/mach/i386/
 lib/zig/libc/include/x86_64-macos-gnu/mach/i386/_structs.h
 lib/zig/libc/include/x86_64-macos-gnu/mach/i386/boolean.h
@@ -6041,6 +6058,7 @@ lib/zig/libc/include/x86_64-macos-gnu/mach/i386/thread_status.h
 lib/zig/libc/include/x86_64-macos-gnu/mach/i386/vm_param.h
 lib/zig/libc/include/x86_64-macos-gnu/mach/i386/vm_types.h
 lib/zig/libc/include/x86_64-macos-gnu/mach/kern_return.h
+lib/zig/libc/include/x86_64-macos-gnu/mach/mach_init.h
 lib/zig/libc/include/x86_64-macos-gnu/mach/mach_port.h
 lib/zig/libc/include/x86_64-macos-gnu/mach/mach_traps.h
 lib/zig/libc/include/x86_64-macos-gnu/mach/mach_types.h
@@ -6056,6 +6074,7 @@ lib/zig/libc/include/x86_64-macos-gnu/mach/machine/thread_state.h
 lib/zig/libc/include/x86_64-macos-gnu/mach/machine/thread_status.h
 lib/zig/libc/include/x86_64-macos-gnu/mach/machine/vm_param.h
 lib/zig/libc/include/x86_64-macos-gnu/mach/machine/vm_types.h
+lib/zig/libc/include/x86_64-macos-gnu/mach/memory_object_types.h
 lib/zig/libc/include/x86_64-macos-gnu/mach/message.h
 lib/zig/libc/include/x86_64-macos-gnu/mach/port.h
 lib/zig/libc/include/x86_64-macos-gnu/mach/processor_set.h
@@ -6066,9 +6085,12 @@ lib/zig/libc/include/x86_64-macos-gnu/mach/task_special_ports.h
 lib/zig/libc/include/x86_64-macos-gnu/mach/thread_act.h
 lib/zig/libc/include/x86_64-macos-gnu/mach/thread_special_ports.h
 lib/zig/libc/include/x86_64-macos-gnu/mach/thread_status.h
+lib/zig/libc/include/x86_64-macos-gnu/mach/vm_map.h
 lib/zig/libc/include/x86_64-macos-gnu/mach/vm_prot.h
 lib/zig/libc/include/x86_64-macos-gnu/mach/vm_statistics.h
 lib/zig/libc/include/x86_64-macos-gnu/mach/vm_types.h
+lib/zig/libc/include/x86_64-macos-gnu/mach_debug/
+lib/zig/libc/include/x86_64-macos-gnu/mach_debug/ipc_info.h
 lib/zig/libc/include/x86_64-macos-gnu/machine/
 lib/zig/libc/include/x86_64-macos-gnu/machine/_mcontext.h
 lib/zig/libc/include/x86_64-macos-gnu/machine/_param.h
@@ -6159,6 +6181,7 @@ lib/zig/libc/include/x86_64-macos-gnu/sys/syslimits.h
 lib/zig/libc/include/x86_64-macos-gnu/sys/ucontext.h
 lib/zig/libc/include/x86_64-macos-gnu/sys/uio.h
 lib/zig/libc/include/x86_64-macos-gnu/sys/un.h
+lib/zig/libc/include/x86_64-macos-gnu/time.h
 lib/zig/libc/include/x86_64-macos-gnu/ucontext.h
 lib/zig/libc/include/x86_64-macos-gnu/xlocale/
 lib/zig/libc/include/x86_64-macos-gnu/xlocale/_inttypes.h
@@ -6381,6 +6404,7 @@ lib/zig/libc/mingw/lib-common/d3d12.def
 lib/zig/libc/mingw/lib-common/d3d9.def
 lib/zig/libc/mingw/lib-common/d3dcompiler_47.def
 lib/zig/libc/mingw/lib-common/davclnt.def
+lib/zig/libc/mingw/lib-common/dbghelp.def
 lib/zig/libc/mingw/lib-common/dcomp.def
 lib/zig/libc/mingw/lib-common/ddraw.def
 lib/zig/libc/mingw/lib-common/dfscli.def
@@ -6443,6 +6467,7 @@ lib/zig/libc/mingw/lib-common/netutils.def
 lib/zig/libc/mingw/lib-common/normaliz.def
 lib/zig/libc/mingw/lib-common/ntdll.def.in
 lib/zig/libc/mingw/lib-common/ntdsapi.def
+lib/zig/libc/mingw/lib-common/odbc32.def
 lib/zig/libc/mingw/lib-common/ole32.def.in
 lib/zig/libc/mingw/lib-common/oleacc.def
 lib/zig/libc/mingw/lib-common/oleaut32.def.in
@@ -6571,6 +6596,7 @@ lib/zig/libc/mingw/lib32/d3d12.def
 lib/zig/libc/mingw/lib32/d3d9.def
 lib/zig/libc/mingw/lib32/d3dcompiler_47.def
 lib/zig/libc/mingw/lib32/davclnt.def
+lib/zig/libc/mingw/lib32/dbghelp.def
 lib/zig/libc/mingw/lib32/dcomp.def
 lib/zig/libc/mingw/lib32/ddraw.def
 lib/zig/libc/mingw/lib32/dfscli.def
@@ -6634,6 +6660,7 @@ lib/zig/libc/mingw/lib32/newdev.def
 lib/zig/libc/mingw/lib32/normaliz.def
 lib/zig/libc/mingw/lib32/ntdll.def
 lib/zig/libc/mingw/lib32/ntdsapi.def
+lib/zig/libc/mingw/lib32/odbc32.def
 lib/zig/libc/mingw/lib32/ole32.def
 lib/zig/libc/mingw/lib32/oleacc.def
 lib/zig/libc/mingw/lib32/oleaut32.def
@@ -6726,6 +6753,7 @@ lib/zig/libc/mingw/lib64/msctfmonitor.def
 lib/zig/libc/mingw/lib64/msvfw32.def
 lib/zig/libc/mingw/lib64/newdev.def
 lib/zig/libc/mingw/lib64/ntlanman.def
+lib/zig/libc/mingw/lib64/odbc32gt.def
 lib/zig/libc/mingw/lib64/opengl32.def
 lib/zig/libc/mingw/lib64/pdh.def
 lib/zig/libc/mingw/lib64/quartz.def

@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/10/15 13:44:26 bcallah Exp $
+@bin bin/catdocd
+@bin bin/changed
+@bin bin/checkwhitespace
+@bin bin/contributors
+@bin bin/ddemangle
+@bin bin/detab
+@bin bin/dget
+@bin bin/dustmite
+@bin bin/rdmd
+@bin bin/tolf
+@bin bin/updatecopyright

@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_compositor_viz_process_transport_factory_cc,v 1.6 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-content_browser_compositor_viz_process_transport_factory_cc,v 1.7 2021/09/01 16:54:39 robert Exp $
 
 Index: content/browser/compositor/viz_process_transport_factory.cc
 --- content/browser/compositor/viz_process_transport_factory.cc.orig

@@ -1,4 +1,4 @@
-$OpenBSD: patch-etc_clamd_conf_sample,v 1.12 2021/04/07 19:17:21 sthen Exp $
+$OpenBSD: patch-etc_clamd_conf_sample,v 1.13 2021/10/19 11:17:24 sthen Exp $
 
 Index: etc/clamd.conf.sample
 --- etc/clamd.conf.sample.orig
@@ -21,7 +21,7 @@ Index: etc/clamd.conf.sample
  
  # Only load the official signatures published by the ClamAV project.
  # Default: no
-@@ -216,7 +216,7 @@ Example
+@@ -218,7 +218,7 @@ Example
  
  # Run as another user (clamd must be started by root for this option to work)
  # Default: don't drop privileges
@@ -30,7 +30,7 @@ Index: etc/clamd.conf.sample
  
  # Stop daemon when libclamav reports out of memory condition.
  #ExitOnOOM yes
-@@ -534,7 +534,7 @@ Example
+@@ -536,7 +536,7 @@ Example
  # deeply the process should be continued.
  # Note: setting this limit too high may result in severe damage to the system.
  # Default: 16

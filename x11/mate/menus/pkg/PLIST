@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/08/14 12:06:35 robert Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/08/25 12:05:52 robert Exp $
 include/mate-menus/
 include/mate-menus/matemenu-tree.h
 lib/girepository-1.0/
@@ -230,6 +230,7 @@ share/mate-menus/examples/
 share/mate-menus/examples/mate-menus-ls.py
 share/mate/desktop-directories/
 share/mate/desktop-directories/mate-audio-video.directory
+share/mate/desktop-directories/mate-collection.directory
 share/mate/desktop-directories/mate-development.directory
 share/mate/desktop-directories/mate-education.directory
 share/mate/desktop-directories/mate-game.directory

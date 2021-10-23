@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.21 2021/06/04 07:46:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2021/10/06 09:08:50 ajacoutot Exp $
 @comment Error switching to user _polkitd: Error changing to home directory /nonexistent
 @newgroup _polkitd:701
 @newuser _polkitd:701:_polkitd:daemon:Polkit Daemon User:/var/empty:/sbin/nologin
-@bin bin/pk-example-frobnicate
 @bin bin/pkaction
 @bin bin/pkcheck
 @mode 4755
@@ -45,11 +44,7 @@ include/polkit-1/polkitagent/polkitagenttypes.h
 lib/girepository-1.0/
 lib/girepository-1.0/Polkit-1.0.typelib
 lib/girepository-1.0/PolkitAgent-1.0.typelib
-@static-lib lib/libpolkit-agent-1.a
-lib/libpolkit-agent-1.la
 @lib lib/libpolkit-agent-1.so.${LIBpolkit-agent-1_VERSION}
-@static-lib lib/libpolkit-gobject-1.a
-lib/libpolkit-gobject-1.la
 @lib lib/libpolkit-gobject-1.so.${LIBpolkit-gobject-1_VERSION}
 lib/pkgconfig/polkit-agent-1.pc
 lib/pkgconfig/polkit-gobject-1.pc
@@ -93,7 +88,9 @@ share/locale/id/LC_MESSAGES/polkit-1.mo
 share/locale/it/LC_MESSAGES/polkit-1.mo
 share/locale/nn/LC_MESSAGES/polkit-1.mo
 share/locale/pl/LC_MESSAGES/polkit-1.mo
+share/locale/pt/LC_MESSAGES/polkit-1.mo
 share/locale/pt_BR/LC_MESSAGES/polkit-1.mo
+share/locale/ro/LC_MESSAGES/polkit-1.mo
 share/locale/sk/LC_MESSAGES/polkit-1.mo
 share/locale/sv/LC_MESSAGES/polkit-1.mo
 share/locale/tr/LC_MESSAGES/polkit-1.mo
@@ -102,7 +99,6 @@ share/locale/zh_CN/LC_MESSAGES/polkit-1.mo
 share/locale/zh_TW/LC_MESSAGES/polkit-1.mo
 share/polkit-1/
 share/polkit-1/actions/
-share/polkit-1/actions/org.freedesktop.policykit.examples.pkexec.policy
 share/polkit-1/actions/org.freedesktop.policykit.policy
 @mode 0700
 @owner _polkitd

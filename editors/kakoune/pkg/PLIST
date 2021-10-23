@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/08/10 06:59:14 solene Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/08/31 06:45:37 solene Exp $
 @bin bin/kak
+@comment libexec/kak/
+@comment libexec/kak/kak
 @man man/man1/kak.1
 share/doc/kak/
 share/doc/kak/README.asciidoc
@@ -74,18 +76,23 @@ share/kak/rc/filetype/elm.kak
 share/kak/rc/filetype/eruby.kak
 share/kak/rc/filetype/etc.kak
 share/kak/rc/filetype/exherbo.kak
+share/kak/rc/filetype/fennel.kak
 share/kak/rc/filetype/fish.kak
 share/kak/rc/filetype/fsharp.kak
 share/kak/rc/filetype/gas.kak
+share/kak/rc/filetype/gdscript.kak
+share/kak/rc/filetype/gentoo-linux.kak
 share/kak/rc/filetype/git.kak
 share/kak/rc/filetype/gluon.kak
 share/kak/rc/filetype/go.kak
+share/kak/rc/filetype/graphql.kak
 share/kak/rc/filetype/haml.kak
 share/kak/rc/filetype/haskell.kak
 share/kak/rc/filetype/hbs.kak
 share/kak/rc/filetype/html.kak
 share/kak/rc/filetype/i3.kak
 share/kak/rc/filetype/ini.kak
+share/kak/rc/filetype/janet.kak
 share/kak/rc/filetype/java.kak
 share/kak/rc/filetype/javascript.kak
 share/kak/rc/filetype/jinja.kak
@@ -94,6 +101,7 @@ share/kak/rc/filetype/julia.kak
 share/kak/rc/filetype/just.kak
 share/kak/rc/filetype/kakrc.kak
 share/kak/rc/filetype/kickstart.kak
+share/kak/rc/filetype/kotlin.kak
 share/kak/rc/filetype/latex.kak
 share/kak/rc/filetype/ledger.kak
 share/kak/rc/filetype/lisp.kak
@@ -102,17 +110,21 @@ share/kak/rc/filetype/mail.kak
 share/kak/rc/filetype/makefile.kak
 share/kak/rc/filetype/markdown.kak
 share/kak/rc/filetype/mercurial.kak
+share/kak/rc/filetype/mercury.kak
 share/kak/rc/filetype/meson.kak
 share/kak/rc/filetype/mlb.kak
 share/kak/rc/filetype/moon.kak
 share/kak/rc/filetype/nim.kak
+share/kak/rc/filetype/ninja.kak
 share/kak/rc/filetype/nix.kak
 share/kak/rc/filetype/ocaml.kak
+share/kak/rc/filetype/pascal.kak
 share/kak/rc/filetype/perl.kak
 share/kak/rc/filetype/php.kak
 share/kak/rc/filetype/pony.kak
 share/kak/rc/filetype/protobuf.kak
 share/kak/rc/filetype/pug.kak
+share/kak/rc/filetype/purescript.kak
 share/kak/rc/filetype/python.kak
 share/kak/rc/filetype/r.kak
 share/kak/rc/filetype/ragel.kak
@@ -126,6 +138,7 @@ share/kak/rc/filetype/scss.kak
 share/kak/rc/filetype/sh.kak
 share/kak/rc/filetype/sml.kak
 share/kak/rc/filetype/sql.kak
+share/kak/rc/filetype/svelte.kak
 share/kak/rc/filetype/swift.kak
 share/kak/rc/filetype/systemd.kak
 share/kak/rc/filetype/taskpaper.kak
@@ -133,21 +146,25 @@ share/kak/rc/filetype/terraform.kak
 share/kak/rc/filetype/toml.kak
 share/kak/rc/filetype/troff.kak
 share/kak/rc/filetype/tupfile.kak
+share/kak/rc/filetype/vhdl.kak
 share/kak/rc/filetype/void-linux.kak
 share/kak/rc/filetype/yaml.kak
 share/kak/rc/filetype/zig.kak
 share/kak/rc/tools/
+share/kak/rc/tools/autorestore.asciidoc
 share/kak/rc/tools/autorestore.kak
 share/kak/rc/tools/autowrap.kak
 share/kak/rc/tools/clang.kak
 share/kak/rc/tools/comment.kak
 share/kak/rc/tools/ctags.kak
+share/kak/rc/tools/doc.asciidoc
 share/kak/rc/tools/doc.kak
 share/kak/rc/tools/format.kak
 share/kak/rc/tools/git.kak
 share/kak/rc/tools/go/
-share/kak/rc/tools/go/go-tools.kak
+share/kak/rc/tools/go/gopls.kak
 share/kak/rc/tools/grep.kak
+share/kak/rc/tools/lint.asciidoc
 share/kak/rc/tools/lint.kak
 share/kak/rc/tools/make.kak
 share/kak/rc/tools/man.kak
@@ -162,9 +179,11 @@ share/kak/rc/windowing/iterm.kak
 share/kak/rc/windowing/kitty.kak
 share/kak/rc/windowing/new-client.kak
 share/kak/rc/windowing/repl/
+share/kak/rc/windowing/repl/dtach.kak
 share/kak/rc/windowing/repl/kitty.kak
 share/kak/rc/windowing/repl/tmux.kak
 share/kak/rc/windowing/repl/x11.kak
 share/kak/rc/windowing/screen.kak
 share/kak/rc/windowing/tmux.kak
+share/kak/rc/windowing/wayland.kak
 share/kak/rc/windowing/x11.kak

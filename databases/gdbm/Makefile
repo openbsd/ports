@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.48 2021/01/27 16:54:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.49 2021/08/31 12:31:32 ajacoutot Exp $
 
 COMMENT=		GNU dbm
 
-DISTNAME=		gdbm-1.19
+DISTNAME=		gdbm-1.20
 CATEGORIES=		databases
 
-SHARED_LIBS=		gdbm	5.1	# 6.0
+SHARED_LIBS +=  gdbm                 5.1      # 6.0
 
 HOMEPAGE=		https://www.gnu.org/software/gdbm/
 

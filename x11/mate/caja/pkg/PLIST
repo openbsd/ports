@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2020/03/21 16:14:54 robert Exp $
+@comment $OpenBSD: PLIST,v 1.12 2021/08/25 12:05:50 robert Exp $
 @bin bin/caja
 @bin bin/caja-autorun-software
 @bin bin/caja-connect-server
@@ -57,16 +57,16 @@ share/caja/patterns/camouflage.png
 share/caja/patterns/chalk.jpg
 share/caja/patterns/cork.png
 share/caja/patterns/countertop.png
-share/caja/patterns/dark-mate.jpg
+share/caja/patterns/dark-gnome.jpg
 share/caja/patterns/dots.png
 share/caja/patterns/fibers.png
 share/caja/patterns/fleur_de_lis.png
 share/caja/patterns/floral.png
 share/caja/patterns/fossil.png
+share/caja/patterns/gnome.jpg
 share/caja/patterns/green_weave.png
 share/caja/patterns/ice.png
 share/caja/patterns/manila_paper.png
-share/caja/patterns/mate.jpg
 share/caja/patterns/moss_ridge.png
 share/caja/patterns/numbers.png
 share/caja/patterns/ocean_stripes.png
@@ -188,6 +188,7 @@ share/locale/is/LC_MESSAGES/caja.mo
 share/locale/it/LC_MESSAGES/caja.mo
 share/locale/ja/LC_MESSAGES/caja.mo
 share/locale/ka/LC_MESSAGES/caja.mo
+share/locale/kab/LC_MESSAGES/caja.mo
 share/locale/kk/LC_MESSAGES/caja.mo
 share/locale/km/LC_MESSAGES/caja.mo
 share/locale/kn/LC_MESSAGES/caja.mo

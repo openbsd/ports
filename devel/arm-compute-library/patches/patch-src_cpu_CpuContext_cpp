@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_cpu_CpuContext_cpp,v 1.1.1.1 2021/10/19 03:54:58 kevlo Exp $
+
+Index: src/cpu/CpuContext.cpp
+--- src/cpu/CpuContext.cpp.orig
++++ src/cpu/CpuContext.cpp
+@@ -28,7 +28,11 @@
+ #include "src/cpu/CpuTensor.h"
+ 
+ #include <cstdlib>
++#if !defined(__OpenBSD__)
+ #include <malloc.h>
++#else  /* !defined(__OpenBSD__) */
++#include <stdlib.h>
++#endif /* !defined(__OpenBSD__) */
+ 
+ namespace arm_compute
+ {

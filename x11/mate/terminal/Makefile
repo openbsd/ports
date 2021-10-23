@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2020/08/20 06:40:19 robert Exp $
+# $OpenBSD: Makefile,v 1.19 2021/08/25 12:05:53 robert Exp $
 
 COMMENT=		MATE terminal
 
 MATE_PROJECT=		mate-terminal
-MATE_VERSION=		1.24.1
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
@@ -16,7 +15,7 @@ WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz hogweed
 WANTLIB += iconv idn2 intl m nettle p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pcre2-8 pixman-1 png pthread tasn1
 WANTLIB += unistring vte-2.91 xcb xcb-render xcb-shm z
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} execinfo icudata icuuc jpeg
 
 MODULES=		devel/dconf \
 			x11/gnome

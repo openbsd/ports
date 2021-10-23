@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.80 2021/06/19 20:47:25 sebastia Exp $
+# $OpenBSD: Makefile,v 1.82 2021/10/19 19:43:35 sebastia Exp $
 
 COMMENT=	GNUstep base library
 
 DISTNAME=	gnustep-base-1.28.0
-REVISION=	0
+REVISION=	2
 
 SHARED_LIBS=	gnustep-base 10.4
 CATEGORIES=	devel
@@ -33,7 +33,7 @@ LIB_DEPENDS +=	converters/libiconv \
 		textproc/libxslt \
 		security/gnutls \
 		textproc/icu4c \
-		net/avahi \
+		net/avahi,-libs \
 		net/curl \
 		x11/gnustep/libobjc2
 

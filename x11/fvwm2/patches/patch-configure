@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.4 2020/12/13 21:17:02 sthen Exp $
+$OpenBSD: patch-configure,v 1.5 2021/09/19 21:11:55 tb Exp $
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -11756,7 +11756,7 @@ if test "${with_intl_library+set}" = set; then :
+@@ -11355,7 +11355,7 @@ if test "${with_intl_library+set}" = set; then :
  else
  
      with_intl=maybe

@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_trace_event_process_memory_dump_cc,v 1.20 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-base_trace_event_process_memory_dump_cc,v 1.21 2021/09/01 16:54:38 robert Exp $
 
 Index: base/trace_event/process_memory_dump.cc
 --- base/trace_event/process_memory_dump.cc.orig
 +++ base/trace_event/process_memory_dump.cc
-@@ -104,7 +104,7 @@ absl::optional<size_t> ProcessMemoryDump::CountResiden
+@@ -105,7 +105,7 @@ absl::optional<size_t> ProcessMemoryDump::CountResiden
  #if defined(OS_WIN)
    std::unique_ptr<PSAPI_WORKING_SET_EX_INFORMATION[]> vec(
        new PSAPI_WORKING_SET_EX_INFORMATION[max_vec_size]);
@@ -12,7 +12,7 @@ Index: base/trace_event/process_memory_dump.cc
    std::unique_ptr<char[]> vec(new char[max_vec_size]);
  #elif defined(OS_POSIX) || defined(OS_FUCHSIA)
    std::unique_ptr<unsigned char[]> vec(new unsigned char[max_vec_size]);
-@@ -126,7 +126,7 @@ absl::optional<size_t> ProcessMemoryDump::CountResiden
+@@ -127,7 +127,7 @@ absl::optional<size_t> ProcessMemoryDump::CountResiden
  
      for (size_t i = 0; i < page_count; i++)
        resident_page_count += vec[i].VirtualAttributes.Valid;

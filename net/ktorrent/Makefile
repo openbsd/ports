@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2021/04/27 05:26:55 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.59 2021/10/19 20:08:35 rsadowski Exp $
 
 COMMENT =	BitTorrent Client
 
@@ -27,8 +27,8 @@ WANTLIB += KF5Syndication KF5TextWidgets KF5Torrent KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml
 WANTLIB += Qt5QmlModels Qt5Quick Qt5Script Qt5WebChannel Qt5WebEngineCore
-WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml c gcrypt gmp
-WANTLIB += m phonon4qt5 tag
+WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 c gcrypt
+WANTLIB += gmp m phonon4qt5 tag
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 
@@ -86,6 +86,7 @@ post-install:
 	2to3 -w -n ${PREFIX}/share/ktorrent/scripts/email_notifications/
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/share/ktorrent/scripts/auto_remove/ \
+		${PREFIX}/share/ktorrent/scripts/auto_resume/ \
 		${PREFIX}/share/ktorrent/scripts/email_notifications/ \
 		${PREFIX}/share/ktorrent/scripts/tracker_groups/
 

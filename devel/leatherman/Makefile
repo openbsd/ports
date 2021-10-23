@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.47 2021/07/16 17:38:47 sebastia Exp $
+# $OpenBSD: Makefile,v 1.48 2021/09/19 05:24:30 rsadowski Exp $
 
 COMMENT =		collection of C++ and CMake utility libraries
 
 GH_ACCOUNT =		puppetlabs
 GH_PROJECT =		leatherman
 GH_TAGNAME =		1.12.6
+REVISION =		0
 
 # N.B.: Upstream doesn't care about ABI, better just bump major on update
 SHARED_LIBS =	leatherman_curl             1.1 # 1.12.4
@@ -35,7 +36,7 @@ MODPY_RUNDEP =		No
 MODPY_BUILDDEP =	No
 MODPY_ADJ_FILES =	scripts/cpplint.py
 
-LIB_DEPENDS =		devel/boost>=1.73.0 \
+LIB_DEPENDS =		devel/boost \
 			net/curl
 
 BUILD_DEPENDS =		devel/gettext,-tools

@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_cmd_go_internal_load_pkg_go,v 1.1 2021/07/11 14:44:56 jsing Exp $
+$OpenBSD: patch-src_cmd_go_internal_load_pkg_go,v 1.2 2021/08/27 18:33:27 jsing Exp $
 
 Index: src/cmd/go/internal/load/pkg.go
 --- src/cmd/go/internal/load/pkg.go.orig
 +++ src/cmd/go/internal/load/pkg.go
-@@ -2200,11 +2200,11 @@ func externalLinkingForced(p *Package) bool {
+@@ -2245,11 +2245,11 @@ func externalLinkingForced(p *Package) bool {
  	// Some targets must use external linking even inside GOROOT.
  	switch cfg.BuildContext.GOOS {
  	case "android":

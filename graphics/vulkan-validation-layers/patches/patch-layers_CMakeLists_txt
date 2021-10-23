@@ -1,11 +1,11 @@
-$OpenBSD: patch-layers_CMakeLists_txt,v 1.3 2021/06/29 03:48:22 thfr Exp $
+$OpenBSD: patch-layers_CMakeLists_txt,v 1.4 2021/10/16 14:50:41 thfr Exp $
 
 include build dir before VulkanHeaders_INCLUDE_DIR
 
 Index: layers/CMakeLists.txt
 --- layers/CMakeLists.txt.orig
 +++ layers/CMakeLists.txt
-@@ -101,7 +101,7 @@ macro(AddVkLayer target LAYER_COMPILE_DEFINITIONS)
+@@ -107,7 +107,7 @@ macro(AddVkLayer target LAYER_COMPILE_DEFINITIONS)
      install(TARGETS VkLayer_${target} DESTINATION ${CMAKE_INSTALL_LIBDIR})
  endmacro()
  

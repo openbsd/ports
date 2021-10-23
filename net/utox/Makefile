@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/25 22:26:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/10/14 16:52:03 solene Exp $
 
 COMMENT =	lightweight Tox client
 
-V =		0.18.0
-REVISION =	0
+V =		0.18.1
 
 DISTNAME =	uTox-${V}-full
 PKGNAME =	utox-${V}
@@ -12,13 +11,13 @@ FIX_EXTRACT_PERMISSIONS = Yes
 
 CATEGORIES =	net
 
-HOMEPAGE =	https://utox.io
+HOMEPAGE =	https://github.com/uTox/uTox/
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ICE SM X11 Xext Xrender c dbus-1 fontconfig freetype m
-WANTLIB += pthread openal opus sodium toxcore v4lconvert vpx
+WANTLIB += pthread openal opus toxcore v4lconvert vpx
 
 MODULES =	devel/cmake
 

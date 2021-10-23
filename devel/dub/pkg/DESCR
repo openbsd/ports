@@ -1,0 +1,11 @@
+Dub is the package and build manager for D applications and libraries.
+
+There is a central package registry located at https://code.dlang.org
+where packages can be installed and managed using dub.
+
+The project's philosophy is to keep things as simple as possible. All
+that is needed to make a project a dub package is to write a short
+dub.json file and put the source code into a source subfolder. It can
+then be registered on the public package registry to be made available
+for everyone. Any dependencies specified in dub.json are automatically
+downloaded and made available to the project during the build process.

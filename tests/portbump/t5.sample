@@ -46,7 +46,7 @@ SHARED_LIBS +=  avahi-gobject        0.0      # .0.1
 HOMEPAGE=	http://www.avahi.org/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=  ${MODGETTEXT_WANTLIB}
 WANTLIB+= qwe

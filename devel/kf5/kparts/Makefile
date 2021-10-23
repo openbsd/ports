@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2021/06/15 09:37:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.19 2021/10/13 15:02:06 rsadowski Exp $
 
 COMMENT =		KDE plugin framework for user interface components
 DISTNAME =		kparts-${VERSION}
@@ -11,7 +11,7 @@ WANTLIB += KF5I18n KF5IconThemes KF5JobWidgets KF5KIOCore KF5KIOGui
 WANTLIB += KF5KIOWidgets KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Test Qt5Widgets
-WANTLIB += Qt5Xml m
+WANTLIB += Qt5Xml X11 m
 
 BUILD_DEPENDS =	devel/gettext,-tools
 

@@ -1,4 +1,4 @@
-$OpenBSD: patch-makefile,v 1.18 2021/07/02 14:43:46 fcambus Exp $
+$OpenBSD: patch-makefile,v 1.20 2021/10/01 12:13:51 fcambus Exp $
 
 - Disable hardcoded -O3 optimizations
 - Fix GCC_VERSION and CLANG_VERSION detection
@@ -6,7 +6,7 @@ $OpenBSD: patch-makefile,v 1.18 2021/07/02 14:43:46 fcambus Exp $
 Index: makefile
 --- makefile.orig
 +++ makefile
-@@ -213,7 +213,7 @@ GENIEOS := freebsd
+@@ -212,7 +212,7 @@ GENIEOS := freebsd
  endif
  ifeq ($(firstword $(filter OpenBSD,$(UNAME))),OpenBSD)
  OS := openbsd
@@ -27,7 +27,7 @@ Index: makefile
  # set the symbols level
  ifdef SYMBOLS
  PARAMS += --SYMBOLS='$(SYMBOLS)'
-@@ -999,8 +994,8 @@ endif
+@@ -995,8 +990,8 @@ endif
  
  ifeq ($(OS),windows)
  ifeq (posix,$(SHELLTYPE))

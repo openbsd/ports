@@ -1,9 +1,9 @@
-$OpenBSD: patch-deps_openssl_config_bn_conf_no-asm_h,v 1.3 2019/11/24 18:42:28 abieber Exp $
+$OpenBSD: patch-deps_openssl_config_bn_conf_no-asm_h,v 1.4 2021/09/06 13:27:41 sthen Exp $
 
 Index: deps/openssl/config/bn_conf_no-asm.h
 --- deps/openssl/config/bn_conf_no-asm.h.orig
 +++ deps/openssl/config/bn_conf_no-asm.h
-@@ -24,7 +24,7 @@
+@@ -26,7 +26,7 @@
  #elif defined(_WIN32) && defined(_M_ARM64)
  # include "./archs/VC-WIN64-ARM/no-asm/crypto/include/internal/bn_conf.h"
  #elif (defined(__FreeBSD__) || defined(__OpenBSD__)) && defined(__i386__)

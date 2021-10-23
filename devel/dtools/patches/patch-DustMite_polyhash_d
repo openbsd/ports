@@ -1,0 +1,29 @@
+$OpenBSD: patch-DustMite_polyhash_d,v 1.1.1.1 2021/10/15 13:44:26 bcallah Exp $
+
+https://github.com/CyberShadow/DustMite/commit/2fceaf14a039a9c48f7c2016f52198994c72444c
+
+Index: DustMite/polyhash.d
+--- DustMite/polyhash.d.orig
++++ DustMite/polyhash.d
+@@ -290,8 +290,8 @@ if (is(T : long) && T.sizeof >= 2)
+ 				asm
+ 				{
+ 					"`~x86SignedOpPrefix!T~`mul`~x86SizeOpSuffix!T~` %3"
+-					: "=a" low, "=d" high
+-					: "a" a, "rm" b;
++					: "=a"(low), "=d"(high)
++					: "a"(a), "rm"(b);
+ 				}
+ 			`);
+ 			return typeof(return)(low, high);
+@@ -363,8 +363,8 @@ if (is(T : long) && T.sizeof >= 2 && is(L == LongInt!T
+ 				asm
+ 				{
+ 					"`~x86SignedOpPrefix!T~`div`~x86SizeOpSuffix!T~` %4"
+-					: "=a" quotient, "=d" remainder
+-					: "a" low, "d" high, "rm" b;
++					: "=a"(quotient), "=d"(remainder)
++					: "a"(low), "d"(high), "rm"(b);
+ 				}
+ 			`);
+ 			return typeof(return)(quotient, remainder);

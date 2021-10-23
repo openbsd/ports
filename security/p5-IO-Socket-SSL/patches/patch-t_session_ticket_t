@@ -1,0 +1,16 @@
+$OpenBSD: patch-t_session_ticket_t,v 1.1 2021/09/01 15:04:37 bluhm Exp $
+
+LibreSSL does not support session resume with TLS 1.3.
+
+Index: t/session_ticket.t
+--- t/session_ticket.t.orig
++++ t/session_ticket.t
+@@ -59,6 +59,8 @@ my $clctx = IO::Socket::SSL::SSL_Context->new(
+ 
+     # versions of Net::SSLeay with support for SESSION_up_ref have also the
+     # other functionality needed for proper TLS 1.3 session handling
++    Net::SSLeay::constant("LIBRESSL_VERSION_NUMBER") ?
++	(SSL_version => 'TLSv1_2') :
+     defined(&Net::SSLeay::SESSION_up_ref) ? ()
+ 	: (SSL_version => 'SSLv23:!TLSv1_3:!SSLv3:!SSLv2'),
+ );

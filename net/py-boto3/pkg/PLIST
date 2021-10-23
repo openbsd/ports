@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/03/26 13:17:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/09/01 22:41:29 sthen Exp $
 @conflict py-boto3-*
 @pkgpath net/py-boto3
+@pkgpath net/py-boto
+@pkgpath net/py-boto,python3
 lib/python${MODPY_VERSION}/site-packages/boto3/
 lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

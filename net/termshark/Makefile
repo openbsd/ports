@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2021/07/27 16:28:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/08/28 20:05:07 sthen Exp $
+
+BROKEN= broken by the update to go 1.17
 
 # patched to replace kr/pty with kreack/pty; see modules.inc XXX
 WRKDIST=	${WRKSRC}

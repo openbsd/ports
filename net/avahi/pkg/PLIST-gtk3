@@ -1,4 +1,9 @@
-@comment $OpenBSD: PLIST-gtk3,v 1.2 2020/02/22 08:57:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST-gtk3,v 1.3 2021/09/03 11:46:03 ajacoutot Exp $
+@conflict avahi-gtk-*
+@conflict avahi-ui-*
+@pkgpath net/avahi,-ui
+include/avahi-ui/
+include/avahi-ui/avahi-ui.h
 @static-lib lib/libavahi-ui-gtk3.a
 lib/libavahi-ui-gtk3.la
 @lib lib/libavahi-ui-gtk3.so.${LIBavahi-ui-gtk3_VERSION}

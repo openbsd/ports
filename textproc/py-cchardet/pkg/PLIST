@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/09/01 13:51:20 ajacoutot Exp $
+bin/cchardetect
+lib/python${MODPY_VERSION}/site-packages/cchardet/
+lib/python${MODPY_VERSION}/site-packages/cchardet-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/cchardet-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/cchardet-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/cchardet-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/cchardet-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/cchardet/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cchardet/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cchardet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cchardet/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/cchardet/_cchardet.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/cchardet/version.py

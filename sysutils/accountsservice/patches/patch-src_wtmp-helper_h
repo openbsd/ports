@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_wtmp-helper_h,v 1.1 2021/08/30 19:10:43 ajacoutot Exp $
+
+Index: src/wtmp-helper.h
+--- src/wtmp-helper.h.orig
++++ src/wtmp-helper.h
+@@ -23,7 +23,9 @@
+ 
+ #include <glib.h>
+ #include <pwd.h>
++#ifdef HAVE_SHADOW_H
+ #include <shadow.h>
++#endif
+ 
+ const gchar *           wtmp_helper_get_path_for_monitor                (void);
+ void                    wtmp_helper_update_login_frequencies            (GHashTable *users);

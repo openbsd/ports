@@ -1,3 +1,0 @@
-; $OpenBSD: modules.conf.sample,v 1.2 2007/09/05 22:42:52 sthen Exp $
-[modules]
-autoload=yes

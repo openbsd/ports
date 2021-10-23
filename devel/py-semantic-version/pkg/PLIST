@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/09/01 15:29:55 ajacoutot Exp $
+lib/python${MODPY_VERSION}/site-packages/semantic_version/
+lib/python${MODPY_VERSION}/site-packages/semantic_version-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/semantic_version-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/semantic_version-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/semantic_version-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/semantic_version-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/semantic_version-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/semantic_version/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/semantic_version/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/semantic_version/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/semantic_version/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/semantic_version/${MODPY_PYCACHE}django_fields.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/semantic_version/base.py
+lib/python${MODPY_VERSION}/site-packages/semantic_version/django_fields.py

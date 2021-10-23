@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.26 2018/06/29 22:16:19 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.27 2021/10/13 13:56:07 sthen Exp $
 @conflict gaim-*
 @conflict pidgin-facebookchat-<1.68p0
 @pkgpath net/pidgin
@@ -56,30 +56,28 @@ include/pidgin/pidgin.h
 include/pidgin/pidginstock.h
 include/pidgin/pidgintooltip.h
 lib/pidgin/
-lib/pidgin/convcolors.so
-lib/pidgin/extplacement.so
-lib/pidgin/gestures.so
-lib/pidgin/gtkbuddynote.so
-lib/pidgin/history.so
-lib/pidgin/iconaway.so
-lib/pidgin/markerline.so
-lib/pidgin/musicmessaging.so
-lib/pidgin/notify.so
-lib/pidgin/pidginrc.so
-lib/pidgin/relnot.so
-lib/pidgin/sendbutton.so
-lib/pidgin/spellchk.so
-lib/pidgin/themeedit.so
-lib/pidgin/ticker.so
-lib/pidgin/timestamp.so
-lib/pidgin/timestamp_format.so
-lib/pidgin/transparency.so
-lib/pidgin/xmppconsole.so
-lib/pidgin/xmppdisco.so
+@so lib/pidgin/convcolors.so
+@so lib/pidgin/extplacement.so
+@so lib/pidgin/gestures.so
+@so lib/pidgin/gtkbuddynote.so
+@so lib/pidgin/history.so
+@so lib/pidgin/iconaway.so
+@so lib/pidgin/markerline.so
+@so lib/pidgin/musicmessaging.so
+@so lib/pidgin/notify.so
+@so lib/pidgin/pidginrc.so
+@so lib/pidgin/relnot.so
+@so lib/pidgin/sendbutton.so
+@so lib/pidgin/spellchk.so
+@so lib/pidgin/themeedit.so
+@so lib/pidgin/ticker.so
+@so lib/pidgin/timestamp.so
+@so lib/pidgin/timestamp_format.so
+@so lib/pidgin/transparency.so
+@so lib/pidgin/xmppconsole.so
+@so lib/pidgin/xmppdisco.so
 lib/pkgconfig/pidgin.pc
 @man man/man1/pidgin.1
-share/appdata/
-share/appdata/pidgin.appdata.xml
 share/applications/pidgin.desktop
 share/doc/pidgin/
 share/icons/hicolor/16x16/apps/pidgin.png
@@ -91,6 +89,9 @@ share/icons/hicolor/scalable/apps/pidgin.svg
 share/locale/af/LC_MESSAGES/pidgin.mo
 share/locale/am/LC_MESSAGES/pidgin.mo
 share/locale/ar/LC_MESSAGES/pidgin.mo
+share/locale/ar_SA/
+share/locale/ar_SA/LC_MESSAGES/
+share/locale/ar_SA/LC_MESSAGES/pidgin.mo
 share/locale/as/LC_MESSAGES/pidgin.mo
 share/locale/ast/LC_MESSAGES/pidgin.mo
 share/locale/az/LC_MESSAGES/pidgin.mo
@@ -110,8 +111,6 @@ share/locale/da/LC_MESSAGES/pidgin.mo
 share/locale/de/LC_MESSAGES/pidgin.mo
 share/locale/dz/LC_MESSAGES/pidgin.mo
 share/locale/el/LC_MESSAGES/pidgin.mo
-share/locale/en_AU/
-share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/pidgin.mo
 share/locale/en_CA/LC_MESSAGES/pidgin.mo
 share/locale/en_GB/LC_MESSAGES/pidgin.mo
@@ -150,8 +149,6 @@ share/locale/ku_IQ/LC_MESSAGES/pidgin.mo
 share/locale/lt/LC_MESSAGES/pidgin.mo
 share/locale/lv/LC_MESSAGES/pidgin.mo
 share/locale/mai/LC_MESSAGES/pidgin.mo
-share/locale/mhr/
-share/locale/mhr/LC_MESSAGES/
 share/locale/mhr/LC_MESSAGES/pidgin.mo
 share/locale/mk/LC_MESSAGES/pidgin.mo
 share/locale/ml/LC_MESSAGES/pidgin.mo
@@ -176,8 +173,6 @@ share/locale/pt/LC_MESSAGES/pidgin.mo
 share/locale/pt_BR/LC_MESSAGES/pidgin.mo
 share/locale/ro/LC_MESSAGES/pidgin.mo
 share/locale/ru/LC_MESSAGES/pidgin.mo
-share/locale/sd/
-share/locale/sd/LC_MESSAGES/
 share/locale/sd/LC_MESSAGES/pidgin.mo
 share/locale/si/LC_MESSAGES/pidgin.mo
 share/locale/sk/LC_MESSAGES/pidgin.mo
@@ -186,8 +181,6 @@ share/locale/sq/LC_MESSAGES/pidgin.mo
 share/locale/sr/LC_MESSAGES/pidgin.mo
 share/locale/sr@latin/LC_MESSAGES/pidgin.mo
 share/locale/sv/LC_MESSAGES/pidgin.mo
-share/locale/sw/
-share/locale/sw/LC_MESSAGES/
 share/locale/sw/LC_MESSAGES/pidgin.mo
 share/locale/ta/LC_MESSAGES/pidgin.mo
 share/locale/te/LC_MESSAGES/pidgin.mo
@@ -202,6 +195,8 @@ share/locale/xh/LC_MESSAGES/pidgin.mo
 share/locale/zh_CN/LC_MESSAGES/pidgin.mo
 share/locale/zh_HK/LC_MESSAGES/pidgin.mo
 share/locale/zh_TW/LC_MESSAGES/pidgin.mo
+share/metainfo/
+share/metainfo/pidgin.appdata.xml
 share/pixmaps/
 share/pixmaps/pidgin/
 share/pixmaps/pidgin/animations/
@@ -599,12 +594,10 @@ share/pixmaps/pidgin/emotes/small/writing.png
 share/pixmaps/pidgin/logo.png
 share/pixmaps/pidgin/protocols/
 share/pixmaps/pidgin/protocols/16/
-share/pixmaps/pidgin/protocols/16/aim.png
 share/pixmaps/pidgin/protocols/16/bonjour.png
 share/pixmaps/pidgin/protocols/16/facebook.png
 share/pixmaps/pidgin/protocols/16/gadu-gadu.png
 share/pixmaps/pidgin/protocols/16/google-talk.png
-share/pixmaps/pidgin/protocols/16/icq.png
 share/pixmaps/pidgin/protocols/16/irc.png
 share/pixmaps/pidgin/protocols/16/jabber.png
 share/pixmaps/pidgin/protocols/16/meanwhile.png
@@ -613,12 +606,10 @@ share/pixmaps/pidgin/protocols/16/silc.png
 share/pixmaps/pidgin/protocols/16/simple.png
 share/pixmaps/pidgin/protocols/16/zephyr.png
 share/pixmaps/pidgin/protocols/22/
-share/pixmaps/pidgin/protocols/22/aim.png
 share/pixmaps/pidgin/protocols/22/bonjour.png
 share/pixmaps/pidgin/protocols/22/facebook.png
 share/pixmaps/pidgin/protocols/22/gadu-gadu.png
 share/pixmaps/pidgin/protocols/22/google-talk.png
-share/pixmaps/pidgin/protocols/22/icq.png
 share/pixmaps/pidgin/protocols/22/irc.png
 share/pixmaps/pidgin/protocols/22/jabber.png
 share/pixmaps/pidgin/protocols/22/meanwhile.png
@@ -627,11 +618,9 @@ share/pixmaps/pidgin/protocols/22/silc.png
 share/pixmaps/pidgin/protocols/22/simple.png
 share/pixmaps/pidgin/protocols/22/zephyr.png
 share/pixmaps/pidgin/protocols/48/
-share/pixmaps/pidgin/protocols/48/aim.png
 share/pixmaps/pidgin/protocols/48/bonjour.png
 share/pixmaps/pidgin/protocols/48/facebook.png
 share/pixmaps/pidgin/protocols/48/gadu-gadu.png
-share/pixmaps/pidgin/protocols/48/icq.png
 share/pixmaps/pidgin/protocols/48/irc.png
 share/pixmaps/pidgin/protocols/48/jabber.png
 share/pixmaps/pidgin/protocols/48/meanwhile.png
@@ -640,11 +629,9 @@ share/pixmaps/pidgin/protocols/48/silc.png
 share/pixmaps/pidgin/protocols/48/simple.png
 share/pixmaps/pidgin/protocols/48/zephyr.png
 share/pixmaps/pidgin/protocols/scalable/
-share/pixmaps/pidgin/protocols/scalable/aim.svg
 share/pixmaps/pidgin/protocols/scalable/bonjour.svg
 share/pixmaps/pidgin/protocols/scalable/gadu-gadu.svg
 share/pixmaps/pidgin/protocols/scalable/google-talk.svg
-share/pixmaps/pidgin/protocols/scalable/icq.svg
 share/pixmaps/pidgin/protocols/scalable/irc.svg
 share/pixmaps/pidgin/protocols/scalable/jabber.svg
 share/pixmaps/pidgin/protocols/scalable/meanwhile.svg

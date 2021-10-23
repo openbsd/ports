@@ -1,18 +1,18 @@
-$OpenBSD: patch-ui_platform_window_platform_window_init_properties_h,v 1.7 2021/07/21 15:43:34 robert Exp $
+$OpenBSD: patch-ui_platform_window_platform_window_init_properties_h,v 1.10 2021/10/20 10:27:48 robert Exp $
 
 Index: ui/platform_window/platform_window_init_properties.h
 --- ui/platform_window/platform_window_init_properties.h.orig
 +++ ui/platform_window/platform_window_init_properties.h
-@@ -47,7 +47,7 @@ enum class PlatformWindowShadowType {
- 
- class WorkspaceExtensionDelegate;
+@@ -52,7 +52,7 @@ class WorkspaceExtensionDelegate;
+ class ScenicWindowDelegate;
+ #endif
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  class X11ExtensionDelegate;
  #endif
  
-@@ -93,7 +93,7 @@ struct COMPONENT_EXPORT(PLATFORM_WINDOW) PlatformWindo
+@@ -106,7 +106,7 @@ struct COMPONENT_EXPORT(PLATFORM_WINDOW) PlatformWindo
  
    PlatformWindowShadowType shadow_type = PlatformWindowShadowType::kDefault;
  

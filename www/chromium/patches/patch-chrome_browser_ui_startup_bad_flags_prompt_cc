@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_startup_bad_flags_prompt_cc,v 1.25 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_startup_bad_flags_prompt_cc,v 1.28 2021/10/20 10:27:46 robert Exp $
 
 Index: chrome/browser/ui/startup/bad_flags_prompt.cc
 --- chrome/browser/ui/startup/bad_flags_prompt.cc.orig
 +++ chrome/browser/ui/startup/bad_flags_prompt.cc
-@@ -96,7 +96,7 @@ static const char* kBadFlags[] = {
+@@ -95,7 +95,7 @@ static const char* kBadFlags[] = {
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

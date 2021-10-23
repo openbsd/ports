@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_autofill_core_browser_personal_data_manager_cc,v 1.17 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-components_autofill_core_browser_personal_data_manager_cc,v 1.20 2021/10/20 10:27:46 robert Exp $
 
 Index: components/autofill/core/browser/personal_data_manager.cc
 --- components/autofill/core/browser/personal_data_manager.cc.orig
 +++ components/autofill/core/browser/personal_data_manager.cc
-@@ -2035,7 +2035,7 @@ bool PersonalDataManager::ShouldShowCardsFromAccountOp
+@@ -2076,7 +2076,7 @@ bool PersonalDataManager::ShouldShowCardsFromAccountOp
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_WIN) || \

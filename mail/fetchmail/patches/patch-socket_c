@@ -1,9 +1,9 @@
-$OpenBSD: patch-socket_c,v 1.14 2021/07/29 10:44:07 sthen Exp $
+$OpenBSD: patch-socket_c,v 1.15 2021/10/21 20:52:53 sthen Exp $
 
 Index: socket.c
 --- socket.c.orig
 +++ socket.c
-@@ -1150,6 +1150,10 @@ int SSLOpen(int sock, char *mycert, char *mykey, const
+@@ -1162,6 +1162,10 @@ int SSLOpen(int sock, char *mycert, char *mykey, const
  	/* Check which trusted X.509 CA certificate store(s) to load */
  	{
  		char *tmp;
@@ -14,7 +14,7 @@ Index: socket.c
  		int want_default_cacerts = 0;
  
  		/* Load user locations if any is given */
-@@ -1163,6 +1167,13 @@ int SSLOpen(int sock, char *mycert, char *mykey, const
+@@ -1175,6 +1179,13 @@ int SSLOpen(int sock, char *mycert, char *mykey, const
  		if (want_default_cacerts || (tmp && tmp[0])) {
  			SSL_CTX_set_default_verify_paths(_ctx[sock]);
  		}

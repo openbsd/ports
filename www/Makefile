@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1036 2021/08/20 13:55:54 bcallah Exp $
+# $OpenBSD: Makefile,v 1.1040 2021/09/08 08:09:22 fcambus Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -465,7 +465,6 @@
      SUBDIR += py-mako,python3
      SUBDIR += py-mastodon.py
      SUBDIR += py-mechanize,python3
-     SUBDIR += py-meld3
      SUBDIR += py-meld3,python3
      SUBDIR += py-metallum,python3
      SUBDIR += py-multidict,python3
@@ -537,7 +536,7 @@
      SUBDIR += ruby-fcgi,ruby27
      SUBDIR += ruby-fcgi,ruby30
      SUBDIR += ruby-httpclient
-     SUBDIR += ruby-mechanize
+     SUBDIR += ruby-jwt
      SUBDIR += ruby-multipart-post
      SUBDIR += ruby-mustermann
      SUBDIR += ruby-ntlm,ruby27
@@ -574,6 +573,8 @@
      SUBDIR += seamonkey
      SUBDIR += seamonkey-i18n
      SUBDIR += selfoss
+     SUBDIR += sfeed
+     SUBDIR += sfeed_curses
      SUBDIR += slowhttptest
      SUBDIR += snownews
      SUBDIR += sogo

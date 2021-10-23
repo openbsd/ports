@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_first_run_first_run_dialog_h,v 1.6 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-chrome_browser_first_run_first_run_dialog_h,v 1.7 2021/09/01 16:54:38 robert Exp $
 
 Index: chrome/browser/first_run/first_run_dialog.h
 --- chrome/browser/first_run/first_run_dialog.h.orig

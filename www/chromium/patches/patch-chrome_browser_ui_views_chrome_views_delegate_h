@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_chrome_views_delegate_h,v 1.18 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_chrome_views_delegate_h,v 1.19 2021/09/01 16:54:38 robert Exp $
 
 Index: chrome/browser/ui/views/chrome_views_delegate.h
 --- chrome/browser/ui/views/chrome_views_delegate.h.orig

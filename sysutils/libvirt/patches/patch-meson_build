@@ -1,12 +1,9 @@
-$OpenBSD: patch-meson_build,v 1.6 2021/08/11 11:57:21 ajacoutot Exp $
+$OpenBSD: patch-meson_build,v 1.8 2021/10/03 19:53:21 ajacoutot Exp $
 
 -fexceptions:
 ld: error: undefined symbol: _Unwind_Resume
 
--Wl,-z,defs:
-ld: error: undefined symbol: fsync
->>> referenced by glibcompat.c:183 (../libvirt-6.7.0/src/util/glibcompat.c:183)
->>>               glibcompat.c.o:(vir_g_fsync) in archive src/util/libvirt_util.a
+Should match b_lundef in meson(1).
 
 Index: meson.build
 --- meson.build.orig
@@ -31,7 +28,7 @@ Index: meson.build
  
  libvirt_no_indirect = cc.get_supported_link_arguments([
    '-Wl,--no-copy-dt-needed-entries',
-@@ -951,12 +945,15 @@ if devmapper_dep.found()
+@@ -949,12 +943,15 @@ if devmapper_dep.found()
    conf.set('WITH_DEVMAPPER', 1)
  endif
  

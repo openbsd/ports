@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2021/05/24 20:08:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.105 2021/08/31 07:32:17 ajacoutot Exp $
 
 ONLY_FOR_ARCHS = amd64
 DPB_PROPERTIES = parallel
@@ -6,7 +6,7 @@ DPB_PROPERTIES = parallel
 COMMENT =	3D creation software
 
 DISTNAME =	blender-2.92.0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	graphics
 
@@ -18,15 +18,15 @@ MAINTAINER =	Dimitri Karamazov <deserter666@danwin1210.me>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
-WANTLIB += ${COMPILER_LIBCXX} Alembic GL GLEW Half-2_5 Iex-2_5
-WANTLIB += IlmImf-2_5 IlmThread-2_5 Imath-2_5 OpenColorIO OpenImageIO
+WANTLIB += ${COMPILER_LIBCXX} Alembic GL GLEW Iex-3_1
+WANTLIB += IlmThread-3_1 Imath-3_1 OpenColorIO OpenImageIO
 WANTLIB += SDL2 X11 Xfixes Xi Xrender Xxf86vm avcodec avdevice
 WANTLIB += avformat avutil blosc boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
 WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c fftw3
 WANTLIB += freetype gmp gmpxx jpeg m openal openjp2 openvdb osdCPU
 WANTLIB += osdGPU png potrace pugixml sndfile swscale tbb tiff
-WANTLIB += tinyxml util yaml-cpp z
+WANTLIB += tinyxml util yaml-cpp z OpenEXR-3_1
 
 MASTER_SITES =	https://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/
@@ -78,6 +78,8 @@ NO_TEST =	Yes
 
 CXXFLAGS +=	-I${LOCALBASE}/include -I${X11BASE}/include
 CFLAGS +=	-I${LOCALBASE}/include
+# Fix build with OpenEXR>=3 (Imath split)
+CXXFLAGS +=	-I${LOCALBASE}/include/Imath
 
 MODPY_ADJ_FILES =	release/bin/blender-thumbnailer.py \
 			release/scripts/modules/bl_i18n_utils/merge_po.py \

@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_gpu_compositor_util_cc,v 1.5 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-content_browser_gpu_compositor_util_cc,v 1.8 2021/10/20 10:27:47 robert Exp $
 
 Index: content/browser/gpu/compositor_util.cc
 --- content/browser/gpu/compositor_util.cc.orig
 +++ content/browser/gpu/compositor_util.cc
-@@ -128,7 +128,7 @@ const GpuFeatureData GetGpuFeatureData(
+@@ -145,7 +145,7 @@ const GpuFeatureData GetGpuFeatureData(
      {"video_decode",
       SafeGetFeatureStatus(gpu_feature_info,
                            gpu::GPU_FEATURE_TYPE_ACCELERATED_VIDEO_DECODE),

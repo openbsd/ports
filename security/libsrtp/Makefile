@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2021/08/14 08:27:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/09/21 08:44:55 sthen Exp $
 
 SHARED_LIBS +=  srtp2                     3.0
 
@@ -6,7 +6,7 @@ COMMENT=	secure RTP library
 
 GH_ACCOUNT=	cisco
 GH_PROJECT=	libsrtp
-GH_TAGNAME=	v2.4.0
+GH_TAGNAME=	v2.4.2
 
 CATEGORIES=	security telephony
 

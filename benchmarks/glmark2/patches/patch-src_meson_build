@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_meson_build,v 1.1.1.1 2021/10/16 14:34:46 thfr Exp $
+
+remove libdl
+
+Index: src/meson.build
+--- src/meson.build.orig
++++ src/meson.build
+@@ -69,7 +69,6 @@ libmatrix_headers_dep = declare_dependency(
+ 
+ common_deps = [
+     m_dep,
+-    dl_dep,
+     libjpeg_dep,
+     libpng_dep,
+     libmatrix_headers_dep,

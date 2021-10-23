@@ -1,7 +1,8 @@
-$OpenBSD: patch-gdb_data-directory_Makefile_in,v 1.9 2016/10/09 11:39:20 pascal Exp $
---- gdb/data-directory/Makefile.in.orig	Mon Aug  1 17:50:20 2016
-+++ gdb/data-directory/Makefile.in	Fri Oct  7 20:53:14 2016
-@@ -187,7 +187,7 @@ stamp-syscalls: Makefile $(SYSCALLS_FILES)
+$OpenBSD: patch-gdb_data-directory_Makefile_in,v 1.10 2021/10/22 18:30:36 jca Exp $
+Index: gdb/data-directory/Makefile.in
+--- gdb/data-directory/Makefile.in.orig
++++ gdb/data-directory/Makefile.in
+@@ -198,7 +198,7 @@ stamp-syscalls: Makefile $(SYSCALLS_FILES)
  	for file in $$files ; do \
  	  f=$(SYSCALLS_SRCDIR)/$$file ; \
  	  if test -f $$f ; then \
@@ -10,7 +11,7 @@ $OpenBSD: patch-gdb_data-directory_Makefile_in,v 1.9 2016/10/09 11:39:20 pascal 
  	  fi ; \
  	done
  	touch $@
-@@ -229,8 +229,8 @@ stamp-python: Makefile $(PYTHON_FILES)
+@@ -240,8 +240,8 @@ stamp-python: Makefile $(PYTHON_FILES)
  	if test "x$$files" != x ; then \
  	  for file in $$files ; do \
  	    dir=`echo "$$file" | sed 's,/[^/]*$$,,'` ; \
@@ -21,7 +22,7 @@ $OpenBSD: patch-gdb_data-directory_Makefile_in,v 1.9 2016/10/09 11:39:20 pascal 
  	  done ; \
  	fi
  	touch $@
-@@ -323,7 +323,7 @@ stamp-system-gdbinit: Makefile $(SYSTEM_GDBINIT_FILES)
+@@ -334,7 +334,7 @@ stamp-system-gdbinit: Makefile $(SYSTEM_GDBINIT_FILES)
  	for file in $$files ; do \
  	  f=$(SYSTEM_GDBINIT_SRCDIR)/$$file ; \
  	  if test -f $$f ; then \

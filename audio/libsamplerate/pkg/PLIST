@@ -1,40 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/05/22 11:31:10 ajacoutot Exp $
-@bin bin/sndfile-resample
+@comment $OpenBSD: PLIST,v 1.6 2021/10/22 19:51:02 sthen Exp $
 include/samplerate.h
-lib/libsamplerate.a
+@static-lib lib/libsamplerate.a
 lib/libsamplerate.la
 @lib lib/libsamplerate.so.${LIBsamplerate_VERSION}
 lib/pkgconfig/samplerate.pc
 share/doc/libsamplerate/
 share/doc/libsamplerate/SRC.css
 share/doc/libsamplerate/SRC.png
-share/doc/libsamplerate/api.html
-share/doc/libsamplerate/api_callback.html
-share/doc/libsamplerate/api_full.html
-share/doc/libsamplerate/api_misc.html
-share/doc/libsamplerate/api_simple.html
-share/doc/libsamplerate/download.html
-share/doc/libsamplerate/faq.html
-share/doc/libsamplerate/history.html
-share/doc/libsamplerate/index.html
-share/doc/libsamplerate/license.html
-share/doc/libsamplerate/lists.html
-share/doc/libsamplerate/quality.html
-share/doc/libsamplerate/win32.html
-share/doc/libsamplerate0-dev/
-share/doc/libsamplerate0-dev/html/
-share/doc/libsamplerate0-dev/html/SRC.css
-share/doc/libsamplerate0-dev/html/SRC.png
-share/doc/libsamplerate0-dev/html/api.html
-share/doc/libsamplerate0-dev/html/api_callback.html
-share/doc/libsamplerate0-dev/html/api_full.html
-share/doc/libsamplerate0-dev/html/api_misc.html
-share/doc/libsamplerate0-dev/html/api_simple.html
-share/doc/libsamplerate0-dev/html/download.html
-share/doc/libsamplerate0-dev/html/faq.html
-share/doc/libsamplerate0-dev/html/history.html
-share/doc/libsamplerate0-dev/html/index.html
-share/doc/libsamplerate0-dev/html/license.html
-share/doc/libsamplerate0-dev/html/lists.html
-share/doc/libsamplerate0-dev/html/quality.html
-share/doc/libsamplerate0-dev/html/win32.html
+share/doc/libsamplerate/api.md
+share/doc/libsamplerate/api_callback.md
+share/doc/libsamplerate/api_full.md
+share/doc/libsamplerate/api_misc.md
+share/doc/libsamplerate/api_simple.md
+share/doc/libsamplerate/bugs.md
+share/doc/libsamplerate/download.md
+share/doc/libsamplerate/faq.md
+share/doc/libsamplerate/history.md
+share/doc/libsamplerate/index.md
+share/doc/libsamplerate/license.md
+share/doc/libsamplerate/lists.md
+share/doc/libsamplerate/quality.md
+share/doc/libsamplerate/win32.md

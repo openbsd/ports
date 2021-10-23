@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.7 2021/08/22 01:49:33 thfr Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.8 2021/10/05 07:10:20 thfr Exp $
 
 set correct library version
 disable bundled mojoshader in favor of the one from ports
@@ -19,7 +19,7 @@ Index: CMakeLists.txt
 @@ -12,7 +15,7 @@ option(DISABLE_D3D11 "Disable D3D11 backend")
  SET(LIB_MAJOR_VERSION "0")
  SET(LIB_MINOR_VERSION "21")
- SET(LIB_REVISION "08")
+ SET(LIB_REVISION "10")
 -SET(LIB_VERSION "${LIB_MAJOR_VERSION}.${LIB_MINOR_VERSION}.${LIB_REVISION}")
 +SET(LIB_VERSION "${LIBFNA3D_VERSION}")
  

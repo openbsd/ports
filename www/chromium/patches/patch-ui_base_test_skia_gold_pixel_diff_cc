@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_base_test_skia_gold_pixel_diff_cc,v 1.8 2021/07/21 15:43:34 robert Exp $
+$OpenBSD: patch-ui_base_test_skia_gold_pixel_diff_cc,v 1.11 2021/10/20 10:27:48 robert Exp $
 
 Index: ui/base/test/skia_gold_pixel_diff.cc
 --- ui/base/test/skia_gold_pixel_diff.cc.orig
 +++ ui/base/test/skia_gold_pixel_diff.cc
-@@ -134,7 +134,7 @@ std::string SkiaGoldPixelDiff::GetPlatform() {
+@@ -146,7 +146,7 @@ std::string SkiaGoldPixelDiff::GetPlatform() {
    return "macOS";
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

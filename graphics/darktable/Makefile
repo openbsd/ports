@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2021/07/04 17:23:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.112 2021/10/09 22:05:09 jca Exp $
 
 ONLY_FOR_ARCHS=	amd64 aarch64
 
@@ -8,6 +8,7 @@ V=		3.6.0
 DISTNAME=	darktable-$V
 PORTROACH=	limitw:1,even skipv:release-$V
 EXTRACT_SUFX=	.tar.xz
+REVISION=	1
 
 CATEGORIES=	graphics x11
 
@@ -17,14 +18,14 @@ HOMEPAGE=	https://www.darktable.org/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB}
-WANTLIB += GraphicsMagick ICE Iex-2_5 IlmImf-2_5 IlmThread-2_5
-WANTLIB += Imath-2_5 SM X11 Xext Xrandr atk-1.0 avif c cairo cairo-gobject
+WANTLIB += GraphicsMagick ICE Iex-3_1 IlmThread-3_1
+WANTLIB += Imath-3_1 SM X11 Xext Xrandr atk-1.0 avif c cairo cairo-gobject
 WANTLIB += cups curl exiv2 gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gphoto2 gphoto2_port gthread-2.0
 WANTLIB += gtk-3 harfbuzz intl jpeg json-glib-1.0 lcms2 lensfun
 WANTLIB += m openjp2 osmgpsmap-1.0 pango-1.0 pangocairo-1.0 png
 WANTLIB += pugixml rsvg-2 secret-1 soup-2.4 sqlite3 tiff webp
-WANTLIB += xml2 z
+WANTLIB += xml2 z OpenEXR-3_1 icudata icui18n icuuc
 
 MASTER_SITES=	https://github.com/darktable-org/darktable/releases/download/release-$V/
 
@@ -66,6 +67,7 @@ SEPARATE_BUILD=	Yes
 CONFIGURE_ARGS=	-DBINARY_PACKAGE_BUILD=1 \
 		-DCUSTOM_CFLAGS=1 \
 		-DUSE_OPENMP=OFF \
+		-DUSE_GMIC=OFF \
 		-DTESTBUILD_OPENCL_PROGRAMS=OFF
 
 # picks up LLVM at build time
@@ -81,6 +83,9 @@ NO_TEST=	Yes
 CFLAGS+=	-msse3
 CXXFLAGS=	${CFLAGS}
 .endif
+
+# Fix build with OpenEXR>=3 (Imath split)
+CXXFLAGS +=	-I${LOCALBASE}/include/Imath
 
 post-install:
 	cd ${PREFIX}/lib && ln -s darktable/libdarktable.so

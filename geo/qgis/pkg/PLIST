@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.69 2021/06/28 09:08:04 landry Exp $
+@comment $OpenBSD: PLIST,v 1.70 2021/09/19 13:51:30 landry Exp $
 @bin bin/qgis
 @bin bin/qgis_bench
 @bin bin/qgis_mapserv.fcgi
@@ -1807,6 +1807,7 @@ share/qgis/i18n/qgis_el.qm
 share/qgis/i18n/qgis_es.qm
 share/qgis/i18n/qgis_et.qm
 share/qgis/i18n/qgis_eu.qm
+share/qgis/i18n/qgis_fa.qm
 share/qgis/i18n/qgis_fi.qm
 share/qgis/i18n/qgis_fr.qm
 share/qgis/i18n/qgis_gl.qm
@@ -1827,6 +1828,7 @@ share/qgis/i18n/qgis_ro.qm
 share/qgis/i18n/qgis_ru.qm
 share/qgis/i18n/qgis_sc.qm
 share/qgis/i18n/qgis_sv.qm
+share/qgis/i18n/qgis_tr.qm
 share/qgis/i18n/qgis_uk.qm
 share/qgis/i18n/qgis_vi.qm
 share/qgis/i18n/qgis_zh-Hans.qm

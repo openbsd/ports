@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/06/19 18:34:36 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.16 2021/10/19 20:08:39 rsadowski Exp $
 @pkgpath multimedia/kdenlive
 @bin bin/kdenlive
 @bin bin/kdenlive_render
@@ -241,7 +241,6 @@ share/kdenlive/effects/audiopan.xml
 share/kdenlive/effects/audiospectrum.xml
 share/kdenlive/effects/audiowave.xml
 share/kdenlive/effects/audiowaveform.xml
-share/kdenlive/effects/automask.xml
 share/kdenlive/effects/avfilter_atadenoise.xml
 share/kdenlive/effects/avfilter_avgblur.xml
 share/kdenlive/effects/avfilter_boxblur.xml
@@ -292,6 +291,7 @@ share/kdenlive/effects/avfilter_kerneldeint.xml
 share/kdenlive/effects/avfilter_lagfun.xml
 share/kdenlive/effects/avfilter_lenscorrection.xml
 share/kdenlive/effects/avfilter_limiter.xml
+share/kdenlive/effects/avfilter_loudnorm.xml
 share/kdenlive/effects/avfilter_lut3d.xml
 share/kdenlive/effects/avfilter_mcdeint.xml
 share/kdenlive/effects/avfilter_negate.xml
@@ -356,6 +356,7 @@ share/kdenlive/effects/frei0r_bigsh0t_stabilize_360.xml
 share/kdenlive/effects/frei0r_bigsh0t_transform_360.xml
 share/kdenlive/effects/frei0r_brightness.xml
 share/kdenlive/effects/frei0r_c0rners.xml
+share/kdenlive/effects/frei0r_cairogradient.xml
 share/kdenlive/effects/frei0r_cairoimagegrid.xml
 share/kdenlive/effects/frei0r_cartoon.xml
 share/kdenlive/effects/frei0r_cluster.xml
@@ -422,6 +423,7 @@ share/kdenlive/effects/frei0r_vertigo.xml
 share/kdenlive/effects/frei0r_vignette.xml
 share/kdenlive/effects/gain.xml
 share/kdenlive/effects/gamma.xml
+share/kdenlive/effects/gpstext.xml
 share/kdenlive/effects/grain.xml
 share/kdenlive/effects/greyscale.xml
 share/kdenlive/effects/invert.xml
@@ -430,6 +432,12 @@ share/kdenlive/effects/lightshow.xml
 share/kdenlive/effects/loudness.xml
 share/kdenlive/effects/luma.xml
 share/kdenlive/effects/lumaliftgaingamma.xml
+share/kdenlive/effects/mask_apply.xml
+share/kdenlive/effects/mask_start.xml
+share/kdenlive/effects/mask_start_frei0r_alphaspot.xml
+share/kdenlive/effects/mask_start_frei0r_select0r.xml
+share/kdenlive/effects/mask_start_rotoscoping.xml
+share/kdenlive/effects/mask_start_shape.xml
 share/kdenlive/effects/mirror.xml
 share/kdenlive/effects/mono.xml
 share/kdenlive/effects/movit_blur.xml

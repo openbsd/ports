@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.46 2021/04/25 04:14:11 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.47 2021/08/31 07:31:43 ajacoutot Exp $
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	https://www.calligra.org
 VERSION =	3.2.1
 DISTNAME =	calligra-${VERSION}
 CATEGORIES =	editors
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =   RtfReader                 51.0 # 0.0
 SHARED_LIBS +=  basicflakes               50.0 # 0.0
@@ -50,8 +50,8 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 PERMIT_PACKAGE =	Yes
 DPB_PROPERTIES =	parallel
 
-WANTLIB += ${COMPILER_LIBCXX} Half-2_5 ICE Iex-2_5 IlmImf-2_5
-WANTLIB += IlmThread-2_5 Imath-2_5 KChart KF5Activities KF5Archive
+WANTLIB += ${COMPILER_LIBCXX} ICE Iex-3_1
+WANTLIB += IlmThread-3_1 Imath-3_1 KChart KF5Activities KF5Archive
 WANTLIB += KF5Auth KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5Crash KF5DBusAddons KF5GuiAddons KF5I18n KF5IconThemes

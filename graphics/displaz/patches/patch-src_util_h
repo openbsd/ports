@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_util_h,v 1.1 2021/08/31 07:31:14 ajacoutot Exp $
+
+Fix build with OpenEXR>=3
+
+Index: src/util.h
+--- src/util.h.orig
++++ src/util.h
+@@ -15,10 +15,10 @@
+ #pragma GCC diagnostic ignored "-Wdeprecated-register"
+ #endif
+ 
+-#include <OpenEXR/ImathVec.h>
+-#include <OpenEXR/ImathBox.h>
+-#include <OpenEXR/ImathColor.h>
+-#include <OpenEXR/ImathMatrix.h>
++#include <Imath/ImathVec.h>
++#include <Imath/ImathBox.h>
++#include <Imath/ImathColor.h>
++#include <Imath/ImathMatrix.h>
+ 
+ #ifdef __clang__
+ #pragma GCC diagnostic pop

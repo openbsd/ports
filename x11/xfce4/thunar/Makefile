@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.94 2021/05/08 06:44:55 landry Exp $
+# $OpenBSD: Makefile,v 1.96 2021/09/18 06:44:26 landry Exp $
 
 COMMENT=	Xfce4 file manager
 
 XFCE_PROJECT=	thunar
-XFCE_VERSION=	4.16.8
+XFCE_VERSION=	4.16.10
 
 SHARED_LIBS=	thunarx-3	0.0
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 c cairo cairo-gobject
-WANTLIB += exif epoxy exo-2 expat ffi fontconfig freetype fribidi gdk-3
+WANTLIB += execinfo exif epoxy exo-2 expat ffi fontconfig freetype fribidi gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl jpeg m
 WANTLIB += notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1

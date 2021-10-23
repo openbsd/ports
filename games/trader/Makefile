@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2021/02/13 20:32:00 fcambus Exp $
+# $OpenBSD: Makefile,v 1.10 2021/08/30 14:02:07 fcambus Exp $
 
 COMMENT =	simple text-based game of interstellar trading
 
 DISTNAME =	trader-7.16
+REVISION =	0
 
 CATEGORIES =	games
 
@@ -22,9 +23,6 @@ CONFIGURE_STYLE = gnu
 
 # Prevent configure to error out because we have no <monetary.h>
 CONFIGURE_ENV += ac_cv_header_monetary_h=yes
-
-post-patch:
-	@cp ${FILESDIR}/strfmon* ${WRKSRC}/src
 
 post-install:
 	@rm -rf ${PREFIX}/share/applications ${PREFIX}/share/icons

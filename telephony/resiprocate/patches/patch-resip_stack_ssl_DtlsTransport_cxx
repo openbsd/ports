@@ -1,0 +1,14 @@
+$OpenBSD: patch-resip_stack_ssl_DtlsTransport_cxx,v 1.1 2021/09/10 15:22:19 tb Exp $
+
+Index: resip/stack/ssl/DtlsTransport.cxx
+--- resip/stack/ssl/DtlsTransport.cxx.orig
++++ resip/stack/ssl/DtlsTransport.cxx
+@@ -70,7 +70,7 @@
+ 
+ #define RESIPROCATE_SUBSYSTEM Subsystem::TRANSPORT
+ 
+-#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L)
+ 
+ static void SSL_set0_rbio(SSL *s, BIO *rbio)
+ {

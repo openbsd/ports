@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.28 2021/03/21 19:17:34 espie Exp $
+# $OpenBSD: External.pm,v 1.29 2021/10/05 12:31:34 espie Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -219,6 +219,11 @@ sub handle_command
 			}
 			$pkgpath->add_to_subdirlist($self->{subdirlist});
 		    });
+		if (defined $state->{bad_paths}) {
+			$fh->print("Bad package path ",
+			    join(" ", @{$state->{bad_paths}}), "\n");
+			delete $state->{bad_paths};
+		}
 	} elsif ($line =~ m/^wipe\s+(.*)/) {
 		for my $p (split(/\s+/, $1)) {
 			$self->wipe($fh, $1);

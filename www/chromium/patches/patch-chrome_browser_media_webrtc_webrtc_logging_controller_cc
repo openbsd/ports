@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_media_webrtc_webrtc_logging_controller_cc,v 1.8 2021/07/21 15:43:32 robert Exp $
+$OpenBSD: patch-chrome_browser_media_webrtc_webrtc_logging_controller_cc,v 1.10 2021/10/20 10:27:45 robert Exp $
 
 Index: chrome/browser/media/webrtc/webrtc_logging_controller.cc
 --- chrome/browser/media/webrtc/webrtc_logging_controller.cc.orig
@@ -16,7 +16,7 @@ Index: chrome/browser/media/webrtc/webrtc_logging_controller.cc
  
  using webrtc_event_logging::WebRtcEventLogManager;
  
-@@ -273,7 +273,7 @@ void WebRtcLoggingController::StartEventLogging(
+@@ -281,7 +281,7 @@ void WebRtcLoggingController::StartEventLogging(
        web_app_id, callback);
  }
  
@@ -25,7 +25,7 @@ Index: chrome/browser/media/webrtc/webrtc_logging_controller.cc
  void WebRtcLoggingController::GetLogsDirectory(
      LogsDirectoryCallback callback,
      LogsDirectoryErrorCallback error_callback) {
-@@ -319,7 +319,7 @@ void WebRtcLoggingController::GrantLogsDirectoryAccess
+@@ -327,7 +327,7 @@ void WebRtcLoggingController::GrantLogsDirectoryAccess
        FROM_HERE,
        base::BindOnce(std::move(callback), file_system.id(), registered_name));
  }

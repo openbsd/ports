@@ -173,8 +173,8 @@ SHA256 (go_modules/github.com/hashicorp/memberlist/@v/v0.1.3.mod) = sNLbM24sjdZL
 SHA256 (go_modules/github.com/hashicorp/memberlist/@v/v0.1.3.zip) = n4PgUrCl2W9tgUSkDCl66jcTe+9/WKpJa8XqtODFTgs=
 SHA256 (go_modules/github.com/hashicorp/serf/@v/v0.8.2.mod) = I9yqxHBk+M9Ol/75IK5Q1CuH1d6svvakQxz6UMhk6cY=
 SHA256 (go_modules/github.com/hashicorp/serf/@v/v0.8.2.zip) = D0MWWOaWJfYd79Ngc+iTziHwT+WpZIS4EtR+MtQVS+A=
-SHA256 (go_modules/github.com/hetznercloud/hcloud-go/@v/v1.31.0.mod) = pH/e32tk/MEDZj1g1Eu72QdSrJJLmKLH4gELHTZyZVs=
-SHA256 (go_modules/github.com/hetznercloud/hcloud-go/@v/v1.31.0.zip) = CCuBEwP8GLwtEc3i6DqW6r+I+RokTkgFDYf0V/gStd0=
+SHA256 (go_modules/github.com/hetznercloud/hcloud-go/@v/v1.31.1.mod) = pH/e32tk/MEDZj1g1Eu72QdSrJJLmKLH4gELHTZyZVs=
+SHA256 (go_modules/github.com/hetznercloud/hcloud-go/@v/v1.31.1.zip) = 5tvh+gfkufn6ldP9XHFl2smh6LlkMvKOatVdZL4Ds8I=
 SHA256 (go_modules/github.com/inconshreveable/mousetrap/@v/v1.0.0.mod) = OR2uvJOw35u4momxS/pgJo2eueJ2I+xBUEGrq6vdAFw=
 SHA256 (go_modules/github.com/inconshreveable/mousetrap/@v/v1.0.0.zip) = w/oIE+ePXO8Q3A6ZEsQ+aOBv+XCpjpjEBQ/hTbv9GMc=
 SHA256 (go_modules/github.com/jonboulle/clockwork/@v/v0.1.0.mod) = PMMYAca/5LbFDx2wDyf3Nj1kNyU264DEt62dz4yftuA=
@@ -498,7 +498,7 @@ SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.1-2019.2.3.mod) = WS6cVbsnJSWkaQDF
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.1-2019.2.3.zip) = U5glEUxIdoD5nfgPYQdBDh5Tu/1d65MbhNH68tIhY44=
 SHA256 (go_modules/rsc.io/binaryregexp/@v/v0.2.0.mod) = AyRzu+VUpUpEX6hVu7K/piNNeG9h8ZJt6WtaqF6R8T0=
 SHA256 (go_modules/rsc.io/binaryregexp/@v/v0.2.0.zip) = s+cGqiePp/iA0y+hzEDvgoLR/H1uADVlee0NuI87AEc=
-SHA256 (hcloud-v1.28.0.zip) = RjsrPMj38qXURs4/NmzcOLbC15YO61fahTHrtxLhTQ0=
+SHA256 (hcloud-v1.28.1.zip) = 3j9fBFnFeZj7B9pLJGDTC/vxrkGxfbwQfhgquJh66dU=
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.34.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.38.0.mod) = 1006
@@ -674,8 +674,8 @@ SIZE (go_modules/github.com/hashicorp/memberlist/@v/v0.1.3.mod) = 921
 SIZE (go_modules/github.com/hashicorp/memberlist/@v/v0.1.3.zip) = 103250
 SIZE (go_modules/github.com/hashicorp/serf/@v/v0.8.2.mod) = 774
 SIZE (go_modules/github.com/hashicorp/serf/@v/v0.8.2.zip) = 540021
-SIZE (go_modules/github.com/hetznercloud/hcloud-go/@v/v1.31.0.mod) = 307
-SIZE (go_modules/github.com/hetznercloud/hcloud-go/@v/v1.31.0.zip) = 138471
+SIZE (go_modules/github.com/hetznercloud/hcloud-go/@v/v1.31.1.mod) = 307
+SIZE (go_modules/github.com/hetznercloud/hcloud-go/@v/v1.31.1.zip) = 141261
 SIZE (go_modules/github.com/inconshreveable/mousetrap/@v/v1.0.0.mod) = 44
 SIZE (go_modules/github.com/inconshreveable/mousetrap/@v/v1.0.0.zip) = 3712
 SIZE (go_modules/github.com/jonboulle/clockwork/@v/v0.1.0.mod) = 38
@@ -999,4 +999,4 @@ SIZE (go_modules/honnef.co/go/tools/@v/v0.0.1-2019.2.3.mod) = 300
 SIZE (go_modules/honnef.co/go/tools/@v/v0.0.1-2019.2.3.zip) = 506912
 SIZE (go_modules/rsc.io/binaryregexp/@v/v0.2.0.mod) = 36
 SIZE (go_modules/rsc.io/binaryregexp/@v/v0.2.0.zip) = 450232
-SIZE (hcloud-v1.28.0.zip) = 276982
+SIZE (hcloud-v1.28.1.zip) = 279028

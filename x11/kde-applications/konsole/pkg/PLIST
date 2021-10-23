@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/08/08 12:23:54 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.14 2021/10/19 20:08:42 rsadowski Exp $
 @conflict kdebase-<4
 @pkgpath x11/kde4/konsole
 @bin bin/konsole
 bin/konsoleprofile
-@so lib/libkdeinit5_konsole.so
+lib/libkonsoleapp.so.21
+lib/libkonsoleapp.so.21.08.2
 @lib lib/libkonsoleprivate.so.${LIBkonsoleprivate_VERSION}
 @so lib/qt5/plugins/konsolepart.so
 share/applications/org.kde.konsole.desktop
@@ -51,6 +52,9 @@ share/knotifications5/konsole.notifyrc
 share/knsrcfiles/
 share/knsrcfiles/konsole.knsrc
 share/konsole/
+share/konsole/1x2-terminals.json
+share/konsole/2x1-terminals.json
+share/konsole/2x2-terminals.json
 share/konsole/BlackOnLightYellow.colorscheme
 share/konsole/BlackOnRandomLight.colorscheme
 share/konsole/BlackOnWhite.colorscheme

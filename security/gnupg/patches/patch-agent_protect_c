@@ -1,0 +1,61 @@
+$OpenBSD: patch-agent_protect_c,v 1.1 2021/09/21 19:14:37 tb Exp $
+
+Index: agent/protect.c
+--- agent/protect.c.orig
++++ agent/protect.c
+@@ -563,24 +563,47 @@ do_encryption (const unsigned char *hashbegin, size_t 
+      and dummy values as placeholders.  */
+   {
+     char countbuf[35];
++    char *p1 = NULL, *p2 = NULL, *p3 = NULL;
+ 
+     snprintf (countbuf, sizeof countbuf, "%lu",
+ 	    s2k_count ? s2k_count : get_standard_s2k_count ());
+-    p = xtryasprintf
+-      ("(9:protected%d:%s((4:sha18:%n_8bytes_%u:%s)%d:%n%*s)%d:%n%*s)",
+-       (int)strlen (modestr), modestr,
+-       &saltpos,
+-       (unsigned int)strlen (countbuf), countbuf,
+-       use_ocb? 12 : blklen, &ivpos, use_ocb? 12 : blklen, "",
+-       enclen, &encpos, enclen, "");
++
++#define FMT1	"(9:protected%d:%s((4:sha18:"
++#define FMT2	"_8bytes_%u:%s)%d:"
++#define FMT3	"%*s)%d:"
++
++    p1 = xtryasprintf (FMT1, (int)strlen (modestr), modestr);
++    if (!p1)
++	goto fail;
++    saltpos = strlen(p1);
++
++    p2 = xtryasprintf (FMT2, (unsigned int)strlen (countbuf), countbuf,
++       use_ocb? 12 : blklen);
++    if (!p2)
++	goto fail;
++    ivpos = saltpos + strlen(p2);
++
++    p3 = xtryasprintf (FMT3, use_ocb? 12 : blklen, "", enclen);
++    if (!p3)
++	goto fail;
++    encpos = ivpos + strlen(p3);
++
++    p = xtryasprintf ("%s%s%s%*s)", p1, p2, p3, enclen, "");
++
+     if (!p)
+       {
++fail:
++        free(p1);
++        free(p2);
++        free(p3);
+         gpg_error_t tmperr = out_of_core ();
+         xfree (iv);
+         xfree (outbuf);
+         return tmperr;
+       }
+-
++    free(p1);
++    free(p2);
++    free(p3);
+   }
+   *resultlen = strlen (p);
+   *result = (unsigned char*)p;

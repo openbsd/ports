@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_message_center_views_message_popup_view_cc,v 1.13 2021/07/21 15:43:34 robert Exp $
+$OpenBSD: patch-ui_message_center_views_message_popup_view_cc,v 1.15 2021/10/20 10:27:48 robert Exp $
 
 Index: ui/message_center/views/message_popup_view.cc
 --- ui/message_center/views/message_popup_view.cc.orig
 +++ ui/message_center/views/message_popup_view.cc
-@@ -115,7 +115,7 @@ void MessagePopupView::Show() {
+@@ -123,7 +123,7 @@ void MessagePopupView::Show() {
    params.z_order = ui::ZOrderLevel::kFloatingWindow;
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

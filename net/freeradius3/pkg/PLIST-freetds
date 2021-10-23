@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-freetds,v 1.2 2019/11/19 12:19:39 sthen Exp $
-@so lib/freeradius/rlm_sql_freetds.so

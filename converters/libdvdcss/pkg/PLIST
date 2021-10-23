@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.11 2016/01/25 07:02:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2021/10/11 06:11:35 rsadowski Exp $
 include/dvdcss/
 include/dvdcss/dvdcss.h
 include/dvdcss/version.h
-lib/libdvdcss.a
+@static-lib lib/libdvdcss.a
 lib/libdvdcss.la
 @lib lib/libdvdcss.so.${LIBdvdcss_VERSION}
 lib/pkgconfig/libdvdcss.pc

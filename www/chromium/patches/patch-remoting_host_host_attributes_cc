@@ -1,4 +1,4 @@
-$OpenBSD: patch-remoting_host_host_attributes_cc,v 1.6 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-remoting_host_host_attributes_cc,v 1.7 2021/09/01 16:54:40 robert Exp $
 
 Index: remoting/host/host_attributes.cc
 --- remoting/host/host_attributes.cc.orig

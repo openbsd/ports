@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2021/06/27 23:49:58 namn Exp $
+@comment $OpenBSD: PLIST,v 1.28 2021/09/11 22:48:22 namn Exp $
 @bin bin/wget
 @info info/wget.info
 @comment lib/charset.alias
@@ -52,6 +52,7 @@ share/locale/it/LC_MESSAGES/wget.mo
 share/locale/ja/LC_MESSAGES/wget-gnulib.mo
 share/locale/ja/LC_MESSAGES/wget.mo
 share/locale/ko/LC_MESSAGES/wget-gnulib.mo
+share/locale/ko/LC_MESSAGES/wget.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/wget.mo

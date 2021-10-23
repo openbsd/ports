@@ -1,6 +1,0 @@
-A sample configuration file has been installed as
-
-${PREFIX}/share/examples/chbg/chbgrc.sample
-
-You can copy it to ${SYSCONFDIR}/chbgrc for system-wide use or to ~/.chbgrc for
-private use and change it to suit your needs.

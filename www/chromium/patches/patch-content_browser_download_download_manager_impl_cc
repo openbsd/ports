@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_download_download_manager_impl_cc,v 1.5 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-content_browser_download_download_manager_impl_cc,v 1.6 2021/09/01 16:54:39 robert Exp $
 
 Index: content/browser/download/download_manager_impl.cc
 --- content/browser/download/download_manager_impl.cc.orig

@@ -1,4 +1,4 @@
-# $OpenBSD: t10.sample,v 1.1 2018/06/27 16:18:28 zhuk Exp $
+# $OpenBSD: t10.sample,v 1.2 2021/08/29 07:55:17 jca Exp $
 
 COMMENT-main =	another eDonkey P2P file sharing client
 COMMENT-web =	webserver interface to amuled
@@ -19,7 +19,7 @@ PKGNAME-web =	amuleweb-$V
 REVISION-main =	8
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=amule/}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2020/03/21 16:14:55 robert Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/08/25 12:05:51 robert Exp $
 @bin bin/eom
 @bin bin/eom-thumbnailer
 include/eom-2.20/
@@ -40,6 +40,7 @@ lib/eom/plugins/fullscreen.plugin
 @so lib/eom/plugins/libstatusbar-date.so
 lib/eom/plugins/reload.plugin
 lib/eom/plugins/statusbar-date.plugin
+lib/girepository-1.0/Eom-1.0.typelib
 lib/pkgconfig/eom.pc
 @man man/man1/eom.1
 share/applications/eom.desktop
@@ -69,6 +70,7 @@ share/eom/icons/hicolor/32x32/actions/slideshow-play.png
 share/eom/icons/hicolor/48x48/
 share/eom/icons/hicolor/48x48/actions/
 share/eom/icons/hicolor/48x48/actions/slideshow-play.png
+share/gir-1.0/Eom-1.0.gir
 share/glib-2.0/schemas/org.mate.eom.enums.xml
 share/glib-2.0/schemas/org.mate.eom.gschema.xml
 share/gtk-doc/html/eom/

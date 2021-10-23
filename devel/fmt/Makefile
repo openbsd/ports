@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2021/01/30 15:37:05 cwen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/10/16 08:02:17 rsadowski Exp $
 
 COMMENT=		alternative formatting library for C and C++
 
 GH_ACCOUNT=		fmtlib
 GH_PROJECT=		fmt
-GH_TAGNAME=		7.1.3
+GH_TAGNAME=		8.0.1
 
-SHARED_LIBS=		fmt	0.0
+SHARED_LIBS=		fmt	1.0
 
 CATEGORIES=		devel
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2021/05/16 09:42:24 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2021/10/04 13:28:27 espie Exp $
 
-COMMENT = 	gmic plugin for ${QT_HOST}
-V = 2.9.7
+COMMENT = 	gmic-qt ${GMIC_WHAT}
+V = 2.9.9
 
-DISTNAME = 	gmic-qt-${QT_HOST}-$V
+DISTNAME ?= 	gmic-qt-${QT_HOST}-$V
 CATEGORIES = 	graphics
 HOMEPAGE = 	https://gmic.eu/
 
@@ -45,9 +45,13 @@ CONFIGURE_ARGS += -DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS}"
 CONFIGURE_ARGS += -DENABLE_DYNAMIC_LINKING=ON
 CONFIGURE_ARGS += -DGMIC_PATH=${WRKDIST}/src
 
-SUBST_VARS +=	${QT_HOST}
-DEBUG_PACKAGES = ${BUILD_PACKAGES}
+SUBST_VARS +=	QT_HOST GMIC_WHAT
+# XXX somehow there's no debug info generated ?
+#DEBUG_PACKAGES = ${BUILD_PACKAGES}
+GMIC_WHAT ?=	plugin for ${QT_HOST}
+
 
 CHECKSUM_FILE = ${.CURDIR}/../distinfo
 DESCR = ${.CURDIR}/../pkg/DESCR
-PATCHDIR = ${.CURDIR}/..patches
+PATCHDIR = ${.CURDIR}/../patches
+UPDATE_PLIST_ARGS = -i QT_HOST

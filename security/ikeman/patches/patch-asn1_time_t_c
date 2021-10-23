@@ -1,6 +1,8 @@
-$OpenBSD: patch-asn1_time_t_c,v 1.1 2014/05/23 12:33:30 sthen Exp $
---- asn1_time_t.c.orig	Fri May 23 13:31:59 2014
-+++ asn1_time_t.c	Fri May 23 13:32:05 2014
+$OpenBSD: patch-asn1_time_t_c,v 1.2 2021/10/11 12:05:26 tb Exp $
+
+Index: asn1_time_t.c
+--- asn1_time_t.c.orig
++++ asn1_time_t.c
 @@ -14,6 +14,7 @@
   * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
   */
@@ -9,3 +11,12 @@ $OpenBSD: patch-asn1_time_t_c,v 1.1 2014/05/23 12:33:30 sthen Exp $
  #include <time.h>
  
  #include <openssl/ssl.h>
+@@ -22,7 +23,7 @@
+ 
+ /* Returns the wall time in the specified time zone. */
+ time_t
+-asn1_time_to_timestamp(ASN1_TIME *as)
++asn1_time_to_timestamp(const ASN1_TIME *as)
+ {
+ #define B2I(byte)	((byte) - '0')
+ /* offset from GMT has to be in seconds - format +HHMM */

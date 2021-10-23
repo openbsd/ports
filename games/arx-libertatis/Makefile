@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/09/19 05:24:30 rsadowski Exp $
 
 COMMENT =	cross-platform port of Arx Fatalis, a first-person RPG
 CATEGORIES =	games
@@ -9,7 +9,7 @@ GH_ACCOUNT =	arx
 GH_PROJECT =	ArxLibertatis
 GH_TAGNAME =	1.1.2-r1
 PKGNAME =	arx-libertatis-${GH_TAGNAME:S/-r/pl/}
-REVISION =	3
+REVISION =	4
 
 # GPLv3+, fonts are SIL OFL 1.1 license
 PERMIT_PACKAGE =	Yes
@@ -22,7 +22,7 @@ COMPILER =	base-clang ports-gcc base-gcc
 
 MODULES =	devel/cmake
 
-BUILD_DEPENDS =	devel/boost>=1.48 \
+BUILD_DEPENDS =	devel/boost \
 		devel/desktop-file-utils
 LIB_DEPENDS =	audio/openal \
 		devel/sdl \

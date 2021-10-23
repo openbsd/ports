@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2021/09/02 20:14:58 ajacoutot Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -1649,7 +1649,7 @@ INSTALL_STRIP_PROGRAM="\${SHELL} \$(install_sh) -c -s"
+ 
+ 
+ 
+-docdir='$(prefix)/doc'
++docdir='$(prefix)/share/doc'
+ 
+ 
+ jade_bindirs="/usr/bin /usr/local/bin"

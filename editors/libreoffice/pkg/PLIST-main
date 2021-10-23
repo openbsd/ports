@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.62 2021/07/27 14:37:41 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.63 2021/09/02 11:11:58 robert Exp $
 bin/libreoffice
 bin/libreoffice${BV}
 bin/lobase
@@ -55,7 +55,6 @@ lib/libreoffice/presets/gallery/sg30.thm
 lib/libreoffice/program/
 lib/libreoffice/program/access2base.py
 lib/libreoffice/program/bootstraprc
-lib/libreoffice/program/classes/libreoffice.jar
 lib/libreoffice/program/fundamentalrc
 lib/libreoffice/program/gdbtrace
 lib/libreoffice/program/gengal
@@ -70,6 +69,7 @@ lib/libreoffice/program/intro.png
 @so lib/libreoffice/program/libaffine_uno_uno.so
 @so lib/libreoffice/program/libanalysislo.so
 @so lib/libreoffice/program/libanimcorelo.so
+@so lib/libreoffice/program/libavmediagst.so
 @so lib/libreoffice/program/libbiblo.so
 @so lib/libreoffice/program/libbinaryurplo.so
 @so lib/libreoffice/program/libbootstraplo.so
@@ -101,7 +101,6 @@ lib/libreoffice/program/intro.png
 @so lib/libreoffice/program/libfilelo.so
 @so lib/libreoffice/program/libflatlo.so
 @so lib/libreoffice/program/libgcc3_uno.so
-@so lib/libreoffice/program/libgielo.so
 @so lib/libreoffice/program/libgraphicfilterlo.so
 @so lib/libreoffice/program/libhwplo.so
 @so lib/libreoffice/program/libi18nlangtag.so
@@ -127,7 +126,6 @@ lib/libreoffice/program/intro.png
 @so lib/libreoffice/program/libmergedlo.so
 @so lib/libreoffice/program/libmigrationoo2lo.so
 @so lib/libreoffice/program/libmigrationoo3lo.so
-@so lib/libreoffice/program/libmorklo.so
 @so lib/libreoffice/program/libmozbootstraplo.so
 @so lib/libreoffice/program/libmsformslo.so
 @so lib/libreoffice/program/libmswordlo.so
@@ -224,53 +222,27 @@ lib/libreoffice/program/opencl/
 lib/libreoffice/program/opencl/cl-test.ods
 @bin lib/libreoffice/program/opencltest
 lib/libreoffice/program/opengl/
-lib/libreoffice/program/opengl/areaHashCRC64TFragmentShader.glsl
-lib/libreoffice/program/opengl/areaScaleFastFragmentShader.glsl
-lib/libreoffice/program/opengl/areaScaleFragmentShader.glsl
 lib/libreoffice/program/opengl/basicFragmentShader.glsl
 lib/libreoffice/program/opengl/basicVertexShader.glsl
-lib/libreoffice/program/opengl/blendedTextureFragmentShader.glsl
-lib/libreoffice/program/opengl/blendedTextureVertexShader.glsl
-lib/libreoffice/program/opengl/combinedFragmentShader.glsl
-lib/libreoffice/program/opengl/combinedTextureFragmentShader.glsl
-lib/libreoffice/program/opengl/combinedTextureVertexShader.glsl
-lib/libreoffice/program/opengl/combinedVertexShader.glsl
-lib/libreoffice/program/opengl/convolutionFragmentShader.glsl
-lib/libreoffice/program/opengl/diffTextureFragmentShader.glsl
 lib/libreoffice/program/opengl/dissolveFragmentShader.glsl
-lib/libreoffice/program/opengl/dumbVertexShader.glsl
 lib/libreoffice/program/opengl/dummyVertexShader.glsl
 lib/libreoffice/program/opengl/fadeBlackFragmentShader.glsl
 lib/libreoffice/program/opengl/fadeFragmentShader.glsl
 lib/libreoffice/program/opengl/glitterFragmentShader.glsl
 lib/libreoffice/program/opengl/glitterVertexShader.glsl
-lib/libreoffice/program/opengl/greyscaleFragmentShader.glsl
 lib/libreoffice/program/opengl/honeycombFragmentShader.glsl
 lib/libreoffice/program/opengl/honeycombGeometryShader.glsl
 lib/libreoffice/program/opengl/honeycombVertexShader.glsl
-lib/libreoffice/program/opengl/invert50FragmentShader.glsl
-lib/libreoffice/program/opengl/lineFragmentShader.glsl
-lib/libreoffice/program/opengl/lineVertexShader.glsl
-lib/libreoffice/program/opengl/linearGradientFragmentShader.glsl
 lib/libreoffice/program/opengl/linearMultiColorGradientFragmentShader.glsl
 lib/libreoffice/program/opengl/linearTwoColorGradientFragmentShader.glsl
-lib/libreoffice/program/opengl/maskFragmentShader.glsl
-lib/libreoffice/program/opengl/maskedTextureFragmentShader.glsl
-lib/libreoffice/program/opengl/maskedTextureVertexShader.glsl
-lib/libreoffice/program/opengl/radialGradientFragmentShader.glsl
 lib/libreoffice/program/opengl/radialMultiColorGradientFragmentShader.glsl
 lib/libreoffice/program/opengl/radialTwoColorGradientFragmentShader.glsl
 lib/libreoffice/program/opengl/rectangularMultiColorGradientFragmentShader.glsl
 lib/libreoffice/program/opengl/rectangularTwoColorGradientFragmentShader.glsl
 lib/libreoffice/program/opengl/reflectionFragmentShader.glsl
 lib/libreoffice/program/opengl/reflectionVertexShader.glsl
-lib/libreoffice/program/opengl/replaceColorFragmentShader.glsl
 lib/libreoffice/program/opengl/rippleFragmentShader.glsl
-lib/libreoffice/program/opengl/solidFragmentShader.glsl
 lib/libreoffice/program/opengl/staticFragmentShader.glsl
-lib/libreoffice/program/opengl/textureFragmentShader.glsl
-lib/libreoffice/program/opengl/textureVertexShader.glsl
-lib/libreoffice/program/opengl/transformedTextureVertexShader.glsl
 lib/libreoffice/program/opengl/vortexFragmentShader.glsl
 lib/libreoffice/program/opengl/vortexGeometryShader.glsl
 lib/libreoffice/program/opengl/vortexVertexShader.glsl
@@ -291,6 +263,7 @@ lib/libreoffice/program/resource/common/fonts/
 lib/libreoffice/program/resource/common/fonts/opens___.ttf
 lib/libreoffice/program/sbase
 lib/libreoffice/program/scalc
+lib/libreoffice/program/scriptforge.py
 lib/libreoffice/program/sdraw
 lib/libreoffice/program/senddoc
 lib/libreoffice/program/services/
@@ -587,6 +560,7 @@ lib/libreoffice/share/basic/SFDatabases/script.xlb
 lib/libreoffice/share/basic/SFDialogs/
 lib/libreoffice/share/basic/SFDialogs/SF_Dialog.xba
 lib/libreoffice/share/basic/SFDialogs/SF_DialogControl.xba
+lib/libreoffice/share/basic/SFDialogs/SF_DialogListener.xba
 lib/libreoffice/share/basic/SFDialogs/SF_Register.xba
 lib/libreoffice/share/basic/SFDialogs/__License.xba
 lib/libreoffice/share/basic/SFDialogs/dialog.xlb
@@ -595,6 +569,8 @@ lib/libreoffice/share/basic/SFDocuments/
 lib/libreoffice/share/basic/SFDocuments/SF_Base.xba
 lib/libreoffice/share/basic/SFDocuments/SF_Calc.xba
 lib/libreoffice/share/basic/SFDocuments/SF_Document.xba
+lib/libreoffice/share/basic/SFDocuments/SF_Form.xba
+lib/libreoffice/share/basic/SFDocuments/SF_FormControl.xba
 lib/libreoffice/share/basic/SFDocuments/SF_Register.xba
 lib/libreoffice/share/basic/SFDocuments/__License.xba
 lib/libreoffice/share/basic/SFDocuments/dialog.xlb
@@ -610,6 +586,7 @@ lib/libreoffice/share/basic/ScriptForge/SF_Exception.xba
 lib/libreoffice/share/basic/ScriptForge/SF_FileSystem.xba
 lib/libreoffice/share/basic/ScriptForge/SF_L10N.xba
 lib/libreoffice/share/basic/ScriptForge/SF_Platform.xba
+lib/libreoffice/share/basic/ScriptForge/SF_PythonHelper.xba
 lib/libreoffice/share/basic/ScriptForge/SF_Root.xba
 lib/libreoffice/share/basic/ScriptForge/SF_Services.xba
 lib/libreoffice/share/basic/ScriptForge/SF_Session.xba
@@ -627,6 +604,7 @@ lib/libreoffice/share/basic/ScriptForge/dlgProgress.xdl
 lib/libreoffice/share/basic/ScriptForge/po/
 lib/libreoffice/share/basic/ScriptForge/po/ScriptForge.pot
 lib/libreoffice/share/basic/ScriptForge/po/en.po
+lib/libreoffice/share/basic/ScriptForge/po/pt.po
 lib/libreoffice/share/basic/ScriptForge/script.xlb
 lib/libreoffice/share/basic/Template/
 lib/libreoffice/share/basic/Template/Autotext.xba
@@ -880,6 +858,7 @@ lib/libreoffice/share/config/soffice.cfg/cui/ui/storedwebconnectiondialog.ui
 lib/libreoffice/share/config/soffice.cfg/cui/ui/swpossizepage.ui
 lib/libreoffice/share/config/soffice.cfg/cui/ui/textanimtabpage.ui
 lib/libreoffice/share/config/soffice.cfg/cui/ui/textattrtabpage.ui
+lib/libreoffice/share/config/soffice.cfg/cui/ui/textcolumnstabpage.ui
 lib/libreoffice/share/config/soffice.cfg/cui/ui/textdialog.ui
 lib/libreoffice/share/config/soffice.cfg/cui/ui/textflowpage.ui
 lib/libreoffice/share/config/soffice.cfg/cui/ui/thesaurus.ui
@@ -964,6 +943,7 @@ lib/libreoffice/share/config/soffice.cfg/dbaccess/ui/tablelistbox.ui
 lib/libreoffice/share/config/soffice.cfg/dbaccess/ui/tablesfilterdialog.ui
 lib/libreoffice/share/config/soffice.cfg/dbaccess/ui/tablesfilterpage.ui
 lib/libreoffice/share/config/soffice.cfg/dbaccess/ui/tablesjoindialog.ui
+lib/libreoffice/share/config/soffice.cfg/dbaccess/ui/tabletitle.ui
 lib/libreoffice/share/config/soffice.cfg/dbaccess/ui/taskwindow.ui
 lib/libreoffice/share/config/soffice.cfg/dbaccess/ui/textconnectionsettings.ui
 lib/libreoffice/share/config/soffice.cfg/dbaccess/ui/textpage.ui
@@ -1159,6 +1139,7 @@ lib/libreoffice/share/config/soffice.cfg/modules/sbibliography/
 lib/libreoffice/share/config/soffice.cfg/modules/sbibliography/menubar/
 lib/libreoffice/share/config/soffice.cfg/modules/sbibliography/menubar/menubar.xml
 lib/libreoffice/share/config/soffice.cfg/modules/sbibliography/ui/
+lib/libreoffice/share/config/soffice.cfg/modules/sbibliography/ui/autofiltermenu.ui
 lib/libreoffice/share/config/soffice.cfg/modules/sbibliography/ui/choosedatasourcedialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/sbibliography/ui/combobox.ui
 lib/libreoffice/share/config/soffice.cfg/modules/sbibliography/ui/editbox.ui
@@ -1319,6 +1300,7 @@ lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/notebookbar_compact.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/notebookbar_groupedbar_compact.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/notebookbar_groupedbar_full.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/notebookbar_groups.ui
+lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/notebookbar_online.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/numberbox.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/numbertransformationentry.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/optcalculatepage.ui
@@ -1330,6 +1312,7 @@ lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/optformula.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/optimalcolwidthdialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/optimalrowheightdialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/optsortlists.ui
+lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/pagelistmenu.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/pagetemplatedialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/paradialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/paratemplatedialog.ui
@@ -1566,6 +1549,7 @@ lib/libreoffice/share/config/soffice.cfg/modules/sdraw/ui/namedesign.ui
 lib/libreoffice/share/config/soffice.cfg/modules/sdraw/ui/notebookbar.ui
 lib/libreoffice/share/config/soffice.cfg/modules/sdraw/ui/notebookbar_compact.ui
 lib/libreoffice/share/config/soffice.cfg/modules/sdraw/ui/notebookbar_groupedbar_compact.ui
+lib/libreoffice/share/config/soffice.cfg/modules/sdraw/ui/notebookbar_online.ui
 lib/libreoffice/share/config/soffice.cfg/modules/sdraw/ui/notebookbar_single.ui
 lib/libreoffice/share/config/soffice.cfg/modules/sdraw/ui/paranumberingtab.ui
 lib/libreoffice/share/config/soffice.cfg/modules/sdraw/ui/queryunlinkimagedialog.ui
@@ -1586,6 +1570,7 @@ lib/libreoffice/share/config/soffice.cfg/modules/sglobal/popupmenu/insertfield.x
 lib/libreoffice/share/config/soffice.cfg/modules/sglobal/popupmenu/media.xml
 lib/libreoffice/share/config/soffice.cfg/modules/sglobal/popupmenu/oleobject.xml
 lib/libreoffice/share/config/soffice.cfg/modules/sglobal/popupmenu/preview.xml
+lib/libreoffice/share/config/soffice.cfg/modules/sglobal/popupmenu/showtrackedchanges.xml
 lib/libreoffice/share/config/soffice.cfg/modules/sglobal/popupmenu/table.xml
 lib/libreoffice/share/config/soffice.cfg/modules/sglobal/popupmenu/text.xml
 lib/libreoffice/share/config/soffice.cfg/modules/sglobal/statusbar/
@@ -1717,7 +1702,7 @@ lib/libreoffice/share/config/soffice.cfg/modules/simpress/toolbar/toolbar.xml
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/toolbar/viewerbar.xml
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/toolbar/zoombar.xml
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/
-lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/annotationmenu.ui
+lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/annotation.ui
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/annotationtagmenu.ui
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/clientboxfragment.ui
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/currentmastermenu.ui
@@ -1733,6 +1718,7 @@ lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/displaywindow.ui
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/dlgfield.ui
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/dockinganimation.ui
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/effectmenu.ui
+lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/fieldmenu.ui
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/fontsizemenu.ui
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/fontstylemenu.ui
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/gluebox.ui
@@ -1747,6 +1733,7 @@ lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/layoutpanel.ui
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/layoutwindow.ui
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/masterlayoutdlg.ui
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/mastermenu.ui
+lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/masterpagemenu.ui
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/masterpagepanel.ui
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/navigatorpanel.ui
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/notebookbar.ui
@@ -1754,6 +1741,7 @@ lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/notebookbar_compact
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/notebookbar_groupedbar_compact.ui
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/notebookbar_groupedbar_full.ui
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/notebookbar_groups.ui
+lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/notebookbar_online.ui
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/notebookbar_single.ui
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/optimpressgeneralpage.ui
 lib/libreoffice/share/config/soffice.cfg/modules/simpress/ui/pagesfieldbox.ui
@@ -1788,9 +1776,11 @@ lib/libreoffice/share/config/soffice.cfg/modules/smath/ui/
 lib/libreoffice/share/config/soffice.cfg/modules/smath/ui/alignmentdialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/smath/ui/catalogdialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/smath/ui/dockingelements.ui
+lib/libreoffice/share/config/soffice.cfg/modules/smath/ui/editwindow.ui
 lib/libreoffice/share/config/soffice.cfg/modules/smath/ui/fontdialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/smath/ui/fontsizedialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/smath/ui/fonttypedialog.ui
+lib/libreoffice/share/config/soffice.cfg/modules/smath/ui/mathwindow.ui
 lib/libreoffice/share/config/soffice.cfg/modules/smath/ui/printeroptions.ui
 lib/libreoffice/share/config/soffice.cfg/modules/smath/ui/savedefaultsdialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/smath/ui/smathsettings.ui
@@ -1833,6 +1823,7 @@ lib/libreoffice/share/config/soffice.cfg/modules/sweb/popupmenu/graphic.xml
 lib/libreoffice/share/config/soffice.cfg/modules/sweb/popupmenu/insertfield.xml
 lib/libreoffice/share/config/soffice.cfg/modules/sweb/popupmenu/oleobject.xml
 lib/libreoffice/share/config/soffice.cfg/modules/sweb/popupmenu/preview.xml
+lib/libreoffice/share/config/soffice.cfg/modules/sweb/popupmenu/showtrackedchanges.xml
 lib/libreoffice/share/config/soffice.cfg/modules/sweb/popupmenu/source.xml
 lib/libreoffice/share/config/soffice.cfg/modules/sweb/popupmenu/table.xml
 lib/libreoffice/share/config/soffice.cfg/modules/sweb/popupmenu/text.xml
@@ -1947,6 +1938,7 @@ lib/libreoffice/share/config/soffice.cfg/modules/swreport/popupmenu/insertfield.
 lib/libreoffice/share/config/soffice.cfg/modules/swreport/popupmenu/media.xml
 lib/libreoffice/share/config/soffice.cfg/modules/swreport/popupmenu/oleobject.xml
 lib/libreoffice/share/config/soffice.cfg/modules/swreport/popupmenu/preview.xml
+lib/libreoffice/share/config/soffice.cfg/modules/swreport/popupmenu/showtrackedchanges.xml
 lib/libreoffice/share/config/soffice.cfg/modules/swreport/popupmenu/table.xml
 lib/libreoffice/share/config/soffice.cfg/modules/swreport/popupmenu/text.xml
 lib/libreoffice/share/config/soffice.cfg/modules/swreport/statusbar/
@@ -2007,6 +1999,7 @@ lib/libreoffice/share/config/soffice.cfg/modules/swriter/popupmenu/media.xml
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/popupmenu/notebookbar.xml
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/popupmenu/oleobject.xml
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/popupmenu/preview.xml
+lib/libreoffice/share/config/soffice.cfg/modules/swriter/popupmenu/showtrackedchanges.xml
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/popupmenu/table.xml
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/popupmenu/text.xml
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/statusbar/
@@ -2063,7 +2056,7 @@ lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/addentrydialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/addressblockdialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/addressfragment.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/alreadyexistsdialog.ui
-lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/annotationmenu.ui
+lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/annotation.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/asciifilterdialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/asksearchdialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/assignfieldsdialog.ui
@@ -2075,6 +2068,7 @@ lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/autoformattable.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/autotext.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/bibliofragment.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/bibliographyentry.ui
+lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/bookmarkmenu.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/bulletsandnumbering.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/businessdatapage.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/calendar.ui
@@ -2134,7 +2128,7 @@ lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/frmaddpage.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/frmtypepage.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/frmurlpage.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/gotopagedialog.ui
-lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/headerfootermenu.ui
+lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/hfmenubutton.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/indentpage.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/indexentry.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/infonotfounddialog.ui
@@ -2182,6 +2176,7 @@ lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/notebookbar_compact.
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/notebookbar_groupedbar_compact.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/notebookbar_groupedbar_full.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/notebookbar_groups.ui
+lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/notebookbar_online.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/notebookbar_single.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/numberingnamedialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/numparapage.ui
@@ -2195,10 +2190,10 @@ lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/optgeneralpage.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/optredlinepage.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/opttablepage.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/opttestpage.ui
+lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/outlinebutton.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/outlinenumbering.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/outlinenumberingpage.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/outlinepositionpage.ui
-lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/pagebreakmenu.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/pagecolumncontrol.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/pagefooterpanel.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/pageformatpanel.ui
@@ -2206,8 +2201,10 @@ lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/pageheaderpanel.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/pagemargincontrol.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/pageorientationcontrol.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/pagesizecontrol.ui
+lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/pagestylemenu.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/pagestylespanel.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/paradialog.ui
+lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/pbmenubutton.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/picturedialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/picturepage.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/poseditbox.ui
@@ -2267,6 +2264,7 @@ lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/tocstylespage.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/tokenwidget.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/toxbuttonwidget.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/toxentrywidget.ui
+lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/unfloatbutton.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/viewoptionspage.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/warndatasourcedialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/swriter/ui/warnemaildialog.ui
@@ -2292,6 +2290,7 @@ lib/libreoffice/share/config/soffice.cfg/modules/swxform/popupmenu/insertfield.x
 lib/libreoffice/share/config/soffice.cfg/modules/swxform/popupmenu/media.xml
 lib/libreoffice/share/config/soffice.cfg/modules/swxform/popupmenu/oleobject.xml
 lib/libreoffice/share/config/soffice.cfg/modules/swxform/popupmenu/preview.xml
+lib/libreoffice/share/config/soffice.cfg/modules/swxform/popupmenu/showtrackedchanges.xml
 lib/libreoffice/share/config/soffice.cfg/modules/swxform/popupmenu/table.xml
 lib/libreoffice/share/config/soffice.cfg/modules/swxform/popupmenu/text.xml
 lib/libreoffice/share/config/soffice.cfg/modules/swxform/statusbar/
@@ -2348,10 +2347,12 @@ lib/libreoffice/share/config/soffice.cfg/sfx/ui/checkin.ui
 lib/libreoffice/share/config/soffice.cfg/sfx/ui/classificationbox.ui
 lib/libreoffice/share/config/soffice.cfg/sfx/ui/cmisinfopage.ui
 lib/libreoffice/share/config/soffice.cfg/sfx/ui/cmisline.ui
+lib/libreoffice/share/config/soffice.cfg/sfx/ui/commandpopup.ui
 lib/libreoffice/share/config/soffice.cfg/sfx/ui/custominfopage.ui
-lib/libreoffice/share/config/soffice.cfg/sfx/ui/decktitlebar.ui
+lib/libreoffice/share/config/soffice.cfg/sfx/ui/deck.ui
 lib/libreoffice/share/config/soffice.cfg/sfx/ui/descriptioninfopage.ui
-lib/libreoffice/share/config/soffice.cfg/sfx/ui/dockingwindow.ui
+lib/libreoffice/share/config/soffice.cfg/sfx/ui/developmenttool.ui
+lib/libreoffice/share/config/soffice.cfg/sfx/ui/devtoolsmenu.ui
 lib/libreoffice/share/config/soffice.cfg/sfx/ui/documentfontspage.ui
 lib/libreoffice/share/config/soffice.cfg/sfx/ui/documentinfopage.ui
 lib/libreoffice/share/config/soffice.cfg/sfx/ui/documentpropertiesdialog.ui
@@ -2375,11 +2376,12 @@ lib/libreoffice/share/config/soffice.cfg/sfx/ui/linefragment.ui
 lib/libreoffice/share/config/soffice.cfg/sfx/ui/linkeditdialog.ui
 lib/libreoffice/share/config/soffice.cfg/sfx/ui/loadtemplatedialog.ui
 lib/libreoffice/share/config/soffice.cfg/sfx/ui/managestylepage.ui
+lib/libreoffice/share/config/soffice.cfg/sfx/ui/navigator.ui
 lib/libreoffice/share/config/soffice.cfg/sfx/ui/newstyle.ui
 lib/libreoffice/share/config/soffice.cfg/sfx/ui/notebookbar.ui
 lib/libreoffice/share/config/soffice.cfg/sfx/ui/notebookbarpopup.ui
 lib/libreoffice/share/config/soffice.cfg/sfx/ui/optprintpage.ui
-lib/libreoffice/share/config/soffice.cfg/sfx/ui/paneltitlebar.ui
+lib/libreoffice/share/config/soffice.cfg/sfx/ui/panel.ui
 lib/libreoffice/share/config/soffice.cfg/sfx/ui/password.ui
 lib/libreoffice/share/config/soffice.cfg/sfx/ui/printeroptionsdialog.ui
 lib/libreoffice/share/config/soffice.cfg/sfx/ui/querysavedialog.ui
@@ -2420,15 +2422,20 @@ lib/libreoffice/share/config/soffice.cfg/svt/ui/fixedimagecontrol.ui
 lib/libreoffice/share/config/soffice.cfg/svt/ui/fixedtextcontrol.ui
 lib/libreoffice/share/config/soffice.cfg/svt/ui/graphicexport.ui
 lib/libreoffice/share/config/soffice.cfg/svt/ui/inputbox.ui
+lib/libreoffice/share/config/soffice.cfg/svt/ui/interimparent.ui
 lib/libreoffice/share/config/soffice.cfg/svt/ui/javadisableddialog.ui
 lib/libreoffice/share/config/soffice.cfg/svt/ui/linewindow.ui
 lib/libreoffice/share/config/soffice.cfg/svt/ui/listcontrol.ui
+lib/libreoffice/share/config/soffice.cfg/svt/ui/managedtoolbar.ui
 lib/libreoffice/share/config/soffice.cfg/svt/ui/placeedit.ui
 lib/libreoffice/share/config/soffice.cfg/svt/ui/printersetupdialog.ui
 lib/libreoffice/share/config/soffice.cfg/svt/ui/querydeletedialog.ui
 lib/libreoffice/share/config/soffice.cfg/svt/ui/restartdialog.ui
 lib/libreoffice/share/config/soffice.cfg/svt/ui/spinfieldcontrol.ui
+lib/libreoffice/share/config/soffice.cfg/svt/ui/subtoolbar.ui
 lib/libreoffice/share/config/soffice.cfg/svt/ui/tabbaredit.ui
+lib/libreoffice/share/config/soffice.cfg/svt/ui/tabbuttons.ui
+lib/libreoffice/share/config/soffice.cfg/svt/ui/tabbuttonsmirrored.ui
 lib/libreoffice/share/config/soffice.cfg/svt/ui/textviewcontrol.ui
 lib/libreoffice/share/config/soffice.cfg/svt/ui/thineditcontrol.ui
 lib/libreoffice/share/config/soffice.cfg/svx/
@@ -2451,11 +2458,11 @@ lib/libreoffice/share/config/soffice.cfg/svx/ui/checkbuttonbox.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/chineseconversiondialog.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/chinesedictionary.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/classificationdialog.ui
+lib/libreoffice/share/config/soffice.cfg/svx/ui/clipboardmenu.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/colorwindow.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/colsmenu.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/columnswindow.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/compressgraphicdialog.ui
-lib/libreoffice/share/config/soffice.cfg/svx/ui/convertmenu.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/crashreportdlg.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/currencywindow.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/datanavigator.ui
@@ -2507,9 +2514,6 @@ lib/libreoffice/share/config/soffice.cfg/svx/ui/headfootformatpage.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/imapdialog.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/imapmenu.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/inspectortextpanel.ui
-lib/libreoffice/share/config/soffice.cfg/svx/ui/interimdockparent.ui
-lib/libreoffice/share/config/soffice.cfg/svx/ui/interimparent.ui
-lib/libreoffice/share/config/soffice.cfg/svx/ui/interimtearableparent.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/labelbox.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/lightingwindow.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/linkwarndialog.ui
@@ -2547,6 +2551,7 @@ lib/libreoffice/share/config/soffice.cfg/svx/ui/selectionmenu.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/sidebararea.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/sidebareffect.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/sidebarempty.ui
+lib/libreoffice/share/config/soffice.cfg/svx/ui/sidebarfontwork.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/sidebargallery.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/sidebargraphic.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/sidebarline.ui
@@ -2555,6 +2560,7 @@ lib/libreoffice/share/config/soffice.cfg/svx/ui/sidebarparagraph.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/sidebarpossize.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/sidebarshadow.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/sidebarstylespanel.ui
+lib/libreoffice/share/config/soffice.cfg/svx/ui/sidebartextcolumnspanel.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/sidebartextpanel.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/stylemenu.ui
 lib/libreoffice/share/config/soffice.cfg/svx/ui/stylespreview.ui
@@ -2585,9 +2591,12 @@ lib/libreoffice/share/config/soffice.cfg/vcl/ui/
 lib/libreoffice/share/config/soffice.cfg/vcl/ui/aboutbox.ui
 lib/libreoffice/share/config/soffice.cfg/vcl/ui/combobox.ui
 lib/libreoffice/share/config/soffice.cfg/vcl/ui/cupspassworddialog.ui
+lib/libreoffice/share/config/soffice.cfg/vcl/ui/dockingwindow.ui
 lib/libreoffice/share/config/soffice.cfg/vcl/ui/editmenu.ui
 lib/libreoffice/share/config/soffice.cfg/vcl/ui/errornocontentdialog.ui
 lib/libreoffice/share/config/soffice.cfg/vcl/ui/errornoprinterdialog.ui
+lib/libreoffice/share/config/soffice.cfg/vcl/ui/interimdockparent.ui
+lib/libreoffice/share/config/soffice.cfg/vcl/ui/interimtearableparent.ui
 lib/libreoffice/share/config/soffice.cfg/vcl/ui/menutogglebutton.ui
 lib/libreoffice/share/config/soffice.cfg/vcl/ui/printdialog.ui
 lib/libreoffice/share/config/soffice.cfg/vcl/ui/printerdevicepage.ui
@@ -2729,6 +2738,7 @@ lib/libreoffice/share/extensions/dict-en/pythonpath/lightproof_impl_en.py
 lib/libreoffice/share/extensions/dict-en/pythonpath/lightproof_opts_en.py
 lib/libreoffice/share/extensions/dict-en/th_en_US_v2.dat
 lib/libreoffice/share/extensions/dict-en/th_en_US_v2.idx
+lib/libreoffice/share/extensions/dict-es/RLA-ES.png
 @comment lib/libreoffice/share/extensions/dict-uk/
 @comment lib/libreoffice/share/extensions/dict-uk/META-INF/
 @comment lib/libreoffice/share/extensions/dict-uk/META-INF/manifest.xml
@@ -2931,10 +2941,10 @@ lib/libreoffice/share/fonts/truetype/Carlito-Bold.ttf
 lib/libreoffice/share/fonts/truetype/Carlito-BoldItalic.ttf
 lib/libreoffice/share/fonts/truetype/Carlito-Italic.ttf
 lib/libreoffice/share/fonts/truetype/Carlito-Regular.ttf
-lib/libreoffice/share/fonts/truetype/DavidCLM-Bold.ttf
-lib/libreoffice/share/fonts/truetype/DavidCLM-BoldItalic.ttf
-lib/libreoffice/share/fonts/truetype/DavidCLM-Medium.ttf
-lib/libreoffice/share/fonts/truetype/DavidCLM-MediumItalic.ttf
+lib/libreoffice/share/fonts/truetype/DavidCLM-Bold.otf
+lib/libreoffice/share/fonts/truetype/DavidCLM-BoldItalic.otf
+lib/libreoffice/share/fonts/truetype/DavidCLM-Medium.otf
+lib/libreoffice/share/fonts/truetype/DavidCLM-MediumItalic.otf
 lib/libreoffice/share/fonts/truetype/DavidLibre-Bold.ttf
 lib/libreoffice/share/fonts/truetype/DavidLibre-Regular.ttf
 lib/libreoffice/share/fonts/truetype/DejaVuMathTeXGyre.ttf
@@ -3123,6 +3133,7 @@ lib/libreoffice/share/gallery/bpmn.thm
 lib/libreoffice/share/gallery/bullets/
 lib/libreoffice/share/gallery/bullets.sdg
 lib/libreoffice/share/gallery/bullets.sdv
+lib/libreoffice/share/gallery/bullets.str
 lib/libreoffice/share/gallery/bullets.thm
 lib/libreoffice/share/gallery/bullets/Bullet01-Circle-DarkRed.svg
 lib/libreoffice/share/gallery/bullets/Bullet02-Circle-Blue.svg
@@ -3451,19 +3462,18 @@ lib/libreoffice/share/template/common/personal/
 lib/libreoffice/share/template/common/personal/CV.ott
 lib/libreoffice/share/template/common/personal/Resume1page.ott
 lib/libreoffice/share/template/common/presnt/
-lib/libreoffice/share/template/common/presnt/Alizarin.otp
 lib/libreoffice/share/template/common/presnt/Beehive.otp
 lib/libreoffice/share/template/common/presnt/Blue_Curve.otp
 lib/libreoffice/share/template/common/presnt/Blueprint_Plans.otp
-lib/libreoffice/share/template/common/presnt/BrightBlue.otp
-lib/libreoffice/share/template/common/presnt/Classy_Red.otp
+lib/libreoffice/share/template/common/presnt/Candy.otp
 lib/libreoffice/share/template/common/presnt/DNA.otp
 lib/libreoffice/share/template/common/presnt/Focus.otp
 lib/libreoffice/share/template/common/presnt/Forestbird.otp
-lib/libreoffice/share/template/common/presnt/Impress.otp
+lib/libreoffice/share/template/common/presnt/Freshes.otp
+lib/libreoffice/share/template/common/presnt/Grey_Elegant.otp
+lib/libreoffice/share/template/common/presnt/Growing_Liberty.otp
 lib/libreoffice/share/template/common/presnt/Inspiration.otp
 lib/libreoffice/share/template/common/presnt/Lights.otp
-lib/libreoffice/share/template/common/presnt/LushGreen.otp
 lib/libreoffice/share/template/common/presnt/Metropolis.otp
 lib/libreoffice/share/template/common/presnt/Midnightblue.otp
 lib/libreoffice/share/template/common/presnt/Nature_Illustration.otp
@@ -3474,6 +3484,7 @@ lib/libreoffice/share/template/common/presnt/Progress.otp
 lib/libreoffice/share/template/common/presnt/Sunset.otp
 lib/libreoffice/share/template/common/presnt/Vintage.otp
 lib/libreoffice/share/template/common/presnt/Vivid.otp
+lib/libreoffice/share/template/common/presnt/Yellow_Idea.otp
 lib/libreoffice/share/template/common/styles/
 lib/libreoffice/share/template/common/styles/Default.ott
 lib/libreoffice/share/template/common/styles/Modern.ott
@@ -3636,11 +3647,17 @@ lib/libreoffice/share/theme_definitions/ios/tick-on-disabled.svg
 lib/libreoffice/share/theme_definitions/ios/tick-on-pressed.svg
 lib/libreoffice/share/theme_definitions/ios/tick-on.svg
 lib/libreoffice/share/tipoftheday/
+lib/libreoffice/share/tipoftheday/expand_formula_bar.png
 lib/libreoffice/share/tipoftheday/formdocuments.png
+lib/libreoffice/share/tipoftheday/fraction.png
+lib/libreoffice/share/tipoftheday/hybrid_pdf.png
+lib/libreoffice/share/tipoftheday/icon_sets.png
 lib/libreoffice/share/tipoftheday/marchingants.gif
 lib/libreoffice/share/tipoftheday/masterdocument.png
 lib/libreoffice/share/tipoftheday/printnote.png
+lib/libreoffice/share/tipoftheday/remove_hyperlink.png
 lib/libreoffice/share/tipoftheday/statusbar.png
+lib/libreoffice/share/tipoftheday/sum_sheets.png
 lib/libreoffice/share/tipoftheday/tipoftheday.png
 lib/libreoffice/share/tipoftheday/tipoftheday_c.png
 lib/libreoffice/share/tipoftheday/tipoftheday_d.png

@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_headless_headless_mode_util_cc,v 1.2 2021/10/20 10:27:45 robert Exp $
+
+Index: chrome/browser/headless/headless_mode_util.cc
+--- chrome/browser/headless/headless_mode_util.cc.orig
++++ chrome/browser/headless/headless_mode_util.cc
+@@ -9,7 +9,7 @@
+ // Native headless is currently available only on Linux platform. More
+ // platforms will be added soon, so avoid function level clutter by providing
+ // stub implementations at the end of the file.
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ 
+ #include <cstdlib>
+ #include <vector>

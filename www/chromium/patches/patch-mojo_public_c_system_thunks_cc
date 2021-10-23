@@ -1,4 +1,4 @@
-$OpenBSD: patch-mojo_public_c_system_thunks_cc,v 1.5 2021/07/21 15:43:33 robert Exp $
+$OpenBSD: patch-mojo_public_c_system_thunks_cc,v 1.6 2021/09/01 16:54:40 robert Exp $
 
 Index: mojo/public/c/system/thunks.cc
 --- mojo/public/c/system/thunks.cc.orig

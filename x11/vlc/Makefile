@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.251 2021/07/08 10:44:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.252 2021/09/03 11:47:42 ajacoutot Exp $
 
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
@@ -7,7 +7,8 @@ V=		3.0.14
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
-REVISION-main=	0
+REVISION-main=	1
+REVISION-jack=	0
 CATEGORIES=	x11
 MASTER_SITES=	https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
@@ -47,7 +48,7 @@ WANTLIB-main=	EGL GL ICE Qt5Core Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras \
 # v4l2 is dlopen'd
 WANTLIB-main+=	v4l2
 
-WANTLIB-jack=	db jack vlccore ${WANTLIB-common}
+WANTLIB-jack=	db execinfo jack vlccore ${WANTLIB-common}
 
 AUTOCONF_VERSION= 2.69
 AUTOMAKE_VERSION= 1.16
@@ -92,7 +93,7 @@ LIB_DEPENDS-main= ${MODQT5_LIB_DEPENDS} \
 		multimedia/libv4l \
 		multimedia/x264 \
 		multimedia/x265 \
-		net/avahi \
+		net/avahi,-libs \
 		security/gnutls \
 		security/libgcrypt \
 		textproc/libebml \
