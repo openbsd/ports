@@ -17,7 +17,8 @@ MODULES=		devel/dconf \
 			devel/meson \
 			lang/python
 
-BUILD_DEPENDS=		devel/gettext,-tools
+BUILD_DEPENDS=		devel/gettext,-tools \
+			devel/gobject-introspection
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/py-setuptools${MODPY_FLAVOR} \
