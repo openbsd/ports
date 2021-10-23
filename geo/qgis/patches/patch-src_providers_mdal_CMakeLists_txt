@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_providers_mdal_CMakeLists_txt,v 1.6 2020/11/24 13:12:45 landry Exp $
+$OpenBSD: patch-src_providers_mdal_CMakeLists_txt,v 1.7 2021/10/23 09:18:52 landry Exp $
 
 Index: src/providers/mdal/CMakeLists.txt
 --- src/providers/mdal/CMakeLists.txt.orig
 +++ src/providers/mdal/CMakeLists.txt
-@@ -16,7 +16,6 @@ if(MSVC)
+@@ -15,7 +15,6 @@ if(MSVC)
    find_package(Threads)
  endif()
  find_package(HDF5)
