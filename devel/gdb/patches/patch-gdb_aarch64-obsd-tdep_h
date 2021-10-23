@@ -1,0 +1,34 @@
+$OpenBSD: patch-gdb_aarch64-obsd-tdep_h,v 1.1 2021/10/23 17:55:15 jca Exp $
+
+Index: gdb/aarch64-obsd-tdep.h
+--- gdb/aarch64-obsd-tdep.h.orig
++++ gdb/aarch64-obsd-tdep.h
+@@ -0,0 +1,28 @@
++/* OpenBSD/aarch64 target support, prototypes.
++
++   Copyright (C) 2017-2020 Free Software Foundation, Inc.
++
++   This file is part of GDB.
++
++   This program is free software; you can redistribute it and/or modify
++   it under the terms of the GNU General Public License as published by
++   the Free Software Foundation; either version 3 of the License, or
++   (at your option) any later version.
++
++   This program is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++   GNU General Public License for more details.
++
++   You should have received a copy of the GNU General Public License
++   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
++
++#ifndef AARCH64_OBSD_TDEP_H
++#define AARCH64_OBSD_TDEP_H
++
++#include "regset.h"
++
++extern const struct regset aarch64_obsd_gregset;
++extern const struct regset aarch64_obsd_fpregset;
++
++#endif /* AARCH64_OBSD_TDEP_H */
