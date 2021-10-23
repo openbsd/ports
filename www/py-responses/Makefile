@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2021/03/13 04:24:52 kmos Exp $
+# $OpenBSD: Makefile,v 1.7 2021/10/23 06:56:16 kmos Exp $
 
 COMMENT =		utility library for mocking out the `requests` Python
 
-MODPY_EGG_VERSION =	0.12.1
+MODPY_EGG_VERSION =	0.14.0
 
 DISTNAME =		responses-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
@@ -21,6 +21,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	responses/test_responses.py
 
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
 			www/py-cookies${MODPY_FLAVOR} \
