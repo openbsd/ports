@@ -1,9 +1,9 @@
-$OpenBSD: patch-tests_CMakeLists_txt,v 1.5 2021/01/15 12:05:18 landry Exp $
+$OpenBSD: patch-tests_CMakeLists_txt,v 1.6 2021/10/23 09:15:52 landry Exp $
 
 Index: tests/CMakeLists.txt
 --- tests/CMakeLists.txt.orig
 +++ tests/CMakeLists.txt
-@@ -176,5 +176,5 @@ SET(UNITTESTS_SRC
+@@ -181,5 +181,5 @@ SET(UNITTESTS_SRC
  )
  
  ADD_EXECUTABLE(mdal_unittests ${UNITTESTS_SRC})
