@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.24 2021/10/22 19:51:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2021/10/23 08:13:10 sthen Exp $
 
 COMMENT=	audio sample rate conversion library
 
 VER=		0.2.2
 DISTNAME=	libsamplerate-${VER}
+REVISION=	0
 CATEGORIES=	audio
 EXTRACT_SUFX=	.tar.xz
 
 SHARED_LIBS=	samplerate	3.0
 
-HOMEPAGE=	http://libsndfile.github.io/libsamplerate/
+HOMEPAGE=	https://libsndfile.github.io/libsamplerate/
 MAINTAINER=	Jan Stary <hans@stare.cz>
 
 # 2-BSD license
