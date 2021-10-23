@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.82 2021/07/06 15:45:12 jturner Exp $
+# $OpenBSD: Makefile,v 1.83 2021/10/23 19:14:30 jturner Exp $
 
 COMMENT =		simple distributed software configuration management
 
-DISTNAME =		fossil-2.16
+DISTNAME =		fossil-2.17
 EPOCH =			0
 CATEGORIES =		devel www
 
@@ -10,7 +10,8 @@ MAINTAINER =		James Turner <james@calminferno.net>
 
 HOMEPAGE =		https://fossil-scm.org/
 MASTER_SITES =		https://fossil-scm.org/home/tarball/
-DISTFILES =		{7aedd5675883d4412cf20917d340b6985e3ecb842e88a39f135df034b2d5f4d3/}${DISTNAME}${EXTRACT_SUFX}
+DISTFILES =		{f48180f2ff3169651a725396d4f7d667c99a92873b9c3df7eee2f144be7a0721/}${DISTNAME}${EXTRACT_SUFX}
+
 
 # BSD
 PERMIT_PACKAGE =	Yes
