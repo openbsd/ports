@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2021/06/24 10:52:02 martin Exp $
+# $OpenBSD: Makefile,v 1.8 2021/10/24 11:43:54 martin Exp $
 
 COMMENT =	pythonic interface to the HDF5 binary data format
 
-MODPY_EGG_VERSION =	3.3.0
+MODPY_EGG_VERSION =	3.5.0
 DISTNAME =		h5py-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
@@ -37,7 +37,7 @@ LIB_DEPENDS =	math/hdf5
 TEST_DEPENDS =	devel/py-coveralls${MODPY_FLAVOR} \
 		devel/py-test-cov${MODPY_FLAVOR}
 
-do-test:
+do-test: fake
 	cd ${WRKDIR} && ${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
 		${MODPY_BIN} -c 'import h5py; h5py.run_tests()'
 

@@ -1,0 +1,16 @@
+$OpenBSD: patch-lzf_lzf_filter_c,v 1.1 2021/10/24 11:43:54 martin Exp $
+
+Fix segfault.
+
+Index: lzf/lzf_filter.c
+--- lzf/lzf_filter.c.orig
++++ lzf/lzf_filter.c
+@@ -249,7 +249,7 @@ size_t lzf_filter(unsigned flags, size_t cd_nelmts,
+ 
+     if(status != 0){
+ 
+-        free(*buf);
++        H5free_memory(*buf);
+         *buf = outbuf;
+         *buf_size = outbuf_size;
+ 

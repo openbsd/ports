@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/06/24 10:52:02 martin Exp $
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
+@comment $OpenBSD: PLIST,v 1.6 2021/10/24 11:43:54 martin Exp $
 lib/python${MODPY_VERSION}/site-packages/h5py/
 lib/python${MODPY_VERSION}/site-packages/h5py-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/h5py-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
