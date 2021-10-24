@@ -1,4 +1,4 @@
-$OpenBSD: patch-test_openssl_test_ssl_rb,v 1.2 2021/09/09 14:57:22 tb Exp $
+$OpenBSD: patch-test_openssl_test_ssl_rb,v 1.3 2021/10/24 17:23:15 tb Exp $
 
 Remove a pend that hides missing support for SSL_CTX_set_client_cert_cb()
 in the TLSv1.3 stack.
@@ -6,7 +6,7 @@ in the TLSv1.3 stack.
 Index: test/openssl/test_ssl.rb
 --- test/openssl/test_ssl.rb.orig
 +++ test/openssl/test_ssl.rb
-@@ -344,8 +344,9 @@ class OpenSSL::TestSSL < OpenSSL::SSLTestCase
+@@ -352,8 +352,9 @@ class OpenSSL::TestSSL < OpenSSL::SSLTestCase
    end
  
    def test_client_ca
