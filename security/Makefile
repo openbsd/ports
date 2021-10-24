@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.636 2021/10/24 09:28:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.637 2021/10/24 22:39:15 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -281,7 +281,6 @@
      SUBDIR += py-cryptodome
      SUBDIR += py-cryptodome,python3
      SUBDIR += py-cryptography,python3
-     SUBDIR += py-cryptography_vectors
      SUBDIR += py-cryptography_vectors,python3
      SUBDIR += py-dfdatetime,python3
      SUBDIR += py-dfvfs,python3
