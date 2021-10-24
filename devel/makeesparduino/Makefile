@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2021/10/24 09:44:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/10/24 12:05:55 naddy Exp $
 
 COMMENT =		makefile for ESP8266 and ESP32 Arduino projects
 
 GH_ACCOUNT =		plerup
 GH_PROJECT =		makeEspArduino
 GH_TAGNAME =		6.5.0
-REVISIONS =		0
+REVISION =		0
 
 PKGNAME =		makeesparduino-${GH_TAGNAME}
 
