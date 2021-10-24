@@ -1,4 +1,4 @@
-$OpenBSD: python3-pf_filter_py,v 1.2 2018/06/15 06:36:30 jasper Exp $
+$OpenBSD: patch-pf_filter_py,v 1.1 2021/10/24 10:25:25 sthen Exp $
 
 All integers are long integers in Python 3.
 
