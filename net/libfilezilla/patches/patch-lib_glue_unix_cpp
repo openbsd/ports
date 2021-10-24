@@ -1,0 +1,25 @@
+$OpenBSD: patch-lib_glue_unix_cpp,v 1.1 2021/10/24 18:54:55 bket Exp $
+
+EBADFD is not specified in POSIX, EBADF is.
+
+Index: lib/glue/unix.cpp
+--- lib/glue/unix.cpp.orig
++++ lib/glue/unix.cpp
+@@ -87,7 +87,7 @@ int send_fd(int socket, fz::buffer & buf, int fd, int 
+ 		return -1;
+ 	}
+ 	if (socket < 0) {
+-		error = EBADFD;
++		error = EBADF;
+ 		return -1;
+ 	}
+ 
+@@ -144,7 +144,7 @@ int read_fd(int socket, fz::buffer & buf, int & fd, in
+ {
+ 	fd = -1;
+ 	if (socket < 0) {
+-		error = EBADFD;
++		error = EBADF;
+ 		return -1;
+ 	}
+ 
