@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_commonui_fz_paths_cpp,v 1.1 2021/07/11 09:22:17 bket Exp $
+$OpenBSD: patch-src_commonui_fz_paths_cpp,v 1.2 2021/10/24 18:55:40 bket Exp $
 
 Index: src/commonui/fz_paths.cpp
 --- src/commonui/fz_paths.cpp.orig
 +++ src/commonui/fz_paths.cpp
-@@ -20,7 +20,7 @@
- 	#endif
+@@ -15,7 +15,7 @@
+ 	#include <objbase.h>
  #else
  	#include <unistd.h>
 -	#include <wordexp.h>
@@ -12,7 +12,7 @@ Index: src/commonui/fz_paths.cpp
  #endif
  
  using namespace std::literals;
-@@ -490,12 +490,12 @@ std::string ShellUnescape(std::string const& path)
+@@ -486,12 +486,12 @@ std::string ShellUnescape(std::string const& path)
  {
  	std::string ret;
  
