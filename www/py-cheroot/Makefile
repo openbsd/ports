@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2021/05/21 19:50:38 kmos Exp $
+# $OpenBSD: Makefile,v 1.9 2021/10/24 09:28:52 sthen Exp $
 
 COMMENT = high-performance, pure-Python HTTP server used by CherryPy
 
 MODPY_EGG_VERSION =	8.2.1
 DISTNAME =		cheroot-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		www
 
@@ -15,7 +15,7 @@ HOMEPAGE =		https://github.com/cherrypy/cheroot
 PERMIT_PACKAGE =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 MODULES =		lang/python
 
@@ -28,13 +28,6 @@ RUN_DEPENDS =		devel/py-jaraco-functools${MODPY_FLAVOR} \
 			devel/py-more-itertools${MODPY_FLAVOR}>=2.6 \
 			devel/py-six${MODPY_FLAVOR}>=1.11.0
 
-.if !${FLAVOR:Mpython3}
-RUN_DEPENDS +=		devel/py-backports-functools-lru-cache
-.endif
-
 NO_TEST =		Yes
-
-post-install:
-	mv ${PREFIX}/bin/cheroot ${PREFIX}/bin/cheroot${MODPY_BIN_SUFFIX}
 
 .include <bsd.port.mk>

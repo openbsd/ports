@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/02/19 23:13:08 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/10/24 09:28:54 sthen Exp $
+@pkgpath www/py-waitress
 @conflict py-waitress-<1.4.4p0
-bin/waitress-serve${MODPY_BIN_SUFFIX}
+bin/waitress-serve
 lib/python${MODPY_VERSION}/site-packages/waitress/
 lib/python${MODPY_VERSION}/site-packages/waitress-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/waitress-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

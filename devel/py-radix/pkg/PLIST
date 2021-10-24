@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/01/04 14:06:30 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/10/24 09:28:48 sthen Exp $
+@pkgpath devel/py-radix
 lib/python${MODPY_VERSION}/site-packages/py_radix-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/py_radix-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/py_radix-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.690 2021/10/16 12:47:12 sdk Exp $
+# $OpenBSD: Makefile,v 1.691 2021/10/24 09:28:47 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -417,7 +417,6 @@
      SUBDIR += py-markdown
      SUBDIR += py-markdown,python3
      SUBDIR += py-m2r,python3
-     SUBDIR += py-mistune
      SUBDIR += py-mistune,python3
      SUBDIR += py-natsort,python3
      SUBDIR += py-nltk,python3
@@ -431,29 +430,22 @@
      SUBDIR += py-pdf
      SUBDIR += py-pdfminer
      SUBDIR += py-podcastparser,python3
-     SUBDIR += py-polib
      SUBDIR += py-polib,python3
      SUBDIR += py-precis_i18n
-     SUBDIR += py-prettytable
      SUBDIR += py-prettytable,python3
      SUBDIR += py-pyRFC3339,python3
-     SUBDIR += py-pyaml
      SUBDIR += py-pyaml,python3
      SUBDIR += py-pygfm,python3
      SUBDIR += py-pygments,python3
-     SUBDIR += py-pykwalify
      SUBDIR += py-pykwalify,python3
      SUBDIR += py-pypandoc,python3
      SUBDIR += py-rebulk,python3
      SUBDIR += py-recommonmark,python3
-     SUBDIR += py-ruamel.yaml
      SUBDIR += py-ruamel.yaml,python3
      SUBDIR += py-signedjson,python3
      SUBDIR += py-semver
      SUBDIR += py-snowballstemmer,python3
-     SUBDIR += py-spdx
      SUBDIR += py-spdx,python3
-     SUBDIR += py-spdx-lookup
      SUBDIR += py-spdx-lookup,python3
      SUBDIR += py-sphinx,python3
      SUBDIR += py-sphinx-intl,python3
@@ -466,18 +458,14 @@
      SUBDIR += py-textfsm,python3
      SUBDIR += py-toml,python3
      SUBDIR += py-unicodecsv,python3
-     SUBDIR += py-unidecode
      SUBDIR += py-unidecode,python3
      SUBDIR += py-unpaddedbase64,python3
-     SUBDIR += py-vobject
      SUBDIR += py-vobject,python3
-     SUBDIR += py-webencodings
      SUBDIR += py-webencodings,python3
      SUBDIR += py-xlrd,python3
      SUBDIR += py-xlwt,python3
      SUBDIR += py-xml
      SUBDIR += py-xmldiff
-     SUBDIR += py-xmltodict
      SUBDIR += py-xmltodict,python3
      SUBDIR += py-yaml
      SUBDIR += py-yaml,python3

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2021/05/21 19:50:37 kmos Exp $
+# $OpenBSD: Makefile,v 1.8 2021/10/24 09:28:51 sthen Exp $
 
 COMMENT =		makes working with XML feel like orking with JSON
 
 MODPY_EGG_VERSION =	0.12.0
 DISTNAME = 		xmltodict-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		textproc
 
@@ -22,6 +22,6 @@ MODPY_PYTEST =		Yes
 TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 .include <bsd.port.mk>

@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/02/19 23:13:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/10/24 09:28:49 sthen Exp $
+@pkgpath net/py-netaddr
 @conflict py-netaddr-<0.7.19p3
-bin/netaddr${MODPY_BIN_SUFFIX}
+bin/netaddr
 lib/python${MODPY_VERSION}/site-packages/netaddr/
 lib/python${MODPY_VERSION}/site-packages/netaddr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/netaddr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

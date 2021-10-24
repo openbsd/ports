@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2021/05/21 19:50:37 kmos Exp $
+# $OpenBSD: Makefile,v 1.19 2021/10/24 09:28:51 sthen Exp $
 
 COMMENT =		US-ASCII transliterations of Unicode text
 
 MODPY_EGG_VERSION =	1.1.1
 DISTNAME =		Unidecode-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		textproc devel
 
@@ -21,9 +21,6 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=
-
-post-install:
-	mv ${PREFIX}/bin/unidecode{,${MODPY_BIN_SUFFIX}}
+FLAVOR =		python3
 
 .include <bsd.port.mk>

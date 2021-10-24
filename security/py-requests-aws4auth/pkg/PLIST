@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/14 07:13:37 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/24 09:28:50 sthen Exp $
+@pkgpath security/py-requests-aws4auth
 @comment lib/python${MODPY_VERSION}/site-packages/HISTORY.rst
 @comment lib/python${MODPY_VERSION}/site-packages/LICENSE
 @comment lib/python${MODPY_VERSION}/site-packages/NOTICE

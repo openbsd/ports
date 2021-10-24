@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:13:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/10/24 09:28:50 sthen Exp $
 
 COMMENT =		PGP packet parser library for Python
 
 MODPY_EGG_VERSION =	1.5
 DISTNAME =		pgpdump-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		security
 
@@ -18,7 +18,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 # test_parse_partial_length fails due to a missing file in the sources
 do-test:

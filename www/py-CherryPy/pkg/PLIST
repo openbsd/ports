@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/02/19 23:13:07 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.14 2021/10/24 09:28:51 sthen Exp $
+@pkgpath www/py-CherryPy
 @conflict py-CherryPy-<17.4.2p1
 @conflict py-cherrypy2-*
-bin/cherryd${MODPY_BIN_SUFFIX}
+bin/cherryd
 lib/python${MODPY_VERSION}/site-packages/CherryPy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/CherryPy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/CherryPy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

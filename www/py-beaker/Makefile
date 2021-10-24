@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2021/05/21 19:50:37 kmos Exp $
+# $OpenBSD: Makefile,v 1.32 2021/10/24 09:28:51 sthen Exp $
 
 COMMENT =	session and caching library with wsgi middleware
 
 MODPY_EGG_VERSION = 1.10.0
 DISTNAME =	Beaker-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	www devel
 
@@ -20,7 +20,7 @@ MODPY_SETUPTOOLS = Yes
 MODULES =	lang/python
 
 FLAVORS=	python3
-FLAVOR?=
+FLAVOR=		python3
 
 RUN_DEPENDS =	security/py-cryptodome${MODPY_FLAVOR} 
 

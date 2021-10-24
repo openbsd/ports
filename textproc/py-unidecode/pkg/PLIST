@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/02/19 23:13:07 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/10/24 09:28:51 sthen Exp $
+@pkgpath textproc/py-unidecode
 @conflict py-unidecode-<1.1.1p1
-bin/unidecode${MODPY_BIN_SUFFIX}
+bin/unidecode
 lib/python${MODPY_VERSION}/site-packages/Unidecode-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Unidecode-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Unidecode-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

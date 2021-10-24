@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.635 2021/10/05 13:17:35 landry Exp $
+# $OpenBSD: Makefile,v 1.636 2021/10/24 09:28:46 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -270,7 +270,6 @@
      SUBDIR += py-M2Crypto,python3
      SUBDIR += py-PyNaCl
      SUBDIR += py-PyNaCl,python3
-     SUBDIR += py-aes
      SUBDIR += py-aes,python3
      SUBDIR += py-argon2-cffi,python3
      SUBDIR += py-artifacts,python3
@@ -307,19 +306,15 @@
      SUBDIR += py-pbkdf2,python3
      SUBDIR += py-pefile
      SUBDIR += py-pefile,python3
-     SUBDIR += py-pgpdump
      SUBDIR += py-pgpdump,python3
-     SUBDIR += py-potr
      SUBDIR += py-potr,python3
      SUBDIR += py-pykeepass,python3
      SUBDIR += py-pysha3
      SUBDIR += py-pyscard,python3
-     SUBDIR += py-requests-aws4auth
      SUBDIR += py-requests-aws4auth,python3
      SUBDIR += py-ropper,python3
      SUBDIR += py-rsa,python3
      SUBDIR += py-scp,python3
-     SUBDIR += py-scrypt
      SUBDIR += py-scrypt,python3
      SUBDIR += py-secretstorage,python3
      SUBDIR += py-service_identity,python3

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/03/17 07:39:58 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/24 09:28:52 sthen Exp $
+@pkgpath www/py-betamax
 lib/python${MODPY_VERSION}/site-packages/betamax/
 lib/python${MODPY_VERSION}/site-packages/betamax-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/betamax-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

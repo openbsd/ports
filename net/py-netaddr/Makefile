@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2021/05/21 19:50:33 kmos Exp $
+# $OpenBSD: Makefile,v 1.13 2021/10/24 09:28:49 sthen Exp $
 
 COMMENT =		network address representation and manipulation library
 
 MODPY_EGG_VERSION =	0.7.19
 DISTNAME =		netaddr-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		net
 
@@ -19,10 +19,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 
-FLAVOR ?=
+FLAVOR =		python3
 FLAVORS =		python3
-
-post-install:
-	mv ${PREFIX}/bin/netaddr ${PREFIX}/bin/netaddr${MODPY_BIN_SUFFIX}
 
 .include <bsd.port.mk>

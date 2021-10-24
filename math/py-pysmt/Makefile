@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2021/05/21 19:50:32 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2021/10/24 09:28:48 sthen Exp $
 
 COMMENT =		library for SMT formulae manipulation and solving
 
 MODPY_EGG_VERSION =	0.8.0
 DISTNAME =		PySMT-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		math
 
@@ -20,7 +20,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 # Explicitly not adding RUN_DEPENDS on all the supported
 # solvers. That would beat the point of this library.
@@ -28,9 +28,6 @@ FLAVOR ?=
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
 
 post-install:
-.for i in pysmt pysmt-install pysmt-shell
-	mv ${PREFIX}/bin/$i{,${MODPY_BIN_SUFFIX}}
-.endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}pysmt/
 	${INSTALL_DATA} ${WRKSRC}/README.rst \
 	    ${PREFIX}/share/doc/${MODPY_PY_PREFIX}pysmt/

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2021/05/21 19:50:33 kmos Exp $
+# $OpenBSD: Makefile,v 1.27 2021/10/24 09:28:49 sthen Exp $
 
 COMMENT =		FTP server library for Python
 
 MODPY_EGG_VERSION =	1.5.6
 DISTNAME =		pyftpdlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-ftpdlib-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		net devel
 
@@ -21,11 +21,8 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 NO_TEST =		Yes
-
-post-install:
-	mv ${PREFIX}/bin/ftpbench ${PREFIX}/bin/ftpbench${MODPY_BIN_SUFFIX}
 
 .include <bsd.port.mk>

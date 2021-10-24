@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/06/15 06:36:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/10/24 09:28:49 sthen Exp $
+@pkgpath net/py-pf
 lib/python${MODPY_VERSION}/site-packages/pf/
 lib/python${MODPY_VERSION}/site-packages/pf/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pf/${MODPY_PYCACHE}/

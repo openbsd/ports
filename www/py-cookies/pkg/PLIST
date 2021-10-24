@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/07 21:50:47 kmos Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/24 09:28:52 sthen Exp $
+@pkgpath www/py-cookies
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}cookies.${MODPY_PYC_MAGIC_TAG}pyc
 @comment lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}test_cookies.cpython-37-PYTEST.pyc
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}test_cookies.${MODPY_PYC_MAGIC_TAG}pyc

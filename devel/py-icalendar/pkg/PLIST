@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/02/19 23:13:01 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/10/24 09:28:48 sthen Exp $
+@pkgpath devel/py-icalendar
 @conflict py-icalendar-<4.0.4p1
-bin/icalendar${MODPY_BIN_SUFFIX}
+bin/icalendar
 lib/python${MODPY_VERSION}/site-packages/icalendar/
 lib/python${MODPY_VERSION}/site-packages/icalendar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/icalendar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

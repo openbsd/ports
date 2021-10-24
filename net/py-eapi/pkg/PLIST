@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/25 14:20:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/24 09:28:49 sthen Exp $
+@pkgpath net/py-eapi
 lib/python${MODPY_VERSION}/site-packages/pyeapi/
 lib/python${MODPY_VERSION}/site-packages/pyeapi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pyeapi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

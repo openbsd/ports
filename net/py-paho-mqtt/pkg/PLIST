@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/04/23 21:13:07 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/10/24 09:28:49 sthen Exp $
+@pkgpath net/py-paho-mqtt
 lib/python${MODPY_VERSION}/site-packages/paho/
 lib/python${MODPY_VERSION}/site-packages/paho/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/paho/${MODPY_PYCACHE}/

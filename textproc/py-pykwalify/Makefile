@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2021/05/21 19:50:37 kmos Exp $
+# $OpenBSD: Makefile,v 1.8 2021/10/24 09:28:50 sthen Exp $
 
 COMMENT =		lib/cli for JSON/YAML schema validation
 
 MODPY_EGG_VERSION =	1.6.0
-REVISION =		4
+REVISION =		5
 DISTNAME =		pykwalify-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -17,13 +17,10 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \
 			devel/py-docopt${MODPY_FLAVOR} \
 			textproc/py-yaml${MODPY_FLAVOR}
-
-post-install:
-	mv ${PREFIX}/bin/pykwalify{,${MODPY_BIN_SUFFIX}}
 
 .include <bsd.port.mk>

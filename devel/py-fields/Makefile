@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2021/05/21 19:50:25 kmos Exp $
+# $OpenBSD: Makefile,v 1.5 2021/10/24 09:28:47 sthen Exp $
 
 COMMENT =		container class boilerplate killer
 
 MODPY_EGG_VERSION =	5.0.0
 DISTNAME =		fields-${MODPY_EGG_VERSION}
 PKGNAME =		py-fields-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		devel
 
@@ -22,7 +22,7 @@ MODPY_PI =		Yes
 MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 TEST_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
 			devel/py-characteristic${MODPY_FLAVOR} \

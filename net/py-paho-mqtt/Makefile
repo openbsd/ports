@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2021/05/21 19:50:33 kmos Exp $
+# $OpenBSD: Makefile,v 1.12 2021/10/24 09:28:49 sthen Exp $
 
 COMMENT =		MQTT Python client library
 
 MODPY_EGG_VERSION =	1.5.1
 DISTNAME =		paho-mqtt-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		http://www.eclipse.org/paho/clients/python/
 
@@ -19,7 +19,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 MODPY_ADJ_FILES =	examples/*.py
 

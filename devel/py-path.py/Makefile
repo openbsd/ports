@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2021/05/21 19:50:27 kmos Exp $
+# $OpenBSD: Makefile,v 1.18 2021/10/24 09:28:48 sthen Exp $
 
 COMMENT =		os.path wrapper for Python
 
 MODPY_EGG_VERSION =	10.3.1
 DISTNAME =		path.py-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		devel
 
@@ -25,6 +25,6 @@ BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-appdirs${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 .include <bsd.port.mk>

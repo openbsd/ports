@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/01/04 14:06:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/10/24 09:28:51 sthen Exp $
+@pkgpath textproc/py-ruamel.yaml
 @so lib/python${MODPY_VERSION}/site-packages/_ruamel_yaml.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/ruamel/
 lib/python${MODPY_VERSION}/site-packages/ruamel.yaml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth

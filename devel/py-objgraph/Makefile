@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2021/05/21 19:50:27 kmos Exp $
+# $OpenBSD: Makefile,v 1.7 2021/10/24 09:28:48 sthen Exp $
 
 COMMENT =		draw Python object reference graphs
 
 MODPY_EGG_VERSION =	3.4.1
 DISTNAME =		objgraph-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		devel
 
@@ -15,7 +15,7 @@ HOMEPAGE =		https://mg.pov.lt/objgraph/
 PERMIT_PACKAGE =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 MODULES =		lang/python
 MODPY_PI =		Yes

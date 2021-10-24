@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/02/19 23:13:07 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/10/24 09:28:52 sthen Exp $
+@pkgpath www/py-cheroot
 @conflict py-cheroot-<8.2.1p2
-bin/cheroot${MODPY_BIN_SUFFIX}
+bin/cheroot
 lib/python${MODPY_VERSION}/site-packages/cheroot/
 lib/python${MODPY_VERSION}/site-packages/cheroot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cheroot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/22 10:58:40 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/24 09:28:48 sthen Exp $
+@pkgpath math/py-affine
 lib/python${MODPY_VERSION}/site-packages/affine/
 lib/python${MODPY_VERSION}/site-packages/affine-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/affine-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

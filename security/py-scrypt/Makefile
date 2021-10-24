@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2021/07/15 17:06:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/10/24 09:28:50 sthen Exp $
 
 COMMENT =	support for the scrypt key derivation function
 
 MODPY_EGG_VERSION =	0.8.18
+REVISION =	0
 
 DISTNAME =	scrypt-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
@@ -22,6 +23,6 @@ MODPY_PYTEST =		Yes
 TEST_ENV =		PY_IGNORE_IMPORTMISMATCH=1
 
 FLAVORS =	python3
-FLAVOR ?=
+FLAVOR =	python3
 
 .include <bsd.port.mk>

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2021/05/21 19:50:32 kmos Exp $
+# $OpenBSD: Makefile,v 1.16 2021/10/24 09:28:48 sthen Exp $
 
 COMMENT =		simple Python interface for Graphviz
 
 MODPY_EGG_VERSION =	0.14.1
 DISTNAME =		graphviz-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		math
 
@@ -20,7 +20,7 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
 			devel/py-test-cov${MODPY_FLAVOR} \

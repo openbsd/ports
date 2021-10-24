@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.429 2021/10/11 09:36:30 kn Exp $
+# $OpenBSD: Makefile,v 1.430 2021/10/24 09:28:46 sthen Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -179,7 +179,6 @@
      SUBDIR += py-puppetdb,python3
      SUBDIR += py-pygresql,python3
      SUBDIR += py-pymysql,python3
-     SUBDIR += py-redis
      SUBDIR += py-redis,python3
      SUBDIR += py-sql
      SUBDIR += py-sql,python3

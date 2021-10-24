@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/01/24 11:04:50 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/10/24 09:28:52 sthen Exp $
+@pkgpath www/py-httplib2
 lib/python${MODPY_VERSION}/site-packages/httplib2/
 lib/python${MODPY_VERSION}/site-packages/httplib2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/httplib2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

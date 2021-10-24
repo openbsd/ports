@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2021/05/21 19:50:37 kmos Exp $
+# $OpenBSD: Makefile,v 1.30 2021/10/24 09:28:51 sthen Exp $
 
 COMMENT=	pythonic, object-oriented web development framework
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION=	17.4.2
 DISTNAME=		CherryPy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		www
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=	https://www.cherrypy.org/
 
@@ -33,13 +33,6 @@ TEST_DEPENDS=	devel/py-path.py${MODPY_FLAVOR} \
 		www/py-requests-toolbelt${MODPY_FLAVOR}
 
 FLAVORS=	python3
-FLAVOR?=
-
-.if !${FLAVOR:Mpython3}
-TEST_DEPENDS+=	devel/py-mock
-.endif
-
-post-install:
-	mv ${PREFIX}/bin/cherryd ${PREFIX}/bin/cherryd${MODPY_BIN_SUFFIX}
+FLAVOR=		python3
 
 .include <bsd.port.mk>

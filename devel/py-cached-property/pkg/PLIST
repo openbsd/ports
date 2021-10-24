@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/16 18:25:10 danj Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/24 09:28:47 sthen Exp $
+@pkgpath devel/py-cached-property
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}cached_property.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cached_property-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cached_property-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

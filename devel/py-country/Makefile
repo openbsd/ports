@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2021/05/21 19:50:24 kmos Exp $
+# $OpenBSD: Makefile,v 1.32 2021/10/24 09:28:47 sthen Exp $
 
 COMMENT =		country, language, currency and scripts definitions
 
 MODPY_EGG_VERSION =	19.8.18
 DISTNAME =		pycountry-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 
@@ -21,10 +21,7 @@ MODPY_PYTEST_ARGS =	src
 
 TEST_ENV =		PYTHONPATH=${WRKSRC}/lib
 
-# Upstream has "dropped support" for python2, but it still
-# works, but it should be checked before future updates
-
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 .include <bsd.port.mk>

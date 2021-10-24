@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2021/05/21 19:50:25 kmos Exp $
+# $OpenBSD: Makefile,v 1.10 2021/10/24 09:28:47 sthen Exp $
 
 COMMENT =		python package that provides useful locks
 
 MODPY_EGG_VERSION =	0.15
 DISTNAME =		fasteners-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 
@@ -22,17 +22,11 @@ MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	fasteners
 
 FLAVORS =		python3
-FLAVOR ?=
-
+FLAVOR =		python3
 
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
 
 TEST_DEPENDS =		devel/py-pbr${MODPY_FLAVOR} \
 			devel/py-testtools${MODPY_FLAVOR}
-
-.if !${FLAVOR:Mpython3}
-RUN_DEPENDS  +=		devel/py-monotonic
-TEST_DEPENDS +=		devel/py-futures
-.endif
 
 .include <bsd.port.mk>

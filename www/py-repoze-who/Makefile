@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2021/05/21 19:50:38 kmos Exp $
+# $OpenBSD: Makefile,v 1.12 2021/10/24 09:28:53 sthen Exp $
 
 COMMENT =	identification and authentication framework for WSGI
 
 MODPY_EGG_VERSION = 2.2
 DISTNAME =	repoze.who-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/./-/}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	www devel
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =	lang/python
 
 FLAVORS =	python3
-FLAVOR ?=
+FLAVOR =	python3
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes

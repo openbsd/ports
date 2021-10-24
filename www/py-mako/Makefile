@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2021/05/21 19:50:38 kmos Exp $
+# $OpenBSD: Makefile,v 1.31 2021/10/24 09:28:52 sthen Exp $
 
 COMMENT =	super-fast templating language
 
 MODPY_EGG_VERSION = 	1.1.1
 DISTNAME =		Mako-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		www
 
@@ -21,19 +21,11 @@ MODPY_PYTEST =		Yes
 MODULES =		lang/python
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 RUN_DEPENDS =		textproc/py-MarkupSafe${MODPY_FLAVOR} \
 			www/py-beaker${MODPY_FLAVOR}
 
 TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR}
-
-.if !${FLAVOR:Mpython3}
-TEST_DEPENDS +=		devel/py-mock
-.endif
-
-post-install:
-	mv ${PREFIX}/bin/mako-render \
-		${PREFIX}/bin/mako-render${MODPY_BIN_SUFFIX}
 
 .include <bsd.port.mk>

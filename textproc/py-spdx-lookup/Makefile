@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2021/05/21 19:50:37 kmos Exp $
+# $OpenBSD: Makefile,v 1.8 2021/10/24 09:28:51 sthen Exp $
 
 COMMENT =		SPDX license list query tool
 
 MODPY_EGG_VERSION =	0.3.2
 DISTNAME =		spdx-lookup-${MODPY_EGG_VERSION}
 PKGNAME =		py-spdx-lookup-${MODPY_EGG_VERSION}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		textproc
 
@@ -19,14 +19,9 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PI =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 RUN_DEPENDS =		textproc/py-spdx${MODPY_FLAVOR}
-
-post-install:
-	for i in ${PREFIX}/bin/*; do \
-		mv $${i} $${i}${MODPY_BIN_SUFFIX} ;\
-	done
 
 NO_TEST =		No tests written by upstream
 

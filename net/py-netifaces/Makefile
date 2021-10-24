@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/05/21 19:50:33 kmos Exp $
+# $OpenBSD: Makefile,v 1.12 2021/10/24 09:28:49 sthen Exp $
 
 COMMENT =	portable network interface information
 
@@ -7,7 +7,7 @@ CATEGORIES =	net
 MODPY_EGG_VERSION = 0.10.9
 DISTNAME =	netifaces-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	3
+REVISION =	4
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -17,7 +17,7 @@ WANTLIB += pthread ${MODPY_WANTLIB}
 MODULES =	lang/python
 
 FLAVORS =	python3
-FLAVOR ?=
+FLAVOR =	python3
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes

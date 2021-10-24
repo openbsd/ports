@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2021/05/21 19:50:37 kmos Exp $
+# $OpenBSD: Makefile,v 1.21 2021/10/24 09:28:51 sthen Exp $
 
 COMMENT =		iCalendar library for Python
 
 MODPY_EGG_VERSION =	0.9.6.1
 DISTNAME =		vobject-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES=		textproc devel
 
@@ -19,7 +19,7 @@ MASTER_SITES=		${HOMEPAGE}
 MODULES=		lang/python
 MODPY_PI=		Yes
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 MODPY_SETUPTOOLS=	Yes
 MODPY_PYTEST =		Yes
@@ -28,10 +28,5 @@ MODPY_PYTEST_ARGS =	tests.py
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/py-dateutil${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR}
-
-post-install:
-.for b in change_tz ics_diff
-	mv ${PREFIX}/bin/$b{,${MODPY_BIN_SUFFIX}}
-.endfor
 
 .include <bsd.port.mk>

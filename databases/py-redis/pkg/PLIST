@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/02/16 13:02:19 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/10/24 09:28:47 sthen Exp $
+@pkgpath databases/py-redis
 lib/python${MODPY_VERSION}/site-packages/redis/
 lib/python${MODPY_VERSION}/site-packages/redis-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/redis-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

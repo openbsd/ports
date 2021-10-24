@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1272 2021/10/22 20:49:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.1273 2021/10/24 09:28:46 sthen Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -552,13 +552,11 @@
      SUBDIR += purple-rocketchat
      SUBDIR += putty
      SUBDIR += py-IOSXR,python3
-     SUBDIR += py-IP
      SUBDIR += py-IP,python3
      SUBDIR += py-aiodns,python3
      SUBDIR += py-boto3,python3
      SUBDIR += py-botocore,python3
      SUBDIR += py-cares,python3
-     SUBDIR += py-curl
      SUBDIR += py-curl,python3
      SUBDIR += py-cymruwhois
      SUBDIR += py-cymruwhois,python3
@@ -568,9 +566,7 @@
      SUBDIR += py2-dnspython
      SUBDIR += py-dnspython,python3
      SUBDIR += py-dpkt
-     SUBDIR += py-eapi
      SUBDIR += py-eapi,python3
-     SUBDIR += py-ftpdlib
      SUBDIR += py-ftpdlib,python3
      SUBDIR += py-geventhttpclient,python3
      SUBDIR += py-idna
@@ -588,27 +584,20 @@
      SUBDIR += py-msgpack,python3
      SUBDIR += py-nbxmpp,python3
      SUBDIR += py-ncclient,python3
-     SUBDIR += py-netaddr
      SUBDIR += py-netaddr,python3
-     SUBDIR += py-netifaces
      SUBDIR += py-netifaces,python3
      SUBDIR += py-netmiko,python3
      SUBDIR += py-nmap
      SUBDIR += py-nxos,python3
-     SUBDIR += py-paho-mqtt
      SUBDIR += py-paho-mqtt,python3
      SUBDIR += py-pcapy,python3
-     SUBDIR += py-pf
      SUBDIR += py-pf,python3
-     SUBDIR += py-portend
      SUBDIR += py-portend,python3
      SUBDIR += py-ripe.atlas.cousteau,python3
      SUBDIR += py-ripe.atlas.sagan,python3
      SUBDIR += py-ripe.atlas.tools
-     SUBDIR += py-rrdtool
      SUBDIR += py-rrdtool,python3
      SUBDIR += py-s3transfer,python3
-     SUBDIR += py-simplesoap
      SUBDIR += py-simplesoap,python3
      SUBDIR += py-siphon,python3
      SUBDIR += py-slixmpp,python3

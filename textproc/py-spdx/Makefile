@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2021/05/21 19:50:37 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2021/10/24 09:28:51 sthen Exp $
 
 COMMENT =		SPDX license list database
 
 MODPY_EGG_VERSION =	2.5.0
 DISTNAME =		spdx-${MODPY_EGG_VERSION}
 PKGNAME =		py-spdx-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		textproc
 
@@ -19,6 +19,6 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PI =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 .include <bsd.port.mk>

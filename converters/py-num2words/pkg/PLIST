@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/06/15 12:13:04 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/24 09:28:47 sthen Exp $
+@pkgpath converters/py-num2words
+@conflict py-num2words-*
 bin/num2words
 lib/python${MODPY_VERSION}/site-packages/num2words/
 lib/python${MODPY_VERSION}/site-packages/num2words-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2021/05/21 19:50:36 kmos Exp $
+# $OpenBSD: Makefile,v 1.20 2021/10/24 09:28:50 sthen Exp $
 
 COMMENT=	Python library to manipulate gettext files
 
 MODPY_EGG_VERSION =	1.1.0
 DISTNAME =	polib-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES=	textproc devel
 
@@ -17,7 +17,7 @@ MODPY_PI=	Yes
 
 MODPY_SETUPTOOLS = Yes
 
-FLAVOR ?=
+FLAVOR =	python3
 FLAVORS =	python3
 
 # only used on test, but poisoned if not in BUILD_DEPENDS

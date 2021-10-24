@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2021/07/21 18:31:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.107 2021/10/24 09:28:46 sthen Exp $
 
     SUBDIR =
     SUBDIR += base64
@@ -76,7 +76,6 @@
     SUBDIR += pflogx
     SUBDIR += ppmtoTbmp
     SUBDIR += py-html2text,python3
-    SUBDIR += py-num2words
     SUBDIR += py-num2words,python3
     SUBDIR += qprint
     SUBDIR += recode

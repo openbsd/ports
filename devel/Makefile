@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2135 2021/10/21 20:41:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.2136 2021/10/24 09:28:46 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1331,7 +1331,6 @@
      SUBDIR += py-buildbot
      SUBDIR += py-buildslave
      SUBDIR += py-bytecodeassembler
-     SUBDIR += py-cached-property
      SUBDIR += py-cached-property,python3
      SUBDIR += py-cachetools,python3
      SUBDIR += py-cairocffi
@@ -1364,11 +1363,9 @@
      SUBDIR += py-contextlib2,python3
      SUBDIR += py-cooldict
      SUBDIR += py-cooldict,python3
-     SUBDIR += py-country
      SUBDIR += py-country,python3
      SUBDIR += py-coverage
      SUBDIR += py-coverage,python3
-     SUBDIR += py-coveralls
      SUBDIR += py-coveralls,python3
      SUBDIR += py-cparser
      SUBDIR += py-cparser,python3
@@ -1408,11 +1405,9 @@
      SUBDIR += py-execnet,python3
      SUBDIR += py-extras
      SUBDIR += py-extras,python3
-     SUBDIR += py-fasteners
      SUBDIR += py-fasteners,python3
      SUBDIR += py-fastimport,python3
      SUBDIR += py-faulthandler
-     SUBDIR += py-fields
      SUBDIR += py-fields,python3
      SUBDIR += py-filebytes
      SUBDIR += py-filebytes,python3
@@ -1450,11 +1445,9 @@
      SUBDIR += py-hachoir-metadata
      SUBDIR += py-hachoir-parser
      SUBDIR += py-hamcrest,python3
-     SUBDIR += py-html5lib
      SUBDIR += py-html5lib,python3
      SUBDIR += py-hypothesis
      SUBDIR += py-hypothesis,python3
-     SUBDIR += py-icalendar
      SUBDIR += py-icalendar,python3
      SUBDIR += py-importlib_resources,python3
      SUBDIR += py-importlib-metadata,python3
@@ -1524,13 +1517,11 @@
      SUBDIR += py-nose-warnings-filters,python3
      SUBDIR += py-nosexcover
      SUBDIR += py-nosexcover,python3
-     SUBDIR += py-objgraph
      SUBDIR += py-objgraph,python3
      SUBDIR += py-olefile
      SUBDIR += py-olefile,python3
      SUBDIR += py-parallel
      SUBDIR += py-parallel,python3
-     SUBDIR += py-parsedatetime
      SUBDIR += py-parsedatetime,python3
      SUBDIR += py-parsing
      SUBDIR += py-parsing,python3
@@ -1578,11 +1569,10 @@
      SUBDIR += py-python2-pythondialog
      SUBDIR += py-qt-builder,python3
      SUBDIR += py-r2pipe,python3
-     SUBDIR += py-radix
      SUBDIR += py-radix,python3
      SUBDIR += py-rcsparse
      SUBDIR += py-rcsparse,python3
-     SUBDIR += py-regex,python3 
+     SUBDIR += py-regex,python3
      SUBDIR += py-rencode
      SUBDIR += py-rencode,python3
      SUBDIR += py-resolvelib,python3
@@ -1719,7 +1709,6 @@
      SUBDIR += py-yamllint,python3
      SUBDIR += py-yapf
      SUBDIR += py-yapf,python3
-     SUBDIR += py-zc-lockfile
      SUBDIR += py-zc-lockfile,python3
      SUBDIR += py-zipp,python3
      SUBDIR += py-zopecomponent,python3

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/05/21 19:50:38 kmos Exp $
+# $OpenBSD: Makefile,v 1.4 2021/10/24 09:28:52 sthen Exp $
 
 COMMENT =	friendlier RFC 6265-compliant cookie parser/renderer
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	2.2.1
 
 DISTNAME =		cookies-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		www
 
@@ -25,6 +25,6 @@ MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	lib
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 .include <bsd.port.mk>

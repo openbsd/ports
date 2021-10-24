@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2021/05/21 19:50:39 kmos Exp $
+# $OpenBSD: Makefile,v 1.5 2021/10/24 09:28:53 sthen Exp $
 
 COMMENT =		modern CSS selector implementation for Beautiful Soup
 
 MODPY_EGG_VERSION =	1.9.5
 DISTNAME =		soupsieve-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		www
 
@@ -21,16 +21,12 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR} \
 			devel/py-html5lib${MODPY_FLAVOR} \
 			devel/py-test-cov${MODPY_FLAVOR} \
 			textproc/py-lxml${MODPY_FLAVOR} \
 			www/py-beautifulsoup4${MODPY_FLAVOR}
-
-.if !${FLAVOR:Mpython3}
-RUN_DEPENDS +=		devel/py-backports-functools-lru-cache
-.endif
 
 .include <bsd.port.mk>

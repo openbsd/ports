@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/05/21 19:50:32 kmos Exp $
+# $OpenBSD: Makefile,v 1.9 2021/10/24 09:28:48 sthen Exp $
 
 COMMENT =		matrices describing affine transformation of the plane
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	2.3.0
 DISTNAME =		affine-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		1
+REVISION =		2
 
 MAINTAINER =		Martin Reindl <martin@catai.org>
 
@@ -22,6 +22,6 @@ MODPY_PYTEST =		Yes
 TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 .include <bsd.port.mk>

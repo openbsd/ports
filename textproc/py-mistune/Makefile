@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2021/05/21 19:50:36 kmos Exp $
+# $OpenBSD: Makefile,v 1.12 2021/10/24 09:28:50 sthen Exp $
 
 COMMENT =		markdown parser for Python
 
 MODPY_EGG_VERSION =	0.8.4
 DISTNAME =		mistune-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc
 
@@ -21,6 +21,6 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 .include <bsd.port.mk>

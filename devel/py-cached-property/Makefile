@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2021/05/21 19:50:24 kmos Exp $
+# $OpenBSD: Makefile,v 1.7 2021/10/24 09:28:47 sthen Exp $
 
 COMMENT =	decorator for caching properties in classes
 
 MODPY_EGG_VERSION = 1.5.1
 DISTNAME =	cached-property-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	devel
 
@@ -19,7 +19,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =	python3
-FLAVOR ?=
+FLAVOR =	python3
 
 TEST_DEPENDS +=		devel/py-freezegun${MODPY_FLAVOR} \
 			devel/py-dateutil${MODPY_FLAVOR}
