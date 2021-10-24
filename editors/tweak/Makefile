@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2021/01/14 21:55:21 fcambus Exp $
+# $OpenBSD: Makefile,v 1.9 2021/10/24 10:06:59 fcambus Exp $
 
 COMMENT =	efficient hex editor
 
 DISTNAME =	tweak-3.02
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	editors
 

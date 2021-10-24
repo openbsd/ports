@@ -1,0 +1,96 @@
+$OpenBSD: patch-keytab_c,v 1.1 2021/10/24 10:06:59 fcambus Exp $
+
+Fix buffer overflow in 'unknown key sequence' error report.
+
+Upstream commit ad97e1337e1e1df934b7f3674fa6c9f7e8eb603f.
+
+Index: keytab.c
+--- keytab.c.orig
++++ keytab.c
+@@ -1,5 +1,6 @@
+ #include "tweak.h"
+ 
++#include <stdbool.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+@@ -61,16 +62,33 @@ void bind_key (char *sequence, int len, keyact action)
+ /*
+  * Format an ASCII code into a printable description of the key stroke.
+  */
+-static void strkey (char *s, int k) {
+-    k &= 255;			       /* force unsigned */
+-    if (k==27)
+-	strcpy(s, " ESC");
+-    else if (k<32 || k==127)
+-	sprintf(s, " ^%c", k ^ 64);
+-    else if (k<127)
+-	sprintf(s, " %c", k);
+-    else
+-	sprintf(s, " <0x%2X>", k);
++struct strkey_state {
++    char *s, *end;
++    bool truncated;
++};
++static void strkey (struct strkey_state *sks, int k) {
++    char thisbuf[32];
++
++    if (sks->truncated)
++        return;
++
++    if (sks->end - sks->s < 16) {
++        sks->truncated = true;
++        strcpy(thisbuf, " ...");
++    } else {
++        k &= 255;			       /* force unsigned */
++        if (k==27)
++            strcpy(thisbuf, " ESC");
++        else if (k<32 || k==127)
++            sprintf(thisbuf, " ^%c", k ^ 64);
++        else if (k<127)
++            sprintf(thisbuf, " %c", k);
++        else
++            sprintf(thisbuf, " <0x%2X>", k);
++    }
++
++    strcpy(sks->s, thisbuf);
++    sks->s += strlen(sks->s);
+ }
+ 
+ /*
+@@ -89,12 +107,18 @@ void proc_key (void) {
+     safe_update = FALSE;
+ #endif
+     strcpy(message, "Unknown key sequence");
+-    strkey(message+strlen(message), last_char);
++
++    struct strkey_state sks;
++    sks.s = message + strlen(message);
++    sks.end = message + sizeof(message);
++    sks.truncated = false;
++
++    strkey(&sks, last_char);
+     kt = base[(unsigned char) last_char];
+     if (!kt) {
+ 	display_beep();
+ 	while (display_input_to_flush())
+-	    strkey(message+strlen(message), display_getkey());
++	    strkey(&sks, display_getkey());
+ 	return;
+     }
+ 
+@@ -108,12 +132,12 @@ void proc_key (void) {
+ #if defined(unix) && !defined(GO32)
+ 	safe_update = FALSE;
+ #endif
+-	strkey(message+strlen(message), last_char);
++	strkey(&sks, last_char);
+ 	kt = kt->e.extended[(unsigned char) last_char];
+ 	if (!kt) {
+ 	    display_beep();
+ 	    while (display_input_to_flush())
+-		strkey(message+strlen(message), display_getkey());
++		strkey(&sks, display_getkey());
+ 	    return;
+ 	}
+     }
