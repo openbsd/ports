@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/10/23 06:56:16 kmos Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/10/24 16:52:31 kmos Exp $
 @conflict py-responses-<0.12.0
 @pkgpath www/py-responses
 lib/python${MODPY_VERSION}/site-packages/responses/
@@ -13,7 +13,6 @@ lib/python${MODPY_VERSION}/site-packages/responses/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/responses/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/responses/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/responses/${MODPY_PYCACHE}matchers.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/responses/${MODPY_PYCACHE}test_responses.cpython-38-PYTEST.pyc
 lib/python${MODPY_VERSION}/site-packages/responses/${MODPY_PYCACHE}test_responses.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/responses/matchers.py
 lib/python${MODPY_VERSION}/site-packages/responses/test_responses.py
