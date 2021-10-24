@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2136 2021/10/24 09:28:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.2137 2021/10/24 22:51:16 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1526,7 +1526,6 @@
      SUBDIR += py-parsing
      SUBDIR += py-parsing,python3
      SUBDIR += py-parso,python3
-     SUBDIR += py-path.py
      SUBDIR += py-path.py,python3
      SUBDIR += py-pathlib
      SUBDIR += py-pathlib,python3

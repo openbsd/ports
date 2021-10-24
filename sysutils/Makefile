@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.617 2021/10/15 11:17:04 denis Exp $
+# $OpenBSD: Makefile,v 1.618 2021/10/24 22:51:16 sthen Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -92,7 +92,7 @@
      SUBDIR += exfat-fuse
      SUBDIR += exa
      SUBDIR += exoscale-cli
-     #SUBDIR += fabric
+     SUBDIR += fabric
      SUBDIR += facter
      SUBDIR += facette
      SUBDIR += faubackup
@@ -286,7 +286,7 @@
      SUBDIR += py-filelock,python3
      SUBDIR += py-ghmi,python3
      SUBDIR += py-hpilo,python3
-     SUBDIR += py-joblib
+     SUBDIR += py-joblib,python3
      SUBDIR += py-lockfile,python3
      SUBDIR += py-packaging
      SUBDIR += py-packaging,python3

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.464 2021/10/24 22:44:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.465 2021/10/24 22:51:16 sthen Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -193,7 +193,7 @@
      SUBDIR += py-discid,python3
      SUBDIR += py-discogs-client,python3
      SUBDIR += py-eyed3		# standalone, uses py3
-     SUBDIR += py-fsb5
+     SUBDIR += py-fsb5,python3
      SUBDIR += py-last,python3
      SUBDIR += py-mpd2,python3
      SUBDIR += py-musicbrainzngs,python3

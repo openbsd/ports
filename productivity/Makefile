@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2021/10/09 05:58:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.102 2021/10/24 22:51:16 sthen Exp $
 
      SUBDIR =
      SUBDIR += aqbanking
@@ -33,7 +33,7 @@
      SUBDIR += p5-Business-Tax-VAT-Validation
      SUBDIR += p5-iCal-Parser
      SUBDIR += projectlibre
-     SUBDIR += py-tasklib
+     SUBDIR += py-tasklib,python3
      SUBDIR += qbirthday
      SUBDIR += radicale
      SUBDIR += radicale2

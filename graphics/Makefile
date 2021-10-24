@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.562 2021/10/17 21:14:09 espie Exp $
+# $OpenBSD: Makefile,v 1.563 2021/10/24 22:51:16 sthen Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -246,7 +246,7 @@
      SUBDIR += povray
      SUBDIR += pqiv
      SUBDIR += pstoedit
-     SUBDIR += py-blurhash
+     SUBDIR += py-blurhash,python3
      SUBDIR += py2-Pillow
      SUBDIR += py-Pillow,python3
      SUBDIR += py-cairo,python3
