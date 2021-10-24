@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.85 2021/10/03 19:53:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2021/10/24 08:55:04 ajacoutot Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
 DISTNAME=		libvirt-7.8.0
+REVISION=		0
 
 CATEGORIES=		sysutils devel emulators
 
@@ -19,7 +20,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curl gio-2.0 glib-2.0 gnutls gobject-2.0 intl m pthread
-WANTLIB += util xml2 yajl
+WANTLIB += sasl2 ssh2 util xml2 yajl
 
 MASTER_SITES=		https://libvirt.org/sources/
 EXTRACT_SUFX=		.tar.xz
@@ -43,7 +44,9 @@ BUILD_DEPENDS +=	textproc/libxslt
 LIB_DEPENDS=		devel/glib2 \
 			devel/libyajl \
 			net/curl \
+			security/cyrus-sasl2 \
 			security/gnutls \
+			security/libssh2 \
 			textproc/libxml
 
 # disable until proven useful
@@ -66,7 +69,7 @@ DISABLED_FEATURES=	wireshark_dissector apparmor attr audit capng fuse \
 			driver_qemu secdriver_apparmor secdriver_selinux \
 			login_shell driver_network nss sysctl_config \
 			git_werror libnl apparmor_profiles sanlock firewalld \
-			firewalld_zone driver_remote
+			firewalld_zone
 
 CONFIGURE_ARGS=		-Dinit_script=none
 

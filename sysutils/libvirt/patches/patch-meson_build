@@ -1,4 +1,4 @@
-$OpenBSD: patch-meson_build,v 1.8 2021/10/03 19:53:21 ajacoutot Exp $
+$OpenBSD: patch-meson_build,v 1.9 2021/10/24 08:55:04 ajacoutot Exp $
 
 -fexceptions:
 ld: error: undefined symbol: _Unwind_Resume
@@ -28,6 +28,15 @@ Index: meson.build
  
  libvirt_no_indirect = cc.get_supported_link_arguments([
    '-Wl,--no-copy-dt-needed-entries',
+@@ -860,7 +854,7 @@ if host_machine.system() == 'windows'
+   xdr_dep = cc.find_library('portablexdr', required: false)
+ elif host_machine.system() == 'linux'
+   xdr_dep = dependency('libtirpc', required: false)
+-elif host_machine.system() in [ 'freebsd', 'darwin' ]
++elif host_machine.system() in [ 'freebsd', 'darwin', 'openbsd' ]
+   xdr_dep = cc.find_library('c', required: false)
+ else
+   xdr_dep = dependency('', required: false)
 @@ -949,12 +943,15 @@ if devmapper_dep.found()
    conf.set('WITH_DEVMAPPER', 1)
  endif
