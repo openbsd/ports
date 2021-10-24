@@ -1,0 +1,14 @@
+$OpenBSD: patch-nsdejavu_npsdk_prcpucfg_h,v 1.1 2021/10/24 17:57:01 jca Exp $
+
+Index: nsdejavu/npsdk/prcpucfg.h
+--- nsdejavu/npsdk/prcpucfg.h.orig
++++ nsdejavu/npsdk/prcpucfg.h
+@@ -514,7 +514,7 @@
+ #define PR_BYTES_PER_WORD_LOG2   2
+ #define PR_BYTES_PER_DWORD_LOG2  3
+ 
+-#elif defined(__aarch64__)
++#elif defined(__aarch64__) || (defined(__riscv) && (__riscv_xlen == 64))
+ 
+ #define IS_LITTLE_ENDIAN 1
+ #undef  IS_BIG_ENDIAN
