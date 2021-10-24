@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2021/10/24 09:28:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/10/24 23:01:24 sthen Exp $
 
 COMMENT =		easy whitelist-based HTML-sanitizing tool
 
-MODPY_EGG_VERSION =	2.0.0
+MODPY_EGG_VERSION =	4.1.0
 DISTNAME =		bleach-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		www
-REVISION =		4
 
 HOMEPAGE =		https://github.com/mozilla/bleach
 
@@ -22,8 +21,9 @@ MODPY_PYTEST =		Yes
 FLAVORS =		python3
 FLAVOR =		python3
 
-RUN_DEPENDS =		devel/py-html5lib${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
+			sysutils/py-packaging${MODPY_FLAVOR} \
+			textproc/py-webencodings${MODPY_FLAVOR}
 BUILD_DEPENDS =		devel/py-test-runner${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
