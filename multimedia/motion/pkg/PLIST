@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/02/14 10:29:25 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/10/24 10:03:28 sthen Exp $
 @pkgpath multimedia/motion,bktr${FLAVOR_COMMA}
 @newgroup _motion:808
 @newuser _motion:808:_motion:daemon:motion user:/nonexistent:/sbin/nologin
@@ -7,7 +7,6 @@
 @bin bin/motion
 @man man/man1/motion.1
 share/doc/motion/
-share/doc/motion/COPYING
 share/doc/motion/CREDITS
 share/doc/motion/mask1.png
 share/doc/motion/motion_build.html
