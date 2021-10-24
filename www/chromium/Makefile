@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.589 2021/10/20 10:27:44 robert Exp $
+# $OpenBSD: Makefile,v 1.590 2021/10/24 15:44:06 daniel Exp $
 
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
 
@@ -16,6 +16,7 @@ COMMENT=		Chromium browser
 V=			95.0.4638.54
 
 DISTNAME=		chromium-${V}
+REVISION=		0
 
 DISTFILES+=		chromium-${V}${EXTRACT_SUFX}
 
@@ -38,7 +39,6 @@ MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official
 MASTER_SITES0=	http://nerd.hu/distfiles/
 
 MODULES=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 COMPILER =	base-clang ports-clang ports-gcc
 
@@ -92,7 +92,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		sysutils/pciutils \
 		devel/ninja \
 		x11/gtk+3 \
-		x11/py-xcbgen \
+		x11/py-xcbgen${MODPY_FLAVOR} \
 		${MODGCC4_CPPDEP}
 LIB_DEPENDS=	devel/harfbuzz \
 		graphics/tiff \
