@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/10/23 16:02:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/10/24 14:27:42 sthen Exp $
 
 COMMENT-main=	dynamic web application server
 COMMENT-perl=	NGINX Unit perl module
@@ -79,7 +79,7 @@ CONFIGURE_ENV+=	PYTHON=${MODPY_BIN} \
 LIB_DEPENDS-python= ${MODPY_LIB_DEPENDS}
 RUN_DEPENDS-python= ${MODPY_RUN_DEPENDS}
 MODPY_PYTEST=	Yes
-TEST_DEPENDS+=	devel/py-six${MODRUBY_FLAVOR}
+TEST_DEPENDS+=	devel/py-six${MODPY_FLAVOR}
 .else
 NO_TEST=	Yes
 .endif
