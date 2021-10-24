@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2021/10/23 16:04:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.120 2021/10/24 12:38:41 sthen Exp $
 
 NOT_FOR_ARCHS-md = alpha hppa sparc64
 
@@ -10,7 +10,7 @@ EPOCH =		0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME-main=	boost-${VERSION}
 PKGNAME-md=	boost-md-${VERSION}
-REVISION-main=	0
+REVISION-main=	1
 REVISION-md=	0
 CATEGORIES=	devel
 MASTER_SITES=	https://boostorg.jfrog.io/artifactory/main/release/${VERSION}/source/
