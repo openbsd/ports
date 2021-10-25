@@ -1,32 +1,35 @@
-$OpenBSD: patch-configure_in,v 1.1 2008/12/16 18:47:51 naddy Exp $
---- configure.in.orig	Wed Apr 27 13:54:13 2005
-+++ configure.in	Tue Dec 16 19:22:35 2008
-@@ -37,7 +37,7 @@ netbsd*)
+$OpenBSD: patch-configure_in,v 1.2 2021/10/25 15:42:13 tb Exp $
+
+Index: configure.in
+--- configure.in.orig
++++ configure.in
+@@ -35,7 +35,7 @@ netbsd*)
  	;;
  esac
  
 -OPTS="-O"
 +OPTS=""
+ CFLAGS=""
  
- dnl AC_PREFIX_PKG(VARIABLE, HEADER, LIBRARY, PATH [, IF-TRUE [, IF FALSE ] ])
- AC_DEFUN(AC_PREFIX_PKG, [
-@@ -383,14 +383,14 @@ if test "$enable_pgpmime" = yes -o "$enable_smime" = y
+ # AC_PREFIX_PKG(VARIABLE, HEADER, LIBRARY, PATH [, IF-TRUE [, IF FALSE ] ])
+@@ -381,13 +381,14 @@ if test "$enable_pgpmime" = yes -o "$enable_smime" = y
  		AC_MSG_RESULT($with_openssl),
  		[ AC_MSG_RESULT(yes)
  		  withval="/usr /usr/local /usr/local/ssl /usr/pkg" ])
--	AC_PREFIX_PKG(ssl, ssl.h, libcrypto.a, $withval)
--	if test "$ssl" = no; then
--		AC_PREFIX_PKG(ssl, openssl/ssl.h, libcrypto.a, $withval)
--		if test "$ssl" != no; then
+-	AC_PREFIX_PKG(ssl, openssl/ssl.h, libcrypto.a, $withval)
+-	if test "$ssl" != no; then
+-		AC_DEFINE(USE_OPENSSL)
+-	else
+-		AC_PREFIX_PKG(ssl, ssl.h, libcrypto.a, $withval)
 +	AC_PREFIX_PKG(use_ssl, ssl.h, libcrypto.a, $withval)
 +	if test "$use_ssl" = no; then
 +		AC_PREFIX_PKG(use_ssl, openssl/ssl.h, libcrypto.a, $withval)
 +		if test "$use_ssl" != no; then
- 			AC_DEFINE(OPENSSL)
- 		fi
++			AC_DEFINE(USE_OPENSSL)
++		fi
  	fi
 -	if test "$ssl" != no; then
 +	if test "$use_ssl" != no; then
  		if test "$enable_pgpmime" = yes -a "$zlib" != no; then
- 			AC_DEFINE(PGPMIME)
+ 			AC_DEFINE(USE_PGPMIME)
  			EXOBJS="pgp.o pgpmime.o $EXOBJS"

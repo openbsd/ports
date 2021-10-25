@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:47:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2021/10/25 15:42:13 tb Exp $
 
 COMMENT=	mh-e like mail user agent
 
-V=		20090209
+V=		20180813
 DISTNAME=	cue-snap-$V
 PKGNAME=	cue-$V
 CATEGORIES=	mail
