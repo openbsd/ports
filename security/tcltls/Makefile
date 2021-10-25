@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:49:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/10/25 18:35:31 tb Exp $
 
 COMMENT=	OpenSSL Tcl extension
 
@@ -6,7 +6,7 @@ VERSION=	1.6
 
 DISTNAME=	tls${VERSION}-src
 PKGNAME=	tcltls-${VERSION}
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	security
 
