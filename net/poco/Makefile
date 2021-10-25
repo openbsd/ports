@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2021/03/28 09:10:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2021/10/25 18:25:46 tb Exp $
 
 COMMENT =	POCO C++ libraries for network based applications
 
 VERSION =	1.4.6p1
 DISTNAME =	poco-${VERSION}-all
 PKGNAME =	poco-${VERSION:S/p/pl/}
-REVISION =	5
+REVISION =	6
 CATEGORIES =	net devel
 SHLIB_VERSION =	1.0
 
