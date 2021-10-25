@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2020/05/14 14:58:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2021/10/25 07:24:36 ajacoutot Exp $
 @conflict gnome-keyring-<3.4.0
 @bin bin/gcr-viewer
 include/gck-1/
@@ -77,6 +77,7 @@ lib/pkgconfig/gcr-3.pc
 lib/pkgconfig/gcr-base-3.pc
 lib/pkgconfig/gcr-ui-3.pc
 @bin libexec/gcr-prompter
+@bin libexec/gcr-ssh-agent
 @bin libexec/gcr-ssh-askpass
 share/GConf/
 share/GConf/gsettings/
@@ -157,7 +158,6 @@ share/locale/hi/LC_MESSAGES/gcr.mo
 share/locale/hr/LC_MESSAGES/gcr.mo
 share/locale/hu/LC_MESSAGES/gcr.mo
 share/locale/id/LC_MESSAGES/gcr.mo
-share/locale/is/LC_MESSAGES/gcr.mo
 share/locale/it/LC_MESSAGES/gcr.mo
 share/locale/ja/LC_MESSAGES/gcr.mo
 share/locale/ka/LC_MESSAGES/gcr.mo
