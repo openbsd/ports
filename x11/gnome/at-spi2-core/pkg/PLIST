@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2021/05/09 08:50:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2021/10/25 07:21:57 ajacoutot Exp $
 include/at-spi-2.0/
 include/at-spi-2.0/atspi/
 include/at-spi-2.0/atspi/atspi-accessible.h
@@ -50,12 +50,17 @@ share/defaults/at-spi2/accessibility.conf
 share/examples/at-spi2-core/
 share/examples/at-spi2-core/xdg/
 @sample ${SYSCONFDIR}/xdg/
+share/examples/at-spi2-core/xdg/Xwayland-session.d/
+share/examples/at-spi2-core/xdg/Xwayland-session.d/00-at-spi
 share/examples/at-spi2-core/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/at-spi2-core/xdg/autostart/at-spi-dbus-bus.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/at-spi-dbus-bus.desktop
 share/gir-1.0/
 share/gir-1.0/Atspi-2.0.gir
+share/locale/ab/
+share/locale/ab/LC_MESSAGES/
+share/locale/ab/LC_MESSAGES/at-spi2-core.mo
 share/locale/an/LC_MESSAGES/at-spi2-core.mo
 share/locale/as/LC_MESSAGES/at-spi2-core.mo
 share/locale/ast/LC_MESSAGES/at-spi2-core.mo
