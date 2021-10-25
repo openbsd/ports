@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1319 2021/10/24 09:29:16 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1320 2021/10/25 15:45:29 tb Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1329,6 +1329,7 @@ setup_obsolete_reason(
 	3 => 'bzr',
 	3 => 'bzr-svn',
 	6 => 'libvstr',
+	0 => 'cue',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
