@@ -1,0 +1,3 @@
+pspg is a UNIX pager designed to work with tables.  It's written for
+PostgreSQL, but MySQL or pgcli are supported too and can also be used as
+CSV or TSV viewer.

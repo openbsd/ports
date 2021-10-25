@@ -1,0 +1,18 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2021/10/25 07:45:35 landry Exp $
+
+AX_LIB_READLINE picks up base readline which is too old.  Force it to
+use readline from ports.
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -14,7 +14,8 @@ AC_HEADER_TIOCGWINSZ
+ AX_DEBUG_CFLAGS
+ AX_WITH_CURSES
+ AX_WITH_CURSES_PANEL
+-AX_LIB_READLINE
++AC_DEFINE(HAVE_LIBREADLINE, 1, [])
++AC_DEFINE(HAVE_READLINE_READLINE_H, 1, [])
+ AX_LIB_POSTGRESQL([],[], AC_MSG_NOTICE([PostgreSQL library not found]))
+ 
+ case "$ax_cv_ncurses" in "no")
