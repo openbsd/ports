@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.49 2020/11/22 18:49:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.50 2021/10/25 07:25:41 ajacoutot Exp $
 bin/gnome-help
 @bin bin/yelp
 include/libyelp/
@@ -441,6 +441,7 @@ share/yelp/mathjax/jax/output/NativeMML/jax.js
 share/yelp/xslt/
 share/yelp/xslt/db2html.xsl
 share/yelp/xslt/info2html.xsl
+share/yelp/xslt/links2html.xsl
 share/yelp/xslt/mal2html.xsl
 share/yelp/xslt/man2html.xsl
 share/yelp/xslt/yelp-common.xsl
