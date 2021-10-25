@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.122 2021/05/09 08:53:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.123 2021/10/25 11:27:59 ajacoutot Exp $
 
 COMMENT=		assistive screen reader
 
 GNOME_PROJECT=		orca
-GNOME_VERSION=		40.0
+GNOME_VERSION=		41.0
 
 # LGPLv2
 PERMIT_PACKAGE=		Yes
@@ -21,6 +21,7 @@ BUILD_DEPENDS=		${COMMON_DEPENDS} \
 			x11/gtk+3
 
 RUN_DEPENDS=		${COMMON_DEPENDS} \
+			devel/libwnck3 \
 			devel/py-setproctitle${MODPY_FLAVOR}
 
 # sndio(7) support, sound.py:123
