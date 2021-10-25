@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2021/10/25 07:24:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2021/10/25 07:42:10 ajacoutot Exp $
 
 COMMENT =		HTTP client/server library for GNOME
 
 GNOME_PROJECT =		libsoup
-GNOME_VERSION =		3.0.1
+GNOME_VERSION =		3.0.2
 PKGNAME=		libsoup3-${GNOME_VERSION}
 
-SHARED_LIBS += soup-3.0                  0.0 # 0.0.1
+SHARED_LIBS += soup-3.0                  0.1 # 0.0.2
 
 API_VERSION =		3.0
 SUBST_VARS =		API_VERSION
@@ -49,7 +49,8 @@ CONFIGURE_ARGS +=	-Dautobahn=disabled \
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 # XXX error: The type name `GLib.TlsProtocolVersion' could not be found
+# -> needs newer vala
 CONFIGURE_ARGS +=	-Dvapi=disabled
-MODGNOME_TOOLS +=	vala
+#MODGNOME_TOOLS +=	vala
 
 .include <bsd.port.mk>
