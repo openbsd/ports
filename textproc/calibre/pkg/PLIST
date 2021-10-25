@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.43 2021/10/04 20:36:16 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.44 2021/10/25 13:11:46 sthen Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -1806,6 +1806,7 @@ lib/calibre/calibre/gui2/dialogs/${MODPY_PYCACHE}match_books_ui.${MODPY_PYC_MAGI
 lib/calibre/calibre/gui2/dialogs/${MODPY_PYCACHE}message_box.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/dialogs/${MODPY_PYCACHE}metadata_bulk.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/dialogs/${MODPY_PYCACHE}metadata_bulk_ui.${MODPY_PYC_MAGIC_TAG}pyc
+lib/calibre/calibre/gui2/dialogs/${MODPY_PYCACHE}multisort.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/dialogs/${MODPY_PYCACHE}opml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/dialogs/${MODPY_PYCACHE}password.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/dialogs/${MODPY_PYCACHE}password_ui.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1872,6 +1873,7 @@ lib/calibre/calibre/gui2/dialogs/match_books_ui.py
 lib/calibre/calibre/gui2/dialogs/message_box.py
 lib/calibre/calibre/gui2/dialogs/metadata_bulk.py
 lib/calibre/calibre/gui2/dialogs/metadata_bulk_ui.py
+lib/calibre/calibre/gui2/dialogs/multisort.py
 lib/calibre/calibre/gui2/dialogs/opml.py
 lib/calibre/calibre/gui2/dialogs/password.py
 lib/calibre/calibre/gui2/dialogs/password_ui.py
@@ -4552,6 +4554,8 @@ share/calibre/recipes/high_country_news.png
 share/calibre/recipes/high_country_news.recipe
 share/calibre/recipes/hindu.recipe
 share/calibre/recipes/hindu_business_line.recipe
+share/calibre/recipes/hindu_human_rights.recipe
+share/calibre/recipes/hindu_post.recipe
 share/calibre/recipes/historia_pl.png
 share/calibre/recipes/historia_pl.recipe
 share/calibre/recipes/history_today.recipe
@@ -4645,9 +4649,11 @@ share/calibre/recipes/independent.recipe
 share/calibre/recipes/independent_australia.recipe
 share/calibre/recipes/index_hu.png
 share/calibre/recipes/index_hu.recipe
+share/calibre/recipes/india_facts.recipe
 share/calibre/recipes/india_today.recipe
 share/calibre/recipes/indian_express.png
 share/calibre/recipes/indian_express.recipe
+share/calibre/recipes/indic_today.recipe
 share/calibre/recipes/indy_star.recipe
 share/calibre/recipes/infobae.png
 share/calibre/recipes/infobae.recipe
@@ -5277,6 +5283,7 @@ share/calibre/recipes/onda_rock.recipe
 share/calibre/recipes/onemagazine.png
 share/calibre/recipes/onemagazine.recipe
 share/calibre/recipes/onionavclub.recipe
+share/calibre/recipes/opindia.recipe
 share/calibre/recipes/opinion_bo.recipe
 share/calibre/recipes/optyczne_pl.png
 share/calibre/recipes/optyczne_pl.recipe
@@ -5402,6 +5409,7 @@ share/calibre/recipes/ppe_pl.png
 share/calibre/recipes/ppe_pl.recipe
 share/calibre/recipes/praguemonitor.png
 share/calibre/recipes/praguemonitor.recipe
+share/calibre/recipes/pragyata.recipe
 share/calibre/recipes/pravda.recipe
 share/calibre/recipes/pravda_it.png
 share/calibre/recipes/pravda_it.recipe
@@ -5412,6 +5420,7 @@ share/calibre/recipes/pravda_rs.recipe
 share/calibre/recipes/pravda_ru.png
 share/calibre/recipes/pravda_ru.recipe
 share/calibre/recipes/pravo.recipe
+share/calibre/recipes/prekshaa.recipe
 share/calibre/recipes/presse_portal.png
 share/calibre/recipes/presse_portal.recipe
 share/calibre/recipes/pressonline.png

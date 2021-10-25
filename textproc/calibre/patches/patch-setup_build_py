@@ -1,9 +1,9 @@
-$OpenBSD: patch-setup_build_py,v 1.7 2021/08/14 10:24:26 sthen Exp $
+$OpenBSD: patch-setup_build_py,v 1.8 2021/10/25 13:11:46 sthen Exp $
 
 Index: setup/build.py
 --- setup/build.py.orig
 +++ setup/build.py
-@@ -72,15 +72,7 @@ class Extension(object):
+@@ -72,15 +72,7 @@ class Extension:
  
          self.ldflags = d['ldflags'] = kwargs.get('ldflags', [])
          self.optional = d['options'] = kwargs.get('optional', False)
