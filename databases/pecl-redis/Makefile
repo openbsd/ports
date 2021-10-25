@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2021/04/30 16:52:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2021/10/25 12:33:19 sthen Exp $
 
 COMMENT=	PHP interface to redis
 
 DISTNAME=	redis-5.3.4
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	databases
 

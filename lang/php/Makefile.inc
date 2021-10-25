@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.163 2021/10/22 08:42:01 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.164 2021/10/25 12:33:20 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -70,6 +70,7 @@ CONFIGURE_ARGS+=	--disable-rpath \
 			--with-config-file-path=${SYSCONFDIR} \
 			--with-config-file-scan-dir=${SYSCONFDIR}/php-${PV} \
 			--with-layout=GNU \
+			--with-external-pcre \
 			--with-pcre-jit=no \
 			--with-pear=${LOCALBASE}/share/php-${PV} \
 			--with-pic \
@@ -102,15 +103,6 @@ CONFIGURE_ARGS+=	--with-gettext=${LOCALBASE} \
 			--enable-sysvsem \
 			--enable-sysvshm \
 			--enable-xml
-
-.if ${PV:M7.3}
-CONFIGURE_ARGS+=	--enable-wddx \
-			--with-onig=${LOCALBASE} \
-			--with-pcre-regex
-.else
-# wddx moved to pecl in 7.4
-CONFIGURE_ARGS+=	--with-external-pcre
-.endif
 
 RUN_DEPENDS-main=	mail/femail,-chroot
 
@@ -179,16 +171,13 @@ WANTLIB$i +=		c
 
 .for i in ${SAPI}
 WANTLIB$i +=		argon2 crypto curses iconv intl lzma m onig
-WANTLIB$i +=		pthread readline sodium ssl xml2 z
+WANTLIB$i +=		pcre2-8 pthread readline sodium ssl xml2 z
 LIB_DEPENDS$i +=	devel/gettext,-runtime \
+			devel/pcre2 \
 			security/argon2 \
 			security/libsodium \
 			textproc/libxml \
 			textproc/oniguruma
-.  if !${PV:M7.3}
-WANTLIB$i +=		pcre2-8
-LIB_DEPENDS$i +=	devel/pcre2
-.  endif
 .  if !${PV:M7*}
 WANTLIB$i +=		util
 .  endif
@@ -245,35 +234,16 @@ CONFIGURE_ARGS+=	--with-enchant=shared,${LOCALBASE}
 # gd
 COMMENT-gd=		image manipulation extensions for php
 HOMEPAGE-gd=		https://www.php.net/image
-LIB_DEPENDS-gd=		graphics/jpeg \
-			graphics/libwebp \
-			graphics/png
-WANTLIB-gd+=		freetype jpeg m png pthread webp z
-.if ${PV:M7.3}
-# bundled gd in <=7.3
-.  if ${BUILD_PACKAGES:M-gd}
-CONFIGURE_ARGS+=	--with-gd=shared \
-			--with-freetype-dir=${X11BASE} \
-			--with-jpeg-dir=${LOCALBASE} \
-			--with-png-dir=${LOCALBASE} \
-			--with-webp-dir=${LOCALBASE} \
-			--with-xpm-dir=${X11BASE} \
-			--with-zlib-dir=/usr
-.  endif
-WANTLIB-gd+=		X11 Xpm xcb
-.else
-# standalone gd in 7.4+
-.  if ${BUILD_PACKAGES:M-gd}
+LIB_DEPENDS-gd=		graphics/gd
+WANTLIB-gd+=		${COMPILER_LIBCXX} expat fontconfig freetype \
+			gd iconv jpeg lzma m png pthread tiff webp z zstd
+.if ${BUILD_PACKAGES:M-gd}
 CONFIGURE_ARGS+=	--with-external-gd \
 			--enable-gd=shared \
 			--with-freetype=${X11BASE} \
 			--with-jpeg=${LOCALBASE} \
 			--with-webp=${LOCALBASE} \
 			--with-xpm=${X11BASE}
-.  endif
-WANTLIB-gd+=		${COMPILER_LIBCXX} \
-			expat fontconfig gd iconv lzma tiff zstd
-LIB_DEPENDS-gd=		graphics/gd
 .endif
 
 # gmp
@@ -302,12 +272,7 @@ LIB_DEPENDS-intl=	textproc/icu4c
 RUN_DEPENDS-intl=	textproc/icu4c,-wwwdata
 WANTLIB-intl=		${COMPILER_LIBCXX} icudata icui18n icuio icuuc m
 .if ${BUILD_PACKAGES:M-intl}
-.  if ${PV:M7.3}
-CONFIGURE_ARGS+=	--enable-intl=shared \
-			--with-icu-dir=${LOCALBASE}
-.  else
 CONFIGURE_ARGS+=	--enable-intl=shared
-.  endif
 .endif
 
 # ldap
@@ -473,12 +438,7 @@ CONFIGURE_ARGS+=	--with-xsl=shared --enable-dom
 # zip
 COMMENT-zip=		zip functions for php
 HOMEPAGE-zip=		https://www.php.net/zip
-.if ${PV:M7.3}
-CONFIGURE_ARGS+=	--enable-zip=shared,${LOCALBASE}
-CONFIGURE_ARGS+=	--with-libzip=${LOCALBASE}
-.else
 CONFIGURE_ARGS+=	--with-zip=shared
-.endif
 LIB_DEPENDS-zip=	archivers/bzip2 \
 			archivers/libzip
 WANTLIB-zip=		bz2 crypto lzma pthread ssl z zip

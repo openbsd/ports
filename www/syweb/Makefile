@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.31 2021/02/24 16:49:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2021/10/25 12:33:21 sthen Exp $
+
+BROKEN=		needs adapting for PHP >7.3
 
 COMMENT=	web frontend to symon
 DISTNAME=	syweb-0.65
@@ -18,7 +20,6 @@ NO_BUILD=	Yes
 PREFIX=		${VARBASE}/www
 
 MODULES=	lang/php
-MODPHP_VERSION=	7.3
 RUN_DEPENDS=	net/rrdtool
 
 WRKDIST=	${WRKDIR}/syweb

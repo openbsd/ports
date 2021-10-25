@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1043 2021/10/24 22:51:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.1044 2021/10/25 12:33:18 sthen Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -377,28 +377,20 @@
      SUBDIR += pear-HTML-Template-IT
      SUBDIR += pear-HTTP-WebDAV-Server
      SUBDIR += pear-SOAP
-     SUBDIR += pecl-chroot,php73
      SUBDIR += pecl-chroot,php74
      #SUBDIR += pecl-chroot,php80 not yet
-     SUBDIR += pecl-memcached,php73
      SUBDIR += pecl-memcached,php74
      SUBDIR += pecl-memcached,php80
-     SUBDIR += pecl-pecl_http,php73
      SUBDIR += pecl-pecl_http,php74
      #SUBDIR += pecl-pecl_http,php80 not yet, and not until pecl-propro has php80
-     SUBDIR += pecl-pledge,php73
      SUBDIR += pecl-pledge,php74
      SUBDIR += pecl-pledge,php80
-     SUBDIR += pecl-proctitle,php73
      SUBDIR += pecl-proctitle,php74
      #SUBDIR += pecl-proctitle,php80 not yet
-     SUBDIR += pecl-propro,php73
      SUBDIR += pecl-propro,php74
      #SUBDIR += pecl-propro,php80 not yet
-     SUBDIR += pecl-raphf,php73
      SUBDIR += pecl-raphf,php74
      SUBDIR += pecl-raphf,php80
-     SUBDIR += pecl-ssh2,php73
      SUBDIR += pecl-ssh2,php74
      SUBDIR += pecl-ssh2,php80
      SUBDIR += pelican

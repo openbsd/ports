@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/04/30 16:52:59 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/10/25 12:33:19 sthen Exp $
 ${MODPECL_DEFAULTV}@pkgpath www/pecl56-${MODULE_NAME}
 ${MODPECL_DEFAULTV}@pkgpath www/pecl-${MODULE_NAME},php70
 ${MODPECL_DEFAULTV}@pkgpath www/pecl-${MODULE_NAME},php71
 ${MODPECL_DEFAULTV}@pkgpath www/pecl-${MODULE_NAME},php72
+${MODPECL_DEFAULTV}@pkgpath www/pecl-${MODULE_NAME},php73
 @extra ${SYSCONFDIR}/php-${MODPHP_VERSION}/http.ini 
 lib/php-${MODPHP_VERSION}/modules/http.so
 share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini

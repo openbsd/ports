@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.15 2021/07/21 10:48:24 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.16 2021/10/25 12:33:19 sthen Exp $
 @conflict pecl-imagick-*
 ${MODPECL_DEFAULTV}@pkgpath graphics/pecl-imagick
 ${MODPECL_DEFAULTV}@pkgpath graphics/pecl-imagick,php56
 ${MODPECL_DEFAULTV}@pkgpath graphics/pecl-imagick,php70
 ${MODPECL_DEFAULTV}@pkgpath graphics/pecl-imagick,php71
 ${MODPECL_DEFAULTV}@pkgpath graphics/pecl-imagick,php72
+${MODPECL_DEFAULTV}@pkgpath graphics/pecl-imagick,php73
 @so lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
 share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
 @sample ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/${MODULE_NAME}.ini

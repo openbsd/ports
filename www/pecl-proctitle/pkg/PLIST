@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/04/30 16:53:00 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/10/25 12:33:20 sthen Exp $
 @conflict pecl-proctitle-*
 ${MODPECL_DEFAULTV}@pkgpath www/pecl-proctitle
 ${MODPECL_DEFAULTV}@pkgpath www/pecl-proctitle,php56
 ${MODPECL_DEFAULTV}@pkgpath www/pecl-proctitle,php70
 ${MODPECL_DEFAULTV}@pkgpath www/pecl-proctitle,php71
 ${MODPECL_DEFAULTV}@pkgpath www/pecl-proctitle,php72
+${MODPECL_DEFAULTV}@pkgpath www/pecl-proctitle,php73
 @extra ${SYSCONFDIR}/php-${MODPHP_VERSION}/${MODULE_NAME}.ini 
 lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
 share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini

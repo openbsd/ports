@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/04/30 16:52:59 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/10/25 12:33:19 sthen Exp $
 @conflict pecl-redis-*
 ${MODPECL_DEFAULTV}@pkgpath databases/pecl-redis
 ${MODPECL_DEFAULTV}@pkgpath databases/pecl-redis,php56
 ${MODPECL_DEFAULTV}@pkgpath databases/pecl-redis,php70
 ${MODPECL_DEFAULTV}@pkgpath databases/pecl-redis,php71
 ${MODPECL_DEFAULTV}@pkgpath databases/pecl-redis,php72
+${MODPECL_DEFAULTV}@pkgpath databases/pecl-redis,php73
 @extra ${SYSCONFDIR}/php-${MODPHP_VERSION}/${MODULE_NAME}.ini 
 @so lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
 share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini

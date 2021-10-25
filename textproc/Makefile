@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.692 2021/10/24 22:51:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.693 2021/10/25 12:33:18 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -361,7 +361,6 @@
      SUBDIR += pear-XML-RSS
      SUBDIR += pear-XML-Serializer
      SUBDIR += pear-XML-Tree
-     SUBDIR += pecl-yaml,php73
      SUBDIR += pecl-yaml,php74
      SUBDIR += pecl-yaml,php80
      SUBDIR += pinfo

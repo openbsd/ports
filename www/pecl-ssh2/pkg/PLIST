@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/04/30 16:53:00 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/10/25 12:33:20 sthen Exp $
 @conflict pecl-ssh2-*
 ${MODPECL_DEFAULTV}@pkgpath www/pecl56-ssh2
 ${MODPECL_DEFAULTV}@pkgpath www/pecl-ssh2,php70
 ${MODPECL_DEFAULTV}@pkgpath www/pecl-ssh2,php71
 ${MODPECL_DEFAULTV}@pkgpath www/pecl-ssh2,php72
+${MODPECL_DEFAULTV}@pkgpath www/pecl-ssh2,php73
 @extra ${SYSCONFDIR}/php-${MODPHP_VERSION}/${MODULE_NAME}.ini 
 @so lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
 share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini

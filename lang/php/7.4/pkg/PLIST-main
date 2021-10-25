@@ -1,4 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2021/10/20 20:45:59 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2021/10/25 12:33:20 sthen Exp $
+@pkgpath lang/php/5.6,-main
+@pkgpath lang/php/7.0,-main
+@pkgpath lang/php/7.1,-main
+@pkgpath lang/php/7.2,-main
+@pkgpath lang/php/7.3,-main
+@pkgpath security/pecl-libsodium,php71
 @option no-default-conflict
 @option is-branch
 @conflict php-${PHP_PKGSPEC}
