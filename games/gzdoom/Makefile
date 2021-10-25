@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2021/06/09 19:50:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/10/25 07:19:59 ajacoutot Exp $
 
 BROKEN-i386 =		various always_inline functions require sse2, but would be inlined into function 'Loop' that is compiled without support for sse2
 
@@ -13,7 +13,7 @@ GH_ACCOUNT =		coelckers
 GH_PROJECT =		gzdoom
 GH_TAGNAME =		g${V}
 DISTNAME =		gzdoom-${V}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES=		games
 
@@ -36,7 +36,8 @@ CONFIGURE_ARGS += 	-DDYN_OPENAL=NO -DDYN_MPG123=NO -DDYN_SNDFILE=NO
 CONFIGURE_ARGS +=	-DFLUIDSYNTHLIB1="libfluidsynth.so"
 CONFIGURE_ARGS +=	-DHAVE_STDINT_H=1
 
-LIB_DEPENDS =		audio/mpg123 \
+LIB_DEPENDS =		audio/libsndfile \
+			audio/mpg123 \
 			audio/openal \
 			archivers/bzip2 \
 			graphics/jpeg \
