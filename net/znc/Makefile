@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2021/05/10 17:31:31 tb Exp $
+# $OpenBSD: Makefile,v 1.45 2021/10/25 18:51:15 tb Exp $
 
 COMMENT=	advanced IRC bouncer
 
 DISTNAME=	znc-1.8.2
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}releases/
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://znc.in/
 
@@ -25,6 +25,7 @@ COMPILER=	base-clang ports-gcc
 CONFIGURE_ARGS+=	-DWANT_CYRUS=NO \
 			-DWANT_I18N=NO \
 			-DWANT_ICU=YES
+CXXFLAGS+=	-DHAVE_OPAQUE_SSL
 
 NO_TEST=	Yes
 
