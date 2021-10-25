@@ -1,4 +1,4 @@
-$OpenBSD: patch-meson_build,v 1.5 2021/05/13 07:51:16 jasper Exp $
+$OpenBSD: patch-meson_build,v 1.6 2021/10/25 14:48:38 jasper Exp $
 
 In file included from /usr/include/readline/readline.h:38:
 In file included from /usr/include/readline/keymaps.h:36:
@@ -13,7 +13,7 @@ const char* strstr(const char* __s1, const char* __s2) {return __libcpp_strstr(_
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -155,6 +155,7 @@ readline = cxx.find_library('readline', required: get_
+@@ -156,6 +156,7 @@ readline = cxx.find_library('readline', required: get_
  # On some systems we need to link readline to a termcap compatible library
  readline_code = '''
  #include <cstdio>
@@ -21,7 +21,7 @@ Index: meson.build
  #include <readline/readline.h>
  int main(void) {
      readline("foo");
-@@ -298,9 +299,13 @@ header_conf.set('HAVE_DTRACE', get_option('dtrace'),
+@@ -299,9 +300,13 @@ header_conf.set('HAVE_DTRACE', get_option('dtrace'),
      description: 'Using dtrace probes')
  header_conf.set('HAVE_PRINTF_ALTERNATIVE_INT', have_printf_alternative_int,
      description: 'printf() accepts "%Id" for alternative integer output')
@@ -35,4 +35,4 @@ Index: meson.build
 +        cxx.check_header('readline/readline.h', prefix: readline_prefix,
              required: readline.found()))
  endif
- header_conf.set('HAVE_SYS_SYSCALL_H', cxx.check_header('sys/syscall.h'))
+ header_conf.set('USE_UNITY_BUILD', get_option('unity'))
