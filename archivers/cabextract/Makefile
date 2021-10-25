@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:43:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2021/10/25 16:56:27 fcambus Exp $
 
 COMMENT=		extracts files from Microsoft CAB archives
 
-DISTNAME=		cabextract-1.9
+DISTNAME=		cabextract-1.9.1
 CATEGORIES=		archivers
 
 HOMEPAGE=		https://www.cabextract.org.uk/
