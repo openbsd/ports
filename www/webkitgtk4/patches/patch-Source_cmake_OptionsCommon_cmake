@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_cmake_OptionsCommon_cmake,v 1.18 2021/03/28 07:26:33 ajacoutot Exp $
+$OpenBSD: patch-Source_cmake_OptionsCommon_cmake,v 1.19 2021/10/25 07:25:13 ajacoutot Exp $
 
 Our ar(1) is too old and have not support for `T'.
 Put the internal library path first so that we can 
@@ -22,7 +22,7 @@ Index: Source/cmake/OptionsCommon.cmake
      endif ()
  endif ()
  
-@@ -160,6 +160,9 @@ check_type_size("__int128_t" INT128_VALUE)
+@@ -161,6 +161,9 @@ check_type_size("__int128_t" INT128_VALUE)
  if (HAVE_INT128_VALUE)
    SET_AND_EXPOSE_TO_BUILD(HAVE_INT128_T INT128_VALUE)
  endif ()
@@ -30,5 +30,5 @@ Index: Source/cmake/OptionsCommon.cmake
 +# make sure that the internal library dir is the first in the path
 +link_directories("${CMAKE_BINARY_DIR}/lib")
  
- # Check whether experimental/filesystem is the filesystem impl available
- if (STD_EXPERIMENTAL_FILESYSTEM_IS_AVAILABLE)
+ # Check which filesystem implementation is available if any
+ if (STD_FILESYSTEM_IS_AVAILABLE)

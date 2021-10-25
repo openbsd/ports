@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2021/03/28 07:26:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2021/10/25 07:25:14 ajacoutot Exp $
 @bin bin/WebKitWebDriver
 include/webkitgtk-${API}/
 include/webkitgtk-${API}/JavaScriptCore/
@@ -56,6 +56,7 @@ include/webkitgtk-${API}/webkit2/WebKitInputMethodContext.h
 include/webkitgtk-${API}/webkit2/WebKitInstallMissingMediaPluginsPermissionRequest.h
 include/webkitgtk-${API}/webkit2/WebKitJavascriptResult.h
 include/webkitgtk-${API}/webkit2/WebKitMediaKeySystemPermissionRequest.h
+include/webkitgtk-${API}/webkit2/WebKitMemoryPressureSettings.h
 include/webkitgtk-${API}/webkit2/WebKitMimeInfo.h
 include/webkitgtk-${API}/webkit2/WebKitNavigationAction.h
 include/webkitgtk-${API}/webkit2/WebKitNavigationPolicyDecision.h

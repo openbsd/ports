@@ -1,11 +1,11 @@
-$OpenBSD: patch-Source_WTF_wtf_PlatformHave_h,v 1.4 2021/05/12 06:35:27 ajacoutot Exp $
+$OpenBSD: patch-Source_WTF_wtf_PlatformHave_h,v 1.5 2021/10/25 07:25:13 ajacoutot Exp $
 
 https://bugs.webkit.org/show_bug.cgi?id=129963
 
 Index: Source/WTF/wtf/PlatformHave.h
 --- Source/WTF/wtf/PlatformHave.h.orig
 +++ Source/WTF/wtf/PlatformHave.h
-@@ -206,7 +206,7 @@
+@@ -222,7 +222,7 @@
  #define HAVE_HOSTED_CORE_ANIMATION 1
  #endif
  

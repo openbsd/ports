@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_WTF_wtf_PlatformCPU_h,v 1.1 2020/03/12 09:17:40 ajacoutot Exp $
+$OpenBSD: patch-Source_WTF_wtf_PlatformCPU_h,v 1.2 2021/10/25 07:25:13 ajacoutot Exp $
 
 https://bugs.webkit.org/show_bug.cgi?id=129963
 
@@ -19,7 +19,7 @@ Index: Source/WTF/wtf/PlatformCPU.h
  /* CPU(X86) - i386 / x86 32-bit */
  #if   defined(__i386__) \
      || defined(i386)     \
-@@ -281,7 +288,7 @@
+@@ -289,7 +296,7 @@
  #define WTF_CPU_UNKNOWN 1
  #endif
  

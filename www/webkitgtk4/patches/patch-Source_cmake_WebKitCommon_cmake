@@ -1,9 +1,9 @@
-$OpenBSD: patch-Source_cmake_WebKitCommon_cmake,v 1.6 2021/03/28 07:26:33 ajacoutot Exp $
+$OpenBSD: patch-Source_cmake_WebKitCommon_cmake,v 1.7 2021/10/25 07:25:13 ajacoutot Exp $
 
 Index: Source/cmake/WebKitCommon.cmake
 --- Source/cmake/WebKitCommon.cmake.orig
 +++ Source/cmake/WebKitCommon.cmake
-@@ -102,12 +102,14 @@ if (NOT HAS_RUN_WEBKIT_COMMON)
+@@ -106,7 +106,7 @@ if (NOT HAS_RUN_WEBKIT_COMMON)
          endif ()
      elseif (LOWERCASE_CMAKE_SYSTEM_PROCESSOR MATCHES "(i[3-6]86|x86)")
          set(WTF_CPU_X86 1)
@@ -12,14 +12,16 @@ Index: Source/cmake/WebKitCommon.cmake
          set(WTF_CPU_PPC 1)
      elseif (LOWERCASE_CMAKE_SYSTEM_PROCESSOR MATCHES "ppc64")
          set(WTF_CPU_PPC64 1)
-     elseif (LOWERCASE_CMAKE_SYSTEM_PROCESSOR MATCHES "ppc64le")
+@@ -114,6 +114,8 @@ if (NOT HAS_RUN_WEBKIT_COMMON)
          set(WTF_CPU_PPC64LE 1)
+     elseif (LOWERCASE_CMAKE_SYSTEM_PROCESSOR MATCHES "^riscv64")
+         set(WTF_CPU_RISCV64 1)
 +    elseif (LOWERCASE_CMAKE_SYSTEM_PROCESSOR MATCHES "sparc64")
 +        set(WTF_CPU_SPARC64 1)
      else ()
          set(WTF_CPU_UNKNOWN 1)
      endif ()
-@@ -177,9 +179,9 @@ if (NOT HAS_RUN_WEBKIT_COMMON)
+@@ -185,9 +187,9 @@ if (NOT HAS_RUN_WEBKIT_COMMON)
      # We cannot check for RUBY_FOUND because it is set only when the full package is installed and
      # the only thing we need is the interpreter. Unlike Python, cmake does not provide a macro
      # for finding only the Ruby interpreter.
@@ -32,7 +34,7 @@ Index: Source/cmake/WebKitCommon.cmake
      endif ()
  
      # -----------------------------------------------------------------------------
-@@ -191,7 +193,7 @@ if (NOT HAS_RUN_WEBKIT_COMMON)
+@@ -199,7 +201,7 @@ if (NOT HAS_RUN_WEBKIT_COMMON)
      include(CheckCXXCompilerFlag)
      include(CheckCXXSourceCompiles)
      include(CheckFunctionExists)

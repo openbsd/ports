@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_JavaScriptCore_runtime_Options_cpp,v 1.6 2021/03/28 07:26:33 ajacoutot Exp $
+$OpenBSD: patch-Source_JavaScriptCore_runtime_Options_cpp,v 1.7 2021/10/25 07:25:13 ajacoutot Exp $
 
 powerpc and i386 fix for:
 undefined reference to `WTF::Optional<unsigned long>
@@ -7,21 +7,21 @@ JSC::parse<unsigned long>(char const*)'
 Index: Source/JavaScriptCore/runtime/Options.cpp
 --- Source/JavaScriptCore/runtime/Options.cpp.orig
 +++ Source/JavaScriptCore/runtime/Options.cpp
-@@ -89,7 +89,7 @@ Optional<OptionsStorage::Unsigned> parse(const char* s
-     return WTF::nullopt;
+@@ -89,7 +89,7 @@ std::optional<OptionsStorage::Unsigned> parse(const ch
+     return std::nullopt;
  }
  
 -#if CPU(ADDRESS64) || OS(DARWIN)
 +#if CPU(ADDRESS64) || OS(DARWIN) || OS(OPENBSD)
  template<>
- Optional<OptionsStorage::Size> parse(const char* string)
+ std::optional<OptionsStorage::Size> parse(const char* string)
  {
-@@ -98,7 +98,7 @@ Optional<OptionsStorage::Size> parse(const char* strin
+@@ -98,7 +98,7 @@ std::optional<OptionsStorage::Size> parse(const char* 
          return value;
-     return WTF::nullopt;
+     return std::nullopt;
  }
 -#endif // CPU(ADDRESS64) || OS(DARWIN)
 +#endif // CPU(ADDRESS64) || OS(DARWIN) || OS(OPENBSD)
  
  template<>
- Optional<OptionsStorage::Double> parse(const char* string)
+ std::optional<OptionsStorage::Double> parse(const char* string)

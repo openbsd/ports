@@ -1,9 +1,9 @@
-$OpenBSD: patch-Source_JavaScriptCore_assembler_ARMv7Assembler_h,v 1.4 2020/09/13 10:28:44 ajacoutot Exp $
+$OpenBSD: patch-Source_JavaScriptCore_assembler_ARMv7Assembler_h,v 1.5 2021/10/25 07:25:13 ajacoutot Exp $
 
 Index: Source/JavaScriptCore/assembler/ARMv7Assembler.h
 --- Source/JavaScriptCore/assembler/ARMv7Assembler.h.orig
 +++ Source/JavaScriptCore/assembler/ARMv7Assembler.h
-@@ -2413,6 +2413,8 @@ class ARMv7Assembler { (public)
+@@ -2419,6 +2419,8 @@ class ARMv7Assembler { (public)
              linuxPageFlush(current, current + page);
  
          linuxPageFlush(current, end);

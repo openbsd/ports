@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.154 2021/09/21 10:44:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.155 2021/10/25 07:25:13 ajacoutot Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -13,18 +13,17 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit rendering engine
 
-V =			2.32.4
+V =			2.34.1
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk4-${V}
-REVISION =		0
 
 EXTRACT_SUFX =		.tar.xz
 API =			4.0
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
 
-SHARED_LIBS +=  javascriptcoregtk-${API}     3.4 # 18.13.3
-SHARED_LIBS +=  webkit2gtk-${API}            3.4 # 37.37.2
+SHARED_LIBS +=  javascriptcoregtk-${API}     3.5 # 18.13.3
+SHARED_LIBS +=  webkit2gtk-${API}            3.5 # 37.37.2
 
 CATEGORIES =		www
 
@@ -38,12 +37,12 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} EGL GL X11 Xcomposite Xdamage Xrender
 WANTLIB += Xt atk-1.0 c cairo cairo-gobject enchant-2 fontconfig
 WANTLIB += freetype gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0
-WANTLIB += gstfft-1.0 gstgl-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
-WANTLIB += gstvideo-1.0 gtk-3 harfbuzz harfbuzz-icu hyphen icudata
-WANTLIB += icui18n icuuc intl jpeg m notify pango-1.0 pangocairo-1.0
-WANTLIB += openjp2 png secret-1 soup-2.4 sqlite3 tasn1 webp
-WANTLIB += webpdemux woff2dec xml2 xslt z
+WANTLIB += gmodule-2.0 gobject-2.0 gpg-error gstapp-1.0 gstaudio-1.0
+WANTLIB += gstbase-1.0 gstfft-1.0 gstgl-1.0 gstpbutils-1.0 gstreamer-1.0
+WANTLIB += gsttag-1.0 gstvideo-1.0 gtk-3 harfbuzz harfbuzz-icu
+WANTLIB += hyphen icudata icui18n icuuc intl jpeg lcms2 m notify
+WANTLIB += openjp2 pango-1.0 pangocairo-1.0 png secret-1 soup-2.4
+WANTLIB += sqlite3 tasn1 webp webpdemux woff2dec xml2 xslt z
 
 MASTER_SITES =		https://webkitgtk.org/releases/
 
@@ -93,7 +92,8 @@ CONFIGURE_ARGS =	-DPORT=GTK \
 			-DENABLE_MINIBROWSER=ON \
 			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS}" \
 			-DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS}" \
-			-DUSE_SYSTEMD=OFF
+			-DUSE_SYSTEMD=OFF \
+			-DUSE_SOUP2=ON
 
 # required for faking a better user-agent
 .if ${MACHINE_ARCH} == "amd64"
