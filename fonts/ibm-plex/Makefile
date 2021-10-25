@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2021/07/25 21:49:56 uaa Exp $
+# $OpenBSD: Makefile,v 1.14 2021/10/25 16:57:33 fcambus Exp $
 
 COMMENT =		IBM's corporate type family
 
 CATEGORIES =		fonts
-V =			5.2.1
+V =			6.0.0
 PKGNAME =		ibm-plex-$V
 
 # SIL OFL 1.1
