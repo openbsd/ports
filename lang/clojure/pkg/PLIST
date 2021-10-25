@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/04/26 12:44:52 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/10/25 18:54:00 jasper Exp $
 bin/clj
 bin/clojure
 clojure/
@@ -7,5 +7,7 @@ clojure/deps.edn
 clojure/example-deps.edn
 clojure/libexec/
 clojure/libexec/clojure-tools-${V}.jar
+clojure/libexec/exec.jar
+clojure/tools.edn
 @man man/man1/clj.1
 @man man/man1/clojure.1

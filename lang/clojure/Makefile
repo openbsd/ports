@@ -1,19 +1,16 @@
-# $OpenBSD: Makefile,v 1.37 2021/05/19 01:50:30 kurt Exp $
+# $OpenBSD: Makefile,v 1.38 2021/10/25 18:54:00 jasper Exp $
 
 COMMENT =		Lisp-1 dialect for the Java Virtual Machine
 
-V =			1.10.1.469
+V =			1.10.3.986
 DISTNAME =		clojure-tools-$V
 PKGNAME =		clojure-$V
-REVISION =		0
 
 PKG_ARCH =		*
 
 CATEGORIES =		lang
 
 HOMEPAGE =		https://www.clojure.org/
-
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Eclipse Public License EPL 1.0
 PERMIT_PACKAGE =	Yes
@@ -41,6 +38,7 @@ completions: install
 
 pre-configure:
 	sed -i 's,PREFIX,${CLOJURE_HOME},' ${WRKSRC}/clojure
+	sed -i 's,BINDIR,${LOCALBASE}/bin,' ${WRKSRC}/clj
 
 do-install:
 	${INSTALL_DATA_DIR} ${CLOJURE_HOME}/libexec/ ${PREFIX}/man/man1
