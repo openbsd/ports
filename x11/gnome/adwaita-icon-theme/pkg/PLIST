@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2021/05/09 08:52:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2021/10/25 07:24:24 ajacoutot Exp $
 @conflict gnome-themes-standard-<3.14.0
 share/icons/Adwaita/
 share/icons/Adwaita/16x16/
@@ -1247,12 +1247,8 @@ share/icons/Adwaita/256x256/legacy/video-display.png
 share/icons/Adwaita/256x256/legacy/view-refresh.png
 share/icons/Adwaita/256x256/legacy/web-browser.png
 share/icons/Adwaita/256x256/mimetypes/
-share/icons/Adwaita/256x256/mimetypes/application-x-addon.png
-share/icons/Adwaita/256x256/mimetypes/application-x-firmware.png
 share/icons/Adwaita/256x256/mimetypes/x-package-repository.png
 share/icons/Adwaita/256x256/places/
-share/icons/Adwaita/256x256/places/network-server.png
-share/icons/Adwaita/256x256/places/network-workgroup.png
 share/icons/Adwaita/256x256/places/user-trash.png
 share/icons/Adwaita/256x256/status/
 share/icons/Adwaita/256x256/status/user-trash-full.png
@@ -2074,6 +2070,7 @@ share/icons/Adwaita/512x512/places/folder-saved-search.png
 share/icons/Adwaita/512x512/places/folder-templates.png
 share/icons/Adwaita/512x512/places/folder-videos.png
 share/icons/Adwaita/512x512/places/folder.png
+share/icons/Adwaita/512x512/places/network-server.png
 share/icons/Adwaita/512x512/places/network-workgroup.png
 share/icons/Adwaita/512x512/places/user-bookmarks.png
 share/icons/Adwaita/512x512/places/user-desktop.png
@@ -2249,6 +2246,7 @@ share/icons/Adwaita/scalable/actions/document-save-as-symbolic.svg
 share/icons/Adwaita/scalable/actions/document-save-symbolic.svg
 share/icons/Adwaita/scalable/actions/document-send-symbolic.svg
 share/icons/Adwaita/scalable/actions/edit-clear-all-symbolic.svg
+share/icons/Adwaita/scalable/actions/edit-clear-rtl-symbolic.svg
 share/icons/Adwaita/scalable/actions/edit-clear-symbolic-rtl.svg
 share/icons/Adwaita/scalable/actions/edit-clear-symbolic.svg
 share/icons/Adwaita/scalable/actions/edit-copy-symbolic.svg
@@ -2332,7 +2330,9 @@ share/icons/Adwaita/scalable/actions/object-select-symbolic.svg
 share/icons/Adwaita/scalable/actions/open-menu-symbolic.svg
 share/icons/Adwaita/scalable/actions/process-stop-symbolic.svg
 share/icons/Adwaita/scalable/actions/send-to-symbolic.svg
-share/icons/Adwaita/scalable/actions/sidebar-hide-symbolic.svg
+share/icons/Adwaita/scalable/actions/sidebar-show-right-rtl-symbolic.svg
+share/icons/Adwaita/scalable/actions/sidebar-show-right-symbolic.svg
+share/icons/Adwaita/scalable/actions/sidebar-show-rtl-symbolic.svg
 share/icons/Adwaita/scalable/actions/sidebar-show-symbolic.svg
 share/icons/Adwaita/scalable/actions/star-new-symbolic.svg
 share/icons/Adwaita/scalable/actions/system-log-out-symbolic.svg
@@ -2780,7 +2780,6 @@ share/icons/Adwaita/scalable/ui/selection-end-symbolic-rtl.svg
 share/icons/Adwaita/scalable/ui/selection-end-symbolic.svg
 share/icons/Adwaita/scalable/ui/selection-start-symbolic-rtl.svg
 share/icons/Adwaita/scalable/ui/selection-start-symbolic.svg
-share/icons/Adwaita/scalable/ui/tab-new-symbolic.svg
 share/icons/Adwaita/scalable/ui/window-close-symbolic.svg
 share/icons/Adwaita/scalable/ui/window-maximize-symbolic.svg
 share/icons/Adwaita/scalable/ui/window-minimize-symbolic.svg
