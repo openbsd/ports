@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_meson_build,v 1.1 2021/10/25 07:21:40 ajacoutot Exp $
+
+From e9ccb1d8d095482e4139da658e679d5aad56b184 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Tim-Philipp=20M=C3=BCller?= <tim@centricular.com>
+Date: Tue, 15 Dec 2020 00:12:55 +0000
+Subject: [PATCH] meson: fix library versioning
+
+Last chunk: properly find X libs are runtime
+
+Index: src/meson.build
+--- src/meson.build.orig
++++ src/meson.build
+@@ -299,8 +299,8 @@ libcairo = library('cairo', cairo_sources,
+   c_args: cairo_no_warn_c_args + pthread_c_args + ['-DHAVE_CONFIG_H'],
+   cpp_args: cairo_no_warn_c_args + pthread_c_args + ['-DHAVE_CONFIG_H'],
+   link_args: extra_link_args,
+-  soversion: '2',
+-  version: '2.' + ''.join(meson.project_version().split('.')) + '.0',
++  soversion: cairo_version_sonum,
++  version: cairo_libversion,
+   install: true,
+   include_directories: incbase,
+ )
+@@ -314,6 +314,7 @@ libcairo_dep = declare_dependency(link_with: libcairo,
+ pkgmod.generate(libcairo,
+   description: 'Multi-platform 2D graphics library',
+   subdirs: [meson.project_name()],
++  libraries: ['-Wl,-rpath-link,${X11BASE}/lib'],
+ )
+ 
+ meson.override_dependency('cairo', libcairo_dep)

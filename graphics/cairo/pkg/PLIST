@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2018/10/20 11:20:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2021/10/25 07:21:40 ajacoutot Exp $
 @bin bin/cairo-sphinx
 bin/cairo-trace
 include/cairo/
@@ -16,19 +16,14 @@ include/cairo/cairo-version.h
 include/cairo/cairo-xcb.h
 include/cairo/cairo-xlib-xrender.h
 include/cairo/cairo-xlib.h
+include/cairo/cairo-xml.h
 include/cairo/cairo.h
 lib/cairo/
-lib/cairo/cairo-fdr.so
-lib/cairo/cairo-sphinx.so
-lib/cairo/libcairo-trace.so
-lib/libcairo-gobject.a
-lib/libcairo-gobject.la
+@so lib/cairo/libcairo-fdr.so
+@so lib/cairo/libcairo-sphinx.so
+@so lib/cairo/libcairo-trace.so
 @lib lib/libcairo-gobject.so.${LIBcairo-gobject_VERSION}
-lib/libcairo-script-interpreter.a
-lib/libcairo-script-interpreter.la
 @lib lib/libcairo-script-interpreter.so.${LIBcairo-script-interpreter_VERSION}
-lib/libcairo.a
-lib/libcairo.la
 @lib lib/libcairo.so.${LIBcairo_VERSION}
 lib/pkgconfig/cairo-fc.pc
 lib/pkgconfig/cairo-ft.pc
@@ -43,71 +38,5 @@ lib/pkgconfig/cairo-xcb-shm.pc
 lib/pkgconfig/cairo-xcb.pc
 lib/pkgconfig/cairo-xlib-xrender.pc
 lib/pkgconfig/cairo-xlib.pc
+lib/pkgconfig/cairo-xml.pc
 lib/pkgconfig/cairo.pc
-share/gtk-doc/html/cairo/
-share/gtk-doc/html/cairo/bindings-errors.html
-share/gtk-doc/html/cairo/bindings-fonts.html
-share/gtk-doc/html/cairo/bindings-memory.html
-share/gtk-doc/html/cairo/bindings-overloading.html
-share/gtk-doc/html/cairo/bindings-path.html
-share/gtk-doc/html/cairo/bindings-patterns.html
-share/gtk-doc/html/cairo/bindings-return-values.html
-share/gtk-doc/html/cairo/bindings-streams.html
-share/gtk-doc/html/cairo/bindings-surfaces.html
-share/gtk-doc/html/cairo/cairo-Error-handling.html
-share/gtk-doc/html/cairo/cairo-FreeType-Fonts.html
-share/gtk-doc/html/cairo/cairo-Image-Surfaces.html
-share/gtk-doc/html/cairo/cairo-PDF-Surfaces.html
-share/gtk-doc/html/cairo/cairo-PNG-Support.html
-share/gtk-doc/html/cairo/cairo-Paths.html
-share/gtk-doc/html/cairo/cairo-PostScript-Surfaces.html
-share/gtk-doc/html/cairo/cairo-Quartz-(CGFont)-Fonts.html
-share/gtk-doc/html/cairo/cairo-Quartz-Surfaces.html
-share/gtk-doc/html/cairo/cairo-Raster-Sources.html
-share/gtk-doc/html/cairo/cairo-Recording-Surfaces.html
-share/gtk-doc/html/cairo/cairo-Regions.html
-share/gtk-doc/html/cairo/cairo-SVG-Surfaces.html
-share/gtk-doc/html/cairo/cairo-Script-Surfaces.html
-share/gtk-doc/html/cairo/cairo-Tags-and-Links.html
-share/gtk-doc/html/cairo/cairo-Transformations.html
-share/gtk-doc/html/cairo/cairo-Types.html
-share/gtk-doc/html/cairo/cairo-User-Fonts.html
-share/gtk-doc/html/cairo/cairo-Version-Information.html
-share/gtk-doc/html/cairo/cairo-Win32-Fonts.html
-share/gtk-doc/html/cairo/cairo-Win32-Surfaces.html
-share/gtk-doc/html/cairo/cairo-XCB-Surfaces.html
-share/gtk-doc/html/cairo/cairo-XLib-Surfaces.html
-share/gtk-doc/html/cairo/cairo-XLib-XRender-Backend.html
-share/gtk-doc/html/cairo/cairo-cairo-device-t.html
-share/gtk-doc/html/cairo/cairo-cairo-font-face-t.html
-share/gtk-doc/html/cairo/cairo-cairo-font-options-t.html
-share/gtk-doc/html/cairo/cairo-cairo-matrix-t.html
-share/gtk-doc/html/cairo/cairo-cairo-pattern-t.html
-share/gtk-doc/html/cairo/cairo-cairo-scaled-font-t.html
-share/gtk-doc/html/cairo/cairo-cairo-surface-t.html
-share/gtk-doc/html/cairo/cairo-cairo-t.html
-share/gtk-doc/html/cairo/cairo-drawing.html
-share/gtk-doc/html/cairo/cairo-fonts.html
-share/gtk-doc/html/cairo/cairo-support.html
-share/gtk-doc/html/cairo/cairo-surfaces.html
-share/gtk-doc/html/cairo/cairo-text.html
-share/gtk-doc/html/cairo/cairo.devhelp2
-share/gtk-doc/html/cairo/home.png
-share/gtk-doc/html/cairo/index-1.10.html
-share/gtk-doc/html/cairo/index-1.12.html
-share/gtk-doc/html/cairo/index-1.14.html
-share/gtk-doc/html/cairo/index-1.16.html
-share/gtk-doc/html/cairo/index-1.2.html
-share/gtk-doc/html/cairo/index-1.4.html
-share/gtk-doc/html/cairo/index-1.6.html
-share/gtk-doc/html/cairo/index-1.8.html
-share/gtk-doc/html/cairo/index-all.html
-share/gtk-doc/html/cairo/index.html
-share/gtk-doc/html/cairo/language-bindings.html
-share/gtk-doc/html/cairo/left-insensitive.png
-share/gtk-doc/html/cairo/left.png
-share/gtk-doc/html/cairo/right-insensitive.png
-share/gtk-doc/html/cairo/right.png
-share/gtk-doc/html/cairo/style.css
-share/gtk-doc/html/cairo/up-insensitive.png
-share/gtk-doc/html/cairo/up.png

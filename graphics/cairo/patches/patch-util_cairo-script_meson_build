@@ -1,0 +1,21 @@
+$OpenBSD: patch-util_cairo-script_meson_build,v 1.1 2021/10/25 07:21:40 ajacoutot Exp $
+
+From e9ccb1d8d095482e4139da658e679d5aad56b184 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Tim-Philipp=20M=C3=BCller?= <tim@centricular.com>
+Date: Tue, 15 Dec 2020 00:12:55 +0000
+Subject: [PATCH] meson: fix library versioning
+
+Index: util/cairo-script/meson.build
+--- util/cairo-script/meson.build.orig
++++ util/cairo-script/meson.build
+@@ -30,8 +30,8 @@ libcairoscript = library('cairo-script-interpreter',
+   include_directories: [incbase, incsrc],
+   dependencies: deps,
+   link_with: [libcairo],
+-  soversion: '2',
+-  version: '2.' + ''.join(meson.project_version().split('.')) + '.0',
++  soversion: cairo_version_sonum,
++  version: cairo_libversion,
+   install: true,
+ )
+ 
