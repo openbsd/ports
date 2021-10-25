@@ -1,4 +1,4 @@
-$OpenBSD: patch-numpy_core_include_numpy_npy_common_h,v 1.7 2020/04/02 07:39:09 pirofti Exp $
+$OpenBSD: patch-numpy_core_include_numpy_npy_common_h,v 1.8 2021/10/25 06:33:04 bket Exp $
 
 XXX recheck powerpc, is this still needed?
 
@@ -10,7 +10,7 @@ types that conflict with C99 (double for *l), therefore failed.
 Index: numpy/core/include/numpy/npy_common.h
 --- numpy/core/include/numpy/npy_common.h.orig
 +++ numpy/core/include/numpy/npy_common.h
-@@ -320,14 +320,8 @@ typedef unsigned char npy_bool;
+@@ -341,14 +341,8 @@ typedef unsigned char npy_bool;
  #define NPY_FALSE 0
  #define NPY_TRUE 1
  

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.62 2021/06/14 01:02:27 daniel Exp $
+# $OpenBSD: Makefile,v 1.63 2021/10/25 06:33:04 bket Exp $
 
 COMMENT=		fast array and numeric programming library for Python
 
-MODPY_EGG_VERSION=	1.16.5
+MODPY_EGG_VERSION=	1.19.5
 DISTNAME=		numpy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 EXTRACT_SUFX=		.zip
-REVISION=		2
 
 CATEGORIES=		math devel
 
@@ -28,15 +27,18 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS=	Yes
 MODPY_DISTUTILS_BUILDARGS = --fcompiler=gnu95
 
+MODFORTRAN_COMPILER=	gfortran
+
+LIB_DEPENDS=		${MODFORTRAN_LIB_DEPENDS} \
+			math/cblas \
+			math/lapack
+BUILD_DEPENDS=		${MODFORTRAN_BUILD_DEPENDS} \
+			devel/gas \
+			lang/cython${MODPY_FLAVOR}
 TEST_DEPENDS=		${FULLPKGNAME}:${FULLPKGPATH} \
+			devel/py-hypothesis${MODPY_FLAVOR} \
 			devel/py-test${MODPY_FLAVOR} \
 			devel/py-tz${MODPY_FLAVOR}
-MODFORTRAN_COMPILER =	gfortran
-
-BUILD_DEPENDS = ${MODFORTRAN_BUILD_DEPENDS}
-LIB_DEPENDS=		math/cblas \
-			math/lapack \
-			${MODFORTRAN_LIB_DEPENDS}
 
 # Cython 0.28.* uses __attribute__((optimize("Os"))) which
 # leads to breakage at runtime on at least macppc.
@@ -54,6 +56,7 @@ CFLAGS +=	-D CYTHON_SMALL_CODE=
 
 pre-build:
 	cp -f ${WRKSRC}/numpy/distutils/site.cfg ${WRKSRC}/site.cfg
+	ln -sf ${LOCALBASE}/bin/gas ${WRKDIR}/bin/as
 
 do-test:
 	cd ${WRKDIR} && ${MAKE_ENV} ${MODPY_BIN} -c \
