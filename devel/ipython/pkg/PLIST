@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2020/08/05 02:25:55 bket Exp $
+@comment $OpenBSD: PLIST,v 1.27 2021/10/25 06:34:03 bket Exp $
 @conflict ipython-*
 @pkgpath devel/ipython
 @comment bin/iptest2
@@ -349,6 +349,7 @@ lib/python${MODPY_VERSION}/site-packages/IPython/lib/${MODPY_PYCACHE}inputhook.$
 lib/python${MODPY_VERSION}/site-packages/IPython/lib/${MODPY_PYCACHE}inputhookglut.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/lib/${MODPY_PYCACHE}inputhookgtk.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/lib/${MODPY_PYCACHE}inputhookgtk3.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/lib/${MODPY_PYCACHE}inputhookgtk4.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/lib/${MODPY_PYCACHE}inputhookpyglet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/lib/${MODPY_PYCACHE}inputhookqt4.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/lib/${MODPY_PYCACHE}inputhookwx.${MODPY_PYC_MAGIC_TAG}pyc
@@ -368,6 +369,7 @@ lib/python${MODPY_VERSION}/site-packages/IPython/lib/inputhook.py
 lib/python${MODPY_VERSION}/site-packages/IPython/lib/inputhookglut.py
 lib/python${MODPY_VERSION}/site-packages/IPython/lib/inputhookgtk.py
 lib/python${MODPY_VERSION}/site-packages/IPython/lib/inputhookgtk3.py
+lib/python${MODPY_VERSION}/site-packages/IPython/lib/inputhookgtk4.py
 lib/python${MODPY_VERSION}/site-packages/IPython/lib/inputhookpyglet.py
 lib/python${MODPY_VERSION}/site-packages/IPython/lib/inputhookqt4.py
 lib/python${MODPY_VERSION}/site-packages/IPython/lib/inputhookwx.py
@@ -445,6 +447,7 @@ lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/${MODPY_PYCACHE}glut.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/${MODPY_PYCACHE}gtk.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/${MODPY_PYCACHE}gtk3.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/${MODPY_PYCACHE}gtk4.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/${MODPY_PYCACHE}osx.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/${MODPY_PYCACHE}pyglet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/${MODPY_PYCACHE}qt.${MODPY_PYC_MAGIC_TAG}pyc
@@ -454,6 +457,7 @@ lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/asyncio.
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/glut.py
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/gtk.py
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/gtk3.py
+lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/gtk4.py
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/osx.py
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/pyglet.py
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/pt_inputhooks/qt.py
