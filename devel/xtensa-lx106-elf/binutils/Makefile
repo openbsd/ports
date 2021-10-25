@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/10/22 21:41:26 tracey Exp $
+# $OpenBSD: Makefile,v 1.3 2021/10/25 10:17:09 sthen Exp $
 
 COMMENT =	binutils for ${CONFIG} cross-development
 
@@ -16,5 +16,7 @@ WANTLIB += ${COMPILER_LIBCXX} c curses expat m
 CONFIGURE_ARGS +=	--disable-multilib \
 			--with-gnu-as \
 			--with-gnu-ld
+
+BUILD_DEPENDS +=	lang/gawk
 
 .include <bsd.port.mk>
