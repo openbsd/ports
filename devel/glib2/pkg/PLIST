@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.99 2021/08/21 08:34:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.100 2021/10/25 07:21:27 ajacoutot Exp $
 @conflict glib2-docs-*
 @conflict glib2-fam-*
 @pkgpath devel/glib2,-docs
@@ -139,6 +139,7 @@ include/glib-2.0/gio/gpermission.h
 include/glib-2.0/gio/gpollableinputstream.h
 include/glib-2.0/gio/gpollableoutputstream.h
 include/glib-2.0/gio/gpollableutils.h
+include/glib-2.0/gio/gpowerprofilemonitor.h
 include/glib-2.0/gio/gpropertyaction.h
 include/glib-2.0/gio/gproxy.h
 include/glib-2.0/gio/gproxyaddress.h
@@ -229,6 +230,7 @@ include/glib-2.0/glib/gi18n.h
 include/glib-2.0/glib/giochannel.h
 include/glib-2.0/glib/gkeyfile.h
 include/glib-2.0/glib/glib-autocleanups.h
+include/glib-2.0/glib/glib-typeof.h
 include/glib-2.0/glib/glist.h
 include/glib-2.0/glib/gmacros.h
 include/glib-2.0/glib/gmain.h
@@ -348,8 +350,8 @@ share/bash-completion/completions/gresource
 share/bash-completion/completions/gsettings
 share/doc/pkg-readmes/${PKGSTEM}
 share/gdb/auto-load/${PREFIX}/lib/
-share/gdb/auto-load/${PREFIX}/lib/libglib-2.0.so.0.6800.4-gdb.py
-share/gdb/auto-load/${PREFIX}/lib/libgobject-2.0.so.0.6800.4-gdb.py
+share/gdb/auto-load/${PREFIX}/lib/libglib-2.0.so.0.7000.0-gdb.py
+share/gdb/auto-load/${PREFIX}/lib/libgobject-2.0.so.0.7000.0-gdb.py
 share/gettext/its/
 share/gettext/its/gschema.its
 share/gettext/its/gschema.loc
