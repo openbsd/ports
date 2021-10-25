@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/25 08:28:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/25 07:24:49 ajacoutot Exp $
 include/libsoup-${API_VERSION}/
 include/libsoup-${API_VERSION}/libsoup/
 include/libsoup-${API_VERSION}/libsoup/soup-auth-domain-basic.h
@@ -115,5 +115,3 @@ share/locale/vi/LC_MESSAGES/libsoup-${API_VERSION}.mo
 share/locale/zh_CN/LC_MESSAGES/libsoup-${API_VERSION}.mo
 share/locale/zh_HK/LC_MESSAGES/libsoup-${API_VERSION}.mo
 share/locale/zh_TW/LC_MESSAGES/libsoup-${API_VERSION}.mo
-share/vala/vapi/libsoup-${API_VERSION}.deps
-share/vala/vapi/libsoup-${API_VERSION}.vapi
