@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2021/05/13 07:49:55 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2021/10/25 14:48:36 jasper Exp $
 @pkgpath lang/vala
 bin/vala
 bin/vala-${API_V}
@@ -121,8 +121,6 @@ share/vala-${API_V}/vapi/gdl-1.0.deps
 share/vala-${API_V}/vapi/gdl-1.0.vapi
 share/vala-${API_V}/vapi/gdl-3.0.deps
 share/vala-${API_V}/vapi/gdl-3.0.vapi
-share/vala-${API_V}/vapi/gedit-2.20.deps
-share/vala-${API_V}/vapi/gedit-2.20.vapi
 share/vala-${API_V}/vapi/geocode-glib-1.0.deps
 share/vala-${API_V}/vapi/geocode-glib-1.0.vapi
 share/vala-${API_V}/vapi/gio-2.0.deps
@@ -331,8 +329,6 @@ share/vala-${API_V}/vapi/udisks2.vapi
 share/vala-${API_V}/vapi/unique-1.0.deps
 share/vala-${API_V}/vapi/unique-1.0.vapi
 share/vala-${API_V}/vapi/v4l2.vapi
-share/vala-${API_V}/vapi/webkit-1.0.deps
-share/vala-${API_V}/vapi/webkit-1.0.vapi
 share/vala-${API_V}/vapi/webkit2gtk-4.0.deps
 share/vala-${API_V}/vapi/webkit2gtk-4.0.vapi
 share/vala-${API_V}/vapi/webkit2gtk-web-extension-4.0.deps
