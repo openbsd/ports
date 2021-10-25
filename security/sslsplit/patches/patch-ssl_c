@@ -1,5 +1,6 @@
-$OpenBSD: patch-ssl_c,v 1.10 2021/05/05 19:00:05 tb Exp $
+$OpenBSD: patch-ssl_c,v 1.11 2021/10/25 19:03:18 tb Exp $
 
+Use X509_up_ref()
 https://github.com/droe/sslsplit/pull/291
 
 Index: ssl.c
@@ -14,3 +15,12 @@ Index: ssl.c
  	unsigned char kbuf[48], rbuf[32];
  	k = &kbuf[0];
  	r = &rbuf[0];
+@@ -1530,7 +1530,7 @@ ssl_key_refcount_inc(EVP_PKEY *key)
+ void
+ ssl_x509_refcount_inc(X509 *crt)
+ {
+-#if defined(OPENSSL_THREADS) && ((OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER))
++#if defined(OPENSSL_THREADS) && ((OPENSSL_VERSION_NUMBER < 0x10100000L) || (defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL))
+ 	CRYPTO_add(&crt->references, 1, CRYPTO_LOCK_X509);
+ #else /* !OPENSSL_THREADS */
+ 	X509_up_ref(crt);
