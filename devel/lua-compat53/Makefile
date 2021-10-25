@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2020/02/03 22:42:36 fcambus Exp $
+# $OpenBSD: Makefile,v 1.5 2021/10/25 17:23:31 fcambus Exp $
 
 COMMENT =	compatibility module providing Lua 5.3 style APIs
 
-V =		0.7
+V =		0.9
 DISTNAME =	lua-compat53-${V}
-REVISION =	0
 
 GH_ACCOUNT =	keplerproject
 GH_PROJECT =	lua-compat-5.3
