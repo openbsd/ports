@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.153 2021/10/23 09:18:52 landry Exp $
+# $OpenBSD: Makefile,v 1.154 2021/10/25 07:58:56 landry Exp $
 
 BROKEN-sparc64 =	undefined reference to QOpenGLExtension_ARB_tessellation_shader::QOpenGLExtension_ARB_tessellation_shader() in libQt53DRender.so.2.0 when linking qgis_3drenderingtest
 
@@ -36,6 +36,7 @@ MODULES =	devel/cmake \
 COMPILER =	base-clang ports-gcc
 
 BUILD_DEPENDS =	x11/py-qt5${MODPY_FLAVOR} \
+		devel/py-qt-builder${MODPY_FLAVOR} \
 		devel/py-sip${MODPY_FLAVOR}>=4.19.4v0 \
 		geo/gdal,-python${MODPY_FLAVOR} \
 		devel/py-six${MODPY_FLAVOR} \
