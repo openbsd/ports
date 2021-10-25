@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2020/04/24 07:30:19 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2021/10/25 17:17:50 fcambus Exp $
 
 COMMENT =	library of Unicode names and annotation data
 
-V =		20200413
-REVISION =	0
+V =		20210917
 DISTNAME =	libuninameslist-dist-$V
 PKGNAME =	${DISTNAME:S/-dist//}
 
-SHARED_LIBS +=	uninameslist	0.2	# 1.7
-SHARED_LIBS +=  uninameslist-fr	0.0 	# 1.3
+SHARED_LIBS +=	uninameslist	0.2	# 1.9
+SHARED_LIBS +=  uninameslist-fr	0.0 	# 1.4
 
 CATEGORIES =	textproc
 
