@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/02/12 14:34:11 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/10/26 19:41:08 sthen Exp $
 @conflict py-acme-<0.22.0${MODPY_FLAVOR}
 @conflict py-josepy-*
 @pkgpath security/py-josepy
-bin/jws${MODPY_BIN_SUFFIX}
+bin/jws
 lib/python${MODPY_VERSION}/site-packages/josepy/
 lib/python${MODPY_VERSION}/site-packages/josepy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/josepy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -15,64 +15,21 @@ lib/python${MODPY_VERSION}/site-packages/josepy/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/josepy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/josepy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/josepy/${MODPY_PYCACHE}b64.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/josepy/${MODPY_PYCACHE}b64_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/josepy/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/josepy/${MODPY_PYCACHE}errors_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/josepy/${MODPY_PYCACHE}interfaces.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/josepy/${MODPY_PYCACHE}interfaces_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/josepy/${MODPY_PYCACHE}json_util.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/josepy/${MODPY_PYCACHE}json_util_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/josepy/${MODPY_PYCACHE}jwa.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/josepy/${MODPY_PYCACHE}jwa_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/josepy/${MODPY_PYCACHE}jwk.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/josepy/${MODPY_PYCACHE}jwk_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/josepy/${MODPY_PYCACHE}jws.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/josepy/${MODPY_PYCACHE}jws_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/josepy/${MODPY_PYCACHE}magic_typing.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/josepy/${MODPY_PYCACHE}magic_typing_test.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/josepy/${MODPY_PYCACHE}test_util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/josepy/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/josepy/${MODPY_PYCACHE}util_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/josepy/b64.py
-lib/python${MODPY_VERSION}/site-packages/josepy/b64_test.py
 lib/python${MODPY_VERSION}/site-packages/josepy/errors.py
-lib/python${MODPY_VERSION}/site-packages/josepy/errors_test.py
 lib/python${MODPY_VERSION}/site-packages/josepy/interfaces.py
-lib/python${MODPY_VERSION}/site-packages/josepy/interfaces_test.py
 lib/python${MODPY_VERSION}/site-packages/josepy/json_util.py
-lib/python${MODPY_VERSION}/site-packages/josepy/json_util_test.py
 lib/python${MODPY_VERSION}/site-packages/josepy/jwa.py
-lib/python${MODPY_VERSION}/site-packages/josepy/jwa_test.py
 lib/python${MODPY_VERSION}/site-packages/josepy/jwk.py
-lib/python${MODPY_VERSION}/site-packages/josepy/jwk_test.py
 lib/python${MODPY_VERSION}/site-packages/josepy/jws.py
-lib/python${MODPY_VERSION}/site-packages/josepy/jws_test.py
 lib/python${MODPY_VERSION}/site-packages/josepy/magic_typing.py
-lib/python${MODPY_VERSION}/site-packages/josepy/magic_typing_test.py
-lib/python${MODPY_VERSION}/site-packages/josepy/test_util.py
-lib/python${MODPY_VERSION}/site-packages/josepy/testdata/
-lib/python${MODPY_VERSION}/site-packages/josepy/testdata/README
-lib/python${MODPY_VERSION}/site-packages/josepy/testdata/cert-100sans.pem
-lib/python${MODPY_VERSION}/site-packages/josepy/testdata/cert-idnsans.pem
-lib/python${MODPY_VERSION}/site-packages/josepy/testdata/cert-san.pem
-lib/python${MODPY_VERSION}/site-packages/josepy/testdata/cert.der
-lib/python${MODPY_VERSION}/site-packages/josepy/testdata/cert.pem
-lib/python${MODPY_VERSION}/site-packages/josepy/testdata/critical-san.pem
-lib/python${MODPY_VERSION}/site-packages/josepy/testdata/csr-100sans.pem
-lib/python${MODPY_VERSION}/site-packages/josepy/testdata/csr-6sans.pem
-lib/python${MODPY_VERSION}/site-packages/josepy/testdata/csr-idnsans.pem
-lib/python${MODPY_VERSION}/site-packages/josepy/testdata/csr-nosans.pem
-lib/python${MODPY_VERSION}/site-packages/josepy/testdata/csr-san.pem
-lib/python${MODPY_VERSION}/site-packages/josepy/testdata/csr.der
-lib/python${MODPY_VERSION}/site-packages/josepy/testdata/csr.pem
-lib/python${MODPY_VERSION}/site-packages/josepy/testdata/dsa512_key.pem
-lib/python${MODPY_VERSION}/site-packages/josepy/testdata/ec_p256_key.pem
-lib/python${MODPY_VERSION}/site-packages/josepy/testdata/ec_p384_key.pem
-lib/python${MODPY_VERSION}/site-packages/josepy/testdata/ec_p521_key.pem
-lib/python${MODPY_VERSION}/site-packages/josepy/testdata/rsa1024_key.pem
-lib/python${MODPY_VERSION}/site-packages/josepy/testdata/rsa2048_cert.pem
-lib/python${MODPY_VERSION}/site-packages/josepy/testdata/rsa2048_key.pem
-lib/python${MODPY_VERSION}/site-packages/josepy/testdata/rsa256_key.pem
-lib/python${MODPY_VERSION}/site-packages/josepy/testdata/rsa512_key.pem
+lib/python${MODPY_VERSION}/site-packages/josepy/py.typed
 lib/python${MODPY_VERSION}/site-packages/josepy/util.py
-lib/python${MODPY_VERSION}/site-packages/josepy/util_test.py
