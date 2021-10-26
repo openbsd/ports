@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2021/05/21 19:50:26 kmos Exp $
+# $OpenBSD: Makefile,v 1.29 2021/10/26 16:19:04 sthen Exp $
 
 COMMENT=		common low-level libraries for logilab projects
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	1.4.0
 DISTNAME=		logilab-common-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
-REVISION=		4
+REVISION=		5
 
 HOMEPAGE=		https://www.logilab.org/project/logilab-common
 
@@ -23,16 +23,9 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
-
-.if !${FLAVOR:Mpython3}
-TEST_DEPENDS +=		devel/py-mxDateTime
-.endif
+FLAVOR =		python3
 
 do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} -W once -m logilab.common.pytest
-
-post-install:
-	mv ${PREFIX}/bin/logilab-pytest{,${MODPY_BIN_SUFFIX}}
 
 .include <bsd.port.mk>

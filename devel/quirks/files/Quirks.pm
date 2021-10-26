@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1320 2021/10/25 15:45:29 tb Exp $
+# $OpenBSD: Quirks.pm,v 1.1321 2021/10/26 16:19:04 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -567,6 +567,8 @@ my $stem_extensions = {
 	'py-webencodings' => 'py3-webencodings',
 	'py-xmltodict' => 'py3-xmltodict',
 	'py-zc-lockfilezc.lockfile' => 'py3-zc-lockfilezc.lockfile',
+	'py-jaraco-functools' => 'py3-jaraco-functools',
+	'py-logilab-common' => 'py3-logilab-common',
 };
 
 my $obsolete_reason = {};
@@ -1372,7 +1374,7 @@ my $obsolete_message = {
 	28 => "consider migrating MCollective agents and filters using tools like Bolt and PuppetDB's Puppet Query Language",
 	29 => "unmaintained port that was blocking other changes in ports",
 	30 => "crashes in many different ways at runtime, does not build with '-fno-common'",
-	31 => "upstream is dead, python2-only, nothing uses it",
+	31 => "python port without 3.x support, no other ports use it",
 	33 => "no longer maintained upstream, website suggests https://cronometer.com until rewrite is done",
 	34 => "upstream is dead, basic functionality does not work, use tcpdump(1) and scapy(1) instead",
 	35 => "upstream is dead, no longer useful, does not support IPv6",

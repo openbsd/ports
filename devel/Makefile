@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2138 2021/10/24 23:08:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.2139 2021/10/26 16:19:03 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1466,7 +1466,6 @@
      SUBDIR += py-isodate,python3
      SUBDIR += py-isort
      SUBDIR += py-isort,python3
-     SUBDIR += py-jaraco-functools
      SUBDIR += py-jaraco-functools,python3
      SUBDIR += py-jedi,python3
      SUBDIR += py-jeepney,python3
@@ -1484,7 +1483,6 @@
      SUBDIR += py-linecache2
      SUBDIR += py-llvmlite
      SUBDIR += py-llvmlite,python3
-     SUBDIR += py-logilab-common
      SUBDIR += py-logilab-common,python3
      SUBDIR += py-magic
      SUBDIR += py-magic,python3

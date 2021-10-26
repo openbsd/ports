@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/02/19 23:13:01 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/10/26 16:19:04 sthen Exp $
+@pkgpath devel/py-logilab-common
 @conflict py-logilab-common-<1.4.0p3
-bin/logilab-pytest${MODPY_BIN_SUFFIX}
+bin/logilab-pytest
 lib/python${MODPY_VERSION}/site-packages/logilab/
 lib/python${MODPY_VERSION}/site-packages/logilab/common/
 lib/python${MODPY_VERSION}/site-packages/logilab/common/__init__.py

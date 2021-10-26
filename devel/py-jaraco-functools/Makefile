@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2021/05/21 19:50:26 kmos Exp $
+# $OpenBSD: Makefile,v 1.5 2021/10/26 16:19:04 sthen Exp $
 
 COMMENT =		functools like those found in stdlib
 
 MODPY_EGG_VERSION =	2.0
-REVISION =		2
+REVISION =		3
 DISTNAME =		jaraco.functools-${MODPY_EGG_VERSION}
 PKGNAME =		py-jaraco-functools-${MODPY_EGG_VERSION}
 
@@ -19,14 +19,10 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/py-more-itertools${MODPY_FLAVOR}
-
-.if !${FLAVOR:Mpython3}
-RUN_DEPENDS +=		devel/py-backports-functools-lru-cache
-.endif
 
 # XXX requires unported TEST_DEPENDS, i.e. jaraco.classes
 NO_TEST =		Yes
