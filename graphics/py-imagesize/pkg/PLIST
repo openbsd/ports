@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/02/20 13:20:18 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/10/26 19:46:26 sthen Exp $
 @pkgpath graphics/py-imagesize
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}imagesize.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/imagesize-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/imagesize-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
