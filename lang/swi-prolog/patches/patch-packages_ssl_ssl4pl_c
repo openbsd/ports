@@ -1,8 +1,53 @@
-$OpenBSD: patch-packages_ssl_ssl4pl_c,v 1.5 2021/05/04 15:25:22 tb Exp $
+$OpenBSD: patch-packages_ssl_ssl4pl_c,v 1.6 2021/10/26 10:01:12 tb Exp $
 
 Index: packages/ssl/ssl4pl.c
 --- packages/ssl/ssl4pl.c.orig
 +++ packages/ssl/ssl4pl.c
+@@ -572,7 +572,7 @@ unify_name(term_t term, X509_NAME* name)
+   return PL_unify_nil(list);
+ }
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ #define X509_REVOKED_get0_serialNumber(R) ((R)->serialNumber)
+ #define X509_REVOKED_get0_revocationDate(R) ((R)->revocationDate)
+ #define EVP_PKEY_base_id(key) ((key)->type)
+@@ -673,7 +673,7 @@ unify_crl(term_t term, X509_CRL* crl)
+ static int
+ unify_rsa(term_t item, RSA* rsa)
+ {
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+   return ( PL_unify_functor(item, FUNCTOR_rsa8) &&
+ 	   unify_bignum_arg(1, item, rsa->n) &&
+ 	   unify_bignum_arg(2, item, rsa->e) &&
+@@ -1762,7 +1762,7 @@ ssl_cb_cert_verify(int preverify_ok, X509_STORE_CTX *c
+          4) Otherwise, FAIL.
+       */
+       int i;
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ #define ASN1_STRING_get0_data(D) ASN1_STRING_data(D)
+ #define X509_STORE_CTX_get0_cert(C) ((C)->cert)
+ #endif
+@@ -2362,7 +2362,7 @@ get_dh2048(void)
+         DH *dh = DH_new();
+         if (dh == NULL) return NULL;
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+         dh->p=BN_bin2bn(dhp_2048,sizeof(dhp_2048),NULL);
+         dh->g=BN_bin2bn(dhg_2048,sizeof(dhg_2048),NULL);
+         if ((dh->p == NULL) || (dh->g == NULL))
+@@ -2612,7 +2612,7 @@ ssl_lib_init(void)
+  * One-time library initialization code
+  */
+ {
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+     (void) SSL_library_init();
+     SSL_load_error_strings();
+ #endif
 @@ -3549,7 +3549,7 @@ pl_ssl_session(term_t stream_t, term_t session_t)
         !(session = SSL_get1_session(ssl)) )
      return PL_existence_error("ssl_session", stream_t);
