@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2021/05/21 19:50:30 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2021/10/26 20:06:45 sthen Exp $
 
 COMMENT =		objects and routines pertaining to date and time
 
-MODPY_EGG_VERSION =	1.14.1
-REVISION =		3
+MODPY_EGG_VERSION =	4.1.2
 DISTNAME =		tempora-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -14,22 +13,18 @@ HOMEPAGE =		https://github.com/jaraco/tempora
 # MIT
 PERMIT_PACKAGE =	Yes
 
+FLAVORS =		python3
+FLAVOR =		python3
+
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}>=1.15.0
-RUN_DEPENDS =	 	devel/py-jaraco-functools${MODPY_FLAVOR}>=1.2.0 \
-			devel/py-six${MODPY_FLAVOR} \
-			devel/py-tz${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR ?=
-
+# unported deps
 NO_TEST =		Yes
 
-post-install:
-	mv ${PREFIX}/bin/calc-prorate \
-		${PREFIX}/bin/calc-prorate${MODPY_BIN_SUFFIX}
+BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}>=1.15.0
+RUN_DEPENDS =		devel/py-jaraco-functools${MODPY_FLAVOR}>=1.2.0 \
+			devel/py-tz${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

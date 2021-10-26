@@ -1,6 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/02/19 23:13:02 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/10/26 20:06:45 sthen Exp $
 @conflict py-tempora-<1.14.1p2
-bin/calc-prorate${MODPY_BIN_SUFFIX}
+@pkgpath devel/py-tempora
+bin/calc-prorate
+lib/python${MODPY_VERSION}/site-packages/lib/tempora/
+lib/python${MODPY_VERSION}/site-packages/lib/tempora/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lib/tempora/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/lib/tempora/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lib/tempora/${MODPY_PYCACHE}schedule.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lib/tempora/${MODPY_PYCACHE}timing.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lib/tempora/${MODPY_PYCACHE}utc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lib/tempora/schedule.py
+lib/python${MODPY_VERSION}/site-packages/lib/tempora/tests/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lib/tempora/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/lib/tempora/tests/${MODPY_PYCACHE}test_schedule.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lib/tempora/tests/${MODPY_PYCACHE}test_timing.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lib/tempora/tests/test_schedule.py
+lib/python${MODPY_VERSION}/site-packages/lib/tempora/tests/test_timing.py
+lib/python${MODPY_VERSION}/site-packages/lib/tempora/timing.py
+lib/python${MODPY_VERSION}/site-packages/lib/tempora/utc.py
 lib/python${MODPY_VERSION}/site-packages/tempora/
 lib/python${MODPY_VERSION}/site-packages/tempora-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/tempora-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -19,6 +36,8 @@ lib/python${MODPY_VERSION}/site-packages/tempora/schedule.py
 lib/python${MODPY_VERSION}/site-packages/tempora/tests/
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tempora/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tempora/tests/${MODPY_PYCACHE}test_schedule.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tempora/tests/${MODPY_PYCACHE}test_timing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tempora/tests/test_schedule.py
+lib/python${MODPY_VERSION}/site-packages/tempora/tests/test_timing.py
 lib/python${MODPY_VERSION}/site-packages/tempora/timing.py
 lib/python${MODPY_VERSION}/site-packages/tempora/utc.py
