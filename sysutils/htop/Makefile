@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2021/04/23 21:16:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2021/10/26 12:03:38 jca Exp $
 
 COMMENT =	interactive process viewer
 
@@ -7,6 +7,7 @@ GH_PROJECT =	htop
 #GH_TAGNAME =	3.0.5
 GH_COMMIT =	feec16cbb53dabc6a52ef2f69a6a13798be82617
 DISTNAME =	htop-3.0.5pl20210418
+REVISION =	0
 
 CATEGORIES =	sysutils
 
@@ -23,7 +24,7 @@ RUN_DEPENDS =	devel/desktop-file-utils
 
 NO_TEST =	Yes
 
-DEBUG_PACKAGES =	${BUILD_PACKAEGS}
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 CONFIGURE_STYLE =	autoreconf
 AUTOCONF_VERSION =	2.69
