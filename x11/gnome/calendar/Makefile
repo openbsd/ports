@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.55 2021/06/05 12:35:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.56 2021/10/26 10:34:47 jasper Exp $
 
 COMMENT =		GNOME calendar
 
 GNOME_PROJECT =		gnome-calendar
-GNOME_VERSION =		40.2
+GNOME_VERSION =		41.0
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
