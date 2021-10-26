@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/10/24 09:28:49 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/10/26 20:06:52 sthen Exp $
 @pkgpath net/py-portend
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}portend.${MODPY_PYC_MAGIC_TAG}pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lib/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/lib/${MODPY_PYCACHE}portend.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lib/portend.py
 lib/python${MODPY_VERSION}/site-packages/portend-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/portend-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/portend-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
