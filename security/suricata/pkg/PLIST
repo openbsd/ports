@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2021/04/26 09:09:01 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.18 2021/10/26 16:29:58 gonzalo Exp $
 @conflict suricata-update-*
 @pkgpath security/suricata-update
 @newgroup _suricata:800
@@ -148,7 +148,7 @@ lib/python${MODPY_VERSION}/site-packages/suricata/update/rule.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/sources.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/util.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/version.py
-lib/python${MODPY_VERSION}/site-packages/suricata_update-${SUPDATE_V}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/suricata_update-1.2.2-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/suricatasc/
 lib/python${MODPY_VERSION}/site-packages/suricatasc/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/suricatasc/${MODPY_PYCACHE}/

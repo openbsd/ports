@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.43 2021/06/17 23:00:59 daniel Exp $
+# $OpenBSD: Makefile,v 1.44 2021/10/26 16:29:57 gonzalo Exp $
 
 COMMENT =	high performance network IDS, IPS and security monitoring
 
-SURICATA_V =	6.0.2
+SURICATA_V =	6.0.3
 SUPDATE_V =	1.2.1
 
 DISTNAME =	suricata-${SURICATA_V}
-REVISION =	0
 CATEGORIES =	security
 SHARED_LIBS +=	htp                       0.0 # 2.0
 
 HOMEPAGE =	https://suricata-ids.org/
 
-MAINTAINER =	Gonzalo L. R. <gonzalo@openbsd.org> \
-		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER =	Gonzalo L. R. <gonzalo@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

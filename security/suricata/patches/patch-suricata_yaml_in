@@ -1,4 +1,4 @@
-$OpenBSD: patch-suricata_yaml_in,v 1.11 2021/04/26 09:09:01 gonzalo Exp $
+$OpenBSD: patch-suricata_yaml_in,v 1.12 2021/10/26 16:29:58 gonzalo Exp $
 
 - After reload allow to write log files or use syslog.
 - Switch user and group to avoid running as root.
@@ -98,7 +98,7 @@ Index: suricata.yaml.in
        facility: local5
        format: "[%i] <%d> -- "
        # type: json
-@@ -990,9 +999,9 @@ asn1-max-frames: 256
+@@ -992,9 +1001,9 @@ asn1-max-frames: 256
  ##
  
  # Run Suricata with a specific user-id and group-id:
@@ -111,7 +111,7 @@ Index: suricata.yaml.in
  
  # Some logging modules will use that name in event as identifier. The default
  # value is the hostname
-@@ -1001,7 +1010,7 @@ asn1-max-frames: 256
+@@ -1003,7 +1012,7 @@ asn1-max-frames: 256
  # Default location of the pid file. The pid file is only used in
  # daemon mode (start Suricata with -D). If not running in daemon mode
  # the --pidfile command line option must be used to create a pid file.
@@ -120,7 +120,7 @@ Index: suricata.yaml.in
  
  # Daemon working directory
  # Suricata will change directory to this one if provided
-@@ -1857,14 +1866,38 @@ napatech:
+@@ -1863,14 +1872,38 @@ napatech:
      #
      hashmode: hash5tuplesorted
  
