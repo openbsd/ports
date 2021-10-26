@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.191 2021/07/18 12:21:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.192 2021/10/26 11:16:25 jasper Exp $
 
 COMMENT=		GNOME document viewer
 
 GNOME_PROJECT=		evince
-GNOME_VERSION=		40.4
+GNOME_VERSION=		41.2
 
 MAJ_V=			3.0
 SUBST_VARS=		MAJ_V
