@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2019/07/12 21:02:19 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2021/10/26 14:37:57 tracey Exp $
 
 CONFIG=		xtensa-elf
 PKGNAME?=	${CONFIG}-${DISTNAME}
@@ -16,6 +16,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--target=xtensa-elf    \
 		--disable-shared    \
 		--disable-nls	    \
-		--disable-werror
+		--disable-werror \
+		--without-isl
 
 EXTRACT_SUFX?=	.tar.bz2

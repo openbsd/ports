@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/02 18:30:57 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2021/10/26 14:37:57 tracey Exp $
 
 COMMENT=	binutils for xtensa-elf cross-development
 
 V=		2.27
 DISTNAME=	binutils-$V
+REVISION=	0
 
 HOMEPAGE=	https://www.gnu.org/software/binutils/
 
