@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/11/05 13:38:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/26 14:53:58 ajacoutot Exp $
 lib/tracker-miners-3.0/
 lib/tracker-miners-3.0/extract-modules/
 @so lib/tracker-miners-3.0/extract-modules/libextract-abw.so
 @so lib/tracker-miners-3.0/extract-modules/libextract-bmp.so
 @so lib/tracker-miners-3.0/extract-modules/libextract-desktop.so
+@so lib/tracker-miners-3.0/extract-modules/libextract-disc-generic.so
 @so lib/tracker-miners-3.0/extract-modules/libextract-dummy.so
-@so lib/tracker-miners-3.0/extract-modules/libextract-dvi.so
 @so lib/tracker-miners-3.0/extract-modules/libextract-epub.so
 @so lib/tracker-miners-3.0/extract-modules/libextract-gif.so
 @so lib/tracker-miners-3.0/extract-modules/libextract-gstreamer.so
@@ -135,7 +135,6 @@ share/tracker3-miners/extract-rules/10-abw.rule
 share/tracker3-miners/extract-rules/10-bmp.rule
 share/tracker3-miners/extract-rules/10-comics.rule
 share/tracker3-miners/extract-rules/10-desktop.rule
-share/tracker3-miners/extract-rules/10-dvi.rule
 share/tracker3-miners/extract-rules/10-ebooks.rule
 share/tracker3-miners/extract-rules/10-epub.rule
 share/tracker3-miners/extract-rules/10-gif.rule
@@ -159,6 +158,7 @@ share/tracker3-miners/extract-rules/15-games.rule
 share/tracker3-miners/extract-rules/15-gstreamer-guess.rule
 share/tracker3-miners/extract-rules/15-playlist.rule
 share/tracker3-miners/extract-rules/15-text.rule
+share/tracker3-miners/extract-rules/90-disc-generic.rule
 share/tracker3-miners/extract-rules/90-gstreamer-audio-generic.rule
 share/tracker3-miners/extract-rules/90-gstreamer-video-generic.rule
 share/tracker3-miners/miners/
