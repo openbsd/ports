@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.11 2021/02/10 19:44:31 sthen Exp $
+$OpenBSD: README-main,v 1.12 2021/10/26 15:11:13 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -113,13 +113,28 @@ you can use these shell commands:
 After enabling or disabling extensions (or otherwise modifying php's
 configuration), use rcctl(8) to restart php${SV}_fpm or Apache.
 
-PHP's OpenSSL functions
-=======================
+Living with chroot
+==================
 The chroot jail commonly used with PHP on OpenBSD means that only files
-inside /var/www can be used. Functions for making TLS connections usually
-need access to CA certificates, and key generation functions may need
-access to configuration files.
+inside /var/www can be accessed, and path references should omit /var/www
+prefixes.
 
+File paths
+----------
+Sometimes it is hard to work with file paths in this case (for example
+applications with some parts run from the web and some from the command
+line); in those cases it can help to create a symlink so that /var/www
+from _inside_ the chroot points to the expected locations. This can be
+done with "mkdir -p /var/www/var; ln -s .. /var/www/var/www".
+
+Socket paths for MariaDB
+------------------------
+See mariadb's pkg-readme file for information.
+
+PHP's OpenSSL functions
+-----------------------
+Functions for making TLS connections usually need access to CA certificates,
+and key generation functions may need access to configuration files.
 To use these, copy the relevant files into the /var/www jail:
 
     # mkdir -p ${CHROOT_DIR}/etc/ssl
@@ -128,3 +143,15 @@ To use these, copy the relevant files into the /var/www jail:
 
 As these files are updated from time to time, you might like to add
 the above "install" line to /etc/rc.local.
+
+Executing other commands
+------------------------
+To run commands from inside the chroot using PHP's file execution functions
+(exec, passthru, popen, etc) or the old mail() function which executes
+/usr/sbin/sendmail, you must either create a statically-linked binary,
+or install the relevant libraries and support files inside the chroot. 
+Additionally you will need to provide /bin/sh inside the chroot, for
+example: "cp /bin/sh /var/www/bin". Again you will want to make sure
+that this is kept up to date. (In the specific case of mail, it is
+normally preferred to use PHPMailer or similar, and submit the mail by
+SMTP instead).
