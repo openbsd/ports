@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/02/22 21:01:36 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2021/10/26 19:24:43 sthen Exp $
 
 COMMENT =	fast C based HTML 5 parsing for python
 
-MODPY_EGG_VERSION =	0.4.9
+MODPY_EGG_VERSION =	0.4.10
 
 DISTNAME =	html5-parser-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
@@ -14,15 +14,19 @@ HOMEPAGE =	https://html5-parser.readthedocs.io
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
+FLAVORS =	python3
+FLAVOR =	python3
+
 WANTLIB += pthread xml2
 
 MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	test/*py
 
-FLAVORS =	python3
-FLAVOR =	python3
+TEST_ENV +=		PYTHONPATH=${WRKSRC}/lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION}/
 
 LIB_DEPENDS =		textproc/libxml
 
