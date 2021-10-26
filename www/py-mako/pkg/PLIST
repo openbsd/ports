@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/10/24 09:28:52 sthen Exp $
-@pkgpath www/py-mako
+@comment $OpenBSD: PLIST,v 1.8 2021/10/26 19:19:22 sthen Exp $
 @conflict py-mako-<1.1.1p1
+@pkgpath www/py-mako
 bin/mako-render
 lib/python${MODPY_VERSION}/site-packages/Mako-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Mako-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

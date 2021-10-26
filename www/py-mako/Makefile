@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2021/10/24 09:28:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2021/10/26 19:19:22 sthen Exp $
 
 COMMENT =	super-fast templating language
 
-MODPY_EGG_VERSION = 	1.1.1
+MODPY_EGG_VERSION =	1.1.5
 DISTNAME =		Mako-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		3
 
 CATEGORIES =		www
 
@@ -15,7 +14,7 @@ HOMEPAGE =		https://www.makotemplates.org/
 PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS = 	Yes
+MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 
 MODULES =		lang/python
