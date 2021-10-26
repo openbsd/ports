@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.54 2021/10/01 12:13:51 fcambus Exp $
+# $OpenBSD: Makefile,v 1.55 2021/10/26 11:27:42 fcambus Exp $
 
 BROKEN-i386 =	broken on 32-bit; enum in src/frontend/mame/ui/videoopt.h starting at 0x80000000
 ONLY_FOR_ARCHS = amd64 i386
+DPB_PROPERTIES = parallel
 
 USE_WXNEEDED =	Yes
 
