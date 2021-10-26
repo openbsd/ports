@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2021/01/16 17:26:16 abieber Exp $
+# $OpenBSD: Makefile,v 1.6 2021/10/26 20:16:44 sthen Exp $
 
 COMMENT =	OTP extension for password-store
 
-V =		1.1.1
+V =		1.2.0
 DISTNAME =	pass-otp-${V}
-REVISION =	0
 
 CATEGORIES =	security
 
@@ -26,7 +25,8 @@ TEST_DEPENDS =	${RUN_DEPENDS} \
 
 MAKE_FLAGS =	SHELL=${LOCALBASE}/bin/bash
 FAKE_FLAGS =	PREFIX=${PREFIX} \
-		MANDIR=${PREFIX}/man
+		MANDIR=${PREFIX}/man \
+		BASHCOMPDIR=${PREFIX}/share/bash-completion/completions
 
 USE_GMAKE =	Yes
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/03/09 15:29:27 abieber Exp $
-lib/password-store/extensions/
+@comment $OpenBSD: PLIST,v 1.2 2021/10/26 20:16:44 sthen Exp $
 lib/password-store/extensions/otp.bash
 @man man/man1/pass-otp.1
+share/bash-completion/completions/pass-otp
