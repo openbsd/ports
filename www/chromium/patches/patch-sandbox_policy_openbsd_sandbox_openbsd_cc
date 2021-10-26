@@ -1,4 +1,4 @@
-$OpenBSD: patch-sandbox_policy_openbsd_sandbox_openbsd_cc,v 1.8 2021/09/01 16:54:40 robert Exp $
+$OpenBSD: patch-sandbox_policy_openbsd_sandbox_openbsd_cc,v 1.9 2021/10/26 08:32:58 robert Exp $
 
 Index: sandbox/policy/openbsd/sandbox_openbsd.cc
 --- sandbox/policy/openbsd/sandbox_openbsd.cc.orig
@@ -314,7 +314,7 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.cc
 +    // flock needed by sqlite3 locking
 +    SetPledge("stdio flock prot_exec recvfd sendfd ps", NULL);
 +  } else if (process_type == switches::kGpuProcess) {
-+    SetPledge("stdio drm prot_exec recvfd sendfd tmppath", NULL);
++    SetPledge("stdio rpath cpath wpath getpw drm prot_exec recvfd sendfd tmppath", NULL);
 +  } else if (process_type == switches::kPpapiPluginProcess) {
 +    // prot_exec needed by v8
 +    SetPledge("stdio rpath prot_exec recvfd sendfd", NULL);

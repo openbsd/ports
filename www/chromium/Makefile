@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.590 2021/10/24 15:44:06 daniel Exp $
+# $OpenBSD: Makefile,v 1.591 2021/10/26 08:32:58 robert Exp $
 
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
 
@@ -16,7 +16,7 @@ COMMENT=		Chromium browser
 V=			95.0.4638.54
 
 DISTNAME=		chromium-${V}
-REVISION=		0
+REVISION=		1
 
 DISTFILES+=		chromium-${V}${EXTRACT_SUFX}
 
