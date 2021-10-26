@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2021/05/19 13:38:30 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.17 2021/10/26 14:45:49 jturner Exp $
 @conflict kwebapp-*
 @pkgpath www/kwebapp
 @bin bin/ort
@@ -11,12 +11,14 @@
 @bin bin/ort-javascript
 @bin bin/ort-json
 @bin bin/ort-nodejs
+@bin bin/ort-rust
 @bin bin/ort-sql
 @bin bin/ort-sqldiff
 @bin bin/ort-xliff
 include/ort-lang-javascript.h
 include/ort-lang-json.h
 include/ort-lang-nodejs.h
+include/ort-lang-rust.h
 include/ort-lang-sql.h
 include/ort-version.h
 include/ort.h
@@ -24,6 +26,7 @@ include/ort.h
 @static-lib lib/libort-lang-javascript.a
 @static-lib lib/libort-lang-json.a
 @static-lib lib/libort-lang-nodejs.a
+@static-lib lib/libort-lang-rust.a
 @static-lib lib/libort-lang-sql.a
 @static-lib lib/libort-lang-xliff.a
 @static-lib lib/libort.a
@@ -41,6 +44,7 @@ lib/pkgconfig/ort.pc
 @man man/man1/ort-javascript.1
 @man man/man1/ort-json.1
 @man man/man1/ort-nodejs.1
+@man man/man1/ort-rust.1
 @man man/man1/ort-sql.1
 @man man/man1/ort-sqldiff.1
 @man man/man1/ort-xliff.1
