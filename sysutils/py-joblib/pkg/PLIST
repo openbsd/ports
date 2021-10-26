@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/10/07 00:11:52 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/10/26 20:35:32 sthen Exp $
 @pkgpath sysutils/py-joblib
 lib/python${MODPY_VERSION}/site-packages/joblib/
 lib/python${MODPY_VERSION}/site-packages/joblib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -63,6 +63,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/$
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/${MODPY_PYCACHE}_base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/${MODPY_PYCACHE}cloudpickle_wrapper.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/${MODPY_PYCACHE}initializers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/${MODPY_PYCACHE}process_executor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/${MODPY_PYCACHE}reusable_executor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/_base.py
@@ -111,6 +112,7 @@ lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/backend/spawn.py
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/backend/synchronize.py
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/backend/utils.py
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/cloudpickle_wrapper.py
+lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/initializers.py
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/process_executor.py
 lib/python${MODPY_VERSION}/site-packages/joblib/externals/loky/reusable_executor.py
 lib/python${MODPY_VERSION}/site-packages/joblib/format_stack.py
