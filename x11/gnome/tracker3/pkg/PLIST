@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/11/05 13:38:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/26 14:53:39 ajacoutot Exp $
 @bin bin/tracker3
 include/tracker-3.0/
 include/tracker-3.0/libtracker-sparql/
+include/tracker-3.0/libtracker-sparql/tracker-batch.h
 include/tracker-3.0/libtracker-sparql/tracker-connection.h
 include/tracker-3.0/libtracker-sparql/tracker-cursor.h
 include/tracker-3.0/libtracker-sparql/tracker-endpoint-dbus.h
+include/tracker-3.0/libtracker-sparql/tracker-endpoint-http.h
 include/tracker-3.0/libtracker-sparql/tracker-endpoint.h
 include/tracker-3.0/libtracker-sparql/tracker-error.h
 include/tracker-3.0/libtracker-sparql/tracker-namespace-manager.h
@@ -15,12 +17,15 @@ include/tracker-3.0/libtracker-sparql/tracker-sparql-enum-types.h
 include/tracker-3.0/libtracker-sparql/tracker-sparql.h
 include/tracker-3.0/libtracker-sparql/tracker-statement.h
 include/tracker-3.0/libtracker-sparql/tracker-utils.h
+include/tracker-3.0/libtracker-sparql/tracker-version-generated.h
 include/tracker-3.0/libtracker-sparql/tracker-version.h
 lib/girepository-1.0/Tracker-3.0.typelib
 @lib lib/libtracker-sparql-3.0.so.${LIBtracker-sparql-3.0_VERSION}
 lib/pkgconfig/tracker-sparql-3.0.pc
 lib/pkgconfig/tracker-testutils-3.0.pc
 lib/tracker-3.0/
+@so lib/tracker-3.0/libtracker-remote-soup2.so
+@so lib/tracker-3.0/libtracker-remote-soup3.so
 lib/tracker-3.0/trackertestutils/
 lib/tracker-3.0/trackertestutils/__init__.py
 lib/tracker-3.0/trackertestutils/__main__.py

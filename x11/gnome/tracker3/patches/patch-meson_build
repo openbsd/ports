@@ -1,0 +1,20 @@
+$OpenBSD: patch-meson_build,v 1.1 2021/10/26 14:53:39 ajacoutot Exp $
+
+XXX push upstream
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -57,7 +57,11 @@ libsoup2 = dependency('libsoup-2.4', version: '> 2.40'
+ libsoup3 = dependency('libsoup-3.0', version: '>= 2.99.2', required: false)
+ 
+ libmath = cc.find_library('m', required: false)
+-libdl = cc.find_library('dl')
++if build_machine.system() == 'openbsd'
++  libdl = []
++else
++  libdl = cc.find_library('dl')
++endif
+ 
+ soup_backends = ''
+ if libsoup2.found()

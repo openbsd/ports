@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.6 2021/04/03 08:10:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2021/10/26 14:53:39 ajacoutot Exp $
 
 COMMENT=		efficient search engine and triplestore
 
 GNOME_PROJECT=		tracker
-GNOME_VERSION=		3.0.4
+GNOME_VERSION=		3.2.0
 PKGNAME=		tracker3-${GNOME_VERSION}
 
-SHARED_LIBS += tracker-sparql-3.0        0.0 # 0.4.0
+SHARED_LIBS += tracker-sparql-3.0        0.1 # 0.200.0
 
 # LGPLv2.1+; GPLv2+; BSD-3-clause
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 icui18n icuuc intl json-glib-1.0
-WANTLIB += m soup-2.4 sqlite3 stemmer xml2
+WANTLIB += c gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 icui18n
+WANTLIB += icuuc intl json-glib-1.0 m soup-2.4 soup-3.0 sqlite3
+WANTLIB += stemmer xml2
 
 MODULES=		devel/meson \
 			lang/python \
@@ -30,6 +31,7 @@ BUILD_DEPENDS=		shells/bash-completion \
 
 LIB_DEPENDS=		devel/json-glib \
 			devel/libsoup \
+			devel/libsoup3 \
 			textproc/icu4c \
 			textproc/libstemmer
 
