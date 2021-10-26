@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_plugins_meson_build,v 1.1 2021/05/14 13:52:30 ajacoutot Exp $
+$OpenBSD: patch-src_plugins_meson_build,v 1.2 2021/10/26 13:28:22 ajacoutot Exp $
 
 XXX requires libportal
 
@@ -10,6 +10,6 @@ Index: src/plugins/meson.build
  
  subdir('all-tasks-panel')
 -subdir('background')
- subdir('dark-theme')
  subdir('eds')
  subdir('inbox-panel')
+ subdir('next-week-panel')
