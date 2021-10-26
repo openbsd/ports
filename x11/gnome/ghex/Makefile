@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.75 2019/07/13 11:38:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2021/10/26 11:29:44 jasper Exp $
 
 COMMENT=		binary editor
 
 GNOME_PROJECT=		ghex
-GNOME_VERSION=		3.18.4
+GNOME_VERSION=		3.41.0
 
 SHARED_LIBS += gtkhex-3                  0.0 # 0.0.0
 
