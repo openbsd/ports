@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.5 2020/08/18 18:40:16 edd Exp $
+$OpenBSD: README-main,v 1.6 2021/10/26 12:52:09 edd Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -15,10 +15,10 @@ texmf-buildset:
 
 texmf-minimal:
   A teTeX like tree, suitable for casual TeX users who do not need many
-  extra macros or ConTeXt (approx 250MB).
+  extra macros or ConTeXt (approx 260MB).
 
 texmf-full:
-  Extra macros (approx 1.1GB).
+  Extra macros (approx 1.2GB).
 
 texmf-context:
   Macros for the conTeXt typesetter (approx 15MB).
@@ -28,7 +28,7 @@ texmf-context:
   generated only when the conTeXt macros are installed.
 
 texmf-doc:
-  Documentation (approx 1GB).
+  Documentation (approx 1.2GB).
 
   To take load off the OpenBSD mirrors this is only the documentation
   for the texmf-minimal and texmf-buildset trees. This should include
@@ -95,17 +95,6 @@ As far as I know:
  * Some scripts need bash.
 
 If you know more, please mail the package maintainer.
-
-Ruby-1.8 Scripts
-----------------
-
-Many Ruby scripts in TeX Live are supposed to use Ruby-1.8, which is no longer
-packaged by OpenBSD. The scale of TeX Live makes it difficult to systematically
-review the scripts to see which ones need to be fixed. For now we've updated
-the interpreter shebangs to use a 2.x Ruby.
-
-If you encounter Ruby-related issues, please email the package maintainer and
-we will see if we can fix it.
 
 Notes for Developers
 --------------------

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# $OpenBSD: write_plists.py,v 1.3 2020/09/02 10:42:03 bentley Exp $
+# $OpenBSD: write_plists.py,v 1.4 2021/10/26 12:52:12 edd Exp $
 """
 Write PLISTs based on the output of update_plist_hints.py.
 
@@ -11,7 +11,7 @@ import os
 import sys
 import re
 
-YEAR = 2020
+YEAR = 2021
 THIS_DIR = os.path.abspath(os.path.dirname(__file__))
 PLIST_DIR = os.path.abspath(os.path.join(THIS_DIR, "..", "pkg"))
 PLISTS = "-buildset", "-main", "-context", "-full", "-docs"
@@ -39,7 +39,7 @@ TOP_MATTER = {
     "-main": [
         "@comment $" "OpenBSD$",
         "@conflict teTeX_texmf-*",
-        "@conflict texlive_base-<%sp0" % YEAR,
+        "@conflict texlive_base-<%s" % YEAR,
         "@conflict texlive_texmf-docs-<%s" % YEAR,
         "@conflict texlive_texmf-full-<%s" % YEAR,
         "@conflict texlive_texmf-buildset-<%s" % YEAR,
@@ -83,7 +83,7 @@ BOTTOM_MATTER = {
     "-buildset": ["@tag mktexlsr"],
     "-main": ["@tag mktexlsr"],
     "-context": [
-        "@unexec rm -Rf %D/share/texmf-var/luatex-cache/trees",
+        "@unexec rm -Rf %D/share/texmf-var/luatex-cache/",
         "@exec %D/bin/mtxrun --generate > /dev/null 2>&1",
         "@tag mktexlsr"
     ],

@@ -1,4 +1,5 @@
-$OpenBSD: patch-texmf-dist_web2c_texmfcnf_lua,v 1.9 2020/08/18 18:40:21 edd Exp $
+$OpenBSD: patch-texmf-dist_web2c_texmfcnf_lua,v 1.10 2021/10/26 12:52:13 edd Exp $
+
 Index: texmf-dist/web2c/texmfcnf.lua
 --- texmf-dist/web2c/texmfcnf.lua.orig
 +++ texmf-dist/web2c/texmfcnf.lua
@@ -12,31 +13,32 @@ Index: texmf-dist/web2c/texmfcnf.lua
  return {
  
      type    = "configuration",
-@@ -26,6 +23,10 @@ return {
+@@ -25,6 +22,9 @@ return {
+         -- I don't care too much about it as extending is easy.
  
          variables = {
- 
 +            -- Note that in OpenBSD, where we use the old teTeX path convention
 +            -- selfauto does not work.
 +            TEXMFROOT       = "${TRUEPREFIX}/share",
-+
+ 
              -- The following variable is predefined (but can be overloaded) and in
              -- most cases you can leve this one untouched. The built-in definition
-             -- permits relocation of the tree.
-@@ -44,7 +45,7 @@ return {
+@@ -44,7 +44,7 @@ return {
  
              -- only used for FONTCONFIG_PATH & TEXMFCACHE in TeX Live
  
 -            TEXMFSYSVAR     = "selfautoparent:texmf-var",
 +            TEXMFSYSVAR     = "${TEXMFROOT}/texmf-var",
-             TEXMFVAR        = "home:.texlive2020/texmf-var",
+             TEXMFVAR        = "home:.texlive2021/texmf-var",
  
              -- We have only one cache path but there can be more. The first writable one
-@@ -62,12 +63,12 @@ return {
+@@ -61,13 +61,13 @@ return {
+             -- By using prefixes we don't get expanded paths in the cache __path__
              -- entry. This makes the tex root relocatable.
  
-             TEXMFOS         = "selfautodir:",
+-            TEXMFOS         = "selfautodir:",
 -            TEXMFDIST       = "selfautoparent:texmf-dist",
++            TEXMFOS         = "${TRUEPREFIX}",
 +            TEXMFDIST       = "$TEXMFROOT/texmf-dist",
  
 -            TEXMFLOCAL      = texmflocal,

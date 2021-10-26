@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST-mktexlsr,v 1.5 2020/08/18 18:40:16 edd Exp $
+@comment $OpenBSD: PLIST-mktexlsr,v 1.6 2021/10/26 12:52:09 edd Exp $
 @conflict teTeX_base-*
 @conflict pdfjam-*
 @conflict ht-<2
-@conflict texlive_texmf-buildset-<2020
-@conflict texlive_base-<2020
+@conflict texlive_texmf-buildset-<2021
+@conflict texlive_base-<2021
 @define-tag mktexlsr at-end %D/bin/mktexlsr >/dev/null 2>&1
 @define-tag mktexlsr-local at-end %D/bin/mktexlsr %D/share/texmf-local >/dev/null 2>&1
 @define-tag mktexlsr supersedes mktexlsr-local

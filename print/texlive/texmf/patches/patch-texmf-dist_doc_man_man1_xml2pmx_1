@@ -1,0 +1,12 @@
+$OpenBSD: patch-texmf-dist_doc_man_man1_xml2pmx_1,v 1.1 2021/10/26 12:52:13 edd Exp $
+
+Index: texmf-dist/doc/man/man1/xml2pmx.1
+--- texmf-dist/doc/man/man1/xml2pmx.1.orig
++++ texmf-dist/doc/man/man1/xml2pmx.1
+@@ -1,4 +1,6 @@
+ .TH XML2PMX 1 2021-01-23  "" ""
++.SH NAME
++xml2pmx \(en MusicXML to PMX converter
+ 
+ .SH DESCRIPTION
+ 

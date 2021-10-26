@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2020/09/02 10:42:03 bentley Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2021/10/26 12:52:09 edd Exp $
 @conflict teTeX_base-*
 @conflict pdfjam-*
 @conflict ht-<2
-@conflict texlive_texmf-buildset-<2020
+@conflict texlive_texmf-buildset-<2021
 @pkgpath print/teTeX/base
 @pkgpath print/pdfjam
 @pkgpath print/teTeX/base,-fmt

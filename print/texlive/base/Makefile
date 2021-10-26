@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.115 2020/09/02 10:42:03 bentley Exp $
+# $OpenBSD: Makefile,v 1.116 2021/10/26 12:51:59 edd Exp $
 
 COMMENT-main =		base binaries for TeXLive typesetting distribution
 COMMENT-mktexlsr =	mktexlsr for TeXLive typesetting distribution
 COMMENT-synctex =	synctex for TeXLive typesetting distribution
 
 DISTNAME =		texlive-${DIST_V}-source
-REVISION =		0
 PKGNAME =		texlive_base-${V}
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
 
@@ -24,7 +23,7 @@ SHARED_LIBS +=		texlua53        0.1 # 8.5
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xaw Xdmcp Xext Xi
 WANTLIB += Xmu Xpm Xrender Xt avahi-client avahi-common c cairo
-WANTLIB += cups dbus-1 expat ffi fontconfig freetype gd glib-2.0
+WANTLIB += cups dbus-1 expat fontconfig freetype gd glib-2.0
 WANTLIB += gmp gnutls graphite2 gs harfbuzz hogweed iconv icudata
 WANTLIB += icui18n icuio icuuc idn2 ijs intl jbig2dec jpeg kpathsea
 WANTLIB += lcms2 lzma m nettle p11-kit paper pcre pixman-1 png tasn1
@@ -141,21 +140,6 @@ SUBST_VARS +=		TRUEPREFIX LOCALBASE
 # just to silence error - never used
 pre-install:
 	mkdir -p ${WRKSRC}/inst
-
-# Symlinks that would have been installed by texlinks.
-# texlinks can not do this itself in the fake dir, as it requires
-# a fully hashed texmf tree and working kpse configuration.
-# Run 'texlinks -u' and then observe the output of
-# 'texlinks -v'. Don't forget to check the links are in the PLIST.
-ALEPH_LN =	lamed
-LUATEX_LN =	dvilualatex dviluatex lualatex
-PDFTEX_LN =	amstex cslatex csplain eplain etex jadetex latex mex mllatex mltex \
-		pdfcslatex pdfcsplain pdfetex pdfjadetex pdflatex pdfmex \
-		pdfxmltex texsis utf8mex xmltex
-EPTEX_LN =	platex
-EUPTEX_LN =	uplatex
-XETEX_LN =	xelatex
-TEX_LN =	lollipop
 
 EXTRA_ROOT =	${WRKDIR}/texlive-${DIST_V}-extra
 

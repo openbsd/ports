@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2021/02/23 19:39:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2021/10/26 12:52:10 edd Exp $
 
 COMMENT-context =	texlive texmf for conTeXt
 COMMENT-docs =		texlive documentation
@@ -13,17 +13,12 @@ COMMENT-buildset =	smallest texlive texmf for building ports
 #   * Add a more restrictive RUN_DEPEND upon the buildset.
 
 DISTNAME =		texlive-${DIST_V}-texmf
-REVISION-context =	0
-REVISION-docs =		0
-REVISION-full =		1
-REVISION-main =		0
-REVISION-buildset =	0
 
 MASTER_SITES0 =		http://theunixzoo.co.uk/distfiles/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
-			texmf-var-pregen-${V}${EXTRACT_SUFX}:0 \
-			texlive-${DIST_V}-tlpdb-full.tar.gz
+			texlive-${DIST_V}-tlpdb-full.tar.gz \
+			texmf-var-pregen-${V}${EXTRACT_SUFX}:0
 
 PKGNAME-main =		texlive_texmf-minimal-${V}
 PKGNAME-full =		texlive_texmf-full-${V}
@@ -49,20 +44,19 @@ MODPY_RUNDEP =		No
 
 .include "adj.mk"
 
-RUN_DEPENDS-main +=	texlive_base->=${V}p0:print/texlive/base,-main \
+RUN_DEPENDS-main +=	texlive_base->=${V}:print/texlive/base,-main \
 			${FULLPKGNAME-buildset}:print/texlive/texmf,-buildset
 RUN_DEPENDS-full =	${FULLPKGNAME-main}:print/texlive/texmf,-main \
 			${MODPY_RUN_DEPENDS} \
 			${_MODLUA_RUNDEPENDS}
 RUN_DEPENDS-context +=	${FULLPKGNAME-full}:print/texlive/texmf,-full \
-			${MODRUBY_RUNDEPENDS}
+			${MODRUBY_RUN_DEPENDS}
 RUN_DEPENDS-docs +=	texlive_base->=${V}:print/texlive/base,-main \
 			x11/p5-Tk
 RUN_DEPENDS-buildset +=	texlive_mktexlsr->=${V}:print/texlive/base,-mktexlsr
 
 MULTI_PACKAGES =	-context -docs -full -main -buildset
 
-MODRUBY_REV =		1.8
 SUBST_VARS +=		RUBY
 
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-texmf
@@ -71,7 +65,7 @@ WRKDIST =		${WRKDIR}/texlive-${DIST_V}-texmf
 # manuals.  Some interpreter paths are done automatically by MODULES.
 pre-configure:
 	@# Don't use substitution from the Python port, since we need to swap
-	@# in @# different versions.
+	@# in different versions.
 	for F in ${PYTHON2_ADJ_FILES}; do \
 	    perl -pi \
 	    -e '$$. == 1 && s|^.*env python[0-9.]*([\s].*)?$$|\#!${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_2}$$1|;' \
@@ -140,6 +134,9 @@ do-install: tl-symlinks-main tl-symlinks-full tl-symlinks-context
 	#   context --make
 	#
 	# Then you can tar them up and host them as the pregen tarball.
+	#
+	# (Don't forget to remove ls-R files, log files and the luatex cache
+	# before making the tarball).
 	mv ${WRKDIR}/texmf-var ${PREFIX}/share
 
 	# Put manuals in the right place.
