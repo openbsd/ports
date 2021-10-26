@@ -1,11 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:35 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/10/26 14:44:57 ajacoutot Exp $
 include/libcue/
-include/libcue/cd.h
-include/libcue/cdtext.h
+include/libcue.h
 include/libcue/libcue.h
-include/libcue/rem.h
-include/libcue/time.h
-lib/libcue.a
-lib/libcue.la
 @lib lib/libcue.so.${LIBcue_VERSION}
 lib/pkgconfig/libcue.pc

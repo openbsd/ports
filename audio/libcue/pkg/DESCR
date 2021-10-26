@@ -1,3 +1,3 @@
-Libcue is intended to parse a so called cue sheet from a char string or
-a file pointer. For handling of the parsed data a convenient API is
-available. This project is meant as a fork of cuetools.
+libcue provides an API for parsing and extracting data from CUE sheets.
+libcue was originally forked from cuetools and then enhanced to add additional
+features.

@@ -1,23 +1,21 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:43:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/10/26 14:44:57 ajacoutot Exp $
 
-COMMENT =		cue sheet parser library
+COMMENT =		CUE sheet parser library
 
-DISTNAME =		libcue-1.4.0
+GH_ACCOUNT =		lipnitsk
+GH_PROJECT =		libcue
+GH_TAGNAME =		v2.2.1
+
 CATEGORIES =		audio
-REVISION =		1
 
-HOMEPAGE =		http://libcue.sourceforge.net/
-
-SHARED_LIBS =		cue		0.0	# 1.4
+SHARED_LIBS =		cue		1.0	# 1.4
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libcue/}
-EXTRACT_SUFX =		.tar.bz2
+MODULES =		devel/cmake
 
-
-CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON
 
 NO_TEST =		Yes
 
