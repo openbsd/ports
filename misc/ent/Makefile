@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/10/26 21:49:53 sthen Exp $
 # Original from: John Walker http://www.fourmilab.ch/random/
 
 CATEGORIES=		misc
 COMMENT=		pseudo random number sequence test program
 
 DISTNAME=		ent-1.0
-REVISION=		0
+DISTFILES=		${DISTNAME}{random}.zip
+REVISION=		1
 EXTRACT_SUFX=		.zip
 
-HOMEPAGE=		http://www.fourmilab.ch/random/
-MASTER_SITES=		https://spacehopper.org/mirrors/
+HOMEPAGE=		https://www.fourmilab.ch/random/
+MASTER_SITES=		https://www.fourmilab.ch/random/
 
-WRKSRC=			${WRKDIR}
+WRKDIST=		${WRKDIR}
 ALL_TARGET=		ent
 
 MAKE_FLAGS=		CFLAGS="${CFLAGS}" CC="${CC}"
