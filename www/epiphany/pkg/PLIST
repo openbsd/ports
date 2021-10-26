@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.54 2021/05/13 09:07:10 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.55 2021/10/26 12:57:23 jasper Exp $
 @bin bin/epiphany
 lib/epiphany/
 @so lib/epiphany/libephymain.so
@@ -110,6 +110,36 @@ share/help/cs/epiphany/pref-mouse-gestures.page
 share/help/cs/epiphany/pref-passwords.page
 share/help/cs/epiphany/prob-restore-closed-page.page
 share/help/cs/epiphany/proxy.page
+share/help/da/
+share/help/da/epiphany/
+share/help/da/epiphany/browse-local.page
+share/help/da/epiphany/browse-private.page
+share/help/da/epiphany/browse-tab.page
+share/help/da/epiphany/browse-web.page
+share/help/da/epiphany/browse-webapps-del.page
+share/help/da/epiphany/browse-webapps.page
+share/help/da/epiphany/cert.page
+share/help/da/epiphany/cookies.xml
+share/help/da/epiphany/data-cookies.page
+share/help/da/epiphany/data-passwords.page
+share/help/da/epiphany/data-personal-data.page
+share/help/da/epiphany/history-delete.page
+share/help/da/epiphany/history.page
+share/help/da/epiphany/index.page
+share/help/da/epiphany/introduction.page
+share/help/da/epiphany/legal.xml
+share/help/da/epiphany/media/
+share/help/da/epiphany/media/epiphany-plain-3-36.png
+share/help/da/epiphany/media/epiphany-private-3-36.png
+share/help/da/epiphany/media/org.gnome.Epiphany.svg
+share/help/da/epiphany/pref-cookies.page
+share/help/da/epiphany/pref-css.page
+share/help/da/epiphany/pref-downloads.page
+share/help/da/epiphany/pref-font.page
+share/help/da/epiphany/pref-mouse-gestures.page
+share/help/da/epiphany/pref-passwords.page
+share/help/da/epiphany/prob-restore-closed-page.page
+share/help/da/epiphany/proxy.page
 share/help/de/
 share/help/de/epiphany/
 share/help/de/epiphany/browse-local.page
@@ -200,6 +230,36 @@ share/help/es/epiphany/pref-mouse-gestures.page
 share/help/es/epiphany/pref-passwords.page
 share/help/es/epiphany/prob-restore-closed-page.page
 share/help/es/epiphany/proxy.page
+share/help/eu/
+share/help/eu/epiphany/
+share/help/eu/epiphany/browse-local.page
+share/help/eu/epiphany/browse-private.page
+share/help/eu/epiphany/browse-tab.page
+share/help/eu/epiphany/browse-web.page
+share/help/eu/epiphany/browse-webapps-del.page
+share/help/eu/epiphany/browse-webapps.page
+share/help/eu/epiphany/cert.page
+share/help/eu/epiphany/cookies.xml
+share/help/eu/epiphany/data-cookies.page
+share/help/eu/epiphany/data-passwords.page
+share/help/eu/epiphany/data-personal-data.page
+share/help/eu/epiphany/history-delete.page
+share/help/eu/epiphany/history.page
+share/help/eu/epiphany/index.page
+share/help/eu/epiphany/introduction.page
+share/help/eu/epiphany/legal.xml
+share/help/eu/epiphany/media/
+share/help/eu/epiphany/media/epiphany-plain-3-36.png
+share/help/eu/epiphany/media/epiphany-private-3-36.png
+share/help/eu/epiphany/media/org.gnome.Epiphany.svg
+share/help/eu/epiphany/pref-cookies.page
+share/help/eu/epiphany/pref-css.page
+share/help/eu/epiphany/pref-downloads.page
+share/help/eu/epiphany/pref-font.page
+share/help/eu/epiphany/pref-mouse-gestures.page
+share/help/eu/epiphany/pref-passwords.page
+share/help/eu/epiphany/prob-restore-closed-page.page
+share/help/eu/epiphany/proxy.page
 share/help/fr/
 share/help/fr/epiphany/
 share/help/fr/epiphany/browse-local.page
@@ -596,6 +656,7 @@ share/locale/fa/LC_MESSAGES/epiphany.mo
 share/locale/fi/LC_MESSAGES/epiphany.mo
 share/locale/fr/LC_MESSAGES/epiphany.mo
 share/locale/fur/LC_MESSAGES/epiphany.mo
+share/locale/fy/LC_MESSAGES/epiphany.mo
 share/locale/ga/LC_MESSAGES/epiphany.mo
 share/locale/gl/LC_MESSAGES/epiphany.mo
 share/locale/gu/LC_MESSAGES/epiphany.mo
