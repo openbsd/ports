@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/10/26 14:44:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2021/10/26 21:22:28 ajacoutot Exp $
 
 COMMENT =		CUE sheet parser library
 
@@ -14,6 +14,8 @@ SHARED_LIBS =		cue		1.0	# 1.4
 PERMIT_PACKAGE =	Yes
 
 MODULES =		devel/cmake
+
+BUILD_DEPENDS =		devel/bison
 
 CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON
 
