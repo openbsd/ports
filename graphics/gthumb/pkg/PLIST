@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2021/08/29 09:56:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.41 2021/10/26 11:29:02 jasper Exp $
 @bin bin/gthumb
 include/gthumb/
 include/gthumb/cairo-scale.h
@@ -92,6 +92,8 @@ include/gthumb/gth-string-list.h
 include/gthumb/gth-tags-entry.h
 include/gthumb/gth-tags-file.h
 include/gthumb/gth-task.h
+include/gthumb/gth-template-editor-dialog.h
+include/gthumb/gth-template-selector.h
 include/gthumb/gth-test-aspect-ratio.h
 include/gthumb/gth-test-category.h
 include/gthumb/gth-test-chain.h
@@ -110,7 +112,6 @@ include/gthumb/gth-window.h
 include/gthumb/gthumb.h
 include/gthumb/gtk-utils.h
 include/gthumb/gvaluehash.h
-include/gthumb/main.h
 include/gthumb/pixbuf-cache.h
 include/gthumb/pixbuf-io.h
 include/gthumb/pixbuf-utils.h
@@ -132,7 +133,6 @@ lib/gthumb/extensions/desktop_background.extension
 lib/gthumb/extensions/edit_metadata.extension
 lib/gthumb/extensions/exiv2_tools.extension
 lib/gthumb/extensions/export_tools.extension
-lib/gthumb/extensions/facebook.extension
 lib/gthumb/extensions/file_manager.extension
 lib/gthumb/extensions/file_tools.extension
 lib/gthumb/extensions/file_viewer.extension
@@ -158,7 +158,6 @@ lib/gthumb/extensions/jpeg_utils.extension
 @so lib/gthumb/extensions/libedit_metadata.so
 @so lib/gthumb/extensions/libexiv2_tools.so
 @so lib/gthumb/extensions/libexport_tools.so
-@so lib/gthumb/extensions/libfacebook.so
 @so lib/gthumb/extensions/libfile_manager.so
 @so lib/gthumb/extensions/libfile_tools.so
 @so lib/gthumb/extensions/libfile_viewer.so
@@ -175,7 +174,6 @@ lib/gthumb/extensions/jpeg_utils.extension
 @so lib/gthumb/extensions/liblist_tools.so
 @so lib/gthumb/extensions/liboauth.so
 @so lib/gthumb/extensions/libphoto_importer.so
-@so lib/gthumb/extensions/libpicasaweb.so
 @so lib/gthumb/extensions/libraw_files.so
 @so lib/gthumb/extensions/libred_eye_removal.so
 @so lib/gthumb/extensions/librename_series.so
@@ -188,7 +186,6 @@ lib/gthumb/extensions/jpeg_utils.extension
 lib/gthumb/extensions/list_tools.extension
 lib/gthumb/extensions/oauth.extension
 lib/gthumb/extensions/photo_importer.extension
-lib/gthumb/extensions/picasaweb.extension
 lib/gthumb/extensions/raw_files.extension
 lib/gthumb/extensions/red_eye_removal.extension
 lib/gthumb/extensions/rename_series.extension
@@ -198,7 +195,7 @@ lib/gthumb/extensions/selections.extension
 lib/gthumb/extensions/slideshow.extension
 lib/gthumb/extensions/terminal.extension
 lib/gthumb/extensions/webalbums.extension
-lib/pkgconfig/gthumb-3.10.pc
+lib/pkgconfig/gthumb.pc
 @man man/man1/gthumb.1
 share/aclocal/gthumb.m4
 share/applications/org.gnome.gThumb.Import.desktop
@@ -352,6 +349,7 @@ share/gthumb/ui/
 share/gthumb/ui/add-to-catalog.ui
 share/gthumb/ui/adjust-colors-options.ui
 share/gthumb/ui/adjust-contrast-options.ui
+share/gthumb/ui/avif-options.ui
 share/gthumb/ui/browser-preferences.ui
 share/gthumb/ui/catalog-properties.ui
 share/gthumb/ui/change-date.ui
@@ -367,11 +365,8 @@ share/gthumb/ui/curves-options.ui
 share/gthumb/ui/edit-comment-page.ui
 share/gthumb/ui/edit-exiv2-page.ui
 share/gthumb/ui/effects-options.ui
-share/gthumb/ui/export-to-facebook.ui
 share/gthumb/ui/export-to-flickr.ui
-share/gthumb/ui/export-to-picasaweb.ui
 share/gthumb/ui/extensions-preferences.ui
-share/gthumb/ui/facebook-album-properties.ui
 share/gthumb/ui/favorite-properties.ui
 share/gthumb/ui/file-selection-info.ui
 share/gthumb/ui/filter-editor.ui
@@ -382,9 +377,7 @@ share/gthumb/ui/grayscale-options.ui
 share/gthumb/ui/histogram-info.ui
 share/gthumb/ui/image-viewer-preferences.ui
 share/gthumb/ui/image-wall.ui
-share/gthumb/ui/import-from-facebook.ui
 share/gthumb/ui/import-from-flickr.ui
-share/gthumb/ui/import-from-picasaweb.ui
 share/gthumb/ui/import-preferences.ui
 share/gthumb/ui/jpeg-options.ui
 share/gthumb/ui/location.ui
@@ -397,7 +390,6 @@ share/gthumb/ui/organize-files-task.ui
 share/gthumb/ui/organize-files.ui
 share/gthumb/ui/overwrite-dialog.ui
 share/gthumb/ui/personalize-filters.ui
-share/gthumb/ui/picasa-web-album-properties.ui
 share/gthumb/ui/png-options.ui
 share/gthumb/ui/preferences.ui
 share/gthumb/ui/print-layout.ui
@@ -414,6 +406,7 @@ share/gthumb/ui/shortcuts-preferences.ui
 share/gthumb/ui/slideshow-preferences.ui
 share/gthumb/ui/sort-order.ui
 share/gthumb/ui/tag-chooser.ui
+share/gthumb/ui/template-editor-dialog.ui
 share/gthumb/ui/terminal-preferences.ui
 share/gthumb/ui/tga-options.ui
 share/gthumb/ui/tiff-options.ui
