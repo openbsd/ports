@@ -1,0 +1,33 @@
+$OpenBSD: patch-libvirt-gconfig_tests_meson_build,v 1.1 2021/10/26 21:57:58 ajacoutot Exp $
+
+From 9a34c4ea55e0246c34896e48b8ecd637bc559ac7 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Daniel=20P=2E=20Berrang=C3=A9?= <berrange@redhat.com>
+Date: Mon, 27 Sep 2021 14:58:17 +0100
+Subject: [PATCH] build: don't set glib version constraints for g-ir-scanner
+
+Index: libvirt-gconfig/tests/meson.build
+--- libvirt-gconfig/tests/meson.build.orig
++++ libvirt-gconfig/tests/meson.build
+@@ -1,5 +1,6 @@
+ test_domain_create = executable(
+   'test-domain-create',
++  c_args: common_cflags,
+   sources: ['test-domain-create.c'],
+   include_directories: top_include_dir,
+   dependencies: [libvirt_gconfig_dep]
+@@ -7,6 +8,7 @@ test_domain_create = executable(
+ 
+ test_domain_parse = executable(
+   'test-domain-parse',
++  c_args: common_cflags,
+   sources: ['test-domain-parse.c'],
+   include_directories: top_include_dir,
+   dependencies: [libvirt_gconfig_dep]
+@@ -14,6 +16,7 @@ test_domain_parse = executable(
+ 
+ test_capabilities_parse = executable(
+   'test-capabilities-parse',
++  c_args: common_cflags,
+   sources: ['test-capabilities-parse.c'],
+   include_directories: top_include_dir,
+   dependencies: [libvirt_gconfig_dep]

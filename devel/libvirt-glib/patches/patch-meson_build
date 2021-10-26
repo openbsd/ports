@@ -1,11 +1,26 @@
-$OpenBSD: patch-meson_build,v 1.1 2021/02/18 09:20:11 ajacoutot Exp $
+$OpenBSD: patch-meson_build,v 1.2 2021/10/26 21:57:58 ajacoutot Exp $
+
+From 9a34c4ea55e0246c34896e48b8ecd637bc559ac7 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Daniel=20P=2E=20Berrang=C3=A9?= <berrange@redhat.com>
+Date: Mon, 27 Sep 2021 14:58:17 +0100
+Subject: [PATCH] build: don't set glib version constraints for g-ir-scanner
 
 Should match b_lundef in meson(1).
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -91,9 +91,6 @@ else
+@@ -50,9 +50,6 @@ libvirt_dep = dependency('libvirt', version: '>=' + li
+ libxml_min_version='>=2.9.1'
+ libxml_dep = dependency('libxml-2.0', version: libxml_min_version)
+ 
+-add_global_arguments('-DGLIB_VERSION_MIN_REQUIRED=@0@'.format(glib_min_version_symbol), language: 'c')
+-add_global_arguments('-DGLIB_VERSION_MAX_ALLOWED=@0@'.format(glib_min_version_symbol), language: 'c')
+-
+ prefix = get_option('prefix')
+ localedir = join_paths(prefix, get_option('localedir'))
+ datadir = join_paths(prefix, get_option('datadir'))
+@@ -91,9 +88,6 @@ else
  endif
  
  common_link_args = []
@@ -15,3 +30,12 @@ Index: meson.build
  
  
  build_tests = not get_option('tests').disabled()
+@@ -518,6 +512,8 @@ common_cflags = [
+   '-DLOCALEDIR="@0@"'.format(localedir),
+   '-DDATADIR="@0@"'.format(datadir),
+   '-DLIBVIRT_GLIB_BUILD',
++  '-DGLIB_VERSION_MIN_REQUIRED=@0@'.format(glib_min_version_symbol),
++  '-DGLIB_VERSION_MAX_ALLOWED=@0@'.format(glib_min_version_symbol),
+ ]
+ 
+ gnome = import('gnome')

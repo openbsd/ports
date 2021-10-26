@@ -1,0 +1,25 @@
+$OpenBSD: patch-examples_meson_build,v 1.1 2021/10/26 21:57:58 ajacoutot Exp $
+
+From 9a34c4ea55e0246c34896e48b8ecd637bc559ac7 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Daniel=20P=2E=20Berrang=C3=A9?= <berrange@redhat.com>
+Date: Mon, 27 Sep 2021 14:58:17 +0100
+Subject: [PATCH] build: don't set glib version constraints for g-ir-scanner
+
+Index: examples/meson.build
+--- examples/meson.build.orig
++++ examples/meson.build
+@@ -1,5 +1,6 @@
+ executable(
+   'event-test',
++  c_args: common_cflags,
+   sources: ['event-test.c'],
+   dependencies: libvirt_glib_dep,
+   include_directories: top_include_dir,
+@@ -7,6 +8,7 @@ executable(
+ 
+ executable(
+   'conn-test',
++  c_args: common_cflags,
+   sources: ['conn-test.c'],
+   dependencies: [libvirt_glib_dep, libvirt_gconfig_dep, libvirt_gobject_dep],
+   include_directories: top_include_dir,
