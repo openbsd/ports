@@ -1,0 +1,18 @@
+$OpenBSD: patch-libgda_Gda-6_0-custom_vala,v 1.1 2021/10/26 22:09:23 ajacoutot Exp $
+
+https://gitlab.gnome.org/GNOME/libgda/-/issues/255
+
+Index: libgda/Gda-6.0-custom.vala
+--- libgda/Gda-6.0-custom.vala.orig
++++ libgda/Gda-6.0-custom.vala
+@@ -92,7 +92,10 @@ namespace Gda {
+ 	[CCode (cheader_filename = "libgda.h", copy_function = "g_boxed_copy", free_function = "g_boxed_free", type_id = "gda_sql_statement_get_type ()")]
+ 	[Compact]
+ 	public class SqlStatement {
++#if VALA_0_54
++#else
+ 		public static Gda.SqlStatementContentsInfo get_contents_infos (Gda.SqlStatementType type);
++#endif
+ 	}
+ 
+ }
