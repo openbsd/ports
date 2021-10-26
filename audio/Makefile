@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.465 2021/10/24 22:51:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.466 2021/10/26 19:52:41 sthen Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -185,10 +185,8 @@
      SUBDIR += puddletag
      SUBDIR += pulseaudio
      SUBDIR += py-acoustid,python3
-     SUBDIR += py-ao
      SUBDIR += py-audio
      SUBDIR += py-audio,python3
-     SUBDIR += py-cddb
      SUBDIR += py-discid
      SUBDIR += py-discid,python3
      SUBDIR += py-discogs-client,python3

@@ -1,4 +1,0 @@
-A backport of the get_terminal_size function from Python 3.3's shutil.
-
-Unlike the original version it is written in pure Python rather than C,
-so it might be a tiny bit slower.

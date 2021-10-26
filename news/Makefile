@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2020/08/01 19:07:19 bket Exp $
+# $OpenBSD: Makefile,v 1.35 2021/10/26 19:52:42 sthen Exp $
 
      SUBDIR =
      SUBDIR += aub
@@ -11,7 +11,6 @@
      SUBDIR += p5-News-Newsrc
      SUBDIR += pan
      SUBDIR += py-sabyenc,python3
-     SUBDIR += py-yenc
      SUBDIR += sabnzbd
      SUBDIR += slrn
      SUBDIR += tin

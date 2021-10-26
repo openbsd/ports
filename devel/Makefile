@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2139 2021/10/26 16:19:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.2140 2021/10/26 19:52:42 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1282,7 +1282,6 @@
      SUBDIR += pycdc
      SUBDIR += pycharm
      SUBDIR += py-Checker
-     SUBDIR += py-SOAPpy
      SUBDIR += py-algorithm-munkres,python3
      SUBDIR += py-altgraph
      SUBDIR += py-altgraph,python3
@@ -1312,12 +1311,7 @@
      SUBDIR += py-backcall
      SUBDIR += py-backcall,python3
      SUBDIR += py-backports
-     SUBDIR += py-backports-abc
-     SUBDIR += py-backports-functools-lru-cache
-     SUBDIR += py-backports-shutil-get-terminal-size
-     SUBDIR += py-backports-ssl-match-hostname
      SUBDIR += py-bencode,python3
-     SUBDIR += py-binplist
      SUBDIR += py-biplist
      SUBDIR += py-biplist,python3
      SUBDIR += py-bitcoinlib
@@ -1330,7 +1324,6 @@
      SUBDIR += py-blist,python3
      SUBDIR += py-buildbot
      SUBDIR += py-buildslave
-     SUBDIR += py-bytecodeassembler
      SUBDIR += py-cached-property,python3
      SUBDIR += py-cachetools,python3
      SUBDIR += py-cairocffi
@@ -1393,8 +1386,6 @@
      SUBDIR += py-dulwich,python3
      SUBDIR += py-easyprocess
      SUBDIR += py-easyprocess,python3
-     SUBDIR += py-editdist
-     SUBDIR += py-efilter
      SUBDIR += py-elftools,python3
      SUBDIR += py-enrich,python3
      SUBDIR += py-entrypoints
@@ -1407,7 +1398,6 @@
      SUBDIR += py-extras,python3
      SUBDIR += py-fasteners,python3
      SUBDIR += py-fastimport,python3
-     SUBDIR += py-faulthandler
      SUBDIR += py-fields,python3
      SUBDIR += py-filebytes
      SUBDIR += py-filebytes,python3
@@ -1418,19 +1408,16 @@
      SUBDIR += py-flaky,python3
      SUBDIR += py-flexmock
      SUBDIR += py-flexmock,python3
-     SUBDIR += py-fpconst
      SUBDIR += py-freezegun
      SUBDIR += py-freezegun,python3
      SUBDIR += py-frozendict
      SUBDIR += py-frozendict,python3
      SUBDIR += py-funcsigs
-     SUBDIR += py-functools32
      SUBDIR += py-funcy
      SUBDIR += py-funcy,python3
      SUBDIR += py-future
      SUBDIR += py-future,python3
      SUBDIR += py-futures
-     SUBDIR += py-gdata
      SUBDIR += py-gevent,python3
      SUBDIR += py-gitdb
      SUBDIR += py-gitdb,python3
@@ -1440,10 +1427,6 @@
      SUBDIR += py-gobject3,python3
      SUBDIR += py-greenlet
      SUBDIR += py-greenlet,python3
-     SUBDIR += py-guppy
-     SUBDIR += py-hachoir-core
-     SUBDIR += py-hachoir-metadata
-     SUBDIR += py-hachoir-parser
      SUBDIR += py-hamcrest,python3
      SUBDIR += py-html5lib,python3
      SUBDIR += py-hypothesis
@@ -1471,7 +1454,6 @@
      SUBDIR += py-jeepney,python3
      SUBDIR += py-jmespath
      SUBDIR += py-jmespath,python3
-     SUBDIR += py-jsonrpclib
      SUBDIR += py-jsonschema,python3
      SUBDIR += py-jupyter_client,python3
      SUBDIR += py-jupyter_core,python3
@@ -1495,17 +1477,14 @@
      SUBDIR += py-mock,python3
      SUBDIR += py-modulegraph
      SUBDIR += py-modulegraph,python3
-     SUBDIR += py-monotonic
      SUBDIR += py-more-itertools
      SUBDIR += py-more-itertools,python3
-     SUBDIR += py-mox
      SUBDIR += py-mox3
      SUBDIR += py-mox3,python3
      SUBDIR += py-mulpyplexer,python3
      SUBDIR += py-multiprocess,python3
      SUBDIR += py-munch
      SUBDIR += py-munch,python3
-     SUBDIR += py-mxDateTime
      SUBDIR += py-nbconvert,python3
      SUBDIR += py-nbformat,python3
      SUBDIR += py-nbval,python3
@@ -1559,11 +1538,9 @@
      SUBDIR += py-pyinotify,python3
      SUBDIR += py-pyprof2calltree
      SUBDIR += py-pyprof2calltree,python3
-     SUBDIR += py-pyro
      SUBDIR += py-pyrsistent,python3
      SUBDIR += py-pyte
      SUBDIR += py-pyte,python3
-     SUBDIR += py-python2-pythondialog
      SUBDIR += py-qt-builder,python3
      SUBDIR += py-r2pipe,python3
      SUBDIR += py-radix,python3
@@ -1579,7 +1556,6 @@
      SUBDIR += py-robotframework
      SUBDIR += py-robotframework,python3
      SUBDIR += py-rope,python3
-     SUBDIR += py-ruamel.ordereddict
      SUBDIR += py-schema,python3
      SUBDIR += py-selectors2
      SUBDIR += py-semantic-version,python3
@@ -1607,7 +1583,6 @@
      SUBDIR += py-simplegeneric,python3
      SUBDIR += py-simplejson
      SUBDIR += py-simplejson,python3
-     SUBDIR += py-singledispatch
      SUBDIR += py-sip,python3
      SUBDIR += py-six
      SUBDIR += py-six,python3
@@ -1621,9 +1596,7 @@
      SUBDIR += py-stdnum,python3
      SUBDIR += py-straight.plugin
      SUBDIR += py-straight.plugin,python3
-     SUBDIR += py-subprocess32
      SUBDIR += py-suds
-     SUBDIR += py-symboltype
      SUBDIR += py-tabulate
      SUBDIR += py-tabulate,python3
      SUBDIR += py-tempora
@@ -1701,7 +1674,6 @@
      SUBDIR += py-xdis,python3
      SUBDIR += py-xlsxwriter
      SUBDIR += py-xlsxwriter,python3
-     SUBDIR += py-xmlrunner
      SUBDIR += py-yamllint
      SUBDIR += py-yamllint,python3
      SUBDIR += py-yapf

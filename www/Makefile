@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1044 2021/10/25 12:33:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.1045 2021/10/26 19:52:42 sthen Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -439,7 +439,6 @@
      SUBDIR += py-hyperlink,python3
      SUBDIR += py-itsdangerous,python3
      SUBDIR += py-jinja2,python3
-     SUBDIR += py-jonpy
      SUBDIR += py-jwt,python3
      SUBDIR += py-macaroons,python3
      SUBDIR += py-mako,python3
@@ -455,7 +454,6 @@
      SUBDIR += py-qtwebengine,python3
      SUBDIR += py-query,python3
      SUBDIR += py-quixote
-     SUBDIR += py-recaptcha-client
      SUBDIR += py-repoze-lru,python3
      SUBDIR += py-repoze-profile,python3
      SUBDIR += py-repoze-who,python3

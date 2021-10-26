@@ -1,6 +1,0 @@
-milter is a Python extension module to enable Python scripts to attach
-to Sendmail's libmilter API, enabling filtering of messages as they
-arrive.  Since it's a script, you can do anything you want to the
-message - screen out viruses, collect statistics, add or modify headers,
-etc.  You can, at any point, tell Sendmail to reject, discard, or accept
-the message.

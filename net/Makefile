@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1274 2021/10/24 22:44:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.1275 2021/10/26 19:52:42 sthen Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -616,10 +616,8 @@
      SUBDIR += py-twitter,python3
      SUBDIR += py-txtorcon,python3
      SUBDIR += py-websocket-client,python3
-     SUBDIR += py-xmpppy
      SUBDIR += py-zeroconf,python3
      SUBDIR += py-zmq,python3
-     SUBDIR += py-zsi
      SUBDIR += qbittorrent
      SUBDIR += qsyncthingtray
      SUBDIR += quagga

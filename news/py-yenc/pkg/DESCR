@@ -1,6 +1,0 @@
-The yEnc module provide a simple API for doing raw encoding/decoding of
-yencoded binaries, mainly for retrieving or posting to the usenet.  This
-implementation is really simple and intended mainly as an exercise to
-the author but is also significantly faster than any possible pure
-Python implementation and it's being actually used by some Python nntp
-clients out there.

@@ -1,6 +1,0 @@
-hachoir-metadata extracts metadata from multimedia files: music, picture, video,
-but also archives.  It tries to give as much information as possible. For some
-file formats, it gives more information than libextractor for example, such as
-the RIFF parser, which can extract creation date, software used to generate the
-file, etc. But hachoir-metadata cannot guess informations. The most complex
-operation is just to compute duration of a music using frame size and file size.

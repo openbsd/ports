@@ -1,5 +1,0 @@
-Fault handler for SIGSEGV, SIGFPE, SIGABRT, SIGBUS and SIGILL signals
-to display the Python traceback and restore the previous handler.
-
-faulthandler is part of CPython standard library since CPython 3.3;
-this module provides a backport for CPython 2.7.

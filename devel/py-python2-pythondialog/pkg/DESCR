@@ -1,9 +1,0 @@
-pythondialog is a Python wrapper for the UNIX dialog utility originally
-written by Savio Lam and later rewritten by Thomas E. Dickey. Its
-purpose is to provide an easy to use, pythonic and as complete as
-possible interface to dialog from Python code.
-
-This version is a backport of pythondialog to Python 2. Unless you
-really have to use Python 2, you should go to the pythondialog home page
-and download the reference implementation which, at the time of this
-writing (May 2015) and for the forseeable future, is targeted at Python 3.

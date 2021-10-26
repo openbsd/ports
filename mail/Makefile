@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.411 2021/10/25 15:44:33 tb Exp $
+# $OpenBSD: Makefile,v 1.412 2021/10/26 19:52:42 sthen Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -196,7 +196,6 @@
      SUBDIR += postgrey
      SUBDIR += procmail
      SUBDIR += py-authres
-     SUBDIR += py-milter
      SUBDIR += py-policyd-spf
      SUBDIR += py-spf
      SUBDIR += pyzor

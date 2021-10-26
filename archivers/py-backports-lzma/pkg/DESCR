@@ -1,3 +1,0 @@
-Python 3.3 onwards includes module lzma in the standard library,
-providing support for working with LZMA and XZ compressed files via the
-XZ Utils C library (XZ Utils is in a sense LZMA v2).

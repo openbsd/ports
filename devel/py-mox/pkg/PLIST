@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/21 06:48:49 giovanni Exp $
-lib/python${MODPY_VERSION}/site-packages/mox-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
-lib/python${MODPY_VERSION}/site-packages/mox.py
-lib/python${MODPY_VERSION}/site-packages/mox.pyc
-lib/python${MODPY_VERSION}/site-packages/stubout.py
-lib/python${MODPY_VERSION}/site-packages/stubout.pyc

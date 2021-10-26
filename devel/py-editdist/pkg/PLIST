@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/26 23:43:20 djm Exp $
-lib/python${MODPY_VERSION}/site-packages/editdist-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
-lib/python${MODPY_VERSION}/site-packages/editdist.so

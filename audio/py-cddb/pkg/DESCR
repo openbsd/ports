@@ -1,5 +1,0 @@
-The dynamic duo of CDDB.py and DiscID.py, along with their side-kick C
-module cdrommodule.so, provide an easy way for Python programs to
-fetch information on audio CDs from CDDB (http://www.cddb.com/) -- a
-very large online database of track listings and other information on
-audio CDs.

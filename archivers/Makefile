@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2021/10/25 12:33:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.114 2021/10/26 19:52:41 sthen Exp $
 
      SUBDIR =
      SUBDIR += arc
@@ -50,11 +50,9 @@
      SUBDIR += pecl-rar,php74
      SUBDIR += pecl-rar,php80
      SUBDIR += pigz
-     SUBDIR += py-backports-lzma
      SUBDIR += py-brotli,python3
      SUBDIR += py-libarchive-c,python3
      SUBDIR += py-lz4,python3
-     SUBDIR += py-lzo
      SUBDIR += py-rarfile,python3
      SUBDIR += quazip
      SUBDIR += ripole

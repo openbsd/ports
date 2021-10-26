@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1321 2021/10/26 16:19:04 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1322 2021/10/26 19:52:42 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1332,6 +1332,48 @@ setup_obsolete_reason(
 	3 => 'bzr-svn',
 	6 => 'libvstr',
 	0 => 'cue',
+	31 => 'py-SOAPpy',
+	31 => 'py-ao',
+	31 => 'py-backports-abc',
+	31 => 'py-backports-functools-lru-cache',
+	31 => 'py-backports-lzma',
+	31 => 'py-backports-shutil-get-terminal-size',
+	31 => 'py-backports-ssl-match-hostname',
+	31 => 'py-binplist',
+	31 => 'py-bytecodeassembler',
+	31 => 'py-cddb',
+	31 => 'py-editdist',
+	31 => 'py-efilter',
+	31 => 'py-faulthandler',
+	31 => 'py-fpconst',
+	31 => 'py-functools32',
+	31 => 'py-gdata',
+	31 => 'py-guppy',
+	31 => 'py-hachoir-core',
+	31 => 'py-hachoir-metadata',
+	31 => 'py-hachoir-parser',
+	31 => 'py-jonpy',
+	31 => 'py-jsonrpclib',
+	31 => 'py-lzo',
+	31 => 'py-milter',
+	31 => 'py-monotonic',
+	31 => 'py-mox',
+	31 => 'py-mxDateTime',
+	31 => 'py-pdf',
+	31 => 'py-pyro',
+	31 => 'py-pysha3',
+	31 => 'py-python2-pythondialog',
+	31 => 'py-recaptcha-client',
+	31 => 'py-ruamel.ordereddict',
+	31 => 'py-singledispatch',
+	31 => 'py-storm',
+	31 => 'py-subprocess32',
+	31 => 'py-sybase',
+	31 => 'py-symboltype',
+	31 => 'py-xmlrunner',
+	31 => 'py-xmpppy',
+	31 => 'py-yenc',
+	31 => 'py-zsi',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

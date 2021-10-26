@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/11/12 00:53:31 djm Exp $
-lib/python${MODPY_VERSION}/site-packages/fpconst.py
-lib/python${MODPY_VERSION}/site-packages/fpconst.pyc

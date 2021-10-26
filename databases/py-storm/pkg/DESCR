@@ -1,4 +1,0 @@
-Storm is a fast object-relational mapper (ORM) for Python and used in
-Canonical's Launchpad project. Storm is developed in a test-driven
-manner, provides small and clean public APIs and works with everything
-from SQLite to PostgreSQL and MySQL.
