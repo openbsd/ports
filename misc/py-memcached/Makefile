@@ -1,17 +1,19 @@
-# $OpenBSD: Makefile,v 1.22 2021/05/21 19:50:32 kmos Exp $
+# $OpenBSD: Makefile,v 1.23 2021/10/26 19:45:13 sthen Exp $
 
 COMMENT =	Python interface to memcached
 
-MODPY_EGG_VERSION = 1.54
+MODPY_EGG_VERSION = 1.59
 DISTNAME =	python-memcached-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/python-/py-/}
 CATEGORIES =	misc
-REVISION =	5
 
 HOMEPAGE =	http://www.tummy.com/Community/software/python-memcached/
 
 # Python
 PERMIT_PACKAGE =	Yes
+
+FLAVORS =	python3
+FLAVOR =	python3
 
 MODULES =	lang/python
 
@@ -21,7 +23,7 @@ MODPY_PI =		Yes
 
 NO_TEST =	Yes
 
-FLAVORS =	python3
-FLAVOR ?=
+BUILD_DEPENDS =	devel/py-six${MODPY_FLAVOR}
+RUN_DEPENDS =	devel/py-six${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
