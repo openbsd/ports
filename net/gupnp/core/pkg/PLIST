@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.15 2020/06/23 07:34:17 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2021/10/26 14:43:16 jasper Exp $
 bin/gupnp-binding-tool-1.2
 include/gupnp-1.2/
 include/gupnp-1.2/libgupnp/
 include/gupnp-1.2/libgupnp/gupnp-acl.h
+include/gupnp-1.2/libgupnp/gupnp-context-filter.h
 include/gupnp-1.2/libgupnp/gupnp-context-manager.h
 include/gupnp-1.2/libgupnp/gupnp-context.h
 include/gupnp-1.2/libgupnp/gupnp-control-point.h
