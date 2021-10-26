@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2021/10/18 10:07:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/10/26 19:02:02 sthen Exp $
 
 COMMENT =		data analysis and manipulation library
 
-MODPY_EGG_VERSION =	1.2.5
-# 1.3.0+ requires numpy>=1.17.3
+MODPY_EGG_VERSION =	1.3.4
 DISTNAME =		pandas-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -55,6 +54,7 @@ TEST_DEPENDS +=		databases/py-mysqlclient${MODPY_FLAVOR} \
 			www/py-jinja2${MODPY_FLAVOR} \
 			x11/xclip
 
+PORTHOME =		${WRKDIR}
 TEST_ENV +=		TZ=UTC
 
 # XXX tarball does not include all files required for the test suite, as such
