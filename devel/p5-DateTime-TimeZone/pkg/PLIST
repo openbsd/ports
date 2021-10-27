@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/01/04 00:07:19 afresh1 Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/10/27 03:49:10 afresh1 Exp $
 ${P5SITE}/DateTime/
 ${P5SITE}/DateTime/TimeZone/
 ${P5SITE}/DateTime/TimeZone.pm
 ${P5SITE}/DateTime/TimeZone/Africa/
 ${P5SITE}/DateTime/TimeZone/Africa/Abidjan.pm
-${P5SITE}/DateTime/TimeZone/Africa/Accra.pm
 ${P5SITE}/DateTime/TimeZone/Africa/Algiers.pm
 ${P5SITE}/DateTime/TimeZone/Africa/Bissau.pm
 ${P5SITE}/DateTime/TimeZone/Africa/Cairo.pm
@@ -41,13 +40,11 @@ ${P5SITE}/DateTime/TimeZone/America/Argentina/San_Luis.pm
 ${P5SITE}/DateTime/TimeZone/America/Argentina/Tucuman.pm
 ${P5SITE}/DateTime/TimeZone/America/Argentina/Ushuaia.pm
 ${P5SITE}/DateTime/TimeZone/America/Asuncion.pm
-${P5SITE}/DateTime/TimeZone/America/Atikokan.pm
 ${P5SITE}/DateTime/TimeZone/America/Bahia.pm
 ${P5SITE}/DateTime/TimeZone/America/Bahia_Banderas.pm
 ${P5SITE}/DateTime/TimeZone/America/Barbados.pm
 ${P5SITE}/DateTime/TimeZone/America/Belem.pm
 ${P5SITE}/DateTime/TimeZone/America/Belize.pm
-${P5SITE}/DateTime/TimeZone/America/Blanc_Sablon.pm
 ${P5SITE}/DateTime/TimeZone/America/Boa_Vista.pm
 ${P5SITE}/DateTime/TimeZone/America/Bogota.pm
 ${P5SITE}/DateTime/TimeZone/America/Boise.pm
@@ -59,9 +56,7 @@ ${P5SITE}/DateTime/TimeZone/America/Cayenne.pm
 ${P5SITE}/DateTime/TimeZone/America/Chicago.pm
 ${P5SITE}/DateTime/TimeZone/America/Chihuahua.pm
 ${P5SITE}/DateTime/TimeZone/America/Costa_Rica.pm
-${P5SITE}/DateTime/TimeZone/America/Creston.pm
 ${P5SITE}/DateTime/TimeZone/America/Cuiaba.pm
-${P5SITE}/DateTime/TimeZone/America/Curacao.pm
 ${P5SITE}/DateTime/TimeZone/America/Danmarkshavn.pm
 ${P5SITE}/DateTime/TimeZone/America/Dawson.pm
 ${P5SITE}/DateTime/TimeZone/America/Dawson_Creek.pm
@@ -114,7 +109,6 @@ ${P5SITE}/DateTime/TimeZone/America/Miquelon.pm
 ${P5SITE}/DateTime/TimeZone/America/Moncton.pm
 ${P5SITE}/DateTime/TimeZone/America/Monterrey.pm
 ${P5SITE}/DateTime/TimeZone/America/Montevideo.pm
-${P5SITE}/DateTime/TimeZone/America/Nassau.pm
 ${P5SITE}/DateTime/TimeZone/America/New_York.pm
 ${P5SITE}/DateTime/TimeZone/America/Nipigon.pm
 ${P5SITE}/DateTime/TimeZone/America/Nome.pm
@@ -130,7 +124,6 @@ ${P5SITE}/DateTime/TimeZone/America/Pangnirtung.pm
 ${P5SITE}/DateTime/TimeZone/America/Paramaribo.pm
 ${P5SITE}/DateTime/TimeZone/America/Phoenix.pm
 ${P5SITE}/DateTime/TimeZone/America/Port_au_Prince.pm
-${P5SITE}/DateTime/TimeZone/America/Port_of_Spain.pm
 ${P5SITE}/DateTime/TimeZone/America/Porto_Velho.pm
 ${P5SITE}/DateTime/TimeZone/America/Puerto_Rico.pm
 ${P5SITE}/DateTime/TimeZone/America/Punta_Arenas.pm
@@ -161,12 +154,10 @@ ${P5SITE}/DateTime/TimeZone/America/Yellowknife.pm
 ${P5SITE}/DateTime/TimeZone/Antarctica/
 ${P5SITE}/DateTime/TimeZone/Antarctica/Casey.pm
 ${P5SITE}/DateTime/TimeZone/Antarctica/Davis.pm
-${P5SITE}/DateTime/TimeZone/Antarctica/DumontDUrville.pm
 ${P5SITE}/DateTime/TimeZone/Antarctica/Macquarie.pm
 ${P5SITE}/DateTime/TimeZone/Antarctica/Mawson.pm
 ${P5SITE}/DateTime/TimeZone/Antarctica/Palmer.pm
 ${P5SITE}/DateTime/TimeZone/Antarctica/Rothera.pm
-${P5SITE}/DateTime/TimeZone/Antarctica/Syowa.pm
 ${P5SITE}/DateTime/TimeZone/Antarctica/Troll.pm
 ${P5SITE}/DateTime/TimeZone/Antarctica/Vostok.pm
 ${P5SITE}/DateTime/TimeZone/Asia/
@@ -357,7 +348,6 @@ ${P5SITE}/DateTime/TimeZone/Pacific/Chatham.pm
 ${P5SITE}/DateTime/TimeZone/Pacific/Chuuk.pm
 ${P5SITE}/DateTime/TimeZone/Pacific/Easter.pm
 ${P5SITE}/DateTime/TimeZone/Pacific/Efate.pm
-${P5SITE}/DateTime/TimeZone/Pacific/Enderbury.pm
 ${P5SITE}/DateTime/TimeZone/Pacific/Fakaofo.pm
 ${P5SITE}/DateTime/TimeZone/Pacific/Fiji.pm
 ${P5SITE}/DateTime/TimeZone/Pacific/Funafuti.pm
@@ -366,6 +356,7 @@ ${P5SITE}/DateTime/TimeZone/Pacific/Gambier.pm
 ${P5SITE}/DateTime/TimeZone/Pacific/Guadalcanal.pm
 ${P5SITE}/DateTime/TimeZone/Pacific/Guam.pm
 ${P5SITE}/DateTime/TimeZone/Pacific/Honolulu.pm
+${P5SITE}/DateTime/TimeZone/Pacific/Kanton.pm
 ${P5SITE}/DateTime/TimeZone/Pacific/Kiritimati.pm
 ${P5SITE}/DateTime/TimeZone/Pacific/Kosrae.pm
 ${P5SITE}/DateTime/TimeZone/Pacific/Kwajalein.pm
