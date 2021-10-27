@@ -1,16 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/18 18:12:22 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/27 17:06:33 steven Exp $
 ${P5ARCH}/
 ${P5ARCH}/Math/
 ${P5ARCH}/Math/GMPf/
 ${P5ARCH}/Math/GMPf.pm
+${P5ARCH}/Math/GMPf.pod
 ${P5ARCH}/Math/GMPf/Random.pm
 ${P5ARCH}/Math/GMPf/V.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Math/
 ${P5ARCH}/auto/Math/GMPf/
-${P5ARCH}/auto/Math/GMPf/GMPf.so
+@so ${P5ARCH}/auto/Math/GMPf/GMPf.so
 ${P5ARCH}/auto/Math/GMPf/Random/
-${P5ARCH}/auto/Math/GMPf/Random/Random.so
+@so ${P5ARCH}/auto/Math/GMPf/Random/Random.so
 ${P5ARCH}/auto/Math/GMPf/V/
-${P5ARCH}/auto/Math/GMPf/V/V.so
+@so ${P5ARCH}/auto/Math/GMPf/V/V.so
 @man man/man3p/Math::GMPf.3p

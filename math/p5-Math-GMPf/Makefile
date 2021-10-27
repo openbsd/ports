@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/10/27 17:06:33 steven Exp $
 
 COMMENT =	perl interface to GMP floating point functions
 
 MODULES =	cpan
-DISTNAME =	Math-GMPf-0.43
+DISTNAME =	Math-GMPf-0.44
 CATEGORIES =	math
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE=	Yes

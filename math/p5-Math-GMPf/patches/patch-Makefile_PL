@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2019/05/18 18:12:22 steven Exp $
+$OpenBSD: patch-Makefile_PL,v 1.2 2021/10/27 17:06:33 steven Exp $
 
 Index: Makefile.PL
 --- Makefile.PL.orig
 +++ Makefile.PL
-@@ -62,9 +62,8 @@ my %options = (
+@@ -63,9 +63,8 @@ my %options = (
    AUTHOR => 'Sisyphus (sisyphus at (@) cpan dot (.) org)',
    ABSTRACT => 'Perl interface to the GMP floating point functions',
    DEFINE   => $defines,

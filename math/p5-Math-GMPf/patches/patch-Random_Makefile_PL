@@ -1,9 +1,9 @@
-$OpenBSD: patch-Random_Makefile_PL,v 1.1.1.1 2019/05/18 18:12:22 steven Exp $
+$OpenBSD: patch-Random_Makefile_PL,v 1.2 2021/10/27 17:06:33 steven Exp $
 
 Index: Random/Makefile.PL
 --- Random/Makefile.PL.orig
 +++ Random/Makefile.PL
-@@ -5,8 +5,8 @@ my %options = %{
+@@ -10,8 +10,8 @@ my %options = %{
      '../typemap'
    ],
    'NAME' => 'Math::GMPf::Random',
