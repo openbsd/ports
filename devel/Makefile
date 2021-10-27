@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2141 2021/10/26 20:06:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.2142 2021/10/27 17:22:46 jasper Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -7,6 +7,7 @@
      SUBDIR += acpica
      SUBDIR += adb
      SUBDIR += afl
+     SUBDIR += afl++
      SUBDIR += ald
      SUBDIR += alex
      SUBDIR += angr
