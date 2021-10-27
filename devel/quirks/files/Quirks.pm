@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1323 2021/10/26 20:08:07 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1324 2021/10/27 19:32:05 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -571,6 +571,7 @@ my $stem_extensions = {
 	'py-logilab-common' => 'py3-logilab-common',
 	'py-memcached' => 'py3-memcached',
 	'py-tempora' => 'py3-tempora',
+	'py-redland' => 'py3-redland',
 };
 
 my $obsolete_reason = {};
