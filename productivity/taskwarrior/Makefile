@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2021/03/07 13:33:21 zhuk Exp $
+# $OpenBSD: Makefile,v 1.36 2021/10/27 15:03:26 jasper Exp $
 
 COMMENT =	command line todo list manager
 
@@ -6,10 +6,9 @@ VERSION =	2.5.3
 DISTNAME =	task-${VERSION}
 PKGNAME =	taskwarrior-${VERSION}
 CATEGORIES =	productivity
+REVISION =	0
 
 HOMEPAGE =	https://www.taskwarrior.org/
-
-MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 MASTER_SITES =	https://www.taskwarrior.org/download/
 
@@ -70,6 +69,6 @@ post-install:
 		${PREFIX}/share/vim/vimfiles/syntax/
 	${INSTALL_DATA} ${PREFIX}/share/doc/taskwarrior/scripts/vim/syntax/taskrc.vim \
 		${PREFIX}/share/vim/vimfiles/syntax/
-	rm -rf ${PREFIX}/share/doc/taskwarrior/scripts/{vim,bash,fish}
+	rm -r ${PREFIX}/share/doc/taskwarrior/scripts/{vim,bash,fish}
 
 .include <bsd.port.mk>
