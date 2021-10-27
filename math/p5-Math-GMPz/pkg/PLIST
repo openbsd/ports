@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/18 18:11:10 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/27 17:07:25 steven Exp $
 ${P5ARCH}/
 ${P5ARCH}/Math/
 ${P5ARCH}/Math/GMPz/
@@ -9,9 +9,9 @@ ${P5ARCH}/Math/GMPz/V.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Math/
 ${P5ARCH}/auto/Math/GMPz/
-${P5ARCH}/auto/Math/GMPz/GMPz.so
+@so ${P5ARCH}/auto/Math/GMPz/GMPz.so
 ${P5ARCH}/auto/Math/GMPz/Random/
-${P5ARCH}/auto/Math/GMPz/Random/Random.so
+@so ${P5ARCH}/auto/Math/GMPz/Random/Random.so
 ${P5ARCH}/auto/Math/GMPz/V/
-${P5ARCH}/auto/Math/GMPz/V/V.so
+@so ${P5ARCH}/auto/Math/GMPz/V/V.so
 @man man/man3p/Math::GMPz.3p

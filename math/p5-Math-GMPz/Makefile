@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/10/27 17:07:25 steven Exp $
 
 COMMENT =	perl interface to GMP integer functions
 
 MODULES =	cpan
-DISTNAME =	Math-GMPz-0.48
+DISTNAME =	Math-GMPz-0.51
 CATEGORIES =	math
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes

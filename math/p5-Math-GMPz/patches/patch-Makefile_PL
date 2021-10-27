@@ -1,17 +1,17 @@
-$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2019/05/18 18:11:10 steven Exp $
+$OpenBSD: patch-Makefile_PL,v 1.2 2021/10/27 17:07:25 steven Exp $
 
 Index: Makefile.PL
 --- Makefile.PL.orig
 +++ Makefile.PL
-@@ -68,9 +68,8 @@ my %options = (
-   AUTHOR => 'Sisyphus (sisyphus at (@) cpan dot (.) org)',
+@@ -74,9 +74,8 @@ my %options = (
    ABSTRACT => 'Perl interface to the GMP integer functions',
    DEFINE   => $defines,
+ 
 -  LIBS => [
 -    '-lgmp'
 -  ],
 +  INC  => "$ENV{CPPFLAGS}",
 +  LIBS => ["$ENV{LDFLAGS} -lgmp"],
+ 
    LICENSE  => 'perl',
    VERSION_FROM => 'GMPz.pm',
-   PREREQ_PM => {'Exporter' => '5.58'}, # avoid test failures on pre perl-5.8.4
