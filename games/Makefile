@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.441 2021/10/15 14:12:34 bcallah Exp $
+# $OpenBSD: Makefile,v 1.442 2021/10/27 01:19:58 namn Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -9,6 +9,7 @@
      SUBDIR += afternoonstalker
      SUBDIR += alephone
      SUBDIR += allegro
+     SUBDIR += amnesia-tdd
      SUBDIR += amoebax
      SUBDIR += amph
      SUBDIR += an
