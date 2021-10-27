@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/10/17 18:35:53 denis Exp $
+# $OpenBSD: Makefile,v 1.7 2021/10/27 16:18:19 matthieu Exp $
 
 COMMENT =	powerful yet simple to use screenshot software
 CATEGORIES =	graphics x11
@@ -6,6 +6,7 @@ CATEGORIES =	graphics x11
 GH_ACCOUNT =	flameshot-org
 GH_PROJECT =	flameshot
 GH_TAGNAME =	v0.10.1
+REVISION =	0
 
 HOMEPAGE =	https://flameshot.org/
 MAINTAINER =	Denis Fondras <denis@openbsd.org>
@@ -25,6 +26,10 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
 CONFIGURE_ARGS +=	-DENABLE_CACHE=OFF
+
+pre-configure:
+	perl -pi -e 's,/usr/bin/,${TRUEPREFIX}/bin/,' \
+	${WRKSRC}/data/desktopEntry/package/org.flameshot.Flameshot.desktop
 
 NO_TEST =	Yes
 
