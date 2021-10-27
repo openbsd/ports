@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.15 2017/07/24 12:46:45 gsoares Exp $
+@comment $OpenBSD: PLIST,v 1.16 2021/10/27 17:21:58 jasper Exp $
+@conflict afl++-*
 @bin bin/afl-analyze
 bin/afl-clang
 bin/afl-clang++
