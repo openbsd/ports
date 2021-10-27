@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.83 2021/10/24 18:55:40 bket Exp $
+# $OpenBSD: Makefile,v 1.84 2021/10/27 07:25:10 bket Exp $
 
 BROKEN-hppa=	serverpath.h:17:19: error: variable 'CServerPath final' has initializer but incomplete type
 BROKEN-alpha=	serverpath.h:17:19: error: variable 'CServerPath final' has initializer but incomplete type
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 
-V=		3.56.0
+V=		3.56.1
 PKGNAME=	filezilla-$V
 DISTNAME=	FileZilla_$V_src
 
@@ -21,9 +21,9 @@ MAINTAINER=	Bjorn Ketelaars <bket@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE SDL2 SM X11 Xcomposite Xcursor
-WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xss
-WANTLIB += Xxf86vm atk-1.0 atk-bridge-2.0 c cairo cairo-gobject
+WANTLIB += ${COMPILER_LIBCXX} ICE SDL2 SM X11 Xau Xcomposite Xcursor
+WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB += Xss Xxf86vm atk-1.0 atk-bridge-2.0 c cairo cairo-gobject
 WANTLIB += dbus-1 epoxy execinfo expat ffi filezilla fontconfig
 WANTLIB += freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gmp gnutls gobject-2.0 graphite2 gthread-2.0
@@ -44,7 +44,7 @@ COMPILER=	base-clang ports-gcc
 LIB_DEPENDS=	databases/sqlite3 \
 		devel/harfbuzz \
 		devel/libidn \
-		net/libfilezilla>=0.34.0 \
+		net/libfilezilla>=0.34.2 \
 		security/gnutls \
 		textproc/pugixml \
 		x11/dbus \
