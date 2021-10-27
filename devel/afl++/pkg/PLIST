@@ -1,0 +1,271 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/10/27 17:22:11 jasper Exp $
+@conflict afl-*
+@bin bin/afl-analyze
+bin/afl-c++
+@bin bin/afl-cc
+bin/afl-clang
+bin/afl-clang++
+bin/afl-clang-fast
+bin/afl-clang-fast++
+bin/afl-clang-lto
+bin/afl-clang-lto++
+bin/afl-cmin
+bin/afl-cmin.bash
+@bin bin/afl-fuzz
+bin/afl-g++
+bin/afl-gcc
+@bin bin/afl-gotcpu
+@bin bin/afl-ld-lto
+bin/afl-lto
+bin/afl-lto++
+bin/afl-plot
+@bin bin/afl-showmap
+bin/afl-system-config
+@bin bin/afl-tmin
+bin/afl-whatsup
+libexec/afl/
+@so libexec/afl/SanitizerCoverageLTO.so
+@so libexec/afl/SanitizerCoveragePCGUARD.so
+@bin libexec/afl/afl-as
+libexec/afl/afl-compiler-rt-32.o
+libexec/afl/afl-compiler-rt-64.o
+libexec/afl/afl-compiler-rt.o
+@so libexec/afl/afl-llvm-dict2file.so
+@so libexec/afl/afl-llvm-lto-instrumentation.so
+@so libexec/afl/afl-llvm-lto-instrumentlist.so
+@so libexec/afl/afl-llvm-pass.so
+libexec/afl/afl-llvm-rt-32.o
+libexec/afl/afl-llvm-rt-64.o
+libexec/afl/afl-llvm-rt-lto-32.o
+libexec/afl/afl-llvm-rt-lto-64.o
+libexec/afl/afl-llvm-rt-lto.o
+libexec/afl/afl-llvm-rt.o
+libexec/afl/as
+@so libexec/afl/cmplog-instructions-pass.so
+@so libexec/afl/cmplog-routines-pass.so
+@so libexec/afl/cmplog-switches-pass.so
+@so libexec/afl/compare-transform-pass.so
+libexec/afl/dynamic_list.txt
+@static-lib libexec/afl/libAFLDriver.a
+@static-lib libexec/afl/libAFLQemuDriver.a
+@so libexec/afl/split-compares-pass.so
+@so libexec/afl/split-switches-pass.so
+@man man/man8/afl-analyze.8
+@man man/man8/afl-as.8
+@man man/man8/afl-c++.8
+@man man/man8/afl-cc.8
+@man man/man8/afl-clang-fast++.8
+@man man/man8/afl-clang-fast.8
+@man man/man8/afl-clang-lto++.8
+@man man/man8/afl-clang-lto.8
+@man man/man8/afl-cmin.8
+@man man/man8/afl-cmin.bash.8
+@man man/man8/afl-fuzz.8
+@man man/man8/afl-gotcpu.8
+@man man/man8/afl-lto++.8
+@man man/man8/afl-lto.8
+@man man/man8/afl-plot.8
+@man man/man8/afl-showmap.8
+@man man/man8/afl-system-config.8
+@man man/man8/afl-tmin.8
+@man man/man8/afl-whatsup.8
+share/afl/
+share/afl/dictionaries/
+share/afl/dictionaries/README.md
+share/afl/dictionaries/aff.dict
+share/afl/dictionaries/ass.dict
+share/afl/dictionaries/atom.dict
+share/afl/dictionaries/av1_dc.dict
+share/afl/dictionaries/bash.dict
+share/afl/dictionaries/bdf.dict
+share/afl/dictionaries/bmp.dict
+share/afl/dictionaries/bz2.dict
+share/afl/dictionaries/creole.dict
+share/afl/dictionaries/css.dict
+share/afl/dictionaries/csv.dict
+share/afl/dictionaries/dds.dict
+share/afl/dictionaries/djvu.dict
+share/afl/dictionaries/docommand.dict
+share/afl/dictionaries/exif.dict
+share/afl/dictionaries/fbs.dict
+share/afl/dictionaries/ftp.dict
+share/afl/dictionaries/gif.dict
+share/afl/dictionaries/graphviz.dict
+share/afl/dictionaries/heif.dict
+share/afl/dictionaries/hoextdown.dict
+share/afl/dictionaries/html_tags.dict
+share/afl/dictionaries/http.dict
+share/afl/dictionaries/icc.dict
+share/afl/dictionaries/iccprofile.dict
+share/afl/dictionaries/icns.dict
+share/afl/dictionaries/initfile.dict
+share/afl/dictionaries/jbig2.dict
+share/afl/dictionaries/jpeg.dict
+share/afl/dictionaries/jpeg2000.dict
+share/afl/dictionaries/js.dict
+share/afl/dictionaries/json.dict
+share/afl/dictionaries/jsonnet.dict
+share/afl/dictionaries/markdown.dict
+share/afl/dictionaries/math.dict
+share/afl/dictionaries/mathml.dict
+share/afl/dictionaries/mp4.dict
+share/afl/dictionaries/mysqld.dict
+share/afl/dictionaries/ogg.dict
+share/afl/dictionaries/openexr.dict
+share/afl/dictionaries/otf.dict
+share/afl/dictionaries/pbm.dict
+share/afl/dictionaries/pcap.dict
+share/afl/dictionaries/pdf.dict
+share/afl/dictionaries/perl.dict
+share/afl/dictionaries/png.dict
+share/afl/dictionaries/proj4.dict
+share/afl/dictionaries/protobuf.dict
+share/afl/dictionaries/ps.dict
+share/afl/dictionaries/psd.dict
+share/afl/dictionaries/regexp.dict
+share/afl/dictionaries/riff.dict
+share/afl/dictionaries/rss.dict
+share/afl/dictionaries/rst.dict
+share/afl/dictionaries/rtf.dict
+share/afl/dictionaries/sas.dict
+share/afl/dictionaries/spss.dict
+share/afl/dictionaries/sql.dict
+share/afl/dictionaries/stata.dict
+share/afl/dictionaries/svg.dict
+share/afl/dictionaries/tex.dict
+share/afl/dictionaries/theme-load-fuzz.dict
+share/afl/dictionaries/tiff.dict
+share/afl/dictionaries/tokener_parse_ex.dict
+share/afl/dictionaries/toml.dict
+share/afl/dictionaries/type42.dict
+share/afl/dictionaries/url.dict
+share/afl/dictionaries/utf8.dict
+share/afl/dictionaries/vcf.dict
+share/afl/dictionaries/vhd.dict
+share/afl/dictionaries/vpx_dec.dict
+share/afl/dictionaries/wav.dict
+share/afl/dictionaries/webm.dict
+share/afl/dictionaries/webp.dict
+share/afl/dictionaries/wkt.dict
+share/afl/dictionaries/x86.dict
+share/afl/dictionaries/xml.dict
+share/afl/dictionaries/xml_UTF_16.dict
+share/afl/dictionaries/xml_UTF_16BE.dict
+share/afl/dictionaries/xml_UTF_16LE.dict
+share/afl/dictionaries/xpath.dict
+share/afl/dictionaries/xslt.dict
+share/afl/dictionaries/yaml.dict
+share/afl/dictionaries/yara.dict
+share/afl/dictionaries/zip.dict
+share/afl/testcases/
+share/afl/testcases/README.md
+share/afl/testcases/archives/
+share/afl/testcases/archives/common/
+share/afl/testcases/archives/common/ar/
+share/afl/testcases/archives/common/ar/small_archive.a
+share/afl/testcases/archives/common/bzip2/
+share/afl/testcases/archives/common/bzip2/small_archive.bz2
+share/afl/testcases/archives/common/cab/
+share/afl/testcases/archives/common/cab/small_archive.cab
+share/afl/testcases/archives/common/compress/
+share/afl/testcases/archives/common/compress/small_archive.Z
+share/afl/testcases/archives/common/cpio/
+share/afl/testcases/archives/common/cpio/small_archive.cpio
+share/afl/testcases/archives/common/gzip/
+share/afl/testcases/archives/common/gzip/small_archive.gz
+share/afl/testcases/archives/common/lzo/
+share/afl/testcases/archives/common/lzo/small_archive.lzo
+share/afl/testcases/archives/common/rar/
+share/afl/testcases/archives/common/rar/small_archive.rar
+share/afl/testcases/archives/common/tar/
+share/afl/testcases/archives/common/tar/small_archive.tar
+share/afl/testcases/archives/common/xz/
+share/afl/testcases/archives/common/xz/small_archive.xz
+share/afl/testcases/archives/common/zip/
+share/afl/testcases/archives/common/zip/small_archive.zip
+share/afl/testcases/archives/exotic/
+share/afl/testcases/archives/exotic/arj/
+share/afl/testcases/archives/exotic/arj/small_archive.arj
+share/afl/testcases/archives/exotic/lha/
+share/afl/testcases/archives/exotic/lha/small_archive.lha
+share/afl/testcases/archives/exotic/lrzip/
+share/afl/testcases/archives/exotic/lrzip/small_archive.lrz
+share/afl/testcases/archives/exotic/lzip/
+share/afl/testcases/archives/exotic/lzip/small_archive.lz
+share/afl/testcases/archives/exotic/lzma/
+share/afl/testcases/archives/exotic/lzma/small_archive.lzma
+share/afl/testcases/archives/exotic/rzip/
+share/afl/testcases/archives/exotic/rzip/small_archive.rz
+share/afl/testcases/archives/exotic/zoo/
+share/afl/testcases/archives/exotic/zoo/small_archive.zoo
+share/afl/testcases/images/
+share/afl/testcases/images/bmp/
+share/afl/testcases/images/bmp/not_kitty.bmp
+share/afl/testcases/images/gif/
+share/afl/testcases/images/gif/not_kitty.gif
+share/afl/testcases/images/ico/
+share/afl/testcases/images/ico/not_kitty.ico
+share/afl/testcases/images/jp2/
+share/afl/testcases/images/jp2/not_kitty.jp2
+share/afl/testcases/images/jpeg/
+share/afl/testcases/images/jpeg/not_kitty.jpg
+share/afl/testcases/images/jxr/
+share/afl/testcases/images/jxr/not_kitty.jxr
+share/afl/testcases/images/png/
+share/afl/testcases/images/png/not_kitty.png
+share/afl/testcases/images/png/not_kitty_alpha.png
+share/afl/testcases/images/png/not_kitty_gamma.png
+share/afl/testcases/images/png/not_kitty_icc.png
+share/afl/testcases/images/tiff/
+share/afl/testcases/images/tiff/not_kitty.tiff
+share/afl/testcases/images/webp/
+share/afl/testcases/images/webp/not_kitty.webp
+share/afl/testcases/multimedia/
+share/afl/testcases/multimedia/h264/
+share/afl/testcases/multimedia/h264/small_movie.mp4
+share/afl/testcases/others/
+share/afl/testcases/others/elf/
+share/afl/testcases/others/elf/small_exec.elf
+share/afl/testcases/others/js/
+share/afl/testcases/others/js/small_script.js
+share/afl/testcases/others/pcap/
+share/afl/testcases/others/pcap/small_capture.pcap
+share/afl/testcases/others/pdf/
+share/afl/testcases/others/pdf/small.pdf
+share/afl/testcases/others/rtf/
+share/afl/testcases/others/rtf/small_document.rtf
+share/afl/testcases/others/sql/
+share/afl/testcases/others/sql/simple_queries.sql
+share/afl/testcases/others/text/
+share/afl/testcases/others/text/hello_world.txt
+share/afl/testcases/others/xml/
+share/afl/testcases/others/xml/small_document.xml
+share/doc/afl/
+share/doc/afl/Changelog.md
+share/doc/afl/FAQ.md
+share/doc/afl/INSTALL.md
+share/doc/afl/QuickStartGuide.md
+share/doc/afl/README.cmplog.md
+share/doc/afl/README.ctx.md
+share/doc/afl/README.gcc_plugin.md
+share/doc/afl/README.instrument_list.md
+share/doc/afl/README.laf-intel.md
+share/doc/afl/README.llvm.md
+share/doc/afl/README.lto.md
+share/doc/afl/README.neverzero.md
+share/doc/afl/README.ngram.md
+share/doc/afl/README.out_of_line.md
+share/doc/afl/README.persistent_mode.md
+share/doc/afl/README.snapshot.md
+share/doc/afl/binaryonly_fuzzing.md
+share/doc/afl/custom_mutators.md
+share/doc/afl/docs.md
+share/doc/afl/env_variables.md
+share/doc/afl/ideas.md
+share/doc/afl/life_pro_tips.md
+share/doc/afl/parallel_fuzzing.md
+share/doc/afl/perf_tips.md
+share/doc/afl/rpc_statsd.md
+share/doc/afl/sister_projects.md
+share/doc/afl/status_screen.md
+share/doc/afl/technical_details.md

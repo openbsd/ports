@@ -1,0 +1,19 @@
+$OpenBSD: patch-GNUmakefile_llvm,v 1.1.1.1 2021/10/27 17:22:11 jasper Exp $
+
+Index: GNUmakefile.llvm
+--- GNUmakefile.llvm.orig
++++ GNUmakefile.llvm
+@@ -20,11 +20,11 @@
+ HASH=\#
+ 
+ PREFIX      ?= /usr/local
+-HELPER_PATH ?= $(PREFIX)/lib/afl
++HELPER_PATH ?= $(PREFIX)/libexec/afl
+ BIN_PATH    ?= $(PREFIX)/bin
+ DOC_PATH    ?= $(PREFIX)/share/doc/afl
+ MISC_PATH   ?= $(PREFIX)/share/afl
+-MAN_PATH    ?= $(PREFIX)/share/man/man8
++MAN_PATH    ?= $(PREFIX)/man/man8
+ 
+ BUILD_DATE  ?= $(shell date -u -d "@$(SOURCE_DATE_EPOCH)" "+%Y-%m-%d" 2>/dev/null || date -u -r "$(SOURCE_DATE_EPOCH)" "+%Y-%m-%d" 2>/dev/null || date -u "+%Y-%m-%d")
+ 
