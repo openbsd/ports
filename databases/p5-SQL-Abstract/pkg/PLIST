@@ -1,15 +1,31 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/07/11 12:42:48 afresh1 Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/10/27 03:53:05 afresh1 Exp $
 ${P5SITE}/DBIx/
 ${P5SITE}/DBIx/Class/
+${P5SITE}/DBIx/Class/SQLMaker/
+${P5SITE}/DBIx/Class/SQLMaker/Role/
+${P5SITE}/DBIx/Class/SQLMaker/Role/SQLA2Passthrough.pm
 ${P5SITE}/DBIx/Class/Storage/
 ${P5SITE}/DBIx/Class/Storage/Debug/
 ${P5SITE}/DBIx/Class/Storage/Debug/PrettyPrint.pm
 ${P5SITE}/SQL/
 ${P5SITE}/SQL/Abstract/
 ${P5SITE}/SQL/Abstract.pm
+${P5SITE}/SQL/Abstract/Formatter.pm
+${P5SITE}/SQL/Abstract/Parts.pm
+${P5SITE}/SQL/Abstract/Plugin/
+${P5SITE}/SQL/Abstract/Plugin/BangOverrides.pm
+${P5SITE}/SQL/Abstract/Plugin/ExtraClauses.pm
+${P5SITE}/SQL/Abstract/Reference.pm
+${P5SITE}/SQL/Abstract/Role/
+${P5SITE}/SQL/Abstract/Role/Plugin.pm
 ${P5SITE}/SQL/Abstract/Test.pm
 ${P5SITE}/SQL/Abstract/Tree.pm
+@man man/man3p/DBIx::Class::SQLMaker::Role::SQLA2Passthrough.3p
 @man man/man3p/DBIx::Class::Storage::Debug::PrettyPrint.3p
 @man man/man3p/SQL::Abstract.3p
+@man man/man3p/SQL::Abstract::Plugin::BangOverrides.3p
+@man man/man3p/SQL::Abstract::Plugin::ExtraClauses.3p
+@man man/man3p/SQL::Abstract::Reference.3p
+@man man/man3p/SQL::Abstract::Role::Plugin.3p
 @man man/man3p/SQL::Abstract::Test.3p
 @man man/man3p/SQL::Abstract::Tree.3p

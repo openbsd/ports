@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2020/12/06 20:56:23 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.18 2021/10/27 03:53:05 afresh1 Exp $
 
 COMMENT =	generate SQL from Perl data structures
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	SQL-Abstract-1.87
+DISTNAME =	SQL-Abstract-2.000001
 CATEGORIES =	databases
 
 MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
