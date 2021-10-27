@@ -1,0 +1,3 @@
+ruamel.yaml.clib is the C based reader/scanner and emitter for ruamel.yaml,
+this package was split off from ruamel.yaml so that ruamel.yaml can be
+built as a universal wheel.
