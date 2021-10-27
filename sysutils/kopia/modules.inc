@@ -1,4 +1,4 @@
-# $OpenBSD: modules.inc,v 1.1.1.1 2021/10/15 10:53:43 denis Exp $
+# $OpenBSD: modules.inc,v 1.2 2021/10/27 10:53:07 denis Exp $
 
 MODGO_MODULES =	\
 	bazil.org/fuse							 v0.0.0-20180421153158-65cc252bf669 \
@@ -912,4 +912,3 @@ MODGO_MODFILES =	\
 	honnef.co/go/tools					 v0.0.1-2020.1.3 \
 	honnef.co/go/tools					 v0.0.1-2020.1.4 \
 	nhooyr.io/websocket					 v1.8.6
-
