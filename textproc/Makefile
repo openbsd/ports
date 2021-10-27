@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.694 2021/10/26 19:52:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.695 2021/10/27 09:36:13 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -440,6 +440,7 @@
      SUBDIR += py-rebulk,python3
      SUBDIR += py-recommonmark,python3
      SUBDIR += py-ruamel.yaml,python3
+     SUBDIR += py-ruamel.yaml.clib,python3
      SUBDIR += py-signedjson,python3
      SUBDIR += py-semver
      SUBDIR += py-snowballstemmer,python3
