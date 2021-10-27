@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:50:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2021/10/27 19:32:34 sthen Exp $
 
 MULTI_PACKAGES=		-main -mysql -pgsql
 
@@ -12,17 +12,15 @@ PKGNAME-main=		redland-$V
 PKGNAME-mysql=		redland-mysql-$V
 PKGNAME-pgsql=		redland-pgsql-$V
 
-REVISION-main=		6
-REVISION-mysql=		8
-REVISION-pgsql=		7
+REVISION=		9
 
 CATEGORIES=		textproc
 
 SHARED_LIBS +=	rdf                  1.0      # 0.0
 
-HOMEPAGE=		http://librdf.org/
+HOMEPAGE=		https://librdf.org/
 
-MASTER_SITES=		http://download.librdf.org/source/
+MASTER_SITES=		https://download.librdf.org/source/
 
 # LGPL 2.1+, GPL 2+ or Apache 2+
 PERMIT_PACKAGE=	Yes
