@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/20 17:34:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/10/27 19:58:40 sthen Exp $
 
 COMMENT =		extends Python Rich library functionality
 
@@ -20,8 +20,7 @@ FLAVOR =		python3
 
 MODPY_SETUPTOOLS =	Yes
 
-BUILD_DEPENDS =		devel/py-setuptools_scm_git_archive${MODPY_FLAVOR} \
-			textproc/py-toml${MODPY_FLAVOR}
+BUILD_DEPENDS =		devel/py-setuptools_scm_git_archive${MODPY_FLAVOR}
 
 RUN_DEPENDS =		devel/py-rich${MODPY_FLAVOR}
 

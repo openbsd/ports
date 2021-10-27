@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/09/01 15:59:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2021/10/27 19:58:41 sthen Exp $
 
 COMMENT=		setuptools Rust extension plugin
 
@@ -22,8 +22,7 @@ MODPY_SETUPTOOLS=	Yes
 FLAVORS=		python3
 FLAVOR ?=		python3
 
-BUILD_DEPENDS=		devel/py-setuptools_scm${MODPY_FLAVOR} \
-			textproc/py-toml${MODPY_FLAVOR}
+BUILD_DEPENDS=		devel/py-setuptools_scm${MODPY_FLAVOR}
 
 RUN_DEPENDS=		devel/py-semantic-version${MODPY_FLAVOR} \
 			devel/py-wheel${MODPY_FLAVOR} \

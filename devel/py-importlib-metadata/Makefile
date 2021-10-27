@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/09/10 11:36:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2021/10/27 19:58:40 sthen Exp $
 
 COMMENT =		library providing an API for accessing packages metadata
 
@@ -15,9 +15,7 @@ MAINTAINER =		Renaud Allard <renaud@allard.it>
 # Apache Software License
 PERMIT_PACKAGE =	Yes
 
-BUILD_DEPENDS =		textproc/py-toml${MODPY_FLAVOR} \
-			devel/py-setuptools_scm${MODPY_FLAVOR}
-
+BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/py-zipp${MODPY_FLAVOR}
 
 MODULES =		lang/python

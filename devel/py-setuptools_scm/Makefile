@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2021/05/21 19:50:29 kmos Exp $
+# $OpenBSD: Makefile,v 1.20 2021/10/27 19:58:41 sthen Exp $
 
 COMMENT =		plugin to manage your versions by scm tags
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	5.0.2
 DISTNAME =		setuptools_scm-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -22,8 +22,10 @@ TEST_DEPENDS =		${FULLPKGNAME}:${FULLPKGPATH} \
 			devel/py-pip${MODPY_FLAVOR}
 
 .if ${FLAVOR:Mpython3}
-# toml is an optional run dependency, used rarely
-TEST_DEPENDS +=		textproc/py-toml${MODPY_FLAVOR}
+# toml is an optional run dependency and only used for some ports, but
+# the failure mode from not having it (version number replaced with 0.0.0)
+# is not very obvious, so add it always
+RUN_DEPENDS +=		textproc/py-toml${MODPY_FLAVOR}
 .else
 NO_TEST=		Yes
 .endif
