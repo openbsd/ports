@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/10/26 20:06:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/10/27 08:44:11 sthen Exp $
 
 COMMENT =		objects and routines pertaining to date and time
 
@@ -23,7 +23,8 @@ MODPY_SETUPTOOLS =	Yes
 # unported deps
 NO_TEST =		Yes
 
-BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}>=1.15.0
+BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}>=1.15.0 \
+			textproc/py-toml${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/py-jaraco-functools${MODPY_FLAVOR}>=1.2.0 \
 			devel/py-tz${MODPY_FLAVOR}
 
