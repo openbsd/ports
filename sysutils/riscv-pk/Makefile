@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/11/09 15:01:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2021/10/27 12:51:57 jasper Exp $
 
 COMMENT =	RISC-V Proxy Kernel
 
@@ -7,6 +7,7 @@ GH_ACCOUNT =	riscv
 GH_PROJECT =	riscv-pk
 
 DISTNAME =	riscv-pk-1.0.0
+REVISION =	0
 
 CATEGORIES =	sysutils
 
@@ -20,7 +21,6 @@ BUILD_DEPENDS =	devel/riscv-elf/newlib
 CONFIGURE_STYLE =gnu
 CONFIGURE_ARGS =--host=riscv64-unknown-elf
 CONFIGURE_ENV =	CC=riscv64-unknown-elf-gcc
-PREFIX=		${LOCALBASE}/riscv64-unknown-elf
 
 USE_GMAKE =	Yes
 SEPARATE_BUILD =Yes
