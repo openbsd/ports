@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/10/26 14:53:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2021/10/27 10:29:38 ajacoutot Exp $
 
 COMMENT=		efficient search engine and triplestore
 
@@ -23,7 +23,6 @@ MODGNOME_TOOLS=		gobject-introspection vala
 
 MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
-TEST_DEPENDS +=		devel/py-gobject3${MODPY_FLAVOR}
 
 BUILD_DEPENDS=		shells/bash-completion \
 			textproc/asciidoc \
@@ -34,6 +33,11 @@ LIB_DEPENDS=		devel/json-glib \
 			devel/libsoup3 \
 			textproc/icu4c \
 			textproc/libstemmer
+
+TEST_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
+
+# needed for tests
+BUILD_DEPENDS +=	devel/py-gobject3${MODPY_FLAVOR}
 
 CONFIGURE_ARGS=		-Dsystemd_user_services=false \
 			-Ddocs=false
