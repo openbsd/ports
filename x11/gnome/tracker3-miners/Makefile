@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/10/26 14:53:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2021/10/27 10:32:31 ajacoutot Exp $
 
 COMMENT=		tracker miners and metadata extractors
 
@@ -22,7 +22,6 @@ MODULES=		devel/dconf \
 
 MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
-TEST_DEPENDS +=		devel/py-gobject3${MODPY_FLAVOR}
 
 # coreutils: sha256sum; cf. patch-meson_build
 BUILD_DEPENDS=		sysutils/coreutils \
@@ -43,6 +42,11 @@ LIB_DEPENDS=		audio/libcue \
 			textproc/icu4c \
 			x11/gnome/totem-pl-parser \
 			x11/gnome/tracker3
+
+TEST_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
+
+# tests
+BUILD_DEPENDS +=	devel/py-gobject3${MODPY_FLAVOR}
 
 CONFIGURE_ARGS=		-Dnetwork_manager=disabled \
 			-Dsystemd_user_services=false
