@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.46 2021/10/27 09:22:47 sthen Exp $
-
-# XXX needs a fix to cope with resolvd's comments on the "nameserver" line
+# $OpenBSD: Makefile,v 1.47 2021/10/28 12:09:25 sthen Exp $
 
 SHARED_LIBS +=  scamperfile               3.0 # 2.0
 
 COMMENT =	parallel internet measurement utility
 
 V =		20211026
+REVISION =	0
 DISTNAME =	scamper-cvs-$V
 PKGNAME =	scamper-$V
 

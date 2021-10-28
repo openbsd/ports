@@ -1,0 +1,29 @@
+$OpenBSD: patch-scamper_host_scamper_host_do_c,v 1.1 2021/10/28 12:09:25 sthen Exp $
+
+Index: scamper/host/scamper_host_do.c
+--- scamper/host/scamper_host_do.c.orig
++++ scamper/host/scamper_host_do.c
+@@ -1419,7 +1419,7 @@ static void do_host_free(scamper_task_t *task)
+ static int etc_resolv_line(char *line, void *param)
+ {
+   scamper_addr_t *sa;
+-  int x = 0;
++  int x = 0, y;
+ 
+   if(line[0] == '\0' || line[0] == '#')
+     return 0;
+@@ -1431,6 +1431,14 @@ static int etc_resolv_line(char *line, void *param)
+     x++;
+   if(x == 10 || line[x] == '\0')
+     return 0;
++
++  /* null terminate at spaces / comments */
++  y = x;
++  while(isspace(line[y]) == 0 && line[y] != '\0' && line[y] != '#' &&
++	line[y] != ';')
++    y++;
++  line[y] = '\0';
++
+   if(strcasecmp(line+x, "fe80::1") == 0)
+     return 0;
+ 
