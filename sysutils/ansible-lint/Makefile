@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2021/06/15 19:43:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2021/10/28 07:39:30 sthen Exp $
 
 COMMENT =		best practices checker for ansible
 
@@ -15,8 +15,7 @@ MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 MODPY_PI =		Yes
 
-BUILD_DEPENDS =		devel/py-setuptools_scm_git_archive${MODPY_FLAVOR} \
-			textproc/py-toml${MODPY_FLAVOR}
+BUILD_DEPENDS =		devel/py-setuptools_scm_git_archive${MODPY_FLAVOR}
 
 RUN_DEPENDS =		devel/py-enrich${MODPY_FLAVOR} \
 			devel/py-rich${MODPY_FLAVOR} \
