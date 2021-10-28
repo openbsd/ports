@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-libpurple,v 1.26 2021/10/13 13:56:07 sthen Exp $
+@comment $OpenBSD: PLIST-libpurple,v 1.27 2021/10/28 07:08:48 sdk Exp $
 @conflict pidgin-<2.5.6p3
 @pkgpath net/pidgin
 @pkgpath net/pidgin,-libpurple,gtkspell
@@ -118,10 +118,10 @@ share/purple/ca-certs/
 share/purple/ca-certs/CAcert_Class3.pem
 share/purple/ca-certs/CAcert_Root.pem
 share/purple/ca-certs/mozilla.pem
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool${MODPY_BIN_SUFFIX} --get-default-source` %D/bin/gconftool${MODPY_BIN_SUFFIX} --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/purple.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool${MODPY_BIN_SUFFIX} --get-default-source` %D/bin/gconftool${MODPY_BIN_SUFFIX} --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
 share/sounds/
 share/sounds/purple/
 share/sounds/purple/alert.wav

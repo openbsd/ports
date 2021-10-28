@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.150 2021/10/13 13:56:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.151 2021/10/28 07:08:47 sdk Exp $
 
 COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
 COMMENT-libpurple= multi-protocol instant messaging library
 
-VERSION=	2.14.7
+VERSION=	2.14.8
 DISTNAME=	pidgin-${VERSION}
 PKGNAME-main=	pidgin-${VERSION}
 PKGNAME-finch=	finch-${VERSION}
