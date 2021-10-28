@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/01/19 14:23:57 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2021/10/28 06:16:32 landry Exp $
 
 COMMENT =	Rocket.chat support for Pidgin
 
 GH_ACCOUNT=	EionRobb
 GH_PROJECT=	purple-rocketchat
-GH_COMMIT=	62090bc61f80fd0c4ea18319b6394990d9b0278a
-V =		0.20210119
+GH_COMMIT=	5c08ad0eacd39914d27b692d7eb42a94a991fb4c
+V =		0.20211002
 DISTNAME =	${GH_PROJECT}-$V
 CATEGORIES =	net
 
