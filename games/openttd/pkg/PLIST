@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2021/04/27 18:54:08 solene Exp $
+@comment $OpenBSD: PLIST,v 1.33 2021/10/28 09:58:15 solene Exp $
 @bin bin/openttd
 @man man/man6/openttd.6
 share/applications/openttd.desktop
@@ -7,13 +7,16 @@ share/doc/openttd/COPYING.md
 share/doc/openttd/README.md
 share/doc/openttd/admin_network.md
 share/doc/openttd/changelog.txt
+share/doc/openttd/company_colour_indexes.html
 share/doc/openttd/compiling_lang_files.md
 share/doc/openttd/debugging_desyncs.md
 share/doc/openttd/desync.md
 share/doc/openttd/directory_structure.md
+share/doc/openttd/eints.md
 share/doc/openttd/elrail.svg
 share/doc/openttd/elrail_tile.png
 share/doc/openttd/elrail_track.png
+share/doc/openttd/game_coordinator.md
 share/doc/openttd/known-bugs.txt
 share/doc/openttd/landscape.html
 share/doc/openttd/landscape_externals.html
@@ -30,6 +33,7 @@ share/doc/openttd/palettes/
 share/doc/openttd/palettes/openttd.gpl
 share/doc/openttd/palettes/palette.act
 share/doc/openttd/palettes/palette_key.png
+share/doc/openttd/savegame_format.md
 share/doc/openttd/tileh.png
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/openttd/
@@ -62,6 +66,7 @@ share/openttd/ai/compat_1.6.nut
 share/openttd/ai/compat_1.7.nut
 share/openttd/ai/compat_1.8.nut
 share/openttd/ai/compat_1.9.nut
+share/openttd/ai/compat_12.nut
 share/openttd/baseset/
 share/openttd/baseset/no_music.obm
 share/openttd/baseset/no_sound.obs
@@ -87,6 +92,7 @@ share/openttd/game/compat_1.6.nut
 share/openttd/game/compat_1.7.nut
 share/openttd/game/compat_1.8.nut
 share/openttd/game/compat_1.9.nut
+share/openttd/game/compat_12.nut
 share/openttd/lang/
 share/openttd/lang/afrikaans.lng
 share/openttd/lang/arabic_egypt.lng
@@ -95,6 +101,7 @@ share/openttd/lang/belarusian.lng
 share/openttd/lang/brazilian_portuguese.lng
 share/openttd/lang/bulgarian.lng
 share/openttd/lang/catalan.lng
+share/openttd/lang/chuvash.lng
 share/openttd/lang/croatian.lng
 share/openttd/lang/czech.lng
 share/openttd/lang/danish.lng
@@ -107,13 +114,16 @@ share/openttd/lang/estonian.lng
 share/openttd/lang/faroese.lng
 share/openttd/lang/finnish.lng
 share/openttd/lang/french.lng
+share/openttd/lang/frisian.lng
 share/openttd/lang/gaelic.lng
 share/openttd/lang/galician.lng
 share/openttd/lang/german.lng
 share/openttd/lang/greek.lng
 share/openttd/lang/hebrew.lng
+share/openttd/lang/hindi.lng
 share/openttd/lang/hungarian.lng
 share/openttd/lang/icelandic.lng
+share/openttd/lang/ido.lng
 share/openttd/lang/indonesian.lng
 share/openttd/lang/irish.lng
 share/openttd/lang/italian.lng
@@ -123,9 +133,13 @@ share/openttd/lang/latin.lng
 share/openttd/lang/latvian.lng
 share/openttd/lang/lithuanian.lng
 share/openttd/lang/luxembourgish.lng
+share/openttd/lang/macedonian.lng
 share/openttd/lang/malay.lng
+share/openttd/lang/maltese.lng
+share/openttd/lang/marathi.lng
 share/openttd/lang/norwegian_bokmal.lng
 share/openttd/lang/norwegian_nynorsk.lng
+share/openttd/lang/persian.lng
 share/openttd/lang/polish.lng
 share/openttd/lang/portuguese.lng
 share/openttd/lang/romanian.lng
@@ -142,6 +156,7 @@ share/openttd/lang/thai.lng
 share/openttd/lang/traditional_chinese.lng
 share/openttd/lang/turkish.lng
 share/openttd/lang/ukrainian.lng
+share/openttd/lang/urdu.lng
 share/openttd/lang/vietnamese.lng
 share/openttd/lang/welsh.lng
 share/openttd/media/
@@ -229,13 +244,16 @@ share/openttd/media/baseset/orig_tto.obm
 share/openttd/media/baseset/orig_win.obg
 share/openttd/media/baseset/orig_win.obm
 share/openttd/media/baseset/orig_win.obs
+share/openttd/media/openttd.1024.png
 share/openttd/media/openttd.128.png
 share/openttd/media/openttd.16.png
+share/openttd/media/openttd.2048.png
 share/openttd/media/openttd.256.png
 share/openttd/media/openttd.32.bmp
 share/openttd/media/openttd.32.png
 share/openttd/media/openttd.32.xpm
 share/openttd/media/openttd.48.png
+share/openttd/media/openttd.512.png
 share/openttd/media/openttd.64.png
 share/openttd/media/openttd.64.xpm
 share/openttd/media/openttd.desktop
