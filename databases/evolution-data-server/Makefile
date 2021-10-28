@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.275 2021/08/13 11:19:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.276 2021/10/28 06:15:09 ajacoutot Exp $
 
 COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
-GNOME_VERSION=		3.40.4
+GNOME_VERSION=		3.42.0
 
 CATEGORIES=		databases productivity
 
-SHARED_LIBS +=  camel-1.2            41.5
-SHARED_LIBS +=  edataserver-1.2      22.5
-SHARED_LIBS +=  ebackend-1.2         8.5
-SHARED_LIBS +=  edataserverui-1.2    4.5
-SHARED_LIBS +=  ebook-contacts-1.2   5.5
-SHARED_LIBS +=  edata-book-1.2       20.3
-SHARED_LIBS +=  ebook-1.2            23.3
-SHARED_LIBS +=  ecal-2.0             0.3
-SHARED_LIBS +=  edata-cal-2.0        0.3
+SHARED_LIBS +=  camel-1.2            41.6
+SHARED_LIBS +=  edataserver-1.2      22.6
+SHARED_LIBS +=  ebackend-1.2         8.6
+SHARED_LIBS +=  edataserverui-1.2    4.6
+SHARED_LIBS +=  ebook-contacts-1.2   5.6
+SHARED_LIBS +=  edata-book-1.2       20.4
+SHARED_LIBS +=  ebook-1.2            23.4
+SHARED_LIBS +=  ecal-2.0             0.4
+SHARED_LIBS +=  edata-cal-2.0        0.4
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>

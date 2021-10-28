@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.59 2021/05/13 10:21:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.60 2021/10/28 06:15:10 ajacoutot Exp $
 include/evolution-data-server/
 include/evolution-data-server/camel/
 include/evolution-data-server/camel/camel-address.h
@@ -345,7 +345,6 @@ lib/evolution-data-server/
 lib/evolution-data-server/addressbook-backends/
 @so lib/evolution-data-server/addressbook-backends/libebookbackendcarddav.so
 @so lib/evolution-data-server/addressbook-backends/libebookbackendfile.so
-@so lib/evolution-data-server/addressbook-backends/libebookbackendgoogle.so
 @so lib/evolution-data-server/addressbook-backends/libebookbackendldap.so
 lib/evolution-data-server/calendar-backends/
 @so lib/evolution-data-server/calendar-backends/libecalbackendcaldav.so
