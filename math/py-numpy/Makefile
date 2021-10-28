@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.63 2021/10/25 06:33:04 bket Exp $
+# $OpenBSD: Makefile,v 1.64 2021/10/28 10:28:32 jca Exp $
 
 COMMENT=		fast array and numeric programming library for Python
 
 MODPY_EGG_VERSION=	1.19.5
+REVISION=		0
 DISTNAME=		numpy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 EXTRACT_SUFX=		.zip
@@ -14,31 +15,33 @@ HOMEPAGE=		https://www.numpy.org/
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${MODFORTRAN_WANTLIB} ${MODPY_WANTLIB}
-WANTLIB += blas cblas lapack m pthread
+WANTLIB += ${MODPY_WANTLIB} m pthread
 
-MODULES=		lang/python \
-			fortran
+MODULES=		lang/python
 
 FLAVORS=		python3
 FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS=	Yes
-MODPY_DISTUTILS_BUILDARGS = --fcompiler=gnu95
 
-MODFORTRAN_COMPILER=	gfortran
-
-LIB_DEPENDS=		${MODFORTRAN_LIB_DEPENDS} \
-			math/cblas \
-			math/lapack
-BUILD_DEPENDS=		${MODFORTRAN_BUILD_DEPENDS} \
-			devel/gas \
+BUILD_DEPENDS=		devel/gas \
 			lang/cython${MODPY_FLAVOR}
 TEST_DEPENDS=		${FULLPKGNAME}:${FULLPKGPATH} \
 			devel/py-hypothesis${MODPY_FLAVOR} \
 			devel/py-test${MODPY_FLAVOR} \
 			devel/py-tz${MODPY_FLAVOR}
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mgcc49}
+MODULES+=		fortran
+BUILD_DEPENDS+=		${MODFORTRAN_BUILD_DEPENDS}
+LIB_DEPENDS+=		${MODFORTRAN_LIB_DEPENDS} \
+			math/cblas \
+			math/lapack
+WANTLIB+=		${MODFORTRAN_WANTLIB} blas cblas lapack
+MODPY_DISTUTILS_BUILDARGS = --fcompiler=gnu95
+.endif
 
 # Cython 0.28.* uses __attribute__((optimize("Os"))) which
 # leads to breakage at runtime on at least macppc.
