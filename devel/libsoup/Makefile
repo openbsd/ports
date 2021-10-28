@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.130 2021/10/25 07:30:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.131 2021/10/28 06:40:56 ajacoutot Exp $
+
+PORTROACH=		limit:^2
 
 COMMENT =		HTTP client/server library for GNOME
 
