@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2021/05/14 07:30:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2021/10/28 07:41:18 ajacoutot Exp $
 bin/gnome-maps
 lib/gnome-maps/
 lib/gnome-maps/girepository-1.0/
@@ -14,6 +14,18 @@ share/gnome-maps/icons/
 share/gnome-maps/icons/hicolor/
 share/gnome-maps/icons/hicolor/16x16/
 share/gnome-maps/icons/hicolor/16x16/apps/
+share/gnome-maps/icons/hicolor/16x16/apps/bar-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/bed-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/bench-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/bookmarks-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/building-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/cafe-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/city-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/electric-car-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/explore-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/fuel-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/hospital-sign-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/hospital-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/layer-not-visible-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/layer-visible-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/layers-button-symbolic.svg
@@ -23,9 +35,16 @@ share/gnome-maps/icons/hicolor/16x16/apps/maps-point-end.svg
 share/gnome-maps/icons/hicolor/16x16/apps/maps-point-start-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/maps-point-start.svg
 share/gnome-maps/icons/hicolor/16x16/apps/mountain-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/museum-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/no-toilets-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/no-wheelchair-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/parking-sign-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/penguin-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/phone-oldschool-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/photo-camera-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/post-box-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/pub-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/restaurant-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/route-bike-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/route-button-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/route-car-symbolic.svg
@@ -41,7 +60,12 @@ share/gnome-maps/icons/hicolor/16x16/apps/route-transit-subway-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/route-transit-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/route-transit-train-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/route-transit-tram-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/school-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/shopping-cart-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/toilets-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/town-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/tree-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/video-camera-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/wheelchair-limited-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/wheelchair-symbolic.svg
 share/gnome-maps/icons/hicolor/24x24/
