@@ -1,21 +1,21 @@
-$OpenBSD: patch-src_extension_implementation_script_cpp,v 1.7 2020/09/08 15:22:39 rsadowski Exp $
+$OpenBSD: patch-src_extension_implementation_script_cpp,v 1.8 2021/10/28 11:01:03 rsadowski Exp $
 Index: src/extension/implementation/script.cpp
 --- src/extension/implementation/script.cpp.orig
 +++ src/extension/implementation/script.cpp
-@@ -79,12 +79,12 @@ const std::map<std::string, Script::interpreter_t> Scr
-         { "perl",    {"perl-interpreter",    {"perl"              }}},
-         { "python",  {"python-interpreter",  {"python3"           }}},
+@@ -84,12 +84,12 @@ const std::map<std::string, Script::interpreter_t> Scr
+     { "perl",    {"perl-interpreter",    {"perl"              }}},
+     { "python",  {"python-interpreter",  {"python3"           }}},
  #else
--        { "perl",    {"perl-interpreter",    {"perl"              }}},
--        { "python",  {"python-interpreter",  {"python3", "python" }}},
-+        { "perl",    {"perl-interpreter",    {"/usr/bin/perl"    }}},
-+        { "python",  {"python-interpreter",  {"${MODPY_BIN}"  }}},
+-    { "perl",    {"perl-interpreter",    {"perl"              }}},
+-    { "python",  {"python-interpreter",  {"python3", "python" }}},
++    { "perl",    {"perl-interpreter",    {"/usr/bin/perl"    }}},
++    { "python",  {"python-interpreter",  {"${MODPY_BIN}"  }}},
  #endif
-         { "python2", {"python2-interpreter", {"python2", "python" }}},
--        { "ruby",    {"ruby-interpreter",    {"ruby"    }}},
--        { "shell",   {"shell-interpreter",   {"sh"      }}},
-+        { "ruby",    {"ruby-interpreter",    {"${RUBY}"    }}},
-+        { "shell",   {"shell-interpreter",   {"/bin/sh"      }}},
+     { "python2", {"python2-interpreter", {"python2", "python" }}},
+-    { "ruby",    {"ruby-interpreter",    {"ruby"    }}},
+-    { "shell",   {"shell-interpreter",   {"sh"      }}},
++    { "ruby",    {"ruby-interpreter",    {"${RUBY}"    }}},
++    { "shell",   {"shell-interpreter",   {"/bin/sh"      }}},
+     // clang-format on
  };
- 
  

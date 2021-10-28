@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_object_object-set_cpp,v 1.1 2021/10/28 11:01:03 rsadowski Exp $
+
+Index: src/object/object-set.cpp
+--- src/object/object-set.cpp.orig
++++ src/object/object-set.cpp
+@@ -255,7 +255,7 @@ Inkscape::XML::Node *ObjectSet::topRepr() const
+         return nullptr;
+     }
+ 
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__OpenBSD__)
+     // workaround for
+     // static_assert(__is_cpp17_forward_iterator<_ForwardIterator>::value
+     auto const n = std::vector<Inkscape::XML::Node *>(nodes.begin(), nodes.end());

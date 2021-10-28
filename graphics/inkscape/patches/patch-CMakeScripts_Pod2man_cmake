@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeScripts_Pod2man_cmake,v 1.1 2020/05/26 04:53:26 rsadowski Exp $
+$OpenBSD: patch-CMakeScripts_Pod2man_cmake,v 1.2 2021/10/28 11:01:03 rsadowski Exp $
 
 Fix manpage setup for OpenBSD
 - No compressed manpages
@@ -7,7 +7,7 @@ Fix manpage setup for OpenBSD
 Index: CMakeScripts/Pod2man.cmake
 --- CMakeScripts/Pod2man.cmake.orig
 +++ CMakeScripts/Pod2man.cmake
-@@ -9,7 +9,7 @@ if(NOT POD2MAN)
+@@ -11,7 +11,7 @@ if(NOT POD2MAN)
      message(STATUS "Could not find pod2man - man pages disabled")
  endif()
  
@@ -16,19 +16,3 @@ Index: CMakeScripts/Pod2man.cmake
  if(NOT GZIP)
      message(STATUS "Could not find gzip - man pages uncompressed")
  endif()
-@@ -34,13 +34,13 @@ macro(pod2man PODFILE_FULL RELEASE SECTION CENTER)
-             set(MANFILE_TEMP "${CMAKE_CURRENT_BINARY_DIR}/${NAME}.${LANG}.tmp")
-             set(MANFILE_FULL "${CMAKE_CURRENT_BINARY_DIR}/${NAME}.${LANG}.${SECTION}")
-             set(MANFILE_FULL_GZ "${CMAKE_CURRENT_BINARY_DIR}/${NAME}.${LANG}.${SECTION}.gz")
--            set(MANFILE_DEST "${SHARE_INSTALL}/man/${LANG}/man${SECTION}")
-+            set(MANFILE_DEST "${CMAKE_INSTALL_MANDIR}/man/${LANG}/man${SECTION}")
-         else()
-             set(MANPAGE_TARGET "man-${NAME}")
-             set(MANFILE_TEMP "${CMAKE_CURRENT_BINARY_DIR}/${NAME}.tmp")
-             set(MANFILE_FULL "${CMAKE_CURRENT_BINARY_DIR}/${NAME}.${SECTION}")
-             set(MANFILE_FULL_GZ "${CMAKE_CURRENT_BINARY_DIR}/${NAME}.${SECTION}.gz")
--            set(MANFILE_DEST "${SHARE_INSTALL}/man/man${SECTION}")
-+            set(MANFILE_DEST "${CMAKE_INSTALL_MANDIR}/man${SECTION}")
-         endif()
-         add_custom_command(
-             OUTPUT ${MANFILE_TEMP}

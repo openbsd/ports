@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.90 2021/09/02 14:59:44 jeremy Exp $
+# $OpenBSD: Makefile,v 1.91 2021/10/28 11:01:03 rsadowski Exp $
 
 COMMENT =	SVG vector drawing application
 
-DISTNAME =	inkscape-1.0.2
-REVISION =	0
+DISTNAME =	inkscape-1.1.1
 
 CATEGORIES =	graphics
 
@@ -14,15 +13,14 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2 and LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE Magick++-6.Q16 MagickCore-6.Q16
-WANTLIB += MagickWand-6.Q16 SM X11 Xext aspell atk-1.0 atkmm-1.6
-WANTLIB += c cairo cairo-gobject cairomm-1.0 double-conversion
-WANTLIB += fontconfig freetype gc gdk-3 gdk_pixbuf-2.0 gdkmm-3.0
-WANTLIB += gdl-3 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
-WANTLIB += gobject-2.0 gsl gslcblas gtk-3 gtkmm-3.0 harfbuzz iconv
-WANTLIB += intl jpeg lcms2 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pangomm-1.4 png poppler poppler-glib potrace sigc-2.0
-WANTLIB += soup-2.4 xml2 xslt z
+WANTLIB += ${COMPILER_LIBCXX} 2geom ICE Magick++-6.Q16 MagickCore-6.Q16
+WANTLIB += MagickWand-6.Q16 SM X11 Xext atk-1.0 atkmm-1.6 boost_filesystem-mt
+WANTLIB += c cairo cairo-gobject cairomm-1.0 fontconfig freetype
+WANTLIB += gc gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0 giomm-2.4
+WANTLIB += glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0 gsl gslcblas
+WANTLIB += gtk-3 gtkmm-3.0 harfbuzz iconv intl jpeg lcms2 m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pangomm-1.4 png poppler
+WANTLIB += poppler-glib potrace sigc-2.0 soup-2.4 xml2 xslt z
 
 MASTER_SITES =	https://media.inkscape.org/dl/resources/file/
 EXTRACT_SUFX =	.tar.xz
@@ -42,22 +40,20 @@ MODRUBY_BUILDDEP =	No
 MODRUBY_RUNDEP =	No
 
 BUILD_DEPENDS =	devel/gettext,-tools \
-		devel/gtest \
-		devel/boost
+		devel/gtest
 
-LIB_DEPENDS =	math/double-conversion \
+LIB_DEPENDS =	devel/boost \
 		devel/boehm-gc \
 		devel/gsl \
 		devel/libsoup \
 		devel/pango \
+		geo/lib2geom \
 		graphics/ImageMagick \
 		graphics/lcms2 \
 		graphics/png \
 		graphics/potrace \
 		print/poppler \
-		textproc/aspell/core \
 		textproc/libxslt \
-		x11/gnome/gdl \
 		x11/gtk+3 \
 		x11/gtk3mm
 
@@ -68,7 +64,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		textproc/py-lxml${MODPY_FLAVOR} \
 		x11/gtk+3,-guic
 
-WRKDIST =	${WRKDIR}/inkscape-1.0.2_2021-01-15_e86c870879
+WRKDIST =	${WRKDIR}/inkscape-1.1.1_2021-09-20_3bf5ae0d25
 
 SUBST_VARS +=	RUBY MODRUBY_REV
 
