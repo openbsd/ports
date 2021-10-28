@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.59 2021/02/23 19:39:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2021/10/28 12:24:45 sthen Exp $
 
 COMMENT=	powerful IMAP/Maildir synchronization and reader support
 
-MODPY_EGG_VERSION = 7.3.3
-DISTNAME =	offlineimap-v${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION = 8.0.0
+#DISTNAME =	offlineimap-v${MODPY_EGG_VERSION}
 PKGNAME =	offlineimap-${MODPY_EGG_VERSION}
+
+GH_ACCOUNT =	OfflineIMAP
+GH_PROJECT =	offlineimap3
+GH_TAGNAME =	v${MODPY_EGG_VERSION}
 
 CATEGORIES=	mail
 
@@ -16,16 +20,16 @@ PERMIT_PACKAGE=	Yes
 NO_TEST=	Yes
 
 MODULES=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS=	textproc/asciidoc \
-		devel/py-rfc6555 \
-		devel/py-six
+		devel/py-rfc6555${MODPY_FLAVOR} \
+		mail/py-imaplib2${MODPY_FLAVOR} \
+		sysutils/py-distro${MODPY_FLAVOR}
 
-RUN_DEPENDS=	devel/py-rfc6555 \
-		devel/py-six
+RUN_DEPENDS=	devel/py-rfc6555${MODPY_FLAVOR} \
+		mail/py-imaplib2${MODPY_FLAVOR}
 
-MASTER_SITES=	https://www.offlineimap.org/uploads/
+#MASTER_SITES=	https://www.offlineimap.org/uploads/
 
 EXAMPLESDIR=	${PREFIX}/share/examples/offlineimap
 
