@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/10/22 21:41:26 tracey Exp $
+# $OpenBSD: Makefile,v 1.6 2021/10/28 19:24:00 tracey Exp $
 
 COMMENT =	gcc for ${CONFIG} cross-development
 
@@ -45,7 +45,8 @@ MODULES =	lang/python
 
 BUILD_DEPENDS +=	devel/${CONFIG}/binutils \
 			devel/${CONFIG}/newlib
-RUN_DEPENDS =		${BUILD_DEPENDS}
+RUN_DEPENDS =		devel/${CONFIG}/binutils \
+			devel/${CONFIG}/newlib
 LIB_DEPENDS =		devel/gmp \
 			devel/libmpc \
 			devel/mpfr \
