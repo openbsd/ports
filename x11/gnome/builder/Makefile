@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.112 2021/08/15 17:38:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.113 2021/10/28 15:50:12 ajacoutot Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
-GNOME_VERSION=		3.40.2
-
-REVISION=		2
+GNOME_VERSION=		41.1
 
 CATEGORIES=		devel
 
 # GPLv3
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += c cairo cairo-gobject clang dazzle-1.0 devhelp-3 enchant-2
+WANTLIB += c cairo cairo-gobject clang cmark dazzle-1.0 enchant-2
 WANTLIB += fontconfig gdk-3 gio-2.0 girepository-1.0 gladeui-2
 WANTLIB += glib-2.0 gobject-2.0 gspell-1 gtk-3 gtksourceview-4
 WANTLIB += intl json-glib-1.0 jsonrpc-glib-1.0 pango-1.0 pangocairo-1.0
@@ -52,8 +50,8 @@ LIB_DEPENDS=		devel/glade \
 			devel/llvm \
 			devel/template-glib \
 			devel/vte3 \
+			textproc/cmark \
 			textproc/gspell \
-			x11/gnome/devhelp \
 			x11/gnome/libdazzle \
 			x11/gtksourceview4
 
@@ -64,7 +62,8 @@ CONFIGURE_ARGS=		-Dplugin_valgrind=false \
 			-Dchannel=other
 
 # requires libportal
-CONFIGURE_ARGS +=	-Dplugin_color_picker=false
+CONFIGURE_ARGS +=	-Dplugin_color_picker=false \
+			-Dplugin_devhelp=false
 
 # XXX prctl(2) or procctl(2)
 # error: #error "Please submit a patch to support parent-death signal on your OS"
