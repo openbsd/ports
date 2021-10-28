@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/08/20 03:42:28 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/10/28 01:18:08 jsg Exp $
 firmware/amdgpu/
 firmware/amdgpu/amdgpu-license
 firmware/amdgpu/arcturus_asd.bin
@@ -12,6 +12,18 @@ firmware/amdgpu/arcturus_sos.bin
 firmware/amdgpu/arcturus_ta.bin
 firmware/amdgpu/arcturus_vcn.bin
 firmware/amdgpu/banks_k_2_smc.bin
+firmware/amdgpu/beige_goby_ce.bin
+firmware/amdgpu/beige_goby_dmcub.bin
+firmware/amdgpu/beige_goby_me.bin
+firmware/amdgpu/beige_goby_mec.bin
+firmware/amdgpu/beige_goby_mec2.bin
+firmware/amdgpu/beige_goby_pfp.bin
+firmware/amdgpu/beige_goby_rlc.bin
+firmware/amdgpu/beige_goby_sdma.bin
+firmware/amdgpu/beige_goby_smc.bin
+firmware/amdgpu/beige_goby_sos.bin
+firmware/amdgpu/beige_goby_ta.bin
+firmware/amdgpu/beige_goby_vcn.bin
 firmware/amdgpu/bonaire_ce.bin
 firmware/amdgpu/bonaire_k_smc.bin
 firmware/amdgpu/bonaire_mc.bin
@@ -428,3 +440,15 @@ firmware/amdgpu/verde_pfp.bin
 firmware/amdgpu/verde_rlc.bin
 firmware/amdgpu/verde_smc.bin
 firmware/amdgpu/verde_uvd.bin
+firmware/amdgpu/yellow_carp_asd.bin
+firmware/amdgpu/yellow_carp_ce.bin
+firmware/amdgpu/yellow_carp_dmcub.bin
+firmware/amdgpu/yellow_carp_me.bin
+firmware/amdgpu/yellow_carp_mec.bin
+firmware/amdgpu/yellow_carp_mec2.bin
+firmware/amdgpu/yellow_carp_pfp.bin
+firmware/amdgpu/yellow_carp_rlc.bin
+firmware/amdgpu/yellow_carp_sdma.bin
+firmware/amdgpu/yellow_carp_ta.bin
+firmware/amdgpu/yellow_carp_toc.bin
+firmware/amdgpu/yellow_carp_vcn.bin
