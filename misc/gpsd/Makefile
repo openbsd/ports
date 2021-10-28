@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2021/08/07 12:41:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.85 2021/10/28 08:37:13 kirby Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
@@ -65,6 +65,8 @@ RUN_DEPENDS-php=	lang/php/${MODPHP_VERSION},-gd
 PREFIX-php=		${VARBASE}/www
 
 SUBST_VARS +=		VERSION
+
+CFLAGS +=		-fPIC
 
 pre-configure:
 	@sed -i 's,/usr/local,${TRUEPREFIX},' ${WRKSRC}/packaging/X11/*.desktop
