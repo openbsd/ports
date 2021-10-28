@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2021/09/02 14:59:44 jeremy Exp $
+# $OpenBSD: Makefile,v 1.50 2021/10/28 07:00:13 bket Exp $
 
 COMMENT=	server implementing the AnyConnect SSL VPN protocol
 
-DISTNAME=	ocserv-1.1.1
+DISTNAME=	ocserv-1.1.3
 EXTRACT_SUFX=	.tar.xz
-
-REVISION=	4
 
 CATEGORIES=	net
 
@@ -77,8 +75,8 @@ post-install:
 	    for i in *.8.md; do ronn${MODRUBY_BINREV} -r $$i; done
 	${INSTALL_MAN} ${WRKSRC}/doc/*.8 ${PREFIX}/man/man8/
 
-# XXX server-cert-ed25519, and server-cert-rsa-pss are known to fail. These
-# tests use socket_wrapper, which is not in ports.
+# XXX server-cert-ed25519, server-cert-rsa-pss, owasp-headers are known to fail.
+# These tests use socket_wrapper, which is not in ports.
 pre-test:
 	ln -fs ${LOCALBASE}/bin/gtimeout ${WRKDIR}/bin/timeout
 	ln -fs ${LOCALBASE}/bin/gsed ${WRKDIR}/bin/sed
