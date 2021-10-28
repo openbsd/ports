@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:47:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/10/28 13:04:03 espie Exp $
 
 BROKEN-i386 =	needs fixing for LLD
 
@@ -33,10 +33,14 @@ COMPILER_LANGS =	c
 # And your BASIC programs will be linked against it.
 BUILD_DEPENDS =	devel/libffi
 
+# XXX only pulls this if it actually exists
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mgcc49}
 # Use ports-gcc as the backend runtime compiler, since we know FreeBASIC
 # will generate C files with GNU C extensions that clang doesn't like.
 RUN_DEPENDS =	devel/libffi \
 		lang/gcc/${MODGCC4_VERSION},-main # Something else?
+.endif
 
 USE_GMAKE =	Yes
 MAKE_FILE =	makefile
