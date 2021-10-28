@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.22 2020/12/02 13:27:54 martin Exp $
+# $OpenBSD: Makefile,v 1.23 2021/10/28 14:46:11 jca Exp $
+
+# gfortran
+ONLY_FOR_ARCHS =	${GCC49_ARCHS}
 
 COMMENT =		Hierarchical Data Format 5 Technology suite
 
