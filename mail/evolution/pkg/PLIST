@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.62 2021/05/13 10:22:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.63 2021/10/28 06:15:49 ajacoutot Exp $
 @conflict evolution-plugins-*
 @pkgpath mail/evolution,-main
 @pkgpath mail/evolution,-plugins
@@ -188,6 +188,7 @@ include/evolution/e-util/e-filter-element.h
 include/evolution/e-util/e-filter-file.h
 include/evolution/e-util/e-filter-input.h
 include/evolution/e-util/e-filter-int.h
+include/evolution/e-util/e-filter-label.h
 include/evolution/e-util/e-filter-option.h
 include/evolution/e-util/e-filter-part.h
 include/evolution/e-util/e-filter-rule.h
@@ -497,6 +498,7 @@ include/evolution/mail/em-event.h
 include/evolution/mail/em-filter-context.h
 include/evolution/mail/em-filter-editor-folder-element.h
 include/evolution/mail/em-filter-editor.h
+include/evolution/mail/em-filter-mail-identity-element.h
 include/evolution/mail/em-filter-rule.h
 include/evolution/mail/em-filter-source-element.h
 include/evolution/mail/em-folder-properties.h
@@ -804,6 +806,7 @@ share/evolution/icons/hicolor/16x16/apps/contact-editor.png
 share/evolution/icons/hicolor/16x16/apps/im-aim.png
 share/evolution/icons/hicolor/16x16/apps/im-icq.png
 share/evolution/icons/hicolor/16x16/apps/im-jabber.png
+share/evolution/icons/hicolor/16x16/apps/im-matrix.png
 share/evolution/icons/hicolor/16x16/apps/im-msn.png
 share/evolution/icons/hicolor/16x16/apps/im-nov.png
 share/evolution/icons/hicolor/16x16/apps/im-yahoo.png
@@ -837,6 +840,7 @@ share/evolution/icons/hicolor/22x22/apps/contact-editor.png
 share/evolution/icons/hicolor/22x22/apps/im-aim.png
 share/evolution/icons/hicolor/22x22/apps/im-icq.png
 share/evolution/icons/hicolor/22x22/apps/im-jabber.png
+share/evolution/icons/hicolor/22x22/apps/im-matrix.png
 share/evolution/icons/hicolor/22x22/apps/im-msn.png
 share/evolution/icons/hicolor/22x22/apps/im-nov.png
 share/evolution/icons/hicolor/22x22/apps/im-yahoo.png
@@ -882,9 +886,18 @@ share/evolution/icons/hicolor/24x24/apps/contact-editor.png
 share/evolution/icons/hicolor/24x24/apps/im-aim.png
 share/evolution/icons/hicolor/24x24/apps/im-icq.png
 share/evolution/icons/hicolor/24x24/apps/im-jabber.png
+share/evolution/icons/hicolor/24x24/apps/im-matrix.png
 share/evolution/icons/hicolor/24x24/apps/im-msn.png
 share/evolution/icons/hicolor/24x24/apps/im-nov.png
 share/evolution/icons/hicolor/24x24/apps/im-yahoo.png
+share/evolution/icons/hicolor/24x24/categories/
+share/evolution/icons/hicolor/24x24/categories/preferences-calendar-and-tasks.svg
+share/evolution/icons/hicolor/24x24/categories/preferences-certificates.svg
+share/evolution/icons/hicolor/24x24/categories/preferences-composer.svg
+share/evolution/icons/hicolor/24x24/categories/preferences-contact.svg
+share/evolution/icons/hicolor/24x24/categories/preferences-mail-accounts.svg
+share/evolution/icons/hicolor/24x24/categories/preferences-mail.svg
+share/evolution/icons/hicolor/24x24/categories/preferences-system-network-proxy.svg
 share/evolution/icons/hicolor/24x24/places/
 share/evolution/icons/hicolor/24x24/places/mail-inbox.png
 share/evolution/icons/hicolor/24x24/places/mail-outbox.png
@@ -926,6 +939,7 @@ share/evolution/icons/hicolor/48x48/categories/preferences-certificates.png
 share/evolution/icons/hicolor/48x48/categories/preferences-composer.png
 share/evolution/icons/hicolor/48x48/categories/preferences-mail-accounts.png
 share/evolution/icons/hicolor/48x48/categories/preferences-mail.png
+share/evolution/icons/hicolor/48x48/categories/preferences-plugins.svg
 share/evolution/icons/hicolor/48x48/categories/preferences-system-network-proxy.png
 share/evolution/icons/hicolor/48x48/status/
 share/evolution/icons/hicolor/48x48/status/stock_signature-bad.png
@@ -942,6 +956,7 @@ share/evolution/icons/hicolor/scalable/apps/
 share/evolution/icons/hicolor/scalable/apps/im-aim.svg
 share/evolution/icons/hicolor/scalable/apps/im-icq.svg
 share/evolution/icons/hicolor/scalable/apps/im-jabber.svg
+share/evolution/icons/hicolor/scalable/apps/im-matrix.svg
 share/evolution/icons/hicolor/scalable/apps/im-msn.svg
 share/evolution/icons/hicolor/scalable/apps/im-nov.svg
 share/evolution/icons/hicolor/scalable/apps/im-yahoo.svg
