@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/05/14 09:05:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/10/28 07:46:12 ajacoutot Exp $
 @bin bin/gnome-connections
 include/gnome-connections/
 include/gnome-connections/gtk-frdp/
@@ -12,8 +12,6 @@ lib/gnome-connections/girepository-1.0/GtkFrdp-0.1.typelib
 @so lib/gnome-connections/libgtk-frdp-0.1.so
 lib/gnome-connections/pkgconfig/
 lib/gnome-connections/pkgconfig/gtk-frdp-0.1.pc
-share/appdata/
-share/appdata/org.gnome.Connections.appdata.xml
 share/applications/org.gnome.Connections.desktop
 share/dbus-1/services/org.gnome.Connections.service
 share/glib-2.0/schemas/org.gnome.Connections.gschema.xml
@@ -31,6 +29,13 @@ share/help/C/gnome-connections/figures/
 share/help/C/gnome-connections/figures/org.gnome.Connections.svg
 share/help/C/gnome-connections/index.page
 share/help/C/gnome-connections/legal.xml
+share/help/ca/
+share/help/ca/gnome-connections/
+share/help/ca/gnome-connections/connect.page
+share/help/ca/gnome-connections/figures/
+share/help/ca/gnome-connections/figures/org.gnome.Connections.svg
+share/help/ca/gnome-connections/index.page
+share/help/ca/gnome-connections/legal.xml
 share/help/cs/
 share/help/cs/gnome-connections/
 share/help/cs/gnome-connections/connect.page
@@ -38,6 +43,13 @@ share/help/cs/gnome-connections/figures/
 share/help/cs/gnome-connections/figures/org.gnome.Connections.svg
 share/help/cs/gnome-connections/index.page
 share/help/cs/gnome-connections/legal.xml
+share/help/da/
+share/help/da/gnome-connections/
+share/help/da/gnome-connections/connect.page
+share/help/da/gnome-connections/figures/
+share/help/da/gnome-connections/figures/org.gnome.Connections.svg
+share/help/da/gnome-connections/index.page
+share/help/da/gnome-connections/legal.xml
 share/help/de/
 share/help/de/gnome-connections/
 share/help/de/gnome-connections/connect.page
@@ -149,6 +161,7 @@ share/locale/pl/LC_MESSAGES/gnome-connections.mo
 share/locale/pt/LC_MESSAGES/gnome-connections.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-connections.mo
 share/locale/ro/LC_MESSAGES/gnome-connections.mo
+share/locale/ru/LC_MESSAGES/gnome-connections.mo
 share/locale/sk/LC_MESSAGES/gnome-connections.mo
 share/locale/sl/LC_MESSAGES/gnome-connections.mo
 share/locale/sr/LC_MESSAGES/gnome-connections.mo
@@ -157,6 +170,7 @@ share/locale/tr/LC_MESSAGES/gnome-connections.mo
 share/locale/uk/LC_MESSAGES/gnome-connections.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-connections.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-connections.mo
+share/metainfo/org.gnome.Connections.appdata.xml
 share/mime/packages/org.gnome.Connections.xml
 @tag update-mime-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
