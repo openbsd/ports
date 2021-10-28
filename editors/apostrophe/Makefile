@@ -5,10 +5,13 @@ COMMENT=		distraction free editor
 GH_TAGNAME=		v2.5
 GH_ACCOUNT=		ApostropheEditor
 GH_PROJECT=		Apostrophe
+REVISION=		0
 
 PKGNAME=		apostrophe-${GH_TAGNAME:S/v//}
 
 CATEGORIES=		editors
+
+MAINTAINER =		Solene Rapenne <solene@perso.pw>
 
 # GPLv3+
 PERMIT_PACKAGE=		Yes
