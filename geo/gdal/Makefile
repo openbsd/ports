@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.99 2021/09/10 09:25:06 landry Exp $
+# $OpenBSD: Makefile,v 1.100 2021/10/29 18:35:42 landry Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 
-V =		3.3.2
+V =		3.3.3
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}${EXTRACT_SUFX}
@@ -16,14 +16,15 @@ FULLPKGPATH-python =	geo/gdal,-python${FLAVOR_EXT:S/-/,/g}
 SHARED_LIBS =	gdal 41.0 # 29.1
 CATEGORIES =	geo devel
 
-HOMEPAGE =	http://www.gdal.org/
+HOMEPAGE =	https://gdal.org/
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # MIT/X
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES =	http://download.osgeo.org/gdal/${V}/
+MASTER_SITES =	https://download.osgeo.org/gdal/${V:C/rc.//}/
+WRKDIST =	${WRKDIR}/${DISTNAME:C/rc.//}
 
 MODULES =	lang/python
 FLAVORS =	python3
@@ -74,7 +75,7 @@ TEST_DEPENDS +=		${FULLPKGNAME-python}:${FULLPKGPATH-python} \
 TEST_ENV =		GDAL_DOWNLOAD_TEST_DATA=1 GDAL_RUN_SLOW_TESTS=yes
 
 MODPY_SETUPTOOLS =	Yes
-MODPY_EGG_VERSION =	${V}
+MODPY_EGG_VERSION =	${V:C/rc.//}
 MODPY_ADJ_FILES =	swig/python/gdal-utils/osgeo_utils/samples/*.py swig/python/gdal-utils/scripts/*.py
 
 MAKE_FILE =	GNUmakefile
@@ -118,7 +119,7 @@ CONFIGURE_ARGS =--without-cfitsio \
 		--with-netcdf=${LOCALBASE}
 
 post-extract:
-	ln -sf ${WRKDIR}/gdalautotest-${V} ${WRKSRC}/autotest
+	ln -sf ${WRKDIR}/gdalautotest-${V:C/rc.//} ${WRKSRC}/autotest
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${MODPY_PY_PREFIX}gdal
