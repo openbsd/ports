@@ -1,14 +1,16 @@
-$OpenBSD: patch-fceux_desktop,v 1.3 2016/08/01 18:31:29 bentley Exp $
---- fceux.desktop.orig	Sun Jul 31 20:26:29 2016
-+++ fceux.desktop	Sun Jul 31 20:31:12 2016
+$OpenBSD: patch-fceux_desktop,v 1.4 2021/10/29 10:13:16 bentley Exp $
+
+Index: fceux.desktop
+--- fceux.desktop.orig
++++ fceux.desktop
 @@ -5,8 +5,8 @@ Name=Fceux
  GenericName=NES/Famicom emulator
  NoDisplay=false
  Comment=Emulate NES ROMs
--Exec=/usr/bin/fceux
--Icon=/usr/share/pixmaps/fceux.png
-+Exec=${PREFIX}/bin/fceux
-+Icon=${PREFIX}/share/pixmaps/fceux.png
+-Exec=/usr/bin/fceux %f
+-Icon=/usr/share/pixmaps/fceux1.png
++Exec=${PREFIX}/bin/fceux %f
++Icon=${PREFIX}/share/pixmaps/fceux1.png
  Terminal=false
  MimeType=application/x-nes-rom
  Categories=Game;Emulator;

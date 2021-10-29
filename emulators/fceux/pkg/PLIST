@@ -1,13 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:03:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/10/29 10:13:16 bentley Exp $
 @bin bin/fceux
-@bin bin/fceux-net-server
-@man man/man6/fceux-net-server.6
 @man man/man6/fceux.6
 share/applications/fceux.desktop
 share/fceux/
-share/fceux/auxlib.lua
 share/fceux/fceux.chm
-share/fceux/${MODLUA_WANTLIB}.dll
+share/fceux/lua${MODLUA_VERSION}.dll
 share/fceux/${MODLUA_DEP}.dll
 share/fceux/luaScripts/
 share/fceux/luaScripts/AVI-HeadsUpDisplay.lua
@@ -48,6 +45,8 @@ share/fceux/luaScripts/SMB3-RainbowRiding.lua
 share/fceux/luaScripts/ShowPalette.lua
 share/fceux/luaScripts/SoundDisplay.lua
 share/fceux/luaScripts/SoundDisplay2.lua
+share/fceux/luaScripts/Sprites.lua
+share/fceux/luaScripts/SpritesSimple.lua
 share/fceux/luaScripts/Subtitler.lua
 share/fceux/luaScripts/TeenageMutantNinjaTurtles.lua
 share/fceux/luaScripts/UsingLuaBot-Documentation.txt
@@ -55,8 +54,10 @@ share/fceux/luaScripts/UsingLuaScripting-Documentation.txt
 share/fceux/luaScripts/UsingLuaScripting-ListofFunctions.txt
 share/fceux/luaScripts/ZapperDisplay.lua
 share/fceux/luaScripts/ZapperFun.lua
+share/fceux/luaScripts/auxlib.lua
 share/fceux/luaScripts/luabot_framework.lua
 share/fceux/luaScripts/m_utils.lua
+share/fceux/luaScripts/scrolling-pitch-display.lua
 share/fceux/luaScripts/shapedefs.lua
 share/fceux/luaScripts/taseditor/
 share/fceux/luaScripts/taseditor/InputDisplay_for_Selection.lua
@@ -75,21 +76,30 @@ share/fceux/palettes/ASQ_realityA.pal
 share/fceux/palettes/ASQ_realityB.pal
 share/fceux/palettes/BMF_final2.pal
 share/fceux/palettes/BMF_final3.pal
+share/fceux/palettes/Composite_Direct_FBX.pal
 share/fceux/palettes/FCEU-13-default_nitsuja.pal
 share/fceux/palettes/FCEU-15-nitsuja_new.pal
 share/fceux/palettes/FCEUX.pal
+share/fceux/palettes/NES_Classic_FBX.pal
+share/fceux/palettes/NRS_NTSC.pal
+share/fceux/palettes/NRS_PAL.pal
+share/fceux/palettes/PC-10.pal
+share/fceux/palettes/PVM_Style_D93_FBX.pal
 share/fceux/palettes/RP2C03.pal
 share/fceux/palettes/RP2C04_0001.pal
 share/fceux/palettes/RP2C04_0002.pal
 share/fceux/palettes/RP2C04_0003.pal
 share/fceux/palettes/RP2C04_0004.pal
 share/fceux/palettes/SONY_CXA2025AS_US.pal
+share/fceux/palettes/Smooth_FBX.pal
 share/fceux/palettes/Unsaturated-V6.pal
+share/fceux/palettes/Wavebeam.pal
 share/fceux/palettes/nestopia_rgb.pal
 share/fceux/palettes/nestopia_yuv.pal
+share/fceux/palettes/r57shell_PAL.pal
 share/fceux/taseditor.chm
 share/fceux/tools/
 share/fceux/tools/taseditor_patterns.txt
 share/pixmaps/
-share/pixmaps/fceux.png
 @tag update-desktop-database
+share/pixmaps/fceux1.png

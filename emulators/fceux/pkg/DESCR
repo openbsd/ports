@@ -3,5 +3,5 @@ emulator with excellent compatibility with almost every rom dump
 available, supports both PAL and NTSC modes, save states, game genie
 support, and networking. FCEUX also offers tools for debugging,
 rom-hacking, map making, Tool-assisted movies, and Lua scripting.
-Finally FCEUX includes a GTK2 GUI to assist in configuration and
-gameplay. 
+Finally FCEUX includes a Qt5 GUI to assist in configuration and
+gameplay.

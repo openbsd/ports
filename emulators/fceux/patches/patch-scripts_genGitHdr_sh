@@ -1,0 +1,42 @@
+$OpenBSD: patch-scripts_genGitHdr_sh,v 1.1 2021/10/29 10:13:16 bentley Exp $
+
+don't call git
+
+Index: scripts/genGitHdr.sh
+--- scripts/genGitHdr.sh.orig
++++ scripts/genGitHdr.sh
+@@ -3,14 +3,14 @@
+ OUTPUT_DIR=$1;
+ 
+ FILE="fceux_git_info.cpp"
+-TMP_FILE="/tmp/$FILE";
++TMP_FILE="$OUTPUT_DIR/$FILE";
+ 
+ echo "Output File: $OUTPUT_DIR/$FILE";
+ 
+-GIT_URL=`git config --get remote.origin.url`;
+-GIT_REV=`git rev-parse HEAD`;
++GIT_URL="${HOMEPAGE}"
++GIT_REV="${V}"
+ 
+-echo "// fceux_git_info.cpp -- DO NOT EDIT: This file is auto-generated at build" >| $TMP_FILE;
++echo "// fceux_git_info.cpp -- DO NOT EDIT: This file is auto-generated at build" > $TMP_FILE;
+ echo "#include \"Qt/fceux_git_info.h\" " >> $TMP_FILE;
+ echo "#define FCEUX_GIT_URL  \"$GIT_URL\" " >> $TMP_FILE;
+ echo "#define FCEUX_GIT_REV  \"$GIT_REV\" " >> $TMP_FILE;
+@@ -19,15 +19,3 @@ echo "const char *fceu_get_git_rev(void){ return FCEUX
+ 
+ echo "Git URL: $GIT_URL ";
+ echo "Git Rev: $GIT_REV ";
+-if [ -e $OUTPUT_DIR/$FILE ]; then
+-
+-	diff -q $TMP_FILE  $OUTPUT_DIR/$FILE
+-
+-	if [ $? != 0 ]; then
+-		mv -f  $TMP_FILE  $OUTPUT_DIR/$FILE;
+-		echo "Updated $OUTPUT_DIR/$FILE";
+-	fi
+-else
+-	mv -f  $TMP_FILE  $OUTPUT_DIR/$FILE
+-	echo "Generated $OUTPUT_DIR/$FILE";
+-fi

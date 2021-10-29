@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1 2021/10/29 10:13:16 bentley Exp $
+
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -98,7 +98,7 @@ else(WIN32)
+   endif()
+ 
+   # Check for LUA
+-  pkg_search_module( LUA lua5.1 lua-5.1 )
++  pkg_search_module( LUA lua51 lua-5.1 )
+ 
+   add_definitions( -DHAVE_ASPRINTF ) # What system wouldn't have this?
+ 
+@@ -106,7 +106,7 @@ else(WIN32)
+ 	set( OPENGL_LDFLAGS  "-framework OpenGL" )
+   else()
+ 	set( OPENGL_LDFLAGS  ${OPENGL_LIBRARIES} )
+-  	set( SYS_LIBS  -lrt  -lpthread )
++  	set( SYS_LIBS  -lpthread )
+   endif()
+ 
+ endif(WIN32)
+@@ -581,7 +581,7 @@ install( FILES     ${CMAKE_CURRENT_SOURCE_DIR}/auxlib.
+ install( DIRECTORY ${CMAKE_SOURCE_DIR}/output/.                          DESTINATION share/fceux  )
+ install( FILES     ${CMAKE_SOURCE_DIR}/fceux1.png                        DESTINATION share/pixmaps  )
+ install( FILES     ${CMAKE_SOURCE_DIR}/fceux.desktop                     DESTINATION share/applications  )
+-install( FILES     ${CMAKE_SOURCE_DIR}/documentation/fceux.6             DESTINATION share/man/man6  )
+-install( FILES     ${CMAKE_SOURCE_DIR}/documentation/fceux-net-server.6  DESTINATION share/man/man6  )
++install( FILES     ${CMAKE_SOURCE_DIR}/documentation/fceux.6             DESTINATION man/man6  )
++install( FILES     ${CMAKE_SOURCE_DIR}/documentation/fceux-net-server.6  DESTINATION man/man6  )
+ 
+ endif(APPLE)
