@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1328 2021/10/29 15:45:08 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1329 2021/10/29 16:45:12 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1495,6 +1495,7 @@ setup_obsolete_reason(
 	31 => 'py-selectors2',
 	31 => 'py-wsgiutils',
 	31 => 'py-xml',
+	31 => 'py-backports',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

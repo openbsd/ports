@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/06/19 12:27:29 shadchin Exp $
-@conflict py-backports-ssl-match-hostname-<3.5.0.1p0
-lib/python${MODPY_VERSION}/site-packages/backports/
-lib/python${MODPY_VERSION}/site-packages/backports-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
-lib/python${MODPY_VERSION}/site-packages/backports/__init__.py
-lib/python${MODPY_VERSION}/site-packages/backports/__init__.pyc
