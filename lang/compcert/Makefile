@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2021/05/11 01:55:14 daniel Exp $
+# $OpenBSD: Makefile,v 1.31 2021/10/29 21:37:58 jca Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64 i386 powerpc
 
@@ -36,7 +36,10 @@ BUILD_DEPENDS =	lang/ocaml>=4.05 \
 		sysutils/findlib \
 		devel/ocaml-menhir>=20190626
 
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mgcc49}
 RUN_DEPENDS =	lang/gcc/${MODGCC4_VERSION}
+.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/compcert
