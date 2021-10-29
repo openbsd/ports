@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2021/07/14 11:10:47 jca Exp $
+# $OpenBSD: Makefile,v 1.6 2021/10/29 21:46:31 sthen Exp $
 
 BROKEN-riscv64 =	llvm-build: error: invalid native target: 'RISCV' (not in project)
 
 COMMENT =	multi-platform, multi-architecture assembler framework
+
+REVISION =	0
 
 SHARED_LIBS =	keystone	1.0
 
@@ -11,7 +13,6 @@ WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES =	devel/cmake \
 		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP =	No
 
 # atomics
