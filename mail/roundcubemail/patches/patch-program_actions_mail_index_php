@@ -1,0 +1,44 @@
+$OpenBSD: patch-program_actions_mail_index_php,v 1.1 2021/10/29 14:00:00 sthen Exp $
+
+From e62ac0c85ddaed73191745178457b8c3befad457 Mon Sep 17 00:00:00 2001
+From: Aleksander Machniak <alec@alec.pl>
+Date: Tue, 19 Oct 2021 19:21:40 +0200
+Subject: [PATCH] Fix so session's search scope is not used if search is not
+ active (#8199)
+
+From fdca2a55edb83d65119b60044eb6b611ed6a015b Mon Sep 17 00:00:00 2001
+From: Aleksander Machniak <alec@alec.pl>
+Date: Fri, 29 Oct 2021 12:48:07 +0200
+Subject: [PATCH] Fix bug with show_images setting where option 1 and 3 were
+ swapped (#8268)
+
+Index: program/actions/mail/index.php
+--- program/actions/mail/index.php.orig
++++ program/actions/mail/index.php
+@@ -98,8 +98,8 @@ class rcmail_action_mail_index extends rcmail_action
+             if (empty($rcmail->action)) {
+                 $rcmail->output->set_env('search_mods', self::search_mods());
+ 
+-                $scope = rcube_utils::get_input_value('_scope', rcube_utils::INPUT_GET);
+-                if (!$scope && isset($_SESSION['search_scope'])) {
++                $scope = rcube_utils::get_input_string('_scope', rcube_utils::INPUT_GET);
++                if (!$scope && isset($_SESSION['search_scope']) && $rcmail->output->get_env('search_request')) {
+                     $scope = $_SESSION['search_scope'];
+                 }
+ 
+@@ -862,12 +862,12 @@ class rcmail_action_mail_index extends rcmail_action
+             && $message->has_html_part()
+         ) {
+             switch ($show_images) {
+-            case 1: // trusted senders only
+-            case 3: // all my contacts
++            case 3: // trusted senders only
++            case 1: // all my contacts
+                 if (!empty($message->sender['mailto'])) {
+                     $type = rcube_addressbook::TYPE_TRUSTED_SENDER;
+ 
+-                    if ($show_images == 3) {
++                    if ($show_images == 1) {
+                         $type |= rcube_addressbook::TYPE_RECIPIENT | rcube_addressbook::TYPE_WRITEABLE;
+                     }
+ 

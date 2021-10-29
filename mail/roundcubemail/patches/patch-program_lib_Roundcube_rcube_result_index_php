@@ -1,0 +1,67 @@
+$OpenBSD: patch-program_lib_Roundcube_rcube_result_index_php,v 1.1 2021/10/29 14:00:00 sthen Exp $
+
+From ce3afe163878b0f287f3180be6aee53e8f3817ef Mon Sep 17 00:00:00 2001
+From: Aleksander Machniak <alec@alec.pl>
+Date: Sat, 23 Oct 2021 09:25:20 +0200
+Subject: [PATCH] Fix bug where new messages were not added to the list on
+ refresh if skip_deleted=true (#8234)
+
+From f3dbc94a42308a77062a0f65c3f580269bba4558 Mon Sep 17 00:00:00 2001
+From: Aleksander Machniak <alec@alec.pl>
+Date: Sat, 23 Oct 2021 09:29:19 +0200
+Subject: [PATCH] Fix PHP8 warning
+
+Index: program/lib/Roundcube/rcube_result_index.php
+--- program/lib/Roundcube/rcube_result_index.php.orig
++++ program/lib/Roundcube/rcube_result_index.php
+@@ -145,7 +145,8 @@ class rcube_result_index
+      */
+     public function is_empty()
+     {
+-        return empty($this->raw_data);
++        return empty($this->raw_data)
++            && empty($this->meta['max']) && empty($this->meta['min']) && empty($this->meta['count']);
+     }
+ 
+     /**
+@@ -193,7 +194,11 @@ class rcube_result_index
+         }
+ 
+         if (!isset($this->meta['max'])) {
+-            $this->meta['max'] = (int) @max($this->get());
++            $this->meta['max'] = null;
++            $all = $this->get();
++            if (!empty($all)) {
++                $this->meta['max'] = (int) max($all);
++            }
+         }
+ 
+         return $this->meta['max'];
+@@ -211,7 +216,11 @@ class rcube_result_index
+         }
+ 
+         if (!isset($this->meta['min'])) {
+-            $this->meta['min'] = (int) @min($this->get());
++            $this->meta['min'] = null;
++            $all = $this->get();
++            if (!empty($all)) {
++                $this->meta['min'] = (int) min($all);
++            }
+         }
+ 
+         return $this->meta['min'];
+@@ -343,11 +352,11 @@ class rcube_result_index
+      */
+     public function get_element($index)
+     {
+-        $count = $this->count();
+-
+-        if (!$count) {
++        if (empty($this->raw_data)) {
+             return null;
+         }
++
++        $count = $this->count();
+ 
+         // first element
+         if ($index === 0 || $index === '0' || $index === 'FIRST') {

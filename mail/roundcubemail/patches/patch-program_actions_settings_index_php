@@ -1,0 +1,22 @@
+$OpenBSD: patch-program_actions_settings_index_php,v 1.1 2021/10/29 14:00:00 sthen Exp $
+
+From fdca2a55edb83d65119b60044eb6b611ed6a015b Mon Sep 17 00:00:00 2001
+From: Aleksander Machniak <alec@alec.pl>
+Date: Fri, 29 Oct 2021 12:48:07 +0200
+Subject: [PATCH] Fix bug with show_images setting where option 1 and 3 were
+ swapped (#8268)
+
+Index: program/actions/settings/index.php
+--- program/actions/settings/index.php.orig
++++ program/actions/settings/index.php
+@@ -612,8 +612,8 @@ class rcmail_action_settings_index extends rcmail_acti
+                     ]);
+ 
+                     $input->add($rcmail->gettext('never'), 0);
+-                    $input->add($rcmail->gettext('frommycontacts'), 3);
+-                    $input->add($rcmail->gettext('fromtrustedsenders'), 1);
++                    $input->add($rcmail->gettext('frommycontacts'), 1);
++                    $input->add($rcmail->gettext('fromtrustedsenders'), 3);
+                     $input->add($rcmail->gettext('always'), 2);
+ 
+                     $blocks['main']['options']['show_images'] = [

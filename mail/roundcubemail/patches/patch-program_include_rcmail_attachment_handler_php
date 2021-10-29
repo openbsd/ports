@@ -1,0 +1,24 @@
+$OpenBSD: patch-program_include_rcmail_attachment_handler_php,v 1.1 2021/10/29 14:00:00 sthen Exp $
+
+From d73d81032f12bafa691b8f74c50b9bd7caf75606 Mon Sep 17 00:00:00 2001
+From: Aleksander Machniak <alec@alec.pl>
+Date: Thu, 21 Oct 2021 19:52:04 +0200
+Subject: [PATCH] Fix some PHP8 warnings (#8239)
+
+Index: program/include/rcmail_attachment_handler.php
+--- program/include/rcmail_attachment_handler.php.orig
++++ program/include/rcmail_attachment_handler.php
+@@ -229,8 +229,11 @@ class rcmail_attachment_handler
+                 }
+             }
+             else {
+-                $data = $attachment['data'];
+-                if (!$data && $attachment['path']) {
++                $data = null;
++                if (!empty($attachment['data'])) {
++                    $data = $attachment['data'];
++                }
++                else if (!empty($attachment['path'])) {
+                     $data = file_get_contents($attachment['path']);
+                 }
+ 

@@ -1,0 +1,29 @@
+$OpenBSD: patch-program_actions_mail_show_php,v 1.1 2021/10/29 14:00:00 sthen Exp $
+
+From d203db0366df8fb438e6433cc31926019a32881f Mon Sep 17 00:00:00 2001
+From: Aleksander Machniak <alec@alec.pl>
+Date: Thu, 28 Oct 2021 14:39:34 +0200
+Subject: [PATCH] Fix bug where adding a contact to trusted senders via "Always
+ allow from..." button didn't work (#8264, #8268)
+
+From fdca2a55edb83d65119b60044eb6b611ed6a015b Mon Sep 17 00:00:00 2001
+From: Aleksander Machniak <alec@alec.pl>
+Date: Fri, 29 Oct 2021 12:48:07 +0200
+Subject: [PATCH] Fix bug with show_images setting where option 1 and 3 were
+ swapped (#8268)
+
+Index: program/actions/mail/show.php
+--- program/actions/mail/show.php.orig
++++ program/actions/mail/show.php
+@@ -263,9 +263,10 @@ class rcmail_action_mail_show extends rcmail_action_ma
+         // add link to save sender in addressbook and reload message
+         $show_images = $rcmail->config->get('show_images');
+         if (!empty(self::$MESSAGE->sender['mailto']) && ($show_images == 1 || $show_images == 3)) {
++            $arg = $show_images == 3 ? rcube_addressbook::TYPE_TRUSTED_SENDER : 'true';
+             $buttons .= ' ' . html::a([
+                     'href'    => "#loadremotealways",
+-                    'onclick' => rcmail_output::JS_OBJECT_NAME . ".command('load-remote', true)",
++                    'onclick' => rcmail_output::JS_OBJECT_NAME . ".command('load-remote', $arg)",
+                     'style'   => "white-space:nowrap"
+                 ],
+                 rcube::Q($rcmail->gettext(['name' => 'alwaysallow', 'vars' => ['sender' => self::$MESSAGE->sender['mailto']]]))

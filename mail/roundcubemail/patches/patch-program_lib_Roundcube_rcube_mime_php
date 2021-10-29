@@ -1,0 +1,21 @@
+$OpenBSD: patch-program_lib_Roundcube_rcube_mime_php,v 1.3 2021/10/29 14:00:00 sthen Exp $
+
+From d73d81032f12bafa691b8f74c50b9bd7caf75606 Mon Sep 17 00:00:00 2001
+From: Aleksander Machniak <alec@alec.pl>
+Date: Thu, 21 Oct 2021 19:52:04 +0200
+Subject: [PATCH] Fix some PHP8 warnings (#8239)
+
+Index: program/lib/Roundcube/rcube_mime.php
+--- program/lib/Roundcube/rcube_mime.php.orig
++++ program/lib/Roundcube/rcube_mime.php
+@@ -494,7 +494,9 @@ class rcube_mime
+                 // remove quote chars
+                 $line = substr($line, $q);
+                 // remove (optional) space-staffing
+-                if ($line[0] === ' ') $line = substr($line, 1);
++                if (isset($line[0]) && $line[0] === ' ') {
++                    $line = substr($line, 1);
++                }
+ 
+                 // The same paragraph (We join current line with the previous one) when:
+                 // - the same level of quoting

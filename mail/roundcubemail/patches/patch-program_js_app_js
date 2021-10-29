@@ -1,0 +1,61 @@
+$OpenBSD: patch-program_js_app_js,v 1.3 2021/10/29 14:00:00 sthen Exp $
+
+From d203db0366df8fb438e6433cc31926019a32881f Mon Sep 17 00:00:00 2001
+From: Aleksander Machniak <alec@alec.pl>
+Date: Thu, 28 Oct 2021 14:39:34 +0200
+Subject: [PATCH] Fix bug where adding a contact to trusted senders via "Always
+ allow from..." button didn't work (#8264, #8268)
+
+From f4ee8c44c2e613c5cb457a1ddb45d1b24fdb37b7 Mon Sep 17 00:00:00 2001
+From: Aleksander Machniak <alec@alec.pl>
+Date: Thu, 28 Oct 2021 13:01:05 +0200
+Subject: [PATCH] Fix bug where \u200b characters were added into the recipient
+ input preventing mail delivery (#8269)
+
+Index: program/js/app.js
+--- program/js/app.js.orig
++++ program/js/app.js
+@@ -1095,7 +1095,7 @@ function rcube_webmail()
+       case 'load-remote':
+         if (this.env.uid) {
+           if (props && this.env.sender) {
+-            this.add_contact(this.env.sender, true);
++            this.add_contact(this.env.sender, true, props);
+             break;
+           }
+ 
+@@ -4880,16 +4880,18 @@ function rcube_webmail()
+       var data, name, n, id;
+       for (n = 0; n < selection.length; n++) {
+         if ((id = selection[n]) && (data = this.env.contactdata[id])) {
+-          // We wrap the group name with invisible markers to prevent from problems with group expanding (#7569)
+-          name = '\u200b' + (data.name || data) + '\u200b';
+-          recipients.push(name);
++          name = data.name || data
+ 
+           // group is added, expand it
+           if (id.charAt(0) == 'E' && input.length) {
++            // We wrap the group name with invisible markers to prevent from problems with group expanding (#7569)
++            name = '\u200b' + name + '\u200b';
+             var gid = id.substr(1);
+             this.group2expand[gid] = {name: name, input: input.get(0)};
+             this.http_request('group-expand', {_source: data.source || this.env.source, _gid: gid}, false);
+           }
++
++          recipients.push(name);
+         }
+       }
+     }
+@@ -5610,10 +5612,10 @@ function rcube_webmail()
+   };
+ 
+   // send remote request to add a new contact
+-  this.add_contact = function(value, reload)
++  this.add_contact = function(value, reload, source)
+   {
+     if (value)
+-      this.http_post('addcontact', {_address: value, _reload: reload});
++      this.http_post('addcontact', {_address: value, _reload: reload, _source: source});
+   };
+ 
+   // send remote request to search mail or contacts

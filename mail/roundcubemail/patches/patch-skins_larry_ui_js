@@ -1,0 +1,20 @@
+$OpenBSD: patch-skins_larry_ui_js,v 1.1 2021/10/29 14:00:00 sthen Exp $
+
+From eb5e38558d40ce7f34a4a795248d092810d72cf4 Mon Sep 17 00:00:00 2001
+From: Aleksander Machniak <alec@alec.pl>
+Date: Wed, 27 Oct 2021 11:19:34 +0200
+Subject: [PATCH] Fix bug in Larry skin where headers toggle state was reset on
+ full page preview (#8203)
+
+Index: skins/larry/ui.js
+--- skins/larry/ui.js.orig
++++ skins/larry/ui.js
+@@ -171,7 +171,7 @@ function rcube_mail_ui()
+           attachmentmenu_append(this);
+         });
+ 
+-        if (get_pref('previewheaders') == '1') {
++        if (rcmail.env.action == 'preview' && get_pref('previewheaders') == '1') {
+           toggle_preview_headers();
+         }
+ 
