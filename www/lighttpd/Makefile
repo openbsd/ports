@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.162 2021/10/16 07:54:22 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.163 2021/10/29 04:07:43 gnezdo Exp $
 
 COMMENT=	secure, fast, compliant, and very flexible web-server
 
-DISTNAME=	lighttpd-1.4.60
+DISTNAME=	lighttpd-1.4.61
 CATEGORIES=	www net
 MASTER_SITES=	https://download.lighttpd.net/lighttpd/releases-1.4.x/
 EXTRACT_SUFX=	.tar.xz
@@ -29,8 +29,7 @@ LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --libdir="${PREFIX}/lib/lighttpd" \
 		 --with-lua \
-		 --with-openssl \
-		 --without-libev
+		 --with-openssl
 CONFIGURE_ENV+=	CC_FOR_BUILD="${CC}" \
 		CFLAGS_FOR_BUILD="${CFLAGS}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
