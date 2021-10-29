@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/09/02 08:37:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2021/10/29 10:58:26 sthen Exp $
 
 COMMENT=		backport of pathlib-compatible object wrapper for zip files
 
@@ -21,7 +21,6 @@ MODPY_SETUPTOOLS=	Yes
 FLAVORS=		python3
 FLAVOR=			python3
 
-BUILD_DEPENDS=		devel/py-setuptools_scm${MODPY_FLAVOR} \
-			textproc/py-toml${MODPY_FLAVOR}
+BUILD_DEPENDS=		devel/py-setuptools_scm${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/10/27 08:44:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/10/29 10:58:26 sthen Exp $
 
 COMMENT =		monitor TCP ports for bound or unbound states
 
@@ -20,8 +20,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}>=1.15.0 \
-			textproc/py-toml${MODPY_FLAVOR}
+BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}>=1.15.0
 RUN_DEPENDS =		devel/py-tempora${MODPY_FLAVOR}>=1.8
 
 NO_TEST =		Yes
