@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/06/27 21:03:51 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/10/29 16:13:17 sthen Exp $
 bin/mapcatcher
 bin/mapdownloader
 lib/python${MODPY_VERSION}/site-packages/GMapCatcher-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -78,6 +78,8 @@ lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapServers/openSeaMap.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapServers/openSeaMap.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapServers/openStreetMaps.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapServers/openStreetMaps.pyc
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapServers/openTopoMap.py
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapServers/openTopoMap.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapServers/refugesInfo.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapServers/refugesInfo.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapServers/seznam.py
@@ -140,6 +142,8 @@ lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widgets/EXWindow.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widgets/EXWindow.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widgets/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widgets/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widgets/cellRendererClickablePixbuf.py
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widgets/cellRendererClickablePixbuf.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widgets/customMsgBox.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widgets/customMsgBox.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widgets/customWidgets.py
@@ -156,6 +160,10 @@ lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widgets/mapPixbuf.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widgets/mapPixbuf.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widgets/mapTools.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widgets/mapTools.pyc
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widgets/markerWindow.py
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widgets/markerWindow.pyc
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widgets/markerWindow2.py
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widgets/markerWindow2.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widgets/trackWindow.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widgets/trackWindow.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widgets/widChangeTheme.py
@@ -168,6 +176,8 @@ lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widgets/widCredits.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widgets/widCredits.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widgets/widDrawingArea.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widgets/widDrawingArea.pyc
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widgets/widMapExport.py
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widgets/widMapExport.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widgets/widMapServers.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widgets/widMapServers.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widgets/widMyGPS.py
@@ -184,13 +194,27 @@ lib/python${MODPY_VERSION}/site-packages/gmapcatcher/xmlUtils.pyc
 @man man/man1/mapdownloader.1
 share/applications/gmapcatcher.desktop
 share/doc/mapcatcher/
-share/doc/mapcatcher/README
-share/doc/mapcatcher/changelog
+share/doc/mapcatcher/README.md
+share/doc/mapcatcher/changelog.md
 share/pixmaps/
 share/pixmaps/gmapcatcher/
 share/pixmaps/gmapcatcher/downloading.png
+share/pixmaps/gmapcatcher/m_blue.png
+share/pixmaps/gmapcatcher/m_blue1.png
+share/pixmaps/gmapcatcher/m_blue2.png
+share/pixmaps/gmapcatcher/m_green.png
+share/pixmaps/gmapcatcher/m_green1.png
+share/pixmaps/gmapcatcher/m_green2.png
+share/pixmaps/gmapcatcher/m_purple.png
+share/pixmaps/gmapcatcher/m_purple1.png
+share/pixmaps/gmapcatcher/m_purple2.png
+share/pixmaps/gmapcatcher/m_red.png
+share/pixmaps/gmapcatcher/m_red1.png
+share/pixmaps/gmapcatcher/m_red2.png
+share/pixmaps/gmapcatcher/m_yellow.png
+share/pixmaps/gmapcatcher/m_yellow1.png
+share/pixmaps/gmapcatcher/m_yellow2.png
 share/pixmaps/gmapcatcher/map.png
-share/pixmaps/gmapcatcher/mapcatcher.png
 share/pixmaps/gmapcatcher/maps.ico
 share/pixmaps/gmapcatcher/marker.png
 share/pixmaps/gmapcatcher/marker1.png

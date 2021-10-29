@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.32 2021/02/23 19:39:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2021/10/29 16:13:17 sthen Exp $
 
 COMMENT=	offline maps viewer
 
-MODPY_EGG_VERSION=	0.8.0.4
-DISTNAME=	mapcatcher_${MODPY_EGG_VERSION}
-WRKDIST=	${WRKDIR}/mapcatcher-${MODPY_EGG_VERSION}
-PKGNAME=	gmapcatcher-${MODPY_EGG_VERSION}
-REVISION=	2
+GH_ACCOUNT=	heldersepu
+GH_PROJECT=	GMapCatcher
+GH_TAGNAME=	0.8.2.1
+MODPY_EGG_VERSION=	${GH_TAGNAME}
+PKGNAME=	${DISTNAME:L}
 
 CATEGORIES=	geo x11
 
@@ -14,11 +14,10 @@ HOMEPAGE=	https://github.com/heldersepu/GMapCatcher
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
-
-MASTER_SITES=	https://distfiles.sigtrap.nl/
+PERMIT_DISTFILES= distfile contains some cached tiles which are probably copyright
 
 MODULES=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS=	x11/py-gtk2 \
 		databases/py-sqlite2 \
@@ -29,13 +28,16 @@ RUN_DEPENDS=	x11/py-gtk2 \
 		graphics/py2-Pillow \
 		devel/desktop-file-utils
 
+post-extract:
+	cp ${WRKSRC}/installer/setup.py ${WRKSRC}/
+
 pre-configure:
 	sed -i -e 's,/usr/share,${PREFIX}/share,' \
 	    ${WRKSRC}/gmapcatcher/widgets/mapPixbuf.py
-	gunzip ${WRKSRC}/man/*.gz
 
-xpost-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/maps.py ${PREFIX}/bin/mapcatcher
-	${INSTALL_SCRIPT} ${WRKSRC}/download.py ${PREFIX}/bin/mapdownloader
+post-install:
+	mv ${PREFIX}/bin/maps.py ${PREFIX}/bin/mapcatcher
+	mv ${PREFIX}/bin/download.py ${PREFIX}/bin/mapdownloader
+	mv ${PREFIX}/share/pixmaps/map.png ${PREFIX}/share/pixmaps/mapcatcher.png
 
 .include <bsd.port.mk>
