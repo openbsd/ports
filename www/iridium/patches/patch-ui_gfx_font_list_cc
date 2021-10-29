@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_gfx_font_list_cc,v 1.10 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-ui_gfx_font_list_cc,v 1.11 2021/10/29 14:49:42 robert Exp $
 
 Index: ui/gfx/font_list.cc
 --- ui/gfx/font_list.cc.orig
 +++ ui/gfx/font_list.cc
-@@ -24,7 +24,7 @@ base::LazyInstance<scoped_refptr<gfx::FontListImpl>>::
+@@ -26,7 +26,7 @@ base::LazyInstance<scoped_refptr<gfx::FontListImpl>>::
  bool g_default_impl_initialized = false;
  
  bool IsFontFamilyAvailable(const std::string& family, SkFontMgr* fontManager) {

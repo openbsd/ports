@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_service_manager_public_cpp_service_executable_BUILD_gn,v 1.6 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-services_service_manager_public_cpp_service_executable_BUILD_gn,v 1.7 2021/10/29 14:49:42 robert Exp $
 
 Index: services/service_manager/public/cpp/service_executable/BUILD.gn
 --- services/service_manager/public/cpp/service_executable/BUILD.gn.orig

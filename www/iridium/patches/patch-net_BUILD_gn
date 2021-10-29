@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_BUILD_gn,v 1.16 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-net_BUILD_gn,v 1.17 2021/10/29 14:49:41 robert Exp $
 
 Index: net/BUILD.gn
 --- net/BUILD.gn.orig
@@ -12,54 +12,41 @@ Index: net/BUILD.gn
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1378,7 +1378,7 @@ component("net") {
-       }
-     }
+@@ -1211,6 +1211,15 @@ component("net") {
+     ]
+   }
  
--    if (is_android || is_chromeos_ash) {
-+    if (is_android || is_chromeos_ash || is_openbsd) {
-       sources += [
-         "base/network_change_notifier_posix.cc",
-         "base/network_change_notifier_posix.h",
-@@ -1411,13 +1411,20 @@ component("net") {
-     }
- 
-     # Use getifaddrs() on POSIX platforms, except Linux.
--    if (is_posix && !is_linux && !is_chromeos) {
-+    if (is_posix && !is_linux && !is_chromeos && !is_openbsd) {
-       sources += [
-         "base/network_interfaces_getifaddrs.cc",
-         "base/network_interfaces_getifaddrs.h",
-       ]
-     }
- 
-+    if (is_openbsd) {
-+      sources += [
-+        "base/network_interfaces_getifaddrs.cc",
-+        "base/network_interfaces_getifaddrs.h",
-+      ]
-+    }
++  if (is_openbsd) {
++    sources -= [
++      "base/address_tracker_linux.cc",
++      "base/address_tracker_linux.h",
++      "base/network_change_notifier_linux.cc",
++      "base/network_interfaces_linux.cc",
++    ]
++  }
 +
-     if (use_nss_certs) {
-       sources += [
-         "cert/internal/system_trust_store_nss.h",
-@@ -1527,6 +1534,15 @@ component("net") {
-       ]
+   if (is_mac) {
+     sources += [
+       "base/network_notification_thread_mac.cc",
+@@ -1347,7 +1356,7 @@ component("net") {
      }
+   }
  
-+    if (is_openbsd) {
-+      sources -= [
-+        "base/address_tracker_linux.cc",
-+        "base/address_tracker_linux.h",
-+        "base/network_change_notifier_linux.cc",
-+        "base/network_interfaces_linux.cc",
-+      ]
-+    }
-+
-     if (!disable_ftp_support) {
-       sources += [
-         "ftp/ftp_auth_cache.cc",
-@@ -4748,7 +4764,7 @@ test("net_unittests") {
+-  if (is_android || is_chromeos_ash) {
++  if (is_android || is_chromeos_ash || is_openbsd) {
+     sources += [
+       "base/network_change_notifier_posix.cc",
+       "base/network_change_notifier_posix.h",
+@@ -1380,7 +1389,7 @@ component("net") {
+   }
+ 
+   # Use getifaddrs() on POSIX platforms, except Linux.
+-  if (is_posix && !is_linux && !is_chromeos) {
++  if ((is_posix && !is_linux && !is_chromeos) || is_openbsd) {
+     sources += [
+       "base/network_interfaces_getifaddrs.cc",
+       "base/network_interfaces_getifaddrs.h",
+@@ -4687,7 +4696,7 @@ test("net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux and Android.

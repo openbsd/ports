@@ -1,11 +1,11 @@
-$OpenBSD: patch-net_cert_cert_verifier_cc,v 1.3 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-net_cert_cert_verifier_cc,v 1.4 2021/10/29 14:49:41 robert Exp $
 
 Index: net/cert/cert_verifier.cc
 --- net/cert/cert_verifier.cc.orig
 +++ net/cert/cert_verifier.cc
-@@ -87,7 +87,7 @@ std::unique_ptr<CertVerifier> CertVerifier::CreateDefa
-   return std::unique_ptr<CertVerifier>();
- #else
+@@ -78,7 +78,7 @@ bool CertVerifier::RequestParams::operator<(
+ std::unique_ptr<CertVerifier> CertVerifier::CreateDefaultWithoutCaching(
+     scoped_refptr<CertNetFetcher> cert_net_fetcher) {
    scoped_refptr<CertVerifyProc> verify_proc;
 -#if defined(OS_FUCHSIA) || defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_FUCHSIA) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)

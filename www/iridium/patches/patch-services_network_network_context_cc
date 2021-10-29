@@ -1,14 +1,14 @@
-$OpenBSD: patch-services_network_network_context_cc,v 1.9 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-services_network_network_context_cc,v 1.10 2021/10/29 14:49:42 robert Exp $
 
 Index: services/network/network_context.cc
 --- services/network/network_context.cc.orig
 +++ services/network/network_context.cc
-@@ -2331,7 +2331,7 @@ NetworkContext::MakeSessionCleanupCookieStore() const 
+@@ -2486,7 +2486,7 @@ NetworkContext::MakeSessionCleanupCookieStore() const 
  
    net::CookieCryptoDelegate* crypto_delegate = nullptr;
    if (params_->enable_encrypted_cookies) {
--#if (defined(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) && \
-+#if (defined(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)) && \
+-#if (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) && \
++#if (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)) && \
      !BUILDFLAG(IS_CHROMECAST)
      DCHECK(network_service_->os_crypt_config_set())
          << "NetworkService::SetCryptConfig must be called before creating a "

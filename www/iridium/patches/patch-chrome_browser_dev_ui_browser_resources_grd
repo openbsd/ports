@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_dev_ui_browser_resources_grd,v 1.4 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_browser_dev_ui_browser_resources_grd,v 1.5 2021/10/29 14:49:39 robert Exp $
 
 Index: chrome/browser/dev_ui_browser_resources.grd
 --- chrome/browser/dev_ui_browser_resources.grd.orig

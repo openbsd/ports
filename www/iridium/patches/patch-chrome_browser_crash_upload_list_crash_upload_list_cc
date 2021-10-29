@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_crash_upload_list_crash_upload_list_cc,v 1.4 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_browser_crash_upload_list_crash_upload_list_cc,v 1.5 2021/10/29 14:49:39 robert Exp $
 
 Index: chrome/browser/crash_upload_list/crash_upload_list.cc
 --- chrome/browser/crash_upload_list/crash_upload_list.cc.orig
 +++ chrome/browser/crash_upload_list/crash_upload_list.cc
-@@ -48,7 +48,7 @@ scoped_refptr<UploadList> CreateCrashUploadList() {
+@@ -52,7 +52,7 @@ scoped_refptr<UploadList> CreateCrashUploadList() {
  // to log uploads in CrashUploadList::kReporterLogFilename.
  // Linux is handled below.
  #if !(BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_CHROMEOS_LACROS) || \

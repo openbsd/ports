@@ -1,0 +1,23 @@
+$OpenBSD: patch-chrome_browser_resources_settings_appearance_page_appearance_browser_proxy_ts,v 1.1 2021/10/29 14:49:40 robert Exp $
+
+Index: chrome/browser/resources/settings/appearance_page/appearance_browser_proxy.ts
+--- chrome/browser/resources/settings/appearance_page/appearance_browser_proxy.ts.orig
++++ chrome/browser/resources/settings/appearance_page/appearance_browser_proxy.ts
+@@ -16,7 +16,7 @@ export interface AppearanceBrowserProxy {
+ 
+   useDefaultTheme(): void;
+ 
+-  // <if expr="is_linux and not chromeos">
++  // <if expr="is_bsd and not chromeos">
+   useSystemTheme(): void;
+   // </if>
+ 
+@@ -44,7 +44,7 @@ export class AppearanceBrowserProxyImpl implements App
+     chrome.send('useDefaultTheme');
+   }
+ 
+-  // <if expr="is_linux and not chromeos">
++  // <if expr="is_bsd and not chromeos">
+   useSystemTheme() {
+     chrome.send('useSystemTheme');
+   }

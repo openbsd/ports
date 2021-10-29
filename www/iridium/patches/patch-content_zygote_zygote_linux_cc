@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_zygote_zygote_linux_cc,v 1.5 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-content_zygote_zygote_linux_cc,v 1.6 2021/10/29 14:49:41 robert Exp $
 
 Index: content/zygote/zygote_linux.cc
 --- content/zygote/zygote_linux.cc.orig
@@ -11,7 +11,7 @@ Index: content/zygote/zygote_linux.cc
  
  #include "content/zygote/zygote_linux.h"
  
-@@ -651,3 +652,4 @@ bool Zygote::HandleGetSandboxStatus(int fd, base::Pick
+@@ -650,3 +651,4 @@ bool Zygote::HandleGetSandboxStatus(int fd, base::Pick
  }
  
  }  // namespace content

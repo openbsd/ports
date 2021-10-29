@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_views_style_platform_style_cc,v 1.13 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-ui_views_style_platform_style_cc,v 1.14 2021/10/29 14:49:43 robert Exp $
 
 Index: ui/views/style/platform_style.cc
 --- ui/views/style/platform_style.cc.orig
 +++ ui/views/style/platform_style.cc
-@@ -58,7 +58,7 @@ const View::FocusBehavior PlatformStyle::kDefaultFocus
+@@ -52,7 +52,7 @@ const View::FocusBehavior PlatformStyle::kDefaultFocus
  const bool PlatformStyle::kAdjustBubbleIfOffscreen =
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -12,8 +12,8 @@ Index: ui/views/style/platform_style.cc
      false;
  #else
      true;
-@@ -88,7 +88,7 @@ gfx::Range PlatformStyle::RangeToDeleteBackwards(const
- #endif  // OS_APPLE
+@@ -82,7 +82,7 @@ gfx::Range PlatformStyle::RangeToDeleteBackwards(const
+ #endif  // OS_MAC
  
  #if !BUILDFLAG(ENABLE_DESKTOP_AURA) || \
 -    (!defined(OS_LINUX) && !defined(OS_CHROMEOS))

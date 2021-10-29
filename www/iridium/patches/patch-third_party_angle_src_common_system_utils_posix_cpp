@@ -1,0 +1,15 @@
+$OpenBSD: patch-third_party_angle_src_common_system_utils_posix_cpp,v 1.1 2021/10/29 14:49:42 robert Exp $
+
+Index: third_party/angle/src/common/system_utils_posix.cpp
+--- third_party/angle/src/common/system_utils_posix.cpp.orig
++++ third_party/angle/src/common/system_utils_posix.cpp
+@@ -153,7 +153,9 @@ Library *OpenSharedLibraryWithExtension(const char *li
+     int extraFlags = 0;
+     if (searchType == SearchType::AlreadyLoaded)
+     {
++#if !defined(__OpenBSD__)
+         extraFlags = RTLD_NOLOAD;
++#endif
+     }
+ 
+     std::string fullPath = directory + libraryName;

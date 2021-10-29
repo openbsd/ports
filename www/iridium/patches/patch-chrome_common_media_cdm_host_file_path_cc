@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_common_media_cdm_host_file_path_cc,v 1.5 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_common_media_cdm_host_file_path_cc,v 1.6 2021/10/29 14:49:40 robert Exp $
 
 Index: chrome/common/media/cdm_host_file_path.cc
 --- chrome/common/media/cdm_host_file_path.cc.orig

@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_blink_renderer_modules_webgl_webgl_webcodecs_video_frame_cc,v 1.1 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_modules_webgl_webgl_webcodecs_video_frame_cc,v 1.2 2021/10/29 14:49:42 robert Exp $
 
 Index: third_party/blink/renderer/modules/webgl/webgl_webcodecs_video_frame.cc
 --- third_party/blink/renderer/modules/webgl/webgl_webcodecs_video_frame.cc.orig
 +++ third_party/blink/renderer/modules/webgl/webgl_webcodecs_video_frame.cc
-@@ -278,7 +278,7 @@ WebGLExtensionName WebGLWebCodecsVideoFrame::GetName()
+@@ -98,7 +98,7 @@ WebGLExtensionName WebGLWebCodecsVideoFrame::GetName()
  bool WebGLWebCodecsVideoFrame::Supported(WebGLRenderingContextBase* context) {
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.
@@ -11,4 +11,4 @@ Index: third_party/blink/renderer/modules/webgl/webgl_webcodecs_video_frame.cc
 +#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_FUCHSIA) || defined(OS_BSD)
    // TODO(jie.a.chen@intel.com): Add Linux support.
    return false;
- #else
+ #elif defined(OS_MAC)

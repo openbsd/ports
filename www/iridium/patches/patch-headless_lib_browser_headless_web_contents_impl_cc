@@ -1,9 +1,9 @@
-$OpenBSD: patch-headless_lib_browser_headless_web_contents_impl_cc,v 1.1 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-headless_lib_browser_headless_web_contents_impl_cc,v 1.2 2021/10/29 14:49:41 robert Exp $
 
 Index: headless/lib/browser/headless_web_contents_impl.cc
 --- headless/lib/browser/headless_web_contents_impl.cc.orig
 +++ headless/lib/browser/headless_web_contents_impl.cc
-@@ -60,7 +60,7 @@ namespace headless {
+@@ -59,7 +59,7 @@ namespace headless {
  namespace {
  
  void UpdatePrefsFromSystemSettings(blink::RendererPreferences* prefs) {

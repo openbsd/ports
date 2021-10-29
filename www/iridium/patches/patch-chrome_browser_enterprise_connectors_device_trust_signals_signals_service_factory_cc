@@ -1,0 +1,23 @@
+$OpenBSD: patch-chrome_browser_enterprise_connectors_device_trust_signals_signals_service_factory_cc,v 1.1 2021/10/29 14:49:39 robert Exp $
+
+Index: chrome/browser/enterprise/connectors/device_trust/signals/signals_service_factory.cc
+--- chrome/browser/enterprise/connectors/device_trust/signals/signals_service_factory.cc.orig
++++ chrome/browser/enterprise/connectors/device_trust/signals/signals_service_factory.cc
+@@ -10,7 +10,7 @@
+ #include "chrome/browser/enterprise/connectors/device_trust/signals/signals_service.h"
+ #include "chrome/browser/enterprise/connectors/device_trust/signals/signals_service_impl.h"
+ 
+-#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_MAC)
++#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD)
+ #include "base/check.h"
+ #include "chrome/browser/browser_process.h"
+ #include "chrome/browser/enterprise/connectors/device_trust/signals/decorators/browser/browser_signals_decorator.h"
+@@ -27,7 +27,7 @@ std::unique_ptr<SignalsService> CreateSignalsService()
+ 
+   decorators.push_back(std::make_unique<CommonSignalsDecorator>());
+ 
+-#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_MAC)
++#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD)
+   policy::ChromeBrowserPolicyConnector* browser_policy_connector =
+       g_browser_process->browser_policy_connector();
+   DCHECK(browser_policy_connector);

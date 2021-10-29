@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_sync_device_info_sync_client_impl_cc,v 1.1 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_browser_sync_device_info_sync_client_impl_cc,v 1.2 2021/10/29 14:49:40 robert Exp $
 
 Index: chrome/browser/sync/device_info_sync_client_impl.cc
 --- chrome/browser/sync/device_info_sync_client_impl.cc.orig

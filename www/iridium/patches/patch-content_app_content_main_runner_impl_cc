@@ -1,20 +1,15 @@
-$OpenBSD: patch-content_app_content_main_runner_impl_cc,v 1.9 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-content_app_content_main_runner_impl_cc,v 1.10 2021/10/29 14:49:40 robert Exp $
 
 Index: content/app/content_main_runner_impl.cc
 --- content/app/content_main_runner_impl.cc.orig
 +++ content/app/content_main_runner_impl.cc
-@@ -128,17 +128,17 @@
+@@ -130,13 +130,13 @@
  #include "base/posix/global_descriptors.h"
  #include "content/public/common/content_descriptors.h"
  
 -#if !defined(OS_MAC)
 +#if !defined(OS_MAC) && !defined(OS_BSD)
  #include "content/public/common/zygote/zygote_fork_delegate_linux.h"
- #endif
--#if !defined(OS_MAC) && !defined(OS_ANDROID)
-+#if !defined(OS_MAC) && !defined(OS_ANDROID) && !defined(S_BSD)
- #include "content/zygote/zygote_main.h"
- #include "sandbox/linux/services/libc_interceptor.h"
  #endif
  
  #endif  // OS_POSIX || OS_FUCHSIA
@@ -24,13 +19,12 @@ Index: content/app/content_main_runner_impl.cc
  #include "base/native_library.h"
  #include "base/rand_util.h"
  #include "content/public/common/zygote/sandbox_support_linux.h"
-@@ -170,6 +170,13 @@
+@@ -170,6 +170,12 @@
  #include "media/base/media_switches.h"
  #endif
  
 +#if defined(OS_BSD)
 +#include "base/system/sys_info.h"
-+#include "content/public/common/common_sandbox_support_linux.h"
 +#include "content/public/common/sandbox_init.h"
 +#include "sandbox/policy/linux/sandbox_linux.h"
 +#endif
@@ -38,7 +32,7 @@ Index: content/app/content_main_runner_impl.cc
  #if defined(OS_ANDROID)
  #include "base/system/sys_info.h"
  #include "components/power_scheduler/power_scheduler.h"
-@@ -311,7 +318,7 @@ void InitializeZygoteSandboxForBrowserProcess(
+@@ -311,7 +317,7 @@ void InitializeZygoteSandboxForBrowserProcess(
  }
  #endif  // BUILDFLAG(USE_ZYGOTE_HANDLE)
  
@@ -47,7 +41,7 @@ Index: content/app/content_main_runner_impl.cc
  
  #if BUILDFLAG(ENABLE_PLUGINS)
  // Loads the (native) libraries but does not initialize them (i.e., does not
-@@ -350,11 +357,14 @@ void PreloadLibraryCdms() {
+@@ -347,11 +353,14 @@ void PreloadLibraryCdms() {
  }
  #endif  // BUILDFLAG(ENABLE_LIBRARY_CDMS)
  
@@ -63,7 +57,7 @@ Index: content/app/content_main_runner_impl.cc
  
  #if BUILDFLAG(ENABLE_PLUGINS)
    // Ensure access to the Pepper plugins before the sandbox is turned on.
-@@ -366,6 +376,11 @@ void PreSandboxInit() {
+@@ -363,6 +372,11 @@ void PreSandboxInit() {
  #endif
    InitializeWebRtcModule();
  
@@ -75,7 +69,7 @@ Index: content/app/content_main_runner_impl.cc
    // Set the android SkFontMgr for blink. We need to ensure this is done
    // before the sandbox is initialized to allow the font manager to access
    // font configuration files on disk.
-@@ -533,7 +548,7 @@ int RunZygote(ContentMainDelegate* delegate) {
+@@ -532,7 +546,7 @@ int NO_STACK_PROTECTOR RunZygote(ContentMainDelegate* 
    delegate->ZygoteStarting(&zygote_fork_delegates);
    media::InitializeMediaLibrary();
  
@@ -84,7 +78,7 @@ Index: content/app/content_main_runner_impl.cc
    PreSandboxInit();
  #endif
  
-@@ -691,10 +706,10 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
+@@ -704,10 +718,10 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
               kFieldTrialDescriptor + base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !OS_ANDROID
  
@@ -97,7 +91,7 @@ Index: content/app/content_main_runner_impl.cc
  
  #endif  // !OS_WIN
  
-@@ -884,6 +899,16 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
+@@ -897,6 +911,16 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
    }
  #endif
  
@@ -114,7 +108,7 @@ Index: content/app/content_main_runner_impl.cc
    delegate_->SandboxInitialized(process_type);
  
  #if BUILDFLAG(USE_ZYGOTE_HANDLE)
-@@ -928,7 +953,7 @@ int ContentMainRunnerImpl::Run(bool start_minimal_brow
+@@ -943,7 +967,7 @@ int NO_STACK_PROTECTOR ContentMainRunnerImpl::Run(bool
        mojo::core::InitFeatures();
      }
  
@@ -123,7 +117,7 @@ Index: content/app/content_main_runner_impl.cc
      // If dynamic Mojo Core is being used, ensure that it's loaded very early in
      // the child/zygote process, before any sandbox is initialized. The library
      // is not fully initialized with IPC support until a ChildProcess is later
-@@ -951,6 +976,11 @@ int ContentMainRunnerImpl::Run(bool start_minimal_brow
+@@ -966,6 +990,11 @@ int NO_STACK_PROTECTOR ContentMainRunnerImpl::Run(bool
  #endif
  
    RegisterMainThreadFactories();

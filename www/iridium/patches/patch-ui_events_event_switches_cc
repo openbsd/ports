@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_events_event_switches_cc,v 1.14 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-ui_events_event_switches_cc,v 1.15 2021/10/29 14:49:42 robert Exp $
 
 Index: ui/events/event_switches.cc
 --- ui/events/event_switches.cc.orig

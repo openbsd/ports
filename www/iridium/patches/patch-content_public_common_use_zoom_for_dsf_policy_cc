@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_public_common_use_zoom_for_dsf_policy_cc,v 1.7 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-content_public_common_use_zoom_for_dsf_policy_cc,v 1.8 2021/10/29 14:49:41 robert Exp $
 
 Index: content/public/common/use_zoom_for_dsf_policy.cc
 --- content/public/common/use_zoom_for_dsf_policy.cc.orig

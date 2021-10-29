@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_ppapi_plugin_ppapi_plugin_main_cc,v 1.16 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-content_ppapi_plugin_ppapi_plugin_main_cc,v 1.17 2021/10/29 14:49:41 robert Exp $
 
 Index: content/ppapi_plugin/ppapi_plugin_main.cc
 --- content/ppapi_plugin/ppapi_plugin_main.cc.orig
 +++ content/ppapi_plugin/ppapi_plugin_main.cc
-@@ -51,6 +51,11 @@
+@@ -54,6 +54,11 @@
  #include "gin/v8_initializer.h"
  #endif
  
@@ -15,7 +15,7 @@ Index: content/ppapi_plugin/ppapi_plugin_main.cc
  #if defined(OS_POSIX) && !defined(OS_ANDROID)
  #include <stdlib.h>
  #endif
-@@ -125,7 +130,7 @@ int PpapiPluginMain(const MainFunctionParams& paramete
+@@ -135,7 +140,7 @@ int PpapiPluginMain(const MainFunctionParams& paramete
    gin::V8Initializer::LoadV8Snapshot();
  #endif
  

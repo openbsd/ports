@@ -1,9 +1,9 @@
-$OpenBSD: patch-v8_src_base_sys-info_cc,v 1.5 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-v8_src_base_sys-info_cc,v 1.6 2021/10/29 14:49:43 robert Exp $
 
 Index: v8/src/base/sys-info.cc
 --- v8/src/base/sys-info.cc.orig
 +++ v8/src/base/sys-info.cc
-@@ -32,7 +32,7 @@ namespace base {
+@@ -38,7 +38,7 @@ namespace base {
  // static
  int SysInfo::NumberOfProcessors() {
  #if V8_OS_OPENBSD

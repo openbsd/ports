@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_detect_host_arch_py,v 1.7 2021/07/06 11:13:49 robert Exp $
+$OpenBSD: patch-build_detect_host_arch_py,v 1.8 2021/10/29 14:49:39 robert Exp $
 
 Index: build/detect_host_arch.py
 --- build/detect_host_arch.py.orig

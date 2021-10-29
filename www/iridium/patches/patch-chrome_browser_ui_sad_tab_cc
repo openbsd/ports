@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_sad_tab_cc,v 1.8 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_sad_tab_cc,v 1.9 2021/10/29 14:49:40 robert Exp $
 
 Index: chrome/browser/ui/sad_tab.cc
 --- chrome/browser/ui/sad_tab.cc.orig

@@ -1,9 +1,9 @@
-$OpenBSD: patch-extensions_browser_browser_context_keyed_service_factories_cc,v 1.7 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-extensions_browser_browser_context_keyed_service_factories_cc,v 1.8 2021/10/29 14:49:41 robert Exp $
 
 Index: extensions/browser/browser_context_keyed_service_factories.cc
 --- extensions/browser/browser_context_keyed_service_factories.cc.orig
 +++ extensions/browser/browser_context_keyed_service_factories.cc
-@@ -87,7 +87,7 @@ void EnsureBrowserContextKeyedServiceFactoriesBuilt() 
+@@ -89,7 +89,7 @@ void EnsureBrowserContextKeyedServiceFactoriesBuilt() 
    IdleManagerFactory::GetInstance();
    ManagementAPI::GetFactoryInstance();
  #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_WIN) || \

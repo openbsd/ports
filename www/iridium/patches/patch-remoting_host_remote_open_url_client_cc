@@ -1,0 +1,23 @@
+$OpenBSD: patch-remoting_host_remote_open_url_client_cc,v 1.1 2021/10/29 14:49:41 robert Exp $
+
+Index: remoting/host/remote_open_url_client.cc
+--- remoting/host/remote_open_url_client.cc.orig
++++ remoting/host/remote_open_url_client.cc
+@@ -14,7 +14,7 @@
+ #include "remoting/base/logging.h"
+ #include "remoting/host/remote_open_url_constants.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "remoting/host/remote_open_url_client_delegate_linux.h"
+ #elif defined(OS_WIN)
+ #include "remoting/host/remote_open_url_client_delegate_win.h"
+@@ -27,7 +27,7 @@ namespace {
+ constexpr base::TimeDelta kRequestTimeout = base::TimeDelta::FromSeconds(5);
+ 
+ std::unique_ptr<RemoteOpenUrlClient::Delegate> CreateDelegate() {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   return std::make_unique<RemoteOpenUrlClientDelegateLinux>();
+ #elif defined(OS_WIN)
+   return std::make_unique<RemoteOpenUrlClientDelegateWin>();

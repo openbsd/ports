@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_sampler_h,v 1.10 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_sampler_h,v 1.11 2021/10/29 14:49:40 robert Exp $
 
 Index: chrome/browser/task_manager/sampling/task_group_sampler.h
 --- chrome/browser/task_manager/sampling/task_group_sampler.h.orig
 +++ chrome/browser/task_manager/sampling/task_group_sampler.h
-@@ -32,7 +32,7 @@ class TaskGroupSampler : public base::RefCountedThread
+@@ -31,7 +31,7 @@ class TaskGroupSampler : public base::RefCountedThread
    using OnCpuRefreshCallback = base::RepeatingCallback<void(double)>;
    using OnSwappedMemRefreshCallback = base::RepeatingCallback<void(int64_t)>;
    using OnIdleWakeupsCallback = base::RepeatingCallback<void(int)>;
@@ -12,7 +12,7 @@ Index: chrome/browser/task_manager/sampling/task_group_sampler.h
    using OnOpenFdCountCallback = base::RepeatingCallback<void(int)>;
  #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC)
    using OnProcessPriorityCallback = base::RepeatingCallback<void(bool)>;
-@@ -43,7 +43,7 @@ class TaskGroupSampler : public base::RefCountedThread
+@@ -42,7 +42,7 @@ class TaskGroupSampler : public base::RefCountedThread
        const OnCpuRefreshCallback& on_cpu_refresh,
        const OnSwappedMemRefreshCallback& on_memory_refresh,
        const OnIdleWakeupsCallback& on_idle_wakeups,
@@ -21,7 +21,7 @@ Index: chrome/browser/task_manager/sampling/task_group_sampler.h
        const OnOpenFdCountCallback& on_open_fd_count,
  #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC)
        const OnProcessPriorityCallback& on_process_priority);
-@@ -60,7 +60,7 @@ class TaskGroupSampler : public base::RefCountedThread
+@@ -62,7 +62,7 @@ class TaskGroupSampler : public base::RefCountedThread
    double RefreshCpuUsage();
    int64_t RefreshSwappedMem();
    int RefreshIdleWakeupsPerSecond();
@@ -30,7 +30,7 @@ Index: chrome/browser/task_manager/sampling/task_group_sampler.h
    int RefreshOpenFdCount();
  #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC)
    bool RefreshProcessPriority();
-@@ -84,7 +84,7 @@ class TaskGroupSampler : public base::RefCountedThread
+@@ -86,7 +86,7 @@ class TaskGroupSampler : public base::RefCountedThread
    const OnCpuRefreshCallback on_cpu_refresh_callback_;
    const OnSwappedMemRefreshCallback on_swapped_mem_refresh_callback_;
    const OnIdleWakeupsCallback on_idle_wakeups_callback_;

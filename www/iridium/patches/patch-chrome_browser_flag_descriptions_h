@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_flag_descriptions_h,v 1.13 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_browser_flag_descriptions_h,v 1.14 2021/10/29 14:49:39 robert Exp $
 
 Index: chrome/browser/flag_descriptions.h
 --- chrome/browser/flag_descriptions.h.orig
@@ -12,25 +12,25 @@ Index: chrome/browser/flag_descriptions.h
  #include "base/allocator/buildflags.h"
  #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
  
-@@ -2932,7 +2932,7 @@ extern const char kEnableNewBadgeOnMenuItemsDescriptio
+@@ -3046,7 +3046,7 @@ extern const char kDownloadShelfWebUIDescription[];
  // Random platform combinations -----------------------------------------------
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
--    defined(OS_CHROMEOS)
-+    defined(OS_CHROMEOS) || defined(OS_BSD)
+-    defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
++    defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
  
  extern const char kEnableOopPrintDriversName[];
  extern const char kEnableOopPrintDriversDescription[];
-@@ -2955,7 +2955,7 @@ extern const char kDirectManipulationStylusDescription
+@@ -3063,7 +3063,7 @@ extern const char kSettingsLandingPageRedesignDescript
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) ||
-         // defined(OS_CHROMEOS)
+         // defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
  
 -#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
  
  extern const char kCommanderName[];
  extern const char kCommanderDescription[];
-@@ -2968,7 +2968,7 @@ extern const char kDesktopDetailedLanguageSettingsDesc
+@@ -3076,7 +3076,7 @@ extern const char kDesktopDetailedLanguageSettingsDesc
  
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
  
@@ -39,24 +39,8 @@ Index: chrome/browser/flag_descriptions.h
  #if BUILDFLAG(USE_TCMALLOC)
  extern const char kDynamicTcmallocName[];
  extern const char kDynamicTcmallocDescription[];
-@@ -2988,13 +2988,13 @@ extern const char kWebShareDescription[];
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
- #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
--    defined(OS_MAC)
-+    defined(OS_MAC) || defined(OS_BSD)
- extern const char kEnableEphemeralGuestProfilesOnDesktopName[];
- extern const char kEnableEphemeralGuestProfilesOnDesktopDescription[];
- #endif  // defined(OS_WIN) || (defined(OS_LINUX) ||
-         // BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_MAC)
- 
--#if defined(OS_LINUX) && defined(USE_OZONE)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && defined(USE_OZONE)
- extern const char kUseOzonePlatformName[];
- extern const char kUseOzonePlatformDescription[];
- #endif  // defined(OS_LINUX) && defined(USE_OZONE)
-@@ -3059,7 +3059,7 @@ extern const char kSendWebUIJavaScriptErrorReportsDesc
- #endif
+@@ -3148,7 +3148,7 @@ extern const char kElasticOverscrollDescription[];
+ #endif  // defined(OS_WIN) || defined(OS_ANDROID)
  
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
 -    defined(OS_MAC)

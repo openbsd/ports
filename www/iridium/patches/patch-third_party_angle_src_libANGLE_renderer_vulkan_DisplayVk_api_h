@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_angle_src_libANGLE_renderer_vulkan_DisplayVk_api_h,v 1.4 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-third_party_angle_src_libANGLE_renderer_vulkan_DisplayVk_api_h,v 1.5 2021/10/29 14:49:42 robert Exp $
 
 Index: third_party/angle/src/libANGLE/renderer/vulkan/DisplayVk_api.h
 --- third_party/angle/src/libANGLE/renderer/vulkan/DisplayVk_api.h.orig
 +++ third_party/angle/src/libANGLE/renderer/vulkan/DisplayVk_api.h
-@@ -19,7 +19,7 @@ bool IsVulkanWin32DisplayAvailable();
+@@ -23,7 +23,7 @@ bool IsVulkanWin32DisplayAvailable();
  DisplayImpl *CreateVulkanWin32Display(const egl::DisplayState &state);
  #endif  // defined(ANGLE_PLATFORM_WINDOWS)
  

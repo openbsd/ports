@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_app_profiles_strings_grdp,v 1.2 2021/07/06 11:13:49 robert Exp $
+$OpenBSD: patch-chrome_app_profiles_strings_grdp,v 1.3 2021/10/29 14:49:39 robert Exp $
 
 Index: chrome/app/profiles_strings.grdp
 --- chrome/app/profiles_strings.grdp.orig
 +++ chrome/app/profiles_strings.grdp
-@@ -81,7 +81,7 @@
+@@ -69,7 +69,7 @@
        Add Profile...
      </message>
    </if>

@@ -1,11 +1,11 @@
-$OpenBSD: patch-third_party_dawn_src_common_Platform_h,v 1.1 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-third_party_dawn_src_common_Platform_h,v 1.2 2021/10/29 14:49:42 robert Exp $
 
 Index: third_party/dawn/src/common/Platform.h
 --- third_party/dawn/src/common/Platform.h.orig
 +++ third_party/dawn/src/common/Platform.h
-@@ -18,6 +18,10 @@
- #if defined(_WIN32) || defined(_WIN64)
- #    define DAWN_PLATFORM_WINDOWS 1
+@@ -26,6 +26,10 @@
+ #        error "Unsupported Windows platform."
+ #    endif
  
 +#elif defined(__OpenBSD__)
 +#    define DAWN_PLATFORM_OPENBSD 1

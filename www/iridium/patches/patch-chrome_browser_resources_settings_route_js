@@ -1,14 +1,14 @@
-$OpenBSD: patch-chrome_browser_resources_settings_route_js,v 1.2 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_browser_resources_settings_route_js,v 1.3 2021/10/29 14:49:40 robert Exp $
 
 Index: chrome/browser/resources/settings/route.js
 --- chrome/browser/resources/settings/route.js.orig
 +++ chrome/browser/resources/settings/route.js
-@@ -183,7 +183,7 @@ function createBrowserSettingsRoutes() {
+@@ -186,7 +186,7 @@ function createBrowserSettingsRoutes() {
  
      r.ACCESSIBILITY = r.ADVANCED.createSection('/accessibility', 'a11y');
  
--    // <if expr="chromeos or is_linux">
-+    // <if expr="chromeos or is_posix">
+-    // <if expr="is_linux">
++    // <if expr="is_posix">
      r.CAPTIONS = r.ACCESSIBILITY.createChild('/captions');
      // </if>
  

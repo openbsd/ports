@@ -1,9 +1,9 @@
-$OpenBSD: patch-sandbox_policy_features_cc,v 1.1 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-sandbox_policy_features_cc,v 1.2 2021/10/29 14:49:41 robert Exp $
 
 Index: sandbox/policy/features.cc
 --- sandbox/policy/features.cc.orig
 +++ sandbox/policy/features.cc
-@@ -15,7 +15,11 @@ namespace features {
+@@ -16,7 +16,11 @@ namespace features {
  // Enables network service sandbox.
  // (Only causes an effect when feature kNetworkService is enabled.)
  const base::Feature kNetworkServiceSandbox{"NetworkServiceSandbox",

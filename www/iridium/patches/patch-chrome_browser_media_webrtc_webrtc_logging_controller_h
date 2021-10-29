@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_media_webrtc_webrtc_logging_controller_h,v 1.5 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_browser_media_webrtc_webrtc_logging_controller_h,v 1.6 2021/10/29 14:49:39 robert Exp $
 
 Index: chrome/browser/media/webrtc/webrtc_logging_controller.h
 --- chrome/browser/media/webrtc/webrtc_logging_controller.h.orig

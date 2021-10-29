@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_vulkan-deps_vulkan-validation-layers_src_layers_vk_mem_alloc_h,v 1.1 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-third_party_vulkan-deps_vulkan-validation-layers_src_layers_vk_mem_alloc_h,v 1.2 2021/10/29 14:49:42 robert Exp $
 
 Index: third_party/vulkan-deps/vulkan-validation-layers/src/layers/vk_mem_alloc.h
 --- third_party/vulkan-deps/vulkan-validation-layers/src/layers/vk_mem_alloc.h.orig

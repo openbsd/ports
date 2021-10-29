@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_plugins_plugins_resource_service_cc,v 1.16 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_browser_plugins_plugins_resource_service_cc,v 1.17 2021/10/29 14:49:40 robert Exp $
 
 Index: chrome/browser/plugins/plugins_resource_service.cc
 --- chrome/browser/plugins/plugins_resource_service.cc.orig

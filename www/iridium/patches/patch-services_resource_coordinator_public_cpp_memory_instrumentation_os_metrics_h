@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_resource_coordinator_public_cpp_memory_instrumentation_os_metrics_h,v 1.11 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-services_resource_coordinator_public_cpp_memory_instrumentation_os_metrics_h,v 1.12 2021/10/29 14:49:42 robert Exp $
 
 Index: services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h
 --- services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h.orig

@@ -1,12 +1,12 @@
-$OpenBSD: patch-remoting_host_switches_cc,v 1.5 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-remoting_host_switches_cc,v 1.6 2021/10/29 14:49:41 robert Exp $
 
 Index: remoting/host/switches.cc
 --- remoting/host/switches.cc.orig
 +++ remoting/host/switches.cc
-@@ -21,7 +21,7 @@ const char kProcessTypeHost[] = "host";
- const char kProcessTypeRdpDesktopSession[] = "rdp_desktop_session";
- const char kProcessTypeEvaluateCapability[] = "evaluate_capability";
+@@ -23,7 +23,7 @@ const char kProcessTypeEvaluateCapability[] = "evaluat
  const char kProcessTypeFileChooser[] = "file_chooser";
+ const char kProcessTypeUrlForwarderConfigurator[] =
+     "url_forwarder_configurator";
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  const char kProcessTypeXSessionChooser[] = "xsession_chooser";

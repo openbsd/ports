@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_process_process_metrics_openbsd_cc,v 1.16 2021/07/06 11:13:49 robert Exp $
+$OpenBSD: patch-base_process_process_metrics_openbsd_cc,v 1.17 2021/10/29 14:49:39 robert Exp $
 
 Index: base/process/process_metrics_openbsd.cc
 --- base/process/process_metrics_openbsd.cc.orig
 +++ base/process/process_metrics_openbsd.cc
-@@ -4,11 +4,26 @@
+@@ -4,14 +4,30 @@
  
  #include "base/process/process_metrics.h"
  
@@ -27,10 +27,14 @@ Index: base/process/process_metrics_openbsd.cc
  
 +#include <kvm.h>
 +
+ #include "base/cxx17_backports.h"
  #include "base/memory/ptr_util.h"
  #include "base/process/process_metrics_iocounters.h"
- #include "base/stl_util.h"
-@@ -25,48 +40,13 @@ bool ProcessMetrics::GetIOCounters(IoCounters* io_coun
++#include "base/values.h"
+ 
+ namespace base {
+ 
+@@ -25,48 +41,13 @@ bool ProcessMetrics::GetIOCounters(IoCounters* io_coun
    return false;
  }
  
@@ -80,7 +84,7 @@ Index: base/process/process_metrics_openbsd.cc
  
  size_t GetSystemCommitCharge() {
    int mib[] = { CTL_VM, VM_METER };
-@@ -85,6 +65,120 @@ size_t GetSystemCommitCharge() {
+@@ -85,6 +66,129 @@ size_t GetSystemCommitCharge() {
    pagesize = getpagesize();
  
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);
@@ -116,26 +120,6 @@ Index: base/process/process_metrics_openbsd.cc
 +  return 0;
 +}
 +
-+std::unique_ptr<DictionaryValue> SystemMemoryInfoKB::ToValue() const {
-+  auto res = std::make_unique<DictionaryValue>();
-+  res->SetInteger("total", total);
-+  res->SetInteger("free", free);
-+  res->SetInteger("available", available);
-+  res->SetInteger("buffers", buffers);
-+  res->SetInteger("cached", cached);
-+  res->SetInteger("active_anon", active_anon);
-+  res->SetInteger("inactive_anon", inactive_anon);
-+  res->SetInteger("active_file", active_file);
-+  res->SetInteger("inactive_file", inactive_file);
-+  res->SetInteger("swap_total", swap_total);
-+  res->SetInteger("swap_free", swap_free);
-+  res->SetInteger("swap_used", swap_total - swap_free);
-+  res->SetInteger("dirty", dirty);
-+  res->SetInteger("reclaimable", reclaimable);
-+
-+  return res;
-+}
-+
 +bool GetSystemMemoryInfo(SystemMemoryInfoKB* meminfo) {
 +  NOTIMPLEMENTED_LOG_ONCE();
 +  return false;
@@ -157,37 +141,9 @@ Index: base/process/process_metrics_openbsd.cc
 +     
 +SystemDiskInfo::SystemDiskInfo(const SystemDiskInfo& other) = default;
 +      
-+std::unique_ptr<Value> SystemDiskInfo::ToValue() const {
-+  auto res = std::make_unique<DictionaryValue>();
-+  
-+  // Write out uint64_t variables as doubles.
-+  // Note: this may discard some precision, but for JS there's no other option.
-+  res->SetDouble("reads", static_cast<double>(reads)); 
-+  res->SetDouble("reads_merged", static_cast<double>(reads_merged));
-+  res->SetDouble("sectors_read", static_cast<double>(sectors_read));
-+  res->SetDouble("read_time", static_cast<double>(read_time));
-+  res->SetDouble("writes", static_cast<double>(writes));
-+  res->SetDouble("writes_merged", static_cast<double>(writes_merged));
-+  res->SetDouble("sectors_written", static_cast<double>(sectors_written));
-+  res->SetDouble("write_time", static_cast<double>(write_time));
-+  res->SetDouble("io", static_cast<double>(io));
-+  res->SetDouble("io_time", static_cast<double>(io_time));
-+  res->SetDouble("weighted_io_time", static_cast<double>(weighted_io_time));
-+    
-+  return std::move(res);
-+}
-+    
 +bool GetSystemDiskInfo(SystemDiskInfo* diskinfo) {
 +  NOTIMPLEMENTED();
 +  return false;
-+}
-+
-+std::unique_ptr<DictionaryValue> VmStatInfo::ToValue() const {
-+  auto res = std::make_unique<DictionaryValue>();
-+  res->SetInteger("pswpin", pswpin);
-+  res->SetInteger("pswpout", pswpout);
-+  res->SetInteger("pgmajfault", pgmajfault);
-+  return res;
 +}
 +
 +bool GetVmStatInfo(VmStatInfo* vmstat) {
@@ -198,6 +154,63 @@ Index: base/process/process_metrics_openbsd.cc
 +int ProcessMetrics::GetIdleWakeupsPerSecond() {
 +  NOTIMPLEMENTED();
 +  return 0;
++}
++
++Value SystemMemoryInfoKB::ToValue() const {
++  Value res(Value::Type::DICTIONARY);
++  res.SetIntKey("total", total);
++  res.SetIntKey("free", free);
++  res.SetIntKey("available", available);
++  res.SetIntKey("buffers", buffers);
++  res.SetIntKey("cached", cached);
++  res.SetIntKey("active_anon", active_anon);
++  res.SetIntKey("inactive_anon", inactive_anon);
++  res.SetIntKey("active_file", active_file);
++  res.SetIntKey("inactive_file", inactive_file);
++  res.SetIntKey("swap_total", swap_total);
++  res.SetIntKey("swap_free", swap_free);
++  res.SetIntKey("swap_used", swap_total - swap_free);
++  res.SetIntKey("dirty", dirty);
++  res.SetIntKey("reclaimable", reclaimable);
++
++  NOTIMPLEMENTED();
++
++  return res;
++}
++
++Value VmStatInfo::ToValue() const {   
++  Value res(Value::Type::DICTIONARY);
++  res.SetIntKey("pswpin", pswpin);
++  res.SetIntKey("pswpout", pswpout);
++  res.SetIntKey("pgmajfault", pgmajfault);
++
++  NOTIMPLEMENTED();
++
++  return res;
++}
++
++SystemDiskInfo& SystemDiskInfo::operator=(const SystemDiskInfo&) = default;
++
++Value SystemDiskInfo::ToValue() const {
++  Value res(Value::Type::DICTIONARY);
++
++  // Write out uint64_t variables as doubles.
++  // Note: this may discard some precision, but for JS there's no other option.
++  res.SetDoubleKey("reads", static_cast<double>(reads));
++  res.SetDoubleKey("reads_merged", static_cast<double>(reads_merged));
++  res.SetDoubleKey("sectors_read", static_cast<double>(sectors_read));
++  res.SetDoubleKey("read_time", static_cast<double>(read_time));
++  res.SetDoubleKey("writes", static_cast<double>(writes));
++  res.SetDoubleKey("writes_merged", static_cast<double>(writes_merged));
++  res.SetDoubleKey("sectors_written", static_cast<double>(sectors_written));
++  res.SetDoubleKey("write_time", static_cast<double>(write_time));
++  res.SetDoubleKey("io", static_cast<double>(io));
++  res.SetDoubleKey("io_time", static_cast<double>(io_time));
++  res.SetDoubleKey("weighted_io_time", static_cast<double>(weighted_io_time));
++
++  NOTIMPLEMENTED();
++
++  return res;
  }
  
  }  // namespace base

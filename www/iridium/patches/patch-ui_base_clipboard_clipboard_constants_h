@@ -1,10 +1,10 @@
-$OpenBSD: patch-ui_base_clipboard_clipboard_constants_h,v 1.2 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-ui_base_clipboard_clipboard_constants_h,v 1.3 2021/10/29 14:49:42 robert Exp $
 
 Index: ui/base/clipboard/clipboard_constants.h
 --- ui/base/clipboard/clipboard_constants.h.orig
 +++ ui/base/clipboard/clipboard_constants.h
-@@ -37,7 +37,7 @@ COMPONENT_EXPORT(UI_BASE_CLIPBOARD_TYPES) extern const
- COMPONENT_EXPORT(UI_BASE_CLIPBOARD_TYPES) extern const char kMimeTypePNG[];
+@@ -38,7 +38,7 @@ COMPONENT_EXPORT(UI_BASE_CLIPBOARD_TYPES)
+ extern const char kMimeTypeOctetStream[];
  
  // Linux-specific MIME type constants (also used in Fuchsia).
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA)

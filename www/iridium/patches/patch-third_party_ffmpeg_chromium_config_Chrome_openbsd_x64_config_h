@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_h,v 1.20 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_h,v 1.21 2021/10/29 14:49:42 robert Exp $
 Index: third_party/ffmpeg/chromium/config/Chrome/openbsd/x64/config.h
 --- third_party/ffmpeg/chromium/config/Chrome/openbsd/x64/config.h.orig
 +++ third_party/ffmpeg/chromium/config/Chrome/openbsd/x64/config.h

@@ -1,0 +1,23 @@
+$OpenBSD: patch-sandbox_policy_sandbox_type_h,v 1.1 2021/10/29 14:49:41 robert Exp $
+
+Index: sandbox/policy/sandbox_type.h
+--- sandbox/policy/sandbox_type.h.orig
++++ sandbox/policy/sandbox_type.h
+@@ -110,7 +110,7 @@ enum class SandboxType {
+   kZygoteIntermediateSandbox,
+ #endif
+ 
+-#if defined(OS_FUCHSIA)
++#if defined(OS_FUCHSIA) || defined(OS_BSD)
+   // Equivalent to no sandbox on all non-Fuchsia platforms.
+   // Minimally privileged sandbox on Fuchsia.
+   kVideoCapture,
+@@ -139,7 +139,7 @@ inline constexpr sandbox::policy::SandboxType MapToSan
+       return sandbox::policy::SandboxType::kSpeechRecognition;
+     case sandbox::mojom::Sandbox::kUtility:
+       return sandbox::policy::SandboxType::kUtility;
+-#if defined(OS_FUCHSIA)
++#if defined(OS_FUCHSIA) || defined(OS_BSD)
+     case sandbox::mojom::Sandbox::kVideoCapture:
+       return sandbox::policy::SandboxType::kVideoCapture;
+ #endif

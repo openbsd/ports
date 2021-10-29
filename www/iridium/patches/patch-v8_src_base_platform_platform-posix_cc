@@ -1,9 +1,9 @@
-$OpenBSD: patch-v8_src_base_platform_platform-posix_cc,v 1.15 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-v8_src_base_platform_platform-posix_cc,v 1.16 2021/10/29 14:49:43 robert Exp $
 
 Index: v8/src/base/platform/platform-posix.cc
 --- v8/src/base/platform/platform-posix.cc.orig
 +++ v8/src/base/platform/platform-posix.cc
-@@ -266,8 +266,15 @@ void OS::SetRandomMmapSeed(int64_t seed) {
+@@ -281,8 +281,15 @@ void OS::SetRandomMmapSeed(int64_t seed) {
    }
  }
  
@@ -19,7 +19,7 @@ Index: v8/src/base/platform/platform-posix.cc
    uintptr_t raw_addr;
    {
      MutexGuard guard(rng_mutex.Pointer());
-@@ -354,6 +361,7 @@ void* OS::GetRandomMmapAddr() {
+@@ -373,6 +380,7 @@ void* OS::GetRandomMmapAddr() {
  #endif
    return reinterpret_cast<void*>(raw_addr);
  }
@@ -27,7 +27,7 @@ Index: v8/src/base/platform/platform-posix.cc
  
  // TODO(bbudge) Move Cygwin and Fuchsia stuff into platform-specific files.
  #if !V8_OS_CYGWIN && !V8_OS_FUCHSIA
-@@ -478,7 +486,7 @@ bool OS::DiscardSystemPages(void* address, size_t size
+@@ -511,7 +519,7 @@ bool OS::DecommitPages(void* address, size_t size) {
  
  // static
  bool OS::HasLazyCommits() {
@@ -36,7 +36,7 @@ Index: v8/src/base/platform/platform-posix.cc
    return true;
  #else
    // TODO(bbudge) Return true for all POSIX platforms.
-@@ -1016,7 +1024,7 @@ void Thread::SetThreadLocal(LocalStorageKey key, void*
+@@ -1054,7 +1062,7 @@ void Thread::SetThreadLocal(LocalStorageKey key, void*
  // keep this version in POSIX as most Linux-compatible derivatives will
  // support it. MacOS and FreeBSD are different here.
  #if !defined(V8_OS_FREEBSD) && !defined(V8_OS_MACOSX) && !defined(_AIX) && \

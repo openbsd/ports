@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_fonts_font_cache_h,v 1.8 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_fonts_font_cache_h,v 1.9 2021/10/29 14:49:42 robert Exp $
 
 Index: third_party/blink/renderer/platform/fonts/font_cache.h
 --- third_party/blink/renderer/platform/fonts/font_cache.h.orig
 +++ third_party/blink/renderer/platform/fonts/font_cache.h
-@@ -58,7 +58,7 @@
+@@ -59,7 +59,7 @@
  #include "third_party/skia/include/core/SkFontMgr.h"
  #include "third_party/skia/include/core/SkRefCnt.h"
  
@@ -12,7 +12,7 @@ Index: third_party/blink/renderer/platform/fonts/font_cache.h
  #include "ui/gfx/font_fallback_linux.h"
  #endif
  
-@@ -177,7 +177,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -178,7 +178,7 @@ class PLATFORM_EXPORT FontCache {
    sk_sp<SkFontMgr> FontManager() { return font_manager_; }
    static void SetFontManager(sk_sp<SkFontMgr>);
  
@@ -21,8 +21,8 @@ Index: third_party/blink/renderer/platform/fonts/font_cache.h
    // These are needed for calling QueryRenderStyleForStrike, since
    // gfx::GetFontRenderParams makes distinctions based on DSF.
    static float DeviceScaleFactor() { return device_scale_factor_; }
-@@ -252,7 +252,7 @@ class PLATFORM_EXPORT FontCache {
-       const FontDescription&);
+@@ -260,7 +260,7 @@ class PLATFORM_EXPORT FontCache {
+       const char* locale_family_name);
  #endif  // defined(OS_ANDROID)
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
@@ -30,7 +30,7 @@ Index: third_party/blink/renderer/platform/fonts/font_cache.h
    static bool GetFontForCharacter(UChar32,
                                    const char* preferred_locale,
                                    gfx::FallbackFontData*);
-@@ -330,7 +330,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -340,7 +340,7 @@ class PLATFORM_EXPORT FontCache {
                                     const FontFaceCreationParams&,
                                     std::string& name);
  
@@ -39,7 +39,7 @@ Index: third_party/blink/renderer/platform/fonts/font_cache.h
    static AtomicString GetFamilyNameForCharacter(SkFontMgr*,
                                                  UChar32,
                                                  const FontDescription&,
-@@ -375,7 +375,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -386,7 +386,7 @@ class PLATFORM_EXPORT FontCache {
    std::unique_ptr<FallbackFamilyStyleCache> fallback_params_cache_;
  #endif  // defined(OS_WIN)
  

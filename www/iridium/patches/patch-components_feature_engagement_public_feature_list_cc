@@ -1,14 +1,14 @@
-$OpenBSD: patch-components_feature_engagement_public_feature_list_cc,v 1.8 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-components_feature_engagement_public_feature_list_cc,v 1.9 2021/10/29 14:49:40 robert Exp $
 
 Index: components/feature_engagement/public/feature_list.cc
 --- components/feature_engagement/public/feature_list.cc.orig
 +++ components/feature_engagement/public/feature_list.cc
-@@ -84,7 +84,7 @@ const base::Feature* const kAllFeatures[] = {
+@@ -97,7 +97,7 @@ const base::Feature* const kAllFeatures[] = {
      &kIPHDiscoverFeedHeaderFeature,
  #endif  // defined(OS_IOS)
  #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
--    defined(OS_CHROMEOS)
-+    defined(OS_CHROMEOS) || defined(OS_BSD)
+-    defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
++    defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
      &kIPHDesktopTabGroupsNewGroupFeature,
      &kIPHFocusModeFeature,
      &kIPHGlobalMediaControlsFeature,

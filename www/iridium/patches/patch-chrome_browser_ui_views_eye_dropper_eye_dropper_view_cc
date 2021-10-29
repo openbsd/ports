@@ -1,11 +1,11 @@
-$OpenBSD: patch-chrome_browser_ui_views_eye_dropper_eye_dropper_view_cc,v 1.1 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_eye_dropper_eye_dropper_view_cc,v 1.2 2021/10/29 14:49:40 robert Exp $
 
 Index: chrome/browser/ui/views/eye_dropper/eye_dropper_view.cc
 --- chrome/browser/ui/views/eye_dropper/eye_dropper_view.cc.orig
 +++ chrome/browser/ui/views/eye_dropper/eye_dropper_view.cc
-@@ -104,7 +104,7 @@ EyeDropperView::EyeDropperView(content::RenderFrameHos
-   SetModalType(ui::MODAL_TYPE_WINDOW);
-   SetOwnedByWidget(false);
+@@ -154,7 +154,7 @@ EyeDropperView::EyeDropperView(content::RenderFrameHos
+   // EyeDropper/WidgetDelegate.
+   set_owned_by_client();
    SetPreferredSize(GetSize());
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

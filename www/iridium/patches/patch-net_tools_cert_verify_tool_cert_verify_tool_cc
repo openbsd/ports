@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_tools_cert_verify_tool_cert_verify_tool_cc,v 1.9 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-net_tools_cert_verify_tool_cert_verify_tool_cc,v 1.10 2021/10/29 14:49:41 robert Exp $
 
 Index: net/tools/cert_verify_tool/cert_verify_tool.cc
 --- net/tools/cert_verify_tool/cert_verify_tool.cc.orig
@@ -21,7 +21,7 @@ Index: net/tools/cert_verify_tool/cert_verify_tool.cc
    // On Linux, use a fixed ProxyConfigService, since the default one
    // depends on glib.
    //
-@@ -192,7 +192,7 @@ std::unique_ptr<CertVerifyImpl> CreateCertVerifyImplFr
+@@ -183,7 +183,7 @@ std::unique_ptr<CertVerifyImpl> CreateCertVerifyImplFr
      base::StringPiece impl_name,
      scoped_refptr<net::CertNetFetcher> cert_net_fetcher,
      bool use_system_roots) {

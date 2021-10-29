@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_paint_preview_common_proto_paint_preview_proto,v 1.1 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-components_paint_preview_common_proto_paint_preview_proto,v 1.2 2021/10/29 14:49:40 robert Exp $
 
 Index: components/paint_preview/common/proto/paint_preview.proto
 --- components/paint_preview/common/proto/paint_preview.proto.orig
 +++ components/paint_preview/common/proto/paint_preview.proto
-@@ -78,8 +78,8 @@ message PaintPreviewFrameProto {
+@@ -82,8 +82,8 @@ message PaintPreviewFrameProto {
  // Stores Chrome version.
  // NEXT_TAG = 5
  message ChromeVersionProto {

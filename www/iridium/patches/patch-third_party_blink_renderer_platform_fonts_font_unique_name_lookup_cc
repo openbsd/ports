@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_fonts_font_unique_name_lookup_cc,v 1.6 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_fonts_font_unique_name_lookup_cc,v 1.7 2021/10/29 14:49:42 robert Exp $
 
 Index: third_party/blink/renderer/platform/fonts/font_unique_name_lookup.cc
 --- third_party/blink/renderer/platform/fonts/font_unique_name_lookup.cc.orig
 +++ third_party/blink/renderer/platform/fonts/font_unique_name_lookup.cc
-@@ -8,7 +8,7 @@
+@@ -7,7 +7,7 @@
  #if defined(OS_ANDROID)
  #include "third_party/blink/public/mojom/font_unique_name_lookup/font_unique_name_lookup.mojom-blink.h"
  #include "third_party/blink/renderer/platform/fonts/android/font_unique_name_lookup_android.h"
@@ -12,7 +12,7 @@ Index: third_party/blink/renderer/platform/fonts/font_unique_name_lookup.cc
  #include "third_party/blink/renderer/platform/fonts/linux/font_unique_name_lookup_linux.h"
  #elif defined(OS_WIN)
  #include "third_party/blink/renderer/platform/fonts/win/font_unique_name_lookup_win.h"
-@@ -23,7 +23,7 @@ std::unique_ptr<FontUniqueNameLookup>
+@@ -22,7 +22,7 @@ std::unique_ptr<FontUniqueNameLookup>
  FontUniqueNameLookup::GetPlatformUniqueNameLookup() {
  #if defined(OS_ANDROID)
    return std::make_unique<FontUniqueNameLookupAndroid>();

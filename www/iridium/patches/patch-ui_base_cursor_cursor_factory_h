@@ -1,10 +1,10 @@
-$OpenBSD: patch-ui_base_cursor_cursor_factory_h,v 1.1 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-ui_base_cursor_cursor_factory_h,v 1.2 2021/10/29 14:49:42 robert Exp $
 
 Index: ui/base/cursor/cursor_factory.h
 --- ui/base/cursor/cursor_factory.h.orig
 +++ ui/base/cursor/cursor_factory.h
-@@ -73,7 +73,7 @@ class COMPONENT_EXPORT(UI_BASE_CURSOR_BASE) CursorFact
-   virtual void SetDeviceScaleFactor(float scale);
+@@ -81,7 +81,7 @@ class COMPONENT_EXPORT(UI_BASE_CURSOR_BASE) CursorFact
+   base::ObserverList<CursorFactoryObserver>::Unchecked observers_;
  };
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)

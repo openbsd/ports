@@ -1,14 +1,14 @@
-$OpenBSD: patch-chrome_common_extensions_command_cc,v 1.14 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_common_extensions_command_cc,v 1.15 2021/10/29 14:49:40 robert Exp $
 
 Index: chrome/common/extensions/command.cc
 --- chrome/common/extensions/command.cc.orig
 +++ chrome/common/extensions/command.cc
 @@ -294,7 +294,7 @@ std::string Command::CommandPlatform() {
    return values::kKeybindingPlatformMac;
- #elif BUILDFLAG(IS_CHROMEOS_ASH)
+ #elif BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_CHROMEOS_LACROS)
    return values::kKeybindingPlatformChromeOs;
--#elif defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#elif defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_BSD)
    return values::kKeybindingPlatformLinux;
  #else
    return "";

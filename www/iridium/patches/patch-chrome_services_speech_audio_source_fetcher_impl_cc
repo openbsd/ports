@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_services_speech_audio_source_fetcher_impl_cc,v 1.1 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_services_speech_audio_source_fetcher_impl_cc,v 1.2 2021/10/29 14:49:40 robert Exp $
 
 Index: chrome/services/speech/audio_source_fetcher_impl.cc
 --- chrome/services/speech/audio_source_fetcher_impl.cc.orig
 +++ chrome/services/speech/audio_source_fetcher_impl.cc
-@@ -65,7 +65,7 @@ void AudioSourceFetcherImpl::Start(
+@@ -68,7 +68,7 @@ void AudioSourceFetcherImpl::Start(
  
    // TODO(crbug.com/1185978): Check implementation / sandbox policy on Mac and
    // Windows.

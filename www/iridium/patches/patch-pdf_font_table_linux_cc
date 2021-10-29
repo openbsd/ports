@@ -1,0 +1,13 @@
+$OpenBSD: patch-pdf_font_table_linux_cc,v 1.1 2021/10/29 14:49:41 robert Exp $
+
+Index: pdf/font_table_linux.cc
+--- pdf/font_table_linux.cc.orig
++++ pdf/font_table_linux.cc
+@@ -5,6 +5,7 @@
+ #include "pdf/font_table_linux.h"
+ 
+ #include <sys/stat.h>
++#include <unistd.h>
+ 
+ #include <limits>
+ #include <memory>

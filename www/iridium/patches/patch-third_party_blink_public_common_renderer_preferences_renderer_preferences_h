@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_public_common_renderer_preferences_renderer_preferences_h,v 1.2 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-third_party_blink_public_common_renderer_preferences_renderer_preferences_h,v 1.3 2021/10/29 14:49:42 robert Exp $
 
 Index: third_party/blink/public/common/renderer_preferences/renderer_preferences.h
 --- third_party/blink/public/common/renderer_preferences/renderer_preferences.h.orig

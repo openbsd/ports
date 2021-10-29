@@ -1,23 +1,23 @@
-$OpenBSD: patch-chrome_browser_ui_views_apps_chrome_native_app_window_views_aura_cc,v 1.13 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_apps_chrome_native_app_window_views_aura_cc,v 1.14 2021/10/29 14:49:40 robert Exp $
 
 Index: chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc
 --- chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc.orig
 +++ chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc
-@@ -22,7 +22,7 @@
+@@ -20,7 +20,7 @@
+ #include "ui/gfx/image/image_skia.h"
+ #include "ui/views/widget/widget.h"
  
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
  #include "chrome/browser/shell_integration_linux.h"
  #endif
  
-@@ -61,7 +61,7 @@ void ChromeNativeAppWindowViewsAura::OnBeforeWidgetIni
+@@ -57,7 +57,7 @@ void ChromeNativeAppWindowViewsAura::OnBeforeWidgetIni
+     const AppWindow::CreateParams& create_params,
+     views::Widget::InitParams* init_params,
      views::Widget* widget) {
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
    std::string app_name =
        web_app::GenerateApplicationNameFromAppId(app_window()->extension_id());
    // Set up a custom WM_CLASS for app windows. This allows task switchers in

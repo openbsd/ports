@@ -60,20 +60,22 @@ struct ConnectParams {
   scoped_refptr<base::SequencedTaskRunner> blocking_task_runner;
   base::ScopedFD fd;
   bool allow_protected_reports;
+  bool allow_fido_reports;
 };
 
 void CreateConnection(std::unique_ptr<ConnectParams> params) {
   DCHECK(params->fd.is_valid());
   std::move(params->callback).Run(base::MakeRefCounted<HidConnectionFido>(
       std::move(params->device_info), std::move(params->fd),
-      std::move(params->blocking_task_runner), params->allow_protected_reports));
+      std::move(params->blocking_task_runner), params->allow_protected_reports,
+      params->allow_fido_reports));
 }
 
 void FinishOpen(std::unique_ptr<ConnectParams> params) {
   scoped_refptr<base::SequencedTaskRunner> task_runner = params->task_runner;
 
   task_runner->PostTask(FROM_HERE,
-                        base::Bind(&CreateConnection, base::Passed(&params)));
+                        base::BindOnce(&CreateConnection, std::move(params)));
 }
 
 bool terrible_ping_kludge(int fd, const std::string &path) {
@@ -242,7 +244,7 @@ public:
 
     task_runner_->PostTask(
         FROM_HERE,
-        base::Bind(&HidServiceFido::FirstEnumerationComplete, service_));
+        base::BindOnce(&HidServiceFido::FirstEnumerationComplete, service_));
   }
 
   void OnDeviceAdded(const fido_dev_info_t *di) {
@@ -259,14 +261,14 @@ public:
         device::mojom::HidBusType::kHIDBusTypeUSB, report_descriptor,
         device_node));
 
-    task_runner_->PostTask(FROM_HERE, base::Bind(&HidServiceFido::AddDevice,
+    task_runner_->PostTask(FROM_HERE, base::BindOnce(&HidServiceFido::AddDevice,
                                                  service_, device_info));
   }
 
   void OnDeviceRemoved(std::string device_node) {
     base::ScopedBlockingCall scoped_blocking_call(
         FROM_HERE, base::BlockingType::MAY_BLOCK);
-    task_runner_->PostTask(FROM_HERE, base::Bind(&HidServiceFido::RemoveDevice,
+    task_runner_->PostTask(FROM_HERE, base::BindOnce(&HidServiceFido::RemoveDevice,
                                                  service_, device_node));
   }
 
@@ -288,7 +290,7 @@ HidServiceFido::HidServiceFido()
                                weak_factory_.GetWeakPtr())) {
   blocking_task_runner_->PostTask(
       FROM_HERE,
-      base::Bind(&BlockingTaskHelper::Start, base::Unretained(helper_.get())));
+      base::BindOnce(&BlockingTaskHelper::Start, base::Unretained(helper_.get())));
 }
 
 HidServiceFido::~HidServiceFido() {
@@ -301,6 +303,7 @@ base::WeakPtr<HidService> HidServiceFido::GetWeakPtr() {
 
 void HidServiceFido::Connect(const std::string &device_guid,
                              bool allow_protected_reports,
+                             bool allow_fido_reports,
                              ConnectCallback callback) {
   DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
 
@@ -318,7 +321,7 @@ void HidServiceFido::Connect(const std::string &device_guid,
   scoped_refptr<base::SequencedTaskRunner> blocking_task_runner =
       params->blocking_task_runner;
   blocking_task_runner->PostTask(
-      FROM_HERE, base::Bind(&OpenOnBlockingThread, base::Passed(&params)));
+      FROM_HERE, base::BindOnce(&OpenOnBlockingThread, std::move(params)));
 }
 
 } // namespace device

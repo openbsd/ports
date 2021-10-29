@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.115 2021/10/04 14:55:17 robert Exp $
+# $OpenBSD: Makefile,v 1.116 2021/10/29 14:49:39 robert Exp $
 
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
-BROKEN-i386 =		zlib_inflate_chunk_simd fails ("would be inlined into function 'v_load8_dup' that is compiled without support for 'sse2'", etc)
 
 USE_WXNEEDED=		Yes
 
 .include <bsd.port.arch.mk>
 .if ${MACHINE_ARCH} == "i386"
-# override parallel
 DPB_PROPERTIES=		lonesome
 .else
 DPB_PROPERTIES=		parallel parallel2
@@ -15,8 +13,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Iridium browser
 
-V=			2021.06.91
-REVISION=		0
+V=			2021.10.95
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -40,10 +37,7 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES=		https://downloads.iridiumbrowser.de/source/ \
 			http://nerd.hu/distfiles/
 
-FIX_CRLF_FILES=	third_party/vulkan_memory_allocator/src/vk_mem_alloc.h
-
 MODULES=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 COMPILER =	base-clang ports-clang ports-gcc
 
@@ -81,6 +75,7 @@ WANTLIB += iconv lzma
 WANTLIB += fido2 cbor usbhid crypto
 WANTLIB += gbm xkbcommon
 WANTLIB += tiff xshmfence
+WANTLIB += lzo2
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -97,7 +92,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		sysutils/pciutils \
 		devel/ninja \
 		x11/gtk+3 \
-		x11/py-xcbgen \
+		x11/py-xcbgen${MODPY_FLAVOR} \
 		${MODGCC4_CPPDEP}
 LIB_DEPENDS=	devel/harfbuzz \
 		graphics/tiff \
@@ -150,8 +145,9 @@ GN_ARGS=	enable_nacl=false \
 		treat_warnings_as_errors=false \
 		clang_use_chrome_plugins=false \
 		use_allocator=\"none\" \
-		fieldtrial_testing_like_official_build=true \
-		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\"
+		disable_fieldtrial_testing_config=true \
+		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
+		fatal_linker_warnings=false
 
 # notyet
 GN_ARGS+=	use_vaapi=false
@@ -196,6 +192,7 @@ GN_ARGS+=	is_component_build=false
 
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
+	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python3
 .for _arch in x64 ia32 arm64
 .  for _dir in avcodec avformat avutil
 	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/lib${_dir} \
@@ -210,7 +207,6 @@ pre-configure:
 	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
 	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py ${WRKSRC}/v8/tools/run.py \
 		${WRKSRC}/tools/protoc_wrapper/protoc_wrapper.py \
-		${WRKSRC}/build/util/python2_action.py \
 		${WRKSRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py
 
 # Configuration consists of three steps:

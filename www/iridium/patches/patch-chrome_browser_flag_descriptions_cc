@@ -1,36 +1,27 @@
-$OpenBSD: patch-chrome_browser_flag_descriptions_cc,v 1.13 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_browser_flag_descriptions_cc,v 1.14 2021/10/29 14:49:39 robert Exp $
 
 Index: chrome/browser/flag_descriptions.cc
 --- chrome/browser/flag_descriptions.cc.orig
 +++ chrome/browser/flag_descriptions.cc
-@@ -5020,7 +5020,7 @@ const char kEnableNewBadgeOnMenuItemsDescription[] =
+@@ -5242,7 +5242,7 @@ const char kDownloadShelfWebUIDescription[] =
  // Random platform combinations -----------------------------------------------
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
--    defined(OS_CHROMEOS)
-+    defined(OS_CHROMEOS) || defined(OS_BSD)
+-    defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
++    defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
  
  const char kEnableOopPrintDriversName[] =
      "Enables Out-of-Process Printer Drivers";
-@@ -5056,7 +5056,7 @@ const char kRemoteCopyProgressNotificationDescription[
-         // defined(OS_CHROMEOS)
- 
- #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
--    defined(OS_CHROMEOS)
-+    defined(OS_CHROMEOS) || defined(OS_BSD)
- 
- const char kDirectManipulationStylusName[] = "Direct Manipulation Stylus";
- const char kDirectManipulationStylusDescription[] =
-@@ -5065,7 +5065,7 @@ const char kDirectManipulationStylusDescription[] =
+@@ -5268,7 +5268,7 @@ const char kSettingsLandingPageRedesignDescription[] =
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) ||
-         // defined(OS_CHROMEOS)
+         // defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
  
 -#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
  
  const char kCommanderName[] = "Commander";
  const char kCommanderDescription[] =
-@@ -5083,7 +5083,7 @@ const char kDesktopDetailedLanguageSettingsDescription
+@@ -5286,7 +5286,7 @@ const char kDesktopDetailedLanguageSettingsDescription
  
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
  
@@ -39,26 +30,8 @@ Index: chrome/browser/flag_descriptions.cc
  #if BUILDFLAG(USE_TCMALLOC)
  const char kDynamicTcmallocName[] = "Dynamic Tcmalloc Tuning";
  const char kDynamicTcmallocDescription[] =
-@@ -5109,7 +5109,7 @@ const char kWebShareDescription[] =
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
- #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
--    defined(OS_MAC)
-+    defined(OS_MAC) || defined(OS_BSD)
- const char kEnableEphemeralGuestProfilesOnDesktopName[] =
-     "Enable ephemeral Guest profiles on Desktop";
- const char kEnableEphemeralGuestProfilesOnDesktopDescription[] =
-@@ -5117,7 +5117,7 @@ const char kEnableEphemeralGuestProfilesOnDesktopDescr
- #endif  // defined(OS_WIN) || (defined(OS_LINUX) ||
-         // BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_MAC)
- 
--#if defined(OS_LINUX) && defined(USE_OZONE)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && defined(USE_OZONE)
- const char kUseOzonePlatformName[] = "Use ozone.";
- const char kUseOzonePlatformDescription[] =
-     "Use the Ozone/X11 platform implementation on X11.";
-@@ -5212,7 +5212,7 @@ const char kSendWebUIJavaScriptErrorReportsDescription
- #endif
+@@ -5390,7 +5390,7 @@ const char kElasticOverscrollDescription[] =
+ #endif  // defined(OS_WIN) || defined(OS_ANDROID)
  
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
 -    defined(OS_MAC)

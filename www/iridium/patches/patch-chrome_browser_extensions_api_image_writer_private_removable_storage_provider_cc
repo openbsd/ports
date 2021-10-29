@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_extensions_api_image_writer_private_removable_storage_provider_cc,v 1.8 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_api_image_writer_private_removable_storage_provider_cc,v 1.9 2021/10/29 14:49:39 robert Exp $
 
 Index: chrome/browser/extensions/api/image_writer_private/removable_storage_provider.cc
 --- chrome/browser/extensions/api/image_writer_private/removable_storage_provider.cc.orig

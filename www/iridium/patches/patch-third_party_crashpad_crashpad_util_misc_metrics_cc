@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_crashpad_crashpad_util_misc_metrics_cc,v 1.8 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-third_party_crashpad_crashpad_util_misc_metrics_cc,v 1.9 2021/10/29 14:49:42 robert Exp $
 
 Index: third_party/crashpad/crashpad/util/misc/metrics.cc
 --- third_party/crashpad/crashpad/util/misc/metrics.cc.orig

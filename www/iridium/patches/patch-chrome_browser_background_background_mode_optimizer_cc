@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_background_background_mode_optimizer_cc,v 1.8 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_browser_background_background_mode_optimizer_cc,v 1.9 2021/10/29 14:49:39 robert Exp $
 
 Index: chrome/browser/background/background_mode_optimizer.cc
 --- chrome/browser/background/background_mode_optimizer.cc.orig

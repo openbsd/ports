@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_gpu_buffer_validation_cc,v 1.4 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-media_gpu_buffer_validation_cc,v 1.5 2021/10/29 14:49:41 robert Exp $
 
 Index: media/gpu/buffer_validation.cc
 --- media/gpu/buffer_validation.cc.orig

@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_perfetto_src_base_event_fd_cc,v 1.1 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-third_party_perfetto_src_base_event_fd_cc,v 1.2 2021/10/29 14:49:42 robert Exp $
 
 Index: third_party/perfetto/src/base/event_fd.cc
 --- third_party/perfetto/src/base/event_fd.cc.orig

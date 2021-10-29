@@ -1,11 +1,11 @@
-$OpenBSD: patch-gpu_command_buffer_service_external_semaphore_cc,v 1.2 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-gpu_command_buffer_service_external_semaphore_cc,v 1.3 2021/10/29 14:49:41 robert Exp $
 
 Index: gpu/command_buffer/service/external_semaphore.cc
 --- gpu/command_buffer/service/external_semaphore.cc.orig
 +++ gpu/command_buffer/service/external_semaphore.cc
-@@ -39,7 +39,7 @@ GLuint ImportSemaphoreHandleToGLSemaphore(SemaphoreHan
-       },
-       base::Time::Now()));
+@@ -27,7 +27,7 @@ GLuint ImportSemaphoreHandleToGLSemaphore(SemaphoreHan
+   if (!handle.is_valid())
+     return 0;
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)

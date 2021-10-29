@@ -1,18 +1,33 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.20 2021/07/06 11:13:49 robert Exp $
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.21 2021/10/29 14:49:39 robert Exp $
 
 Index: build/config/compiler/BUILD.gn
 --- build/config/compiler/BUILD.gn.orig
 +++ build/config/compiler/BUILD.gn
-@@ -66,7 +66,7 @@ declare_args() {
-   # of binutils can cause linker warning.
-   # TODO(thakis): Set this to true unconditionally once lld/MachO bring-up
-   # is along far enough that it no longer emits linker warnings.
--  fatal_linker_warnings = !(is_apple && use_lld)
-+  fatal_linker_warnings = !(is_apple && use_lld && !is_openbsd)
+@@ -153,7 +153,7 @@ declare_args() {
  
-   # Build with C++ RTTI enabled. Chromium builds without RTTI by default,
-   # but some sanitizers are known to require it, like CFI diagnostics
-@@ -416,6 +416,7 @@ config("compiler") {
+   # Token limits may not be accurate for build configs not covered by the CQ,
+   # so only enable them by default for mainstream build configs.
+-  enable_wmax_tokens =
++  enable_wmax_tokens = !is_openbsd &&
+       !is_official_build && !(is_component_build && !is_debug) &&
+       ((is_mac && target_cpu == "x64" && !use_system_xcode) ||
+        (is_linux && !is_chromeos && target_cpu == "x64") ||
+@@ -239,12 +239,8 @@ config("default_include_dirs") {
+ # Compiler instrumentation can introduce dependencies in DSOs to symbols in
+ # the executable they are loaded into, so they are unresolved at link-time.
+ config("no_unresolved_symbols") {
+-  if (!using_sanitizer &&
+-      (is_linux || is_chromeos || is_android || is_fuchsia)) {
+-    ldflags = [
+-      "-Wl,-z,defs",
+-      "-Wl,--as-needed",
+-    ]
++  if (current_cpu == "x86" && is_openbsd) {
++    ldflags = [ "-Wl,-z,notext" ]
+   }
+ }
+ 
+@@ -438,6 +434,7 @@ config("compiler") {
      }
  
      ldflags += [
@@ -20,23 +35,7 @@ Index: build/config/compiler/BUILD.gn
        "-Wl,-z,noexecstack",
        "-Wl,-z,relro",
      ]
-@@ -424,13 +425,8 @@ config("compiler") {
-       ldflags += [ "-Wl,-z,now" ]
-     }
- 
--    # Compiler instrumentation can introduce dependencies in DSOs to symbols in
--    # the executable they are loaded into, so they are unresolved at link-time.
--    if (!using_sanitizer) {
--      ldflags += [
--        "-Wl,-z,defs",
--        "-Wl,--as-needed",
--      ]
-+    if (current_cpu == "x86" && is_openbsd) {
-+      ldflags += [ "-Wl,-z,notext" ]
-     }
-   }
- 
-@@ -815,7 +811,7 @@ config("compiler_cpu_abi") {
+@@ -866,7 +863,7 @@ config("compiler_cpu_abi") {
          ]
        }
      } else if (current_cpu == "arm") {
@@ -45,7 +44,7 @@ Index: build/config/compiler/BUILD.gn
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
        }
-@@ -829,7 +825,7 @@ config("compiler_cpu_abi") {
+@@ -880,7 +877,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -54,10 +53,10 @@ Index: build/config/compiler/BUILD.gn
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1566,11 +1562,6 @@ config("default_warnings") {
-         # Flags NaCl (Clang 3.7) and Xcode 9.2 (Clang clang-900.0.39.2) do not
-         # recognize.
+@@ -1587,11 +1584,6 @@ config("default_warnings") {
          cflags += [
+           "-Wenum-compare-conditional",
+ 
 -          # An ABI compat warning we don't care about, https://crbug.com/1102157
 -          # TODO(thakis): Push this to the (few) targets that need it,
 -          # instead of having a global flag.
@@ -66,48 +65,34 @@ Index: build/config/compiler/BUILD.gn
            # Ignore warnings about MSVC optimization pragmas.
            # TODO(thakis): Only for no_chromium_code? http://crbug.com/912662
            "-Wno-ignored-pragma-optimize",
-@@ -1586,9 +1577,6 @@ config("default_warnings") {
- 
-           # TODO(https://crbug.com/1028110): Evaluate and possible enable.
-           "-Wno-deprecated-copy",
--
--          # TODO(https://crbug.com/1050281): Clean up, enable.
--          "-Wno-non-c-typedef-for-linkage",
+@@ -1601,7 +1593,7 @@ config("default_warnings") {
          ]
  
-         cflags_c += [
-@@ -1596,12 +1584,6 @@ config("default_warnings") {
-           "-Wno-implicit-fallthrough",
-         ]
- 
--        if (enable_wmax_tokens) {
--          cflags += [ "-Wmax-tokens" ]
--        } else {
--          # TODO(https://crbug.com/1049569): Remove after Clang 87b235db.
--          cflags += [ "-Wno-max-tokens" ]
--        }
-       }
-     }
-   }
-@@ -1719,7 +1701,7 @@ config("no_chromium_code") {
-       # suppressing them individually, we just blanket suppress them here.
-       "-Wno-unused-variable",
+         # NaCl does not support flags from ToT.
+-        if (!is_nacl) {
++        if (!is_nacl && !is_openbsd) {
+           cflags += [
+             # TODO(https://crbug.com/1203071): Clean up and enable.
+             "-Wno-unused-but-set-parameter",
+@@ -1743,7 +1735,7 @@ config("no_chromium_code") {
+       # third-party libraries.
+       "-Wno-c++11-narrowing",
      ]
 -    if (!is_nacl && (current_toolchain == host_toolchain || !use_xcode_clang)) {
 +    if (!is_nacl && (current_toolchain == host_toolchain || !use_xcode_clang) && !is_openbsd) {
        cflags += [
-         # TODO(https://crbug.com/1031169): Clean up and enable.
+         # TODO(https://crbug.com/1202159): Clean up and enable.
          "-Wno-misleading-indentation",
-@@ -1797,7 +1779,7 @@ config("export_dynamic") {
- config("thin_archive") {
-   # The macOS and iOS default linker ld64 does not support reading thin
+@@ -1823,7 +1815,7 @@ config("thin_archive") {
    # archives.
--  if ((is_posix && !is_nacl && (!is_apple || use_lld)) || is_fuchsia) {
-+  if ((is_posix && !is_nacl && (!is_apple || use_lld) && !is_openbsd) || is_fuchsia) {
+   # TODO(crbug.com/1221615): Enable on is_apple if use_lld once that no longer
+   # confuses lldb.
+-  if ((is_posix && !is_nacl && !is_apple) || is_fuchsia) {
++  if ((is_posix && !is_nacl && !is_apple && !is_openbsd) || is_fuchsia) {
      arflags = [ "-T" ]
    } else if (is_win && use_lld) {
      arflags = [ "/llvmlibthin" ]
-@@ -2033,8 +2015,7 @@ config("default_stack_frames") {
+@@ -2020,8 +2012,7 @@ config("default_stack_frames") {
  }
  
  # Default "optimization on" config.
@@ -117,7 +102,7 @@ Index: build/config/compiler/BUILD.gn
    if (is_win) {
      if (chrome_pgo_phase != 2) {
        # Favor size over speed, /O1 must be before the common flags.
-@@ -2069,8 +2050,7 @@ config("xoptimize") {
+@@ -2061,8 +2052,7 @@ config("xoptimize") {
  }
  
  # Turn off optimizations.
@@ -127,7 +112,7 @@ Index: build/config/compiler/BUILD.gn
    if (is_win) {
      cflags = [
        "/Od",  # Disable optimization.
-@@ -2110,8 +2090,7 @@ config("xno_optimize") {
+@@ -2102,8 +2092,7 @@ config("xno_optimize") {
  # Turns up the optimization level. On Windows, this implies whole program
  # optimization and link-time code generation which is very expensive and should
  # be used sparingly.
@@ -137,7 +122,7 @@ Index: build/config/compiler/BUILD.gn
    if (is_nacl && is_nacl_irt) {
      # The NaCl IRT is a special case and always wants its own config.
      # Various components do:
-@@ -2143,8 +2122,7 @@ config("xoptimize_max") {
+@@ -2136,8 +2125,7 @@ config("xoptimize_max") {
  #
  # TODO(crbug.com/621335) - rework how all of these configs are related
  # so that we don't need this disclaimer.
@@ -147,7 +132,7 @@ Index: build/config/compiler/BUILD.gn
    if (is_nacl && is_nacl_irt) {
      # The NaCl IRT is a special case and always wants its own config.
      # Various components do:
-@@ -2169,8 +2147,7 @@ config("xoptimize_speed") {
+@@ -2163,8 +2151,7 @@ config("xoptimize_speed") {
    }
  }
  
@@ -155,9 +140,9 @@ Index: build/config/compiler/BUILD.gn
 -config("xoptimize_fuzzing") {
 +config("optimize_fuzzing") {
    cflags = [ "-O1" ] + common_optimize_on_cflags
+   rustflags = [ "-Copt-level=1" ]
    ldflags = common_optimize_on_ldflags
-   visibility = [ ":default_optimization" ]
-@@ -2235,7 +2212,7 @@ config("afdo_optimize_size") {
+@@ -2230,7 +2217,7 @@ config("afdo_optimize_size") {
  # between //base/allocator:tcmalloc and AFDO on GCC), so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -166,7 +151,7 @@ Index: build/config/compiler/BUILD.gn
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2251,7 +2228,7 @@ config("afdo") {
+@@ -2246,7 +2233,7 @@ config("afdo") {
        cflags += [ "-fprofile-sample-use=${rebased_clang_sample_profile}" ]
        inputs = [ _clang_sample_profile ]
      }
@@ -175,7 +160,7 @@ Index: build/config/compiler/BUILD.gn
      cflags = [ "-fauto-profile=${auto_profile_path}" ]
      inputs = [ auto_profile_path ]
    }
-@@ -2289,8 +2266,7 @@ config("win_pdbaltpath") {
+@@ -2284,8 +2271,7 @@ config("win_pdbaltpath") {
  }
  
  # Full symbols.
@@ -185,16 +170,16 @@ Index: build/config/compiler/BUILD.gn
    if (is_win) {
      if (is_clang) {
        cflags = [ "/Z7" ]  # Debug information in the .obj files.
-@@ -2308,7 +2284,7 @@ config("xsymbols") {
-     # All configs using /DEBUG should include this:
-     configs = [ ":win_pdbaltpath" ]
+@@ -2376,7 +2362,7 @@ config("xsymbols") {
+     }
+   }
  
--    if (is_clang) {
-+    if (is_clang && !is_openbsd) {
-       # Use constructor debug mode. This option reduces debug info more than
-       # -fno-standalone-debug by emitting class type information only when
-       # constructors are emitted.
-@@ -2393,8 +2369,7 @@ config("xsymbols") {
+-  if (is_clang && !is_nacl && !use_xcode_clang) {
++  if (is_clang && !is_nacl && !use_xcode_clang && !is_openbsd) {
+     if (is_apple) {
+       # TODO(https://crbug.com/1050118): Investigate missing debug info on mac.
+       # Make sure we don't use constructor homing on mac.
+@@ -2399,8 +2385,7 @@ config("xsymbols") {
  # Minimal symbols.
  # This config guarantees to hold symbol for stack trace which are shown to user
  # when crash happens in unittests running on buildbot.
@@ -204,7 +189,7 @@ Index: build/config/compiler/BUILD.gn
    if (is_win) {
      # Functions, files, and line tables only.
      cflags = []
-@@ -2453,8 +2428,7 @@ config("xminimal_symbols") {
+@@ -2472,8 +2457,7 @@ config("xminimal_symbols") {
  # This configuration contains function names only. That is, the compiler is
  # told to not generate debug information and the linker then just puts function
  # names in the final debug information.

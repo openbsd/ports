@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_base_webui_web_ui_util_cc,v 1.17 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-ui_base_webui_web_ui_util_cc,v 1.18 2021/10/29 14:49:42 robert Exp $
 
 Index: ui/base/webui/web_ui_util.cc
 --- ui/base/webui/web_ui_util.cc.orig
 +++ ui/base/webui/web_ui_util.cc
-@@ -224,7 +224,7 @@ std::string GetFontFamily() {
+@@ -221,7 +221,7 @@ std::string GetFontFamily() {
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

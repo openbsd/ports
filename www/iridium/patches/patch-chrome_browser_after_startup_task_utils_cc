@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_after_startup_task_utils_cc,v 1.15 2021/07/06 11:13:49 robert Exp $
+$OpenBSD: patch-chrome_browser_after_startup_task_utils_cc,v 1.16 2021/10/29 14:49:39 robert Exp $
 
 Index: chrome/browser/after_startup_task_utils.cc
 --- chrome/browser/after_startup_task_utils.cc.orig
 +++ chrome/browser/after_startup_task_utils.cc
-@@ -35,7 +35,7 @@
+@@ -22,7 +22,7 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -12,16 +12,16 @@ Index: chrome/browser/after_startup_task_utils.cc
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
  
-@@ -114,7 +114,7 @@ void QueueTask(std::unique_ptr<AfterStartupTask> queue
- void SetBrowserStartupIsComplete() {
-   DCHECK_CURRENTLY_ON(BrowserThread::UI);
+@@ -104,7 +104,7 @@ void SetBrowserStartupIsComplete() {
+ 
+   g_startup_complete_flag.Get().Set();
  #if defined(OS_MAC) || defined(OS_WIN) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
    // Process::Current().CreationTime() is not available on all platforms.
    const base::Time process_creation_time =
        base::Process::Current().CreationTime();
-@@ -134,7 +134,7 @@ void SetBrowserStartupIsComplete() {
+@@ -123,7 +123,7 @@ void SetBrowserStartupIsComplete() {
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

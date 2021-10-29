@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_allocator_partition_allocator_partition_alloc_config_h,v 1.1 2021/07/06 11:13:49 robert Exp $
+$OpenBSD: patch-base_allocator_partition_allocator_partition_alloc_config_h,v 1.2 2021/10/29 14:49:39 robert Exp $
 
 Index: base/allocator/partition_allocator/partition_alloc_config.h
 --- base/allocator/partition_allocator/partition_alloc_config.h.orig
 +++ base/allocator/partition_allocator/partition_alloc_config.h
-@@ -30,7 +30,7 @@ static_assert(sizeof(void*) != 8, "");
+@@ -57,7 +57,7 @@ static_assert(sizeof(void*) != 8, "");
  
  // POSIX is not only UNIX, e.g. macOS and other OSes. We do use Linux-specific
  // features such as futex(2).

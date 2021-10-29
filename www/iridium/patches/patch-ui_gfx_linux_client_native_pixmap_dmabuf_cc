@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_linux_client_native_pixmap_dmabuf_cc,v 1.9 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-ui_gfx_linux_client_native_pixmap_dmabuf_cc,v 1.10 2021/10/29 14:49:42 robert Exp $
 
 Index: ui/gfx/linux/client_native_pixmap_dmabuf.cc
 --- ui/gfx/linux/client_native_pixmap_dmabuf.cc.orig
@@ -13,7 +13,7 @@ Index: ui/gfx/linux/client_native_pixmap_dmabuf.cc
  #include <stddef.h>
  #include <sys/ioctl.h>
  #include <sys/mman.h>
-@@ -28,11 +30,7 @@
+@@ -27,11 +29,7 @@
  #include "ui/gfx/buffer_format_util.h"
  #include "ui/gfx/switches.h"
  

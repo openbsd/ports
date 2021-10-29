@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_abseil-cpp_absl_base_config_h,v 1.2 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-third_party_abseil-cpp_absl_base_config_h,v 1.3 2021/10/29 14:49:42 robert Exp $
 
 Index: third_party/abseil-cpp/absl/base/config.h
 --- third_party/abseil-cpp/absl/base/config.h.orig
 +++ third_party/abseil-cpp/absl/base/config.h
-@@ -171,7 +171,7 @@ static_assert(ABSL_INTERNAL_INLINE_NAMESPACE_STR[0] !=
+@@ -216,7 +216,7 @@ static_assert(ABSL_INTERNAL_INLINE_NAMESPACE_STR[0] !=
  // against libstdc++ with _GLIBCXX_HAVE_TLS defined.
  #ifdef ABSL_HAVE_TLS
  #error ABSL_HAVE_TLS cannot be directly set
@@ -12,7 +12,7 @@ Index: third_party/abseil-cpp/absl/base/config.h
  #define ABSL_HAVE_TLS 1
  #endif
  
-@@ -372,7 +372,7 @@ static_assert(ABSL_INTERNAL_INLINE_NAMESPACE_STR[0] !=
+@@ -411,7 +411,7 @@ static_assert(ABSL_INTERNAL_INLINE_NAMESPACE_STR[0] !=
  #elif defined(__linux__) || defined(__APPLE__) || defined(__FreeBSD__) ||   \
      defined(__ros__) || defined(__native_client__) || defined(__asmjs__) || \
      defined(__wasm__) || defined(__Fuchsia__) || defined(__sun) || \
@@ -21,7 +21,7 @@ Index: third_party/abseil-cpp/absl/base/config.h
  #define ABSL_HAVE_MMAP 1
  #endif
  
-@@ -383,7 +383,7 @@ static_assert(ABSL_INTERNAL_INLINE_NAMESPACE_STR[0] !=
+@@ -422,7 +422,7 @@ static_assert(ABSL_INTERNAL_INLINE_NAMESPACE_STR[0] !=
  #ifdef ABSL_HAVE_PTHREAD_GETSCHEDPARAM
  #error ABSL_HAVE_PTHREAD_GETSCHEDPARAM cannot be directly set
  #elif defined(__linux__) || defined(__APPLE__) || defined(__FreeBSD__) || \
@@ -30,7 +30,7 @@ Index: third_party/abseil-cpp/absl/base/config.h
  #define ABSL_HAVE_PTHREAD_GETSCHEDPARAM 1
  #endif
  
-@@ -402,7 +402,7 @@ static_assert(ABSL_INTERNAL_INLINE_NAMESPACE_STR[0] !=
+@@ -441,7 +441,7 @@ static_assert(ABSL_INTERNAL_INLINE_NAMESPACE_STR[0] !=
  // POSIX.1-2001.
  #ifdef ABSL_HAVE_SCHED_YIELD
  #error ABSL_HAVE_SCHED_YIELD cannot be directly set
@@ -39,7 +39,7 @@ Index: third_party/abseil-cpp/absl/base/config.h
  #define ABSL_HAVE_SCHED_YIELD 1
  #endif
  
-@@ -417,7 +417,7 @@ static_assert(ABSL_INTERNAL_INLINE_NAMESPACE_STR[0] !=
+@@ -456,7 +456,7 @@ static_assert(ABSL_INTERNAL_INLINE_NAMESPACE_STR[0] !=
  // platforms.
  #ifdef ABSL_HAVE_SEMAPHORE_H
  #error ABSL_HAVE_SEMAPHORE_H cannot be directly set

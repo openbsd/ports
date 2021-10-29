@@ -1,8 +1,8 @@
-$OpenBSD: patch-third_party_skia_src_ports_SkOSFile_stdio_cpp,v 1.13 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-third_party_skia_src_ports_SkOSFile_stdio_cpp,v 1.14 2021/10/29 14:49:42 robert Exp $
 Index: third_party/skia/src/ports/SkOSFile_stdio.cpp
 --- third_party/skia/src/ports/SkOSFile_stdio.cpp.orig
 +++ third_party/skia/src/ports/SkOSFile_stdio.cpp
-@@ -132,7 +132,7 @@ void sk_fflush(FILE* f) {
+@@ -130,7 +130,7 @@ void sk_fflush(FILE* f) {
  
  void sk_fsync(FILE* f) {
  #if !defined(_WIN32) && !defined(SK_BUILD_FOR_ANDROID) && !defined(__UCLIBC__) \

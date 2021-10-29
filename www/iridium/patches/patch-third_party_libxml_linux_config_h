@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_libxml_linux_config_h,v 1.7 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-third_party_libxml_linux_config_h,v 1.8 2021/10/29 14:49:42 robert Exp $
 
 Index: third_party/libxml/linux/config.h
 --- third_party/libxml/linux/config.h.orig

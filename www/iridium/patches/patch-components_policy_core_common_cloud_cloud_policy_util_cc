@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_policy_core_common_cloud_cloud_policy_util_cc,v 1.6 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-components_policy_core_common_cloud_cloud_policy_util_cc,v 1.7 2021/10/29 14:49:40 robert Exp $
 
 Index: components/policy/core/common/cloud/cloud_policy_util.cc
 --- components/policy/core/common/cloud/cloud_policy_util.cc.orig
@@ -12,34 +12,34 @@ Index: components/policy/core/common/cloud/cloud_policy_util.cc
  #include <pwd.h>
  #include <sys/types.h>
  #include <unistd.h>
-@@ -35,7 +35,7 @@
+@@ -33,7 +33,7 @@
+ #import <SystemConfiguration/SCDynamicStoreCopySpecific.h>
+ #endif
  
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
 -#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
 +#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  #include <limits.h>  // For HOST_NAME_MAX
  #endif
  
-@@ -71,7 +71,7 @@
+@@ -67,7 +67,7 @@
+ #include "base/system/sys_info.h"
+ #endif
  
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
 -#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
 +#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  #include "base/system/sys_info.h"
  #endif
  
-@@ -103,7 +103,7 @@ std::string GetDeviceModel() {
+@@ -97,7 +97,7 @@ std::string GetDeviceModel() {
+ }
+ 
  std::string GetMachineName() {
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
 -#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
 +#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
    char hostname[HOST_NAME_MAX];
    if (gethostname(hostname, HOST_NAME_MAX) == 0)  // Success.
      return hostname;
-@@ -156,7 +156,7 @@ std::string GetMachineName() {
+@@ -152,7 +152,7 @@ std::string GetMachineName() {
  }
  
  std::string GetOSVersion() {
@@ -48,12 +48,12 @@ Index: components/policy/core/common/cloud/cloud_policy_util.cc
    return base::SysInfo::OperatingSystemVersion();
  #elif defined(OS_WIN)
    base::win::OSInfo::VersionNumber version_number =
-@@ -179,7 +179,7 @@ std::string GetOSArchitecture() {
+@@ -177,7 +177,7 @@ std::string GetOSArchitecture() {
  }
  
  std::string GetOSUsername() {
--#if (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_APPLE)
-+#if (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_APPLE) || defined(OS_BSD)
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_APPLE)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_APPLE) || defined(OS_BSD)
    struct passwd* creds = getpwuid(getuid());
    if (!creds || !creds->pw_name)
      return std::string();

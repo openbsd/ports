@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_webrtc_rtc_base_platform_thread_types_cc,v 1.7 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-third_party_webrtc_rtc_base_platform_thread_types_cc,v 1.8 2021/10/29 14:49:42 robert Exp $
 
 Index: third_party/webrtc/rtc_base/platform_thread_types.cc
 --- third_party/webrtc/rtc_base/platform_thread_types.cc.orig

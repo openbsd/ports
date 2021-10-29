@@ -1,17 +1,23 @@
-$OpenBSD: patch-chrome_browser_ui_views_first_run_dialog_cc,v 1.18 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_first_run_dialog_cc,v 1.19 2021/10/29 14:49:40 robert Exp $
 
 Index: chrome/browser/ui/views/first_run_dialog.cc
 --- chrome/browser/ui/views/first_run_dialog.cc.orig
 +++ chrome/browser/ui/views/first_run_dialog.cc
-@@ -115,9 +115,11 @@ void FirstRunDialog::Done() {
- bool FirstRunDialog::Accept() {
-   GetWidget()->Hide();
+@@ -37,7 +37,7 @@
  
-+#if !defined(OS_BSD)
-   ChangeMetricsReportingStateWithReply(
-       report_crashes_->GetChecked(),
-       base::BindOnce(&InitCrashReporterIfEnabled));
-+#endif
+ namespace {
  
-   if (make_default_->GetChecked())
-     shell_integration::SetAsDefaultBrowser();
+-#if !defined(OS_MAC)
++#if !defined(OS_MAC) && !defined(OS_BSD)
+ void InitCrashReporterIfEnabled(bool enabled) {
+   if (!crash_reporter::IsCrashpadEnabled() && enabled)
+     breakpad::InitCrashReporter(std::string());
+@@ -125,7 +125,7 @@ bool FirstRunDialog::Accept() {
+ 
+ #if defined(OS_MAC)
+   ChangeMetricsReportingState(report_crashes_->GetChecked());
+-#else
++#elif !defined(OS_BSD)
+ #if BUILDFLAG(IS_CHROMEOS_ASH)
+   metrics::structured::NeutrinoDevicesLog(
+       metrics::structured::NeutrinoDevicesLocation::kFirstRunDialog);

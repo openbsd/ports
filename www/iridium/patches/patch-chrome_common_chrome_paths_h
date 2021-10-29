@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_chrome_paths_h,v 1.21 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_paths_h,v 1.22 2021/10/29 14:49:40 robert Exp $
 
 Index: chrome/common/chrome_paths.h
 --- chrome/common/chrome_paths.h.orig
 +++ chrome/common/chrome_paths.h
-@@ -54,7 +54,7 @@ enum {
+@@ -55,7 +55,7 @@ enum {
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.
  #if BUILDFLAG(IS_CHROMEOS_ASH) ||                            \
@@ -12,7 +12,7 @@ Index: chrome/common/chrome_paths.h
       BUILDFLAG(CHROMIUM_BRANDING)) ||                        \
      defined(OS_MAC)
    DIR_USER_EXTERNAL_EXTENSIONS,  // Directory for per-user external extensions
-@@ -64,7 +64,7 @@ enum {
+@@ -65,7 +65,7 @@ enum {
                                   // create it.
  #endif
  
@@ -21,7 +21,7 @@ Index: chrome/common/chrome_paths.h
    DIR_STANDALONE_EXTERNAL_EXTENSIONS,  // Directory for 'per-extension'
                                         // definition manifest files that
                                         // describe extensions which are to be
-@@ -111,7 +111,7 @@ enum {
+@@ -109,7 +109,7 @@ enum {
    DIR_CHROMEOS_CUSTOM_WALLPAPERS,     // Directory where custom wallpapers
                                        // reside.
  #endif

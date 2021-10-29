@@ -1,9 +1,18 @@
-$OpenBSD: patch-third_party_swiftshader_third_party_llvm-subzero_build_Linux_include_llvm_Config_config_h,v 1.9 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-third_party_swiftshader_third_party_llvm-subzero_build_Linux_include_llvm_Config_config_h,v 1.10 2021/10/29 14:49:42 robert Exp $
 
 Index: third_party/swiftshader/third_party/llvm-subzero/build/Linux/include/llvm/Config/config.h
 --- third_party/swiftshader/third_party/llvm-subzero/build/Linux/include/llvm/Config/config.h.orig
 +++ third_party/swiftshader/third_party/llvm-subzero/build/Linux/include/llvm/Config/config.h
-@@ -24,7 +24,7 @@
+@@ -5,8 +5,6 @@
+ #include "llvm/Config/llvm-config.h"
+ 
+ /* For detecting __GLIBC__ usage */
+-#include <features.h>
+-
+ /* Bug report URL. */
+ #define BUG_REPORT_URL "http://llvm.org/bugs/"
+ 
+@@ -27,7 +25,7 @@
  
  /* Define to 1 if you have the declaration of `arc4random', and to 0 if you
     don't. */
@@ -12,30 +21,30 @@ Index: third_party/swiftshader/third_party/llvm-subzero/build/Linux/include/llvm
  
  /* Define to 1 if you have the declaration of `FE_ALL_EXCEPT', and to 0 if you
     don't. */
-@@ -121,7 +121,7 @@
+@@ -124,7 +122,7 @@
  #define HAVE_LINK_H 1
  
  /* Define to 1 if you have the `lseek64' function. */
 -#define HAVE_LSEEK64 1
-+/* #undef HAVE_LSEEK64 */
++/* #define HAVE_LSEEK64 */
  
  /* Define to 1 if you have the <mach/mach.h> header file. */
  /* #undef HAVE_MACH_MACH_H */
-@@ -130,7 +130,7 @@
+@@ -133,7 +131,7 @@
  /* #undef HAVE_MALLCTL */
  
  /* Define to 1 if you have the `mallinfo' function. */
 -#define HAVE_MALLINFO 1
-+/* #undef HAVE_MALLINFO */
++/* #define HAVE_MALLINFO */
  
- /* Define to 1 if you have the <malloc.h> header file. */
- #define HAVE_MALLOC_H 1
-@@ -154,7 +154,7 @@
+ /* Some projects using SwiftShader bypass cmake (eg Chromium via gn) */
+ /* so we need to check glibc version for the new API to be safe */
+@@ -163,7 +161,7 @@
  /* #undef HAVE_NDIR_H */
  
  /* Define to 1 if you have the `posix_fallocate' function. */
 -#define HAVE_POSIX_FALLOCATE 1
-+/* #undef HAVE_POSIX_FALLOCATE */
++/* #define HAVE_POSIX_FALLOCATE */
  
  /* Define to 1 if you have the `posix_spawn' function. */
  #define HAVE_POSIX_SPAWN 1

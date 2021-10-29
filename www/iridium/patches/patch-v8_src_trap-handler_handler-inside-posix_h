@@ -1,9 +1,9 @@
-$OpenBSD: patch-v8_src_trap-handler_handler-inside-posix_h,v 1.6 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-v8_src_trap-handler_handler-inside-posix_h,v 1.7 2021/10/29 14:49:43 robert Exp $
 
 Index: v8/src/trap-handler/handler-inside-posix.h
 --- v8/src/trap-handler/handler-inside-posix.h.orig
 +++ v8/src/trap-handler/handler-inside-posix.h
-@@ -12,7 +12,7 @@ namespace v8 {
+@@ -13,7 +13,7 @@ namespace v8 {
  namespace internal {
  namespace trap_handler {
  

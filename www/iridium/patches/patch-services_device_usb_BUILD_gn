@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_device_usb_BUILD_gn,v 1.5 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-services_device_usb_BUILD_gn,v 1.6 2021/10/29 14:49:42 robert Exp $
 
 Index: services/device/usb/BUILD.gn
 --- services/device/usb/BUILD.gn.orig

@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_angle_src_libANGLE_renderer_gl_glx_FunctionsGLX_cpp,v 1.3 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-third_party_angle_src_libANGLE_renderer_gl_glx_FunctionsGLX_cpp,v 1.4 2021/10/29 14:49:42 robert Exp $
 
 Index: third_party/angle/src/libANGLE/renderer/gl/glx/FunctionsGLX.cpp
 --- third_party/angle/src/libANGLE/renderer/gl/glx/FunctionsGLX.cpp.orig

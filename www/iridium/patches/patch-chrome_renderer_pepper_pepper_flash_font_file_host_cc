@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_renderer_pepper_pepper_flash_font_file_host_cc,v 1.7 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_renderer_pepper_pepper_flash_font_file_host_cc,v 1.8 2021/10/29 14:49:40 robert Exp $
 
 Index: chrome/renderer/pepper/pepper_flash_font_file_host.cc
 --- chrome/renderer/pepper/pepper_flash_font_file_host.cc.orig
@@ -10,7 +10,7 @@ Index: chrome/renderer/pepper/pepper_flash_font_file_host.cc
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_OPENBSD)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  #include "components/services/font/public/cpp/font_loader.h"
- #include "content/public/common/common_sandbox_support_linux.h"
+ #include "pdf/font_table_linux.h"
  #elif defined(OS_WIN)
 @@ -30,7 +30,7 @@ PepperFlashFontFileHost::PepperFlashFontFileHost(
      const ppapi::proxy::SerializedFontDescription& description,
@@ -28,5 +28,5 @@ Index: chrome/renderer/pepper/pepper_flash_font_file_host.cc
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    if (font_file_.IsValid()) {
-     result = content::GetFontTable(font_file_.GetPlatformFile(), table,
-                                    0 /* offset */,
+     result =
+         pdf::GetFontTable(font_file_.GetPlatformFile(), table, /*offset=*/0,

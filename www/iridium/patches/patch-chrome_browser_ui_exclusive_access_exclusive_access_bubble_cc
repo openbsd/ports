@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_exclusive_access_exclusive_access_bubble_cc,v 1.13 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_exclusive_access_exclusive_access_bubble_cc,v 1.14 2021/10/29 14:49:40 robert Exp $
 
 Index: chrome/browser/ui/exclusive_access/exclusive_access_bubble.cc
 --- chrome/browser/ui/exclusive_access/exclusive_access_bubble.cc.orig

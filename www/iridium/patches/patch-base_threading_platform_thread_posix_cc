@@ -1,26 +1,26 @@
-$OpenBSD: patch-base_threading_platform_thread_posix_cc,v 1.14 2021/07/06 11:13:49 robert Exp $
+$OpenBSD: patch-base_threading_platform_thread_posix_cc,v 1.15 2021/10/29 14:49:39 robert Exp $
 
 XXX pledge(2)
 
 Index: base/threading/platform_thread_posix.cc
 --- base/threading/platform_thread_posix.cc.orig
 +++ base/threading/platform_thread_posix.cc
-@@ -66,7 +66,7 @@ void* ThreadFunc(void* params) {
+@@ -71,7 +71,7 @@ void* ThreadFunc(void* params) {
      if (!thread_params->joinable)
        base::ThreadRestrictions::SetSingletonAllowed(false);
  
 -#if !defined(OS_NACL)
 +#if !defined(OS_NACL) && !defined(OS_BSD)
- 
- #if defined(OS_APPLE)
-     PlatformThread::SetCurrentThreadRealtimePeriodValue(
-@@ -333,6 +333,9 @@ void PlatformThread::SetCurrentThreadPriorityImpl(Thre
- ThreadPriority PlatformThread::GetCurrentThreadPriority() {
+ #if BUILDFLAG(USE_PARTITION_ALLOC_AS_MALLOC)
+     internal::PCScan::NotifyThreadCreated(internal::GetStackPointer());
+ #endif
+@@ -327,6 +327,9 @@ bool PlatformThread::CanIncreaseThreadPriority(ThreadP
+ // static
+ void PlatformThread::SetCurrentThreadPriorityImpl(ThreadPriority priority) {
  #if defined(OS_NACL)
-   NOTIMPLEMENTED();
-+  return ThreadPriority::NORMAL;
++  NOTIMPLEMENTED();
 +// avoid pledge(2) violation
 +#elif defined(OS_BSD)
-   return ThreadPriority::NORMAL;
+   NOTIMPLEMENTED();
  #else
-   // Mirrors SetCurrentThreadPriority()'s implementation.
+   if (internal::SetCurrentThreadPriorityForPlatform(priority))

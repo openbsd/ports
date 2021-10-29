@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_os_crypt_keyring_util_linux_cc,v 1.8 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-components_os_crypt_keyring_util_linux_cc,v 1.9 2021/10/29 14:49:40 robert Exp $
 
 Index: components/os_crypt/keyring_util_linux.cc
 --- components/os_crypt/keyring_util_linux.cc.orig

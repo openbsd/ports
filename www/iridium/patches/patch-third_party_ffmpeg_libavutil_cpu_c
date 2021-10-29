@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_ffmpeg_libavutil_cpu_c,v 1.13 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-third_party_ffmpeg_libavutil_cpu_c,v 1.14 2021/10/29 14:49:42 robert Exp $
 Index: third_party/ffmpeg/libavutil/cpu.c
 --- third_party/ffmpeg/libavutil/cpu.c.orig
 +++ third_party/ffmpeg/libavutil/cpu.c

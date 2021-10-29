@@ -1,14 +1,14 @@
-$OpenBSD: patch-printing_print_settings_conversion_cc,v 1.3 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-printing_print_settings_conversion_cc,v 1.4 2021/10/29 14:49:41 robert Exp $
 
 Index: printing/print_settings_conversion.cc
 --- printing/print_settings_conversion.cc.orig
 +++ printing/print_settings_conversion.cc
-@@ -214,7 +214,7 @@ std::unique_ptr<PrintSettings> PrintSettingsFromJobSet
- // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
- // complete.
- #if defined(OS_CHROMEOS) ||                                  \
--    ((defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) && \
-+    ((defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)) && \
-      defined(USE_CUPS))
+@@ -220,7 +220,7 @@ std::unique_ptr<PrintSettings> PrintSettingsFromJobSet
+ #endif
+   }
+ 
+-#if defined(OS_CHROMEOS) || (defined(OS_LINUX) && defined(USE_CUPS))
++#if defined(OS_CHROMEOS) || ((defined(OS_BSD) || defined(OS_LINUX)) && defined(USE_CUPS))
    const base::Value* advanced_settings =
        job_settings.FindDictKey(kSettingAdvancedSettings);
+   if (advanced_settings) {

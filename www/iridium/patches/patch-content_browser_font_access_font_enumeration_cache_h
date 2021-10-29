@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_font_access_font_enumeration_cache_h,v 1.2 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-content_browser_font_access_font_enumeration_cache_h,v 1.3 2021/10/29 14:49:41 robert Exp $
 
 Index: content/browser/font_access/font_enumeration_cache.h
 --- content/browser/font_access/font_enumeration_cache.h.orig
 +++ content/browser/font_access/font_enumeration_cache.h
-@@ -17,7 +17,7 @@
+@@ -24,7 +24,7 @@
  #include "third_party/blink/public/mojom/font_access/font_access.mojom.h"
  
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \

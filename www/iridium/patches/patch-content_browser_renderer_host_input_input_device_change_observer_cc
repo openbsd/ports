@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_renderer_host_input_input_device_change_observer_cc,v 1.7 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_input_input_device_change_observer_cc,v 1.8 2021/10/29 14:49:41 robert Exp $
 
 Index: content/browser/renderer_host/input/input_device_change_observer.cc
 --- content/browser/renderer_host/input/input_device_change_observer.cc.orig

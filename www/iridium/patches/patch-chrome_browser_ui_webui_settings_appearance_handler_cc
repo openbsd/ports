@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_webui_settings_appearance_handler_cc,v 1.11 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_webui_settings_appearance_handler_cc,v 1.12 2021/10/29 14:49:40 robert Exp $
 
 Index: chrome/browser/ui/webui/settings/appearance_handler.cc
 --- chrome/browser/ui/webui/settings/appearance_handler.cc.orig
@@ -8,8 +8,8 @@ Index: chrome/browser/ui/webui/settings/appearance_handler.cc
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
 -#if defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !BUILDFLAG(IS_CHROMEOS_LACROS)
-   web_ui()->RegisterMessageCallback(
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !BUILDFLAG(IS_CHROMEOS_LACROS)
+   web_ui()->RegisterDeprecatedMessageCallback(
        "useSystemTheme",
        base::BindRepeating(&AppearanceHandler::HandleUseSystemTheme,
 @@ -45,7 +45,7 @@ void AppearanceHandler::HandleUseDefaultTheme(const ba
@@ -17,7 +17,7 @@ Index: chrome/browser/ui/webui/settings/appearance_handler.cc
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
 -#if defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !BUILDFLAG(IS_CHROMEOS_LACROS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !BUILDFLAG(IS_CHROMEOS_LACROS)
  void AppearanceHandler::HandleUseSystemTheme(const base::ListValue* args) {
    if (profile_->IsSupervised())
      NOTREACHED();

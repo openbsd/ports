@@ -1,9 +1,9 @@
-$OpenBSD: patch-extensions_browser_api_messaging_message_service_cc,v 1.9 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-extensions_browser_api_messaging_message_service_cc,v 1.10 2021/10/29 14:49:41 robert Exp $
 
 Index: extensions/browser/api/messaging/message_service.cc
 --- extensions/browser/api/messaging/message_service.cc.orig
 +++ extensions/browser/api/messaging/message_service.cc
-@@ -64,7 +64,7 @@ namespace {
+@@ -73,7 +73,7 @@ namespace {
  const char kReceivingEndDoesntExistError[] =
      "Could not establish connection. Receiving end does not exist.";
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -12,7 +12,7 @@ Index: extensions/browser/api/messaging/message_service.cc
  const char kMissingPermissionError[] =
      "Access to native messaging requires nativeMessaging permission.";
  const char kProhibitedByPoliciesError[] =
-@@ -395,7 +395,7 @@ void MessageService::OpenChannelToNativeApp(
+@@ -435,7 +435,7 @@ void MessageService::OpenChannelToNativeApp(
      return;
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \

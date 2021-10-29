@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_web_applications_externally_managed_app_install_task_cc,v 1.1 2021/10/29 14:49:40 robert Exp $
+
+Index: chrome/browser/web_applications/externally_managed_app_install_task.cc
+--- chrome/browser/web_applications/externally_managed_app_install_task.cc.orig
++++ chrome/browser/web_applications/externally_managed_app_install_task.cc
+@@ -309,7 +309,7 @@ void ExternallyManagedAppInstallTask::OnWebAppInstalle
+   options.os_hooks[OsHookType::kFileHandlers] = true;
+   options.os_hooks[OsHookType::kProtocolHandlers] = true;
+   options.os_hooks[OsHookType::kUninstallationViaOsSettings] = true;
+-#if defined(OS_WIN) || defined(OS_MAC) || \
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
+     (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
+   options.os_hooks[OsHookType::kUrlHandlers] = true;
+ #else

@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_web_applications_web_app_file_handler_registration_h,v 1.1 2021/10/29 14:49:40 robert Exp $
+
+Index: chrome/browser/web_applications/web_app_file_handler_registration.h
+--- chrome/browser/web_applications/web_app_file_handler_registration.h.orig
++++ chrome/browser/web_applications/web_app_file_handler_registration.h
+@@ -43,7 +43,7 @@ void UnregisterFileHandlersWithOs(const AppId& app_id,
+                                   Profile* profile,
+                                   base::OnceCallback<void(bool)> callback);
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ using RegisterMimeTypesOnLinuxCallback =
+     base::OnceCallback<bool(base::FilePath profile_path,
+                             std::string file_contents)>;

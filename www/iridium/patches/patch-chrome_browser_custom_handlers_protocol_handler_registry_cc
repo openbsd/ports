@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_custom_handlers_protocol_handler_registry_cc,v 1.16 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_browser_custom_handlers_protocol_handler_registry_cc,v 1.17 2021/10/29 14:49:39 robert Exp $
 
 Index: chrome/browser/custom_handlers/protocol_handler_registry.cc
 --- chrome/browser/custom_handlers/protocol_handler_registry.cc.orig
 +++ chrome/browser/custom_handlers/protocol_handler_registry.cc
-@@ -46,7 +46,7 @@ const ProtocolHandler& LookupHandler(
+@@ -45,7 +45,7 @@ const ProtocolHandler& LookupHandler(
  // If true default protocol handlers will be removed if the OS level
  // registration for a protocol is no longer Chrome.
  bool ShouldRemoveHandlersNotInOS() {

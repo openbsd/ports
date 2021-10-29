@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_compositor_compositor_observer_h,v 1.4 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-ui_compositor_compositor_observer_h,v 1.5 2021/10/29 14:49:42 robert Exp $
 
 Index: ui/compositor/compositor_observer.h
 --- ui/compositor/compositor_observer.h.orig

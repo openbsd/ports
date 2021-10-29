@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_device_serial_serial_io_handler_posix_cc,v 1.6 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-services_device_serial_serial_io_handler_posix_cc,v 1.7 2021/10/29 14:49:42 robert Exp $
 
 Index: services/device/serial/serial_io_handler_posix.cc
 --- services/device/serial/serial_io_handler_posix.cc.orig

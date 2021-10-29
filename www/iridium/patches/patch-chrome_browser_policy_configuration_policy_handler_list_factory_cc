@@ -1,18 +1,9 @@
-$OpenBSD: patch-chrome_browser_policy_configuration_policy_handler_list_factory_cc,v 1.7 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_browser_policy_configuration_policy_handler_list_factory_cc,v 1.8 2021/10/29 14:49:40 robert Exp $
 
 Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
 --- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig
 +++ chrome/browser/policy/configuration_policy_handler_list_factory.cc
-@@ -1281,7 +1281,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
- 
- // TODO(crbug.com/1179280): Remove OS_LINUX once https://crbug.com/1169547 is
- // done.
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
-   { key::kLacrosSecondaryProfilesAllowed,
-     prefs::kLacrosSecondaryProfilesAllowed,
-     base::Value::Type::BOOLEAN },
-@@ -1293,7 +1293,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1373,7 +1373,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      base::Value::Type::BOOLEAN },
  #endif // !defined(OS_MAC) && !defined(OS_CHROMEOS)
  
@@ -21,30 +12,39 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
    { key::kAuthNegotiateDelegateByKdcPolicy,
      prefs::kAuthNegotiateDelegateByKdcPolicy,
      base::Value::Type::BOOLEAN },
-@@ -1650,7 +1650,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
-       SimpleSchemaValidatingPolicyHandler::MANDATORY_ALLOWED));
+@@ -1479,7 +1479,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+     base::Value::Type::INTEGER },
+ #endif
+ 
+-#if BUILDFLAG(ENABLE_EXTENSIONS) && (defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX))
++#if BUILDFLAG(ENABLE_EXTENSIONS) && (defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD))
+   { key::kChromeAppsEnabled,
+     extensions::pref_names::kChromeAppsEnabled,
+     base::Value::Type::BOOLEAN },
+@@ -1739,7 +1739,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
  #endif  // defined(OS_ANDROID)
  
--#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN)
-+#if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) || defined(OS_BSD)
+ #if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) || \
+-    defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
++    defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
    handlers->AddHandler(
        std::make_unique<
            enterprise_connectors::EnterpriseConnectorsPolicyHandler>(
-@@ -2012,7 +2012,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
-       SimpleSchemaValidatingPolicyHandler::RECOMMENDED_PROHIBITED,
+@@ -2102,7 +2102,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
        SimpleSchemaValidatingPolicyHandler::MANDATORY_ALLOWED));
  
--#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_FUCHSIA)
++    defined(OS_FUCHSIA) || defined(OS_BSD)
    handlers->AddHandler(std::make_unique<SimpleSchemaValidatingPolicyHandler>(
        key::kWebAppSettings, prefs::kWebAppSettings, chrome_schema,
        SCHEMA_ALLOW_UNKNOWN,
-@@ -2031,7 +2031,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -2133,7 +2133,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+           policy::key::kSpellcheckLanguageBlocklist));
+ #endif  // BUILDFLAG(ENABLE_SPELLCHECK)
  
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
    handlers->AddHandler(std::make_unique<SimpleDeprecatingPolicyHandler>(
        std::make_unique<SimplePolicyHandler>(key::kAllowNativeNotifications,
                                              prefs::kAllowNativeNotifications,

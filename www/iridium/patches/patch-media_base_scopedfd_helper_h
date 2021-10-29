@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_base_scopedfd_helper_h,v 1.7 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-media_base_scopedfd_helper_h,v 1.8 2021/10/29 14:49:41 robert Exp $
 
 Index: media/base/scopedfd_helper.h
 --- media/base/scopedfd_helper.h.orig

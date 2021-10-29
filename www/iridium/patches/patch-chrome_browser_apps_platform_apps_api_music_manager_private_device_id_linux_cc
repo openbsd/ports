@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_apps_platform_apps_api_music_manager_private_device_id_linux_cc,v 1.7 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_browser_apps_platform_apps_api_music_manager_private_device_id_linux_cc,v 1.8 2021/10/29 14:49:39 robert Exp $
 
 Index: chrome/browser/apps/platform_apps/api/music_manager_private/device_id_linux.cc
 --- chrome/browser/apps/platform_apps/api/music_manager_private/device_id_linux.cc.orig

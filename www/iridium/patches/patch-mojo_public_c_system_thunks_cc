@@ -1,4 +1,4 @@
-$OpenBSD: patch-mojo_public_c_system_thunks_cc,v 1.7 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-mojo_public_c_system_thunks_cc,v 1.8 2021/10/29 14:49:41 robert Exp $
 
 Index: mojo/public/c/system/thunks.cc
 --- mojo/public/c/system/thunks.cc.orig
@@ -11,7 +11,7 @@ Index: mojo/public/c/system/thunks.cc
 +#if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
  #include "base/environment.h"
  #include "base/files/file_path.h"
- #include "base/optional.h"
+ #include "base/scoped_native_library.h"
 @@ -68,7 +68,7 @@ class CoreLibraryInitializer {
    ~CoreLibraryInitializer() = default;
  
@@ -36,6 +36,6 @@ Index: mojo/public/c/system/thunks.cc
   private:
 -#if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_WIN)
 +#if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
-   base::Optional<base::ScopedNativeLibrary> library_;
+   absl::optional<base::ScopedNativeLibrary> library_;
  #endif
  };

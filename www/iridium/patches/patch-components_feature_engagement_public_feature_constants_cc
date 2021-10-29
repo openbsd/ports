@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_feature_engagement_public_feature_constants_cc,v 1.7 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-components_feature_engagement_public_feature_constants_cc,v 1.8 2021/10/29 14:49:40 robert Exp $
 
 Index: components/feature_engagement/public/feature_constants.cc
 --- components/feature_engagement/public/feature_constants.cc.orig
@@ -7,8 +7,17 @@ Index: components/feature_engagement/public/feature_constants.cc
                                       base::FEATURE_DISABLED_BY_DEFAULT};
  
  #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
--    defined(OS_CHROMEOS)
-+    defined(OS_CHROMEOS) || defined(OS_BSD)
+-    defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
++    defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
  const base::Feature kIPHDesktopTabGroupsNewGroupFeature{
      "IPH_DesktopTabGroupsNewGroup", base::FEATURE_DISABLED_BY_DEFAULT};
  const base::Feature kIPHFocusModeFeature{"IPH_FocusMode",
+@@ -211,7 +211,7 @@ const base::Feature kIPHDiscoverFeedHeaderFeature{
+     "IPH_DiscoverFeedHeaderMenu", base::FEATURE_DISABLED_BY_DEFAULT};
+ #endif  // defined(OS_IOS)
+ 
+-#if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
++#if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || defined(OS_BSD) || \
+     defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_FUCHSIA)
+ const base::Feature kIPHUpdatedConnectionSecurityIndicatorsFeature{
+     "IPH_UpdatedConnectionSecurityIndicators",

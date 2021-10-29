@@ -1,0 +1,23 @@
+$OpenBSD: patch-remoting_host_host_settings_cc,v 1.1 2021/10/29 14:49:41 robert Exp $
+
+Index: remoting/host/host_settings.cc
+--- remoting/host/host_settings.cc.orig
++++ remoting/host/host_settings.cc
+@@ -13,7 +13,7 @@
+ #include "remoting/host/mac/constants_mac.h"
+ #endif  // defined(OS_APPLE)
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "remoting/host/linux/file_path_util.h"
+ #endif  // defined(OS_LINUX)
+ 
+@@ -53,7 +53,7 @@ HostSettings* HostSettings::GetInstance() {
+ #if defined(OS_APPLE)
+   static const base::FilePath settings_file(kHostSettingsFilePath);
+   static base::NoDestructor<FileHostSettings> instance(settings_file);
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_BSD)
+   static base::NoDestructor<FileHostSettings> instance(base::FilePath(
+       GetConfigDirectoryPath().Append(GetHostHash() + ".settings.json")));
+ #elif defined(OS_WIN)

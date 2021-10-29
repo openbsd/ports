@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_common_chrome_paths_internal_h,v 1.12 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_paths_internal_h,v 1.13 2021/10/29 14:49:40 robert Exp $
 
 Index: chrome/common/chrome_paths_internal.h
 --- chrome/common/chrome_paths_internal.h.orig

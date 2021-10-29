@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_viz_common_gpu_dawn_context_provider_cc,v 1.4 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-components_viz_common_gpu_dawn_context_provider_cc,v 1.5 2021/10/29 14:49:40 robert Exp $
 
 Index: components/viz/common/gpu/dawn_context_provider.cc
 --- components/viz/common/gpu/dawn_context_provider.cc.orig

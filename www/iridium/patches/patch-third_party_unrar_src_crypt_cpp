@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_unrar_src_crypt_cpp,v 1.7 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-third_party_unrar_src_crypt_cpp,v 1.8 2021/10/29 14:49:42 robert Exp $
 
 Index: third_party/unrar/src/crypt.cpp
 --- third_party/unrar/src/crypt.cpp.orig

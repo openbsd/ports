@@ -1,17 +1,16 @@
-$OpenBSD: patch-net_url_request_url_request_cc,v 1.4 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-net_url_request_url_request_cc,v 1.5 2021/10/29 14:49:41 robert Exp $
 
 Index: net/url_request/url_request.cc
 --- net/url_request/url_request.cc.orig
 +++ net/url_request/url_request.cc
-@@ -14,6 +14,7 @@
+@@ -14,12 +14,14 @@
  #include "base/callback.h"
  #include "base/callback_helpers.h"
  #include "base/compiler_specific.h"
 +#include "base/command_line.h"
  #include "base/metrics/histogram_macros.h"
  #include "base/rand_util.h"
- #include "base/stl_util.h"
-@@ -21,6 +22,7 @@
+ #include "base/strings/utf_string_conversions.h"
  #include "base/synchronization/lock.h"
  #include "base/threading/thread_task_runner_handle.h"
  #include "base/values.h"
@@ -19,7 +18,7 @@ Index: net/url_request/url_request.cc
  #include "net/base/auth.h"
  #include "net/base/load_flags.h"
  #include "net/base/load_timing_info.h"
-@@ -53,7 +55,10 @@ namespace iridium {
+@@ -58,7 +60,10 @@ namespace iridium {
  
  void textlog_request(const char *caller, const GURL &url)
  {

@@ -1,0 +1,32 @@
+$OpenBSD: patch-base_allocator_partition_allocator_starscan_stack_stack_cc,v 1.1 2021/10/29 14:49:39 robert Exp $
+
+Index: base/allocator/partition_allocator/starscan/stack/stack.cc
+--- base/allocator/partition_allocator/starscan/stack/stack.cc.orig
++++ base/allocator/partition_allocator/starscan/stack/stack.cc
+@@ -17,6 +17,10 @@
+ #include <pthread.h>
+ #endif
+ 
++#if defined(OS_BSD)
++#include <pthread_np.h>
++#endif
++
+ #if defined(LIBC_GLIBC)
+ extern "C" void* __libc_stack_end;
+ #endif
+@@ -48,6 +52,15 @@ void* GetStackTop() {
+ 
+ void* GetStackTop() {
+   return pthread_get_stackaddr_np(pthread_self());
++}
++
++#elif defined(OS_BSD)
++
++void* GetStackTop() {
++  stack_t ss;
++  if (pthread_stackseg_np(pthread_self(), &ss) != 0)
++    return nullptr;
++  return reinterpret_cast<uint8_t*>(ss.ss_sp);
+ }
+ 
+ #elif defined(OS_POSIX) || defined(OS_FUCHSIA)

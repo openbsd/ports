@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_capture_video_fake_video_capture_device_factory_cc,v 1.17 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-media_capture_video_fake_video_capture_device_factory_cc,v 1.18 2021/10/29 14:49:41 robert Exp $
 
 Index: media/capture/video/fake_video_capture_device_factory.cc
 --- media/capture/video/fake_video_capture_device_factory.cc.orig

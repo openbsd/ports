@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_base_cursor_cursor_factory_cc,v 1.1 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-ui_base_cursor_cursor_factory_cc,v 1.2 2021/10/29 14:49:42 robert Exp $
 
 Index: ui/base/cursor/cursor_factory.cc
 --- ui/base/cursor/cursor_factory.cc.orig
 +++ ui/base/cursor/cursor_factory.cc
-@@ -69,7 +69,7 @@ void CursorFactory::ObserveThemeChanges() {
+@@ -80,7 +80,7 @@ void CursorFactory::ObserveThemeChanges() {
  
  void CursorFactory::SetDeviceScaleFactor(float scale) {}
  

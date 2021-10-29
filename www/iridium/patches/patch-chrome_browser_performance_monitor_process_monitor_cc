@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_performance_monitor_process_monitor_cc,v 1.1 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_browser_performance_monitor_process_monitor_cc,v 1.2 2021/10/29 14:49:40 robert Exp $
 
 Index: chrome/browser/performance_monitor/process_monitor.cc
 --- chrome/browser/performance_monitor/process_monitor.cc.orig
 +++ chrome/browser/performance_monitor/process_monitor.cc
-@@ -81,7 +81,7 @@ ProcessMonitor::Metrics& operator+=(ProcessMonitor::Me
+@@ -77,7 +77,7 @@ ProcessMonitor::Metrics& operator+=(ProcessMonitor::Me
    lhs.cpu_usage += rhs.cpu_usage;
  
  #if defined(OS_MAC) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \

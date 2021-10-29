@@ -1,0 +1,32 @@
+$OpenBSD: patch-chrome_browser_ui_browser_dialogs_h,v 1.1 2021/10/29 14:49:40 robert Exp $
+
+Index: chrome/browser/ui/browser_dialogs.h
+--- chrome/browser/ui/browser_dialogs.h.orig
++++ chrome/browser/ui/browser_dialogs.h
+@@ -23,7 +23,7 @@
+ #include "third_party/skia/include/core/SkColor.h"
+ #include "ui/gfx/native_widget_types.h"
+ 
+-#if defined(OS_WIN) || defined(OS_MAC) || \
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
+     (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
+ #include "chrome/browser/web_applications/web_app_id.h"
+ #endif
+@@ -77,7 +77,7 @@ class WebDialogDelegate;
+ struct SelectedFileInfo;
+ }  // namespace ui
+ 
+-#if defined(OS_WIN) || defined(OS_MAC) || \
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
+     (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
+ namespace web_app {
+ struct UrlHandlerLaunchParams;
+@@ -175,7 +175,7 @@ void ShowWebAppProtocolHandlerIntentPicker(
+     WebAppProtocolHandlerAcceptanceCallback close_callback);
+ #endif  // !defined(OS_ANDROID)
+ 
+-#if defined(OS_WIN) || defined(OS_MAC) || \
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
+     (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
+ // Callback that runs when the Web App URL Handler Intent Picker dialog is
+ // closed. `accepted` is true when the dialog is accepted, false otherwise.

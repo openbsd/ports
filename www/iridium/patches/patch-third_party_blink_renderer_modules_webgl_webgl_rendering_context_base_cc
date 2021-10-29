@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_blink_renderer_modules_webgl_webgl_rendering_context_base_cc,v 1.1 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_modules_webgl_webgl_rendering_context_base_cc,v 1.2 2021/10/29 14:49:42 robert Exp $
 
 Index: third_party/blink/renderer/modules/webgl/webgl_rendering_context_base.cc
 --- third_party/blink/renderer/modules/webgl/webgl_rendering_context_base.cc.orig
 +++ third_party/blink/renderer/modules/webgl/webgl_rendering_context_base.cc
-@@ -6052,7 +6052,7 @@ void WebGLRenderingContextBase::TexImageHelperMediaVid
+@@ -6088,7 +6088,7 @@ void WebGLRenderingContextBase::TexImageHelperMediaVid
    constexpr bool kAllowZeroCopyImages = true;
  #endif
  

@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_app_settings_strings_grdp,v 1.15 2021/07/06 11:13:49 robert Exp $
+$OpenBSD: patch-chrome_app_settings_strings_grdp,v 1.16 2021/10/29 14:49:39 robert Exp $
 
 Index: chrome/app/settings_strings.grdp
 --- chrome/app/settings_strings.grdp.orig
@@ -16,8 +16,8 @@ Index: chrome/app/settings_strings.grdp
        Use Classic
      </message>
    </if>
--  <if expr="not is_linux or chromeos or lacros">
-+  <if expr="not is_posix or chromeos or lacros">
+-  <if expr="not is_linux or chromeos or lacros or is_fuchsia">
++  <if expr="not is_posix or chromeos or lacros or is_fuchsia">
      <message name="IDS_SETTINGS_RESET_TO_DEFAULT_THEME" desc="Name of the control which resets the browser theme back to the default theme.">
        Reset to default
      </message>

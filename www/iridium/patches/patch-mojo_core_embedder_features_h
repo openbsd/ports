@@ -1,14 +1,14 @@
-$OpenBSD: patch-mojo_core_embedder_features_h,v 1.1 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-mojo_core_embedder_features_h,v 1.2 2021/10/29 14:49:41 robert Exp $
 
 Index: mojo/core/embedder/features.h
 --- mojo/core/embedder/features.h.orig
 +++ mojo/core/embedder/features.h
-@@ -13,7 +13,7 @@ namespace mojo {
+@@ -14,7 +14,7 @@ namespace mojo {
  namespace core {
  
  #if defined(OS_POSIX) && !defined(OS_NACL) && !defined(OS_MAC)
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)
+ COMPONENT_EXPORT(MOJO_CORE_EMBEDDER_FEATURES)
  extern const base::Feature kMojoLinuxChannelSharedMem;
- extern const base::FeatureParam<int> kMojoLinuxChannelSharedMemPages;
- extern const base::FeatureParam<bool> kMojoLinuxChannelSharedMemEfdZeroOnWake;
+ 

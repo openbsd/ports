@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_font_render_params_h,v 1.13 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-ui_gfx_font_render_params_h,v 1.14 2021/10/29 14:49:42 robert Exp $
 
 Index: ui/gfx/font_render_params.h
 --- ui/gfx/font_render_params.h.orig

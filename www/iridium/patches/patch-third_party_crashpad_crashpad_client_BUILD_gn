@@ -1,20 +1,19 @@
-$OpenBSD: patch-third_party_crashpad_crashpad_client_BUILD_gn,v 1.8 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-third_party_crashpad_crashpad_client_BUILD_gn,v 1.9 2021/10/29 14:49:42 robert Exp $
 
 Index: third_party/crashpad/crashpad/client/BUILD.gn
 --- third_party/crashpad/crashpad/client/BUILD.gn.orig
 +++ third_party/crashpad/crashpad/client/BUILD.gn
-@@ -78,7 +78,13 @@ crashpad_static_library("client") {
-     sources += [ "crashpad_client_fuchsia.cc" ]
+@@ -127,6 +127,13 @@ static_library("common") {
+   if (crashpad_is_win) {
+     sources += [ "crash_report_database_win.cc" ]
    }
- 
--  if (crashpad_is_linux || crashpad_is_android || crashpad_is_fuchsia) {
++
 +  if (crashpad_is_posix) {
 +    sources += [
 +      "crashpad_client_posix.cc",
 +    ]
 +  }
 +
-+  if (crashpad_is_linux || crashpad_is_android || crashpad_is_fuchsia || crashpad_is_posix) {
-     sources += [ "crash_report_database_generic.cc" ]
-   }
- 
+   if (crashpad_is_linux || crashpad_is_android || crashpad_is_fuchsia) {
+     sources += [
+       "crash_report_database_generic.cc",

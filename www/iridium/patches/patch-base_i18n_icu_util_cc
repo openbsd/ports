@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_i18n_icu_util_cc,v 1.10 2021/07/06 11:13:49 robert Exp $
+$OpenBSD: patch-base_i18n_icu_util_cc,v 1.11 2021/10/29 14:49:39 robert Exp $
 
 Index: base/i18n/icu_util.cc
 --- base/i18n/icu_util.cc.orig

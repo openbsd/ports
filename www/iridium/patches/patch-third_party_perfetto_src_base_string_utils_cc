@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_perfetto_src_base_string_utils_cc,v 1.1 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-third_party_perfetto_src_base_string_utils_cc,v 1.2 2021/10/29 14:49:42 robert Exp $
 
 Index: third_party/perfetto/src/base/string_utils.cc
 --- third_party/perfetto/src/base/string_utils.cc.orig

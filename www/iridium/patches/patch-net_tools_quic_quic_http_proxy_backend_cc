@@ -1,9 +1,9 @@
-$OpenBSD: patch-net_tools_quic_quic_http_proxy_backend_cc,v 1.5 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-net_tools_quic_quic_http_proxy_backend_cc,v 1.6 2021/10/29 14:49:41 robert Exp $
 
 Index: net/tools/quic/quic_http_proxy_backend.cc
 --- net/tools/quic/quic_http_proxy_backend.cc.orig
 +++ net/tools/quic/quic_http_proxy_backend.cc
-@@ -162,7 +162,7 @@ void QuicHttpProxyBackend::InitializeURLRequestContext
+@@ -161,7 +161,7 @@ void QuicHttpProxyBackend::InitializeURLRequestContext
    // Enable HTTP2, but disable QUIC on the backend
    context_builder.SetSpdyAndQuicEnabled(true /* http2 */, false /* quic */);
  

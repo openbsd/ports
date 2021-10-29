@@ -1,9 +1,9 @@
-$OpenBSD: patch-media_base_status_cc,v 1.3 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-media_base_status_cc,v 1.4 2021/10/29 14:49:41 robert Exp $
 
 Index: media/base/status.cc
 --- media/base/status.cc.orig
 +++ media/base/status.cc
-@@ -70,7 +70,9 @@ Status&& Status::AddCause(Status&& cause) && {
+@@ -71,7 +71,9 @@ Status&& Status::AddCause(Status&& cause) && {
  
  void Status::AddFrame(const base::Location& location) {
    DCHECK(data_);

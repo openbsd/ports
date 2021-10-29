@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_services_file_util_public_mojom_safe_document_analyzer_mojom_traits_h,v 1.1 2021/10/29 14:49:40 robert Exp $
+
+Index: chrome/services/file_util/public/mojom/safe_document_analyzer_mojom_traits.h
+--- chrome/services/file_util/public/mojom/safe_document_analyzer_mojom_traits.h.orig
++++ chrome/services/file_util/public/mojom/safe_document_analyzer_mojom_traits.h
+@@ -14,7 +14,7 @@
+ #include "mojo/public/cpp/bindings/enum_traits.h"
+ #include "mojo/public/cpp/bindings/struct_traits.h"
+ 
+-#if !BUILDFLAG(FULL_SAFE_BROWSING) || (!defined(OS_LINUX) && !defined(OS_WIN))
++#if !BUILDFLAG(FULL_SAFE_BROWSING) || (!defined(OS_LINUX) && !defined(OS_WIN) && !defined(OS_BSD))
+ #error BUILDFLAG(FULL_SAFE_BROWSING) should be set and either OS_LINUX or OS_WIN defined.
+ #endif
+ 

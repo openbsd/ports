@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_app_theme_chrome_unscaled_resources_grd,v 1.9 2021/07/06 11:13:49 robert Exp $
+$OpenBSD: patch-chrome_app_theme_chrome_unscaled_resources_grd,v 1.10 2021/10/29 14:49:39 robert Exp $
 
 Index: chrome/app/theme/chrome_unscaled_resources.grd
 --- chrome/app/theme/chrome_unscaled_resources.grd.orig

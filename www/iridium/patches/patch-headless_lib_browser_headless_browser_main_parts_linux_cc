@@ -1,4 +1,4 @@
-$OpenBSD: patch-headless_lib_browser_headless_browser_main_parts_linux_cc,v 1.3 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-headless_lib_browser_headless_browser_main_parts_linux_cc,v 1.4 2021/10/29 14:49:41 robert Exp $
 
 Index: headless/lib/browser/headless_browser_main_parts_linux.cc
 --- headless/lib/browser/headless_browser_main_parts_linux.cc.orig
@@ -6,7 +6,7 @@ Index: headless/lib/browser/headless_browser_main_parts_linux.cc
 @@ -11,7 +11,7 @@
  namespace headless {
  
- void HeadlessBrowserMainParts::PostMainMessageLoopStart() {
+ void HeadlessBrowserMainParts::PostCreateMainMessageLoop() {
 -#if defined(USE_DBUS) && !BUILDFLAG(IS_CHROMEOS_ASH)
 +#if defined(USE_DBUS) && !BUILDFLAG(IS_CHROMEOS_ASH) && !defined(OS_BSD)
    bluez::BluezDBusManager::Initialize(/*system_bus=*/nullptr);

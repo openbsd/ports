@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_BUILD_gn,v 1.4 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_BUILD_gn,v 1.5 2021/10/29 14:49:42 robert Exp $
 
 Index: third_party/blink/renderer/BUILD.gn
 --- third_party/blink/renderer/BUILD.gn.orig

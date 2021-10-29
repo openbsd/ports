@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_base_x_x11_cursor_loader_cc,v 1.2 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-ui_base_x_x11_cursor_loader_cc,v 1.3 2021/10/29 14:49:42 robert Exp $
 
 Index: ui/base/x/x11_cursor_loader.cc
 --- ui/base/x/x11_cursor_loader.cc.orig

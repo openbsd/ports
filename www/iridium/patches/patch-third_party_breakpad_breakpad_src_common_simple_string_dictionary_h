@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_breakpad_breakpad_src_common_simple_string_dictionary_h,v 1.7 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-third_party_breakpad_breakpad_src_common_simple_string_dictionary_h,v 1.8 2021/10/29 14:49:42 robert Exp $
 
 Index: third_party/breakpad/breakpad/src/common/simple_string_dictionary.h
 --- third_party/breakpad/breakpad/src/common/simple_string_dictionary.h.orig

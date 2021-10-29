@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_render_text_api_fuzzer_cc,v 1.2 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-ui_gfx_render_text_api_fuzzer_cc,v 1.3 2021/10/29 14:49:43 robert Exp $
 
 Index: ui/gfx/render_text_api_fuzzer.cc
 --- ui/gfx/render_text_api_fuzzer.cc.orig

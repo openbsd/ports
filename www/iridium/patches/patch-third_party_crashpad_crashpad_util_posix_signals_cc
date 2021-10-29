@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_crashpad_crashpad_util_posix_signals_cc,v 1.7 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-third_party_crashpad_crashpad_util_posix_signals_cc,v 1.8 2021/10/29 14:49:42 robert Exp $
 
 Index: third_party/crashpad/crashpad/util/posix/signals.cc
 --- third_party/crashpad/crashpad/util/posix/signals.cc.orig

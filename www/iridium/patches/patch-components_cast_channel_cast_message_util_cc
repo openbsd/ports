@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_cast_channel_cast_message_util_cc,v 1.1 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-components_cast_channel_cast_message_util_cc,v 1.2 2021/10/29 14:49:40 robert Exp $
 
 Index: components/cast_channel/cast_message_util.cc
 --- components/cast_channel/cast_message_util.cc.orig

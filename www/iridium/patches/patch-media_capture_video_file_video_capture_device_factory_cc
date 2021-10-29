@@ -1,9 +1,9 @@
-$OpenBSD: patch-media_capture_video_file_video_capture_device_factory_cc,v 1.12 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-media_capture_video_file_video_capture_device_factory_cc,v 1.13 2021/10/29 14:49:41 robert Exp $
 
 Index: media/capture/video/file_video_capture_device_factory.cc
 --- media/capture/video/file_video_capture_device_factory.cc.orig
 +++ media/capture/video/file_video_capture_device_factory.cc
-@@ -53,7 +53,7 @@ void FileVideoCaptureDeviceFactory::GetDevicesInfo(
+@@ -52,7 +52,7 @@ void FileVideoCaptureDeviceFactory::GetDevicesInfo(
        VideoCaptureApi::WIN_DIRECT_SHOW;
  #elif defined(OS_MAC)
        VideoCaptureApi::MACOSX_AVFOUNDATION;

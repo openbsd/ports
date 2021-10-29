@@ -1,9 +1,9 @@
-$OpenBSD: patch-gpu_vulkan_vulkan_image_cc,v 1.1 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-gpu_vulkan_vulkan_image_cc,v 1.2 2021/10/29 14:49:41 robert Exp $
 
 Index: gpu/vulkan/vulkan_image.cc
 --- gpu/vulkan/vulkan_image.cc.orig
 +++ gpu/vulkan/vulkan_image.cc
-@@ -325,7 +325,7 @@ bool VulkanImage::InitializeWithExternalMemory(
+@@ -326,7 +326,7 @@ bool VulkanImage::InitializeWithExternalMemory(
  
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.

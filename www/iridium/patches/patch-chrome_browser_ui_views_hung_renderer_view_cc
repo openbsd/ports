@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_hung_renderer_view_cc,v 1.6 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_hung_renderer_view_cc,v 1.7 2021/10/29 14:49:40 robert Exp $
 
 Index: chrome/browser/ui/views/hung_renderer_view.cc
 --- chrome/browser/ui/views/hung_renderer_view.cc.orig

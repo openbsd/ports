@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_json_schema_compiler_cpp_bundle_generator_py,v 1.5 2021/07/06 11:13:52 robert Exp $
+$OpenBSD: patch-tools_json_schema_compiler_cpp_bundle_generator_py,v 1.6 2021/10/29 14:49:42 robert Exp $
 
 Index: tools/json_schema_compiler/cpp_bundle_generator.py
 --- tools/json_schema_compiler/cpp_bundle_generator.py.orig

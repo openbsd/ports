@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_browser_frame_cc,v 1.16 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_browser_frame_cc,v 1.17 2021/10/29 14:49:40 robert Exp $
 
 Index: chrome/browser/ui/views/frame/browser_frame.cc
 --- chrome/browser/ui/views/frame/browser_frame.cc.orig
 +++ chrome/browser/ui/views/frame/browser_frame.cc
-@@ -44,7 +44,7 @@
+@@ -47,11 +47,11 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -12,7 +12,12 @@ Index: chrome/browser/ui/views/frame/browser_frame.cc
  #include "ui/display/screen.h"
  #endif
  
-@@ -53,7 +53,7 @@ namespace {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "ui/views/linux_ui/linux_ui.h"
+ #endif
+ 
+@@ -60,7 +60,7 @@ namespace {
  bool IsUsingGtkTheme(Profile* profile) {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -21,7 +26,7 @@ Index: chrome/browser/ui/views/frame/browser_frame.cc
    return ThemeServiceFactory::GetForProfile(profile)->UsingSystemTheme();
  #else
    return false;
-@@ -221,7 +221,7 @@ void BrowserFrame::OnNativeWidgetWorkspaceChanged() {
+@@ -247,7 +247,7 @@ void BrowserFrame::OnNativeWidgetWorkspaceChanged() {
                                             IsVisibleOnAllWorkspaces());
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -30,3 +35,21 @@ Index: chrome/browser/ui/views/frame/browser_frame.cc
    // If the window was sent to a different workspace, prioritize it if
    // it was sent to the current workspace and deprioritize it
    // otherwise.  This is done by MoveBrowsersInWorkspaceToFront()
+@@ -370,7 +370,7 @@ void BrowserFrame::SelectNativeTheme() {
+     }
+   }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   const views::LinuxUI* linux_ui = views::LinuxUI::instance();
+   // Ignore GTK+ for web apps with window-controls-overlay as the
+   // display_override so the web contents can blend with the overlay by using
+@@ -389,7 +389,7 @@ bool BrowserFrame::RegenerateFrameOnThemeChange(
+   bool need_regenerate = false;
+   // TODO(crbug.com/1052397): Revisit the macro expression once build flag
+   // switch of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
+   // GTK and user theme changes can both change frame buttons, so the frame
+   // always needs to be regenerated on Linux.
+   need_regenerate = true;

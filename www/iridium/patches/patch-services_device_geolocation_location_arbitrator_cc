@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_device_geolocation_location_arbitrator_cc,v 1.7 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-services_device_geolocation_location_arbitrator_cc,v 1.8 2021/10/29 14:49:41 robert Exp $
 
 Index: services/device/geolocation/location_arbitrator.cc
 --- services/device/geolocation/location_arbitrator.cc.orig
 +++ services/device/geolocation/location_arbitrator.cc
-@@ -162,7 +162,7 @@ LocationArbitrator::NewNetworkLocationProvider(
+@@ -161,7 +161,7 @@ LocationArbitrator::NewNetworkLocationProvider(
  
  std::unique_ptr<LocationProvider>
  LocationArbitrator::NewSystemLocationProvider() {
@@ -11,4 +11,4 @@ Index: services/device/geolocation/location_arbitrator.cc
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
    return nullptr;
  #else
-   return device::NewSystemLocationProvider();
+   return device::NewSystemLocationProvider(main_task_runner_,

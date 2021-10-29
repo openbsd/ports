@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_process_process_iterator_openbsd_cc,v 1.14 2021/07/06 11:13:49 robert Exp $
+$OpenBSD: patch-base_process_process_iterator_openbsd_cc,v 1.15 2021/10/29 14:49:39 robert Exp $
 Index: base/process/process_iterator_openbsd.cc
 --- base/process/process_iterator_openbsd.cc.orig
 +++ base/process/process_iterator_openbsd.cc
@@ -11,8 +11,15 @@ Index: base/process/process_iterator_openbsd.cc
 +#include <sys/proc.h>
  #include <sys/sysctl.h>
  
- #include "base/logging.h"
-@@ -25,6 +28,7 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
+ #include "base/cxx17_backports.h"
+@@ -19,12 +22,13 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
+     : index_of_kinfo_proc_(),
+       filter_(filter) {
+ 
+-  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_UID, getuid(),
++  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_UID, static_cast<int>(getuid()),
+                 sizeof(struct kinfo_proc), 0 };
+ 
    bool done = false;
    int try_num = 1;
    const int max_tries = 10;

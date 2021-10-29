@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_common_mojo_core_library_support_cc,v 1.3 2021/07/06 11:13:51 robert Exp $
+$OpenBSD: patch-content_common_mojo_core_library_support_cc,v 1.4 2021/10/29 14:49:41 robert Exp $
 
 Index: content/common/mojo_core_library_support.cc
 --- content/common/mojo_core_library_support.cc.orig
@@ -6,7 +6,7 @@ Index: content/common/mojo_core_library_support.cc
 @@ -15,7 +15,7 @@ bool IsMojoCoreSharedLibraryEnabled() {
  }
  
- base::Optional<base::FilePath> GetMojoCoreSharedLibraryPath() {
+ absl::optional<base::FilePath> GetMojoCoreSharedLibraryPath() {
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    const base::CommandLine& command_line =

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_task_manager_task_manager_table_model_cc,v 1.11 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_task_manager_task_manager_table_model_cc,v 1.12 2021/10/29 14:49:40 robert Exp $
 
 Index: chrome/browser/ui/task_manager/task_manager_table_model.cc
 --- chrome/browser/ui/task_manager/task_manager_table_model.cc.orig
 +++ chrome/browser/ui/task_manager/task_manager_table_model.cc
-@@ -449,7 +449,7 @@ std::u16string TaskManagerTableModel::GetText(int row,
+@@ -451,7 +451,7 @@ std::u16string TaskManagerTableModel::GetText(int row,
            ? stringifier_->backgrounded_string()
            : stringifier_->foregrounded_string();
  
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/task_manager/task_manager_table_model.cc
      case IDS_TASK_MANAGER_OPEN_FD_COUNT_COLUMN: {
        const int fd_count = observed_task_manager()->GetOpenFdCount(tasks_[row]);
        return fd_count >= 0 ? base::FormatNumber(fd_count)
-@@ -615,7 +615,7 @@ int TaskManagerTableModel::CompareValues(int row1,
+@@ -618,7 +618,7 @@ int TaskManagerTableModel::CompareValues(int row1,
        return BooleanCompare(is_proc1_bg, is_proc2_bg);
      }
  
@@ -21,7 +21,7 @@ Index: chrome/browser/ui/task_manager/task_manager_table_model.cc
      case IDS_TASK_MANAGER_OPEN_FD_COUNT_COLUMN: {
        const int proc1_fd_count =
            observed_task_manager()->GetOpenFdCount(tasks_[row1]);
-@@ -789,7 +789,7 @@ void TaskManagerTableModel::UpdateRefreshTypes(int col
+@@ -792,7 +792,7 @@ void TaskManagerTableModel::UpdateRefreshTypes(int col
        type = REFRESH_TYPE_KEEPALIVE_COUNT;
        break;
  

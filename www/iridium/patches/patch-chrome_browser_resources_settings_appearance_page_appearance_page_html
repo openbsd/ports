@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_resources_settings_appearance_page_appearance_page_html,v 1.12 2021/07/06 11:13:50 robert Exp $
+$OpenBSD: patch-chrome_browser_resources_settings_appearance_page_appearance_page_html,v 1.13 2021/10/29 14:49:40 robert Exp $
 
 Index: chrome/browser/resources/settings/appearance_page/appearance_page.html
 --- chrome/browser/resources/settings/appearance_page/appearance_page.html.orig
@@ -29,4 +29,4 @@ Index: chrome/browser/resources/settings/appearance_page/appearance_page.html
 +<if expr="is_posix and not chromeos and not lacros">
          <div class="hr" hidden="[[!pageVisibility.bookmarksBar]]"></div>
          <settings-toggle-button
-             pref="{{prefs.browser.custom_chrome_frame}}"
+             hidden="[[!showCustomChromeFrame_]]"
