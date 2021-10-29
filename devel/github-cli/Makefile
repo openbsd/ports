@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2021/08/14 07:01:23 tb Exp $
+# $OpenBSD: Makefile,v 1.4 2021/10/29 15:48:02 kn Exp $
 
 COMMENT =		command-line access to github pull requests, issues and more
 
-V =			1.14.0
-MODGO_MODNAME =		github.com/cli/cli
+V =			2.2.0
+MODGO_MODNAME =		github.com/cli/cli/v2
 MODGO_VERSION =		v$V
 
 DISTNAME =		cli-${MODGO_VERSION}
