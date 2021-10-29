@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.696 2021/10/29 15:38:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.697 2021/10/29 16:23:36 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -374,7 +374,7 @@
      SUBDIR += py-PEG2,python3
      SUBDIR += py-PyPDF2,python3
      SUBDIR += py-alabaster,python3
-     SUBDIR += py-black
+     SUBDIR += py-black			# unflavoured but uses python3
      SUBDIR += py-bracex,python3
      SUBDIR += py-canonicaljson,python3
      SUBDIR += py-cchardet,python3
@@ -409,12 +409,12 @@
      SUBDIR += py-natsort,python3
      SUBDIR += py-nltk,python3
      SUBDIR += py-numpydoc,python3
-     SUBDIR += py-odfpy
+     SUBDIR += py-odfpy			# unflavoured but uses python3
      SUBDIR += py-ofxparse,python3
      SUBDIR += py-openpyxl,python3
      SUBDIR += py-pandocfilters,python3
      SUBDIR += py-patiencediff,python3
-     SUBDIR += py-pdfminer
+     SUBDIR += py-pdfminer		# unflavoured but uses python3
      SUBDIR += py-podcastparser,python3
      SUBDIR += py-polib,python3
      SUBDIR += py-precis_i18n,python3
@@ -430,7 +430,7 @@
      SUBDIR += py-ruamel.yaml,python3
      SUBDIR += py-ruamel.yaml.clib,python3
      SUBDIR += py-signedjson,python3
-     SUBDIR += py-semver
+     SUBDIR += py-semver		# unflavoured but uses python3
      SUBDIR += py-snowballstemmer,python3
      SUBDIR += py-spdx,python3
      SUBDIR += py-spdx-lookup,python3
@@ -439,7 +439,7 @@
      SUBDIR += py-sphinx-notfound-page,python3
      SUBDIR += py-sphinx_guzzle_theme,python3
      SUBDIR += py-sphinx_rtd_theme,python3
-     SUBDIR += py-sphinxcontrib
+     SUBDIR += py-sphinxcontrib		# subdir; uses python3
      SUBDIR += py-stache,python3
      SUBDIR += py-stemmer,python3
      SUBDIR += py-textfsm,python3
@@ -451,7 +451,7 @@
      SUBDIR += py-webencodings,python3
      SUBDIR += py-xlrd,python3
      SUBDIR += py-xlwt,python3
-     SUBDIR += py-xmldiff
+     SUBDIR += py-xmldiff		# unflavoured (standalone?) but uses python3
      SUBDIR += py-xmltodict,python3
      SUBDIR += py-yaml
      SUBDIR += py-yaml,python3

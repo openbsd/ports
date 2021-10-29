@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.436 2021/10/29 15:38:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.437 2021/10/29 16:23:36 sthen Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -168,7 +168,7 @@
      SUBDIR += py-mysqlclient,python3
      SUBDIR += py-odbc,python3
      SUBDIR += py-peewee,python3
-     SUBDIR += py-pg_activity
+     SUBDIR += py-pg_activity		# standlone tool, uses python3
      SUBDIR += py-pickleshare,python3
      SUBDIR += py-psycopg2
      SUBDIR += py-psycopg2,python3

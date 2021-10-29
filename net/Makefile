@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1276 2021/10/29 15:38:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.1277 2021/10/29 16:23:36 sthen Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -570,7 +570,7 @@
      SUBDIR += py-idna
      SUBDIR += py-idna,python3
      SUBDIR += py-ifaddr,python3
-     SUBDIR += py-impacket
+     SUBDIR += py-impacket		# unflavoured but uses python3
      SUBDIR += py-ipaddr
      SUBDIR += py-ipaddress
      SUBDIR += py-irclib,python3
@@ -584,7 +584,7 @@
      SUBDIR += py-netaddr,python3
      SUBDIR += py-netifaces,python3
      SUBDIR += py-netmiko,python3
-     SUBDIR += py-nmap
+     SUBDIR += py-nmap			# unflavoured but uses python3
      SUBDIR += py-nxos,python3
      SUBDIR += py-paho-mqtt,python3
      SUBDIR += py-pcapy,python3
@@ -592,7 +592,7 @@
      SUBDIR += py-portend,python3
      SUBDIR += py-ripe.atlas.cousteau,python3
      SUBDIR += py-ripe.atlas.sagan,python3
-     SUBDIR += py-ripe.atlas.tools	# standalone, uses py3
+     SUBDIR += py-ripe.atlas.tools	# standalone, uses python3
      SUBDIR += py-rrdtool,python3
      SUBDIR += py-s3transfer,python3
      SUBDIR += py-simplesoap,python3

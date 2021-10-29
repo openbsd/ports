@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2144 2021/10/29 15:38:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.2145 2021/10/29 16:23:36 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1297,7 +1297,7 @@
      SUBDIR += py-asn1-modules,python3
      SUBDIR += py-astroid,python3
      SUBDIR += py-astunparse,python3
-     SUBDIR += py-async-timeout
+     SUBDIR += py-async-timeout		# unflavoured but uses python3
      SUBDIR += py-atomicwrites
      SUBDIR += py-atomicwrites,python3
      SUBDIR += py-attrs
@@ -1308,20 +1308,20 @@
      SUBDIR += py-backports
      SUBDIR += py-bencode,python3
      SUBDIR += py-biplist,python3
-     SUBDIR += py-bitcoinlib
+     SUBDIR += py-bitcoinlib		# unflavoured but uses python3
      SUBDIR += py-bitstring,python3
      SUBDIR += py-blessings,python3
      SUBDIR += py-blinker,python3
      SUBDIR += py-blist,python3
-     SUBDIR += py-buildbot
-     SUBDIR += py-buildslave
+     SUBDIR += py-buildbot		# subdir; uses python3
+     SUBDIR += py-buildslave		# standalone, uses python3
      SUBDIR += py-cached-property,python3
      SUBDIR += py-cachetools,python3
      SUBDIR += py-cairocffi,python3
      SUBDIR += py-certifi
      SUBDIR += py-certifi,python3
      SUBDIR += py-cffi,python3
-     SUBDIR += py-cflow2dot
+     SUBDIR += py-cflow2dot		# unflavoured but uses python3
      SUBDIR += py-characteristic,python3
      SUBDIR += py-cheetah,python3
      SUBDIR += py-click,python3
@@ -1359,7 +1359,7 @@
      SUBDIR += py-dispatcher,python3
      SUBDIR += py-distutils-extra,python3
      SUBDIR += py-docopt,python3
-     SUBDIR += py-doit	# standalone py3
+     SUBDIR += py-doit			# standalone, uses python3
      SUBDIR += py-dtfabric,python3
      SUBDIR += py-dulwich,python3
      SUBDIR += py-easyprocess,python3
@@ -1423,7 +1423,7 @@
      SUBDIR += py-kitchen,python3
      SUBDIR += py-kiwisolver,python3
      SUBDIR += py-lazy-object-proxy,python3
-     SUBDIR += py-liblarch
+     SUBDIR += py-liblarch		# unflavoured but uses python3
      SUBDIR += py-lief,python3
      SUBDIR += py-linecache2
      SUBDIR += py-llvmlite
