@@ -1,0 +1,14 @@
+$OpenBSD: patch-configs_nanopi-r2s-rk3328_defconfig,v 1.1 2021/10/29 11:14:46 patrick Exp $
+
+Index: configs/nanopi-r2s-rk3328_defconfig
+--- configs/nanopi-r2s-rk3328_defconfig.orig
++++ configs/nanopi-r2s-rk3328_defconfig
+@@ -76,7 +76,7 @@ CONFIG_RAM=y
+ CONFIG_SPL_RAM=y
+ CONFIG_TPL_RAM=y
+ CONFIG_DM_RESET=y
+-CONFIG_BAUDRATE=1500000
++CONFIG_BAUDRATE=115200
+ CONFIG_DEBUG_UART_SHIFT=2
+ CONFIG_SYSINFO=y
+ CONFIG_SYSRESET=y
