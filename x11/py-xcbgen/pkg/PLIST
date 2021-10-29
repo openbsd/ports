@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/11/03 11:42:11 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/10/29 15:45:09 sthen Exp $
+@pkgpath x11/py-xcbgen
 lib/python${MODPY_VERSION}/site-packages/xcbgen/
 lib/python${MODPY_VERSION}/site-packages/xcbgen/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xcbgen/${MODPY_PYCACHE}/

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1327 2021/10/29 15:38:49 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1328 2021/10/29 15:45:08 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -675,6 +675,7 @@ my $stem_extensions = {
 	'py-voluptuous' => 'py3-voluptuous',
 	'py-wrapt' => 'py3-wrapt',
 	'py-wstools' => 'py3-wstools',
+	'py-xcbgen' => 'py3-xcbgen',
 	'py-xlsxwriter' => 'py3-xlsxwriter',
 	'py-yamllint' => 'py3-yamllint',
 	'py-yapf' => 'py3-yapf',

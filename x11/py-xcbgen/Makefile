@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2020/12/20 15:37:02 matthieu Exp $
+# $OpenBSD: Makefile,v 1.9 2021/10/29 15:45:08 sthen Exp $
 
 COMMENT =	X C Binding - protocol binding generator
 
 # please keep in sync with the version in proto/xcb-proto in Xenocara
-VERSION=	1.14.1
+VERSION =	1.14.1
 DISTNAME =	xcb-proto-${VERSION}
 PKGNAME =	py-xcbgen-${VERSION}
+REVISION =	0
 
 CATEGORIES =	x11
 
@@ -23,7 +24,7 @@ EXTRACT_SUFX=           .tar.xz
 MODULES=		lang/python
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 NO_BUILD =		Yes
 NO_TEST =		Yes

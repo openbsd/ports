@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.714 2021/10/22 17:26:17 fcambus Exp $
+# $OpenBSD: Makefile,v 1.715 2021/10/29 15:45:08 sthen Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -245,7 +245,6 @@
      SUBDIR += py-sip-qt5,python3
      SUBDIR += py-virtualdisplay,python3
      SUBDIR += py-wxPython
-     SUBDIR += py-xcbgen
      SUBDIR += py-xcbgen,python3
      SUBDIR += py-xlib,python3
      SUBDIR += qt5
