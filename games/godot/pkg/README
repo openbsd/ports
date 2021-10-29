@@ -1,0 +1,14 @@
+$OpenBSD: README,v 1.1 2021/10/29 21:07:02 thfr Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Modules
+=======
+
+Note that this version includes the module "GodotSteam" in its namespace which
+is not part of the default Godot install. This is mainly for compatibility with
+runtime of prepackaged games. It communicates with games/goldberg_emulator, not
+an official Steam client. Making use of the Steam.* namespace for development
+may lead to unexpected behavior, so use at your own risk.
