@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2020/11/06 22:55:24 tracey Exp $
+# $OpenBSD: Makefile,v 1.4 2021/10/29 13:17:26 tracey Exp $
 
 COMMENT =		esp8266 and esp32 rom bootloader communication tool
 
-MODPY_EGG_VERSION =	3.0
+MODPY_EGG_VERSION =	3.2
 DISTNAME =		esptool-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
