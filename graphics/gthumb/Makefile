@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.122 2021/10/26 11:29:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.123 2021/10/29 07:17:39 ajacoutot Exp $
 
 COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
 GNOME_VERSION=	3.12.0
+REVISION=	0
 
 CATEGORIES=	graphics
 
@@ -13,12 +14,11 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c cairo clutter-1.0 clutter-gtk-1.0
+WANTLIB += ${COMPILER_LIBCXX} X11 c cairo clutter-1.0 clutter-gtk-1.0
 WANTLIB += exiv2 gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gstreamer-1.0 gstvideo-1.0 gtk-3 intl jpeg
-WANTLIB += lcms2 m pango-1.0 pangocairo-1.0 png
-WANTLIB += raw rsvg-2 secret-1 soup-2.4 tiff webkit2gtk-4.0 webp
-WANTLIB += z X11
+WANTLIB += gobject-2.0 gstreamer-1.0 gstvideo-1.0 gtk-3 heif intl
+WANTLIB += jpeg lcms2 m pango-1.0 pangocairo-1.0 png raw rsvg-2
+WANTLIB += secret-1 soup-2.4 tiff webkit2gtk-4.0 webp z
 
 COMPILER=	base-clang ports-gcc base-gcc
 
@@ -38,6 +38,7 @@ LIB_DEPENDS=	graphics/clutter/clutter-gtk  \
 		graphics/libraw \
 		graphics/libwebp \
 		multimedia/gstreamer1/core \
+		multimedia/libheif \
 		www/webkitgtk4 \
 		x11/gnome/librsvg
 
