@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.564 2021/10/25 12:33:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.565 2021/10/29 21:02:00 sdk Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -267,6 +267,7 @@
      SUBDIR += qiv
      SUBDIR += quesoglc
      SUBDIR += quirc
+     SUBDIR += radeontop
      SUBDIR += rawstudio
      SUBDIR += rawtherapee
      SUBDIR += ruby-color
