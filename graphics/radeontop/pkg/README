@@ -1,0 +1,11 @@
+$OpenBSD: README,v 1.1.1.1 2021/10/29 21:00:42 sdk Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Radeontop needs access to the system main memory via /dev/mem. This is
+forbidden on a default installation. To allow access to this device, add
+the following line to /etc/sysctl.conf.
+
+kern.allowkmem=1

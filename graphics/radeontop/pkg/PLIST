@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/10/29 21:00:42 sdk Exp $
+@lib lib/libradeontop_xcb.so.${LIBradeontop_xcb_VERSION}
+@man man/man1/radeontop.1
+@bin sbin/radeontop
+share/doc/pkg-readmes/${PKGSTEM}
+share/locale/ru/LC_MESSAGES/radeontop.mo
