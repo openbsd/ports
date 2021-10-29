@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/05/21 19:50:28 kmos Exp $
+# $OpenBSD: Makefile,v 1.10 2021/10/29 15:38:46 sthen Exp $
 
 COMMENT =	generic test automation framework for acceptance testing
 
@@ -9,7 +9,7 @@ GH_ACCOUNT =	robotframework
 GH_PROJECT =	robotframework
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	devel
 
@@ -17,16 +17,11 @@ CATEGORIES =	devel
 PERMIT_PACKAGE =	Yes
 
 FLAVORS =               python3
-FLAVOR ?=
+FLAVOR =	python3
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 TEST_DEPENDS =		${FULLPKGNAME}:${FULLPKGPATH}
-
-post-install:
-.for i in rebot robot
-	mv ${PREFIX}/bin/$i ${PREFIX}/bin/$i${MODPY_BIN_SUFFIX}
-.endfor
 
 # There is also a suite of acceptance tests, but they are *very* slow and
 # it asks the user to type things and click stuff.

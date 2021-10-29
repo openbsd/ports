@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2021/07/06 16:55:33 daniel Exp $
+# $OpenBSD: Makefile,v 1.21 2021/10/29 15:38:48 sthen Exp $
 
 COMMENT =		test utilities working with files and commands
 
 MODPY_EGG_VERSION =	0.4.2
 DISTNAME =		testpath-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		devel
 
@@ -21,7 +21,7 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =	python3
 
 BUILD_DEPENDS =		textproc/py-sphinx,python3>=4.0.2
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/05/21 19:50:35 kmos Exp $
+# $OpenBSD: Makefile,v 1.4 2021/10/29 15:38:50 sthen Exp $
 
 COMMENT =		platform independent file lock
 
 MODPY_EGG_VERSION =	3.0.12
 DISTNAME =		filelock-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		sysutils
 
@@ -24,6 +24,6 @@ MODPY_SETUPTOOLS =	Yes
 FIX_EXTRACT_PERMISSIONS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =	python3
 
 .include <bsd.port.mk>

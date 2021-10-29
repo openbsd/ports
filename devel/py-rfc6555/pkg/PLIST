@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/08/24 20:13:01 remi Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/29 15:38:46 sthen Exp $
+@pkgpath devel/py-rfc6555
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}rfc6555.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rfc6555-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/rfc6555-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

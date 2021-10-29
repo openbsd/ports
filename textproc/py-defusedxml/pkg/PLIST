@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/08/17 18:50:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/10/29 15:38:51 sthen Exp $
+@pkgpath textproc/py-defusedxml
 lib/python${MODPY_VERSION}/site-packages/defusedxml/
 lib/python${MODPY_VERSION}/site-packages/defusedxml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/defusedxml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

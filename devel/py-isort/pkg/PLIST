@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/02/19 23:13:01 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/10/29 15:38:44 sthen Exp $
+@pkgpath devel/py-isort
 @conflict py-isort-<4.2.15p3
-bin/isort${MODPY_BIN_SUFFIX}
+bin/isort
 lib/python${MODPY_VERSION}/site-packages/isort/
 lib/python${MODPY_VERSION}/site-packages/isort-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/isort-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2021/05/21 19:50:26 kmos Exp $
+# $OpenBSD: Makefile,v 1.8 2021/10/29 15:38:44 sthen Exp $
 
 COMMENT=		extract elements from a JSON document
 
 MODPY_EGG_VERSION=	0.10.0
 DISTNAME=		jmespath-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 
@@ -20,7 +20,7 @@ MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 
 FLAVORS=		python3
-FLAVOR ?=
+FLAVOR =	python3
 
 post-install:
 	rm ${PREFIX}/bin/jp.py

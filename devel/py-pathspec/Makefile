@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2021/05/21 19:50:27 kmos Exp $
+# $OpenBSD: Makefile,v 1.9 2021/10/29 15:38:45 sthen Exp $
 
 COMMENT =	utility for gitignore style pattern matching of file paths
 
 MODPY_EGG_VERSION = 0.8.1
 DISTNAME =	pathspec-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -19,6 +19,6 @@ MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	pathspec/
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 .include <bsd.port.mk>

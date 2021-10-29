@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2021/05/21 19:50:28 kmos Exp $
+# $OpenBSD: Makefile,v 1.7 2021/10/29 15:38:46 sthen Exp $
 
 COMMENT =	simple VTXXX-compatible terminal emulator
 
 MODPY_EGG_VERSION = 0.8.0
 DISTNAME =	pyte-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	devel
 
@@ -22,7 +22,7 @@ MODPY_SETUPTOOLS = Yes
 BUILD_DEPENDS =	devel/py-test-runner${MODPY_FLAVOR}
 
 FLAVORS =	python3
-FLAVOR ?=
+FLAVOR =	python3
 
 NO_TEST =	Yes
 

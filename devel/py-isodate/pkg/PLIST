@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/02/17 20:25:47 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/10/29 15:38:44 sthen Exp $
+@pkgpath devel/py-isodate
 lib/python${MODPY_VERSION}/site-packages/isodate/
 lib/python${MODPY_VERSION}/site-packages/isodate-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/isodate-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

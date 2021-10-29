@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/07/14 23:01:58 kmos Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/29 15:38:40 sthen Exp $
+@pkgpath audio/py-discid
 lib/python${MODPY_VERSION}/site-packages/discid/
 lib/python${MODPY_VERSION}/site-packages/discid-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/discid-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

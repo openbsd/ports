@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2021/05/21 19:50:35 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2021/10/29 15:38:50 sthen Exp $
 
 COMMENT =		library to enable your code run as a daemon process
 
 MODPY_EGG_VERSION =	2.5.0
 DISTNAME =		daemonize-${MODPY_EGG_VERSION}
 PKGNAME =		py-daemonize-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		sysutils devel
 
@@ -17,7 +17,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =	python3
 
 # Lie; no tests on PyPI, and the tests on GitHub are broken/insecure.
 # The brave ones are invited to read tests/test.py and cry of desperation.

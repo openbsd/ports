@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/02/19 23:13:00 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/10/29 15:38:41 sthen Exp $
+@pkgpath devel/py-argcomplete
 @conflict py-argcomplete-<1.9.3p2
-bin/activate-global-python-argcomplete${MODPY_BIN_SUFFIX}
-bin/python-argcomplete-check-easy-install-script${MODPY_BIN_SUFFIX}
-bin/python-argcomplete-tcsh${MODPY_BIN_SUFFIX}
-bin/register-python-argcomplete${MODPY_BIN_SUFFIX}
+bin/activate-global-python-argcomplete
+bin/python-argcomplete-check-easy-install-script
+bin/python-argcomplete-tcsh
+bin/register-python-argcomplete
 lib/python${MODPY_VERSION}/site-packages/argcomplete/
 lib/python${MODPY_VERSION}/site-packages/argcomplete-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/argcomplete-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

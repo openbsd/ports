@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/06/12 07:05:54 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/10/29 15:38:43 sthen Exp $
+@pkgpath devel/py-decorator
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}decorator.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/decorator-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/decorator-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

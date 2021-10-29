@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/01/04 14:06:29 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/10/29 15:38:42 sthen Exp $
+@pkgpath devel/py-blist
 lib/python${MODPY_VERSION}/site-packages/blist/
 lib/python${MODPY_VERSION}/site-packages/blist-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/blist-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/04/25 19:54:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/10/29 15:38:44 sthen Exp $
+@pkgpath devel/py-gitdb
 lib/python${MODPY_VERSION}/site-packages/gitdb/
 lib/python${MODPY_VERSION}/site-packages/gitdb/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gitdb/${MODPY_PYCACHE}/

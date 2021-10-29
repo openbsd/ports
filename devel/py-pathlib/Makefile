@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2021/07/21 23:38:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/10/29 15:38:45 sthen Exp $
 
 COMMENT =		object-oriented filesystem paths
 
 MODPY_EGG_VERSION =	1.0.1
 DISTNAME =		pathlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		11
+REVISION =		12
 
 CATEGORIES =		devel
 
@@ -20,7 +20,7 @@ TEST_DEPENDS =		lang/python/${MODPY_VERSION},-tests
 
 # this is not really needed for python3, pathlib is in the standard library
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =	python3
 
 MAKE_ENV +=	PYTHONPATH=${WRKSRC}
 

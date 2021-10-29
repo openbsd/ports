@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/10/01 19:52:38 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/10/29 15:38:41 sthen Exp $
+@pkgpath databases/py-sql
 lib/python${MODPY_VERSION}/site-packages/python_sql-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/python_sql-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/python_sql-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

@@ -1,8 +1,0 @@
-This Python package is a random collection of WSGI modules
-written by Allan Saddi.
-
-Flup is functionally divided into three components:
-
-	* FlupServers;
-	* FlupMiddleware;
-	* FlupPublisher.

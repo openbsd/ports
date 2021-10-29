@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/08/08 22:10:17 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/10/29 15:38:43 sthen Exp $
+@pkgpath devel/py-docopt
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}docopt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docopt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/docopt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

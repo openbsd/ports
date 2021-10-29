@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2021/05/21 19:50:36 kmos Exp $
+# $OpenBSD: Makefile,v 1.23 2021/10/29 15:38:51 sthen Exp $
 
 COMMENT =	python package to parse and build CSS
 
@@ -8,7 +8,7 @@ MODPY_EGG_VERSION =	1.0.2
 DISTNAME =	cssutils-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 MODPY_PI =	Yes
-REVISION =	3
+REVISION =	4
 
 # GPLv3
 PERMIT_PACKAGE=	Yes
@@ -22,14 +22,11 @@ MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	lib/cssutils
 
 FLAVORS =	python3
-FLAVOR ?=
+FLAVOR =	python3
 
 TEST_DEPENDS =	devel/py-pbr${MODPY_FLAVOR}
 
 post-install:
 	chmod 444 ${WRKINST}/${MODPY_SITEPKG}/${DISTNAME}-py${MODPY_VERSION}.egg-info/*
-.for b in csscapture csscombine cssparse
-	mv -f ${PREFIX}/bin/$b ${PREFIX}/bin/$b${MODPY_BIN_SUFFIX}
-.endfor
 
 .include <bsd.port.mk>

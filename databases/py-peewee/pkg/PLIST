@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/07/06 16:55:32 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.14 2021/10/29 15:38:41 sthen Exp $
+@pkgpath databases/py-peewee
 @conflict py-peewee-<2.8.3p4
-bin/pwiz${MODPY_BIN_SUFFIX}
+bin/pwiz
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}peewee.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pwiz.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/peewee-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

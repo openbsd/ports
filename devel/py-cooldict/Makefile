@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:12:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/10/29 15:38:43 sthen Exp $
 
 COMMENT =	some useful dict-like structures
 
 MODPY_EGG_VERSION =	1.04
 DISTNAME =	cooldict-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -22,7 +22,7 @@ MODPY_PI =		Yes
 MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =	python3
 
 RUN_DEPENDS =		devel/py-ana${MODPY_FLAVOR}
 

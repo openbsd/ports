@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.618 2021/10/24 22:51:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.619 2021/10/29 15:38:50 sthen Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -277,12 +277,10 @@
      SUBDIR += py-consul,python3
      SUBDIR += py-croniter,python3
      SUBDIR += py-daemon,python3
-     SUBDIR += py-daemonize
      SUBDIR += py-daemonize,python3
      SUBDIR += py-distro,python3
      SUBDIR += py-dotenv,python3
      SUBDIR += py-elasticsearch-curator
-     SUBDIR += py-filelock
      SUBDIR += py-filelock,python3
      SUBDIR += py-ghmi,python3
      SUBDIR += py-hpilo,python3

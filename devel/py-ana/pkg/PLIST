@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/07/07 18:11:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/10/29 15:38:41 sthen Exp $
+@pkgpath devel/py-ana
 lib/python${MODPY_VERSION}/site-packages/ana/
 lib/python${MODPY_VERSION}/site-packages/ana-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/ana/__init__.py

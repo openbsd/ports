@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/27 13:52:08 danj Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/29 15:38:45 sthen Exp $
+@pkgpath devel/py-magic
 @conflict ${MODPY_PY_PREFIX}libmagic-*
 @pkgpath devel/py-libmagic${MODPY_FLAVOR}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}magic.${MODPY_PYC_MAGIC_TAG}pyc

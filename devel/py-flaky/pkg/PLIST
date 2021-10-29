@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/22 13:01:07 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/29 15:38:43 sthen Exp $
+@pkgpath devel/py-flaky
 lib/python${MODPY_VERSION}/site-packages/flaky/
 lib/python${MODPY_VERSION}/site-packages/flaky-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/flaky-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/09/30 06:06:52 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/10/29 15:38:45 sthen Exp $
+@pkgpath devel/py-olefile
 lib/python${MODPY_VERSION}/site-packages/olefile/
 lib/python${MODPY_VERSION}/site-packages/olefile-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/olefile-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

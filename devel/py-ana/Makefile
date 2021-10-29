@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:12:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/10/29 15:38:41 sthen Exp $
 
 COMMENT =		distributed data storage classes
 
 MODPY_EGG_VERSION =	0.06
 DISTNAME =		ana-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -21,7 +21,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =	python3
 
 RUN_DEPENDS =		devel/py-future${MODPY_FLAVOR}
 

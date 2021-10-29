@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/02/19 23:13:03 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/10/29 15:38:48 sthen Exp $
+@pkgpath devel/py-yamllint
 @conflict py-yamllint-<1.23.0p1
-bin/yamllint${MODPY_BIN_SUFFIX}
+bin/yamllint
 lib/python${MODPY_VERSION}/site-packages/yamllint/
 lib/python${MODPY_VERSION}/site-packages/yamllint-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/yamllint-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

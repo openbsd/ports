@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2021/05/21 19:50:23 kmos Exp $
+# $OpenBSD: Makefile,v 1.16 2021/10/29 15:38:41 sthen Exp $
 
 COMMENT =	bash tab completion for argparse
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	1.9.3
 DISTNAME =	argcomplete-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	devel
-REVISION =	3
+REVISION =	4
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
@@ -17,18 +17,13 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =	python3
 
 TEST_DEPENDS =	devel/py-coverage${MODPY_FLAVOR} \
 		devel/py-pexpect${MODPY_FLAVOR} \
 		devel/py-wheel${MODPY_FLAVOR} \
 		shells/bash \
 		shells/tcsh
-
-post-install:
-	for i in ${PREFIX}/bin/*; do \
-		mv $${i} $${i}${MODPY_BIN_SUFFIX} ;\
-	done
 
 pre-test:
 	@ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2021/05/21 19:50:24 kmos Exp $
+# $OpenBSD: Makefile,v 1.37 2021/10/29 15:38:42 sthen Exp $
 
 COMMENT=		Python-powered template engine and code generator
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION=	3.1.0
 DISTNAME=		Cheetah3-${MODPY_EGG_VERSION}
 PKGNAME=		py-cheetah-${MODPY_EGG_VERSION}
 CATEGORIES=		devel textproc
-REVISION=		5
+REVISION=		6
 
 HOMEPAGE=		http://www.cheetahtemplate.org/
 
@@ -27,12 +27,7 @@ TEST_DEPENDS=		${FULLPKGNAME}:${BUILD_PKGPATH} \
 MAKE_ENV+=		CHEETAH_USE_SETUPTOOLS=1
 
 FLAVORS=		python3
-FLAVOR?=
-
-post-install:
-	for i in ${PREFIX}/bin/*; do \
-		mv $${i} $${i}${MODPY_BIN_SUFFIX} ;\
-	done
+FLAVOR=			python3
 
 do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} Cheetah/Tests/Test.py

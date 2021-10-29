@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:13:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/10/29 15:38:49 sthen Exp $
 
 COMMENT=		library to en/decode DNS wire-format packets for Python
 
@@ -7,7 +7,7 @@ DISTNAME=		dnslib-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		net
 MODPY_PI=		Yes
-REVISION=		2
+REVISION=		3
 
 
 MAINTAINER=		Bryan Everly <bryan@bceassociates.com>
@@ -18,7 +18,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=		lang/python
 
 FLAVORS = python3
-FLAVOR ?=
+FLAVOR =	python3
 
 do-test:
 	${SUBST_CMD} ${WRKSRC}/run_tests.sh

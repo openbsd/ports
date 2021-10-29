@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:12:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/10/29 15:38:41 sthen Exp $
 
 COMMENT =		specifications for callback functions passed to an API
 
 MODPY_EGG_VERSION =	0.1.0
 DISTNAME =		backcall-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -17,6 +17,6 @@ MODPY_PI =		Yes
 MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =	python3
 
 .include <bsd.port.mk>

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2021/05/21 19:50:28 kmos Exp $
+# $OpenBSD: Makefile,v 1.9 2021/10/29 15:38:46 sthen Exp $
 
 COMMENT =		send files to the trash natively
 
 MODPY_EGG_VERSION =	1.5.0
 DISTNAME =		Send2Trash-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		devel
 
@@ -19,7 +19,7 @@ MODPY_PI =		Yes
 MODULES =		lang/python
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =	python3
 
 MODPY_SETUPTOOLS =	Yes
 

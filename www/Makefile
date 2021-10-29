@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1046 2021/10/29 11:12:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.1047 2021/10/29 15:38:52 sthen Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -478,7 +478,6 @@
      SUBDIR += py-webtest,python3
      SUBDIR += py-werkzeug,python3
      SUBDIR += py-wtforms,python3
-     SUBDIR += py-wstools
      SUBDIR += py-wstools,python3
      SUBDIR += py-yarl,python3
      SUBDIR += qutebrowser

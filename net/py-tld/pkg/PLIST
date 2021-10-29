@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/02/19 23:13:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/10/29 15:38:49 sthen Exp $
+@pkgpath net/py-tld
 @conflict py-tld-<0.9.3p1
-bin/update-tld-names${MODPY_BIN_SUFFIX}
+bin/update-tld-names
 lib/python${MODPY_VERSION}/site-packages/tld/
 lib/python${MODPY_VERSION}/site-packages/tld-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/tld-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

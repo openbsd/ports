@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/05/21 19:50:30 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2021/10/29 15:38:47 sthen Exp $
 
 COMMENT =		run each test in a forked subprocess
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	0.2
 
 DISTNAME =		pytest-forked-${MODPY_EGG_VERSION}
 PKGNAME =		py-test-forked-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		devel
 
@@ -16,7 +16,7 @@ HOMEPAGE =		https://github.com/pytest-dev/pytest-forked
 PERMIT_PACKAGE =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =	python3
 
 MODULES =		lang/python
 

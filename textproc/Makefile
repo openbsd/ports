@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.695 2021/10/27 09:36:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.696 2021/10/29 15:38:50 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -369,13 +369,9 @@
      SUBDIR += pplatex
      SUBDIR += pugixml
      SUBDIR += pup
-     SUBDIR += py-ICU
      SUBDIR += py-ICU,python3
-     SUBDIR += py-MarkupSafe
      SUBDIR += py-MarkupSafe,python3
-     SUBDIR += py-PEG2
      SUBDIR += py-PEG2,python3
-     SUBDIR += py-PyPDF2
      SUBDIR += py-PyPDF2,python3
      SUBDIR += py-alabaster,python3
      SUBDIR += py-black
@@ -384,20 +380,15 @@
      SUBDIR += py-cchardet,python3
      SUBDIR += py-chardet
      SUBDIR += py-chardet,python3
-     SUBDIR += py-colored
      SUBDIR += py-colored,python3
      SUBDIR += py-commonmark,python3
      SUBDIR += py-cson,python3
      SUBDIR += py-css-parser,python3
      SUBDIR += py-cssselect
      SUBDIR += py-cssselect,python3
-     SUBDIR += py-cssutils
      SUBDIR += py-cssutils,python3
-     SUBDIR += py-defusedxml
      SUBDIR += py-defusedxml,python3
-     SUBDIR += py-demjson
      SUBDIR += py-demjson,python3
-     SUBDIR += py-dicttoxml
      SUBDIR += py-dicttoxml,python3
      SUBDIR += py-docutils,python3
      SUBDIR += py-elasticsearch,python3
@@ -409,11 +400,9 @@
      SUBDIR += py-humanize,python3
      SUBDIR += py-ijson,python3
      SUBDIR += py-iso8601,python3
-     SUBDIR += py-jellyfish
      SUBDIR += py-jellyfish,python3
      SUBDIR += py-lxml
      SUBDIR += py-lxml,python3
-     SUBDIR += py-markdown
      SUBDIR += py-markdown,python3
      SUBDIR += py-m2r,python3
      SUBDIR += py-mistune,python3
@@ -423,7 +412,6 @@
      SUBDIR += py-odfpy
      SUBDIR += py-ofxparse,python3
      SUBDIR += py-openpyxl,python3
-     SUBDIR += py-pandocfilters
      SUBDIR += py-pandocfilters,python3
      SUBDIR += py-patiencediff,python3
      SUBDIR += py-pdfminer
@@ -463,7 +451,6 @@
      SUBDIR += py-webencodings,python3
      SUBDIR += py-xlrd,python3
      SUBDIR += py-xlwt,python3
-     SUBDIR += py-xml
      SUBDIR += py-xmldiff
      SUBDIR += py-xmltodict,python3
      SUBDIR += py-yaml

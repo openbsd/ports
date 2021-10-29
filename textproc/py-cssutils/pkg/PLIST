@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/02/19 23:13:06 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/10/29 15:38:51 sthen Exp $
+@pkgpath textproc/py-cssutils
 @conflict py-cssutils-<1.0.2p2
-bin/csscapture${MODPY_BIN_SUFFIX}
-bin/csscombine${MODPY_BIN_SUFFIX}
-bin/cssparse${MODPY_BIN_SUFFIX}
+bin/csscapture
+bin/csscombine
+bin/cssparse
 lib/python${MODPY_VERSION}/site-packages/cssutils/
 lib/python${MODPY_VERSION}/site-packages/cssutils-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cssutils-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

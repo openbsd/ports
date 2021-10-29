@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/05/21 19:50:23 kmos Exp $
+# $OpenBSD: Makefile,v 1.12 2021/10/29 15:38:41 sthen Exp $
 
 COMMENT =	simple wrapper for python argparse module
 
@@ -7,7 +7,7 @@ DISTNAME =	argh-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	devel
 HOMEPAGE =	http://packages.python.org/argh
-REVISION =	3
+REVISION =	4
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
@@ -20,7 +20,7 @@ MODPY_SETUPTOOLS =	Yes
 RUN_DEPENDS =		devel/py-argcomplete${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =	python3
 
 # it needs iocapture
 NO_TEST =		Yes

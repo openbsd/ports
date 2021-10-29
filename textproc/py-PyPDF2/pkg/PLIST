@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/06/15 12:14:36 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/29 15:38:51 sthen Exp $
+@pkgpath textproc/py-PyPDF2
 lib/python${MODPY_VERSION}/site-packages/PyPDF2/
 lib/python${MODPY_VERSION}/site-packages/PyPDF2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/PyPDF2/__init__.py

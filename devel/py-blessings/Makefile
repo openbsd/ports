@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/05/21 19:50:23 kmos Exp $
+# $OpenBSD: Makefile,v 1.10 2021/10/29 15:38:42 sthen Exp $
 
 COMMENT =		wrapper around terminal coloring, styling, and positioning
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	1.6
 DISTNAME =		blessings-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		5
+REVISION =		6
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -17,7 +17,7 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PI =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =	python3
 
 TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR}
 

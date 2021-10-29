@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2021/07/24 18:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/10/29 15:38:51 sthen Exp $
 
 COMMENT=		XML bomb protection for Python stdlib modules
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION=	0.7.1
 DISTNAME=		defusedxml-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		textproc www
+REVISION=		0
 
 # BSD
 PERMIT_PACKAGE=	Yes
@@ -15,7 +16,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =	python3
 
 TEST_DEPENDS =		textproc/py-lxml${MODPY_FLAVOR}
 

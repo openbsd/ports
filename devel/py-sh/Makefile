@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2021/07/27 20:42:24 juanfra Exp $
+# $OpenBSD: Makefile,v 1.14 2021/10/29 15:38:47 sthen Exp $
 
 COMMENT =		Python subprocess interface
 
 MODPY_EGG_VERSION =	1.12.14
-REVISION =		4
+REVISION =		5
 DISTNAME =		sh-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =	python3
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/01/06 16:23:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/10/29 15:38:42 sthen Exp $
+@pkgpath devel/py-configobj
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}configobj.${MODPY_PYC_MAGIC_TAG}pyc

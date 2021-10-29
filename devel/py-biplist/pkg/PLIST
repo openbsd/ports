@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/05/29 18:40:54 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/29 15:38:41 sthen Exp $
+@pkgpath devel/py-biplist
 lib/python${MODPY_VERSION}/
 lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/biplist/

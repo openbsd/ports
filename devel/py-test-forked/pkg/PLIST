@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/22 15:52:24 danj Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/29 15:38:47 sthen Exp $
+@pkgpath devel/py-test-forked
 lib/python${MODPY_VERSION}/site-packages/pytest_forked/
 lib/python${MODPY_VERSION}/site-packages/pytest_forked-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pytest_forked-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

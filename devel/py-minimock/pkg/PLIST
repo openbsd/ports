@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/11/13 20:54:11 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/10/29 15:38:45 sthen Exp $
+@pkgpath devel/py-minimock
 lib/python${MODPY_VERSION}/site-packages/MiniMock-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/MiniMock-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/MiniMock-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

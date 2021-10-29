@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2021/05/21 19:50:35 kmos Exp $
+# $OpenBSD: Makefile,v 1.10 2021/10/29 15:38:50 sthen Exp $
 
 COMMENT =	Python implementation of PBKDF2
 
 MODPY_EGG_VERSION =	1.3
-REVISION =		6
+REVISION =		7
 DISTNAME =		pbkdf2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		security devel
@@ -20,6 +20,7 @@ MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
+FLAVOR =		python3
 
 TEST_ENV =		PYTHONPATH=${WRKBUILD}
 

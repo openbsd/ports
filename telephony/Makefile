@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2021/07/10 17:09:40 landry Exp $
+# $OpenBSD: Makefile,v 1.44 2021/10/29 15:38:50 sthen Exp $
 
      SUBDIR =
      SUBDIR += asterisk
@@ -21,7 +21,6 @@
      SUBDIR += p5-Net-SIP
      SUBDIR += p5-asterisk
      SUBDIR += pjsua
-     SUBDIR += py-phonenumbers
      SUBDIR += py-phonenumbers,python3
      SUBDIR += resiprocate
      SUBDIR += siproxd

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/05/21 19:50:23 kmos Exp $
+# $OpenBSD: Makefile,v 1.9 2021/10/29 15:38:42 sthen Exp $
 
 COMMENT =		list-like type with better asymptotic performance
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	1.3.6
 DISTNAME =		blist-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		5
+REVISION =		6
 
 HOMEPAGE =		http://stutzbachenterprises.com/blist/
 
@@ -21,7 +21,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS=		python3
-FLAVOR?=
+FLAVOR=			python3
 
 # fix weird permissions in the sources
 post-extract:

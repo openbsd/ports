@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:13:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/10/29 15:38:50 sthen Exp $
 
 COMMENT =		PEG Parser-Interpreter in Python
 
 MODPY_EGG_VERSION =	2.15.2
 DISTNAME =		pyPEG2-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/^py/${MODPY_PY_PREFIX}/}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		textproc
 
@@ -18,6 +18,6 @@ MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	pypeg2
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =	python3
 
 .include <bsd.port.mk>

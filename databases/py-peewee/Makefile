@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2021/07/06 16:55:32 daniel Exp $
+# $OpenBSD: Makefile,v 1.23 2021/10/29 15:38:40 sthen Exp $
 
 COMMENT=		small expressive ORM
 
 MODPY_EGG_VERSION=	2.8.3
 DISTNAME=		peewee-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		7
+REVISION=		8
 
 GH_ACCOUNT=		coleifer
 GH_PROJECT=		peewee
@@ -21,7 +21,7 @@ PERMIT_PACKAGE=	Yes
 BUILD_DEPENDS=		textproc/py-sphinx,python3>=4.0.2
 
 FLAVORS=		python3
-FLAVOR?=
+FLAVOR=			python3
 
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
@@ -38,7 +38,7 @@ post-install:
 	cd ${DOCSRC}/_build/html && pax -rw * ${DOCS}
 	${INSTALL_DATA_DIR} ${EXAMPLES}
 	cd ${WRKSRC}/examples && pax -rw * ${EXAMPLES}
-	mv ${PREFIX}/bin/pwiz.py ${PREFIX}/bin/pwiz${MODPY_BIN_SUFFIX}
+	mv ${PREFIX}/bin/pwiz.py ${PREFIX}/bin/pwiz
 
 do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} tests.py

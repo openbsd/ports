@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/02/19 23:13:02 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/10/29 15:38:46 sthen Exp $
+@pkgpath devel/py-robotframework
 @conflict py-robotframework-<3.1.2p1
-bin/rebot${MODPY_BIN_SUFFIX}
-bin/robot${MODPY_BIN_SUFFIX}
+bin/rebot
+bin/robot
 lib/python${MODPY_VERSION}/site-packages/robot/
 lib/python${MODPY_VERSION}/site-packages/robot/__init__.py
 lib/python${MODPY_VERSION}/site-packages/robot/__main__.py

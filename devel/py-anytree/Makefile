@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2021/05/21 19:50:23 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2021/10/29 15:38:41 sthen Exp $
 
 COMMENT=		powerful and lightweight Python tree data structure
 
 MODPY_EGG_VERSION=	2.4.3
 DISTNAME=		anytree-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		devel
 
@@ -19,7 +19,7 @@ MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =	python3
 
 TEST_DEPENDS=		devel/py-nose${MODPY_FLAVOR}
 

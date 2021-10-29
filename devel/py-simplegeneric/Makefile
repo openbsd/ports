@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/05/21 19:50:29 kmos Exp $
+# $OpenBSD: Makefile,v 1.11 2021/10/29 15:38:47 sthen Exp $
 
 COMMENT =		simple generic functions
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	0.8.1
 DISTNAME =		simplegeneric-${MODPY_EGG_VERSION}
 EXTRACT_SUFX =		.zip
 PKGNAME =		py-${DISTNAME}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		devel
 
@@ -21,6 +21,6 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =	python3
 
 .include <bsd.port.mk>

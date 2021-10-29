@@ -1,23 +1,14 @@
-$OpenBSD: patch-src_tld_tests_test_commands_py,v 1.1 2019/02/19 09:20:24 rpointel Exp $
+$OpenBSD: patch-src_tld_tests_test_commands_py,v 1.2 2021/10/29 15:38:49 sthen Exp $
 
 Index: src/tld/tests/test_commands.py
 --- src/tld/tests/test_commands.py.orig
 +++ src/tld/tests/test_commands.py
-@@ -26,7 +26,7 @@ class TestCommands(unittest.TestCase):
-     @log_info
-     def test_1_update_tld_names_command(self):
-         """Test updating the tld names (re-fetch mozilla source)."""
--        res = subprocess.check_output(shlex.split('update-tld-names')).strip()
-+        res = subprocess.check_output(shlex.split("update-tld-names${MODPY_BIN_SUFFIX}")).strip()
-         self.assertEqual(res, b'True')
-         return res
- 
 @@ -34,7 +34,7 @@ class TestCommands(unittest.TestCase):
      def test_2_update_tld_names_module(self):
          """Test updating the tld names (re-fetch mozilla source)."""
          res = subprocess.check_output(
 -            shlex.split('python src/tld/commands/update_tld_names.py')
-+            shlex.split("python${MODPY_VERSION} src/tld/commands/update_tld_names.py")
++            shlex.split("${MODPY_BIN} src/tld/commands/update_tld_names.py")
          ).strip()
          self.assertEqual(res, b'True')
          return res

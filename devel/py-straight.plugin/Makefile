@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/05/21 19:50:29 kmos Exp $
+# $OpenBSD: Makefile,v 1.4 2021/10/29 15:38:47 sthen Exp $
 
 COMMENT =		simple namespaced plugin facility
 
 MODPY_EGG_VERSION =	1.5.0
 DISTNAME =		straight.plugin-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 
@@ -20,7 +20,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =	python3
 
 .if ! ${FLAVOR:Mpython3}
 TEST_DEPENDS +=		devel/py-mock

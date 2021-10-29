@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:12:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/10/29 15:38:44 sthen Exp $
 
 COMMENT =		IPython vestigial utilities
 
 MODPY_EGG_VERSION =	0.2.0
 DISTNAME =		ipython_genutils-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		devel
 
@@ -21,7 +21,7 @@ MODPY_PI =		Yes
 TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 do-test:
 	cd ${WRKSRC} && LC_CTYPE=C.UTF-8 \

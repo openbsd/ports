@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/05/21 19:50:24 kmos Exp $
+# $OpenBSD: Makefile,v 1.4 2021/10/29 15:38:43 sthen Exp $
 
 COMMENT =	C-style structs for Python
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	1.8
 
 DISTNAME =	cstruct-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	devel
 
@@ -21,6 +21,6 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =	python3
-FLAVOR ?=
+FLAVOR =	python3
 
 .include <bsd.port.mk>

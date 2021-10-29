@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/04/25 19:54:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/10/29 15:38:47 sthen Exp $
+@pkgpath devel/py-smmap
 lib/python${MODPY_VERSION}/site-packages/smmap/
 lib/python${MODPY_VERSION}/site-packages/smmap/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/smmap/${MODPY_PYCACHE}/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1275 2021/10/26 19:52:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.1276 2021/10/29 15:38:49 sthen Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -558,10 +558,8 @@
      SUBDIR += py-botocore,python3
      SUBDIR += py-cares,python3
      SUBDIR += py-curl,python3
-     SUBDIR += py-cymruwhois
      SUBDIR += py-cymruwhois,python3
      SUBDIR += py-dns
-     SUBDIR += py-dnslib
      SUBDIR += py-dnslib,python3
      SUBDIR += py2-dnspython
      SUBDIR += py-dnspython,python3
@@ -580,7 +578,6 @@
      SUBDIR += py-libcloud,python3
      SUBDIR += py-libpcap
      SUBDIR += py-minimalmodbus,python3
-     SUBDIR += py-msgpack
      SUBDIR += py-msgpack,python3
      SUBDIR += py-nbxmpp,python3
      SUBDIR += py-ncclient,python3
@@ -604,12 +601,10 @@
      SUBDIR += py-smbc,python3
      SUBDIR += py-snmp,python3
      SUBDIR += py-socketio-client,python3
-     SUBDIR += py-socks
      SUBDIR += py-socks,python3
      SUBDIR += py-stem,python3
      SUBDIR += py-telegram,python3
      SUBDIR += py-tinytuya,python3
-     SUBDIR += py-tld
      SUBDIR += py-tld,python3
      SUBDIR += py-tlslite-ng,python3
      SUBDIR += py-transmissionrpc-ng,python3

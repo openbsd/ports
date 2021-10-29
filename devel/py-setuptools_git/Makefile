@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/05/21 19:50:29 kmos Exp $
+# $OpenBSD: Makefile,v 1.7 2021/10/29 15:38:46 sthen Exp $
 
 COMMENT=		setuptools revision control system plugin for Git
 
@@ -18,6 +18,6 @@ MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 
 FLAVORS=		python3
-FLAVOR ?=
+FLAVOR?=
 
 .include <bsd.port.mk>

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2021/05/21 19:50:31 kmos Exp $
+# $OpenBSD: Makefile,v 1.18 2021/10/29 15:38:48 sthen Exp $
 
 COMMENT =	linter for YAML files
 
 MODPY_EGG_VERSION = 1.23.0
 DISTNAME =	yamllint-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	devel
 
@@ -23,9 +23,6 @@ RUN_DEPENDS =	devel/py-pathspec${MODPY_FLAVOR} \
 		textproc/py-yaml${MODPY_FLAVOR}
 
 FLAVORS =	python3
-FLAVOR ?=
-
-post-install:
-	mv ${PREFIX}/bin/yamllint ${PREFIX}/bin/yamllint${MODPY_BIN_SUFFIX}
+FLAVOR =	python3
 
 .include <bsd.port.mk>

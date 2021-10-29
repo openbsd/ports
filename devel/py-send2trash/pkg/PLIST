@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/01/28 19:10:12 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/10/29 15:38:46 sthen Exp $
+@pkgpath devel/py-send2trash
 lib/python${MODPY_VERSION}/site-packages/Send2Trash-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Send2Trash-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Send2Trash-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

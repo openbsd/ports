@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/02/19 23:13:06 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/10/29 15:38:51 sthen Exp $
+@pkgpath textproc/py-markdown
+@pkgpath textproc/markdown
 @conflict py-markdown-<2.6.11p4
-!%%python3%%
-bin/markdown_py${MODPY_BIN_SUFFIX}
+@conflict markdown-*
+bin/markdown_py
 lib/python${MODPY_VERSION}/site-packages/Markdown-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Markdown-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Markdown-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

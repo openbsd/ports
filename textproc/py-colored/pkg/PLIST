@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/12/31 01:52:09 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/29 15:38:51 sthen Exp $
+@pkgpath textproc/py-colored
 lib/python${MODPY_VERSION}/site-packages/colored/
 lib/python${MODPY_VERSION}/site-packages/colored-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/colored/__init__.py

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2021/05/21 19:50:29 kmos Exp $
+# $OpenBSD: Makefile,v 1.7 2021/10/29 15:38:46 sthen Exp $
 
 COMMENT =	setuptools_scm plugin for git archives
 
 MODPY_EGG_VERSION =	1.0
 DISTNAME =	setuptools_scm_git_archive-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	devel
 
@@ -22,6 +22,6 @@ BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =	python3
 
 .include <bsd.port.mk>

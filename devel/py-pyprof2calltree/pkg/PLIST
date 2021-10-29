@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/02/19 23:13:02 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/10/29 15:38:46 sthen Exp $
+@pkgpath devel/pyprof2calltree
 @conflict py-pyprof2calltree-<1.4.5p0
-bin/pyprof2calltree${MODPY_BIN_SUFFIX}
+bin/pyprof2calltree
 lib/python${MODPY_VERSION}/site-packages/pyprof2calltree-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pyprof2calltree-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/pyprof2calltree-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

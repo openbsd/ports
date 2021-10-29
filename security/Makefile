@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.640 2021/10/26 19:52:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.641 2021/10/29 15:38:49 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -273,7 +273,6 @@
      SUBDIR += py-artifacts,python3
      SUBDIR += py-asn1crypto,python3
      SUBDIR += py-axolotl,python3
-     SUBDIR += py-axolotl-curve25519
      SUBDIR += py-axolotl-curve25519,python3
      SUBDIR += py-bcrypt,python3
      SUBDIR += py-cryptodome
@@ -299,7 +298,6 @@
      SUBDIR += py-oauthlib,python3
      SUBDIR += py-paramiko,python3
      SUBDIR += py-passlib,python3
-     SUBDIR += py-pbkdf2
      SUBDIR += py-pbkdf2,python3
      SUBDIR += py-pefile
      SUBDIR += py-pefile,python3

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/01/31 17:46:32 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/29 15:38:47 sthen Exp $
+@pkgpath devel/py-setuptools_scm_git_archive
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm_git_archive/
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm_git_archive-0-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm_git_archive-0-py${MODPY_VERSION}.egg-info/PKG-INFO

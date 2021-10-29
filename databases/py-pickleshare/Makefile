@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2021/05/21 19:50:22 kmos Exp $
+# $OpenBSD: Makefile,v 1.17 2021/10/29 15:38:41 sthen Exp $
 
 COMMENT =		tiny 'shelve'-like database with concurrency support
 
 MODPY_EGG_VERSION =	0.7.4
 DISTNAME =		pickleshare-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		databases devel
 
@@ -21,7 +21,7 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =	python3
 
 .if !${FLAVOR:Mpython3}
 RUN_DEPENDS =		devel/py-pathlib${MODPY_FLAVOR}

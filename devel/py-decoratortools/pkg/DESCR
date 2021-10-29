@@ -1,5 +1,0 @@
-Use class and function decorators -- even in Python 2.3 (now with
-source debugging for generated code)!  Want to use decorators, but
-still need to support Python 2.3? Wish you could have class decorators,
-decorate arbitrary assignments, or match decorated function signatures
-to their original functions? Then you need "DecoratorTools".

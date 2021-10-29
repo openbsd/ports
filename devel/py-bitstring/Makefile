@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:12:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/10/29 15:38:42 sthen Exp $
 
 COMMENT =		construction, analysis and modification of binary data
 
 MODPY_EGG_VERSION =	3.1.5
 DISTNAME =		bitstring-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -23,7 +23,7 @@ MODPY_PYTEST =		Yes
 MODPY_TEST_DIR =	${WRKSRC}/test/
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =	python3
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}bitstring/

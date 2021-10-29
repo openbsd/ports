@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/22 16:36:32 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/29 15:38:44 sthen Exp $
+@pkgpath devel/py-frozendict
 lib/python${MODPY_VERSION}/site-packages/frozendict/
 lib/python${MODPY_VERSION}/site-packages/frozendict-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/frozendict-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

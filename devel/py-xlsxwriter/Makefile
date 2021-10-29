@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2021/02/19 23:13:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2021/10/29 15:38:48 sthen Exp $
 
 COMMENT =	Python module for creating Excel XLSX files
 
 MODPY_EGG_VERSION = 1.2.9
 DISTNAME =	XlsxWriter-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	devel
 
@@ -20,12 +20,8 @@ MODULES =	lang/python
 MODPY_PI =	Yes
 
 FLAVORS =	python3
-FLAVOR ?=
+FLAVOR =	python3
 
 NO_TEST =	Yes
-
-post-install:
-	mv ${PREFIX}/bin/vba_extract.py \
-		${PREFIX}/bin/vba_extract.py${MODPY_BIN_SUFFIX}
 
 .include <bsd.port.mk>

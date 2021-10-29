@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/05/21 19:50:30 kmos Exp $
+# $OpenBSD: Makefile,v 1.4 2021/10/29 15:38:47 sthen Exp $
 
 COMMENT =		relaxed test discovery/organization for pytest
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	1.1.5
 
 DISTNAME =		pytest-relaxed-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 
@@ -26,6 +26,6 @@ RUN_DEPENDS =		devel/py-decorator${MODPY_FLAVOR} \
 			devel/py-test${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =	python3
 
 .include <bsd.port.mk>

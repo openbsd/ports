@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2021/05/21 19:50:26 kmos Exp $
+# $OpenBSD: Makefile,v 1.15 2021/10/29 15:38:45 sthen Exp $
 
 COMMENT =		McCabe complexity checker for Python
 
 MODPY_EGG_VERSION =	0.6.1
 DISTNAME =		mccabe-${MODPY_EGG_VERSION}
 PKGNAME =		py-mccabe-${MODPY_EGG_VERSION}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		devel
 
@@ -22,6 +22,6 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =	python3
 
 .include <bsd.port.mk>

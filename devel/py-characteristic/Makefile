@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2021/05/21 19:50:24 kmos Exp $
+# $OpenBSD: Makefile,v 1.5 2021/10/29 15:38:42 sthen Exp $
 
 COMMENT =		python attributes without boilerplate
 
 MODPY_EGG_VERSION =	14.3.0
 DISTNAME =		characteristic-${MODPY_EGG_VERSION}
 PKGNAME =		py-characteristic-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		devel
 
@@ -23,7 +23,7 @@ MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	lib/
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =	python3
 
 TEST_DEPENDS =		devel/py-test-xdist${MODPY_FLAVOR}
 

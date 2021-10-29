@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/02/19 23:13:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/10/29 15:38:49 sthen Exp $
+@pkgpath net/py-cymruwhois
 @conflict py-cymruwhois-<1.6p2
-bin/cymruwhois${MODPY_BIN_SUFFIX}
+bin/cymruwhois
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}cymruwhois.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cymruwhois-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cymruwhois-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2021/05/21 19:50:33 kmos Exp $
+# $OpenBSD: Makefile,v 1.7 2021/10/29 15:38:49 sthen Exp $
 
 COMMENT=		client for the whois.cymru.com service
 
 MODPY_EGG_VERSION=	1.6
 DISTNAME=		cymruwhois-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		net
 
@@ -20,11 +20,8 @@ MODPY_SETUPTOOLS=	Yes
 MODPY_ADJ_FILES=	cymruwhois.py
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR}
-
-post-install:
-	mv ${PREFIX}/bin/cymruwhois ${PREFIX}/bin/cymruwhois${MODPY_BIN_SUFFIX}
 
 .include <bsd.port.mk>

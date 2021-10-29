@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2021/05/21 19:50:24 kmos Exp $
+# $OpenBSD: Makefile,v 1.16 2021/10/29 15:38:42 sthen Exp $
 
 COMMENT =		command line interface tools for Python
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	0.5.1
 DISTNAME =		clint-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		4
+REVISION =		5
 
 
 # ISC
@@ -18,7 +18,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =	python3
 
 DOCS =			${PREFIX}/share/doc/${MODPY_PY_PREFIX}clint
 

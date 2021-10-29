@@ -1,4 +1,0 @@
-A package collecting the tools required for writing basic XML
-applications in Python, along with documentation and sample
-code Features include (but are not limited to) SAX, DOM, the
-xmlproc validating parser, an Expat interface, and more.
