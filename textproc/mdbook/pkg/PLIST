@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/07/08 22:18:41 edd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/10/29 13:52:32 edd Exp $
 @bin bin/mdbook
 share/doc/mdbook/
 share/doc/mdbook/.nojekyll
@@ -60,6 +60,12 @@ share/doc/mdbook/for_developers/mdbook-wordcount/src/main.rs
 share/doc/mdbook/for_developers/preprocessors.html
 share/doc/mdbook/format/
 share/doc/mdbook/format/config.html
+share/doc/mdbook/format/configuration/
+share/doc/mdbook/format/configuration/environment-variables.html
+share/doc/mdbook/format/configuration/general.html
+share/doc/mdbook/format/configuration/index.html
+share/doc/mdbook/format/configuration/preprocessors.html
+share/doc/mdbook/format/configuration/renderers.html
 share/doc/mdbook/format/example.rs
 share/doc/mdbook/format/index.html
 share/doc/mdbook/format/mathjax.html
