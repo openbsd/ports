@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.213 2021/09/03 11:50:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.214 2021/10/29 18:20:55 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (core installation)
 COMMENT-extras=		GNOME desktop meta-package (world installation)
 
 # sync with gnome-desktop GNOME_VERSION
-V=			40.4
+V=			41.0
 PKGNAME=		gnome-${V}
 
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
-
-REVISION-main=		0
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -92,6 +90,7 @@ RUN_DEPENDS-main +=	x11/gnome/usage
 RUN_DEPENDS-extras +=	graphics/simple-scan \
 			www/epiphany \
 			x11/gnome/baobab \
+			x11/gnome/connections \
 			x11/gnome/system-monitor \
 			x11/gnome/totem
 
@@ -111,7 +110,6 @@ RUN_DEPENDS-extras +=	inputmethods/ibus-anthy \
 			mail/evolution \
 			net/gupnp/igd \
 			x11/gnome/books \
-			x11/gnome/connections \
 			x11/gnome/devel-docs \
 			x11/gnome/dictionary \
 			x11/gnome/documents \
