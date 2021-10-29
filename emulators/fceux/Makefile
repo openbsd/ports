@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2021/10/29 10:13:16 bentley Exp $
+# $OpenBSD: Makefile,v 1.22 2021/10/29 10:26:23 bentley Exp $
 
 COMMENT =		emulator for Nintendo Entertainment System
 
@@ -33,8 +33,6 @@ MODULES =		devel/cmake \
 NO_TEST =		Yes
 
 SUBST_VARS +=		HOMEPAGE V
-
-FIX_CRLF_FILES =	src/*.{lua,txt}
 
 post-extract:
 	chmod +x ${WRKSRC}/scripts/genGitHdr.sh
