@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.60 2021/10/28 06:15:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.61 2021/10/29 10:31:58 ajacoutot Exp $
 include/evolution-data-server/
 include/evolution-data-server/camel/
 include/evolution-data-server/camel/camel-address.h
@@ -24,6 +24,7 @@ include/evolution-data-server/camel/camel-folder-summary.h
 include/evolution-data-server/camel/camel-folder-thread.h
 include/evolution-data-server/camel/camel-folder.h
 include/evolution-data-server/camel/camel-gpg-context.h
+include/evolution-data-server/camel/camel-hostname-utils.h
 include/evolution-data-server/camel/camel-html-parser.h
 include/evolution-data-server/camel/camel-iconv.h
 include/evolution-data-server/camel/camel-index.h
