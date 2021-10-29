@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1324 2021/10/27 19:32:05 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1325 2021/10/29 08:40:18 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1377,6 +1377,7 @@ setup_obsolete_reason(
 	31 => 'py-xmpppy',
 	31 => 'py-yenc',
 	31 => 'py-zsi',
+	8 => 'tilecache',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1405,6 +1406,7 @@ my $obsolete_message = {
 	5 => "outdated and/or no longer required by other ports",
 	6 => "no longer useful",
 	7 => "removed in favor of using the language's package manager",
+	8 => "no longer maintained upstream, consider mapproxy as an alternative",
 	10 => "has been replaced by opendkim",
 	11 => "no longer packageable",
 	12 => "replace with IMAPSieve, see https://wiki.dovecot.org/HowTo/AntispamWithSieve",

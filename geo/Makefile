@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2021/10/28 05:13:18 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.79 2021/10/29 08:40:18 sthen Exp $
 
      SUBDIR =
      SUBDIR += foxtrotgps
@@ -69,7 +69,6 @@
      SUBDIR += routino
      SUBDIR += spatialindex
      SUBDIR += spatialite
-     SUBDIR += tilecache
      SUBDIR += traccar
      SUBDIR += viking
 
