@@ -1,0 +1,16 @@
+$OpenBSD: patch-make_hotspot_lib_CompileJvm_gmk,v 1.1.1.1 2021/10/29 18:15:16 kurt Exp $
+
+This file name changed in 17 and needs to be excluded
+
+Index: make/hotspot/lib/CompileJvm.gmk
+--- make/hotspot/lib/CompileJvm.gmk.orig
++++ make/hotspot/lib/CompileJvm.gmk
+@@ -128,7 +128,7 @@ else ifeq ($(call And, $(call isTargetOs, linux) $(cal
+ endif
+ 
+ ifeq ($(OPENJDK_TARGET_OS_ENV)-$(OPENJDK_TARGET_CPU), bsd.openbsd-aarch64)
+-  JVM_EXCLUDE_FILES += threadLS_bsd_aarch64.s
++  JVM_EXCLUDE_FILES += threadLS_bsd_aarch64.S
+ endif
+ 
+ ifeq ($(call isTargetOs, linux macosx windows bsd), true)

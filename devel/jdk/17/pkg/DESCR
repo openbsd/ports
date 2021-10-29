@@ -1,0 +1,11 @@
+OpenJDK SDK, Standard Edition
+Version 17
+
+The OpenJDK SDK software includes tools useful for developing and
+testing programs written in the Java programming language and
+running on the Java platform.
+
+Flavors:
+  native_bootstrap
+    Bootstrap the jdk using a previously built and installed
+    devel/jdk/17 package.

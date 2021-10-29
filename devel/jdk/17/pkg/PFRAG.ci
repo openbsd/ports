@@ -1,0 +1,17 @@
+@comment $OpenBSD: PFRAG.ci,v 1.1.1.1 2021/10/29 18:15:16 kurt Exp $
+jdk-17/jmods/jdk.internal.vm.ci.jmod
+jdk-17/jmods/jdk.internal.vm.compiler.jmod
+jdk-17/jmods/jdk.internal.vm.compiler.management.jmod
+jdk-17/legal/jdk.internal.vm.ci/
+jdk-17/legal/jdk.internal.vm.ci/ADDITIONAL_LICENSE_INFO
+jdk-17/legal/jdk.internal.vm.ci/ASSEMBLY_EXCEPTION
+jdk-17/legal/jdk.internal.vm.ci/LICENSE
+jdk-17/legal/jdk.internal.vm.compiler/
+jdk-17/legal/jdk.internal.vm.compiler.management/
+jdk-17/legal/jdk.internal.vm.compiler.management/ADDITIONAL_LICENSE_INFO
+jdk-17/legal/jdk.internal.vm.compiler.management/ASSEMBLY_EXCEPTION
+jdk-17/legal/jdk.internal.vm.compiler.management/LICENSE
+jdk-17/legal/jdk.internal.vm.compiler/ADDITIONAL_LICENSE_INFO
+jdk-17/legal/jdk.internal.vm.compiler/ASSEMBLY_EXCEPTION
+jdk-17/legal/jdk.internal.vm.compiler/LICENSE
+jdk-17/lib/server/classes_nocoops.jsa

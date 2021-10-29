@@ -1,0 +1,16 @@
+$OpenBSD: README,v 1.1.1.1 2021/10/29 18:15:16 kurt Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+ipv4 and v6 networking
+======================
+  ipv4 to ipv6 address mapping is disabled on OpenBSD. This means the
+  jdk can only use ipv4 addresses or ipv6 addresses but not both at
+  the same time. By default ipv4 addresses are enabled. To use ipv6
+  addresses set the following properties when you start java:
+
+  -Djava.net.preferIPv4Stack=false
+  -Djava.net.preferIPv6Stack=true
+  -Djava.net.preferIPv6Addresses=true

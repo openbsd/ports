@@ -1,0 +1,16 @@
+$OpenBSD: patch-make_modules_java_desktop_lib_Awt2dLibraries_gmk,v 1.1.1.1 2021/10/29 18:15:16 kurt Exp $
+
+Backport fix for --with-harfbuzz=system from jdk17u
+
+Index: make/modules/java.desktop/lib/Awt2dLibraries.gmk
+--- make/modules/java.desktop/lib/Awt2dLibraries.gmk.orig
++++ make/modules/java.desktop/lib/Awt2dLibraries.gmk
+@@ -438,7 +438,7 @@ endif
+ 
+ ifeq ($(USE_EXTERNAL_HARFBUZZ), true)
+    LIBFONTMANAGER_EXTRA_SRC =
+-   BUILD_LIBFONTMANAGER_FONTLIB += $(LIBHARFBUZZ_LIBS)
++   BUILD_LIBFONTMANAGER_FONTLIB += $(HARFBUZZ_LIBS)
+ else
+    LIBFONTMANAGER_EXTRA_SRC = libharfbuzz
+ 
