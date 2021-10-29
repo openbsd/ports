@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.65 2021/09/05 12:12:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2021/10/29 18:26:41 landry Exp $
 
 ONLY_FOR_ARCHS =${APM_ARCHS}
 
 COMMENT =	userland power management interface
 
-DISTNAME =	upower-0.99.11
-EXTRACT_SUFX =	.tar.xz
+V =	0.99.13
+DISTNAME =	upower-UPOWER_${V:S/./_/g}
+PKGNAME =	upower-${V}
+
 CATEGORIES =	sysutils
 SHARED_LIBS +=  upower-glib          2.1      # 3.1
-REVISION =	2
 
 HOMEPAGE =	https://upower.freedesktop.org/
-MASTER_SITES =	https://upower.freedesktop.org/releases/
+MASTER_SITES =	https://gitlab.freedesktop.org/upower/upower/-/archive/UPOWER_${V:S/./_/g}/
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
@@ -20,7 +21,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 m
 
-CONFIGURE_STYLE =	gnu
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.16
+CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ARGS +=	--enable-introspection \
 			--enable-man-pages \
 			--with-historydir=/var/db/upower \
@@ -41,5 +44,8 @@ BUILD_DEPENDS =	devel/gettext,-tools \
 
 # /usr/local/share/dbus-1/system-services/
 RUN_DEPENDS +=	x11/dbus,-suid
+
+post-extract:
+	touch ${WRKSRC}/gtk-doc.make
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2021/09/05 12:12:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2021/10/29 18:26:41 landry Exp $
 @extraunexec rm -f /var/db/upower/history-*
 @bin bin/upower
 include/libupower-glib/
@@ -14,7 +14,7 @@ include/libupower-glib/up-wakeups.h
 include/libupower-glib/upower.h
 lib/girepository-1.0/
 lib/girepository-1.0/UPowerGlib-1.0.typelib
-lib/libupower-glib.a
+@static-lib lib/libupower-glib.a
 lib/libupower-glib.la
 @lib lib/libupower-glib.so.${LIBupower-glib_VERSION}
 lib/pkgconfig/upower-glib.pc
