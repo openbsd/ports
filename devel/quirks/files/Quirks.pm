@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1325 2021/10/29 08:40:18 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1326 2021/10/29 11:12:06 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1378,6 +1378,12 @@ setup_obsolete_reason(
 	31 => 'py-yenc',
 	31 => 'py-zsi',
 	8 => 'tilecache',
+	6 => 'py-flup',
+	6 => 'py3-flup',
+	31 => 'py-paste',
+	31 => 'py-paste-deploy',
+	31 => 'py-paste-script',
+	31 => 'py-wsgiutils',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

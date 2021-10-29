@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1045 2021/10/26 19:52:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.1046 2021/10/29 11:12:06 sthen Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -425,8 +425,6 @@
      SUBDIR += py-flask-login,python3
      SUBDIR += py-flask-principal,python3
      SUBDIR += py-flask-wtf,python3
-     SUBDIR += py-flup
-     SUBDIR += py-flup,python3
      SUBDIR += py-formencode,python3
      SUBDIR += py-frozen-flask,python3
      SUBDIR += py-genshi,python3
@@ -448,9 +446,6 @@
      SUBDIR += py-metallum,python3
      SUBDIR += py-multidict,python3
      SUBDIR += py-ndg-httpsclient,python3
-     SUBDIR += py-paste
-     SUBDIR += py-paste-deploy
-     SUBDIR += py-paste-script
      SUBDIR += py-qtwebengine,python3
      SUBDIR += py-query,python3
      SUBDIR += py-quixote

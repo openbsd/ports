@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2142 2021/10/27 17:22:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.2143 2021/10/29 11:12:06 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1667,7 +1667,6 @@
      SUBDIR += py-wheezy.template,python3
      SUBDIR += py-wrapt
      SUBDIR += py-wrapt,python3
-     SUBDIR += py-wsgiutils
      SUBDIR += py-wurlitzer,python3
      SUBDIR += py-xdg
      SUBDIR += py-xdg,python3
