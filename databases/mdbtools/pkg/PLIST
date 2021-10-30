@@ -1,0 +1,59 @@
+@comment $OpenBSD: PLIST,v 1.1 2021/10/30 07:02:01 ajacoutot Exp $
+@pkgpath databases/mdbtools/snapshot,-main
+@pkgpath databases/mdbtools,-main
+@pkgpath databases/mdbtools,-gmdb
+@bin bin/mdb-array
+@bin bin/mdb-count
+@bin bin/mdb-export
+@bin bin/mdb-header
+@bin bin/mdb-hexdump
+@bin bin/mdb-json
+@bin bin/mdb-parsecsv
+@bin bin/mdb-prop
+@bin bin/mdb-queries
+@bin bin/mdb-schema
+@bin bin/mdb-sql
+@bin bin/mdb-tables
+@bin bin/mdb-ver
+include/mdbsql.h
+include/mdbtools.h
+@static-lib lib/libmdb.a
+lib/libmdb.la
+@lib lib/libmdb.so.${LIBmdb_VERSION}
+@static-lib lib/libmdbsql.a
+lib/libmdbsql.la
+@lib lib/libmdbsql.so.${LIBmdbsql_VERSION}
+lib/odbc/
+@so lib/odbc/libmdbodbc.so
+@so lib/odbc/libmdbodbcW.so
+lib/pkgconfig/libmdb.pc
+lib/pkgconfig/libmdbsql.pc
+@man man/man1/mdb-array.1
+@man man/man1/mdb-count.1
+@man man/man1/mdb-export.1
+@man man/man1/mdb-header.1
+@man man/man1/mdb-hexdump.1
+@man man/man1/mdb-import.1
+@man man/man1/mdb-json.1
+@man man/man1/mdb-parsecsv.1
+@man man/man1/mdb-prop.1
+@man man/man1/mdb-queries.1
+@man man/man1/mdb-schema.1
+@man man/man1/mdb-sql.1
+@man man/man1/mdb-tables.1
+@man man/man1/mdb-ver.1
+@comment man/mant/
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/mdb-count
+share/bash-completion/completions/mdb-export
+share/bash-completion/completions/mdb-hexdump
+share/bash-completion/completions/mdb-import
+share/bash-completion/completions/mdb-json
+share/bash-completion/completions/mdb-parsecsv
+share/bash-completion/completions/mdb-prop
+share/bash-completion/completions/mdb-queries
+share/bash-completion/completions/mdb-schema
+share/bash-completion/completions/mdb-sql
+share/bash-completion/completions/mdb-tables
+share/bash-completion/completions/mdb-ver

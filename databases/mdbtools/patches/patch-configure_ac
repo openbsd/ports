@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure_ac,v 1.1 2021/10/30 07:02:01 ajacoutot Exp $
+
+file.c:303:25: error: 'g_memdup' is deprecated: Use 'g_memdup2' instead [-Werror,-Wdeprecated-declarations]
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -83,7 +83,7 @@ AM_CONDITIONAL(SQL, test x$sql = xtrue)
+ AC_SUBST(SQL)
+ AC_SUBST(LFLAGS)
+ 
+-CFLAGS="$CFLAGS -Wall -Werror"
++CFLAGS="$CFLAGS -Wall"
+ LOCALE_T=locale_t
+ AS_CASE([$host],
+         [*mingw*], [LDFLAGS="$LDFLAGS -no-undefined" LOCALE_T=_locale_t], [])
