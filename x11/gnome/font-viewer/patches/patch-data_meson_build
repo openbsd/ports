@@ -1,0 +1,15 @@
+$OpenBSD: patch-data_meson_build,v 1.1 2021/10/30 17:26:42 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: data/meson.build
+--- data/meson.build.orig
++++ data/meson.build
+@@ -1,6 +1,6 @@
+ appdatadir = join_paths(datadir, 'metainfo')
+ appdata_file = 'org.gnome.font-viewer.appdata.xml'
+-merged_appdata = i18n.merge_file(appdata_file,
++merged_appdata = i18n.merge_file(
+   input: appdata_file + '.in',
+   output: appdata_file,
+   po_dir: '../po',
