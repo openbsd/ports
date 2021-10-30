@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/10/30 04:02:05 bcallah Exp $
 
 # Upstream says 64-bit only.
 # https://github.com/jarun/bcal/issues/4
 ONLY_FOR_ARCHS =	${LP64_ARCHS}
 
-V =		2.2
+V =		2.3
 COMMENT =	storage and general-purpose calculator (Byte CALculator)
 DISTNAME =	bcal-v${V}
 PKGNAME =	bcal-${V}
@@ -31,7 +31,7 @@ TEST_DEPENDS =	devel/py-test${MODPY_FLAVOR}
 
 USE_GMAKE =	Yes
 
-WRKDIST =	${WRKDIR}/bcal
+WRKDIST =	${WRKDIR}/${PKGNAME}
 
 # Better install routine
 do-install:
