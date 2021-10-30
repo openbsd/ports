@@ -1,14 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/10/24 09:28:52 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/10/30 11:59:30 sthen Exp $
 @pkgpath www/py-httplib2
 lib/python${MODPY_VERSION}/site-packages/httplib2/
 lib/python${MODPY_VERSION}/site-packages/httplib2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/httplib2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/httplib2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/httplib2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/httplib2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/httplib2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/httplib2/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/httplib2/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/httplib2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/httplib2/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/httplib2/${MODPY_PYCACHE}certs.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/httplib2/${MODPY_PYCACHE}error.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httplib2/${MODPY_PYCACHE}iri2uri.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/httplib2/${MODPY_PYCACHE}socks.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/httplib2/auth.py
 lib/python${MODPY_VERSION}/site-packages/httplib2/cacerts.txt
+lib/python${MODPY_VERSION}/site-packages/httplib2/certs.py
+lib/python${MODPY_VERSION}/site-packages/httplib2/error.py
 lib/python${MODPY_VERSION}/site-packages/httplib2/iri2uri.py
+lib/python${MODPY_VERSION}/site-packages/httplib2/socks.py
