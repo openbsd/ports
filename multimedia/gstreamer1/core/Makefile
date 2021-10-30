@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2021/09/09 10:12:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2021/10/30 11:38:00 ajacoutot Exp $
 
 COMMENT=		framework for streaming media
 
@@ -21,7 +21,9 @@ BUILD_DEPENDS=		devel/bison \
 
 LIB_DEPENDS=		devel/glib2
 
-CONFIGURE_ARGS=		-Dlibunwind=disabled \
+CONFIGURE_ARGS=		-Dgtk_doc=disabled \
+			-Dbenchmarks=disabled \
+			-Dlibunwind=disabled \
 			-Dlibdw=disabled \
 			-Ddbghelp=disabled
 
