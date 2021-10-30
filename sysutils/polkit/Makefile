@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2021/10/06 09:08:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2021/10/30 14:26:23 ajacoutot Exp $
 
 COMMENT=		framework for granting privileged operations to users
 
@@ -29,8 +29,6 @@ MODULES=		devel/meson \
 
 MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
-
-USE_GMAKE=		Yes
 
 BUILD_DEPENDS=		devel/gettext,-tools \
 			devel/gobject-introspection

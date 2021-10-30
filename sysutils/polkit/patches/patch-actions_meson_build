@@ -1,0 +1,15 @@
+$OpenBSD: patch-actions_meson_build,v 1.1 2021/10/30 14:26:23 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: actions/meson.build
+--- actions/meson.build.orig
++++ actions/meson.build
+@@ -1,7 +1,6 @@
+ policy = 'org.freedesktop.policykit.policy'
+ 
+ i18n.merge_file(
+-  policy,
+   input: policy + '.in',
+   output: '@BASENAME@',
+   po_dir: po_dir,
