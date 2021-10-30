@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/10/30 00:08:26 kn Exp $
+# $OpenBSD: Makefile,v 1.6 2021/10/30 00:23:09 kn Exp $
 
 COMMENT =		command-line access to github pull requests, issues and more
 
@@ -22,8 +22,6 @@ MODULES =		lang/go
 MODGO_LDFLAGS +=	-X "github.com/cli/cli/v${V:R:R}/internal/build.Version=$V"
 
 SEPARATE_BUILD =	Yes
-
-TEST_ENV =		WORK=${WRKDIR}
 
 do-test:
 	cd ${WRKSRC} && ${MODGO_TEST_CMD} ./...
