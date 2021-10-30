@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.70 2021/10/30 11:38:00 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.71 2021/10/30 15:55:07 ajacoutot Exp $
 
 # Most frequent usage of the GStreamer packages:
 # core		base library
@@ -44,14 +44,23 @@ BUILD_DEPENDS +=	devel/gettext,-tools # -Dnls
 # X11BASE needed (at least) to find libdrm/drm_fourcc.h in plugins-base
 CONFIGURE_ENV +=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
-CONFIGURE_ARGS +=	-Dpackage-name="OpenBSD ${DISTNAME} package" \
-			-Dpackage-origin="https://www.openbsd.org/"
 
+.if ! ${.CURDIR:M*py-gstreamer}
+CONFIGURE_ARGS +=	-Dpackage-name="OpenBSD ${DISTNAME} package"
+CONFIGURE_ARGS +=	-Dpackage-origin="https://www.openbsd.org/"
+# requires hotdoc
+CONFIGURE_ARGS +=	-Ddoc=disabled
+.endif
+
+.if ! ${.CURDIR:M*plugins-libav} && ! ${.CURDIR:M*plugins-ugly} && ! ${.CURDIR:M*py-gstreamer}
 # BDEP on gtk+3, gmp, gsl
 CONFIGURE_ARGS +=	-Dexamples=disabled
 CONFIGURE_ARGS +=	-Dtests=disabled
+.endif
 
+.if ! ${.CURDIR:M*plugins-libav} && ! ${.CURDIR:M*py-gstreamer}
 # requires hotdoc
 CONFIGURE_ARGS +=	-Ddoc=disabled
+.endif
 
 .endif
