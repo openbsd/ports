@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.294 2021/05/14 13:51:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.295 2021/10/30 07:11:52 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accerciser
@@ -49,17 +49,13 @@
      SUBDIR += initial-setup
      SUBDIR += keyring
      SUBDIR += libadwaita
-     SUBDIR += libbonobo
-     SUBDIR += libbonoboui
      SUBDIR += libcryptui
      SUBDIR += libdazzle
      SUBDIR += libgda
      SUBDIR += libgepub
-     SUBDIR += libgnome
      SUBDIR += libgnome-keyring
      SUBDIR += libgnomecanvas
      SUBDIR += libgnomekbd
-     SUBDIR += libgnomeui
      SUBDIR += libgweather
      SUBDIR += libmediaart
      SUBDIR += librsvg
@@ -70,7 +66,6 @@
      SUBDIR += maps
      SUBDIR += menus
      SUBDIR += mime-data
-     SUBDIR += mono-gnome
      SUBDIR += music
      SUBDIR += mutter
      SUBDIR += nautilus

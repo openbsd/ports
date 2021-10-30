@@ -1,4 +1,0 @@
-The Bonobo UI Library provides UI code for Bonobo, the Object Activation
-Framework for GNOME. Each server is described by an XML file that
-defines its attributes. When querying or activating, you can specify
-complex requirements using the OAF query language.

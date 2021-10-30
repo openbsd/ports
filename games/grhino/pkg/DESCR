@@ -1,6 +1,0 @@
-GRhino, or Rhino its former name, is an Othello/Reversi game.  What
-distinguish GRhino from most other Othello games is that GRhino will be
-targeted for experienced Othello players. Strong AI is the main focus
-with some additional good, useful features (like an endgame solver) is
-planned.  The ultimate target strength of the AI is that it should be
-able to beat the best human player at the highest difficulty level.

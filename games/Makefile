@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.442 2021/10/27 01:19:58 namn Exp $
+# $OpenBSD: Makefile,v 1.443 2021/10/30 07:11:52 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -128,7 +128,6 @@
      SUBDIR += gamine
      SUBDIR += garden
      SUBDIR += gargoyle
-     SUBDIR += gbrainy
      SUBDIR += gcompris
      SUBDIR += gemdropx
      SUBDIR += gemrb
@@ -147,8 +146,6 @@
      SUBDIR += goldberg_emulator
      SUBDIR += golly
      SUBDIR += gottcode
-     SUBDIR += grhino
-     SUBDIR += gtetrinet
      SUBDIR += gti
      SUBDIR += gtkballs
      SUBDIR += gzdoom

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1329 2021/10/29 16:45:12 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1330 2021/10/30 07:11:54 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1496,6 +1496,16 @@ setup_obsolete_reason(
 	31 => 'py-wsgiutils',
 	31 => 'py-xml',
 	31 => 'py-backports',
+	3 => 'ORBit2',
+	3 => 'libbonobo',
+	3 => 'libgnome',
+	3 => 'mono-gnome',
+	3 => 'libbonoboui',
+	3 => 'libgnomeui',
+	3 => 'gtetrinet',
+	3 => 'gtetrinet-themes',
+	3 => 'grhino',
+	3 => 'gbrainy',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
