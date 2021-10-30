@@ -1,9 +1,9 @@
-$OpenBSD: patch-gtk_c,v 1.6 2019/07/04 15:58:53 landry Exp $
+$OpenBSD: patch-gtk_c,v 1.7 2021/10/30 07:14:21 landry Exp $
 Add 'online help' menu entry to open help in browser
 Index: gtk.c
 --- gtk.c.orig
 +++ gtk.c
-@@ -2383,6 +2383,13 @@ static void menu_config_event(GtkMenuItem *menuitem, g
+@@ -2965,6 +2965,13 @@ static void menu_config_event(GtkMenuItem *menuitem, g
      midend_redraw(fe->me);
  }
  
@@ -17,7 +17,7 @@ Index: gtk.c
  static void menu_about_event(GtkMenuItem *menuitem, gpointer data)
  {
      frontend *fe = (frontend *)data;
-@@ -2751,6 +2758,12 @@ static frontend *new_window(
+@@ -3392,6 +3399,12 @@ static frontend *new_window(
                       G_CALLBACK(menu_about_event), fe);
      gtk_widget_show(menuitem);
  
@@ -30,7 +30,7 @@ Index: gtk.c
  #ifdef STYLUS_BASED
      menuitem=gtk_button_new_with_mnemonic("_Redo");
      g_object_set_data(G_OBJECT(menuitem), "user-data",
-@@ -2937,7 +2950,7 @@ static void list_presets_from_menu(struct preset_menu 
+@@ -3578,7 +3591,7 @@ static void list_presets_from_menu(struct preset_menu 
  int main(int argc, char **argv)
  {
      char *pname = argv[0];

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/06/29 22:16:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/10/30 07:14:21 landry Exp $
 @bin bin/puzzle-blackbox
 @bin bin/puzzle-bridges
 @bin bin/puzzle-cube
@@ -16,6 +16,7 @@
 @bin bin/puzzle-magnets
 @bin bin/puzzle-map
 @bin bin/puzzle-mines
+@bin bin/puzzle-mosaic
 @bin bin/puzzle-net
 @bin bin/puzzle-netslide
 @bin bin/puzzle-palisade
@@ -55,6 +56,7 @@ share/applications/puzzle-loopy.desktop
 share/applications/puzzle-magnets.desktop
 share/applications/puzzle-map.desktop
 share/applications/puzzle-mines.desktop
+share/applications/puzzle-mosaic.desktop
 share/applications/puzzle-net.desktop
 share/applications/puzzle-netslide.desktop
 share/applications/puzzle-palisade.desktop
@@ -79,122 +81,45 @@ share/applications/puzzle-unruly.desktop
 share/applications/puzzle-untangle.desktop
 share/doc/puzzles/
 share/doc/puzzles/puzzles.txt
-share/icons/hicolor/16x16/apps/puzzle-blackbox.png
-share/icons/hicolor/16x16/apps/puzzle-bridges.png
-share/icons/hicolor/16x16/apps/puzzle-cube.png
-share/icons/hicolor/16x16/apps/puzzle-dominosa.png
-share/icons/hicolor/16x16/apps/puzzle-fifteen.png
-share/icons/hicolor/16x16/apps/puzzle-filling.png
-share/icons/hicolor/16x16/apps/puzzle-flip.png
-share/icons/hicolor/16x16/apps/puzzle-flood.png
-share/icons/hicolor/16x16/apps/puzzle-galaxies.png
-share/icons/hicolor/16x16/apps/puzzle-guess.png
-share/icons/hicolor/16x16/apps/puzzle-inertia.png
-share/icons/hicolor/16x16/apps/puzzle-keen.png
-share/icons/hicolor/16x16/apps/puzzle-lightup.png
-share/icons/hicolor/16x16/apps/puzzle-loopy.png
-share/icons/hicolor/16x16/apps/puzzle-magnets.png
-share/icons/hicolor/16x16/apps/puzzle-map.png
-share/icons/hicolor/16x16/apps/puzzle-mines.png
-share/icons/hicolor/16x16/apps/puzzle-net.png
-share/icons/hicolor/16x16/apps/puzzle-netslide.png
-share/icons/hicolor/16x16/apps/puzzle-palisade.png
-share/icons/hicolor/16x16/apps/puzzle-pattern.png
-share/icons/hicolor/16x16/apps/puzzle-pearl.png
-share/icons/hicolor/16x16/apps/puzzle-pegs.png
-share/icons/hicolor/16x16/apps/puzzle-range.png
-share/icons/hicolor/16x16/apps/puzzle-rect.png
-share/icons/hicolor/16x16/apps/puzzle-samegame.png
-share/icons/hicolor/16x16/apps/puzzle-signpost.png
-share/icons/hicolor/16x16/apps/puzzle-singles.png
-share/icons/hicolor/16x16/apps/puzzle-sixteen.png
-share/icons/hicolor/16x16/apps/puzzle-slant.png
-share/icons/hicolor/16x16/apps/puzzle-solo.png
-share/icons/hicolor/16x16/apps/puzzle-tents.png
-share/icons/hicolor/16x16/apps/puzzle-towers.png
-share/icons/hicolor/16x16/apps/puzzle-tracks.png
-share/icons/hicolor/16x16/apps/puzzle-twiddle.png
-share/icons/hicolor/16x16/apps/puzzle-undead.png
-share/icons/hicolor/16x16/apps/puzzle-unequal.png
-share/icons/hicolor/16x16/apps/puzzle-unruly.png
-share/icons/hicolor/16x16/apps/puzzle-untangle.png
-share/icons/hicolor/32x32/apps/puzzle-blackbox.png
-share/icons/hicolor/32x32/apps/puzzle-bridges.png
-share/icons/hicolor/32x32/apps/puzzle-cube.png
-share/icons/hicolor/32x32/apps/puzzle-dominosa.png
-share/icons/hicolor/32x32/apps/puzzle-fifteen.png
-share/icons/hicolor/32x32/apps/puzzle-filling.png
-share/icons/hicolor/32x32/apps/puzzle-flip.png
-share/icons/hicolor/32x32/apps/puzzle-flood.png
-share/icons/hicolor/32x32/apps/puzzle-galaxies.png
-share/icons/hicolor/32x32/apps/puzzle-guess.png
-share/icons/hicolor/32x32/apps/puzzle-inertia.png
-share/icons/hicolor/32x32/apps/puzzle-keen.png
-share/icons/hicolor/32x32/apps/puzzle-lightup.png
-share/icons/hicolor/32x32/apps/puzzle-loopy.png
-share/icons/hicolor/32x32/apps/puzzle-magnets.png
-share/icons/hicolor/32x32/apps/puzzle-map.png
-share/icons/hicolor/32x32/apps/puzzle-mines.png
-share/icons/hicolor/32x32/apps/puzzle-net.png
-share/icons/hicolor/32x32/apps/puzzle-netslide.png
-share/icons/hicolor/32x32/apps/puzzle-palisade.png
-share/icons/hicolor/32x32/apps/puzzle-pattern.png
-share/icons/hicolor/32x32/apps/puzzle-pearl.png
-share/icons/hicolor/32x32/apps/puzzle-pegs.png
-share/icons/hicolor/32x32/apps/puzzle-range.png
-share/icons/hicolor/32x32/apps/puzzle-rect.png
-share/icons/hicolor/32x32/apps/puzzle-samegame.png
-share/icons/hicolor/32x32/apps/puzzle-signpost.png
-share/icons/hicolor/32x32/apps/puzzle-singles.png
-share/icons/hicolor/32x32/apps/puzzle-sixteen.png
-share/icons/hicolor/32x32/apps/puzzle-slant.png
-share/icons/hicolor/32x32/apps/puzzle-solo.png
-share/icons/hicolor/32x32/apps/puzzle-tents.png
-share/icons/hicolor/32x32/apps/puzzle-towers.png
-share/icons/hicolor/32x32/apps/puzzle-tracks.png
-share/icons/hicolor/32x32/apps/puzzle-twiddle.png
-share/icons/hicolor/32x32/apps/puzzle-undead.png
-share/icons/hicolor/32x32/apps/puzzle-unequal.png
-share/icons/hicolor/32x32/apps/puzzle-unruly.png
-share/icons/hicolor/32x32/apps/puzzle-untangle.png
-share/icons/hicolor/48x48/apps/puzzle-blackbox.png
-share/icons/hicolor/48x48/apps/puzzle-bridges.png
-share/icons/hicolor/48x48/apps/puzzle-cube.png
-share/icons/hicolor/48x48/apps/puzzle-dominosa.png
-share/icons/hicolor/48x48/apps/puzzle-fifteen.png
-share/icons/hicolor/48x48/apps/puzzle-filling.png
-share/icons/hicolor/48x48/apps/puzzle-flip.png
-share/icons/hicolor/48x48/apps/puzzle-flood.png
-share/icons/hicolor/48x48/apps/puzzle-galaxies.png
-share/icons/hicolor/48x48/apps/puzzle-guess.png
-share/icons/hicolor/48x48/apps/puzzle-inertia.png
-share/icons/hicolor/48x48/apps/puzzle-keen.png
-share/icons/hicolor/48x48/apps/puzzle-lightup.png
-share/icons/hicolor/48x48/apps/puzzle-loopy.png
-share/icons/hicolor/48x48/apps/puzzle-magnets.png
-share/icons/hicolor/48x48/apps/puzzle-map.png
-share/icons/hicolor/48x48/apps/puzzle-mines.png
-share/icons/hicolor/48x48/apps/puzzle-net.png
-share/icons/hicolor/48x48/apps/puzzle-netslide.png
-share/icons/hicolor/48x48/apps/puzzle-palisade.png
-share/icons/hicolor/48x48/apps/puzzle-pattern.png
-share/icons/hicolor/48x48/apps/puzzle-pearl.png
-share/icons/hicolor/48x48/apps/puzzle-pegs.png
-share/icons/hicolor/48x48/apps/puzzle-range.png
-share/icons/hicolor/48x48/apps/puzzle-rect.png
-share/icons/hicolor/48x48/apps/puzzle-samegame.png
-share/icons/hicolor/48x48/apps/puzzle-signpost.png
-share/icons/hicolor/48x48/apps/puzzle-singles.png
-share/icons/hicolor/48x48/apps/puzzle-sixteen.png
-share/icons/hicolor/48x48/apps/puzzle-slant.png
-share/icons/hicolor/48x48/apps/puzzle-solo.png
-share/icons/hicolor/48x48/apps/puzzle-tents.png
-share/icons/hicolor/48x48/apps/puzzle-towers.png
-share/icons/hicolor/48x48/apps/puzzle-tracks.png
-share/icons/hicolor/48x48/apps/puzzle-twiddle.png
-share/icons/hicolor/48x48/apps/puzzle-undead.png
-share/icons/hicolor/48x48/apps/puzzle-unequal.png
-share/icons/hicolor/48x48/apps/puzzle-unruly.png
-share/icons/hicolor/48x48/apps/puzzle-untangle.png
-@tag gtk-update-icon-cache %D/share/icons/hicolor
+share/pixmaps/
+share/pixmaps/puzzle-blackbox-48d24.png
+share/pixmaps/puzzle-bridges-48d24.png
+share/pixmaps/puzzle-cube-48d24.png
+share/pixmaps/puzzle-dominosa-48d24.png
+share/pixmaps/puzzle-fifteen-48d24.png
+share/pixmaps/puzzle-filling-48d24.png
+share/pixmaps/puzzle-flip-48d24.png
+share/pixmaps/puzzle-flood-48d24.png
+share/pixmaps/puzzle-galaxies-48d24.png
+share/pixmaps/puzzle-guess-48d24.png
+share/pixmaps/puzzle-inertia-48d24.png
+share/pixmaps/puzzle-keen-48d24.png
+share/pixmaps/puzzle-lightup-48d24.png
+share/pixmaps/puzzle-loopy-48d24.png
+share/pixmaps/puzzle-magnets-48d24.png
+share/pixmaps/puzzle-map-48d24.png
+share/pixmaps/puzzle-mines-48d24.png
+share/pixmaps/puzzle-mosaic-48d24.png
+share/pixmaps/puzzle-net-48d24.png
+share/pixmaps/puzzle-netslide-48d24.png
+share/pixmaps/puzzle-palisade-48d24.png
+share/pixmaps/puzzle-pattern-48d24.png
+share/pixmaps/puzzle-pearl-48d24.png
+share/pixmaps/puzzle-pegs-48d24.png
+share/pixmaps/puzzle-range-48d24.png
+share/pixmaps/puzzle-rect-48d24.png
+share/pixmaps/puzzle-samegame-48d24.png
+share/pixmaps/puzzle-signpost-48d24.png
+share/pixmaps/puzzle-singles-48d24.png
+share/pixmaps/puzzle-sixteen-48d24.png
+share/pixmaps/puzzle-slant-48d24.png
+share/pixmaps/puzzle-solo-48d24.png
+share/pixmaps/puzzle-tents-48d24.png
+share/pixmaps/puzzle-towers-48d24.png
+share/pixmaps/puzzle-tracks-48d24.png
+share/pixmaps/puzzle-twiddle-48d24.png
+share/pixmaps/puzzle-undead-48d24.png
+share/pixmaps/puzzle-unequal-48d24.png
+share/pixmaps/puzzle-unruly-48d24.png
+share/pixmaps/puzzle-untangle-48d24.png
 @tag update-desktop-database
