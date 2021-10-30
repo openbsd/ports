@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.66 2021/10/29 18:26:41 landry Exp $
+# $OpenBSD: Makefile,v 1.67 2021/10/30 12:37:08 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =${APM_ARCHS}
 
 COMMENT =	userland power management interface
 
-V =	0.99.13
+V =		0.99.13
 DISTNAME =	upower-UPOWER_${V:S/./_/g}
 PKGNAME =	upower-${V}
 
@@ -40,7 +40,8 @@ USE_GMAKE =	Yes
 LIB_DEPENDS =	devel/glib2
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/gobject-introspection \
-		textproc/docbook-xsl
+		textproc/docbook-xsl \
+		textproc/gtk-doc
 
 # /usr/local/share/dbus-1/system-services/
 RUN_DEPENDS +=	x11/dbus,-suid
