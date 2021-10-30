@@ -1,7 +1,8 @@
-$OpenBSD: patch-configure_ac,v 1.4 2021/09/01 17:41:48 kmos Exp $
+$OpenBSD: patch-configure_ac,v 1.5 2021/10/30 00:24:16 kmos Exp $
 
 #1: Set ports library version
 #2: Don't pick up an installed linux/e2fsprogs libuuid.so
+#3: OpenBSD isn't multi-arch
 
 Index: configure.ac
 --- configure.ac.orig
@@ -15,6 +16,26 @@ Index: configure.ac
  
  # The later defininition of _XOPEN_SOURCE disables certain features
  # on Linux, so we need _GNU_SOURCE to re-enable them (makedev, tm_zone).
+@@ -727,7 +727,7 @@ then
+ fi
+ 
+ 
+-MULTIARCH=$($CC --print-multiarch 2>/dev/null)
++MULTIARCH=$(false)
+ AC_SUBST(MULTIARCH)
+ 
+ AC_MSG_CHECKING([for the platform triplet based on compiler characteristics])
+@@ -743,8 +743,8 @@ cat >> conftest.c <<EOF
+ #undef powerpc
+ #undef sparc
+ #undef unix
+-#if defined(__ANDROID__)
+-    # Android is not a multiarch system.
++#if defined(__ANDROID__) || defined(__OpenBSD__)
++    # Neither Android nor OpenBSD are multiarch systems.
+ #elif defined(__linux__)
+ # if defined(__x86_64__) && defined(__LP64__)
+         x86_64-linux-gnu
 @@ -2858,18 +2858,7 @@ AC_CHECK_LIB(dl, dlopen)	# Dynamic linking for SunOS/S
  AC_CHECK_LIB(dld, shl_load)	# Dynamic linking for HP-UX
  
