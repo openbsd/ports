@@ -1,0 +1,25 @@
+$OpenBSD: patch-data_meson_build,v 1.1 2021/10/30 17:13:31 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: data/meson.build
+--- data/meson.build.orig
++++ data/meson.build
+@@ -8,7 +8,7 @@ install_data ('org.gnome.SimpleScan.gschema.xml',
+               install_dir: join_paths (datadir, 'glib-2.0', 'schemas'))
+ meson.add_install_script ('meson_compile_gschema.py')
+ 
+-i18n.merge_file ('desktop-file',
++i18n.merge_file (
+                  input: 'simple-scan.desktop.in',
+                  output: 'simple-scan.desktop',
+                  install: true,
+@@ -16,7 +16,7 @@ i18n.merge_file ('desktop-file',
+                  po_dir: '../po',
+                  type: 'desktop')
+ 
+-i18n.merge_file ('appdata-file',
++i18n.merge_file (
+                  input: 'simple-scan.appdata.xml.in',
+                  output: 'simple-scan.appdata.xml',
+                  install: true,
