@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.72 2019/07/12 20:43:41 sthen Exp $
-
-BROKEN-hppa =	bend.c:155:12: internal compiler error: in expand_expr_addr_expr_1, at expr.c:7697
+# $OpenBSD: Makefile,v 1.73 2021/10/30 22:59:03 namn Exp $
 
 COMMENT=	Sound eXchange, the Swiss Army knife of audio manipulation
 
-DISTNAME=	sox-14.4.2
-REVISION=	5
-SHARED_LIBS +=	sox 4.0 # 3.0
+V=		14.4.2pl20210509
+# see AC_INIT in ${WRKSRC}/configure.ac
+GIT_V=		14.4.3git
+DISTNAME=	sox-${V}
+SHARED_LIBS +=	sox 4.1 # 3.0
 
 CATEGORIES=	audio
 HOMEPAGE=	http://sox.sourceforge.net/
@@ -18,10 +18,15 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c m z sndio
 WANTLIB += FLAC gsm mad id3tag mp3lame ogg
 WANTLIB += sndfile vorbis vorbisenc vorbisfile
-WANTLIB += opus opusfile twolame wavpack
-WANTLIB += iconv png
+WANTLIB += opusfile twolame wavpack
+WANTLIB += png
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sox/}
+GITWEB_URL=	https://sourceforge.net/code-snapshots/git
+GIT_COMMIT=	42b3557e13e0fe01a83465b672d89faddbe65f49
+
+# mirror git checkout as tarball for latest fixes until new release.
+# see dist: target and `make dist' to generate tarball.
+MASTER_SITES=	https://namtsui.com/source/
 
 # see CONFIGURE_ARGS below
 LIB_DEPENDS=			\
@@ -33,62 +38,81 @@ LIB_DEPENDS=			\
 	audio/libogg		\
 	audio/libsndfile	\
 	audio/libvorbis		\
-	audio/opus		\
 	audio/opusfile		\
 	audio/twolame		\
 	audio/wavpack		\
-	converters/libiconv	\
 	graphics/png
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--datarootdir=${LOCALBASE}      \
-	--enable-largefile		\
-	--disable-silent-libtool	\
-	--disable-openmp		\
-	--enable-symlinks		\
-	--without-libltdl		\
+	--enable-largefile			\
+	--enable-symlinks			\
+	--without-libltdl			\
+	--disable-openmp			\
 	--with-distro=OpenBSD
 
 # Sound drivers
 CONFIGURE_ARGS+=		\
-	--without-ao		\
-	--without-oss		\
-	--without-alsa		\
-	--without-coreaudio	\
-	--without-pulseaudio	\
-	--without-waveaudio	\
-	--without-sunaudio	\
-	--with-sndio
+	--disable-ao		\
+	--disable-oss		\
+	--disable-alsa		\
+	--disable-coreaudio	\
+	--disable-pulseaudio	\
+	--disable-waveaudio	\
+	--disable-sunaudio	\
+	--enable-sndio
 
 # Additional file formats
-CONFIGURE_ARGS+=		\
-	--without-magic		\
-	--with-png		\
-	--without-ladspa	\
-	--with-mad		\
-	--with-id3tag		\
-	--with-lame		\
-	--with-twolame		\
-	--with-oggvorbis	\
-	--with-opus		\
-	--with-flac		\
-	--without-amrwb		\
-	--without-amrnb		\
-	--with-wavpack		\
-	--with-sndfile		\
-	--with-mp3		\
-	--with-gsm		\
-	--with-lpc10
+CONFIGURE_ARGS+=			\
+	--with-id3tag			\
+	--with-lame			\
+	--with-mad			\
+	--without-magic			\
+	--without-opencore-amrnb	\
+	--without-opencore-amrwb	\
+	--with-png			\
+	--with-twolame			\
+	--enable-formats=no		\
+	--disable-amrnb			\
+	--disable-amrwb			\
+	--enable-flac			\
+	--enable-gsm			\
+	--enable-lpc10			\
+	--enable-mp3			\
+	--enable-oggvorbis		\
+	--enable-opus			\
+	--enable-sndfile		\
+	--enable-wavpack		\
+	--without-ladspa
 
 CONFIGURE_ENV= \
 	CPPFLAGS="-I${LOCALBASE}/include" \
 	LDFLAGS="-L${LOCALBASE}/lib"
 
-do-test:
-	@cd ${WRKSRC}/src && ./tests.sh && ./testall.sh
+# requires: autoconf-2.69, automake-1.16, devel/libtool, textproc/groff and
+# devel/autoconf-archive
+dist:
+	ftp -o /tmp/sox-code-${GIT_COMMIT}.zip \
+		${GITWEB_URL}/s/so/sox/code.git/sox-code-${GIT_COMMIT}.zip; \
+	t=`mktemp -d /tmp/sox.XXXXXXXXXX`; \
+	f=$$t/sox-code-${GIT_COMMIT}/${DISTNAME}.tar.gz; \
+	ac_v=2.69; \
+	am_v=1.16; \
+	cd $$t; \
+	unzip /tmp/sox-code-${GIT_COMMIT}.zip; \
+	cd sox-code-${GIT_COMMIT}; \
+	echo "EXTRA_DIST += libsox.sym" >> ./src/Makefile.am; \
+	sed -ie "s/${GIT_V}/${V}/g" ./configure.ac; \
+	env -i AUTOCONF_VERSION=$$ac_v AUTOMAKE_VERSION=$$am_v \
+		autoreconf-$$ac_v -i && \
+		./configure &&  \
+		${MAKE_PROGRAM} dist; \
+	scp $$f train:source/; \
+	cd -; rm -rf $$t; rm -f /tmp/sox-code-${GIT_COMMIT}.zip;
 
-# Attempt to avoid SIGILL in gcc.
-MODULES+=	gcc4
-MODGCC4_ARCHS=	hppa
+do-test:
+	@cd ${WRKSRC}/src && ${MAKE_PROGRAM} ${MAKE_FLAGS} \
+		-f ${MAKE_FILE} extras
+	@cd ${WRKSRC}/src && ./tests.sh && ./testall.sh
 
 .include <bsd.port.mk>

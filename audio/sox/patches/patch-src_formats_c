@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_formats_c,v 1.6 2015/03/18 13:13:08 naddy Exp $
---- src/formats.c.orig	Mon Oct 27 03:55:50 2014
-+++ src/formats.c	Tue Feb 24 17:07:28 2015
-@@ -353,7 +353,7 @@ static int sox_checkformat(sox_format_t * ft)
+$OpenBSD: patch-src_formats_c,v 1.7 2021/10/30 22:59:03 namn Exp $
+Index: src/formats.c
+--- src/formats.c.orig
++++ src/formats.c
+@@ -360,7 +360,7 @@ static int sox_checkformat(sox_format_t * ft)
    return SOX_SUCCESS;
  }
  
@@ -10,7 +11,7 @@ $OpenBSD: patch-src_formats_c,v 1.6 2015/03/18 13:13:08 naddy Exp $
  {
    return !(
        strncasecmp(text, "http:" , (size_t)5) &&
-@@ -390,7 +390,7 @@ static FILE * xfopen(char const * identifier, char con
+@@ -442,7 +442,7 @@ static FILE * xfopen(char const * identifier, char con
    else if (is_url(identifier)) {
      FILE * f = NULL;
  #ifdef HAVE_POPEN
