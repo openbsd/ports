@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.28 2021/02/23 19:39:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2021/10/30 21:01:27 sthen Exp $
 
 COMMENT =	scientific plotting and graphing package
-MODPY_EGG_VERSION =	3.3.1
+MODPY_EGG_VERSION =	3.4
 DISTNAME =	veusz-${MODPY_EGG_VERSION}
 CATEGORIES =	math graphics
 
@@ -18,6 +18,7 @@ MASTER_SITES =	https://github.com/veusz/veusz/releases/download/${DISTNAME}/
 
 MODULES =	lang/python \
 		x11/qt5
+MODPY_SETUPTOOLS =	Yes
 
 BUILD_DEPENDS =	devel/py-sip${MODPY_FLAVOR} \
 		math/py-numpy${MODPY_FLAVOR} \
