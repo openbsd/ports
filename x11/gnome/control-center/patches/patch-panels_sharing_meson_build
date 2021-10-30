@@ -1,0 +1,23 @@
+$OpenBSD: patch-panels_sharing_meson_build,v 1.1 2021/10/30 09:14:56 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: panels/sharing/meson.build
+--- panels/sharing/meson.build.orig
++++ panels/sharing/meson.build
+@@ -8,7 +8,6 @@ desktop_in = configure_file(
+ )
+ 
+ i18n.merge_file(
+-  desktop,
+   type: 'desktop',
+   input: desktop_in,
+   output: desktop,
+@@ -29,7 +28,6 @@ polkit_in = configure_file(
+ )
+ 
+ i18n.merge_file(
+-  polkit,
+   input: polkit_in,
+   output: polkit,
+   po_dir: po_dir,

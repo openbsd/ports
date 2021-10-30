@@ -1,11 +1,11 @@
-$OpenBSD: patch-panels_power_cc-power-panel_c,v 1.7 2021/09/18 06:57:27 ajacoutot Exp $
+$OpenBSD: patch-panels_power_cc-power-panel_c,v 1.8 2021/10/30 09:14:55 ajacoutot Exp $
 
 login1 -> ConsoleKit
 
 Index: panels/power/cc-power-panel.c
 --- panels/power/cc-power-panel.c.orig
 +++ panels/power/cc-power-panel.c
-@@ -1181,9 +1181,9 @@ can_suspend_or_hibernate (CcPowerPanel *self,
+@@ -903,9 +903,9 @@ can_suspend_or_hibernate (CcPowerPanel *self,
      }
  
    variant = g_dbus_connection_call_sync (connection,

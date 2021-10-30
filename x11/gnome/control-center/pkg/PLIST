@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2021/05/13 09:49:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2021/10/30 09:14:56 ajacoutot Exp $
 @conflict control-center-1*
 @conflict control-center2-*
 @conflict gnome-media-<2.91.2p3
@@ -22,6 +22,7 @@ share/applications/gnome-keyboard-panel.desktop
 share/applications/gnome-location-panel.desktop
 share/applications/gnome-lock-panel.desktop
 share/applications/gnome-microphone-panel.desktop
+share/applications/gnome-multitasking-panel.desktop
 share/applications/gnome-notifications-panel.desktop
 share/applications/gnome-online-accounts-panel.desktop
 share/applications/gnome-power-panel.desktop
@@ -55,6 +56,8 @@ share/gnome-control-center/pixmaps/noise-texture-light.png
 share/gnome-shell/
 share/gnome-shell/search-providers/
 share/gnome-shell/search-providers/gnome-control-center-search-provider.ini
+share/icons/gnome-logo-text-dark.svg
+share/icons/gnome-logo-text.svg
 share/icons/hicolor/16x16/apps/gnome-power-manager.png
 share/icons/hicolor/16x16/apps/goa-panel.png
 share/icons/hicolor/16x16/apps/preferences-desktop-display.png
@@ -76,12 +79,14 @@ share/icons/hicolor/32x32/apps/preferences-system-time.png
 share/icons/hicolor/48x48/apps/gnome-power-manager.png
 share/icons/hicolor/48x48/apps/goa-panel.png
 share/icons/hicolor/48x48/apps/preferences-system-time.png
+share/icons/hicolor/scalable/apps/org.gnome.Settings-multitasking-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings.Devel.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings.svg
 share/icons/hicolor/scalable/apps/preferences-desktop-display.svg
 share/icons/hicolor/scalable/apps/preferences-system-time.svg
 share/icons/hicolor/scalable/categories/slideshow-symbolic.svg
 share/icons/hicolor/scalable/emblems/slideshow-emblem.svg
+share/icons/hicolor/scalable/status/info-symbolic.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Settings-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/am/LC_MESSAGES/gnome-control-center-2.0-timezones.mo

@@ -1,6 +1,4 @@
-$OpenBSD: patch-shell_meson_build,v 1.5 2021/10/30 09:14:56 ajacoutot Exp $
-
-Fix build with meson >= 0.60.0
+$OpenBSD: patch-shell_meson_build.orig,v 1.1 2021/10/30 09:14:56 ajacoutot Exp $
 
 No GUdev on OpenBSD (XXX add HAVE_GUDEV to meson_options.txt)
 
@@ -9,15 +7,7 @@ Find libkrb5.so
 Index: shell/meson.build
 --- shell/meson.build.orig
 +++ shell/meson.build
-@@ -23,7 +23,6 @@ desktop_in = configure_file(
- )
- 
- i18n.merge_file(
--       desktop,
-          type : 'desktop',
-         input : desktop_in,
-        output : desktop,
-@@ -108,7 +107,6 @@ libshell_dep = declare_dependency(
+@@ -108,7 +108,6 @@ libshell_dep = declare_dependency(
  shell_sources = common_sources + files('main.c')
  
  shell_deps = common_deps + [
@@ -25,7 +15,7 @@ Index: shell/meson.build
    liblanguage_dep,
    libwidgets_dep,
    x11_dep,
-@@ -130,7 +128,8 @@ executable(
+@@ -130,7 +129,8 @@ executable(
           dependencies : shell_deps,
                 c_args : cflags,
              link_with : panels_libs,

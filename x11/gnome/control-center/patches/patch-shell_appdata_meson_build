@@ -1,0 +1,15 @@
+$OpenBSD: patch-shell_appdata_meson_build,v 1.1 2021/10/30 09:14:56 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: shell/appdata/meson.build
+--- shell/appdata/meson.build.orig
++++ shell/appdata/meson.build
+@@ -1,7 +1,6 @@
+ appdata = 'gnome-control-center.appdata.xml'
+ 
+ i18n.merge_file(
+-  appdata,
+   input: appdata + '.in',
+   output: appdata,
+   po_dir: po_dir,

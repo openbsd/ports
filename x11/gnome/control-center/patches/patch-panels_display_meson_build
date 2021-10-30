@@ -1,11 +1,21 @@
-$OpenBSD: patch-panels_display_meson_build,v 1.1 2020/11/14 11:03:46 ajacoutot Exp $
+$OpenBSD: patch-panels_display_meson_build,v 1.2 2021/10/30 09:14:55 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
 
 No colord (brings GUdev and GUsb) on OpenBSD (XXX add HAVE_COLORD to meson_options.txt)
 
 Index: panels/display/meson.build
 --- panels/display/meson.build.orig
 +++ panels/display/meson.build
-@@ -44,7 +44,6 @@ sources += gnome.compile_resources(
+@@ -8,7 +8,6 @@ desktop_in = configure_file(
+ )
+ 
+ i18n.merge_file(
+-  desktop,
+   type: 'desktop',
+   input: desktop_in,
+   output: desktop,
+@@ -44,7 +43,6 @@ sources += gnome.compile_resources(
  )
  
  deps = common_deps + [

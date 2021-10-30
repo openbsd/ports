@@ -1,8 +1,7 @@
-$OpenBSD: patch-panels_meson_build,v 1.4 2021/10/30 09:14:55 ajacoutot Exp $
+$OpenBSD: patch-panels_meson_build.orig,v 1.1 2021/10/30 09:14:55 ajacoutot Exp $
 
 No GUdev on OpenBSD (XXX add HAVE_GUDEV to meson_options.txt)
 No colord (brings GUdev and GUsb) on OpenBSD (XXX add HAVE_COLORD to meson_options.txt)
-wwan needs network-manager
 
 Index: panels/meson.build
 --- panels/meson.build.orig
@@ -23,19 +22,3 @@ Index: panels/meson.build
    'multitasking',
    'notifications',
    'online-accounts',
-@@ -28,11 +26,13 @@ panels = [
-   'universal-access',
-   'usage',
-   'user-accounts',
--  'wwan',
- ]
- 
- if host_is_linux
--  panels += ['network']
-+  panels += [
-+    'network',
-+    'wwan'
-+  ]
- endif
- 
- if host_is_linux_not_s390

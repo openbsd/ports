@@ -1,0 +1,15 @@
+$OpenBSD: patch-panels_removable-media_meson_build,v 1.1 2021/10/30 09:14:55 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: panels/removable-media/meson.build
+--- panels/removable-media/meson.build.orig
++++ panels/removable-media/meson.build
+@@ -8,7 +8,6 @@ desktop_in = configure_file(
+ )
+ 
+ i18n.merge_file(
+-  desktop,
+   type: 'desktop',
+   input: desktop_in,
+   output: desktop,

@@ -1,11 +1,11 @@
-$OpenBSD: patch-panels_common_meson_build,v 1.4 2021/05/13 09:49:27 ajacoutot Exp $
+$OpenBSD: patch-panels_common_meson_build,v 1.5 2021/10/30 09:14:55 ajacoutot Exp $
 
 No GUdev on OpenBSD (XXX add HAVE_GUDEV to meson_options.txt)
 
 Index: panels/common/meson.build
 --- panels/common/meson.build.orig
 +++ panels/common/meson.build
-@@ -87,18 +87,16 @@ liblanguage_dep = declare_dependency(
+@@ -86,18 +86,16 @@ liblanguage_dep = declare_dependency(
  )
  
  gsd_headers = [

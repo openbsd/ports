@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.80 2021/10/29 07:29:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.81 2021/10/30 09:14:55 ajacoutot Exp $
 
 # XXX change proxy settings without network-manager?
 
 COMMENT=		GNOME settings
 
 GNOME_PROJECT=		gnome-control-center
-GNOME_VERSION=		40.6
+GNOME_VERSION=		41.1
 
 CATEGORIES=		x11
 
@@ -41,7 +41,6 @@ LIB_DEPENDS=		audio/gsound \
 
 BUILD_DEPENDS=		devel/iso-codes \
 			devel/gsettings-desktop-schemas \
-			x11/gnome/grilo \
 			x11/gnome/settings-daemon
 
 RUN_DEPENDS=		x11/gnome/settings-daemon \
@@ -60,9 +59,6 @@ RUN_DEPENDS +=		print/cups-pk-helper \
 
 # gkbd-keyboard-display
 RUN_DEPENDS +=		x11/gnome/libgnomekbd
-
-# calls grl_registry_load...plugin
-RUN_DEPENDS +=		x11/gnome/grilo-plugins
 
 # panels/sound/cc-speaker-test-button.c:
 # return g_strsplit ("audio-channel-front-left;audio-test-signal;bell", ";", -1);

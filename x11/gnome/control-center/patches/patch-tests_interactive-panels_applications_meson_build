@@ -1,0 +1,15 @@
+$OpenBSD: patch-tests_interactive-panels_applications_meson_build,v 1.1 2021/10/30 09:14:56 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: tests/interactive-panels/applications/meson.build
+--- tests/interactive-panels/applications/meson.build.orig
++++ tests/interactive-panels/applications/meson.build
+@@ -12,7 +12,6 @@ desktop_files = [
+ 
+ foreach desktop_file : desktop_files
+   i18n.merge_file(
+-              desktop,
+                 type : 'desktop',
+                input : 'gtp-@0@.desktop.in'.format(desktop_file),
+               output : 'gnome-@0@-panel.desktop'.format(desktop_file),

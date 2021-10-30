@@ -1,4 +1,4 @@
-$OpenBSD: patch-panels_info-overview_cc-info-overview-panel_c,v 1.3 2021/09/18 06:57:27 ajacoutot Exp $
+$OpenBSD: patch-panels_info-overview_cc-info-overview-panel_c,v 1.4 2021/10/30 09:14:55 ajacoutot Exp $
 
 No udisks2 on OpenBSD (XXX add HAVE_UDISKS2 to meson_options.txt)
 
@@ -8,7 +8,7 @@ we should port cc_os_release_get_values
 Index: panels/info-overview/cc-info-overview-panel.c
 --- panels/info-overview/cc-info-overview-panel.c.orig
 +++ panels/info-overview/cc-info-overview-panel.c
-@@ -38,10 +38,16 @@
+@@ -37,10 +37,16 @@
  #include <glibtop/mountlist.h>
  #include <glibtop/mem.h>
  #include <glibtop/sysinfo.h>
@@ -25,15 +25,15 @@ Index: panels/info-overview/cc-info-overview-panel.c
  #ifdef GDK_WINDOWING_WAYLAND
  #include <gdk/gdkwayland.h>
  #endif
-@@ -418,6 +424,7 @@ get_graphics_hardware_string (void)
+@@ -417,6 +423,7 @@ get_graphics_hardware_string (void)
  static char *
  get_os_name (void)
  {
 +#ifndef __OpenBSD__
-   g_autoptr(GHashTable) os_info = NULL;
-   const gchar *name, *version_id, *pretty_name, *build_id;
-   gchar *result = NULL;
-@@ -454,6 +461,18 @@ get_os_name (void)
+   g_autofree gchar *name = NULL;
+   g_autofree gchar *version_id = NULL;
+   g_autofree gchar *pretty_name = NULL;
+@@ -450,6 +457,18 @@ get_os_name (void)
      }
  
    return result;
@@ -52,7 +52,7 @@ Index: panels/info-overview/cc-info-overview-panel.c
  }
  
  static char *
-@@ -470,6 +489,7 @@ get_os_type (void)
+@@ -466,6 +485,7 @@ get_os_type (void)
  static void
  get_primary_disc_info (CcInfoOverviewPanel *self)
  {
@@ -60,7 +60,7 @@ Index: panels/info-overview/cc-info-overview-panel.c
    g_autoptr(UDisksClient) client = NULL;
    GDBusObjectManager *manager;
    g_autolist(GDBusObject) objects = NULL;
-@@ -516,6 +536,9 @@ get_primary_disc_info (CcInfoOverviewPanel *self)
+@@ -512,6 +532,9 @@ get_primary_disc_info (CcInfoOverviewPanel *self)
      {
        cc_list_row_set_secondary_label (self->disk_row,  _("Unknown"));
      }
