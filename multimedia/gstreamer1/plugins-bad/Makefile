@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2021/09/09 10:12:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.85 2021/10/30 15:05:02 ajacoutot Exp $
 
 COMMENT=		bad elements for GStreamer
 
@@ -47,10 +47,10 @@ DISABLED += 		opencv wayland aom androidmedia applemedia bluez
 DISABLED +=		chromaprint curl curl-ssh2 dc1394 decklink directfb
 DISABLED +=		dtls dts dvb faac faad fbdev fdkaac flite fluidsynth
 DISABLED +=		gme gsm iqa kate ladspa libde265 lv2 modplug mpeg2enc
-DISABLED +=		mplex msdk musepack neon nvdec nvenc ofa openal openexr
+DISABLED +=		mplex msdk musepack neon ofa openal openexr
 DISABLED +=		openh264 openjpeg openmpt openni2 opensles resindvd rtmp
 DISABLED +=		sbc sctp sndfile spandsp srt srtp teletext tinyalsa
-DISABLED +=		uvch264 vdpau voaacenc voamrwbenc vulkan wasapi webp
+DISABLED +=		uvch264 voaacenc voamrwbenc vulkan wasapi webp
 DISABLED +=		webrtc webrtcdsp wildmidi winks winscreencap wpe x265
 DISABLED +=		zbar magicleap v4l2codecs va wasapi2 avtp microdns
 DISABLED +=		svthevcenc zxing
