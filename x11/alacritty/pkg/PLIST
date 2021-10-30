@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/10/22 17:24:59 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/30 17:23:08 fcambus Exp $
 @bin bin/alacritty
 @man man/man1/alacritty.1
 share/bash-completion/
@@ -14,7 +14,7 @@ share/terminfo/
 share/terminfo/a/
 share/terminfo/a/alacritty
 share/terminfo/a/alacritty-direct
-share/terminfo/a/alacritty+common
+@comment share/terminfo/a/alacritty+common
 share/zsh/
 share/zsh/site-functions/
 share/zsh/site-functions/_alacritty

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/10/22 17:24:59 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2021/10/30 17:23:08 fcambus Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -12,6 +12,7 @@ MAINTAINER =	Eric Auge <eau+obsd@unix4fun.net>
 GH_ACCOUNT =	alacritty
 GH_PROJECT =	alacritty
 GH_TAGNAME =	v0.9.0
+REVISION =	0
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
