@@ -1,0 +1,23 @@
+$OpenBSD: patch-data_meson_build,v 1.1 2021/10/30 17:33:14 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: data/meson.build
+--- data/meson.build.orig
++++ data/meson.build
+@@ -19,7 +19,6 @@ appdata_conf = configuration_data()
+ appdata_conf.set('application_id', APPLICATION_ID)
+ appdata = APPLICATION_ID + '.appdata.xml'
+ appdata_file = I18N.merge_file(
+-  appdata,
+   input: configure_file(
+     input: 'org.gnome.Devhelp.appdata.xml.in.in',
+     output: APPLICATION_ID + '.appdata.xml.in',
+@@ -45,7 +44,6 @@ desktop_conf = configuration_data()
+ desktop_conf.set('application_id', APPLICATION_ID)
+ desktop = APPLICATION_ID + '.desktop'
+ desktop_file = I18N.merge_file(
+-  desktop,
+   type: 'desktop',
+   input: configure_file(
+     input: 'org.gnome.Devhelp.desktop.in.in',
