@@ -1,0 +1,24 @@
+$OpenBSD: patch-data_meson_build,v 1.1 2021/10/30 15:11:53 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: data/meson.build
+--- data/meson.build.orig
++++ data/meson.build
+@@ -22,7 +22,6 @@ install_data ('smooth.png', install_dir: join_paths (p
+ install_data ('edu_kang_xi.png', install_dir: join_paths (pkgdatadir, 'themes'))
+ 
+ desktop_file = i18n.merge_file (
+-  'desktop-file',
+   input:       'org.gnome.Mahjongg.desktop.in',
+   output:      'org.gnome.Mahjongg.desktop',
+   install:     true,
+@@ -42,7 +41,7 @@ if desktop_file_validate.found()
+   )
+ endif
+ 
+-appdata_file = i18n.merge_file ('appdata-file',
++appdata_file = i18n.merge_file (
+                  input: 'org.gnome.Mahjongg.appdata.xml.in',
+                  output: 'org.gnome.Mahjongg.appdata.xml',
+                  install: true,
