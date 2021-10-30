@@ -1,0 +1,21 @@
+$OpenBSD: patch-docs_meson_build,v 1.1 2021/10/30 12:25:33 ajacoutot Exp $
+
+From 460eda9b055d6ba646004dd39a5d664a8ab47587 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Daniel=20P=2E=20Berrang=C3=A9?= <berrange@redhat.com>
+Date: Mon, 25 Oct 2021 18:48:59 +0100
+Subject: [PATCH] docs: fix docs output path with meson 0.60.0
+
+Index: docs/meson.build
+--- docs/meson.build.orig
++++ docs/meson.build
+@@ -1,7 +1,9 @@
+ docs_html_dir = docdir / 'html'
+ 
+ # xsltproc requires that the -o path ends with '/'
+-docs_builddir = meson.current_build_dir() / ''
++# Not using '/' operator due to bug in meson 0.60.0
++# https://github.com/mesonbuild/meson/issues/9450
++docs_builddir = join_paths(meson.current_build_dir(), '')
+ 
+ docs_assets = [
+   'android-chrome-192x192.png',
