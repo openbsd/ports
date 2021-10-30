@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/10/29 18:15:16 kurt Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/30 00:31:15 kurt Exp $
 @option no-default-conflict
 @option is-branch
 @conflict jdk->=17v0,<18v0
+@pkgpath devel/jdk/16
 @pkgpath devel/jdk/17
 %%ci%%
 jdk-17/

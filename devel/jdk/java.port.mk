@@ -1,6 +1,6 @@
-# $OpenBSD: java.port.mk,v 1.40 2021/07/15 10:29:19 kurt Exp $
+# $OpenBSD: java.port.mk,v 1.41 2021/10/30 00:31:15 kurt Exp $
 
-# Set MODJAVA_VER to 1.8, 11 or 16 based on the version of the jdk needed
+# Set MODJAVA_VER to 1.8, 11 or 17 based on the version of the jdk needed
 # for the port. Append a + (e.g., 11+) if any higher version is acceptable.
 
 MODJAVA_VER?=
@@ -24,8 +24,8 @@ MODJAVA_VER?=
 #
 
 .if ${MODJAVA_VER:S/+//} != "1.8" && ${MODJAVA_VER:S/+//} != "11" && \
-  ${MODJAVA_VER:S/+//} != "16"
-    ERRORS+="Fatal: MODJAVA_VER must be one of 1.8, 11 or 16 with an optional + suffix."
+  ${MODJAVA_VER:S/+//} != "17"
+    ERRORS+="Fatal: MODJAVA_VER must be one of 1.8, 11 or 17 with an optional + suffix."
 .endif
 
 .if ${MODJAVA_VER:S/+//} == "1.8"
@@ -41,8 +41,8 @@ MODJAVA_VER?=
     JAVA_HOME= ${LOCALBASE}/jdk-11
     MODJAVA_BUILD_DEPENDS+= jdk->=11v0,<12v0:devel/jdk/11
 .else
-    JAVA_HOME= ${LOCALBASE}/jdk-16
-    MODJAVA_BUILD_DEPENDS+= jdk->=16v0,<17v0:devel/jdk/16
+    JAVA_HOME= ${LOCALBASE}/jdk-17
+    MODJAVA_BUILD_DEPENDS+= jdk->=17v0,<18v0:devel/jdk/17
 .endif
 
 .if ${MODJAVA_VER:M*+}
