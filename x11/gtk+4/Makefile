@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2021/08/26 10:46:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2021/10/30 17:06:35 ajacoutot Exp $
 
 # XXX add support for libcloudproviders? (-Dcloudproviders=enabled)
 # XXX add support for tracker3? (-Dtracker=enabled)
@@ -96,7 +96,6 @@ WANTLIB-media += gstplayer-1.0 gstreamer-1.0 gstvideo-1.0 gtk-4 m
 TEST_IS_INTERACTIVE=	x11
 
 CONFIGURE_ARGS=		-Dwayland-backend=false \
-			-Dprint-backends=file,cups,lpr \
 			-Dvulkan=disabled \
 			-Dman-pages=true
 
