@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2021/10/26 13:28:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2021/10/30 16:01:13 ajacoutot Exp $
 
 COMMENT=		simple task management application
 
 GNOME_PROJECT=		gnome-todo
 GNOME_VERSION=		41.0
+REVISION=		0
 
 # GPLv3+
 PERMIT_PACKAGE=		Yes
@@ -17,7 +18,7 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
-			gtk-update-icon-cache
+			gtk-update-icon-cache yelp
 
 LIB_DEPENDS=		databases/evolution-data-server \
 			devel/libpeas \
