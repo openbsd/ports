@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2021/02/24 17:26:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.82 2021/10/30 09:59:29 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += amtterm
@@ -18,7 +18,6 @@
      SUBDIR += fldigi
      SUBDIR += flipit
      SUBDIR += gammu
-     SUBDIR += gmfsk
      SUBDIR += gnuradio
      SUBDIR += gpsk31
      SUBDIR += hackrf
