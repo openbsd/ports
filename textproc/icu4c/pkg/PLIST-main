@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2020/11/01 08:15:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2021/10/30 06:16:51 ajacoutot Exp $
 @pkgpath textproc/icu4c
 @bin bin/derb
 @bin bin/genbrk
@@ -7,6 +7,7 @@
 @bin bin/gendict
 @bin bin/genrb
 bin/icu-config
+@bin bin/icuexportdata
 @bin bin/icuinfo
 @bin bin/makeconv
 @bin bin/pkgdata
@@ -229,6 +230,7 @@ lib/pkgconfig/icu-uc.pc
 @man man/man1/gendict.1
 @man man/man1/genrb.1
 @man man/man1/icu-config.1
+@man man/man1/icuexportdata.1
 @man man/man1/makeconv.1
 @man man/man1/pkgdata.1
 @man man/man1/uconv.1
