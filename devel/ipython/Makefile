@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.65 2021/10/25 06:34:03 bket Exp $
+# $OpenBSD: Makefile,v 1.66 2021/10/30 14:53:01 bket Exp $
 
 COMMENT =		enhanced interactive Python shell
 
-MODPY_EGG_VERSION =	7.28.0
+MODPY_EGG_VERSION =	7.29.0
 DISTNAME =		ipython-${MODPY_EGG_VERSION}
 PKGNAME =		ipython${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
 
@@ -17,6 +17,8 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	IPython
 
 # Optional dependency which gets picked up if it happens to be installed, thus
 # causing race conditions under dpb. Pull it in to avoid this possibility.
@@ -33,10 +35,8 @@ RUN_DEPENDS =		databases/py-pickleshare${MODPY_FLAVOR} \
 			graphics/py-matplotlib-inline${MODPY_FLAVOR} \
 			textproc/py-pygments${MODPY_FLAVOR}
 
-# Note that if you have pdb++ installed OR are using PORTS_PRIVSEP, tests will
-# fail.
-TEST_DEPENDS =		${BASE_PKGPATH}=${MODPY_EGG_VERSION} \
-			devel/py-ipykernel${MODPY_FLAVOR} \
+# Note that if you have pdb++ installed, tests will fail.
+TEST_DEPENDS =		devel/py-ipykernel${MODPY_FLAVOR} \
 			devel/py-nbformat${MODPY_FLAVOR} \
 			devel/py-nose${MODPY_FLAVOR}>=0.10.1 \
 			devel/py-testpath${MODPY_FLAVOR} \
@@ -46,6 +46,8 @@ TEST_DEPENDS =		${BASE_PKGPATH}=${MODPY_EGG_VERSION} \
 
 FLAVORS =		python3
 FLAVOR =		python3
+
+PORTHOME =		${WRKDIR}
 
 # Despite the fact that setupbase.py defines paths for examples to
 # be installed into, we still have to do it manually for some reason.
@@ -62,9 +64,5 @@ post-install:
 pre-build:
 	${SUBST_CMD} ${WRKBUILD}/IPython/core/tests/test_interactiveshell.py
 	${SUBST_CMD} ${WRKBUILD}/examples/IPython\ Kernel/ipython.desktop
-
-do-test:
-	env LC_CTYPE=en_US.UTF-8 PYTHONNOUSERSITE=1 \
-		${LOCALBASE}/bin/iptest
 
 .include <bsd.port.mk>
