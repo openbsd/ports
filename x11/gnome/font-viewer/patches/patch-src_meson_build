@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_meson_build,v 1.1 2021/10/30 17:19:14 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: src/meson.build
+--- src/meson.build.orig
++++ src/meson.build
+@@ -39,7 +39,7 @@ desktop_file = 'org.gnome.font-viewer.desktop'
+ desktop_conf = configuration_data()
+ desktop_conf.set('VERSION', meson.project_version())
+ desktop_conf.set('APPLICATION_ID', application_id)
+-i18n.merge_file(desktop_file,
++i18n.merge_file(
+   input: configure_file(input: desktop_file + '.in.in',
+     output: desktop_file + '.in',
+     configuration: desktop_conf),
