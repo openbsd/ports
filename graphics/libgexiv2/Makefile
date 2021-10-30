@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2021/09/19 13:38:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2021/10/30 11:46:17 ajacoutot Exp $
 
 COMMENT=		GObject wrapper around exiv2
 
@@ -34,7 +34,5 @@ LIB_DEPENDS=		devel/glib2 \
 # import gi
 BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
 RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
-
-CONFIGURE_ARGS=		-Dpython2_girdir=no
 
 .include <bsd.port.mk>
