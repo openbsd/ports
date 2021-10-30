@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2021/10/03 21:06:38 bcallah Exp $
+# $OpenBSD: Makefile,v 1.15 2021/10/30 04:46:05 bcallah Exp $
 
-V =		14
+V =		14.1
 COMMENT =	open source chess engine
 PKGNAME =	stockfish-${V}
-NNUE =		nn-3475407dc199.nnue
+NNUE =		nn-13406b1dcbe0.nnue
 CATEGORIES =	games
 
 HOMEPAGE =	https://stockfishchess.org/
@@ -16,7 +16,7 @@ WANTLIB += ${COMPILER_LIBCXX} c m
 
 # XXX: Ports does not permit GH_* and MASTER_SITES together.
 MASTER_SITES0 =	https://github.com/official-stockfish/Stockfish/archive/
-MASTER_SITES1 =	https://github.com/daylen/stockfish-mac/raw/b1de3922d481969cb4fbc9c32952a8e01ca0c3e1/
+MASTER_SITES1 =	https://tests.stockfishchess.org/api/nn/
 DISTFILES =	sf_${V}.tar.gz:0 \
 		${NNUE}:1
 EXTRACT_ONLY =	sf_${V}.tar.gz
