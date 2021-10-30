@@ -1,0 +1,23 @@
+$OpenBSD: patch-data_meson_build,v 1.1 2021/10/30 17:10:46 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: data/meson.build
+--- data/meson.build.orig
++++ data/meson.build
+@@ -2,7 +2,6 @@
+ desktop_conf = configuration_data()
+ desktop_conf.set('icon', application_id)
+ desktop_file = i18n.merge_file(
+-  'desktop',
+   input: configure_file(
+     input: 'org.gnome.gitlab.somas.Apostrophe.desktop.in.in',
+     output: '@BASENAME@',
+@@ -46,7 +45,6 @@ metainfo_configured = configure_file(
+ # )
+ 
+ appdata_file = i18n.merge_file(
+-  'appdata',
+   input: metainfo_configured,
+   output: '@0@.metainfo.xml'.format(application_id),
+   po_dir: podir,
