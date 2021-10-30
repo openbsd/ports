@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.238 2021/10/30 00:04:42 kn Exp $
+# $OpenBSD: Makefile,v 1.239 2021/10/30 00:13:02 kn Exp $
 
 COMMENT-main =	distributed version control system
 COMMENT-svn =	subversion interoperability tools
@@ -25,12 +25,8 @@ EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
 MASTER_SITES =		https://www.kernel.org/pub/software/scm/git/
 
-MODULES =		lang/python \
-			perl \
+MODULES =		perl \
 			x11/tk
-
-MODPY_RUNDEP =		No
-MODPY_BUILDDEP =	No
 
 MODTK_VERSION =		8.6
 
