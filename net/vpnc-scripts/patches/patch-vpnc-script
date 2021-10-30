@@ -1,0 +1,32 @@
+$OpenBSD: patch-vpnc-script,v 1.1 2021/10/30 19:20:49 afresh1 Exp $
+
+Index: vpnc-script
+--- vpnc-script.orig
++++ vpnc-script
+@@ -150,6 +150,9 @@ elif [ -x /sbin/modify_resolvconf ]; then
+ elif [ -x /usr/sbin/unbound-control ] && /usr/sbin/unbound-control status > /dev/null 2>&1; then
+ 	MODIFYRESOLVCONF=modify_resolvconf_unbound
+ 	RESTORERESOLVCONF=restore_resolvconf_unbound
++elif [ -x /usr/sbin/rcctl ] && /usr/sbin/rcctl check resolvd >/dev/null; then
++	MODIFYRESOLVCONF=modify_resolvconf_resolvd
++	RESTORERESOLVCONF=restore_resolvconf_resolvd
+ else # Generic for any OS
+ 	MODIFYRESOLVCONF=modify_resolvconf_generic
+ 	RESTORERESOLVCONF=restore_resolvconf_generic
+@@ -768,6 +771,16 @@ restore_resolvconf_unbound() {
+ 		/usr/sbin/unbound-control flush_zone ${CISCO_DEF_DOMAIN}
+ 		/usr/sbin/unbound-control flush_requestlist
+ 	fi
++}
++
++# === resolv.conf handling via resolvd =========
++
++modify_resolvconf_resolvd() {
++	/sbin/route nameserver $TUNDEV $INTERNAL_IP4_DNS $INTERNAL_IP6_DNS
++}
++
++restore_resolvconf_resolvd() {
++	/sbin/route nameserver $TUNDEV
+ }
+ 
+ # ========= Toplevel state handling  =======================================
