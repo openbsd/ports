@@ -1,4 +1,4 @@
-# $OpenBSD: go.port.mk,v 1.46 2021/10/30 18:06:09 sthen Exp $
+# $OpenBSD: go.port.mk,v 1.47 2021/10/30 21:05:15 sthen Exp $
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
@@ -77,10 +77,11 @@ EXTRACT_ONLY =		${DISTNAME_ESC}${EXTRACT_SUFX}
 MASTER_SITES ?=		${MASTER_SITE_ATHENS}${MODGO_MODNAME_ESC}/@v/
 .  for _modpath _modver in ${MODGO_MODULES}
 DISTFILES +=	${MODGO_DIST_SUBDIR}/${_modpath}/@v/${_modver}.zip{${_modpath}/@v/${_modver}.zip}:${MODGO_MASTER_SITESN}
-DISTFILES +=	${MODGO_DIST_SUBDIR}/${_modpath}/@v/${_modver}.mod{${_modpath}/@v/${_modver}.mod}:${MODGO_MASTER_SITESN}
+_MODGO_SETUP_ZIP +=	${_modpath}/@v/${_modver}
 .  endfor
-.  for _modpath _modver in ${MODGO_MODFILES}
+.  for _modpath _modver in ${MODGO_MODFILES} ${MODGO_MODULES}
 DISTFILES +=	${MODGO_DIST_SUBDIR}/${_modpath}/@v/${_modver}.mod{${_modpath}/@v/${_modver}.mod}:${MODGO_MASTER_SITESN}
+_MODGO_SETUP_MOD +=	${_modpath}/@v/${_modver}
 .  endfor
 MAKE_ENV +=		GOPROXY=file://${WRKDIR}/go_modules
 MAKE_ENV +=		GO111MODULE=on GOPATH="${MODGO_GOPATH}"
@@ -116,10 +117,13 @@ WRKSRC ?=		${MODGO_WORKSPACE}/src/${ALL_TARGET}
 MODGO_SETUP_WORKSPACE =	mkdir -p ${WRKSRC:H}; mv ${MODGO_SUBDIR} ${WRKSRC};
 .else
 WRKSRC ?=		${WRKDIR}/${MODGO_MODNAME}@${MODGO_VERSION}
-MODGO_SETUP_WORKSPACE =	ln -sf ${WRKSRC} ${WRKDIR}/${MODGO_MODNAME};
-.  for _MODGO_m in ${DISTFILES:Mgo_modules/*:C/{.*//}
-MODGO_SETUP_WORKSPACE += ${INSTALL} -D ${DISTDIR}/${_MODGO_m} ${WRKDIR}/${_MODGO_m};
-.  endfor
+MODGO_SETUP_WORKSPACE =	ln -sf ${WRKSRC} ${WRKDIR}/${MODGO_MODNAME}; \
+	for m in ${_MODGO_SETUP_ZIP}; do \
+	    ${INSTALL} -D ${DISTDIR}/${MODGO_DIST_SUBDIR}/$$m.zip ${WRKDIR}/${MODGO_DIST_SUBDIR}/$$m.zip; \
+	done; \
+	for m in ${_MODGO_SETUP_MOD}; do \
+	    ${INSTALL} -D ${DISTDIR}/${MODGO_DIST_SUBDIR}/$$m.mod ${WRKDIR}/${MODGO_DIST_SUBDIR}/$$m.mod; \
+	done
 .endif
 
 INSTALL_STRIP =
