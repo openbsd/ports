@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2021/06/05 08:48:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/10/30 12:18:38 sthen Exp $
 
 COMMENT =	core utilities for Python packages
 
+# if moving to >=21.0 this needs splitting off to py2-packaging
+# (py2-setuptools requires it)
 MODPY_EGG_VERSION =	20.9
 
 DISTNAME =	packaging-${MODPY_EGG_VERSION}
