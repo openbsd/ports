@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.58 2021/05/13 09:49:46 ajacoutot Exp $
-include/gnome-settings-daemon-40/
-include/gnome-settings-daemon-40/gnome-settings-daemon/
-include/gnome-settings-daemon-40/gnome-settings-daemon/gsd-enums.h
-lib/gnome-settings-daemon-40/
-@so lib/gnome-settings-daemon-40/libgsd.so
+@comment $OpenBSD: PLIST,v 1.59 2021/10/30 09:14:30 ajacoutot Exp $
+include/gnome-settings-daemon-41/
+include/gnome-settings-daemon-41/gnome-settings-daemon/
+include/gnome-settings-daemon-41/gnome-settings-daemon/gsd-enums.h
+lib/gnome-settings-daemon-41/
+@so lib/gnome-settings-daemon-41/libgsd.so
 lib/pkgconfig/gnome-settings-daemon.pc
 @bin libexec/gsd-a11y-settings
 @bin libexec/gsd-datetime

@@ -1,0 +1,21 @@
+$OpenBSD: patch-plugins_xsettings_xsettings-manager_c,v 1.1 2021/10/30 09:14:30 ajacoutot Exp $
+
+REVERT: (ERROR: Invalid version of dependency, need 'xfixes' ['>= 6.0'] found '5.0.3'.)
+From e10a1cc5e76b9ef48e3de88b9562c39e444ea8c4 Mon Sep 17 00:00:00 2001
+From: Olivier Fourdan <ofourdan@redhat.com>
+Date: Fri, 19 Mar 2021 17:49:45 +0100
+Subject: [PATCH] xsettings: Add support for XFixes ClientDisconnectMode
+
+Index: plugins/xsettings/xsettings-manager.c
+--- plugins/xsettings/xsettings-manager.c.orig
++++ plugins/xsettings/xsettings-manager.c
+@@ -131,9 +131,6 @@ xsettings_manager_new (Display                *display
+ 
+   char buffer[256];
+ 
+-
+-  XFixesSetClientDisconnectMode (display, XFixesClientDisconnectFlagTerminate);
+-
+   manager = g_slice_new (XSettingsManager);
+ 
+   manager->display = display;

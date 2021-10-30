@@ -1,11 +1,17 @@
-$OpenBSD: patch-meson_build,v 1.4 2021/05/13 09:49:46 ajacoutot Exp $
+$OpenBSD: patch-meson_build,v 1.5 2021/10/30 09:14:30 ajacoutot Exp $
 
 XXX push upstream
+
+REVERT: (ERROR: Invalid version of dependency, need 'xfixes' ['>= 6.0'] found '5.0.3'.)
+From e10a1cc5e76b9ef48e3de88b9562c39e444ea8c4 Mon Sep 17 00:00:00 2001
+From: Olivier Fourdan <ofourdan@redhat.com>
+Date: Fri, 19 Mar 2021 17:49:45 +0100
+Subject: [PATCH] xsettings: Add support for XFixes ClientDisconnectMode
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -99,7 +99,6 @@ gsettings_desktop_dep = dependency('gsettings-desktop-
+@@ -97,7 +97,6 @@ gsettings_desktop_dep = dependency('gsettings-desktop-
  gtk_dep = dependency('gtk+-3.0', version: '>= 3.15.3')
  gtk_x11_dep = dependency('gtk+-x11-3.0')
  gweather_dep = dependency('gweather-3.0', version: '>= 40.alpha')
@@ -13,3 +19,11 @@ Index: meson.build
  libcanberra_gtk_dep = dependency('libcanberra-gtk3')
  libgeoclue_dep = dependency('libgeoclue-2.0', version: '>= 2.3.1')
  libnotify_dep = dependency('libnotify', version: '>= 0.7.3')
+@@ -106,7 +105,6 @@ pango_dep = dependency('pango', version: '>= 1.20.0')
+ polkit_gobject_dep = dependency('polkit-gobject-1', version: '>= 0.114')
+ upower_glib_dep = dependency('upower-glib', version: '>= 0.99.8')
+ x11_dep = dependency('x11')
+-xfixes_dep = dependency('xfixes', version: '>= 6.0')
+ 
+ enable_systemd = get_option('systemd')
+ if enable_systemd
