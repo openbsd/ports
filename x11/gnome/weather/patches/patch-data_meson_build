@@ -1,0 +1,15 @@
+$OpenBSD: patch-data_meson_build,v 1.1 2021/10/30 17:10:15 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: data/meson.build
+--- data/meson.build.orig
++++ data/meson.build
+@@ -59,7 +59,6 @@ endif
+ appdata_conf = configuration_data()
+ appdata_conf.set('app_id', weather_id)
+ appdata = i18n.merge_file(
+-  'appdata',
+   input: configure_file(
+     input: '@0@.appdata.xml.in.in'.format(default_id),
+     output: '@0@.appdata.xml.in'.format(default_id),
