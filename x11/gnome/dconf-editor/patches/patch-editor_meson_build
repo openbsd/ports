@@ -1,0 +1,23 @@
+$OpenBSD: patch-editor_meson_build,v 1.1 2021/10/30 15:59:01 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: editor/meson.build
+--- editor/meson.build.orig
++++ editor/meson.build
+@@ -1,7 +1,6 @@
+ desktop = dconf_editor_namespace + '.desktop'
+ 
+ i18n.merge_file (
+-  desktop,
+   type: 'desktop',
+   input: desktop + '.in',
+   output: desktop,
+@@ -26,7 +25,6 @@ configure_file(
+ appdata = dconf_editor_namespace + '.appdata.xml'
+ 
+ i18n.merge_file(
+-  appdata,
+   input: appdata + '.in',
+   output: appdata,
+   po_dir: po_dir,
