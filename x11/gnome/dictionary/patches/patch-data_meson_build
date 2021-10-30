@@ -1,0 +1,25 @@
+$OpenBSD: patch-data_meson_build,v 1.1 2021/10/30 17:25:30 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: data/meson.build
+--- data/meson.build.orig
++++ data/meson.build
+@@ -3,7 +3,7 @@ subdir('appdata')
+ desktop_conf = configuration_data()
+ desktop_conf.set('icon', application_id)
+ desktop_conf.set('application_id', application_id)
+-i18n.merge_file('desktop',
++i18n.merge_file(
+   input: configure_file(
+     input: 'org.gnome.Dictionary.desktop.in.in',
+     output: 'org.gnome.Dictionary.desktop.in',
+@@ -45,7 +45,7 @@ sources = [
+ ]
+ 
+ foreach s: sources
+-  i18n.merge_file('sources',
++  i18n.merge_file(
+     input: '@0@.in'.format(s),
+     output: s,
+     install: true,
