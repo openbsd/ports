@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2021/07/06 16:55:33 daniel Exp $
+# $OpenBSD: Makefile,v 1.22 2021/10/30 16:21:15 paco Exp $
 
 COMMENT =		synchronize calendars and contacts
 
-MODPY_EGG_VERSION =	0.16.8
+MODPY_EGG_VERSION =	0.18.0
 DISTNAME =		vdirsyncer-${MODPY_EGG_VERSION}
-REVISION =		5
 
 CATEGORIES =		productivity
 
@@ -34,8 +33,8 @@ RUN_DEPENDS =		devel/py-atomicwrites${MODPY_FLAVOR} \
 			www/py-requests-toolbelt${MODPY_FLAVOR}
 
 TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR} \
+			devel/py-test-cov${MODPY_FLAVOR} \
 			devel/py-test-localserver${MODPY_FLAVOR} \
-			devel/py-test-subtesthack${MODPY_FLAVOR} \
 			www/py-urllib3${MODPY_FLAVOR}
 
 TEST_ENV +=		DAV_SERVER=skip \
