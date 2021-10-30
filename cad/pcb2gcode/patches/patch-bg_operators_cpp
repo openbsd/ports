@@ -1,4 +1,4 @@
-$OpenBSD: patch-bg_operators_cpp,v 1.1 2021/10/26 09:26:34 landry Exp $
+$OpenBSD: patch-bg_operators_cpp,v 1.2 2021/10/30 06:41:24 landry Exp $
 
 CascadedUnion API removed in https://github.com/libgeos/geos/commit/156f66840b5814c944d2987bc38a25995a2ad00c
 
@@ -7,6 +7,15 @@ https://github.com/pcb2gcode/pcb2gcode/issues/592
 Index: bg_operators.cpp
 --- bg_operators.cpp.orig
 +++ bg_operators.cpp
+@@ -2,7 +2,7 @@
+ #include "geometry_int.hpp"
+ #include "bg_helpers.hpp"
+ #ifdef GEOS_VERSION
+-#include <geos/operation/union/CascadedUnion.h>
++#include <geos/operation/union/OverlapUnion.h>
+ #include <geos/util/TopologyException.h>
+ #include "geos_helpers.hpp"
+ #endif // GEOS_VERSION
 @@ -244,32 +244,7 @@ multi_polygon_type_fp sum(const std::vector<multi_poly
    } else if (mpolys.size() == 1) {
      return mpolys[0];
