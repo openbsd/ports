@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2021/09/05 08:13:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2021/10/30 19:07:47 phessler Exp $
 
+BROKEN-aarch64 = invalid asm
 BROKEN-i386 =	frequent cmake-related build failures
 # INSTALL stage looks for libgnuradio-runtime.so.3.8.2.0 but the file is
 # really named libgnuradio-runtime.so.0.0
