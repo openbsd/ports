@@ -1,4 +1,4 @@
-# $OpenBSD: go.port.mk,v 1.45 2021/10/30 17:15:11 sthen Exp $
+# $OpenBSD: go.port.mk,v 1.46 2021/10/30 18:06:09 sthen Exp $
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
@@ -76,11 +76,11 @@ DISTFILES +=		${DISTNAME_ESC}${EXTRACT_SUFX}{${MODGO_VERSION}${EXTRACT_SUFX}}
 EXTRACT_ONLY =		${DISTNAME_ESC}${EXTRACT_SUFX}
 MASTER_SITES ?=		${MASTER_SITE_ATHENS}${MODGO_MODNAME_ESC}/@v/
 .  for _modpath _modver in ${MODGO_MODULES}
-DISTFILES +=	${MODGO_DIST_SUBDIR}/{}${_modpath}/@v/${_modver}.zip:${MODGO_MASTER_SITESN}
-DISTFILES +=	${MODGO_DIST_SUBDIR}/{}${_modpath}/@v/${_modver}.mod:${MODGO_MASTER_SITESN}
+DISTFILES +=	${MODGO_DIST_SUBDIR}/${_modpath}/@v/${_modver}.zip{${_modpath}/@v/${_modver}.zip}:${MODGO_MASTER_SITESN}
+DISTFILES +=	${MODGO_DIST_SUBDIR}/${_modpath}/@v/${_modver}.mod{${_modpath}/@v/${_modver}.mod}:${MODGO_MASTER_SITESN}
 .  endfor
 .  for _modpath _modver in ${MODGO_MODFILES}
-DISTFILES +=	${MODGO_DIST_SUBDIR}/{}${_modpath}/@v/${_modver}.mod:${MODGO_MASTER_SITESN}
+DISTFILES +=	${MODGO_DIST_SUBDIR}/${_modpath}/@v/${_modver}.mod{${_modpath}/@v/${_modver}.mod}:${MODGO_MASTER_SITESN}
 .  endfor
 MAKE_ENV +=		GOPROXY=file://${WRKDIR}/go_modules
 MAKE_ENV +=		GO111MODULE=on GOPATH="${MODGO_GOPATH}"
