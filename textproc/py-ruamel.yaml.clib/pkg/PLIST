@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/10/27 08:46:24 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/10/30 09:52:41 sthen Exp $
+@conflict py3-ruamel.yaml-<0.17.16
 @so lib/python${MODPY_VERSION}/site-packages/_ruamel_yaml.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/ruamel/
 lib/python${MODPY_VERSION}/site-packages/ruamel.yaml.clib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

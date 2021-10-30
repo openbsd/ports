@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/10/27 08:46:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/10/30 09:52:41 sthen Exp $
 
 COMMENT =		C based reader/scanner and emitter for ruamel.yaml
 
 MODPY_EGG_VERSION =	0.2.6
+REVISION =		0
 DISTNAME =		ruamel.yaml.clib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
