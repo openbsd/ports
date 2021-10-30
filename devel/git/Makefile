@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.237 2021/10/29 22:05:11 kn Exp $
+# $OpenBSD: Makefile,v 1.238 2021/10/30 00:04:42 kn Exp $
 
 COMMENT-main =	distributed version control system
 COMMENT-svn =	subversion interoperability tools
@@ -91,7 +91,9 @@ TEST_DEPENDS =		archivers/unzip \
 			devel/cvsps \
 			devel/subversion,-perl
 
-# "test" is too verbose and parallel jobs print out of order, get a simple
+# see ${WRKSRC}/t/README for test documentation (GIT_TEST_*, etc.)
+
+# "test" is too verbose and parallel jobs print out of order; allow for
 # `make GIT_TEST_TARGET=prove test' to use prove(1) with better output
 GIT_TEST_TARGET ?=	test
 
@@ -103,9 +105,15 @@ GIT_PROVE_OPTS =	-j${MAKE_JOBS} \
 			--norc \
 			-W
 
+GIT_SKIP_TESTS ?=	# empty
+
 TEST_ENV =		GIT_TEST_OPTS=${GIT_TEST_OPTS:Q} \
 			GIT_PROVE_OPTS=${GIT_PROVE_OPTS:Q} \
+			GIT_SKIP_TESTS=${GIT_SKIP_TESTS:Q} \
 			DEFAULT_TEST_TARGET=${GIT_TEST_TARGET}
+
+# one expensive test needs explicit enabling
+TEST_ENV +=		GIT_TEST_CLONE_2GB=true
 
 # ${WRKSRC}/t/t4256/1/mailinfo.c.orig
 PATCHORIG =		.pat.orig
