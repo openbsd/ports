@@ -1,0 +1,14 @@
+$OpenBSD: patch-data_meson_build,v 1.1 2021/10/30 11:44:28 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: data/meson.build
+--- data/meson.build.orig
++++ data/meson.build
+@@ -1,5 +1,5 @@
+ session_desktop = 'gnome-classic.desktop'
+-i18n.merge_file('',
++i18n.merge_file(
+   input:  session_desktop + '.in',
+   output: session_desktop,
+   po_dir: '../po',
