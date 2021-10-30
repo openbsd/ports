@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/08/11 11:54:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/10/30 07:40:04 ajacoutot Exp $
 include/gnome-autoar-0/
 include/gnome-autoar-0/gnome-autoar/
 include/gnome-autoar-0/gnome-autoar/autoar-compressor.h
@@ -10,13 +10,11 @@ include/gnome-autoar-0/gnome-autoar/autoar-gtk.h
 include/gnome-autoar-0/gnome-autoar/autoar-mime-types.h
 include/gnome-autoar-0/gnome-autoar/autoar-misc.h
 include/gnome-autoar-0/gnome-autoar/gnome-autoar.h
-lib/girepository-1.0/
 lib/girepository-1.0/GnomeAutoar-0.1.typelib
 lib/girepository-1.0/GnomeAutoarGtk-0.1.typelib
 @lib lib/libgnome-autoar-0.so.${LIBgnome-autoar-0_VERSION}
 @lib lib/libgnome-autoar-gtk-0.so.${LIBgnome-autoar-gtk-0_VERSION}
 lib/pkgconfig/gnome-autoar-0.pc
 lib/pkgconfig/gnome-autoar-gtk-0.pc
-share/gir-1.0/
 share/gir-1.0/GnomeAutoar-0.1.gir
 share/gir-1.0/GnomeAutoarGtk-0.1.gir
