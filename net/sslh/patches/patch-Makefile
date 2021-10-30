@@ -1,10 +1,10 @@
-$OpenBSD: patch-Makefile,v 1.9 2020/07/31 04:20:35 bket Exp $
+$OpenBSD: patch-Makefile,v 1.10 2021/10/30 14:51:25 bket Exp $
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -98,7 +98,7 @@ echosrv: version.h $(OBJS) echosrv.o
- 	$(CC) $(CFLAGS) $(LDFLAGS) -o echosrv echosrv.o probe.o common.o tls.o $(LIBS)
+@@ -95,7 +95,7 @@ echosrv: version.h echosrv-conf.c echosrv.o echosrv-co
+ 	$(CC) $(CFLAGS) $(LDFLAGS) -o echosrv echosrv.o echosrv-conf.o argtable3.o $(LIBS)
  
  $(MAN): sslh.pod Makefile
 -	pod2man --section=8 --release=$(VERSION) --center=" " sslh.pod | gzip -9 - > $(MAN)

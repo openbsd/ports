@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/11/21 13:12:37 bket Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/10/30 14:51:25 bket Exp $
 @newgroup _sslh:696
 @newuser _sslh:696:696:daemon:sslh:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/sslh_fork
@@ -11,3 +11,4 @@ share/doc/sslh/README.md
 share/examples/sslh/
 share/examples/sslh/basic.cfg
 share/examples/sslh/example.cfg
+share/examples/sslh/udp.cfg
