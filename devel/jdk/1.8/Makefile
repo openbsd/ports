@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2021/08/05 15:40:20 kurt Exp $
+# $OpenBSD: Makefile,v 1.65 2021/10/30 22:48:11 kurt Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 aarch64 sparc64
 USE_WXNEEDED=	Yes
@@ -13,7 +13,7 @@ V=		${BASE_VER}.${UPDATE_VER}.${BUILD_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${V}
 PKGSTEM=	jdk-${BASE_VER}
 EPOCH=		0
-REVISION=	0
+REVISION=	1
 
 DIST_SUBDIR=	jdk
 DISTNAME=	jdk8u${UPDATE_VER}-${BUILD_VER}.${BSD_PORT_REL}

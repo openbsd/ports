@@ -1,11 +1,22 @@
-$OpenBSD: patch-make_hotspot_lib_CompileJvm_gmk,v 1.1.1.1 2021/10/29 18:15:16 kurt Exp $
+$OpenBSD: patch-make_hotspot_lib_CompileJvm_gmk,v 1.2 2021/10/30 22:48:11 kurt Exp $
 
-This file name changed in 17 and needs to be excluded
+threadLS_bsd_aarch64.S name changed in 17 and needs to be excluded.
+Disable unused-but-set-parameter for llvm13.
 
 Index: make/hotspot/lib/CompileJvm.gmk
 --- make/hotspot/lib/CompileJvm.gmk.orig
 +++ make/hotspot/lib/CompileJvm.gmk
-@@ -128,7 +128,7 @@ else ifeq ($(call And, $(call isTargetOs, linux) $(cal
+@@ -95,7 +95,8 @@ DISABLED_WARNINGS_clang := tautological-compare \
+     undefined-var-template sometimes-uninitialized unknown-pragmas \
+     delete-non-virtual-dtor missing-braces char-subscripts \
+     ignored-qualifiers missing-field-initializers mismatched-tags \
+-    unnamed-type-template-args shift-negative-value format-nonliteral
++    unnamed-type-template-args shift-negative-value format-nonliteral \
++    unused-but-set-parameter
+ 
+ ifneq (,$(filter 1%,$(CC_VERSION_NUMBER)))
+   DISABLED_WARNINGS_clang += misleading-indentation
+@@ -128,7 +129,7 @@ else ifeq ($(call And, $(call isTargetOs, linux) $(cal
  endif
  
  ifeq ($(OPENJDK_TARGET_OS_ENV)-$(OPENJDK_TARGET_CPU), bsd.openbsd-aarch64)
