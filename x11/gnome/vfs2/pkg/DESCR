@@ -1,7 +1,0 @@
-GnomeVFS is a filesystem abstraction library allowing applications
-plugable transparent access to a variety of "real" filesystems, from
-WebDAV to digital cameras, to the local filesystem. It also contains a
-number of other convenient file utilities such as a comprehensive MIME
-database / Application registry, and a copy engine.
-
-Note that the GnomeVFS has been deprecated in favor of gio/gvfs.

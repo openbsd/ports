@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.295 2021/10/30 07:11:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.296 2021/10/30 07:19:58 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accerciser
@@ -65,7 +65,6 @@
      SUBDIR += mahjongg
      SUBDIR += maps
      SUBDIR += menus
-     SUBDIR += mime-data
      SUBDIR += music
      SUBDIR += mutter
      SUBDIR += nautilus
@@ -101,7 +100,6 @@
      SUBDIR += tweaks
      SUBDIR += usage
      SUBDIR += user-docs
-     SUBDIR += vfs2
      SUBDIR += vino
      SUBDIR += weather
      SUBDIR += yelp

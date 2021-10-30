@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2147 2021/10/30 07:11:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2148 2021/10/30 07:19:59 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -244,7 +244,6 @@
      SUBDIR += legit
      SUBDIR += leiningen
      SUBDIR += libHX
-     SUBDIR += libIDL
      SUBDIR += libJudy
      SUBDIR += libaio_compat
      SUBDIR += libast

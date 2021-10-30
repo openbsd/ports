@@ -1,4 +1,0 @@
-libIDL is a small library for creating parse trees of CORBA v2.2
-compliant Interface Definition Language (IDL) files, which is a
-specification for defining interfaces which can be used between
-different CORBA implementations.

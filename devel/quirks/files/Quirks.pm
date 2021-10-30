@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1330 2021/10/30 07:11:54 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1331 2021/10/30 07:19:59 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1506,6 +1506,10 @@ setup_obsolete_reason(
 	3 => 'gtetrinet-themes',
 	3 => 'grhino',
 	3 => 'gbrainy',
+	3 => 'gnome-vfs2',
+	3 => 'gnome-mime-data',
+	3 => 'libIDL',
+	3 => 'chemical-mime-data',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

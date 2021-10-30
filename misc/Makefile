@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.204 2021/10/26 19:45:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.205 2021/10/30 07:19:59 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -12,7 +12,6 @@
      SUBDIR += ccze
      SUBDIR += cdrdao
      SUBDIR += cdrdao,audio
-     SUBDIR += chemical-mime-data
      SUBDIR += clex
      SUBDIR += cmdpack
      SUBDIR += deco
