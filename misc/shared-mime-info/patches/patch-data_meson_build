@@ -1,0 +1,37 @@
+$OpenBSD: patch-data_meson_build,v 1.1 2021/10/30 12:09:57 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+https://gitlab.freedesktop.org/xdg/shared-mime-info/-/issues/170
+
+Index: data/meson.build
+--- data/meson.build.orig
++++ data/meson.build
+@@ -1,20 +1,14 @@
+ 
+ install_man('update-mime-database.1')
+ 
+-freedesktop_org_xml = custom_target('freedesktop.org.xml',
+-    input : files(
+-        'freedesktop.org.xml.in',
+-        'its/shared-mime-info.its',
+-        'its/shared-mime-info.loc',
+-    ),
+-    output: 'freedesktop.org.xml',
+-    command: [
+-        find_program('freedesktop_generate.sh'),
+-        meson.source_root(),
+-        meson.build_root()
+-    ],
+-    install: true,
+-    install_dir: get_option('datadir') / 'mime' / 'packages',
++freedesktop_org_xml = 'freedesktop.org.xml'
++i18n.merge_file(
++  type: 'xml',
++  input : 'freedesktop.org.xml.in',
++  output: 'freedesktop.org.xml',
++  po_dir: join_paths(meson.source_root(), 'po'),
++  install: true,
++  install_dir: get_option('datadir') / 'mime' / 'packages',
+ )
+ 
+ install_data(

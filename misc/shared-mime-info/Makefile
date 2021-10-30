@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.71 2021/01/09 11:14:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2021/10/30 12:09:57 ajacoutot Exp $
 
 COMMENT=		shared mime database for desktops
 
 DISTNAME=		shared-mime-info-2.1
+REVISION=		0
 
 CATEGORIES=		misc
 
