@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.16 2021/06/09 19:50:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/10/30 07:56:55 landry Exp $
 
-V =		2.1pl20200624
+V =		2.2
 COMMENT =	scrabble game
 DISTNAME =	eliot-${V}
-REVISION =	0
 CATEGORIES =	games
 
 HOMEPAGE =	https://nongnu.org/eliot/
 
-MASTER_SITES =	https://namtsui.com/source/
+MASTER_SITES =	http://dl.sv.nongnu.org/releases/eliot/releases/${V}/
 
 EXTRACT_ONLY =	${DISTNAME}${EXTRACT_SUFX}
 DISTFILES +=	${DISTNAME}${EXTRACT_SUFX}
