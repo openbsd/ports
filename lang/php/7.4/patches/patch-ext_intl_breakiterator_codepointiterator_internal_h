@@ -1,0 +1,19 @@
+$OpenBSD: patch-ext_intl_breakiterator_codepointiterator_internal_h,v 1.1 2021/10/30 06:17:45 ajacoutot Exp $
+
+https://github.com/php/php-src/pull/7596
+
+Index: ext/intl/breakiterator/codepointiterator_internal.h
+--- ext/intl/breakiterator/codepointiterator_internal.h.orig
++++ ext/intl/breakiterator/codepointiterator_internal.h
+@@ -39,7 +39,11 @@ namespace PHP {
+ 
+ 		virtual ~CodePointBreakIterator();
+ 
++#if U_ICU_VERSION_MAJOR_NUM >= 70
++		virtual bool operator==(const BreakIterator& that) const;
++#else
+ 		virtual UBool operator==(const BreakIterator& that) const;
++#endif
+ 
+ 		virtual CodePointBreakIterator* clone(void) const;
+ 

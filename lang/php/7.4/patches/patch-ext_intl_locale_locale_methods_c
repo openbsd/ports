@@ -1,0 +1,16 @@
+$OpenBSD: patch-ext_intl_locale_locale_methods_c,v 1.1 2021/10/30 06:17:45 ajacoutot Exp $
+
+https://github.com/php/php-src/pull/7596
+
+Index: ext/intl/locale/locale_methods.c
+--- ext/intl/locale/locale_methods.c.orig
++++ ext/intl/locale/locale_methods.c
+@@ -1326,7 +1326,7 @@ PHP_FUNCTION(locale_filter_matches)
+ 		if( token && (token==cur_lang_tag) ){
+ 			/* check if the char. after match is SEPARATOR */
+ 			chrcheck = token + (strlen(cur_loc_range));
+-			if( isIDSeparator(*chrcheck) || isEndOfTag(*chrcheck) ){
++			if( isIDSeparator(*chrcheck) || isKeywordSeparator(*chrcheck) || isEndOfTag(*chrcheck) ){
+ 				efree( cur_lang_tag );
+ 				efree( cur_loc_range );
+ 				if( can_lang_tag){
