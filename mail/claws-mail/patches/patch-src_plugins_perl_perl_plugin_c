@@ -1,0 +1,130 @@
+$OpenBSD: patch-src_plugins_perl_perl_plugin_c,v 1.1 2021/10/30 14:35:49 jsg Exp $
+
+stop trying to use XSRETURN as an expression
+
+Index: src/plugins/perl/perl_plugin.c
+--- src/plugins/perl/perl_plugin.c.orig
++++ src/plugins/perl/perl_plugin.c
+@@ -573,47 +573,50 @@ static XS(XS_ClawsMail_filter_init)
+ 
+     /* msginfo */
+   case  1:
+-    msginfo->size       ? XSRETURN_UV(msginfo->size)       : XSRETURN_UNDEF;
++    if (msginfo->size) XSRETURN_UV(msginfo->size); else XSRETURN_UNDEF;
+   case  2:
+-    msginfo->date       ? XSRETURN_PV(msginfo->date)       : XSRETURN_UNDEF;
++    if (msginfo->date) XSRETURN_PV(msginfo->date); else XSRETURN_UNDEF;
+   case  3:
+-    msginfo->from       ? XSRETURN_PV(msginfo->from)       : XSRETURN_UNDEF;
++    if (msginfo->from) XSRETURN_PV(msginfo->from); else XSRETURN_UNDEF;
+   case  4:
+-    msginfo->to         ? XSRETURN_PV(msginfo->to)         : XSRETURN_UNDEF;
++    if (msginfo->to) XSRETURN_PV(msginfo->to); else XSRETURN_UNDEF;
+   case  5:
+-    msginfo->cc         ? XSRETURN_PV(msginfo->cc)         : XSRETURN_UNDEF;
++    if (msginfo->cc) XSRETURN_PV(msginfo->cc); else XSRETURN_UNDEF;
+   case  6:
+-    msginfo->newsgroups ? XSRETURN_PV(msginfo->newsgroups) : XSRETURN_UNDEF;
++    if (msginfo->newsgroups) XSRETURN_PV(msginfo->newsgroups); else XSRETURN_UNDEF;
+   case  7:
+-    msginfo->subject    ? XSRETURN_PV(msginfo->subject)    : XSRETURN_UNDEF;
++    if (msginfo->subject) XSRETURN_PV(msginfo->subject); else XSRETURN_UNDEF;
+   case  8:
+-    msginfo->msgid      ? XSRETURN_PV(msginfo->msgid)      : XSRETURN_UNDEF;
++    if (msginfo->msgid) XSRETURN_PV(msginfo->msgid); else XSRETURN_UNDEF;
+   case  9:
+-    msginfo->inreplyto  ? XSRETURN_PV(msginfo->inreplyto)  : XSRETURN_UNDEF;
++    if (msginfo->inreplyto) XSRETURN_PV(msginfo->inreplyto); else XSRETURN_UNDEF;
+   case 10:
+-    msginfo->xref       ? XSRETURN_PV(msginfo->xref)       : XSRETURN_UNDEF;
++    if (msginfo->xref) XSRETURN_PV(msginfo->xref); else XSRETURN_UNDEF;
+   case 11:
+     xface = procmsg_msginfo_get_avatar(msginfo, AVATAR_XFACE);
+-    xface               ? XSRETURN_PV(xface)               : XSRETURN_UNDEF;
++    if (xface) XSRETURN_PV(xface); else XSRETURN_UNDEF;
+   case 12:
+-    (msginfo->extradata && msginfo->extradata->dispositionnotificationto) ?
+-      XSRETURN_PV(msginfo->extradata->dispositionnotificationto) : XSRETURN_UNDEF;
++    if (msginfo->extradata && msginfo->extradata->dispositionnotificationto)
++      XSRETURN_PV(msginfo->extradata->dispositionnotificationto);
++    else
++      XSRETURN_UNDEF;
+   case 13:
+-    (msginfo->extradata && msginfo->extradata->returnreceiptto) ?
+-      XSRETURN_PV(msginfo->extradata->returnreceiptto)     : XSRETURN_UNDEF;
++    if (msginfo->extradata && msginfo->extradata->returnreceiptto)
++      XSRETURN_PV(msginfo->extradata->returnreceiptto);
++    else
++      XSRETURN_UNDEF;
+   case 14:
+     EXTEND(SP, g_slist_length(msginfo->references));
+     ii = 0;
+     for(walk = msginfo->references; walk != NULL; walk = g_slist_next(walk))
+       XST_mPV(ii++,walk->data ? (gchar*) walk->data: "");
+-    ii ? XSRETURN(ii) : XSRETURN_UNDEF;
++    if (ii) XSRETURN(ii); else XSRETURN_UNDEF;
+   case 15:
+-    msginfo->score      ? XSRETURN_IV(msginfo->score)      : XSRETURN_UNDEF;
++    if (msginfo->score) XSRETURN_IV(msginfo->score); else XSRETURN_UNDEF;
+   case 17:
+-    msginfo->plaintext_file ?
+-      XSRETURN_PV(msginfo->plaintext_file)                 : XSRETURN_UNDEF;
++    if (msginfo->plaintext_file) XSRETURN_PV(msginfo->plaintext_file); else XSRETURN_UNDEF;
+   case 19:
+-    msginfo->hidden     ? XSRETURN_IV(msginfo->hidden)     : XSRETURN_UNDEF;
++    if (msginfo->hidden) XSRETURN_IV(msginfo->hidden); else XSRETURN_UNDEF;
+   case 20:
+     if((charp = procmsg_get_message_file_path(msginfo)) != NULL) {
+       strncpy2(buf,charp,sizeof(buf));
+@@ -623,19 +626,30 @@ static XS(XS_ClawsMail_filter_init)
+     else
+       XSRETURN_UNDEF;
+   case 21:
+-    (msginfo->extradata && msginfo->extradata->partial_recv) ?
+-      XSRETURN_PV(msginfo->extradata->partial_recv)        : XSRETURN_UNDEF;
++    if (msginfo->extradata && msginfo->extradata->partial_recv)
++      XSRETURN_PV(msginfo->extradata->partial_recv);
++    else
++      XSRETURN_UNDEF;
+   case 22:
+-    msginfo->total_size ? XSRETURN_IV(msginfo->total_size) : XSRETURN_UNDEF;
++    if (msginfo->total_size)
++      XSRETURN_IV(msginfo->total_size);
++    else
++      XSRETURN_UNDEF;
+   case 23:
+-    (msginfo->extradata && msginfo->extradata->account_server) ?
+-      XSRETURN_PV(msginfo->extradata->account_server)      : XSRETURN_UNDEF;
++    if (msginfo->extradata && msginfo->extradata->account_server)
++      XSRETURN_PV(msginfo->extradata->account_server);
++    else
++      XSRETURN_UNDEF;
+   case 24:
+-    (msginfo->extradata && msginfo->extradata->account_login) ?
+-      XSRETURN_PV(msginfo->extradata->account_login)       : XSRETURN_UNDEF;
++    if (msginfo->extradata && msginfo->extradata->account_login)
++      XSRETURN_PV(msginfo->extradata->account_login);
++    else
++      XSRETURN_UNDEF;
+   case 25:
+-    msginfo->planned_download ?
+-      XSRETURN_IV(msginfo->planned_download)               : XSRETURN_UNDEF;
++    if (msginfo->planned_download)
++      XSRETURN_IV(msginfo->planned_download);
++    else
++      XSRETURN_UNDEF;
+ 
+     /* general */
+   case 100:
+@@ -896,7 +910,10 @@ static XS(XS_ClawsMail_tagged)
+     XSRETURN_UNDEF;
+   }
+ 
+-  return msginfo->tags ? XSRETURN_YES : XSRETURN_NO;
++  if (msginfo->tags)
++    XSRETURN_YES;
++  else
++    XSRETURN_NO;
+ }
+ 
+ /* ClawsMail::C::get_tags() */
