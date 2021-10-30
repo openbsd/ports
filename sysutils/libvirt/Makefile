@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.86 2021/10/24 08:55:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2021/10/30 12:29:05 ajacoutot Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
 DISTNAME=		libvirt-7.8.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		sysutils devel emulators
 
@@ -106,5 +106,6 @@ post-install:
 	rm -rf ${WRKINST}/var/{cache/libvirt,lib}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
 	mv ${WRKINST}${SYSCONFDIR}/libvirt ${PREFIX}/share/examples/
+	mv ${WRKINST}${SYSCONFDIR}/sasl2 ${PREFIX}/share/examples/libvirt/
 
 .include <bsd.port.mk>

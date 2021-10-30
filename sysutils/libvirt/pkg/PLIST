@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2021/08/11 11:57:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.37 2021/10/30 12:29:06 ajacoutot Exp $
 @bin bin/virsh
 @bin bin/virt-admin
 @bin bin/virt-host-validate
@@ -355,6 +355,9 @@ share/examples/libvirt/libvirt-admin.conf
 @sample ${SYSCONFDIR}/libvirt/libvirt-admin.conf
 share/examples/libvirt/libvirt.conf
 @sample ${SYSCONFDIR}/libvirt/libvirt.conf
+share/examples/libvirt/sasl2/
+share/examples/libvirt/sasl2/libvirt.conf
+@sample ${SYSCONFDIR}/sasl2/libvirt.conf
 share/libvirt/
 share/libvirt/api/
 share/libvirt/api/libvirt-admin-api.xml
