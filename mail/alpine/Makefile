@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2021/10/14 14:29:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2021/10/31 17:03:43 tb Exp $
 
 COMMENT-main=		UW e-mail client
 COMMENT-c-client=	UW c-client mail access routines
@@ -19,12 +19,12 @@ PICO_V=			5.09
 # grep PILOT_VERSION ${WRKSRC}/pico/pilot.c
 PILOT_V=		2.99
 
-REVISION-main=		1
-REVISION-pico=		24
-REVISION-pilot=		24
-REVISION-c-client=	2
-REVISION-mailutil=	0
-REVISION-imap=		0
+REVISION-main=		2
+REVISION-pico=		25
+REVISION-pilot=		25
+REVISION-c-client=	3
+REVISION-mailutil=	1
+REVISION-imap=		1
 
 PKGNAME-main=		alpine-${V}
 PKGNAME-c-client=	c-client-${V}

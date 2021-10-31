@@ -1,4 +1,4 @@
-$OpenBSD: patch-imap_src_osdep_unix_ssl_unix_c,v 1.4 2021/09/22 20:57:10 sthen Exp $
+$OpenBSD: patch-imap_src_osdep_unix_ssl_unix_c,v 1.5 2021/10/31 17:03:43 tb Exp $
 
 * some popular mail services enforce SNI for TLSv1.3 clients, so send it
 * retry SSL_write on blocking socket if we're told to do so.
@@ -29,3 +29,21 @@ Index: imap/src/osdep/unix/ssl_unix.c
      return ssl_last_error ? ssl_last_error : "SSL negotiation failed";
  				/* need to validate host names? */
    cert = SSL_get_peer_certificate (stream->con);
+@@ -530,7 +537,7 @@ static char *ssl_validate_cert (X509 *cert,char *host)
+ 				/* make sure have a certificate */
+   if (!cert) return "No certificate from server";
+ 				/* Method 1: locate CN */
+-#ifndef OPENSSL_1_1_0
++#if !defined(OPENSSL_1_1_0) && !defined(LIBRESSL_VERSION_NUMBER)
+   if (cert->name == NIL)
+      ret = "No name in certificate";
+   else if ((s = strstr (cert->name,"/CN=")) != NIL) {
+@@ -579,7 +586,7 @@ static char *ssl_validate_cert (X509 *cert,char *host)
+   }
+ 
+   if (ret == NIL
+-#ifndef OPENSSL_1_1_0
++#if !defined(OPENSSL_1_1_0) && !defined(LIBRESSL_VERSION_NUMBER)
+        && !cert->name
+ #endif /* OPENSSL_1_1_0 */
+        && !X509_get_subject_name(cert))
