@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_ssl_Ssl_c,v 1.5 2021/10/31 17:34:51 tb Exp $
+
+Index: src/ssl/Ssl.c
+--- src/ssl/Ssl.c.orig
++++ src/ssl/Ssl.c
+@@ -429,7 +429,7 @@ static int _verifyClientCertificates(int preverify_ok,
+                                 return 0;
+                 }
+         }
+-#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L)
+         X509_OBJECT found_cert;
+         if (X509_STORE_CTX_get_error_depth(ctx) == 0 && X509_STORE_get_by_subject(ctx, X509_LU_X509, X509_get_subject_name(X509_STORE_CTX_get_current_cert(ctx)), &found_cert) != 1) {
+ #else
+@@ -438,12 +438,12 @@ static int _verifyClientCertificates(int preverify_ok,
+ #endif
+                 Log_error("SSL: no matching certificate found -- %s\n", SSLERROR);
+                 X509_STORE_CTX_set_error(ctx, X509_V_ERR_CERT_REJECTED);
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L && ! defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L
+                 X509_OBJECT_free(found_cert);
+ #endif
+                 return 0;
+         }
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L && ! defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L
+         X509_OBJECT_free(found_cert);
+ #endif
+         return 1;
