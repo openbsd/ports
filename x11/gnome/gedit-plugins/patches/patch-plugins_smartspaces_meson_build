@@ -1,0 +1,15 @@
+$OpenBSD: patch-plugins_smartspaces_meson_build,v 1.1 2021/10/31 08:19:38 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: plugins/smartspaces/meson.build
+--- plugins/smartspaces/meson.build.orig
++++ plugins/smartspaces/meson.build
+@@ -34,7 +34,6 @@ smartspaces_plugin = custom_target(
+ )
+ 
+ smartspaces_metainfo = i18n.merge_file(
+-  'gedit-smartspaces.metainfo.xml',
+   input: 'gedit-smartspaces.metainfo.xml.in',
+   output: 'gedit-smartspaces.metainfo.xml',
+   po_dir: join_paths(srcdir, 'po'),

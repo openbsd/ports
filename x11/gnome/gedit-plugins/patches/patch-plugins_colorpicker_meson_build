@@ -1,0 +1,15 @@
+$OpenBSD: patch-plugins_colorpicker_meson_build,v 1.1 2021/10/31 08:19:38 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: plugins/colorpicker/meson.build
+--- plugins/colorpicker/meson.build.orig
++++ plugins/colorpicker/meson.build
+@@ -30,7 +30,6 @@ colorpicker_plugin = custom_target(
+ )
+ 
+ colorpicker_metainfo = i18n.merge_file(
+-  'gedit-colorpicker.metainfo.xml',
+   input: 'gedit-colorpicker.metainfo.xml.in',
+   output: 'gedit-colorpicker.metainfo.xml',
+   po_dir: join_paths(srcdir, 'po'),

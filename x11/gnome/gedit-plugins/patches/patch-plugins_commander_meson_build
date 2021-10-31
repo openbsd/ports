@@ -1,0 +1,15 @@
+$OpenBSD: patch-plugins_commander_meson_build,v 1.1 2021/10/31 08:19:38 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: plugins/commander/meson.build
+--- plugins/commander/meson.build.orig
++++ plugins/commander/meson.build
+@@ -35,7 +35,6 @@ commander_plugin = custom_target(
+ )
+ 
+ commander_metainfo = i18n.merge_file(
+-  'gedit-commander.metainfo.xml',
+   input: 'gedit-commander.metainfo.xml.in',
+   output: 'gedit-commander.metainfo.xml',
+   po_dir: join_paths(srcdir, 'po'),

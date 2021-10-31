@@ -1,0 +1,15 @@
+$OpenBSD: patch-plugins_bookmarks_meson_build,v 1.1 2021/10/31 08:19:38 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: plugins/bookmarks/meson.build
+--- plugins/bookmarks/meson.build.orig
++++ plugins/bookmarks/meson.build
+@@ -41,7 +41,6 @@ bookmarks_plugin = custom_target(
+ )
+ 
+ bookmarks_metainfo = i18n.merge_file(
+-  'gedit-bookmarks.metainfo.xml',
+   input: 'gedit-bookmarks.metainfo.xml.in',
+   output: 'gedit-bookmarks.metainfo.xml',
+   po_dir: join_paths(srcdir, 'po'),

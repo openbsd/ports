@@ -1,0 +1,15 @@
+$OpenBSD: patch-plugins_translate_meson_build,v 1.1 2021/10/31 08:19:38 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: plugins/translate/meson.build
+--- plugins/translate/meson.build.orig
++++ plugins/translate/meson.build
+@@ -47,7 +47,6 @@ install_data(
+ )
+ 
+ translate_metainfo = i18n.merge_file(
+-  'gedit-translate.metainfo.xml',
+   input: 'gedit-translate.metainfo.xml.in',
+   output: 'gedit-translate.metainfo.xml',
+   po_dir: join_paths(srcdir, 'po'),

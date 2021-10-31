@@ -1,0 +1,15 @@
+$OpenBSD: patch-plugins_charmap_meson_build,v 1.1 2021/10/31 08:19:38 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: plugins/charmap/meson.build
+--- plugins/charmap/meson.build.orig
++++ plugins/charmap/meson.build
+@@ -26,7 +26,6 @@ charmap_plugin = custom_target(
+ )
+ 
+ charmap_metainfo = i18n.merge_file(
+-  'gedit-charmap.metainfo.xml',
+   input: 'gedit-charmap.metainfo.xml.in',
+   output: 'gedit-charmap.metainfo.xml',
+   po_dir: join_paths(srcdir, 'po'),
