@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2021/10/22 21:32:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.138 2021/10/31 07:02:43 ajacoutot Exp $
 
 BROKEN-hppa =		no atomic ops
 COMMENT =		Music Player Daemon
@@ -75,8 +75,7 @@ CONFIGURE_ARGS +=	-Dcdio_paranoia=enabled \
 
 # commercial
 CONFIGURE_ARGS +=	-Dqobuz=disabled \
-			-Dsoundcloud=enabled \
-			-Dtidal=disabled
+			-Dsoundcloud=enabled
 
 # archive
 CONFIGURE_ARGS +=	-Dbzip2=enabled \
@@ -137,7 +136,6 @@ CONFIGURE_ARGS +=	-Ddbus=disabled \
 			-Dexpat=enabled \
 			-Dicu=enabled \
 			-Diconv=enabled \
-			-Dlibwrap=disabled \
 			-Dpcre=enabled \
 			-Dsqlite=enabled \
 			-Dyajl=enabled \
