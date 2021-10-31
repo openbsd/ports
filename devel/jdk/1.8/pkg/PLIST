@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/07/15 10:28:30 kurt Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/10/31 20:55:28 kurt Exp $
 @option no-default-conflict
 @option is-branch
 @conflict jdk->=1.8v0,<1.9v0
@@ -438,6 +438,48 @@ ${JDKHOME}/jre/bin/
 @bin ${JDKHOME}/jre/bin/tnameserv
 @bin ${JDKHOME}/jre/bin/unpack200
 ${JDKHOME}/jre/lib/
+${JDKHOME}/jre/lib/${LIBARCH}/
+@bin ${JDKHOME}/jre/lib/${LIBARCH}/jexec
+${JDKHOME}/jre/lib/${LIBARCH}/jli/
+@so ${JDKHOME}/jre/lib/${LIBARCH}/jli/libjli.so
+@bin ${JDKHOME}/jre/lib/${LIBARCH}/jspawnhelper
+${JDKHOME}/jre/lib/${LIBARCH}/jvm.cfg
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libattach.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libawt.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libawt_headless.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libawt_xawt.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libdt_socket.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libfontmanager.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libhprof.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libinstrument.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libj2gss.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libj2pcsc.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libj2pkcs11.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libjaas_unix.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libjava.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libjava_crw_demo.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libjawt.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libjdwp.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libjpeg.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libjsdt.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libjsig.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libjsound.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/liblcms.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libmanagement.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libmlib_image.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libnet.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libnio.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libnpt.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libsaproc.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libsplashscreen.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libsunec.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libunpack.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libverify.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/libzip.so
+${JDKHOME}/jre/lib/${LIBARCH}/server/
+${JDKHOME}/jre/lib/${LIBARCH}/server/Xusage.txt
+@so ${JDKHOME}/jre/lib/${LIBARCH}/server/libjsig.so
+@so ${JDKHOME}/jre/lib/${LIBARCH}/server/libjvm.so
 ${JDKHOME}/jre/lib/applet/
 ${JDKHOME}/jre/lib/calendars.properties
 ${JDKHOME}/jre/lib/charsets.jar
@@ -508,61 +550,19 @@ ${JDKHOME}/jre/lib/security/policy/unlimited/
 ${JDKHOME}/jre/lib/security/policy/unlimited/US_export_policy.jar
 ${JDKHOME}/jre/lib/security/policy/unlimited/local_policy.jar
 ${JDKHOME}/jre/lib/sound.properties
-${JDKHOME}/jre/lib/${LIBARCH}/
-@bin ${JDKHOME}/jre/lib/${LIBARCH}/jexec
-${JDKHOME}/jre/lib/${LIBARCH}/jli/
-@so ${JDKHOME}/jre/lib/${LIBARCH}/jli/libjli.so
-@bin ${JDKHOME}/jre/lib/${LIBARCH}/jspawnhelper
-${JDKHOME}/jre/lib/${LIBARCH}/jvm.cfg
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libattach.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libawt.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libawt_headless.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libawt_xawt.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libdt_socket.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libfontmanager.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libhprof.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libinstrument.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libj2gss.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libj2pcsc.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libj2pkcs11.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libjaas_unix.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libjava.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libjava_crw_demo.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libjawt.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libjdwp.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libjpeg.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libjsdt.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libjsig.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libjsound.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/liblcms.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libmanagement.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libmlib_image.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libnet.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libnio.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libnpt.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libsaproc.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libsplashscreen.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libsunec.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libunpack.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libverify.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/libzip.so
-${JDKHOME}/jre/lib/${LIBARCH}/server/
-${JDKHOME}/jre/lib/${LIBARCH}/server/Xusage.txt
-@so ${JDKHOME}/jre/lib/${LIBARCH}/server/libjsig.so
-@so ${JDKHOME}/jre/lib/${LIBARCH}/server/libjvm.so
 ${JDKHOME}/jre/lib/tzdb.dat
 ${JDKHOME}/lib/
+${JDKHOME}/lib/${LIBARCH}/
+@bin ${JDKHOME}/lib/${LIBARCH}/jexec
+${JDKHOME}/lib/${LIBARCH}/jli/
+@so ${JDKHOME}/lib/${LIBARCH}/jli/libjli.so
+@so ${JDKHOME}/lib/${LIBARCH}/libjawt.so
 ${JDKHOME}/lib/ct.sym
 ${JDKHOME}/lib/dt.jar
 ${JDKHOME}/lib/ir.idl
 ${JDKHOME}/lib/jconsole.jar
 ${JDKHOME}/lib/orb.idl
 ${JDKHOME}/lib/sa-jdi.jar
-${JDKHOME}/lib/${LIBARCH}/
-@bin ${JDKHOME}/lib/${LIBARCH}/jexec
-${JDKHOME}/lib/${LIBARCH}/jli/
-@so ${JDKHOME}/lib/${LIBARCH}/jli/libjli.so
-@so ${JDKHOME}/lib/${LIBARCH}/libjawt.so
 ${JDKHOME}/lib/tools.jar
 @mandir ${JDKHOME}/man/
 ${JDKHOME}/man/man1/
