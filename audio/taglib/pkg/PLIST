@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/01/09 21:03:33 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/10/31 19:33:45 sthen Exp $
 bin/taglib-config
 include/taglib/
 include/taglib/aifffile.h
@@ -26,6 +26,7 @@ include/taglib/flacproperties.h
 include/taglib/generalencapsulatedobjectframe.h
 include/taglib/id3v1genres.h
 include/taglib/id3v1tag.h
+include/taglib/id3v2.h
 include/taglib/id3v2extendedheader.h
 include/taglib/id3v2footer.h
 include/taglib/id3v2frame.h

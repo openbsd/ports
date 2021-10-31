@@ -1,9 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2019/06/23 09:00:21 rapha Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2021/10/31 19:33:45 sthen Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -143,7 +143,7 @@ if(BUILD_BINDINGS)
+@@ -147,7 +147,7 @@ if(BUILD_BINDINGS)
    add_subdirectory(bindings)
  endif()
  

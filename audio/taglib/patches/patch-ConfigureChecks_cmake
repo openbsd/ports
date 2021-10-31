@@ -1,9 +1,9 @@
-$OpenBSD: patch-ConfigureChecks_cmake,v 1.1 2019/06/23 09:00:21 rapha Exp $
+$OpenBSD: patch-ConfigureChecks_cmake,v 1.2 2021/10/31 19:33:45 sthen Exp $
 
 Index: ConfigureChecks.cmake
 --- ConfigureChecks.cmake.orig
 +++ ConfigureChecks.cmake
-@@ -238,7 +238,7 @@ endif()
+@@ -189,7 +189,7 @@ endif()
  
  # Determine whether CppUnit is installed.
  
