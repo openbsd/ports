@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_hotspot_cpu_aarch64_macroAssembler_aarch64_hpp,v 1.1 2021/10/31 21:16:41 kurt Exp $
+
+Fix implicit conversion failures from:
+	intptr_t -> int64_t
+
+Index: src/hotspot/cpu/aarch64/macroAssembler_aarch64.hpp
+--- src/hotspot/cpu/aarch64/macroAssembler_aarch64.hpp.orig
++++ src/hotspot/cpu/aarch64/macroAssembler_aarch64.hpp
+@@ -499,7 +499,7 @@ class MacroAssembler: public Assembler { (public)
+     if (src.is_register())
+       mov(dst, src.as_register());
+     else
+-      mov(dst, src.as_constant());
++      mov(dst, (int64_t)src.as_constant());
+   }
+ 
+   void movptr(Register r, uintptr_t imm64);

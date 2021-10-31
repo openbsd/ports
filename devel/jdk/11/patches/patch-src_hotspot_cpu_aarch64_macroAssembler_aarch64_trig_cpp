@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_hotspot_cpu_aarch64_macroAssembler_aarch64_trig_cpp,v 1.1 2021/10/31 21:16:41 kurt Exp $
+
+Fix implicit conversion failures from:
+	long -> int64_t
+
+Index: src/hotspot/cpu/aarch64/macroAssembler_aarch64_trig.cpp
+--- src/hotspot/cpu/aarch64/macroAssembler_aarch64_trig.cpp.orig
++++ src/hotspot/cpu/aarch64/macroAssembler_aarch64_trig.cpp
+@@ -1424,7 +1424,7 @@ void MacroAssembler::generate_dsin_dcos(bool isCos, ad
+     block_comment("check |x| ~< pi/4, NaN, Inf and |x| < 2**-27 cases"); {
+       fmovd(X, v0);
+       mov(rscratch2, 0x3e400000);
+-      mov(rscratch1, 0x3fe921fb00000000);            // pi/4. shifted to reuse later
++      mov(rscratch1, (int64_t)0x3fe921fb00000000);            // pi/4. shifted to reuse later
+       ubfm(absX, X, 0, 62);                          // absX
+       movz(r10, POSITIVE_INFINITY_OR_NAN_PREFIX, 48);
+       cmp(rscratch2, absX, LSR, 32);

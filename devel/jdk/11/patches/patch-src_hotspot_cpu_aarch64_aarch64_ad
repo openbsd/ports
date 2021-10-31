@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_hotspot_cpu_aarch64_aarch64_ad,v 1.1 2021/10/31 21:16:41 kurt Exp $
+
+Fix implicit conversion failures from:
+	uintptr_t -> uint64_t
+
+Index: src/hotspot/cpu/aarch64/aarch64.ad
+--- src/hotspot/cpu/aarch64/aarch64.ad.orig
++++ src/hotspot/cpu/aarch64/aarch64.ad
+@@ -3005,7 +3005,7 @@ encode %{
+         if (con < (address)(uintptr_t)os::vm_page_size()) {
+           __ mov(dst_reg, con);
+         } else {
+-          uintptr_t offset;
++          uint64_t offset;
+           __ adrp(dst_reg, con, offset);
+           __ add(dst_reg, dst_reg, offset);
+         }

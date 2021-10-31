@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_hotspot_cpu_aarch64_templateInterpreterGenerator_aarch64_cpp,v 1.1 2021/10/31 21:16:41 kurt Exp $
+
+Fix implicit conversion failures from:
+	intptr_t -> int64_t
+
+Index: src/hotspot/cpu/aarch64/templateInterpreterGenerator_aarch64.cpp
+--- src/hotspot/cpu/aarch64/templateInterpreterGenerator_aarch64.cpp.orig
++++ src/hotspot/cpu/aarch64/templateInterpreterGenerator_aarch64.cpp
+@@ -418,7 +418,7 @@ address TemplateInterpreterGenerator::generate_excepti
+     if (message != NULL) {
+       __ lea(c_rarg2, Address((address)message));
+     } else {
+-      __ mov(c_rarg2, NULL_WORD);
++      __ mov(c_rarg2, (int64_t)NULL_WORD);
+     }
+     __ call_VM(r0,
+                CAST_FROM_FN_PTR(address, InterpreterRuntime::create_exception),
+@@ -1506,7 +1506,7 @@ address TemplateInterpreterGenerator::generate_native_
+ 
+       // monitor expect in c_rarg1 for slow unlock path
+       __ lea (c_rarg1, Address(rfp,   // address of first monitor
+-                               (intptr_t)(frame::interpreter_frame_initial_sp_offset *
++                               (int64_t)(frame::interpreter_frame_initial_sp_offset *
+                                           wordSize - sizeof(BasicObjectLock))));
+ 
+       __ ldr(t, Address(c_rarg1, BasicObjectLock::obj_offset_in_bytes()));

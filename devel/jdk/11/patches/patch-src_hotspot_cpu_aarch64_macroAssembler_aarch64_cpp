@@ -1,0 +1,85 @@
+$OpenBSD: patch-src_hotspot_cpu_aarch64_macroAssembler_aarch64_cpp,v 1.1 2021/10/31 21:16:41 kurt Exp $
+
+Fix implicit conversion failures from:
+	unsigned long -> uint64_t
+	uintptr_t -> uint64_t
+	intptr_t -> int64_t
+	long -> int64_t
+
+Index: src/hotspot/cpu/aarch64/macroAssembler_aarch64.cpp
+--- src/hotspot/cpu/aarch64/macroAssembler_aarch64.cpp.orig
++++ src/hotspot/cpu/aarch64/macroAssembler_aarch64.cpp
+@@ -297,7 +297,7 @@ void MacroAssembler::safepoint_poll(Label& slow_path) 
+     ldr(rscratch1, Address(rthread, Thread::polling_page_offset()));
+     tbnz(rscratch1, exact_log2(SafepointMechanism::poll_bit()), slow_path);
+   } else {
+-    unsigned long offset;
++    uint64_t offset;
+     adrp(rscratch1, ExternalAddress(SafepointSynchronize::address_of_state()), offset);
+     ldrw(rscratch1, Address(rscratch1, offset));
+     assert(SafepointSynchronize::_not_synchronized == 0, "rewrite this code");
+@@ -405,7 +405,7 @@ void MacroAssembler::far_call(Address entry, CodeBuffe
+   assert(CodeCache::find_blob(entry.target()) != NULL,
+          "destination of far call not found in code cache");
+   if (far_branches()) {
+-    uintptr_t offset;
++    uint64_t offset;
+     // We can use ADRP here because we know that the total size of
+     // the code cache cannot exceed 2Gb.
+     adrp(tmp, entry, offset);
+@@ -423,7 +423,7 @@ void MacroAssembler::far_jump(Address entry, CodeBuffe
+   assert(CodeCache::find_blob(entry.target()) != NULL,
+          "destination of far call not found in code cache");
+   if (far_branches()) {
+-    uintptr_t offset;
++    uint64_t offset;
+     // We can use ADRP here because we know that the total size of
+     // the code cache cannot exceed 2Gb.
+     adrp(tmp, entry, offset);
+@@ -1378,8 +1378,8 @@ Address MacroAssembler::argument_address(RegisterOrCon
+   assert(offset1 - offset == stackElementSize, "correct arithmetic");
+ #endif
+   if (arg_slot.is_constant()) {
+-    return Address(esp, arg_slot.as_constant() * stackElementSize
+-                   + offset);
++    return Address(esp, (int64_t)(arg_slot.as_constant() * stackElementSize
++                   + offset));
+   } else {
+     add(rscratch1, esp, arg_slot.as_register(),
+         ext::uxtx, exact_log2(stackElementSize));
+@@ -2417,7 +2417,7 @@ void MacroAssembler::atomic_##NAME(Register prev, Regi
+     if (incr.is_register()) {                                           \
+       AOP(sz, incr.as_register(), prev, addr);                          \
+     } else {                                                            \
+-      mov(rscratch2, incr.as_constant());                               \
++      mov(rscratch2, (int64_t)incr.as_constant());                      \
+       AOP(sz, rscratch2, prev, addr);                                   \
+     }                                                                   \
+     return;                                                             \
+@@ -4199,7 +4199,7 @@ void MacroAssembler::get_polling_page(Register dest, a
+   if (SafepointMechanism::uses_thread_local_poll()) {
+     ldr(dest, Address(rthread, Thread::polling_page_offset()));
+   } else {
+-    unsigned long off;
++    uint64_t off;
+     adrp(dest, Address(page, rtype), off);
+     assert(off == 0, "polling page must be page aligned");
+   }
+@@ -4677,7 +4677,7 @@ void MacroAssembler::string_indexof(Register str2, Reg
+ 
+         sub(result_tmp, cnt2, 8/str2_chr_size);
+         sub(cnt2_neg, zr, result_tmp, LSL, str2_chr_shift);
+-        mov(tmp3, str2_isL ? 0x0101010101010101 : 0x0001000100010001);
++        mov(tmp3, (int64_t)(str2_isL ? 0x0101010101010101 :  0x0001000100010001));
+         lea(str2, Address(str2, result_tmp, Address::lsl(str2_chr_shift)));
+ 
+         if (str2_isL) {
+@@ -4751,7 +4751,7 @@ void MacroAssembler::string_indexof_char(Register str1
+   lea(str1, Address(str1, cnt1, Address::uxtw(1)));
+   sub(cnt1_neg, zr, cnt1, LSL, 1);
+ 
+-  mov(tmp3, 0x0001000100010001);
++  mov(tmp3, (int64_t)0x0001000100010001);
+ 
+   BIND(CH1_LOOP);
+     ldr(ch1, Address(str1, cnt1_neg));
