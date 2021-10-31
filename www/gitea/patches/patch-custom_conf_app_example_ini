@@ -1,4 +1,4 @@
-$OpenBSD: patch-custom_conf_app_example_ini,v 1.5 2021/09/03 22:46:02 pvk Exp $
+$OpenBSD: patch-custom_conf_app_example_ini,v 1.6 2021/10/31 01:43:10 pvk Exp $
 
 Index: custom/conf/app.example.ini
 --- custom/conf/app.example.ini.orig
@@ -151,7 +151,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Either "Trace", "Debug", "Info", "Warn", "Error", "Critical", default is "Trace"
  LEVEL = Info
-@@ -603,7 +603,7 @@ PATH =
+@@ -605,7 +605,7 @@ PATH =
  ;EMAIL_DOMAIN_BLOCKLIST =
  ;;
  ;; Disallow registration, only allow admins to create accounts.
@@ -160,7 +160,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Allow registration only using gitea itself, it works only when DISABLE_REGISTRATION is false
  ;ALLOW_ONLY_INTERNAL_REGISTRATION = false
-@@ -612,7 +612,7 @@ PATH =
+@@ -614,7 +614,7 @@ PATH =
  ;ALLOW_ONLY_EXTERNAL_REGISTRATION = false
  ;;
  ;; User must sign in to view anything.
@@ -169,7 +169,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Mail notification
  ;ENABLE_NOTIFY_MAIL = false
-@@ -647,17 +647,17 @@ PATH =
+@@ -649,17 +649,17 @@ PATH =
  ;;
  ;; Default value for KeepEmailPrivate
  ;; Each new user will get the value of this setting copied into their profile
@@ -190,7 +190,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Set which visibility modes a user can have
  ;ALLOWED_USER_VISIBILITY_MODES = public,limited,private
-@@ -666,7 +666,7 @@ PATH =
+@@ -668,7 +668,7 @@ PATH =
  ;; Limited is for organizations visible only to signed users
  ;; Private is for organizations visible only to members of the organization
  ;; Public is for organizations visible to everyone
@@ -199,7 +199,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Default value for DefaultOrgMemberVisible
  ;; True will make the membership of the users visible when added to the organisation
-@@ -731,13 +731,13 @@ PATH =
+@@ -733,13 +733,13 @@ PATH =
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -216,7 +216,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; DETECTED_CHARSETS_ORDER tie-break order for detected charsets.
  ;; If the charsets have equal confidence, tie-breaking will be done by order in this list
-@@ -752,7 +752,7 @@ PATH =
+@@ -754,7 +754,7 @@ PATH =
  ;FORCE_PRIVATE = false
  ;;
  ;; Default privacy setting when creating a new repository, allowed values: last, private, public. Default is last which means the last setting used.
@@ -225,7 +225,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Default private when using push-to-create
  ;DEFAULT_PUSH_CREATE_PRIVATE = true
-@@ -768,7 +768,7 @@ PATH =
+@@ -770,7 +770,7 @@ PATH =
  ;;
  ;; Preferred Licenses to place at the top of the List
  ;; The name here must match the filename in conf/license or custom/conf/license
@@ -234,7 +234,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Disable the ability to interact with repositories using the HTTP protocol
  ;;DISABLE_HTTP_GIT = false
-@@ -827,16 +827,16 @@ PATH =
+@@ -829,16 +829,16 @@ PATH =
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -254,7 +254,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -844,7 +844,7 @@ PATH =
+@@ -846,7 +846,7 @@ PATH =
  ;ENABLED = true
  ;;
  ;; Path for uploads. Defaults to `data/tmp/uploads` (tmp gets deleted on gitea restart)
@@ -263,7 +263,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Comma-separated list of allowed file extensions (`.zip`), mime types (`text/plain`) or wildcard type (`image/*`, `audio/*`, `video/*`). Empty value or `*/*` allows all types.
  ;ALLOWED_TYPES =
-@@ -993,7 +993,7 @@ PATH =
+@@ -995,7 +995,7 @@ PATH =
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -272,7 +272,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -1024,7 +1024,7 @@ PATH =
+@@ -1026,7 +1026,7 @@ PATH =
  ;MAX_DISPLAY_FILE_SIZE = 8388608
  ;;
  ;; Whether the email of the user should be shown in the Explore Users page
@@ -281,7 +281,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Set the default theme for the Gitea install
  ;DEFAULT_THEME = gitea
-@@ -1159,7 +1159,7 @@ PATH =
+@@ -1161,7 +1161,7 @@ PATH =
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -290,7 +290,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -1170,7 +1170,7 @@ PATH =
+@@ -1172,7 +1172,7 @@ PATH =
  ;ISSUE_INDEXER_TYPE = bleve
  ;;
  ;; Issue indexer storage path, available when ISSUE_INDEXER_TYPE is bleve
@@ -299,7 +299,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Issue indexer connection string, available when ISSUE_INDEXER_TYPE is elasticsearch
  ;ISSUE_INDEXER_CONN_STR = http://elastic:changeme@localhost:9200
-@@ -1188,7 +1188,7 @@ PATH =
+@@ -1190,7 +1190,7 @@ PATH =
  ;; When ISSUE_INDEXER_QUEUE_TYPE is levelqueue, this will be the path where the queue will be saved.
  ;; This can be overridden by `ISSUE_INDEXER_QUEUE_CONN_STR`.
  ;; default is queues/common
@@ -308,7 +308,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; When `ISSUE_INDEXER_QUEUE_TYPE` is `redis`, this will store the redis connection string.
  ;; When `ISSUE_INDEXER_QUEUE_TYPE` is `levelqueue`, this is a directory or additional options of
-@@ -1209,7 +1209,7 @@ PATH =
+@@ -1211,7 +1211,7 @@ PATH =
  ;REPO_INDEXER_TYPE = bleve
  ;;
  ;; Index file used for code search. available when `REPO_INDEXER_TYPE` is bleve
@@ -317,7 +317,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Code indexer connection string, available when `REPO_INDEXER_TYPE` is elasticsearch. i.e. http://elastic:changeme@localhost:9200
  ;REPO_INDEXER_CONN_STR =
-@@ -1289,19 +1289,19 @@ PATH =
+@@ -1291,19 +1291,19 @@ PATH =
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -340,7 +340,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -1322,7 +1322,7 @@ PATH =
+@@ -1324,7 +1324,7 @@ PATH =
  ;;  - <username>.livejournal.com
  ;;
  ;; Whether to allow signin in via OpenID
@@ -349,7 +349,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Whether to allow registering via OpenID
  ;; Do not include to rely on rhw DISABLE_REGISTRATION setting
-@@ -1400,7 +1400,7 @@ PATH =
+@@ -1402,7 +1402,7 @@ PATH =
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -358,7 +358,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -1417,7 +1417,7 @@ PATH =
+@@ -1419,7 +1419,7 @@ PATH =
  ;; QQ: smtp.qq.com:465
  ;; As per RFC 8314 using Implicit TLS/SMTPS on port 465 (if supported) is recommended,
  ;; otherwise STARTTLS on port 587 should be used.
@@ -367,7 +367,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Disable HELO operation when hostnames are different.
  ;DISABLE_HELO =
-@@ -1430,15 +1430,15 @@ PATH =
+@@ -1432,15 +1432,15 @@ PATH =
  ;;
  ;; Use client certificate
  ;USE_CERTIFICATE = false
@@ -386,7 +386,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Mailer user name and password
  ;; Please Note: Authentication is only supported when the SMTP server communication is encrypted with TLS (this can be via STARTTLS) or `HOST=localhost`.
-@@ -1448,13 +1448,13 @@ PATH =
+@@ -1450,13 +1450,13 @@ PATH =
  ;PASSWD =
  ;;
  ;; Send mails as plain text
@@ -402,7 +402,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Specify any extra sendmail arguments
  ;SENDMAIL_ARGS =
-@@ -1506,19 +1506,19 @@ PATH =
+@@ -1508,19 +1508,19 @@ PATH =
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -425,7 +425,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Session cookie name
  ;COOKIE_NAME = i_like_gitea
-@@ -1537,12 +1537,12 @@ PATH =
+@@ -1539,12 +1539,12 @@ PATH =
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -441,7 +441,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; How Gitea deals with missing repository avatars
  ;; none = no avatar will be displayed; random = random avatar will be displayed; image = default image will be used
-@@ -1563,7 +1563,7 @@ PATH =
+@@ -1565,7 +1565,7 @@ PATH =
  ;GRAVATAR_SOURCE = gravatar
  ;;
  ;; This value will always be true in offline mode.
@@ -450,7 +450,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Federated avatar lookup uses DNS to discover avatar associated
  ;; with emails, see https://www.libravatar.org
-@@ -1572,7 +1572,7 @@ PATH =
+@@ -1574,7 +1574,7 @@ PATH =
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -459,7 +459,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -1597,7 +1597,7 @@ PATH =
+@@ -1599,7 +1599,7 @@ PATH =
  ;SERVE_DIRECT = false
  ;;
  ;; Path for attachments. Defaults to `data/attachments` only available when STORAGE_TYPE is `local`
@@ -468,7 +468,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Minio endpoint to connect only available when STORAGE_TYPE is `minio`
  ;MINIO_ENDPOINT = localhost:9000
-@@ -1622,14 +1622,14 @@ PATH =
+@@ -1624,14 +1624,14 @@ PATH =
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -485,7 +485,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Location the UI time display i.e. Asia/Shanghai
  ;; Empty means server's location setting
-@@ -1973,14 +1973,14 @@ PATH =
+@@ -1975,14 +1975,14 @@ PATH =
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
