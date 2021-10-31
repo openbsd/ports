@@ -206,7 +206,6 @@ SHA256 (go_modules/github.com/asaskevich/govalidator/@v/v0.0.0-20200907205600-7a
 SHA256 (go_modules/github.com/asaskevich/govalidator/@v/v0.0.0-20200907205600-7a23bdc65eef.zip) = m4RuMRAVu7eFTPAB1XF9b9kaWArGMVl3rnOVJW4Y1yk=
 SHA256 (go_modules/github.com/aws/aws-sdk-go/@v/v1.15.78.mod) = idX2s27Ugqj+2jHpGZQjTaQSazUqt+B6RHqZVu8rcuk=
 SHA256 (go_modules/github.com/aws/aws-sdk-go/@v/v1.25.37.mod) = zNGa6ImG2/5S4q6miRPYtiKzi3HVcNp8Tb8sdvDNuQQ=
-SHA256 (go_modules/github.com/aws/aws-sdk-go/@v/v1.26.3.mod) = zNGa6ImG2/5S4q6miRPYtiKzi3HVcNp8Tb8sdvDNuQQ=
 SHA256 (go_modules/github.com/aws/aws-sdk-go/@v/v1.30.27.mod) = 149yxwdFvL9c7y6fVDdD0AZYn1ERnIxh2om4kWHscH8=
 SHA256 (go_modules/github.com/aws/aws-sdk-go/@v/v1.30.8.mod) = 149yxwdFvL9c7y6fVDdD0AZYn1ERnIxh2om4kWHscH8=
 SHA256 (go_modules/github.com/aws/aws-sdk-go/@v/v1.31.9.mod) = 149yxwdFvL9c7y6fVDdD0AZYn1ERnIxh2om4kWHscH8=
@@ -804,8 +803,8 @@ SHA256 (go_modules/github.com/hashicorp/memberlist/@v/v0.2.2.mod) = 7Ct9YFaAZVpN
 SHA256 (go_modules/github.com/hashicorp/memberlist/@v/v0.2.2.zip) = nUTyxQL+V0VVgZ5bQ0GosfQbD+l/haqTHsRaQbMpr14=
 SHA256 (go_modules/github.com/hashicorp/packer-plugin-alicloud/@v/v1.0.0.mod) = MN4PwrlA+5P92uLi/HHqoMQj7SwtdtI8dMGGLz3IWzQ=
 SHA256 (go_modules/github.com/hashicorp/packer-plugin-alicloud/@v/v1.0.0.zip) = 2yIQ8doTWbQaz9y/3/Y8kJliF31tD0LxZ8sGMEmjENE=
-SHA256 (go_modules/github.com/hashicorp/packer-plugin-amazon/@v/v1.0.3.mod) = dSzFhy/yHWtBwZKCa+XRT5JQQiUjt2UpTftMSsEDa/0=
-SHA256 (go_modules/github.com/hashicorp/packer-plugin-amazon/@v/v1.0.3.zip) = gKKo7O4paKEA62PkwyYm5gLyqVhP/iRKEeEuiU8SXIg=
+SHA256 (go_modules/github.com/hashicorp/packer-plugin-amazon/@v/v1.0.4.mod) = dSzFhy/yHWtBwZKCa+XRT5JQQiUjt2UpTftMSsEDa/0=
+SHA256 (go_modules/github.com/hashicorp/packer-plugin-amazon/@v/v1.0.4.zip) = 214Yv2TuabpWGXOT03Q22JWXWi050HeeNAtNbEwo5iY=
 SHA256 (go_modules/github.com/hashicorp/packer-plugin-ansible/@v/v1.0.0.mod) = k+DPAW8wbD8YHzZ1lUaeH2VZYyTLXW42ZiPfSKfDwX8=
 SHA256 (go_modules/github.com/hashicorp/packer-plugin-ansible/@v/v1.0.0.zip) = Xbk1NiL4etKCeKBZ1vGSssnHY0+fLkf3mMHjiLSwwEE=
 SHA256 (go_modules/github.com/hashicorp/packer-plugin-azure/@v/v1.0.4.mod) = 3NVAVvtG9edhgS76WkOlFyq2aFF5FQkNiXZYkNp7ojA=
@@ -1144,8 +1143,6 @@ SHA256 (go_modules/github.com/oracle/oci-go-sdk/v36/@v/v36.2.0.mod) = xycNwRfv5W
 SHA256 (go_modules/github.com/oracle/oci-go-sdk/v36/@v/v36.2.0.zip) = Z9e7GcPDEKFoUiNzlTyRIlt+L9LeJc9gBP76TpUIbZQ=
 SHA256 (go_modules/github.com/outscale/osc-sdk-go/@v/v1.11.2.mod) = smYDahOKWY44WuMjrN+tm5fz9E0wGe6RqD3xmKcfY94=
 SHA256 (go_modules/github.com/outscale/osc-sdk-go/@v/v1.11.2.zip) = mAgYandZAiBe/tyuRoMp3O9tql079c1mA32G+ZAasB0=
-SHA256 (go_modules/github.com/outscale/osc-sdk-go/osc/@v/v0.0.0-20210316122053-4dfd64ce707a.mod) = 6gIvPeg9KEGqjK70GBZI73KPLAGuZ8Jd6K1xZMhvPn4=
-SHA256 (go_modules/github.com/outscale/osc-sdk-go/osc/@v/v0.0.0-20210316122053-4dfd64ce707a.zip) = RykDAis2hbSW+wjtxLufJjV3b/uDOLE9dxQrq4eOfxg=
 SHA256 (go_modules/github.com/packer-community/winrmcp/@v/v0.0.0-20180921204643-0fd363d6159a.mod) = z3ai3ue71eq5xd9DYHvTwV77idmMtc315xzKmA7yeng=
 SHA256 (go_modules/github.com/packer-community/winrmcp/@v/v0.0.0-20180921211025-c76d91c1e7db.mod) = z3ai3ue71eq5xd9DYHvTwV77idmMtc315xzKmA7yeng=
 SHA256 (go_modules/github.com/packer-community/winrmcp/@v/v0.0.0-20180921211025-c76d91c1e7db.zip) = YPuF8cDbxKwMM4qqkcTtInEVoen+bJmaV2uEMB+N73s=
@@ -1966,7 +1963,7 @@ SHA256 (go_modules/rsc.io/quote/v3/@v/v3.1.0.mod) = shHZ8WtVQpcPA6LmJJ30UDgwSjeh
 SHA256 (go_modules/rsc.io/quote/v3/@v/v3.1.0.zip) = tDTLv8MsF7UijQsO3erqib707JvZC1yPxVtk+M4T7rk=
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = oq5uhUCkC4XldwPMYYuZxbEHU4bZWOiZmg4tTALzpwU=
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 2iArDagDqyZhq5imgLuk9kEjoyblQMJVgrbNu53BFKo=
-SHA256 (packer-v1.7.7.zip) = 8OcJmIzUGnmRCtokG34cMEppXLzPQHsOLgZ3kTwXmHk=
+SHA256 (packer-v1.7.8.zip) = YS/eGf8dCSPyZvDJQNBn8KlvINW2Svt101KbLTDCZWI=
 SIZE (go_modules/bazil.org/fuse/@v/v0.0.0-20160811212531-371fbbdaa898.mod) = 22
 SIZE (go_modules/bazil.org/fuse/@v/v0.0.0-20160811212531-371fbbdaa898.zip) = 220662
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
@@ -2175,7 +2172,6 @@ SIZE (go_modules/github.com/asaskevich/govalidator/@v/v0.0.0-20200907205600-7a23
 SIZE (go_modules/github.com/asaskevich/govalidator/@v/v0.0.0-20200907205600-7a23bdc65eef.zip) = 73879
 SIZE (go_modules/github.com/aws/aws-sdk-go/@v/v1.15.78.mod) = 114
 SIZE (go_modules/github.com/aws/aws-sdk-go/@v/v1.25.37.mod) = 109
-SIZE (go_modules/github.com/aws/aws-sdk-go/@v/v1.26.3.mod) = 109
 SIZE (go_modules/github.com/aws/aws-sdk-go/@v/v1.30.27.mod) = 217
 SIZE (go_modules/github.com/aws/aws-sdk-go/@v/v1.30.8.mod) = 217
 SIZE (go_modules/github.com/aws/aws-sdk-go/@v/v1.31.9.mod) = 217
@@ -2773,8 +2769,8 @@ SIZE (go_modules/github.com/hashicorp/memberlist/@v/v0.2.2.mod) = 666
 SIZE (go_modules/github.com/hashicorp/memberlist/@v/v0.2.2.zip) = 114585
 SIZE (go_modules/github.com/hashicorp/packer-plugin-alicloud/@v/v1.0.0.mod) = 692
 SIZE (go_modules/github.com/hashicorp/packer-plugin-alicloud/@v/v1.0.0.zip) = 141695
-SIZE (go_modules/github.com/hashicorp/packer-plugin-amazon/@v/v1.0.3.mod) = 4607
-SIZE (go_modules/github.com/hashicorp/packer-plugin-amazon/@v/v1.0.3.zip) = 395672
+SIZE (go_modules/github.com/hashicorp/packer-plugin-amazon/@v/v1.0.4.mod) = 4607
+SIZE (go_modules/github.com/hashicorp/packer-plugin-amazon/@v/v1.0.4.zip) = 397574
 SIZE (go_modules/github.com/hashicorp/packer-plugin-ansible/@v/v1.0.0.mod) = 394
 SIZE (go_modules/github.com/hashicorp/packer-plugin-ansible/@v/v1.0.0.zip) = 182070
 SIZE (go_modules/github.com/hashicorp/packer-plugin-azure/@v/v1.0.4.mod) = 5639
@@ -3113,8 +3109,6 @@ SIZE (go_modules/github.com/oracle/oci-go-sdk/v36/@v/v36.2.0.mod) = 93
 SIZE (go_modules/github.com/oracle/oci-go-sdk/v36/@v/v36.2.0.zip) = 9172753
 SIZE (go_modules/github.com/outscale/osc-sdk-go/@v/v1.11.2.mod) = 404
 SIZE (go_modules/github.com/outscale/osc-sdk-go/@v/v1.11.2.zip) = 945534
-SIZE (go_modules/github.com/outscale/osc-sdk-go/osc/@v/v0.0.0-20210316122053-4dfd64ce707a.mod) = 182
-SIZE (go_modules/github.com/outscale/osc-sdk-go/osc/@v/v0.0.0-20210316122053-4dfd64ce707a.zip) = 940722
 SIZE (go_modules/github.com/packer-community/winrmcp/@v/v0.0.0-20180921204643-0fd363d6159a.mod) = 43
 SIZE (go_modules/github.com/packer-community/winrmcp/@v/v0.0.0-20180921211025-c76d91c1e7db.mod) = 43
 SIZE (go_modules/github.com/packer-community/winrmcp/@v/v0.0.0-20180921211025-c76d91c1e7db.zip) = 10517
@@ -3935,4 +3929,4 @@ SIZE (go_modules/rsc.io/quote/v3/@v/v3.1.0.mod) = 55
 SIZE (go_modules/rsc.io/quote/v3/@v/v3.1.0.zip) = 2223
 SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = 88
 SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 14308
-SIZE (packer-v1.7.7.zip) = 2810067
+SIZE (packer-v1.7.8.zip) = 2885167

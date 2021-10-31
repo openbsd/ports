@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2021/10/23 07:45:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2021/10/31 14:23:33 ajacoutot Exp $
 
 # [...]/network/mgmt/2018-01-01/network/expressroutecircuitpeerings.go:53:159:
 # constant 4294967295 overflows int
@@ -7,7 +7,7 @@ ONLY_FOR_ARCHS=		${LP64_ARCHS}
 COMMENT=		tool for building machine images
 
 MODGO_MODNAME=		github.com/hashicorp/packer
-MODGO_VERSION=		v1.7.7
+MODGO_VERSION=		v1.7.8
 DISTNAME=		packer-${MODGO_VERSION}
 
 CATEGORIES=		sysutils
@@ -270,7 +270,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/mdns				 v1.0.1 \
 	github.com/hashicorp/memberlist				 v0.2.2 \
 	github.com/hashicorp/packer-plugin-alicloud		 v1.0.0 \
-	github.com/hashicorp/packer-plugin-amazon		 v1.0.3 \
+	github.com/hashicorp/packer-plugin-amazon		 v1.0.4 \
 	github.com/hashicorp/packer-plugin-ansible		 v1.0.0 \
 	github.com/hashicorp/packer-plugin-azure		 v1.0.4 \
 	github.com/hashicorp/packer-plugin-chef			 v1.0.1 \
@@ -399,7 +399,6 @@ MODGO_MODULES =	\
 	github.com/opentracing/opentracing-go			 v1.1.0 \
 	github.com/oracle/oci-go-sdk/v36			 v36.2.0 \
 	github.com/outscale/osc-sdk-go				 v1.11.2 \
-	github.com/outscale/osc-sdk-go/osc			 v0.0.0-20210316122053-4dfd64ce707a \
 	github.com/packer-community/winrmcp			 v0.0.0-20180921211025-c76d91c1e7db \
 	github.com/pascaldekloe/goe				 v0.1.0 \
 	github.com/pborman/uuid					 v1.2.0 \
@@ -604,7 +603,6 @@ MODGO_MODFILES =	\
 	github.com/asaskevich/govalidator			 v0.0.0-20200428143746-21a406dcc535 \
 	github.com/aws/aws-sdk-go				 v1.15.78 \
 	github.com/aws/aws-sdk-go				 v1.25.37 \
-	github.com/aws/aws-sdk-go				 v1.26.3 \
 	github.com/aws/aws-sdk-go				 v1.30.27 \
 	github.com/aws/aws-sdk-go				 v1.30.8 \
 	github.com/aws/aws-sdk-go				 v1.31.9 \
