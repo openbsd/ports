@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.51 2021/09/06 20:56:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2021/10/31 17:26:24 tb Exp $
 
 COMMENT=	cryptographic recipes and primitives for Python
 
 MODPY_EGG_VERSION=	3.4.8
-REVISION=	0
+REVISION=	1
 DISTNAME=	cryptography-${MODPY_EGG_VERSION}
 DISTFILES=	cryptography-${MODPY_EGG_VERSION}${EXTRACT_SUFX}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
 .include "crates.inc"
+
+PATCHORIG=	.patch.orig
 
 CATEGORIES=	security devel
 

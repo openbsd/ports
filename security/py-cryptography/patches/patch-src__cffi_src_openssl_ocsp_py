@@ -1,0 +1,14 @@
+$OpenBSD: patch-src__cffi_src_openssl_ocsp_py,v 1.1 2021/10/31 17:26:24 tb Exp $
+
+Index: src/_cffi_src/openssl/ocsp.py
+--- src/_cffi_src/openssl/ocsp.py.orig
++++ src/_cffi_src/openssl/ocsp.py
+@@ -104,7 +104,7 @@ struct ocsp_basic_response_st {
+ };
+ #endif
+ 
+-#if CRYPTOGRAPHY_IS_LIBRESSL
++#if CRYPTOGRAPHY_IS_LIBRESSL && LIBRESSL_VERSION_NUMBER < 0x3050000fL
+ /* These functions are all taken from ocsp_cl.c in OpenSSL 1.1.0 */
+ const OCSP_CERTID *OCSP_SINGLERESP_get0_id(const OCSP_SINGLERESP *single)
+ {

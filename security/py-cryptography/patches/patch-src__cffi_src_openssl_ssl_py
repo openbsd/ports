@@ -1,8 +1,25 @@
-$OpenBSD: patch-src__cffi_src_openssl_ssl_py,v 1.8 2021/09/01 23:05:04 sthen Exp $
+$OpenBSD: patch-src__cffi_src_openssl_ssl_py,v 1.9 2021/10/31 17:26:24 tb Exp $
 
 Index: src/_cffi_src/openssl/ssl.py
 --- src/_cffi_src/openssl/ssl.py.orig
 +++ src/_cffi_src/openssl/ssl.py
+@@ -515,14 +515,14 @@ CUSTOMIZATIONS = """
+ // users have upgraded. PersistentlyDeprecated2020
+ static const long Cryptography_HAS_TLSEXT_HOSTNAME = 1;
+ 
+-#if CRYPTOGRAPHY_IS_LIBRESSL
++#if 0
+ static const long Cryptography_HAS_VERIFIED_CHAIN = 0;
+ Cryptography_STACK_OF_X509 *(*SSL_get0_verified_chain)(const SSL *) = NULL;
+ #else
+ static const long Cryptography_HAS_VERIFIED_CHAIN = 1;
+ #endif
+ 
+-#if CRYPTOGRAPHY_OPENSSL_LESS_THAN_111
++#if 0
+ static const long Cryptography_HAS_KEYLOG = 0;
+ void (*SSL_CTX_set_keylog_callback)(SSL_CTX *,
+                                     void (*) (const SSL *, const char *)
 @@ -586,8 +586,6 @@ static const long TLS_ST_OK = 0;
  #endif
  
