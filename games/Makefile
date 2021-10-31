@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.443 2021/10/30 07:11:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.444 2021/10/31 18:49:29 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -47,7 +47,6 @@
      SUBDIR += cgoban
      SUBDIR += chessx
      SUBDIR += chiaki
-     SUBDIR += childsplay
      SUBDIR += chocolate-doom
      SUBDIR += choria
      SUBDIR += chroma
