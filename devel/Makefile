@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2148 2021/10/30 07:19:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2149 2021/10/31 17:28:29 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1722,6 +1722,7 @@
      SUBDIR += ruby-zentest
      SUBDIR += samurai
      SUBDIR += scons
+     SUBDIR += scons-py2
      SUBDIR += sdcc
      SUBDIR += sdl
      SUBDIR += sdl-gfx
