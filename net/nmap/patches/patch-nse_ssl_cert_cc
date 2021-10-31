@@ -1,0 +1,14 @@
+$OpenBSD: patch-nse_ssl_cert_cc,v 1.1 2021/10/31 17:13:36 tb Exp $
+
+Index: nse_ssl_cert.cc
+--- nse_ssl_cert.cc.orig
++++ nse_ssl_cert.cc
+@@ -81,7 +81,7 @@
+ #include <openssl/evp.h>
+ #include <openssl/err.h>
+ 
+-#if (OPENSSL_VERSION_NUMBER >= 0x10100000L) && !defined LIBRESSL_VERSION_NUMBER
++#if (OPENSSL_VERSION_NUMBER >= 0x10100000L)
+ /* Technically some of these things were added in 0x10100006
+  * but that was pre-release. */
+ #define HAVE_OPAQUE_STRUCTS 1
