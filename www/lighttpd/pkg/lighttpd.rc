@@ -1,15 +1,12 @@
 #!/bin/ksh
 #
-# $OpenBSD: lighttpd.rc,v 1.4 2018/01/11 19:27:11 rpe Exp $
+# $OpenBSD: lighttpd.rc,v 1.5 2021/10/31 17:38:51 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/lighttpd"
 daemon_flags="-f ${SYSCONFDIR}/lighttpd.conf"
 
 . /etc/rc.d/rc.subr
 
-rc_reload() {
-	pkill -INT -xf "${pexp}"
-	${rcexec} "${daemon} ${daemon_flags}" >/dev/null
-}
+rc_reload=NO
 
 rc_cmd $1
