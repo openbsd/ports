@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.35 2019/07/12 20:46:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2021/10/31 22:13:33 bentley Exp $
 
 COMMENT=		Gtk+ Widget for Displaying OpenStreetMap tiles
 
 GH_ACCOUNT = 		nzjrs
 GH_PROJECT = 		osm-gps-map
 GH_TAGNAME = 		1.1.0
-REVISION =		1
+REVISION =		2
 
 CATEGORIES=		geo x11
 
 SHARED_LIBS +=  osmgpsmap-1.0             1.0 # 0.0
 
-HOMEPAGE=		http://nzjrs.github.com/osm-gps-map/
+HOMEPAGE=		https://nzjrs.github.io/osm-gps-map/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
