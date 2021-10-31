@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_xml,v 1.5 2021/10/16 08:07:39 rsadowski Exp $
+$OpenBSD: patch-build_xml,v 1.6 2021/10/31 13:00:04 phessler Exp $
 
 define OpenBSD property
 
@@ -37,7 +37,7 @@ Index: build.xml
          <release-delta-extract-platform osname="linux"   osarch="arm"       bits="64" wrapperbinhead="wrapper" wrapperbintail=""     wrapperlibhead="libwrapper" wrapperlibtail=".so"     archivetype="tar.gz"/>
 +        <release-delta-extract-platform osname="openbsd"   osarch="x86"     bits="32" wrapperbinhead="wrapper" wrapperbintail=""     wrapperlibhead="libwrapper" wrapperlibtail=".so"     archivetype="tar.gz"/>
 +        <release-delta-extract-platform osname="openbsd"   osarch="x86"     bits="64" wrapperbinhead="wrapper" wrapperbintail=""     wrapperlibhead="libwrapper" wrapperlibtail=".so"     archivetype="tar.gz"/>
-+        <release-delta-extract-platform osname="openbsd"   osarch="armhf"   bits="64" wrapperbinhead="wrapper" wrapperbintail=""     wrapperlibhead="libwrapper" wrapperlibtail=".so"     archivetype="tar.gz"/>
++        <release-delta-extract-platform osname="openbsd"   osarch="arm"     bits="64" wrapperbinhead="wrapper" wrapperbintail=""     wrapperlibhead="libwrapper" wrapperlibtail=".so"     archivetype="tar.gz"/>
 +        <release-delta-extract-platform osname="openbsd"   osarch="sparc"   bits="64" wrapperbinhead="wrapper" wrapperbintail=""     wrapperlibhead="libwrapper" wrapperlibtail=".so"     archivetype="tar.gz"/>
      </target>
      <target name="release-delta" depends="pre-release:check, release-delta:init, release-delta:extract-platforms">

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2021/10/16 08:07:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.24 2021/10/31 13:00:03 phessler Exp $
 
 COMMENT=	Tanuki Java Service Wrapper
 
@@ -31,7 +31,7 @@ MAKE_ARCH=x86-32
 .elif ${MACHINE_ARCH} == "amd64"
 MAKE_ARCH=x86-64
 .elif ${MACHINE_ARCH} == "aarch64"
-MAKE_ARCH=armhf-64
+MAKE_ARCH=arm-64
 .elif ${MACHINE_ARCH} == "sparc64"
 MAKE_ARCH=sparc-64
 .endif
