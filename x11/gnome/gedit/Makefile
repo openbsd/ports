@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.175 2021/05/13 09:30:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.176 2021/10/31 07:01:47 ajacoutot Exp $
 
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
 GNOME_VERSION=		40.1
+REVISION=		0
 
 CATEGORIES=		editors
 
@@ -33,13 +34,10 @@ LIB_DEPENDS=		devel/libpeas \
 			x11/gnome/tepl>=6.0.0
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
-			devel/iso-codes \
-			x11/gnome/gvfs # -Denable-gvfs-metadata=true
+			devel/iso-codes
 
 # MODPY_LIBDIR/gi/overrides/
 RUN_DEPENDS +=		devel/py-gobject3${MODPY_FLAVOR}
-
-CONFIGURE_ARGS =	-Denable-gvfs-metadata=yes
 
 MODGNOME_TOOLS += 	desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache vala yelp
