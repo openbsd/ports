@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2020/07/30 08:13:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2021/10/31 15:23:41 ajacoutot Exp $
 
 COMMENT=	image processing and analysis library
 
-DISTNAME=	leptonica-1.80.0
+DISTNAME=	leptonica-1.82.0
 
-SHARED_LIBS +=  lept                 4.0      # 5.3
+SHARED_LIBS +=  lept                 5.0      # 5.3
 
 CATEGORIES=	graphics
 
@@ -21,6 +21,7 @@ LIB_DEPENDS=	graphics/libwebp \
 		graphics/giflib \
 		graphics/openjp2 \
 		graphics/tiff
+
 TEST_DEPENDS=	shells/bash \
 		math/gnuplot
 
@@ -28,9 +29,5 @@ CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.69
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lm -lz"
-
-# conflict with x11/kde/libs3,-main:/usr/local/bin/imagetops
-post-install:
-	mv ${PREFIX}/bin/imagetops ${PREFIX}/bin/imagetops.leptonica
 
 .include <bsd.port.mk>

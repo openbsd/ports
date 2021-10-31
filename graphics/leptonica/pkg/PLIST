@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/07/30 08:13:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/10/31 15:23:41 ajacoutot Exp $
 @bin bin/convertfilestopdf
 @bin bin/convertfilestops
 @bin bin/convertformat
@@ -7,7 +7,7 @@
 @bin bin/converttopdf
 @bin bin/converttops
 @bin bin/fileinfo
-@bin bin/imagetops.leptonica
+@bin bin/imagetops
 @bin bin/xtractprotos
 include/leptonica/
 include/leptonica/allheaders.h
@@ -25,6 +25,7 @@ include/leptonica/dewarp.h
 include/leptonica/endianness.h
 include/leptonica/environ.h
 include/leptonica/gplot.h
+include/leptonica/hashmap.h
 include/leptonica/heap.h
 include/leptonica/imageio.h
 include/leptonica/jbclass.h
@@ -42,12 +43,9 @@ include/leptonica/stack.h
 include/leptonica/stringcode.h
 include/leptonica/sudoku.h
 include/leptonica/watershed.h
-lib/cmake/
 lib/cmake/LeptonicaConfig-version.cmake
 lib/cmake/LeptonicaConfig.cmake
 @static-lib lib/liblept.a
 lib/liblept.la
 @lib lib/liblept.so.${LIBlept_VERSION}
-@static-lib lib/libleptonica.a
-lib/libleptonica.la
 lib/pkgconfig/lept.pc
