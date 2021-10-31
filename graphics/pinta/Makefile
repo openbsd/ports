@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:47:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/10/31 20:30:03 ajacoutot Exp $
 
-V =		1.6
+V =		1.7
 COMMENT =	open source drawing/editing program modeled after Paint.NET
 DISTNAME =	pinta-${V}
 CATEGORIES =	graphics x11
-REVISION =	5
 
 HOMEPAGE =	http://pinta-project.com/
 
@@ -31,13 +30,6 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 
 USE_GMAKE =	Yes
 
-pre-configure:
-	@find ${WRKSRC} -name "*.sln" -exec \
-		sed -i 's/Format Version 10.00/Format Version 11.00/g' {} \;
-	@find ${WRKSRC} \( -name "*.csproj" -o -name "*.proj" \) -exec \
-		sed -i 's#ToolsVersion="3.5"#ToolsVersion="4.0"#g; \
-			s#<TargetFrameworkVersion>.*</TargetFrameworkVersion>##g; \
-			s#<PropertyGroup>#<PropertyGroup><TargetFrameworkVersion>v4.5</TargetFrameworkVersion>#g; \
-			s#Mono.Posix, Version.*"#Mono.Posix"#g' {} \;
+DLLMAP_FILES =	Pinta.Docking/Pinta.Docking.dll.config
 
 .include <bsd.port.mk>

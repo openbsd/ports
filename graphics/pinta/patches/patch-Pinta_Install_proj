@@ -1,10 +1,11 @@
-$OpenBSD: patch-Pinta_Install_proj,v 1.1.1.1 2015/03/16 15:20:02 bcallah Exp $
+$OpenBSD: patch-Pinta_Install_proj,v 1.2 2021/10/31 20:30:03 ajacoutot Exp $
 
 Do not gzip man page.
 
---- Pinta.Install.proj.orig	Sun Mar  1 17:14:37 2015
-+++ Pinta.Install.proj	Mon Mar 16 10:38:24 2015
-@@ -227,7 +227,6 @@
+Index: Pinta.Install.proj
+--- Pinta.Install.proj.orig
++++ Pinta.Install.proj
+@@ -243,7 +243,6 @@
      <Copy SourceFiles="xdg/32x32/pinta.png" DestinationFolder="$(DataRootDir)/icons/hicolor/32x32/apps" />
      <Copy SourceFiles="xdg/96x96/pinta.png" DestinationFolder="$(DataRootDir)/icons/hicolor/96x96/apps" />
      <Copy SourceFiles="xdg/scalable/pinta.svg" DestinationFolder="$(DataRootDir)/icons/hicolor/scalable/apps" />
