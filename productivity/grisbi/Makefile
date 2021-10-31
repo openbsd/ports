@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.55 2021/03/21 17:23:55 landry Exp $
+# $OpenBSD: Makefile,v 1.56 2021/10/31 16:04:10 landry Exp $
 
 COMMENT=	personal accounting application
 
-DISTNAME=	grisbi-2.0.3
+DISTNAME=	grisbi-2.0.4
 
 EXTRACT_SUFX=	.tar.bz2
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=grisbi/}
@@ -20,7 +20,7 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 bz2 c cairo crypto dbus-1 expat
 WANTLIB += ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 goffice-0.10
-WANTLIB += graphite2 gsf-1 gtk-3 harfbuzz lzma m ofx
+WANTLIB += graphite2 gsf-1 gtk-3 harfbuzz lzma m ofx execinfo
 WANTLIB += osp pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
 WANTLIB += pthread ${COMPILER_LIBCXX} xcb xcb-render xcb-shm xml2 z
 WANTLIB += ICE SM atk-bridge-2.0 avahi-common cairo-gobject zstd
