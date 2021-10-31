@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2019/07/13 10:59:27 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2021/10/31 11:01:45 bentley Exp $
 
 COMMENT ?=		${LANG} language pack for apertium
 
@@ -20,4 +20,4 @@ BUILD_DEPENDS +=	textproc/apertium \
 			textproc/lttoolbox
 RUN_DEPENDS +=		textproc/apertium
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE ?=	gnu
