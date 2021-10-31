@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2021/10/31 15:08:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2021/10/31 20:20:45 ajacoutot Exp $
 
 COMMENT=	image metadata manipulation
 
@@ -8,9 +8,13 @@ DISTNAME=	exiv2-0.27.4-Source
 PKGNAME=	exiv2-0.27.5
 EPOCH=		0
 
+REVISION=	0
+
 SHARED_LIBS +=  exiv2                12.0      # 14.0
 
 HOMEPAGE=	https://www.exiv2.org/
+
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
