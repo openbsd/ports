@@ -1,0 +1,16 @@
+$OpenBSD: patch-tool_openssl-compat_c,v 1.1 2021/10/31 17:33:05 tb Exp $
+
+Use API from libcrypto, not homegrown copies
+
+Index: tool/openssl-compat.c
+--- tool/openssl-compat.c.orig
++++ tool/openssl-compat.c
+@@ -8,7 +8,7 @@
+  */
+ 
+ #include "openssl-compat.h"
+-#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L)
+ 
+ #include <string.h>
+ #include <openssl/engine.h>

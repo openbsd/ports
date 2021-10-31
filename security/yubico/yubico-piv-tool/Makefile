@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/29 16:27:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/10/31 17:33:05 tb Exp $
 
 COMMENT=	Yubico Personal Identity Verification (PIV) Tool
 
@@ -6,7 +6,7 @@ HOMEPAGE=	https://developers.yubico.com/yubico-piv-tool/
 
 YK_PROJECT=	yubico-piv-tool
 DISTNAME=	yubico-piv-tool-1.6.2
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  ykcs11                    0.0 # 5.4
 SHARED_LIBS +=  ykpiv                     0.0 # 5.4

@@ -1,8 +1,35 @@
-$OpenBSD: patch-tool_yubico-piv-tool_c,v 1.1.1.1 2019/02/03 21:24:08 benno Exp $
+$OpenBSD: patch-tool_yubico-piv-tool_c,v 1.2 2021/10/31 17:33:05 tb Exp $
 
 Index: tool/yubico-piv-tool.c
 --- tool/yubico-piv-tool.c.orig
 +++ tool/yubico-piv-tool.c
+@@ -126,7 +126,7 @@ static bool sign_data(ykpiv_state *state, const unsign
+   return false;
+ }
+ 
+-#if !((OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER))
++#if !(OPENSSL_VERSION_NUMBER < 0x10100000L)
+ static int ec_key_ex_data_idx = -1;
+ 
+ struct internal_key {
+@@ -648,7 +648,7 @@ static bool request_certificate(ykpiv_state *state, en
+   int key = 0;
+   size_t oid_len;
+   const unsigned char *oid;
+-#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L)
+   unsigned char digest[EVP_MAX_MD_SIZE + MAX_OID_LEN];
+   unsigned int md_len;
+   unsigned int digest_len;
+@@ -712,7 +712,7 @@ static bool request_certificate(ykpiv_state *state, en
+     goto request_out;
+   }
+ 
+-#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L)
+   null_parameter.type = V_ASN1_NULL;
+   null_parameter.value.ptr = NULL;
+ 
 @@ -751,7 +751,7 @@ static bool request_certificate(ykpiv_state *state, en
        fprintf(stderr, "Failed signing request.\n");
        goto request_out;
@@ -12,6 +39,33 @@ Index: tool/yubico-piv-tool.c
      /* mark that all bits should be used. */
      req->signature->flags = ASN1_STRING_FLAG_BITS_LEFT;
    }
+@@ -784,7 +784,7 @@ request_out:
+     EVP_PKEY_free(public_key);
+   }
+   if(req) {
+-#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L)
+     if(req->sig_alg->parameter) {
+       req->sig_alg->parameter = NULL;
+     }
+@@ -814,7 +814,7 @@ static bool selfsign_certificate(ykpiv_state *state, e
+   int nid;
+   ASN1_INTEGER *sno = ASN1_INTEGER_new();
+   BIGNUM *ser = NULL;
+-#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L)
+   unsigned char digest[EVP_MAX_MD_SIZE + MAX_OID_LEN];
+   unsigned int digest_len;
+   unsigned int md_len;
+@@ -921,7 +921,7 @@ static bool selfsign_certificate(ykpiv_state *state, e
+   if(nid == 0) {
+     goto selfsign_out;
+   }
+-#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L)
+   null_parameter.type = V_ASN1_NULL;
+   null_parameter.value.ptr = NULL;
+ 
 @@ -955,7 +955,7 @@ static bool selfsign_certificate(ykpiv_state *state, e
        fprintf(stderr, "Failed signing certificate.\n");
        goto selfsign_out;
@@ -21,3 +75,12 @@ Index: tool/yubico-piv-tool.c
      /* setting flags to ASN1_STRING_FLAG_BITS_LEFT here marks that no bits
       * should be subtracted from the bit string, thus making sure that the
       * certificate can be validated. */
+@@ -987,7 +987,7 @@ selfsign_out:
+     fclose(output_file);
+   }
+   if(x509) {
+-#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L)
+     if(x509->sig_alg->parameter) {
+       x509->sig_alg->parameter = NULL;
+       x509->cert_info->signature->parameter = NULL;
