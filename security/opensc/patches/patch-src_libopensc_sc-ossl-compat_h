@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_libopensc_sc-ossl-compat_h,v 1.5 2021/10/31 17:19:13 tb Exp $
+
+Index: src/libopensc/sc-ossl-compat.h
+--- src/libopensc/sc-ossl-compat.h.orig
++++ src/libopensc/sc-ossl-compat.h
+@@ -71,7 +71,7 @@ extern "C" {
+ #define EVP_PKEY_base_id(x)		(x->type)
+ #endif
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ #define RSA_PKCS1_OpenSSL		RSA_PKCS1_SSLeay
+ 
+ #define X509_get_extension_flags(x)	(x->ex_flags)
