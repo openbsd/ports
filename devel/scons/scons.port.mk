@@ -1,8 +1,14 @@
-# $OpenBSD: scons.port.mk,v 1.7 2021/08/29 19:46:17 kirby Exp $
+# $OpenBSD: scons.port.mk,v 1.8 2021/10/31 18:26:38 sthen Exp $
 
+MODSCONS_USE_V2?=	No
+
+.if ${MODSCONS_USE_V2:L} == "yes"
+BUILD_DEPENDS+=	devel/scons-py2
+MODSCONS_BIN=	${LOCALBASE}/bin/scons-2.5.1
+.else
 BUILD_DEPENDS+=	devel/scons
-
 MODSCONS_BIN=	${LOCALBASE}/bin/scons
+.endif
 
 MODSCONS_ENV?=	CC="${CC}" \
 		CXX="${CXX}" \
