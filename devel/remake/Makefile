@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2021/02/25 15:09:08 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.14 2021/10/31 08:22:32 ajacoutot Exp $
 
 COMMENT=		GNU make debugger
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c curses readline
 
 CONFIGURE_STYLE=	gnu
+
+CONFIGURE_ARGS=		--without-guile
 
 # The test suite expects to find SHELL.
 MAKE_ENV +=		SHELL=/bin/ksh
