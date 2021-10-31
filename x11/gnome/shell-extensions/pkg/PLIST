@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.29 2021/05/14 07:22:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.30 2021/10/31 13:21:10 jasper Exp $
 share/glib-2.0/schemas/00_org.gnome.shell.extensions.classic.gschema.override
+share/glib-2.0/schemas/org.gnome.shell.extensions.apps-menu.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.auto-move-windows.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.native-window-placement.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.screenshot-window-sizer.gschema.xml
