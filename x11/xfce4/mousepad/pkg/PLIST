@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.15 2021/05/31 05:02:30 landry Exp $
+@comment $OpenBSD: PLIST,v 1.16 2021/10/31 17:09:54 landry Exp $
 @bin bin/mousepad
 @lib lib/libmousepad.so.${LIBmousepad_VERSION}
 lib/mousepad/
 lib/mousepad/plugins/
 @so lib/mousepad/plugins/libmousepad-plugin-gspell.so
-share/applications/mousepad-settings.desktop
-share/applications/mousepad.desktop
+share/applications/org.xfce.mousepad-settings.desktop
+share/applications/org.xfce.mousepad.desktop
 share/glib-2.0/schemas/org.xfce.mousepad.gschema.xml
 share/glib-2.0/schemas/org.xfce.mousepad.plugins.gspell.gschema.xml
 share/icons/hicolor/128x128/apps/org.xfce.mousepad.png
@@ -76,7 +76,7 @@ share/locale/uk/LC_MESSAGES/mousepad.mo
 share/locale/zh_CN/LC_MESSAGES/mousepad.mo
 share/locale/zh_TW/LC_MESSAGES/mousepad.mo
 share/metainfo/
-share/metainfo/mousepad.appdata.xml
+share/metainfo/org.xfce.mousepad.appdata.xml
 share/polkit-1/
 share/polkit-1/actions/
 share/polkit-1/actions/org.xfce.mousepad.policy
