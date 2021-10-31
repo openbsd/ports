@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.123 2021/10/08 18:49:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.124 2021/10/31 13:20:39 jasper Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		40.5
+GNOME_VERSION=		41.0
 
-SHARED_LIBS += mutter-cogl-8             0.0 # 0.0.0
-SHARED_LIBS += mutter-cogl-path-8        0.0 # 0.0.0
-SHARED_LIBS += mutter-cogl-pango-8       0.0 # 0.0.0
-SHARED_LIBS += mutter-clutter-8          0.0 # 0.0.0
-SHARED_LIBS += mutter-8                  0.0 # 0.0.0
+SHARED_LIBS += mutter-cogl-9             0.0 # 0.0.0
+SHARED_LIBS += mutter-cogl-path-9        0.0 # 0.0.0
+SHARED_LIBS += mutter-cogl-pango-9       0.0 # 0.0.0
+SHARED_LIBS += mutter-clutter-9          0.0 # 0.0.0
+SHARED_LIBS += mutter-9                  0.0 # 0.0.0
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
@@ -57,7 +57,8 @@ CONFIGURE_ARGS +=	-Dopengl_libname=libGL.so \
 			-Dlibwacom=false \
 			-Dnative_backend=false \
 			-Dtests=false \
-			-Dprofiler=false
+			-Dprofiler=false \
+			-Dsystemd=false
 
 # requires unported gnome-remote-desktop (which requires freerdp >= 2.2.0)
 CONFIGURE_ARGS +=	-Dremote_desktop=false
