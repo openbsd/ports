@@ -1,11 +1,21 @@
-$OpenBSD: patch-lib_usual_tls_tls_compat_h,v 1.1 2021/05/10 17:22:23 tb Exp $
+$OpenBSD: patch-lib_usual_tls_tls_compat_h,v 1.2 2021/10/31 15:27:52 sthen Exp $
 
 Remove compat shim that breaks the build with opaque SSL_CTX.
 
 Index: lib/usual/tls/tls_compat.h
 --- lib/usual/tls/tls_compat.h.orig
 +++ lib/usual/tls/tls_compat.h
-@@ -35,7 +35,6 @@
+@@ -28,14 +28,14 @@
+ 
+ #ifndef LIBRESSL_VERSION_NUMBER
+ #define USE_LIBSSL_INTERNALS
+-#endif
+-
+ #define NID_kx_ecdhe (-90)
+ #define NID_kx_dhe (-91)
++#define SSL_CTX_get0_param(ssl_ctx) ((ssl_ctx)->param)
++#endif
++
  #define SSL_CIPHER_get_kx_nid(ciph) ( 0 )
  #define X509_get_key_usage(x509) ((x509)->ex_kusage)
  #define X509_get_extended_key_usage(x509) ((x509)->ex_xkusage)
