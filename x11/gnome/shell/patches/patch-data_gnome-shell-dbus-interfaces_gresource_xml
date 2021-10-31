@@ -1,9 +1,9 @@
-$OpenBSD: patch-data_gnome-shell-dbus-interfaces_gresource_xml,v 1.3 2021/05/14 07:22:33 jasper Exp $
+$OpenBSD: patch-data_gnome-shell-dbus-interfaces_gresource_xml,v 1.4 2021/10/31 13:20:53 jasper Exp $
 
 Index: data/gnome-shell-dbus-interfaces.gresource.xml
 --- data/gnome-shell-dbus-interfaces.gresource.xml.orig
 +++ data/gnome-shell-dbus-interfaces.gresource.xml
-@@ -7,6 +7,8 @@
+@@ -8,6 +8,8 @@
      <file preprocess="xml-stripblanks">org.freedesktop.Application.xml</file>
      <file preprocess="xml-stripblanks">org.freedesktop.bolt1.Device.xml</file>
      <file preprocess="xml-stripblanks">org.freedesktop.bolt1.Manager.xml</file>
