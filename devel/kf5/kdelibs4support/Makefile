@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2021/05/09 14:31:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.22 2021/10/31 17:01:48 tb Exp $
 
 COMMENT =		legacy support for kdelibs-4.x compatibility
 DISTNAME =		kdelibs4support-${VERSION}
+REVISION =		0
 
 SHARED_LIBS =		KF5KDELibs4Support	8.0
 
