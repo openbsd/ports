@@ -1,0 +1,14 @@
+$OpenBSD: patch-engine_SCons_Tool_gcc_py,v 1.1.1.1 2021/10/31 17:26:11 sthen Exp $
+
+Index: engine/SCons/Tool/gcc.py
+--- engine/SCons/Tool/gcc.py.orig
++++ engine/SCons/Tool/gcc.py
+@@ -40,7 +40,7 @@ import subprocess
+ 
+ import SCons.Util
+ 
+-compilers = ['gcc', 'cc']
++compilers = ['cc']
+ 
+ def generate(env):
+     """Add Builders and construction variables for gcc to an Environment."""
