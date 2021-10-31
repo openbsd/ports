@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2019/07/12 20:44:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2021/10/31 10:18:38 ajacoutot Exp $
 
 COMMENT=	Apache Portable Runtime
 
 V=		1.6.5
-REVISION=	0
+REVISION=	1
 DISTNAME=	apr-$V
 SHARED_LIBS +=	apr-1             7.0     # .6.2
 
@@ -23,7 +23,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE:=apr/}
 AUTOCONF_VERSION=2.69
 CONFIGURE_STYLE=autoconf autoheader
 # Prevent APR pools from re-using dynamic memory allocations:
-CFLAGS="-DAPR_ALLOCATOR_MAX_FREE_DEFAULT=1"
+CFLAGS +=	"-DAPR_ALLOCATOR_MAX_FREE_DEFAULT=1"
 CONFIGURE_ARGS=	--includedir=${LOCALBASE}/include/apr-1/ \
 		--with-installbuilddir=${LOCALBASE}/lib/apr-1/ \
 		--enable-other-child \
