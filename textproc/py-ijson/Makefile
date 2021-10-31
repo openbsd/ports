@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/08/16 15:10:21 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2021/10/31 09:55:39 landry Exp $
 
 COMMENT =		iterative JSON parser
 
@@ -24,7 +24,8 @@ MODPY_PYTEST =		Yes
 FLAVORS =		python3
 FLAVOR =		python3
 
-CFLAGS =		-I${LOCALBASE}/include
+MAKE_ENV =		LDFLAGS=-L${LOCALBASE}/lib \
+			CPPFLAGS=-I${LOCALBASE}/include
 LIB_DEPENDS =		devel/libyajl
 
 .include <bsd.port.mk>
