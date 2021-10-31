@@ -1,0 +1,261 @@
+$OpenBSD: patch-SConstruct,v 1.1 2021/10/31 17:33:53 sthen Exp $
+Index: SConstruct
+--- SConstruct.orig
++++ SConstruct
+@@ -49,7 +49,7 @@ if (env.GetOption('clean') or conf == '0'):
+ 
+ if sys.platform == 'win32':
+ 	checkconf = False
+-	print "Compiling for Win32 Environment"
++	print("Compiling for Win32 Environment")
+ 	env = Environment(ENV = os.environ)
+ 
+ 	env.Append(CPPDEFINES = ['WIN32','NOMINMAX','DEBUG']) 
+@@ -68,7 +68,7 @@ if sys.platform == 'win32':
+ 	build_dir = 'win32'
+ 
+ elif sys.platform == 'darwin':
+-	print "Compiling for MacOSX"
++	print("Compiling for MacOSX")
+ 	env = Environment(ENV = os.environ)
+ 	env.Append(CPPPATH = ['/System/Library/Frameworks/AGL.framework/Headers', '/System/Library/Frameworks/OpenGL.framework/Headers','/Developer/SDKs/MacOSX10.4u.sdk/usr/X11R6/include' , './Mac'])
+ 	libpath = ['/System/Library/Frameworks/OpenGL.framework/Libraries', '/usr/local/lib', '/usr/lib']
+@@ -79,11 +79,11 @@ elif sys.platform == 'darwin':
+ 	datadir = './data'	# use slashes as separator always. C/C++ want it so.
+ 	build_dir = 'macosx'
+ 	osspecificsrc = Split("""Mac/SDLMain.m""")
+-        if (debug == 1):
+-                env.Append(CCFLAGS = '-g')
+-                env.Append(CPPDEFINES = ['DEBUG'])
++	if (debug == 1):
++		env.Append(CCFLAGS = '-g')
++		env.Append(CPPDEFINES = ['DEBUG'])
+ elif (sys.platform == 'freebsd5') or (sys.platform == 'freebsd6') or (sys.platform == 'freebsd7'):
+-	print "Compiling for FreeBSD Environment"
++	print("Compiling for FreeBSD Environment")
+ 	env = Environment(ENV = os.environ)
+ 	LOCALBASE = os.environ['LOCALBASE']
+ 	X11BASE = os.environ['X11BASE']
+@@ -99,45 +99,45 @@ elif (sys.platform == 'freebsd5') or (sys.platform == 
+ 	cpuinfol = cpuinfof.readlines()
+ 	mmxsupported = False
+ 	ssesupported = False
+-        for i in cpuinfol:
++	for i in cpuinfol:
+ 		if i == '1\n':
+ 			mmxsupported = True
+ 			ssesupported = True
+ 		if (usex86sse == 0) and (mmxsupported and ssesupported):
+-                	usex86sse = 1
+-	        if usex86sse >= 1:
++			usex86sse = 1
++		if usex86sse >= 1:
+ 			env.Append(CCFLAGS = '-msse')
+-        	        env.Append(CPPDEFINES = ['USE_SSE'])
+-	                osspecificsrc += []
+-	                print 'Using x86 SSE/MMX optimizations.'
++			env.Append(CPPDEFINES = ['USE_SSE'])
++			osspecificsrc += []
++			print('Using x86 SSE/MMX optimizations.')
+ 
+-        env.Replace(CCFLAGS = os.environ['CFLAGS'])
++	env.Replace(CCFLAGS = os.environ['CFLAGS'])
+ 	if (debug == 1):
+ 		env.Append(CCFLAGS = '-g')
+ 		env.Append(CPPDEFINES = ['DEBUG'])
+-        env.Replace(CXXFLAGS = os.environ['CXXFLAGS'] + ' `' + SDL_CONFIG + ' --cflags`')
+-        env.Append(LINKFLAGS = '`' + SDL_CONFIG + ' --libs`')
+-        datadir = '/usr/local/share/dangerdeep'
+-        build_dir = 'freebsd'
++	env.Replace(CXXFLAGS = os.environ['CXXFLAGS'] + ' `' + SDL_CONFIG + ' --cflags`')
++	env.Append(LINKFLAGS = '`' + SDL_CONFIG + ' --libs`')
++	datadir = '/usr/local/share/dangerdeep'
++	build_dir = 'freebsd'
+ 	
+-        if (checkconf == True and os.system('grep glBindProgram ' + X11BASE + '/include/GL/gl*.h > /dev/null') == 0):
+-                gllibdirs = [X11BASE + '/lib/', '/usr/lib/', LOCALBASE + '/lib/']
+-                gllibdir = ''
+-                for i in gllibdirs:
+-                        if (os.system('test -f '+i+'libGL.so') == 0):
+-                                gllibdir = i
+-                                break
+-                if (gllibdir == ''):
+-                        print 'ERROR: no libGL.so detected!'
+-                else:
+-			print 'Found GL library "'+gllibdir+'libGL.so"'
+-                if (os.system('grep glBindProgram '+gllibdir+'libGL.so > /dev/null') != 0):
+-                        print 'GL headers declare glBindProgram, but libGL.so has no such symbol! Ignoring all undefined symbols...'
+-                        # I'm not sure which option will hopefully fix the problem... so i use both...
+-                        env.Append(LINKFLAGS = '--unresolved-symbols=ignore-all')
+-                        env.Append(LINKFLAGS = '-Xlinker --unresolved-symbols -Xlinker ignore-all')
++	if (checkconf == True and os.system('grep glBindProgram ' + X11BASE + '/include/GL/gl*.h > /dev/null') == 0):
++		gllibdirs = [X11BASE + '/lib/', '/usr/lib/', LOCALBASE + '/lib/']
++		gllibdir = ''
++		for i in gllibdirs:
++			if (os.system('test -f '+i+'libGL.so') == 0):
++				gllibdir = i
++				break
++		if (gllibdir == ''):
++			print('ERROR: no libGL.so detected!')
++		else:
++			print('Found GL library "'+gllibdir+'libGL.so"')
++		if (os.system('grep glBindProgram '+gllibdir+'libGL.so > /dev/null') != 0):
++			print('GL headers declare glBindProgram, but libGL.so has no such symbol! Ignoring all undefined symbols...')
++			# I'm not sure which option will hopefully fix the problem... so i use both...
++			env.Append(LINKFLAGS = '--unresolved-symbols=ignore-all')
++			env.Append(LINKFLAGS = '-Xlinker --unresolved-symbols -Xlinker ignore-all')
+ elif 0 != mingw32:
+-	print "Compiling for mingw32 Environment"
++	print("Compiling for mingw32 Environment")
+ 	env = Environment(ENV = os.environ, tools = ['mingw'])
+ 
+ 	env.Append(CPPPATH = [ mingw32root + '/usr/include/', mingw32root + '/usr/include/GL/', mingw32root + '/usr/include/SDL/' ] )
+@@ -171,12 +171,12 @@ elif 0 != mingw32:
+ 		osspecificsrc += []
+ 		env.Append(CCFLAGS = '-msse')
+ 		env.Append(CPPDEFINES = ['USE_SSE'])
+-		print 'Using x86 SSE/MMX optimizations with GCC intrinsics.'
++		print('Using x86 SSE/MMX optimizations with GCC intrinsics.')
+ 	datadir = './data'	# use slashes as separator always. C/C++ want it so.
+ 	build_dir = 'mingw32'
+ else:
+ 	SConsignFile()
+-	print "Compiling for GNU/Linux Environment (" + sys.platform + ")"
++	print("Compiling for GNU/Linux Environment (" + sys.platform + ")")
+ 	env = Environment(ENV = os.environ)
+ 
+ 	env.Append(CPPPATH = ['/usr/include/SDL', '/usr/include/GL'])
+@@ -192,10 +192,10 @@ else:
+ 
+ 	# allow arch to be over-ridden if need be.
+ 	if archflag != '':
+-		print 'Using architecture: ' + archflag + ' (Changed from ' + arch + ')'
++		print('Using architecture: ' + archflag + ' (Changed from ' + arch + ')')
+ 		arch = archflag
+ 	else:
+-		print 'Using architecture: ' + arch
++		print('Using architecture: ' + arch)
+ 
+ 	# Set libpath accordingly
+ 	if arch == 'x86_64':
+@@ -207,8 +207,6 @@ else:
+ 	# Set libpath for real
+ 	libpath = [archlib, archlib + '/X11', '/usr/X11R6/lib']
+ 
+-	ccflags += ' -march=' + arch
+-
+ 	env.Append(LINKFLAGS = '`pkg-config --libs-only-L x11`')
+ 	if (debug >= 4):
+ 		ccflags += ' -g -pg -O3' # profiling
+@@ -220,7 +218,6 @@ else:
+ 		env.Append(CPPDEFINES = ['DEBUG'])
+ 	elif (debug == 1):
+ 		# same as debug==0 but with DEBUG defined to make logging work (and probably other stuff)
+-		ccflags += ' -g -O2'
+ 		env.Append(CPPDEFINES = ['DEBUG'])
+ 	elif (debug == -1):
+ 		ccflags += ' -g -O3 -mfpmath=sse -mmmx -msse -m3dnow'
+@@ -239,10 +236,10 @@ else:
+ 
+ 	if (useefence >= 1):
+ 		extralibs += ['efence']
+-		print 'Linking to ElectricFence library!'
++		print('Linking to ElectricFence library!')
+ 	elif (useduma >= 1):
+ 		extralibs += ['duma']
+-		print 'Linking to DUMA (EletricFence successor) library!'
++		print('Linking to DUMA (EletricFence successor) library!')
+ 	if (cvedit == 1):
+ 		env.Append(CPPDEFINES = ['CVEDIT'])
+ 
+@@ -252,25 +249,25 @@ else:
+ 		osspecificsrc += []
+ 		if (usex86sse >= 2):
+ 			env.Append(CPPDEFINES = ['USE_SSE_ALWAYS'])
+-			print 'Using x86 SSE/MMX optimizations with GCC intrinsics ALWAYS WITHOUT DETECTION!'
++			print('Using x86 SSE/MMX optimizations with GCC intrinsics ALWAYS WITHOUT DETECTION!')
+ 		else:
+-			print 'Using x86 SSE/MMX optimizations with GCC intrinsics.'
++			print('Using x86 SSE/MMX optimizations with GCC intrinsics.')
+ 	env.Append(CCFLAGS = ccflags)
+ 
+ 	# check for broken libGL, ignore undefined symbols then
+-	if (checkconf == True and os.system('grep glBindProgram /usr/include/GL/gl*.h > /dev/null') == 0):
++	if (checkconf == True and os.system('grep glBindProgram ${X11BASE}/include/GL/gl*.h > /dev/null') == 0):
+ 		gllibdirs = ['/usr/X11R6/lib/', '/usr/lib/', '/usr/local/lib/']
+ 		gllibdir = ''
+ 		for i in gllibdirs:
+-			if (os.system('test -f '+i+'libGL.so') == 0):
++			if (os.system('ls '+i+' | grep -q ^libGL\\.so') == 0):
+ 				gllibdir = i
+ 				break
+ 		if (gllibdir == ''):
+-			print 'ERROR: no libGL.so detected!'
++			print('ERROR: no libGL.so detected!')
+ 		else:
+-			print 'Found GL library "'+gllibdir+'libGL.so"'
+-		if (os.system('grep glBindProgram '+gllibdir+'libGL.so > /dev/null') != 0):
+-			print 'GL headers declare glBindProgram, but libGL.so has no such symbol! Ignoring all undefined symbols...'
++			print('Found GL library "'+gllibdir+'libGL.so"')
++		if (os.system('grep glBindProgram '+gllibdir+'libGL.so* > /dev/null') != 0):
++			print('GL headers declare glBindProgram, but libGL.so has no such symbol! Ignoring all undefined symbols...')
+ 			# I'm not sure which option will hopefully fix the problem... so i use both...
+ 			env.Append(LINKFLAGS = '--unresolved-symbols=ignore-all')
+ 			env.Append(LINKFLAGS = '-Xlinker --unresolved-symbols -Xlinker ignore-all')
+@@ -282,13 +279,19 @@ installbindir = '/usr/local/bin'
+ if ARGUMENTS.get('installbindir', 0):
+ 	installbindir = ARGUMENTS.get('installbindir', 0)
+ 
+-print 'Install binary path: ' + installbindir
+-print 'Using data dir: ' + datadir
++print('Install binary path: ' + installbindir)
++print('Using data dir: ' + datadir)
+ 
+ target_dir = '#build' + os.sep + build_dir
+ source_base_dir = 'src'
+ libpath = libpath + [target_dir]
+ env.Append(LIBPATH = libpath)
++env.Append(LIBPATH = '${LOCALBASE}/lib')
++env.Append(CPPPATH = ['${X11BASE}/include', '${X11BASE}/include/GL'])
++env.Replace(CC = os.environ['CC'])
++env.Replace(CXX = os.environ['CXX'])
++env.Replace(CFLAGS = os.environ['CFLAGS'])
++env.Replace(CXXFLAGS = os.environ['CXXFLAGS'])
+ 
+ ################ configure
+ if(checkconf == True):
+@@ -297,20 +300,20 @@ if(checkconf == True):
+ 	if (devel == 0):
+ 		for i in ['GL', 'GLU', 'SDL', 'SDL_image', 'SDL_mixer', 'fftw3', 'bz2']:
+ 			if not conf.CheckLib(i):
+-				print 'Library ' + i + ' is missing, it must be installed!'
++				print('Library ' + i + ' is missing, it must be installed!')
+ 				Exit(1)
+ 		for i in ['gl.h', 'glu.h', 'SDL.h', 'SDL_image.h', 'SDL_mixer.h', 'fftw3.h', 'bzlib.h']:
+ 			if not conf.CheckHeader(i):
+-				print 'Include file ' + i + ' is missing, install matching development library!'
++				print('Include file ' + i + ' is missing, install matching development library!')
+ 				Exit(1)
+ 		if conf.CheckLibWithHeader('fftw3f', 'fftw3.h', 'C'):
+-			print 'fftw3 library supports float type. Using it...'
++			print('fftw3 library supports float type. Using it...')
+ 			fftwlib = 'fftw3f'
+ 			conf.env.Append(CPPDEFINES = ['WITH_FLOAT_FFTW'])
+ 		else:
+-			print 'fftw3 library does not support float type.'
++			print('fftw3 library does not support float type.')
+ 		if conf.CheckLibWithHeader('avutil', 'ffmpeg/libavutil/avutil.h', 'C'):
+-			print 'libavutil found...'
++			print('libavutil found...')
+ 			ffmpeg_available = True
+ 	else:
+ 		fftwlib = 'fftw3f'
+@@ -347,7 +350,7 @@ Export('env', 'gfxlibs', 'alllibs', 'installbindir', '
+ 
+ SConscript(source_base_dir + os.sep + 'SConscript', build_dir = target_dir, duplicate = 0)
+ 
+-BuildDir(target_dir, source_base_dir, duplicate=0)
++VariantDir(target_dir, source_base_dir, duplicate=0)
+ 
+ ############### Helper functions
+ def findSVN(basedir):
