@@ -1,6 +1,6 @@
-$OpenBSD: patch-data_meson_build,v 1.1 2021/10/31 08:07:55 ajacoutot Exp $
+$OpenBSD: patch-data_meson_build,v 1.2 2021/10/31 08:19:25 ajacoutot Exp $
 
-Fix build with meson >= 0.0.60
+Fix build with meson >= 0.60.0
 
 Index: data/meson.build
 --- data/meson.build.orig
