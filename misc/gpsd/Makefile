@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2021/10/28 08:37:13 kirby Exp $
+# $OpenBSD: Makefile,v 1.86 2021/10/31 17:30:22 sthen Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
@@ -57,6 +57,8 @@ RUN_DEPENDS-x11 =	${BASE_PKGPATH} \
 			devel/py-gobject3${MODPY_FLAVOR} \
 			devel/desktop-file-utils \
 			x11/gtk+3
+
+CFLAGS +=		-fPIC
 
 # the php display script doesn't depend on having any of gpsd around,
 # it just sits there and looks pretty.

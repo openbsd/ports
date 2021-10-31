@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2020/10/21 00:05:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2021/10/31 17:30:22 sthen Exp $
 
 COMMENT=	free Lemmings-like game
 
@@ -30,6 +30,9 @@ NO_TEST=	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/pingus/pingus_main.cpp
+
+pre-patch:
+	2to3 -w ${WRKSRC}/SConscript
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODSCONS_BIN} \

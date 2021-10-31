@@ -1,6 +1,7 @@
-$OpenBSD: patch-SConstruct,v 1.7 2013/09/24 04:53:18 brad Exp $
---- SConstruct.orig	Sun Jun  2 08:41:11 2013
-+++ SConstruct	Sat Sep 14 21:46:08 2013
+$OpenBSD: patch-SConstruct,v 1.8 2021/10/31 17:30:22 sthen Exp $
+Index: SConstruct
+--- SConstruct.orig
++++ SConstruct
 @@ -32,12 +32,12 @@ SConsignFile()
  
  def DefineOptions(filename, args):
@@ -47,7 +48,18 @@ $OpenBSD: patch-SConstruct,v 1.7 2013/09/24 04:53:18 brad Exp $
       glconfig = opengl.get(platform, {})
    for key in glconfig:
        if key != 'LIBS':
-@@ -178,7 +187,7 @@ def CheckLuaLib(env, conf):
+@@ -168,17 +177,12 @@ def CheckOpenGL(env, conf):
+   return True
+ 
+ def CheckLuaLib(env, conf):
+-  if not 'USE_WIN32' in env['CPPDEFINES']:
+-     if env.WhereIs('pkg-config'):
+-        for packagename in ['lua5.1', 'lua51', 'lua']:
+-           exitcode,_ = ParseConfig(env, 'pkg-config --cflags --libs ' + packagename)
+-           if exitcode == 0:
+-              break
++  env.ParseConfig('pkg-config --cflags --libs lua51')
+   if conf.CheckLibWithHeader('lua51', 'lua.h', 'c'):
      return 1
    if conf.CheckLibWithHeader('lua5.1', 'lua.h', 'c'):
      return 1
@@ -56,25 +68,25 @@ $OpenBSD: patch-SConstruct,v 1.7 2013/09/24 04:53:18 brad Exp $
      return 0
    # make sure we have lualib which is included in lua 5.1
    if conf.CheckFunc('luaopen_base'):
-@@ -189,13 +198,13 @@ def AutoConfigure(env):
+@@ -189,13 +193,13 @@ def AutoConfigure(env):
    conf = Configure(env)
  
    ## check for required libs ##
 -  if not conf.CheckLibWithHeader('png', 'png.h', 'c'):
--     print 'Did not find png library or headers, exiting!'
+-     print('Did not find png library or headers, exiting!')
 -     Exit(1)
    if not conf.CheckLibWithHeader('z', 'zlib.h', 'c'):
-      print 'Did not find the zlib library or headers, exiting!'
+      print('Did not find the zlib library or headers, exiting!')
       Exit(1)
 -  if not 'USE_WIN32' in env['CPPDEFINES'] and not sys.platform.startswith('freebsd'):
 +  if not conf.CheckLibWithHeader('png', 'png.h', 'c'):
-+     print 'Did not find png library or headers, exiting!'
++     print('Did not find png library or headers, exiting!')
 +     Exit(1)
 +  if not 'USE_WIN32' in env['CPPDEFINES'] and not sys.platform.startswith('openbsd'):
       if not conf.CheckLib('dl'):
-         print 'Did not find dl library or header which is needed on some systems for lua. Exiting!'
+         print('Did not find dl library or header which is needed on some systems for lua. Exiting!')
          Exit(1)
-@@ -207,12 +216,12 @@ def AutoConfigure(env):
+@@ -207,12 +211,12 @@ def AutoConfigure(env):
       Exit(1)
  
    # Check for optional libraries #
@@ -89,12 +101,21 @@ $OpenBSD: patch-SConstruct,v 1.7 2013/09/24 04:53:18 brad Exp $
  
    # check for optional functions
    if conf.CheckFunc('strcasestr'):
-@@ -265,7 +274,7 @@ addBosWarsPaths(env)
+@@ -265,7 +269,7 @@ addBosWarsPaths(env)
  
  # define the different build environments (variants)
  release = env.Clone()
 -release.Append(CCFLAGS = Split('-O2 -pipe -fomit-frame-pointer -fexpensive-optimizations -ffast-math'))
-+release.Append(CCFLAGS = Split('-fomit-frame-pointer -fexpensive-optimizations -ffast-math'))
++release.Append(CCFLAGS = Split('-fomit-frame-pointer -ffast-math'))
  
  if mingw['extrapath']:
    mingw.Tool('crossmingw', toolpath = ['tools/scons/'])
+@@ -311,7 +315,7 @@ if sys.platform.startswith('linux') or sys.platform.st
+ def DefineVariant(venv, v, vv = None):
+    if vv == None:
+       vv = '-' + v
+-   BuildDir('build/' + v, engineSourceDir, duplicate = 0)
++   VariantDir('build/' + v, engineSourceDir, duplicate = 0)
+    r = venv.Program('build/boswars' + vv, buildSourcesList('build/' + v))
+    Alias(v, 'boswars' + vv)
+    return r 

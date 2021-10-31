@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2021/02/03 22:22:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/10/31 17:30:22 sthen Exp $
 
 COMMENT =		high performance HTTP client library
 DISTNAME =		serf-1.3.9
@@ -18,11 +18,14 @@ MODULES = 		devel/scons
 LIB_DEPENDS =		converters/libiconv \
 			devel/apr-util
 MODSCONS_ENV=	CC="${CC}" \
+		CFLAGS="${CFLAGS} -fPIC" \
 		PREFIX="${PREFIX}" \
 		DEBUG=0 \
 		APR=${LOCALBASE}/bin/apr-1-config \
 		APU=${LOCALBASE}/bin/apu-1-config
 TEST_TARGET = 	check
+
+FIX_CRLF_FILES =	build/check.py
 
 # XXX scons doesn't support x.y library versioning scheme, only x.y.z
 post-patch:
