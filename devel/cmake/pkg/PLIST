@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.51 2021/07/06 16:55:32 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.52 2021/10/31 11:34:50 sthen Exp $
 @bin bin/ccmake
 @bin bin/cmake
 @bin bin/cpack
@@ -1212,7 +1212,7 @@ share/cmake/Help/release/3.4.rst
 share/cmake/Help/release/3.5.rst
 share/cmake/Help/release/3.6.rst
 share/cmake/Help/release/3.7.rst
-share/cmake/Help/release/${MODPY_VERSION}.rst
+share/cmake/Help/release/3.8.rst
 share/cmake/Help/release/3.9.rst
 share/cmake/Help/release/dev.txt
 share/cmake/Help/release/index.rst
@@ -4124,7 +4124,7 @@ share/doc/cmake/html/_sources/release/3.4.rst.txt
 share/doc/cmake/html/_sources/release/3.5.rst.txt
 share/doc/cmake/html/_sources/release/3.6.rst.txt
 share/doc/cmake/html/_sources/release/3.7.rst.txt
-share/doc/cmake/html/_sources/release/${MODPY_VERSION}.rst.txt
+share/doc/cmake/html/_sources/release/3.8.rst.txt
 share/doc/cmake/html/_sources/release/3.9.rst.txt
 share/doc/cmake/html/_sources/release/index.rst.txt
 share/doc/cmake/html/_sources/variable/
@@ -5929,7 +5929,7 @@ share/doc/cmake/html/release/3.4.html
 share/doc/cmake/html/release/3.5.html
 share/doc/cmake/html/release/3.6.html
 share/doc/cmake/html/release/3.7.html
-share/doc/cmake/html/release/${MODPY_VERSION}.html
+share/doc/cmake/html/release/3.8.html
 share/doc/cmake/html/release/3.9.html
 share/doc/cmake/html/release/index.html
 share/doc/cmake/html/search.html

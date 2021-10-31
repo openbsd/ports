@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2021/10/14 12:55:50 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.36 2021/10/31 11:34:49 sthen Exp $
 @pkgpath sysutils/ansible,-main
 lib/python${MODPY_VERSION}/site-packages/ansible-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/ansible-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -10275,7 +10275,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mongodb/p
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mongodb/requirements-2.7.txt
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mongodb/requirements-3.5.txt
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mongodb/requirements-3.6.txt
-lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mongodb/requirements-${MODPY_VERSION}.txt
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mongodb/requirements-3.8.txt
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mongodb/roles/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mongodb/roles/mongodb_auth/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mongodb/roles/mongodb_auth/README.md
