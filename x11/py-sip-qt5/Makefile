@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/14 14:24:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/10/31 17:08:42 sthen Exp $
 
 COMMENT=	sip module support for PyQt5
 
-MODPY_EGG_VERSION=	12.8.1
+MODPY_EGG_VERSION=	12.9.0
 
 DISTNAME=	PyQt5_sip-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME:L}
