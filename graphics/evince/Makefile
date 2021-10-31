@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.192 2021/10/26 11:16:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.193 2021/10/31 07:19:47 ajacoutot Exp $
 
 COMMENT=		GNOME document viewer
 
@@ -51,9 +51,6 @@ RUN_DEPENDS=		archivers/unrar \
 			devel/gsettings-desktop-schemas
 
 CONFIGURE_ENV=		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
-
-# modern browsers can already display PDF
-CONFIGURE_ARGS +=	-Dbrowser_plugin=false
 
 CONFIGURE_ARGS +=	-Dt1lib=disabled \
 			-Dsystemduserunitdir=no \

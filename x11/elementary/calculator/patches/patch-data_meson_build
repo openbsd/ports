@@ -1,0 +1,23 @@
+$OpenBSD: patch-data_meson_build,v 1.1 2021/10/31 07:19:46 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: data/meson.build
+--- data/meson.build.orig
++++ data/meson.build
+@@ -4,7 +4,6 @@ install_data(
+ )
+ 
+ i18n.merge_file (
+-    'desktop',
+     input: meson.project_name() + '.desktop.in',
+     output: meson.project_name() + '.desktop',
+     install: true,
+@@ -14,7 +13,6 @@ i18n.merge_file (
+ )
+ 
+ i18n.merge_file (
+-    'appdata',
+     input: meson.project_name() + '.appdata.xml.in',
+     output: meson.project_name() + '.appdata.xml',
+     install: true,

@@ -1,0 +1,23 @@
+$OpenBSD: patch-data_meson_build,v 1.1 2021/10/31 07:19:46 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: data/meson.build
+--- data/meson.build.orig
++++ data/meson.build
+@@ -31,7 +31,6 @@ desktop_conf.set('systemd_hidden', enable_systemd ? 't
+ 
+ foreach desktop_file: autostart_files
+     i18n.merge_file(
+-        'desktop',
+         input: configure_file(
+             input: files(desktop_file + '.in.in'),
+             output: desktop_file + '.in',
+@@ -46,7 +45,6 @@ foreach desktop_file: autostart_files
+ endforeach
+ 
+ i18n.merge_file(
+-    'desktop',
+     input: configure_file(
+         input: files('gnome-initial-setup.desktop.in.in'),
+         output: 'gnome-initial-setup.desktop.in',

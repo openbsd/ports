@@ -1,0 +1,15 @@
+$OpenBSD: patch-data_appdata_meson_build,v 1.1 2021/10/31 07:19:46 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: data/appdata/meson.build
+--- data/appdata/meson.build.orig
++++ data/appdata/meson.build
+@@ -1,7 +1,6 @@
+ appdata = 'org.gnome.Totem.appdata.xml'
+ 
+ appdata_file = i18n.merge_file (
+-    'appdata',
+     input: appdata + '.in',
+     output: appdata,
+     install: true,

@@ -1,0 +1,23 @@
+$OpenBSD: patch-data_meson_build,v 1.1 2021/10/31 07:19:46 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: data/meson.build
+--- data/meson.build.orig
++++ data/meson.build
+@@ -16,7 +16,6 @@ install_data(
+ desktop_conf = configuration_data()
+ desktop_conf.set('icon', application_id)
+ desktop = i18n.merge_file(
+-  'desktop',
+   input: configure_file(
+     input: files('org.gnome.Epiphany.desktop.in.in'),
+     output: 'org.gnome.Epiphany.desktop.in',
+@@ -32,7 +31,6 @@ desktop = i18n.merge_file(
+ appdata_conf = configuration_data()
+ appdata_conf.set('appid', application_id)
+ appdata = i18n.merge_file(
+-  'appdata',
+   input: configure_file(
+     input: files('org.gnome.Epiphany.appdata.xml.in.in'),
+     output: 'org.gnome.Epiphany.appdata.xml.in',

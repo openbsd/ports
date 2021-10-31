@@ -1,0 +1,23 @@
+$OpenBSD: patch-data_meson_build,v 1.1 2021/10/31 07:19:46 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: data/meson.build
+--- data/meson.build.orig
++++ data/meson.build
+@@ -3,7 +3,6 @@ subdir('icons')
+ appdata = photos_namespace + '.appdata.xml'
+ 
+ i18n.merge_file(
+-  appdata,
+   input: appdata + '.in',
+   output: appdata,
+   po_dir: po_dir,
+@@ -23,7 +22,6 @@ desktop_in = configure_file(
+ )
+ 
+ i18n.merge_file(
+-  desktop,
+   type: 'desktop',
+   input: desktop_in,
+   output: desktop,

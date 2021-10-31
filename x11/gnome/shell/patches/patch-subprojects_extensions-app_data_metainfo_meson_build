@@ -1,0 +1,14 @@
+$OpenBSD: patch-subprojects_extensions-app_data_metainfo_meson_build,v 1.1 2021/10/31 07:19:46 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: subprojects/extensions-app/data/metainfo/meson.build
+--- subprojects/extensions-app/data/metainfo/meson.build.orig
++++ subprojects/extensions-app/data/metainfo/meson.build
+@@ -1,5 +1,5 @@
+ metainfo = app_id + '.metainfo.xml'
+-i18n.merge_file(metainfo,
++i18n.merge_file(
+   input: base_id + '.metainfo.xml.in',
+   output: metainfo,
+   po_dir: po_dir,

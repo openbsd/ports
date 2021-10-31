@@ -1,0 +1,15 @@
+$OpenBSD: patch-backend_meson_build,v 1.1 2021/10/31 07:19:47 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: backend/meson.build
+--- backend/meson.build.orig
++++ backend/meson.build
+@@ -53,7 +53,6 @@ foreach backend, backend_mime_types: backends
+   )
+ 
+   i18n.merge_file(
+-    appstream,
+     input: appstream_in,
+     output: appstream,
+     po_dir: po_dir,

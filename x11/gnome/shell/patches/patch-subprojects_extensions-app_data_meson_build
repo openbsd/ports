@@ -1,0 +1,16 @@
+$OpenBSD: patch-subprojects_extensions-app_data_meson_build,v 1.1 2021/10/31 07:19:46 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: subprojects/extensions-app/data/meson.build
+--- subprojects/extensions-app/data/meson.build.orig
++++ subprojects/extensions-app/data/meson.build
+@@ -14,7 +14,7 @@ desktopconf.set('bindir', bindir)
+ desktopconf.set('app_id', app_id)
+ desktopconf.set('prgname', prgname)
+ 
+-i18n.merge_file('desktop',
++i18n.merge_file(
+   input: configure_file(
+     input: base_id + '.desktop.in.in',
+     output: desktop_file + '.in',

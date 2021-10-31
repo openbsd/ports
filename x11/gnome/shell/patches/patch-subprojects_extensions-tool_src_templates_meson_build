@@ -1,0 +1,16 @@
+$OpenBSD: patch-subprojects_extensions-tool_src_templates_meson_build,v 1.1 2021/10/31 07:19:46 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: subprojects/extensions-tool/src/templates/meson.build
+--- subprojects/extensions-tool/src/templates/meson.build.orig
++++ subprojects/extensions-tool/src/templates/meson.build
+@@ -4,7 +4,7 @@ template_metas = [
+ ]
+ template_deps = []
+ foreach template : template_metas
+-  template_deps += i18n.merge_file(template,
++  template_deps += i18n.merge_file(
+     input: template + '.in',
+     output: template,
+     po_dir: po_dir,

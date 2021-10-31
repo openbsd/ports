@@ -1,0 +1,23 @@
+$OpenBSD: patch-data_meson_build,v 1.1 2021/10/31 07:19:46 ajacoutot Exp $
+
+Fix build with meson >= 0.60.0
+
+Index: data/meson.build
+--- data/meson.build.orig
++++ data/meson.build
+@@ -18,7 +18,6 @@
+ metainfodir = ar_prefix / ar_datadir / 'metainfo'
+ 
+ i18n.merge_file(
+-  'sol.metainfo.xml',
+   input: 'sol.metainfo.xml.in',
+   output: '@BASENAME@',
+   po_dir: po_dir,
+@@ -35,7 +34,6 @@ desktop_in = files(
+ )
+ 
+ i18n.merge_file(
+-  'sol.desktop',
+   input: desktop_in,
+   output: '@BASENAME@',
+   type: 'desktop',
