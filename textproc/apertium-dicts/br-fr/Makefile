@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/19 03:03:18 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2021/10/31 12:09:45 bentley Exp $
 
 L =	br-fr
 LANG =	Breton/French
 V =	0.5.0
 REVISION =	0
+
+MASTER_SITES =	https://apertium.org/releases/apertium-$L/$V/
 
 BUILD_DEPENDS +=	textproc/vislcg3
 

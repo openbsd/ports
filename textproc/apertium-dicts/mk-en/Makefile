@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2018/11/12 12:49:44 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2021/10/31 12:09:46 bentley Exp $
 
 L =	mk-en
 LANG =	Macedonian/English
 V =	0.1.1
 REVISION =	1
+
+MASTER_SITES =	https://apertium.org/releases/apertium-$L/
 
 BUILD_DEPENDS +=	textproc/vislcg3
 

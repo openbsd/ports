@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/19 03:03:20 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2021/10/31 12:09:46 bentley Exp $
 
 L =	id-ms
 LANG =	Indonesian/Malaysian
 V =	0.1.0
 REVISION =	0
+
+MASTER_SITES =	https://apertium.org/releases/apertium-$L/
 
 USE_GMAKE =	Yes
 

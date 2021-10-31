@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/04 00:07:06 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2021/10/31 12:09:47 bentley Exp $
 
 L =	srd-ita
 LANG =	Sardinian/Italian
 V =	0.9.5
+
+MASTER_SITES =	https://apertium.org/releases/apertium-$L/
 
 USE_GMAKE =	Yes
 
