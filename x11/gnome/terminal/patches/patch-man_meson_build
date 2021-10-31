@@ -1,0 +1,14 @@
+$OpenBSD: patch-man_meson_build,v 1.1 2021/10/31 13:31:50 jasper Exp $
+
+Index: man/meson.build
+--- man/meson.build.orig
++++ man/meson.build
+@@ -13,7 +13,7 @@
+ # You should have received a copy of the GNU General Public License
+ # along with this programme.  If not, see <https://www.gnu.org/licenses/>.
+ 
+-gt_mandir = gt_datadir / 'man'
++gt_mandir = 'man'
+ man1dir = gt_mandir / 'man1'
+ 
+ man1 = custom_target(

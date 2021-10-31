@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.71 2021/06/05 18:10:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.72 2021/10/31 13:31:50 jasper Exp $
 @conflict nautilus-open-terminal-*
 @pkgpath x11/gnome/nautilus-open-terminal
 @bin bin/gnome-terminal
@@ -20,9 +20,9 @@ share/help/C/gnome-terminal/app-fullscreen.page
 share/help/C/gnome-terminal/app-terminal-sizes.page
 share/help/C/gnome-terminal/app-zoom.page
 share/help/C/gnome-terminal/figures/
-share/help/C/gnome-terminal/figures/gnome-terminal-icon.png
 share/help/C/gnome-terminal/figures/gnome-terminal.png
 share/help/C/gnome-terminal/figures/keyboard-key-search.svg
+share/help/C/gnome-terminal/figures/org.gnome.Terminal.svg
 share/help/C/gnome-terminal/gs-execute-commands.page
 share/help/C/gnome-terminal/gs-tabs.page
 share/help/C/gnome-terminal/index.page
@@ -56,6 +56,9 @@ share/help/ca/gnome-terminal/app-fullscreen.page
 share/help/ca/gnome-terminal/app-terminal-sizes.page
 share/help/ca/gnome-terminal/app-zoom.page
 share/help/ca/gnome-terminal/figures/
+share/help/ca/gnome-terminal/figures/gnome-terminal.png
+share/help/ca/gnome-terminal/figures/keyboard-key-search.svg
+share/help/ca/gnome-terminal/figures/org.gnome.Terminal.svg
 share/help/ca/gnome-terminal/gs-execute-commands.page
 share/help/ca/gnome-terminal/gs-tabs.page
 share/help/ca/gnome-terminal/index.page
@@ -89,6 +92,9 @@ share/help/cs/gnome-terminal/app-fullscreen.page
 share/help/cs/gnome-terminal/app-terminal-sizes.page
 share/help/cs/gnome-terminal/app-zoom.page
 share/help/cs/gnome-terminal/figures/
+share/help/cs/gnome-terminal/figures/gnome-terminal.png
+share/help/cs/gnome-terminal/figures/keyboard-key-search.svg
+share/help/cs/gnome-terminal/figures/org.gnome.Terminal.svg
 share/help/cs/gnome-terminal/gs-execute-commands.page
 share/help/cs/gnome-terminal/gs-tabs.page
 share/help/cs/gnome-terminal/index.page
@@ -123,6 +129,9 @@ share/help/da/gnome-terminal/app-fullscreen.page
 share/help/da/gnome-terminal/app-terminal-sizes.page
 share/help/da/gnome-terminal/app-zoom.page
 share/help/da/gnome-terminal/figures/
+share/help/da/gnome-terminal/figures/gnome-terminal.png
+share/help/da/gnome-terminal/figures/keyboard-key-search.svg
+share/help/da/gnome-terminal/figures/org.gnome.Terminal.svg
 share/help/da/gnome-terminal/gs-execute-commands.page
 share/help/da/gnome-terminal/gs-tabs.page
 share/help/da/gnome-terminal/index.page
@@ -156,6 +165,9 @@ share/help/de/gnome-terminal/app-fullscreen.page
 share/help/de/gnome-terminal/app-terminal-sizes.page
 share/help/de/gnome-terminal/app-zoom.page
 share/help/de/gnome-terminal/figures/
+share/help/de/gnome-terminal/figures/gnome-terminal.png
+share/help/de/gnome-terminal/figures/keyboard-key-search.svg
+share/help/de/gnome-terminal/figures/org.gnome.Terminal.svg
 share/help/de/gnome-terminal/gs-execute-commands.page
 share/help/de/gnome-terminal/gs-tabs.page
 share/help/de/gnome-terminal/index.page
@@ -189,6 +201,9 @@ share/help/el/gnome-terminal/app-fullscreen.page
 share/help/el/gnome-terminal/app-terminal-sizes.page
 share/help/el/gnome-terminal/app-zoom.page
 share/help/el/gnome-terminal/figures/
+share/help/el/gnome-terminal/figures/gnome-terminal.png
+share/help/el/gnome-terminal/figures/keyboard-key-search.svg
+share/help/el/gnome-terminal/figures/org.gnome.Terminal.svg
 share/help/el/gnome-terminal/gs-execute-commands.page
 share/help/el/gnome-terminal/gs-tabs.page
 share/help/el/gnome-terminal/index.page
@@ -222,6 +237,9 @@ share/help/es/gnome-terminal/app-fullscreen.page
 share/help/es/gnome-terminal/app-terminal-sizes.page
 share/help/es/gnome-terminal/app-zoom.page
 share/help/es/gnome-terminal/figures/
+share/help/es/gnome-terminal/figures/gnome-terminal.png
+share/help/es/gnome-terminal/figures/keyboard-key-search.svg
+share/help/es/gnome-terminal/figures/org.gnome.Terminal.svg
 share/help/es/gnome-terminal/gs-execute-commands.page
 share/help/es/gnome-terminal/gs-tabs.page
 share/help/es/gnome-terminal/index.page
@@ -246,6 +264,42 @@ share/help/es/gnome-terminal/txt-copy-paste.page
 share/help/es/gnome-terminal/txt-links.page
 share/help/es/gnome-terminal/txt-search.page
 share/help/es/gnome-terminal/txt-select-text.page
+share/help/eu/gnome-terminal/
+share/help/eu/gnome-terminal/adv-keyboard-shortcuts.page
+share/help/eu/gnome-terminal/app-colors.page
+share/help/eu/gnome-terminal/app-cursor.page
+share/help/eu/gnome-terminal/app-fonts.page
+share/help/eu/gnome-terminal/app-fullscreen.page
+share/help/eu/gnome-terminal/app-terminal-sizes.page
+share/help/eu/gnome-terminal/app-zoom.page
+share/help/eu/gnome-terminal/figures/
+share/help/eu/gnome-terminal/figures/gnome-terminal.png
+share/help/eu/gnome-terminal/figures/keyboard-key-search.svg
+share/help/eu/gnome-terminal/figures/org.gnome.Terminal.svg
+share/help/eu/gnome-terminal/gs-execute-commands.page
+share/help/eu/gnome-terminal/gs-tabs.page
+share/help/eu/gnome-terminal/index.page
+share/help/eu/gnome-terminal/introduction.page
+share/help/eu/gnome-terminal/legal.xml
+share/help/eu/gnome-terminal/overview.page
+share/help/eu/gnome-terminal/pref-bell.page
+share/help/eu/gnome-terminal/pref-custom-command.page
+share/help/eu/gnome-terminal/pref-custom-exit.page
+share/help/eu/gnome-terminal/pref-keyboard-access.page
+share/help/eu/gnome-terminal/pref-login-shell.page
+share/help/eu/gnome-terminal/pref-menubar.page
+share/help/eu/gnome-terminal/pref-profile-char-width.page
+share/help/eu/gnome-terminal/pref-profile-encoding.page
+share/help/eu/gnome-terminal/pref-profiles.page
+share/help/eu/gnome-terminal/pref-scrolling.page
+share/help/eu/gnome-terminal/pref-tab-window.page
+share/help/eu/gnome-terminal/pref-user-input.page
+share/help/eu/gnome-terminal/pref.page
+share/help/eu/gnome-terminal/prob-reset.page
+share/help/eu/gnome-terminal/txt-copy-paste.page
+share/help/eu/gnome-terminal/txt-links.page
+share/help/eu/gnome-terminal/txt-search.page
+share/help/eu/gnome-terminal/txt-select-text.page
 share/help/fi/gnome-terminal/
 share/help/fi/gnome-terminal/adv-keyboard-shortcuts.page
 share/help/fi/gnome-terminal/app-colors.page
@@ -255,6 +309,9 @@ share/help/fi/gnome-terminal/app-fullscreen.page
 share/help/fi/gnome-terminal/app-terminal-sizes.page
 share/help/fi/gnome-terminal/app-zoom.page
 share/help/fi/gnome-terminal/figures/
+share/help/fi/gnome-terminal/figures/gnome-terminal.png
+share/help/fi/gnome-terminal/figures/keyboard-key-search.svg
+share/help/fi/gnome-terminal/figures/org.gnome.Terminal.svg
 share/help/fi/gnome-terminal/gs-execute-commands.page
 share/help/fi/gnome-terminal/gs-tabs.page
 share/help/fi/gnome-terminal/index.page
@@ -288,6 +345,9 @@ share/help/fr/gnome-terminal/app-fullscreen.page
 share/help/fr/gnome-terminal/app-terminal-sizes.page
 share/help/fr/gnome-terminal/app-zoom.page
 share/help/fr/gnome-terminal/figures/
+share/help/fr/gnome-terminal/figures/gnome-terminal.png
+share/help/fr/gnome-terminal/figures/keyboard-key-search.svg
+share/help/fr/gnome-terminal/figures/org.gnome.Terminal.svg
 share/help/fr/gnome-terminal/gs-execute-commands.page
 share/help/fr/gnome-terminal/gs-tabs.page
 share/help/fr/gnome-terminal/index.page
@@ -321,6 +381,9 @@ share/help/gl/gnome-terminal/app-fullscreen.page
 share/help/gl/gnome-terminal/app-terminal-sizes.page
 share/help/gl/gnome-terminal/app-zoom.page
 share/help/gl/gnome-terminal/figures/
+share/help/gl/gnome-terminal/figures/gnome-terminal.png
+share/help/gl/gnome-terminal/figures/keyboard-key-search.svg
+share/help/gl/gnome-terminal/figures/org.gnome.Terminal.svg
 share/help/gl/gnome-terminal/gs-execute-commands.page
 share/help/gl/gnome-terminal/gs-tabs.page
 share/help/gl/gnome-terminal/index.page
@@ -354,6 +417,9 @@ share/help/hu/gnome-terminal/app-fullscreen.page
 share/help/hu/gnome-terminal/app-terminal-sizes.page
 share/help/hu/gnome-terminal/app-zoom.page
 share/help/hu/gnome-terminal/figures/
+share/help/hu/gnome-terminal/figures/gnome-terminal.png
+share/help/hu/gnome-terminal/figures/keyboard-key-search.svg
+share/help/hu/gnome-terminal/figures/org.gnome.Terminal.svg
 share/help/hu/gnome-terminal/gs-execute-commands.page
 share/help/hu/gnome-terminal/gs-tabs.page
 share/help/hu/gnome-terminal/index.page
@@ -388,6 +454,9 @@ share/help/id/gnome-terminal/app-fullscreen.page
 share/help/id/gnome-terminal/app-terminal-sizes.page
 share/help/id/gnome-terminal/app-zoom.page
 share/help/id/gnome-terminal/figures/
+share/help/id/gnome-terminal/figures/gnome-terminal.png
+share/help/id/gnome-terminal/figures/keyboard-key-search.svg
+share/help/id/gnome-terminal/figures/org.gnome.Terminal.svg
 share/help/id/gnome-terminal/gs-execute-commands.page
 share/help/id/gnome-terminal/gs-tabs.page
 share/help/id/gnome-terminal/index.page
@@ -421,6 +490,9 @@ share/help/ko/gnome-terminal/app-fullscreen.page
 share/help/ko/gnome-terminal/app-terminal-sizes.page
 share/help/ko/gnome-terminal/app-zoom.page
 share/help/ko/gnome-terminal/figures/
+share/help/ko/gnome-terminal/figures/gnome-terminal.png
+share/help/ko/gnome-terminal/figures/keyboard-key-search.svg
+share/help/ko/gnome-terminal/figures/org.gnome.Terminal.svg
 share/help/ko/gnome-terminal/gs-execute-commands.page
 share/help/ko/gnome-terminal/gs-tabs.page
 share/help/ko/gnome-terminal/index.page
@@ -455,6 +527,9 @@ share/help/pl/gnome-terminal/app-fullscreen.page
 share/help/pl/gnome-terminal/app-terminal-sizes.page
 share/help/pl/gnome-terminal/app-zoom.page
 share/help/pl/gnome-terminal/figures/
+share/help/pl/gnome-terminal/figures/gnome-terminal.png
+share/help/pl/gnome-terminal/figures/keyboard-key-search.svg
+share/help/pl/gnome-terminal/figures/org.gnome.Terminal.svg
 share/help/pl/gnome-terminal/gs-execute-commands.page
 share/help/pl/gnome-terminal/gs-tabs.page
 share/help/pl/gnome-terminal/index.page
@@ -488,6 +563,9 @@ share/help/pt_BR/gnome-terminal/app-fullscreen.page
 share/help/pt_BR/gnome-terminal/app-terminal-sizes.page
 share/help/pt_BR/gnome-terminal/app-zoom.page
 share/help/pt_BR/gnome-terminal/figures/
+share/help/pt_BR/gnome-terminal/figures/gnome-terminal.png
+share/help/pt_BR/gnome-terminal/figures/keyboard-key-search.svg
+share/help/pt_BR/gnome-terminal/figures/org.gnome.Terminal.svg
 share/help/pt_BR/gnome-terminal/gs-execute-commands.page
 share/help/pt_BR/gnome-terminal/gs-tabs.page
 share/help/pt_BR/gnome-terminal/index.page
@@ -522,6 +600,9 @@ share/help/ro/gnome-terminal/app-fullscreen.page
 share/help/ro/gnome-terminal/app-terminal-sizes.page
 share/help/ro/gnome-terminal/app-zoom.page
 share/help/ro/gnome-terminal/figures/
+share/help/ro/gnome-terminal/figures/gnome-terminal.png
+share/help/ro/gnome-terminal/figures/keyboard-key-search.svg
+share/help/ro/gnome-terminal/figures/org.gnome.Terminal.svg
 share/help/ro/gnome-terminal/gs-execute-commands.page
 share/help/ro/gnome-terminal/gs-tabs.page
 share/help/ro/gnome-terminal/index.page
@@ -556,6 +637,9 @@ share/help/ru/gnome-terminal/app-fullscreen.page
 share/help/ru/gnome-terminal/app-terminal-sizes.page
 share/help/ru/gnome-terminal/app-zoom.page
 share/help/ru/gnome-terminal/figures/
+share/help/ru/gnome-terminal/figures/gnome-terminal.png
+share/help/ru/gnome-terminal/figures/keyboard-key-search.svg
+share/help/ru/gnome-terminal/figures/org.gnome.Terminal.svg
 share/help/ru/gnome-terminal/gs-execute-commands.page
 share/help/ru/gnome-terminal/gs-tabs.page
 share/help/ru/gnome-terminal/index.page
@@ -589,6 +673,9 @@ share/help/sv/gnome-terminal/app-fullscreen.page
 share/help/sv/gnome-terminal/app-terminal-sizes.page
 share/help/sv/gnome-terminal/app-zoom.page
 share/help/sv/gnome-terminal/figures/
+share/help/sv/gnome-terminal/figures/gnome-terminal.png
+share/help/sv/gnome-terminal/figures/keyboard-key-search.svg
+share/help/sv/gnome-terminal/figures/org.gnome.Terminal.svg
 share/help/sv/gnome-terminal/gs-execute-commands.page
 share/help/sv/gnome-terminal/gs-tabs.page
 share/help/sv/gnome-terminal/index.page
@@ -622,6 +709,9 @@ share/help/uk/gnome-terminal/app-fullscreen.page
 share/help/uk/gnome-terminal/app-terminal-sizes.page
 share/help/uk/gnome-terminal/app-zoom.page
 share/help/uk/gnome-terminal/figures/
+share/help/uk/gnome-terminal/figures/gnome-terminal.png
+share/help/uk/gnome-terminal/figures/keyboard-key-search.svg
+share/help/uk/gnome-terminal/figures/org.gnome.Terminal.svg
 share/help/uk/gnome-terminal/gs-execute-commands.page
 share/help/uk/gnome-terminal/gs-tabs.page
 share/help/uk/gnome-terminal/index.page
@@ -746,7 +836,7 @@ share/locale/zh_CN/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-terminal.mo
 share/metainfo/org.gnome.Terminal.Nautilus.metainfo.xml
-share/metainfo/org.gnome.Terminal.appdata.xml
+share/metainfo/org.gnome.Terminal.metainfo.xml
 @tag update-desktop-database
 @tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor

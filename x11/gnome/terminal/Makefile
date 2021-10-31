@@ -1,22 +1,15 @@
-# $OpenBSD: Makefile,v 1.179 2021/07/09 09:41:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.180 2021/10/31 13:31:50 jasper Exp $
 
 COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
-GNOME_VERSION=	3.40.3
+GNOME_VERSION=	3.42.1
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 c cairo cairo-gobject
-WANTLIB += dconf epoxy expat ffi fontconfig freetype fribidi gdk-3
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls
-WANTLIB += gobject-2.0 graphite2 gtk-3 harfbuzz hogweed iconv
-WANTLIB += icudata icuuc idn2 intl jpeg m nautilus-extension nettle
-WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pcre2-8 pixman-1 png tasn1 unistring uuid vte-2.91
-WANTLIB += xcb xcb-render xcb-shm z
+WANTLIB += X11 atk-1.0 c dconf gdk-3 gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += gtk-3 intl nautilus-extension pango-1.0 uuid vte-2.91
 WANTLIB += ${COMPILER_LIBCXX}
 
 DEBUG_PACKAGES =${BUILD_PACKAGES}
@@ -24,6 +17,7 @@ DEBUG_PACKAGES =${BUILD_PACKAGES}
 COMPILER =	base-clang ports-gcc base-gcc
 
 MODULES=	devel/dconf \
+		devel/meson \
 		x11/gnome
 
 BUILD_DEPENDS=	devel/gsettings-desktop-schemas \
@@ -37,10 +31,7 @@ LIB_DEPENDS=	devel/vte3>=0.52.2 \
 
 MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache vala yelp
 
-CONFIGURE_STYLE =	gnu
-
 post-install:
-	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.{a,la}
 	rm -r ${PREFIX}/lib/systemd/
 
 .include <bsd.port.mk>

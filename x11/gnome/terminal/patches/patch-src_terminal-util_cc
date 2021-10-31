@@ -1,25 +1,25 @@
-$OpenBSD: patch-src_terminal-util_c,v 1.7 2021/07/09 09:41:48 jasper Exp $
+$OpenBSD: patch-src_terminal-util_cc,v 1.1 2021/10/31 13:31:50 jasper Exp $
 
 Use strcspn(3) instead of non-portable strchrnul(3).
 
-Index: src/terminal-util.c
---- src/terminal-util.c.orig
-+++ src/terminal-util.c
-@@ -1174,7 +1174,7 @@ char *terminal_util_hyperlink_uri_label (const char *u
+Index: src/terminal-util.cc
+--- src/terminal-util.cc.orig
++++ src/terminal-util.cc
+@@ -1176,7 +1176,7 @@ char *terminal_util_hyperlink_uri_label (const char *u
        g_ascii_strncasecmp(unesc, "https://", 8) == 0) {
-     gs_free char *unidn = NULL;
+     gs_free char *unidn = nullptr;
      char *hostname = strchr(unesc, '/') + 2;
 -    char *hostname_end = strchrnul(hostname, '/');
 +    char *hostname_end = hostname + strcspn(hostname, "/");
      char save = *hostname_end;
      *hostname_end = '\0';
      unidn = g_hostname_to_unicode(hostname);
-@@ -1517,7 +1517,7 @@ terminal_util_find_program_in_path (const char *path,
+@@ -1519,7 +1519,7 @@ terminal_util_find_program_in_path (const char *path,
        char *startp;
  
        path = p;
 -      p = strchrnul (path, G_SEARCHPATH_SEPARATOR);
-+      p = path + strcspn(path, G_SEARCHPATH_SEPARATOR);
++      p = path + strcspn (path, G_SEARCHPATH_SEPARATOR_S);
  
        if (p == path)
          /* Two adjacent colons, or a colon at the beginning or the end

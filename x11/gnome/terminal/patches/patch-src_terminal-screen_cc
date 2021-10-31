@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_terminal-screen_cc,v 1.1 2021/10/31 13:31:50 jasper Exp $
+
+https://github.com/freebsd/freebsd-ports/blob/main/x11/gnome-terminal/files/patch-src_terminal-screen.cc
+
+Index: src/terminal-screen.cc
+--- src/terminal-screen.cc.orig
++++ src/terminal-screen.cc
+@@ -2287,7 +2287,7 @@ terminal_screen_has_foreground_process (TerminalScreen
+   if (sysctl (mib, G_N_ELEMENTS (mib), nullptr, &len, nullptr, 0) == -1)
+       return TRUE;
+ 
+-  data_buf = g_malloc0 (len);
++  data_buf = (char *) g_malloc0 (len);
+   if (sysctl (mib, G_N_ELEMENTS (mib), data_buf, &len, nullptr, 0) == -1)
+       return TRUE;
+   data = ((char**)data_buf)[0];

@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_terminal-app_c,v 1.7 2021/07/09 09:41:48 jasper Exp $
+$OpenBSD: patch-src_terminal-app_cc,v 1.1 2021/10/31 13:31:50 jasper Exp $
 
 Use correct modified for num (int) and drop undefined %I
 
-Index: src/terminal-app.c
---- src/terminal-app.c.orig
-+++ src/terminal-app.c
-@@ -442,7 +442,7 @@ menu_append_numbered (GMenu *menu,
+Index: src/terminal-app.cc
+--- src/terminal-app.cc.orig
++++ src/terminal-app.cc
+@@ -444,7 +444,7 @@ menu_append_numbered (GMenu *menu,
    str = g_string_sized_new (strlen (label) + 4 + 1 + 8);
  
    if (num < 10)
