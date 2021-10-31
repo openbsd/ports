@@ -1,0 +1,23 @@
+$OpenBSD: patch-Source_JavaScriptCore_generate-bytecode-files,v 1.1 2021/10/31 18:58:48 sthen Exp $
+
+From 78360c01c796b6260bf828bc9c8a0ef73c5132fd Mon Sep 17 00:00:00 2001
+From: Konstantin Tokarev <annulen@yandex.ru>
+Date: Wed, 3 Jun 2020 15:01:42 +0300
+Subject: [PATCH] Fix compilation with Python 3.9: avoid passing encoding to
+ json.load()
+
+In Python 2.7 UTF-8 is assumed by default, while in Python 3 this argument
+is not supported.
+
+Index: Source/JavaScriptCore/generate-bytecode-files
+--- Source/JavaScriptCore/generate-bytecode-files.orig
++++ Source/JavaScriptCore/generate-bytecode-files
+@@ -163,7 +163,7 @@ if __name__ == "__main__":
+         initBytecodesFile = openOrExit(initASMFileName, "w")
+ 
+     try:
+-        bytecodeSections = json.load(bytecodeFile, encoding = "utf-8")
++        bytecodeSections = json.load(bytecodeFile)
+     except:
+         print("Unexpected error parsing {0}: {1}".format(bytecodeJSONFile, sys.exc_info()))
+ 
