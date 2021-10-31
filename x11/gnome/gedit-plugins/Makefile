@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2021/05/13 09:30:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.116 2021/10/31 08:12:30 ajacoutot Exp $
 
 COMMENT=		plugins for Gedit
 
@@ -38,8 +38,6 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			x11/dbus-python${MODPY_FLAVOR} \
 			x11/gnome/gedit \
 			x11/gnome/gucharmap
-
-CONFIGURE_ARGS =	-Dplugin_zeitgeist=false
 
 # vala needed by findinfile plugin
 MODGNOME_TOOLS +=	vala yelp
