@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/20 04:47:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2021/10/31 17:30:40 tb Exp $
 
 COMMENT = pattern matching swiss knife
 
 DISTNAME = yara-${VERSION}
+REVISION = 0
 
 GH_PROJECT =	yara
 
