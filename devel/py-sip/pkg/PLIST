@@ -1,15 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/02/14 14:24:20 sthen Exp $
-@pkgpath devel/py-sip
+@comment $OpenBSD: PLIST,v 1.14 2021/10/31 17:08:26 sthen Exp $
 @conflict py-qt5-<5.15.2
-@conflict py3-sip-qt5-<=5.5.0p0
+@conflict ${MODPY_PY_PREFIX}sip-qt5-<=5.5.0p0
 @conflict py-sip-*
+@pkgpath devel/py-sip
 bin/sip-build
 bin/sip-distinfo
 bin/sip-install
 bin/sip-module
 bin/sip-sdist
 bin/sip-wheel
-bin/sip5
 lib/python${MODPY_VERSION}/site-packages/sip-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/sip-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/sip-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -36,6 +35,7 @@ lib/python${MODPY_VERSION}/site-packages/sipbuild/${MODPY_PYCACHE}installable.${
 lib/python${MODPY_VERSION}/site-packages/sipbuild/${MODPY_PYCACHE}project.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sipbuild/${MODPY_PYCACHE}py_versions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sipbuild/${MODPY_PYCACHE}pyproject.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sipbuild/${MODPY_PYCACHE}setuptools_builder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sipbuild/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sipbuild/abstract_builder.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/abstract_project.py
@@ -44,7 +44,7 @@ lib/python${MODPY_VERSION}/site-packages/sipbuild/argument_parser.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/bindings.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/buildable.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/builder.py
-@so lib/python${MODPY_VERSION}/site-packages/sipbuild/code_generator.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/sipbuild/code_generator${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/sipbuild/configurable.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/distinfo/
 lib/python${MODPY_VERSION}/site-packages/sipbuild/distinfo/__init__.py
@@ -58,12 +58,6 @@ lib/python${MODPY_VERSION}/site-packages/sipbuild/distutils_builder.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/helpers.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/installable.py
-lib/python${MODPY_VERSION}/site-packages/sipbuild/legacy/
-lib/python${MODPY_VERSION}/site-packages/sipbuild/legacy/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sipbuild/legacy/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/sipbuild/legacy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/sipbuild/legacy/${MODPY_PYCACHE}sip5.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/sipbuild/legacy/sip5.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/module/
 lib/python${MODPY_VERSION}/site-packages/sipbuild/module/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sipbuild/module/${MODPY_PYCACHE}/
@@ -75,51 +69,56 @@ lib/python${MODPY_VERSION}/site-packages/sipbuild/module/abi_version.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/module/main.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/module/module.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.7/
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.7/MANIFEST.in
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.7/README.in
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.7/apiversions.c
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.7/array.c
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.7/array.h
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.7/bool.cpp
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.7/descriptors.c
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.7/int_convertors.c
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.7/objmap.c
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.7/pyproject.toml
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.7/qtlib.c
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.7/setup.cfg.in
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.7/setup.py.in
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.7/sip.h.in
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.7/sip.pyi
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.7/sip.rst.in
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.7/sipint.h
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.7/siplib.c
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.7/threads.c
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.7/voidptr.c
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.8/
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.8/MANIFEST.in
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.8/README.in
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.8/apiversions.c
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.8/array.c
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.8/array.h
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.8/bool.cpp
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.8/descriptors.c
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.8/int_convertors.c
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.8/objmap.c
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.8/pyproject.toml
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.8/qtlib.c
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.8/setup.cfg.in
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.8/setup.py.in
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.8/sip.h.in
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.8/sip.pyi
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.8/sip.rst.in
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.8/sipint.h
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.8/siplib.c
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.8/threads.c
-lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12.8/voidptr.c
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12/
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12/LICENSE
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12/LICENSE-GPL2
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12/LICENSE-GPL3
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12/MANIFEST.in
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12/README.in
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12/apiversions.c
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12/array.c
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12/array.h
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12/bool.cpp
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12/descriptors.c
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12/int_convertors.c
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12/objmap.c
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12/pyproject.toml
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12/qtlib.c
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12/setup.cfg.in
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12/setup.py.in
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12/sip.h.in
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12/sip.pyi
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12/sip.rst.in
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12/sipint.h
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12/siplib.c
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12/threads.c
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/12/voidptr.c
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/13/
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/13/LICENSE
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/13/LICENSE-GPL2
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/13/LICENSE-GPL3
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/13/MANIFEST.in
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/13/README.in
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/13/array.c
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/13/array.h
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/13/bool.cpp
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/13/descriptors.c
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/13/int_convertors.c
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/13/objmap.c
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/13/pyproject.toml
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/13/setup.cfg.in
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/13/setup.py.in
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/13/sip.h.in
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/13/sip.pyi
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/13/sip.rst.in
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/13/sipint.h
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/13/siplib.c
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/13/threads.c
+lib/python${MODPY_VERSION}/site-packages/sipbuild/module/source/13/voidptr.c
 lib/python${MODPY_VERSION}/site-packages/sipbuild/project.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/py_versions.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/pyproject.py
+lib/python${MODPY_VERSION}/site-packages/sipbuild/setuptools_builder.py
 lib/python${MODPY_VERSION}/site-packages/sipbuild/tools/
 lib/python${MODPY_VERSION}/site-packages/sipbuild/tools/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sipbuild/tools/${MODPY_PYCACHE}/
