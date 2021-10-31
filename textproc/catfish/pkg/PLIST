@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2021/01/10 10:41:22 landry Exp $
+@comment $OpenBSD: PLIST,v 1.16 2021/10/31 16:23:17 landry Exp $
 bin/catfish
 lib/python${MODPY_VERSION}/site-packages/catfish/
 lib/python${MODPY_VERSION}/site-packages/catfish-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -58,8 +58,6 @@ share/locale/cs/LC_MESSAGES/catfish.mo
 share/locale/da/LC_MESSAGES/catfish.mo
 share/locale/de/LC_MESSAGES/catfish.mo
 share/locale/el/LC_MESSAGES/catfish.mo
-share/locale/en_AU/
-share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/catfish.mo
 share/locale/eo/LC_MESSAGES/catfish.mo
 share/locale/es/LC_MESSAGES/catfish.mo
@@ -71,15 +69,9 @@ share/locale/gl/LC_MESSAGES/catfish.mo
 share/locale/he/LC_MESSAGES/catfish.mo
 share/locale/hr/LC_MESSAGES/catfish.mo
 share/locale/hu/LC_MESSAGES/catfish.mo
-share/locale/hy_AM/
-share/locale/hy_AM/LC_MESSAGES/
 share/locale/hy_AM/LC_MESSAGES/catfish.mo
-share/locale/hye/
-share/locale/hye/LC_MESSAGES/
 share/locale/hye/LC_MESSAGES/catfish.mo
 share/locale/id/LC_MESSAGES/catfish.mo
-share/locale/ie/
-share/locale/ie/LC_MESSAGES/
 share/locale/ie/LC_MESSAGES/catfish.mo
 share/locale/is/LC_MESSAGES/catfish.mo
 share/locale/it/LC_MESSAGES/catfish.mo
