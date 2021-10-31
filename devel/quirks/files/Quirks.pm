@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1332 2021/10/30 09:59:30 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1333 2021/10/31 16:54:27 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1511,6 +1511,7 @@ setup_obsolete_reason(
 	3 => 'libIDL',
 	3 => 'chemical-mime-data',
 	3 => 'gmfsk',
+	13 => 'gmapcatcher',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

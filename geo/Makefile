@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2021/10/29 08:40:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.80 2021/10/31 16:54:27 sthen Exp $
 
      SUBDIR =
      SUBDIR += foxtrotgps
@@ -10,7 +10,6 @@
      SUBDIR += geos
      SUBDIR += gimgtools
      SUBDIR += globe
-     SUBDIR += gmapcatcher
      SUBDIR += gpsbabel
      SUBDIR += gpstk
      SUBDIR += gpxsee
