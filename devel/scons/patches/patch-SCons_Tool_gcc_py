@@ -1,0 +1,14 @@
+$OpenBSD: patch-SCons_Tool_gcc_py,v 1.3 2021/10/31 17:28:02 sthen Exp $
+
+Index: SCons/Tool/gcc.py
+--- SCons/Tool/gcc.py.orig
++++ SCons/Tool/gcc.py
+@@ -37,7 +37,7 @@ import subprocess
+ 
+ import SCons.Util
+ 
+-compilers = ['gcc', 'cc']
++compilers = ['cc']
+ 
+ 
+ def generate(env):

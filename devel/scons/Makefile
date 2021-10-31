@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.32 2021/03/15 21:06:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2021/10/31 17:28:02 sthen Exp $
 
 COMMENT=	Python-based build system
 
-VERSION=	2.5.1
-REVISION=	1
+VERSION=	4.2.0
 DISTNAME=	scons-${VERSION}
 CATEGORIES=	devel
 
-HOMEPAGE=	http://www.scons.org/
-MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
+HOMEPAGE=	https://www.scons.org/
 
 # MIT
 PERMIT_PACKAGE=	Yes
@@ -16,12 +14,13 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scons/}
 
 MODULES=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+
+MODPY_SETUPTOOLS =      Yes
+
+WRKDIST=	${WRKDIR}/SCons-${VERSION}
 
 NO_TEST=	Yes
 
 SUBST_VARS+=	VERSION
-
-MODPY_ADJ_FILES +=	script/scons script/sconsign script/scons-time
 
 .include <bsd.port.mk>

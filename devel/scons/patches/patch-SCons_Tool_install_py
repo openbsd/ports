@@ -1,0 +1,25 @@
+$OpenBSD: patch-SCons_Tool_install_py,v 1.1 2021/10/31 17:28:02 sthen Exp $
+
+don't install symlinks to shared libraries
+
+Index: SCons/Tool/install.py
+--- SCons/Tool/install.py.orig
++++ SCons/Tool/install.py
+@@ -30,6 +30,7 @@ selection method.
+ 
+ import os
+ import stat
++import sys
+ from shutil import copy2, copystat
+ 
+ import SCons.Action
+@@ -210,6 +211,9 @@ def copyFuncVersionedLib(dest, source, env) -> int:
+     return 0
+ 
+ def listShlibLinksToInstall(dest, source, env):
++    if sys.platform.startswith('openbsd'):
++        return []
++
+     install_links = []
+     source = env.arg2nodes(source)
+     dest = env.fs.File(dest)

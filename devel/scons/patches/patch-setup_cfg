@@ -1,0 +1,14 @@
+$OpenBSD: patch-setup_cfg,v 1.1 2021/10/31 17:28:02 sthen Exp $
+
+Index: setup.cfg
+--- setup.cfg.orig
++++ setup.cfg
+@@ -56,7 +56,7 @@ console_scripts = 
+ scons.tool.docbook = *.*
+ 
+ [options.data_files]
+-. = scons.1
++man/man1 = scons.1
+ 	scons-time.1
+ 	sconsign.1
+ 

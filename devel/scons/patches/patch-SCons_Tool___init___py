@@ -1,0 +1,18 @@
+$OpenBSD: patch-SCons_Tool___init___py,v 1.1 2021/10/31 17:28:02 sthen Exp $
+
+Index: SCons/Tool/__init__.py
+--- SCons/Tool/__init__.py.orig
++++ SCons/Tool/__init__.py
+@@ -763,9 +763,9 @@ def tool_list(platform, env):
+     else:
+         "prefer GNU tools on all other platforms"
+         linkers = ['gnulink', 'ilink']
+-        c_compilers = ['gcc', 'intelc', 'icc', 'cc']
+-        cxx_compilers = ['g++', 'intelc', 'icc', 'cxx']
+-        assemblers = ['gas', 'nasm', 'masm']
++        c_compilers = ['cc']
++        cxx_compilers = ['c++']
++        assemblers = ['as']
+         fortran_compilers = ['gfortran', 'g77', 'ifort', 'ifl', 'f95', 'f90', 'f77']
+         ars = ['ar', ]
+ 

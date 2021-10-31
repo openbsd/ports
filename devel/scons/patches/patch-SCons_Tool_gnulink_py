@@ -1,0 +1,14 @@
+$OpenBSD: patch-SCons_Tool_gnulink_py,v 1.1 2021/10/31 17:28:02 sthen Exp $
+
+Index: SCons/Tool/gnulink.py
+--- SCons/Tool/gnulink.py.orig
++++ SCons/Tool/gnulink.py
+@@ -55,7 +55,7 @@ def generate(env):
+ 
+ def exists(env):
+     # TODO: sync with link.smart_link() to choose a linker
+-    linkers = {'CXX': ['g++'], 'CC': ['gcc']}
++    linkers = {'CXX': ['c++'], 'CC': ['cc']}
+     alltools = []
+     for langvar, linktools in linkers.items():
+         if langvar in env:  # use CC over CXX when user specified CC but not CXX
