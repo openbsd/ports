@@ -1,25 +1,24 @@
-# $OpenBSD: Makefile,v 1.24 2021/10/29 15:38:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2021/10/31 19:35:14 sthen Exp $
 
 COMMENT =	lightweight in-process concurrent programming
-# see slp_platformselect.h
-ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 powerpc powerpc64 riscv64 sparc64
 
-MODPY_EGG_VERSION = 0.4.16
+MODPY_EGG_VERSION = 1.1.2
 DISTNAME =	greenlet-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
 
 CATEGORIES =	devel
 
 # BSD-like
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${MODPY_WANTLIB}
-WANTLIB += pthread
+WANTLIB += ${MODPY_WANTLIB} pthread
 
 MODPY_PI =	Yes
 
 MODULES =	lang/python
+MODPY_SETUPTOOLS = Yes
+MODPY_PYTEST =	Yes
+TEST_ENV =	PY_IGNORE_IMPORTMISMATCH=1
 
 FLAVORS =	python3
 FLAVOR =	python3
@@ -31,8 +30,5 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}greenlet
 	${INSTALL_DATA} ${WRKSRC}/README.rst \
 		${PREFIX}/share/doc/${MODPY_PY_PREFIX}greenlet
-
-do-test:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} ./run-tests.py
 
 .include <bsd.port.mk>
