@@ -1,0 +1,54 @@
+$OpenBSD: patch-piv_c,v 1.1 2021/10/31 17:22:18 tb Exp $
+
+Index: piv.c
+--- piv.c.orig
++++ piv.c
+@@ -4085,10 +4085,9 @@ piv_sign(struct piv_token *tk, struct piv_slot *slot, 
+ 		 * Roll up your sleeves, folks, we're going in (to the dank
+ 		 * and musty corners of OpenSSL where few dare tread)
+ 		 */
+-		X509_SIG digestInfo;
+-		X509_ALGOR algor;
+-		ASN1_TYPE parameter;
+-		ASN1_OCTET_STRING digest;
++		X509_SIG *digestInfo;
++		X509_ALGOR *algor;
++		ASN1_OCTET_STRING *digest;
+ 		uint8_t *tmp, *out;
+ 
+ 		tmp = calloc(1, inplen);
+@@ -4114,16 +4113,17 @@ piv_sign(struct piv_token *tk, struct piv_slot *slot, 
+ 			nid = -1;
+ 		}
+ 		bcopy(buf, tmp, dglen);
+-		digestInfo.algor = &algor;
+-		digestInfo.algor->algorithm = OBJ_nid2obj(nid);
+-		digestInfo.algor->parameter = &parameter;
+-		digestInfo.algor->parameter->type = V_ASN1_NULL;
+-		digestInfo.algor->parameter->value.ptr = NULL;
+-		digestInfo.digest = &digest;
+-		digestInfo.digest->data = tmp;
+-		digestInfo.digest->length = (int)dglen;
+-		nread = i2d_X509_SIG(&digestInfo, &out);
+ 
++		digestInfo = X509_SIG_new();
++		VERIFY(digestInfo != NULL);
++
++		X509_SIG_getm(digestInfo, &algor, &digest);
++
++		VERIFY(X509_ALGOR_set0(algor, OBJ_nid2obj(nid), V_ASN1_NULL, NULL) == 1);
++		VERIFY(ASN1_OCTET_STRING_set(digest, tmp, (int)dglen) == 1);
++
++		nread = i2d_X509_SIG(digestInfo, &out);
++
+ 		/*
+ 		 * There is another undocumented openssl function that does
+ 		 * this padding bit, but eh.
+@@ -4137,6 +4137,7 @@ piv_sign(struct piv_token *tk, struct piv_slot *slot, 
+ 
+ 		free(tmp);
+ 		OPENSSL_free(out);
++		X509_SIG_free(digestInfo);
+ 	}
+ 
+ 	err = piv_sign_prehash(tk, slot, buf, inplen, signature, siglen);

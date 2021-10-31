@@ -1,0 +1,65 @@
+$OpenBSD: patch-pivy-tool_c,v 1.1 2021/10/31 17:22:18 tb Exp $
+
+Index: pivy-tool.c
+--- pivy-tool.c.orig
++++ pivy-tool.c
+@@ -1144,7 +1144,6 @@ selfsign_slot(uint slotid, enum piv_alg alg, struct ss
+ 	char *name;
+ 	enum sshdigest_types wantalg, hashalg;
+ 	int nid;
+-	ASN1_TYPE null_parameter;
+ 	uint8_t *tbs = NULL, *sig, *cdata = NULL;
+ 	size_t tbslen, siglen, cdlen;
+ 	uint flags;
+@@ -1153,6 +1152,10 @@ selfsign_slot(uint slotid, enum piv_alg alg, struct ss
+ 	ASN1_INTEGER *serial_asn1;
+ 	X509_EXTENSION *ext;
+ 	X509V3_CTX x509ctx;
++	X509_ALGOR *sig_alg;
++	X509_ALGOR *tbs_sigalg;
++	ASN1_OBJECT *oid;
++	ASN1_BIT_STRING *signature;
+ 	const char *guidhex;
+ 	const char *myupn = upn;
+ 	const char *mycn = cn;
+@@ -1333,18 +1336,17 @@ selfsign_slot(uint slotid, enum piv_alg alg, struct ss
+ 
+ 	VERIFY(X509_set_pubkey(cert, pkey) == 1);
+ 
+-	cert->sig_alg->algorithm = OBJ_nid2obj(nid);
+-	cert->cert_info->signature->algorithm = cert->sig_alg->algorithm;
+-	if (pub->type == KEY_RSA) {
+-		bzero(&null_parameter, sizeof (null_parameter));
+-		null_parameter.type = V_ASN1_NULL;
+-		null_parameter.value.ptr = NULL;
+-		cert->sig_alg->parameter = &null_parameter;
+-		cert->cert_info->signature->parameter = &null_parameter;
+-	}
++	X509_get0_signature(NULL, (const X509_ALGOR **)&sig_alg, cert);
++	oid = OBJ_nid2obj(nid);
++	VERIFY(oid != NULL);
++	VERIFY(X509_ALGOR_set0(sig_alg, oid,
++	    pub->type == KEY_RSA ? V_ASN1_NULL : V_ASN1_UNDEF, NULL) == 1);
+ 
+-	cert->cert_info->enc.modified = 1;
+-	rv = i2d_X509_CINF(cert->cert_info, &tbs);
++	tbs_sigalg = (X509_ALGOR *)X509_get0_tbs_sigalg(cert);
++	VERIFY(X509_ALGOR_set0(tbs_sigalg, oid,
++	    pub->type == KEY_RSA ? V_ASN1_NULL : V_ASN1_UNDEF, NULL) == 1);
++
++	rv = i2d_re_X509_tbs(cert, &tbs);
+ 	if (tbs == NULL || rv <= 0) {
+ 		make_sslerrf(err, "i2d_X509_CINF", "generating cert");
+ 		err = funcerrf(err, "failed to generate new cert");
+@@ -1373,8 +1375,9 @@ signagain:
+ 		return (err);
+ 	}
+ 
+-	ASN1_STRING_set(cert->signature, sig, siglen);
+-	cert->signature->flags = ASN1_STRING_FLAG_BITS_LEFT;
++	X509_get0_signature((const ASN1_BIT_STRING **)&signature, NULL, cert);
++	ASN1_STRING_set(signature, sig, siglen);
++	signature->flags = ASN1_STRING_FLAG_BITS_LEFT;
+ 
+ 	rv = i2d_X509(cert, &cdata);
+ 	if (cdata == NULL || rv <= 0) {
