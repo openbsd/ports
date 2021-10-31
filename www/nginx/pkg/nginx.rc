@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: nginx.rc,v 1.15 2021/08/28 08:56:12 ajacoutot Exp $
+# $OpenBSD: nginx.rc,v 1.16 2021/10/31 06:45:40 robert Exp $
 
 daemon="${TRUEPREFIX}/sbin/nginx"
 
@@ -11,10 +11,6 @@ pexp="nginx: master process ${daemon}${daemon_flags:+ ${daemon_flags}}"
 rc_reload() {
 	${daemon} ${daemon_flags} -t &&
 		pkill -HUP -T "${daemon_rtable}" -xf "${pexp}"
-}
-
-rc_stop() {
-	pkill -QUIT -T "${daemon_rtable}" -xf "${pexp}"
 }
 
 rc_cmd $1
