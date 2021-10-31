@@ -1,21 +1,20 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:44:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2021/10/31 16:09:26 ajacoutot Exp $
 
 # http://build-failures.rhaalovely.net//alpha/2017-11-19/devel/gtest.log
 BROKEN-alpha =	googletest/test/gtest_unittest.cc:2730: error: unrecognizable insn:
 
 COMMENT =	C++ unit test framework
 
-V=		1.8.0
+V=		1.8.1
 GH_ACCOUNT=	google
 GH_PROJECT=	googletest
 GH_TAGNAME=	release-$V
 PKGNAME =	gtest-$V
-REVISION =	3
 
-SHARED_LIBS +=	gmock		0.0   # .0.0
-SHARED_LIBS +=	gmock_main	0.0   # .0.0
-SHARED_LIBS +=	gtest		1.0   # .0.0
-SHARED_LIBS +=	gtest_main	1.0   # .0.0
+SHARED_LIBS +=	gmock		0.1   # .0.0
+SHARED_LIBS +=	gmock_main	0.1   # .0.0
+SHARED_LIBS +=	gtest		1.1   # .0.0
+SHARED_LIBS +=	gtest_main	1.1   # .0.0
 
 CATEGORIES =	devel
 

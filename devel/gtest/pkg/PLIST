@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/04/23 11:14:47 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/10/31 16:09:26 ajacoutot Exp $
 include/gmock/
 include/gmock/gmock-actions.h
 include/gmock/gmock-cardinalities.h
@@ -17,6 +17,7 @@ include/gmock/gmock-spec-builders.h
 include/gmock/gmock.h
 include/gmock/internal/
 include/gmock/internal/custom/
+include/gmock/internal/custom/README.md
 include/gmock/internal/custom/gmock-generated-actions.h
 include/gmock/internal/custom/gmock-generated-actions.h.pump
 include/gmock/internal/custom/gmock-matchers.h
@@ -39,6 +40,7 @@ include/gtest/gtest_pred_impl.h
 include/gtest/gtest_prod.h
 include/gtest/internal/
 include/gtest/internal/custom/
+include/gtest/internal/custom/README.md
 include/gtest/internal/custom/gtest-port.h
 include/gtest/internal/custom/gtest-printers.h
 include/gtest/internal/custom/gtest.h
@@ -56,7 +58,17 @@ include/gtest/internal/gtest-tuple.h
 include/gtest/internal/gtest-tuple.h.pump
 include/gtest/internal/gtest-type-util.h
 include/gtest/internal/gtest-type-util.h.pump
+lib/cmake/
+lib/cmake/GTest/
+lib/cmake/GTest/GTestConfig.cmake
+lib/cmake/GTest/GTestConfigVersion.cmake
+lib/cmake/GTest/GTestTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/GTest/GTestTargets.cmake
 @lib lib/libgmock.so.${LIBgmock_VERSION}
 @lib lib/libgmock_main.so.${LIBgmock_main_VERSION}
 @lib lib/libgtest.so.${LIBgtest_VERSION}
 @lib lib/libgtest_main.so.${LIBgtest_main_VERSION}
+lib/pkgconfig/gmock.pc
+lib/pkgconfig/gmock_main.pc
+lib/pkgconfig/gtest.pc
+lib/pkgconfig/gtest_main.pc
