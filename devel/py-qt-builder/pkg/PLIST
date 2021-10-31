@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/03/17 08:21:41 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/10/31 17:08:22 sthen Exp $
 bin/pyqt-bundle
 bin/pyqt-qt-wheel
 lib/python${MODPY_VERSION}/site-packages/PyQt_builder-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -67,7 +67,10 @@ lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/${MODPY_PYCACHE}pyqt5.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/${MODPY_PYCACHE}pyqt6.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/${MODPY_PYCACHE}pyqt6_3d.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/${MODPY_PYCACHE}pyqt6_charts.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/${MODPY_PYCACHE}pyqt6_datavisualization.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/${MODPY_PYCACHE}pyqt6_networkauth.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/${MODPY_PYCACHE}pyqt6_webengine.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/${MODPY_PYCACHE}pyqtchart.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/${MODPY_PYCACHE}pyqtdatavisualization.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/${MODPY_PYCACHE}pyqtnetworkauth.${MODPY_PYC_MAGIC_TAG}pyc
@@ -78,7 +81,10 @@ lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/pyqt3d.py
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/pyqt5.py
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/pyqt6.py
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/pyqt6_3d.py
+lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/pyqt6_charts.py
+lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/pyqt6_datavisualization.py
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/pyqt6_networkauth.py
+lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/pyqt6_webengine.py
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/pyqtchart.py
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/pyqtdatavisualization.py
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/pyqtnetworkauth.py
