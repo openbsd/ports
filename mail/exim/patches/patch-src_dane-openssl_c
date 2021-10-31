@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_dane-openssl_c,v 1.1 2021/10/31 17:05:37 tb Exp $
+
+Index: src/dane-openssl.c
+--- src/dane-openssl.c.orig
++++ src/dane-openssl.c
+@@ -22,7 +22,7 @@
+ # error "OpenSSL 1.0.0 or higher required"
+ #endif
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ # define X509_up_ref(x) CRYPTO_add(&((x)->references), 1, CRYPTO_LOCK_X509)
+ #endif
+ 
+@@ -30,6 +30,7 @@
+ #ifdef LIBRESSL_VERSION_NUMBER
+ # if LIBRESSL_VERSION_NUMBER >= 0x2090000fL
+ #  define EXIM_HAVE_ASN1_MACROS
++#  define EXIM_OPAQUE_X509
+ # endif
+ #endif
+ /* OpenSSL */
+@@ -38,6 +39,7 @@
+ # define EXIM_OPAQUE_X509
+ /* Older OpenSSL and all LibreSSL */
+ #else
++# if LIBRESSL_VERSION_NUMBER < 0x3050000fL
+ # define X509_STORE_CTX_get_verify(ctx)		(ctx)->verify
+ # define X509_STORE_CTX_get_verify_cb(ctx)	(ctx)->verify_cb
+ # define X509_STORE_CTX_get0_cert(ctx)		(ctx)->cert
+@@ -52,6 +54,7 @@
+ # define ASN1_STRING_get0_data	ASN1_STRING_data
+ # define X509_getm_notBefore	X509_get_notBefore
+ # define X509_getm_notAfter	X509_get_notAfter
++# endif /* LibreSSL < 3.5.0 */
+ 
+ # define CRYPTO_ONCE_STATIC_INIT 0
+ # define CRYPTO_THREAD_run_once	 run_once
