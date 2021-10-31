@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.python3,v 1.1 2017/09/14 13:00:54 phessler Exp $
-lib/python${MODPY_VERSION}/site-packages/gevent/${MODPY_PYCACHE}_socket3.${MODPY_PYC_MAGIC_TAG}pyc
