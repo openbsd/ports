@@ -1,0 +1,23 @@
+$OpenBSD: patch-lib_pypy__cffi_ssl__cffi_src_openssl_x509_py,v 1.1 2021/10/31 17:16:48 tb Exp $
+
+Index: lib_pypy/_cffi_ssl/_cffi_src/openssl/x509.py
+--- lib_pypy/_cffi_ssl/_cffi_src/openssl/x509.py.orig
++++ lib_pypy/_cffi_ssl/_cffi_src/openssl/x509.py
+@@ -282,7 +282,7 @@ int X509_get_signature_nid(const X509 *x)
+ 
+ /* Added in 1.0.2 but we need it in all versions now due to the great
+    opaquing. */
+-#if CRYPTOGRAPHY_OPENSSL_LESS_THAN_102
++#if CRYPTOGRAPHY_OPENSSL_LESS_THAN_102 && !defined(LIBRESSL_VERSION_NUMBER)
+ /* from x509/x_x509.c */
+ int i2d_re_X509_tbs(X509 *x, unsigned char **pp)
+ {
+@@ -308,7 +308,7 @@ X509_REVOKED *Cryptography_X509_REVOKED_dup(X509_REVOK
+ 
+ /* Added in 1.1.0 but we need it in all versions now due to the great
+    opaquing. */
+-#if CRYPTOGRAPHY_OPENSSL_LESS_THAN_110
++#if CRYPTOGRAPHY_OPENSSL_LESS_THAN_110 && !defined(LIBRESSL_VERSION_NUMBER)
+ int i2d_re_X509_REQ_tbs(X509_REQ *req, unsigned char **pp)
+ {
+     req->req_info->enc.modified = 1;

@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_pypy__cffi_ssl__cffi_src_openssl_fips_py,v 1.1 2021/10/31 17:16:48 tb Exp $
+
+Index: lib_pypy/_cffi_ssl/_cffi_src/openssl/fips.py
+--- lib_pypy/_cffi_ssl/_cffi_src/openssl/fips.py.orig
++++ lib_pypy/_cffi_ssl/_cffi_src/openssl/fips.py
+@@ -20,8 +20,6 @@ int FIPS_mode(void);
+ CUSTOMIZATIONS = """
+ #if CRYPTOGRAPHY_IS_LIBRESSL
+ static const long Cryptography_HAS_FIPS = 0;
+-int (*FIPS_mode_set)(int) = NULL;
+-int (*FIPS_mode)(void) = NULL;
+ #else
+ static const long Cryptography_HAS_FIPS = 1;
+ #endif
