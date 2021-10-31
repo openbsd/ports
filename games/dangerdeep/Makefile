@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/14 00:39:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2021/10/31 17:31:15 sthen Exp $
 
 COMMENT =		WWII German submarine simulator
 
@@ -43,6 +43,9 @@ MODSCONS_FLAGS =	debug=1 \
 			devel=1 \
 			datadir=${TRUEPREFIX}/share/dangerdeep \
 			installbindir=${PREFIX}/bin
+
+pre-patch:
+	2to3 -w ${WRKSRC}/SConstruct
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/SConstruct

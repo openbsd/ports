@@ -1,6 +1,90 @@
-$OpenBSD: patch-SConstruct,v 1.2 2018/01/12 20:13:31 kili Exp $
---- SConstruct.orig	Sat May  8 03:41:20 2010
-+++ SConstruct	Sat Jun  1 11:12:50 2013
+$OpenBSD: patch-SConstruct,v 1.3 2021/10/31 17:31:15 sthen Exp $
+Index: SConstruct
+--- SConstruct.orig
++++ SConstruct
+@@ -79,9 +79,9 @@ elif sys.platform == 'darwin':
+ 	datadir = './data'	# use slashes as separator always. C/C++ want it so.
+ 	build_dir = 'macosx'
+ 	osspecificsrc = Split("""Mac/SDLMain.m""")
+-        if (debug == 1):
+-                env.Append(CCFLAGS = '-g')
+-                env.Append(CPPDEFINES = ['DEBUG'])
++	if (debug == 1):
++		env.Append(CCFLAGS = '-g')
++		env.Append(CPPDEFINES = ['DEBUG'])
+ elif (sys.platform == 'freebsd5') or (sys.platform == 'freebsd6') or (sys.platform == 'freebsd7'):
+ 	print("Compiling for FreeBSD Environment")
+ 	env = Environment(ENV = os.environ)
+@@ -99,43 +99,43 @@ elif (sys.platform == 'freebsd5') or (sys.platform == 
+ 	cpuinfol = cpuinfof.readlines()
+ 	mmxsupported = False
+ 	ssesupported = False
+-        for i in cpuinfol:
++	for i in cpuinfol:
+ 		if i == '1\n':
+ 			mmxsupported = True
+ 			ssesupported = True
+ 		if (usex86sse == 0) and (mmxsupported and ssesupported):
+-                	usex86sse = 1
+-	        if usex86sse >= 1:
++			usex86sse = 1
++		if usex86sse >= 1:
+ 			env.Append(CCFLAGS = '-msse')
+-        	        env.Append(CPPDEFINES = ['USE_SSE'])
+-	                osspecificsrc += []
+-	                print('Using x86 SSE/MMX optimizations.')
++			env.Append(CPPDEFINES = ['USE_SSE'])
++			osspecificsrc += []
++			print('Using x86 SSE/MMX optimizations.')
+ 
+-        env.Replace(CCFLAGS = os.environ['CFLAGS'])
++	env.Replace(CCFLAGS = os.environ['CFLAGS'])
+ 	if (debug == 1):
+ 		env.Append(CCFLAGS = '-g')
+ 		env.Append(CPPDEFINES = ['DEBUG'])
+-        env.Replace(CXXFLAGS = os.environ['CXXFLAGS'] + ' `' + SDL_CONFIG + ' --cflags`')
+-        env.Append(LINKFLAGS = '`' + SDL_CONFIG + ' --libs`')
+-        datadir = '/usr/local/share/dangerdeep'
+-        build_dir = 'freebsd'
++	env.Replace(CXXFLAGS = os.environ['CXXFLAGS'] + ' `' + SDL_CONFIG + ' --cflags`')
++	env.Append(LINKFLAGS = '`' + SDL_CONFIG + ' --libs`')
++	datadir = '/usr/local/share/dangerdeep'
++	build_dir = 'freebsd'
+ 	
+-        if (checkconf == True and os.system('grep glBindProgram ' + X11BASE + '/include/GL/gl*.h > /dev/null') == 0):
+-                gllibdirs = [X11BASE + '/lib/', '/usr/lib/', LOCALBASE + '/lib/']
+-                gllibdir = ''
+-                for i in gllibdirs:
+-                        if (os.system('test -f '+i+'libGL.so') == 0):
+-                                gllibdir = i
+-                                break
+-                if (gllibdir == ''):
+-                        print('ERROR: no libGL.so detected!')
+-                else:
++	if (checkconf == True and os.system('grep glBindProgram ' + X11BASE + '/include/GL/gl*.h > /dev/null') == 0):
++		gllibdirs = [X11BASE + '/lib/', '/usr/lib/', LOCALBASE + '/lib/']
++		gllibdir = ''
++		for i in gllibdirs:
++			if (os.system('test -f '+i+'libGL.so') == 0):
++				gllibdir = i
++				break
++		if (gllibdir == ''):
++			print('ERROR: no libGL.so detected!')
++		else:
+ 			print('Found GL library "'+gllibdir+'libGL.so"')
+-                if (os.system('grep glBindProgram '+gllibdir+'libGL.so > /dev/null') != 0):
+-                        print('GL headers declare glBindProgram, but libGL.so has no such symbol! Ignoring all undefined symbols...')
+-                        # I'm not sure which option will hopefully fix the problem... so i use both...
+-                        env.Append(LINKFLAGS = '--unresolved-symbols=ignore-all')
+-                        env.Append(LINKFLAGS = '-Xlinker --unresolved-symbols -Xlinker ignore-all')
++		if (os.system('grep glBindProgram '+gllibdir+'libGL.so > /dev/null') != 0):
++			print('GL headers declare glBindProgram, but libGL.so has no such symbol! Ignoring all undefined symbols...')
++			# I'm not sure which option will hopefully fix the problem... so i use both...
++			env.Append(LINKFLAGS = '--unresolved-symbols=ignore-all')
++			env.Append(LINKFLAGS = '-Xlinker --unresolved-symbols -Xlinker ignore-all')
+ elif 0 != mingw32:
+ 	print("Compiling for mingw32 Environment")
+ 	env = Environment(ENV = os.environ, tools = ['mingw'])
 @@ -207,8 +207,6 @@ else:
  	# Set libpath for real
  	libpath = [archlib, archlib + '/X11', '/usr/X11R6/lib']
@@ -32,12 +116,12 @@ $OpenBSD: patch-SConstruct,v 1.2 2018/01/12 20:13:31 kili Exp $
  				gllibdir = i
  				break
  		if (gllibdir == ''):
- 			print 'ERROR: no libGL.so detected!'
+ 			print('ERROR: no libGL.so detected!')
  		else:
- 			print 'Found GL library "'+gllibdir+'libGL.so"'
+ 			print('Found GL library "'+gllibdir+'libGL.so"')
 -		if (os.system('grep glBindProgram '+gllibdir+'libGL.so > /dev/null') != 0):
 +		if (os.system('grep glBindProgram '+gllibdir+'libGL.so* > /dev/null') != 0):
- 			print 'GL headers declare glBindProgram, but libGL.so has no such symbol! Ignoring all undefined symbols...'
+ 			print('GL headers declare glBindProgram, but libGL.so has no such symbol! Ignoring all undefined symbols...')
  			# I'm not sure which option will hopefully fix the problem... so i use both...
  			env.Append(LINKFLAGS = '--unresolved-symbols=ignore-all')
 @@ -289,6 +286,12 @@ target_dir = '#build' + os.sep + build_dir
@@ -53,3 +137,12 @@ $OpenBSD: patch-SConstruct,v 1.2 2018/01/12 20:13:31 kili Exp $
  
  ################ configure
  if(checkconf == True):
+@@ -347,7 +350,7 @@ Export('env', 'gfxlibs', 'alllibs', 'installbindir', '
+ 
+ SConscript(source_base_dir + os.sep + 'SConscript', build_dir = target_dir, duplicate = 0)
+ 
+-BuildDir(target_dir, source_base_dir, duplicate=0)
++VariantDir(target_dir, source_base_dir, duplicate=0)
+ 
+ ############### Helper functions
+ def findSVN(basedir):
