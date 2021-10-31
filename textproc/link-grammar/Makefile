@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2021/09/12 20:21:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.64 2021/10/31 15:02:58 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 ONLY_FOR_ARCHS =	${CLANG_ARCHS} ${LLVM_ARCHS}
@@ -7,16 +7,15 @@ COMMENT-main =		syntactic parser of different languages
 COMMENT-java =		Java bindings for link-grammar
 COMMENT-python =	Python bindings for link-grammar
 
-VERSION =		5.9.1
+VERSION =		5.10.2
 DISTNAME =		link-grammar-${VERSION}
 
 PKGNAME-main =		${DISTNAME}
 PKGNAME-java =		link-grammar-java-${VERSION}
 PKGNAME-python =	py3-link-grammar-${VERSION}
-REVISION-main =		0
 
-SHARED_LIBS +=  link-grammar         9.0      # 14.1
-SHARED_LIBS +=  link-grammar-java    7.0      # 14.1
+SHARED_LIBS +=  link-grammar         10.0      # 15.2
+SHARED_LIBS +=  link-grammar-java    8.0       # 15.2
 
 CATEGORIES =		textproc
 
@@ -86,7 +85,8 @@ CONFIGURE_ARGS =	--enable-perl-bindings \
 
 .if ${BUILD_PACKAGES:M-java}
 MODULES +=		java
-MODJAVA_VER =		11
+# sync with devel/apache-ant
+MODJAVA_VER=		1.8+
 BUILD_DEPENDS +=	devel/apache-ant
 .else
 CONFIGURE_ARGS +=	--disable-java-bindings

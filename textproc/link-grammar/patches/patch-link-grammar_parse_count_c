@@ -1,9 +1,9 @@
-$OpenBSD: patch-link-grammar_parse_count_c,v 1.1 2021/09/12 20:21:25 naddy Exp $
+$OpenBSD: patch-link-grammar_parse_count_c,v 1.2 2021/10/31 15:02:58 ajacoutot Exp $
 
 Index: link-grammar/parse/count.c
 --- link-grammar/parse/count.c.orig
 +++ link-grammar/parse/count.c
-@@ -408,7 +408,7 @@ static void table_stat(count_context_t *ctxt)
+@@ -410,7 +410,7 @@ static void table_stat(count_context_t *ctxt)
  				{
  					if (t->null_count != nc) continue;
  

@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.36 2020/03/01 10:26:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.37 2021/10/31 15:02:58 ajacoutot Exp $
 @bin bin/link-parser
 include/link-grammar/
 include/link-grammar/dict-api.h
+include/link-grammar/dict-defines.h
 include/link-grammar/dict-structures.h
 include/link-grammar/link-features.h
 include/link-grammar/link-includes.h
