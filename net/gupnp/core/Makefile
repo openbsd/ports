@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2021/10/26 14:43:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.63 2021/10/31 06:54:02 ajacoutot Exp $
 
 COMMENT=		framework for creating UPnP devices and control points
 
@@ -22,7 +22,5 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 BUILD_DEPENDS +=	textproc/libxslt
 
 LIB_DEPENDS=		net/gssdp>=1.4.0.1
-
-CONFIGURE_ARGS=		-Dcontext-manager=unix
 
 .include <bsd.port.mk>
