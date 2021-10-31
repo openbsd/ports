@@ -1,25 +1,25 @@
-# $OpenBSD: Makefile,v 1.68 2020/08/08 21:54:24 tj Exp $
+# $OpenBSD: Makefile,v 1.69 2021/10/31 20:07:37 ajacoutot Exp $
 
 COMMENT=		tag editor for various audio file formats
 
 GNOME_PROJECT=		easytag
 GNOME_VERSION=		2.4.3
-REVISION=		8
+REVISION=		9
 
 CATEGORIES=		audio
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += FLAC Xtst X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += c cairo cairo-gobject dbus-1 epoxy expat ffi fontconfig
-WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz iconv
-WANTLIB += id3 id3tag intl m ogg opus opusfile pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += speex ${COMPILER_LIBCXX} tag vorbis vorbisfile wavpack xcb xcb-render
-WANTLIB += xcb-shm z fribidi
+WANTLIB += ${COMPILER_LIBCXX} FLAC X11 Xau Xcomposite Xcursor
+WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB += atk-1.0 atk-bridge-2.0 c cairo cairo-gobject crypto
+WANTLIB += epoxy execinfo expat ffi fontconfig freetype fribidi
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += graphite2 gtk-3 harfbuzz iconv id3 id3tag intl jpeg
+WANTLIB += m ogg opus opusfile pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png speex tag vorbis vorbisfile wavpack
+WANTLIB += xcb xcb-render xcb-shm z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
