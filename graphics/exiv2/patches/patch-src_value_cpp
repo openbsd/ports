@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_value_cpp,v 1.11 2021/01/24 18:30:50 ajacoutot Exp $
+$OpenBSD: patch-src_value_cpp,v 1.12 2021/10/31 15:08:00 ajacoutot Exp $
 
 Avoid sprintf warnings when linking with libexiv2.
 
 Index: src/value.cpp
 --- src/value.cpp.orig
 +++ src/value.cpp
-@@ -1030,7 +1030,7 @@ namespace Exiv2 {
+@@ -1031,7 +1031,7 @@ namespace Exiv2 {
          // sprintf wants to add the null terminator, so use oversized buffer
          char temp[9];
  

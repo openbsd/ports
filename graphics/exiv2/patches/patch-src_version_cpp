@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_version_cpp,v 1.9 2021/01/24 18:30:50 ajacoutot Exp $
+$OpenBSD: patch-src_version_cpp,v 1.10 2021/10/31 15:08:00 ajacoutot Exp $
 
 getProcessPath() doesn't work on OpenBSD.
 
 Index: src/version.cpp
 --- src/version.cpp.orig
 +++ src/version.cpp
-@@ -495,7 +495,7 @@ void Exiv2::dumpLibraryInfo(std::ostream& os,const exv
+@@ -498,7 +498,7 @@ void Exiv2::dumpLibraryInfo(std::ostream& os,const exv
      output(os,keys,"version"        , __VERSION__);
      output(os,keys,"date"           , __DATE__   );
      output(os,keys,"time"           , __TIME__   );
