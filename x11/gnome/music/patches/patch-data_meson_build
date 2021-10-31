@@ -1,0 +1,15 @@
+$OpenBSD: patch-data_meson_build,v 1.1 2021/10/31 08:15:19 ajacoutot Exp $
+
+Fix build with meson >= 0.0.60
+
+Index: data/meson.build
+--- data/meson.build.orig
++++ data/meson.build
+@@ -47,7 +47,6 @@ appdata_conf.set('appid', APPLICATION_ID)
+ appdata_conf.set('package_url', PACKAGE_URL)
+ appdata_conf.set('package_url_bug', PACKAGE_URL_BUG)
+ i18n.merge_file(
+-  'appdata',
+   input: configure_file(
+     output: PROJECT_RDNN_NAME + '.appdata.xml.in',
+     input: PROJECT_RDNN_NAME + '.appdata.xml.in.in',
