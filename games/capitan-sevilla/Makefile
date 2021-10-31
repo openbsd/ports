@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:46:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/10/31 10:21:41 ajacoutot Exp $
 
 COMMENT =		platform game set in Seville and in space
 VERSION = 		1.0.3
@@ -6,7 +6,7 @@ DISTNAME =		capitan-sevilla-${VERSION}
 CATEGORIES =		games
 HOMEPAGE =		http://computeremuzone.com/ficha.php?id=754&l=en
 
-REVISION =		4
+REVISION =		5
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
@@ -35,7 +35,7 @@ MAKE_FLAGS =		LDFLAGS="$(LDFLAGS)" DESTDIR="$(DESTDIR)"
 USE_GMAKE =		Yes
 NO_TEST =		Yes
 
-CXXFLAGS =		-O2 -pipe -pthread \
+CXXFLAGS +=		-pthread \
 			-I${X11BASE}/include \
 			-I${X11BASE}/include/freetype2 \
 			-I./include \
