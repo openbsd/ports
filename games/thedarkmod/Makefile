@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/03/12 16:39:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2021/10/31 17:31:43 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 BROKEN-i386 =	Simd_SSE.cpp fails, unknown type name '__m128'
@@ -54,6 +54,8 @@ MODSCONS_FLAGS +=	BUILD="release" \
 			LINKFLAGS="${LDFLAGS}" \
 			NOCURL=1 \
 			LIBC_MALLOC=1
+
+MODSCONS_USE_V2 =	Yes
 
 .if ${MACHINE_ARCH} == "amd64"
 MODSCONS_FLAGS +=	TARGET_ARCH="x64"
