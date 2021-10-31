@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2021/05/21 19:50:36 kmos Exp $
+# $OpenBSD: Makefile,v 1.10 2021/10/31 11:44:52 sthen Exp $
 
 COMMENT =		improved directory iterator and faster os.walk()
 
 MODPY_EGG_VERSION =	1.10.0
 DISTNAME =		scandir-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		sysutils
 
@@ -19,16 +19,12 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-FLAVORS =		python3
-FLAVOR ?=
+# included in core in py3
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_2}
 
 WANTLIB += pthread ${MODPY_WANTLIB}
 
 TEST_DEPENDS +=		${FULLPKGNAME}:${BUILD_PKGPATH}
-
-.if !${FLAVOR:Mpython3}
-TEST_DEPENDS +=		devel/py-unittest2
-.endif
 
 do-test:
 	cd ${WRKSRC}/test && ${SETENV} ${ALL_TEST_ENV} ${MODPY_BIN} run_tests.py

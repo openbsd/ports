@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.620 2021/10/29 16:23:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.621 2021/10/31 11:44:52 sthen Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -294,8 +294,7 @@
      SUBDIR += py-psutil,python3
      SUBDIR += py-pushover,python3
      SUBDIR += py-pynetbox,python3
-     SUBDIR += py-scandir
-     SUBDIR += py-scandir,python3
+     SUBDIR += py-scandir		# not required for py3
      SUBDIR += py-schedule		# unflavoured but uses python3
      SUBDIR += py-statgrab,python3
      SUBDIR += py-threadpoolctl,python3
