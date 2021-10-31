@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_file_analysis_analyzer_x509_X509_h,v 1.3 2021/10/31 17:10:41 tb Exp $
+
+Index: src/file_analysis/analyzer/x509/X509.h
+--- src/file_analysis/analyzer/x509/X509.h.orig
++++ src/file_analysis/analyzer/x509/X509.h
+@@ -9,13 +9,13 @@
+ #include "zeek/file_analysis/analyzer/x509/X509Common.h"
+ #include "zeek/Func.h"
+ 
+-#if ( OPENSSL_VERSION_NUMBER < 0x10002000L ) || defined(LIBRESSL_VERSION_NUMBER)
++#if ( OPENSSL_VERSION_NUMBER < 0x10002000L )
+ 
+ #define X509_get_signature_nid(x) OBJ_obj2nid((x)->sig_alg->algorithm)
+ 
+ #endif
+ 
+-#if ( OPENSSL_VERSION_NUMBER < 0x1010000fL ) || defined(LIBRESSL_VERSION_NUMBER)
++#if ( OPENSSL_VERSION_NUMBER < 0x1010000fL )
+ 
+ #define X509_OBJECT_new()   (X509_OBJECT*)malloc(sizeof(X509_OBJECT))
+ #define X509_OBJECT_free(a) free(a)
