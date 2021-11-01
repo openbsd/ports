@@ -1,4 +1,4 @@
-$OpenBSD: patch-gdb_python_python-config_py,v 1.4 2021/10/22 18:30:36 jca Exp $
+$OpenBSD: patch-gdb_python_python-config_py,v 1.5 2021/11/01 07:45:32 landry Exp $
 Index: gdb/python/python-config.py
 --- gdb/python/python-config.py.orig
 +++ gdb/python/python-config.py
@@ -6,8 +6,8 @@ Index: gdb/python/python-config.py
                      libs.insert(0, '-L' + getvar('LIBPL'))
                  elif os.name == 'nt':
                      libs.insert(0, '-L' + sysconfig.PREFIX + '/libs')
-+            if getvar('LDFLAGS') is not None:
-+                libs.insert(0, getvar('LDFLAGS'))
++            if getvar('CONFIGURE_LDFLAGS') is not None:
++                libs.insert(0, getvar('CONFIGURE_LDFLAGS'))
              if getvar('LINKFORSHARED') is not None:
                  libs.extend(getvar('LINKFORSHARED').split())
          print (to_unix_path(' '.join(libs)))
