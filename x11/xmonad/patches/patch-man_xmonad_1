@@ -1,13 +1,13 @@
-$OpenBSD: patch-man_xmonad_1,v 1.4 2019/09/30 12:41:12 kili Exp $
+$OpenBSD: patch-man_xmonad_1,v 1.5 2021/11/01 03:17:15 gnezdo Exp $
 Index: man/xmonad.1
 --- man/xmonad.1.orig
 +++ man/xmonad.1
-@@ -100,7 +100,7 @@ Launch terminal
- .RE
+@@ -87,7 +87,7 @@ Display detailed version of \f[I]xmonad\f[R]
+ Launch terminal
  .TP
  .B mod\-p
 -Launch dmenu
 +Launch dmenu_run
- .RS
- .RE
  .TP
+ .B mod\-shift\-p
+ Launch gmrun

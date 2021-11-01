@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.59 2021/03/01 04:16:34 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.60 2021/11/01 03:17:15 gnezdo Exp $
 
 COMMENT =		tiling window manager
 
 MODCABAL_STEM =		xmonad
-MODCABAL_VERSION =	0.15
-REVISION =		0
+MODCABAL_VERSION =	0.17.0
 
 PKGNAME =		${DISTNAME}
 CATEGORIES =		x11
@@ -18,25 +17,20 @@ WANTLIB =		X11 Xext Xinerama Xrandr Xss c charset ffi gmp \
 
 MODULES =		devel/cabal
 MODCABAL_MANIFEST = \
-	X11	1.9.2	0	\
-	data-default	0.7.1.1	0	\
-	data-default-class	0.1.2.0	0	\
-	data-default-instances-containers	0.0.1	0	\
-	data-default-instances-dlist	0.0.1	0	\
-	data-default-instances-old-locale	0.0.1	0	\
-	dlist	1.0	0	\
-	extensible-exceptions	0.1.1.4	0	\
-	old-locale	1.0.0.7	2	\
-	utf8-string	1.0.1.1	3	\
+        X11     1.10.2  0       \
+        data-default-class      0.1.2.0 0       \
+        hsc2hs  0.68.7  1       \
 
 LIB_DEPENDS =		converters/libiconv \
 			devel/gmp \
 			devel/libffi
 
+FIX_CRLF_FILES = xmonad.cabal
+
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/xmonad.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${DISTNAME}
-	${INSTALL_DATA} ${WRKSRC}/CONFIG \
+	${INSTALL_DATA} ${WRKSRC}/TUTORIAL.md \
 		${PREFIX}/share/doc/${DISTNAME}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${DISTNAME}
 	${INSTALL_DATA} ${FILESDIR}/xmonad-config.cabal \

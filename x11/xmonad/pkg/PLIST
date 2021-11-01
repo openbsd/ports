@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/03/01 04:16:34 gnezdo Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/11/01 03:17:15 gnezdo Exp $
 @pkgpath x11/xmonad
 @pkgpath x11/xmonad,-lib
 @bin bin/${MODCABAL_STEM}
 @man man/man1/${MODCABAL_STEM}.1
 share/doc/${PKGNAME}/
-share/doc/${PKGNAME}/CONFIG
+share/doc/${PKGNAME}/TUTORIAL.md
 share/examples/${PKGNAME}/
 share/examples/${PKGNAME}/build
 share/examples/${PKGNAME}/${MODCABAL_STEM}-config.cabal
