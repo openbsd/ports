@@ -1,0 +1,31 @@
+$OpenBSD: patch-Modules__ssl_c,v 1.1.1.1 2021/11/01 14:16:09 kmos Exp $
+
+XXX maybe the second hunk can go away now we have auto-init, I'm not sure
+exactly what python's lock protects
+
+Index: Modules/_ssl.c
+--- Modules/_ssl.c.orig
++++ Modules/_ssl.c
+@@ -116,7 +116,8 @@ static void _PySSLFixErrno(void) {
+ /* Include generated data (error codes) */
+ #if (OPENSSL_VERSION_NUMBER >= 0x30000000L)
+ #include "_ssl_data_300.h"
+-#elif (OPENSSL_VERSION_NUMBER >= 0x10101000L) && !defined(LIBRESSL_VERSION_NUMBER)
++#elif (OPENSSL_VERSION_NUMBER >= 0x10101000L) && \
++    (!defined(LIBRESSL_VERSION_NUMBER) || LIBRESSL_VERSION_NUMBER >= 0x2070000fL)
+ #include "_ssl_data_111.h"
+ #else
+ #include "_ssl_data.h"
+@@ -3567,6 +3568,12 @@ set_num_tickets(PySSLContext *self, PyObject *arg, voi
+ PyDoc_STRVAR(PySSLContext_num_tickets_doc,
+ "Control the number of TLSv1.3 session tickets");
+ #endif /* TLS1_3_VERSION */
++
++int
++SSL_CTX_get_security_level(SSL_CTX *ctx)
++{
++    return 1;
++}
+ 
+ static PyObject *
+ get_security_level(PySSLContext *self, void *c)
