@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1335 2021/11/01 08:30:51 landry Exp $
+# $OpenBSD: Quirks.pm,v 1.1336 2021/11/01 16:18:04 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -680,6 +680,7 @@ my $stem_extensions = {
 	'py-yamllint' => 'py3-yamllint',
 	'py-yapf' => 'py3-yapf',
 	'py-sqlalchemy' => 'py3-sqlalchemy',
+	'py-flup' => 'py3-flup',
 };
 
 my $obsolete_reason = {};
@@ -1486,8 +1487,6 @@ setup_obsolete_reason(
 	31 => 'py-yenc',
 	31 => 'py-zsi',
 	8 => 'tilecache',
-	6 => 'py-flup',
-	6 => 'py3-flup',
 	31 => 'py-configparser',
 	31 => 'py-decoratortools',
 	31 => 'py-paste',
