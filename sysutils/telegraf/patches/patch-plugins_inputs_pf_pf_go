@@ -1,9 +1,9 @@
-$OpenBSD: patch-plugins_inputs_pf_pf_go,v 1.1 2019/11/12 22:31:23 rsadowski Exp $
+$OpenBSD: patch-plugins_inputs_pf_pf_go,v 1.2 2021/11/01 12:51:11 landry Exp $
 
 Index: plugins/inputs/pf/pf.go
 --- plugins/inputs/pf/pf.go.orig
 +++ plugins/inputs/pf/pf.go
-@@ -213,9 +213,9 @@ func (pf *PF) buildPfctlCmd() (string, []string, error
+@@ -212,9 +212,9 @@ func (pf *PF) buildPfctlCmd() (string, []string, error
  	args := []string{"-s", "info"}
  	if pf.UseSudo {
  		args = append([]string{cmd}, args...)

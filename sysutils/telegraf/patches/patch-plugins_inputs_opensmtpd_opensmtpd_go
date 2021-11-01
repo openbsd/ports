@@ -1,11 +1,11 @@
-$OpenBSD: patch-plugins_inputs_opensmtpd_opensmtpd_go,v 1.1 2019/11/12 22:31:23 rsadowski Exp $
+$OpenBSD: patch-plugins_inputs_opensmtpd_opensmtpd_go,v 1.2 2021/11/01 12:51:11 landry Exp $
 
 Index: plugins/inputs/opensmtpd/opensmtpd.go
 --- plugins/inputs/opensmtpd/opensmtpd.go.orig
 +++ plugins/inputs/opensmtpd/opensmtpd.go
-@@ -58,7 +58,7 @@ func opensmtpdRunner(cmdName string, Timeout internal.
+@@ -58,7 +58,7 @@ func opensmtpdRunner(cmdName string, timeout config.Du
  
- 	if UseSudo {
+ 	if useSudo {
  		cmdArgs = append([]string{cmdName}, cmdArgs...)
 -		cmd = exec.Command("sudo", cmdArgs...)
 +		cmd = exec.Command("doas", cmdArgs...)

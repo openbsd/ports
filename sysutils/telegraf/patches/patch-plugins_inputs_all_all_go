@@ -1,24 +1,29 @@
-$OpenBSD: patch-plugins_inputs_all_all_go,v 1.1 2020/11/09 18:53:45 rsadowski Exp $
+$OpenBSD: patch-plugins_inputs_all_all_go,v 1.2 2021/11/01 12:51:11 landry Exp $
 
 Remove linux only plugins
+
+modbus removed because of https://github.com/influxdata/telegraf/issues/10034
+nats removed because of https://github.com/influxdata/telegraf/issues/10035
 
 Index: plugins/inputs/all/all.go
 --- plugins/inputs/all/all.go.orig
 +++ plugins/inputs/all/all.go
-@@ -33,12 +33,9 @@ import (
+@@ -39,14 +39,11 @@ import (
  	_ "github.com/influxdata/telegraf/plugins/inputs/disque"
  	_ "github.com/influxdata/telegraf/plugins/inputs/dmcache"
  	_ "github.com/influxdata/telegraf/plugins/inputs/dns_query"
 -	_ "github.com/influxdata/telegraf/plugins/inputs/docker"
 -	_ "github.com/influxdata/telegraf/plugins/inputs/docker_log"
  	_ "github.com/influxdata/telegraf/plugins/inputs/dovecot"
+ 	_ "github.com/influxdata/telegraf/plugins/inputs/dpdk"
  	_ "github.com/influxdata/telegraf/plugins/inputs/ecs"
  	_ "github.com/influxdata/telegraf/plugins/inputs/elasticsearch"
+ 	_ "github.com/influxdata/telegraf/plugins/inputs/elasticsearch_query"
 -	_ "github.com/influxdata/telegraf/plugins/inputs/ethtool"
+ 	_ "github.com/influxdata/telegraf/plugins/inputs/eventhub_consumer"
  	_ "github.com/influxdata/telegraf/plugins/inputs/exec"
- 	_ "github.com/influxdata/telegraf/plugins/inputs/fail2ban"
- 	_ "github.com/influxdata/telegraf/plugins/inputs/fibaro"
-@@ -62,7 +59,6 @@ import (
+ 	_ "github.com/influxdata/telegraf/plugins/inputs/execd"
+@@ -78,7 +75,6 @@ import (
  	_ "github.com/influxdata/telegraf/plugins/inputs/interrupts"
  	_ "github.com/influxdata/telegraf/plugins/inputs/ipmi_sensor"
  	_ "github.com/influxdata/telegraf/plugins/inputs/ipset"
@@ -26,7 +31,7 @@ Index: plugins/inputs/all/all.go
  	_ "github.com/influxdata/telegraf/plugins/inputs/ipvs"
  	_ "github.com/influxdata/telegraf/plugins/inputs/jenkins"
  	_ "github.com/influxdata/telegraf/plugins/inputs/jolokia"
-@@ -71,14 +67,11 @@ import (
+@@ -87,8 +83,6 @@ import (
  	_ "github.com/influxdata/telegraf/plugins/inputs/kafka_consumer"
  	_ "github.com/influxdata/telegraf/plugins/inputs/kafka_consumer_legacy"
  	_ "github.com/influxdata/telegraf/plugins/inputs/kapacitor"
@@ -34,22 +39,39 @@ Index: plugins/inputs/all/all.go
 -	_ "github.com/influxdata/telegraf/plugins/inputs/kernel_vmstat"
  	_ "github.com/influxdata/telegraf/plugins/inputs/kibana"
  	_ "github.com/influxdata/telegraf/plugins/inputs/kinesis_consumer"
- 	_ "github.com/influxdata/telegraf/plugins/inputs/kube_inventory"
+ 	_ "github.com/influxdata/telegraf/plugins/inputs/knx_listener"
+@@ -96,7 +90,6 @@ import (
  	_ "github.com/influxdata/telegraf/plugins/inputs/kubernetes"
+ 	_ "github.com/influxdata/telegraf/plugins/inputs/lanz"
  	_ "github.com/influxdata/telegraf/plugins/inputs/leofs"
 -	_ "github.com/influxdata/telegraf/plugins/inputs/linux_sysctl_fs"
  	_ "github.com/influxdata/telegraf/plugins/inputs/logparser"
  	_ "github.com/influxdata/telegraf/plugins/inputs/logstash"
  	_ "github.com/influxdata/telegraf/plugins/inputs/lustre2"
-@@ -105,7 +98,6 @@ import (
- 	_ "github.com/influxdata/telegraf/plugins/inputs/nginx_vts"
+@@ -108,14 +101,11 @@ import (
+ 	_ "github.com/influxdata/telegraf/plugins/inputs/memcached"
+ 	_ "github.com/influxdata/telegraf/plugins/inputs/mesos"
+ 	_ "github.com/influxdata/telegraf/plugins/inputs/minecraft"
+-	_ "github.com/influxdata/telegraf/plugins/inputs/modbus"
+ 	_ "github.com/influxdata/telegraf/plugins/inputs/mongodb"
+ 	_ "github.com/influxdata/telegraf/plugins/inputs/monit"
+ 	_ "github.com/influxdata/telegraf/plugins/inputs/mqtt_consumer"
+ 	_ "github.com/influxdata/telegraf/plugins/inputs/multifile"
+ 	_ "github.com/influxdata/telegraf/plugins/inputs/mysql"
+-	_ "github.com/influxdata/telegraf/plugins/inputs/nats"
+-	_ "github.com/influxdata/telegraf/plugins/inputs/nats_consumer"
+ 	_ "github.com/influxdata/telegraf/plugins/inputs/neptune_apex"
+ 	_ "github.com/influxdata/telegraf/plugins/inputs/net"
+ 	_ "github.com/influxdata/telegraf/plugins/inputs/net_response"
+@@ -129,7 +119,6 @@ import (
+ 	_ "github.com/influxdata/telegraf/plugins/inputs/nsd"
  	_ "github.com/influxdata/telegraf/plugins/inputs/nsq"
  	_ "github.com/influxdata/telegraf/plugins/inputs/nsq_consumer"
 -	_ "github.com/influxdata/telegraf/plugins/inputs/nstat"
  	_ "github.com/influxdata/telegraf/plugins/inputs/ntpq"
  	_ "github.com/influxdata/telegraf/plugins/inputs/nvidia_smi"
- 	_ "github.com/influxdata/telegraf/plugins/inputs/openldap"
-@@ -148,7 +140,6 @@ import (
+ 	_ "github.com/influxdata/telegraf/plugins/inputs/opcua"
+@@ -181,7 +170,6 @@ import (
  	_ "github.com/influxdata/telegraf/plugins/inputs/syslog"
  	_ "github.com/influxdata/telegraf/plugins/inputs/sysstat"
  	_ "github.com/influxdata/telegraf/plugins/inputs/system"
@@ -57,10 +79,10 @@ Index: plugins/inputs/all/all.go
  	_ "github.com/influxdata/telegraf/plugins/inputs/tail"
  	_ "github.com/influxdata/telegraf/plugins/inputs/tcp_listener"
  	_ "github.com/influxdata/telegraf/plugins/inputs/teamspeak"
-@@ -165,7 +156,6 @@ import (
- 	_ "github.com/influxdata/telegraf/plugins/inputs/webhooks"
+@@ -200,7 +188,6 @@ import (
  	_ "github.com/influxdata/telegraf/plugins/inputs/win_perf_counters"
  	_ "github.com/influxdata/telegraf/plugins/inputs/win_services"
+ 	_ "github.com/influxdata/telegraf/plugins/inputs/wireguard"
 -	_ "github.com/influxdata/telegraf/plugins/inputs/wireless"
  	_ "github.com/influxdata/telegraf/plugins/inputs/x509_cert"
  	_ "github.com/influxdata/telegraf/plugins/inputs/zfs"
