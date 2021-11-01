@@ -1,6 +1,4 @@
-# $OpenBSD: modules.inc,v 1.1 2021/11/01 12:51:11 landry Exp $
-
-MODGO_VERSION =	v1.20.3
+# $OpenBSD: modules.inc,v 1.2 2021/11/01 12:57:07 ajacoutot Exp $
 
 MODGO_MODULES =	\
 	4d63.com/gochecknoglobals						 v0.0.0-20201008074935-acfc0b28355a \
@@ -2529,4 +2527,3 @@ MODGO_MODFILES =	\
 	sigs.k8s.io/structured-merge-diff/v4					 v4.0.3 \
 	sigs.k8s.io/structured-merge-diff/v4					 v4.1.0 \
 	sigs.k8s.io/yaml							 v1.1.0
-
