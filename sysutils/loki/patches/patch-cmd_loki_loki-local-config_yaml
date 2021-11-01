@@ -1,9 +1,9 @@
-$OpenBSD: patch-cmd_loki_loki-local-config_yaml,v 1.2 2021/03/07 17:54:50 landry Exp $
+$OpenBSD: patch-cmd_loki_loki-local-config_yaml,v 1.3 2021/11/01 12:46:31 landry Exp $
 
 Index: cmd/loki/loki-local-config.yaml
 --- cmd/loki/loki-local-config.yaml.orig
 +++ cmd/loki/loki-local-config.yaml
-@@ -29,15 +29,15 @@ schema_config:
+@@ -33,15 +33,15 @@ schema_config:
  
  storage_config:
    boltdb_shipper:

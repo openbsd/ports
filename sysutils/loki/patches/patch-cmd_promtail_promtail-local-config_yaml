@@ -1,8 +1,8 @@
-$OpenBSD: patch-cmd_promtail_promtail-local-config_yaml,v 1.1.1.1 2020/03/07 10:12:55 sthen Exp $
+$OpenBSD: patch-cmd_promtail_promtail-local-config_yaml,v 1.2 2021/11/01 12:46:31 landry Exp $
 
-Index: cmd/promtail/promtail-local-config.yaml
---- cmd/promtail/promtail-local-config.yaml.orig
-+++ cmd/promtail/promtail-local-config.yaml
+Index: clients/cmd/promtail/promtail-local-config.yaml
+--- clients/cmd/promtail/promtail-local-config.yaml.orig
++++ clients/cmd/promtail/promtail-local-config.yaml
 @@ -3,16 +3,16 @@ server:
    grpc_listen_port: 0
  
