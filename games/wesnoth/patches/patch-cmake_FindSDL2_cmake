@@ -1,4 +1,4 @@
-$OpenBSD: patch-cmake_FindSDL2_cmake,v 1.1 2018/09/02 21:13:35 kirby Exp $
+$OpenBSD: patch-cmake_FindSDL2_cmake,v 1.2 2021/11/01 20:39:39 kirby Exp $
 
 Index: cmake/FindSDL2.cmake
 --- cmake/FindSDL2.cmake.orig
@@ -7,7 +7,7 @@ Index: cmake/FindSDL2.cmake
      # seem to provide SDLmain for compatibility even though they don't
      # necessarily need it.
      find_library(SDL2MAIN_LIBRARY
--      NAMES SDLmain SDLmain-1.1
+-      NAMES SDL2main SDLmain SDLmain-1.1
 +      NAMES SDL2main
        HINTS
          ENV SDL2DIR

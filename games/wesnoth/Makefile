@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.91 2021/09/19 05:24:30 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.92 2021/11/01 20:39:39 kirby Exp $
 
 PORTROACH = 	limitw:1,even
 
 BROKEN-hppa =	missing atomic ops
 COMMENT=	fantasy turn-based strategy game
 
-DISTNAME=	wesnoth-1.14.17
-REVISION=	0
+DISTNAME=	wesnoth-1.16.0
 
 CATEGORIES=	games x11
 
@@ -20,24 +19,24 @@ EXTRACT_SUFX=	.tar.bz2
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ICE SDL2 SDL2_image SDL2_mixer SDL2_ttf SM X11 Xext
+WANTLIB += SDL2 SDL2_image SDL2_mixer
+WANTLIB += boost_atomic-mt boost_chrono-mt boost_context-mt
+WANTLIB += boost_coroutine-mt boost_date_time-mt
 WANTLIB += boost_filesystem-mt boost_iostreams-mt boost_locale-mt
 WANTLIB += boost_program_options-mt boost_random-mt boost_regex-mt
 WANTLIB += boost_system-mt boost_thread-mt c cairo crypto dbus-1
-WANTLIB += fontconfig freetype fribidi glib-2.0 gobject-2.0
-WANTLIB += harfbuzz intl m pango-1.0 pangocairo-1.0 vorbisfile z
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += fontconfig freetype glib-2.0 gobject-2.0
+WANTLIB += harfbuzz icudata icui18n icuuc intl m pango-1.0
+WANTLIB += pangocairo-1.0 ssl vorbisfile z ${COMPILER_LIBCXX}
 
 MODULES=	devel/cmake
-# c++11
+# c++17
 COMPILER = 	base-clang ports-gcc
 
 BUILD_DEPENDS=	devel/gettext,-tools
-LIB_DEPENDS=	devel/boost \
+LIB_DEPENDS=	devel/boost,-md \
 		devel/sdl2-image \
 		devel/sdl2-mixer \
-		devel/sdl2-ttf \
-		devel/fribidi \
 		devel/pango \
 		x11/dbus
 

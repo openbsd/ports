@@ -1,14 +1,14 @@
-$OpenBSD: patch-src_gui_dialogs_loading_screen_cpp,v 1.1 2018/08/26 12:24:50 kirby Exp $
+$OpenBSD: patch-src_gui_dialogs_loading_screen_cpp,v 1.2 2021/11/01 20:39:39 kirby Exp $
 
 Index: src/gui/dialogs/loading_screen.cpp
 --- src/gui/dialogs/loading_screen.cpp.orig
 +++ src/gui/dialogs/loading_screen.cpp
-@@ -202,7 +202,7 @@ loading_screen::~loading_screen()
- #if defined(_MSC_VER) && _MSC_VER <= 1800
- 		HANDLE process = GetCurrentProcess();
- 		TerminateProcess(process, 0u);
--#elif defined(_LIBCPP_VERSION) || defined(__MINGW32__)
-+#elif defined(_LIBCPP_VERSION) || defined(__MINGW32__) || defined(__OpenBSD__)
+@@ -179,7 +179,7 @@ loading_screen::~loading_screen()
+ 	 * the window).
+ 	 */
+ 	if(worker_result_.valid()) {
+-#if defined(_LIBCPP_VERSION) || defined(__MINGW32__)
++#if defined(_LIBCPP_VERSION) || defined(__MINGW32__) || defined(__OpenBSD__)
  		std::_Exit(0);
  #else
  		std::quick_exit(0);

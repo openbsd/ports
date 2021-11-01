@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_clipboard_cpp,v 1.6 2020/04/07 14:26:38 kirby Exp $
+$OpenBSD: patch-src_clipboard_cpp,v 1.7 2021/11/01 20:39:39 kirby Exp $
 Index: src/desktop/clipboard.cpp
 --- src/desktop/clipboard.cpp.orig
 +++ src/desktop/clipboard.cpp
-@@ -16,6 +16,7 @@
+@@ -15,6 +15,7 @@
  
  #include "desktop/clipboard.hpp"
  #include "serialization/unicode.hpp"
