@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.262 2021/09/06 08:20:20 landry Exp $
+# $OpenBSD: Makefile,v 1.263 2021/11/01 08:22:14 semarie Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
+
+BROKEN =	broken after lang/rust update 1.56.0
 
 # version = (TB version - 3) / 100 + 2
 MOZILLA_VERSION =	2.53.9
