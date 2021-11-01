@@ -1,3 +1,5 @@
+# $OpenBSD: modules.inc,v 1.2 2021/11/01 13:00:14 ajacoutot Exp $
+
 MODGO_MODFILES =	\
 	github.com/alecthomas/template				 v0.0.0-20160405071501-a0175ee3bccc \
 	github.com/alecthomas/units				 v0.0.0-20151022065526-2efee857e7cf \
@@ -184,4 +186,3 @@ MODGO_MODULES =	\
 	maunium.net/go/mauflag					 v1.0.0 \
 	maunium.net/go/maulogger/v2				 v2.2.4 \
 	maunium.net/go/mautrix					 v0.9.13
-

@@ -1,4 +1,4 @@
-MODGO_VERSION =	v0.19.0
+# $OpenBSD: modules.inc,v 1.2 2021/11/01 13:00:14 ajacoutot Exp $
 
 MODGO_MODULES =	\
 	cloud.google.com/go						 v0.34.0 \
@@ -413,4 +413,3 @@ MODGO_MODFILES =	\
 	honnef.co/go/tools					 v0.0.0-20180728063816-88497007e858 \
 	honnef.co/go/tools					 v0.0.0-20190102054323-c2f93a96b099 \
 	honnef.co/go/tools					 v0.0.0-20190523083050-ea95bdfd59fc
-

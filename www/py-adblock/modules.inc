@@ -1,3 +1,5 @@
+# $OpenBSD: modules.inc,v 1.2 2021/11/01 13:00:14 ajacoutot Exp $
+
 MODCARGO_CRATES +=	adblock	0.3.13	# MPL-2.0
 MODCARGO_CRATES +=	addr	0.14.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	adler	1.0.2	# 0BSD OR MIT OR Apache-2.0

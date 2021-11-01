@@ -1,3 +1,5 @@
+# $OpenBSD: modules.inc,v 1.2 2021/11/01 13:00:14 ajacoutot Exp $
+
 MODGO_MODULES =	\
 	bazil.org/fuse							 v0.0.0-20200117225306-7b5117fecadc \
 	cloud.google.com/go						 v0.53.0 \
@@ -1413,4 +1415,3 @@ MODGO_MODFILES =	\
 	honnef.co/go/tools					 v0.0.0-20190106161140-3f1c8253044a \
 	honnef.co/go/tools					 v0.0.0-20190418001031-e561f6794a2a \
 	honnef.co/go/tools					 v0.0.0-20190523083050-ea95bdfd59fc
-
