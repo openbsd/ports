@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/01 10:15:08 bentley Exp $
+share/apertium/apertium-isl/
+share/apertium/apertium-isl/isl.autogen.att.gz
+share/apertium/apertium-isl/isl.autogen.bin
+share/apertium/apertium-isl/isl.automorf.att.gz
+share/apertium/apertium-isl/isl.automorf.bin
+share/apertium/apertium-isl/isl.autopgen.bin
+share/apertium/apertium-isl/isl.prob
+share/apertium/apertium-isl/isl.rlx.bin
+share/apertium/modes/isl-disam.mode
+share/apertium/modes/isl-gener.mode
+share/apertium/modes/isl-morph.mode
+share/pkgconfig/apertium-isl.pc
