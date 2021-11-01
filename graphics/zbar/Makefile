@@ -1,10 +1,10 @@
-#	$OpenBSD: Makefile,v 1.30 2021/02/23 19:39:27 sthen Exp $
+#	$OpenBSD: Makefile,v 1.31 2021/11/01 14:47:42 sthen Exp $
 
 COMMENT=	ZBar barcode reader
 
 GH_ACCOUNT=	mchehab
 GH_PROJECT=	zbar
-GH_TAGNAME=	0.23.1
+GH_TAGNAME=	0.23.90
 
 SHARED_LIBS=	zbar	0.1 \
 		zbargtk	0.1
@@ -22,15 +22,16 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE MagickCore-6.Q16 MagickWand-6.Q16
-WANTLIB += SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender Xt Xv atk-1.0 atk-bridge-2.0 bz2 c cairo
-WANTLIB += cairo-gobject djvulibre epoxy expat ffi fftw3
-WANTLIB += fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gtk-3 harfbuzz
-WANTLIB += iconv intl jasper jbig jpeg lcms2 lzma m openjp2 pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png raw_r
-WANTLIB += tiff webp webpdemux webpmux xcb xcb-render xcb-shm
-WANTLIB += xml2 z zstd
+WANTLIB += SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xt Xv aom atk-1.0 atk-bridge-2.0
+WANTLIB += bz2 c cairo cairo-gobject dav1d de265 djvulibre epoxy
+WANTLIB += execinfo expat ffi fontconfig freetype fribidi gdk-3
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += graphite2 gtk-3 harfbuzz heif iconv intl jasper jbig
+WANTLIB += jpeg lcms2 lzma m openjp2 pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png raw_r tiff util webp
+WANTLIB += webpdemux webpmux x265 xcb xcb-render xcb-shm xml2
+WANTLIB += z zstd
 
 MODULES=	lang/python
 
@@ -46,5 +47,15 @@ CONFIGURE_ARGS+=	--with-gtk=gtk3 \
 			--without-qt \
 			--without-dbus
 USE_GMAKE=		Yes
+# upstream ships pregenerated manuals, but doesn't install them unless
+# xmlto is detected. this avoids having to depend on xmlto at build time.
+CONFIGURE_ENV=		XMLTO=true
+
+TEST_DEPENDS=	devel/argp-standalone \
+		sysutils/coreutils
+TEST_FLAGS=	LIBS="-largp -lpthread"
+
+pre-test:
+	ln -fs ${LOCALBASE}/bin/gsha1sum ${WRKDIR}/bin/sha1sum
 
 .include <bsd.port.mk>

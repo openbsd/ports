@@ -1,16 +1,16 @@
-$OpenBSD: patch-configure,v 1.1 2020/11/03 23:18:10 jca Exp $
+$OpenBSD: patch-configure,v 1.2 2021/11/01 14:47:43 sthen Exp $
 
 Zap bash construct.
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -25064,7 +25064,7 @@ else
+@@ -25265,7 +25265,7 @@ else
  fi
  
  
 -JAVAC=${JAVAC/ecj/ecj -1.5}
 +#JAVAC=${JAVAC/ecj/ecj -1.5}
  
- # Javah was obsoleted on Java 8 and removed on Java 11. So, we need to
- # look strictly at the $JAVA_HOME in order to avoid mixing different versions
+ if test -z "$JAVAH"; then :
+   for ac_prog in javah

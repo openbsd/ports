@@ -1,0 +1,11 @@
+$OpenBSD: patch-test_test_examples_sh_in,v 1.1 2021/11/01 14:47:43 sthen Exp $
+
+Index: test/test_examples.sh.in
+--- test/test_examples.sh.in.orig
++++ test/test_examples.sh.in
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/ksh
+ 
+ unset ERR
+ 
