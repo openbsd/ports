@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.437 2021/10/29 16:23:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.438 2021/11/01 08:28:21 landry Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -154,6 +154,7 @@
      SUBDIR += postgresql_autodoc
      SUBDIR += pspg
      SUBDIR += puppetdb5
+     SUBDIR += py-alembic,python3
      SUBDIR += py-apsw,python3
      SUBDIR += py-bsddb3,python3
      SUBDIR += py-carbon,python3
@@ -177,9 +178,7 @@
      SUBDIR += py-pymysql,python3
      SUBDIR += py-redis,python3
      SUBDIR += py-sql,python3
-     SUBDIR += py-sqlalchemy
      SUBDIR += py-sqlalchemy,python3
-     SUBDIR += py-sqlalchemy-migrate,python3
      SUBDIR += py-sqlite2
      SUBDIR += py-sqlobject,python3
      SUBDIR += py-sqlparse,python3
