@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2021/02/23 19:39:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.93 2021/11/01 10:19:49 sthen Exp $
 
 COMMENT=		HTML editor for experienced web designers
 
@@ -17,7 +17,7 @@ WANTLIB += c cairo cairo-gobject enchant-2 epoxy expat ffi fontconfig
 WANTLIB += freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
 WANTLIB += gucharmap_2_90 harfbuzz iconv intl lzma m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png python3.8
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png ${MODPY_WANTLIB}
 WANTLIB += util xcb xcb-render xcb-shm xml2 z
 
 MASTER_SITES=		https://www.bennewitz.com/bluefish/stable/source/
