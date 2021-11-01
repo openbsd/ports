@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.135 2021/11/01 16:56:24 sthen Exp $
+# $OpenBSD: python.port.mk,v 1.136 2021/11/01 17:16:23 sthen Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -11,16 +11,21 @@ MODPY_DEFAULT_VERSION_3 = 3.8
 
 # If switching to a new MODPY_DEFAULT_VERSION_3, say 3.x to 3.y:
 # - Move PY_DEFAULTONLY from 3.x/Makefile to 3.y/Makefile
-# - In the new version, @conflict on the old REVISION of the old version
-#   (3.6.8p1 was "default py3 is py3.6", 3.6.8p2 was after the switch to "default
-#   is py3.7", so the 3.7 ports had @conflict python-subpkg-<3.6.8p2)
+# - In 3.x/Makefile and 3.y/Makefile, bump REVISION for -main and -idle
+#   (i.e. those PLISTs with "PY_DEFAULTONLY" lines)
+# - In 3.y/PLIST-main and 3.y/PLIST-idle add a @conflict on the old REVISION
+#   of the old version. For example, for the 3.6->3.7 default switch,
+#   previously these both had 3.6.8p1, afterwards they had 3.6.8p2, so the
+#   @conflict for the 3.7 ports was @conflict python-subpkg-<3.6.8p2
+#   (Bear in mind that the subpackages might have different REVISIONs)
 # - Keep xenocara/share/mk/bsd.xorg.mk PYTHON_VERSION in sync
 
 # If later *removing* an old version:
-# - *move* the numbered @conflict python-*->=3.2,<3.7 to the new version
-#   and update e.g. to  @conflict python-*->=3.2,<3.8
+# - *move* the numbered @conflict python-*->=3.2,<3.x to the new version
+#   and update e.g. to  @conflict python-*->=3.2,<3.y
 # - *move* the @pkgpath markers to the new version and add a new one for
 #   the old version you have just retired.
+# - bump revision for any plists that have changed
 
 # In all cases:
 # - keep the @conflict python-*-${VERSION_SPEC} PLIST lines as-is, they are
