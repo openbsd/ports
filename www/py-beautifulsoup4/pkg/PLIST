@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/04/07 11:43:13 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/11/01 09:54:49 sthen Exp $
 @pkgpath www/py-beautifulsoup4
 lib/python${MODPY_VERSION}/site-packages/beautifulsoup4-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/beautifulsoup4-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -30,21 +30,3 @@ lib/python${MODPY_VERSION}/site-packages/bs4/diagnose.py
 lib/python${MODPY_VERSION}/site-packages/bs4/element.py
 lib/python${MODPY_VERSION}/site-packages/bs4/formatter.py
 lib/python${MODPY_VERSION}/site-packages/bs4/testing.py
-lib/python${MODPY_VERSION}/site-packages/bs4/tests/
-lib/python${MODPY_VERSION}/site-packages/bs4/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bs4/tests/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/bs4/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/bs4/tests/${MODPY_PYCACHE}test_builder_registry.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/bs4/tests/${MODPY_PYCACHE}test_docs.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/bs4/tests/${MODPY_PYCACHE}test_html5lib.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/bs4/tests/${MODPY_PYCACHE}test_htmlparser.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/bs4/tests/${MODPY_PYCACHE}test_lxml.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/bs4/tests/${MODPY_PYCACHE}test_soup.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/bs4/tests/${MODPY_PYCACHE}test_tree.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/bs4/tests/test_builder_registry.py
-lib/python${MODPY_VERSION}/site-packages/bs4/tests/test_docs.py
-lib/python${MODPY_VERSION}/site-packages/bs4/tests/test_html5lib.py
-lib/python${MODPY_VERSION}/site-packages/bs4/tests/test_htmlparser.py
-lib/python${MODPY_VERSION}/site-packages/bs4/tests/test_lxml.py
-lib/python${MODPY_VERSION}/site-packages/bs4/tests/test_soup.py
-lib/python${MODPY_VERSION}/site-packages/bs4/tests/test_tree.py

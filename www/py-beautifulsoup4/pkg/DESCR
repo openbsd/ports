@@ -1,6 +1,26 @@
-Beautiful Soup is a Python library for pulling data out
-of HTML and XML files. It works with your favorite parser
-to provide idiomatic ways of navigating, searching, and
-modifying the parse tree.  Beautiful Soup 3 is no longer
-being developed, and Beautiful Soup 4 is recommended for
-all new projects.
+Beautiful Soup is a Python library designed for quick turnaround projects
+like screen-scraping from web pages. Three features make it powerful:
+
+Beautiful Soup provides a few simple methods and Pythonic idioms for
+navigating, searching, and modifying a parse tree: a toolkit for
+dissecting a document and extracting what you need. It doesn't take much
+code to write an application.
+
+Beautiful Soup automatically converts incoming documents to Unicode and
+outgoing documents to UTF-8. You don't have to think about encodings,
+unless the document doesn't specify an encoding and Beautiful Soup can't
+detect one. Then you just have to specify the original encoding.
+
+Beautiful Soup sits on top of popular Python parsers like lxml and
+html5lib, allowing you to try out different parsing strategies or trade
+speed for flexibility.
+
+Beautiful Soup parses anything you give it, and does the tree traversal
+stuff for you. You can tell it "Find all the links", or "Find all the
+links of class externalLink", or "Find all the links whose urls match
+"foo.com", or "Find the table heading that's got bold text, then give me
+that text."
+
+Valuable data that was once locked up in poorly-designed websites is
+now within your reach. Projects that would have taken hours take only
+minutes with Beautiful Soup.
