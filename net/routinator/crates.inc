@@ -1,5 +1,4 @@
-# $OpenBSD: crates.inc,v 1.3 2021/08/25 23:02:38 sthen Exp $
-
+# $OpenBSD: crates.inc,v 1.4 2021/11/01 16:43:20 sthen Exp $
 MODCARGO_CRATES +=	addr2line	0.15.2	# Apache-2.0/MIT
 MODCARGO_CRATES +=	adler	1.0.2	# 0BSD OR MIT OR Apache-2.0
 MODCARGO_CRATES +=	ansi_term	0.11.0	# MIT
@@ -28,6 +27,7 @@ MODCARGO_CRATES +=	either	1.6.1	# MIT/Apache-2.0
 MODCARGO_CRATES +=	encoding_rs	0.8.28	# Apache-2.0 OR MIT
 MODCARGO_CRATES +=	error-chain	0.12.4	# MIT/Apache-2.0
 MODCARGO_CRATES +=	fern	0.6.0	# MIT
+MODCARGO_CRATES +=	filetime	0.2.14	# MIT/Apache-2.0
 MODCARGO_CRATES +=	flate2	1.0.20	# MIT/Apache-2.0
 MODCARGO_CRATES +=	fnv	1.0.7	# Apache-2.0 / MIT
 MODCARGO_CRATES +=	foreign-types	0.3.2	# MIT/Apache-2.0
@@ -100,6 +100,7 @@ MODCARGO_CRATES +=	redox_users	0.4.0	# MIT
 MODCARGO_CRATES +=	remove_dir_all	0.5.3	# MIT/Apache-2.0
 MODCARGO_CRATES +=	reqwest	0.11.4	# MIT/Apache-2.0
 MODCARGO_CRATES +=	ring	0.16.20	# LICENSE
+MODCARGO_CRATES +=	routinator-ui	0.3.4	# BSD-3-Clause
 MODCARGO_CRATES +=	rpki	0.12.2	# BSD-3-Clause
 MODCARGO_CRATES +=	rustc-demangle	0.1.20	# MIT/Apache-2.0
 MODCARGO_CRATES +=	rustc_version	0.4.0	# MIT/Apache-2.0
@@ -122,6 +123,7 @@ MODCARGO_CRATES +=	spin	0.5.2	# MIT
 MODCARGO_CRATES +=	strsim	0.8.0	# MIT
 MODCARGO_CRATES +=	syn	1.0.74	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	syslog	5.0.0	# MIT
+MODCARGO_CRATES +=	tar	0.4.35	# MIT/Apache-2.0
 MODCARGO_CRATES +=	tempfile	3.2.0	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	term_size	0.3.2	# MIT/Apache-2.0
 MODCARGO_CRATES +=	textwrap	0.11.0	# MIT
@@ -167,3 +169,4 @@ MODCARGO_CRATES +=	winapi	0.3.9	# MIT/Apache-2.0
 MODCARGO_CRATES +=	winapi-i686-pc-windows-gnu	0.4.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	winapi-x86_64-pc-windows-gnu	0.4.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	winreg	0.7.0	# MIT
+MODCARGO_CRATES +=	xattr	0.2.2	# MIT/Apache-2.0

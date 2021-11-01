@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2021/09/02 08:49:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2021/11/01 16:43:20 sthen Exp $
 
 BROKEN-sparc64 =	ring-0.6.20 does not build on sparc64
 
@@ -6,7 +6,7 @@ COMMENT =		RPKI "relying party" software
 
 GH_ACCOUNT =		NLnetLabs
 GH_PROJECT =		routinator
-GH_TAGNAME =		v0.10.0
+GH_TAGNAME =		v0.10.1
 
 CATEGORIES =		net
 

@@ -26,6 +26,7 @@ SHA256 (cargo/either-1.6.1.tar.gz) = 541PHMSuM7v8FX7V1aXvO8KSJzA9WVhh3rI4/OxOlFc
 SHA256 (cargo/encoding_rs-0.8.28.tar.gz) = gN8CT7xayA+H3+8Nn1IJolLypJf39ClEz/JNglPKwGU=
 SHA256 (cargo/error-chain-0.12.4.tar.gz) = LS8GucrBUG7OmP4yMePMnEQQ7D1bHySuHIlG8HQs3vw=
 SHA256 (cargo/fern-0.6.0.tar.gz) = jJpIIPDMyKev1nw5oPGg9LB8oXJRZCcaZJOdeuua8GU=
+SHA256 (cargo/filetime-0.2.14.tar.gz) = HTTPoTpjrgWL+mAf6eMTu9s3RkJ8FFkYVGTOD89i4eg=
 SHA256 (cargo/flate2-1.0.20.tar.gz) = zTrsU94Q/pbX2MVl6xfyxoe7VRii7EU7WxJSlkUmq+A=
 SHA256 (cargo/fnv-1.0.7.tar.gz) = P57skY0/JAad7LmvFVTK18iA4tokqa/YisoABTGrgsE=
 SHA256 (cargo/foreign-types-0.3.2.tar.gz) = 9vM564rcBSzSyniRD9qGmu+jjSLVy2SOZIXk0/wG87E=
@@ -98,6 +99,7 @@ SHA256 (cargo/redox_users-0.4.0.tar.gz) = UoUy89gByHrsne8q3ZyoAv5WnkSlRK/mM3ZSZ4
 SHA256 (cargo/remove_dir_all-0.5.3.tar.gz) = Os0SVmVCKXOjOsnT3S34XtrQ9K6bANr7GgXkOp9e+Oc=
 SHA256 (cargo/reqwest-0.11.4.tar.gz) = JG6fYbm7d98GmpR2gr4G4xrEPqN4YuJEpp8XdpTqbSI=
 SHA256 (cargo/ring-0.16.20.tar.gz) = MFPPUuI2o+10bfx0WqnKzxt5HYRr2vQS9gqNfW4XyPw=
+SHA256 (cargo/routinator-ui-0.3.4.tar.gz) = 8rk+tDTw1YwZqwmACL2mgvwujykY87b2TcuMNMP8j7o=
 SHA256 (cargo/rpki-0.12.2.tar.gz) = cY8Nma1Wh0coFi0vCC5Dwss3irYrhyAs34Brn9E7LQo=
 SHA256 (cargo/rustc-demangle-0.1.20.tar.gz) = 3q1wsLXgPpyBS8trAeA+aPfFeoCqSMcuySFSqz6BjUk=
 SHA256 (cargo/rustc_version-0.4.0.tar.gz) = v6D1hSJtLmgJfU+V0ROxW4OoLoGaslcX7AWQ2VhO82Y=
@@ -120,6 +122,7 @@ SHA256 (cargo/spin-0.5.2.tar.gz) = bmPP8yCuLFeQRnm6fLYygKPcRhOIW+r7FI7nv5qpBC0=
 SHA256 (cargo/strsim-0.8.0.tar.gz) = jqURnNtMVbVdQyq7UToEKThIeMFd3mDMd7HJneGpWmo=
 SHA256 (cargo/syn-1.0.74.tar.gz) = GHPYMlUNRYjD28IPATYasAv+dBBI9x4/7PFFp8wYspw=
 SHA256 (cargo/syslog-5.0.0.tar.gz) = ml2O8bZ5wHl28+4zakNkU3YMRw9UtecjdVZyi4WJUV0=
+SHA256 (cargo/tar-0.4.35.tar.gz) = fXedxq7/ApMUVw9mbsg/Gd9ygLs27zOEQs+oxgQCG4A=
 SHA256 (cargo/tempfile-3.2.0.tar.gz) = 2sHGY8/JOBD4iu2biUHUjKv4VqGxEcKaQEOQGNhw6yI=
 SHA256 (cargo/term_size-0.3.2.tar.gz) = HkEpZGyg7Y9F0JuSkDa6+tU3cQPt0G5Qv1dLNT0rCNk=
 SHA256 (cargo/textwrap-0.11.0.tar.gz) = 0yZhD0CMek629Rw3wzDklrCFBslFfJ00KH7MOICfsGA=
@@ -165,7 +168,8 @@ SHA256 (cargo/winapi-0.3.9.tar.gz) = XIOaZ0/NepiVLlkyQupACr6TmSdGdh44ZBQF0osA9Bk
 SHA256 (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = rDuHxjYgQm3ZuZHlzgMp7/VFvMu7NPO+Cf9vtqtRt7Y=
 SHA256 (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = cS4ieEHQV8HuHNL7Ivp+WlRhro5I+iynnsQs/BkxGD8=
 SHA256 (cargo/winreg-0.7.0.tar.gz) = ASDbguih4Ln7M0WlOcR4dnwASNhChgmU2WET1bZnvWk=
-SHA256 (routinator-0.10.0.tar.gz) = Mdvt+/cKR4Id3Z4YXB/DcmnZwVtQPAc7Yxnwo7HMXLQ=
+SHA256 (cargo/xattr-0.2.2.tar.gz) = JEw3QfQkDvRidIYDl8fHTlDrI2JJlpMOSEwWZ5YzpUw=
+SHA256 (routinator-0.10.1.tar.gz) = cywYA+CoJrEKJ94gmrYYaa3m33nJIMn2JmVui6tUNeQ=
 SIZE (cargo/addr2line-0.15.2.tar.gz) = 32966
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/ansi_term-0.11.0.tar.gz) = 17087
@@ -194,6 +198,7 @@ SIZE (cargo/either-1.6.1.tar.gz) = 13641
 SIZE (cargo/encoding_rs-0.8.28.tar.gz) = 1368577
 SIZE (cargo/error-chain-0.12.4.tar.gz) = 29274
 SIZE (cargo/fern-0.6.0.tar.gz) = 299856
+SIZE (cargo/filetime-0.2.14.tar.gz) = 14358
 SIZE (cargo/flate2-1.0.20.tar.gz) = 74036
 SIZE (cargo/fnv-1.0.7.tar.gz) = 11266
 SIZE (cargo/foreign-types-0.3.2.tar.gz) = 7504
@@ -266,6 +271,7 @@ SIZE (cargo/redox_users-0.4.0.tar.gz) = 13023
 SIZE (cargo/remove_dir_all-0.5.3.tar.gz) = 9184
 SIZE (cargo/reqwest-0.11.4.tar.gz) = 132776
 SIZE (cargo/ring-0.16.20.tar.gz) = 5082615
+SIZE (cargo/routinator-ui-0.3.4.tar.gz) = 12050
 SIZE (cargo/rpki-0.12.2.tar.gz) = 499131
 SIZE (cargo/rustc-demangle-0.1.20.tar.gz) = 23298
 SIZE (cargo/rustc_version-0.4.0.tar.gz) = 12175
@@ -288,6 +294,7 @@ SIZE (cargo/spin-0.5.2.tar.gz) = 12004
 SIZE (cargo/strsim-0.8.0.tar.gz) = 9309
 SIZE (cargo/syn-1.0.74.tar.gz) = 232974
 SIZE (cargo/syslog-5.0.0.tar.gz) = 9014
+SIZE (cargo/tar-0.4.35.tar.gz) = 46219
 SIZE (cargo/tempfile-3.2.0.tar.gz) = 25892
 SIZE (cargo/term_size-0.3.2.tar.gz) = 10917
 SIZE (cargo/textwrap-0.11.0.tar.gz) = 17322
@@ -333,4 +340,5 @@ SIZE (cargo/winapi-0.3.9.tar.gz) = 1200382
 SIZE (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = 2918815
 SIZE (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
 SIZE (cargo/winreg-0.7.0.tar.gz) = 21225
-SIZE (routinator-0.10.0.tar.gz) = 2439942
+SIZE (cargo/xattr-0.2.2.tar.gz) = 11750
+SIZE (routinator-0.10.1.tar.gz) = 203674
