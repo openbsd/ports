@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/01 10:04:57 bentley Exp $
+share/apertium/apertium-afr/
+share/apertium/apertium-afr/afr.autogen.att.gz
+share/apertium/apertium-afr/afr.autogen.bin
+share/apertium/apertium-afr/afr.automorf.att.gz
+share/apertium/apertium-afr/afr.automorf.bin
+share/apertium/apertium-afr/afr.autopgen.bin
+share/apertium/apertium-afr/afr.prob
+share/apertium/apertium-afr/afr.rlx.bin
+share/apertium/apertium-afr/apertium-afr.afr.dix
+share/apertium/apertium-afr/apertium-afr.afr.rlx
+share/apertium/apertium-afr/apertium-afr.post-afr.dix
+share/apertium/modes/afr-disam.mode
+share/apertium/modes/afr-gener.mode
+share/apertium/modes/afr-morph.mode
+share/apertium/modes/afr-tagger.mode
+share/pkgconfig/apertium-afr.pc
