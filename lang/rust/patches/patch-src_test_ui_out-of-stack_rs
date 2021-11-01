@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_test_ui_out-of-stack_rs,v 1.3 2021/02/13 18:31:24 semarie Exp $
+$OpenBSD: patch-src_test_ui_out-of-stack_rs,v 1.4 2021/11/01 08:17:24 semarie Exp $
 
 Index: src/test/ui/out-of-stack.rs
 --- src/test/ui/out-of-stack.rs.orig
 +++ src/test/ui/out-of-stack.rs
-@@ -5,6 +5,7 @@
+@@ -6,6 +6,7 @@
  // ignore-android: FIXME (#20004)
  // ignore-emscripten no processes
  // ignore-sgx no processes

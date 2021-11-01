@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2021/09/09 15:07:39 semarie Exp $
+# $OpenBSD: Makefile,v 1.132 2021/11/01 08:17:24 semarie Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -13,14 +13,14 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.55.0
+V =			1.56.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.55.0-20210908
-BV-amd64 =		1.55.0-20210907
-BV-i386 =		1.55.0-20210907
-BV-sparc64 =		1.55.0-20210907
+BV-aarch64 =		1.56.0-20211020
+BV-amd64 =		1.56.0-20211019
+BV-i386 =		1.56.0-20211019
+BV-sparc64 =		1.56.0-20211031
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -95,21 +95,22 @@ LIBRUST_HASHES =	\
 	gimli			08 \
 	hashbrown		09 \
 	libc			0a \
-	miniz_oxide		0b \
-	object			0c \
-	panic_abort		0d \
-	panic_unwind		0e \
-	proc_macro		0f \
-	rustc_demangle		10 \
-	rustc_driver		11 \
-	rustc_std_workspace_alloc	12 \
-	rustc_std_workspace_core 	13 \
-	rustc_std_workspace_std 	14 \
-	std 			15 \
-	std_detect		16 \
-	test 			17 \
-	unicode_width 		18 \
-	unwind			19
+	memchr			0b \
+	miniz_oxide		0c \
+	object			0d \
+	panic_abort		0e \
+	panic_unwind		0f \
+	proc_macro		10 \
+	rustc_demangle		11 \
+	rustc_driver		12 \
+	rustc_std_workspace_alloc	13 \
+	rustc_std_workspace_core 	14 \
+	rustc_std_workspace_std 	15 \
+	std 			16 \
+	std_detect		17 \
+	test 			18 \
+	unicode_width 		19 \
+	unwind			20
 
 # generate a stable hash and pass it to build environment
 LIBRUST_HASH !=	echo '${FULLPKGNAME}:${TRIPLE_ARCH}' | sha1 | cut -c1-14

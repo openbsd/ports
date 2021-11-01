@@ -1,9 +1,9 @@
-$OpenBSD: patch-library_std_src_sys_unix_os_rs,v 1.7 2021/09/09 15:07:40 semarie Exp $
+$OpenBSD: patch-library_std_src_sys_unix_os_rs,v 1.8 2021/11/01 08:17:24 semarie Exp $
 argv0 isn't suitable as current_exe() in all cases.
 Index: library/std/src/sys/unix/os.rs
 --- library/std/src/sys/unix/os.rs.orig
 +++ library/std/src/sys/unix/os.rs
-@@ -325,14 +325,17 @@ pub fn current_exe() -> io::Result<PathBuf> {
+@@ -337,14 +337,17 @@ pub fn current_exe() -> io::Result<PathBuf> {
          if argv[0].is_null() {
              return Err(io::Error::new_const(
                  io::ErrorKind::Uncategorized,
