@@ -1,4 +1,4 @@
-# $OpenBSD: qt5.port.mk,v 1.27 2020/06/09 22:43:16 sthen Exp $
+# $OpenBSD: qt5.port.mk,v 1.28 2021/11/01 14:02:10 rsadowski Exp $
 
 # This fragment defines MODQT_* variables to make it easier to substitute
 # qt3/qt4/qt5 in a port.
@@ -50,34 +50,68 @@ _MODQT5_CMAKE_PKGS = \
 	Qt53DQuickAnimation \
 	Qt53DQuickExtras \
 	Qt53DQuickInput \
-	Qt53DQuickScene2D \
 	Qt53DQuickRender \
+	Qt53DQuickScene2D \
 	Qt53DRender \
+	Qt5AccessibilitySupport \
+	Qt5AttributionsScannerTools \
 	Qt5Bluetooth \
+	Qt5Bodymovin \
 	Qt5Charts \
 	Qt5Concurrent \
 	Qt5Core \
-	Qt5DataVisualization \
 	Qt5DBus \
+	Qt5DataVisualization \
 	Qt5Designer \
+	Qt5DesignerComponents \
+	Qt5DeviceDiscoverySupport \
+	Qt5DocTools \
+	Qt5EdidSupport \
+	Qt5EglFSDeviceIntegration \
+	Qt5EglFsKmsSupport \
+	Qt5EglSupport \
+	Qt5EventDispatcherSupport \
+	Qt5FbSupport \
+	Qt5FontDatabaseSupport \
 	Qt5Gamepad \
+	Qt5GlxSupport \
 	Qt5Gui \
 	Qt5Help \
+	Qt5HunspellInputMethod \
+	Qt5InputSupport \
+	Qt5KmsSupport \
 	Qt5LinguistTools \
+	Qt5LinuxAccessibilitySupport \
 	Qt5Location \
 	Qt5Multimedia \
+	Qt5MultimediaGstTools \
+	Qt5MultimediaQuick \
 	Qt5MultimediaWidgets \
 	Qt5Network \
 	Qt5NetworkAuth \
 	Qt5Nfc \
 	Qt5OpenGL \
 	Qt5OpenGLExtensions \
+	Qt5PacketProtocol \
+	Qt5Pdf \
+	Qt5PdfWidgets \
+	Qt5PlatformCompositorSupport \
 	Qt5Positioning \
+	Qt5PositioningQuick \
 	Qt5PrintSupport \
 	Qt5Purchasing \
 	Qt5Qml \
+	Qt5QmlDebug \
+	Qt5QmlDevTools \
+	Qt5QmlImportScanner \
+	Qt5QmlModels \
+	Qt5QmlWorkerScript \
 	Qt5Quick \
+	Qt5QuickCompiler \
 	Qt5QuickControls2 \
+	Qt5QuickParticles \
+	Qt5QuickShapes \
+	Qt5QuickTemplates2 \
 	Qt5QuickTest \
 	Qt5QuickWidgets \
 	Qt5RemoteObjects \
@@ -88,20 +122,27 @@ _MODQT5_CMAKE_PKGS = \
 	Qt5Sensors \
 	Qt5SerialBus \
 	Qt5SerialPort \
+	Qt5ServiceSupport \
 	Qt5Sql \
 	Qt5Svg \
 	Qt5Test \
 	Qt5TextToSpeech \
+	Qt5ThemeSupport \
 	Qt5UiPlugin \
 	Qt5UiTools \
+	Qt5VirtualKeyboard \
 	Qt5WebChannel \
-	Qt5WebKit \
 	Qt5WebEngine \
+	Qt5WebEngineCore \
 	Qt5WebEngineWidgets \
+	Qt5WebKit \
 	Qt5WebKitWidgets \
 	Qt5WebSockets \
+	Qt5WebView \
 	Qt5Widgets \
 	Qt5X11Extras \
+	Qt5XcbQpa \
+	Qt5XkbCommonSupport \
 	Qt5Xml \
 	Qt5XmlPatterns
 .for _p in ${_MODQT5_CMAKE_PKGS}
