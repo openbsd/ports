@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2021/10/23 09:15:52 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2021/11/01 10:06:33 ajacoutot Exp $
 
 COMMENT =	mesh data abstration library
 
@@ -29,6 +29,8 @@ LIB_DEPENDS =	math/netcdf>=4 \
 		geo/gdal
 
 BUILD_DEPENDS =	devel/gtest
+
+CONFIGURE_ARGS=	-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
 
 WANTLIB += ${COMPILER_LIBCXX} c gdal hdf5 m netcdf sqlite3 xml2 z
 
