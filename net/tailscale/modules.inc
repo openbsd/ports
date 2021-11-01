@@ -1,6 +1,4 @@
-# $OpenBSD: modules.inc,v 1.2 2021/10/12 12:47:44 abieber Exp $
-
-MODGO_VERSION =	v1.16.0
+# $OpenBSD: modules.inc,v 1.3 2021/11/01 13:01:25 ajacoutot Exp $
 
 MODGO_MODULES =	\
 	4d63.com/gochecknoglobals				 v0.0.0-20201008074935-acfc0b28355a \
@@ -757,4 +755,3 @@ MODGO_MODFILES =	\
 	honnef.co/go/tools					 v0.0.1-2020.1.6 \
 	inet.af/netaddr						 v0.0.0-20210515010201-ad03edc7c841 \
 	mvdan.cc/gofumpt					 v0.0.0-20200802201014-ab5a8192947d
-
