@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2021/10/30 14:38:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/01 14:15:06 tracey Exp $
 
 COMMENT =	gcc for ${CONFIG} cross-development
 
 VERSION =	10.2.0
 DISTNAME =	gcc-${VERSION}
 PKGNAME =	${CONFIG}-gcc-${VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  cc1plugin                 0.0 # 0.0
 SHARED_LIBS +=  cp1plugin                 0.0 # 0.0
@@ -45,7 +45,8 @@ PATCH_LIST =	patch-* vecstep-*
 MODULES =	lang/python
 
 BUILD_DEPENDS +=	devel/${CONFIG}/binutils \
-			devel/${CONFIG}/newlib
+			devel/${CONFIG}/newlib \
+			lang/gawk
 RUN_DEPENDS =		devel/${CONFIG}/binutils \
 			devel/${CONFIG}/newlib
 LIB_DEPENDS =		devel/gmp \
