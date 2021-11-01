@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-idle,v 1.1.1.1 2021/11/01 14:16:09 kmos Exp $
+@comment $OpenBSD: PLIST-idle,v 1.2 2021/11/01 16:56:25 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-idle-${VERSION_SPEC}
-@comment bin/idle3
+${PY_DEFAULTONLY}bin/idle3
 bin/idle3.10
 lib/python3.10/idlelib/
 lib/python3.10/idlelib/CREDITS.txt

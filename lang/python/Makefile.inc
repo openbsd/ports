@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.140 2021/11/01 07:43:39 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.141 2021/11/01 16:56:24 sthen Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -124,8 +124,12 @@ MAKE_FLAGS +=	LD_LIBRARY_PATH=${WRKSRC} PATH="${WRKDIST}:${PORTPATH}"
 MAKE_FLAGS +=	CFLAGS_NODIST='-I${LOCALBASE}/include' LDFLAGS_NODIST='-L${WRKSRC} -L${LOCALBASE}/lib/'
 FAKE_FLAGS +=	RANLIB=:
 
+# Used in PLISTs for files which should not be installed for non-default
+# versions of Python (i.e. /usr/local/bin/python3).
+PY_DEFAULTONLY ?= "@comment "
+
 PY_PLATFORM =	openbsd${OSMAJOR}
-SUBST_VARS +=	VERSION_SPEC PY_PLATFORM
+SUBST_VARS +=	VERSION_SPEC PY_PLATFORM PY_DEFAULTONLY
 
 # Python itself is clean, but some extensions e.g. py-cryptography
 # and QtWebKit require W|X mappings.

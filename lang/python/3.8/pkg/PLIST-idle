@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-idle,v 1.7 2021/02/21 19:24:26 daniel Exp $
+@comment $OpenBSD: PLIST-idle,v 1.8 2021/11/01 16:56:25 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-idle-${VERSION_SPEC}
@@ -10,7 +10,7 @@
 @pkgpath lang/python/3.5,-idle
 @pkgpath lang/python/3.6,-idle
 @pkgpath lang/python/3.7,-idle
-bin/idle3
+${PY_DEFAULTONLY}bin/idle3
 bin/idle3.8
 lib/python3.8/idlelib/
 lib/python3.8/idlelib/CREDITS.txt

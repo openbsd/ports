@@ -1,17 +1,15 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2021/11/01 14:16:11 kmos Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2021/11/01 16:56:25 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-${VERSION_SPEC}
-@comment bin/2to3
+${PY_DEFAULTONLY}bin/2to3
 bin/2to3-3.10
-@comment bin/pydoc3
+${PY_DEFAULTONLY}bin/pydoc3
 bin/pydoc3.10
-@comment bin/python3
-@comment bin/python3-config
+${PY_DEFAULTONLY}bin/python3
+${PY_DEFAULTONLY}bin/python3-config
 @bin bin/python3.10
 bin/python3.10-config
-@comment bin/pyvenv
-@comment lib/libpython3.10m.so
 include/python3.10/
 include/python3.10/Python.h
 include/python3.10/abstract.h
@@ -182,8 +180,8 @@ include/python3.10/weakrefobject.h
 @comment lib/libpython3.so
 lib/pkgconfig/python-3.10-embed.pc
 lib/pkgconfig/python-3.10.pc
-@comment lib/pkgconfig/python3-embed.pc
-@comment lib/pkgconfig/python3.pc
+${PY_DEFAULTONLY}lib/pkgconfig/python3-embed.pc
+${PY_DEFAULTONLY}lib/pkgconfig/python3.pc
 lib/python3.10/
 lib/python3.10/LICENSE.txt
 lib/python3.10/__future__.py
@@ -2871,7 +2869,7 @@ lib/python3.10/zoneinfo/__pycache__/_zoneinfo.cpython-310.pyc
 lib/python3.10/zoneinfo/_common.py
 lib/python3.10/zoneinfo/_tzpath.py
 lib/python3.10/zoneinfo/_zoneinfo.py
-@comment @man man/man1/python3.1
+${PY_DEFAULTONLY}@man man/man1/python3.1
 @man man/man1/python3.10.1
 share/doc/python3.10/
 share/doc/python3.10/CHANGES.OpenBSD

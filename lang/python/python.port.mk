@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.134 2021/11/01 14:17:16 kmos Exp $
+# $OpenBSD: python.port.mk,v 1.135 2021/11/01 16:56:24 sthen Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -9,11 +9,8 @@ CATEGORIES +=		lang/python
 MODPY_DEFAULT_VERSION_2 = 2.7
 MODPY_DEFAULT_VERSION_3 = 3.8
 
-# If switching to a new MODPY_DEFAULT_VERSION_3:
-# - In the old default version, @comment the non-suffixed bin/XXX files (python3,
-#   pydoc3, idle3, etc), lib/pkgconfig/python3.pc, and man/man1/python3.1 and
-#   bump REVISION
-# - In the new version, un-@comment these same files
+# If switching to a new MODPY_DEFAULT_VERSION_3, say 3.x to 3.y:
+# - Move PY_DEFAULTONLY from 3.x/Makefile to 3.y/Makefile
 # - In the new version, @conflict on the old REVISION of the old version
 #   (3.6.8p1 was "default py3 is py3.6", 3.6.8p2 was after the switch to "default
 #   is py3.7", so the 3.7 ports had @conflict python-subpkg-<3.6.8p2)
