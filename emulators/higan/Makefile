@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/11/05 09:27:29 bentley Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/01 03:49:29 bentley Exp $
 
 COMMENT =	multi-system Nintendo emulator
 
@@ -27,7 +27,7 @@ WANTLIB += z
 
 # upstream only provides .7z
 #MASTER_SITES =	https://download.byuu.org/
-MASTER_SITES =	https://distfiles.ajb.soy/
+MASTER_SITES =	https://distfiles.roadrunner.page/
 
 RUN_DEPENDS =	devel/desktop-file-utils
 LIB_DEPENDS =	audio/openal \
