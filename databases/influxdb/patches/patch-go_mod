@@ -1,0 +1,23 @@
+$OpenBSD: patch-go_mod,v 1.1 2021/11/01 12:57:06 landry Exp $
+
+http://cvsweb.netbsd.org/bsdweb.cgi/pkgsrc/databases/influxdb/patches/patch-go.mod?rev=1.1&content-type=text/x-cvsweb-markup
+
+Index: go.mod
+--- go.mod.orig
++++ go.mod
+@@ -29,7 +29,7 @@ require (
+ 	github.com/klauspost/cpuid v0.0.0-20170728055534-ae7887de9fa5 // indirect
+ 	github.com/klauspost/crc32 v0.0.0-20161016154125-cb6bfca970f6 // indirect
+ 	github.com/klauspost/pgzip v1.0.2-0.20170402124221-0bf5dcad4ada
+-	github.com/mattn/go-isatty v0.0.4
++	github.com/mattn/go-isatty v0.0.12
+ 	github.com/mschoch/smat v0.0.0-20160514031455-90eadee771ae // indirect
+ 	github.com/opentracing/opentracing-go v1.0.3-0.20180606204148-bd9c31933947
+ 	github.com/paulbellamy/ratecounter v0.2.0
+@@ -55,3 +55,6 @@ require (
+ 	gonum.org/v1/gonum v0.6.0 // indirect
+ 	google.golang.org/grpc v1.26.0
+ )
++
++replace github.com/c-bata/go-prompt => github.com/c-bata/go-prompt v0.2.5
++replace github.com/pkg/term => github.com/pkg/term v1.1.0

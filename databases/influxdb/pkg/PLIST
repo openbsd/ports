@@ -1,21 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/08/19 20:23:25 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/11/01 12:57:06 landry Exp $
 @newgroup _influx:797
 @newuser _influx:797:_influx:daemon:InfluxDB user:${VARBASE}/influxdb:/sbin/nologin
 @rcscript ${RCDIR}/influxdb
 @extraunexec rm -rf ${VARBASE}/influxdb/
 @bin bin/influx
-@bin bin/influx-tools
 @bin bin/influx_inspect
 @bin bin/influx_stress
-@bin bin/influx_tsm
+@bin bin/influx_tools
 @bin bin/influxd
-@bin bin/store
-@bin bin/stress_test_server
-@bin bin/test_client
 @man man/man1/influx.1
 @man man/man1/influx_inspect.1
 @man man/man1/influx_stress.1
-@man man/man1/influx_tsm.1
 @man man/man1/influxd-backup.1
 @man man/man1/influxd-config.1
 @man man/man1/influxd-restore.1
