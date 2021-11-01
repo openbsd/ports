@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/01 10:12:47 bentley Exp $
+share/apertium/apertium-zlm/
+share/apertium/apertium-zlm/apertium-zlm.post-zlm.dix
+share/apertium/apertium-zlm/apertium-zlm.zlm.dix
+share/apertium/apertium-zlm/apertium-zlm.zlm.rlx
+share/apertium/apertium-zlm/zlm.autogen.att.gz
+share/apertium/apertium-zlm/zlm.autogen.bin
+share/apertium/apertium-zlm/zlm.automorf.att.gz
+share/apertium/apertium-zlm/zlm.automorf.bin
+share/apertium/apertium-zlm/zlm.autopgen.bin
+share/apertium/apertium-zlm/zlm.prob
+share/apertium/apertium-zlm/zlm.rlx.bin
+share/apertium/modes/zlm-disam.mode
+share/apertium/modes/zlm-gener.mode
+share/apertium/modes/zlm-morph.mode
+share/apertium/modes/zlm-tagger.mode
+share/pkgconfig/apertium-zlm.pc
