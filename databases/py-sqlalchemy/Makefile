@@ -1,16 +1,10 @@
-# $OpenBSD: Makefile,v 1.46 2021/05/21 19:50:22 kmos Exp $
+# $OpenBSD: Makefile,v 1.47 2021/11/01 08:22:00 landry Exp $
 
-COMMENT-main =		database toolkit for Python
-COMMENT-docs =		documentation and examples for sqlalchemy
+COMMENT =		database toolkit for Python
 
-MODPY_EGG_VERSION =	1.2.19
+MODPY_EGG_VERSION =	1.4.26
 DISTNAME =		SQLAlchemy-${MODPY_EGG_VERSION}
-FULLPKGNAME-main =	${MODPY_PY_PREFIX}sqlalchemy-${MODPY_EGG_VERSION}
-FULLPKGPATH-main =	databases/py-sqlalchemy${MODPY_FLAVOR},-main
-FULLPKGNAME-docs =	py-sqlalchemy-docs-${MODPY_EGG_VERSION}
-FULLPKGPATH-docs =	databases/py-sqlalchemy,-docs
-REVISION-main =		2
-REVISION-docs =		1
+PKGNAME =		py-sqlalchemy-${MODPY_EGG_VERSION}
 
 CATEGORIES =		databases
 
@@ -27,12 +21,8 @@ MODPY_PI =		Yes
 
 SUBST_VARS+=		MODPY_FLAVOR
 
-RUN_DEPENDS +=		databases/py-sqlalchemy,-docs
-RUN_DEPENDS-docs =	#empty
-
-MULTI_PACKAGES =	-main -docs
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 MAKE_ENV +=		PYTHONPATH=.
 MODPY_PYTEST =		Yes
@@ -40,10 +30,6 @@ MODPY_PYTEST =		Yes
 # Other DB connectors would work, too.
 TEST_DEPENDS =		devel/py-test-xdist${MODPY_FLAVOR} \
 			devel/py-mock${MODPY_FLAVOR}
-# On python3, sqlite3 is used.
-.if !${FLAVOR:Mpython3}
-TEST_DEPENDS +=		databases/py-sqlite2${MODPY_FLAVOR}>=2.8.3
-.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-sqlalchemy
