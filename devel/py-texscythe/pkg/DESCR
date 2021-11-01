@@ -1,5 +1,0 @@
-A Python library and command line tool to parse TeX Live TLPDB files and
-build subsets of TeX Live
-
-This tool is used to build the packing lists for OpenBSD's TeX Live
-port.
