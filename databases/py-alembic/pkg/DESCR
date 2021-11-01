@@ -1,0 +1,9 @@
+Alembic is a database migrations tool for SQLAlchemy.
+
+* Can emit ALTER statements to a database in order to change
+  the structure of tables and other constructs
+* Provides a system whereby "migration scripts" may be constructed;
+  each script indicates a particular series of steps that can "upgrade" a
+  target database to a new version, and optionally a series of steps that can
+  "downgrade" similarly, doing the same steps in reverse.
+* Allows the scripts to execute in some sequential manner.
