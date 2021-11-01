@@ -1,6 +1,4 @@
-# $OpenBSD: modules.inc,v 1.1 2021/11/01 12:57:06 landry Exp $
-
-MODGO_VERSION =	v1.8.10
+# $OpenBSD: modules.inc,v 1.2 2021/11/01 12:57:59 landry Exp $
 
 MODGO_MODULES =	\
 	cloud.google.com/go					 v0.51.0 \
