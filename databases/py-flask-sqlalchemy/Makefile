@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2021/02/24 02:22:03 daniel Exp $
+# $OpenBSD: Makefile,v 1.13 2021/11/01 08:24:40 landry Exp $
 
 COMMENT =	sqlalchemy support for flask
 
 MODPY_EGG_VERSION = 2.4.1
 DISTNAME =	Flask-SQLAlchemy-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	databases www
 
