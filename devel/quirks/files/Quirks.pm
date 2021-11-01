@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1334 2021/10/31 18:50:32 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1335 2021/11/01 08:30:51 landry Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -679,6 +679,7 @@ my $stem_extensions = {
 	'py-xlsxwriter' => 'py3-xlsxwriter',
 	'py-yamllint' => 'py3-yamllint',
 	'py-yapf' => 'py3-yapf',
+	'py-sqlalchemy' => 'py3-sqlalchemy',
 };
 
 my $obsolete_reason = {};
@@ -1513,6 +1514,8 @@ setup_obsolete_reason(
 	3 => 'gmfsk',
 	13 => 'gmapcatcher',
 	3 => 'childsplay',
+	6 => 'py-texscythe',
+	6 => 'py3-sqlalchemy-migrate',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
