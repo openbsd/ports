@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2021/10/29 19:56:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/01 07:20:04 phessler Exp $
 
 BROKEN-i386 =	always_inline function '_mm_loadu_ps' requires target feature 'sse', but would be inlined into function 'BoxIntersectSimd' that is compiled without support for 'sse'
+BROKEN-aarch64 = asm assumes x86
 
 COMMENT =	first person survival horror game
 
