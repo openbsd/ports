@@ -1,4 +1,4 @@
-# $OpenBSD: go.port.mk,v 1.47 2021/10/30 21:05:15 sthen Exp $
+# $OpenBSD: go.port.mk,v 1.48 2021/11/01 07:25:42 landry Exp $
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
@@ -49,6 +49,7 @@ MODGO_GOPATH ?=		${MODGO_WORKSPACE}:${MODGO_PACKAGE_PATH}
 # to explicitly disable SSE on i386 builds.
 MAKE_ENV +=		GO386=softfloat
 MAKE_ENV +=		GOCACHE="${MODGO_GOCACHE}"
+MAKE_ENV +=		TMPDIR="${WRKBUILD}"
 
 MODGO_CMD ?=		${SETENV} ${MAKE_ENV} go
 MODGO_BUILD_CMD =	${MODGO_CMD} install ${MODGO_FLAGS}
