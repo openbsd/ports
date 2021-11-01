@@ -1,8 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2016/03/02 02:53:44 bentley Exp $
---- CMakeLists.txt.orig	Thu Jun  4 09:27:46 2015
-+++ CMakeLists.txt	Wed Feb 24 21:06:13 2016
-@@ -41,10 +41,8 @@ else()
- 	set(_FLAGS_COMMON "-Wall -Wextra -Wno-missing-field-initializers -Wno-deprecated -Wno-unused-parameter -fPIC")
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2021/11/01 02:28:39 bentley Exp $
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -63,10 +63,8 @@ else()
+ 
  	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${_FLAGS_COMMON} -fvisibility-inlines-hidden")
  	set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -O0 -g3")
 -	set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
@@ -10,14 +11,13 @@ $OpenBSD: patch-CMakeLists_txt,v 1.2 2016/03/02 02:53:44 bentley Exp $
  	set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -O0 -g3")
 -	set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -O3")
  
- 	# Enable C++11 if possible
- 	if((CMAKE_COMPILER_IS_GNUCXX AND NOT ${CMAKE_CXX_COMPILER_VERSION} VERSION_LESS 4.6) OR (CMAKE_CXX_COMPILER_ID STREQUAL "Clang" AND NOT ${CMAKE_CXX_COMPILER_VERSION} VERSION_LESS 3.1))
-@@ -62,7 +60,7 @@ else()
- 	install(FILES "${CMAKE_CURRENT_BINARY_DIR}/cg3.pc" DESTINATION "${CG_LIBDIR}/${CMAKE_LIBRARY_ARCHITECTURE}/pkgconfig")
- 
- 	install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/manual/man/"
--		DESTINATION share/man/man1
-+		DESTINATION man/man1
- 		FILES_MATCHING
- 		PATTERN "*.1"
- 		PATTERN ".svn" EXCLUDE)
+ 	# Enable latest possible C standard
+ 	foreach(flag "-std=c2x" "-std=c11" "-std=c1x" "-std=c99")
+@@ -117,7 +115,6 @@ if(WIN32)
+ 	add_definitions(-DUNICODE -D_UNICODE -D_SECURE_SCL=0 -D_ITERATOR_DEBUG_LEVEL=0 -D_CRT_SECURE_NO_DEPRECATE -DWIN32_LEAN_AND_MEAN -DVC_EXTRALEAN -DNOMINMAX)
+ 	include_directories("include/win32")
+ else()
+-	add_definitions(-D_POSIX_C_SOURCE=200112)
+ 	set(POPEN_PLUS_CPP "../include/posix/popen_plus.cpp" "../include/posix/popen_plus.hpp")
+ 	include_directories("include/posix")
+ endif()

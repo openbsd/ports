@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/10/17 06:52:03 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/11/01 02:28:39 bentley Exp $
 @bin bin/cg-comp
 @bin bin/cg-conv
 @bin bin/cg-mwesplit
 @bin bin/cg-proc
 @bin bin/cg-relabel
+bin/cg-sort
 bin/cg-strictify
+bin/cg-untrace
 bin/cg3-autobin.pl
 @bin bin/vislcg3
 include/cg3.h
