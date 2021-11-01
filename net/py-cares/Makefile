@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2021/01/04 14:06:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/11/01 03:39:11 kmos Exp $
 
 # using bundled c-ares which is patched for TTL support
 COMMENT =		python interface for c-ares
 
-MODPY_EGG_VERSION =	3.1.1
-REVISION =		1
+MODPY_EGG_VERSION =	4.1.2
 DISTNAME =		pycares-${MODPY_EGG_VERSION}
 PKGNAME =		py-cares-${MODPY_EGG_VERSION}
 CATEGORIES =		net
@@ -28,6 +27,8 @@ FLAVOR =		python3
 
 RUN_DEPENDS =		devel/py-cffi${MODPY_FLAVOR}
 BUILD_DEPENDS =		${RUN_DEPENDS}
-TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
+
+TESTLIBDIR =		lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION}
+TEST_ENV +=		PYTHONPATH=${TESTLIBDIR}
 
 .include <bsd.port.mk>
