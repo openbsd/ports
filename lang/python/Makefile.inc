@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.139 2021/09/01 17:41:47 kmos Exp $
+# $OpenBSD: Makefile.inc,v 1.140 2021/11/01 07:43:39 landry Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -121,7 +121,7 @@ CONFIGURE_ENV += OPT='${CFLAGS} -fPIC' CPPFLAGS='-I${LOCALBASE}/include' \
 		LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
 MAKE_ENV +=	LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
 MAKE_FLAGS +=	LD_LIBRARY_PATH=${WRKSRC} PATH="${WRKDIST}:${PORTPATH}"
-MAKE_FLAGS +=	LDFLAGS='-L${WRKSRC} -L${LOCALBASE}/lib/'
+MAKE_FLAGS +=	CFLAGS_NODIST='-I${LOCALBASE}/include' LDFLAGS_NODIST='-L${WRKSRC} -L${LOCALBASE}/lib/'
 FAKE_FLAGS +=	RANLIB=:
 
 PY_PLATFORM =	openbsd${OSMAJOR}

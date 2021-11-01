@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/10/30 00:24:16 kmos Exp $
+# $OpenBSD: Makefile,v 1.11 2021/11/01 07:43:39 landry Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -11,7 +11,7 @@ SHARED_LIBS =		python3.9 0.0
 VERSION_SPEC =		>=3.9,<3.10
 #PSUBDIR =		python/3.9.0
 
-REVISION-main =		0
+REVISION-main =		1
 
 
 CONFIGURE_ARGS +=	--with-ensurepip=no
