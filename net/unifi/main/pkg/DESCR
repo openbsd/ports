@@ -1,0 +1,12 @@
+This package contains controller software for Ubiquiti UniFi access
+points, switches, gateways and phones. This package is from a newer
+branch which no longer works with older devices.
+
+If you have any of the following devices, use an earlier branch:
+
+UAP-AC, UAP-AC-Outdoor, UAP-Outdoor-5				5.6
+
+UAP-Outdoor, UAP-Outdoor+, UAP-Pro, UAP-IW, UAP (v1+v2),	6.0
+UAP-LR (v1+v2), UAP-AC-EDU, UAP-AC-IW-PRO
+
+https://help.ui.com/hc/en-us/articles/1500001268521-Ubiquiti-s-Vintage-and-Obsolete-Products

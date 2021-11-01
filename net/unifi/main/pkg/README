@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2021/03/20 19:00:35 sthen Exp $
+$OpenBSD: README,v 1.1 2021/11/01 09:58:58 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD

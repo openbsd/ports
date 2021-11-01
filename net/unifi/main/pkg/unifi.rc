@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: unifi.rc,v 1.1 2021/03/20 19:00:35 sthen Exp $
+# $OpenBSD: unifi.rc,v 1.1 2021/11/01 09:58:58 sthen Exp $
 
 daemon="${TRUEPREFIX}/share/unifi/lib/ace.jar"
 daemon_user="_unifi"

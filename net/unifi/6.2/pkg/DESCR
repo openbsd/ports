@@ -1,4 +1,0 @@
-This package contains controller software for Ubiquiti UniFi access points,
-switches, gateways and phones.
-
-This branch introduces WPA3 support, but loses support for a range of devices.
