@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.40 2021/05/19 19:57:03 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.41 2021/11/01 18:33:25 kili Exp $
 @conflict poppler-qt-<0.5.4p0
 @pkgpath print/poppler
 include/poppler/
 include/poppler/Annot.h
+include/poppler/AnnotStampImageHelper.h
 include/poppler/Array.h
 include/poppler/BBoxOutputDev.h
 include/poppler/CMap.h
