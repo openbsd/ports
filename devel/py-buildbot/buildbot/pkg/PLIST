@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2021/08/15 09:42:39 landry Exp $
+@comment $OpenBSD: PLIST,v 1.23 2021/11/01 08:27:16 landry Exp $
 @conflict py-buildbot-*
 @pkgpath devel/py-buildbot
 @newgroup _buildbot:673
@@ -104,6 +104,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/data/${MODPY_PYCACHE}changesou
 lib/python${MODPY_VERSION}/site-packages/buildbot/data/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/data/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/data/${MODPY_PYCACHE}forceschedulers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/data/${MODPY_PYCACHE}graphql.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/data/${MODPY_PYCACHE}logchunks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/data/${MODPY_PYCACHE}logs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/data/${MODPY_PYCACHE}masters.${MODPY_PYC_MAGIC_TAG}pyc
@@ -129,6 +130,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/data/changesources.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/data/connector.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/data/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/data/forceschedulers.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/data/graphql.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/data/logchunks.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/data/logs.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/data/masters.py
@@ -187,51 +189,15 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/db/enginestrategy.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/db/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/db/logs.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/db/masters.py
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/migrate.cfg
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/040_add_builder_tags.py
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/041_add_N_N_tagsbuilders.py
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/042_add_build_properties_table.py
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/043_changes_parent.py
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/044_add_step_hidden.py
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/045_worker_transition.py
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/046_mysql_innodb_compatibility.py
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/047_cascading_deletes.py
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/048_change_properties_to_text.py
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/049_add_schedulers_enabled.py
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/050_cascading_deletes_all.py
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/051_add_worker_status.py
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/052_cascading_set_null.py
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/053_add_changes_committer.py
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/054_add_index_to_steps.py
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/055_fix_changes_committer.py
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/056_add_test_result_tables.py
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/057_add_build_data_tables.py
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/058_add_build_data_length.py
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/${MODPY_PYCACHE}040_add_builder_tags.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/${MODPY_PYCACHE}041_add_N_N_tagsbuilders.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/${MODPY_PYCACHE}042_add_build_properties_table.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/${MODPY_PYCACHE}043_changes_parent.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/${MODPY_PYCACHE}044_add_step_hidden.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/${MODPY_PYCACHE}045_worker_transition.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/${MODPY_PYCACHE}046_mysql_innodb_compatibility.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/${MODPY_PYCACHE}047_cascading_deletes.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/${MODPY_PYCACHE}048_change_properties_to_text.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/${MODPY_PYCACHE}049_add_schedulers_enabled.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/${MODPY_PYCACHE}050_cascading_deletes_all.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/${MODPY_PYCACHE}051_add_worker_status.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/${MODPY_PYCACHE}052_cascading_set_null.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/${MODPY_PYCACHE}053_add_changes_committer.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/${MODPY_PYCACHE}054_add_index_to_steps.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/${MODPY_PYCACHE}055_fix_changes_committer.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/${MODPY_PYCACHE}056_add_test_result_tables.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/${MODPY_PYCACHE}057_add_build_data_tables.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/${MODPY_PYCACHE}058_add_build_data_length.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate/versions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrate_utils.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrations/
+lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrations/alembic.ini
+lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrations/versions/
+lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrations/versions/059_2021-09-07_alembic_initial.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrations/versions/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrations/versions/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrations/versions/${MODPY_PYCACHE}059_2021-09-07_alembic_initial.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/db/migrations/versions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/db/model.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/db/pool.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/db/schedulers.py
@@ -488,10 +454,12 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/secrets/providers/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/buildbot/secrets/providers/${MODPY_PYCACHE}file.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/secrets/providers/${MODPY_PYCACHE}passwordstore.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/secrets/providers/${MODPY_PYCACHE}vault.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/secrets/providers/${MODPY_PYCACHE}vault_hvac.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/secrets/providers/base.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/secrets/providers/file.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/secrets/providers/passwordstore.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/secrets/providers/vault.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/secrets/providers/vault_hvac.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/secrets/secret.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/spec/
 lib/python${MODPY_VERSION}/site-packages/buildbot/spec/api.raml
@@ -749,10 +717,12 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/${MODPY_PYCACHE}test_configs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/${MODPY_PYCACHE}test_custom_buildstep.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/${MODPY_PYCACHE}test_customservices.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/${MODPY_PYCACHE}test_graphql.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/${MODPY_PYCACHE}test_integration_force_with_patch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/${MODPY_PYCACHE}test_integration_mastershell.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/${MODPY_PYCACHE}test_integration_scheduler_reconfigure.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/${MODPY_PYCACHE}test_integration_secrets_with_vault.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/${MODPY_PYCACHE}test_integration_secrets_with_vault_hvac.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/${MODPY_PYCACHE}test_integration_template.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/${MODPY_PYCACHE}test_integration_with_secrets.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/${MODPY_PYCACHE}test_locks.${MODPY_PYC_MAGIC_TAG}pyc
@@ -775,6 +745,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/${MODPY_PYCACHE}test_worker_kubernetes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/${MODPY_PYCACHE}test_worker_latent.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/${MODPY_PYCACHE}test_worker_marathon.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/${MODPY_PYCACHE}test_worker_proxy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/${MODPY_PYCACHE}test_worker_upcloud.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/${MODPY_PYCACHE}test_worker_workerside.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/${MODPY_PYCACHE}test_www.${MODPY_PYC_MAGIC_TAG}pyc
@@ -805,10 +776,12 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/test_URLs.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/test_configs.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/test_custom_buildstep.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/test_customservices.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/test_graphql.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/test_integration_force_with_patch.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/test_integration_mastershell.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/test_integration_scheduler_reconfigure.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/test_integration_secrets_with_vault.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/test_integration_secrets_with_vault_hvac.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/test_integration_template.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/test_integration_with_secrets.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/test_locks.py
@@ -831,6 +804,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/test_worker_c
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/test_worker_kubernetes.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/test_worker_latent.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/test_worker_marathon.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/test_worker_proxy.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/test_worker_upcloud.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/test_worker_workerside.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/integration/test_www.py
@@ -874,6 +848,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test_plugins.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test_revlinks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test_secret_in_file.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test_secret_in_hvac.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test_secret_in_passwordstore.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test_secret_in_vault.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/${MODPY_PYCACHE}test_secret_rendered_service.${MODPY_PYC_MAGIC_TAG}pyc
@@ -910,6 +885,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_pbmanager.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_plugins.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_revlinks.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_secret_in_file.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_secret_in_hvac.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_secret_in_passwordstore.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_secret_in_vault.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_secret_rendered_service.py

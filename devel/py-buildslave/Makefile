@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.64 2021/08/15 09:42:39 landry Exp $
+# $OpenBSD: Makefile,v 1.65 2021/11/01 08:27:17 landry Exp $
 
 COMMENT=	buildworker for the buildbot CI system
 
-MODPY_EGG_VERSION=	3.3.0
+MODPY_EGG_VERSION=	3.4.0
 DISTNAME=	buildbot-worker-${MODPY_EGG_VERSION}
 
 CATEGORIES=	devel
