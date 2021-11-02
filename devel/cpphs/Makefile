@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.49 2021/02/28 19:40:24 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.50 2021/11/02 04:08:00 gnezdo Exp $
 
 COMMENT =	liberalised reimplementation of cpp in Haskell
 
 MODCABAL_STEM =		cpphs
 MODCABAL_VERSION =	1.20.9.1
-MODCABAL_MANIFEST =	polyparse 1.13 1
+MODCABAL_MANIFEST =	polyparse 1.13 2
+REVISION =		0
 CATEGORIES =		devel
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 
