@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.143 2021/10/29 16:23:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.144 2021/11/02 21:11:42 sthen Exp $
 
      SUBDIR =
      SUBDIR += aom
@@ -19,8 +19,8 @@
      SUBDIR += handbrake
      SUBDIR += hdhomerun
      SUBDIR += imagination
-     SUBDIR += kid3
      SUBDIR += kguitar
+     SUBDIR += kid3
      SUBDIR += libaacs
      SUBDIR += libass
      SUBDIR += libbdplus

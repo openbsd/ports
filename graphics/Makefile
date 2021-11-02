@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.566 2021/10/31 07:50:44 landry Exp $
+# $OpenBSD: Makefile,v 1.567 2021/11/02 21:11:41 sthen Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -65,8 +65,8 @@
      SUBDIR += fyre
      SUBDIR += gd
      SUBDIR += gdcm
-     SUBDIR += gdk-pixbuf2
      SUBDIR += gdk-pixbuf-xlib
+     SUBDIR += gdk-pixbuf2
      SUBDIR += geeqie
      SUBDIR += gegl04
      SUBDIR += geomview
@@ -246,25 +246,25 @@
      SUBDIR += povray
      SUBDIR += pqiv
      SUBDIR += pstoedit
-     SUBDIR += py-blurhash,python3
-     SUBDIR += py2-Pillow
      SUBDIR += py-Pillow,python3
+     SUBDIR += py-blurhash,python3
      SUBDIR += py-cairo,python3
      SUBDIR += py-cycler,python3
      SUBDIR += py-dot,python3
-     SUBDIR += py-pygal,python3
      SUBDIR += py-imageio,python3
      SUBDIR += py-imagesize,python3
      SUBDIR += py-matplotlib,python3
      SUBDIR += py-matplotlib-inline,python3
      SUBDIR += py-opengl
      SUBDIR += py-opengl,python3
+     SUBDIR += py-pygal,python3
      SUBDIR += py-pyx,python3
      SUBDIR += py-qrcode,python3
      SUBDIR += py-sane,python3
      SUBDIR += py-seaborn,python3
-     SUBDIR += pycha,python3
+     SUBDIR += py2-Pillow
      SUBDIR += py2-cairo
+     SUBDIR += pycha,python3
      SUBDIR += qiv
      SUBDIR += quesoglc
      SUBDIR += quirc
@@ -289,11 +289,11 @@
      SUBDIR += simgear
      SUBDIR += simple-scan
      SUBDIR += sk1
-     SUBDIR += spirv-headers
-     SUBDIR += spirv-tools
      SUBDIR += skanlite
      SUBDIR += sketch
      SUBDIR += slop
+     SUBDIR += spirv-headers
+     SUBDIR += spirv-tools
      SUBDIR += sxiv
      SUBDIR += termtosvg
      SUBDIR += tesseract

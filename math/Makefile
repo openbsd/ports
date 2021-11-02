@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.206 2021/10/29 16:23:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.207 2021/11/02 21:11:42 sthen Exp $
 
      SUBDIR =
      SUBDIR += 4ti2
@@ -129,23 +129,23 @@
      SUBDIR += py-graphviz,python3
      SUBDIR += py-h5py,python3
      SUBDIR += py-mpmath,python3
-     SUBDIR += py-networkx,python3
      SUBDIR += py-netcdf4		# unflavoured but uses python3
+     SUBDIR += py-networkx,python3
      SUBDIR += py-numexpr,python3
-     SUBDIR += py2-numpy
      SUBDIR += py-numpy,python3
      SUBDIR += py-osqp,python3
      SUBDIR += py-pandas,python3
      SUBDIR += py-patsy,python3
+     SUBDIR += py-pysmt,python3
      SUBDIR += py-scikit-image,python3
      SUBDIR += py-scikit-learn,python3
      SUBDIR += py-scipy,python3
      SUBDIR += py-scs,python3
-     SUBDIR += py-pysmt,python3
      SUBDIR += py-snuggs,python3
      SUBDIR += py-statistics
      SUBDIR += py-sympy,python3
      SUBDIR += py-tables		# unflavoured but uses python3
+     SUBDIR += py2-numpy
      SUBDIR += qhull
      SUBDIR += qrupdate
      SUBDIR += rstudio
