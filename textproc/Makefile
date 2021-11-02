@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.698 2021/10/29 18:11:11 thfr Exp $
+# $OpenBSD: Makefile,v 1.699 2021/11/02 21:15:32 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -106,6 +106,7 @@
      SUBDIR += libexttextcat
      SUBDIR += libical
      SUBDIR += liblrdf
+     SUBDIR += libmarisa
      SUBDIR += libnxml
      SUBDIR += libstemmer
      SUBDIR += libtextcat
