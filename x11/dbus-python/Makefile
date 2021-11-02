@@ -1,4 +1,4 @@
-#+ $OpenBSD: Makefile,v 1.49 2021/07/22 11:51:07 ajacoutot Exp $
+#+ $OpenBSD: Makefile,v 1.50 2021/11/02 00:02:57 sthen Exp $
 
 PORTROACH=		limitw:2,even
 
@@ -11,6 +11,7 @@ DISTNAME =		dbus-python-${V}
 PKGNAME-main =		py-dbus-${V}
 FULLPKGNAME-common =	py-dbus-common-${V}
 FULLPKGPATH-common =	x11/dbus-python,-common
+REVISION-common =	0
 
 CATEGORIES =		x11
 
@@ -47,6 +48,7 @@ TEST_DEPENDS +=		devel/py-gobject3${MODPY_FLAVOR}
 # and using dbus.gi_service instead of dbus.gobject_service, is recommended.
 NO_TEST =		Yes
 .endif
+REVISION-main =		0
 
 LIB_DEPENDS-main =	devel/glib2 \
 			x11/dbus

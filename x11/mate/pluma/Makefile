@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2021/08/25 12:05:52 robert Exp $
+# $OpenBSD: Makefile,v 1.32 2021/11/02 00:02:59 sthen Exp $
 
 USE_WXNEEDED=		Yes
 
 COMMENT=		powerful text editor for the MATE desktop
+REVISION=		0
 
 CATEGORIES=		textproc
 

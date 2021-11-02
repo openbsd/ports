@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/08/18 17:09:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/11/02 00:02:52 sthen Exp $
 
 # looks like it uses too much ram now;
 # libc++abi: terminating with uncaught exception of type std::bad_alloc: std::bad_alloc
@@ -11,6 +11,7 @@ GH_PROJECT =	python-adblock
 GH_TAGNAME =	0.5.0
 DISTNAME =	py-adblock-${GH_TAGNAME}
 MODPY_EGG_VERSION = ${GH_TAGNAME}
+REVISION =          0
 
 CATEGORIES =	www
 

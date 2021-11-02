@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2021/08/24 07:00:27 paco Exp $
+# $OpenBSD: Makefile,v 1.11 2021/11/02 00:02:51 sthen Exp $
 
 COMMENT =		tool for deleting old Mastodon toots
 
 MODPY_EGG_VERSION =	3.1.3
 DISTNAME =		ephemetoot-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		www
 

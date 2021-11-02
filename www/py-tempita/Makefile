@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2021/10/24 09:28:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/11/02 00:02:55 sthen Exp $
 
 COMMENT =	very small text templating language
 
 MODPY_EGG_VERSION = 0.5.2
 DISTNAME =	Tempita-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	www
 

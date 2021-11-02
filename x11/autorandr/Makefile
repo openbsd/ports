@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/02 00:02:57 sthen Exp $
 
 COMMENT=	automates xrandr calls based on connect devices
 
@@ -8,6 +8,7 @@ GH_ACCOUNT=	phillipberndt
 GH_PROJECT=	autorandr
 GH_TAGNAME=	1.11
 MODPY_EGG_VERSION=	${GH_TAGNAME}.post1
+REVISION=		0
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2021/08/02 07:46:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/02 00:02:55 sthen Exp $
 
 COMMENT =		use requests to talk HTTP via a UNIX domain socket
 
 MODPY_EGG_VERSION =	0.2.0
 DISTNAME =		requests-unixsocket-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
 

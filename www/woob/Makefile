@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/04/29 13:11:35 semarie Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:02:57 sthen Exp $
 
 COMMENT =	web outside of browsers
 
 MODPY_EGG_VERSION =	3.0
 DISTNAME =	woob-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	www
 HOMEPAGE =	https://woob.tech/

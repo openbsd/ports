@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2021/10/24 09:28:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/11/02 00:02:56 sthen Exp $
 
 COMMENT =		pure-Python WSGI server
 
 MODPY_EGG_VERSION =	1.4.4
 DISTNAME =		waitress-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		www
 

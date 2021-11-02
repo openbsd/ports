@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2021/03/01 16:45:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/11/02 00:02:52 sthen Exp $
 
 COMMENT =		http client/server for asyncio
 
 MODPY_EGG_VERSION =	3.7.4
 DISTNAME =		aiohttp-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
 

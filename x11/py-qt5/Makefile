@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2021/10/31 17:08:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2021/11/02 00:02:59 sthen Exp $
 
 COMMENT=	Python bindings for Qt5
 
@@ -7,6 +7,7 @@ DPB_PROPERTIES=	parallel
 MODPY_EGG_VERSION= 5.15.6
 DISTNAME=	PyQt5-${MODPY_EGG_VERSION}
 PKGNAME=	py-qt5-${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	x11 devel
 

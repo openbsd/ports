@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/06 06:36:22 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:02:59 sthen Exp $
 
 COMMENT =		GTK2 theme matching KDE Breeze
 DISTNAME =		breeze-gtk-${VERSION}
+REVISION =		0
 
 MODULES =		lang/python
 

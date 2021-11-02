@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/10/24 14:27:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/02 00:02:57 sthen Exp $
 
 COMMENT-main=	dynamic web application server
 COMMENT-perl=	NGINX Unit perl module
@@ -7,6 +7,7 @@ COMMENT-ruby=	NGINX Unit ruby module
 
 VERSION=	1.25.0
 DISTNAME=	unit-${VERSION}
+REVISION-python= 0
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-perl=	unit-perl-${VERSION}

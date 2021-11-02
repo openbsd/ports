@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2021/10/24 09:28:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2021/11/02 00:02:52 sthen Exp $
 
 COMMENT=	pythonic, object-oriented web development framework
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION=	17.4.2
 DISTNAME=		CherryPy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		www
-REVISION=		3
+REVISION=		4
 
 HOMEPAGE=	https://www.cherrypy.org/
 

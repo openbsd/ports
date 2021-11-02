@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2021/03/15 21:14:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2021/11/02 00:02:57 sthen Exp $
 
 COMMENT-main=		input assistive technology
 COMMENT-gtk2=		caribou module for GTK2
@@ -8,8 +8,9 @@ GNOME_VERSION=		0.4.21
 
 PKGNAME-main=		caribou-${GNOME_VERSION}
 PKGNAME-gtk2=		caribou-gtk2-${GNOME_VERSION}
+REVISION-gtk2=		0
 
-REVISION-main=		6
+REVISION-main=		8
 
 SHARED_LIBS +=  caribou              0.0      # 0.0
 

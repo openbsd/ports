@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2021/09/02 12:51:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/11/02 00:02:54 sthen Exp $
 
 COMMENT=		stateful programmatic web browsing module
 
 MODPY_EGG_VERSION=	0.4.6
 DISTNAME=		mechanize-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		www
 

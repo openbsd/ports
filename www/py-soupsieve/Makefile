@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2021/10/31 11:32:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/11/02 00:02:55 sthen Exp $
 
 COMMENT =		modern CSS selector implementation for Beautiful Soup
 
 MODPY_EGG_VERSION =	2.2.1
 DISTNAME =		soupsieve-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
 

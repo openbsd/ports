@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2021/04/27 05:27:23 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.20 2021/11/02 00:02:59 sthen Exp $
 
 COMMENT =	UML Modeller
 DISTNAME =	umbrello-${VERSION}
 CATEGORIES =	x11 productivity
+REVISION =	0
 
 HOMEPAGE =	https://umbrello.kde.org/
 

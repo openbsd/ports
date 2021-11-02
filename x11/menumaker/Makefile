@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/11/02 00:02:59 sthen Exp $
 
 COMMENT =	menu generation utility for X window managers
 DISTNAME =	menumaker-0.99.12
 CATEGORIES =	x11
+REVISION =	0
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=menumaker/}
 

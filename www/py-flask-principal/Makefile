@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/23 06:17:55 daniel Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/02 00:02:53 sthen Exp $
 
 COMMENT =		identity management for flask
 
 MODPY_EGG_VERSION =	0.4.0
 DISTNAME =		Flask-Principal-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		www
 

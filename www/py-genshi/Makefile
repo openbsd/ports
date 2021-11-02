@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2021/07/21 15:29:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2021/11/02 00:02:53 sthen Exp $
 
 COMMENT=	toolkit for generation of output for the web
 
 MODPY_EGG_VERSION= 0.7.5
 DISTNAME=	Genshi-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME:L}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www
 

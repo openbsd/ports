@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/10/29 15:45:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/11/02 00:02:59 sthen Exp $
 
 COMMENT =	X C Binding - protocol binding generator
 
@@ -6,7 +6,7 @@ COMMENT =	X C Binding - protocol binding generator
 VERSION =	1.14.1
 DISTNAME =	xcb-proto-${VERSION}
 PKGNAME =	py-xcbgen-${VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	x11
 

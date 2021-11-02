@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2021/02/23 19:39:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/11/02 00:02:57 sthen Exp $
 
 COMMENT =		XRandR GUI
 MODPY_EGG_VERSION =	0.1.10
 DISTNAME =		arandr-${MODPY_EGG_VERSION}
 CATEGORIES =		x11 sysutils
 HOMEPAGE =		https://christian.amsuess.com/tools/arandr/
-REVISION =		1
+REVISION =		2
 
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 

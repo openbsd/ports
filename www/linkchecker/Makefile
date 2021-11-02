@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2021/02/23 19:39:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2021/11/02 00:02:52 sthen Exp $
 
 COMMENT=	checks HTML documents for broken links, CLI
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION= 10.0.1
 GH_ACCOUNT=	linkchecker
 GH_PROJECT=	linkchecker
 GH_TAGNAME=	v${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	www
 

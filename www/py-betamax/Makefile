@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2021/10/24 09:28:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/11/02 00:02:52 sthen Exp $
 
 COMMENT =		VCR imitation for python-requests
 
 MODPY_EGG_VERSION =	0.8.1
 DISTNAME =		betamax-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		www devel
 

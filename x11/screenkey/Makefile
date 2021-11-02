@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2021/03/18 11:27:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/02 00:03:00 sthen Exp $
 
 COMMENT =		display keypresses on screen
 
 MODPY_EGG_VERSION =	1.4
 DISTNAME =		screenkey-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		x11
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2021/06/19 18:34:35 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2021/11/02 00:02:58 sthen Exp $
 
 COMMENT =	KDE development helper scripts
 DISTNAME =	kde-dev-scripts-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/development/
 
