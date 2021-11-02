@@ -1,17 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2021/10/03 19:52:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2021/11/02 20:10:16 ajacoutot Exp $
 
 COMMENT=		building blocks for modern adaptive GNOME apps
 
 GNOME_PROJECT=		libadwaita
-GNOME_VERSION=		1.0.0alpha3
+GNOME_VERSION=		1.0.0.alpha.4
+PKGNAME=		${GNOME_PROJECT}-${GNOME_VERSION:S/.alpha./alpha/}
 
-# no official release yet
-COMMIT=			40c19ab2591763a482ebc79c82f1da32eea3bab6
-MASTER_SITES=		https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${COMMIT}/
-WRKDIST=		${WRKDIR}/${GNOME_PROJECT}-${COMMIT}
-EXTRACT_SUFX=		.tar.gz
-
-SHARED_LIBS += adwaita-1                 1.0 # 0
+SHARED_LIBS += adwaita-1                 1.1 # 0
 SHARED_LIBS += adwaita-inspector-module1 0.0 # 0
 
 # LGPLv2.1+
@@ -26,7 +21,8 @@ COMPILER_LANGS=		c
 MODULES=		devel/meson \
 			x11/gnome
 
-MODGNOME_TOOLS=		gobject-introspection vala
+MODGNOME_TOOLS=		desktop-file-utils gobject-introspection vala \
+			gtk-update-icon-cache
 
 BUILD_DEPENDS=		www/sassc
 
