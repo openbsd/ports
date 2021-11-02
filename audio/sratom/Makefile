@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/05/24 20:27:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:00:14 sthen Exp $
 
 COMMENT=	library for serialising LV2 atoms to/from RDF
 
 V=		0.6.8
 DISTNAME=	sratom-${V}
+REVISION=	0
 
 SHARED_LIBS=	sratom-0	0.0 # 0.6
 

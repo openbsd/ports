@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/07/11 09:32:14 paco Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:00:14 sthen Exp $
 
 COMMENT =		control subsonic api from cli
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	0.2.1
 
 DISTNAME =		subsonic-cli-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		audio
 

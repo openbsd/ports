@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/23 19:39:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/02 00:00:15 sthen Exp $
 
 COMMENT =	full end-to-end digital synthesis flow for VLSI ASIC designs
 
 DISTNAME =	qflow-1.4.83
+REVISION =	0
 
 CATEGORIES =	cad
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2021/02/23 19:39:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2021/11/02 00:00:14 sthen Exp $
 
 COMMENT=	GTK+ client for the Music Player Daemon
 
@@ -8,6 +8,7 @@ GH_ACCOUNT=	multani
 GH_PROJECT=	sonata
 DISTNAME=	sonata-${MODPY_EGG_VERSION}
 EPOCH=		1
+REVISION=	0
 
 CATEGORIES=	audio
 

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2021/05/23 19:22:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/11/02 00:00:15 sthen Exp $
 
 COMMENT =	framework for Verilog RTL synthesis
 DISTNAME =	yosys-0.9pl4081
+REVISION =	0
 
 GH_ACCOUNT =	YosysHQ
 GH_PROJECT =	yosys

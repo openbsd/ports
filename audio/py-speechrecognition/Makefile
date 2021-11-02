@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/08/14 01:17:01 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:00:14 sthen Exp $
 
 COMMENT =	Python library for performing speech recognition
 
 PKGNAME =	py-speechrecognition-${GH_TAGNAME}
+REVISION =	0
 
 GH_ACCOUNT =	Uberi
 GH_PROJECT =	speech_recognition

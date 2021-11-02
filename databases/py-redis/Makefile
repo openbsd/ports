@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2021/10/24 09:28:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2021/11/02 00:00:16 sthen Exp $
 
 COMMENT =		Python interface to Redis
 
@@ -10,7 +10,7 @@ GH_TAGNAME =		${MODPY_EGG_VERSION}
 
 PKGNAME =		py-redis-${MODPY_EGG_VERSION}
 CATEGORIES =		databases
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		https://github.com/andymccurdy/redis-py/
 

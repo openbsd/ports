@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2021/07/22 18:53:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/02 00:00:14 sthen Exp $
 
 COMMENT =		tool to convert 2D (dxf, pdf, ps) files to gcode
 
 DISTNAME =		dxf2gcode-20191025
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		cad
 

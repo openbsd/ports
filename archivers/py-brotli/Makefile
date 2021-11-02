@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2021/01/04 14:06:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/02 00:00:12 sthen Exp $
 
 COMMENT =		Python bindings for the Brotli compression library
 
 MODPY_EGG_VERSION =	1.0.9
 DISTNAME =		Brotli-${MODPY_EGG_VERSION}
 PKGNAME =		py-brotli-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		archivers
 

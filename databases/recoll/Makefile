@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2021/05/24 17:26:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/11/02 00:00:17 sthen Exp $
 
 COMMENT-main=	full text search application
 COMMENT-gui=	X user interface to recoll
@@ -9,6 +9,8 @@ V=		1.31.0
 DISTNAME=	recoll-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-gui=	recoll-gui-${V}
+REVISION-gui=	0
+REVISION-main=	0
 
 SHARED_LIBS +=	recoll-${V}            1.0 # 0.0
 SHARED_LIBS +=  recoll                 1.0 # 0.0

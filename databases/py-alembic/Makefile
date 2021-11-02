@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/01 08:23:46 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:00:15 sthen Exp $
 
 COMMENT =		database migration tool for sqlalchemy
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.7.4
 
 DISTNAME =		alembic-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		databases
 

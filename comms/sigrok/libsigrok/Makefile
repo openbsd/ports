@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2021/04/12 11:22:33 cwen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/11/02 00:00:15 sthen Exp $
 
 COMMENT =		sigrok hardware driver library
 
 SIGROK_PROJECT =	libsigrok
 SIGROK_VERSION =	0.5.2
 MODPY_EGG_VERSION =	${SIGROK_VERSION}
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=  sigrok                    0.1 # 0.0
 SHARED_LIBS +=  sigrokcxx                 0.1 # 4.0

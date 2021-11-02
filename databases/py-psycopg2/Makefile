@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2021/05/24 16:56:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2021/11/02 00:00:16 sthen Exp $
 
 COMMENT =		PostgreSQL database adapter for Python
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	2.8.6
 DISTNAME =		psycopg2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		databases
+REVISION =		0
 
 HOMEPAGE =		https://www.psycopg.org/
 

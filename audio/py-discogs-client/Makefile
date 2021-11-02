@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:12:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/11/02 00:00:13 sthen Exp $
 
 COMMENT =	Python interface to Discogs website
 
 MODPY_EGG_VERSION = 2.2.2
-REVISION =	1
+REVISION =	2
 DISTNAME =	discogs-client-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	audio

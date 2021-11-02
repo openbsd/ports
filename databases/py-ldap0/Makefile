@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/10/30 18:53:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/11/02 00:00:16 sthen Exp $
 
 COMMENT =	provides an API to access LDAP directory servers for Python
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.4.0
 
 DISTNAME =	ldap0-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	databases devel
 

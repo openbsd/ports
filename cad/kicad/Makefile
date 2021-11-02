@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2021/10/20 11:44:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2021/11/02 00:00:15 sthen Exp $
 
 # Sync cad/kicad-share/Makefile.inc with archs where kicad is broken
 BROKEN-powerpc =	segfaults when trying to run the PCB editor
@@ -6,7 +6,7 @@ BROKEN-powerpc =	segfaults when trying to run the PCB editor
 V =			5.1.10
 COMMENT =		schematic and PCB editing software
 DISTNAME =		kicad-${V}
-REVISION =		0
+REVISION =		1
 EPOCH =			0
 
 SHARED_LIBS +=		kicad_3dsg                0.0 # 2.0

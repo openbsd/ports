@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/11/02 00:00:15 sthen Exp $
 
 # sync with editors/libreoffice
 ONLY_FOR_ARCHS=		amd64 i386
@@ -8,7 +8,7 @@ PKG_ARCH=		*
 COMMENT=		UNiversal Office CONVerter
 
 DISTNAME=		unoconv-0.7
-REVISION=		8
+REVISION=		9
 
 CATEGORIES=		converters textproc
 

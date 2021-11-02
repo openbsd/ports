@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2021/02/23 19:39:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/11/02 00:00:14 sthen Exp $
 
 BROKEN-hppa =	SIGILL when running lilypond
 
 COMMENT =	solfege and ear training program
 
 DISTNAME =	solfege-3.23.4
+REVISION =	0
 
 CATEGORIES =	audio x11
 

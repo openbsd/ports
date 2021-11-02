@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2021/10/30 19:07:47 phessler Exp $
+# $OpenBSD: Makefile,v 1.14 2021/11/02 00:00:15 sthen Exp $
 
 BROKEN-aarch64 = invalid asm
 BROKEN-i386 =	frequent cmake-related build failures
@@ -9,7 +9,7 @@ COMMENT =	signal-processing toolkit for SDR (software-defined radio)
 
 V =		3.8.2.0
 DISTNAME =	gnuradio-$V
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS +=  gnuradio-analog           0.0 # 3.7
 SHARED_LIBS +=  gnuradio-atsc             0.0 # 3.7

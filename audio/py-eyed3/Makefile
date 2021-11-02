@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2021/02/23 19:39:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2021/11/02 00:00:13 sthen Exp $
 
 COMMENT=		module and program for processing ID3 tags
 
 MODPY_EGG_VERSION=	0.9.6
 DISTNAME=		eyeD3-${MODPY_EGG_VERSION}
 CATEGORIES=		audio
+REVISION=		0
 
 HOMEPAGE=		http://eyed3.nicfit.net/
 

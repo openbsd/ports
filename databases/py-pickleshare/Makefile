@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2021/10/29 15:38:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2021/11/02 00:00:16 sthen Exp $
 
 COMMENT =		tiny 'shelve'-like database with concurrency support
 
 MODPY_EGG_VERSION =	0.7.4
 DISTNAME =		pickleshare-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		databases devel
 

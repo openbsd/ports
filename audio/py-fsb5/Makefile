@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/10/05 13:19:46 thfr Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/02 00:00:13 sthen Exp $
 
 COMMENT =		extract audio from FSB5 (FMOD Sample Bank) files
 
@@ -9,6 +9,7 @@ GH_ACCOUNT =		HearthSim
 GH_PROJECT =		python-fsb5
 GH_TAGNAME =		b7bf605
 CATEGORIES =		audio
+REVISION =		0
 
 MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
 
