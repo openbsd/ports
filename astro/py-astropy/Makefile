@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.1 2021/05/06 15:09:25 kettenis Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 21:19:15 sthen Exp $
 
 COMMENT =	community-developed python astronomy tools
 
 MODPY_EGG_VERSION =	4.0.5
+REVISION =	0
 
 DISTNAME =	astropy-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
 CATEGORIES =	astro
 
-HOMEPAGE =	http://astropy.org
+HOMEPAGE =	https://astropy.org
 
 # BSD license
 PERMIT_PACKAGE =	Yes
