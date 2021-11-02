@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/10/08 15:37:51 bket Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:01:38 sthen Exp $
 
 COMMENT =	guess information from video filenames
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	3.3.1
 
 DISTNAME =	guessit-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	multimedia
 

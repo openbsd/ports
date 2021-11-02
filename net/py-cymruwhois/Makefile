@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2021/10/29 15:38:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/02 00:01:40 sthen Exp $
 
 COMMENT=		client for the whois.cymru.com service
 
 MODPY_EGG_VERSION=	1.6
 DISTNAME=		cymruwhois-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		net
 

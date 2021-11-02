@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/10/22 19:29:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/11/02 00:01:35 sthen Exp $
 
 COMMENT=		GNU units conversion program
 
@@ -6,7 +6,7 @@ DISTNAME=		units-2.16
 PKGNAME=		g${DISTNAME}
 CATEGORIES=		math
 MASTER_SITES=		${MASTER_SITE_GNU:=units/}
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=		https://www.gnu.org/software/units/
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/11/02 00:01:37 sthen Exp $
 
 COMMENT =		powerful curses interface python file manager
 
 MODPY_EGG_VERSION =	3.1
 DISTNAME =		lfm-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		misc
 

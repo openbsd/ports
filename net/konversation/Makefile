@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2021/10/19 20:08:35 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.27 2021/11/02 00:01:39 sthen Exp $
 
 COMMENT =	IRC client for KDE
 
 DISTNAME =	konversation-${MODKDE_VERSION}
+REVISION =	0
 
 CATEGORIES =	net
 

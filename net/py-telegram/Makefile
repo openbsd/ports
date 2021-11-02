@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/06/09 10:43:16 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:01:42 sthen Exp $
 
 COMMENT =	python wrapper for Telegram tdlib
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	0.14.0
 
 DISTNAME =	python-telegram-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/^python-/py-/}
+REVISION =	0
 
 CATEGORIES =	net
 

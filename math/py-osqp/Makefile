@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/01/04 14:06:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/11/02 00:01:36 sthen Exp $
 
 COMMENT =		Python interface to OSQP
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	0.6.1
 DISTNAME =		osqp-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		3
+REVISION =		4
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 

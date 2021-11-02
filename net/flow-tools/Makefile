@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2021/02/26 21:20:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2021/11/02 00:01:39 sthen Exp $
 
 SHARED_LIBS +=  ft                   0.0      # .0.0
 
@@ -11,7 +11,7 @@ DISTNAME=	flow-tools-0.68.6pl20210211
 EPOCH=		0
 CATEGORIES=	net
 
-REVISION=	0
+REVISION=	1
 
 # BSD
 PERMIT_PACKAGE=	Yes

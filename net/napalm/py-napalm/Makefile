@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:13:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/02 00:01:39 sthen Exp $
 
 COMMENT =		network automation abstraction layer
 
 MODPY_EGG_VERSION =	2.3.3
-REVISION =		2
+REVISION =		3
 DISTNAME =		napalm-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 

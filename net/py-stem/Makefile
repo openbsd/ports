@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2021/09/21 10:35:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/11/02 00:01:42 sthen Exp $
 
 COMMENT =		Tor controller library
 
 MODPY_EGG_VERSION =	1.8.0
 DISTNAME =		stem-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		net
 

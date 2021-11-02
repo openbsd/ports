@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2021/03/04 12:53:42 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2021/11/02 00:01:38 sthen Exp $
 
 COMMENT =	multimedia files tag editor
 DISTNAME =	kid3-3.8.5
 CATEGORIES =	multimedia x11
 HOMEPAGE =	https://kid3.kde.org/
+REVISION =	0
 
 MAINTAINER =	Vadim Zhukov <zhuk@openbsd.org>
 

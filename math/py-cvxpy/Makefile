@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/01/04 14:06:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/11/02 00:01:36 sthen Exp $
 
 COMMENT =		modeling language for convex optimization problems
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	1.0.25
 DISTNAME =		cvxpy-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		3
+REVISION =		4
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 

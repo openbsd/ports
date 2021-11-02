@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2021/02/23 19:39:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2021/11/02 00:01:41 sthen Exp $
 
 FIX_EXTRACT_PERMISSIONS = Yes
 
@@ -9,7 +9,7 @@ DISTNAME =		impacket-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 EPOCH =			0
 CATEGORIES =		net security
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://www.secureauth.com/labs/open-source-tools/impacket
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/24 14:28:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/11/02 00:01:38 sthen Exp $
 
 COMMENT =	DNS performance testing tools
 
 DISTNAME =	dnsperf-2.4.2
+REVISION =	0
 
 CATEGORIES =	net benchmarks
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2021/10/31 17:10:40 tb Exp $
+# $OpenBSD: Makefile,v 1.82 2021/11/02 00:01:38 sthen Exp $
 
 PORTROACH=		skipv:4.1.0,4.1.1
 
@@ -8,7 +8,7 @@ COMMENT=		network analysis and security monitoring framework
 
 V=			4.0.4
 DISTNAME=		zeek-${V}
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=	binpac                    2.0
 SHARED_LIBS +=  broccoli                  9.0

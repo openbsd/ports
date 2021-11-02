@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.59 2021/10/19 20:08:35 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.60 2021/11/02 00:01:39 sthen Exp $
 
 COMMENT =	BitTorrent Client
 
 DISTNAME =	ktorrent-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  ktcore                    2.1 # 0.0
 

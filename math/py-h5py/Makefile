@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/10/24 11:43:54 martin Exp $
+# $OpenBSD: Makefile,v 1.9 2021/11/02 00:01:36 sthen Exp $
 
 COMMENT =	pythonic interface to the HDF5 binary data format
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	3.5.0
 DISTNAME =		h5py-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
+REVISION =		0
 
 HOMEPAGE =		https://www.h5py.org/
 MAINTAINER =		Martin Reindl <martin@catai.org>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.64 2021/10/28 10:28:32 jca Exp $
+# $OpenBSD: Makefile,v 1.65 2021/11/02 00:01:36 sthen Exp $
 
 COMMENT=		fast array and numeric programming library for Python
 
 MODPY_EGG_VERSION=	1.19.5
-REVISION=		0
+REVISION=		1
 DISTNAME=		numpy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 EXTRACT_SUFX=		.zip

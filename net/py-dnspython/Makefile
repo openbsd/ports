@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2021/01/16 22:36:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2021/11/02 00:01:40 sthen Exp $
 
 COMMENT=		DNS toolkit for Python
 
@@ -9,6 +9,7 @@ EXTRACT_SUFX=		.zip
 MASTER_SITES=		${HOMEPAGE}kits/${MODPY_EGG_VERSION}/
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		net
+REVISION=		0
 
 HOMEPAGE=		https://www.dnspython.org/
 

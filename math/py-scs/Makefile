@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/01/04 14:06:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/11/02 00:01:36 sthen Exp $
 
 COMMENT =		Python interface to SCS
 
@@ -7,7 +7,7 @@ DISTNAME =		scs-${MODPY_EGG_VERSION}
 V =			${MODPY_EGG_VERSION:S/-/./}
 PKGNAME =		py-scs-${V}
 CATEGORIES =		math
-REVISION =		3
+REVISION =		4
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 

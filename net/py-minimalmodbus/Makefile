@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/09/09 08:49:04 martin Exp $
+# $OpenBSD: Makefile,v 1.7 2021/11/02 00:01:41 sthen Exp $
 
 COMMENT=	easy-to-use Modbus RTU/ASCII implementation for Python
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION=	2.0.1
 DISTNAME=		minimalmodbus-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		net
+REVISION=		0
 
 HOMEPAGE=		https://github.com/pyhys/minimalmodbus
 

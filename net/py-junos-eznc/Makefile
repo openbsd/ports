@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2021/03/29 12:18:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/11/02 00:01:41 sthen Exp $
 
 COMMENT =		library for Junos automation
 
 MODPY_EGG_VERSION =	2.2.1
-REVISION =		2
+REVISION =		3
 DISTNAME =		junos-eznc-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 

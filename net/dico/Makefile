@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/11/02 00:01:38 sthen Exp $
 
 COMMENT =	GNU dictionary server
 
 V =		2.10
 DISTNAME =	dico-$V
+REVISION =	0
 
 SHARED_LIBS +=  dico                      0.0 # 2.0
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2021/02/18 21:42:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/11/02 00:01:40 sthen Exp $
 
 COMMENT =		high performance, concurrent HTTP client library
 
 MODPY_EGG_VERSION =	1.3.1
-REVISION =		4
+REVISION =		5
 DISTNAME =		geventhttpclient-${MODPY_EGG_VERSION}
 PKGNAME =		${MODPY_PY_PREFIX}${DISTNAME}
 CATEGORIES =		net devel

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2021/10/08 20:20:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.85 2021/11/02 00:01:39 sthen Exp $
 
 COMMENT-main=	RADIUS server implementation
 COMMENT-freetds= freeradius freetds rlm addon
@@ -11,6 +11,7 @@ COMMENT-python=	freeradius python rlm addon
 COMMENT-python3= freeradius python3 rlm addon (experimental)
 
 V=		3.0.25
+REVISION-python3= 0
 DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
 

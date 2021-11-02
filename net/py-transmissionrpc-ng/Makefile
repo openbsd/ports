@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:13:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/02 00:01:42 sthen Exp $
 
 COMMENT =		json-rpc client library for Transmission
 
 MODPY_EGG_VERSION =	0.14.1
 DISTNAME =		transmissionrpc-ng-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 

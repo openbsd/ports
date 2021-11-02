@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2021/01/16 21:49:14 kmos Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/02 00:01:36 sthen Exp $
 
 COMMENT =		image processing routines for SciPy
 
 MODPY_EGG_VERSION =	0.17.2
-REVISION =		1
+REVISION =		2
 DISTNAME =		scikit-image-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math

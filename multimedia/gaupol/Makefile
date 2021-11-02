@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/09/06 09:40:47 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:01:38 sthen Exp $
 
 COMMENT =	editor for text-based subtitle files
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.9
 GH_ACCOUNT =	otsaloma
 GH_PROJECT =	gaupol
 GH_TAGNAME =	${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	multimedia
 

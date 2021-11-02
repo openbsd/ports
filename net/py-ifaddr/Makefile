@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2021/03/05 12:56:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2021/11/02 00:01:41 sthen Exp $
 
 COMMENT=		enumerate IP addresses on the local network adapters
 
 MODPY_EGG_VERSION=	0.1.7
 DISTNAME=		ifaddr-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		net
 

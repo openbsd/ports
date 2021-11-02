@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/23 19:39:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/11/02 00:01:40 sthen Exp $
 
 COMMENT =		compare pcap dump files
 
@@ -6,7 +6,7 @@ GH_ACCOUNT =		isginf
 GH_PROJECT =		pcap-diff
 GH_COMMIT =		d4c129e98527f42fbd94362d50608d5286e3f57d
 DISTNAME =		pcapdiff-0.20180816
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net security
 
