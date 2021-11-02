@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2020/11/21 17:03:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/11/02 00:01:04 sthen Exp $
 
 COMMENT=		CIM operations over HTTP in Python
 
@@ -7,7 +7,7 @@ MODPY_EGG_VERSION=	0.17.2
 DISTNAME=		pywbem-${MODPY_EGG_VERSION}
 PKGNAME=		py-wbem-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE=		https://pywbem.github.io/
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2021/10/29 15:38:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/11/02 00:01:02 sthen Exp $
 
 COMMENT =		hack to explicitly set up and tear down fixtures
 
 MODPY_EGG_VERSION =	0.1.1
 DISTNAME =		pytest-subtesthack-${MODPY_EGG_VERSION}
 PKGNAME =		py-test-subtesthack-${MODPY_EGG_VERSION}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		devel
 

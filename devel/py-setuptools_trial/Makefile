@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2021/10/29 15:38:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/02 00:01:01 sthen Exp $
 
 COMMENT=		setuptools plugin for unit tests with trial
 
 MODPY_EGG_VERSION=	0.6.0
 DISTNAME=		setuptools_trial-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		devel
 

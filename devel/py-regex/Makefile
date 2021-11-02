@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/17 05:28:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/02 00:01:00 sthen Exp $
 
 COMMENT =		alternative regular expression module to replace re
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	2020.11.13
 DISTNAME =		regex-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
+REVISION =		0
 
 HOMEPAGE =		https://bitbucket.org/mrabarnett/mrab-regex
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2021/10/24 09:28:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/11/02 00:01:04 sthen Exp $
 
 COMMENT =		basic inter-process locks
 
 MODPY_EGG_VERSION =	2.0
 DISTNAME =		zc.lockfile-${MODPY_EGG_VERSION}
 PKGNAME =		py-zc-lockfile${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		devel
 

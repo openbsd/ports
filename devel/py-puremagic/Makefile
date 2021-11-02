@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/10/08 15:24:00 bket Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:01:00 sthen Exp $
 
 COMMENT =	pure python implementation of magic file detection
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.11
 
 DISTNAME =	puremagic-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

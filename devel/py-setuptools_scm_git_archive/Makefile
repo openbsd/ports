@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2021/10/29 15:38:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/02 00:01:01 sthen Exp $
 
 COMMENT =	setuptools_scm plugin for git archives
 
 MODPY_EGG_VERSION =	1.0
 DISTNAME =	setuptools_scm_git_archive-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	devel
 

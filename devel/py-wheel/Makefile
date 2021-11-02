@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2021/05/21 19:50:31 kmos Exp $
+# $OpenBSD: Makefile,v 1.14 2021/11/02 00:01:04 sthen Exp $
 
 COMMENT =		built-package format for Python
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	0.36.2
 DISTNAME =		wheel-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 
 # MIT
 PERMIT_PACKAGE =	Yes

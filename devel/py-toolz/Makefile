@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/02/16 23:36:53 daniel Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:01:03 sthen Exp $
 
 COMMENT =	utility functions similar to itertools and functools
 
 MODPY_EGG_VERSION =	0.11.1
 DISTNAME =		toolz-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

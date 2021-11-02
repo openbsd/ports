@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/10/31 17:08:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/11/02 00:01:00 sthen Exp $
 
 COMMENT=	PEP 517 compliant PyQt build system
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION=	1.12.2
 
 DISTNAME=	PyQt-builder-${MODPY_EGG_VERSION}
 PKGNAME=	py-qt-builder-${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	devel
 

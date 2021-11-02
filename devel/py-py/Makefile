@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2021/05/21 19:50:28 kmos Exp $
+# $OpenBSD: Makefile,v 1.38 2021/11/02 00:01:00 sthen Exp $
 
 COMMENT=		cross-python path, ini-parsing, io, code, log facilities
 
 MODPY_EGG_VERSION =	1.8.0
 DISTNAME=		py-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		devel
 

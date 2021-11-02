@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/04/28 20:11:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/02 00:01:03 sthen Exp $
 
 COMMENT =		progress bar for Python
 
 MODPY_EGG_VERSION =	4.52.0
 DISTNAME =		tqdm-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

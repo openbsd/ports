@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/05/21 19:50:30 kmos Exp $
+# $OpenBSD: Makefile,v 1.11 2021/11/02 00:01:02 sthen Exp $
 
 COMMENT =		fixture for benchmarking code
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	3.2.2
 DISTNAME =		pytest-benchmark-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =		https://pytest-benchmark.readthedocs.org/en/stable/
 

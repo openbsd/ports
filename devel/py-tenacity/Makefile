@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/11/14 18:21:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:01:02 sthen Exp $
 
 COMMENT =		Python module to retry code until it succeeds
 
 MODPY_EGG_VERSION =	6.2.0
 DISTNAME =		tenacity-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 MAINTAINER =		Mikolaj Kucharski <mikolaj@kucharski.name>
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2021/10/29 15:38:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/11/02 00:01:03 sthen Exp $
 
 COMMENT =		test utilities working with files and commands
 
 MODPY_EGG_VERSION =	0.4.2
 DISTNAME =		testpath-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		devel
 

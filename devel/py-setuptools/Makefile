@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2021/07/22 09:23:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2021/11/02 00:01:01 sthen Exp $
 
 COMMENT=	simplified packaging system for Python modules
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION=	57.4.0
 DISTNAME=		setuptools-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 EPOCH=			0
+REVISION=		0
 
 CATEGORIES=		devel
 

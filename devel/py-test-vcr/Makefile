@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/03/01 13:11:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/02 00:01:03 sthen Exp $
 
 COMMENT =		plugin for managing VCR.py cassettes
 
 MODPY_EGG_VERSION =	1.0.2
 DISTNAME =		pytest-vcr-${MODPY_EGG_VERSION}
 PKGNAME =		py-test-vcr-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 

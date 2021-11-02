@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/09/02 15:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/02 00:01:02 sthen Exp $
 
 COMMENT =	unittest subTest() support and subtests fixture
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	0.3.2
 
 DISTNAME =	pytest-subtests-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

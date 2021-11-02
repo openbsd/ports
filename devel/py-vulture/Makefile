@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/04/29 13:54:37 martin Exp $
+# $OpenBSD: Makefile,v 1.6 2021/11/02 00:01:04 sthen Exp $
 
 COMMENT =	finds unused code in Python programs
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	2.3
 
 DISTNAME =	vulture-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

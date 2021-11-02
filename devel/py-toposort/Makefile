@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/09/01 13:49:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:01:03 sthen Exp $
 
 COMMENT=		implements a topological sort algorithm
 
 MODPY_EGG_VERSION=	1.6
 DISTNAME=		toposort-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		devel
 

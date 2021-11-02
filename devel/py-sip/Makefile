@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2021/10/31 17:08:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2021/11/02 00:01:01 sthen Exp $
 
 COMMENT=	automatically generate Python bindings for C and C++ libs
 
@@ -10,6 +10,7 @@ MODPY_EGG_VERSION=	6.4.0
 DISTNAME=	sip-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 EPOCH=		0
+REVISION=	0
 
 CATEGORIES=	devel
 

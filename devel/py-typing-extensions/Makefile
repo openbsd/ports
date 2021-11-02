@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:12:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/02 00:01:03 sthen Exp $
 
 COMMENT =		backported type hints for python >= 3.5
 
 MODPY_EGG_VERSION =	3.7.4.1
 DISTNAME =		typing_extensions-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://github.com/python/typing/blob/master/typing_extensions/README.rst
 

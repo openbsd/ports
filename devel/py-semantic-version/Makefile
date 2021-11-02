@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/09/01 15:29:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:01:01 sthen Exp $
 
 COMMENT=		library implementing the 'SemVer' scheme
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION=	2.8.5
 
 DISTNAME=		semantic_version-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		devel
 

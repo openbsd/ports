@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/20 08:24:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/02 00:01:04 sthen Exp $
 
 COMMENT =		file matching and globbing library
 
 MODPY_EGG_VERSION =	8.1.1
 DISTNAME =		wcmatch-${MODPY_EGG_VERSION}
 PKGNAME =		py-wcmatch-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel textproc
 

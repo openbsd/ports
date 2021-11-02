@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/09/01 13:50:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:01:01 sthen Exp $
 
 COMMENT=		simple data validation library
 
 MODPY_EGG_VERSION=	0.7.4
 DISTNAME=		schema-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		devel
 

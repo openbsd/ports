@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2021/02/18 03:35:07 yasuoka Exp $
+# $OpenBSD: Makefile,v 1.23 2021/11/02 00:01:00 sthen Exp $
 
 COMMENT=		RCS parsing library for Python
 
@@ -8,7 +8,7 @@ GH_COMMIT=		206bca0b90f5780815c0b6c6cbccfd03f27f6985
 
 DISTNAME=		rcsparse-20151027
 PKGNAME=		py-${DISTNAME}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		devel
 

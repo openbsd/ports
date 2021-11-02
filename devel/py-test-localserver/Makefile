@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2021/03/01 13:11:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/02 00:01:02 sthen Exp $
 
 COMMENT =		py.test plugin to test server connections locally
 
 MODPY_EGG_VERSION =	0.5.0
 DISTNAME =		pytest-localserver-${MODPY_EGG_VERSION}
 PKGNAME =		py-test-localserver-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/10/29 15:38:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/11/02 00:01:02 sthen Exp $
 
 COMMENT=		parse, validate and reformat standard numbers and codes
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION=	1.13
 DISTNAME=		python-stdnum-${MODPY_EGG_VERSION}
 PKGNAME=		py-stdnum-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		https://arthurdejong.org/python-stdnum/
 

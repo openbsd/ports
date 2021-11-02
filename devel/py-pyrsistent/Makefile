@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/09/10 15:57:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:01:00 sthen Exp $
 
 COMMENT =	persistent/functional/immutable data structures
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	0.18.0
 
 DISTNAME =	pyrsistent-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

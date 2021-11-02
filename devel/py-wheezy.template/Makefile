@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/09/01 13:50:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:01:04 sthen Exp $
 
 COMMENT=		lightweight template library
 
 MODPY_EGG_VERSION=	3.1.0
 DISTNAME=		wheezy.template-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		devel
 

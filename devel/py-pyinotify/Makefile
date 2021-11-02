@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2021/08/29 08:47:29 jca Exp $
+# $OpenBSD: Makefile,v 1.10 2021/11/02 00:01:00 sthen Exp $
 
 COMMENT =		filesystem events monitoring
 
 MODPY_EGG_VERSION =	0.9.6
 DISTNAME =		pyinotify-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		devel
 
