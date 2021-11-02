@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2021/10/30 17:06:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2021/11/02 12:39:30 ajacoutot Exp $
 
 # XXX add support for libcloudproviders? (-Dcloudproviders=enabled)
 # XXX add support for tracker3? (-Dtracker=enabled)
@@ -12,7 +12,7 @@ COMMENT-guic=		gtk+ icon theme caching utility
 COMMENT-media=		gtk+ media engine
 
 GNOME_PROJECT=		gtk
-GNOME_VERSION=		4.4.0
+GNOME_VERSION=		4.4.1
 
 PKGNAME-main=		gtk+4-${GNOME_VERSION}
 PKGNAME-cups=		gtk+4-cups-${GNOME_VERSION}
@@ -22,7 +22,7 @@ PKGNAME-media=		gtk+4-media-${GNOME_VERSION}
 
 CATEGORIES=		x11 devel
 
-SHARED_LIBS += gtk-4                     4.1 # 1.200.1
+SHARED_LIBS += gtk-4                     4.1 # 1.400.1
 
 HOMEPAGE=		http://www.gtk.org/
 
