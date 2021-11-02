@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_url_request_url_request_cc,v 1.5 2021/10/29 14:49:41 robert Exp $
+$OpenBSD: patch-net_url_request_url_request_cc,v 1.6 2021/11/02 09:06:54 robert Exp $
 
 Index: net/url_request/url_request.cc
 --- net/url_request/url_request.cc.orig
@@ -23,9 +23,9 @@ Index: net/url_request/url_request.cc
  void textlog_request(const char *caller, const GURL &url)
  {
 -#ifdef __linux__
-+        base::CommandLine* command_line = base::CommandLine::ForCurrentProcess();
-+        if (!command_line->HasSwitch(switches::kTrk))
-+                return;
++	base::CommandLine* command_line = base::CommandLine::ForCurrentProcess();
++	if (!command_line->HasSwitch(switches::kTrk))
++		return;
 +#ifdef __OpenBSD__
  	bool tty = isatty(fileno(stderr));
  #else

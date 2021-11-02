@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_renderer_host_render_process_host_impl_cc,v 1.20 2021/10/29 14:49:41 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_render_process_host_impl_cc,v 1.21 2021/11/02 09:06:54 robert Exp $
 
 Index: content/browser/renderer_host/render_process_host_impl.cc
 --- content/browser/renderer_host/render_process_host_impl.cc.orig
@@ -30,11 +30,12 @@ Index: content/browser/renderer_host/render_process_host_impl.cc
      if (auto font_receiver = receiver.As<font_service::mojom::FontService>()) {
        ConnectToFontService(std::move(font_receiver));
        return;
-@@ -3447,6 +3447,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
+@@ -3447,6 +3447,8 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
      switches::kDisableSpeechAPI,
      switches::kDisableThreadedCompositing,
      switches::kDisableTouchDragDrop,
 +    switches::kDisableUnveil,
++    switches::kTrk,
      switches::kDisableV8IdleTasks,
      switches::kDisableVideoCaptureUseGpuMemoryBuffer,
      switches::kDisableWebGLImageChromium,
