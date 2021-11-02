@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.439 2021/11/02 20:45:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.440 2021/11/02 20:52:32 sthen Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -148,9 +148,9 @@
      SUBDIR += ports-readmes-dancer
      SUBDIR += postgresql
      SUBDIR += postgresql-odbc
-     SUBDIR += postgresql-previous
      SUBDIR += postgresql-pllua
      SUBDIR += postgresql-plr
+     SUBDIR += postgresql-previous
      SUBDIR += postgresql_autodoc
      SUBDIR += pspg
      SUBDIR += puppetdb5
@@ -190,13 +190,13 @@
      SUBDIR += riak
      SUBDIR += ruby-amalgalite,ruby27
      SUBDIR += ruby-amalgalite,ruby30
-     SUBDIR += ruby-hiera3
      SUBDIR += ruby-hiera-eyaml,ruby27
      SUBDIR += ruby-hiera-eyaml,ruby30
      SUBDIR += ruby-hiera-eyaml-gpg,ruby27
      SUBDIR += ruby-hiera-eyaml-gpg,ruby30
      SUBDIR += ruby-hiera-file,ruby27
      SUBDIR += ruby-hiera-file,ruby30
+     SUBDIR += ruby-hiera3
      SUBDIR += ruby-kirbybase
      SUBDIR += ruby-ldap,ruby27
      SUBDIR += ruby-ldap,ruby30
@@ -220,6 +220,7 @@
      SUBDIR += skytools
      SUBDIR += sqlbox
      SUBDIR += sqlcipher
+     SUBDIR += sqlite
      SUBDIR += sqlite3
      SUBDIR += sqlite3-odbc
      SUBDIR += sqlite3-tcl
