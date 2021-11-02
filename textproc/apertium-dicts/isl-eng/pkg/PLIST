@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/02 07:40:36 bentley Exp $
+@pkgpath textproc/apertium-dicts/is-en
+share/apertium/apertium-isl-eng/
+share/apertium/apertium-isl-eng/apertium-isl-eng.isl-eng.t0x
+share/apertium/apertium-isl-eng/apertium-isl-eng.isl-eng.t1x
+share/apertium/apertium-isl-eng/apertium-isl-eng.isl-eng.t2x
+share/apertium/apertium-isl-eng/apertium-isl-eng.isl-eng.t3x
+share/apertium/apertium-isl-eng/apertium-isl-eng.isl-eng.t4x
+share/apertium/apertium-isl-eng/isl-eng.autobil.bin
+share/apertium/apertium-isl-eng/isl-eng.autogen.bin
+share/apertium/apertium-isl-eng/isl-eng.automorf.bin
+share/apertium/apertium-isl-eng/isl-eng.autopgen.bin
+share/apertium/apertium-isl-eng/isl-eng.lex.bin
+share/apertium/apertium-isl-eng/isl-eng.prob
+share/apertium/apertium-isl-eng/isl-eng.rlx.bin
+share/apertium/apertium-isl-eng/isl-eng.t0x.bin
+share/apertium/apertium-isl-eng/isl-eng.t1x.bin
+share/apertium/apertium-isl-eng/isl-eng.t2x.bin
+share/apertium/apertium-isl-eng/isl-eng.t3x.bin
+share/apertium/apertium-isl-eng/isl-eng.t4x.bin
+share/apertium/modes/isl-eng.mode
