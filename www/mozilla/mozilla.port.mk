@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.141 2021/08/24 06:09:11 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.142 2021/11/02 15:10:22 landry Exp $
 
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
 # ppc: seamonkey/firefox - failure to link for atomic ops on 64 bits
@@ -62,7 +62,7 @@ MODMOZ_BUILD_DEPENDS =	devel/autoconf/2.13 \
 			archivers/zip>=2.3
 
 .if !defined(MOZILLA_USE_BUNDLED_NSS)
-MODMOZ_LIB_DEPENDS +=	security/nss>=3.68
+MODMOZ_LIB_DEPENDS +=	security/nss>=3.72
 MODMOZ_WANTLIB +=	nss3 nssutil3 smime3 ssl3
 CONFIGURE_ARGS +=	--with-system-nss
 .endif
@@ -94,10 +94,10 @@ MODMOZ_BUILD_DEPENDS +=	lang/rust
 # stylo build needs LLVM
 MODMOZ_BUILD_DEPENDS +=	devel/llvm
 
-MODMOZ_WANTLIB +=	X11 Xcomposite Xdamage Xext Xfixes Xrender Xt atk-1.0 c cairo \
+MODMOZ_WANTLIB +=	X11 Xcomposite Xdamage Xext Xfixes Xrender atk-1.0 c cairo \
 		fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
-		gobject-2.0 gthread-2.0 m \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+		gobject-2.0 m \
+		pango-1.0 pangocairo-1.0 \
 		pthread sndio ${LIBCXX} z
 
 WANTLIB +=	${MODMOZ_WANTLIB}
