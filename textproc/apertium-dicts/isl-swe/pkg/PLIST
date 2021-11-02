@@ -1,0 +1,28 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/02 07:41:59 bentley Exp $
+@pkgpath textproc/apertium-dicts/is-sv
+share/apertium/apertium-isl-swe/
+share/apertium/apertium-isl-swe/apertium-isl-swe.isl-swe.t1x
+share/apertium/apertium-isl-swe/apertium-isl-swe.isl-swe.t2x
+share/apertium/apertium-isl-swe/apertium-isl-swe.isl-swe.t3x
+share/apertium/apertium-isl-swe/apertium-isl-swe.swe-isl.t1x
+share/apertium/apertium-isl-swe/apertium-isl-swe.swe-isl.t2x
+share/apertium/apertium-isl-swe/apertium-isl-swe.swe-isl.t3x
+share/apertium/apertium-isl-swe/isl-swe.autobil.bin
+share/apertium/apertium-isl-swe/isl-swe.autogen.bin
+share/apertium/apertium-isl-swe/isl-swe.automorf.bin
+share/apertium/apertium-isl-swe/isl-swe.prob
+share/apertium/apertium-isl-swe/isl-swe.rlx.bin
+share/apertium/apertium-isl-swe/isl-swe.t1x.bin
+share/apertium/apertium-isl-swe/isl-swe.t2x.bin
+share/apertium/apertium-isl-swe/isl-swe.t3x.bin
+share/apertium/apertium-isl-swe/modes.xml
+share/apertium/apertium-isl-swe/swe-isl.autobil.bin
+share/apertium/apertium-isl-swe/swe-isl.autogen.bin
+share/apertium/apertium-isl-swe/swe-isl.automorf.bin
+share/apertium/apertium-isl-swe/swe-isl.prob
+share/apertium/apertium-isl-swe/swe-isl.rlx.bin
+share/apertium/apertium-isl-swe/swe-isl.t1x.bin
+share/apertium/apertium-isl-swe/swe-isl.t2x.bin
+share/apertium/apertium-isl-swe/swe-isl.t3x.bin
+share/apertium/modes/isl-swe.mode
+share/apertium/modes/swe-isl.mode
