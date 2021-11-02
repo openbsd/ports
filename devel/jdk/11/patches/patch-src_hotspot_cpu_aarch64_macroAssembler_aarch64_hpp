@@ -1,17 +1,41 @@
-$OpenBSD: patch-src_hotspot_cpu_aarch64_macroAssembler_aarch64_hpp,v 1.1 2021/10/31 21:16:41 kurt Exp $
+$OpenBSD: patch-src_hotspot_cpu_aarch64_macroAssembler_aarch64_hpp,v 1.2 2021/11/02 16:03:06 kurt Exp $
 
-Fix implicit conversion failures from:
-	intptr_t -> int64_t
+Backport MacroAssembler::mov methods to support varying definitions
+of uint64_t, int64_t, uintptr_t and intptr_t without causing
+implicit conversion errors or ambiguous call to overloaded function
+errors.
 
 Index: src/hotspot/cpu/aarch64/macroAssembler_aarch64.hpp
 --- src/hotspot/cpu/aarch64/macroAssembler_aarch64.hpp.orig
 +++ src/hotspot/cpu/aarch64/macroAssembler_aarch64.hpp
-@@ -499,7 +499,7 @@ class MacroAssembler: public Assembler { (public)
-     if (src.is_register())
-       mov(dst, src.as_register());
-     else
--      mov(dst, src.as_constant());
-+      mov(dst, (int64_t)src.as_constant());
+@@ -475,24 +475,16 @@ class MacroAssembler: public Assembler { (public)
+     mov_immediate64(dst, (uint64_t)addr);
    }
  
-   void movptr(Register r, uintptr_t imm64);
+-  inline void mov(Register dst, uint64_t imm64)
+-  {
+-    mov_immediate64(dst, imm64);
+-  }
++  inline void mov(Register dst, int imm64)                { mov_immediate64(dst, (uint64_t)imm64); }
++  inline void mov(Register dst, long imm64)               { mov_immediate64(dst, (uint64_t)imm64); }
++  inline void mov(Register dst, long long imm64)          { mov_immediate64(dst, (uint64_t)imm64); }
++  inline void mov(Register dst, unsigned int imm64)       { mov_immediate64(dst, (uint64_t)imm64); }
++  inline void mov(Register dst, unsigned long imm64)      { mov_immediate64(dst, (uint64_t)imm64); }
++  inline void mov(Register dst, unsigned long long imm64) { mov_immediate64(dst, (uint64_t)imm64); }
+ 
+   inline void movw(Register dst, uint32_t imm32)
+   {
+     mov_immediate32(dst, imm32);
+-  }
+-
+-  inline void mov(Register dst, int64_t l)
+-  {
+-    mov(dst, (uint64_t)l);
+-  }
+-
+-  inline void mov(Register dst, int i)
+-  {
+-    mov(dst, (int64_t)i);
+   }
+ 
+   void mov(Register dst, RegisterOrConstant src) {

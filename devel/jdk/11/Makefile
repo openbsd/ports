@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2021/10/31 21:16:41 kurt Exp $
+# $OpenBSD: Makefile,v 1.28 2021/11/02 16:03:06 kurt Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 aarch64
 USE_WXNEEDED=	Yes
@@ -13,6 +13,7 @@ PACKAGE_VER=	${BASE_VER}.${PATCH_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${PACKAGE_VER}
 PKGSTEM=	jdk-11
 EPOCH=		0
+REVISION=	0
 
 DIST_SUBDIR=	jdk
 DISTNAME=	jdk-${VERSION_STR}
