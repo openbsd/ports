@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.149 2021/10/24 22:36:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.150 2021/11/02 21:04:58 sthen Exp $
 
      SUBDIR =
+     SUBDIR += TeXmacs
      SUBDIR += abiword
      SUBDIR += apostrophe
      SUBDIR += axe
@@ -59,7 +60,6 @@
      SUBDIR += subtitleeditor
      SUBDIR += teaqt
      SUBDIR += ted
-     SUBDIR += TeXmacs
      SUBDIR += texmaker
      SUBDIR += texworks
      SUBDIR += tiled

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2021/09/08 08:08:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.77 2021/11/02 21:04:58 sthen Exp $
 
      SUBDIR =
      SUBDIR += abyssinica
@@ -40,9 +40,9 @@
      SUBDIR += hanazono
      SUBDIR += hermit-font
      SUBDIR += ibm-plex
-     SUBDIR += inter
      SUBDIR += inconsolata-font
      SUBDIR += inconsolata-new
+     SUBDIR += inter
      SUBDIR += intlfonts
      SUBDIR += iosevka-fonts
      SUBDIR += ja-funetfonts
@@ -66,11 +66,11 @@
      SUBDIR += migmix
      SUBDIR += migu
      SUBDIR += mixfont-mplus-ipa
+     SUBDIR += mononoki
      SUBDIR += mplus-fonts
      SUBDIR += msctfonts
      SUBDIR += msttcorefonts
      SUBDIR += msttcorefonts,no_comic
-     SUBDIR += mononoki
      SUBDIR += noto
      SUBDIR += opendyslexic
      SUBDIR += overpass
@@ -94,9 +94,9 @@
      SUBDIR += tamsyn-font
      SUBDIR += taviraj
      SUBDIR += terminus-font
+     SUBDIR += terminus-font,centered_tilde
      SUBDIR += terminus-font,symquotes
      SUBDIR += terminus-font,symquotes,centered_tilde
-     SUBDIR += terminus-font,centered_tilde
      SUBDIR += ttyp0-font
      SUBDIR += ttyp0-font,ct
      SUBDIR += ttyp0-font,nbd
