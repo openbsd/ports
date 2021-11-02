@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2021/11/02 00:02:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2021/11/02 01:18:46 sthen Exp $
 
 COMMENT=	Python interface to the OpenSSL library
 
-MODPY_EGG_VERSION=	20.0.1
-REVISION=	1
+MODPY_EGG_VERSION=	21.0.0
 DISTNAME=	pyOpenSSL-${MODPY_EGG_VERSION}
 PKGNAME=	py-openssl-${MODPY_EGG_VERSION}
 CATEGORIES=	security devel
@@ -28,8 +27,7 @@ MODPY_SETUPTOOLS = Yes
 MODULES=	lang/python
 MODPY_PYTEST=	Yes
 
-TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH} \
-		devel/py-flaky${MODPY_FLAVOR} \
+TEST_DEPENDS=	devel/py-flaky${MODPY_FLAVOR} \
 		devel/py-pretend${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
