@@ -1,0 +1,101 @@
+$OpenBSD: patch-gdb_python_python_c,v 1.3 2021/11/02 01:30:31 sthen Exp $
+
+From c47bae859a5af0d95224d90000df0e529f7c5aa0 Mon Sep 17 00:00:00 2001
+From: Kevin Buettner <kevinb@redhat.com>
+Date: Wed, 27 May 2020 20:05:40 -0700
+Subject: [PATCH] Fix Python3.9 related runtime problems
+
+Index: gdb/python/python.c
+--- gdb/python/python.c.orig
++++ gdb/python/python.c
+@@ -234,6 +234,30 @@ gdbpy_enter::~gdbpy_enter ()
+   PyGILState_Release (m_state);
+ }
+ 
++/* A helper class to save and restore the GIL, but without touching
++   the other globals that are handled by gdbpy_enter.  */
++
++class gdbpy_gil
++{
++public:
++
++  gdbpy_gil ()
++    : m_state (PyGILState_Ensure ())
++  {
++  }
++
++  ~gdbpy_gil ()
++  {
++    PyGILState_Release (m_state);
++  }
++
++  DISABLE_COPY_AND_ASSIGN (gdbpy_gil);
++
++private:
++
++  PyGILState_STATE m_state;
++};
++
+ /* Set the quit flag.  */
+ 
+ static void
+@@ -247,6 +271,10 @@ gdbpy_set_quit_flag (const struct extension_language_d
+ static int
+ gdbpy_check_quit_flag (const struct extension_language_defn *extlang)
+ {
++  if (!gdb_python_initialized)
++    return 0;
++
++  gdbpy_gil gil;
+   return PyOS_InterruptOccurred ();
+ }
+ 
+@@ -924,30 +952,6 @@ gdbpy_source_script (const struct extension_language_d
+ 
+ /* Posting and handling events.  */
+ 
+-/* A helper class to save and restore the GIL, but without touching
+-   the other globals that are handled by gdbpy_enter.  */
+-
+-class gdbpy_gil
+-{
+-public:
+-
+-  gdbpy_gil ()
+-    : m_state (PyGILState_Ensure ())
+-  {
+-  }
+-
+-  ~gdbpy_gil ()
+-  {
+-    PyGILState_Release (m_state);
+-  }
+-
+-  DISABLE_COPY_AND_ASSIGN (gdbpy_gil);
+-
+-private:
+-
+-  PyGILState_STATE m_state;
+-};
+-
+ /* A single event.  */
+ struct gdbpy_event
+ {
+@@ -1548,6 +1552,7 @@ finalize_python (void *ignore)
+ 
+   Py_Finalize ();
+ 
++  gdb_python_initialized = false;
+   restore_active_ext_lang (previous_active);
+ }
+ 
+@@ -1715,8 +1720,7 @@ do_start_initialization ()
+     return false;
+ 
+   /* Release the GIL while gdb runs.  */
+-  PyThreadState_Swap (NULL);
+-  PyEval_ReleaseLock ();
++  PyEval_SaveThread ();
+ 
+   make_final_cleanup (finalize_python, NULL);
+ 
