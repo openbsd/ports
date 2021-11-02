@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/02 07:36:20 bentley Exp $
+@pkgpath textproc/apertium-dicts/ca-it
+share/apertium/apertium-cat-ita/
+share/apertium/apertium-cat-ita/apertium-cat-ita.cat-ita.t1x
+share/apertium/apertium-cat-ita/apertium-cat-ita.cat-ita.t2x
+share/apertium/apertium-cat-ita/apertium-cat-ita.cat-ita.t3x
+share/apertium/apertium-cat-ita/apertium-cat-ita.ita-cat.t1x
+share/apertium/apertium-cat-ita/apertium-cat-ita.ita-cat.t2x
+share/apertium/apertium-cat-ita/apertium-cat-ita.ita-cat.t3x
+share/apertium/apertium-cat-ita/cat-ita.autobil.bin
+share/apertium/apertium-cat-ita/cat-ita.autogen.bin
+share/apertium/apertium-cat-ita/cat-ita.autolex.bin
+share/apertium/apertium-cat-ita/cat-ita.automorf.bin
+share/apertium/apertium-cat-ita/cat-ita.autopgen.bin
+share/apertium/apertium-cat-ita/cat-ita.prob
+share/apertium/apertium-cat-ita/cat-ita.rlx.bin
+share/apertium/apertium-cat-ita/cat-ita.t1x.bin
+share/apertium/apertium-cat-ita/cat-ita.t2x.bin
+share/apertium/apertium-cat-ita/cat-ita.t3x.bin
+share/apertium/apertium-cat-ita/ita-cat.autobil.bin
+share/apertium/apertium-cat-ita/ita-cat.autogen.bin
+share/apertium/apertium-cat-ita/ita-cat.autolex.bin
+share/apertium/apertium-cat-ita/ita-cat.automorf.bin
+share/apertium/apertium-cat-ita/ita-cat.autopgen.bin
+share/apertium/apertium-cat-ita/ita-cat.prob
+share/apertium/apertium-cat-ita/ita-cat.rlx.bin
+share/apertium/apertium-cat-ita/ita-cat.t1x.bin
+share/apertium/apertium-cat-ita/ita-cat.t2x.bin
+share/apertium/apertium-cat-ita/ita-cat.t3x.bin
+share/apertium/modes/cat-ita.mode
+share/apertium/modes/ita-cat.mode
