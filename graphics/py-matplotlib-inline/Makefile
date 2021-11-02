@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/05/15 20:27:50 bket Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:01:16 sthen Exp $
 
 COMMENT =		inline matplotlib backend for jupyter
 
 MODPY_EGG_VERSION =	0.1.2
 DISTNAME =		matplotlib-inline-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		graphics math
 

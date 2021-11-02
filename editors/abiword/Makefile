@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2021/07/04 08:01:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.136 2021/11/02 00:01:12 sthen Exp $
 
 BROKEN-alpha=	gr_RenderInfo.cpp:426:1: internal compiler error: Segmentation fault
 
@@ -6,6 +6,7 @@ COMMENT=	free cross-platform WYSIWYG word processor
 
 VERSION=	3.0.5
 DISTNAME=	abiword-${VERSION}
+REVISION=	0
 
 CATEGORIES=	editors
 

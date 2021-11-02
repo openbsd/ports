@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2021/02/23 19:39:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/11/02 00:01:14 sthen Exp $
 
 COMMENT=	simulation of a true AI
 
@@ -7,6 +7,7 @@ MUSIC_V=	007
 V=		${MODPY_EGG_VERSION}
 DISTNAME=	singularity-${V}
 PKGNAME=	singularity-${V}
+REVISION=	0
 
 CATEGORIES=	games
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2021/08/31 07:32:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.106 2021/11/02 00:01:15 sthen Exp $
 
 ONLY_FOR_ARCHS = amd64
 DPB_PROPERTIES = parallel
@@ -6,7 +6,7 @@ DPB_PROPERTIES = parallel
 COMMENT =	3D creation software
 
 DISTNAME =	blender-2.92.0
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	graphics
 

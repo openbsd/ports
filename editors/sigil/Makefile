@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2021/03/24 14:37:04 kirby Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/02 00:01:13 sthen Exp $
 
 COMMENT =	EPUB ebook editor
 
 PKGNAME =	sigil-${GH_TAGNAME}
+REVISION =	0
 
 GH_ACCOUNT =	Sigil-Ebook
 GH_PROJECT =	Sigil

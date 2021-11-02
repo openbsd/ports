@@ -5,7 +5,7 @@ COMMENT=		distraction free editor
 GH_TAGNAME=		v2.5
 GH_ACCOUNT=		ApostropheEditor
 GH_PROJECT=		Apostrophe
-REVISION=		0
+REVISION=		1
 
 PKGNAME=		apostrophe-${GH_TAGNAME:S/v//}
 

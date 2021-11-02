@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/02 00:01:12 sthen Exp $
 
 COMMENT =	python bytecode disassembler and decompiler
 
 DISTNAME =	pycdc-0.0.20180428
-REVISION =	3
+REVISION =	4
 
 GH_ACCOUNT =	zrax
 GH_PROJECT =	pycdc

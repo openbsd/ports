@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/05 22:09:32 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2021/11/02 00:01:16 sthen Exp $
 
 COMMENT =		io for scientific data formats
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	2.6.1
 DISTNAME =		imageio-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		graphics
-REVISION =		2
+REVISION =		3
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 

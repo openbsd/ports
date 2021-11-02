@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2020/12/14 05:33:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/11/02 00:01:16 sthen Exp $
 
 COMMENT = 		Python charting module
 
 MODPY_EGG_VERSION =	0.8.1
 DISTNAME = 		pycha-${MODPY_EGG_VERSION}
 CATEGORIES = 		graphics
+REVISION =              0
 
 # LGPL
 PERMIT_PACKAGE =	Yes

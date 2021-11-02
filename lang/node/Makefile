@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2021/10/16 08:00:54 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.93 2021/11/02 00:01:17 sthen Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -19,6 +19,7 @@ DISTFILES =		node-pledge-{}${PLEDGE_VER}.tar.gz:0 \
 
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
+REVISION =		0
 
 MASTER_SITES0 =		https://github.com/qbit/node-pledge/archive/
 

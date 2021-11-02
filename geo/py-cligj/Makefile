@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2021/07/11 08:09:49 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2021/11/02 00:01:14 sthen Exp $
 
 COMMENT =		click params for command line interfaces to GeoJSON
 
 MODPY_EGG_VERSION =	0.7.2
 DISTNAME =		cligj-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		geo
 

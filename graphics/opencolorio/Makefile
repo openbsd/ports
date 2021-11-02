@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/11/02 00:01:15 sthen Exp $
 
 COMMENT =		color management library
 
@@ -6,7 +6,7 @@ EPOCH =			0
 GH_ACCOUNT =		AcademySoftwareFoundation
 GH_PROJECT =		OpenColorIO
 GH_TAGNAME =		v1.1.1
-REVISION =		0
+REVISION =		1
 PKGNAME =		${DISTNAME:L}
 
 SHARED_LIBS +=  OpenColorIO               1.1 # 1.1.1

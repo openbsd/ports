@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/05/17 20:42:20 daniel Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/02 00:01:16 sthen Exp $
 
 COMMENT =		composable style cycles
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	0.10.0
 DISTNAME =		cycler-${MODPY_EGG_VERSION}
 PKGNAME =		py-cycler-${MODPY_EGG_VERSION}
 CATEGORIES =		graphics
-REVISION =		4
+REVISION =		5
 
 HOMEPAGE =		https://github.com/matplotlib/cycler
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/10/16 14:50:40 thfr Exp $
+# $OpenBSD: Makefile,v 1.10 2021/11/02 00:01:15 sthen Exp $
 
 PORTROACH =	limit:^[0-9]
 
@@ -7,6 +7,7 @@ COMMENT =	reference front-end for GLSL and ESSL
 GH_TAGNAME =	11.6.0
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	glslang
+REVISION =	0
 
 CATEGORIES =	devel graphics
 

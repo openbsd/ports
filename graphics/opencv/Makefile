@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2021/11/01 08:12:09 phessler Exp $
+# $OpenBSD: Makefile,v 1.78 2021/11/02 00:01:15 sthen Exp $
 
 ONLY_FOR_ARCHS-java =	aarch64 amd64 i386
 
@@ -10,7 +10,8 @@ V =			4.5.4
 GH_ACCOUNT =		opencv
 GH_PROJECT =		opencv
 GH_TAGNAME =		${V}
-REVISION =		0
+REVISION-java =		0
+REVISION-main =		1
 
 PKGNAME-main =		opencv-${V}
 PKGNAME-java =		opencv-java-${V}

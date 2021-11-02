@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2021/05/19 02:11:08 tb Exp $
+# $OpenBSD: Makefile,v 1.6 2021/11/02 00:01:15 sthen Exp $
 
 COMMENT =	raster graphics editor for digital painters
 
 MODPY_EGG_VERSION =	2.0.1
 DISTNAME =		mypaint-${MODPY_EGG_VERSION}
 EXTRACT_SUFX =		.tar.xz
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		graphics
 

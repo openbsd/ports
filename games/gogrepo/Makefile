@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/23 19:39:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/11/02 00:01:13 sthen Exp $
 
 COMMENT =	downloader for GOG.com games and bonus collections
 
 MODPY_EGG_VERSION =	0.3apl20190727
 DISTNAME =		gogrepo-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 GH_ACCOUNT =		eddie3
 GH_PROJECT =		gogrepo

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2021/09/02 17:03:29 fcambus Exp $
+# $OpenBSD: Makefile,v 1.43 2021/11/02 00:01:14 sthen Exp $
 
 BROKEN-hppa =	ICE on dgn-shoals.cc:638
 
@@ -8,6 +8,7 @@ VERSION = 	0.27.1
 
 DISTNAME=	stone_soup-${VERSION}-nodeps
 PKGNAME=	stone-soup-${VERSION}
+REVISION=	0
 
 CATEGORIES = 	games
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/01 14:15:06 tracey Exp $
+# $OpenBSD: Makefile,v 1.9 2021/11/02 00:01:12 sthen Exp $
 
 COMMENT =	gcc for ${CONFIG} cross-development
 
 VERSION =	10.2.0
 DISTNAME =	gcc-${VERSION}
 PKGNAME =	${CONFIG}-gcc-${VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=  cc1plugin                 0.0 # 0.0
 SHARED_LIBS +=  cp1plugin                 0.0 # 0.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2021/05/21 19:50:31 kmos Exp $
+# $OpenBSD: Makefile,v 1.23 2021/11/02 00:01:12 sthen Exp $
 
 COMMENT=	python interface to libusb
 
@@ -8,7 +8,7 @@ GH_COMMIT =	bf88211d65caf01b903005efae7f0915a53a8c4e
 MODPY_EGG_VERSION=	1.0.2
 DISTNAME=	pyusb-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES=	devel
 

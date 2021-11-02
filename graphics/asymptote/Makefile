@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2021/10/06 07:31:22 tb Exp $
+# $OpenBSD: Makefile,v 1.45 2021/11/02 00:01:15 sthen Exp $
 
 COMMENT=		powerful descriptive vector graphics language
 
 DISTNAME=		asymptote-2.70
-REVISION=		3
+REVISION=		4
 EXTRACT_SUFX=		.src.tgz
 CATEGORIES=		graphics
 

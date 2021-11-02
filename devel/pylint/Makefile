@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2021/04/05 14:21:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2021/11/02 00:01:12 sthen Exp $
 
 COMMENT =		lint-like code checker for Python code
 
 # XXX check/update py-astroid pkgspec in RUN_DEPENDS when updating
 MODPY_EGG_VERSION =	2.7.4
 DISTNAME=		pylint-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 

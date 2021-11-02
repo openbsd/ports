@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/09/14 20:21:25 tracey Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:01:13 sthen Exp $
 
 COMMENT =		pure Python chess library
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	0.31.4
 
 DISTNAME =		python-chess-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/^python-/py-/}
+REVISION =		0
 
 CATEGORIES =		games
 

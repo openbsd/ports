@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2021/02/21 12:56:38 landry Exp $
+# $OpenBSD: Makefile,v 1.30 2021/11/02 00:01:13 sthen Exp $
 
 COMMENT =		Python binding for the Scintilla source code editor
 
@@ -6,7 +6,7 @@ VERSION =		2.11.6
 MODPY_EGG_VERSION =	${VERSION}
 DISTNAME =		QScintilla-${VERSION}
 PKGNAME =		py-qscintilla-${VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		editors x11 devel
 

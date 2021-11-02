@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2021/02/25 22:26:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2021/11/02 00:01:13 sthen Exp $
 
 COMMENT =	2D action adventure game engine
 CATEGORIES =	games x11
@@ -7,7 +7,7 @@ SUBST_VARS +=	GH_TAGNAME
 GH_ACCOUNT =	hypatia-engine
 GH_PROJECT =	hypatia
 GH_TAGNAME =	0.3.6
-REVISION =	2
+REVISION =	3
 
 # MIT
 PERMIT_PACKAGE =	Yes

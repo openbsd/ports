@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2021/02/23 19:39:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/11/02 00:01:12 sthen Exp $
 
 COMMENT =		Simple Revision Control
 
 DISTNAME =		src-1.28
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

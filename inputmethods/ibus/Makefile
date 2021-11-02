@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2021/08/30 19:27:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2021/11/02 00:01:17 sthen Exp $
 
 # when gtk+4 support is added, split into multi packages (gtk+{2,3,4})
 
@@ -13,6 +13,9 @@ GH_TAGNAME =		1.5.25
 PKGNAME-main =		ibus-${GH_TAGNAME}
 PKGNAME-gtk2 =		ibus-gtk2-${GH_TAGNAME}
 PKGNAME-gtk4 =		ibus-gtk4-${GH_TAGNAME}
+REVISION-gtk2 =		1
+REVISION-gtk4 =		1
+REVISION-main =		1
 
 SHARED_LIBS +=  ibus-1.0             4.3      # 5.525
 

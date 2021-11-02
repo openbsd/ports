@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2021/02/28 17:37:27 daniel Exp $
+# $OpenBSD: Makefile,v 1.18 2021/11/02 00:01:14 sthen Exp $
 
 COMMENT=		skiing simulation game
 
 DISTNAME=		ski-6.13
+REVISION=		0
 
 CATEGORIES=		games
 

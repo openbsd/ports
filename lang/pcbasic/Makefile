@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/02/27 23:25:28 daniel Exp $
+# $OpenBSD: Makefile,v 1.7 2021/11/02 00:01:17 sthen Exp $
 
 COMMENT =	free, cross-platform emulator for GW-BASIC family (PC-BASIC)
 
@@ -7,6 +7,7 @@ GH_ACCOUNT =		robhagemans
 GH_PROJECT =		pcbasic
 GH_TAGNAME =		v${MODPY_EGG_VERSION}
 DISTNAME =		pcbasic-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =	lang
 

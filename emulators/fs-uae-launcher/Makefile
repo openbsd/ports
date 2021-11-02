@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/11/02 00:01:13 sthen Exp $
 
 COMMENT =		launcher for the FS-UAE Amiga emulator
 
@@ -7,6 +7,7 @@ DISTNAME =		fs-uae-launcher-${MODPY_EGG_VERSION}
 CATEGORIES =		emulators x11
 HOMEPAGE =		http://fs-uae.net
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
+REVISION =		0
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

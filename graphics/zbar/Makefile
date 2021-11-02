@@ -1,10 +1,11 @@
-#	$OpenBSD: Makefile,v 1.31 2021/11/01 14:47:42 sthen Exp $
+#	$OpenBSD: Makefile,v 1.32 2021/11/02 00:01:17 sthen Exp $
 
 COMMENT=	ZBar barcode reader
 
 GH_ACCOUNT=	mchehab
 GH_PROJECT=	zbar
 GH_TAGNAME=	0.23.90
+REVISION=	0
 
 SHARED_LIBS=	zbar	0.1 \
 		zbargtk	0.1

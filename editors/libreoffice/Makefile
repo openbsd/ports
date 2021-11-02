@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.252 2021/10/15 05:29:56 robert Exp $
+# $OpenBSD: Makefile,v 1.253 2021/11/02 00:01:13 sthen Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -37,6 +37,8 @@ CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel
 
 EPOCH=		0
+
+REVISION-main=	0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -194,9 +196,6 @@ BUILD_DEPENDS +=	x11/gnome/librsvg
 COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES+=	lang/python
-
-# XXX can't use ${MODPY_DEFAULT_VERSION_3}, it specifically wants 3.3 and
-# will try (and fail) to build its own copy if not available.
 
 LIB_DEPENDS-main=databases/openldap \
 		databases/mariadb \
