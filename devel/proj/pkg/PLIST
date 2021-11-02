@@ -1,10 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/03/24 10:59:47 landry Exp $
+@comment $OpenBSD: PLIST,v 1.14 2021/11/02 13:02:24 landry Exp $
 @bin bin/cct
 @bin bin/cs2cs
 @bin bin/geod
 @bin bin/gie
-bin/invgeod
-bin/invproj
 @bin bin/proj
 @bin bin/projinfo
 @bin bin/projsync
@@ -22,9 +20,20 @@ include/proj/nn.hpp
 include/proj/util.hpp
 include/proj_constants.h
 include/proj_experimental.h
-include/proj_symbol_rename.h
-@static-lib lib/libproj.a
-lib/libproj.la
+lib/cmake/proj/
+lib/cmake/proj/proj-config-version.cmake
+lib/cmake/proj/proj-config.cmake
+lib/cmake/proj/proj-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/proj/proj-targets.cmake
+lib/cmake/proj/proj4-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/proj/proj4-targets.cmake
+lib/cmake/proj4/
+lib/cmake/proj4/proj-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/proj4/proj-targets.cmake
+lib/cmake/proj4/proj4-config-version.cmake
+lib/cmake/proj4/proj4-config.cmake
+lib/cmake/proj4/proj4-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/proj4/proj4-targets.cmake
 @lib lib/libproj.so.${LIBproj_VERSION}
 lib/pkgconfig/proj.pc
 @man man/man1/cct.1
