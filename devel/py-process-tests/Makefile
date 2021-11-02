@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/23 17:26:47 kmos Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 21:03:51 sthen Exp $
 
 COMMENT =		tools for testing processes
 
 MODPY_EGG_VERSION =	2.0.2
 DISTNAME =		process-tests-${MODPY_EGG_VERSION}
 PKGNAME =		py-process-tests-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -20,7 +21,7 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PI =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 # There don't seem to be any tests
 NO_TEST =		Yes
