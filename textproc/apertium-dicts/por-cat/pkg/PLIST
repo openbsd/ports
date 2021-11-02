@@ -1,0 +1,35 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/02 07:46:28 bentley Exp $
+@pkgpath textproc/apertium-dicts/pt-ca
+share/apertium/apertium-por-cat/
+share/apertium/apertium-por-cat/apertium-por-cat.por-cat.t1x
+share/apertium/apertium-por-cat/cat-por.autobil.bin
+share/apertium/apertium-por-cat/cat-por.autogen.bin
+share/apertium/apertium-por-cat/cat-por.autolex.bin
+share/apertium/apertium-por-cat/cat-por.automorf.bin
+share/apertium/apertium-por-cat/cat-por.autopgen.bin
+share/apertium/apertium-por-cat/cat-por.prob
+share/apertium/apertium-por-cat/cat-por.rlx.bin
+share/apertium/apertium-por-cat/cat-por.t1x
+share/apertium/apertium-por-cat/cat-por.t1x.bin
+share/apertium/apertium-por-cat/cat-por_BR.autobil.bin
+share/apertium/apertium-por-cat/cat-por_BR.autogen.bin
+share/apertium/apertium-por-cat/cat-por_BR.automorf.bin
+share/apertium/apertium-por-cat/cat-por_BR.autopgen.bin
+share/apertium/apertium-por-cat/cat-por_BR.t1x
+share/apertium/apertium-por-cat/cat-por_BR.t1x.bin
+share/apertium/apertium-por-cat/cat-por_PTpre1990.autobil.bin
+share/apertium/apertium-por-cat/cat-por_PTpre1990.autogen.bin
+share/apertium/apertium-por-cat/cat-por_PTpre1990.automorf.bin
+share/apertium/apertium-por-cat/cat-por_PTpre1990.autopgen.bin
+share/apertium/apertium-por-cat/por-cat.autobil.bin
+share/apertium/apertium-por-cat/por-cat.autogen.bin
+share/apertium/apertium-por-cat/por-cat.autolex.bin
+share/apertium/apertium-por-cat/por-cat.automorf.bin
+share/apertium/apertium-por-cat/por-cat.autopgen.bin
+share/apertium/apertium-por-cat/por-cat.prob
+share/apertium/apertium-por-cat/por-cat.rlx.bin
+share/apertium/apertium-por-cat/por-cat.t1x.bin
+share/apertium/modes/cat-por.mode
+share/apertium/modes/cat-por_BR.mode
+share/apertium/modes/cat-por_PTpre1990.mode
+share/apertium/modes/por-cat.mode
