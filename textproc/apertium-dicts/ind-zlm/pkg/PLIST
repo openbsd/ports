@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/02 07:39:14 bentley Exp $
+@pkgpath textproc/apertium-dicts/id-ms
+share/apertium/apertium-ind-zlm/
+share/apertium/apertium-ind-zlm/apertium-ind-zlm.ind-zlm.t1x
+share/apertium/apertium-ind-zlm/apertium-ind-zlm.zlm-ind.t1x
+share/apertium/apertium-ind-zlm/ind-zlm.autobil.bin
+share/apertium/apertium-ind-zlm/ind-zlm.autogen.bin
+share/apertium/apertium-ind-zlm/ind-zlm.automorf.bin
+share/apertium/apertium-ind-zlm/ind-zlm.autopgen.bin
+share/apertium/apertium-ind-zlm/ind-zlm.prob
+share/apertium/apertium-ind-zlm/ind-zlm.rlx.bin
+share/apertium/apertium-ind-zlm/ind-zlm.t1x.bin
+share/apertium/apertium-ind-zlm/zlm-ind.autobil.bin
+share/apertium/apertium-ind-zlm/zlm-ind.autogen.bin
+share/apertium/apertium-ind-zlm/zlm-ind.automorf.bin
+share/apertium/apertium-ind-zlm/zlm-ind.autopgen.bin
+share/apertium/apertium-ind-zlm/zlm-ind.prob
+share/apertium/apertium-ind-zlm/zlm-ind.rlx.bin
+share/apertium/apertium-ind-zlm/zlm-ind.t1x.bin
+share/apertium/modes/ind-zlm.mode
+share/apertium/modes/zlm-ind.mode
