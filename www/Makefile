@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1049 2021/11/01 20:05:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.1050 2021/11/02 21:18:38 sthen Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -14,8 +14,8 @@
      SUBDIR += awstats
      SUBDIR += blogsum
      SUBDIR += bluefish
-     SUBDIR += buku
      SUBDIR += bozohttpd
+     SUBDIR += buku
      SUBDIR += c-icap
      SUBDIR += calamaris
      SUBDIR += castor
@@ -209,16 +209,13 @@
      SUBDIR += p5-Dancer2-Plugin-Auth-Tiny
      SUBDIR += p5-Dancer2-Plugin-DBIC
      SUBDIR += p5-Dancer2-Plugin-Database
-     SUBDIR += p5-Data-URIEncode
      SUBDIR += p5-Data-Page-Pageset
+     SUBDIR += p5-Data-URIEncode
      SUBDIR += p5-Drupal-Admin
      SUBDIR += p5-FCGI
      SUBDIR += p5-FCGI-ProcManager
      SUBDIR += p5-Feed-Find
      SUBDIR += p5-Gravatar-URL
-     SUBDIR += p5-HTML-FormFu-MultiForm
-     SUBDIR += p5-HTML-FormHandler
-     SUBDIR += p5-Hijk
      SUBDIR += p5-HTML-Base
      SUBDIR += p5-HTML-CGIChecker
      SUBDIR += p5-HTML-Calendar-Month-Simple
@@ -229,6 +226,8 @@
      SUBDIR += p5-HTML-FillInForm
      SUBDIR += p5-HTML-Form
      SUBDIR += p5-HTML-FormFu
+     SUBDIR += p5-HTML-FormFu-MultiForm
+     SUBDIR += p5-HTML-FormHandler
      SUBDIR += p5-HTML-Format
      SUBDIR += p5-HTML-FormatExternal
      SUBDIR += p5-HTML-FormatText-WithLinks
@@ -295,6 +294,7 @@
      SUBDIR += p5-HTTP-Server-Simple-Recorder
      SUBDIR += p5-HTTP-Thin
      SUBDIR += p5-HTTPD-Log-Filter
+     SUBDIR += p5-Hijk
      SUBDIR += p5-IO-HTML
      SUBDIR += p5-JavaScript-Minifier
      SUBDIR += p5-JavaScript-Minifier-XS
@@ -307,9 +307,9 @@
      SUBDIR += p5-Maypole
      SUBDIR += p5-Maypole-Authentication-UserSessionCookie
      SUBDIR += p5-Mojo
+     SUBDIR += p5-MojoX-Session
      SUBDIR += p5-Mojolicious-Plugin-AccessLog
      SUBDIR += p5-Mojolicious-Plugin-Thumbnail
-     SUBDIR += p5-MojoX-Session
      SUBDIR += p5-Object-eBay
      SUBDIR += p5-PHP-Serialization
      SUBDIR += p5-PHP-Session
@@ -378,17 +378,17 @@
      SUBDIR += pear-HTTP-WebDAV-Server
      SUBDIR += pear-SOAP
      SUBDIR += pecl-chroot,php74
-     #SUBDIR += pecl-chroot,php80 not yet
+#    SUBDIR += pecl-chroot,php80 not yet
      SUBDIR += pecl-memcached,php74
      SUBDIR += pecl-memcached,php80
      SUBDIR += pecl-pecl_http,php74
-     #SUBDIR += pecl-pecl_http,php80 not yet, and not until pecl-propro has php80
+#    SUBDIR += pecl-pecl_http,php80 not yet, and not until pecl-propro has php80
      SUBDIR += pecl-pledge,php74
      SUBDIR += pecl-pledge,php80
      SUBDIR += pecl-proctitle,php74
-     #SUBDIR += pecl-proctitle,php80 not yet
+#    SUBDIR += pecl-proctitle,php80 not yet
      SUBDIR += pecl-propro,php74
-     #SUBDIR += pecl-propro,php80 not yet
+#    SUBDIR += pecl-propro,php80 not yet
      SUBDIR += pecl-raphf,php74
      SUBDIR += pecl-raphf,php80
      SUBDIR += pecl-ssh2,php74
@@ -478,8 +478,8 @@
      SUBDIR += py-webpy,python3
      SUBDIR += py-webtest,python3
      SUBDIR += py-werkzeug,python3
-     SUBDIR += py-wtforms,python3
      SUBDIR += py-wstools,python3
+     SUBDIR += py-wtforms,python3
      SUBDIR += py-yarl,python3
      SUBDIR += qutebrowser
      SUBDIR += racktables
@@ -580,9 +580,9 @@
      SUBDIR += wbox
      SUBDIR += webalizer
      SUBDIR += webkitgtk4
+     SUBDIR += woob
      SUBDIR += wp-cli
      SUBDIR += wslay
-     SUBDIR += woob
      SUBDIR += wwwcount
      SUBDIR += wwwoffle
      SUBDIR += xapian-omega

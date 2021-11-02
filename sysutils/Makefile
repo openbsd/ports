@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.621 2021/10/31 11:44:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.622 2021/11/02 21:18:38 sthen Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -56,8 +56,8 @@
      SUBDIR += cpdup
      SUBDIR += cpuid
      SUBDIR += crashme
-     SUBDIR += czkawka
      SUBDIR += curlftpfs
+     SUBDIR += czkawka
      SUBDIR += d-feet
      SUBDIR += dateutils
      SUBDIR += dcfldd
@@ -80,8 +80,8 @@
      SUBDIR += dsh
      SUBDIR += dtb
      SUBDIR += dtpstree
-     SUBDIR += duplicity
      SUBDIR += duf
+     SUBDIR += duplicity
      SUBDIR += dvd+rw-tools
      SUBDIR += dwdiff
      SUBDIR += e2fsprogs
@@ -89,12 +89,12 @@
      SUBDIR += entr
      SUBDIR += envconsul
      SUBDIR += eventlog
-     SUBDIR += exfat-fuse
      SUBDIR += exa
+     SUBDIR += exfat-fuse
      SUBDIR += exoscale-cli
      SUBDIR += fabric
-     SUBDIR += facter
      SUBDIR += facette
+     SUBDIR += facter
      SUBDIR += faubackup
      SUBDIR += fdupes
      SUBDIR += fff
@@ -134,9 +134,9 @@
      SUBDIR += htop
      SUBDIR += hw-probe
      SUBDIR += idled
-     SUBDIR += iogen
      SUBDIR += incron
      SUBDIR += inotify-tools
+     SUBDIR += iogen
      SUBDIR += ioping
      SUBDIR += ipmitool
      SUBDIR += iucode-tool
@@ -151,13 +151,13 @@
      SUBDIR += libesedb
      SUBDIR += libevt
      SUBDIR += libevtx
-     SUBDIR += libfvde
      SUBDIR += libfsapfs
      SUBDIR += libfsntfs
+     SUBDIR += libfvde
      SUBDIR += libfwnt
      SUBDIR += libfwsi
-     SUBDIR += libisofs
      SUBDIR += libisoburn
+     SUBDIR += libisofs
      SUBDIR += liblnk
      SUBDIR += libluksde
      SUBDIR += libmsiecf
@@ -226,8 +226,8 @@
      SUBDIR += openpoppassd
      SUBDIR += opensbi
      SUBDIR += p5-Capture-Tiny
-     SUBDIR += p5-Data-Float
      SUBDIR += p5-Data-Entropy
+     SUBDIR += p5-Data-Float
      SUBDIR += p5-File-Monitor
      SUBDIR += p5-File-NFSLock
      SUBDIR += p5-File-Rename

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.715 2021/10/29 15:45:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.716 2021/11/02 21:18:38 sthen Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -247,12 +247,12 @@
      SUBDIR += py-wxPython
      SUBDIR += py-xcbgen,python3
      SUBDIR += py-xlib,python3
+     SUBDIR += qdirstat
      SUBDIR += qt5
-     SUBDIR += qt6
      SUBDIR += qt5ct
+     SUBDIR += qt6
      SUBDIR += qtfm
      SUBDIR += qwt
-     SUBDIR += qdirstat
      SUBDIR += ratmen
      SUBDIR += ratpoison
      SUBDIR += rdesktop
@@ -290,6 +290,7 @@
      SUBDIR += tangerine-icon-theme
      SUBDIR += tango-icon-theme
      SUBDIR += tango-icon-theme-extras
+     SUBDIR += tellico
      SUBDIR += terminator
      SUBDIR += textsuggest
      SUBDIR += thewidgetfactory
@@ -308,7 +309,6 @@
      SUBDIR += treewm
      SUBDIR += tvtwm
      SUBDIR += type1inst
-     SUBDIR += tellico
      SUBDIR += unclutter
      SUBDIR += uwm
      SUBDIR += vdesk
@@ -344,9 +344,9 @@
      SUBDIR += wmweather
      SUBDIR += wmx
      SUBDIR += worker
-     SUBDIR += wxglade
      SUBDIR += wxSVG
      SUBDIR += wxWidgets
+     SUBDIR += wxglade
      SUBDIR += x11vnc
      SUBDIR += x2goclient
      SUBDIR += x2vnc
@@ -364,8 +364,8 @@
      SUBDIR += xchm
      SUBDIR += xclip
      SUBDIR += xco
-     SUBDIR += xcoloredit
      SUBDIR += xcolor
+     SUBDIR += xcoloredit
      SUBDIR += xcolors
      SUBDIR += xcursor-dmz
      SUBDIR += xcursor-neutral

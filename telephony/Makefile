@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2021/10/29 15:38:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2021/11/02 21:18:38 sthen Exp $
 
      SUBDIR =
      SUBDIR += asterisk
@@ -24,8 +24,8 @@
      SUBDIR += py-phonenumbers,python3
      SUBDIR += resiprocate
      SUBDIR += siproxd
-     SUBDIR += sofia-sip
      SUBDIR += sngrep
+     SUBDIR += sofia-sip
      SUBDIR += spandsp
      SUBDIR += stuntman
 

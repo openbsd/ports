@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.642 2021/10/29 16:23:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.643 2021/11/02 21:18:38 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -63,8 +63,8 @@
      SUBDIR += gnupg
      SUBDIR += gnutls
      SUBDIR += go-crypto
-     SUBDIR += go-siphash
      SUBDIR += go-ed25519
+     SUBDIR += go-siphash
      SUBDIR += gobuster
      SUBDIR += gopass
      SUBDIR += gpa
@@ -86,9 +86,9 @@
      SUBDIR += john-jumbo
      SUBDIR += kc
      SUBDIR += keepassxc
-     SUBDIR += keepassxc,yubikey
      SUBDIR += keepassxc,browser
      SUBDIR += keepassxc,browser,yubikey
+     SUBDIR += keepassxc,yubikey
      SUBDIR += keybase
      SUBDIR += keychain
      SUBDIR += keyringer
@@ -294,8 +294,8 @@
      SUBDIR += py-keyring,python3
      SUBDIR += py-libnacl,python3
      SUBDIR += py-miasm
-     SUBDIR += py-openssl,python3
      SUBDIR += py-oauthlib,python3
+     SUBDIR += py-openssl,python3
      SUBDIR += py-paramiko,python3
      SUBDIR += py-passlib,python3
      SUBDIR += py-pbkdf2,python3
@@ -315,8 +315,8 @@
      SUBDIR += py-spake2,python3
      SUBDIR += py-tlsfuzzer,python3
      SUBDIR += py-trustme,python3
-     SUBDIR += py-vivisect
      SUBDIR += py-viv_utils
+     SUBDIR += py-vivisect
      SUBDIR += py-yaswfp		# unflavoured but uses python3
      SUBDIR += qca-qt5
      SUBDIR += qtkeychain
@@ -339,10 +339,10 @@
      SUBDIR += ruby-cms_scanner
      SUBDIR += ruby-gpgme,ruby27
      SUBDIR += ruby-gpgme,ruby30
-     SUBDIR += ruby-pledge,ruby27
-     SUBDIR += ruby-pledge,ruby30
      SUBDIR += ruby-hmac
      SUBDIR += ruby-openid
+     SUBDIR += ruby-pledge,ruby27
+     SUBDIR += ruby-pledge,ruby30
      SUBDIR += samdump2
      SUBDIR += scanlogd
      SUBDIR += scanssh
@@ -371,8 +371,8 @@
      SUBDIR += sslsplit
      SUBDIR += ssss
      SUBDIR += stegdetect
-     SUBDIR += stegseek
      SUBDIR += steghide
+     SUBDIR += stegseek
      SUBDIR += strobe
      SUBDIR += stunnel
      SUBDIR += sudo
