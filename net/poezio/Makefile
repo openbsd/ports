@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/11/02 08:30:06 sthen Exp $
 
 COMMENT =		console XMPP client
 
 MODPY_EGG_VERSION =	0.13.1
 DISTNAME =		poezio-${MODPY_EGG_VERSION}
 CATEGORIES =		net
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://poez.io/
 
@@ -29,7 +29,5 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			net/py-aiodns${MODPY_FLAVOR} \
 			net/py-slixmpp${MODPY_FLAVOR} \
 			security/py-potr${MODPY_FLAVOR}
-
-TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 
 .include <bsd.port.mk>
