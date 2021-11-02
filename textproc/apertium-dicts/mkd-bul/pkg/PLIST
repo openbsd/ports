@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/02 07:43:31 bentley Exp $
+@pkgpath textproc/apertium-dicts/mk-bg
+share/apertium/apertium-mkd-bul/
+share/apertium/apertium-mkd-bul/apertium-mkd-bul.bul-mkd.t1x
+share/apertium/apertium-mkd-bul/apertium-mkd-bul.mkd-bul.t1x
+share/apertium/apertium-mkd-bul/bul-mkd.autobil.bin
+share/apertium/apertium-mkd-bul/bul-mkd.autogen.bin
+share/apertium/apertium-mkd-bul/bul-mkd.automorf.bin
+share/apertium/apertium-mkd-bul/bul-mkd.autopgen.bin
+share/apertium/apertium-mkd-bul/bul-mkd.prob
+share/apertium/apertium-mkd-bul/bul-mkd.rlx.bin
+share/apertium/apertium-mkd-bul/bul-mkd.t1x.bin
+share/apertium/apertium-mkd-bul/mkd-bul.autobil.bin
+share/apertium/apertium-mkd-bul/mkd-bul.autogen.bin
+share/apertium/apertium-mkd-bul/mkd-bul.automorf.bin
+share/apertium/apertium-mkd-bul/mkd-bul.autopgen.bin
+share/apertium/apertium-mkd-bul/mkd-bul.prob
+share/apertium/apertium-mkd-bul/mkd-bul.rlx.bin
+share/apertium/apertium-mkd-bul/mkd-bul.t1x.bin
+share/apertium/modes/bul-mkd.mode
+share/apertium/modes/mkd-bul.mode
