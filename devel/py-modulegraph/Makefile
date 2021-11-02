@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2021/06/12 02:24:53 daniel Exp $
+# $OpenBSD: Makefile,v 1.19 2021/11/02 00:00:51 sthen Exp $
 
 COMMENT=		Python module dependency analysis tool
 
 MODPY_EGG_VERSION=	0.17
 DISTNAME=		modulegraph-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		devel
 

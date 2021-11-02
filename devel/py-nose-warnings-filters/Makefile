@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/10/29 15:38:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/11/02 00:00:51 sthen Exp $
 
 COMMENT =		nose plugin to add warnings filters
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	0.1.5
 DISTNAME =		nose_warnings_filters-${MODPY_EGG_VERSION}
 PKGNAME =		py-nose-warnings-filters-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
-REVISION =		5
+REVISION =		6
 
 HOMEPAGE =		https://github.com/Carreau/nose_warnings_filters
 

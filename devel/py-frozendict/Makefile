@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2021/10/29 15:38:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/11/02 00:00:49 sthen Exp $
 
 COMMENT =		immutable dictionary
 
 MODPY_EGG_VERSION =	1.2
 DISTNAME =		frozendict-${MODPY_EGG_VERSION}
 PKGNAME =		py-frozendict-${MODPY_EGG_VERSION}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		devel
 

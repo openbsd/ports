@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/09/01 13:48:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:00:47 sthen Exp $
 
 COMMENT=		D-Bus introspection XML parser and processor
 
 MODPY_EGG_VERSION=	0.6.1
 DISTNAME=		dbus-deviation-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		devel
 

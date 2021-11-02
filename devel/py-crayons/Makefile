@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/03 21:51:43 kmos Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:00:47 sthen Exp $
 
 COMMENT =		textUI colors for Python
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	0.4.0
 
 DISTNAME =		crayons-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

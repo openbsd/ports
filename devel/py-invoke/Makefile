@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/09/02 08:45:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:00:50 sthen Exp $
 
 COMMENT =	Pythonic task execution
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.6.0
 
 DISTNAME =	invoke-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

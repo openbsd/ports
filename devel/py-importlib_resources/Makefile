@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/10/27 19:58:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/11/02 00:00:49 sthen Exp $
 
 # remove when switching to Python 3.9
 COMMENT=		backport of the importlib.resources module
@@ -6,6 +6,7 @@ COMMENT=		backport of the importlib.resources module
 MODPY_EGG_VERSION=	5.1.2
 DISTNAME=		importlib_resources-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		devel
 

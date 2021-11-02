@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2021/10/29 15:38:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/11/02 00:00:49 sthen Exp $
 
 COMMENT=		Git object database
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION=	2.0.5
 DISTNAME=		gitdb2-${MODPY_EGG_VERSION}
 PKGNAME=		py-gitdb-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
-REVISION=		3
+REVISION=		4
 
 # BSD
 PERMIT_PACKAGE=	Yes

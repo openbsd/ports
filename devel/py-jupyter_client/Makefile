@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:12:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/11/02 00:00:50 sthen Exp $
 
 COMMENT =		Jupyter protocol implementation and client libraries
 
 MODPY_EGG_VERSION =	5.3.4
-REVISION =		1
+REVISION =		2
 DISTNAME =		jupyter_client-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 

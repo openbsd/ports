@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/11 19:28:13 daniel Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:00:47 sthen Exp $
 
 COMMENT =		c++ helper library for python extension modules
 
 MODPY_EGG_VERSION =	1.1.0
 DISTNAME =		cppy-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

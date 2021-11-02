@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/10/27 19:58:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/02 00:00:48 sthen Exp $
 
 COMMENT =		extends Python Rich library functionality
 
 MODPY_EGG_VERSION =	1.2.6
 DISTNAME =		enrich-${MODPY_EGG_VERSION}
 PKGNAME =		py-enrich-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		devel
 

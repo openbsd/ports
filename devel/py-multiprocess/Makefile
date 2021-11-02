@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:11:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/02 00:00:51 sthen Exp $
 
 COMMENT =		better multiprocessing and multithreading in python
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	0.70.9
 DISTNAME =		multiprocess-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		1
+REVISION =		2
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 

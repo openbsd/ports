@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2020/08/22 22:06:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2021/11/02 00:00:51 sthen Exp $
 
 BROKEN =	requires update to 0.34.0 for LLVM 10
 COMMENT =	lightweight LLVM-Python binding for writing JIT compilers
 
 MODPY_EGG_VERSION =	0.29.0
-REVISION =	1
+REVISION =	2
 GH_ACCOUNT =	numba
 GH_PROJECT =	llvmlite
 GH_TAGNAME =	v${MODPY_EGG_VERSION}

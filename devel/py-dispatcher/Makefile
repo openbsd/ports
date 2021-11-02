@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2021/10/29 15:38:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/11/02 00:00:48 sthen Exp $
 
 COMMENT =	multi-producer-multi-consumer signal dispatching mechanism
 
 MODPY_EGG_VERSION = 2.0.5
 DISTNAME =	PyDispatcher-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/Py/py-/:L}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	devel
 

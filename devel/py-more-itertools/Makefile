@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/05/21 19:50:27 kmos Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/02 00:00:51 sthen Exp $
 
 COMMENT =		routines for operating on iterables beyond itertools
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	4.1.0
 DISTNAME =		more-itertools-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		2
+REVISION =		3
 
 # MIT
 PERMIT_PACKAGE =	Yes
