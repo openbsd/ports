@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2150 2021/11/01 08:17:57 landry Exp $
+# $OpenBSD: Makefile,v 1.2151 2021/11/02 16:38:02 fcambus Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -140,6 +140,7 @@
      SUBDIR += dyncall
      SUBDIR += ectags
      SUBDIR += electron
+     SUBDIR += elfcat
      SUBDIR += elftoolchain
      SUBDIR += epoll-shim
      SUBDIR += esptool-ck
