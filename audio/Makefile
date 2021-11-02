@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.468 2021/10/29 16:23:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.469 2021/11/02 21:20:07 sthen Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -69,6 +69,7 @@
      SUBDIR += libcdaudio
      SUBDIR += libcddb
      SUBDIR += libcdio
+     SUBDIR += libcdio-paranoia
      SUBDIR += libcue
      SUBDIR += libdca
      SUBDIR += libdiscid
