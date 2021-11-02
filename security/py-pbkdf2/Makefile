@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2021/10/29 15:38:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/11/02 00:02:18 sthen Exp $
 
 COMMENT =	Python implementation of PBKDF2
 
 MODPY_EGG_VERSION =	1.3
-REVISION =		7
+REVISION =		8
 DISTNAME =		pbkdf2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		security devel

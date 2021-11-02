@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2021/10/16 09:44:57 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2021/11/02 00:02:15 sthen Exp $
 
 COMMENT =	subdomain scanner
 
 MODPY_EGG_VERSION =	5.2.0
 
 DISTNAME =	knockpy-${MODPY_EGG_VERSION}
+REVISION =	0
 
 GH_ACCOUNT =	guelfoweb
 GH_PROJECT =	knock

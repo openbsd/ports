@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2021/02/23 19:39:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/11/02 00:02:23 sthen Exp $
 
 COMMENT =	library and tools to access the VMware Virtual Disk format
 
 VERSION = 	20191221
 DISTNAME =	libvmdk-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  vmdk                       0.0 # 1.0
 

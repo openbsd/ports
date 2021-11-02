@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/23 19:39:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/11/02 00:02:16 sthen Exp $
 
 COMMENT =		access the BitLocker Drive Encryption encrypted volumes
 
 VERSION =		20191221
 DISTNAME =		libbde-alpha-${VERSION}
 PKGNAME =		libbde-${VERSION}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  bde                       0.1 # 1.0
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/07/02 15:29:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:02:18 sthen Exp $
 
 COMMENT =	interact with keepass databases from Python
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	4.0.1
 
 DISTNAME =	pykeepass-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	security
 

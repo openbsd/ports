@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.41 2021/09/02 13:07:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2021/11/02 00:02:17 sthen Exp $
 
 COMMENT=		Python module for GnuPG interface
 
 MODPY_EGG_VERSION=	0.4.7
 DISTNAME=		python-gnupg-${MODPY_EGG_VERSION}
 PKGNAME=		py-gnupg-${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=		security devel
 

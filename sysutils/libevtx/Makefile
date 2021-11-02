@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/02 00:02:22 sthen Exp $
 
 COMMENT =	library and tools to access the Windows XML Event Log (EVTX)
 
 VERSION = 	20191221
 DISTNAME =	libevtx-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  evtx                       0.0 # 1.0
 

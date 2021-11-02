@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2021/10/06 07:32:46 tb Exp $
+# $OpenBSD: Makefile,v 1.53 2021/11/02 00:02:19 sthen Exp $
 
 COMMENT =		fuzzer and test suite for TLS implementations.
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	20210929
 DISTNAME =		tlsfuzzer-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		security
+REVISION =		0
 
 GH_ACCOUNT =		tlsfuzzer
 GH_PROJECT =		tlsfuzzer

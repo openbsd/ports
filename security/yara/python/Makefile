@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/05/21 19:50:35 kmos Exp $
+# $OpenBSD: Makefile,v 1.12 2021/11/02 00:02:20 sthen Exp $
 
 COMMENT = Python extension that gives access to YARA
 
@@ -6,7 +6,7 @@ GH_PROJECT = 	yara-python
 
 MODPY_EGG_VERSION =	${VERSION}
 PKGNAME = py-yara-${VERSION}
-REVISION =2
+REVISION =3
 
 WANTLIB += pthread ${MODPY_WANTLIB} yara
 

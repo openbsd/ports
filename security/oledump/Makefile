@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2021/08/23 16:13:38 sebastia Exp $
+# $OpenBSD: Makefile,v 1.22 2021/11/02 00:02:16 sthen Exp $
 
 COMMENT =	analyze OLE files
 
 MODPY_EGG_VERSION =	0.0.60
 DISTNAME =	oledump_V${MODPY_EGG_VERSION:S/./_/g}
 PKGNAME =	oledump-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 
 CATEGORIES =	security

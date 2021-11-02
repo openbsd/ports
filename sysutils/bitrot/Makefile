@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/02 00:02:21 sthen Exp $
 
 COMMENT =		detects when files bit-rot
 
 MODPY_EGG_VERSION =	1.0.0
 DISTNAME =		bitrot-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		sysutils
 

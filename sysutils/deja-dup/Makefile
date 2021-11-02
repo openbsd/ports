@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2021/08/27 09:29:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2021/11/02 00:02:21 sthen Exp $
 
 COMMENT=		simple encrypted backup tool for GNOME
 
@@ -6,6 +6,7 @@ GNOME_VERSION=		42.8
 GNOME_PROJECT=		deja-dup
 # override gnome MODULE
 EXTRACT_SUFX=		.tar.gz
+REVISION=		0
 
 CATEGORIES=		sysutils
 

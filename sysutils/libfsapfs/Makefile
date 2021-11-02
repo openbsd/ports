@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/23 19:39:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/11/02 00:02:22 sthen Exp $
 
 COMMENT =	library and tools to access the Apple File System
 
 VERSION = 	20191221
 DISTNAME =	libfsapfs-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  fsapfs                       0.0 # 1.0
 

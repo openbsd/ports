@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/07/24 21:26:04 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:02:19 sthen Exp $
 
 COMMENT =	SPAKE2 password-authenticated key exchange (pure python)
 
 MODPY_EGG_VERSION =	0.8
 DISTNAME =		spake2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		security
 

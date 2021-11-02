@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2021/07/14 22:23:41 tb Exp $
+# $OpenBSD: Makefile,v 1.5 2021/11/02 00:02:17 sthen Exp $
 
 COMMENT =		fast elliptic curve digital signatures
 
 MODPY_EGG_VERSION =	2.2.1
-REVISION =		0
+REVISION =		1
 
 DISTNAME =		fastecdsa-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}

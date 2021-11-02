@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/11/02 00:02:22 sthen Exp $
 
 COMMENT =	library and tools to access the Windows Event Log (EVT)
 
 VERSION = 	20191221
 DISTNAME =	libevt-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  evt                       0.0 # 1.0
 

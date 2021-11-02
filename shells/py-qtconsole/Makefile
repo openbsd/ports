@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2021/03/17 08:41:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/11/02 00:02:20 sthen Exp $
 
 COMMENT =		Jupyter Qt console
 
 MODPY_EGG_VERSION =	5.0.3
 DISTNAME =		qtconsole-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		shells
 

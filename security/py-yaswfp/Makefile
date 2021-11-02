@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/11/02 00:02:19 sthen Exp $
 
 COMMENT =	Yet Another SWF Parser
 
 MODPY_EGG_VERSION =	0.9.3
 DISTNAME =	yaswfp-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 GH_ACCOUNT =	facundobatista
 GH_PROJECT =	yaswfp

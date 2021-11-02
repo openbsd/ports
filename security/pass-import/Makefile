@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/07/02 19:31:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:02:16 sthen Exp $
 
 COMMENT=	importer for pass (passwordstore)
 
@@ -18,6 +18,7 @@ MODULES=	lang/python
 
 MODPY_SETUPTOOLS=  Yes
 MODPY_EGG_VERSION= $V
+REVISION=          0
 
 MODPY_PYTEST=	Yes
 

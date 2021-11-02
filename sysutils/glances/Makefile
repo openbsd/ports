@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2021/10/30 22:01:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/11/02 00:02:22 sthen Exp $
 
 COMMENT =		cross-platform curses-based monitoring tool
 
 MODPY_EGG_VERSION =	3.1.7
-REVISION =		0
+REVISION =		1
 
 DISTNAME =		Glances-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:L}

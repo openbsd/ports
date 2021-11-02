@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2021/10/26 19:41:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/11/02 00:02:18 sthen Exp $
 
 COMMENT=	Javascript Object Signing and Encryption (JOSE)
 
@@ -7,6 +7,7 @@ CATEGORIES=	security devel
 MODPY_EGG_VERSION= 1.10.0
 DISTNAME=	josepy-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 # Apache 2.0
 PERMIT_PACKAGE= Yes

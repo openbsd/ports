@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2021/03/29 12:08:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2021/11/02 00:02:20 sthen Exp $
 
 COMMENT=	standalone Yubikey validation server
 
@@ -6,6 +6,7 @@ GH_ACCOUNT=	scumjr
 GH_PROJECT=	yubikeyedup
 GH_COMMIT=	d5044d3fdc10cc59a5213efd53e0f80b2a1096f9
 DISTNAME=	yubikeyedup-0.20201226
+REVISION=	0
 
 CATEGORIES=	security www
 

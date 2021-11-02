@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/09/03 23:10:48 pvk Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/02 00:02:20 sthen Exp $
 
 COMMENT =		ssh configuration security auditing tool
 
 MODPY_EGG_VERSION =	2.5.0
 
 DISTNAME =		ssh-audit-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		security
 

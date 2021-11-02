@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/11/02 00:02:24 sthen Exp $
 
 COMMENT =	library to access the LVM volume system format
 
 VERSION = 	20200102
 DISTNAME =	libvslvm-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  vslvm                       0.0 # 1.0
 

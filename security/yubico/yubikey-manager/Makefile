@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/10/08 20:47:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/11/02 00:02:20 sthen Exp $
 
 COMMENT =	library and CLI tool (ykman) for configuring a YubiKey
 
@@ -7,7 +7,7 @@ COMMENT =	library and CLI tool (ykman) for configuring a YubiKey
 PORTROACH =	site:https://github.com/Yubico/yubikey-manager/releases/
 
 MODPY_EGG_VERSION =	3.1.2
-REVISION =	0
+REVISION =	1
 
 DISTNAME =	yubikey-manager-${MODPY_EGG_VERSION}
 YK_PROJECT =	yubikey-manager
