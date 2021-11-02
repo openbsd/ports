@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/05/26 19:54:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/02 13:51:11 sthen Exp $
 
 COMMENT =		tools to create and extract Squashfs filesystems
 
 GH_TAGNAME =		4.4-git.1
 GH_PROJECT =		squashfs-tools
 GH_ACCOUNT =		plougher
+REVISION =		0
 PKGNAME =		squashfs-tools-${GH_TAGNAME:S/-git//}
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -14,7 +15,7 @@ CATEGORIES =		sysutils
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c m pthread z
+WANTLIB += c lz4 lzma lzo2 m pthread z zstd
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
