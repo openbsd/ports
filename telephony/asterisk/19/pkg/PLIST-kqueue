@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST-kqueue,v 1.1 2021/11/02 12:47:10 sthen Exp $
+@option is-branch
+@so lib/asterisk/modules/res_timing_kqueue.so

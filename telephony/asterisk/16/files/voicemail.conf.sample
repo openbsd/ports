@@ -1,0 +1,6 @@
+; $OpenBSD: voicemail.conf.sample,v 1.1 2021/11/02 12:47:08 sthen Exp $
+; Longer example available in ${TRUEPREFIX}/share/examples/asterisk/default
+
+[default]
+100 => 1234,Phone #1
+101 => 1234,Phone #2

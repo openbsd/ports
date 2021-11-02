@@ -1,0 +1,14 @@
+$OpenBSD: patch-res_res_pjsip_pjsip_options_c,v 1.1 2021/11/02 12:47:09 sthen Exp $
+
+Index: res/res_pjsip/pjsip_options.c
+--- res/res_pjsip/pjsip_options.c.orig
++++ res/res_pjsip/pjsip_options.c
+@@ -2733,7 +2733,7 @@ int ast_sip_format_contact_ami(void *obj, void *arg, i
+ 	ast_str_append(&buf, 0, "AOR: %s\r\n", wrapper->aor_id);
+ 	ast_str_append(&buf, 0, "URI: %s\r\n", contact->uri);
+ 	ast_str_append(&buf, 0, "UserAgent: %s\r\n", contact->user_agent);
+-	ast_str_append(&buf, 0, "RegExpire: %ld\r\n", contact->expiration_time.tv_sec);
++	ast_str_append(&buf, 0, "RegExpire: %lld\r\n", (long long)contact->expiration_time.tv_sec);
+ 	if (!ast_strlen_zero(contact->via_addr)) {
+ 		ast_str_append(&buf, 0, "ViaAddress: %s", contact->via_addr);
+ 		if (contact->via_port) {

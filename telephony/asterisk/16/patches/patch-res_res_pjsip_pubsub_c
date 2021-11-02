@@ -1,0 +1,14 @@
+$OpenBSD: patch-res_res_pjsip_pubsub_c,v 1.1 2021/11/02 12:47:09 sthen Exp $
+
+Index: res/res_pjsip_pubsub.c
+--- res/res_pjsip_pubsub.c.orig
++++ res/res_pjsip_pubsub.c
+@@ -4744,7 +4744,7 @@ static int persistence_expires_str2struct(const struct
+ static int persistence_expires_struct2str(const void *obj, const intptr_t *args, char **buf)
+ {
+ 	const struct subscription_persistence *persistence = obj;
+-	return (ast_asprintf(buf, "%ld", persistence->expires.tv_sec) < 0) ? -1 : 0;
++	return (ast_asprintf(buf, "%lld", (long long)persistence->expires.tv_sec) < 0) ? -1 : 0;
+ }
+ 
+ #define RESOURCE_LIST_INIT_SIZE 4

@@ -1,0 +1,20 @@
+$OpenBSD: patch-configs_samples_sip_conf_sample,v 1.1 2021/11/02 12:47:10 sthen Exp $
+
+Index: configs/samples/sip.conf.sample
+--- configs/samples/sip.conf.sample.orig
++++ configs/samples/sip.conf.sample
+@@ -169,11 +169,11 @@ allowoverlap=no                 ; Disable overlap dial
+ ;  a) Listen on a specific IPv4 address.      Example: bindaddr=192.0.2.1
+ ;  b) Listen on a specific IPv6 address.      Example: bindaddr=2001:db8::1
+ ;  c) Listen on the IPv4 wildcard.            Example: bindaddr=0.0.0.0
+-;  d) Listen on the IPv4 and IPv6 wildcards.  Example: bindaddr=::
++;  d) Listen on the IPv6 wildcard.            Example: bindaddr=::
+ ; (You can choose independently for UDP, TCP, and TLS, by specifying different values for
+ ; "udpbindaddr", "tcpbindaddr", and "tlsbindaddr".)
+-; (Note that using bindaddr=:: will show only a single IPv6 socket in netstat.
+-;  IPv4 is supported at the same time using IPv4-mapped IPv6 addresses.)
++; (Note that on OpenBSD, using bindaddr=:: will only allow IPv6 connections.
++;  OpenBSD does *not* permit IPv4-mapped IPv6 addresses.)
+ ;
+ ; You may optionally add a port number. (The default is port 5060 for UDP and TCP, 5061
+ ; for TLS).

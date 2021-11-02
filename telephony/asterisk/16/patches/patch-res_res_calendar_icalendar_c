@@ -1,0 +1,14 @@
+$OpenBSD: patch-res_res_calendar_icalendar_c,v 1.1 2021/11/02 12:47:09 sthen Exp $
+
+Index: res/res_calendar_icalendar.c
+--- res/res_calendar_icalendar.c.orig
++++ res/res_calendar_icalendar.c
+@@ -246,7 +246,7 @@ static void icalendar_add_event(icalcomponent *comp, s
+ 			ast_string_field_set(event, uid, event->summary);
+ 		} else {
+ 			char tmp[100];
+-			snprintf(tmp, sizeof(tmp), "%ld", event->start);
++			snprintf(tmp, sizeof(tmp), "%lld", (long long)event->start);
+ 			ast_string_field_set(event, uid, tmp);
+ 		}
+ 	}

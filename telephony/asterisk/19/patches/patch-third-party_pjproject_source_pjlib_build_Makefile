@@ -1,0 +1,14 @@
+$OpenBSD: patch-third-party_pjproject_source_pjlib_build_Makefile,v 1.1 2021/11/02 12:47:10 sthen Exp $
+
+Index: third-party/pjproject/source/pjlib/build/Makefile
+--- third-party/pjproject/source/pjlib/build/Makefile.orig
++++ third-party/pjproject/source/pjlib/build/Makefile
+@@ -19,7 +19,7 @@ endif
+ # Gather all flags.
+ #
+ export _CFLAGS 	:= $(CC_CFLAGS) $(OS_CFLAGS) $(HOST_CFLAGS) $(M_CFLAGS) \
+-		   $(CFLAGS) $(CC_INC)../include
++		   $(CFLAGS) $(CC_INC)../include $(CC_INC)$(LOCALBASE)/include
+ export _CXXFLAGS:= $(_CFLAGS) $(CC_CXXFLAGS) $(OS_CXXFLAGS) $(M_CXXFLAGS) \
+ 		   $(HOST_CXXFLAGS) $(CXXFLAGS)
+ export _LDFLAGS := $(CC_LDFLAGS) $(OS_LDFLAGS) $(M_LDFLAGS) $(HOST_LDFLAGS) \

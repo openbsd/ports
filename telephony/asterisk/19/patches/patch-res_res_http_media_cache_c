@@ -1,0 +1,23 @@
+$OpenBSD: patch-res_res_http_media_cache_c,v 1.1 2021/11/02 12:47:10 sthen Exp $
+
+Index: res/res_http_media_cache.c
+--- res/res_http_media_cache.c.orig
++++ res/res_http_media_cache.c
+@@ -152,7 +152,7 @@ static void bucket_file_set_expiration(struct ast_buck
+ 	}
+ 
+ 	/* Use 'now' if we didn't get an expiration time */
+-	snprintf(time_buf, sizeof(time_buf), "%30lu", actual_expires.tv_sec);
++	snprintf(time_buf, sizeof(time_buf), "%30llu", (long long)actual_expires.tv_sec);
+ 
+ 	ast_bucket_file_metadata_set(bucket_file, "__actual_expires", time_buf);
+ }
+@@ -306,7 +306,7 @@ static int bucket_file_expired(struct ast_bucket_file 
+ 		return 1;
+ 	}
+ 
+-	if (sscanf(metadata->value, "%lu", &expires.tv_sec) != 1) {
++	if (sscanf(metadata->value, "%llu", &expires.tv_sec) != 1) { /* XXX requires 64-bit time_t */
+ 		return 1;
+ 	}
+ 

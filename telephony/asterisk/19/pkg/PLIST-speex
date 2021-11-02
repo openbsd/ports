@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-speex,v 1.1 2021/11/02 12:47:10 sthen Exp $
+@option is-branch
+@so lib/asterisk/modules/codec_speex.so
+@so lib/asterisk/modules/format_ogg_speex.so
+@so lib/asterisk/modules/func_speex.so

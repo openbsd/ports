@@ -1,0 +1,19 @@
+#!/bin/ksh
+#
+# $OpenBSD: asterisk.rc,v 1.1 2021/11/02 12:47:10 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/asterisk"
+
+. /etc/rc.d/rc.subr
+
+pexp="${daemon}.*"
+
+rc_start() {
+	${rcexec} "${TRUEPREFIX}/sbin/safe_asterisk"
+}
+
+rc_stop() {
+	${daemon} -rx "core stop now"
+}
+
+rc_cmd $1

@@ -1,0 +1,29 @@
+$OpenBSD: patch-Makefile,v 1.1 2021/11/02 12:47:08 sthen Exp $
+
+- don't force compiler flags
+- don't unconditionally set -ftrampolines, it is gcc-only.
+(Blocksruntime isn't working correctly on OpenBSD anyway so clang
+is not yet an option, but patched away here to allow for easier
+testing, and added-back in the port Makefile).
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -139,7 +139,7 @@ ASTTOPDIR:=$(subst $(space),\$(space),$(CURDIR))
+ OVERWRITE=y
+ 
+ # Include debug and macro symbols in the executables (-g) and profiling info (-pg)
+-DEBUG=-g3
++#DEBUG=-g3
+ 
+ # Asterisk.conf is located in ASTETCDIR or by using the -C flag
+ # when starting Asterisk
+@@ -232,7 +232,7 @@ ifeq ($(OSARCH),NetBSD)
+ endif
+ 
+ ifeq ($(OSARCH),OpenBSD)
+-  _ASTCFLAGS+=-pthread -ftrampolines
++  _ASTCFLAGS+=-pthread
+ endif
+ 
+ ifeq ($(OSARCH),linux-uclibc)

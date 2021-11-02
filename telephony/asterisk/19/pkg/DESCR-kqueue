@@ -1,0 +1,14 @@
+kqueue-backed timer module for Asterisk.
+
+Timing is a fundamental part of Asterisk. It has multiple timing
+modules available for various OS. For OpenBSD, the options are pthread or
+kqueue-backed timers.
+
+Normally, the pthread-backed timer performs best, and this is included
+in the main package.
+
+This package provides the kqueue timer to make it easier for those
+wishing to EXPERIMENT with it (possibly on a kernel built with a higher
+HZ value).
+
+Use the "timing test" cli command to investigate performance.

@@ -1,0 +1,25 @@
+$OpenBSD: patch-res_res_rtp_asterisk_c,v 1.1 2021/11/02 12:47:09 sthen Exp $
+
+libressl *does* have this now
+
+Index: res/res_rtp_asterisk.c
+--- res/res_rtp_asterisk.c.orig
++++ res/res_rtp_asterisk.c
+@@ -1860,7 +1860,7 @@ static int dtls_setup_rtcp(struct ast_rtp_instance *in
+ 
+ static const SSL_METHOD *get_dtls_method(void)
+ {
+-#if OPENSSL_VERSION_NUMBER < 0x10002000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10002000L
+ 	return DTLSv1_method();
+ #else
+ 	return DTLS_method();
+@@ -9071,7 +9071,7 @@ static int store_stunaddr_resolved(const struct ast_dn
+ 		const unsigned char *data = (unsigned char *)ast_dns_record_get_data(record);
+ 		const int rr_type = ast_dns_record_get_rr_type(record);
+ 
+-		if (rr_type == ns_t_a && data_size == 4) {
++		if (rr_type == T_A && data_size == 4) {
+ 			ast_rwlock_wrlock(&stunaddr_lock);
+ 			memcpy(&stunaddr.sin_addr, data, data_size);
+ 			stunaddr.sin_family = AF_INET;

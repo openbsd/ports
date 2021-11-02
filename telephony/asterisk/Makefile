@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.352 2021/10/16 10:55:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.353 2021/11/02 12:47:08 sthen Exp $
 
 SUBDIR =
+SUBDIR += 16
 SUBDIR += 18
+SUBDIR += 19
 
 .include <bsd.port.subdir.mk>

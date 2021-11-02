@@ -1,0 +1,15 @@
+$OpenBSD: patch-configs_samples_res_odbc_conf_sample,v 1.1 2021/11/02 12:47:08 sthen Exp $
+
+Index: configs/samples/res_odbc.conf.sample
+--- configs/samples/res_odbc.conf.sample.orig
++++ configs/samples/res_odbc.conf.sample
+@@ -19,8 +19,7 @@
+ ; If not specified, it is assumed the section is enabled.
+ enabled => no
+ ;
+-; This value should match an entry in /etc/odbc.ini
+-; (or /usr/local/etc/odbc.ini, on FreeBSD and similar systems).
++; This value should match an entry in /etc/iodbc/odbc.ini
+ dsn => asterisk
+ ;
+ ; Username for connecting to the database.  The user defaults to the context name if unspecified.

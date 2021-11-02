@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST-pgsql,v 1.1 2021/11/02 12:47:09 sthen Exp $
+@option is-branch
+@so lib/asterisk/modules/cdr_pgsql.so
+@so lib/asterisk/modules/cel_pgsql.so
+@so lib/asterisk/modules/res_config_pgsql.so
+share/examples/asterisk/default/cdr_pgsql.conf
+@mode 640
+@owner root
+@group _asterisk
+@sample ${SYSCONFDIR}/asterisk/cdr_pgsql.conf
+@mode
+@owner
+@group
+share/examples/asterisk/default/cel_pgsql.conf
+@mode 640
+@owner root
+@group _asterisk
+@sample ${SYSCONFDIR}/asterisk/cel_pgsql.conf
+@mode
+@owner
+@group
+share/examples/asterisk/default/res_pgsql.conf
+@mode 640
+@owner root
+@group _asterisk
+@sample ${SYSCONFDIR}/asterisk/res_pgsql.conf

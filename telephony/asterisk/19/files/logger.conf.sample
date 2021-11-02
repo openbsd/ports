@@ -1,0 +1,18 @@
+; $OpenBSD: logger.conf.sample,v 1.1 2021/11/02 12:47:09 sthen Exp $
+; log files created in directory defined by 'astlogdir' in asterisk.conf
+
+[logfiles]
+console => notice,warning,error
+messages => notice,warning,error
+;syslog.local0 => notice,warning,error
+
+;debug => debug
+;full => notice,warning,error,debug,verbose
+
+[general]
+;appendhostname = yes
+;dateformat=%F %T
+;  see strftime(3)
+
+;queue_log = no
+;event_log = no

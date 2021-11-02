@@ -1,0 +1,41 @@
+; $OpenBSD: musiconhold.conf.sample,v 1.1 2021/11/02 12:47:09 sthen Exp $
+; Music on Hold -- Sample Configuration
+
+; There are various ways to handle musiconhold. The lightweight method
+; is to use Asterisk's internal transcoding to play files from a directory.
+; The drawback here is that playback starts from the start of the file,
+; so regular callers might hear them often.
+;
+; This supports any of the usual codecs used on calls (e.g. alaw, gsm);
+; they can be pre-converted to save transcoding during calls. 8KHz mono
+; RIFF .wav files are also supported (convert with sox).
+
+[default]
+mode=files
+directory=${LOCALBASE}/share/asterisk/moh
+random=yes
+
+; The method used in earlier versions is to have one external process
+; running all the time, which feeds MOH for all calls. Using mp3 files,
+; here's an example, take your pick of application.
+
+;[mp3]
+;mode=custom
+;format=SLIN
+;application=/usr/local/bin/mpg123 -q -r 8000 -f 8192 -s --mono
+; -or-
+;application=/usr/local/bin/madplay -Q -z -o raw:- --mono -R 8000 -a -12 -
+;directory=/usr/local/share/asterisk/moh-mp3
+
+; Streaming from the network (or another source) is possible too,
+; it shouldn't be necessary but it seems helpful to create a directory
+; containing an empty file e.g.
+;
+; # cd /usr/local/share/asterisk && mkdir moh-empty && touch moh-empty/0.mp3
+
+;[mp3stream]
+;mode=custom
+;format=SLIN
+;directory=/usr/local/share/asterisk/moh-empty
+;application=/usr/local/bin/mpg123 -q -r 8000 -f 8192 -s --mono http://example:8014/
+

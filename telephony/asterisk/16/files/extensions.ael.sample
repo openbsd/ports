@@ -1,0 +1,17 @@
+// $Id: extensions.ael.sample,v 1.1 2021/11/02 12:47:08 sthen Exp $
+// Longer example available in ${TRUEPREFIX}/share/examples/asterisk/default
+
+// This context is named "ael-default" to avoid a conflict with an
+// existing old-style extensions.conf file; you may want to rename it
+// to "default".
+context ael-default {
+        *99 => {
+                VoiceMailMain(${CALLERIDNUM});
+        };
+
+        _XXX => {
+                Dial(SIP/${EXTEN},12,tr);
+                Voicemail(${EXTEN});
+                Hangup();
+        };
+};
