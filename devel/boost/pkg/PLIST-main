@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2021/10/24 12:38:41 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2021/11/02 00:00:06 sthen Exp $
 @pkgpath devel/boost
 @conflict boost-md-<1.76.0p0v0
 @conflict leatherman-<1.12.4p0
@@ -16084,10 +16084,10 @@ include/boost/yap/yap.hpp
 @lib lib/libboost_nowide-mt.so.${LIBboost_nowide-mt_VERSION}
 @static-lib lib/libboost_nowide.a
 @lib lib/libboost_nowide.so.${LIBboost_nowide_VERSION}
-@static-lib lib/libboost_numpy38-mt.a
-@lib lib/libboost_numpy38-mt.so.${LIBboost_numpy38-mt_VERSION}
-@static-lib lib/libboost_numpy38.a
-@lib lib/libboost_numpy38.so.${LIBboost_numpy38_VERSION}
+@static-lib lib/libboost_numpy39-mt.a
+@lib lib/libboost_numpy39-mt.so.${LIBboost_numpy39-mt_VERSION}
+@static-lib lib/libboost_numpy39.a
+@lib lib/libboost_numpy39.so.${LIBboost_numpy39_VERSION}
 @static-lib lib/libboost_prg_exec_monitor-mt.a
 @lib lib/libboost_prg_exec_monitor-mt.so.${LIBboost_prg_exec_monitor-mt_VERSION}
 @static-lib lib/libboost_prg_exec_monitor.a
@@ -16096,10 +16096,10 @@ include/boost/yap/yap.hpp
 @lib lib/libboost_program_options-mt.so.${LIBboost_program_options-mt_VERSION}
 @static-lib lib/libboost_program_options.a
 @lib lib/libboost_program_options.so.${LIBboost_program_options_VERSION}
-@static-lib lib/libboost_python38-mt.a
-@lib lib/libboost_python38-mt.so.${LIBboost_python38-mt_VERSION}
-@static-lib lib/libboost_python38.a
-@lib lib/libboost_python38.so.${LIBboost_python38_VERSION}
+@static-lib lib/libboost_python39-mt.a
+@lib lib/libboost_python39-mt.so.${LIBboost_python39-mt_VERSION}
+@static-lib lib/libboost_python39.a
+@lib lib/libboost_python39.so.${LIBboost_python39_VERSION}
 @static-lib lib/libboost_random-mt.a
 @lib lib/libboost_random-mt.so.${LIBboost_random-mt_VERSION}
 @static-lib lib/libboost_random.a
