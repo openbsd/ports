@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.3 2021/11/02 11:11:17 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2021/11/02 12:43:48 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
 PKGNAME-main=	asterisk-${VER}
+SHORTVER=	${.CURDIR:T}
 
 CATEGORIES=	telephony
 
@@ -51,7 +52,11 @@ SHARED_LIBS+=		asteriskssl ${SHLIB_V}
 SHARED_LIBS+=		asteriskpj ${SHLIB_V}
 
 MULTI_PACKAGES=		-main -calendar -http_post -kqueue -ldap -lua \
-			-odbc -pgsql -snmp -speex -tds -vm_imap -vm_odbc
+			-odbc -pgsql -snmp -speex -tds
+.if ${SHORTVER} != 16
+MULTI_PACKAGES+=	-vm_imap -vm_odbc
+.endif
+
 # can't disable main/kqueue
 PSEUDO_FLAVORS=		${MULTI_PACKAGES:N-main:N-kqueue:C/-/no_/g}
 FLAVOR?=
@@ -185,17 +190,6 @@ WANTLIB-http_post=	gio-2.0 glib-2.0 gmime-3.0 gobject-2.0 intl pthread
 CONFIGURE_ARGS+=	--with-gmime=no
 .endif
 
-COMMENT-vm_imap=	IMAP voicemail support for Asterisk
-LIB_DEPENDS-vm_imap=	mail/alpine,-c-client
-WANTLIB-vm_imap=		c-client crypto pthread ssl
-.if !${BUILD_PACKAGES:M-vm_imap}
-CONFIGURE_ARGS+=	--with-imap=no
-.else
-CONFIGURE_ARGS+=	--with-imap=system
-CPPFLAGS+=		-I${LOCALBASE}/include/c-client
-MENUSELECT+=		--enable app_voicemail_imap
-.endif
-
 # ldap
 COMMENT-ldap=		LDAP support for Asterisk
 LIB_DEPENDS-ldap=	databases/openldap,-main
@@ -243,13 +237,6 @@ WANTLIB-odbc=		iodbc pthread
 CONFIGURE_ARGS+=	--with-iodbc=no \
 			--with-ltdl=no
 .endif
-# vm_odbc
-COMMENT-vm_odbc=	ODBC voicemail support for Asterisk
-LIB_DEPENDS-vm_odbc=	databases/iodbc
-WANTLIB-vm_odbc=	iodbc pthread
-.if ${BUILD_PACKAGES:M-vm_odbc}
-MENUSELECT+=		--enable app_voicemail_odbc
-.endif
 
 # postgresql
 COMMENT-pgsql=		PostgreSQL support for Asterisk
@@ -275,6 +262,30 @@ LIB_DEPENDS-speex=	audio/speex>=1.2rc1
 CONFIGURE_ARGS+=	--with-speex=no
 .endif
 
+.if ${MULTI_PACKAGES:M-vm_imap}
+# vm_imap
+COMMENT-vm_imap=	IMAP voicemail support for Asterisk
+LIB_DEPENDS-vm_imap=	mail/alpine,-c-client
+WANTLIB-vm_imap=		c-client crypto pthread ssl
+.  if !${BUILD_PACKAGES:M-vm_imap}
+CONFIGURE_ARGS+=	--with-imap=no
+.  else
+CONFIGURE_ARGS+=	--with-imap=system
+CPPFLAGS+=		-I${LOCALBASE}/include/c-client
+MENUSELECT+=		--enable app_voicemail_imap
+.  endif
+.endif
+
+.if ${MULTI_PACKAGES:M-vm_imap}
+# vm_odbc
+COMMENT-vm_odbc=	ODBC voicemail support for Asterisk
+LIB_DEPENDS-vm_odbc=	databases/iodbc
+WANTLIB-vm_odbc=	iodbc pthread
+.  if ${BUILD_PACKAGES:M-vm_odbc}
+MENUSELECT+=		--enable app_voicemail_odbc
+.  endif
+.endif
+
 NO_TEST=		Yes
 INSTALL_TARGET=		install install-headers samples
 EXAMPLEDIR=		${PREFIX}/share/examples/asterisk
@@ -284,15 +295,8 @@ EXAMPLEFILES=		cdr.conf extensions.ael extensions.conf logger.conf \
 PKGSPEC-main=		asterisk-${VERSION_SPEC}
 
 .for i in ${MULTI_PACKAGES:N-main}
-# previously vm_imap was a flavour of the main build due to how the build
-# system worked. it didn't affect other subpackages so the following lines
-# were used to overwrite the flavour of those with the default name/path.
-# kept commented-out here for reference as this is my go-to port if I need
-# to do it again.
-#FULLPKGNAME$i ?=	asterisk$i-${VER}
-#FULLPKGPATH$i ?=	${PKGPATH},$i
 PKGNAME$i ?=		asterisk$i-${VER}
-RUN_DEPENDS$i +=	telephony/asterisk/${.CURDIR:T}=${VER}
+RUN_DEPENDS$i +=	telephony/asterisk/${SHORTVER}=${VER}
 .endfor
 
 # some of the patches have MS-DOS line endings which patch doesn't like.
@@ -307,6 +311,9 @@ post-extract:
 	    (echo "PJ_V != PJPROJECT_VERSION; update in port"; \
 	     grep 'PJPROJECT_VERSION' versions.mak; exit 1)
 	mv ${WRKDIR}/pjproject-${PJ_V} ${WRKSRC}/third-party/pjproject/source
+
+post-patch:
+	@echo '/!\ upstream patches to pjproject are applied in pre-configure'
 
 pre-configure:
 	cd ${WRKSRC}/third-party/pjproject/source; \
