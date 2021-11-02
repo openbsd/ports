@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/02 00:01:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/11/02 10:18:05 sthen Exp $
 
 COMMENT =		objects and routines pertaining to date and time
 
@@ -21,11 +21,12 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-# unported deps
-NO_TEST =		Yes
+MODPY_PYTEST_ARGS =	lib/tempora/tests
 
 BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}>=1.15.0
 RUN_DEPENDS =		devel/py-jaraco-functools${MODPY_FLAVOR}>=1.2.0 \
 			devel/py-tz${MODPY_FLAVOR}
+
+TEST_DEPENDS =		devel/py-freezegun${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
