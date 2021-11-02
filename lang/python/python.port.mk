@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.137 2021/11/02 00:00:01 sthen Exp $
+# $OpenBSD: python.port.mk,v 1.138 2021/11/02 01:17:44 sthen Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -217,7 +217,6 @@ MODPY_CMD =	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 			${MODPY_SETUP_ARGS}
 
 MODPY_TEST_DIR ?=	${WRKSRC}
-MODPY_TEST_LIBDIR ?=
 
 MODPY_TEST_CMD = cd ${MODPY_TEST_DIR} && ${SETENV} ${ALL_TEST_ENV} ${MODPY_BIN}
 .if ${MODPY_PYTEST:L} == "yes"
@@ -227,6 +226,7 @@ MODPY_TEST_LIBDIR ?=	lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION}
 MODPY_TEST_CMD +=	./${MODPY_SETUP} ${MODPY_SETUP_ARGS}
 .endif
 
+MODPY_TEST_LIBDIR ?=
 MODPY_TEST_LOCALE ?=	LC_CTYPE=en_US.UTF-8
 TEST_ENV +=		${MODPY_TEST_LOCALE}
 
