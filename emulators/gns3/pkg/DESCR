@@ -1,8 +1,0 @@
-GNS3 is a visual design tool and front-end to access emulated routers.
-It can export graphical network maps (with a reasonable set of icons for
-simple diagram-creations needs), control Dynamips and QEMU instances
-(including adding and removing connections between nodes) and more.
-
-Control over QEMU nodes is particularly nice; by default GNS3 uses
-a "base" disk image, allowing simple and disk-efficient creation of
-large networks based on a common operating system.
