@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/10/26 16:19:04 sthen Exp $
-@pkgpath devel/py-jaraco-functools
+@comment $OpenBSD: PLIST,v 1.4 2021/11/02 10:18:17 sthen Exp $
 @conflict py-jaraco-functoolsjaraco.functools-*
 @conflict py3-jaraco-functoolsjaraco.functools-*
+@pkgpath devel/py-jaraco-functools
 lib/python${MODPY_VERSION}/site-packages/jaraco/
 lib/python${MODPY_VERSION}/site-packages/jaraco.functools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/jaraco.functools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -9,8 +9,10 @@ lib/python${MODPY_VERSION}/site-packages/jaraco.functools-${MODPY_EGG_VERSION}-p
 lib/python${MODPY_VERSION}/site-packages/jaraco.functools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/jaraco.functools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/jaraco.functools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/jaraco/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jaraco/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/jaraco/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jaraco/${MODPY_PYCACHE}functools.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jaraco/functools.py
+lib/python${MODPY_VERSION}/site-packages/lib/jaraco/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lib/jaraco/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/lib/jaraco/${MODPY_PYCACHE}functools.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lib/jaraco/functools.py

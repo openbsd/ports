@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/02 00:00:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/11/02 10:18:17 sthen Exp $
 
 COMMENT =		functools like those found in stdlib
 
-MODPY_EGG_VERSION =	2.0
-REVISION =		4
+MODPY_EGG_VERSION =	3.4.0
 DISTNAME =		jaraco.functools-${MODPY_EGG_VERSION}
 PKGNAME =		py-jaraco-functools-${MODPY_EGG_VERSION}
 
