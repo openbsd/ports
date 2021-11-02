@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2021/11/02 13:02:24 landry Exp $
+# $OpenBSD: Makefile,v 1.40 2021/11/02 13:32:36 landry Exp $
 
 COMMENT=	cartographic projection utilities
 
-DISTNAME=	proj-8.1.1
+DISTNAME=	proj-8.2.0
 CATEGORIES=	devel geo
-SHARED_LIBS=	proj 16.2 # 23.1
-REVISION =	0
+SHARED_LIBS=	proj 16.3 # 23.1
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		proj-datumgrid-1.8${EXTRACT_SUFX}
