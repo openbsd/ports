@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/11/02 00:01:54 sthen Exp $
 
 COMMENT =		console CardDAV client
 
 MODPY_EGG_VERSION =	0.17.0
 DISTNAME =		khard-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		productivity
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.61 2021/02/23 19:39:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2021/11/02 00:01:54 sthen Exp $
 
 COMMENT=		printer (CUPS) administration tool
 
 V=			1.5.15
 DISTNAME=		system-config-printer-${V}
+REVISION=		0
 
 CATEGORIES=		print sysutils
 

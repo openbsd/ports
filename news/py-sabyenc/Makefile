@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2021/01/04 14:06:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/11/02 00:01:53 sthen Exp $
 
 COMMENT =		yEnc Module for Python modified for SABnzbd
 
 MODPY_EGG_VERSION =	4.0.2
 DISTNAME =		sabyenc3-${MODPY_EGG_VERSION}
 PKGNAME =		py-sabyenc-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		news
 

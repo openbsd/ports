@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2021/10/04 14:35:40 kirby Exp $
+# $OpenBSD: Makefile,v 1.18 2021/11/02 00:01:53 sthen Exp $
 
 COMMENT =		simple RPC framework based on GObject system
 
@@ -7,6 +7,7 @@ GH_PROJECT =		libsearpc
 # this commit is from the "v3.2-latest" tag
 GH_COMMIT =		50ff08b03c7cec8e10b35ba438633b9fe08a8d90
 DISTNAME =		libsearpc-3.2.0pl20200809
+REVISION =		0
 
 SHARED_LIBS +=		searpc		0.0 # 1.2
 

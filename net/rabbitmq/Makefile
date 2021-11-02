@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2021/02/23 19:39:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2021/11/02 00:01:52 sthen Exp $
 
 BROKEN =	builds but not yet working.
 # we had rabbitmq-3.6.15 which used erlang 19, which was removed due to
@@ -14,6 +14,7 @@ V =		3.8.8
 DISTNAME =	rabbitmq-server-$V
 PKGNAME =	rabbitmq-$V
 CATEGORIES =	net
+REVISION =	0
 
 HOMEPAGE =	https://www.rabbitmq.com/
 

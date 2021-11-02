@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.56 2021/03/03 09:35:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2021/11/02 00:02:07 sthen Exp $
 
 COMMENT=		RSI prevention tool
 
 V=			1.10.44
 DISTNAME=		workrave-${V}
+REVISION=		0
 
 SHARED_LIBS +=  workrave-private-1.0 1.0      # unknown
 

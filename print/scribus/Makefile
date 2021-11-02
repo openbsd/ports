@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.79 2021/10/06 14:36:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2021/11/02 00:01:54 sthen Exp $
 
 DPB_PROPERTIES=	parallel
 
 COMMENT=	desktop publishing program
 DISTNAME=	scribus-1.5.7
 CATEGORIES=	print
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://www.scribus.net/
 

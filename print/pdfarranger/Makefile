@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/07/08 22:25:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/11/02 00:01:54 sthen Exp $
 
 COMMENT =		GUI tool to rearrange and modify PDF files
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	1.7.1
 GH_ACCOUNT =		pdfarranger
 GH_PROJECT =		pdfarranger
 GH_TAGNAME =		${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		print
 
