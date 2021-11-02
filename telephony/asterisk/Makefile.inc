@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2021/10/16 10:55:00 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2021/11/02 10:59:44 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
@@ -308,7 +308,7 @@ post-extract:
 	     grep 'PJPROJECT_VERSION' versions.mak; exit 1)
 	mv ${WRKDIR}/pjproject-${PJ_V} ${WRKSRC}/third-party/pjproject/source
 
-post-patch:
+pre-configure:
 	cd ${WRKSRC}/third-party/pjproject/source; ../../apply_patches ../patches .
 	touch ${WRKSRC}/third-party/pjproject/source/.unpacked
 
