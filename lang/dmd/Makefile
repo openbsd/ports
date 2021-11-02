@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/10/13 04:38:50 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 13:28:34 bcallah Exp $
 
-# Possibly i386 one day, too
+# i386 forthcoming
 ONLY_FOR_ARCHS =	amd64
 
 V =		2.098.0
@@ -24,10 +24,17 @@ MASTER_SITES =	https://github.com/ibara/dmd/releases/download/bootstrap-${V}/
 
 USE_GMAKE =	Yes
 MAKE_ENV =	HOST_CXX="${CXX}" \
-		HOST_DMD="${WRKDIR}/dmd-${V}-bootstrap/openbsd/bin64/dmd"
+		HOST_DMD="${WRKDIR}/dmd-${V}-bootstrap/openbsd/bin${MODEL}/dmd"
 MAKE_FILE =	posix.mak
 
 NO_TEST =	Yes
+
+# MODEL depends on arch.
+.if ${MACHINE_ARCH:Mamd64}
+MODEL = 64
+.else
+MODEL = 32
+.endif
 
 # Fix up the build system.
 do-gen:
@@ -44,15 +51,15 @@ do-build:
 	cd ${WRKDIR}/druntime-${V} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} -f ${MAKE_FILE} && \
 			${SETENV} ${MAKE_PROGRAM} -f ${MAKE_FILE} install
-	mkdir ${WRKDIR}/install/openbsd/bin64
-	cp ${WRKDIR}/dmd-${V}/generated/openbsd/release/64/dmd \
-		${WRKDIR}/install/openbsd/bin64
+	mkdir ${WRKDIR}/install/openbsd/bin${MODEL}
+	cp ${WRKDIR}/dmd-${V}/generated/openbsd/release/${MODEL}/dmd \
+		${WRKDIR}/install/openbsd/bin${MODEL}
 
 # We need to do this manually too.
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/install/openbsd/bin64/dmd \
+	${INSTALL_PROGRAM} ${WRKDIR}/install/openbsd/bin${MODEL}/dmd \
 		${PREFIX}/bin
-	${INSTALL_DATA} ${WRKDIR}/install/openbsd/lib64/libphobos2.a \
+	${INSTALL_DATA} ${WRKDIR}/install/openbsd/lib${MODEL}/libphobos2.a \
 		${PREFIX}/lib
 	${INSTALL_MAN} ${WRKDIR}/dmd-${V}/dmd.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKDIR}/dmd-${V}/docs/man/man5/dmd.conf.5 \
