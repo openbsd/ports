@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/02 07:34:51 bentley Exp $
+@pkgpath textproc/apertium-dicts/af-nl
+share/apertium/apertium-afr-nld/
+share/apertium/apertium-afr-nld/afr-nld.autobil.bin
+share/apertium/apertium-afr-nld/afr-nld.autogen.bin
+share/apertium/apertium-afr-nld/afr-nld.automorf.bin
+share/apertium/apertium-afr-nld/afr-nld.autopgen.bin
+share/apertium/apertium-afr-nld/afr-nld.prob
+share/apertium/apertium-afr-nld/afr-nld.rlx.bin
+share/apertium/apertium-afr-nld/afr-nld.t1x.bin
+share/apertium/apertium-afr-nld/afr-nld.t2x.bin
+share/apertium/apertium-afr-nld/afr-nld.t3x.bin
+share/apertium/apertium-afr-nld/apertium-afr-nld.afr-nld.t1x
+share/apertium/apertium-afr-nld/apertium-afr-nld.afr-nld.t2x
+share/apertium/apertium-afr-nld/apertium-afr-nld.afr-nld.t3x
+share/apertium/apertium-afr-nld/apertium-afr-nld.nld-afr.t1x
+share/apertium/apertium-afr-nld/apertium-afr-nld.nld-afr.t2x
+share/apertium/apertium-afr-nld/apertium-afr-nld.nld-afr.t3x
+share/apertium/apertium-afr-nld/nld-afr.autobil.bin
+share/apertium/apertium-afr-nld/nld-afr.autogen.bin
+share/apertium/apertium-afr-nld/nld-afr.autolex.bin
+share/apertium/apertium-afr-nld/nld-afr.automorf.bin
+share/apertium/apertium-afr-nld/nld-afr.autopgen.bin
+share/apertium/apertium-afr-nld/nld-afr.prob
+share/apertium/apertium-afr-nld/nld-afr.rlx.bin
+share/apertium/apertium-afr-nld/nld-afr.t1x.bin
+share/apertium/apertium-afr-nld/nld-afr.t2x.bin
+share/apertium/apertium-afr-nld/nld-afr.t3x.bin
+share/apertium/modes/afr-nld.mode
+share/apertium/modes/nld-afr.mode
