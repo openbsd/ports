@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2021/10/07 12:17:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2021/11/02 13:31:06 sthen Exp $
 
 COMMENT-main=	monitoring plugins (for Nagios, Icinga, etc)
 COMMENT-dbi=	dbi monitoring plugin
@@ -12,7 +12,7 @@ COMMENT-snmp=	monitoring plugins using snmp
 COMMENT-radius=	RADIUS monitoring plugin
 
 V=		2.3.1
-REVISION-main=	1
+REVISION=	2
 
 DISTNAME=	monitoring-plugins-$V
 PKGNAME-main=	monitoring-plugins-$V
@@ -37,7 +37,8 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c iconv intl pthread
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc base-gcc
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 MASTER_SITES=	https://www.monitoring-plugins.org/download/
 
