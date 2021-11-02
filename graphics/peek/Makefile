@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/10/31 07:50:07 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 15:38:37 sthen Exp $
 
 COMMENT =	simple screen recorder
 
 GH_PROJECT = 	peek
 GH_ACCOUNT = 	phw
 GH_TAGNAME = 	1.5.1
+REVISION =	0
 
 CATEGORIES = 	graphics x11
 
