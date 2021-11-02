@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.136 2021/11/01 17:16:23 sthen Exp $
+# $OpenBSD: python.port.mk,v 1.137 2021/11/02 00:00:01 sthen Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -7,7 +7,7 @@ CATEGORIES +=		lang/python
 
 # define the default versions
 MODPY_DEFAULT_VERSION_2 = 2.7
-MODPY_DEFAULT_VERSION_3 = 3.8
+MODPY_DEFAULT_VERSION_3 = 3.9
 
 # If switching to a new MODPY_DEFAULT_VERSION_3, say 3.x to 3.y:
 # - Move PY_DEFAULTONLY from 3.x/Makefile to 3.y/Makefile

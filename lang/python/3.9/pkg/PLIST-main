@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2021/11/01 16:56:25 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2021/11/02 00:00:02 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-${VERSION_SPEC}
+@conflict python-main-<3.8.12p3
 ${PY_DEFAULTONLY}bin/2to3
 bin/2to3-3.9
 ${PY_DEFAULTONLY}bin/pydoc3

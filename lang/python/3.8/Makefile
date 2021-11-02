@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2021/11/01 16:56:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/11/02 00:00:01 sthen Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -10,10 +10,8 @@ PATCHLEVEL =		.12
 SHARED_LIBS =		python3.8 0.0
 VERSION_SPEC =		>=3.8,<3.9
 
-REVISION-main =		2
-
-# override "@comment" setting for the MODPY_DEFAULT_VERSION_3 version
-PY_DEFAULTONLY =
+REVISION-main =		3
+REVISION-idle =		0
 
 
 CONFIGURE_ARGS +=	--with-ensurepip=no
