@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2151 2021/11/02 16:38:02 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2152 2021/11/02 21:02:11 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -62,8 +62,8 @@
      SUBDIR += catalyst
      SUBDIR += catalyst-tutorial
      SUBDIR += catch2
-     SUBDIR += cbmc
      SUBDIR += cbindgen
+     SUBDIR += cbmc
      SUBDIR += ccache
      SUBDIR += ccrtp
      SUBDIR += cdk
@@ -234,11 +234,11 @@
      SUBDIR += jsonrpc-glib
      SUBDIR += kdevelop
      SUBDIR += kdiff3
-     SUBDIR += kproperty
-     SUBDIR += kreport
      SUBDIR += keystone
      SUBDIR += kf5
      SUBDIR += knfmt
+     SUBDIR += kproperty
+     SUBDIR += kreport
      SUBDIR += kyua-cli
      SUBDIR += kyua-testers
      SUBDIR += leatherman
@@ -342,9 +342,6 @@
      SUBDIR += lpeg,lua52
      SUBDIR += lpeg,lua53
      SUBDIR += ltcltk
-     SUBDIR += luassert
-     SUBDIR += luassert,lua52
-     SUBDIR += luassert,lua53
      SUBDIR += lua-bit32
      SUBDIR += lua-bitop
      SUBDIR += lua-bitop,lua52
@@ -399,6 +396,9 @@
      SUBDIR += luarexlib
      SUBDIR += luarings
      SUBDIR += luarings,lua52
+     SUBDIR += luassert
+     SUBDIR += luassert,lua52
+     SUBDIR += luassert,lua53
      SUBDIR += luastdlib
      SUBDIR += luastdlib,lua52
      SUBDIR += lutok
@@ -496,6 +496,7 @@
      SUBDIR += p5-CLI-Framework
      SUBDIR += p5-CLI-Osprey
      SUBDIR += p5-CPAN-Meta-Check
+     SUBDIR += p5-CPAN-Perl-Releases
      SUBDIR += p5-Cache-Cache
      SUBDIR += p5-Cache-FastMmap
      SUBDIR += p5-Cache-Memcached
@@ -581,7 +582,6 @@
      SUBDIR += p5-Config-Tiny
      SUBDIR += p5-Context-Preserve
      SUBDIR += p5-Coro
-     SUBDIR += p5-CPAN-Perl-Releases
      SUBDIR += p5-Curses
      SUBDIR += p5-Curses-UI
      SUBDIR += p5-Curses-Widgets
@@ -607,8 +607,8 @@
      SUBDIR += p5-Data-Perl
      SUBDIR += p5-Data-Printer
      SUBDIR += p5-Data-Random
-     SUBDIR += p5-Data-Section-Simple
      SUBDIR += p5-Data-SExpression
+     SUBDIR += p5-Data-Section-Simple
      SUBDIR += p5-Data-ShowTable
      SUBDIR += p5-Data-Stag
      SUBDIR += p5-Data-Structure-Util
@@ -851,7 +851,6 @@
      SUBDIR += p5-Memoize-ExpireLRU
      SUBDIR += p5-Mixin-Linewise
      SUBDIR += p5-Mock-Config
-     SUBDIR += p5-Module-Path
      SUBDIR += p5-Modern-Perl
      SUBDIR += p5-Module-Build
      SUBDIR += p5-Module-Build-Pluggable
@@ -865,6 +864,7 @@
      SUBDIR += p5-Module-Install-Repository
      SUBDIR += p5-Module-Install-XSUtil
      SUBDIR += p5-Module-Manifest
+     SUBDIR += p5-Module-Path
      SUBDIR += p5-Module-Pluggable
      SUBDIR += p5-Module-Pluggable-Fast
      SUBDIR += p5-Module-Refresh
@@ -911,8 +911,8 @@
      SUBDIR += p5-MooseX-Role-Parameterized
      SUBDIR += p5-MooseX-Role-WithOverloading
      SUBDIR += p5-MooseX-SemiAffordanceAccessor
-     SUBDIR += p5-MooseX-StrictConstructor
      SUBDIR += p5-MooseX-Storage
+     SUBDIR += p5-MooseX-StrictConstructor
      SUBDIR += p5-MooseX-Traits
      SUBDIR += p5-MooseX-Traits-Pluggable
      SUBDIR += p5-MooseX-Types
@@ -1004,7 +1004,6 @@
      SUBDIR += p5-Role-Basic
      SUBDIR += p5-Role-Tiny
      SUBDIR += p5-SDL
-     SUBDIR += p5-Specio
      SUBDIR += p5-SUPER
      SUBDIR += p5-SVN-Notify
      SUBDIR += p5-SVN-Simple
@@ -1026,6 +1025,7 @@
      SUBDIR += p5-Smart-Comments
      SUBDIR += p5-Sort-Key
      SUBDIR += p5-Sort-Naturally
+     SUBDIR += p5-Specio
      SUBDIR += p5-Spiffy
      SUBDIR += p5-Stream-Buffered
      SUBDIR += p5-String-CRC32
@@ -1278,9 +1278,6 @@
      SUBDIR += pth
      SUBDIR += ptlib
      SUBDIR += pudb,python3
-     SUBDIR += py3c
-     SUBDIR += pycdc
-     SUBDIR += pycharm
      SUBDIR += py-Checker
      SUBDIR += py-algorithm-munkres,python3
      SUBDIR += py-altgraph
@@ -1399,8 +1396,8 @@
      SUBDIR += py-hypothesis
      SUBDIR += py-hypothesis,python3
      SUBDIR += py-icalendar,python3
-     SUBDIR += py-importlib_resources,python3
      SUBDIR += py-importlib-metadata,python3
+     SUBDIR += py-importlib_resources,python3
      SUBDIR += py-incremental,python3
      SUBDIR += py-intervaltree
      SUBDIR += py-intervaltree,python3
@@ -1505,11 +1502,10 @@
      SUBDIR += py-serial
      SUBDIR += py-serial,python3
      SUBDIR += py-setproctitle,python3
-     SUBDIR += py2-setuptools
      SUBDIR += py-setuptools,python3
+     SUBDIR += py-setuptools-rust,python3
      SUBDIR += py-setuptools_git
      SUBDIR += py-setuptools_git,python3
-     SUBDIR += py-setuptools-rust,python3
      SUBDIR += py-setuptools_scm
      SUBDIR += py-setuptools_scm,python3
      SUBDIR += py-setuptools_scm_git_archive,python3
@@ -1601,6 +1597,10 @@
      SUBDIR += py-zopeevent,python3
      SUBDIR += py-zopeinterface,python3
      SUBDIR += py-zopetesting,python3
+     SUBDIR += py2-setuptools
+     SUBDIR += py3c
+     SUBDIR += pycdc
+     SUBDIR += pycharm
      SUBDIR += pyflakes,python3
      SUBDIR += pygame
      SUBDIR += pygame,python3
@@ -1652,9 +1652,9 @@
      SUBDIR += ruby-ffi,ruby30
      SUBDIR += ruby-ffi-compiler
      SUBDIR += ruby-flexmock
+     SUBDIR += ruby-get_process_mem
      SUBDIR += ruby-gettext
      SUBDIR += ruby-gettext-setup
-     SUBDIR += ruby-get_process_mem
      SUBDIR += ruby-git
      SUBDIR += ruby-highline
      SUBDIR += ruby-hoe
@@ -1687,16 +1687,16 @@
      SUBDIR += ruby-puppet_forge
      SUBDIR += ruby-rake-compiler
      SUBDIR += ruby-rake-remote_task
-     SUBDIR += ruby-regexp_parser
      SUBDIR += ruby-rb-gsl,ruby27
      SUBDIR += ruby-rb-gsl,ruby30
      SUBDIR += ruby-ref
+     SUBDIR += ruby-regexp_parser
      SUBDIR += ruby-rgen
      SUBDIR += ruby-rr
      SUBDIR += ruby-rspec
+     SUBDIR += ruby-ruby-progressbar
      SUBDIR += ruby-ruby2ruby
      SUBDIR += ruby-ruby_parser
-     SUBDIR += ruby-ruby-progressbar
      SUBDIR += ruby-rubyinline
      SUBDIR += ruby-safe_yaml
      SUBDIR += ruby-semantic_puppet
