@@ -1,4 +1,4 @@
-$OpenBSD: patch-test_openssl_test_ssl_rb,v 1.4 2021/10/28 10:54:46 tb Exp $
+$OpenBSD: patch-test_openssl_test_ssl_rb,v 1.5 2021/11/02 10:19:11 tb Exp $
 
 Remove a pend that hides missing support for SSL_CTX_set_client_cert_cb()
 in the TLSv1.3 stack.
@@ -18,7 +18,7 @@ Index: test/openssl/test_ssl.rb
      ctx_proc = Proc.new do |ctx|
        ctx.client_ca = [@ca_cert]
      end
-@@ -708,6 +709,7 @@ class OpenSSL::TestSSL < OpenSSL::SSLTestCase
+@@ -669,6 +670,7 @@ class OpenSSL::TestSSL < OpenSSL::SSLTestCase
        create_cert_with_san('DNS:*.example.com'), 'foo.example.com'))
      assert_equal(false, OpenSSL::SSL.verify_certificate_identity(
        create_cert_with_san('DNS:*.example.com'), 'bar.foo.example.com'))
