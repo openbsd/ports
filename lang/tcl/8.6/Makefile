@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:47:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2021/11/02 22:10:08 naddy Exp $
 
 COMMENT =		Tool Command Language
 
@@ -10,7 +10,7 @@ SHARED_LIBS =		tcl86 1.${P}
 CATEGORIES =		lang lang/tcl
 HOMEPAGE =		http://www.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
-REVISION =		2
+REVISION =		3
 
 # BSD
 PERMIT_PACKAGE =	Yes

@@ -1,0 +1,25 @@
+$OpenBSD: patch-generic_tclIO_c,v 1.1 2021/11/02 22:10:08 naddy Exp $
+
+Fix unsafe buffer lifetime
+https://core.tcl-lang.org/tcl/info/24b9181478
+
+Index: generic/tclIO.c
+--- generic/tclIO.c.orig
++++ generic/tclIO.c
+@@ -4242,6 +4242,7 @@ Write(
+ 				/* State info for channel */
+     char *nextNewLine = NULL;
+     int endEncoding, saved = 0, total = 0, flushed = 0, needNlFlush = 0;
++    char safe[BUFFER_PADDING];
+ 
+     if (srcLen) {
+         WillWrite(chanPtr);
+@@ -4260,7 +4261,7 @@ Write(
+ 
+     while (srcLen + saved + endEncoding > 0) {
+ 	ChannelBuffer *bufPtr;
+-	char *dst, safe[BUFFER_PADDING];
++	char *dst;
+ 	int result, srcRead, dstLen, dstWrote, srcLimit = srcLen;
+ 
+ 	if (nextNewLine) {
