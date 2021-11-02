@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/02 07:56:29 bentley Exp $
+@pkgpath textproc/apertium-dicts/es-ast
+share/apertium/apertium-spa-ast/
+share/apertium/apertium-spa-ast/apertium-spa-ast.post-spa-ast.t1x
+share/apertium/apertium-spa-ast/apertium-spa-ast.spa-ast.t1x
+share/apertium/apertium-spa-ast/ast-spa.autobil.bin
+share/apertium/apertium-spa-ast/ast-spa.autogen.bin
+share/apertium/apertium-spa-ast/ast-spa.automorf.bin
+share/apertium/apertium-spa-ast/ast-spa.autopgen.bin
+share/apertium/apertium-spa-ast/ast-spa.prob
+share/apertium/apertium-spa-ast/ast-spa.t1x.bin
+share/apertium/apertium-spa-ast/spa-ast.autobil.bin
+share/apertium/apertium-spa-ast/spa-ast.autogen.bin
+share/apertium/apertium-spa-ast/spa-ast.automorf.bin
+share/apertium/apertium-spa-ast/spa-ast.autopgen.bin
+share/apertium/apertium-spa-ast/spa-ast.autopgen2.bin
+share/apertium/apertium-spa-ast/spa-ast.post.t1x.bin
+share/apertium/apertium-spa-ast/spa-ast.prob
+share/apertium/apertium-spa-ast/spa-ast.t1x.bin
+share/apertium/modes/spa-ast-old.mode
+share/apertium/modes/spa-ast-pn-old.mode
+share/apertium/modes/spa-ast-pn.mode
+share/apertium/modes/spa-ast.mode
