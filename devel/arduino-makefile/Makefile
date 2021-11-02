@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/10/29 20:59:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/11/02 00:00:23 sthen Exp $
 
 COMMENT=	Makefile to build and upload Arduino sketches
 
@@ -6,7 +6,7 @@ GH_ACCOUNT=	sudar
 GH_PROJECT=	Arduino-Makefile
 GH_TAGNAME=	1.6.0
 PKGNAME=	arduino-makefile-${GH_TAGNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel
 

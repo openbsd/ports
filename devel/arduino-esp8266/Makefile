@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2021/10/22 21:42:14 tracey Exp $
+# $OpenBSD: Makefile,v 1.9 2021/11/02 00:00:23 sthen Exp $
 
 COMMENT =	esp8266 arduino core toolset
 V =		3.0.2
 DISTNAME =	esp8266-${V}
 PKGNAME =	arduino-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

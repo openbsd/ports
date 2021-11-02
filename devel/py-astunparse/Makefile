@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/24 19:48:16 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:00:25 sthen Exp $
 
 # included in python core 3.9
 COMMENT=		AST unparser for Python
@@ -6,6 +6,7 @@ COMMENT=		AST unparser for Python
 MODPY_EGG_VERSION=	1.6.3
 DISTNAME=		astunparse-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		devel
 

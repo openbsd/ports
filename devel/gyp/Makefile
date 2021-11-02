@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/27 21:09:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/11/02 00:00:24 sthen Exp $
 
 COMMENT= generate SCons/Makefiles from platform-independent input
 
@@ -7,6 +7,7 @@ GH_PROJECT=	gyp
 GH_COMMIT=	caa60026e223fc501e8b337fd5086ece4028b1c6
 
 DISTNAME=	gyp-0.20200512
+REVISION=	0
 
 CATEGORIES=	devel
 

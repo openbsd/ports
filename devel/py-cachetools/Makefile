@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2021/10/21 20:41:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/11/02 00:00:26 sthen Exp $
 
 COMMENT =		extensible memoizing collections and decorators
 
 MODPY_EGG_VERSION =	4.2.4
 DISTNAME =		cachetools-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

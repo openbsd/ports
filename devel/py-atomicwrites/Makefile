@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2021/05/22 09:43:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2021/11/02 00:00:25 sthen Exp $
 
 COMMENT =		atomic file writes
 
 MODPY_EGG_VERSION =	1.3.0
 DISTNAME =		atomicwrites-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 

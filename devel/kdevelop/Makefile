@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2021/06/22 04:25:04 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.47 2021/11/02 00:00:24 sthen Exp $
 
 # Qt5WebEngine
 USE_WXNEEDED =		Yes
@@ -9,7 +9,7 @@ CATEGORIES =	devel x11
 
 VERSION =	5.6.2
 DISTNAME =	kdevelop-${VERSION}
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	https://www.kdevelop.org/
 

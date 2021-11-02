@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2021/09/09 19:35:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2021/11/02 00:00:25 sthen Exp $
 
 COMMENT =	ASN.1 library for Python
 
@@ -7,7 +7,7 @@ DISTNAME =		pyasn1-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
 EPOCH =			0
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE =		https://github.com/etingof/pyasn1
 

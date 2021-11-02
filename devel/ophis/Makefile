@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2021/03/06 08:18:20 daniel Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/02 00:00:25 sthen Exp $
 
 COMMENT =		6502-series cross-assembler
 
 MODPY_EGG_VERSION =	2.1.20190413
 DISTNAME =		Ophis-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:L}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

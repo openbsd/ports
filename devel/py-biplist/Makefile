@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2021/10/29 15:38:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/11/02 00:00:26 sthen Exp $
 
 COMMENT =	binary plist parser/generator for Python
 
 MODPY_EGG_VERSION =	1.0.3
 DISTNAME =		biplist-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		devel
 

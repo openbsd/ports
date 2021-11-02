@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2021/10/29 15:38:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/11/02 00:00:25 sthen Exp $
 
 COMMENT =	bash tab completion for argparse
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	1.9.3
 DISTNAME =	argcomplete-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	devel
-REVISION =	4
+REVISION =	5
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes

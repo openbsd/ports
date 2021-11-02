@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2021/04/05 14:20:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/11/02 00:00:25 sthen Exp $
 
 COMMENT =		common base representation of Python source code
 
@@ -7,6 +7,7 @@ MODPY_EGG_VERSION =	2.5.2
 DISTNAME =		astroid-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
+REVISION =		0
 
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes

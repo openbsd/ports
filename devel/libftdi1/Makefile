@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/03/14 21:48:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/11/02 00:00:24 sthen Exp $
 
 COMMENT =	libftdi, interface to ftdi debug device
 
@@ -6,6 +6,7 @@ CATEGORIES =	devel
 
 V =		1.5
 DISTNAME =	libftdi1-$V
+REVISION =	0
 
 SHARED_LIBS +=  ftdi1                     0.1 # 2.4
 

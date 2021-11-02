@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2021/08/31 18:47:07 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.29 2021/11/02 00:00:23 sthen Exp $
 
 COMMENT =	command-line interface for Cabal and Hackage
 
 DISTNAME =	cabal-install-3.4.0.0
 CATEGORIES =	devel
-REVISION =	2
+REVISION =	3
 
 GH_ACCOUNT =	haskell
 GH_TAGNAME =	${DISTNAME}

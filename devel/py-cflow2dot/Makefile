@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/11/02 00:00:27 sthen Exp $
 
 COMMENT =		C call graphs using Cflow producing linked PDF
 
 MODPY_EGG_VERSION =	0.2.2
 DISTNAME =		pycflow2dot-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
+REVISION =		0
 
 CATEGORIES =		devel
 

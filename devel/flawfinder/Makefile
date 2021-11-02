@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2021/09/02 14:40:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.56 2021/11/02 00:00:23 sthen Exp $
 
 COMMENT=		C/C++ source code auditing tool
 
@@ -6,6 +6,7 @@ GH_ACCOUNT =		david-a-wheeler
 GH_PROJECT =		flawfinder
 GH_TAGNAME =		2.0.19
 CATEGORIES=		devel security
+REVISION =		0
 
 HOMEPAGE=		http://www.dwheeler.com/flawfinder/
 

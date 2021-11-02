@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2021/10/29 15:38:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/11/02 00:00:27 sthen Exp $
 
 COMMENT =		command line interface tools for Python
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	0.5.1
 DISTNAME =		clint-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		5
+REVISION =		6
 
 
 # ISC

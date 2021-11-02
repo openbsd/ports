@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/10/29 15:38:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/02 00:00:26 sthen Exp $
 
 COMMENT =		construction, analysis and modification of binary data
 
 MODPY_EGG_VERSION =	3.1.5
 DISTNAME =		bitstring-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 

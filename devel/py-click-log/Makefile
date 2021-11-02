@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2021/08/10 20:43:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/11/02 00:00:27 sthen Exp $
 
 COMMENT =		logging integration for Python click
 
 MODPY_EGG_VERSION =	0.3.2
 DISTNAME =		click-log-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		devel
 

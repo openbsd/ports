@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.284 2021/09/19 17:49:23 jca Exp $
+# $OpenBSD: Makefile,v 1.285 2021/11/02 00:00:24 sthen Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
@@ -18,7 +18,10 @@ PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py3-llvm-${LLVM_V}
 PKGNAME-lldb =	lldb-${LLVM_V}
-REVISION-main =	7
+REVISION-main =	9
+REVISION-lldb =	1
+# XXX -main depends on python, is that right?
+REVISION-python =	1
 
 CATEGORIES =	devel
 

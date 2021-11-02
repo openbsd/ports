@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/02 00:00:24 sthen Exp $
 
 COMMENT=	basic data structures in C (libstdc++ wrapper)
 
 GH_ACCOUNT=	msune
 GH_PROJECT=	libcdada
 GH_TAGNAME=	v0.3.4
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=	cdada                     0.0 # 0.0
 
