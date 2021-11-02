@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2021/10/03 19:53:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/02 00:02:35 sthen Exp $
 
 COMMENT=		documentation tool micro-framework
 
 MODPY_EGG_VERSION=	0.13.7
 DISTNAME=		hotdoc-${MODPY_EGG_VERSION}
 #PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		textproc
 

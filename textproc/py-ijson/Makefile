@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2021/10/31 09:55:39 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/02 00:02:38 sthen Exp $
 
 COMMENT =		iterative JSON parser
 
 MODPY_EGG_VERSION =	3.1.4
 DISTNAME =		ijson-${MODPY_EGG_VERSION}
 PKGNAME =		py-ijson-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		textproc
 

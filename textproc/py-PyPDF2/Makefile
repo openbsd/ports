@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/10/29 15:38:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/02 00:02:36 sthen Exp $
 
 COMMENT =	PDF Python toolkit
 
 MODPY_EGG_VERSION =	1.26.0
 DISTNAME =		PyPDF2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =	textproc
 

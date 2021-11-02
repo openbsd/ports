@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/18 21:42:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/11/02 00:02:33 sthen Exp $
 
 COMMENT =	asynchronous parallel SSH client library
 
 MODPY_EGG_VERSION =	1.1.1
 DISTNAME =	parallel-ssh-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	sysutils
 

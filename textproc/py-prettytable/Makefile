@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2021/10/24 09:28:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2021/11/02 00:02:39 sthen Exp $
 
 COMMENT =	Python library for pretty-printing tabular data
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	0.7.2
 DISTNAME =		prettytable-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		textproc devel
-REVISION =		5
+REVISION =		6
 
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 

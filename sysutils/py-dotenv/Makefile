@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/10/19 14:53:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/02 00:02:33 sthen Exp $
 
 COMMENT =	handle .env files
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	0.19.1
 
 DISTNAME =	python-dotenv-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/python-/py-/}
+REVISION =	0
 
 CATEGORIES =	sysutils
 

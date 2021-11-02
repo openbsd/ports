@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/09/01 13:51:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:02:36 sthen Exp $
 
 COMMENT=		high speed universal character encoding detector
 
 MODPY_EGG_VERSION=	2.1.7
 DISTNAME=		cchardet-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		textproc
 

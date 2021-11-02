@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:13:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/02 00:02:40 sthen Exp $
 
 COMMENT =		sign JSON with Ed25519 signatures
 
 MODPY_EGG_VERSION =	1.1
 DISTNAME =		signedjson-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc
 

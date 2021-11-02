@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2021/10/27 19:32:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2021/11/02 00:02:42 sthen Exp $
 
 COMMENT-main=		Redland librdf Perl Bindings
 COMMENT-python=		Redland librdf Python Bindings
@@ -11,6 +11,7 @@ PKGNAME-main=		p5-librdf-$V
 PKGNAME-python=		py3-librdf-$V
 PKGNAME-ruby=		ruby${MODRUBY_BINREV}-librdf-$V
 REVISION=		6
+REVISION-python=	7
 
 HOMEPAGE=		https://librdf.org/bindings/
 

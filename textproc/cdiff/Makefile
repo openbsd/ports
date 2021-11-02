@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/28 13:46:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/02 00:02:35 sthen Exp $
 
 COMMENT=	inline and side-by-side colored and incremental diff
 
 # was renamed cdiff->ydiff
 MODPY_EGG_VERSION=	1.2
 DISTNAME=	ydiff-${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	textproc
 

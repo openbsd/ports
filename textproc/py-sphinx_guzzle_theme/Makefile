@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2021/01/18 06:43:19 daniel Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/02 00:02:40 sthen Exp $
 
 COMMENT =		sphinx theme used by guzzle
 
 MODPY_EGG_VERSION =	0.7.11
-REVISION =		4
+REVISION =		5
 DISTNAME =		guzzle_sphinx_theme-${MODPY_EGG_VERSION}
 PKGNAME =		py-sphinx_guzzle_theme-${MODPY_EGG_VERSION}
 

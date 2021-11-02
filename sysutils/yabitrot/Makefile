@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/02 00:02:35 sthen Exp $
 
 COMMENT =		fast bitrot detection utility
 
 V =			0.4
 DISTNAME =		yabitrot-${V}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 

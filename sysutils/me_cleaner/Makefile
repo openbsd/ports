@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/02 00:02:32 sthen Exp $
 
 COMMENT =	tool for partial deblobbing of Intel ME/TXE firmware images
 
 GH_ACCOUNT =		corna
 GH_PROJECT =		me_cleaner
 GH_TAGNAME =		v1.2
-REVISION =		0
+REVISION =		1
 
 DISTFILES =		me_cleaner-{}${GH_TAGNAME}${EXTRACT_SUFX}
 

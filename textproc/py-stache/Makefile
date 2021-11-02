@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/06/26 07:42:26 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:02:41 sthen Exp $
 
 COMMENT =		python implementation of mustache templating system
 
 MODPY_EGG_VERSION =	0.5.4
 DISTNAME =		pystache-${MODPY_EGG_VERSION}
 PKGNAME =		py-stache-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		textproc
 

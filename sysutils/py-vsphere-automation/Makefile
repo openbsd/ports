@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/10/17 12:31:19 pvk Exp $
+# $OpenBSD: Makefile,v 1.5 2021/11/02 00:02:34 sthen Exp $
 
 COMMENT =		VMware vSphere Automation SDK for Python
 
@@ -8,6 +8,7 @@ GH_PROJECT =		vsphere-automation-sdk-python
 GH_TAGNAME =		v7.0.3.0
 
 PKGNAME =		py-vsphere-automation-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		sysutils
 

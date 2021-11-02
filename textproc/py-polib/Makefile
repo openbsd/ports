@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2021/10/24 09:28:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/11/02 00:02:39 sthen Exp $
 
 COMMENT=	Python library to manipulate gettext files
 
 MODPY_EGG_VERSION =	1.1.0
 DISTNAME =	polib-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES=	textproc devel
 

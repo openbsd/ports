@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/10/29 15:38:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/02 00:02:38 sthen Exp $
 
 COMMENT =		utilities for writing pandoc filters
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	1.4.1
 DISTNAME =		pandocfilters-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		textproc
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =		https://github.com/jgm/pandocfilters
 

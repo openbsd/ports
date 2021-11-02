@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2021/10/08 13:37:44 pvk Exp $
+# $OpenBSD: Makefile,v 1.28 2021/11/02 00:02:34 sthen Exp $
 
 COMMENT =		NetBox API client library
 
 MODPY_EGG_VERSION =	6.1.3
 DISTNAME =		pynetbox-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		sysutils net
 

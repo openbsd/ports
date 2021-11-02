@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/20 21:21:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:02:33 sthen Exp $
 
 COMMENT =	easy, practical library for making terminal apps
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.18.0
 
 DISTNAME =	blessed-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	sysutils
 

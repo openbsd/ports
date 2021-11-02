@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2021/03/07 21:09:06 daniel Exp $
+# $OpenBSD: Makefile,v 1.7 2021/11/02 00:02:35 sthen Exp $
 
 COMMENT =		troff to DocBook converter
 
 DISTNAME =		doclifter-2.19
+REVISION =		0
 
 CATEGORIES =		textproc
 

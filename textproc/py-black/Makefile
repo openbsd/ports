@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/11/02 00:02:36 sthen Exp $
 
 COMMENT =		python code formatter
 
 MODPY_EGG_VERSION =	19.3b0
 DISTNAME =		black-${MODPY_EGG_VERSION}
 PKGNAME =		py-black-${MODPY_EGG_VERSION:S/b/beta/}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		textproc devel
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/10/16 12:01:46 sdk Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:02:39 sthen Exp $
 
 COMMENT =		Python wrapper for pandoc
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.6.4
 
 DISTNAME =		pypandoc-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		textproc
 

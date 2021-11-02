@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2021/02/23 19:39:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2021/11/02 00:02:35 sthen Exp $
 
 COMMENT=	text document format for writing documents and man pages
 
 V=		9.0.4
 DISTNAME=	asciidoc-${V}
+REVISION=	0
 
 CATEGORIES=	textproc
 

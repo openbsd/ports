@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2021/10/24 09:28:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/11/02 00:02:39 sthen Exp $
 
 COMMENT =		module to produce pretty and readable YAML
 
 MODPY_EGG_VERSION =	19.4.1
-REVISION =		3
+REVISION =		4
 
 DISTNAME =		pyaml-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}

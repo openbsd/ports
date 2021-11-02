@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/02 00:02:32 sthen Exp $
 
 COMMENT =		print sun4v machine descriptions
 
@@ -6,7 +6,7 @@ COMMENT =		print sun4v machine descriptions
 DISTNAME =		ldomsmanager-3.5.0.0-30.2411.1
 # own version, documented in source code
 PKGNAME =		mdprint-1.3
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		sysutils devel
 

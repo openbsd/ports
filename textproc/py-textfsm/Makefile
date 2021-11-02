@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2021/08/30 10:44:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2021/11/02 00:02:41 sthen Exp $
 
 COMMENT =		parse semi-structured text into Python table
 
 MODPY_EGG_VERSION =	1.1.2
 DISTNAME =		textfsm-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		textproc
 

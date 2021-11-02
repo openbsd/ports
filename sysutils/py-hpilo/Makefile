@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/04/02 10:36:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/02 00:02:33 sthen Exp $
 
 COMMENT =	iLO automation from python or shell
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	4.4.3
 
 DISTNAME =	python-hpilo-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/^python-/py-/}
+REVISION =	0
 
 CATEGORIES =	sysutils
 

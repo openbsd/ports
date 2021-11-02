@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/06/20 10:45:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:02:37 sthen Exp $
 
 COMMENT =	parser for Coffeescript Object Notation (CSON)
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	0.8
 
 DISTNAME =	cson-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	textproc
 

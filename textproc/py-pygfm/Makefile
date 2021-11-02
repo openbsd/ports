@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2020/08/19 12:25:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2021/11/02 00:02:39 sthen Exp $
 
 COMMENT =		GitHub Flavored Markdown extension
 
 MODPY_EGG_VERSION =	1.0.0
 DISTNAME =		py-gfm-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/py-/py/}
+REVISION =		0
 
 CATEGORIES =		textproc
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2021/02/23 19:39:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/11/02 00:02:42 sthen Exp $
 
 COMMENT=	Python WSGI compliant interface module for Apache2
 
 PKGNAME=	ap2-mod_wsgi-${GH_TAGNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www
 

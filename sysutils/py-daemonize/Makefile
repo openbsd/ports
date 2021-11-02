@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2021/10/29 15:38:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/11/02 00:02:33 sthen Exp $
 
 COMMENT =		library to enable your code run as a daemon process
 
 MODPY_EGG_VERSION =	2.5.0
 DISTNAME =		daemonize-${MODPY_EGG_VERSION}
 PKGNAME =		py-daemonize-${MODPY_EGG_VERSION}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		sysutils devel
 

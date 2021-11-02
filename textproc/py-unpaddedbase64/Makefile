@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/26 03:15:31 daniel Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/02 00:02:41 sthen Exp $
 
 COMMENT =	Python module implementing Base64 without "=" padding
 
@@ -8,7 +8,7 @@ GH_ACCOUNT =	matrix-org
 GH_PROJECT =	python-unpaddedbase64
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
 PKGNAME =	py-unpaddedbase64-${MODPY_EGG_VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =		textproc
 

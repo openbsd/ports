@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/27 21:48:03 daniel Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/02 00:02:34 sthen Exp $
 
 COMMENT =	introspect/set max threads in native libraries like BLAS
 
 MODPY_EGG_VERSION =	2.1.0
 DISTNAME =		threadpoolctl-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		sysutils
 

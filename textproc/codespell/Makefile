@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2021/06/30 16:12:42 fcambus Exp $
+# $OpenBSD: Makefile,v 1.7 2021/11/02 00:02:35 sthen Exp $
 
 COMMENT =		source code spelling checker
 
 MODPY_EGG_VERSION =	2.1.0
 
 DISTNAME =		codespell-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		devel textproc
 

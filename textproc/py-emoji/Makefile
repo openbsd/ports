@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2021/10/22 02:08:03 kmos Exp $
+# $OpenBSD: Makefile,v 1.12 2021/11/02 00:02:37 sthen Exp $
 
 COMMENT =		emoji for Python
 
 MODPY_EGG_VERSION =	1.6.1
 DISTNAME =		emoji-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		textproc
 
