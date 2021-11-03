@@ -1,0 +1,22 @@
+$OpenBSD: patch-cmake_FindCURSES_cmake,v 1.1 2021/11/03 22:22:14 sthen Exp $
+
+revert upstream change that breaks build on systems which don't
+provide pkg-config files for curses.
+https://github.com/Cisco-Talos/clamav/commit/54829910d0254dfb1ec42085279774e202ea74dc
+
+Index: cmake/FindCURSES.cmake
+--- cmake/FindCURSES.cmake.orig
++++ cmake/FindCURSES.cmake
+@@ -58,7 +58,11 @@ if(NCURSES_NOT_FOUND EQUAL -1)
+     set(HAVE_LIBNCURSES 1)
+     set(CURSES_INCLUDE "<ncurses.h>")
+ 
+-    set(CURSES_LIBRARY ${PC_NCurses_LINK_LIBRARIES})
++    find_library(CURSES_LIBRARY
++      NAMES ncurses
++      PATHS ${PC_NCurses_LIBRARY_DIRS}
++    )
++
+     set(CURSES_VERSION ${PC_NCurses_VERSION})
+ 
+     include(FindPackageHandleStandardArgs)

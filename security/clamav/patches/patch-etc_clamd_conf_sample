@@ -1,4 +1,4 @@
-$OpenBSD: patch-etc_clamd_conf_sample,v 1.13 2021/10/19 11:17:24 sthen Exp $
+$OpenBSD: patch-etc_clamd_conf_sample,v 1.14 2021/11/03 22:22:14 sthen Exp $
 
 Index: etc/clamd.conf.sample
 --- etc/clamd.conf.sample.orig
@@ -30,12 +30,3 @@ Index: etc/clamd.conf.sample
  
  # Stop daemon when libclamav reports out of memory condition.
  #ExitOnOOM yes
-@@ -536,7 +536,7 @@ Example
- # deeply the process should be continued.
- # Note: setting this limit too high may result in severe damage to the system.
- # Default: 16
--#MaxRecursion 10
-+MaxRecursion 12
- 
- # Number of files to be scanned within an archive, a document, or any other
- # container file.
