@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1 2021/11/02 12:47:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/03 22:24:37 sthen Exp $
 
 VER=		16.22.0
 PJ_V=		2.10
 SHLIB_V=	0.0
 VERSION_SPEC=	>=16.0,<17.0
+PORTROACH=	limit:^16\.
 
 .include <bsd.port.mk>
 
