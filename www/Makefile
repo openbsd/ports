@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1050 2021/11/02 21:18:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.1051 2021/11/03 20:16:35 sthen Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -484,7 +484,6 @@
      SUBDIR += qutebrowser
      SUBDIR += racktables
      SUBDIR += ratproxy
-     SUBDIR += rawdog
      SUBDIR += retawq
      SUBDIR += rt
      SUBDIR += ruby-addressable
