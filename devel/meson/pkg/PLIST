@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2021/10/31 07:20:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2021/11/03 06:55:53 ajacoutot Exp $
 bin/meson
 lib/python${MODPY_VERSION}/site-packages/meson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/meson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -387,6 +387,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/clangformat.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/clangtidy.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/cleantrees.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/cmake_run_ctgt.py
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/cmd_or_ps.ps1
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/coverage.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/delwithsuffix.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/depfixer.py
