@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1336 2021/11/01 16:18:04 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1337 2021/11/03 15:43:30 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1515,6 +1515,8 @@ setup_obsolete_reason(
 	3 => 'childsplay',
 	6 => 'py-texscythe',
 	6 => 'py3-sqlalchemy-migrate',
+	13 => 'rawdog',
+	13 => 'charm',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
