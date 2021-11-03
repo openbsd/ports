@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.155 2021/10/25 07:25:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.156 2021/11/03 16:37:11 robert Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -16,6 +16,7 @@ COMMENT =		GTK+ port of the WebKit rendering engine
 V =			2.34.1
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk4-${V}
+REVISION =		0
 
 EXTRACT_SUFX =		.tar.xz
 API =			4.0
@@ -59,11 +60,12 @@ MODPY_RUNDEP =		No
 MODPY_ADJ_FILES =	Tools/glib/generate-inspector-gresource-manifest.py
 MODGNOME_TOOLS =	gobject-introspection
 
-# XXX disable DEBUG_PACKAGES because libWebCoreGTK.a is too big (4.1G)
+# XXX set DEBUG=-g1 because libWebCoreGTK.a is too big (4.1G)
 # ld.lld: error: lib/libWebCoreGTK.a:
 # could not get the member for symbol WebCore::WorkerThread::runEventLoop():
 # truncated or malformed archive (terminator characters in archive member "ar" not the correct "`\n" values for the archive member header for 12__retguard_29)
-#DEBUG_PACKAGES =	${BUILD_PACKAGES}
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+DEBUG =			-g1
 
 NO_TEST =		Yes
 
@@ -72,7 +74,8 @@ BUILD_DEPENDS =		devel/bison \
 			devel/gperf \
 			geo/geoclue2
 
-RUN_DEPENDS =		geo/geoclue2
+RUN_DEPENDS =		geo/geoclue2 \
+			multimedia/gstreamer1/plugins-good
 
 LIB_DEPENDS =		archivers/woff2 \
 			devel/harfbuzz,-icu \
