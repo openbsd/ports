@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.38 2021/10/31 20:20:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2021/11/03 06:54:05 ajacoutot Exp $
 
 COMMENT=	image metadata manipulation
 
 CATEGORIES=	graphics devel
 
-DISTNAME=	exiv2-0.27.4-Source
-PKGNAME=	exiv2-0.27.5
+DISTNAME=	exiv2-0.27.5-Source
+PKGNAME=	${DISTNAME:S/-Source//}
 EPOCH=		0
 
-REVISION=	0
+REVISION=	1
 
-SHARED_LIBS +=  exiv2                12.0      # 14.0
+SHARED_LIBS +=  exiv2                12.1      # 14.0
 
 HOMEPAGE=	https://www.exiv2.org/
 

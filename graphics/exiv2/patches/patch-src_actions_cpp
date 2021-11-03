@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_actions_cpp,v 1.6 2021/10/31 15:08:00 ajacoutot Exp $
+$OpenBSD: patch-src_actions_cpp,v 1.7 2021/11/03 06:54:05 ajacoutot Exp $
 
 XXX
 "By default pthread mutexes aren't recursive, this would be a problem if exiv2
@@ -8,7 +8,7 @@ mutex, I'll admit that it's a bit cumbersome to use." -- jca@
 Index: src/actions.cpp
 --- src/actions.cpp.orig
 +++ src/actions.cpp
-@@ -1921,11 +1921,7 @@ namespace {
+@@ -1923,11 +1923,7 @@ namespace {
      static pthread_mutex_t cs =  PTHREAD_MUTEX_INITIALIZER;
    #endif
   #else
