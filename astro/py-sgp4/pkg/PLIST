@@ -1,0 +1,37 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/03 22:27:47 sthen Exp $
+lib/python${MODPY_VERSION}/site-packages/sgp4/
+lib/python${MODPY_VERSION}/site-packages/sgp4-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/sgp4/SGP4-VER.TLE
+lib/python${MODPY_VERSION}/site-packages/sgp4/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sgp4/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/sgp4/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sgp4/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sgp4/${MODPY_PYCACHE}conveniences.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sgp4/${MODPY_PYCACHE}earth_gravity.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sgp4/${MODPY_PYCACHE}exporter.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sgp4/${MODPY_PYCACHE}ext.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sgp4/${MODPY_PYCACHE}functions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sgp4/${MODPY_PYCACHE}io.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sgp4/${MODPY_PYCACHE}model.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sgp4/${MODPY_PYCACHE}omm.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sgp4/${MODPY_PYCACHE}propagation.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sgp4/${MODPY_PYCACHE}tests.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sgp4/${MODPY_PYCACHE}wrapper.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sgp4/${MODPY_PYCACHE}wulfgar.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sgp4/api.py
+lib/python${MODPY_VERSION}/site-packages/sgp4/conveniences.py
+lib/python${MODPY_VERSION}/site-packages/sgp4/earth_gravity.py
+lib/python${MODPY_VERSION}/site-packages/sgp4/exporter.py
+lib/python${MODPY_VERSION}/site-packages/sgp4/ext.py
+lib/python${MODPY_VERSION}/site-packages/sgp4/functions.py
+lib/python${MODPY_VERSION}/site-packages/sgp4/io.py
+lib/python${MODPY_VERSION}/site-packages/sgp4/model.py
+lib/python${MODPY_VERSION}/site-packages/sgp4/omm.py
+lib/python${MODPY_VERSION}/site-packages/sgp4/propagation.py
+lib/python${MODPY_VERSION}/site-packages/sgp4/sample_omm.csv
+lib/python${MODPY_VERSION}/site-packages/sgp4/sample_omm.xml
+lib/python${MODPY_VERSION}/site-packages/sgp4/tcppver.out
+lib/python${MODPY_VERSION}/site-packages/sgp4/tests.py
+@so lib/python${MODPY_VERSION}/site-packages/sgp4/vallado_cpp.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/sgp4/wrapper.py
+lib/python${MODPY_VERSION}/site-packages/sgp4/wulfgar.py

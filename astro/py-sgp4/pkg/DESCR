@@ -1,0 +1,10 @@
+This Python package computes the position and velocity of an
+earth-orbiting satellite, given the satellite's TLE orbital elements
+from a source like https://celestrak.com/.
+
+It implements the most recent version of SGP4, and is regularly run
+against the SGP4 test suite to make sure that its satellite position
+predictions agree to within 0.1 mm with the predictions of the standard
+distribution of the algorithm. This error is far less than the 1-3km/day
+by which satellites themselves deviate from the ideal orbits described
+in TLE files.
