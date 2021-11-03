@@ -1,0 +1,15 @@
+$OpenBSD: patch-python_core_project_py_in,v 1.1 2021/11/03 11:48:43 landry Exp $
+
+https://github.com/qgis/QGIS/pull/45829
+
+Index: python/core/project.py.in
+--- python/core/project.py.in.orig
++++ python/core/project.py.in
+@@ -37,6 +37,7 @@ class QgisCore(PyQtBindings):
+         super().__init__(project, 'core')
+         self.sip_file = 'core.sip'
+         self.exceptions = True
++        self.release_gil = True
+         self.disabled_features = "@SIP_DISABLE_FEATURES@".split(";")
+ 
+     def apply_user_defaults(self, tool):
