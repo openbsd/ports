@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2021/11/01 16:43:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/11/03 12:03:05 sthen Exp $
+
+BROKEN= downloads during build
 
 BROKEN-sparc64 =	ring-0.6.20 does not build on sparc64
 
