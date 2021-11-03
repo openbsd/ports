@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.138 2021/11/02 01:17:44 sthen Exp $
+# $OpenBSD: python.port.mk,v 1.139 2021/11/03 19:07:18 sthen Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -13,10 +13,12 @@ MODPY_DEFAULT_VERSION_3 = 3.9
 # - Move PY_DEFAULTONLY from 3.x/Makefile to 3.y/Makefile
 # - In 3.x/Makefile and 3.y/Makefile, bump REVISION for -main and -idle
 #   (i.e. those PLISTs with "PY_DEFAULTONLY" lines)
-# - In 3.y/PLIST-main and 3.y/PLIST-idle add a @conflict on the old REVISION
-#   of the old version. For example, for the 3.6->3.7 default switch,
-#   previously these both had 3.6.8p1, afterwards they had 3.6.8p2, so the
-#   @conflict for the 3.7 ports was @conflict python-subpkg-<3.6.8p2
+# - In 3.y/PLIST-main and 3.y/PLIST-idle add a @conflict on the old
+#   REVISION of the old version. For example, for the 3.8->3.9 switch,
+#   3.8 -main was 3.8.12p2 and -idle was 3.8.12, so the following
+#   were needed:
+#   PLIST-main: @conflict python-<3.8.12p3
+#   PLIST-idle: @conflict python-idle-<3.8.12p0
 #   (Bear in mind that the subpackages might have different REVISIONs)
 # - Keep xenocara/share/mk/bsd.xorg.mk PYTHON_VERSION in sync
 
