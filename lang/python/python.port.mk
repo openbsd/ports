@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.139 2021/11/03 19:07:18 sthen Exp $
+# $OpenBSD: python.port.mk,v 1.140 2021/11/03 19:08:27 sthen Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -17,8 +17,8 @@ MODPY_DEFAULT_VERSION_3 = 3.9
 #   REVISION of the old version. For example, for the 3.8->3.9 switch,
 #   3.8 -main was 3.8.12p2 and -idle was 3.8.12, so the following
 #   were needed:
-#   PLIST-main: @conflict python-<3.8.12p3
-#   PLIST-idle: @conflict python-idle-<3.8.12p0
+#   PLIST-main: @conflict python->=3,<3.8.12p3
+#   PLIST-idle: @conflict python-idle->=3,<3.8.12p0
 #   (Bear in mind that the subpackages might have different REVISIONs)
 # - Keep xenocara/share/mk/bsd.xorg.mk PYTHON_VERSION in sync
 
