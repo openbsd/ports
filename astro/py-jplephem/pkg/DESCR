@@ -1,0 +1,14 @@
+This package can load and use a Jet Propulsion Laboratory (JPL)
+ephemeris for predicting the position and velocity of a planet or other
+Solar System body.
+
+Note that jplephem offers only the logic necessary to produce plain
+three-dimensional vectors. Most programmers interested in astronomy
+will want to look at Skyfield instead, which uses jplephem but converts
+the numbers into more traditional measurements like right ascension and
+declination.
+
+Most users will use jplephem with the Satellite Planet Kernel (SPK)
+files that the NAIF facility at NASA JPL offers for use with their own
+SPICE toolkit. They have collected their most useful kernels beneath the
+directory: http://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/
