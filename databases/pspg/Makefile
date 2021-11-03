@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/10/25 07:45:35 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/03 12:20:55 sthen Exp $
 
 COMMENT =	UNIX pager optimized for tabular data
 
 GH_ACCOUNT =	okbob
 GH_PROJECT =	pspg
-GH_TAGNAME =	5.4.0
+GH_TAGNAME =	5.5.0
 
 CATEGORIES =	databases
 

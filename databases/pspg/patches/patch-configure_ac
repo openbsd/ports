@@ -1,7 +1,10 @@
-$OpenBSD: patch-configure_ac,v 1.1.1.1 2021/10/25 07:45:35 landry Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2021/11/03 12:20:55 sthen Exp $
 
 AX_LIB_READLINE picks up base readline which is too old.  Force it to
 use readline from ports.
+
+disable kqueue since tries to monitor events not supported by our kqueue
+(NOTE_CLOSE_WRITE.)
 
 Index: configure.ac
 --- configure.ac.orig
@@ -16,3 +19,12 @@ Index: configure.ac
  AX_LIB_POSTGRESQL([],[], AC_MSG_NOTICE([PostgreSQL library not found]))
  
  case "$ax_cv_ncurses" in "no")
+@@ -75,8 +76,6 @@ if test "x$have_inotify" = "xyes"; then
+   fi
+ fi
+ 
+-
+-AC_CHECK_HEADERS([sys/event.h], have_kqueue=yes, have_kqueue=no)
+ 
+ if test "x$have_kqueue" = "xyes"; then
+ 
