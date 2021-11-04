@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2021/09/16 14:23:37 abieber Exp $
+# $OpenBSD: Makefile,v 1.6 2021/11/04 16:30:46 sthen Exp $
 
 COMMENT =		mouse and keyboard sharing utility
 
-V =			2.3.3
-DISTNAME =		barrier-${V}-release
-PKGNAME =		barrier-${V}
-REVISION =		2
-CATEGORIES =		net x11
+GH_ACCOUNT =		debauchee
+GH_PROJECT =		barrier
+GH_TAGNAME =		v2.3.4
 
-MASTER_SITES =		https://github.com/debauchee/barrier/releases/download/v${V}/
+CATEGORIES =		net x11
 
 WANTLIB += ${COMPILER_LIBCXX} ICE Qt5Core Qt5Gui Qt5Network Qt5Widgets
 WANTLIB += SM X11 Xext Xi Xinerama Xrandr Xtst c crypto curl dns_sd
