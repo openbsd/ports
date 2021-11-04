@@ -1,0 +1,26 @@
+$OpenBSD: patch-common_charset_convert_cpp,v 1.1 2021/11/04 17:11:23 robert Exp $
+
+commit 83f9273b7fe394bf4b20f83fefc5ffb079f131ac
+Author: João Gouveia <j.gouveia@kopano.com>
+Date:   Fri Apr 23 04:09:11 2021 +1400
+
+    Add a global convert_context to each thread.
+    
+commit 68c6f76fa1d572e58ce123311374e4bc1381265e
+Author: João Gouveia <j.gouveia@kopano.com>
+Date:   Fri Apr 23 05:12:31 2021 +1400
+
+    Add a function to create a new iconv_context
+
+Index: common/charset/convert.cpp
+--- common/charset/convert.cpp.orig
++++ common/charset/convert.cpp
+@@ -18,8 +18,6 @@ using namespace std::string_literals;
+ 
+ namespace KC {
+ 
+-thread_local convert_context global_convert_context;
+-
+ convert_exception::convert_exception(enum exception_type type, const std::string &message)
+ 	: std::runtime_error(message)
+ 	, m_type(type)

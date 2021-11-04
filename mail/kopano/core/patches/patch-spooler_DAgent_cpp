@@ -1,4 +1,4 @@
-$OpenBSD: patch-spooler_DAgent_cpp,v 1.21 2021/02/09 10:32:33 robert Exp $
+$OpenBSD: patch-spooler_DAgent_cpp,v 1.22 2021/11/04 17:11:23 robert Exp $
 
 Index: spooler/DAgent.cpp
 --- spooler/DAgent.cpp.orig
@@ -35,9 +35,9 @@ Index: spooler/DAgent.cpp
 -		{ "mr_autoaccepter", "/usr/sbin/kopano-mr-accept", CONFIGSETTING_RELOADABLE },
 -		{ "mr_autoprocessor", "/usr/sbin/kopano-mr-process", CONFIGSETTING_RELOADABLE },
 -		{ "autoresponder", "/usr/sbin/kopano-autorespond", CONFIGSETTING_RELOADABLE },
-+		{ "mr_autoaccepter", "/usr/local/sbin/kopano-mr-accept", CONFIGSETTING_RELOADABLE },
-+		{ "mr_autoprocessor", "/usr/local/sbin/kopano-mr-process", CONFIGSETTING_RELOADABLE },
-+		{ "autoresponder", "/usr/local/sbin/kopano-autorespond", CONFIGSETTING_RELOADABLE },
++		{ "mr_autoaccepter", "/usr/local/bin/kopano-mr-accept", CONFIGSETTING_RELOADABLE },
++		{ "mr_autoprocessor", "/usr/local/bin/kopano-mr-process", CONFIGSETTING_RELOADABLE },
++		{ "autoresponder", "/usr/local/bin/kopano-autorespond", CONFIGSETTING_RELOADABLE },
  		{"plugin_enabled", "no"},
 -		{ "plugin_path", "/var/lib/kopano/dagent/plugins" },
 -		{ "plugin_manager_path", "/usr/share/kopano-dagent/python" },

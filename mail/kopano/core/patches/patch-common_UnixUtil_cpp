@@ -1,9 +1,9 @@
-$OpenBSD: patch-common_UnixUtil_cpp,v 1.5 2021/02/09 10:32:33 robert Exp $
+$OpenBSD: patch-common_UnixUtil_cpp,v 1.6 2021/11/04 17:11:23 robert Exp $
 
 Index: common/UnixUtil.cpp
 --- common/UnixUtil.cpp.orig
 +++ common/UnixUtil.cpp
-@@ -28,8 +28,85 @@
+@@ -28,6 +28,14 @@
  
  using namespace std::string_literals;
  
@@ -16,6 +16,11 @@ Index: common/UnixUtil.cpp
 +#endif
 +
  namespace KC {
+ 
+ namespace {
+@@ -66,6 +74,75 @@ std::unique_ptr<char[]> fd_contents_to_buffer(int fd) 
+ 
+ } // namespace
  
 +#if defined(__OpenBSD__)
 +int
@@ -89,7 +94,7 @@ Index: common/UnixUtil.cpp
  static int unix_runpath()
  {
  	auto ret = chdir("/");
-@@ -481,6 +558,15 @@ int ec_reexec(const char *const *argv)
+@@ -511,6 +588,15 @@ int ec_reexec(const char *const *argv)
  
  	/* Resolve "exe" symlink before exec to please the sysadmin */
  	std::vector<char> linkbuf(16); /* mutable std::string::data is C++17 only */
@@ -105,7 +110,7 @@ Index: common/UnixUtil.cpp
  	ssize_t linklen;
  	while (true) {
  		linklen = readlink("/proc/self/exe", &linkbuf[0], linkbuf.size());
-@@ -496,6 +582,7 @@ int ec_reexec(const char *const *argv)
+@@ -526,6 +612,7 @@ int ec_reexec(const char *const *argv)
  	linkbuf[linklen] = '\0';
  	ec_log_debug("Reexecing %s", &linkbuf[0]);
  	execv(&linkbuf[0], const_cast<char **>(argv));

@@ -1,0 +1,116 @@
+$OpenBSD: patch-common_include_kopano_charset_convert_h,v 1.1 2021/11/04 17:11:23 robert Exp $
+
+commit 83f9273b7fe394bf4b20f83fefc5ffb079f131ac
+Author: João Gouveia <j.gouveia@kopano.com>
+Date:   Fri Apr 23 04:09:11 2021 +1400
+
+    Add a global convert_context to each thread.
+    
+commit 68c6f76fa1d572e58ce123311374e4bc1381265e
+Author: João Gouveia <j.gouveia@kopano.com>
+Date:   Fri Apr 23 05:12:31 2021 +1400
+
+    Add a function to create a new iconv_context
+
+Index: common/include/kopano/charset/convert.h
+--- common/include/kopano/charset/convert.h.orig
++++ common/include/kopano/charset/convert.h
+@@ -147,9 +147,6 @@ class KC_EXPORT convert_context KC_FINAL {
+ public:
+ 	convert_context() = default;
+ 
+-	convert_context(const convert_context &) = delete;
+-	convert_context &operator=(const convert_context &) = delete;
+-
+ 	/**
+ 	 * @brief	Converts a string to a string with a different charset.
+ 	 *
+@@ -225,28 +222,6 @@ class KC_EXPORT convert_context KC_FINAL {
+ 		return context.template convert<To_Type>(iconv_charset<From_Type>::rawptr(from), cbBytes);
+ 	}
+ 
+-	/**
+-	 * Attempts to create a new context From_Type, To_Type for two charsets.
+-	 * If the context already exists it does nothing and returns false.
+-	 * @param[in] tocode The destination charset.
+-	 * @param[in] fromcode The source charset.
+-	 * @return True if it created a new context, false otherwise.
+-	 * @throw KC::convert_exception if this fails to create the context for
+-	 * another reason other than it already existing.
+-	 */
+-	template<typename To_Type, typename From_Type>
+-	bool new_iconv_context_if_not_exists(const char *tocode, const char *fromcode)
+-	{
+-		context_key key(create_key<To_Type, From_Type>(tocode, fromcode));
+-		auto iContext = m_contexts.find(key);
+-		if (iContext == m_contexts.cend()) {
+-			m_contexts.emplace(key, iconv_context(tocode, fromcode));
+-			return true;
+-		}
+-
+-		return false;
+-	}
+-
+ private:
+ 	/**
+ 	 * @brief Key for the context_map;
+@@ -334,52 +309,30 @@ class KC_EXPORT convert_context KC_FINAL {
+ 	std::map<context_key, iconv_context> m_contexts;
+ 	std::list<std::string>	m_lstStrings;
+ 	std::list<std::wstring>	m_lstWstrings;
++
++// a convert_context is not supposed to be copyable.
++	convert_context(const convert_context &) = delete;
++	convert_context &operator=(const convert_context &) = delete;
+ };
+ 
+-/**
+- * --------------------------------------------
+- * -------------GLOBAL FUNCTIONS---------------
+- * --------------------------------------------
+- * The functions below are global per thread and use a thread_local
+- * convert_context. That means a copy of this convert_context exists per thread,
+- * making the use of these functions thread-safe.
+- */
+-
+-extern KC_EXPORT thread_local convert_context global_convert_context;
+-
+-/**
+- * Creates a new iconv_context in the global_convert_context map, if it does not
+- * exist already.
+- * @param[in] tocode The destination charset.
+- * @param[in] fromcode The source charset.
+- * @return True if it created a new context, false otherwise.
+- * @throw KC::convert_exception if this fails to create the context for
+- * another reason other than it already existing.
+- */
+ template<typename To_Type, typename From_Type>
+-extern KC_EXPORT bool new_iconv_context_if_not_exists(const char *tocode, const char *fromcode)
+-{
+-	return global_convert_context.new_iconv_context_if_not_exists<To_Type, From_Type>(tocode, fromcode);
+-}
+-
+-template<typename To_Type, typename From_Type>
+ inline To_Type convert_to(const From_Type &from)
+ {
+ 	static_assert(!std::is_same<To_Type, From_Type>::value, "pointless conversion");
+-	return global_convert_context.convert_to<To_Type>(from);
++	return convert_context().convert_to<To_Type>(from);
+ }
+ 
+ template<typename To_Type, typename From_Type> inline To_Type
+ convert_to(const From_Type &from, size_t cbBytes, const char *fromcode)
+ {
+-	return global_convert_context.convert_to<To_Type>(iconv_charset<From_Type>::rawptr(from), cbBytes, fromcode);
++	return convert_context().convert_to<To_Type>(iconv_charset<From_Type>::rawptr(from), cbBytes, fromcode);
+ }
+ 
+ template<typename To_Type, typename From_Type>
+ inline To_Type convert_to(const char *tocode, const From_Type &from,
+     size_t cbBytes, const char *fromcode)
+ {
+-	return global_convert_context.convert_to<To_Type>(
++	return convert_context().convert_to<To_Type>(
+ 		tocode, iconv_charset<From_Type>::rawptr(from), cbBytes, fromcode);
+ }
+ 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.33 2021/02/09 10:32:33 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.34 2021/11/04 17:11:23 robert Exp $
 @conflict zarafa-*
 @pkgpath mail/zarafa/zarafa,-main
 @newgroup _kopano:793
@@ -18,9 +18,12 @@
 @rcscript ${RCDIR}/kopano_server
 @rcscript ${RCDIR}/kopano_spamd
 @rcscript ${RCDIR}/kopano_spooler
+bin/kopano-autorespond
 @bin bin/kopano-fsck
 @bin bin/kopano-ibrule
 bin/kopano-migration-imap
+bin/kopano-mr-accept
+bin/kopano-mr-process
 @bin bin/kopano-oof
 @bin bin/kopano-passwd
 @bin bin/kopano-stats
@@ -348,6 +351,7 @@ lib/python${MODPY_VERSION}/site-packages/kopano_utils-${V}-py${MODPY_VERSION}.eg
 lib/python${MODPY_VERSION}/site-packages/kopano_utils-${V}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/kopano_utils-${V}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/kopano_utils-${V}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/kopano_utils-${V}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/kopano_utils-${V}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/kopano_utils/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/kopano_utils/${MODPY_PYCACHE}/
@@ -433,7 +437,6 @@ libexec/kopano/
 sbin/kopano-archiver-aclset
 sbin/kopano-archiver-aclsync
 sbin/kopano-archiver-restore
-sbin/kopano-autorespond
 sbin/kopano-backup
 sbin/kopano-cachestat
 @bin sbin/kopano-dagent
@@ -443,8 +446,6 @@ sbin/kopano-fix-ipm-subtree
 @bin sbin/kopano-ical
 sbin/kopano-mailbox-permissions
 @bin sbin/kopano-monitor
-sbin/kopano-mr-accept
-sbin/kopano-mr-process
 sbin/kopano-recreate-systemfolders
 sbin/kopano-search
 sbin/kopano-search-upgrade-findroots.py
@@ -527,20 +528,6 @@ share/examples/kopano/quotamail/userwarning.mail
 @sample ${SYSCONFDIR}/kopano/quotamail/userwarning.mail
 share/examples/kopano/search.cfg
 @sample ${SYSCONFDIR}/kopano/search.cfg
-share/examples/kopano/searchscripts/
-@sample ${SYSCONFDIR}/kopano/searchscripts/
-share/examples/kopano/searchscripts/attachments_parser
-@mode 555
-@sample ${SYSCONFDIR}/kopano/searchscripts/attachments_parser
-@mode
-share/examples/kopano/searchscripts/attachments_parser.db
-@sample ${SYSCONFDIR}/kopano/searchscripts/attachments_parser.db
-share/examples/kopano/searchscripts/xmltotext.xslt
-@sample ${SYSCONFDIR}/kopano/searchscripts/xmltotext.xslt
-share/examples/kopano/searchscripts/zmktemp
-@mode 555
-@sample ${SYSCONFDIR}/kopano/searchscripts/zmktemp
-@mode
 share/examples/kopano/server.cfg
 @mode 640
 @group _kopano
