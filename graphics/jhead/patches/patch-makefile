@@ -1,16 +1,24 @@
-$OpenBSD: patch-makefile,v 1.5 2019/12/15 17:00:12 benoit Exp $
---- makefile.orig	Sun Dec 15 17:42:24 2019
-+++ makefile	Sun Dec 15 17:44:29 2019
-@@ -3,9 +3,9 @@
+$OpenBSD: patch-makefile,v 1.6 2021/11/04 15:12:29 mestre Exp $
+Index: makefile
+--- makefile.orig
++++ makefile
+@@ -1,15 +1,12 @@
  #--------------------------------
- OBJ=.
+ # jhead makefile for Unix
+ #--------------------------------
+-OBJ=obj
++OBJ=.
  SRC=.
--CPPFLAGS:=$(shell dpkg-buildflags --get CPPFLAGS)
 -CFLAGS:=$(shell dpkg-buildflags --get CFLAGS)
 -LDFLAGS:=$(shell dpkg-buildflags --get LDFLAGS)
-+CPPFLAGS:=$(CPPFLAGS)
 +CFLAGS:=$(CFLAGS) -Wall
 +LDFLAGS:=$(LDFLAGS)
  
- all: jhead
+-all: objdir jhead
+-
+-objdir:
+-	@mkdir -p obj
++all: jhead
  
+ objs = $(OBJ)/jhead.o $(OBJ)/jpgfile.o $(OBJ)/jpgqguess.o $(OBJ)/paths.o \
+ 	$(OBJ)/exif.o $(OBJ)/iptc.o $(OBJ)/gpsinfo.o $(OBJ)/makernote.o 

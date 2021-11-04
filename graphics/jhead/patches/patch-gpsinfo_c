@@ -1,16 +1,8 @@
-$OpenBSD: patch-gpsinfo_c,v 1.7 2021/02/26 18:20:35 naddy Exp $
---- gpsinfo.c.orig	Sun Dec 15 17:46:17 2019
-+++ gpsinfo.c	Sun Dec 15 17:48:33 2019
-@@ -146,7 +146,7 @@
-                     FmtString[3+a*7] = (char)('0'+digits);
- 
-                     Values[a] = ConvertAnyFormat(ValuePtr+a*ComponentSize, Format);
--                }
-+                }
- 
-                 snprintf(TempString, sizeof(TempString), FmtString, Values[0], Values[1], Values[2]);
- 
-@@ -162,8 +162,8 @@
+$OpenBSD: patch-gpsinfo_c,v 1.8 2021/11/04 15:12:29 mestre Exp $
+Index: gpsinfo.c
+--- gpsinfo.c.orig
++++ gpsinfo.c
+@@ -168,8 +168,8 @@ void ProcessGpsInfo(unsigned char * DirStart, unsigned
                  break;
  
              case TAG_GPS_ALT:
