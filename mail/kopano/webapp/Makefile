@@ -1,27 +1,21 @@
-# $OpenBSD: Makefile,v 1.22 2021/01/10 22:33:22 kn Exp $
+# $OpenBSD: Makefile,v 1.23 2021/11/04 17:27:18 robert Exp $
 
 COMMENT=	next generation web interface for Kopano
 
-WAPP_VERSION=	4.1
+WAPP_VERSION=	6.0.0
 
 PLUGINS_WITH_DEFCONF= \
 		contactfax-${WAPP_VERSION}.${MINOR}-${RPMVER} \
-		desktopnotifications-2.0.3.50-78.1 \
-		filepreviewer-2.2.0.26-21.6 \
 		gmaps-${WAPP_VERSION}.${MINOR}-${RPMVER} \
-		intranet-1.0.1.17-64.2 \
-		pimfolder-${WAPP_VERSION}.${MINOR}-${RPMVER} \
-		titlecounter-${WAPP_VERSION}.${MINOR}-${RPMVER}
+		pimfolder-${WAPP_VERSION}.${MINOR}-${RPMVER}
 
 
 PLUGINS=	${PLUGINS_WITH_DEFCONF} \
-		htmleditor-minimal-tinymce-1.0.0.13-27.3 \
-		htmleditor-quill-1.0.0.84-79.1 \
-		folderwidgets-${WAPP_VERSION}.${MINOR}-${RPMVER} \
-		quickitems-${WAPP_VERSION}.${MINOR}-${RPMVER}
+		htmleditor-jodit-0.2.0.24-70.1 \
+		htmleditor-minimal-tinymce-2.0.0-34.20
 
-MINOR=		2765
-RPMVER=		1630.1
+MINOR=		57
+RPMVER=		2026.7
 PKGNAME=	kopano-webapp-${WAPP_VERSION}.${MINOR}
 
 EXTRACT_SUFX=	.noarch.rpm
@@ -33,9 +27,9 @@ DISTFILES+=	kopano-webapp-plugin-${_dfile}${EXTRACT_SUFX}
 DISTFILES+=	kopano-webapp-lang-${WAPP_VERSION}.${MINOR}-${RPMVER}${EXTRACT_SUFX}
 
 DISTFILES+=	kopano-webapp-${WAPP_VERSION}.${MINOR}-${RPMVER}${EXTRACT_SUFX}
-DISTFILES+=	kopano-webapp-plugin-files-3.0.0.42-362.1${EXTRACT_SUFX} \
-		kopano-webapp-plugin-filesbackend-owncloud-3.0.0.15-115.1${EXTRACT_SUFX} \
-		kopano-webapp-plugin-filesbackend-smb-3.0.0.14-82.1${EXTRACT_SUFX}
+DISTFILES+=	kopano-webapp-plugin-files-4.0.1.7-451.19${EXTRACT_SUFX} \
+		kopano-webapp-plugin-filesbackend-owncloud-4.0.0.0-129.21${EXTRACT_SUFX} \
+		kopano-webapp-plugin-filesbackend-smb-4.0.0.0-98.20${EXTRACT_SUFX}
 
 MASTER_SITES=	http://nerd.hu/distfiles/kopano-webapp/
 
