@@ -1,14 +1,14 @@
-$OpenBSD: patch-provider_libserver_ECAttachmentStorage_cpp,v 1.12 2021/11/04 17:11:23 robert Exp $
+$OpenBSD: patch-provider_libserver_ECAttachmentStorage_cpp,v 1.13 2021/11/04 20:11:23 robert Exp $
 
 Index: provider/libserver/ECAttachmentStorage.cpp
 --- provider/libserver/ECAttachmentStorage.cpp.orig
 +++ provider/libserver/ECAttachmentStorage.cpp
-@@ -1126,7 +1126,7 @@ ECFileAttachment::ECFileAttachment(ECDatabase *lpDatab
+@@ -1138,7 +1138,7 @@ ECFileAttachment::ECFileAttachment(ECDatabase *lpDatab
  	m_basepath(basepath), m_l1(l1), m_l2(l2)
  {
- 	if (m_basepath.empty()) {
+ 	if (m_basepath.empty())
 -		m_basepath = "/var/lib/kopano";
 +		m_basepath = "/var/db/kopano";
- 	}
  	force_changes_to_disk = sync_to_disk;
  	if (sync_to_disk) {
+ 		m_dirp = opendir(m_basepath.c_str());

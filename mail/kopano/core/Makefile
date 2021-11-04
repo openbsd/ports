@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2021/11/04 17:11:23 robert Exp $
+# $OpenBSD: Makefile,v 1.70 2021/11/04 20:11:23 robert Exp $
 
 # undefined ref's to libicon*, libintl* with ld.bfd
 ONLY_FOR_ARCHS=	${LLD_ARCHS}
@@ -8,6 +8,9 @@ COMMENT-mapi=	kopano MAPI extensions for PHP
 
 PKGNAME-main=	kopano-core-${V}
 PKGNAME-mapi=	kopano-mapi-${V}
+REVISION-main=	2
+REVISION-mapi=	1
+EPOCH=		0
 
 CATEGORIES=	mail www productivity
 
@@ -53,8 +56,8 @@ WANTLIB-main += mariadb curses ssl xml2
 WANTLIB-main += gsoapssl++
 WANTLIB-main += ${LIBCXX}
 WANTLIB-main += icalvcal ldap_r HX jsoncpp
-WANTLIB-main += X11 expat freetype
-WANTLIB-main += xcb
+WANTLIB-main += X11 Xext Xrender expat fontconfig freetype pixman-1
+WANTLIB-main += xcb xcb-render xcb-shm
 WANTLIB-main += cairo glib-2.0 gobject-2.0
 WANTLIB-main += harfbuzz pango-1.0 pangocairo-1.0
 WANTLIB-main += png rrd
@@ -113,7 +116,6 @@ AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.16
 
 CONFIGURE_ENV=	CPPFLAGS="-fpermissive -I${LOCALBASE}/include -DSWIG_DIRECTOR_NO_UEH" \
-		LDFLAGS="-Wl,-allow-shlib-undefined" \
 		PHP_SYSCONF_DIR="${SYSCONFDIR}/php-${MODPHP_VERSION}" \
 		ac_cv_lib_pam_pam_start=no
 CONFIGURE_ARGS=	--disable-static \
@@ -181,7 +183,8 @@ post-install:
 		${PREFIX}/sbin/kopano-search \
 		${PREFIX}/sbin/kopano-search-xapian-compact.py \
 		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/kopano_search/__init__.py \
-		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/kopano_search/plaintext.py
+		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/kopano_search/plaintext.py \
+		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/kopano/daemon/version/version_info.py
 
 	find ${PREFIX} -name "*.la" -delete
 

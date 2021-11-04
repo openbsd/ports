@@ -1,4 +1,4 @@
-$OpenBSD: patch-installer_linux_server_cfg,v 1.14 2021/11/04 17:11:23 robert Exp $
+$OpenBSD: patch-installer_linux_server_cfg,v 1.15 2021/11/04 20:11:23 robert Exp $
 
 Index: installer/linux/server.cfg
 --- installer/linux/server.cfg.orig
@@ -15,7 +15,7 @@ Index: installer/linux/server.cfg
 @@ -44,7 +44,7 @@ local_admin_users = root kopano
  
  # Attachment backend driver type: "database", "files", "files_v2", "s3"
- #attachment_storage = files_v2
+ #attachment_storage = files
 -#attachment_path = /var/lib/kopano/attachments
 +#attachment_path = /var/db/kopano/attachments
  

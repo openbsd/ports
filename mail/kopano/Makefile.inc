@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.39 2021/11/04 17:11:23 robert Exp $
+# $OpenBSD: Makefile.inc,v 1.40 2021/11/04 20:11:23 robert Exp $
 
-V?=		11.0.2
+V?=		10.0.8
 DISTNAME?=	kopanocore-${V}
 
 CATEGORIES+=	mail
