@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.53 2021/02/28 10:53:32 benoit Exp $
+# $OpenBSD: Makefile,v 1.54 2021/11/04 10:16:59 benoit Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT =	maze game resembling boulderdash
 
-DISTNAME =	rocksndiamonds-4.2.3.1
+DISTNAME =	rocksndiamonds-4.3.0.0
 CATEGORIES =	games x11
 
 HOMEPAGE =	http://www.artsoft.org/rocksndiamonds/
@@ -26,7 +26,8 @@ RUN_DEPENDS =	devel/desktop-file-utils
 USE_GMAKE =	Yes
 MAKE_FLAGS =	CC="${CC}" MAKE="${MAKE_PROGRAM}" X11_PATH="${X11BASE}" \
 		RO_GAME_DIR="${PREFIX}/share/rocksndiamonds" \
-		RW_GAME_DIR="/var/games/rocksndiamonds"
+		RW_GAME_DIR="/var/games/rocksndiamonds" \
+		BASE_PATH="${PREFIX}/share/rocksndiamonds"
 
 TARGET =	sdl2
 
