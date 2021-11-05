@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/04 14:05:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/05 07:51:07 ajacoutot Exp $
 
 COMMENT =	community-developed python astronomy tools
 
@@ -25,9 +25,11 @@ MODPY_SETUPTOOLS =	Yes
 
 NO_TEST =		Yes
 
-BUILD_DEPENDS =		lang/cython${MODPY_FLAVOR} \
+BUILD_DEPENDS =		devel/py-wheel${MODPY_FLAVOR} \
+			lang/cython${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR} \
 			www/py-jinja2${MODPY_FLAVOR}
+
 RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
