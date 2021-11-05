@@ -1,9 +1,9 @@
-$OpenBSD: patch-agent_platform_platform_unix_go,v 1.7 2020/03/19 19:09:30 ajacoutot Exp $
+$OpenBSD: patch-agent_platform_platform_unix_go,v 1.8 2021/11/05 10:06:49 ajacoutot Exp $
 
 Index: agent/platform/platform_unix.go
 --- agent/platform/platform_unix.go.orig
 +++ agent/platform/platform_unix.go
-@@ -185,6 +185,20 @@ func getPlatformDetails(log log.T) (name string, versi
+@@ -186,6 +186,20 @@ func getPlatformDetails(log log.T) (name string, versi
  		if len(data) >= 2 {
  			version = strings.TrimSpace(data[1])
  		}

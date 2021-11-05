@@ -1,9 +1,9 @@
-$OpenBSD: patch-agent_fileutil_fileutil_unix_go,v 1.3 2018/06/28 08:19:23 ajacoutot Exp $
+$OpenBSD: patch-agent_fileutil_fileutil_unix_go,v 1.4 2021/11/05 10:06:49 ajacoutot Exp $
 
 Index: agent/fileutil/fileutil_unix.go
 --- agent/fileutil/fileutil_unix.go.orig
 +++ agent/fileutil/fileutil_unix.go
-@@ -95,14 +95,14 @@ func GetDiskSpaceInfo() (diskSpaceInfo DiskSpaceInfo, 
+@@ -96,14 +96,14 @@ func GetDiskSpaceInfo() (diskSpaceInfo DiskSpaceInfo, 
  	syscall.Statfs(wd, &stat)
  
  	// get block size
