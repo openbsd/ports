@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/02 00:01:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/05 20:33:50 martin Exp $
 
 COMMENT =		interface with Tuya WiFi smart devices
 
-MODPY_EGG_VERSION =	1.2.9
+MODPY_EGG_VERSION =	1.2.10
 DISTNAME =		tinytuya-${MODPY_EGG_VERSION}
 PKGNAME =		py-tinytuya-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		net
 
