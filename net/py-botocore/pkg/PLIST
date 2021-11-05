@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.173 2021/10/23 07:14:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.174 2021/11/05 08:43:33 ajacoutot Exp $
 @conflict py-botocore-*
 @pkgpath net/py-botocore
 lib/python${MODPY_VERSION}/site-packages/botocore/
@@ -208,6 +208,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/chime-sdk-identity/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/chime-sdk-identity/2021-04-20/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/chime-sdk-identity/2021-04-20/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/chime-sdk-identity/2021-04-20/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/chime-sdk-meetings/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/chime-sdk-meetings/2021-07-15/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/chime-sdk-meetings/2021-07-15/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/chime-sdk-meetings/2021-07-15/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/chime-sdk-messaging/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/chime-sdk-messaging/2021-05-15/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/chime-sdk-messaging/2021-05-15/paginators-1.json
@@ -1087,6 +1091,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/nimble/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/nimble/2020-08-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/nimble/2020-08-01/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/nimble/2020-08-01/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/nimble/2020-08-01/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/opensearch/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/opensearch/2021-01-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/opensearch/2021-01-01/paginators-1.json
