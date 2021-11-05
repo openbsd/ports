@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_inc,v 1.1 2021/11/05 23:18:15 sthen Exp $
+
+Index: Makefile.inc
+--- Makefile.inc.orig
++++ Makefile.inc
+@@ -2,5 +2,5 @@
+ 
+-CFLAGS+= -Wall -Werror
++CFLAGS+= -Wall
+ 
+ MAN=		${PROG}.8
+ DPADD=		${LIBUTIL}
