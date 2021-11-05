@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2021/01/20 01:04:22 namn Exp $
+# $OpenBSD: Makefile,v 1.15 2021/11/05 22:18:23 namn Exp $
 
 COMMENT =	perl-compatible regular expression library, version 2
 
-DISTNAME =	pcre2-10.36
+DISTNAME =	pcre2-10.37
 
-SHARED_LIBS +=  pcre2-16                  0.5 # 10.36
-SHARED_LIBS +=  pcre2-32                  0.5 # 10.36
-SHARED_LIBS +=  pcre2-8                   0.6 # 10.36
-SHARED_LIBS +=  pcre2-posix               0.3 # 2.3
+SHARED_LIBS +=  pcre2-16                  0.5 # 10.37
+SHARED_LIBS +=  pcre2-32                  0.5 # 10.37
+SHARED_LIBS +=  pcre2-8                   0.6 # 10.37
+SHARED_LIBS +=  pcre2-posix               1.0 # 2.3
 
 CATEGORIES =	devel
 
@@ -37,10 +37,5 @@ CONFIGURE_ARGS =	--enable-pcre2-16 \
 CONFIGURE_ARGS +=	--disable-jit
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-# change expected test output to support RunGrepTest patch
-post-extract:
-	sed -i 's/1:abcZERO2:defZERO/1:abc@2:def@/' \
-		${WRKSRC}/testdata/grepoutputN
 
 .include <bsd.port.mk>
