@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.137 2021/08/17 18:38:56 pascal Exp $
+# $OpenBSD: Makefile,v 1.138 2021/11/05 17:58:08 pascal Exp $
 
 COMMENT=	anonymity service using onion routing
 
-DISTNAME=	tor-0.4.6.7
+DISTNAME=	tor-0.4.6.8
 CATEGORIES=	net
 HOMEPAGE=	https://www.torproject.org/
 
@@ -11,7 +11,7 @@ MAINTAINER=	Pascal Stumpf <pascal@stumpf.co>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c crypto event_core event_extra m pthread ssl z
+WANTLIB += c crypto event_core event_extra execinfo m pthread ssl z
 
 MASTER_SITES=	https://www.torproject.org/dist/
 
