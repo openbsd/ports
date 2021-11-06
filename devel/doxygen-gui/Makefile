@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2021/02/23 19:39:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/11/06 18:35:09 rsadowski Exp $
 
 # Memory hog, stuck for days on the same file (configoptions.cpp) during build.
 # XXX check with different optimizer level? see doc/install.doc
@@ -7,13 +7,13 @@ BROKEN-alpha=	.got subsegment exceeds 64K
 
 COMMENT=	GUI front-end for doxygen
 
-VERSION=	1.9.1
+VERSION=	1.9.2
 DISTNAME=	doxygen-${VERSION}.src
 PKGNAME=	doxygen-gui-${VERSION}
 
 CATEGORIES=	devel textproc
 
-HOMEPAGE=	http://www.doxygen.org/
+HOMEPAGE=	https://www.doxygen.org/
 
 MAINTAINER=	Rafael Sadowski <rsadowski@openbsd.org>
 
@@ -25,7 +25,7 @@ WANTLIB += c m
 
 COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES=	http://doxygen.nl/files/
+MASTER_SITES=	https://doxygen.nl/files/
 
 LIB_DEPENDS=	${MODQT_LIB_DEPENDS}
 
