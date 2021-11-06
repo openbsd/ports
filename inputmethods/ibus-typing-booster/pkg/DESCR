@@ -1,0 +1,12 @@
+Ibus-typing-booster is a completion input method to speed-up typing.
+Features:
+- Context sensitive completions.
+- Learns from user input.
+- Can be trained by supplying files containing typical user input.
+- If available, hunspell and hunspell dictionaries will also be used
+  to provide not only completion but also spellchecking suggestions.
+- Can be used with any keyboard layout.
+- Almost all input methods supplied by libm17n are supported.
+- Several input methods and languages can be used at the same time
+  without switching.
+- Predicts Unicode symbols and emoji as well.
