@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.40 2019/11/16 17:43:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.41 2021/11/06 13:41:35 ajacoutot Exp $
 %%old%%
 %%stable%%
 @bin bin/rsvg-convert
 include/librsvg-2.0/
 include/librsvg-2.0/librsvg/
-include/librsvg-2.0/librsvg/librsvg-features.h
 include/librsvg-2.0/librsvg/rsvg-cairo.h
 include/librsvg-2.0/librsvg/rsvg.h
 @so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-svg.so
@@ -28,9 +27,6 @@ share/gtk-doc/html/rsvg-2.0/right-insensitive.png
 share/gtk-doc/html/rsvg-2.0/right.png
 share/gtk-doc/html/rsvg-2.0/rsvg-2.0.devhelp2
 share/gtk-doc/html/rsvg-2.0/rsvg-Using-RSVG-with-GIO.html
-share/gtk-doc/html/rsvg-2.0/rsvg-Using-RSVG-with-GdkPixbuf.html
-share/gtk-doc/html/rsvg-2.0/rsvg-Using-RSVG-with-cairo.html
-share/gtk-doc/html/rsvg-2.0/rsvg-Version-check-and-feature-tests.html
 share/gtk-doc/html/rsvg-2.0/rsvg.html
 share/gtk-doc/html/rsvg-2.0/style.css
 share/gtk-doc/html/rsvg-2.0/up-insensitive.png

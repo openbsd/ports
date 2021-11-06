@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.183 2021/06/05 08:16:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.184 2021/11/06 13:41:35 ajacoutot Exp $
 
 COMMENT=		SAX-based render library for SVG files
 
 GNOME_PROJECT=		librsvg
-STABLE_VERSION=		2.50.7
+STABLE_VERSION=		2.52.3
 OLD_VERSION=		2.40.21
 DISTFILES=		librsvg-${STABLE_VERSION}${EXTRACT_SUFX}:0 \
 			librsvg-${OLD_VERSION}${EXTRACT_SUFX}:1
@@ -17,17 +17,21 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 ### stable
 .if ${PROPERTIES:Mrust}
-SHARED_LIBS +=  rsvg-2               39.3     # 49.0
+SHARED_LIBS +=  rsvg-2               40.0     # 50.0
 GNOME_VERSION=		${STABLE_VERSION}
 BUILD_DEPENDS=		lang/rust
 PKG_ARGS=		-Dold=0 -Dstable=1
-MAKE_ENV+=		CARGO_BUILD_JOBS=${MAKE_JOBS} \
-			CARGO_HOME=${WRKBUILD}/cargo-home
-COMPILER=		base-clang ports-gcc
-WANTLIB += ${COMPILER_LIBCXX} cairo-gobject jpeg
+MAKE_ENV +=		CARGO_BUILD_JOBS=${MAKE_JOBS} \
+			CARGO_HOME=${WRKBUILD}/cargo-home \
+			CARGO_PROFILE_RELEASE_OPT_LEVEL=2 \
+			CARGO_PROFILE_RELEASE_DEBUG=1
+MAKE_FLAGS +=		V=1
+WANTLIB += ${COMPILER_LIBCXX} Xau Xdmcp cairo-gobject jpeg
+# XXX see pre-configure
+BUILD_DEPENDS +=	devel/llvm
 .else
 ### old
-REVISION=		1
+REVISION=		2
 SHARED_LIBS +=  rsvg-2               38.2     # 42.20
 GNOME_VERSION=		${OLD_VERSION}
 PATCH_LIST=		old-patch-*
@@ -62,6 +66,16 @@ CONFIGURE_ARGS=		--disable-tools
 .if !${PROPERTIES:Mlld}
 # error: -Bsymbolic-functions requested but not supported by ld
 CONFIGURE_ARGS +=	--disable-Bsymbolic
+.endif
+
+# XXX our nm(1) is buggy:
+# ld: error: undefined symbol: rsvg_error_get_type
+# ld: error: undefined symbol: rsvg_handle_get_type
+# ld: error: undefined symbol: rsvg_handle_flags_get_type
+# ld: error: undefined symbol: rsvg_error_quark
+.if ${PROPERTIES:Mrust}
+pre-configure:
+	ln -sf ${LOCALBASE}/bin/llvm-nm ${WRKDIR}/bin/nm
 .endif
 
 post-install:

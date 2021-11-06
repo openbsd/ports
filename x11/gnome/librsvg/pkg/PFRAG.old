@@ -1,3 +1,7 @@
-@comment $OpenBSD: PFRAG.old,v 1.3 2020/02/27 11:50:06 ajacoutot Exp $
+@comment $OpenBSD: PFRAG.old,v 1.4 2021/11/06 13:41:35 ajacoutot Exp $
 include/librsvg-2.0/librsvg/librsvg-enum-types.h
+include/librsvg-2.0/librsvg/librsvg-features.h
 share/gtk-doc/html/rsvg-2.0/RsvgHandle.html
+share/gtk-doc/html/rsvg-2.0/rsvg-Using-RSVG-with-GdkPixbuf.html
+share/gtk-doc/html/rsvg-2.0/rsvg-Using-RSVG-with-cairo.html
+share/gtk-doc/html/rsvg-2.0/rsvg-Version-check-and-feature-tests.html
