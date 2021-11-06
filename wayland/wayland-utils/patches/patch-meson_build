@@ -1,0 +1,20 @@
+$OpenBSD: patch-meson_build,v 1.1.1.1 2021/11/06 19:00:41 rsadowski Exp $
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -27,6 +27,14 @@ dep_wayland_client = dependency('wayland-client', vers
+ config_h = configuration_data()
+ config_h.set('_GNU_SOURCE', '1')
+ config_h.set('_ALL_SOURCE', '1')
++if cc.has_header_symbol('errno.h', 'program_invocation_name',
++                        args: '-D_GNU_SOURCE')
++   # Linux (glibc, musl)
++   config_h.set('HAVE_PROGRAM_INVOCATION_NAME', '1')
++elif cc.has_header_symbol('stdlib.h', 'getprogname')
++   # Android, BSDs, Solaris
++   config_h.set('HAVE_GETPROGNAME', '1')
++endif
+ configure_file(output: 'config.h', configuration: config_h)
+ 
+ subdir('wayland-info')

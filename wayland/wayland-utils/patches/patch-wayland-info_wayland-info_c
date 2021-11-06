@@ -1,0 +1,33 @@
+$OpenBSD: patch-wayland-info_wayland-info_c,v 1.1.1.1 2021/11/06 19:00:41 rsadowski Exp $
+
+Index: wayland-info/wayland-info.c
+--- wayland-info/wayland-info.c.orig
++++ wayland-info/wayland-info.c
+@@ -255,7 +255,11 @@ static void *
+ fail_on_null(void *p, size_t size, char *file, int32_t line)
+ {
+ 	if (p == NULL) {
++#if defined(HAVE_PROGRAM_INVOCATION_NAME)
+ 		fprintf(stderr, "[%s] ", program_invocation_short_name);
++#elif defined(HAVE_GETPROGNAME)
++			fprintf(stderr, "[%s] ", getprogname());
++#endif
+ 		if (file)
+ 			fprintf(stderr, "%s:%d: ", file, line);
+ 		fprintf(stderr, "out of memory");
+@@ -1750,9 +1754,15 @@ clock_name(clockid_t clk_id)
+ 	static const char *names[] = {
+ 		[CLOCK_REALTIME] =		"CLOCK_REALTIME",
+ 		[CLOCK_MONOTONIC] =		"CLOCK_MONOTONIC",
++#ifdef CLOCK_MONOTONIC_RAW
+ 		[CLOCK_MONOTONIC_RAW] =	"CLOCK_MONOTONIC_RAW",
++#endif
++#ifdef CLOCK_REALTIME_COARSE
+ 		[CLOCK_REALTIME_COARSE] =	"CLOCK_REALTIME_COARSE",
++#endif
++#ifdef CLOCK_MONOTONIC_COARSE
+ 		[CLOCK_MONOTONIC_COARSE] =	"CLOCK_MONOTONIC_COARSE",
++#endif
+ #ifdef CLOCK_BOOTTIME
+ 		[CLOCK_BOOTTIME] =		"CLOCK_BOOTTIME",
+ #endif
