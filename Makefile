@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2018/12/14 18:57:58 espie Exp $
+# $OpenBSD: Makefile,v 1.87 2021/11/06 19:09:10 rsadowski Exp $
 
 .if !defined(BSD_OWN_MK)
 .  include <bsd.own.mk>
@@ -68,6 +68,7 @@ SUBDIR += shells
 SUBDIR += sysutils
 SUBDIR += telephony
 SUBDIR += textproc
+SUBDIR += wayland
 SUBDIR += www
 SUBDIR += x11
 .endif
