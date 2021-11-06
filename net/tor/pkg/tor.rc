@@ -1,14 +1,12 @@
 #!/bin/ksh
 #
-# $OpenBSD: tor.rc,v 1.6 2018/01/11 19:27:08 rpe Exp $
+# $OpenBSD: tor.rc,v 1.7 2021/11/06 10:38:40 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/tor"
 daemon_timeout=60
 
 . /etc/rc.d/rc.subr
 
-rc_stop() {
-	pkill -INT -xf "${pexp}"
-}
+rc_stop_signal=INT
 
 rc_cmd $1

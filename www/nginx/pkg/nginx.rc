@@ -1,12 +1,13 @@
 #!/bin/ksh
 #
-# $OpenBSD: nginx.rc,v 1.16 2021/10/31 06:45:40 robert Exp $
+# $OpenBSD: nginx.rc,v 1.17 2021/11/06 10:38:41 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/nginx"
 
 . /etc/rc.d/rc.subr
 
 pexp="nginx: master process ${daemon}${daemon_flags:+ ${daemon_flags}}"
+rc_stop_signal=QUIT
 
 rc_reload() {
 	${daemon} ${daemon_flags} -t &&

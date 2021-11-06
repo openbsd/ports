@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2021/11/04 20:11:23 robert Exp $
+# $OpenBSD: Makefile,v 1.71 2021/11/06 10:38:40 ajacoutot Exp $
 
 # undefined ref's to libicon*, libintl* with ld.bfd
 ONLY_FOR_ARCHS=	${LLD_ARCHS}
@@ -8,7 +8,7 @@ COMMENT-mapi=	kopano MAPI extensions for PHP
 
 PKGNAME-main=	kopano-core-${V}
 PKGNAME-mapi=	kopano-mapi-${V}
-REVISION-main=	2
+REVISION-main=	3
 REVISION-mapi=	1
 EPOCH=		0
 

@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.29 2021/11/06 09:18:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2021/11/06 10:38:40 ajacoutot Exp $
 
 COMMENT=	template rendering and notifications with Consul
 
 MODGO_MODNAME=	github.com/hashicorp/consul-template
 MODGO_VERSION=	v0.27.2
 DISTNAME=	consul-template-${MODGO_VERSION}
+
+REVISION=	0
 
 CATEGORIES=	sysutils net
 

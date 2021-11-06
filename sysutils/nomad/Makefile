@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2021/10/08 19:41:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2021/11/06 10:38:41 ajacoutot Exp $
 
 BROKEN-aarch64=	old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1.1.11
 BROKEN-armv7=	old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1.1.11
@@ -14,6 +14,8 @@ VERSION=		1.1.6
 # and running "go mod tidy" + "go mod vendor"
 DISTNAME=		nomad-vendored-${VERSION}
 PKGNAME=		nomad-${VERSION}
+
+REVISION=		0
 
 CATEGORIES=		sysutils
 

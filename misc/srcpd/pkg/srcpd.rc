@@ -1,13 +1,11 @@
 #!/bin/ksh
 #
-# $OpenBSD: srcpd.rc,v 1.6 2018/01/11 19:27:04 rpe Exp $
+# $OpenBSD: srcpd.rc,v 1.7 2021/11/06 10:38:40 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/srcpd"
 
 . /etc/rc.d/rc.subr
 
-rc_stop() {
-	pkill -9 -xf "${pexp}"
-}
+rc_stop_signal=KILL
 
 rc_cmd $1

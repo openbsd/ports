@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: consul_template.rc,v 1.4 2018/01/11 19:27:10 rpe Exp $
+# $OpenBSD: consul_template.rc,v 1.5 2021/11/06 10:38:40 ajacoutot Exp $
 
 daemon="${PREFIX}/bin/consul-template"
 daemon_flags="-config ${SYSCONFDIR}/consul-template.d/default.conf"
@@ -9,9 +9,6 @@ daemon_user="_consul-template"
 . /etc/rc.d/rc.subr
 
 rc_bg=YES
-
-rc_stop() {
-	pkill -INT -T "${daemon_rtable}" -xf "${pexp}"
-}
+rc_stop_signal=INT
 
 rc_cmd $1
