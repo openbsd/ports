@@ -1,11 +1,11 @@
-$OpenBSD: patch-Makefile_in,v 1.64 2021/09/11 08:39:12 ajacoutot Exp $
+$OpenBSD: patch-Makefile_in,v 1.65 2021/11/06 09:45:36 ajacoutot Exp $
 
 https://sources.debian.org/src/hplip/3.18.10+dfsg0-1/debian/patches/0025-Remove-all-ImageProcessor-functionality-which-is-clo.patch/
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -96,14 +96,14 @@ DIST_COMMON = $(am__configure_deps) \
+@@ -96,7 +96,7 @@ DIST_COMMON = $(am__configure_deps) \
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@LIBUSB01_BUILD_TRUE@am__append_5 = io/hpmud/musb_libusb01.c 
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@LIBUSB01_BUILD_TRUE@am__append_6 = -lusb
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@LIBUSB01_BUILD_FALSE@am__append_7 = io/hpmud/musb.c 
@@ -14,15 +14,16 @@ Index: Makefile.in
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@LIBUSB01_BUILD_FALSE@am__append_9 = -lusb-1.0
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@NETWORK_BUILD_TRUE@am__append_10 = -Iprotocol/discovery
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@NETWORK_BUILD_TRUE@am__append_11 = -l$(SNMPLIB) -lcrypto
- 
- # ip library
+@@ -105,8 +105,6 @@ DIST_COMMON = $(am__configure_deps) \
  @HPLIP_BUILD_TRUE@am__append_12 = libhpip.la
--@FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@am__append_13 = prnt/drv/hpijs.drv.in.template prnt/drv/hpcups.drv.in.template prnt/hpcups/libImageProcessor-x86_64.so prnt/hpcups/libImageProcessor-x86_32.so
-+@FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@am__append_13 = prnt/drv/hpijs.drv.in.template prnt/drv/hpcups.drv.in.template
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@am__append_13 = prnt/drv/hpijs.drv.in.template \
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@	prnt/drv/hpcups.drv.in.template \
+-@FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@	prnt/hpcups/libImageProcessor-x86_64.so \
+-@FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@	prnt/hpcups/libImageProcessor-x86_32.so \
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@	prnt/ipp-usb/HPLIP.conf
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@am__append_14 = dat2drv.py install.py  hplip-install init-suse-firewall init-iptables-firewall class_rpm_build.sh hplipclassdriver.spec createPPD.sh Makefile_dat2drv hpijs-drv
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@am__append_15 = scan/sane/hpaio.desc \
- @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	installer/text_install.py \
-@@ -121,7 +121,7 @@ DIST_COMMON = $(am__configure_deps) \
+@@ -125,7 +123,7 @@ DIST_COMMON = $(am__configure_deps) \
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@am__append_17 = libhpipp.la
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@NETWORK_BUILD_TRUE@am__append_18 = libhpdiscovery.la
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@NETWORK_BUILD_TRUE@am__append_19 = -Iprotocol/discovery
@@ -31,17 +32,16 @@ Index: Makefile.in
  @FULL_BUILD_TRUE@@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@@QT3_INSTALL_TRUE@am__append_21 = ui/colorcalform2_base.ui ui/settingsdialog_base.ui ui/aligntype6form1_base.ui \
  @FULL_BUILD_TRUE@@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@@QT3_INSTALL_TRUE@	ui/aboutdlg_base.ui ui/imagepropertiesdlg_base.ui ui/paperedgealignform_base.ui ui/aligntype6form2_base.ui \
  @FULL_BUILD_TRUE@@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@@QT3_INSTALL_TRUE@	ui/nodevicesform_base.ui ui/cleaningform_base.ui ui/colorcalform_base.ui ui/devmgr4_base.ui ui/loadpaperform_base.ui \
-@@ -732,8 +732,7 @@ am__dist_locatedriver_DATA_DIST = locatedriver
+@@ -736,8 +734,6 @@ am__dist_locatedriver_DATA_DIST = locatedriver
  am__dist_models_DATA_DIST = data/models/models.dat
  am__dist_noinst_DATA_DIST = prnt/drv/hpijs.drv.in.template \
  	prnt/drv/hpcups.drv.in.template \
 -	prnt/hpcups/libImageProcessor-x86_64.so \
--	prnt/hpcups/libImageProcessor-x86_32.so scan/sane/hpaio.desc \
-+	scan/sane/hpaio.desc \
+-	prnt/hpcups/libImageProcessor-x86_32.so \
+ 	prnt/ipp-usb/HPLIP.conf scan/sane/hpaio.desc \
  	installer/text_install.py data/localization/hplip_de.ts \
  	data/localization/hplip_es.ts data/localization/hplip_fr.ts \
- 	data/localization/hplip_it.ts data/localization/hplip_pt.ts \
-@@ -4587,7 +4586,7 @@ dist_unrel_DATA = 
+@@ -4612,7 +4608,7 @@ dist_unrel_DATA = 
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	scan/sane/orblitei.h scan/sane/orblite.h scan/sane/orblite.c \
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	scan/sane/OrbliteScan/LinuxCommon.h scan/sane/OrbliteScan/MacCommon.h
  
@@ -50,7 +50,7 @@ Index: Makefile.in
  @DARWIN_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@libsane_hpaio_la_LDFLAGS = -module -framework CoreFoundation -version-info 1:0:0
  # The following is a interlibrary dependency that must be compiled first.
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@libsane_hpaio_la_LIBADD = libhpip.la \
-@@ -4595,7 +4594,6 @@ dist_unrel_DATA = 
+@@ -4620,7 +4616,6 @@ dist_unrel_DATA = 
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	libhpipp.la \
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	$(DBUS_LIBS) \
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	-lcups \
@@ -58,7 +58,7 @@ Index: Makefile.in
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	$(am__append_1)
  #libsane_hpaio_la_CFLAGS = -DWITH_NONAMESPACES -DSOAP_DEBUG
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@libsane_hpaio_la_CFLAGS = $(DBUS_CFLAGS) \
-@@ -4617,7 +4615,6 @@ dist_unrel_DATA = 
+@@ -4642,7 +4637,6 @@ dist_unrel_DATA = 
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@libhpmud_la_LDFLAGS =  \
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	-version-info \
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	0:6:0 -lpthread \
@@ -66,7 +66,7 @@ Index: Makefile.in
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	$(am__append_6) \
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	$(am__append_9) \
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	$(am__append_11)
-@@ -4671,7 +4668,7 @@ dist_unrel_DATA = 
+@@ -4696,7 +4690,7 @@ dist_unrel_DATA = 
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@pstotiff_SCRIPTS = fax/filters/pstotiff
  
  # hplip.state
@@ -75,7 +75,7 @@ Index: Makefile.in
  @HPLIP_BUILD_TRUE@dist_hplip_state_DATA = 
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@dist_hplip_SCRIPTS = hpssd.py __init__.py hpdio.py
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@cmddir = $(hplipdir)
-@@ -4871,7 +4868,7 @@ dist_unrel_DATA = 
+@@ -4896,7 +4890,7 @@ dist_unrel_DATA = 
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hppgsz_SOURCES = prnt/hpijs/PrinterProperties.cpp prnt/hpijs/PrinterProperties.h prnt/hpijs/bug.h
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hppgsz_CXXFLAGS = $(libapdk_la_CXXFLAGS)
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hppgsz_CFLAGS = $(libapdk_la_CFLAGS)
@@ -84,7 +84,7 @@ Index: Makefile.in
  
  # hplip.desktop
  @FULL_BUILD_TRUE@@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@hplip_desktopdir = $(icondir)
-@@ -4940,8 +4937,8 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+@@ -4965,8 +4959,8 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
  
  @HPIJS_INSTALL_TRUE@hpijs_CXXFLAGS = $(libapdk_la_CXXFLAGS)
  @HPIJS_INSTALL_TRUE@hpijs_CFLAGS = $(libapdk_la_CFLAGS)
@@ -95,7 +95,7 @@ Index: Makefile.in
  
  # hpcups
  #if NEW_HPCUPS
-@@ -4985,7 +4982,7 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+@@ -5010,7 +5004,7 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
  @HPCUPS_INSTALL_TRUE@	prnt/hpcups/ImageProcessor.h
  
  @HPCUPS_INSTALL_TRUE@hpcups_CXXFLAGS = $(APDK_ENDIAN_FLAG) $(DBUS_CFLAGS)
@@ -104,7 +104,7 @@ Index: Makefile.in
  #else
  #hpcupsdir = $(cupsfilterdir)
  #hpcups_PROGRAMS = hpcups
-@@ -4993,15 +4990,15 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+@@ -5018,15 +5012,15 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
  #hpcups_CXXFLAGS = $(libapdk_la_CXXFLAGS)
  #hpcups_CFLAGS = $(libapdk_la_CFLAGS)
  #if HPCUPS_ONLY_BUILD
@@ -123,7 +123,7 @@ Index: Makefile.in
  dat2drvdir = $(hplipdir)
  dat2drv_SOURCES = Common.h  Dat2drv.cpp  Dat2drv.h Normalize.cpp  Normalize.h
  @GCC_GE_47_TRUE@dat2drv_CXXFLAGS = -std=c++11
-@@ -9756,16 +9753,6 @@ uninstall-am: uninstall-apparmor_abstractionDATA \
+@@ -9781,19 +9775,9 @@ uninstall-am: uninstall-apparmor_abstractionDATA \
  
  
  install-data-hook:
@@ -137,6 +137,11 @@ Index: Makefile.in
 -@HPLIP_BUILD_TRUE@		chmod 775 $(libdir)/libImageProcessor-x86_32.so ; \
 -@HPLIP_BUILD_TRUE@		ln -sf $(libdir)/libImageProcessor-x86_32.so $(libdir)/libImageProcessor.so ; \
 -@HPLIP_BUILD_TRUE@	fi
+-@HPLIP_BUILD_TRUE@	if [ -d "/usr/share/ipp-usb/quirks/" ]; then \
++@HPLIP_BUILD_TRUE@	if [ -d "${LOCALBASE}/share/ipp-usb/quirks/" ]; then \
+ @HPLIP_BUILD_TRUE@		echo "ipp-usb directory exists"; \
+-@HPLIP_BUILD_TRUE@		cp prnt/ipp-usb/HPLIP.conf /usr/share/ipp-usb/quirks/ ; \
++@HPLIP_BUILD_TRUE@		cp prnt/ipp-usb/HPLIP.conf ${PREFIX}/share/ipp-usb/quirks/ ; \
+ @HPLIP_BUILD_TRUE@	fi
  #	   If scanner build, add hpaio entry to sane dll.conf.
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	if [ "$(scan_build)" = "yes" ]; then \
- @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	   $(mkinstalldirs) $(DESTDIR)/etc/sane.d; \
