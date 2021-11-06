@@ -1,0 +1,15 @@
+$OpenBSD: patch-tests_test-compositor_c,v 1.1.1.1 2021/11/06 18:58:28 rsadowski Exp $
+
+Index: tests/test-compositor.c
+--- tests/test-compositor.c.orig
++++ tests/test-compositor.c
+@@ -105,7 +105,9 @@ handle_client_destroy(void *data)
+ 
+ 	d = ci->display;
+ 
++#ifdef HAVE_WAITID
+ 	assert(waitid(P_PID, ci->pid, &status, WEXITED) != -1);
++#endif
+ 
+ 	switch (status.si_code) {
+ 	case CLD_KILLED:

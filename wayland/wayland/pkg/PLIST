@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/06 18:58:28 rsadowski Exp $
+@bin bin/wayland-scanner
+include/wayland-client-core.h
+include/wayland-client-protocol.h
+include/wayland-client.h
+include/wayland-cursor.h
+include/wayland-egl-backend.h
+include/wayland-egl-core.h
+include/wayland-egl.h
+include/wayland-server-core.h
+include/wayland-server-protocol.h
+include/wayland-server.h
+include/wayland-util.h
+include/wayland-version.h
+@lib lib/libwayland-client.so.${LIBwayland-client_VERSION}
+@lib lib/libwayland-cursor.so.${LIBwayland-cursor_VERSION}
+@lib lib/libwayland-egl.so.${LIBwayland-egl_VERSION}
+@lib lib/libwayland-server.so.${LIBwayland-server_VERSION}
+lib/pkgconfig/wayland-client.pc
+lib/pkgconfig/wayland-cursor.pc
+lib/pkgconfig/wayland-egl-backend.pc
+lib/pkgconfig/wayland-egl.pc
+lib/pkgconfig/wayland-scanner.pc
+lib/pkgconfig/wayland-server.pc
+share/aclocal/
+share/aclocal/wayland-scanner.m4
+share/wayland/
+share/wayland/wayland-scanner.mk
+share/wayland/wayland.dtd
+share/wayland/wayland.xml
