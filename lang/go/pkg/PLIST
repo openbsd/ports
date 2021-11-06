@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.52 2021/08/27 18:33:27 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.53 2021/11/06 06:54:00 jsing Exp $
 bin/go
 bin/gofmt
 go/
@@ -497,6 +497,11 @@ go/misc/cgo/testshared/testdata/issue44031/b/
 go/misc/cgo/testshared/testdata/issue44031/b/b.go
 go/misc/cgo/testshared/testdata/issue44031/main/
 go/misc/cgo/testshared/testdata/issue44031/main/main.go
+go/misc/cgo/testshared/testdata/issue47837/
+go/misc/cgo/testshared/testdata/issue47837/a/
+go/misc/cgo/testshared/testdata/issue47837/a/a.go
+go/misc/cgo/testshared/testdata/issue47837/main/
+go/misc/cgo/testshared/testdata/issue47837/main/main.go
 go/misc/cgo/testshared/testdata/trivial/
 go/misc/cgo/testshared/testdata/trivial/trivial.go
 go/misc/cgo/testsigfwd/
@@ -2767,6 +2772,7 @@ go/src/cmd/go/testdata/script/ldflag.txt
 go/src/cmd/go/testdata/script/link_matching_actionid.txt
 go/src/cmd/go/testdata/script/link_syso_issue33139.txt
 go/src/cmd/go/testdata/script/linkname.txt
+go/src/cmd/go/testdata/script/list_all_gobuild.txt
 go/src/cmd/go/testdata/script/list_ambiguous_path.txt
 go/src/cmd/go/testdata/script/list_bad_import.txt
 go/src/cmd/go/testdata/script/list_case_collision.txt
@@ -2877,8 +2883,10 @@ go/src/cmd/go/testdata/script/mod_get_incompatible.txt
 go/src/cmd/go/testdata/script/mod_get_indirect.txt
 go/src/cmd/go/testdata/script/mod_get_insecure_redirect.txt
 go/src/cmd/go/testdata/script/mod_get_issue37438.txt
+go/src/cmd/go/testdata/script/mod_get_issue47979.txt
 go/src/cmd/go/testdata/script/mod_get_latest_pseudo.txt
 go/src/cmd/go/testdata/script/mod_get_lazy_indirect.txt
+go/src/cmd/go/testdata/script/mod_get_lazy_upgrade_lazy.txt
 go/src/cmd/go/testdata/script/mod_get_local.txt
 go/src/cmd/go/testdata/script/mod_get_main.txt
 go/src/cmd/go/testdata/script/mod_get_major.txt
@@ -5100,6 +5108,7 @@ go/src/debug/macho/testdata/clang-amd64-darwin.obj.base64
 go/src/debug/macho/testdata/fat-gcc-386-amd64-darwin-exec.base64
 go/src/debug/macho/testdata/gcc-386-darwin-exec.base64
 go/src/debug/macho/testdata/gcc-amd64-darwin-exec-debug.base64
+go/src/debug/macho/testdata/gcc-amd64-darwin-exec-with-bad-dysym.base64
 go/src/debug/macho/testdata/gcc-amd64-darwin-exec.base64
 go/src/debug/macho/testdata/hello.c
 go/src/debug/pe/
@@ -11201,8 +11210,14 @@ go/test/fixedbugs/issue4748.go
 go/test/fixedbugs/issue4752.go
 go/test/fixedbugs/issue4776.go
 go/test/fixedbugs/issue4785.go
+go/test/fixedbugs/issue48088.dir/
+go/test/fixedbugs/issue48088.dir/a.go
+go/test/fixedbugs/issue48088.dir/b.go
+go/test/fixedbugs/issue48088.go
 go/test/fixedbugs/issue4813.go
 go/test/fixedbugs/issue4847.go
+go/test/fixedbugs/issue48473.go
+go/test/fixedbugs/issue48476.go
 go/test/fixedbugs/issue4879.dir/
 go/test/fixedbugs/issue4879.dir/a.go
 go/test/fixedbugs/issue4879.dir/b.go
