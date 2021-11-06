@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2021/10/03 19:52:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.135 2021/11/06 08:37:10 ajacoutot Exp $
 
 BROKEN-hppa=		no atomic primitives
 
@@ -7,15 +7,15 @@ COMMENT-icu=		ICU support for libharfbuzz
 
 GH_ACCOUNT=		harfbuzz
 GH_PROJECT=		harfbuzz
-GH_TAGNAME=		3.0.0
+GH_TAGNAME=		3.1.0
 
 PKGNAME-main=		harfbuzz-${GH_TAGNAME}
 PKGNAME-icu=		harfbuzz-icu-${GH_TAGNAME}
 
-SHARED_LIBS += harfbuzz                  16.0 # 0.30000.0
-SHARED_LIBS += harfbuzz-subset           1.0 # 0.30000.0
-SHARED_LIBS += harfbuzz-icu              1.2 # 0.30000.0
-SHARED_LIBS += harfbuzz-gobject          0.3 # 0.30000.0
+SHARED_LIBS += harfbuzz                  16.1 # 0.30100.0
+SHARED_LIBS += harfbuzz-subset           1.0 # 0.30100.0
+SHARED_LIBS += harfbuzz-icu              1.2 # 0.30100.0
+SHARED_LIBS += harfbuzz-gobject          0.3 # 0.30100.0
 
 CATEGORIES=		devel graphics textproc
 
@@ -51,7 +51,7 @@ LIB_DEPENDS-icu=	devel/harfbuzz,-main=${GH_TAGNAME} \
 LIB_DEPENDS-main +=	${LIB_DEPENDS}
 .endif
 
-CONFIGURE_ARGS=		-Dgraphite=enabled \
+CONFIGURE_ARGS=		-Dgraphite2=enabled \
 			-Ddocs=disabled
 
 # bloat: requires ImageMagick
