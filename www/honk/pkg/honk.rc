@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: honk.rc,v 1.5 2021/02/27 09:28:51 ajacoutot Exp $
+# $OpenBSD: honk.rc,v 1.6 2021/11/06 10:11:05 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/honk"
 daemon_flags="-datadir ${VARBASE}/honk -viewdir ${VARBASE}/honk"
@@ -9,11 +9,8 @@ daemon_user="_honk"
 
 . /etc/rc.d/rc.subr
 
+pexp="/usr/local/bin/honk .*"
 rc_bg=YES
 rc_reload=NO
-
-rc_stop() {
-	pkill -T "${daemon_rtable}" -U "${daemon_user}" -x honk
-}
 
 rc_cmd $1

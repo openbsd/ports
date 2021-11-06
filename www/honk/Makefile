@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2021/04/06 14:35:14 abieber Exp $
+# $OpenBSD: Makefile,v 1.17 2021/11/06 10:11:05 ajacoutot Exp $
 
 COMMENT =		federated status conveyance
 
 DISTNAME =		honk-0.9.6
 CATEGORIES =		www
+REVISION =		0
 
 HOMEPAGE =		https://humungus.tedunangst.com/r/honk
 
