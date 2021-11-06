@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.47 2021/10/03 19:54:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2021/11/06 09:20:41 ajacoutot Exp $
 
 PORTROACH=		skipv:4.0.0,4.1.0,4.2.0
 
 COMMENT=		represent and manage a libvirt hypervisor connection
 
-V=			7.8.0
+V=			7.9.0
 DISTNAME=		Sys-Virt-v${V}
 PKGNAME=		p5-Sys-Virt-${V}
 
@@ -24,6 +24,8 @@ MODULES=		cpan
 MODCPAN_EXAMPLES=	Yes
 
 CONFIGURE_STYLE=	modbuild
+
+BUILD_DEPENDS=		devel/p5-Module-Build
 
 LIB_DEPENDS=		sysutils/libvirt
 
