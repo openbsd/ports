@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2021/01/19 19:01:13 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.21 2021/11/06 12:37:43 rsadowski Exp $
 @conflict calligra-<=2.9.11
 @bin bin/krita
 @bin bin/krita_version
@@ -60,6 +60,8 @@ lib/kritaplugins/
 @so lib/kritaplugins/kritahairypaintop.so
 @so lib/kritaplugins/kritahalftone.so
 @so lib/kritaplugins/kritahatchingpaintop.so
+@so lib/kritaplugins/kritaheifexport.so
+@so lib/kritaplugins/kritaheifimport.so
 @so lib/kritaplugins/kritaheightmapexport.so
 @so lib/kritaplugins/kritaheightmapimport.so
 @so lib/kritaplugins/kritahistogramdocker.so
@@ -216,6 +218,7 @@ share/applications/krita_brush.desktop
 share/applications/krita_csv.desktop
 share/applications/krita_exr.desktop
 share/applications/krita_gif.desktop
+share/applications/krita_heif.desktop
 share/applications/krita_heightmap.desktop
 share/applications/krita_jp2.desktop
 share/applications/krita_jpeg.desktop

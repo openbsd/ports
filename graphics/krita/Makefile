@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.53 2021/09/07 13:55:42 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.54 2021/11/06 12:37:43 rsadowski Exp $
 
 COMMENT =		advanced drawing and image manipulation
 
 VERSION =		4.4.8
 DISTNAME =		krita-${VERSION}
+REVISION =		0
 
 SHARED_LIBS +=  kritabasicflakes          4.0 # 16.0
 SHARED_LIBS +=  kritacolord               1.0 # 16.0
@@ -51,7 +52,7 @@ WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
 WANTLIB += Qt5Network Qt5PrintSupport Qt5Qml Qt5QmlModels Qt5Quick
 WANTLIB += Qt5QuickWidgets Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xml
 WANTLIB += SM X11 Xext Xi boost_system-mt c exiv2 fftw3 gif gsl
-WANTLIB += gslcblas jpeg lcms2 m openjp2 png poppler poppler-qt5
+WANTLIB += gslcblas heif jpeg lcms2 m openjp2 png poppler poppler-qt5
 WANTLIB += quazip5 raw tiff z
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/krita/${VERSION}/}
@@ -86,9 +87,11 @@ LIB_DEPENDS =		archivers/quazip \
 			graphics/libraw \
 			graphics/opencolorio \
 			graphics/openexr \
+			graphics/openjp2 \
 			graphics/png \
 			graphics/tiff \
 			math/fftw3 \
+			multimedia/libheif \
 			print/poppler \
 			print/poppler,-qt5 \
 			x11/qt5/qtdeclarative \
@@ -104,7 +107,6 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 
 # stop searching for optional packages
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_SIP=ON \
-			-DCMAKE_DISABLE_FIND_PACKAGE_HEIF=ON \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Vc=ON \
 			-DCMAKE_DISABLE_FIND_PACKAGE_PyQt5=ON \
 			-DCMAKE_DISABLE_FIND_PACKAGE_SeExpr2=ON
