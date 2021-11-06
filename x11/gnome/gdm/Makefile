@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.306 2021/10/27 17:59:26 robert Exp $
+# $OpenBSD: Makefile,v 1.307 2021/11/06 17:22:55 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		41.0
+REVISION=		0
 
 GH_ACCOUNT=		rnagy
 GH_PROJECT=		gdm

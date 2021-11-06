@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: gdm.rc,v 1.46 2021/02/19 17:22:29 ajacoutot Exp $
+# $OpenBSD: gdm.rc,v 1.47 2021/11/06 17:22:55 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/gdm"
 
@@ -18,7 +18,7 @@ rc_stop() {
 	pkill -9 -xf "${pexp}"
 	pkill -f gdm-session-worker
 	pkill -u _x11 -f "^/usr/X11R6/bin/X.*/var/run/gdm"
-	# _gdm owned processed may already be gone... or not
+	# _gdm owned processes may already be gone... or not
 	pkill -u _gdm || return 0
 }
 
