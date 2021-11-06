@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portroach-cli,v 1.7 2021/02/14 15:55:30 kn Exp $
+# $OpenBSD: portroach-cli,v 1.8 2021/11/06 00:49:47 kn Exp $
 #
 # Copyright (c) 2021 Klemens Nanni <kn@openbsd.org>
 #
@@ -32,12 +32,7 @@ usage() {
 }
 
 fetch_data() {
-	# ftp(1) and curl(1) do *not* URL encode unsafe characters, wget(1) does
-	# use jq(1) to avoid dependency
-	local file
-
-	file=$(jq -nr --arg str "$1" '$str | @uri')
-	ftp -MVo- -- "${url}/json/${file}.json"
+	ftp -MVo- -- "${url}/json/${1}.json"
 }
 
 show_totals() {
