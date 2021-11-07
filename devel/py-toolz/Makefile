@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:01:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/07 09:16:31 sthen Exp $
 
 COMMENT =	utility functions similar to itertools and functools
 
-MODPY_EGG_VERSION =	0.11.1
+MODPY_EGG_VERSION =	0.11.2
 DISTNAME =		toolz-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -21,7 +20,6 @@ FLAVOR  =		python3
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-
-NO_TEST =		Yes
+MODPY_PYTEST_ARGS =	toolz/tests
 
 .include <bsd.port.mk>
