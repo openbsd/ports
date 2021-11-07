@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2021/11/02 00:02:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2021/11/07 09:00:36 sthen Exp $
 
 COMMENT =		Python library for approximate and phonetic string matching
 
-MODPY_EGG_VERSION =	0.5.6
+MODPY_EGG_VERSION =	0.8.9
 DISTNAME =		jellyfish-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-CATEGORIES =   		textproc
-REVISION =		7
+CATEGORIES =		textproc
 
 HOMEPAGE =		https://github.com/sunlightlabs/jellyfish
 
@@ -21,12 +20,8 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	jellyfish/test.py
 
-FLAVORS =		python3
+FLAVORS =	python3
 FLAVOR =	python3
-
-.if !${FLAVOR:Mpython3}
-NO_TEST =		Yes # requires unicodecsv for py<=3
-.endif
 
 pre-test:
 	@${MODPY_CMD} build_ext --inplace
