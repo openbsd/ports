@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2021/11/06 16:01:50 solene Exp $
+# $OpenBSD: Makefile,v 1.32 2021/11/07 18:39:58 solene Exp $
 
 COMMENT =	SDL multi protocol navigator
 VERSION =	1.8.1
+REVISION =	0
 
 DISTNAME =	lagrange-${VERSION}
 
@@ -22,9 +23,11 @@ DEBUG_PACKAGES =${BUILD_PACKAGES}
 MASTER_SITES =	https://git.skyjake.fi/skyjake/lagrange/releases/download/v${VERSION}/
 
 COMPILER =	base-clang ports-gcc
-COMPILER_LANGS =	c
+COMPILER_LANGS=	c
 
 MODULES =	devel/cmake
+
+BUILD_DEPENDS =	archivers/zip
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
