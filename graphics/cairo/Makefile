@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.72 2021/10/25 07:21:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2021/11/07 19:35:33 kurt Exp $
 
 COMMENT=		vector graphics library
 
 DISTNAME=		cairo-1.17.4
+REVISION=		0
 
 CATEGORIES=		graphics
 DPB_PROPERTIES=		parallel
@@ -36,6 +37,9 @@ LIB_DEPENDS=		archivers/lzo2 \
 
 CONFIGURE_ARGS=		-Dspectre=disabled \
 			-Dtests=disabled
+
+# needed for arch with ld.bfd 
+CONFIGURE_ENV=		LDFLAGS="-L/usr/X11R6/lib"
 
 # needed for firefox
 CONFIGURE_ARGS +=	-Dtee=enabled
