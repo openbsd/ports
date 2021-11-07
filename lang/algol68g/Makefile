@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/07 20:33:01 bcallah Exp $
 
 COMMENT =	Algol 68 Genie compiler-interpreter
 DISTNAME =	algol68g-2.8.5
+REVISION =	0
 CATEGORIES =	lang
 
 HOMEPAGE =	https://jmvdveer.home.xs4all.nl/algol.html
