@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/05 12:58:23 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/11/07 08:37:46 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/et_xmlfile/
 lib/python${MODPY_VERSION}/site-packages/et_xmlfile-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/et_xmlfile-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -9,14 +9,4 @@ lib/python${MODPY_VERSION}/site-packages/et_xmlfile/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/et_xmlfile/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/et_xmlfile/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/et_xmlfile/${MODPY_PYCACHE}xmlfile.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/et_xmlfile/tests/
-lib/python${MODPY_VERSION}/site-packages/et_xmlfile/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/et_xmlfile/tests/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/et_xmlfile/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/et_xmlfile/tests/${MODPY_PYCACHE}common_imports.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/et_xmlfile/tests/${MODPY_PYCACHE}helper.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/et_xmlfile/tests/${MODPY_PYCACHE}test_incremental_xmlfile.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/et_xmlfile/tests/common_imports.py
-lib/python${MODPY_VERSION}/site-packages/et_xmlfile/tests/helper.py
-lib/python${MODPY_VERSION}/site-packages/et_xmlfile/tests/test_incremental_xmlfile.py
 lib/python${MODPY_VERSION}/site-packages/et_xmlfile/xmlfile.py
