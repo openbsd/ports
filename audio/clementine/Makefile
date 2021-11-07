@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2021/06/09 19:50:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2021/11/07 15:05:34 rsadowski Exp $
 
 COMMENT =	music player
 
@@ -17,11 +17,11 @@ PERMIT_PACKAGE = Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU Qt5Concurrent Qt5Core
 WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5OpenGL Qt5Sql Qt5Widgets
-WANTLIB += Qt5X11Extras Qt5Xml X11 c cdio chromaprint execinfo
-WANTLIB += fftw3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gpod
-WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstpbutils-1.0
+WANTLIB += Qt5X11Extras Qt5Xml X11 Xext Xi Xmu c cdio chromaprint
+WANTLIB += execinfo fftw3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += gpod gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 iconv intl lastfm5
-WANTLIB += m mtp mygpo-qt5 protobuf pulse sqlite3 z
+WANTLIB += m mtp mygpo-qt5 protobuf pulse sqlite3 tag z
 
 # those are dlopen'ed
 WANTLIB += plist
@@ -43,6 +43,7 @@ LIB_DEPENDS =		audio/chromaprint \
 			audio/libgpod \
 			audio/liblastfm>=1.1.0 \
 			audio/pulseaudio \
+			audio/taglib \
 			devel/libmtp \
 			devel/libplist \
 			devel/protobuf \
