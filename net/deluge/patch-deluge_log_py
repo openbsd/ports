@@ -1,0 +1,35 @@
+$OpenBSD: patch-deluge_log_py,v 1.1 2021/11/07 12:14:37 rsadowski Exp $
+
+Index: deluge/log.py
+--- deluge/log.py.orig
++++ deluge/log.py
+@@ -86,9 +86,9 @@ class Logging(LoggingLoggerClass):
+     def exception(self, msg, *args, **kwargs):
+         yield LoggingLoggerClass.exception(self, msg, *args, **kwargs)
+ 
+-    def findCaller(self, stack_info=False):  # NOQA: N802
++    def findCaller(self, *args, **kwargs):  # NOQA: N802
+         f = logging.currentframe().f_back
+-        rv = '(unknown file)', 0, '(unknown function)'
++        rv = ('(unknown file)', 0, '(unknown function)', None)
+         while hasattr(f, 'f_code'):
+             co = f.f_code
+             filename = os.path.normcase(co.co_filename)
+@@ -98,12 +98,12 @@ class Logging(LoggingLoggerClass):
+             ):
+                 f = f.f_back
+                 continue
+-            if common.PY2:
+-                rv = (filename, f.f_lineno, co.co_name)
+-            else:
+-                rv = (filename, f.f_lineno, co.co_name, None)
++            rv = (filename, f.f_lineno, co.co_name, None)
+             break
+-        return rv
++        if common.PY2:
++            return rv[:-1]
++        else:
++            return rv
+ 
+ 
+ levels = {
