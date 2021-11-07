@@ -1,10 +1,11 @@
 #!/bin/ksh
 #
-# $OpenBSD: postgresql.rc,v 1.13 2019/08/27 19:49:46 awolk Exp $
+# $OpenBSD: postgresql.rc,v 1.14 2021/11/07 14:27:44 robert Exp $
 
 daemon="${TRUEPREFIX}/bin/pg_ctl"
 daemon_flags="-D /var/postgresql/data -w -l /var/postgresql/logfile"
 daemon_user="_postgresql"
+daemon_timeout=300
 
 . /etc/rc.d/rc.subr
 
