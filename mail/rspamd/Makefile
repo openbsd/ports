@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2021/09/02 18:40:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.97 2021/11/07 11:40:10 sthen Exp $
 
 # https://github.com/rspamd/rspamd/issues/3858
 ONLY_FOR_ARCHS=	${LP64_ARCHS}
@@ -7,7 +7,7 @@ COMMENT=	event-driven spam filtering system in C/Lua
 
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
-GH_TAGNAME=	3.0
+GH_TAGNAME=	3.1
 
 CATEGORIES=	mail
 
@@ -19,7 +19,7 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += blas c crypto glib-2.0 icudata icui18n icuuc intl m
+WANTLIB += blas c crypto glib-2.0 icudata icui18n icuio icuuc intl m
 WANTLIB += pcre sodium sqlite3 ssl util z
 
 FLAVORS=	no_luajit hyperscan
@@ -105,6 +105,7 @@ LIB_DEPENDS+=	textproc/hyperscan
 WANTLIB+=	hs
 .endif
 
+NO_TEST=	Yes
 # Make sure you have no rspamd or redis instances running and note that the
 # test suite uses the network.
 #
@@ -114,13 +115,15 @@ WANTLIB+=	hs
 # limitation of the tool).
 #
 # At least as of 2.2/2.3 we do currently see a hang in tests.
-do-test:
-	cd ${WRKSRC} && \
-		env RSPAMADM=${WRKBUILD}/src/rspamadm/rspamadm \
-		RSPAMC=${WRKBUILD}/src/client/rspamc \
-		RSPAMD=${TRUEPREFIX}/bin/rspamd \
-		${LOCALBASE}/bin/robot${MODPY_BIN_SUFFIX} \
-		test/functional/cases
+#do-test:
+#	cd ${WRKSRC} && env \
+#		RSPAMADM=${WRKBUILD}/src/rspamadm/rspamadm \
+#		RSPAMC=${WRKBUILD}/src/client/rspamc \
+#		RSPAMD=${TRUEPREFIX}/bin/rspamd \
+#		RSPAMD_TESTDIR=${WRKSRC}/test \
+#		RSPAMD_INSTALLROOT=${WRKINST} \
+#		${LOCALBASE}/bin/robot${MODPY_BIN_SUFFIX} \
+#		test/functional/cases
 
 # no trailing crlf
 post-extract:
