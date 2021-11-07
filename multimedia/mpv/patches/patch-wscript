@@ -1,4 +1,4 @@
-$OpenBSD: patch-wscript,v 1.3 2021/08/22 06:59:18 rsadowski Exp $
+$OpenBSD: patch-wscript,v 1.4 2021/11/07 18:47:37 kn Exp $
 
 ao_sndio: add this audio output again
 
@@ -7,9 +7,9 @@ https://github.com/mpv-player/mpv/pull/8314
 Index: wscript
 --- wscript.orig
 +++ wscript
-@@ -422,6 +422,12 @@ audio_output_features = [
-         'deps': 'sdl2',
-         'func': check_true,
+@@ -435,6 +435,12 @@ audio_output_features = [
+         'func': check_statement(['sys/soundcard.h'], 'int x = SNDCTL_DSP_SETPLAYVOL'),
+         'deps': 'posix && gpl',
      }, {
 +        'name': '--sndio',
 +        'desc': 'sndio audio input/output',

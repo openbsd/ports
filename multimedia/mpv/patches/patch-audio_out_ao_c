@@ -1,4 +1,4 @@
-$OpenBSD: patch-audio_out_ao_c,v 1.1 2021/08/22 06:59:18 rsadowski Exp $
+$OpenBSD: patch-audio_out_ao_c,v 1.2 2021/11/07 18:47:37 kn Exp $
 
 ao_sndio: add this audio output again
 
@@ -7,7 +7,7 @@ https://github.com/mpv-player/mpv/pull/8314
 Index: audio/out/ao.c
 --- audio/out/ao.c.orig
 +++ audio/out/ao.c
-@@ -40,6 +40,7 @@ extern const struct ao_driver audio_out_audiounit;
+@@ -41,6 +41,7 @@ extern const struct ao_driver audio_out_audiounit;
  extern const struct ao_driver audio_out_coreaudio;
  extern const struct ao_driver audio_out_coreaudio_exclusive;
  extern const struct ao_driver audio_out_rsound;
@@ -15,7 +15,7 @@ Index: audio/out/ao.c
  extern const struct ao_driver audio_out_pulse;
  extern const struct ao_driver audio_out_jack;
  extern const struct ao_driver audio_out_openal;
-@@ -83,6 +84,9 @@ static const struct ao_driver * const audio_out_driver
+@@ -87,6 +88,9 @@ static const struct ao_driver * const audio_out_driver
  #endif
  #if HAVE_SDL2_AUDIO
      &audio_out_sdl,

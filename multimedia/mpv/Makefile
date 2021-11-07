@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.74 2021/09/15 05:16:24 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.75 2021/11/07 18:47:36 kn Exp $
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
-GH_TAGNAME =		v0.33.1
-REVISION =		2
+GH_TAGNAME =		v0.34.0
 
 SHARED_LIBS +=		mpv		0.2 # 1.109
 

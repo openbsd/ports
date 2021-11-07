@@ -1,4 +1,4 @@
-$OpenBSD: patch-wscript_build_py,v 1.1 2021/08/22 06:59:18 rsadowski Exp $
+$OpenBSD: patch-wscript_build_py,v 1.2 2021/11/07 18:47:37 kn Exp $
 
 ao_sndio: add this audio output again
 
@@ -7,7 +7,7 @@ https://github.com/mpv-player/mpv/pull/8314
 Index: wscript_build.py
 --- wscript_build.py.orig
 +++ wscript_build.py
-@@ -247,6 +247,7 @@ def build(ctx):
+@@ -248,6 +248,7 @@ def build(ctx):
          ( "audio/out/ao_pcm.c" ),
          ( "audio/out/ao_pulse.c",                "pulse" ),
          ( "audio/out/ao_sdl.c",                  "sdl2-audio" ),

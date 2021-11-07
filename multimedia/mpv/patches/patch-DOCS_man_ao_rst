@@ -1,4 +1,4 @@
-$OpenBSD: patch-DOCS_man_ao_rst,v 1.1 2021/08/22 06:59:18 rsadowski Exp $
+$OpenBSD: patch-DOCS_man_ao_rst,v 1.2 2021/11/07 18:47:37 kn Exp $
 
 ao_sndio: add this audio output again
 
@@ -7,7 +7,7 @@ https://github.com/mpv-player/mpv/pull/8314
 Index: DOCS/man/ao.rst
 --- DOCS/man/ao.rst.orig
 +++ DOCS/man/ao.rst
-@@ -216,5 +216,11 @@ Available audio output drivers are:
+@@ -219,5 +219,11 @@ Available audio output drivers are:
          ``no-waveheader`` option - with ``waveheader`` it's broken, because
          it will write a WAVE header every time the file is opened.
  
