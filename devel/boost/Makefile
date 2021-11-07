@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.121 2021/11/02 00:00:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.122 2021/11/07 10:30:35 jca Exp $
 
-NOT_FOR_ARCHS-md = alpha hppa sparc64
+NOT_FOR_ARCHS-md = alpha hppa riscv64 sparc64
 
 COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
