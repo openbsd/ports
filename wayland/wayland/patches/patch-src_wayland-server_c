@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_wayland-server_c,v 1.1.1.1 2021/11/06 18:58:28 rsadowski Exp $
+$OpenBSD: patch-src_wayland-server_c,v 1.2 2021/11/07 08:01:53 semarie Exp $
 
 Index: src/wayland-server.c
 --- src/wayland-server.c.orig
@@ -77,19 +77,14 @@ Index: src/wayland-server.c
  
  	client->connection = wl_connection_create(fd);
  	if (client->connection == NULL)
-@@ -586,12 +619,28 @@ WL_EXPORT void
+@@ -586,12 +619,23 @@ WL_EXPORT void
  wl_client_get_credentials(struct wl_client *client,
  			  pid_t *pid, uid_t *uid, gid_t *gid)
  {
 +#ifdef HAVE_SYS_UCRED_H
 +	/* DragonFly or OpenBSD */
  	if (pid)
-+#if defined(__OpenBSD__)
-+		*uid = client->xucred.cr_uid;
-+		*gid = client->xucred.cr_gid;
-+#else
 +		*pid = 0;
-+#endif
 +	if (uid)
 +		*uid = client->xucred.cr_uid;
 +	if (gid)
