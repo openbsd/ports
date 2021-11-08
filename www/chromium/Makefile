@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.595 2021/11/07 15:29:20 kn Exp $
+# $OpenBSD: Makefile,v 1.596 2021/11/08 10:40:16 robert Exp $
 
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
 
@@ -145,6 +145,7 @@ GN_ARGS=	enable_nacl=false \
 		treat_warnings_as_errors=false \
 		clang_use_chrome_plugins=false \
 		use_allocator=\"none\" \
+		use_allocator_shim=false \
 		disable_fieldtrial_testing_config=true \
 		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
 		fatal_linker_warnings=false
