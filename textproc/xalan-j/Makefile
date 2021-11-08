@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/05/19 01:50:31 kurt Exp $
+# $OpenBSD: Makefile,v 1.9 2021/11/08 11:38:41 rsadowski Exp $
 
 COMMENT =		apache project to transform xml documents using xslt
 
@@ -8,9 +8,9 @@ DISTNAME =		xalan-j${VERSION}
 DISTFILES =		xalan-j_${VERSION_}-bin.tar.gz
 PKGNAME =		xalan-j-${VERSION}
 CATEGORIES =		textproc
-REVISION =		3
+REVISION =		4
 
-HOMEPAGE =		http://xalan.apache.org/index.html
+HOMEPAGE =		https://xalan.apache.org/
 MAINTAINER =		Bryan Everly <bryan@bceassociates.com>
 
 MODULES =		java
@@ -19,7 +19,7 @@ MODJAVA_VER =		1.8+
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		http://mirror.reverse.net/pub/apache/xalan/xalan-j/binaries/
+MASTER_SITES =		https://mirror.reverse.net/pub/apache/xalan/xalan-j/binaries/
 
 BUILD_DEPENDS =		archivers/gtar
 TAR =			gtar
