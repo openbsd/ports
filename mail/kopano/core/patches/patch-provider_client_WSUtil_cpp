@@ -1,0 +1,21 @@
+$OpenBSD: patch-provider_client_WSUtil_cpp,v 1.1 2021/11/08 15:29:58 robert Exp $
+
+Index: provider/client/WSUtil.cpp
+--- provider/client/WSUtil.cpp.orig
++++ provider/client/WSUtil.cpp
+@@ -2077,7 +2077,14 @@ static HRESULT CopyMAPISourceKeyToSoapSourceKey(const 
+ {
+ 	if (lpsMAPISourceKey == nullptr || lpsSoapSourceKey == nullptr)
+ 		return MAPI_E_INVALID_PARAMETER;
+-	lpsSoapSourceKey->__ptr  = soap_new_unsignedByte(nullptr, lpsSoapSourceKey->__size);
++	if (lpsMAPISourceKey->lpb == nullptr) {
++		lpsSoapSourceKey->__ptr = nullptr;
++		lpsSoapSourceKey->__size = 0;
++		return hrSuccess;
++	}
++	lpsSoapSourceKey->__ptr = soap_new_unsignedByte(nullptr, lpsMAPISourceKey->cb);
++	if (lpsSoapSourceKey->__ptr == nullptr)
++		throw std::bad_alloc();
+ 	lpsSoapSourceKey->__size = lpsMAPISourceKey->cb;
+ 	memcpy(lpsSoapSourceKey->__ptr, lpsMAPISourceKey->lpb, lpsSoapSourceKey->__size);
+ 	return hrSuccess;
