@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1557 2021/11/08 13:35:29 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1558 2021/11/08 13:36:25 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1132,6 +1132,7 @@ PKG_ARGS${_S} += -DPERMIT_PACKAGE=${PERMIT_PACKAGE${_S}:Q}
 PKG_ARGS${_S} += -p ${PREFIX${_S}}
 PKG_ARGS${_S} += -DREVISION_CHECK=${REVISION${_S}}
 PKG_ARGS${_S} += -DEPOCH_CHECK=${EPOCH${_S}}
+# XXX FULLPKGNAME-sub default will be FULLPKGNAME-${SUBPACKAGE}
 PKG_ARGS${_S} += -DFLAVOR_LIST_CHECK="${FLAVORS} ${_S:S/^-//}"
 
 SUBST_CMD${_S} = ${_PERLSCRIPT}/pkg_subst ${_substvars${_S}}
