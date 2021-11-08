@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1556 2021/09/13 15:40:02 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1557 2021/11/08 13:35:29 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1130,6 +1130,9 @@ PKG_ARGS${_S} += ${_substvars${_S}:N-DTRUEPREFIX=*}
 PKG_ARGS${_S} += -DPERMIT_PACKAGE_FTP=${PERMIT_PACKAGE${_S}:Q}
 PKG_ARGS${_S} += -DPERMIT_PACKAGE=${PERMIT_PACKAGE${_S}:Q}
 PKG_ARGS${_S} += -p ${PREFIX${_S}}
+PKG_ARGS${_S} += -DREVISION_CHECK=${REVISION${_S}}
+PKG_ARGS${_S} += -DEPOCH_CHECK=${EPOCH${_S}}
+PKG_ARGS${_S} += -DFLAVOR_LIST_CHECK="${FLAVORS} ${_S:S/^-//}"
 
 SUBST_CMD${_S} = ${_PERLSCRIPT}/pkg_subst ${_substvars${_S}}
 SUBST_CMD${_S} += -i -B ${WRKDIR}
@@ -1992,6 +1995,7 @@ _update_plist = ${_cache_fragment}; \
 	-w ${PATCHORIG} -w ${DISTORIG} -w .beforesubst \
 	-i ARCH -i BASE_PKGPATH -i FULLPKGNAME -i PKGSTEM -i FULLPKGPATH \
 	-i LOCALSTATEDIR -i MACHINE_ARCH \
+	-i REVISION_CHECK -i EPOCH_CHECK -i FLAVOR_LIST_CHECK \
 	-s BASE_PKGPATH -s LOCALBASE -s LOCALSTATEDIR -s PREFIX \
 	-s RCDIR -s SYSCONFDIR -s X11BASE \
 	-X ${_FAKE_COOKIE} -X ${_INSTALL_PRE_COOKIE} -X ${_PKGLOCATE_COOKIE} \
