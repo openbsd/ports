@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.32 2021/10/29 11:13:06 patrick Exp $
+# $OpenBSD: Makefile,v 1.33 2021/11/08 05:54:56 jsg Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT=	Device Tree Blobs
+# 5.15 breaks cpsw(4) on bbb
 VERSION=	5.14
-REVISION=	0
+REVISION=	1
 DISTNAME=	linux-${VERSION}
 PKGNAME=	dtb-${VERSION:S/-//}
 CATEGORIES=	sysutils
 HOMEPAGE=	https://www.devicetree.org
-MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 # dual GPL/BSD
 PERMIT_PACKAGE=	Yes
