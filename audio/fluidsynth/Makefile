@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2021/06/25 21:48:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2021/11/08 05:35:30 ratchov Exp $
 
 COMMENT =		SoundFont2 software synthesizer
 GH_ACCOUNT =		FluidSynth
 GH_PROJECT =		fluidsynth
 GH_TAGNAME =		v1.1.9
+REVISION =		0
 
 SHARED_LIBS +=	fluidsynth           2.0      # 6.0
 
