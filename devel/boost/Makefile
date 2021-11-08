@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.122 2021/11/07 10:30:35 jca Exp $
+# $OpenBSD: Makefile,v 1.123 2021/11/08 17:57:09 jca Exp $
 
-NOT_FOR_ARCHS-md = alpha hppa riscv64 sparc64
+NOT_FOR_ARCHS-md = alpha hppa sparc64
 
 COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
@@ -11,7 +11,7 @@ DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME-main=	boost-${VERSION}
 PKGNAME-md=	boost-md-${VERSION}
 REVISION-main=	2
-REVISION-md=	0
+REVISION-md=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://boostorg.jfrog.io/artifactory/main/release/${VERSION}/source/
 EXTRACT_SUFX=	.tar.bz2

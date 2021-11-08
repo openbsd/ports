@@ -1,0 +1,25 @@
+$OpenBSD: patch-libs_context_build_Jamfile_v2,v 1.5 2021/11/08 17:57:10 jca Exp $
+
+Add support for clang on riscv64.
+
+Index: libs/context/build/Jamfile.v2
+--- libs/context/build/Jamfile.v2.orig
++++ libs/context/build/Jamfile.v2
+@@ -432,6 +432,17 @@ alias asm_sources
+      <toolset>gcc
+    ;
+ 
++alias asm_sources
++   : asm/make_riscv64_sysv_elf_gas.S
++     asm/jump_riscv64_sysv_elf_gas.S
++     asm/ontop_riscv64_sysv_elf_gas.S
++   : <abi>sysv
++     <address-model>64
++     <architecture>riscv
++     <binary-format>elf
++     <toolset>clang
++   ;
++
+ # S390X
+ # S390X/SYSV/ELF
+ alias asm_sources
