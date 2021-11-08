@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.184 2021/11/06 13:41:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.185 2021/11/08 10:07:37 ajacoutot Exp $
 
 COMMENT=		SAX-based render library for SVG files
 
@@ -17,6 +17,7 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 ### stable
 .if ${PROPERTIES:Mrust}
+REVISION=		0
 SHARED_LIBS +=  rsvg-2               40.0     # 50.0
 GNOME_VERSION=		${STABLE_VERSION}
 BUILD_DEPENDS=		lang/rust
@@ -27,8 +28,6 @@ MAKE_ENV +=		CARGO_BUILD_JOBS=${MAKE_JOBS} \
 			CARGO_PROFILE_RELEASE_DEBUG=1
 MAKE_FLAGS +=		V=1
 WANTLIB += ${COMPILER_LIBCXX} Xau Xdmcp cairo-gobject jpeg
-# XXX see pre-configure
-BUILD_DEPENDS +=	devel/llvm
 .else
 ### old
 REVISION=		2
@@ -66,16 +65,6 @@ CONFIGURE_ARGS=		--disable-tools
 .if !${PROPERTIES:Mlld}
 # error: -Bsymbolic-functions requested but not supported by ld
 CONFIGURE_ARGS +=	--disable-Bsymbolic
-.endif
-
-# XXX our nm(1) is buggy:
-# ld: error: undefined symbol: rsvg_error_get_type
-# ld: error: undefined symbol: rsvg_handle_get_type
-# ld: error: undefined symbol: rsvg_handle_flags_get_type
-# ld: error: undefined symbol: rsvg_error_quark
-.if ${PROPERTIES:Mrust}
-pre-configure:
-	ln -sf ${LOCALBASE}/bin/llvm-nm ${WRKDIR}/bin/nm
 .endif
 
 post-install:
