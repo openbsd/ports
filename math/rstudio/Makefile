@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/05/22 12:01:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2021/11/08 11:39:21 rsadowski Exp $
 
 # XXX: patches/patch-src_cpp_core_r_util_REnvironmentPosix_cpp
 # must be kept in sync with math/R shlib bumps.
@@ -10,7 +10,7 @@ ONLY_FOR_ARCHS =	${LP64_ARCHS}
 V =		1.3.959
 COMMENT =	Integrated Development Environment (IDE) for R
 PKGNAME =	rstudio-${V}
-REVISION =	3
+REVISION =	4
 CATEGORIES =	math x11
 
 HOMEPAGE =	https://www.rstudio.com/
@@ -20,8 +20,8 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5OpenGL Qt5Positioning Qt5PrintSupport Qt5Qml Qt5Quick
-WANTLIB += Qt5QuickWidgets Qt5Sensors Qt5Sql Qt5Svg Qt5WebChannel
+WANTLIB += Qt5OpenGL Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
+WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Sensors Qt5Sql Qt5Svg Qt5WebChannel
 WANTLIB += Qt5WebEngine Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets
 WANTLIB += Qt5Xml Qt5XmlPatterns boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
