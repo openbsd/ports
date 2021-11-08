@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/01/02 09:47:48 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/11/08 14:33:37 landry Exp $
 @bin bin/gpxsee
 share/applications/gpxsee.desktop
 share/gpxsee/
@@ -13,12 +13,90 @@ share/gpxsee/maps/OpenStreetMap.xml
 share/gpxsee/maps/OpenTopoMap.xml
 share/gpxsee/maps/USGS-imagery.xml
 share/gpxsee/maps/USGS-topo.xml
-share/icons/hicolor/128x128/apps/gpxsee.png
-share/icons/hicolor/16x16/apps/gpxsee.png
-share/icons/hicolor/32x32/apps/gpxsee.png
-share/icons/hicolor/48x48/apps/gpxsee.png
-share/icons/hicolor/64x64/apps/gpxsee.png
-share/icons/hicolor/scalable/apps/gpxsee.svg
+share/gpxsee/symbols/
+share/gpxsee/symbols/ATV.png
+share/gpxsee/symbols/Airport.png
+share/gpxsee/symbols/Amusement Park.png
+share/gpxsee/symbols/Anchor.png
+share/gpxsee/symbols/Ballpark.png
+share/gpxsee/symbols/Bank.png
+share/gpxsee/symbols/Bar.png
+share/gpxsee/symbols/Beach.png
+share/gpxsee/symbols/Big Game.png
+share/gpxsee/symbols/Bike Trail.png
+share/gpxsee/symbols/Boat Ramp.png
+share/gpxsee/symbols/Bowling.png
+share/gpxsee/symbols/Bridge.png
+share/gpxsee/symbols/Building.png
+share/gpxsee/symbols/Campground.png
+share/gpxsee/symbols/Car Rental.png
+share/gpxsee/symbols/Car Repair.png
+share/gpxsee/symbols/Car.png
+share/gpxsee/symbols/Cemetary.png
+share/gpxsee/symbols/Church.png
+share/gpxsee/symbols/Crossing.png
+share/gpxsee/symbols/Dam.png
+share/gpxsee/symbols/Drinking Water.png
+share/gpxsee/symbols/Fastfood.png
+share/gpxsee/symbols/Fishing Area.png
+share/gpxsee/symbols/Forest.png
+share/gpxsee/symbols/Furbearer.png
+share/gpxsee/symbols/Gas Station.png
+share/gpxsee/symbols/Geocache Found.png
+share/gpxsee/symbols/Geocache.png
+share/gpxsee/symbols/Ghost Town.png
+share/gpxsee/symbols/Golf Course.png
+share/gpxsee/symbols/Ground Transportation.png
+share/gpxsee/symbols/Heliport.png
+share/gpxsee/symbols/Hunting Area.png
+share/gpxsee/symbols/Iceskating.png
+share/gpxsee/symbols/Information.png
+share/gpxsee/symbols/Library.png
+share/gpxsee/symbols/Live Theater.png
+share/gpxsee/symbols/Lodging.png
+share/gpxsee/symbols/Marina.png
+share/gpxsee/symbols/Medical Facility.png
+share/gpxsee/symbols/Military.png
+share/gpxsee/symbols/Mine.png
+share/gpxsee/symbols/Movie Theater.png
+share/gpxsee/symbols/Museum.png
+share/gpxsee/symbols/Oil Field.png
+share/gpxsee/symbols/Parachute Area.png
+share/gpxsee/symbols/Park.png
+share/gpxsee/symbols/Parking Area.png
+share/gpxsee/symbols/Pharmacy.png
+share/gpxsee/symbols/Picnic Area.png
+share/gpxsee/symbols/Police Station.png
+share/gpxsee/symbols/Post Office.png
+share/gpxsee/symbols/RV Park.png
+share/gpxsee/symbols/Radio Beacon.png
+share/gpxsee/symbols/Residence.png
+share/gpxsee/symbols/Restaurant.png
+share/gpxsee/symbols/Restroom.png
+share/gpxsee/symbols/Scenic Area.png
+share/gpxsee/symbols/School.png
+share/gpxsee/symbols/Shipwreck.png
+share/gpxsee/symbols/Shopping Center.png
+share/gpxsee/symbols/Ski Resort.png
+share/gpxsee/symbols/Skiing Area.png
+share/gpxsee/symbols/Skull and Crossbones.png
+share/gpxsee/symbols/Small Game.png
+share/gpxsee/symbols/Stadium.png
+share/gpxsee/symbols/Summit.png
+share/gpxsee/symbols/Tall Tower.png
+share/gpxsee/symbols/Telephone.png
+share/gpxsee/symbols/Trail Head.png
+share/gpxsee/symbols/Truck Stop.png
+share/gpxsee/symbols/Truck.png
+share/gpxsee/symbols/Tunnel.png
+share/gpxsee/symbols/Ultralight Area.png
+share/gpxsee/symbols/Upland Game.png
+share/gpxsee/symbols/Water Hydrant.png
+share/gpxsee/symbols/Water Source.png
+share/gpxsee/symbols/Waterfowl.png
+share/gpxsee/symbols/Waypoint.png
+share/gpxsee/symbols/Winery.png
+share/gpxsee/symbols/Zoo.png
 share/mime/packages/gpxsee.xml
 @tag update-mime-database
 @tag update-desktop-database
