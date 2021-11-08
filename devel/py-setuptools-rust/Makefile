@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/08 13:59:46 sthen Exp $
-
-ONLY_FOR_ARCHS=		${RUST_ARCHS}
+# $OpenBSD: Makefile,v 1.6 2021/11/08 14:09:24 sthen Exp $
 
 COMMENT=		setuptools Rust extension plugin
 
@@ -28,7 +26,11 @@ BUILD_DEPENDS=		devel/py-setuptools_scm${MODPY_FLAVOR}
 
 RUN_DEPENDS=		devel/py-semantic-version${MODPY_FLAVOR} \
 			devel/py-wheel${MODPY_FLAVOR} \
-			lang/rust \
 			textproc/py-toml${MODPY_FLAVOR}
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mrust}
+RUN_DEPENDS+=		lang/rust
+.endif
 
 .include <bsd.port.mk>
