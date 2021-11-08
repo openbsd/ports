@@ -1,14 +1,18 @@
-$OpenBSD: patch-tools_protoc_wrapper_protoc_wrapper_py,v 1.15 2021/10/20 10:27:48 robert Exp $
+$OpenBSD: patch-tools_protoc_wrapper_protoc_wrapper_py,v 1.16 2021/11/08 12:53:49 robert Exp $
 
 Index: tools/protoc_wrapper/protoc_wrapper.py
 --- tools/protoc_wrapper/protoc_wrapper.py.orig
 +++ tools/protoc_wrapper/protoc_wrapper.py
-@@ -190,7 +190,7 @@ def main(argv):
+@@ -190,7 +190,11 @@ def main(argv):
      with open(options.descriptor_set_dependency_file, 'rb') as f:
        dependency_file_data = f.read().decode('utf-8')
  
 -  ret = subprocess.call(protoc_cmd)
-+  ret = subprocess.call(protoc_cmd, env={"LD_LIBRARY_PATH":"${WRKSRC}/out/Release", "PATH":"${WRKDIR}/bin"})
++  nenv = os.environ.copy()                                                     
++  nenv["PATH"] = "${WRKOBJDIR}/bin:" + nenv["PATH"]        
++  nenv["LD_LIBRARY_PATH"] = "${WRKSRC}/out/Release"
++
++  ret = subprocess.call(protoc_cmd, env=nenv)
    if ret != 0:
      if ret <= -100:
        # Windows error codes such as 0xC0000005 and 0xC0000409 are much easier to
