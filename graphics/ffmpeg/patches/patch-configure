@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.68 2021/08/10 21:32:07 sthen Exp $
+$OpenBSD: patch-configure,v 1.69 2021/11/08 12:41:51 sthen Exp $
 
 Index: configure
 --- configure.orig
@@ -20,7 +20,7 @@ Index: configure
  fast_clz_if_any="aarch64 alpha avr32 mips ppc x86"
  fast_unaligned_if_any="aarch64 ppc x86"
  simd_align_16_if_any="altivec neon sse"
-@@ -4914,6 +4915,9 @@ case "$arch" in
+@@ -4915,6 +4916,9 @@ case "$arch" in
      "Power Macintosh"|ppc*|powerpc*)
          arch="ppc"
      ;;
@@ -30,7 +30,7 @@ Index: configure
      s390|s390x)
          arch="s390"
      ;;
-@@ -5305,6 +5309,10 @@ case "$arch" in
+@@ -5306,6 +5310,10 @@ case "$arch" in
          check_64bit ppc ppc64
          enabled shared && enable_weak pic
      ;;
@@ -41,7 +41,7 @@ Index: configure
      s390)
          check_64bit s390 s390x
          enabled shared && enable_weak pic
-@@ -5377,7 +5385,6 @@ case $target_os in
+@@ -5378,7 +5386,6 @@ case $target_os in
          enable section_data_rel_ro
          striptype=""
          SHFLAGS='-shared'
@@ -49,7 +49,7 @@ Index: configure
          SLIB_INSTALL_LINKS=
          oss_indev_extralibs="-lossaudio"
          oss_outdev_extralibs="-lossaudio"
-@@ -5733,7 +5740,7 @@ set_default libdir
+@@ -5734,7 +5741,7 @@ set_default libdir
  set_default $PATHS_LIST
  set_default nm
  
@@ -58,7 +58,7 @@ Index: configure
  
  enable_weak_pic() {
      disabled pic && return
-@@ -6649,7 +6656,8 @@ enabled alsa && { check_pkg_config alsa alsa "alsa/aso
+@@ -6650,7 +6657,8 @@ enabled alsa && { check_pkg_config alsa alsa "alsa/aso
  enabled libjack &&
      require_pkg_config libjack jack jack/jack.h jack_port_get_latency_range
  
