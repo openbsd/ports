@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.54 2021/11/08 14:17:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2021/11/08 14:46:55 sthen Exp $
 
 COMMENT=	cryptographic recipes and primitives for Python
 
 MODPY_EGG_VERSION=	3.4.8
-REVISION=	3
+REVISION=	4
 DISTNAME=	cryptography-${MODPY_EGG_VERSION}
 DISTFILES=	cryptography-${MODPY_EGG_VERSION}${EXTRACT_SUFX}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
@@ -30,22 +30,19 @@ MODPY_PI=	Yes
 FLAVORS=	python3
 FLAVOR=		python3
 
-RUN_DEPENDS=	devel/py-cffi${MODPY_FLAVOR}>=1.4.2 \
-		devel/py-six${MODPY_FLAVOR} \
-		net/py-idna${MODPY_FLAVOR} \
-		security/py-asn1crypto${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-cffi${MODPY_FLAVOR}>=1.4.2
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		devel/py-setuptools-rust${MODPY_FLAVOR}
 
-PORTHOME=	${WRKDIR}
-
+# needs newer pytest than is in-tree
 MODPY_PYTEST=	Yes
-TEST_DEPENDS=	${FULLPKGNAME}:${FULLPKGPATH} \
-		devel/py-coverage${MODPY_FLAVOR} \
+PORTHOME=	${WRKDIR}
+TEST_DEPENDS=	devel/py-coverage${MODPY_FLAVOR} \
 		devel/py-hypothesis${MODPY_FLAVOR} \
 		devel/py-pretend${MODPY_FLAVOR} \
 		devel/py-test-subtests${MODPY_FLAVOR} \
+		devel/py-test-xdist${MODPY_FLAVOR} \
 		devel/py-tz${MODPY_FLAVOR} \
 		security/py-cryptography_vectors${MODPY_FLAVOR}=${MODPY_EGG_VERSION} \
 		textproc/py-iso8601${MODPY_FLAVOR}
