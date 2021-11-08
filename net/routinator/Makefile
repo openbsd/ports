@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2021/11/03 12:03:05 sthen Exp $
-
-BROKEN= downloads during build
+# $OpenBSD: Makefile,v 1.21 2021/11/08 12:38:30 tb Exp $
 
 BROKEN-sparc64 =	ring-0.6.20 does not build on sparc64
 
@@ -9,6 +7,15 @@ COMMENT =		RPKI "relying party" software
 GH_ACCOUNT =		NLnetLabs
 GH_PROJECT =		routinator
 GH_TAGNAME =		v0.10.1
+
+ROUTINATOR_UI_URL =	https://github.com/NLnetLabs/routinator-ui/releases/download/
+ROUTINATOR_UI_VERSION =	0.3.4
+
+MASTER_SITES0 =	${ROUTINATOR_UI_URL}/v${ROUTINATOR_UI_VERSION}/
+DISTFILES +=	routinator-ui-${ROUTINATOR_UI_VERSION}{routinator-ui-build}.tar.gz:0
+
+SUBST_VARS +=		ROUTINATOR_UI_VERSION
+SUBST_VARS +=		DISTDIR
 
 CATEGORIES =		net
 
@@ -28,6 +35,9 @@ FIX_EXTRACT_PERMISSIONS = Yes
 DISTFILES +=		${DISTNAME}{${GH_TAGNAME}}${EXTRACT_SUFX}
 
 .include "crates.inc"
+
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/modcargo-crates/routinator-ui-${ROUTINATOR_UI_VERSION}/build.rs
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/routinator

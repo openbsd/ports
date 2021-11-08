@@ -1,0 +1,14 @@
+$OpenBSD: patch-modcargo-crates_routinator-ui-0_3_4_build_rs,v 1.1 2021/11/08 12:38:30 tb Exp $
+
+Index: modcargo-crates/routinator-ui-0.3.4/build.rs
+--- modcargo-crates/routinator-ui-0.3.4/build.rs.orig
++++ modcargo-crates/routinator-ui-0.3.4/build.rs
+@@ -110,6 +110,8 @@ impl Assets {
+ }
+ 
+ fn _download_ui_release_build() -> Result<Vec<u8>, reqwest::Error> {
++    let fname = format!("{}/routinator-ui-{}.tar.gz", "${DISTDIR}", "${ROUTINATOR_UI_VERSION}");
++    return Ok(std::fs::read(&fname).expect("could not read routinator ui file"));
+     let version = env!("CARGO_PKG_VERSION");
+     let mut headers = header::HeaderMap::new();
+ 

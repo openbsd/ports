@@ -170,6 +170,7 @@ SHA256 (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = cS4ieEHQV8HuHNL7Ivp+W
 SHA256 (cargo/winreg-0.7.0.tar.gz) = ASDbguih4Ln7M0WlOcR4dnwASNhChgmU2WET1bZnvWk=
 SHA256 (cargo/xattr-0.2.2.tar.gz) = JEw3QfQkDvRidIYDl8fHTlDrI2JJlpMOSEwWZ5YzpUw=
 SHA256 (routinator-0.10.1.tar.gz) = cywYA+CoJrEKJ94gmrYYaa3m33nJIMn2JmVui6tUNeQ=
+SHA256 (routinator-ui-0.3.4.tar.gz) = cHkJaz/ZhqoBsDzz50PPdNN7hEHTEoRMJeKwZd7tgpA=
 SIZE (cargo/addr2line-0.15.2.tar.gz) = 32966
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/ansi_term-0.11.0.tar.gz) = 17087
@@ -342,3 +343,4 @@ SIZE (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
 SIZE (cargo/winreg-0.7.0.tar.gz) = 21225
 SIZE (cargo/xattr-0.2.2.tar.gz) = 11750
 SIZE (routinator-0.10.1.tar.gz) = 203674
+SIZE (routinator-ui-0.3.4.tar.gz) = 756828
