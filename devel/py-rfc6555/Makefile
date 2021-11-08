@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/02 00:01:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/11/08 11:26:58 sthen Exp $
 
 COMMENT =		implementation of the Happy Eyeballs Algorithm
 
-MODPY_EGG_VERSION =	0.0.0
+MODPY_EGG_VERSION =	0.1.0
 
 DISTNAME =		rfc6555-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
 
 CATEGORIES =		devel
 
