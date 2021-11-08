@@ -1,0 +1,2 @@
+To run routinator via the rc scripts, use this first to initialize:
+# su -m _routinator -c "routinator -b /var/db/routinator init --accept-arin-rpa"

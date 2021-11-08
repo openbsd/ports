@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2021/11/08 12:38:30 tb Exp $
+# $OpenBSD: Makefile,v 1.22 2021/11/08 14:50:53 sthen Exp $
 
 BROKEN-sparc64 =	ring-0.6.20 does not build on sparc64
 
@@ -7,6 +7,7 @@ COMMENT =		RPKI "relying party" software
 GH_ACCOUNT =		NLnetLabs
 GH_PROJECT =		routinator
 GH_TAGNAME =		v0.10.1
+REVISION =		0
 
 ROUTINATOR_UI_URL =	https://github.com/NLnetLabs/routinator-ui/releases/download/
 ROUTINATOR_UI_VERSION =	0.3.4

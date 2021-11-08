@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/02/21 09:19:07 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/11/08 14:50:53 sthen Exp $
 @newgroup _routinator:844
 @newuser _routinator:844:_routinator:daemon:routinator user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/routinator
@@ -12,4 +12,3 @@ share/examples/routinator/routinator.conf.system-service
 @owner _routinator
 @sample /var/db/routinator/
 @sample /var/db/routinator/rpki-cache/
-@sample /var/db/routinator/tals/
