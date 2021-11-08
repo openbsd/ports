@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:02:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/11/08 13:20:52 feinerer Exp $
 
 COMMENT =	PDF parser and analyzer
 
-MODPY_EGG_VERSION =	20201018
+MODPY_EGG_VERSION =	20211012
 DISTNAME =		pdfminer.six-${MODPY_EGG_VERSION}
 PKGNAME =		py-pdfminer-${MODPY_EGG_VERSION}
-REVISION =		1
 
 CATEGORIES =	textproc
 

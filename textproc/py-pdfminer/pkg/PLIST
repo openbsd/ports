@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/12/08 08:11:34 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/11/08 13:20:52 feinerer Exp $
 bin/dumppdf.py
 bin/pdf2txt.py
 lib/python${MODPY_VERSION}/site-packages/pdfminer/
@@ -11,6 +11,7 @@ lib/python${MODPY_VERSION}/site-packages/pdfminer.six-${MODPY_EGG_VERSION}-py${M
 lib/python${MODPY_VERSION}/site-packages/pdfminer/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pdfminer/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pdfminer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pdfminer/${MODPY_PYCACHE}_saslprep.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pdfminer/${MODPY_PYCACHE}arcfour.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pdfminer/${MODPY_PYCACHE}ascii85.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pdfminer/${MODPY_PYCACHE}ccitt.${MODPY_PYC_MAGIC_TAG}pyc
@@ -37,6 +38,7 @@ lib/python${MODPY_VERSION}/site-packages/pdfminer/${MODPY_PYCACHE}psparser.${MOD
 lib/python${MODPY_VERSION}/site-packages/pdfminer/${MODPY_PYCACHE}runlength.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pdfminer/${MODPY_PYCACHE}settings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pdfminer/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pdfminer/_saslprep.py
 lib/python${MODPY_VERSION}/site-packages/pdfminer/arcfour.py
 lib/python${MODPY_VERSION}/site-packages/pdfminer/ascii85.py
 lib/python${MODPY_VERSION}/site-packages/pdfminer/ccitt.py
