@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.53 2021/11/02 00:02:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2021/11/08 14:17:04 sthen Exp $
 
 COMMENT=	cryptographic recipes and primitives for Python
 
 MODPY_EGG_VERSION=	3.4.8
-REVISION=	2
+REVISION=	3
 DISTNAME=	cryptography-${MODPY_EGG_VERSION}
 DISTFILES=	cryptography-${MODPY_EGG_VERSION}${EXTRACT_SUFX}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
@@ -62,6 +62,10 @@ do-configure:
 .else
 RUST_COMMENT=	"@comment "
 MAKE_ENV=	CRYPTOGRAPHY_DONT_BUILD_RUST=1
+MASTER_SITES9=	https://crates.io/api/v1/crates/
+.  for _cratename _cratever in ${MODCARGO_CRATES}
+SUPDISTFILES += cargo/${_cratename}-${_cratever}.tar.gz{${_cratename}/${_cratever}/download}:9
+.  endfor
 .endif
 SUBST_VARS+=	RUST_COMMENT
 
