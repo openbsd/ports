@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2019/12/20 13:34:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2021/11/09 12:15:33 ajacoutot Exp $
 
 COMMENT=		VirtualBox client with remote management
 
-DISTNAME=		RemoteBox-2.7
+DISTNAME=		RemoteBox-2.8
 PKGNAME=		${DISTNAME:L}
 EXTRACT_SUFX=		.tar.bz2
 
