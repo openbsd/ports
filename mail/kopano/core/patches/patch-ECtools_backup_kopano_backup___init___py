@@ -1,0 +1,16 @@
+$OpenBSD: patch-ECtools_backup_kopano_backup___init___py,v 1.1 2021/11/09 19:15:24 robert Exp $
+
+XXX hack so that the kopano-backup process does not hang
+
+Index: ECtools/backup/kopano_backup/__init__.py
+--- ECtools/backup/kopano_backup/__init__.py.orig
++++ ECtools/backup/kopano_backup/__init__.py
+@@ -144,6 +144,8 @@ class BackupWorker(kopano.Worker):
+     def main(self):
+         config, server, options = self.service.config, self.service.server, self.service.options
+         while True:
++            if self.iqueue.empty():
++                continue
+             stats = {'changes': 0, 'deletes': 0, 'errors': 0}
+             self.service.stats = stats # XXX generalize
+             with log_exc(self.log, stats):
