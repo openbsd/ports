@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/08/16 20:19:24 tb Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/11/09 11:24:29 tb Exp $
 @bin bin/lean
 @bin bin/leanchecker
 bin/leanpkg
@@ -94,6 +94,7 @@ include/lean_ext/library/ac_match.h
 include/lean_ext/library/aliases.h
 include/lean_ext/library/annotation.h
 include/lean_ext/library/app_builder.h
+include/lean_ext/library/ast_exporter.h
 include/lean_ext/library/attribute_manager.h
 include/lean_ext/library/aux_definition.h
 include/lean_ext/library/aux_recursors.h
@@ -275,6 +276,7 @@ include/lean_ext/library/tactic/smt/theory_ac.h
 include/lean_ext/library/tactic/smt/util.h
 include/lean_ext/library/tactic/subst_tactic.h
 include/lean_ext/library/tactic/tactic_evaluator.h
+include/lean_ext/library/tactic/tactic_log.h
 include/lean_ext/library/tactic/tactic_state.h
 include/lean_ext/library/tactic/unfold_tactic.h
 include/lean_ext/library/tactic/user_attribute.h
@@ -361,6 +363,7 @@ include/lean_ext/util/init_module.h
 include/lean_ext/util/int64.h
 include/lean_ext/util/interrupt.h
 include/lean_ext/util/lbool.h
+include/lean_ext/util/lean_json.h
 include/lean_ext/util/lean_path.h
 include/lean_ext/util/line_endings.h
 include/lean_ext/util/list.h
@@ -449,24 +452,6 @@ lib/lean/library/data/buffer/parser.lean
 lib/lean/library/data/buffer/parser.olean
 lib/lean/library/data/dlist.lean
 lib/lean/library/data/dlist.olean
-lib/lean/library/data/rbmap/
-lib/lean/library/data/rbmap/default.lean
-lib/lean/library/data/rbmap/default.olean
-lib/lean/library/data/rbtree/
-lib/lean/library/data/rbtree/basic.lean
-lib/lean/library/data/rbtree/basic.olean
-lib/lean/library/data/rbtree/default.lean
-lib/lean/library/data/rbtree/default.olean
-lib/lean/library/data/rbtree/find.lean
-lib/lean/library/data/rbtree/find.olean
-lib/lean/library/data/rbtree/insert.lean
-lib/lean/library/data/rbtree/insert.olean
-lib/lean/library/data/rbtree/main.lean
-lib/lean/library/data/rbtree/main.olean
-lib/lean/library/data/rbtree/min_max.lean
-lib/lean/library/data/rbtree/min_max.olean
-lib/lean/library/data/stream.lean
-lib/lean/library/data/stream.olean
 lib/lean/library/data/vector.lean
 lib/lean/library/data/vector.olean
 lib/lean/library/init/
@@ -604,16 +589,6 @@ lib/lean/library/init/data/punit.lean
 lib/lean/library/init/data/punit.olean
 lib/lean/library/init/data/quot.lean
 lib/lean/library/init/data/quot.olean
-lib/lean/library/init/data/rbmap/
-lib/lean/library/init/data/rbmap/basic.lean
-lib/lean/library/init/data/rbmap/basic.olean
-lib/lean/library/init/data/rbmap/default.lean
-lib/lean/library/init/data/rbmap/default.olean
-lib/lean/library/init/data/rbtree/
-lib/lean/library/init/data/rbtree/basic.lean
-lib/lean/library/init/data/rbtree/basic.olean
-lib/lean/library/init/data/rbtree/default.lean
-lib/lean/library/init/data/rbtree/default.olean
 lib/lean/library/init/data/repr.lean
 lib/lean/library/init/data/repr.olean
 lib/lean/library/init/data/set.lean

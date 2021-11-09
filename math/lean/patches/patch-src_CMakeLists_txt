@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2021/08/16 20:19:23 tb Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.2 2021/11/09 11:24:29 tb Exp $
 
 - Don't hardcode -O3 and respect the CXXFLAGS
 - Don't pass -ldl to the linker
@@ -15,21 +15,3 @@ Index: src/CMakeLists.txt
      set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -g3 ${CMAKE_CXX_FLAGS_RELWITHDEBINFO}")
  elseif (MULTI_THREAD)
      set(CMAKE_CXX_FLAGS_DEBUG          "/MTd ${CMAKE_CXX_FLAGS_DEBUG}")
-@@ -304,7 +304,7 @@ if (EMSCRIPTEN)
- elseif((${CYGWIN} EQUAL "1") OR (${CMAKE_SYSTEM_NAME} MATCHES "Windows"))
-   # TODO(Jared): config dlopen windows support
- else()
--  set(EXTRA_LIBS ${EXTRA_LIBS} dl)
-+  set(EXTRA_LIBS ${EXTRA_LIBS})
- endif()
- 
- # TRACK_MEMORY_USAGE
-@@ -568,7 +568,7 @@ if(NOT (${GIT_SHA1} MATCHES "GITDIR-NOTFOUND"))
-   set(CPACK_PACKAGE_VERSION "${CPACK_PACKAGE_VERSION}.git${GIT_SHA1}")
- endif()
- set(CPACK_PACKAGE_FILE_NAME "lean-${LEAN_VERSION_STRING}-${LOWER_SYSTEM_NAME}")
--if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-+if(${CMAKE_SYSTEM_NAME} MATCHES "Linux|OpenBSD")
-   SET(CPACK_GENERATOR TGZ)
- else()
-   SET(CPACK_GENERATOR ZIP)

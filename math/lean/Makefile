@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/08/16 20:19:23 tb Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/09 11:24:29 tb Exp $
 
 COMMENT =		interactive and automated theorem prover
 
 GH_ACCOUNT =		leanprover-community
 GH_PROJECT =		lean
-GH_TAGNAME =		v3.32.1
+GH_TAGNAME =		v3.35.1
 
 CATEGORIES =		math lang
 
