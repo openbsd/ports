@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.90 2021/02/25 21:59:27 sthen Exp $
+# $OpenBSD: Makefile.template,v 1.91 2021/11/09 13:43:15 kn Exp $
 #
 # Replace ??? with appropriate values
 # Remove extraneous comments before commit
@@ -159,7 +159,6 @@ MASTER_SITES =		???
 # build/configuration variables
 #
 #SEPARATE_BUILD =	Yes (build in a directory other than WRKSRC)
-#SEPARATE_BUILD =	flavored (distinct flavors may share a common WRKSRC)
 #USE_GMAKE =		Yes
 #USE_GROFF =		Yes
 # Programs that require GNU libtool to build instead of the OpenBSD one
