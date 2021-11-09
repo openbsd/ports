@@ -1,9 +1,8 @@
-# $OpenBSD: crates.inc,v 1.4 2021/11/01 16:43:20 sthen Exp $
+# $OpenBSD: crates.inc,v 1.5 2021/11/09 16:23:38 sthen Exp $
 MODCARGO_CRATES +=	addr2line	0.15.2	# Apache-2.0/MIT
 MODCARGO_CRATES +=	adler	1.0.2	# 0BSD OR MIT OR Apache-2.0
 MODCARGO_CRATES +=	ansi_term	0.11.0	# MIT
 MODCARGO_CRATES +=	arc-swap	1.3.0	# Apache-2.0/MIT
-MODCARGO_CRATES +=	async-compression	0.3.8	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	atty	0.2.14	# MIT
 MODCARGO_CRATES +=	autocfg	1.0.1	# Apache-2.0 OR MIT
 MODCARGO_CRATES +=	backtrace	0.3.60	# MIT/Apache-2.0
