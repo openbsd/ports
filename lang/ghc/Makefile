@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.189 2021/09/14 17:53:11 kili Exp $
+# $OpenBSD: Makefile,v 1.190 2021/11/09 04:48:50 gnezdo Exp $
 
 # Not yet ported to other architectures
 ONLY_FOR_ARCHS =	i386 amd64
@@ -19,7 +19,7 @@ DISTNAME =		ghc-${GHC_VERSION}
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
-REVISION =		0
+REVISION =		1
 
 # Version of the precompiled binaries
 BIN_VER =		8.10.3.20210429
