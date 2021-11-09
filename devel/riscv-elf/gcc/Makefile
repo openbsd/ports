@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2021/01/09 21:41:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2021/11/09 02:48:00 kevlo Exp $
 
 COMMENT=	gcc for riscv-elf cross-development
 
 VERSION=	8.1.0
 DISTNAME=	gcc-${VERSION}
 PKGNAME=	riscv-elf-gcc-${VERSION}
-REVISION=	2
+REVISION=	3
 
 SUBST_VARS+=	VERSION
 
@@ -36,7 +36,8 @@ CONFIGURE_ARGS+=--enable-languages=${LANGS}	\
 		--with-newlib			\
 		--disable-libcc1		\
 		--disable-lto			\
-		--enable-cpp
+		--enable-cpp			\
+		--without-isl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
