@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_plugins_qmldesigner_CMakeLists_txt,v 1.1 2021/11/09 07:42:28 rsadowski Exp $
+
+Index: src/plugins/qmldesigner/CMakeLists.txt
+--- src/plugins/qmldesigner/CMakeLists.txt.orig
++++ src/plugins/qmldesigner/CMakeLists.txt
+@@ -124,7 +124,7 @@ if (UNIX)
+     SOURCES_PREFIX ../../../share/qtcreator/qml/qmlpuppet/container
+     SOURCES sharedmemory_unix.cpp
+   )
+-  if (NOT APPLE)
++  if (NOT APPLE AND NOT ${CMAKE_SYSTEM_NAME} STREQUAL "OpenBSD")
+     extend_qtc_plugin(QmlDesigner DEPENDS rt)
+   endif()
+ else()

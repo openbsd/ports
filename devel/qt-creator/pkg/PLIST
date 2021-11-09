@@ -1,15 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.21 2021/05/17 06:12:03 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.22 2021/11/09 07:42:28 rsadowski Exp $
 @bin bin/qtcreator
 bin/qtcreator.sh
 @lib lib/libAdvancedDockingSystem.so.${LIBAdvancedDockingSystem_VERSION}
 @lib lib/libAggregation.so.${LIBAggregation_VERSION}
 @lib lib/libCPlusPlus.so.${LIBCPlusPlus_VERSION}
-@lib lib/libClangsupport.so.${LIBClangsupport_VERSION}
+@lib lib/libClangSupport.so.${LIBClangSupport_VERSION}
 @lib lib/libExtensionSystem.so.${LIBExtensionSystem_VERSION}
 @lib lib/libGLSL.so.${LIBGLSL_VERSION}
 @lib lib/libLanguageServerProtocol.so.${LIBLanguageServerProtocol_VERSION}
 @lib lib/libLanguageUtils.so.${LIBLanguageUtils_VERSION}
 @lib lib/libModeling.so.${LIBModeling_VERSION}
+@lib lib/libProParser.so.${LIBProParser_VERSION}
 @lib lib/libQmlDebug.so.${LIBQmlDebug_VERSION}
 @lib lib/libQmlEditorWidgets.so.${LIBQmlEditorWidgets_VERSION}
 @lib lib/libQmlJS.so.${LIBQmlJS_VERSION}
@@ -17,16 +18,18 @@ bin/qtcreator.sh
 @lib lib/libSqlite.so.${LIBSqlite_VERSION}
 @lib lib/libTracing.so.${LIBTracing_VERSION}
 @lib lib/libUtils.so.${LIBUtils_VERSION}
+@lib lib/libqlitehtml.so.${LIBqlitehtml_VERSION}
 lib/qtcreator/
 @lib lib/qtcreator/libAdvancedDockingSystem.so.${LIBAdvancedDockingSystem_VERSION}
 @lib lib/qtcreator/libAggregation.so.${LIBAggregation_VERSION}
 @lib lib/qtcreator/libCPlusPlus.so.${LIBCPlusPlus_VERSION}
-@lib lib/qtcreator/libClangsupport.so.${LIBClangsupport_VERSION}
+@lib lib/qtcreator/libClangSupport.so.${LIBClangSupport_VERSION}
 @lib lib/qtcreator/libExtensionSystem.so.${LIBExtensionSystem_VERSION}
 @lib lib/qtcreator/libGLSL.so.${LIBGLSL_VERSION}
 @lib lib/qtcreator/libLanguageServerProtocol.so.${LIBLanguageServerProtocol_VERSION}
 @lib lib/qtcreator/libLanguageUtils.so.${LIBLanguageUtils_VERSION}
 @lib lib/qtcreator/libModeling.so.${LIBModeling_VERSION}
+@lib lib/qtcreator/libProParser.so.${LIBProParser_VERSION}
 @lib lib/qtcreator/libQmlDebug.so.${LIBQmlDebug_VERSION}
 @lib lib/qtcreator/libQmlEditorWidgets.so.${LIBQmlEditorWidgets_VERSION}
 @lib lib/qtcreator/libQmlJS.so.${LIBQmlJS_VERSION}
@@ -34,6 +37,7 @@ lib/qtcreator/
 @lib lib/qtcreator/libSqlite.so.${LIBSqlite_VERSION}
 @lib lib/qtcreator/libTracing.so.${LIBTracing_VERSION}
 @lib lib/qtcreator/libUtils.so.${LIBUtils_VERSION}
+@lib lib/qtcreator/libqlitehtml.so.${LIBqlitehtml_VERSION}
 lib/qtcreator/plugins/
 @so lib/qtcreator/plugins/libAndroid.so
 @so lib/qtcreator/plugins/libAutoTest.so
@@ -119,11 +123,16 @@ libexec/qtcreator/
 @bin libexec/qtcreator/buildoutputparser
 @bin libexec/qtcreator/clangbackend
 @bin libexec/qtcreator/cpaster
+@bin libexec/qtcreator/cplusplus-ast2png
+@bin libexec/qtcreator/cplusplus-frontend
+@bin libexec/qtcreator/cplusplus-mkvisitor
+@bin libexec/qtcreator/cplusplus-update-frontend
 @bin libexec/qtcreator/qml2puppet
 @bin libexec/qtcreator/qtc-askpass
 @bin libexec/qtcreator/qtcreator_process_stub
 @bin libexec/qtcreator/qtpromaker
 @bin libexec/qtcreator/sdktool
+share/applications/org.qt-project.qtcreator.desktop
 share/icons/hicolor/128x128/apps/QtProject-qtcreator.png
 share/icons/hicolor/16x16/apps/QtProject-qtcreator.png
 share/icons/hicolor/24x24/apps/QtProject-qtcreator.png
@@ -132,6 +141,7 @@ share/icons/hicolor/32x32/apps/QtProject-qtcreator.png
 share/icons/hicolor/48x48/apps/QtProject-qtcreator.png
 share/icons/hicolor/512x512/apps/QtProject-qtcreator.png
 share/icons/hicolor/64x64/apps/QtProject-qtcreator.png
+share/metainfo/org.qt-project.qtcreator.appdata.xml
 share/qtcreator/
 share/qtcreator/android/
 share/qtcreator/android/sdk_definitions.json
@@ -149,6 +159,7 @@ share/qtcreator/cplusplus/wrappedQtHeaders/
 share/qtcreator/cplusplus/wrappedQtHeaders/QtCore/
 share/qtcreator/cplusplus/wrappedQtHeaders/QtCore/qobjectdefs.h
 share/qtcreator/debugger/
+share/qtcreator/debugger/.pylintrc
 share/qtcreator/debugger/LICENSE.GPL3-EXCEPT
 share/qtcreator/debugger/README.txt
 share/qtcreator/debugger/boosttypes.py
@@ -586,6 +597,7 @@ share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/emptyPane.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/project.qmlproject
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/Object3DPane.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/RegExpValidator.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/HelperWidgets/
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/HelperWidgets/AbstractButton.qml
@@ -1139,3 +1151,4 @@ share/qtcreator/translations/qtcreator_uk.qm
 share/qtcreator/translations/qtcreator_zh_CN.qm
 share/qtcreator/translations/qtcreator_zh_TW.qm
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database

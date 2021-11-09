@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_tools_qml2puppet_CMakeLists_txt,v 1.1 2021/11/09 07:42:28 rsadowski Exp $
+
+Index: src/tools/qml2puppet/CMakeLists.txt
+--- src/tools/qml2puppet/CMakeLists.txt.orig
++++ src/tools/qml2puppet/CMakeLists.txt
+@@ -108,7 +108,7 @@ add_qtc_executable(qml2puppet
+ )
+ 
+ extend_qtc_executable(qml2puppet
+-  CONDITION UNIX AND (NOT APPLE)
++  CONDITION UNIX AND (NOT APPLE) AND (NOT ${CMAKE_SYSTEM_NAME} STREQUAL "OpenBSD")
+   DEPENDS rt
+ )
+ 

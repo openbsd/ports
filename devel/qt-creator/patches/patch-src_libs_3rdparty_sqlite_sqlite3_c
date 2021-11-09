@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_libs_3rdparty_sqlite_sqlite3_c,v 1.1 2021/11/09 07:42:28 rsadowski Exp $
+
+Index: src/libs/3rdparty/sqlite/sqlite3.c
+--- src/libs/3rdparty/sqlite/sqlite3.c.orig
++++ src/libs/3rdparty/sqlite/sqlite3.c
+@@ -28685,7 +28685,7 @@ SQLITE_API void sqlite3_str_vappendf(
+   for(; (c=(*fmt))!=0; ++fmt){
+     if( c!='%' ){
+       bufpt = (char *)fmt;
+-#if HAVE_STRCHRNUL
++#if defined(HAVE_STRCHRNUL) && !defined(__OpenBSD__)
+       fmt = strchrnul(fmt, '%');
+ #else
+       do{ fmt++; }while( *fmt && *fmt != '%' );

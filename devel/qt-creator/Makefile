@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.77 2021/11/02 00:01:12 sthen Exp $
-
-USE_WXNEEDED =		Yes
+# $OpenBSD: Makefile,v 1.78 2021/11/09 07:42:28 rsadowski Exp $
 
 COMMENT =		cross-platform IDE for use with Qt
-V =			4.15.0
+
+V =			4.15.2
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
-REVISION =		0
 
 SHARED_LIBS +=  Aggregation               0.0 # 0.0
 SHARED_LIBS +=  CPlusPlus                 4.0 # 0.0
@@ -20,15 +18,12 @@ SHARED_LIBS +=  QtcSsh                    1.0 # 0.0
 SHARED_LIBS +=  Utils                     7.0 # 0.0
 SHARED_LIBS +=  Sqlite                    6.0 # 1.0
 SHARED_LIBS +=  Modeling                  5.0 # 1.0
-SHARED_LIBS +=  Clangsupport              1.0 # 4.5
+SHARED_LIBS +=  ClangSupport              1.0 # 4.5
 SHARED_LIBS +=  Tracing                   1.0 # 4.7
 SHARED_LIBS +=  LanguageServerProtocol    2.0 # 4.8
 SHARED_LIBS +=  AdvancedDockingSystem     0.0 # 4.12
-
-MAKE_FLAGS =	BUILD_TESTS=1
-.for _l _v in ${SHARED_LIBS}
-MAKE_FLAGS +=	LIB${_l}_VERSION=${_v}
-.endfor
+SHARED_LIBS +=  qlitehtml                 0.0 # 4.15
+SHARED_LIBS +=  ProParser                 0.0 # 4.15
 
 CATEGORIES =	devel editors
 
@@ -39,11 +34,11 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv3 with the "Qt Company GPL Exception 1.0"
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL KF5SyntaxHighlighting Qt5Concurrent
+WANTLIB += ${COMPILER_LIBCXX} KF5SyntaxHighlighting Qt5Concurrent
 WANTLIB += Qt5Core Qt5Designer Qt5DesignerComponents Qt5Gui Qt5Help
 WANTLIB += Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
 WANTLIB += Qt5Quick Qt5QuickWidgets Qt5SerialPort Qt5Sql Qt5Svg
-WANTLIB += Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
+WANTLIB += Qt5Test Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
 WANTLIB += Qt5Widgets Qt5Xml c clang m yaml-cpp
 
 MASTER_SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/${V}/ \
@@ -51,24 +46,20 @@ MASTER_SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/${V}/ \
 
 MODULES =	x11/qt5 \
 		lang/python \
-		devel/qmake
+		devel/cmake
 
-CONFIGURE_STYLE =	qmake
+CONFIGURE_STYLE = cmake
 
-MODQMAKE_INSTALL_ROOT =		${PREFIX}
+BUILD_DEPENDS =	devel/clang-tools-extra \
+		devel/qbs \
+		lang/clazy \
+		x11/qt5/qtquickcontrols
 
-MODQMAKE_ARGS =		CONFIG+=qbs_enable_project_file_updates
-
-BUILD_DEPENDS =	x11/qt5/qtquickcontrols \
-		lang/clazy>=1.5 \
-		devel/qbs>=1.15.0
-
-RUN_DEPENDS =	${MODGCC4_CPPDEP} \
-		devel/clang-tools-extra \
+RUN_DEPENDS =	devel/clang-tools-extra \
 		devel/gdb \
 		devel/gmake \
-		devel/qbs>=1.15.0 \
-		lang/clazy>=1.5 \
+		devel/qbs \
+		lang/clazy \
 		x11/gtk+3,-guic \
 		x11/qt5/qtquickcontrols
 
@@ -82,18 +73,8 @@ LIB_DEPENDS =	devel/llvm \
 		x11/qt5/qtwebchannel \
 		x11/qt5/qtwebengine
 
-PORTHOME =		${WRKDIR}
-
-NO_TEST =		Yes
-
-FAKE_FLAGS =		INSTALL_ROOT=${WRKINST}${TRUEPREFIX}
-
-CONFIGURE_ENV =		LLVM_INSTALL_DIR=${LOCALBASE} \
-			QBS_INSTALL_DIR=${LOCALBASE} \
-			KSYNTAXHIGHLIGHTING_LIB_DIR="${LOCALBASE}/lib" \
-			PYTHON_INSTALL_DIR=${MODPY_BIN} \
-			KSYNTAXHIGHLIGHTING_INCLUDE_DIR="${LOCALBASE}/include/KF5/KSyntaxHighlighting" \
-			QTC_DISABLE_CLANG_REFACTORING=0
+CONFIGURE_ARGS =	-DBUILD_CPLUSPLUS_TOOLS=ON \
+			-DENABLE_SVG_SUPPORT=ON
 
 GDB_ADJ_FILES = \
 	src/plugins/debugger/debuggeritemmanager.cpp \
@@ -102,15 +83,17 @@ GDB_ADJ_FILES = \
 	tests/auto/debugger/tst_dumpers.cpp \
 	tests/system/suite_general/tst_openqt_creator/testdata/projecttree_creator.tsv
 
+
 pre-configure:
 	cd ${WRKSRC}; sed -i 's,"gdb","egdb",g' ${GDB_ADJ_FILES}
 	# use system qbs/syntax-highlighting (qtcreator.pro)
 	rm -rf ${WRKSRC}/src/shared/qbs
-	rm -rf ${WRKSRC}/src/libs/{3rdparty/syntax-highlighting,yaml-cpp}
 
 post-install:
 .for _l _v in ${SHARED_LIBS}
 	ln -sf qtcreator/lib${_l}.so.${_v} ${PREFIX}/lib
 .endfor
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${PREFIX}/share/qtcreator/debugger/
 
 .include <bsd.port.mk>
