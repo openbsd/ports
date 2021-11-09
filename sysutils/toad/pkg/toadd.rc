@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: toadd.rc,v 1.3 2019/01/23 03:48:59 ajacoutot Exp $
+# $OpenBSD: toadd.rc,v 1.4 2021/11/09 07:39:08 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/libexec/toadd"
 

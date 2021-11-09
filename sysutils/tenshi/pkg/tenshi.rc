@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/ksh
 #
-# $OpenBSD: tenshi.rc,v 1.1.1.1 2018/11/12 00:06:02 bluhm Exp $
+# $OpenBSD: tenshi.rc,v 1.2 2021/11/09 07:39:08 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/tenshi"
 

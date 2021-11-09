@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/02 00:02:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/11/09 07:39:08 ajacoutot Exp $
 
 COMMENT=		all-in-one management software
 
@@ -10,7 +10,7 @@ DISTNAME=		odoo_${V}
 
 PKGNAME=		${DISTNAME:S/_/-/}
 CATEGORIES=		www
-REVISION=		0
+REVISION=		1
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/09 15:14:23 tracey Exp $
+# $OpenBSD: Makefile,v 1.9 2021/11/09 07:39:08 ajacoutot Exp $
 
 COMMENT =	things proxy daemon for OpenBSD
 CATEGORIES =	net
@@ -6,6 +6,7 @@ CATEGORIES =	net
 GH_ACCOUNT =	basepr1me
 GH_PROJECT =	thingsd
 GH_TAGNAME =	4.0.2
+REVISION =	0
 
 MAINTAINER =	Tracey Emery <tracey@traceyemery.net>
 

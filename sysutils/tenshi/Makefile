@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/09 07:39:08 ajacoutot Exp $
 
 COMMENT =	log monitoring program to watch and report on log files
 
 VERSION =	0.17
 PKGNAME =	tenshi-${VERSION}
 DISTNAME =	tenshi-{}${VERSION}
+REVISION =	0
 
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
