@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.36 2021/03/15 06:28:06 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.37 2021/11/09 06:45:43 rsadowski Exp $
 
 COMMENT =	powerful batch file renamer
 
 VERSION =	5.0.1
 DISTNAME =	krename-${VERSION}
+REVISION =	0
 
 CATEGORIES =	sysutils x11
 
 HOMEPAGE =	https://kde.org/applications/utilities/org.kde.krename
 
-MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
+MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
@@ -30,6 +31,7 @@ MODULES =	devel/kf5
 BUILD_DEPENDS =	devel/gettext,-tools
 
 RUN_DEPENDS =	devel/desktop-file-utils \
+		devel/kf5/breeze-icons \
 		x11/gtk+3,-guic
 
 LIB_DEPENDS =	audio/taglib \
