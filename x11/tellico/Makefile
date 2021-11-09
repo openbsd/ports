@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.69 2021/11/02 00:03:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2021/11/09 10:48:02 rsadowski Exp $
 
 COMMENT =	organizer for book/dvd/music collections
 
-DISTNAME =	tellico-3.4.1
-REVISION =	0
+DISTNAME =	tellico-3.4.2
 
 CATEGORIES =	x11
 
@@ -25,9 +24,9 @@ WANTLIB += KF5SonnetUi KF5TextWidgets KF5Wallet KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Charts Qt5Concurrent Qt5Core
 WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
 WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
-WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml c cdio exempi
+WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 c cdio exempi
 WANTLIB += exslt iconv iso9660 m poppler poppler-qt5 tag xml2
-WANTLIB += xslt yaz
+WANTLIB += xslt yaz z
 
 MASTER_SITES =	http://tellico-project.org/files/
 EXTRACT_SUFX =	.tar.xz
