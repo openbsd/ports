@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/01/15 19:03:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/09 14:57:16 tracey Exp $
 
 COMMENT =	gcc for ${CONFIG} cross-development
 
 V =		8.4.0
 VERSION =	8.4.0.2020.3
 PKGNAME =	${CONFIG}-gcc-${VERSION}
+REVISION =	0
 
 GH_ACCOUNT =	espressif
 GH_PROJECT =	gcc
@@ -50,7 +51,8 @@ CONFIGURE_ARGS +=	--enable-languages=c,c++ \
 			--enable-target-optspace \
 			--without-long-double-128 \
 			--enable-gcov-custom-rtio \
-			--enable-libstdcxx-time=yes
+			--enable-libstdcxx-time=yes \
+			--without-isl
 
 ALL_TARGET =		all-gcc all-target-libgcc all-target-libstdc++-v3
 INSTALL_TARGET =	install-gcc install-target-libgcc \
