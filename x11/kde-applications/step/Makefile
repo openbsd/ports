@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2021/06/19 18:34:46 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2021/11/10 06:37:58 rsadowski Exp $
 
 COMMENT =	KDE interactive physics simulator
 DISTNAME =	step-${VERSION}
@@ -13,7 +13,7 @@ WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5NewStuff KF5NewStuffCore
 WANTLIB += KF5Plotting KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5OpenGL Qt5Widgets
-WANTLIB += Qt5Xml c gsl gslcblas m qalculate
+WANTLIB += Qt5Xml X11 c gsl gslcblas m qalculate
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes

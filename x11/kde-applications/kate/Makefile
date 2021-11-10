@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2021/04/27 05:26:58 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.16 2021/11/10 06:37:44 rsadowski Exp $
 
 COMMENT =	KDE advanced text editor
 DISTNAME =	kate-${VERSION}
@@ -14,9 +14,9 @@ WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
 WANTLIB += KF5KIOGui KF5KIOWidgets KF5NewStuff KF5NewStuffCore
 WANTLIB += KF5Package KF5Parts KF5Plasma KF5Service KF5Solid KF5SonnetUi
 WANTLIB += KF5SyntaxHighlighting KF5TextEditor KF5TextWidgets
-WANTLIB += KF5ThreadWeaver KF5Wallet KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Sql Qt5Widgets Qt5Xml c m
+WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Sql
+WANTLIB += Qt5Widgets Qt5Xml X11 c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -46,7 +46,6 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kdbusaddons \
 		devel/kf5/kguiaddons \
 		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
 		devel/kf5/kio \
 		devel/kf5/kitemmodels \
 		devel/kf5/kitemviews \
@@ -64,8 +63,7 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kxmlgui \
 		devel/kf5/plasma-framework \
 		devel/kf5/solid \
-		devel/kf5/sonnet \
-		devel/kf5/threadweaver
+		devel/kf5/sonnet
 
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}

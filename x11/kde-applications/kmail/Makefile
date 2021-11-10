@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2021/09/10 08:43:55 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2021/11/10 06:37:50 rsadowski Exp $
 
 COMMENT =	KDE PIM email client
 DISTNAME =	kmail-${VERSION}
@@ -27,8 +27,8 @@ WANTLIB += KF5WebEngineViewer KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
 WANTLIB += Qt5Quick Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
-WANTLIB += Qt5Widgets Qt5Xml assuan c gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += gpgme gpgmepp intl m qgpgme qt5keychain secret-1
+WANTLIB += Qt5Widgets Qt5Xml X11 assuan c gpgme gpgmepp m qgpgme
+WANTLIB += qt5keychain
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes

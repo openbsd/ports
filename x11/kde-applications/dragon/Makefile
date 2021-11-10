@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/03 16:12:32 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2021/11/10 06:37:42 rsadowski Exp $
 
 COMMENT =	simple video player for KDE
 DISTNAME =	dragon-${VERSION}
@@ -10,7 +10,7 @@ WANTLIB += KF5Crash KF5DBusAddons KF5I18n KF5JobWidgets KF5KIOCore
 WANTLIB += KF5KIOGui KF5KIOWidgets KF5Notifications KF5Parts KF5Service
 WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml c m phonon4qt5
+WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml X11 c m phonon4qt5
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

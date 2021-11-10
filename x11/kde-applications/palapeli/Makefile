@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/06/19 18:34:45 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2021/11/10 06:37:57 rsadowski Exp $
 
 COMMENT =	jigsaw puzzle game
 DISTNAME =	palapeli-${VERSION}
@@ -15,7 +15,7 @@ WANTLIB += KF5KDEGames KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Notifications
 WANTLIB += KF5Service KF5Solid KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Svg
-WANTLIB += Qt5Widgets Qt5Xml c m
+WANTLIB += Qt5Widgets Qt5Xml X11 c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

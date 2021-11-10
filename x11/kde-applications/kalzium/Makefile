@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2021/06/19 18:34:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.18 2021/11/10 06:37:43 rsadowski Exp $
 
 COMMENT =	periodic table of elements
 DISTNAME =	kalzium-${VERSION}
@@ -14,7 +14,7 @@ WANTLIB += KF5I18n KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOGui
 WANTLIB += KF5KIOWidgets KF5Plotting KF5Service KF5Solid KF5SonnetUi
 WANTLIB += KF5TextWidgets KF5UnitConversion KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Script Qt5Svg Qt5Widgets Qt5Xml c m openbabel
+WANTLIB += Qt5Script Qt5Svg Qt5Widgets Qt5Xml X11 c m openbabel
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

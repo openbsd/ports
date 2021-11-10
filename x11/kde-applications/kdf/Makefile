@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/06/19 18:34:36 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2021/11/10 06:37:47 rsadowski Exp $
 
 COMMENT =	KDE storage device statistics
 DISTNAME =	kdf-${VERSION}
@@ -14,7 +14,7 @@ WANTLIB += KF5I18n KF5IconThemes KF5JobWidgets KF5KIOCore KF5KIOGui
 WANTLIB += KF5KIOWidgets KF5Notifications KF5Service KF5Solid
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
-WANTLIB += c m
+WANTLIB += X11 c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

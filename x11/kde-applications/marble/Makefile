@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2021/09/10 08:43:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.22 2021/11/10 06:37:57 rsadowski Exp $
 
 COMMENT =	virtual globe and world atlas
 DISTNAME =	marble-${VERSION}
@@ -21,7 +21,7 @@ WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml
 WANTLIB += Qt5QmlModels Qt5Quick Qt5SerialPort Qt5Sql Qt5Svg Qt5WebChannel
 WANTLIB += Qt5WebEngine Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets
-WANTLIB += Qt5Xml c gps m phonon4qt5 protobuf shp z
+WANTLIB += Qt5Xml X11 c gp m phonon4qt5 protobuf shp z
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

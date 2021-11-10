@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2021/09/10 08:43:48 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2021/11/10 06:37:40 rsadowski Exp $
 
 COMMENT =	archiving Tool
 DISTNAME =	ark-${VERSION}
@@ -14,7 +14,7 @@ WANTLIB += KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets KF5Parts
 WANTLIB += KF5Pty KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
-WANTLIB += archive c m z zip
+WANTLIB += X11 archive c m z zip
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

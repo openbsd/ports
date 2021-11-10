@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/09/10 08:43:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2021/11/10 06:37:57 rsadowski Exp $
 
 COMMENT =	KDE PIM messaging library
 DISTNAME =	messagelib-${VERSION}
@@ -27,7 +27,8 @@ WANTLIB += KF5TextWidgets KF5Wallet KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
 WANTLIB += Qt5Quick Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
-WANTLIB += Qt5Widgets Qt5Xml assuan gpgme gpgmepp m qca-qt5 qgpgme
+WANTLIB += Qt5Widgets Qt5Xml X11 assuan gpgme gpgmepp m qca-qt5
+WANTLIB += qgpgme
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes

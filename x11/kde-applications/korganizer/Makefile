@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2021/09/10 08:43:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2021/11/10 06:37:52 rsadowski Exp $
 
 COMMENT =	calendar and scheduling component of kontact
 DISTNAME =	korganizer-${VERSION}
@@ -24,7 +24,7 @@ WANTLIB += KF5PimCommonAkonadi KF5PimTextEdit KF5Service KF5Solid
 WANTLIB += KF5SonnetUi KF5TextWidgets KF5Wallet KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets Qt5Xml
-WANTLIB += c m phonon4qt5
+WANTLIB += X11 c m phonon4qt5
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes

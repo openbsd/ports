@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2021/09/10 08:43:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.20 2021/11/10 06:37:57 rsadowski Exp $
 
 COMMENT =	KDE document viewer
 DISTNAME =	okular-${VERSION}
@@ -19,7 +19,7 @@ WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Svg Qt5TextToSpeech Qt5Widgets Qt5Xml c chm djvulibre
 WANTLIB += epub freetype jpeg m markdown phonon4qt5 poppler poppler-qt5
-WANTLIB += qca-qt5 qmobipocket tiff z zip
+WANTLIB += qmobipocket tiff z zip X11
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -29,9 +29,11 @@ MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
 BUILD_DEPENDS = net/libvncserver \
+		devel/kf5/kirigami2 \
 		print/libspectre
 
 RUN_DEPENDS =	misc/shared-mime-info \
+		devel/kf5/kirigami2 \
 		net/libvncserver
 
 LIB_DEPENDS =	devel/chmlib \
@@ -68,7 +70,6 @@ LIB_DEPENDS =	devel/chmlib \
 		graphics/tiff \
 		multimedia/phonon \
 		print/poppler,-qt5 \
-		security/qca-qt5 \
 		textproc/discount \
 		textproc/ebook-tools \
 		x11/kde-applications/kdegraphics-mobipocket \

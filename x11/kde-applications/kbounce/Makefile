@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/06/19 18:34:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2021/11/10 06:37:44 rsadowski Exp $
 
 COMMENT =	ball bouncing game
 DISTNAME =	kbounce-${VERSION}
@@ -12,8 +12,8 @@ WANTLIB += KF5Crash KF5DBusAddons KF5I18n KF5JobWidgets KF5KDEGames
 WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Service KF5Solid
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5QmlModels
-WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Svg Qt5Widgets Qt5Xml c
-WANTLIB += m
+WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Svg Qt5Widgets Qt5Xml X11
+WANTLIB += c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

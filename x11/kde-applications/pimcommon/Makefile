@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/06/19 18:34:46 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2021/11/10 06:37:58 rsadowski Exp $
 
 COMMENT =	common libraries for KDE PIM
 DISTNAME =	pimcommon-${VERSION}
@@ -17,7 +17,7 @@ WANTLIB += KF5Ldap KF5Libkdepim KF5Mime KF5NewStuff KF5NewStuffCore
 WANTLIB += KF5PimTextEdit KF5Purpose KF5PurposeWidgets KF5Service
 WANTLIB += KF5Solid KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Widgets Qt5Xml m
+WANTLIB += Qt5Widgets Qt5Xml X11 m
 
 MODKDE5_TRANSLATIONS = yes
 

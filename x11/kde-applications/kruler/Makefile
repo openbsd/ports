@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/11/03 16:12:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/10 06:37:53 rsadowski Exp $
 
 COMMENT =	screen ruler for KDE
 DISTNAME =	kruler-${VERSION}
@@ -10,7 +10,7 @@ WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5I18n
 WANTLIB += KF5Notifications KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5X11Extras Qt5Xml
-WANTLIB += c m xcb
+WANTLIB += X11 c m xcb
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

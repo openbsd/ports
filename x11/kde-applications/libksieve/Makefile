@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/09/10 08:43:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2021/11/10 06:37:56 rsadowski Exp $
 
 COMMENT =	sieve script library
 DISTNAME =	libksieve-${VERSION}
@@ -19,7 +19,7 @@ WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning
 WANTLIB += Qt5PrintSupport Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel
 WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5Xml
-WANTLIB += m sasl2
+WANTLIB += X11 m sasl2
 
 MODKDE5_TRANSLATIONS = yes
 

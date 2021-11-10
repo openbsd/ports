@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2021/04/27 05:27:06 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2021/11/10 06:37:50 rsadowski Exp $
 
 COMMENT =	sound channel mixer and volume control
 DISTNAME =	kmix-${VERSION}
@@ -10,10 +10,9 @@ SHARED_LIBS +=  kmixcore                2.0 # 5.13.80
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5DBusAddons
-WANTLIB += KF5GlobalAccel KF5I18n KF5Notifications KF5Package
-WANTLIB += KF5Plasma KF5Service KF5Solid KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5Xml
-WANTLIB += c canberra m pulse pulse-mainloop-glib
+WANTLIB += KF5GlobalAccel KF5I18n KF5Notifications KF5Solid KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Widgets
+WANTLIB += Qt5Xml X11 c canberra m pulse pulse-mainloop-glib
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -35,10 +34,8 @@ LIB_DEPENDS =	audio/pulseaudio \
 		devel/kf5/kglobalaccel \
 		devel/kf5/ki18n \
 		devel/kf5/knotifications \
-		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
-		devel/kf5/kxmlgui \
-		devel/kf5/plasma-framework
+		devel/kf5/kxmlgui
 
 .include <bsd.port.mk>

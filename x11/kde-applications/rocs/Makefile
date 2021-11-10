@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2021/09/10 08:44:00 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2021/11/10 06:37:58 rsadowski Exp $
 
 COMMENT =	graph theory IDE for KDE
 DISTNAME =	rocs-${VERSION}
@@ -16,7 +16,8 @@ WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5SyntaxHighlighting
 WANTLIB += KF5TextEditor KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Script
-WANTLIB += Qt5ScriptTools Qt5Widgets Qt5Xml Qt5XmlPatterns c m
+WANTLIB += Qt5ScriptTools Qt5Widgets Qt5Xml Qt5XmlPatterns X11
+WANTLIB += c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

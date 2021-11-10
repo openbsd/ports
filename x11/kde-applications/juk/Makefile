@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/11/03 16:12:32 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2021/11/10 06:37:43 rsadowski Exp $
 
 COMMENT =	music collection manager and player for KDE
 DISTNAME =	juk-${VERSION}
@@ -14,7 +14,7 @@ WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5Notifications KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
 WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Svg
-WANTLIB += Qt5Widgets Qt5Xml c m phonon4qt5 tag
+WANTLIB += Qt5Widgets Qt5Xml X11 c m phonon4qt5 tag
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

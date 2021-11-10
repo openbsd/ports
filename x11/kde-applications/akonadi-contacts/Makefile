@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2021/09/11 10:32:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2021/11/10 06:37:40 rsadowski Exp $
 
 COMMENT =	PIM Akonadi contacts support library
 DISTNAME =	akonadi-contacts-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 SHARED_LIBS +=  KF5AkonadiContact         0.1 # 5.13.2
 SHARED_LIBS +=  KF5ContactEditor          0.1 # 5.13.2
@@ -16,7 +15,7 @@ WANTLIB += KF5ItemModels KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5Libkleo KF5Mime KF5Prison KF5Service KF5Solid KF5SonnetUi
 WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
-WANTLIB += Qt5Xml assuan gpgme gpgmepp m qgpgme
+WANTLIB += Qt5Xml X11 assuan gpgme gpgmepp m qgpgme
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes

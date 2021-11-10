@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/09/10 08:43:47 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2021/11/10 06:37:39 rsadowski Exp $
 
 COMMENT =	PIM Storage Service
 DISTNAME =	akonadi-${VERSION}
@@ -17,7 +17,7 @@ WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
 WANTLIB += KF5I18n KF5IconThemes KF5ItemModels KF5ItemViews KF5KIOCore
 WANTLIB += KF5Service KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Sql
-WANTLIB += Qt5Widgets Qt5Xml c lzma m sqlite3 xml2
+WANTLIB += Qt5Widgets Qt5Xml X11 c lzma m sqlite3 xml2
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

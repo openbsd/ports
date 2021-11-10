@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/10/19 20:08:39 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/11/10 06:37:46 rsadowski Exp $
 @conflict kdepimlibs-<=4
 bin/kmail_antivir.sh
 bin/kmail_clamav.sh
@@ -13,8 +13,7 @@ lib/contacteditor/editorpageplugins/
 @lib lib/libfolderconfiguresettings.so.${LIBfolderconfiguresettings_VERSION}
 @lib lib/libgrammarcommon.so.${LIBgrammarcommon_VERSION}
 @lib lib/libkaddressbookmergelibprivate.so.${LIBkaddressbookmergelibprivate_VERSION}
-lib/libkmailconfirmbeforedeleting.so.5
-lib/libkmailconfirmbeforedeleting.so.5.18.2
+@lib lib/libkmailconfirmbeforedeleting.so.${LIBkmailconfirmbeforedeleting_VERSION}
 @lib lib/libkmailgrammalecte.so.${LIBkmailgrammalecte_VERSION}
 @lib lib/libkmaillanguagetool.so.${LIBkmaillanguagetool_VERSION}
 @lib lib/libkmailmarkdown.so.${LIBkmailmarkdown_VERSION}
@@ -404,6 +403,7 @@ share/locale/fi/LC_MESSAGES/customtoolsplugin.mo
 share/locale/fi/LC_MESSAGES/importwizard_plugins.mo
 share/locale/fi/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/fi/LC_MESSAGES/kaddressbook_plugins.mo
+share/locale/fi/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
 share/locale/fi/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/fi/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
 share/locale/fi/LC_MESSAGES/kmail_editorgrammar_plugins.mo

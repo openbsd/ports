@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/09/10 08:43:56 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/11/10 06:37:53 rsadowski Exp $
 @pkgpath x11/kde4/krdc
 @bin bin/krdc
 include/krdc/
@@ -9,7 +9,9 @@ include/krdccore_export.h
 @lib lib/libkrdccore.so.${LIBkrdccore_VERSION}
 lib/qt5/plugins/krdc/
 lib/qt5/plugins/krdc/kcms/
+@so lib/qt5/plugins/krdc/kcms/libkcm_krdc_rdpplugin.so
 @so lib/qt5/plugins/krdc/kcms/libkcm_krdc_vncplugin.so
+@so lib/qt5/plugins/krdc/libkrdc_rdpplugin.so
 @so lib/qt5/plugins/krdc/libkrdc_testplugin.so
 @so lib/qt5/plugins/krdc/libkrdc_vncplugin.so
 share/applications/org.kde.krdc.desktop
@@ -101,6 +103,9 @@ share/doc/HTML/sv/krdc/index.docbook
 share/doc/HTML/uk/krdc/
 share/doc/HTML/uk/krdc/index.cache.bz2
 share/doc/HTML/uk/krdc/index.docbook
+share/kservices5/ServiceMenus/
+share/kservices5/ServiceMenus/smb2rdc.desktop
+share/kservices5/krdc_rdp_config.desktop
 share/kservices5/krdc_vnc_config.desktop
 share/kservicetypes5/krdc_plugin.desktop
 share/locale/ar/LC_MESSAGES/krdc.mo

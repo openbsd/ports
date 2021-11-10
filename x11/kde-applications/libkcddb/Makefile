@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/06/19 18:34:43 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2021/11/10 06:37:55 rsadowski Exp $
 
 COMMENT =	KDE CDDB library
 DISTNAME =	libkcddb-${VERSION}
@@ -13,7 +13,7 @@ WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5Service KF5Solid KF5WidgetsAddons KF5WindowSystem
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
-WANTLIB += Qt5Xml m musicbrainz5
+WANTLIB += Qt5Xml X11 m musicbrainz5
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes

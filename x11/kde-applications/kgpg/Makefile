@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/01/23 18:10:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2021/11/10 06:37:48 rsadowski Exp $
 
 COMMENT =	KDE interface to GnuPG
 DISTNAME =	kgpg-${VERSION}
@@ -14,7 +14,7 @@ WANTLIB += KF5KIOGui KF5KIOWidgets KF5Notifications KF5Service
 WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets Qt5Xml
-WANTLIB += c m
+WANTLIB += X11 c m
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2021/04/01 05:00:17 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.18 2021/11/10 06:37:57 rsadowski Exp $
 
 COMMENT =	Hex Editor
 VERSION =	0.26.6
@@ -24,7 +24,7 @@ WANTLIB += KF5NewStuff KF5NewStuffCore KF5Parts KF5Service KF5Solid
 WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5PrintSupport Qt5Qml Qt5Script Qt5Widgets Qt5Xml
-WANTLIB += c m qca-qt5
+WANTLIB += X11 c m qca-qt5
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/okteta/${VERSION}/src/}
 

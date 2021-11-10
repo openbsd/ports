@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/05/15 09:56:32 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2021/11/10 06:37:47 rsadowski Exp $
 
 COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-runtime-${VERSION}
@@ -28,8 +28,7 @@ WANTLIB += KPimGAPIContacts KPimGAPICore KPimGAPITasks Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5NetworkAuth Qt5Positioning
 WANTLIB += Qt5PrintSupport Qt5Qml Qt5QmlModels Qt5Quick Qt5TextToSpeech
 WANTLIB += Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
-WANTLIB += Qt5Widgets Qt5Xml c gio-2.0 glib-2.0 gobject-2.0 intl
-WANTLIB += m qca-qt5 qt5keychain sasl2 secret-1
+WANTLIB += Qt5Widgets Qt5Xml X11 c m qca-qt5 qt5keychain sasl2
 
 
 MODKDE5_TRANSLATIONS = yes

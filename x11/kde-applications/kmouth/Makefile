@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/06/19 18:34:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2021/11/10 06:37:51 rsadowski Exp $
 
 COMMENT =	speech tool for mute persons for KDE
 DISTNAME =	kmouth-${VERSION}
@@ -10,7 +10,7 @@ WANTLIB += KF5Crash KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui
 WANTLIB += KF5KIOWidgets KF5Service KF5Solid KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5TextToSpeech Qt5Widgets
-WANTLIB += Qt5Xml c m
+WANTLIB += Qt5Xml X11 c m
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes

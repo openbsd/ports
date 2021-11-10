@@ -1,6 +1,6 @@
-# $OpenBSD: kde-applications.port.mk,v 1.16 2021/10/19 20:08:35 rsadowski Exp $
+# $OpenBSD: kde-applications.port.mk,v 1.17 2021/11/10 06:37:39 rsadowski Exp $
 
-MODKDE_VERSION ?=		21.08.2
+MODKDE_VERSION ?=		21.08.3
 
 # Set to 'yes' if there are .desktop files under share/release-service/.
 .if defined(MODKDE5_DESKTOP_FILE) && ${MODKDE5_DESKTOP_FILE:L} == "yes"

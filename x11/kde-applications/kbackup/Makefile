@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/09/10 08:43:51 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2021/11/10 06:37:44 rsadowski Exp $
 
 COMMENT =	KDE backup program with an easy to use user interface
 DISTNAME =	kbackup-${VERSION}
@@ -13,7 +13,7 @@ WANTLIB += KF5IconThemes KF5ItemViews KF5JobWidgets KF5KIOCore
 WANTLIB += KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets KF5Notifications
 WANTLIB += KF5Service KF5Solid KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5Xml c m
+WANTLIB += Qt5Widgets Qt5Xml X11 c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

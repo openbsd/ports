@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/09/10 08:43:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2021/11/10 06:37:51 rsadowski Exp $
 
 COMMENT =	KDE raster image editor
 DISTNAME =	kolourpaint-${VERSION}
@@ -13,7 +13,7 @@ WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
 WANTLIB += KF5KIOGui KF5KIOWidgets KF5Sane KF5Service KF5Solid
 WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5PrintSupport Qt5Widgets Qt5Xml c m
+WANTLIB += Qt5PrintSupport Qt5Widgets Qt5Xml X11 c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

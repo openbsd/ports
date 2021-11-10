@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/06/19 18:34:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2021/11/10 06:37:51 rsadowski Exp $
 
 COMMENT =	mathematical function plotter for KDE
 DISTNAME =	kmplot-${VERSION}
@@ -10,7 +10,7 @@ WANTLIB += KF5Crash KF5DBusAddons KF5I18n KF5JobWidgets KF5KIOCore
 WANTLIB += KF5KIOGui KF5KIOWidgets KF5Parts KF5Service KF5Solid
 WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5PrintSupport Qt5Svg Qt5Widgets Qt5Xml c m
+WANTLIB += Qt5PrintSupport Qt5Svg Qt5Widgets Qt5Xml X11 c m
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes

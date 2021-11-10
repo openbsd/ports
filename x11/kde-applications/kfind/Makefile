@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/06/19 18:34:36 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2021/11/10 06:37:47 rsadowski Exp $
 
 COMMENT =	KDE dialog boxes from shell scripts
 DISTNAME =	kfind-${VERSION}
@@ -8,9 +8,9 @@ WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5FileMetaData KF5I18n KF5JobWidgets
 WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Service KF5Solid
-WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5Xml c m
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
+WANTLIB += X11 c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -31,8 +31,6 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kio \
 		devel/kf5/kjobwidgets \
 		devel/kf5/kservice \
-		devel/kf5/ktextwidgets \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/sonnet
+		devel/kf5/kwidgetsaddons
 
 .include <bsd.port.mk>

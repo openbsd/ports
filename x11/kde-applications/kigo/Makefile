@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/06/19 18:34:38 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2021/11/10 06:37:49 rsadowski Exp $
 
 COMMENT =	Go board game
 DISTNAME =	kigo-${VERSION}
@@ -14,7 +14,7 @@ WANTLIB += KF5KIOWidgets KF5NewStuff KF5NewStuffCore KF5Service
 WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets
-WANTLIB += Qt5Svg Qt5Widgets Qt5Xml c m
+WANTLIB += Qt5Svg Qt5Widgets Qt5Xml X11 c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

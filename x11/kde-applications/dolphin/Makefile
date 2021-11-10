@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2021/09/10 08:43:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.24 2021/11/10 06:37:41 rsadowski Exp $
 
 COMMENT =	KDE File Manager
 DISTNAME =	dolphin-${VERSION}
@@ -17,7 +17,7 @@ WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5NewStuff KF5NewStuffCore KF5Notifications KF5Parts
 WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml c m phonon4qt5
+WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml X11 c m phonon4qt5
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

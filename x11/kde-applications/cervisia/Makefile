@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/06/19 18:34:32 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2021/11/10 06:37:41 rsadowski Exp $
 
 COMMENT =	CVS GUI for KDE
 DISTNAME =	cervisia-${VERSION}
@@ -11,7 +11,7 @@ WANTLIB += KF5KIOGui KF5KIOWidgets KF5Notifications KF5Parts KF5Pty
 WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5Su KF5TextWidgets
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
-WANTLIB += c m
+WANTLIB += X11 c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

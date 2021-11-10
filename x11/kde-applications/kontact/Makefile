@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2021/06/19 18:34:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2021/11/10 06:37:52 rsadowski Exp $
 
 COMMENT =	documentenal information management suite
 DISTNAME =	kontact-${VERSION}
@@ -15,7 +15,7 @@ WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
 WANTLIB += Qt5Quick Qt5WebChannel Qt5WebEngine Qt5WebEngineCore
-WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml c m
+WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 c m
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/06/19 18:34:32 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2021/11/10 06:37:42 rsadowski Exp $
 
 COMMENT =	KDE FFmpeg-based thumbnail generator for video files
 DISTNAME =	ffmpegthumbs-${VERSION}
@@ -9,7 +9,7 @@ WANTLIB += ${COMPILER_LIBCXX} KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5CoreAddons KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui
 WANTLIB += KF5KIOWidgets KF5Service KF5Solid KF5WidgetsAddons
 WANTLIB += KF5WindowSystem Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Network Qt5Widgets Qt5Xml avcodec avfilter avformat
+WANTLIB += Qt5Network Qt5Widgets Qt5Xml X11 avcodec avfilter avformat
 WANTLIB += avutil m swscale tag
 
 # build depends but there are no translations

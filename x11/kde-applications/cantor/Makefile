@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2021/11/02 00:02:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2021/11/10 06:37:41 rsadowski Exp $
 
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${VERSION}
 CATEGORIES =	education math
-REVISION =	1
 
 SHARED_LIBS +=  cantorlibs                54.0 # 17.08
 
@@ -19,8 +18,9 @@ WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Help
 WANTLIB += Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
 WANTLIB += Qt5Quick Qt5Sql Qt5Svg Qt5WebChannel Qt5WebEngine Qt5WebEngineCore
 WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml Qt5XmlPatterns
-WANTLIB += c intl luajit-5.1 m poppler poppler-qt5 qalculate spectre util
+WANTLIB += c intl luajit-5.1 m poppler poppler-qt5 qalculate spectre util X11
 WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += lib/R/lib/R lib/R/lib/Rblas lib/R/lib/Rlapack
 
 MODULES +=	fortran \
 		lang/lua \

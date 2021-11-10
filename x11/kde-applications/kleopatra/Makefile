@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2021/01/23 18:10:21 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2021/11/10 06:37:49 rsadowski Exp $
 
 COMMENT =	certificate manager and a universal crypto GUI
 DISTNAME =	kleopatra-${VERSION}
@@ -9,11 +9,11 @@ SHARED_LIBS +=  kleopatraclientgui      1.0 # 1.3.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
-WANTLIB += KF5DBusAddons KF5I18n KF5IconThemes KF5ItemModels KF5KCMUtils
-WANTLIB += KF5Libkleo KF5Mime KF5Notifications KF5Service KF5SonnetUi
-WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
-WANTLIB += Qt5Xml assuan c gpg-error gpgme gpgmepp m qgpgme
+WANTLIB += KF5DBusAddons KF5I18n KF5IconThemes KF5ItemModels KF5Libkleo
+WANTLIB += KF5Mime KF5Notifications KF5SonnetUi KF5TextWidgets
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Core
+WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
+WANTLIB += Qt5Xml X11 assuan c gpg-error gpgme gpgmepp m qgpgme
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -23,11 +23,12 @@ MODKDE5_DOCS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 
-RUN_DEPENDS =	security/gnupg>=2.2.23p1
-BUILD_DEPENDS =	devel/boost
+RUN_DEPENDS =	security/gnupg
+
+BUILD_DEPENDS =	devel/boost \
+		devel/git
 
 LIB_DEPENDS =	devel/kf5/kauth \
-		devel/kf5/kcmutils \
 		devel/kf5/kcodecs \
 		devel/kf5/kconfig \
 		devel/kf5/kconfigwidgets \
@@ -37,7 +38,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kiconthemes \
 		devel/kf5/kitemmodels \
 		devel/kf5/knotifications \
-		devel/kf5/kservice \
 		devel/kf5/ktextwidgets \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2021/06/19 18:34:42 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2021/11/10 06:37:54 rsadowski Exp $
 
 COMMENT =	system log viewer
 DISTNAME =	ksystemlog-${VERSION}
@@ -12,7 +12,7 @@ WANTLIB += KF5CoreAddons KF5I18n KF5ItemViews KF5JobWidgets KF5KIOCore
 WANTLIB += KF5KIOGui KF5KIOWidgets KF5Service KF5Solid KF5SonnetUi
 WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Widgets Qt5Xml c m
+WANTLIB += Qt5Widgets Qt5Xml X11 c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_TRANSLATIONS = yes

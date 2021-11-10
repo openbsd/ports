@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/09/10 08:43:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/10 06:37:53 rsadowski Exp $
 
 COMMENT =	VNC and RDP  desktop client
 DISTNAME =	krdc-${VERSION}
@@ -12,8 +12,9 @@ WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5DNSSD KF5I18n KF5IconThemes
 WANTLIB += KF5KCMUtils KF5Notifications KF5NotifyConfig KF5Service
-WANTLIB += KF5Wallet KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml c m ssh vncclient
+WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
+WANTLIB += X11 c m ssh vncclient
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_TRANSLATIONS = yes

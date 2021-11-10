@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/06/19 18:34:32 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2021/11/10 06:37:42 rsadowski Exp $
 
 COMMENT =	graphical equivalent of du
 DISTNAME =	filelight-${VERSION}
@@ -11,7 +11,7 @@ WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5Service KF5Solid KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Svg Qt5Widgets Qt5Xml c m
+WANTLIB += Qt5Svg Qt5Widgets Qt5Xml X11 c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/11/03 16:12:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/10 06:37:55 rsadowski Exp $
 
 COMMENT =	general purpose flash card program for KDE
 DISTNAME =	kwordquiz-${VERSION}
@@ -8,11 +8,11 @@ HOMEPAGE =	https://www.kde.org/applications/games/kwordquiz
 
 WANTLIB += ${COMPILER_LIBCXX} KEduVocDocument KF5Attica KF5Auth
 WANTLIB += KF5AuthCore KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5Crash KF5GuiAddons KF5I18n KF5IconThemes
-WANTLIB += KF5ItemViews KF5NewStuff KF5NewStuffCore KF5Notifications
-WANTLIB += KF5NotifyConfig KF5Service KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Widgets Qt5Xml c m phonon4qt5
+WANTLIB += KF5CoreAddons KF5Crash KF5GuiAddons KF5I18n KF5ItemViews
+WANTLIB += KF5NewStuff KF5NewStuffCore KF5Notifications KF5NotifyConfig
+WANTLIB += KF5Service KF5WidgetsAddons KF5WindowSystem KF5XmlGui
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
+WANTLIB += Qt5Xml X11 c m phonon4qt5
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
@@ -31,7 +31,6 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kcrash \
 		devel/kf5/kguiaddons \
 		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
 		devel/kf5/kitemviews \
 		devel/kf5/knewstuff \
 		devel/kf5/knotifications \

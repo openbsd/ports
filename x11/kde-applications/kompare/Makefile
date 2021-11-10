@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2021/06/19 18:34:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2021/11/10 06:37:51 rsadowski Exp $
 
 COMMENT =	file compare utility for KDE
 DISTNAME =	kompare-${VERSION}
@@ -14,7 +14,7 @@ WANTLIB += KF5KIOWidgets KF5Parts KF5Service KF5Solid KF5SonnetUi
 WANTLIB += KF5SyntaxHighlighting KF5TextEditor KF5TextWidgets
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
-WANTLIB += Qt5Xml c komparediff2 m
+WANTLIB += Qt5Xml X11 c komparediff2 m
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2021/06/19 18:34:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2021/11/10 06:37:48 rsadowski Exp $
 
 COMMENT =	KDE help center
 DISTNAME =	khelpcenter-${VERSION}
@@ -11,7 +11,7 @@ WANTLIB += KF5DocTools KF5I18n KF5JS KF5JobWidgets KF5KHtml KF5KIOCore
 WANTLIB += KF5KIOGui KF5KIOWidgets KF5Parts KF5Service KF5Solid
 WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5Xml c m xapian xml2
+WANTLIB += Qt5Widgets Qt5Xml X11 c m xapian xml2
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_TRANSLATIONS = yes

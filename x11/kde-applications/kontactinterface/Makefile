@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/06/19 18:34:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2021/11/10 06:37:52 rsadowski Exp $
 
 COMMENT =	KDE PIM kontact plugin interface library
 DISTNAME =	kontactinterface-${VERSION}
@@ -12,7 +12,7 @@ WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5Parts KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
-WANTLIB += m
+WANTLIB += X11 m
 
 MODKDE5_TRANSLATIONS = yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/09/10 08:43:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2021/11/10 06:37:42 rsadowski Exp $
 
 COMMENT =	utilities and tools to manage themes in KDE PIM applications
 DISTNAME =	grantlee-editor-${VERSION}
@@ -18,8 +18,8 @@ WANTLIB += KF5Service KF5Solid KF5SyntaxHighlighting KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml
 WANTLIB += Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
-WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml assuan c gpgme
-WANTLIB += gpgmepp m qgpgme
+WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 assuan c
+WANTLIB += gpgme gpgmepp m qgpgme
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes

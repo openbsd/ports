@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/06/19 18:34:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2021/11/10 06:37:43 rsadowski Exp $
 
 COMMENT =	addressbook viewer/frontend for KDE
 DISTNAME =	kaddressbook-${VERSION}
@@ -17,7 +17,7 @@ WANTLIB += KF5Libkdepim KF5Mime KF5Parts KF5PimCommon KF5PimCommonAkonadi
 WANTLIB += KF5Prison KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
-WANTLIB += Qt5Xml c m
+WANTLIB += Qt5Xml X11 c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
