@@ -1,4 +1,4 @@
-$OpenBSD: patch-core_project_settings_cpp,v 1.6 2021/08/22 01:43:49 thfr Exp $
+$OpenBSD: patch-core_project_settings_cpp,v 1.7 2021/11/10 13:20:17 jca Exp $
 
 revert long-distance matching in zstd which is based on private functions and
 doesn't compile if archivers/zstd is installed
@@ -9,9 +9,9 @@ based on github issue #17374
 Index: core/project_settings.cpp
 --- core/project_settings.cpp.orig
 +++ core/project_settings.cpp
-@@ -483,9 +483,7 @@ Error ProjectSettings::setup(const String &p_path, con
- 		}
- 	}
+@@ -495,9 +495,7 @@ Error ProjectSettings::setup(const String &p_path, con
+ 	project_data_dir_name = (use_hidden_directory ? "." : "") + PROJECT_DATA_DIR_NAME_SUFFIX;
+ 
  	// Using GLOBAL_GET on every block for compressing can be slow, so assigning here.
 -	Compression::zstd_long_distance_matching = GLOBAL_GET("compression/formats/zstd/long_distance_matching");
  	Compression::zstd_level = GLOBAL_GET("compression/formats/zstd/compression_level");
@@ -19,7 +19,7 @@ Index: core/project_settings.cpp
  
  	Compression::zlib_level = GLOBAL_GET("compression/formats/zlib/compression_level");
  
-@@ -1232,12 +1230,8 @@ ProjectSettings::ProjectSettings() {
+@@ -1233,12 +1231,8 @@ ProjectSettings::ProjectSettings() {
  	GLOBAL_DEF("debug/settings/profiler/max_functions", 16384);
  	custom_prop_info["debug/settings/profiler/max_functions"] = PropertyInfo(Variant::INT, "debug/settings/profiler/max_functions", PROPERTY_HINT_RANGE, "128,65535,1");
  

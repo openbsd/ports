@@ -1,17 +1,13 @@
-# $OpenBSD: Makefile,v 1.28 2021/10/29 21:07:02 thfr Exp $
+# $OpenBSD: Makefile,v 1.29 2021/11/10 13:20:17 jca Exp $
 
 BROKEN-powerpc =	fails at runtime, the UI is totally blank
-BROKEN-powerpc64 =	Unknown ISA
-BROKEN-riscv64 =	Unknown ISA
-BROKEN-mips64 =		Unknown ISA
 
 COMMENT =	2D and 3D game engine
 
-V =		3.3.4
+V =		3.4
 GODOTSTEAM_V =	g333-s151-g397
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot-${V}
-REVISION =	0
 CATEGORIES =	games
 HOMEPAGE =	https://godotengine.org/
 MAINTAINER =	Omar Polo <op@omarpolo.com>
@@ -66,6 +62,13 @@ MODSCONS_FLAGS =	CC="${CC}" \
 			verbose=yes \
 			warnings=extra \
 			werror=no
+
+# The raycast module requires embree which is enabled on all 64bit
+# arches but actually supports only amd64.
+.if ! ${MACHINE_ARCH:Mamd64}
+MODSCONS_FLAGS +=	module_raycast_enabled="false"
+.endif
+
 LIB_DEPENDS =		archivers/zstd \
 			audio/libvorbis \
 			audio/musepack \

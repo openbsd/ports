@@ -1,11 +1,11 @@
-$OpenBSD: patch-platform_x11_os_x11_cpp,v 1.6 2021/08/22 01:43:49 thfr Exp $
+$OpenBSD: patch-platform_x11_os_x11_cpp,v 1.7 2021/11/10 13:20:17 jca Exp $
 
 fix libXrandr library name and load sndio
 
 Index: platform/x11/os_x11.cpp
 --- platform/x11/os_x11.cpp.orig
 +++ platform/x11/os_x11.cpp
-@@ -160,7 +160,7 @@ Error OS_X11::initialize(const VideoMode &p_desired, i
+@@ -157,7 +157,7 @@ Error OS_X11::initialize(const VideoMode &p_desired, i
  	int xrandr_minor = 0;
  	int event_base, error_base;
  	xrandr_ext_ok = XRRQueryExtension(x11_display, &event_base, &error_base);
@@ -14,7 +14,7 @@ Index: platform/x11/os_x11.cpp
  	if (!xrandr_handle) {
  		err = dlerror();
  		// For some arcane reason, NetBSD now ships libXrandr.so.3 while the rest of the world has libXrandr.so.2...
-@@ -3973,6 +3973,10 @@ void OS_X11::update_real_mouse_position() {
+@@ -4053,6 +4053,11 @@ void OS_X11::update_real_mouse_position() {
  }
  
  OS_X11::OS_X11() {
@@ -22,6 +22,7 @@ Index: platform/x11/os_x11.cpp
 +#ifdef SNDIO_ENABLED
 +	AudioDriverManager::add_driver(&driver_sndio);
 +#endif
- 
++
  #ifdef PULSEAUDIO_ENABLED
  	AudioDriverManager::add_driver(&driver_pulseaudio);
+ #endif

@@ -1,4 +1,4 @@
-$OpenBSD: patch-core_io_compression_cpp,v 1.3 2021/08/22 01:43:49 thfr Exp $
+$OpenBSD: patch-core_io_compression_cpp,v 1.4 2021/11/10 13:20:17 jca Exp $
 
 revert long-distance matching in zstd which is based on private functions and
 doesn't compile if archivers/zstd is installed
@@ -9,7 +9,7 @@ based on github issue #17374
 Index: core/io/compression.cpp
 --- core/io/compression.cpp.orig
 +++ core/io/compression.cpp
-@@ -80,16 +80,8 @@ int Compression::compress(uint8_t *p_dst, const uint8_
+@@ -77,16 +77,8 @@ int Compression::compress(uint8_t *p_dst, const uint8_
  
  		} break;
  		case MODE_ZSTD: {
@@ -27,7 +27,7 @@ Index: core/io/compression.cpp
  		} break;
  	}
  
-@@ -175,13 +167,7 @@ int Compression::decompress(uint8_t *p_dst, int p_dst_
+@@ -167,13 +159,7 @@ int Compression::decompress(uint8_t *p_dst, int p_dst_
  			return total;
  		} break;
  		case MODE_ZSTD: {
@@ -42,9 +42,10 @@ Index: core/io/compression.cpp
  		} break;
  	}
  
-@@ -191,5 +177,3 @@ int Compression::decompress(uint8_t *p_dst, int p_dst_
+@@ -272,6 +258,4 @@ int Compression::decompress_dynamic(PoolVector<uint8_t
  int Compression::zlib_level = Z_DEFAULT_COMPRESSION;
  int Compression::gzip_level = Z_DEFAULT_COMPRESSION;
  int Compression::zstd_level = 3;
 -bool Compression::zstd_long_distance_matching = false;
 -int Compression::zstd_window_log_size = 27; // ZSTD_WINDOWLOG_LIMIT_DEFAULT
+ int Compression::gzip_chunk = 16384;

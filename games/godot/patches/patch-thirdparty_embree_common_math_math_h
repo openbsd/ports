@@ -1,4 +1,4 @@
-$OpenBSD: patch-thirdparty_embree_common_math_math_h,v 1.1 2021/06/09 15:56:32 cwen Exp $
+$OpenBSD: patch-thirdparty_embree_common_math_math_h,v 1.2 2021/11/10 13:20:17 jca Exp $
 
 add an implementation for max for long (ssize_t are long typedef'ed).
 Otherwise it will fail in parallel_partition.h:185 due to an ambiguous
@@ -7,7 +7,7 @@ call.
 Index: thirdparty/embree/common/math/math.h
 --- thirdparty/embree/common/math/math.h.orig
 +++ thirdparty/embree/common/math/math.h
-@@ -242,6 +242,7 @@ namespace embree
+@@ -168,6 +168,7 @@ namespace embree
      __forceinline T twice(const T& a) { return a+a; }
  
    __forceinline      int min(int      a, int      b) { return a<b ? a:b; }
@@ -15,7 +15,7 @@ Index: thirdparty/embree/common/math/math.h
    __forceinline unsigned min(unsigned a, unsigned b) { return a<b ? a:b; }
    __forceinline  int64_t min(int64_t  a, int64_t  b) { return a<b ? a:b; }
    __forceinline    float min(float    a, float    b) { return a<b ? a:b; }
-@@ -259,6 +260,7 @@ namespace embree
+@@ -185,6 +186,7 @@ namespace embree
    template<typename T> __forceinline T mini(const T& a, const T& b, const T& c, const T& d, const T& e) { return mini(mini(mini(a,b),mini(c,d)),e); }
  
    __forceinline      int max(int      a, int      b) { return a<b ? b:a; }

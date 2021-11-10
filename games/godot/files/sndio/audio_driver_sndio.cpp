@@ -1,4 +1,4 @@
-/* $OpenBSD: audio_driver_sndio.cpp,v 1.2 2021/05/03 19:10:24 thfr Exp $ */
+/* $OpenBSD: audio_driver_sndio.cpp,v 1.3 2021/11/10 13:20:17 jca Exp $ */
 /*************************************************************************/
 /*  audio_driver_sndio.cpp                                               */
 /*************************************************************************/
@@ -94,7 +94,7 @@ void AudioDriverSndio::thread_func(void *p_udata) {
 
 		size_t bytes = ad->period_size * ad->channels * sizeof(int32_t);
 		if (sio_write(ad->handle, ad->samples.ptr(), bytes) != bytes) {
-			ERR_PRINTS("sndio: fatal error");
+			ERR_PRINT("sndio: fatal error");
 			ad->exit_thread = true;
 		}
 	}
