@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/14 16:17:39 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/11/10 11:31:40 solene Exp $
 @newgroup _whatsapp:851
-@newuser _whatsapp:851:851:daemon:Matrix.org whatsapp bridge Daemon:/var/whatsapp:/sbin/nologin
+@newuser _whatsapp:851:851:daemon:Matrix.org whatsapp bridge Daemon:${VARBASE}/whatsapp:/sbin/nologin
 @rcscript ${RCDIR}/mautrix_whatsapp
 @bin bin/mautrix-whatsapp
 share/doc/pkg-readmes/${PKGSTEM}
@@ -9,4 +9,4 @@ share/examples/mautrix-whatsapp/example-config.yaml
 @mode 750
 @owner _whatsapp
 @group _whatsapp
-@sample /var/whatsapp/
+@sample ${VARBASE}/whatsapp/

@@ -1,4 +1,4 @@
-# $OpenBSD: modules.inc,v 1.2 2021/11/01 13:00:14 ajacoutot Exp $
+# $OpenBSD: modules.inc,v 1.3 2021/11/10 11:31:40 solene Exp $
 
 MODGO_MODFILES =	\
 	github.com/alecthomas/template				 v0.0.0-20160405071501-a0175ee3bccc \
@@ -89,6 +89,7 @@ MODGO_MODFILES =	\
 	golang.org/x/term					 v0.0.0-20201117132131-f5c789dd3221 \
 	golang.org/x/text					 v0.3.0 \
 	golang.org/x/text					 v0.3.2 \
+	golang.org/x/text					 v0.3.3 \
 	google.golang.org/protobuf				 v0.0.0-20200109180630-ec00e32a8dfd \
 	google.golang.org/protobuf				 v0.0.0-20200221191635-4d8936d0db64 \
 	google.golang.org/protobuf				 v0.0.0-20200228230310-ab0ca4ff8a60 \
@@ -101,7 +102,8 @@ MODGO_MODFILES =	\
 	gopkg.in/yaml.v2					 v2.2.2 \
 	gopkg.in/yaml.v2					 v2.2.4 \
 	gopkg.in/yaml.v2					 v2.2.5 \
-	gopkg.in/yaml.v2					 v2.3.0
+	gopkg.in/yaml.v2					 v2.3.0 \
+	maunium.net/go/maulogger/v2				 v2.2.4
 MODGO_MODULES =	\
 	cloud.google.com/go					 v0.34.0 \
 	github.com/!rhymen/go-whatsapp				 v0.1.0 \
@@ -143,7 +145,7 @@ MODGO_MODULES =	\
 	github.com/kr/pty					 v1.1.1 \
 	github.com/kr/text					 v0.1.0 \
 	github.com/lib/pq					 v1.10.2 \
-	github.com/mattn/go-sqlite3				 v1.14.7 \
+	github.com/mattn/go-sqlite3				 v1.14.8 \
 	github.com/matttproud/golang_protobuf_extensions	 v1.0.1 \
 	github.com/modern-go/concurrent				 v0.0.0-20180306012644-bacd9c7ef1dd \
 	github.com/modern-go/reflect2				 v1.0.1 \
@@ -165,14 +167,15 @@ MODGO_MODULES =	\
 	github.com/tidwall/match				 v1.0.3 \
 	github.com/tidwall/pretty				 v1.0.2 \
 	github.com/tidwall/sjson				 v1.1.5 \
-	github.com/tulir/go-whatsapp				 v0.5.5 \
+	github.com/tulir/go-whatsapp				 v0.5.12 \
 	golang.org/x/crypto					 v0.0.0-20210506145944-38f3c27a63bf \
+	golang.org/x/image					 v0.0.0-20210628002857-a66eb6448b8d \
 	golang.org/x/net					 v0.0.0-20210226172049-e18ecbb05110 \
 	golang.org/x/oauth2					 v0.0.0-20190226205417-e64efc72b421 \
 	golang.org/x/sync					 v0.0.0-20201207232520-09787c993a3a \
 	golang.org/x/sys					 v0.0.0-20210603081109-ebe580a85c40 \
 	golang.org/x/term					 v0.0.0-20201126162022-7de9c90e9dd1 \
-	golang.org/x/text					 v0.3.3 \
+	golang.org/x/text					 v0.3.6 \
 	golang.org/x/tools					 v0.0.0-20180917221912-90fa682c2a6e \
 	golang.org/x/xerrors					 v0.0.0-20191204190536-9bdfabe68543 \
 	google.golang.org/appengine				 v1.4.0 \
@@ -184,5 +187,5 @@ MODGO_MODULES =	\
 	gopkg.in/yaml.v2					 v2.4.0 \
 	gopkg.in/yaml.v3					 v3.0.0-20200313102051-9f266ea9e77c \
 	maunium.net/go/mauflag					 v1.0.0 \
-	maunium.net/go/maulogger/v2				 v2.2.4 \
-	maunium.net/go/mautrix					 v0.9.13
+	maunium.net/go/maulogger/v2				 v2.3.0 \
+	maunium.net/go/mautrix					 v0.9.27
