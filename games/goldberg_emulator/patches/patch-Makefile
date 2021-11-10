@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2021/08/22 02:01:47 thfr Exp $
+$OpenBSD: patch-Makefile,v 1.2 2021/11/10 13:31:46 jca Exp $
 
 don't link libdl
 look in LOCALBASE for libs and headers
@@ -17,7 +17,7 @@ Index: Makefile
 -LD_FLAGS += -shared -lprotobuf-lite -ldl -Wl,--no-undefined
 +CXX=c++
 +CXX_FLAGS += ${CXXFLAGS} -fPIC -std=c++11 -I${LOCALBASE}/include
-+LD_FLAGS += -shared -L${LOCALBASE}/lib -lprotobuf-lite -Wl
++LD_FLAGS += -shared -L${LOCALBASE}/lib -lprotobuf-lite
  LIBRARY_NAME=libsteam_api.so
  RM = rm -f
  
