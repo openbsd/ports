@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/09/26 14:55:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/11/10 08:47:50 benoit Exp $
 
 COMMENT =		hierarchical schematic capture program
 
-DISTNAME =		xschem-2.9.2
+DISTNAME =		xschem-3.0.0
 
 CATEGORIES =		cad
 
@@ -33,7 +33,8 @@ CONFIGURE_ARGS =	--cflags/libs/script/tcl="${CFLAGS} -I${MODTCL_INCDIR}" \
 			--ldflags/libs/script/tcl="-L${LOCALBASE}/lib" \
 			--cflags/libs/script/tk="${CFLAGS} -I${MODTK_INCDIR}" \
 			--prefix="${LOCALBASE}" \
-			/arg/tk-version=${MODTK_VERSION}
+			/arg/tk-version=${MODTK_VERSION} \
+			--xschem-lib-path="${LOCALBASE}/share/xschem/xschem_library/devices:${LOCALBASE}/share/xschem/xschem_library/gschem_import/"
 
 FAKE_FLAGS =		MANDIR="${DESTDIR}${PREFIX}/man" \
 			XEXAMPLESDIR="${DESTDIR}${PREFIX}/share/examples/xschem"

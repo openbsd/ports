@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2021/11/10 08:47:50 benoit Exp $
+rawtovcd shouldn't go to shared dir. Its place is in bin/
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -13,7 +13,7 @@ put /local/install_shares {
+  keys.help xschem.help xschem.tcl break.awk convert_to_verilog2001.awk
+  flatten.awk flatten_tedax.awk flatten_savenodes.awk make_sym.awk make_sym_lcc.awk symgen.awk order_labels.awk 
+  sort_labels.awk spice.awk tedax.awk verilog.awk vhdl.awk hspice_backannotate.tcl add_custom_menu.tcl
+- change_index.tcl resources.tcl xschemrc ngspice_backannotate.tcl rawtovcd gschemtoxschem.awk
++ change_index.tcl resources.tcl xschemrc ngspice_backannotate.tcl gschemtoxschem.awk
+ }
+ 
+ # generate a list of objects from the list of source files
