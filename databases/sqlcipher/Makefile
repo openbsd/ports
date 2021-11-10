@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/21 12:04:26 tim Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/10 15:23:24 tim Exp $
 
 COMMENT =	encrypted SQLite database
 
 GH_ACCOUNT =	sqlcipher
 GH_PROJECT =	sqlcipher
-GH_TAGNAME =	v4.4.3
+GH_TAGNAME =	v4.5.0
 
-SHARED_LIBS +=  sqlcipher                 0.0 # 8.6
+SHARED_LIBS +=  sqlcipher                 0.1 # 8.6
 
 CATEGORIES =	databases
 
@@ -16,7 +16,7 @@ MAINTAINER =	Tom Murphy <openbsd@pertho.net>
 # PD and BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		c crypto curses pthread readline z
+WANTLIB +=		c crypto curses m pthread readline z
 
 CONFIGURE_STYLE =	gnu
 
