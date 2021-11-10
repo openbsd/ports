@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/10/19 03:54:58 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/10 01:07:06 kevlo Exp $
 
 ONLY_FOR_ARCHS =	aarch64
 
@@ -35,7 +35,8 @@ COMPILER =	base-clang ports-gcc
 
 # "build=native" here just means "not cross-compiled"
 MODSCONS_FLAGS =	Werror=0 neon=1 opencl=0 embed_kernels=0 examples=0 \
-			os=openbsd arch=arm64-v8a build=native
+			os=openbsd arch=arm64-v8a build=native \
+			extra_cxx_flags=-fPIC
 
 MODULES =	devel/scons
 
