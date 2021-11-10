@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/06 19:01:42 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/10 07:30:37 rsadowski Exp $
 
 COMMENT =	KDE Wayland Plasma protocols
 
-VERSION =	1.4.0
+VERSION =	1.5.0
 DISTNAME =	plasma-wayland-protocols-${VERSION}
 
 CATEGORIES =	wayland
