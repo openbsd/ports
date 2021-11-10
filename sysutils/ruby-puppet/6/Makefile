@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2021/10/13 05:50:56 kn Exp $
+# $OpenBSD: Makefile,v 1.23 2021/11/10 12:20:03 kn Exp $
 
 PORTROACH=		limit:^6
 
-VERSION=		6.25.0
+VERSION=		6.25.1
 
 MASTER_SITES0=		https://github.com/puppetlabs/puppet/commit/
 PATCHFILES=		puppet-uri-encode-fix{41dcae71c7d10b9cc3c190897d02c5082ddd2076}.patch:0
