@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2021/11/07 11:40:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.98 2021/11/10 10:57:56 sthen Exp $
 
 # https://github.com/rspamd/rspamd/issues/3858
 ONLY_FOR_ARCHS=	${LP64_ARCHS}
@@ -8,6 +8,7 @@ COMMENT=	event-driven spam filtering system in C/Lua
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
 GH_TAGNAME=	3.1
+REVISION=	0
 
 CATEGORIES=	mail
 
@@ -19,8 +20,8 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += blas c crypto glib-2.0 icudata icui18n icuio icuuc intl m
-WANTLIB += pcre sodium sqlite3 ssl util z
+WANTLIB += blas c crypto glib-2.0 fmt icudata icui18n icuio icuuc
+WANTLIB += intl m pcre sodium sqlite3 ssl util z zstd
 
 FLAVORS=	no_luajit hyperscan
 .if ${MACHINE_ARCH} == "amd64"
@@ -44,7 +45,9 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 MODPY_BUILDDEP=	No
 MODPY_RUNDEP=	No
 
-LIB_DEPENDS=	databases/sqlite3 \
+LIB_DEPENDS=	archivers/zstd \
+		databases/sqlite3 \
+		devel/fmt \
 		devel/gettext,-runtime \
 		devel/glib2 \
 		devel/pcre \
@@ -72,6 +75,9 @@ CONFIGURE_ARGS+= -DOPENBSD_BUILD=1 \
 		-DMANDIR="${PREFIX}/man" \
 		-DRUNDIR="${LOCALSTATEDIR}/run/rspamd" \
 		-DRSPAMD_USER="_rspamd"
+
+CONFIGURE_ARGS+= -DSYSTEM_FMT=ON \
+		-DSYSTEM_ZSTD=ON
 
 # to line up @samples in plist
 RSPAMDCONF=	${SYSCONFDIR}/rspamd
