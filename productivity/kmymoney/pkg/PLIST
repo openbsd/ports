@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/01/04 06:13:31 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.12 2021/11/10 11:55:27 rsadowski Exp $
 @bin bin/kmymoney
 include/kmymoney/
 include/kmymoney/amountedit.h
@@ -89,6 +89,7 @@ include/kmymoney/onlinetasks/interfaces/onlinetask.h
 include/kmymoney/onlinetasks/interfaces/onlinetaskconverter.h
 include/kmymoney/onlinetasks/interfaces/onlinetasksettingsfactory.h
 include/kmymoney/payeesmodel.h
+include/kmymoney/popuppositioner.h
 include/kmymoney/register.h
 include/kmymoney/registeritem.h
 include/kmymoney/scheduledtransaction.h
@@ -140,6 +141,7 @@ lib/qt5/plugins/kmymoney/
 @so lib/qt5/plugins/kmymoney/reconciliationreport.so
 @so lib/qt5/plugins/kmymoney/reportsview.so
 @so lib/qt5/plugins/kmymoney/sqlstorage.so
+@so lib/qt5/plugins/kmymoney/weboob.so
 @so lib/qt5/plugins/kmymoney/xmlstorage.so
 @man man/man1/kmymoney.1
 share/applications/org.kde.kmymoney.desktop
@@ -459,6 +461,38 @@ share/doc/HTML/pt_BR/kmymoney/introduction.docbook
 share/doc/HTML/pt_BR/kmymoney/makemostof.docbook
 share/doc/HTML/pt_BR/kmymoney/reference.docbook
 share/doc/HTML/pt_BR/kmymoney/whatsnew.docbook
+share/doc/HTML/ru/kmymoney/
+share/doc/HTML/ru/kmymoney/credits.docbook
+share/doc/HTML/ru/kmymoney/details-accounts.docbook
+share/doc/HTML/ru/kmymoney/details-budgets.docbook
+share/doc/HTML/ru/kmymoney/details-categories.docbook
+share/doc/HTML/ru/kmymoney/details-currencies.docbook
+share/doc/HTML/ru/kmymoney/details-database.docbook
+share/doc/HTML/ru/kmymoney/details-forecast.docbook
+share/doc/HTML/ru/kmymoney/details-formats.docbook
+share/doc/HTML/ru/kmymoney/details-impexp-csv.docbook
+share/doc/HTML/ru/kmymoney/details-impexp-csvexp.docbook
+share/doc/HTML/ru/kmymoney/details-impexp.docbook
+share/doc/HTML/ru/kmymoney/details-institutions.docbook
+share/doc/HTML/ru/kmymoney/details-investments.docbook
+share/doc/HTML/ru/kmymoney/details-ledgers.docbook
+share/doc/HTML/ru/kmymoney/details-loans.docbook
+share/doc/HTML/ru/kmymoney/details-payees.docbook
+share/doc/HTML/ru/kmymoney/details-reconciliation.docbook
+share/doc/HTML/ru/kmymoney/details-reports.docbook
+share/doc/HTML/ru/kmymoney/details-schedules.docbook
+share/doc/HTML/ru/kmymoney/details-search.docbook
+share/doc/HTML/ru/kmymoney/details-settings.docbook
+share/doc/HTML/ru/kmymoney/details-tags.docbook
+share/doc/HTML/ru/kmymoney/details-widgets.docbook
+share/doc/HTML/ru/kmymoney/faq.docbook
+share/doc/HTML/ru/kmymoney/firsttime.docbook
+share/doc/HTML/ru/kmymoney/index.cache.bz2
+share/doc/HTML/ru/kmymoney/index.docbook
+share/doc/HTML/ru/kmymoney/introduction.docbook
+share/doc/HTML/ru/kmymoney/makemostof.docbook
+share/doc/HTML/ru/kmymoney/reference.docbook
+share/doc/HTML/ru/kmymoney/whatsnew.docbook
 share/doc/HTML/sv/kmymoney/
 share/doc/HTML/sv/kmymoney/credits.docbook
 share/doc/HTML/sv/kmymoney/details-accounts.docbook
@@ -533,15 +567,28 @@ share/doc/HTML/uk/kmymoney/reference.docbook
 share/doc/HTML/uk/kmymoney/select_currency.png
 share/doc/HTML/uk/kmymoney/tipofday.png
 share/doc/HTML/uk/kmymoney/whatsnew.docbook
+share/icons/hicolor/1024x1024/
+share/icons/hicolor/1024x1024/apps/
+share/icons/hicolor/1024x1024/apps/kmymoney.png
+share/icons/hicolor/1024x1024/mimetypes/
+share/icons/hicolor/1024x1024/mimetypes/application-x-kmymoney.png
 share/icons/hicolor/128x128/apps/kmymoney.png
 share/icons/hicolor/128x128/mimetypes/application-x-kmymoney.png
 share/icons/hicolor/16x16/apps/kmymoney.png
 share/icons/hicolor/16x16/mimetypes/application-x-kmymoney.png
-share/icons/hicolor/22x22/mimetypes/application-x-kmymoney.png
+share/icons/hicolor/20x20/
+share/icons/hicolor/20x20/apps/
+share/icons/hicolor/20x20/apps/kmymoney.png
+share/icons/hicolor/24x24/apps/kmymoney.png
+share/icons/hicolor/24x24/mimetypes/application-x-kmymoney.png
+share/icons/hicolor/256x256/apps/kmymoney.png
+share/icons/hicolor/256x256/mimetypes/application-x-kmymoney.png
 share/icons/hicolor/32x32/apps/kmymoney.png
 share/icons/hicolor/32x32/mimetypes/application-x-kmymoney.png
 share/icons/hicolor/48x48/apps/kmymoney.png
 share/icons/hicolor/48x48/mimetypes/application-x-kmymoney.png
+share/icons/hicolor/512x512/apps/kmymoney.png
+share/icons/hicolor/512x512/mimetypes/application-x-kmymoney.png
 share/icons/hicolor/64x64/apps/kmymoney.png
 share/icons/hicolor/64x64/mimetypes/application-x-kmymoney.png
 share/kbanking/
@@ -1262,6 +1309,8 @@ share/kmymoney/pics/l10n/ro/
 share/kmymoney/pics/l10n/ro/startlogo.png
 share/kmymoney/pics/l10n/ru/
 share/kmymoney/pics/l10n/ru/startlogo.png
+share/kmymoney/pics/l10n/sl/
+share/kmymoney/pics/l10n/sl/startlogo.png
 share/kmymoney/pics/l10n/sv/
 share/kmymoney/pics/l10n/sv/startlogo.png
 share/kmymoney/pics/l10n/uk/
@@ -1289,6 +1338,11 @@ share/kmymoney/templates/C/renter.kmt
 share/kmymoney/templates/C/retiremt.kmt
 share/kmymoney/templates/C/spouseinc.kmt
 share/kmymoney/templates/C/spouseretire.kmt
+share/kmymoney/templates/da/
+share/kmymoney/templates/da/car.kmt
+share/kmymoney/templates/da/common.kmt
+share/kmymoney/templates/da/homeloan.kmt
+share/kmymoney/templates/da/homeown.kmt
 share/kmymoney/templates/de_AT/
 share/kmymoney/templates/de_AT/auto.kmt
 share/kmymoney/templates/de_AT/autoloan.kmt
@@ -1324,11 +1378,6 @@ share/kmymoney/templates/de_DE/skr04.kmt
 share/kmymoney/templates/de_DE/skr49.kmt
 share/kmymoney/templates/de_DE/studium.kmt
 share/kmymoney/templates/de_DE/wohnungsw.kmt
-share/kmymoney/templates/dk/
-share/kmymoney/templates/dk/car.kmt
-share/kmymoney/templates/dk/common.kmt
-share/kmymoney/templates/dk/homeloan.kmt
-share/kmymoney/templates/dk/homeown.kmt
 share/kmymoney/templates/el_GR/
 share/kmymoney/templates/el_GR/brokerage.kmt
 share/kmymoney/templates/el_GR/carloan.kmt
@@ -1645,8 +1694,6 @@ share/kservices5/kcm_qifexporter.desktop
 share/kservices5/kcm_qifimporter.desktop
 share/kservices5/kcm_reportsview.desktop
 share/kservices5/kcm_xmlstorage.desktop
-share/kservicetypes5/kmymoney-importerplugin.desktop
-share/kservicetypes5/kmymoney-payeeidentifierdelegate.desktop
 share/kxmlgui5/
 share/kxmlgui5/checkprinting/
 share/kxmlgui5/checkprinting/checkprinting.rc
@@ -1666,6 +1713,8 @@ share/kxmlgui5/qifimporter/
 share/kxmlgui5/qifimporter/qifimporter.rc
 share/kxmlgui5/sqlstorage/
 share/kxmlgui5/sqlstorage/sqlstorage.rc
+share/kxmlgui5/weboob/
+share/kxmlgui5/weboob/weboob.rc
 share/locale/ar/LC_MESSAGES/kmymoney.mo
 share/locale/ast/LC_MESSAGES/kmymoney.mo
 share/locale/bg/LC_MESSAGES/kmymoney.mo
@@ -1701,6 +1750,7 @@ share/locale/pt_BR/LC_MESSAGES/kmymoney.mo
 share/locale/ro/LC_MESSAGES/kmymoney.mo
 share/locale/ru/LC_MESSAGES/kmymoney.mo
 share/locale/sk/LC_MESSAGES/kmymoney.mo
+share/locale/sl/LC_MESSAGES/kmymoney.mo
 share/locale/sv/LC_MESSAGES/kmymoney.mo
 share/locale/tr/LC_MESSAGES/kmymoney.mo
 share/locale/ug/LC_MESSAGES/kmymoney.mo

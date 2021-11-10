@@ -1,26 +1,25 @@
-# $OpenBSD: Makefile,v 1.40 2021/03/15 06:28:05 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.41 2021/11/10 11:55:27 rsadowski Exp $
 
 
 COMMENT =		accounting for KDE 5
 
-HOMEPAGE =		https://kmymoney.org/
-
-VERSION =		5.1.1
+VERSION =		5.1.2
 DISTNAME =		kmymoney-${VERSION}
-REVISION =		1
 
 CATEGORIES =		productivity x11
 
-SHARED_LIBS +=  kmm_csvimportercore       0.0 # 5.1.0
-SHARED_LIBS +=  kmm_icons                 0.0 # 5.1.0
-SHARED_LIBS +=  kmm_menus                 0.0 # 5.1.0
-SHARED_LIBS +=  kmm_models                0.0 # 5.1.0
-SHARED_LIBS +=  kmm_mymoney               0.1 # 5.1.0
+HOMEPAGE =		https://kmymoney.org/
+
+SHARED_LIBS +=  kmm_csvimportercore       0.0 # 5.1.2
+SHARED_LIBS +=  kmm_icons                 0.0 # 5.1.2
+SHARED_LIBS +=  kmm_menus                 0.0 # 5.1.2
+SHARED_LIBS +=  kmm_models                0.0 # 5.1.2
+SHARED_LIBS +=  kmm_mymoney               0.1 # 5.1.2
 SHARED_LIBS +=  kmm_payeeidentifier       0.0 # 5.1.0
-SHARED_LIBS +=  kmm_plugin                0.0 # 5.1.0
-SHARED_LIBS +=  kmm_printer               0.0 # 5.1.0
-SHARED_LIBS +=  kmm_settings              0.0 # 5.1.0
-SHARED_LIBS +=  kmm_widgets               0.0 # 5.1.0
+SHARED_LIBS +=  kmm_plugin                0.0 # 5.1.2
+SHARED_LIBS +=  kmm_printer               0.0 # 5.1.2
+SHARED_LIBS +=  kmm_settings              0.0 # 5.1.2
+SHARED_LIBS +=  kmm_widgets               0.1 # 5.1.2
 
 MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 
@@ -40,15 +39,21 @@ WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5Wallet
 WANTLIB += KF5WebKit KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Sql
-WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml alkimia5
-WANTLIB += aqbanking c gmp gpgmepp gwengui-cpp gwengui-qt5 gwenhywfar
-WANTLIB += ical icalss m ofx osp
+WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml X11 alkimia5
+WANTLIB += aqbanking c db gmp gpgmepp gwengui-cpp gwengui-qt5
+WANTLIB += gwenhywfar ical icalss icalvcal icui18n icuuc m ofx
+WANTLIB += osp ${MODPY_WANTLIB}
 
-MODULES =		devel/kf5
+
+MODULES =		lang/python \
+			devel/kf5
+
+CONFIGURE_STYLE =	cmake
 
 BUILD_DEPENDS =		devel/boost \
 			devel/gettext,-tools \
 			misc/shared-mime-info \
+			textproc/libical,-glib \
 			x11/kde-applications/kqtquickcharts
 
 RUN_DEPENDS =		devel/desktop-file-utils \
@@ -58,6 +63,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			textproc/p5-XML-Parser \
 			textproc/p5-XML-Writer \
 			www/p5-libwww \
+			www/woob \
 			x11/gtk+3,-guic \
 			x11/kde-applications/kqtquickcharts
 

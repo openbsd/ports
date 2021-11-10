@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.5 2020/12/21 11:14:52 rsadowski Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.6 2021/11/10 11:55:27 rsadowski Exp $
 
 - Remove weboob support, depends on python2
 - Remove linker, compiler  flags
@@ -7,7 +7,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.5 2020/12/21 11:14:52 rsadowski Exp $
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -75,7 +75,7 @@ if (Gpgmepp_FOUND)
+@@ -76,7 +76,7 @@ if (Gpgmepp_FOUND)
    set(GPG_FOUND TRUE)
  else()
    set(GPG_FOUND FALSE)
@@ -16,7 +16,7 @@ Index: CMakeLists.txt
  endif()
  
  if (PkgConfig_FOUND)
-@@ -237,7 +237,7 @@ if(ENABLE_OFXIMPORTER)
+@@ -238,7 +238,7 @@ if(ENABLE_OFXIMPORTER)
      set(PATH_TO_LIBOFX_HEADER "${PATH_TO_LIBOFX_HEADER}/libofx/libofx.h")
      unset(LIBOFX_HAVE_CLIENTUID)
      unset(LIBOFX_HAVE_CLIENTUID CACHE) #not doing this will prevent updating below check
@@ -25,32 +25,7 @@ Index: CMakeLists.txt
    endif()
  
    if (LIBOFX_HAVE_CLIENTUID)
-@@ -265,23 +265,7 @@ cmake_dependent_option(ENABLE_KBANKING "Enable KBankin
- 
- add_feature_info(KBanking ENABLE_KBANKING "Interface for the following online banking protocols: HBCI, EBICS, OFX Direct Connect, Paypal")
- 
--# check for optional Weboob support
--set(Python_ADDITIONAL_VERSIONS 2.7 2.6)
--find_package(PythonInterp 2.6)
--find_package(PythonLibs ${PYTHON_VERSION_STRING})
--
--if(PYTHONINTERP_FOUND AND PYTHONLIBS_FOUND)
--  if(NOT PYTHON_VERSION_MAJOR VERSION_LESS 3)
--    unset(PYTHONLIBS_FOUND)
--    unset(PYTHONINTERP_FOUND)
--    message(WARNING "Python 2 required, but Python 3 found.")
--  else()
--    include(FindPythonModule)
--    find_python_module(weboob REQUIRED)
--  endif()
--endif()
--
--cmake_dependent_option(ENABLE_WEBOOB "Enable Weboob plugin" ON
-+cmake_dependent_option(ENABLE_WEBOOB "Enable Weboob plugin" OFF
-                        "PYTHONLIBS_FOUND;PYTHONINTERP_FOUND;PY_WEBOOB;Qt5Concurrent_FOUND" OFF)
- add_feature_info(Weboob ENABLE_WEBOOB "Online banking interface using Weboob.")
- 
-@@ -330,38 +314,7 @@ The default value is: 'RelWithDebInfo'" FORCE)
+@@ -318,38 +318,7 @@ The default value is: 'RelWithDebInfo'" FORCE)
  include(KDECompilerSettings)
  kde_enable_exceptions()
  
@@ -89,7 +64,7 @@ Index: CMakeLists.txt
  # Set compiler flags
  if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wlogical-op -Wno-null-dereference -Wshadow -Wunused -Wno-misleading-indentation -Wsuggest-override -Wcast-qual -Wformat=2 -fno-common")
-@@ -378,14 +331,6 @@ endif()
+@@ -366,14 +335,6 @@ endif()
  set(CMAKE_POSITION_INDEPENDENT_CODE ON)
  
  if(CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR CMAKE_CXX_COMPILER_ID MATCHES "AppleClang")
