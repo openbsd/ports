@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2021/10/11 15:16:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.111 2021/11/11 10:26:42 ajacoutot Exp $
 
 COMMENT=	create, alter and inspect Matroska files
 
@@ -76,7 +76,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib -L${MODQT5_LIBDIR}
 
 CONFIGURE_ENV+=	LCONVERT="${LOCALBASE}/lib/qt5/bin/lconvert" \
 		CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
+		LDFLAGS="${LDFLAGS}" \
+		ac_cv_path_PANDOC=
 
 pre-patch:
 	@cd ${WRKSRC}/src/mkvtoolnix-gui/jobs/program_runner/ && \
