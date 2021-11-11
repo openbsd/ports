@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_compiler_crystal_compiler_cr,v 1.1 2021/11/11 22:43:14 jcs Exp $
+
+Index: src/compiler/crystal/compiler.cr
+--- src/compiler/crystal/compiler.cr.orig
++++ src/compiler/crystal/compiler.cr
+@@ -365,6 +365,9 @@ module Crystal
+       else
+         link_flags = @link_flags || ""
+         link_flags += " -rdynamic"
++        if program.has_flag? "openbsd"
++          link_flags += " -L/usr/local/lib"
++        end
+ 
+         { %(#{CC} "${@}" -o #{Process.quote_posix(output_filename)} #{link_flags} #{program.lib_flags}), object_names }
+       end
