@@ -1,8 +1,8 @@
-$OpenBSD: patch-build_go,v 1.14 2021/06/15 09:11:02 edd Exp $
+$OpenBSD: patch-build_go,v 1.15 2021/11/11 16:17:46 edd Exp $
 Index: build.go
 --- build.go.orig
 +++ build.go
-@@ -526,7 +540,7 @@ func appendParameters(args []string, tags []string, pk
+@@ -540,7 +540,7 @@ func appendParameters(args []string, tags []string, pk
  
  	if !debugBinary {
  		// Regular binaries get version tagged and skip some debug symbols
