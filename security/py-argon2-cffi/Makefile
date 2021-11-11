@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:02:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/11 09:03:19 sthen Exp $
 
 COMMENT =		argon2 password hashing for Python
 
-MODPY_EGG_VERSION =	20.1.0
+MODPY_EGG_VERSION =	21.1.0
 DISTNAME =		argon2-cffi-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		security
 
@@ -33,7 +32,5 @@ RUN_DEPENDS =		devel/py-cffi${MODPY_FLAVOR} \
 LIB_DEPENDS =		security/argon2
 
 TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR}
-
-TEST_ENV =		PYTHONPATH=${WRKSRC}/lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION}/
 
 .include <bsd.port.mk>
