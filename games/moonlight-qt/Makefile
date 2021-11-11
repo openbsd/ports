@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/02/25 19:39:19 solene Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/11 07:11:18 rsadowski Exp $
 
 COMMENT =		open-source nvidia gamestream client
 
-V =			3.0.0
+V =			3.1.4
 PKGNAME =		moonlight-qt-${V}
 
 DISTNAME =		MoonlightSrc-${V}
@@ -27,7 +27,6 @@ MODULES =		devel/qmake \
 
 RUN_DEPENDS =		x11/gtk+3,-guic \
 			devel/desktop-file-utils
-
 
 LIB_DEPENDS =		graphics/ffmpeg \
 			devel/sdl2 \
