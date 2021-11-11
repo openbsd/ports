@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2021/11/10 06:37:57 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.19 2021/11/11 18:55:17 rsadowski Exp $
 
 COMMENT =	Hex Editor
 VERSION =	0.26.6
 DISTNAME =	okteta-${VERSION}
 CATEGORIES =	editors
 EPOCH =		0
+REVISION =	0
 
 SHARED_LIBS +=  Kasten4Controllers        0.1 # 0.4
 SHARED_LIBS +=  Kasten4Core               0.0 # 0.4
