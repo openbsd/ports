@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/10 06:37:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2021/11/11 15:54:32 rsadowski Exp $
 
 COMMENT =	VNC and RDP  desktop client
 DISTNAME =	krdc-${VERSION}
@@ -21,6 +21,9 @@ MODKDE5_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
+
+BUILD_DEPENDS =	x11/freerdp
+RUN_DEPENDS =	x11/freerdp
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kbookmarks \
