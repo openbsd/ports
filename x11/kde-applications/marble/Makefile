@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2021/11/10 06:37:57 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.23 2021/11/11 16:22:10 rsadowski Exp $
 
 COMMENT =	virtual globe and world atlas
 DISTNAME =	marble-${VERSION}
 PKGNAME =	marble-kf5-${VERSION}
 CATEGORIES =	geo
+REVISION =	0
 
 HOMEPAGE =	https://marble.kde.org/
 
@@ -21,7 +22,7 @@ WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml
 WANTLIB += Qt5QmlModels Qt5Quick Qt5SerialPort Qt5Sql Qt5Svg Qt5WebChannel
 WANTLIB += Qt5WebEngine Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets
-WANTLIB += Qt5Xml X11 c gp m phonon4qt5 protobuf shp z
+WANTLIB += Qt5Xml X11 c gps m phonon4qt5 protobuf shp z
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -57,15 +58,15 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/plasma-framework \
 		devel/kf5/sonnet \
-		devel/shapelib \
 		devel/protobuf \
-		misc/gpsd,-main \
+		devel/shapelib \
+		misc/gpsd \
 		multimedia/phonon \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtlocation \
 		x11/qt5/qtserialport \
-		x11/qt5/qtwebengine \
-		x11/qt5/qtsvg
+		x11/qt5/qtsvg \
+		x11/qt5/qtwebengine
 
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_libwlocate=ON \
 			-DBUILD_MARBLE_TOOLS=ON \
