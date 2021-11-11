@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.174 2021/11/05 08:43:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.175 2021/11/11 10:17:21 ajacoutot Exp $
 @conflict py-botocore-*
 @pkgpath net/py-botocore
 lib/python${MODPY_VERSION}/site-packages/botocore/
@@ -1213,6 +1213,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/rekognition/2016-06-27/ex
 lib/python${MODPY_VERSION}/site-packages/botocore/data/rekognition/2016-06-27/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/rekognition/2016-06-27/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/rekognition/2016-06-27/waiters-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/resiliencehub/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/resiliencehub/2020-04-30/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/resiliencehub/2020-04-30/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/resiliencehub/2020-04-30/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/resource-groups/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/resource-groups/2017-11-27/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/resource-groups/2017-11-27/examples-1.json
