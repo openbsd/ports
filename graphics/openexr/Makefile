@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2021/10/28 06:28:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2021/11/11 22:46:46 sthen Exp $
 
 COMMENT-main=		high dynamic range image format
 COMMENT-tools=		image viewing tools for OpenEXR
@@ -51,6 +51,7 @@ LIB_DEPENDS-tools=	${BASE_PKGPATH}
 PKG_ARCH-doc=		*
 LIB_DEPENDS-doc=	# empty
 RUN_DEPENDS-doc=	# empty
+WANTLIB-doc=		# empty
 
 CONFIGURE_ARGS=		-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib"
 
