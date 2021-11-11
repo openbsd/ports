@@ -1,0 +1,30 @@
+$OpenBSD: patch-t_verify_hostname_standalone_t,v 1.1 2021/11/11 18:32:08 tb Exp $
+
+Tests broken by lib/libcrypto/x509/x509_alt.c -r1.3/-r1.5 which no longer allow
+the creation of certs with illegal sandns.
+
+Index: t/verify_hostname_standalone.t
+--- t/verify_hostname_standalone.t.orig
++++ t/verify_hostname_standalone.t
+@@ -74,7 +74,9 @@ sub tests {(
+     [ 0, 'h', 'i' ],
+     [ 1, 'bar.foo.com', '*.foo.com' ],
+     [ 1, 'www.test.fr', 'common.name', '*.test.com,*.test.co.uk,*.test.de,*.test.fr' ],
+-    [ 1, 'wwW.tESt.fr',  'common.name', ',*.*,*.test.de,*.test.FR,www' ],
++# disabled test: '*.*' is an illegal sandns name
++    # [ 1, 'wwW.tESt.fr',  'common.name', ',*.*,*.test.de,*.test.FR,www' ],
++
+     [ 0, 'f.uk', '.uk' ],
+     [ 0, 'w.bar.foo.com', '?.bar.foo.com' ],
+     [ 0, 'www.foo.com', '(www|ftp).foo.com' ],
+@@ -103,7 +105,9 @@ sub tests {(
+ 
+     # Common name must not be used if subject alternative name was provided.
+     [ 0, 'www.test.co.jp',  'www.test.co.jp', '*.test.de,*.jp,www.test.co.uk,www.*.co.jp' ],
+-    [ 0, 'www.bar.foo.com', 'www.bar.foo.com', '*.foo.com,*.*.foo.com,*.*.bar.foo.com,*..bar.foo.com,' ],
++
++# disabled test: *..bar.foo.com is an illegal sandns name
++    # [ 0, 'www.bar.foo.com', 'www.bar.foo.com', '*.foo.com,*.*.foo.com,*.*.bar.foo.com,*..bar.foo.com,' ],
+ 
+ # I think they got this test wrong
+ # common name should not be checked only if SAN contains DNS names
