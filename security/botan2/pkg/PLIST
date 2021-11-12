@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2021/05/15 20:12:27 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.20 2021/11/12 22:02:51 bluhm Exp $
 @bin bin/botan
 @bin bin/botan-test
 include/botan-2/
@@ -499,7 +499,8 @@ share/botan-2/data/pubkey/ecies.vec
 share/botan-2/data/pubkey/eckcdsa.vec
 share/botan-2/data/pubkey/ed25519.vec
 share/botan-2/data/pubkey/ed25519_verify.vec
-share/botan-2/data/pubkey/elgamal.vec
+share/botan-2/data/pubkey/elgamal_decrypt.vec
+share/botan-2/data/pubkey/elgamal_encrypt.vec
 share/botan-2/data/pubkey/gost_3410_sign.vec
 share/botan-2/data/pubkey/gost_3410_verify.vec
 share/botan-2/data/pubkey/mce.vec
@@ -1552,6 +1553,8 @@ share/botan-2/data/x509/nist/test76/int.crt
 share/botan-2/data/x509/ocsp/
 share/botan-2/data/x509/ocsp/bdrive_encryption.pem
 share/botan-2/data/x509/ocsp/bdrive_root.pem
+share/botan-2/data/x509/ocsp/digicert-ecdsa-int.pem
+share/botan-2/data/x509/ocsp/digicert-root.pem
 share/botan-2/data/x509/ocsp/geotrust.pem
 share/botan-2/data/x509/ocsp/gmail.pem
 share/botan-2/data/x509/ocsp/google_g2.pem
