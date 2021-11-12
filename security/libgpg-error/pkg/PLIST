@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.16 2020/02/08 12:16:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2021/11/12 20:55:21 sthen Exp $
 @bin bin/gpg-error
 bin/gpg-error-config
 bin/gpgrt-config
 @bin bin/yat2m
 include/gpg-error.h
 include/gpgrt.h
-@info info/gpgrt.info
+@comment @info info/gpgrt.info
 @static-lib lib/libgpg-error.a
 lib/libgpg-error.la
 @lib lib/libgpg-error.so.${LIBgpg-error_VERSION}
