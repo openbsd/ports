@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/02 00:00:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/11/12 21:29:53 martin Exp $
 
 COMMENT =	python module to interface with the pkg-config tool
 
-MODPY_EGG_VERSION =	1.5.4
+MODPY_EGG_VERSION =	1.5.5
 DISTNAME =		pkgconfig-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		0
 
 HOMEPAGE =		https://github.com/matze/pkgconfig
 
