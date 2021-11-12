@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2020/09/07 14:48:43 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.21 2021/11/12 14:31:38 rsadowski Exp $
 
 SUBDIR =
 SUBDIR += extra-cmake-modules
@@ -78,6 +78,7 @@ SUBDIR += krunner
 SUBDIR += qqc2-desktop-style
 SUBDIR += purpose
 SUBDIR += kdav
+SUBDIR += kwayland
 
 # porting aids
 SUBDIR += kxmlrpcclient
@@ -96,6 +97,5 @@ SUBDIR += frameworkintegration
 # corresponding software isn't ported
 #SUBDIR += modemmanager-qt
 #SUBDIR += network-manager-qt
-#SUBDIR += kwayland
 
 .include <bsd.port.subdir.mk>
