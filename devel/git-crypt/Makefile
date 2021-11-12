@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/02/17 14:02:22 paco Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/12 17:57:05 paco Exp $
 
 COMMENT =		transparent file encryption in Git
 
 DISTNAME =		git-crypt-0.6.0
 CATEGORIES =		devel
+REVISION =		0
 
 HOMEPAGE =		https://www.agwa.name/projects/git-crypt/
 MAINTAINER =		Paco Esteban <paco@openbsd.org>
@@ -26,7 +27,10 @@ RUN_DEPENDS =		devel/git
 MAKE_ENV =		ENABLE_MAN=yes \
 			DOCBOOK_XSL=${PREFIX}/share/xsl/docbook/manpages/docbook.xsl \
 			BINDIR=${TRUEPREFIX}/bin \
-			MANDIR=${TRUEPREFIX}/man
+			MANDIR=${TRUEPREFIX}/man \
+			CXXFLAGS="${CXXFLAGS}"
+
+CXXFLAGS +=		-DOPENSSL_API_COMPAT
 
 NO_TEST =		Yes
 
