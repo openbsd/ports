@@ -1,0 +1,44 @@
+$OpenBSD: patch-src_config_directives_c,v 1.3 2021/11/12 09:28:46 rsadowski Exp $
+
+Index: src/config_directives.c
+--- src/config_directives.c.orig
++++ src/config_directives.c
+@@ -9,7 +9,7 @@
+  */
+ #include "all.h"
+ 
+-#include <wordexp.h>
++#include <glob.h>
+ 
+ /*******************************************************************************
+  * Include functions.
+@@ -18,15 +18,15 @@
+ CFGFUN(include, const char *pattern) {
+     DLOG("include %s\n", pattern);
+ 
+-    wordexp_t p;
+-    const int ret = wordexp(pattern, &p, 0);
++    glob_t p;
++    const int ret = glob(pattern, GLOB_ERR, NULL, &p );
+     if (ret != 0) {
+-        ELOG("wordexp(%s): error %d\n", pattern, ret);
++        ELOG("glob(%s): error %d\n", pattern, ret);
+         result->has_errors = true;
+         return;
+     }
+-    char **w = p.we_wordv;
+-    for (size_t i = 0; i < p.we_wordc; i++) {
++    char **w = p.gl_pathv;
++    for (size_t i = 0; i < p.gl_pathc; i++) {
+         char resolved_path[PATH_MAX] = {'\0'};
+         if (realpath(w[i], resolved_path) == NULL) {
+             LOG("Skipping %s: %s\n", w[i], strerror(errno));
+@@ -86,7 +86,7 @@ CFGFUN(include, const char *pattern) {
+                 break;
+         }
+     }
+-    wordfree(&p);
++    globfree(&p);
+ }
+ 
+ /*******************************************************************************

@@ -1,9 +1,9 @@
-$OpenBSD: patch-man_i3_man,v 1.3 2021/02/13 05:59:02 rsadowski Exp $
+$OpenBSD: patch-man_i3_man,v 1.4 2021/11/12 09:28:46 rsadowski Exp $
 
 Index: man/i3.man
 --- man/i3.man.orig
 +++ man/i3.man
-@@ -172,8 +172,8 @@ When starting, i3 looks for configuration files in the
+@@ -175,8 +175,8 @@ When starting, i3 looks for configuration files in the
  
  1. ~/.config/i3/config (or $XDG_CONFIG_HOME/i3/config if set)
  2. ~/.i3/config
@@ -14,7 +14,7 @@ Index: man/i3.man
  
  You can specify a custom path using the -c option.
  
-@@ -197,13 +197,13 @@ font pango:DejaVu Sans Mono 8
+@@ -200,13 +200,13 @@ font pango:DejaVu Sans Mono 8
  floating_modifier Mod1
  
  # start a terminal
@@ -30,7 +30,7 @@ Index: man/i3.man
  
  # change focus
  bindsym Mod1+j focus left
-@@ -316,7 +316,7 @@ ulimit -c unlimited
+@@ -319,7 +319,7 @@ ulimit -c unlimited
  
  # Start i3 and log to ~/.i3/logfile
  echo "Starting at $(date)" >> ~/.i3/logfile

@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 2021/02/27 13:55:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/11/12 09:28:46 rsadowski Exp $
 
 COMMENT =	improved dynamic tiling window manager, fork with gaps
 
-V =		4.19.1
-REVISION =	1
+V =		4.20.1
 DISTNAME =	i3-gaps-${V}
 
 CATEGORIES =	x11
 
 HOMEPAGE =	https://i3wm.org/
+
+MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
