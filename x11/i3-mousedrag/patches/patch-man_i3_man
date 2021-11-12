@@ -1,8 +1,9 @@
-$OpenBSD: patch-man_i3_man,v 1.1.1.1 2019/02/16 10:09:57 sthen Exp $
+$OpenBSD: patch-man_i3_man,v 1.2 2021/11/12 16:00:14 sthen Exp $
+
 Index: man/i3.man
 --- man/i3.man.orig
 +++ man/i3.man
-@@ -197,13 +197,13 @@ font pango:DejaVu Sans Mono 8
+@@ -200,13 +200,13 @@ font pango:DejaVu Sans Mono 8
  floating_modifier Mod1
  
  # start a terminal
@@ -18,7 +19,7 @@ Index: man/i3.man
  
  # change focus
  bindsym Mod1+j focus left
-@@ -316,7 +316,7 @@ ulimit -c unlimited
+@@ -319,7 +319,7 @@ ulimit -c unlimited
  
  # Start i3 and log to ~/.i3/logfile
  echo "Starting at $(date)" >> ~/.i3/logfile

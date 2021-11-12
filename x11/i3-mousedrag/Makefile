@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2021/02/18 11:50:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/11/12 16:00:14 sthen Exp $
 
 # see https://github.com/i3/i3/issues/3085 / orestisfl:issue-2643
 COMMENT=	improved dynamic tiling window manager, fork with mouse drag
 
 GH_ACCOUNT=	orestisfl
 GH_PROJECT=	i3
-GH_COMMIT=	1b0585ddf8f2e2206effbd106cb028cac6ffe6d9
+GH_COMMIT=	9236a0a9163799a38b2f989d660d0ade81dd16e6
 
-DISTNAME=	i3-mousedrag-4.19.1pl20210102
-REVISION=	5
+DISTNAME=	i3-mousedrag-4.20.1pl20211111
 
 CATEGORIES=	x11
 
@@ -65,7 +64,7 @@ pre-configure:
 		${WRKSRC}/man/i3.man
 
 post-install:
-	rm ${WRKINST}/etc/i3/*.{orig,beforesubst}
+	rm ${WRKINST}/etc/i3/*{${PATCHORIG},.beforesubst}
 	mv ${WRKINST}/etc/i3 ${PREFIX}/share/examples/
 
 .include <bsd.port.mk>

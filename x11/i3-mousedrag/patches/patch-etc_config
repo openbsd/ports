@@ -1,9 +1,9 @@
-$OpenBSD: patch-etc_config,v 1.4 2021/02/12 23:14:30 sthen Exp $
+$OpenBSD: patch-etc_config,v 1.5 2021/11/12 16:00:14 sthen Exp $
 
 Index: etc/config
 --- etc/config.orig
 +++ etc/config
-@@ -22,18 +22,18 @@ font pango:monospace 8
+@@ -26,18 +26,18 @@ exec --no-startup-id dex --autostart --environment i3
  
  # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
  # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -29,7 +29,7 @@ Index: etc/config
  
  # use these keys for focus, movement, and resize directions when reaching for
  # the arrows is not convenient
-@@ -46,13 +46,13 @@ set $right semicolon
+@@ -50,13 +50,13 @@ set $right semicolon
  floating_modifier Mod1
  
  # start a terminal
