@@ -1,0 +1,2 @@
+MultiTasking is a tiny Python library that converts Python methods into
+asynchronous, non-blocking methods by using a decorator.
