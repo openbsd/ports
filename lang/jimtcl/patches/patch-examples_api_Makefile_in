@@ -1,0 +1,13 @@
+$OpenBSD: patch-examples_api_Makefile_in,v 1.1 2021/11/12 12:02:01 sthen Exp $
+
+Index: examples.api/Makefile.in
+--- examples.api/Makefile.in.orig
++++ examples.api/Makefile.in
+@@ -1,6 +1,6 @@
+ CFLAGS+= -Wall -g
+-CFLAGS+= -I..
++CFLAGS+= -I${LOCALBASE}/include/jim
+ LDFLAGS += @LDFLAGS@
+ LDLIBS += -L.. -ljim @LDLIBS@
+ 
+ EXAMPLES=		\

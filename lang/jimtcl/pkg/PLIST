@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/04/23 21:05:47 stu Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/11/12 12:02:01 sthen Exp $
 @bin bin/jimsh
 include/jim/
 include/jim/jim-config.h
@@ -8,9 +8,9 @@ include/jim/jim-subcmd.h
 include/jim/jim-win32compat.h
 include/jim/jim.h
 lib/jim/
-lib/jim/sqlite3.so
+@so lib/jim/sqlite3.so
 lib/jim/tcltest.tcl
-lib/jim/zlib.so
+@so lib/jim/zlib.so
 @lib lib/libjim.so.${LIBjim_VERSION}
 lib/pkgconfig/jimtcl.pc
 share/doc/jim/
@@ -42,7 +42,6 @@ share/examples/jim/ext/Makefile
 share/examples/jim/ext/README
 share/examples/jim/ext/helloworld.c
 share/examples/jim/jtclsh.tcl
-share/examples/jim/key.pem
 share/examples/jim/metakit.tcl
 share/examples/jim/ootest.tcl
 share/examples/jim/parray.tcl
@@ -60,3 +59,7 @@ share/examples/jim/udp.server
 share/examples/jim/udp2.client
 share/examples/jim/udp6.client
 share/examples/jim/udp6.server
+share/examples/jim/unix.client
+share/examples/jim/unix.dgram.client
+share/examples/jim/unix.dgram.server
+share/examples/jim/unix.server

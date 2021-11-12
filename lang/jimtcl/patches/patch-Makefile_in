@@ -1,11 +1,11 @@
-$OpenBSD: patch-Makefile_in,v 1.9 2018/06/10 03:13:20 stu Exp $
+$OpenBSD: patch-Makefile_in,v 1.10 2021/11/12 12:02:01 sthen Exp $
 
 Don't use soname when linking.
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -25,7 +25,6 @@ STRIP = @STRIP@
+@@ -28,7 +28,6 @@ export CCACHE_DISABLE := 1
  SH_CFLAGS ?= @SH_CFLAGS@
  SH_LDFLAGS ?= @SH_LDFLAGS@
  @if SH_SOPREFIX
@@ -13,7 +13,7 @@ Index: Makefile.in
  @endif
  SHOBJ_CFLAGS ?= @SHOBJ_CFLAGS@
  @if JIM_STATICLIB
-@@ -75,6 +74,7 @@ JIMSH := jimsh@EXEEXT@
+@@ -78,6 +77,7 @@ JIMSH := jimsh@EXEEXT@
  INSTALL_DATA_DIR ?= mkdir -p
  INSTALL_DATA ?= cp
  INSTALL_PROGRAM ?= cp
@@ -21,8 +21,8 @@ Index: Makefile.in
  @endif
  
  all: $(JIMSH) @C_EXT_SHOBJS@
-@@ -96,20 +96,25 @@ $(JIMSH): $(LIBJIM) jimsh.o initjimsh.o
- 	$(Q)$(JIMSH_CC) @SH_LINKFLAGS@ $(LDFLAGS) -o $@ jimsh.o initjimsh.o $(LIBJIM) $(LDLIBS) $(LIBS)
+@@ -99,20 +99,25 @@ $(JIMSH): $(LIBJIM) jimsh.o initjimsh.o
+ 	$(Q)$(JIMSH_CC) @SH_LINKRPATH_FLAGS@ @SH_LINKFLAGS@ $(LDFLAGS) -o $@ jimsh.o initjimsh.o $(LIBJIM) $(LDLIBS) $(LIBS)
  
  @if JIM_INSTALL
 -install: all @TCL_EXTS@ install-exec install-docs
@@ -51,12 +51,3 @@ Index: Makefile.in
  install-exec: all
  	$(INSTALL_DATA_DIR) $(DESTDIR)@bindir@
  	$(INSTALL_PROGRAM) $(JIMSH) $(DESTDIR)@bindir@
-@@ -261,6 +266,8 @@ install-docs:
- install-docs: docs
- 	$(INSTALL_DATA_DIR) $(DESTDIR)$(docdir)
- 	$(INSTALL_DATA) Tcl.html $(DESTDIR)$(docdir)
-+	$(INSTALL_DATA) @srcdir@/LICENSE @srcdir@/README $(DESTDIR)$(docdir)
-+	$(INSTALL_DATA) @srcdir@/README.{extensions,namespaces,oo,sqlite,utf-8} $(DESTDIR)$(docdir)
- @endif
- 
- @if INSTALL_DOCS == shipped

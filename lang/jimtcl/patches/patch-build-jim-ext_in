@@ -1,14 +1,16 @@
-$OpenBSD: patch-build-jim-ext_in,v 1.1 2014/10/10 19:58:21 stu Exp $
---- build-jim-ext.in.orig	Fri Oct 10 15:22:33 2014
-+++ build-jim-ext.in	Fri Oct 10 15:23:01 2014
+$OpenBSD: patch-build-jim-ext_in,v 1.2 2021/11/12 12:02:01 sthen Exp $
+
+Index: build-jim-ext.in
+--- build-jim-ext.in.orig
++++ build-jim-ext.in
 @@ -106,8 +106,8 @@ if {$static} {
- }
  puts "Building $target from $sources\n"
  
--# Now add the standard location after any user include paths
--lappend includepaths -I@prefix@/include
-+# Now add the Jim location after any user include paths
-+lappend includepaths -I@prefix@/include/jim
+ if {!$cross} {
+-	# If not cross compiling, add the standard location after any user include paths
+-	lappend includepaths -I@prefix@/include
++	# If not cross compiling, add the Jim location after any user include paths
++	lappend includepaths -I@prefix@/include/jim
+ }
  
- set CPPFLAGS "-D_GNU_SOURCE"
- 
+ # Work around Tcl's strange behaviour of exec failing if stderr is produced
