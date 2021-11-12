@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:47:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/11/12 14:33:04 sthen Exp $
 
 COMMENT=		generic readline wrapper for various programs
 
-V =			0.43
+V =			0.45.2
 DISTNAME=		rlwrap-$V
 CATEGORIES=		misc
-REVISION=		0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -19,6 +18,6 @@ CONFIGURE_STYLE=	gnu
 TEST_IS_INTERACTIVE=	Yes
 
 do-test:
-	cd ${WRKSRC} && src/rlwrap perl test/testclient
+	cd ${WRKSRC} && HOME=${WRKDIR} src/rlwrap perl test/testclient
 
 .include <bsd.port.mk>

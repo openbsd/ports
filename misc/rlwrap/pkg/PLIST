@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/04/09 11:53:44 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/11/12 14:33:04 sthen Exp $
 @bin bin/rlwrap
 @man man/man1/rlwrap.1
 @man man/man3p/RlwrapFilter.3p
@@ -12,16 +12,22 @@ share/rlwrap/filters/censor_passwords
 share/rlwrap/filters/censor_passwords.py
 share/rlwrap/filters/count_in_prompt
 share/rlwrap/filters/count_in_prompt.py
+share/rlwrap/filters/debug_null
+share/rlwrap/filters/dissect_prompt
+share/rlwrap/filters/edit_history
 share/rlwrap/filters/ftp_filter
 share/rlwrap/filters/ftp_filter.py
 share/rlwrap/filters/handle_hotkeys
 share/rlwrap/filters/handle_hotkeys.py
+share/rlwrap/filters/handle_sigwinch
 share/rlwrap/filters/history_format
 share/rlwrap/filters/listing
 share/rlwrap/filters/logger
 share/rlwrap/filters/logger.py
+share/rlwrap/filters/makefilter
 share/rlwrap/filters/null
 share/rlwrap/filters/null.py
+share/rlwrap/filters/outfilter
 share/rlwrap/filters/paint_prompt
 share/rlwrap/filters/paint_prompt.py
 share/rlwrap/filters/pipeline
