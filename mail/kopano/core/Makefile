@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2021/11/09 19:15:24 robert Exp $
+# $OpenBSD: Makefile,v 1.74 2021/11/12 12:18:19 robert Exp $
 
 # undefined ref's to libicon*, libintl* with ld.bfd
 ONLY_FOR_ARCHS=	${LLD_ARCHS}
@@ -8,8 +8,6 @@ COMMENT-mapi=	kopano MAPI extensions for PHP
 
 PKGNAME-main=	kopano-core-${V}
 PKGNAME-mapi=	kopano-mapi-${V}
-REVISION-main=	5
-REVISION-mapi=	2
 EPOCH=		0
 
 CATEGORIES=	mail www productivity
@@ -56,8 +54,8 @@ WANTLIB-main += mariadb curses ssl xml2
 WANTLIB-main += gsoapssl++
 WANTLIB-main += ${LIBCXX}
 WANTLIB-main += icalvcal ldap_r HX jsoncpp
-WANTLIB-main += X11 Xext Xrender expat fontconfig freetype pixman-1
-WANTLIB-main += xcb xcb-render xcb-shm
+WANTLIB-main += X11 expat freetype
+WANTLIB-main += xcb
 WANTLIB-main += cairo glib-2.0 gobject-2.0
 WANTLIB-main += harfbuzz pango-1.0 pangocairo-1.0
 WANTLIB-main += png rrd
@@ -183,8 +181,7 @@ post-install:
 		${PREFIX}/sbin/kopano-search \
 		${PREFIX}/sbin/kopano-search-xapian-compact.py \
 		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/kopano_search/__init__.py \
-		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/kopano_search/plaintext.py \
-		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/kopano/daemon/version/version_info.py
+		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/kopano_search/plaintext.py
 
 	find ${PREFIX} -name "*.la" -delete
 

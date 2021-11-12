@@ -1,9 +1,9 @@
-$OpenBSD: patch-installer_linux_ldap_m4,v 1.4 2021/11/04 20:11:23 robert Exp $
+$OpenBSD: patch-installer_linux_ldap_m4,v 1.5 2021/11/12 12:18:20 robert Exp $
 
 Index: installer/linux/ldap.m4
 --- installer/linux/ldap.m4.orig
 +++ installer/linux/ldap.m4
-@@ -155,7 +155,7 @@ ldap_sendas_relation_attribute = S(`',`distinguishedNa
+@@ -146,7 +146,7 @@ ldap_sendas_relation_attribute = S(`',`distinguishedNa
  ldap_user_certificate_attribute = userCertificate`'S(`;binary',`')
  
  # Load extra user properties from the propmap file

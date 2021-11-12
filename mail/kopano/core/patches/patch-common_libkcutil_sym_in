@@ -1,0 +1,13 @@
+$OpenBSD: patch-common_libkcutil_sym_in,v 1.5 2021/11/12 12:18:20 robert Exp $
+
+Index: common/libkcutil.sym.in
+--- common/libkcutil.sym.in.orig
++++ common/libkcutil.sym.in
+@@ -29,6 +29,7 @@ global:
+ 	};
+ 	_ZG*;
+ 	_ZT*;
++	__emutls*;
+ local:
+ 	*;
+ };
