@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.195 2021/10/30 09:14:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.196 2021/11/12 15:06:08 ajacoutot Exp $
 
 # XXX gcm-dmi.c:141:2: warning: #warning Please add dmi support for your OS
 
@@ -6,11 +6,12 @@ COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
 GNOME_VERSION=		41.0
+REVISION=		0
 
 # GPLv3
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += X11 Xext Xi c canberra canberra-gtk3 cups fontconfig
+WANTLIB += X11 Xext Xfixes Xi c canberra canberra-gtk3 cups fontconfig
 WANTLIB += gdk-3 geoclue-2 geocode-glib gio-2.0 glib-2.0 gnome-desktop-3
 WANTLIB += gobject-2.0 gtk-3 gweather-3 intl m notify nspr4 nss3
 WANTLIB += polkit-gobject-1 pulse pulse-mainloop-glib upower-glib
