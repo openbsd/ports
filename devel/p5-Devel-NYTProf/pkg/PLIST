@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2021/05/14 23:20:25 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.17 2021/11/12 17:28:50 bluhm Exp $
 bin/flamegraph.pl
 bin/nytprofcalls
 bin/nytprofcg
@@ -38,7 +38,6 @@ ${P5ARCH}/Devel/NYTProf/js/jit/gradient50.png
 ${P5ARCH}/Devel/NYTProf/js/jit/jit-yc.js
 ${P5ARCH}/Devel/NYTProf/js/jit/jit.js
 ${P5ARCH}/Devel/NYTProf/js/jquery-min.js
-${P5ARCH}/Devel/NYTProf/js/jquery.floatThead.min.js
 ${P5ARCH}/Devel/NYTProf/js/jquery.tablesorter.min.js
 ${P5ARCH}/Devel/NYTProf/js/style-tablesorter.css
 ${P5ARCH}/Devel/auto/
