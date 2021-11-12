@@ -1,27 +1,38 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/12/21 22:04:52 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/11/12 12:34:10 bcallah Exp $
 @bin bin/feathernotes
 share/applications/feathernotes.desktop
 share/feathernotes/
 share/feathernotes/translations/
+share/feathernotes/translations/feathernotes_ar_DZ.qm
+share/feathernotes/translations/feathernotes_be.qm
+share/feathernotes/translations/feathernotes_bg.qm
 share/feathernotes/translations/feathernotes_cs.qm
 share/feathernotes/translations/feathernotes_cy.qm
+share/feathernotes/translations/feathernotes_da.qm
 share/feathernotes/translations/feathernotes_de.qm
+share/feathernotes/translations/feathernotes_el.qm
 share/feathernotes/translations/feathernotes_eo.qm
 share/feathernotes/translations/feathernotes_es.qm
+share/feathernotes/translations/feathernotes_et.qm
+share/feathernotes/translations/feathernotes_fa.qm
+share/feathernotes/translations/feathernotes_fi.qm
 share/feathernotes/translations/feathernotes_fr.qm
 share/feathernotes/translations/feathernotes_he.qm
 share/feathernotes/translations/feathernotes_hu.qm
 share/feathernotes/translations/feathernotes_id.qm
 share/feathernotes/translations/feathernotes_it.qm
 share/feathernotes/translations/feathernotes_ja.qm
+share/feathernotes/translations/feathernotes_ko.qm
 share/feathernotes/translations/feathernotes_lt.qm
 share/feathernotes/translations/feathernotes_nb_NO.qm
 share/feathernotes/translations/feathernotes_nl.qm
 share/feathernotes/translations/feathernotes_pl.qm
+share/feathernotes/translations/feathernotes_pt.qm
 share/feathernotes/translations/feathernotes_pt_BR.qm
-share/feathernotes/translations/feathernotes_pt_PT.qm
 share/feathernotes/translations/feathernotes_ru.qm
+share/feathernotes/translations/feathernotes_si.qm
 share/feathernotes/translations/feathernotes_sk_SK.qm
+share/feathernotes/translations/feathernotes_tr.qm
 share/feathernotes/translations/feathernotes_zh_CN.qm
 share/feathernotes/translations/feathernotes_zh_HANT.qm
 share/icons/hicolor/scalable/apps/feathernotes.svg
