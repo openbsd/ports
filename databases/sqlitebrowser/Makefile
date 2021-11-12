@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2020/12/27 18:14:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2021/11/12 14:27:52 sthen Exp $
 
 COMMENT =	graphical interface to sqlite databases
 
 GH_ACCOUNT =	sqlitebrowser
 GH_PROJECT =	sqlitebrowser
-GH_TAGNAME =	v3.12.1
+GH_TAGNAME =	v3.12.2
 
 CATEGORIES =	databases x11
 
@@ -27,5 +27,9 @@ RUN_DEPENDS =	x11/gtk+3,-guic \
 		devel/desktop-file-utils
 
 CONFIGURE_ARGS +=-DQSCINTILLA_INCLUDE_DIR=${LOCALBASE}/include/X11/qt5/Qsci
+
+SEPARATE_BUILD = Yes
+
+NO_TEST =	Yes
 
 .include <bsd.port.mk>
