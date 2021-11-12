@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2021/01/03 09:39:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2021/11/12 08:12:01 ajacoutot Exp $
 @conflict py-libcloud-*
 @pkgpath net/py-libcloud,python3
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -507,6 +507,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/utils/${MODPY_PYCACHE}misc.${M
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/${MODPY_PYCACHE}networking.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/${MODPY_PYCACHE}publickey.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/${MODPY_PYCACHE}py3.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/libcloud/utils/${MODPY_PYCACHE}retry.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/${MODPY_PYCACHE}xml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/connection.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/decorators.py
@@ -520,4 +521,5 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/utils/misc.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/networking.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/publickey.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/py3.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/utils/retry.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/xml.py
