@@ -1,0 +1,17 @@
+$OpenBSD: patch-config_tests_wayland_scanner_wayland_scanner_pro,v 1.1.1.1 2021/11/12 13:38:30 rsadowski Exp $
+
+Index: config.tests/wayland_scanner/wayland_scanner.pro
+--- config.tests/wayland_scanner/wayland_scanner.pro.orig
++++ config.tests/wayland_scanner/wayland_scanner.pro
+@@ -1,9 +1,10 @@
+ TARGET = wayland_scanner
+ 
+-isEmpty(QMAKE_WAYLAND_SCANNER):error("QMAKE_WAYLAND_SCANNER not defined for this mkspec")
+ 
+ # Input
+ SOURCES += main.cpp
++
++QMAKE_WAYLAND_SCANNER = ${LOCALBASE}/bin/wayland-scanner
+ 
+ wayland-check-header.name = wayland ${QMAKE_FILE_BASE}
+ wayland-check-header.input = WAYLANDCHECKSOURCES
