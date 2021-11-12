@@ -1,9 +1,8 @@
-$OpenBSD: patch-man_i3-nagbar_man,v 1.3 2019/08/23 15:07:20 sthen Exp $
-
+$OpenBSD: patch-man_i3-nagbar_man,v 1.4 2021/11/12 16:06:07 sthen Exp $
 Index: man/i3-nagbar.man
 --- man/i3-nagbar.man.orig
 +++ man/i3-nagbar.man
-@@ -50,7 +50,7 @@ after modifying the configuration file.
+@@ -54,7 +54,7 @@ after modifying the configuration file.
  
  ------------------------------------------------
  i3-nagbar -m 'You have an error in your i3 config file!' \

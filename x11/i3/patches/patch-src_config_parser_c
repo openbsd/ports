@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_config_parser_c,v 1.13 2021/02/12 23:14:05 sthen Exp $
+$OpenBSD: patch-src_config_parser_c,v 1.14 2021/11/12 16:06:07 sthen Exp $
 
 Index: src/config_parser.c
 --- src/config_parser.c.orig
 +++ src/config_parser.c
-@@ -792,8 +792,8 @@ static char *migrate_config(char *input, off_t size) {
+@@ -752,8 +752,8 @@ static char *migrate_config(char *input, off_t size) {
   */
  void start_config_error_nagbar(const char *configpath, bool has_errors) {
      char *editaction, *pageraction;

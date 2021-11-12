@@ -1,5 +1,4 @@
-$OpenBSD: patch-libi3_get_exe_path_c,v 1.5 2021/02/12 23:14:05 sthen Exp $
-
+$OpenBSD: patch-libi3_get_exe_path_c,v 1.6 2021/11/12 16:06:07 sthen Exp $
 Index: libi3/get_exe_path.c
 --- libi3/get_exe_path.c.orig
 +++ libi3/get_exe_path.c

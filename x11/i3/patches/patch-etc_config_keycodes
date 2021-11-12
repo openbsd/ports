@@ -1,4 +1,4 @@
-$OpenBSD: patch-etc_config_keycodes,v 1.6 2021/02/12 23:14:05 sthen Exp $
+$OpenBSD: patch-etc_config_keycodes,v 1.7 2021/11/12 16:06:07 sthen Exp $
 
 Fix keycodes for the "Left", "Down", "Up" and "Right" keys: they're
 different between Linux and OpenBSD.
@@ -6,7 +6,7 @@ different between Linux and OpenBSD.
 Index: etc/config.keycodes
 --- etc/config.keycodes.orig
 +++ etc/config.keycodes
-@@ -23,30 +23,30 @@ font pango:monospace 8
+@@ -27,30 +27,30 @@ exec --no-startup-id dex --autostart --environment i3
  
  # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
  # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -46,7 +46,7 @@ Index: etc/config.keycodes
  # A more modern dmenu replacement is rofi:
  # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
  # There also is i3-dmenu-desktop which only displays applications shipping a
-@@ -60,10 +60,10 @@ bindcode $mod+46 focus up
+@@ -64,10 +64,10 @@ bindcode $mod+46 focus up
  bindcode $mod+47 focus right
  
  # alternatively, you can use the cursor keys:
@@ -61,7 +61,7 @@ Index: etc/config.keycodes
  
  # move focused window
  bindcode $mod+Shift+44 move left
-@@ -72,10 +72,10 @@ bindcode $mod+Shift+46 move up
+@@ -76,10 +76,10 @@ bindcode $mod+Shift+46 move up
  bindcode $mod+Shift+47 move right
  
  # alternatively, you can use the cursor keys:
@@ -76,7 +76,7 @@ Index: etc/config.keycodes
  
  # split in horizontal orientation
  bindcode $mod+43 split h
-@@ -161,10 +161,10 @@ mode "resize" {
+@@ -165,10 +165,10 @@ mode "resize" {
          bindcode 47 resize grow width 10 px or 10 ppt
  
          # same bindings, but for the arrow keys

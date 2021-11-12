@@ -1,10 +1,12 @@
-$OpenBSD: patch-src_main_c,v 1.21 2021/02/12 23:14:05 sthen Exp $
+$OpenBSD: patch-src_main_c,v 1.22 2021/11/12 16:06:07 sthen Exp $
+
+https://marc.info/?l=openbsd-ports&m=156762440931634&w=2
 
 Index: src/main.c
 --- src/main.c.orig
 +++ src/main.c
-@@ -970,7 +970,7 @@ int main(int argc, char *argv[]) {
-         xcb_free_pixmap(conn, pixmap);
+@@ -1125,7 +1125,7 @@ int main(int argc, char *argv[]) {
+         }
      }
  
 -#if defined(__OpenBSD__)

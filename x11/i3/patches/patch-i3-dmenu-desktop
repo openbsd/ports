@@ -1,4 +1,4 @@
-$OpenBSD: patch-i3-dmenu-desktop,v 1.9 2021/02/12 23:14:05 sthen Exp $
+$OpenBSD: patch-i3-dmenu-desktop,v 1.10 2021/11/12 16:06:07 sthen Exp $
 
 Index: i3-dmenu-desktop
 --- i3-dmenu-desktop.orig
@@ -12,7 +12,7 @@ Index: i3-dmenu-desktop
      !defined($xdg_data_dirs) ||
      $xdg_data_dirs eq '';
  
-@@ -224,12 +224,12 @@ for my $file (values %desktops) {
+@@ -226,12 +226,12 @@ for my $file (values %desktops) {
  #     'evince.desktop' => {
  #         'Exec' => 'evince %U',
  #         'Name' => 'Dokumentenbetrachter',
@@ -27,7 +27,7 @@ Index: i3-dmenu-desktop
  #       }
  #   };
  
-@@ -461,7 +461,7 @@ if (exists($app->{Terminal}) && $app->{Terminal}) {
+@@ -463,7 +463,7 @@ if (exists($app->{Terminal}) && $app->{Terminal}) {
      # we need to create a temporary script that contains the full command line
      # as the syntax for starting commands with arguments varies from terminal
      # emulator to terminal emulator.
@@ -36,7 +36,7 @@ Index: i3-dmenu-desktop
      my ($fh, $filename) = tempfile();
      binmode($fh, ':utf8');
      say $fh <<EOT;
-@@ -472,7 +472,7 @@ EOT
+@@ -474,7 +474,7 @@ EOT
      close($fh);
      chmod 0755, $filename;
  
@@ -45,7 +45,7 @@ Index: i3-dmenu-desktop
  } else {
      # i3 executes applications by passing the argument to i3’s “exec” command
      # as-is to $SHELL -c. The i3 parser supports quoted strings: When a string
-@@ -513,7 +513,7 @@ notifications.
+@@ -515,7 +515,7 @@ notifications.
  
  The .desktop files are searched in $XDG_DATA_HOME/applications (by default
  $HOME/.local/share/applications) and in the "applications" subdirectory of each
@@ -54,7 +54,7 @@ Index: i3-dmenu-desktop
  
  Files with the same name in $XDG_DATA_HOME/applications take precedence over
  files in $XDG_DATA_DIRS, so that you can overwrite parts of the system-wide
-@@ -527,7 +527,7 @@ file respectively) by appending it to the name of the 
+@@ -529,7 +529,7 @@ file respectively) by appending it to the name of the 
  want to launch "GNU Emacs 24" with the patch /tmp/foobar.txt, you would type
  "emacs", press TAB, type " /tmp/foobar.txt" and press ENTER.
  
