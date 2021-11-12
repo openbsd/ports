@@ -1,0 +1,21 @@
+$OpenBSD: patch-meson_build,v 1.1 2021/11/12 23:05:30 kurt Exp $
+
+Fix check for whether setnetgrent has a return value
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -163,8 +163,11 @@ setnetgrent_return_src = '''
+   };
+ '''
+ 
+-config_h.set('HAVE_SETNETGRENT_RETURN', cc.compiles(setnetgrent_return_src, name: 'setnetgrent return support'))
+-
++if config_h.get('HAVE_NETGROUP_H')
++  config_h.set('HAVE_SETNETGRENT_RETURN', cc.compiles(setnetgrent_return_src, name: 'setnetgrent return support', args: '-DHAVE_NETGROUP_H'))
++else
++  config_h.set('HAVE_SETNETGRENT_RETURN', cc.compiles(setnetgrent_return_src, name: 'setnetgrent return support'))
++endif
+ # Select wether to use libsystemd-login, libelogind or ConsoleKit for session tracking
+ session_tracking = get_option('session_tracking')
+ enable_logind = (session_tracking != 'ConsoleKit')
