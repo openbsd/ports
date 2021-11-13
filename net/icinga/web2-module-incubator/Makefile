@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/24 16:49:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/13 15:58:39 sthen Exp $
 
 COMMENT=	libraries useful for Icinga Web 2 modules
-REVISION=	0
 
 MODULE_NAME=	incubator
-MODULE_VERSION=	v0.6.0
+MODULE_VERSION=	v0.10.0
 
 .include <bsd.port.mk>
