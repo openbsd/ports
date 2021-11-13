@@ -1,10 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/11 11:23:10 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/11/13 07:33:39 rsadowski Exp $
 @pkgpath x11/kde4/ksnapshot
 @bin bin/spectacle
+lib/kconf_update_bin/
+@bin lib/kconf_update_bin/spectacle-migrate-shortcuts
+lib/systemd/user/app-org.kde.spectacle.service
+@man man/man1/spectacle.1
 share/applications/org.kde.spectacle.desktop
 share/dbus-1/interfaces/org.kde.Spectacle.xml
 share/dbus-1/services/org.kde.Spectacle.service
 share/doc/HTML/ca/spectacle/
+share/doc/HTML/ca/spectacle/Annotate.png
 share/doc/HTML/ca/spectacle/ApplicationPreferences.png
 share/doc/HTML/ca/spectacle/MainWindow.png
 share/doc/HTML/ca/spectacle/SaveOptions.png
@@ -14,6 +19,7 @@ share/doc/HTML/de/spectacle/
 share/doc/HTML/de/spectacle/index.cache.bz2
 share/doc/HTML/de/spectacle/index.docbook
 share/doc/HTML/en/spectacle/
+share/doc/HTML/en/spectacle/Annotate.png
 share/doc/HTML/en/spectacle/ApplicationPreferences.png
 share/doc/HTML/en/spectacle/MainWindow.png
 share/doc/HTML/en/spectacle/SaveOptions.png
@@ -23,6 +29,9 @@ share/doc/HTML/es/spectacle/
 share/doc/HTML/es/spectacle/index.cache.bz2
 share/doc/HTML/es/spectacle/index.docbook
 share/doc/HTML/it/spectacle/
+share/doc/HTML/it/spectacle/ApplicationPreferences.png
+share/doc/HTML/it/spectacle/MainWindow.png
+share/doc/HTML/it/spectacle/SaveOptions.png
 share/doc/HTML/it/spectacle/index.cache.bz2
 share/doc/HTML/it/spectacle/index.docbook
 share/doc/HTML/nl/spectacle/
@@ -38,24 +47,28 @@ share/doc/HTML/sv/spectacle/
 share/doc/HTML/sv/spectacle/index.cache.bz2
 share/doc/HTML/sv/spectacle/index.docbook
 share/doc/HTML/uk/spectacle/
+share/doc/HTML/uk/spectacle/Annotate.png
 share/doc/HTML/uk/spectacle/ApplicationPreferences.png
 share/doc/HTML/uk/spectacle/MainWindow.png
 share/doc/HTML/uk/spectacle/SaveOptions.png
 share/doc/HTML/uk/spectacle/index.cache.bz2
 share/doc/HTML/uk/spectacle/index.docbook
-share/examples/spectacle/
-share/examples/spectacle/xdg/
-share/examples/spectacle/xdg/spectacle.categories
-@sample ${SYSCONFDIR}/xdg/spectacle.categories
 share/icons/hicolor/16x16/apps/spectacle.png
 share/icons/hicolor/22x22/apps/spectacle.png
 share/icons/hicolor/32x32/apps/spectacle.png
 share/icons/hicolor/48x48/apps/spectacle.png
 share/icons/hicolor/scalable/apps/spectacle.svgz
-share/khotkeys/
-share/khotkeys/spectacle.khotkeys
+share/kconf_update/50-clipboard_settings_change.py
+share/kconf_update/${MODPY_PYCACHE}/
+share/kconf_update/${MODPY_PYCACHE}50-clipboard_settings_change.${MODPY_PYC_MAGIC_TAG}pyc
+share/kconf_update/spectacle_clipboard.upd
+share/kconf_update/spectacle_newConfig.upd
+share/kconf_update/spectacle_shortcuts.upd
+share/kglobalaccel/
+share/kglobalaccel/org.kde.spectacle.desktop
 share/knotifications5/spectacle.notifyrc
 share/locale/ar/LC_MESSAGES/spectacle.mo
+share/locale/az/LC_MESSAGES/spectacle.mo
 share/locale/bg/LC_MESSAGES/spectacle.mo
 share/locale/ca/LC_MESSAGES/spectacle.mo
 share/locale/ca@valencia/LC_MESSAGES/spectacle.mo
@@ -78,16 +91,19 @@ share/locale/it/LC_MESSAGES/spectacle.mo
 share/locale/ja/LC_MESSAGES/spectacle.mo
 share/locale/ko/LC_MESSAGES/spectacle.mo
 share/locale/lt/LC_MESSAGES/spectacle.mo
+share/locale/ml/LC_MESSAGES/spectacle.mo
 share/locale/nl/LC_MESSAGES/spectacle.mo
 share/locale/nn/LC_MESSAGES/spectacle.mo
 share/locale/pl/LC_MESSAGES/spectacle.mo
 share/locale/pt/LC_MESSAGES/spectacle.mo
 share/locale/pt_BR/LC_MESSAGES/spectacle.mo
+share/locale/ro/LC_MESSAGES/spectacle.mo
 share/locale/ru/LC_MESSAGES/spectacle.mo
 share/locale/sk/LC_MESSAGES/spectacle.mo
 share/locale/sl/LC_MESSAGES/spectacle.mo
 share/locale/sr/LC_MESSAGES/spectacle.mo
 share/locale/sv/LC_MESSAGES/spectacle.mo
+share/locale/ta/LC_MESSAGES/spectacle.mo
 share/locale/tr/LC_MESSAGES/spectacle.mo
 share/locale/uk/LC_MESSAGES/spectacle.mo
 share/locale/zh_CN/LC_MESSAGES/spectacle.mo
@@ -96,3 +112,4 @@ share/metainfo/
 share/metainfo/org.kde.spectacle.appdata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/qlogging-categories5/spectacle.categories
