@@ -1,0 +1,14 @@
+$OpenBSD: patch-main_go,v 1.1 2021/11/13 21:58:30 sthen Exp $
+
+Index: main.go
+--- main.go.orig
++++ main.go
+@@ -58,7 +58,7 @@ func main() {
+ 		}
+ 		defer pprof.StopCPUProfile()
+ 	}
+-	if err := protect.Pledge("stdio rpath wpath cpath tty proc exec"); err != nil {
++	if err := protect.Pledge("stdio rpath wpath cpath fattr tty proc exec"); err != nil {
+ 		panic(err)
+ 	}
+ 	ctx := context.Background()
