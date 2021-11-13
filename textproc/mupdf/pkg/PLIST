@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2020/06/13 15:53:36 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.27 2021/11/13 17:23:38 sthen Exp $
 bin/mupdf
 %%js%%
 @bin bin/mupdf-x11
@@ -22,6 +22,7 @@ include/mupdf/fitz/crypt.h
 include/mupdf/fitz/device.h
 include/mupdf/fitz/display-list.h
 include/mupdf/fitz/document.h
+include/mupdf/fitz/export.h
 include/mupdf/fitz/filter.h
 include/mupdf/fitz/font.h
 include/mupdf/fitz/geometry.h
@@ -69,7 +70,6 @@ include/mupdf/pdf/interpret.h
 include/mupdf/pdf/javascript.h
 include/mupdf/pdf/name-table.h
 include/mupdf/pdf/object.h
-include/mupdf/pdf/output-pdf.h
 include/mupdf/pdf/page.h
 include/mupdf/pdf/parse.h
 include/mupdf/pdf/resource.h
@@ -90,6 +90,8 @@ share/doc/mupdf/building.html
 share/doc/mupdf/coding-overview.html
 share/doc/mupdf/coding-progressive.html
 share/doc/mupdf/coding-style.html
+share/doc/mupdf/ecosystem.html
+share/doc/mupdf/ecosystem.png
 share/doc/mupdf/index.html
 share/doc/mupdf/manual-mupdf-gl.html
 share/doc/mupdf/manual-mutool-clean.html
@@ -97,9 +99,13 @@ share/doc/mupdf/manual-mutool-convert.html
 share/doc/mupdf/manual-mutool-create.html
 share/doc/mupdf/manual-mutool-draw.html
 share/doc/mupdf/manual-mutool-extract.html
+share/doc/mupdf/manual-mutool-info.html
 share/doc/mupdf/manual-mutool-merge.html
+share/doc/mupdf/manual-mutool-pages.html
+share/doc/mupdf/manual-mutool-poster.html
 share/doc/mupdf/manual-mutool-run.html
 share/doc/mupdf/manual-mutool-show.html
+share/doc/mupdf/manual-mutool-sign.html
 share/doc/mupdf/manual-mutool-trace.html
 share/doc/mupdf/style.css
 share/doc/mupdf/template.html

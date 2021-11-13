@@ -1,11 +1,11 @@
-$OpenBSD: patch-source_tools_pdfpages_c,v 1.3 2018/04/23 11:55:54 sthen Exp $
+$OpenBSD: patch-source_tools_pdfpages_c,v 1.4 2021/11/13 17:23:38 sthen Exp $
 
 add pledge(2) to "mutool pages"
 
 Index: source/tools/pdfpages.c
 --- source/tools/pdfpages.c.orig
 +++ source/tools/pdfpages.c
-@@ -6,6 +6,9 @@
+@@ -28,6 +28,9 @@
  #include "mupdf/fitz.h"
  #include "mupdf/pdf.h"
  
@@ -15,10 +15,10 @@ Index: source/tools/pdfpages.c
  #include <stdlib.h>
  #include <stdio.h>
  
-@@ -191,6 +194,12 @@ int pdfpages_main(int argc, char **argv)
+@@ -212,6 +215,12 @@ int pdfpages_main(int argc, char **argv)
  
  	if (fz_optind == argc)
- 		infousage();
+ 		return infousage();
 +
 +	if (pledge("stdio rpath", NULL) == -1)
 +	{

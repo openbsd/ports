@@ -1,4 +1,4 @@
-$OpenBSD: patch-platform_x11_pdfapp_c,v 1.16 2020/11/06 15:36:38 sthen Exp $
+$OpenBSD: patch-platform_x11_pdfapp_c,v 1.17 2021/11/13 17:23:38 sthen Exp $
 
 espie@ added feature
 
@@ -30,7 +30,7 @@ Index: platform/x11/pdfapp.c
  static int zoom_in(int oldres)
  {
  	int i;
-@@ -1567,6 +1577,7 @@ void pdfapp_onkey(pdfapp_t *app, int c, int modifiers)
+@@ -1581,6 +1591,7 @@ key_rewritten:
  			app->pageno++;
  		break;
  
@@ -38,7 +38,7 @@ Index: platform/x11/pdfapp.c
  	case 'b':
  		{
  			int number = 1;
-@@ -1613,7 +1624,7 @@ void pdfapp_onkey(pdfapp_t *app, int c, int modifiers)
+@@ -1627,7 +1638,7 @@ key_rewritten:
  				{
  					if (app->imgw + app->panx <= app->winw + app->imgw/20)
  					{
@@ -47,7 +47,7 @@ Index: platform/x11/pdfapp.c
  						{
  							app->panx = 0;
  							app->pany = 0;
-@@ -1725,9 +1736,9 @@ static void handlescroll(pdfapp_t *app, int modifiers,
+@@ -1739,9 +1750,9 @@ static void handlescroll(pdfapp_t *app, int modifiers,
  	{
  		/* zoom in/out if ctrl is pressed */
  		if (dir > 0)

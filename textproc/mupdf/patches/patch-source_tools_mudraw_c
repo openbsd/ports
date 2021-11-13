@@ -1,11 +1,11 @@
-$OpenBSD: patch-source_tools_mudraw_c,v 1.11 2020/11/06 15:36:38 sthen Exp $
+$OpenBSD: patch-source_tools_mudraw_c,v 1.12 2021/11/13 17:23:38 sthen Exp $
 
 add pledge(2) to "mutool draw"
 
 Index: source/tools/mudraw.c
 --- source/tools/mudraw.c.orig
 +++ source/tools/mudraw.c
-@@ -12,6 +12,8 @@
+@@ -34,6 +34,8 @@
  #include "mupdf/helpers/mu-threads.h"
  #endif
  
@@ -14,10 +14,10 @@ Index: source/tools/mudraw.c
  #include <string.h>
  #include <limits.h>
  #include <stdlib.h>
-@@ -1909,6 +1911,12 @@ int mudraw_main(int argc, char **argv)
+@@ -1932,6 +1934,12 @@ int mudraw_main(int argc, char **argv)
  
  	if (fz_optind == argc)
- 		usage();
+ 		return usage();
 +
 +	if (pledge("stdio rpath wpath cpath", NULL) == -1)
 +	{
