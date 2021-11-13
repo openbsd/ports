@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.21 2020/12/16 20:47:31 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.22 2021/11/13 16:00:22 sthen Exp $
 
 CATEGORIES +=	net
 
 GH_ACCOUNT =	Icinga
-PKGNAME =	${DISTNAME:S/icingaweb2/icinga-web2/}
+PKGNAME ?=	${DISTNAME:S/icingaweb2/icinga-web2/}
 
 # GPLv2 only
 PERMIT_PACKAGE ?=	Yes
@@ -11,15 +11,20 @@ PERMIT_PACKAGE ?=	Yes
 .if !defined(MODULE_NAME)
 HOMEPAGE =	https://icinga.com/
 .else
-MODULES +=	lang/php
-GH_PROJECT =	icingaweb2-module-${MODULE_NAME}
-GH_TAGNAME =	${MODULE_VERSION}
+GH_PROJECT ?=	icingaweb2-module-${MODULE_NAME}
+GH_TAGNAME ?=	${MODULE_VERSION}
+MODULE_DEST ?=	${PREFIX}/icinga-web2/modules/${MODULE_NAME}
 RUN_DEPENDS +=	net/icinga/web2
+.endif
+
+.if defined(MODULE_DEST)
+MODULES +=	lang/php
 NO_TEST =	Yes
 NO_BUILD =	Yes
 PREFIX =	${VARBASE}/www
+MODULE_SRC ?=
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/icinga-web2/modules/${MODULE_NAME}
-	cd ${WRKSRC}; pax -rw ./ ${PREFIX}/icinga-web2/modules/${MODULE_NAME}
+	${INSTALL_DATA_DIR} ${MODULE_DEST}
+	cd ${WRKSRC}/${MODULE_SRC}; pax -rw ./ ${MODULE_DEST}
 .endif
