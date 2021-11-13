@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/02/10 15:35:38 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.14 2021/11/13 15:58:56 sthen Exp $
 @newuser _icingadirector:864:_icingaweb2:daemon:Icinga Director user:${PREFIX}/icinga-web2:/sbin/nologin
 @rcscript ${RCDIR}/icingadirector
 icinga-web2/modules/director/
@@ -289,6 +289,8 @@ icinga-web2/modules/director/library/
 icinga-web2/modules/director/library/Director/
 icinga-web2/modules/director/library/Director/Acl.php
 icinga-web2/modules/director/library/Director/Application/
+icinga-web2/modules/director/library/Director/Application/Dependency.php
+icinga-web2/modules/director/library/Director/Application/DependencyChecker.php
 icinga-web2/modules/director/library/Director/Application/MemoryLimit.php
 icinga-web2/modules/director/library/Director/CheckPlugin/
 icinga-web2/modules/director/library/Director/CheckPlugin/Check.php
@@ -730,6 +732,9 @@ icinga-web2/modules/director/library/Director/Web/Table/DatafieldTable.php
 icinga-web2/modules/director/library/Director/Web/Table/DatalistEntryTable.php
 icinga-web2/modules/director/library/Director/Web/Table/DatalistTable.php
 icinga-web2/modules/director/library/Director/Web/Table/DbHelper.php
+icinga-web2/modules/director/library/Director/Web/Table/Dependency/
+icinga-web2/modules/director/library/Director/Web/Table/Dependency/DependencyInfoTable.php
+icinga-web2/modules/director/library/Director/Web/Table/Dependency/Html.php
 icinga-web2/modules/director/library/Director/Web/Table/DependencyTemplateUsageTable.php
 icinga-web2/modules/director/library/Director/Web/Table/DeploymentLogTable.php
 icinga-web2/modules/director/library/Director/Web/Table/FilterableByUsage.php
@@ -1099,6 +1104,7 @@ icinga-web2/modules/director/test/php/
 icinga-web2/modules/director/test/php/library/
 icinga-web2/modules/director/test/php/library/Director/
 icinga-web2/modules/director/test/php/library/Director/Application/
+icinga-web2/modules/director/test/php/library/Director/Application/DependencyTest.php
 icinga-web2/modules/director/test/php/library/Director/Application/MemoryLimitTest.php
 icinga-web2/modules/director/test/php/library/Director/CustomVariable/
 icinga-web2/modules/director/test/php/library/Director/CustomVariable/CustomVariablesTest.php
