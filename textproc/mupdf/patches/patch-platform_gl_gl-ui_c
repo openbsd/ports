@@ -1,0 +1,19 @@
+$OpenBSD: patch-platform_gl_gl-ui_c,v 1.1 2021/11/13 17:40:01 sthen Exp $
+
+Your friendly local distribution manager is not really interested
+in complaints caused by MuPDF's decision to use patched versions of
+common libraries
+
+Index: platform/gl/gl-ui.c
+--- platform/gl/gl-ui.c.orig
++++ platform/gl/gl-ui.c
+@@ -450,7 +450,9 @@ void ui_init(int w, int h, const char *title)
+ 	glutKeyboardExtFunc(on_keyboard);
+ #else
+ 	fz_warn(ctx, "This version of MuPDF has been built WITHOUT clipboard or unicode input support!");
++#if 0
+ 	fz_warn(ctx, "Please file a complaint with your friendly local distribution manager.");
++#endif
+ 	glutKeyboardFunc(on_keyboard);
+ #endif
+ 	glutSpecialFunc(on_special);
