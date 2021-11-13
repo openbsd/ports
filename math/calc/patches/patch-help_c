@@ -1,0 +1,14 @@
+$OpenBSD: patch-help_c,v 1.1 2021/11/13 14:19:49 sthen Exp $
+
+Index: help.c
+--- help.c.orig
++++ help.c
+@@ -29,7 +29,7 @@
+ #include <ctype.h>
+ #include <sys/types.h>
+ #include <signal.h>
+-#include <sys/errno.h>
++#include <errno.h>
+ 
+ #include "calc.h"
+ #include "conf.h"
