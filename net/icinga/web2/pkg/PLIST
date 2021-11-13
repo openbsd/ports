@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2021/03/24 12:49:53 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.27 2021/11/13 14:39:40 sthen Exp $
 @newgroup _icingaweb2:762
 @newuser _icingaweb2:762:_icingaweb2:daemon:Icinga-web2 user:${PREFIX}/icinga-web2:/sbin/nologin
 @extraunexec rm -rf %D/etc/icingaweb2/*
@@ -2477,6 +2477,7 @@ icinga-web2/modules/monitoring/library/Monitoring/Command/Transport/RemoteComman
 icinga-web2/modules/monitoring/library/Monitoring/Controller.php
 icinga-web2/modules/monitoring/library/Monitoring/Data/
 icinga-web2/modules/monitoring/library/Monitoring/Data/ColumnFilterIterator.php
+icinga-web2/modules/monitoring/library/Monitoring/Data/CustomvarProtectionIterator.php
 icinga-web2/modules/monitoring/library/Monitoring/DataView/
 icinga-web2/modules/monitoring/library/Monitoring/DataView/Command.php
 icinga-web2/modules/monitoring/library/Monitoring/DataView/Comment.php
