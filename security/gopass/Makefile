@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2021/07/25 11:11:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2021/11/13 00:25:44 sthen Exp $
 
 COMMENT =	pass compatible password manager written in go
 
 MODGO_MODNAME =	github.com/gopasspw/gopass
-MODGO_VERSION =	v1.12.7
-REVISION =	0
+MODGO_VERSION =	v1.12.8
 
 DISTNAME =	gopass-${MODGO_VERSION}
 
@@ -31,4 +30,5 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/gopass.1 ${PREFIX}/man/man1/
 
 .include "modules.inc"
+
 .include <bsd.port.mk>

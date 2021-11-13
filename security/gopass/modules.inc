@@ -1,4 +1,4 @@
-# $OpenBSD: modules.inc,v 1.1 2021/07/16 20:03:31 sthen Exp $
+# $OpenBSD: modules.inc,v 1.2 2021/11/13 00:25:44 sthen Exp $
 
 MODGO_MODULES =	\
 	cloud.google.com/go					 v0.65.0 \
@@ -8,7 +8,7 @@ MODGO_MODULES =	\
 	cloud.google.com/go/storage				 v1.10.0 \
 	dmitri.shuralyov.com/gpu/mtl				 v0.0.0-20190408044501-666a987793e9 \
 	filippo.io/age						 v1.0.0-rc.3 \
-	filippo.io/edwards25519					 v1.0.0-beta.3 \
+	filippo.io/edwards25519					 v1.0.0-rc.1 \
 	github.com/!burnt!sushi/toml				 v0.3.1 \
 	github.com/!burnt!sushi/xgb				 v0.0.0-20160522181843-27f122750802 \
 	github.com/atotto/clipboard				 v0.1.4 \
@@ -21,9 +21,10 @@ MODGO_MODULES =	\
 	github.com/chzyer/test					 v0.0.0-20180213035817-a1ea475d72b1 \
 	github.com/client9/misspell				 v0.3.4 \
 	github.com/cncf/udpa/go					 v0.0.0-20191209042840-269d4d468f6f \
-	github.com/cpuguy83/go-md2man/v2			 v2.0.0 \
+	github.com/cpuguy83/go-md2man/v2			 v2.0.1 \
 	github.com/creack/pty					 v1.1.9 \
 	github.com/davecgh/go-spew				 v1.1.1 \
+	github.com/dustin/go-humanize				 v1.0.0 \
 	github.com/envoyproxy/go-control-plane			 v0.9.4 \
 	github.com/envoyproxy/protoc-gen-validate		 v0.1.0 \
 	github.com/fatih/color					 v1.12.0 \
@@ -54,7 +55,7 @@ MODGO_MODULES =	\
 	github.com/jstemmer/go-junit-report			 v0.9.1 \
 	github.com/kballard/go-shellquote			 v0.0.0-20180428030007-95032a82bc51 \
 	github.com/kisielk/gotool				 v1.0.0 \
-	github.com/kr/pretty					 v0.1.0 \
+	github.com/kr/pretty					 v0.3.0 \
 	github.com/kr/pty					 v1.1.1 \
 	github.com/kr/text					 v0.2.0 \
 	github.com/martinhoefling/goxkcdpwgen			 v0.0.0-20190331205820-7dc3d102eca3 \
@@ -64,11 +65,11 @@ MODGO_MODULES =	\
 	github.com/mitchellh/go-ps				 v1.0.0 \
 	github.com/muesli/crunchy				 v0.4.0 \
 	github.com/nbutton23/zxcvbn-go				 v0.0.0-20210217022336-fa2cb2858354 \
-	github.com/niemeyer/pretty				 v0.0.0-20200227124842-a10e7caefd8e \
+	github.com/pkg/diff					 v0.0.0-20210226163009-20ebb0f2a09e \
 	github.com/pkg/errors					 v0.9.1 \
 	github.com/pmezard/go-difflib				 v1.0.0 \
 	github.com/prometheus/client_model			 v0.0.0-20190812154241-14fe0d1b01d4 \
-	github.com/rogpeppe/go-internal				 v1.3.0 \
+	github.com/rogpeppe/go-internal				 v1.8.0 \
 	github.com/russross/blackfriday/v2			 v2.1.0 \
 	github.com/schollz/closestmatch				 v0.0.0-20190308193919-1fbe626be92e \
 	github.com/shurcoo!l/sanitized_anchor_name		 v1.0.0 \
@@ -80,17 +81,17 @@ MODGO_MODULES =	\
 	github.com/xrash/smetrics				 v0.0.0-20201216005158-039620a65673 \
 	github.com/yuin/goldmark				 v1.1.32 \
 	go.opencensus.io					 v0.22.4 \
-	golang.org/x/crypto					 v0.0.0-20210415154028-4f45737414dc \
+	golang.org/x/crypto					 v0.0.0-20210817164053-32db794688a5 \
 	golang.org/x/exp					 v0.0.0-20200224162631-6cc2880d07d6 \
 	golang.org/x/image					 v0.0.0-20190802002840-cff245a6509b \
 	golang.org/x/lint					 v0.0.0-20200302205851-738671d3881b \
 	golang.org/x/mobile					 v0.0.0-20190719004257-d2bd2a29d028 \
 	golang.org/x/mod					 v0.3.0 \
-	golang.org/x/net					 v0.0.0-20210415231046-e915ea6b2b7d \
-	golang.org/x/oauth2					 v0.0.0-20210413134643-5e61552d6c78 \
+	golang.org/x/net					 v0.0.0-20210825183410-e898025ed96a \
+	golang.org/x/oauth2					 v0.0.0-20210819190943-2bc19b11175f \
 	golang.org/x/sync					 v0.0.0-20200625203802-6e8e738ad208 \
-	golang.org/x/sys					 v0.0.0-20210419170143-37df388d1f33 \
-	golang.org/x/term					 v0.0.0-20210406210042-72f3dc4e9b72 \
+	golang.org/x/sys					 v0.0.0-20210823070655-63515b42dcdf \
+	golang.org/x/term					 v0.0.0-20210615171337-6886f2dfbf5b \
 	golang.org/x/text					 v0.3.6 \
 	golang.org/x/time					 v0.0.0-20191024005414-555d28b269f0 \
 	golang.org/x/tools					 v0.0.0-20200825202427-b303f430e36d \
@@ -99,8 +100,8 @@ MODGO_MODULES =	\
 	google.golang.org/appengine				 v1.6.7 \
 	google.golang.org/genproto				 v0.0.0-20200825200019-8632dd797987 \
 	google.golang.org/grpc					 v1.31.0 \
-	google.golang.org/protobuf				 v1.26.0 \
-	gopkg.in/check.v1					 v1.0.0-20200227125254-8fa46927fb4f \
+	google.golang.org/protobuf				 v1.27.1 \
+	gopkg.in/check.v1					 v1.0.0-20201130134442-10cb98267c6c \
 	gopkg.in/errgo.v2					 v2.1.0 \
 	gopkg.in/yaml.v2					 v2.2.3 \
 	gopkg.in/yaml.v3					 v3.0.0-20210107192922-496545a6307b \
@@ -140,6 +141,7 @@ MODGO_MODFILES =	\
 	cloud.google.com/go/storage		 v1.5.0 \
 	cloud.google.com/go/storage		 v1.6.0 \
 	cloud.google.com/go/storage		 v1.8.0 \
+	filippo.io/edwards25519			 v1.0.0-beta.3 \
 	github.com/cpuguy83/go-md2man/v2	 v2.0.0-20190314233015-f79a8a8ca69d \
 	github.com/davecgh/go-spew		 v1.1.0 \
 	github.com/envoyproxy/go-control-plane	 v0.9.0 \
@@ -189,9 +191,13 @@ MODGO_MODFILES =	\
 	github.com/hashicorp/golang-lru		 v0.5.0 \
 	github.com/hashicorp/golang-lru		 v0.5.1 \
 	github.com/jstemmer/go-junit-report	 v0.0.0-20190106144839-af01ea7f8024 \
+	github.com/kr/pretty			 v0.1.0 \
+	github.com/kr/pretty			 v0.2.1 \
 	github.com/kr/text			 v0.1.0 \
 	github.com/mattn/go-isatty		 v0.0.12 \
 	github.com/pkg/errors			 v0.8.1 \
+	github.com/rogpeppe/go-internal		 v1.3.0 \
+	github.com/rogpeppe/go-internal		 v1.6.1 \
 	github.com/russross/blackfriday/v2	 v2.0.1 \
 	github.com/stretchr/testify		 v1.1.4 \
 	github.com/stretchr/testify		 v1.4.0 \
@@ -300,7 +306,8 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.0.0-20200523222454-059865788121 \
 	golang.org/x/sys			 v0.0.0-20200803210538-64077c9b5642 \
 	golang.org/x/sys			 v0.0.0-20201119102817-f84b799fce68 \
-	golang.org/x/sys			 v0.0.0-20210330210617-4fbd30eecc44 \
+	golang.org/x/sys			 v0.0.0-20210423082822-04245dca01da \
+	golang.org/x/sys			 v0.0.0-20210615035016-665e8c7367d1 \
 	golang.org/x/term			 v0.0.0-20201117132131-f5c789dd3221 \
 	golang.org/x/term			 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/text			 v0.0.0-20170915032832-14c0d48ead0c \
@@ -423,6 +430,7 @@ MODGO_MODFILES =	\
 	google.golang.org/protobuf		 v1.23.1-0.20200526195155-81db48ad09cc \
 	google.golang.org/protobuf		 v1.24.0 \
 	google.golang.org/protobuf		 v1.25.0 \
+	google.golang.org/protobuf		 v1.26.0 \
 	google.golang.org/protobuf		 v1.26.0-rc.1 \
 	gopkg.in/check.v1			 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/check.v1			 v1.0.0-20180628173108-788fd7840127 \
@@ -435,4 +443,3 @@ MODGO_MODFILES =	\
 	honnef.co/go/tools			 v0.0.0-20190523083050-ea95bdfd59fc \
 	honnef.co/go/tools			 v0.0.1-2019.2.3 \
 	honnef.co/go/tools			 v0.0.1-2020.1.3
-
