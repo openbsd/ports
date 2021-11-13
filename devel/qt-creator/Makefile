@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.78 2021/11/09 07:42:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.79 2021/11/13 15:13:14 rsadowski Exp $
 
 COMMENT =		cross-platform IDE for use with Qt
 
 V =			4.15.2
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
+REVISION =		0
 
 SHARED_LIBS +=  Aggregation               0.0 # 0.0
 SHARED_LIBS +=  CPlusPlus                 4.0 # 0.0
@@ -74,7 +75,8 @@ LIB_DEPENDS =	devel/llvm \
 		x11/qt5/qtwebengine
 
 CONFIGURE_ARGS =	-DBUILD_CPLUSPLUS_TOOLS=ON \
-			-DENABLE_SVG_SUPPORT=ON
+			-DENABLE_SVG_SUPPORT=ON \
+			-DCMAKE_DISABLE_FIND_PACKAGE_Qt6=ON
 
 GDB_ADJ_FILES = \
 	src/plugins/debugger/debuggeritemmanager.cpp \
