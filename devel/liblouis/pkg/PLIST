@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2021/08/30 19:53:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2021/11/13 21:51:29 ajacoutot Exp $
 @bin bin/lou_allround
 @bin bin/lou_checkhyphens
 @bin bin/lou_checktable
@@ -354,6 +354,7 @@ share/liblouis/tables/ru-compbrl.ctb
 share/liblouis/tables/ru-letters.dis
 share/liblouis/tables/ru-litbrl-detailed.utb
 share/liblouis/tables/ru-litbrl.ctb
+share/liblouis/tables/ru-ru-g1.ctb
 share/liblouis/tables/ru-ru.dis
 share/liblouis/tables/ru-unicode.dis
 share/liblouis/tables/ru.ctb
@@ -413,6 +414,8 @@ share/liblouis/tables/ur-pk-g1.utb
 share/liblouis/tables/ur-pk-g2.ctb
 share/liblouis/tables/us-table.dis
 share/liblouis/tables/uz-g1.utb
+share/liblouis/tables/ve-za-g1.utb
+share/liblouis/tables/ve-za-g2.ctb
 share/liblouis/tables/vi-charsdef.uti
 share/liblouis/tables/vi-lettersdef.uti
 share/liblouis/tables/vi-puncsdef.uti
