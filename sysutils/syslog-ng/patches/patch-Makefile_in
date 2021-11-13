@@ -1,11 +1,11 @@
-$OpenBSD: patch-Makefile_in,v 1.13 2021/05/24 15:50:22 millert Exp $
+$OpenBSD: patch-Makefile_in,v 1.14 2021/11/13 09:55:42 steven Exp $
 - temporary hack until libtool is fixed.
 - avoid GNU tar-specific option
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -10001,11 +10001,7 @@ modules_test_subdirs = \
+@@ -10234,11 +10234,7 @@ modules_test_subdirs = \
  
  syslog_ng_syslog_ng_SOURCES = syslog-ng/main.c
  
@@ -18,7 +18,7 @@ Index: Makefile.in
  
  syslog_ng_syslog_ng_LINK = @SYSLOGNG_LINK@
  syslog_ng_syslog_ng_DEPENDENCIES = lib/libsyslog-ng.la
-@@ -28362,7 +28358,7 @@ scl-install-data-local:
+@@ -28960,7 +28956,7 @@ scl-install-data-local:
  		fi; \
  	done
  	$(mkinstalldirs) $(DESTDIR)/$(scldir)

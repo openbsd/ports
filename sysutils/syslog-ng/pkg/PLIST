@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2021/05/24 15:50:22 millert Exp $
+@comment $OpenBSD: PLIST,v 1.27 2021/11/13 09:55:42 steven Exp $
 @conflict eventlog-*
 @pkgpath sysutils/eventlog
 @rcscript ${RCDIR}/syslog_ng
@@ -205,6 +205,9 @@ include/syslog-ng/signal-handler.h
 include/syslog-ng/signal-slot-connector/
 include/syslog-ng/signal-slot-connector/signal-slot-connector.h
 include/syslog-ng/stats/
+include/syslog-ng/stats/aggregator/
+include/syslog-ng/stats/aggregator/stats-aggregator-registry.h
+include/syslog-ng/stats/aggregator/stats-aggregator.h
 include/syslog-ng/stats/stats-cluster-logpipe.h
 include/syslog-ng/stats/stats-cluster-single.h
 include/syslog-ng/stats/stats-cluster.h
@@ -278,22 +281,22 @@ include/syslog-ng/value-pairs/transforms.h
 include/syslog-ng/value-pairs/value-pairs.h
 include/syslog-ng/versioning.h
 include/syslog-ng/window-size-counter.h
-@lib lib/libevtlog-3.32.so.${LIBevtlog-3.32_VERSION}
+@lib lib/libevtlog-3.34.so.${LIBevtlog-3.34_VERSION}
 @static-lib lib/libevtlog.a
 lib/libevtlog.la
 @lib lib/libevtlog.so.${LIBevtlog_VERSION}
-@lib lib/libloggen_helper-3.32.so.${LIBloggen_helper-3.32_VERSION}
+@lib lib/libloggen_helper-3.34.so.${LIBloggen_helper-3.34_VERSION}
 @static-lib lib/libloggen_helper.a
 lib/libloggen_helper.la
 @lib lib/libloggen_helper.so.${LIBloggen_helper_VERSION}
-@lib lib/libloggen_plugin-3.32.so.${LIBloggen_plugin-3.32_VERSION}
+@lib lib/libloggen_plugin-3.34.so.${LIBloggen_plugin-3.34_VERSION}
 @static-lib lib/libloggen_plugin.a
 lib/libloggen_plugin.la
 @lib lib/libloggen_plugin.so.${LIBloggen_plugin_VERSION}
 @static-lib lib/libsecret-storage.a
 lib/libsecret-storage.la
 @lib lib/libsecret-storage.so.${LIBsecret-storage_VERSION}
-@lib lib/libsyslog-ng-3.32.so.${LIBsyslog-ng-3.32_VERSION}
+@lib lib/libsyslog-ng-3.34.so.${LIBsyslog-ng-3.34_VERSION}
 @static-lib lib/libsyslog-ng-native-connector.a
 @static-lib lib/libsyslog-ng.a
 lib/libsyslog-ng.la
@@ -327,6 +330,7 @@ lib/syslog-ng/
 @so lib/syslog-ng/libmap-value-pairs.so
 @so lib/syslog-ng/libopenbsd.so
 @so lib/syslog-ng/libpseudofile.so
+@so lib/syslog-ng/libregexp-parser.so
 @so lib/syslog-ng/libsecure-logging.so
 @so lib/syslog-ng/libstardate.so
 @so lib/syslog-ng/libsyslogformat.so
@@ -361,6 +365,7 @@ share/examples/syslog-ng/
 @sample ${SYSCONFDIR}/
 share/examples/syslog-ng/patterndb.d/
 share/examples/syslog-ng/scl.conf
+@sample ${SYSCONFDIR}/scl.conf
 share/examples/syslog-ng/syslog-ng.conf
 share/examples/syslog-ng/syslog-ng.conf.openbsd
 @sample ${SYSCONFDIR}/syslog-ng.conf
@@ -382,6 +387,8 @@ share/syslog-ng/include/scl/collectd/
 share/syslog-ng/include/scl/collectd/plugin.conf
 share/syslog-ng/include/scl/default-network-drivers/
 share/syslog-ng/include/scl/default-network-drivers/plugin.conf
+share/syslog-ng/include/scl/discord/
+share/syslog-ng/include/scl/discord/discord.conf
 share/syslog-ng/include/scl/elasticsearch/
 share/syslog-ng/include/scl/elasticsearch/elastic-http.conf
 share/syslog-ng/include/scl/elasticsearch/elastic-java.conf
