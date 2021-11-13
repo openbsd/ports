@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/09/08 19:58:24 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/11/13 10:16:38 sthen Exp $
 @pkgpath textproc/py-iso8601
 lib/python${MODPY_VERSION}/site-packages/iso8601/
 lib/python${MODPY_VERSION}/site-packages/iso8601-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -7,11 +7,9 @@ lib/python${MODPY_VERSION}/site-packages/iso8601-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/iso8601-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/iso8601-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/iso8601/__init__.py
-lib/python${MODPY_VERSION}/site-packages/iso8601/__init__.pyi
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/iso8601/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/iso8601/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/iso8601/${MODPY_PYCACHE}iso8601.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/iso8601/${MODPY_PYCACHE}test_iso8601.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/iso8601/iso8601.py
-lib/python${MODPY_VERSION}/site-packages/iso8601/iso8601.pyi
 lib/python${MODPY_VERSION}/site-packages/iso8601/test_iso8601.py
