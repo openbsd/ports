@@ -1,0 +1,15 @@
+$OpenBSD: patch-pcap_pcap_logger_c,v 1.1 2021/11/13 19:13:20 tb Exp $
+
+Index: pcap/pcap_logger.c
+--- pcap/pcap_logger.c.orig
++++ pcap/pcap_logger.c
+@@ -1,7 +1,9 @@
+ 
+ #include <pcap.h>
+ #include <unistd.h>
++#ifdef HAVE_PCAP_BPF_H
+ #include <pcap-bpf.h>
++#endif
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>

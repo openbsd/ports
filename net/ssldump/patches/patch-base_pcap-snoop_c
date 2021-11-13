@@ -1,17 +1,24 @@
-$OpenBSD: patch-base_pcap-snoop_c,v 1.1 2013/04/25 15:21:40 sthen Exp $
+$OpenBSD: patch-base_pcap-snoop_c,v 1.2 2021/11/13 19:13:20 tb Exp $
 
-http://sourceforge.net/p/ssldump/patches/1/
-
-Fixes "ERROR: Couldn't create network handler"
-
---- base/pcap-snoop.c.orig	Thu Apr 25 16:13:14 2013
-+++ base/pcap-snoop.c	Thu Apr 25 16:13:33 2013
-@@ -204,6 +204,8 @@ int main(argc,argv)
-     
-     char errbuf[PCAP_ERRBUF_SIZE];
+Index: base/pcap-snoop.c
+--- base/pcap-snoop.c.orig
++++ base/pcap-snoop.c
+@@ -51,7 +51,9 @@
  
-+    SSL_library_init();
-+
-     signal(SIGINT,sig_handler);
+ #include <pcap.h>
+ #include <unistd.h>
++#ifdef HAVE_PCAP_BPF_H
+ #include <pcap-bpf.h>
++#endif
+ #ifndef _WIN32
+ #include <sys/param.h>
+ #endif
+@@ -430,7 +432,7 @@ int main(argc,argv)
      
-     while((c=getopt(argc,argv,"vr:f:S:Ttai:k:p:nsAxXhHVNdqem:P"))!=EOF){
+     if(!file){
+       if(!interface_name){
+-        if(pcap_findalldevs(&interfaces,errbuf)==-1) {
++        if(pcap_findalldevs(&interfaces,errbuf)==-1 || interfaces == NULL) {
+           fprintf(stderr,"PCAP: %s\n",errbuf);
+           err_exit("Aborting",-1);
+         }

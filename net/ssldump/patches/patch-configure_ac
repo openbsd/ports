@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure_ac,v 1.1 2021/11/13 19:13:20 tb Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -34,8 +34,9 @@ have_pcap=no
+ AC_SEARCH_LIBS([pcap_create], [pcap], [have_pcap=yes])
+ 
+ if test "x${have_pcap}" = xyes; then
+-	AC_CHECK_HEADERS([pcap.h pcap-bpf.h], [], [have_pcap=no])
++	AC_CHECK_HEADERS([pcap.h], [], [have_pcap=no])
+ fi
++AC_CHECK_HEADERS([pcap-bpf.h])
+ 
+ if test "x${have_pcap}" = xno; then
+ 	AC_MSG_ERROR([

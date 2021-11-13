@@ -1,20 +1,14 @@
-$OpenBSD: patch-ssl_sslprint_c,v 1.1 2013/04/25 15:21:40 sthen Exp $
+$OpenBSD: patch-ssl_sslprint_c,v 1.2 2021/11/13 19:13:20 tb Exp $
 
-http://sourceforge.net/p/ssldump/patches/7/
-
-ssldump segfaults while parsing a certificate with unknown type.
-This is because the loop in ssl_print_enum (ssl/sslprint.c) checks
-against the wrong terminating value for client_certificate_type_decoder
-(ssl/ssl.enums.c).
-
---- ssl/sslprint.c.orig	Thu Apr 25 16:09:58 2013
-+++ ssl/sslprint.c	Thu Apr 25 16:10:07 2013
-@@ -406,7 +406,7 @@ int ssl_print_enum(ssl,name,dtable,value)
-     if(name) explain(ssl,"%s ",name);    
-     INDENT;
-     
--    while(dtable && dtable->type!=-1){
-+    while(dtable && dtable->type!=0){
-       if(dtable->type == value){
-         INDENT_INCR;
-         explain(ssl,"%s",dtable->name);
+Index: ssl/sslprint.c
+--- ssl/sslprint.c.orig
++++ ssl/sslprint.c
+@@ -714,7 +714,7 @@ int ssl_print_timestamp(ssl,ts)
+     jobj = ssl->cur_json_st;
+ 
+     if(jobj) {
+-      snprintf(ts_str,40, "%ld%c%4.4ld",ts->tv_sec,'.',ts->tv_usec/100);
++      snprintf(ts_str,40, "%lld%c%4.4ld",(long long)ts->tv_sec,'.',ts->tv_usec/100);
+       json_object *j_ts_str = json_object_new_string(ts_str);
+       json_object_object_add(jobj, "timestamp", j_ts_str);
+     }
