@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/11/13 16:46:04 semarie Exp $
 
 COMMENT=	Structured Terminal Forms Language/Library
 
 DISTNAME=	stfl-0.24
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS+=	stfl 0.0
 
@@ -42,5 +42,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/stfl.h ${PREFIX}/include/
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
 	${INSTALL_DATA} ${WRKSRC}/stfl.pc ${PREFIX}/lib/pkgconfig
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/stfl
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/stfl
 
 .include <bsd.port.mk>
