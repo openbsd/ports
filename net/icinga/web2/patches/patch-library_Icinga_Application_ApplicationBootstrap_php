@@ -1,11 +1,11 @@
-$OpenBSD: patch-library_Icinga_Application_ApplicationBootstrap_php,v 1.5 2020/06/10 13:14:24 sthen Exp $
+$OpenBSD: patch-library_Icinga_Application_ApplicationBootstrap_php,v 1.6 2021/11/13 16:01:19 sthen Exp $
 
 Use /var/www/etc/icingaweb2.
 
 Index: library/Icinga/Application/ApplicationBootstrap.php
 --- library/Icinga/Application/ApplicationBootstrap.php.orig
 +++ library/Icinga/Application/ApplicationBootstrap.php
-@@ -159,7 +159,7 @@ abstract class ApplicationBootstrap
+@@ -175,7 +175,7 @@ abstract class ApplicationBootstrap
              if ($configDir === false) {
                  $configDir = Platform::isWindows()
                      ? $baseDir . '/config'
@@ -14,3 +14,16 @@ Index: library/Icinga/Application/ApplicationBootstrap.php
              }
          }
          $canonical = realpath($configDir);
+@@ -200,9 +200,9 @@ abstract class ApplicationBootstrap
+                     explode(':', $libraryPaths)
+                 ), 'is_dir');
+             } else {
+-                $this->libraryPaths = is_dir('/usr/share/icinga-php')
+-                    ? ['/usr/share/icinga-php']
+-                    : [];
++                $this->libraryPaths = is_dir('/var/www/icinga-php')
++                    ? ['/var/www/icinga-php']
++                    : ['/icinga-php'];
+             }
+         }
+ 

@@ -1,0 +1,11 @@
+$OpenBSD: patch-packages_files_bin_icingacli,v 1.1 2021/11/13 16:01:19 sthen Exp $
+
+Index: packages/files/bin/icingacli
+--- packages/files/bin/icingacli.orig
++++ packages/files/bin/icingacli
+@@ -4,4 +4,4 @@
+ 
+ require_once '/usr/share/php/Icinga/Application/Cli.php';
+ 
+-Icinga\Application\Cli::start('/usr/share/icingaweb2')->dispatch();
++Icinga\Application\Cli::start('/var/www/icinga-web2')->dispatch();
