@@ -692,10 +692,10 @@ SHA256 (go_modules/github.com/zclconf/go-cty-yaml/@v/v1.0.2.mod) = RxHTl0Pc7hyX+
 SHA256 (go_modules/github.com/zclconf/go-cty-yaml/@v/v1.0.2.zip) = eAuZvqTXCghMnjuPzjS3JRO2+Sdff4+GQX5l9Olj6u0=
 SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.0.0.mod) = GX5I510+0r6IJ+SFbEHFp8BV+hJT0AkHYL3O8ktNE5M=
 SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.1.0.mod) = GX5I510+0r6IJ+SFbEHFp8BV+hJT0AkHYL3O8ktNE5M=
+SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.10.0.mod) = 7L1mA5NbOFHNk2KhPVkN81FOheXSdN/QNj4JSh4pz+Y=
+SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.10.0.zip) = dTY3OPx9+OzimxvJ/eGt5LdmgPwD5mfPLjT+enYsmfw=
 SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.2.0.mod) = N3olwwoP5QJJQSY8gOCHFMHuyHp60aiU3mIdVZUaSls=
 SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.8.0.mod) = 7L1mA5NbOFHNk2KhPVkN81FOheXSdN/QNj4JSh4pz+Y=
-SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.9.1.mod) = 7L1mA5NbOFHNk2KhPVkN81FOheXSdN/QNj4JSh4pz+Y=
-SHA256 (go_modules/github.com/zclconf/go-cty/@v/v1.9.1.zip) = toHnbxslxfSLFjofjfCtdl84EuJ67gkdXdl+A7O4s9M=
 SHA256 (go_modules/go.etcd.io/bbolt/@v/v1.3.3.mod) = siQNmH3bNjz9n5PJ7VP5r19NefAOWRE8g3WvwbkcS28=
 SHA256 (go_modules/go.etcd.io/bbolt/@v/v1.3.3.zip) = HqB22+GNq+eJCeH7fsKVT8LVjNcudzCtabNSSKMASf0=
 SHA256 (go_modules/go.etcd.io/etcd/@v/v0.5.0-alpha.5.0.20210428180535-15715dcf1ace.mod) = z3DaEySRt40AmSBUZKHKAs8g45RCyfE1+vCRtvnU8+Q=
@@ -1140,7 +1140,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/@v/v0.0.0-20190525122527-15
 SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/@v/v0.0.0-20190525122527-15d366b2352e.zip) = bfT2TH3pDi8StbfvnZU5cHD3v4bJq3P6LY/0yuc3v1k=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRelO2IPjOKMKW5R06o=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.zip) = oNOSUuhmWkKKjLnU38nL6ge3rpCuYufPNlG+cZrfUVo=
-SHA256 (terraform-v1.0.10.zip) = XNJLX58v0JkFhq4lChhw7P5iqG0OwlqFJjlaE2XIBoA=
+SHA256 (terraform-v1.0.11.zip) = uG5IzMf21xdyjQAkf1UJdz2T+dlwIYzg4p3vVuWf6Q8=
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.34.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.38.0.mod) = 1006
@@ -1835,10 +1835,10 @@ SIZE (go_modules/github.com/zclconf/go-cty-yaml/@v/v1.0.2.mod) = 80
 SIZE (go_modules/github.com/zclconf/go-cty-yaml/@v/v1.0.2.zip) = 68523
 SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.0.0.mod) = 568
 SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.1.0.mod) = 568
+SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.10.0.mod) = 207
+SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.10.0.zip) = 273963
 SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.2.0.mod) = 601
 SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.8.0.mod) = 207
-SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.9.1.mod) = 207
-SIZE (go_modules/github.com/zclconf/go-cty/@v/v1.9.1.zip) = 271812
 SIZE (go_modules/go.etcd.io/bbolt/@v/v1.3.3.mod) = 24
 SIZE (go_modules/go.etcd.io/bbolt/@v/v1.3.3.zip) = 112407
 SIZE (go_modules/go.etcd.io/etcd/@v/v0.5.0-alpha.5.0.20210428180535-15715dcf1ace.mod) = 2199
@@ -2283,4 +2283,4 @@ SIZE (go_modules/sigs.k8s.io/structured-merge-diff/@v/v0.0.0-20190525122527-15d3
 SIZE (go_modules/sigs.k8s.io/structured-merge-diff/@v/v0.0.0-20190525122527-15d366b2352e.zip) = 113591
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.zip) = 18120
-SIZE (terraform-v1.0.10.zip) = 4196647
+SIZE (terraform-v1.0.11.zip) = 4205078
