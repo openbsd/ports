@@ -1,11 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/07/05 21:29:42 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/11/14 15:26:01 sthen Exp $
 @conflict glut-*
 @pkgpath graphics/glut
 include/GL/
 include/GL/freeglut.h
 include/GL/freeglut_ext.h
 include/GL/freeglut_std.h
+include/GL/freeglut_ucall.h
 include/GL/glut.h
-lib/libglut.a
+lib/cmake/
+lib/cmake/FreeGLUT/
+lib/cmake/FreeGLUT/FreeGLUTConfig.cmake
+lib/cmake/FreeGLUT/FreeGLUTConfigVersion.cmake
+lib/cmake/FreeGLUT/FreeGLUTTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/FreeGLUT/FreeGLUTTargets.cmake
+@static-lib lib/libglut.a
 @lib lib/libglut.so.${LIBglut_VERSION}
-lib/pkgconfig/freeglut.pc
+lib/pkgconfig/glut.pc

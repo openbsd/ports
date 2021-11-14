@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2021/01/27 21:01:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2021/11/14 15:26:01 sthen Exp $
 
 COMMENT =		open source alternative to glut
 
-DISTNAME =		freeglut-3.0.0
-REVISION =		1
+DISTNAME =		freeglut-3.2.1
 
-SHARED_LIBS +=  glut                      6.0 # 3.10
+SHARED_LIBS +=  glut                      7.0
 
 CATEGORIES =		graphics
 
