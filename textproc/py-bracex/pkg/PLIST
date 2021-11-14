@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/02/20 08:22:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/11/14 12:18:04 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/bracex/
 lib/python${MODPY_VERSION}/site-packages/bracex-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/bracex-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -6,7 +6,10 @@ lib/python${MODPY_VERSION}/site-packages/bracex-${MODPY_EGG_VERSION}-py${MODPY_V
 lib/python${MODPY_VERSION}/site-packages/bracex-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/bracex-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/bracex/__init__.py
+lib/python${MODPY_VERSION}/site-packages/bracex/__main__.py
 lib/python${MODPY_VERSION}/site-packages/bracex/__meta__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bracex/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bracex/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bracex/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bracex/${MODPY_PYCACHE}__meta__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bracex/py.typed

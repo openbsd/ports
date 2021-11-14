@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:02:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/14 12:18:04 sthen Exp $
 
 COMMENT =		brace expanding library
 
-MODPY_EGG_VERSION =	2.1.1
+MODPY_EGG_VERSION =	2.2.1
 DISTNAME =		bracex-${MODPY_EGG_VERSION}
 PKGNAME =		py-bracex-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		textproc
 
@@ -20,7 +19,6 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODPY_SETUPTOOLS =	Yes
-
-TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR}
+MODPY_PYTEST =		Yes
 
 .include <bsd.port.mk>
