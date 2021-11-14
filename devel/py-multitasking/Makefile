@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/12 11:59:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/14 19:53:11 sthen Exp $
 
 COMMENT=		non-blocking Python methods using decorators
 
-MODPY_EGG_VERSION=	0.0.9
+MODPY_EGG_VERSION=	0.0.10
 DISTNAME=		multitasking-${MODPY_EGG_VERSION}
 PKGNAME=		py-multitasking-${MODPY_EGG_VERSION}
 
