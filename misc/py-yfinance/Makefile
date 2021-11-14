@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/12 11:59:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/14 19:53:21 sthen Exp $
 
 COMMENT=		fetching finanical market data with Python
 
-MODPY_EGG_VERSION=	0.1.64
+MODPY_EGG_VERSION=	0.1.66
 DISTNAME=		yfinance-${MODPY_EGG_VERSION}
 PKGNAME=		py-yfinance-${MODPY_EGG_VERSION}
 
