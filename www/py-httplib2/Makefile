@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2021/11/02 00:02:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2021/11/14 12:48:52 sthen Exp $
 
 COMMENT =		Python HTTP client library
 
-MODPY_EGG_VERSION =	0.20.1
+MODPY_EGG_VERSION =	0.20.2
 DISTNAME =		httplib2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		www net
 
@@ -23,7 +22,6 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	python3 tests
-TEST_ENV +=		PYTHONPATH=${WRKSRC}/lib
 
 FLAVORS =		python3
 FLAVOR =		python3
