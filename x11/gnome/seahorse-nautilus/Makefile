@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2021/05/16 09:38:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2021/11/14 06:27:05 ajacoutot Exp $
 
 COMMENT=		GnuPG extension for nautilus(1)
 
 GNOME_PROJECT=		seahorse-nautilus
 GNOME_VERSION=		3.11.92.1
 
+# override gnome MODULE
 COMMIT=			b26a42b8b294b334aff27fdb0c3f80b7f12ba904
 MASTER_SITES=           https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${COMMIT}/
 WRKDIST=                ${WRKDIR}/${GNOME_PROJECT}-${COMMIT}

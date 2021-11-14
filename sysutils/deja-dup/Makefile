@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.61 2021/11/02 00:02:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2021/11/14 06:27:04 ajacoutot Exp $
 
 COMMENT=		simple encrypted backup tool for GNOME
 
 GNOME_VERSION=		42.8
 GNOME_PROJECT=		deja-dup
-# override gnome MODULE
-EXTRACT_SUFX=		.tar.gz
+
 REVISION=		0
+
+# override gnome MODULE
+MASTER_SITES=		https://gitlab.gnome.org/World/deja-dup/-/archive/${GNOME_VERSION}/
+EXTRACT_SUFX=		.tar.gz
 
 CATEGORIES=		sysutils
 
@@ -20,8 +23,6 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += atk-1.0 c gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += gpg-error gtk-3 handy-1 intl json-glib-1.0 secret-1
 WANTLIB += soup-2.4
-
-MASTER_SITES=		https://gitlab.gnome.org/World/deja-dup/-/archive/${GNOME_VERSION}/
 
 MODULES=		devel/meson \
 			devel/dconf \

@@ -1,9 +1,14 @@
-# $OpenBSD: Makefile,v 1.132 2021/09/02 14:32:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.133 2021/11/14 06:27:04 ajacoutot Exp $
 
 COMMENT=		Unicode character map for the GNOME project
 
 GNOME_PROJECT=		gucharmap
 GNOME_VERSION=		13.0.8
+REVISION=		0
+
+# override gnome MODULE
+MASTER_SITES =		https://gitlab.gnome.org/GNOME/gucharmap/-/archive/${GNOME_VERSION}/
+EXTRACT_SUFX =		.tar.gz
 
 SHARED_LIBS += gucharmap_2_90            7.1 # 7.0.0
 
@@ -12,9 +17,6 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += atk-1.0 c cairo gdk-3 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += gtk-3 intl pango-1.0 pangocairo-1.0
-
-MASTER_SITES =		https://gitlab.gnome.org/GNOME/gucharmap/-/archive/${GNOME_VERSION}/
-EXTRACT_SUFX =		.tar.bz2
 
 # C11
 COMPILER=		base-clang ports-gcc
