@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/03/29 12:18:32 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/11/14 12:43:33 sthen Exp $
 @pkgpath net/py-ncclient
 lib/python${MODPY_VERSION}/site-packages/ncclient/
 lib/python${MODPY_VERSION}/site-packages/ncclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -26,6 +26,7 @@ lib/python${MODPY_VERSION}/site-packages/ncclient/devices/${MODPY_PYCACHE}__init
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/${MODPY_PYCACHE}alu.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/${MODPY_PYCACHE}csr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/${MODPY_PYCACHE}default.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ncclient/devices/${MODPY_PYCACHE}ericsson.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/${MODPY_PYCACHE}h3c.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/${MODPY_PYCACHE}hpcomware.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/${MODPY_PYCACHE}huawei.${MODPY_PYC_MAGIC_TAG}pyc
@@ -34,9 +35,11 @@ lib/python${MODPY_VERSION}/site-packages/ncclient/devices/${MODPY_PYCACHE}iosxe.
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/${MODPY_PYCACHE}iosxr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/${MODPY_PYCACHE}junos.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/${MODPY_PYCACHE}nexus.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ncclient/devices/${MODPY_PYCACHE}sros.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/alu.py
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/csr.py
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/default.py
+lib/python${MODPY_VERSION}/site-packages/ncclient/devices/ericsson.py
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/h3c.py
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/hpcomware.py
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/huawei.py
@@ -45,6 +48,7 @@ lib/python${MODPY_VERSION}/site-packages/ncclient/devices/iosxe.py
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/iosxr.py
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/junos.py
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/nexus.py
+lib/python${MODPY_VERSION}/site-packages/ncclient/devices/sros.py
 lib/python${MODPY_VERSION}/site-packages/ncclient/logging_.py
 lib/python${MODPY_VERSION}/site-packages/ncclient/manager.py
 lib/python${MODPY_VERSION}/site-packages/ncclient/operations/
@@ -114,6 +118,12 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ncclient/operations/thi
 lib/python${MODPY_VERSION}/site-packages/ncclient/operations/third_party/nexus/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ncclient/operations/third_party/nexus/${MODPY_PYCACHE}rpc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ncclient/operations/third_party/nexus/rpc.py
+lib/python${MODPY_VERSION}/site-packages/ncclient/operations/third_party/sros/
+lib/python${MODPY_VERSION}/site-packages/ncclient/operations/third_party/sros/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ncclient/operations/third_party/sros/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ncclient/operations/third_party/sros/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ncclient/operations/third_party/sros/${MODPY_PYCACHE}rpc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ncclient/operations/third_party/sros/rpc.py
 lib/python${MODPY_VERSION}/site-packages/ncclient/operations/util.py
 lib/python${MODPY_VERSION}/site-packages/ncclient/transport/
 lib/python${MODPY_VERSION}/site-packages/ncclient/transport/__init__.py
@@ -121,10 +131,12 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ncclient/transport/${MO
 lib/python${MODPY_VERSION}/site-packages/ncclient/transport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ncclient/transport/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ncclient/transport/${MODPY_PYCACHE}notify.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ncclient/transport/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ncclient/transport/${MODPY_PYCACHE}session.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ncclient/transport/${MODPY_PYCACHE}ssh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ncclient/transport/errors.py
 lib/python${MODPY_VERSION}/site-packages/ncclient/transport/notify.py
+lib/python${MODPY_VERSION}/site-packages/ncclient/transport/parser.py
 lib/python${MODPY_VERSION}/site-packages/ncclient/transport/session.py
 lib/python${MODPY_VERSION}/site-packages/ncclient/transport/ssh.py
 lib/python${MODPY_VERSION}/site-packages/ncclient/transport/third_party/
@@ -136,5 +148,7 @@ lib/python${MODPY_VERSION}/site-packages/ncclient/transport/third_party/junos/__
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ncclient/transport/third_party/junos/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ncclient/transport/third_party/junos/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ncclient/transport/third_party/junos/${MODPY_PYCACHE}ioproc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ncclient/transport/third_party/junos/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ncclient/transport/third_party/junos/ioproc.py
+lib/python${MODPY_VERSION}/site-packages/ncclient/transport/third_party/junos/parser.py
 lib/python${MODPY_VERSION}/site-packages/ncclient/xml_.py
