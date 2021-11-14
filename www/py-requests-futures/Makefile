@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/02 00:02:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/14 11:42:45 sthen Exp $
 
 COMMENT =		small addon for python-requests HTTP library
 
-MODPY_EGG_VERSION =	0.9.7
+MODPY_EGG_VERSION =	1.0.0
 DISTNAME =		requests-futures-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
 
 CATEGORIES =		www
 
@@ -18,13 +17,11 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR =		python3
 
 RUN_DEPENDS +=		www/py-requests${MODPY_FLAVOR}
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} test_requests_futures.py
 
 .include <bsd.port.mk>
