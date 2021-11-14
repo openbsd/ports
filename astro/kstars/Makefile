@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2021/09/18 07:52:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.37 2021/11/14 12:41:53 rsadowski Exp $
 
 COMMENT =	planetarium simulator for KDE
 
-DISTNAME =	kstars-3.5.5
+DISTNAME =	kstars-3.5.6
 EPOCH =		0
 
 CATEGORIES =	astro education
@@ -23,8 +23,8 @@ WANTLIB += KF5NotifyConfig KF5Plotting KF5Service KF5Solid KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5DataVisualization Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5Sql Qt5Svg Qt5WebSockets
-WANTLIB += Qt5Widgets Qt5Xml c cfitsio gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += intl m qt5keychain raw secret-1 wcs z
+WANTLIB += Qt5Widgets Qt5Xml X11 c cfitsio m qt5keychain raw wcs
+WANTLIB += z
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/kstars/}
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2021/09/18 07:52:12 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.21 2021/11/14 12:41:53 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/kstars
@@ -46,6 +46,7 @@ share/doc/HTML/ca/kstars/calc-sidereal.png
 share/doc/HTML/ca/kstars/calculator.docbook
 share/doc/HTML/ca/kstars/catalog_details.png
 share/doc/HTML/ca/kstars/cequator.docbook
+share/doc/HTML/ca/kstars/color_editor.png
 share/doc/HTML/ca/kstars/color_indices.png
 share/doc/HTML/ca/kstars/colorandtemp.docbook
 share/doc/HTML/ca/kstars/colors_page.png
@@ -978,6 +979,7 @@ share/kstars/citydb.sqlite
 share/kstars/classic.colors
 share/kstars/clines.dat
 share/kstars/cnames.dat
+share/kstars/cometels.json.gz
 share/kstars/comets.dat
 share/kstars/defaultflag.gif
 share/kstars/earth.B0.vsop
