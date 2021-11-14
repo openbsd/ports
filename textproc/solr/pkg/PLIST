@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2021/10/19 07:23:43 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.21 2021/11/14 11:19:29 sthen Exp $
 @newgroup _solr:801
 @newuser _solr:801:_solr:daemon:solr user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${LOCALSTATEDIR}/db/solr/*
@@ -168,24 +168,27 @@ share/solr/contrib/prometheus-exporter/lucene-libs/
 share/solr/contrib/prometheus-exporter/lucene-libs/lucene-analyzers-common-${V}.jar
 share/solr/contrib/s3-repository/
 share/solr/contrib/s3-repository/lib/
-share/solr/contrib/s3-repository/lib/apache-client-2.16.93.jar
-share/solr/contrib/s3-repository/lib/arns-2.16.93.jar
-share/solr/contrib/s3-repository/lib/auth-2.16.93.jar
-share/solr/contrib/s3-repository/lib/aws-core-2.16.93.jar
-share/solr/contrib/s3-repository/lib/aws-query-protocol-2.16.93.jar
-share/solr/contrib/s3-repository/lib/aws-xml-protocol-2.16.93.jar
-share/solr/contrib/s3-repository/lib/http-client-spi-2.16.93.jar
+share/solr/contrib/s3-repository/lib/annotations-2.17.63.jar
+share/solr/contrib/s3-repository/lib/apache-client-2.17.63.jar
+share/solr/contrib/s3-repository/lib/arns-2.17.63.jar
+share/solr/contrib/s3-repository/lib/auth-2.17.63.jar
+share/solr/contrib/s3-repository/lib/aws-core-2.17.63.jar
+share/solr/contrib/s3-repository/lib/aws-query-protocol-2.17.63.jar
+share/solr/contrib/s3-repository/lib/aws-xml-protocol-2.17.63.jar
+share/solr/contrib/s3-repository/lib/http-client-spi-2.17.63.jar
 share/solr/contrib/s3-repository/lib/ion-java-1.0.2.jar
 share/solr/contrib/s3-repository/lib/joda-time-2.9.9.jar
-share/solr/contrib/s3-repository/lib/metrics-spi-2.16.93.jar
-share/solr/contrib/s3-repository/lib/profiles-2.16.93.jar
-share/solr/contrib/s3-repository/lib/protocol-core-2.16.93.jar
+share/solr/contrib/s3-repository/lib/json-utils-2.17.63.jar
+share/solr/contrib/s3-repository/lib/metrics-spi-2.17.63.jar
+share/solr/contrib/s3-repository/lib/profiles-2.17.63.jar
+share/solr/contrib/s3-repository/lib/protocol-core-2.17.63.jar
 share/solr/contrib/s3-repository/lib/reactive-streams-1.0.3.jar
-share/solr/contrib/s3-repository/lib/regions-2.16.93.jar
-share/solr/contrib/s3-repository/lib/s3-2.16.93.jar
-share/solr/contrib/s3-repository/lib/sdk-core-2.16.93.jar
+share/solr/contrib/s3-repository/lib/regions-2.17.63.jar
+share/solr/contrib/s3-repository/lib/s3-2.17.63.jar
+share/solr/contrib/s3-repository/lib/sdk-core-2.17.63.jar
 share/solr/contrib/s3-repository/lib/stax2-api-4.2.1.jar
-share/solr/contrib/s3-repository/lib/utils-2.16.93.jar
+share/solr/contrib/s3-repository/lib/third-party-jackson-core-2.17.63.jar
+share/solr/contrib/s3-repository/lib/utils-2.17.63.jar
 share/solr/contrib/s3-repository/lib/woodstox-core-6.2.4.jar
 share/solr/contrib/velocity/
 share/solr/contrib/velocity/lib/
@@ -593,13 +596,16 @@ share/solr/licenses/activation-LICENSE-CDDL.txt
 share/solr/licenses/android-json-0.0.20131108.vaadin1.jar.sha1
 share/solr/licenses/android-json-LICENSE-ASL.txt
 share/solr/licenses/android-json-NOTICE.txt
+share/solr/licenses/annotations-2.17.63.jar.sha1
+share/solr/licenses/annotations-LICENSE-ASL.txt
+share/solr/licenses/annotations-NOTICE.txt
 share/solr/licenses/ant-1.8.2.jar.sha1
 share/solr/licenses/ant-LICENSE-ASL.txt
 share/solr/licenses/ant-NOTICE.txt
 share/solr/licenses/antlr4-runtime-4.5.1-1.jar.sha1
 share/solr/licenses/antlr4-runtime-LICENSE-BSD.txt
 share/solr/licenses/antlr4-runtime-NOTICE.txt
-share/solr/licenses/apache-client-2.16.93.jar.sha1
+share/solr/licenses/apache-client-2.17.63.jar.sha1
 share/solr/licenses/apache-client-LICENSE-ASL.txt
 share/solr/licenses/apache-client-NOTICE.txt
 share/solr/licenses/apache-mime4j-core-0.8.3.jar.sha1
@@ -617,7 +623,7 @@ share/solr/licenses/apiguardian-api-NOTICE.txt
 share/solr/licenses/argparse4j-0.8.1.jar.sha1
 share/solr/licenses/argparse4j-LICENSE-MIT.txt
 share/solr/licenses/argparse4j-NOTICE.txt
-share/solr/licenses/arns-2.16.93.jar.sha1
+share/solr/licenses/arns-2.17.63.jar.sha1
 share/solr/licenses/arns-LICENSE-ASL.txt
 share/solr/licenses/arns-NOTICE.txt
 share/solr/licenses/asciidoctor-ant-1.6.2.jar.sha1
@@ -632,14 +638,14 @@ share/solr/licenses/asm-commons-LICENSE-BSD_LIKE.txt
 share/solr/licenses/asm-commons-NOTICE.txt
 share/solr/licenses/aspectjrt-1.8.0.jar.sha1
 share/solr/licenses/aspectjrt-LICENSE-EPL.txt
-share/solr/licenses/auth-2.16.93.jar.sha1
+share/solr/licenses/auth-2.17.63.jar.sha1
 share/solr/licenses/auth-LICENSE-ASL.txt
 share/solr/licenses/auth-NOTICE.txt
 share/solr/licenses/auto-value-annotations-LICENSE-ASL.txt
 share/solr/licenses/avatica-core-1.18.0.jar.sha1
 share/solr/licenses/avatica-core-LICENSE-ASL.txt
 share/solr/licenses/avatica-core-NOTICE.txt
-share/solr/licenses/aws-core-2.16.93.jar.sha1
+share/solr/licenses/aws-core-2.17.63.jar.sha1
 share/solr/licenses/aws-core-LICENSE-ASL.txt
 share/solr/licenses/aws-core-NOTICE.txt
 share/solr/licenses/aws-java-sdk-core-1.12.42.jar.sha1
@@ -648,10 +654,10 @@ share/solr/licenses/aws-java-sdk-core-NOTICE.txt
 share/solr/licenses/aws-java-sdk-s3-1.12.42.jar.sha1
 share/solr/licenses/aws-java-sdk-s3-LICENSE-ASL.txt
 share/solr/licenses/aws-java-sdk-s3-NOTICE.txt
-share/solr/licenses/aws-query-protocol-2.16.93.jar.sha1
+share/solr/licenses/aws-query-protocol-2.17.63.jar.sha1
 share/solr/licenses/aws-query-protocol-LICENSE-ASL.txt
 share/solr/licenses/aws-query-protocol-NOTICE.txt
-share/solr/licenses/aws-xml-protocol-2.16.93.jar.sha1
+share/solr/licenses/aws-xml-protocol-2.17.63.jar.sha1
 share/solr/licenses/aws-xml-protocol-LICENSE-ASL.txt
 share/solr/licenses/aws-xml-protocol-NOTICE.txt
 share/solr/licenses/bcmail-LICENSE-BSD_LIKE.txt
@@ -858,7 +864,7 @@ share/solr/licenses/hsqldb-NOTICE.txt
 share/solr/licenses/htrace-core4-4.1.0-incubating.jar.sha1
 share/solr/licenses/htrace-core4-LICENSE-ASL.txt
 share/solr/licenses/htrace-core4-NOTICE.txt
-share/solr/licenses/http-client-spi-2.16.93.jar.sha1
+share/solr/licenses/http-client-spi-2.17.63.jar.sha1
 share/solr/licenses/http-client-spi-LICENSE-ASL.txt
 share/solr/licenses/http-client-spi-NOTICE.txt
 share/solr/licenses/http2-client-9.4.44.v20210927.jar.sha1
@@ -1015,6 +1021,9 @@ share/solr/licenses/jose4j-NOTICE.txt
 share/solr/licenses/json-path-2.4.0.jar.sha1
 share/solr/licenses/json-path-LICENSE-ASL.txt
 share/solr/licenses/json-path-NOTICE.txt
+share/solr/licenses/json-utils-2.17.63.jar.sha1
+share/solr/licenses/json-utils-LICENSE-ASL.txt
+share/solr/licenses/json-utils-NOTICE.txt
 share/solr/licenses/jsonic-1.2.7.jar.sha1
 share/solr/licenses/jsonic-LICENSE-ASL.txt
 share/solr/licenses/jsonic-NOTICE.txt
@@ -1120,7 +1129,7 @@ share/solr/licenses/metrics-jvm-LICENSE-ASL.txt
 share/solr/licenses/metrics-jvm-NOTICE.txt
 share/solr/licenses/metrics-servlets-LICENSE-ASL.txt
 share/solr/licenses/metrics-servlets-NOTICE.txt
-share/solr/licenses/metrics-spi-2.16.93.jar.sha1
+share/solr/licenses/metrics-spi-2.17.63.jar.sha1
 share/solr/licenses/metrics-spi-LICENSE-ASL.txt
 share/solr/licenses/metrics-spi-NOTICE.txt
 share/solr/licenses/micrometer-core-1.5.14.jar.sha1
@@ -1216,7 +1225,7 @@ share/solr/licenses/poi-scratchpad-LICENSE-ASL.txt
 share/solr/licenses/poi-scratchpad-NOTICE.txt
 share/solr/licenses/presto-parser-LICENSE-ASL.txt
 share/solr/licenses/presto-parser-NOTICE.txt
-share/solr/licenses/profiles-2.16.93.jar.sha1
+share/solr/licenses/profiles-2.17.63.jar.sha1
 share/solr/licenses/profiles-LICENSE-ASL.txt
 share/solr/licenses/profiles-NOTICE.txt
 share/solr/licenses/proto-google-common-protos-1.16.0.jar.sha1
@@ -1231,7 +1240,7 @@ share/solr/licenses/protobuf-java-NOTICE.txt
 share/solr/licenses/protobuf-java-util-3.11.0.jar.sha1
 share/solr/licenses/protobuf-java-util-LICENSE-BSD.txt
 share/solr/licenses/protobuf-java-util-NOTICE.txt
-share/solr/licenses/protocol-core-2.16.93.jar.sha1
+share/solr/licenses/protocol-core-2.17.63.jar.sha1
 share/solr/licenses/protocol-core-LICENSE-ASL.txt
 share/solr/licenses/protocol-core-NOTICE.txt
 share/solr/licenses/randomizedtesting-runner-2.7.2.jar.sha1
@@ -1243,7 +1252,7 @@ share/solr/licenses/re2j-NOTICE.txt
 share/solr/licenses/reactive-streams-1.0.3.jar.sha1
 share/solr/licenses/reactive-streams-LICENSE-PD.txt
 share/solr/licenses/reactive-streams-NOTICE.txt
-share/solr/licenses/regions-2.16.93.jar.sha1
+share/solr/licenses/regions-2.17.63.jar.sha1
 share/solr/licenses/regions-LICENSE-ASL.txt
 share/solr/licenses/regions-NOTICE.txt
 share/solr/licenses/rome-1.12.2.jar.sha1
@@ -1258,7 +1267,7 @@ share/solr/licenses/rrd4j-NOTICE.txt
 share/solr/licenses/s2-geometry-library-java-1.0.0.jar.sha1
 share/solr/licenses/s2-geometry-library-java-LICENSE-ASL.txt
 share/solr/licenses/s2-geometry-library-java-NOTICE.txt
-share/solr/licenses/s3-2.16.93.jar.sha1
+share/solr/licenses/s3-2.17.63.jar.sha1
 share/solr/licenses/s3-LICENSE-ASL.txt
 share/solr/licenses/s3-NOTICE.txt
 share/solr/licenses/s3mock-2.1.34.jar.sha1
@@ -1270,7 +1279,7 @@ share/solr/licenses/s3mock-junit4-NOTICE.txt
 share/solr/licenses/s3mock-testsupport-common-2.1.34.jar.sha1
 share/solr/licenses/s3mock-testsupport-common-LICENSE-ASL.txt
 share/solr/licenses/s3mock-testsupport-common-NOTICE.txt
-share/solr/licenses/sdk-core-2.16.93.jar.sha1
+share/solr/licenses/sdk-core-2.17.63.jar.sha1
 share/solr/licenses/sdk-core-LICENSE-ASL.txt
 share/solr/licenses/sdk-core-NOTICE.txt
 share/solr/licenses/servlet-api-LICENSE-CDDL.txt
@@ -1363,6 +1372,9 @@ share/solr/licenses/t-digest-NOTICE.txt
 share/solr/licenses/tagsoup-1.2.1.jar.sha1
 share/solr/licenses/tagsoup-LICENSE-ASL.txt
 share/solr/licenses/tagsoup-NOTICE.txt
+share/solr/licenses/third-party-jackson-core-2.17.63.jar.sha1
+share/solr/licenses/third-party-jackson-core-LICENSE-ASL.txt
+share/solr/licenses/third-party-jackson-core-NOTICE.txt
 share/solr/licenses/threetenbp-1.3.3.jar.sha1
 share/solr/licenses/threetenbp-LICENSE-BSD.txt
 share/solr/licenses/threetenbp-NOTICE.txt
@@ -1378,10 +1390,10 @@ share/solr/licenses/tika-parsers-NOTICE.txt
 share/solr/licenses/tika-xmp-1.27.jar.sha1
 share/solr/licenses/tika-xmp-LICENSE-ASL.txt
 share/solr/licenses/tika-xmp-NOTICE.txt
-share/solr/licenses/url-connection-client-2.16.93.jar.sha1
+share/solr/licenses/url-connection-client-2.17.63.jar.sha1
 share/solr/licenses/url-connection-client-LICENSE-ASL.txt
 share/solr/licenses/url-connection-client-NOTICE.txt
-share/solr/licenses/utils-2.16.93.jar.sha1
+share/solr/licenses/utils-2.17.63.jar.sha1
 share/solr/licenses/utils-LICENSE-ASL.txt
 share/solr/licenses/utils-NOTICE.txt
 share/solr/licenses/velocity-engine-core-2.0.jar.sha1
