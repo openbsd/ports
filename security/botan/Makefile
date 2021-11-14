@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2021/07/26 20:57:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2021/11/14 18:43:44 tb Exp $
 
 COMMENT =	portable, easy to use, and efficient C++ crypto library
 
@@ -6,7 +6,7 @@ PORTROACH =	limit:^1\.10\.
 VERSION =	1.10.17
 DISTNAME =	Botan-${VERSION}
 PKGNAME =	botan-${VERSION}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	botan-1.10	1.1
 

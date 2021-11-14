@@ -1,6 +1,8 @@
-$OpenBSD: patch-src_engine_openssl_ossl_md_cpp,v 1.1 2017/10/09 20:06:26 bluhm Exp $
+$OpenBSD: patch-src_engine_openssl_ossl_md_cpp,v 1.2 2021/11/14 18:43:44 tb Exp $
 
 https://github.com/randombit/botan/commit/e61a5f56fb404db3655909be4ce23c3a816cbb60
+
+Port EVP_HashFunction class to OpenSSL 1.1 API
 
 Index: src/engine/openssl/ossl_md.cpp
 --- src/engine/openssl/ossl_md.cpp.orig
@@ -14,3 +16,91 @@ Index: src/engine/openssl/ossl_md.cpp
    #error "OpenSSL 1.1 API not supported in Botan 1.10, upgrade to 2.x"
  #endif
  
+@@ -28,12 +28,12 @@ class EVP_HashFunction : public HashFunction
+ 
+       size_t output_length() const
+          {
+-         return EVP_MD_size(EVP_MD_CTX_md(&md));
++         return EVP_MD_size(EVP_MD_CTX_md(md));
+          }
+ 
+       size_t hash_block_size() const
+          {
+-         return EVP_MD_block_size(EVP_MD_CTX_md(&md));
++         return EVP_MD_block_size(EVP_MD_CTX_md(md));
+          }
+ 
+       EVP_HashFunction(const EVP_MD*, const std::string&);
+@@ -44,7 +44,7 @@ class EVP_HashFunction : public HashFunction
+ 
+       size_t block_size;
+       std::string algo_name;
+-      EVP_MD_CTX md;
++      EVP_MD_CTX *md;
+    };
+ 
+ /*
+@@ -52,7 +52,7 @@ class EVP_HashFunction : public HashFunction
+ */
+ void EVP_HashFunction::add_data(const byte input[], size_t length)
+    {
+-   EVP_DigestUpdate(&md, input, length);
++   EVP_DigestUpdate(md, input, length);
+    }
+ 
+ /*
+@@ -60,9 +60,9 @@ void EVP_HashFunction::add_data(const byte input[], si
+ */
+ void EVP_HashFunction::final_result(byte output[])
+    {
+-   EVP_DigestFinal_ex(&md, output, 0);
+-   const EVP_MD* algo = EVP_MD_CTX_md(&md);
+-   EVP_DigestInit_ex(&md, algo, 0);
++   EVP_DigestFinal_ex(md, output, 0);
++   const EVP_MD* algo = EVP_MD_CTX_md(md);
++   EVP_DigestInit_ex(md, algo, 0);
+    }
+ 
+ /*
+@@ -70,8 +70,8 @@ void EVP_HashFunction::final_result(byte output[])
+ */
+ void EVP_HashFunction::clear()
+    {
+-   const EVP_MD* algo = EVP_MD_CTX_md(&md);
+-   EVP_DigestInit_ex(&md, algo, 0);
++   const EVP_MD* algo = EVP_MD_CTX_md(md);
++   EVP_DigestInit_ex(md, algo, 0);
+    }
+ 
+ /*
+@@ -79,7 +79,7 @@ void EVP_HashFunction::clear()
+ */
+ HashFunction* EVP_HashFunction::clone() const
+    {
+-   const EVP_MD* algo = EVP_MD_CTX_md(&md);
++   const EVP_MD* algo = EVP_MD_CTX_md(md);
+    return new EVP_HashFunction(algo, name());
+    }
+ 
+@@ -90,8 +90,10 @@ EVP_HashFunction::EVP_HashFunction(const EVP_MD* algo,
+                                    const std::string& name) :
+    algo_name(name)
+    {
+-   EVP_MD_CTX_init(&md);
+-   EVP_DigestInit_ex(&md, algo, 0);
++   md = EVP_MD_CTX_new();
++   if(md == NULL)
++      throw Internal_Error("EVP_MD_CTX_init failed");
++   EVP_DigestInit_ex(md, algo, 0);
+    }
+ 
+ /*
+@@ -99,7 +101,7 @@ EVP_HashFunction::EVP_HashFunction(const EVP_MD* algo,
+ */
+ EVP_HashFunction::~EVP_HashFunction()
+    {
+-   EVP_MD_CTX_cleanup(&md);
++   EVP_MD_CTX_free(md);
+    }
+ 
+ }
