@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/10/08 15:37:51 bket Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/11/14 20:49:06 sthen Exp $
 bin/guessit
 lib/python${MODPY_VERSION}/site-packages/guessit/
 lib/python${MODPY_VERSION}/site-packages/guessit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -24,8 +24,14 @@ lib/python${MODPY_VERSION}/site-packages/guessit/${MODPY_PYCACHE}yamlutils.${MOD
 lib/python${MODPY_VERSION}/site-packages/guessit/__version__.py
 lib/python${MODPY_VERSION}/site-packages/guessit/api.py
 lib/python${MODPY_VERSION}/site-packages/guessit/config/
+lib/python${MODPY_VERSION}/site-packages/guessit/config/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/guessit/config/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/guessit/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/guessit/config/options.json
 lib/python${MODPY_VERSION}/site-packages/guessit/data/
+lib/python${MODPY_VERSION}/site-packages/guessit/data/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/guessit/data/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/guessit/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/guessit/data/tlds-alpha-by-domain.txt
 lib/python${MODPY_VERSION}/site-packages/guessit/jsonutils.py
 lib/python${MODPY_VERSION}/site-packages/guessit/monkeypatch.py
@@ -76,7 +82,7 @@ lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/${MODPY_PYCACHE}audio_codec.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/${MODPY_PYCACHE}bit_rate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/${MODPY_PYCACHE}bonus.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/${MODPY_PYCACHE}cds.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/${MODPY_PYCACHE}cd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/${MODPY_PYCACHE}container.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/${MODPY_PYCACHE}country.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/${MODPY_PYCACHE}crc.${MODPY_PYC_MAGIC_TAG}pyc
@@ -101,7 +107,7 @@ lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/audio_codec.py
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/bit_rate.py
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/bonus.py
-lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/cds.py
+lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/cd.py
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/container.py
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/country.py
 lib/python${MODPY_VERSION}/site-packages/guessit/rules/properties/crc.py
@@ -148,7 +154,7 @@ lib/python${MODPY_VERSION}/site-packages/guessit/test/rules/${MODPY_PYCACHE}__in
 lib/python${MODPY_VERSION}/site-packages/guessit/test/rules/${MODPY_PYCACHE}processors_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/guessit/test/rules/audio_codec.yml
 lib/python${MODPY_VERSION}/site-packages/guessit/test/rules/bonus.yml
-lib/python${MODPY_VERSION}/site-packages/guessit/test/rules/cds.yml
+lib/python${MODPY_VERSION}/site-packages/guessit/test/rules/cd.yml
 lib/python${MODPY_VERSION}/site-packages/guessit/test/rules/common_words.yml
 lib/python${MODPY_VERSION}/site-packages/guessit/test/rules/country.yml
 lib/python${MODPY_VERSION}/site-packages/guessit/test/rules/date.yml
