@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2021/06/19 18:34:47 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.46 2021/11/14 16:43:38 rsadowski Exp $
 
 COMMENT =	drop-down terminal emulator based on KDE Konsole
 
 DISTNAME =	yakuake-${MODKDE_VERSION}
 EPOCH =		0
+REVISION =	0
 
 CATEGORIES =	x11 sysutils
 
@@ -23,10 +24,10 @@ WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5DBusAddons
 WANTLIB += KF5GlobalAccel KF5I18n KF5IconThemes KF5JobWidgets
 WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5NewStuff KF5NewStuffCore
 WANTLIB += KF5Notifications KF5NotifyConfig KF5Parts KF5Service
-WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5X11Extras Qt5Xml X11
-WANTLIB += c m
+WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5WaylandClient
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5X11Extras
+WANTLIB += Qt5Xml X11 c m
 
 MODULES =	x11/kde-applications \
 		devel/kf5
@@ -40,8 +41,8 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic \
 		x11/kde-applications/konsole
 
-LIB_DEPENDS =	devel/kf5/karchive \
-		devel/kf5/attica \
+LIB_DEPENDS =	devel/kf5/attica \
+		devel/kf5/karchive \
 		devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \
@@ -53,17 +54,18 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kglobalaccel \
 		devel/kf5/ki18n \
 		devel/kf5/kiconthemes \
-		devel/kf5/kjobwidgets \
 		devel/kf5/kio \
+		devel/kf5/kjobwidgets \
 		devel/kf5/knewstuff \
 		devel/kf5/knotifications \
 		devel/kf5/knotifyconfig \
 		devel/kf5/kparts \
 		devel/kf5/kservice \
-		devel/kf5/sonnet \
 		devel/kf5/ktextwidgets \
+		devel/kf5/kwayland \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
-		devel/kf5/kxmlgui
+		devel/kf5/kxmlgui \
+		devel/kf5/sonnet
 
 .include <bsd.port.mk>
