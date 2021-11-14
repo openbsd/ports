@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.75 2021/11/07 18:47:36 kn Exp $
+# $OpenBSD: Makefile,v 1.76 2021/11/14 17:26:24 rsadowski Exp $
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.34.0
+REVISION =		0
 
 SHARED_LIBS +=		mpv		0.2 # 1.109
 
@@ -87,7 +88,8 @@ CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
 			--disable-vdpau-gl-x11 \
 			--disable-videotoolbox-gl \
 			--disable-vulkan \
-			--disable-wayland
+			--disable-wayland-scanner \
+			--disable-wayland-protocols
 
 MAKE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
