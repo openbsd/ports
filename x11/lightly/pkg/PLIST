@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/03/07 05:01:28 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/11/14 17:51:15 rsadowski Exp $
 @bin bin/lightly-settings5
 lib/cmake/Lightly/
 lib/cmake/Lightly/LightlyConfig.cmake
@@ -14,7 +14,9 @@ lib/qt5/plugins/styles/
 share/color-schemes/
 share/color-schemes/Lightly.colors
 share/icons/hicolor/scalable/apps/lightly-settings.svgz
+share/kconf_update/
 share/kconf_update/kde4lightly.upd
+share/kservices5/
 share/kservices5/lightlydecorationconfig.desktop
 share/kservices5/lightlystyleconfig.desktop
 share/kstyle/
