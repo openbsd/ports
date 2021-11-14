@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/02/19 23:13:02 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/11/14 12:15:27 sthen Exp $
 @conflict py-pbr-<4.0.2p2
 bin/pbr${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/pbr/
@@ -12,6 +12,7 @@ lib/python${MODPY_VERSION}/site-packages/pbr-${MODPY_EGG_VERSION}-py${MODPY_VERS
 lib/python${MODPY_VERSION}/site-packages/pbr/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}build.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}builddoc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}extra_files.${MODPY_PYC_MAGIC_TAG}pyc
@@ -20,9 +21,11 @@ lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}git.${MODPY_PYC_MAG
 lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}options.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}packaging.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}pbr_json.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}sphinxext.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}testr_command.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pbr/build.py
 lib/python${MODPY_VERSION}/site-packages/pbr/builddoc.py
 lib/python${MODPY_VERSION}/site-packages/pbr/cmd/
 lib/python${MODPY_VERSION}/site-packages/pbr/cmd/__init__.py
@@ -51,6 +54,7 @@ lib/python${MODPY_VERSION}/site-packages/pbr/hooks/metadata.py
 lib/python${MODPY_VERSION}/site-packages/pbr/options.py
 lib/python${MODPY_VERSION}/site-packages/pbr/packaging.py
 lib/python${MODPY_VERSION}/site-packages/pbr/pbr_json.py
+lib/python${MODPY_VERSION}/site-packages/pbr/sphinxext.py
 lib/python${MODPY_VERSION}/site-packages/pbr/testr_command.py
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/__init__.py

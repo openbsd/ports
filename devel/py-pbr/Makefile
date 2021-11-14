@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2021/11/02 00:00:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/11/14 12:15:27 sthen Exp $
 
 COMMENT =		Python Build Reasonableness
 
-MODPY_EGG_VERSION =	4.0.2
+MODPY_EGG_VERSION =	5.7.0
 DISTNAME =		pbr-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/^/py-/}
 CATEGORIES =		devel
-REVISION =		4
 
 HOMEPAGE =		https://github.com/openstack-dev/pbr
 
@@ -15,16 +14,18 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-
 FLAVORS =	python3
 FLAVOR ?=
 
+MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST_ARGS =	pbr
+
 TEST_DEPENDS =	devel/py-testtools${MODPY_FLAVOR} \
+		devel/py-fixtures${MODPY_FLAVOR} \
 		devel/py-virtualenv${MODPY_FLAVOR}
 
-# also needs testscenarios
+# also needs testscenarios, testresources
 NO_TEST =	Yes
 
 post-install:
