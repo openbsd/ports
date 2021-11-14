@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2021/06/14 10:19:47 bentley Exp $
+# $OpenBSD: Makefile,v 1.22 2021/11/14 20:05:34 rsadowski Exp $
 
 COMMENT =		generic multi-emulator frontend
 
@@ -46,6 +46,7 @@ CONFIGURE_ENV =		MAN_DIR=${PREFIX}/man \
 			LIBRARY_DIRS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS =	--disable-discord \
 			--disable-jack \
+			--disable-wayland \
 			--disable-pulse \
 			--disable-oss \
 			--disable-v4l2 \
