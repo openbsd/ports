@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2021/08/27 16:01:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2021/11/14 18:33:07 naddy Exp $
 
 COMMENT=	Bible reading, browsing, and searching tool
 
-DISTNAME=	bible-kjv_4.36
+DISTNAME=	bible-kjv_4.37
 PKGNAME=	${DISTNAME:S/_/-/}
 CATEGORIES=	misc
 
