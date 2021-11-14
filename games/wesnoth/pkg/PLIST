@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.50 2021/11/01 20:39:39 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.51 2021/11/14 19:30:32 kirby Exp $
 @pkgpath games/wesnoth,tinygui
 @pkgpath games/wesnoth,lite
 @newgroup _wesnothd:708
@@ -3235,6 +3235,7 @@ share/wesnoth/data/campaigns/tutorial/_main.cfg
 share/wesnoth/data/campaigns/tutorial/gui/
 share/wesnoth/data/campaigns/tutorial/gui/character_selection.cfg
 share/wesnoth/data/campaigns/tutorial/images/
+share/wesnoth/data/campaigns/tutorial/images/campaign_image.png
 share/wesnoth/data/campaigns/tutorial/images/misc/
 share/wesnoth/data/campaigns/tutorial/images/misc/highlight-hex.png
 share/wesnoth/data/campaigns/tutorial/images/portraits/
