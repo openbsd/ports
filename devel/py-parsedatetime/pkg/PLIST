@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/10/24 09:28:48 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/11/14 15:03:00 sthen Exp $
 @pkgpath devel/py-parsedatetime
 lib/python${MODPY_VERSION}/site-packages/parsedatetime/
 lib/python${MODPY_VERSION}/site-packages/parsedatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/parsedatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/parsedatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/parsedatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/parsedatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/parsedatetime-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/parsedatetime/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/parsedatetime/${MODPY_PYCACHE}/
