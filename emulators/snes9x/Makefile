@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2020/04/12 02:17:15 cwen Exp $
+# $OpenBSD: Makefile,v 1.53 2021/11/14 15:38:46 rsadowski Exp $
 
 COMMENT =	emulates the Super Nintendo Entertainment System
 BROKEN-alpha =	ICE/failure on filter/hq2x.cpp
@@ -7,7 +7,7 @@ BROKEN-hppa =	ICE/failure on filter/hq2x.cpp
 GH_ACCOUNT =	snes9xgit
 GH_PROJECT =	snes9x
 GH_TAGNAME =	1.60
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	emulators games
 
@@ -38,6 +38,7 @@ CONFIGURE_ENV =	LDFLAGS="-L${X11BASE}/lib"
 CONFIGURE_ARGS = -Dportaudio=false \
 		 -Doss=false \
 		 -Dalsa=false \
+		 -Dwayland=false \
 		 -Dpulseaudio=false \
 		 -Dsystem-zip=false
 
