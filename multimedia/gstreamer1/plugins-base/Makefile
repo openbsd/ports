@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2021/03/16 09:25:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.82 2021/11/14 18:38:32 rsadowski Exp $
 
 COMMENT=		base elements for GStreamer
 
@@ -44,7 +44,8 @@ LIB_DEPENDS=		${P}/core=${V} \
 # needed for the gio plugin
 RUN_DEPENDS +=		x11/gnome/gvfs
 
-CONFIGURE_ARGS=		-Dalsa=disabled
+CONFIGURE_ARGS=		-Dalsa=disabled \
+			-Dgl_winsys=x11
 
 #XXX libvisual needs to be ported
 CONFIGURE_ARGS +=	-Dlibvisual=disabled
