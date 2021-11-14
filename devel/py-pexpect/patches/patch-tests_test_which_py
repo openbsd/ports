@@ -1,9 +1,9 @@
-$OpenBSD: patch-tests_test_which_py,v 1.1 2021/02/20 21:44:58 sthen Exp $
+$OpenBSD: patch-tests_test_which_py,v 1.2 2021/11/14 13:35:42 sthen Exp $
 
 Index: tests/test_which.py
 --- tests/test_which.py.orig
 +++ tests/test_which.py
-@@ -182,7 +182,7 @@ class TestCaseWhich(PexpectTestCase.PexpectTestCase):
+@@ -187,7 +187,7 @@ class TestCaseWhich(PexpectTestCase.PexpectTestCase):
          " which() returns executables by other, group, and user ownership. "
          # create an executable and test that it is found using which() for
          # each of the 'other', 'group', and 'user' permission bits.
