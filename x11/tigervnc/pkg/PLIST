@@ -1,17 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/03/11 18:27:15 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/11/14 22:45:25 sthen Exp $
 @bin bin/Xvnc
 @bin bin/vncconfig
 @bin bin/vncpasswd
-bin/vncserver
 @bin bin/vncviewer.tigervnc
 @bin bin/x0vncserver
+libexec/vncserver
 @man man/man1/Xserver.1
 @man man/man1/Xvnc.1
 @man man/man1/vncconfig.1
 @man man/man1/vncpasswd.1
-@man man/man1/vncserver.1
 @man man/man1/vncviewer.tigervnc.1
 @man man/man1/x0vncserver.1
+@man man/man8/vncserver.8
 share/applications/vncviewer.desktop
 share/doc/tigervnc/
 share/doc/tigervnc/LICENCE.TXT

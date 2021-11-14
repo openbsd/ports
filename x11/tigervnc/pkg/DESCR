@@ -9,6 +9,7 @@ and re-use components, where possible, across the various platforms
 that it supports. TigerVNC also provides extensions for advanced
 authentication methods and TLS encryption.
 
-This package provides TigerVNC's viewer and "x0vncserver", which shares
-an existing X server (typically, one that is connected to a physical
-screen) with viewers on the network.
+TigerVNC's viewer is renamed to vncviewer.tigervnc to avoid conflicts.
+x0vncserver(1) shares an existing X server, typically one that is
+connected to a physical screen, with viewers on the network.
+Xvnc(1) is a standalone server.

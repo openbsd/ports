@@ -1,0 +1,23 @@
+$OpenBSD: patch-unix_vncserver_vncserver_in,v 1.1 2021/11/14 22:45:25 sthen Exp $
+
+Index: unix/vncserver/vncserver.in
+--- unix/vncserver/vncserver.in.orig
++++ unix/vncserver/vncserver.in
+@@ -375,6 +375,9 @@ sub CheckDisplayNumber
+         }
+     }
+ 
++# XXX---------------------------------------------
++#  Previous version of this check failed, so this one may also fail
++# XXX---------------------------------------------
+     my $rfb_port = 5900 + $n;
+     my $x11_port = 6000 + $n;
+ 
+@@ -389,6 +392,7 @@ sub CheckDisplayNumber
+         }
+         close(S);
+     }
++# XXX---------------------------------------------
+ 
+     my $x11_unix_domain = "/tmp/.X11-unix/X$n";
+ 

@@ -1,0 +1,13 @@
+$OpenBSD: patch-vncviewer_XInputTouchHandler_cxx,v 1.1 2021/11/14 22:45:25 sthen Exp $
+
+Index: vncviewer/XInputTouchHandler.cxx
+--- vncviewer/XInputTouchHandler.cxx.orig
++++ vncviewer/XInputTouchHandler.cxx
+@@ -21,6 +21,7 @@
+ #include <config.h>
+ #endif
+ 
++#include <sys/time.h>
+ #include <assert.h>
+ #include <string.h>
+ 

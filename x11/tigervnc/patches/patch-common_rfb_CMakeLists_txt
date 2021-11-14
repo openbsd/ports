@@ -1,0 +1,14 @@
+$OpenBSD: patch-common_rfb_CMakeLists_txt,v 1.1 2021/11/14 22:45:25 sthen Exp $
+
+Index: common/rfb/CMakeLists.txt
+--- common/rfb/CMakeLists.txt.orig
++++ common/rfb/CMakeLists.txt
+@@ -75,7 +75,7 @@ endif(WIN32)
+ 
+ set(RFB_LIBRARIES ${JPEG_LIBRARIES} ${PIXMAN_LIBRARY} os rdr)
+ 
+-if(UNIX AND NOT APPLE)
++if(UNIX AND NOT APPLE AND NOT CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
+   set(RFB_SOURCES ${RFB_SOURCES} UnixPasswordValidator.cxx
+     UnixPasswordValidator.h pam.c pam.h)
+   set(RFB_LIBRARIES ${RFB_LIBRARIES} ${PAM_LIBS})

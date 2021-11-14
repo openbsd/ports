@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.10 2021/09/03 21:23:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/11/14 22:45:25 sthen Exp $
 
 COMMENT=	high performance, multi-platform VNC client and server
 
-# outdated; 1af1cfdf8709 breaks non-PAM systems
 GH_ACCOUNT=	TigerVNC
 GH_PROJECT=	tigervnc
-GH_TAGNAME=	v1.10.1
-REVISION=	4
+GH_TAGNAME=	v1.11.0
+# 1.12.0 has an issue with connection to vmware's internal VNC which
+# results in an exception being thrown relating to the cursor.
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} xorg-server-1.20.13.tar.xz:0
+# update the post-patch target if moving to a new major branch of xorg-server
+# there's no patchset in tigervnc for xorg-server-21.1.1.tar.xz:0 yet
 
 CATEGORIES=	x11 net
 
@@ -19,13 +21,12 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL ICE SM X11 X11-xcb Xau Xcursor
-WANTLIB += Xdamage Xdmcp Xext Xfixes Xfont2 Xft Xinerama Xrandr
-WANTLIB += Xrender Xtst Xxf86vm c drm expat ffi fltk fltk_images
-WANTLIB += fontconfig fontenc freetype glapi gmp gnutls hogweed
-WANTLIB += iconv idn2 intl jpeg kvm m nettle p11-kit pixman-1
-WANTLIB += tasn1 unistring xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present
-WANTLIB += xcb-sync xcb-xfixes xshmfence z
+WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xfont2 Xft Xi Xinerama Xrandr Xrender Xtst c fltk fltk_images
+WANTLIB += fontconfig fontenc freetype gmp gnutls hogweed iconv
+WANTLIB += idn2 intl jpeg kvm m nettle p11-kit pixman-1 tasn1
+WANTLIB += unistring xcb xshmfence z
 
 MASTER_SITES0=	https://www.x.org/releases/individual/xserver/
 
@@ -39,10 +40,12 @@ COMPILER=	base-clang ports-gcc
 
 CONFIGURE_ARGS=	-DMAN_DIR="${TRUEPREFIX}/man" \
 		-DDOC_DIR="${TRUEPREFIX}/share/doc/tigervnc" \
-		-DENABLE_PAM=OFF
+		-DCMAKE_INSTALL_FULL_SYSCONFDIR="${TRUEPREFIX}/share/examples/tigervnc" \
+		-DINSTALL_SYSTEMD_UNITS=OFF
 CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 NO_TEST=	Yes
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 BUILD_DEPENDS=	devel/gettext,-tools
 LIB_DEPENDS=	devel/gettext,-runtime \
@@ -51,7 +54,7 @@ LIB_DEPENDS=	devel/gettext,-runtime \
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
-AUTOCONF_VERSION= 2.69
+AUTOCONF_VERSION= 2.71
 AUTOMAKE_VERSION= 1.16
 PATCHORIG=	.orig.port
 
@@ -61,28 +64,34 @@ BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS} \
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKDIST}/unix/xserver
 
-AC_ENV=	CPPFLAGS="-I${X11BASE}/include/libdrm"
+AC_ENV=		CPPFLAGS="-I${X11BASE}/include/libdrm"
 
-# upstream suggestions
-AC_ARGS=	--with-pic \
+# upstream suggestions from BUILDING.txt (please compare on updates,
+# keep the same order as upstream, and to ease comparison do include
+# flags which now show as "WARNING: unrecognized options")
+AC_ARGS+=	--with-pic \
 		--without-dtrace \
 		--disable-static \
+		--disable-dri \
+		--disable-xinerama \
+		--disable-xvfb \
+		--disable-xnest \
+		--disable-xorg \
+		--disable-dmx \
+		--disable-xwin \
+		--disable-xephyr \
+		--disable-kdrive \
 		--disable-config-dbus \
 		--disable-config-hal \
 		--disable-config-udev \
-		--disable-dmx \
-		--disable-dri \
 		--disable-dri2 \
-		--disable-kdrive \
-		--disable-xephyr \
-		--disable-xinerama \
-		--disable-xnest \
-		--disable-xorg \
-		--disable-xvfb \
-		--disable-xwin \
 		--enable-install-libxf86config \
-		--enable-glx \
-		--with-default-font-path="${X11BASE}/lib/X11/fonts/misc/,${X11BASE}/lib/X11/fonts/TTF/,${X11BASE}/lib/X11/fonts/OTF/,${X11BASE}/lib/X11/fonts/Type1/,${X11BASE}/lib/X11/fonts/100dpi/,${X11BASE}/lib/X11/fonts/75dpi/" \
+		--enable-glx
+
+AC_ARGS+=	--disable-xwayland
+
+# suggestions from BUILDING.txt adapted to xenocara
+AC_ARGS+=	--with-default-font-path="${X11BASE}/lib/X11/fonts/misc/,${X11BASE}/lib/X11/fonts/TTF/,${X11BASE}/lib/X11/fonts/OTF/,${X11BASE}/lib/X11/fonts/Type1/,${X11BASE}/lib/X11/fonts/100dpi/,${X11BASE}/lib/X11/fonts/75dpi/" \
 		--with-fontdir=${X11BASE}/lib/X11/fonts \
 		--with-xkb-path=${X11BASE}/share/X11/xkb \
 		--with-xkb-output=/var/db/xkb \
@@ -92,11 +101,13 @@ AC_ARGS=	--with-pic \
 
 # needed to build here - xenocara has patched wscons
 AC_ARGS+=	--disable-config-wscons
-# various others from xenocara
-AC_ARGS+=	--disable-input-thread \
+# various others from xenocara/xserver/Makefile.bsd-wrapper
+AC_ARGS+=	--disable-dri3 \
+		--disable-input-thread \
 		--disable-libdrm \
 		--disable-install-setuid \
-		--enable-xcsecurity --disable-xdm-auth-1
+		--enable-xcsecurity \
+		--disable-xdm-auth-1
 
 # standard from gnu.port.mk
 AC_ARGS+=	--sysconfdir='${SYSCONFDIR}' \
