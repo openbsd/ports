@@ -1,4 +1,4 @@
-$OpenBSD: patch-tests_test_client_py,v 1.1 2019/11/10 11:04:45 kmos Exp $
+$OpenBSD: patch-tests_test_client_py,v 1.2 2021/11/14 12:40:28 sthen Exp $
 
 Excise py-test-relaxed
 
@@ -13,7 +13,7 @@ Index: tests/test_client.py
  from mock import patch, Mock
  
  import paramiko
-@@ -682,13 +681,6 @@ class PasswordPassphraseTests(ClientTest):
+@@ -685,13 +684,6 @@ class PasswordPassphraseTests(ClientTest):
          # Straightforward / duplicate of earlier basic password test.
          self._test_connection(password="pygmalion")
  
@@ -27,7 +27,7 @@ Index: tests/test_client.py
      def test_passphrase_kwarg_used_for_key_passphrase(self):
          # Straightforward again, with new passphrase kwarg.
          self._test_connection(
-@@ -705,14 +697,3 @@ class PasswordPassphraseTests(ClientTest):
+@@ -708,14 +700,3 @@ class PasswordPassphraseTests(ClientTest):
              password="television",
          )
  
