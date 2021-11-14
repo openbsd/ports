@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/02 00:02:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/11/14 12:57:37 sthen Exp $
 
 COMMENT =	handle .env files
 
-MODPY_EGG_VERSION =	0.19.1
+MODPY_EGG_VERSION =	0.19.2
 
 DISTNAME =	python-dotenv-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/python-/py-/}
-REVISION =	0
 
 CATEGORIES =	sysutils
 
@@ -23,8 +22,7 @@ FLAVOR =		python3
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
-TEST_DEPENDS =		${BUILD_PKGPATH} \
-			devel/py-mock${MODPY_FLAVOR} \
+TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
 			devel/py-sh${MODPY_FLAVOR} \
 			devel/ipython${MODPY_FLAVOR}
 
