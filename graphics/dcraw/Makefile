@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:46:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2021/11/14 16:04:39 kirby Exp $
 
 COMMENT =	digital camera RAW format conversion tool
 
 DISTNAME =	dcraw-9.28.0
+REVISION =	0
 CATEGORIES =	graphics
 
-HOMEPAGE =	http://www.cybercom.net/~dcoffin/dcraw/
+HOMEPAGE =	https://www.dechifro.org/dcraw/
 
-MASTER_SITES =	http://cybercom.net/~dcoffin/dcraw/archive/
+MASTER_SITES =	https://www.dechifro.org/dcraw/archive/
 
 # Some code is completely free, some is under the GPL
 PERMIT_PACKAGE =	Yes
