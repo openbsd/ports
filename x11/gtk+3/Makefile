@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.250 2021/07/09 09:53:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.251 2021/11/14 18:33:24 rsadowski Exp $
 
 # XXX add support for libcloudproviders?
 
@@ -16,6 +16,9 @@ GNOME_VERSION=		3.24.30
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
+REVISION-cups=		0
+REVISION-guic=		0
+REVISION-main=		0
 
 CATEGORIES=		x11 devel
 
@@ -85,6 +88,9 @@ MODGNOME_TOOLS=		docbook gobject-introspection gtk-update-icon-cache \
 TEST_IS_INTERACTIVE=	x11
 
 CONFIGURE_STYLE=	gnu
+
+# explicitly decativate wayland
+CONFIGURE_ARGS+=	--disable-wayland-backend --enable-x11-backend
 
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mclang}
