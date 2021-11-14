@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2021/10/07 00:02:19 daniel Exp $
+# $OpenBSD: Makefile,v 1.35 2021/11/14 23:36:07 kn Exp $
 
 COMMENT =		reference implementation of ACPI tools
 DISTNAME =		acpica-unix-20210930
 PKGNAME =		${DISTNAME:S/-unix//}
+REVISION =		0
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 CATEGORIES =		devel
 
@@ -19,6 +22,9 @@ USE_GMAKE =		Yes
 BUILD_DEPENDS =		devel/bison
 MAKE_FLAGS =		CC="${CC}" HOST=_LINUX
 FAKE_FLAGS =		DESTDIR=
+
+# pass what INSTALL_PROGRAM uses
+FAKE_FLAGS +=		INSTALLFLAGS='${INSTALL_STRIP} -m ${BINMODE}'
 
 do-test:
 	cd ${WRKSRC}/tests/templates && sh templates.sh 1
