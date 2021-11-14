@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: gdm.rc,v 1.47 2021/11/06 17:22:55 ajacoutot Exp $
+# $OpenBSD: gdm.rc,v 1.48 2021/11/14 10:12:37 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/gdm"
 
@@ -14,16 +14,9 @@ rc_pre() {
 	rm -rf /var/db/gdm/.cache/gnome-shell/runtime-state-*
 }
 
-rc_stop() {
-	pkill -9 -xf "${pexp}"
-	pkill -f gdm-session-worker
-	pkill -u _x11 -f "^/usr/X11R6/bin/X.*/var/run/gdm"
-	# _gdm owned processes may already be gone... or not
-	pkill -u _gdm || return 0
-}
-
-# /etc/X11/xenodm/TakeConsole, fbtab(5)
 rc_post() {
+	pkill -f gdm-session-worker
+	# /etc/X11/xenodm/TakeConsole, fbtab(5)
 	if [[ -c /dev/dri/card0 ]]; then
 		chown root /dev/dri/card0
 	fi
