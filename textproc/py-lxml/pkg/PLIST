@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/10/08 12:08:30 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/11/14 12:05:58 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/lxml/
 lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -123,8 +123,6 @@ share/doc/${MODPY_PY_PREFIX}lxml/html/FAQ.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/api.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/
 share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_modules/
-share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_modules/collections/
-share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_modules/collections/abc.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_modules/index.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_modules/lxml/
 share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_modules/lxml.html
@@ -200,7 +198,6 @@ share/doc/${MODPY_PY_PREFIX}lxml/html/cssselect.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/element_classes.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/elementsoup.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/extensions.html
-share/doc/${MODPY_PY_PREFIX}lxml/html/flattr-badge-large.png
 share/doc/${MODPY_PY_PREFIX}lxml/html/html5parser.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/index.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/installation.html
@@ -228,7 +225,6 @@ share/doc/${MODPY_PY_PREFIX}lxml/intro.txt
 share/doc/${MODPY_PY_PREFIX}lxml/licenses/
 share/doc/${MODPY_PY_PREFIX}lxml/licenses/BSD.txt
 share/doc/${MODPY_PY_PREFIX}lxml/licenses/GPL.txt
-share/doc/${MODPY_PY_PREFIX}lxml/licenses/ZopePublicLicense.txt
 share/doc/${MODPY_PY_PREFIX}lxml/licenses/elementtree.txt
 share/doc/${MODPY_PY_PREFIX}lxml/lxml-source-howto.txt
 share/doc/${MODPY_PY_PREFIX}lxml/lxml.mgp
@@ -240,8 +236,6 @@ share/doc/${MODPY_PY_PREFIX}lxml/mkhtml.py
 share/doc/${MODPY_PY_PREFIX}lxml/mklatex.py
 share/doc/${MODPY_PY_PREFIX}lxml/objectify.txt
 share/doc/${MODPY_PY_PREFIX}lxml/parsing.txt
-share/doc/${MODPY_PY_PREFIX}lxml/pdf/
-share/doc/${MODPY_PY_PREFIX}lxml/pdf/pubkey.asc
 share/doc/${MODPY_PY_PREFIX}lxml/performance.txt
 share/doc/${MODPY_PY_PREFIX}lxml/pubkey.asc
 share/doc/${MODPY_PY_PREFIX}lxml/resolvers.txt
@@ -258,7 +252,6 @@ share/doc/${MODPY_PY_PREFIX}lxml/s5/ep2008/proxies.png
 share/doc/${MODPY_PY_PREFIX}lxml/s5/lxml-ep2008.html
 share/doc/${MODPY_PY_PREFIX}lxml/s5/lxml-ep2008.txt
 share/doc/${MODPY_PY_PREFIX}lxml/s5/rst2s5.py
-share/doc/${MODPY_PY_PREFIX}lxml/s5/tagpython.png
 share/doc/${MODPY_PY_PREFIX}lxml/s5/ui/
 share/doc/${MODPY_PY_PREFIX}lxml/s5/ui/default/
 share/doc/${MODPY_PY_PREFIX}lxml/s5/ui/default/blank.gif
@@ -277,6 +270,7 @@ share/doc/${MODPY_PY_PREFIX}lxml/s5/ui/default/tagpython.png
 share/doc/${MODPY_PY_PREFIX}lxml/sax.txt
 share/doc/${MODPY_PY_PREFIX}lxml/test.xml
 share/doc/${MODPY_PY_PREFIX}lxml/tutorial.txt
+share/doc/${MODPY_PY_PREFIX}lxml/update_performance_results.py
 share/doc/${MODPY_PY_PREFIX}lxml/valgrind.txt
 share/doc/${MODPY_PY_PREFIX}lxml/validation.txt
 share/doc/${MODPY_PY_PREFIX}lxml/xpathxslt.txt
