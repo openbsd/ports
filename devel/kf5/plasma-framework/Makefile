@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2021/11/12 14:31:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.27 2021/11/15 06:20:55 rsadowski Exp $
 
 COMMENT =	core components and tools of the Plasma Workspaces
 DISTNAME =	plasma-framework-${VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	KF5Plasma		11.0
 SHARED_LIBS +=	KF5PlasmaQuick		8.0
@@ -32,11 +32,12 @@ BUILD_DEPENDS =	archivers/bzip2 \
 		x11/qt5/qtquickcontrols
 
 RUN_DEPENDS =	archivers/bzip2 \
+		devel/kf5/breeze-icons>=${MODKF5_VERSION} \
 		devel/kf5/kdbusaddons>=${MODKF5_VERSION} \
 		devel/kf5/kdoctools>=${MODKF5_VERSION} \
 		devel/kf5/oxygen-icons>=${MODKF5_VERSION} \
-		x11/qt5/qtwayland \
-		x11/qt5/qtquickcontrols
+		x11/qt5/qtquickcontrols \
+		x11/qt5/qtwayland
 
 LIB_DEPENDS =	devel/kf5/kactivities>=${MODKF5_VERSION} \
 		devel/kf5/karchive>=${MODKF5_VERSION} \
