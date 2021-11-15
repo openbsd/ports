@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/03 22:28:49 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/11/15 13:27:21 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/skyfield/
 lib/python${MODPY_VERSION}/site-packages/skyfield-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/skyfield/__init__.py
@@ -63,6 +63,7 @@ lib/python${MODPY_VERSION}/site-packages/skyfield/data/${MODPY_PYCACHE}iers.${MO
 lib/python${MODPY_VERSION}/site-packages/skyfield/data/${MODPY_PYCACHE}mpc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skyfield/data/${MODPY_PYCACHE}spice.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skyfield/data/${MODPY_PYCACHE}stellarium.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/skyfield/data/${MODPY_PYCACHE}text_pck.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skyfield/data/constellations.gz
 lib/python${MODPY_VERSION}/site-packages/skyfield/data/constellations.npz
 lib/python${MODPY_VERSION}/site-packages/skyfield/data/delta_t.npz
@@ -78,6 +79,7 @@ lib/python${MODPY_VERSION}/site-packages/skyfield/data/mpc.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/data/nutation.npz
 lib/python${MODPY_VERSION}/site-packages/skyfield/data/spice.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/data/stellarium.py
+lib/python${MODPY_VERSION}/site-packages/skyfield/data/text_pck.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/descriptorlib.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/documentation/
 lib/python${MODPY_VERSION}/site-packages/skyfield/documentation/accuracy-efficiency.rst
@@ -157,6 +159,7 @@ lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_dat
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_earth_deflection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_earth_satellites.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_earthlib.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_eclipselib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_elementslib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_frames.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_functions.${MODPY_PYC_MAGIC_TAG}pyc
@@ -164,6 +167,7 @@ lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_geo
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_io.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_io_parsing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_keplerlib.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_magnitudes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_magnitudes_raw.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_planetarylib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_positions.${MODPY_PYC_MAGIC_TAG}pyc
@@ -171,6 +175,7 @@ lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_sat
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_searchlib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_stars.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_strs_and_reprs.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_text_pck.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_timelib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_topos.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_trigonometry.${MODPY_PYC_MAGIC_TAG}pyc
@@ -195,6 +200,7 @@ lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_data_iers.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_earth_deflection.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_earth_satellites.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_earthlib.py
+lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_eclipselib.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_elementslib.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_frames.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_functions.py
@@ -202,6 +208,7 @@ lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_geometry.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_io.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_io_parsing.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_keplerlib.py
+lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_magnitudes.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_magnitudes_raw.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_planetarylib.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_positions.py
@@ -209,6 +216,7 @@ lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_satellite_events.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_searchlib.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_stars.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_strs_and_reprs.py
+lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_text_pck.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_timelib.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_topos.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_trigonometry.py
