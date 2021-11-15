@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2021/11/02 00:01:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2021/11/15 19:39:27 rsadowski Exp $
 
 COMMENT =	automated OpenGL and OpenCL testsuite
 ONLY_FOR_ARCHS =	amd64 i386
@@ -8,7 +8,7 @@ DISTNAME =	piglit-20210128
 GH_ACCOUNT =	mesa3d
 GH_PROJECT =	piglit
 GH_COMMIT =	83173d9536c9f5e1571efe5933d210466ec255b8
-REVISION =	1
+REVISION =	3
 
 CATEGORIES =	graphics
 
