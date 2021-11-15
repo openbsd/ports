@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/02 00:01:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/11/15 13:26:16 sthen Exp $
 
 COMMENT =	portable network interface information
 
 CATEGORIES =	net
 
-MODPY_EGG_VERSION = 0.10.9
+MODPY_EGG_VERSION = 0.11.0
 DISTNAME =	netifaces-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	5
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -22,10 +21,8 @@ FLAVOR =	python3
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-TEST_DEPENDS =	${BUILD_PKGPATH}
-
 do-test:
-	printf 'import netifaces\nprint (netifaces.interfaces(), netifaces.gateways())\n' | \
-		${MODPY_BIN} - | grep lo0
+	 PYTHONPATH=${WRKSRC}/lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION} \
+	     ${MODPY_BIN} ${WRKSRC}/test.py
 
 .include <bsd.port.mk>
