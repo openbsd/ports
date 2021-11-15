@@ -1,7 +1,8 @@
-$OpenBSD: patch-setup_py,v 1.4 2021/08/23 17:58:45 thfr Exp $
+$OpenBSD: patch-setup_py,v 1.5 2021/11/15 20:02:44 rsadowski Exp $
 
 remove -O3 and -march=native optimizations
 fix man directory
+disable wayland
 
 Index: setup.py
 --- setup.py.orig
@@ -38,6 +39,15 @@ Index: setup.py
      )
      ldflags = shlex.split(ldflags_)
      ldflags.append('-shared')
+@@ -700,7 +698,7 @@ def find_c_files() -> Tuple[List[str], List[str]]:
+ 
+ 
+ def compile_glfw(compilation_database: CompilationDatabase) -> None:
+-    modules = 'cocoa' if is_macos else 'x11 wayland'
++    modules = 'cocoa' if is_macos else 'x11'
+     for module in modules.split():
+         try:
+             genv = glfw.init_env(env, pkg_config, pkg_version, at_least_version, test_compile, module)
 @@ -805,8 +803,6 @@ def build_launcher(args: Options, launcher_dir: str = 
              cflags.append('-g')
          if args.profile:

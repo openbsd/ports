@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/02 00:02:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/11/15 20:02:44 rsadowski Exp $
 
 # Requires OpenGL>=3.3
 ONLY_FOR_ARCHS =	aarch64 amd64 i386
@@ -10,7 +10,7 @@ DISTNAME =		kitty-${MODPY_EGG_VERSION}
 CATEGORIES =		x11
 HOMEPAGE =		https://sw.kovidgoyal.net/kitty/
 MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
-REVISION =		0
+REVISION =		1
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
