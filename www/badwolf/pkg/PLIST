@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/15 11:17:11 sdk Exp $
+@bin bin/badwolf
+@man man/man1/badwolf.1
+share/applications/badwolf.desktop
+share/badwolf/
+share/badwolf/interface.css
+share/badwolf/locale/
+share/badwolf/locale/de/
+share/badwolf/locale/de/LC_MESSAGES/
+share/badwolf/locale/de/LC_MESSAGES/Badwolf.mo
+share/badwolf/locale/fr/
+share/badwolf/locale/fr/LC_MESSAGES/
+share/badwolf/locale/fr/LC_MESSAGES/Badwolf.mo
+share/badwolf/locale/pt_BR/
+share/badwolf/locale/pt_BR/LC_MESSAGES/
+share/badwolf/locale/pt_BR/LC_MESSAGES/Badwolf.mo
+share/badwolf/locale/tr/
+share/badwolf/locale/tr/LC_MESSAGES/
+share/badwolf/locale/tr/LC_MESSAGES/Badwolf.mo
+share/badwolf/locale/vi/
+share/badwolf/locale/vi/LC_MESSAGES/
+share/badwolf/locale/vi/LC_MESSAGES/Badwolf.mo
+share/doc/badwolf/
+share/doc/badwolf/KnowledgeBase.md
+share/doc/badwolf/README.md
+share/doc/badwolf/interface.txt
+@comment share/doc/badwolf/usr.bin.badwolf
+share/icons/hicolor/128x128/apps/badwolf.png
+share/icons/hicolor/24x24/apps/badwolf.png
+share/icons/hicolor/256x256/apps/badwolf.png
+share/icons/hicolor/32x32/apps/badwolf.png
+share/icons/hicolor/48x48/apps/badwolf.png
+share/icons/hicolor/64x64/apps/badwolf.png
+share/icons/hicolor/scalable/apps/badwolf.svg
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database

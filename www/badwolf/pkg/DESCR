@@ -1,0 +1,12 @@
+BadWolf is a minimalist and privacy-oriented WebKitGTK+ browser,
+which aims to provide a distraction free user experience for daily
+tasks.
+
+Features:
+* Minimalist and clean UI
+* Toggles for javascript and images
+* No distracting popups or autoplay
+* Dedicated downloads tab
+* Isolated sessions per tab
+* No browser level tracking
+* Small and easy to inspect codebase
