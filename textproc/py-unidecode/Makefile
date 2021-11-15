@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2021/11/02 00:02:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/11/15 14:10:29 sthen Exp $
 
 COMMENT =		US-ASCII transliterations of Unicode text
 
-MODPY_EGG_VERSION =	1.1.1
+MODPY_EGG_VERSION =	1.3.2
 DISTNAME =		Unidecode-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		4
 
 CATEGORIES =		textproc devel
 
@@ -16,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-MODPY_PI = 		Yes
+MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/10/24 09:28:51 sthen Exp $
-@pkgpath textproc/py-unidecode
+@comment $OpenBSD: PLIST,v 1.8 2021/11/15 14:10:29 sthen Exp $
 @conflict py-unidecode-<1.1.1p1
+@pkgpath textproc/py-unidecode
 bin/unidecode
 lib/python${MODPY_VERSION}/site-packages/Unidecode-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Unidecode-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -204,6 +204,8 @@ lib/python${MODPY_VERSION}/site-packages/unidecode/${MODPY_PYCACHE}x1d5.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/unidecode/${MODPY_PYCACHE}x1d6.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/unidecode/${MODPY_PYCACHE}x1d7.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/unidecode/${MODPY_PYCACHE}x1f1.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/unidecode/${MODPY_PYCACHE}x1f6.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/unidecode/py.typed
 lib/python${MODPY_VERSION}/site-packages/unidecode/util.py
 lib/python${MODPY_VERSION}/site-packages/unidecode/x000.py
 lib/python${MODPY_VERSION}/site-packages/unidecode/x001.py
@@ -394,3 +396,4 @@ lib/python${MODPY_VERSION}/site-packages/unidecode/x1d5.py
 lib/python${MODPY_VERSION}/site-packages/unidecode/x1d6.py
 lib/python${MODPY_VERSION}/site-packages/unidecode/x1d7.py
 lib/python${MODPY_VERSION}/site-packages/unidecode/x1f1.py
+lib/python${MODPY_VERSION}/site-packages/unidecode/x1f6.py
