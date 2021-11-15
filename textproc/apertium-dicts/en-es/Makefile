@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2021/10/31 12:09:45 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2021/11/15 04:28:41 bentley Exp $
 
 L =	en-es
 LANG =	English/Spanish
 V =	0.8.0
 REVISION =	1
+
+BROKEN =	0.8.0 incompatible with apertium>=3.7.2
 
 MASTER_SITES =	https://apertium.org/releases/apertium-$L/$V/
 
