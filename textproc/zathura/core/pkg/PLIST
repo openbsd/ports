@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/02/28 08:09:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2021/11/15 14:29:33 sthen Exp $
 @conflict zathura-<=0.0.8.5p1
 @pkgpath textproc/zathura
 @bin bin/zathura
@@ -57,8 +57,6 @@ share/locale/ta_IN/
 share/locale/ta_IN/LC_MESSAGES/
 share/locale/ta_IN/LC_MESSAGES/zathura.mo
 share/locale/tr/LC_MESSAGES/zathura.mo
-share/locale/uk_UA/
-share/locale/uk_UA/LC_MESSAGES/
 share/locale/uk_UA/LC_MESSAGES/zathura.mo
 share/metainfo/
 share/metainfo/org.pwmt.zathura.appdata.xml

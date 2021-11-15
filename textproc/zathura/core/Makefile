@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2021/02/28 08:09:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2021/11/15 14:29:33 sthen Exp $
 
-V =			0.4.7
+V =			0.4.8
 COMMENT =		document viewer for PDF and other formats with a vi-like UI
 DISTNAME =		zathura-${V}
 CATEGORIES =		textproc x11
 EXTRACT_SUFX =		.tar.xz
-REVISION =		0
 
 HOMEPAGE =		https://pwmt.org/projects/zathura/
 
