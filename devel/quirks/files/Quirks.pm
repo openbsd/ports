@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1339 2021/11/11 20:57:53 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1340 2021/11/15 04:45:46 bentley Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -682,6 +682,17 @@ my $stem_extensions = {
 	'py-sqlalchemy' => 'py3-sqlalchemy',
 	'py-flup' => 'py3-flup',
 	'py-feedparser' => 'py3-feedparser',
+	'apertium-af-nl' => 'apertium-afr-nld',
+	'apertium-ca-it' => 'apertium-cat-ita',
+	'apertium-en-ca' => 'apertium-eng-cat',
+	'apertium-es-ast' => 'apertium-spa-ast',
+	'apertium-es-ca' => 'apertium-spa-cat',
+	'apertium-id-ms' => 'apertium-ind-zlm',
+	'apertium-is-en' => 'apertium-isl-eng',
+	'apertium-is-sv' => 'apertium-isl-swe',
+	'apertium-mk-bg' => 'apertium-mkd-bul',
+	'apertium-mk-en' => 'apertium-mkd-eng',
+	'apertium-pt-ca' => 'apertium-por-cat',
 };
 
 my $obsolete_reason = {};
@@ -1519,6 +1530,7 @@ setup_obsolete_reason(
 	13 => 'rawdog',
 	13 => 'charm',
 	0 => 'ktsuss',
+	11 => 'apertium-ht-en',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
