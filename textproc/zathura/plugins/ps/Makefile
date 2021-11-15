@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2020/01/20 09:03:52 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2021/11/15 14:29:57 sthen Exp $
 
-V =		0.2.6
+V =		0.2.7
 COMMENT =	spectre postscript plugin for zathura
 PROJECT =	zathura-ps
-REVISION =	2
 
 LIB_DEPENDS +=	print/libspectre
 
