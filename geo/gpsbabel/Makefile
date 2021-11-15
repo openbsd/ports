@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2020/05/22 07:34:04 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.38 2021/11/15 07:37:48 rsadowski Exp $
 
 COMMENT-main=		GPS waypoint, track, and route conversion tool
 COMMENT-tk=		Tk front-end to gpsbabel
@@ -13,7 +13,7 @@ PKGNAME-main=		gpsbabel-${VERSION}
 PKGNAME-tk=		gpsbabel-tk-${VERSION}
 PKGNAME-qt=		gpsbabel-qt-${VERSION}
 REVISION-main=		1
-REVISION-qt=		1
+REVISION-qt=		2
 CATEGORIES=		geo
 
 HOMEPAGE=		https://www.gpsbabel.org/
@@ -45,7 +45,7 @@ WANTLIB-main += shp>=1 usb z ${cWANTLIB} ${COMPILER_LIBCXX}
 WANTLIB-tk =
 WANTLIB-qt += ${COMPILER_LIBCXX} ${cWANTLIB} GL Qt5Core Qt5Gui Qt5Network
 WANTLIB-qt += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5Quick Qt5WebChannel
-WANTLIB-qt += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5Xml
+WANTLIB-qt += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5Xml Qt5QmlModels
 
 
 LIB_DEPENDS-tk=
