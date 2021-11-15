@@ -1,0 +1,19 @@
+$OpenBSD: patch-app_app_pro,v 1.1 2021/11/15 11:14:16 rsadowski Exp $
+
+Disable wayland
+
+Index: app/app.pro
+--- app/app.pro.orig
++++ app/app.pro
+@@ -90,11 +90,6 @@ unix:!macx {
+         }
+     }
+ 
+-    packagesExist(wayland-client) {
+-        DEFINES += HAS_WAYLAND
+-        PKGCONFIG += wayland-client
+-    }
+-
+     packagesExist(x11) {
+         DEFINES += HAS_X11
+         PKGCONFIG += x11
