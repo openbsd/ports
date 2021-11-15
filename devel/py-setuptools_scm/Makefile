@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2021/11/02 00:01:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/11/15 13:12:57 sthen Exp $
 
 COMMENT =		plugin to manage your versions by scm tags
 
+# >=6.0 is py3 only; to update we'll need to remove py2 for the py-test chain
 MODPY_EGG_VERSION =	5.0.2
 DISTNAME =		setuptools_scm-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
