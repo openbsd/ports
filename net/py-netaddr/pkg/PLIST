@@ -1,19 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/10/24 09:28:49 sthen Exp $
-@pkgpath net/py-netaddr
+@comment $OpenBSD: PLIST,v 1.7 2021/11/15 13:15:21 sthen Exp $
 @conflict py-netaddr-<0.7.19p3
+@pkgpath net/py-netaddr
 bin/netaddr
 lib/python${MODPY_VERSION}/site-packages/netaddr/
 lib/python${MODPY_VERSION}/site-packages/netaddr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/netaddr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/netaddr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/netaddr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/netaddr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/netaddr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/netaddr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/netaddr/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netaddr/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/netaddr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netaddr/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netaddr/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netaddr/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netaddr/${MODPY_PYCACHE}fbsocket.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netaddr/cli.py
 lib/python${MODPY_VERSION}/site-packages/netaddr/compat.py
 lib/python${MODPY_VERSION}/site-packages/netaddr/contrib/
 lib/python${MODPY_VERSION}/site-packages/netaddr/contrib/__init__.py
