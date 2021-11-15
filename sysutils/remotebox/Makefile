@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/09 12:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2021/11/15 12:03:00 ajacoutot Exp $
 
 COMMENT=		VirtualBox client with remote management
 
-DISTNAME=		RemoteBox-2.8
+DISTNAME=		RemoteBox-3.0
 PKGNAME=		${DISTNAME:L}
 EXTRACT_SUFX=		.tar.bz2
 
@@ -25,7 +25,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/xdg-utils \
 			www/p5-SOAP-Lite \
 			x11/freerdp \
-			x11/p5-Gtk2
+			x11/p5-Gtk3
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/remotebox

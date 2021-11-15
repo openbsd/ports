@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/11/09 12:15:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2021/11/15 12:03:00 ajacoutot Exp $
 bin/remotebox
 share/applications/remotebox.desktop
 share/doc/remotebox/
@@ -7,7 +7,6 @@ share/pixmaps/
 share/pixmaps/remotebox.png
 share/remotebox/
 share/remotebox/icons/
-share/remotebox/icons/Windows11_64.png
 share/remotebox/icons/add_host_iface_16px.png
 share/remotebox/icons/arrow_down_10px.png
 share/remotebox/icons/arrow_left_10px.png
@@ -165,6 +164,7 @@ share/remotebox/icons/os/Ubuntu_64.png
 share/remotebox/icons/os/Windows.png
 share/remotebox/icons/os/Windows10.png
 share/remotebox/icons/os/Windows10_64.png
+share/remotebox/icons/os/Windows11_64.png
 share/remotebox/icons/os/Windows2000.png
 share/remotebox/icons/os/Windows2003.png
 share/remotebox/icons/os/Windows2003_64.png
