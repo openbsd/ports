@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2021/02/23 19:39:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2021/11/15 13:03:37 rsadowski Exp $
 
 COMMENT=		GTK client and libraries for SPICE remote desktop servers
 
@@ -57,6 +57,7 @@ LIB_DEPENDS=		archivers/lz4 \
 
 CONFIGURE_ARGS=		-Dsmartcard=disabled \
 			-Dusbredir=disabled \
+			-Dwayland-protocols=disabled \
 			-Dlibcap-ng=disabled \
 			-Dgtk_doc=disabled
 
