@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1 2012/01/16 22:11:36 sthen Exp $
-@group daemon
-pear/lib/.registry/date_holidays_venezuela.reg
-pear/lib/Date/Holidays/Driver/Venezuela.php

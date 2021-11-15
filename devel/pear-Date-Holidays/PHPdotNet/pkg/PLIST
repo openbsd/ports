@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/05 17:36:47 sthen Exp $
-@group daemon
-pear/lib/.registry/date_holidays_phpdotnet.reg
-pear/lib/Date/Holidays/Driver/PHPdotNet.php
-pear/tests/Date_Holidays_PHPdotNet/
-pear/tests/Date_Holidays_PHPdotNet/tests/
-pear/tests/Date_Holidays_PHPdotNet/tests/Date_Holidays_Driver_PHPdotNet_TestSuite.php

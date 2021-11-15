@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.699 2021/11/02 21:15:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.700 2021/11/15 13:47:29 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -357,12 +357,6 @@
      SUBDIR += pdfgrep
      SUBDIR += pdfpc
      SUBDIR += pdftk
-     SUBDIR += pear-File
-     SUBDIR += pear-File-Find
-     SUBDIR += pear-XML-Parser
-     SUBDIR += pear-XML-RSS
-     SUBDIR += pear-XML-Serializer
-     SUBDIR += pear-XML-Tree
      SUBDIR += pecl-yaml,php74
      SUBDIR += pecl-yaml,php80
      SUBDIR += pinfo

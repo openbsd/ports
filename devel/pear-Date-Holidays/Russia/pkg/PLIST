@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1 2013/11/08 02:13:08 sthen Exp $
-pear/lib/.registry/date_holidays_russia.reg
-pear/lib/Date/Holidays/Driver/Russia.php
-pear/tests/Date_Holidays_Russia/
-pear/tests/Date_Holidays_Russia/tests/
-pear/tests/Date_Holidays_Russia/tests/Date_Holidays_Driver_Russia_TestSuite.php

@@ -1,3 +1,0 @@
-Console_Table provides methods such as addRow(), insertRow(), addCol()
-etc., to build console tables with or without headers and with user defined
-table rules and padding.

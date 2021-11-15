@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1 2015/06/19 16:49:04 sthen Exp $
-pear/lib/.registry/date_holidays_france.reg
-pear/lib/Date/Holidays/Driver/France.php
-pear/lib/Date/Holidays/Filter/France/
-pear/lib/Date/Holidays/Filter/France/Official.php
-pear/tests/Date_Holidays_France/
-pear/tests/Date_Holidays_France/tests/
-pear/tests/Date_Holidays_France/tests/Date_Holidays_Driver_France_TestSuite.php

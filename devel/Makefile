@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2154 2021/11/12 12:00:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.2155 2021/11/15 13:47:28 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1252,14 +1252,6 @@
      SUBDIR += pcre
      SUBDIR += pcre++
      SUBDIR += pcre2
-     SUBDIR += pear-Cache
-     SUBDIR += pear-Config
-     SUBDIR += pear-Console-Table
-     SUBDIR += pear-Date
-     SUBDIR += pear-Date-Holidays
-     SUBDIR += pear-Log
-     SUBDIR += pear-System-Command
-     SUBDIR += pear-Validate
      SUBDIR += perltidy
      SUBDIR += physfs
      SUBDIR += pkgconf

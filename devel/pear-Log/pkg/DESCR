@@ -1,3 +1,0 @@
-The Log framework provides an abstracted logging system for PHP
-scripts. It supports logging to console, file, syslog, SQL, mail,
-and mcal targets. It also provides a subject - observer mechanism.

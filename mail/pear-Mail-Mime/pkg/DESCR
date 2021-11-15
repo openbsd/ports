@@ -1,9 +1,0 @@
-Provides classes to deal with creation and manipulation of MIME
-messages:
-
-- Create MIME email, with HTML, attachments, embedded images, etc.
-- Advanced method of creating MIME messages.
-- Decodes MIME messages to a usable structure.
-- An XML DTD to accompany the getXML() method of the decoding class.
-- An XSLT stylesheet to transform the output of the getXML() method
-  back to an email.

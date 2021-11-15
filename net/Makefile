@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1278 2021/11/03 20:16:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.1279 2021/11/15 13:47:29 sthen Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -496,24 +496,6 @@
      SUBDIR += pcapmerge
      SUBDIR += pchar
      SUBDIR += pdnsd
-     SUBDIR += pear-HTTP
-     SUBDIR += pear-HTTP-Request
-     SUBDIR += pear-Net-DNS
-     SUBDIR += pear-Net-DNS2
-     SUBDIR += pear-Net-IDNA2
-     SUBDIR += pear-Net-IMAP
-     SUBDIR += pear-Net-IPv4
-     SUBDIR += pear-Net-IPv6
-     SUBDIR += pear-Net-LDAP
-     SUBDIR += pear-Net-LDAP2
-     SUBDIR += pear-Net-SMTP
-     SUBDIR += pear-Net-Sieve
-     SUBDIR += pear-Net-Socket
-     SUBDIR += pear-Net-URL
-     SUBDIR += pear-Net-URL-Mapper
-     SUBDIR += pear-Net-URL2
-     SUBDIR += pear-Services-Weather
-     SUBDIR += pear-Services-oEmbed
      SUBDIR += pen
      SUBDIR += pfstat
      SUBDIR += php-weathermap

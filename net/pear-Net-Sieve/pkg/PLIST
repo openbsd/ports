@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/11/16 18:28:49 sthen Exp $
-@group daemon
-pear/lib/.registry/net_sieve.reg
-pear/lib/Net/Sieve.php
-pear/tests/Net_Sieve/
-pear/tests/Net_Sieve/tests/
-pear/tests/Net_Sieve/tests/SieveTest.php
-pear/tests/Net_Sieve/tests/config.php.dist
-pear/tests/Net_Sieve/tests/largescript.siv

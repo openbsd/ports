@@ -1,4 +1,0 @@
-Resolver library used to communicate with a DNS server.
-
-Provides (roughly) the same functionality as pear-Net-DNS, but using
-PHP5 objects, exceptions for error handling, better sockets support.

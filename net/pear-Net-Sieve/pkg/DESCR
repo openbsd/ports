@@ -1,3 +1,0 @@
-pear-Net-Sieve contains a class for talking to ManageSieve servers,
-such as the timsieved server that comes with Cyrus IMAP or the server
-included with dovecot-pigeonhole.

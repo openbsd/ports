@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/05 17:36:47 sthen Exp $
-@group daemon
-pear/lib/.registry/date_holidays_discordian.reg
-pear/lib/Date/Holidays/Driver/Discordian.php
-pear/tests/Date_Holidays_Discordian/
-pear/tests/Date_Holidays_Discordian/tests/
-pear/tests/Date_Holidays_Discordian/tests/Date_Holidays_Driver_Discordian_TestSuite.php

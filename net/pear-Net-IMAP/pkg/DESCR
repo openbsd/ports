@@ -1,2 +1,0 @@
-Provides an implementation of the IMAP4Rev1 protocol using PEAR's Net_Socket
-and the optional Auth_SASL class.

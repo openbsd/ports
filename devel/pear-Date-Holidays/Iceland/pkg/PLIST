@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/05 17:36:47 sthen Exp $
-@group daemon
-pear/lib/.registry/date_holidays_iceland.reg
-pear/lib/Date/Holidays/Driver/Iceland.php
-pear/tests/Date_Holidays_Iceland/
-pear/tests/Date_Holidays_Iceland/tests/
-pear/tests/Date_Holidays_Iceland/tests/Date_Holidays_Driver_Iceland_TestSuite.php

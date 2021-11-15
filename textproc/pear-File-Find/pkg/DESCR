@@ -1,3 +1,0 @@
-File_Find, created as a replacement for its Perl counterpart, also
-named File_Find, is a directory searcher which handles globbing,
-recursive directory searching, and other features.

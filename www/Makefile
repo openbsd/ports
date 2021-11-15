@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1052 2021/11/15 11:18:05 sdk Exp $
+# $OpenBSD: Makefile,v 1.1053 2021/11/15 13:47:29 sthen Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -373,11 +373,6 @@
      SUBDIR += p5-libwww
      SUBDIR += p5-pQuery
      SUBDIR += pear
-     SUBDIR += pear-HTML-Page2
-     SUBDIR += pear-HTML-Select
-     SUBDIR += pear-HTML-Template-IT
-     SUBDIR += pear-HTTP-WebDAV-Server
-     SUBDIR += pear-SOAP
      SUBDIR += pecl-chroot,php74
 #    SUBDIR += pecl-chroot,php80 not yet
      SUBDIR += pecl-memcached,php74

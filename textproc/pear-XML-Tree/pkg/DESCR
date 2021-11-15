@@ -1,2 +1,0 @@
-Allows for the building of XML data structures in PHP using a tree
-representation, without the need for an extension like DOMXML.
