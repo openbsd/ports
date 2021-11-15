@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-x11,v 1.16 2020/01/19 18:27:50 sthen Exp $
-@conflict git-<2.25.0p0
+@comment $OpenBSD: PLIST-x11,v 1.17 2021/11/15 19:52:39 kn Exp $
+@conflict git-<2.33.1p0
 bin/gitk
 libexec/git/git-citool
 libexec/git/git-gui
@@ -83,3 +83,4 @@ share/gitk/lib/msgs/pt_pt.msg
 share/gitk/lib/msgs/ru.msg
 share/gitk/lib/msgs/sv.msg
 share/gitk/lib/msgs/vi.msg
+share/gitk/lib/msgs/zh_cn.msg
