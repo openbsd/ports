@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.143 2020/04/04 16:45:33 espie Exp $
+# $OpenBSD: Engine.pm,v 1.144 2021/11/15 14:48:17 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -299,7 +299,7 @@ sub should_ignore
 {
 	my ($self, $v, $kind) = @_;
 	if (my $d = $self->missing_dep($v, $kind)) {
-		$self->log_same_ts('!', $v, " because of ".$d->fullpkgpath);
+		$self->log_same_ts('!', $v, "because of ".$d->fullpkgpath);
 		$self->stub_out($v);
 		return 1;
 	} else {
@@ -374,7 +374,7 @@ sub adjust_built
 			# as stub, and obviously we lost our deps
 			if ($v->{info}->is_stub) {
 				$self->log_same_ts('!', $v, 
-				    " equivalent to an ignored path");
+				    "equivalent to an ignored path");
 				# just drop it, it's already ignored as
 				# an equivalent path
 				next;
@@ -383,7 +383,7 @@ sub adjust_built
 			if ($v->{wantinstall}) {
 				$self->{buildable}->will_install($v);
 			}
-			$self->log_same_ts('I', $v,' # '.$v->fullpkgname);
+			$self->log_same_ts('I', $v,'# '.$v->fullpkgname);
 			$changes++;
 		} elsif ($self->should_ignore($v, 'RDEPENDS')) {
 			delete $self->{built}{$v};
@@ -413,7 +413,7 @@ sub adjust_depends2
 		# as stub, and obviously we lost our deps
 		if ($v->{info}->is_stub) {
 			$self->log_same_ts('!', $v, 
-			    " equivalent to an ignored path");
+			    "equivalent to an ignored path");
 			# just drop it, it's already ignored as
 			# an equivalent path
 			delete $self->{tobuild}{$v};
