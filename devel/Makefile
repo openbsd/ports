@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2155 2021/11/15 13:47:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.2156 2021/11/15 14:40:46 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -478,6 +478,7 @@
      SUBDIR += p5-Array-Window
      SUBDIR += p5-AutoXS-Header
      SUBDIR += p5-B-COW
+     SUBDIR += p5-B-Debug
      SUBDIR += p5-B-Deobfuscate
      SUBDIR += p5-B-Graph
      SUBDIR += p5-B-Hooks-EndOfScope
