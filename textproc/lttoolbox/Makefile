@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.18 2019/11/12 20:18:55 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2021/11/15 04:23:37 bentley Exp $
 
 COMMENT =		finite-state lexical processing toolkit
 
 V =			3.5
-VER =			3.5.0
+VER =			3.5.4
 DISTNAME =		lttoolbox-${VER}
-REVISION =		1
 
-SHARED_LIBS +=		lttoolbox3-$V             2.0 # 0.0
-SHARED_LIBS +=		lttoolbox3                2.0 # 0.0
+SHARED_LIBS +=		lttoolbox3-$V             3.0 # 0.0
+SHARED_LIBS +=		lttoolbox3                3.0 # 0.0
 
 CATEGORIES =		textproc
 
-HOMEPAGE =		http://wiki.apertium.org/wiki/Lttoolbox
+HOMEPAGE =		https://wiki.apertium.org/wiki/Lttoolbox
 
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
@@ -27,13 +26,18 @@ WANTLIB += c iconv lzma m pthread ${COMPILER_LIBCXX} xml2 z
 
 MASTER_SITES =		https://github.com/apertium/lttoolbox/releases/download/v${VER}/
 
+EXTRACT_SUFX =		.tar.xz
+
 # C++2a
 COMPILER =		base-clang ports-gcc
 
 LIB_DEPENDS =		converters/libiconv \
 			textproc/libxml
 
-CONFIGURE_STYLE =	gnu
+AUTOCONF_VERSION =	2.71
+AUTOMAKE_VERSION =	1.16
+
+CONFIGURE_STYLE =	autoreconf
 
 SUBST_VARS =		V
 

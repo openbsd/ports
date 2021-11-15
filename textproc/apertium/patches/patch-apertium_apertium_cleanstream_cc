@@ -1,0 +1,25 @@
+$OpenBSD: patch-apertium_apertium_cleanstream_cc,v 1.1 2021/11/15 04:23:36 bentley Exp $
+
+Index: apertium/apertium_cleanstream.cc
+--- apertium/apertium_cleanstream.cc.orig
++++ apertium/apertium_cleanstream.cc
+@@ -22,6 +22,7 @@
+ #include <iostream>
+ #include <cstdio>
+ #include <list>
++#include <unistd.h>
+ 
+ #ifdef __MINGW32__
+ #include <windows.h>
+@@ -98,6 +99,11 @@ readFullBlock(FILE *input, wchar_t const delim1, wchar
+ int
+ main (int argc, char** argv)
+ {
++  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++    wcerr << "pledge" << endl;
++    exit(EXIT_FAILURE);
++  }
++
+   wstring buf = L"";
+   wstring blanktmp = L"";
+   bool keepblank = false;

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2019/11/11 08:49:10 bentley Exp $
+# $OpenBSD: Makefile,v 1.13 2021/11/15 04:23:36 bentley Exp $
 
 COMMENT =		module for compiling and processing lexical rules
 
-V =			0.2.1
+V =			0.2.7
 DISTNAME =		apertium-lex-tools-$V
-REVISION =		1
 
 CATEGORIES =		textproc
 
@@ -19,18 +18,21 @@ PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 
-WANTLIB += apertium3 c lttoolbox3 m pcre pthread ${COMPILER_LIBCXX} xml2 z
+#WANTLIB += apertium3-3.7 c lttoolbox3-3.5 m pthread ${COMPILER_LIBCXX} xml2 z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		https://github.com/apertium/apertium-lex-tools/releases/download/v$V/ \
-			${MASTER_SITE_SOURCEFORGE:=apertium/}
+MASTER_SITES =		https://github.com/apertium/apertium-lex-tools/releases/download/v$V/
 
-LIB_DEPENDS =		devel/pcre \
-			textproc/apertium \
+EXTRACT_SUFX =		.tar.bz2
+
+LIB_DEPENDS =		textproc/apertium \
 			textproc/libxml \
 			textproc/lttoolbox
 
-CONFIGURE_STYLE =	gnu
+AUTOCONF_VERSION =	2.71
+AUTOMAKE_VERSION =	1.16
+
+CONFIGURE_STYLE =	autoreconf
 
 .include <bsd.port.mk>

@@ -1,8 +1,8 @@
-$OpenBSD: patch-lrx_proc_cc,v 1.1 2019/03/05 05:19:32 bentley Exp $
+$OpenBSD: patch-src_lrx_proc_cc,v 1.1 2021/11/15 04:23:36 bentley Exp $
 
-Index: lrx_proc.cc
---- lrx_proc.cc.orig
-+++ lrx_proc.cc
+Index: src/lrx_proc.cc
+--- src/lrx_proc.cc.orig
++++ src/lrx_proc.cc
 @@ -20,6 +20,7 @@
  #include <getopt.h>
  #include <iostream>
@@ -11,7 +11,7 @@ Index: lrx_proc.cc
  
  #ifdef _MSC_VER
  #include <io.h>
-@@ -49,6 +50,11 @@ void endProgram(char *name)
+@@ -47,6 +48,11 @@ void endProgram(char *name)
  
  int main(int argc, char *argv[])
  {
@@ -21,5 +21,5 @@ Index: lrx_proc.cc
 +  }
 +
    LRXProcessor lrxp;
-   bool useMaxEnt = false;
  
+ #if HAVE_GETOPT_LONG

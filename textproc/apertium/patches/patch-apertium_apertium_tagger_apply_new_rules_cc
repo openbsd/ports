@@ -1,9 +1,9 @@
-$OpenBSD: patch-apertium_apertium_tagger_apply_new_rules_cc,v 1.1 2019/03/05 05:19:32 bentley Exp $
+$OpenBSD: patch-apertium_apertium_tagger_apply_new_rules_cc,v 1.2 2021/11/15 04:23:36 bentley Exp $
 
 Index: apertium/apertium_tagger_apply_new_rules.cc
 --- apertium/apertium_tagger_apply_new_rules.cc.orig
 +++ apertium/apertium_tagger_apply_new_rules.cc
-@@ -57,6 +57,11 @@ void help(char *name) {
+@@ -56,6 +56,11 @@ void help(char *name) {
  }
  
  int main(int argc, char* argv[]) {

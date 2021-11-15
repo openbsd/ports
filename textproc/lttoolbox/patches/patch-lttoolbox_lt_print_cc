@@ -1,25 +1,25 @@
-$OpenBSD: patch-lttoolbox_lt_print_cc,v 1.1 2019/03/05 05:19:31 bentley Exp $
+$OpenBSD: patch-lttoolbox_lt_print_cc,v 1.2 2021/11/15 04:23:37 bentley Exp $
 
 Index: lttoolbox/lt_print.cc
 --- lttoolbox/lt_print.cc.orig
 +++ lttoolbox/lt_print.cc
 @@ -25,6 +25,7 @@
- #include <iostream>
  #include <libgen.h>
  #include <string>
+ #include <getopt.h>
 +#include <unistd.h>
  
- using namespace std;
- 
-@@ -41,6 +42,11 @@ void endProgram(char *name)
+ #ifdef _MSC_VER
+ #include <io.h>
+@@ -48,6 +49,11 @@ void endProgram(char *name)
  
  int main(int argc, char *argv[])
  {
 +  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
-+    wcerr << "pledge" << endl;
++    cerr << "pledge" << endl;
 +    exit(EXIT_FAILURE);
 +  }
 +
-   if(argc != 2)
-   {
-     endProgram(argv[0]);
+   bool hfst = false;
+   FILE* input = NULL;
+   FILE* output = stdout;

@@ -1,0 +1,18 @@
+$OpenBSD: patch-apertium_reformat_xsl,v 1.1 2021/11/15 04:23:36 bentley Exp $
+
+Index: apertium/reformat.xsl
+--- apertium/reformat.xsl.orig
++++ apertium/reformat.xsl
+@@ -178,6 +178,12 @@ void usage(string const &amp;progname)
+ 
+ int main(int argc, char *argv[])
+ {
++  if (pledge("stdio rpath wpath cpath", NULL) == -1)
++  {
++    wcerr &lt;&lt; "pledge" &lt;&lt; endl;
++    exit(EXIT_SUCCESS);
++  }
++
+   LtLocale::tryToSetLocale();
+ 
+   if(argc &gt; 3)

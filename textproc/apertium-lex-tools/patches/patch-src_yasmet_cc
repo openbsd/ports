@@ -1,25 +1,25 @@
-$OpenBSD: patch-yasmet_cc,v 1.1 2019/03/05 05:19:32 bentley Exp $
+$OpenBSD: patch-src_yasmet_cc,v 1.1 2021/11/15 04:23:36 bentley Exp $
 
-Index: yasmet.cc
---- yasmet.cc.orig
-+++ yasmet.cc
-@@ -9,6 +9,7 @@
- #include <algorithm>
+Index: src/yasmet.cc
+--- src/yasmet.cc.orig
++++ src/yasmet.cc
+@@ -10,6 +10,7 @@
  #include <set>
+ #include <iterator>
  #include <math.h>
 +#include <unistd.h>
  
  /* YASMET 1.0 toolkit Copyright (C) 2002 Franz Josef Och */
  #include <fstream> /* This program is free software; you can redistribute */
-@@ -81,6 +82,11 @@ struct event {
+@@ -77,6 +78,11 @@ struct event {
  
  int main(int argc, char **argv)
  {
 +	if (pledge("stdio rpath wpath cpath", NULL) == -1) {
-+		wcerr << "pledge" << endl;
-+		exit(EXIT_FAILURE);
++		std::cerr << "pledge" << endl;
++		exit(1);
 +	}
 +
- 	string s;
- 	vector<pair<event, double> > E;
+ 	std::string s;
+ 	std::vector<std::pair<event, double> > E;
  	bool lN = 0;

@@ -1,0 +1,25 @@
+$OpenBSD: patch-apertium_wblank-mode_cc,v 1.1 2021/11/15 04:23:36 bentley Exp $
+
+Index: apertium/wblank-mode.cc
+--- apertium/wblank-mode.cc.orig
++++ apertium/wblank-mode.cc
+@@ -23,6 +23,7 @@
+ #include <regex>
+ #include <cctype>
+ #include "apertium_config.h"
++#include <unistd.h>
+ 
+ void trim(std::string& str) {
+ 	while (!str.empty() && isspace(str.back())) {
+@@ -35,6 +36,11 @@ void trim(std::string& str) {
+ }
+ 
+ int main(int argc, char* argv[]) {
++	if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++		std::cerr << "pledge" << std::endl;
++		return 1;
++	}
++
+ 	bool add_z = false;
+ 
+ 	if (argc > 1 && argv[1][0] == '-' && argv[1][1] == 'z' && argv[1][2] == 0) {

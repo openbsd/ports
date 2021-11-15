@@ -1,9 +1,9 @@
-$OpenBSD: patch-lttoolbox_lt_proc_cc,v 1.1 2019/03/05 05:19:31 bentley Exp $
+$OpenBSD: patch-lttoolbox_lt_proc_cc,v 1.2 2021/11/15 04:23:37 bentley Exp $
 
 Index: lttoolbox/lt_proc.cc
 --- lttoolbox/lt_proc.cc.orig
 +++ lttoolbox/lt_proc.cc
-@@ -23,6 +23,7 @@
+@@ -22,6 +22,7 @@
  #include <getopt.h>
  #include <iostream>
  #include <libgen.h>
@@ -11,7 +11,7 @@ Index: lttoolbox/lt_proc.cc
  
  #ifdef _MSC_VER
  #include <io.h>
-@@ -105,6 +106,11 @@ void checkValidity(FSTProcessor const &fstp)
+@@ -104,6 +105,11 @@ void checkValidity(FSTProcessor const &fstp)
  
  int main(int argc, char *argv[])
  {

@@ -1,0 +1,26 @@
+$OpenBSD: patch-apertium_deformat_xsl,v 1.1 2021/11/15 04:23:36 bentley Exp $
+
+Index: apertium/deformat.xsl
+--- apertium/deformat.xsl.orig
++++ apertium/deformat.xsl
+@@ -155,6 +155,7 @@
+ #include &lt;map&gt;
+ #include &lt;string&gt;
+ #include &lt;vector&gt;
++#include &lt;unistd.h&gt;
+ 
+ extern "C" {
+ #if !defined(__STDC__)
+@@ -689,6 +690,12 @@ void usage(string const &amp;progname)
+ 
+ int main(int argc, char *argv[])
+ {
++  if (pledge("stdio rpath wpath cpath", NULL) == -1)
++  {
++    wcerr &lt;&lt; "pledge" &lt;&lt; endl;
++    exit(EXIT_SUCCESS);
++  }
++
+   LtLocale::tryToSetLocale();
+   size_t base = 0;
+   eosIncond = false;

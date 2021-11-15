@@ -1,0 +1,25 @@
+$OpenBSD: patch-apertium_gen_modes_cc,v 1.1 2021/11/15 04:23:36 bentley Exp $
+
+Index: apertium/gen_modes.cc
+--- apertium/gen_modes.cc.orig
++++ apertium/gen_modes.cc
+@@ -31,6 +31,7 @@
+ #include <map>
+ #include <string>
+ #include <set>
++#include <unistd.h>
+ 
+ using namespace Apertium;
+ using namespace std;
+@@ -300,6 +301,11 @@ void gen_modes(map<string, pipeline>& modes, fs::path&
+ 
+ int main(int argc, char* argv[])
+ {
++  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++    cerr << "pledge" << endl;
++    exit(EXIT_FAILURE);
++  }
++
+   LtLocale::tryToSetLocale();
+ 
+ #if HAVE_GETOPT_LONG

@@ -1,17 +1,17 @@
-$OpenBSD: patch-lrx_comp_cc,v 1.1 2019/03/05 05:19:32 bentley Exp $
+$OpenBSD: patch-src_lrx_comp_cc,v 1.1 2021/11/15 04:23:36 bentley Exp $
 
-Index: lrx_comp.cc
---- lrx_comp.cc.orig
-+++ lrx_comp.cc
+Index: src/lrx_comp.cc
+--- src/lrx_comp.cc.orig
++++ src/lrx_comp.cc
 @@ -16,6 +16,7 @@
   */
  
  #include <lrx_compiler.h>
 +#include <unistd.h>
  
- #define PACKAGE_VERSION "0.2.0"
+ using namespace std;
  
-@@ -33,6 +34,11 @@ void endProgram(char *name)
+@@ -31,6 +32,11 @@ void endProgram(char *name)
  
  int main (int argc, char **argv)
  {

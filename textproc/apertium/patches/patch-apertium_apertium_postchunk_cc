@@ -1,13 +1,14 @@
-$OpenBSD: patch-apertium_apertium_postchunk_cc,v 1.1 2019/03/05 05:19:32 bentley Exp $
+$OpenBSD: patch-apertium_apertium_postchunk_cc,v 1.2 2021/11/15 04:23:36 bentley Exp $
 
 Index: apertium/apertium_postchunk.cc
 --- apertium/apertium_postchunk.cc.orig
 +++ apertium/apertium_postchunk.cc
-@@ -85,6 +85,11 @@ FILE * open_output(string const &filename)
+@@ -85,6 +85,12 @@ FILE * open_output(string const &filename)
  
  int main(int argc, char *argv[])
  {
-+  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++  if (pledge("stdio rpath wpath cpath", NULL) == -1)
++  {
 +    wcerr << "pledge" << endl;
 +    exit(EXIT_FAILURE);
 +  }

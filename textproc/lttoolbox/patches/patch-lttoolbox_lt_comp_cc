@@ -1,9 +1,9 @@
-$OpenBSD: patch-lttoolbox_lt_comp_cc,v 1.1 2019/03/05 05:19:31 bentley Exp $
+$OpenBSD: patch-lttoolbox_lt_comp_cc,v 1.2 2021/11/15 04:23:37 bentley Exp $
 
 Index: lttoolbox/lt_comp.cc
 --- lttoolbox/lt_comp.cc.orig
 +++ lttoolbox/lt_comp.cc
-@@ -25,6 +25,7 @@
+@@ -24,6 +24,7 @@
  #include <libgen.h>
  #include <string>
  #include <getopt.h>
@@ -11,7 +11,7 @@ Index: lttoolbox/lt_comp.cc
  
  using namespace std;
  
-@@ -58,6 +59,11 @@ void endProgram(char *name)
+@@ -66,6 +67,11 @@ void endProgram(char *name)
  
  int main(int argc, char *argv[])
  {

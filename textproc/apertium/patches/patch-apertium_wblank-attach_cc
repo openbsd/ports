@@ -1,0 +1,25 @@
+$OpenBSD: patch-apertium_wblank-attach_cc,v 1.1 2021/11/15 04:23:36 bentley Exp $
+
+Index: apertium/wblank-attach.cc
+--- apertium/wblank-attach.cc.orig
++++ apertium/wblank-attach.cc
+@@ -21,6 +21,7 @@
+ #include <vector>
+ #include <algorithm>
+ #include <array>
++#include <unistd.h>
+ 
+ void trim_wb(std::string& wb) {
+ 	while (!wb.empty() && (wb.back() == ';' || wb.back() == ' ')) {
+@@ -33,6 +34,11 @@ void trim_wb(std::string& wb) {
+ }
+ 
+ int main(int argc, char* argv[]) {
++	if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++		std::cerr << "pledge" << std::endl;
++		return 1;
++	}
++
+ 	// Ignore -z, but anything else just show what this tool does
+ 	if (argc > 1 && argv[1][1] != 'z') {
+ 		std::cout << "Distributes word-bound blanks across all tokens they encompass, turning [[A]]^...$^...$[[/]] into [[A]]^...$[[A]]^...$\n";

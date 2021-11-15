@@ -1,4 +1,4 @@
-$OpenBSD: patch-apertium_apertium_transfer_cc,v 1.1 2019/03/05 05:19:32 bentley Exp $
+$OpenBSD: patch-apertium_apertium_transfer_cc,v 1.2 2021/11/15 04:23:36 bentley Exp $
 
 Index: apertium/apertium_transfer.cc
 --- apertium/apertium_transfer.cc.orig

@@ -1,21 +1,22 @@
-$OpenBSD: patch-apertium_apertium_filter_ambiguity_cc,v 1.1 2019/03/05 05:19:32 bentley Exp $
+$OpenBSD: patch-apertium_apertium_filter_ambiguity_cc,v 1.2 2021/11/15 04:23:36 bentley Exp $
 
 Index: apertium/apertium_filter_ambiguity.cc
 --- apertium/apertium_filter_ambiguity.cc.orig
 +++ apertium/apertium_filter_ambiguity.cc
-@@ -32,6 +32,7 @@
- #include <io.h>
- #include <fcntl.h>
- #endif
+@@ -21,6 +21,7 @@
+ #include <apertium/tagger_data_hmm.h>
+ #include <apertium/tagger_word.h>
+ #include <apertium/string_utils.h>
 +#include <unistd.h>
  
- using namespace Apertium;
- using namespace std;
-@@ -63,6 +64,11 @@ FILE * open_file(char const *filename, char const *mod
+ #include <cstdlib>
+ #include <iostream>
+@@ -63,6 +64,12 @@ FILE * open_file(char const *filename, char const *mod
  
  int main(int argc, char *argv[])
  {
-+  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++  if(pledge("stdio rpath wpath cpath", NULL) == -1)
++  {
 +    wcerr << "pledge" << endl;
 +    exit(EXIT_FAILURE);
 +  }

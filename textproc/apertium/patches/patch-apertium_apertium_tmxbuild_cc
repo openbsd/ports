@@ -1,4 +1,4 @@
-$OpenBSD: patch-apertium_apertium_tmxbuild_cc,v 1.1 2019/03/05 05:19:32 bentley Exp $
+$OpenBSD: patch-apertium_apertium_tmxbuild_cc,v 1.2 2021/11/15 04:23:36 bentley Exp $
 
 Index: apertium/apertium_tmxbuild.cc
 --- apertium/apertium_tmxbuild.cc.orig
@@ -16,7 +16,7 @@ Index: apertium/apertium_tmxbuild.cc
  int main(int argc, char *argv[])
  {
 +  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
-+    wcerr << "pledge" << endl;
++    wcerr << L"pledge" << endl;
 +    exit(EXIT_FAILURE);
 +  }
 +

@@ -1,0 +1,24 @@
+$OpenBSD: patch-apertium_apertium_perceptron_trace_cc,v 1.1 2021/11/15 04:23:36 bentley Exp $
+
+Index: apertium/apertium_perceptron_trace.cc
+--- apertium/apertium_perceptron_trace.cc.orig
++++ apertium/apertium_perceptron_trace.cc
+@@ -1,5 +1,6 @@
+ #include <fstream>
+ #include <string>
++#include <unistd.h>
+ 
+ #include <apertium/mtx_reader.h>
+ #include <apertium/perceptron_tagger.h>
+@@ -109,5 +110,11 @@ int perceptron_trace(int argc, char* argv[])
+ 
+ 
+ int main(int argc, char* argv[]) {
++  if (pledge("stdio rpath wpath cpath", NULL) == -1)
++  {
++    std::wcout << "pledge" << std::endl;
++    return 1;
++  }
++
+   return Apertium::perceptron_trace(argc, argv);
+ }

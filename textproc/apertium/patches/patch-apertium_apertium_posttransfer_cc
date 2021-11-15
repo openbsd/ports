@@ -1,0 +1,26 @@
+$OpenBSD: patch-apertium_apertium_posttransfer_cc,v 1.1 2021/11/15 04:23:36 bentley Exp $
+
+Index: apertium/apertium_posttransfer.cc
+--- apertium/apertium_posttransfer.cc.orig
++++ apertium/apertium_posttransfer.cc
+@@ -20,6 +20,7 @@
+ #include <libgen.h>
+ #include <string>
+ #include "getopt_long.h"
++#include <unistd.h>
+ 
+ #ifdef _MSC_VER
+ #include <io.h>
+@@ -63,6 +64,12 @@ void processStream(FILE *in, FILE *out, bool null_flus
+ 
+ int main(int argc, char *argv[])
+ {
++  if (pledge("stdio rpath wpath cpath", NULL) == -1)
++  {
++    wcerr << "pledge" << endl;
++    exit(EXIT_FAILURE);
++  }
++
+   LtLocale::tryToSetLocale();
+   bool null_flush = false;
+ 

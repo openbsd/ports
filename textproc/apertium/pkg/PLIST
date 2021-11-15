@@ -1,6 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/11/11 08:49:10 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/11/15 04:23:36 bentley Exp $
 bin/apertium
+@bin bin/apertium-adapt-docx
+@bin bin/apertium-cleanstream
 @bin bin/apertium-deshtml
+@bin bin/apertium-deshtml-alt
+@bin bin/apertium-deshtml-noent
 @bin bin/apertium-deslatex
 @bin bin/apertium-desmediawiki
 @bin bin/apertium-desodt
@@ -10,20 +14,30 @@ bin/apertium
 @bin bin/apertium-deswxml
 @bin bin/apertium-desxlsx
 @bin bin/apertium-desxpresstag
+bin/apertium-editdist
 @bin bin/apertium-filter-ambiguity
+bin/apertium-filter-dix
+bin/apertium-filter-rules
 bin/apertium-gen-deformat
-bin/apertium-gen-modes
+@bin bin/apertium-gen-modes
 bin/apertium-gen-reformat
+bin/apertium-genvdix
+bin/apertium-genvldix
+bin/apertium-genvrdix
 @bin bin/apertium-interchunk
+bin/apertium-metalrx
+bin/apertium-metalrx-to-lrx
 @bin bin/apertium-multiple-translations
 @bin bin/apertium-perceptron-trace
 @bin bin/apertium-postchunk
 @bin bin/apertium-postlatex
 @bin bin/apertium-postlatex-raw
+@bin bin/apertium-posttransfer
 @bin bin/apertium-prelatex
 @bin bin/apertium-preprocess-transfer
 @bin bin/apertium-pretransfer
 @bin bin/apertium-rehtml
+@bin bin/apertium-rehtml-alt
 @bin bin/apertium-rehtml-noent
 @bin bin/apertium-relatex
 @bin bin/apertium-remediawiki
@@ -39,6 +53,7 @@ bin/apertium-gen-reformat
 @bin bin/apertium-tagger-readwords
 @bin bin/apertium-tmxbuild
 @bin bin/apertium-transfer
+bin/apertium-translate-to-default-equivalent
 bin/apertium-unformat
 bin/apertium-utils-fixlatex
 bin/apertium-validate-acx
@@ -48,26 +63,19 @@ bin/apertium-validate-modes
 bin/apertium-validate-postchunk
 bin/apertium-validate-tagger
 bin/apertium-validate-transfer
+@bin bin/apertium-wblank-attach
+@bin bin/apertium-wblank-detach
+@bin bin/apertium-wblank-mode
 include/apertium-${V}/
 include/apertium-${V}/apertium/
 include/apertium-${V}/apertium/a.h
 include/apertium-${V}/apertium/align.h
 include/apertium-${V}/apertium/analysis.h
 include/apertium-${V}/apertium/apertium_re.h
-include/apertium-${V}/apertium/apertium_tagger.h
-include/apertium-${V}/apertium/basic_5_3_1_tagger.h
-include/apertium-${V}/apertium/basic_5_3_2_tagger.h
-include/apertium-${V}/apertium/basic_5_3_3_tagger.h
-include/apertium-${V}/apertium/basic_exception_type.h
-include/apertium-${V}/apertium/basic_stream_tagger.h
-include/apertium-${V}/apertium/basic_stream_tagger_trainer.h
-include/apertium-${V}/apertium/basic_tagger.h
 include/apertium-${V}/apertium/collection.h
 include/apertium-${V}/apertium/constant_manager.h
-include/apertium-${V}/apertium/constructor_eq_delete.h
 include/apertium-${V}/apertium/deserialiser.h
 include/apertium-${V}/apertium/endian_double_util.h
-include/apertium-${V}/apertium/err_exception.h
 include/apertium-${V}/apertium/exception.h
 include/apertium-${V}/apertium/exception_type.h
 include/apertium-${V}/apertium/feature_vec.h
@@ -91,26 +99,22 @@ include/apertium-${V}/apertium/optional.h
 include/apertium-${V}/apertium/perceptron_spec.h
 include/apertium-${V}/apertium/perceptron_tagger.h
 include/apertium-${V}/apertium/postchunk.h
+include/apertium-${V}/apertium/pretransfer.h
 include/apertium-${V}/apertium/sentence_stream.h
 include/apertium-${V}/apertium/serialiser.h
 include/apertium-${V}/apertium/shell_utils.h
 include/apertium-${V}/apertium/stream.h
-include/apertium-${V}/apertium/stream_5_3_1_tagger.h
-include/apertium-${V}/apertium/stream_5_3_1_tagger_trainer.h
-include/apertium-${V}/apertium/stream_5_3_2_tagger.h
-include/apertium-${V}/apertium/stream_5_3_2_tagger_trainer.h
-include/apertium-${V}/apertium/stream_5_3_3_tagger.h
-include/apertium-${V}/apertium/stream_5_3_3_tagger_trainer.h
 include/apertium-${V}/apertium/stream_tagger.h
-include/apertium-${V}/apertium/stream_tagger_trainer.h
 include/apertium-${V}/apertium/streamed_type.h
 include/apertium-${V}/apertium/string_to_wostream.h
 include/apertium-${V}/apertium/string_utils.h
 include/apertium-${V}/apertium/tag.h
+include/apertium-${V}/apertium/tagger.h
 include/apertium-${V}/apertium/tagger_data.h
 include/apertium-${V}/apertium/tagger_data_hmm.h
 include/apertium-${V}/apertium/tagger_data_lsw.h
 include/apertium-${V}/apertium/tagger_data_percep_coarse_tags.h
+include/apertium-${V}/apertium/tagger_flags.h
 include/apertium-${V}/apertium/tagger_utils.h
 include/apertium-${V}/apertium/tagger_word.h
 include/apertium-${V}/apertium/tmx_align_parameters.h
@@ -137,17 +141,17 @@ include/apertium-${V}/apertium/transfer_word_list.h
 include/apertium-${V}/apertium/trx_reader.h
 include/apertium-${V}/apertium/tsx_reader.h
 include/apertium-${V}/apertium/ttag.h
+include/apertium-${V}/apertium/unigram_tagger.h
 include/apertium-${V}/apertium/unlocked_cstdio.h
 include/apertium-${V}/apertium/utf_converter.h
 include/apertium-${V}/apertium/utils.h
-include/apertium-${V}/apertium/wchar_t_exception.h
-include/apertium-${V}/apertium/wchar_t_exception_type.h
 include/apertium-${V}/apertium/xml_reader.h
 @lib lib/libapertium3-${V}.so.${LIBapertium3-${V}_VERSION}
 @static-lib lib/libapertium3.a
 lib/libapertium3.la
 @lib lib/libapertium3.so.${LIBapertium3_VERSION}
 lib/pkgconfig/apertium.pc
+@man man/man1/apertium-deshtml-alt.1
 @man man/man1/apertium-deshtml.1
 @man man/man1/apertium-deslatex.1
 @man man/man1/apertium-desmediawiki.1
@@ -193,20 +197,20 @@ lib/pkgconfig/apertium.pc
 @man man/man1/apertium.1
 share/aclocal/apertium.m4
 share/apertium/
-share/apertium/apertium-createmodes.awk
 share/apertium/deformat.xsl
+share/apertium/filter-dix.xslt
+share/apertium/filter-rules.xslt
 share/apertium/format.dtd
 share/apertium/format.rnc
 share/apertium/interchunk.dtd
 share/apertium/interchunk.rnc
 share/apertium/lexchoice.xsl
 share/apertium/lexchoicebil.xsl
+share/apertium/metalrx-to-lrx.xslt
 share/apertium/modes/
 share/apertium/modes.dtd
 share/apertium/modes.rnc
 share/apertium/modes/README
-share/apertium/modes2bash.xsl
-share/apertium/modes2debugmodes.xsl
 share/apertium/new2old.xsl
 share/apertium/postchunk.dtd
 share/apertium/postchunk.rnc
@@ -215,3 +219,4 @@ share/apertium/tagger.dtd
 share/apertium/tagger.rnc
 share/apertium/transfer.dtd
 share/apertium/transfer.rnc
+share/apertium/translate-to-default-equivalent.xslt

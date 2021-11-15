@@ -1,0 +1,25 @@
+$OpenBSD: patch-apertium_transferpp_cc,v 1.1 2021/11/15 04:23:36 bentley Exp $
+
+Index: apertium/transferpp.cc
+--- apertium/transferpp.cc.orig
++++ apertium/transferpp.cc
+@@ -20,12 +20,19 @@
+ #include <iostream>
+ #include <apertium/string_utils.h>
+ #include <libgen.h>
++#include <unistd.h>
+ 
+ using namespace Apertium;
+ using namespace std;
+ 
+ int main(int argc, char *argv[])
+ {
++  if (pledge("stdio rpath wpath cpath", NULL) == -1)
++  {
++    wcerr << "pledge" << endl;
++    return EXIT_SUCCESS;
++  }
++
+   LtLocale::tryToSetLocale();
+ 
+   if(argc != 3)

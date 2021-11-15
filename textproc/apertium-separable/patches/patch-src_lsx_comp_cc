@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_lsx_comp_cc,v 1.1 2019/03/05 05:19:32 bentley Exp $
+$OpenBSD: patch-src_lsx_comp_cc,v 1.2 2021/11/15 04:23:36 bentley Exp $
 
 Index: src/lsx_comp.cc
 --- src/lsx_comp.cc.orig
@@ -20,6 +20,6 @@ Index: src/lsx_comp.cc
 +    exit(EXIT_FAILURE);
 +  }
 +
-   if(argc != 4)
+   if(argc < 4)
    {
      endProgram(argv[0]);

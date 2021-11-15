@@ -1,17 +1,17 @@
-$OpenBSD: patch-apertium_apertium_tagger_cc,v 1.1 2019/03/05 05:19:32 bentley Exp $
+$OpenBSD: patch-apertium_apertium_tagger_cc,v 1.2 2021/11/15 04:23:36 bentley Exp $
 
 Index: apertium/apertium_tagger.cc
 --- apertium/apertium_tagger.cc.orig
 +++ apertium/apertium_tagger.cc
-@@ -813,6 +813,11 @@ void apertium_tagger::t_FILE_Tagger(FILE_Tagger &FILE_
- }
+@@ -30,6 +30,11 @@
+ #include <unistd.h>
  
  int main(int argc, char **argv) {
 +  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
-+    std::wcerr << "pledge" << endl;
-+    exit(EXIT_FAILURE);
++    std::wcerr << "pledge" << std::endl;
++    return 1;
 +  }
 +
    try {
-     apertium_tagger(argc, argv);
-   } catch (const err_Exception &err_Exception_) {
+     Apertium::apertium_tagger(argc, argv);
+   } catch (const Apertium::Exception::apertium_tagger::err_Exception &err_Exception_) {

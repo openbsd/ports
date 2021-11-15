@@ -1,9 +1,9 @@
-$OpenBSD: patch-lttoolbox_lt_expand_cc,v 1.1 2019/03/05 05:19:31 bentley Exp $
+$OpenBSD: patch-lttoolbox_lt_expand_cc,v 1.2 2021/11/15 04:23:37 bentley Exp $
 
 Index: lttoolbox/lt_expand.cc
 --- lttoolbox/lt_expand.cc.orig
 +++ lttoolbox/lt_expand.cc
-@@ -23,6 +23,7 @@
+@@ -22,6 +22,7 @@
  #include <libgen.h>
  #include <string>
  #include <getopt.h>
@@ -11,7 +11,7 @@ Index: lttoolbox/lt_expand.cc
  
  #ifdef _MSC_VER
  #include <io.h>
-@@ -43,6 +44,11 @@ void endProgram(char *name)
+@@ -55,6 +56,11 @@ void endProgram(char *name)
  
  int main(int argc, char *argv[])
  {
@@ -22,4 +22,4 @@ Index: lttoolbox/lt_expand.cc
 +
    FILE *input = NULL, *output = NULL;
    Expander e;
- 
+   e.setKeepBoundaries(false);

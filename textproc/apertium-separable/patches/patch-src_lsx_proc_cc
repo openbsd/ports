@@ -1,14 +1,14 @@
-$OpenBSD: patch-src_lsx_processor_cc,v 1.1 2019/03/05 05:19:32 bentley Exp $
+$OpenBSD: patch-src_lsx_proc_cc,v 1.1 2021/11/15 04:23:36 bentley Exp $
 
-Index: src/lsx_processor.cc
---- src/lsx_processor.cc.orig
-+++ src/lsx_processor.cc
-@@ -6,8 +6,15 @@
- 
- #include <lttoolbox/fst_processor.h>
- 
+Index: src/lsx_proc.cc
+--- src/lsx_proc.cc.orig
++++ src/lsx_proc.cc
+@@ -1,9 +1,15 @@
+ #include <lttoolbox/lt_locale.h>
+ #include <iostream>
 +#include <unistd.h>
-+
+ #include "lsx_processor.h"
+ 
  int main (int argc, char** argv)
  {
 +  if (pledge("stdio rpath wpath cpath", NULL) == -1) {

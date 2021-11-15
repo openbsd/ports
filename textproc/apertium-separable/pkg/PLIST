@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/19 09:55:47 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/11/15 04:23:36 bentley Exp $
 @bin bin/lsx-comp
 @bin bin/lsx-proc
+lib/pkgconfig/apertium-separable.pc

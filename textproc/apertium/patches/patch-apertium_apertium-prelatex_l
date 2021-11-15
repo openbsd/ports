@@ -1,0 +1,26 @@
+$OpenBSD: patch-apertium_apertium-prelatex_l,v 1.1 2021/11/15 04:23:36 bentley Exp $
+
+Index: apertium/apertium-prelatex.l
+--- apertium/apertium-prelatex.l.orig
++++ apertium/apertium-prelatex.l
+@@ -11,6 +11,7 @@
+ #include <vector>
+ #include <apertium/latex_accentsmap.h>
+ #include <apertium/string_utils.h>
++#include <unistd.h>
+ 
+ extern "C" {
+ #if !defined(__STDC__)
+@@ -428,6 +429,12 @@ void usage(string const &progname)
+ 
+ int main(int argc, char *argv[])
+ {
++  if (pledge("stdio rpath wpath cpath", NULL) == -1)
++  {
++    wcerr << "pledge" << endl;
++    exit(EXIT_FAILURE);
++  }
++
+   LtLocale::tryToSetLocale();
+   size_t base = 0;
+ 

@@ -1,0 +1,11 @@
+$OpenBSD: patch-scripts_apertium-translate-to-default-equivalent_in,v 1.1 2021/11/15 04:23:36 bentley Exp $
+
+Index: scripts/apertium-translate-to-default-equivalent.in
+--- scripts/apertium-translate-to-default-equivalent.in.orig
++++ scripts/apertium-translate-to-default-equivalent.in
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!${LOCALBASE}/bin/bash
+ case $# in
+   2)
+     INFILE=$1

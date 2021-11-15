@@ -1,0 +1,20 @@
+$OpenBSD: patch-apertium_wblank-detach_cc,v 1.1 2021/11/15 04:23:36 bentley Exp $
+
+Index: apertium/wblank-detach.cc
+--- apertium/wblank-detach.cc.orig
++++ apertium/wblank-detach.cc
+@@ -19,8 +19,14 @@
+ #include <iostream>
+ #include <string>
+ #include <array>
++#include <unistd.h>
+ 
+ int main(int argc, char* argv[]) {
++	if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++		std::cerr << "pledge" << std::endl;
++		return 1;
++	}
++
+ 	// Ignore -z, but anything else just show what this tool does
+ 	if (argc > 1 && argv[1][1] != 'z') {
+ 		std::cout << "Closes all word-bound blanks, turning [[...]]^...$ into [[...]]^...$[[/]]\n";
