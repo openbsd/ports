@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/25 22:31:18 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/11/15 11:53:53 jca Exp $
+${P5SITE}/Class/
+${P5SITE}/Class/C3/
 ${P5SITE}/Class/C3/Adopt/
 ${P5SITE}/Class/C3/Adopt/NEXT.pm
 @man man/man3p/Class::C3::Adopt::NEXT.3p
