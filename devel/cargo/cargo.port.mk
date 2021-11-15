@@ -1,4 +1,4 @@
-# $OpenBSD: cargo.port.mk,v 1.24 2021/09/11 07:13:13 semarie Exp $
+# $OpenBSD: cargo.port.mk,v 1.25 2021/11/15 07:44:37 semarie Exp $
 
 CATEGORIES +=	lang/rust
 
@@ -86,6 +86,16 @@ MODCARGO_post-extract += \
 	${ECHO_MSG} "[modcargo] Removing libsrc for ${_cratename}-${_cratever}" ; \
 	rm -rf -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/curl ;
 
+.    elif "${_cratename}" == "expat-sys"
+MODCARGO_post-extract += \
+	${ECHO_MSG} "[modcargo] Removing libsrc for ${_cratename}-${_cratever}" ; \
+	rm -rf -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/expat ;
+
+.    elif "${_cratename}" == "freetype-sys"
+MODCARGO_post-extract += \
+	${ECHO_MSG} "[modcargo] Removing libsrc for ${_cratename}-${_cratever}" ; \
+	rm -rf -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/freetype2 ;
+
 .    elif "${_cratename}" == "gettext-sys"
 MODCARGO_ENV +=	GETTEXT_DIR=${LOCALBASE}
 MODCARGO_post-extract += \
@@ -165,6 +175,11 @@ MODCARGO_post-extract += \
 MODCARGO_post-extract += \
 	${ECHO_MSG} "[modcargo] Removing libsrc for ${_cratename}-${_cratever}" ; \
 	rm -rf -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/libsass ;
+
+.    elif "${_cratename}" == "servo-fontconfig-sys"
+MODCARGO_post-extract += \
+	${ECHO_MSG} "[modcargo] Removing libsrc for ${_cratename}-${_cratever}" ; \
+	rm -rf -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/{src,makefile.cargo} ;
 
 .    endif
 .  endfor
