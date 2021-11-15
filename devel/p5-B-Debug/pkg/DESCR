@@ -1,0 +1,6 @@
+The B::Debug module walks the Perl syntax tree, printing
+debug info about ops.
+
+The B module supplies classes which allow a Perl program to
+delve into its own innards. It is the module used to implement
+the "backends" of the Perl compiler.
