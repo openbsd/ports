@@ -1,3 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/02/18 22:26:47 sthen Exp $
-lib/python${MODPY_VERSION}/site-packages/PyStemmer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+@comment $OpenBSD: PLIST,v 1.5 2021/11/15 14:16:58 sthen Exp $
+lib/python${MODPY_VERSION}/site-packages/PyStemmer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/PyStemmer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/PyStemmer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/PyStemmer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/PyStemmer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 @so lib/python${MODPY_VERSION}/site-packages/Stemmer.${MODPY_PYC_MAGIC_TAG}so
