@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.50 2021/10/03 19:04:52 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.51 2021/11/15 16:26:21 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk3%%
 bin/ex
@@ -84,6 +84,9 @@ share/vim/${P}/colors/elflord.vim
 share/vim/${P}/colors/evening.vim
 share/vim/${P}/colors/industry.vim
 share/vim/${P}/colors/koehler.vim
+share/vim/${P}/colors/lists/
+share/vim/${P}/colors/lists/csscolors.vim
+share/vim/${P}/colors/lists/default.vim
 share/vim/${P}/colors/morning.vim
 share/vim/${P}/colors/murphy.vim
 share/vim/${P}/colors/pablo.vim
@@ -493,6 +496,7 @@ share/vim/${P}/ftplugin/muttrc.vim
 share/vim/${P}/ftplugin/nanorc.vim
 share/vim/${P}/ftplugin/neomuttrc.vim
 share/vim/${P}/ftplugin/netrc.vim
+share/vim/${P}/ftplugin/nginx.vim
 share/vim/${P}/ftplugin/nroff.vim
 share/vim/${P}/ftplugin/nsis.vim
 share/vim/${P}/ftplugin/objc.vim
@@ -568,6 +572,7 @@ share/vim/${P}/ftplugin/tex.vim
 share/vim/${P}/ftplugin/text.vim
 share/vim/${P}/ftplugin/tidy.vim
 share/vim/${P}/ftplugin/tmux.vim
+share/vim/${P}/ftplugin/toml.vim
 share/vim/${P}/ftplugin/treetop.vim
 share/vim/${P}/ftplugin/tt2html.vim
 share/vim/${P}/ftplugin/typescript.vim
@@ -672,6 +677,7 @@ share/vim/${P}/indent/meson.vim
 share/vim/${P}/indent/mf.vim
 share/vim/${P}/indent/mma.vim
 share/vim/${P}/indent/mp.vim
+share/vim/${P}/indent/nginx.vim
 share/vim/${P}/indent/nsis.vim
 share/vim/${P}/indent/objc.vim
 share/vim/${P}/indent/ocaml.vim
@@ -937,7 +943,6 @@ share/vim/${P}/print/ks_roman.ps
 share/vim/${P}/print/latin1.ps
 share/vim/${P}/print/mac-roman.ps
 share/vim/${P}/print/prolog.ps
-share/vim/${P}/rgb.txt
 share/vim/${P}/scripts.vim
 share/vim/${P}/spell/
 share/vim/${P}/spell/check_locales.vim
@@ -1315,6 +1320,7 @@ share/vim/${P}/syntax/ncf.vim
 share/vim/${P}/syntax/neomuttrc.vim
 share/vim/${P}/syntax/netrc.vim
 share/vim/${P}/syntax/netrw.vim
+share/vim/${P}/syntax/nginx.vim
 share/vim/${P}/syntax/ninja.vim
 share/vim/${P}/syntax/nosyntax.vim
 share/vim/${P}/syntax/nqc.vim
@@ -1520,6 +1526,7 @@ share/vim/${P}/syntax/tidy.vim
 share/vim/${P}/syntax/tilde.vim
 share/vim/${P}/syntax/tli.vim
 share/vim/${P}/syntax/tmux.vim
+share/vim/${P}/syntax/toml.vim
 share/vim/${P}/syntax/tpp.vim
 share/vim/${P}/syntax/trasys.vim
 share/vim/${P}/syntax/treetop.vim
