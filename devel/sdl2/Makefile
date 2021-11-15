@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2021/08/20 16:59:32 thfr Exp $
+# $OpenBSD: Makefile,v 1.37 2021/11/15 20:02:05 rsadowski Exp $
 
 COMMENT=	cross-platform multimedia library
 
@@ -7,6 +7,7 @@ DISTNAME=	SDL2-${V}
 PKGNAME=	sdl2-${V}
 CATEGORIES=	devel
 MASTER_SITES=	https://www.libsdl.org/release/
+REVISION=	0
 
 SHARED_LIBS=	SDL2		0.10	# 0.16
 
@@ -43,6 +44,9 @@ CONFIGURE_ARGS+= --disable-alsa \
 		 --disable-oss \
 		 --disable-pulseaudio \
 		 --disable-sndio-shared \
+		 --disable-video-wayland \
+		 --disable-video-wayland-qt-touch \
+		 --disable-wayland-shared \
 		 --disable-x11-shared
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
