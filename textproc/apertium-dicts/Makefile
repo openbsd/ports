@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/15 04:24:55 bentley Exp $
+# $OpenBSD: Makefile,v 1.9 2021/11/15 04:32:27 bentley Exp $
 
      SUBDIR += afr
      SUBDIR += afr-nld
@@ -7,7 +7,6 @@
      SUBDIR += bel
      SUBDIR += bel-rus
      SUBDIR += br-fr
-     SUBDIR += ca-it
      SUBDIR += cat
      SUBDIR += cat-ita
      SUBDIR += cat-srd
@@ -36,7 +35,6 @@
      SUBDIR += hbs-eng
      SUBDIR += hbs-slv
      SUBDIR += hin
-     SUBDIR += ht-en
      SUBDIR += ind
      SUBDIR += ind-zlm
      SUBDIR += isl
