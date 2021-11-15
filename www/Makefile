@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1051 2021/11/03 20:16:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.1052 2021/11/15 11:18:05 sdk Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -12,6 +12,7 @@
      SUBDIR += asql
      SUBDIR += awl
      SUBDIR += awstats
+     SUBDIR += badwolf
      SUBDIR += blogsum
      SUBDIR += bluefish
      SUBDIR += bozohttpd
