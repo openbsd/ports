@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2021/01/19 06:16:30 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2021/11/15 10:55:47 rsadowski Exp $
 @conflict qt5-<5.6
 include/X11/qt5/QtLocation/
 include/X11/qt5/QtLocation/${VERSION}/
@@ -337,6 +337,7 @@ lib/qt5/cmake/Qt5Positioning/Qt5PositioningConfigVersion.cmake
 lib/qt5/cmake/Qt5Positioning/Qt5Positioning_QGeoPositionInfoSourceFactoryGeoclue.cmake
 lib/qt5/cmake/Qt5Positioning/Qt5Positioning_QGeoPositionInfoSourceFactoryGeoclue2.cmake
 lib/qt5/cmake/Qt5Positioning/Qt5Positioning_QGeoPositionInfoSourceFactoryPoll.cmake
+lib/qt5/cmake/Qt5Positioning/Qt5Positioning_QGeoPositionInfoSourceFactorySerialNmea.cmake
 lib/qt5/cmake/Qt5PositioningQuick/
 lib/qt5/cmake/Qt5PositioningQuick/Qt5PositioningQuickConfig.cmake
 lib/qt5/cmake/Qt5PositioningQuick/Qt5PositioningQuickConfigVersion.cmake
@@ -371,6 +372,7 @@ lib/qt5/plugins/position/
 @so lib/qt5/plugins/position/libqtposition_geoclue.so
 @so lib/qt5/plugins/position/libqtposition_geoclue2.so
 @so lib/qt5/plugins/position/libqtposition_positionpoll.so
+@so lib/qt5/plugins/position/libqtposition_serialnmea.so
 lib/qt5/qml/Qt/labs/location/
 @so lib/qt5/qml/Qt/labs/location/liblocationlabsplugin.so
 lib/qt5/qml/Qt/labs/location/plugins.qmltypes
