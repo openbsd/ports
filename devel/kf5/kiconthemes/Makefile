@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2021/09/10 08:42:04 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.17 2021/11/15 06:20:14 rsadowski Exp $
 
 COMMENT =		KDE icon GUI utility library
 DISTNAME =		kiconthemes-${VERSION}
+REVISION =		0
 
 SHARED_LIBS =		KF5IconThemes		5.3
 
@@ -11,6 +12,8 @@ WANTLIB += KF5I18n KF5ItemViews KF5WidgetsAddons Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Svg Qt5Widgets Qt5Xml c m
 
 BUILD_DEPENDS =		devel/gettext,-tools
+
+RUN_DEPENDS =		devel/kf5/breeze-icons>=${MODKF5_VERSION}
 
 LIB_DEPENDS =		devel/kf5/karchive>=${MODKF5_VERSION} \
 			devel/kf5/kcodecs>=${MODKF5_VERSION} \
