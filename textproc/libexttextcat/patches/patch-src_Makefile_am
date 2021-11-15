@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_Makefile_am,v 1.1.1.1 2021/02/08 09:53:58 sthen Exp $
+$OpenBSD: patch-src_Makefile_am,v 1.2 2021/11/15 00:29:04 sthen Exp $
 
 Index: src/Makefile.am
 --- src/Makefile.am.orig
 +++ src/Makefile.am
 @@ -42,7 +42,7 @@ check:
- 		ss st sv sw ta tet th tg ti tk tl tn tpi tr ts \
- 		tt ty tzm-Latn ug uk uz uz-Cyrl ve vep vi wa xh \
+ 		ss st sun sv sw swb ta tet th tg ti tk tl tn tpi tr ts \
+ 		tt ty tzm-Latn ug uk uz uz-Cyrl ve vec vep vi wa xh \
  		yi yo zh-Hans zh-Hant zu; do \
 -		bash ./test-primary.sh $$primarylanguage; \
 +		sh ./test-primary.sh $$primarylanguage; \
