@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/15 04:32:27 bentley Exp $
+# $OpenBSD: Makefile,v 1.10 2021/11/15 18:21:29 sthen Exp $
 
      SUBDIR += afr
      SUBDIR += afr-nld
@@ -18,7 +18,7 @@
      SUBDIR += en-es
      SUBDIR += en-gl
      SUBDIR += eng
-     SUBDIR += eng-cat
+     #SUBDIR += eng-cat		needs apertium-anapahora import first
      SUBDIR += eo-ca
      SUBDIR += eo-en
      SUBDIR += eo-es
