@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/02 00:02:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/15 20:00:49 tb Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -12,7 +12,7 @@ MAINTAINER =	Eric Auge <eau+obsd@unix4fun.net>
 GH_ACCOUNT =	alacritty
 GH_PROJECT =	alacritty
 GH_TAGNAME =	v0.9.0
-REVISION =	1
+REVISION =	2
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
@@ -24,11 +24,16 @@ MODULES =	devel/cargo \
 
 MODCARGO_RUSTFLAGS += -L${PREFIX}/lib
 
+# Disable wayland feature. Breaks the build if libxkbcommon is absent
+# copypasta/wayland -> smithay-client-toolkit, glutin.
+# ld: error: unable to find library -lxkbcommon
+MODCARGO_NO_DEFAULT_FEATURES =	Yes
+MODCARGO_FEATURES =		x11
+
 MAKE_ENV =	${MODCARGO_ENV}
 
 CONFIGURE_STYLE =	cargo
 
-PATCHORIG =		.openbsd.orig
 SEPARATE_BUILD =	Yes
 
 RELEASE_DIR =	${MODCARGO_TARGET_DIR}/release
