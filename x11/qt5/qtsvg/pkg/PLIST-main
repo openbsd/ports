@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2021/01/19 06:16:32 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2021/11/15 21:23:32 rsadowski Exp $
 @conflict qt5-<5.6
 include/X11/qt5/QtSvg/
 include/X11/qt5/QtSvg/${VERSION}/
@@ -32,7 +32,6 @@ lib/qt5/cmake/Qt5Gui/Qt5Gui_QSvgPlugin.cmake
 lib/qt5/cmake/Qt5Svg/
 lib/qt5/cmake/Qt5Svg/Qt5SvgConfig.cmake
 lib/qt5/cmake/Qt5Svg/Qt5SvgConfigVersion.cmake
-lib/qt5/examples/
 lib/qt5/libQt5Svg.la
 lib/qt5/libQt5Svg.prl
 @lib lib/qt5/libQt5Svg.so.${LIBQt5Svg_VERSION}

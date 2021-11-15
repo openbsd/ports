@@ -1,7 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2021/01/19 06:16:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2021/11/15 21:23:31 rsadowski Exp $
 
 QT5NAME =		QtQuickControls
 COMMENT-main =		Qt Quick based UI controls
+
+REVISION-main =		0
+REVISION-examples =	0
 
 MULTI_PACKAGES =	-main -examples
 

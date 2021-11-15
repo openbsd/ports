@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2020/03/13 16:53:50 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2021/11/15 21:23:31 rsadowski Exp $
 include/X11/qt5/QtDataVisualization/
 include/X11/qt5/QtDataVisualization/${VERSION}/
 include/X11/qt5/QtDataVisualization/${VERSION}/QtDataVisualization/
@@ -161,7 +161,6 @@ lib/pkgconfig/Qt5DataVisualization.pc
 lib/qt5/cmake/Qt5DataVisualization/
 lib/qt5/cmake/Qt5DataVisualization/Qt5DataVisualizationConfig.cmake
 lib/qt5/cmake/Qt5DataVisualization/Qt5DataVisualizationConfigVersion.cmake
-lib/qt5/examples/
 lib/qt5/libQt5DataVisualization.la
 lib/qt5/libQt5DataVisualization.prl
 @lib lib/qt5/libQt5DataVisualization.so.${LIBQt5DataVisualization_VERSION}

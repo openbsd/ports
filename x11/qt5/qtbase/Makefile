@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2021/07/26 12:54:53 kn Exp $
+# $OpenBSD: Makefile,v 1.46 2021/11/15 21:23:30 rsadowski Exp $
 
 DISTNAME =		qtbase-everywhere-src-${DIST_VERSION}
 QT5NAME =		Qt5 core
@@ -9,7 +9,8 @@ COMMENT-mysql =		MySQL plugin for Qt5
 COMMENT-psql =		PostgresSQL plugin for Qt5
 COMMENT-tds =		TDS plugin for Qt5
 
-REVISION-main =		4
+REVISION-main =		5
+REVISION-examples =		0
 
 PKGNAME-mysql =		qt5-mysql-${VERSION}
 PKGNAME-global =	qt5-global-${VERSION}

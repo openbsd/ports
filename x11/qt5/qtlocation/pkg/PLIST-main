@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2021/11/15 10:55:47 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2021/11/15 21:23:31 rsadowski Exp $
 @conflict qt5-<5.6
 include/X11/qt5/QtLocation/
 include/X11/qt5/QtLocation/${VERSION}/
@@ -341,8 +341,6 @@ lib/qt5/cmake/Qt5Positioning/Qt5Positioning_QGeoPositionInfoSourceFactorySerialN
 lib/qt5/cmake/Qt5PositioningQuick/
 lib/qt5/cmake/Qt5PositioningQuick/Qt5PositioningQuickConfig.cmake
 lib/qt5/cmake/Qt5PositioningQuick/Qt5PositioningQuickConfigVersion.cmake
-lib/qt5/examples/
-lib/qt5/examples/location/geojson_viewer/GeoJsonDelegateMapObject.qml
 lib/qt5/libQt5Location.la
 lib/qt5/libQt5Location.prl
 @lib lib/qt5/libQt5Location.so.${LIBQt5Location_VERSION}

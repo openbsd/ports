@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST-examples,v 1.3 2020/03/13 16:53:51 rsadowski Exp $
+@comment $OpenBSD: PLIST-examples,v 1.4 2021/11/15 21:23:31 rsadowski Exp $
+@conflict qtlocation-<5.15.2p1
+lib/qt5/examples/
 lib/qt5/examples/location/
 lib/qt5/examples/location/geojson_viewer/
 lib/qt5/examples/location/geojson_viewer/GeoJsonDelegate.qml
+lib/qt5/examples/location/geojson_viewer/GeoJsonDelegateMapObject.qml
 lib/qt5/examples/location/geojson_viewer/data/
 lib/qt5/examples/location/geojson_viewer/data/01-point.json
 lib/qt5/examples/location/geojson_viewer/data/02-linestring.json

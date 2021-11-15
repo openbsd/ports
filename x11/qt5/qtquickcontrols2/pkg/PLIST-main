@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2021/01/19 06:16:31 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2021/11/15 21:23:31 rsadowski Exp $
 include/X11/qt5/QtQuickControls2/
 include/X11/qt5/QtQuickControls2/${VERSION}/
 include/X11/qt5/QtQuickControls2/${VERSION}/QtQuickControls2/
@@ -155,11 +155,6 @@ lib/qt5/cmake/Qt5QuickControls2/Qt5QuickControls2ConfigVersion.cmake
 lib/qt5/cmake/Qt5QuickTemplates2/
 lib/qt5/cmake/Qt5QuickTemplates2/Qt5QuickTemplates2Config.cmake
 lib/qt5/cmake/Qt5QuickTemplates2/Qt5QuickTemplates2ConfigVersion.cmake
-lib/qt5/examples/
-lib/qt5/examples/quickcontrols2/texteditor/creatorKateHighlighter.png
-lib/qt5/examples/quickcontrols2/texteditor/einstein.png
-lib/qt5/examples/quickcontrols2/texteditor/example.md
-lib/qt5/examples/quickcontrols2/texteditor/red.png
 lib/qt5/libQt5QuickControls2.la
 lib/qt5/libQt5QuickControls2.prl
 @lib lib/qt5/libQt5QuickControls2.so.${LIBQt5QuickControls2_VERSION}

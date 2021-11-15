@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-examples,v 1.4 2020/03/13 16:53:52 rsadowski Exp $
+@comment $OpenBSD: PLIST-examples,v 1.5 2021/11/15 21:23:31 rsadowski Exp $
+@conflict qtquickcontrols2-<5.15.2p0
+lib/qt5/examples/
 lib/qt5/examples/quickcontrols2/
 lib/qt5/examples/quickcontrols2/chattutorial/
 lib/qt5/examples/quickcontrols2/chattutorial/chapter1-settingup/
@@ -514,6 +516,7 @@ lib/qt5/examples/quickcontrols2/swipetoremove/swipetoremove.qml
 lib/qt5/examples/quickcontrols2/texteditor/
 lib/qt5/examples/quickcontrols2/texteditor/+touch/
 lib/qt5/examples/quickcontrols2/texteditor/+touch/texteditor.html
+lib/qt5/examples/quickcontrols2/texteditor/creatorKateHighlighter.png
 lib/qt5/examples/quickcontrols2/texteditor/doc/
 lib/qt5/examples/quickcontrols2/texteditor/doc/images/
 lib/qt5/examples/quickcontrols2/texteditor/doc/images/qtquickcontrols2-texteditor-desktop.jpg
@@ -522,6 +525,8 @@ lib/qt5/examples/quickcontrols2/texteditor/doc/src/
 lib/qt5/examples/quickcontrols2/texteditor/doc/src/qtquickcontrols2-texteditor.qdoc
 lib/qt5/examples/quickcontrols2/texteditor/documenthandler.cpp
 lib/qt5/examples/quickcontrols2/texteditor/documenthandler.h
+lib/qt5/examples/quickcontrols2/texteditor/einstein.png
+lib/qt5/examples/quickcontrols2/texteditor/example.md
 lib/qt5/examples/quickcontrols2/texteditor/fonts/
 lib/qt5/examples/quickcontrols2/texteditor/fonts/fontello.ttf
 lib/qt5/examples/quickcontrols2/texteditor/images/
@@ -531,6 +536,7 @@ lib/qt5/examples/quickcontrols2/texteditor/qml/+touch/
 lib/qt5/examples/quickcontrols2/texteditor/qml/+touch/texteditor.qml
 lib/qt5/examples/quickcontrols2/texteditor/qml/texteditor.qml
 lib/qt5/examples/quickcontrols2/texteditor/qtquickcontrols2.conf
+lib/qt5/examples/quickcontrols2/texteditor/red.png
 lib/qt5/examples/quickcontrols2/texteditor/texteditor.cpp
 lib/qt5/examples/quickcontrols2/texteditor/texteditor.html
 lib/qt5/examples/quickcontrols2/texteditor/texteditor.pro

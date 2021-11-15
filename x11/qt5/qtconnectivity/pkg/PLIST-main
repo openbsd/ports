@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2021/01/19 06:16:30 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2021/11/15 21:23:31 rsadowski Exp $
 @conflict qt5-<5.6
 include/X11/qt5/QtBluetooth/
 include/X11/qt5/QtBluetooth/${VERSION}/
@@ -234,7 +234,6 @@ lib/qt5/cmake/Qt5Bluetooth/Qt5BluetoothConfigVersion.cmake
 lib/qt5/cmake/Qt5Nfc/
 lib/qt5/cmake/Qt5Nfc/Qt5NfcConfig.cmake
 lib/qt5/cmake/Qt5Nfc/Qt5NfcConfigVersion.cmake
-lib/qt5/examples/
 lib/qt5/libQt5Bluetooth.la
 lib/qt5/libQt5Bluetooth.prl
 @lib lib/qt5/libQt5Bluetooth.so.${LIBQt5Bluetooth_VERSION}

@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2021/01/19 06:16:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2021/11/15 21:23:31 rsadowski Exp $
 
 QT5NAME =	Qt Labs Controls
 DISTNAME =	qtquickcontrols2-everywhere-src-${DIST_VERSION}
 COMMENT-main =	Qt5 Quick based UI controls from Qt Labs
+
+REVISION-main =		0
+REVISION-examples =	0
 
 SHARED_LIBS +=  Qt5QuickControls2             1.0 # 5.9
 SHARED_LIBS +=  Qt5QuickTemplates2            1.0 # 5.9

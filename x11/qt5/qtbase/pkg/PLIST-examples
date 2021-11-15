@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-examples,v 1.4 2021/01/19 06:16:29 rsadowski Exp $
+@comment $OpenBSD: PLIST-examples,v 1.5 2021/11/15 21:23:30 rsadowski Exp $
 @conflict qt5-examples-<5.6
+@conflict qtbase-<5.15.2p5
 lib/qt5/examples/
 lib/qt5/examples/README
 lib/qt5/examples/corelib/
@@ -893,6 +894,11 @@ lib/qt5/examples/widgets/effects/fademessage/fademessage.h
 lib/qt5/examples/widgets/effects/fademessage/fademessage.pro
 lib/qt5/examples/widgets/effects/fademessage/fademessage.qrc
 lib/qt5/examples/widgets/effects/fademessage/main.cpp
+lib/qt5/examples/widgets/gallery/
+lib/qt5/examples/widgets/gallery/gallery.pro
+lib/qt5/examples/widgets/gallery/main.cpp
+lib/qt5/examples/widgets/gallery/widgetgallery.cpp
+lib/qt5/examples/widgets/gallery/widgetgallery.h
 lib/qt5/examples/widgets/gestures/
 lib/qt5/examples/widgets/gestures/gestures.pro
 lib/qt5/examples/widgets/gestures/imagegestures/
@@ -1531,6 +1537,8 @@ lib/qt5/examples/widgets/richtext/textedit/example.html
 lib/qt5/examples/widgets/richtext/textedit/images/
 lib/qt5/examples/widgets/richtext/textedit/images/logo32.png
 lib/qt5/examples/widgets/richtext/textedit/images/mac/
+lib/qt5/examples/widgets/richtext/textedit/images/mac/checkbox-checked.png
+lib/qt5/examples/widgets/richtext/textedit/images/mac/checkbox.png
 lib/qt5/examples/widgets/richtext/textedit/images/mac/editcopy.png
 lib/qt5/examples/widgets/richtext/textedit/images/mac/editcut.png
 lib/qt5/examples/widgets/richtext/textedit/images/mac/editpaste.png
@@ -1541,6 +1549,8 @@ lib/qt5/examples/widgets/richtext/textedit/images/mac/filenew.png
 lib/qt5/examples/widgets/richtext/textedit/images/mac/fileopen.png
 lib/qt5/examples/widgets/richtext/textedit/images/mac/fileprint.png
 lib/qt5/examples/widgets/richtext/textedit/images/mac/filesave.png
+lib/qt5/examples/widgets/richtext/textedit/images/mac/format-indent-less.png
+lib/qt5/examples/widgets/richtext/textedit/images/mac/format-indent-more.png
 lib/qt5/examples/widgets/richtext/textedit/images/mac/textbold.png
 lib/qt5/examples/widgets/richtext/textedit/images/mac/textcenter.png
 lib/qt5/examples/widgets/richtext/textedit/images/mac/textitalic.png
@@ -1551,6 +1561,8 @@ lib/qt5/examples/widgets/richtext/textedit/images/mac/textunder.png
 lib/qt5/examples/widgets/richtext/textedit/images/mac/zoomin.png
 lib/qt5/examples/widgets/richtext/textedit/images/mac/zoomout.png
 lib/qt5/examples/widgets/richtext/textedit/images/win/
+lib/qt5/examples/widgets/richtext/textedit/images/win/checkbox-checked.png
+lib/qt5/examples/widgets/richtext/textedit/images/win/checkbox.png
 lib/qt5/examples/widgets/richtext/textedit/images/win/editcopy.png
 lib/qt5/examples/widgets/richtext/textedit/images/win/editcut.png
 lib/qt5/examples/widgets/richtext/textedit/images/win/editpaste.png
@@ -1561,6 +1573,8 @@ lib/qt5/examples/widgets/richtext/textedit/images/win/filenew.png
 lib/qt5/examples/widgets/richtext/textedit/images/win/fileopen.png
 lib/qt5/examples/widgets/richtext/textedit/images/win/fileprint.png
 lib/qt5/examples/widgets/richtext/textedit/images/win/filesave.png
+lib/qt5/examples/widgets/richtext/textedit/images/win/format-indent-less.png
+lib/qt5/examples/widgets/richtext/textedit/images/win/format-indent-more.png
 lib/qt5/examples/widgets/richtext/textedit/images/win/textbold.png
 lib/qt5/examples/widgets/richtext/textedit/images/win/textcenter.png
 lib/qt5/examples/widgets/richtext/textedit/images/win/textitalic.png

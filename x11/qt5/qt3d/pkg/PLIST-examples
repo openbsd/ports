@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-examples,v 1.4 2020/03/13 16:53:49 rsadowski Exp $
+@comment $OpenBSD: PLIST-examples,v 1.5 2021/11/15 21:23:30 rsadowski Exp $
+@conflict qt3d-<5.15.2p0
 lib/qt5/examples/qt3d/
 lib/qt5/examples/qt3d/3d-text/
 lib/qt5/examples/qt3d/3d-text/3d-text.pro
@@ -102,6 +103,13 @@ lib/qt5/examples/qt3d/controls/controls.pro
 lib/qt5/examples/qt3d/controls/controls.qrc
 lib/qt5/examples/qt3d/controls/main.cpp
 lib/qt5/examples/qt3d/controls/main.qml
+lib/qt5/examples/qt3d/controlsunderlay/
+lib/qt5/examples/qt3d/controlsunderlay/Logo.qml
+lib/qt5/examples/qt3d/controlsunderlay/Qt_logo.obj
+lib/qt5/examples/qt3d/controlsunderlay/controls.qrc
+lib/qt5/examples/qt3d/controlsunderlay/controlsunderlay.pro
+lib/qt5/examples/qt3d/controlsunderlay/main.cpp
+lib/qt5/examples/qt3d/controlsunderlay/main.qml
 lib/qt5/examples/qt3d/exampleresources/
 lib/qt5/examples/qt3d/exampleresources/assets/
 lib/qt5/examples/qt3d/exampleresources/assets/LICENSE
@@ -441,6 +449,17 @@ lib/qt5/examples/qt3d/scene3d/main.cpp
 lib/qt5/examples/qt3d/scene3d/main.qml
 lib/qt5/examples/qt3d/scene3d/scene3d.pro
 lib/qt5/examples/qt3d/scene3d/scene3d.qrc
+lib/qt5/examples/qt3d/scene3dview/
+lib/qt5/examples/qt3d/scene3dview/AnimatedEntity.qml
+lib/qt5/examples/qt3d/scene3dview/doc/
+lib/qt5/examples/qt3d/scene3dview/doc/images/
+lib/qt5/examples/qt3d/scene3dview/doc/images/scene3dview.png
+lib/qt5/examples/qt3d/scene3dview/doc/src/
+lib/qt5/examples/qt3d/scene3dview/doc/src/scene3dview.qdoc
+lib/qt5/examples/qt3d/scene3dview/main.cpp
+lib/qt5/examples/qt3d/scene3dview/main.qml
+lib/qt5/examples/qt3d/scene3dview/scene3dview.pro
+lib/qt5/examples/qt3d/scene3dview/scene3dview.qrc
 lib/qt5/examples/qt3d/shadow-map-qml/
 lib/qt5/examples/qt3d/shadow-map-qml/AdsEffect.qml
 lib/qt5/examples/qt3d/shadow-map-qml/AdsMaterial.qml

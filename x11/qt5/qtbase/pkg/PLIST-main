@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2021/07/26 12:54:53 kn Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2021/11/15 21:23:30 rsadowski Exp $
 @conflict qt5-<5.6
 @pkgpath x11/qt5,-sqlite2
 bin/moc-qt5
@@ -2832,19 +2832,6 @@ lib/qt5/cmake/Qt5XkbCommonSupport/Qt5XkbCommonSupportConfigVersion.cmake
 lib/qt5/cmake/Qt5Xml/
 lib/qt5/cmake/Qt5Xml/Qt5XmlConfig.cmake
 lib/qt5/cmake/Qt5Xml/Qt5XmlConfigVersion.cmake
-lib/qt5/examples/widgets/gallery/
-lib/qt5/examples/widgets/gallery/gallery.pro
-lib/qt5/examples/widgets/gallery/main.cpp
-lib/qt5/examples/widgets/gallery/widgetgallery.cpp
-lib/qt5/examples/widgets/gallery/widgetgallery.h
-lib/qt5/examples/widgets/richtext/textedit/images/mac/checkbox-checked.png
-lib/qt5/examples/widgets/richtext/textedit/images/mac/checkbox.png
-lib/qt5/examples/widgets/richtext/textedit/images/mac/format-indent-less.png
-lib/qt5/examples/widgets/richtext/textedit/images/mac/format-indent-more.png
-lib/qt5/examples/widgets/richtext/textedit/images/win/checkbox-checked.png
-lib/qt5/examples/widgets/richtext/textedit/images/win/checkbox.png
-lib/qt5/examples/widgets/richtext/textedit/images/win/format-indent-less.png
-lib/qt5/examples/widgets/richtext/textedit/images/win/format-indent-more.png
 lib/qt5/include
 @static-lib lib/qt5/libQt5AccessibilitySupport.a
 lib/qt5/libQt5AccessibilitySupport.la

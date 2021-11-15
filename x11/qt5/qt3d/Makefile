@@ -1,7 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2021/01/19 06:16:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.17 2021/11/15 21:23:30 rsadowski Exp $
 
 QT5NAME =		Qt3D
 COMMENT-main =		Qt5 components for 3D graphics
+
+REVISION-main =		0
+REVISION-examples =	0
 
 MULTI_PACKAGES =	-main -examples
 

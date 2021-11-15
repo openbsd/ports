@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2020/03/13 16:53:52 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2021/11/15 21:23:32 rsadowski Exp $
 @conflict qt5-<5.6
 include/X11/qt5/QtScript/
 include/X11/qt5/QtScript/${VERSION}/
@@ -168,7 +168,6 @@ lib/qt5/cmake/Qt5Script/Qt5ScriptConfigVersion.cmake
 lib/qt5/cmake/Qt5ScriptTools/
 lib/qt5/cmake/Qt5ScriptTools/Qt5ScriptToolsConfig.cmake
 lib/qt5/cmake/Qt5ScriptTools/Qt5ScriptToolsConfigVersion.cmake
-lib/qt5/examples/
 lib/qt5/libQt5Script.la
 lib/qt5/libQt5Script.prl
 @lib lib/qt5/libQt5Script.so.${LIBQt5Script_VERSION}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2020/03/13 16:53:52 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2021/11/15 21:23:32 rsadowski Exp $
 include/X11/qt5/QtScxml/
 include/X11/qt5/QtScxml/${VERSION}/
 include/X11/qt5/QtScxml/${VERSION}/QtScxml/
@@ -53,7 +53,6 @@ lib/qt5/cmake/Qt5Scxml/Qt5ScxmlConfig.cmake
 lib/qt5/cmake/Qt5Scxml/Qt5ScxmlConfigExtras.cmake
 lib/qt5/cmake/Qt5Scxml/Qt5ScxmlConfigVersion.cmake
 lib/qt5/cmake/Qt5Scxml/Qt5ScxmlMacros.cmake
-lib/qt5/examples/
 lib/qt5/libQt5Scxml.la
 lib/qt5/libQt5Scxml.prl
 @lib lib/qt5/libQt5Scxml.so.${LIBQt5Scxml_VERSION}

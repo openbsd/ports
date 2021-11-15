@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2020/03/13 16:53:51 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2021/11/15 21:23:31 rsadowski Exp $
 include/X11/qt5/QtNetworkAuth/
 include/X11/qt5/QtNetworkAuth/${VERSION}/
 include/X11/qt5/QtNetworkAuth/${VERSION}/QtNetworkAuth/
@@ -36,7 +36,6 @@ lib/pkgconfig/Qt5NetworkAuth.pc
 lib/qt5/cmake/Qt5NetworkAuth/
 lib/qt5/cmake/Qt5NetworkAuth/Qt5NetworkAuthConfig.cmake
 lib/qt5/cmake/Qt5NetworkAuth/Qt5NetworkAuthConfigVersion.cmake
-lib/qt5/examples/
 lib/qt5/libQt5NetworkAuth.la
 lib/qt5/libQt5NetworkAuth.prl
 @lib lib/qt5/libQt5NetworkAuth.so.${LIBQt5NetworkAuth_VERSION}

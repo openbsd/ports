@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2020/03/13 16:53:51 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2021/11/15 21:23:31 rsadowski Exp $
 @conflict qt5-<5.6
-lib/qt5/examples/
 lib/qt5/qml/QtQuick/Controls/
 lib/qt5/qml/QtQuick/Controls/ApplicationWindow.qml
 ${MODQT5_COMMENT}lib/qt5/qml/QtQuick/Controls/ApplicationWindow.qmlc

@@ -1,7 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2020/03/13 16:53:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2021/11/15 21:23:32 rsadowski Exp $
 
 QT5NAME =		QtSVG
 COMMENT-main =		SVG support for Qt5
+
+REVISION-main =		0
+REVISION-examples =	0
 
 DPB_PROPERTIES =	parallel
 

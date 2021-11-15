@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-examples,v 1.2 2017/07/17 08:34:38 zhuk Exp $
+@comment $OpenBSD: PLIST-examples,v 1.3 2021/11/15 21:23:32 rsadowski Exp $
+@conflict qtsensors-<5.15.2p0
+lib/qt5/examples/
 lib/qt5/examples/sensors/
 lib/qt5/examples/sensors/accelbubble/
 lib/qt5/examples/sensors/accelbubble/Info.plist
@@ -125,6 +127,7 @@ lib/qt5/examples/sensors/sensor_explorer/import/explorer.h
 lib/qt5/examples/sensors/sensor_explorer/import/import.json
 lib/qt5/examples/sensors/sensor_explorer/import/import.pro
 lib/qt5/examples/sensors/sensor_explorer/import/main.cpp
+lib/qt5/examples/sensors/sensor_explorer/import/main.h
 lib/qt5/examples/sensors/sensor_explorer/import/propertyinfo.cpp
 lib/qt5/examples/sensors/sensor_explorer/import/propertyinfo.h
 lib/qt5/examples/sensors/sensor_explorer/import/qmldir

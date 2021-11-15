@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2021/01/19 06:16:31 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2021/11/15 21:23:32 rsadowski Exp $
 include/X11/qt5/QtRemoteObjects/
 include/X11/qt5/QtRemoteObjects/${VERSION}/
 include/X11/qt5/QtRemoteObjects/${VERSION}/QtRemoteObjects/
@@ -76,28 +76,6 @@ lib/qt5/cmake/Qt5RemoteObjects/Qt5RemoteObjectsMacros.cmake
 lib/qt5/cmake/Qt5RepParser/
 lib/qt5/cmake/Qt5RepParser/Qt5RepParserConfig.cmake
 lib/qt5/cmake/Qt5RepParser/Qt5RepParserConfigVersion.cmake
-lib/qt5/examples/
-lib/qt5/examples/remoteobjects/websockets/
-lib/qt5/examples/remoteobjects/websockets/common/
-lib/qt5/examples/remoteobjects/websockets/common/cert/
-lib/qt5/examples/remoteobjects/websockets/common/cert/cert.qrc
-lib/qt5/examples/remoteobjects/websockets/common/cert/client.crt
-lib/qt5/examples/remoteobjects/websockets/common/cert/client.key
-lib/qt5/examples/remoteobjects/websockets/common/cert/rootCA.key
-lib/qt5/examples/remoteobjects/websockets/common/cert/rootCA.pem
-lib/qt5/examples/remoteobjects/websockets/common/cert/rootCA.srl
-lib/qt5/examples/remoteobjects/websockets/common/cert/server.crt
-lib/qt5/examples/remoteobjects/websockets/common/cert/server.key
-lib/qt5/examples/remoteobjects/websockets/common/common.pri
-lib/qt5/examples/remoteobjects/websockets/common/websocketiodevice.cpp
-lib/qt5/examples/remoteobjects/websockets/common/websocketiodevice.h
-lib/qt5/examples/remoteobjects/websockets/websockets.pro
-lib/qt5/examples/remoteobjects/websockets/wsclient/
-lib/qt5/examples/remoteobjects/websockets/wsclient/main.cpp
-lib/qt5/examples/remoteobjects/websockets/wsclient/wsclient.pro
-lib/qt5/examples/remoteobjects/websockets/wsserver/
-lib/qt5/examples/remoteobjects/websockets/wsserver/main.cpp
-lib/qt5/examples/remoteobjects/websockets/wsserver/wsserver.pro
 lib/qt5/libQt5RemoteObjects.la
 lib/qt5/libQt5RemoteObjects.prl
 @lib lib/qt5/libQt5RemoteObjects.so.${LIBQt5RemoteObjects_VERSION}

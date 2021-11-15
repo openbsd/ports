@@ -1,7 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2021/01/19 06:16:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2021/11/15 21:23:32 rsadowski Exp $
 
 QT5NAME =		QtSerialBus
 COMMENT-main =		Qt5 API for accessing serial bus devices
+
+REVISION-main =		0
+REVISION-examples =	0
 
 MULTI_PACKAGES =	-main -examples
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2021/01/19 06:16:29 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2021/11/15 21:23:30 rsadowski Exp $
 @conflict qt5-<5.6
 include/X11/qt5/Qt3DAnimation/
 include/X11/qt5/Qt3DAnimation/${VERSION}/
@@ -1278,24 +1278,6 @@ lib/qt5/cmake/Qt53DRender/Qt53DRender_GLTFSceneExportPlugin.cmake
 lib/qt5/cmake/Qt53DRender/Qt53DRender_GLTFSceneImportPlugin.cmake
 lib/qt5/cmake/Qt53DRender/Qt53DRender_OpenGLRendererPlugin.cmake
 lib/qt5/cmake/Qt53DRender/Qt53DRender_Scene2DPlugin.cmake
-lib/qt5/examples/qt3d/controlsunderlay/
-lib/qt5/examples/qt3d/controlsunderlay/Logo.qml
-lib/qt5/examples/qt3d/controlsunderlay/Qt_logo.obj
-lib/qt5/examples/qt3d/controlsunderlay/controls.qrc
-lib/qt5/examples/qt3d/controlsunderlay/controlsunderlay.pro
-lib/qt5/examples/qt3d/controlsunderlay/main.cpp
-lib/qt5/examples/qt3d/controlsunderlay/main.qml
-lib/qt5/examples/qt3d/scene3dview/
-lib/qt5/examples/qt3d/scene3dview/AnimatedEntity.qml
-lib/qt5/examples/qt3d/scene3dview/doc/
-lib/qt5/examples/qt3d/scene3dview/doc/images/
-lib/qt5/examples/qt3d/scene3dview/doc/images/scene3dview.png
-lib/qt5/examples/qt3d/scene3dview/doc/src/
-lib/qt5/examples/qt3d/scene3dview/doc/src/scene3dview.qdoc
-lib/qt5/examples/qt3d/scene3dview/main.cpp
-lib/qt5/examples/qt3d/scene3dview/main.qml
-lib/qt5/examples/qt3d/scene3dview/scene3dview.pro
-lib/qt5/examples/qt3d/scene3dview/scene3dview.qrc
 lib/qt5/libQt53DAnimation.la
 lib/qt5/libQt53DAnimation.prl
 @lib lib/qt5/libQt53DAnimation.so.${LIBQt53DAnimation_VERSION}
