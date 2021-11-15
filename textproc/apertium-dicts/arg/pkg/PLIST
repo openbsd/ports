@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/19 01:49:38 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/11/15 04:24:55 bentley Exp $
 share/apertium/apertium-arg/
 share/apertium/apertium-arg/apertium-arg.arg.acx
 share/apertium/apertium-arg/apertium-arg.arg.dix
@@ -11,4 +11,7 @@ share/apertium/apertium-arg/arg.automorf.bin
 share/apertium/apertium-arg/arg.autopgen.bin
 share/apertium/apertium-arg/arg.prob
 share/apertium/apertium-arg/arg.rlx.bin
+share/apertium/modes/arg-gener.mode
+share/apertium/modes/arg-morph.mode
+share/apertium/modes/arg-tagger.mode
 share/pkgconfig/apertium-arg.pc

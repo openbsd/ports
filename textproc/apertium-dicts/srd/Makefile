@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.3 2021/10/31 12:09:47 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/15 04:25:01 bentley Exp $
 
 L =	srd
 LANG =	Sardinian
-V =	1.2.0
-
-MASTER_SITES =	https://apertium.org/releases/apertium-$L/
-
-USE_GMAKE =	Yes
+V =	1.3.1
 
 BUILD_DEPENDS +=	textproc/vislcg3
 MODULES =		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
-SUBST_VARS =		MODPY_BIN
+MODPY_RUNDEP =		No
 
-pre-build:
-	${SUBST_CMD} ${WRKSRC}/Makefile.in
+USE_GMAKE =	Yes
+
+EXTRACT_SUFX =	.tar.bz2
+
+AUTOCONF_VERSION =	2.71
+AUTOMAKE_VERSION =	1.16
+
+CONFIGURE_STYLE =	autoreconf
 
 .include <bsd.port.mk>

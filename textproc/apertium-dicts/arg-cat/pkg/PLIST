@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/19 01:53:04 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/11/15 04:24:55 bentley Exp $
 share/apertium/apertium-arg-cat/
 share/apertium/apertium-arg-cat/apertium-arg-cat.arg-cat.t1x
 share/apertium/apertium-arg-cat/apertium-arg-cat.cat-arg.t1x
@@ -10,6 +10,12 @@ share/apertium/apertium-arg-cat/arg-cat.autopgen.bin
 share/apertium/apertium-arg-cat/arg-cat.prob
 share/apertium/apertium-arg-cat/arg-cat.rlx.bin
 share/apertium/apertium-arg-cat/arg-cat.t1x.bin
+share/apertium/apertium-arg-cat/arg-cat_valencia_gva.autobil.bin
+share/apertium/apertium-arg-cat/arg-cat_valencia_gva.autogen.bin
+share/apertium/apertium-arg-cat/arg-cat_valencia_gva.autopgen.bin
+share/apertium/apertium-arg-cat/arg-cat_valencia_uni.autobil.bin
+share/apertium/apertium-arg-cat/arg-cat_valencia_uni.autogen.bin
+share/apertium/apertium-arg-cat/arg-cat_valencia_uni.autopgen.bin
 share/apertium/apertium-arg-cat/cat-arg.autobil.bin
 share/apertium/apertium-arg-cat/cat-arg.autogen.bin
 share/apertium/apertium-arg-cat/cat-arg.autolex.bin

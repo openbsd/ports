@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/11/12 12:49:43 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/11/15 04:24:57 bentley Exp $
 share/apertium/apertium-eo-en/
+share/apertium/apertium-eo-en/apertium-eo-en.en-eo.antaux2_t2x
 share/apertium/apertium-eo-en/apertium-eo-en.en-eo.antaux_t2x
 share/apertium/apertium-eo-en/apertium-eo-en.en-eo.genitive.t1x
 share/apertium/apertium-eo-en/apertium-eo-en.en-eo.t1x
@@ -9,6 +10,7 @@ share/apertium/apertium-eo-en/apertium-eo-en.eo-en.antaux_t2x
 share/apertium/apertium-eo-en/apertium-eo-en.eo-en.t1x
 share/apertium/apertium-eo-en/apertium-eo-en.eo-en.t2x
 share/apertium/apertium-eo-en/apertium-eo-en.eo-en.t3x
+share/apertium/apertium-eo-en/en-eo.antaux2_t2x.bin
 share/apertium/apertium-eo-en/en-eo.antaux_t2x.bin
 share/apertium/apertium-eo-en/en-eo.autobil.bin
 share/apertium/apertium-eo-en/en-eo.autogen.bin
@@ -30,5 +32,11 @@ share/apertium/apertium-eo-en/eo-en.prob
 share/apertium/apertium-eo-en/eo-en.t1x.bin
 share/apertium/apertium-eo-en/eo-en.t2x.bin
 share/apertium/apertium-eo-en/eo-en.t3x.bin
+share/apertium/modes/en-eo-bytecode-cg.mode
+share/apertium/modes/en-eo-bytecode.mode
 share/apertium/modes/en-eo.mode
+share/apertium/modes/eo-en-bytecode.mode
+share/apertium/modes/eo-en-compounds.mode
+share/apertium/modes/eo-en-j.mode
+share/apertium/modes/eo-en-malnova-kun-3-etapoj.mode
 share/apertium/modes/eo-en.mode

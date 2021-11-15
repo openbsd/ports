@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/25 05:54:29 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/11/15 04:25:01 bentley Exp $
 share/apertium/apertium-swe-nor/
 share/apertium/apertium-swe-nor/apertium-swe-nor.nor-swe.t1x
 share/apertium/apertium-swe-nor/apertium-swe-nor.nor-swe.t2x
@@ -17,6 +17,7 @@ share/apertium/apertium-swe-nor/nob-swe.autolex.bin
 share/apertium/apertium-swe-nor/nob-swe.automorf.bin
 share/apertium/apertium-swe-nor/nob-swe.prob
 share/apertium/apertium-swe-nor/nob-swe.rlx.bin
+share/apertium/apertium-swe-nor/nob-swe.seg.rlx.bin
 share/apertium/apertium-swe-nor/nor-swe.autobil.bin
 share/apertium/apertium-swe-nor/nor-swe.autogen.bin
 share/apertium/apertium-swe-nor/nor-swe.t1x.bin

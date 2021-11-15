@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/25 05:50:01 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/11/15 04:25:00 bentley Exp $
 share/apertium/apertium-oci/
 share/apertium/apertium-oci/apertium-oci.oci.metadix
 share/apertium/apertium-oci/apertium-oci.oci.rlx
@@ -25,5 +25,6 @@ share/apertium/modes/oci-gener.mode
 share/apertium/modes/oci-morph.mode
 share/apertium/modes/oci-spell.mode
 share/apertium/modes/oci-tagger.mode
+share/apertium/modes/oci-tagger2.mode
 share/apertium/modes/oci-tokenise.mode
 share/pkgconfig/apertium-oci.pc

@@ -1,13 +1,18 @@
-# $OpenBSD: Makefile,v 1.2 2021/10/31 12:09:45 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/15 04:24:55 bentley Exp $
 
 L =	arg
 LANG =	Aragonese
-V =	0.1.2
+V =	0.1.4
 
-MASTER_SITES =	https://apertium.org/releases/apertium-$L/
+MASTER_SITES =	https://distfiles.roadrunner.page/
+
+BUILD_DEPENDS +=	textproc/vislcg3
 
 USE_GMAKE =	Yes
 
-BUILD_DEPENDS +=	textproc/vislcg3
+AUTOCONF_VERSION =	2.71
+AUTOMAKE_VERSION =	1.16
+
+CONFIGURE_STYLE =	autoreconf
 
 .include <bsd.port.mk>

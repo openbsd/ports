@@ -1,14 +1,19 @@
-# $OpenBSD: Makefile,v 1.3 2021/10/31 12:09:47 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/15 04:25:00 bentley Exp $
 
 L =	spa
 LANG =	Spanish
-V =	1.0.0
+V =	1.2.2
 
-MASTER_SITES =	https://apertium.org/releases/apertium-$L/
-
-USE_GMAKE =	Yes
+EXTRACT_SUFX =	.tar.bz2
 
 BUILD_DEPENDS +=	textproc/apertium-lex-tools \
 			textproc/vislcg3
+
+USE_GMAKE =	Yes
+
+AUTOCONF_VERSION =	2.71
+AUTOMAKE_VERSION =	1.16
+
+CONFIGURE_STYLE =	autoreconf
 
 .include <bsd.port.mk>

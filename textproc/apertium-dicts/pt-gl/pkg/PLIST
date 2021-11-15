@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/11/12 12:49:44 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/11/15 04:25:00 bentley Exp $
 share/apertium/apertium-pt-gl/
 share/apertium/apertium-pt-gl/apertium-pt-gl.gl-pt.t1x
 share/apertium/apertium-pt-gl/apertium-pt-gl.pt-gl.t1x
@@ -16,5 +16,7 @@ share/apertium/apertium-pt-gl/pt-gl.autopgen.bin
 @comment share/apertium/apertium-pt-gl/pt-gl.mode
 share/apertium/apertium-pt-gl/pt-gl.prob
 share/apertium/apertium-pt-gl/pt-gl.t1x.bin
+share/apertium/modes/gl-pt-latin1.mode
 share/apertium/modes/gl-pt.mode
+share/apertium/modes/pt-gl-latin1.mode
 share/apertium/modes/pt-gl.mode

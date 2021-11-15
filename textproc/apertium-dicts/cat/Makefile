@@ -1,17 +1,20 @@
-# $OpenBSD: Makefile,v 1.9 2021/02/23 19:39:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/11/15 04:24:56 bentley Exp $
 
 L =	cat
 LANG =	Catalan
-V =	2.7.0
+V =	2.10.2
 
-USE_GMAKE =	Yes
+EXTRACT_SUFX =	.tar.bz2
 
 BUILD_DEPENDS +=	textproc/vislcg3
 MODULES =		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
-SUBST_VARS =		MODPY_BIN
+MODPY_RUNDEP =		No
 
-pre-build:
-	${SUBST_CMD} ${WRKSRC}/Makefile.in
+USE_GMAKE =	Yes
+
+AUTOCONF_VERSION =	2.71
+AUTOMAKE_VERSION =	1.16
+
+CONFIGURE_STYLE =	autoreconf
 
 .include <bsd.port.mk>

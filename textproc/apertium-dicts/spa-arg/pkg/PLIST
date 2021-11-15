@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/19 01:54:38 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/11/15 04:25:00 bentley Exp $
 @pkgpath textproc/apertium-dicts/es-an
 share/apertium/apertium-spa-arg/
 share/apertium/apertium-spa-arg/apertium-spa-arg.arg-spa.t1x
@@ -11,6 +11,7 @@ share/apertium/apertium-spa-arg/arg-spa.autolex.bin
 share/apertium/apertium-spa-arg/arg-spa.automorf.bin
 share/apertium/apertium-spa-arg/arg-spa.autopgen.bin
 share/apertium/apertium-spa-arg/arg-spa.prob
+share/apertium/apertium-spa-arg/arg-spa.rlx.bin
 share/apertium/apertium-spa-arg/arg-spa.t1x.bin
 share/apertium/apertium-spa-arg/arg-spa.t2x.bin
 share/apertium/apertium-spa-arg/spa-arg.autobil.bin
@@ -19,6 +20,7 @@ share/apertium/apertium-spa-arg/spa-arg.autolex.bin
 share/apertium/apertium-spa-arg/spa-arg.automorf.bin
 share/apertium/apertium-spa-arg/spa-arg.autopgen.bin
 share/apertium/apertium-spa-arg/spa-arg.prob
+share/apertium/apertium-spa-arg/spa-arg.rlx.bin
 share/apertium/apertium-spa-arg/spa-arg.t1x.bin
 share/apertium/apertium-spa-arg/spa-arg.t2x.bin
 share/apertium/modes/arg-spa.mode

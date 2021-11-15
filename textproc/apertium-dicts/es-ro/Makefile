@@ -1,13 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2021/10/31 12:09:46 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/15 04:24:57 bentley Exp $
 
 L =	es-ro
 LANG =	Spanish/Romanian
-V =	0.7.3
-REVISION =	0
+V =	0.7.4
 
-MASTER_SITES =	https://apertium.org/releases/apertium-$L/0.7/
+EXTRACT_SUFX =	.tar.bz2
 
-CONFIGURE_ENV =		APERTIUM_CFLAGS="`pkg-config --cflags apertium`" \
-			APERTIUM_LIBS="`pkg-config --libs apertium`"
+USE_GMAKE =	Yes
+
+AUTOCONF_VERSION =	2.71
+AUTOMAKE_VERSION =	1.16
+
+CONFIGURE_STYLE =	autoreconf
 
 .include <bsd.port.mk>

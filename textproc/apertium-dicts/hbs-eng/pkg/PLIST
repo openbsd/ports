@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/01 11:54:26 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/11/15 04:24:58 bentley Exp $
 share/apertium/apertium-hbs-eng/
+share/apertium/apertium-hbs-eng/Cyrl-Latn.autopmor.bin
 share/apertium/apertium-hbs-eng/apertium-hbs-eng.eng-hbs.t1x
 share/apertium/apertium-hbs-eng/apertium-hbs-eng.eng-hbs.t2x
 share/apertium/apertium-hbs-eng/apertium-hbs-eng.eng-hbs.t3x
 share/apertium/apertium-hbs-eng/apertium-hbs-eng.hbs-eng.t1x
 share/apertium/apertium-hbs-eng/apertium-hbs-eng.hbs-eng.t2x
 share/apertium/apertium-hbs-eng/apertium-hbs-eng.hbs-eng.t3x
-share/apertium/apertium-hbs-eng/cyr-lat.autopmor.bin
 share/apertium/apertium-hbs-eng/eng-hbs.autobil.bin
 share/apertium/apertium-hbs-eng/eng-hbs.automorf.bin
 share/apertium/apertium-hbs-eng/eng-hbs.prob
@@ -33,7 +33,7 @@ share/apertium/apertium-hbs-eng/hbs-eng.rlx.bin
 share/apertium/apertium-hbs-eng/hbs-eng.t1x.bin
 share/apertium/apertium-hbs-eng/hbs-eng.t2x.bin
 share/apertium/apertium-hbs-eng/hbs-eng.t3x.bin
-share/apertium/modes/cyr-lat.mode
+share/apertium/modes/Cyrl-Latn.mode
 share/apertium/modes/eng-hbs.mode
 share/apertium/modes/eng-hbs_BS.mode
 share/apertium/modes/eng-hbs_HR.mode

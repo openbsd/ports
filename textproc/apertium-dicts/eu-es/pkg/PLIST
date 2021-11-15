@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/01 11:54:26 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/11/15 04:24:58 bentley Exp $
 share/apertium/apertium-eu-es/
 share/apertium/apertium-eu-es/apertium-eu-es.eu-es.t1x
 share/apertium/apertium-eu-es/apertium-eu-es.eu-es.t2x
 share/apertium/apertium-eu-es/apertium-eu-es.eu-es.t3x
 share/apertium/apertium-eu-es/apertium-eu-es.ordinals.t1x
+share/apertium/apertium-eu-es/es-eu.automorf.bin
 share/apertium/apertium-eu-es/eu-es.autobil.bin
 share/apertium/apertium-eu-es/eu-es.autogen.bin
 share/apertium/apertium-eu-es/eu-es.automorf.bin

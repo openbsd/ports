@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/03/12 02:57:24 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/11/15 04:24:59 bentley Exp $
 @pkgpath textproc/apertium-dicts/nn-nb
 share/apertium/apertium-nno-nob/
 share/apertium/apertium-nno-nob/apertium-nno-nob.nno-nob.t1x
@@ -23,6 +23,7 @@ share/apertium/apertium-nno-nob/nob-nno.automorf.bin
 share/apertium/apertium-nno-nob/nob-nno.autopgen.bin
 share/apertium/apertium-nno-nob/nob-nno.prob
 share/apertium/apertium-nno-nob/nob-nno.rlx.bin
+share/apertium/apertium-nno-nob/nob-nno.seg.rlx.bin
 share/apertium/apertium-nno-nob/nob-nno.t1x.bin
 share/apertium/apertium-nno-nob/nob-nno.t2x.bin
 share/apertium/apertium-nno-nob/nob-nno.t3x.bin

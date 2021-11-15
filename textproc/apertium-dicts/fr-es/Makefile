@@ -1,15 +1,19 @@
-# $OpenBSD: Makefile,v 1.4 2021/10/31 12:09:46 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2021/11/15 04:24:58 bentley Exp $
 
 L =	fr-es
 LANG =	French/Spanish
-V =	0.9.2
-REVISION =	1
+V =	0.9.3
 
-MASTER_SITES =	https://apertium.org/releases/apertium-$L/$V/
+EXTRACT_SUFX =	.tar.bz2
+
+BUILD_DEPENDS +=	lang/gawk \
+			textproc/apertium-lex-tools
 
 USE_GMAKE =	Yes
 
-CONFIGURE_ENV =		APERTIUM_CFLAGS="`pkg-config --cflags apertium`" \
-			APERTIUM_LIBS="`pkg-config --libs apertium`"
+AUTOCONF_VERSION =	2.71
+AUTOMAKE_VERSION =	1.16
+
+CONFIGURE_STYLE =	autoreconf
 
 .include <bsd.port.mk>

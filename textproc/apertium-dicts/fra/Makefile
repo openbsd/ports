@@ -1,11 +1,18 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/25 05:59:00 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2021/11/15 04:24:58 bentley Exp $
 
 L =	fra
 LANG =	French
-V =	1.6.0
+V =	1.10.0
+
+EXTRACT_SUFX =	.tar.bz2
+
+BUILD_DEPENDS +=	textproc/vislcg3
 
 USE_GMAKE =	Yes
 
-BUILD_DEPENDS +=	textproc/vislcg3
+AUTOCONF_VERSION =	2.71
+AUTOMAKE_VERSION =	1.16
+
+CONFIGURE_STYLE =	autoreconf
 
 .include <bsd.port.mk>

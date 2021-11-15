@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2019/03/25 06:13:44 bentley Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/15 04:24:55 bentley Exp $
 
-     SUBDIR += af-nl
+     SUBDIR += afr
+     SUBDIR += afr-nld
      SUBDIR += arg
      SUBDIR += arg-cat
      SUBDIR += bel
@@ -8,21 +9,21 @@
      SUBDIR += br-fr
      SUBDIR += ca-it
      SUBDIR += cat
+     SUBDIR += cat-ita
      SUBDIR += cat-srd
      SUBDIR += crh
      SUBDIR += crh-tur
      SUBDIR += cy-en
      SUBDIR += dan
      SUBDIR += dan-nor
-     SUBDIR += en-ca
      SUBDIR += en-es
      SUBDIR += en-gl
+     SUBDIR += eng
+     SUBDIR += eng-cat
      SUBDIR += eo-ca
      SUBDIR += eo-en
      SUBDIR += eo-es
      SUBDIR += eo-fr
-     SUBDIR += es-ast
-     SUBDIR += es-ca
      SUBDIR += es-gl
      SUBDIR += es-pt
      SUBDIR += es-ro
@@ -36,13 +37,16 @@
      SUBDIR += hbs-slv
      SUBDIR += hin
      SUBDIR += ht-en
-     SUBDIR += id-ms
-     SUBDIR += is-en
-     SUBDIR += is-sv
+     SUBDIR += ind
+     SUBDIR += ind-zlm
+     SUBDIR += isl
+     SUBDIR += isl-eng
+     SUBDIR += isl-swe
      SUBDIR += ita
-     SUBDIR += mk-bg
-     SUBDIR += mk-en
+     SUBDIR += mkd-bul
+     SUBDIR += mkd-eng
      SUBDIR += mlt-ara
+     SUBDIR += nld
      SUBDIR += nno
      SUBDIR += nno-nob
      SUBDIR += nob
@@ -52,11 +56,14 @@
      SUBDIR += oci-fra
      SUBDIR += pol
      SUBDIR += pol-szl
-     SUBDIR += pt-ca
+     SUBDIR += por
+     SUBDIR += por-cat
      SUBDIR += pt-gl
      SUBDIR += rus
      SUBDIR += spa
      SUBDIR += spa-arg
+     SUBDIR += spa-ast
+     SUBDIR += spa-cat
      SUBDIR += spa-ita
      SUBDIR += srd
      SUBDIR += srd-ita
@@ -69,5 +76,6 @@
      SUBDIR += ukr
      SUBDIR += urd
      SUBDIR += urd-hin
+     SUBDIR += zlm
 
 .include <bsd.port.subdir.mk>

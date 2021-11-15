@@ -1,13 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/01 11:54:26 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/11/15 04:24:58 bentley Exp $
 share/apertium/apertium-hbs/
 share/apertium/apertium-hbs/alt.xsl
-share/apertium/apertium-hbs/apertium-hbs.cyr-lat.dix
+share/apertium/apertium-hbs/apertium-hbs.Cyrl-Latn.dix
 share/apertium/apertium-hbs/apertium-hbs.hbs.acx
 share/apertium/apertium-hbs/apertium-hbs.hbs.metadix
 share/apertium/apertium-hbs/apertium-hbs.hbs.rlx
 share/apertium/apertium-hbs/apertium-hbs.post-hbs.dix
 share/apertium/apertium-hbs/hbs.automorf.att.gz
 share/apertium/apertium-hbs/hbs.automorf.bin
+share/apertium/apertium-hbs/hbs.prob
 share/apertium/apertium-hbs/hbs.rlx.bin
 share/apertium/apertium-hbs/hbs_BS.autogen.att.gz
 share/apertium/apertium-hbs/hbs_BS.autogen.bin

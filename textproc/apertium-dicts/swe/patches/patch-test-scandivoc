@@ -1,0 +1,11 @@
+$OpenBSD: patch-test-scandivoc,v 1.1 2021/11/15 04:25:01 bentley Exp $
+
+Index: test-scandivoc
+--- test-scandivoc.orig
++++ test-scandivoc
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!${LOCALBASE}/bin/bash
+ 
+ # Simple test for consistency across scandipairs
+ 
