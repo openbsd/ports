@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.30 2021/02/26 07:54:11 espie Exp $
+# $OpenBSD: State.pm,v 1.31 2021/11/15 14:39:45 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -123,7 +123,7 @@ sub interpret_path
 			return;
 	   	} 
 	}
-	$state->usage("Bad package path: #1", $path);
+	push(@{$state->{bad_paths}}, $path);
 }
 
 sub interpret_paths
