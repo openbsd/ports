@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.163 2021/10/29 14:00:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.164 2021/11/16 16:11:39 sthen Exp $
 
 COMMENT=	imap4 webmail client
 
 V=		1.5.0
-REVISION=	0
+REVISION=	1
 DISTNAME=	roundcubemail-$V
 PKGNAME=	roundcubemail-${V:S/-//}
 EXTRACT_SUFX=	-complete.tar.gz
@@ -34,6 +34,7 @@ MODULES=	lang/php
 MODPHP_VERSION=	8.0
 
 RUN_DEPENDS=	${MODPHP_PDO_DEPENDS} \
+		lang/php/${MODPHP_VERSION},-intl \
 		lang/php/${MODPHP_VERSION},-pspell \
 		lang/php/${MODPHP_VERSION},-zip
 
