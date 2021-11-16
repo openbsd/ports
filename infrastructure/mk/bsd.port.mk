@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1558 2021/11/08 13:36:25 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1559 2021/11/16 21:18:27 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -612,6 +612,7 @@ GH_PROJECT ?=
 
 .if !empty(GH_PROJECT) && !empty(GH_TAGNAME)
 DISTNAME ?=	${GH_PROJECT}-${GH_TAGNAME:C/^(v|V|ver|[Rr]el|[Rr]elease)[-._]?([0-9])/\2/}
+GH_DISTFILE = ${GH_PROJECT}-${GH_TAGNAME:C/^(v|V|ver|[Rr]el|[Rr]elease)[-._]?([0-9])/\2/}${EXTRACT_SUFX}
 .endif
 
 PKGNAME ?= ${DISTNAME}
@@ -1289,7 +1290,8 @@ _warn_checksum += ;echo ">>> MASTER_SITES${_I} not ending in /: ${MASTER_SITES${
 EXTRACT_SUFX ?= .tar.gz
 
 .if !empty(GH_COMMIT)
-DISTFILES ?= ${DISTNAME}-${GH_COMMIT:C/(........).*/\1/}${EXTRACT_SUFX}{${GH_COMMIT}${EXTRACT_SUFX}}
+GH_DISTFILE = ${DISTNAME}-${GH_COMMIT:C/(........).*/\1/}${EXTRACT_SUFX}{${GH_COMMIT}${EXTRACT_SUFX}}
+DISTFILES ?= ${GH_DISTFILE}
 .else
 .  if defined(DISTNAME)
 DISTFILES ?= ${DISTNAME}${EXTRACT_SUFX}
