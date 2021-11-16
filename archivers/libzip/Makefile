@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2020/07/11 00:42:29 bcallah Exp $
+# $OpenBSD: Makefile,v 1.26 2021/11/16 18:30:13 tb Exp $
 
 COMMENT=		library for reading, creating and modifying zip archives
 
 DISTNAME=		libzip-1.7.1
-REVISION=		0
+REVISION=		1
 CATEGORIES=		archivers
 SHARED_LIBS +=  zip                  4.1      # 5.0
 

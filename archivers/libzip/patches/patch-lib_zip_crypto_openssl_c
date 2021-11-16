@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_zip_crypto_openssl_c,v 1.1 2018/04/23 21:48:07 bcallah Exp $
+$OpenBSD: patch-lib_zip_crypto_openssl_c,v 1.2 2021/11/16 18:30:13 tb Exp $
 
 Add limits.h for INT_MAX
 
@@ -13,3 +13,12 @@ Index: lib/zip_crypto_openssl.c
  #include <stdlib.h>
  
  #include "zipint.h"
+@@ -39,7 +40,7 @@
+ 
+ #include <openssl/rand.h>
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x1010000fL || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x1010000fL
+ #define USE_OPENSSL_1_0_API
+ #endif
+ 
