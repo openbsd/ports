@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.175 2021/11/11 10:17:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.176 2021/11/16 20:37:33 ajacoutot Exp $
 @conflict py-botocore-*
 @pkgpath net/py-botocore
 lib/python${MODPY_VERSION}/site-packages/botocore/
@@ -1054,6 +1054,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/migrationhub-config/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/migrationhub-config/2019-06-30/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/migrationhub-config/2019-06-30/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/migrationhub-config/2019-06-30/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/migrationhubstrategy/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/migrationhubstrategy/2020-02-19/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/migrationhubstrategy/2020-02-19/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/migrationhubstrategy/2020-02-19/paginators-1.sdk-extras.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/migrationhubstrategy/2020-02-19/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mobile/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mobile/2017-07-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mobile/2017-07-01/examples-1.json
