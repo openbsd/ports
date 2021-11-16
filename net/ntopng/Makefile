@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2021/08/04 19:14:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2021/11/16 21:30:22 sthen Exp $
 
 COMMENT=	network traffic probe with web ui and deep packet inspection
 
@@ -16,7 +16,8 @@ REVISION=	0
 SHARED_LIBS=	ndpi 1.0
 NDPI_V=		4.0
 NDPI_COMMIT=	b8806bd2de7391abee18353e9a99ee4aec13887c
-DISTFILES=	ntopng-${NTOPNG_V}-{}${GH_COMMIT}.tar.gz ndpi-${NDPI_V}-{}${NDPI_COMMIT}.tar.gz:0
+DISTFILES=	${GH_DISTFILE} \
+		ndpi-${NDPI_V}-{}${NDPI_COMMIT}.tar.gz:0
 
 CATEGORIES=	net
 

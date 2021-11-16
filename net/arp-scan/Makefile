@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2021/09/18 08:58:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2021/11/16 21:30:22 sthen Exp $
 
 GH_ACCOUNT =	royhills
 GH_PROJECT =	arp-scan
@@ -18,8 +18,7 @@ MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 
 MASTER_SITES0 =	https://spacehopper.org/mirrors/
 
-# if tagged -> ${DISTNAME}${EXTRACT_SUFX}
-DISTFILES =	${DISTNAME}-${GH_COMMIT:C/(........).*/\1/}${EXTRACT_SUFX}{${GH_COMMIT}${EXTRACT_SUFX}} \
+DISTFILES =	${GH_DISTFILE} \
 		oui-iab-$M.tar.xz:0
 
 # GPLv3+

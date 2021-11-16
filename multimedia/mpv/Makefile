@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2021/11/14 17:26:24 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.77 2021/11/16 21:30:22 sthen Exp $
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
@@ -15,7 +15,7 @@ HOMEPAGE =		https://mpv.io/
 
 WAF =			${WRKSRC}/waf-2.0.20
 MASTER_SITES0 =		https://waf.io/
-DISTFILES =		${DISTNAME}{${GH_TAGNAME}}${EXTRACT_SUFX} ${WAF:T}:0
+DISTFILES =		${GH_DISTFILE} ${WAF:T}:0
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
 # GPLv2+

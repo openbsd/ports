@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/14 22:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/11/16 21:30:22 sthen Exp $
 
 COMMENT=	high performance, multi-platform VNC client and server
 
@@ -8,7 +8,8 @@ GH_TAGNAME=	v1.11.0
 # 1.12.0 has an issue with connection to vmware's internal VNC which
 # results in an exception being thrown relating to the cursor.
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} xorg-server-1.20.13.tar.xz:0
+DISTFILES=	${GH_DISTFILE} \
+		xorg-server-1.20.13.tar.xz:0
 # update the post-patch target if moving to a new major branch of xorg-server
 # there's no patchset in tigervnc for xorg-server-21.1.1.tar.xz:0 yet
 

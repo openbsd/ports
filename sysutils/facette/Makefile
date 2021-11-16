@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2021/03/08 13:59:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2021/11/16 21:30:22 sthen Exp $
 
 BROKEN =	fetches from internet during build
 
@@ -19,7 +19,7 @@ HOMEPAGE =	https://facette.io
 # 'go-bindata -pkg web -prefix ../dist/assets -tags builtin_assets -o bindata.go ../dist/assets/...'
 # in WRKSRC/web .
 # For the above to work, pandoc and go-bindata need to be installed.
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX}{${GH_TAGNAME}${EXTRACT_SUFX}} \
+DISTFILES =	${GH_DISTFILE} \
 		${GH_PROJECT}-${GH_TAGNAME}-node_modules${EXTRACT_SUFX}:0 \
 		${GH_PROJECT}-${GH_TAGNAME}-assets${EXTRACT_SUFX}:0
 MASTER_SITES0 =	https://deftly.net/dist/
