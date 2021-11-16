@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.105 2021/11/15 19:52:39 kn Exp $
+@comment $OpenBSD: PLIST-main,v 1.106 2021/11/16 16:21:15 kn Exp $
 @conflict git-x11-<2.33.1p0
 @pkgpath devel/git
 @newgroup _gitdaemon:778
@@ -134,7 +134,6 @@ libexec/git/git-quiltimport
 @bin libexec/git/git-range-diff
 @bin libexec/git/git-read-tree
 @bin libexec/git/git-rebase
-libexec/git/git-rebase--preserve-merges
 @bin libexec/git/git-receive-pack
 @bin libexec/git/git-reflog
 @bin libexec/git/git-remote
