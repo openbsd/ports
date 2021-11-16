@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.40 2021/08/13 17:24:00 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.41 2021/11/16 20:29:52 sthen Exp $
 @conflict mariadb-client-<=10.4.12v1
 @newgroup _mysql:502
 @newuser _mysql:502:_mysql:daemon:MySQL Account:/nonexistent:/sbin/nologin
@@ -247,6 +247,7 @@ include/mysql/server/private/my_handler_errors.h
 include/mysql/server/private/my_json_writer.h
 include/mysql/server/private/my_libwrap.h
 include/mysql/server/private/my_md5.h
+include/mysql/server/private/my_minidump.h
 include/mysql/server/private/my_nosys.h
 include/mysql/server/private/my_rdtsc.h
 include/mysql/server/private/my_rnd.h

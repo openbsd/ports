@@ -1,9 +1,9 @@
-$OpenBSD: patch-libmariadb_libmariadb_CMakeLists_txt,v 1.10 2021/07/09 11:35:29 sthen Exp $
+$OpenBSD: patch-libmariadb_libmariadb_CMakeLists_txt,v 1.11 2021/11/16 20:29:52 sthen Exp $
 
 Index: libmariadb/libmariadb/CMakeLists.txt
 --- libmariadb/libmariadb/CMakeLists.txt.orig
 +++ libmariadb/libmariadb/CMakeLists.txt
-@@ -401,6 +401,8 @@ ENDIF()
+@@ -404,6 +404,8 @@ ENDIF()
  ADD_LIBRARY(mariadbclient STATIC  ${MARIADB_OBJECTS} ${EMPTY_FILE})
  TARGET_LINK_LIBRARIES(mariadbclient ${SYSTEM_LIBS})
  
@@ -12,7 +12,7 @@ Index: libmariadb/libmariadb/CMakeLists.txt
  IF(UNIX)
    ADD_LIBRARY(libmariadb SHARED ${libmariadb_RC} ${MARIADB_OBJECTS} ${EMPTY_FILE})
    SET_TARGET_PROPERTIES(libmariadb PROPERTIES COMPILE_FLAGS "${CMAKE_SHARED_LIBRARY_C_FLAGS}")
-@@ -436,19 +438,9 @@ INCLUDE(${CC_SOURCE_DIR}/cmake/symlink.cmake)
+@@ -439,19 +441,9 @@ INCLUDE(${CC_SOURCE_DIR}/cmake/symlink.cmake)
  # of the config program. To make sure these programs can
  # use mariadb client library we provide libmysql symlinks
  
