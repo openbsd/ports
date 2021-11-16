@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2021/11/02 00:01:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/11/16 14:30:58 rsadowski Exp $
 
 COMMENT =		CMake modules required by KDE5
 DISTNAME =		extra-cmake-modules-${VERSION}
 HOMEPAGE =		https://projects.kde.org/projects/kdesupport/extra-cmake-modules
-REVISION =		0
 
 MODULES =		lang/python
 MODPY_RUNDEP =		No
@@ -20,6 +19,8 @@ CONFIGURE_ARGS +=	-DMAN_INSTALL_DIR=${PREFIX}/man
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/ECM/find-modules/
+		${PREFIX}/share/ECM/find-modules/ \
+		${PREFIX}/share/ECM/modules/ \
+		${PREFIX}/share/ECM/toolchain/
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/10/13 15:02:07 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/11/16 14:31:02 rsadowski Exp $
 @bin bin/kate-syntax-highlighter
 include/KF5/
 include/KF5/KSyntaxHighlighting/
@@ -30,7 +30,6 @@ lib/cmake/KF5SyntaxHighlighting/KF5SyntaxHighlightingConfigVersion.cmake
 lib/cmake/KF5SyntaxHighlighting/KF5SyntaxHighlightingTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5SyntaxHighlighting/KF5SyntaxHighlightingTargets.cmake
 @lib lib/libKF5SyntaxHighlighting.so.${LIBKF5SyntaxHighlighting_VERSION}
-lib/qt5/qml/
 lib/qt5/qml/org/
 lib/qt5/qml/org/kde/
 lib/qt5/qml/org/kde/syntaxhighlighting/

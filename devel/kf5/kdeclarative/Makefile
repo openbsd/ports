@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2021/10/13 15:02:04 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.22 2021/11/16 14:30:59 rsadowski Exp $
 
 COMMENT =	integration of QML and KDE workspaces
 DISTNAME =	kdeclarative-${VERSION}
 
-SHARED_LIBS =	KF5Declarative		6.0 # 5.17
-SHARED_LIBS +=	KF5CalendarEvents	6.0 # 5.17
-SHARED_LIBS +=	KF5QuickAddons		6.1 # 5.17
+SHARED_LIBS =	KF5Declarative		7.0 # 5.17
+SHARED_LIBS +=	KF5CalendarEvents	7.0 # 5.17
+SHARED_LIBS +=	KF5QuickAddons		7.0 # 5.17
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5CoreAddons KF5GlobalAccel KF5GuiAddons KF5I18n KF5IconThemes

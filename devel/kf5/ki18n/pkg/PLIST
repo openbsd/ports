@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/09/07 14:48:47 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/11/16 14:31:00 rsadowski Exp $
 include/KF5/
 include/KF5/KI18n/
 include/KF5/KI18n/KLocalizedContext
@@ -12,6 +12,14 @@ include/KF5/KI18n/klocalizedstring.h
 include/KF5/KI18n/klocalizedtranslator.h
 include/KF5/KI18n/kuitmarkup.h
 include/KF5/KI18n/kuitsetup.h
+include/KF5/KI18nLocaleData/
+include/KF5/KI18nLocaleData/KCountry
+include/KF5/KI18nLocaleData/KCountrySubdivision
+include/KF5/KI18nLocaleData/KTimeZone
+include/KF5/KI18nLocaleData/kcountry.h
+include/KF5/KI18nLocaleData/kcountrysubdivision.h
+include/KF5/KI18nLocaleData/ki18nlocaledata_export.h
+include/KF5/KI18nLocaleData/ktimezone.h
 include/KF5/ki18n_version.h
 lib/cmake/KF5I18n/
 lib/cmake/KF5I18n/KF5I18nConfig.cmake
@@ -24,8 +32,15 @@ lib/cmake/KF5I18n/build-tsfiles.cmake
 lib/cmake/KF5I18n/kf5i18nuic.cmake
 lib/cmake/KF5I18n/ts-pmap-compile.py
 @lib lib/libKF5I18n.so.${LIBKF5I18n_VERSION}
+@lib lib/libKF5I18nLocaleData.so.${LIBKF5I18nLocaleData_VERSION}
 lib/qt5/plugins/kf5/
 @so lib/qt5/plugins/kf5/ktranscript.so
+lib/qt5/qml/org/
+lib/qt5/qml/org/kde/
+lib/qt5/qml/org/kde/i18n/
+lib/qt5/qml/org/kde/i18n/localeData/
+@so lib/qt5/qml/org/kde/i18n/localeData/libki18nlocaledataqmlplugin.so
+lib/qt5/qml/org/kde/i18n/localeData/qmldir
 share/kf5/
 share/kf5/mkspecs/
 share/kf5/mkspecs/qt_KI18n.pri
@@ -69,8 +84,6 @@ share/locale/fi/LC_SCRIPTS/ki18n5/general.pmap
 share/locale/fi/LC_SCRIPTS/ki18n5/general.pmapc
 share/locale/fi/LC_SCRIPTS/ki18n5/ki18n5.js
 share/locale/fr/LC_MESSAGES/ki18n5.mo
-share/locale/fy/
-share/locale/fy/LC_MESSAGES/
 share/locale/fy/LC_MESSAGES/ki18n5.mo
 share/locale/ga/LC_MESSAGES/ki18n5.mo
 share/locale/gd/LC_MESSAGES/ki18n5.mo
@@ -79,8 +92,6 @@ share/locale/gd/LC_SCRIPTS/ki18n5/
 share/locale/gd/LC_SCRIPTS/ki18n5/ki18n5.js
 share/locale/gl/LC_MESSAGES/ki18n5.mo
 share/locale/gu/LC_MESSAGES/ki18n5.mo
-share/locale/ha/
-share/locale/ha/LC_MESSAGES/
 share/locale/ha/LC_MESSAGES/ki18n5.mo
 share/locale/he/LC_MESSAGES/ki18n5.mo
 share/locale/hi/LC_MESSAGES/ki18n5.mo

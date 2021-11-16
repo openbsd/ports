@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2020/12/19 16:25:07 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2021/11/16 14:31:02 rsadowski Exp $
 @bin bin/gentrigrams
 @bin bin/parsetrigrams
 include/KF5/
@@ -44,6 +44,13 @@ lib/qt5/plugins/designer/
 @so lib/qt5/plugins/designer/sonnetui5widgets.so
 lib/qt5/plugins/kf5/
 lib/qt5/plugins/kf5/sonnet/
+lib/qt5/qml/
+lib/qt5/qml/org/
+lib/qt5/qml/org/kde/
+lib/qt5/qml/org/kde/sonnet/
+@so lib/qt5/qml/org/kde/sonnet/libsonnetquickplugin.so
+lib/qt5/qml/org/kde/sonnet/plugins.qmltypes
+lib/qt5/qml/org/kde/sonnet/qmldir
 share/kf5/
 share/kf5/mkspecs/
 share/kf5/mkspecs/qt_SonnetCore.pri

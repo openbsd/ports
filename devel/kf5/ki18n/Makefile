@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2021/11/02 00:00:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/11/16 14:31:00 rsadowski Exp $
 
 COMMENT =	KDE Gettext-based UI text internationalization
 DISTNAME =	ki18n-${VERSION}
-REVISION =	0
 
-SHARED_LIBS =	KF5I18n		6.0
+SHARED_LIBS =	KF5I18n			6.1
+SHARED_LIBS +=	KF5I18nLocaleData	0.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Network Qt5Qml intl m
 
@@ -12,7 +12,10 @@ MODULES +=	lang/python
 
 MODPY_BUILDDEP =	No
 
+RUN_DEPENDS =	devel/iso-codes
+
 BUILD_DEPENDS =	devel/gettext,-tools \
+		devel/iso-codes \
 		x11/qt5/qtscript
 
 LIB_DEPENDS =	devel/gettext,-runtime \

@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.17 2021/08/08 12:21:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.18 2021/11/16 14:31:02 rsadowski Exp $
 
 COMMENT-main =		multi-language spell checker for KDE
 COMMENT-aspell =	ASpell plugin for Sonnet
 COMMENT-hunspell =	HunSpell plugin for Sonnet
-DISTNAME =		sonnet-${VERSION}
+
 PKGNAME-main =		${DISTNAME}
 PKGNAME-aspell =	sonnet-aspell-${VERSION}
 PKGNAME-hunspell =	sonnet-hunspell-${VERSION}
 
-SHARED_LIBS =		KF5SonnetCore		5.0
+DISTNAME =		sonnet-${VERSION}
+
+SHARED_LIBS =		KF5SonnetCore		5.1
 SHARED_LIBS +=		KF5SonnetUi		5.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets c m
@@ -19,6 +21,9 @@ WANTLIB-hunspell += ${COMPILER_LIBCXX} KF5SonnetCore Qt5Core hunspell-1.7
 WANTLIB-hunspell += m
 
 MULTI_PACKAGES =	-main -aspell -hunspell
+
+RUN_DEPENDS-main =	x11/qt5/qtdeclarative
+BUILD_DEPENDS-main =	x11/qt5/qtdeclarative
 
 LIB_DEPENDS-aspell =	${LIB_DEPENDS} \
 			${BASE_PKGPATH},-main \

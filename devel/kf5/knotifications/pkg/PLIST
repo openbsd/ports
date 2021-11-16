@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/04/24 05:03:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/11/16 14:31:01 rsadowski Exp $
 include/KF5/KNotifications/
 include/KF5/KNotifications/KNotification
 include/KF5/KNotifications/KNotificationJobUiDelegate
@@ -24,6 +24,11 @@ lib/cmake/KF5Notifications/KF5NotificationsConfigVersion.cmake
 lib/cmake/KF5Notifications/KF5NotificationsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Notifications/KF5NotificationsTargets.cmake
 @lib lib/libKF5Notifications.so.${LIBKF5Notifications_VERSION}
+lib/qt5/qml/org/
+lib/qt5/qml/org/kde/
+lib/qt5/qml/org/kde/notification/
+@so lib/qt5/qml/org/kde/notification/libknotificationqmlplugin.so
+lib/qt5/qml/org/kde/notification/qmldir
 share/dbus-1/interfaces/kf5_org.kde.StatusNotifierItem.xml
 share/dbus-1/interfaces/kf5_org.kde.StatusNotifierWatcher.xml
 share/kf5/mkspecs/qt_KNotifications.pri

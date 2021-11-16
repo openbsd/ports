@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2021/06/15 09:37:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.17 2021/11/16 14:30:59 rsadowski Exp $
 
 COMMENT =		widgets for KDE configuration dialogs
 DISTNAME =		kconfigwidgets-${VERSION}
 
-SHARED_LIBS =		KF5ConfigWidgets	5.4
+SHARED_LIBS =		KF5ConfigWidgets	5.5
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5CoreAddons KF5GuiAddons KF5I18n KF5WidgetsAddons

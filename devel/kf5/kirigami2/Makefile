@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2021/11/15 06:22:58 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.19 2021/11/16 14:31:00 rsadowski Exp $
 
 COMMENT =	QtQuick based components set
 DISTNAME =	kirigami2-${VERSION}
 PKGNAME =	kf5-${DISTNAME}
-REVISION =	0
 
 HOMEPAGE =	https://api.kde.org/frameworks/kirigami/html/index.html
 

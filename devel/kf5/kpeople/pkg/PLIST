@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/09/10 08:42:06 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/11/16 14:31:01 rsadowski Exp $
 include/KF5/KPeople/
 include/KF5/KPeople/KPeople/
 include/KF5/KPeople/KPeople/Global
@@ -51,8 +51,6 @@ lib/cmake/KF5People/KPeopleTargets.cmake
 @lib lib/libKF5People.so.${LIBKF5People_VERSION}
 @lib lib/libKF5PeopleBackend.so.${LIBKF5PeopleBackend_VERSION}
 @lib lib/libKF5PeopleWidgets.so.${LIBKF5PeopleWidgets_VERSION}
-lib/qt5/qml/org/
-lib/qt5/qml/org/kde/
 lib/qt5/qml/org/kde/people/
 @so lib/qt5/qml/org/kde/people/libKF5PeopleDeclarative.so
 lib/qt5/qml/org/kde/people/qmldir

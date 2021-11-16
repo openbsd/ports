@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/06/15 09:37:24 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/11/16 14:30:58 rsadowski Exp $
 include/KF5/
 include/KF5/BluezQt/
 include/KF5/BluezQt/BluezQt/
@@ -8,8 +8,11 @@ include/KF5/BluezQt/BluezQt/Device
 include/KF5/BluezQt/BluezQt/DevicesModel
 include/KF5/BluezQt/BluezQt/GattApplication
 include/KF5/BluezQt/BluezQt/GattCharacteristic
+include/KF5/BluezQt/BluezQt/GattCharacteristicRemote
+include/KF5/BluezQt/BluezQt/GattDescriptorRemote
 include/KF5/BluezQt/BluezQt/GattManager
 include/KF5/BluezQt/BluezQt/GattService
+include/KF5/BluezQt/BluezQt/GattServiceRemote
 include/KF5/BluezQt/BluezQt/InitManagerJob
 include/KF5/BluezQt/BluezQt/InitObexManagerJob
 include/KF5/BluezQt/BluezQt/Input
@@ -45,8 +48,11 @@ include/KF5/BluezQt/bluezqt/device.h
 include/KF5/BluezQt/bluezqt/devicesmodel.h
 include/KF5/BluezQt/bluezqt/gattapplication.h
 include/KF5/BluezQt/bluezqt/gattcharacteristic.h
+include/KF5/BluezQt/bluezqt/gattcharacteristicremote.h
+include/KF5/BluezQt/bluezqt/gattdescriptorremote.h
 include/KF5/BluezQt/bluezqt/gattmanager.h
 include/KF5/BluezQt/bluezqt/gattservice.h
+include/KF5/BluezQt/bluezqt/gattserviceremote.h
 include/KF5/BluezQt/bluezqt/initmanagerjob.h
 include/KF5/BluezQt/bluezqt/initobexmanagerjob.h
 include/KF5/BluezQt/bluezqt/input.h

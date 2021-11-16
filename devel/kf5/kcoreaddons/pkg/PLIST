@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2021/10/13 15:02:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.15 2021/11/16 14:30:59 rsadowski Exp $
 @bin bin/desktoptojson
 include/KF5/
 include/KF5/KCoreAddons/
@@ -16,6 +16,7 @@ include/KF5/KCoreAddons/KFuzzyMatcher
 include/KF5/KCoreAddons/KJob
 include/KF5/KCoreAddons/KJobTrackerInterface
 include/KF5/KCoreAddons/KJobUiDelegate
+include/KF5/KCoreAddons/KJsonUtils
 include/KF5/KCoreAddons/KListOpenFilesJob
 include/KF5/KCoreAddons/KMacroExpander
 include/KF5/KCoreAddons/KMessage
@@ -54,6 +55,7 @@ include/KF5/KCoreAddons/kfuzzymatcher.h
 include/KF5/KCoreAddons/kjob.h
 include/KF5/KCoreAddons/kjobtrackerinterface.h
 include/KF5/KCoreAddons/kjobuidelegate.h
+include/KF5/KCoreAddons/kjsonutils.h
 include/KF5/KCoreAddons/klistopenfilesjob.h
 include/KF5/KCoreAddons/kmacroexpander.h
 include/KF5/KCoreAddons/kmessage.h
@@ -83,6 +85,8 @@ lib/cmake/KF5CoreAddons/KF5CoreAddonsTargets.cmake
 lib/cmake/KF5CoreAddons/KF5CoreAddonsToolingTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5CoreAddons/KF5CoreAddonsToolingTargets.cmake
 @lib lib/libKF5CoreAddons.so.${LIBKF5CoreAddons_VERSION}
+lib/qt5/plugins/namespace/
+@so lib/qt5/plugins/namespace/jsonplugin_cmake_macro.so
 share/kf5/
 share/kf5/licenses/
 share/kf5/licenses/ARTISTIC

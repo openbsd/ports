@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/13 12:04:14 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/16 14:31:01 rsadowski Exp $
 
 COMMENT =	Qt API to interact with the wayland-client and -server
 DISTNAME =	kwayland-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  KF5WaylandClient   0.0
 SHARED_LIBS +=  KF5WaylandServer   0.0
