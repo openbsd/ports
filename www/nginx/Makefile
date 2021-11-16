@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.158 2021/11/06 10:38:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.159 2021/11/16 19:14:51 robert Exp $
 
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 
@@ -17,13 +17,9 @@ COMMENT-passenger=	nginx passenger (ruby/python/nodejs) integration module
 COMMENT-rtmp=		nginx module for RTMP streaming
 COMMENT-securelink=	nginx HMAC secure link module
 
-VERSION=	1.20.1
+VERSION=	1.20.2
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
-
-REVISION-main=	0
-REVISION-lua=	0
-REVISION-passenger=	0
 
 VERSION-rtmp=	1.2.1
 
@@ -41,8 +37,6 @@ PKGNAME-perl=		nginx-perl-${VERSION}
 PKGNAME-passenger=	nginx-passenger-${VERSION}
 PKGNAME-rtmp=		nginx-rtmp-${VERSION}
 PKGNAME-securelink=	nginx-securelink-${VERSION}
-
-REVISION-main=		1
 
 ONLY_FOR_ARCHS-passenger= aarch64 amd64 arm i386
 
