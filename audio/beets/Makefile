@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.54 2021/11/02 00:00:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2021/11/16 16:20:03 sthen Exp $
 
 COMMENT=	CLI tools to manage music collections
 
-MODPY_EGG_VERSION= 1.4.9
+MODPY_EGG_VERSION= 1.5.0
 DISTNAME=	beets-${MODPY_EGG_VERSION}
 CATEGORIES=	audio
-REVISION=	12
 
 HOMEPAGE=	https://beets.io/
 
@@ -19,11 +18,13 @@ MODPY_PYTEST=	Yes
 
 RUN_DEPENDS+=	audio/py-discogs-client${MODPY_FLAVOR}>=2.0.2 \
 		audio/py-last${MODPY_FLAVOR} \
+		audio/py-mediafile${MODPY_FLAVOR} \
 		audio/py-musicbrainzngs${MODPY_FLAVOR} \
 		audio/py-mutagen${MODPY_FLAVOR} \
 		devel/py-algorithm-munkres${MODPY_FLAVOR} \
 		devel/py-six${MODPY_FLAVOR} \
 		devel/py-xdg${MODPY_FLAVOR} \
+		textproc/py-confuse${MODPY_FLAVOR} \
 		textproc/py-jellyfish${MODPY_FLAVOR} \
 		textproc/py-unidecode${MODPY_FLAVOR} \
 		textproc/py-yaml${MODPY_FLAVOR} \
@@ -40,6 +41,7 @@ TEST_DEPENDS=	archivers/py-rarfile${MODPY_FLAVOR} \
 		audio/py-mpd2${MODPY_FLAVOR} \
 		devel/py-mock${MODPY_FLAVOR} \
 		www/py-flask${MODPY_FLAVOR} \
+		www/py-requests-oauthlib${MODPY_FLAVOR} \
 		www/py-responses${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

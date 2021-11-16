@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2019/05/17 13:42:00 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.21 2021/11/16 16:20:03 sthen Exp $
 bin/beet
 lib/python${MODPY_VERSION}/site-packages/beets/
 lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -6,6 +6,7 @@ lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}-py${MODPY_VE
 lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
@@ -84,14 +85,17 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}absubmit.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}acousticbrainz.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}aura.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}badfiles.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}bareasc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}beatport.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}bench.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}bpm.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}bpsync.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}bucket.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}chroma.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}convert.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}cue.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}deezer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}discogs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}duplicates.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}edit.${MODPY_PYC_MAGIC_TAG}pyc
@@ -100,6 +104,7 @@ lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}embyupdate.${
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}export.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}fetchart.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}filefilter.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}fish.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}freedesktop.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}fromfilename.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}ftintitle.${MODPY_PYC_MAGIC_TAG}pyc
@@ -123,6 +128,7 @@ lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}mbsync.${MODP
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}missing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}mpdstats.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}mpdupdate.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}parentwork.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}permissions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}play.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}playlist.${MODPY_PYC_MAGIC_TAG}pyc
@@ -134,14 +140,18 @@ lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}scrub.${MODPY
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}smartplaylist.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}sonosupdate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}spotify.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}subsonicplaylist.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}subsonicupdate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}the.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}thumbnails.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}unimported.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}zero.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/absubmit.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/acousticbrainz.py
+lib/python${MODPY_VERSION}/site-packages/beetsplug/aura.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/badfiles.py
+lib/python${MODPY_VERSION}/site-packages/beetsplug/bareasc.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/beatport.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/bench.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/bpd/
@@ -151,10 +161,11 @@ lib/python${MODPY_VERSION}/site-packages/beetsplug/bpd/${MODPY_PYCACHE}__init__.
 lib/python${MODPY_VERSION}/site-packages/beetsplug/bpd/${MODPY_PYCACHE}gstplayer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/bpd/gstplayer.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/bpm.py
+lib/python${MODPY_VERSION}/site-packages/beetsplug/bpsync.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/bucket.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/chroma.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/convert.py
-lib/python${MODPY_VERSION}/site-packages/beetsplug/cue.py
+lib/python${MODPY_VERSION}/site-packages/beetsplug/deezer.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/discogs.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/duplicates.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/edit.py
@@ -163,6 +174,7 @@ lib/python${MODPY_VERSION}/site-packages/beetsplug/embyupdate.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/export.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/fetchart.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/filefilter.py
+lib/python${MODPY_VERSION}/site-packages/beetsplug/fish.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/freedesktop.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/fromfilename.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/ftintitle.py
@@ -200,6 +212,7 @@ lib/python${MODPY_VERSION}/site-packages/beetsplug/metasync/itunes.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/missing.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/mpdstats.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/mpdupdate.py
+lib/python${MODPY_VERSION}/site-packages/beetsplug/parentwork.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/permissions.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/play.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/playlist.py
@@ -211,10 +224,12 @@ lib/python${MODPY_VERSION}/site-packages/beetsplug/scrub.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/smartplaylist.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/sonosupdate.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/spotify.py
+lib/python${MODPY_VERSION}/site-packages/beetsplug/subsonicplaylist.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/subsonicupdate.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/the.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/thumbnails.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/types.py
+lib/python${MODPY_VERSION}/site-packages/beetsplug/unimported.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/web/
 lib/python${MODPY_VERSION}/site-packages/beetsplug/web/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/beetsplug/web/${MODPY_PYCACHE}/
