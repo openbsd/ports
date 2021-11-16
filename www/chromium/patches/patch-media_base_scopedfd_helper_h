@@ -1,9 +1,9 @@
-$OpenBSD: patch-media_base_scopedfd_helper_h,v 1.3 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-media_base_scopedfd_helper_h,v 1.4 2021/11/16 11:28:47 robert Exp $
 
 Index: media/base/scopedfd_helper.h
 --- media/base/scopedfd_helper.h.orig
 +++ media/base/scopedfd_helper.h
-@@ -14,7 +14,7 @@ namespace media {
+@@ -15,7 +15,7 @@ namespace media {
  // since the only current user is V4L2 we are limiting the scope to OS_LINUX so
  // the binary size does not inflate on non-using systems. Feel free to adapt
  // this and BUILD.gn as our needs evolve.

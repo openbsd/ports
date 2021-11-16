@@ -1,9 +1,9 @@
-$OpenBSD: patch-printing_print_settings_cc,v 1.11 2021/10/20 10:27:47 robert Exp $
+$OpenBSD: patch-printing_print_settings_cc,v 1.12 2021/11/16 11:28:47 robert Exp $
 
 Index: printing/print_settings.cc
 --- printing/print_settings.cc.orig
 +++ printing/print_settings.cc
-@@ -281,7 +281,7 @@ PrintSettings::PrintSettings(const PrintSettings& sett
+@@ -266,7 +266,7 @@ PrintSettings::PrintSettings(const PrintSettings& sett
  #endif
    is_modifiable_ = settings.is_modifiable_;
    pages_per_sheet_ = settings.pages_per_sheet_;
@@ -12,7 +12,7 @@ Index: printing/print_settings.cc
    for (const auto& item : settings.advanced_settings_)
      advanced_settings_.emplace(item.first, item.second.Clone());
  #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
-@@ -322,7 +322,7 @@ PrintSettings& PrintSettings::operator=(const PrintSet
+@@ -307,7 +307,7 @@ PrintSettings& PrintSettings::operator=(const PrintSet
  #endif
    is_modifiable_ = settings.is_modifiable_;
    pages_per_sheet_ = settings.pages_per_sheet_;
@@ -21,7 +21,7 @@ Index: printing/print_settings.cc
    for (const auto& item : settings.advanced_settings_)
      advanced_settings_.emplace(item.first, item.second.Clone());
  #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
-@@ -363,7 +363,7 @@ void PrintSettings::Clear() {
+@@ -348,7 +348,7 @@ void PrintSettings::Clear() {
  #endif
    is_modifiable_ = true;
    pages_per_sheet_ = 1;

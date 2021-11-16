@@ -1,4 +1,4 @@
-$OpenBSD: patch-headless_public_headless_browser_cc,v 1.1 2021/09/01 16:54:40 robert Exp $
+$OpenBSD: patch-headless_public_headless_browser_cc,v 1.2 2021/11/16 11:28:47 robert Exp $
 
 Index: headless/public/headless_browser.cc
 --- headless/public/headless_browser.cc.orig
@@ -7,8 +7,8 @@ Index: headless/public/headless_browser.cc
        user_agent(content::BuildUserAgentFromProduct(product_name_and_version)),
        window_size(kDefaultWindowSize),
        font_render_hinting(kDefaultFontRenderHinting) {
--#if (defined(OS_LINUX) && !defined(USE_OZONE)) || defined(OS_WIN)
-+#if (defined(OS_LINUX) && !defined(USE_OZONE)) || defined(OS_WIN) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_WIN)
++#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
    gl_implementation = gl::kGLImplementationANGLEName;
    angle_implementation = gl::kANGLEImplementationSwiftShaderForWebGLName;
  #endif

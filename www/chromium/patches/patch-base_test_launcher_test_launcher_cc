@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_test_launcher_test_launcher_cc,v 1.18 2021/10/20 10:27:44 robert Exp $
+$OpenBSD: patch-base_test_launcher_test_launcher_cc,v 1.19 2021/11/16 11:28:45 robert Exp $
 
 Index: base/test/launcher/test_launcher.cc
 --- base/test/launcher/test_launcher.cc.orig

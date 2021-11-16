@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_events_devices_x11_device_data_manager_x11_cc,v 1.28 2021/10/20 10:27:48 robert Exp $
+$OpenBSD: patch-ui_events_devices_x11_device_data_manager_x11_cc,v 1.29 2021/11/16 11:28:47 robert Exp $
 
 Index: ui/events/devices/x11/device_data_manager_x11.cc
 --- ui/events/devices/x11/device_data_manager_x11.cc.orig

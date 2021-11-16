@@ -1,18 +1,18 @@
-$OpenBSD: patch-chrome_browser_ui_startup_startup_browser_creator_cc,v 1.43 2021/10/20 10:27:46 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_startup_startup_browser_creator_cc,v 1.44 2021/11/16 11:28:46 robert Exp $
 
 Index: chrome/browser/ui/startup/startup_browser_creator.cc
 --- chrome/browser/ui/startup/startup_browser_creator.cc.orig
 +++ chrome/browser/ui/startup/startup_browser_creator.cc
-@@ -132,7 +132,7 @@
- 
- #include "chrome/browser/ui/startup/web_app_protocol_handling_startup_utils.h"
+@@ -124,7 +124,7 @@
+ #endif  // BUILDFLAG(ENABLE_PRINT_PREVIEW)
+ #endif  // defined(OS_WIN)
  
 -#if defined(OS_WIN) || defined(OS_MAC) || \
 +#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
      (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
  #include "chrome/browser/ui/startup/web_app_url_handling_startup_utils.h"
  #endif
-@@ -485,7 +485,7 @@ bool MaybeLaunchApplication(
+@@ -478,7 +478,7 @@ bool MaybeLaunchApplication(
    return false;
  }
  
@@ -21,7 +21,7 @@ Index: chrome/browser/ui/startup/startup_browser_creator.cc
  bool MaybeLaunchUrlHandlerWebAppFromCmd(
      const base::CommandLine& command_line,
      const base::FilePath& cur_dir,
-@@ -1117,7 +1117,7 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
+@@ -1103,7 +1103,7 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
  
    if (command_line.HasSwitch(switches::kAppId)) {
      std::string app_id = command_line.GetSwitchValueASCII(switches::kAppId);
@@ -30,7 +30,7 @@ Index: chrome/browser/ui/startup/startup_browser_creator.cc
      // If Chrome Apps are deprecated and |app_id| is a Chrome App, display the
      // deprecation UI instead of launching the app.
      if (apps::OpenDeprecatedApplicationPrompt(privacy_safe_profile, app_id))
-@@ -1196,7 +1196,7 @@ bool StartupBrowserCreator::StartupLaunchAfterProtocol
+@@ -1184,7 +1184,7 @@ bool StartupBrowserCreator::ContinueProcessingCommandL
    }
  
    // Web app URL handling.

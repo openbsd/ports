@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_renderer_chrome_render_frame_observer_cc,v 1.1 2021/09/01 16:54:39 robert Exp $
+$OpenBSD: patch-chrome_renderer_chrome_render_frame_observer_cc,v 1.2 2021/11/16 11:28:46 robert Exp $
 
 Index: chrome/renderer/chrome_render_frame_observer.cc
 --- chrome/renderer/chrome_render_frame_observer.cc.orig
 +++ chrome/renderer/chrome_render_frame_observer.cc
-@@ -281,7 +281,7 @@ void ChromeRenderFrameObserver::OnDestruct() {
+@@ -280,7 +280,7 @@ void ChromeRenderFrameObserver::OnDestruct() {
  }
  
  void ChromeRenderFrameObserver::DraggableRegionsChanged() {

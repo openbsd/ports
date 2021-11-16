@@ -1,4 +1,4 @@
-$OpenBSD: patch-sandbox_policy_switches_h,v 1.7 2021/10/20 10:27:48 robert Exp $
+$OpenBSD: patch-sandbox_policy_switches_h,v 1.8 2021/11/16 11:28:47 robert Exp $
 
 Index: sandbox/policy/switches.h
 --- sandbox/policy/switches.h.orig

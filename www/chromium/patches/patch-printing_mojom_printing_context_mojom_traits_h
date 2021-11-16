@@ -1,4 +1,4 @@
-$OpenBSD: patch-printing_mojom_printing_context_mojom_traits_h,v 1.1 2021/10/20 10:27:47 robert Exp $
+$OpenBSD: patch-printing_mojom_printing_context_mojom_traits_h,v 1.2 2021/11/16 11:28:47 robert Exp $
 
 Index: printing/mojom/printing_context_mojom_traits.h
 --- printing/mojom/printing_context_mojom_traits.h.orig

@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_download_download_commands_cc,v 1.27 2021/10/20 10:27:45 robert Exp $
+$OpenBSD: patch-chrome_browser_download_download_commands_cc,v 1.28 2021/11/16 11:28:46 robert Exp $
 
 Index: chrome/browser/download/download_commands.cc
 --- chrome/browser/download/download_commands.cc.orig
@@ -12,7 +12,7 @@ Index: chrome/browser/download/download_commands.cc
  #include "chrome/browser/ui/browser.h"
  #include "chrome/browser/ui/browser_finder.h"
  #include "chrome/browser/ui/scoped_tabbed_browser_displayer.h"
-@@ -166,7 +166,7 @@ void DownloadCommands::ExecuteCommand(Command command)
+@@ -169,7 +169,7 @@ void DownloadCommands::ExecuteCommand(Command command)
  }
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \

@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_services_file_util_public_mojom_safe_document_analyzer_mojom_traits_h,v 1.1 2021/10/20 10:27:46 robert Exp $
+$OpenBSD: patch-chrome_services_file_util_public_mojom_safe_document_analyzer_mojom_traits_h,v 1.2 2021/11/16 11:28:46 robert Exp $
 
 Index: chrome/services/file_util/public/mojom/safe_document_analyzer_mojom_traits.h
 --- chrome/services/file_util/public/mojom/safe_document_analyzer_mojom_traits.h.orig

@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_threading_platform_thread_h,v 1.16 2021/10/20 10:27:44 robert Exp $
+$OpenBSD: patch-base_threading_platform_thread_h,v 1.17 2021/11/16 11:28:45 robert Exp $
 
 Index: base/threading/platform_thread.h
 --- base/threading/platform_thread.h.orig

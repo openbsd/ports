@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_device_time_zone_monitor_time_zone_monitor_linux_cc,v 1.8 2021/01/20 07:28:11 robert Exp $
+$OpenBSD: patch-services_device_time_zone_monitor_time_zone_monitor_linux_cc,v 1.9 2021/11/16 11:28:47 robert Exp $
 
 Index: services/device/time_zone_monitor/time_zone_monitor_linux.cc
 --- services/device/time_zone_monitor/time_zone_monitor_linux.cc.orig
 +++ services/device/time_zone_monitor/time_zone_monitor_linux.cc
-@@ -125,7 +125,11 @@ class TimeZoneMonitorLinuxImpl
+@@ -127,7 +127,11 @@ class TimeZoneMonitorLinuxImpl
      // false positives are harmless, assuming the false positive rate is
      // reasonable.
      const char* const kFilesToWatch[] = {

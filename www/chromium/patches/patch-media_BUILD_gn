@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_BUILD_gn,v 1.18 2021/10/20 10:27:47 robert Exp $
+$OpenBSD: patch-media_BUILD_gn,v 1.19 2021/11/16 11:28:47 robert Exp $
 Index: media/BUILD.gn
 --- media/BUILD.gn.orig
 +++ media/BUILD.gn

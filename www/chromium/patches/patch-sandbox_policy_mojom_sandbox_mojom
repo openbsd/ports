@@ -1,4 +1,4 @@
-$OpenBSD: patch-sandbox_policy_mojom_sandbox_mojom,v 1.1 2021/10/20 10:27:48 robert Exp $
+$OpenBSD: patch-sandbox_policy_mojom_sandbox_mojom,v 1.2 2021/11/16 11:28:47 robert Exp $
 
 Index: sandbox/policy/mojom/sandbox.mojom
 --- sandbox/policy/mojom/sandbox.mojom.orig

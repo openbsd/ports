@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_gl_sync_control_vsync_provider_h,v 1.9 2020/10/22 13:52:55 robert Exp $
+$OpenBSD: patch-ui_gl_sync_control_vsync_provider_h,v 1.10 2021/11/16 11:28:47 robert Exp $
 
 Index: ui/gl/sync_control_vsync_provider.h
 --- ui/gl/sync_control_vsync_provider.h.orig
 +++ ui/gl/sync_control_vsync_provider.h
-@@ -26,7 +26,7 @@ class SyncControlVSyncProvider : public gfx::VSyncProv
+@@ -30,7 +30,7 @@ class SyncControlVSyncProvider : public gfx::VSyncProv
    bool SupportGetVSyncParametersIfAvailable() const override;
  
    static constexpr bool IsSupported() {
@@ -12,7 +12,7 @@ Index: ui/gl/sync_control_vsync_provider.h
      return true;
  #else
      return false;
-@@ -41,7 +41,7 @@ class SyncControlVSyncProvider : public gfx::VSyncProv
+@@ -45,7 +45,7 @@ class SyncControlVSyncProvider : public gfx::VSyncProv
    virtual bool GetMscRate(int32_t* numerator, int32_t* denominator) = 0;
  
   private:

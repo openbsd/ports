@@ -1,10 +1,10 @@
-$OpenBSD: patch-chrome_browser_extensions_api_enterprise_reporting_private_enterprise_reporting_private_api_h,v 1.1 2021/09/01 16:54:38 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_api_enterprise_reporting_private_enterprise_reporting_private_api_h,v 1.2 2021/11/16 11:28:46 robert Exp $
 
 Index: chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.h
 --- chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.h.orig
 +++ chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.h
-@@ -41,7 +41,7 @@ class EnterpriseReportingPrivateGetDeviceIdFunction : 
-   DISALLOW_COPY_AND_ASSIGN(EnterpriseReportingPrivateGetDeviceIdFunction);
+@@ -45,7 +45,7 @@ class EnterpriseReportingPrivateGetDeviceIdFunction : 
+   ~EnterpriseReportingPrivateGetDeviceIdFunction() override;
  };
  
 -#if !defined(OS_LINUX)

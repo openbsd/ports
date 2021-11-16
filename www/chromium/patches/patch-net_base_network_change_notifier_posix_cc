@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_base_network_change_notifier_posix_cc,v 1.9 2021/09/01 16:54:40 robert Exp $
+$OpenBSD: patch-net_base_network_change_notifier_posix_cc,v 1.10 2021/11/16 11:28:47 robert Exp $
 
 Index: net/base/network_change_notifier_posix.cc
 --- net/base/network_change_notifier_posix.cc.orig
@@ -11,4 +11,4 @@ Index: net/base/network_change_notifier_posix.cc
 +#if BUILDFLAG(IS_CHROMEOS_ASH) || defined(OS_BSD)
    // Delay values arrived at by simple experimentation and adjusted so as to
    // produce a single signal when switching between network connections.
-   params.ip_address_offline_delay_ = base::TimeDelta::FromMilliseconds(4000);
+   params.ip_address_offline_delay_ = base::Milliseconds(4000);

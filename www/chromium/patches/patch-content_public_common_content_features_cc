@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_public_common_content_features_cc,v 1.26 2021/10/20 10:27:47 robert Exp $
+$OpenBSD: patch-content_public_common_content_features_cc,v 1.27 2021/11/16 11:28:46 robert Exp $
 
 Index: content/public/common/content_features.cc
 --- content/public/common/content_features.cc.orig
@@ -21,7 +21,7 @@ Index: content/public/common/content_features.cc
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -920,7 +920,7 @@ const base::Feature kWebAssemblyBaseline{"WebAssemblyB
+@@ -902,7 +902,7 @@ const base::Feature kWebAssemblyBaseline{"WebAssemblyB
  const base::Feature kWebAssemblyCodeProtection{
      "WebAssemblyCodeProtection", base::FEATURE_DISABLED_BY_DEFAULT};
  
@@ -30,7 +30,7 @@ Index: content/public/common/content_features.cc
  // Use memory protection keys in userspace (PKU) (if available) to protect code
  // JITed for WebAssembly. Fall back to traditional memory protection if
  // WebAssemblyCodeProtection is also enabled.
-@@ -946,7 +946,7 @@ const base::Feature kWebAssemblyTiering{"WebAssemblyTi
+@@ -928,7 +928,7 @@ const base::Feature kWebAssemblyTiering{"WebAssemblyTi
  const base::Feature kWebAssemblyTrapHandler {
    "WebAssemblyTrapHandler",
  #if (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_WIN) || \
@@ -39,7 +39,7 @@ Index: content/public/common/content_features.cc
      defined(ARCH_CPU_X86_64)
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
-@@ -971,7 +971,7 @@ const base::Feature kWebAuthCable {
+@@ -954,7 +954,7 @@ const base::Feature kWebAuthCable {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  // If updating this, also update kWebAuthCableServerLink.
@@ -48,7 +48,7 @@ Index: content/public/common/content_features.cc
        base::FEATURE_DISABLED_BY_DEFAULT
  #else
        base::FEATURE_ENABLED_BY_DEFAULT
-@@ -1036,7 +1036,11 @@ const base::Feature kWebUIReportOnlyTrustedTypes{
+@@ -1024,7 +1024,11 @@ const base::Feature kWebUIReportOnlyTrustedTypes{
  
  // Controls whether the WebUSB API is enabled:
  // https://wicg.github.io/webusb
@@ -60,7 +60,7 @@ Index: content/public/common/content_features.cc
  
  // Controls whether the WebXR Device API is enabled.
  const base::Feature kWebXr{"WebXR", base::FEATURE_ENABLED_BY_DEFAULT};
-@@ -1104,7 +1108,7 @@ const base::Feature kRetryGetVideoCaptureDeviceInfos{
+@@ -1094,7 +1098,7 @@ const base::Feature kRetryGetVideoCaptureDeviceInfos{
  
  #endif  // defined(OS_MAC)
  

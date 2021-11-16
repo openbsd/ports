@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_updater_device_management_cloud_policy_util_cc,v 1.1 2021/09/01 16:54:39 robert Exp $
+$OpenBSD: patch-chrome_updater_device_management_cloud_policy_util_cc,v 1.2 2021/11/16 11:28:46 robert Exp $
 
 Index: chrome/updater/device_management/cloud_policy_util.cc
 --- chrome/updater/device_management/cloud_policy_util.cc.orig
 +++ chrome/updater/device_management/cloud_policy_util.cc
-@@ -21,7 +21,7 @@
+@@ -22,7 +22,7 @@
  #include <wincred.h>
  #endif
  
@@ -12,7 +12,7 @@ Index: chrome/updater/device_management/cloud_policy_util.cc
  #include <pwd.h>
  #include <sys/types.h>
  #include <unistd.h>
-@@ -35,7 +35,7 @@
+@@ -36,7 +36,7 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -21,7 +21,7 @@ Index: chrome/updater/device_management/cloud_policy_util.cc
  #include <limits.h>  // For HOST_NAME_MAX
  #endif
  
-@@ -62,7 +62,7 @@
+@@ -63,7 +63,7 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -30,7 +30,7 @@ Index: chrome/updater/device_management/cloud_policy_util.cc
  #include "base/system/sys_info.h"
  #endif
  
-@@ -110,7 +110,7 @@ std::string GetPolicyVerificationKey() {
+@@ -111,7 +111,7 @@ std::string GetPolicyVerificationKey() {
  std::string GetMachineName() {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -39,7 +39,7 @@ Index: chrome/updater/device_management/cloud_policy_util.cc
    char hostname[HOST_NAME_MAX];
    if (gethostname(hostname, HOST_NAME_MAX) == 0)  // Success.
      return hostname;
-@@ -160,7 +160,7 @@ std::string GetMachineName() {
+@@ -161,7 +161,7 @@ std::string GetMachineName() {
  }
  
  std::string GetOSVersion() {

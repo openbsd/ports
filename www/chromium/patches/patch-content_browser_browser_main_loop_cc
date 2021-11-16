@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.79 2021/10/20 10:27:47 robert Exp $
+$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.80 2021/11/16 11:28:46 robert Exp $
 
 Index: content/browser/browser_main_loop.cc
 --- content/browser/browser_main_loop.cc.orig
@@ -16,7 +16,7 @@ Index: content/browser/browser_main_loop.cc
  // One of the linux specific headers defines this as a macro.
  #ifdef DestroyAll
  #undef DestroyAll
-@@ -514,6 +520,12 @@ int BrowserMainLoop::EarlyInitialization() {
+@@ -515,6 +521,12 @@ int BrowserMainLoop::EarlyInitialization() {
    // by now since a thread to start the ServiceManager has been created
    // before the browser main loop starts.
    DCHECK(SandboxHostLinux::GetInstance()->IsInitialized());
@@ -29,7 +29,7 @@ Index: content/browser/browser_main_loop.cc
  #endif
  
  #if defined(USE_X11)
-@@ -548,7 +560,7 @@ int BrowserMainLoop::EarlyInitialization() {
+@@ -549,7 +561,7 @@ int BrowserMainLoop::EarlyInitialization() {
  
    // Up the priority of the UI thread unless it was already high (since Mac
    // and recent versions of Android (O+) do this automatically).

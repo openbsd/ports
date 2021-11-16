@@ -1,9 +1,9 @@
-$OpenBSD: patch-net_dns_BUILD_gn,v 1.3 2021/09/01 16:54:40 robert Exp $
+$OpenBSD: patch-net_dns_BUILD_gn,v 1.4 2021/11/16 11:28:47 robert Exp $
 
 Index: net/dns/BUILD.gn
 --- net/dns/BUILD.gn.orig
 +++ net/dns/BUILD.gn
-@@ -110,7 +110,7 @@ source_set("dns") {
+@@ -111,7 +111,7 @@ source_set("dns") {
        "dns_config_service_android.cc",
        "dns_config_service_android.h",
      ]

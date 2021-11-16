@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_scheduler_responsiveness_jank_monitor_impl_cc,v 1.7 2021/09/01 16:54:39 robert Exp $
+$OpenBSD: patch-content_browser_scheduler_responsiveness_jank_monitor_impl_cc,v 1.8 2021/11/16 11:28:46 robert Exp $
 
 Index: content/browser/scheduler/responsiveness/jank_monitor_impl.cc
 --- content/browser/scheduler/responsiveness/jank_monitor_impl.cc.orig
 +++ content/browser/scheduler/responsiveness/jank_monitor_impl.cc
-@@ -334,7 +334,7 @@ void JankMonitorImpl::ThreadExecutionState::DidRunTask
+@@ -333,7 +333,7 @@ void JankMonitorImpl::ThreadExecutionState::DidRunTask
      // in context menus, among others). Simply ignore the mismatches for now.
      // See https://crbug.com/929813 for the details of why the mismatch
      // happens.

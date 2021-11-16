@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_webui_url_constants_cc,v 1.32 2021/10/20 10:27:46 robert Exp $
+$OpenBSD: patch-chrome_common_webui_url_constants_cc,v 1.33 2021/11/16 11:28:46 robert Exp $
 
 Index: chrome/common/webui_url_constants.cc
 --- chrome/common/webui_url_constants.cc.orig
 +++ chrome/common/webui_url_constants.cc
-@@ -372,13 +372,13 @@ const char kChromeUIOSSettingsHost[] = "os-settings";
+@@ -380,18 +380,18 @@ const char kChromeUIOSSettingsHost[] = "os-settings";
  const char kChromeUIOSSettingsURL[] = "chrome://os-settings/";
  #endif
  
@@ -16,10 +16,16 @@ Index: chrome/common/webui_url_constants.cc
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
 +    defined(OS_CHROMEOS) || defined(OS_BSD)
+ const char kChromeUIConnectorsInternalsHost[] = "connectors-internals";
+ #endif
+ 
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
  const char kChromeUIDiscardsHost[] = "discards";
  const char kChromeUIDiscardsURL[] = "chrome://discards/";
  #endif
-@@ -393,14 +393,14 @@ const char kChromeUILinuxProxyConfigHost[] = "linux-pr
+@@ -406,14 +406,14 @@ const char kChromeUILinuxProxyConfigHost[] = "linux-pr
  #endif
  
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
@@ -36,7 +42,7 @@ Index: chrome/common/webui_url_constants.cc
  const char kChromeUIBrowserSwitchHost[] = "browser-switch";
  const char kChromeUIBrowserSwitchURL[] = "chrome://browser-switch/";
  const char kChromeUIEnterpriseProfileWelcomeHost[] =
-@@ -415,7 +415,7 @@ const char kChromeUIProfilePickerUrl[] = "chrome://pro
+@@ -428,7 +428,7 @@ const char kChromeUIProfilePickerUrl[] = "chrome://pro
  const char kChromeUIProfilePickerStartupQuery[] = "startup";
  #endif
  
@@ -45,8 +51,13 @@ Index: chrome/common/webui_url_constants.cc
      defined(USE_AURA)
  const char kChromeUITabModalConfirmDialogHost[] = "tab-modal-confirm-dialog";
  #endif
-@@ -602,14 +602,14 @@ const char* const kChromeHostURLs[] = {
+@@ -618,18 +618,18 @@ const char* const kChromeHostURLs[] = {
      kChromeUIAssistantOptInHost,
+ #endif
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+     kChromeUIConnectorsInternalsHost,
  #endif
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
@@ -62,7 +73,7 @@ Index: chrome/common/webui_url_constants.cc
      kChromeUISandboxHost,
  #endif
  #if defined(OS_WIN)
-@@ -671,7 +671,7 @@ const char* const kChromeDebugURLs[] = {
+@@ -691,7 +691,7 @@ const char* const kChromeDebugURLs[] = {
      blink::kChromeUIGpuJavaCrashURL,
      kChromeUIJavaCrashURL,
  #endif

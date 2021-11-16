@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_x_generated_protos_dri3_cc,v 1.2 2021/10/20 10:27:48 robert Exp $
+$OpenBSD: patch-ui_gfx_x_generated_protos_dri3_cc,v 1.3 2021/11/16 11:28:47 robert Exp $
 
 Index: ui/gfx/x/generated_protos/dri3.cc
 --- ui/gfx/x/generated_protos/dri3.cc.orig

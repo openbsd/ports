@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_public_common_content_features_h,v 1.8 2021/10/20 10:27:47 robert Exp $
+$OpenBSD: patch-content_public_common_content_features_h,v 1.9 2021/11/16 11:28:47 robert Exp $
 
 Index: content/public/common/content_features.h
 --- content/public/common/content_features.h.orig
@@ -12,7 +12,7 @@ Index: content/public/common/content_features.h
  CONTENT_EXPORT extern const base::Feature kWebAssemblyCodeProtectionPku;
  #endif  // (defined(OS_LINUX) || defined(OS_CHROMEOS)) &&
          // defined(ARCH_CPU_X86_64)
-@@ -280,7 +280,7 @@ CONTENT_EXPORT extern const base::Feature kMacSyscallS
+@@ -281,7 +281,7 @@ CONTENT_EXPORT extern const base::Feature kMacSyscallS
  CONTENT_EXPORT extern const base::Feature kRetryGetVideoCaptureDeviceInfos;
  #endif  // defined(OS_MAC)
  

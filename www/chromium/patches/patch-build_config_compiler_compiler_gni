@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_config_compiler_compiler_gni,v 1.26 2021/10/20 10:27:44 robert Exp $
+$OpenBSD: patch-build_config_compiler_compiler_gni,v 1.27 2021/11/16 11:28:45 robert Exp $
 
 Index: build/config/compiler/compiler.gni
 --- build/config/compiler/compiler.gni.orig

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_printing_print_job_worker_cc,v 1.8 2021/09/01 16:54:38 robert Exp $
+$OpenBSD: patch-chrome_browser_printing_print_job_worker_cc,v 1.9 2021/11/16 11:28:46 robert Exp $
 
 Index: chrome/browser/printing/print_job_worker.cc
 --- chrome/browser/printing/print_job_worker.cc.orig
 +++ chrome/browser/printing/print_job_worker.cc
-@@ -224,7 +224,7 @@ void PrintJobWorker::UpdatePrintSettings(base::Value n
+@@ -287,7 +287,7 @@ void PrintJobWorker::UpdatePrintSettings(base::Value n
      crash_key = std::make_unique<crash_keys::ScopedPrinterInfo>(
          print_backend->GetPrinterDriverInfo(printer_name));
  

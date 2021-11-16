@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_base_media_switches_h,v 1.9 2021/10/20 10:27:47 robert Exp $
+$OpenBSD: patch-media_base_media_switches_h,v 1.10 2021/11/16 11:28:47 robert Exp $
 
 Index: media/base/media_switches.h
 --- media/base/media_switches.h.orig
@@ -12,7 +12,7 @@ Index: media/base/media_switches.h
  MEDIA_EXPORT extern const char kAlsaInputDevice[];
  MEDIA_EXPORT extern const char kAlsaOutputDevice[];
  #endif
-@@ -190,7 +190,7 @@ MEDIA_EXPORT extern const base::Feature kUseFakeDevice
+@@ -193,7 +193,7 @@ MEDIA_EXPORT extern const base::Feature kUseFakeDevice
  MEDIA_EXPORT extern const base::Feature kUseMediaHistoryStore;
  MEDIA_EXPORT extern const base::Feature kUseR16Texture;
  MEDIA_EXPORT extern const base::Feature kUseSodaForLiveCaption;

@@ -1,9 +1,9 @@
-$OpenBSD: patch-remoting_host_heartbeat_sender_cc,v 1.8 2021/09/01 16:54:40 robert Exp $
+$OpenBSD: patch-remoting_host_heartbeat_sender_cc,v 1.9 2021/11/16 11:28:47 robert Exp $
 
 Index: remoting/host/heartbeat_sender.cc
 --- remoting/host/heartbeat_sender.cc.orig
 +++ remoting/host/heartbeat_sender.cc
-@@ -115,7 +115,7 @@ const net::BackoffEntry::Policy kBackoffPolicy = {
+@@ -111,7 +111,7 @@ const net::BackoffEntry::Policy kBackoffPolicy = {
  std::string GetHostname() {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag
  // switch of lacros-chrome is complete.

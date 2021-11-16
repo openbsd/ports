@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_viz_common_features_cc,v 1.13 2021/10/20 10:27:47 robert Exp $
+$OpenBSD: patch-components_viz_common_features_cc,v 1.14 2021/11/16 11:28:46 robert Exp $
 
 Index: components/viz/common/features.cc
 --- components/viz/common/features.cc.orig
 +++ components/viz/common/features.cc
-@@ -46,7 +46,7 @@ const base::Feature kSimpleFrameRateThrottling{
+@@ -54,7 +54,7 @@ const base::Feature kSimpleFrameRateThrottling{
  const base::Feature kUseSkiaRenderer {
    "UseSkiaRenderer",
  #if defined(OS_WIN) || defined(OS_ANDROID) || BUILDFLAG(IS_CHROMEOS_LACROS) || \

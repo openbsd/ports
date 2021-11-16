@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_fonts_skia_font_cache_skia_cc,v 1.18 2021/10/20 10:27:48 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_fonts_skia_font_cache_skia_cc,v 1.19 2021/11/16 11:28:47 robert Exp $
 
 Index: third_party/blink/renderer/platform/fonts/skia/font_cache_skia.cc
 --- third_party/blink/renderer/platform/fonts/skia/font_cache_skia.cc.orig
@@ -12,7 +12,7 @@ Index: third_party/blink/renderer/platform/fonts/skia/font_cache_skia.cc
  // This function is called on android or when we are emulating android fonts on
  // linux and the embedder has overriden the default fontManager with
  // WebFontRendering::setSkiaFontMgr.
-@@ -237,7 +237,7 @@ sk_sp<SkTypeface> FontCache::CreateTypeface(
+@@ -242,7 +242,7 @@ sk_sp<SkTypeface> FontCache::CreateTypeface(
    }
  #endif
  
@@ -21,7 +21,7 @@ Index: third_party/blink/renderer/platform/fonts/skia/font_cache_skia.cc
    // On linux if the fontManager has been overridden then we should be calling
    // the embedder provided font Manager rather than calling
    // SkTypeface::CreateFromName which may redirect the call to the default font
-@@ -264,7 +264,7 @@ std::unique_ptr<FontPlatformData> FontCache::CreateFon
+@@ -269,7 +269,7 @@ std::unique_ptr<FontPlatformData> FontCache::CreateFon
    std::string name;
  
    sk_sp<SkTypeface> typeface;

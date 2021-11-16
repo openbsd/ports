@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_web_applications_web_app_shortcut_h,v 1.1 2021/10/20 10:27:46 robert Exp $
+$OpenBSD: patch-chrome_browser_web_applications_web_app_shortcut_h,v 1.2 2021/11/16 11:28:46 robert Exp $
 
 Index: chrome/browser/web_applications/web_app_shortcut.h
 --- chrome/browser/web_applications/web_app_shortcut.h.orig
@@ -12,16 +12,16 @@ Index: chrome/browser/web_applications/web_app_shortcut.h
  #include "chrome/browser/web_applications/web_app_shortcut_linux.h"
  #endif  // defined(OS_LINUX)
  
-@@ -43,7 +43,7 @@ struct ShortcutOverrideForTesting {
-   base::FilePath startup;
+@@ -46,7 +46,7 @@ struct ScopedShortcutOverrideForTesting {
+   base::ScopedTempDir startup;
  #elif defined(OS_MAC)
-   base::FilePath chrome_apps_folder;
+   base::ScopedTempDir chrome_apps_folder;
 -#elif defined(OS_LINUX)
 +#elif defined(OS_LINUX) || defined(OS_BSD)
-   base::FilePath desktop;
- #else
+   base::ScopedTempDir desktop;
  #endif
-@@ -75,7 +75,7 @@ struct ShortcutInfo {
+ };
+@@ -88,7 +88,7 @@ struct ShortcutInfo {
    std::set<std::string> file_handler_extensions;
    std::set<std::string> file_handler_mime_types;
    std::set<std::string> protocol_handlers;

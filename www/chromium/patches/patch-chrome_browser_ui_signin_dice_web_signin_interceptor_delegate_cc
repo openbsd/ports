@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_signin_dice_web_signin_interceptor_delegate_cc,v 1.2 2021/10/20 10:27:46 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_signin_dice_web_signin_interceptor_delegate_cc,v 1.3 2021/11/16 11:28:46 robert Exp $
 
 Index: chrome/browser/ui/signin/dice_web_signin_interceptor_delegate.cc
 --- chrome/browser/ui/signin/dice_web_signin_interceptor_delegate.cc.orig
 +++ chrome/browser/ui/signin/dice_web_signin_interceptor_delegate.cc
-@@ -57,7 +57,7 @@ class ForcedEnterpriseSigninInterceptionHandle
+@@ -58,7 +58,7 @@ class ForcedEnterpriseSigninInterceptionHandle
    void ShowEnterpriseProfileInterceptionDialog(const AccountInfo& account_info,
                                                 SkColor profile_color) {
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \

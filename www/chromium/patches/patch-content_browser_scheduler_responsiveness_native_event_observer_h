@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_scheduler_responsiveness_native_event_observer_h,v 1.5 2021/09/01 16:54:39 robert Exp $
+$OpenBSD: patch-content_browser_scheduler_responsiveness_native_event_observer_h,v 1.6 2021/11/16 11:28:46 robert Exp $
 
 Index: content/browser/scheduler/responsiveness/native_event_observer.h
 --- content/browser/scheduler/responsiveness/native_event_observer.h.orig
@@ -27,10 +27,10 @@ Index: content/browser/scheduler/responsiveness/native_event_observer.h
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
-   ~NativeEventObserver() override;
- #else
-   virtual ~NativeEventObserver();
-@@ -70,7 +70,7 @@ class CONTENT_EXPORT NativeEventObserver
+ 
+   NativeEventObserver(const NativeEventObserver&) = delete;
+   NativeEventObserver& operator=(const NativeEventObserver&) = delete;
+@@ -74,7 +74,7 @@ class CONTENT_EXPORT NativeEventObserver
    // Exposed for tests.
    void WillRunNativeEvent(const void* opaque_identifier) override;
    void DidRunNativeEvent(const void* opaque_identifier) override;
@@ -39,7 +39,7 @@ Index: content/browser/scheduler/responsiveness/native_event_observer.h
    // aura::WindowEventDispatcherObserver overrides:
    void OnWindowEventDispatcherStartedProcessing(
        aura::WindowEventDispatcher* dispatcher,
-@@ -87,7 +87,7 @@ class CONTENT_EXPORT NativeEventObserver
+@@ -91,7 +91,7 @@ class CONTENT_EXPORT NativeEventObserver
    void RegisterObserver();
    void DeregisterObserver();
  

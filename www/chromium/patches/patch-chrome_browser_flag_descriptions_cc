@@ -1,18 +1,18 @@
-$OpenBSD: patch-chrome_browser_flag_descriptions_cc,v 1.45 2021/10/20 10:27:45 robert Exp $
+$OpenBSD: patch-chrome_browser_flag_descriptions_cc,v 1.46 2021/11/16 11:28:46 robert Exp $
 
 Index: chrome/browser/flag_descriptions.cc
 --- chrome/browser/flag_descriptions.cc.orig
 +++ chrome/browser/flag_descriptions.cc
-@@ -5230,7 +5230,7 @@ const char kDownloadShelfWebUIDescription[] =
+@@ -5271,7 +5271,7 @@ const char kDownloadShelfWebUIDescription[] =
  // Random platform combinations -----------------------------------------------
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
 +    defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
  
- const char kEnableOopPrintDriversName[] =
-     "Enables Out-of-Process Printer Drivers";
-@@ -5256,7 +5256,7 @@ const char kSettingsLandingPageRedesignDescription[] =
+ const char kWebUIBrandingUpdateName[] = "WebUI Branding Update";
+ const char kWebUIBrandingUpdateDescription[] =
+@@ -5291,7 +5291,7 @@ const char kSettingsLandingPageRedesignDescription[] =
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) ||
          // defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
  
@@ -21,7 +21,7 @@ Index: chrome/browser/flag_descriptions.cc
  
  const char kCommanderName[] = "Commander";
  const char kCommanderDescription[] =
-@@ -5274,7 +5274,7 @@ const char kDesktopDetailedLanguageSettingsDescription
+@@ -5309,7 +5309,7 @@ const char kDesktopDetailedLanguageSettingsDescription
  
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
  
@@ -30,7 +30,7 @@ Index: chrome/browser/flag_descriptions.cc
  #if BUILDFLAG(USE_TCMALLOC)
  const char kDynamicTcmallocName[] = "Dynamic Tcmalloc Tuning";
  const char kDynamicTcmallocDescription[] =
-@@ -5378,7 +5378,7 @@ const char kElasticOverscrollDescription[] =
+@@ -5437,7 +5437,7 @@ const char kElasticOverscrollDescription[] =
  #endif  // defined(OS_WIN) || defined(OS_ANDROID)
  
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \

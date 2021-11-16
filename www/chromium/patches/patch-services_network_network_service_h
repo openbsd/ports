@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_network_network_service_h,v 1.25 2021/10/20 10:27:48 robert Exp $
+$OpenBSD: patch-services_network_network_service_h,v 1.26 2021/11/16 11:28:47 robert Exp $
 
 Index: services/network/network_service.h
 --- services/network/network_service.h.orig
 +++ services/network/network_service.h
-@@ -162,7 +162,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
+@@ -165,7 +165,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
        base::span<const uint8_t> crl_set,
        mojom::NetworkService::UpdateCRLSetCallback callback) override;
    void OnCertDBChanged() override;

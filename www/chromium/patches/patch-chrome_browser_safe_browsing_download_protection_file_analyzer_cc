@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_safe_browsing_download_protection_file_analyzer_cc,v 1.1 2021/10/20 10:27:45 robert Exp $
+$OpenBSD: patch-chrome_browser_safe_browsing_download_protection_file_analyzer_cc,v 1.2 2021/11/16 11:28:46 robert Exp $
 
 Index: chrome/browser/safe_browsing/download_protection/file_analyzer.cc
 --- chrome/browser/safe_browsing/download_protection/file_analyzer.cc.orig
@@ -21,7 +21,7 @@ Index: chrome/browser/safe_browsing/download_protection/file_analyzer.cc
    } else if (base::FeatureList::IsEnabled(
                   safe_browsing::kClientSideDetectionDocumentScanning) &&
               inspection_type == DownloadFileType::OFFICE_DOCUMENT) {
-@@ -292,7 +292,7 @@ void FileAnalyzer::OnDmgAnalysisFinished(
+@@ -291,7 +291,7 @@ void FileAnalyzer::OnDmgAnalysisFinished(
  }
  #endif  // defined(OS_MAC)
  

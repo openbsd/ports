@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_views_chrome_views_delegate_h,v 1.19 2021/09/01 16:54:38 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_chrome_views_delegate_h,v 1.20 2021/11/16 11:28:46 robert Exp $
 
 Index: chrome/browser/ui/views/chrome_views_delegate.h
 --- chrome/browser/ui/views/chrome_views_delegate.h.orig
 +++ chrome/browser/ui/views/chrome_views_delegate.h
-@@ -50,7 +50,7 @@ class ChromeViewsDelegate : public views::ViewsDelegat
+@@ -54,7 +54,7 @@ class ChromeViewsDelegate : public views::ViewsDelegat
                               base::OnceClosure callback) override;
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

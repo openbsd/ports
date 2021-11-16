@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gl_init_gl_factory_cc,v 1.3 2021/10/20 10:27:48 robert Exp $
+$OpenBSD: patch-ui_gl_init_gl_factory_cc,v 1.4 2021/11/16 11:28:47 robert Exp $
 
 Index: ui/gl/init/gl_factory.cc
 --- ui/gl/init/gl_factory.cc.orig
@@ -6,7 +6,7 @@ Index: ui/gl/init/gl_factory.cc
 @@ -167,7 +167,7 @@ bool InitializeGLOneOffPlatformHelper(bool init_extens
  }  // namespace
  
- GLImplementationParts GetSoftwareGLForTestsImplementation() {
+ GLImplementationParts GetSoftwareGLImplementationForPlatform() {
 -#if defined(OS_WIN) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
    return GetSoftwareGLImplementation();

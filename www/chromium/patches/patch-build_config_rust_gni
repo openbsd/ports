@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_config_rust_gni,v 1.1 2021/10/20 10:27:45 robert Exp $
+$OpenBSD: patch-build_config_rust_gni,v 1.2 2021/11/16 11:28:45 robert Exp $
 
 Index: build/config/rust.gni
 --- build/config/rust.gni.orig

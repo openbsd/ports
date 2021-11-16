@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_performance_monitor_process_monitor_h,v 1.6 2021/10/20 10:27:45 robert Exp $
+$OpenBSD: patch-chrome_browser_performance_monitor_process_monitor_h,v 1.7 2021/11/16 11:28:46 robert Exp $
 
 Index: chrome/browser/performance_monitor/process_monitor.h
 --- chrome/browser/performance_monitor/process_monitor.h.orig
 +++ chrome/browser/performance_monitor/process_monitor.h
-@@ -58,7 +58,7 @@ class ProcessMonitor {
+@@ -57,7 +57,7 @@ class ProcessMonitor {
      double cpu_usage = 0.0;
  
  #if defined(OS_MAC) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \

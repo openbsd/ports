@@ -1,4 +1,4 @@
-$OpenBSD: patch-gpu_ipc_service_gpu_watchdog_thread_cc,v 1.23 2021/10/20 10:27:47 robert Exp $
+$OpenBSD: patch-gpu_ipc_service_gpu_watchdog_thread_cc,v 1.24 2021/11/16 11:28:47 robert Exp $
 
 Index: gpu/ipc/service/gpu_watchdog_thread.cc
 --- gpu/ipc/service/gpu_watchdog_thread.cc.orig
@@ -30,7 +30,7 @@ Index: gpu/ipc/service/gpu_watchdog_thread.cc
    UpdateActiveTTY();
  #endif
  
-@@ -743,7 +743,7 @@ bool GpuWatchdogThread::WithinOneMinFromForegrounded()
+@@ -740,7 +740,7 @@ bool GpuWatchdogThread::WithinOneMinFromForegrounded()
    return foregrounded_event_ && num_of_timeout_after_foregrounded_ <= count;
  }
  
@@ -39,7 +39,7 @@ Index: gpu/ipc/service/gpu_watchdog_thread.cc
  void GpuWatchdogThread::UpdateActiveTTY() {
    last_active_tty_ = active_tty_;
  
-@@ -760,7 +760,7 @@ void GpuWatchdogThread::UpdateActiveTTY() {
+@@ -757,7 +757,7 @@ void GpuWatchdogThread::UpdateActiveTTY() {
  #endif
  
  bool GpuWatchdogThread::ContinueOnNonHostX11ServerTty() {

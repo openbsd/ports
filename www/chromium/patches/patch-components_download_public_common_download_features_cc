@@ -1,0 +1,14 @@
+$OpenBSD: patch-components_download_public_common_download_features_cc,v 1.1 2021/11/16 11:28:46 robert Exp $
+
+Index: components/download/public/common/download_features.cc
+--- components/download/public/common/download_features.cc.orig
++++ components/download/public/common/download_features.cc
+@@ -72,7 +72,7 @@ const base::Feature kDeleteOverwrittenDownloads{
+ 
+ const base::Feature kAllowFileBufferSizeControl{
+   "AllowFileBufferSizeControl",
+-#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
+       base::FEATURE_ENABLED_BY_DEFAULT
+ #else
+       base::FEATURE_DISABLED_BY_DEFAULT

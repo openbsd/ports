@@ -1,4 +1,4 @@
-$OpenBSD: patch-sandbox_policy_BUILD_gn,v 1.8 2021/10/20 10:27:48 robert Exp $
+$OpenBSD: patch-sandbox_policy_BUILD_gn,v 1.9 2021/11/16 11:28:47 robert Exp $
 
 Index: sandbox/policy/BUILD.gn
 --- sandbox/policy/BUILD.gn.orig
@@ -12,7 +12,7 @@ Index: sandbox/policy/BUILD.gn
      sources += [
        "linux/bpf_audio_policy_linux.cc",
        "linux/bpf_audio_policy_linux.h",
-@@ -85,6 +85,16 @@ component("policy") {
+@@ -89,6 +89,16 @@ component("policy") {
        "//sandbox/linux:seccomp_bpf",
        "//sandbox/linux:suid_sandbox_client",
      ]

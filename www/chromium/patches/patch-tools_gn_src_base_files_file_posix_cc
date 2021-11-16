@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_gn_src_base_files_file_posix_cc,v 1.3 2021/10/20 10:27:48 robert Exp $
+$OpenBSD: patch-tools_gn_src_base_files_file_posix_cc,v 1.4 2021/11/16 11:28:47 robert Exp $
 
 Index: tools/gn/src/base/files/file_posix.cc
 --- tools/gn/src/base/files/file_posix.cc.orig

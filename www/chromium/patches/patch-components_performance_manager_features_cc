@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_performance_manager_features_cc,v 1.3 2021/10/20 10:27:46 robert Exp $
+$OpenBSD: patch-components_performance_manager_features_cc,v 1.4 2021/11/16 11:28:46 robert Exp $
 
 Index: components/performance_manager/features.cc
 --- components/performance_manager/features.cc.orig
 +++ components/performance_manager/features.cc
-@@ -57,7 +57,7 @@ const base::Feature kUrgentDiscardingFromPerformanceMa
+@@ -22,7 +22,7 @@ const base::Feature kUrgentDiscardingFromPerformanceMa
    "UrgentDiscardingFromPerformanceManager",
  // Ash Chrome uses memory pressure evaluator instead of performance manager to
  // discard tabs.

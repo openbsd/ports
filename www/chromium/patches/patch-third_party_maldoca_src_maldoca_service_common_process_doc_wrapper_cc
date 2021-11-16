@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_maldoca_src_maldoca_service_common_process_doc_wrapper_cc,v 1.1 2021/10/20 10:27:48 robert Exp $
+$OpenBSD: patch-third_party_maldoca_src_maldoca_service_common_process_doc_wrapper_cc,v 1.2 2021/11/16 11:28:47 robert Exp $
 
 Index: third_party/maldoca/src/maldoca/service/common/process_doc_wrapper.cc
 --- third_party/maldoca/src/maldoca/service/common/process_doc_wrapper.cc.orig

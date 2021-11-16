@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_views_widget_desktop_aura_desktop_screen_ozone_cc,v 1.5 2021/10/20 10:27:49 robert Exp $
+$OpenBSD: patch-ui_views_widget_desktop_aura_desktop_screen_ozone_cc,v 1.6 2021/11/16 11:28:47 robert Exp $
 
 Index: ui/views/widget/desktop_aura/desktop_screen_ozone.cc
 --- ui/views/widget/desktop_aura/desktop_screen_ozone.cc.orig
@@ -10,5 +10,5 @@ Index: ui/views/widget/desktop_aura/desktop_screen_ozone.cc
 -#if !defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if !defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_BSD)
  std::unique_ptr<display::Screen> CreateDesktopScreen() {
-   return std::make_unique<aura::ScreenOzone>();
- }
+   auto screen = std::make_unique<aura::ScreenOzone>();
+   screen->Initialize();

@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_utility_services_cc,v 1.8 2021/10/30 17:49:27 robert Exp $
+$OpenBSD: patch-chrome_utility_services_cc,v 1.9 2021/11/16 11:28:46 robert Exp $
 
 Index: chrome/utility/services.cc
 --- chrome/utility/services.cc.orig
@@ -12,16 +12,7 @@ Index: chrome/utility/services.cc
  #include "chrome/services/file_util/document_analysis_service.h"  // nogncheck
  #endif
  
-@@ -86,7 +86,7 @@
- 
- #if BUILDFLAG(ENABLE_PRINTING)
- #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
--    defined(OS_CHROMEOS)
-+    defined(OS_CHROMEOS) || defined(OS_BSD)
- #include "chrome/services/printing/print_backend_service_impl.h"
- #include "chrome/services/printing/public/mojom/print_backend_service.mojom.h"
- #endif
-@@ -212,7 +212,7 @@ auto RunCupsIppParser(
+@@ -211,7 +211,7 @@ auto RunCupsIppParser(
  }
  #endif
  
@@ -30,16 +21,7 @@ Index: chrome/utility/services.cc
  auto RunDocumentAnalysis(
      mojo::PendingReceiver<chrome::mojom::DocumentAnalysisService> receiver) {
    return std::make_unique<DocumentAnalysisService>(std::move(receiver));
-@@ -260,7 +260,7 @@ auto RunPaintPreviewCompositor(
- 
- #if BUILDFLAG(ENABLE_PRINTING)
- #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
--    defined(OS_CHROMEOS)
-+    defined(OS_CHROMEOS) || defined(OS_BSD)
- auto RunPrintBackendService(
-     mojo::PendingReceiver<printing::mojom::PrintBackendService> receiver) {
-   return std::make_unique<printing::PrintBackendServiceImpl>(
-@@ -370,7 +370,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -375,7 +375,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
    services.Add(RunFileUtil);
  #endif
  
@@ -48,12 +30,3 @@ Index: chrome/utility/services.cc
    services.Add(RunDocumentAnalysis);
  #endif
  
-@@ -390,7 +390,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
- 
- #if BUILDFLAG(ENABLE_PRINTING)
- #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
--    defined(OS_CHROMEOS)
-+    defined(OS_CHROMEOS) || defined(OS_BSD)
-   services.Add(RunPrintBackendService);
- #endif
-   services.Add(RunPrintCompositor);

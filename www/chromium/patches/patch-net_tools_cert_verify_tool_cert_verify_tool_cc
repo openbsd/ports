@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_tools_cert_verify_tool_cert_verify_tool_cc,v 1.10 2021/09/01 16:54:40 robert Exp $
+$OpenBSD: patch-net_tools_cert_verify_tool_cert_verify_tool_cc,v 1.11 2021/11/16 11:28:47 robert Exp $
 
 Index: net/tools/cert_verify_tool/cert_verify_tool.cc
 --- net/tools/cert_verify_tool/cert_verify_tool.cc.orig
@@ -12,7 +12,7 @@ Index: net/tools/cert_verify_tool/cert_verify_tool.cc
  #include "net/proxy_resolution/proxy_config.h"
  #include "net/proxy_resolution/proxy_config_service_fixed.h"
  #endif
-@@ -46,7 +46,7 @@ void SetUpOnNetworkThread(
+@@ -55,7 +55,7 @@ void SetUpOnNetworkThread(
      base::WaitableEvent* initialization_complete_event) {
    net::URLRequestContextBuilder url_request_context_builder;
    url_request_context_builder.set_user_agent(GetUserAgent());
@@ -21,12 +21,21 @@ Index: net/tools/cert_verify_tool/cert_verify_tool.cc
    // On Linux, use a fixed ProxyConfigService, since the default one
    // depends on glib.
    //
-@@ -183,7 +183,7 @@ std::unique_ptr<CertVerifyImpl> CreateCertVerifyImplFr
+@@ -205,7 +205,7 @@ std::unique_ptr<CertVerifyImpl> CreateCertVerifyImplFr
      base::StringPiece impl_name,
      scoped_refptr<net::CertNetFetcher> cert_net_fetcher,
-     bool use_system_roots) {
+     RootStoreType root_store_type) {
 -#if !(defined(OS_FUCHSIA) || defined(OS_LINUX) || defined(OS_CHROMEOS))
-+#if !(defined(OS_FUCHSIA) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD))
++#if !(defined(OS_FUCHSIA) || defined(OS_LINUX) || defined(OS_CHROMEOS)) || defined(OS_BSD)
    if (impl_name == "platform") {
-     if (!use_system_roots) {
+     if (root_store_type != RootStoreType::kSystem) {
        std::cerr << "WARNING: platform verifier not supported with "
+@@ -432,7 +432,7 @@ int main(int argc, char** argv) {
+   std::string impls_str = command_line.GetSwitchValueASCII("impls");
+   if (impls_str.empty()) {
+     // Default value.
+-#if !(defined(OS_FUCHSIA) || defined(OS_LINUX) || defined(OS_CHROMEOS))
++#if !(defined(OS_FUCHSIA) || defined(OS_LINUX) || defined(OS_CHROMEOS)) || defined(OS_BSD)
+     impls_str = "platform,";
+ #endif
+     impls_str += "builtin,pathbuilder";

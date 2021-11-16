@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_process_singleton_posix_cc,v 1.27 2021/09/01 16:54:38 robert Exp $
+$OpenBSD: patch-chrome_browser_process_singleton_posix_cc,v 1.28 2021/11/16 11:28:46 robert Exp $
 
 Index: chrome/browser/process_singleton_posix.cc
 --- chrome/browser/process_singleton_posix.cc.orig
@@ -27,7 +27,7 @@ Index: chrome/browser/process_singleton_posix.cc
    std::u16string relaunch_button_text =
        l10n_util::GetStringUTF16(IDS_PROFILE_IN_USE_LINUX_RELAUNCH);
    return ShowProcessSingletonDialog(error, relaunch_button_text);
-@@ -874,7 +874,7 @@ ProcessSingleton::NotifyResult ProcessSingleton::Notif
+@@ -876,7 +876,7 @@ ProcessSingleton::NotifyResult ProcessSingleton::Notif
      return PROCESS_NONE;
    } else if (strncmp(buf, kACKToken, base::size(kACKToken) - 1) == 0) {
  #if defined(TOOLKIT_VIEWS) && \

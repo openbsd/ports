@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_renderer_pepper_pepper_flash_font_file_host_h,v 1.2 2020/10/22 13:52:54 robert Exp $
+$OpenBSD: patch-chrome_renderer_pepper_pepper_flash_font_file_host_h,v 1.3 2021/11/16 11:28:46 robert Exp $
 
 Index: chrome/renderer/pepper/pepper_flash_font_file_host.h
 --- chrome/renderer/pepper/pepper_flash_font_file_host.h.orig
@@ -12,7 +12,7 @@ Index: chrome/renderer/pepper/pepper_flash_font_file_host.h
  #include "base/files/file.h"
  #elif defined(OS_WIN)
  #include "third_party/skia/include/core/SkRefCnt.h"
-@@ -50,7 +50,7 @@ class PepperFlashFontFileHost : public ppapi::host::Re
+@@ -54,7 +54,7 @@ class PepperFlashFontFileHost : public ppapi::host::Re
                           uint32_t table);
    bool GetFontData(uint32_t table, void* buffer, size_t* length);
  

@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_swiftshader_third_party_llvm-subzero_build_Linux_include_llvm_Config_config_h,v 1.4 2021/10/20 10:27:48 robert Exp $
+$OpenBSD: patch-third_party_swiftshader_third_party_llvm-subzero_build_Linux_include_llvm_Config_config_h,v 1.5 2021/11/16 11:28:47 robert Exp $
 
 Index: third_party/swiftshader/third_party/llvm-subzero/build/Linux/include/llvm/Config/config.h
 --- third_party/swiftshader/third_party/llvm-subzero/build/Linux/include/llvm/Config/config.h.orig

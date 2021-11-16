@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_crash_core_common_BUILD_gn,v 1.17 2021/10/20 10:27:46 robert Exp $
+$OpenBSD: patch-components_crash_core_common_BUILD_gn,v 1.18 2021/11/16 11:28:46 robert Exp $
 
 Index: components/crash/core/common/BUILD.gn
 --- components/crash/core/common/BUILD.gn.orig

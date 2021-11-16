@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_base_ime_init_input_method_initializer_cc,v 1.11 2021/09/01 16:54:40 robert Exp $
+$OpenBSD: patch-ui_base_ime_init_input_method_initializer_cc,v 1.12 2021/11/16 11:28:47 robert Exp $
 
 Index: ui/base/ime/init/input_method_initializer.cc
 --- ui/base/ime/init/input_method_initializer.cc.orig
@@ -6,7 +6,7 @@ Index: ui/base/ime/init/input_method_initializer.cc
 @@ -11,7 +11,7 @@
  
  #if BUILDFLAG(IS_CHROMEOS_ASH)
- #include "ui/base/ime/chromeos/ime_bridge.h"
+ #include "ui/base/ime/ash/ime_bridge.h"
 -#elif defined(USE_AURA) && (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
 +#elif defined(USE_AURA) && (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD))
  #include "base/check.h"

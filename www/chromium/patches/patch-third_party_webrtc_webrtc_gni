@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_webrtc_webrtc_gni,v 1.30 2021/10/20 10:27:48 robert Exp $
+$OpenBSD: patch-third_party_webrtc_webrtc_gni,v 1.31 2021/11/16 11:28:47 robert Exp $
 
 Index: third_party/webrtc/webrtc.gni
 --- third_party/webrtc/webrtc.gni.orig

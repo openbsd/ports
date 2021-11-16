@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_zygote_zygote_linux_cc,v 1.12 2021/10/20 10:27:47 robert Exp $
+$OpenBSD: patch-content_zygote_zygote_linux_cc,v 1.13 2021/11/16 11:28:47 robert Exp $
 
 Index: content/zygote/zygote_linux.cc
 --- content/zygote/zygote_linux.cc.orig

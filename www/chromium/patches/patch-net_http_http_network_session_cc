@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_http_http_network_session_cc,v 1.20 2021/10/20 10:27:47 robert Exp $
+$OpenBSD: patch-net_http_http_network_session_cc,v 1.21 2021/11/16 11:28:47 robert Exp $
 
 Index: net/http/http_network_session.cc
 --- net/http/http_network_session.cc.orig

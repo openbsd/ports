@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_compiler_specific_h,v 1.6 2021/10/20 10:27:44 robert Exp $
+$OpenBSD: patch-base_compiler_specific_h,v 1.7 2021/11/16 11:28:45 robert Exp $
 
 Index: base/compiler_specific.h
 --- base/compiler_specific.h.orig

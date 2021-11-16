@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_web_applications_web_app_shortcut_manager_cc,v 1.1 2021/10/20 10:27:46 robert Exp $
+$OpenBSD: patch-chrome_browser_web_applications_web_app_shortcut_manager_cc,v 1.2 2021/11/16 11:28:46 robert Exp $
 
 Index: chrome/browser/web_applications/web_app_shortcut_manager.cc
 --- chrome/browser/web_applications/web_app_shortcut_manager.cc.orig
@@ -12,7 +12,7 @@ Index: chrome/browser/web_applications/web_app_shortcut_manager.cc
  // Aligns with other platform implementations that only support 10 items.
  constexpr int kMaxApplicationDockMenuItems = 10;
  #endif  // defined(OS_LINUX)
-@@ -379,7 +379,7 @@ std::unique_ptr<ShortcutInfo> WebAppShortcutManager::B
+@@ -383,7 +383,7 @@ std::unique_ptr<ShortcutInfo> WebAppShortcutManager::B
      }
    }
  

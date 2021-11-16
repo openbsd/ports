@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_webui_ntp_app_launcher_handler_cc,v 1.1 2021/10/20 10:27:46 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_webui_ntp_app_launcher_handler_cc,v 1.2 2021/11/16 11:28:46 robert Exp $
 
 Index: chrome/browser/ui/webui/ntp/app_launcher_handler.cc
 --- chrome/browser/ui/webui/ntp/app_launcher_handler.cc.orig
 +++ chrome/browser/ui/webui/ntp/app_launcher_handler.cc
-@@ -313,7 +313,7 @@ void AppLauncherHandler::CreateExtensionInfo(const Ext
+@@ -314,7 +314,7 @@ void AppLauncherHandler::CreateExtensionInfo(const Ext
        base::CommandLine::ForCurrentProcess()->HasSwitch(switches::kKioskMode));
  
    bool is_deprecated_app = false;
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/webui/ntp/app_launcher_handler.cc
    is_deprecated_app = extensions::IsExtensionUnsupportedDeprecatedApp(
        extension_service_->GetBrowserContext(), extension->id());
  #endif
-@@ -753,7 +753,7 @@ void AppLauncherHandler::HandleLaunchApp(const base::L
+@@ -754,7 +754,7 @@ void AppLauncherHandler::HandleLaunchApp(const base::L
  
    Profile* profile = extension_service_->profile();
  
@@ -21,7 +21,7 @@ Index: chrome/browser/ui/webui/ntp/app_launcher_handler.cc
    if (extensions::IsExtensionUnsupportedDeprecatedApp(profile, extension_id)) {
      // TODO(crbug.com/1225779): Show the deprecated apps dialog.
      return;
-@@ -1353,7 +1353,7 @@ void AppLauncherHandler::InstallOsHooks(const web_app:
+@@ -1354,7 +1354,7 @@ void AppLauncherHandler::InstallOsHooks(const web_app:
    options.os_hooks[web_app::OsHookType::kProtocolHandlers] = true;
    options.os_hooks[web_app::OsHookType::kRunOnOsLogin] = false;
    options.os_hooks[web_app::OsHookType::kUninstallationViaOsSettings] = true;

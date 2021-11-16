@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gl_BUILD_gn,v 1.40 2021/09/01 16:54:41 robert Exp $
+$OpenBSD: patch-ui_gl_BUILD_gn,v 1.41 2021/11/16 11:28:47 robert Exp $
 
 Index: ui/gl/BUILD.gn
 --- ui/gl/BUILD.gn.orig
@@ -28,7 +28,7 @@ Index: ui/gl/BUILD.gn
        ]
        if (enable_swiftshader) {
          data_deps += [ "//third_party/swiftshader" ]
-@@ -637,8 +633,6 @@ test("gl_unittests") {
+@@ -632,8 +628,6 @@ test("gl_unittests") {
      "//ui/platform_window",
      "//ui/platform_window:platform_impls",
    ]

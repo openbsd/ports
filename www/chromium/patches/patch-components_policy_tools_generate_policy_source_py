@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_policy_tools_generate_policy_source_py,v 1.23 2021/10/20 10:27:46 robert Exp $
+$OpenBSD: patch-components_policy_tools_generate_policy_source_py,v 1.24 2021/11/16 11:28:46 robert Exp $
 
 Index: components/policy/tools/generate_policy_source.py
 --- components/policy/tools/generate_policy_source.py.orig

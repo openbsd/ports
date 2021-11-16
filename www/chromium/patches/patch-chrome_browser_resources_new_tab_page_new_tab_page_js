@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_resources_new_tab_page_new_tab_page_js,v 1.7 2021/10/20 10:27:45 robert Exp $
+$OpenBSD: patch-chrome_browser_resources_new_tab_page_new_tab_page_js,v 1.8 2021/11/16 11:28:46 robert Exp $
 
 Index: chrome/browser/resources/new_tab_page/new_tab_page.js
 --- chrome/browser/resources/new_tab_page/new_tab_page.js.orig
@@ -12,5 +12,5 @@ Index: chrome/browser/resources/new_tab_page/new_tab_page.js
 -export {dummyDescriptor} from './modules/dummy/module.js';
 -// </if>
  export {InfoDialogElement} from './modules/info_dialog.js';
- export {Module, ModuleDescriptor} from './modules/module_descriptor.js';
+ export {InitializeModuleCallback, Module, ModuleDescriptor} from './modules/module_descriptor.js';
  export {ModuleHeaderElement} from './modules/module_header.js';

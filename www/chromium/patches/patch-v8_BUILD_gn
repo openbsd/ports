@@ -1,9 +1,9 @@
-$OpenBSD: patch-v8_BUILD_gn,v 1.46 2021/10/20 10:27:49 robert Exp $
+$OpenBSD: patch-v8_BUILD_gn,v 1.47 2021/11/16 11:28:47 robert Exp $
 
 Index: v8/BUILD.gn
 --- v8/BUILD.gn.orig
 +++ v8/BUILD.gn
-@@ -1181,6 +1181,9 @@ config("toolchain") {
+@@ -1182,6 +1182,9 @@ config("toolchain") {
    } else if (target_os == "win") {
      defines += [ "V8_HAVE_TARGET_OS" ]
      defines += [ "V8_TARGET_OS_WIN" ]
@@ -13,7 +13,7 @@ Index: v8/BUILD.gn
    }
  
    # TODO(jochen): Support v8_enable_prof on Windows.
-@@ -4901,7 +4904,7 @@ v8_component("v8_libbase") {
+@@ -5058,7 +5061,7 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -22,7 +22,7 @@ Index: v8/BUILD.gn
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -4911,6 +4914,12 @@ v8_component("v8_libbase") {
+@@ -5068,6 +5071,12 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]

@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_base_webui_web_ui_util_cc,v 1.26 2021/10/20 10:27:48 robert Exp $
+$OpenBSD: patch-ui_base_webui_web_ui_util_cc,v 1.27 2021/11/16 11:28:47 robert Exp $
 
 Index: ui/base/webui/web_ui_util.cc
 --- ui/base/webui/web_ui_util.cc.orig

@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_viz_host_host_display_client_h,v 1.9 2021/10/20 10:27:47 robert Exp $
+$OpenBSD: patch-components_viz_host_host_display_client_h,v 1.10 2021/11/16 11:28:46 robert Exp $
 
 Index: components/viz/host/host_display_client.h
 --- components/viz/host/host_display_client.h.orig
 +++ components/viz/host/host_display_client.h
-@@ -45,7 +45,7 @@ class VIZ_HOST_EXPORT HostDisplayClient : public mojom
+@@ -49,7 +49,7 @@ class VIZ_HOST_EXPORT HostDisplayClient : public mojom
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

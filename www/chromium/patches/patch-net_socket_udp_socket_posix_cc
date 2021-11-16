@@ -1,9 +1,9 @@
-$OpenBSD: patch-net_socket_udp_socket_posix_cc,v 1.29 2021/09/01 16:54:40 robert Exp $
+$OpenBSD: patch-net_socket_udp_socket_posix_cc,v 1.30 2021/11/16 11:28:47 robert Exp $
 
 Index: net/socket/udp_socket_posix.cc
 --- net/socket/udp_socket_posix.cc.orig
 +++ net/socket/udp_socket_posix.cc
-@@ -626,7 +626,7 @@ int UDPSocketPosix::SetDoNotFragment() {
+@@ -625,7 +625,7 @@ int UDPSocketPosix::SetDoNotFragment() {
  }
  
  void UDPSocketPosix::SetMsgConfirm(bool confirm) {

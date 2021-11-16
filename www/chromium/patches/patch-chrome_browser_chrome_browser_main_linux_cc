@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_chrome_browser_main_linux_cc,v 1.22 2021/10/20 10:27:45 robert Exp $
+$OpenBSD: patch-chrome_browser_chrome_browser_main_linux_cc,v 1.23 2021/11/16 11:28:45 robert Exp $
 
 Index: chrome/browser/chrome_browser_main_linux.cc
 --- chrome/browser/chrome_browser_main_linux.cc.orig

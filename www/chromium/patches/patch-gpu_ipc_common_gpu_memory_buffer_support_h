@@ -1,4 +1,4 @@
-$OpenBSD: patch-gpu_ipc_common_gpu_memory_buffer_support_h,v 1.10 2021/09/01 16:54:39 robert Exp $
+$OpenBSD: patch-gpu_ipc_common_gpu_memory_buffer_support_h,v 1.11 2021/11/16 11:28:47 robert Exp $
 
 Index: gpu/ipc/common/gpu_memory_buffer_support.h
 --- gpu/ipc/common/gpu_memory_buffer_support.h.orig
@@ -12,7 +12,7 @@ Index: gpu/ipc/common/gpu_memory_buffer_support.h
  namespace gfx {
  class ClientNativePixmapFactory;
  }
-@@ -42,7 +42,7 @@ class GPU_EXPORT GpuMemoryBufferSupport {
+@@ -46,7 +46,7 @@ class GPU_EXPORT GpuMemoryBufferSupport {
    bool IsNativeGpuMemoryBufferConfigurationSupported(gfx::BufferFormat format,
                                                       gfx::BufferUsage usage);
  
@@ -21,7 +21,7 @@ Index: gpu/ipc/common/gpu_memory_buffer_support.h
    gfx::ClientNativePixmapFactory* client_native_pixmap_factory() {
      return client_native_pixmap_factory_.get();
    }
-@@ -70,7 +70,7 @@ class GPU_EXPORT GpuMemoryBufferSupport {
+@@ -74,7 +74,7 @@ class GPU_EXPORT GpuMemoryBufferSupport {
        scoped_refptr<base::UnsafeSharedMemoryPool> pool = nullptr);
  
   private:
@@ -29,4 +29,4 @@ Index: gpu/ipc/common/gpu_memory_buffer_support.h
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(USE_OZONE) || defined(OS_BSD)
    std::unique_ptr<gfx::ClientNativePixmapFactory> client_native_pixmap_factory_;
  #endif
- 
+ };

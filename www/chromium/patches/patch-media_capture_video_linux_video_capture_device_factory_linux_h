@@ -1,9 +1,9 @@
-$OpenBSD: patch-media_capture_video_linux_video_capture_device_factory_linux_h,v 1.7 2021/09/01 16:54:40 robert Exp $
+$OpenBSD: patch-media_capture_video_linux_video_capture_device_factory_linux_h,v 1.8 2021/11/16 11:28:47 robert Exp $
 
 Index: media/capture/video/linux/video_capture_device_factory_linux.h
 --- media/capture/video/linux/video_capture_device_factory_linux.h.orig
 +++ media/capture/video/linux/video_capture_device_factory_linux.h
-@@ -47,7 +47,7 @@ class CAPTURE_EXPORT VideoCaptureDeviceFactoryLinux
+@@ -53,7 +53,7 @@ class CAPTURE_EXPORT VideoCaptureDeviceFactoryLinux
  
   private:
    // Simple wrapper to do HANDLE_EINTR(v4l2_->ioctl(fd, ...)).

@@ -1,9 +1,9 @@
-$OpenBSD: patch-gpu_command_buffer_service_webgpu_decoder_impl_cc,v 1.8 2021/10/20 10:27:47 robert Exp $
+$OpenBSD: patch-gpu_command_buffer_service_webgpu_decoder_impl_cc,v 1.9 2021/11/16 11:28:47 robert Exp $
 
 Index: gpu/command_buffer/service/webgpu_decoder_impl.cc
 --- gpu/command_buffer/service/webgpu_decoder_impl.cc.orig
 +++ gpu/command_buffer/service/webgpu_decoder_impl.cc
-@@ -935,7 +935,7 @@ error::Error WebGPUDecoderImpl::HandleRequestAdapter(
+@@ -1009,7 +1009,7 @@ error::Error WebGPUDecoderImpl::HandleRequestAdapter(
        static_cast<DawnRequestAdapterSerial>(c.request_adapter_serial);
  
    if (gr_context_type_ != GrContextType::kVulkan) {

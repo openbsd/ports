@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_system_menu_model_delegate_cc,v 1.10 2021/10/20 10:27:46 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_system_menu_model_delegate_cc,v 1.11 2021/11/16 11:28:46 robert Exp $
 
 Index: chrome/browser/ui/views/frame/system_menu_model_delegate.cc
 --- chrome/browser/ui/views/frame/system_menu_model_delegate.cc.orig

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_browser_view_prefs_cc,v 1.19 2021/10/20 10:27:45 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_browser_view_prefs_cc,v 1.20 2021/11/16 11:28:46 robert Exp $
 
 Index: chrome/browser/ui/browser_view_prefs.cc
 --- chrome/browser/ui/browser_view_prefs.cc.orig
 +++ chrome/browser/ui/browser_view_prefs.cc
-@@ -29,7 +29,7 @@ const char kTabStripLayoutType[] = "tab_strip_layout_t
+@@ -24,7 +24,7 @@ const char kTabStripLayoutType[] = "tab_strip_layout_t
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -11,8 +11,8 @@ Index: chrome/browser/ui/browser_view_prefs.cc
 +#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  bool GetCustomFramePrefDefault() {
  #if defined(USE_OZONE)
-   if (features::IsUsingOzonePlatform()) {
-@@ -57,7 +57,7 @@ void RegisterBrowserViewProfilePrefs(
+     return ui::OzonePlatform::GetInstance()
+@@ -47,7 +47,7 @@ void RegisterBrowserViewProfilePrefs(
      user_prefs::PrefRegistrySyncable* registry) {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

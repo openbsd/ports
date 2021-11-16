@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_sharing_sharing_handler_registry_impl_cc,v 1.10 2021/09/01 16:54:38 robert Exp $
+$OpenBSD: patch-chrome_browser_sharing_sharing_handler_registry_impl_cc,v 1.11 2021/11/16 11:28:46 robert Exp $
 
 Index: chrome/browser/sharing/sharing_handler_registry_impl.cc
 --- chrome/browser/sharing/sharing_handler_registry_impl.cc.orig
 +++ chrome/browser/sharing/sharing_handler_registry_impl.cc
-@@ -22,7 +22,7 @@
+@@ -24,7 +24,7 @@
  #endif  // defined(OS_ANDROID)
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -12,7 +12,7 @@ Index: chrome/browser/sharing/sharing_handler_registry_impl.cc
  #include "chrome/browser/sharing/shared_clipboard/remote_copy_message_handler.h"
  #endif  // defined(OS_WIN) || defined(OS_MAC) || (defined(OS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS_LACROS)) defined(OS_CHROMEOS)
-@@ -68,7 +68,7 @@ SharingHandlerRegistryImpl::SharingHandlerRegistryImpl
+@@ -77,7 +77,7 @@ SharingHandlerRegistryImpl::SharingHandlerRegistryImpl
    }
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \

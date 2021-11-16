@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_pdfium_core_fxge_cfx_fontmapper_cpp,v 1.8 2021/10/20 10:27:48 robert Exp $
+$OpenBSD: patch-third_party_pdfium_core_fxge_cfx_fontmapper_cpp,v 1.9 2021/11/16 11:28:47 robert Exp $
 
 Index: third_party/pdfium/core/fxge/cfx_fontmapper.cpp
 --- third_party/pdfium/core/fxge/cfx_fontmapper.cpp.orig

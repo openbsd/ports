@@ -1,18 +1,27 @@
-$OpenBSD: patch-chrome_common_chrome_features_h,v 1.35 2021/10/20 10:27:46 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_features_h,v 1.36 2021/11/16 11:28:46 robert Exp $
 
 Index: chrome/common/chrome_features.h
 --- chrome/common/chrome_features.h.orig
 +++ chrome/common/chrome_features.h
-@@ -72,7 +72,7 @@ extern const base::Feature kAppShimNewCloseBehavior;
- 
+@@ -78,7 +78,7 @@ extern const base::Feature kAppShimNewCloseBehavior;
  COMPONENT_EXPORT(CHROME_FEATURES) extern const base::Feature kAsyncDns;
+ 
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
++    defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
+ COMPONENT_EXPORT(CHROME_FEATURES)
+ extern const base::Feature kAutofillAddressSurvey;
+ COMPONENT_EXPORT(CHROME_FEATURES)
+@@ -87,7 +87,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+ extern const base::Feature kAutofillPasswordSurvey;
+ #endif
  
 -#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kBackgroundModeAllowRestart;
  #endif  // defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
-@@ -84,7 +84,7 @@ COMPONENT_EXPORT(CHROME_FEATURES) extern const base::F
+@@ -104,7 +104,7 @@ extern const base::Feature kBrowserAppInstanceTracking
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kChangePictureVideoMode;
  
@@ -21,7 +30,7 @@ Index: chrome/common/chrome_features.h
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kChromeAppsDeprecation;
  #endif
-@@ -153,7 +153,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+@@ -168,7 +168,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kDefaultPinnedAppsUpdate2021Q2;
  #endif
  
@@ -30,7 +39,7 @@ Index: chrome/common/chrome_features.h
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kDesktopPWAsAppIconShortcutsMenuUI;
  #endif
-@@ -360,7 +360,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+@@ -391,7 +391,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kIncognitoNtpRevamp;
  
  #if defined(OS_MAC) || defined(OS_WIN) || defined(OS_LINUX) || \
@@ -39,9 +48,9 @@ Index: chrome/common/chrome_features.h
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kIncognitoBrandConsistencyForDesktop;
  
-@@ -389,7 +389,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
- extern const base::Feature kLinkDoctorDeprecationAndroid;
- #endif  // defined(OS_ANDROID)
+@@ -415,7 +415,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+ extern const base::Feature kKernelnextVMs;
+ #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)

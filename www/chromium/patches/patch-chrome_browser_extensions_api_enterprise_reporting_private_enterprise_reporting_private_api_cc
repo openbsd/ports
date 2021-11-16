@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_extensions_api_enterprise_reporting_private_enterprise_reporting_private_api_cc,v 1.3 2021/10/20 10:27:45 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_api_enterprise_reporting_private_enterprise_reporting_private_api_cc,v 1.4 2021/11/16 11:28:46 robert Exp $
 
 Index: chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.cc
 --- chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.cc.orig

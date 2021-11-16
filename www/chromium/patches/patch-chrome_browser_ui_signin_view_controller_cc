@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_signin_view_controller_cc,v 1.1 2021/09/01 16:54:38 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_signin_view_controller_cc,v 1.2 2021/11/16 11:28:46 robert Exp $
 
 Index: chrome/browser/ui/signin_view_controller.cc
 --- chrome/browser/ui/signin_view_controller.cc.orig
 +++ chrome/browser/ui/signin_view_controller.cc
-@@ -241,7 +241,7 @@ void SigninViewController::ShowModalEnterpriseConfirma
+@@ -242,7 +242,7 @@ void SigninViewController::ShowModalEnterpriseConfirma
      SkColor profile_color,
      base::OnceCallback<void(bool)> callback) {
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
