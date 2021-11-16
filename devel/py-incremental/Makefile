@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/02 00:00:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/11/16 08:05:41 sthen Exp $
 
 COMMENT =		versioning library for Python projects
 
-MODPY_EGG_VERSION =	17.5.0
+MODPY_EGG_VERSION =	21.3.0
 
 DISTNAME =		incremental-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
 
 CATEGORIES =		devel
 
@@ -16,7 +15,6 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	src/incremental
 
 TEST_DEPENDS =		devel/py-click${MODPY_FLAVOR} \
