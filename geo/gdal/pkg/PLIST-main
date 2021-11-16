@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.23 2020/11/04 09:19:47 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.24 2021/11/16 08:57:28 landry Exp $
 @conflict gdal-<=1.8.0
 @pkgpath geo/gdal
 bin/gdal-config
@@ -28,9 +28,9 @@ bin/gdal-config
 @bin bin/ogrinfo
 @bin bin/ogrlineref
 @bin bin/ogrtindex
-@bin bin/testepsg
 include/cpl_atomic_ops.h
 include/cpl_auto_close.h
+include/cpl_compressor.h
 include/cpl_config.h
 include/cpl_config_extras.h
 include/cpl_conv.h
