@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/02/16 23:02:06 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/11/16 08:12:26 sthen Exp $
 @pkgpath devel/py-hamcrest
 lib/python${MODPY_VERSION}/site-packages/PyHamcrest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/PyHamcrest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/PyHamcrest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/PyHamcrest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/PyHamcrest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
-lib/python${MODPY_VERSION}/site-packages/PyHamcrest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/PyHamcrest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/hamcrest/
 lib/python${MODPY_VERSION}/site-packages/hamcrest/__init__.py
@@ -18,7 +16,6 @@ lib/python${MODPY_VERSION}/site-packages/hamcrest/core/${MODPY_PYCACHE}__init__.
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/${MODPY_PYCACHE}assert_that.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/${MODPY_PYCACHE}base_description.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/${MODPY_PYCACHE}base_matcher.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/hamcrest/core/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/${MODPY_PYCACHE}description.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/${MODPY_PYCACHE}matcher.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/${MODPY_PYCACHE}selfdescribing.${MODPY_PYC_MAGIC_TAG}pyc
@@ -27,7 +24,6 @@ lib/python${MODPY_VERSION}/site-packages/hamcrest/core/${MODPY_PYCACHE}string_de
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/assert_that.py
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/base_description.py
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/base_matcher.py
-lib/python${MODPY_VERSION}/site-packages/hamcrest/core/compat.py
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/core/
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/core/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hamcrest/core/core/${MODPY_PYCACHE}/
@@ -60,8 +56,10 @@ lib/python${MODPY_VERSION}/site-packages/hamcrest/core/helpers/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hamcrest/core/helpers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/helpers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/helpers/${MODPY_PYCACHE}hasmethod.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hamcrest/core/helpers/${MODPY_PYCACHE}ismock.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/helpers/${MODPY_PYCACHE}wrap_matcher.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/helpers/hasmethod.py
+lib/python${MODPY_VERSION}/site-packages/hamcrest/core/helpers/ismock.py
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/helpers/wrap_matcher.py
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/matcher.py
 lib/python${MODPY_VERSION}/site-packages/hamcrest/core/selfdescribing.py
@@ -139,3 +137,4 @@ lib/python${MODPY_VERSION}/site-packages/hamcrest/library/text/stringendswith.py
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/text/stringmatches.py
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/text/stringstartswith.py
 lib/python${MODPY_VERSION}/site-packages/hamcrest/library/text/substringmatcher.py
+lib/python${MODPY_VERSION}/site-packages/hamcrest/py.typed
