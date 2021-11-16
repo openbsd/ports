@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2021/11/02 00:02:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/11/16 08:21:09 sthen Exp $
 
 COMMENT=		show differences between XML files/DOM trees
 
-MODPY_EGG_VERSION=	2.3
+MODPY_EGG_VERSION=	2.4
 DISTNAME=		xmldiff-${MODPY_EGG_VERSION}
 PKGNAME=		py-xmldiff-${MODPY_EGG_VERSION}
 CATEGORIES=		textproc
-REVISION=		2
 
 HOMEPAGE=		https://github.com/Shoobx/xmldiff
 
