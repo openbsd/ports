@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.469 2021/11/02 21:20:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.470 2021/11/16 16:19:33 sthen Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -192,6 +192,7 @@
      SUBDIR += py-eyed3		# standalone, uses python3
      SUBDIR += py-fsb5,python3
      SUBDIR += py-last,python3
+     SUBDIR += py-mediafile,python3
      SUBDIR += py-mpd2,python3
      SUBDIR += py-musicbrainzngs,python3
      SUBDIR += py-mutagen,python3
