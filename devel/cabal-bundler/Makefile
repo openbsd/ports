@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 04:10:05 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/17 03:35:31 gnezdo Exp $
 
 COMMENT =	use cabal solver to build standalone installation
 
@@ -10,7 +10,7 @@ GH_PROJECT =	cabal-extras
 
 # Overrides cabal.port.mk which would otherwise preempt bsd.port.mk
 DISTNAME =	${GH_PROJECT}-${V}
-DISTFILES =	${DISTNAME}-${GH_COMMIT:C/(........).*/\1/}${EXTRACT_SUFX}{${GH_COMMIT}${EXTRACT_SUFX}} \
+DISTFILES =	${GH_DISTFILE} \
 		gentle-introduction-2021.2.tar.gz:1
 PKGNAME =	${MODCABAL_EXECUTABLES}-${V}
 MASTER_SITES =	${MASTER_SITES_GITHUB}
