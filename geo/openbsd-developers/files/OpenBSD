@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.172 2021/11/16 22:23:10 op Exp $
+# $OpenBSD: OpenBSD,v 1.173 2021/11/17 03:33:11 mlarkin Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -26,7 +26,7 @@
 35.66834	139.719186	"itojun"	# Jun-ichiro Itojun
 35.698		139.713		"mcbride"	# Ryan Thomas McBride
 36.134		-86.70		"david"		# David Krause
-37.25230	-121.81576	"mlarkin"	# Mike Larkin
+38.92436	-120.00587	"mlarkin"	# Mike Larkin
 37.32488	-121.81304	"namn"		# Nam Nguyen
 37.40203	-122.06842	"pd"		# Pratik Vyas
 37.3706		-122.0138	"ckuethe"	# Chris Kuethe
