@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2020/02/11 16:17:23 stsp Exp $
+# $OpenBSD: Makefile,v 1.17 2021/11/17 09:51:54 sthen Exp $
 
 # XXX
 #
@@ -31,12 +31,9 @@
      SUBDIR += otus
      SUBDIR += pgt
      SUBDIR += radeondrm
-     SUBDIR += rsu
-     SUBDIR += rtwn
      SUBDIR += uath
      SUBDIR += ulpt
      SUBDIR += upgt
-     SUBDIR += urtwn
      SUBDIR += uvideo
      SUBDIR += vmm
      SUBDIR += wpi

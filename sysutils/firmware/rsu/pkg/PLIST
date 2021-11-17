@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/09 17:08:14 sthen Exp $
-@pkgpath sysutils/rsu-firmware
-@ask-update rsu-firmware-<1.1 Make sure you have a matching kernel
-firmware/rsu-license
-firmware/rsu-rtl8712fw

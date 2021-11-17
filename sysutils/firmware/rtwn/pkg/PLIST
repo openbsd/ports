@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/09/21 09:49:45 sthen Exp $
-firmware/rtwn-license
-firmware/rtwn-rtl8188efw
-firmware/rtwn-rtl8192cfwU
-firmware/rtwn-rtl8192cfwU_B
-firmware/rtwn-rtl8192eefw
-firmware/rtwn-rtl8723befw_36
-firmware/rtwn-rtl8723fw
-firmware/rtwn-rtl8723fw_B
