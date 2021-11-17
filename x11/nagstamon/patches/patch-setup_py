@@ -1,18 +1,18 @@
-$OpenBSD: patch-setup_py,v 1.8 2020/07/02 13:15:44 sthen Exp $
+$OpenBSD: patch-setup_py,v 1.9 2021/11/17 14:54:32 ajacoutot Exp $
 
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -37,7 +37,7 @@ if OS not in ['Windows', 'Darwin']:
-     if OS == 'Linux':
-         DIST, DIST_VERSION, DIST_NAME = get_distro()
+@@ -43,7 +43,7 @@ if OS not in ['Windows', 'Darwin']:
+     elif OS == 'NetBSD':
+         DIST, DIST_VERSION, DIST_NAME = ('', '', '')
      else:
 -        DIST, DIST_VERSION, DIST_NAME = platform.dist()
 +        DIST, DIST_VERSION, DIST_NAME = ('', '', '')
      NAME = NAME.lower()
  VERSION = AppInfo.VERSION.replace('-', '.') + '.' + DIST + DIST_VERSION
  
-@@ -117,7 +117,7 @@ setup(name=NAME,
+@@ -126,7 +126,7 @@ setup(name=NAME,
                  'Nagstamon.thirdparty.Xlib.xobject'],
        package_dir={'Nagstamon': 'Nagstamon'},
        package_data={'Nagstamon': ['resources/*']},

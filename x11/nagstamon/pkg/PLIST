@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2019/12/28 10:35:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/11/17 14:54:32 ajacoutot Exp $
 bin/nagstamon
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Config.py
@@ -27,9 +27,20 @@ lib/python${MODPY_VERSION}/site-packages/Nagstamon/QUI/settings_action.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/QUI/settings_main.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/QUI/settings_server.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Alertmanager/
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Alertmanager/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Alertmanager/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Alertmanager/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Alertmanager/${MODPY_PYCACHE}alertmanagerserver.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Alertmanager/${MODPY_PYCACHE}alertmanagerservice.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Alertmanager/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Alertmanager/alertmanagerserver.py
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Alertmanager/alertmanagerservice.py
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Alertmanager/helpers.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Centreon.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Generic.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Icinga.py
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Icinga2API.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/IcingaWeb2.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Livestatus.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Monitos3.py
@@ -37,16 +48,20 @@ lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Monitos4x.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Multisite.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Nagios.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Opsview.py
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Prometheus.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Sensu.py
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/SensuGo.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/SnagView3.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Thruk.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Zabbix.py
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/ZabbixProblemBased.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/Zenoss.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}Centreon.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}Generic.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}Icinga.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}Icinga2API.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}IcingaWeb2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}Livestatus.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}Monitos3.${MODPY_PYC_MAGIC_TAG}pyc
@@ -54,10 +69,13 @@ lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}Monit
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}Multisite.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}Nagios.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}Opsview.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}Prometheus.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}Sensu.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}SensuGo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}SnagView3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}Thruk.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}Zabbix.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}ZabbixProblemBased.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}Zenoss.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Servers/${MODPY_PYCACHE}op5Monitor.${MODPY_PYC_MAGIC_TAG}pyc
@@ -71,7 +89,6 @@ lib/python${MODPY_VERSION}/site-packages/Nagstamon/${MODPY_PYCACHE}__init__.${MO
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/CREDITS
-lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/Info.plist
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/LICENSE
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/close_template.svg
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/critical.wav
@@ -182,10 +199,12 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/${
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/${MODPY_PYCACHE}ewmh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/${MODPY_PYCACHE}sensu_api.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/${MODPY_PYCACHE}sensugo_api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/${MODPY_PYCACHE}zabbix_api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/${MODPY_PYCACHE}zenoss_api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/ewmh.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/sensu_api.py
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/sensugo_api.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/zabbix_api.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/zenoss_api.py
 lib/python${MODPY_VERSION}/site-packages/nagstamon-${MODPY_EGG_VERSION}.-py${MODPY_VERSION}.egg-info/

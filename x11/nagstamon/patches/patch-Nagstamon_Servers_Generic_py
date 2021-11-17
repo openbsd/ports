@@ -1,4 +1,4 @@
-$OpenBSD: patch-Nagstamon_Servers_Generic_py,v 1.1 2020/03/06 11:49:53 sthen Exp $
+$OpenBSD: patch-Nagstamon_Servers_Generic_py,v 1.2 2021/11/17 14:54:32 ajacoutot Exp $
 
 Disable Kerberos support, we don't have requests_gssapi or requests_kerberos
 
@@ -24,12 +24,12 @@ Index: Nagstamon/Servers/Generic.py
 +#except ImportError:
 +#    from requests_kerberos import HTTPKerberosAuth as HTTPSKerberos
  
- # disable annoying SubjectAltNameWarning warnings
  try:
-@@ -260,8 +260,8 @@ class GenericServer(object):
-                 self.session.auth = requests.auth.HTTPBasicAuth(self.username, self.password)
-             elif self.authentication == 'digest':
+     from requests_ecp import HTTPECPAuth
+@@ -272,8 +272,8 @@ class GenericServer(object):
                  self.session.auth = requests.auth.HTTPDigestAuth(self.username, self.password)
+             elif self.authentication == 'ecp':
+                 self.session.auth = HTTPECPAuth(self.idp_ecp_endpoint, username=self.username, password=self.password)
 -            elif self.authentication == 'kerberos':
 -                self.session.auth = HTTPSKerberos()
 +#            elif self.authentication == 'kerberos':

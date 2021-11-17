@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.32 2021/11/02 00:02:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2021/11/17 14:54:32 ajacoutot Exp $
 
 COMMENT=		nagios status monitor for the Desktop
 
-MODPY_EGG_VERSION=	3.4.1
-DISTNAME=		Nagstamon-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION=	3.8.0
+GH_ACCOUNT=		HenriWahl
+GH_PROJECT=		Nagstamon
+GH_TAGNAME=		v${MODPY_EGG_VERSION}
 PKGNAME=		${DISTNAME:L}
-WRKDIST=		${WRKDIR}/Nagstamon
-REVISION=		1
+#WRKDIST=		${WRKDIR}/Nagstamon-${MODPY_EGG_VERSION}
 
 CATEGORIES=		x11 net
 
@@ -14,8 +15,6 @@ HOMEPAGE=		http://nagstamon.ifw-dresden.de/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
-
-MASTER_SITES=		https://nagstamon.ifw-dresden.de/files/stable/
 
 MODULES=		lang/python
 
