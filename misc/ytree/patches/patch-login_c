@@ -1,11 +1,11 @@
-$OpenBSD: patch-login_c,v 1.1 2019/12/07 01:58:13 bcallah Exp $
+$OpenBSD: patch-login_c,v 1.2 2021/11/17 10:36:00 fcambus Exp $
 
 Include sys/wait.h to avoid warnings.
 
 Index: login.c
 --- login.c.orig
 +++ login.c
-@@ -8,7 +8,7 @@
+@@ -6,7 +6,7 @@
  
  
  #include "ytree.h"

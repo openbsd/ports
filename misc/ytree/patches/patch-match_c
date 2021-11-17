@@ -1,7 +1,8 @@
-$OpenBSD: patch-match_c,v 1.4 2013/11/29 15:56:44 naddy Exp $
---- match.c.orig	Sun Jan  9 13:31:13 2011
-+++ match.c	Thu Nov 28 13:27:59 2013
-@@ -9,7 +9,7 @@
+$OpenBSD: patch-match_c,v 1.5 2021/11/17 10:36:00 fcambus Exp $
+Index: match.c
+--- match.c.orig
++++ match.c
+@@ -7,7 +7,7 @@
  
  #include "ytree.h"
  
@@ -10,7 +11,7 @@ $OpenBSD: patch-match_c,v 1.4 2013/11/29 15:56:44 naddy Exp $
  #define HAS_REGEX
  #endif
  
-@@ -19,7 +19,7 @@
+@@ -17,7 +17,7 @@
  #define _REGEX_RE_COMP
  #endif
  
