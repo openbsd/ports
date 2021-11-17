@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2021/11/17 10:11:47 op Exp $
+# $OpenBSD: Makefile,v 1.73 2021/11/17 16:11:46 op Exp $
 
 COMMENT-main =	C++ cross-platform GUI toolkit
 COMMENT-media =	wxMediaCtrl class for wxWidgets
@@ -10,6 +10,7 @@ REVISION-media = 0
 DISTNAME =	wxWidgets-${V}
 PKGNAME-main =	wxWidgets-gtk3-${V}
 PKGNAME-media =	wxWidgets-media-${V}
+PKGNAME-webkit = wxWidgets-webkit-${V}
 
 CATEGORIES =	x11
 MASTER_SITES =	https://github.com/wxWidgets/wxWidgets/releases/download/v$V/
