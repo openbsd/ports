@@ -1,4 +1,4 @@
-# $OpenBSD: mk.conf.template,v 1.29 2020/12/15 14:52:27 sthen Exp $
+# $OpenBSD: mk.conf.template,v 1.30 2021/11/17 10:40:06 espie Exp $
 
 # This file contains some mk.conf entries suitable for ports work.
 #
@@ -53,9 +53,6 @@
 .poison WKRDIST
 .poison WKRINST
 .poison WKRSRC
-
-# not a misspelling, but wrong, BUILD_DEPENDS isn't subpackaged
-.poison BUILD_DEPENDS-main
 
 # used to exist, but now retired
 .poison CONFIGURE_SHARED
