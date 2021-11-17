@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2157 2021/11/17 09:52:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.2158 2021/11/17 10:38:51 op Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -396,6 +396,9 @@
      SUBDIR += luarexlib
      SUBDIR += luarings
      SUBDIR += luarings,lua52
+     SUBDIR += luarocks
+     SUBDIR += luarocks,lua52
+     SUBDIR += luarocks,lua53
      SUBDIR += luassert
      SUBDIR += luassert,lua52
      SUBDIR += luassert,lua53
