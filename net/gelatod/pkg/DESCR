@@ -1,0 +1,5 @@
+gelatod is a CLAT (Customer-side transLATor) configuration daemon.  It is part
+of 464XLAT, an architecture for providing limited IPv4 connectivity across an
+IPv6-only network. It detects the presence of a NAT64 translator in IPv6 only
+networks and configures pf(4) to translate IPv4 packets into IPv6 packets for
+programs that do not work with DNS64.

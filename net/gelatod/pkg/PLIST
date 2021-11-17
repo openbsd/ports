@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/17 20:36:10 kn Exp $
+@newgroup _gelatod:871
+@newuser _gelatod:871:_gelatod:daemon:464XLAT CLAT:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/gelatod
+@man man/man8/gelatod.8
+@bin sbin/gelatod
