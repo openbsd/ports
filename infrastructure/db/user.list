@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.391 2021/10/22 20:01:23 sthen Exp $
+$OpenBSD: user.list,v 1.392 2021/11/17 20:32:34 kn Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -379,3 +379,4 @@ id  user		group		port
 868 _igmpproxy		_igmpproxy	net/igmpproxy
 869 _headscale		_headscale	net/headscale
 870 _unit		_unit		www/unit
+871 _gelatod		_gelatod	net/gelatod
