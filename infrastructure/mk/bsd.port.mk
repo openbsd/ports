@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1559 2021/11/16 21:18:27 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1560 2021/11/17 10:39:18 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1596,6 +1596,11 @@ _CHECK_DEPENDS =
 _CHECK_DEPENDS +:= ${${_v}_DEPENDS}
 .endfor
 .for _s in ${MULTI_PACKAGES}
+.  for _v in BUILD TEST
+.    if defined(${_v}_DEPENDS${_s})
+ERRORS += "Fatal: ${_v}_DEPENDS${_s} makes no sense"
+.    endif
+.  endfor
 .  for _v in RUN LIB
 _CHECK_DEPENDS +:= ${${_v}_DEPENDS${_s}}
 .  endfor
