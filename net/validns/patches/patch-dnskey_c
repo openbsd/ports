@@ -1,0 +1,33 @@
+$OpenBSD: patch-dnskey_c,v 1.1 2021/11/17 14:54:47 tb Exp $
+
+https://github.com/tobez/validns/pull/71
+
+Index: dnskey.c
+--- dnskey.c.orig
++++ dnskey.c
+@@ -145,6 +145,7 @@ int dnskey_build_pkey(struct rr_dnskey *rr)
+ 		unsigned int e_bytes;
+ 		unsigned char *pk;
+ 		int l;
++		BIGNUM *n, *e;
+ 
+ 		rsa = RSA_new();
+ 		if (!rsa)
+@@ -165,11 +166,15 @@ int dnskey_build_pkey(struct rr_dnskey *rr)
+ 		if (l < e_bytes) /* public key is too short */
+ 			goto done;
+ 
+-		rsa->e = BN_bin2bn(pk, e_bytes, NULL);
++		e = BN_bin2bn(pk, e_bytes, NULL);
+ 		pk += e_bytes;
+ 		l -= e_bytes;
+ 
+-		rsa->n = BN_bin2bn(pk, l, NULL);
++		n = BN_bin2bn(pk, l, NULL);
++		if (!e || !n)
++			goto done;
++
++		RSA_set0_key(rsa, n, e, NULL);
+ 
+ 		pkey = EVP_PKEY_new();
+ 		if (!pkey)

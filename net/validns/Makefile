@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2020/04/15 14:34:50 fcambus Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/17 14:54:47 tb Exp $
 
 COMMENT =	DNS and DNSSEC zone file validator
 
 DISTNAME =	validns-0.8
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	net
 
