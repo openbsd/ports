@@ -1,0 +1,5 @@
+If you want to use this package as your default luarocks, as root
+create symbolic links like so (overwriting any previous default):
+
+ ln -sf ${PREFIX}/bin/luarocks-${MODLUA_VERSION} ${PREFIX}/bin/luarocks
+ ln -sf ${PREFIX}/bin/luarocks-admin-${MODLUA_VERSION} ${PREFIX}/bin/luarocks-admin

@@ -1,0 +1,5 @@
+If you set up the symlinks to make a default luarocks, don't forget to
+remove the following files:
+
+ rm ${PREFIX}/bin/luarocks
+ rm ${PREFIX}/bin/luarocks-admin
