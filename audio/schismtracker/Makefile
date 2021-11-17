@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2021/05/28 09:12:08 fcambus Exp $
+# $OpenBSD: Makefile,v 1.26 2021/11/17 10:26:48 fcambus Exp $
 
 COMMENT =	open-source reimplementation of Impulse Tracker
 
 GH_ACCOUNT =	schismtracker
 GH_PROJECT =	schismtracker
-GH_TAGNAME =	20210525
+GH_TAGNAME =	20211116
 
 CATEGORIES =	audio x11
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=	SDL X11 Xext Xv c m pthread
 
 MODULES =	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_RUNDEP =	No
 
