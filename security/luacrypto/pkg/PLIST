@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/05/15 15:19:37 jasper Exp $
-lib/lua/${MODLUA_VERSION}/crypto.so
-share/doc/${FULLPKGNAME}/
-share/doc/${FULLPKGNAME}/examples.html
-share/doc/${FULLPKGNAME}/index.html
-share/doc/${FULLPKGNAME}/license.html
-share/doc/${FULLPKGNAME}/luacrypto-128.png
-share/doc/${FULLPKGNAME}/manual.html
