@@ -1,0 +1,8 @@
+yt-dlp is a youtube-dl fork: small command-line program for downloading videos
+from YouTube.com and many other sites.
+
+To list all supported extractors and the URLs they can handle, use:
+
+$ yt-dlp --list-extractors
+
+To retrieve RTMP streams, install the rtmpdump package.

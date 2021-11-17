@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2021/11/17 18:08:34 landry Exp $
+--- setup.py.orig       Mon Oct 11 12:17:33 2021
++++ setup.py    Mon Oct 11 12:18:55 2021
+@@ -60,7 +60,7 @@
+         ('share/zsh/site-functions', ['completions/zsh/_yt-dlp']),
+         ('share/fish/vendor_completions.d', ['completions/fish/yt-dlp.fish']),
+         ('share/doc/yt_dlp', ['README.txt']),
+-        ('share/man/man1', ['yt-dlp.1'])
++        ('man/man1', ['yt-dlp.1'])
+     ]
+     root = os.path.dirname(os.path.abspath(__file__))
+     data_files = []
