@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1053 2021/11/15 13:47:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.1054 2021/11/17 18:09:11 landry Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -582,6 +582,7 @@
      SUBDIR += wwwoffle
      SUBDIR += xapian-omega
      SUBDIR += youtube-dl
+     SUBDIR += yt-dlp
      SUBDIR += zola
 
 .include <bsd.port.subdir.mk>
