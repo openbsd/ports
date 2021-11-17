@@ -1,12 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/11/09 17:57:59 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/11/17 07:01:41 landry Exp $
 @bin bin/xfce4-screensaver
 @bin bin/xfce4-screensaver-command
 bin/xfce4-screensaver-configure
 @bin bin/xfce4-screensaver-preferences
 libexec/xfce4-screensaver/
-@mode u+s
-@bin libexec/xfce4-screensaver-dialog
+@mode g+s
+@group auth
+@bin libexec/xfce4-screensaver-ask-pass
+@group
 @mode
+@bin libexec/xfce4-screensaver-dialog
 @bin libexec/xfce4-screensaver-gl-helper
 @bin libexec/xfce4-screensaver/floaters
 @bin libexec/xfce4-screensaver/popsquares

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2021/01/03 17:34:23 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2021/11/17 07:01:41 landry Exp $
 
 COMMENT =	Xfce4 screensaver
 
 XFCE_GOODIE =	xfce4-screensaver
+REVISION =	0
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
@@ -32,7 +33,13 @@ WANTLIB += ${COMPILER_LIBCXX}
 
 FAKE_FLAGS =	menudir=${PREFIX}/share/examples/xfce4-screensaver/xdg/menus
 
+CONFIGURE_ARGS +=	--with-passwd-helper=${LOCALBASE}/libexec/xfce4-screensaver-ask-pass
+
+post-build:
+	${CC} ${CFLAGS} ${FILESDIR}/ask-pass.c -o ${WRKBUILD}/ask-pass
+
 post-install:
+	${INSTALL_PROGRAM} ${WRKBUILD}/ask-pass ${PREFIX}/libexec/xfce4-screensaver-ask-pass
 	@mv ${WRKINST}/etc/xdg/autostart \
 		${PREFIX}/share/examples/xfce4-screensaver/xdg/autostart
 	rm -Rf ${WRKINST}/etc/xdg
