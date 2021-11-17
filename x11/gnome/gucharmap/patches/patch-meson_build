@@ -1,4 +1,4 @@
-$OpenBSD: patch-meson_build,v 1.4 2021/05/06 10:42:28 ajacoutot Exp $
+$OpenBSD: patch-meson_build,v 1.5 2021/11/17 19:59:58 jasper Exp $
 
 - ERROR: C shared or static library 'dl' not found
 - ERROR: Assert failed: -Wl,-Bsymbolic-functions is required but not supported
@@ -6,7 +6,7 @@ $OpenBSD: patch-meson_build,v 1.4 2021/05/06 10:42:28 ajacoutot Exp $
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -125,18 +125,6 @@ config_h.set('ENABLE_DEBUG', enable_debug)
+@@ -126,18 +126,6 @@ config_h.set('ENABLE_DEBUG', enable_debug)
  # FIXME AC_USE_SYSTEM_EXTENSIONS also supported non-gnu systems
  config_h.set10('_GNU_SOURCE', true)
  
@@ -25,7 +25,7 @@ Index: meson.build
  # Compiler flags
  
  compiler_flags_common = [
-@@ -220,14 +208,16 @@ add_project_arguments(global_cflags, language: 'c',)
+@@ -221,14 +209,16 @@ add_project_arguments(global_cflags, language: 'c',)
  
  # Linker flags
  

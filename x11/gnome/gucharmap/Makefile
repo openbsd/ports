@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.133 2021/11/14 06:27:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.134 2021/11/17 19:59:58 jasper Exp $
 
 COMMENT=		Unicode character map for the GNOME project
 
 GNOME_PROJECT=		gucharmap
-GNOME_VERSION=		13.0.8
-REVISION=		0
+GNOME_VERSION=		14.0.1
 
 # override gnome MODULE
 MASTER_SITES =		https://gitlab.gnome.org/GNOME/gucharmap/-/archive/${GNOME_VERSION}/

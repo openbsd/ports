@@ -1,9 +1,9 @@
-$OpenBSD: patch-gucharmap_meson_build,v 1.1 2020/11/07 08:59:35 jasper Exp $
+$OpenBSD: patch-gucharmap_meson_build,v 1.2 2021/11/17 19:59:58 jasper Exp $
 
 Index: gucharmap/meson.build
 --- gucharmap/meson.build.orig
 +++ gucharmap/meson.build
-@@ -267,7 +267,6 @@ gucharmap_gtk3_cppflags = disable_deprecated_cppflags 
+@@ -268,7 +268,6 @@ gucharmap_gtk3_cppflags = disable_deprecated_cppflags 
  gucharmap_gtk3_deps = [
    freetype2_dep,
    gtk3_dep,
