@@ -1,0 +1,3 @@
+wxWebView is a WxWidgets class that features a full-blown rendering
+engine.  It allows the correct viewing of complex pages with
+javascript and css.

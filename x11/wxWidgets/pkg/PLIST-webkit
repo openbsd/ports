@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-webkit,v 1.1 2021/11/17 10:11:47 op Exp $
+@lib lib/libwx_gtk3u_webview-3.0.so.${LIBwx_gtk3u_webview-3.0_VERSION}
+lib/wx/3.0/
+lib/wx/3.0/web-extensions/
+@so lib/wx/3.0/web-extensions/webkit2_extu-3.0.so

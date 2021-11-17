@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.71 2021/11/02 00:23:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.72 2021/11/17 10:11:47 op Exp $
 
 COMMENT-main =	C++ cross-platform GUI toolkit
 COMMENT-media =	wxMediaCtrl class for wxWidgets
+COMMENT-webkit = wxWebView class for wxWidgets
 
 V =		3.0.5.1
-REVISION-main =	0
+REVISION-main =	1
+REVISION-media = 0
 DISTNAME =	wxWidgets-${V}
 PKGNAME-main =	wxWidgets-gtk3-${V}
 PKGNAME-media =	wxWidgets-media-${V}
@@ -29,6 +31,7 @@ SHARED_LIBS +=  wx_gtk3u_ribbon-3.0       0.1
 SHARED_LIBS +=  wx_gtk3u_richtext-3.0     0.1
 SHARED_LIBS +=  wx_gtk3u_stc-3.0          0.1
 SHARED_LIBS +=  wx_gtk3u_xrc-3.0          0.1
+SHARED_LIBS +=  wx_gtk3u_webview-3.0      0.1
 
 HOMEPAGE =	https://www.wxwidgets.org/
 
@@ -36,7 +39,14 @@ HOMEPAGE =	https://www.wxwidgets.org/
 # http://www.wxwidgets.org/about/licence/
 PERMIT_PACKAGE =	Yes
 
-MULTI_PACKAGES = -main -media
+MULTI_PACKAGES = -main -media -webkit
+
+PSEUDO_FLAVORS =	no_webkit
+FLAVOR ?=
+.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "arm" || \
+	${MACHINE_ARCH} == "hppa"
+FLAVOR += no_webkit
+.endif
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -64,9 +74,21 @@ LIB_DEPENDS-media =	${LIB_DEPENDS} \
 
 WANTLIB-media += ${COMPILER_LIBCXX} SM X11 Xxf86vm atk-1.0 cairo cairo-gobject
 WANTLIB-media += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gstbase-1.0
-WANTLIB-media += gstreamer-1.0 gstvideo-1.0 gthread-2.0 gtk-3 iconv
+WANTLIB-media += gstreamer-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz iconv
 WANTLIB-media += intl jpeg m notify pango-1.0 pangocairo-1.0 png tiff
 WANTLIB-media += wx_baseu-3.0 wx_gtk3u_core-3.0 z
+
+LIB_DEPENDS-webkit =	${LIB_DEPEDNS} \
+			www/webkitgtk4 \
+			${BASE_PKGPATH},-main>=${V}
+
+WANTLIB-webkit += ${COMPILER_LIBCXX} SM X11 Xxf86vm atk-1.0 cairo cairo-gobject
+WANTLIB-webkit += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gthread-2.0
+WANTLIB-webkit += gtk-3 harfbuzz iconv intl jpeg javascriptcoregtk-4.0 m notify
+WANTLIB-webkit += pango-1.0 pangocairo-1.0 png soup-2.4 tiff webkit2gtk-4.0
+WANTLIB-webkit += wx_baseu-3.0 wx_gtk3u_core-3.0 z
+
+DEBUG_PACKAGES=${BUILD_PACKAGES}
 
 MAKE_FLAGS =	SO_VERSION="${LIBwx_baseu-3.0_VERSION}"
 
@@ -83,8 +105,14 @@ CONFIGURE_ARGS =--disable-backtrace \
 		--with-gtk=3 \
 		--with-libmspack \
 		--with-opengl \
-		--with-sdl \
-		--disable-webviewwebkit
+		--with-sdl
+
+.include <bsd.port.arch.mk>
+
+.if !${BUILD_PACKAGES:M-webkit}
+CONFIGURE_ARGS += --disable-webviewwebkit
+.endif
+
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		WXCONFIG_CPPFLAGS="-I${X11BASE}/include" \
