@@ -1,0 +1,5 @@
+A pytest plugin for managing processes. It will make sure external
+processes on which your application depends are up during every pytest
+run without the need of manual start-up.
+
+Docs: https://pytest-xprocess.readthedocs.io/
