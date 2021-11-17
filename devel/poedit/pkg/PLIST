@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/08/23 06:35:02 landry Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/11/17 22:46:19 op Exp $
 @bin bin/poedit
 @man man/man1/poedit.1
 share/applications/net.poedit.Poedit.desktop
 share/applications/net.poedit.PoeditURI.desktop
+share/icons/hicolor/128x128/apps/net.poedit.Poedit.png
 share/icons/hicolor/16x16/apps/net.poedit.Poedit.png
 share/icons/hicolor/24x24/apps/net.poedit.Poedit.png
-share/icons/hicolor/256x256/apps/net.poedit.Poedit.png
 share/icons/hicolor/32x32/apps/net.poedit.Poedit.png
 share/icons/hicolor/48x48/apps/net.poedit.Poedit.png
-share/icons/hicolor/512x512/apps/net.poedit.Poedit.png
+share/icons/hicolor/scalable/apps/net.poedit.Poedit.svg
 share/locale/af/LC_MESSAGES/poedit.mo
 share/locale/an/LC_MESSAGES/poedit.mo
 share/locale/ar/LC_MESSAGES/poedit.mo
@@ -83,7 +83,6 @@ share/poedit/icons/DownvoteTemplate.png
 share/poedit/icons/ExtractorsGNUgettext.png
 share/poedit/icons/ItemBookmarkTemplate.png
 share/poedit/icons/ItemCommentTemplate.png
-share/poedit/icons/PoeditWelcome.png
 share/poedit/icons/StatusError.png
 share/poedit/icons/StatusErrorBlack.png
 share/poedit/icons/StatusWarning.png
@@ -91,11 +90,8 @@ share/poedit/icons/StatusWarningBlack.png
 share/poedit/icons/SuggestionErrorTemplate.png
 share/poedit/icons/SuggestionPerfectMatch.png
 share/poedit/icons/SuggestionTMTemplate.png
-share/poedit/icons/document-new.png
 share/poedit/icons/document-open.png
-share/poedit/icons/document-properties.png
 share/poedit/icons/document-save.png
-share/poedit/icons/edit-delete.png
 share/poedit/icons/hicolor/
 share/poedit/icons/hicolor/scalable/
 share/poedit/icons/hicolor/scalable/actions/
