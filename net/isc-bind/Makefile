@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.147 2021/11/02 00:01:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.148 2021/11/17 20:51:48 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
 # Second digits: odd numbers devel, even numbers stable,
 # ESV branched occasionally.  9.16.x is ESV.
-V=		9.16.22
+V=		9.16.23
 SUBST_VARS+=	V
 PORTROACH=	limitw:1,even
 EXTRACT_SUFX=	.tar.xz
@@ -13,7 +13,6 @@ PATCH_DIST_STRIP= -p1
 
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
-REVISION=	0
 
 CATEGORIES=	net
 
@@ -46,7 +45,7 @@ LIB_DEPENDS=	converters/libiconv \
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.71
+AUTOCONF_VERSION= 2.69
 LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_ARGS=	--enable-full-report \
 		--with-libtool \
