@@ -1,4 +1,4 @@
-$OpenBSD: patch-browser_extensions_tor-launcher_src_components_tl-process_js,v 1.4 2021/11/17 21:08:22 sdk Exp $
+$OpenBSD: patch-browser_extensions_tor-launcher_src_components_tl-process_js,v 1.5 2021/11/17 21:29:31 sdk Exp $
 
 Let geoip/geoip6 file paths be set by prefs like everything else and let
 the new getTorFile() deal with it.

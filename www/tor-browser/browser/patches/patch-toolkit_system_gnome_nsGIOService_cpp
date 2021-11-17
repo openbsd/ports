@@ -1,4 +1,4 @@
-$OpenBSD: patch-toolkit_system_gnome_nsGIOService_cpp,v 1.2 2021/11/17 21:08:22 sdk Exp $
+$OpenBSD: patch-toolkit_system_gnome_nsGIOService_cpp,v 1.3 2021/11/17 21:29:31 sdk Exp $
 
 Try to fix opening downloaded files with registered external mimetype handlers
 after gio-launch-desktop removal in glib 2.64.
