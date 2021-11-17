@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/01/04 14:06:31 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.14 2021/11/17 08:44:53 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/simplejson/
 lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -28,6 +28,7 @@ lib/python${MODPY_VERSION}/site-packages/simplejson/tests/
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/simplejson/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/simplejson/tests/${MODPY_PYCACHE}_cibw_runner.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/${MODPY_PYCACHE}test_bigint_as_string.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/${MODPY_PYCACHE}test_bitsize_int_as_string.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/${MODPY_PYCACHE}test_check_circular.${MODPY_PYC_MAGIC_TAG}pyc
@@ -58,6 +59,7 @@ lib/python${MODPY_VERSION}/site-packages/simplejson/tests/${MODPY_PYCACHE}test_s
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/${MODPY_PYCACHE}test_tool.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/${MODPY_PYCACHE}test_tuple.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/${MODPY_PYCACHE}test_unicode.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/simplejson/tests/_cibw_runner.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_bigint_as_string.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_bitsize_int_as_string.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/tests/test_check_circular.py
