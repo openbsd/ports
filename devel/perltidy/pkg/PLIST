@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2021/06/30 15:46:30 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.17 2021/11/17 14:30:14 fcambus Exp $
 bin/perltidy
 ${P5SITE}/Perl/
 ${P5SITE}/Perl/Tidy/
@@ -36,7 +36,6 @@ share/examples/perltidy/ex_mp.pl
 share/examples/perltidy/filter_example.in
 share/examples/perltidy/filter_example.pl
 share/examples/perltidy/find_naughty.pl
-share/examples/perltidy/fix-scbb-csc-bug.pl
 share/examples/perltidy/lextest
 share/examples/perltidy/perlcomment.pl
 share/examples/perltidy/perllinetype.pl
