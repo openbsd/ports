@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1279 2021/11/15 13:47:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.1280 2021/11/17 20:37:25 kn Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -110,6 +110,7 @@
      SUBDIR += ftpsesame
      SUBDIR += gajim
      SUBDIR += gdnsd
+     SUBDIR += gelatod
      SUBDIR += geomyidae
      SUBDIR += glib2-networking
      SUBDIR += gloox
