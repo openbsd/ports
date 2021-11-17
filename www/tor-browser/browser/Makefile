@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2021/11/04 13:13:36 landry Exp $
+# $OpenBSD: Makefile,v 1.70 2021/11/17 21:08:21 sdk Exp $
 # Some of this comes from www/firefox-esr as apropos, since Tor
 # browser is a fork of ESR.  It is a good idea to look at that
 # Makefile when editing this one (ESR versions not always the same).
@@ -9,15 +9,14 @@ ONLY_FOR_ARCHS =	amd64
 MOZILLA_VERSION =	${TB_VERSION}
 MOZILLA_PROJECT =	${BROWSER_NAME}
 MOZILLA_CODENAME =	browser
-TL_VERSION =		0.2.30
+TL_VERSION =		0.2.32
 HE_VERSION =		2021.4.15
-REVISION =	0
 
 EXTRACT_SUFX =		.tar.xz
 PATCHORIG =		.pat.orig
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION}
-DISTNAME =		src-firefox-tor-browser-78.15.0esr-10.5-1-build3
+DISTNAME =		src-firefox-tor-browser-91.3.0esr-11.0-1-build4
 
 FIX_EXTRACT_PERMISSIONS	= Yes
 EXTRACT_ONLY +=		${DISTNAME}.tar.xz \
@@ -26,7 +25,7 @@ EXTRACT_ONLY +=		${DISTNAME}.tar.xz \
 DISTFILES =		${EXTRACT_ONLY} \
 			https-everywhere-${HE_VERSION}-eff.xpi:0
 
-SO_VERSION =		6.0
+SO_VERSION =		7.0
 MOZILLA_LIBS =		xul clearkey lgpllibs mozavcodec mozavutil mozgtk
 MOZILLA_LIBS +=		freebl3 nss3 nssckbi
 MOZILLA_LIBS +=		nssutil3 smime3 softokn3 ssl3
@@ -43,7 +42,7 @@ MODULES =		www/mozilla lang/python
 
 MODPY_RUNDEP =		No
 
-COMPILER =		base-clang ports-clang
+COMPILER =		ports-clang
 MODCLANG_ARCHS =	amd64 i386
 
 # tor-browser needs built-in nss, sqlite
@@ -52,10 +51,13 @@ MOZILLA_USE_BUNDLED_NSS =	Yes
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
 # 63 requires cbindgen #1478813
-BUILD_DEPENDS +=	devel/cbindgen>=0.14.3
+BUILD_DEPENDS +=	devel/cbindgen>=0.19.0
+#1670807
+BUILD_DEPENDS +=	devel/m4
 
 # uses pledge()
 WANTLIB += X11-xcb Xcursor Xi intl xcb xcb-shm harfbuzz ${COMPILER_LIBCXX}
+WANTLIB += Xcomposite Xdamage Xfixes
 
 # Regression tests are too hard to adapt to run here
 NO_TEST =		Yes
@@ -63,8 +65,10 @@ NO_TEST =		Yes
 WRKDIST =		${WRKDIR}/${DISTNAME:S/src-//}
 
 CONFIGURE_STYLE =	simple
+CONFIGURE_SCRIPT =	${MODPY_BIN} ${WRKSRC}/configure.py
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
 MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
+CONFIGURE_ENV +=	M4=/usr/local/bin/gm4
 
 # app-name etc. for tor-browser
 CONFIGURE_ARGS +=	--with-app-name=${BROWSER_NAME}			\
@@ -80,10 +84,11 @@ BUILD_DEPENDS +=	devel/py-virtualenv
 
 BUILD_DEPENDS +=	archivers/unzip archivers/zip
 
-RUN_DEPENDS +=		net/tor>=0.4.6.7
+RUN_DEPENDS +=		net/tor>=0.4.6.8
 
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
+CONFIGURE_ARGS +=	--enable-forkserver
 CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/lib
 
 # XXX badly formed debug in libxul ?
@@ -169,7 +174,7 @@ post-install:
 	${SUBST_PROGRAM} ${FILESDIR}/${BROWSER_NAME} \
 	    ${PREFIX}/bin/${BROWSER_NAME}
 
-.for f in unveil.content unveil.gpu unveil.main pledge.content pledge.gpu pledge.main
+.for f in unveil.content unveil.gpu unveil.main unveil.rdd unveil.socket pledge.content pledge.gpu pledge.main pledge.rdd pledge.socket
 	${INSTALL_DATA} ${FILESDIR}/${f} ${BROWSER_DIR}/browser/defaults/preferences/
 .endfor
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/08/23 21:25:55 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.12 2021/11/17 21:08:22 sdk Exp $
 @conflict tor-launcher-*
 @conflict torbutton-*
 @pkgpath www/tor-browser/https-everywhere
@@ -27,12 +27,16 @@ lib/${BROWSER_NAME}/browser/defaults/preferences/pledge.gpu
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/pledge.gpu
 lib/${BROWSER_NAME}/browser/defaults/preferences/pledge.main
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/pledge.main
+lib/${BROWSER_NAME}/browser/defaults/preferences/pledge.rdd
+lib/${BROWSER_NAME}/browser/defaults/preferences/pledge.socket
 lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.content
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.content
 lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.gpu
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.gpu
 lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.main
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.main
+lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.rdd
+lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.socket
 lib/${BROWSER_NAME}/browser/defaults/profile/
 lib/${BROWSER_NAME}/browser/defaults/profile/bookmarks.html
 lib/${BROWSER_NAME}/browser/features/
@@ -95,8 +99,6 @@ lib/${BROWSER_NAME}/distribution/
 lib/${BROWSER_NAME}/distribution/distribution.ini
 lib/${BROWSER_NAME}/fonts/
 lib/${BROWSER_NAME}/fonts/TwemojiMozilla.ttf
-lib/${BROWSER_NAME}/gtk2/
-@lib lib/${BROWSER_NAME}/gtk2/libmozgtk.so.${LIBmozgtk_VERSION}
 @lib lib/${BROWSER_NAME}/libfreebl3.so.${LIBfreebl3_VERSION}
 @lib lib/${BROWSER_NAME}/liblgpllibs.so.${LIBlgpllibs_VERSION}
 @lib lib/${BROWSER_NAME}/libmozavcodec.so.${LIBmozavcodec_VERSION}

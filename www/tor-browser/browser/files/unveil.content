@@ -1,5 +1,4 @@
-# $OpenBSD: unveil.content,v 1.2 2021/02/13 05:08:28 jsg Exp $
-/dev/drm0 rw
+# $OpenBSD: unveil.content,v 1.3 2021/11/17 21:08:21 sdk Exp $
 /dev/dri/card0 rw
 
 /etc/fonts r
@@ -9,6 +8,7 @@
 /usr/share/locale r
 /var/cache/fontconfig r
 /usr/X11R6/lib r
+/usr/lib r
 /usr/X11R6/share r
 /var/run r
 

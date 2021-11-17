@@ -1,16 +1,16 @@
-$OpenBSD: patch-toolkit_moz_configure,v 1.2 2020/10/23 07:04:09 landry Exp $
+$OpenBSD: patch-toolkit_moz_configure,v 1.3 2021/11/17 21:08:22 sdk Exp $
 
 Required to make font fingerprinting defenses work.
 
 Index: toolkit/moz.configure
 --- toolkit/moz.configure.orig
 +++ toolkit/moz.configure
-@@ -1352,7 +1352,7 @@ set_config('MOZ_BITS_DOWNLOAD',
+@@ -1581,7 +1581,7 @@ set_config(
  
  @depends(target)
  def bundled_fonts_default(target):
--    return target.os == 'WINNT' or target.kernel == 'Linux'
-+    return target.os == 'WINNT' or target.kernel == 'Linux' or target.os == 'OpenBSD'
+-    return target.os == "WINNT" or target.kernel == "Linux"
++    return target.os == "WINNT" or target.kernel == "Linux" or target.os == "OpenBSD"
+ 
  
  @depends(build_project)
- def allow_bundled_fonts(project):

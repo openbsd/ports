@@ -1,4 +1,4 @@
-$OpenBSD: patch-xpcom_io_TorFileUtils_cpp,v 1.4 2020/02/13 07:41:53 landry Exp $
+$OpenBSD: patch-xpcom_io_TorFileUtils_cpp,v 1.5 2021/11/17 21:08:22 sdk Exp $
 
 Autoconf is gone now so the old configure patch to add
 --enable-tor-browser-data-in-home-dir will never fly.  Hard-code it on
@@ -10,17 +10,17 @@ Index: xpcom/io/TorFileUtils.cpp
 --- xpcom/io/TorFileUtils.cpp.orig
 +++ xpcom/io/TorFileUtils.cpp
 @@ -11,6 +11,10 @@
- #include "nsILocalFileMac.h"
+ #  include "nsILocalFileMac.h"
  #endif
  
 +#ifdef __OpenBSD__
 +# define TOR_BROWSER_DATA_IN_HOME_DIR 1
 +#endif
 +
- static nsresult GetAppRootDir(nsIFile *aExeFile, nsIFile** aFile);
+ static nsresult GetAppRootDir(nsIFile* aExeFile, nsIFile** aFile);
  
  //-----------------------------------------------------------------------------
-@@ -20,7 +24,17 @@ TorBrowser_GetUserDataDir(nsIFile *aExeFile, nsIFile**
+@@ -18,7 +22,17 @@ nsresult TorBrowser_GetUserDataDir(nsIFile* aExeFile, 
    NS_ENSURE_ARG_POINTER(aFile);
    nsCOMPtr<nsIFile> tbDataDir;
  
@@ -32,10 +32,10 @@ Index: xpcom/io/TorFileUtils.cpp
 +  nsresult rv = NS_NewNativeLocalFile(nsDependentCString(homeDir), true,
 +                                      getter_AddRefs(tbDataDir));
 +  NS_ENSURE_SUCCESS(rv, rv);
-+  nsAutoCString leafSubdir(NS_LITERAL_CSTRING("TorBrowser-Data"));
++  nsAutoCString leafSubdir("TorBrowser-Data"_ns);
 +  rv = tbDataDir->AppendNative(leafSubdir);
 +  NS_ENSURE_SUCCESS(rv, rv);
 +#elif defined(TOR_BROWSER_DATA_OUTSIDE_APP_DIR)
-   nsAutoCString tbDataLeafName(NS_LITERAL_CSTRING("TorBrowser-Data"));
+   nsAutoCString tbDataLeafName("TorBrowser-Data"_ns);
    nsCOMPtr<nsIFile> appRootDir;
    nsresult rv = GetAppRootDir(aExeFile, getter_AddRefs(appRootDir));
