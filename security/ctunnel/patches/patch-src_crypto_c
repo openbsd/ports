@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_crypto_c,v 1.1 2021/11/17 14:13:10 tb Exp $
+
+Index: src/crypto.c
+--- src/crypto.c.orig
++++ src/crypto.c
+@@ -21,7 +21,7 @@
+ #ifdef HAVE_OPENSSL
+ crypto_ctx *openssl_crypto_init(struct options opt, int dir)
+ {
+-    crypto_ctx *ctx = calloc(1, sizeof(crypto_ctx));
++    crypto_ctx *ctx = EVP_CIPHER_CTX_new();
+ 
+     /* STREAM CIPHERS ONLY */
+     EVP_CIPHER_CTX_init(ctx);
