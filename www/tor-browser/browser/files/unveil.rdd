@@ -1,0 +1,3 @@
+# $OpenBSD: unveil.rdd,v 1.1 2021/11/17 22:13:27 sdk Exp $
+# shm files
+/tmp rwc

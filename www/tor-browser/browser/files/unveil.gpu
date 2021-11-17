@@ -1,4 +1,4 @@
-# $OpenBSD: unveil.gpu,v 1.4 2021/11/17 21:08:21 sdk Exp $
+# $OpenBSD: unveil.gpu,v 1.5 2021/11/17 22:13:27 sdk Exp $
 /dev/dri/card0 rw
 
 /usr/local/lib/tor-browser r
