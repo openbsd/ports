@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1341 2021/11/15 13:47:30 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1342 2021/11/17 10:41:19 tb Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1607,6 +1607,7 @@ setup_obsolete_reason(
 	7 => 'pear-XML-RSS',
 	7 => 'pear-XML-Serializer',
 	7 => 'pear-XML-Tree',
+	3 => 'luacrypto',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
