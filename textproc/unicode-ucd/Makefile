@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/07 08:59:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2021/11/17 19:59:44 jasper Exp $
 
 COMMENT =		Unicode Character Database (UCD)
 
 # XXX: make sure the major version of this port matches
 #      x11/gnome/gucharmap
-V =			13.0.0
+V =			14.0.0
 DISTNAME =		UCD
 PKGNAME =		unicode-ucd-$V
 CATEGORIES =		textproc
