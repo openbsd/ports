@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.644 2021/11/15 13:47:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.645 2021/11/17 10:40:55 tb Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -121,7 +121,6 @@
      SUBDIR += libssh2
      SUBDIR += libtasn1
      SUBDIR += logsentry
-     SUBDIR += luacrypto
      SUBDIR += luasec
      SUBDIR += luasec,lua52
      SUBDIR += luasec,lua53
