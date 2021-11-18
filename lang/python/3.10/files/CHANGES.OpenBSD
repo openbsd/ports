@@ -1,4 +1,4 @@
-$OpenBSD: CHANGES.OpenBSD,v 1.1.1.1 2021/11/01 14:16:09 kmos Exp $
+$OpenBSD: CHANGES.OpenBSD,v 1.2 2021/11/18 15:45:28 tb Exp $
 
 As required by item 3 of the PSF license, here is a brief summary
 of changes made to this version of Python for the OpenBSD package.
@@ -8,7 +8,7 @@ ports infrastructure, configure.ac was patched to do this.
 
 2.  #ifdef patches to work with LibreSSL.
 
-2a. Shim for the missing SSL_CTX_get_security_level API
+2a. neuter security level hooks due to lack of LibreSSL support
 
 2b. Disabled sha3/blake/shake
 

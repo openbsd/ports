@@ -1,28 +1,26 @@
-$OpenBSD: patch-Modules__ssl_c,v 1.1.1.1 2021/11/01 14:16:09 kmos Exp $
+$OpenBSD: patch-Modules__ssl_c,v 1.2 2021/11/18 15:45:28 tb Exp $
 
-XXX maybe the second hunk can go away now we have auto-init, I'm not sure
-exactly what python's lock protects
+Neuter security level things until LibreSSL supports them.
 
 Index: Modules/_ssl.c
 --- Modules/_ssl.c.orig
 +++ Modules/_ssl.c
-@@ -116,7 +116,8 @@ static void _PySSLFixErrno(void) {
- /* Include generated data (error codes) */
- #if (OPENSSL_VERSION_NUMBER >= 0x30000000L)
- #include "_ssl_data_300.h"
--#elif (OPENSSL_VERSION_NUMBER >= 0x10101000L) && !defined(LIBRESSL_VERSION_NUMBER)
-+#elif (OPENSSL_VERSION_NUMBER >= 0x10101000L) && \
-+    (!defined(LIBRESSL_VERSION_NUMBER) || LIBRESSL_VERSION_NUMBER >= 0x2070000fL)
- #include "_ssl_data_111.h"
- #else
- #include "_ssl_data.h"
-@@ -3567,6 +3568,12 @@ set_num_tickets(PySSLContext *self, PyObject *arg, voi
+@@ -169,7 +169,7 @@ extern const SSL_METHOD *TLSv1_2_method(void);
+  * Based on Hynek's excellent blog post (update 2021-02-11)
+  * https://hynek.me/articles/hardening-your-web-servers-ssl-ciphers/
+  */
+-  #define PY_SSL_DEFAULT_CIPHER_STRING "@SECLEVEL=2:ECDH+AESGCM:ECDH+CHACHA20:ECDH+AES:DHE+AES:!aNULL:!eNULL:!aDSS:!SHA1:!AESCCM"
++  #define PY_SSL_DEFAULT_CIPHER_STRING "ECDH+AESGCM:ECDH+CHACHA20:ECDH+AES:DHE+AES:!aNULL:!eNULL:!aDSS:!SHA1:!AESCCM"
+   #ifndef PY_SSL_MIN_PROTOCOL
+     #define PY_SSL_MIN_PROTOCOL TLS1_2_VERSION
+   #endif
+@@ -3567,6 +3567,12 @@ set_num_tickets(PySSLContext *self, PyObject *arg, voi
  PyDoc_STRVAR(PySSLContext_num_tickets_doc,
  "Control the number of TLSv1.3 session tickets");
  #endif /* TLS1_3_VERSION */
 +
 +int
-+SSL_CTX_get_security_level(SSL_CTX *ctx)
++SSL_CTX_get_security_level(const SSL_CTX *ctx)
 +{
 +    return 1;
 +}

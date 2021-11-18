@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2021/11/02 00:00:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2021/11/18 15:45:28 tb Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -10,7 +10,7 @@ PATCHLEVEL =		.12
 SHARED_LIBS =		python3.8 0.0
 VERSION_SPEC =		>=3.8,<3.9
 
-REVISION-main =		3
+REVISION-main =		4
 REVISION-idle =		0
 
 
