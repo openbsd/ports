@@ -1,8 +1,0 @@
-@comment $OpenBSD: PFRAG.aot,v 1.1.1.1 2021/05/04 23:16:47 kurt Exp $
-@bin jdk-16/bin/jaotc
-jdk-16/jmods/jdk.aot.jmod
-jdk-16/legal/jdk.aot/
-jdk-16/legal/jdk.aot/ADDITIONAL_LICENSE_INFO
-jdk-16/legal/jdk.aot/ASSEMBLY_EXCEPTION
-jdk-16/legal/jdk.aot/LICENSE
-@man jdk-16/man/man1/jaotc.1
