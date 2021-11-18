@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/10/12 13:39:10 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/11/18 09:05:08 sthen Exp $
 bin/vd
 bin/visidata
 lib/python${MODPY_VERSION}/site-packages/visidata/
@@ -96,6 +96,8 @@ lib/python${MODPY_VERSION}/site-packages/visidata/color.py
 lib/python${MODPY_VERSION}/site-packages/visidata/colorsheet.py
 lib/python${MODPY_VERSION}/site-packages/visidata/column.py
 lib/python${MODPY_VERSION}/site-packages/visidata/customdate.py
+lib/python${MODPY_VERSION}/site-packages/visidata/ddw/
+lib/python${MODPY_VERSION}/site-packages/visidata/ddw/input.ddw
 lib/python${MODPY_VERSION}/site-packages/visidata/ddwplay.py
 lib/python${MODPY_VERSION}/site-packages/visidata/deprecated.py
 lib/python${MODPY_VERSION}/site-packages/visidata/describe.py
@@ -129,10 +131,12 @@ lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}html.$
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}imap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}json.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}lsv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}markdown.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}mbtiles.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}mysql.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}npy.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}odf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}pandas_freqtbl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}pcap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}pdf.${MODPY_PYC_MAGIC_TAG}pyc
@@ -167,10 +171,12 @@ lib/python${MODPY_VERSION}/site-packages/visidata/loaders/html.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/http.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/imap.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/json.py
+lib/python${MODPY_VERSION}/site-packages/visidata/loaders/lsv.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/markdown.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/mbtiles.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/mysql.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/npy.py
+lib/python${MODPY_VERSION}/site-packages/visidata/loaders/odf.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/pandas_freqtbl.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/pcap.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/pdf.py
