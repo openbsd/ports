@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/17 20:36:10 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/18 08:03:36 ajacoutot Exp $
 
 COMMENT =		CLAT configuration daemon for OpenBSD
 V =			1.2
@@ -15,6 +15,6 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 # uses pledge()
 WANTLIB =		c event util
 
-NO_TESTS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
