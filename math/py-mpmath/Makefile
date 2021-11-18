@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/18 09:20:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/11/18 13:22:24 sthen Exp $
 
 COMMENT =		library for arbitrary-precision floating-point arithmetic
 
@@ -20,5 +20,7 @@ MODPY_PYTEST_ARGS =	mpmath
 
 FLAVORS =		python3
 FLAVOR =		python3
+
+BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
