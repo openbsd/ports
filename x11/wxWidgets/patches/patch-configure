@@ -1,8 +1,20 @@
-$OpenBSD: patch-configure,v 1.6 2020/11/23 00:49:15 jca Exp $
+$OpenBSD: patch-configure,v 1.7 2021/11/18 09:24:21 op Exp $
+
+don't add webview to STD_GUI_LIBS to avoid it being picked up by default
+by other ports.
 
 Index: configure
 --- configure.orig
 +++ configure
+@@ -37595,7 +37595,7 @@ if test "$wxUSE_GUI" = "yes"; then
+         BUILT_WX_LIBS="stc $BUILT_WX_LIBS"
+     fi
+     if test "$wxUSE_WEBVIEW" = "yes" ; then
+-        STD_GUI_LIBS="webview $STD_GUI_LIBS"
++        # STD_GUI_LIBS="webview $STD_GUI_LIBS"
+         BUILT_WX_LIBS="webview $BUILT_WX_LIBS"
+     fi
+     if test "$wxUSE_XRC" = "yes" ; then
 @@ -39051,6 +39051,11 @@ fi
          USE_SOVERSION=1
          USE_SOVERLINUX=1

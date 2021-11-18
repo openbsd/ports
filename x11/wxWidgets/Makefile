@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.73 2021/11/17 16:11:46 op Exp $
+# $OpenBSD: Makefile,v 1.74 2021/11/18 09:24:21 op Exp $
 
 COMMENT-main =	C++ cross-platform GUI toolkit
 COMMENT-media =	wxMediaCtrl class for wxWidgets
 COMMENT-webkit = wxWebView class for wxWidgets
 
 V =		3.0.5.1
-REVISION-main =	1
+REVISION-main =	2
 REVISION-media = 0
 DISTNAME =	wxWidgets-${V}
 PKGNAME-main =	wxWidgets-gtk3-${V}
