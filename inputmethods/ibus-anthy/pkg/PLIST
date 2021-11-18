@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/10/18 15:23:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/11/18 10:11:29 ajacoutot Exp $
 include/ibus-anthy-1.0/
 include/ibus-anthy-1.0/anthygcontext.h
 lib/girepository-1.0/Anthy-9000.typelib
@@ -89,3 +89,4 @@ share/metainfo/org.freedesktop.ibus.engine.anthy.metainfo.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag glib-compile-schemas
+@tag ibus-write-cache

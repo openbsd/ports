@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/06 16:25:15 solene Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/11/18 10:11:29 ajacoutot Exp $
 bin/emoji-picker
 libexec/ibus-engine-typing-booster
 libexec/ibus-setup-typing-booster
@@ -401,3 +401,4 @@ share/metainfo/typing-booster.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
 @tag glib-compile-schemas
+@tag ibus-write-cache

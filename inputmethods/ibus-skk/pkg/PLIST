@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/04/20 10:15:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/11/18 10:11:29 ajacoutot Exp $
 @bin libexec/ibus-engine-skk
 @bin libexec/ibus-setup-skk
 share/applications/ibus-setup-skk.desktop
@@ -10,3 +10,4 @@ share/ibus-skk/setup/ibus-skk-preferences.ui
 share/ibus/component/skk.xml
 share/locale/ja/LC_MESSAGES/ibus-skk.mo
 @tag update-desktop-database
+@tag ibus-write-cache
