@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2021/10/10 13:12:23 danj Exp $
+# $OpenBSD: Makefile,v 1.86 2021/11/18 20:18:08 tb Exp $
 
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
@@ -6,6 +6,7 @@ DISTNAME =	haproxy-2.4.7
 CATEGORIES =	net www
 HOMEPAGE =	https://www.haproxy.org/
 MAINTAINER =	Daniel Jakots <obsd@chown.me>
+REVISION =	0
 
 # GPLv2
 PERMIT_PACKAGE =		Yes
@@ -43,9 +44,6 @@ EXAMPLESDIR =	${PREFIX}/share/examples/haproxy
 LDFLAGS +=		"-latomic"
 WANTLIB +=		atomic
 .endif
-
-CFLAGS +=	-DTLS1_3_VERSION=0x0304
-CFLAGS +=	-DSSL_OP_NO_TLSv1_3=0x20000000L
 
 pre-install:
 	${SUBST_CMD} ${WRKSRC}/doc/haproxy.1
