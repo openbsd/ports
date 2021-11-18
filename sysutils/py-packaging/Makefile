@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/02 00:02:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2021/11/18 20:08:00 sthen Exp $
 
 COMMENT =	core utilities for Python packages
 
@@ -8,7 +8,7 @@ MODPY_EGG_VERSION =	20.9
 
 DISTNAME =	packaging-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	sysutils
 
@@ -22,8 +22,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-RUN_DEPENDS =		devel/py-parsing${MODPY_FLAVOR}>=2.0.2 \
-			devel/py-six${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-parsing${MODPY_FLAVOR}>=2.0.2
 
 TEST_DEPENDS =		devel/py-pretend${MODPY_FLAVOR}
 MODPY_PYTEST =		Yes
