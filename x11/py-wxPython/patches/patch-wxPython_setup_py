@@ -1,7 +1,7 @@
-$OpenBSD: patch-wxPython_setup_py,v 1.5 2019/01/02 12:43:19 jca Exp $
+$OpenBSD: patch-wxPython_setup_py,v 1.6 2021/11/18 16:22:36 op Exp $
 
-Drop the building of the media extension to avoid the dependency
-on wxWidgets-media
+Drop the building of the media and webkit extension to avoid the
+dependency on wxWidgets-{media,webkit}
 
 Index: wxPython/setup.py
 --- wxPython/setup.py.orig
@@ -28,7 +28,19 @@ Index: wxPython/setup.py
  
  
  swig_sources = run_swig(['webkit.i'], 'src', GENDIR, PKGDIR,
-@@ -1011,7 +996,7 @@ if __name__ == "__main__":
+@@ -613,10 +598,7 @@ wxpExtensions.append(ext)
+ 
+ swig_sources = run_swig(['html2.i'], 'src', GENDIR, PKGDIR,
+                         USE_SWIG, swig_force, swig_args, swig_deps)
+-if not MONOLITHIC and findLib('webview', libdirs):
+-    webviewLib = makeLibName('webview')
+-else:
+-    webviewLib = []
++webviewLib = []
+ ext = Extension('_html2', swig_sources,
+                 include_dirs =  includes,
+                 define_macros = defines,
+@@ -1011,7 +993,7 @@ if __name__ == "__main__":
      if not PREP_ONLY:
  
          if not EGGing:
