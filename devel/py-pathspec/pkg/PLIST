@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/10/29 15:38:45 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/11/18 09:32:45 sthen Exp $
 @pkgpath devel/py-pathspec
 lib/python${MODPY_VERSION}/site-packages/pathspec/
 lib/python${MODPY_VERSION}/site-packages/pathspec-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -9,27 +9,29 @@ lib/python${MODPY_VERSION}/site-packages/pathspec-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/pathspec/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pathspec/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pathspec/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pathspec/compat.py
+lib/python${MODPY_VERSION}/site-packages/pathspec/${MODPY_PYCACHE}_meta.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pathspec/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pathspec/pathspec.py
 lib/python${MODPY_VERSION}/site-packages/pathspec/${MODPY_PYCACHE}pathspec.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pathspec/pattern.py
 lib/python${MODPY_VERSION}/site-packages/pathspec/${MODPY_PYCACHE}pattern.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pathspec/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pathspec/_meta.py
+lib/python${MODPY_VERSION}/site-packages/pathspec/compat.py
+lib/python${MODPY_VERSION}/site-packages/pathspec/pathspec.py
+lib/python${MODPY_VERSION}/site-packages/pathspec/pattern.py
 lib/python${MODPY_VERSION}/site-packages/pathspec/patterns/
 lib/python${MODPY_VERSION}/site-packages/pathspec/patterns/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pathspec/patterns/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pathspec/patterns/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pathspec/patterns/gitwildmatch.py
 lib/python${MODPY_VERSION}/site-packages/pathspec/patterns/${MODPY_PYCACHE}gitwildmatch.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pathspec/patterns/gitwildmatch.py
 lib/python${MODPY_VERSION}/site-packages/pathspec/tests/
 lib/python${MODPY_VERSION}/site-packages/pathspec/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pathspec/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pathspec/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pathspec/tests/test_gitwildmatch.py
 lib/python${MODPY_VERSION}/site-packages/pathspec/tests/${MODPY_PYCACHE}test_gitwildmatch.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pathspec/tests/test_pathspec.py
 lib/python${MODPY_VERSION}/site-packages/pathspec/tests/${MODPY_PYCACHE}test_pathspec.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pathspec/tests/test_util.py
 lib/python${MODPY_VERSION}/site-packages/pathspec/tests/${MODPY_PYCACHE}test_util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pathspec/tests/test_gitwildmatch.py
+lib/python${MODPY_VERSION}/site-packages/pathspec/tests/test_pathspec.py
+lib/python${MODPY_VERSION}/site-packages/pathspec/tests/test_util.py
 lib/python${MODPY_VERSION}/site-packages/pathspec/util.py
-lib/python${MODPY_VERSION}/site-packages/pathspec/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
