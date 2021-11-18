@@ -1,0 +1,17 @@
+$OpenBSD: patch-command_agent_log_file_bsd_go,v 1.1 2021/11/18 09:35:22 ajacoutot Exp $
+
+Copied from log_file_linux.go
+
+Index: command/agent/log_file_bsd.go
+--- command/agent/log_file_bsd.go.orig
++++ command/agent/log_file_bsd.go
+@@ -11,6 +11,7 @@ import (
+ 
+ func (l *logFile) createTime(stat os.FileInfo) time.Time {
+ 	stat_t := stat.Sys().(*syscall.Stat_t)
+-	createTime := stat_t.Ctimespec
+-	return time.Unix(createTime.Sec, createTime.Nsec)
++	createTime := stat_t.Ctim
++	// Sec and Nsec are int32 in 32-bit architectures.
++	return time.Unix(int64(createTime.Sec), int64(createTime.Nsec)) //nolint:unconvert
+ }

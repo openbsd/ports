@@ -1,9 +1,9 @@
-$OpenBSD: patch-command_agent_host_unix_go,v 1.1 2020/08/19 13:22:27 ajacoutot Exp $
+$OpenBSD: patch-command_agent_host_unix_go,v 1.2 2021/11/18 09:35:22 ajacoutot Exp $
 
 Index: command/agent/host/unix.go
 --- command/agent/host/unix.go.orig
 +++ command/agent/host/unix.go
-@@ -60,9 +60,9 @@ func makeDf(path string) (*df, error) {
+@@ -61,9 +61,9 @@ func makeDf(path string) (*df, error) {
  }
  
  func (d *df) total() uint64 {
