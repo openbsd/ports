@@ -1,2 +1,4 @@
-SHA256 (gcc-esp-2020r3.tar.gz) = qdZraISIoiXG6O5po3YR9G0M3M+bj5tCYBKmihK4xHs=
-SIZE (gcc-esp-2020r3.tar.gz) = 102866867
+SHA256 (gcc-esp-2021r2.tar.gz) = lJ1lgKB6lUmO2/DDU36oQNgDVk2HT995EnX17MlksJs=
+SHA256 (libelf-0.8.13.tar.gz) = WRqbTsgcHyBCqXqmBWTgy3nQQcUvqnQWrLOLyVvSx20=
+SIZE (gcc-esp-2021r2.tar.gz) = 102863056
+SIZE (libelf-0.8.13.tar.gz) = 148529

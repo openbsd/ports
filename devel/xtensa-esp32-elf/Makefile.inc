@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.3 2020/10/29 14:10:51 tracey Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2021/11/18 15:54:27 tracey Exp $
 
 CONFIG =	xtensa-esp32-elf
 CATEGORIES +=	devel
 HOMEPAGE =	https://www.espressif.com/en/products/software/esp-sdk/overview
+
+# DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 # GPLv3
 # For newlib: multiple copyrights, but basically BSD.
@@ -12,15 +14,37 @@ PERMIT_PACKAGE =   Yes
 # permits build on sparc64
 COMPILER =	base-clang ports-clang
 
-# XXX at least gmkdir gets picked up if present
-BUILD_DEPENDS +=	sysutils/coreutils
+BUILD_DEPENDS +=	devel/bison \
+			sysutils/coreutils
 
-CONFIGURE_STYLE ?=	gnu
-CONFIGURE_ARGS +=	--target=${CONFIG} \
-			--program-prefix=xtensa-esp32-elf- \
-			--disable-nls \
-			--disable-werror \
-			--with-bugurl="http://www.espressif.com/"
-
-USE_GMAKE = 		Yes
 SEPARATE_BUILD =	Yes
+USE_GMAKE = 		Yes
+YACC =			bison -y
+
+CE_VARS =		"-mlongcalls -Os -g -free -fipa-pta"
+
+INSTALLDIR =		"${LOCALBASE}/${CONFIG}"
+CONFIGURE_STYLE ?=	simple
+CONFIGURE_ENV +=	CFLAGS_FOR_TARGET=${CE_VARS} \
+			CXXFLAGS_FOR_TARGET=${CE_VARS} \
+			CFLAGS="-I${INSTALLDIR}/include -pipe -g" \
+			LDFLAGS="-L${INSTALLDIR}/lib -g"
+CONFIGURE_ARGS +=	--target="${CONFIG}" \
+			--prefix="${INSTALLDIR}" \
+			--disable-shared \
+			--with-newlib \
+			--enable-threads=no \
+			--disable-__cxa_atexit \
+			--disable-libgomp \
+			--disable-libmudflap \
+			--disable-nls \
+			--disable-bootstrap \
+			--enable-languages=c,c++ \
+			--disable-lto \
+			--disable-libstdcxx-verbose \
+			--disable-option-checking \
+			--without-long-double-128 \
+			--with-system-zlib \
+			--enable-static=yes
+
+NO_TEST =		Yes

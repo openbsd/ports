@@ -1,65 +1,63 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/09 14:57:16 tracey Exp $
+# $OpenBSD: Makefile,v 1.5 2021/11/18 15:54:27 tracey Exp $
 
 COMMENT =	gcc for ${CONFIG} cross-development
 
 V =		8.4.0
-VERSION =	8.4.0.2020.3
+VERSION =	${V}.2021.2
 PKGNAME =	${CONFIG}-gcc-${VERSION}
-REVISION =	0
+
+SHARED_LIBS +=  cc1plugin                 0.0 # 0.0
+SHARED_LIBS +=  cp1plugin                 0.0 # 0.0
+SHARED_LIBS +=  cc1                       0.0 # 0.0
 
 GH_ACCOUNT =	espressif
 GH_PROJECT =	gcc
-GH_TAGNAME =	esp-2020r3
+GH_TAGNAME =	esp-2021r2
+
+WANTLIB =	${COMPILER_LIBCXX} c gmp isl m mpc mpfr z
 
 SUBST_VARS +=	V
 
-WANTLIB =	${COMPILER_LIBCXX} c gmp m mpc mpfr z
+LIBELF =	libelf-0.8.13
+MASTER_SITES0 =	https://github.com/earlephilhower/esp-quick-toolchain/raw/master/blobs/
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES +=	${LIBELF}${EXTRACT_SUFX}:0
 
 .if ${MACHINE_ARCH} == "powerpc64"
 PATCH_LIST =	patch-* vecstep-*
 .endif
 
-BUILD_DEPENDS +=	devel/bison \
-			devel/${CONFIG}/binutils \
-			devel/${CONFIG}/newlib
+MODULES =		lang/python
+
+BUILD_DEPENDS +=	devel/${CONFIG}/binutils \
+			devel/${CONFIG}/newlib \
+			lang/gawk \
+			textproc/gsed
 RUN_DEPENDS =		devel/${CONFIG}/binutils \
 			devel/${CONFIG}/newlib
 LIB_DEPENDS =		devel/gmp \
+			devel/libmpc \
 			devel/mpfr \
-			devel/libmpc
+			math/isl
 
-YACC =			bison
-
-CONFIGURE_ARGS +=	--enable-languages=c,c++ \
-			--with-headers=${LOCALBASE}/${CONFIG}/include  \
-			--with-local-prefix=${LOCALBASE}/${CONFIG} \
-			--with-gmp=${LOCALBASE} \
-			--with-newlib \
-			--with-system-zlib \
-			--disable-thread \
-			--disable-shared \
-			--disable-__cxa_atexit \
-			--disable-libgomp \
-			--disable-libmudflap \
-			--disable-libmpx \
-			--disable-libssp \
-			--disable-libquadmath \
-			--disable-libquadmath-support \
-			--disable-lto \
-			--disable-libstdcxx-verbose \
-			--enable-cxx-flags="-fno-rtti -ffunction-sections -mlongcalls -mtext-section-literals" \
+CONFIGURE_ENV +=	AR_FOR_TARGET="${INSTALLDIR}/bin/${CONFIG}-ar" \
+			RANLIB_FOR_TARGET="${INSTALLDIR}/bin/${CONFIG}-ranlib"
+CONFIGURE_ARGS +=	--with-as="${INSTALLDIR}/bin/${CONFIG}-as" \
+			--with-ld="${INSTALLDIR}/bin/${CONFIG}-ld" \
+			--with-sysroot="${INSTALLDIR}/${CONFIG}" \
+			--with-gmp="${LOCALBASE}" \
+			--with-isl="${LOCALBASE}" \
 			--enable-target-optspace \
-			--without-long-double-128 \
 			--enable-gcov-custom-rtio \
-			--enable-libstdcxx-time=yes \
-			--without-isl
+			--enable-libstdcxx-time=yes
 
-ALL_TARGET =		all-gcc all-target-libgcc all-target-libstdc++-v3
-INSTALL_TARGET =	install-gcc install-target-libgcc \
-			install-target-libstdc++-v3
+post-extract:
+	mv ${WRKDIR}/${LIBELF} ${WRKSRC}/libelf
 
 post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} \
-		${PREFIX}/lib/gcc/${CONFIG}/8.2.0/
+		${PREFIX}/lib/gcc/${CONFIG}/${V}/
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/${CONFIG}/
+	@cd ${PREFIX}/${CONFIG}/bin && ln -s ${CONFIG}-gcc ${CONFIG}-cc
 
 .include <bsd.port.mk>

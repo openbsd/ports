@@ -1,4 +1,4 @@
-$OpenBSD: patch-include_xtensa-config_h,v 1.1.1.1 2020/03/11 14:24:58 tracey Exp $
+$OpenBSD: patch-include_xtensa-config_h,v 1.2 2021/11/18 15:54:27 tracey Exp $
 
 xtensa-config.h file for ESP32
 
@@ -8,7 +8,7 @@ Index: include/xtensa-config.h
 +++ include/xtensa-config.h
 @@ -1,5 +1,6 @@
  /* Xtensa configuration settings.
--   Copyright (C) 2001-2018 Free Software Foundation, Inc.
+-   Copyright (C) 2001-2019 Free Software Foundation, Inc.
 +   Copyright (C) 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008
 +   Free Software Foundation, Inc.
     Contributed by Bob Wilson (bob.wilson@acm.org) at Tensilica.

@@ -1,20 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/10/29 14:10:52 tracey Exp $
-@comment @info info/cpp.info
-@comment @info info/cppinternals.info
-@comment @info info/gcc.info
-@comment @info info/gccinstall.info
-@comment @info info/gccint.info
-@comment @man man/man1/xtensa-esp32-elf-cpp.1
-@comment @man man/man1/xtensa-esp32-elf-gcc.1
-@comment @man man/man1/xtensa-esp32-elf-gcov-dump.1
-@comment @man man/man1/xtensa-esp32-elf-gcov-tool.1
-@comment @man man/man1/xtensa-esp32-elf-gcov.1
-@comment @man man/man7/fsf-funding.7
-@comment @man man/man7/gfdl.7
-@comment @man man/man7/gpl.7
+@comment $OpenBSD: PLIST,v 1.3 2021/11/18 15:54:27 tracey Exp $
+xtensa-esp32-elf/
 xtensa-esp32-elf/bootstrap/
 xtensa-esp32-elf/bootstrap/bin/
+@bin xtensa-esp32-elf/bootstrap/bin/xtensa-esp32-elf-c++
 @bin xtensa-esp32-elf/bootstrap/bin/xtensa-esp32-elf-cpp
+@bin xtensa-esp32-elf/bootstrap/bin/xtensa-esp32-elf-g++
 @bin xtensa-esp32-elf/bootstrap/bin/xtensa-esp32-elf-gcc
 @bin xtensa-esp32-elf/bootstrap/bin/xtensa-esp32-elf-gcc-${V}
 @bin xtensa-esp32-elf/bootstrap/bin/xtensa-esp32-elf-gcc-ar
@@ -27,31 +17,12 @@ xtensa-esp32-elf/bootstrap/lib/
 xtensa-esp32-elf/bootstrap/lib/gcc/
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/
-xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/crtbegin.o
-xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/crtend.o
-xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/crti.o
-xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/crtn.o
-xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/esp32-psram/
-xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/esp32-psram/crtbegin.o
-xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/esp32-psram/crtend.o
-xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/esp32-psram/crti.o
-xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/esp32-psram/crtn.o
-@static-lib xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/esp32-psram/libgcc.a
-@static-lib xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/esp32-psram/libgcov.a
-xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/esp32-psram/no-rtti/
-xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/esp32-psram/no-rtti/crtbegin.o
-xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/esp32-psram/no-rtti/crtend.o
-xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/esp32-psram/no-rtti/crti.o
-xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/esp32-psram/no-rtti/crtn.o
-@static-lib xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/esp32-psram/no-rtti/libgcc.a
-@static-lib xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/esp32-psram/no-rtti/libgcov.a
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/include/
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/include-fixed/
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/include-fixed/README
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/include-fixed/limits.h
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/include-fixed/syslimits.h
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/include/float.h
-xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/include/gcov.h
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/include/iso646.h
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/include/stdalign.h
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/include/stdarg.h
@@ -63,7 +34,6 @@ xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/include/stdint-gcc.h
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/include/stdint.h
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/include/stdnoreturn.h
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/include/tgmath.h
-xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/include/unwind.h
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/include/varargs.h
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/install-tools/
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/install-tools/fixinc_list
@@ -73,15 +43,6 @@ xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/install-tools/include/R
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/install-tools/include/limits.h
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/install-tools/macro_list
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/install-tools/mkheaders.conf
-@static-lib xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/libgcc.a
-@static-lib xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/libgcov.a
-xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/no-rtti/
-xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/no-rtti/crtbegin.o
-xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/no-rtti/crtend.o
-xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/no-rtti/crti.o
-xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/no-rtti/crtn.o
-@static-lib xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/no-rtti/libgcc.a
-@static-lib xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/no-rtti/libgcov.a
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/plugin/
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/plugin/gtype.state
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/plugin/include/
@@ -153,6 +114,11 @@ xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/plugin/include/coretype
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/plugin/include/coverage.h
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/plugin/include/cp/
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/plugin/include/cp/cp-tree.def
+xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/plugin/include/cp/cp-tree.h
+xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/plugin/include/cp/cxx-pretty-print.h
+xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/plugin/include/cp/name-lookup.h
+xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/plugin/include/cp/operators.def
+xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/plugin/include/cp/type-utils.h
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/plugin/include/cppbuiltin.h
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/plugin/include/cppdefault.h
 xtensa-esp32-elf/bootstrap/lib/gcc/xtensa-esp32-elf/${V}/plugin/include/cpplib.h
@@ -494,6 +460,7 @@ xtensa-esp32-elf/bootstrap/libexec/gcc/
 xtensa-esp32-elf/bootstrap/libexec/gcc/xtensa-esp32-elf/
 xtensa-esp32-elf/bootstrap/libexec/gcc/xtensa-esp32-elf/${V}/
 @bin xtensa-esp32-elf/bootstrap/libexec/gcc/xtensa-esp32-elf/${V}/cc1
+@bin xtensa-esp32-elf/bootstrap/libexec/gcc/xtensa-esp32-elf/${V}/cc1plus
 @bin xtensa-esp32-elf/bootstrap/libexec/gcc/xtensa-esp32-elf/${V}/collect2
 xtensa-esp32-elf/bootstrap/libexec/gcc/xtensa-esp32-elf/${V}/install-tools/
 xtensa-esp32-elf/bootstrap/libexec/gcc/xtensa-esp32-elf/${V}/install-tools/fixinc.sh
@@ -503,3 +470,23 @@ xtensa-esp32-elf/bootstrap/libexec/gcc/xtensa-esp32-elf/${V}/install-tools/mkins
 @bin xtensa-esp32-elf/bootstrap/libexec/gcc/xtensa-esp32-elf/${V}/lto-wrapper
 xtensa-esp32-elf/bootstrap/libexec/gcc/xtensa-esp32-elf/${V}/plugin/
 @bin xtensa-esp32-elf/bootstrap/libexec/gcc/xtensa-esp32-elf/${V}/plugin/gengtype
+xtensa-esp32-elf/include/
+xtensa-esp32-elf/share/
+@comment @info xtensa-esp32-elf/share/info/
+@comment @info xtensa-esp32-elf/share/info/cpp.info
+@comment @info xtensa-esp32-elf/share/info/cppinternals.info
+@comment @info xtensa-esp32-elf/share/info/gcc.info
+@comment @info xtensa-esp32-elf/share/info/gccinstall.info
+@comment @info xtensa-esp32-elf/share/info/gccint.info
+@comment @mandir xtensa-esp32-elf/share/man/
+@comment xtensa-esp32-elf/share/man/man1/
+@comment @man xtensa-esp32-elf/share/man/man1/xtensa-esp32-elf-cpp.1
+@comment @man xtensa-esp32-elf/share/man/man1/xtensa-esp32-elf-g++.1
+@comment @man xtensa-esp32-elf/share/man/man1/xtensa-esp32-elf-gcc.1
+@comment @man xtensa-esp32-elf/share/man/man1/xtensa-esp32-elf-gcov-dump.1
+@comment @man xtensa-esp32-elf/share/man/man1/xtensa-esp32-elf-gcov-tool.1
+@comment @man xtensa-esp32-elf/share/man/man1/xtensa-esp32-elf-gcov.1
+@comment xtensa-esp32-elf/share/man/man7/
+@comment @man xtensa-esp32-elf/share/man/man7/fsf-funding.7
+@comment @man xtensa-esp32-elf/share/man/man7/gfdl.7
+@comment @man xtensa-esp32-elf/share/man/man7/gpl.7

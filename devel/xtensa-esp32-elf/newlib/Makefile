@@ -1,22 +1,25 @@
-# $OpenBSD: Makefile,v 1.3 2020/10/29 14:10:52 tracey Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/18 15:54:27 tracey Exp $
 
 COMMENT =	newlib for ${CONFIG} cross-development
 
-VERSION =	2020.3
+VERSION =	2021.2
 PKGNAME =	${CONFIG}-newlib-${VERSION}
 
 GH_ACCOUNT =	espressif
 GH_PROJECT =	newlib-esp32
-GH_TAGNAME =	esp-2020r3
+GH_TAGNAME =	esp-2021r2
 
 BUILD_DEPENDS =	devel/${CONFIG}/binutils \
 		devel/${CONFIG}/gcc-bootstrap
+RUN_DEPENDS =	devel/${CONFIG}/binutils
 
 USE_GROFF =	No
 
-CONFIGURE_ENV =	CC_FOR_TARGET="${LOCALBASE}/${CONFIG}/bootstrap/bin/${CONFIG}-gcc"
+CONFIGURE_ENV =	CC_FOR_TARGET="${INSTALLDIR}/bootstrap/bin/${CONFIG}-gcc" \
+		AR_FOR_TARGET="${INSTALLDIR}/bin/${CONFIG}-ar" \
+		RANLIB_FOR_TARGET="${INSTALLDIR}/bin/${CONFIG}-ranlib"
 
-CONFIGURE_ARGS +=	--with-system-zlib \
+CONFIGURE_ARGS +=	--enable-multilib \
 			--enable-newlib-io-float \
 			--disable-newlib-io-long-double \
 			--enable-newlib-io-pos-args \

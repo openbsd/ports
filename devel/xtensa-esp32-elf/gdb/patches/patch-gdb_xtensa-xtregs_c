@@ -1,11 +1,13 @@
-$OpenBSD: patch-gdb_xtensa-xtregs_c,v 1.1.1.1 2020/03/11 14:24:58 tracey Exp $
+$OpenBSD: patch-gdb_xtensa-xtregs_c,v 1.2 2021/11/18 15:54:27 tracey Exp $
+
+File from espressif overlays.
 
 Index: gdb/xtensa-xtregs.c
 --- gdb/xtensa-xtregs.c.orig
 +++ gdb/xtensa-xtregs.c
 @@ -1,39 +1,71 @@
 -/* Table mapping between kernel xtregset and GDB register cache.
--   Copyright (C) 2007-2018 Free Software Foundation, Inc.
+-   Copyright (C) 2007-2020 Free Software Foundation, Inc.
 +/* Customized table mapping between kernel xtregset and GDB register cache.
  
 -   This file is part of GDB.
