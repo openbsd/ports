@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/03/12 02:57:24 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/11/18 12:07:25 bentley Exp $
 share/apertium/apertium-nob/
 share/apertium/apertium-nob/apertium-nob.nob.dix
 share/apertium/apertium-nob/apertium-nob.nob.rlx
+share/apertium/apertium-nob/apertium-nob.nob.seg.rlx
 share/apertium/apertium-nob/apertium-nob.nob.syn.rlx
 share/apertium/apertium-nob/apertium-nob.nob.tsx
 share/apertium/apertium-nob/nob.autogen.att.gz
@@ -10,10 +11,12 @@ share/apertium/apertium-nob/nob.automorf.att.gz
 share/apertium/apertium-nob/nob.automorf.bin
 share/apertium/apertium-nob/nob.prob
 share/apertium/apertium-nob/nob.rlx.bin
+share/apertium/apertium-nob/nob.seg.rlx.bin
 share/apertium/apertium-nob/nob.syn.rlx.bin
 share/apertium/modes/nob-disam.mode
 share/apertium/modes/nob-gener.mode
 share/apertium/modes/nob-morph.mode
+share/apertium/modes/nob-seg.mode
 share/apertium/modes/nob-syntax.mode
 share/apertium/modes/nob-tagger.mode
 share/pkgconfig/apertium-nob.pc
