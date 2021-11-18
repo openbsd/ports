@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/08/10 20:38:56 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/11/18 09:47:15 sthen Exp $
 @pkgpath www/py-itsdangerous
 lib/python${MODPY_VERSION}/site-packages/itsdangerous/
 lib/python${MODPY_VERSION}/site-packages/itsdangerous-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -9,7 +9,6 @@ lib/python${MODPY_VERSION}/site-packages/itsdangerous-${MODPY_EGG_VERSION}-py${M
 lib/python${MODPY_VERSION}/site-packages/itsdangerous/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/itsdangerous/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/itsdangerous/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/itsdangerous/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/itsdangerous/${MODPY_PYCACHE}_json.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/itsdangerous/${MODPY_PYCACHE}encoding.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/itsdangerous/${MODPY_PYCACHE}exc.${MODPY_PYC_MAGIC_TAG}pyc
@@ -18,11 +17,11 @@ lib/python${MODPY_VERSION}/site-packages/itsdangerous/${MODPY_PYCACHE}serializer
 lib/python${MODPY_VERSION}/site-packages/itsdangerous/${MODPY_PYCACHE}signer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/itsdangerous/${MODPY_PYCACHE}timed.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/itsdangerous/${MODPY_PYCACHE}url_safe.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/itsdangerous/_compat.py
 lib/python${MODPY_VERSION}/site-packages/itsdangerous/_json.py
 lib/python${MODPY_VERSION}/site-packages/itsdangerous/encoding.py
 lib/python${MODPY_VERSION}/site-packages/itsdangerous/exc.py
 lib/python${MODPY_VERSION}/site-packages/itsdangerous/jws.py
+lib/python${MODPY_VERSION}/site-packages/itsdangerous/py.typed
 lib/python${MODPY_VERSION}/site-packages/itsdangerous/serializer.py
 lib/python${MODPY_VERSION}/site-packages/itsdangerous/signer.py
 lib/python${MODPY_VERSION}/site-packages/itsdangerous/timed.py
