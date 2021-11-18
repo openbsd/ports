@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2021/11/18 10:12:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2021/11/18 10:23:09 ajacoutot Exp $
 @pkgpath inputmethods/ibus
 @define-tag ibus-write-cache at-end %D/bin/ibus write-cache --system
 @tag ibus-write-cache
-@unexec-delete rm -f /var/cache/ibus/*
+@unexec-delete rm -rf /var/cache/ibus/*
 @bin bin/ibus
 @bin bin/ibus-daemon
 bin/ibus-setup
@@ -208,4 +208,4 @@ share/vala/vapi/ibus-1.0.vapi
 @tag update-desktop-database
 @exec %D/bin/dconf update
 @unexec-delete %D/bin/dconf update
-@unexec-delete rm -rf ${SYSCONFDIR}/dconf/db/ibus
+@unexec-delete rm -f ${SYSCONFDIR}/dconf/db/ibus
