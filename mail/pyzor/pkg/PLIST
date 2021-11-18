@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/10/29 21:50:29 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/11/18 10:55:25 giovanni Exp $
+@rcscript ${RCDIR}/pyzord
 bin/pyzor
 bin/pyzor-migrate
 bin/pyzord
 lib/python${MODPY_VERSION}/site-packages/pyzor/
-lib/python${MODPY_VERSION}/site-packages/pyzor-1.1.1-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/pyzor-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pyzor/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyzor/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyzor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc

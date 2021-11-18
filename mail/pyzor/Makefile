@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2021/11/02 00:01:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2021/11/18 10:55:25 giovanni Exp $
 
 COMMENT =		collaborative, networked system to detect and block spam
 
@@ -9,7 +9,7 @@ GH_COMMIT =		53aceee8943c30cc28850ca76e19a54689e3d119
 MODPY_EGG_VERSION =	1.1.1
 DISTNAME =		pyzor-1.1.1pre20210613
 CATEGORIES =		mail net
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://www.pyzor.org/
 
@@ -17,6 +17,7 @@ HOMEPAGE =		https://www.pyzor.org/
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+RUN_DEPENDS =		lang/python/${MODPY_VERSION},-gdbm
 # actual releases should be available on pypi, could switch back if
 # there's a new release, but no tests
 #MODPY_PI =		Yes

@@ -1,0 +1,12 @@
+#!/bin/ksh
+#
+# $OpenBSD: pyzord.rc,v 1.1 2021/11/18 10:55:25 giovanni Exp $
+
+daemon="${TRUEPREFIX}/bin/pyzord"
+daemon_flags="--detach=/var/log/pyzord.log"
+
+. /etc/rc.d/rc.subr
+
+pexp=".*${daemon} ${daemon_flags}"
+
+rc_cmd $1
