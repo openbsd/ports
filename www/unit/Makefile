@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/02 00:02:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/18 20:11:35 sthen Exp $
 
 COMMENT-main=	dynamic web application server
 COMMENT-perl=	NGINX Unit perl module
 COMMENT-python=	NGINX Unit python module
 COMMENT-ruby=	NGINX Unit ruby module
 
-VERSION=	1.25.0
+VERSION=	1.26.0
 DISTNAME=	unit-${VERSION}
-REVISION-python= 0
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-perl=	unit-perl-${VERSION}
@@ -52,8 +51,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--user=_unit \
 		--group=_unit
 
-#NO_TEST=	Yes
-
 LIB_DEPENDS-main=	devel/pcre2
 RUN_DEPENDS-main=	# empty
 
@@ -79,8 +76,8 @@ CONFIGURE_ENV+=	PYTHON=${MODPY_BIN} \
 		PYTHON_CONFIG=${MODPY_BIN}-config
 LIB_DEPENDS-python= ${MODPY_LIB_DEPENDS}
 RUN_DEPENDS-python= ${MODPY_RUN_DEPENDS}
+# tests really want pytest 6+
 MODPY_PYTEST=	Yes
-TEST_DEPENDS+=	devel/py-six${MODPY_FLAVOR}
 .else
 NO_TEST=	Yes
 .endif
