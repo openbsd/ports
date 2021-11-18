@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.159 2021/11/16 19:14:51 robert Exp $
+# $OpenBSD: Makefile,v 1.160 2021/11/18 20:20:10 tb Exp $
 
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 
@@ -20,6 +20,8 @@ COMMENT-securelink=	nginx HMAC secure link module
 VERSION=	1.20.2
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
+
+REVISION-main=	0
 
 VERSION-rtmp=	1.2.1
 
@@ -120,9 +122,6 @@ SUBST_VARS=	NGINX_DIR
 .for i in ${MODULE_PACKAGES}
 PREFIX$i=	${NGINX_DIR}/modules
 .endfor
-
-CFLAGS+=	-DTLS1_3_VERSION=0x0304
-CFLAGS+=	-DSSL_OP_NO_TLSv1_3=0x20000000L
 
 CFLAGS+=	-Wall -Wpointer-arith \
 		-I "${LOCALBASE}/include/libxml2" \
