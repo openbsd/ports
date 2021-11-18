@@ -1,7 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/10/24 09:28:48 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/11/18 09:20:51 sthen Exp $
 @pkgpath math/py-mpmath
 lib/python${MODPY_VERSION}/site-packages/mpmath/
-lib/python${MODPY_VERSION}/site-packages/mpmath-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/mpmath-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/mpmath-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/mpmath-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/mpmath-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/mpmath-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/mpmath-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/mpmath/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mpmath/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mpmath/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
@@ -85,7 +90,6 @@ lib/python${MODPY_VERSION}/site-packages/mpmath/libmp/${MODPY_PYCACHE}libintmath
 lib/python${MODPY_VERSION}/site-packages/mpmath/libmp/${MODPY_PYCACHE}libmpc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpmath/libmp/${MODPY_PYCACHE}libmpf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpmath/libmp/${MODPY_PYCACHE}libmpi.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/mpmath/libmp/${MODPY_PYCACHE}six.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mpmath/libmp/backend.py
 lib/python${MODPY_VERSION}/site-packages/mpmath/libmp/gammazeta.py
 lib/python${MODPY_VERSION}/site-packages/mpmath/libmp/libelefun.py
@@ -94,7 +98,6 @@ lib/python${MODPY_VERSION}/site-packages/mpmath/libmp/libintmath.py
 lib/python${MODPY_VERSION}/site-packages/mpmath/libmp/libmpc.py
 lib/python${MODPY_VERSION}/site-packages/mpmath/libmp/libmpf.py
 lib/python${MODPY_VERSION}/site-packages/mpmath/libmp/libmpi.py
-lib/python${MODPY_VERSION}/site-packages/mpmath/libmp/six.py
 lib/python${MODPY_VERSION}/site-packages/mpmath/math2.py
 lib/python${MODPY_VERSION}/site-packages/mpmath/matrices/
 lib/python${MODPY_VERSION}/site-packages/mpmath/matrices/__init__.py
