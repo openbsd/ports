@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2021/11/02 00:02:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2021/11/18 09:20:48 sthen Exp $
 
 COMMENT=	Javascript Object Signing and Encryption (JOSE)
 
 CATEGORIES=	security devel
 
-MODPY_EGG_VERSION= 1.10.0
+MODPY_EGG_VERSION= 1.11.0
 DISTNAME=	josepy-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 # Apache 2.0
 PERMIT_PACKAGE= Yes
@@ -25,7 +24,7 @@ RUN_DEPENDS=	security/py-cryptography${MODPY_FLAVOR} \
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-# needs additional dep's which require a chain of updates in ports
-NO_TEST=	Yes
+# patched to disable flake8 tests as we don't have pytest-flake8 yet
+MODPY_PYTEST=	Yes
 
 .include <bsd.port.mk>

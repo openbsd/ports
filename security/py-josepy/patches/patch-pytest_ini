@@ -1,0 +1,14 @@
+$OpenBSD: patch-pytest_ini,v 1.1 2021/11/18 09:20:48 sthen Exp $
+
+we don't have pytest-flake8 yet
+
+Index: pytest.ini
+--- pytest.ini.orig
++++ pytest.ini
+@@ -1,5 +1,5 @@
+ [pytest]
+-addopts = -v --flake8 --cov-report xml --cov-report=term-missing --cov=josepy --cov-config .coveragerc
++addopts = -v --cov-report xml --cov-report=term-missing --cov=josepy --cov-config .coveragerc
+ # SelectableGroups:DeprecationWarning is ignored because it is raised by
+ # flake8. See https://github.com/PyCQA/flake8/issues/1397.
+ filterwarnings =
