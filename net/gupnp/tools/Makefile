@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2021/06/23 09:21:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2021/11/19 08:22:13 ajacoutot Exp $
 
 COMMENT=		collection of developer-oriented UPnP tools
 
 GNOME_PROJECT=		gupnp-tools
-GNOME_VERSION=		0.10.1
+GNOME_VERSION=		0.10.2
 
 MODULES=		devel/meson \
 			x11/gnome
