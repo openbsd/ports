@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-apache,v 1.4 2021/11/19 10:31:13 sthen Exp $
+@comment $OpenBSD: PLIST-apache,v 1.5 2021/11/19 12:47:00 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict php-apache-${PHP_PKGSPEC}
@@ -7,7 +7,8 @@
 @pkgpath lang/php/7.1,-apache
 @pkgpath lang/php/7.2,-apache
 @pkgpath lang/php/7.3,-apache
-@so lib/php-${PV}/libphp7.so
+${APACHE_DIR}/
+@so ${APACHE_DIR}/${SAPI_SO}
 @sample ${MODPHP_CONFIG_PATH}/modules.sample/
 share/examples/php-${PV}/modphp.conf
 @sample ${MODPHP_CONFIG_PATH}/modules.sample/php-${PV}.conf

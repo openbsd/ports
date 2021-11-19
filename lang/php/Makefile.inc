@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.167 2021/11/19 11:29:04 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.168 2021/11/19 12:46:59 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -31,10 +31,6 @@ MASTER_SITES=		https://www.php.net/distributions/
 PERMIT_PACKAGE=		Yes
 
 MODPHP_CONFIG_PATH=	/var/www/conf
-
-# where the main php module is stored (outside the chroot)
-APACHE_MODULE_SUBDIR=	lib/php-${PV}
-APACHE_MODULE_DIR=	${LOCALBASE}/${APACHE_MODULE_SUBDIR}
 
 # where the PEAR and extension modules are (inside the chroot)
 CHROOT_DIR?=		/var/www
@@ -127,11 +123,16 @@ PSEUDO_FLAVORS=		${PHP_EXTENSIONS:C/-(pdo_)?mysqli?//:C/-(pcntl|shmop|zip)//:C/-
 PSEUDO_FLAVORS+=	embed
 FLAVOR ?=
 
+# where the main php module is stored (outside the chroot)
 .if ${FLAVOR:Membed}
-MULTI_PACKAGES=		-main -embed
+MULTI_PACKAGES=	-main -embed
+SAPI_DIR=	lib/php-${PV}
 .else
-MULTI_PACKAGES=		${SAPI} ${PHP_EXTENSIONS}
+MULTI_PACKAGES=	${SAPI} ${PHP_EXTENSIONS}
+SAPI_DIR=	lib/apache2/php-${PV}
+APACHE_DIR=	${SAPI_DIR}
 .endif
+SAPI_SO=	libphp${MV}.so
 
 .include <bsd.port.arch.mk>
 .if ${FLAVOR:Membed}
@@ -459,27 +460,13 @@ WANTLIB-zip=		bz2 crypto lzma pthread ssl z zip
 
 # some variables to substitute
 SUBST_VARS+=	CHROOT_DIR MODPHP_CONFIG_PATH SV PV MV PHP_PKGSPEC
+SUBST_VARS+=	APACHE_DIR SAPI_SO
 UPDATE_PLIST_ARGS+= -i MV
 DEFAULT_PHP?=	No
-
-.for i in TRUEPREFIX MODULES_DIR PHP_VERSION APACHE_MODULE_DIR
-PHPXS_SUBST+= -e 's,${i},${${i}},'
-.endfor
-
-pre-fake:
-	${INSTALL_DATA_DIR} ${PREFIX}/${APACHE_MODULE_SUBDIR}/modules
+DESTDIRNAME=	INSTALL_ROOT
 
 INSTALL_TARGET=	install-binaries install-build install-headers install-programs
 # not: install-modules install-pear install-sapi install-pharcmd
-
-DESTDIRNAME=	INSTALL_ROOT
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/main/php_ini.c
-	@perl -pi -e "s,OPENBSD_PEAR_ROOT,'${CHROOT_DIR}/pear',g;" \
-		-e "s,OPENBSD_PREFIX,${TRUEPREFIX},;" \
-		${WRKSRC}/scripts/phpize.in \
-		${WRKSRC}/scripts/php-config.in
 
 .for i in ${MULTI_PACKAGES:N-main:S/-//g}
 DESCR-${i}=		${.CURDIR}/../files/DESCR-${i}
@@ -494,6 +481,16 @@ DESCR-main=		${.CURDIR}/../files/DESCR-main
 # have the generated file older than the source file for re2c, resulting in a
 # build failure if re2c was installed during autoconf but later junked.
 BUILD_DEPENDS+=		devel/re2c
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/main/php_ini.c
+	@perl -pi -e "s,OPENBSD_PEAR_ROOT,'${CHROOT_DIR}/pear',g;" \
+		-e "s,OPENBSD_PREFIX,${TRUEPREFIX},;" \
+		${WRKSRC}/scripts/phpize.in \
+		${WRKSRC}/scripts/php-config.in
+
+pre-fake:
+	${INSTALL_DATA_DIR} ${PREFIX}/${MODULES_SUBDIR}
 
 post-install:
 	${SUBST_DATA} ${.CURDIR}/../files/README-main \
@@ -512,6 +509,11 @@ post-install:
 		${PREFIX}/share/examples/php-${PV}/php-fpm.conf
 	mv ${PREFIX}/share/php/* ${PREFIX}/share/php-${PV}/
 	rmdir ${PREFIX}/share/php
+.endif
+
+.if ${BUILD_PACKAGES:M-apache} || ${BUILD_PACKAGES:M-embed}
+	${INSTALL_DATA_DIR} ${PREFIX}/${SAPI_DIR}
+	${INSTALL_DATA} ${WRKBUILD}/.libs/${SAPI_SO} ${PREFIX}/${SAPI_DIR}
 .endif
 
 .for m in ${ZEND_EXTENSIONS:S/-//g}
@@ -538,13 +540,6 @@ post-install:
 .if ${BUILD_PACKAGES:M-apache}
 	${SUBST_CMD} -m 644 -c ${.CURDIR}/../files/php.conf \
 		${PREFIX}/share/examples/php-${PV}/modphp.conf
-	${INSTALL_DATA} ${WRKBUILD}/.libs/libphp${MV}.so \
-		${PREFIX}/${APACHE_MODULE_SUBDIR}/
-.endif
-
-.if ${BUILD_PACKAGES:M-embed}
-	${INSTALL_DATA} ${WRKBUILD}/.libs/libphp${MV}.so \
-		${PREFIX}/lib/php-${PV}/
 .endif
 
 .if ${DEFAULT_PHP:L} == yes
