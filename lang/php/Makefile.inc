@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.165 2021/11/19 09:57:05 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.166 2021/11/19 11:26:47 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -137,6 +137,9 @@ MULTI_PACKAGES=		${SAPI} ${PHP_EXTENSIONS}
 .include <bsd.port.arch.mk>
 .if ${FLAVOR:Membed}
 BUILD_PACKAGES:=	-embed
+.endif
+.if ${BUILD_PACKAGES:M-apache}
+BUILD_PACKAGES := ${BUILD_PACKAGES:N-embed}
 .endif
 
 .if ${BUILD_PACKAGES:M-main}
