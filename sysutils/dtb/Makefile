@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2021/11/08 05:54:56 jsg Exp $
+# $OpenBSD: Makefile,v 1.34 2021/11/19 10:40:01 sthen Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -6,6 +6,11 @@ COMMENT=	Device Tree Blobs
 # 5.15 breaks cpsw(4) on bbb
 VERSION=	5.14
 REVISION=	1
+
+# XXX Updating this port has a high chance of breaking drivers as breaking
+# XXX changes are frequently made to device trees in linux. See commit log
+# XXX for Makefile r1.33.
+
 DISTNAME=	linux-${VERSION}
 PKGNAME=	dtb-${VERSION:S/-//}
 CATEGORIES=	sysutils
