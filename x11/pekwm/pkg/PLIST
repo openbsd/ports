@@ -1,6 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/08/26 04:23:03 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/11/19 21:15:51 op Exp $
 @bin bin/pekwm
+@bin bin/pekwm_bg
+@bin bin/pekwm_ctrl
+@bin bin/pekwm_dialog
+@bin bin/pekwm_panel
+@bin bin/pekwm_screenshot
+bin/pekwm_theme
+@bin bin/pekwm_wm
 @man man/man1/pekwm.1
+@man man/man1/pekwm_bg.1
+@man man/man1/pekwm_dialog.1
+@man man/man1/pekwm_panel.1
+@man man/man1/pekwm_screenshot.1
+@man man/man1/pekwm_theme.1
 share/examples/pekwm/
 @sample ${SYSCONFDIR}/pekwm/
 share/examples/pekwm/autoproperties
@@ -23,13 +35,14 @@ share/examples/pekwm/mouse_sloppy
 @sample ${SYSCONFDIR}/pekwm/mouse_sloppy
 share/examples/pekwm/mouse_system
 @sample ${SYSCONFDIR}/pekwm/mouse_system
+share/examples/pekwm/panel
+@sample ${SYSCONFDIR}/pekwm/panel
 share/examples/pekwm/start
 @sample ${SYSCONFDIR}/pekwm/start
 share/examples/pekwm/vars
 @sample ${SYSCONFDIR}/pekwm/vars
 share/pekwm/
 share/pekwm/scripts/
-share/pekwm/scripts/pekwm_screenshot.sh
 share/pekwm/scripts/pekwm_themeset.sh
 share/pekwm/scripts/pekwm_ws_menu.sh
 share/pekwm/themes/
@@ -38,6 +51,9 @@ share/pekwm/themes/default-plain/
 share/pekwm/themes/default-plain/theme
 share/pekwm/themes/default/arrow.png
 share/pekwm/themes/default/arrow_focus.png
+share/pekwm/themes/default/backgrounds/
+share/pekwm/themes/default/backgrounds/pekwm_generated-1920x1080.png
+share/pekwm/themes/default/backgrounds/pekwm_generated-2560x1440.png
 share/pekwm/themes/default/bottom-border.png
 share/pekwm/themes/default/bottom-border_unfocus.png
 share/pekwm/themes/default/bottom-left.png
@@ -64,6 +80,7 @@ share/pekwm/themes/default/left-border_unfocus.png
 share/pekwm/themes/default/menu-bottom.png
 share/pekwm/themes/default/menu-bottom_unfocus.png
 share/pekwm/themes/default/menuline.png
+share/pekwm/themes/default/panel.png
 share/pekwm/themes/default/right-border.png
 share/pekwm/themes/default/right-border_unfocus.png
 share/pekwm/themes/default/tab-separator.png
@@ -78,5 +95,3 @@ share/pekwm/themes/default/top-left_unfocus.png
 share/pekwm/themes/default/top-right-no-buttons.png
 share/pekwm/themes/default/top-right.png
 share/pekwm/themes/default/top-right_unfocus.png
-share/pekwm/themes/pion/
-share/pekwm/themes/pion/theme

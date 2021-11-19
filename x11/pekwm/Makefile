@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2021/08/26 04:23:03 semarie Exp $
+# $OpenBSD: Makefile,v 1.38 2021/11/19 21:15:51 op Exp $
 
 COMMENT=	aewm++ based pretty themable window manager
 
 DISTNAME=	pekwm-${V}
-V=		0.1.18
+V=		0.2.0
 CATEGORIES=	x11
 
 HOMEPAGE=	https://www.pekwm.se/
@@ -14,26 +14,22 @@ MAINTAINER=	Timo Myyra <timo.myyra@bittivirhe.fi>
 PERMIT_PACKAGE=	Yes
 
 # uses pledge()
-WANTLIB += ICE SM X11 Xext Xft Xinerama Xpm Xrandr c iconv jpeg m png z
+WANTLIB += ICE SM X11 Xext Xft Xinerama Xpm Xrandr c freetype jpeg m png
 WANTLIB += ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
 MASTER_SITES=	https://github.com/pekdon/pekwm/releases/download/release-${V}/
-LIB_DEPENDS=	converters/libiconv \
-		graphics/jpeg \
+LIB_DEPENDS=	graphics/jpeg \
 		graphics/png
 
-NO_TEST=	Yes
+MODULES=	devel/cmake
 
-USE_GMAKE=	Yes
-
-CONFIGURE_STYLE=autoconf
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--enable-xinerama
-
-AUTOCONF_VERSION=	2.69
+CONFIGURE_ARGS=	-DCMAKE_INSTALL_SYSCONFDIR=${SYSCONFDIR} \
+		-DAWK=/usr/bin/awk \
+		-DSED=/usr/bin/sed \
+		-DSH=/bin/sh \
+		-DTESTS=ON
 
 post-install:
 	@mv ${WRKINST}/etc/pekwm ${PREFIX}/share/examples

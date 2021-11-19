@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_pekwm_wm_cc,v 1.1 2021/11/19 21:15:51 op Exp $
+
+Index: src/pekwm_wm.cc
+--- src/pekwm_wm.cc.orig
++++ src/pekwm_wm.cc
+@@ -21,7 +21,7 @@
+ 
+ extern "C" {
+ #include <errno.h>
+-#include <unistd.h> // execlp
++#include <unistd.h> // execlp,pledge
+ }
+ 
+ /**
+@@ -141,6 +141,14 @@ main(int argc, char **argv)
+ 		  << "using configuration at " << config_file);
+ 
+ 	WindowManager *wm = WindowManager::start(config_file, replace, synchronous);
++
++#if PEKWM_HAVE_PLEDGE
++	if (pledge("stdio rpath wpath cpath proc exec", NULL) == -1) {
++		cerr << "failed to pledge" << endl;
++		return 1;
++	}
++#endif
++
+ 	if (wm) {
+ 		try {
+ 			P_TRACE("Enter event loop.");

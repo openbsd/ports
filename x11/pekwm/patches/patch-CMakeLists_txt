@@ -1,0 +1,13 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2021/11/19 21:15:51 op Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -65,6 +65,7 @@ int main() { std::stof(\"42.0\"); }
+ set(CMAKE_CXX_FLAGS ${orig_CMAKE_CXX_FLAGS})
+ 
+ # Look for platform specific methods
++check_function_exists(pledge PEKWM_HAVE_PLEDGE)
+ check_function_exists(setenv PEKWM_HAVE_SETENV)
+ check_function_exists(unsetenv PEKWM_HAVE_UNSETENV)
+ check_function_exists(daemon PEKWM_HAVE_DAEMON)
