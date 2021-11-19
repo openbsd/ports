@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST-curl,v 1.3 2021/10/25 12:33:20 sthen Exp $
+@comment $OpenBSD: PLIST-curl,v 1.4 2021/11/19 10:31:13 sthen Exp $
+@option no-default-conflict
+@option is-branch
+@conflict php-curl-${PHP_PKGSPEC}
 @pkgpath lang/php/5.6,-curl
 @pkgpath lang/php/7.0,-curl
 @pkgpath lang/php/7.1,-curl
 @pkgpath lang/php/7.2,-curl
 @pkgpath lang/php/7.3,-curl
-@option no-default-conflict
-@option is-branch
-@conflict php-curl-${PHP_PKGSPEC}
 @so lib/php-${PV}/modules/curl.so
 share/examples/php-${PV}/curl.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/curl.ini

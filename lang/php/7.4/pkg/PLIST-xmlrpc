@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST-xmlrpc,v 1.3 2021/10/25 12:33:21 sthen Exp $
+@comment $OpenBSD: PLIST-xmlrpc,v 1.4 2021/11/19 10:31:13 sthen Exp $
+@option no-default-conflict
+@option is-branch
+@conflict php-xmlrpc-${PHP_PKGSPEC}
 @pkgpath lang/php/5.6,-xmlrpc
 @pkgpath lang/php/7.0,-xmlrpc
 @pkgpath lang/php/7.1,-xmlrpc
 @pkgpath lang/php/7.2,-xmlrpc
 @pkgpath lang/php/7.3,-xmlrpc
-@option no-default-conflict
-@option is-branch
-@conflict php-xmlrpc-${PHP_PKGSPEC}
 @so lib/php-${PV}/modules/xmlrpc.so
 share/examples/php-${PV}/xmlrpc.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/xmlrpc.ini

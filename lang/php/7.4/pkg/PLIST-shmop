@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST-shmop,v 1.3 2021/10/25 12:33:21 sthen Exp $
+@comment $OpenBSD: PLIST-shmop,v 1.4 2021/11/19 10:31:13 sthen Exp $
+@option no-default-conflict
+@option is-branch
+@conflict php-shmop-${PHP_PKGSPEC}
 @pkgpath lang/php/5.6,-shmop
 @pkgpath lang/php/7.0,-shmop
 @pkgpath lang/php/7.1,-shmop
 @pkgpath lang/php/7.2,-shmop
 @pkgpath lang/php/7.3,-shmop
-@option no-default-conflict
-@option is-branch
-@conflict php-shmop-${PHP_PKGSPEC}
 @so lib/php-${PV}/modules/shmop.so
 share/examples/php-${PV}/shmop.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/shmop.ini

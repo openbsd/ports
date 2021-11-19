@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST-gd,v 1.5 2021/10/25 12:33:20 sthen Exp $
+@comment $OpenBSD: PLIST-gd,v 1.6 2021/11/19 10:31:13 sthen Exp $
+@option no-default-conflict
+@option is-branch
+@conflict php-gd-${PHP_PKGSPEC}
 @pkgpath lang/php/5.6,-gd
 @pkgpath lang/php/7.0,-gd
 @pkgpath lang/php/7.1,-gd
 @pkgpath lang/php/7.2,-gd
 @pkgpath lang/php/7.3,-gd
-@option no-default-conflict
-@option is-branch
-@conflict php-gd-${PHP_PKGSPEC}
 @so lib/php-${PV}/modules/gd.so
 share/examples/php-${PV}/gd.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/gd.ini

@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST-pdo_mysql,v 1.3 2021/10/25 12:33:20 sthen Exp $
+@comment $OpenBSD: PLIST-pdo_mysql,v 1.4 2021/11/19 10:31:13 sthen Exp $
+@option no-default-conflict
+@option is-branch
+@conflict php-pdo_mysql-${PHP_PKGSPEC}
 @pkgpath lang/php/5.6,-pdo_mysql
 @pkgpath lang/php/7.0,-pdo_mysql
 @pkgpath lang/php/7.1,-pdo_mysql
 @pkgpath lang/php/7.2,-pdo_mysql
 @pkgpath lang/php/7.3,-pdo_mysql
-@option no-default-conflict
-@option is-branch
-@conflict php-pdo_mysql-${PHP_PKGSPEC}
 @so lib/php-${PV}/modules/pdo_mysql.so
 share/examples/php-${PV}/pdo_mysql.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/pdo_mysql.ini
