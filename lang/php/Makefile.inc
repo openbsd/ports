@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.164 2021/10/25 12:33:20 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.165 2021/11/19 09:57:05 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -118,7 +118,6 @@ PHP_EXTENSIONS+=	-bz2 -curl -dba -enchant -gd -gmp -intl -imap -ldap \
 			-sqlite3 -pdo_dblib -tidy -xsl -zip
 
 SAPI+=			-main -apache -cgi -dbg -embed
-MULTI_PACKAGES=		${SAPI} ${PHP_EXTENSIONS}
 
 # setup for no_* build options to allow disabling extensions with
 # larger dependencies;
@@ -129,27 +128,40 @@ PSEUDO_FLAVORS=		${PHP_EXTENSIONS:C/-(pdo_)?mysqli?//:C/-(pcntl|shmop|zip)//:C/-
 PSEUDO_FLAVORS+=	embed
 FLAVOR ?=
 
-.include <bsd.port.arch.mk>
 .if ${FLAVOR:Membed}
-BUILD_PACKAGES := ${BUILD_PACKAGES:N-apache}
-.endif
-.if ${BUILD_PACKAGES:M-apache}
-BUILD_PACKAGES := ${BUILD_PACKAGES:N-embed}
+MULTI_PACKAGES=		-main -embed
+.else
+MULTI_PACKAGES=		${SAPI} ${PHP_EXTENSIONS}
 .endif
 
+.include <bsd.port.arch.mk>
+.if ${FLAVOR:Membed}
+BUILD_PACKAGES:=	-embed
+.endif
+
+.if ${BUILD_PACKAGES:M-main}
 CONFIGURE_ARGS+=	--enable-cli \
 			--enable-fpm \
 			--with-fpm-user=www \
 			--with-fpm-group=www
+.endif
 
 # cgi
 COMMENT-cgi=		php CGI binary
+.if ${BUILD_PACKAGES:M-dbg}
 CONFIGURE_ARGS+=	--enable-cgi
+.else
+CONFIGURE_ARGS+=	--disable-cgi
+.endif
 
 # phpdbg
 COMMENT-dbg=		interactive php debugger
 HOMEPAGE-dbg=		https://www.php.net/phpdbg
+.if ${BUILD_PACKAGES:M-dbg}
 CONFIGURE_ARGS+=	--enable-phpdbg
+.else
+CONFIGURE_ARGS+=	--disable-phpdbg
+.endif
 
 # apache
 COMMENT-apache=		php module for Apache httpd
@@ -491,12 +503,14 @@ post-install:
 		${WRKINST}/${CHROOT_DIR}/etc/master.passwd.imap
 	pwd_mkdb -d ${WRKINST}/${CHROOT_DIR}/etc master.passwd.imap
 
+.if ${BUILD_PACKAGES:M-main}
 	${INSTALL_DATA} ${WRKBUILD}/sapi/fpm/php-fpm.conf \
 		${PREFIX}/share/examples/php-${PV}/php-fpm.conf
 	cat ${WRKBUILD}/sapi/fpm/www.conf >> \
 		${PREFIX}/share/examples/php-${PV}/php-fpm.conf
 	mv ${PREFIX}/share/php/* ${PREFIX}/share/php-${PV}/
 	rmdir ${PREFIX}/share/php
+.endif
 
 .for m in ${ZEND_EXTENSIONS:S/-//g}
 	cd ${PREFIX}; \
@@ -537,6 +551,7 @@ post-install:
 .    endfor
 .endif
 
+.if ${BUILD_PACKAGES:M-main}
 	@if [[ $$((`cat ${WRKSRC}/sapi/cgi/php-cgi.1 | wc -l`+0)) != 1 ]]; then \
 	  echo "Error: php-cgi.1 is expected to only source php.1, port needs updating"; \
 	  exit 1; fi
@@ -544,3 +559,4 @@ post-install:
 
 	${INSTALL_PROGRAM} ${WRKBUILD}/ext/phar/phar.phar ${PREFIX}/bin/phar-${PV}
 	${INSTALL_MAN} ${WRKBUILD}/ext/phar/phar.1 ${PREFIX}/man/man1/phar-${PV}.1
+.endif
