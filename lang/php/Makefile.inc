@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.166 2021/11/19 11:26:47 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.167 2021/11/19 11:29:04 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -64,7 +64,6 @@ MAKE_ENV=		${CONFIGURE_ENV}
 
 CONFIGURE_ARGS+=	--disable-rpath \
 			--disable-static \
-			--enable-inline-optimization \
 			--enable-shared \
 			--program-suffix=-${PV} \
 			--with-config-file-path=${SYSCONFDIR} \
