@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.176 2021/11/16 20:37:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.177 2021/11/19 11:48:27 ajacoutot Exp $
 @conflict py-botocore-*
 @pkgpath net/py-botocore
 lib/python${MODPY_VERSION}/site-packages/botocore/
@@ -118,6 +118,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/appconfig/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appconfig/2019-10-09/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appconfig/2019-10-09/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appconfig/2019-10-09/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/appconfigdata/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/appconfigdata/2021-11-11/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/appconfigdata/2021-11-11/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/appconfigdata/2021-11-11/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appflow/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appflow/2020-08-23/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appflow/2020-08-23/paginators-1.json
@@ -521,6 +525,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/docdb/2014-10-31/paginato
 lib/python${MODPY_VERSION}/site-packages/botocore/data/docdb/2014-10-31/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/docdb/2014-10-31/service-2.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/docdb/2014-10-31/waiters-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/drs/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/drs/2020-02-26/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/drs/2020-02-26/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/drs/2020-02-26/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ds/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ds/2015-04-16/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ds/2015-04-16/examples-1.json
