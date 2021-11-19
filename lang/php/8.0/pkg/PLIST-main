@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2021/10/20 20:45:59 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2021/11/19 09:56:25 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict php-${PHP_PKGSPEC}
-@conflict php->=7.3,<7.3.27p1
 @extraunexec rm -f ${SYSCONFDIR}/php-${PV}.sample/*
 @extraunexec rm -f ${SYSCONFDIR}/php-fpm.d/*
 @mode 1700
