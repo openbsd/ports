@@ -1,8 +1,17 @@
-$OpenBSD: patch-tests_CMakeLists_txt,v 1.6 2021/10/23 09:15:52 landry Exp $
+$OpenBSD: patch-tests_CMakeLists_txt,v 1.7 2021/11/19 13:28:07 landry Exp $
 
 Index: tests/CMakeLists.txt
 --- tests/CMakeLists.txt.orig
 +++ tests/CMakeLists.txt
+@@ -30,7 +30,7 @@ IF (NOT GTEST_FOUND)
+ 
+     SET(GTEST_LIBRARIES gtest gmock)
+ ELSE(NOT GTEST_FOUND)
+-    INCLUDE_DIRECTORIES(${GTEST_INCLUDE_DIR})
++    INCLUDE_DIRECTORIES(${GTEST_INCLUDE_DIRS})
+ ENDIF(NOT GTEST_FOUND)
+ 
+ #########################################################################
 @@ -181,5 +181,5 @@ SET(UNITTESTS_SRC
  )
  
