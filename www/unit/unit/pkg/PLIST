@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2021/10/23 16:02:51 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.1 2021/11/19 10:01:02 sthen Exp $
+@pkgpath www/unit,-main
 @newgroup _unit:870
 @newuser _unit:870:870:daemon:NGINX Unit Daemon:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/unit
