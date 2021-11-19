@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/17 09:52:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/19 16:11:54 sthen Exp $
 
 COMMENT =	pytest plugin for managing processes across test runs
 
@@ -23,6 +23,7 @@ MODPY_PYTEST =		Yes
 FLAVORS =		python3
 FLAVOR =		python3
 
+BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
 			sysutils/py-psutil${MODPY_FLAVOR}
 
