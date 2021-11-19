@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.114 2021/11/02 00:02:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.115 2021/11/19 09:26:02 ajacoutot Exp $
+
+# XXX prctl(2) or procctl(2)
+# error: #error "Please submit a patch to support parent-death signal on your OS"
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
-GNOME_VERSION=		41.1
-REVISION=		0
+GNOME_VERSION=		41.2
 
 CATEGORIES=		devel
 
@@ -12,8 +14,8 @@ CATEGORIES=		devel
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += c cairo cairo-gobject clang cmark dazzle-1.0 enchant-2
-WANTLIB += fontconfig gdk-3 gio-2.0 girepository-1.0 gladeui-2
-WANTLIB += glib-2.0 gobject-2.0 gspell-1 gtk-3 gtksourceview-4
+WANTLIB += fontconfig gdk-3 gio-2.0 girepository-1.0 git2 git2-glib-1.0
+WANTLIB += gladeui-2 glib-2.0 gobject-2.0 gspell-1 gtk-3 gtksourceview-4
 WANTLIB += intl json-glib-1.0 jsonrpc-glib-1.0 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre peas-1.0 template_glib-1.0 vte-2.91
 WANTLIB += webkit2gtk-4.0 xml2
@@ -47,6 +49,7 @@ RUN_DEPENDS +=		sysutils/ggrep
 
 LIB_DEPENDS=		devel/glade \
 			devel/jsonrpc-glib \
+			devel/libgit2/libgit2-glib \
 			devel/libpeas \
 			devel/llvm \
 			devel/template-glib \
@@ -65,10 +68,6 @@ CONFIGURE_ARGS=		-Dplugin_valgrind=false \
 # requires libportal
 CONFIGURE_ARGS +=	-Dplugin_color_picker=false \
 			-Dplugin_devhelp=false
-
-# XXX prctl(2) or procctl(2)
-# error: #error "Please submit a patch to support parent-death signal on your OS"
-CONFIGURE_ARGS +=	-Dplugin_git=false
 
 MODGNOME_LDFLAGS +=	-L${X11BASE}/lib
 

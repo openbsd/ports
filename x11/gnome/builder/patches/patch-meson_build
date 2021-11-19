@@ -1,0 +1,17 @@
+$OpenBSD: patch-meson_build,v 1.1 2021/11/19 09:26:02 ajacoutot Exp $
+
+/usr/local/include/git2/deprecated.h:220:17:
+error: redundant redeclaration of 'git_buf_grow' [-Werror=redundant-decls]
+GIT_EXTERN(int) git_buf_grow(git_buf *buffer, size_t target_size);
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -155,7 +155,6 @@ test_c_args = [
+   '-Werror=parenthesis',
+   '-Werror=pointer-arith',
+   '-Werror=pointer-to-int-cast',
+-  '-Werror=redundant-decls',
+   '-Werror=return-type',
+   '-Werror=sequence-point',
+   '-Werror=shadow',

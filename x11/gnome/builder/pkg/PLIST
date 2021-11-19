@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2021/10/28 15:50:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.43 2021/11/19 09:26:02 ajacoutot Exp $
 @bin bin/gnome-builder
 include/gnome-builder-41/
 include/gnome-builder-41/libide/
@@ -293,7 +293,7 @@ lib/gnome-builder/
 lib/gnome-builder/girepository-1.0/
 lib/gnome-builder/girepository-1.0/Ide-41.0.typelib
 lib/gnome-builder/pkgconfig/
-lib/gnome-builder/pkgconfig/gnome-builder-41.1.pc
+lib/gnome-builder/pkgconfig/gnome-builder-41.2.pc
 lib/gnome-builder/plugins/
 lib/gnome-builder/plugins/cargo.plugin
 lib/gnome-builder/plugins/cargo_plugin.py
@@ -344,6 +344,7 @@ lib/gnome-builder/plugins/waf.plugin
 lib/gnome-builder/plugins/waf_plugin.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Ide.py
 @bin libexec/gnome-builder-clang
+@bin libexec/gnome-builder-git
 share/applications/org.gnome.Builder.desktop
 share/dbus-1/services/org.gnome.Builder.service
 share/glib-2.0/schemas/org.gnome.builder.build.gschema.xml
