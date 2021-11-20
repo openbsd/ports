@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2021/06/17 18:33:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.85 2021/11/20 13:40:18 tb Exp $
 
 COMMENT=	extract, list, and test RAR archives
 
@@ -13,6 +13,7 @@ PKGNAME=	unrar-6.02
 EPOCH=		2
 DISTNAME=	unrarsrc-6.0.7
 CATEGORIES=	archivers
+REVISION=	0
 
 HOMEPAGE=	https://www.rarlab.com/
 
