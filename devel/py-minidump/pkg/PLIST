@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/03/20 22:34:27 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/11/20 15:08:12 sthen Exp $
 @pkgpath devel/py-minidump
 bin/minidump
 lib/python${MODPY_VERSION}/site-packages/minidump/
@@ -43,6 +43,7 @@ lib/python${MODPY_VERSION}/site-packages/minidump/minidumpshell.py
 lib/python${MODPY_VERSION}/site-packages/minidump/streams/
 lib/python${MODPY_VERSION}/site-packages/minidump/streams/CommentStreamA.py
 lib/python${MODPY_VERSION}/site-packages/minidump/streams/CommentStreamW.py
+lib/python${MODPY_VERSION}/site-packages/minidump/streams/ContextStream.py
 lib/python${MODPY_VERSION}/site-packages/minidump/streams/ExceptionStream.py
 lib/python${MODPY_VERSION}/site-packages/minidump/streams/FunctionTableStream.py
 lib/python${MODPY_VERSION}/site-packages/minidump/streams/HandleDataStream.py
@@ -66,6 +67,7 @@ lib/python${MODPY_VERSION}/site-packages/minidump/streams/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/minidump/streams/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/minidump/streams/${MODPY_PYCACHE}CommentStreamA.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/minidump/streams/${MODPY_PYCACHE}CommentStreamW.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/minidump/streams/${MODPY_PYCACHE}ContextStream.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/minidump/streams/${MODPY_PYCACHE}ExceptionStream.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/minidump/streams/${MODPY_PYCACHE}FunctionTableStream.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/minidump/streams/${MODPY_PYCACHE}HandleDataStream.${MODPY_PYC_MAGIC_TAG}pyc
