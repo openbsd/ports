@@ -1,0 +1,62 @@
+$OpenBSD: patch-src_tracker_tracker-process_c,v 1.1 2021/11/20 16:26:02 ajacoutot Exp $
+
+XXX push upstream
+
+Index: src/tracker/tracker-process.c
+--- src/tracker/tracker-process.c.orig
++++ src/tracker/tracker-process.c
+@@ -27,12 +27,8 @@
+ #include <glib/gi18n.h>
+ 
+ #ifdef __OpenBSD__
+-#include <sys/param.h>
+-#include <sys/proc.h>
++#include <sys/types.h>
+ #include <sys/sysctl.h>
+-#include <fcntl.h>
+-#include <kvm.h>
+-#include <unistd.h>
+ #endif
+ 
+ #ifdef __sun
+@@ -68,6 +64,7 @@ tracker_process_data_free (TrackerProcessData *pd)
+ static gchar *
+ find_command (pid_t pid)
+ {
++#ifndef __OpenBSD__
+ 	gchar *proc_path, path[PATH_MAX + 1];
+ 	ssize_t len;
+ 
+@@ -87,6 +84,32 @@ find_command (pid_t pid)
+ 	}
+ 
+ 	return g_path_get_basename (path);
++#else /* __OpenBSD__ */
++	gchar **args = NULL;
++	gint mib[4];
++	size_t len;
++
++	mib[0] = CTL_KERN;
++	mib[1] = KERN_PROC_ARGS;
++	mib[2] = pid;
++	mib[3] = KERN_PROC_ARGV;
++
++	if (sysctl (mib, 4, NULL, &len, NULL, 0) == -1)
++		goto fail;
++
++	args = g_malloc0 (len);
++	if (args == NULL)
++		goto fail;
++
++	if (sysctl (mib, 4, args, &len, NULL, 0) == -1)
++		goto fail;
++
++	return g_path_get_basename (g_strndup(args[0], PATH_MAX));
++
++fail:
++	g_free (args);
++	return NULL;
++#endif /* !__OpenBSD__ */
+ }
+ 
+ static pid_t
