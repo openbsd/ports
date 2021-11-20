@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/18 21:03:31 op Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/20 10:36:12 ajacoutot Exp $
 
 COMMENT =	package manager for lua ${MODLUA_VERSION}
 
@@ -19,8 +19,10 @@ MASTER_SITES =		https://luarocks.org/releases/
 MODULES =		lang/lua
 MODLUA_SA =		Yes
 
-BUILD_DEPENDS =		archivers/zip
-RUN_DEPENDS =		archivers/zip \
+BUILD_DEPENDS =		archivers/unzip \
+			archivers/zip
+RUN_DEPENDS =		archivers/unzip \
+			archivers/zip \
 			net/curl
 
 USE_GMAKE =		Yes
