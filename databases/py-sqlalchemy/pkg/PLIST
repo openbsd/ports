@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.16 2021/11/01 08:22:00 landry Exp $
+@comment $OpenBSD: PLIST,v 1.17 2021/11/20 14:49:40 sthen Exp $
 @conflict py-sqlalchemy-<1.4
 @conflict py-sqlalchemy-docs-<1.4
-@conflict py3-sqlalchemy-<1.4
+@conflict ${MODPY_PY_PREFIX}sqlalchemy-<1.4
 @pkgpath databases/py-sqlalchemy,-main
 @pkgpath databases/py-sqlalchemy,-docs
-@pkgpath databases/py-sqlalchemy,-main,python3
-@pkgpath databases/py-sqlalchemy,-docs,python3
+@pkgpath databases/py-sqlalchemy,-main${MODPY_FLAVOR}
+@pkgpath databases/py-sqlalchemy,-docs${MODPY_FLAVOR}
 lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -91,6 +91,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mysql/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mysql/${MODPY_PYCACHE}pymysql.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mysql/${MODPY_PYCACHE}pyodbc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mysql/${MODPY_PYCACHE}reflection.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mysql/${MODPY_PYCACHE}reserved_words.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mysql/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mysql/aiomysql.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mysql/asyncmy.py
@@ -109,6 +110,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mysql/provision.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mysql/pymysql.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mysql/pyodbc.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mysql/reflection.py
+lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mysql/reserved_words.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/mysql/types.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/oracle/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/oracle/__init__.py

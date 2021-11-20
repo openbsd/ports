@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2021/11/02 00:00:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2021/11/20 14:49:40 sthen Exp $
 
 COMMENT =		database toolkit for Python
 
-MODPY_EGG_VERSION =	1.4.26
+MODPY_EGG_VERSION =	1.4.27
 DISTNAME =		SQLAlchemy-${MODPY_EGG_VERSION}
 PKGNAME =		py-sqlalchemy-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		databases
 
