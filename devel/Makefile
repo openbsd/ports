@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2158 2021/11/17 10:38:51 op Exp $
+# $OpenBSD: Makefile,v 1.2159 2021/11/20 08:24:48 landry Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1444,6 +1444,7 @@
      SUBDIR += py-nosexcover,python3
      SUBDIR += py-objgraph,python3
      SUBDIR += py-olefile,python3
+     SUBDIR += py-ordered-set,python3
      SUBDIR += py-parallel,python3
      SUBDIR += py-parsedatetime,python3
      SUBDIR += py-parsing
