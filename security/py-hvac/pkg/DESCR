@@ -1,0 +1,5 @@
+HVAC allows accessing secrets stored in a Vault directly from
+Python code.
+
+An access token must be created first, using a separate tool
+like vault or vault-client.
