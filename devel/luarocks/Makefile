@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/20 10:36:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/20 10:36:30 ajacoutot Exp $
 
 COMMENT =	package manager for lua ${MODLUA_VERSION}
 
@@ -6,6 +6,7 @@ V =		3.8.0
 DISTNAME =	luarocks-${V}
 FULLPKGNAME =	luarocks-${FLAVOR}-${V}
 CATEGORIES =	devel
+REVISION =	0
 
 HOMEPAGE =	https://luarocks.org/
 
