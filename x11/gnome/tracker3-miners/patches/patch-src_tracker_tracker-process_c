@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_tracker_tracker-process_c,v 1.1 2021/11/20 16:26:02 ajacoutot Exp $
+$OpenBSD: patch-src_tracker_tracker-process_c,v 1.2 2021/11/20 16:35:50 ajacoutot Exp $
 
-XXX push upstream
+https://gitlab.gnome.org/GNOME/tracker-miners/-/merge_requests/366
 
 Index: src/tracker/tracker-process.c
 --- src/tracker/tracker-process.c.orig
