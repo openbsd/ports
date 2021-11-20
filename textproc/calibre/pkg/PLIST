@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.44 2021/10/25 13:11:46 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.45 2021/11/20 14:39:18 sthen Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -440,6 +440,7 @@ lib/calibre/calibre/ebooks/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/ebooks/${MODPY_PYCACHE}covers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/ebooks/${MODPY_PYCACHE}css_transform_rules.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/ebooks/${MODPY_PYCACHE}html_entities.${MODPY_PYC_MAGIC_TAG}pyc
+lib/calibre/calibre/ebooks/${MODPY_PYCACHE}html_transform_rules.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/ebooks/${MODPY_PYCACHE}hyphenate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/ebooks/${MODPY_PYCACHE}render_html.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/ebooks/${MODPY_PYCACHE}tweak.${MODPY_PYC_MAGIC_TAG}pyc
@@ -678,6 +679,7 @@ lib/calibre/calibre/ebooks/html/input.py
 lib/calibre/calibre/ebooks/html/meta.py
 lib/calibre/calibre/ebooks/html/to_zip.py
 lib/calibre/calibre/ebooks/html_entities.py
+lib/calibre/calibre/ebooks/html_transform_rules.py
 lib/calibre/calibre/ebooks/htmlz/
 lib/calibre/calibre/ebooks/htmlz/__init__.py
 ${MODPY_COMMENT}lib/calibre/calibre/ebooks/htmlz/${MODPY_PYCACHE}/
@@ -1469,6 +1471,7 @@ lib/calibre/calibre/gui2/${MODPY_PYCACHE}email.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/${MODPY_PYCACHE}filename_pattern_ui.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/${MODPY_PYCACHE}font_family_chooser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/${MODPY_PYCACHE}gestures.${MODPY_PYC_MAGIC_TAG}pyc
+lib/calibre/calibre/gui2/${MODPY_PYCACHE}html_transform_rules.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/${MODPY_PYCACHE}icon_theme.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/${MODPY_PYCACHE}image_popup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/${MODPY_PYCACHE}init.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1677,7 +1680,6 @@ lib/calibre/calibre/gui2/convert/${MODPY_PYCACHE}txt_input_ui.${MODPY_PYC_MAGIC_
 lib/calibre/calibre/gui2/convert/${MODPY_PYCACHE}txt_output.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/convert/${MODPY_PYCACHE}txt_output_ui.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/convert/${MODPY_PYCACHE}txtz_output.${MODPY_PYC_MAGIC_TAG}pyc
-lib/calibre/calibre/gui2/convert/${MODPY_PYCACHE}xexp_edit_ui.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/convert/${MODPY_PYCACHE}xpath_wizard.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/convert/${MODPY_PYCACHE}xpath_wizard_ui.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/convert/azw3_output.py
@@ -1741,7 +1743,6 @@ lib/calibre/calibre/gui2/convert/txt_input_ui.py
 lib/calibre/calibre/gui2/convert/txt_output.py
 lib/calibre/calibre/gui2/convert/txt_output_ui.py
 lib/calibre/calibre/gui2/convert/txtz_output.py
-lib/calibre/calibre/gui2/convert/xexp_edit_ui.py
 lib/calibre/calibre/gui2/convert/xpath_wizard.py
 lib/calibre/calibre/gui2/convert/xpath_wizard_ui.py
 lib/calibre/calibre/gui2/cover_flow.py
@@ -1907,6 +1908,7 @@ lib/calibre/calibre/gui2/email.py
 lib/calibre/calibre/gui2/filename_pattern_ui.py
 lib/calibre/calibre/gui2/font_family_chooser.py
 lib/calibre/calibre/gui2/gestures.py
+lib/calibre/calibre/gui2/html_transform_rules.py
 lib/calibre/calibre/gui2/icon_theme.py
 lib/calibre/calibre/gui2/image_popup.py
 lib/calibre/calibre/gui2/init.py
@@ -2444,6 +2446,7 @@ lib/calibre/calibre/gui2/viewer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}p
 lib/calibre/calibre/gui2/viewer/${MODPY_PYCACHE}annotations.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/viewer/${MODPY_PYCACHE}bookmarks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/viewer/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
+lib/calibre/calibre/gui2/viewer/${MODPY_PYCACHE}control_sleep.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/viewer/${MODPY_PYCACHE}convert_book.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/viewer/${MODPY_PYCACHE}highlights.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/viewer/${MODPY_PYCACHE}integration.${MODPY_PYC_MAGIC_TAG}pyc
@@ -2462,6 +2465,7 @@ lib/calibre/calibre/gui2/viewer/${MODPY_PYCACHE}widgets.${MODPY_PYC_MAGIC_TAG}py
 lib/calibre/calibre/gui2/viewer/annotations.py
 lib/calibre/calibre/gui2/viewer/bookmarks.py
 lib/calibre/calibre/gui2/viewer/config.py
+lib/calibre/calibre/gui2/viewer/control_sleep.py
 lib/calibre/calibre/gui2/viewer/convert_book.py
 lib/calibre/calibre/gui2/viewer/highlights.py
 lib/calibre/calibre/gui2/viewer/integration.py
@@ -4650,6 +4654,7 @@ share/calibre/recipes/independent_australia.recipe
 share/calibre/recipes/index_hu.png
 share/calibre/recipes/index_hu.recipe
 share/calibre/recipes/india_facts.recipe
+share/calibre/recipes/india_speaks_reddit.recipe
 share/calibre/recipes/india_today.recipe
 share/calibre/recipes/indian_express.png
 share/calibre/recipes/indian_express.recipe
@@ -5236,7 +5241,6 @@ share/calibre/recipes/nu.png
 share/calibre/recipes/nu.recipe
 share/calibre/recipes/nursingtimes.png
 share/calibre/recipes/nursingtimes.recipe
-share/calibre/recipes/nuus24.recipe
 share/calibre/recipes/nymag.recipe
 share/calibre/recipes/nypost.png
 share/calibre/recipes/nypost.recipe
