@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2021/09/08 06:02:59 martin Exp $
+# $OpenBSD: Makefile,v 1.38 2021/11/20 15:04:38 naddy Exp $
 
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers' XGCC #'
 
 V=		8.5.0
 DISTNAME =	gcc-$V
 PKGNAME=	avr-gcc-${V}
+REVISION=	0
 
 # GPLv3
 PERMIT_PACKAGE=	Yes
@@ -38,7 +39,8 @@ CONFIGURE_ARGS+= --disable-libssp \
 		--enable-cpp \
 		--disable-libcc1 \
 		--with-gmp=${LOCALBASE} \
-		--with-mpfr=${LOCALBASE}
+		--with-mpfr=${LOCALBASE} \
+		--without-isl
 
 MAKE_FLAGS=	LANGUAGES="c c++" CFLAGS="-I${LOCALBASE}/include"
 MAKE_ENV=	MACHINE_ARCH=avr
