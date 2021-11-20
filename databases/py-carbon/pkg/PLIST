@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/10/29 13:46:28 martin Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/11/20 14:53:17 sthen Exp $
 @conflict py-carbon-*
 @pkgpath databases/py-carbon
 @newgroup _graphite:706
@@ -6,7 +6,6 @@
 bin/carbon-aggregator-cache.py
 bin/carbon-aggregator.py
 bin/carbon-cache.py
-bin/carbon-client.py
 bin/carbon-relay.py
 bin/validate-storage-schemas.py
 lib/python${MODPY_VERSION}/site-packages/carbon/
@@ -117,5 +116,3 @@ share/examples/graphite/whitelist.conf.example
 @sample /var/graphite/storage/log/
 @sample /var/graphite/storage/rrd/
 @sample /var/graphite/storage/whisper/
-@owner
-@group

@@ -1,8 +1,9 @@
-$OpenBSD: patch-lib_carbon_conf_py,v 1.4 2020/10/29 13:46:28 martin Exp $
+$OpenBSD: patch-lib_carbon_conf_py,v 1.5 2021/11/20 14:53:17 sthen Exp $
+
 Index: lib/carbon/conf.py
 --- lib/carbon/conf.py.orig
 +++ lib/carbon/conf.py
-@@ -598,7 +598,7 @@ def read_config(program, options, **kwargs):
+@@ -600,7 +600,7 @@ def read_config(program, options, **kwargs):
      for name, value in kwargs.items():
          settings.setdefault(name, value)
  
@@ -11,7 +12,7 @@ Index: lib/carbon/conf.py
      if graphite_root is None:
          graphite_root = os.environ.get('GRAPHITE_ROOT')
      if graphite_root is None:
-@@ -609,7 +609,7 @@ def read_config(program, options, **kwargs):
+@@ -611,7 +611,7 @@ def read_config(program, options, **kwargs):
      # 'GRAPHITE_CONF_DIR' environment variable.
      settings.setdefault("CONF_DIR",
                          os.environ.get("GRAPHITE_CONF_DIR",
