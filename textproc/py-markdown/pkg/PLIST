@@ -1,34 +1,39 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/10/29 15:38:51 sthen Exp $
-@pkgpath textproc/py-markdown
-@pkgpath textproc/markdown
+@comment $OpenBSD: PLIST,v 1.7 2021/11/20 14:31:23 sthen Exp $
 @conflict py-markdown-<2.6.11p4
 @conflict markdown-*
+@pkgpath textproc/py-markdown
+@pkgpath textproc/markdown
 bin/markdown_py
 lib/python${MODPY_VERSION}/site-packages/Markdown-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Markdown-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Markdown-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/Markdown-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/Markdown-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/Markdown-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/Markdown-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/markdown/
 lib/python${MODPY_VERSION}/site-packages/markdown/__init__.py
 lib/python${MODPY_VERSION}/site-packages/markdown/__main__.py
+lib/python${MODPY_VERSION}/site-packages/markdown/__meta__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/markdown/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/markdown/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markdown/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/markdown/${MODPY_PYCACHE}__version__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/markdown/${MODPY_PYCACHE}__meta__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markdown/${MODPY_PYCACHE}blockparser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markdown/${MODPY_PYCACHE}blockprocessors.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/markdown/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/markdown/${MODPY_PYCACHE}htmlparser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markdown/${MODPY_PYCACHE}inlinepatterns.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/markdown/${MODPY_PYCACHE}odict.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/markdown/${MODPY_PYCACHE}pep562.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markdown/${MODPY_PYCACHE}postprocessors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markdown/${MODPY_PYCACHE}preprocessors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markdown/${MODPY_PYCACHE}serializers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/markdown/${MODPY_PYCACHE}test_tools.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markdown/${MODPY_PYCACHE}treeprocessors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markdown/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/markdown/__version__.py
 lib/python${MODPY_VERSION}/site-packages/markdown/blockparser.py
 lib/python${MODPY_VERSION}/site-packages/markdown/blockprocessors.py
+lib/python${MODPY_VERSION}/site-packages/markdown/core.py
 lib/python${MODPY_VERSION}/site-packages/markdown/extensions/
 lib/python${MODPY_VERSION}/site-packages/markdown/extensions/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/markdown/extensions/${MODPY_PYCACHE}/
@@ -41,11 +46,12 @@ lib/python${MODPY_VERSION}/site-packages/markdown/extensions/${MODPY_PYCACHE}def
 lib/python${MODPY_VERSION}/site-packages/markdown/extensions/${MODPY_PYCACHE}extra.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markdown/extensions/${MODPY_PYCACHE}fenced_code.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markdown/extensions/${MODPY_PYCACHE}footnotes.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/markdown/extensions/${MODPY_PYCACHE}headerid.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/markdown/extensions/${MODPY_PYCACHE}legacy_attrs.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/markdown/extensions/${MODPY_PYCACHE}legacy_em.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/markdown/extensions/${MODPY_PYCACHE}md_in_html.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markdown/extensions/${MODPY_PYCACHE}meta.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markdown/extensions/${MODPY_PYCACHE}nl2br.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markdown/extensions/${MODPY_PYCACHE}sane_lists.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/markdown/extensions/${MODPY_PYCACHE}smart_strong.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markdown/extensions/${MODPY_PYCACHE}smarty.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markdown/extensions/${MODPY_PYCACHE}tables.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markdown/extensions/${MODPY_PYCACHE}toc.${MODPY_PYC_MAGIC_TAG}pyc
@@ -58,19 +64,22 @@ lib/python${MODPY_VERSION}/site-packages/markdown/extensions/def_list.py
 lib/python${MODPY_VERSION}/site-packages/markdown/extensions/extra.py
 lib/python${MODPY_VERSION}/site-packages/markdown/extensions/fenced_code.py
 lib/python${MODPY_VERSION}/site-packages/markdown/extensions/footnotes.py
-lib/python${MODPY_VERSION}/site-packages/markdown/extensions/headerid.py
+lib/python${MODPY_VERSION}/site-packages/markdown/extensions/legacy_attrs.py
+lib/python${MODPY_VERSION}/site-packages/markdown/extensions/legacy_em.py
+lib/python${MODPY_VERSION}/site-packages/markdown/extensions/md_in_html.py
 lib/python${MODPY_VERSION}/site-packages/markdown/extensions/meta.py
 lib/python${MODPY_VERSION}/site-packages/markdown/extensions/nl2br.py
 lib/python${MODPY_VERSION}/site-packages/markdown/extensions/sane_lists.py
-lib/python${MODPY_VERSION}/site-packages/markdown/extensions/smart_strong.py
 lib/python${MODPY_VERSION}/site-packages/markdown/extensions/smarty.py
 lib/python${MODPY_VERSION}/site-packages/markdown/extensions/tables.py
 lib/python${MODPY_VERSION}/site-packages/markdown/extensions/toc.py
 lib/python${MODPY_VERSION}/site-packages/markdown/extensions/wikilinks.py
+lib/python${MODPY_VERSION}/site-packages/markdown/htmlparser.py
 lib/python${MODPY_VERSION}/site-packages/markdown/inlinepatterns.py
-lib/python${MODPY_VERSION}/site-packages/markdown/odict.py
+lib/python${MODPY_VERSION}/site-packages/markdown/pep562.py
 lib/python${MODPY_VERSION}/site-packages/markdown/postprocessors.py
 lib/python${MODPY_VERSION}/site-packages/markdown/preprocessors.py
 lib/python${MODPY_VERSION}/site-packages/markdown/serializers.py
+lib/python${MODPY_VERSION}/site-packages/markdown/test_tools.py
 lib/python${MODPY_VERSION}/site-packages/markdown/treeprocessors.py
 lib/python${MODPY_VERSION}/site-packages/markdown/util.py
