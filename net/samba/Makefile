@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.304 2021/11/02 00:01:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.305 2021/11/20 09:43:49 jca Exp $
 
-VERSION =		4.15.0
+VERSION =		4.15.2
 DISTNAME =		samba-${VERSION}
 EPOCH =			0
-REVISION-main =		0
-REVISION-ldb =		0
-REVISION-tevent =	0
-REVISION-util =		0
+REVISION-tevent =	1
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
 COMMENT-ldb =		LDAP-like embedded database
@@ -22,10 +19,10 @@ PKGNAME-docs =		samba-docs-${VERSION}
 
 PKG_ARCH-docs =		*
 
-LDB_V =			2.4.0
+LDB_V =			2.4.1
 TEVENT_V =		0.11.0
 
-SHARED_LIBS =		asn1-samba4		1.0 \
+SHARED_LIBS =		asn1-samba4		2.0 \
 			com_err-samba4		1.0 \
 			dcerpc			1.0 \
 			dcerpc-binding		4.0 \
@@ -38,21 +35,21 @@ SHARED_LIBS =		asn1-samba4		1.0 \
 			heimntlm-samba4		1.0 \
 			hx509-samba4		1.0 \
 			kdc-samba4		1.0 \
-			krb5-samba4		1.0 \
+			krb5-samba4		1.1 \
 			ldb			2.0 \
 			ndr			3.0 \
-			ndr-krb5pac		1.0 \
+			ndr-krb5pac		1.1 \
 			ndr-nbt			1.0 \
 			ndr-standard		4.0 \
 			netapi			3.1 \
 			roken-samba4		1.0 \
 			samba-credentials	1.1 \
 			samba-errors		2.1 \
-			samba-hostconfig	8.0 \
+			samba-hostconfig	9.0 \
 			samba-passdb		3.0 \
 			samba-util		7.0 \
-			samdb			1.0 \
-			smbclient		6.0 \
+			samdb			2.0 \
+			smbclient		6.1 \
 			smbconf			10.0 \
 			smbldap			1.0 \
 			tevent			2.0 \
