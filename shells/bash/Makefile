@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.123 2021/05/08 15:50:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.124 2021/11/20 15:42:57 naddy Exp $
 
 COMMENT=	GNU Bourne Again Shell
 
 DISTNAME=	bash-5.1
-PKGNAME=	bash-5.1.8
+PKGNAME=	bash-5.1.12
 CATEGORIES=	shells
 HOMEPAGE=	https://www.gnu.org/software/bash/
 
@@ -15,7 +15,8 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	${MASTER_SITE_GNU:=bash/}
 MASTER_SITES0=	${MASTER_SITE_GNU:=bash/bash-5.1-patches/}
 DIST_SUBDIR=	bash
-.for i in 001 002 003 004 005 006 007 008
+.for i in 001 002 003 004 005 006 007 008 009 010 \
+          011 012
 PATCHFILES+=	bash51-$i:0
 .endfor
 
