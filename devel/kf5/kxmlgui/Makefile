@@ -1,20 +1,24 @@
-# $OpenBSD: Makefile,v 1.21 2021/11/16 14:31:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.22 2021/11/21 17:53:13 rsadowski Exp $
 
 COMMENT =		KDE framework for managing menu and toolbar actions
 DISTNAME =		kxmlgui-${VERSION}
+REVISION =		0
 
 SHARED_LIBS =		KF5XmlGui		6.5
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Codecs
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5GlobalAccel KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews
-WANTLIB += KF5WidgetsAddons KF5WindowSystem Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Network Qt5PrintSupport Qt5Widgets Qt5Xml c m
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5GlobalAccel
+WANTLIB += KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews KF5WidgetsAddons
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
+WANTLIB += Qt5Xml c m
 
-BUILD_DEPENDS =	devel/gettext,-tools
 
-LIB_DEPENDS =	devel/kf5/attica>=${MODKF5_VERSION} \
-		devel/kf5/kauth>=${MODKF5_VERSION} \
+BUILD_DEPENDS =	devel/gettext,-tools \
+		devel/kf5/ktextwidgets>=${MODKF5_VERSION}
+
+TEST_DEPENDS =	devel/kf5/ktextwidgets>=${MODKF5_VERSION}
+
+LIB_DEPENDS =	devel/kf5/kauth>=${MODKF5_VERSION} \
 		devel/kf5/kcodecs>=${MODKF5_VERSION} \
 		devel/kf5/kconfig>=${MODKF5_VERSION} \
 		devel/kf5/kconfigwidgets>=${MODKF5_VERSION} \
@@ -23,8 +27,7 @@ LIB_DEPENDS =	devel/kf5/attica>=${MODKF5_VERSION} \
 		devel/kf5/ki18n>=${MODKF5_VERSION} \
 		devel/kf5/kiconthemes>=${MODKF5_VERSION} \
 		devel/kf5/kitemviews>=${MODKF5_VERSION} \
-		devel/kf5/kwidgetsaddons>=${MODKF5_VERSION} \
-		devel/kf5/kwindowsystem>=${MODKF5_VERSION}
+		devel/kf5/kwidgetsaddons>=${MODKF5_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}
