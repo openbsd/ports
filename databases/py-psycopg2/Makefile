@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.45 2021/11/02 00:00:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2021/11/21 10:11:20 sthen Exp $
 
 COMMENT =		PostgreSQL database adapter for Python
 
-MODPY_EGG_VERSION =	2.8.6
+MODPY_EGG_VERSION =	2.9.2
 DISTNAME =		psycopg2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		databases
-REVISION =		0
 
 HOMEPAGE =		https://www.psycopg.org/
 
@@ -26,7 +25,7 @@ RUN_DEPENDS =		databases/postgresql
 TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 # To run the tests, create and start a test database as follows:
 #     createdb psycopg2_test

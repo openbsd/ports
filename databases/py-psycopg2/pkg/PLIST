@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.16 2021/01/13 09:42:40 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.17 2021/11/21 10:11:20 sthen Exp $
+@pkgpath databases/py-psycopg2
 lib/python${MODPY_VERSION}/site-packages/psycopg2/
 lib/python${MODPY_VERSION}/site-packages/psycopg2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/psycopg2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -10,9 +11,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/psycopg2/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/psycopg2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psycopg2/${MODPY_PYCACHE}_ipaddress.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psycopg2/${MODPY_PYCACHE}_json.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/psycopg2/${MODPY_PYCACHE}_lru_cache.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psycopg2/${MODPY_PYCACHE}_range.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/psycopg2/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psycopg2/${MODPY_PYCACHE}errorcodes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psycopg2/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psycopg2/${MODPY_PYCACHE}extensions.${MODPY_PYC_MAGIC_TAG}pyc
@@ -22,10 +21,8 @@ lib/python${MODPY_VERSION}/site-packages/psycopg2/${MODPY_PYCACHE}sql.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/psycopg2/${MODPY_PYCACHE}tz.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/psycopg2/_ipaddress.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/_json.py
-lib/python${MODPY_VERSION}/site-packages/psycopg2/_lru_cache.py
 @so lib/python${MODPY_VERSION}/site-packages/psycopg2/_psycopg.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/psycopg2/_range.py
-lib/python${MODPY_VERSION}/site-packages/psycopg2/compat.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/errorcodes.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/errors.py
 lib/python${MODPY_VERSION}/site-packages/psycopg2/extensions.py
