@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2021/11/20 14:31:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2021/11/21 09:06:44 sthen Exp $
 
 COMMENT=		text-to-HTML conversion tool
 
-MODPY_EGG_VERSION=	3.3.4
+MODPY_EGG_VERSION=	3.3.6
 DISTNAME=		Markdown-${MODPY_EGG_VERSION}
 PKGNAME=		py-markdown-${MODPY_EGG_VERSION}
 CATEGORIES=		textproc
@@ -17,7 +17,8 @@ MODPY_SETUPTOOLS=	Yes
 FLAVORS=		python3
 FLAVOR=			python3
 
-TEST_DEPENDS=		devel/py-coverage${MODPY_FLAVOR} \
+TEST_DEPENDS=		${BUILD_PKGPATH}=${MODPY_EGG_VERSION} \
+			devel/py-coverage${MODPY_FLAVOR} \
 			textproc/py-yaml${MODPY_FLAVOR}
 
 do-test:
