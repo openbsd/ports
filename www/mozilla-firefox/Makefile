@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.474 2021/11/19 07:36:24 landry Exp $
+# $OpenBSD: Makefile,v 1.475 2021/11/21 08:04:52 landry Exp $
 
 COMMENT =	Firefox web browser
 ONLY_FOR_ARCHS =	amd64 aarch64
@@ -9,6 +9,7 @@ MOZILLA_VERSION =	94.0.2
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
+REVISION =	0
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
