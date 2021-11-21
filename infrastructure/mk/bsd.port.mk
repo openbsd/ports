@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1560 2021/11/17 10:39:18 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1561 2021/11/21 13:55:10 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -622,23 +622,13 @@ _FETCH_RECURSE_HELPER ?= No
 _DEPENDENCY_STACK ?=
 
 .if ${MULTI_PACKAGES} == "-"
-# XXX "parse" FULLPKGNAME: is there a flavor after the version number
-.    if ${FULLPKGNAME:M*-[0-9]*-*}
-.      if !empty(REVISION)
+.  if !empty(REVISION)
 # XXX simplest way is to alter FULLPKGNAME in place, even though := is evil...
-FULLPKGNAME := ${FULLPKGNAME:C/-([0-9][^-]*)-/-\1p${REVISION}-/}
-.      endif
-.      if !empty(EPOCH)
-FULLPKGNAME := ${FULLPKGNAME:C/-([0-9][^-]*)-/-\1v${EPOCH}-/}
-.      endif
-.    else
-.      if !empty(REVISION)
-FULLPKGNAME := ${FULLPKGNAME}p${REVISION}
-.      endif
-.      if !empty(EPOCH)
-FULLPKGNAME := ${FULLPKGNAME}v${EPOCH}
-.      endif
-.    endif
+FULLPKGNAME := ${FULLPKGNAME:C/-([0-9][^-]*)/-\1p${REVISION}/}
+.  endif
+.  if !empty(EPOCH)
+FULLPKGNAME := ${FULLPKGNAME:C/-([0-9][^-]*)/-\1v${EPOCH}/}
+.  endif
 PKGSPEC ?= ${FULLPKGNAME:C/-[0-9].*/-*/}
 PKGSPEC- = ${PKGSPEC}
 FULLPKGNAME- = ${FULLPKGNAME}
@@ -654,24 +644,15 @@ ERRORS += "Warning: FULLPKGNAME${_s} defined but no FULLPKGPATH${_s}"
 .      if defined(PKGNAME${_s})
 FULLPKGNAME${_s} = ${PKGNAME${_s}}${FLAVOR_EXT}
 .      else
-FULLPKGNAME${_s} = ${PKGNAME}${_s}${FLAVOR_EXT}
+ERRORS += "Fatal: FULLPKGNAME${_s} is not defined"
 .      endif
 .    endif
 # XXX see comments above for !MULTI_PACKAGES case
-.    if ${FULLPKGNAME${_s}:M*-[0-9]*-*}
-.      if !empty(REVISION${_s})
-FULLPKGNAME${_s} := ${FULLPKGNAME${_s}:C/-([0-9][^-]*)-/-\1p${REVISION${_s}}-/}
-.      endif
-.      if !empty(EPOCH${_s})
-FULLPKGNAME${_s} := ${FULLPKGNAME${_s}:C/-([0-9][^-]*)-/-\1v${EPOCH${_s}}-/}
-.      endif
-.    else
-.      if !empty(REVISION${_s})
-FULLPKGNAME${_s} := ${FULLPKGNAME${_s}}p${REVISION${_s}}
-.      endif
-.      if !empty(EPOCH${_s})
-FULLPKGNAME${_s} := ${FULLPKGNAME${_s}}v${EPOCH${_s}}
-.      endif
+.    if !empty(REVISION${_s})
+FULLPKGNAME${_s} := ${FULLPKGNAME${_s}:C/-([0-9][^-]*)/-\1p${REVISION${_s}}/}
+.    endif
+.    if !empty(EPOCH${_s})
+FULLPKGNAME${_s} := ${FULLPKGNAME${_s}:C/-([0-9][^-]*)/-\1v${EPOCH${_s}}/}
 .    endif
 PKGSPEC${_s} ?= ${FULLPKGNAME${_s}:C/-[0-9].*/-*/}
 PKGSTEM${_s} ?= ${FULLPKGNAME${_s}:C/-[0-9].*//}
