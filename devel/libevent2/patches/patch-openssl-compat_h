@@ -1,0 +1,18 @@
+$OpenBSD: patch-openssl-compat_h,v 1.1 2021/11/21 20:49:10 tb Exp $
+
+We have BIO_get_init() now.
+https://github.com/libevent/libevent/pull/1227
+
+Index: openssl-compat.h
+--- openssl-compat.h.orig
++++ openssl-compat.h
+@@ -37,7 +37,8 @@ static inline BIO_METHOD *BIO_meth_new(int type, const
+ #endif /* (OPENSSL_VERSION_NUMBER < 0x10100000L) || \
+ 	(defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x20700000L) */
+ 
+-#if defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER >= 0x20700000L
++#if defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER >= 0x20700000L && \
++	LIBRESSL_VERSION_NUMBER < 0x30500000L
+ #define BIO_get_init(b) (b)->init
+ #endif
+ 

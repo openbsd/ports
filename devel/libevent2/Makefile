@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2020/03/31 19:06:06 kn Exp $
+# $OpenBSD: Makefile,v 1.19 2021/11/21 20:49:10 tb Exp $
 
 COMMENT=	event notification library
 
@@ -7,6 +7,7 @@ DISTNAME=	libevent-$V-stable
 PKGNAME=	libevent-$V
 CATEGORIES=	devel
 HOMEPAGE=	https://libevent.org/
+REVISION=	0
 
 SHARED_LIBS+=	event_core	2.0	# 7.0
 SHARED_LIBS+=	event_extra	1.0	# 7.0
