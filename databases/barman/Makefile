@@ -1,17 +1,20 @@
-# $OpenBSD: Makefile,v 1.16 2021/11/02 00:00:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/11/21 10:05:24 sthen Exp $
 
 COMMENT =	backup and restoration manager for PostgreSQL
 
-MODPY_EGG_VERSION =	2.12
+MODPY_EGG_VERSION =	2.15
+GH_ACCOUNT =	EnterpriseDB
+GH_PROJECT =	barman
+GH_TAGNAME =	release/${MODPY_EGG_VERSION}
 DISTNAME =	barman-${MODPY_EGG_VERSION}
+WRKDIST =	${WRKDIR}/barman-release-${MODPY_EGG_VERSION}
 CATEGORIES =	databases
 HOMEPAGE =	https://www.pgbarman.org/
-REVISION =	0
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=pgbarman/}
+#MASTER_SITES =	https://github.com/EnterpriseDB/barman/releases/download/release%2F${MODPY_EGG_VERSION}/
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes
@@ -21,12 +24,12 @@ RUN_DEPENDS =	databases/py-psycopg2${MODPY_FLAVOR} \
 		devel/py-dateutil${MODPY_FLAVOR} \
 		devel/py-argh${MODPY_FLAVOR}
 
-# needs pytest-timeout and pytest-catchlog
-NO_TEST =	Yes
-#TEST_DEPENDS =	devel/py-test-timeout \
-#		devel/py-test-catchlog \
-#		devel/py-test-runner \
-#		devel/py-setuptools_scm
+MODPY_PYTEST =	Yes
+TEST_DEPENDS =	devel/py-test-timeout${MODPY_FLAVOR} \
+		devel/py-test-runner${MODPY_FLAVOR}
+
+pre-test:
+	rm ${WRKSRC}/tests/test*cloud* # some deps are not ported
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/barman
