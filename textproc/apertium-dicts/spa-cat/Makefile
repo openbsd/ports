@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/02 08:22:47 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/21 03:53:05 bentley Exp $
 
 L =	spa-cat
 LANG =	Spanish/Catalan
@@ -6,6 +6,7 @@ V =	2.2.0
 
 BUILD_DEPENDS +=	textproc/apertium-dicts/cat \
 			textproc/apertium-dicts/spa \
+			textproc/apertium-lex-tools \
 			textproc/vislcg3
 
 USE_GMAKE =	Yes
