@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.440 2021/11/02 20:52:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.441 2021/11/21 09:36:18 sthen Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -138,7 +138,6 @@
      SUBDIR += pgbouncer
      SUBDIR += pgcluu
      SUBDIR += pgfouine
-     SUBDIR += pgloader
      SUBDIR += pgmodeler
      SUBDIR += pgpool
      SUBDIR += pgtap
@@ -217,7 +216,6 @@
      SUBDIR += ruby-tiny_tds,ruby27
      SUBDIR += ruby-tiny_tds,ruby30
      SUBDIR += sharedance
-     SUBDIR += skytools
      SUBDIR += sqlbox
      SUBDIR += sqlcipher
      SUBDIR += sqlite
