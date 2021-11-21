@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.15 2021/02/13 17:46:38 daniel Exp $
+$OpenBSD: patch-configure,v 1.16 2021/11/21 02:10:17 daniel Exp $
 
 1) Fixup path locations for OpenBSD
 2) Add configuration support for macppc and aarch64 on OpenBSD
@@ -6,7 +6,7 @@ $OpenBSD: patch-configure,v 1.15 2021/02/13 17:46:38 daniel Exp $
 Index: configure
 --- configure.orig
 +++ configure
-@@ -19,6 +19,7 @@ prefix='/usr/local'
+@@ -20,6 +20,7 @@ prefix='/usr/local'
  bindir='$(PREFIX)/bin'
  libdir='$(PREFIX)/lib/compcert'
  mandir='$(PREFIX)/share/man'
@@ -14,7 +14,7 @@ Index: configure
  coqdevdir='$(PREFIX)/lib/compcert/coq'
  toolprefix=''
  target=''
-@@ -40,6 +41,7 @@ Supported targets:
+@@ -41,6 +42,7 @@ Supported targets:
    ppc-eabi             (PowerPC, EABI with GNU/Unix tools)
    ppc-eabi-diab        (PowerPC, EABI with Diab tools)
    ppc-linux            (PowerPC, Linux)
@@ -22,7 +22,7 @@ Index: configure
    arm-eabi             (ARM, EABI, little endian)
    arm-linux            (ARM, EABI, little endian)
    arm-eabihf           (ARM, EABI using hardware FP registers, little endian)
-@@ -58,6 +60,7 @@ Supported targets:
+@@ -59,6 +61,7 @@ Supported targets:
    rv32-linux           (RISC-V 32 bits, Linux)
    rv64-linux           (RISC-V 64 bits, Linux)
    aarch64-linux        (AArch64, i.e. ARMv8 in 64-bit mode, Linux)
@@ -30,7 +30,7 @@ Index: configure
    aarch64-macos        (AArch64, i.e. Apple silicon, MacOS)
    manual               (edit configuration file by hand)
  
-@@ -65,7 +68,7 @@ For x86 targets, the "x86_32-" prefix can also be writ
+@@ -66,7 +69,7 @@ For x86 targets, the "x86_32-" prefix can also be writ
  For x86 targets, the "x86_64-" prefix can also be written "amd64-".
  For AArch64 targets, the "aarch64-" prefix can also be written "arm64-".
  
@@ -39,7 +39,7 @@ Index: configure
    ppc64-               PowerPC 64 bits
    e5500-               Freescale e5500 core (PowerPC 64 bit, EREF extensions)
  
-@@ -87,6 +90,7 @@ Options:
+@@ -88,6 +91,7 @@ Options:
    -bindir <dir>        Install binaries in <dir>
    -libdir <dir>        Install libraries in <dir>
    -mandir <dir>        Install man pages in <dir>
@@ -47,7 +47,7 @@ Index: configure
    -coqdevdir <dir>     Install Coq development (.vo files) in <dir>
    -toolprefix <pref>   Prefix names of tools ("gcc", etc) with <pref>
    -use-external-Flocq  Use an already-installed Flocq library
-@@ -118,6 +122,8 @@ while : ; do
+@@ -119,6 +123,8 @@ while : ; do
          libdir="$2"; shift;;
      -mandir|--mandir)
          mandir="$2"; shift;;
@@ -56,7 +56,7 @@ Index: configure
      -coqdevdir|--coqdevdir)
          coqdevdir="$2"; install_coqdev=true; shift;;
      -toolprefix|--toolprefix)
-@@ -224,7 +230,7 @@ clinker_options=""
+@@ -225,7 +231,7 @@ clinker_options=""
  clinker_needs_no_pie=true
  cprepro="${toolprefix}gcc"
  cprepro_options="-E"
@@ -65,7 +65,7 @@ Index: configure
  libmath="-lm"
  responsefile="gnu"
  
-@@ -257,7 +263,7 @@ fi
+@@ -258,7 +264,7 @@ fi
  if test "$arch" = "powerpc"; then
  
    case "$target" in
@@ -74,7 +74,7 @@ Index: configure
          ;;
      *)
          echo "Error: invalid eabi/system '$target' for architecture PowerPC." 1>&2
-@@ -289,6 +295,11 @@ if test "$arch" = "powerpc"; then
+@@ -290,6 +296,11 @@ if test "$arch" = "powerpc"; then
          system="diab"
          responsefile="diab"
          ;;
@@ -86,7 +86,7 @@ Index: configure
      *)
          casmruntime="${toolprefix}gcc -c -Wa,-mregnames"
          cprepro_options="-std=c99 -U__GNUC__ -E"
-@@ -409,6 +420,11 @@ if test "$arch" = "aarch64"; then
+@@ -410,6 +421,11 @@ if test "$arch" = "aarch64"; then
          abi="standard"
          cprepro_options="-std=c99 -U__GNUC__ -E"
          system="linux";;
@@ -98,7 +98,7 @@ Index: configure
      macos|macosx)
          abi="apple"
          casm="${toolprefix}cc"
-@@ -611,8 +627,6 @@ fi
+@@ -612,8 +628,6 @@ fi
  #
  # Generate Makefile.config
  #
@@ -107,7 +107,7 @@ Index: configure
  rm -f Makefile.config
  cat > Makefile.config <<EOF
  PREFIX=$prefix
-@@ -831,6 +845,7 @@ CompCert configuration:
+@@ -832,6 +846,7 @@ CompCert configuration:
      Runtime library provided...... $has_runtime_lib
      Library files installed in.... $(expandprefix $libdir)
      Man pages installed in........ $(expandprefix $mandir)
