@@ -1,9 +1,9 @@
-$OpenBSD: patch-panel-plugin_settings_cpp,v 1.3 2020/02/13 08:48:00 landry Exp $
+$OpenBSD: patch-panel-plugin_settings_cpp,v 1.4 2021/11/21 08:38:38 landry Exp $
 Dont show switchuser & menueditor by default since they wont work on openbsd
 Index: panel-plugin/settings.cpp
 --- panel-plugin/settings.cpp.orig
 +++ panel-plugin/settings.cpp
-@@ -214,6 +214,8 @@ void Settings::load(gchar* file)
+@@ -185,6 +185,8 @@ void Settings::load(gchar* file)
  {
  	if (!file)
  	{
