@@ -1,0 +1,26 @@
+$OpenBSD: patch-runtime_CMakeLists_txt,v 1.1.1.1 2021/11/21 13:51:47 bcallah Exp $
+
+Set proper DFLAGS.
+Make sure C parts are built as PIC.
+
+Index: runtime/CMakeLists.txt
+--- runtime/CMakeLists.txt.orig
++++ runtime/CMakeLists.txt
+@@ -37,7 +37,7 @@ set(MULTILIB              OFF                         
+ set(BUILD_LTO_LIBS        OFF                                 CACHE BOOL   "Also build the runtime as LLVM bitcode libraries for LTO")
+ set(INCLUDE_INSTALL_DIR   ${CMAKE_INSTALL_PREFIX}/include/d   CACHE PATH   "Path to install D modules to")
+ set(BUILD_SHARED_LIBS     AUTO                                CACHE STRING "Whether to build the runtime as a shared library (ON|OFF|BOTH)")
+-set(D_FLAGS               -w;-de;-dip1000;-preview=dtorfields CACHE STRING "Runtime D compiler flags, separated by ';'")
++set(D_FLAGS               --relocation-model=pic;-w;-de;-dip1000;-preview=dtorfields CACHE STRING "Runtime D compiler flags, separated by ';'")
+ set(D_EXTRA_FLAGS         ""                                  CACHE STRING "Runtime extra D compiler flags, separated by ';'")
+ set(D_FLAGS_DEBUG         -g;-link-defaultlib-debug;-d-debug  CACHE STRING "Runtime D compiler flags (debug libraries), separated by ';'")
+ set(D_FLAGS_RELEASE       -O3;-release                        CACHE STRING "Runtime D compiler flags (release libraries), separated by ';'")
+@@ -620,7 +620,7 @@ function(set_common_library_properties target name out
+     # linker default on Ubuntu 16.10 and above. As we might be building on an
+     # older system (e.g. binary packages), we need to make sure the C parts are
+     # built as PIC as well.
+-    if("${TARGET_SYSTEM}" MATCHES "Linux")
++    if("${TARGET_SYSTEM}" MATCHES "Linux|OpenBSD")
+         set_target_properties(${target} PROPERTIES
+             POSITION_INDEPENDENT_CODE ON)
+     endif()

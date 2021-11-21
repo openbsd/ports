@@ -1,0 +1,26 @@
+$OpenBSD: patch-runtime_druntime_src_core_sys_posix_sys_ioctl_d,v 1.1.1.1 2021/11/21 13:51:47 bcallah Exp $
+
+Index: runtime/druntime/src/core/sys/posix/sys/ioctl.d
+--- runtime/druntime/src/core/sys/posix/sys/ioctl.d.orig
++++ runtime/druntime/src/core/sys/posix/sys/ioctl.d
+@@ -375,6 +375,11 @@ else version (NetBSD)
+ }
+ else version (OpenBSD)
+ {
++    import core.sys.posix.termios; // termios
++    import core.sys.posix.sys.time; // timeval
++
++    public import core.sys.posix.sys.ttycom; // Terminal related ioctls
++
+     struct winsize
+     {
+         ushort ws_row;
+@@ -382,6 +387,8 @@ else version (OpenBSD)
+         ushort ws_xpixel;
+         ushort ws_ypixel;
+     }
++
++    public import core.sys.posix.sys.filio; // File related ioctls
+ 
+     int ioctl(int, c_ulong, ...);
+ }

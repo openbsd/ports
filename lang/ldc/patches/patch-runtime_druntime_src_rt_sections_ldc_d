@@ -1,0 +1,15 @@
+$OpenBSD: patch-runtime_druntime_src_rt_sections_ldc_d,v 1.1.1.1 2021/11/21 13:51:47 bcallah Exp $
+
+Add OpenBSD.
+
+Index: runtime/druntime/src/rt/sections_ldc.d
+--- runtime/druntime/src/rt/sections_ldc.d.orig
++++ runtime/druntime/src/rt/sections_ldc.d
+@@ -30,6 +30,7 @@ else version (Darwin) {}
+ else version (FreeBSD) {}
+ else version (DragonFlyBSD) {}
+ else version (NetBSD) {}
++else version (OpenBSD) {}
+ else version (Windows) {}
+ else version (LDC):
+ 

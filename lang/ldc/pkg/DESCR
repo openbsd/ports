@@ -1,0 +1,4 @@
+The LDC project aims to provide a portable D programming language
+compiler with modern optimization and code generation capabilities.
+The compiler uses the official DMD frontend to support the latest D2
+version and relies on the LLVM Core libraries for code generation.

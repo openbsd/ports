@@ -1,0 +1,38 @@
+$OpenBSD: patch-driver_linker-gcc_cpp,v 1.1.1.1 2021/11/21 13:51:47 bcallah Exp $
+
+Taken from ports LLVM.
+
+Index: driver/linker-gcc.cpp
+--- driver/linker-gcc.cpp.orig
++++ driver/linker-gcc.cpp
+@@ -422,7 +422,6 @@ void ArgsBuilder::addCppStdlibLinkFlags(const llvm::Tr
+     break;
+   case llvm::Triple::Solaris:
+   case llvm::Triple::NetBSD:
+-  case llvm::Triple::OpenBSD:
+   case llvm::Triple::DragonFly:
+     args.push_back("-lstdc++");
+     break;
+@@ -432,6 +431,7 @@ void ArgsBuilder::addCppStdlibLinkFlags(const llvm::Tr
+   case llvm::Triple::WatchOS:
+   case llvm::Triple::TvOS:
+   case llvm::Triple::FreeBSD:
++  case llvm::Triple::OpenBSD:
+     args.push_back("-lc++");
+     break;
+   default:
+@@ -663,11 +663,13 @@ void ArgsBuilder::addDefaultPlatformLibs() {
+     args.push_back("-lrt");
+     args.push_back("-ldl");
+   // fallthrough
++  case llvm::Triple::OpenBSD:
++    args.push_back("-lc++abi");
++  // fallthrough
+   case llvm::Triple::Darwin:
+   case llvm::Triple::MacOSX:
+   case llvm::Triple::FreeBSD:
+   case llvm::Triple::NetBSD:
+-  case llvm::Triple::OpenBSD:
+   case llvm::Triple::DragonFly:
+     addSoname = true;
+     args.push_back("-lpthread");

@@ -1,0 +1,16 @@
+$OpenBSD: patch-driver_targetmachine_cpp,v 1.1.1.1 2021/11/21 13:51:47 bcallah Exp $
+
+Taken from ports LLVM.
+
+Index: driver/targetmachine.cpp
+--- driver/targetmachine.cpp.orig
++++ driver/targetmachine.cpp
+@@ -432,6 +432,8 @@ createTargetMachine(const std::string targetTriple, co
+       // these OSes.
+       // On Android, PIC is default as well.
+       relocModel = llvm::Reloc::PIC_;
++    } else if (triple.isOSOpenBSD()) {
++      relocModel = llvm::Reloc::PIC_;
+     } else {
+       // ARM for other than Darwin or Android defaults to static
+       switch (triple.getArch()) {

@@ -1,0 +1,91 @@
+$OpenBSD: patch-runtime_druntime_src_rt_sections_elf_shared_d,v 1.1.1.1 2021/11/21 13:51:47 bcallah Exp $
+
+Index: runtime/druntime/src/rt/sections_elf_shared.d
+--- runtime/druntime/src/rt/sections_elf_shared.d.orig
++++ runtime/druntime/src/rt/sections_elf_shared.d
+@@ -23,6 +23,7 @@ version (CRuntime_Glibc) enum SharedELF = true;
+ else version (CRuntime_Musl) enum SharedELF = true;
+ else version (FreeBSD) enum SharedELF = true;
+ else version (NetBSD) enum SharedELF = true;
++else version (OpenBSD) enum SharedELF = true;
+ else version (DragonFlyBSD) enum SharedELF = true;
+ else version (CRuntime_UClibc) enum SharedELF = true;
+ else enum SharedELF = false;
+@@ -78,6 +79,12 @@ else version (NetBSD)
+     import core.sys.netbsd.sys.elf;
+     import core.sys.netbsd.sys.link_elf;
+ }
++else version (OpenBSD)
++{
++    import core.sys.openbsd.dlfcn;
++    import core.sys.openbsd.sys.elf;
++    import core.sys.openbsd.sys.link_elf;
++}
+ else version (DragonFlyBSD)
+ {
+     import core.sys.dragonflybsd.dlfcn;
+@@ -212,6 +219,7 @@ __gshared bool _isRuntimeInitialized;
+ version (FreeBSD) private __gshared void* dummy_ref;
+ version (DragonFlyBSD) private __gshared void* dummy_ref;
+ version (NetBSD) private __gshared void* dummy_ref;
++version (OpenBSD) private __gshared void* dummy_ref;
+ 
+ /****
+  * Gets called on program startup just before GC is initialized.
+@@ -223,6 +231,7 @@ void initSections() nothrow @nogc
+     version (FreeBSD) dummy_ref = &_d_dso_registry;
+     version (DragonFlyBSD) dummy_ref = &_d_dso_registry;
+     version (NetBSD) dummy_ref = &_d_dso_registry;
++    version (OpenBSD) dummy_ref = &_d_dso_registry;
+ }
+ 
+ 
+@@ -397,6 +406,7 @@ else (private)
+ version (FreeBSD) deprecated extern (C) __gshared void* _Dmodule_ref;
+ version (DragonFlyBSD) deprecated extern (C) __gshared void* _Dmodule_ref;
+ version (NetBSD) deprecated extern (C) __gshared void* _Dmodule_ref;
++version (OpenBSD) deprecated extern (C) __gshared void* _Dmodule_ref;
+ 
+ version (Shared)
+ {
+@@ -933,6 +943,8 @@ version (Shared)
+                     enum relocate = true;
+                 else version (NetBSD)
+                     enum relocate = true;
++                else version (OpenBSD)
++                    enum relocate = true;
+                 else version (DragonFlyBSD)
+                     enum relocate = true;
+                 else
+@@ -1153,18 +1165,18 @@ version (LDC)
+     version (PPC)
+     {
+         extern(C) void* __tls_get_addr_opt(tls_index* ti) nothrow @nogc;
+-        alias __tls_get_addr = __tls_get_addr_opt;
++        alias __emutls_get_address = __tls_get_addr_opt;
+     }
+     else version (PPC64)
+     {
+         extern(C) void* __tls_get_addr_opt(tls_index* ti) nothrow @nogc;
+-        alias __tls_get_addr = __tls_get_addr_opt;
++        alias __emutls_get_address = __tls_get_addr_opt;
+     }
+     else
+-        extern(C) void* __tls_get_addr(tls_index* ti) nothrow @nogc;
++        extern(C) void* __emutls_get_address(tls_index* ti) nothrow @nogc;
+ }
+ else
+-extern(C) void* __tls_get_addr(tls_index* ti) nothrow @nogc;
++extern(C) void* __emutls_get_address(tls_index* ti) nothrow @nogc;
+ 
+ /* The dynamic thread vector (DTV) pointers may point 0x8000 past the start of
+  * each TLS block. This is at least true for PowerPC and Mips platforms.
+@@ -1234,7 +1246,7 @@ void[] getTLSRange(size_t mod, size_t sz) nothrow @nog
+ 
+         // base offset
+         auto ti = tls_index(mod, 0);
+-        return (__tls_get_addr(&ti)-TLS_DTV_OFFSET)[0 .. sz];
++        return (__emutls_get_address(&ti)-TLS_DTV_OFFSET)[0 .. sz];
+     }
+ }
+ 

@@ -1,0 +1,22 @@
+$OpenBSD: patch-runtime_druntime_src_core_thread_fiber_d,v 1.1.1.1 2021/11/21 13:51:47 bcallah Exp $
+
+Fibers need mmap(2) MAP_STACK.
+
+Index: runtime/druntime/src/core/thread/fiber.d
+--- runtime/druntime/src/core/thread/fiber.d.orig
++++ runtime/druntime/src/core/thread/fiber.d
+@@ -1254,10 +1254,13 @@ class Fiber (private)
+                 // Allocate more for the memory guard
+                 sz += guardPageSize;
+ 
++                int mmap_flags = MAP_PRIVATE | MAP_ANON;
++                version (OpenBSD)
++                    mmap_flags |= MAP_STACK;
+                 m_pmem = mmap( null,
+                                sz,
+                                PROT_READ | PROT_WRITE,
+-                               MAP_PRIVATE | MAP_ANON,
++                               mmap_flags,
+                                -1,
+                                0 );
+                 if ( m_pmem == MAP_FAILED )

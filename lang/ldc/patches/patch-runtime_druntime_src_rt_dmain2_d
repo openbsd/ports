@@ -1,0 +1,18 @@
+$OpenBSD: patch-runtime_druntime_src_rt_dmain2_d,v 1.1.1.1 2021/11/21 13:51:47 bcallah Exp $
+
+Add OpenBSD.
+
+Index: runtime/druntime/src/rt/dmain2.d
+--- runtime/druntime/src/rt/dmain2.d.orig
++++ runtime/druntime/src/rt/dmain2.d
+@@ -44,6 +44,10 @@ version (NetBSD)
+ {
+     import core.stdc.fenv;
+ }
++version (OpenBSD)
++{
++    import core.stdc.fenv;
++}
+ version (DragonFlyBSD)
+ {
+     import core.stdc.fenv;
