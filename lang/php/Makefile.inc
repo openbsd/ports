@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.168 2021/11/19 12:46:59 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.169 2021/11/21 00:41:13 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
-COMMENT-main=		server-side HTML-embedded scripting language
+COMMENT-main=	server-side HTML-embedded scripting language
 
 PV=		${PHP_VERSION:R}
 .if ${PHP_VERSION:M7*}
@@ -116,7 +116,7 @@ SAPI+=			-main -apache -cgi -dbg -embed
 
 # setup for no_* build options to allow disabling extensions with
 # larger dependencies;
-PSEUDO_FLAVORS=		${PHP_EXTENSIONS:C/-(pdo_)?mysqli?//:C/-(pcntl|shmop|zip)//:C/-/no_/g}
+PSEUDO_FLAVORS=		${PHP_EXTENSIONS:C/-(pdo_)?mysqli?//:C/-(pcntl|shmop)//:C/-/no_/g}
 
 # cannot build two SAPIs producing libraries (e.g. apache and embed)
 # in a single build.
@@ -266,7 +266,7 @@ COMMENT-gmp=		gmp math library support for php
 HOMEPAGE-gmp=		https://www.php.net/gmp
 LIB_DEPENDS-gmp=	devel/gmp
 WANTLIB-gmp=		gmp pthread
-.if ${BUILD_PACKAGES:M-gd}
+.if ${BUILD_PACKAGES:M-gmp}
 CONFIGURE_ARGS+=	--with-gmp=shared,${LOCALBASE}
 .endif
 
@@ -453,10 +453,12 @@ CONFIGURE_ARGS+=	--with-xsl=shared --enable-dom
 # zip
 COMMENT-zip=		zip functions for php
 HOMEPAGE-zip=		https://www.php.net/zip
-CONFIGURE_ARGS+=	--with-zip=shared
 LIB_DEPENDS-zip=	archivers/bzip2 \
 			archivers/libzip
 WANTLIB-zip=		bz2 crypto lzma pthread ssl z zip
+.if ${BUILD_PACKAGES:M-zip}
+CONFIGURE_ARGS+=	--with-zip=shared
+.endif
 
 # some variables to substitute
 SUBST_VARS+=	CHROOT_DIR MODPHP_CONFIG_PATH SV PV MV PHP_PKGSPEC
