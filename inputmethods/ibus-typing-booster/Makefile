@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/18 10:11:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/21 19:48:35 solene Exp $
 
 COMMENT =		completion input-method to speed up typing
-VERSION =		2.14.13
-REVISION =		0
+VERSION =		2.15.0
 
 DISTNAME =		ibus-typing-booster-${VERSION}
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/11/18 10:11:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/11/21 19:48:35 solene Exp $
 bin/emoji-picker
 libexec/ibus-engine-typing-booster
 libexec/ibus-setup-typing-booster
@@ -332,6 +332,8 @@ share/ibus-typing-booster/engine/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}${MO
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}tabsqlitedb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}tabsqlitedb.${MODPY_PYC_MAGIC_TAG}pyc
+share/ibus-typing-booster/engine/${MODPY_PYCACHE}tabstatistics.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/ibus-typing-booster/engine/${MODPY_PYCACHE}tabstatistics.${MODPY_PYC_MAGIC_TAG}pyc
 share/ibus-typing-booster/engine/emoji_picker.py
 share/ibus-typing-booster/engine/factory.py
 share/ibus-typing-booster/engine/hunspell_suggest.py
@@ -344,6 +346,7 @@ share/ibus-typing-booster/engine/itb_version.py
 share/ibus-typing-booster/engine/m17n_translit.py
 share/ibus-typing-booster/engine/main.py
 share/ibus-typing-booster/engine/tabsqlitedb.py
+share/ibus-typing-booster/engine/tabstatistics.py
 share/ibus-typing-booster/icons/
 share/ibus-typing-booster/icons/ibus-typing-booster.svg
 share/ibus-typing-booster/setup/
