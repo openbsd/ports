@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.256 2021/11/02 21:11:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.257 2021/11/21 13:52:19 bcallah Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -61,6 +61,7 @@
      SUBDIR += jruby
      SUBDIR += kawa
      SUBDIR += kona
+     SUBDIR += ldc
      SUBDIR += librep
      SUBDIR += libv8
      SUBDIR += lua
