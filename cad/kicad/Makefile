@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.49 2021/11/13 13:12:31 jca Exp $
+# $OpenBSD: Makefile,v 1.50 2021/11/22 14:55:53 tracey Exp $
 
 # Sync cad/kicad-share/Makefile.inc with archs where kicad is broken
 BROKEN-powerpc =	segfaults when trying to run the PCB editor
 BROKEN-riscv64 =	kicad-5.1.10/include/system/libcontext.h:93:36: error: expected ';' after top level declarator
 
-V =			5.1.10
+V =			5.1.12
 COMMENT =		schematic and PCB editing software
 DISTNAME =		kicad-${V}
-REVISION =		1
 EPOCH =			0
 
 SHARED_LIBS +=		kicad_3dsg                0.0 # 2.0
@@ -19,17 +18,18 @@ HOMEPAGE =		https://www.kicad.org
 #GPLv3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU ICE PTKernel SM TKBO
-WANTLIB += TKBRep TKBin TKBinL TKBinXCAF TKBool TKCAF TKCDF TKFillet
+WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU TKBO TKBRep TKBin TKBinL
+WANTLIB += TKBinTObj TKBinXCAF TKBool TKCAF TKCDF TKFeat TKFillet
 WANTLIB += TKG2d TKG3d TKGeomAlgo TKGeomBase TKHLR TKIGES TKLCAF
-WANTLIB += TKMath TKMesh TKOffset TKPCAF TKPLCAF TKPShape TKPrim
-WANTLIB += TKSTEP TKSTEP209 TKSTEPAttr TKSTEPBase TKService TKShHealing
-WANTLIB += TKTopAlgo TKV3d TKXCAF TKXDEIGES TKXDESTEP TKXSBase
-WANTLIB += TKernel X11 Xext boost_context-mt boost_system-mt
-WANTLIB += c cairo crypto curl freetype m ngspice pixman-1 ${MODPY_WANTLIB}
-WANTLIB += ssl wx_baseu-3.0 wx_baseu_net-3.0 wx_baseu_xml-3.0
-WANTLIB += wx_gtk3u_adv-3.0 wx_gtk3u_aui-3.0 wx_gtk3u_core-3.0
-WANTLIB += wx_gtk3u_gl-3.0 wx_gtk3u_html-3.0 wx_gtk3u_stc-3.0
+WANTLIB += TKMath TKMesh TKMeshVS TKOffset TKOpenGl TKPrim TKSTEP
+WANTLIB += TKSTEP209 TKSTEPAttr TKSTEPBase TKSTL TKService TKShHealing
+WANTLIB += TKTObj TKTopAlgo TKV3d TKVRML TKXCAF TKXDEIGES TKXDESTEP
+WANTLIB += TKXMesh TKXSBase TKXml TKXmlL TKXmlTObj TKXmlXCAF TKernel
+WANTLIB += boost_context-mt boost_system-mt c cairo crypto curl
+WANTLIB += m ngspice pixman-1 python3.9 ssl wx_baseu-3.0 wx_baseu_net-3.0
+WANTLIB += wx_baseu_xml-3.0 wx_gtk3u_adv-3.0 wx_gtk3u_aui-3.0
+WANTLIB += wx_gtk3u_core-3.0 wx_gtk3u_gl-3.0 wx_gtk3u_html-3.0
+WANTLIB += wx_gtk3u_stc-3.0
 
 MASTER_SITES =		https://gitlab.com/kicad/code/kicad/-/archive/${V}/
 
@@ -68,7 +68,7 @@ CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=Release \
 			-DwxWidgets_CONFIG_EXECUTABLE=${LOCALBASE}/bin/wx-config \
 			-DwxWidgets_LIBRARIES="${LOCALBASE}/lib" \
 			-DwxWidgets_INCLUDE_DIRS="${LOCALBASE}/include/wx-3.0" \
-			-DOCE_DIR="${LOCALBASE}/include/oce" \
+			-DOCC_INCLUDE_DIR="${LOCALBASE}/include/oce" \
 			-DKICAD_SCRIPTING_PYTHON3=ON \
 			-DKICAD_SCRIPTING_WXPYTHON=OFF
 

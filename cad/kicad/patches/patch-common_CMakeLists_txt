@@ -1,9 +1,9 @@
-$OpenBSD: patch-common_CMakeLists_txt,v 1.2 2020/04/02 14:48:27 tracey Exp $
+$OpenBSD: patch-common_CMakeLists_txt,v 1.3 2021/11/22 14:55:53 tracey Exp $
 # get rid of -lrt linker
 Index: common/CMakeLists.txt
 --- common/CMakeLists.txt.orig
 +++ common/CMakeLists.txt
-@@ -597,7 +597,7 @@ add_dependencies( common page_layout_lexer_source_file
+@@ -598,7 +598,7 @@ add_dependencies( common page_layout_lexer_source_file
  # This one gets made only when testing.
  # to build it, first enable #define STAND_ALONE at top of dsnlexer.cpp
  add_executable( dsntest EXCLUDE_FROM_ALL dsnlexer.cpp )

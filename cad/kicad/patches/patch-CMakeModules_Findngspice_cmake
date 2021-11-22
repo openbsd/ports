@@ -1,0 +1,21 @@
+$OpenBSD: patch-CMakeModules_Findngspice_cmake,v 1.1 2021/11/22 14:55:53 tracey Exp $
+
+Index: CMakeModules/Findngspice.cmake
+--- CMakeModules/Findngspice.cmake.orig
++++ CMakeModules/Findngspice.cmake
+@@ -64,11 +64,11 @@ find_path( NGSPICE_INCLUDE_DIR ngspice/sharedspice.h
+         share/ngspice/include/ngspice
+ )
+ 
+-if( UNIX )
+-    set( NGSPICE_LIB_NAME libngspice.so.0 CACHE STRING "Optionally versioned name of the shared library" )
+-else()
++#if( UNIX  )
++#    set( NGSPICE_LIB_NAME libngspice.so.0 CACHE STRING "Optionally versioned name of the shared library" )
++#else()
+     set( NGSPICE_LIB_NAME ngspice CACHE STRING "Optionally versioned name of the shared library" )
+-endif()
++#endif()
+ 
+ find_library( NGSPICE_LIBRARY ${NGSPICE_LIB_NAME}
+     PATHS

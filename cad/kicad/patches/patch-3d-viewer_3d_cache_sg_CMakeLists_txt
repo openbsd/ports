@@ -1,4 +1,4 @@
-$OpenBSD: patch-3d-viewer_3d_cache_sg_CMakeLists_txt,v 1.1 2019/11/08 14:43:53 sthen Exp $
+$OpenBSD: patch-3d-viewer_3d_cache_sg_CMakeLists_txt,v 1.2 2021/11/22 14:55:53 tracey Exp $
 
 Index: 3d-viewer/3d_cache/sg/CMakeLists.txt
 --- 3d-viewer/3d_cache/sg/CMakeLists.txt.orig
@@ -13,5 +13,5 @@ Index: 3d-viewer/3d_cache/sg/CMakeLists.txt
 +		       c
 +                       ${wxWidgets_LIBRARIES} )
  
- install( TARGETS
-     kicad_3dsg
+ # Don't specify the ARCHIVE DESTINATION parameter to prevent
+ # the install of the import library on Windows
