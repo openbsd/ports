@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/08/30 10:05:35 bentley Exp $
-@pkgpath games/uqm,-remix1
-@pkgpath games/uqm,-remix2
-@pkgpath games/uqm,-remix3
-@pkgpath games/uqm,-remix4
+@comment $OpenBSD: PLIST,v 1.2 2021/11/22 05:36:38 kirby Exp $
 @conflict uqm-remix1-*
 @conflict uqm-remix2-*
 @conflict uqm-remix3-*
 @conflict uqm-remix4-*
+@pkgpath games/uqm,-remix1
+@pkgpath games/uqm,-remix2
+@pkgpath games/uqm,-remix3
+@pkgpath games/uqm,-remix4
 share/uqm/
 share/uqm/content/
 share/uqm/content/addons/

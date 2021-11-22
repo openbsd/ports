@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2020/08/30 10:33:57 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/22 05:36:39 kirby Exp $
 
 COMMENT =		ur-quan masters: game of space exploration and battles
 
 EPOCH =			0
 
-DISTNAME =		uqm-$V-source
+DISTNAME =		uqm-$V-src
 PKGNAME =		uqm-$V
-V =			0.7.0
-REVISION =		6
+V =			0.8.0
 
 CATEGORIES =		games x11
 
@@ -18,17 +17,19 @@ MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c m pthread z SDL mikmod vorbisfile SDL_image
+WANTLIB += SDL2 c m mikmod ogg png vorbisfile z
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE=sc2/}
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=sc2/}
 
 EXTRACT_SUFX =		.tgz
 
 DIST_SUBDIR =		uqm
 
 LIB_DEPENDS =		audio/libmikmod \
+			audio/libogg \
 			audio/libvorbis \
-			devel/sdl-image
+			devel/sdl2 \
+			graphics/png
 
 RUN_DEPENDS =		games/uqm/data/content
 

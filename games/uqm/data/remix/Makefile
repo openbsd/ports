@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/08/30 10:05:35 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/22 05:36:38 kirby Exp $
 
 COMMENT =	ur-quan masters: remix music pack
 
-V =		0.7.0
+V =		0.8.0
 
 UQM_ADDON =	Yes
 
@@ -13,7 +13,5 @@ DISTFILES =	uqm-remix-disc1.uqm \
 		uqm-remix-disc4.uqm
 
 HOMEPAGE =	http://www.medievalfuture.com/precursors/main.php
-
-REVISION =	6
 
 .include <bsd.port.mk>
