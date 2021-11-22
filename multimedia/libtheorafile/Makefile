@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/11/22 20:53:22 thfr Exp $
 
 COMMENT =	Ogg Theora Video Decoder Library
 
 # stable release binary packages are only available as part of FNA
 # Note that not every update of FNA releases necessarily updates libtheorafile
-V =	20180401
-FNA =	18.04
+V =	20210403
+FNA =	21.11
 DISTNAME =	libtheorafile-${V}{FNA-${FNA:S/.//}}
 PKGNAME =	libtheorafile-${V}
-REVISION =	0
 
-SHARED_LIBS =	theorafile	1.0	# from FNA 18.04
+SHARED_LIBS =	theorafile	1.1	# from FNA 21.11
 
 CATEGORIES =	multimedia
 HOMEPAGE =	https://github.com/FNA-XNA/Theorafile
@@ -19,17 +18,15 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 # zlib
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ogg theoradec vorbis
+WANTLIB += m
 
 MASTER_SITES = https://github.com/FNA-XNA/FNA/releases/download/${FNA}/
 EXTRACT_SUFX = .zip
 
-LIB_DEPENDS =	audio/libogg \
-		audio/libvorbis \
-		multimedia/libtheora
-
 MAKE_ENV =	LIBtheorafile_VERSION=${LIBtheorafile_VERSION}
 MAKE_FLAGS =	TARGET=so.${LIBtheorafile_VERSION}
+
+USE_GMAKE =	Yes
 
 # Comes with target 'test' to build binary 'theorafile-test' that can play an
 # Ogg Theora (.ogv) file. Doesn't come with an example video file, however.
