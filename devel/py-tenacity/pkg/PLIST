@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/11/14 18:21:53 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/11/22 15:47:23 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/tenacity/
 lib/python${MODPY_VERSION}/site-packages/tenacity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/tenacity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/tenacity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/tenacity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/tenacity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/tenacity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/tenacity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/tenacity/__init__.py
@@ -14,7 +15,6 @@ lib/python${MODPY_VERSION}/site-packages/tenacity/${MODPY_PYCACHE}_utils.${MODPY
 lib/python${MODPY_VERSION}/site-packages/tenacity/${MODPY_PYCACHE}after.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tenacity/${MODPY_PYCACHE}before.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tenacity/${MODPY_PYCACHE}before_sleep.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/tenacity/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tenacity/${MODPY_PYCACHE}nap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tenacity/${MODPY_PYCACHE}retry.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tenacity/${MODPY_PYCACHE}stop.${MODPY_PYC_MAGIC_TAG}pyc
@@ -25,7 +25,6 @@ lib/python${MODPY_VERSION}/site-packages/tenacity/_utils.py
 lib/python${MODPY_VERSION}/site-packages/tenacity/after.py
 lib/python${MODPY_VERSION}/site-packages/tenacity/before.py
 lib/python${MODPY_VERSION}/site-packages/tenacity/before_sleep.py
-lib/python${MODPY_VERSION}/site-packages/tenacity/compat.py
 lib/python${MODPY_VERSION}/site-packages/tenacity/nap.py
 lib/python${MODPY_VERSION}/site-packages/tenacity/py.typed
 lib/python${MODPY_VERSION}/site-packages/tenacity/retry.py

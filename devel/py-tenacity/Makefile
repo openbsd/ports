@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:01:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/22 15:47:22 sthen Exp $
 
 COMMENT =		Python module to retry code until it succeeds
 
-MODPY_EGG_VERSION =	6.2.0
+MODPY_EGG_VERSION =	8.0.1
 DISTNAME =		tenacity-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 MAINTAINER =		Mikolaj Kucharski <mikolaj@kucharski.name>
 
@@ -23,7 +22,7 @@ MODPY_PI =		Yes
 
 BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 
-# depends on typeguard, currently no in ports
+# one test fails if typeguard is missing (currently not in ports)
 TEST_DEPENDS =		www/py-tornado${MODPY_FLAVOR}
 
 FLAVORS =		python3
