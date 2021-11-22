@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1561 2021/11/21 13:55:10 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1562 2021/11/22 11:01:47 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -635,17 +635,22 @@ FULLPKGNAME- = ${FULLPKGNAME}
 PKGSTEM ?= ${FULLPKGNAME:C/-[0-9].*//}
 PKGSTEM- = ${PKGSTEM}
 .else
+# parse PKGNAME as _STEM/_VERSION, just in case
+_STEM = ${PKGNAME:C/-[0-9].*//}
+.  for _s in ${_STEM}
+_VERSION = ${PKGNAME:S/^${_s}-//}
+.  endfor
+.if ${MULTI_PACKAGES:M-main}
+PKGNAME-main ?= ${PKGNAME}
+.endif
 .  for _s in ${MULTI_PACKAGES}
+PKGNAME${_s} ?= ${_STEM}${_s}-${_VERSION}
 .    if defined(FULLPKGNAME${_s})
 .      if !defined(FULLPKGPATH${_s}) && "${FLAVORS}" != " ${PSEUDO_FLAVORS}"
 ERRORS += "Warning: FULLPKGNAME${_s} defined but no FULLPKGPATH${_s}"
 .      endif
 .    else
-.      if defined(PKGNAME${_s})
 FULLPKGNAME${_s} = ${PKGNAME${_s}}${FLAVOR_EXT}
-.      else
-ERRORS += "Fatal: FULLPKGNAME${_s} is not defined"
-.      endif
 .    endif
 # XXX see comments above for !MULTI_PACKAGES case
 .    if !empty(REVISION${_s})
