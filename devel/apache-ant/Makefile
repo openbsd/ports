@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.50 2021/05/19 01:50:29 kurt Exp $
+# $OpenBSD: Makefile,v 1.51 2021/11/22 08:31:54 rsadowski Exp $
 
 COMMENT=        build tool for java applications
 
-DISTNAME=	apache-ant-1.10.9
+DISTNAME=	apache-ant-1.10.12
 CATEGORIES=	devel
-REVISION=	0
 
-HOMEPAGE=	http://ant.apache.org/
+HOMEPAGE=	https://ant.apache.org/
 
 # Apache Software License 2.0 &
 # W3C Consortium License (August 14 1998)
 PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_APACHE:=ant/binaries/} \
-		http://archive.apache.org/dist/ant/binaries/
+		https://archive.apache.org/dist/ant/binaries/
 
 EXTRACT_SUFX=	-bin.tar.bz2
 
