@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/17 10:29:11 op Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/11/22 16:03:56 op Exp $
+@sample ${SYSCONFDIR}/luarocks/
 bin/luarocks-${MODLUA_VERSION}
 bin/luarocks-admin-${MODLUA_VERSION}
 share/examples/luarocks/
-share/examples/luarocks/luarocks/
-share/examples/luarocks/luarocks/config-${MODLUA_VERSION}.lua
+share/examples/luarocks/config-${MODLUA_VERSION}.lua
+@sample ${SYSCONFDIR}/luarocks/config-${MODLUA_VERSION}.lua
 share/lua/${MODLUA_VERSION}/luarocks/
 share/lua/${MODLUA_VERSION}/luarocks/admin/
 share/lua/${MODLUA_VERSION}/luarocks/admin/cache.lua

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/20 10:36:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2021/11/22 16:03:55 op Exp $
 
 COMMENT =	package manager for lua ${MODLUA_VERSION}
 
@@ -6,7 +6,7 @@ V =		3.8.0
 DISTNAME =	luarocks-${V}
 FULLPKGNAME =	luarocks-${FLAVOR}-${V}
 CATEGORIES =	devel
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://luarocks.org/
 
@@ -31,8 +31,9 @@ USE_GMAKE =		Yes
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--with-lua-include=${MODLUA_INCL_DIR} \
 			--with-lua-lib=${LOCALBASE}/lib \
-			--sysconfdir=${PREFIX}/share/examples/luarocks \
+			--sysconfdir=${SYSCONFDIR} \
 			--lua-version=${MODLUA_VERSION}
+FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples
 
 NO_TEST =		Yes
 
