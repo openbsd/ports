@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2021/11/09 12:17:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.137 2021/11/22 15:00:42 espie Exp $
 
 BROKEN-hppa=		no atomic primitives
 
@@ -8,9 +8,6 @@ COMMENT-icu=		ICU support for libharfbuzz
 GH_ACCOUNT=		harfbuzz
 GH_PROJECT=		harfbuzz
 GH_TAGNAME=		3.1.1
-
-PKGNAME-main=		harfbuzz-${GH_TAGNAME}
-PKGNAME-icu=		harfbuzz-icu-${GH_TAGNAME}
 
 SHARED_LIBS += harfbuzz                  16.1 # 0.30101.0
 SHARED_LIBS += harfbuzz-subset           1.0 # 0.30101.0

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.88 2021/03/15 21:06:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.89 2021/11/22 15:00:42 espie Exp $
 
 COMMENT-main=	generic shared library support script
 COMMENT-ltdl=	GNU libtool system independent dlopen wrapper
 
 VERSION=	2.4.2
 DISTNAME=	libtool-${VERSION}
-PKGNAME-main=	${DISTNAME}
 PKGNAME-ltdl=	libltdl-${VERSION}
 REVISION=	2
 CATEGORIES=	devel

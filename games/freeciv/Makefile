@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2021/06/12 06:58:01 bket Exp $
+# $OpenBSD: Makefile,v 1.126 2021/11/22 15:00:42 espie Exp $
 
 COMMENT-main=	Civilization clone for X11; multiplayer; game server
 COMMENT-client=	Freeciv client
@@ -7,8 +7,6 @@ COMMENT-share=	shared data files for Freeciv
 VERSION=	2.6.4
 DISTNAME=	freeciv-${VERSION}
 PKGNAME-main=	freeciv-server-${VERSION}
-PKGNAME-client=	freeciv-client-${VERSION}
-PKGNAME-share=	freeciv-share-${VERSION}
 
 CATEGORIES=	games
 

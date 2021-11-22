@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.216 2021/09/19 10:19:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.217 2021/11/22 15:00:42 espie Exp $
 
 ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc powerpc64 riscv64 sparc64
 DPB_PROPERTIES=	parallel
@@ -8,8 +8,6 @@ COMMENT-ga=	QEMU guest agent
 
 VERSION=	6.1.0
 DISTNAME=	qemu-${VERSION}
-PKGNAME-main=	${DISTNAME}
-PKGNAME-ga=	qemu-ga-${VERSION}
 REVISION-main=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/

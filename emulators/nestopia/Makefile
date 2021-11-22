@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2020/05/20 12:12:03 bentley Exp $
+# $OpenBSD: Makefile,v 1.22 2021/11/22 15:00:42 espie Exp $
 
 COMMENT-main =		accurate Nintendo Entertainment System emulator
 COMMENT-libretro =	Nintendo Entertainment System core for retroarch
 
 V =			1.49
 DISTNAME =		nestopia-$V
-PKGNAME-main =		nestopia-$V
 PKGNAME-libretro =	libretro-nestopia-$V
 REVISION-main =		0
 

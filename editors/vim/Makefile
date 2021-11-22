@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.220 2021/11/15 16:26:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.221 2021/11/22 15:00:42 espie Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -10,8 +10,7 @@ GH_PROJECT=	vim
 GH_TAGNAME=	v$V
 
 T=		${V:C/\.0+/./}
-PKGNAME-main=	vim-$T
-PKGNAME-lang=	vim-lang-$T
+PKGNAME=	vim-$T
 FULLPKGNAME-lang= vim-lang-$T
 FULLPKGPATH-lang= ${PKGPATH},-lang
 P=		vim${V:R:S/.//}

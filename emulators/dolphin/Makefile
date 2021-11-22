@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2021/03/23 19:16:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2021/11/22 15:00:42 espie Exp $
 
 USE_WXNEEDED =		Yes
 ONLY_FOR_ARCHS =	amd64
@@ -8,8 +8,7 @@ COMMENT-nogui =		Nintendo GameCube and Wii emulator
 
 V =			5.0.0.20190621
 DISTNAME =		dolphin-emu-${V}
-PKGNAME-main =		dolphin-${V}
-PKGNAME-nogui =		dolphin-nogui-${V}
+PKGNAME =		dolphin-${V}
 REVISION-main =		1
 REVISION-nogui =	1
 

@@ -1,12 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2021/11/17 09:02:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2021/11/22 15:00:42 espie Exp $
 
 COMMENT-main =		multi-language spell checker for KDE
 COMMENT-aspell =	ASpell plugin for Sonnet
 COMMENT-hunspell =	HunSpell plugin for Sonnet
-
-PKGNAME-main =		${DISTNAME}
-PKGNAME-aspell =	sonnet-aspell-${VERSION}
-PKGNAME-hunspell =	sonnet-hunspell-${VERSION}
 
 DISTNAME =		sonnet-${VERSION}
 

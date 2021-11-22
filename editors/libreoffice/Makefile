@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.253 2021/11/02 00:01:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.254 2021/11/22 15:00:42 espie Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -29,10 +29,6 @@ BV=		7.2
 VERSION=	${BV}.2.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
-PKGNAME=	libreoffice-${VERSION}
-PKGNAME-main=	libreoffice-${VERSION}
-PKGNAME-kde=	libreoffice-kde-${VERSION}
-PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel
 
@@ -159,7 +155,6 @@ LANGS=			ar bg ca de es fa fi fr hu it \
 CONFIGURE_ARGS+=	--with-lang="en-US ${LANGS}"
 .for l in ${LANGS:L}
 MULTI_PACKAGES+=	-i18n-$l
-PKGNAME-i18n-$l=	libreoffice-i18n-$l-${VERSION}
 COMMENT-i18n-$l=	$l language pack for LibreOffice
 RUN_DEPENDS-i18n-$l=	editors/libreoffice
 WANTLIB-i18n-$l=

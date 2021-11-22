@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2021/08/09 09:10:14 kirby Exp $
+# $OpenBSD: Makefile,v 1.18 2021/11/22 15:00:42 espie Exp $
 
 COMMENT-main =		free/libre action roleplaying engine
 COMMENT-data =		free/libre action roleplaying engine data
 
 V = 			1.12
 DISTNAME = 		flare.${V}
-PKGNAME-main =		flare-${V}
-PKGNAME-data =		flare-data-${V}
+PKGNAME =		flare-${V}
 
 CATEGORIES =		games
 

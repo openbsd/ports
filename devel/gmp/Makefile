@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2021/09/10 20:29:04 gkoehler Exp $
+# $OpenBSD: Makefile,v 1.45 2021/11/22 15:00:41 espie Exp $
 
 COMMENT-main=	library for arbitrary precision arithmetic
 COMMENT-cxx=	C++ library for arbitrary precision arithmetic
@@ -7,7 +7,6 @@ VERSION=	6.2.1
 REVISION-main=	0
 DISTNAME=	gmp-${VERSION}
 MULTI_PACKAGES=	-main -cxx
-PKGNAME-main=	gmp-${VERSION}
 PKGNAME-cxx=	gmpxx-${VERSION}
 
 SHARED_LIBS +=  gmp                  11.0     # 14.1

@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2020/02/04 22:54:09 cwen Exp $
+# $OpenBSD: Makefile,v 1.30 2021/11/22 15:00:43 espie Exp $
 
 COMMENT-main =		bubble popping game, like puzzle bobble
 COMMENT-server =	server for the frozen-bubble bubble popping game
 
 VER =			2.2.0
 DISTNAME =		frozen-bubble-${VER}
-PKGNAME-main =		${DISTNAME}
 REVISION-main =		15
-PKGNAME-server =	frozen-bubble-server-${VER}
 REVISION-server =	10
 CATEGORIES =		games
 
