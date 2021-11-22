@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/02 00:00:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2021/11/22 15:12:21 tracey Exp $
 
 COMMENT =		esp8266 and esp32 rom bootloader communication tool
 
@@ -20,7 +20,7 @@ MODPY_SETUPTOOLS =      Yes
 
 RUN_DEPENDS +=		devel/py-serial${MODPY_FLAVOR} \
 			security/py-aes${MODPY_FLAVOR} \
-			security/py-ecdsa${MODPY_FLAVOR} \
+			security/py-ecdsa${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR =		python3
