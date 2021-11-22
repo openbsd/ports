@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_network_ssl_qsslsocket_openssl_symbols_cpp,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
+$OpenBSD: patch-src_network_ssl_qsslsocket_openssl_symbols_cpp,v 1.2 2021/11/22 06:49:11 tb Exp $
 
 Add LibreSSL support
 
@@ -60,16 +60,6 @@ Index: src/network/ssl/qsslsocket_openssl_symbols.cpp
  DEFINEFUNC(long, OpenSSL_version_num, void, DUMMYARG, return 0, return)
  DEFINEFUNC(const char *, OpenSSL_version, int a, a, return nullptr, return)
  DEFINEFUNC(unsigned long, SSL_SESSION_get_ticket_lifetime_hint, const SSL_SESSION *session, session, return 0, return)
-@@ -229,7 +246,9 @@ DEFINEFUNC5(int, OCSP_id_get0_info, ASN1_OCTET_STRING 
-             ASN1_OCTET_STRING **piKeyHash, piKeyHash, ASN1_INTEGER **pserial, pserial, OCSP_CERTID *cid, cid,
-             return 0, return)
- DEFINEFUNC2(OCSP_RESPONSE *, OCSP_response_create, int status, status, OCSP_BASICRESP *bs, bs, return nullptr, return)
-+#ifndef LIBRESSL_VERSION_NUMBER
- DEFINEFUNC(const STACK_OF(X509) *, OCSP_resp_get0_certs, const OCSP_BASICRESP *bs, bs, return nullptr, return)
-+#endif
- DEFINEFUNC2(int, OCSP_id_cmp, OCSP_CERTID *a, a, OCSP_CERTID *b, b, return -1, return)
- DEFINEFUNC7(OCSP_SINGLERESP *, OCSP_basic_add1_status, OCSP_BASICRESP *r, r, OCSP_CERTID *c, c, int s, s,
-             int re, re, ASN1_TIME *rt, rt, ASN1_TIME *t, t, ASN1_TIME *n, n, return nullptr, return)
 @@ -249,7 +268,9 @@ DEFINEFUNC(long, ASN1_INTEGER_get, ASN1_INTEGER *a, a,
  DEFINEFUNC2(int, ASN1_INTEGER_cmp, const ASN1_INTEGER *a, a, const ASN1_INTEGER *b, b, return 1, return)
  DEFINEFUNC(int, ASN1_STRING_length, ASN1_STRING *a, a, return 0, return)
@@ -127,16 +117,6 @@ Index: src/network/ssl/qsslsocket_openssl_symbols.cpp
  
  #if QT_CONFIG(dtls)
      RESOLVEFUNC(DTLSv1_listen)
-@@ -941,7 +970,9 @@ bool q_resolveOpenSslSymbols()
-     RESOLVEFUNC(OCSP_check_validity)
-     RESOLVEFUNC(OCSP_cert_to_id)
-     RESOLVEFUNC(OCSP_id_get0_info)
-+#ifndef LIBRESSL_VERSION_NUMBER
-     RESOLVEFUNC(OCSP_resp_get0_certs)
-+#endif
-     RESOLVEFUNC(OCSP_basic_sign)
-     RESOLVEFUNC(OCSP_response_create)
-     RESOLVEFUNC(i2d_OCSP_RESPONSE)
 @@ -961,7 +992,9 @@ bool q_resolveOpenSslSymbols()
      RESOLVEFUNC(ASN1_INTEGER_cmp)
      RESOLVEFUNC(ASN1_STRING_length)

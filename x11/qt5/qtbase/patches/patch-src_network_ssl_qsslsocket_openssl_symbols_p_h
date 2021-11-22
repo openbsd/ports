@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_network_ssl_qsslsocket_openssl_symbols_p_h,v 1.8 2021/01/19 06:16:29 rsadowski Exp $
+$OpenBSD: patch-src_network_ssl_qsslsocket_openssl_symbols_p_h,v 1.9 2021/11/22 06:49:11 tb Exp $
 
 https://github.com/gentoo/libressl/blob/master/dev-qt/qtnetwork/files/qtnetwork-5.15.2-libressl.patch
 
@@ -104,15 +104,3 @@ Index: src/network/ssl/qsslsocket_openssl_symbols_p.h
  void q_SSL_free(SSL *a);
  STACK_OF(SSL_CIPHER) *q_SSL_get_ciphers(const SSL *a);
  const SSL_CIPHER *q_SSL_get_current_cipher(SSL *a);
-@@ -728,7 +769,11 @@ int q_OCSP_check_validity(ASN1_GENERALIZEDTIME *thisup
- int q_OCSP_id_get0_info(ASN1_OCTET_STRING **piNameHash, ASN1_OBJECT **pmd, ASN1_OCTET_STRING **pikeyHash,
-                         ASN1_INTEGER **pserial, OCSP_CERTID *cid);
- 
-+#ifndef LIBRESSL_VERSION_NUMBER
- const STACK_OF(X509) *q_OCSP_resp_get0_certs(const OCSP_BASICRESP *bs);
-+#else
-+#define q_OCSP_resp_get0_certs(bs) ((bs)->certs)
-+#endif
- Q_AUTOTEST_EXPORT OCSP_CERTID *q_OCSP_cert_to_id(const EVP_MD *dgst, X509 *subject, X509 *issuer);
- Q_AUTOTEST_EXPORT void q_OCSP_CERTID_free(OCSP_CERTID *cid);
- int q_OCSP_id_cmp(OCSP_CERTID *a, OCSP_CERTID *b);
