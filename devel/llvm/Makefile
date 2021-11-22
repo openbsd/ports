@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.286 2021/11/22 15:00:42 espie Exp $
+# $OpenBSD: Makefile,v 1.287 2021/11/22 18:29:08 jca Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
@@ -35,7 +35,7 @@ HOMEPAGE =	https://www.llvm.org/
 
 MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
-# BSD
+# In transition from BSD-ish to Apache 2 + LLVM exceptions
 PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_V}/
