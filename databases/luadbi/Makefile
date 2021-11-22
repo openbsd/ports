@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2021/06/09 10:30:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/11/22 13:55:54 espie Exp $
 
 COMMENT-main=	database interface library for Lua (including SQLite3)
 COMMENT-mysql=	MySQL driver for luadbi
@@ -10,9 +10,7 @@ GH_PROJECT=	luadbi
 GH_TAGNAME=	v${V}
 REVISION=	1
 
-PKGNAME-main=		luadbi-$V
-PKGNAME-mysql=		luadbi-mysql-$V
-PKGNAME-pgsql=		luadbi-pgsql-$V
+PKGNAME=		luadbi-$V
 FULLPKGNAME-main=	${_MODLUA_PKG_PREFIX}dbi-$V
 FULLPKGNAME-mysql=	${_MODLUA_PKG_PREFIX}dbi-mysql-$V
 FULLPKGNAME-pgsql=	${_MODLUA_PKG_PREFIX}dbi-pgsql-$V

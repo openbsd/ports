@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2021/02/01 23:58:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2021/11/22 13:55:54 espie Exp $
 
 REV=		3
 DBLIBDIR=	lib/db
 VERSION=	${REV}.1.17
-PKGNAME-main=	${DISTNAME}
-PKGNAME-tcl=	db-tcl-${VERSION}
-EPOCH-main=	0
-EPOCH-tcl=	0
+EPOCH=	0
 
 REVISION-main = 3
 REVISION-tcl =	2

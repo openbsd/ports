@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2021/10/11 09:36:30 kn Exp $
+# $OpenBSD: Makefile,v 1.39 2021/11/22 13:55:54 espie Exp $
 
 V =			0.9.0
 REVISION =		3
@@ -8,10 +8,8 @@ COMMENT-pgsql =		pgsql driver for libdbi
 COMMENT-sqlite3 =	sqlite3 driver for libdbi
 COMMENT-freetds =	freetds driver for libdbi
 DISTNAME =		libdbi-drivers-$V
+PKGNAME =		libdbi-drivers-${V:S/-/./}
 PKGNAME-main =		libdbi-drivers-mysql-${V:S/-/./}
-PKGNAME-pgsql =		libdbi-drivers-pgsql-${V:S/-/./}
-PKGNAME-sqlite3 =	libdbi-drivers-sqlite3-${V:S/-/./}
-PKGNAME-freetds =	libdbi-drivers-freetds-${V:S/-/./}
 
 CATEGORIES =		databases
 

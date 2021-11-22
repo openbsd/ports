@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.278 2021/11/07 14:27:44 robert Exp $
+# $OpenBSD: Makefile,v 1.279 2021/11/22 13:55:55 espie Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -15,11 +15,6 @@ REVISION-plpython=	1
 PREV_MAJOR=	12
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
-PKGNAME-server=	postgresql-server-${VERSION}
-PKGNAME-docs=	postgresql-docs-${VERSION}
-PKGNAME-contrib=postgresql-contrib-${VERSION}
-PKGNAME-plpython=postgresql-plpython-${VERSION}
-PKGNAME-pg_upgrade=postgresql-pg_upgrade-${VERSION}
 
 DPB_PROPERTIES=	parallel
 

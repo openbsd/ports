@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2021/11/08 17:57:09 jca Exp $
+# $OpenBSD: Makefile,v 1.124 2021/11/22 13:55:55 espie Exp $
 
 NOT_FOR_ARCHS-md = alpha hppa sparc64
 
@@ -8,8 +8,7 @@ COMMENT-md=	machine-dependent libraries for boost
 VERSION=	1.76.0
 EPOCH =		0
 DISTNAME=	boost_${VERSION:S/./_/g}
-PKGNAME-main=	boost-${VERSION}
-PKGNAME-md=	boost-md-${VERSION}
+PKGNAME=	boost-${VERSION}
 REVISION-main=	2
 REVISION-md=	1
 CATEGORIES=	devel

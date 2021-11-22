@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2021/01/08 13:32:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/11/22 13:55:54 espie Exp $
 
 COMMENT-term=	cli client for Intel AMT serial-over-lan
 COMMENT-main=	client and tools for Intel AMT serial-over-lan
@@ -6,7 +6,6 @@ COMMENT-main=	client and tools for Intel AMT serial-over-lan
 V=		1.6
 REVISION=	0
 DISTNAME=	amtterm-$V
-PKGNAME-main=	amtterm-$V
 PKGNAME-term=	amtterm-cli-$V
 MULTI_PACKAGES=	-main -term
 

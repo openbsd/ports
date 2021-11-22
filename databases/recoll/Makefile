@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2021/11/02 00:00:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/11/22 13:55:55 espie Exp $
 
 COMMENT-main=	full text search application
 COMMENT-gui=	X user interface to recoll
@@ -7,8 +7,6 @@ MULTI_PACKAGES=	-main -gui
 
 V=		1.31.0
 DISTNAME=	recoll-${V}
-PKGNAME-main=	${DISTNAME}
-PKGNAME-gui=	recoll-gui-${V}
 REVISION-gui=	0
 REVISION-main=	0
 

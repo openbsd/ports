@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2021/11/02 00:00:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2021/11/22 13:55:55 espie Exp $
 
 COMMENT-main=	trivial database library
 COMMENT-python=	Python ${MODPY_VERSION} bindings for tdb
@@ -7,7 +7,6 @@ COMMENT-python=	Python ${MODPY_VERSION} bindings for tdb
 V=		1.4.5
 
 DISTNAME=	tdb-$V
-PKGNAME-main=	${DISTNAME}
 PKGNAME-python=	py3-${DISTNAME}
 REVISION-python= 0
 

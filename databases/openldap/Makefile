@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.190 2021/09/10 20:44:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.191 2021/11/22 13:55:55 espie Exp $
 
 DPB_PROPERTIES =	parallel
 
@@ -10,7 +10,6 @@ PORTROACH =		limit:^2\.4\.
 
 DISTNAME =		openldap-2.4.59
 PKGNAME-main =		${DISTNAME:S/-/-client-/}
-PKGNAME-server =	${DISTNAME:S/-/-server-/}
 
 EPOCH =			0
 
