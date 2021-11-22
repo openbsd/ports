@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/11/16 16:59:58 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/11/22 11:15:23 gonzalo Exp $
 @option is-branch
 @conflict nextcloud-*
 @unexec-delete rm -f ${PREFIX}/conf/modules/httpd-nextcloud.conf
@@ -2758,6 +2758,7 @@ nextcloud/3rdparty/christophwurst/id3parser/src/getID3/getid3_lib.php
 nextcloud/3rdparty/composer/
 nextcloud/3rdparty/composer.json
 nextcloud/3rdparty/composer.lock
+nextcloud/3rdparty/composer.patches.json
 nextcloud/3rdparty/composer/ClassLoader.php
 nextcloud/3rdparty/composer/InstalledVersions.php
 nextcloud/3rdparty/composer/LICENSE
@@ -2785,6 +2786,15 @@ nextcloud/3rdparty/composer/package-versions-deprecated/src/PackageVersions/Fall
 nextcloud/3rdparty/composer/package-versions-deprecated/src/PackageVersions/Installer.php
 nextcloud/3rdparty/composer/package-versions-deprecated/src/PackageVersions/Versions.php
 nextcloud/3rdparty/composer/platform_check.php
+nextcloud/3rdparty/cweagans/
+nextcloud/3rdparty/cweagans/composer-patches/
+nextcloud/3rdparty/cweagans/composer-patches/LICENSE.md
+nextcloud/3rdparty/cweagans/composer-patches/composer.json
+nextcloud/3rdparty/cweagans/composer-patches/composer.lock
+nextcloud/3rdparty/cweagans/composer-patches/src/
+nextcloud/3rdparty/cweagans/composer-patches/src/PatchEvent.php
+nextcloud/3rdparty/cweagans/composer-patches/src/PatchEvents.php
+nextcloud/3rdparty/cweagans/composer-patches/src/Patches.php
 nextcloud/3rdparty/deepdiver/
 nextcloud/3rdparty/deepdiver/zipstreamer/
 nextcloud/3rdparty/deepdiver/zipstreamer/.gitignore
@@ -2979,7 +2989,6 @@ nextcloud/3rdparty/doctrine/dbal/src/Driver/SQLSrv/Connection.php
 nextcloud/3rdparty/doctrine/dbal/src/Driver/SQLSrv/Driver.php
 nextcloud/3rdparty/doctrine/dbal/src/Driver/SQLSrv/Exception/
 nextcloud/3rdparty/doctrine/dbal/src/Driver/SQLSrv/Exception/Error.php
-nextcloud/3rdparty/doctrine/dbal/src/Driver/SQLSrv/LastInsertId.php
 nextcloud/3rdparty/doctrine/dbal/src/Driver/SQLSrv/Result.php
 nextcloud/3rdparty/doctrine/dbal/src/Driver/SQLSrv/Statement.php
 nextcloud/3rdparty/doctrine/dbal/src/Driver/ServerInfoAwareConnection.php
@@ -3083,6 +3092,9 @@ nextcloud/3rdparty/doctrine/dbal/src/Result.php
 nextcloud/3rdparty/doctrine/dbal/src/SQL/
 nextcloud/3rdparty/doctrine/dbal/src/SQL/Parser/
 nextcloud/3rdparty/doctrine/dbal/src/SQL/Parser.php
+nextcloud/3rdparty/doctrine/dbal/src/SQL/Parser/Exception/
+nextcloud/3rdparty/doctrine/dbal/src/SQL/Parser/Exception.php
+nextcloud/3rdparty/doctrine/dbal/src/SQL/Parser/Exception/RegularExpressionError.php
 nextcloud/3rdparty/doctrine/dbal/src/SQL/Parser/Visitor.php
 nextcloud/3rdparty/doctrine/dbal/src/Schema/
 nextcloud/3rdparty/doctrine/dbal/src/Schema/AbstractAsset.php
@@ -3169,6 +3181,29 @@ nextcloud/3rdparty/doctrine/dbal/src/Types/Types.php
 nextcloud/3rdparty/doctrine/dbal/src/Types/VarDateTimeImmutableType.php
 nextcloud/3rdparty/doctrine/dbal/src/Types/VarDateTimeType.php
 nextcloud/3rdparty/doctrine/dbal/src/VersionAwarePlatformDriver.php
+nextcloud/3rdparty/doctrine/dbal/static-analysis/
+nextcloud/3rdparty/doctrine/dbal/static-analysis/driver-manager-retrieves-correct-connection-type.php
+nextcloud/3rdparty/doctrine/deprecations/
+nextcloud/3rdparty/doctrine/deprecations/.gitignore
+nextcloud/3rdparty/doctrine/deprecations/README.md
+nextcloud/3rdparty/doctrine/deprecations/composer.json
+nextcloud/3rdparty/doctrine/deprecations/lib/
+nextcloud/3rdparty/doctrine/deprecations/lib/Doctrine/
+nextcloud/3rdparty/doctrine/deprecations/lib/Doctrine/Deprecations/
+nextcloud/3rdparty/doctrine/deprecations/lib/Doctrine/Deprecations/Deprecation.php
+nextcloud/3rdparty/doctrine/deprecations/lib/Doctrine/Deprecations/PHPUnit/
+nextcloud/3rdparty/doctrine/deprecations/lib/Doctrine/Deprecations/PHPUnit/VerifyDeprecations.php
+nextcloud/3rdparty/doctrine/deprecations/phpcs.xml
+nextcloud/3rdparty/doctrine/deprecations/phpunit.xml.dist
+nextcloud/3rdparty/doctrine/deprecations/test_fixtures/
+nextcloud/3rdparty/doctrine/deprecations/test_fixtures/src/
+nextcloud/3rdparty/doctrine/deprecations/test_fixtures/src/Foo.php
+nextcloud/3rdparty/doctrine/deprecations/test_fixtures/src/RootDeprecation.php
+nextcloud/3rdparty/doctrine/deprecations/tests/
+nextcloud/3rdparty/doctrine/deprecations/tests/Doctrine/
+nextcloud/3rdparty/doctrine/deprecations/tests/Doctrine/Deprecations/
+nextcloud/3rdparty/doctrine/deprecations/tests/Doctrine/Deprecations/DeprecationTest.php
+nextcloud/3rdparty/doctrine/deprecations/tests/Doctrine/Deprecations/VerifyDeprecationsTest.php
 nextcloud/3rdparty/doctrine/event-manager/
 nextcloud/3rdparty/doctrine/event-manager/.doctrine-project.json
 nextcloud/3rdparty/doctrine/event-manager/LICENSE
@@ -5678,7 +5713,6 @@ nextcloud/3rdparty/opis/closure/src/SecurityException.php
 nextcloud/3rdparty/opis/closure/src/SecurityProvider.php
 nextcloud/3rdparty/opis/closure/src/SelfReference.php
 nextcloud/3rdparty/opis/closure/src/SerializableClosure.php
-nextcloud/3rdparty/patches.txt
 nextcloud/3rdparty/patchwork/
 nextcloud/3rdparty/patchwork/jsqueeze/
 nextcloud/3rdparty/patchwork/jsqueeze/LICENSE.ASL20
@@ -9852,6 +9886,8 @@ nextcloud/apps/cloud_federation_api/l10n/es.js
 nextcloud/apps/cloud_federation_api/l10n/es.json
 nextcloud/apps/cloud_federation_api/l10n/eu.js
 nextcloud/apps/cloud_federation_api/l10n/eu.json
+nextcloud/apps/cloud_federation_api/l10n/fi.js
+nextcloud/apps/cloud_federation_api/l10n/fi.json
 nextcloud/apps/cloud_federation_api/l10n/fr.js
 nextcloud/apps/cloud_federation_api/l10n/fr.json
 nextcloud/apps/cloud_federation_api/l10n/gl.js
@@ -14616,6 +14652,8 @@ nextcloud/apps/lookup_server_connector/composer/composer/autoload_static.php
 nextcloud/apps/lookup_server_connector/composer/composer/installed.json
 nextcloud/apps/lookup_server_connector/composer/composer/installed.php
 nextcloud/apps/lookup_server_connector/l10n/
+nextcloud/apps/lookup_server_connector/l10n/bg.js
+nextcloud/apps/lookup_server_connector/l10n/bg.json
 nextcloud/apps/lookup_server_connector/l10n/ca.js
 nextcloud/apps/lookup_server_connector/l10n/ca.json
 nextcloud/apps/lookup_server_connector/l10n/cs.js
@@ -14646,6 +14684,8 @@ nextcloud/apps/lookup_server_connector/l10n/hu.js
 nextcloud/apps/lookup_server_connector/l10n/hu.json
 nextcloud/apps/lookup_server_connector/l10n/it.js
 nextcloud/apps/lookup_server_connector/l10n/it.json
+nextcloud/apps/lookup_server_connector/l10n/ko.js
+nextcloud/apps/lookup_server_connector/l10n/ko.json
 nextcloud/apps/lookup_server_connector/l10n/nl.js
 nextcloud/apps/lookup_server_connector/l10n/nl.json
 nextcloud/apps/lookup_server_connector/l10n/pl.js
