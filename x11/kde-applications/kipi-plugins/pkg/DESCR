@@ -1,0 +1,3 @@
+KIPI plugins (KDE Image Plugin Interface) is an effort to develop a common
+plugin structure for digiKam, KPhotoAlbum (formerly known as KimDaBa), Showimg
+and Gwenview. Its aim is to share image plugins among graphic applications.
