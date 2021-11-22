@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2021/08/28 06:34:03 anton Exp $
+# $OpenBSD: Makefile,v 1.7 2021/11/22 15:30:32 anton Exp $
 
 COMMENT =	kernel normal form formatter
 
-V =		1.0.0
+V =		1.1.0
 DISTNAME =	knfmt-${V}
 
 CATEGORIES =	devel
