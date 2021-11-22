@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/09/04 15:40:11 mariani Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/11/22 05:45:43 rsadowski Exp $
 @conflict lxqt-notificationd-l10n-*
 @conflict lxqt-config-l10n-*
 @pkgpath x11/lxqt/l10n,-notificationd
@@ -12,12 +12,12 @@ share/examples/lxqt-notificationd/xdg/autostart/
 share/examples/lxqt-notificationd/xdg/autostart/lxqt-notifications.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/lxqt-notifications.desktop
 @tag update-desktop-database
-share/lxqt/
 share/lxqt/translations/
 share/lxqt/translations/lxqt-config-notificationd/
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_ar.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_arn.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_ast.qm
+share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_bg.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_ca.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_cs.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_cy.qm
@@ -26,13 +26,16 @@ share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_de.q
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_el.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_en_GB.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_es.qm
+share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_et.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_fr.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_gl.qm
+share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_he.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_hr.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_hu.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_id.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_it.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_ja.qm
+share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_ko.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_lt.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_lv.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_nb_NO.qm
@@ -41,6 +44,7 @@ share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_pl.q
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_pt.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_pt_BR.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_ru.qm
+share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_si.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_sk_SK.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_tr.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_uk.qm
@@ -49,6 +53,7 @@ share/lxqt/translations/lxqt-notificationd/
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_ar.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_arn.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_ast.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_bg.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_ca.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_cs.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_cy.qm
@@ -57,13 +62,16 @@ share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_de.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_el.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_en_GB.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_es.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_et.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_fr.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_gl.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_he.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_hr.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_hu.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_id.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_it.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_ja.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_ko.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_lt.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_lv.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_nb_NO.qm
@@ -72,10 +80,11 @@ share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_pl.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_pt.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_pt_BR.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_ru.qm
-share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_ru_RU.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_si.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_sk_SK.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_sv.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_tr.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_uk.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_vi.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_zh_CN.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_zh_TW.qm

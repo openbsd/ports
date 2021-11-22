@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/09/04 15:40:11 mariani Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/11/22 05:45:42 rsadowski Exp $
 @conflict lxqt-l10n-*
 @pkgpath x11/lxqt/l10n,-main
 @bin bin/lxqt-backlight_backend
@@ -71,11 +71,13 @@ share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_en_GB.qm
 share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_eo.qm
 share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_es.qm
 share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_es_VE.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_et.qm
 share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_eu.qm
 share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_fi.qm
 share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_fr.qm
 share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_gl.qm
 share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_he.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_hr.qm
 share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_hu.qm
 share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_ia.qm
 share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_id.qm
@@ -91,6 +93,7 @@ share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_pt.qm
 share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_pt_BR.qm
 share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_ro_RO.qm
 share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_ru.qm
+share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_si.qm
 share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_sk_SK.qm
 share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_sl.qm
 share/examples/liblxqt/xdg/lxqt/translations/liblxqt/liblxqt_sr@latin.qm

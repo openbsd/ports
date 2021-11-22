@@ -1,18 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/09/04 15:40:10 mariani Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/11/22 05:45:42 rsadowski Exp $
 bin/lxqt-transupdate
 share/cmake/
 share/cmake/lxqt-build-tools/
 share/cmake/lxqt-build-tools/find-modules/
 share/cmake/lxqt-build-tools/find-modules/FindClazy.cmake
 share/cmake/lxqt-build-tools/find-modules/FindExif.cmake
+share/cmake/lxqt-build-tools/find-modules/FindFontconfig.cmake
 share/cmake/lxqt-build-tools/find-modules/FindGLIB.cmake
 share/cmake/lxqt-build-tools/find-modules/FindMenuCache.cmake
 share/cmake/lxqt-build-tools/find-modules/FindUDev.cmake
 share/cmake/lxqt-build-tools/find-modules/FindXCB.cmake
 share/cmake/lxqt-build-tools/find-modules/FindXKBCommon.cmake
+share/cmake/lxqt-build-tools/find-modules/FindXTerm.cmake
 share/cmake/lxqt-build-tools/find-modules/FindXdgEmail.cmake
 share/cmake/lxqt-build-tools/find-modules/FindXdgMime.cmake
 share/cmake/lxqt-build-tools/find-modules/FindXdgOpen.cmake
+share/cmake/lxqt-build-tools/find-modules/FindXdgScreensaver.cmake
 share/cmake/lxqt-build-tools/find-modules/FindXdgSettings.cmake
 share/cmake/lxqt-build-tools/find-modules/FindXdgUserDirs.cmake
 share/cmake/lxqt-build-tools/lxqt-build-tools-config-version.cmake
@@ -29,8 +32,8 @@ share/cmake/lxqt-build-tools/modules/LXQtPluginTranslationLoader.cpp.in
 share/cmake/lxqt-build-tools/modules/LXQtPreventInSourceBuilds.cmake
 share/cmake/lxqt-build-tools/modules/LXQtTranslate.cmake
 share/cmake/lxqt-build-tools/modules/LXQtTranslateDesktop.cmake
+share/cmake/lxqt-build-tools/modules/LXQtTranslateDesktopYaml.pl
 share/cmake/lxqt-build-tools/modules/LXQtTranslateTs.cmake
 share/cmake/lxqt-build-tools/modules/LXQtTranslationLoader.cmake
-share/cmake/lxqt-build-tools/modules/Qt5PatchedLinguistToolsMacros.cmake
 share/cmake/lxqt-build-tools/modules/Qt5TranslationLoader.cmake
 share/cmake/lxqt-build-tools/modules/Qt5TranslationLoader.cpp.in

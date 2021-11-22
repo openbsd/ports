@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/09/04 15:40:12 mariani Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/11/22 05:45:43 rsadowski Exp $
 @conflict lxqt-policykit-l10n-*
 @pkgpath x11/lxqt/l10n,-policykit
 @bin bin/lxqt-policykit-agent
@@ -8,12 +8,12 @@ share/examples/lxqt-policykit/xdg/
 share/examples/lxqt-policykit/xdg/autostart/
 share/examples/lxqt-policykit/xdg/autostart/lxqt-policykit-agent.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/lxqt-policykit-agent.desktop
-share/lxqt/
 share/lxqt/translations/
 share/lxqt/translations/lxqt-policykit-agent/
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_ar.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_arn.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_ast.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_bg.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_ca.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_cs.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_cy.qm
@@ -21,20 +21,25 @@ share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_da.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_de.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_el.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_es.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_et.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_fr.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_gl.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_he.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_hr.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_hu.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_id.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_it.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_ja.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_ko.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_lt.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_nb_NO.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_nl.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_pl.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_pt.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_ro.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_ru.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_sk_SK.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_tr.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_uk.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_vi.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_zh_CN.qm

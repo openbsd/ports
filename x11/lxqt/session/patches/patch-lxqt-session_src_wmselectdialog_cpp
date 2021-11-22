@@ -1,4 +1,4 @@
-$OpenBSD: patch-lxqt-session_src_wmselectdialog_cpp,v 1.2 2020/09/04 15:40:13 mariani Exp $
+$OpenBSD: patch-lxqt-session_src_wmselectdialog_cpp,v 1.3 2021/11/22 05:45:44 rsadowski Exp $
 
 Index: lxqt-session/src/wmselectdialog.cpp
 --- lxqt-session/src/wmselectdialog.cpp.orig
@@ -8,7 +8,7 @@ Index: lxqt-session/src/wmselectdialog.cpp
          return;
  
 -    QString fname = QFileDialog::getOpenFileName(this, QString(), QSL("/usr/bin/"));
-+    QString fname = QFileDialog::getOpenFileName(this, QString(), QSL("${LOCALBASE}/bin/"));
++    QString fname = QFileDialog::getOpenFileName(this, QString(), QSL("/usr/local/bin/"));
      if (fname.isEmpty())
          return;
  

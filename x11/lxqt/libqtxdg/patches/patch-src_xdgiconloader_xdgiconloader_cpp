@@ -1,14 +1,14 @@
-$OpenBSD: patch-src_xdgiconloader_xdgiconloader_cpp,v 1.1 2020/09/04 15:40:11 mariani Exp $
+$OpenBSD: patch-src_xdgiconloader_xdgiconloader_cpp,v 1.2 2021/11/22 05:45:42 rsadowski Exp $
 
 Index: src/xdgiconloader/xdgiconloader.cpp
 --- src/xdgiconloader/xdgiconloader.cpp.orig
 +++ src/xdgiconloader/xdgiconloader.cpp
-@@ -544,7 +544,7 @@ QThemeIconInfo XdgIconLoader::loadIcon(const QString &
-                 const auto unthemedInfo = unthemedFallback(name, QIcon::themeSearchPaths());
-                 if (unthemedInfo.entries.isEmpty()) {
-                     /* Freedesktop standard says to look in /usr/share/pixmaps last */
--                    const QStringList pixmapPath = (QStringList() << QString::fromLatin1("/usr/share/pixmaps"));
-+                    const QStringList pixmapPath = (QStringList() << QString::fromLatin1("${LOCALBASE}/share/pixmaps"));
-                     const auto pixmapInfo = unthemedFallback(name, pixmapPath);
-                     if (pixmapInfo.entries.isEmpty()) {
-                         return QThemeIconInfo();
+@@ -574,7 +574,7 @@ QThemeIconInfo XdgIconLoader::loadIcon(const QString &
+             const auto unthemedInfo = unthemedFallback(name, QIcon::themeSearchPaths());
+             if (unthemedInfo.entries.isEmpty()) {
+                 /* Freedesktop standard says to look in /usr/share/pixmaps last */
+-                const QStringList pixmapPath = (QStringList() << QString::fromLatin1("/usr/share/pixmaps"));
++                const QStringList pixmapPath = (QStringList() << QString::fromLatin1("${LOCALBASE}/share/pixmaps"));
+                 const auto pixmapInfo = unthemedFallback(name, pixmapPath);
+                 if (pixmapInfo.entries.isEmpty()) {
+                     return QThemeIconInfo();

@@ -1,9 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2020/09/04 15:40:13 mariani Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2021/11/22 05:45:44 rsadowski Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -61,8 +61,8 @@ set(PREDEF_XDG_DATA_DIRS "$XDG_DATA_HOME")
+@@ -65,8 +65,8 @@ set(PREDEF_XDG_DATA_DIRS "$XDG_DATA_HOME")
  if(NOT("${LXQT_DATA_DIR}" MATCHES "^/usr(/local)?/share$"))
      set(PREDEF_XDG_DATA_DIRS "${PREDEF_XDG_DATA_DIRS}:${LXQT_DATA_DIR}")
  endif()

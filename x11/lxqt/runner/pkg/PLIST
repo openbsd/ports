@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/09/04 15:40:13 mariani Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/11/22 05:45:44 rsadowski Exp $
 @conflict lxqt-runner-l10n-*
 @pkgpath x11/lxqt/l10n,-runner
 @bin bin/lxqt-runner
@@ -12,6 +12,7 @@ share/lxqt/translations/lxqt-runner/
 share/lxqt/translations/lxqt-runner/lxqt-runner_ar.qm
 share/lxqt/translations/lxqt-runner/lxqt-runner_arn.qm
 share/lxqt/translations/lxqt-runner/lxqt-runner_ast.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_bg.qm
 share/lxqt/translations/lxqt-runner/lxqt-runner_ca.qm
 share/lxqt/translations/lxqt-runner/lxqt-runner_cs.qm
 share/lxqt/translations/lxqt-runner/lxqt-runner_cy.qm
@@ -21,11 +22,13 @@ share/lxqt/translations/lxqt-runner/lxqt-runner_el.qm
 share/lxqt/translations/lxqt-runner/lxqt-runner_eo.qm
 share/lxqt/translations/lxqt-runner/lxqt-runner_es.qm
 share/lxqt/translations/lxqt-runner/lxqt-runner_es_VE.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_et.qm
 share/lxqt/translations/lxqt-runner/lxqt-runner_eu.qm
 share/lxqt/translations/lxqt-runner/lxqt-runner_fi.qm
 share/lxqt/translations/lxqt-runner/lxqt-runner_fr.qm
 share/lxqt/translations/lxqt-runner/lxqt-runner_gl.qm
 share/lxqt/translations/lxqt-runner/lxqt-runner_he.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_hr.qm
 share/lxqt/translations/lxqt-runner/lxqt-runner_hu.qm
 share/lxqt/translations/lxqt-runner/lxqt-runner_ia.qm
 share/lxqt/translations/lxqt-runner/lxqt-runner_id.qm
@@ -40,9 +43,8 @@ share/lxqt/translations/lxqt-runner/lxqt-runner_pt.qm
 share/lxqt/translations/lxqt-runner/lxqt-runner_pt_BR.qm
 share/lxqt/translations/lxqt-runner/lxqt-runner_ro_RO.qm
 share/lxqt/translations/lxqt-runner/lxqt-runner_ru.qm
-share/lxqt/translations/lxqt-runner/lxqt-runner_ru_RU.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_si.qm
 share/lxqt/translations/lxqt-runner/lxqt-runner_sk.qm
-share/lxqt/translations/lxqt-runner/lxqt-runner_sk_SK.qm
 share/lxqt/translations/lxqt-runner/lxqt-runner_sl.qm
 share/lxqt/translations/lxqt-runner/lxqt-runner_sr@latin.qm
 share/lxqt/translations/lxqt-runner/lxqt-runner_sr_BA.qm
@@ -50,5 +52,6 @@ share/lxqt/translations/lxqt-runner/lxqt-runner_sr_RS.qm
 share/lxqt/translations/lxqt-runner/lxqt-runner_th_TH.qm
 share/lxqt/translations/lxqt-runner/lxqt-runner_tr.qm
 share/lxqt/translations/lxqt-runner/lxqt-runner_uk.qm
+share/lxqt/translations/lxqt-runner/lxqt-runner_vi.qm
 share/lxqt/translations/lxqt-runner/lxqt-runner_zh_CN.qm
 share/lxqt/translations/lxqt-runner/lxqt-runner_zh_TW.qm

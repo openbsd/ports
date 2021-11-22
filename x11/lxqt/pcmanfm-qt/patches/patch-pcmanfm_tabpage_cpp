@@ -1,9 +1,9 @@
-$OpenBSD: patch-pcmanfm_tabpage_cpp,v 1.2 2020/09/04 15:40:12 mariani Exp $
+$OpenBSD: patch-pcmanfm_tabpage_cpp,v 1.3 2021/11/22 05:45:43 rsadowski Exp $
 
 Index: pcmanfm/tabpage.cpp
 --- pcmanfm/tabpage.cpp.orig
 +++ pcmanfm/tabpage.cpp
-@@ -458,7 +458,7 @@ void TabPage::onFolderError(const Fm::GErrorPtr& err, 
+@@ -509,7 +509,7 @@ void TabPage::onFolderError(const Fm::GErrorPtr& err, 
  }
  
  void TabPage::onFolderFsInfo() {

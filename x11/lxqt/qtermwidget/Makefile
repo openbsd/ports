@@ -1,14 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2020/09/10 13:32:38 mariani Exp $
+# $OpenBSD: Makefile,v 1.6 2021/11/22 05:45:44 rsadowski Exp $
 
 COMMENT =	the terminal widget for QTerminal
 
-VERSION =	0.15.0
-REVISION =      0
-
 NAME =		qtermwidget
-DISTNAME =	${NAME}-${VERSION}
 
-SHARED_LIBS +=  qtermwidget5              0.1 # 0.15.0
+SHARED_LIBS +=  qtermwidget5              1.0 # 1.0.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets m
 

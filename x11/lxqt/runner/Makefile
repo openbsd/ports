@@ -1,16 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2020/09/10 13:32:38 mariani Exp $
+# $OpenBSD: Makefile,v 1.6 2021/11/22 05:45:44 rsadowski Exp $
 
 COMMENT =	launch programs quickly by typing their names
 
-VERSION =	0.15.0
-REVISION =      0
-
 NAME =		lxqt-runner
-DISTNAME =	${NAME}-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} KF5WindowSystem Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xdg Qt5XdgIconLoader
-WANTLIB += Qt5Xml c gio-2.0 glib-2.0 gobject-2.0 lxqt lxqt-globalkeys
+WANTLIB += Qt5Xml X11 c gio-2.0 glib-2.0 gobject-2.0 lxqt lxqt-globalkeys
 WANTLIB += lxqt-globalkeys-ui m muparser
 
 LIB_DEPENDS +=		x11/lxqt/globalkeys \

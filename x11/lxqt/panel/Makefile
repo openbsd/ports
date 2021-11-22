@@ -1,12 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2020/09/10 13:32:37 mariani Exp $
+# $OpenBSD: Makefile,v 1.7 2021/11/22 05:45:43 rsadowski Exp $
 
 COMMENT =	desktop panel for LXQt
 
-VERSION =	0.15.1
-REVISION =      0
-
 NAME =		lxqt-panel
-DISTNAME =	${NAME}-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5Solid KF5WindowSystem Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras
@@ -16,8 +12,8 @@ WANTLIB += gobject-2.0 lxqt lxqt-globalkeys lxqt-globalkeys-ui
 WANTLIB += m pulse statgrab sysstat-qt5 xcb xcb-damage xcb-util
 WANTLIB += xcb-xkb xkbcommon xkbcommon-x11
 
-LIB_DEPENDS +=		x11/lxqt/liblxqt \
-			x11/lxqt/globalkeys \
+LIB_DEPENDS +=		x11/lxqt/liblxqt>=1.0.0 \
+			x11/lxqt/globalkeys>=1.0.0 \
 			x11/lxqt/libsysstat \
 			sysutils/libstatgrab \
 			devel/kf5/solid \

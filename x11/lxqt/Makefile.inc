@@ -1,6 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.5 2020/09/10 13:32:37 mariani Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2021/11/22 05:45:42 rsadowski Exp $
 
 DIST_SUBDIR =	lxqt
+
+VERSION ?=	1.0.0
+
+DISTNAME ?=	${NAME}-${VERSION}
 
 HOMEPAGE ?=	https://lxqt.github.io/
 

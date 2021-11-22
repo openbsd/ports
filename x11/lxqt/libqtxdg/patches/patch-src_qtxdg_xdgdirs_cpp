@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_qtxdg_xdgdirs_cpp,v 1.1 2020/09/04 15:40:11 mariani Exp $
+$OpenBSD: patch-src_qtxdg_xdgdirs_cpp,v 1.2 2021/11/22 05:45:42 rsadowski Exp $
 
 Index: src/qtxdg/xdgdirs.cpp
 --- src/qtxdg/xdgdirs.cpp.orig
 +++ src/qtxdg/xdgdirs.cpp
 @@ -266,7 +266,7 @@ QStringList XdgDirs::dataDirs(const QString &postfix)
-     QStringList dirs = d.split(QLatin1Char(':'), QString::SkipEmptyParts);
+     QStringList dirs = d.split(QLatin1Char(':'), Qt::SkipEmptyParts);
  
      if (dirs.isEmpty()) {
 -        dirs.append(QString::fromLatin1("/usr/local/share"));
@@ -19,5 +19,5 @@ Index: src/qtxdg/xdgdirs.cpp
 -        dirs.append(QString::fromLatin1("/etc/xdg"));
 +        dirs.append(QString::fromLatin1("${SYSCONFDIR}/xdg"));
      else
-         dirs = env.split(QLatin1Char(':'), QString::SkipEmptyParts);
+         dirs = env.split(QLatin1Char(':'), Qt::SkipEmptyParts);
  

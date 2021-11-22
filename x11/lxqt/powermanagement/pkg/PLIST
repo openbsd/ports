@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/09/04 15:40:12 mariani Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/11/22 05:45:43 rsadowski Exp $
 @conflict lxqt-powermanagement-l10n-*
 @conflict lxqt-config-l10n-*
 @pkgpath x11/lxqt/l10n,-powermanagement
@@ -15,12 +15,12 @@ share/examples/lxqt-powermanagement/xdg/autostart/lxqt-powermanagement.desktop
 share/icons/hicolor/scalable/devices/laptop-lid.svg
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
-share/lxqt/
 share/lxqt/translations/
 share/lxqt/translations/lxqt-config-powermanagement/
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_ar.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_arn.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_ast.qm
+share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_bg.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_ca.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_cs.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_cy.qm
@@ -28,13 +28,17 @@ share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_de.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_el.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_es.qm
+share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_et.qm
+share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_fi.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_fr.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_gl.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_he.qm
+share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_hr.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_hu.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_id.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_it.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_ja.qm
+share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_ko.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_lt.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_nb_NO.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_nl.qm
@@ -42,6 +46,7 @@ share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_pt.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_pt_BR.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_ru.qm
+share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_si.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_sk_SK.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_tr.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_uk.qm
@@ -50,6 +55,7 @@ share/lxqt/translations/lxqt-powermanagement/
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_ar.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_arn.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_ast.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_bg.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_ca.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_cs.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_cy.qm
@@ -57,13 +63,17 @@ share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_da.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_de.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_el.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_es.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_et.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_fi.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_fr.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_gl.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_he.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_hr.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_hu.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_id.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_it.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_ja.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_ko.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_lt.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_nb_NO.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_nl.qm
@@ -71,7 +81,9 @@ share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_pl.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_pt.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_pt_BR.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_ru.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_si.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_sk_SK.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_tr.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_uk.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_vi.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_zh_CN.qm

@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/09/04 15:40:13 mariani Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/11/22 05:45:44 rsadowski Exp $
 @conflict qtermwidget-l10n-*
 @pkgpath x11/lxqt/l10n,-qtermwidget
 include/qtermwidget5/
 include/qtermwidget5/Emulation.h
 include/qtermwidget5/Filter.h
+include/qtermwidget5/KeyboardTranslator.h
 include/qtermwidget5/qtermwidget.h
 include/qtermwidget5/qtermwidget_export.h
 include/qtermwidget5/qtermwidget_version.h
@@ -17,9 +18,9 @@ libdata/pkgconfig/
 libdata/pkgconfig/qtermwidget5.pc
 share/qtermwidget5/
 share/qtermwidget5/color-schemes/
-share/qtermwidget5/color-schemes/BlackOnLightYellow.schema
+share/qtermwidget5/color-schemes/BlackOnLightYellow.colorscheme
 share/qtermwidget5/color-schemes/BlackOnRandomLight.colorscheme
-share/qtermwidget5/color-schemes/BlackOnWhite.schema
+share/qtermwidget5/color-schemes/BlackOnWhite.colorscheme
 share/qtermwidget5/color-schemes/BreezeModified.colorscheme
 share/qtermwidget5/color-schemes/DarkPastels.colorscheme
 share/qtermwidget5/color-schemes/GreenOnBlack.colorscheme
@@ -28,7 +29,7 @@ share/qtermwidget5/color-schemes/Solarized.colorscheme
 share/qtermwidget5/color-schemes/SolarizedLight.colorscheme
 share/qtermwidget5/color-schemes/Tango.colorscheme
 share/qtermwidget5/color-schemes/Ubuntu.colorscheme
-share/qtermwidget5/color-schemes/WhiteOnBlack.schema
+share/qtermwidget5/color-schemes/WhiteOnBlack.colorscheme
 share/qtermwidget5/color-schemes/historic/
 share/qtermwidget5/color-schemes/historic/BlackOnLightColor.schema
 share/qtermwidget5/color-schemes/historic/DarkPicture.schema
@@ -56,6 +57,7 @@ share/qtermwidget5/kb-layouts/vt420pc.keytab
 share/qtermwidget5/translations/
 share/qtermwidget5/translations/qtermwidget_arn.qm
 share/qtermwidget5/translations/qtermwidget_ast.qm
+share/qtermwidget5/translations/qtermwidget_bg.qm
 share/qtermwidget5/translations/qtermwidget_ca.qm
 share/qtermwidget5/translations/qtermwidget_cs.qm
 share/qtermwidget5/translations/qtermwidget_cy.qm
@@ -63,16 +65,24 @@ share/qtermwidget5/translations/qtermwidget_da.qm
 share/qtermwidget5/translations/qtermwidget_de.qm
 share/qtermwidget5/translations/qtermwidget_el.qm
 share/qtermwidget5/translations/qtermwidget_es.qm
+share/qtermwidget5/translations/qtermwidget_et.qm
 share/qtermwidget5/translations/qtermwidget_fr.qm
 share/qtermwidget5/translations/qtermwidget_gl.qm
 share/qtermwidget5/translations/qtermwidget_he.qm
+share/qtermwidget5/translations/qtermwidget_hr.qm
 share/qtermwidget5/translations/qtermwidget_hu.qm
+share/qtermwidget5/translations/qtermwidget_it.qm
 share/qtermwidget5/translations/qtermwidget_ja.qm
 share/qtermwidget5/translations/qtermwidget_lt.qm
 share/qtermwidget5/translations/qtermwidget_nb_NO.qm
+share/qtermwidget5/translations/qtermwidget_nl.qm
 share/qtermwidget5/translations/qtermwidget_pl.qm
 share/qtermwidget5/translations/qtermwidget_pt.qm
 share/qtermwidget5/translations/qtermwidget_pt_BR.qm
+share/qtermwidget5/translations/qtermwidget_ru.qm
+share/qtermwidget5/translations/qtermwidget_si.qm
+share/qtermwidget5/translations/qtermwidget_sk.qm
 share/qtermwidget5/translations/qtermwidget_tr.qm
+share/qtermwidget5/translations/qtermwidget_uk.qm
 share/qtermwidget5/translations/qtermwidget_zh_CN.qm
 share/qtermwidget5/translations/qtermwidget_zh_TW.qm

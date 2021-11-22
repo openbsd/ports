@@ -1,19 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2020/09/10 13:32:37 mariani Exp $
+# $OpenBSD: Makefile,v 1.6 2021/11/22 05:45:42 rsadowski Exp $
 
 COMMENT =	tools to configure LXQt and the underlying operating system
 
-VERSION =	0.15.0
-REVISION =      0
-
 NAME =		lxqt-config
-DISTNAME =	${NAME}-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5WindowSystem Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xdg Qt5XdgIconLoader
 WANTLIB += Qt5Xml SM X11 Xcursor Xext Xfixes c gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 lxqt m xcb xcb-randr z
 
-LIB_DEPENDS +=		x11/lxqt/liblxqt \
+LIB_DEPENDS +=		x11/lxqt/liblxqt>=1.0.0 \
 			x11/qt5/qtsvg
 
 BUILD_DEPENDS +=	x11/lxqt/build-tools

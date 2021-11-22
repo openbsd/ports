@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/09/04 15:40:11 mariani Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/11/22 05:45:43 rsadowski Exp $
 @conflict lximage-qt-l10n-*
 @pkgpath x11/lxqt/l10n,-lximage-qt
 @bin bin/lximage-qt
@@ -12,6 +12,7 @@ share/lximage-qt/translations/
 share/lximage-qt/translations/lximage-qt_ar.qm
 share/lximage-qt/translations/lximage-qt_arn.qm
 share/lximage-qt/translations/lximage-qt_ast.qm
+share/lximage-qt/translations/lximage-qt_bg.qm
 share/lximage-qt/translations/lximage-qt_ca.qm
 share/lximage-qt/translations/lximage-qt_cs.qm
 share/lximage-qt/translations/lximage-qt_cy.qm
@@ -20,6 +21,7 @@ share/lximage-qt/translations/lximage-qt_de.qm
 share/lximage-qt/translations/lximage-qt_el.qm
 share/lximage-qt/translations/lximage-qt_en_GB.qm
 share/lximage-qt/translations/lximage-qt_es.qm
+share/lximage-qt/translations/lximage-qt_et.qm
 share/lximage-qt/translations/lximage-qt_fr.qm
 share/lximage-qt/translations/lximage-qt_gl.qm
 share/lximage-qt/translations/lximage-qt_he.qm
@@ -36,11 +38,13 @@ share/lximage-qt/translations/lximage-qt_pa.qm
 share/lximage-qt/translations/lximage-qt_pl.qm
 share/lximage-qt/translations/lximage-qt_pt.qm
 share/lximage-qt/translations/lximage-qt_pt_BR.qm
-share/lximage-qt/translations/lximage-qt_pt_PT.qm
 share/lximage-qt/translations/lximage-qt_ru.qm
+share/lximage-qt/translations/lximage-qt_si.qm
+share/lximage-qt/translations/lximage-qt_sk.qm
 share/lximage-qt/translations/lximage-qt_sl.qm
 share/lximage-qt/translations/lximage-qt_sv.qm
 share/lximage-qt/translations/lximage-qt_tr.qm
 share/lximage-qt/translations/lximage-qt_uk.qm
+share/lximage-qt/translations/lximage-qt_vi.qm
 share/lximage-qt/translations/lximage-qt_zh_CN.qm
 share/lximage-qt/translations/lximage-qt_zh_TW.qm

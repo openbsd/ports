@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2020/09/10 13:32:38 mariani Exp $
+# $OpenBSD: Makefile,v 1.6 2021/11/22 05:45:44 rsadowski Exp $
 
 COMMENT =	tool for fast making screenshots
 
-VERSION =	2.0.1
-REVISION =      0
+VERSION =	2.3.0
 
 NAME =		screengrab
-DISTNAME =	${NAME}-${VERSION}
 
 SHARED_LIBS +=  extedit                   0.0 # 1.0
 

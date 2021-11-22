@@ -1,4 +1,4 @@
-$OpenBSD: patch-lxqt-session_src_lxqtmodman_cpp,v 1.2 2020/09/04 15:40:13 mariani Exp $
+$OpenBSD: patch-lxqt-session_src_lxqtmodman_cpp,v 1.3 2021/11/22 05:45:44 rsadowski Exp $
 
 Index: lxqt-session/src/lxqtmodman.cpp
 --- lxqt-session/src/lxqtmodman.cpp.orig
@@ -26,7 +26,7 @@ Index: lxqt-session/src/lxqtmodman.cpp
  #include "log.h"
  
  #include <KWindowSystem/KWindowSystem>
-@@ -436,6 +444,22 @@ bool LXQtModuleManager::nativeEventFilter(const QByteA
+@@ -429,6 +437,22 @@ bool LXQtModuleManager::nativeEventFilter(const QByteA
  
  void lxqt_setenv(const char *env, const QByteArray &value)
  {
@@ -49,7 +49,7 @@ Index: lxqt-session/src/lxqtmodman.cpp
      wordexp_t p;
      wordexp(value.constData(), &p, 0);
      if (p.we_wordc == 1)
-@@ -450,6 +474,7 @@ void lxqt_setenv(const char *env, const QByteArray &va
+@@ -443,6 +467,7 @@ void lxqt_setenv(const char *env, const QByteArray &va
          qputenv(env, value);
      }
       wordfree(&p);

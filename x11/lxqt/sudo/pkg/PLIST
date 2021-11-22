@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/09/04 15:40:13 mariani Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/11/22 05:45:44 rsadowski Exp $
 @conflict lxqt-sudo-l10n-*
 @pkgpath x11/lxqt/l10n,-sudo
 @bin bin/lxqt-sudo
@@ -7,12 +7,12 @@ bin/lxsudo
 @man man/man1/lxqt-sudo.1
 @man man/man1/lxsu.1
 @man man/man1/lxsudo.1
-share/lxqt/
 share/lxqt/translations/
 share/lxqt/translations/lxqt-sudo/
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_ar.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_arn.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_ast.qm
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_bg.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_ca.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_cs.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_cy.qm
@@ -20,14 +20,17 @@ share/lxqt/translations/lxqt-sudo/lxqt-sudo_da.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_de.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_el.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_es.qm
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_et.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_fi.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_fr.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_gl.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_he.qm
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_hr.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_hu.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_id.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_it.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_ja.qm
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_ko.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_lt.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_nb_NO.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_nl.qm
@@ -35,6 +38,7 @@ share/lxqt/translations/lxqt-sudo/lxqt-sudo_pl.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_pt.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_pt_BR.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_ru.qm
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_si.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_sk.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_sl.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_tr.qm

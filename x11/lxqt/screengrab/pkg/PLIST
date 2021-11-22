@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/09/04 15:40:13 mariani Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/11/22 05:45:44 rsadowski Exp $
 @bin bin/screengrab
 lib/screengrab/
 @lib lib/screengrab/libextedit.so.${LIBextedit_VERSION}
@@ -21,26 +21,36 @@ share/screengrab/
 share/screengrab/translations/
 share/screengrab/translations/screengrab_arn.qm
 share/screengrab/translations/screengrab_ast.qm
+share/screengrab/translations/screengrab_bg.qm
 share/screengrab/translations/screengrab_ca.qm
 share/screengrab/translations/screengrab_cs.qm
 share/screengrab/translations/screengrab_cy.qm
 share/screengrab/translations/screengrab_de.qm
 share/screengrab/translations/screengrab_el.qm
 share/screengrab/translations/screengrab_es.qm
+share/screengrab/translations/screengrab_et.qm
 share/screengrab/translations/screengrab_fr.qm
 share/screengrab/translations/screengrab_gl.qm
 share/screengrab/translations/screengrab_he.qm
+share/screengrab/translations/screengrab_hr.qm
 share/screengrab/translations/screengrab_hu.qm
 share/screengrab/translations/screengrab_it.qm
 share/screengrab/translations/screengrab_ja.qm
 share/screengrab/translations/screengrab_lt.qm
 share/screengrab/translations/screengrab_nb_NO.qm
+share/screengrab/translations/screengrab_nl.qm
+share/screengrab/translations/screengrab_oc.qm
 share/screengrab/translations/screengrab_pl.qm
 share/screengrab/translations/screengrab_pt.qm
 share/screengrab/translations/screengrab_pt_BR.qm
-share/screengrab/translations/screengrab_pt_PT.qm
 share/screengrab/translations/screengrab_ru.qm
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+share/screengrab/translations/screengrab_si.qm
+share/screengrab/translations/screengrab_sk.qm
 share/screengrab/translations/screengrab_sv.qm
+share/screengrab/translations/screengrab_tr.qm
 share/screengrab/translations/screengrab_uk.qm
+share/screengrab/translations/screengrab_vi.qm
+share/screengrab/translations/screengrab_zh_CN.qm
+share/screengrab/translations/screengrab_zh_TW.qm

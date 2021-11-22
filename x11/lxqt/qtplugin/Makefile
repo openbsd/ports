@@ -1,12 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2020/09/10 13:32:38 mariani Exp $
+# $OpenBSD: Makefile,v 1.7 2021/11/22 05:45:44 rsadowski Exp $
 
 COMMENT =	qt platform integration plugin for LXQt
 
-VERSION =	0.15.1
-REVISION =      0
-
 NAME =		lxqt-qtplugin
-DISTNAME =	${NAME}-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Svg Qt5Widgets
 WANTLIB += Qt5XdgIconLoader dbusmenu-qt5 m

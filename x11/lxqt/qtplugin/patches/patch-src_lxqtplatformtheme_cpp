@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_lxqtplatformtheme_cpp,v 1.1 2020/09/04 15:40:13 mariani Exp $
+$OpenBSD: patch-src_lxqtplatformtheme_cpp,v 1.2 2021/11/22 05:45:44 rsadowski Exp $
 
 Index: src/lxqtplatformtheme.cpp
 --- src/lxqtplatformtheme.cpp.orig
 +++ src/lxqtplatformtheme.cpp
-@@ -405,7 +405,7 @@ QStringList LXQtPlatformTheme::xdgIconThemePaths() con
+@@ -498,7 +498,7 @@ QStringList LXQtPlatformTheme::xdgIconThemePaths() con
  
      QString xdgDataDirs = QFile::decodeName(qgetenv("XDG_DATA_DIRS"));
      if (xdgDataDirs.isEmpty())

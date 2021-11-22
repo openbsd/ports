@@ -1,19 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 2020/09/10 13:32:37 mariani Exp $
+# $OpenBSD: Makefile,v 1.7 2021/11/22 05:45:43 rsadowski Exp $
 
 COMMENT =	policy kit agent for LXQt
 
-VERSION =	0.15.0
-REVISION =      0
-
 NAME =		lxqt-policykit
-DISTNAME =	${NAME}-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} KF5WindowSystem Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xdg Qt5XdgIconLoader
-WANTLIB += Qt5Xml c gio-2.0 glib-2.0 gobject-2.0 intl lxqt m polkit-agent-1
-WANTLIB += polkit-gobject-1 polkit-qt5-agent-1 polkit-qt5-core-1
+WANTLIB += Qt5Xml X11 c gio-2.0 glib-2.0 gobject-2.0 intl lxqt
+WANTLIB += m polkit-agent-1 polkit-gobject-1 polkit-qt5-agent-1
+WANTLIB += polkit-qt5-core-1
 
-LIB_DEPENDS +=		x11/lxqt/liblxqt \
+LIB_DEPENDS +=		x11/lxqt/liblxqt>=1.0.0\
 			x11/polkit-qt5
 
 BUILD_DEPENDS +=	x11/lxqt/build-tools

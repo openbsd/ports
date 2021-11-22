@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/09/04 15:40:12 mariani Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/11/22 05:45:43 rsadowski Exp $
 @conflict pavucontrol-qt-l10n-*
 @pkgpath x11/lxqt/l10n,-pavucontrol-qt
 @bin bin/pavucontrol-qt
@@ -9,6 +9,7 @@ share/pavucontrol-qt/translations/
 share/pavucontrol-qt/translations/pavucontrol-qt_arn.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_as.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_ast.qm
+share/pavucontrol-qt/translations/pavucontrol-qt_bg.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_bn_IN.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_ca.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_cs.qm
@@ -17,17 +18,20 @@ share/pavucontrol-qt/translations/pavucontrol-qt_da.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_de.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_el.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_es.qm
+share/pavucontrol-qt/translations/pavucontrol-qt_et.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_fi.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_fr.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_gl.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_gu.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_he.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_hi.qm
+share/pavucontrol-qt/translations/pavucontrol-qt_hr.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_hu.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_id.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_it.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_ja.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_kn.qm
+share/pavucontrol-qt/translations/pavucontrol-qt_ko.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_lt.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_ml.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_mr.qm
@@ -38,7 +42,9 @@ share/pavucontrol-qt/translations/pavucontrol-qt_pa.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_pl.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_pt.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_pt_BR.qm
+share/pavucontrol-qt/translations/pavucontrol-qt_ro.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_ru.qm
+share/pavucontrol-qt/translations/pavucontrol-qt_si.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_sk.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_sr.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_sr@latin.qm

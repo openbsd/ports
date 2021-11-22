@@ -1,12 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2020/09/10 13:32:37 mariani Exp $
+# $OpenBSD: Makefile,v 1.6 2021/11/22 05:45:42 rsadowski Exp $
 
 COMMENT =	image viewer and screenshot tool for LXQt
 
-VERSION =	0.15.0
-REVISION =      0
-
 NAME =		lximage-qt
-DISTNAME =	${NAME}-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} ICE Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5PrintSupport Qt5Svg Qt5Widgets Qt5X11Extras SM X11

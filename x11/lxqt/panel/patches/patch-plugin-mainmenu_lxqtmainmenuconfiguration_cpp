@@ -1,9 +1,9 @@
-$OpenBSD: patch-plugin-mainmenu_lxqtmainmenuconfiguration_cpp,v 1.1 2020/09/04 15:40:12 mariani Exp $
+$OpenBSD: patch-plugin-mainmenu_lxqtmainmenuconfiguration_cpp,v 1.2 2021/11/22 05:45:43 rsadowski Exp $
 
 Index: plugin-mainmenu/lxqtmainmenuconfiguration.cpp
 --- plugin-mainmenu/lxqtmainmenuconfiguration.cpp.orig
 +++ plugin-mainmenu/lxqtmainmenuconfiguration.cpp
-@@ -178,7 +178,7 @@ void LXQtMainMenuConfiguration::chooseMenuFile()
+@@ -172,7 +172,7 @@ void LXQtMainMenuConfiguration::chooseMenuFile()
  {
      QFileDialog *d = new QFileDialog(this,
                                       tr("Choose menu file"),

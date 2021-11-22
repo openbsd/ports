@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/09/04 15:40:11 mariani Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/11/22 05:45:42 rsadowski Exp $
 @conflict libfm-qt-l10n-*
 @pkgpath x11/lxqt/l10n,-libfm-qt
 include/libfm-qt/
@@ -67,6 +67,7 @@ include/libfm-qt/dnddest.h
 include/libfm-qt/editbookmarksdialog.h
 include/libfm-qt/execfiledialog_p.h
 include/libfm-qt/filedialog.h
+include/libfm-qt/filedialog_p.h
 include/libfm-qt/filedialoghelper.h
 include/libfm-qt/filelauncher.h
 include/libfm-qt/filemenu.h
@@ -119,6 +120,7 @@ share/libfm-qt/translations/
 share/libfm-qt/translations/libfm-qt_ar.qm
 share/libfm-qt/translations/libfm-qt_arn.qm
 share/libfm-qt/translations/libfm-qt_ast.qm
+share/libfm-qt/translations/libfm-qt_bg.qm
 share/libfm-qt/translations/libfm-qt_ca.qm
 share/libfm-qt/translations/libfm-qt_cs.qm
 share/libfm-qt/translations/libfm-qt_cy.qm
@@ -127,14 +129,19 @@ share/libfm-qt/translations/libfm-qt_de.qm
 share/libfm-qt/translations/libfm-qt_el.qm
 share/libfm-qt/translations/libfm-qt_en_GB.qm
 share/libfm-qt/translations/libfm-qt_es.qm
+share/libfm-qt/translations/libfm-qt_et.qm
 share/libfm-qt/translations/libfm-qt_fr.qm
 share/libfm-qt/translations/libfm-qt_gl.qm
 share/libfm-qt/translations/libfm-qt_he.qm
+share/libfm-qt/translations/libfm-qt_hr.qm
 share/libfm-qt/translations/libfm-qt_hu.qm
 share/libfm-qt/translations/libfm-qt_id.qm
 share/libfm-qt/translations/libfm-qt_it.qm
 share/libfm-qt/translations/libfm-qt_ja.qm
+share/libfm-qt/translations/libfm-qt_kk.qm
+share/libfm-qt/translations/libfm-qt_ko.qm
 share/libfm-qt/translations/libfm-qt_lt.qm
+share/libfm-qt/translations/libfm-qt_lv.qm
 share/libfm-qt/translations/libfm-qt_nb_NO.qm
 share/libfm-qt/translations/libfm-qt_nl.qm
 share/libfm-qt/translations/libfm-qt_or.qm
@@ -142,6 +149,8 @@ share/libfm-qt/translations/libfm-qt_pl.qm
 share/libfm-qt/translations/libfm-qt_pt.qm
 share/libfm-qt/translations/libfm-qt_pt_BR.qm
 share/libfm-qt/translations/libfm-qt_ru.qm
+share/libfm-qt/translations/libfm-qt_si.qm
+share/libfm-qt/translations/libfm-qt_sk.qm
 share/libfm-qt/translations/libfm-qt_tr.qm
 share/libfm-qt/translations/libfm-qt_uk.qm
 share/libfm-qt/translations/libfm-qt_zh_CN.qm

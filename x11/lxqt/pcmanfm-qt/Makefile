@@ -1,12 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2020/09/10 13:32:37 mariani Exp $
+# $OpenBSD: Makefile,v 1.6 2021/11/22 05:45:43 rsadowski Exp $
 
 COMMENT =	file manager and desktop icon manager
 
-VERSION =	0.15.1
-REVISION =      0
-
 NAME =		pcmanfm-qt
-DISTNAME =	${NAME}-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Widgets
 WANTLIB += Qt5X11Extras c exif fm-qt gio-2.0 glib-2.0 gobject-2.0

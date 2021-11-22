@@ -1,0 +1,16 @@
+$OpenBSD: patch-lxqt-session_src_procreaper_cpp,v 1.1 2021/11/22 05:45:44 rsadowski Exp $
+
+Index: lxqt-session/src/procreaper.cpp
+--- lxqt-session/src/procreaper.cpp.orig
++++ lxqt-session/src/procreaper.cpp
+@@ -30,9 +30,7 @@
+ #if defined(Q_OS_LINUX)
+ #include <sys/prctl.h>
+ #include <proc/readproc.h>
+-#elif defined(Q_OS_FREEBSD)
+-#include <sys/procctl.h>
+-#include <libutil.h>
++#elif defined(Q_OS_OPENBSD)
+ #include <sys/user.h>
+ #include <signal.h>
+ #endif

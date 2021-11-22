@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2020/09/10 13:32:37 mariani Exp $
+# $OpenBSD: Makefile,v 1.6 2021/11/22 05:45:43 rsadowski Exp $
 
 COMMENT =	configuration editor for openbox window manager
 
-VERSION =	0.15.0
-REVISION =      0
+VERSION =	0.16.1
 
 NAME =		obconf-qt
-DISTNAME =	${NAME}-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} ICE Imlib2 Qt5Core Qt5Gui Qt5Widgets
 WANTLIB += Qt5X11Extras SM X11 Xft c cairo fontconfig freetype

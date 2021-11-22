@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/09/04 15:40:11 mariani Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/11/22 05:45:43 rsadowski Exp $
 @conflict obconf-qt-l10n-*
 @pkgpath x11/lxqt/l10n,-obconf-qt
 @bin bin/obconf-qt
@@ -34,6 +34,7 @@ share/obconf-qt/translations/obconf-qt_pl.qm
 share/obconf-qt/translations/obconf-qt_pt.qm
 share/obconf-qt/translations/obconf-qt_pt_BR.qm
 share/obconf-qt/translations/obconf-qt_ru.qm
+share/obconf-qt/translations/obconf-qt_si.qm
 share/obconf-qt/translations/obconf-qt_sk_SK.qm
 share/obconf-qt/translations/obconf-qt_sv.qm
 share/obconf-qt/translations/obconf-qt_tr.qm

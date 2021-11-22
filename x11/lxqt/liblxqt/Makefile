@@ -1,14 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2020/09/10 13:32:37 mariani Exp $
+# $OpenBSD: Makefile,v 1.7 2021/11/22 05:45:42 rsadowski Exp $
 
 COMMENT =	core utility library for all LXQt components
 
-VERSION =	0.15.1
-REVISION =      0
-
 NAME =		liblxqt
-DISTNAME =	${NAME}-${VERSION}
 
-SHARED_LIBS +=  lxqt                      0.1 # 0.15
+SHARED_LIBS +=  lxqt                      1.0 # 1.0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5WindowSystem Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xdg Qt5XdgIconLoader
