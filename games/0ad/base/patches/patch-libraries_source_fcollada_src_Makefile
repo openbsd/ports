@@ -1,6 +1,7 @@
-$OpenBSD: patch-libraries_source_fcollada_src_Makefile,v 1.2 2014/10/19 07:46:45 bentley Exp $
---- libraries/source/fcollada/src/Makefile.orig.port	Mon Oct 13 06:24:26 2014
-+++ libraries/source/fcollada/src/Makefile	Mon Oct 13 06:25:11 2014
+$OpenBSD: patch-libraries_source_fcollada_src_Makefile,v 1.3 2021/11/22 16:00:31 op Exp $
+Index: libraries/source/fcollada/src/Makefile
+--- libraries/source/fcollada/src/Makefile.orig
++++ libraries/source/fcollada/src/Makefile
 @@ -10,7 +10,7 @@ endif
  CXX ?= g++
  CXXFLAGS += -fvisibility=hidden -W -Wall -Wno-unused-parameter -Wno-unused-function $(OS_DEFINE) $(PIC_FLAGS) $(CPPFLAGS)
@@ -8,9 +9,9 @@ $OpenBSD: patch-libraries_source_fcollada_src_Makefile,v 1.2 2014/10/19 07:46:45
 -CXXFLAGS_RELEASE := -O2 -DNDEBUG -DRETAIL
 +CXXFLAGS_RELEASE := -DNDEBUG -DRETAIL
  CXXFLAGS_TEST := -O0 -g -D_DEBUG
+ LDFLAGS_TEST= -ldl
  LIBS += `pkg-config libxml-2.0 --libs`
- INCLUDES += -IFCollada `pkg-config libxml-2.0 --cflags`
-@@ -224,7 +224,7 @@ OBJECTS_RELEASE = $(addprefix output/release/,$(SOURCE
+@@ -225,7 +225,7 @@ OBJECTS_RELEASE = $(addprefix output/release/,$(SOURCE
  OBJECTS_TEST = $(addprefix output/test/,$(SOURCE:.cpp=.o) $(TEST_SOURCE:.cpp=.o))
  OBJECTS_ALL = $(OBJECTS_DEBUG) $(OBJECTS_RELEASE) $(OBJECTS_TEST)
  
@@ -18,10 +19,10 @@ $OpenBSD: patch-libraries_source_fcollada_src_Makefile,v 1.2 2014/10/19 07:46:45
 +all: output/libFColladaSD.a install
  
  output_dirs:
- 	bash -c 'mkdir -p output/{debug,release,test}/{FCollada/{FCDocument,FMath,FUtils,FColladaTest/{FCTestAssetManagement,FCTestExportImport,FCTestXRef}},FColladaPlugins/FArchiveXML}'
-@@ -244,8 +244,7 @@ output/libFColladaSR.a: $(OBJECTS_RELEASE) | output_di
+ 	@for x in debug release test; \
+@@ -255,8 +255,7 @@ output/libFColladaSR.a: $(OBJECTS_RELEASE) | output_di
  output/FColladaTest: $(OBJECTS_TEST) | output_dirs
- 	$(CXX) -o $@ $(LDFLAGS) $(OBJECTS_TEST) $(LIBS)
+ 	$(CXX) -o $@  $(OBJECTS_TEST) $(LIBS) $(LDFLAGS_TEST)
  
 -install: output/libFColladaSD.a output/libFColladaSR.a
 -	cp output/libFColladaSD.a ../lib/libFColladaSD.a
@@ -29,7 +30,7 @@ $OpenBSD: patch-libraries_source_fcollada_src_Makefile,v 1.2 2014/10/19 07:46:45
  	cp output/libFColladaSR.a ../lib/libFColladaSR.a
  
  dfile = $(@:.o=.d)
-@@ -272,5 +271,3 @@ clean:
+@@ -283,5 +282,3 @@ clean:
  	rm -rf output
  
  -include $(OBJECTS_ALL:.o=.P)

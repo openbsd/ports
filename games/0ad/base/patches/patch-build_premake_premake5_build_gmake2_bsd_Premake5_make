@@ -1,0 +1,18 @@
+$OpenBSD: patch-build_premake_premake5_build_gmake2_bsd_Premake5_make,v 1.1 2021/11/22 16:00:31 op Exp $
+
+don't hardcode -O3
+
+Index: build/premake/premake5/build/gmake2.bsd/Premake5.make
+--- build/premake/premake5/build/gmake2.bsd/Premake5.make.orig
++++ build/premake/premake5/build/gmake2.bsd/Premake5.make
+@@ -36,8 +36,8 @@ TARGETDIR = ../../bin/release
+ TARGET = $(TARGETDIR)/premake5
+ OBJDIR = obj/Release/Premake5
+ DEFINES += -DPREMAKE_COMPRESSION -DCURL_STATICLIB -DPREMAKE_CURL -DNDEBUG -DLUA_USE_POSIX -DLUA_USE_DLOPEN
+-ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -O3 -Wall -Wextra
+-ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -O3 -Wall -Wextra -fno-stack-protector
++ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -Wall -Wextra
++ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -Wall -Wextra -fno-stack-protector
+ LIBS += bin/Release/liblua-lib.a bin/Release/libzip-lib.a bin/Release/libzlib-lib.a bin/Release/libcurl-lib.a bin/Release/libmbedtls-lib.a -lm
+ LDDEPS += bin/Release/liblua-lib.a bin/Release/libzip-lib.a bin/Release/libzlib-lib.a bin/Release/libcurl-lib.a bin/Release/libmbedtls-lib.a
+ ALL_LDFLAGS += $(LDFLAGS) -s -rdynamic

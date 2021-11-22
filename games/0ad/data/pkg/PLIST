@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/12/25 00:32:56 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/11/22 16:00:31 op Exp $
 share/0ad/
 share/0ad/config/
 share/0ad/config/default.cfg
@@ -7,6 +7,7 @@ share/0ad/mods/
 share/0ad/mods/mod/
 share/0ad/mods/mod/mod.zip
 share/0ad/mods/public/
+share/0ad/mods/public/mod.json
 share/0ad/mods/public/public.zip
 share/0ad/tools/
 share/0ad/tools/atlas/

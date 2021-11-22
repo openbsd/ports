@@ -1,31 +1,28 @@
-# $OpenBSD: Makefile,v 1.34 2021/06/22 04:34:08 rsadowski Exp $
-
-# XXX fix build with icu >=5.9.1 (remove at next update?)
-CXXFLAGS +=		-DU_USING_ICU_NAMESPACE=1
+# $OpenBSD: Makefile,v 1.35 2021/11/22 16:00:30 op Exp $
 
 COMMENT =		historical real-time strategy game
 
 DISTNAME =		0ad-${V}-alpha-unix-build
 PKGNAME =		0ad-${V}
-REVISION =		3
 
 USE_WXNEEDED =		Yes
 
 SO_VERSION =	0.0
-SHARED_LIBS +=  mozjs38-ps-release        ${SO_VERSION}
+SHARED_LIBS +=  mozjs78-ps-release        ${SO_VERSION}
 
-WANTLIB += ${COMPILER_LIBCXX} GL SDL2 X11 Xcursor boost_filesystem
-WANTLIB += boost_system c curl enet execinfo gloox iconv icui18n
-WANTLIB += icuuc m miniupnpc nspr4 ogg openal plc4 plds4 png sodium
-WANTLIB += vorbis vorbisfile xml2 z
+WANTLIB += ${COMPILER_LIBCXX} GL SDL2 X11 boost_filesystem
+WANTLIB += boost_system c crypto curl enet execinfo fmt gloox iconv
+WANTLIB += icudata icui18n icuuc idn m miniupnpc ogg openal
+WANTLIB += png sodium ssl vorbis vorbisfile xml2 z
 
 BUILD_DEPENDS =		archivers/zip \
+			lang/rust,-main \
 			shells/bash
 LIB_DEPENDS =		audio/libvorbis \
 			audio/openal \
 			converters/libiconv \
 			devel/boost \
-			devel/nspr \
+			devel/fmt \
 			devel/sdl2 \
 			graphics/png \
 			net/curl \
@@ -38,7 +35,6 @@ LIB_DEPENDS =		audio/libvorbis \
 RUN_DEPENDS =		devel/desktop-file-utils \
 			games/0ad/data=${V}
 MODULES =		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 COMPILER =		base-clang ports-gcc
 
@@ -49,16 +45,24 @@ MAKE_FLAGS =		SILENT=
 MAKE_ENV =		CC="${CC}" \
 			CXX="${CXX}" \
 			CFLAGS="${CFLAGS}" \
-			CXXFLAGS="${CXXFLAGS}"
+			CXXFLAGS="${CXXFLAGS} -I${X11BASE}/include" \
+			LDFLAGS="-liconv"
 
-FIX_CRLF_FILES =	build/premake/premake4/build/gmake.bsd/Premake4.make
+FIX_CRLF_FILES =	build/premake/premake5/build/gmake.bsd/Premake5.make
 PATCHORIG =		.orig.port
 
 USE_GMAKE =		Yes
+
+# libraries/source/spidermonkey/mozjs-*/python/mach/mach/mixin/process.py
+# checks this var and errors out if undefined:
+#	Exception: Could not detect environment shell!
+CONFIGURE_ENV +=	SHELL=sh
+
+# XXX don't use --with-native-mozjs because 0ad needs to stay in sync
+# with it: updates to mozjs could break the multiplayer.
 CONFIGURE_ARGS +=	--without-nvtt \
 			--datadir=${PREFIX}/share/0ad \
 			--libdir=${PREFIX}/lib \
-			--premake4 \
 			--minimal-flags
 
 # XXX atlas (the level editor) requires threaded libxml

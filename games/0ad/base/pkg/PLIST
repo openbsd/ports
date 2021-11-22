@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/06/22 04:34:08 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/11/22 16:00:31 op Exp $
 bin/0ad
 @bin bin/pyrogenesis
 @so lib/libCollada.so
@@ -12,8 +12,9 @@ bin/0ad
 @static-lib lib/libmocks_real.a
 @static-lib lib/libmocks_test.a
 @static-lib lib/libmongoose.a
-@lib lib/libmozjs38-ps-release.so.${LIBmozjs38-ps-release_VERSION}
+@lib lib/libmozjs78-ps-release.so.${LIBmozjs78-ps-release_VERSION}
 @static-lib lib/libnetwork.a
+@static-lib lib/librlinterface.a
 @static-lib lib/libscriptinterface.a
 @static-lib lib/libsimulation2.a
 @static-lib lib/libtinygettext.a
@@ -21,7 +22,6 @@ share/0ad/l10n/
 share/0ad/l10n/.tx/
 share/0ad/l10n/.tx/config
 share/0ad/l10n/ast.engine.po
-share/0ad/l10n/bg.engine.po
 share/0ad/l10n/ca.engine.po
 share/0ad/l10n/cs.engine.po
 share/0ad/l10n/de.engine.po
@@ -30,19 +30,16 @@ share/0ad/l10n/en_GB.engine.po
 share/0ad/l10n/engine.pot
 share/0ad/l10n/es.engine.po
 share/0ad/l10n/eu.engine.po
+share/0ad/l10n/fi.engine.po
 share/0ad/l10n/fr.engine.po
 share/0ad/l10n/gd.engine.po
-share/0ad/l10n/gl.engine.po
 share/0ad/l10n/hu.engine.po
 share/0ad/l10n/id.engine.po
 share/0ad/l10n/it.engine.po
 share/0ad/l10n/messages.json
-share/0ad/l10n/ms.engine.po
-share/0ad/l10n/nb.engine.po
 share/0ad/l10n/nl.engine.po
 share/0ad/l10n/pl.engine.po
 share/0ad/l10n/pt_BR.engine.po
-share/0ad/l10n/pt_PT.engine.po
 share/0ad/l10n/ru.engine.po
 share/0ad/l10n/sk.engine.po
 share/0ad/l10n/sv.engine.po
@@ -56,6 +53,25 @@ share/0ad/mods/_test.dae/art/animation/
 share/0ad/mods/_test.dae/art/animation/jav2.dae
 share/0ad/mods/_test.dae/art/meshes/
 share/0ad/mods/_test.dae/art/meshes/jav2.dae
+share/0ad/mods/_test.gui/
+share/0ad/mods/_test.gui/gui/
+share/0ad/mods/_test.gui/gui/common/
+share/0ad/mods/_test.gui/gui/common/styles.xml
+share/0ad/mods/_test.gui/gui/event/
+share/0ad/mods/_test.gui/gui/event/event.js
+share/0ad/mods/_test.gui/gui/event/event.xml
+share/0ad/mods/_test.gui/gui/event/page_event.xml
+share/0ad/mods/_test.gui/gui/gui.rng
+share/0ad/mods/_test.gui/gui/gui_page.rng
+share/0ad/mods/_test.gui/gui/hotkey/
+share/0ad/mods/_test.gui/gui/hotkey/hotkey.js
+share/0ad/mods/_test.gui/gui/hotkey/hotkey.xml
+share/0ad/mods/_test.gui/gui/hotkey/page_hotkey.xml
+share/0ad/mods/_test.gui/gui/regainFocus/
+share/0ad/mods/_test.gui/gui/regainFocus/page_emptyPage.xml
+share/0ad/mods/_test.gui/gui/regainFocus/page_pushWithPopOnInit.xml
+share/0ad/mods/_test.gui/gui/regainFocus/pushWithPopOnInit.js
+share/0ad/mods/_test.gui/gui/regainFocus/pushWithPopOnInit.xml
 share/0ad/mods/_test.minimal/
 share/0ad/mods/_test.minimal/art/
 share/0ad/mods/_test.minimal/art/actors/
@@ -124,6 +140,8 @@ share/0ad/mods/_test.sim/simulation/components/test-helper.js
 share/0ad/mods/_test.sim/simulation/components/test-hotload1.js
 share/0ad/mods/_test.sim/simulation/components/test-hotload2.js
 share/0ad/mods/_test.sim/simulation/components/test-interface.js
+share/0ad/mods/_test.sim/simulation/components/test-modding1.js
+share/0ad/mods/_test.sim/simulation/components/test-modding2.js
 share/0ad/mods/_test.sim/simulation/components/test-msg.js
 share/0ad/mods/_test.sim/simulation/components/test-param.js
 share/0ad/mods/_test.sim/simulation/components/test-query.js
