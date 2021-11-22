@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2021/11/19 10:01:02 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2021/11/22 14:46:16 sthen Exp $
 
 VERSION?=	1.26.0
 DISTNAME=	unit-${VERSION}
@@ -39,6 +39,7 @@ UNIT_SHORTNAME?= ${UNIT_MODNAME}
 COMMENT?=	NGINX Unit ${UNIT_MODNAME} module
 PKGNAME?=	unit-${UNIT_SHORTNAME}-${VERSION}
 FULLPKGNAME?=	unit-${UNIT_SHORTNAME}-${VERSION}
+BUILD_DEPENDS+=	www/unit/unit=${VERSION}
 RUN_DEPENDS+=	www/unit/unit=${VERSION}
 ALL_TARGET=	${UNIT_MODNAME}
 
