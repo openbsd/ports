@@ -1,0 +1,49 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/22 06:30:35 rsadowski Exp $
+include/KOpeningHours/
+include/KOpeningHours/Display
+include/KOpeningHours/Interval
+include/KOpeningHours/IntervalModel
+include/KOpeningHours/OpeningHours
+include/kopeninghours/
+include/kopeninghours/display.h
+include/kopeninghours/interval.h
+include/kopeninghours/intervalmodel.h
+include/kopeninghours/kopeninghours_export.h
+include/kopeninghours/openinghours.h
+include/kopeninghours_version.h
+lib/cmake/KOpeningHours/
+lib/cmake/KOpeningHours/KOpeningHoursConfig.cmake
+lib/cmake/KOpeningHours/KOpeningHoursConfigVersion.cmake
+lib/cmake/KOpeningHours/KOpeningHoursTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KOpeningHours/KOpeningHoursTargets.cmake
+@lib lib/libKOpeningHours.so.${LIBKOpeningHours_VERSION}
+lib/python${MODPY_VERSION}/site-packages/PyKOpeningHours/
+lib/python${MODPY_VERSION}/site-packages/PyKOpeningHours/PyKOpeningHours.pyi
+@so lib/python${MODPY_VERSION}/site-packages/PyKOpeningHours/PyKOpeningHours.so
+lib/python${MODPY_VERSION}/site-packages/PyKOpeningHours/__init__.py
+lib/qt5/qml/org/kde/kopeninghours/
+@so lib/qt5/qml/org/kde/kopeninghours/libkopeninghoursqmlplugin.so
+lib/qt5/qml/org/kde/kopeninghours/qmldir
+share/locale/ca/LC_MESSAGES/kopeninghours.mo
+share/locale/ca@valencia/LC_MESSAGES/kopeninghours.mo
+share/locale/cs/LC_MESSAGES/kopeninghours.mo
+share/locale/de/LC_MESSAGES/kopeninghours.mo
+share/locale/en_GB/LC_MESSAGES/kopeninghours.mo
+share/locale/es/LC_MESSAGES/kopeninghours.mo
+share/locale/eu/LC_MESSAGES/kopeninghours.mo
+share/locale/fr/LC_MESSAGES/kopeninghours.mo
+share/locale/hi/LC_MESSAGES/kopeninghours.mo
+share/locale/it/LC_MESSAGES/kopeninghours.mo
+share/locale/ja/LC_MESSAGES/kopeninghours.mo
+share/locale/ko/LC_MESSAGES/kopeninghours.mo
+share/locale/nl/LC_MESSAGES/kopeninghours.mo
+share/locale/nn/LC_MESSAGES/kopeninghours.mo
+share/locale/pl/LC_MESSAGES/kopeninghours.mo
+share/locale/pt/LC_MESSAGES/kopeninghours.mo
+share/locale/pt_BR/LC_MESSAGES/kopeninghours.mo
+share/locale/sk/LC_MESSAGES/kopeninghours.mo
+share/locale/sl/LC_MESSAGES/kopeninghours.mo
+share/locale/sv/LC_MESSAGES/kopeninghours.mo
+share/locale/uk/LC_MESSAGES/kopeninghours.mo
+share/locale/zh_CN/LC_MESSAGES/kopeninghours.mo
+share/qlogging-categories5/org_kde_kopeninghours.categories

@@ -1,0 +1,5 @@
+A library for parsing and evaluating OSM opening hours expressions.
+
+OSM opening hours expressions are used to describe when a feature is
+open/available or closed. This format is not only used in OpenStreetMap itself,
+but in various other data sources or APIs needing such a description as well.
