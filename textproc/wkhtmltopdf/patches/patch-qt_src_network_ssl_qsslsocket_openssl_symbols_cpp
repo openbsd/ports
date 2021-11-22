@@ -1,4 +1,4 @@
-$OpenBSD: patch-qt_src_network_ssl_qsslsocket_openssl_symbols_cpp,v 1.5 2021/10/31 17:36:08 tb Exp $
+$OpenBSD: patch-qt_src_network_ssl_qsslsocket_openssl_symbols_cpp,v 1.6 2021/11/22 09:51:02 tb Exp $
 
 Index: qt/src/network/ssl/qsslsocket_openssl_symbols.cpp
 --- qt/src/network/ssl/qsslsocket_openssl_symbols.cpp.orig
@@ -57,7 +57,7 @@ Index: qt/src/network/ssl/qsslsocket_openssl_symbols.cpp
  #endif
  DEFINEFUNC3(int, SSL_CTX_load_verify_locations, SSL_CTX *ctx, ctx, const char *CAfile, CAfile, const char *CApath, CApath, return 0, return)
  #if OPENSSL_VERSION_NUMBER < 0x10100000L
-@@ -336,15 +325,11 @@ DEFINEFUNC(unsigned long, OpenSSL_version_num, void, D
+@@ -336,15 +325,12 @@ DEFINEFUNC(unsigned long, OpenSSL_version_num, void, D
  DEFINEFUNC(X509_STORE *, SSL_CTX_get_cert_store, const SSL_CTX *ctx, ctx, return 0, return)
  
  DEFINEFUNC(ASN1_INTEGER *, X509_get_serialNumber, X509 *x, x, return 0, return)
@@ -68,12 +68,12 @@ Index: qt/src/network/ssl/qsslsocket_openssl_symbols.cpp
 -DEFINEFUNC2(long, SSL_CTX_set_options, SSL_CTX *ctx, ctx, long options, options, return 0, return)
  DEFINEFUNC(long, X509_get_version, X509 *x, x, return 0, return)
  DEFINEFUNC(X509_PUBKEY *, X509_get_X509_PUBKEY, X509 *x, x, return 0, return)
--DEFINEFUNC(int, RSA_bits,  const RSA *rsa, rsa, return 0, return)
+ DEFINEFUNC(int, RSA_bits,  const RSA *rsa, rsa, return 0, return)
 -DEFINEFUNC(int, DSA_security_bits, const DSA *dsa, dsa, return 0, return)
  #if OPENSSL_VERSION_NUMBER < 0x10100000L
  DEFINEFUNC(ASN1_TIME *, X509_get_notAfter, X509 *x, x, return 0, return)
  DEFINEFUNC(ASN1_TIME *, X509_get_notBefore, X509 *x, x, return 0, return)
-@@ -353,7 +338,6 @@ DEFINEFUNC(ASN1_TIME *, X509_getm_notAfter, X509 *x, x
+@@ -353,7 +339,6 @@ DEFINEFUNC(ASN1_TIME *, X509_getm_notAfter, X509 *x, x
  DEFINEFUNC(ASN1_TIME *, X509_getm_notBefore, X509 *x, x, return 0, return)
  #endif
  DEFINEFUNC4(void, DSA_get0_pqg, const DSA *d, d, const BIGNUM **p, p, const BIGNUM **q, q, const BIGNUM **g, g, return, return)
@@ -81,7 +81,7 @@ Index: qt/src/network/ssl/qsslsocket_openssl_symbols.cpp
  
  #ifdef Q_OS_SYMBIAN
  #define RESOLVEFUNC(func, ordinal, lib) \
-@@ -823,11 +807,9 @@ bool q_resolveOpenSslSymbols()
+@@ -823,11 +808,9 @@ bool q_resolveOpenSslSymbols()
      RESOLVEFUNC(BIO_write)
      RESOLVEFUNC(BN_num_bits)
      RESOLVEFUNC(CRYPTO_free)
@@ -93,7 +93,7 @@ Index: qt/src/network/ssl/qsslsocket_openssl_symbols.cpp
      RESOLVEFUNC(DSA_free)
      RESOLVEFUNC(ERR_error_string)
      RESOLVEFUNC(ERR_get_error)
-@@ -857,17 +839,10 @@ bool q_resolveOpenSslSymbols()
+@@ -857,17 +840,10 @@ bool q_resolveOpenSslSymbols()
      RESOLVEFUNC(RAND_seed)
      RESOLVEFUNC(RAND_status)
      RESOLVEFUNC(RSA_free)
@@ -111,7 +111,7 @@ Index: qt/src/network/ssl/qsslsocket_openssl_symbols.cpp
      RESOLVEFUNC(SSL_CIPHER_description)
      RESOLVEFUNC(SSL_CTX_check_private_key)
      RESOLVEFUNC(SSL_CTX_ctrl)
-@@ -911,16 +886,12 @@ bool q_resolveOpenSslSymbols()
+@@ -911,16 +887,13 @@ bool q_resolveOpenSslSymbols()
      RESOLVEFUNC(SSL_write)
  
      RESOLVEFUNC(X509_get_serialNumber)
@@ -123,12 +123,12 @@ Index: qt/src/network/ssl/qsslsocket_openssl_symbols.cpp
 -    RESOLVEFUNC(SSL_CTX_set_options)
      RESOLVEFUNC(X509_get_version)
      RESOLVEFUNC(X509_get_X509_PUBKEY)
--    RESOLVEFUNC(RSA_bits)
+     RESOLVEFUNC(RSA_bits)
 -    RESOLVEFUNC(DSA_security_bits)
      RESOLVEFUNC(DSA_get0_pqg)
  #if OPENSSL_VERSION_NUMBER < 0x10100000L
      RESOLVEFUNC(X509_get_notAfter)
-@@ -929,8 +900,6 @@ bool q_resolveOpenSslSymbols()
+@@ -929,8 +902,6 @@ bool q_resolveOpenSslSymbols()
      RESOLVEFUNC(X509_getm_notAfter)
      RESOLVEFUNC(X509_getm_notBefore)
  #endif

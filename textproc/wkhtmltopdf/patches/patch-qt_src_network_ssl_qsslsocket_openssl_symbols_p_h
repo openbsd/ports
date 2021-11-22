@@ -1,4 +1,4 @@
-$OpenBSD: patch-qt_src_network_ssl_qsslsocket_openssl_symbols_p_h,v 1.4 2021/10/31 17:36:08 tb Exp $
+$OpenBSD: patch-qt_src_network_ssl_qsslsocket_openssl_symbols_p_h,v 1.5 2021/11/22 09:51:02 tb Exp $
 
 Index: qt/src/network/ssl/qsslsocket_openssl_symbols_p.h
 --- qt/src/network/ssl/qsslsocket_openssl_symbols_p.h.orig
@@ -55,7 +55,7 @@ Index: qt/src/network/ssl/qsslsocket_openssl_symbols_p.h
  #define q_SSL_library_init() q_OPENSSL_init_ssl(0, NULL)
  #define q_SSL_load_error_strings() q_OPENSSL_init_ssl(OPENSSL_INIT_LOAD_SSL_STRINGS | OPENSSL_INIT_LOAD_CRYPTO_STRINGS, NULL)
  #endif
-@@ -446,24 +428,15 @@ DSA *q_d2i_DSAPrivateKey(DSA **a, unsigned char **pp, 
+@@ -446,24 +428,16 @@ DSA *q_d2i_DSAPrivateKey(DSA **a, unsigned char **pp, 
  		PEM_ASN1_write_bio((int (*)(void*, unsigned char**))q_i2d_DSAPrivateKey,PEM_STRING_DSA,\
  			bp,(char *)x,enc,kstr,klen,cb,u)
  #endif
@@ -73,14 +73,14 @@ Index: qt/src/network/ssl/qsslsocket_openssl_symbols_p.h
 -long q_SSL_CTX_set_options(SSL_CTX *ctx, long options);
  long q_X509_get_version(X509 *x);
  X509_PUBKEY * q_X509_get_X509_PUBKEY(X509 *x);
--int q_RSA_bits(const RSA *rsa);
+ int q_RSA_bits(const RSA *rsa);
 -int q_DSA_security_bits(const DSA *dsa);
  void q_DSA_get0_pqg(const DSA *d, const BIGNUM **p, const BIGNUM **q, const BIGNUM **g);
 -#endif
  
  #define q_SKM_sk_num(type, st) ((int (*)(const STACK_OF(type) *))q_sk_num)(st)
  #define q_SKM_sk_value(type, st,i) ((type * (*)(const STACK_OF(type) *, int))q_sk_value)(st, i)
-@@ -499,7 +472,7 @@ ASN1_TIME *q_X509_getm_notBefore(X509 *x);
+@@ -499,7 +473,7 @@ ASN1_TIME *q_X509_getm_notBefore(X509 *x);
  void q_OPENSSL_add_all_algorithms_noconf();
  void q_OPENSSL_add_all_algorithms_conf();
  #else
