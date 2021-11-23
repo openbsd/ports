@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2021/11/06 16:25:42 solene Exp $
+# $OpenBSD: Makefile,v 1.22 2021/11/23 06:45:45 uaa Exp $
 
      SUBDIR =
      SUBDIR += anthy
@@ -15,6 +15,7 @@
      SUBDIR += ibus-anthy
      SUBDIR += ibus-skk
      SUBDIR += ibus-typing-booster
+     SUBDIR += libkkc
      SUBDIR += libskk
      SUBDIR += libtomoe-gtk
      SUBDIR += scim
