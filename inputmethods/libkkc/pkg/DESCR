@@ -1,0 +1,4 @@
+libkkc provides a converter from Kana-string to Kana-Kanji-mixed-string.
+It was named after kkc.el in GNU Emacs, a simple Kana Kanji converter,
+while libkkc tries to convert sentences in a bit more complex way using
+N-gram language models.
