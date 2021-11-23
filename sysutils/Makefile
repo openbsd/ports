@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.623 2021/11/11 20:57:52 kn Exp $
+# $OpenBSD: Makefile,v 1.624 2021/11/23 12:59:58 sthen Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -161,6 +161,7 @@
      SUBDIR += libluksde
      SUBDIR += libmsiecf
      SUBDIR += libolecf
+     SUBDIR += libptytty
      SUBDIR += libqcow
      SUBDIR += libregf
      SUBDIR += librelp
