@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.56 2021/11/13 16:01:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2021/11/23 09:33:09 sthen Exp $
 
 COMMENT =	next-generation web UI for icinga
 
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icingaweb2
-GH_TAGNAME =	v2.9.4
+GH_TAGNAME =	v2.9.5
 PKGNAME =	icinga-web2-${GH_TAGNAME:S/v//}
 
-MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 MODULES=	lang/php
 
 MODPHP_PDO_ALLOWED = mysql pgsql
@@ -32,7 +31,7 @@ do-install:
 	    ${PREFIX}/conf/modules.sample
 	cd ${WRKSRC}; pax -rw ./ ${PREFIX}/icinga-web2/
 	${SUBST_CMD} ${PREFIX}/icinga-web2/packages/files/apache/*conf
-	find ${PREFIX}/icinga-web2 \( -name '*.orig' \
+	find ${PREFIX}/icinga-web2 \( -name '*${PATCHORIG}' \
 	    -or -name '*.beforesubst' \) -delete
 	ln -s ${TRUEPREFIX}/icinga-web2/bin/icingacli \
 	    ${WRKINST}/usr/local/bin/
