@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2021/07/05 12:39:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/23 09:29:41 sthen Exp $
 
 COMMENT=	SIP packet capture tool with curses UI
 
 GH_ACCOUNT=	irontec
 GH_PROJECT=	sngrep
-GH_TAGNAME=	v1.4.9
+GH_TAGNAME=	v1.4.10
 
 CATEGORIES=	telephony net
 
