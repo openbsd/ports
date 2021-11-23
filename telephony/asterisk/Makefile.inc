@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2021/11/02 12:43:48 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2021/11/23 10:21:48 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
@@ -103,10 +103,8 @@ AUTOMAKE_VERSION=	1.16
 BUILD_DEPENDS+=		archivers/bzip2 \
 			devel/libtool,-ltdl # bogus dependencies in menuselect
 
-CPPFLAGS+=		-I${X11BASE}/include \
-			-I${LOCALBASE}/include
-LDFLAGS+=		-L${X11BASE}/lib \
-			-L${LOCALBASE}/lib
+CPPFLAGS+=		-I${X11BASE}/include -I${LOCALBASE}/include
+LDFLAGS+=		-L${X11BASE}/lib -L${LOCALBASE}/lib
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" \
 			CFLAGS="${CFLAGS}" \
 			LDFLAGS="${LDFLAGS}" \
@@ -167,8 +165,16 @@ CONFIGURE_ARGS+=	--with-execinfo=no
 # via menuselect. They may be enabled by running 'make menuselect'
 # before building.
 
-## multipackages:
 .include <bsd.port.arch.mk>
+
+#.if ${PROPERTIES:Mclang}
+#BUILD_DEPENDS +=	devel/blocksruntime
+#LDFLAGS +=		-lBlocksRuntime
+#WANTLIB-main +=		${COMPILER_LIBCXX}
+#.else
+CFLAGS +=		-ftrampolines
+WANTLIB-main +=		${MODGCC4_CPPWANTLIB}
+#.endif
 
 # calendar
 COMMENT-calendar=	calendar support for Asterisk
