@@ -1,10 +1,10 @@
-$OpenBSD: patch-base_files_file_path_watcher_bsd_cc,v 1.1 2021/01/20 07:28:07 robert Exp $
+$OpenBSD: patch-base_files_file_path_watcher_bsd_cc,v 1.2 2021/11/23 11:38:40 robert Exp $
 
 Index: base/files/file_path_watcher_bsd.cc
 --- base/files/file_path_watcher_bsd.cc.orig
 +++ base/files/file_path_watcher_bsd.cc
-@@ -0,0 +1,56 @@
-+// Copyright 2020 The Chromium Authors. All rights reserved.
+@@ -0,0 +1,54 @@
++// Copyright 2021 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
@@ -12,7 +12,6 @@ Index: base/files/file_path_watcher_bsd.cc
 +
 +#include "base/files/file_path_watcher.h"
 +#include "base/files/file_path_watcher_kqueue.h"
-+#include "base/macros.h"
 +#include "base/memory/ptr_util.h"
 +#include "build/build_config.h"
 +
@@ -23,12 +22,13 @@ Index: base/files/file_path_watcher_bsd.cc
 +class FilePathWatcherImpl : public FilePathWatcher::PlatformDelegate {
 + public:
 +  FilePathWatcherImpl() = default;
++  FilePathWatcherImpl(const FilePathWatcherImpl&) = delete;
++  FilePathWatcherImpl& operator=(const FilePathWatcherImpl&) = delete;
 +  ~FilePathWatcherImpl() override = default;
 +
 +  bool Watch(const FilePath& path,
 +             Type type,
 +             const FilePathWatcher::Callback& callback) override {
-+    // Use kqueue for non-recursive watches and FSEvents for recursive ones.
 +    DCHECK(!impl_.get());
 +    if (type == Type::kRecursive) {
 +      if (!FilePathWatcher::RecursiveWatchAvailable())
@@ -48,8 +48,6 @@ Index: base/files/file_path_watcher_bsd.cc
 +
 + private:
 +  std::unique_ptr<PlatformDelegate> impl_;
-+
-+  DISALLOW_COPY_AND_ASSIGN(FilePathWatcherImpl);
 +};
 +
 +}  // namespace
