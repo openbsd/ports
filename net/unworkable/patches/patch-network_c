@@ -1,0 +1,24 @@
+$OpenBSD: patch-network_c,v 1.1 2021/11/23 20:55:12 tb Exp $
+
+Index: network.c
+--- network.c.orig
++++ network.c
+@@ -1282,13 +1282,16 @@ DH *
+ network_crypto_dh()
+ {
+ 	DH *dhp;
++	BIGNUM *p, *g;
+ 
+ 	if ((dhp = DH_new()) == NULL)
+ 		errx(1, "network_crypto_pubkey: DH_new() failure");
+-	if ((dhp->p = BN_bin2bn(mse_P, CRYPTO_INT_LEN, NULL)) == NULL)
++	if ((p = BN_bin2bn(mse_P, CRYPTO_INT_LEN, NULL)) == NULL)
+ 		errx(1, "network_crypto_pubkey: BN_bin2bn(P) failure");
+-	if ((dhp->g = BN_bin2bn(mse_G, CRYPTO_INT_LEN, NULL)) == NULL)
++	if ((g = BN_bin2bn(mse_G, CRYPTO_INT_LEN, NULL)) == NULL)
+ 		errx(1, "network_crypto_pubkey: BN_bin2bn(G) failure");
++	if (DH_set0_pqg(dhp, p, NULL, g) == 0)
++		errx(1, "network_crypto_pubkey: DH_set0_pqg() failure");
+ 	if (DH_generate_key(dhp) == 0)
+ 		errx(1, "network_crypto_pubkey: DH_generate_key() failure");
+ 

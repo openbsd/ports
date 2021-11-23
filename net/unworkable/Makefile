@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:48:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2021/11/23 20:55:12 tb Exp $
 
 COMMENT=		simple BitTorrent implementation
 
 DISTNAME=		unworkable-0.53
 EPOCH=			0
-REVISION=		3
+REVISION=		4
 CATEGORIES=		net
 
 HOMEPAGE=		https://github.com/niallo/Unworkable
