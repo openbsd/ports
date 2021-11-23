@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2021/11/02 00:01:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/11/23 09:47:53 landry Exp $
 
 COMMENT =	manipulation and analysis of planar geometric objects
 
-MODPY_EGG_VERSION =	1.7.1
+MODPY_EGG_VERSION =	1.8.0
 GH_TAGNAME =	${MODPY_EGG_VERSION}
 GH_ACCOUNT =	Toblerity
 GH_PROJECT =	Shapely
 DISTNAME =	py-shapely-${MODPY_EGG_VERSION}
-REVISION =	1
 
 CATEGORIES =	geo
 
@@ -38,7 +37,7 @@ post-patch:
 
 pre-test:
 	# gross
-	cp ${WRKSRC}/${TESTLIBDIR}/vectorized/_vectorized.so \
+	cp ${WRKSRC}/${TESTLIBDIR}/vectorized/_vectorized*.so \
 		${WRKSRC}/shapely/vectorized/
 
 .include <bsd.port.mk>
