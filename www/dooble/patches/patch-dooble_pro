@@ -1,28 +1,29 @@
-$OpenBSD: patch-dooble_pro,v 1.1.1.1 2021/08/20 13:55:35 bcallah Exp $
+$OpenBSD: patch-dooble_pro,v 1.2 2021/11/23 14:00:45 bcallah Exp $
 
 Remove -O3 and -Werror.
 
 Index: dooble.pro
 --- dooble.pro.orig
 +++ dooble.pro
-@@ -276,12 +276,11 @@ QMAKE_CXXFLAGS_RELEASE += -O3 \
+@@ -284,13 +284,12 @@ QMAKE_CXXFLAGS_RELEASE += -O3 \
  QMAKE_CXXFLAGS_RELEASE -= -O2
  } else:win32 {
  } else {
 -QMAKE_CXXFLAGS_RELEASE += -O3 \
 +QMAKE_CXXFLAGS_RELEASE += \
                            -Wall \
+ 			  -Warray-bounds=2 \
                            -Wcast-align \
                            -Wcast-qual \
                            -Wdouble-promotion \
 -                          -Werror \
                            -Wextra \
                            -Wformat-overflow=2 \
-                           -Wformat-truncation=2 \
-@@ -301,7 +300,6 @@ QMAKE_CXXFLAGS_RELEASE += -O3 \
-                           -pedantic \
-                           -pie \
-                           -std=c++17
+ 			  -Wformat-signedness \
+@@ -314,7 +313,6 @@ QMAKE_CXXFLAGS_RELEASE += -O3 \
+ versionAtLeast(QT_VERSION, 6.0.0) {
+ QMAKE_CXXFLAGS_RELEASE += -Wno-int-in-bool-context
+ }
 -QMAKE_CXXFLAGS_RELEASE -= -O2
  }
  
