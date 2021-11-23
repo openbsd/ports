@@ -1,0 +1,2 @@
+libptytty is an offspring of rxvt-unicode that handles
+pty/tty/utmp/wtmp/lastlog handling in mostly OS-independent ways.
