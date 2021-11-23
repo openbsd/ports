@@ -1,0 +1,24 @@
+$OpenBSD: patch-lib_misc_base64-decode_c,v 1.1 2021/11/23 18:12:11 fcambus Exp $
+
+Fix the build with Clang 13.
+
+Upstream commit 0bfd39135e970ed1273f2f935c581f213543c7ef.
+
+Index: lib/misc/base64-decode.c
+--- lib/misc/base64-decode.c.orig
++++ lib/misc/base64-decode.c
+@@ -53,7 +53,6 @@ lws_b64_encode_string(const char *in, int in_len, char
+ 	unsigned char triple[3];
+ 	int i;
+ 	int len;
+-	int line = 0;
+ 	int done = 0;
+ 
+ 	while (in_len) {
+@@ -78,7 +77,6 @@ lws_b64_encode_string(const char *in, int in_len, char
+ 		*out++ = (len > 2 ? encode[triple[2] & 0x3f] : '=');
+ 
+ 		done += 4;
+-		line += 4;
+ 	}
+ 
