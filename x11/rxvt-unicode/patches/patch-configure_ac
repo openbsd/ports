@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.3 2021/05/21 17:43:41 bket Exp $
+$OpenBSD: patch-configure_ac,v 1.4 2021/11/23 13:04:34 sthen Exp $
 
 Don't use gcc specific flags, because it causes various undefined
 reference errors with ports-gcc>=6 when -lsupc++ is used. We could
@@ -7,7 +7,7 @@ use libesupc++ but there is not much incentive to do so.
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -36,25 +36,6 @@ if test "$ac_prog_cxx_stdcxx" != cxx11; then
+@@ -32,25 +32,6 @@ if test "$ac_prog_cxx_stdcxx" != cxx11; then
  fi
  
  LINKER="$CXX"

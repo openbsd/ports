@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/05/21 17:43:41 bket Exp $
+@comment $OpenBSD: PLIST,v 1.14 2021/11/23 13:04:34 sthen Exp $
 @bin bin/urclock
 @mode 2555
 @group utmp
@@ -38,6 +38,7 @@ lib/urxvt/perl/tabbed
 lib/urxvt/perl/urxvt-popup
 lib/urxvt/perl/xim-onthespot
 lib/urxvt/urxvt.pm
+@man man/man1/urclock.1
 @man man/man1/urxvt-background.1
 @man man/man1/urxvt-bell-command.1
 @man man/man1/urxvt-block-graphics-to-ascii.1

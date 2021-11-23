@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.52 2021/11/23 10:37:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2021/11/23 13:04:34 sthen Exp $
 
 COMMENT =	clone of rxvt with Unicode and Xft support
 
-DISTNAME =	rxvt-unicode-9.26
+DISTNAME =	rxvt-unicode-9.29
 CATEGORIES =	x11
 FIX_EXTRACT_PERMISSIONS =	Yes
 
@@ -17,14 +17,15 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xft Xmu Xrender Xt c fontconfig
 WANTLIB += freetype gdk_pixbuf-2.0 glib-2.0 gobject-2.0 intl m
-WANTLIB += perl startup-notification-1 z
+WANTLIB += perl ptytty startup-notification-1 z
 
 COMPILER =		base-clang ports-gcc base-gcc
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 LIB_DEPENDS =	devel/gettext,-runtime \
 		devel/startup-notification \
-		graphics/gdk-pixbuf2
+		graphics/gdk-pixbuf2 \
+		sysutils/libptytty
 
 FAKE_FLAGS =	INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
