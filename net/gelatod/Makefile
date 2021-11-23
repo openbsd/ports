@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/18 08:03:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/23 23:48:05 kn Exp $
 
 COMMENT =		CLAT configuration daemon for OpenBSD
-V =			1.2
+V =			1.3
 DISTNAME =		gelatod-${V}
 CATEGORIES =		net
 
@@ -9,6 +9,8 @@ CATEGORIES =		net
 PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://github.com/fobser/gelatod/releases/download/v${V}/
+
+MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
