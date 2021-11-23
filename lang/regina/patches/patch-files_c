@@ -1,11 +1,11 @@
-$OpenBSD: patch-files_c,v 1.2 2020/05/20 15:12:03 bcallah Exp $
+$OpenBSD: patch-files_c,v 1.3 2021/11/23 13:50:27 bcallah Exp $
 
 time_t requires %lld
 
 Index: files.c
 --- files.c.orig
 +++ files.c
-@@ -4261,7 +4261,7 @@ static streng *getstatus( tsd_t *TSD, const streng *fi
+@@ -4263,7 +4263,7 @@ static streng *getstatus( tsd_t *TSD, const streng *fi
              if ( sizeof(off_t) > 4 )
                 sprintf( result->value, "%lld", buffer.st_ctime );
              else
@@ -14,7 +14,7 @@ Index: files.c
  #endif
           }
           break;
-@@ -4279,7 +4279,7 @@ static streng *getstatus( tsd_t *TSD, const streng *fi
+@@ -4281,7 +4281,7 @@ static streng *getstatus( tsd_t *TSD, const streng *fi
              if ( sizeof(off_t) > 4 )
                 sprintf( result->value, "%lld", buffer.st_mtime );
              else
@@ -23,7 +23,7 @@ Index: files.c
  #endif
           }
           break;
-@@ -4297,7 +4297,7 @@ static streng *getstatus( tsd_t *TSD, const streng *fi
+@@ -4299,7 +4299,7 @@ static streng *getstatus( tsd_t *TSD, const streng *fi
              if ( sizeof(off_t) > 4 )
                 sprintf( result->value, "%lld", buffer.st_atime );
              else

@@ -1,11 +1,11 @@
-$OpenBSD: patch-rxstack_c,v 1.2 2020/05/20 15:12:03 bcallah Exp $
+$OpenBSD: patch-rxstack_c,v 1.3 2021/11/23 13:50:27 bcallah Exp $
 
 Fix formatting.
 
 Index: rxstack.c
 --- rxstack.c.orig
 +++ rxstack.c
-@@ -1585,7 +1585,7 @@ int rxstack_pull_line_off_queue( Client *client, stren
+@@ -1587,7 +1587,7 @@ int rxstack_pull_line_off_queue( Client *client, stren
              if ( q->oldest == NULL )
                 q->oldest = client;
              rc = RXSTACK_WAITING; /* waiting */
@@ -14,7 +14,7 @@ Index: rxstack.c
           }
        }
     }
-@@ -1914,7 +1914,7 @@ int rxstack_process_websockets_headers( Client *client
+@@ -1916,7 +1916,7 @@ int rxstack_process_websockets_headers( Client *client
     key[end-start] = '\0';
  
     start = strstr(ws_headers, "\r\n\r\n");
@@ -23,7 +23,7 @@ Index: rxstack.c
  
     /*
      * Generate our response key
-@@ -1966,11 +1966,11 @@ int decode_ws_payload( unsigned char *src, size_t srcl
+@@ -1968,11 +1968,11 @@ int decode_ws_payload( unsigned char *src, size_t srcl
        // Find beginning of next frame. First time hdr_length, masked and
        // payload_length are zero
        frame += hdr_length + 4*masked + payload_length;
@@ -37,7 +37,7 @@ Index: rxstack.c
           break;
        }
        remaining = (src + srclength) - frame;
-@@ -2010,7 +2010,7 @@ int decode_ws_payload( unsigned char *src, size_t srcl
+@@ -2012,7 +2012,7 @@ int decode_ws_payload( unsigned char *src, size_t srcl
        {
           continue;
        }
@@ -46,7 +46,7 @@ Index: rxstack.c
        payload = frame + hdr_length + 4*masked;
  
        if (*opcode != 1 && *opcode != 2)
-@@ -3041,7 +3041,7 @@ int rxstack_doit( )
+@@ -3049,7 +3049,7 @@ int rxstack_doit( )
           rc = 0 ; /* already timed out */
        if ( ( rc == -1 ) || ( rc > DEFAULT_WAKEUP ) )
           rc = DEFAULT_WAKEUP ;
@@ -55,7 +55,7 @@ Index: rxstack.c
  #if defined(HAVE_POLL) && (defined(HAVE_POLL_H) || defined(HAVE_SYS_POLL_H))
        rc = poll( pd, poll_cnt, rc ) ;
  #else
-@@ -3050,7 +3050,7 @@ int rxstack_doit( )
+@@ -3058,7 +3058,7 @@ int rxstack_doit( )
        rc = select( max_sock + 1, &ready, (fd_set *)0, (fd_set *)0, &to ) ;
  #endif
        now = get_now( ) ;

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2020/05/20 15:12:03 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/23 13:50:27 bcallah Exp $
 
-V =		3.9.3
+V =		3.9.4
 COMMENT =	ANSI-compliant interpreter for REXX language (regina-rexx)
 DISTNAME =	regina-rexx-${V}
 PKGNAME =	regina-${V}
 CATEGORIES =	lang
 
-SHARED_LIBS +=	regina                    1.0 # 1.0
+SHARED_LIBS +=	regina                    2.0 # 2.0
 
 HOMEPAGE =	https://regina-rexx.sourceforge.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -14,15 +14,15 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c curses m pthread
+WANTLIB += c curses m pthread readline
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=regina-rexx/}
+MASTER_SITES =	https://github.com/ibara/ports/releases/download/v1.0/
 
 CONFIGURE_STYLE =	gnu
 
-FAKE_FLAGS =	sysconfdir="${PREFIX}/share/Regina-REXX"
+USE_GMAKE =	Yes
 
-NO_TEST =	Yes
+FAKE_FLAGS =	sysconfdir="${PREFIX}/share/Regina-REXX"
 
 pre-configure:
 	sed -i 's,$${LIBregina_VERSION},${LIBregina_VERSION},g' \

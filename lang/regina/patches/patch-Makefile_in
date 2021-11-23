@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2020/05/20 15:12:03 bcallah Exp $
+$OpenBSD: patch-Makefile_in,v 1.3 2021/11/23 13:50:27 bcallah Exp $
 
 Do not gzip manual pages.
 Properly install shlib.
@@ -6,7 +6,7 @@ Properly install shlib.
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -1045,11 +1045,6 @@ installbase: all
+@@ -1063,11 +1063,6 @@ installbase: all
  	$(INSTALL) -m 644 -c $(srcdir)/regina-config.1 $(DESTDIR)$(mandir)/man1/regina-config.1
  	$(INSTALL) -m 644 -c $(srcdir)/rxstack.1 $(DESTDIR)$(mandir)/man1/rxstack.1
  	$(INSTALL) -m 644 -c $(srcdir)/rxqueue.1 $(DESTDIR)$(mandir)/man1/rxqueue.1
@@ -18,12 +18,12 @@ Index: Makefile.in
  	$(INSTALL) -m 644 -c $(srcdir)/rexxsaa.h $(DESTDIR)$(includedir)/rexxsaa.h
  	$(INSTALL) -m 644 -c ./en.mtb $(DESTDIR)$(sharedir)/en.mtb
  	$(INSTALL) -m 644 -c ./pt.mtb $(DESTDIR)$(sharedir)/pt.mtb
-@@ -1084,7 +1079,7 @@ installregina:
- 	-chmod 755 $(DESTDIR)$(examplesdir)/regutil.rexx
- 
- installlib: installregina
--	$(INSTALL) -s -m 755 -c ./$(SHLPRE)$(SHLFILE)$(SHLPST) $(DESTDIR)$(libdir)/$(SHLPRE)$(SHLFILE)$(SHLPST)
-+	$(INSTALL) -s -m 755 -c ./$(SHLPRE)$(SHLFILE)$(SHLPST).${LIBregina_VERSION} $(DESTDIR)$(libdir)/$(SHLPRE)$(SHLFILE)$(SHLPST).${LIBregina_VERSION}
- 	$(INSTALL) -s -m 755 -c ./$(SHLPRE)regutil$(MODPST) $(DESTDIR)$(addonsdir)/$(SHLPRE)regutil$(MODPST)
- 	$(INSTALL) -s -m 755 -c ./$(SHLPRE)rxtest1$(MODPST) $(DESTDIR)$(addonsdir)/$(SHLPRE)rxtest1$(MODPST)
- 	$(INSTALL) -s -m 755 -c ./$(SHLPRE)rxtest2$(MODPST) $(DESTDIR)$(addonsdir)/$(SHLPRE)rxtest2$(MODPST)
+@@ -1098,7 +1093,7 @@ installlib: installregina
+ ##	$(INSTALL) -s -m 755 -c ./$(SHLPRE)regutil$(MODPST) $(DESTDIR)$(addonsdir)/$(SHLPRE)regutil$(MODPST)
+ ##	$(INSTALL) -s -m 755 -c ./$(SHLPRE)rxtest1$(MODPST) $(DESTDIR)$(addonsdir)/$(SHLPRE)rxtest1$(MODPST)
+ ##	$(INSTALL) -s -m 755 -c ./$(SHLPRE)rxtest2$(MODPST) $(DESTDIR)$(addonsdir)/$(SHLPRE)rxtest2$(MODPST)
+-	$(INSTALL) -s -m 755 -c ./$(SHL_NAME_REGINA) $(DESTDIR)$(libdir)/$(SHL_NAME_REGINA)
++	$(INSTALL) -s -m 755 -c ./$(SHL_NAME_REGINA).${LIBregina_VERSION} $(DESTDIR)$(libdir)/$(SHL_NAME_REGINA).${LIBregina_VERSION}
+ 	$(INSTALL) -s -m 755 -c ./$(SHL_NAME_REGUTIL) $(DESTDIR)$(addonsdir)/$(SHL_NAME_REGUTIL)
+ 	$(INSTALL) -s -m 755 -c ./$(SHL_NAME_RXTEST1) $(DESTDIR)$(addonsdir)/$(SHL_NAME_RXTEST1)
+ 	$(INSTALL) -s -m 755 -c ./$(SHL_NAME_RXTEST2) $(DESTDIR)$(addonsdir)/$(SHL_NAME_RXTEST2)
