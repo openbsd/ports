@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2021/05/21 17:43:41 bket Exp $
+# $OpenBSD: Makefile,v 1.52 2021/11/23 10:37:13 sthen Exp $
 
 COMMENT =	clone of rxvt with Unicode and Xft support
 
@@ -28,7 +28,6 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 
 FAKE_FLAGS =	INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
-
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.71
 CONFIGURE_ARGS =	--enable-256-color \
@@ -40,5 +39,6 @@ CONFIGURE_ARGS =	--enable-256-color \
 			--enable-wtmp
 CONFIGURE_ENV +=	CPPFLAGS="-I${X11BASE}/include" \
 			pt_cv_tty_group=yes
+MAKE_ENV +=		TERMINFO=${WRKINST}${PREFIX}/share/terminfo
 
 .include <bsd.port.mk>
