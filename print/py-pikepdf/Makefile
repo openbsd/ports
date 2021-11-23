@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/14 14:46:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/11/23 11:13:25 sthen Exp $
 
 COMMENT =		Python library for reading and writing PDF files
 
-MODPY_EGG_VERSION =	4.0.1
+MODPY_EGG_VERSION =	4.0.2
 DISTNAME =		pikepdf-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
