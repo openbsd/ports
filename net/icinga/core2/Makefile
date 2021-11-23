@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2021/11/13 15:55:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.119 2021/11/23 09:31:53 sthen Exp $
 
 COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
@@ -34,8 +34,6 @@ SHARED_LIBS +=	remote                    0.0 # 2.6
 SHARED_LIBS +=	socketpair                0.0 # 2.6
 
 HOMEPAGE =	https://icinga.com/products/icinga-2/
-
-MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 
 # GPLv2+ with OpenSSL exemption
 PERMIT_PACKAGE =	Yes

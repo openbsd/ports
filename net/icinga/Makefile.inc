@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.22 2021/11/13 16:00:22 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.23 2021/11/23 09:31:53 sthen Exp $
 
 CATEGORIES +=	net
 
@@ -7,6 +7,8 @@ PKGNAME ?=	${DISTNAME:S/icingaweb2/icinga-web2/}
 
 # GPLv2 only
 PERMIT_PACKAGE ?=	Yes
+
+MAINTAINER ?=	Stuart Henderson <stu.ports@spacehopper.org>
 
 .if !defined(MODULE_NAME)
 HOMEPAGE =	https://icinga.com/
