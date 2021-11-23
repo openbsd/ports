@@ -1,12 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/10/29 15:38:47 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/11/23 20:35:13 sthen Exp $
 @pkgpath devel/py-setuptools_scm_git_archive
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm_git_archive/
-lib/python${MODPY_VERSION}/site-packages/setuptools_scm_git_archive-0-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/setuptools_scm_git_archive-0-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/setuptools_scm_git_archive-0-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/setuptools_scm_git_archive-0-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/setuptools_scm_git_archive-0-py${MODPY_VERSION}.egg-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/setuptools_scm_git_archive-0-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm_git_archive-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm_git_archive-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm_git_archive-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
