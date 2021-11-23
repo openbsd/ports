@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.29 2021/10/29 14:49:40 robert Exp $
+$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.30 2021/11/23 11:52:33 robert Exp $
 
 Index: content/browser/browser_main_loop.cc
 --- content/browser/browser_main_loop.cc.orig
@@ -38,3 +38,12 @@ Index: content/browser/browser_main_loop.cc
    if (base::FeatureList::IsEnabled(
            features::kBrowserUseDisplayThreadPriority) &&
        base::PlatformThread::GetCurrentThreadPriority() <
+@@ -559,7 +571,7 @@ int BrowserMainLoop::EarlyInitialization() {
+ #endif  // !defined(OS_MAC)
+ 
+ #if defined(OS_MAC) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
+-    defined(OS_ANDROID)
++    defined(OS_ANDROID) || defined(OS_BSD)
+   // We use quite a few file descriptors for our IPC as well as disk the disk
+   // cache,and the default limit on the Mac is low (256), so bump it up.
+ 

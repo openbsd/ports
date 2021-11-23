@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2021/11/12 14:52:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.125 2021/11/23 11:52:33 robert Exp $
 
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
 
@@ -9,7 +9,7 @@ DPB_PROPERTIES=		parallel parallel2
 COMMENT=		Iridium browser
 
 V=			2021.10.95
-REVISION=		2
+REVISION=		3
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}.1
