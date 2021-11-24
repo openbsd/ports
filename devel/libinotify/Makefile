@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2020/12/19 23:25:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/11/24 11:18:26 kirby Exp $
 
 COMMENT =		kevent based inotify
 
 GH_ACCOUNT =		libinotify-kqueue
 GH_PROJECT =		libinotify-kqueue
-GH_TAGNAME =		20180201
+GH_TAGNAME =		20211018
 PKGNAME =		libinotify-${GH_TAGNAME}
 
-SHARED_LIBS =		inotify 2.1
+SHARED_LIBS =		inotify 3.0
 
 CATEGORIES =		devel
 

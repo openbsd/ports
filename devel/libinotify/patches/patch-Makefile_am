@@ -1,14 +1,14 @@
-$OpenBSD: patch-Makefile_am,v 1.6 2017/08/30 05:37:36 dcoppa Exp $
+$OpenBSD: patch-Makefile_am,v 1.7 2021/11/24 11:18:26 kirby Exp $
 
 Unbreak separate build
 
 Index: Makefile.am
 --- Makefile.am.orig
 +++ Makefile.am
-@@ -58,7 +58,7 @@ libinotify_la_SOURCES += compat/tree.h
- endif
+@@ -60,7 +60,7 @@ endif
+ libinotify_la_SOURCES += compat/tree.h
  
- libinotify_la_CFLAGS = -I. -DNDEBUG @PTHREAD_CFLAGS@ -Wall -Werror
+ libinotify_la_CFLAGS = -I. @DEBUG_CFLAGS@ @PTHREAD_CFLAGS@ -Wall -Werror
 -libinotify_la_LDFLAGS = @PTHREAD_LIBS@ -export-symbols libinotify.sym
 +libinotify_la_LDFLAGS = @PTHREAD_LIBS@ -export-symbols $(top_srcdir)/libinotify.sym
  endif
