@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.100 2021/02/23 19:39:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.101 2021/11/24 09:06:39 sthen Exp $
 
 COMMENT=	IMAP/POP3/SDPS mail retriever
 
-MODPY_EGG_VERSION=	5.15
+MODPY_EGG_VERSION=	5.16
 DISTNAME=	getmail-${MODPY_EGG_VERSION}
 CATEGORIES=	mail
 
@@ -16,6 +16,9 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	${HOMEPAGE}/old-versions/
 
 MODULES=	lang/python
+
+# No Python 3 support as of 5.16
+# https://pyropus.ca/software/getmail/documentation.html#python3
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 NO_TEST=	Yes
