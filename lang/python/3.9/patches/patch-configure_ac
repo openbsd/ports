@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.5 2021/10/30 00:24:16 kmos Exp $
+$OpenBSD: patch-configure_ac,v 1.6 2021/11/24 15:35:20 kmos Exp $
 
 #1: Set ports library version
 #2: Don't pick up an installed linux/e2fsprogs libuuid.so
@@ -16,16 +16,7 @@ Index: configure.ac
  
  # The later defininition of _XOPEN_SOURCE disables certain features
  # on Linux, so we need _GNU_SOURCE to re-enable them (makedev, tm_zone).
-@@ -727,7 +727,7 @@ then
- fi
- 
- 
--MULTIARCH=$($CC --print-multiarch 2>/dev/null)
-+MULTIARCH=$(false)
- AC_SUBST(MULTIARCH)
- 
- AC_MSG_CHECKING([for the platform triplet based on compiler characteristics])
-@@ -743,8 +743,8 @@ cat >> conftest.c <<EOF
+@@ -740,8 +740,8 @@ cat >> conftest.c <<EOF
  #undef powerpc
  #undef sparc
  #undef unix
@@ -36,7 +27,16 @@ Index: configure.ac
  #elif defined(__linux__)
  # if defined(__x86_64__) && defined(__LP64__)
          x86_64-linux-gnu
-@@ -2858,18 +2858,7 @@ AC_CHECK_LIB(dl, dlopen)	# Dynamic linking for SunOS/S
+@@ -883,7 +883,7 @@ fi
+ rm -f conftest.c conftest.out
+ 
+ if test x$PLATFORM_TRIPLET != xdarwin; then
+-  MULTIARCH=$($CC --print-multiarch 2>/dev/null)
++  MULTIARCH=$(false)
+ fi
+ AC_SUBST(MULTIARCH)
+ 
+@@ -2860,18 +2860,7 @@ AC_CHECK_LIB(dl, dlopen)	# Dynamic linking for SunOS/S
  AC_CHECK_LIB(dld, shl_load)	# Dynamic linking for HP-UX
  
  # checks for uuid.h location
@@ -54,5 +54,5 @@ Index: configure.ac
 -)
 +AC_CHECK_HEADERS([uuid.h])
  
- # AIX provides support for RFC4122 (uuid) in libc.a starting with AIX 6.1 (anno 2007)
- # FreeBSD and OpenBSD provides support as well
+ # check for libuuid from util-linux
+ save_LIBS=$LIBS

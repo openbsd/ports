@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2021/11/03 19:07:18 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2021/11/24 15:35:20 kmos Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-${VERSION_SPEC}
@@ -1852,8 +1852,8 @@ lib/python3.9/ensurepip/_bundled/__pycache__/
 lib/python3.9/ensurepip/_bundled/__pycache__/__init__.cpython-39.opt-1.pyc
 lib/python3.9/ensurepip/_bundled/__pycache__/__init__.cpython-39.opt-2.pyc
 lib/python3.9/ensurepip/_bundled/__pycache__/__init__.cpython-39.pyc
-lib/python3.9/ensurepip/_bundled/pip-21.2.3-py3-none-any.whl
-lib/python3.9/ensurepip/_bundled/setuptools-57.4.0-py3-none-any.whl
+lib/python3.9/ensurepip/_bundled/pip-21.2.4-py3-none-any.whl
+lib/python3.9/ensurepip/_bundled/setuptools-58.1.0-py3-none-any.whl
 lib/python3.9/ensurepip/_uninstall.py
 lib/python3.9/enum.py
 lib/python3.9/filecmp.py
@@ -2052,9 +2052,9 @@ lib/python3.9/lib-dynload/
 @so lib/python3.9/lib-dynload/zlib.cpython-39.so
 lib/python3.9/lib2to3/
 lib/python3.9/lib2to3/Grammar.txt
-lib/python3.9/lib2to3/Grammar3.9.7.final.0.pickle
+lib/python3.9/lib2to3/Grammar3.9.9.final.0.pickle
 lib/python3.9/lib2to3/PatternGrammar.txt
-lib/python3.9/lib2to3/PatternGrammar3.9.7.final.0.pickle
+lib/python3.9/lib2to3/PatternGrammar3.9.9.final.0.pickle
 lib/python3.9/lib2to3/__init__.py
 lib/python3.9/lib2to3/__main__.py
 lib/python3.9/lib2to3/__pycache__/

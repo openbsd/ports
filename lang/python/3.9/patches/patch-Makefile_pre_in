@@ -1,20 +1,9 @@
-$OpenBSD: patch-Makefile_pre_in,v 1.3 2021/11/01 07:43:39 landry Exp $
+$OpenBSD: patch-Makefile_pre_in,v 1.4 2021/11/24 15:35:20 kmos Exp $
 
 Index: Makefile.pre.in
 --- Makefile.pre.in.orig
 +++ Makefile.pre.in
-@@ -99,8 +99,8 @@ PY_CFLAGS_NODIST=$(CONFIGURE_CFLAGS_NODIST) $(CFLAGS_N
- # Both CPPFLAGS and LDFLAGS need to contain the shell's value for setup.py to
- # be able to build extension modules using the directories specified in the
- # environment variables
--PY_CPPFLAGS=	$(BASECPPFLAGS) -I. -I$(srcdir)/Include $(CONFIGURE_CPPFLAGS) $(CPPFLAGS)
--PY_LDFLAGS=	$(CONFIGURE_LDFLAGS) $(LDFLAGS)
-+PY_CPPFLAGS=	$(BASECPPFLAGS) -I. -I$(srcdir)/Include $(CPPFLAGS)
-+PY_LDFLAGS=	$(LDFLAGS)
- PY_LDFLAGS_NODIST=$(CONFIGURE_LDFLAGS_NODIST) $(LDFLAGS_NODIST)
- NO_AS_NEEDED=	@NO_AS_NEEDED@
- SGI_ABI=	@SGI_ABI@
-@@ -674,7 +674,7 @@ gdbhooks: $(BUILDPYTHON)-gdb.py
+@@ -673,7 +673,7 @@ gdbhooks: $(BUILDPYTHON)-gdb.py
  
  SRC_GDB_HOOKS=$(srcdir)/Tools/gdb/libpython.py
  $(BUILDPYTHON)-gdb.py: $(SRC_GDB_HOOKS)

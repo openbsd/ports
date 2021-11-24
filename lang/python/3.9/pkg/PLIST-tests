@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.5 2021/09/01 17:41:48 kmos Exp $
+@comment $OpenBSD: PLIST-tests,v 1.6 2021/11/24 15:35:20 kmos Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-tests-${VERSION_SPEC}
@@ -531,6 +531,12 @@ lib/python3.9/test/__pycache__/ann_module2.cpython-39.pyc
 lib/python3.9/test/__pycache__/ann_module3.cpython-39.opt-1.pyc
 lib/python3.9/test/__pycache__/ann_module3.cpython-39.opt-2.pyc
 lib/python3.9/test/__pycache__/ann_module3.cpython-39.pyc
+lib/python3.9/test/__pycache__/ann_module5.cpython-39.opt-1.pyc
+lib/python3.9/test/__pycache__/ann_module5.cpython-39.opt-2.pyc
+lib/python3.9/test/__pycache__/ann_module5.cpython-39.pyc
+lib/python3.9/test/__pycache__/ann_module6.cpython-39.opt-1.pyc
+lib/python3.9/test/__pycache__/ann_module6.cpython-39.opt-2.pyc
+lib/python3.9/test/__pycache__/ann_module6.cpython-39.pyc
 lib/python3.9/test/__pycache__/audiotests.cpython-39.opt-1.pyc
 lib/python3.9/test/__pycache__/audiotests.cpython-39.opt-2.pyc
 lib/python3.9/test/__pycache__/audiotests.cpython-39.pyc
@@ -1971,6 +1977,8 @@ lib/python3.9/test/allsans.pem
 lib/python3.9/test/ann_module.py
 lib/python3.9/test/ann_module2.py
 lib/python3.9/test/ann_module3.py
+lib/python3.9/test/ann_module5.py
+lib/python3.9/test/ann_module6.py
 lib/python3.9/test/audiodata/
 lib/python3.9/test/audiodata/pluck-alaw.aifc
 lib/python3.9/test/audiodata/pluck-pcm16.aiff
@@ -3937,16 +3945,12 @@ lib/python3.9/tkinter/test/__pycache__/
 lib/python3.9/tkinter/test/__pycache__/__init__.cpython-39.opt-1.pyc
 lib/python3.9/tkinter/test/__pycache__/__init__.cpython-39.opt-2.pyc
 lib/python3.9/tkinter/test/__pycache__/__init__.cpython-39.pyc
-lib/python3.9/tkinter/test/__pycache__/runtktests.cpython-39.opt-1.pyc
-lib/python3.9/tkinter/test/__pycache__/runtktests.cpython-39.opt-2.pyc
-lib/python3.9/tkinter/test/__pycache__/runtktests.cpython-39.pyc
 lib/python3.9/tkinter/test/__pycache__/support.cpython-39.opt-1.pyc
 lib/python3.9/tkinter/test/__pycache__/support.cpython-39.opt-2.pyc
 lib/python3.9/tkinter/test/__pycache__/support.cpython-39.pyc
 lib/python3.9/tkinter/test/__pycache__/widget_tests.cpython-39.opt-1.pyc
 lib/python3.9/tkinter/test/__pycache__/widget_tests.cpython-39.opt-2.pyc
 lib/python3.9/tkinter/test/__pycache__/widget_tests.cpython-39.pyc
-lib/python3.9/tkinter/test/runtktests.py
 lib/python3.9/tkinter/test/support.py
 lib/python3.9/tkinter/test/test_tkinter/
 lib/python3.9/tkinter/test/test_tkinter/__init__.py
@@ -4003,9 +4007,6 @@ lib/python3.9/tkinter/test/test_ttk/__pycache__/__init__.cpython-39.pyc
 lib/python3.9/tkinter/test/test_ttk/__pycache__/test_extensions.cpython-39.opt-1.pyc
 lib/python3.9/tkinter/test/test_ttk/__pycache__/test_extensions.cpython-39.opt-2.pyc
 lib/python3.9/tkinter/test/test_ttk/__pycache__/test_extensions.cpython-39.pyc
-lib/python3.9/tkinter/test/test_ttk/__pycache__/test_functions.cpython-39.opt-1.pyc
-lib/python3.9/tkinter/test/test_ttk/__pycache__/test_functions.cpython-39.opt-2.pyc
-lib/python3.9/tkinter/test/test_ttk/__pycache__/test_functions.cpython-39.pyc
 lib/python3.9/tkinter/test/test_ttk/__pycache__/test_style.cpython-39.opt-1.pyc
 lib/python3.9/tkinter/test/test_ttk/__pycache__/test_style.cpython-39.opt-2.pyc
 lib/python3.9/tkinter/test/test_ttk/__pycache__/test_style.cpython-39.pyc
@@ -4013,7 +4014,6 @@ lib/python3.9/tkinter/test/test_ttk/__pycache__/test_widgets.cpython-39.opt-1.py
 lib/python3.9/tkinter/test/test_ttk/__pycache__/test_widgets.cpython-39.opt-2.pyc
 lib/python3.9/tkinter/test/test_ttk/__pycache__/test_widgets.cpython-39.pyc
 lib/python3.9/tkinter/test/test_ttk/test_extensions.py
-lib/python3.9/tkinter/test/test_ttk/test_functions.py
 lib/python3.9/tkinter/test/test_ttk/test_style.py
 lib/python3.9/tkinter/test/test_ttk/test_widgets.py
 lib/python3.9/tkinter/test/widget_tests.py

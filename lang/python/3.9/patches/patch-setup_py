@@ -1,4 +1,4 @@
-$OpenBSD: patch-setup_py,v 1.3 2021/09/01 17:41:48 kmos Exp $
+$OpenBSD: patch-setup_py,v 1.4 2021/11/24 15:35:20 kmos Exp $
 
 Index: setup.py
 --- setup.py.orig
@@ -12,16 +12,16 @@ Index: setup.py
                                 library_dirs=['/usr/lib/termcap'],
                                 extra_link_args=readline_extra_link_args,
                                 libraries=readline_libs))
-@@ -1770,7 +1772,7 @@ class PyBuildExt(build_ext):
-         # Build the _uuid module if possible
-         uuid_incs = find_file("uuid.h", self.inc_dirs, ["/usr/include/uuid"])
-         if uuid_incs is not None:
--            if self.compiler.find_library_file(self.lib_dirs, 'uuid'):
-+            if self.compiler.find_library_file(self.lib_dirs, 'uuid') and not HOST_PLATFORM.startswith('openbsd'):
-                 uuid_libs = ['uuid']
+@@ -1773,7 +1775,7 @@ class PyBuildExt(build_ext):
+         uuid_h = sysconfig.get_config_var("HAVE_UUID_H")
+         uuid_uuid_h = sysconfig.get_config_var("HAVE_UUID_UUID_H")
+         if uuid_h or uuid_uuid_h:
+-            if sysconfig.get_config_var("HAVE_LIBUUID"):
++            if sysconfig.get_config_var("HAVE_LIBUUID") and not HOST_PLATFORM.startswith('openbsd'):
+                 uuid_libs = ["uuid"]
              else:
                  uuid_libs = []
-@@ -1993,8 +1995,7 @@ class PyBuildExt(build_ext):
+@@ -1995,8 +1997,7 @@ class PyBuildExt(build_ext):
          # The versions with dots are used on Unix, and the versions without
          # dots on Windows, for detection by cygwin.
          tcllib = tklib = tcl_includes = tk_includes = None
