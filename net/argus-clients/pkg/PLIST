@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/01/26 13:13:58 steven Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/11/24 19:23:50 steven Exp $
 bin/argusclientbug
 @bin bin/ra
 @bin bin/rabins
@@ -67,6 +67,7 @@ include/argus/argus_llc.h
 include/argus/argus_main.h
 include/argus/argus_mdp.h
 include/argus/argus_metric.h
+include/argus/argus_mysql.h
 include/argus/argus_namedb.h
 include/argus/argus_os.h
 include/argus/argus_out.h
