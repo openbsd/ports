@@ -6,3 +6,5 @@ To list all supported extractors and the URLs they can handle, use:
 $ youtube-dl --list-extractors
 
 To retrieve RTMP streams, install the rtmpdump package.
+
+Note: also see the fork of this in the "yt-dlp" package.
