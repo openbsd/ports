@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.131 2021/10/28 06:40:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.132 2021/11/25 19:41:02 ajacoutot Exp $
 
 PORTROACH=		limit:^2
 
 COMMENT =		HTTP client/server library for GNOME
 
 GNOME_PROJECT =		libsoup
-GNOME_VERSION =		2.74.1
+GNOME_VERSION =		2.74.2
 
-SHARED_LIBS += soup-2.4                  10.6 # 1.11.1
-SHARED_LIBS += soup-gnome-2.4            8.1 # 1.11.1
+SHARED_LIBS += soup-2.4                  10.6 # 1.11.2
+SHARED_LIBS += soup-gnome-2.4            8.1 # 1.11.2
 
 API_VERSION =		2.4
 SUBST_VARS =		API_VERSION
@@ -21,8 +21,8 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # LGPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += brotlidec gio-2.0 glib-2.0 gobject-2.0 intl psl sqlite3
-WANTLIB += xml2 z
+WANTLIB += brotlidec gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += intl psl sqlite3 xml2 z
 
 MODULES =		devel/meson \
 			lang/python \
