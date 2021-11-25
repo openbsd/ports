@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2021/11/18 10:23:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2021/11/25 08:25:22 sthen Exp $
 
 # when gtk+4 support is added, split into multi packages (gtk+{2,3,4})
 
@@ -14,9 +14,9 @@ PKGNAME-main =		ibus-${GH_TAGNAME}
 PKGNAME-gtk2 =		ibus-gtk2-${GH_TAGNAME}
 PKGNAME-gtk4 =		ibus-gtk4-${GH_TAGNAME}
 
-REVISION-main =		3
-REVISION-gtk2 =		1
-REVISION-gtk4 =		1
+REVISION-main =		4
+REVISION-gtk2 =		2
+REVISION-gtk4 =		2
 
 SHARED_LIBS +=  ibus-1.0             4.3      # 5.525
 
@@ -29,7 +29,7 @@ PERMIT_PACKAGE =	Yes
 
 MULTI_PACKAGES =	-main -gtk2 -gtk4
 
-WANTLIB += ${COMPILER_LIBCXX} X11 Xcursor Xdamage Xext
+WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender cairo expat ffi fontconfig
 WANTLIB += freetype fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 harfbuzz iconv intl m pango-1.0
