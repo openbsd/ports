@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2021/05/19 11:52:01 stsp Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/25 15:02:49 stsp Exp $
 
 FW_DRIVER=	iwx
-FW_VER=		20210512
-DISTNAME=	linux-firmware-iwlwifi-fw-2021-05-12
+FW_VER=		20211101
+DISTNAME=	linux-firmware-iwlwifi-fw-2021-11-01
 EXTRACT_FILES=	${DISTNAME}/{LICENCE.\*,iwlwifi-\*-\*.ucode}
 
 HOMEPAGE=	https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi
@@ -13,12 +13,15 @@ HOMEPAGE=	https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi
 MASTER_SITES=	https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/linux-firmware.git/snapshot/
 
 
-FW=	cc-a0		48 \
-	cc-a0		63 \
-	Qu-c0-hr-b0	48 \
+FW=	cc-a0		63 \
+	cc-a0		67 \
+	Qu-b0-hr-b0	63 \
+	Qu-b0-jf-b0	63 \
 	Qu-c0-hr-b0	63 \
-	QuZ-a0-hr-b0	48 \
-	QuZ-a0-hr-b0	63
+	Qu-c0-jf-b0	63 \
+	QuZ-a0-hr-b0	63 \
+	QuZ-a0-hr-b0	67 \
+	QuZ-a0-jf-b0	63
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/LICENCE.iwlwifi_firmware \

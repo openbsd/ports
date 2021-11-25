@@ -1,8 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/05/19 11:52:01 stsp Exp $
-firmware/iwx-Qu-c0-hr-b0-48
+@comment $OpenBSD: PLIST,v 1.6 2021/11/25 15:02:50 stsp Exp $
+firmware/iwx-Qu-b0-hr-b0-63
+firmware/iwx-Qu-b0-jf-b0-63
 firmware/iwx-Qu-c0-hr-b0-63
-firmware/iwx-QuZ-a0-hr-b0-48
+firmware/iwx-Qu-c0-jf-b0-63
 firmware/iwx-QuZ-a0-hr-b0-63
-firmware/iwx-cc-a0-48
+firmware/iwx-QuZ-a0-hr-b0-67
+firmware/iwx-QuZ-a0-jf-b0-63
 firmware/iwx-cc-a0-63
+firmware/iwx-cc-a0-67
 firmware/iwx-license
