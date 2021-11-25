@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2021/11/23 09:31:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.120 2021/11/25 08:27:49 sthen Exp $
 
 COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
@@ -102,7 +102,7 @@ CONFIGURE_ARGS += -DICINGA2_WITH_MYSQL=OFF
 CONFIGURE_ARGS += -DICINGA2_WITH_PGSQL=OFF
 .endif
 
-.if !${ARCH:Mamd64} || defined(DEBUG)
+.if !${PROPERTIES:Mlp64} || defined(DEBUG)
 CONFIGURE_ARGS += -DICINGA2_UNITY_BUILD=OFF
 .endif
 
