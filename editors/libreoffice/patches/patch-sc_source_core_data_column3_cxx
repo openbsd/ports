@@ -1,9 +1,9 @@
-$OpenBSD: patch-sc_source_core_data_column3_cxx,v 1.8 2021/09/02 11:11:58 robert Exp $
+$OpenBSD: patch-sc_source_core_data_column3_cxx,v 1.9 2021/11/25 16:21:07 robert Exp $
 
 Index: sc/source/core/data/column3.cxx
 --- sc/source/core/data/column3.cxx.orig
 +++ sc/source/core/data/column3.cxx
-@@ -52,6 +52,8 @@
+@@ -55,6 +55,8 @@
  
  #include <memory>
  
