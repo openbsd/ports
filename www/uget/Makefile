@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2021/11/25 12:53:48 solene Exp $
+# $OpenBSD: Makefile,v 1.26 2021/11/25 18:10:28 solene Exp $
 
 COMMENT =	lightweight graphical download manager
 DISTNAME =	uget-2.2.2
 CATEGORIES =	www net x11
+REVISION =	0
 
-HOMEPAGE =	http://ugetdm.com/
+HOMEPAGE =	https://ugetdm.com/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # LGPLv2.1+
