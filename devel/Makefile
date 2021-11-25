@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2159 2021/11/20 08:24:48 landry Exp $
+# $OpenBSD: Makefile,v 1.2160 2021/11/25 18:28:15 sdk Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -153,6 +153,7 @@
      SUBDIR += flatzebra
      SUBDIR += flawfinder
      SUBDIR += fmt
+     SUBDIR += fnc
      SUBDIR += fossil
      SUBDIR += fossil,static
      SUBDIR += fox
