@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1054 2021/11/17 18:09:11 landry Exp $
+# $OpenBSD: Makefile,v 1.1055 2021/11/25 09:29:52 sthen Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -391,8 +391,6 @@
      SUBDIR += pecl-ssh2,php80
      SUBDIR += pelican
      SUBDIR += perlbal
-     SUBDIR += php-markdown
-     SUBDIR += php-predis
      SUBDIR += phpldapadmin
      SUBDIR += phpmyadmin
      SUBDIR += phppgadmin
