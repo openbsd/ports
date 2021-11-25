@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.55 2021/11/13 14:19:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2021/11/25 09:18:52 sthen Exp $
 
 COMMENT=	C-style arbitrary precision calculator
 
-V=		2.14.0.7
+V=		2.14.0.9
 DISTNAME=	calc-$V
 EXTRACT_SUFX=	.tar.bz2
 
