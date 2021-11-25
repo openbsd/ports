@@ -1,15 +1,15 @@
-$OpenBSD: patch-ui-gtk_UgtkSetting_c,v 1.2 2017/09/08 14:19:05 bcallah Exp $
+$OpenBSD: patch-ui-gtk_UgtkSetting_c,v 1.3 2021/11/25 12:53:48 solene Exp $
 Index: ui-gtk/UgtkSetting.c
 --- ui-gtk/UgtkSetting.c.orig
 +++ ui-gtk/UgtkSetting.c
-@@ -48,9 +48,7 @@
+@@ -49,9 +49,7 @@
  
  #define UGTK_ARIA2_PATH    "aria2c"
  
 -#define UGTK_ARIA2_ARGS    "--enable-rpc=true -D " \
 -                           "--disable-ipv6 "       \
 -                           "--check-certificate=false"
-+#define UGTK_ARIA2_ARGS    "--enable-rpc=true -D"
++#define UGTK_ARIA2_ARGS    "--enable-rpc=true -D "
  
  #define UGTK_ARIA2_URI     "http://localhost:6800/jsonrpc"
  

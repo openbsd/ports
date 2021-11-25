@@ -1,12 +1,13 @@
-$OpenBSD: patch-tests_test-plugin+app_c,v 1.1 2016/05/30 18:31:39 juanfra Exp $
---- tests/test-plugin+app.c.orig	Sun May 29 23:23:28 2016
-+++ tests/test-plugin+app.c	Sun May 29 23:23:41 2016
-@@ -159,7 +159,7 @@ void  test_setup_plugin_aria2 (void)
+$OpenBSD: patch-tests_test-plugin+app_c,v 1.2 2021/11/25 12:53:48 solene Exp $
+Index: tests/test-plugin+app.c
+--- tests/test-plugin+app.c.orig
++++ tests/test-plugin+app.c
+@@ -179,7 +179,7 @@ void  test_setup_plugin_aria2 (void)
  			"C:\\Program Files\\uGet\\bin\\aria2c.exe");
  #endif
- 	uget_plugin_set (pinfo, UGET_PLUGIN_ARIA2_ARGUMENT,
+ 	uget_plugin_global_set(pinfo, UGET_PLUGIN_ARIA2_GLOBAL_ARGUMENT,
 -			"--enable-rpc=true -D --check-certificate=false");
 +			"--enable-rpc=true -D");
- 	uget_plugin_set (pinfo, UGET_PLUGIN_ARIA2_LAUNCH, (void*) TRUE);
- 	uget_plugin_set (pinfo, UGET_PLUGIN_ARIA2_SHUTDOWN, (void*) TRUE);
+ 	uget_plugin_global_set(pinfo, UGET_PLUGIN_ARIA2_GLOBAL_LAUNCH, (void*) TRUE);
+ 	uget_plugin_global_set(pinfo, UGET_PLUGIN_ARIA2_GLOBAL_SHUTDOWN, (void*) TRUE);
  	ug_sleep (1000);
