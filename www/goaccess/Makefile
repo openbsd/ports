@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2021/10/18 11:04:50 kirby Exp $
+# $OpenBSD: Makefile,v 1.32 2021/11/25 08:50:03 kirby Exp $
 
 COMMENT =		realtime console web log analyzer
 
-DISTNAME =		goaccess-1.5.2
+DISTNAME =		goaccess-1.5.3
 
 CATEGORIES =		www
 
