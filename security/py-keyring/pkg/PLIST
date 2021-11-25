@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/09/02 08:38:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/11/25 09:24:38 sthen Exp $
 @conflict py-keyring-*
 @pkgpath security/py-keyring
 bin/keyring
@@ -36,10 +36,12 @@ lib/python${MODPY_VERSION}/site-packages/keyring/backends/${MODPY_PYCACHE}__init
 lib/python${MODPY_VERSION}/site-packages/keyring/backends/${MODPY_PYCACHE}chainer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/keyring/backends/${MODPY_PYCACHE}fail.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/keyring/backends/${MODPY_PYCACHE}kwallet.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/keyring/backends/${MODPY_PYCACHE}libsecret.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/keyring/backends/${MODPY_PYCACHE}null.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/keyring/backends/chainer.py
 lib/python${MODPY_VERSION}/site-packages/keyring/backends/fail.py
 lib/python${MODPY_VERSION}/site-packages/keyring/backends/kwallet.py
+lib/python${MODPY_VERSION}/site-packages/keyring/backends/libsecret.py
 lib/python${MODPY_VERSION}/site-packages/keyring/backends/macOS/
 lib/python${MODPY_VERSION}/site-packages/keyring/backends/macOS/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/keyring/backends/macOS/${MODPY_PYCACHE}/
@@ -97,10 +99,12 @@ lib/python${MODPY_VERSION}/site-packages/lib/keyring/backends/${MODPY_PYCACHE}__
 lib/python${MODPY_VERSION}/site-packages/lib/keyring/backends/${MODPY_PYCACHE}chainer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lib/keyring/backends/${MODPY_PYCACHE}fail.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lib/keyring/backends/${MODPY_PYCACHE}kwallet.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lib/keyring/backends/${MODPY_PYCACHE}libsecret.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lib/keyring/backends/${MODPY_PYCACHE}null.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lib/keyring/backends/chainer.py
 lib/python${MODPY_VERSION}/site-packages/lib/keyring/backends/fail.py
 lib/python${MODPY_VERSION}/site-packages/lib/keyring/backends/kwallet.py
+lib/python${MODPY_VERSION}/site-packages/lib/keyring/backends/libsecret.py
 lib/python${MODPY_VERSION}/site-packages/lib/keyring/backends/macOS/
 lib/python${MODPY_VERSION}/site-packages/lib/keyring/backends/macOS/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lib/keyring/backends/macOS/${MODPY_PYCACHE}/
