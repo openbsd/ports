@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2021/10/04 14:16:52 bket Exp $
+# $OpenBSD: Makefile,v 1.18 2021/11/25 18:52:55 sdk Exp $
 
 COMMENT =		the missing terminal file browser for X
 
-V =			4.3
+V =			4.4
 DISTNAME =		nnn-v${V}
 PKGNAME =		nnn-${V}
 
@@ -22,6 +22,8 @@ MASTER_SITES =		https://github.com/jarun/nnn/releases/download/v${V}/
 # Uses -std=c11 so cannot use base-gcc
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
+
+RUN_DEPENDS =		textproc/gsed
 
 MAKE_FLAGS =		CFLAGS_OPTIMIZATION=
 FAKE_FLAGS =		MANPREFIX="$(PREFIX)/man" \
