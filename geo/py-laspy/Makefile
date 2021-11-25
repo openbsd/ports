@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/02 00:01:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/11/25 15:11:47 landry Exp $
 
 COMMENT =		library for reading, modifying and creating LAS LiDAR files
 
-MODPY_EGG_VERSION=	1.7.0
+MODPY_EGG_VERSION=	2.0.2
 DISTNAME=		laspy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		1
 
 CATEGORIES=		geo devel textproc
 
