@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2021/10/26 04:47:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/25 19:53:31 ajacoutot Exp $
 
 COMMENT =		HTTP client/server library for GNOME
 
 GNOME_PROJECT =		libsoup
-GNOME_VERSION =		3.0.2
+GNOME_VERSION =		3.0.3
 PKGNAME=		libsoup3-${GNOME_VERSION}
-REVISION=		0
 
-SHARED_LIBS += soup-3.0                  0.1 # 0.0.2
+SHARED_LIBS += soup-3.0                  0.1 # 0.0.3
 
 API_VERSION =		3.0
 SUBST_VARS =		API_VERSION
@@ -20,8 +19,8 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # LGPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += brotlidec gio-2.0 glib-2.0 gobject-2.0 intl nghttp2
-WANTLIB += psl sqlite3 z
+WANTLIB += brotlidec gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += intl nghttp2 psl sqlite3 z
 
 MODULES =		devel/meson \
 			x11/gnome
