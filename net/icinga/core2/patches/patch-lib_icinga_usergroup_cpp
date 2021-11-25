@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_icinga_usergroup_cpp,v 1.1 2021/11/25 09:05:42 sthen Exp $
+
+From 2ad0a4b8c3852ad937fec9fc85780230257c821e Mon Sep 17 00:00:00 2001
+From: Julian Brost <julian.brost@icinga.com>
+Date: Wed, 17 Nov 2021 16:11:15 +0100
+Subject: [PATCH] Add missing include to fix non-unity builds
+
+Index: lib/icinga/usergroup.cpp
+--- lib/icinga/usergroup.cpp.orig
++++ lib/icinga/usergroup.cpp
+@@ -2,6 +2,7 @@
+ 
+ #include "icinga/usergroup.hpp"
+ #include "icinga/usergroup-ti.cpp"
++#include "icinga/notification.hpp"
+ #include "config/objectrule.hpp"
+ #include "config/configitem.hpp"
+ #include "base/configtype.hpp"
