@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/10/27 16:44:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/11/26 07:56:30 ajacoutot Exp $
 @newgroup _nomad:819
 @newuser _nomad:819:_nomad:daemon:Nomad Agent:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/nomad
@@ -7,3 +7,5 @@ share/examples/nomad/
 @sample ${SYSCONFDIR}/nomad/
 share/examples/nomad/nomad.hcl
 @sample ${SYSCONFDIR}/nomad/nomad.hcl
+share/examples/nomad/nomad_client.hcl
+share/examples/nomad/nomad_server.hcl
