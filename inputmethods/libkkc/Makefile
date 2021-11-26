@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2021/11/23 06:39:17 uaa Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/26 07:06:15 ajacoutot Exp $
 
 COMMENT =	Japanese Kana Kanji conversion library
 
@@ -23,6 +23,10 @@ WANTLIB =	${COMPILER_LIBCXX} c ffi gee-0.8 gio-2.0 glib-2.0 \
 
 # clang and libc++abi required
 COMPILER =	base-clang
+
+MODULES =	lang/python
+
+MODPY_RUNDEP =	No
 
 BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
