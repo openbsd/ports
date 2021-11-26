@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.34 2021/09/20 08:16:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2021/11/26 08:19:54 sthen Exp $
 
 COMMENT=	extract digital camera info tags from JPEG images
 
-V=		0_6_23
+V=		0_6_24
 GH_ACCOUNT=	libexif
 GH_PROJECT=	libexif
 GH_TAGNAME=	libexif-$V-release
 
 PKGNAME=	libexif-${V:S/_/./g}
-REVISION=	0
 
 SHARED_LIBS=	exif	13.1
 
