@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.24 2021/03/20 18:49:09 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.25 2021/11/26 08:08:32 sthen Exp $
 
 .if defined(V)
 COMMENT=	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
@@ -88,7 +88,7 @@ do-install:
 	${SUBST_CMD} -c -m 555 -o ${BINOWN} -g ${BINGRP} \
 		${FILESDIR}/unifi.sh ${PREFIX}/bin/unifi
 	ln -s unifi ${PREFIX}/bin/unifi-discover
-	rm -f ${INSTDIR}/unifi_sh_api.orig
+	rm -f ${INSTDIR}/unifi_sh_api${PATCHORIG}
 	rm -rf ${INSTDIR}/lib/native
 	${INSTALL_DATA_DIR} ${PREFIX}/share/snmp/mibs/
 	${INSTALL_DATA} ${FULLDISTDIR}/UBNT-{UniFi-,}MIB \
