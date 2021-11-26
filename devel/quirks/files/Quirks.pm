@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1345 2021/11/25 15:47:32 tb Exp $
+# $OpenBSD: Quirks.pm,v 1.1346 2021/11/26 12:56:53 semarie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -496,6 +496,7 @@ my $stem_extensions = {
 	'py-websocket-client' => 'py3-websocket-client',
 	'libmesode' => 'libstrophe',
 	'py-stem' => 'py3-stem',
+# 7.1	    
 	'py-jsonschema' => 'py3-jsonschema',
 	'py-CherryPy' => 'py3-CherryPy',
 	'py-IP' => 'py3-IP',
@@ -1455,6 +1456,7 @@ setup_obsolete_reason(
 	3 => 'bzr',
 	3 => 'bzr-svn',
 	6 => 'libvstr',
+# 7.1
 	0 => 'cue',
 	31 => 'py-SOAPpy',
 	31 => 'py-ao',
