@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/10 11:31:40 solene Exp $
+# $OpenBSD: Makefile,v 1.8 2021/11/26 17:24:46 solene Exp $
 
 COMMENT =	matrix-WhatsApp puppeting bridge
 
-MODGO_VERSION =	v0.1.10
+MODGO_VERSION =	v0.2.1
 MODGO_MODNAME =	maunium.net/go/mautrix-whatsapp
 
 DISTNAME =	mautrix-whatsapp-${MODGO_VERSION}

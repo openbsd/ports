@@ -1,5 +1,3 @@
-# $OpenBSD: modules.inc,v 1.3 2021/11/10 11:31:40 solene Exp $
-
 MODGO_MODFILES =	\
 	github.com/alecthomas/template				 v0.0.0-20160405071501-a0175ee3bccc \
 	github.com/alecthomas/units				 v0.0.0-20151022065526-2efee857e7cf \
@@ -22,7 +20,6 @@ MODGO_MODFILES =	\
 	github.com/golang/protobuf				 v1.4.0-rc.4.0.20200313231945-b860323f09d0 \
 	github.com/golang/protobuf				 v1.4.2 \
 	github.com/golang/protobuf				 v1.4.3 \
-	github.com/golang/protobuf				 v1.5.0 \
 	github.com/google/go-cmp				 v0.3.0 \
 	github.com/google/go-cmp				 v0.3.1 \
 	github.com/google/go-cmp				 v0.4.0 \
@@ -31,8 +28,6 @@ MODGO_MODFILES =	\
 	github.com/json-iterator/go				 v1.1.6 \
 	github.com/julienschmidt/httprouter			 v1.2.0 \
 	github.com/konsorten/go-windows-terminal-sequences	 v1.0.1 \
-	github.com/lib/pq					 v1.9.0 \
-	github.com/mattn/go-sqlite3				 v1.14.6 \
 	github.com/modern-go/concurrent				 v0.0.0-20180228061459-e0a39a4cb421 \
 	github.com/modern-go/reflect2				 v0.0.0-20180701023420-4b7aa43c6742 \
 	github.com/mwitkow/go-conntrack				 v0.0.0-20161129095857-cc309e4a2223 \
@@ -60,7 +55,7 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto					 v0.0.0-20190308221718-c2843e01d9a2 \
 	golang.org/x/crypto					 v0.0.0-20200115085410-6d4e4cb37c7d \
 	golang.org/x/crypto					 v0.0.0-20200622213623-75b288015ac9 \
-	golang.org/x/crypto					 v0.0.0-20210220033148-5ea612d1eb83 \
+	golang.org/x/crypto					 v0.0.0-20210921155107-089bfa567519 \
 	golang.org/x/net					 v0.0.0-20180724234803-3673e40ba225 \
 	golang.org/x/net					 v0.0.0-20180906233101-161cd47e91fd \
 	golang.org/x/net					 v0.0.0-20181114220301-adae6a3d119a \
@@ -68,7 +63,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net					 v0.0.0-20190404232315-eb5bcb51f2a3 \
 	golang.org/x/net					 v0.0.0-20190613194153-d28f0bde5980 \
 	golang.org/x/net					 v0.0.0-20200625001655-4c5254603344 \
-	golang.org/x/net					 v0.0.0-20210220033124-5f55cee0dc0d \
+	golang.org/x/net					 v0.0.0-20210226172049-e18ecbb05110 \
 	golang.org/x/sync					 v0.0.0-20180314180146-1d60e4601c6f \
 	golang.org/x/sync					 v0.0.0-20181108010431-42b317875d0f \
 	golang.org/x/sync					 v0.0.0-20181221193216-37e7f081c4d4 \
@@ -79,14 +74,14 @@ MODGO_MODFILES =	\
 	golang.org/x/sys					 v0.0.0-20190215142949-d0b11bdaac8a \
 	golang.org/x/sys					 v0.0.0-20190412213103-97732733099d \
 	golang.org/x/sys					 v0.0.0-20190422165155-953cdadca894 \
-	golang.org/x/sys					 v0.0.0-20191026070338-33540a1f6037 \
 	golang.org/x/sys					 v0.0.0-20200106162015-b016eb3dc98e \
 	golang.org/x/sys					 v0.0.0-20200323222414-85ca7c5b95cd \
 	golang.org/x/sys					 v0.0.0-20200615200032-f1bc736245b1 \
 	golang.org/x/sys					 v0.0.0-20200625212154-ddb9806d33ae \
 	golang.org/x/sys					 v0.0.0-20201119102817-f84b799fce68 \
 	golang.org/x/sys					 v0.0.0-20210124154548-22da62e12c0c \
-	golang.org/x/term					 v0.0.0-20201117132131-f5c789dd3221 \
+	golang.org/x/sys					 v0.0.0-20210423082822-04245dca01da \
+	golang.org/x/sys					 v0.0.0-20210603081109-ebe580a85c40 \
 	golang.org/x/text					 v0.3.0 \
 	golang.org/x/text					 v0.3.2 \
 	golang.org/x/text					 v0.3.3 \
@@ -103,10 +98,10 @@ MODGO_MODFILES =	\
 	gopkg.in/yaml.v2					 v2.2.4 \
 	gopkg.in/yaml.v2					 v2.2.5 \
 	gopkg.in/yaml.v2					 v2.3.0 \
-	maunium.net/go/maulogger/v2				 v2.2.4
+	gopkg.in/yaml.v3					 v3.0.0-20200313102051-9f266ea9e77c
 MODGO_MODULES =	\
 	cloud.google.com/go					 v0.34.0 \
-	github.com/!rhymen/go-whatsapp				 v0.1.0 \
+	filippo.io/edwards25519					 v1.0.0-rc.1 \
 	github.com/aead/siphash					 v1.0.1 \
 	github.com/alecthomas/template				 v0.0.0-20190718012654-fb15b899a751 \
 	github.com/alecthomas/units				 v0.0.0-20190924025748-f65c72e2690d \
@@ -127,7 +122,7 @@ MODGO_MODULES =	\
 	github.com/go-logfmt/logfmt				 v0.5.0 \
 	github.com/go-stack/stack				 v1.8.0 \
 	github.com/gogo/protobuf				 v1.1.1 \
-	github.com/golang/protobuf				 v1.5.2 \
+	github.com/golang/protobuf				 v1.5.0 \
 	github.com/google/go-cmp				 v0.5.5 \
 	github.com/google/gofuzz				 v1.0.0 \
 	github.com/gorilla/mux					 v1.8.0 \
@@ -144,8 +139,8 @@ MODGO_MODULES =	\
 	github.com/kr/pretty					 v0.1.0 \
 	github.com/kr/pty					 v1.1.1 \
 	github.com/kr/text					 v0.1.0 \
-	github.com/lib/pq					 v1.10.2 \
-	github.com/mattn/go-sqlite3				 v1.14.8 \
+	github.com/lib/pq					 v1.10.3 \
+	github.com/mattn/go-sqlite3				 v1.14.9 \
 	github.com/matttproud/golang_protobuf_extensions	 v1.0.1 \
 	github.com/modern-go/concurrent				 v0.0.0-20180306012644-bacd9c7ef1dd \
 	github.com/modern-go/reflect2				 v1.0.1 \
@@ -162,30 +157,31 @@ MODGO_MODULES =	\
 	github.com/sirupsen/logrus				 v1.6.0 \
 	github.com/skip2/go-qrcode				 v0.0.0-20200617195104-da1b6568686e \
 	github.com/stretchr/objx				 v0.1.1 \
-	github.com/stretchr/testify				 v1.6.1 \
-	github.com/tidwall/gjson				 v1.6.8 \
-	github.com/tidwall/match				 v1.0.3 \
-	github.com/tidwall/pretty				 v1.0.2 \
-	github.com/tidwall/sjson				 v1.1.5 \
-	github.com/tulir/go-whatsapp				 v0.5.12 \
-	golang.org/x/crypto					 v0.0.0-20210506145944-38f3c27a63bf \
+	github.com/stretchr/testify				 v1.7.0 \
+	github.com/tidwall/gjson				 v1.10.2 \
+	github.com/tidwall/match				 v1.1.1 \
+	github.com/tidwall/pretty				 v1.2.0 \
+	github.com/tidwall/sjson				 v1.2.3 \
+	go.mau.fi/libsignal					 v0.0.0-20211109153248-a67163214910 \
+	go.mau.fi/whatsmeow					 v0.0.0-20211110182414-ba28bae40fb5 \
+	golang.org/x/crypto					 v0.0.0-20211108221036-ceb1ce70b4fa \
 	golang.org/x/image					 v0.0.0-20210628002857-a66eb6448b8d \
-	golang.org/x/net					 v0.0.0-20210226172049-e18ecbb05110 \
+	golang.org/x/net					 v0.0.0-20211020060615-d418f374d309 \
 	golang.org/x/oauth2					 v0.0.0-20190226205417-e64efc72b421 \
 	golang.org/x/sync					 v0.0.0-20201207232520-09787c993a3a \
-	golang.org/x/sys					 v0.0.0-20210603081109-ebe580a85c40 \
+	golang.org/x/sys					 v0.0.0-20210615035016-665e8c7367d1 \
 	golang.org/x/term					 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/text					 v0.3.6 \
 	golang.org/x/tools					 v0.0.0-20180917221912-90fa682c2a6e \
 	golang.org/x/xerrors					 v0.0.0-20191204190536-9bdfabe68543 \
 	google.golang.org/appengine				 v1.4.0 \
-	google.golang.org/protobuf				 v1.26.0 \
+	google.golang.org/protobuf				 v1.27.1 \
 	gopkg.in/alecthomas/kingpin.v2				 v2.2.6 \
 	gopkg.in/check.v1					 v1.0.0-20190902080502-41f04d3bba15 \
 	gopkg.in/fsnotify.v1					 v1.4.7 \
 	gopkg.in/tomb.v1					 v1.0.0-20141024135613-dd632973f1e7 \
 	gopkg.in/yaml.v2					 v2.4.0 \
-	gopkg.in/yaml.v3					 v3.0.0-20200313102051-9f266ea9e77c \
+	gopkg.in/yaml.v3					 v3.0.0-20210107192922-496545a6307b \
 	maunium.net/go/mauflag					 v1.0.0 \
-	maunium.net/go/maulogger/v2				 v2.3.0 \
-	maunium.net/go/mautrix					 v0.9.27
+	maunium.net/go/maulogger/v2				 v2.3.1 \
+	maunium.net/go/mautrix					 v0.10.1
