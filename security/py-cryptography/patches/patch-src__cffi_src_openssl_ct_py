@@ -1,0 +1,14 @@
+$OpenBSD: patch-src__cffi_src_openssl_ct_py,v 1.1 2021/11/26 07:59:42 tb Exp $
+
+Index: src/_cffi_src/openssl/ct.py
+--- src/_cffi_src/openssl/ct.py.orig
++++ src/_cffi_src/openssl/ct.py
+@@ -87,7 +87,7 @@ typedef enum {
+ } sct_source_t;
+ 
+ /* OpenSSL compiled with `no-ct` still defines the `SCT` struct. */
+-#if !defined(OPENSSL_NO_CT)
++#if !defined(OPENSSL_NO_CT) || defined(LIBRESSL_VERSION_NUMBER)
+ typedef void SCT;
+ #endif
+ 
