@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.35 2021/03/07 19:30:16 gnezdo Exp $
+# $OpenBSD: FS2.pm,v 1.36 2021/11/26 16:47:30 ajacoutot Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -65,6 +65,7 @@ sub classes
 	return (qw(OpenBSD::FS::File::Directory OpenBSD::FS::File::Rc
 		OpenBSD::FS::File::Desktop
 		OpenBSD::FS::File::Glib2Schema
+		OpenBSD::FS::File::IbusComponent
 		OpenBSD::FS::File::PkgConfig
 		OpenBSD::FS::File::MimeInfo
 		OpenBSD::FS::File::Icon
@@ -196,6 +197,19 @@ sub recognize
 sub element_class
 {
 	'OpenBSD::PackingElement::Glib2Schema';
+}
+
+package OpenBSD::FS::File::IbusComponent;
+our @ISA = qw(OpenBSD::FS::File);
+sub recognize
+{
+	my ($class, $filename, $fs) = @_;
+	return $filename =~ m,share/ibus/component/.*\.xml$,;
+}
+
+sub element_class
+{
+	'OpenBSD::PackingElement::IbusComponent';
 }
 
 package OpenBSD::FS::File::PkgConfig;

@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.195 2021/03/07 19:30:16 gnezdo Exp $
+# $OpenBSD: update-plist,v 1.196 2021/11/26 16:47:30 ajacoutot Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -917,6 +917,14 @@ sub check_specific
 {
 	my ($self, $h) = @_;
 	$h->{should}{'glib-compile-schemas'} = 1;
+}
+
+package OpenBSD::PackingElement::IbusComponent;
+our @ISA=qw(OpenBSD::PackingElement::File);
+sub check_specific
+{
+	my ($self, $h) = @_;
+	$h->{should}{'ibus-write-cache'} = 1;
 }
 
 package OpenBSD::PackingElement::IconThemeDirectory;
