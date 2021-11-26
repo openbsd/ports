@@ -1,4 +1,4 @@
 SHA256 (ruby-2.7-ffi-closure-fix.patch) = 4MKbiJzsl+VKRd24hZ4wWmiRQnEJgMKGcZS2KUsN1TU=
-SHA256 (ruby-2.7.4.tar.gz) = MEMJkIlgiFn8jM5/n9zKofU6RiRX44OOw7JafWCfvFs=
+SHA256 (ruby-2.7.5.tar.gz) = J1W5AKISNbRDuxba3ZAy94TUqI8UPYUrxdFU8iuHgfE=
 SIZE (ruby-2.7-ffi-closure-fix.patch) = 1033
-SIZE (ruby-2.7.4.tar.gz) = 16915699
+SIZE (ruby-2.7.5.tar.gz) = 16923709
