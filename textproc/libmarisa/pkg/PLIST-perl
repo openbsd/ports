@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST-perl,v 1.1 2021/11/26 13:35:06 inoguchi Exp $
+${P5ARCH}/
+${P5ARCH}/auto/
+${P5ARCH}/auto/marisa/
+@so ${P5ARCH}/auto/marisa/marisa.so
+@comment ${P5ARCH}/benchmark.pl
+${P5ARCH}/marisa.pm
+@comment ${P5ARCH}/sample.pl
