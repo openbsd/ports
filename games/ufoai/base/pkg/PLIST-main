@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2018/06/27 21:03:50 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2021/11/26 20:23:27 thfr Exp $
 bin/ufoai
 bin/ufoded
 @man man/man6/ufoai.6
@@ -11,7 +11,7 @@ share/pixmaps/ufoai.xpm
 share/pixmaps/ufoded.xpm
 share/ufoai/COPYING
 share/ufoai/LICENSES
-share/ufoai/base/game.so
+@so share/ufoai/base/game.so
 share/ufoai/base/i18n/
 share/ufoai/base/i18n/bg_BG/
 share/ufoai/base/i18n/bg_BG/LC_MESSAGES/

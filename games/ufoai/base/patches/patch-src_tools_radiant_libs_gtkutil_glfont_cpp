@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_tools_radiant_libs_gtkutil_glfont_cpp,v 1.1 2021/11/26 20:23:26 thfr Exp $
+
+replace retired gdk_gl_font_use_pango_font with pango_font_map_load_font
+https://github.com/Garux/netradiant-custom/commit/a0a47640b0270d9377273f4fcb714a787300b7ac
+
+Index: src/tools/radiant/libs/gtkutil/glfont.cpp
+--- src/tools/radiant/libs/gtkutil/glfont.cpp.orig
++++ src/tools/radiant/libs/gtkutil/glfont.cpp
+@@ -23,6 +23,7 @@
+ #include <GL/gl.h>
+ #include "debugging/debugging.h"
+ #include <gtk/gtkglwidget.h>
++#include <pango-1.0/pango/pangoft2.h>
+ 
+ GLFont glfont_create (const std::string& font_string)
+ {
+@@ -31,7 +32,10 @@ GLFont glfont_create (const std::string& font_string)
+ 
+ 	PangoFontDescription* font_desc = pango_font_description_from_string(font_string.c_str());
+ 
+-	PangoFont* font = gdk_gl_font_use_pango_font(font_desc, 0, 256, font_list_base);
++	PangoFontMap *fontmap = pango_ft2_font_map_new();
++	pango_ft2_font_map_set_resolution(PANGO_FT2_FONT_MAP(fontmap), 72, 72);
++	PangoContext *ft2_context = pango_font_map_create_context(fontmap);
++	PangoFont* font = pango_font_map_load_font(fontmap, ft2_context, font_desc);
+ 
+ 	if (font != 0) {
+ 		PangoFontMetrics* font_metrics = pango_font_get_metrics(font, 0);

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.8 2019/07/12 21:07:46 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2021/11/26 20:23:26 thfr Exp $
 
 # data package is useless without ufoai itself, which can only be
 # built on some arches.
 # Saves a useless 895MB package on other arches.
-ONLY_FOR_ARCHS=	amd64 i386 powerpc
+ONLY_FOR_ARCHS=	amd64 arm64 i386 powerpc riscv64
 
 CATEGORIES = 	games
 
