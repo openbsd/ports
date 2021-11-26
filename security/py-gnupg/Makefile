@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2021/11/02 00:02:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2021/11/26 08:17:35 sthen Exp $
 
 COMMENT=		Python module for GnuPG interface
 
-MODPY_EGG_VERSION=	0.4.7
+MODPY_EGG_VERSION=	0.4.8
 DISTNAME=		python-gnupg-${MODPY_EGG_VERSION}
 PKGNAME=		py-gnupg-${MODPY_EGG_VERSION}
-REVISION=		0
 
 CATEGORIES=		security devel
 
@@ -25,9 +24,6 @@ BUILD_DEPENDS=		security/gnupg
 RUN_DEPENDS=		security/gnupg
 
 MODPY_SETUPTOOLS=	Yes
-
-do-test:
-	cd ${WRKSRC} && \
-	    ${SETENV} ${MAKE_ENV} LOGNAME=nobody ${MODPY_BIN} test_gnupg.py
+MODPY_PYTEST=		Yes
 
 .include <bsd.port.mk>
