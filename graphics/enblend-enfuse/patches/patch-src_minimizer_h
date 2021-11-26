@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_minimizer_h,v 1.1 2021/11/26 05:27:04 kirby Exp $
+
+Index: src/minimizer.h
+--- src/minimizer.h.orig
++++ src/minimizer.h
+@@ -29,6 +29,7 @@
+ #include <string>
+ #include <stdexcept>
+ #include <vector>
++#include <limits>
+ 
+ #include <boost/optional.hpp>
+ 
