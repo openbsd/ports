@@ -1,4 +1,4 @@
-$OpenBSD: patch-meson_build,v 1.6 2021/10/25 14:48:38 jasper Exp $
+$OpenBSD: patch-meson_build,v 1.7 2021/11/26 14:43:10 ajacoutot Exp $
 
 In file included from /usr/include/readline/readline.h:38:
 In file included from /usr/include/readline/keymaps.h:36:
@@ -10,6 +10,10 @@ const char* strstr(const char* __s1, const char* __s2) {return __libcpp_strstr(_
       char    *strstr(const char *, const char *);
       ~~~~~~~~~^
       5 errors generated.
+
+XXX check at next release
+Fix build with meson >= 0.60.2
+
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
@@ -36,3 +40,12 @@ Index: meson.build
              required: readline.found()))
  endif
  header_conf.set('USE_UNITY_BUILD', get_option('unity'))
+@@ -563,7 +568,7 @@ gjs_private_gir = gnome.generate_gir(libgjs,
+     includes: ['GObject-2.0', 'Gio-2.0'], sources: libgjs_private_sources,
+     namespace: 'GjsPrivate', nsversion: '1.0', identifier_prefix: 'Gjs',
+     symbol_prefix: 'gjs_', extra_args: '--warn-error', install: true,
+-    install_dir_gir: false, install_dir_typelib: pkglibdir / 'girepository-1.0')
++    install_dir_typelib: pkglibdir / 'girepository-1.0')
+ gjs_private_typelib = gjs_private_gir[1]
+ 
+ ### Build gjs-console interpreter ##############################################
