@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.49 2021/10/11 09:26:01 landry Exp $
+# $OpenBSD: Makefile,v 1.50 2021/11/26 13:27:17 landry Exp $
 
 COMMENT=	Xfce4 lightweight image-viewer
 
-XFCE_VERSION=	0.12.0
+XFCE_VERSION=	0.12.1
 XFCE_GOODIE=	ristretto
 
 # GPLv2
