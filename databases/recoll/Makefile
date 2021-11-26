@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2021/11/22 13:55:55 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2021/11/26 09:04:57 sthen Exp $
 
 COMMENT-main=	full text search application
 COMMENT-gui=	X user interface to recoll
 
 MULTI_PACKAGES=	-main -gui
 
-V=		1.31.0
+V=		1.31.4
 DISTNAME=	recoll-${V}
-REVISION-gui=	0
-REVISION-main=	0
 
 SHARED_LIBS +=	recoll-${V}            1.0 # 0.0
 SHARED_LIBS +=  recoll                 1.0 # 0.0
@@ -40,6 +38,7 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 MODULES=		lang/python \
 			x11/qt5
+MODPY_EGG_VERSION=	$V
 
 USE_GMAKE=		Yes
 DPB_PROPERTIES=		parallel
