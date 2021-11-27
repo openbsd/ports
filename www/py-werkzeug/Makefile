@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.42 2021/11/27 22:45:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2021/11/27 22:50:22 sthen Exp $
 
 COMMENT =		WSGI utility collection
 
-MODPY_EGG_VERSION =	2.0.2
+MODPY_EGG_VERSION =	0.12.1
 DISTNAME =		Werkzeug-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
+EPOCH =			0
 
 CATEGORIES =		www devel
 
@@ -13,20 +14,36 @@ HOMEPAGE =		https://palletsprojects.com/p/werkzeug/
 # BSD
 PERMIT_PACKAGE =	Yes
 
+GH_ACCOUNT=		pallets
+GH_PROJECT=		werkzeug
+GH_TAGNAME=		${MODPY_EGG_VERSION}
+
 MODULES =		lang/python
 
 FLAVORS =		python3
 FLAVOR =		python3
 
 MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
-MODPY_PI =		Yes
 
-TEST_DEPENDS =		devel/py-greenlet${MODPY_FLAVOR} \
-			devel/py-test-timeout${MODPY_FLAVOR} \
-			devel/py-test-xprocess${MODPY_FLAVOR} \
-			security/py-cryptography${MODPY_FLAVOR} \
+BUILD_DEPENDS =		textproc/py-sphinx,python3>=4.0.2
+
+TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}
-# wants watchdog, pytest 6
+
+MAKE_ENV +=	PYTHONPATH=${WRKSRC}
+
+pre-build:
+	${SUBST_CMD} ${WRKSRC}/tests/test_serving.py
+
+post-build:
+	cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
+
+DOCS =		${PREFIX}/share/doc/${MODPY_PY_PREFIX}werkzeug
+EXAMPLES =	${PREFIX}/share/examples/${MODPY_PY_PREFIX}werkzeug
+post-install:
+	${INSTALL_DATA_DIR} ${DOCS}
+	cd ${WRKSRC}/docs/_build/html && pax -rw * ${DOCS}
+	${INSTALL_DATA_DIR} ${EXAMPLES}
+	cd ${WRKSRC}/examples && pax -rw * ${EXAMPLES}
 
 .include <bsd.port.mk>
