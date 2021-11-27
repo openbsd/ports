@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/09/09 23:08:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/11/27 18:02:34 op Exp $
 
 # See https://github.com/tdlib/td/issues/364
 NOT_FOR_ARCHS =	${BE_ARCHS}
@@ -9,8 +9,8 @@ COMMENT =	cross-platform library for building Telegram clients
 # track "unofficial minor versions" which are only present as commit hashes.
 GH_ACCOUNT =	tdlib
 GH_PROJECT =	td
-GH_COMMIT =	7135caa2bef38939f58e9e206db83fd316236682
-DISTNAME =	tdlib-1.7.7
+GH_COMMIT =	7d41d9eaa58a6e0927806283252dc9e74eda5512
+DISTNAME =	tdlib-1.7.9
 
 SHARED_LIBS +=	tdjson	0.1	# 1.7.7
 CATEGORIES =	net
