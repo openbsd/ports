@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/26 07:06:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/27 01:54:20 inoguchi Exp $
 
 COMMENT =	Japanese Kana Kanji conversion library
 
@@ -28,10 +28,7 @@ MODULES =	lang/python
 
 MODPY_RUNDEP =	No
 
-BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS} \
-		devel/libtool \
-		devel/gettext,-tools \
+BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/gobject-introspection \
 		lang/vala \
 		textproc/libmarisa,-python
