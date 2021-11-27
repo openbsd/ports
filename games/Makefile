@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.445 2021/11/02 21:11:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.446 2021/11/27 18:36:18 thfr Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -151,6 +151,7 @@
      SUBDIR += hackdata
      SUBDIR += heroes
      SUBDIR += hex-a-hop
+     SUBDIR += hlsteam
      SUBDIR += hypatia
      SUBDIR += hyperrogue
      SUBDIR += icebreaker
