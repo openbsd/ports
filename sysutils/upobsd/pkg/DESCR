@@ -1,8 +1,0 @@
-upobsd is a ksh(1) script designed to download, verify and optionally patch
-bsd.rd image.
-
-upobsd will download bsd.rd image using ftp(1) from mirror defined in
-installurl(5), will verify the downloaded file using signify(1) and local key
-inside /etc/signify to ensure integrity, and optionally patch the image for
-adding auto_install.conf or auto_upgrade.conf file to add support of offline
-autoinstall(8).

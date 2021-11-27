@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1346 2021/11/26 12:56:53 semarie Exp $
+# $OpenBSD: Quirks.pm,v 1.1347 2021/11/27 16:56:18 semarie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1615,6 +1615,7 @@ setup_obsolete_reason(
 	7 => 'php-markdown',
 	7 => 'php-predis',
 	5 => 'virtuoso',
+	3 => 'upobsd',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
