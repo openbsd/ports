@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.137 2021/11/22 15:00:42 espie Exp $
+# $OpenBSD: Makefile,v 1.138 2021/11/27 10:00:48 ajacoutot Exp $
 
 BROKEN-hppa=		no atomic primitives
 
 COMMENT-main=		text shaping library
 COMMENT-icu=		ICU support for libharfbuzz
 
-GH_ACCOUNT=		harfbuzz
-GH_PROJECT=		harfbuzz
-GH_TAGNAME=		3.1.1
+V=			3.1.2
+DISTNAME=		harfbuzz-${V}
+EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS += harfbuzz                  16.1 # 0.30101.0
-SHARED_LIBS += harfbuzz-subset           1.0 # 0.30101.0
-SHARED_LIBS += harfbuzz-icu              1.2 # 0.30101.0
-SHARED_LIBS += harfbuzz-gobject          0.3 # 0.30101.0
+SHARED_LIBS += harfbuzz                  16.1 # 0.30102.0
+SHARED_LIBS += harfbuzz-subset           1.0 # 0.30102.0
+SHARED_LIBS += harfbuzz-icu              1.2 # 0.30102.0
+SHARED_LIBS += harfbuzz-gobject          0.3 # 0.30102.0
 
 CATEGORIES=		devel graphics textproc
 
@@ -20,6 +20,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE=		Yes
+
+MASTER_SITES=		https://github.com/harfbuzz/harfbuzz/releases/download/${V}/
 
 WANTLIB-main += c cairo freetype glib-2.0 gobject-2.0 graphite2 m
 
@@ -39,7 +41,7 @@ BUILD_DEPENDS=		devel/gobject-introspection
 LIB_DEPENDS-main=	graphics/cairo \
 			graphics/graphite2
 
-LIB_DEPENDS-icu=	devel/harfbuzz,-main=${GH_TAGNAME} \
+LIB_DEPENDS-icu=	devel/harfbuzz,-main=${V} \
 			textproc/icu4c
 
 .include <bsd.port.arch.mk>
