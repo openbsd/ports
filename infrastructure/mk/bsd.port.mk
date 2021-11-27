@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1562 2021/11/22 11:01:47 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1563 2021/11/27 16:46:13 semarie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -861,12 +861,10 @@ _WRKDIRS += ${WRKOBJDIR_MFS}/${_WRKDIR_STEM}
 WRKDIST ?= ${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME:C/^[vV]([0-9])/\1/}
 .elif !empty(GH_COMMIT)
 WRKDIST ?= ${WRKDIR}/${GH_PROJECT}-${GH_COMMIT}
-.else
-.  if !defined(DISTNAME)
+.elif !defined(DISTNAME)
 WRKDIST ?= ${WRKDIR}
-.  else
+.else
 WRKDIST ?= ${WRKDIR}/${DISTNAME}
-.  endif
 .endif
 
 WRKSRC ?= ${WRKDIST}
@@ -1278,10 +1276,8 @@ EXTRACT_SUFX ?= .tar.gz
 .if !empty(GH_COMMIT)
 GH_DISTFILE = ${DISTNAME}-${GH_COMMIT:C/(........).*/\1/}${EXTRACT_SUFX}{${GH_COMMIT}${EXTRACT_SUFX}}
 DISTFILES ?= ${GH_DISTFILE}
-.else
-.  if defined(DISTNAME)
+.elif defined(DISTNAME)
 DISTFILES ?= ${DISTNAME}${EXTRACT_SUFX}
-.  endif
 .endif
 
 PATCHFILES ?=
@@ -1447,12 +1443,10 @@ ERRORS += "Fatal: bogus PKGPATH=${PKGPATH} (no subdirectory)"
 CONFIGURE_SCRIPT ?= configure
 .if ${CONFIGURE_SCRIPT:M/*}
 _CONFIGURE_SCRIPT = ${CONFIGURE_SCRIPT}
-.else
-.  if ${SEPARATE_BUILD:L} != "no"
+.elif ${SEPARATE_BUILD:L} != "no"
 _CONFIGURE_SCRIPT = ${WRKSRC}/${CONFIGURE_SCRIPT}
-.  else
+.else
 _CONFIGURE_SCRIPT = ./${CONFIGURE_SCRIPT}
-.  endif
 .endif
 
 CONFIGURE_ENV += PATH=${PORTPATH}
@@ -1976,7 +1970,7 @@ _FAKE_TREE_LIST = \
 	${_nls}/{ru_RU.CP866,ru_RU.ISO_8859-5,ru_RU.KOI8-R} \
 	${_nls}/{sv_SE.ISO_8859-1,uk_UA.KOI8-U} \
 	${WRKINST}${VARBASE}/{db,games,log,spool,www}
-	
+
 # packing list utilities.  This generates a packing list from the WRKINST
 # directory. Not perfect, but pretty close.  The generated file
 # will have to have some tweaks done by hand.
@@ -1994,7 +1988,7 @@ _update_plist = ${_cache_fragment}; \
 	-s RCDIR -s SYSCONFDIR -s X11BASE \
 	-X ${_FAKE_COOKIE} -X ${_INSTALL_PRE_COOKIE} -X ${_PKGLOCATE_COOKIE} \
 	-X ${WRKINST}/.saved_libs
-	
+
 
 .for _d in ${_FAKE_TREE_LIST} ${_EXCLUDE_DEBUG_PLISTS}
 _update_plist += -X ${_d:Q}
