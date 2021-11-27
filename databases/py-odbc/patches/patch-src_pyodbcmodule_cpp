@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_pyodbcmodule_cpp,v 1.1 2019/11/24 13:24:30 sthen Exp $
+$OpenBSD: patch-src_pyodbcmodule_cpp,v 1.2 2021/11/27 08:50:28 sthen Exp $
 
 unixodbc vs iodbc
 
 Index: src/pyodbcmodule.cpp
 --- src/pyodbcmodule.cpp.orig
 +++ src/pyodbcmodule.cpp
-@@ -1109,7 +1109,9 @@ static const ConstantDef aConstants[] = {
+@@ -1106,7 +1106,9 @@ static const ConstantDef aConstants[] = {
      MAKECONST(SQL_CONVERT_DECIMAL),
      MAKECONST(SQL_CONVERT_DOUBLE),
      MAKECONST(SQL_CONVERT_FLOAT),

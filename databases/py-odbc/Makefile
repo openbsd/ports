@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2021/11/02 00:00:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2021/11/27 08:50:28 sthen Exp $
 
 COMMENT =	ODBC bindings for Python
 
-MODPY_EGG_VERSION = 4.0.30
+MODPY_EGG_VERSION = 4.0.32
 DISTNAME =	pyodbc-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/py/py-/}
-REVISION =	4
 
 CATEGORIES =	databases
 
@@ -31,5 +30,8 @@ CFLAGS +=	-fPIC -I${LOCALBASE}/include -L${LOCALBASE}/lib -Wno-deprecated-regist
 
 FLAVORS =	python3
 FLAVOR =	python3
+
+post-install:
+	mv ${PREFIX}/pyodbc.pyi ${WRKINST}${MODPY_SITEPKG}
 
 .include <bsd.port.mk>
