@@ -1,0 +1,23 @@
+$OpenBSD: patch-native_gameserver_cpp,v 1.1.1.1 2021/11/27 18:35:30 thfr Exp $
+
+GetPublicIP returns a struct; return its IPv4 member as int cast
+
+Index: native/gameserver.cpp
+--- native/gameserver.cpp.orig
++++ native/gameserver.cpp
+@@ -124,7 +124,7 @@ vuid HL_NAME(gameserver_get_steam_id)() {
+ }
+ 
+ int HL_NAME(gameserver_get_public_ip)() {
+-	return (int)SteamGameServer()->GetPublicIP();
++	return (int)SteamGameServer()->GetPublicIP().m_unIPv4;
+ }
+ 
+ DEFINE_PRIM(_BOOL, gameserver_init, _I32 _I32 _I32 _I32 _I32 _BYTES);
+@@ -196,4 +196,4 @@ HL_PRIM void HL_NAME(request_internet_server_list)( in
+ 
+ DEFINE_PRIM(_VOID, request_internet_server_list, _I32 _ARR _FUN(_VOID, _DYN));
+ 
+-// ---------
+\ No newline at end of file
++// ---------

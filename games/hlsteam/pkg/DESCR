@@ -1,0 +1,10 @@
+Simple Haxe wrapper of Steam API for Hashlink.
+
+Features:
+
+Achievements & Leaderboards
+Cloud
+Workshop / UGC (User Generated Content)
+Matchmaking / Networking
+Steam Controller Support
+Stats
