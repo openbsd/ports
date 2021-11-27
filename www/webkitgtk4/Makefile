@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.157 2021/11/25 19:05:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.158 2021/11/27 17:48:27 jca Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -112,12 +112,13 @@ CONFIGURE_ARGS +=	-DUSE_WPE_RENDERER=OFF
 CONFIGURE_ARGS +=	-DENABLE_GAMEPAD=OFF
 
 # sync with Source/JavaScriptCore/assembler/MacroAssembler.h
+# native support for riscv64 in LLInt fails to link with relocation errors
 .if ${MACHINE_ARCH} != "aarch64" && ${MACHINE_ARCH} != "amd64" && \
     ${MACHINE_ARCH} != "arm" && ${MACHINE_ARCH} != "i386" && \
     ${MACHINE_ARCH} != "mips64" && ${MACHINE_ARCH} != "mips64el"
 # #error "The MacroAssembler is not supported on this platform."
 CONFIGURE_ARGS +=	-DENABLE_JIT=OFF
-CONFIGURE_ARGS +=	-DENABLE_LLINT_C_LOOP=ON
+CONFIGURE_ARGS +=	-DENABLE_C_LOOP=ON
 .endif
 
 
