@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2021/08/17 11:50:53 solene Exp $
+# $OpenBSD: Makefile,v 1.12 2021/11/27 15:25:14 kn Exp $
 
 COMMENT =	curses TLS-only IRC client
 DISTNAME =	catgirl-1.9a
+REVISION =	0
 
 CATEGORIES =	net
 
@@ -23,6 +24,8 @@ WANTLIB +=	c curses tls
 DEBUG_PACKAGES =${BUILD_PACKAGES}
 
 MASTER_SITES =	https://git.causal.agency/catgirl/snapshot/
+
+CONFIGURE_STYLE =	simple
 
 NO_TEST =	Yes
 
