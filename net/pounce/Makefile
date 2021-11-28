@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/28 08:19:09 op Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/28 09:52:53 op Exp $
 
 COMMENT =	multi-client, TLS-only IRC bouncer
 
@@ -10,7 +10,7 @@ HOMEPAGE =	https://git.causal.agency/pounce/about/
 
 MAINTAINER =	Omar Polo <op@omarpolo.com>
 
-# GPLv3
+# GPLv3+
 PERMIT_PACKAGE =	Yes
 
 # uses pledge() and unveil()
