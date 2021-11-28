@@ -1,0 +1,14 @@
+$OpenBSD: patch-etc_gnugk_ini,v 1.1 2021/11/28 11:42:25 ajacoutot Exp $
+
+Index: etc/gnugk.ini
+--- etc/gnugk.ini.orig
++++ etc/gnugk.ini
+@@ -22,7 +22,7 @@ CallSignalPort=1720
+ AcceptUnregisteredCalls=0
+ DropCallsByReleaseComplete=1
+ SupportNATedEndpoints=1
+-EnableH46018=1
++;EnableH46018=1
+ 
+ ; enable proxy mode if needed
+ [Proxy]
