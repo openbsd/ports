@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2021/02/28 21:35:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2021/11/28 17:23:07 tb Exp $
 
 COMMENT=	Gadu-Gadu IM protocol client
 
 DISTNAME=	ekg-1.7
-REVISION=	4
+REVISION=	5
 CATEGORIES=	net
 
 HOMEPAGE=	http://ekg.chmurka.net/

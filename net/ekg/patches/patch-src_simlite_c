@@ -1,0 +1,56 @@
+$OpenBSD: patch-src_simlite_c,v 1.3 2021/11/28 17:23:07 tb Exp $
+
+Fix build with opaque EVP_MD_CTX in LibreSSL 3.5.
+
+Index: src/simlite.c
+--- src/simlite.c.orig
++++ src/simlite.c
+@@ -35,7 +35,7 @@
+ #include <string.h>
+ #include <time.h>
+ 
+-#include "libgadu.h"
++#include <libgadu.h>
+ #include "simlite.h"
+ 
+ #ifndef PATH_MAX
+@@ -180,12 +180,17 @@ char *sim_key_fingerprint(uint32_t uin)
+ 	RSA *key = sim_key_read(uin);
+ 	unsigned char md_value[EVP_MAX_MD_SIZE], *buf, *newbuf;
+ 	char *result = NULL;
+-	EVP_MD_CTX ctx;
++	EVP_MD_CTX *ctx;
+ 	int md_len, size, i;
+ 
+ 	if (!key)
+ 		return NULL;
+ 
++	if ((ctx = EVP_MD_CTX_new()) == NULL) {
++		sim_errno = SIM_ERROR_MEMORY;
++		goto cleanup;
++	}
++
+ 	if (uin)
+ 		size = i2d_RSAPublicKey(key, NULL);
+ 	else
+@@ -201,9 +206,9 @@ char *sim_key_fingerprint(uint32_t uin)
+ 	else
+ 		size = i2d_RSAPrivateKey(key, &newbuf);
+ 	
+-	EVP_DigestInit(&ctx, EVP_sha1());	
+-	EVP_DigestUpdate(&ctx, buf, size);
+-	EVP_DigestFinal(&ctx, md_value, &md_len);
++	EVP_DigestInit(ctx, EVP_sha1());	
++	EVP_DigestUpdate(ctx, buf, size);
++	EVP_DigestFinal(ctx, md_value, &md_len);
+ 
+ 	free(buf);
+ 
+@@ -216,6 +221,7 @@ char *sim_key_fingerprint(uint32_t uin)
+ 		snprintf(result + i * 3, (md_len * 3 - i * 3), (i != md_len - 1) ? "%.2x:" : "%.2x", md_value[i]);
+ 
+ cleanup:
++	EVP_MD_CTX_free(ctx);
+ 	RSA_free(key);
+ 
+ 	return result;
