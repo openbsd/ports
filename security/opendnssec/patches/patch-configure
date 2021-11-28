@@ -1,0 +1,37 @@
+$OpenBSD: patch-configure,v 1.1 2021/11/28 10:37:04 sthen Exp $
+
+opendnssec assumes that all ldns >=1.7 have Ed25519/Ed448 but this isn't
+correct. In ldns >= 1.8 the macros LDNS_BUILD_CONFIG_USE_ED25519 and
+LDNS_BUILD_CONFIG_USE_ED448 are available in ldns/common.h to test,
+and should be used. In ldns >= 1.8 the constants related to Ed25519/Ed448
+are _not_ available so builds using them will fail.
+
+Hardcoded for now. Could maybe use something like this instead:
+
+#if (LDNS_REVISION >= ((1<<16)|(8<<8)|(0)))
+#  define USE_ED25519 LDNS_BUILD_CONFIG_USE_ED25519
+#  define USE_ED448 LDNS_BUILD_CONFIG_USE_ED448
+#elif (LDNS_REVISION >= ((1<<16)|(7<<8)|(0)))
+#  define USE_ED25519 1
+#  define USE_ED448 1
+#else
+#  define USE_ED25519 0
+#  define USE_ED448 0
+#endif
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -22479,10 +22479,10 @@ fi
+ 
+ 
+ 
+-$as_echo "#define USE_ED25519 1" >>confdefs.h
++$as_echo "#define USE_ED25519 0" >>confdefs.h
+ 
+ 
+-$as_echo "#define USE_ED448 1" >>confdefs.h
++$as_echo "#define USE_ED448 0" >>confdefs.h
+ 
+ 
+ # cunit

@@ -1,0 +1,48 @@
+$OpenBSD: patch-libhsm_src_bin_hsmtest_c,v 1.1 2021/11/28 10:37:04 sthen Exp $
+
+Don't assume that LDNS >= 1.7 means that ed25519/ed448 support is present
+
+Index: libhsm/src/bin/hsmtest.c
+--- libhsm/src/bin/hsmtest.c.orig
++++ libhsm/src/bin/hsmtest.c
+@@ -116,10 +116,14 @@ hsm_test (const char *repository, hsm_ctx_t* ctx)
+         LDNS_ECDSAP256SHA256,
+         LDNS_ECDSAP384SHA384
+     };
+-#if (LDNS_REVISION >= ((1<<16)|(7<<8)|(0)))
++#if USE_ED25519 || USE_ED448
+     const ldns_algorithm ed_curves[] = {
++#if USE_ED25519
+         LDNS_ED25519,
++#endif
++#if USE_ED448
+         LDNS_ED448,
++#endif
+     };
+ #endif
+     ldns_algorithm curve;
+@@ -367,19 +371,23 @@ hsm_test (const char *repository, hsm_ctx_t* ctx)
+         }
+     }
+ 
+-#if (LDNS_REVISION >= ((1<<16)|(7<<8)|(0)))
++#if USE_ED25519 || USE_ED448
+     for (i=0; i<(sizeof(ed_curves)/sizeof(ldns_algorithm)); i++) {
+         curve = ed_curves[i];
+ 
+         switch(curve) {
++#if USE_ED25519
+         case LDNS_ED25519:
+             printf("Generating ED25519 key... ");
+             key = hsm_generate_eddsa_key(ctx, repository, "edwards25519");
+             break;
++#endif
++#if USE_ED448
+          case LDNS_ED448:
+             printf("Generating ED448 key... ");
+             key = hsm_generate_eddsa_key(ctx, repository, "edwards448");
+             break;
++#endif
+         default:
+             continue;
+         }
