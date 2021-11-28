@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/28 08:20:51 op Exp $
+@bin bin/litterbox
+@bin bin/scoop
+@bin bin/unscoop
+@man man/man1/litterbox.1
+@man man/man1/scoop.1
+@man man/man1/unscoop.1

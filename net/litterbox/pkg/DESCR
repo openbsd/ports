@@ -1,0 +1,4 @@
+litterbox is a TLS-only IRC logger.  It logs events from IRC in a
+SQLite database, indexing messages for full-text search.  It is
+intended for use with the IRC bouncer pounce, but can also be used
+independently as a logging bot.
