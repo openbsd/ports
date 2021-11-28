@@ -12,3 +12,11 @@ library is used to create high performance and highly portable
 network-centric applications. So all the GUI abstractions ahave been
 dropped and it was renamed the Portable Tools Library that you see
 today.
+
+NOTE:
+This is a fork of PTLib 2.10.9 to keep a stable API for the H323Plus library and
+the GNU Gatekeeper. The main PTLib development branch makes substantial API
+changes with every version, while this branch keeps the API stable and only
+makes compatible changes wherever possible.
+This fork is actively maintained to fix bugs and security issues.
+

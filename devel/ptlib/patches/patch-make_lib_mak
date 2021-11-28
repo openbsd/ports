@@ -1,0 +1,26 @@
+$OpenBSD: patch-make_lib_mak,v 1.12 2021/11/28 11:40:23 ajacoutot Exp $
+
+Index: make/lib.mak
+--- make/lib.mak.orig
++++ make/lib.mak
+@@ -29,5 +29,12 @@
+ #
+ 
++ifeq ($(OSTYPE),OpenBSD)
++  ifeq ($(BUILD_TYPE),.)
++    LIBNAME_PAT	= $(LIB_FILENAME).$(MAJOR_VERSION).$(MINOR_VERSION)
++  else
++    LIBNAME_PAT	= $(LIB_FILENAME).$(MAJOR_VERSION).$(MINOR_VERSION)-$(BUILD_TYPE)
++  endif
++else
+ ifeq (,$(findstring $(OSTYPE),Darwin cygwin mingw))
+   ifeq ($(BUILD_TYPE),.)
+     LIBNAME_PAT	= $(LIB_FILENAME).$(MAJOR_VERSION).$(MINOR_VERSION).$(BUILD_NUMBER)
+@@ -40,6 +47,7 @@ else
+   else
+     LIBNAME_PAT	= $(subst .$(LIB_SUFFIX),.$(MAJOR_VERSION).$(MINOR_VERSION)-$(BUILD_TYPE)$(BUILD_NUMBER).$(LIB_SUFFIX),$(LIB_FILENAME))
+   endif
++endif
+ endif
+ 
+ LIB_SONAME	= $(LIBNAME_PAT)

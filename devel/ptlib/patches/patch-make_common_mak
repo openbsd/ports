@@ -1,0 +1,30 @@
+$OpenBSD: patch-make_common_mak,v 1.5 2021/11/28 11:40:23 ajacoutot Exp $
+
+Index: make/common.mak
+--- make/common.mak.orig
++++ make/common.mak
+@@ -80,6 +80,7 @@ endif
+ SOURCES         := $(strip $(SOURCES))
+ 
+ 
++ifneq ($(OSTYPE),OpenBSD)
+ ifeq ($(V)$(VERBOSE),)
+ Q    = @
+ Q_CC = @echo [CC] `echo $< | sed s/$PWD//` ; 
+@@ -87,6 +88,7 @@ Q_DEP= @echo [DEP] `echo $< | sed s/$PWD//` ; 
+ Q_AR = @echo [AR] `echo $@ | sed s/$PWD//` ; 
+ Q_LD = @echo [LD] `echo $@ | sed s/$PWD//` ; 
+ endif
++endif
+ 
+ 
+ #
+@@ -164,7 +166,7 @@ TARGET_LIBS	= $(PTLIBDIR)/lib_$(PLATFORM_TYPE)/$(PTLIB
+ 
+ # distinguish betweek building and using pwlib
+ ifeq (,$(wildcard $(PTLIBDIR)/src))
+-TARGET_LIBS     = $(SYSLIBDIR)/$(PTLIB_FILE)
++TARGET_LIBS     = $(SYSLIBDIR)/$(PTLIB_FILE).${LIBpt_VERSION}
+ endif
+ 
+ $(TARGET):	$(OBJS) $(TARGET_LIBS)

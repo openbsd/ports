@@ -1,30 +1,37 @@
-$OpenBSD: patch-make_unix_mak,v 1.8 2019/01/06 10:36:38 ajacoutot Exp $
-
-Make sure _SONAME is versioned (.so.X.Y versus .so).
+$OpenBSD: patch-make_unix_mak,v 1.9 2021/11/28 11:40:23 ajacoutot Exp $
 
 Index: make/unix.mak
 --- make/unix.mak.orig
 +++ make/unix.mak
-@@ -192,7 +192,9 @@ ifeq ($(target_cpu),x86)
- #PTLIB_CFLAGS	+= -m486
+@@ -252,11 +252,19 @@ ifeq ($(MACHTYPE),x86)
+ #STDCCFLAGS	+= -m486
  endif
  
 -LDLIBS		+= -lossaudio
-+ifeq (,$(findstring $(MACHTYPE),amd64 sparc64))
++ifeq ($(MACHTYPE),amd64)
 +STDCCFLAGS	+= -DP_64BIT
 +endif
  
- P_USE_RANLIB		:= 1
- #PTLIB_CFLAGS      += -DP_USE_PRAGMA		# migrated to configure
-@@ -569,6 +571,11 @@ ifeq (,$(findstring $(target_os),Darwin cygwin mingw))
- else
-   PTLIB_SONAME = $(subst .$(LIB_SUFFIX),.$(MAJOR_VERSION).$(MINOR_VERSION)$(BUILD_TYPE)$(BUILD_NUMBER).$(LIB_SUFFIX),$(PTLIB_FILE))
-   PTLIB_DEBUG_SONAME = $(subst .$(LIB_SUFFIX),.$(MAJOR_VERSION).$(MINOR_VERSION)$(BUILD_TYPE)$(BUILD_NUMBER).$(LIB_SUFFIX),$(PTLIB_DEBUG_FILE))
++ifeq ($(MACHTYPE),sparc64)
++STDCCFLAGS	+= -DP_64BIT
 +endif
 +
-+ifeq ($(target_os),OpenBSD)
-+  PTLIB_SONAME = $(PTLIB_FILE).${LIBpt_VERSION}
-+  PTLIB_DEBUG_SONAME = $(PTLIB_DEBUG_FILE).${LIBpt_VERSION}
- endif
+ P_USE_RANLIB		:= 1
+ #STDCCFLAGS      += -DP_USE_PRAGMA		# migrated to configure
++STDCCFLAGS      += -fPIC -DPIC
  
++SYSLIBDIR	:= $(shell $(PTLIBDIR)/make/ptlib-config --libdir)
  
+ endif # OpenBSD
+ 
+@@ -710,7 +718,9 @@ ifneq ($(OSTYPE),Darwin)
+       STDCCFLAGS	+= -xO3
+     endif
+   else
+-    STDCCFLAGS	+= -Os 
++    ifneq ($(OSTYPE),OpenBSD)
++      STDCCFLAGS	+= -Os
++    endif
+   endif
+ else
+   STDCCFLAGS	+= -O2

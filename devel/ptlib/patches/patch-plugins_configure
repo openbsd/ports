@@ -1,0 +1,66 @@
+$OpenBSD: patch-plugins_configure,v 1.1 2021/11/28 11:40:23 ajacoutot Exp $
+
+Cannot use autoconf: http://sourceforge.net/p/opalvoip/feature-requests/18/
+
+Index: plugins/configure
+--- plugins/configure.orig
++++ plugins/configure
+@@ -632,6 +632,7 @@ HAS_V4L
+ HAS_AUDIOSHM
+ HAS_SUNAUDIO
+ HAS_PULSE
++HAS_SNDIO
+ HAS_OSS
+ HAS_ESD
+ HAS_ALSA
+@@ -709,6 +710,7 @@ enable_audio
+ enable_alsa
+ enable_esd
+ enable_oss
++enable_sndio
+ enable_pulse
+ enable_sunaudio
+ enable_shmaudio
+@@ -1359,6 +1361,7 @@ disable plugin support]
+   --enable-alsa           enable ALSA audio support
+   --enable-esd            enable ESD audio support
+   --enable-oss            enable OSS audio support
++  --enable-sndio       enable SNDIO audio support  
+   --enable-pulse       enable Pulse audio support
+   --enable-sunaudio            enable  Sun audio support
+   --enable-shmaudio       enable shm audio support
+@@ -3908,7 +3911,25 @@ $as_echo "no" >&6; }
+   fi
+ fi
+ 
++# Check whether --enable-sndio was given.
++if test "${enable_sndio+set}" = set; then :
++  enableval=$enable_sndio;
++else
++  enable_sndio=no
++fi
+ 
++PTLIB_SNDIO=no
++if test "x${enable_sndio}" = "xno" ; then
++  { $as_echo "$as_me:${as_lineno-$LINENO}: SNDIO audio disabled by user" >&5
++$as_echo "$as_me: SNDIO audio disabled by user" >&6;}
++else
++  ac_fn_c_check_header_mongrel "$LINENO" "sndio.h" "ac_cv_header_sndio_h" "$ac_includes_default"
++if test "x$ac_cv_header_sndio_h" = xyes; then :
++      HAS_SNDIO=1
++      PTLIB_SNDIO=yes
++fi
++fi
++
+ # Check whether --enable-pulse was given.
+ if test "${enable_pulse+set}" = set; then :
+   enableval=$enable_pulse;
+@@ -4048,7 +4069,7 @@ fi
+ if test "${enable_v4l2}z" = "yesz" ; then
+   case "$target_os" in
+     solaris* | sunos* ) V4L2_HEADER="sys/videodev2.h"   ; ;;
+-    netbsd* )           V4L2_HEADER="sys/videoio.h"     ; ;;
++    netbsd* | OpenBSD* ) V4L2_HEADER="sys/videoio.h"     ; ;;
+           * )	        V4L2_HEADER="linux/videodev2.h" ; ;;
+   esac
+ 
