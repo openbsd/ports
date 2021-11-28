@@ -1,7 +1,0 @@
-sfeed_curses is a curses UI front-end for sfeed.
-
-It shows the TAB-separated feed items in a graphical command-line UI. The
-interface has a look inspired by the mutt mail client. It has a sidebar panel
-for the feeds, a panel with a listing of the items and a small statusbar for
-the selected item/url. Some functions like searching and scrolling are
-integrated in the interface itself.

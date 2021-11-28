@@ -1,9 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/09/08 08:05:37 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/11/28 12:41:28 sthen Exp $
+@conflict sfeed_curses-*
+@pkgpath www/sfeed_curses
 @bin bin/sfeed
 @bin bin/sfeed_atom
+bin/sfeed_content
+@bin bin/sfeed_curses
 @bin bin/sfeed_frames
 @bin bin/sfeed_gopher
 @bin bin/sfeed_html
+bin/sfeed_markread
 @bin bin/sfeed_mbox
 bin/sfeed_opml_export
 @bin bin/sfeed_opml_import
@@ -14,9 +19,12 @@ bin/sfeed_update
 @bin bin/sfeed_xmlenc
 @man man/man1/sfeed.1
 @man man/man1/sfeed_atom.1
+@man man/man1/sfeed_content.1
+@man man/man1/sfeed_curses.1
 @man man/man1/sfeed_frames.1
 @man man/man1/sfeed_gopher.1
 @man man/man1/sfeed_html.1
+@man man/man1/sfeed_markread.1
 @man man/man1/sfeed_mbox.1
 @man man/man1/sfeed_opml_export.1
 @man man/man1/sfeed_opml_import.1

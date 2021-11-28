@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/09/08 08:07:05 fcambus Exp $
-bin/sfeed_content
-@bin bin/sfeed_curses
-bin/sfeed_markread
-@man man/man1/sfeed_content.1
-@man man/man1/sfeed_curses.1
-@man man/man1/sfeed_markread.1
-share/doc/sfeed_curses/
-share/doc/sfeed_curses/README

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/09/08 08:05:37 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/28 12:41:28 sthen Exp $
 
 COMMENT =		RSS/Atom newsreader and formatting programs
-DISTNAME =		sfeed-1.0
+DISTNAME =		sfeed-1.1
 CATEGORIES =		www
 
 HOMEPAGE =		https://codemadness.org/sfeed.html
@@ -15,7 +15,7 @@ MASTER_SITES =		https://codemadness.org/releases/sfeed/
 
 # uses pledge()
 # uses unveil()
-WANTLIB +=		c
+WANTLIB +=		c curses
 
 MAKE_FLAGS =		CC='${CC}' \
 			CFLAGS='${CFLAGS}' \
@@ -23,7 +23,10 @@ MAKE_FLAGS =		CC='${CC}' \
 			COMPATOBJ=''
 
 # (optional) run-time dependencies for sfeed_update script:
-# iconv: needed only for feeds that are not UTF-8 encoded.
+# * iconv: needed only for feeds that are not UTF-8 encoded.
+# * xdg-open: for opening links or enclosures in sfeed_curses.
+# * xclip: for copying a link to the clipboard in sfeed_curses.
+# * lynx: for converting HTML to plain-text in sfeed_content.
 RUN_DEPENDS =		converters/libiconv
 
 NO_TEST =		Yes
