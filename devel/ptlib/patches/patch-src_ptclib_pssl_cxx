@@ -1,0 +1,95 @@
+$OpenBSD: patch-src_ptclib_pssl_cxx,v 1.6 2021/11/28 13:30:47 ajacoutot Exp $
+
+Index: src/ptclib/pssl.cxx
+--- src/ptclib/pssl.cxx.orig
++++ src/ptclib/pssl.cxx
+@@ -156,7 +156,7 @@ PFACTORY_CREATE_SINGLETON(PProcessStartupFactory, PSSL
+ class PSSL_BIO
+ {
+   public:
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L
+     PSSL_BIO(const BIO_METHOD *method = BIO_s_file())
+ #else
+     PSSL_BIO(BIO_METHOD *method = BIO_s_file_internal())
+@@ -647,7 +647,7 @@ PSSLDiffieHellman::PSSLDiffieHellman(const BYTE * pDat
+   if (dh == NULL)
+     return;
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L
+   DH_set0_pqg (dh, BN_bin2bn(pData, pSize, NULL), NULL, BN_bin2bn(gData, gSize, NULL));
+   const BIGNUM *p, *g;
+   DH_get0_pqg(dh, &p, NULL, &g);
+@@ -1144,7 +1144,7 @@ PBoolean PSSLChannel::RawSSLRead(void * buf, PINDEX & 
+ //
+ 
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L
+ #define PSSLCHANNEL(bio)      ((PSSLChannel *)(BIO_get_data (bio)))
+ #else
+ #define PSSLCHANNEL(bio)      ((PSSLChannel *)(bio->ptr))
+@@ -1161,7 +1161,7 @@ typedef long (*lfptr)();
+ 
+ static int Psock_new(BIO * bio)
+ {
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L
+   BIO_set_init (bio, 0);
+   BIO_set_data (bio, NULL);    // this is really (PSSLChannel *)
+   BIO_set_flags (bio, 0);
+@@ -1181,7 +1181,7 @@ static int Psock_free(BIO * bio)
+   if (bio == NULL)
+     return 0;
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L
+   if (BIO_get_shutdown (bio)) {
+     if (BIO_get_init (bio)) {
+ #else
+@@ -1191,7 +1191,7 @@ static int Psock_free(BIO * bio)
+       PSSLCHANNEL(bio)->Shutdown(PSocket::ShutdownReadAndWrite);
+       PSSLCHANNEL(bio)->Close();
+     }
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L
+     BIO_set_init (bio, 0);
+     BIO_set_flags (bio, 0);
+ #else
+@@ -1207,7 +1207,7 @@ static long Psock_ctrl(BIO * bio, int cmd, long num, v
+ {
+   switch (cmd) {
+     case BIO_CTRL_SET_CLOSE:
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L
+       BIO_set_shutdown (bio, (int)num);
+ #else
+       bio->shutdown = (int)num;
+@@ -1215,7 +1215,7 @@ static long Psock_ctrl(BIO * bio, int cmd, long num, v
+       return 1;
+ 
+     case BIO_CTRL_GET_CLOSE:
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L
+       return BIO_get_shutdown (bio);
+ #else
+       return bio->shutdown;
+@@ -1295,7 +1295,7 @@ static int Psock_puts(BIO * bio, const char * str)
+ 
+ namespace {
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L
+ 
+ inline BIO_METHOD* CreatePsockMethods()
+ {
+@@ -1444,7 +1444,7 @@ PBoolean PSSLChannel::OnOpen()
+   }
+ 
+   // "Open" then bio
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L
+   BIO_set_data (bio, this);
+   BIO_set_init (bio, 1);
+ #else
