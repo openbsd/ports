@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/12 20:43:46 sthen Exp $	
+# $OpenBSD: Makefile,v 1.32 2021/11/28 13:43:25 sthen Exp $
 
 COMMENT=	translate GB/Big5 encoding to tone pinyin
 
 DISTNAME=	zh-c2t-1.0
-REVISION=	2
+REVISION=	3
 CATEGORIES=	chinese
 
 PERMIT_PACKAGE=	Yes

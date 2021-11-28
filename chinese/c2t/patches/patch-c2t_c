@@ -1,30 +1,34 @@
-$OpenBSD: patch-c2t_c,v 1.1 2021/11/28 13:38:21 sthen Exp $
+$OpenBSD: patch-c2t_c,v 1.2 2021/11/28 13:43:25 sthen Exp $
 
 Index: c2t.c
 --- c2t.c.orig
 +++ c2t.c
-@@ -22,10 +22,14 @@ main(argc, argv)
+@@ -22,11 +22,15 @@ main(argc, argv)
  int argc;
  char **argv;
  {
 +#ifndef CHINDICT
    char *DICT="/home/ftp/software/unix/X-Window/cxterm-dictionary/TONEPY.tit";
+-  register int eka=0, toka=0, i=0;
+-  register char hz[4], **pipo=0;
+-  register char **taulu=0, rivi[82];
+-  register int rpit=0, tila=0, rraja=0, mulpin=0;
 +#else
 +  char *DICT=CHINDICT;
 +#endif
-   register int eka=0, toka=0, i=0;
-   register char hz[4], **pipo=0;
--  register char **taulu=0, rivi[82];
++  int eka=0, toka=0, i=0;
++  char hz[4], **pipo=0;
 +  char **taulu=0, rivi[82];
-   register int rpit=0, tila=0, rraja=0, mulpin=0;
++  int rpit=0, tila=0, rraja=0, mulpin=0;
    int monitila=0;
    FILE *piffi=0;
+   FILE *miss_chars=0; 
 @@ -57,12 +61,12 @@ char **argv;
  	   i =0;
  	} /*if argc > 1 */	
    if ((piffi = fopen (DICT, "r")) == 0) {
 -    printf (stderr, "Error: unable to open pinyin dictionnary %s\n",
-+    fprintf (stderr, "Error: unable to open pinyin dictionnary %s\n",
++    fprintf (stderr, "Error: unable to open pinyin dictionary %s\n",
  	    DICT);
      exit (-1);
    }
