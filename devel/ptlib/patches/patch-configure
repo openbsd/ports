@@ -1,0 +1,25 @@
+$OpenBSD: patch-configure,v 1.5 2021/11/28 13:31:14 ajacoutot Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -4467,7 +4467,6 @@ fi
+   openbsd* )       OSTYPE=OpenBSD ;
+ 		   OS_TAG="P_OPENBSD" ;
+                    OSRELEASE="`sysctl -n kern.osrevision`" ;
+-		   ENDLDLIBS="-lossaudio" ;
+                    need_pragma=yes ;
+ 
+ $as_echo "#define P_PTHREADS 1" >>confdefs.h
+@@ -4674,7 +4673,10 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
+         LIB64=1
+ 	;;
+ 
+-   sparc | sparc64 )
++   sparc )
++	MACHTYPE=sparc
++	;;
++   sparc64 )
+ 	MACHTYPE=sparc
+ 	P_64BIT=1
+         LIB64=1
