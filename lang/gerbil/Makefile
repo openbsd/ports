@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2020/11/06 20:05:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2021/11/28 20:54:29 tb Exp $
 
 BROKEN-powerpc64=gsc spins during build
 
@@ -10,6 +10,7 @@ COMMENT =	dialect of Scheme designed for systems programming
 GH_ACCOUNT =	vyzo
 GH_PROJECT =	gerbil
 GH_TAGNAME =	v0.16
+REVISION =	0
 
 CATEGORIES =	lang
 
