@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1280 2021/11/17 20:37:25 kn Exp $
+# $OpenBSD: Makefile,v 1.1281 2021/11/28 08:22:37 op Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -232,6 +232,7 @@
      SUBDIR += libupnpp
      SUBDIR += libvncserver
      SUBDIR += litecoin,no_x11
+     SUBDIR += litterbox
      SUBDIR += livemedia
      SUBDIR += lldpd
      SUBDIR += lldpd,snmp
@@ -515,6 +516,7 @@
      SUBDIR += poezio
      SUBDIR += poink
      SUBDIR += poptop
+     SUBDIR += pounce
      SUBDIR += powerdns
      SUBDIR += powerdns_recursor
      SUBDIR += profanity
