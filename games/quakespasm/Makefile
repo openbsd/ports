@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2021/09/06 01:08:31 jsg Exp $
+# $OpenBSD: Makefile,v 1.13 2021/11/28 03:57:17 jsg Exp $
 
 COMMENT=	SDL Quake port
 CATEGORIES=	games
-DISTNAME=	quakespasm-0.94.1
+DISTNAME=	quakespasm-0.94.2
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=quakespasm/}
 HOMEPAGE=	http://quakespasm.sourceforge.net
 
@@ -11,7 +11,7 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += GL SDL2 c m mad ogg pthread vorbis vorbisfile
+WANTLIB += GL SDL2 c m mad ogg vorbis vorbisfile
 
 LIB_DEPENDS=	audio/libmad \
 		audio/libvorbis \
