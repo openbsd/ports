@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_ccrtp_crypto_openssl_hmac_cxx,v 1.1 2021/11/28 19:18:38 tb Exp $
+
+Fix build with opaque HMAC_CTX in LibreSSL 3.5.
+
+Index: src/ccrtp/crypto/openssl/hmac.cxx
+--- src/ccrtp/crypto/openssl/hmac.cxx.orig
++++ src/ccrtp/crypto/openssl/hmac.cxx
+@@ -50,15 +50,15 @@ void hmac_sha1( uint8* key, int32 key_length,
+ 		const uint8* data_chunks[],
+ 		uint32 data_chunck_length[],
+ 		uint8* mac, int32* mac_length ){
+-	HMAC_CTX ctx;
+-	HMAC_CTX_init( &ctx );
+-	HMAC_Init_ex( &ctx, key, key_length, EVP_sha1(), NULL );
++	HMAC_CTX *ctx;
++	ctx = HMAC_CTX_new();
++	HMAC_Init_ex( ctx, key, key_length, EVP_sha1(), NULL );
+ 	while( *data_chunks ){
+-		HMAC_Update( &ctx, *data_chunks, *data_chunck_length );
++		HMAC_Update( ctx, *data_chunks, *data_chunck_length );
+ 		data_chunks ++;
+ 		data_chunck_length ++;
+ 	}
+-        HMAC_Final( &ctx, mac, reinterpret_cast<uint32*>(mac_length) );
+-	HMAC_CTX_cleanup( &ctx );
++        HMAC_Final( ctx, mac, reinterpret_cast<uint32*>(mac_length) );
++	HMAC_CTX_free( ctx );
+ }
+ 
