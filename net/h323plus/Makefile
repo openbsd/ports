@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2021/02/03 18:56:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2021/11/28 11:41:31 ajacoutot Exp $
 
 COMMENT=		H.323 video conferencing library
 
@@ -6,10 +6,11 @@ GH_ACCOUNT=		willamowius
 GH_PROJECT=		h323plus
 GH_TAGNAME=		v1_27_2
 PKGNAME=		${DISTNAME:S/_/./g}
+REVISION=		0
 
 CATEGORIES=		net devel
 
-SHARED_LIBS=		h323	6.3
+SHARED_LIBS +=		h323	6.3
 
 HOMEPAGE=		http://www.h323plus.org/
 
@@ -18,8 +19,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # MPL (dlopen(3) GPL modules)
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} SDL c crypto expat lber ldap ldap_r
-WANTLIB += m pt sasl2 ssl
+WANTLIB += ${COMPILER_LIBCXX} c crypto lber ldap ldap_r m pt sasl2
+WANTLIB += ssl
 
 COMPILER=		base-clang ports-gcc base-gcc
 
@@ -36,8 +37,8 @@ MODGNU_CONFIG_GUESS_DIRS= \
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		PTLIBDIR=${LOCALBASE}/share/ptlib
 
-# needed by net/gnugk: https://www.gnugk.org/gnugk-manual-14.html
-CONFIGURE_ARGS +=	--enable-h235 # --enable-h46017 --enable-h46026
+# https://www.gnugk.org/gnugk-manual-14.html
+CONFIGURE_ARGS=		--enable-h235 # --enable-h46017 --enable-h46026
 
 # http://www.tandberg.com/collateral/tandberg-ITU-license.pdf
 # H.460.23/.24. Contact consulting@h323plus.org for licensing terms.
@@ -49,7 +50,7 @@ MAKE_ENV=		VERBOSE=1
 MAKE_FLAGS=		MAJOR_VERSION=${LIBh323_VERSION:R} \
 			MINOR_VERSION=${LIBh323_VERSION:E}
 
-DEBUG_PAKAGES=		${BUILD_PACKAGES}
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Makefile.in

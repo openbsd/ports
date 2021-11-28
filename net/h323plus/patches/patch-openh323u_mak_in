@@ -1,10 +1,28 @@
-$OpenBSD: patch-openh323u_mak_in,v 1.6 2020/01/03 09:01:55 ajacoutot Exp $
+$OpenBSD: patch-openh323u_mak_in,v 1.7 2021/11/28 11:41:31 ajacoutot Exp $
+
+h225_2.cxx:8:10: fatal error: 'h225.h' file not found
 
 Do not append the platform_type and suffix to the library name.
 
 Index: openh323u.mak.in
 --- openh323u.mak.in.orig
 +++ openh323u.mak.in
+@@ -102,11 +102,11 @@ LIBDIRS += $(OPENH323DIR)
+ #OH323_SUPPRESS_H235	= 1
+ 
+ OH323_SRCDIR = $(OPENH323DIR)/src
+-ifdef PREFIX
+-OH323_INCDIR = $(PREFIX)/include/openh323
+-else
++#ifdef PREFIX
++#OH323_INCDIR = $(PREFIX)/include/openh323
++#else
+ OH323_INCDIR = $(OPENH323DIR)/include
+-endif # PREFIX
++#endif # PREFIX
+ 
+ ifndef OH323_LIBDIR
+ OH323_LIBDIR = $(OPENH323DIR)/lib
 @@ -133,7 +133,11 @@ OH323_SUFFIX = $(OBJ_SUFFIX)
  endif # OH323_SUFFIX
  endif # HAS_PTLIB_LIB_MAK
