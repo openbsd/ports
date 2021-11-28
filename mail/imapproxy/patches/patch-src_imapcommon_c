@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_imapcommon_c,v 1.2 2021/03/17 15:15:45 sthen Exp $
+$OpenBSD: patch-src_imapcommon_c,v 1.3 2021/11/28 20:44:57 tb Exp $
 
 Index: src/imapcommon.c
 --- src/imapcommon.c.orig
@@ -11,27 +11,55 @@ Index: src/imapcommon.c
  extern SSL_CTX *tls_ctx;
  
  /*++
-@@ -369,6 +370,7 @@ extern void UnLockMutex( pthread_mutex_t *mutex )
- extern int Attempt_STARTTLS( ITD_Struct *Server )
- {
-     char *fn = "Attempt_STARTTLS()";
-+    X509_VERIFY_PARAM *param = NULL;
+@@ -471,6 +472,14 @@ extern int Attempt_STARTTLS( ITD_Struct *Server )
+ 	    goto fail;
+ 	}
  
-     unsigned int BufLen = BUFSIZE - 1;
-     char SendBuf[BUFSIZE];
-@@ -467,6 +469,15 @@ extern int Attempt_STARTTLS( ITD_Struct *Server )
- 	{
- 	    syslog(LOG_INFO,
- 		    "STARTTLS failed: SSL_set_fd() failed: %d",
++	SSL_set_hostflags(Server->conn->tls, X509_CHECK_FLAG_NO_PARTIAL_WILDCARDS);
++	if (!SSL_set1_host(Server->conn->tls, PC_Struct.server_hostname)) {
++	    syslog(LOG_INFO,
++		    "STARTTLS failed: SSL_set1_host() failed: %d",
 +		    SSL_get_error( Server->conn->tls, rc ) );
 +	    goto fail;
 +	}
 +
-+	param = SSL_get0_param(Server->conn->tls);
-+	X509_VERIFY_PARAM_set_hostflags(param, X509_CHECK_FLAG_NO_PARTIAL_WILDCARDS);
-+	if (!X509_VERIFY_PARAM_set1_host(param, PC_Struct.server_hostname, 0)) {
-+	    syslog(LOG_INFO,
-+		    "STARTTLS failed: X509_VERIFY_PARAM_set1_host() failed: %d",
- 		    SSL_get_error( Server->conn->tls, rc ) );
- 	    goto fail;
- 	}
+ 	SSL_set_connect_state( Server->conn->tls );
+ 	rc = SSL_connect( Server->conn->tls );
+ 	if ( rc <= 0 )
+@@ -554,16 +563,24 @@ extern ICD_Struct *Get_Server_conn( char *Username, 
+     unsigned int Expiration;
+     struct addrinfo *useai;
+ 
+-    EVP_MD_CTX mdctx;
++    EVP_MD_CTX *mdctx;
+     int md_len;
+ 
+     Expiration = PC_Struct.cache_expiration_time;
+     memset( &Server, 0, sizeof Server );
+     
++    mdctx = EVP_MD_CTX_new();
++    if ( mdctx == NULL )
++    {
++        syslog( LOG_INFO,
++		"LOGIN: '%s' (%s:%s) failed: unable to allocate MD context",
++		Username, ClientAddr, portstr );
++        goto fail;
++    }
+     /* need to md5 the passwd regardless, so do that now */
+-    EVP_DigestInit(&mdctx, EVP_md5());
+-    EVP_DigestUpdate(&mdctx, Password, strlen(Password));
+-    EVP_DigestFinal(&mdctx, md5pw, &md_len);
++    EVP_DigestInit(mdctx, EVP_md5());
++    EVP_DigestUpdate(mdctx, Password, strlen(Password));
++    EVP_DigestFinal(mdctx, md5pw, &md_len);
+     
+     /* see if we have a reusable connection available */
+     ICC_Active = NULL;
+@@ -1277,6 +1294,7 @@ extern ICD_Struct *Get_Server_conn( char *Username, 
+ 	SSL_free( Server.conn->tls );
+     }
+ #endif
++    EVP_MD_CTX_free(mdctx);
+     close( Server.conn->sd );
+     free( Server.conn );
+     return( NULL );
