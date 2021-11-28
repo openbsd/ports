@@ -4,13 +4,7 @@ plugin is called from Nagios and makes plugin execution requests to the
 NRPE daemon running on the remote host (either as a standalone daemon
 or as a service under inetd).
 
-This package is for an old version using legacy encryption methods
-(anonymous DH) for compatibility with servers/clients that need it.
-
 WARNING: NRPE is deprecated upstream and no longer receives bug fixes or
 new features. For some of the checks on remote servers that you might
 otherwise make using NRPE, you may like to consider "manubolon-snmp" and
 an SNMP daemon instead.
-
-Flavours:
-	no_ssl - disable SSL support

@@ -1,12 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/01/20 14:04:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/11/28 12:05:28 sthen Exp $
+@pkgpath net/nagios/nrpe,no_ssl
 @newgroup _nrpe:556
 @newuser _nrpe:556:_nrpe:daemon:NRPE Account:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/nrpe
 @bin libexec/nagios/check_nrpe
+libexec/nagios/update-cfg.pl
 @bin sbin/nrpe
 share/doc/nrpe/
-share/doc/nrpe/README
-share/doc/nrpe/SECURITY
+share/doc/nrpe/NRPE.odt
+share/doc/nrpe/NRPE.pdf
+share/doc/nrpe/README.SSL.md
+share/doc/nrpe/README.md
+share/doc/nrpe/SECURITY.md
 share/examples/nrpe/
 share/examples/nrpe/nrpe.cfg
 @sample ${SYSCONFDIR}/nrpe.cfg
-@rcscript ${RCDIR}/nrpe

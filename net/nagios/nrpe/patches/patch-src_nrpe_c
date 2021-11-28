@@ -1,98 +1,48 @@
-$OpenBSD: patch-src_nrpe_c,v 1.10 2015/03/23 09:16:55 sthen Exp $
+$OpenBSD: patch-src_nrpe_c,v 1.11 2021/11/28 12:05:28 sthen Exp $
 
-- http://seclists.org/fulldisclosure/2014/Apr/240 plus \r suggested on oss-sec
-- fix reading of non-blocking sockets
-- don't remove the pidfile when accept(2) or getpeername(2) fail.
-  Author: Hiren Patel
-  From: http://comments.gmane.org/gmane.network.nagios.devel/6774
-  Bug-Ubuntu: https://launchpad.net/bugs/1126890
+LibreSSL doesn't have @SECLEVEL yet.
 
---- src/nrpe.c.orig	Fri Sep  6 16:27:13 2013
-+++ src/nrpe.c	Mon Mar 23 09:01:19 2015
-@@ -30,6 +30,8 @@
- #include "utils.h"
- #include "acl.h"
+Index: src/nrpe.c
+--- src/nrpe.c.orig
++++ src/nrpe.c
+@@ -83,7 +83,7 @@ struct addrinfo *listen_addrs = NULL;
+ int       listen_socks[MAX_LISTEN_SOCKS];
+ char      remote_host[MAX_HOST_ADDRESS_LENGTH];
+ char     *macro_argv[MAX_COMMAND_ARGUMENTS];
+-char      config_file[MAX_INPUT_BUFFER] = "nrpe.cfg";
++char      config_file[MAX_INPUT_BUFFER] = "/etc/nrpe.cfg";
+ char      server_address[NI_MAXHOST] = "";
+ char     *command_name = NULL;
+ int       log_facility = LOG_DAEMON;
+@@ -147,7 +147,7 @@ struct _SSL_PARMS {
+ 	ClntCerts client_certs;
+ 	SslLogging log_opts;
+ } sslprm = {
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000
++#if OPENSSL_VERSION_NUMBER >= 0x10100000 && !defined(LIBRESSL_VERSION_NUMBER)
+ NULL, NULL, NULL, "ALL:!MD5:@STRENGTH:@SECLEVEL=0", TLSv1_plus, TRUE, 0, SSL_NoLogging
+ #else
+ NULL, NULL, NULL, "ALL:!MD5:@STRENGTH", TLSv1_plus, TRUE, 0, SSL_NoLogging
+@@ -281,6 +281,13 @@ void init_ssl(void)
+ 	if (sslprm.log_opts & SSL_LogStartup)
+ 		log_ssl_startup();
  
-+#include <poll.h>
-+
- #ifdef HAVE_SSL
- #include "../include/dh.h"
- #endif
-@@ -53,7 +55,7 @@ int use_ssl=FALSE;
- 
- #define DEFAULT_COMMAND_TIMEOUT	60			/* default timeout for execution of plugins */
- #define MAXFD                   64
--#define NASTY_METACHARS         "|`&><'\"\\[]{};"
-+#define NASTY_METACHARS         "|`&><'\"\\[]{};\r\n"
- #define howmany(x,y)	(((x)+((y)-1))/(y))
- #define MAX_LISTEN_SOCKS        16
- 
-@@ -61,7 +63,7 @@ int use_ssl=FALSE;
- char    *command_name=NULL;
- char    *macro_argv[MAX_COMMAND_ARGUMENTS];
- 
--char    config_file[MAX_INPUT_BUFFER]="nrpe.cfg";
-+char    config_file[MAX_INPUT_BUFFER]="/etc/nrpe.cfg";
- int     log_facility=LOG_DAEMON;
- int     server_port=DEFAULT_SERVER_PORT;
- char    server_address[NI_MAXHOST]="";
-@@ -100,7 +102,9 @@ int     debug=FALSE;
- int     use_src=FALSE; /* Define parameter for SRC option */
- 
- 
-+#ifdef HAVE_SSL
- void complete_SSL_shutdown( SSL *);
++#ifdef LIBRESSL_VERSION_NUMBER
++	if (sslprm.allowDH > 0) {
++		logit(LOG_ERROR, "ERROR: Anonymous DH configured but not supported with LibreSSL.");
++		return ERROR;
++	}
 +#endif
- 
- 
- int main(int argc, char **argv){
-@@ -969,8 +973,14 @@ void wait_for_connections(void){
- 					continue;
- 
- 				/* socket is nonblocking and we don't have a connection yet */
--				if(errno==EAGAIN)
-+				if(errno==EAGAIN){
-+					struct pollfd pfd;
 +
-+					pfd.fd = sock;
-+					pfd.events = POLLIN;
-+					poll(&pfd,1,-1);
- 					continue;
-+					}
- 
- 				/* fix for HP-UX 11.0 - just retry */
- 				if(errno==ENOBUFS)
-@@ -998,7 +1008,7 @@ void wait_for_connections(void){
- 						/* close socket prioer to exiting */
- 						close(sock);
- 			
--						return;
-+						exit(STATE_CRITICAL);
- 						}
- 
- 					/* handle signals */
-@@ -1022,7 +1032,7 @@ void wait_for_connections(void){
- 				        /* close socket prior to exiting */
- 						close(new_sd);
- 
--						return;
-+						exit(STATE_CRITICAL);
- 						}
- 
- 					/* is this is a blessed machine? */
-@@ -1796,6 +1806,7 @@ int remove_pid_file(void){
- 	return OK;
-         }
- 
-+#ifdef HAVE_SSL
- void complete_SSL_shutdown( SSL *ssl) {
- 
- 	/*  
-@@ -1816,6 +1827,7 @@ void complete_SSL_shutdown( SSL *ssl) {
- 		if( SSL_shutdown( ssl)) break;
- 	}
- }
-+#endif
- 
- /* bail if daemon is running as root */
- int check_privileges(void){
+ 	/* initialize SSL */
+ 	SSL_load_error_strings();
+ 	SSL_library_init();
+@@ -463,7 +470,7 @@ void init_ssl(void)
+ 	} else {
+ 		/* use anonymous DH ciphers */
+ 		if (sslprm.allowDH == 2) {
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000
++#if OPENSSL_VERSION_NUMBER >= 0x10100000 && !defined(LIBRESSL_VERSION_NUMBER)
+ 			strncpy(sslprm.cipher_list, "ADH@SECLEVEL=0", MAX_FILENAME_LENGTH - 1);
+ #else
+ 			strncpy(sslprm.cipher_list, "ADH", MAX_FILENAME_LENGTH - 1);

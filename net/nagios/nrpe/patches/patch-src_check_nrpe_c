@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_check_nrpe_c,v 1.1 2021/11/28 12:05:28 sthen Exp $
+
+LibreSSL doesn't have @SECLEVEL yet.
+
+Index: src/check_nrpe.c
+--- src/check_nrpe.c.orig
++++ src/check_nrpe.c
+@@ -151,7 +151,7 @@ int main(int argc, char **argv)
+ 	if (timeout_return_code == -1)
+ 		timeout_return_code = STATE_CRITICAL;
+ 	if (sslprm.cipher_list[0] == '\0')
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000
++#if OPENSSL_VERSION_NUMBER >= 0x10100000 && !defined(LIBRESSL_VERSION_NUMBER)
+ 		strncpy(sslprm.cipher_list, "ALL:!MD5:@STRENGTH:@SECLEVEL=0", MAX_FILENAME_LENGTH - 1);
+ #else
+ 		strncpy(sslprm.cipher_list, "ALL:!MD5:@STRENGTH", MAX_FILENAME_LENGTH - 1);
+@@ -751,7 +751,7 @@ void usage(int result)
+ 		printf("                              TLSv1.2   TLS v1.2 only\n");
+ 		printf("                              TLSv1.2+  TLS v1.2 or above\n");
+ 		printf(" -L, --cipher-list=LIST       The list of SSL ciphers to use (currently defaults\n");
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000
++#if OPENSSL_VERSION_NUMBER >= 0x10100000 && !defined(LIBRESSL_VERSION_NUMBER)
+ 		printf("                              to \"ALL:!MD5:@STRENGTH:@SECLEVEL=0\". THIS WILL change in a future release.)\n");
+ #else
+ 		printf("                              to \"ALL:!MD5:@STRENGTH\". THIS WILL change in a future release.)\n");
+@@ -1011,7 +1011,7 @@ void setup_ssl()
+ 		} else {
+ 			/* use anonymous DH ciphers */
+ 			if (sslprm.allowDH == 2) {
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000
++#if OPENSSL_VERSION_NUMBER >= 0x10100000 && !defined(LIBRESSL_VERSION_NUMBER)
+ 				strncpy(sslprm.cipher_list, "ADH@SECLEVEL=0", MAX_FILENAME_LENGTH - 1);
+ #else
+ 				strncpy(sslprm.cipher_list, "ADH", MAX_FILENAME_LENGTH - 1);

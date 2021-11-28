@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2020/11/25 20:01:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2021/11/28 12:05:28 sthen Exp $
 
 COMMENT=	Nagios Remote Plugin Executor
 
-DISTNAME=	nrpe-2.15
-REVISION=	12
+DISTNAME=	nrpe-4.0.2
 CATEGORIES=	net
 
 HOMEPAGE=	https://github.com/NagiosEnterprises/nrpe
@@ -11,40 +10,28 @@ HOMEPAGE=	https://github.com/NagiosEnterprises/nrpe
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c
+WANTLIB=	c crypto ssl
 
-FLAVOR?=
-FLAVORS=	no_ssl
-
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nagios/}
+MASTER_SITES=	https://github.com/NagiosEnterprises/nrpe/releases/download/${DISTNAME}/
 
 RUN_DEPENDS=	net/monitoring-plugins
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --libexecdir=${LOCALBASE}/libexec/nagios \
 		--with-nrpe-user=_nrpe \
-		--with-nrpe-group=_nrpe
-
-.if ${FLAVOR:Mno_ssl}
-CONFIGURE_ARGS+= --disable-ssl
-.else
-WANTLIB+=	lib/eopenssl/crypto lib/eopenssl/ssl
-LIB_DEPENDS=	security/openssl/1.0.2
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -nostdinc -I${LOCALBASE}/include/eopenssl -I/usr/include" \
-		LDFLAGS="-L${LOCALBASE}/lib/eopenssl -Wl,-rpath,${LOCALBASE}/lib/eopenssl"
-.endif
-
-pre-configure:
-	@${SUBST_CMD} ${WRKSRC}/src/nrpe.c
+		--with-nrpe-group=_nrpe \
+		--with-piddir=/var/run/nrpe
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/libexec/nagios
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nrpe
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nrpe
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/nrpe
-	${INSTALL_DATA} ${WRKSRC}/SECURITY ${PREFIX}/share/doc/nrpe
+	${INSTALL_DATA} ${WRKSRC}/README*.md ${PREFIX}/share/doc/nrpe
+	${INSTALL_DATA} ${WRKSRC}/SECURITY.md ${PREFIX}/share/doc/nrpe
+	${INSTALL_DATA} ${WRKSRC}/docs/NRPE.* ${PREFIX}/share/doc/nrpe
 	${INSTALL_DATA} ${WRKSRC}/sample-config/nrpe.cfg ${PREFIX}/share/examples/nrpe
 	${INSTALL_PROGRAM} ${WRKSRC}/src/check_nrpe ${PREFIX}/libexec/nagios
+	${INSTALL_PROGRAM} ${WRKSRC}/update-cfg.pl ${PREFIX}/libexec/nagios
 	${INSTALL_PROGRAM} ${WRKSRC}/src/nrpe ${PREFIX}/sbin
 
 NO_TEST=	Yes
