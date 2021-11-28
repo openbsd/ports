@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2021/08/28 11:18:58 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/28 17:34:03 kn Exp $
 
 COMMENT =	utility for modifying existing ELF executables and libraries
 
-V =			0.13
+V =			0.14.1
 DISTNAME =		patchelf-${V}
 MASTER_SITES =		https://github.com/NixOS/patchelf/releases/download/${V}/
 EXTRACT_SUFX =		.tar.bz2
@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		${COMPILER_LIBCXX} c m
 
-# -std=c++11
+# -std=c++17
 COMPILER =		base-clang ports-gcc
 
 # XXX 0.13 broke test target:
@@ -27,7 +27,7 @@ USE_GMAKE =		Yes
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--mandir=${PREFIX}/man
 
-WRKDIST =		${WRKDIR}/${DISTNAME}.20210805.a949ff2
+WRKDIST =		${WRKDIR}/${DISTNAME}.19700101.dirty
 
 # XXX investigate
 # TOTAL: 34, PASS: 33, FAIL: build-id.sh
