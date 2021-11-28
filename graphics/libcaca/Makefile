@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.36 2020/01/26 11:14:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2021/11/28 10:32:40 namn Exp $
 
 COMMENT=		color ascii art library
 
-DISTNAME=		libcaca-0.99.beta19
-PKGNAME=		libcaca-0.99.19
-SHARED_LIBS +=  caca           1.2               # .0.99
+V=			0.99.beta20
+DISTNAME=		libcaca-${V}
+PKGNAME=		${DISTNAME:S/beta//}
+SHARED_LIBS +=	caca	2.0 # .0.99
 CATEGORIES=		graphics
-REVISION=		2
 
 HOMEPAGE=		http://caca.zoy.org/wiki/libcaca
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses m z
 
-MASTER_SITES=		http://caca.zoy.org/files/libcaca/ \
-			https://distfiles.sigtrap.nl/
+MASTER_SITES=		https://github.com/cacalabs/libcaca/releases/download/v${V}/
 
 FLAVORS=		no_x11
 FLAVOR?=

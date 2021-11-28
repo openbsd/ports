@@ -1,16 +1,19 @@
-$OpenBSD: patch-configure,v 1.5 2014/06/07 20:29:32 bcallah Exp $
+$OpenBSD: patch-configure,v 1.6 2021/11/28 10:32:40 namn Exp $
 
-1. Disable detection of pangoft2.
+1. Disable detection of ftgl. (no --disable-ftgl option.)
 
-2. Disable detection of cppunit.  (--disable-cppunit is a NOP.)
+2. Remove bash-ism =~
 
-3. Disable detection of ftgl. (no --disable-ftgl option.)
+3. Remove hardcoded -g -O2
 
---- configure.orig	Fri May 16 15:15:32 2014
-+++ configure	Sat Jun  7 14:03:02 2014
-@@ -17495,8 +17495,7 @@ if test -n "$FTGL_CFLAGS"; then
+4. Disable detection of pangoft2.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -19339,8 +19339,7 @@ if test -n "$FTGL_CFLAGS"; then
    ac_status=$?
-   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
    test $ac_status = 0; }; then
 -  pkg_cv_FTGL_CFLAGS=`$PKG_CONFIG --cflags "ftgl >= 2.1.3" 2>/dev/null`
 -		      test "x$?" != "x0" && pkg_failed=yes
@@ -18,9 +21,9 @@ $OpenBSD: patch-configure,v 1.5 2014/06/07 20:29:32 bcallah Exp $
  else
    pkg_failed=yes
  fi
-@@ -17512,8 +17511,7 @@ if test -n "$FTGL_LIBS"; then
+@@ -19356,8 +19355,7 @@ if test -n "$FTGL_LIBS"; then
    ac_status=$?
-   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
    test $ac_status = 0; }; then
 -  pkg_cv_FTGL_LIBS=`$PKG_CONFIG --libs "ftgl >= 2.1.3" 2>/dev/null`
 -		      test "x$?" != "x0" && pkg_failed=yes
@@ -28,21 +31,30 @@ $OpenBSD: patch-configure,v 1.5 2014/06/07 20:29:32 bcallah Exp $
  else
    pkg_failed=yes
  fi
-@@ -18672,7 +18670,7 @@ fi
+@@ -19422,7 +19420,7 @@ fi
+ done
+   CFLAGS="$save_CFLAGS"
+   if test "${ac_cv_my_have_cocoa}" = "yes"; then
+-    [[ "$target_os" =~ [0-9]+ ]] && darwin_ver="${BASH_REMATCH[0]}"
++    [[ "$target_os" = [0-9]+ ]] && darwin_ver="${BASH_REMATCH[0]}"
+     case x${target} in
+     xpowerpc*darwin*)
+       # 10.3 needed to link with X11
+@@ -19671,7 +19669,7 @@ fi
+ 
+ 
+ # Optimizations
+-CFLAGS="${CFLAGS} -g -O2 -fno-strength-reduce -fomit-frame-pointer"
++CFLAGS="${CFLAGS} -fno-strength-reduce -fomit-frame-pointer"
+ # Code qui fait des warnings == code de porc == deux baffes dans ta gueule
+ CFLAGS="${CFLAGS} -Wall -Wpointer-arith -Wcast-align -Wcast-qual -Wstrict-prototypes -Wshadow -Waggregate-return -Wmissing-prototypes -Wnested-externs -Wsign-compare"
+ CXXFLAGS="${CXXFLAGS} -Wall -Wpointer-arith -Wcast-align -Wcast-qual -Wshadow -Wsign-compare"
+@@ -20696,7 +20694,7 @@ fi
  
  # Build development tools?
  
 -pkg_failed=no
 +pkg_failed=yes
- { $as_echo "$as_me:${as_lineno-$LINENO}: checking for PANGOFT2" >&5
- $as_echo_n "checking for PANGOFT2... " >&6; }
- 
-@@ -18963,7 +18961,7 @@ fi
- 
- # Use cppunit for unit tests?
- 
--pkg_failed=no
-+pkg_failed=yes
- { $as_echo "$as_me:${as_lineno-$LINENO}: checking for CPPUNIT" >&5
- $as_echo_n "checking for CPPUNIT... " >&6; }
+ { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for pangoft2" >&5
+ printf %s "checking for pangoft2... " >&6; }
  

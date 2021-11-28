@@ -1,12 +1,13 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2014/06/07 20:29:32 bcallah Exp $
---- Makefile.in.orig	Fri May 16 15:15:33 2014
-+++ Makefile.in	Sat Jun  7 14:03:02 2014
-@@ -410,7 +410,7 @@ top_build_prefix = @top_build_prefix@
- top_builddir = @top_builddir@
+$OpenBSD: patch-Makefile_in,v 1.6 2021/11/28 10:32:40 namn Exp $
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -427,7 +427,7 @@ top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
+ AM_CPPFLAGS = -I$(top_srcdir) -I$(top_srcdir)/caca -I$(top_builddir)/caca
  SUBDIRS = kernel caca src examples tools \
--          cxx caca-sharp python ruby java \
-+          cxx ruby \
-           doc test
+-          cxx caca-sharp python ruby java doc
++          cxx doc
  
- DIST_SUBDIRS = $(SUBDIRS) win32
+ DIST_SUBDIRS = $(SUBDIRS) build
+ EXTRA_DIST = NOTES COPYING.GPL COPYING.ISC COPYING.LGPL bootstrap caca-config.in libcaca.spec libcaca.sln
