@@ -1,0 +1,74 @@
+$OpenBSD: patch-src_core_common_crypthelper_cpp,v 1.1 2021/11/28 17:27:49 tb Exp $
+
+Fix build with opaque EVP_CIPHER_CTX in LibreSSL 3.5.
+
+Index: src/core/common/crypthelper.cpp
+--- src/core/common/crypthelper.cpp.orig
++++ src/core/common/crypthelper.cpp
+@@ -291,22 +291,27 @@ CryptHelper::AES128Encrypt(const unsigned char *keyDat
+ 		outCipher.resize(cipherSize);
+ 
+ #ifdef HAVE_OPENSSL
+-		EVP_CIPHER_CTX encryptCtx;
+-		EVP_CIPHER_CTX_init(&encryptCtx);
++		EVP_CIPHER_CTX *encryptCtx;
++		EVP_CIPHER_CTX_init(encryptCtx);
+ 		int outCipherSize = cipherSize;
++		int success = 0;
+ 
+-		int success = EVP_EncryptInit(&encryptCtx, EVP_aes_128_cbc(), key, iv);
+-		EVP_CIPHER_CTX_set_padding(&encryptCtx, 0);
++		encryptCtx = EVP_CIPHER_CTX_new();
++		if (encryptCtx != NULL) {
++			success = EVP_EncryptInit(encryptCtx, EVP_aes_128_cbc(), key, iv);
++			EVP_CIPHER_CTX_set_padding(encryptCtx, 0);
++		}
+ 		if (success) {
+-			success = EVP_EncryptUpdate(&encryptCtx, &outCipher[0], &outCipherSize, paddedPlainStr, paddedPlainSize);
++			success = EVP_EncryptUpdate(encryptCtx, &outCipher[0], &outCipherSize, paddedPlainStr, paddedPlainSize);
+ 
+ 			if (success && outCipherSize) {
+ 				// Since padding is off, this will not modify the cipher. However, parameters need to be set.
+-				EVP_EncryptFinal(&encryptCtx, &outCipher[0], &outCipherSize);
++				EVP_EncryptFinal(encryptCtx, &outCipher[0], &outCipherSize);
+ 				retVal = true;
+ 			}
+ 		} else
+ 			outCipher.clear();
++		EVP_CIPHER_CTX_free(encryptCtx);
+ #else
+ 		gcry_cipher_hd_t hd;
+ 		gcry_error_t err = gcry_cipher_open(&hd, GCRY_CIPHER_AES128, GCRY_CIPHER_MODE_CBC, 0);
+@@ -338,22 +343,26 @@ CryptHelper::AES128Decrypt(const unsigned char *keyDat
+ 		BytesToKey(keyData, keySize, key, iv);
+ 		outPlain.resize(cipherSize);
+ #ifdef HAVE_OPENSSL
+-		EVP_CIPHER_CTX decryptCtx;
+-		EVP_CIPHER_CTX_init(&decryptCtx);
++		EVP_CIPHER_CTX *decryptCtx;
+ 		int outPlainSize = cipherSize;
++		int success;
+ 
+-		int success = EVP_DecryptInit(&decryptCtx, EVP_aes_128_cbc(), key, iv);
+-		EVP_CIPHER_CTX_set_padding(&decryptCtx, 0);
++		decryptCtx = EVP_CIPHER_CTX_new();
++		if (decryptCtx != NULL) {
++			success = EVP_DecryptInit(decryptCtx, EVP_aes_128_cbc(), key, iv);
++			EVP_CIPHER_CTX_set_padding(decryptCtx, 0);
++		}
+ 		if (success) {
+-			success = EVP_DecryptUpdate(&decryptCtx, (unsigned char *)&outPlain[0], &outPlainSize, cipher, cipherSize);
++			success = EVP_DecryptUpdate(decryptCtx, (unsigned char *)&outPlain[0], &outPlainSize, cipher, cipherSize);
+ 
+ 			if (success && outPlainSize) {
+ 				// Since padding is off, this will not modify the plain text. However, parameters need to be set.
+-				EVP_DecryptFinal(&decryptCtx, (unsigned char *)outPlain.c_str(), &outPlainSize);
++				EVP_DecryptFinal(decryptCtx, (unsigned char *)outPlain.c_str(), &outPlainSize);
+ 				retVal = true;
+ 			}
+ 		} else
+ 			outPlain.clear();
++		EVP_CIPHER_CTX_free(decryptCtx);
+ #else
+ 		gcry_cipher_hd_t hd;
+ 		gcry_error_t err = gcry_cipher_open(&hd, GCRY_CIPHER_AES128, GCRY_CIPHER_MODE_CBC, 0);
