@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_h235auth1_cxx,v 1.1 2021/11/28 17:05:24 tb Exp $
+
+Unbreak build with opaque EVP_MD_CTX in LibreSSL 3.5.
+
+Index: src/h235auth1.cxx
+--- src/h235auth1.cxx.orig
++++ src/h235auth1.cxx
+@@ -68,7 +68,7 @@ static const BYTE SearchPattern[HASH_SIZE] = { // Must
+ #define SHA_BLOCKSIZE   64
+ #endif
+ 
+-#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L)
+ 
+ namespace {
+ 

@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_h235_h235support_cxx,v 1.1 2021/11/28 17:05:24 tb Exp $
+
+Unbreak build with opaque DH in LibreSSL 3.5.
+
+Index: src/h235/h235support.cxx
+--- src/h235/h235support.cxx.orig
++++ src/h235/h235support.cxx
+@@ -55,7 +55,7 @@ extern "C" {
+ #include <openssl/bn.h>
+ };
+ 
+-#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L)
+ 
+ inline void DH_get0_pqg(const DH *dh,
+                  const BIGNUM **p, const BIGNUM **q, const BIGNUM **g)

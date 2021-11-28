@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2021/11/28 11:41:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2021/11/28 17:05:24 tb Exp $
 
 COMMENT=		H.323 video conferencing library
 
@@ -6,7 +6,7 @@ GH_ACCOUNT=		willamowius
 GH_PROJECT=		h323plus
 GH_TAGNAME=		v1_27_2
 PKGNAME=		${DISTNAME:S/_/./g}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		net devel
 

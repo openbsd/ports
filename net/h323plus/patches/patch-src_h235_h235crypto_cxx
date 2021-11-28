@@ -1,0 +1,48 @@
+$OpenBSD: patch-src_h235_h235crypto_cxx,v 1.3 2021/11/28 17:05:24 tb Exp $
+
+Unbreak build with opaque EVP_CIPHER_CTX in LibreSSL 3.5
+
+Index: src/h235/h235crypto.cxx
+--- src/h235/h235crypto.cxx.orig
++++ src/h235/h235crypto.cxx
+@@ -64,7 +64,7 @@ extern "C" {
+ // the IV sequence is always 6 bytes long (2 bytes seq number + 4 bytes timestamp)
+ const unsigned int IV_SEQUENCE_LEN = 6;
+ 
+-#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L)
+ 
+ inline const unsigned char *EVP_CIPHER_CTX_iv(const EVP_CIPHER_CTX *ctx)
+ {
+@@ -326,8 +326,12 @@ int H235CryptoHelper::DecryptFinalCTS(EVP_CIPHER_CTX *
+             int i = 0;
+             unsigned char C_n_minus_2[EVP_MAX_BLOCK_LENGTH];
+ 
++#if defined(LIBRESSL_VERSION_NUMBER)
++            if (!EVP_CIPHER_CTX_get_iv(ctx, C_n_minus_2, bl))
++                return 0;
++#else
+             memcpy(C_n_minus_2, EVP_CIPHER_CTX_iv(ctx), bl);
+-
++#endif
+             /* C_n plus 0s in buf */
+             memset(&(buf[leftover]), 0, (bl - leftover));
+ 
+@@ -503,7 +507,7 @@ void H235CryptoEngine::SetKey(PBYTEArray key)
+         return;
+       }
+     } else {
+-#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L)
+       EVP_CIPHER_CTX_cleanup(m_encryptCtx);
+       EVP_CIPHER_CTX_init(m_encryptCtx);
+ #else
+@@ -523,7 +527,7 @@ void H235CryptoEngine::SetKey(PBYTEArray key)
+         return;
+       }
+     } else {
+-#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L)
+       EVP_CIPHER_CTX_cleanup(m_decryptCtx);
+       EVP_CIPHER_CTX_init(m_decryptCtx);
+ #else

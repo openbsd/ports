@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_h323ep_cxx,v 1.1 2021/11/28 17:05:24 tb Exp $
+
+Unbreak build with opaque DH in LibreSSL 3.5.
+
+Index: src/h323ep.cxx
+--- src/h323ep.cxx.orig
++++ src/h323ep.cxx
+@@ -439,7 +439,7 @@ PBoolean H323_TLSContext::SetDHParameters(const PBYTEA
+   BIGNUM* g = BN_bin2bn(dh_g, dh_g.GetSize(), NULL);
+   if (p != NULL && g != NULL)
+   {
+-#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L)
+     dh->p = p;
+     dh->g = g;
+ #else
