@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2021/11/17 20:51:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.149 2021/11/28 21:10:21 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
@@ -9,6 +9,7 @@ SUBST_VARS+=	V
 PORTROACH=	limitw:1,even
 EXTRACT_SUFX=	.tar.xz
 EPOCH=		3
+REVISION=	0
 PATCH_DIST_STRIP= -p1
 
 DISTNAME=	bind-$V
