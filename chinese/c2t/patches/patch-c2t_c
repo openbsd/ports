@@ -1,6 +1,9 @@
---- c2t.c.orig	Tue Feb 23 22:29:23 1993
-+++ c2t.c	Mon Mar  2 21:12:22 1998
-@@ -22,10 +22,14 @@
+$OpenBSD: patch-c2t_c,v 1.1 2021/11/28 13:38:21 sthen Exp $
+
+Index: c2t.c
+--- c2t.c.orig
++++ c2t.c
+@@ -22,10 +22,14 @@ main(argc, argv)
  int argc;
  char **argv;
  {
@@ -16,7 +19,7 @@
    register int rpit=0, tila=0, rraja=0, mulpin=0;
    int monitila=0;
    FILE *piffi=0;
-@@ -57,12 +61,12 @@
+@@ -57,12 +61,12 @@ char **argv;
  	   i =0;
  	} /*if argc > 1 */	
    if ((piffi = fopen (DICT, "r")) == 0) {
@@ -31,7 +34,7 @@
      exit (-2);
    }
    pipo = taulu;
-@@ -81,13 +85,13 @@
+@@ -81,13 +85,13 @@ char **argv;
      } else {
        if (rivi[0] == '#') continue;
        if ((*pipo = (char *)malloc (rpit+8)) == 0) {
