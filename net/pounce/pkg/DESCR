@@ -1,0 +1,7 @@
+pounce is a multi-client, TLS-only IRC bouncer.  It maintains a
+persistent connection to an IRC server, acting as a proxy and buffer
+for a number of clients.  When a client connects, any messages
+received since it last disconnected will be relayed to it.  Unlike
+some other bouncers, pounce uses a single buffer for all IRC messages,
+which acts as a queue from which each client reads messages
+independently.
