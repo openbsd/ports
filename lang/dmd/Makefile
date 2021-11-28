@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 13:28:34 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/28 23:21:21 bcallah Exp $
 
 # i386 forthcoming
 ONLY_FOR_ARCHS =	amd64
@@ -10,6 +10,7 @@ DISTFILES =	dmd-${V}.tar.gz \
 		druntime-${V}.tar.gz \
 		phobos-${V}.tar.gz
 PKGNAME =	dmd-${V}
+REVISION =	0
 CATEGORIES =	lang
 
 HOMEPAGE =	https://dlang.org/
@@ -24,7 +25,8 @@ MASTER_SITES =	https://github.com/ibara/dmd/releases/download/bootstrap-${V}/
 
 USE_GMAKE =	Yes
 MAKE_ENV =	HOST_CXX="${CXX}" \
-		HOST_DMD="${WRKDIR}/dmd-${V}-bootstrap/openbsd/bin${MODEL}/dmd"
+		HOST_DMD="${WRKDIR}/dmd-${V}-bootstrap/openbsd/bin${MODEL}/dmd" \
+		LD_LIBRARY_PATH="${WRKSRC}/dmd-${V}-bootstrap/openbsd/bin${MODEL}"
 MAKE_FILE =	posix.mak
 
 NO_TEST =	Yes
