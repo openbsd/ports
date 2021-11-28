@@ -1,11 +1,11 @@
-$OpenBSD: patch-ext_etc_etc_c,v 1.1.1.1 2020/12/28 16:45:27 jeremy Exp $
+$OpenBSD: patch-ext_etc_etc_c,v 1.2 2021/11/28 20:07:58 tb Exp $
 
 Use shadow versions of password functions.
 
 Index: ext/etc/etc.c
 --- ext/etc/etc.c.orig
 +++ ext/etc/etc.c
-@@ -209,7 +209,7 @@ etc_getpwuid(int argc, VALUE *argv, VALUE obj)
+@@ -218,7 +218,7 @@ etc_getpwuid(int argc, VALUE *argv, VALUE obj)
      else {
  	uid = getuid();
      }
@@ -14,7 +14,7 @@ Index: ext/etc/etc.c
      if (pwd == 0) rb_raise(rb_eArgError, "can't find user for %d", (int)uid);
      return setup_passwd(pwd);
  #else
-@@ -239,7 +239,7 @@ etc_getpwnam(VALUE obj, VALUE nam)
+@@ -248,7 +248,7 @@ etc_getpwnam(VALUE obj, VALUE nam)
      struct passwd *pwd;
      const char *p = StringValueCStr(nam);
  

@@ -1,9 +1,9 @@
-$OpenBSD: patch-ext_openssl_extconf_rb,v 1.1.1.1 2020/01/02 21:19:57 jeremy Exp $
+$OpenBSD: patch-ext_openssl_extconf_rb,v 1.2 2021/11/28 20:07:58 tb Exp $
 
 Index: ext/openssl/extconf.rb
 --- ext/openssl/extconf.rb.orig
 +++ ext/openssl/extconf.rb
-@@ -144,6 +144,7 @@ have_func("HMAC_CTX_free")
+@@ -151,6 +151,7 @@ have_func("HMAC_CTX_free")
  OpenSSL.check_func("RAND_pseudo_bytes", "openssl/rand.h") # deprecated
  have_func("X509_STORE_get_ex_data")
  have_func("X509_STORE_set_ex_data")

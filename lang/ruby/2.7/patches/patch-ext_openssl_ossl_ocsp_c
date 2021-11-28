@@ -1,0 +1,18 @@
+$OpenBSD: patch-ext_openssl_ossl_ocsp_c,v 1.1 2021/11/28 20:07:58 tb Exp $
+
+Fix build with opaque OCSP_BASICRESP in LibreSSL 3.5.
+The bug this works around should be fixed since LibreSSL 2.4.2
+as far as I can tell.
+
+Index: ext/openssl/ossl_ocsp.c
+--- ext/openssl/ossl_ocsp.c.orig
++++ ext/openssl/ossl_ocsp.c
+@@ -1093,7 +1093,7 @@ ossl_ocspbres_verify(int argc, VALUE *argv, VALUE self
+      * exists in LibreSSL 2.1.10, 2.2.9, 2.3.6, 2.4.1.
+      */
+     if (!(flg & (OCSP_NOCHAIN | OCSP_NOVERIFY)) &&
+-	sk_X509_num(x509s) && sk_X509_num(bs->certs)) {
++	sk_X509_num(x509s) && sk_X509_num(OCSP_resp_get0_certs(bs))) {
+ 	int i;
+ 
+ 	bs = ASN1_item_dup(ASN1_ITEM_rptr(OCSP_BASICRESP), bs);

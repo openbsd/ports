@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_rubygems_ext_ext_conf_builder_rb,v 1.1.1.1 2020/12/28 16:45:27 jeremy Exp $
+$OpenBSD: patch-lib_rubygems_ext_ext_conf_builder_rb,v 1.2 2021/11/28 20:07:58 tb Exp $
 
 Ugly hack to make --user-install option work.  Without this, when
 a user uses gem install --user-install, it calls
@@ -8,7 +8,7 @@ This removes the -o root -g bin, so it can succeed as a regular user.
 Index: lib/rubygems/ext/ext_conf_builder.rb
 --- lib/rubygems/ext/ext_conf_builder.rb.orig
 +++ lib/rubygems/ext/ext_conf_builder.rb
-@@ -32,6 +32,11 @@ class Gem::Ext::ExtConfBuilder < Gem::Ext::Builder
+@@ -30,6 +30,11 @@ class Gem::Ext::ExtConfBuilder < Gem::Ext::Builder
          siteconf.puts "RbConfig::MAKEFILE_CONFIG['#{dir}'] = dest_path"
          siteconf.puts "RbConfig::CONFIG['#{dir}'] = dest_path"
        end
