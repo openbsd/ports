@@ -1,16 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2021/08/28 20:05:07 sthen Exp $
-
-BROKEN= broken by the update to go 1.17
-
-# patched to replace kr/pty with kreack/pty; see modules.inc XXX
-WRKDIST=	${WRKSRC}
-# remove pkg/MESSAGE if colours get fixed for TERM=xterm.
+# $OpenBSD: Makefile,v 1.11 2021/11/29 11:20:03 kn Exp $
 
 COMMENT=	terminal UI for tshark, inspired by Wireshark
 
 MODGO_MODNAME=	github.com/gcla/termshark/v2
-MODGO_VERSION=	v2.2.0
-REVISION=	1
+MODGO_VERSION=	v2.3.0
 
 DISTNAME=	termshark-${MODGO_VERSION}
 

@@ -1,2 +1,0 @@
-termshark's colours are broken with TERM=xterm or TERM=xterm-color;
-as a workaround you can run with TERM=vt100 or TERM=xterm-256color.
