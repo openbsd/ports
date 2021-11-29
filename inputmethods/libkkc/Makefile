@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/27 01:54:20 inoguchi Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/29 09:58:58 inoguchi Exp $
 
 COMMENT =	Japanese Kana Kanji conversion library
 
@@ -51,6 +51,8 @@ CONFIGURE_ENV +=	LIBS="-lc++ -lc++abi -lpthread"
 
 # suppress warnings (for C codes generated from Vala)
 CONFIGURE_ENV +=	CFLAGS="-Wno-deprecated-declarations -Wno-int-conversion -Wno-unused-value -Wno-tautological-pointer-compare -Wno-incompatible-function-pointer-types -Wno-incompatible-pointer-types -Wno-incompatible-pointer-types-discards-qualifiers"
+
+MAKE_ENV +=		XDG_CACHE_HOME=${WRKBUILD}/.cache
 
 # tests/encoding.vala and tests/system-dictionary.vala crashes with
 # Abort trap, bogus pointer (double free?).
