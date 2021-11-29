@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2020/03/22 18:13:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2021/11/29 16:28:31 espie Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -15,8 +15,6 @@ MULTI_PACKAGES=	-main -data
 N=		redeclipse
 V=		1.6.0
 PKGNAME=	${N}-${V}
-PKGNAME-main=	${N}-${V}
-PKGNAME-data=	${N}-data-${V}
 MASTER_SITES=	https://github.com/red-eclipse/base/releases/download/v${V}/
 DISTNAME=	redeclipse_${V}_combined
 EXTRACT_SUFX=	.tar.bz2

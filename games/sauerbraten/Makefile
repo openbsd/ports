@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/16 00:25:37 jsg Exp $
+# $OpenBSD: Makefile,v 1.11 2021/11/29 16:28:31 espie Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 macppc
 
@@ -15,8 +15,6 @@ MULTI_PACKAGES=	-main -data
 N=		sauerbraten
 V=		20201227
 PKGNAME=	${N}-${V}
-PKGNAME-main=	${N}-${V}
-PKGNAME-data=	${N}-data-${V}
 DISTNAME=	${N}_2020_12_27_linux
 EXTRACT_SUFX=	.tar.bz2
 

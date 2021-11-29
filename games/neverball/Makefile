@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2021/01/30 07:00:05 benoit Exp $
+# $OpenBSD: Makefile,v 1.24 2021/11/29 16:28:30 espie Exp $
 
 COMMENT-main =	tilt the floor to roll a ball through an obstacle course
 COMMENT-data =	data for Neverball/Neverputt
@@ -7,8 +7,6 @@ BROKEN-hppa =	SIGILL on data/ball/snowglobe/snowglobe-inner.so
 V =		1.6.0
 REVISION-main =	3
 DISTNAME =	neverball-$V
-PKGNAME-main =	neverball-$V
-PKGNAME-data =	neverball-data-$V
 EPOCH =		0
 
 CATEGORIES =	games x11

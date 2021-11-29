@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/07/08 08:12:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2021/11/29 16:28:30 espie Exp $
 
 # Requires OpenGL>=3.2
 ONLY_FOR_ARCHS = 	aarch64 amd64 i386
@@ -8,8 +8,7 @@ COMMENT-data =		naev game data
 
 V = 			0.8.2
 DISTNAME =		naev-${V}-source
-PKGNAME-main = 		naev-${V}
-PKGNAME-data = 		naev-data-${V}
+PKGNAME = 		naev-${V}
 
 CATEGORIES = 		games x11
 

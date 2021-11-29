@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 21:02:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/11/29 16:28:31 espie Exp $
 
 V = 0.9.4
 COMMENT-client = race for the galaxy card game
 COMMENT-server = race for the galaxy card game, game server
 PKGNAME-client = rftg-$V
-PKGNAME-server = rftg-server-$V
 CATEGORIES = games
 HOMEPAGE = http://keldon.net/rftg/
 DISTNAME = rftg-$V

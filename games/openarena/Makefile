@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2020/03/20 16:44:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2021/11/29 16:28:30 espie Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 macppc
 
@@ -16,9 +16,6 @@ V =			0.8.8
 E_V =			${V}# 	engine version
 
 PKGNAME =		openarena-${V}
-PKGNAME-main =		openarena-${V}
-PKGNAME-server =	openarena-server-${V}
-PKGNAME-data =		openarena-data-${V}
 
 REVISION-main =		1
 REVISION-server =	0

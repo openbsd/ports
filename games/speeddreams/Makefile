@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2021/02/27 13:37:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/11/29 16:28:31 espie Exp $
 
 BROKEN =		failure on startup
 
@@ -12,8 +12,7 @@ COMMENT-data =		open source motorsport simulation, data files
 V =			2.2.1
 REV =			r6404
 DISTNAME =		speed-dreams-src-base-$V-${REV}
-PKGNAME-main =		speeddreams-$V
-PKGNAME-data =		speeddreams-data-$V
+PKGNAME =		speeddreams-$V
 REVISION-data =		1
 REVISION-main =		1
 
