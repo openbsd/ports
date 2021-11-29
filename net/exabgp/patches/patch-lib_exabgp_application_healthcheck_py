@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_exabgp_application_healthcheck_py,v 1.4 2021/04/07 11:55:14 sthen Exp $
+$OpenBSD: patch-lib_exabgp_application_healthcheck_py,v 1.5 2021/11/29 22:04:54 sthen Exp $
 
 Index: lib/exabgp/application/healthcheck.py
 --- lib/exabgp/application/healthcheck.py.orig
@@ -16,7 +16,7 @@ Index: lib/exabgp/application/healthcheck.py
      }
  
  Use :option:`--help` to get options accepted by this program. A
-@@ -264,6 +264,8 @@ def setup_logging(debug, silent, name, syslog_facility
+@@ -266,6 +266,8 @@ def setup_logging(debug, silent, name, syslog_facility
              return "/var/run/log"
          if sys.platform.startswith("netbsd"):
              return "/var/run/log"
