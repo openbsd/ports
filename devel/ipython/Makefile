@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.67 2021/11/02 00:00:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2021/11/29 18:21:00 bket Exp $
 
 COMMENT =		enhanced interactive Python shell
 
-MODPY_EGG_VERSION =	7.29.0
+MODPY_EGG_VERSION =	7.30.0
 DISTNAME =		ipython-${MODPY_EGG_VERSION}
 PKGNAME =		ipython${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		devel
 
