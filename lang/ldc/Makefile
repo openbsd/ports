@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/21 13:51:47 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/29 12:19:13 bcallah Exp $
 
 # You must create a bootstrap for each supported arch.
 # Can use GDC to create said bootstrap compiler.
@@ -9,6 +9,7 @@ COMMENT =	LLVM D Compiler
 DISTFILES =	ldc-${V}-src.tar.gz:0 \
 		ldc-${V}-bootstrap.tar.gz:1
 PKGNAME =	ldc-${V}
+REVISION =	0
 CATEGORIES =	lang
 
 HOMEPAGE =	https://wiki.dlang.org/LDC
@@ -41,7 +42,10 @@ CONFIGURE_ARGS =	-DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
 			-DLLVM_CONFIG="${LOCALBASE}/bin/llvm-config"
 
 # Use a bootstrap compiler, similar to DMD.
-CONFIGURE_ENV =	DMD="${WRKDIR}/ldc-${V}-bootstrap/${MACHINE_ARCH}/ldmd2"
+CONFIGURE_ENV =	DMD="${WRKDIR}/ldc-${V}-bootstrap/${MACHINE_ARCH}/ldmd2" \
+		LD_LIBRARY_PATH="${WRKDIR}/ldc-${V}-bootstrap/${MACHINE_ARCH}"
+
+MAKE_ENV +=	LD_LIBRARY_PATH="${WRKDIR}/ldc-${V}-bootstrap/${MACHINE_ARCH}"
 
 WRKDIST	=	${WRKDIR}/ldc-${V}-src
 
