@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/28 23:21:21 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2021/11/29 01:23:22 bcallah Exp $
 
 # i386 forthcoming
 ONLY_FOR_ARCHS =	amd64
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	amd64
 V =		2.098.0
 COMMENT =	reference compiler for the D programming language
 DISTFILES =	dmd-${V}.tar.gz \
-		dmd-${V}-bootstrap.tar.gz \
+		dmd-${V}-bootstrap-p0.tar.gz \
 		druntime-${V}.tar.gz \
 		phobos-${V}.tar.gz
 PKGNAME =	dmd-${V}
