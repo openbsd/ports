@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.67 2021/10/19 07:55:12 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.68 2021/11/29 10:27:01 sthen Exp $
 @extraunexec rm -rf %D/roundcubemail/logs/*
 roundcubemail/
 roundcubemail/.htaccess.dist
@@ -548,6 +548,7 @@ roundcubemail/plugins/emoticons/localization/is_IS.inc
 roundcubemail/plugins/emoticons/localization/it_IT.inc
 roundcubemail/plugins/emoticons/localization/ja_JP.inc
 roundcubemail/plugins/emoticons/localization/ko_KR.inc
+roundcubemail/plugins/emoticons/localization/ku_IQ.inc
 roundcubemail/plugins/emoticons/localization/lt_LT.inc
 roundcubemail/plugins/emoticons/localization/lv_LV.inc
 roundcubemail/plugins/emoticons/localization/mk_MK.inc
@@ -1248,6 +1249,7 @@ roundcubemail/plugins/markasjunk/localization/de_DE.inc
 roundcubemail/plugins/markasjunk/localization/el_GR.inc
 roundcubemail/plugins/markasjunk/localization/en_GB.inc
 roundcubemail/plugins/markasjunk/localization/en_US.inc
+roundcubemail/plugins/markasjunk/localization/es_AR.inc
 roundcubemail/plugins/markasjunk/localization/es_ES.inc
 roundcubemail/plugins/markasjunk/localization/et_EE.inc
 roundcubemail/plugins/markasjunk/localization/eu_ES.inc
@@ -1255,9 +1257,11 @@ roundcubemail/plugins/markasjunk/localization/fi_FI.inc
 roundcubemail/plugins/markasjunk/localization/fr_FR.inc
 roundcubemail/plugins/markasjunk/localization/ga_IE.inc
 roundcubemail/plugins/markasjunk/localization/he_IL.inc
+roundcubemail/plugins/markasjunk/localization/hr_HR.inc
 roundcubemail/plugins/markasjunk/localization/hu_HU.inc
 roundcubemail/plugins/markasjunk/localization/id_ID.inc
 roundcubemail/plugins/markasjunk/localization/is_IS.inc
+roundcubemail/plugins/markasjunk/localization/it_IT.inc
 roundcubemail/plugins/markasjunk/localization/ja_JP.inc
 roundcubemail/plugins/markasjunk/localization/ko_KR.inc
 roundcubemail/plugins/markasjunk/localization/lt_LT.inc
@@ -2400,6 +2404,7 @@ roundcubemail/program/localization/de_CH/
 roundcubemail/program/localization/de_CH/csv2vcard.inc
 roundcubemail/program/localization/de_CH/labels.inc
 roundcubemail/program/localization/de_CH/messages.inc
+roundcubemail/program/localization/de_CH/timezones.inc
 roundcubemail/program/localization/de_DE/
 roundcubemail/program/localization/de_DE/csv2vcard.inc
 roundcubemail/program/localization/de_DE/labels.inc
@@ -2431,6 +2436,7 @@ roundcubemail/program/localization/es_419/timezones.inc
 roundcubemail/program/localization/es_AR/
 roundcubemail/program/localization/es_AR/labels.inc
 roundcubemail/program/localization/es_AR/messages.inc
+roundcubemail/program/localization/es_AR/timezones.inc
 roundcubemail/program/localization/es_ES/
 roundcubemail/program/localization/es_ES/csv2vcard.inc
 roundcubemail/program/localization/es_ES/labels.inc
@@ -2531,6 +2537,7 @@ roundcubemail/program/localization/ku/messages.inc
 roundcubemail/program/localization/ku_IQ/
 roundcubemail/program/localization/ku_IQ/labels.inc
 roundcubemail/program/localization/ku_IQ/messages.inc
+roundcubemail/program/localization/ku_IQ/timezones.inc
 roundcubemail/program/localization/lb_LU/
 roundcubemail/program/localization/lb_LU/labels.inc
 roundcubemail/program/localization/lb_LU/messages.inc
@@ -3546,7 +3553,6 @@ roundcubemail/vendor/pear/console_commandline/README.rst
 roundcubemail/vendor/pear/console_commandline/composer.json
 roundcubemail/vendor/pear/console_commandline/data/
 roundcubemail/vendor/pear/console_commandline/data/xmlschema.rng
-roundcubemail/vendor/pear/console_commandline/package.xml
 roundcubemail/vendor/pear/console_getopt/
 roundcubemail/vendor/pear/console_getopt/.travis.yml
 roundcubemail/vendor/pear/console_getopt/Console/
