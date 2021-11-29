@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2020/08/09 19:39:15 juanfra Exp $
+# $OpenBSD: Makefile,v 1.17 2021/11/29 17:06:48 juanfra Exp $
 
 COMMENT =		Dragon and CoCo emulator
 
-DISTNAME =		xroar-0.36.2
+DISTNAME =		xroar-1.0
 
 CATEGORIES =		emulators
 
@@ -25,12 +25,14 @@ MASTER_SITES =		https://www.6809.org.uk/xroar/dl/
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
+BUILD_DEPENDS =		print/texinfo
 LIB_DEPENDS =		audio/libsndfile \
 			devel/sdl2 \
 			x11/gtk+2 \
 			x11/gtkglext
 
 USE_GMAKE =		Yes
+MAKE_FLAGS =		MAKEINFO=${PREFIX}/bin/gmakeinfo
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-gtk2 \
