@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/15 11:17:11 sdk Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/29 17:35:52 kmos Exp $
 
 COMMENT =	minimalist and privacy-oriented WebKitGTK+ browser
 DISTNAME =	badwolf-1.2.0
@@ -11,6 +11,10 @@ MAINTAINER =	Adnan Shameem <adnan360@protonmail.com>
 PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://hacktivis.me/releases/
+
+# C11
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS =	c
 
 WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gtk-3 harfbuzz intl javascriptcoregtk-4.0 pango-1.0
