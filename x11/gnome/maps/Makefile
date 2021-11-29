@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.66 2021/10/30 21:58:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2021/11/29 21:06:51 ajacoutot Exp $
 
 COMMENT=		map application for GNOME
 
 GNOME_PROJECT=		gnome-maps
 GNOME_VERSION=		41.1
+REVISION=		0
 
 SHARED_LIBS +=  gnome-maps                0.0 # 0.0.0
 
@@ -30,7 +31,8 @@ BUILD_DEPENDS=		geo/geoclue2 \
 
 RUN_DEPENDS=		geo/geoclue2 \
 			x11/gnome/gfbgraph \
-			x11/gnome/gjs
+			x11/gnome/gjs \
+			x11/libhandy
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
