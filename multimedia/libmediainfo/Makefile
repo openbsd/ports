@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/04/29 20:16:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2021/11/29 19:53:57 naddy Exp $
 
 COMMENT=	read metadata from media files
 
-VERSION=	21.03
+VERSION=	21.09
 PKGNAME=	libmediainfo-${VERSION}
-SHARED_LIBS=	mediainfo	0.0 # 0.0
+SHARED_LIBS=	mediainfo	0.1 # 0.0
 CATEGORIES=	multimedia
 
 HOMEPAGE=	https://mediaarea.net/en/MediaInfo
@@ -29,7 +29,7 @@ CONFIGURE_ARGS=	--enable-static
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 AUTOCONF_VERSION=2.69
-AUTOMAKE_VERSION=1.13
+AUTOMAKE_VERSION=1.16
 AUTOCONF_DIR=	${WRKBUILD}
 
 WRKDIST=	${WRKDIR}/MediaInfoLib

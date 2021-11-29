@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2021/04/29 20:19:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2021/11/29 19:53:57 naddy Exp $
 
 COMMENT=	utility for reading information from audio/video files
 
-VERSION=	21.03
+VERSION=	21.09
 PKGNAME=	mediainfo-${VERSION}
 CATEGORIES=	multimedia
 
@@ -28,7 +28,7 @@ CONFIGURE_STYLE=autoreconf
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 AUTOCONF_VERSION=2.69
-AUTOMAKE_VERSION=1.13
+AUTOMAKE_VERSION=1.16
 AUTOCONF_DIR=	${WRKBUILD}
 
 WRKDIST=	${WRKDIR}/MediaInfo
