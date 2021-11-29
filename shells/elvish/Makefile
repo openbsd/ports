@@ -1,25 +1,29 @@
-# $OpenBSD: Makefile,v 1.7 2021/03/08 13:59:26 sthen Exp $
-
-BROKEN-aarch64 = looks like the vendored golang.org/x/sys/unix is too old for aarch64
-# try removing above with next update
+# $OpenBSD: Makefile,v 1.8 2021/11/29 12:53:51 bcallah Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
-COMMENT =	cross-platform, friendly, and expressive shell
+COMMENT =	expressive programming language and versatile shell
 CATEGORIES =	shells
+
+MODGO_MODNAME =	src.elv.sh
+MODGO_VERSION =	v0.16.3
 
 GH_ACCOUNT =	elves
 GH_PROJECT =	elvish
-GH_TAGNAME =	v0.13.1
-REVISION =	0
+GH_TAGNAME =	${MODGO_VERSION}
 
 HOMEPAGE =	https://elv.sh/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+
 # BSD
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c pthread
 
 MODULES =	lang/go
+
+NO_TEST =	Yes
+
+.include "modules.inc"
 
 .include <bsd.port.mk>

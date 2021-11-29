@@ -1,2 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/03 16:00:21 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/11/29 12:53:51 bcallah Exp $
+@bin bin/e3bc
 @bin bin/elvish
+@bin bin/nav
+@bin bin/widget
