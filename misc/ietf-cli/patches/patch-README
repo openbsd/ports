@@ -1,0 +1,16 @@
+$OpenBSD: patch-README,v 1.1 2021/11/29 11:18:32 kn Exp $
+
+Adjust ConfigPlaces.
+
+Index: README
+--- README.orig
++++ README
+@@ -15,7 +15,7 @@ and available to the default shell.
+ 
+ The program consists of two files: "ietf" (the executable) and "ietf.config"
+ (mandatory configuration settings). The latter file must be either in one of
+-the following directories: ~/bin/, /usr/local/bin/, or ~/.ietf/. The
++the following directories: ~/.ietf/ or ${SYSCONFDIR}/. The
+ executable can be anywhere, but is probably best kept with the configuration
+ file.
+ 

@@ -1,37 +1,16 @@
-$OpenBSD: patch-ietf,v 1.3 2021/02/05 14:16:17 phessler Exp $
+$OpenBSD: patch-ietf,v 1.4 2021/11/29 11:18:32 kn Exp $
 
 Adjust ConfigPlaces.
-
-Remove binary flag when opening a text file to write to it
- - https://github.com/paulehoffman/ietf-cli/pull/4
 
 Index: ietf
 --- ietf.orig
 +++ ietf
-@@ -78,7 +78,7 @@ __license__ = "https://en.wikipedia.org/wiki/WTFPL"
+@@ -92,7 +92,7 @@ __license__ = "https://en.wikipedia.org/wiki/WTFPL"
  
- KnownCmds = ("auth48", "author", "bcp", "charter", "conflict", "diff", "draft", "draftstatus", "iesg", "mirror", \
- 	"rfc", "rfcextra", "rfcinfo", "rfcstatus", "rg", "std", "tools", "tracker", "foo")
+ KnownCmds = ("auth48", "author", "bcp", "bcponly", "charter", "conflict", "diff", "draft", "draftreport", \
+ 	 "iesg", "mirror", "rfc", "rfcextra", "rfcinfo", "rg", "std", "stdonly", "tools", "tracker", "foo")
 -ConfigPlaces = ("~/bin/ietf.config", "/usr/local/bin/ietf.config", "~/.ietf/ietf.config")
 +ConfigPlaces = ("~/.ietf/ietf.config", "${SYSCONFDIR}/ietf.config")
  
  # Make a block of text that can be executed in the CLI
  CLICmdCode = ""
-@@ -751,7 +751,7 @@ def Cmd_mirror(Args):
- 				for ThisFoundInnerAuthor in ThisFoundOuterAuthor.findall(TagBase + "name"):
- 					RFCStatus[ThisRFCNum]["authors"].append(ThisFoundInnerAuthor.text)
- 	try:
--		with open(RFCStatusFileLoc, mode="wb") as statusf:
-+		with open(RFCStatusFileLoc, mode="w") as statusf:
- 			json.dump(RFCStatus, statusf)
- 	except:
- 		exit("Could not dump status info to '" + RFCStatusFileLoc + "'. Exiting.")
-@@ -783,7 +783,7 @@ def Cmd_mirror(Args):
- 			"title": TheFields[13], \
- 			"authors": TheFields[14].rstrip() }
- 	try:
--		with open(IDStatusFileLoc, mode="wb") as statusf:
-+		with open(IDStatusFileLoc, mode="w") as statusf:
- 			json.dump(IDStatus, statusf)
- 	except:
- 		exit("Could not dump status info to '" + IDStatusFileLoc + "'. Exiting.")	
