@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2021/11/29 11:37:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2021/11/29 17:32:28 ajacoutot Exp $
 
 COMMENT=	CLI tools to manage music collections
 
@@ -18,7 +18,7 @@ MODPY_PYTEST=	Yes
 
 # /bin/tar doesn't handle timestamps, breaking some tests
 TAR=		gtar
-BUILD_DEPENES=	archivers/gtar
+BUILD_DEPENDS=	archivers/gtar
 
 RUN_DEPENDS+=	audio/py-discogs-client${MODPY_FLAVOR}>=2.0.2 \
 		audio/py-last${MODPY_FLAVOR} \
