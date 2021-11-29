@@ -1,4 +1,4 @@
-#$OpenBSD: Makefile,v 1.11 2021/11/28 12:45:46 sthen Exp $
+#$OpenBSD: Makefile,v 1.12 2021/11/29 22:18:46 naddy Exp $
 
 COMMENT =	Bounded Model Checker for C and C++ programs
 
@@ -34,6 +34,7 @@ MAKE_FLAGS =	CFLAGS="-Wall ${CFLAGS}" \
 		CXXFLAGS="-Wall ${CXXFLAGS}" \
 		LINKFLAGS="${LDFLAGS}"
 
+WRKDIST =	${WRKDIR}/cbmc-${DISTNAME}
 WRKSRC =	${WRKDIST}/src
 
 post-extract:
