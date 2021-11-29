@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.55 2021/11/16 16:20:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2021/11/29 11:37:08 sthen Exp $
 
 COMMENT=	CLI tools to manage music collections
 
-MODPY_EGG_VERSION= 1.5.0
+MODPY_EGG_VERSION= 1.6.0
 DISTNAME=	beets-${MODPY_EGG_VERSION}
 CATEGORIES=	audio
 
@@ -16,13 +16,16 @@ MODPY_SETUPTOOLS= Yes
 MODPY_PI=	Yes
 MODPY_PYTEST=	Yes
 
+# /bin/tar doesn't handle timestamps, breaking some tests
+TAR=		gtar
+BUILD_DEPENES=	archivers/gtar
+
 RUN_DEPENDS+=	audio/py-discogs-client${MODPY_FLAVOR}>=2.0.2 \
 		audio/py-last${MODPY_FLAVOR} \
 		audio/py-mediafile${MODPY_FLAVOR} \
 		audio/py-musicbrainzngs${MODPY_FLAVOR} \
 		audio/py-mutagen${MODPY_FLAVOR} \
 		devel/py-algorithm-munkres${MODPY_FLAVOR} \
-		devel/py-six${MODPY_FLAVOR} \
 		devel/py-xdg${MODPY_FLAVOR} \
 		textproc/py-confuse${MODPY_FLAVOR} \
 		textproc/py-jellyfish${MODPY_FLAVOR} \
@@ -35,7 +38,6 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/beet.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/beetsconfig.5 ${PREFIX}/man/man5
 
-# also wants responses, rarfile: currently fetches from pypi at test time
 PORTHOME=	${WRKDIR}
 TEST_DEPENDS=	archivers/py-rarfile${MODPY_FLAVOR} \
 		audio/py-mpd2${MODPY_FLAVOR} \

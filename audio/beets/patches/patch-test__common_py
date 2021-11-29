@@ -1,9 +1,9 @@
-$OpenBSD: patch-test__common_py,v 1.1 2021/11/16 16:20:03 sthen Exp $
+$OpenBSD: patch-test__common_py,v 1.2 2021/11/29 11:37:08 sthen Exp $
 
 Index: test/_common.py
 --- test/_common.py.orig
 +++ test/_common.py
-@@ -25,9 +25,7 @@ import six
+@@ -22,9 +22,7 @@ import shutil
  import unittest
  from contextlib import contextmanager
  
@@ -13,7 +13,7 @@ Index: test/_common.py
  # Mangle the search path to include the beets sources.
  sys.path.insert(0, '..')
  import beets.library  # noqa: E402
-@@ -57,7 +55,7 @@ _item_ident = 0
+@@ -54,7 +52,7 @@ _item_ident = 0
  # OS feature test.
  HAVE_SYMLINK = sys.platform != 'win32'
  HAVE_HARDLINK = sys.platform != 'win32'

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2021/11/16 16:20:03 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.22 2021/11/29 11:37:08 sthen Exp $
 bin/beet
 lib/python${MODPY_VERSION}/site-packages/beets/
 lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -85,6 +85,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}absubmit.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}acousticbrainz.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}albumtypes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}aura.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}badfiles.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}bareasc.${MODPY_PYC_MAGIC_TAG}pyc
@@ -149,6 +150,7 @@ lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}unimported.${
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}zero.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/absubmit.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/acousticbrainz.py
+lib/python${MODPY_VERSION}/site-packages/beetsplug/albumtypes.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/aura.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/badfiles.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/bareasc.py
