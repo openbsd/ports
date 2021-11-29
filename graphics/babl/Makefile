@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2021/07/01 07:16:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2021/11/29 17:31:34 ajacoutot Exp $
 
 COMMENT=		dynamic pixel format conversion library
 
@@ -35,6 +35,8 @@ COMPILER=		base-clang ports-gcc
 BUILD_DEPENDS=		x11/gnome/librsvg
 
 LIB_DEPENDS=		graphics/lcms2
+
+CONFIGURE_ARGS=		-Dwith-docs=false \
 
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS +=	-Denable-sse=false \
