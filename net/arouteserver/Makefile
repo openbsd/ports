@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2021/11/02 00:01:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2021/11/29 22:06:51 sthen Exp $
 
 COMMENT =	tool to automatically build BGP route server configurations
 
-MODPY_EGG_VERSION =	1.11.0
+MODPY_EGG_VERSION =	1.11.1
 DISTNAME =	arouteserver-${MODPY_EGG_VERSION}
-REVISION =	0
 
 CATEGORIES =	net
 
