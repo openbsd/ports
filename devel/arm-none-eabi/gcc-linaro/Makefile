@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2021/05/19 08:39:16 cwen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/11/29 05:46:24 jsg Exp $
 
 BROKEN-arm=	ICE: Bus error in unwind-dw2.c
 
@@ -8,6 +8,7 @@ VERSION=	7.4-2019.02
 DISTNAME=	gcc-linaro-${VERSION}
 EXTRACT_SUFX=	.tar.xz
 PKGNAME=	${CONFIG}-gcc-linaro-${VERSION:S/-/./g}
+REVISION=	0
 
 FLAVORS=	aarch64 arm
 FLAVOR?=	arm
@@ -69,7 +70,8 @@ CONFIGURE_ARGS+=--enable-languages=${LANGS}	\
 		--with-newlib			\
 		--disable-lto			\
 		--enable-cpp			\
-		--disable-plugin
+		--disable-plugin		\
+		--without-isl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
