@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1347 2021/11/27 16:56:18 semarie Exp $
+# $OpenBSD: Quirks.pm,v 1.1348 2021/11/29 21:55:29 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1616,6 +1616,7 @@ setup_obsolete_reason(
 	7 => 'php-predis',
 	5 => 'virtuoso',
 	3 => 'upobsd',
+	9 => 'waagent',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1645,6 +1646,7 @@ my $obsolete_message = {
 	6 => "no longer useful",
 	7 => "removed in favor of using the language's package manager",
 	8 => "no longer maintained upstream, consider mapproxy as an alternative",
+	9 => "removed, needs a port maintainer",
 	10 => "has been replaced by opendkim",
 	11 => "no longer packageable",
 	12 => "replace with IMAPSieve, see https://wiki.dovecot.org/HowTo/AntispamWithSieve",
