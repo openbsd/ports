@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2021/07/27 20:36:26 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.27 2021/11/29 17:05:45 juanfra Exp $
 @conflict racket-<6.2
 @pkgpath lang/racket
 %%bc%%
@@ -548,6 +548,8 @@ lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/path_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/path_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/performance-hint_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/performance-hint_rkt.zo
+lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/phase+space_rkt.dep
+lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/phase+space_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/place_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/place_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/port_rkt.dep
@@ -606,6 +608,8 @@ lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/surrogate_rk
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/surrogate_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/symbol_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/symbol_rkt.zo
+lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/syntax-srcloc_rkt.dep
+lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/syntax-srcloc_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/syntax_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/syntax_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/system_rkt.dep
@@ -1786,6 +1790,7 @@ share/racket/collects/racket/math.rkt
 share/racket/collects/racket/os.rkt
 share/racket/collects/racket/path.rkt
 share/racket/collects/racket/performance-hint.rkt
+share/racket/collects/racket/phase+space.rkt
 share/racket/collects/racket/place/
 share/racket/collects/racket/place.rkt
 share/racket/collects/racket/place/dynamic.rkt
@@ -1944,6 +1949,7 @@ share/racket/collects/racket/stxparam-exptime.rkt
 share/racket/collects/racket/stxparam.rkt
 share/racket/collects/racket/surrogate.rkt
 share/racket/collects/racket/symbol.rkt
+share/racket/collects/racket/syntax-srcloc.rkt
 share/racket/collects/racket/syntax.rkt
 share/racket/collects/racket/system.rkt
 share/racket/collects/racket/tcp.rkt
