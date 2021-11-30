@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.26 2021/01/11 15:53:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2021/11/30 09:18:09 sthen Exp $
 
 COMMENT=	high-performance and extensible DHCP server engine from ISC
 
-VERSION=	1.8.2
+VERSION=	2.0.0
 PORTROACH=	limitw:1,even
 
 DISTNAME=	kea-${VERSION}
 PKGNAME-main=	kea-${VERSION:S/-P/pl/}
 
-.for i in kea-exceptions kea-util kea-util-io kea-threads kea-log \
-  kea-cryptolink kea-dns++ kea-asiolink kea-cc kea-database kea-hooks \
-  kea-dhcp++ kea-cfgclient kea-stats kea-asiodns kea-dhcp_ddns \
-  kea-eval kea-process kea-dhcpsrv kea-http kea-mysql kea-pgsql
-SHARED_LIBS +=  $i 7.1
+.for i in kea-asiodns kea-asiolink kea-cc kea-cfgclient kea-cryptolink \
+    kea-d2srv kea-database kea-dhcp++ kea-dhcp_ddns kea-dhcpsrv kea-dns++ \
+    kea-eval kea-exceptions kea-hooks kea-http kea-log kea-mysql kea-pgsql \
+    kea-process kea-stats kea-threads kea-util kea-util-io
+SHARED_LIBS +=  $i 8.0
 .endfor
 
 CATEGORIES=	net
@@ -22,7 +22,7 @@ HOMEPAGE=	https://kea.isc.org/
 # MPL 2.0
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += boost_system c crypto log4cplus m pthread ${COMPILER_LIBCXX}
+WANTLIB += boost_system c crypto log4cplus m pthread ssl ${COMPILER_LIBCXX}
 
 MASTER_SITES=	${MASTER_SITE_ISC:=kea/${VERSION}/}
 
@@ -50,8 +50,8 @@ COMPILER=	base-clang ports-gcc
 RMFILES=	share/kea/scripts/cql
 
 .if ${FLAVOR:Mmysql}
-CONFIGURE_ARGS+= --with-dhcp-mysql=${LOCALBASE}/bin/mysql_config
-WANTLIB+=	 mariadb ssl z
+CONFIGURE_ARGS+= --with-mysql=${LOCALBASE}/bin/mysql_config
+WANTLIB+=	 mariadb z
 LIB_DEPENDS+=	 databases/mariadb
 .else
 RMFILES+=	share/doc/kea/examples/kea[46]/*mysql* \
@@ -61,8 +61,8 @@ RMFILES+=	share/doc/kea/examples/kea[46]/*mysql* \
 .if ${FLAVOR:Mpostgresql}
 # requires include/postgresql/server/utils/errcodes.h
 BUILD_DEPENDS+=	 databases/postgresql,-server
-CONFIGURE_ARGS+= --with-dhcp-pgsql=${LOCALBASE}/bin/pg_config
-WANTLIB+=	 pq ssl
+CONFIGURE_ARGS+= --with-pgsql=${LOCALBASE}/bin/pg_config
+WANTLIB+=	 pq
 LIB_DEPENDS+=	 databases/postgresql
 .else
 RMFILES+=	share/doc/kea/examples/kea[46]/*pgsql* \

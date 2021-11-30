@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_bin_keactrl_kea-dhcp-ddns_conf_pre,v 1.2 2019/12/20 17:16:37 sthen Exp $
+$OpenBSD: patch-src_bin_keactrl_kea-dhcp-ddns_conf_pre,v 1.3 2021/11/30 09:18:09 sthen Exp $
 
 Index: src/bin/keactrl/kea-dhcp-ddns.conf.pre
 --- src/bin/keactrl/kea-dhcp-ddns.conf.pre.orig
@@ -6,7 +6,7 @@ Index: src/bin/keactrl/kea-dhcp-ddns.conf.pre
 @@ -44,7 +44,7 @@
                  // - syslog (logs to syslog)
                  // - syslog:name (logs to syslog using specified name)
-                 // Any other value is considered a name of a time
+                 // Any other value is considered a name of the file
 -                "output": "@localstatedir@/log/kea-ddns.log"
 +                "output": "syslog:daemon"
  
