@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/10/22 05:15:38 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/11/30 17:19:22 rsadowski Exp $
 @bin bin/kdeconnect-app
 @bin bin/kdeconnect-cli
 @bin bin/kdeconnect-handler
@@ -8,11 +8,12 @@
 @lib lib/libkdeconnectcore.so.${LIBkdeconnectcore_VERSION}
 @lib lib/libkdeconnectinterfaces.so.${LIBkdeconnectinterfaces_VERSION}
 @lib lib/libkdeconnectpluginkcm.so.${LIBkdeconnectpluginkcm_VERSION}
-@lib lib/libkdeconnectsmshelper.so.${LIBkdeconnectsmshelper_VERSION}
 @so lib/qt5/plugins/kcm_kdeconnect.so
 lib/qt5/plugins/kdeconnect/
 @so lib/qt5/plugins/kdeconnect/kdeconnect_battery.so
+@so lib/qt5/plugins/kdeconnect/kdeconnect_bigscreen.so
 @so lib/qt5/plugins/kdeconnect/kdeconnect_clipboard.so
+@so lib/qt5/plugins/kdeconnect/kdeconnect_connectivity_report.so
 @so lib/qt5/plugins/kdeconnect/kdeconnect_contacts.so
 @so lib/qt5/plugins/kdeconnect/kdeconnect_findmyphone.so
 @so lib/qt5/plugins/kdeconnect/kdeconnect_lockdevice.so
@@ -42,6 +43,7 @@ lib/qt5/plugins/kf5/kfileitemaction/
 @so lib/qt5/plugins/kf5/kio/kdeconnect.so
 lib/qt5/qml/org/kde/kdeconnect/
 @so lib/qt5/qml/org/kde/kdeconnect/libkdeconnectdeclarativeplugin.so
+lib/qt5/qml/org/kde/kdeconnect/plugins.qmltypes
 lib/qt5/qml/org/kde/kdeconnect/qmldir
 @bin libexec/kdeconnectd
 share/Thunar/
@@ -49,64 +51,112 @@ share/Thunar/sendto/
 share/Thunar/sendto/kdeconnect-thunar.desktop
 share/applications/org.kde.kdeconnect.app.desktop
 share/applications/org.kde.kdeconnect.daemon.desktop
-share/applications/org.kde.kdeconnect.kcm.desktop
+share/applications/org.kde.kdeconnect.handler.desktop
 share/applications/org.kde.kdeconnect.nonplasma.desktop
+share/applications/org.kde.kdeconnect.settings.desktop
 share/applications/org.kde.kdeconnect.sms.desktop
-share/applications/org.kde.kdeconnect.smshandler.desktop
-share/applications/org.kde.kdeconnect.telhandler.desktop
 share/applications/org.kde.kdeconnect_open.desktop
 share/contractor/
 share/contractor/kdeconnect.contract
 share/dbus-1/services/org.kde.kdeconnect.service
+share/deepin/
+share/deepin/dde-file-manager/
+share/deepin/dde-file-manager/oem-menuextensions/
+share/deepin/dde-file-manager/oem-menuextensions/kdeconnect-dde.desktop
+share/doc/HTML/ca/kdeconnect-kde/
+share/doc/HTML/ca/kdeconnect-kde/index.cache.bz2
+share/doc/HTML/ca/kdeconnect-kde/index.docbook
+share/doc/HTML/de/kdeconnect-kde/
+share/doc/HTML/de/kdeconnect-kde/index.cache.bz2
+share/doc/HTML/de/kdeconnect-kde/index.docbook
 share/doc/HTML/en/kdeconnect/
 share/doc/HTML/en/kdeconnect/index.cache.bz2
 share/doc/HTML/en/kdeconnect/index.docbook
+share/doc/HTML/es/kdeconnect-kde/
+share/doc/HTML/es/kdeconnect-kde/index.cache.bz2
+share/doc/HTML/es/kdeconnect-kde/index.docbook
+share/doc/HTML/id/
+share/doc/HTML/id/kdeconnect-kde/
+share/doc/HTML/id/kdeconnect-kde/index.cache.bz2
+share/doc/HTML/id/kdeconnect-kde/index.docbook
+share/doc/HTML/it/kdeconnect-kde/
+share/doc/HTML/it/kdeconnect-kde/index.cache.bz2
+share/doc/HTML/it/kdeconnect-kde/index.docbook
+share/doc/HTML/nl/kdeconnect-kde/
+share/doc/HTML/nl/kdeconnect-kde/index.cache.bz2
+share/doc/HTML/nl/kdeconnect-kde/index.docbook
+share/doc/HTML/pt/kdeconnect-kde/
+share/doc/HTML/pt/kdeconnect-kde/index.cache.bz2
+share/doc/HTML/pt/kdeconnect-kde/index.docbook
+share/doc/HTML/pt_BR/kdeconnect-kde/
+share/doc/HTML/pt_BR/kdeconnect-kde/index.cache.bz2
+share/doc/HTML/pt_BR/kdeconnect-kde/index.docbook
+share/doc/HTML/ru/kdeconnect-kde/
+share/doc/HTML/ru/kdeconnect-kde/index.cache.bz2
+share/doc/HTML/ru/kdeconnect-kde/index.docbook
+share/doc/HTML/sv/kdeconnect-kde/
+share/doc/HTML/sv/kdeconnect-kde/index.cache.bz2
+share/doc/HTML/sv/kdeconnect-kde/index.docbook
+share/doc/HTML/uk/kdeconnect-kde/
+share/doc/HTML/uk/kdeconnect-kde/index.cache.bz2
+share/doc/HTML/uk/kdeconnect-kde/index.docbook
+share/doc/HTML/zh_CN/kdeconnect-kde/
+share/doc/HTML/zh_CN/kdeconnect-kde/index.cache.bz2
+share/doc/HTML/zh_CN/kdeconnect-kde/index.docbook
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/kdeconnect-kde/
 share/examples/kdeconnect-kde/xdg/
 share/examples/kdeconnect-kde/xdg/autostart/
 share/examples/kdeconnect-kde/xdg/autostart/org.kde.kdeconnect.daemon.desktop
-share/icons/hicolor/128x128/apps/kdeconnect.png
-share/icons/hicolor/16x16/apps/kdeconnect.png
-share/icons/hicolor/22x22/apps/kdeconnect.png
-share/icons/hicolor/256x256/apps/kdeconnect.png
-share/icons/hicolor/32x32/apps/kdeconnect.png
-share/icons/hicolor/32x32/status/laptopconnected.png
-share/icons/hicolor/32x32/status/laptopdisconnected.png
-share/icons/hicolor/32x32/status/laptoptrusted.png
-share/icons/hicolor/32x32/status/smartphoneconnected.png
-share/icons/hicolor/32x32/status/smartphonedisconnected.png
-share/icons/hicolor/32x32/status/smartphonetrusted.png
-share/icons/hicolor/32x32/status/tabletconnected.png
-share/icons/hicolor/32x32/status/tabletdisconnected.png
-share/icons/hicolor/32x32/status/tablettrusted.png
-share/icons/hicolor/32x32/status/tvconnected.png
-share/icons/hicolor/32x32/status/tvdisconnected.png
-share/icons/hicolor/32x32/status/tvtrusted.png
-share/icons/hicolor/48x48/apps/kdeconnect.png
-share/icons/hicolor/64x64/apps/kdeconnect.png
-share/icons/hicolor/scalable/apps/kdeconnect.svgz
+share/icons/hicolor/16x16/status/laptopconnected.svg
+share/icons/hicolor/16x16/status/laptopdisconnected.svg
+share/icons/hicolor/16x16/status/laptoptrusted.svg
+share/icons/hicolor/16x16/status/smartphoneconnected.svg
+share/icons/hicolor/16x16/status/smartphonedisconnected.svg
+share/icons/hicolor/16x16/status/smartphonetrusted.svg
+share/icons/hicolor/16x16/status/tabletconnected.svg
+share/icons/hicolor/16x16/status/tabletdisconnected.svg
+share/icons/hicolor/16x16/status/tablettrusted.svg
+share/icons/hicolor/16x16/status/tvconnected.svg
+share/icons/hicolor/16x16/status/tvdisconnected.svg
+share/icons/hicolor/16x16/status/tvtrusted.svg
+share/icons/hicolor/22x22/status/laptopconnected.svg
+share/icons/hicolor/22x22/status/laptopdisconnected.svg
+share/icons/hicolor/22x22/status/laptoptrusted.svg
+share/icons/hicolor/22x22/status/smartphoneconnected.svg
+share/icons/hicolor/22x22/status/smartphonedisconnected.svg
+share/icons/hicolor/22x22/status/smartphonetrusted.svg
+share/icons/hicolor/22x22/status/tabletconnected.svg
+share/icons/hicolor/22x22/status/tabletdisconnected.svg
+share/icons/hicolor/22x22/status/tablettrusted.svg
+share/icons/hicolor/22x22/status/tvconnected.svg
+share/icons/hicolor/22x22/status/tvdisconnected.svg
+share/icons/hicolor/22x22/status/tvtrusted.svg
+share/icons/hicolor/32x32/status/laptopconnected.svg
+share/icons/hicolor/32x32/status/laptopdisconnected.svg
+share/icons/hicolor/32x32/status/laptoptrusted.svg
+share/icons/hicolor/32x32/status/smartphoneconnected.svg
+share/icons/hicolor/32x32/status/smartphonedisconnected.svg
+share/icons/hicolor/32x32/status/smartphonetrusted.svg
+share/icons/hicolor/32x32/status/tabletconnected.svg
+share/icons/hicolor/32x32/status/tabletdisconnected.svg
+share/icons/hicolor/32x32/status/tablettrusted.svg
+share/icons/hicolor/32x32/status/tvconnected.svg
+share/icons/hicolor/32x32/status/tvdisconnected.svg
+share/icons/hicolor/32x32/status/tvtrusted.svg
+share/icons/hicolor/scalable/apps/kdeconnect.svg
 share/icons/hicolor/scalable/apps/kdeconnectindicator.svg
 share/icons/hicolor/scalable/apps/kdeconnectindicatordark.svg
-share/icons/hicolor/scalable/status/laptopconnected.svg
-share/icons/hicolor/scalable/status/laptopdisconnected.svg
-share/icons/hicolor/scalable/status/laptoptrusted.svg
-share/icons/hicolor/scalable/status/smartphoneconnected.svg
-share/icons/hicolor/scalable/status/smartphonedisconnected.svg
-share/icons/hicolor/scalable/status/smartphonetrusted.svg
-share/icons/hicolor/scalable/status/tabletconnected.svg
-share/icons/hicolor/scalable/status/tabletdisconnected.svg
-share/icons/hicolor/scalable/status/tablettrusted.svg
-share/icons/hicolor/scalable/status/tvconnected.svg
-share/icons/hicolor/scalable/status/tvdisconnected.svg
-share/icons/hicolor/scalable/status/tvtrusted.svg
+share/kdeconnect/
+share/kdeconnect/kdeconnect_runcommand_config.qml
+share/kdeconnect/kdeconnect_sendnotifications_config.qml
+share/kdeconnect/kdeconnect_share_config.qml
 share/knotifications5/kdeconnect.notifyrc
 share/kservices5/kcm_kdeconnect.desktop
 share/kservices5/kdeconnect_runcommand_config.desktop
 share/kservices5/kdeconnect_sendnotifications_config.desktop
 share/kservices5/kdeconnect_share_config.desktop
 share/kservices5/plasma-kdeconnect.desktop
-share/kservicetypes5/kdeconnect_plugin.desktop
 share/locale/ar/LC_MESSAGES/kdeconnect-cli.mo
 share/locale/ar/LC_MESSAGES/kdeconnect-core.mo
 share/locale/ar/LC_MESSAGES/kdeconnect-kcm.mo
@@ -114,8 +164,10 @@ share/locale/ar/LC_MESSAGES/kdeconnect-kded.mo
 share/locale/ar/LC_MESSAGES/kdeconnect-kio.mo
 share/locale/ar/LC_MESSAGES/kdeconnect-plugins.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
+share/locale/ast/LC_MESSAGES/kdeconnect-app.mo
 share/locale/ast/LC_MESSAGES/kdeconnect-cli.mo
 share/locale/ast/LC_MESSAGES/kdeconnect-fileitemaction.mo
+share/locale/ast/LC_MESSAGES/kdeconnect-interfaces.mo
 share/locale/ast/LC_MESSAGES/kdeconnect-kcm.mo
 share/locale/ast/LC_MESSAGES/kdeconnect-kded.mo
 share/locale/ast/LC_MESSAGES/kdeconnect-kio.mo
@@ -370,12 +422,19 @@ share/locale/ia/LC_MESSAGES/kdeconnect-settings.mo
 share/locale/ia/LC_MESSAGES/kdeconnect-sms.mo
 share/locale/ia/LC_MESSAGES/kdeconnect-urlhandler.mo
 share/locale/ia/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
+share/locale/id/LC_MESSAGES/kdeconnect-app.mo
 share/locale/id/LC_MESSAGES/kdeconnect-cli.mo
 share/locale/id/LC_MESSAGES/kdeconnect-core.mo
+share/locale/id/LC_MESSAGES/kdeconnect-fileitemaction.mo
+share/locale/id/LC_MESSAGES/kdeconnect-indicator.mo
+share/locale/id/LC_MESSAGES/kdeconnect-interfaces.mo
 share/locale/id/LC_MESSAGES/kdeconnect-kcm.mo
 share/locale/id/LC_MESSAGES/kdeconnect-kded.mo
 share/locale/id/LC_MESSAGES/kdeconnect-kio.mo
+share/locale/id/LC_MESSAGES/kdeconnect-nautilus-extension.mo
 share/locale/id/LC_MESSAGES/kdeconnect-plugins.mo
+share/locale/id/LC_MESSAGES/kdeconnect-settings.mo
+share/locale/id/LC_MESSAGES/kdeconnect-sms.mo
 share/locale/id/LC_MESSAGES/kdeconnect-urlhandler.mo
 share/locale/id/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
 share/locale/it/LC_MESSAGES/kdeconnect-app.mo
@@ -434,6 +493,7 @@ share/locale/lt/LC_MESSAGES/kdeconnect-kded.mo
 share/locale/lt/LC_MESSAGES/kdeconnect-kio.mo
 share/locale/lt/LC_MESSAGES/kdeconnect-nautilus-extension.mo
 share/locale/lt/LC_MESSAGES/kdeconnect-plugins.mo
+share/locale/lt/LC_MESSAGES/kdeconnect-settings.mo
 share/locale/lt/LC_MESSAGES/kdeconnect-sms.mo
 share/locale/lt/LC_MESSAGES/kdeconnect-urlhandler.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
@@ -595,30 +655,6 @@ share/locale/sr/LC_MESSAGES/kdeconnect-kio.mo
 share/locale/sr/LC_MESSAGES/kdeconnect-plugins.mo
 share/locale/sr/LC_MESSAGES/kdeconnect-urlhandler.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
-share/locale/sr@ijekavian/LC_MESSAGES/kdeconnect-cli.mo
-share/locale/sr@ijekavian/LC_MESSAGES/kdeconnect-core.mo
-share/locale/sr@ijekavian/LC_MESSAGES/kdeconnect-kcm.mo
-share/locale/sr@ijekavian/LC_MESSAGES/kdeconnect-kded.mo
-share/locale/sr@ijekavian/LC_MESSAGES/kdeconnect-kio.mo
-share/locale/sr@ijekavian/LC_MESSAGES/kdeconnect-plugins.mo
-share/locale/sr@ijekavian/LC_MESSAGES/kdeconnect-urlhandler.mo
-share/locale/sr@ijekavian/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
-share/locale/sr@ijekavianlatin/LC_MESSAGES/kdeconnect-cli.mo
-share/locale/sr@ijekavianlatin/LC_MESSAGES/kdeconnect-core.mo
-share/locale/sr@ijekavianlatin/LC_MESSAGES/kdeconnect-kcm.mo
-share/locale/sr@ijekavianlatin/LC_MESSAGES/kdeconnect-kded.mo
-share/locale/sr@ijekavianlatin/LC_MESSAGES/kdeconnect-kio.mo
-share/locale/sr@ijekavianlatin/LC_MESSAGES/kdeconnect-plugins.mo
-share/locale/sr@ijekavianlatin/LC_MESSAGES/kdeconnect-urlhandler.mo
-share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
-share/locale/sr@latin/LC_MESSAGES/kdeconnect-cli.mo
-share/locale/sr@latin/LC_MESSAGES/kdeconnect-core.mo
-share/locale/sr@latin/LC_MESSAGES/kdeconnect-kcm.mo
-share/locale/sr@latin/LC_MESSAGES/kdeconnect-kded.mo
-share/locale/sr@latin/LC_MESSAGES/kdeconnect-kio.mo
-share/locale/sr@latin/LC_MESSAGES/kdeconnect-plugins.mo
-share/locale/sr@latin/LC_MESSAGES/kdeconnect-urlhandler.mo
-share/locale/sr@latin/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
 share/locale/sv/LC_MESSAGES/kdeconnect-app.mo
 share/locale/sv/LC_MESSAGES/kdeconnect-cli.mo
 share/locale/sv/LC_MESSAGES/kdeconnect-core.mo
@@ -634,6 +670,12 @@ share/locale/sv/LC_MESSAGES/kdeconnect-settings.mo
 share/locale/sv/LC_MESSAGES/kdeconnect-sms.mo
 share/locale/sv/LC_MESSAGES/kdeconnect-urlhandler.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
+share/locale/ta/LC_MESSAGES/kdeconnect-core.mo
+share/locale/ta/LC_MESSAGES/kdeconnect-indicator.mo
+share/locale/ta/LC_MESSAGES/kdeconnect-interfaces.mo
+share/locale/ta/LC_MESSAGES/kdeconnect-kcm.mo
+share/locale/ta/LC_MESSAGES/kdeconnect-settings.mo
+share/locale/ta/LC_MESSAGES/kdeconnect-sms.mo
 share/locale/tg/LC_MESSAGES/kdeconnect-fileitemaction.mo
 share/locale/tg/LC_MESSAGES/kdeconnect-kcm.mo
 share/locale/tg/LC_MESSAGES/kdeconnect-kded.mo
@@ -642,12 +684,19 @@ share/locale/tg/LC_MESSAGES/kdeconnect-nautilus-extension.mo
 share/locale/tg/LC_MESSAGES/kdeconnect-plugins.mo
 share/locale/tg/LC_MESSAGES/kdeconnect-urlhandler.mo
 share/locale/tg/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
+share/locale/tr/LC_MESSAGES/kdeconnect-app.mo
 share/locale/tr/LC_MESSAGES/kdeconnect-cli.mo
 share/locale/tr/LC_MESSAGES/kdeconnect-core.mo
+share/locale/tr/LC_MESSAGES/kdeconnect-fileitemaction.mo
+share/locale/tr/LC_MESSAGES/kdeconnect-indicator.mo
+share/locale/tr/LC_MESSAGES/kdeconnect-interfaces.mo
 share/locale/tr/LC_MESSAGES/kdeconnect-kcm.mo
 share/locale/tr/LC_MESSAGES/kdeconnect-kded.mo
 share/locale/tr/LC_MESSAGES/kdeconnect-kio.mo
+share/locale/tr/LC_MESSAGES/kdeconnect-nautilus-extension.mo
 share/locale/tr/LC_MESSAGES/kdeconnect-plugins.mo
+share/locale/tr/LC_MESSAGES/kdeconnect-settings.mo
+share/locale/tr/LC_MESSAGES/kdeconnect-sms.mo
 share/locale/tr/LC_MESSAGES/kdeconnect-urlhandler.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
 share/locale/uk/LC_MESSAGES/kdeconnect-app.mo
@@ -699,8 +748,9 @@ share/metainfo/
 share/metainfo/org.kde.kdeconnect.kcm.appdata.xml
 share/nautilus-python/
 share/nautilus-python/extensions/
+${MODPY_COMMENT}share/nautilus-python/extensions/${MODPY_PYCACHE}/
+share/nautilus-python/extensions/${MODPY_PYCACHE}kdeconnect-share.${MODPY_PYC_MAGIC_TAG}pyc
 share/nautilus-python/extensions/kdeconnect-share.py
-share/nautilus-python/extensions/kdeconnect-share.pyc
 share/plasma/
 share/plasma/plasmoids/
 share/plasma/plasmoids/org.kde.kdeconnect/
@@ -708,6 +758,7 @@ share/plasma/plasmoids/org.kde.kdeconnect/contents/
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/Battery.qml
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/CompactRepresentation.qml
+share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/Connectivity.qml
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/DeviceDelegate.qml
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/FindMyPhone.qml
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/FullRepresentation.qml
@@ -717,6 +768,8 @@ share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/Sftp.qml
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/Share.qml
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/main.qml
 share/plasma/plasmoids/org.kde.kdeconnect/metadata.desktop
+share/qlogging-categories5/kdeconnect-kde.categories
+share/zsh/site-functions/
 share/zsh/site-functions/_kdeconnect
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
