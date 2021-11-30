@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2021/10/26 10:41:01 jca Exp $
+# $OpenBSD: Makefile,v 1.39 2021/11/30 23:32:50 juanfra Exp $
 
 BROKEN-riscv64=	gsi and gsi-script segfault at startup
 
 COMMENT=	complete, efficient and reliable implementation of Scheme
 
 V=		4.9.3
-REVISION=	0
+REVISION=	1
 DISTNAME=	gambit-v${V:S/./_/g}
 PKGNAME=	gambit-$V
 API_V=		${V:R:S/./0/}00${V:E}
@@ -52,8 +52,7 @@ do-test:
 # alpha: "cc1: out of memory allocating 1608 bytes"
 # hppa: "virtual memory exhausted: Cannot allocate memory" (in a system with 2GB RAM)
 # macppc: cc1: out of memory allocating 808 bytes
-# sparc64: "virtual memory exhausted: Cannot allocate memory" (ports cluster)
-.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sparc64"
+.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "powerpc"
 CFLAGS += -O0
 .endif
 
