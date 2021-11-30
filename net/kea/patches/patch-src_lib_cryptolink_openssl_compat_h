@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_lib_cryptolink_openssl_compat_h,v 1.1 2021/11/30 10:36:59 tb Exp $
+
+Fix build with opaque HMAC_CTX and avoid compat defines for EVP_MD_CTX.
+
+Index: src/lib/cryptolink/openssl_compat.h
+--- src/lib/cryptolink/openssl_compat.h.orig
++++ src/lib/cryptolink/openssl_compat.h
+@@ -6,7 +6,7 @@
+ 
+ #include <openssl/opensslv.h>
+ 
+-#if defined(LIBRESSL_VERSION_NUMBER) || (OPENSSL_VERSION_NUMBER < 0x10100000L)
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L)
+ 
+ // This file is included by hash and hmac codes so KEA_H* macros
+ // avoid to define unused inlines.
