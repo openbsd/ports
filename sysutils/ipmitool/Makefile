@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2021/07/04 22:33:49 patrick Exp $
+# $OpenBSD: Makefile,v 1.29 2021/11/30 23:17:16 tb Exp $
 
 COMMENT=	manage and configure devices that support IPMI
 
 V=		1.8.18
 DISTNAME=	ipmitool-$V
-REVISION=	5
+REVISION=	6
 CATEGORIES=	sysutils
 EXTRACT_SUFX=	.tar.bz2
 
