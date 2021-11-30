@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2021/11/08 16:04:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.51 2021/11/30 23:06:50 jca Exp $
 
 COMMENT =	music player
 
@@ -23,7 +23,7 @@ WANTLIB += gpod gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 iconv intl lastfm5
 WANTLIB += m mtp mygpo-qt5 protobuf pulse sqlite3 tag z
 
-# those are dlopen'ed
+# libplist from devel/libplist is dlopen'ed
 WANTLIB += plist
 
 MODULES =		devel/cmake \
