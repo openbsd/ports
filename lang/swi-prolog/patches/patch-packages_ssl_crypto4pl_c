@@ -1,0 +1,16 @@
+$OpenBSD: patch-packages_ssl_crypto4pl_c,v 1.1 2021/11/30 10:41:46 tb Exp $
+
+Fix build with opaque RSA in LibreSSL 3.5.
+
+Index: packages/ssl/crypto4pl.c
+--- packages/ssl/crypto4pl.c.orig
++++ packages/ssl/crypto4pl.c
+@@ -763,7 +763,7 @@ static int
+ recover_rsa(term_t t, RSA** rsap)
+ { RSA *rsa = RSA_new();
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+   if ( get_bn_arg(1, t, &rsa->n) &&
+        get_bn_arg(2, t, &rsa->e) &&
+        get_bn_arg(3, t, &rsa->d) &&

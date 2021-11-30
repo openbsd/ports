@@ -1,0 +1,48 @@
+$OpenBSD: patch-packages_ssl_cryptolib_c,v 1.1 2021/11/30 10:41:46 tb Exp $
+
+Fix build with opaque BIO and BIO_METHOD in LibreSSL 3.5.
+LibreSSL doesn't have CRYPTO_ONCE and CRYPTO_THREAD_run_once().
+Replace them with their pthread equivalents.
+
+Index: packages/ssl/cryptolib.c
+--- packages/ssl/cryptolib.c.orig
++++ packages/ssl/cryptolib.c
+@@ -33,6 +33,7 @@
+ */
+ 
+ #include <config.h>
++#include <pthread.h>
+ #include <string.h>
+ 
+ #include "cryptolib.h"
+@@ -293,7 +294,7 @@ bio_control(BIO* bio, int cmd, long num, void* ptr)
+ static int
+ bio_create(BIO* bio)
+ {
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+    bio->shutdown = 1;
+    bio->init = 1;
+    bio->num = -1;
+@@ -321,7 +322,7 @@ bio_destroy(BIO* bio)
+    return 1;
+ }
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ /*
+  * Specify the BIO read and write function structures
+  */
+@@ -364,6 +365,12 @@ bio_write_method(void)
+  * In OpenSSL >= 1.1.0, the BIO methods are constructed
+  * using functions. We initialize them exactly once.
+  */
++
++#if defined(LIBRESSL_VERSION_NUMBER)
++#define CRYPTO_ONCE			pthread_once_t
++#define CRYPTO_ONCE_STATIC_INIT		PTHREAD_ONCE_INIT
++#define CRYPTO_THREAD_run_once(a, b) 	(pthread_once((a), (b)) == 0)
++#endif
+ 
+ static CRYPTO_ONCE once_read  = CRYPTO_ONCE_STATIC_INIT;
+ static CRYPTO_ONCE once_write = CRYPTO_ONCE_STATIC_INIT;
