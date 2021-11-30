@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2021/10/16 07:44:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/11/30 09:15:47 sthen Exp $
 
 COMMENT =	libtls library used with OpenSSL 1.1 for testing
 
-V =		3.4.1
+V =		3.4.2
 DISTNAME =	libretls-$V
 PKGNAME =	libretls-$V
 
