@@ -1,4 +1,4 @@
-# $OpenBSD: modules.inc,v 1.3 2021/10/13 00:26:36 abieber Exp $
+# $OpenBSD: modules.inc,v 1.4 2021/11/30 22:59:28 abieber Exp $
 
 MODGO_MODULES =	\
 	4d63.com/gochecknoglobals				 v0.0.0-20201008074935-acfc0b28355a \
@@ -22,7 +22,7 @@ MODGO_MODULES =	\
 	github.com/!masterminds/goutils				 v1.1.0 \
 	github.com/!masterminds/semver				 v1.5.0 \
 	github.com/!masterminds/sprig				 v2.22.0+incompatible \
-	github.com/!masterminds/squirrel			 v1.5.0 \
+	github.com/!masterminds/squirrel			 v1.5.1 \
 	github.com/!one!of!one/xxhash				 v1.2.2 \
 	github.com/!open!pee!dee!p/depguard			 v1.0.1 \
 	github.com/!rene!kroon/ttlcache/v2			 v2.8.1 \
@@ -39,7 +39,6 @@ MODGO_MODULES =	\
 	github.com/armon/consul-api				 v0.0.0-20180202201655-eb2c6b5be1b6 \
 	github.com/armon/go-metrics				 v0.0.0-20180917152333-f0300d1749da \
 	github.com/armon/go-radix				 v1.0.0 \
-	github.com/asaskevich/govalidator			 v0.0.0-20210307081110-f21760c49a8d \
 	github.com/ashanbrown/forbidigo				 v1.2.0 \
 	github.com/ashanbrown/makezero				 v0.0.0-20210520155254-b6261585ddde \
 	github.com/astaxie/beego				 v1.12.3 \
@@ -59,7 +58,7 @@ MODGO_MODULES =	\
 	github.com/census-instrumentation/opencensus-proto	 v0.2.1 \
 	github.com/cespare/reflex				 v0.3.1 \
 	github.com/cespare/xxhash				 v1.1.0 \
-	github.com/cespare/xxhash/v2				 v2.1.1 \
+	github.com/cespare/xxhash/v2				 v2.1.2 \
 	github.com/charithe/durationcheck			 v0.0.8 \
 	github.com/chavacava/garif				 v0.0.0-20210405164556-e8a0a408d6af \
 	github.com/chzyer/logex					 v1.1.10 \
@@ -88,7 +87,7 @@ MODGO_MODULES =	\
 	github.com/davecgh/go-spew				 v1.1.1 \
 	github.com/decred/dcrd/crypto/blake256			 v1.0.0 \
 	github.com/decred/dcrd/dcrec/secp256k1/v4		 v4.0.0-20210816181553-5444fa50b93d \
-	github.com/deluan/rest					 v0.0.0-20210503015435-e7091d44f0ba \
+	github.com/deluan/rest					 v0.0.0-20211101235434-380523c4bb47 \
 	github.com/denis-tingajkin/go-header			 v0.4.2 \
 	github.com/denisenkom/go-mssqldb			 v0.10.0 \
 	github.com/dgrijalva/jwt-go				 v3.2.0+incompatible \
@@ -115,7 +114,7 @@ MODGO_MODULES =	\
 	github.com/glendc/gopher-json				 v0.0.0-20170414221815-dc4743023d0c \
 	github.com/go-chi/chi/v5				 v5.0.4 \
 	github.com/go-chi/cors					 v1.2.0 \
-	github.com/go-chi/httprate				 v0.5.1 \
+	github.com/go-chi/httprate				 v0.5.2 \
 	github.com/go-chi/jwtauth/v5				 v5.0.2 \
 	github.com/go-critic/go-critic				 v0.5.6 \
 	github.com/go-gl/glfw					 v0.0.0-20190409004039-e6da0acd62b1 \
@@ -270,7 +269,7 @@ MODGO_MODULES =	\
 	github.com/mbilski/exhaustivestruct			 v1.2.0 \
 	github.com/mgechev/dots					 v0.0.0-20190921121421-c36f7dcfbb81 \
 	github.com/mgechev/revive				 v1.1.1 \
-	github.com/microcosm-cc/bluemonday			 v1.0.15 \
+	github.com/microcosm-cc/bluemonday			 v1.0.16 \
 	github.com/miekg/dns					 v1.1.35 \
 	github.com/miekg/pkcs11					 v1.0.3 \
 	github.com/mileusna/useragent				 v1.0.2 \
@@ -301,7 +300,7 @@ MODGO_MODULES =	\
 	github.com/oklog/run					 v1.1.0 \
 	github.com/oklog/ulid					 v1.3.1 \
 	github.com/olekukonko/tablewriter			 v0.0.5 \
-	github.com/onsi/ginkgo					 v1.16.4 \
+	github.com/onsi/ginkgo					 v1.16.5 \
 	github.com/onsi/gomega					 v1.16.0 \
 	github.com/opentracing/opentracing-go			 v1.1.0 \
 	github.com/pascaldekloe/goe				 v0.0.0-20180627143212-57f6aae5913c \
@@ -518,6 +517,7 @@ MODGO_MODFILES =	\
 	github.com/beorn7/perks					 v0.0.0-20180321164747-3a771d992973 \
 	github.com/beorn7/perks					 v1.0.0 \
 	github.com/bketelsen/crypt				 v0.0.3-0.20200106085610-5cbc8cc4026c \
+	github.com/cespare/xxhash/v2				 v2.1.1 \
 	github.com/cncf/udpa/go					 v0.0.0-20191209042840-269d4d468f6f \
 	github.com/cncf/udpa/go					 v0.0.0-20200629203442-efcf912fb354 \
 	github.com/coreos/etcd					 v3.3.10+incompatible \
@@ -703,6 +703,7 @@ MODGO_MODFILES =	\
 	github.com/onsi/ginkgo					 v1.12.0 \
 	github.com/onsi/ginkgo					 v1.12.1 \
 	github.com/onsi/ginkgo					 v1.16.2 \
+	github.com/onsi/ginkgo					 v1.16.4 \
 	github.com/onsi/ginkgo					 v1.6.0 \
 	github.com/onsi/gomega					 v1.10.1 \
 	github.com/onsi/gomega					 v1.13.0 \

@@ -83,8 +83,8 @@ SHA256 (go_modules/github.com/!masterminds/semver/@v/v1.5.0.zip) = Ffa1SmlcFf+yB
 SHA256 (go_modules/github.com/!masterminds/sprig/@v/v2.15.0+incompatible.mod) = AX+K8+MkcSUsQ9m5BZ1xZ8CDWaVQ8WeEP/JrLcFdjfQ=
 SHA256 (go_modules/github.com/!masterminds/sprig/@v/v2.22.0+incompatible.mod) = AX+K8+MkcSUsQ9m5BZ1xZ8CDWaVQ8WeEP/JrLcFdjfQ=
 SHA256 (go_modules/github.com/!masterminds/sprig/@v/v2.22.0+incompatible.zip) = G013IzTMlOVwMpG18P5KxJZawmVCSxBguvGO9f+dhFw=
-SHA256 (go_modules/github.com/!masterminds/squirrel/@v/v1.5.0.mod) = tMbyFur6t6HKUgm13coAZSlmb3IYSupyKTOVxp9xQPU=
-SHA256 (go_modules/github.com/!masterminds/squirrel/@v/v1.5.0.zip) = 6RIEI6zYBJnNEOLZBNlPqqAEQrO6E6/09YNeoxsCcIc=
+SHA256 (go_modules/github.com/!masterminds/squirrel/@v/v1.5.1.mod) = tMbyFur6t6HKUgm13coAZSlmb3IYSupyKTOVxp9xQPU=
+SHA256 (go_modules/github.com/!masterminds/squirrel/@v/v1.5.1.zip) = MWMymLcxED7ZQCXAq1t3YOmx8s8k0F5cyFctt3yDdh8=
 SHA256 (go_modules/github.com/!one!of!one/xxhash/@v/v1.2.2.mod) = l7ZeMrMlElrr6MN8KHCeMIxaHGZOGnfd98SxsLltdzs=
 SHA256 (go_modules/github.com/!one!of!one/xxhash/@v/v1.2.2.zip) = tKfU3QM+ljEsBrQ9QqZCXgCDfAJUdBvNVpyaCQmyb50=
 SHA256 (go_modules/github.com/!open!pee!dee!p/depguard/@v/v1.0.1.mod) = IDaLHnjQZSDojNOH5u78pg9SZMvG1iSwoV/hn7UOUY0=
@@ -121,8 +121,6 @@ SHA256 (go_modules/github.com/armon/go-metrics/@v/v0.0.0-20180917152333-f0300d17
 SHA256 (go_modules/github.com/armon/go-radix/@v/v0.0.0-20180808171621-7fddfc383310.mod) = Lc2vYuwp96+g04U01I9al/o+AnNDsPi/ZhrttxAhT9Y=
 SHA256 (go_modules/github.com/armon/go-radix/@v/v1.0.0.mod) = Lc2vYuwp96+g04U01I9al/o+AnNDsPi/ZhrttxAhT9Y=
 SHA256 (go_modules/github.com/armon/go-radix/@v/v1.0.0.zip) = 35PIFlBbrxLD7+YTKNxvj6QkOPaPgLCzclyulX0CHJA=
-SHA256 (go_modules/github.com/asaskevich/govalidator/@v/v0.0.0-20210307081110-f21760c49a8d.mod) = DaVBuEspoJgY04Bv+Fx4LKyojw2BTn7nnHxj81xMQ7g=
-SHA256 (go_modules/github.com/asaskevich/govalidator/@v/v0.0.0-20210307081110-f21760c49a8d.zip) = YD6BbbMaSkWqxJs7DA5QrzPiUs1Rl4EfDZkEgBFImK4=
 SHA256 (go_modules/github.com/ashanbrown/forbidigo/@v/v1.2.0.mod) = bwCHmg/otYWAqt5yA9flnR41Dq1lv0nFkTGJL/IhwTE=
 SHA256 (go_modules/github.com/ashanbrown/forbidigo/@v/v1.2.0.zip) = AZnIIdif/DKBdKhFVVENHLk+dG8I4DQOhauSizelaQA=
 SHA256 (go_modules/github.com/ashanbrown/makezero/@v/v0.0.0-20210520155254-b6261585ddde.mod) = mnSkaEi3JJov51TrxAfumZ95bJnGd4k+bK/+cV9Zafc=
@@ -167,7 +165,8 @@ SHA256 (go_modules/github.com/cespare/reflex/@v/v0.3.1.zip) = f7LSGqOvyfDoFBBZDC
 SHA256 (go_modules/github.com/cespare/xxhash/@v/v1.1.0.mod) = muRWUaFaZlzaeE26AxagBDqhmWWY5u+7kcGwk2G+UaU=
 SHA256 (go_modules/github.com/cespare/xxhash/@v/v1.1.0.zip) = /pjFZnCyFjH3/TMFopo7F+hqbM44dqIRlGBxehhTji4=
 SHA256 (go_modules/github.com/cespare/xxhash/v2/@v/v2.1.1.mod) = oJD46q9ZzCrfFjKZ6+/nl+Hco/at0sjoimo7kLpTiwI=
-SHA256 (go_modules/github.com/cespare/xxhash/v2/@v/v2.1.1.zip) = W6oDHHLnPkJhfw/XTn2BM0SFC9amBzOBtqQWCl6ctZ4=
+SHA256 (go_modules/github.com/cespare/xxhash/v2/@v/v2.1.2.mod) = oJD46q9ZzCrfFjKZ6+/nl+Hco/at0sjoimo7kLpTiwI=
+SHA256 (go_modules/github.com/cespare/xxhash/v2/@v/v2.1.2.zip) = rGQayDMN9h9nfIdEj8Z5xHiGCH0pM6HkMVVvQjeC6jg=
 SHA256 (go_modules/github.com/charithe/durationcheck/@v/v0.0.8.mod) = w1fdXww509DZn8Ij1t7z7a2ELK5ELA8aWSLBoNEeHYY=
 SHA256 (go_modules/github.com/charithe/durationcheck/@v/v0.0.8.zip) = 4e8XlhbdzbKfdHOhVd26gkwxK3xk3BObzLAKLLFGurU=
 SHA256 (go_modules/github.com/chavacava/garif/@v/v0.0.0-20210405164556-e8a0a408d6af.mod) = zLYmiKU/rmaM0SFmwtPi97cgH40FwP8he9aScmxJHRo=
@@ -236,8 +235,8 @@ SHA256 (go_modules/github.com/decred/dcrd/crypto/blake256/@v/v1.0.0.mod) = GOAor
 SHA256 (go_modules/github.com/decred/dcrd/crypto/blake256/@v/v1.0.0.zip) = zYu9rhRkHwukRDD8ZpkN03u/zx4hqWWp/Rhx0WysEn0=
 SHA256 (go_modules/github.com/decred/dcrd/dcrec/secp256k1/v4/@v/v4.0.0-20210816181553-5444fa50b93d.mod) = 5LpuqgVgCAscPXna1rufo8b/C1FGcqjftJ51KHmgn08=
 SHA256 (go_modules/github.com/decred/dcrd/dcrec/secp256k1/v4/@v/v4.0.0-20210816181553-5444fa50b93d.zip) = iqj50vgDi5b0aZGRAibEzR5GFKLianlhv0PQW3Wfejk=
-SHA256 (go_modules/github.com/deluan/rest/@v/v0.0.0-20210503015435-e7091d44f0ba.mod) = HjQ2ZZVtQmdmI3NceV3mP0wKdim2U5yFvf+NzYV9dqI=
-SHA256 (go_modules/github.com/deluan/rest/@v/v0.0.0-20210503015435-e7091d44f0ba.zip) = hb3b64WW40BYw/l8VIBQzxsyNBphLnxq/cWYVxJg8CA=
+SHA256 (go_modules/github.com/deluan/rest/@v/v0.0.0-20211101235434-380523c4bb47.mod) = HjQ2ZZVtQmdmI3NceV3mP0wKdim2U5yFvf+NzYV9dqI=
+SHA256 (go_modules/github.com/deluan/rest/@v/v0.0.0-20211101235434-380523c4bb47.zip) = M1ecZztxVaNE/MnIxkTCyimw/Cg2rF9y4JO/t6EQPKs=
 SHA256 (go_modules/github.com/denis-tingajkin/go-header/@v/v0.4.2.mod) = LffVo1mT4zpWoIGEWBWX3wkOMMogO8xsNDj70OcWNwU=
 SHA256 (go_modules/github.com/denis-tingajkin/go-header/@v/v0.4.2.zip) = tSYpm9NqKUu+zxg89KxIUQ9Mn9gyNIGNRFjbrAi/XaQ=
 SHA256 (go_modules/github.com/denisenkom/go-mssqldb/@v/v0.10.0.mod) = 4hjRPPtmIUUgvIxy/CUu7dwoKlpfKa1kqb/BonzoVuE=
@@ -303,8 +302,8 @@ SHA256 (go_modules/github.com/go-chi/chi/v5/@v/v5.0.4.mod) = kz392CeacKXa002hgYE
 SHA256 (go_modules/github.com/go-chi/chi/v5/@v/v5.0.4.zip) = z5xik9GaS3zz6/uk7XWEO1DZ3zsaYO9DYzleNwEkruw=
 SHA256 (go_modules/github.com/go-chi/cors/@v/v1.2.0.mod) = q5CH/ds7BJ5Jk1ouZVRzmB2qRB1/DTViA/c/UFYQC9o=
 SHA256 (go_modules/github.com/go-chi/cors/@v/v1.2.0.zip) = ssTxgGerhLHKJ1OEq+1rENFY9iDlCoM/4WvSsNz6264=
-SHA256 (go_modules/github.com/go-chi/httprate/@v/v0.5.1.mod) = FHVMuz6vShMxQu27A0L5fscULIiDBQaw43czDV15pwg=
-SHA256 (go_modules/github.com/go-chi/httprate/@v/v0.5.1.zip) = BbsEE5MRAp36Bb1PX884eV/PsVwa7islLWaYFebEg+Y=
+SHA256 (go_modules/github.com/go-chi/httprate/@v/v0.5.2.mod) = I3sESrGcU1GK67GOb2PlSnIX2FL5turvE9bnjQNnbJU=
+SHA256 (go_modules/github.com/go-chi/httprate/@v/v0.5.2.zip) = h9mKAzs5MZI0LXPa4MM6kIuGR4sm8f7HKkXaQglchkc=
 SHA256 (go_modules/github.com/go-chi/jwtauth/v5/@v/v5.0.2.mod) = BE2JSupG3SicJI7gGaggvn2TpN1FjqAW6vXJTVHYHFM=
 SHA256 (go_modules/github.com/go-chi/jwtauth/v5/@v/v5.0.2.zip) = AtB2FGlku+POcrCZDe+6BKdCq8SQCnS9usZzRw6x8Gk=
 SHA256 (go_modules/github.com/go-critic/go-critic/@v/v0.5.6.mod) = lHVzkDXcsPaqzz8MSDNGdf5IdKPJMwZud8hjCmarrQE=
@@ -752,8 +751,8 @@ SHA256 (go_modules/github.com/mgechev/dots/@v/v0.0.0-20190921121421-c36f7dcfbb81
 SHA256 (go_modules/github.com/mgechev/dots/@v/v0.0.0-20190921121421-c36f7dcfbb81.zip) = cC/jMt6cTAvEvRotJIJQwAwcL1ngdiWMEa4ss4wQPtM=
 SHA256 (go_modules/github.com/mgechev/revive/@v/v1.1.1.mod) = y2HxfLYZzn4WvstcbQhamDKGvSn8W6YWcHXJLdS/zvE=
 SHA256 (go_modules/github.com/mgechev/revive/@v/v1.1.1.zip) = LVZtaJbmQJ5d0jJM1in4TjAJuDSGqHesHztTaIBFHx0=
-SHA256 (go_modules/github.com/microcosm-cc/bluemonday/@v/v1.0.15.mod) = G78vHYv0X29kksk7BKdj1zoou1nXaylMJpAMh1Tat84=
-SHA256 (go_modules/github.com/microcosm-cc/bluemonday/@v/v1.0.15.zip) = 6OMXK4DH2XUwSAwKw756j9zDTilMBZxmyPkHwN55XgU=
+SHA256 (go_modules/github.com/microcosm-cc/bluemonday/@v/v1.0.16.mod) = YWMpz9CyFvsOHpynKIzN0FGJXcdWfmKtL+nDLwyV6g0=
+SHA256 (go_modules/github.com/microcosm-cc/bluemonday/@v/v1.0.16.zip) = Y5yvmdnHP568Tc9iiKDnfmTLGoXSdk2Hf/2nBZ7j8+I=
 SHA256 (go_modules/github.com/miekg/dns/@v/v1.0.14.mod) = Ome3772JfyqxRn05ul7LMjH3LPCtZcKQyXxbqC+LMaw=
 SHA256 (go_modules/github.com/miekg/dns/@v/v1.1.26.mod) = brmRo1CqJjbwXpoSCkndxJ7DUqafaGLi6uiYk0wWwVk=
 SHA256 (go_modules/github.com/miekg/dns/@v/v1.1.35.mod) = yWzni97fSf4dqO5lKzUbrk8OZSTITMaZCGWD02WhMNU=
@@ -836,7 +835,8 @@ SHA256 (go_modules/github.com/onsi/ginkgo/@v/v1.12.0.mod) = 9EiPkuH48GkRjfzOoDKs
 SHA256 (go_modules/github.com/onsi/ginkgo/@v/v1.12.1.mod) = +xi0VKBMh1ViQDhjXhc4+DQUF9yGXe+M+l+GpJtjubc=
 SHA256 (go_modules/github.com/onsi/ginkgo/@v/v1.16.2.mod) = 7sQ1syvsAEEV7w77vygJ2YqKfKsiuXWpDv8bKq+Qp98=
 SHA256 (go_modules/github.com/onsi/ginkgo/@v/v1.16.4.mod) = f/SlvwrJb7uii0lmXrBcN3OuAJDVTiLepQyHW8Jv+KI=
-SHA256 (go_modules/github.com/onsi/ginkgo/@v/v1.16.4.zip) = xFvtSs6iLdmYcnizC+SrUIzzoLh/36JtO3yplKE1Rf4=
+SHA256 (go_modules/github.com/onsi/ginkgo/@v/v1.16.5.mod) = JWMbAp+G3B1byK6uXgRQlVwF5Kv6pw3ymObLH3rFQJc=
+SHA256 (go_modules/github.com/onsi/ginkgo/@v/v1.16.5.zip) = 4j/DOwr/pzpPTGNBCvkxvx+NW52yZrNGEXcDbXJerMU=
 SHA256 (go_modules/github.com/onsi/ginkgo/@v/v1.6.0.mod) = 7fqmWog1/Vi3XJlJMKIQQXt3rdfGl8kG+/WRzCL+HuY=
 SHA256 (go_modules/github.com/onsi/gomega/@v/v1.10.1.mod) = FG7yVvQpFDkpmGQbLE44JwPOoFZtAOP2g1NQqLCPV0Y=
 SHA256 (go_modules/github.com/onsi/gomega/@v/v1.13.0.mod) = h2Ej7JvBVHVR3aA6+JZasdUE+qHpc5BWkqPS/x8b/h0=
@@ -1705,8 +1705,8 @@ SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = oq5uhUCkC4XldwPMYYuZxbEHU4bZW
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 2iArDagDqyZhq5imgLuk9kEjoyblQMJVgrbNu53BFKo=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRelO2IPjOKMKW5R06o=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.zip) = oNOSUuhmWkKKjLnU38nL6ge3rpCuYufPNlG+cZrfUVo=
-SHA256 (navidrome-build-v0.46.0.tar.gz) = cLVYCqoUJB6aSLZY8+3ZL2nc9uydrWLuwQw3SCXo7J8=
-SHA256 (navidrome-v0.46.0.zip) = s65RX1rEBPUrdOMtRwV5iaEtFBwmGJ07TASU2K0pB/s=
+SHA256 (navidrome-build-v0.47.0.tar.gz) = 5A1iJRcRATBdgIeCOh/hrsyCxlYTQ2UWC118cW+LMck=
+SHA256 (navidrome-v0.47.0.zip) = zsjIHSxNioFrJMOdadBhfC4U862jGTlhg5OQOlWGUSw=
 SIZE (go_modules/4d63.com/gochecknoglobals/@v/v0.0.0-20201008074935-acfc0b28355a.mod) = 105
 SIZE (go_modules/4d63.com/gochecknoglobals/@v/v0.0.0-20201008074935-acfc0b28355a.zip) = 14082
 SIZE (go_modules/bitbucket.org/creachadair/shell/@v/v0.0.6.mod) = 48
@@ -1792,8 +1792,8 @@ SIZE (go_modules/github.com/!masterminds/semver/@v/v1.5.0.zip) = 38193
 SIZE (go_modules/github.com/!masterminds/sprig/@v/v2.15.0+incompatible.mod) = 36
 SIZE (go_modules/github.com/!masterminds/sprig/@v/v2.22.0+incompatible.mod) = 36
 SIZE (go_modules/github.com/!masterminds/sprig/@v/v2.22.0+incompatible.zip) = 60916
-SIZE (go_modules/github.com/!masterminds/squirrel/@v/v1.5.0.mod) = 321
-SIZE (go_modules/github.com/!masterminds/squirrel/@v/v1.5.0.zip) = 45471
+SIZE (go_modules/github.com/!masterminds/squirrel/@v/v1.5.1.mod) = 321
+SIZE (go_modules/github.com/!masterminds/squirrel/@v/v1.5.1.zip) = 46111
 SIZE (go_modules/github.com/!one!of!one/xxhash/@v/v1.2.2.mod) = 34
 SIZE (go_modules/github.com/!one!of!one/xxhash/@v/v1.2.2.zip) = 17606
 SIZE (go_modules/github.com/!open!pee!dee!p/depguard/@v/v1.0.1.mod) = 181
@@ -1830,8 +1830,6 @@ SIZE (go_modules/github.com/armon/go-metrics/@v/v0.0.0-20180917152333-f0300d1749
 SIZE (go_modules/github.com/armon/go-radix/@v/v0.0.0-20180808171621-7fddfc383310.mod) = 33
 SIZE (go_modules/github.com/armon/go-radix/@v/v1.0.0.mod) = 33
 SIZE (go_modules/github.com/armon/go-radix/@v/v1.0.0.zip) = 7144
-SIZE (go_modules/github.com/asaskevich/govalidator/@v/v0.0.0-20210307081110-f21760c49a8d.mod) = 50
-SIZE (go_modules/github.com/asaskevich/govalidator/@v/v0.0.0-20210307081110-f21760c49a8d.zip) = 75988
 SIZE (go_modules/github.com/ashanbrown/forbidigo/@v/v1.2.0.mod) = 182
 SIZE (go_modules/github.com/ashanbrown/forbidigo/@v/v1.2.0.zip) = 10158
 SIZE (go_modules/github.com/ashanbrown/makezero/@v/v0.0.0-20210520155254-b6261585ddde.mod) = 151
@@ -1876,7 +1874,8 @@ SIZE (go_modules/github.com/cespare/reflex/@v/v0.3.1.zip) = 23462
 SIZE (go_modules/github.com/cespare/xxhash/@v/v1.1.0.mod) = 146
 SIZE (go_modules/github.com/cespare/xxhash/@v/v1.1.0.zip) = 12221
 SIZE (go_modules/github.com/cespare/xxhash/v2/@v/v2.1.1.mod) = 45
-SIZE (go_modules/github.com/cespare/xxhash/v2/@v/v2.1.1.zip) = 12031
+SIZE (go_modules/github.com/cespare/xxhash/v2/@v/v2.1.2.mod) = 45
+SIZE (go_modules/github.com/cespare/xxhash/v2/@v/v2.1.2.zip) = 15284
 SIZE (go_modules/github.com/charithe/durationcheck/@v/v0.0.8.mod) = 85
 SIZE (go_modules/github.com/charithe/durationcheck/@v/v0.0.8.zip) = 11083
 SIZE (go_modules/github.com/chavacava/garif/@v/v0.0.0-20210405164556-e8a0a408d6af.mod) = 87
@@ -1945,8 +1944,8 @@ SIZE (go_modules/github.com/decred/dcrd/crypto/blake256/@v/v1.0.0.mod) = 55
 SIZE (go_modules/github.com/decred/dcrd/crypto/blake256/@v/v1.0.0.zip) = 9277
 SIZE (go_modules/github.com/decred/dcrd/dcrec/secp256k1/v4/@v/v4.0.0-20210816181553-5444fa50b93d.mod) = 113
 SIZE (go_modules/github.com/decred/dcrd/dcrec/secp256k1/v4/@v/v4.0.0-20210816181553-5444fa50b93d.zip) = 749532
-SIZE (go_modules/github.com/deluan/rest/@v/v0.0.0-20210503015435-e7091d44f0ba.mod) = 129
-SIZE (go_modules/github.com/deluan/rest/@v/v0.0.0-20210503015435-e7091d44f0ba.zip) = 17054
+SIZE (go_modules/github.com/deluan/rest/@v/v0.0.0-20211101235434-380523c4bb47.mod) = 129
+SIZE (go_modules/github.com/deluan/rest/@v/v0.0.0-20211101235434-380523c4bb47.zip) = 17280
 SIZE (go_modules/github.com/denis-tingajkin/go-header/@v/v0.4.2.mod) = 193
 SIZE (go_modules/github.com/denis-tingajkin/go-header/@v/v0.4.2.zip) = 28342
 SIZE (go_modules/github.com/denisenkom/go-mssqldb/@v/v0.10.0.mod) = 182
@@ -2012,8 +2011,8 @@ SIZE (go_modules/github.com/go-chi/chi/v5/@v/v5.0.4.mod) = 41
 SIZE (go_modules/github.com/go-chi/chi/v5/@v/v5.0.4.zip) = 131332
 SIZE (go_modules/github.com/go-chi/cors/@v/v1.2.0.mod) = 39
 SIZE (go_modules/github.com/go-chi/cors/@v/v1.2.0.zip) = 10635
-SIZE (go_modules/github.com/go-chi/httprate/@v/v0.5.1.mod) = 88
-SIZE (go_modules/github.com/go-chi/httprate/@v/v0.5.1.zip) = 7677
+SIZE (go_modules/github.com/go-chi/httprate/@v/v0.5.2.mod) = 88
+SIZE (go_modules/github.com/go-chi/httprate/@v/v0.5.2.zip) = 7709
 SIZE (go_modules/github.com/go-chi/jwtauth/v5/@v/v5.0.2.mod) = 126
 SIZE (go_modules/github.com/go-chi/jwtauth/v5/@v/v5.0.2.zip) = 13739
 SIZE (go_modules/github.com/go-critic/go-critic/@v/v0.5.6.mod) = 838
@@ -2461,8 +2460,8 @@ SIZE (go_modules/github.com/mgechev/dots/@v/v0.0.0-20190921121421-c36f7dcfbb81.m
 SIZE (go_modules/github.com/mgechev/dots/@v/v0.0.0-20190921121421-c36f7dcfbb81.zip) = 10700
 SIZE (go_modules/github.com/mgechev/revive/@v/v1.1.1.mod) = 419
 SIZE (go_modules/github.com/mgechev/revive/@v/v1.1.1.zip) = 783693
-SIZE (go_modules/github.com/microcosm-cc/bluemonday/@v/v1.0.15.mod) = 266
-SIZE (go_modules/github.com/microcosm-cc/bluemonday/@v/v1.0.15.zip) = 182797
+SIZE (go_modules/github.com/microcosm-cc/bluemonday/@v/v1.0.16.mod) = 196
+SIZE (go_modules/github.com/microcosm-cc/bluemonday/@v/v1.0.16.zip) = 183966
 SIZE (go_modules/github.com/miekg/dns/@v/v1.0.14.mod) = 28
 SIZE (go_modules/github.com/miekg/dns/@v/v1.1.26.mod) = 371
 SIZE (go_modules/github.com/miekg/dns/@v/v1.1.35.mod) = 333
@@ -2545,7 +2544,8 @@ SIZE (go_modules/github.com/onsi/ginkgo/@v/v1.12.0.mod) = 168
 SIZE (go_modules/github.com/onsi/ginkgo/@v/v1.12.1.mod) = 166
 SIZE (go_modules/github.com/onsi/ginkgo/@v/v1.16.2.mod) = 288
 SIZE (go_modules/github.com/onsi/ginkgo/@v/v1.16.4.mod) = 366
-SIZE (go_modules/github.com/onsi/ginkgo/@v/v1.16.4.zip) = 287470
+SIZE (go_modules/github.com/onsi/ginkgo/@v/v1.16.5.mod) = 366
+SIZE (go_modules/github.com/onsi/ginkgo/@v/v1.16.5.zip) = 288498
 SIZE (go_modules/github.com/onsi/ginkgo/@v/v1.6.0.mod) = 30
 SIZE (go_modules/github.com/onsi/gomega/@v/v1.10.1.mod) = 245
 SIZE (go_modules/github.com/onsi/gomega/@v/v1.13.0.mod) = 197
@@ -3414,5 +3414,5 @@ SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = 88
 SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 14308
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.zip) = 18120
-SIZE (navidrome-build-v0.46.0.tar.gz) = 5567776
-SIZE (navidrome-v0.46.0.zip) = 7521708
+SIZE (navidrome-build-v0.47.0.tar.gz) = 5585905
+SIZE (navidrome-v0.47.0.zip) = 7563487
