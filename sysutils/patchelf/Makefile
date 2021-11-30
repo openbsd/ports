@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/28 17:37:30 kn Exp $
+# $OpenBSD: Makefile,v 1.5 2021/11/30 11:29:46 kn Exp $
 
 COMMENT =	utility for modifying existing ELF executables and libraries
 
-V =			0.14.1
+V =			0.14.2
 DISTNAME =		patchelf-${V}
 MASTER_SITES =		https://github.com/NixOS/patchelf/releases/download/${V}/
-EXTRACT_SUFX =		.tar.bz2
 
 CATEGORIES =		sysutils
 
@@ -26,8 +25,6 @@ USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--mandir=${PREFIX}/man
-
-WRKDIST =		${WRKDIR}/${DISTNAME}.19700101.dirty
 
 # XXX 0.14 broke compilation for `too-many-strtab' and `libtoomanystrtab' tests:
 # ld: error: section type mismatch for .shstrtab
