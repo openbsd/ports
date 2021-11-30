@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:46 espie Exp $
-sbin/sslsniffer
+@comment $OpenBSD: PLIST,v 1.3 2021/11/30 22:02:22 tb Exp $
+@bin sbin/sslsniffer
 share/doc/sslsniffer/
 share/doc/sslsniffer/README

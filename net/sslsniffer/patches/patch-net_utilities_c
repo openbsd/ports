@@ -1,0 +1,14 @@
+$OpenBSD: patch-net_utilities_c,v 1.1 2021/11/30 22:02:22 tb Exp $
+
+Index: net_utilities.c
+--- net_utilities.c.orig
++++ net_utilities.c
+@@ -24,6 +24,8 @@
+ /* necessary header files and defines */
+ 
+ #include <stdio.h>
++#include <stdlib.h> /* exit */
++#include <string.h> /* memcpy */
+ 
+ #include "net_utilities.h"
+ #include "general_utilities.h"
