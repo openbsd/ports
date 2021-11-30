@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/17 14:49:21 danj Exp $
+# $OpenBSD: Makefile,v 1.15 2021/11/30 14:51:39 kirby Exp $
 
 COMMENT =	suite of portable game libraries
 
@@ -7,7 +7,7 @@ REVISION =	6
 CATEGORIES =	devel games
 
 HOMEPAGE =	http://plib.sourceforge.net/
-#MASTER_SITES =	${HOMEPAGE}/dist/
+MASTER_SITES =	${HOMEPAGE}/dist/
 
 # LGPLv2
 PERMIT_PACKAGE =	Yes
