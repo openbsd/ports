@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2021/10/25 14:48:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.100 2021/11/30 17:02:01 kurt Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -25,7 +25,7 @@ MODULES=		devel/meson \
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-COMPILER=		base-clang ports-gcc
+COMPILER=		base-clang ports-clang
 
 MODPY_RUNDEP=		No
 MODPY_BUILDDEP= 	No
