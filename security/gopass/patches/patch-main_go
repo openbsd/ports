@@ -1,9 +1,12 @@
-$OpenBSD: patch-main_go,v 1.1 2021/11/13 21:58:30 sthen Exp $
+$OpenBSD: patch-main_go,v 1.2 2021/11/30 11:01:31 sthen Exp $
+
+Despite what pledge(2) implies, fattr is needed for chmod,
+wpath is not enough
 
 Index: main.go
 --- main.go.orig
 +++ main.go
-@@ -58,7 +58,7 @@ func main() {
+@@ -63,7 +63,7 @@ func main() {
  		}
  		defer pprof.StopCPUProfile()
  	}

@@ -1,4 +1,4 @@
-# $OpenBSD: modules.inc,v 1.2 2021/11/13 00:25:44 sthen Exp $
+# $OpenBSD: modules.inc,v 1.3 2021/11/30 11:01:31 sthen Exp $
 
 MODGO_MODULES =	\
 	cloud.google.com/go					 v0.65.0 \
@@ -7,7 +7,7 @@ MODGO_MODULES =	\
 	cloud.google.com/go/pubsub				 v1.3.1 \
 	cloud.google.com/go/storage				 v1.10.0 \
 	dmitri.shuralyov.com/gpu/mtl				 v0.0.0-20190408044501-666a987793e9 \
-	filippo.io/age						 v1.0.0-rc.3 \
+	filippo.io/age						 v1.0.0 \
 	filippo.io/edwards25519					 v1.0.0-rc.1 \
 	github.com/!burnt!sushi/toml				 v0.3.1 \
 	github.com/!burnt!sushi/xgb				 v0.0.0-20160522181843-27f122750802 \
@@ -27,7 +27,7 @@ MODGO_MODULES =	\
 	github.com/dustin/go-humanize				 v1.0.0 \
 	github.com/envoyproxy/go-control-plane			 v0.9.4 \
 	github.com/envoyproxy/protoc-gen-validate		 v0.1.0 \
-	github.com/fatih/color					 v1.12.0 \
+	github.com/fatih/color					 v1.13.0 \
 	github.com/go-gl/glfw					 v0.0.0-20190409004039-e6da0acd62b1 \
 	github.com/go-gl/glfw/v3.3/glfw				 v0.0.0-20200222043503-6f7a984d4dc4 \
 	github.com/godbus/dbus					 v0.0.0-20190623212516-8a1682060722 \
@@ -59,8 +59,8 @@ MODGO_MODULES =	\
 	github.com/kr/pty					 v1.1.1 \
 	github.com/kr/text					 v0.2.0 \
 	github.com/martinhoefling/goxkcdpwgen			 v0.0.0-20190331205820-7dc3d102eca3 \
-	github.com/mattn/go-colorable				 v0.1.8 \
-	github.com/mattn/go-isatty				 v0.0.13 \
+	github.com/mattn/go-colorable				 v0.1.11 \
+	github.com/mattn/go-isatty				 v0.0.14 \
 	github.com/mitchellh/go-homedir				 v1.1.0 \
 	github.com/mitchellh/go-ps				 v1.0.0 \
 	github.com/muesli/crunchy				 v0.4.0 \
@@ -81,17 +81,17 @@ MODGO_MODULES =	\
 	github.com/xrash/smetrics				 v0.0.0-20201216005158-039620a65673 \
 	github.com/yuin/goldmark				 v1.1.32 \
 	go.opencensus.io					 v0.22.4 \
-	golang.org/x/crypto					 v0.0.0-20210817164053-32db794688a5 \
+	golang.org/x/crypto					 v0.0.0-20211108221036-ceb1ce70b4fa \
 	golang.org/x/exp					 v0.0.0-20200224162631-6cc2880d07d6 \
 	golang.org/x/image					 v0.0.0-20190802002840-cff245a6509b \
 	golang.org/x/lint					 v0.0.0-20200302205851-738671d3881b \
 	golang.org/x/mobile					 v0.0.0-20190719004257-d2bd2a29d028 \
 	golang.org/x/mod					 v0.3.0 \
-	golang.org/x/net					 v0.0.0-20210825183410-e898025ed96a \
-	golang.org/x/oauth2					 v0.0.0-20210819190943-2bc19b11175f \
+	golang.org/x/net					 v0.0.0-20211112202133-69e39bad7dc2 \
+	golang.org/x/oauth2					 v0.0.0-20211104180415-d3ed0bb246c8 \
 	golang.org/x/sync					 v0.0.0-20200625203802-6e8e738ad208 \
-	golang.org/x/sys					 v0.0.0-20210823070655-63515b42dcdf \
-	golang.org/x/term					 v0.0.0-20210615171337-6886f2dfbf5b \
+	golang.org/x/sys					 v0.0.0-20211113001501-0c823b97ae02 \
+	golang.org/x/term					 v0.0.0-20210927222741-03fcf44c2211 \
 	golang.org/x/text					 v0.3.6 \
 	golang.org/x/time					 v0.0.0-20191024005414-555d28b269f0 \
 	golang.org/x/tools					 v0.0.0-20200825202427-b303f430e36d \
@@ -141,7 +141,6 @@ MODGO_MODFILES =	\
 	cloud.google.com/go/storage		 v1.5.0 \
 	cloud.google.com/go/storage		 v1.6.0 \
 	cloud.google.com/go/storage		 v1.8.0 \
-	filippo.io/edwards25519			 v1.0.0-beta.3 \
 	github.com/cpuguy83/go-md2man/v2	 v2.0.0-20190314233015-f79a8a8ca69d \
 	github.com/davecgh/go-spew		 v1.1.0 \
 	github.com/envoyproxy/go-control-plane	 v0.9.0 \
@@ -194,6 +193,7 @@ MODGO_MODFILES =	\
 	github.com/kr/pretty			 v0.1.0 \
 	github.com/kr/pretty			 v0.2.1 \
 	github.com/kr/text			 v0.1.0 \
+	github.com/mattn/go-colorable		 v0.1.9 \
 	github.com/mattn/go-isatty		 v0.0.12 \
 	github.com/pkg/errors			 v0.8.1 \
 	github.com/rogpeppe/go-internal		 v1.3.0 \
@@ -213,7 +213,7 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto			 v0.0.0-20190605123033-f99c8df09eb5 \
 	golang.org/x/crypto			 v0.0.0-20191011191535-87dc89f01550 \
 	golang.org/x/crypto			 v0.0.0-20200622213623-75b288015ac9 \
-	golang.org/x/crypto			 v0.0.0-20201221181555-eec23a3978ad \
+	golang.org/x/crypto			 v0.0.0-20210817164053-32db794688a5 \
 	golang.org/x/exp			 v0.0.0-20190121172915-509febef88a4 \
 	golang.org/x/exp			 v0.0.0-20190306152737-a1d7652674e8 \
 	golang.org/x/exp			 v0.0.0-20190510132918-efd6b22b2522 \
@@ -288,7 +288,6 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.0.0-20190624142023-c5567b49c5d0 \
 	golang.org/x/sys			 v0.0.0-20190726091711-fc99dfbffb4e \
 	golang.org/x/sys			 v0.0.0-20191001151750-bb3f8db39f24 \
-	golang.org/x/sys			 v0.0.0-20191026070338-33540a1f6037 \
 	golang.org/x/sys			 v0.0.0-20191204072324-ce4227a45e2e \
 	golang.org/x/sys			 v0.0.0-20191228213918-04cbcbbfeed8 \
 	golang.org/x/sys			 v0.0.0-20200113162924-86b910548bc1 \
@@ -308,8 +307,11 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.0.0-20201119102817-f84b799fce68 \
 	golang.org/x/sys			 v0.0.0-20210423082822-04245dca01da \
 	golang.org/x/sys			 v0.0.0-20210615035016-665e8c7367d1 \
-	golang.org/x/term			 v0.0.0-20201117132131-f5c789dd3221 \
+	golang.org/x/sys			 v0.0.0-20210630005230-0f9fa26af87c \
+	golang.org/x/sys			 v0.0.0-20210903071746-97244b99971b \
+	golang.org/x/sys			 v0.0.0-20210927094055-39ccf1dd6fa6 \
 	golang.org/x/term			 v0.0.0-20201126162022-7de9c90e9dd1 \
+	golang.org/x/term			 v0.0.0-20210615171337-6886f2dfbf5b \
 	golang.org/x/text			 v0.0.0-20170915032832-14c0d48ead0c \
 	golang.org/x/text			 v0.3.0 \
 	golang.org/x/text			 v0.3.1-0.20180807135948-17ff2d5776d2 \
