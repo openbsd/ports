@@ -1,0 +1,43 @@
+$OpenBSD: patch-src_lua_lua_cryptobox_c,v 1.1 2021/11/30 23:20:50 tb Exp $
+
+Fix build with opaque EVP_MD_CTX and HMAC_CTX in LibreSSL 3.5.
+
+Index: src/lua/lua_cryptobox.c
+--- src/lua/lua_cryptobox.c.orig
++++ src/lua/lua_cryptobox.c
+@@ -991,7 +991,7 @@ static void
+ lua_cryptobox_hash_dtor (struct rspamd_lua_cryptobox_hash *h)
+ {
+ 	if (h->type == LUA_CRYPTOBOX_HASH_SSL) {
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ 		EVP_MD_CTX_cleanup (h->content.c);
+ #else
+ 		EVP_MD_CTX_reset (h->content.c);
+@@ -999,7 +999,7 @@ lua_cryptobox_hash_dtor (struct rspamd_lua_cryptobox_h
+ 		EVP_MD_CTX_destroy (h->content.c);
+ 	}
+ 	else if (h->type == LUA_CRYPTOBOX_HASH_HMAC) {
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ 		HMAC_CTX_cleanup (h->content.hmac_c);
+ 		g_free (h->content.hmac_c);
+ #else
+@@ -1057,7 +1057,7 @@ rspamd_lua_ssl_hmac_create (struct rspamd_lua_cryptobo
+ {
+ 	h->type = LUA_CRYPTOBOX_HASH_HMAC;
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ 	h->content.hmac_c = g_malloc0 (sizeof(*h->content.hmac_c));
+ #else
+ 	h->content.hmac_c = HMAC_CTX_new ();
+@@ -1452,7 +1452,7 @@ lua_cryptobox_hash_reset (lua_State *L)
+ 			EVP_DigestInit (h->content.c, EVP_MD_CTX_md (h->content.c));
+ 			break;
+ 		case LUA_CRYPTOBOX_HASH_HMAC:
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ 			/* Old openssl is awesome... */
+ 			HMAC_Init_ex (h->content.hmac_c, NULL, 0, h->content.hmac_c->md, NULL);
+ #else
