@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1348 2021/11/29 21:55:29 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1349 2021/11/30 13:03:15 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1690,12 +1690,12 @@ sub is_base_system
 	if (defined $test) {
 		require File::Glob;
 		if (defined File::Glob::bsd_glob($test)) {
-			$state->say("Removing #1 #2", $handle->pkgname,
-			    " (part of base system now)");
+			$state->say("Removing #1 (part of base system now)", 
+			    $pkgname);
 			return 1;
 		} else {
-			$state->say("Not removing #1 #2 #3 #4", $handle->pkgname,
-			 ", ", $test, " not found");
+			$state->say("Not removing #1, #2 not found", 
+			    $pkgname, $test);
 			return 0;
 		}
 	} else {
