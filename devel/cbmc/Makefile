@@ -1,13 +1,12 @@
-#$OpenBSD: Makefile,v 1.12 2021/11/29 22:18:46 naddy Exp $
+#$OpenBSD: Makefile,v 1.13 2021/11/30 10:10:06 sthen Exp $
 
 COMMENT =	Bounded Model Checker for C and C++ programs
 
-DISTNAME =	cbmc-5.5
-
 GH_ACCOUNT =	diffblue
 GH_PROJECT =	cbmc
-GH_TAGNAME =	5.5
-REVISION =	3
+GH_TAGNAME =	cbmc-5.5
+PKGNAME =	${GH_TAGNAME}
+REVISION =	4
 
 CATEGORIES =	devel
 
@@ -34,7 +33,6 @@ MAKE_FLAGS =	CFLAGS="-Wall ${CFLAGS}" \
 		CXXFLAGS="-Wall ${CXXFLAGS}" \
 		LINKFLAGS="${LDFLAGS}"
 
-WRKDIST =	${WRKDIR}/cbmc-${DISTNAME}
 WRKSRC =	${WRKDIST}/src
 
 post-extract:
