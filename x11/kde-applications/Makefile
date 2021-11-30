@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2021/09/11 05:28:35 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.66 2021/11/30 17:23:07 rsadowski Exp $
 
      SUBDIR =
 
@@ -244,14 +244,14 @@
 
      # XXX keep in sync
      # life outside of x11/kde-applications
+     # graphics/skanlite
+     # net/kdeconnect-kde
      # net/konversation
      # net/ktorrent
      # net/libktorrent
      # x11/yakuake
-     # graphics/skanlite
 
      # TODO
-     # kdeconnect-kde
      # kipi-plugins
      # kirigami-gallery
      # kontrast
