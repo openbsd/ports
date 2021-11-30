@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.21 2021/10/18 08:23:18 kirby Exp $
+# $OpenBSD: Makefile,v 1.22 2021/11/30 10:36:08 kirby Exp $
 
 COMMENT=		rogue-like zombie survival game
 CATEGORIES=		games
 
 GH_ACCOUNT=		CleverRaven
 GH_PROJECT=		Cataclysm-DDA
-GH_TAGNAME=		0.F-2
-DISTNAME=		cataclysm-dda-0.F.2
+GH_TAGNAME=		0.F-3
+DISTNAME=		cataclysm-dda-0.F.3
 EPOCH=			0
 
 HOMEPAGE=		https://cataclysmdda.org
