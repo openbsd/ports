@@ -1,16 +1,17 @@
-$OpenBSD: patch-src_jbuild,v 1.1.1.1 2019/08/04 18:54:39 chrisz Exp $
+$OpenBSD: patch-src_jbuild,v 1.2 2021/12/01 03:29:11 daniel Exp $
 
-don't depend on janestreet base
+support for dune 2.x
 
 Index: src/jbuild
 --- src/jbuild.orig
 +++ src/jbuild
-@@ -2,7 +2,7 @@
-  ((name        configurator)
-   (public_name configurator)
-   (flags (:standard -safe-string))
+@@ -1,9 +0,0 @@
+-(library
+- ((name        configurator)
+-  (public_name configurator)
+-  (flags (:standard -safe-string))
 -  (libraries (base stdio unix))
-+  (libraries (unix))
-   (preprocess no_preprocessing)))
- 
- 
+-  (preprocess no_preprocessing)))
+-
+-
+-(jbuild_version 1)

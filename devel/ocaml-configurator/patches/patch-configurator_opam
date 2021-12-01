@@ -1,0 +1,22 @@
+$OpenBSD: patch-configurator_opam,v 1.1 2021/12/01 03:29:11 daniel Exp $
+
+support for dune 2.x
+
+Index: configurator.opam
+--- configurator.opam.orig
++++ configurator.opam
+@@ -7,12 +7,12 @@ bug-reports: "https://github.com/janestreet/configurat
+ dev-repo: "git+https://github.com/janestreet/configurator.git"
+ license: "Apache-2.0"
+ build: [
+-  ["jbuilder" "build" "-p" name "-j" jobs]
++  ["dune" "build" "-p" name "-j" jobs]
+ ]
+ depends: [
+   "base"     {>= "v0.11" & < "v0.12"}
+   "stdio"    {>= "v0.11" & < "v0.12"}
+-  "jbuilder" {build & >= "1.0+beta18.1"}
++  "dune" {build & >= "1.0"}
+ ]
+ available: [ ocaml-version >= "4.04.1" ]
+ descr: "

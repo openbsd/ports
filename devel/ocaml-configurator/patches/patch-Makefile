@@ -1,0 +1,24 @@
+$OpenBSD: patch-Makefile,v 1.1 2021/12/01 03:29:11 daniel Exp $
+
+support for dune 2.x
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -2,13 +2,13 @@ INSTALL_ARGS := $(if $(PREFIX),--prefix $(PREFIX),)
+ 
+ # Default rule
+ default:
+-	jbuilder build @install
++	dune build @install
+ 
+ install:
+-	jbuilder install $(INSTALL_ARGS)
++	dune install $(INSTALL_ARGS)
+ 
+ uninstall:
+-	jbuilder uninstall $(INSTALL_ARGS)
++	dune uninstall $(INSTALL_ARGS)
+ 
+ reinstall: uninstall reinstall
+ 
