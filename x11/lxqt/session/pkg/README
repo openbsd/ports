@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2018/09/14 15:17:27 rsadowski Exp $
+$OpenBSD: README,v 1.2 2021/12/01 08:28:10 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -8,7 +8,7 @@ Startup
 =======
 LXQt desktop environment is launched through the 'startlxqt' script.
 Simply add '${LOCALBASE}/bin/startlxqt' to your .xinitrc/.xsession
-script if you use startx, xenodm or slim.
+script if you use startx or xenodm.
 An lxqt.desktop file is provided for use by kdm.
 
 e.g. console login: ~/.xinitrc

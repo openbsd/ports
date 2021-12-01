@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/22 05:45:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2021/12/01 08:28:10 landry Exp $
 
 COMMENT =	session manager for LXQt
 
 NAME =		lxqt-session
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5WindowSystem Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xdg Qt5XdgIconLoader
