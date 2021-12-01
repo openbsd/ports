@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2020/06/09 17:34:14 chrisz Exp $
+# $OpenBSD: Makefile,v 1.7 2021/12/01 02:26:00 daniel Exp $
 
 COMMENT =	optimized parsing and printing library for the JSON format
 CATEGORIES =	devel
 
+V =		1.7.0.20211122
 GH_ACCOUNT =	ocaml-community
 GH_PROJECT =	yojson
-GH_TAGNAME =	1.7.0
-REVISION =	3
+GH_COMMIT =	187132277170a30c5c3b0672c548c82fc372e43a
+DISTNAME =	${GH_PROJECT}-${V}
 PKGNAME =	ocaml-${DISTNAME}
 
 # 3-clause BSD
@@ -15,9 +16,6 @@ PERMIT_PACKAGE = Yes
 WANTLIB =	c m
 
 MODULES =	lang/ocaml
-
-RUN_DEPENDS =	devel/ocaml-easy-format \
-		devel/ocaml-biniou
 
 BUILD_DEPENDS = ${RUN_DEPENDS} \
 		devel/dune \

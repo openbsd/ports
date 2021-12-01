@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/08/04 19:07:43 chrisz Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/12/01 02:26:00 daniel Exp $
 %%native%%
 @bin bin/ydump
 lib/ocaml/yojson/
@@ -11,11 +11,6 @@ lib/ocaml/yojson/yojson.cmt
 lib/ocaml/yojson/yojson.cmti
 lib/ocaml/yojson/yojson.ml
 lib/ocaml/yojson/yojson.mli
-lib/ocaml/yojson/yojson_biniou.cmi
-lib/ocaml/yojson/yojson_biniou.cmt
-lib/ocaml/yojson/yojson_biniou.cmti
-lib/ocaml/yojson/yojson_biniou.ml
-lib/ocaml/yojson/yojson_biniou.mli
 share/doc/ocaml-yojson/
 share/doc/ocaml-yojson/yojson/
 share/doc/ocaml-yojson/yojson/CHANGES.md
