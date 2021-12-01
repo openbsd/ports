@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2021/02/11 04:17:32 daniel Exp $
+# $OpenBSD: Makefile,v 1.7 2021/12/01 04:05:01 daniel Exp $
 
 COMMENT =	OCaml interface to GTK+3
 CATEGORIES =	x11 devel
 
-GH_ACCOUNT =	garrigue
-GH_PROJECT =	lablgtk
-GH_TAGNAME =	3.1.1
-PKGNAME =	lablgtk3-${GH_TAGNAME}
+V =		3.1.1
+DISTNAME =	lablgtk3-${V}
+REVISION =	0
+
+MASTER_SITES =	https://github.com/garrigue/lablgtk/releases/download/${V}/
+EXTRACT_SUFX =	.tbz
 
 # LGPL
 PERMIT_PACKAGE = Yes
