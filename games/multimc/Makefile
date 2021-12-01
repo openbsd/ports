@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/08/19 18:41:39 phessler Exp $
+# $OpenBSD: Makefile,v 1.5 2021/12/01 23:07:12 jca Exp $
 
 COMMENT =		free and open-source launcher for Minecraft
 
@@ -30,7 +30,8 @@ RUN_DEPENDS =		audio/openal \
 # Keep lwjgl directory for the optional dependency
 CXXFLAGS +=	-DLWJGL_DIR='\"${LOCALBASE}/share/lwjgl/\"' \
 		-DLWJGL3_DIR='\"${LOCALBASE}/share/lwjgl3/\"' \
-		-DJAVAPATHHELPER_PATH='\"${LOCALBASE}/bin/javaPathHelper\"'
+		-DJAVAPATHHELPER_PATH='\"${LOCALBASE}/bin/javaPathHelper\"' \
+		-Wno-error
 
 CONFIGURE_ARGS =	-DMultiMC_LAYOUT="lin-system"
 
