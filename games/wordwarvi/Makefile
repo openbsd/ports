@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/12/01 21:04:04 rsadowski Exp $
 
 COMMENT =		editor war arcade game
 
 DISTNAME =		wordwarvi-1.00
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		games
 
@@ -14,13 +14,11 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # GPLv2 / CC licenses for soundfiles
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =  GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo drm expat
-WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
-WANTLIB += iconv intl m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pixman-1 png portaudio pthread sndio vorbis vorbisfile xcb
-WANTLIB += xcb-render xcb-shm z
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz intl m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 portaudio pthread vorbisfile z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=wordwarvi/}
 
