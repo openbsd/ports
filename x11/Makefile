@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.716 2021/11/02 21:18:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.717 2021/12/01 08:26:38 landry Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -273,8 +273,6 @@
      SUBDIR += screenkey
      SUBDIR += sct
      SUBDIR += skippy
-     SUBDIR += slim
-     SUBDIR += slim-themes
      SUBDIR += slock
      SUBDIR += smplayer
      SUBDIR += smtube
