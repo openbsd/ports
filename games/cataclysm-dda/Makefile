@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2021/11/30 10:36:08 kirby Exp $
+# $OpenBSD: Makefile,v 1.23 2021/12/01 12:55:25 kirby Exp $
 
 COMMENT=		rogue-like zombie survival game
 CATEGORIES=		games
@@ -8,6 +8,7 @@ GH_PROJECT=		Cataclysm-DDA
 GH_TAGNAME=		0.F-3
 DISTNAME=		cataclysm-dda-0.F.3
 EPOCH=			0
+REVISION=		0
 
 HOMEPAGE=		https://cataclysmdda.org
 MAINTAINER=		Kirill Bychkov <kirby@openbsd.org>

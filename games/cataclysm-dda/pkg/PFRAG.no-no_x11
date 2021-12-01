@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.9 2021/10/18 08:23:18 kirby Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.10 2021/12/01 12:55:25 kirby Exp $
 @bin bin/cataclysm-tiles
 @man man/man6/cataclysm-tiles.6
 share/applications/org.cataclysmdda.CataclysmDDA.desktop
@@ -24,6 +24,12 @@ share/cataclysm-dda/gfx/BrownLikeBears/tall.png
 share/cataclysm-dda/gfx/BrownLikeBears/tile_config.json
 share/cataclysm-dda/gfx/BrownLikeBears/tiles.png
 share/cataclysm-dda/gfx/BrownLikeBears/tileset.txt
+share/cataclysm-dda/gfx/MshockXotto+/Credit.txt
+share/cataclysm-dda/gfx/MshockXotto+/overmap.png
+share/cataclysm-dda/gfx/MshockXotto+/small.png
+share/cataclysm-dda/gfx/MshockXotto+/wide.png
+share/cataclysm-dda/gfx/RetroDaysTileset/overlay_ordering.json
+share/cataclysm-dda/gfx/UltimateCataclysm/human_body.png
 share/cataclysm-dda/gfx/BrownLikeBears/toped.png
 share/cataclysm-dda/gfx/BrownLikeBears/wide.png
 share/cataclysm-dda/gfx/ChestHole16Tileset/
