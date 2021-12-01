@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1349 2021/11/30 13:03:15 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.1350 2021/12/01 08:27:08 landry Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1617,6 +1617,8 @@ setup_obsolete_reason(
 	5 => 'virtuoso',
 	3 => 'upobsd',
 	9 => 'waagent',
+	3 => 'slim',
+	3 => 'slim-themes',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
