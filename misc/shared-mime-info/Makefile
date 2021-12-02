@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.72 2021/10/30 12:09:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2021/12/02 21:18:01 ajacoutot Exp $
 
 COMMENT=		shared mime database for desktops
 
 DISTNAME=		shared-mime-info-2.1
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		misc
 
@@ -24,7 +24,6 @@ EXTRACT_SUFX=		.tar.xz
 MODULES=		devel/meson
 
 BUILD_DEPENDS=		devel/gettext,-tools \
-			textproc/itstool \
 			textproc/xmlto
 
 LIB_DEPENDS=		devel/glib2 \

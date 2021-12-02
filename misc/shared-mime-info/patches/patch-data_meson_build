@@ -1,12 +1,14 @@
-$OpenBSD: patch-data_meson_build,v 1.2 2021/10/30 13:53:16 ajacoutot Exp $
+$OpenBSD: patch-data_meson_build,v 1.3 2021/12/02 21:18:01 ajacoutot Exp $
 
-Fix build with meson >= 0.60.0
-https://gitlab.freedesktop.org/xdg/shared-mime-info/-/issues/170
+From 5a406b06792e26a83c7346b3c2443c0bd8d4cdb2 Mon Sep 17 00:00:00 2001
+From: Eli Schwartz <eschwartz@archlinux.org>
+Date: Mon, 8 Nov 2021 18:22:47 -0500
+Subject: [PATCH] migrate from custom itstool to builtin msgfmt for creating translated XML
 
 Index: data/meson.build
 --- data/meson.build.orig
 +++ data/meson.build
-@@ -1,20 +1,13 @@
+@@ -1,18 +1,12 @@
  
  install_man('update-mime-database.1')
  
@@ -16,21 +18,17 @@ Index: data/meson.build
 -        'its/shared-mime-info.its',
 -        'its/shared-mime-info.loc',
 -    ),
--    output: 'freedesktop.org.xml',
++freedesktop_org_xml = i18n.merge_file(
++    input: 'freedesktop.org.xml.in',
+     output: 'freedesktop.org.xml',
 -    command: [
 -        find_program('freedesktop_generate.sh'),
 -        meson.source_root(),
 -        meson.build_root()
 -    ],
--    install: true,
--    install_dir: get_option('datadir') / 'mime' / 'packages',
-+freedesktop_org_xml = i18n.merge_file(
-+  input : 'freedesktop.org.xml.in',
-+  output: 'freedesktop.org.xml',
-+  po_dir: join_paths(meson.source_root(), 'po'),
-+  data_dirs: join_paths(meson.source_root(), 'data'),
-+  install: true,
-+  install_dir: get_option('datadir') / 'mime' / 'packages',
++    data_dirs: '.',
++    po_dir: '../po',
++    type: 'xml',
+     install: true,
+     install_dir: get_option('datadir') / 'mime' / 'packages',
  )
- 
- install_data(
