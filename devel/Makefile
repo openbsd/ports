@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2161 2021/12/02 02:41:21 daniel Exp $
+# $OpenBSD: Makefile,v 1.2162 2021/12/02 18:41:01 naddy Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -435,7 +435,6 @@
      SUBDIR += npth
      SUBDIR += nspr
      SUBDIR += nuget
-     SUBDIR += ocaml-configurator
      SUBDIR += ocaml-cppo
      SUBDIR += ocaml-graph
      SUBDIR += ocaml-menhir
