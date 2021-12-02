@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1350 2021/12/01 08:27:08 landry Exp $
+# $OpenBSD: Quirks.pm,v 1.1351 2021/12/02 02:44:12 daniel Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1619,6 +1619,8 @@ setup_obsolete_reason(
 	9 => 'waagent',
 	3 => 'slim',
 	3 => 'slim-themes',
+	5 => 'ocaml-biniou',
+	5 => 'ocaml-easy-format',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
