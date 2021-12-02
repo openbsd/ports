@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.48 2021/11/02 12:42:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2021/12/02 21:09:08 ajacoutot Exp $
 
 COMMENT =		libvirt virtualization API python bindings
 
-MODPY_EGG_VERSION =	7.9.0
+MODPY_EGG_VERSION =	7.10.0
 DISTNAME =		libvirt-python-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/-python-/-/}
 
