@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2021/12/02 08:25:05 landry Exp $
+# $OpenBSD: Makefile,v 1.146 2021/12/02 10:31:14 tb Exp $
 
 COMMENT=		libraries to support development of security-enabled apps
 
@@ -85,8 +85,3 @@ OBJ64=			_64
 .endif
 
 .include <bsd.port.mk>
-
-# fix build with clang 13
-.if ${CHOSEN_COMPILER} != "base-gcc"
-CFLAGS+=		-Wno-error=unused-but-set-variable
-.endif
