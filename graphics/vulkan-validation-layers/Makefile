@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/10/16 14:50:41 thfr Exp $
+# $OpenBSD: Makefile,v 1.10 2021/12/02 08:32:30 jca Exp $
 
 COMMENT =	Vulkan Validation Layers
 
@@ -33,7 +33,8 @@ BUILD_DEPENDS =	graphics/glslang \
 CONFIGURE_ARGS +=	-DGLSLANG_INSTALL_DIR="${LOCALBASE}" \
 			-DBUILD_WSI_WAYLAND_SUPPORT=False \
 			-DSPIRV_HEADERS_INSTALL_DIR=${LOCALBASE}/include/spirv \
-			-DUSE_ROBIN_HOOD_HASHING=False
+			-DUSE_ROBIN_HOOD_HASHING=False \
+			-DBUILD_WERROR=False
 
 # Tests only build if Google Test framework is in directory external/
 NO_TEST =	Yes
