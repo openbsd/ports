@@ -1,9 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.5 2021/08/06 14:37:53 rsadowski Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.6 2021/12/02 06:54:02 rsadowski Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -266,4 +266,4 @@ elseif(BUILD_CLIENT)
+@@ -254,4 +254,4 @@ elseif(BUILD_CLIENT)
      configure_file(sync-exclude.lst bin/sync-exclude.lst COPYONLY)
  endif()
  

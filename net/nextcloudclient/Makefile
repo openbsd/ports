@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2021/10/29 05:17:51 rsadowski Exp $ #
+# $OpenBSD: Makefile,v 1.26 2021/12/02 06:54:02 rsadowski Exp $ #
 
 COMMENT =	desktop sync client for Nextcloud
 
-V =		3.3.6
+V =		3.4.0
 DISTNAME =	nextcloudclient-${V}
 
 GH_ACCOUNT =	nextcloud
@@ -13,8 +13,8 @@ CATEGORIES =	net
 
 HOMEPAGE =	https://nextcloud.com
 
-SHARED_LIBS +=  nextcloudsync    0.1 # 3.2.1
-SHARED_LIBS +=  nextcloud_csync  0.0 # 3.2.1
+SHARED_LIBS +=  nextcloudsync    1.0 # 3.4.0
+SHARED_LIBS +=  nextcloud_csync  1.0 # 3.4.0
 
 MAINTAINER =	Adriano Barbosa <barbosa.aob@gmail.com>
 
@@ -81,10 +81,6 @@ CONFIGURE_ARGS +=	-DCMAKE_C_FLAGS="${CFLAGS} \
 				-L${LOCALBASE}/lib \
 				-linotify \
 				-Wl,-rpath=${LOCALBASE}/lib/inotify"
-
-post-extract:
-	# use system-wide cmake modules
-	rm ${WRKSRC}/cmake/modules/GNUInstallDirs.cmake
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/Nextcloud/
