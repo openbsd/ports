@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2021/11/02 00:22:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.135 2021/12/02 14:59:19 semarie Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -13,15 +13,14 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.56.1
-REVISION-gdb =		0
+V =			1.57.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.56.0-20211020
-BV-amd64 =		1.56.0-20211019
-BV-i386 =		1.56.0-20211019
-BV-sparc64 =		1.56.0-20211031
+BV-aarch64 =		1.57.0-20211201
+BV-amd64 =		1.57.0-20211130
+BV-i386 =		1.57.0-20211130
+BV-sparc64 =		1.57.0-20211130
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -221,6 +220,7 @@ do-configure:
 	echo 'rpath = false' >>${WRKBUILD}/config.toml
 	echo 'codegen-tests = false' >>${WRKBUILD}/config.toml
 	echo 'verbose-tests = true' >>${WRKBUILD}/config.toml
+	echo 'deny-warnings = false' >>${WRKBUILD}/config.toml
 
 	echo '[dist]' >>${WRKBUILD}/config.toml
 	echo 'src-tarball = false' >>${WRKBUILD}/config.toml
