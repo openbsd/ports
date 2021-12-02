@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.124 2021/11/20 15:42:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.125 2021/12/02 13:31:53 naddy Exp $
+
+PORTROACH=	skipv:5.1.8
 
 COMMENT=	GNU Bourne Again Shell
 
