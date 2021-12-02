@@ -1,13 +1,16 @@
-# $OpenBSD: Makefile,v 1.18 2021/12/02 09:23:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2021/12/02 09:24:23 sthen Exp $
 
 COMMENT =	backup and restoration manager for PostgreSQL
 
 MODPY_EGG_VERSION =	2.17
+REVISION =	0
+
 GH_ACCOUNT =	EnterpriseDB
 GH_PROJECT =	barman
 GH_TAGNAME =	release/${MODPY_EGG_VERSION}
 DISTNAME =	barman-${MODPY_EGG_VERSION}
 WRKDIST =	${WRKDIR}/barman-release-${MODPY_EGG_VERSION}
+
 CATEGORIES =	databases
 HOMEPAGE =	https://www.pgbarman.org/
 
