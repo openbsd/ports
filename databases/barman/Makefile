@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2021/11/21 10:05:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2021/12/02 09:23:01 sthen Exp $
 
 COMMENT =	backup and restoration manager for PostgreSQL
 
-MODPY_EGG_VERSION =	2.15
+MODPY_EGG_VERSION =	2.17
 GH_ACCOUNT =	EnterpriseDB
 GH_PROJECT =	barman
 GH_TAGNAME =	release/${MODPY_EGG_VERSION}
