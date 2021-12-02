@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.88 2021/11/02 12:42:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.89 2021/12/02 10:04:15 ajacoutot Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
 DISTNAME=		libvirt-7.9.0
+REVISION=		0
 
 CATEGORIES=		sysutils devel emulators
 
@@ -48,6 +49,11 @@ LIB_DEPENDS=		devel/glib2 \
 			security/libssh2 \
 			textproc/libxml
 
+# OpenBSD can't act as a virtualization host, so we should disable libvirtd but
+# but need it for qemu client support; we do not provide an rc.d script for
+# libvirtd, virtlogd etc.
+RUN_DEPENDS +=		emulators/qemu
+
 # disable until proven useful
 #.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 #RUN_DEPENDS +=		sysutils/dmidecode
@@ -56,8 +62,7 @@ LIB_DEPENDS=		devel/glib2 \
 # -DFOO = XXX missing/bogus checks
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 				-DAI_V4MAPPED=0 \
-				-DHAVE_STRUCT_SOCKPEERCRED=1 \
-				-DHAVE_DLFCN_H=1" \
+				-DHAVE_STRUCT_SOCKPEERCRED=1" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 DISABLED_FEATURES=	wireshark_dissector apparmor attr audit capng fuse \
@@ -65,10 +70,16 @@ DISABLED_FEATURES=	wireshark_dissector apparmor attr audit capng fuse \
 			openwsman selinux_mount selinux udev readline \
 			driver_bhyve driver_hyperv driver_interface \
 			driver_libxl driver_lxc driver_openvz driver_vz \
-			driver_qemu secdriver_apparmor secdriver_selinux \
+			secdriver_apparmor secdriver_selinux \
 			login_shell driver_network nss sysctl_config \
 			git_werror libnl apparmor_profiles sanlock firewalld \
 			firewalld_zone
+
+# storage
+DISABLED_FEATURES +=	storage_disk storage_fs storage_gluster storage_iscsi \
+			storage_iscsi_direct storage_lvm storage_mpath \
+			storage_rbd storage_sheepdog storage_vstorage \
+			storage_zfs
 
 CONFIGURE_ARGS=		-Dinit_script=none
 
@@ -87,17 +98,6 @@ CONFIGURE_ARGS +=	-Dblkid=disabled
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
-# OpenBSD can't act as a virtualization host, so no need for libvirtd.
-# If support is added, subtitute /var/lib/{xen,virt,libvirt,...} with /var/db
-# and add the following lines to pkg/PLIST:
-# @sample /var/db/libvirt/
-# @sample /var/db/libvirt/boot/
-# @sample /var/db/libvirt/filesystems/
-# @sample /var/db/libvirt/images/
-#
-# nwfilters are only used by libvirtd, which is (currently) disabled on OpenBSD.
-CONFIGURE_ARGS +=	-Ddriver_libvirtd=disabled
-
 pre-configure:
 	cd ${WRKDIR}/bin && ln -sf ${LOCALBASE}/bin/rst2html-3 rst2html5
 
@@ -106,5 +106,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
 	mv ${WRKINST}${SYSCONFDIR}/libvirt ${PREFIX}/share/examples/
 	mv ${WRKINST}${SYSCONFDIR}/sasl2 ${PREFIX}/share/examples/libvirt/
+	rm -rf ${WRKINST}${SYSCONFDIR}/logrotate.d ${WRKINST}/var/{log,run}
 
 .include <bsd.port.mk>

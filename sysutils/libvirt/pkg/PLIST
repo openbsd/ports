@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.38 2021/11/02 12:42:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.39 2021/12/02 10:04:15 ajacoutot Exp $
 @bin bin/virsh
 @bin bin/virt-admin
 @bin bin/virt-host-validate
 bin/virt-pki-validate
+@bin bin/virt-qemu-run
+@bin bin/virt-ssh-helper
 bin/virt-xml-validate
 include/libvirt/
 include/libvirt/libvirt-admin.h
@@ -24,19 +26,33 @@ include/libvirt/libvirt-stream.h
 include/libvirt/libvirt.h
 include/libvirt/virterror.h
 @comment lib/charset.alias
+lib/libvirt/
 @lib lib/libvirt-admin.so.${LIBvirt-admin_VERSION}
 @lib lib/libvirt-lxc.so.${LIBvirt-lxc_VERSION}
 @lib lib/libvirt-qemu.so.${LIBvirt-qemu_VERSION}
 @lib lib/libvirt.so.${LIBvirt_VERSION}
+lib/libvirt/connection-driver/
+@so lib/libvirt/connection-driver/libvirt_driver_qemu.so
+@so lib/libvirt/connection-driver/libvirt_driver_secret.so
+@so lib/libvirt/connection-driver/libvirt_driver_storage.so
+@so lib/libvirt/connection-driver/libvirt_driver_vbox.so
+lib/libvirt/lock-driver/
+@so lib/libvirt/lock-driver/lockd.so
+lib/libvirt/storage-backend/
+@so lib/libvirt/storage-backend/libvirt_storage_backend_fs.so
+lib/libvirt/storage-file/
+@so lib/libvirt/storage-file/libvirt_storage_file_fs.so
 lib/pkgconfig/libvirt-admin.pc
 lib/pkgconfig/libvirt-lxc.pc
 lib/pkgconfig/libvirt-qemu.pc
 lib/pkgconfig/libvirt.pc
 libexec/libvirt-guests.sh
+@bin libexec/libvirt_iohelper
 @man man/man1/virsh.1
 @man man/man1/virt-admin.1
 @man man/man1/virt-host-validate.1
 @man man/man1/virt-pki-validate.1
+@man man/man1/virt-qemu-run.1
 @man man/man1/virt-xml-validate.1
 @man man/man7/virkeycode-atset1.7
 @man man/man7/virkeycode-atset2.7
@@ -50,6 +66,45 @@ libexec/libvirt-guests.sh
 @man man/man7/virkeyname-linux.7
 @man man/man7/virkeyname-osx.7
 @man man/man7/virkeyname-win32.7
+@man man/man8/libvirtd.8
+@man man/man8/virtlockd.8
+@man man/man8/virtlogd.8
+@man man/man8/virtproxyd.8
+@man man/man8/virtqemud.8
+@man man/man8/virtsecretd.8
+@man man/man8/virtstoraged.8
+@man man/man8/virtvboxd.8
+@bin sbin/libvirtd
+@bin sbin/virtlockd
+@bin sbin/virtlogd
+@bin sbin/virtproxyd
+@bin sbin/virtqemud
+@bin sbin/virtsecretd
+@bin sbin/virtstoraged
+@bin sbin/virtvboxd
+share/augeas/
+share/augeas/lenses/
+share/augeas/lenses/libvirt_lockd.aug
+share/augeas/lenses/libvirtd.aug
+share/augeas/lenses/libvirtd_qemu.aug
+share/augeas/lenses/tests/
+share/augeas/lenses/tests/test_libvirt_lockd.aug
+share/augeas/lenses/tests/test_libvirtd.aug
+share/augeas/lenses/tests/test_libvirtd_qemu.aug
+share/augeas/lenses/tests/test_virtlockd.aug
+share/augeas/lenses/tests/test_virtlogd.aug
+share/augeas/lenses/tests/test_virtproxyd.aug
+share/augeas/lenses/tests/test_virtqemud.aug
+share/augeas/lenses/tests/test_virtsecretd.aug
+share/augeas/lenses/tests/test_virtstoraged.aug
+share/augeas/lenses/tests/test_virtvboxd.aug
+share/augeas/lenses/virtlockd.aug
+share/augeas/lenses/virtlogd.aug
+share/augeas/lenses/virtproxyd.aug
+share/augeas/lenses/virtqemud.aug
+share/augeas/lenses/virtsecretd.aug
+share/augeas/lenses/virtstoraged.aug
+share/augeas/lenses/virtvboxd.aug
 share/doc/libvirt/
 share/doc/libvirt/examples/
 share/doc/libvirt/examples/c/
@@ -356,9 +411,29 @@ share/examples/libvirt/libvirt-admin.conf
 @sample ${SYSCONFDIR}/libvirt/libvirt-admin.conf
 share/examples/libvirt/libvirt.conf
 @sample ${SYSCONFDIR}/libvirt/libvirt.conf
+share/examples/libvirt/libvirtd.conf
+@sample ${SYSCONFDIR}/libvirt/libvirtd.conf
+share/examples/libvirt/qemu-lockd.conf
+@sample ${SYSCONFDIR}/libvirt/qemu-lockd.conf
+share/examples/libvirt/qemu.conf
+@sample ${SYSCONFDIR}/libvirt/qemu.conf
 share/examples/libvirt/sasl2/
 share/examples/libvirt/sasl2/libvirt.conf
 @sample ${SYSCONFDIR}/sasl2/libvirt.conf
+share/examples/libvirt/virtlockd.conf
+@sample ${SYSCONFDIR}/libvirt/virtlockd.conf
+share/examples/libvirt/virtlogd.conf
+@sample ${SYSCONFDIR}/libvirt/virtlogd.conf
+share/examples/libvirt/virtproxyd.conf
+@sample ${SYSCONFDIR}/libvirt/virtproxyd.conf
+share/examples/libvirt/virtqemud.conf
+@sample ${SYSCONFDIR}/libvirt/virtqemud.conf
+share/examples/libvirt/virtsecretd.conf
+@sample ${SYSCONFDIR}/libvirt/virtsecretd.conf
+share/examples/libvirt/virtstoraged.conf
+@sample ${SYSCONFDIR}/libvirt/virtstoraged.conf
+share/examples/libvirt/virtvboxd.conf
+@sample ${SYSCONFDIR}/libvirt/virtvboxd.conf
 share/libvirt/
 share/libvirt/api/
 share/libvirt/api/libvirt-admin-api.xml

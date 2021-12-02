@@ -1,4 +1,4 @@
-$OpenBSD: patch-meson_build,v 1.9 2021/10/24 08:55:04 ajacoutot Exp $
+$OpenBSD: patch-meson_build,v 1.10 2021/12/02 10:04:15 ajacoutot Exp $
 
 -fexceptions:
 ld: error: undefined symbol: _Unwind_Resume
@@ -37,20 +37,48 @@ Index: meson.build
    xdr_dep = cc.find_library('c', required: false)
  else
    xdr_dep = dependency('', required: false)
-@@ -949,12 +943,15 @@ if devmapper_dep.found()
+@@ -949,15 +943,18 @@ if devmapper_dep.found()
    conf.set('WITH_DEVMAPPER', 1)
  endif
  
 -dlopen_use = host_machine.system() != 'windows'
-+dlopen_use = host_machine.system() != 'windows' and host_machine.system() != 'openbsd'
- dlopen_dep = cc.find_library('dl', required: dlopen_use)
- if dlopen_dep.found()
-   if not cc.has_header('dlfcn.h')
-     error('Unable to find dlfcn.h')
-   endif
-+  conf.set('WITH_DLFCN_H', 1)
-+endif
-+if host_machine.system() == 'openbsd'
-   conf.set('WITH_DLFCN_H', 1)
- endif
+-dlopen_dep = cc.find_library('dl', required: dlopen_use)
+-if dlopen_dep.found()
+-  if not cc.has_header('dlfcn.h')
+-    error('Unable to find dlfcn.h')
+-  endif
+-  conf.set('WITH_DLFCN_H', 1)
+-endif
++#dlopen_use = host_machine.system() != 'windows'
++#dlopen_dep = cc.find_library('dl', required: dlopen_use)
++#if dlopen_dep.found()
++#  if not cc.has_header('dlfcn.h')
++#    error('Unable to find dlfcn.h')
++#  endif
++#  conf.set('WITH_DLFCN_H', 1)
++#endif
  
++dlopen_dep = []
++conf.set('WITH_DLFCN_H', 1)
++
+ fuse_version = '2.8.6'
+ fuse_dep = dependency('fuse', version: '>=' + fuse_version, required: get_option('fuse'))
+ if fuse_dep.found()
+@@ -1985,7 +1982,7 @@ endif
+ 
+ driver_modules_flags = []
+ if conf.has('WITH_LIBVIRTD')
+-  if not conf.has('WITH_DLFCN_H') or not dlopen_dep.found()
++  if not conf.has('WITH_DLFCN_H') #or not dlopen_dep.found()
+     error('You must have dlfcn.h / dlopen() support to build driver modules')
+   endif
+   driver_modules_flags = libvirt_export_dynamic
+@@ -2320,7 +2317,7 @@ libs_summary = {
+   'capng': capng_dep.found(),
+   'curl': curl_dep.found(),
+   'devmapper': devmapper_dep.found(),
+-  'dlopen': dlopen_dep.found(),
++#  'dlopen': dlopen_dep.found(),
+   'fuse': fuse_dep.found(),
+   'glusterfs': glusterfs_dep.found(),
+   'libiscsi': libiscsi_dep.found(),
