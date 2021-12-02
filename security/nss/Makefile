@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.144 2021/11/02 14:30:42 landry Exp $
+# $OpenBSD: Makefile,v 1.145 2021/12/02 08:25:05 landry Exp $
 
 COMMENT=		libraries to support development of security-enabled apps
 
-VERSION=		3.72
+VERSION=		3.73
 # from https://hg.mozilla.org/projects/nss/file/tip/automation/release/nspr-version.txt
 NSPR_VERSION=		4.32
 DISTNAME=		nss-${VERSION}
@@ -85,3 +85,8 @@ OBJ64=			_64
 .endif
 
 .include <bsd.port.mk>
+
+# fix build with clang 13
+.if ${CHOSEN_COMPILER} != "base-gcc"
+CFLAGS+=		-Wno-error=unused-but-set-variable
+.endif
