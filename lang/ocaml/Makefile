@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.87 2021/03/15 20:47:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.88 2021/12/02 03:59:20 daniel Exp $
 
 COMMENT =	   ML language with complete class-based objective system
 
 # XXX Don't even think of updating ocaml alone.
 # Do check that the ports that depend on it still work, or repair them.
-VERSION=		4.10.0
-REVISION=		0
+VERSION=		4.11.2
 
 PKGNAME =		ocaml-${VERSION:C/\+//}
 
@@ -13,8 +12,7 @@ PKGNAME =		ocaml-${VERSION:C/\+//}
 PKGSPEC =	ocaml-=${VERSION:C/\+//}
 
 CATEGORIES=	lang
-# Remove last version component ocaml-X.XX.X -> ocaml-X.XX
-BASENAME =	${DISTNAME:C/\.[^.]*$//}
+BASENAME =	${DISTNAME:R}
 MASTER_SITES=	https://caml.inria.fr/pub/distrib/${BASENAME}/
 DOCFILES=	${BASENAME}-refman-html.tar.gz
 DISTFILES=	${DISTNAME}.tar.gz ${DOCFILES}

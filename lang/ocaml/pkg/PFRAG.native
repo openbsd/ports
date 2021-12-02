@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.native,v 1.18 2020/06/09 17:34:14 chrisz Exp $
+@comment $OpenBSD: PFRAG.native,v 1.19 2021/12/02 03:59:20 daniel Exp $
 %%dynlink%%
 @bin bin/ocamlc.opt
 @bin bin/ocamlcp.opt
@@ -11,6 +11,7 @@
 bin/ocamlopt
 bin/ocamlopt.byte
 @bin bin/ocamlopt.opt
+@bin bin/ocamloptp.opt
 @bin bin/ocamlprof.opt
 lib/ocaml/bigarray.a
 lib/ocaml/bigarray.cmx
@@ -20,18 +21,6 @@ lib/ocaml/camlinternalFormatBasics.cmx
 lib/ocaml/camlinternalLazy.cmx
 lib/ocaml/camlinternalMod.cmx
 lib/ocaml/camlinternalOO.cmx
-lib/ocaml/compiler-libs/closure_middle_end.cmi
-lib/ocaml/compiler-libs/closure_middle_end.cmt
-lib/ocaml/compiler-libs/closure_middle_end.cmti
-lib/ocaml/compiler-libs/closure_middle_end.mli
-lib/ocaml/compiler-libs/cmm_helpers.cmi
-lib/ocaml/compiler-libs/cmm_helpers.cmt
-lib/ocaml/compiler-libs/cmm_helpers.cmti
-lib/ocaml/compiler-libs/cmm_helpers.mli
-lib/ocaml/compiler-libs/linear.cmi
-lib/ocaml/compiler-libs/linear.cmt
-lib/ocaml/compiler-libs/linear.cmti
-lib/ocaml/compiler-libs/linear.mli
 lib/ocaml/compiler-libs/CSE.cmi
 lib/ocaml/compiler-libs/CSE.cmt
 lib/ocaml/compiler-libs/CSE.cmx
@@ -161,7 +150,11 @@ lib/ocaml/compiler-libs/closure_id.cmt
 lib/ocaml/compiler-libs/closure_id.cmti
 lib/ocaml/compiler-libs/closure_id.cmx
 lib/ocaml/compiler-libs/closure_id.mli
+lib/ocaml/compiler-libs/closure_middle_end.cmi
+lib/ocaml/compiler-libs/closure_middle_end.cmt
+lib/ocaml/compiler-libs/closure_middle_end.cmti
 lib/ocaml/compiler-libs/closure_middle_end.cmx
+lib/ocaml/compiler-libs/closure_middle_end.mli
 lib/ocaml/compiler-libs/closure_offsets.cmi
 lib/ocaml/compiler-libs/closure_offsets.cmt
 lib/ocaml/compiler-libs/closure_offsets.cmti
@@ -178,7 +171,11 @@ lib/ocaml/compiler-libs/cmm.cmt
 lib/ocaml/compiler-libs/cmm.cmti
 lib/ocaml/compiler-libs/cmm.cmx
 lib/ocaml/compiler-libs/cmm.mli
+lib/ocaml/compiler-libs/cmm_helpers.cmi
+lib/ocaml/compiler-libs/cmm_helpers.cmt
+lib/ocaml/compiler-libs/cmm_helpers.cmti
 lib/ocaml/compiler-libs/cmm_helpers.cmx
+lib/ocaml/compiler-libs/cmm_helpers.mli
 lib/ocaml/compiler-libs/cmmgen.cmi
 lib/ocaml/compiler-libs/cmmgen.cmt
 lib/ocaml/compiler-libs/cmmgen.cmti
@@ -189,6 +186,7 @@ lib/ocaml/compiler-libs/cmmgen_state.cmt
 lib/ocaml/compiler-libs/cmmgen_state.cmti
 lib/ocaml/compiler-libs/cmmgen_state.cmx
 lib/ocaml/compiler-libs/cmmgen_state.mli
+lib/ocaml/compiler-libs/cmt2annot.cmx
 lib/ocaml/compiler-libs/cmt_format.cmx
 lib/ocaml/compiler-libs/coloring.cmi
 lib/ocaml/compiler-libs/coloring.cmt
@@ -422,7 +420,11 @@ lib/ocaml/compiler-libs/lift_let_to_initialize_symbol.cmt
 lib/ocaml/compiler-libs/lift_let_to_initialize_symbol.cmti
 lib/ocaml/compiler-libs/lift_let_to_initialize_symbol.cmx
 lib/ocaml/compiler-libs/lift_let_to_initialize_symbol.mli
+lib/ocaml/compiler-libs/linear.cmi
+lib/ocaml/compiler-libs/linear.cmt
+lib/ocaml/compiler-libs/linear.cmti
 lib/ocaml/compiler-libs/linear.cmx
+lib/ocaml/compiler-libs/linear.mli
 lib/ocaml/compiler-libs/linearize.cmi
 lib/ocaml/compiler-libs/linearize.cmt
 lib/ocaml/compiler-libs/linearize.cmti
@@ -729,6 +731,7 @@ lib/ocaml/compiler-libs/typecore.cmx
 lib/ocaml/compiler-libs/typedecl.cmx
 lib/ocaml/compiler-libs/typedecl_immediacy.cmx
 lib/ocaml/compiler-libs/typedecl_properties.cmx
+lib/ocaml/compiler-libs/typedecl_separability.cmx
 lib/ocaml/compiler-libs/typedecl_unboxed.cmx
 lib/ocaml/compiler-libs/typedecl_variance.cmx
 lib/ocaml/compiler-libs/typedtree.cmx

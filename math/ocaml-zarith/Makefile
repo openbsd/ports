@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/11/22 21:30:43 daniel Exp $
+# $OpenBSD: Makefile,v 1.9 2021/12/02 03:59:20 daniel Exp $
 
 COMMENT =	arbitrary precision integer and rational arithmetic
 CATEGORIES =	math
@@ -9,6 +9,7 @@ GH_PROJECT =	Zarith
 GH_TAGNAME =	release-${V}
 DISTNAME =	${GH_PROJECT}-${V}
 PKGNAME =	ocaml-zarith-${V}
+REVISION =	0
 
 HOMEPAGE =	https://github.com/ocaml/num/
 

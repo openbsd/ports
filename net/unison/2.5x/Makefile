@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2021/06/27 19:17:41 bket Exp $
+# $OpenBSD: Makefile,v 1.13 2021/12/02 03:59:20 daniel Exp $
 
 GH_TAGNAME=	v2.51.4
+REVISION=	0
 
 .include <bsd.port.mk>

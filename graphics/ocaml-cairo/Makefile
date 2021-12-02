@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/11 04:07:39 daniel Exp $
+# $OpenBSD: Makefile,v 1.8 2021/12/02 03:59:20 daniel Exp $
 
 COMMENT =	binding to cairo, a 2D vector graphics library
 CATEGORIES =	graphics
@@ -6,6 +6,7 @@ CATEGORIES =	graphics
 GH_ACCOUNT =	Chris00
 GH_PROJECT =	ocaml-cairo
 GH_TAGNAME =	0.6.2
+REVISION =	0
 
 # LGPL 3.0
 PERMIT_PACKAGE = Yes

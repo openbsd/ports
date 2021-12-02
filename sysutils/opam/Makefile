@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2021/03/30 12:43:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2021/12/02 03:59:21 daniel Exp $
 
 COMMENT =		OCaml source-based package manager
 
@@ -7,6 +7,7 @@ CATEGORIES =		sysutils devel
 V =			2.0.8
 PKGNAME =		opam-${V}
 DISTNAME =		opam-full-${V}
+REVISION =		0
 
 MASTER_SITES =		https://github.com/ocaml/opam/releases/download/${V}/
 

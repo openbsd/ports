@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2020/06/09 17:34:13 chrisz Exp $
+# $OpenBSD: Makefile,v 1.26 2021/12/02 03:59:19 daniel Exp $
 
 BROKEN-i386 =	ld: error: undefined symbol: ml_as_z_mul, etc
 
@@ -10,7 +10,7 @@ CATEGORIES =		devel
 GH_ACCOUNT =		Frama-C
 GH_PROJECT =		Frama-C-snapshot
 GH_TAGNAME =		19.0
-REVISION =		3
+REVISION =		4
 DISTNAME =		frama-c-${GH_TAGNAME}-Potassium
 PKGNAME =		frama-c-${GH_TAGNAME}
 

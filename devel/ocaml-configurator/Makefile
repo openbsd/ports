@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/12/01 03:29:11 daniel Exp $
+# $OpenBSD: Makefile,v 1.5 2021/12/02 03:59:19 daniel Exp $
 
 COMMENT =	library for feature testing
 CATEGORIES =	devel
@@ -6,7 +6,7 @@ CATEGORIES =	devel
 GH_ACCOUNT =	janestreet
 GH_PROJECT =	configurator
 GH_TAGNAME =	v0.11.0
-REVISION =	1
+REVISION =	2
 PKGNAME =	ocaml-${DISTNAME}
 
 # MIT
