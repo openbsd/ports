@@ -3,11 +3,12 @@ manage virtual machines and other virtualization functionality, such as
 storage and network interface management. These software pieces include
 an API library, a daemon (libvirtd), and a command line utility (virsh).
 
-Note that OpenBSD cannot act as a virtualization host yet, so libvirtd
-is not provided in this package.
-
 A primary goal of libvirt is to provide a single way to manage multiple
 different virtualization providers/hypervisors. For example, the command
 'virsh list --all' can be used to list the existing virtual machines for
 any supported hypervisor (KVM, Xen, VMWare ESX, etc.) No need to learn
 the hypervisor specific tools!
+
+NOTE that dependency on qemu is not enforced by this package because it brings
+lots of dependencies; to manage remote qemu/KVM host, it can be installed with:
+    doas pkg_add qemu

@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_rpc_virnetsocket_c,v 1.23 2021/12/02 10:04:15 ajacoutot Exp $
+$OpenBSD: patch-src_rpc_virnetsocket_c,v 1.24 2021/12/02 21:08:54 ajacoutot Exp $
 
 Index: src/rpc/virnetsocket.c
 --- src/rpc/virnetsocket.c.orig
 +++ src/rpc/virnetsocket.c
-@@ -1421,7 +1421,7 @@ int virNetSocketGetUNIXIdentity(virNetSocket *sock,
+@@ -1422,7 +1422,7 @@ int virNetSocketGetUNIXIdentity(virNetSocket *sock,
                                  pid_t *pid,
                                  unsigned long long *timestamp)
  {

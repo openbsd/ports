@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.89 2021/12/02 10:04:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.90 2021/12/02 21:08:54 ajacoutot Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
-DISTNAME=		libvirt-7.9.0
-REVISION=		0
+DISTNAME=		libvirt-7.10.0
 
 CATEGORIES=		sysutils devel emulators
 
@@ -52,7 +51,8 @@ LIB_DEPENDS=		devel/glib2 \
 # OpenBSD can't act as a virtualization host, so we should disable libvirtd but
 # but need it for qemu client support; we do not provide an rc.d script for
 # libvirtd, virtlogd etc.
-RUN_DEPENDS +=		emulators/qemu
+# do NOT enforce dependency on qemu since it brings lots of dependencies
+#RUN_DEPENDS +=		emulators/qemu
 
 # disable until proven useful
 #.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"

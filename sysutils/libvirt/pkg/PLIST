@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.39 2021/12/02 10:04:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.40 2021/12/02 21:08:54 ajacoutot Exp $
 @bin bin/virsh
 @bin bin/virt-admin
 @bin bin/virt-host-validate
+@bin bin/virt-pki-query-dn
 bin/virt-pki-validate
 @bin bin/virt-qemu-run
 @bin bin/virt-ssh-helper
