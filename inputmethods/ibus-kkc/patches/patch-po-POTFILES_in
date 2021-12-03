@@ -1,0 +1,14 @@
+--- po/POTFILES.in.orig	Wed Jun  7 22:02:51 2017
++++ po/POTFILES.in	Wed Sep 22 20:30:30 2021
+@@ -1,8 +1,8 @@
+ src/engine.vala
+ src/setup.vala
+-[type: gettext/glade]src/setup-dialog.ui
+-[type: gettext/glade]src/dictionary-dialog.ui
+-[type: gettext/glade]src/shortcut-dialog.ui
++src/setup-dialog.ui
++src/dictionary-dialog.ui
++src/shortcut-dialog.ui
+ src/ibus-kkc-dictionaries.pot
+ src/ibus-setup-kkc.desktop.in.in
+ src/kkc.xml.in.in

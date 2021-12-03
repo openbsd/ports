@@ -1,0 +1,32 @@
+--- src/Makefile.am.orig	Wed Jun  7 22:02:51 2017
++++ src/Makefile.am	Wed Sep 22 20:32:32 2021
+@@ -129,15 +129,17 @@ $(desktop_in_files): %.desktop.in: %.desktop.in.in Mak
+ desktopdir=$(datadir)/applications
+ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+ 
+-@INTLTOOL_DESKTOP_RULE@
++$(desktop_DATA): $(addsuffix .in, $(desktop_DATA))
++	$(AM_V_GEN) $(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
+ 
+ component_DATA = kkc.xml
+ componentdir = $(datadir)/ibus/component
+ 
+-kkc.xml.in: kkc.xml.in.in
++kkc.inputMethod.xml.in: kkc.xml.in.in
+ 	$(AM_V_GEN) $(edit) $< > $@.tmp && mv $@.tmp $@
+ 
+-@INTLTOOL_XML_NOMERGE_RULE@
++$(component_DATA): $(patsubst %.xml,%.inputMethod.xml.in,$(component_DATA))
++	$(AM_V_GEN) $(MSGFMT) --xml --template $< -d $(top_srcdir)/po -o $@
+ 
+ GITIGNOREFILES =				\
+         $(libutil_la_SOURCES:.vala=.c)		\
+@@ -154,7 +156,7 @@ CLEANFILES =					\
+ 	ibus-setup-kkc-resources.c		\
+ 	$(desktop_DATA)				\
+ 	$(desktop_in_files)			\
+-	kkc.xml.in				\
++	kkc.inputMethod.xml.in			\
+ 	kkc.xml					\
+ 	$(NULL)
+ 

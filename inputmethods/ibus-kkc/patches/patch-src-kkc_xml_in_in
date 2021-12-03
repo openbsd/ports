@@ -1,0 +1,13 @@
+--- src/kkc.xml.in.in.orig	Wed Jun  7 22:02:51 2017
++++ src/kkc.xml.in.in	Wed Sep 22 20:58:27 2021
+@@ -19,8 +19,8 @@
+ 			<author>Daiki Ueno &lt;ueno@gnu.org&gt;</author>
+ 			<icon>@pkgdatadir@/icons/ibus-kkc.svg</icon>
+ 			<layout>jp</layout>
+-			<_longname>Kana Kanji</_longname>
+-			<_description>Kana Kanji Input Method</_description>
++			<longname>Kana Kanji</longname>
++			<description>Kana Kanji Input Method</description>
+ 			<rank>77</rank>
+ 			<symbol>&#x3042;</symbol>
+ 			<textdomain>ibus-kkc</textdomain>

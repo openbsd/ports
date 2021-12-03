@@ -1,0 +1,11 @@
+--- src/ibus-setup-kkc.desktop.in.in.orig	Wed Jun  7 22:02:51 2017
++++ src/ibus-setup-kkc.desktop.in.in	Wed Sep 22 20:57:42 2021
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+-_Name=Kana Kanji Conversion Preferences
+-_Comment=Customize Kana Kanji Conversion input-method
++Name=Kana Kanji Conversion Preferences
++Comment=Customize Kana Kanji Conversion input-method
+ Exec=@libexecdir@/ibus-setup-kkc
+ Icon=@pkgdatadir@/icons/ibus-kkc.svg
+ NoDisplay=true
