@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2021/05/19 11:52:01 stsp Exp $
+# $OpenBSD: Makefile,v 1.17 2021/12/03 12:50:50 stsp Exp $
 
 FW_DRIVER=	iwm
-FW_VER=		20210512
-DISTNAME=	linux-firmware-iwlwifi-fw-2021-05-12
+FW_VER=		20211101
+DISTNAME=	linux-firmware-iwlwifi-fw-2021-11-01
 EXTRACT_FILES=	${DISTNAME}/{LICENCE.\*,iwlwifi-\*-\*.ucode}
 
 HOMEPAGE=	https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi
