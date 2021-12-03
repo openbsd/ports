@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2021/10/26 10:36:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.112 2021/12/03 08:30:53 kirby Exp $
 
 COMMENT=		terminal emulation library
 
@@ -26,7 +26,8 @@ WANTLIB += ${COMPILER_LIBCXX}
 MODULES=		devel/meson \
 			x11/gnome
 
-COMPILER =		base-clang ports-gcc
+# C++20
+COMPILER =		base-clang ports-clang
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
