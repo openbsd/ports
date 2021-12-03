@@ -1,23 +1,11 @@
-$OpenBSD: patch-Makefile,v 1.9 2020/12/07 05:19:19 bket Exp $
-
-Fix empty version in .pc file. Taken from
-https://github.com/Cyan4973/xxHash/pull/442.
+$OpenBSD: patch-Makefile,v 1.10 2021/12/03 05:10:25 bket Exp $
 
 Don't create symbolic links pointing to the shared lib.
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -437,7 +437,7 @@ libxxhash.pc: libxxhash.pc.in
-           -e 's|@EXECPREFIX@|$(PCEXECDIR)|' \
-           -e 's|@LIBDIR@|$(PCLIBDIR)|' \
-           -e 's|@INCLUDEDIR@|$(PCINCDIR)|' \
--          -e 's|@VERSION@|$(VERSION)|' \
-+          -e 's|@VERSION@|$(LIBVER)|' \
-           $< > $@
- 
- 
-@@ -447,8 +447,6 @@ install: lib libxxhash.pc xxhsum  ## install libraries
+@@ -499,8 +499,6 @@ install: lib libxxhash.pc xxhsum  ## install libraries
  	$(Q)$(INSTALL) -d -m 755 $(DESTDIR)$(LIBDIR)
  	$(Q)$(INSTALL_DATA) libxxhash.a $(DESTDIR)$(LIBDIR)
  	$(Q)$(INSTALL_PROGRAM) $(LIBXXH) $(DESTDIR)$(LIBDIR)
