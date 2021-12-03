@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/02 00:02:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/12/03 11:00:12 kn Exp $
 
 COMMENT =		jq wrapper for YAML/XML documents
 
-MODPY_EGG_VERSION =	2.12.2
+MODPY_EGG_VERSION =	2.13.0
 DISTNAME =		yq-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		textproc
 
@@ -25,7 +24,7 @@ RUN_DEPENDS =		devel/py-argcomplete${MODPY_FLAVOR} \
 			textproc/jq \
 			textproc/py-toml${MODPY_FLAVOR} \
 			textproc/py-xmltodict${MODPY_FLAVOR} \
-			textproc/py-yaml${MODPY_FLAVOR}
+			textproc/py-yaml${MODPY_FLAVOR}>=5.3.1
 
 TEST_DEPENDS =		devel/flake8 \
 			devel/py-coverage${MODPY_FLAVOR} \
