@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1 2021/12/03 20:51:30 uaa Exp $
+include/fcitx/module/kkc/
+include/fcitx/module/kkc/fcitx-kkc.h
+@so lib/fcitx/fcitx-kkc.so
+share/fcitx/addon/fcitx-kkc.conf
+share/fcitx/configdesc/fcitx-kkc.desc
+share/fcitx/imicon/kkc.png
+share/fcitx/inputmethod/kkc.conf
+share/fcitx/kkc/
+share/fcitx/kkc/dictionary_list
+share/fcitx/kkc/rule
+share/icons/hicolor/64x64/apps/fcitx-kkc.png
+share/locale/ca/LC_MESSAGES/fcitx-kkc.mo
+share/locale/da/LC_MESSAGES/fcitx-kkc.mo
+share/locale/de/LC_MESSAGES/fcitx-kkc.mo
+share/locale/ja/LC_MESSAGES/fcitx-kkc.mo
+share/locale/ko/LC_MESSAGES/fcitx-kkc.mo
+share/locale/ru/LC_MESSAGES/fcitx-kkc.mo
+share/locale/tr/LC_MESSAGES/fcitx-kkc.mo
+share/locale/zh_CN/LC_MESSAGES/fcitx-kkc.mo
+share/locale/zh_TW/LC_MESSAGES/fcitx-kkc.mo
+@tag gtk-update-icon-cache %D/share/icons/hicolor
