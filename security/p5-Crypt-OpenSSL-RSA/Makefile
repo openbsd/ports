@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2021/05/31 21:02:03 bluhm Exp $
+# $OpenBSD: Makefile,v 1.27 2021/12/04 21:37:58 tb Exp $
 
 COMMENT =	RSA encoding and decoding using OpenSSL
 
 DISTNAME =	Crypt-OpenSSL-RSA-0.31
+REVISION =	0
 
 CATEGORIES =	security
 
