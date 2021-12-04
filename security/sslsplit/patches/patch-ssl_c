@@ -1,4 +1,4 @@
-$OpenBSD: patch-ssl_c,v 1.11 2021/10/25 19:03:18 tb Exp $
+$OpenBSD: patch-ssl_c,v 1.12 2021/12/04 12:06:14 tb Exp $
 
 Use X509_up_ref()
 https://github.com/droe/sslsplit/pull/291
@@ -6,6 +6,15 @@ https://github.com/droe/sslsplit/pull/291
 Index: ssl.c
 --- ssl.c.orig
 +++ ssl.c
+@@ -92,7 +92,7 @@ ssl_ssl_cert_get(SSL *s)
+ }
+ #endif /* OpenSSL 0.9.8y, 1.0.0k or 1.0.1e */
+ 
+-#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || (defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL)
+ int
+ DH_set0_pqg(DH *dh, BIGNUM *p, BIGNUM *q, BIGNUM *g)
+ {
 @@ -598,7 +598,7 @@ ssl_ssl_masterkey_to_str(SSL *ssl)
  	char *str = NULL;
  	int rv;
@@ -15,6 +24,24 @@ Index: ssl.c
  	unsigned char kbuf[48], rbuf[32];
  	k = &kbuf[0];
  	r = &rbuf[0];
+@@ -1500,7 +1500,7 @@ ssl_x509_fingerprint(X509 *crt, int colons)
+ void
+ ssl_dh_refcount_inc(DH *dh)
+ {
+-#if defined(OPENSSL_THREADS) && ((OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER))
++#if defined(OPENSSL_THREADS) && ((OPENSSL_VERSION_NUMBER < 0x10100000L) || (defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL))
+ 	CRYPTO_add(&dh->references, 1, CRYPTO_LOCK_DH);
+ #else /* !OPENSSL_THREADS */
+ 	DH_up_ref(dh);
+@@ -1515,7 +1515,7 @@ ssl_dh_refcount_inc(DH *dh)
+ void
+ ssl_key_refcount_inc(EVP_PKEY *key)
+ {
+-#if defined(OPENSSL_THREADS) && ((OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER))
++#if defined(OPENSSL_THREADS) && ((OPENSSL_VERSION_NUMBER < 0x10100000L) || (defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL))
+ 	CRYPTO_add(&key->references, 1, CRYPTO_LOCK_EVP_PKEY);
+ #else /* !OPENSSL_THREADS */
+ 	EVP_PKEY_up_ref(key);
 @@ -1530,7 +1530,7 @@ ssl_key_refcount_inc(EVP_PKEY *key)
  void
  ssl_x509_refcount_inc(X509 *crt)
