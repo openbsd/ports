@@ -1,0 +1,23 @@
+$OpenBSD: patch-ext_puma_http11_mini_ssl_c,v 1.1 2021/12/04 09:10:30 tb Exp $
+
+Fix build with Opaque DH in LibreSSL 3.5.
+
+Index: ext/puma_http11/mini_ssl.c
+--- ext/puma_http11/mini_ssl.c.orig
++++ ext/puma_http11/mini_ssl.c
+@@ -91,13 +91,13 @@ DH *get_dh2048() {
+   static unsigned char dh2048_g[] = { 0x02 };
+ 
+   DH *dh;
+-#if !(OPENSSL_VERSION_NUMBER < 0x10100005L || defined(LIBRESSL_VERSION_NUMBER))
++#if !(OPENSSL_VERSION_NUMBER < 0x10100005L)
+   BIGNUM *p, *g;
+ #endif
+ 
+   dh = DH_new();
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100005L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
+   dh->p = BN_bin2bn(dh2048_p, sizeof(dh2048_p), NULL);
+   dh->g = BN_bin2bn(dh2048_g, sizeof(dh2048_g), NULL);
+ 
