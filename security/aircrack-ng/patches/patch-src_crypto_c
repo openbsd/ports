@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_crypto_c,v 1.1 2021/12/04 11:44:42 tb Exp $
+
+Fix build with opaque HMAC_CTX in LibreSSL 3.5. The relevant API has
+been available since LibreSSL 2.7.
+
+Index: src/crypto.c
+--- src/crypto.c.orig
++++ src/crypto.c
+@@ -218,8 +218,7 @@ void calc_mic(struct AP_info * ap,
+ {
+ 	int i;
+ 	unsigned char pke[100];
+-#if defined(USE_GCRYPT) || OPENSSL_VERSION_NUMBER < 0x10100000L                \
+-	|| defined(LIBRESSL_VERSION_NUMBER)
++#if defined(USE_GCRYPT) || OPENSSL_VERSION_NUMBER < 0x10100000L
+ #define HMAC_USE_NO_PTR
+ #endif
+ 
