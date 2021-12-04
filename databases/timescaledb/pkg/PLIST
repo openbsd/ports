@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/10/16 20:43:41 denis Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/12/04 17:21:20 denis Exp $
 @so lib/postgresql/timescaledb-${GH_TAGNAME}.so
+@so lib/postgresql/timescaledb-tsl-${GH_TAGNAME}.so
 @so lib/postgresql/timescaledb.so
 share/doc/pkg-readmes/${PKGSTEM}
 share/postgresql/extension/timescaledb--1.7.0--${GH_TAGNAME}.sql
@@ -23,5 +24,7 @@ share/postgresql/extension/timescaledb--2.3.0--${GH_TAGNAME}.sql
 share/postgresql/extension/timescaledb--2.3.1--${GH_TAGNAME}.sql
 share/postgresql/extension/timescaledb--2.4.0--${GH_TAGNAME}.sql
 share/postgresql/extension/timescaledb--2.4.1--${GH_TAGNAME}.sql
+share/postgresql/extension/timescaledb--2.4.2--${GH_TAGNAME}.sql
+share/postgresql/extension/timescaledb--2.5.0--${GH_TAGNAME}.sql
 share/postgresql/extension/timescaledb--${GH_TAGNAME}.sql
 share/postgresql/extension/timescaledb.control

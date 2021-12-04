@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2021/10/16 20:43:41 denis Exp $
+# $OpenBSD: Makefile,v 1.10 2021/12/04 17:21:20 denis Exp $
 
 COMMENT =	database designed to make SQL scalable for time-series data
 
 GH_ACCOUNT =	timescale
 GH_PROJECT =	timescaledb
-GH_TAGNAME =	2.4.2
+GH_TAGNAME =	2.5.1
 
 CATEGORIES =	databases
 HOMEPAGE =	https://www.timescale.com/
@@ -30,9 +30,5 @@ CONFIGURE_ARGS +=	-DREGRESS_CHECKS=OFF \
 			-DCLANG_FORMAT=OFF \
 			-DSEND_TELEMETRY_DEFAULT=OFF \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
-
-# only build Apache-licensed code, disabling the TsL library which
-# is licensed under its own license, see tsl/LICENSE-TIMESCALE
-CONFIGURE_ARGS += -DAPACHE_ONLY=1
 
 .include <bsd.port.mk>
