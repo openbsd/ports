@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/12/02 03:59:20 daniel Exp $
+# $OpenBSD: Makefile,v 1.9 2021/12/04 03:05:30 daniel Exp $
 
 COMMENT =	binding to cairo, a 2D vector graphics library
 CATEGORIES =	graphics
@@ -20,6 +20,7 @@ WANTLIB += z
 MODULES =	lang/ocaml
 
 BUILD_DEPENDS = devel/dune \
+		devel/dune,-configurator \
 		sysutils/findlib \
 		graphics/ocaml-graphics \
 		x11/lablgtk2

@@ -1,13 +1,18 @@
-# $OpenBSD: Makefile,v 1.11 2021/12/02 03:59:19 daniel Exp $
+# $OpenBSD: Makefile,v 1.12 2021/12/04 03:05:30 daniel Exp $
 
-COMMENT =		OCaml build system
+MULTI_PACKAGES =	-main -private -configurator
+
+COMMENT-main =		OCaml build system
+COMMENT-private =	private libraries of the dune build system
+COMMENT-configurator =	OCaml library for gathering system configuration
+
+VERSION =		2.7.0
 
 CATEGORIES =		devel
 
 GH_ACCOUNT =		ocaml
 GH_PROJECT =		dune
-GH_TAGNAME =		1.11.3
-REVISION =		2
+GH_TAGNAME =		${VERSION}
 
 HOMEPAGE =		https://github.com/ocaml/dune
 
@@ -16,26 +21,35 @@ MAINTAINER =		Christopher Zimmermann <chrisz@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		c m pthread
+WANTLIB-main =		c m pthread
 
 MODULES =		lang/ocaml
 
-BUILD_DEPENDS =		sysutils/findlib
+RUN_DEPENDS-configurator = devel/dune,-private
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--libdir ${PREFIX}/lib/ocaml/
 
 USE_GMAKE =		Yes
 
-MAKE_FLAGS =		DUNE_FLAGS="--display verbose -j ${MAKE_JOBS}"
 ALL_TARGET =		release
 
-FAKE_FLAGS =		PREFIX=${PREFIX} LIBDIR=lib/ocaml
+#FAKE_FLAGS =		PREFIX=${PREFIX} LIBDIR=lib/ocaml
 INSTALL_TARGET =	install
 
+#./dune.exe build --display=short
+post-build:
+	cd ${WRKSRC} && env -i ${MAKE_ENV} \
+	./dune.exe build --display=short \
+	dune-private-libs.install dune-configurator.install
+
+do-install:
+	cd ${WRKSRC} && env -i ${MAKE_ENV} ${FAKE_SETUP} \
+	./dune.exe install --display=short \
+	dune dune-private-libs dune-configurator
+
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml-${GH_PROJECT}
-	mv ${PREFIX}/doc/* ${PREFIX}/share/doc/ocaml-${GH_PROJECT}/
+	mv ${PREFIX}/doc/* ${PREFIX}/share/doc/
 	rmdir ${PREFIX}/doc
 
 .include <bsd.port.mk>

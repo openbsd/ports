@@ -1,0 +1,41 @@
+@comment $OpenBSD: PLIST-main,v 1.1 2021/12/04 03:05:30 daniel Exp $
+@pkgpath sysutils/dune
+@pkgpath devel/dune
+@bin bin/dune
+lib/ocaml/dune/
+lib/ocaml/dune/META
+lib/ocaml/dune/dune-package
+lib/ocaml/dune/opam
+@man man/man1/dune-build.1
+@man man/man1/dune-cache.1
+@man man/man1/dune-clean.1
+@man man/man1/dune-compute.1
+@man man/man1/dune-describe.1
+@man man/man1/dune-exec.1
+@man man/man1/dune-external-lib-deps.1
+@man man/man1/dune-format-dune-file.1
+@man man/man1/dune-help.1
+@man man/man1/dune-init.1
+@man man/man1/dune-install.1
+@man man/man1/dune-installed-libraries.1
+@man man/man1/dune-ocaml-merlin.1
+@man man/man1/dune-printenv.1
+@man man/man1/dune-promote.1
+@man man/man1/dune-rules.1
+@man man/man1/dune-runtest.1
+@man man/man1/dune-subst.1
+@man man/man1/dune-test.1
+@man man/man1/dune-top.1
+@man man/man1/dune-uninstall.1
+@man man/man1/dune-upgrade.1
+@man man/man1/dune-utop.1
+@man man/man1/dune.1
+@man man/man5/dune-config.5
+share/doc/dune/
+share/doc/dune/CHANGES.md
+share/doc/dune/LICENSE.md
+share/doc/dune/README.md
+share/emacs/
+share/emacs/site-lisp/
+share/emacs/site-lisp/dune-flymake.el
+share/emacs/site-lisp/dune.el
