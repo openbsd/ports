@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.55 2021/12/02 03:59:20 daniel Exp $
+# $OpenBSD: Makefile,v 1.56 2021/12/04 04:33:45 daniel Exp $
 
 COMMENT=		proof assistant based on a typed lambda calculus
 
-V=			8.12.2
+V=			8.13.2
 GH_ACCOUNT =		coq
 GH_PROJECT =		coq
 GH_TAGNAME =		V${V}
 DISTNAME =		${GH_PROJECT}-${V}
 WRKDIST =		${WRKDIR}/${GH_PROJECT}-${V}
-REVISION =		0
 
 CATEGORIES=		math
 HOMEPAGE=		https://coq.inria.fr/
@@ -25,7 +24,7 @@ WANTLIB += harfbuzz intl m pango-1.0 pangocairo-1.0 pthread z
 MODULES=	lang/ocaml
 
 BUILD_DEPENDS=	x11/lablgtk3 \
-		math/ocaml-num \
+		math/ocaml-zarith \
 		shells/bash \
 		sysutils/findlib
 RUN_DEPENDS=	x11/lablgtk3
@@ -45,7 +44,7 @@ CONFIGURE_ARGS=	-prefix ${PREFIX} \
 ALL_TARGET=		world
 INSTALL_TARGET=		install
 .else
-RUN_DEPENDS +=		math/ocaml-num 
+RUN_DEPENDS +=		math/ocaml-zarith
 # Order is important!
 ALL_TARGET=		byte coq documentation \
 			bin/coqide coqide-files theories/Init/Prelude.vo
