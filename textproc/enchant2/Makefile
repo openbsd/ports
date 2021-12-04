@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.20 2021/08/11 11:45:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2021/12/04 08:50:51 ajacoutot Exp $
 
 COMMENT=		generic spell checking library
 
-V=			2.3.1
+V=			2.3.2
 DISTNAME=		enchant-${V}
 PKGNAME=		enchant2-${V}
 
-SHARED_LIBS +=  enchant-2            0.1      # 5.1
+SHARED_LIBS +=  enchant-2            0.1      # 5.2
 
 CATEGORIES=		textproc
 
