@@ -1,4 +1,4 @@
-$OpenBSD: patch-cups_getifaddrs-internal_h,v 1.2 2021/01/05 07:43:02 ajacoutot Exp $
+$OpenBSD: patch-cups_getifaddrs-internal_h,v 1.3 2021/12/04 08:14:02 ajacoutot Exp $
 
 In file included from getifaddrs.c:15:
 In file included from ./getifaddrs-internal.h:42:
@@ -8,7 +8,7 @@ In file included from ./getifaddrs-internal.h:42:
 Index: cups/getifaddrs-internal.h
 --- cups/getifaddrs-internal.h.orig
 +++ cups/getifaddrs-internal.h
-@@ -39,6 +39,7 @@ typedef int socklen_t;
+@@ -40,6 +40,7 @@ typedef int socklen_t;
  #  endif /* __APPLE__ && !_SOCKLEN_T */
  
  #  ifndef _WIN32

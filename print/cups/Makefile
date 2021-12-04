@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.263 2021/09/15 12:48:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.264 2021/12/04 08:14:02 ajacoutot Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
@@ -6,19 +6,13 @@ COMMENT-libs=		CUPS libraries and headers
 VERSION=		${GH_TAGNAME:S/v//:S/op/./}
 GH_ACCOUNT=		OpenPrinting
 GH_PROJECT=		cups
-GH_TAGNAME=		v2.3.3op2
-
-PKGNAME-main=		cups-${VERSION}
-PKGNAME-libs=		cups-libs-${VERSION}
-
-REVISION-main=		2
-REVISION-libs=		1
+GH_TAGNAME=		v2.4.0
 
 CATEGORIES=		print sysutils
 
 # config-scripts/cups-sharedlibs.m4
 SHARED_LIBS+=  cupsimage       6.2 # 2
-SHARED_LIBS+=  cups            7.2 # 2
+SHARED_LIBS+=  cups            7.3 # 2
 
 HOMEPAGE=		https://openprinting.github.io/cups/
 

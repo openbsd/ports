@@ -1,9 +1,9 @@
-$OpenBSD: patch-scheduler_auth_c,v 1.12 2019/08/25 09:59:18 ajacoutot Exp $
+$OpenBSD: patch-scheduler_auth_c,v 1.13 2021/12/04 08:14:02 ajacoutot Exp $
 
 Index: scheduler/auth.c
 --- scheduler/auth.c.orig
 +++ scheduler/auth.c
-@@ -636,7 +636,7 @@ cupsdAuthorize(cupsd_client_t *con)	/* I - Client conn
+@@ -644,7 +644,7 @@ cupsdAuthorize(cupsd_client_t *con)	/* I - Client conn
  #  endif /* HAVE_SHADOW_H */
  
  

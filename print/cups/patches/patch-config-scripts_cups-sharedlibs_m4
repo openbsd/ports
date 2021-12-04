@@ -1,16 +1,17 @@
-$OpenBSD: patch-config-scripts_cups-sharedlibs_m4,v 1.13 2019/08/25 09:59:18 ajacoutot Exp $
+$OpenBSD: patch-config-scripts_cups-sharedlibs_m4,v 1.14 2021/12/04 08:14:02 ajacoutot Exp $
+
 Index: config-scripts/cups-sharedlibs.m4
 --- config-scripts/cups-sharedlibs.m4.orig
 +++ config-scripts/cups-sharedlibs.m4
-@@ -30,9 +30,9 @@ if test x$enable_shared != xno; then
- 			DSOFLAGS="$DSOFLAGS -Wl,-h\`basename \$@\` -G"
- 			;;
- 		linux* | gnu* | *bsd*)
--			LIBCUPS="lib$cupsbase.so.2"
-+			LIBCUPS="lib$cupsbase.so.${LIBcups_VERSION}"
- 			if test "x$cupsimagebase" != x; then
--				LIBCUPSIMAGE="lib$cupsimagebase.so.2"
-+				LIBCUPSIMAGE="lib$cupsimagebase.so.${LIBcupsimage_VERSION}"
- 			fi
- 			DSO="\$(CC)"
- 			DSOXX="\$(CXX)"
+@@ -29,9 +29,9 @@ AS_IF([test x$enable_shared != xno], [
+ 	DSOXX="\$(CXX)"
+ 	DSOFLAGS="$DSOFLAGS -Wl,-h\`basename \$@\` -G"
+     ], [linux* | gnu* | *bsd*], [
+-	LIBCUPS="lib$cupsbase.so.2"
++	LIBCUPS="lib$cupsbase.so.${LIBcups_VERSION}"
+ 	AS_IF([test "x$cupsimagebase" != x], [
+-	    LIBCUPSIMAGE="lib$cupsimagebase.so.2"
++	    LIBCUPSIMAGE="lib$cupsimagebase.so.${LIBcupsimage_VERSION}"
+ 	])
+ 	DSO="\$(CC)"
+ 	DSOXX="\$(CXX)"

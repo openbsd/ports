@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-libs,v 1.10 2019/12/13 22:30:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST-libs,v 1.11 2021/12/04 08:14:02 ajacoutot Exp $
 @conflict cups-<1.6.0
 @newgroup _cups:541
 @newuser _cups:541:541:daemon:CUPS printer spooler daemon:/nonexistent:/sbin/nologin
@@ -23,6 +23,7 @@ include/cups/versioning.h
 @lib lib/libcups.so.${LIBcups_VERSION}
 @static-lib lib/libcupsimage.a
 @lib lib/libcupsimage.so.${LIBcupsimage_VERSION}
+lib/pkgconfig/cups.pc
 libexec/cups/
 libexec/cups/backend/
 libexec/cups/driver/

@@ -1,11 +1,11 @@
-$OpenBSD: patch-Makedefs_in,v 1.18 2019/08/25 09:59:18 ajacoutot Exp $
+$OpenBSD: patch-Makedefs_in,v 1.19 2021/12/04 08:14:02 ajacoutot Exp $
 
 BSD_INSTALL_PROGRAM is used to respect INSTALL_STRIP.
 
 Index: Makedefs.in
 --- Makedefs.in.orig
 +++ Makedefs.in
-@@ -45,12 +45,12 @@ SHELL		=	/bin/sh
+@@ -46,12 +46,12 @@ SHELL		=	/bin/sh
  # Installation programs...
  #
  
@@ -20,7 +20,7 @@ Index: Makedefs.in
  INSTALL_MAN	=	$(INSTALL) -c -m 444
  INSTALL_SCRIPT	=	$(INSTALL) -c -m @CUPS_EXE_FILE_PERM@
  
-@@ -100,7 +100,7 @@ LIBHEADERS	=	@LIBHEADERS@
+@@ -101,7 +101,7 @@ LIBHEADERS	=	@LIBHEADERS@
  LIBHEADERSPRIV	=	@LIBHEADERSPRIV@
  LIBMALLOC	=	@LIBMALLOC@
  LIBPAPER	=	@LIBPAPER@
