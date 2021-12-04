@@ -1,0 +1,41 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/12/04 17:05:08 kn Exp $
+@bin bin/playerctl
+@bin bin/playerctld
+include/playerctl/
+include/playerctl/playerctl-enum-types.h
+include/playerctl/playerctl-player-manager.h
+include/playerctl/playerctl-player-name.h
+include/playerctl/playerctl-player.h
+include/playerctl/playerctl-version.h
+include/playerctl/playerctl.h
+lib/girepository-1.0/
+lib/girepository-1.0/Playerctl-2.0.typelib
+@lib lib/libplayerctl.so.${LIBplayerctl_VERSION}
+lib/pkgconfig/playerctl.pc
+@man man/man1/playerctl.1
+share/dbus-1/
+share/dbus-1/services/
+share/dbus-1/services/org.mpris.MediaPlayer2.playerctld.service
+share/gir-1.0/
+share/gir-1.0/Playerctl-2.0.gir
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/playerctl/
+share/gtk-doc/html/playerctl/PlayerctlPlayer.html
+share/gtk-doc/html/playerctl/PlayerctlPlayerManager.html
+share/gtk-doc/html/playerctl/annotation-glossary.html
+share/gtk-doc/html/playerctl/api-index-full.html
+share/gtk-doc/html/playerctl/ch01.html
+share/gtk-doc/html/playerctl/deprecated-api-index.html
+share/gtk-doc/html/playerctl/home.png
+share/gtk-doc/html/playerctl/index.html
+share/gtk-doc/html/playerctl/left-insensitive.png
+share/gtk-doc/html/playerctl/left.png
+share/gtk-doc/html/playerctl/object-tree.html
+share/gtk-doc/html/playerctl/playerctl-playerctl-player-name.html
+share/gtk-doc/html/playerctl/playerctl.devhelp2
+share/gtk-doc/html/playerctl/right-insensitive.png
+share/gtk-doc/html/playerctl/right.png
+share/gtk-doc/html/playerctl/style.css
+share/gtk-doc/html/playerctl/up-insensitive.png
+share/gtk-doc/html/playerctl/up.png
