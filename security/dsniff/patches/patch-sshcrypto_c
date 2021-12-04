@@ -1,6 +1,13 @@
-$OpenBSD: patch-sshcrypto_c,v 1.3 2015/05/29 15:57:29 jca Exp $
---- sshcrypto.c.orig	Tue Nov 28 22:23:28 2000
-+++ sshcrypto.c	Fri May 29 17:56:22 2015
+$OpenBSD: patch-sshcrypto_c,v 1.4 2021/12/04 11:27:20 tb Exp $
+
+Use DES API instead of des
+
+OpenSSL 1.1 API conversion to fix build with LibreSSL 3.5 based on
+https://sources.debian.org/patches/dsniff/2.4b1+debian-30/24_Fix-OpenSSL1.1.0-Build.patch/
+
+Index: sshcrypto.c
+--- sshcrypto.c.orig
++++ sshcrypto.c
 @@ -15,7 +15,9 @@
  #include <sys/types.h>
  #include <openssl/ssl.h>
@@ -22,7 +29,33 @@ $OpenBSD: patch-sshcrypto_c,v 1.3 2015/05/29 15:57:29 jca Exp $
  };
  
  void
-@@ -153,13 +155,13 @@ des3_init(u_char *sesskey, int len)
+@@ -37,10 +39,12 @@ rsa_public_encrypt(BIGNUM *out, BIGNUM *in, RSA *key)
+ 	u_char *inbuf, *outbuf;
+ 	int len, ilen, olen;
+ 
+-	if (BN_num_bits(key->e) < 2 || !BN_is_odd(key->e))
++	const BIGNUM *n, *e;
++	RSA_get0_key(key, &n, &e, NULL);
++	if (BN_num_bits(e) < 2 || !BN_is_odd(e))
+ 		errx(1, "rsa_public_encrypt() exponent too small or not odd");
+ 
+-	olen = BN_num_bytes(key->n);
++	olen = BN_num_bytes(n);
+ 	outbuf = malloc(olen);
+ 
+ 	ilen = BN_num_bytes(in);
+@@ -69,7 +73,9 @@ rsa_private_decrypt(BIGNUM *out, BIGNUM *in, RSA *key)
+ 	u_char *inbuf, *outbuf;
+ 	int len, ilen, olen;
+ 
+-	olen = BN_num_bytes(key->n);
++	const BIGNUM *n;
++	RSA_get0_key(key, &n, NULL, NULL);
++	olen = BN_num_bytes(n);
+ 	outbuf = malloc(olen);
+ 
+ 	ilen = BN_num_bytes(in);
+@@ -153,13 +159,13 @@ des3_init(u_char *sesskey, int len)
  	if ((state = malloc(sizeof(*state))) == NULL)
  		err(1, "malloc");
  
@@ -40,7 +73,7 @@ $OpenBSD: patch-sshcrypto_c,v 1.3 2015/05/29 15:57:29 jca Exp $
  	
  	memset(state->iv1, 0, 8);
  	memset(state->iv2, 0, 8);
-@@ -175,9 +177,9 @@ des3_encrypt(u_char *src, u_char *dst, int len, void *
+@@ -175,9 +181,9 @@ des3_encrypt(u_char *src, u_char *dst, int len, void *
  	estate = (struct des3_state *)state;
  	memcpy(estate->iv1, estate->iv2, 8);
  	
@@ -53,7 +86,7 @@ $OpenBSD: patch-sshcrypto_c,v 1.3 2015/05/29 15:57:29 jca Exp $
  }
  
  void
-@@ -188,7 +190,7 @@ des3_decrypt(u_char *src, u_char *dst, int len, void *
+@@ -188,7 +194,7 @@ des3_decrypt(u_char *src, u_char *dst, int len, void *
  	dstate = (struct des3_state *)state;
  	memcpy(dstate->iv1, dstate->iv2, 8);
  	

@@ -1,0 +1,13 @@
+$OpenBSD: patch-buf_c,v 1.1 2021/12/04 11:27:20 tb Exp $
+
+Index: buf.c
+--- buf.c.orig
++++ buf.c
+@@ -12,6 +12,7 @@
+ #include <sys/types.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <stdarg.h>
+ #include <unistd.h>
+ #include <ctype.h>

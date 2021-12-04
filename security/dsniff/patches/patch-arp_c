@@ -1,0 +1,13 @@
+$OpenBSD: patch-arp_c,v 1.1 2021/12/04 11:27:20 tb Exp $
+
+Index: arp.c
+--- arp.c.orig
++++ arp.c
+@@ -32,6 +32,7 @@
+ #include <netinet/if_ether.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <unistd.h>
+ 
+ #ifdef BSD
