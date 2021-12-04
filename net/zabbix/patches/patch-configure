@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.30 2020/12/30 13:19:05 robert Exp $
+$OpenBSD: patch-configure,v 1.31 2021/12/04 18:54:44 robert Exp $
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -6552,6 +6552,7 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+@@ -6549,6 +6549,7 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  
  #include <stdlib.h>
  #include <sys/queue.h>
@@ -11,7 +11,7 @@ Index: configure
  #include <sys/sensors.h>
  int
  main ()
-@@ -14333,13 +14334,13 @@ LIBS="$LIBS $ICONV_LIBS"
+@@ -14365,13 +14366,13 @@ LIBS="$LIBS $ICONV_LIBS"
  RANLIB="ranlib"
  
  
