@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_hmac_openssl_hmac_c,v 1.1 2021/12/04 21:30:04 tb Exp $
+
+Fix build with opaque HMAC_CTX in LibreSSL 3.5.
+
+Index: src/hmac/openssl/hmac.c
+--- src/hmac/openssl/hmac.c.orig
++++ src/hmac/openssl/hmac.c
+@@ -20,8 +20,7 @@ static void destructor(void *arg)
+ {
+ 	struct hmac *hmac = arg;
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L && \
+-	!defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L
+ 
+ 	if (hmac->ctx)
+ 		HMAC_CTX_free(hmac->ctx);
+@@ -61,8 +60,7 @@ int hmac_create(struct hmac **hmacp, enum hmac_hash ha
+ 	if (!hmac)
+ 		return ENOMEM;
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L && \
+-	!defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L
+ 
+ 	hmac->ctx = HMAC_CTX_new();
+ 	if (!hmac->ctx) {

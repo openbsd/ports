@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_tls_openssl_tls_h,v 1.1 2021/12/04 21:30:04 tb Exp $
+
+Fix build with opaque BIO_METHOD in LibreSSL 3.5.
+
+Index: src/tls/openssl/tls.h
+--- src/tls/openssl/tls.h.orig
++++ src/tls/openssl/tls.h
+@@ -17,10 +17,6 @@
+ #define TLS_BIO_OPAQUE 1
+ #endif
+ 
+-#if defined (LIBRESSL_VERSION_NUMBER)
+-#undef  TLS_BIO_OPAQUE
+-#endif
+-
+ 
+ #if OPENSSL_VERSION_NUMBER >= 0x10100000L && \
+ 	!defined(LIBRESSL_VERSION_NUMBER)

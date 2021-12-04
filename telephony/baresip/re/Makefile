@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.22 2021/06/15 06:51:31 landry Exp $
+# $OpenBSD: Makefile,v 1.23 2021/12/04 21:30:04 tb Exp $
 
 COMMENT =		portable library for real-time communications
 
 GH_ACCOUNT =	baresip
 GH_PROJECT =	re
 GH_TAGNAME =	v2.0.1
+REVISION =	0
+
 SHARED_LIBS =		re	6.0
 CATEGORIES +=		devel
 
