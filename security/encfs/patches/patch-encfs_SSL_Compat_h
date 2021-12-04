@@ -1,0 +1,16 @@
+$OpenBSD: patch-encfs_SSL_Compat_h,v 1.3 2021/12/04 11:35:34 tb Exp $
+
+Fix build with opaque HMAC_CTX in LibreSSL 3.5.
+
+Index: encfs/SSL_Compat.h
+--- encfs/SSL_Compat.h.orig
++++ encfs/SSL_Compat.h
+@@ -22,7 +22,7 @@
+ #define _SSL_Compat_incl_
+ 
+ // OpenSSL < 1.1.0 or LibreSSL
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ 
+ // Equivalent methods
+ #define EVP_MD_CTX_new EVP_MD_CTX_create

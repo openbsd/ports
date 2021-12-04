@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2021/02/23 19:39:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2021/12/04 11:35:34 tb Exp $
 
 COMMENT =		fuse-based cryptographic filesystem
 
 V =			1.9.5
 DISTNAME =		encfs-$V
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		security
 
