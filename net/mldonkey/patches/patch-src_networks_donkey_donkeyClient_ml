@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_networks_donkey_donkeyClient_ml,v 1.1 2021/12/04 01:31:33 daniel Exp $
+
+ocaml 4.12 compat
+
+Index: src/networks/donkey/donkeyClient.ml
+--- src/networks/donkey/donkeyClient.ml.orig
++++ src/networks/donkey/donkeyClient.ml
+@@ -818,8 +818,7 @@ another better way, since this functionnality is still
+         end
+ 
+ 
+-external hash_param : int -> int -> 'a -> int = "caml_hash_univ_param" "noalloc"
+-let hash x = hash_param 10 100 x
++let hash = Hashtbl.hash
+ 
+ let shared_of_file file =
+   match file.file_shared with
