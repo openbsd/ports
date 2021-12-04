@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2021/04/28 19:35:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2021/12/04 21:22:58 tb Exp $
 
 COMMENT-main =		mature and flexible open source SIP server
 
 VERSION =		5.4.5
+REVISION-main =		0
 
 DISTNAME =		kamailio-${VERSION}_src
 
