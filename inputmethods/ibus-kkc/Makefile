@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1 2021/12/03 20:56:17 uaa Exp $
+# $OpenBSD: Makefile,v 1.2 2021/12/04 11:03:38 ajacoutot Exp $
 
 COMMENT =	japanese libkkc engine for ibus
 
 VERSION =	20170607
 DISTNAME =	ibus-kkc
 PKGNAME =	ibus-kkc-${VERSION}
+REVISION =	0
 
 GH_ACCOUNT =	ueno
 GH_PROJECT =	ibus-kkc
