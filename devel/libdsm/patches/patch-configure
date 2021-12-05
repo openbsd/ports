@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure,v 1.1 2021/12/05 19:44:28 jca Exp $
+
+Adapt configure test to work with -Werror and -Wunused-but-set-variable
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -13793,7 +13793,7 @@ $as_echo_n "checking for the pthreads library -l$flag.
+         cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ #include <pthread.h>
+-                        static void routine(void *a) { a = 0; }
++                        static void routine(void *a) { (void)a; }
+                         static void *start_routine(void *a) { return a; }
+ int
+ main ()
