@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2162 2021/12/02 18:41:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.2163 2021/12/05 19:58:11 jca Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -260,7 +260,6 @@
      SUBDIR += libdisorder
      SUBDIR += libdockapp
      SUBDIR += libdshconfig
-     SUBDIR += libdsm
      SUBDIR += libdvdread
      SUBDIR += libdwarf
      SUBDIR += libee
