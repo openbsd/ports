@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/18 15:54:27 tracey Exp $
+# $OpenBSD: Makefile,v 1.4 2021/12/05 17:03:48 tracey Exp $
 
 COMMENT =	gdb for ${CONFIG} cross-development
 
 VERSION =	2.35.1.2021.2
 PKGNAME =	${CONFIG}-gdb-${VERSION}
+REVISION =	0
 
 GH_ACCOUNT =	espressif
 GH_PROJECT =	binutils-gdb
@@ -13,7 +14,8 @@ WANTLIB += ${COMPILER_LIBCXX} c curses expat m z
 
 BUILD_DEPENDS =	devel/libtool \
 		devel/bison \
-		devel/xtensa-esp32-elf/binutils
+		devel/xtensa-esp32-elf/binutils \
+		lang/gawk
 RUN_DEPENDS +=	devel/xtensa-esp32-elf/binutils
 
 CONFIGURE_ARGS	+=	--enable-commonbfdlib=no \
