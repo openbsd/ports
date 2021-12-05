@@ -1,0 +1,22 @@
+$OpenBSD: patch-bundles_Makefile_bundles,v 1.1 2021/12/05 10:02:07 jsg Exp $
+
+partial backport of 3f93bfbb207b8e73f5f39afdf1c6f4a96038d2e4
+Fix Makefile dependencies
+
+Index: bundles/Makefile.bundles
+--- bundles/Makefile.bundles.orig
++++ bundles/Makefile.bundles
+@@ -75,13 +75,10 @@ $(SRC_DIR)/$(ARCHIVE).cma: $(patsubst %,$(SRC_DIR)/%.c
+ $(SRC_DIR)/$(ARCHIVE).cmxa: $(patsubst %,$(SRC_DIR)/%.cmx,$(OBJS))
+ 	$(OCAMLOPT_CMD) -a $^ -o $@
+ 
+-$(SRC_DIR)/$(LIBRARY).a \
+-$(SRC_DIR)/dll$(LIBRARY)_stubs.so \
+ $(SRC_DIR)/lib$(LIBRARY)_stubs.a: \
+ 	$(patsubst %,$(SRC_DIR)/%_stubs.o,$(C_OBJS))
+ 	$(OCAMLMKLIB_CMD) -o $(SRC_DIR)/$(LIBRARY)_stubs $^
+ 
+-$(SRC_DIR)/$(LIBRARY).a \
+ $(SRC_DIR)/dll$(LIBRARY)_stubs.so: $(SRC_DIR)/lib$(LIBRARY)_stubs.a
+ 
+ %.ml: %.mll .prepare
