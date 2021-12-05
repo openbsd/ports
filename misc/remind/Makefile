@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2021/10/15 10:50:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2021/12/05 07:44:27 rsadowski Exp $
 
 COMMENT=	scripting language for reminders, with a Tk front end
 
-DISTNAME=	remind-03.03.09
-PKGNAME=	remind-3.3.9
+DISTNAME=	remind-03.03.10
+PKGNAME=	remind-3.3.10
 
 CATEGORIES=	misc
 
@@ -21,7 +21,7 @@ MASTER_SITES=	https://dianne.skoll.ca/projects/remind/download/
 TEST_ENV=		LC_ALL=en_US.UTF-8
 
 MODULES=		x11/tk
-MODTK_VERSION =		8.6
+MODTK_VERSION=		8.6
 
 BUILD_DEPENDS=		converters/p5-JSON-Any
 RUN_DEPENDS=		${MODTK_RUN_DEPENDS} \
@@ -33,7 +33,7 @@ CONFIGURE_STYLE=	gnu
 TEST_TARGET=		test
 
 pre-configure:
-	${MODTCL_WISH_ADJ}  ${WRKSRC}/scripts/tkremind
+	${MODTCL_WISH_ADJ} ${WRKSRC}/scripts/tkremind
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/remind
