@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/26 22:27:26 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/12/05 17:53:29 abieber Exp $
 include/olm/
+include/olm/error.h
 include/olm/inbound_group_session.h
 include/olm/olm.h
+include/olm/olm_export.h
 include/olm/outbound_group_session.h
 include/olm/pk.h
 include/olm/sas.h
@@ -12,3 +14,4 @@ lib/cmake/Olm/OlmConfigVersion.cmake
 lib/cmake/Olm/OlmTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Olm/OlmTargets.cmake
 @lib lib/libolm.so.${LIBolm_VERSION}
+lib/pkgconfig/olm.pc

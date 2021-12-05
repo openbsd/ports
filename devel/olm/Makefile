@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2020/10/22 04:01:05 abieber Exp $
+# $OpenBSD: Makefile,v 1.3 2021/12/05 17:53:29 abieber Exp $
 
 COMMENT =	Double Ratchet cryptographic ratchet in C++
-V =		3.2.1
+V =		3.2.6
 DISTNAME =	olm-${V}
 CATEGORIES =	devel security
 
-SHARED_LIBS +=	olm       1.0 # 3.2.1
+SHARED_LIBS +=	olm       1.1 # 3.2.6
 
 MASTER_SITES =	https://gitlab.matrix.org/matrix-org/olm/-/archive/${V}/
 
