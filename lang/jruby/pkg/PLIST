@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.55 2021/10/15 20:27:51 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.56 2021/12/05 03:55:06 jeremy Exp $
 bin/jruby
 jruby/
 jruby/bin/
@@ -430,7 +430,7 @@ jruby/lib/ruby/gems/1.8/specifications/default/io-console-0.5.9-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/ipaddr-1.2.2.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/irb-1.0.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/jar-dependencies-0.4.1.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/jruby-openssl-0.10.7-java.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/jruby-openssl-0.11.0-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/jruby-readline-1.3.7-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/json-2.5.1-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/logger-1.3.0.gemspec
@@ -1833,35 +1833,6 @@ jruby/lib/ruby/stdlib/strscan.rb
 jruby/lib/ruby/stdlib/sync.rb
 jruby/lib/ruby/stdlib/syslog/
 jruby/lib/ruby/stdlib/syslog.rb
-jruby/lib/ruby/stdlib/syslog/ffi/
-jruby/lib/ruby/stdlib/syslog/ffi/aarch64-freebsd/
-jruby/lib/ruby/stdlib/syslog/ffi/aarch64-freebsd/syslog.rb
-jruby/lib/ruby/stdlib/syslog/ffi/i386-darwin/
-jruby/lib/ruby/stdlib/syslog/ffi/i386-darwin/syslog.rb
-jruby/lib/ruby/stdlib/syslog/ffi/i386-linux/
-jruby/lib/ruby/stdlib/syslog/ffi/i386-linux/syslog.rb
-jruby/lib/ruby/stdlib/syslog/ffi/i386-openbsd/
-jruby/lib/ruby/stdlib/syslog/ffi/i386-openbsd/syslog.rb
-jruby/lib/ruby/stdlib/syslog/ffi/i386-solaris/
-jruby/lib/ruby/stdlib/syslog/ffi/i386-solaris/syslog.rb
-jruby/lib/ruby/stdlib/syslog/ffi/powerpc-aix/
-jruby/lib/ruby/stdlib/syslog/ffi/powerpc-aix/syslog.rb
-jruby/lib/ruby/stdlib/syslog/ffi/powerpc-darwin/
-jruby/lib/ruby/stdlib/syslog/ffi/powerpc-darwin/syslog.rb
-jruby/lib/ruby/stdlib/syslog/ffi/sparc-solaris/
-jruby/lib/ruby/stdlib/syslog/ffi/sparc-solaris/syslog.rb
-jruby/lib/ruby/stdlib/syslog/ffi/sparcv9-solaris/
-jruby/lib/ruby/stdlib/syslog/ffi/sparcv9-solaris/syslog.rb
-jruby/lib/ruby/stdlib/syslog/ffi/x86_64-darwin/
-jruby/lib/ruby/stdlib/syslog/ffi/x86_64-darwin/syslog.rb
-jruby/lib/ruby/stdlib/syslog/ffi/x86_64-freebsd/
-jruby/lib/ruby/stdlib/syslog/ffi/x86_64-freebsd/syslog.rb
-jruby/lib/ruby/stdlib/syslog/ffi/x86_64-linux/
-jruby/lib/ruby/stdlib/syslog/ffi/x86_64-linux/syslog.rb
-jruby/lib/ruby/stdlib/syslog/ffi/${FFI_ARCH}/
-jruby/lib/ruby/stdlib/syslog/ffi/${FFI_ARCH}/syslog.rb
-jruby/lib/ruby/stdlib/syslog/ffi/x86_64-solaris/
-jruby/lib/ruby/stdlib/syslog/ffi/x86_64-solaris/syslog.rb
 jruby/lib/ruby/stdlib/syslog/logger.rb
 jruby/lib/ruby/stdlib/tempfile.rb
 jruby/lib/ruby/stdlib/thwait/
