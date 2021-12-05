@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2021/11/02 00:00:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/12/05 06:53:59 rsadowski Exp $
 
 # XXX
 # This port is more or less a copy from devel/llvm and it tries to
@@ -23,7 +23,7 @@ HOMEPAGE =	https://clang.llvm.org/extra/index.html
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-# BSD
+# In transition from BSD-ish to Apache 2 + LLVM exceptions
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c curses edit m z
