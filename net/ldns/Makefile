@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/27 09:39:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2021/12/05 23:51:36 sthen Exp $
 
 MULTI_PACKAGES=	-main -drill -utils
 
@@ -6,7 +6,7 @@ COMMENT-main=	DNS library modelled after Net::DNS
 COMMENT-drill=	DNS debugger
 COMMENT-utils=	LDNS utilities
 
-V=		1.8.0
+V=		1.8.1
 DISTNAME=	ldns-$V
 PKGNAME-main=	libldns-$V
 PKGNAME-drill=	drill-$V
