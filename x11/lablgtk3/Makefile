@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2021/12/02 03:59:21 daniel Exp $
+# $OpenBSD: Makefile,v 1.9 2021/12/05 13:28:56 daniel Exp $
 
 COMMENT =	OCaml interface to GTK+3
 CATEGORIES =	x11 devel
 
 V =		3.1.1
 DISTNAME =	lablgtk3-${V}
-REVISION =	1
+REVISION =	2
 
 MASTER_SITES =	https://github.com/garrigue/lablgtk/releases/download/${V}/
 EXTRACT_SUFX =	.tbz
@@ -24,7 +24,8 @@ LIB_DEPENDS =	x11/gtk+3 \
 RUN_DEPENDS =	graphics/ocaml-cairo
 
 BUILD_DEPENDS = ${RUN_DEPENDS} \
-		devel/dune
+		devel/dune \
+		devel/dune,-configurator
 
 USE_GMAKE =	Yes
 MODULES =	lang/ocaml
