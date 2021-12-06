@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_hardwareintegration_compositor_linux-dmabuf-unstable-v1_linuxdmabuf_h,v 1.1 2021/12/06 06:17:41 rsadowski Exp $
+
+fix build with clang 13 by adding <array>
+
+Index: src/hardwareintegration/compositor/linux-dmabuf-unstable-v1/linuxdmabuf.h
+--- src/hardwareintegration/compositor/linux-dmabuf-unstable-v1/linuxdmabuf.h.orig
++++ src/hardwareintegration/compositor/linux-dmabuf-unstable-v1/linuxdmabuf.h
+@@ -44,6 +44,8 @@
+ #include <EGL/egl.h>
+ #include <EGL/eglext.h>
+ 
++#include <array>
++
+ // compatibility with libdrm <= 2.4.74
+ #ifndef DRM_FORMAT_RESERVED
+ #define DRM_FORMAT_RESERVED           ((1ULL << 56) - 1)
