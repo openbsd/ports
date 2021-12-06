@@ -1,0 +1,14 @@
+$OpenBSD: patch-Setup_FreeBSD_veracrypt_desktop,v 1.1.1.1 2021/12/06 19:02:18 op Exp $
+
+Index: Setup/FreeBSD/veracrypt.desktop
+--- Setup/FreeBSD/veracrypt.desktop.orig
++++ Setup/FreeBSD/veracrypt.desktop
+@@ -3,7 +3,7 @@ Encoding=UTF-8
+ Name=VeraCrypt
+ GenericName=VeraCrypt
+ Comment=VeraCrypt
+-Exec=/usr/bin/veracrypt
++Exec=${TRUEPREFIX}/bin/veracrypt
+ Icon=veracrypt
+ Terminal=false
+ Type=Application

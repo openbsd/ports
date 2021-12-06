@@ -1,0 +1,37 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2021/12/06 19:02:18 op Exp $
+
+- don't hardcode -O2
+- inject port infrastructure' cflags/cxxflags
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -47,7 +47,7 @@ export CFLAGS := -Wall
+ export CXXFLAGS := -Wall -Wno-unused-parameter
+ C_CXX_FLAGS := -MMD -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGE_FILES -I$(BASE_DIR) -I$(BASE_DIR)/Crypto
+ export ASFLAGS := -D __GNUC__ -D __YASM__
+-export LFLAGS :=
++export LFLAGS ?=
+ 
+ export PKG_CONFIG_PATH ?= /usr/local/lib/pkgconfig
+ 
+@@ -109,7 +109,7 @@ endif
+ 
+ ifeq "$(TC_BUILD_CONFIG)" "Release"
+ 
+-	C_CXX_FLAGS += -O2 -fno-strict-aliasing  # Do not enable strict aliasing
++	C_CXX_FLAGS += -fno-strict-aliasing  # Do not enable strict aliasing
+ 	export WX_BUILD_DIR ?= $(BASE_DIR)/wxrelease
+ 	WX_CONFIGURE_FLAGS += --disable-debug_flag --disable-debug_gdb --disable-debug_info
+ 
+@@ -424,8 +424,8 @@ endif
+ 
+ #------ Common configuration ------
+ 
+-CFLAGS := $(C_CXX_FLAGS) $(CFLAGS) $(TC_EXTRA_CFLAGS)
+-CXXFLAGS := $(C_CXX_FLAGS) $(CXXFLAGS) $(TC_EXTRA_CXXFLAGS)
++CFLAGS := $(C_CXX_FLAGS) $(CFLAGS) $(TC_EXTRA_CFLAGS) $(PORT_CFLAGS)
++CXXFLAGS := $(C_CXX_FLAGS) $(CXXFLAGS) $(TC_EXTRA_CXXFLAGS) $(PORT_CXXFLAGS)
+ LFLAGS := $(LFLAGS) $(TC_EXTRA_LFLAGS)
+ 
+ WX_CONFIGURE_FLAGS += --enable-unicode -disable-shared --disable-dependency-tracking --enable-exceptions --enable-std_string --enable-dataobj --enable-mimetype
