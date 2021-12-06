@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2021/08/21 07:19:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.29 2021/12/06 05:58:00 rsadowski Exp $
 
 COMMENT =	compares and merges multiple files or directories
 
-DISTNAME =	kdiff3-1.9.3
+DISTNAME =	kdiff3-1.9.4
 
 CATEGORIES =	devel
 
@@ -22,7 +22,7 @@ WANTLIB += KF5Crash KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui
 WANTLIB += KF5KIOWidgets KF5Parts KF5Service KF5Solid KF5SonnetUi
 WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Widgets Qt5Xml c m
+WANTLIB += Qt5Widgets Qt5Xml X11 c m
 
 MODULES =		devel/kf5
 
