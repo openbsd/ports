@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.646 2021/11/20 08:24:48 landry Exp $
+# $OpenBSD: Makefile,v 1.647 2021/12/06 19:03:02 op Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -384,6 +384,7 @@
      SUBDIR += towitoko
      SUBDIR += uacme
      SUBDIR += vault
+     SUBDIR += veracrypt
      SUBDIR += volatility
      SUBDIR += vpnc
      SUBDIR += wapiti
