@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.87 2021/12/04 21:17:10 chrisz Exp $
+# $OpenBSD: arch-defines.mk,v 1.88 2021/12/06 12:47:51 espie Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -96,9 +96,18 @@ _SYSTEM_VERSION-riscv64 = 1
 _SYSTEM_VERSION-${MACHINE_ARCH} ?= 0
 _SYSTEM_VERSION-${ARCH} ?= 0
 
+# next time we need to bump all clang arches, just uncomment this
+# _SYSTEM_VERSION-clang = 1
+
 # @version = ${_SYSTEM_VERSION} + ${_SYSTEM_VERSION-${MACHINE_ARCH}}
 _PKG_ARGS_VERSION += -V ${_SYSTEM_VERSION} -V ${_SYSTEM_VERSION-${MACHINE_ARCH}}
 .if ${ARCH} != ${MACHINE_ARCH}
 _PKG_ARGS_VERSION += -V ${_SYSTEM_VERSION-${ARCH}}
 .endif
 
+# + ${_SYSTEM_VERSION-prop} for any prop that's true
+.for _i in ${PROPERTIES}
+.  if defined(_SYSTEM_VERSION-${_i})
+_PKG_ARGS_VERSION += -V ${_SYSTEM_VERSION-${_i}}
+.  endif
+.endfor
