@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/08 14:53:13 denis Exp $
+# $OpenBSD: Makefile,v 1.5 2021/12/06 09:04:39 denis Exp $
 
 COMMENT =	simple tool for managing encrypted backups in the cloud
 
 MODGO_MODNAME =	github.com/kopia/kopia
-MODGO_VERSION =	v0.9.5
+MODGO_VERSION =	v0.9.7
 MODGO_FLAGS += -tags embedhtml
 
 DISTNAME =	kopia-${MODGO_VERSION}

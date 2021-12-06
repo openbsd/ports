@@ -179,8 +179,8 @@ SHA256 (go_modules/github.com/aws/aws-sdk-go-v2/service/sts/@v/v1.7.0.zip) = 5au
 SHA256 (go_modules/github.com/aws/aws-sdk-go/@v/v1.15.27.mod) = JSBvsSwaWjiykW0QoIZ+PtVlVzvPY0E8anSo4AULvTc=
 SHA256 (go_modules/github.com/aws/aws-sdk-go/@v/v1.37.0.mod) = pCJTQ3No31/NNr8JsIPQ3F6Hey+sU/RIUcSaf9mUE6M=
 SHA256 (go_modules/github.com/aws/aws-sdk-go/@v/v1.40.34.mod) = Z2FMAKWjMuRTYwiL/m6MM7i0axTwsjI/J9SlHI7HaOQ=
-SHA256 (go_modules/github.com/aws/aws-sdk-go/@v/v1.41.16.mod) = Z2FMAKWjMuRTYwiL/m6MM7i0axTwsjI/J9SlHI7HaOQ=
-SHA256 (go_modules/github.com/aws/aws-sdk-go/@v/v1.41.16.zip) = J4qnkn8MwWdtZGGJiPi7K2JZeQMU0RvcbCNoYO+TcTo=
+SHA256 (go_modules/github.com/aws/aws-sdk-go/@v/v1.42.16.mod) = Z2FMAKWjMuRTYwiL/m6MM7i0axTwsjI/J9SlHI7HaOQ=
+SHA256 (go_modules/github.com/aws/aws-sdk-go/@v/v1.42.16.zip) = yBZfCdwPcSCkt2ozrHfAzuGf6w7wfvos9/9QO7Rda9Y=
 SHA256 (go_modules/github.com/aws/smithy-go/@v/v1.8.0.mod) = CjpDnh4kOMwAWFJbuTYBZazJOcbpHVj+8jlGBA/TFpA=
 SHA256 (go_modules/github.com/aws/smithy-go/@v/v1.8.0.zip) = MrDnssI57ieQTEasSRByWtRXN8EYYBwWGrfSqZSBl7U=
 SHA256 (go_modules/github.com/benbjohnson/clock/@v/v1.1.0.mod) = G1p4mwlRuF91r2zJmyS44pM1CaTj+T8FSDGBkgWIvjE=
@@ -241,8 +241,6 @@ SHA256 (go_modules/github.com/dustin/go-humanize/@v/v1.0.0.mod) = FJ48xMUIb+BmBL
 SHA256 (go_modules/github.com/dustin/go-humanize/@v/v1.0.0.zip) = 4BkW4IKmZG6hLXgA13r0MEXCcoT/Kgp340hFCZicwQc=
 SHA256 (go_modules/github.com/dustinkirkland/golang-petname/@v/v0.0.0-20191129215211-8e5a1ed0cff0.mod) = E0BtEnYe6kvIxnOGtkFQso2PgmHdslUEAENxx8Hhn9w=
 SHA256 (go_modules/github.com/dustinkirkland/golang-petname/@v/v0.0.0-20191129215211-8e5a1ed0cff0.zip) = zXxhHs5XgypfBFo+vYBzxyw2p045MnpdH5D+TbFQpEI=
-SHA256 (go_modules/github.com/efarrer/iothrottler/@v/v0.0.3.mod) = wTsaQzS+kamjF1Cji2Wvr8UL77iY8Tb0Pe/Cap07qxA=
-SHA256 (go_modules/github.com/efarrer/iothrottler/@v/v0.0.3.zip) = EVdzQHU4FVUZAJGq1eovQwN9wI9ODIp5i3R8e8oXS1g=
 SHA256 (go_modules/github.com/envoyproxy/go-control-plane/@v/v0.9.0.mod) = Lg88WUDGkwvOA/DIzRck3ZPU0wxrHFri7k4wOfAhXAc=
 SHA256 (go_modules/github.com/envoyproxy/go-control-plane/@v/v0.9.1-0.20191026205805-5f8ba28d4473.mod) = Lg88WUDGkwvOA/DIzRck3ZPU0wxrHFri7k4wOfAhXAc=
 SHA256 (go_modules/github.com/envoyproxy/go-control-plane/@v/v0.9.10-0.20210907150352-cf90f659a021.mod) = aAW6axHpQfSLIEsB/XqNCloJFuzXfFl+bhdg18hpD4o=
@@ -508,8 +506,8 @@ SHA256 (go_modules/github.com/leodido/go-urn/@v/v1.2.0.mod) = ARMsYERZnEG7wZpTYe
 SHA256 (go_modules/github.com/leodido/go-urn/@v/v1.2.0.zip) = ioVNeEFxAAppt5urss09qbj8yx4ba7ECx6bStSOA0Io=
 SHA256 (go_modules/github.com/lib/pq/@v/v1.10.2.mod) = lMFIhoiyuYIqluE3XjIAKmUswa7nFSD2v6h77I63nAY=
 SHA256 (go_modules/github.com/lib/pq/@v/v1.10.2.zip) = D1DPyNTtS7s5dnqswE1rI+EQXS+lDcuOSuIEsskAGPA=
-SHA256 (go_modules/github.com/mattn/go-colorable/@v/v0.1.11.mod) = MBtO/MadpAuRzMjSzFjohZXorYcSrKAUA/EAhtlrGBM=
-SHA256 (go_modules/github.com/mattn/go-colorable/@v/v0.1.11.zip) = Kni6tPqKZrOuSPzVD8WXDbQBGozuCjrXwT2g+2JMleU=
+SHA256 (go_modules/github.com/mattn/go-colorable/@v/v0.1.12.mod) = MBtO/MadpAuRzMjSzFjohZXorYcSrKAUA/EAhtlrGBM=
+SHA256 (go_modules/github.com/mattn/go-colorable/@v/v0.1.12.zip) = xGN0mUCaQIH7vX6gZAqgrzDA4Gpwqhsgd4CwJRZQ2M0=
 SHA256 (go_modules/github.com/mattn/go-colorable/@v/v0.1.9.mod) = rf8+JDhLzS7PDG1qGp5OMQZUAem10pzmoSAlWrPAIxM=
 SHA256 (go_modules/github.com/mattn/go-ieproxy/@v/v0.0.1.mod) = D38qJXnYCh0njgmtiEhHMn4w3abhTQ5DyuwmvM5fHVI=
 SHA256 (go_modules/github.com/mattn/go-ieproxy/@v/v0.0.1.zip) = KhrQJsZ3vd70E2x22hnbIgTVaLTCJGsuAKebR9jAEZI=
@@ -521,8 +519,8 @@ SHA256 (go_modules/github.com/matttproud/golang_protobuf_extensions/@v/v1.0.1.zi
 SHA256 (go_modules/github.com/minio/md5-simd/@v/v1.1.0.mod) = ON/bxXveO/W35XJQOfTbrXMTOUh7CK7DPmxw5fpUHCc=
 SHA256 (go_modules/github.com/minio/md5-simd/@v/v1.1.2.mod) = dmXwdbg8y4HGbemA2l8j5U4UeUcqrdQWbfwm+BSKL6M=
 SHA256 (go_modules/github.com/minio/md5-simd/@v/v1.1.2.zip) = +CnTWm5ol9tBWviIjEsHTRolOu4Oj7cFS02VR3qBw9Y=
-SHA256 (go_modules/github.com/minio/minio-go/v7/@v/v7.0.15.mod) = ozdPX8+0+bbWQ5nHT6jzuZLltD1eTqsDZyvPFL7VdVM=
-SHA256 (go_modules/github.com/minio/minio-go/v7/@v/v7.0.15.zip) = 2W0qtqzIigkg/fpz5Ypo/jFBKpvrBZr0FGGMIwr5mvo=
+SHA256 (go_modules/github.com/minio/minio-go/v7/@v/v7.0.16.mod) = ozdPX8+0+bbWQ5nHT6jzuZLltD1eTqsDZyvPFL7VdVM=
+SHA256 (go_modules/github.com/minio/minio-go/v7/@v/v7.0.16.zip) = mjIQVVx8hTwtZrWpdRVr72DOFKnpYiqa/vJOuXmZq1U=
 SHA256 (go_modules/github.com/minio/sha256-simd/@v/v0.1.1.mod) = tdLrfPfc0hMjs8a2fk9izz7hh2PqDxO7KNLfmyUuOdw=
 SHA256 (go_modules/github.com/minio/sha256-simd/@v/v1.0.0.mod) = V8Et/4MR2Gf/sUom3bNF0P3FIz2lJc8pM8x35vUxBWo=
 SHA256 (go_modules/github.com/minio/sha256-simd/@v/v1.0.0.zip) = Yu3BSBOQw0If9aVLgMSayrhTMTSBJNVgpeQQB00Zw+U=
@@ -1162,8 +1160,8 @@ SHA256 (go_modules/rsc.io/quote/v3/@v/v3.1.0.mod) = shHZ8WtVQpcPA6LmJJ30UDgwSjeh
 SHA256 (go_modules/rsc.io/quote/v3/@v/v3.1.0.zip) = tDTLv8MsF7UijQsO3erqib707JvZC1yPxVtk+M4T7rk=
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = oq5uhUCkC4XldwPMYYuZxbEHU4bZWOiZmg4tTALzpwU=
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 2iArDagDqyZhq5imgLuk9kEjoyblQMJVgrbNu53BFKo=
-SHA256 (kopia-html-ui.v0.9.5.tgz) = SAO7YntJL696PsBZGXl/jCc7t24zK1YosOBC/YeYZz0=
-SHA256 (kopia-v0.9.5.zip) = HwW8BMebKAK/D5mZ2+LkIOJSbibxHoEh88uMnBxi074=
+SHA256 (kopia-html-ui.v0.9.7.tgz) = eyJQDoZ/Fc2gyTwtBv3LZfLit99X4hQYPo0fiLMR020=
+SHA256 (kopia-v0.9.7.zip) = Sa7tCRqvssdiv2vvlad0gjEsTGGyVYqxifnh09CfY74=
 SIZE (go_modules/bazil.org/fuse/@v/v0.0.0-20180421153158-65cc252bf669.mod) = 22
 SIZE (go_modules/bazil.org/fuse/@v/v0.0.0-20180421153158-65cc252bf669.zip) = 220785
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
@@ -1345,8 +1343,8 @@ SIZE (go_modules/github.com/aws/aws-sdk-go-v2/service/sts/@v/v1.7.0.zip) = 56312
 SIZE (go_modules/github.com/aws/aws-sdk-go/@v/v1.15.27.mod) = 145
 SIZE (go_modules/github.com/aws/aws-sdk-go/@v/v1.37.0.mod) = 178
 SIZE (go_modules/github.com/aws/aws-sdk-go/@v/v1.40.34.mod) = 178
-SIZE (go_modules/github.com/aws/aws-sdk-go/@v/v1.41.16.mod) = 178
-SIZE (go_modules/github.com/aws/aws-sdk-go/@v/v1.41.16.zip) = 23061204
+SIZE (go_modules/github.com/aws/aws-sdk-go/@v/v1.42.16.mod) = 178
+SIZE (go_modules/github.com/aws/aws-sdk-go/@v/v1.42.16.zip) = 24113115
 SIZE (go_modules/github.com/aws/smithy-go/@v/v1.8.0.mod) = 82
 SIZE (go_modules/github.com/aws/smithy-go/@v/v1.8.0.zip) = 424791
 SIZE (go_modules/github.com/benbjohnson/clock/@v/v1.1.0.mod) = 45
@@ -1407,8 +1405,6 @@ SIZE (go_modules/github.com/dustin/go-humanize/@v/v1.0.0.mod) = 37
 SIZE (go_modules/github.com/dustin/go-humanize/@v/v1.0.0.zip) = 26356
 SIZE (go_modules/github.com/dustinkirkland/golang-petname/@v/v0.0.0-20191129215211-8e5a1ed0cff0.mod) = 48
 SIZE (go_modules/github.com/dustinkirkland/golang-petname/@v/v0.0.0-20191129215211-8e5a1ed0cff0.zip) = 22282
-SIZE (go_modules/github.com/efarrer/iothrottler/@v/v0.0.3.mod) = 47
-SIZE (go_modules/github.com/efarrer/iothrottler/@v/v0.0.3.zip) = 11941
 SIZE (go_modules/github.com/envoyproxy/go-control-plane/@v/v0.9.0.mod) = 378
 SIZE (go_modules/github.com/envoyproxy/go-control-plane/@v/v0.9.1-0.20191026205805-5f8ba28d4473.mod) = 378
 SIZE (go_modules/github.com/envoyproxy/go-control-plane/@v/v0.9.10-0.20210907150352-cf90f659a021.mod) = 581
@@ -1674,8 +1670,8 @@ SIZE (go_modules/github.com/leodido/go-urn/@v/v1.2.0.mod) = 86
 SIZE (go_modules/github.com/leodido/go-urn/@v/v1.2.0.zip) = 1169163
 SIZE (go_modules/github.com/lib/pq/@v/v1.10.2.mod) = 34
 SIZE (go_modules/github.com/lib/pq/@v/v1.10.2.zip) = 120769
-SIZE (go_modules/github.com/mattn/go-colorable/@v/v0.1.11.mod) = 160
-SIZE (go_modules/github.com/mattn/go-colorable/@v/v0.1.11.zip) = 13999
+SIZE (go_modules/github.com/mattn/go-colorable/@v/v0.1.12.mod) = 160
+SIZE (go_modules/github.com/mattn/go-colorable/@v/v0.1.12.zip) = 13979
 SIZE (go_modules/github.com/mattn/go-colorable/@v/v0.1.9.mod) = 160
 SIZE (go_modules/github.com/mattn/go-ieproxy/@v/v0.0.1.mod) = 201
 SIZE (go_modules/github.com/mattn/go-ieproxy/@v/v0.0.1.zip) = 15873
@@ -1687,8 +1683,8 @@ SIZE (go_modules/github.com/matttproud/golang_protobuf_extensions/@v/v1.0.1.zip)
 SIZE (go_modules/github.com/minio/md5-simd/@v/v1.1.0.mod) = 90
 SIZE (go_modules/github.com/minio/md5-simd/@v/v1.1.2.mod) = 88
 SIZE (go_modules/github.com/minio/md5-simd/@v/v1.1.2.zip) = 109171
-SIZE (go_modules/github.com/minio/minio-go/v7/@v/v7.0.15.mod) = 1035
-SIZE (go_modules/github.com/minio/minio-go/v7/@v/v7.0.15.zip) = 345198
+SIZE (go_modules/github.com/minio/minio-go/v7/@v/v7.0.16.mod) = 1035
+SIZE (go_modules/github.com/minio/minio-go/v7/@v/v7.0.16.zip) = 347525
 SIZE (go_modules/github.com/minio/sha256-simd/@v/v0.1.1.mod) = 45
 SIZE (go_modules/github.com/minio/sha256-simd/@v/v1.0.0.mod) = 91
 SIZE (go_modules/github.com/minio/sha256-simd/@v/v1.0.0.zip) = 59020
@@ -2328,5 +2324,5 @@ SIZE (go_modules/rsc.io/quote/v3/@v/v3.1.0.mod) = 55
 SIZE (go_modules/rsc.io/quote/v3/@v/v3.1.0.zip) = 2223
 SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = 88
 SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 14308
-SIZE (kopia-html-ui.v0.9.5.tgz) = 1017832
-SIZE (kopia-v0.9.5.zip) = 3477502
+SIZE (kopia-html-ui.v0.9.7.tgz) = 1048995
+SIZE (kopia-v0.9.7.zip) = 3932261
