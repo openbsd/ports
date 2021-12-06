@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2021/05/21 11:35:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2021/12/06 13:46:33 ajacoutot Exp $
 
 COMMENT =		C++ API for Pango
 
 GNOME_PROJECT =		pangomm
-GNOME_VERSION =		2.48.1
+GNOME_VERSION =		2.48.2
 PKGNAME =		pangomm248-${GNOME_VERSION}
 
 CATEGORIES =		devel x11
