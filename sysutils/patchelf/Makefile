@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/12/06 17:46:41 kn Exp $
+# $OpenBSD: Makefile,v 1.8 2021/12/06 19:26:45 kn Exp $
 
 COMMENT =	utility for modifying existing ELF executables and libraries
 
@@ -33,6 +33,8 @@ CONFIGURE_ARGS =	--mandir=${PREFIX}/man
 
 # XXX after removing them from `check_PROGRAMS' in ${WRKBUILD}/tests/Makefile:
 # TOTAL: 44, PASS: 42, FAIL: 2 (build-id.sh, too-many-strtab.sh)
+# build-id.sh expects readelf(1) to understand `.note.gnu.build-id':
+# https://github.com/NixOS/patchelf/issues/350
 TEST_TARGET =		check
 
 TEST_DEPENDS =		sysutils/coreutils
