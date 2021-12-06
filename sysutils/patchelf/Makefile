@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/12/06 15:41:11 kn Exp $
+# $OpenBSD: Makefile,v 1.7 2021/12/06 17:46:41 kn Exp $
 
 COMMENT =	utility for modifying existing ELF executables and libraries
 
@@ -32,7 +32,7 @@ CONFIGURE_ARGS =	--mandir=${PREFIX}/man
 # >>> output section .shstrtab: SHT_PROGBITS
 
 # XXX after removing them from `check_PROGRAMS' in ${WRKBUILD}/tests/Makefile:
-# TOTAL: 44, PASS: 41, FAIL: 3 (build-id.sh, too-many-strtab.sh, grow-file.sh)
+# TOTAL: 44, PASS: 42, FAIL: 2 (build-id.sh, too-many-strtab.sh)
 TEST_TARGET =		check
 
 TEST_DEPENDS =		sysutils/coreutils
@@ -40,5 +40,7 @@ TEST_DEPENDS =		sysutils/coreutils
 pre-test:
 	# `big-dynstr.c' target in ${WRKBUILD}/tests/Makefile
 	ln -sf /usr/local/bin/gseq ${WRKDIR}/bin/seq
+	# ${WRKBUILD}/tests/grow-file.sh uses `head -c'
+	ln -sf /usr/local/bin/ghead ${WRKDIR}/bin/head
 
 .include <bsd.port.mk>
