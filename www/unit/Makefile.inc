@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.2 2021/11/22 14:46:16 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2021/12/06 20:37:20 sthen Exp $
 
-VERSION?=	1.26.0
+VERSION?=	1.26.1
 DISTNAME=	unit-${VERSION}
 
 CATEGORIES=	www
