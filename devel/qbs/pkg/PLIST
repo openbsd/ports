@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/06/05 04:20:33 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2021/12/06 07:46:45 rsadowski Exp $
 @conflict qt-creator-<=4.3.1p1
 @bin bin/qbs
 @bin bin/qbs-config
@@ -452,6 +452,8 @@ share/qbs/imports/qbs/Probes/ClBinaryProbe.qbs
 share/qbs/imports/qbs/Probes/ClangClBinaryProbe.qbs
 share/qbs/imports/qbs/Probes/ClangClProbe.qbs
 share/qbs/imports/qbs/Probes/ConanfileProbe.qbs
+share/qbs/imports/qbs/Probes/CosmicProbe.qbs
+share/qbs/imports/qbs/Probes/DmcProbe.qbs
 share/qbs/imports/qbs/Probes/FrameworkProbe.qbs
 share/qbs/imports/qbs/Probes/GccBinaryProbe.qbs
 share/qbs/imports/qbs/Probes/GccProbe.qbs
@@ -581,8 +583,12 @@ share/qbs/modules/cpp/LinuxGCC.qbs
 share/qbs/modules/cpp/MingwBaseModule.qbs
 share/qbs/modules/cpp/UnixGCC.qbs
 share/qbs/modules/cpp/android-gcc.qbs
+share/qbs/modules/cpp/cosmic.js
+share/qbs/modules/cpp/cosmic.qbs
 share/qbs/modules/cpp/cpp.js
 share/qbs/modules/cpp/darwin.js
+share/qbs/modules/cpp/dmc.js
+share/qbs/modules/cpp/dmc.qbs
 share/qbs/modules/cpp/freebsd-gcc.qbs
 share/qbs/modules/cpp/freebsd.js
 share/qbs/modules/cpp/gcc.js

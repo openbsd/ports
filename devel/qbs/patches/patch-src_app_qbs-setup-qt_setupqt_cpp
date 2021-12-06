@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_app_qbs-setup-qt_setupqt_cpp,v 1.1 2021/12/06 07:46:45 rsadowski Exp $
+
+Index: src/app/qbs-setup-qt/setupqt.cpp
+--- src/app/qbs-setup-qt/setupqt.cpp.orig
++++ src/app/qbs-setup-qt/setupqt.cpp
+@@ -70,7 +70,7 @@ static QStringList qmakeExecutableNames()
+ {
+     const QString baseName = HostOsInfo::appendExecutableSuffix(QStringLiteral("qmake"));
+     QStringList lst(baseName);
+-    if (HostOsInfo::isLinuxHost()) {
++    if (true || HostOsInfo::isLinuxHost()) {
+         // Some distributions ship binaries called qmake-qt5 or qmake-qt4.
+         lst << baseName + QLatin1String("-qt5") << baseName + QLatin1String("-qt4");
+     }

@@ -1,0 +1,59 @@
+$OpenBSD: patch-share_qbs_module-providers_Qt_setup-qt_js,v 1.1 2021/12/06 07:46:45 rsadowski Exp $
+
+This comes from the upstream issue
+	https://bugreports.qt.io/browse/QBS-1672
+and is the diff available at
+	https://codereview.qt-project.org/c/qbs/qbs/+/371943
+
+adridg@: I have added the `versions` part of the code, that
+additionally looks for -qt5 (which we have) and unsuffixed
+and -qt (neither of which we have) executables. This matches
+
+Index: share/qbs/module-providers/Qt/setup-qt.js
+--- share/qbs/module-providers/Qt/setup-qt.js.orig
++++ share/qbs/module-providers/Qt/setup-qt.js
+@@ -53,23 +53,29 @@ function getQmakeFilePaths(qmakeFilePaths, qbs) {
+     if (qmakeFilePaths && qmakeFilePaths.length > 0)
+         return qmakeFilePaths;
+     console.info("Detecting Qt installations...");
+-    var pathValue = Environment.getEnv("PATH");
+-    if (!pathValue)
+-        return [];
+-    var dirs = splitNonEmpty(pathValue, qbs.pathListSeparator);
+-    var suffix = exeSuffix(qbs);
+     var filePaths = [];
+-    for (var i = 0; i < dirs.length; ++i) {
+-        var candidate = FileInfo.joinPaths(dirs[i], "qmake" + suffix);
+-        var canonicalCandidate = FileInfo.canonicalPath(candidate);
+-        if (!canonicalCandidate || !File.exists(canonicalCandidate))
+-            continue;
+-        if (FileInfo.completeBaseName(canonicalCandidate) !== "qtchooser")
+-            candidate = canonicalCandidate;
+-        if (!filePaths.contains(candidate)) {
+-            console.info("Found Qt at '" + toNative(candidate) + "'.");
+-            filePaths.push(candidate);
++    var pathValue = Environment.getEnv("PATH");
++    if (pathValue) {
++        var dirs = splitNonEmpty(pathValue, qbs.pathListSeparator);
++        var versions = ["", "-qt5", "-qt4"];
++        var suffix = exeSuffix(qbs);
++        for (var i = 0; i < dirs.length; ++i) { for (var iver = 0; iver < versions.length; ++iver) {
++            var candidate = FileInfo.joinPaths(dirs[i], "qmake" + versions[iver] + suffix);
++            var canonicalCandidate = FileInfo.canonicalPath(candidate);
++            if (!canonicalCandidate || !File.exists(canonicalCandidate))
++                continue;
++            if (FileInfo.completeBaseName(canonicalCandidate) !== "qtchooser")
++                candidate = canonicalCandidate;
++            if (!filePaths.contains(candidate)) {
++                console.info("Found Qt at '" + toNative(candidate) + "'.");
++                filePaths.push(candidate);
++            } }
+         }
++    }
++    if (filePaths.length === 0) {
++        console.warn("Could not find any qmake executables in PATH. Either make sure a qmake "
++        + "executable is present in PATH or set the moduleProviders.Qt.qmakeFilePaths property "
++        + "to point a qmake executable.");
+     }
+     return filePaths;
+ }
