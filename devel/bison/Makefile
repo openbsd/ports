@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2021/05/17 16:41:44 millert Exp $
+# $OpenBSD: Makefile,v 1.64 2021/12/06 20:58:13 jca Exp $
 
 COMMENT=	GNU parser generator
 
@@ -21,7 +21,10 @@ BUILD_DEPENDS=	devel/gettext,-tools \
 RUN_DEPENDS=	devel/m4
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--disable-yacc --without-libtextstyle-prefix
+CONFIGURE_ARGS=	--disable-yacc
+# Avoid crashes because of bad interactions between bison, libtextstyle
+# from devel/gettext and ncurses
+CONFIGURE_ARGS+= --without-libtextstyle-prefix
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
 
