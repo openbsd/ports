@@ -1,0 +1,22 @@
+$OpenBSD: patch-untracked_pango_pangomm_attrlist_cc,v 1.1 2021/12/06 07:58:35 ajacoutot Exp $
+
+../pangomm-2.48.1/untracked/pango/pangomm/attrlist.cc:34:20: error: use of undeclared identifier 'pango_parse_markup'
+  gboolean bTest = pango_parse_markup(markup_text.c_str(), -1 /* means null-terminated */, accel_marker,
+                   ^
+../pangomm-2.48.1/untracked/pango/pangomm/attrlist.cc:52:20: error: use of undeclared identifier 'pango_parse_markup'
+  gboolean bTest = pango_parse_markup(markup_text.c_str(), -1 /* means null-terminated */, accel_marker,
+                   ^
+2 errors generated.
+
+Index: untracked/pango/pangomm/attrlist.cc
+--- untracked/pango/pangomm/attrlist.cc.orig
++++ untracked/pango/pangomm/attrlist.cc
+@@ -3,6 +3,8 @@
+ 
+ #include <glibmm.h>
+ 
++#include <pango/pango.h>
++
+ #include <pangomm/attrlist.h>
+ #include <pangomm/private/attrlist_p.h>
+ 
