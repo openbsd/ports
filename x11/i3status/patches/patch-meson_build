@@ -1,4 +1,4 @@
-$OpenBSD: patch-meson_build,v 1.1 2021/12/06 09:51:28 robert Exp $
+$OpenBSD: patch-meson_build,v 1.2 2021/12/06 10:28:09 robert Exp $
 
 Index: meson.build
 --- meson.build.orig
@@ -14,16 +14,35 @@ Index: meson.build
  # Instead of generating config.h directly, make vcs_tag generate it so that
  # @VCS_TAG@ is replaced.
  config_h_in = configure_file(
-@@ -189,6 +193,12 @@ if get_option('pulseaudio')
-   pulse_dep = dependency('libpulse', method: 'pkg-config')
-   i3status_deps += [pulse_dep]
+@@ -191,6 +195,12 @@ if get_option('pulseaudio')
    i3status_srcs += ['src/pulse.c']
-+endif
-+
+ endif
+ 
 +if get_option('sndio')
 +  sndio_dep = cc.find_library('sndio')
 +  i3status_deps += [sndio_dep]
 +  i3status_srcs += ['src/sndio.c']
- endif
- 
++endif
++
  host_os = host_machine.system()
+ if host_os == 'linux'
+   nlgenl_dep = dependency('libnl-genl-3.0', method: 'pkg-config')
+@@ -222,15 +232,15 @@ install_subdir(
+ # because configure_file strips the backslash in e.g. \@display,
+ # resulting in @display, breaking our Perl code:
+ # https://github.com/mesonbuild/meson/issues/7165
+-bash = find_program('bash')
++sh = find_program('sh')
+ replace_dirs = [
+-  bash, '-c',  # Use bash to capture output and mark as executable
++  sh, '-c',  # Use bash to capture output and mark as executable
+   'sed -e \'s,@abs_top_builddir@,'
+   + meson.current_build_dir()
+   + ',g;s,@abs_top_srcdir@,'
+   + meson.current_source_dir()+',g\''
+   # Only mark files ending in .pl as executables
+-  + ' "$0" > "$1" && { [[ "${1##*.}" == pl ]] && chmod +x "$1" || true; }',
++  + ' "$0" > "$1" && { [ "${1##*.}" = pl ] && chmod +x "$1" || true; }',
+   '@INPUT0@',   # $0
+   '@OUTPUT0@',  # $1
+ ]
