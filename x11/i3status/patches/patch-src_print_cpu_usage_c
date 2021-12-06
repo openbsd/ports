@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_print_cpu_usage_c,v 1.9 2019/09/27 20:33:22 jasper Exp $
+$OpenBSD: patch-src_print_cpu_usage_c,v 1.10 2021/12/06 09:51:28 robert Exp $
 
 Index: src/print_cpu_usage.c
 --- src/print_cpu_usage.c.orig
 +++ src/print_cpu_usage.c
-@@ -42,6 +42,9 @@ struct cpu_usage {
+@@ -43,6 +43,9 @@ struct cpu_usage {
      int nice;
      int system;
      int idle;
@@ -13,7 +13,7 @@ Index: src/print_cpu_usage.c
      int total;
  };
  
-@@ -135,7 +138,12 @@ void print_cpu_usage(yajl_gen json_gen, char *buffer, 
+@@ -151,7 +154,12 @@ void print_cpu_usage(cpu_usage_ctx_t *ctx) {
      curr_all.nice = cp_time[CP_NICE];
      curr_all.system = cp_time[CP_SYS];
      curr_all.idle = cp_time[CP_IDLE];

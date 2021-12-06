@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_pulse_c,v 1.1 2019/07/06 20:20:27 jasper Exp $
+$OpenBSD: patch-src_pulse_c,v 1.2 2021/12/06 09:51:29 robert Exp $
 
 Neuter pulseaudio bits
 
@@ -10,7 +10,7 @@ Index: src/pulse.c
  // vim:ts=4:sw=4:expandtab
  #include <config.h>
  #include <string.h>
-@@ -337,3 +338,4 @@ bool pulse_initialize(void) {
+@@ -338,3 +339,4 @@ bool pulse_initialize(void) {
      }
      return true;
  }

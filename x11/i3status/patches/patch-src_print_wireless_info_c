@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_print_wireless_info_c,v 1.16 2021/07/13 19:26:00 robert Exp $
+$OpenBSD: patch-src_print_wireless_info_c,v 1.17 2021/12/06 09:51:29 robert Exp $
 
 Index: src/print_wireless_info.c
 --- src/print_wireless_info.c.orig
 +++ src/print_wireless_info.c
-@@ -451,9 +451,21 @@ error1:
+@@ -469,9 +469,21 @@ error1:
  
              if (ioctl(s, SIOCG80211NODE, &nr) == 0 && nr.nr_rssi) {
                  info->signal_level = nr.nr_rssi;

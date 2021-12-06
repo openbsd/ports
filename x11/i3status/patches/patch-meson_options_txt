@@ -1,0 +1,12 @@
+$OpenBSD: patch-meson_options_txt,v 1.1 2021/12/06 09:51:28 robert Exp $
+
+Index: meson_options.txt
+--- meson_options.txt.orig
++++ meson_options.txt
+@@ -11,3 +11,6 @@ option('docdir', type: 'string', value: '',
+ 
+ option('pulseaudio', type: 'boolean', value: true,
+        description: 'Build with pulseaudio support')
++
++option('sndio', type: 'boolean', value: true,
++       description: 'Build with sndio support')

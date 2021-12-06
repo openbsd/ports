@@ -1,23 +1,18 @@
-$OpenBSD: patch-src_print_volume_c,v 1.13 2020/08/03 12:38:15 jcs Exp $
+$OpenBSD: patch-src_print_volume_c,v 1.14 2021/12/06 09:51:28 robert Exp $
 
 Index: src/print_volume.c
 --- src/print_volume.c.orig
 +++ src/print_volume.c
-@@ -21,13 +21,6 @@
+@@ -21,7 +21,7 @@
  #include <sys/soundcard.h>
  #endif
  
--#ifdef __OpenBSD__
--#include <fcntl.h>
--#include <unistd.h>
--#include <sys/audioio.h>
--#include <sys/ioctl.h>
--#endif
--
- #include "i3status.h"
- #include "queue.h"
- 
-@@ -145,9 +138,21 @@ void print_volume(yajl_gen json_gen, char *buffer, con
+-#if defined(__NetBSD__) || defined(__OpenBSD__)
++#if defined(__NetBSD__)
+ #include <fcntl.h>
+ #include <unistd.h>
+ #include <sys/audioio.h>
+@@ -137,9 +137,28 @@ void print_volume(volume_ctx_t *ctx) {
          /* negative result or NULL description means error, fail PulseAudio attempt */
      }
  /* If some other device was specified or PulseAudio is not detected,
@@ -25,121 +20,52 @@ Index: src/print_volume.c
 + * proceed to sndio / ALSA / OSS */
  #endif
  
-+#ifdef USE_SNDIO
++#ifdef HAS_SNDIO
 +    int vol, mute;
 +
 +	if (volume_sndio(&vol, &mute) == 0) {
-+        if (mute)
-+            fmt = fmt_muted;
-+        outwalk = apply_volume_format(fmt, outwalk, vol & 0x7f, "sndio");
-+        goto out;
++        if (mute) {
++                START_COLOR("color_degraded");
++                pbval = 0;
++        }
++        char *formatted = apply_volume_format(mute ? ctx->fmt_muted : ctx->fmt,
++                                              vol & 0x7f, "sndio");
++        OUTPUT_FORMATTED;
++        free(formatted);
++        goto out_with_format;
 +    }
++
++    goto out;
 +/* If sndio is not detected, proceed to ALSA / OSS */
 +#endif
 +
  #ifdef __linux__
      const long MAX_LINEAR_DB_SCALE = 24;
      int err;
-@@ -248,7 +253,8 @@ void print_volume(yajl_gen json_gen, char *buffer, con
-     snd_mixer_selem_id_free(sid);
+@@ -243,7 +262,7 @@ void print_volume(volume_ctx_t *ctx) {
+     goto out_with_format;
  
  #endif
--#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__DragonFly__)
-+
-+#if defined(__FreeBSD__) || defined(__DragonFly__)
+-#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__DragonFly__)
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__DragonFly__)
      char *mixerpath;
      char defaultmixer[] = "/dev/mixer";
      int mixfd, vol, devmask = 0;
-@@ -261,84 +267,13 @@ void print_volume(yajl_gen json_gen, char *buffer, con
+@@ -256,7 +275,7 @@ void print_volume(volume_ctx_t *ctx) {
          mixerpath = defaultmixer;
  
      if ((mixfd = open(mixerpath, O_RDWR)) < 0) {
--#if defined(__OpenBSD__)
--        warn("audioio: Cannot open mixer");
--#else
+-#if defined(__NetBSD__) || defined(__OpenBSD__)
++#if defined(__NetBSD__)
+         warn("audioio: Cannot open mixer");
+ #else
          warn("OSS: Cannot open mixer");
--#endif
-         goto out;
-     }
- 
+@@ -267,7 +286,7 @@ void print_volume(volume_ctx_t *ctx) {
      if (mixer_idx > 0)
          free(mixerpath);
  
--#if defined(__OpenBSD__)
--    int oclass_idx = -1, master_idx = -1, master_mute_idx = -1;
--    int master_next = AUDIO_MIXER_LAST;
--    mixer_devinfo_t devinfo, devinfo2;
--    mixer_ctrl_t vinfo;
--
--    devinfo.index = 0;
--    while (ioctl(mixfd, AUDIO_MIXER_DEVINFO, &devinfo) >= 0) {
--        if (devinfo.type != AUDIO_MIXER_CLASS) {
--            devinfo.index++;
--            continue;
--        }
--        if (strncmp(devinfo.label.name, AudioCoutputs, MAX_AUDIO_DEV_LEN) == 0)
--            oclass_idx = devinfo.index;
--
--        devinfo.index++;
--    }
--
--    devinfo2.index = 0;
--    while (ioctl(mixfd, AUDIO_MIXER_DEVINFO, &devinfo2) >= 0) {
--        if ((devinfo2.type == AUDIO_MIXER_VALUE) && (devinfo2.mixer_class == oclass_idx) && (strncmp(devinfo2.label.name, AudioNmaster, MAX_AUDIO_DEV_LEN) == 0)) {
--            master_idx = devinfo2.index;
--            master_next = devinfo2.next;
--        }
--
--        if ((devinfo2.type == AUDIO_MIXER_ENUM) && (devinfo2.mixer_class == oclass_idx) && (strncmp(devinfo2.label.name, AudioNmute, MAX_AUDIO_DEV_LEN) == 0))
--            if (master_next == devinfo2.index)
--                master_mute_idx = devinfo2.index;
--
--        if (master_next != AUDIO_MIXER_LAST)
--            master_next = devinfo2.next;
--        devinfo2.index++;
--    }
--
--    if (master_idx == -1)
--        goto out;
--
--    devinfo.index = master_idx;
--    if (ioctl(mixfd, AUDIO_MIXER_DEVINFO, &devinfo) == -1)
--        goto out;
--
--    vinfo.dev = master_idx;
--    vinfo.type = AUDIO_MIXER_VALUE;
--    vinfo.un.value.num_channels = devinfo.un.v.num_channels;
--    if (ioctl(mixfd, AUDIO_MIXER_READ, &vinfo) == -1)
--        goto out;
--
--    if (AUDIO_MAX_GAIN != 100) {
--        float avgf = ((float)vinfo.un.value.level[AUDIO_MIXER_LEVEL_MONO] / AUDIO_MAX_GAIN) * 100;
--        vol = (int)avgf;
--        vol = (avgf - vol < 0.5 ? vol : (vol + 1));
--    } else {
--        vol = (int)vinfo.un.value.level[AUDIO_MIXER_LEVEL_MONO];
--    }
--
--    vinfo.dev = master_mute_idx;
--    vinfo.type = AUDIO_MIXER_ENUM;
--    if (ioctl(mixfd, AUDIO_MIXER_READ, &vinfo) == -1)
--        goto out;
--
--    if (master_mute_idx != -1 && vinfo.un.ord) {
--        START_COLOR("color_degraded");
--        fmt = fmt_muted;
--        pbval = 0;
--    }
--
--#else
-     if (ioctl(mixfd, SOUND_MIXER_READ_DEVMASK, &devmask) == -1) {
-         warn("OSS: Cannot read mixer information");
-         goto out;
-@@ -353,7 +288,6 @@ void print_volume(yajl_gen json_gen, char *buffer, con
-         pbval = 0;
-     }
- 
--#endif
-     outwalk = apply_volume_format(fmt, outwalk, vol & 0x7f, devicename);
-     close(mixfd);
- #endif
+-#if defined(__NetBSD__) || defined(__OpenBSD__)
++#if defined(__NetBSD__)
+     int oclass_idx = -1, master_idx = -1, master_mute_idx = -1;
+     int master_next = AUDIO_MIXER_LAST;
+     mixer_devinfo_t devinfo, devinfo2;

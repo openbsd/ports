@@ -1,13 +1,13 @@
-$OpenBSD: patch-include_i3status_h,v 1.11 2020/08/03 12:38:15 jcs Exp $
+$OpenBSD: patch-include_i3status_h,v 1.12 2021/12/06 09:51:28 robert Exp $
 
 Index: include/i3status.h
 --- include/i3status.h.orig
 +++ include/i3status.h
-@@ -232,6 +232,7 @@ int volume_pulseaudio(uint32_t sink_idx, const char *s
+@@ -425,6 +425,7 @@ void print_volume(volume_ctx_t *ctx);
+ 
+ bool process_runs(const char *path);
+ int volume_pulseaudio(uint32_t sink_idx, const char *sink_name);
++int volume_sndio(int *vol, int *muted);
  bool description_pulseaudio(uint32_t sink_idx, const char *sink_name, char buffer[MAX_SINK_DESCRIPTION_LEN]);
  bool pulse_initialize(void);
- void print_file_contents(yajl_gen json_gen, char *buffer, const char *title, const char *path, const char *format, const char *format_bad, const int max_chars);
-+int volume_sndio(int *vol, int *muted);
  
- /* socket file descriptor for general purposes */
- extern int general_socket;

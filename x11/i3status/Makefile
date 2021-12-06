@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.62 2021/07/13 19:26:00 robert Exp $
+# $OpenBSD: Makefile,v 1.63 2021/12/06 09:51:28 robert Exp $
 
 ONLY_FOR_ARCHS=		${APM_ARCHS}
 
 COMMENT=		generate a statusbar for use with i3/xmobar/dzen2
 
-DISTNAME=		i3status-2.13
-REVISION=		5
+DISTNAME=		i3status-2.14
 CATEGORIES=		x11 sysutils
 
 HOMEPAGE=		https://i3wm.org/i3status/
@@ -16,11 +15,11 @@ MAINTAINER=		Robert Nagy <robert@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MASTER_SITES=		${HOMEPAGE}
-EXTRACT_SUFX=		.tar.bz2
+EXTRACT_SUFX=		.tar.xz
 
-WANTLIB += c confuse m pthread yajl iconv intl
+WANTLIB += c confuse yajl sndio
 
-USE_GMAKE=		Yes
+MODULES=		devel/meson
 
 BUILD_DEPENDS=		textproc/asciidoc>=8.6.8 \
 			textproc/xmlto
@@ -28,11 +27,13 @@ BUILD_DEPENDS=		textproc/asciidoc>=8.6.8 \
 LIB_DEPENDS=		devel/libconfuse \
 			devel/libyajl
 
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.16
-CONFIGURE_STYLE =	autoreconf
-SEPARATE_BUILD =	Yes
+CONFIGURE_ARGS+=	-Dsndio=true \
+			-Dpulseaudio=false
 
-FAKE_FLAGS +=		sysconfdir=${PREFIX}/share/examples/i3status/
+#FAKE_FLAGS +=		sysconfdir=${PREFIX}/share/examples/i3status/
+
+post-install:
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/i3status
+	@mv ${WRKINST}/etc/i3status.conf ${PREFIX}/share/examples/i3status
 
 .include <bsd.port.mk>

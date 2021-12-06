@@ -1,10 +1,8 @@
-$OpenBSD: patch-i3status_conf,v 1.17 2019/07/06 20:20:27 jasper Exp $
+$OpenBSD: patch-etc_i3status_conf,v 1.1 2021/12/06 09:51:28 robert Exp $
 
-Adjust config file to be reasonably useful on OpenBSD out of the box.
-
-Index: i3status.conf
---- i3status.conf.orig
-+++ i3status.conf
+Index: etc/i3status.conf
+--- etc/i3status.conf.orig
++++ etc/i3status.conf
 @@ -7,6 +7,7 @@
  # If the above line is not correctly displayed, fix your editor first!
  
