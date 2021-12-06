@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_3rdparty_mapbox-gl-native_include_mbgl_util_unique_any_hpp,v 1.1 2021/12/06 06:04:20 rsadowski Exp $
+
+fix no member named 'forward' and 'move' in namespace 'std'
+
+Index: src/3rdparty/mapbox-gl-native/include/mbgl/util/unique_any.hpp
+--- src/3rdparty/mapbox-gl-native/include/mbgl/util/unique_any.hpp.orig
++++ src/3rdparty/mapbox-gl-native/include/mbgl/util/unique_any.hpp
+@@ -3,6 +3,7 @@
+ #include <typeinfo>
+ #include <type_traits>
+ #include <stdexcept>
++#include <utility>
+ namespace mbgl {
+ namespace util {
+ 
