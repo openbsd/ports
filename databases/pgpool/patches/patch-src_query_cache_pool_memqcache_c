@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_query_cache_pool_memqcache_c,v 1.1 2021/12/06 01:00:58 tb Exp $
+
+Fix 64-bit time_t issues
+
+Index: src/query_cache/pool_memqcache.c
+--- src/query_cache/pool_memqcache.c.orig
++++ src/query_cache/pool_memqcache.c
+@@ -265,7 +265,7 @@ static int pool_commit_cache(POOL_CONNECTION_POOL *bac
+ 	memqcache_expire = pool_config->memqcache_expire;
+ 	ereport(DEBUG1,
+ 		(errmsg("commiting SELECT results to cache storage"),
+-			 errdetail("memqcache_expire = %ld", memqcache_expire)));
++			 errdetail("memqcache_expire = %lld", (long long)memqcache_expire)));
+ 
+ 	if (pool_is_shmem_cache())
+ 	{
+@@ -2536,8 +2536,8 @@ static POOL_CACHEID *pool_find_item_on_shmem_cache(POO
+ 		{
+ 			ereport(DEBUG1,
+ 				(errmsg("memcache finding item"),
+-					errdetail("cache expired: now: %ld timestamp: %ld",
+-						   now, cih->timestamp + pool_config->memqcache_expire)));
++					errdetail("cache expired: now: %lld timestamp: %lld",
++						   (long long)now, (long long)cih->timestamp + pool_config->memqcache_expire)));
+ 			pool_delete_item_shmem_cache(c);
+ 			return NULL;
+ 		}
+@@ -2826,8 +2826,8 @@ static void dump_shmem_cache(POOL_CACHE_BLOCKID blocki
+ 		fprintf(stderr, "shmem: block: %d %d th item pointer(%lu bytes): offset:%d flags:%x\n",
+ 				blockid, i, sizeof(*cip), cip->offset, cip->flags);
+ 		cih = item_header((char *)bh, i);
+-		fprintf(stderr, "shmem: block: %d %d th item header(%lu bytes): timestamp:%ld length:%d\n",
+-				blockid, i, sizeof(*cih), cih->timestamp, cih->total_length);
++		fprintf(stderr, "shmem: block: %d %d th item header(%lu bytes): timestamp:%lld length:%d\n",
++				blockid, i, sizeof(*cih), (long long)cih->timestamp, cih->total_length);
+ 	}
+ }
+ #endif

@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_utils_pool_relcache_c,v 1.1 2021/12/06 01:00:58 tb Exp $
+
+Fix 64-bit time_t issue
+
+Index: src/utils/pool_relcache.c
+--- src/utils/pool_relcache.c.orig
++++ src/utils/pool_relcache.c
+@@ -148,7 +148,7 @@ void *pool_search_relcache(POOL_RELCACHE *relcache, PO
+ 				{
+ 					ereport(DEBUG1,
+ 						(errmsg("searching relcache"),
+-							 errdetail("relcache for database:%s table:%s expired. now:%ld expiration time:%ld", dbname, table, now, relcache->cache[i].expire)));
++							 errdetail("relcache for database:%s table:%s expired. now:%lld expiration time:%lld", dbname, table, (long long)now, (long long)relcache->cache[i].expire)));
+ 
+ 					relcache->cache[i].refcnt = 0;
+ 					break;
