@@ -1,4 +1,4 @@
-# $OpenBSD: modules.inc,v 1.3 2021/10/29 15:48:02 kn Exp $
+# $OpenBSD: modules.inc,v 1.4 2021/12/07 23:53:24 kn Exp $
 
 MODGO_MODULES =	\
 	cloud.google.com/go					 v0.81.0 \
@@ -35,7 +35,7 @@ MODGO_MODULES =	\
 	github.com/cli/crypto					 v0.0.0-20210929142629-6be313f59b03 \
 	github.com/cli/oauth					 v0.9.0 \
 	github.com/cli/safeexec					 v1.0.0 \
-	github.com/cli/shurcoo!l-graphql			 v0.0.0-20200707151639-0f7232a2bf7e \
+	github.com/cli/shurcoo!l-graphql			 v0.0.1 \
 	github.com/client9/misspell				 v0.3.4 \
 	github.com/cncf/udpa/go					 v0.0.0-20201120205902-5459f2c99403 \
 	github.com/coreos/go-semver				 v0.3.0 \
@@ -72,7 +72,6 @@ MODGO_MODULES =	\
 	github.com/gopherjs/gopherjs				 v0.0.0-20181017120253-0766667cb4d1 \
 	github.com/gorilla/css					 v1.0.0 \
 	github.com/gorilla/websocket				 v1.4.2 \
-	github.com/graph-gophers/graphql-go			 v0.0.0-20200622220639-c1d9693c95a6 \
 	github.com/grpc-ecosystem/grpc-gateway			 v1.16.0 \
 	github.com/hashicorp/consul/api				 v1.1.0 \
 	github.com/hashicorp/consul/sdk				 v0.1.1 \
@@ -97,8 +96,7 @@ MODGO_MODULES =	\
 	github.com/hinshun/vt10x				 v0.0.0-20180616224451-1954e6464174 \
 	github.com/ianlancetaylor/demangle			 v0.0.0-20200824232613-28f6c0f3b639 \
 	github.com/inconshreveable/mousetrap			 v1.0.0 \
-	github.com/itchyny/go-flags				 v1.5.0 \
-	github.com/itchyny/gojq					 v0.12.5 \
+	github.com/itchyny/gojq					 v0.12.6 \
 	github.com/itchyny/timefmt-go				 v0.1.3 \
 	github.com/json-iterator/go				 v1.1.11 \
 	github.com/jstemmer/go-junit-report			 v0.9.1 \
@@ -112,11 +110,11 @@ MODGO_MODULES =	\
 	github.com/kr/text					 v0.1.0 \
 	github.com/lucasb-eyer/go-colorful			 v1.2.0 \
 	github.com/magiconair/properties			 v1.8.5 \
-	github.com/mattn/go-colorable				 v0.1.11 \
+	github.com/mattn/go-colorable				 v0.1.12 \
 	github.com/mattn/go-isatty				 v0.0.14 \
 	github.com/mattn/go-runewidth				 v0.0.13 \
 	github.com/mgutz/ansi					 v0.0.0-20200706080929-d51e80ef957d \
-	github.com/microcosm-cc/bluemonday			 v1.0.6 \
+	github.com/microcosm-cc/bluemonday			 v1.0.16 \
 	github.com/miekg/dns					 v1.0.14 \
 	github.com/mitchellh/cli				 v1.0.0 \
 	github.com/mitchellh/go-homedir				 v1.0.0 \
@@ -146,9 +144,8 @@ MODGO_MODULES =	\
 	github.com/sean-/seed					 v0.0.0-20170313163322-e2103e2c3529 \
 	github.com/sergi/go-diff				 v1.0.0 \
 	github.com/shurcoo!l/githubv4				 v0.0.0-20200928013246-d292edc3691b \
-	github.com/shurcoo!l/graphql				 v0.0.0-20181231061246-d48a9a75455f \
+	github.com/shurcoo!l/graphql				 v0.0.0-20200928012149-18c5c3165e3a \
 	github.com/shurcoo!l/sanitized_anchor_name		 v1.0.0 \
-	github.com/skratchdot/open-golang			 v0.0.0-20200116055534-eef842397966 \
 	github.com/smartystreets/assertions			 v0.0.0-20180927180507-b2de0cb4f26d \
 	github.com/smartystreets/goconvey			 v1.6.4 \
 	github.com/sourcegraph/jsonrpc2				 v0.1.0 \
@@ -176,10 +173,10 @@ MODGO_MODULES =	\
 	golang.org/x/lint					 v0.0.0-20210508222113-6edffad5e616 \
 	golang.org/x/mobile					 v0.0.0-20190719004257-d2bd2a29d028 \
 	golang.org/x/mod					 v0.4.2 \
-	golang.org/x/net					 v0.0.0-20210505024714-0287a6fb4125 \
+	golang.org/x/net					 v0.0.0-20211112202133-69e39bad7dc2 \
 	golang.org/x/oauth2					 v0.0.0-20210402161424-2e8d93401602 \
 	golang.org/x/sync					 v0.0.0-20210220032951-036812b2e83c \
-	golang.org/x/sys					 v0.0.0-20210927094055-39ccf1dd6fa6 \
+	golang.org/x/sys					 v0.0.0-20211124211545-fe61309f8881 \
 	golang.org/x/term					 v0.0.0-20210503060354-a79de5458b56 \
 	golang.org/x/text					 v0.3.6 \
 	golang.org/x/time					 v0.0.0-20191024005414-555d28b269f0 \
@@ -309,6 +306,7 @@ MODGO_MODFILES =	\
 	github.com/mattn/go-runewidth		 v0.0.10 \
 	github.com/mattn/go-runewidth		 v0.0.9 \
 	github.com/mgutz/ansi			 v0.0.0-20170206155736-9520e82c474b \
+	github.com/microcosm-cc/bluemonday	 v1.0.6 \
 	github.com/mitchellh/mapstructure	 v0.0.0-20160808181253-ca63d7c062ee \
 	github.com/mitchellh/mapstructure	 v1.1.2 \
 	github.com/modern-go/reflect2		 v0.0.0-20180701023420-4b7aa43c6742 \
@@ -409,6 +407,8 @@ MODGO_MODFILES =	\
 	golang.org/x/net			 v0.0.0-20210316092652-d523dce5a7f4 \
 	golang.org/x/net			 v0.0.0-20210331212208-0fccb6fa2b5c \
 	golang.org/x/net			 v0.0.0-20210405180319-a5a99cb37ef4 \
+	golang.org/x/net			 v0.0.0-20210505024714-0287a6fb4125 \
+	golang.org/x/net			 v0.0.0-20210614182718-04defd469f4e \
 	golang.org/x/oauth2			 v0.0.0-20180821212333-d2e6202438be \
 	golang.org/x/oauth2			 v0.0.0-20190226205417-e64efc72b421 \
 	golang.org/x/oauth2			 v0.0.0-20190604053449-0f29369cfe45 \
@@ -478,7 +478,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.0.0-20210510120138-977fb7262007 \
 	golang.org/x/sys			 v0.0.0-20210615035016-665e8c7367d1 \
 	golang.org/x/sys			 v0.0.0-20210630005230-0f9fa26af87c \
-	golang.org/x/sys			 v0.0.0-20210831042530-f4d43177bf5e \
+	golang.org/x/sys			 v0.0.0-20210927094055-39ccf1dd6fa6 \
 	golang.org/x/term			 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/text			 v0.0.0-20170915032832-14c0d48ead0c \
 	golang.org/x/text			 v0.3.0 \
