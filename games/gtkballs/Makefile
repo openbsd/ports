@@ -1,34 +1,29 @@
-# $OpenBSD: Makefile,v 1.44 2019/07/12 21:02:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2021/12/07 10:25:27 landry Exp $
 
 COMMENT=	gtk+ clone of the lines ball logic game
 
-DISTNAME=	gtkballs-3.1.5
-REVISION=	17
+GH_ACCOUNT =	emorozov
+GH_PROJECT =	gtkballs
+GH_COMMIT =	6e53b6686de9782e3c0ef2bb26f3f9b70b5b675b
+DISTNAME=	gtkballs-3.1.5pl0
 CATEGORIES=	games x11
-MASTER_SITES=	${HOMEPAGE}dist/ \
-		${MASTER_SITE_SUNSITE:=games/strategy/}
-
-HOMEPAGE=	http://gtkballs.antex.ru/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 c cairo expat fontconfig freetype
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += gtk-x11-2.0 iconv intl m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pixman-1 png pthread xcb xcb-render xcb-shm z
+WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 harfbuzz intl pango-1.0
+WANTLIB += pangocairo-1.0 pthread
 
-LIB_DEPENDS=	x11/gtk+2
+LIB_DEPENDS=	x11/gtk+3
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE=autoreconf
+AUTORECONF=	./autogen.sh
+AUTOMAKE_VERSION=1.16
+AUTOCONF_VERSION=2.69
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-LOCALSTATEDIR=	${BASELOCALSTATEDIR}/games
-
-FAKE_FLAGS=	localstatedir=${PREFIX}/share/examples/gtkballs
 
 .include <bsd.port.mk>

@@ -1,17 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/04/26 09:58:17 ajacoutot Exp $
-@mode g+s
-@group games
+@comment $OpenBSD: PLIST,v 1.10 2021/12/07 10:25:27 landry Exp $
 @bin bin/gtkballs
-@mode
-@group
 @man man/man6/gtkballs.6x
-share/examples/gtkballs/
-share/examples/gtkballs/gtkballs-scores
-@mode g+w
-@group games
-@sample /var/games/gtkballs-scores
-@mode
-@group
 share/gtkballs/
 share/gtkballs/COPYING
 share/gtkballs/gtkballs-logo.png
@@ -543,5 +532,6 @@ share/gtkballs/themes/mascots/walk8.xpm
 share/gtkballs/themes/mascots/walk_small.xpm
 share/locale/de/LC_MESSAGES/gtkballs.mo
 share/locale/fr/LC_MESSAGES/gtkballs.mo
+share/locale/nl/LC_MESSAGES/gtkballs.mo
 share/locale/pl/LC_MESSAGES/gtkballs.mo
 share/locale/ru/LC_MESSAGES/gtkballs.mo

@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile_am,v 1.1 2021/12/07 10:25:27 landry Exp $
+
+Index: Makefile.am
+--- Makefile.am.orig
++++ Makefile.am
+@@ -11,9 +11,4 @@ EXTRA_DIST = README.russian \
+ appddir = $(datadir)/gtkballs
+ appd_DATA = COPYING
+ 
+-install-data-hook:
+-	if [ ! -f $(DESTDIR)$(localstatedir)/gtkballs-scores ]; then touch $(DESTDIR)$(localstatedir)/gtkballs-scores; fi
+-	if [ "${UID}" = 0 ]; then chgrp games $(DESTDIR)$(localstatedir)/gtkballs-scores; fi
+-	chmod 0664 $(DESTDIR)$(localstatedir)/gtkballs-scores
+-
+ ACLOCAL_AMFLAGS = -I autoconf-m4

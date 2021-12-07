@@ -1,13 +1,14 @@
-$OpenBSD: patch-src_game_c,v 1.2 2009/11/17 19:30:01 naddy Exp $
---- src/game.c.orig	Wed Oct  6 13:06:46 2004
-+++ src/game.c	Mon Nov 16 22:57:02 2009
-@@ -495,8 +495,8 @@ gint game_destroy_lines(gboolean count_score) {
-                         lock_actions(1);
-                         draw_board();
- 	                for(animtime = 0, i = 0; i < animcadres;) {
--                        	gettimeofday(&tvs, NULL);
-                 	        gint isav = i;
-+                        	gettimeofday(&tvs, NULL);
- 	                	for(; animtime == animarray[i].time && i < animcadres; i++) {
-                         		draw_ball(animarray[i].color, animarray[i].x, animarray[i].y, 0, animarray[i].phase + 1);
-                                         _board_destroys[animarray[i].y * rules_get_width() + animarray[i].x] = animarray[i].phase + 1;
+$OpenBSD: patch-src_game_c,v 1.3 2021/12/07 10:25:27 landry Exp $
+Index: src/game.c
+--- src/game.c.orig
++++ src/game.c
+@@ -532,8 +532,8 @@ gint game_destroy_lines(gboolean count_score)
+          draw_board();
+          for (animtime = 0, i = 0; i < animcadres;)
+          {
+-            gettimeofday(&tvs, NULL);
+             gint isav = i;
++            gettimeofday(&tvs, NULL);
+             for (; animtime == animarray[i].time && i < animcadres; i++) {
+                draw_ball(animarray[i].color, animarray[i].x, animarray[i].y, 0, animarray[i].phase + 1);
+                _board_destroys[animarray[i].y * rules_get_width() + animarray[i].x] = animarray[i].phase + 1;
