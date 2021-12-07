@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2021/11/19 09:26:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.116 2021/12/07 16:18:30 ajacoutot Exp $
 
 # XXX prctl(2) or procctl(2)
 # error: #error "Please submit a patch to support parent-death signal on your OS"
@@ -6,7 +6,7 @@
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
-GNOME_VERSION=		41.2
+GNOME_VERSION=		41.3
 
 CATEGORIES=		devel
 
