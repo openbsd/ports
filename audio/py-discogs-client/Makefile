@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2021/11/02 00:00:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/12/07 10:47:32 sthen Exp $
 
 COMMENT =	Python interface to Discogs website
 
-MODPY_EGG_VERSION = 2.2.2
-REVISION =	2
-DISTNAME =	discogs-client-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME}
+MODPY_EGG_VERSION = 2.3.12
+DISTNAME =	python3-discogs-client-${MODPY_EGG_VERSION}
+PKGNAME =	${DISTNAME:S/thon3//}
 CATEGORIES =	audio
 MAINTAINER =	Johan Huldtgren <jhuldtgren@gmail.com>
 
-HOMEPAGE =	https://github.com/discogs/discogs_client
+HOMEPAGE =	https://github.com/joalla/discogs_client
 
 # MIT
 PERMIT_PACKAGE =	Yes

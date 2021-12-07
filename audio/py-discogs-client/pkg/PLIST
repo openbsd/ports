@@ -1,13 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/02/29 22:32:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/12/07 10:47:32 sthen Exp $
 @conflict py-discogs-client-*
 @pkgpath audio/py-discogs-client
 lib/python${MODPY_VERSION}/site-packages/discogs_client/
-lib/python${MODPY_VERSION}/site-packages/discogs_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/discogs_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/discogs_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/discogs_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/discogs_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/discogs_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/discogs_client/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/discogs_client/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/discogs_client/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
@@ -21,3 +15,9 @@ lib/python${MODPY_VERSION}/site-packages/discogs_client/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/discogs_client/fetchers.py
 lib/python${MODPY_VERSION}/site-packages/discogs_client/models.py
 lib/python${MODPY_VERSION}/site-packages/discogs_client/utils.py
+lib/python${MODPY_VERSION}/site-packages/python3_discogs_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/python3_discogs_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/python3_discogs_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/python3_discogs_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/python3_discogs_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/python3_discogs_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
