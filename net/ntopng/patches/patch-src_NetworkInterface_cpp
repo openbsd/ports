@@ -1,25 +1,9 @@
-$OpenBSD: patch-src_NetworkInterface_cpp,v 1.7 2021/01/18 13:15:40 sthen Exp $
+$OpenBSD: patch-src_NetworkInterface_cpp,v 1.8 2021/12/07 09:47:38 sthen Exp $
 
 Index: src/NetworkInterface.cpp
 --- src/NetworkInterface.cpp.orig
 +++ src/NetworkInterface.cpp
-@@ -1322,6 +1322,7 @@ bool NetworkInterface::processPacket(u_int32_t bridge_
- 	       0, len_on_wire, 1);
-       return(pass_verdict);
-     }
-+#ifdef IPPROTO_SCTP
-   } else if(l4_proto == IPPROTO_SCTP) {
-     if(trusted_l4_packet_len >= sizeof(struct sctphdr)) {
-       /* SCTP */
-@@ -1338,6 +1339,7 @@ bool NetworkInterface::processPacket(u_int32_t bridge_
- 	       0, len_on_wire, 1);
-       return(pass_verdict);
-     }
-+#endif
-   } else if(l4_proto == IPPROTO_ICMP) {
-     icmp_info.dissectICMP(trusted_l4_packet_len, l4);
-   } else {
-@@ -1629,9 +1631,13 @@ bool NetworkInterface::processPacket(u_int32_t bridge_
+@@ -1769,9 +1769,13 @@ bool NetworkInterface::processPacket(u_int32_t bridge_
       (2) ensures that periodic_stats_update is not performed too frequently as it could be detrimental for performances and lead
           to packet drops.
     */

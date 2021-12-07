@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.29 2021/11/16 21:30:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2021/12/07 09:47:37 sthen Exp $
 
 COMMENT=	network traffic probe with web ui and deep packet inspection
 
 GH_ACCOUNT=	ntop
 GH_PROJECT=	ntopng
-GH_COMMIT=	025e96e6cbb61e0f7320acf1d4038fafbbf836fa
-NTOPNG_V=	4.2
-NTOPNG_D=	20210727
-DISTNAME=	ntopng-${NTOPNG_V}.${NTOPNG_D}
-REVISION=	0
+GH_TAGNAME=	5.0
+#NTOPNG_V=	4.2
+#GH_COMMIT=	025e96e6cbb61e0f7320acf1d4038fafbbf836fa
+#NTOPNG_D=	20210727
+#DISTNAME=	ntopng-${NTOPNG_V}.${NTOPNG_D}
 
 # ndpi does not have a particularly stable API so is pulled in directly
 # to this port; the shared lib for ndpi is built but not installed
 # so it seems easier to keep the SHARED_LIBS infrastructure here.
 SHARED_LIBS=	ndpi 1.0
-NDPI_V=		4.0
-NDPI_COMMIT=	b8806bd2de7391abee18353e9a99ee4aec13887c
+NDPI_V=		4.0pl20211111
+NDPI_COMMIT=	92a1be258117c6e68c5f5b92ce688e2cea089495
 DISTFILES=	${GH_DISTFILE} \
 		ndpi-${NDPI_V}-{}${NDPI_COMMIT}.tar.gz:0
 
@@ -29,9 +29,9 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += c crypto curl expat gcrypt hiredis json-c m mariadb
-WANTLIB += maxminddb netsnmp pcap radcli rrd sodium sqlite3 ssl
-WANTLIB += z zmq zstd
+WANTLIB += c crypto curl expat gcrypt gpg-error hiredis json-c m
+WANTLIB += mariadb maxminddb netsnmp pcap radcli rrd sodium sqlite3
+WANTLIB += ssl z zmq zstd
 
 COMPILER =	base-clang ports-gcc
 
@@ -65,11 +65,16 @@ CONFIGURE_STYLE= autoreconf
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		ac_cv_lib_ldap_ldap_initialize=no
+		ac_cv_lib_ldap_ldap_initialize=no \
+		ac_cv_lib_atomic___atomic_exchange_8=no
 
-AUTOCONF_VERSION=	2.69
+AUTOCONF_VERSION=	2.71
 AUTOMAKE_VERSION=	1.16
+.if defined(GH_COMMIT)
 GIT_RELEASE=		${NTOPNG_V}:${GH_COMMIT:C/(^..........).*/\1/}
+.else
+GIT_RELEASE=		${GH_TAGNAME}
+.endif
 AUTORECONF=		sh -c "GIT_RELEASE=${GIT_RELEASE} ./autogen.sh; cd nDPI; ./autogen.sh"
 
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/nDPI

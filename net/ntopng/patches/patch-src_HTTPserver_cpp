@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_HTTPserver_cpp,v 1.8 2021/07/27 10:27:48 sthen Exp $
+$OpenBSD: patch-src_HTTPserver_cpp,v 1.9 2021/12/07 09:47:38 sthen Exp $
 
 Index: src/HTTPserver.cpp
 --- src/HTTPserver.cpp.orig
 +++ src/HTTPserver.cpp
-@@ -112,7 +112,7 @@ static void generate_csrf_token(char *csrf) {
+@@ -117,7 +117,7 @@ static void generate_csrf_token(char *csrf) {
  
  #ifdef __OpenBSD__
    snprintf(random_a, sizeof(random_a), "%d", arc4random());
@@ -12,7 +12,7 @@ Index: src/HTTPserver.cpp
  #else
    snprintf(random_a, sizeof(random_a), "%d", rand());
    snprintf(random_b, sizeof(random_b), "%lu", time(NULL)*rand());
-@@ -1262,8 +1262,8 @@ bool HTTPserver::check_ssl_cert(char *ssl_cert_path, s
+@@ -1399,8 +1399,8 @@ bool HTTPserver::check_ssl_cert(char *ssl_cert_path, s
    int stat_rc;
    ssl_cert_path[0] = '\0';
  

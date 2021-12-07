@@ -1,32 +1,31 @@
-$OpenBSD: patch-include_ntop_defines_h,v 1.8 2021/01/18 13:15:40 sthen Exp $
+$OpenBSD: patch-include_ntop_defines_h,v 1.9 2021/12/07 09:47:38 sthen Exp $
 
 Index: include/ntop_defines.h
 --- include/ntop_defines.h.orig
 +++ include/ntop_defines.h
-@@ -192,7 +192,7 @@
+@@ -196,7 +196,7 @@
  #define MAX_NUM_QUEUED_ADDRS    500 /* Maximum number of queued address for resolution */
  #define MAX_NUM_QUEUED_CONTACTS 25000
- #define NTOP_COPYRIGHT          "(C) 1998-20 ntop.org"
+ #define NTOP_COPYRIGHT          "(C) 1998-21 ntop.org"
 -#define DEFAULT_PID_PATH        "/var/run/ntopng.pid"
 +#define DEFAULT_PID_PATH        "/var/run/ntopng/ntopng.pid"
  #define SYSTEM_INTERFACE_NAME   "__system__"
  #define SYSTEM_INTERFACE_ID     -1
  #define INVALID_INTERFACE_ID    -2
-@@ -475,7 +475,7 @@
- #define NTOPNG_NDPI_OS_PROTO_ID      (NDPI_LAST_IMPLEMENTED_PROTOCOL+NDPI_MAX_NUM_CUSTOM_PROTOCOLS-2)
- #define CONST_DEFAULT_HOME_NET       "192.168.1.0/24"
- #define CONST_OLD_DEFAULT_DATA_DIR   "/var/tmp/ntopng"
--#define CONST_DEFAULT_DATA_DIR       "/var/lib/ntopng"
-+#define CONST_DEFAULT_DATA_DIR       "/var/db/ntopng"
- #define CONST_DEFAULT_MAX_UI_STRLEN  24
- #define CONST_DEFAULT_IS_AUTOLOGOUT_ENABLED               1
- #define CONST_DEFAULT_IS_IDLE_LOCAL_HOSTS_CACHE_ENABLED   1
-@@ -493,7 +493,7 @@
- #define CONST_NTOP_STARTUP_EPOCH     "@NTOP_STARTUP_EPOCH@"
- #define CONST_NTOP_PRODUCT_NAME      "@NTOP_PRODUCT_NAME@"
- #define CONST_OLD_DEFAULT_NTOP_USER  "nobody"
--#define CONST_DEFAULT_NTOP_USER      "ntopng"
-+#define CONST_DEFAULT_NTOP_USER      "_ntopng"
- #define CONST_TOO_EARLY              "(Too Early)"
- 
- #define CONST_LUA_OK                  1
+@@ -512,11 +512,15 @@
+ #define CONST_DEFAULT_CALLBACKS_DIR  "scripts/callbacks"
+ #define CONST_DEFAULT_USERS_FILE     "ntopng-users.conf"
+ #define CONST_DEFAULT_INSTALL_DIR    (DATA_DIR "/ntopng")
+-#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #define CONST_BIN_DIR                "/usr/local/bin"
+ #define CONST_SHARE_DIR              "/usr/local/share"
+ #define CONST_SHARE_DIR_2            "/usr/share"
++#ifdef __FreeBSD__
+ #define CONST_ETC_DIR                "/usr/local/etc"
++#else
++#define CONST_ETC_DIR                "/etc"
++#endif
+ #define CONST_DEFAULT_DATA_DIR       "/var/db/ntopng"
+ #else
+ #define CONST_BIN_DIR                "/usr/bin"

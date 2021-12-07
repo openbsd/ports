@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure_seed,v 1.8 2021/07/27 10:27:48 sthen Exp $
+$OpenBSD: patch-configure_seed,v 1.9 2021/12/07 09:47:38 sthen Exp $
 
 Index: configure.seed
 --- configure.seed.orig
 +++ configure.seed
-@@ -364,10 +364,10 @@ fi
+@@ -442,10 +442,10 @@ fi
  
  DATE=`date +"%Y-%m-%d"`
  
@@ -15,5 +15,5 @@ Index: configure.seed
 +  HIREDIS_INC="`pkg-config --cflags hiredis`"
 +  HIREDIS_LIB="`pkg-config --libs hiredis`"
  else
-   HIREDIS_INC="-I ${PWD}/third-party/hiredis"
+   HIREDIS_INC="-I ${HERE}/third-party/hiredis"
  fi
