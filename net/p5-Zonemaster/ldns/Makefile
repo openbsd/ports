@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2021/06/03 17:39:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2021/12/07 09:50:29 sthen Exp $
 
 COMMENT=	module to interface the DNS resolver using the ldns library
 
 MODULES=	cpan
 CPAN_AUTHOR=	ZNMSTR
-DISTNAME=	Zonemaster-LDNS-2.2.0
+DISTNAME=	Zonemaster-LDNS-2.2.1
 CATEGORIES=	net
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
