@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_makefiles_rust_mk,v 1.7 2021/11/02 15:07:59 landry Exp $
+$OpenBSD: patch-config_makefiles_rust_mk,v 1.8 2021/12/07 15:00:18 landry Exp $
 
 use lto=thin to reduce memory pressure when building gkrust
 https://bugzilla.mozilla.org/show_bug.cgi?id=1644409
@@ -7,9 +7,9 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=1640982
 Index: config/makefiles/rust.mk
 --- config/makefiles/rust.mk.orig
 +++ config/makefiles/rust.mk
-@@ -68,7 +68,8 @@ ifndef MOZ_DEBUG_RUST
- # gkrust_gtest. And not when doing cross-language LTO.
- ifndef MOZ_LTO_RUST_CROSS
+@@ -95,7 +95,8 @@ ifndef MOZ_LTO_RUST_CROSS
+ # Never enable when sancov is enabled to work around https://github.com/rust-lang/rust/issues/90300.
+ ifndef rustflags_sancov
  ifeq (,$(findstring gkrust_gtest,$(RUST_LIBRARY_FILE)))
 -cargo_rustc_flags += -Clto
 +cargo_rustc_flags += -Clto=thin
