@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/01/04 14:06:37 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/12/07 10:43:03 sthen Exp $
 @conflict py-reportlab-barcode-*
 @conflict py-reportlab-renderPM-*
 @pkgpath print/py-reportlab/plugins/renderPM
@@ -17,6 +17,7 @@ lib/python${MODPY_VERSION}/site-packages/reportlab/${MODPY_PYCACHE}rl_config.${M
 lib/python${MODPY_VERSION}/site-packages/reportlab/${MODPY_PYCACHE}rl_settings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/fonts/
 lib/python${MODPY_VERSION}/site-packages/reportlab/fonts/00readme.txt
+lib/python${MODPY_VERSION}/site-packages/reportlab/fonts/DarkGarden-changelog.txt
 lib/python${MODPY_VERSION}/site-packages/reportlab/fonts/DarkGarden-copying-gpl.txt
 lib/python${MODPY_VERSION}/site-packages/reportlab/fonts/DarkGarden-copying.txt
 lib/python${MODPY_VERSION}/site-packages/reportlab/fonts/DarkGarden-readme.txt
@@ -36,6 +37,8 @@ lib/python${MODPY_VERSION}/site-packages/reportlab/fonts/_ebi____.pfb
 lib/python${MODPY_VERSION}/site-packages/reportlab/fonts/_ei_____.pfb
 lib/python${MODPY_VERSION}/site-packages/reportlab/fonts/_er_____.pfb
 lib/python${MODPY_VERSION}/site-packages/reportlab/fonts/bitstream-vera-license.txt
+lib/python${MODPY_VERSION}/site-packages/reportlab/fonts/callig15.afm
+lib/python${MODPY_VERSION}/site-packages/reportlab/fonts/callig15.pfb
 lib/python${MODPY_VERSION}/site-packages/reportlab/fonts/cob_____.pfb
 lib/python${MODPY_VERSION}/site-packages/reportlab/fonts/cobo____.pfb
 lib/python${MODPY_VERSION}/site-packages/reportlab/fonts/com_____.pfb
@@ -56,6 +59,8 @@ lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/${MODPY_PYCACHE}rend
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/${MODPY_PYCACHE}shapes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/${MODPY_PYCACHE}testdrawings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/${MODPY_PYCACHE}testshapes.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/${MODPY_PYCACHE}transform.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/${MODPY_PYCACHE}widgetbase.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/_renderPM.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/
@@ -66,7 +71,9 @@ lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/${MODPY_PYCACHE}code39.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/${MODPY_PYCACHE}code93.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/${MODPY_PYCACHE}dmtx.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/${MODPY_PYCACHE}eanbc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/${MODPY_PYCACHE}ecc200datamatrix.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/${MODPY_PYCACHE}fourstate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/${MODPY_PYCACHE}lto.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/${MODPY_PYCACHE}qr.${MODPY_PYC_MAGIC_TAG}pyc
@@ -79,7 +86,9 @@ lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/code128.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/code39.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/code93.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/common.py
+lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/dmtx.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/eanbc.py
+lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/ecc200datamatrix.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/fourstate.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/lto.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/barcode/qr.py
@@ -166,17 +175,21 @@ lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/samples/stacked_colu
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/shapes.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/testdrawings.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/testshapes.py
+lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/transform.py
+lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/utils.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/widgetbase.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/widgets/
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/widgets/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/widgets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/widgets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/widgets/${MODPY_PYCACHE}adjustableArrow.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/widgets/${MODPY_PYCACHE}eventcal.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/widgets/${MODPY_PYCACHE}flags.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/widgets/${MODPY_PYCACHE}grids.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/widgets/${MODPY_PYCACHE}markers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/widgets/${MODPY_PYCACHE}signsandsymbols.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/widgets/${MODPY_PYCACHE}table.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/widgets/adjustableArrow.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/widgets/eventcal.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/widgets/flags.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/graphics/widgets/grids.py
@@ -209,6 +222,7 @@ lib/python${MODPY_VERSION}/site-packages/reportlab/lib/${MODPY_PYCACHE}pdfencryp
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/${MODPY_PYCACHE}pygments2xpre.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/${MODPY_PYCACHE}randomtext.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/${MODPY_PYCACHE}rl_accel.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/reportlab/lib/${MODPY_PYCACHE}rl_safe_eval.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/${MODPY_PYCACHE}rltempfile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/${MODPY_PYCACHE}rparsexml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/${MODPY_PYCACHE}sequencer.${MODPY_PYC_MAGIC_TAG}pyc
@@ -233,7 +247,6 @@ lib/python${MODPY_VERSION}/site-packages/reportlab/lib/fontfinder.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/fonts.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/formatters.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/geomutils.py
-lib/python${MODPY_VERSION}/site-packages/reportlab/lib/hyphen.mashed
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/logger.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/normalDate.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/pagesizes.py
@@ -241,6 +254,7 @@ lib/python${MODPY_VERSION}/site-packages/reportlab/lib/pdfencrypt.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/pygments2xpre.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/randomtext.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/rl_accel.py
+lib/python${MODPY_VERSION}/site-packages/reportlab/lib/rl_safe_eval.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/rltempfile.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/rparsexml.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/lib/sequencer.py
@@ -279,6 +293,8 @@ lib/python${MODPY_VERSION}/site-packages/reportlab/pdfbase/${MODPY_PYCACHE}_font
 lib/python${MODPY_VERSION}/site-packages/reportlab/pdfbase/${MODPY_PYCACHE}_fontdata_widths_timesitalic.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/pdfbase/${MODPY_PYCACHE}_fontdata_widths_timesroman.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/pdfbase/${MODPY_PYCACHE}_fontdata_widths_zapfdingbats.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/reportlab/pdfbase/${MODPY_PYCACHE}_glyphlist.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/reportlab/pdfbase/${MODPY_PYCACHE}acroform.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/pdfbase/${MODPY_PYCACHE}cidfonts.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/pdfbase/${MODPY_PYCACHE}pdfdoc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/pdfbase/${MODPY_PYCACHE}pdfform.${MODPY_PYC_MAGIC_TAG}pyc
@@ -311,6 +327,8 @@ lib/python${MODPY_VERSION}/site-packages/reportlab/pdfbase/_fontdata_widths_time
 lib/python${MODPY_VERSION}/site-packages/reportlab/pdfbase/_fontdata_widths_timesitalic.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/pdfbase/_fontdata_widths_timesroman.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/pdfbase/_fontdata_widths_zapfdingbats.py
+lib/python${MODPY_VERSION}/site-packages/reportlab/pdfbase/_glyphlist.py
+lib/python${MODPY_VERSION}/site-packages/reportlab/pdfbase/acroform.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/pdfbase/cidfonts.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/pdfbase/pdfdoc.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/pdfbase/pdfform.py
@@ -341,6 +359,7 @@ lib/python${MODPY_VERSION}/site-packages/reportlab/platypus/${MODPY_PYCACHE}doct
 lib/python${MODPY_VERSION}/site-packages/reportlab/platypus/${MODPY_PYCACHE}figures.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/platypus/${MODPY_PYCACHE}flowables.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/platypus/${MODPY_PYCACHE}frames.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/reportlab/platypus/${MODPY_PYCACHE}multicol.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/platypus/${MODPY_PYCACHE}para.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/platypus/${MODPY_PYCACHE}paragraph.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/platypus/${MODPY_PYCACHE}paraparser.${MODPY_PYC_MAGIC_TAG}pyc
@@ -351,6 +370,7 @@ lib/python${MODPY_VERSION}/site-packages/reportlab/platypus/doctemplate.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/platypus/figures.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/platypus/flowables.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/platypus/frames.py
+lib/python${MODPY_VERSION}/site-packages/reportlab/platypus/multicol.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/platypus/para.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/platypus/paragraph.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/platypus/paraparser.py
@@ -359,3 +379,5 @@ lib/python${MODPY_VERSION}/site-packages/reportlab/platypus/tables.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/platypus/xpreformatted.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/rl_config.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/rl_settings.py
+${MODPY_COMMENT}share/doc/py-reportlab/
+${MODPY_COMMENT}share/doc/py-reportlab/reportlab-userguide.pdf

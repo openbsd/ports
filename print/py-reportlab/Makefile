@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.17 2021/11/02 00:01:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2021/12/07 10:43:03 sthen Exp $
 
 COMMENT=		PDF-generating toolkit for Python
 
-MODPY_EGG_VERSION=	3.2.0
+# XXX 3.6.x drops py2 support; graphics/sk1 needs it
+MODPY_EGG_VERSION=	3.5.68
 DISTNAME=		reportlab-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 EPOCH=			0
-REVISION=		9
 
 # see patches/patch-setup_py
-# grep 'archive =' reportlab-3.2.0/setup.py
-PFBFER=			pfbfer-20070710.zip
+# grep 'zipdata =' `make show=WRKSRC`/setup.py
+PFBFER=			pfbfer-20180109.zip
 SUBST_VARS=		FULLDISTDIR PFBFER WRKINST MODPY_SITEPKG
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
@@ -18,14 +18,14 @@ DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
 
 CATEGORIES=		print graphics
 
-HOMEPAGE=		http://www.reportlab.com
+HOMEPAGE=		https://www.reportlab.com
 
 # BSD, LGPLv2, MPL1.0, MIT
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB} art_lgpl_2 freetype pthread
 
-MASTER_SITES0=		http://www.reportlab.com/ftp/
+MASTER_SITES0=		https://www.reportlab.com/ftp/
 
 FLAVORS=		python3
 FLAVOR?=
@@ -53,16 +53,19 @@ pre-configure:
 		${WRKSRC}/docs/genAll.py \
 		${WRKSRC}/docs/userguide/genuserguide.py
 
-# XXX FLAVOR conflict
-#post-install:
-#	cd ${WRKSRC}/docs && ${MODPY_BIN} genAll.py
-#	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-reportlab
-#	${INSTALL_DATA} ${WRKBUILD}/docs/reportlab-userguide.pdf \
-#		${PREFIX}/share/doc/py-reportlab
+.if ${FLAVOR:Mpython3}
+post-install:
+	cd ${WRKSRC}/docs && \
+		${MAKE_ENV} PYTHONPATH=${WRKSRC}/lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION} \
+		${MODPY_BIN} genAll.py
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-reportlab
+	${INSTALL_DATA} ${WRKBUILD}/docs/reportlab-userguide.pdf \
+		${PREFIX}/share/doc/py-reportlab
+.endif
 
 do-test:
 	cd ${WRKSRC}/tests && \
-		${MAKE_ENV} PYTHONPATH=${WRKDIST}:${WRKINST}${MODPY_SITEPKG} \
+		${MAKE_ENV} PYTHONPATH=${WRKSRC}/lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION} \
 		${MODPY_BIN} ./runAll.py
 
 .include <bsd.port.mk>
