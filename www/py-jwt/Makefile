@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2021/11/02 00:02:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2021/12/07 10:45:33 sthen Exp $
 
 COMMENT =	JSON Web Token implementation in Python
 
-MODPY_EGG_VERSION = 2.0.1
+MODPY_EGG_VERSION = 2.3.0
 DISTNAME =	PyJWT-${MODPY_EGG_VERSION}
 PKGNAME =	py-jwt-${MODPY_EGG_VERSION}
 CATEGORIES =	www
 MAINTAINER =	Johan Huldtgren <jhuldtgren@gmail.com>
-REVISION =	0
 
 HOMEPAGE =	http://github.com/jpadilla/pyjwt
 
