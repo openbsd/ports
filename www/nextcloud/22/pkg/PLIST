@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/11/22 11:15:23 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/12/07 09:42:56 gonzalo Exp $
 @option is-branch
 @conflict nextcloud-*
 @unexec-delete rm -f ${PREFIX}/conf/modules/httpd-nextcloud.conf
@@ -19663,9 +19663,17 @@ nextcloud/apps/workflowengine/lib/Settings/Personal.php
 nextcloud/apps/workflowengine/lib/Settings/Section.php
 nextcloud/apps/workflowengine/templates/
 nextcloud/apps/workflowengine/templates/settings.php
+@mode 0750
+@owner www
+@group www
 nextcloud/config/
+@mode 0640
 nextcloud/config/config.php.dist
+@sample nextcloud/config/config.php
 nextcloud/config/config.sample.php
+@mode
+@owner
+@group
 nextcloud/console.php
 nextcloud/core/
 nextcloud/core/Application.php
@@ -22849,7 +22857,13 @@ nextcloud/resources/locales.json
 nextcloud/resources/update-locales.php
 nextcloud/robots.txt
 nextcloud/status.php
+@mode 0750
+@owner www
+@group www
 nextcloud/themes/
+@mode
+@owner
+@group
 nextcloud/themes/README
 nextcloud/themes/example/
 nextcloud/themes/example/core/
@@ -22871,3 +22885,12 @@ nextcloud/updater/
 nextcloud/updater/index.php
 nextcloud/updater/updater.phar
 nextcloud/version.php
+@mode 0750
+@owner www
+@group www
+@sample nextcloud/data/
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+@mode
+@owner
+@group
+${PKGSTEM}
