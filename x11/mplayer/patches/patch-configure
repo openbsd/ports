@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.91 2021/07/25 15:13:21 matthieu Exp $
+$OpenBSD: patch-configure,v 1.92 2021/12/07 20:03:57 sthen Exp $
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -284,6 +284,13 @@ arm() {
+@@ -289,6 +289,13 @@ arm() {
    esac
  }
  
@@ -17,7 +17,7 @@ Index: configure
  # Use this before starting a check
  echocheck() {
    echo "============ Checking for $@ ============" >> "$TMPLOG"
-@@ -1514,39 +1521,39 @@ echo configuration: $configuration > "$TMPLOG"
+@@ -1529,39 +1536,39 @@ echo configuration: $configuration > "$TMPLOG"
  echo >> "$TMPLOG"
  
  
@@ -89,7 +89,7 @@ Index: configure
  list_subparts() {
    test ! -e ffmpeg/libav${3} && return 1
    pattern="s/^[^#]*${1}.*([^ ,]*, *\([^ ,)]*\).*/\1_${2}/p"
-@@ -1928,7 +1935,10 @@ fi
+@@ -1991,7 +1998,10 @@ fi
  if arm ; then
    cc_check && host_arch=aarch64 || host_arch=arm
  fi
@@ -100,7 +100,7 @@ Index: configure
  
  echo "Detected operating system: $system_name"
  echo "Detected host architecture: $host_arch"
-@@ -2465,7 +2475,7 @@ case "$host_arch" in
+@@ -2534,7 +2544,7 @@ case "$host_arch" in
      arch='sparc'
      iproc='sparc'
      if test "$host_arch" = "sparc64" ; then
@@ -109,7 +109,7 @@ Index: configure
        proc='ultrasparc'
        def_fast_64bit='#define HAVE_FAST_64BIT 1'
      elif sunos ; then
-@@ -2766,7 +2776,14 @@ EOF
+@@ -2835,7 +2845,14 @@ EOF
      arch='arc'
      iproc='arc'
      ;;
@@ -124,7 +124,7 @@ Index: configure
    *)
      echo "The architecture of your CPU ($host_arch) is not supported by this configure script"
      echo "It seems nobody has ported MPlayer to your OS or CPU type yet."
-@@ -2840,7 +2857,7 @@ cat > $TMPC << EOF
+@@ -2909,7 +2926,7 @@ cat > $TMPC << EOF
  int ff_extern;
  EOF
  cc_check -c || die "Symbol mangling check failed."
@@ -133,7 +133,7 @@ Index: configure
  extern_prefix=${sym%%ff_extern*}
  def_extern_asm="#define EXTERN_ASM $extern_prefix"
  def_extern_prefix="#define EXTERN_PREFIX \"$extern_prefix\""
-@@ -2905,7 +2922,7 @@ else
+@@ -2974,7 +2991,7 @@ else
  fi
  
  CFLAGS="-D_ISOC99_SOURCE -I. -Iffmpeg $CFLAGS"
@@ -142,7 +142,7 @@ Index: configure
  
  # On glibc, add some more CPPFLAGS for enabling required functionality.
  cpp_condition_check features.h "defined __GLIBC__" &&
-@@ -2986,7 +3003,7 @@ elif test $relocatable = "yes" ; then
+@@ -3055,7 +3072,7 @@ elif test $relocatable = "yes" ; then
  fi
  echores $relocatable
  
@@ -151,18 +151,7 @@ Index: configure
    # Checking assembler (_as) compatibility...
    # Added workaround for older as that reads from stdin by default - atmos
    as_version=$(echo '' | $_as -version 2>&1 | sed -n 's/^.*assembler \(version \)*\([0-9.]*\).*$/\2/p')
-@@ -4420,8 +4437,8 @@ echores "$gettimeofday"
- echocheck "clock_gettime()"
- clock_gettime=no
- def_clock_gettime='#undef HAVE_CLOCK_GETTIME'
--statement_check_broken stddef.h time.h 'struct timespec tp; clock_gettime(CLOCK_MONOTONIC, &tp)' -lrt &&
--    { clock_gettime=yes ; def_clock_gettime='#define HAVE_CLOCK_GETTIME 1' ; extra_ldflags="$extra_ldflags -lrt" ; }
-+statement_check_broken stddef.h time.h 'struct timespec tp; clock_gettime(CLOCK_MONOTONIC, &tp)' &&
-+    { clock_gettime=yes ; def_clock_gettime='#define HAVE_CLOCK_GETTIME 1' ; }
- echores "$clock_gettime"
- 
- 
-@@ -6403,7 +6420,7 @@ echocheck "cdparanoia"
+@@ -6553,7 +6570,7 @@ echocheck "cdparanoia"
  if test "$_cdparanoia" = auto ; then
      _cdparanoia=no
      for inc_tmp in "" "-I/usr/include/cdda" "-I/usr/local/include/cdda" ; do
@@ -171,7 +160,7 @@ Index: configure
          _cdparanoia=yes && extra_cflags="$extra_cflags $inc_tmp" && break
      done
  fi
-@@ -8302,6 +8319,7 @@ extra_ldflags="$extra_ldflags $libm"
+@@ -8488,6 +8505,7 @@ extra_ldflags="$extra_ldflags $libm"
  # XML documentation tests
  echocheck "XML catalogs"
  for try_catalog in \
@@ -179,7 +168,7 @@ Index: configure
    /etc/sgml/catalog \
    /usr/share/xml/docbook/*/catalog.xml \
    /opt/local/share/xml/docbook-xml/*/catalog.xml \
-@@ -8329,6 +8347,7 @@ fi
+@@ -8515,6 +8533,7 @@ fi
  
  echocheck "XML chunked stylesheet"
  for try_chunk_xsl in \
@@ -187,7 +176,7 @@ Index: configure
    /usr/share/xml/docbook/*/html/chunk.xsl \
    /usr/share/sgml/docbook/stylesheet/xsl/nwalsh/html/chunk.xsl \
    /usr/share/sgml/docbook/yelp/docbook/html/chunk.xsl \
-@@ -8354,6 +8373,7 @@ fi
+@@ -8540,6 +8559,7 @@ fi
  
  echocheck "XML monolithic stylesheet"
  for try_docbook_xsl in \
@@ -195,7 +184,7 @@ Index: configure
    /usr/share/xml/docbook/*/html/docbook.xsl \
    /usr/share/sgml/docbook/stylesheet/xsl/nwalsh/html/docbook.xsl \
    /usr/share/sgml/docbook/yelp/docbook/html/docbook.xsl \
-@@ -8407,6 +8427,7 @@ EOF
+@@ -8593,6 +8613,7 @@ EOF
  echocheck "XML DTD"
  #FIXME: This should prefer higher version numbers, not the other way around ..
  for try_dtd in \
@@ -203,7 +192,7 @@ Index: configure
    /usr/share/xml/docbook/*/dtd/4*/docbookx.dtd \
    /usr/share/xml/docbook/*/docbookx.dtd \
    /usr/share/sgml/docbook/*/docbookx.dtd \
-@@ -9565,9 +9586,6 @@ cmp -s "$TMPH" config.h || mv -f "$TMPH" config.h
+@@ -9767,9 +9788,6 @@ cmp -s "$TMPH" config.h || mv -f "$TMPH" config.h
  
  ############################################################################
  
@@ -213,7 +202,7 @@ Index: configure
  # Create avconfig.h for FFmpeg.
  cat > "$TMPH" << EOF
  /* Generated by mpconfigure */
-@@ -9659,8 +9677,6 @@ print_enabled_components libavformat/demuxer_list.c AV
+@@ -9861,8 +9879,6 @@ print_enabled_components libavformat/demuxer_list.c AV
  print_enabled_components libavformat/muxer_list.c AVOutputFormat muxer_list $libavmuxers
  print_enabled_components libavformat/protocol_list.c URLProtocol url_protocols $libavprotocols
  print_enabled_filters libavfilter/filter_list.c AVFilter filter_list $libavfilters

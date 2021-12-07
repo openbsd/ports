@@ -1,9 +1,9 @@
-$OpenBSD: patch-stream_stream_h,v 1.1 2018/04/11 12:01:23 naddy Exp $
+$OpenBSD: patch-stream_stream_h,v 1.2 2021/12/07 20:03:57 sthen Exp $
 
 Index: stream/stream.h
 --- stream/stream.h.orig
 +++ stream/stream.h
-@@ -318,11 +318,11 @@ static inline int64_t stream_tell(stream_t *s)
+@@ -319,11 +319,11 @@ static inline int64_t stream_tell(stream_t *s)
  static inline int stream_seek(stream_t *s, int64_t pos)
  {
  
