@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2021/11/02 00:00:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2021/12/07 19:13:45 solene Exp $
 
 COMMENT=		small expressive ORM
 
-MODPY_EGG_VERSION=	2.8.3
+MODPY_EGG_VERSION=	3.14.8
 DISTNAME=		peewee-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		9
 
 GH_ACCOUNT=		coleifer
 GH_PROJECT=		peewee
@@ -13,18 +12,27 @@ GH_TAGNAME=		${MODPY_EGG_VERSION}
 
 CATEGORIES=		databases
 
-HOMEPAGE=		http://docs.peewee-orm.com/
+HOMEPAGE=		https://docs.peewee-orm.com/
 
 # MIT
 PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=		textproc/py-sphinx,python3>=4.0.2
 
+TEST_DEPENDS=		databases/py-psycopg2${MODPY_FLAVOR} \
+			databases/sqlite3
+
 FLAVORS=		python3
 FLAVOR=			python3
 
-MODULES=		lang/python
+MODULES=		databases/postgresql \
+			lang/python
+
 MODPY_SETUPTOOLS=	Yes
+
+# required to run tests with postgresql support
+MODPOSTGRESQL_TEST_DBNAME=	peewee_test
+MODPOSTGRESQL_TEST_CMD=		cd ${WRKSRC} && ${MODPY_BIN} runtests.py
 
 MAKE_ENV +=	PYTHONPATH=${WRKSRC}
 DOCSRC =	${WRKSRC}/docs
@@ -40,7 +48,5 @@ post-install:
 	cd ${WRKSRC}/examples && pax -rw * ${EXAMPLES}
 	mv ${PREFIX}/bin/pwiz.py ${PREFIX}/bin/pwiz
 
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} tests.py
 
 .include <bsd.port.mk>
