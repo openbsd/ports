@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.147 2021/11/02 00:02:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.148 2021/12/07 13:41:01 pvk Exp $
 
 COMMENT =		radically simple IT automation
 
-MODPY_EGG_VERSION =	4.7.0
+MODPY_EGG_VERSION =	5.0.1
 DISTNAME =		ansible-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -20,7 +19,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-RUN_DEPENDS =		sysutils/ansible-core>=2.11.0
+RUN_DEPENDS =		sysutils/ansible-core>=2.12.0
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ansible
