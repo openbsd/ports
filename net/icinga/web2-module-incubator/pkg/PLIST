@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/11/23 09:33:36 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/12/07 09:36:17 sthen Exp $
 icinga-web2/modules/incubator/
 icinga-web2/modules/incubator/.gitignore
 icinga-web2/modules/incubator/LICENSE
@@ -88,6 +88,12 @@ icinga-web2/modules/incubator/vendor/gipfl/diff/src/PhpDiff/Renderer/Text/
 icinga-web2/modules/incubator/vendor/gipfl/diff/src/PhpDiff/Renderer/Text/Context.php
 icinga-web2/modules/incubator/vendor/gipfl/diff/src/PhpDiff/Renderer/Text/Unified.php
 icinga-web2/modules/incubator/vendor/gipfl/diff/src/PhpDiff/SequenceMatcher.php
+icinga-web2/modules/incubator/vendor/gipfl/format/
+icinga-web2/modules/incubator/vendor/gipfl/format/composer.json
+icinga-web2/modules/incubator/vendor/gipfl/format/src/
+icinga-web2/modules/incubator/vendor/gipfl/format/src/LocalDateFormat.php
+icinga-web2/modules/incubator/vendor/gipfl/format/src/LocalTimeFormat.php
+icinga-web2/modules/incubator/vendor/gipfl/format/src/LocaleAwareness.php
 icinga-web2/modules/incubator/vendor/gipfl/icinga-cli-daemon/
 icinga-web2/modules/incubator/vendor/gipfl/icinga-cli-daemon/composer.json
 icinga-web2/modules/incubator/vendor/gipfl/icinga-cli-daemon/src/
