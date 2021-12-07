@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.31 2021/09/04 17:25:44 danj Exp $
+# $OpenBSD: Makefile,v 1.32 2021/12/07 03:04:54 danj Exp $
 
 # probably also on (32-bit) arm
 BROKEN-i386 =	pkg/disk/stat_other.go:40:91: cannot use st.Atim.Nsec (type int32) as type int64 in argument to strconv.FormatInt
 
 COMMENT =	cli for minio
 
-V =		2021-07-26T15-01-59Z
-CID =		addaf66de8af5d865a6102320727e8a5dbcacdb6
+V =		2021-11-05T06-51-20Z
+CID =		9f6b50014291a9e8d325b104de998f12395eb309
 SHORTCID =	${CID:C/(............).*/\1/}
 
 MODGO_MODNAME =	github.com/minio/mc
