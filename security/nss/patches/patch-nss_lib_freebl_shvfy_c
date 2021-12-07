@@ -1,0 +1,15 @@
+$OpenBSD: patch-nss_lib_freebl_shvfy_c,v 1.1 2021/12/07 16:07:25 landry Exp $
+
+https://phabricator.services.mozilla.com/D130309
+
+Index: nss/lib/freebl/shvfy.c
+--- nss/lib/freebl/shvfy.c.orig
++++ nss/lib/freebl/shvfy.c
+@@ -335,6 +335,7 @@ blapi_SHVerifyFile(const char *shName, PRBool self)
+     SECStatus rv;
+     DSAPublicKey key;
+     int count;
++    (void)count; /* Suppress unused var warning (Bug 1738028) */
+ #ifdef FREEBL_USE_PRELINK
+     int pid = 0;
+ #endif
