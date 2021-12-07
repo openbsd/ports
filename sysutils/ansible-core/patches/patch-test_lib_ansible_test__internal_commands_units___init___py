@@ -1,0 +1,18 @@
+$OpenBSD: patch-test_lib_ansible_test__internal_commands_units___init___py,v 1.1 2021/12/07 13:38:26 pvk Exp $
+
+Index: test/lib/ansible_test/_internal/commands/units/__init__.py
+--- test/lib/ansible_test/_internal/commands/units/__init__.py.orig
++++ test/lib/ansible_test/_internal/commands/units/__init__.py
+@@ -253,9 +253,9 @@ def command_units(args):  # type: (UnitsConfig) -> Non
+         if python.version == '2.6':
+             # same as --strict-markers in older versions of pytest which still support python 2.6
+             cmd.append('--strict')
+-        else:
+-            # added in pytest 4.5.0, which requires python 2.7+
+-            cmd.append('--strict-markers')
++        #else:
++        #    # added in pytest 4.5.0, which requires python 2.7+
++        #    cmd.append('--strict-markers')
+ 
+         plugins = []
+ 
