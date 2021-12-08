@@ -1,0 +1,16 @@
+$OpenBSD: patch-encfs_NullCipher_cpp,v 1.1 2021/12/08 11:48:06 jca Exp $
+
+Fix str::shared_ptr destructor signature, constrained with llvm13.
+
+Index: encfs/NullCipher.cpp
+--- encfs/NullCipher.cpp.orig
++++ encfs/NullCipher.cpp
+@@ -76,7 +76,7 @@ class NullDestructor {
+   NullDestructor &operator=(const NullDestructor &) = delete; // copy assignment
+   NullDestructor& operator=(NullDestructor&& other) = delete; // move assignment
+ 
+-  void operator()(NullKey *&) {}
++  void operator()(NullKey *) {}
+ };
+ std::shared_ptr<AbstractCipherKey> gNullKey(new NullKey(), NullDestructor());
+ 

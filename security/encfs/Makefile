@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.24 2021/12/04 11:35:34 tb Exp $
+# $OpenBSD: Makefile,v 1.25 2021/12/08 11:48:06 jca Exp $
 
 COMMENT =		fuse-based cryptographic filesystem
 
 V =			1.9.5
 DISTNAME =		encfs-$V
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		security
 
-HOMEPAGE =		http://www.arg0.net/encfs
+HOMEPAGE =		https://github.com/vgough/encfs
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
@@ -32,9 +32,9 @@ LIB_DEPENDS =		devel/gettext,-runtime \
 CONFIGURE_ARGS =	-DUSE_INTERNAL_TINYXML=Off \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Git=On
 
-CONFIGURE_ENV =		CXXFLAGS="-DHAVE_UTIMENSAT -D_DIRENT_HAVE_D_TYPE"
+CXXFLAGS+=		-DHAVE_UTIMENSAT -D_DIRENT_HAVE_D_TYPE
 
-TEST_TARGET =		unittests test
+TEST_TARGET =		unittests test/test
 
 .include <bsd.port.mk>
 
