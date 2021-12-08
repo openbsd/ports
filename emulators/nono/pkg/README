@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2021/10/05 10:15:59 gonzalo Exp $
+$OpenBSD: README,v 1.5 2021/12/08 08:52:44 gonzalo Exp $
 
 +-----------------------------------------------------------------------
 | Running NetBSD on ${PKGSTEM}
@@ -32,7 +32,7 @@ boot
 g
 x
 
-For more options you should read the manual (for now only in Japanese).
+For more options you should read the manual.
 
 +-----------------------------------------------------------------------
 | Running OpenBSD on ${PKGSTEM}
@@ -55,4 +55,24 @@ hostnet-driver = none
 
 To turn it on:
 
-$ nono -c ~/nono -s 0.5 -C -Lhostname=1 
+$ nono -c ~/nono -s 0.5 -C 
+
+Now inside the console you should follow these instructions:
+
+** NVRAM Initialized.
+
+N>nvram boot_filename boot
+Update boot_filename : "vmunix" -> "boot" (Y/[N]):y
+Updated
+N>b
+
+You can connect to the vm with a serial console by
+adding the follow to your nono.cfg:
+
+hostcom-driver = tcp
+hostcom-tcp-port = 9999
+luna-dipsw1 = 10111111
+
+Then, after staring nono, try:
+
+$ telnet localhost 9999
