@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/29 17:35:52 kmos Exp $
+# $OpenBSD: Makefile,v 1.3 2021/12/08 08:47:41 mestre Exp $
 
 COMMENT =	minimalist and privacy-oriented WebKitGTK+ browser
-DISTNAME =	badwolf-1.2.0
+DISTNAME =	badwolf-1.2.2
 CATEGORIES =	www
 
 HOMEPAGE =	https://hacktivis.me/projects/badwolf
