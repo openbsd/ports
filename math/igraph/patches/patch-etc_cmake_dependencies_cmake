@@ -1,0 +1,13 @@
+$OpenBSD: patch-etc_cmake_dependencies_cmake,v 1.1 2021/12/08 12:51:18 espie Exp $
+
+Index: etc/cmake/dependencies.cmake
+--- etc/cmake/dependencies.cmake.orig
++++ etc/cmake/dependencies.cmake
+@@ -148,6 +148,7 @@ macro(find_dependencies)
+   endif()
+ 
+   if(NEED_LINKING_AGAINST_LIBM)
++    list(APPEND CMAKE_REQUIRED_LIBRARIES m)
+     find_library(MATH_LIBRARY m)
+   endif()
+ 
