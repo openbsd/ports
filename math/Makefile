@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.207 2021/11/02 21:11:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.208 2021/12/08 10:44:35 espie Exp $
 
      SUBDIR =
      SUBDIR += 4ti2
@@ -42,6 +42,7 @@
      SUBDIR += hdf5
      SUBDIR += hexcalc
      SUBDIR += hoc
+     SUBDIR += igraph
      SUBDIR += imath
      SUBDIR += isl
      SUBDIR += jacal
