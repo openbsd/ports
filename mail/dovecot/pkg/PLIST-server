@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.83 2021/06/22 11:29:26 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.84 2021/12/08 14:10:07 sthen Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -389,6 +389,7 @@ include/dovecot/mailbox-list-private.h
 include/dovecot/mailbox-list-subscriptions.h
 include/dovecot/mailbox-list.h
 include/dovecot/mailbox-log.h
+include/dovecot/mailbox-match-plugin.h
 include/dovecot/mailbox-recent-flags.h
 include/dovecot/mailbox-search-result-private.h
 include/dovecot/mailbox-tree.h
