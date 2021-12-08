@@ -1,11 +1,11 @@
-$OpenBSD: patch-source_exhumed_src_exhumed_cpp,v 1.5 2021/08/20 04:18:41 jsg Exp $
+$OpenBSD: patch-source_exhumed_src_exhumed_cpp,v 1.6 2021/12/08 03:35:42 jsg Exp $
 
 store log file in ~/.config/pcexhumed/
 
 Index: source/exhumed/src/exhumed.cpp
 --- source/exhumed/src/exhumed.cpp.orig
 +++ source/exhumed/src/exhumed.cpp
-@@ -1864,6 +1864,29 @@ int app_main(int argc, char const* const* argv)
+@@ -1860,6 +1860,29 @@ int app_main(int argc, char const* const* argv)
          Xfree(homedir);
      }
      else

@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.9 2021/08/20 04:18:41 jsg Exp $
+# $OpenBSD: Makefile,v 1.10 2021/12/08 03:35:42 jsg Exp $
 
 COMMENT =	reverse-engineered ports of Build games
 
-DISTNAME =	nblood-1.01.20210818
+DISTNAME =	nblood-1.01.20211205
 
 GH_ACCOUNT =	nukeykt
 GH_PROJECT =	NBlood
-GH_COMMIT =	b7e490bb641142d18ff9bcc5dde30e4894c10f96
+GH_COMMIT =	cc8d57ee5d6ac8a3c3f400501df25892cb9db6b1
 CATEGORIES =	games x11
 
 VC_BRANCH =	master
 # git rev-list --count hash
-VC_REV =	12437
+VC_REV =	12723
 # git rev-parse --short=9 hash
-VC_HASH =	b7e490bb6
+VC_HASH =	cc8d57ee5
 
 MAINTAINER =	Jonathan Gray <jsg@openbsd.org>
 
@@ -24,13 +24,10 @@ PERMIT_DISTFILES =  "BUILD engine license is not compatible with GPLv2."
 BUILD_DEPENDS = archivers/unzip \
 		graphics/gdk-pixbuf2
 
-WANTLIB += c m ogg pthread vorbis vorbisfile vpx lz4 xmp
+WANTLIB += c m pthread vpx
 WANTLIB += SDL2 FLAC execinfo ${COMPILER_LIBCXX}
 
-LIB_DEPENDS =	archivers/lz4 \
-		audio/libxmp \
-		audio/libvorbis \
-		audio/flac \
+LIB_DEPENDS =	audio/flac \
 		devel/sdl2 \
 		multimedia/libvpx
 
@@ -69,7 +66,6 @@ post-extract:
 		${WRKSRC}/source/rr/src/common.cpp
 	@sed -i "s,/usr/share/games/nblood,${TRUEPREFIX}/share/nblood," \
 		${WRKSRC}/source/blood/src/common.cpp
-	rm ${WRKSRC}/source/build/include/lz4.h ${WRKSRC}/source/build/src/lz4.c
 
 post-patch:
 	echo "VC_BRANCH := ${VC_BRANCH}" > ${WRKSRC}/EDUKE32_REVISION.mak

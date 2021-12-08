@@ -1,37 +1,9 @@
-$OpenBSD: patch-GNUmakefile,v 1.3 2021/01/06 03:26:04 jsg Exp $
+$OpenBSD: patch-GNUmakefile,v 1.4 2021/12/08 03:35:42 jsg Exp $
 
 Index: GNUmakefile
 --- GNUmakefile.orig
 +++ GNUmakefile
-@@ -258,7 +258,6 @@ engine_objs := \
-     hightile.cpp \
-     klzw.cpp \
-     kplib.cpp \
--    lz4.c \
-     md4.cpp \
-     mhk.cpp \
-     miniz.c \
-@@ -423,8 +422,8 @@ ifeq ($(RENDERTYPE),SDL)
- endif
- 
- ifneq (0,$(HAVE_XMP))
--    audiolib_cflags += -I$(libxmplite_inc)
--    audiolib_deps += libxmplite
-+    audiolib_cflags += `$(PKG_CONFIG) --cflags libxmp`
-+    audiolib_deps += 
- endif
- 
- 
-@@ -688,7 +687,7 @@ ifeq ($(SUBPLATFORM),LINUX)
- endif
- 
- ifeq ($(PLATFORM),BSD)
--    LIBS += -lFLAC -lvorbisfile -lvorbis -logg -lexecinfo
-+    LIBS += -lFLAC -lvorbisfile -lvorbis -logg -lexecinfo -llz4 -lxmp
- endif
- 
- ifeq ($(PLATFORM),DARWIN)
-@@ -1306,7 +1305,7 @@ endif
+@@ -1334,7 +1334,7 @@ endif
  
  #### Final setup
  
@@ -40,7 +12,7 @@ Index: GNUmakefile
      -I$(engine_inc) \
      -I$(mact_inc) \
      -I$(audiolib_inc) \
-@@ -1315,6 +1314,7 @@ COMPILERFLAGS += \
+@@ -1344,6 +1344,7 @@ COMPILERFLAGS += \
      -I$(libsmackerdec_inc) \
      -I$(hmpplay_inc) \
      -MP -MMD \
@@ -48,11 +20,3 @@ Index: GNUmakefile
  
  ifneq (0,$(USE_PHYSFS))
      COMPILERFLAGS += -I$(physfs_inc) -DUSE_PHYSFS
-@@ -1340,7 +1340,6 @@ libraries := \
-     audiolib \
-     engine \
-     glad \
--    libxmplite \
-     mact \
-     voidwrap \
-     libsmackerdec \

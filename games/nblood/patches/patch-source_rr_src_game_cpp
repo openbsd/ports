@@ -1,4 +1,4 @@
-$OpenBSD: patch-source_rr_src_game_cpp,v 1.5 2021/08/20 04:18:41 jsg Exp $
+$OpenBSD: patch-source_rr_src_game_cpp,v 1.6 2021/12/08 03:35:42 jsg Exp $
 
 store log file in ~/.config/rednukem/
 
@@ -6,7 +6,7 @@ Index: source/rr/src/game.cpp
 --- source/rr/src/game.cpp.orig
 +++ source/rr/src/game.cpp
 @@ -8173,6 +8173,29 @@ int app_main(int argc, char const * const * argv)
-         Bfree(homedir);
+         Xfree(homedir);
      }
      else
 +#else

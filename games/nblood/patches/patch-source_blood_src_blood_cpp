@@ -1,11 +1,11 @@
-$OpenBSD: patch-source_blood_src_blood_cpp,v 1.4 2021/01/06 03:26:04 jsg Exp $
+$OpenBSD: patch-source_blood_src_blood_cpp,v 1.5 2021/12/08 03:35:42 jsg Exp $
 
 store log file in ~/.config/nblood/
 
 Index: source/blood/src/blood.cpp
 --- source/blood/src/blood.cpp.orig
 +++ source/blood/src/blood.cpp
-@@ -1555,6 +1555,29 @@ int app_main(int argc, char const * const * argv)
+@@ -1568,6 +1568,29 @@ int app_main(int argc, char const * const * argv)
          Xfree(homedir);
      }
      else
