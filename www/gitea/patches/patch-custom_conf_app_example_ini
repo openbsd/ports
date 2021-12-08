@@ -1,4 +1,4 @@
-$OpenBSD: patch-custom_conf_app_example_ini,v 1.6 2021/10/31 01:43:10 pvk Exp $
+$OpenBSD: patch-custom_conf_app_example_ini,v 1.7 2021/12/08 07:57:15 pvk Exp $
 
 Index: custom/conf/app.example.ini
 --- custom/conf/app.example.ini.orig
@@ -349,7 +349,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Whether to allow registering via OpenID
  ;; Do not include to rely on rhw DISABLE_REGISTRATION setting
-@@ -1402,7 +1402,7 @@ PATH =
+@@ -1409,7 +1409,7 @@ PATH =
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -358,7 +358,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -1419,7 +1419,7 @@ PATH =
+@@ -1426,7 +1426,7 @@ PATH =
  ;; QQ: smtp.qq.com:465
  ;; As per RFC 8314 using Implicit TLS/SMTPS on port 465 (if supported) is recommended,
  ;; otherwise STARTTLS on port 587 should be used.
@@ -367,7 +367,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Disable HELO operation when hostnames are different.
  ;DISABLE_HELO =
-@@ -1432,15 +1432,15 @@ PATH =
+@@ -1439,15 +1439,15 @@ PATH =
  ;;
  ;; Use client certificate
  ;USE_CERTIFICATE = false
@@ -386,7 +386,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Mailer user name and password
  ;; Please Note: Authentication is only supported when the SMTP server communication is encrypted with TLS (this can be via STARTTLS) or `HOST=localhost`.
-@@ -1450,13 +1450,13 @@ PATH =
+@@ -1457,13 +1457,13 @@ PATH =
  ;PASSWD =
  ;;
  ;; Send mails as plain text
@@ -402,7 +402,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Specify any extra sendmail arguments
  ;SENDMAIL_ARGS =
-@@ -1508,19 +1508,19 @@ PATH =
+@@ -1515,19 +1515,19 @@ PATH =
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -425,7 +425,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Session cookie name
  ;COOKIE_NAME = i_like_gitea
-@@ -1539,12 +1539,12 @@ PATH =
+@@ -1546,12 +1546,12 @@ PATH =
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -441,7 +441,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; How Gitea deals with missing repository avatars
  ;; none = no avatar will be displayed; random = random avatar will be displayed; image = default image will be used
-@@ -1565,7 +1565,7 @@ PATH =
+@@ -1572,7 +1572,7 @@ PATH =
  ;GRAVATAR_SOURCE = gravatar
  ;;
  ;; This value will always be true in offline mode.
@@ -450,7 +450,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Federated avatar lookup uses DNS to discover avatar associated
  ;; with emails, see https://www.libravatar.org
-@@ -1574,7 +1574,7 @@ PATH =
+@@ -1581,7 +1581,7 @@ PATH =
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -459,7 +459,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -1599,7 +1599,7 @@ PATH =
+@@ -1606,7 +1606,7 @@ PATH =
  ;SERVE_DIRECT = false
  ;;
  ;; Path for attachments. Defaults to `data/attachments` only available when STORAGE_TYPE is `local`
@@ -468,7 +468,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Minio endpoint to connect only available when STORAGE_TYPE is `minio`
  ;MINIO_ENDPOINT = localhost:9000
-@@ -1624,14 +1624,14 @@ PATH =
+@@ -1631,14 +1631,14 @@ PATH =
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -485,7 +485,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Location the UI time display i.e. Asia/Shanghai
  ;; Empty means server's location setting
-@@ -1975,14 +1975,14 @@ PATH =
+@@ -1982,14 +1982,14 @@ PATH =
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
