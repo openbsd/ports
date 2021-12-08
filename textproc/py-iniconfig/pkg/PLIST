@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/12/08 15:44:57 sthen Exp $
+lib/python${MODPY_VERSION}/site-packages/iniconfig/
+lib/python${MODPY_VERSION}/site-packages/iniconfig-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/iniconfig-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/iniconfig-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/iniconfig-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/iniconfig-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/iniconfig-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/iniconfig/__init__.py
+lib/python${MODPY_VERSION}/site-packages/iniconfig/__init__.pyi
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/iniconfig/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/iniconfig/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/iniconfig/py.typed
