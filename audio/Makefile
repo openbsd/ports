@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.470 2021/11/16 16:19:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.471 2021/12/08 20:34:34 solene Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -27,6 +27,7 @@
      SUBDIR += cmu-sphinx3
      SUBDIR += cmu-sphinxbase
      SUBDIR += cmus
+     SUBDIR += cozy
      SUBDIR += cplay
      SUBDIR += cuetools
      SUBDIR += curseradio
