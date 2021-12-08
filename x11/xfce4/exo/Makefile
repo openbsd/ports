@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.72 2021/04/12 13:38:43 landry Exp $
+# $OpenBSD: Makefile,v 1.73 2021/12/08 09:13:29 landry Exp $
 
 COMMENT=	Xfce4 extension library
 
 XFCE_PROJECT=	exo
-XFCE_VERSION=	4.16.2
+XFCE_VERSION=	4.16.3
 SHARED_LIBS=	exo-2	1.0 # 1.0
 
 HOMEPAGE=	http://www.xfce.org/projects
@@ -23,7 +23,7 @@ LIB_DEPENDS=	x11/xfce4/libxfce4ui>=4.12.0 \
 
 FAKE_FLAGS=	defaultsdir=${PREFIX}/share/examples/exo
 
-WANTLIB=	ICE SM X11 Xcomposite Xcursor Xdamage Xext \
+WANTLIB=	ICE SM X11 Xcomposite Xcursor Xdamage Xext Xau Xdmcp execinfo jpeg \
 		Xfixes Xi Xinerama Xrandr Xrender fribidi atk-1.0 c cairo expat \
 		fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		gmodule-2.0 gobject-2.0 gthread-2.0 xcb-util xfce4ui-2 \
