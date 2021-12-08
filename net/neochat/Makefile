@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/15 07:48:06 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2021/12/08 02:52:42 abieber Exp $
 
 COMMENT =	client for Matrix chat
-VERSION =	1.1.1
+VERSION =	1.2.0
 DISTNAME =	neochat-${VERSION}
-
-REVISION =	2
 
 CATEGORIES=	net
 
@@ -17,8 +15,7 @@ WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5ConfigGui KF5CoreAddons
 WANTLIB += KF5DBusAddons KF5I18n KF5Kirigami2 KF5Notifications
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Multimedia Qt5Network Qt5Qml
 WANTLIB += Qt5QmlModels Qt5Quick Qt5QuickControls2 Qt5Widgets
-WANTLIB += Qt5Xml QtOlm Quotient c cmark gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += intl m qt5keychain secret-1
+WANTLIB += Qt5Xml QtOlm Quotient c cmark m olm qt5keychain
 
 MODULES =	devel/kf5
 
@@ -31,6 +28,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 BUILD_DEPENDS = devel/gettext,-tools \
 		devel/kf5/kitemmodels \
+		devel/kf5/qqc2-desktop-style \
 		graphics/kquickimageeditor \
 		math/ecm
 
