@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_core_providers_ogr_qgsogrproviderutils_cpp,v 1.1 2021/12/08 09:26:10 landry Exp $
+
+Fix build with llvm 13
+
+https://github.com/qgis/QGIS/pull/46408
+
+Index: src/core/providers/ogr/qgsogrproviderutils.cpp
+--- src/core/providers/ogr/qgsogrproviderutils.cpp.orig
++++ src/core/providers/ogr/qgsogrproviderutils.cpp
+@@ -2311,7 +2311,7 @@ void QgsOgrProviderUtils::release( QgsOgrLayer *&layer
+ }
+ 
+ 
+-void QgsOgrProviderUtils::releaseDataset( QgsOgrDataset *&ds )
++void QgsOgrProviderUtils::releaseDataset( QgsOgrDataset *ds )
+ {
+   if ( !ds )
+     return;
+@@ -2319,7 +2319,6 @@ void QgsOgrProviderUtils::releaseDataset( QgsOgrDatase
+   QMutexLocker locker( sGlobalMutex() );
+   releaseInternal( ds->mIdent, ds->mDs, true );
+   delete ds;
+-  ds = nullptr;
+ }
+ 
+ bool QgsOgrProviderUtils::canDriverShareSameDatasetAmongLayers( const QString &driverName )

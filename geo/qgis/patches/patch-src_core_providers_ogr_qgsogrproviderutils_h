@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_core_providers_ogr_qgsogrproviderutils_h,v 1.1 2021/12/08 09:26:10 landry Exp $
+
+Fix build with llvm 13
+
+https://github.com/qgis/QGIS/pull/46408
+
+Index: src/core/providers/ogr/qgsogrproviderutils.h
+--- src/core/providers/ogr/qgsogrproviderutils.h.orig
++++ src/core/providers/ogr/qgsogrproviderutils.h
+@@ -216,7 +216,7 @@ class CORE_EXPORT QgsOgrProviderUtils
+     static void release( QgsOgrLayer *&layer );
+ 
+     //! Release a QgsOgrDataset*
+-    static void releaseDataset( QgsOgrDataset *&ds );
++    static void releaseDataset( QgsOgrDataset *ds );
+ 
+     //! Make sure that the existing pool of opened datasets on dsName is not accessible for new getLayer() attempts
+     static void invalidateCachedDatasets( const QString &dsName );
