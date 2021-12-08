@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2021/12/07 09:47:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2021/12/08 21:12:55 sthen Exp $
 
 COMMENT=	network traffic probe with web ui and deep packet inspection
 
@@ -78,6 +78,11 @@ GIT_RELEASE=		${GH_TAGNAME}
 AUTORECONF=		sh -c "GIT_RELEASE=${GIT_RELEASE} ./autogen.sh; cd nDPI; ./autogen.sh"
 
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/nDPI
+
+MODULES=	lang/lua
+MODLUA_VERSION=	5.3
+MODLUA_SA=	Yes
+MODLUA_RUNDEP=	No
 
 NO_TEST=	Yes
 
