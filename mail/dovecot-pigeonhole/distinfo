@@ -1,4 +1,2 @@
-SHA256 (dovecot-2.3-pigeonhole-0.5.16.tar.gz) = XKNngOI7meYgZEDxs/48ZZjtpbaZuZzrsV1Bi6PG6Tg=
-SHA256 (dovecot-pigeonhole-implicit_keep.patch) = jOU1OjrVv9E3/6tklCifcrmsWZ0xdA9pZs9xklPKiW8=
-SIZE (dovecot-2.3-pigeonhole-0.5.16.tar.gz) = 1944573
-SIZE (dovecot-pigeonhole-implicit_keep.patch) = 21081
+SHA256 (dovecot-2.3-pigeonhole-0.5.17.1.tar.gz) = PMSj3m1+J72ZrFm5n6oWEof3gWcnJpmiJZF5j/z4RRI=
+SIZE (dovecot-2.3-pigeonhole-0.5.17.1.tar.gz) = 1952704
