@@ -1,4 +1,4 @@
-# $OpenBSD: modules.inc,v 1.1.1.1 2021/12/08 02:30:34 abieber Exp $
+# $OpenBSD: modules.inc,v 1.2 2021/12/08 15:21:34 abieber Exp $
 
 MODGO_MODULES =	\
 	cloud.google.com/go					 v0.93.3 \
@@ -124,7 +124,7 @@ MODGO_MODULES =	\
 	github.com/stretchr/objx				 v0.1.0 \
 	github.com/stretchr/testify				 v1.7.0 \
 	github.com/subosito/gotenv				 v1.2.0 \
-	github.com/vultr/govultr/v2				 v2.11.1 \
+	github.com/vultr/govultr/v2				 v2.12.0 \
 	github.com/yuin/goldmark				 v1.3.5 \
 	go.etcd.io/etcd/api/v3					 v3.5.0 \
 	go.etcd.io/etcd/client/pkg/v3				 v3.5.0 \

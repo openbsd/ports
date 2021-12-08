@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/12/08 02:30:33 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2021/12/08 15:21:34 abieber Exp $
 
 COMMENT =	Vultr Command Line Interface
 
 MODGO_MODNAME =	github.com/vultr/vultr-cli/v2
-MODGO_VERSION =	v2.11.1
+MODGO_VERSION =	v2.11.2
 
 DISTNAME =	vultr-cli-${MODGO_VERSION}
 

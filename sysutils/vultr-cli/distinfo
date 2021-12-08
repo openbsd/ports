@@ -386,8 +386,8 @@ SHA256 (go_modules/github.com/stretchr/testify/@v/v1.7.0.mod) = //gWjZjmoHFWxFSh
 SHA256 (go_modules/github.com/stretchr/testify/@v/v1.7.0.zip) = WkbM6+/1EN8+L204Qu550/aNDnsVVM1u6TOQ1otsazQ=
 SHA256 (go_modules/github.com/subosito/gotenv/@v/v1.2.0.mod) = OuKOvx4z3mvhZyB10gVlzzpTYRiXIE4PpszXjaFiH6M=
 SHA256 (go_modules/github.com/subosito/gotenv/@v/v1.2.0.zip) = IUdN+SU2823m+R379GaZUolEXMTlpZANnECuh3a4sM8=
-SHA256 (go_modules/github.com/vultr/govultr/v2/@v/v2.11.1.mod) = ehh9qw/AcsqCb3e/IKpzXyN8QGIkrZd4uYyfcWyNmdo=
-SHA256 (go_modules/github.com/vultr/govultr/v2/@v/v2.11.1.zip) = V2IyzORahGKRKczJjOHWKRPqFmnMgQtMOFa18L3q9fM=
+SHA256 (go_modules/github.com/vultr/govultr/v2/@v/v2.12.0.mod) = ehh9qw/AcsqCb3e/IKpzXyN8QGIkrZd4uYyfcWyNmdo=
+SHA256 (go_modules/github.com/vultr/govultr/v2/@v/v2.12.0.zip) = 52sjKfcTWahzggHjlhk0rU4kHq79kpUNPVSnbJeO1UA=
 SHA256 (go_modules/github.com/yuin/goldmark/@v/v1.1.25.mod) = 4sdj+GGtoFxhUMMvgEvKMclqGLlEMg4O6bvw1sYHWtc=
 SHA256 (go_modules/github.com/yuin/goldmark/@v/v1.1.27.mod) = 4sdj+GGtoFxhUMMvgEvKMclqGLlEMg4O6bvw1sYHWtc=
 SHA256 (go_modules/github.com/yuin/goldmark/@v/v1.1.32.mod) = 4sdj+GGtoFxhUMMvgEvKMclqGLlEMg4O6bvw1sYHWtc=
@@ -831,7 +831,7 @@ SHA256 (go_modules/rsc.io/quote/v3/@v/v3.1.0.mod) = shHZ8WtVQpcPA6LmJJ30UDgwSjeh
 SHA256 (go_modules/rsc.io/quote/v3/@v/v3.1.0.zip) = tDTLv8MsF7UijQsO3erqib707JvZC1yPxVtk+M4T7rk=
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = oq5uhUCkC4XldwPMYYuZxbEHU4bZWOiZmg4tTALzpwU=
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 2iArDagDqyZhq5imgLuk9kEjoyblQMJVgrbNu53BFKo=
-SHA256 (vultr-cli-v2.11.1.zip) = 4oRSYDHLDnABmUYGzMRHJ3f15TAgtDFAoMZ57DPCzMs=
+SHA256 (vultr-cli-v2.11.2.zip) = JweR/+cMZ41lHxkB7CV8RP7A+nb0pixl6GmGWvDDtGA=
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.34.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.38.0.mod) = 1006
@@ -1220,8 +1220,8 @@ SIZE (go_modules/github.com/stretchr/testify/@v/v1.7.0.mod) = 216
 SIZE (go_modules/github.com/stretchr/testify/@v/v1.7.0.zip) = 105564
 SIZE (go_modules/github.com/subosito/gotenv/@v/v1.2.0.mod) = 34
 SIZE (go_modules/github.com/subosito/gotenv/@v/v1.2.0.zip) = 10296
-SIZE (go_modules/github.com/vultr/govultr/v2/@v/v2.11.1.mod) = 144
-SIZE (go_modules/github.com/vultr/govultr/v2/@v/v2.11.1.zip) = 86224
+SIZE (go_modules/github.com/vultr/govultr/v2/@v/v2.12.0.mod) = 144
+SIZE (go_modules/github.com/vultr/govultr/v2/@v/v2.12.0.zip) = 86284
 SIZE (go_modules/github.com/yuin/goldmark/@v/v1.1.25.mod) = 41
 SIZE (go_modules/github.com/yuin/goldmark/@v/v1.1.27.mod) = 41
 SIZE (go_modules/github.com/yuin/goldmark/@v/v1.1.32.mod) = 41
@@ -1665,4 +1665,4 @@ SIZE (go_modules/rsc.io/quote/v3/@v/v3.1.0.mod) = 55
 SIZE (go_modules/rsc.io/quote/v3/@v/v3.1.0.zip) = 2223
 SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = 88
 SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 14308
-SIZE (vultr-cli-v2.11.1.zip) = 117241
+SIZE (vultr-cli-v2.11.2.zip) = 117268
