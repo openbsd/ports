@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.216 2021/11/05 13:13:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.217 2021/12/09 09:01:37 ajacoutot Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		41.1
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -15,7 +16,7 @@ WANTLIB += edataserver-1.2 gcr-base-3 gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += girepository-1.0 gjs glib-2.0 gnome-autoar-0 gnome-desktop-3
 WANTLIB += gobject-2.0 graphene-1.0 gtk-3 gtk-4 ical-glib intl json-glib-1.0
 WANTLIB += m mutter-9 pango-1.0 pangocairo-1.0 polkit-agent-1
-WANTLIB += polkit-gobject-1 pulse pulse-mainloop-glib gmodule-2.0
+WANTLIB += polkit-gobject-1 pulse pulse-mainloop-glib
 WANTLIB += lib/mutter-9/mutter-clutter-9
 WANTLIB += lib/mutter-9/mutter-cogl-9
 WANTLIB += lib/mutter-9/mutter-cogl-pango-9
