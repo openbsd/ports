@@ -1,4 +1,4 @@
-$OpenBSD: patch-vulkaninfo_vulkaninfo_h,v 1.3 2021/10/16 14:50:40 thfr Exp $
+$OpenBSD: patch-vulkaninfo_vulkaninfo_h,v 1.4 2021/12/09 04:48:32 thfr Exp $
 
 Index: vulkaninfo/vulkaninfo.h
 --- vulkaninfo/vulkaninfo.h.orig
@@ -46,7 +46,7 @@ Index: vulkaninfo/vulkaninfo.h
      void *library;
  #elif defined(_WIN32)
      HMODULE library;
-@@ -1753,4 +1753,4 @@ std::unordered_map<PropFlags, std::vector<VkFormat>> F
+@@ -1765,4 +1765,4 @@ std::unordered_map<PropFlags, std::vector<VkFormat>> F
          }
      }
      return map;

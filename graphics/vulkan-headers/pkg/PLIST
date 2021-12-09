@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/10/16 14:50:40 thfr Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/12/09 04:48:31 thfr Exp $
 include/vk_video/
 include/vk_video/vulkan_video_codec_h264std.h
 include/vk_video/vulkan_video_codec_h264std_decode.h
 include/vk_video/vulkan_video_codec_h264std_encode.h
 include/vk_video/vulkan_video_codec_h265std.h
 include/vk_video/vulkan_video_codec_h265std_decode.h
+include/vk_video/vulkan_video_codec_h265std_encode.h
 include/vk_video/vulkan_video_codecs_common.h
 include/vulkan/
 include/vulkan/vk_icd.h

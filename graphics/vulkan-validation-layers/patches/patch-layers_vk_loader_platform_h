@@ -1,4 +1,4 @@
-$OpenBSD: patch-layers_vk_loader_platform_h,v 1.2 2020/07/07 08:08:08 thfr Exp $
+$OpenBSD: patch-layers_vk_loader_platform_h,v 1.3 2021/12/09 04:48:32 thfr Exp $
 
 Index: layers/vk_loader_platform.h
 --- layers/vk_loader_platform.h.orig
@@ -7,8 +7,17 @@ Index: layers/vk_loader_platform.h
  #undef NOMINMAX
  #include "vulkan/vk_sdk_platform.h"
  
--#if defined(__linux__) || defined(__APPLE__)
-+#if defined(__linux__) || defined(__APPLE__) || defined(__unix__)
+-#if defined(__linux__) || defined(__APPLE__) || defined(__FreeBSD__)
++#if defined(__unix__) || defined(__APPLE__) || defined(__FreeBSD__)
  /* Linux-specific common code: */
  
  // Headers:
+@@ -145,7 +145,7 @@ static inline void loader_platform_thread_cond_broadca
+ 
+ #define loader_stack_alloc(size) alloca(size)
+ 
+-#elif defined(_WIN32)  // defined(__linux__)
++#elif defined(_WIN32)  // defined(__unix__)
+ /* Windows-specific common code: */
+ // WinBase.h defines CreateSemaphore and synchapi.h defines CreateEvent
+ //  undefine them to avoid conflicts with VkLayerDispatchTable struct members.

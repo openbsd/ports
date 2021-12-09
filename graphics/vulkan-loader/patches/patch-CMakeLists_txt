@@ -1,9 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.6 2021/10/16 14:50:40 thfr Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.7 2021/12/09 04:48:32 thfr Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -100,13 +100,13 @@ set(LOADER_HELPER_FOLDER "Helper Targets")
+@@ -188,13 +188,13 @@ set(LOADER_HELPER_FOLDER "Helper Targets")
  
  if(UNIX)
      set(
@@ -19,7 +19,7 @@ Index: CMakeLists.txt
          CACHE
              STRING
              "Search path to use when XDG_DATA_DIRS is unset or empty or the current process is SUID/SGID. Default is freedesktop compliant."
-@@ -128,6 +128,7 @@ if(UNIX AND NOT APPLE) # i.e.: Linux
+@@ -216,6 +216,7 @@ if(UNIX AND NOT APPLE) # i.e.: Linux
  
      if(BUILD_WSI_XCB_SUPPORT)
          find_package(XCB REQUIRED)

@@ -1,0 +1,21 @@
+$OpenBSD: patch-loader_get_environment_c,v 1.1 2021/12/09 04:48:32 thfr Exp $
+
+Index: loader/get_environment.c
+--- loader/get_environment.c.orig
++++ loader/get_environment.c
+@@ -37,7 +37,7 @@
+ #endif  // !defined(VULKAN_NON_CMAKE_BUILD)
+ 
+ // Environment variables
+-#if defined(__linux__) || defined(__APPLE__) || defined(__Fuchsia__) || defined(__QNXNTO__) || defined(__FreeBSD__)
++#if defined(__unix__) || defined(__APPLE__) || defined(__Fuchsia__) || defined(__QNXNTO__) || defined(__FreeBSD__)
+ 
+ bool is_high_integrity() { return geteuid() != getuid() || getegid() != getgid(); }
+ 
+@@ -169,4 +169,4 @@ void loader_free_getenv(char *val, const struct loader
+     (void)inst;
+ }
+ 
+-#endif
+\ No newline at end of file
++#endif

@@ -1,27 +1,65 @@
-$OpenBSD: patch-loader_vk_loader_platform_h,v 1.4 2021/06/29 03:48:21 thfr Exp $
+$OpenBSD: patch-loader_vk_loader_platform_h,v 1.5 2021/12/09 04:48:32 thfr Exp $
 
 stub loader_platform_executable_path()
 
 Index: loader/vk_loader_platform.h
 --- loader/vk_loader_platform.h.orig
 +++ loader/vk_loader_platform.h
-@@ -35,7 +35,7 @@
- #include "vulkan/vk_platform.h"
- #include "vulkan/vk_sdk_platform.h"
+@@ -42,7 +42,7 @@
+ #include "dlopen_fuchsia.h"
+ #endif  // defined(__Fuchsia__)
  
--#if defined(__linux__) || defined(__APPLE__) || defined(__Fuchsia__) || defined(__QNXNTO__)
-+#if defined(__unix__) || defined(__APPLE__) || defined(__Fuchsia__) || defined(__QNXNTO__)
+-#if defined(__linux__) || defined(__APPLE__) || defined(__Fuchsia__) || defined(__QNXNTO__) || defined(__FreeBSD__)
++#if defined(__unix__) || defined(__APPLE__) || defined(__Fuchsia__) || defined(__QNXNTO__) || defined(__FreeBSD__)
+ #include <unistd.h>
+ // Note: The following file is for dynamic loading:
+ #include <dlfcn.h>
+@@ -50,7 +50,7 @@
+ #include <stdlib.h>
+ #include <libgen.h>
+ 
+-#elif defined(_WIN32)  // defined(__linux__)
++#elif defined(_WIN32)  // defined(__unix__)
+ /* Windows-specific common code: */
+ // WinBase.h defines CreateSemaphore and synchapi.h defines CreateEvent
+ //  undefine them to avoid conflicts with VkLayerDispatchTable struct members.
+@@ -102,7 +102,7 @@
+ // Override layer information
+ #define VK_OVERRIDE_LAYER_NAME "VK_LAYER_LUNARG_override"
+ 
+-#if defined(__linux__) || defined(__APPLE__) || defined(__Fuchsia__) || defined(__QNXNTO__) || defined(__FreeBSD__)
++#if defined(__unix__) || defined(__APPLE__) || defined(__Fuchsia__) || defined(__QNXNTO__) || defined(__FreeBSD__)
  /* Linux-specific common code: */
  
- // Headers:
-@@ -121,6 +121,10 @@ static inline char *loader_platform_executable_path(ch
-     if (ret <= 0) return NULL;
-     buffer[ret] = '\0';
+ // VK Library Filenames, Paths, etc.:
+@@ -156,7 +156,7 @@ static inline bool loader_platform_is_path_absolute(co
+ 
+ static inline char *loader_platform_dirname(char *path) { return dirname(path); }
+ 
+-#if defined(__linux__)
++#if defined(__unix__)
+ 
+ // find application path + name. Path cannot be longer than 1024, returns NULL if it is greater than that.
+ static inline char *loader_platform_executable_path(char *buffer, size_t size) {
+@@ -166,7 +166,11 @@ static inline char *loader_platform_executable_path(ch
+     buffer[count] = '\0';
      return buffer;
-+}
+ }
+-#elif defined(__APPLE__) // defined(__linux__)
 +#elif defined(__OpenBSD__) // defined(__APPLE__)
 +static inline char *loader_platform_executable_path(char *buffer, size_t size) {
 +    return NULL;
++}
++#elif defined(__APPLE__) // defined(__unix__)
+ #include <libproc.h>
+ static inline char *loader_platform_executable_path(char *buffer, size_t size) {
+     pid_t pid = getpid();
+@@ -293,7 +297,7 @@ static inline void loader_platform_thread_cond_wait(lo
  }
- #elif defined(__Fuchsia__)
- static inline char *loader_platform_executable_path(char *buffer, size_t size) { return NULL; }
+ static inline void loader_platform_thread_cond_broadcast(loader_platform_thread_cond *pCond) { pthread_cond_broadcast(pCond); }
+ 
+-#elif defined(_WIN32)  // defined(__linux__)
++#elif defined(_WIN32)  // defined(__unix__)
+ 
+ // VK Library Filenames, Paths, etc.:
+ #define PATH_SEPARATOR ';'

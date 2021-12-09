@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2021/10/16 14:50:40 thfr Exp $
+# $OpenBSD: Makefile,v 1.10 2021/12/09 04:48:31 thfr Exp $
 
 COMMENT =	API and commands for processing SPIR-V
 
-V =		2021.3
+V =		2021.4
 DISTNAME =	spirv-tools-${V}
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	SPIRV-Tools

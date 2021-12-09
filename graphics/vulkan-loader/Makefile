@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.13 2021/10/16 14:50:40 thfr Exp $
+# $OpenBSD: Makefile,v 1.14 2021/12/09 04:48:32 thfr Exp $
 
 COMMENT =	Vulkan ICD loader
 
-V =		1.2.189.1
+V =		1.2.198.0
 PKGNAME =	vulkan-loader-${V}
 GH_TAGNAME =	sdk-${V}
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	Vulkan-Loader
 
-SHARED_LIBS +=	vulkan	0.1 # 1.2
+SHARED_LIBS +=	vulkan	1.0 # 1.2.198
 
 CATEGORIES =	devel graphics
 

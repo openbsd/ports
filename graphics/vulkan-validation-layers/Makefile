@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2021/12/02 08:32:30 jca Exp $
+# $OpenBSD: Makefile,v 1.11 2021/12/09 04:48:32 thfr Exp $
 
 COMMENT =	Vulkan Validation Layers
 
-V =		1.2.189.1
+V =		1.2.198.0
 PKGNAME =	vulkan-validation-layers-${V}
 GH_TAGNAME =	sdk-${V}
 GH_ACCOUNT =	KhronosGroup

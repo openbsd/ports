@@ -1,9 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2021/10/16 14:50:41 thfr Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2021/12/09 04:48:32 thfr Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -156,6 +156,7 @@ if(UNIX AND NOT APPLE) # i.e. Linux
+@@ -153,6 +153,7 @@ if(UNIX AND NOT APPLE) # i.e. Linux
  
      if(BUILD_WSI_XCB_SUPPORT)
          find_package(XCB REQUIRED)
