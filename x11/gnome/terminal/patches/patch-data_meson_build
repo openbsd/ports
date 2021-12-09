@@ -1,4 +1,4 @@
-$OpenBSD: patch-data_meson_build,v 1.1 2021/10/31 13:31:50 jasper Exp $
+$OpenBSD: patch-data_meson_build,v 1.2 2021/12/09 09:28:05 ajacoutot Exp $
 
 Fix build with meson >= 0.0.60
 
@@ -29,10 +29,3 @@ Index: data/meson.build
    input: gt_dns_name + '.desktop.in',
    output: '@BASENAME@',
    type: 'desktop',
-@@ -57,4 +54,4 @@ meson.add_install_script(
- 
- # Subdirs
- 
--subdir('icons')
-\ No newline at end of file
-+subdir('icons')
