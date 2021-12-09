@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2021/02/04 19:23:58 bket Exp $
+@comment $OpenBSD: PLIST,v 1.16 2021/12/09 23:18:02 sthen Exp $
 @newgroup _privoxy:516
 @newuser _privoxy:516:_privoxy:daemon:Privoxy Account:/var/privoxy:/sbin/nologin
 @rcscript ${RCDIR}/privoxy
@@ -57,287 +57,105 @@ share/doc/privoxy/user-manual/startup.html
 share/doc/privoxy/user-manual/templates.html
 share/doc/privoxy/user-manual/whatsnew.html
 share/examples/privoxy/
-@sample ${SYSCONFDIR}/privoxy/
+@sample ${PRIVOXYCONF}/
+@owner _privoxy
+@group _privoxy
 share/examples/privoxy/config
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/config
-@owner
-@group
+@sample ${PRIVOXYCONF}/config
 share/examples/privoxy/default.action
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/default.action
-@owner
-@group
+@sample ${PRIVOXYCONF}/default.action
 share/examples/privoxy/default.filter
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/default.filter
-@owner
-@group
+@sample ${PRIVOXYCONF}/default.filter
 share/examples/privoxy/match-all.action
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/match-all.action
-@owner
-@group
+@sample ${PRIVOXYCONF}/match-all.action
 share/examples/privoxy/regression-tests.action
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/regression-tests.action
-@owner
-@group
+@sample ${PRIVOXYCONF}/regression-tests.action
 share/examples/privoxy/templates/
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/
 share/examples/privoxy/templates/blocked
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/blocked
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/blocked
 share/examples/privoxy/templates/cgi-error-404
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/cgi-error-404
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/cgi-error-404
 share/examples/privoxy/templates/cgi-error-bad-param
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/cgi-error-bad-param
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/cgi-error-bad-param
 share/examples/privoxy/templates/cgi-error-disabled
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/cgi-error-disabled
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/cgi-error-disabled
 share/examples/privoxy/templates/cgi-error-file
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/cgi-error-file
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/cgi-error-file
 share/examples/privoxy/templates/cgi-error-file-read-only
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/cgi-error-file-read-only
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/cgi-error-file-read-only
 share/examples/privoxy/templates/cgi-error-modified
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/cgi-error-modified
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/cgi-error-modified
 share/examples/privoxy/templates/cgi-error-parse
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/cgi-error-parse
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/cgi-error-parse
 share/examples/privoxy/templates/cgi-style.css
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/cgi-style.css
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/cgi-style.css
 share/examples/privoxy/templates/client-tags
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/client-tags
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/client-tags
 share/examples/privoxy/templates/connect-failed
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/connect-failed
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/connect-failed
 share/examples/privoxy/templates/connection-timeout
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/connection-timeout
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/connection-timeout
 share/examples/privoxy/templates/default
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/default
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/default
 share/examples/privoxy/templates/edit-actions-add-url-form
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/edit-actions-add-url-form
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/edit-actions-add-url-form
 share/examples/privoxy/templates/edit-actions-for-url
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/edit-actions-for-url
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/edit-actions-for-url
 share/examples/privoxy/templates/edit-actions-for-url-filter
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/edit-actions-for-url-filter
-@owner
-@group
-share/examples/privoxy/templates/edit-actions-for-url-string-filter
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/edit-actions-for-url-string-filter
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/edit-actions-for-url-filter
+share/examples/privoxy/templates/edit-actions-for-url-string-action
+@sample ${PRIVOXYCONF}/templates/edit-actions-for-url-string-action
 share/examples/privoxy/templates/edit-actions-list
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/edit-actions-list
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/edit-actions-list
 share/examples/privoxy/templates/edit-actions-list-button
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/edit-actions-list-button
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/edit-actions-list-button
 share/examples/privoxy/templates/edit-actions-list-section
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/edit-actions-list-section
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/edit-actions-list-section
 share/examples/privoxy/templates/edit-actions-list-url
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/edit-actions-list-url
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/edit-actions-list-url
 share/examples/privoxy/templates/edit-actions-remove-url-form
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/edit-actions-remove-url-form
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/edit-actions-remove-url-form
 share/examples/privoxy/templates/edit-actions-url-form
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/edit-actions-url-form
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/edit-actions-url-form
 share/examples/privoxy/templates/forwarding-failed
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/forwarding-failed
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/forwarding-failed
 share/examples/privoxy/templates/mod-local-help
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/mod-local-help
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/mod-local-help
 share/examples/privoxy/templates/mod-support-and-service
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/mod-support-and-service
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/mod-support-and-service
 share/examples/privoxy/templates/mod-title
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/mod-title
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/mod-title
 share/examples/privoxy/templates/mod-unstable-warning
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/mod-unstable-warning
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/mod-unstable-warning
 share/examples/privoxy/templates/no-server-data
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/no-server-data
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/no-server-data
 share/examples/privoxy/templates/no-such-domain
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/no-such-domain
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/no-such-domain
 share/examples/privoxy/templates/show-request
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/show-request
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/show-request
 share/examples/privoxy/templates/show-status
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/show-status
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/show-status
 share/examples/privoxy/templates/show-status-file
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/show-status-file
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/show-status-file
 share/examples/privoxy/templates/show-url-info
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/show-url-info
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/show-url-info
 share/examples/privoxy/templates/toggle
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/toggle
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/toggle
 share/examples/privoxy/templates/toggle-mini
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/toggle-mini
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/toggle-mini
 share/examples/privoxy/templates/untrusted
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/untrusted
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/untrusted
 share/examples/privoxy/templates/url-info-osd.xml
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/templates/url-info-osd.xml
-@owner
-@group
+@sample ${PRIVOXYCONF}/templates/url-info-osd.xml
+share/examples/privoxy/templates/wpad.dat
+@sample ${PRIVOXYCONF}/templates/wpad.dat
 share/examples/privoxy/trust
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/trust
-@owner
-@group
+@sample ${PRIVOXYCONF}/trust
 share/examples/privoxy/user.action
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/user.action
-@owner
-@group
+@sample ${PRIVOXYCONF}/user.action
 share/examples/privoxy/user.filter
-@owner _privoxy
-@group _privoxy
-@sample ${SYSCONFDIR}/privoxy/user.filter
+@sample ${PRIVOXYCONF}/user.filter
 @sample /var/privoxy/
 @mode 775
 @owner

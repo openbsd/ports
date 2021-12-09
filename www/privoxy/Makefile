@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2021/02/28 11:43:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2021/12/09 23:18:02 sthen Exp $
 
 COMMENT=	web proxy with advanced filtering capabilities
 
-V=		3.0.32
+V=		3.0.33
 DISTNAME=	privoxy-${V}-stable
 PKGNAME=	privoxy-${V}
 CATEGORIES=	www
@@ -33,6 +33,8 @@ CONFIGURE_ARGS=	--with-docbook=no \
 		--with-openssl
 CONFIGURE_ENV=	CPPFLAGS="-Dunix -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+PRIVOXYCONF=	${SYSCONFDIR}/privoxy/
+SUBST_VARS=	PRIVOXYCONF
 
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mclang}
