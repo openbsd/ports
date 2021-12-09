@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.112 2021/10/09 22:05:09 jca Exp $
+# $OpenBSD: Makefile,v 1.113 2021/12/09 20:41:03 sdk Exp $
 
 ONLY_FOR_ARCHS=	amd64 aarch64
 
 COMMENT=	virtual lighttable and darkroom for photographers
 
-V=		3.6.0
+V=		3.6.1
 DISTNAME=	darktable-$V
 PORTROACH=	limitw:1,even skipv:release-$V
 EXTRACT_SUFX=	.tar.xz
-REVISION=	1
 
 CATEGORIES=	graphics x11
 
@@ -20,7 +19,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB}
 WANTLIB += GraphicsMagick ICE Iex-3_1 IlmThread-3_1
 WANTLIB += Imath-3_1 SM X11 Xext Xrandr atk-1.0 avif c cairo cairo-gobject
-WANTLIB += cups curl exiv2 gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += curl exiv2 gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gphoto2 gphoto2_port gthread-2.0
 WANTLIB += gtk-3 harfbuzz intl jpeg json-glib-1.0 lcms2 lensfun
 WANTLIB += m openjp2 osmgpsmap-1.0 pango-1.0 pangocairo-1.0 png
