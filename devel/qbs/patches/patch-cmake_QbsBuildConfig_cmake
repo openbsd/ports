@@ -1,0 +1,15 @@
+$OpenBSD: patch-cmake_QbsBuildConfig_cmake,v 1.1 2021/12/09 05:53:50 rsadowski Exp $
+
+Do not install tests
+
+Index: cmake/QbsBuildConfig.cmake
+--- cmake/QbsBuildConfig.cmake.orig
++++ cmake/QbsBuildConfig.cmake
+@@ -249,6 +249,6 @@ function(add_qbs_test test_name)
+         INSTALL_RPATH "${QBS_APP_RPATH}"
+         MACOSX_RPATH ${QBS_MACOSX_RPATH}
+         )
+-    install(TARGETS ${target_name} RUNTIME DESTINATION ${QBS_APP_INSTALL_DIR})
++    #install(TARGETS ${target_name} RUNTIME DESTINATION ${QBS_APP_INSTALL_DIR})
+     add_test(NAME ${target_name} COMMAND ${target_name})
+ endfunction()

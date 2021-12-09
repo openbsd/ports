@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/12/06 07:46:45 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/12/09 05:53:50 rsadowski Exp $
 @conflict qt-creator-<=4.3.1p1
 @bin bin/qbs
 @bin bin/qbs-config
@@ -7,6 +7,8 @@
 @bin bin/qbs-setup-android
 @bin bin/qbs-setup-qt
 @bin bin/qbs-setup-toolchains
+@bin bin/qbs_benchmarker
+@bin bin/qbs_fuzzy-test
 include/qbs/
 include/qbs/api/
 include/qbs/api/jobs.h
@@ -28,66 +30,27 @@ include/qbs/logging/ilogsink.h
 include/qbs/qbs.h
 include/qbs/qbs_version.pri
 include/qbs/tools/
-include/qbs/tools/applecodesignutils.h
 include/qbs/tools/architectures.h
-include/qbs/tools/buildgraphlocker.h
 include/qbs/tools/buildoptions.h
-include/qbs/tools/clangclinfo.h
 include/qbs/tools/cleanoptions.h
 include/qbs/tools/codelocation.h
 include/qbs/tools/commandechomode.h
-include/qbs/tools/dynamictypecheck.h
 include/qbs/tools/error.h
-include/qbs/tools/executablefinder.h
-include/qbs/tools/fileinfo.h
-include/qbs/tools/filesaver.h
-include/qbs/tools/filetime.h
 include/qbs/tools/generateoptions.h
-include/qbs/tools/hostosinfo.h
-include/qbs/tools/id.h
 include/qbs/tools/installoptions.h
-include/qbs/tools/iosutils.h
 include/qbs/tools/joblimits.h
-include/qbs/tools/jsliterals.h
-include/qbs/tools/jsonhelper.h
-include/qbs/tools/launcherinterface.h
-include/qbs/tools/launcherpackets.h
-include/qbs/tools/launchersocket.h
-include/qbs/tools/msvcinfo.h
-include/qbs/tools/pathutils.h
-include/qbs/tools/persistence.h
 include/qbs/tools/preferences.h
 include/qbs/tools/processresult.h
-include/qbs/tools/processresult_p.h
-include/qbs/tools/processutils.h
 include/qbs/tools/profile.h
-include/qbs/tools/profiling.h
-include/qbs/tools/progressobserver.h
 include/qbs/tools/projectgeneratormanager.h
 include/qbs/tools/qbs_export.h
-include/qbs/tools/qbsassert.h
-include/qbs/tools/qbspluginmanager.h
-include/qbs/tools/qbsprocess.h
-include/qbs/tools/qttools.h
-include/qbs/tools/scannerpluginmanager.h
-include/qbs/tools/scripttools.h
-include/qbs/tools/set.h
 include/qbs/tools/settings.h
-include/qbs/tools/settingscreator.h
 include/qbs/tools/settingsmodel.h
 include/qbs/tools/settingsrepresentation.h
 include/qbs/tools/setupprojectparameters.h
-include/qbs/tools/shellutils.h
-include/qbs/tools/stlutils.h
-include/qbs/tools/stringconstants.h
-include/qbs/tools/stringutils.h
 include/qbs/tools/toolchains.h
 include/qbs/tools/version.h
-include/qbs/tools/visualstudioversioninfo.h
-include/qbs/tools/vsenvironmentdetector.h
-include/qbs/tools/weakpointer.h
 include/qbs/use_installed_corelib.pri
-lib/libqbscore.prl
 @lib lib/libqbscore.so.${LIBqbscore_VERSION}
 lib/qbs/
 lib/qbs/plugins/
@@ -101,7 +64,6 @@ lib/qbs/plugins/
 libexec/qbs/
 libexec/qbs/dmgbuild
 @bin libexec/qbs/qbs_processlauncher
-@man man/man1/qbs.1
 share/qbs/
 share/qbs/examples/
 share/qbs/examples/app-and-lib/
@@ -699,3 +661,6 @@ share/qbs/python/mac_alias/alias.py
 share/qbs/python/mac_alias/bookmark.py
 share/qbs/python/mac_alias/osx.py
 share/qbs/python/mac_alias/utils.py
+share/qbs/qml-type-descriptions/
+share/qbs/qml-type-descriptions/qbs-bundle.json
+share/qbs/qml-type-descriptions/qbs.qmltypes
