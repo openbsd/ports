@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2021/11/02 00:02:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2021/12/09 09:13:21 ajacoutot Exp $
 
 COMMENT=		python bindings for at-spi2
 
 GNOME_PROJECT=		pyatspi
-GNOME_VERSION=		2.38.1
+GNOME_VERSION=		2.38.2
 PKGNAME=		py-atspi-${GNOME_VERSION}
-REVISION=		0
 
 HOMEPAGE=		https://wiki.linuxfoundation.org/en/AT-SPI_on_D-Bus
 
