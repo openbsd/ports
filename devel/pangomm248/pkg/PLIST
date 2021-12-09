@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/12/19 18:06:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/12/09 09:51:00 ajacoutot Exp $
 include/pangomm-2.48/
 include/pangomm-2.48/pangomm/
 include/pangomm-2.48/pangomm.h
@@ -6,6 +6,7 @@ include/pangomm-2.48/pangomm/attributes.h
 include/pangomm-2.48/pangomm/attriter.h
 include/pangomm-2.48/pangomm/attrlist.h
 include/pangomm-2.48/pangomm/cairofontmap.h
+include/pangomm-2.48/pangomm/cairofontmapimpl.h
 include/pangomm-2.48/pangomm/color.h
 include/pangomm-2.48/pangomm/context.h
 include/pangomm-2.48/pangomm/coverage.h
