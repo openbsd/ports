@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2021/11/25 08:25:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.76 2021/12/09 08:27:43 ajacoutot Exp $
 
 # when gtk+4 support is added, split into multi packages (gtk+{2,3,4})
 
@@ -16,7 +16,7 @@ PKGNAME-gtk4 =		ibus-gtk4-${GH_TAGNAME}
 
 REVISION-main =		4
 REVISION-gtk2 =		2
-REVISION-gtk4 =		2
+REVISION-gtk4 =		3
 
 SHARED_LIBS +=  ibus-1.0             4.3      # 5.525
 
@@ -46,7 +46,7 @@ WANTLIB-gtk2 += Xcomposite
 
 WANTLIB-gtk4 += ${WANTLIB}
 WANTLIB-gtk4 += cairo-gobject cairo-script-interpreter dbus-1 epoxy
-WANTLIB-gtk4 += graphene-1.0 gtk-4 ibus-1.0 lzo2
+WANTLIB-gtk4 += graphene-1.0 gtk-4 ibus-1.0 lzo2 lzma tiff zstd
 
 MODULES =		devel/dconf \
 			lang/python \
