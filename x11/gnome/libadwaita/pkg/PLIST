@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/11/02 20:10:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/12/09 08:27:23 ajacoutot Exp $
 @bin bin/adwaita-1-demo
 include/libadwaita-1/
 include/libadwaita-1/adw-action-row.h
+include/libadwaita-1/adw-animation-target.h
 include/libadwaita-1/adw-animation-util.h
+include/libadwaita-1/adw-animation.h
 include/libadwaita-1/adw-application-window.h
 include/libadwaita-1/adw-application.h
 include/libadwaita-1/adw-avatar.h
@@ -16,6 +18,7 @@ include/libadwaita-1/adw-clamp-scrollable.h
 include/libadwaita-1/adw-clamp.h
 include/libadwaita-1/adw-combo-row.h
 include/libadwaita-1/adw-deprecation-macros.h
+include/libadwaita-1/adw-easing.h
 include/libadwaita-1/adw-enum-list-model.h
 include/libadwaita-1/adw-enums.h
 include/libadwaita-1/adw-expander-row.h
@@ -30,6 +33,8 @@ include/libadwaita-1/adw-preferences-page.h
 include/libadwaita-1/adw-preferences-row.h
 include/libadwaita-1/adw-preferences-window.h
 include/libadwaita-1/adw-split-button.h
+include/libadwaita-1/adw-spring-animation.h
+include/libadwaita-1/adw-spring-params.h
 include/libadwaita-1/adw-squeezer.h
 include/libadwaita-1/adw-status-page.h
 include/libadwaita-1/adw-style-manager.h
@@ -37,6 +42,9 @@ include/libadwaita-1/adw-swipe-tracker.h
 include/libadwaita-1/adw-swipeable.h
 include/libadwaita-1/adw-tab-bar.h
 include/libadwaita-1/adw-tab-view.h
+include/libadwaita-1/adw-timed-animation.h
+include/libadwaita-1/adw-toast-overlay.h
+include/libadwaita-1/adw-toast.h
 include/libadwaita-1/adw-version.h
 include/libadwaita-1/adw-view-stack.h
 include/libadwaita-1/adw-view-switcher-bar.h
@@ -76,6 +84,7 @@ share/locale/pl/LC_MESSAGES/libadwaita.mo
 share/locale/pt/LC_MESSAGES/libadwaita.mo
 share/locale/pt_BR/LC_MESSAGES/libadwaita.mo
 share/locale/ro/LC_MESSAGES/libadwaita.mo
+share/locale/ru/LC_MESSAGES/libadwaita.mo
 share/locale/sl/LC_MESSAGES/libadwaita.mo
 share/locale/sr/LC_MESSAGES/libadwaita.mo
 share/locale/sv/LC_MESSAGES/libadwaita.mo
