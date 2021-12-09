@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2021/03/12 21:13:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2021/12/09 14:07:21 sthen Exp $
 
 COMMENT=		SysV mail/BSD Mail/POSIX mailx: send and receive mail
 
-DISTNAME=		s-nail-14.9.22
-REVISION=		0
+DISTNAME=		s-nail-14.9.23
 CATEGORIES=		mail
 HOMEPAGE=		https://www.sdaoden.eu/code.html\#s-mailx
 
@@ -27,6 +26,7 @@ MAKE_FLAGS=		CC="${CC}" EXTRA_CFLAGS="${CFLAGS}" \
 			VAL_SYSCONFDIR="${SYSCONFDIR}" \
 			VAL_SID= \
 			OPT_ALWAYS_UNICODE_LOCALE=yes \
+			OPT_AUTOCC=no \
 			OPT_DOTLOCK=no \
 			VAL_RANDOM=arc4
 
