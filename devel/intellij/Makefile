@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.78 2021/10/17 13:06:59 kn Exp $
+# $OpenBSD: Makefile,v 1.79 2021/12/09 23:25:51 abieber Exp $
 
 COMMENT=		IntelliJ IDEA Java IDE
 
-V=			2021.2.3
-REVISION=		0
+V=			2021.3
 DISTNAME=		ideaIC-${V}-no-jbr
 PKGNAME=		intellij-${V}
 CATEGORIES=		devel
@@ -26,7 +25,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 
 NO_TEST=		Yes
 
-WRKDIST=	${WRKDIR}/idea-IC-212.5457.46
+WRKDIST=	${WRKDIR}/idea-IC-213.5744.223
 IJ=			${PREFIX}/intellij
 
 # If NO_BUILD is set, JAVA_HOME doesn't get defined. So do
@@ -39,6 +38,12 @@ do-install:
 	@cd ${WRKDIST} && pax -rw . ${IJ}
 	@rm -rf ${IJ}/bin/libdbm64.so
 	@rm -rf ${IJ}/plugins/android
+.for PLUGIN in darwin-x86-64 darwin-aarch64 win32-x86-64
+	@rm -rf ${IJ}/plugins/cwm-plugin/quiche-native/${PLUGIN}
+.endfor
+.for PLUGIN in windows32 windows64 osx
+	@rm -rf ${IJ}/plugins/maven/lib/maven3/lib/jansi-native/${PLUGIN}
+.endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 .for PROG in idea idea-lightedit
 	@${SUBST_PROGRAM} ${FILESDIR}/${PROG} ${PREFIX}/bin/${PROG}
