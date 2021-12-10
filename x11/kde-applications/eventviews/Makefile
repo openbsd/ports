@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.7 2021/09/10 08:43:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2021/12/10 06:53:00 rsadowski Exp $
 
 COMMENT =	KDE PIM library for creating events
 DISTNAME =	eventviews-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  KF5EventViews       4.0 # 5.13.2
 
-WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCalendar KF5AkonadiContact
-WANTLIB += KF5AkonadiCore KF5AkonadiWidgets KF5Auth KF5AuthCore
-WANTLIB += KF5CalendarCore KF5CalendarSupport KF5CalendarUtils
-WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5GuiAddons
-WANTLIB += KF5Holidays KF5I18n KF5IconThemes KF5IdentityManagement
-WANTLIB += KF5ItemModels KF5Libkdepim KF5Mime
+WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCalendar KF5AkonadiCore
+WANTLIB += KF5AkonadiWidgets KF5Auth KF5AuthCore KF5CalendarCore
+WANTLIB += KF5CalendarSupport KF5CalendarUtils KF5Codecs KF5Completion
+WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5Contacts
+WANTLIB += KF5CoreAddons KF5GuiAddons KF5Holidays KF5I18n KF5IconThemes
+WANTLIB += KF5IdentityManagement KF5ItemModels KF5Libkdepim KF5Mime
 WANTLIB += KF5PimTextEdit KF5Service KF5WidgetsAddons KGantt Qt5Core
-WANTLIB += Qt5Gui Qt5PrintSupport Qt5Widgets Qt5Xml c m
+WANTLIB += Qt5Gui Qt5PrintSupport Qt5Widgets Qt5Xml m
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
