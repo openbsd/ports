@@ -1,23 +1,38 @@
-$OpenBSD: patch-contrib_scripts_ast_coredumper,v 1.1 2021/11/02 12:47:10 sthen Exp $
+$OpenBSD: patch-contrib_scripts_ast_coredumper,v 1.2 2021/12/10 11:19:51 sthen Exp $
 
 Index: contrib/scripts/ast_coredumper
 --- contrib/scripts/ast_coredumper.orig
 +++ contrib/scripts/ast_coredumper
-@@ -250,7 +250,7 @@ EOF
+@@ -16,7 +16,8 @@ source <(sed -n -r -e "/^#@@@FUNCSSTART@@@/,\${p;/^#@@
  
- # For *BSD, the preferred gdb may be in /usr/local/bin so we
- # need to search for one that supports python.
--for g in $(which -a gdb) ; do
-+for g in $(which -a egdb; which -a gdb) ; do
- 	result=$($g --batch --ex "python print('hello')" 2>/dev/null || : )
- 	if [[ "$result" =~ ^hello$ ]] ; then
- 		GDB=$g
-@@ -271,7 +271,7 @@ if [ -n "$OUTPUTDIR" ] ; then
- fi
+ # The "!(*.txt)" is a bash construct that excludes files ending with .txt
+ # from the glob match.
+-declare -a COREDUMPS=( /tmp/core!(*.txt) )
++#declare -a COREDUMPS=( /tmp/core!(*.txt) )
++declare -a COREDUMPS=( /var/crash/asterisk/*.core /tmp/asterisk.core )
  
- if [ ${#COREDUMPS[@]} -eq 0 ] ; then
--	COREDUMPS+=(/tmp/core[-._]asterisk!(*.txt) /tmp/core[-._]$(hostname)!(*.txt))
-+	COREDUMPS+=(/var/crash/asterisk/*.core /tmp/asterisk.core)
- fi
+ # A line starting with ': ' is a POSIX construct that makes the shell
+ # perform the operation but ignore the result.  This is an alternative to
+@@ -27,7 +28,7 @@ declare -a COREDUMPS=( /tmp/core!(*.txt) )
+ : ${DELETE_COREDUMPS_AFTER:=false}
+ : ${DELETE_RESULTS_AFTER:=false}
+ : ${DRY_RUN:=false}
+-: ${GDB:=$(which gdb)}
++: ${GDB:=$(which egdb)}
+ : ${HELP:=false}
+ : ${LATEST:=false}
+ : ${OUTPUTDIR:=/tmp}
+@@ -562,11 +563,8 @@ DESCRIPTION
+ 		A list of coredumps or coredump search patterns.  These
+ 		will override the default and those specified in the config files.
  
- DATEFORMAT=${DATEFORMAT:-'date +%FT%H-%M-%S%z'}
+-		The default pattern is "/tmp/core!(*.txt)"
+-
+-		The "!(*.txt)" tells bash to ignore any files that match
+-		the base pattern and end in ".txt".  It$'s not strictly
+-		needed as non asterisk coredumps are always ignored.
++		The default pattern in the OpenBSD package is
++		"/var/crash/asterisk/*.core /tmp/asterisk.core"
+ 
+ NOTES
+ 	You must be root to use this program.
