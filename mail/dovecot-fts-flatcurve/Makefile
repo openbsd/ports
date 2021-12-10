@@ -1,16 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/12/08 14:12:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/12/10 10:22:15 sthen Exp $
 
 COMMENT=		full text search plugin for Dovecot using Xapian
 
 GH_ACCOUNT=		slusarz
 GH_PROJECT=		dovecot-fts-flatcurve
-GH_COMMIT=		56b193185cbec032fae00c592e64f99f8497dd62
-DISTNAME=		dovecot-fts-flatcurve-0.1.0pl20211103
-
-# dotlock-related problems in newer code
-# https://github.com/slusarz/dovecot-fts-flatcurve/issues/16
-#GH_COMMIT=		a69652485c3c4371ae78086acaec0a5a39f02efe
-#DISTNAME=		dovecot-fts-flatcurve-0.1.0pl20211202
+GH_COMMIT=		f21c43f0f7b4735334898e686cae59890287614c
+DISTNAME=		dovecot-fts-flatcurve-0.1.1pre20210812
 
 CATEGORIES=		mail
 
