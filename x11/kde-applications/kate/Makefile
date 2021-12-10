@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2021/11/10 06:37:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.17 2021/12/10 06:49:49 rsadowski Exp $
 
 COMMENT =	KDE advanced text editor
 DISTNAME =	kate-${VERSION}
 CATEGORIES =	editors
+REVISION =	0
 
 HOMEPAGE =	https://kate-editor.org/
 
@@ -15,8 +16,9 @@ WANTLIB += KF5KIOGui KF5KIOWidgets KF5NewStuff KF5NewStuffCore
 WANTLIB += KF5Package KF5Parts KF5Plasma KF5Service KF5Solid KF5SonnetUi
 WANTLIB += KF5SyntaxHighlighting KF5TextEditor KF5TextWidgets
 WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Sql
-WANTLIB += Qt5Widgets Qt5Xml X11 c m
+WANTLIB += KUserFeedbackCore KUserFeedbackWidgets Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Sql Qt5Widgets
+WANTLIB += Qt5Xml X11 c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -63,7 +65,8 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kxmlgui \
 		devel/kf5/plasma-framework \
 		devel/kf5/solid \
-		devel/kf5/sonnet
+		devel/kf5/sonnet \
+		productivity/kuserfeedback
 
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}
