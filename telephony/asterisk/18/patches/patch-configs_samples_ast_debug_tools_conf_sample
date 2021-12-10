@@ -1,14 +1,15 @@
-$OpenBSD: patch-configs_samples_ast_debug_tools_conf_sample,v 1.1.1.1 2021/10/16 10:55:00 sthen Exp $
+$OpenBSD: patch-configs_samples_ast_debug_tools_conf_sample,v 1.2 2021/12/10 11:19:56 sthen Exp $
 
 Index: configs/samples/ast_debug_tools.conf.sample
 --- configs/samples/ast_debug_tools.conf.sample.orig
 +++ configs/samples/ast_debug_tools.conf.sample
-@@ -18,7 +18,7 @@
+@@ -24,7 +24,8 @@
  # The exclusion of files ending ".txt" is just for
- # demonstration purposes as non-coredumps will be ignored
- # anyway.
--COREDUMPS=(/tmp/core[-._]asterisk!(*.txt) /tmp/core[-._]$(hostname)!(*.txt))
-+COREDUMPS=(/var/crash/asterisk/*.core /tmp/asterisk.core)
+ # demonstration purposes as non-asterisk-coredumps will be
+ # ignored anyway.
+-COREDUMPS=( /tmp/core!(*.txt) )
++#COREDUMPS=( /tmp/core!(*.txt) )
++COREDUMPS=( /var/crash/asterisk/*.core /tmp/asterisk.core )
  
- # The directory to contain output files and work directories.
- # For output from existing core files, the default is the
+ # OUTPUTDIR is the directory to contain output files and
+ # work directories. 

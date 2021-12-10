@@ -1,9 +1,9 @@
-$OpenBSD: patch-main_utils_c,v 1.1.1.1 2021/10/16 10:55:00 sthen Exp $
+$OpenBSD: patch-main_utils_c,v 1.2 2021/12/10 11:19:56 sthen Exp $
 
 Index: main/utils.c
 --- main/utils.c.orig
 +++ main/utils.c
-@@ -2515,6 +2515,8 @@ int ast_get_tid(void)
+@@ -2659,6 +2659,8 @@ int ast_get_tid(void)
  	long lwpid;
  	thr_self(&lwpid); /* available since sys/thr.h creation 2003 */
  	ret = lwpid;
