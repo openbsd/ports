@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.5 2021/09/10 08:43:48 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2021/12/10 06:52:09 rsadowski Exp $
 
 COMMENT =	PIM Akonadi mime support library
 DISTNAME =	akonadi-mime-${VERSION}
 CATEGORIES =	devel productivity
+REVISION =	0
 
 SHARED_LIBS +=  KF5AkonadiMime            1.2 # 5.6
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCore KF5AkonadiPrivate
 WANTLIB += KF5AkonadiWidgets KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5DBusAddons
-WANTLIB += KF5I18n KF5ItemModels KF5KIOCore KF5Mime KF5Service
-WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Test Qt5Widgets Qt5Xml c m
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5I18n
+WANTLIB += KF5ItemModels KF5KIOCore KF5Mime KF5Service KF5WidgetsAddons
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5Test Qt5Widgets Qt5Xml c m
 
 MODKDE5_TRANSLATIONS = yes
 
@@ -26,7 +27,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kconfig \
 		devel/kf5/kconfigwidgets \
-		devel/kf5/kdbusaddons \
 		devel/kf5/ki18n \
 		devel/kf5/kio \
 		devel/kf5/kitemmodels \
