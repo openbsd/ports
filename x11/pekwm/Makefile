@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2021/11/19 21:15:51 op Exp $
+# $OpenBSD: Makefile,v 1.39 2021/12/10 13:35:58 op Exp $
 
 COMMENT=	aewm++ based pretty themable window manager
 
 DISTNAME=	pekwm-${V}
-V=		0.2.0
+V=		0.2.1
 CATEGORIES=	x11
 
 HOMEPAGE=	https://www.pekwm.se/
@@ -26,6 +26,7 @@ LIB_DEPENDS=	graphics/jpeg \
 MODULES=	devel/cmake
 
 CONFIGURE_ARGS=	-DCMAKE_INSTALL_SYSCONFDIR=${SYSCONFDIR} \
+		-DCMAKE_INSTALL_FULL_MANDIR=${PREFIX}/man \
 		-DAWK=/usr/bin/awk \
 		-DSED=/usr/bin/sed \
 		-DSH=/bin/sh \
