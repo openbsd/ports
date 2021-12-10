@@ -1,0 +1,3 @@
+cglm is an highly optimized 2D and 3D math library, also know as OpenGL
+Mathematics (glm) for C.  cglm provides lot of utils to help math
+operations to be fast and quick to write.

@@ -1,0 +1,25 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2021/12/10 13:27:02 op Exp $
+
+ - don't hardcode optimization flags
+ - set PACKAGE_VERSION for cglm.pc.in
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -33,7 +33,7 @@ if(MSVC)
+     string(REGEX REPLACE "/RTC(su|[1su])" "" ${flag_var} "${${flag_var}}")
+   endforeach(flag_var)
+ else()
+-  add_compile_options(-Wall -Werror -O3)
++  add_compile_options(-Wall -Werror)
+ endif()
+ 
+ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+@@ -143,6 +143,7 @@ set(prefix ${CMAKE_INSTALL_PREFIX})
+ set(exec_prefix ${CMAKE_INSTALL_PREFIX})
+ set(includedir "\${prefix}/${CMAKE_INSTALL_INCLUDEDIR}")
+ set(libdir "\${prefix}/${CMAKE_INSTALL_LIBDIR}")
++set(PACKAGE_VERSION "${PROJECT_VERSION}")
+ configure_file(${CMAKE_CURRENT_LIST_DIR}/cglm.pc.in ${CMAKE_BINARY_DIR}/cglm.pc @ONLY)
+ 
+ install(FILES ${CMAKE_BINARY_DIR}/cglm.pc
