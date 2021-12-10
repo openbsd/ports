@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/09/10 08:43:48 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/12/10 06:50:31 rsadowski Exp $
 @conflict kdepimlibs-<=4
 @pkgpath x11/kde4/akregator
 @bin bin/akregator
@@ -17,6 +17,7 @@ lib/qt5/plugins/pim/kcms/akregator/
 @so lib/qt5/plugins/pim/kcms/akregator/akregator_config_general.so
 @so lib/qt5/plugins/pim/kcms/akregator/akregator_config_plugins.so
 @so lib/qt5/plugins/pim/kcms/akregator/akregator_config_security.so
+@so lib/qt5/plugins/pim/kcms/akregator/akregator_config_userfeedback.so
 share/akregator/
 share/akregator/grantleetheme/
 share/akregator/grantleetheme/5.2/
@@ -132,6 +133,7 @@ share/kservices5/akregator_config_browser.desktop
 share/kservices5/akregator_config_general.desktop
 share/kservices5/akregator_config_plugins.desktop
 share/kservices5/akregator_config_security.desktop
+share/kservices5/akregator_config_userfeedback.desktop
 share/kservices5/akregator_mk4storage_plugin.desktop
 share/kservices5/kontact/
 share/kservices5/kontact/akregatorplugin.desktop

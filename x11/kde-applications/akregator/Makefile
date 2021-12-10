@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2021/11/10 06:37:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2021/12/10 06:50:31 rsadowski Exp $
 
 COMMENT =	news feed reader
 DISTNAME =	akregator-${VERSION}
 CATEGORIES =	net www
+REVISION =	0
 
 SHARED_LIBS +=  akregatorinterfaces       1.0 # 5.13.2
 SHARED_LIBS +=  akregatorprivate          2.1 # 5.13.2
@@ -17,10 +18,11 @@ WANTLIB += KF5MessageViewer KF5Mime KF5MimeTreeParser KF5Notifications
 WANTLIB += KF5NotifyConfig KF5Parts KF5PimCommon KF5PimTextEdit
 WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5Syndication KF5TextWidgets
 WANTLIB += KF5WebEngineViewer KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
-WANTLIB += Qt5Quick Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
-WANTLIB += Qt5Widgets Qt5Xml X11 assuan c gpgme gpgmepp m qgpgme
+WANTLIB += KF5XmlGui KUserFeedbackCore KUserFeedbackWidgets Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
+WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 assuan c
+WANTLIB += gpgme gpgmepp m qgpgme
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_ICON_CACHE = yes
@@ -70,6 +72,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kxmlgui \
 		devel/kf5/sonnet \
 		devel/kf5/syndication \
+		productivity/kuserfeedback \
 		security/gpgme,-qt \
 		x11/grantlee-qt5 \
 		x11/kde-applications/akonadi \
