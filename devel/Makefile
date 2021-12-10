@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2163 2021/12/05 19:58:11 jca Exp $
+# $OpenBSD: Makefile,v 1.2164 2021/12/10 21:23:31 abieber Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1741,6 +1741,7 @@
      SUBDIR += shapelib
      SUBDIR += sharness
      SUBDIR += shellcheck
+     SUBDIR += shfmt
      SUBDIR += shtool
      SUBDIR += shunit2
      SUBDIR += silc-toolkit
