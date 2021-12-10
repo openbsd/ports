@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.208 2021/12/08 10:44:35 espie Exp $
+# $OpenBSD: Makefile,v 1.209 2021/12/10 13:27:33 op Exp $
 
      SUBDIR =
      SUBDIR += 4ti2
@@ -15,6 +15,7 @@
      SUBDIR += cddlib
      SUBDIR += cfitsio
      SUBDIR += cgal
+     SUBDIR += cglm
      SUBDIR += coq
      SUBDIR += dieharder
      SUBDIR += double-conversion
