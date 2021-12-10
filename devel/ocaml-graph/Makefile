@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2021/12/02 03:59:19 daniel Exp $
+# $OpenBSD: Makefile,v 1.13 2021/12/10 04:10:59 daniel Exp $
 
 COMMENT =	OCaml graph library
 CATEGORIES =	devel
 
 V =		1.8.8
-REVISION =	3
+REVISION =	4
 DISTNAME =	ocamlgraph-${V}
 PKGNAME =	ocaml-graph-${V}
 MASTER_SITES =	http://ocamlgraph.lri.fr/download/

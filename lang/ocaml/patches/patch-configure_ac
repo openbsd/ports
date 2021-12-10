@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.5 2021/12/04 21:17:10 chrisz Exp $
+$OpenBSD: patch-configure_ac,v 1.6 2021/12/10 04:10:59 daniel Exp $
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -700,6 +700,11 @@ AS_CASE([$CC,$host],
+@@ -735,6 +735,11 @@ AS_CASE([$CC,$host],
  )
  
  
@@ -15,13 +15,16 @@ Index: configure.ac
  ## Program to use to install files
  AC_PROG_INSTALL
  
-@@ -824,8 +829,8 @@ AS_IF([test x"$enable_shared" != "xno"],
+@@ -867,10 +872,10 @@ AS_IF([test x"$enable_shared" != "xno"],
      [[*-*-linux*|*-*-freebsd[3-9]*|*-*-freebsd[1-9][0-9]*\
      |*-*-openbsd*|*-*-netbsd*|*-*-dragonfly*|*-*-gnu*|*-*-haiku*]],
        [sharedlib_cflags="-fPIC"
--      mksharedlib="$CC -shared"
-       oc_ldflags="$oc_ldflags -Wl,-E"
-+      mksharedlib="$CC -shared $oc_ldflags"
++      oc_ldflags="$oc_ldflags -Wl,-E"
+        AS_CASE([$CC,$host],
+            [gcc*,powerpc-*-linux*], [mksharedlib="$CC -shared -mbss-plt"],
+-           [mksharedlib="$CC -shared"])
+-      oc_ldflags="$oc_ldflags -Wl,-E"
++           [mksharedlib="$CC -shared $oc_ldflags"])
        rpath="-Wl,-rpath,"
        mksharedlibrpath="-Wl,-rpath,"
        natdynlinkopts="-Wl,-E"

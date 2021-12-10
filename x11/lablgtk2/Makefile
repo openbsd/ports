@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2021/12/02 03:59:21 daniel Exp $
+# $OpenBSD: Makefile,v 1.53 2021/12/10 04:11:00 daniel Exp $
 
 COMMENT =	OCaml interface to GTK+2
 
@@ -6,7 +6,7 @@ V =		2.18.11
 DISTNAME =	lablgtk2-$V
 PKGNAME =	lablgtk2-$V
 CATEGORIES =	x11 devel
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://lablgtk.forge.ocamlcore.org/
 GH_ACCOUNT =	garrigue

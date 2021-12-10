@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2021/12/02 03:59:19 daniel Exp $
+# $OpenBSD: Makefile,v 1.42 2021/12/10 04:10:59 daniel Exp $
 
 # build system needs per-arch tweaks and is very unfriendly to
 # bytecode-only builds. powerpc nativecode is currently broken.
@@ -7,7 +7,7 @@ ONLY_FOR_ARCHS = ${OCAML_NATIVE_ARCHS}
 COMMENT=	framework for analysis and transformation of C
 CATEGORIES =	devel lang
 
-REVISION =	3
+REVISION =	4
 DISTNAME =	cil-1.7.3
 EXTRACT_SUFX =	.tar.gz
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=cil/}
