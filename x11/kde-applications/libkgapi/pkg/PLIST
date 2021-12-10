@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/01/23 18:10:27 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2021/12/10 06:59:31 rsadowski Exp $
 @pkgpath productivity/libkgapi
 include/KPim/
 include/KPim/KGAPI/
@@ -306,8 +306,7 @@ lib/cmake/KPimGAPI/KPimGAPITargets.cmake
 @lib lib/libKPimGAPILatitude.so.${LIBKPimGAPILatitude_VERSION}
 @lib lib/libKPimGAPIMaps.so.${LIBKPimGAPIMaps_VERSION}
 @lib lib/libKPimGAPITasks.so.${LIBKPimGAPITasks_VERSION}
-lib/sasl2/libkdexoauth2.so.3
-lib/sasl2/libkdexoauth2.so.3.0.0
+@lib lib/sasl2/libkdexoauth2.so.${LIBkdexoauth2_VERSION}
 share/kf5/mkspecs/qt_KGAPIBlogger.pri
 share/kf5/mkspecs/qt_KGAPICalendar.pri
 share/kf5/mkspecs/qt_KGAPIContacts.pri
