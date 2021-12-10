@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2021/05/15 09:56:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2021/12/10 06:48:32 rsadowski Exp $
 
 COMMENT =	mail sieve editor
 DISTNAME =	pim-sieve-editor-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  sieveeditor       2.0 # 5.13.2
 
@@ -11,9 +12,9 @@ WANTLIB += KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5Crash KF5DBusAddons KF5I18n KF5IconThemes
 WANTLIB += KF5KIOCore KF5KManageSieve KF5KSieve KF5KSieveUi KF5MailTransport
 WANTLIB += KF5PimCommon KF5Service KF5Wallet KF5WidgetsAddons
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5Xml c gio-2.0 glib-2.0 gobject-2.0 intl
-WANTLIB += m qt5keychain secret-1
+WANTLIB += KF5XmlGui KUserFeedbackCore KUserFeedbackWidgets Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
+WANTLIB += c m qt5keychain
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes
@@ -36,6 +37,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kwallet \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
+		productivity/kuserfeedback \
 		x11/kde-applications/kmailtransport \
 		x11/kde-applications/libksieve \
 		x11/kde-applications/pimcommon
