@@ -1,0 +1,67 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/12/10 06:44:11 rsadowski Exp $
+@bin bin/UserFeedbackConsole
+@bin bin/userfeedbackctl
+include/KUserFeedback/
+include/KUserFeedback/AbstractDataSource
+include/KUserFeedback/ApplicationVersionSource
+include/KUserFeedback/CompilerInfoSource
+include/KUserFeedback/CpuInfoSource
+include/KUserFeedback/FeedbackConfigDialog
+include/KUserFeedback/FeedbackConfigUiController
+include/KUserFeedback/FeedbackConfigWidget
+include/KUserFeedback/LocaleInfoSource
+include/KUserFeedback/NotificationPopup
+include/KUserFeedback/OpenGLInfoSource
+include/KUserFeedback/PlatformInfoSource
+include/KUserFeedback/PropertyRatioSource
+include/KUserFeedback/Provider
+include/KUserFeedback/QPAInfoSource
+include/KUserFeedback/QtVersionSource
+include/KUserFeedback/ScreenInfoSource
+include/KUserFeedback/StartCountSource
+include/KUserFeedback/StyleInfoSource
+include/KUserFeedback/SurveyInfo
+include/KUserFeedback/UsageTimeSource
+include/KUserFeedback/abstractdatasource.h
+include/KUserFeedback/applicationversionsource.h
+include/KUserFeedback/compilerinfosource.h
+include/KUserFeedback/cpuinfosource.h
+include/KUserFeedback/feedbackconfigdialog.h
+include/KUserFeedback/feedbackconfiguicontroller.h
+include/KUserFeedback/feedbackconfigwidget.h
+include/KUserFeedback/kuserfeedbackcore_export.h
+include/KUserFeedback/kuserfeedbackwidgets_export.h
+include/KUserFeedback/localeinfosource.h
+include/KUserFeedback/notificationpopup.h
+include/KUserFeedback/openglinfosource.h
+include/KUserFeedback/platforminfosource.h
+include/KUserFeedback/propertyratiosource.h
+include/KUserFeedback/provider.h
+include/KUserFeedback/qpainfosource.h
+include/KUserFeedback/qtversionsource.h
+include/KUserFeedback/screeninfosource.h
+include/KUserFeedback/startcountsource.h
+include/KUserFeedback/styleinfosource.h
+include/KUserFeedback/surveyinfo.h
+include/KUserFeedback/usagetimesource.h
+lib/cmake/KUserFeedback/
+lib/cmake/KUserFeedback/KUserFeedbackConfig.cmake
+lib/cmake/KUserFeedback/KUserFeedbackConfigVersion.cmake
+lib/cmake/KUserFeedback/KUserFeedbackTarget${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KUserFeedback/KUserFeedbackTarget.cmake
+@lib lib/libKUserFeedbackCore.so.${LIBKUserFeedbackCore_VERSION}
+@lib lib/libKUserFeedbackWidgets.so.${LIBKUserFeedbackWidgets_VERSION}
+lib/qt5/qml/org/
+lib/qt5/qml/org/kde/
+lib/qt5/qml/org/kde/userfeedback/
+@so lib/qt5/qml/org/kde/userfeedback/libKUserFeedbackQml.so
+lib/qt5/qml/org/kde/userfeedback/qmldir
+share/applications/UserFeedbackConsole.desktop
+share/examples/kuserfeedback/
+share/examples/kuserfeedback/xdg/
+share/examples/kuserfeedback/xdg/org_kde_UserFeedback.categories
+share/kf5/
+share/kf5/mkspecs/
+share/kf5/mkspecs/qt_KUserFeedbackCore.pri
+share/kf5/mkspecs/qt_KUserFeedbackWidgets.pri
+@tag update-desktop-database
