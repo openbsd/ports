@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/10 06:37:50 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2021/12/10 06:56:29 rsadowski Exp $
 
 COMMENT =	sound channel mixer and volume control
 DISTNAME =	kmix-${VERSION}
 CATEGORIES =	audio
+REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/multimedia/org.kde.kmix
 
@@ -36,6 +37,7 @@ LIB_DEPENDS =	audio/pulseaudio \
 		devel/kf5/knotifications \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
-		devel/kf5/kxmlgui
+		devel/kf5/kxmlgui \
+		devel/kf5/solid
 
 .include <bsd.port.mk>
