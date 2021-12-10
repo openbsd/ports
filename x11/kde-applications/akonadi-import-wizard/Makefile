@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2021/09/10 08:43:48 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2021/12/10 06:51:37 rsadowski Exp $
 
 COMMENT =	PIM Akonadi import wizard
 DISTNAME =	akonadi-import-wizard-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  KPimImportWizard       1.1 # 5.13.2
 
@@ -17,8 +18,7 @@ WANTLIB += KF5MessageComposer KF5MessageCore KF5MessageViewer
 WANTLIB += KF5Mime KF5MimeTreeParser KF5PimCommon KF5PimCommonAkonadi
 WANTLIB += KF5PimTextEdit KF5Service KF5Wallet KF5WidgetsAddons
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5Xml assuan c gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += gpgme gpgmepp intl m qgpgme qt5keychain secret-1
+WANTLIB += Qt5Widgets Qt5Xml assuan c gpgme gpgmepp m qgpgme qt5keychain
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_ICON_CACHE = yes
