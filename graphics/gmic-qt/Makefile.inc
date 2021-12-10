@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile.inc,v 1.3 2021/10/04 13:28:27 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2021/12/10 10:16:48 espie Exp $
 
 COMMENT = 	gmic-qt ${GMIC_WHAT}
-V = 2.9.9
+V = 3.0.0
 
 DISTNAME ?= 	gmic-qt-${QT_HOST}-$V
 CATEGORIES = 	graphics

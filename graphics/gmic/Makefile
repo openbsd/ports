@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2021/10/04 13:28:27 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2021/12/10 10:16:48 espie Exp $
 
 BROKEN-powerpc64 =	update297.gmic is not a valid G'MIC update file
 
 COMMENT = 	image processing framework
 
-V = 2.9.9
+V = 3.0.0
 DISTNAME = 	gmic-$V
 
 SHARED_LIBS +=  gmic 1.0 # 1
@@ -60,13 +60,6 @@ DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 pre-build:
 	mkdir -p ${WRKDIR}/tmp
-
-do-build:
-	@${MODCMAKE_BUILD_TARGET}
-	@cd ${WRKSRC}/src && ${WRKBUILD}/gmic  gmic_stdlib.gmic it gmic_stdlib.gmic parse_gui update "(0)" a y serialize uchar,1,0 o -.h | sed 's/unsigned char/const unsigned char/' | sed 's/unnamed/gmic_stdlib/' > gmic_stdlib.h
-	@echo "\nconst unsigned long size_data_gmic_stdlib = (unsigned long)sizeof(data_gmic_stdlib);" >> ${WRKSRC}/src/gmic_stdlib.h
-	# rebuild with the boostrapped include
-	@${MODCMAKE_BUILD_TARGET}
 
 .include <bsd.port.mk>
 

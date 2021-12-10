@@ -1,14 +1,14 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2021/05/16 09:42:24 espie Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2021/12/10 10:16:48 espie Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -100,7 +100,7 @@ set(COMPILE_FLAGS "-Dgmic_build -Dcimg_use_vt100 -Dgmi
+@@ -100,7 +100,7 @@ list(APPEND GMIC_CXX_COMPILE_FLAGS -Dgmic_build -Dcimg
  if(APPLE)
-    set(COMPILE_FLAGS "${COMPILE_FLAGS} -mmacosx-version-min=10.8 -stdlib=libc++ -Wno-error=c++11-narrowing -Wc++11-extensions -fpermissive")
+     list(APPEND GMIC_CXX_COMPILE_FLAGS -mmacosx-version-min=10.8 -stdlib=libc++ -Wno-error=c++11-narrowing -Wc++11-extensions -fpermissive)
  else()
--  set(COMPILE_FLAGS "${COMPILE_FLAGS} -Wno-error=narrowing -fno-ipa-sra -fpermissive")
-+  set(COMPILE_FLAGS "${COMPILE_FLAGS} -Wno-error=narrowing -fpermissive")
+-    list(APPEND GMIC_CXX_COMPILE_FLAGS -Wno-error=narrowing -fno-ipa-sra -fpermissive)
++    list(APPEND GMIC_CXX_COMPILE_FLAGS -Wno-error=narrowing -fpermissive)
  endif()
  
  if(NOT "${PRERELEASE_TAG}" STREQUAL "")

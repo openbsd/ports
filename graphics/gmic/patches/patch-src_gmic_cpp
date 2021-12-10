@@ -1,19 +1,10 @@
-$OpenBSD: patch-src_gmic_cpp,v 1.4 2021/10/04 13:28:27 espie Exp $
+$OpenBSD: patch-src_gmic_cpp,v 1.5 2021/12/10 10:16:48 espie Exp $
 
 pthread_self will do in a pinch
 Index: src/gmic.cpp
 --- src/gmic.cpp.orig
 +++ src/gmic.cpp
-@@ -2046,7 +2046,7 @@ const CImgList<T>& _gmic_display(CImgDisplay &disp, co
- #include "gmic.h"
- using namespace cimg_library;
- 
--#include "gmic_stdlib.h"
-+#include "stdlib_defs.h"
- 
- // Define convenience macros, variables and functions.
- //----------------------------------------------------
-@@ -2469,6 +2469,8 @@ CImgList<void*> gmic::list_p_is_abort = CImgList<void*
+@@ -2473,6 +2473,8 @@ CImgList<void*> gmic::list_p_is_abort = CImgList<void*
  bool *gmic::abort_ptr(bool *const p_is_abort) {
  #if defined(__MACOSX__) || defined(__APPLE__)
    void* tid = (void*)(cimg_ulong)getpid();
@@ -22,7 +13,7 @@ Index: src/gmic.cpp
  #elif cimg_OS==1
    void* tid = (void*)(cimg_ulong)syscall(SYS_gettid);
  #elif cimg_OS==2
-@@ -2807,6 +2809,8 @@ gmic::~gmic() {
+@@ -2815,6 +2817,8 @@ gmic::~gmic() {
    cimg::mutex(21);
  #if defined(__MACOSX__) || defined(__APPLE__)
    void* tid = (void*)(cimg_ulong)getpid();
