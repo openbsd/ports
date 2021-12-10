@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2021/12/10 06:58:42 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2021/12/10 17:24:41 rsadowski Exp $
 
 COMMENT =	library for common kdepim apps
 DISTNAME =	libkdepim-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  KF5Libkdepim               3.0 # 5.6
 
@@ -20,6 +20,7 @@ BUILD_DEPENDS =	devel/boost \
 		devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kconfigwidgets \
+		devel/kf5/kitemviews \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kjobwidgets \
 		x11/qt5/qttools
