@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/03 16:12:36 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2021/12/10 06:54:43 rsadowski Exp $
 
 COMMENT =	Japanese reference tool for KDE
 DISTNAME =	kiten-${VERSION}
 CATEGORIES =	education
+REVISION =	0
 
 SHARED_LIBS +=  kiten                     2.0 # 5.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5Crash KF5I18n KF5JS KF5JobWidgets
-WANTLIB += KF5KHtml KF5KIOCore KF5KIOWidgets KF5Notifications
-WANTLIB += KF5Parts KF5Service KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5Xml c m
+WANTLIB += KF5CoreAddons KF5Crash KF5I18n KF5KIOCore KF5Notifications
+WANTLIB += KF5Service KF5WidgetsAddons KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
+WANTLIB += c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -27,15 +27,9 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kcrash \
 		devel/kf5/ki18n \
 		devel/kf5/kio \
-		devel/kf5/kjobwidgets \
-		devel/kf5/kjs \
-		devel/kf5/khtml \
-		devel/kf5/kparts \
 		devel/kf5/kservice \
-		devel/kf5/ktextwidgets \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/knotifications \
-		devel/kf5/kxmlgui \
-		devel/kf5/sonnet
+		devel/kf5/kxmlgui
 
 .include <bsd.port.mk>
