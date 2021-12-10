@@ -1,9 +1,9 @@
-$OpenBSD: patch-res_res_odbc_c,v 1.1 2021/11/02 12:47:09 sthen Exp $
+$OpenBSD: patch-res_res_odbc_c,v 1.2 2021/12/10 11:19:59 sthen Exp $
 
 Index: res/res_odbc.c
 --- res/res_odbc.c.orig
 +++ res/res_odbc.c
-@@ -1038,7 +1038,7 @@ static odbc_status odbc_obj_connect(struct odbc_obj *o
+@@ -1029,7 +1029,7 @@ static odbc_status odbc_obj_connect(struct odbc_obj *o
  	/* Dont connect while server is marked as unreachable via negative_connection_cache */
  	negative_cache_expiration = obj->parent->last_negative_connect.tv_sec + obj->parent->negative_connection_cache.tv_sec;
  	if (time(NULL) < negative_cache_expiration) {

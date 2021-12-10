@@ -1,4 +1,4 @@
-$OpenBSD: patch-apps_app_voicemail_c,v 1.1 2021/11/02 12:47:08 sthen Exp $
+$OpenBSD: patch-apps_app_voicemail_c,v 1.2 2021/12/10 11:19:59 sthen Exp $
 
 test for alpine-2.22's c-client and cope with API change.
 parts borrowed from slackware patch for PHP with alpine-2.22.
@@ -16,7 +16,7 @@ Index: apps/app_voicemail.c
  #else
  #include "c-client.h"
  #include "imap4r1.h"
-@@ -3421,7 +3424,11 @@ void mm_dlog(char *string)
+@@ -3395,7 +3398,11 @@ void mm_dlog(char *string)
  }
  
  
@@ -28,7 +28,7 @@ Index: apps/app_voicemail.c
  {
  	struct ast_vm_user *vmu;
  
-@@ -3431,22 +3438,41 @@ void mm_login(NETMBX * mb, char *user, char *pwd, long
+@@ -3405,22 +3412,41 @@ void mm_login(NETMBX * mb, char *user, char *pwd, long
  
  	/* We should only do this when necessary */
  	if (!ast_strlen_zero(authpassword)) {
