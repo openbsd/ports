@@ -1,0 +1,60 @@
+$OpenBSD: patch-rtunes_cipher_c,v 1.1 2021/12/10 15:40:11 tb Exp $
+
+Index: rtunes/cipher.c
+--- rtunes/cipher.c.orig
++++ rtunes/cipher.c
+@@ -93,6 +93,7 @@ unsigned char *
+ cipher_rsa_encrypt_aeskey(unsigned char *aeskey)
+ {
+ 	RSA		*key;
++	BIGNUM		*rsa_n = NULL, *rsa_e = NULL;
+ 	unsigned char	*to = NULL;
+ 	unsigned char	 n_bin[256], e_bin[3];
+ 
+@@ -121,22 +122,35 @@ cipher_rsa_encrypt_aeskey(unsigned char *aeskey)
+ 		return (NULL);
+ 
+ 	/* initialize RSA public key */
+-	key = RSA_new();
+-	key->n = BN_bin2bn(n_bin, 256, key->n);;
+-	key->e = BN_bin2bn(e_bin, 3, key->e);
+-	key->d = NULL;
+-	key->p = NULL;
+-	key->q = NULL;
+-	key->dmp1 = NULL;
+-	key->dmq1 = NULL;
+-	key->iqmp = NULL;
++	if ((key = RSA_new()) == NULL)
++		return (NULL);
+ 
++	rsa_n = BN_bin2bn(n_bin, 256, NULL);
++	rsa_e = BN_bin2bn(e_bin, 3, NULL);
++	if (rsa_n == NULL || rsa_e == NULL)
++		goto err;
++
++	if (!RSA_set0_key(key, rsa_n, rsa_e, NULL))
++		goto err;
++	rsa_n = NULL;
++	rsa_e = NULL;
++
+ 	/* RSA encrypt */
+-	to = malloc(256);
++	if ((to = malloc(256)) == NULL)
++		goto err;
+ 	if (RSA_public_encrypt(16, aeskey, to, key, RSA_PKCS1_OAEP_PADDING) < 1)
+-		return (NULL);
++		goto err;
+ 
++	RSA_free(key);
++
+ 	return (to);
++
++err:
++	RSA_free(key);
++	BN_free(rsa_n);
++	BN_free(rsa_e);
++	free(to);
++	return (NULL);
+ }
+ 
+ /*

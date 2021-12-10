@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/06/23 22:50:27 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/12/10 15:40:11 tb Exp $
 @bin bin/rtunes
-lib/librtunes.a
+@static-lib lib/librtunes.a
 @man man/man1/rtunes.1
 @man man/man5/rtunes.conf.5
 share/examples/rtunes/
