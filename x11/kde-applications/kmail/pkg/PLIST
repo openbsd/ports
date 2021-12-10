@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/10/19 20:08:41 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/12/10 06:49:35 rsadowski Exp $
 @conflict kdepimlibs-<=4
 @bin bin/akonadi_archivemail_agent
 @bin bin/akonadi_followupreminder_agent
@@ -418,7 +418,6 @@ share/doc/HTML/uk/ktnef/
 share/doc/HTML/uk/ktnef/index.cache.bz2
 share/doc/HTML/uk/ktnef/index.docbook
 share/doc/HTML/uk/ktnef/mainwindow.png
-share/icons/breeze-dark/
 share/icons/breeze-dark/16x16/
 share/icons/breeze-dark/16x16/emblems/
 share/icons/breeze-dark/16x16/emblems/gpg-key-trust-level-0.svg

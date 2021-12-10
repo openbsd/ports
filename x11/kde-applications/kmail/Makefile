@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2021/11/10 06:37:50 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2021/12/10 06:49:35 rsadowski Exp $
 
 COMMENT =	KDE PIM email client
 DISTNAME =	kmail-${VERSION}
 CATEGORIES =	net mail
+REVISION =	0
 
 SHARED_LIBS +=  kmailprivate       4.0 # 5.13.2
 
@@ -24,11 +25,11 @@ WANTLIB += KF5Parts KF5PimCommon KF5PimCommonAkonadi KF5PimTextEdit
 WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5SyntaxHighlighting
 WANTLIB += KF5TemplateParser KF5TextWidgets KF5Tnef KF5Wallet
 WANTLIB += KF5WebEngineViewer KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
-WANTLIB += Qt5Quick Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
-WANTLIB += Qt5Widgets Qt5Xml X11 assuan c gpgme gpgmepp m qgpgme
-WANTLIB += qt5keychain
+WANTLIB += KF5XmlGui KUserFeedbackCore KUserFeedbackWidgets Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
+WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 assuan c
+WANTLIB += gpgme gpgmepp m qgpgme qt5keychain
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
@@ -79,6 +80,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/sonnet \
 		devel/kf5/syntax-highlighting \
 		security/gpgme,-qt \
+		productivity/kuserfeedback \
 		x11/kde-applications/akonadi \
 		x11/kde-applications/akonadi-contacts \
 		x11/kde-applications/akonadi-mime \
