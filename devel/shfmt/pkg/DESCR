@@ -1,2 +1,2 @@
 A shell parser, formatter, and interpreter. Supports POSIX Shell, Bash, and
-mksh. Requires Go 1.16 or later.
+mksh.
