@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2021/11/23 10:21:48 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2021/12/10 11:19:29 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
@@ -53,7 +53,7 @@ SHARED_LIBS+=		asteriskpj ${SHLIB_V}
 
 MULTI_PACKAGES=		-main -calendar -http_post -kqueue -ldap -lua \
 			-odbc -pgsql -snmp -speex -tds
-.if ${SHORTVER} != 16
+.if ${SHORTVER} != 16 && ${SHORTVER} != 13
 MULTI_PACKAGES+=	-vm_imap -vm_odbc
 .endif
 
@@ -254,7 +254,7 @@ CONFIGURE_ARGS+=	--with-postgres=no
 
 # snmp
 COMMENT-snmp=		Net-SNMP support for Asterisk
-WANTLIB-snmp=		crypto kvm m netsnmp netsnmpagent netsnmpmibs pthread
+WANTLIB-snmp=		netsnmp netsnmpagent netsnmpmibs pthread
 LIB_DEPENDS-snmp=	net/net-snmp
 .if !${BUILD_PACKAGES:M-snmp}
 CONFIGURE_ARGS+=	--with-snmp=no
