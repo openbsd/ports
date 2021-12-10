@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/12/08 15:44:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2021/12/10 08:02:18 ajacoutot Exp $
 
 COMMENT =	brain-dead simple config-ini parsing
 
@@ -22,5 +22,7 @@ FLAVOR =	python3
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
+
+BUILD_DEPENDS=		devel/py-setuptools_scm${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
