@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/12/10 13:32:31 op Exp $
 
 # Requires OpenGL>=3.3, only usable on archs that support
 # modern video cards
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =		amd64 aarch64 i386
 
 COMMENT =		clone of the touhou games
 
-VERSION =		v1.3.1
+VERSION =		v1.3.2
 DISTNAME =		taisei-${VERSION}
 PKGNAME =		taisei-${VERSION:S/^v//}
 
@@ -29,6 +29,8 @@ MODULES =		devel/meson \
 			lang/python
 
 MODPY_RUNDEP =		No
+
+BUILD_DEPENDS =		math/cglm
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \

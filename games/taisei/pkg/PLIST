@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/02/08 11:04:15 cwen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/12/10 13:32:31 op Exp $
 @bin bin/taisei
 share/applications/taisei-replay-viewer.desktop
 share/applications/taisei.desktop
@@ -535,6 +535,7 @@ share/taisei/00-taisei.pkgdir/shader/healthbar_radial.prog
 share/taisei/00-taisei.pkgdir/shader/ingame_menu.frag.glsl
 share/taisei/00-taisei.pkgdir/shader/ingame_menu.prog
 share/taisei/00-taisei.pkgdir/shader/interface/
+share/taisei/00-taisei.pkgdir/shader/interface/fxaa.glslh
 share/taisei/00-taisei.pkgdir/shader/interface/healthbar.glslh
 share/taisei/00-taisei.pkgdir/shader/interface/reimu_gap.glslh
 share/taisei/00-taisei.pkgdir/shader/interface/spellcard.glslh
@@ -582,6 +583,7 @@ share/taisei/00-taisei.pkgdir/shader/lib/blur/blur5.glslh
 share/taisei/00-taisei.pkgdir/shader/lib/blur/blur9.glslh
 share/taisei/00-taisei.pkgdir/shader/lib/defs.glslh
 share/taisei/00-taisei.pkgdir/shader/lib/fxaa.glslh
+share/taisei/00-taisei.pkgdir/shader/lib/legacy_compat.glslh
 share/taisei/00-taisei.pkgdir/shader/lib/render_context.glslh
 share/taisei/00-taisei.pkgdir/shader/lib/sprite_default.vert.glslh
 share/taisei/00-taisei.pkgdir/shader/lib/sprite_main.frag.glslh
