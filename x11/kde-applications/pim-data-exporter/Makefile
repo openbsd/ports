@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/10 06:37:58 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2021/12/10 06:48:59 rsadowski Exp $
 
 COMMENT =	KDE PIM data exporter
 DISTNAME =	pim-data-exporter-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  pimdataexporterprivate       2.0 # 5.13.2
 
@@ -18,8 +19,9 @@ WANTLIB += KF5MailTransport KF5MessageComposer KF5MessageCore
 WANTLIB += KF5MessageViewer KF5Mime KF5MimeTreeParser KF5Notifications
 WANTLIB += KF5PimCommon KF5PimCommonAkonadi KF5PimTextEdit KF5Service
 WANTLIB += KF5Solid KF5Wallet KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5Xml X11 assuan c gpgme gpgmepp m qgpgme
+WANTLIB += KF5XmlGui KUserFeedbackCore KUserFeedbackWidgets Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
+WANTLIB += X11 assuan c gpgme gpgmepp m qgpgme
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes
@@ -51,6 +53,7 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kxmlgui \
 		devel/kf5/solid \
 		security/gpgme,-qt \
+		productivity/kuserfeedback \
 		x11/kde-applications/akonadi \
 		x11/kde-applications/akonadi-contacts \
 		x11/kde-applications/akonadi-mime \
