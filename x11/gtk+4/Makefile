@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2021/12/09 08:26:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2021/12/10 08:00:13 ajacoutot Exp $
 
 # XXX add support for libcloudproviders? (-Dcloudproviders=enabled)
 # XXX add support for tracker3? (-Dtracker=enabled)
@@ -48,7 +48,8 @@ MODPY_RUNDEP=		No
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
-BUILD_DEPENDS=		www/sassc
+BUILD_DEPENDS=		textproc/py-docutils${MODPY_FLAVOR} \
+			www/sassc
 
 # x11/xkbcommon only needed for Wayland
 LIB_DEPENDS-main=	devel/pango \
