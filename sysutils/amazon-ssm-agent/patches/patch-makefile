@@ -1,4 +1,4 @@
-$OpenBSD: patch-makefile,v 1.30 2021/08/13 09:20:10 ajacoutot Exp $
+$OpenBSD: patch-makefile,v 1.31 2021/12/10 13:15:01 ajacoutot Exp $
 
 Index: makefile
 --- makefile.orig
@@ -30,7 +30,7 @@ Index: makefile
  .PHONY: dev-build-windows
  dev-build-windows: clean quick-integtest checkstyle pre-release build-windows
  .PHONY: dev-build-linux-386
-@@ -148,6 +151,12 @@ build-freebsd: GOARCH=amd64
+@@ -150,6 +153,12 @@ build-freebsd: GOARCH=amd64
  build-freebsd: GOOS=freebsd
  build-freebsd: GO_BUILD=$(GO_BUILD_NOPIE)
  build-freebsd: build-any-amd64-freebsd

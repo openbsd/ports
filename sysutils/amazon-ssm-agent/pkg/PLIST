@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/08/26 12:23:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/12/10 13:15:01 ajacoutot Exp $
 @extraunexec rm -rf /var/db/amazon /var/log/amazon
 @rcscript ${RCDIR}/amazon_ssm_agent
 @bin bin/amazon-ssm-agent
@@ -7,6 +7,7 @@
 @bin bin/ssm-document-worker
 @bin bin/ssm-session-logger
 @bin bin/ssm-session-worker
+@bin bin/ssm-setup-cli
 share/doc/amazon-ssm-agent/
 share/doc/amazon-ssm-agent/LICENSE
 share/examples/amazon-ssm-agent/
