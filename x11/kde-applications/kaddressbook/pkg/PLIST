@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/10/19 20:08:37 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/12/10 06:50:04 rsadowski Exp $
 @conflict kdepimlibs-<=4
 @pkgpath x11/kde4/akregator
 @bin bin/kaddressbook
@@ -35,6 +35,7 @@ lib/cmake/KPimAddressbookImportExport/KPimAddressbookImportExportTargets.cmake
 lib/qt5/plugins/kontact5/
 @so lib/qt5/plugins/kontact5/kontact_kaddressbookplugin.so
 @so lib/qt5/plugins/pim/kcms/kaddressbook/kaddressbook_config_plugins.so
+@so lib/qt5/plugins/pim/kcms/kaddressbook/kaddressbook_config_userfeedback.so
 share/applications/kaddressbook-importer.desktop
 share/applications/kaddressbook-view.desktop
 share/applications/org.kde.kaddressbook.desktop
@@ -293,6 +294,7 @@ share/kontact/
 share/kontact/ksettingsdialog/
 share/kontact/ksettingsdialog/kaddressbook.setdlg
 share/kservices5/kaddressbook_config_plugins.desktop
+share/kservices5/kaddressbook_config_userfeedback.desktop
 share/kservices5/kontact/
 share/kservices5/kontact/kaddressbookplugin.desktop
 share/locale/ar/LC_MESSAGES/kaddressbook.mo
