@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2021/11/10 06:37:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.16 2021/12/10 06:49:21 rsadowski Exp $
 
 COMMENT =	calendar and scheduling component of kontact
 DISTNAME =	korganizer-${VERSION}
 CATEGORIES =	net www
+REVISION =	0
 
 SHARED_LIBS +=  korganizer_core         1.0 # 5.13.2
 SHARED_LIBS +=  korganizer_interfaces   1.0 # 5.13.2
@@ -22,9 +23,9 @@ WANTLIB += KF5MailTransport KF5MailTransportAkonadi KF5Mime KF5NewStuff
 WANTLIB += KF5NewStuffCore KF5Notifications KF5Parts KF5PimCommon
 WANTLIB += KF5PimCommonAkonadi KF5PimTextEdit KF5Service KF5Solid
 WANTLIB += KF5SonnetUi KF5TextWidgets KF5Wallet KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets Qt5Xml
-WANTLIB += X11 c m phonon4qt5
+WANTLIB += KF5WindowSystem KF5XmlGui KUserFeedbackCore KUserFeedbackWidgets
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
+WANTLIB += Qt5Widgets Qt5Xml X11 c m phonon4qt5
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
@@ -68,6 +69,7 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kxmlgui \
 		devel/kf5/sonnet \
 		multimedia/phonon \
+		productivity/kuserfeedback \
 		x11/kde-applications/akonadi \
 		x11/kde-applications/akonadi-calendar \
 		x11/kde-applications/akonadi-contacts \
