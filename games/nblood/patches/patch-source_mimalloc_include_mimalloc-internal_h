@@ -1,0 +1,25 @@
+$OpenBSD: patch-source_mimalloc_include_mimalloc-internal_h,v 1.1 2021/12/10 04:29:24 jsg Exp $
+
+backport a mimalloc commit to fix ilp32 build
+
+mimalloc 5b0e73281fd4d98b6f211cdd1b6b29453c3e420e
+fix spurious build warning with overflow builtins
+
+Index: source/mimalloc/include/mimalloc-internal.h
+--- source/mimalloc/include/mimalloc-internal.h.orig
++++ source/mimalloc/include/mimalloc-internal.h
+@@ -243,11 +243,11 @@ static inline bool mi_malloc_satisfies_alignment(size_
+ #endif
+ static inline bool mi_mul_overflow(size_t count, size_t size, size_t* total) {
+   #if (SIZE_MAX == UINT_MAX)
+-    return __builtin_umul_overflow(count, size, total);
++    return __builtin_umul_overflow(count, size, (unsigned int *)total);
+   #elif (SIZE_MAX == ULONG_MAX)
+-    return __builtin_umull_overflow(count, size, total);
++    return __builtin_umull_overflow(count, size, (unsigned long *)total);
+   #else
+-    return __builtin_umulll_overflow(count, size, total);
++    return __builtin_umulll_overflow(count, size, (unsigned long long *)total);
+   #endif
+ }
+ #else /* __builtin_umul_overflow is unavailable */
