@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2021/11/10 06:37:57 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.21 2021/12/10 06:59:58 rsadowski Exp $
 
 COMMENT =	KDE document viewer
 DISTNAME =	okular-${VERSION}
 CATEGORIES =	textproc
+REVISION =	0
 
 HOMEPAGE =	https://okular.kde.org/
 
@@ -17,9 +18,9 @@ WANTLIB += KF5KIOWidgets KF5Parts KF5Pty KF5Purpose KF5PurposeWidgets
 WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5ThreadWeaver
 WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Svg Qt5TextToSpeech Qt5Widgets Qt5Xml c chm djvulibre
-WANTLIB += epub freetype jpeg m markdown phonon4qt5 poppler poppler-qt5
-WANTLIB += qmobipocket tiff z zip X11
+WANTLIB += Qt5Svg Qt5TextToSpeech Qt5Widgets Qt5Xml X11 c chm
+WANTLIB += djvulibre epub freetype jpeg m markdown phonon4qt5
+WANTLIB += poppler poppler-qt5 qmobipocket spectre tiff z zip
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -29,8 +30,7 @@ MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
 BUILD_DEPENDS = net/libvncserver \
-		devel/kf5/kirigami2 \
-		print/libspectre
+		devel/kf5/kirigami2
 
 RUN_DEPENDS =	misc/shared-mime-info \
 		devel/kf5/kirigami2 \
@@ -70,6 +70,7 @@ LIB_DEPENDS =	devel/chmlib \
 		graphics/tiff \
 		multimedia/phonon \
 		print/poppler,-qt5 \
+		print/libspectre \
 		textproc/discount \
 		textproc/ebook-tools \
 		x11/kde-applications/kdegraphics-mobipocket \
