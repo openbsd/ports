@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2021/11/22 13:55:54 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2021/12/11 10:53:06 ajacoutot Exp $
 
 COMMENT-main=	implementation of the Freedesktop sound theme spec.
 COMMENT-gtk=	gtk+2 helper for libcanberra
@@ -9,8 +9,8 @@ DISTNAME=	libcanberra-${V}
 EXTRACT_SUFX=	.tar.xz
 
 REVISION-main=	4
-REVISION-gtk=	8
-REVISION-gtk3=	8
+REVISION-gtk=	9
+REVISION-gtk3=	9
 
 SHARED_LIBS +=  canberra             2.0      # 2.5
 SHARED_LIBS +=  canberra-gtk3        1.8      # 1.8
@@ -38,16 +38,16 @@ WANTLIB-gtk += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB-gtk += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB-gtk += gtk-x11-2.0 harfbuzz iconv intl pango-1.0 pangocairo-1.0
 WANTLIB-gtk += pangoft2-1.0 pcre pixman-1 png xcb xcb-render xcb-shm z
-WANTLIB-gtk += ${COMPILER_LIBCXX} fribidi
+WANTLIB-gtk += ${COMPILER_LIBCXX} fribidi Xau Xdmcp jpeg
 
 WANTLIB-gtk3 += ${cWANTLIB}
 WANTLIB-gtk3 += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
-WANTLIB-gtk3 += Xrender Xtst atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject 
-WANTLIB-gtk3 += canberra dbus-1 epoxy expat ffi fontconfig freetype
+WANTLIB-gtk3 += Xrender atk-1.0 atk-bridge-2.0 c cairo cairo-gobject 
+WANTLIB-gtk3 += canberra epoxy expat ffi fontconfig freetype jpeg
 WANTLIB-gtk3 += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB-gtk3 += graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl pango-1.0
 WANTLIB-gtk3 += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png xcb xcb-render
-WANTLIB-gtk3 += xcb-shm z ${COMPILER_LIBCXX} fribidi
+WANTLIB-gtk3 += xcb-shm z ${COMPILER_LIBCXX} fribidi Xau Xdmcp execinfo
 
 COMPILER =		base-clang ports-gcc base-gcc
 
