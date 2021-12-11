@@ -1,4 +1,5 @@
-$OpenBSD: patch-src_tuxpaint-import_sh,v 1.2 2007/07/04 17:39:08 ajacoutot Exp $
+$OpenBSD: patch-src_tuxpaint-import_sh,v 1.3 2021/12/11 11:35:37 ajacoutot Exp $
+
 --- src/tuxpaint-import.sh.orig	Sun Aug 13 03:14:35 2006
 +++ src/tuxpaint-import.sh	Wed Jul  4 10:01:04 2007
 @@ -52,21 +52,17 @@ fi

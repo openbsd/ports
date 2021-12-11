@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile,v 1.13 2021/07/01 11:53:38 ajacoutot Exp $
+$OpenBSD: patch-Makefile,v 1.14 2021/12/11 11:35:37 ajacoutot Exp $
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -58,7 +58,7 @@ else
+@@ -53,7 +53,7 @@ else
            endif
          else
            OS:=linux
@@ -12,7 +12,7 @@ Index: Makefile
          endif
        endif
      endif
-@@ -175,7 +175,7 @@ windows_ARCH_CFLAGS:=
+@@ -169,7 +169,7 @@ windows_ARCH_CFLAGS:=
  macos_ARCH_CFLAGS:=-isysroot $(SDKROOT) -I$(SDKROOT)/usr/include -I$(HOSTROOT)/include -mmacosx-version-min=$(MINVER) -arch $(subst $() $(), -arch ,$(ARCHS)) -w -headerpad_max_install_names -DHAVE_STRCASESTR
  ios_ARCH_CFLAGS:=-isysroot $(SDKROOT) -I$(SDKROOT)/usr/include -I$(HOSTROOT)/include $(MINVEROPT) -arch $(subst $() $(), -arch ,$(ARCHS)) -w -fPIC -DHAVE_STRCASESTR -DUNLINK_ONLY
  beos_ARCH_CFLAGS:=
@@ -21,7 +21,7 @@ Index: Makefile
  ARCH_CFLAGS:=$($(OS)_ARCH_CFLAGS)
  
  windows_ARCH_LDFLAGS:=
-@@ -186,9 +186,8 @@ linux_ARCH_LDFLAGS:=
+@@ -180,9 +180,8 @@ linux_ARCH_LDFLAGS:=
  ARCH_LDFLAGS:=$($(OS)_ARCH_LDFLAGS)
  LDFLAGS:=$(ARCH_LDFLAGS)
  
@@ -33,7 +33,7 @@ Index: Makefile
  
  FRIBIDI_LIB:=$(shell $(PKG_CONFIG) --libs fribidi)
  FRIBIDI_CFLAGS:=$(shell $(PKG_CONFIG) --cflags fribidi)
-@@ -212,7 +211,7 @@ windows_PREFIX:=/usr/local
+@@ -206,7 +205,7 @@ windows_PREFIX:=/usr/local
  macos_PREFIX:=Resources
  ios_PREFIX:=.
  linux_PREFIX:=/usr/local
@@ -42,7 +42,7 @@ Index: Makefile
  
  # Root directory to place files when creating packages.
  # PKG_ROOT is the old name for this, and should be undefined.
-@@ -248,19 +247,19 @@ INCLUDE_PREFIX:=$(DESTDIR)$(PREFIX)/include
+@@ -242,19 +241,19 @@ INCLUDE_PREFIX:=$(DESTDIR)$(PREFIX)/include
  MAGIC_PREFIX:=$(DESTDIR)$(LIBDIR)/lib$(LIBDIRSUFFIX)/tuxpaint/plugins
  
  # Docs and man page:
@@ -67,7 +67,7 @@ Index: Makefile
  endif
  
  ifeq ($(SYSNAME),Haiku)
-@@ -733,18 +732,16 @@ uninstall:	uninstall-i18n
+@@ -730,18 +729,16 @@ uninstall:	uninstall-i18n
  install-default-config:
  	@echo
  	@echo "...Installing default config file..."
@@ -90,7 +90,7 @@ Index: Makefile
  
  
  # Install example stamps
-@@ -752,7 +749,7 @@ install-bash-completion:
+@@ -749,7 +746,7 @@ install-bash-completion:
  install-example-stamps:
  	@echo
  	@echo "...Installing example stamps..."
@@ -99,7 +99,7 @@ Index: Makefile
  	@cp -R stamps/* $(DATA_PREFIX)/stamps
  	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)/stamps
  
-@@ -802,7 +799,10 @@ $(THUMB_STARTERS):
+@@ -799,7 +796,10 @@ $(THUMB_STARTERS):
  	fi
  
  $(INSTALLED_THUMB_STARTERS): $(DATA_PREFIX)/%: %
@@ -111,7 +111,7 @@ Index: Makefile
  
  .PHONY: echo-thumb-starters
  echo-thumb-starters:
-@@ -909,24 +909,22 @@ install-nokia770:
+@@ -906,24 +906,22 @@ install-nokia770:
  install-xdg:
  	@echo
  	@echo "...Installing launcher icon into desktop environment..."
@@ -152,7 +152,7 @@ Index: Makefile
  
  # Install the PNG icon (for KDE desktop, etc.)
  # and the 24-color 32x32 XPM (for other Window managers):
-@@ -934,12 +932,9 @@ install-xdg:
+@@ -931,12 +929,9 @@ install-xdg:
  install-icon:
  	@echo
  	@echo "...Installing launcher icon graphics..."
@@ -168,7 +168,7 @@ Index: Makefile
  
  
  # Install the program:
-@@ -947,9 +942,8 @@ install-icon:
+@@ -944,9 +939,8 @@ install-icon:
  install-bin:
  	@echo
  	@echo "...Installing program itself..."
@@ -180,7 +180,7 @@ Index: Makefile
  
  # Install tuxpaint-config and required Windows DLLs into the 'bdist' directory
  .PHONY: install-dlls
-@@ -1024,8 +1018,7 @@ install-haiku:
+@@ -978,8 +972,7 @@ install-haiku:
  install-importscript:
  	@echo
  	@echo "...Installing 'tuxpaint-import' script..."
@@ -190,7 +190,7 @@ Index: Makefile
  
  
  # Install the data (sound, graphics, fonts):
-@@ -1033,12 +1026,14 @@ install-importscript:
+@@ -987,12 +980,14 @@ install-importscript:
  install-data:
  	@echo
  	@echo "...Installing data files..."
@@ -207,42 +207,46 @@ Index: Makefile
  	@cp -R fonts/locale/* $(DATA_PREFIX)/fonts/locale
  	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)/fonts/locale
  
-@@ -1058,7 +1053,7 @@ install-osk:
+@@ -1012,7 +1007,7 @@ install-osk:
  install-doc:
  	@echo
  	@echo "...Installing documentation..."
 -	@install -d $(DOC_PREFIX)
 +	${BSD_INSTALL_DATA_DIR} $(DOC_PREFIX)
  	@cp -R docs/* $(DOC_PREFIX)
- 	@# FIXME: Needs improvement, when we add other translations -bjk 2018.08.30
- 	@install -d $(DOC_PREFIX)/en/magic-docs
-@@ -1072,25 +1067,13 @@ install-man:
+ 	@rm $(DOC_PREFIX)/Makefile # Used to generate TXT from HTML
+ 	@rm $(DOC_PREFIX)/RELEASE.txt # Not useful to end users
+@@ -1036,27 +1031,19 @@ install-man:
  	@echo
- 	@echo "...Installing man pages..."
+ 	@echo "...Installing English man pages..."
  	@# man1 directory...
 -	@install -d $(MAN_PREFIX)/man1
 +	${BSD_INSTALL_MAN_DIR} $(MAN_PREFIX)/man1
  	@# tuxpaint.1
--	@cp src/manpage/tuxpaint.1 $(MAN_PREFIX)/man1
+-	@cp man/en/tuxpaint.1 $(MAN_PREFIX)/man1/
 -	@gzip -f $(MAN_PREFIX)/man1/tuxpaint.1
 -	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tuxpaint.1.gz
--	@# pl/man1 directory...
--	@install -d $(MAN_PREFIX)/pl/man1/
--	@# tuxpaint-pl.1
--	@cp src/manpage/tuxpaint-pl.1 $(MAN_PREFIX)/pl/man1/tuxpaint.1
--	@gzip -f $(MAN_PREFIX)/pl/man1/tuxpaint.1
--	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/pl/man1/tuxpaint.1.gz
-+	${BSD_INSTALL_MAN} src/manpage/tuxpaint.1 $(MAN_PREFIX)/man1
++	${BSD_INSTALL_MAN} man/en/tuxpaint.1 $(MAN_PREFIX)/man1/
  	@# tuxpaint-import.1
--	@cp src/manpage/tuxpaint-import.1 $(MAN_PREFIX)/man1/
+-	@cp man/en/tuxpaint-import.1 $(MAN_PREFIX)/man1/
 -	@gzip -f $(MAN_PREFIX)/man1/tuxpaint-import.1
 -	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tuxpaint-import.1.gz
-+	${BSD_INSTALL_MAN} src/manpage/tuxpaint-import.1 $(MAN_PREFIX)/man1
++	${BSD_INSTALL_MAN} man/en/tuxpaint-import.1 $(MAN_PREFIX)/man1/
  	@# tp-magic-config.1
--	@cp src/manpage/tp-magic-config.1 $(MAN_PREFIX)/man1/
+-	@cp man/en/tp-magic-config.1 $(MAN_PREFIX)/man1/
 -	@gzip -f $(MAN_PREFIX)/man1/tp-magic-config.1
 -	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tp-magic-config.1.gz
-+	${BSD_INSTALL_MAN} src/manpage/tp-magic-config.1 $(MAN_PREFIX)/man1
++	${BSD_INSTALL_MAN} man/en/tp-magic-config.1 $(MAN_PREFIX)/man1/
+ 	@echo
+ 	for l in `ls -d man/*.UTF-8 | cut -d '/' -f 2`; do \
+ 		DEST=$(MAN_PREFIX)/$$l/man1 ; \
+ 		echo "...Installing $$l man pages into $$DEST..." ; \
+-		install -d $$DEST ; \
+-		cp man/$$l/tuxpaint.1 $$DEST ; \
+-		gzip -f $$DEST/tuxpaint.1 ; \
+-		chmod a+rx,g-w,o-w $$DEST/tuxpaint.1.gz ; \
++		${BSD_INSTALL_MAN_DIR} $$DEST ; \
++		${BSD_INSTALL_MAN} man/$$l/tuxpaint.1 $$DEST ; \
+ 	done
+ 	@# FIXME: The other man pages aren't localizable yet -bjk 2021.08.14
  
- 
- # Install the support files for macOS application bundle
