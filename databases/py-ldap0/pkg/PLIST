@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/05/28 15:10:26 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/12/11 14:52:37 sthen Exp $
 @so lib/python${MODPY_VERSION}/site-packages/_libldap0.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/ldap0/
 lib/python${MODPY_VERSION}/site-packages/ldap0-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -115,14 +115,11 @@ lib/python${MODPY_VERSION}/site-packages/ldap0/extop/${MODPY_PYCACHE}dds.${MODPY
 lib/python${MODPY_VERSION}/site-packages/ldap0/extop/${MODPY_PYCACHE}dds.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap0/extop/${MODPY_PYCACHE}passmod.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ldap0/extop/${MODPY_PYCACHE}passmod.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/ldap0/extop/${MODPY_PYCACHE}vc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/ldap0/extop/${MODPY_PYCACHE}vc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap0/extop/${MODPY_PYCACHE}whoami.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ldap0/extop/${MODPY_PYCACHE}whoami.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap0/extop/cancel.py
 lib/python${MODPY_VERSION}/site-packages/ldap0/extop/dds.py
 lib/python${MODPY_VERSION}/site-packages/ldap0/extop/passmod.py
-lib/python${MODPY_VERSION}/site-packages/ldap0/extop/vc.py
 lib/python${MODPY_VERSION}/site-packages/ldap0/extop/whoami.py
 lib/python${MODPY_VERSION}/site-packages/ldap0/filter.py
 lib/python${MODPY_VERSION}/site-packages/ldap0/functions.py
