@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/10/10 08:59:24 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/12/11 14:56:14 sthen Exp $
 @newgroup _web2ldap:857
 @newuser _web2ldap:857:_web2ldap:daemon:web2ldap service account:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/web2ldap
@@ -432,6 +432,7 @@ share/examples/web2ldap/templates/ae-dir/add_aePerson.ldif
 share/examples/web2ldap/templates/ae-dir/add_aeService.ldif
 share/examples/web2ldap/templates/ae-dir/add_aeService_posixAccount.ldif
 share/examples/web2ldap/templates/ae-dir/add_aeSrvGroup.ldif
+share/examples/web2ldap/templates/ae-dir/add_aeSudoRule.ldif
 share/examples/web2ldap/templates/ae-dir/add_aeSudoRule_su_root.ldif
 share/examples/web2ldap/templates/ae-dir/add_aeTag.ldif
 share/examples/web2ldap/templates/ae-dir/add_aeUser.ldif
