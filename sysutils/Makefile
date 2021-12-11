@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.627 2021/12/08 02:31:07 abieber Exp $
+# $OpenBSD: Makefile,v 1.628 2021/12/11 18:52:31 paco Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -36,6 +36,7 @@
      SUBDIR += cfengine
      SUBDIR += checkbashisms
      SUBDIR += checkrestart
+     SUBDIR += chezmoi
      SUBDIR += cl-launch
      SUBDIR += cloud-agent
      SUBDIR += clusterit
