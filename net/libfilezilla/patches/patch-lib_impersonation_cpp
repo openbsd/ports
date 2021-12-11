@@ -1,89 +1,32 @@
-$OpenBSD: patch-lib_impersonation_cpp,v 1.1 2021/10/24 18:54:55 bket Exp $
+$OpenBSD: patch-lib_impersonation_cpp,v 1.2 2021/12/11 06:43:19 bket Exp $
 
 Index: lib/impersonation.cpp
 --- lib/impersonation.cpp.orig
 +++ lib/impersonation.cpp
-@@ -7,10 +7,8 @@
+@@ -7,7 +7,7 @@
  #include <optional>
  #include <tuple>
  
--#include <crypt.h>
- #include <grp.h>
- #include <pwd.h>
--#include <shadow.h>
- #include <string.h>
- #include <sys/types.h>
- #include <unistd.h>
-@@ -51,43 +49,7 @@ passwd_holder get_passwd(fz::native_string const& user
- 
+-#if FZ_UNIX
++#if FZ_UNIX && !__OpenBSD__
+ #include <crypt.h>
+ #include <shadow.h>
+ #endif
+@@ -58,7 +58,7 @@ passwd_holder get_passwd(fz::native_string const& user
  	return ret;
  }
--
--
--struct shadow_holder {
--	shadow_holder() = default;
--	shadow_holder(shadow_holder const&) = delete;
--	shadow_holder(shadow_holder &&) = default;
--
--	shadow_holder& operator=(shadow_holder const&) = delete;
--	shadow_holder& operator=(shadow_holder &&) = default;
--
--	~shadow_holder() noexcept = default;
--
--	struct spwd* shadow_{};
--
--	struct spwd shadow_buffer_;
--	fz::buffer buf_{};
--};
--
--shadow_holder get_shadow(fz::native_string const& username)
--{
--	shadow_holder ret;
--
--	size_t s = 1024;
--	int res{};
--	do {
--		s *= 2;
--		ret.buf_.get(s);
--		res = getspnam_r(username.c_str(), &ret.shadow_buffer_, reinterpret_cast<char*>(ret.buf_.get(s)), s, &ret.shadow_);
--	} while (res == ERANGE);
--
--	if (res) {
--		ret.shadow_ = nullptr;
--	}
--
--	return ret;
- }
--}
  
- class impersonation_token_impl final
+-#if FZ_UNIX
++#if FZ_UNIX && !__OpenBSD__
+ struct shadow_holder {
+ 	shadow_holder() = default;
+ 	shadow_holder(shadow_holder const&) = delete;
+@@ -150,7 +150,7 @@ std::vector<gid_t> get_supplementary(std::string const
+ 
+ bool check_auth(fz::native_string const& username, fz::native_string const& password)
  {
-@@ -139,20 +101,15 @@ impersonation_token::impersonation_token(fz::native_st
- {
- 	auto pwd = get_passwd(username);
- 	if (pwd.pwd_) {
--		auto shadow = get_shadow(username);
--		if (shadow.shadow_) {
--			struct crypt_data data{};
--			char* encrypted = crypt_r(passwd.c_str(), shadow.shadow_->sp_pwdp, &data);
--			if (encrypted && !strcmp(encrypted, shadow.shadow_->sp_pwdp)) {
--				impl_ = std::make_unique<impersonation_token_impl>();
--				impl_->name_ = username;
--				if (pwd.pwd_->pw_dir) {
--					impl_->home_ = pwd.pwd_->pw_dir;
--				}
--				impl_->uid_ = pwd.pwd_->pw_uid;
--				impl_->gid_ = pwd.pwd_->pw_gid;
--				impl_->sup_groups_ = get_supplementary(username, pwd.pwd_->pw_gid);
-+		if (crypt_checkpass(passwd.c_str(), pwd.pwd_->pw_passwd) == 0) {
-+			impl_ = std::make_unique<impersonation_token_impl>();
-+			impl_->name_ = username;
-+			if (pwd.pwd_->pw_dir) {
-+				impl_->home_ = pwd.pwd_->pw_dir;
- 			}
-+			impl_->uid_ = pwd.pwd_->pw_uid;
-+			impl_->gid_ = pwd.pwd_->pw_gid;
-+			impl_->sup_groups_ = get_supplementary(username, pwd.pwd_->pw_gid);
- 		}
- 	}
- }
+-#if FZ_UNIX
++#if FZ_UNIX && !__OpenBSD__
+ 	auto shadow = get_shadow(username);
+ 	if (shadow.shadow_) {
+ 		struct crypt_data data{};
