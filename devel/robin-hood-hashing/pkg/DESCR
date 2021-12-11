@@ -1,0 +1,3 @@
+robin_hood::unordered_map and robin_hood::unordered_set is a platform
+independent replacement for std::unordered_map and std::unordered_set
+which is both faster and more memory efficient for real-world use cases.
