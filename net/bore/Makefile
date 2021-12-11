@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/07/06 20:14:10 tb Exp $
+# $OpenBSD: Makefile,v 1.2 2021/12/11 08:06:36 semarie Exp $
 
 COMMENT =		DNS query tool
-WRKDIST =		${WRKDIR}/delan-nonymous-483b20757a1a
-V =			0.3.3
+WRKDIST =		${WRKDIR}/delan-nonymous-f13a461049f4
+V =			0.4.1
 DISTNAME =		bore-${V}
 CATEGORIES =		net sysutils
 MAINTAINER =		Delan Azabani <delan@azabani.com>
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c c++abi pthread
 
 MASTER_SITES =		https://bitbucket.org/delan/nonymous/get/
-DISTFILES =		bore-{}${V}${EXTRACT_SUFX}
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 PATCHORIG =		.openbsd.orig
 
 MODULES =		devel/cargo
@@ -26,87 +26,6 @@ do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/bore ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/bore/doc/bore.1 ${PREFIX}/man/man1/
 
-# Remove bore itself from the list below or the build will EINVAL.
-MODCARGO_CRATES +=	aho-corasick	0.7.15	# Unlicense/MIT
-MODCARGO_CRATES +=	ansi_term	0.11.0	# MIT
-MODCARGO_CRATES +=	arrayvec	0.5.2	# MIT/Apache-2.0
-MODCARGO_CRATES +=	assert_matches	1.4.0	# MIT/Apache-2.0
-MODCARGO_CRATES +=	atty	0.2.14	# MIT
-MODCARGO_CRATES +=	autocfg	1.0.1	# Apache-2.0 OR MIT
-MODCARGO_CRATES +=	bindgen	0.58.1	# BSD-3-Clause
-MODCARGO_CRATES +=	bitflags	1.2.1	# MIT/Apache-2.0
-MODCARGO_CRATES +=	byteorder	1.4.3	# Unlicense OR MIT
-MODCARGO_CRATES +=	bytes	1.0.1	# MIT
-MODCARGO_CRATES +=	cc	1.0.68	# MIT/Apache-2.0
-MODCARGO_CRATES +=	cexpr	0.4.0	# Apache-2.0/MIT
-MODCARGO_CRATES +=	cfg-if	0.1.10	# MIT/Apache-2.0
-MODCARGO_CRATES +=	cfg-if	1.0.0	# MIT/Apache-2.0
-MODCARGO_CRATES +=	clang-sys	1.2.0	# Apache-2.0
-MODCARGO_CRATES +=	clap	2.33.3	# MIT
-MODCARGO_CRATES +=	displaydoc	0.2.2	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	env_logger	0.8.4	# MIT/Apache-2.0
-MODCARGO_CRATES +=	eyre	0.6.5	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	getrandom	0.2.3	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	glob	0.3.0	# MIT/Apache-2.0
-MODCARGO_CRATES +=	hermit-abi	0.1.17	# MIT/Apache-2.0
-MODCARGO_CRATES +=	humantime	2.1.0	# MIT/Apache-2.0
-MODCARGO_CRATES +=	indenter	0.3.3	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	lazy_static	1.4.0	# MIT/Apache-2.0
-MODCARGO_CRATES +=	lazycell	1.3.0	# MIT/Apache-2.0
-MODCARGO_CRATES +=	libc	0.2.97	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	libloading	0.7.0	# ISC
-MODCARGO_CRATES +=	log	0.4.11	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	memchr	2.3.4	# Unlicense/MIT
-MODCARGO_CRATES +=	memoffset	0.6.4	# MIT
-MODCARGO_CRATES +=	mio	0.7.13	# MIT
-MODCARGO_CRATES +=	miow	0.3.7	# MIT/Apache-2.0
-MODCARGO_CRATES +=	nix	0.21.0	# MIT
-MODCARGO_CRATES +=	nom	5.1.2	# MIT
-MODCARGO_CRATES +=	nonymous	0.3.3	# ISC
-MODCARGO_CRATES +=	ntapi	0.3.6	# Apache-2.0 OR MIT
-MODCARGO_CRATES +=	ntest	0.7.3	# MIT
-MODCARGO_CRATES +=	ntest_proc_macro_helper	0.7.3	# MIT
-MODCARGO_CRATES +=	ntest_test_cases	0.7.3	# MIT
-MODCARGO_CRATES +=	ntest_timeout	0.7.3	# MIT
-MODCARGO_CRATES +=	num_cpus	1.13.0	# MIT/Apache-2.0
-MODCARGO_CRATES +=	once_cell	1.8.0	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	owo-colors	1.3.0	# MIT
-MODCARGO_CRATES +=	paste	1.0.5	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	peeking_take_while	0.1.2	# Apache-2.0/MIT
-MODCARGO_CRATES +=	pin-project-lite	0.2.7	# Apache-2.0 OR MIT
-MODCARGO_CRATES +=	pledge	0.4.1	# MIT
-MODCARGO_CRATES +=	ppv-lite86	0.2.10	# MIT/Apache-2.0
-MODCARGO_CRATES +=	proc-macro-crate	0.1.5	# Apache-2.0/MIT
-MODCARGO_CRATES +=	proc-macro2	1.0.27	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	quote	1.0.7	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	rand	0.8.4	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	rand_chacha	0.3.1	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	rand_core	0.6.3	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	rand_hc	0.3.1	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	regex	1.4.6	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	regex-syntax	0.6.25	# MIT/Apache-2.0
-MODCARGO_CRATES +=	rustc-hash	1.1.0	# Apache-2.0/MIT
-MODCARGO_CRATES +=	serde	1.0.126	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	shlex	1.0.0	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	signal-hook-registry	1.4.0	# Apache-2.0/MIT
-MODCARGO_CRATES +=	strsim	0.8.0	# MIT
-MODCARGO_CRATES +=	syn	1.0.73	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	termcolor	1.1.2	# Unlicense OR MIT
-MODCARGO_CRATES +=	textwrap	0.11.0	# MIT
-MODCARGO_CRATES +=	tokio	1.8.0	# MIT
-MODCARGO_CRATES +=	tokio-macros	1.2.0	# MIT
-MODCARGO_CRATES +=	toml	0.5.8	# MIT/Apache-2.0
-MODCARGO_CRATES +=	unicode-width	0.1.8	# MIT/Apache-2.0
-MODCARGO_CRATES +=	unicode-xid	0.2.1	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	unveil	0.3.0	# MIT/Apache-2.0
-MODCARGO_CRATES +=	vec_map	0.8.2	# MIT/Apache-2.0
-MODCARGO_CRATES +=	version_check	0.9.3	# MIT/Apache-2.0
-MODCARGO_CRATES +=	wasi	0.10.2+wasi-snapshot-preview1	# Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT
-MODCARGO_CRATES +=	which	3.1.1	# MIT
-MODCARGO_CRATES +=	winapi	0.3.9	# MIT/Apache-2.0
-MODCARGO_CRATES +=	winapi-i686-pc-windows-gnu	0.4.0	# MIT/Apache-2.0
-MODCARGO_CRATES +=	winapi-util	0.1.5	# Unlicense/MIT
-MODCARGO_CRATES +=	winapi-x86_64-pc-windows-gnu	0.4.0	# MIT/Apache-2.0
-MODCARGO_CRATES +=	wio	0.2.2	# MIT/Apache-2.0
+.include "crates.inc"
 
 .include <bsd.port.mk>

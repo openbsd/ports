@@ -1,4 +1,4 @@
-SHA256 (bore-0.3.3.tar.gz) = aUfXk4gblGpziPKVxe11vSfkUiJPeht5UPiR+muOBig=
+SHA256 (bore-0.4.1.tar.gz) = y0fsIQpJrpDMKAP6dLMtslYapjKHKzPwyuzTEwsJMWw=
 SHA256 (cargo/aho-corasick-0.7.15.tar.gz) = dAT+v/qkfayBqkTbpxUjydBpsb3FCnfbQRlRSeF/aOU=
 SHA256 (cargo/ansi_term-0.11.0.tar.gz) = 7km69sthe4U6qNk79CDbI4P6tG0xRILKKAO0DV/el5s=
 SHA256 (cargo/arrayvec-0.5.2.tar.gz) = I7Yvxl3o5Of1JTT7UrDz7QR0auJnUZ7vKoOUHoCFBos=
@@ -80,7 +80,7 @@ SHA256 (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = rDuHxjYgQm3ZuZHlzgMp7/V
 SHA256 (cargo/winapi-util-0.1.5.tar.gz) = cOxs6FuxWBUcrl5ch/lajpfSwMSwASI/M6M0485d4Xg=
 SHA256 (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = cS4ieEHQV8HuHNL7Ivp+WlRhro5I+iynnsQs/BkxGD8=
 SHA256 (cargo/wio-0.2.2.tar.gz) = XRKZMvRkSsI5bLRWOFy/nmO1swxujcSCC9yk6wggN6U=
-SIZE (bore-0.3.3.tar.gz) = 79077
+SIZE (bore-0.4.1.tar.gz) = 92352
 SIZE (cargo/aho-corasick-0.7.15.tar.gz) = 113071
 SIZE (cargo/ansi_term-0.11.0.tar.gz) = 17087
 SIZE (cargo/arrayvec-0.5.2.tar.gz) = 27838
