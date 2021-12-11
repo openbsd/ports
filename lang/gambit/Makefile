@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2021/11/30 23:32:50 juanfra Exp $
+# $OpenBSD: Makefile,v 1.40 2021/12/11 19:32:22 juanfra Exp $
 
 BROKEN-riscv64=	gsi and gsi-script segfault at startup
 
 COMMENT=	complete, efficient and reliable implementation of Scheme
 
 V=		4.9.3
-REVISION=	1
+REVISION=	2
 DISTNAME=	gambit-v${V:S/./_/g}
 PKGNAME=	gambit-$V
 API_V=		${V:R:S/./0/}00${V:E}
@@ -24,6 +24,10 @@ MASTER_SITES=	http://www.iro.umontreal.ca/~gambit/download/gambit/v${V:R}/source
 EXTRACT_SUFX=	.tgz
 
 WANTLIB +=	c crypto m ssl util
+
+# It takes forever to build the package with clang13
+COMPILER=	ports-gcc
+COMPILER_LANGS=	c
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--disable-cplusplus \
@@ -51,8 +55,7 @@ do-test:
 
 # alpha: "cc1: out of memory allocating 1608 bytes"
 # hppa: "virtual memory exhausted: Cannot allocate memory" (in a system with 2GB RAM)
-# macppc: cc1: out of memory allocating 808 bytes
-.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "powerpc"
+.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "hppa"
 CFLAGS += -O0
 .endif
 
