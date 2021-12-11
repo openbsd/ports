@@ -1,28 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:03:49 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/12/11 10:39:33 bentley Exp $
 @bin bin/starfighter
+@man man/man6/starfighter.6
 share/applications/starfighter.desktop
 share/doc/starfighter/
 share/doc/starfighter/COPYING
 share/doc/starfighter/LICENSES
 share/doc/starfighter/README.txt
-share/doc/starfighter/docs/
-share/doc/starfighter/docs/COPYING
-share/doc/starfighter/docs/arrowNorthEast.png
-share/doc/starfighter/docs/dollar.png
-share/doc/starfighter/docs/heart.png
-share/doc/starfighter/docs/index.html
-share/doc/starfighter/docs/plasmaAmmo.png
-share/doc/starfighter/docs/plasmaDamage.png
-share/doc/starfighter/docs/plasmaRate.png
-share/doc/starfighter/docs/rocket.png
-share/doc/starfighter/docs/rocketAmmo.png
-share/doc/starfighter/docs/sflogo.png
-share/doc/starfighter/docs/superCharge.png
 share/pixmaps/
 share/pixmaps/starfighter.png
 share/starfighter/
 share/starfighter/data/
+share/starfighter/data/TakaoPGothic.ttf
 share/starfighter/data/credits.txt
+share/starfighter/data/ipa_font_license.txt
 share/starfighter/gfx/
 share/starfighter/gfx/aimFighter1.png
 share/starfighter/gfx/aimFighter2.png
@@ -213,6 +203,22 @@ share/starfighter/gfx/tug2.png
 share/starfighter/gfx/ursulaText.png
 share/starfighter/gfx/wingmate1.png
 share/starfighter/gfx/wingmate2.png
+share/starfighter/locale/
+@comment share/starfighter/locale/build.py
+share/starfighter/locale/en/
+share/starfighter/locale/en.po
+share/starfighter/locale/en/LC_MESSAGES/
+share/starfighter/locale/en/LC_MESSAGES/pr-starfighter.mo
+share/starfighter/locale/genpot.sh
+share/starfighter/locale/ja/
+share/starfighter/locale/ja.po
+share/starfighter/locale/ja/LC_MESSAGES/
+share/starfighter/locale/ja/LC_MESSAGES/pr-starfighter.mo
+share/starfighter/locale/nl/
+share/starfighter/locale/nl.po
+share/starfighter/locale/nl/LC_MESSAGES/
+share/starfighter/locale/nl/LC_MESSAGES/pr-starfighter.mo
+share/starfighter/locale/pr-starfighter.pot
 share/starfighter/music/
 share/starfighter/music/RE.ogg
 share/starfighter/music/death.ogg

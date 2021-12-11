@@ -1,45 +1,38 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2021/12/11 10:39:32 bentley Exp $
 
 COMMENT =		sidescrolling space shmup
 
-V =			1.7
+V =			2.4
 DISTNAME =		starfighter-$V-src
 PKGNAME =		starfighter-$V
-REVISION =		1
 
 CATEGORIES =		games
 
-HOMEPAGE =		http://starfighter.nongnu.org/
+HOMEPAGE =		https://pr-starfighter.github.io/
 
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += SDL2 SDL2_image SDL2_mixer c m pthread ${COMPILER_LIBCXX}
+WANTLIB += SDL2 SDL2_image SDL2_mixer SDL2_ttf c glib-2.0 gobject-2.0
+WANTLIB += harfbuzz intl m pango-1.0 pthread
+
+MASTER_SITES = 		https://github.com/pr-starfighter/starfighter/releases/download/v${V}/
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${MASTER_SITE_SAVANNAH:=starfighter/$V/}
+LIB_DEPENDS =		devel/pango \
+			devel/sdl2-image \
+			devel/sdl2-mixer \
+			devel/sdl2-ttf
 
-LIB_DEPENDS =		devel/sdl2-image \
-			devel/sdl2-mixer
 RUN_DEPENDS =		devel/desktop-file-utils
-
-MAKE_FLAGS =		CXX="${CXX}" \
-			CXXFLAGS="${CXXFLAGS} \
-			`pkg-config --cflags sdl2 SDL2_image SDL2_mixer`" \
-			BINDIR="${PREFIX}/bin/" \
-			DATADIR="${PREFIX}/share/starfighter/"
-FAKE_FLAGS =		PREFIX=${TRUEPREFIX}
 
 CONFIGURE_STYLE =	gnu
 
 USE_GMAKE =		Yes
 
 NO_TEST =		Yes
-
-post-install:
-	chmod ${SHAREMODE} ${PREFIX}/share/starfighter/*/*
 
 .include <bsd.port.mk>
