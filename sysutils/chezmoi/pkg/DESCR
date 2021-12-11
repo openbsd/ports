@@ -1,0 +1,5 @@
+Chezmoi helps you manage your personal configuration files (dotfiles, like
+~/.gitconfig) across multiple machines.
+
+It's declarative, allows templating and integrates with several password
+managers as well as GnuPG and age.

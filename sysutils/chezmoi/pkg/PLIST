@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/12/11 15:29:49 paco Exp $
+@bin bin/chezmoi
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/chezmoi
+share/doc/chezmoi/
+share/doc/chezmoi/ARCHITECTURE.md
+share/doc/chezmoi/CHANGES.md
+share/doc/chezmoi/COMPARISON.md
+share/doc/chezmoi/CONTRIBUTING.md
+share/doc/chezmoi/FAQ.md
+share/doc/chezmoi/HOWTO.md
+share/doc/chezmoi/INSTALL.md
+share/doc/chezmoi/MEDIA.md
+share/doc/chezmoi/QUICKSTART.md
+share/doc/chezmoi/REFERENCE.md
+share/doc/chezmoi/RELATED.md
+share/doc/chezmoi/SECURITY.md
+share/doc/chezmoi/TEMPLATING.md
+share/fish/
+share/fish/functions/
+share/fish/functions/chezmoi-completion.fish
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_chezmoi_completion
