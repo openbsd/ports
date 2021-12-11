@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2021/11/10 13:20:17 jca Exp $
+# $OpenBSD: Makefile,v 1.30 2021/12/11 11:44:44 op Exp $
 
 BROKEN-powerpc =	fails at runtime, the UI is totally blank
 
@@ -8,6 +8,7 @@ V =		3.4
 GODOTSTEAM_V =	g333-s151-g397
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot-${V}
+REVISION =	0
 CATEGORIES =	games
 HOMEPAGE =	https://godotengine.org/
 MAINTAINER =	Omar Polo <op@omarpolo.com>
@@ -82,6 +83,7 @@ LIB_DEPENDS =		archivers/zstd \
 			multimedia/libvpx \
 			net/enet \
 			security/polarssl
+RUN_DEPENDS =		devel/desktop-file-utils
 
 NO_TEST =		Yes
 
@@ -107,5 +109,17 @@ pre-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/godot* \
 		${PREFIX}/bin/godot
+	${INSTALL_MAN_DIR} ${PREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/misc/dist/linux/godot.6 \
+		${PREFIX}/man/man6
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/icon.svg \
+		${PREFIX}/share/pixmaps/godot.svg
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/misc/dist/linux/*.desktop \
+		${PREFIX}/share/applications
+	${INSTALL_DATA_DIR} ${PREFIX}/share/metainfo
+	${INSTALL_DATA} ${WRKSRC}/misc/dist/linux/*.appdata.xml \
+		${PREFIX}/share/metainfo/
 
 .include <bsd.port.mk>

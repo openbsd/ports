@@ -1,0 +1,20 @@
+$OpenBSD: patch-misc_dist_linux_godot_6,v 1.1 2021/12/11 11:44:44 op Exp $
+
+Index: misc/dist/linux/godot.6
+--- misc/dist/linux/godot.6.orig
++++ misc/dist/linux/godot.6
+@@ -1,4 +1,4 @@
+-.TH GODOT "6" "January 2020" "godot 3.2" "Games"
++.TH GODOT "6" "January 2020" "Godot" "Games"
+ .SH NAME
+ godot \- multi\-platform 2D and 3D game engine with a feature\-rich editor
+ .SH SYNOPSIS
+@@ -56,7 +56,7 @@ Remote filesystem (<host/IP>[:<port>] address).
+ Password for remote filesystem.
+ .TP
+ \fB\-\-audio\-driver\fR <driver>
+-Audio driver ('PulseAudio', 'ALSA', 'Dummy').
++Audio driver ('sndio', 'Dummy').
+ .TP
+ \fB\-\-video\-driver\fR <driver>
+ Video driver ('GLES3', 'GLES2').
