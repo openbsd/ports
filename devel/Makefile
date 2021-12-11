@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2164 2021/12/10 21:23:31 abieber Exp $
+# $OpenBSD: Makefile,v 1.2165 2021/12/11 05:31:12 thfr Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1626,6 +1626,7 @@
      SUBDIR += rgbds
      SUBDIR += riscv-elf
      SUBDIR += rlog
+     SUBDIR += robin-hood-hashing
      SUBDIR += robin-map
      SUBDIR += rttr
      SUBDIR += ruby-abstract
