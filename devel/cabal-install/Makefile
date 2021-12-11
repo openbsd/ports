@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2021/11/02 00:00:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2021/12/11 04:48:10 gnezdo Exp $
 
 COMMENT =	command-line interface for Cabal and Hackage
 
-DISTNAME =	cabal-install-3.4.0.0
+DISTNAME =	cabal-install-3.6.2.0
 CATEGORIES =	devel
-REVISION =	3
-
 GH_ACCOUNT =	haskell
-GH_TAGNAME =	${DISTNAME}
+GH_TAGNAME =	Cabal-v3.6.2.0
 GH_PROJECT =	cabal
 
 HOMEPAGE =	https://github.com/haskell/cabal
@@ -33,38 +31,36 @@ DISTFILES =		${EXTRACT_ONLY}
 DIST_SUBDIR =		hackage
 MASTER_SITES0 =		https://hackage.haskell.org/package/
 
-# Produced by:
-#   cabal v2-run -w /usr/local/bin/ghc exe:cabal-bundler -- \
-#     --openbsd cabal -w /usr/local/bin/ghc -p cabal/dist-newstyle/cache/plan.json
+# Produced by manually copying values out of files/openbsd.json.
 _MANIFEST = \
-	HTTP	4000.3.15	2	\
-	async	2.2.2	1	\
-	base16-bytestring	0.1.1.7	3	\
-	base64-bytestring	1.2.0.1	0	\
-	cryptohash-sha256	0.11.101.0	4	\
-	echo	0.1.3	1	\
+	HTTP	4000.3.16	1	\
+	async	2.2.4	1	\
+	base16-bytestring	1.0.2.0	0	\
+	base64-bytestring	1.2.1.0	0	\
+	cryptohash-sha256	0.11.102.1 0	\
+	echo	0.1.4	0	\
 	ed25519	0.0.5.0	3	\
 	edit-distance	0.2.2.1	1	\
-	hackage-security	0.6.0.1	4	\
-	hashable	1.3.0.0	2	\
-	hsc2hs	0.68.7	0	\
-	lukko	0.1.1.2	0	\
-	network	3.1.2.1	1	\
-	network-uri	2.6.3.0	0	\
-	random	1.2.0	3	\
-	regex-base	0.94.0.0	1	\
-	regex-posix	0.96.0.0	1	\
-	resolv	0.1.2.0	0	\
-	splitmix	0.1.0.3	0	\
-	tar	0.5.1.1	2	\
-	zlib	0.6.2.2	0	\
+	hackage-security	0.6.0.1	8	\
+	hashable	1.3.5.0	0	\
+	lukko	0.1.1.3	1	\
+	network	3.1.2.5	0	\
+	network-uri	2.6.4.1	0	\
+	random	1.2.1	0	\
+	regex-base	0.94.0.2	0	\
+	regex-posix	0.96.0.1	0	\
+	resolv	0.1.2.0	3	\
+	splitmix	0.1.0.4	0	\
+	th-compat	0.1.3 0	\
+	tar	0.5.1.1	4	\
+	zlib	0.6.2.3	1	\
 
 .for _package _version _revision in ${_MANIFEST}
 DISTFILES += {${_package}-${_version}/}${_package}-${_version}.tar.gz:0
 DISTFILES += ${_package}-${_version}_${_revision}{${_package}-${_version}/revision/${_revision}}.cabal:0
 .endfor
 
-BUILD_DEPENDS +=	lang/ghc>=8.10.3
+BUILD_DEPENDS +=	lang/ghc>=8.10.6
 
 MODULES =		lang/python
 
