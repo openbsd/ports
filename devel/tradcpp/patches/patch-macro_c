@@ -1,0 +1,32 @@
+$OpenBSD: patch-macro_c,v 1.1.1.1 2021/12/12 11:35:44 robert Exp $
+
+Index: macro.c
+--- macro.c.orig
++++ macro.c
+@@ -850,20 +850,20 @@ expand_substitute(struct place *p, struct expstate *es
+ 		ei = expansionitemarray_get(&es->curmacro->expansion, i);
+ 		switch (ei->itemtype) {
+ 		    case EI_STRING:
+-			strcat(ret, ei->ei_string);
++			strlcat(ret, ei->ei_string, len + 1);
+ 			break;
+ 		    case EI_PARAM:
+ 			arg = stringarray_get(&es->args, ei->ei_param);
+-			strcat(ret, arg);
++			strlcat(ret, arg, len + 1);
+ 			break;
+ 		    case EI_FILE:
+-			strcat(ret, "\"");
+-			strcat(ret, place_getname(p));
+-			strcat(ret, "\"");
++			strlcat(ret, "\"", len + 1);
++			strlcat(ret, place_getname(p), len + 1);
++			strlcat(ret, "\"", len + 1);
+ 			break;
+ 		    case EI_LINE:
+ 			snprintf(numbuf, sizeof(numbuf), "%u", p->line);
+-			strcat(ret, numbuf);
++			strlcat(ret, numbuf, len + 1);
+ 			break;
+ 		}
+ 	}
