@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2020/01/26 11:14:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2021/12/12 17:04:37 rsadowski Exp $
 
 COMMENT =	console audio player
 DISTNAME =	moc-2.5.2
@@ -7,18 +7,18 @@ HOMEPAGE =	http://moc.daper.net/
 MASTER_SITES =	http://ftp.daper.net/pub/soft/moc/stable/ \
 		https://distfiles.sigtrap.nl/
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	7
+REVISION =	8
 
 # GPLv3+
 PERMIT_PACKAGE = Yes
 
 # uses pledge()
-WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += FLAC avcodec avformat avutil bz2 c crypto curl curses
-WANTLIB += db faad gsm iconv id3tag ltdl m mad magic modplug mp3lame
-WANTLIB += mpcdec nghttp2 ogg opus samplerate sndfile sndio speex
-WANTLIB += ssl swresample tag tag_c vorbis vorbisenc vorbisfile
-WANTLIB += vpx wavpack x264 x265 xvidcore z
+WANTLIB += ${COMPILER_LIBCXX} FLAC aom avcodec avformat avutil
+WANTLIB += bz2 c crypto curl curses dav1d db faad gsm iconv id3tag
+WANTLIB += ltdl lzma m mad magic modplug mp3lame mpcdec nghttp2
+WANTLIB += ogg opus samplerate sndfile sndio speex ssl swresample
+WANTLIB += tag tag_c theoradec theoraenc vorbis vorbisenc vorbisfile
+WANTLIB += vpx wavpack x264 x265 xml2 xvidcore z
 
 COMPILER =	base-clang ports-gcc base-gcc
 
@@ -35,7 +35,6 @@ LIB_DEPENDS =	audio/faad \
 		audio/speex \
 		audio/taglib \
 		databases/db/v4 \
-		devel/gettext,-runtime \
 		devel/libmagic \
 		devel/libtool,-ltdl \
 		graphics/ffmpeg \
