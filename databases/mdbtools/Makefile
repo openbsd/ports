@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2021/10/30 07:02:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2021/12/12 11:18:24 ajacoutot Exp $
 
 COMMENT =		read microsoft Access MDB
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c glib-2.0 iodbcinst readline
 
 BUILD_DEPENDS =		devel/bison \
+			devel/gettext,-tools \
 			shells/bash-completion \
 			textproc/txt2man
 
