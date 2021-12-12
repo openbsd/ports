@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/08 15:00:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/12/12 15:07:44 op Exp $
 
 COMMENT =	UNIX pager optimized for tabular data
 
 GH_ACCOUNT =	okbob
 GH_PROJECT =	pspg
-GH_TAGNAME =	5.5.1
+GH_TAGNAME =	5.5.2
 
 CATEGORIES =	databases
 
@@ -27,7 +27,7 @@ AUTOCONF_VERSION =	2.69
 
 NO_TEST =		Yes
 
-CFLAGS =		-I${LOCALBASE}/include/ereadline
-LDFLAGS =		-L${LOCALBASE}/lib/ -lereadline
+CFLAGS +=		-I${LOCALBASE}/include/ereadline
+LDFLAGS +=		-L${LOCALBASE}/lib/ -lereadline
 
 .include <bsd.port.mk>
