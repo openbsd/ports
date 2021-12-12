@@ -1,4 +1,2 @@
-SHA256 (vault-1.8.4-bindata_assetfs.go) = CG2RgQUsZv2r8DPn9C3+g0ORNyyVkFOdEIuNtUMCBTQ=
-SHA256 (vault-vendored-1.8.4.tar.gz) = vQjMyOfKYrVCkl9AeWaX+6+AYi1y7Fqj/2h0wTVMdoI=
-SIZE (vault-1.8.4-bindata_assetfs.go) = 5067082
-SIZE (vault-vendored-1.8.4.tar.gz) = 40773341
+SHA256 (vault-vendored-1.9.1.tar.gz) = amFayhf9OesOrgH3DzLOMj+ScO4PT+bLFslYPEMYOoI=
+SIZE (vault-vendored-1.9.1.tar.gz) = 135218459
