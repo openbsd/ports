@@ -1,4 +1,4 @@
-$OpenBSD: patch-project_mak,v 1.2 2020/11/22 21:30:43 daniel Exp $
+$OpenBSD: patch-project_mak,v 1.3 2021/12/12 05:26:18 daniel Exp $
 
  * respect MAKE
  * we already configure ocamlfind via OCAMLFIND_DESTDIR.
@@ -6,8 +6,8 @@ $OpenBSD: patch-project_mak,v 1.2 2020/11/22 21:30:43 daniel Exp $
 Index: project.mak
 --- project.mak.orig
 +++ project.mak
-@@ -67,7 +67,7 @@ endif
- all: $(TOINSTALL)
+@@ -68,7 +68,7 @@ endif
+ all: $(TOBUILD)
  
  tests:
 -	make -C tests test
@@ -15,7 +15,7 @@ Index: project.mak
  
  zarith.cma: $(MLSRC:%.ml=%.cmo)
  	$(OCAMLMKLIB) -failsafe -o zarith $+ $(LIBS)
-@@ -110,10 +110,10 @@ endif
+@@ -112,10 +112,10 @@ endif
  
  ifeq ($(INSTMETH),findlib)
  install:
@@ -28,7 +28,7 @@ Index: project.mak
  endif
  
  
-@@ -143,7 +143,7 @@ $(AUTOGEN): z.mlp z.mlip $(SSRC) z_pp.pl
+@@ -142,7 +142,7 @@ endif
  
  clean:
  	/bin/rm -rf *.$(OBJSUFFIX) *.$(LIBSUFFIX) *.$(DLLSUFFIX) *.cmi *.cmo *.cmx *.cmxa *.cmxs *.cma  *.cmt *.cmti *~ \#* depend test $(AUTOGEN) tmp.c depend
