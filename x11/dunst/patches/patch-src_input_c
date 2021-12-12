@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_input_c,v 1.1 2021/12/12 20:32:28 op Exp $
+
+Index: src/input.c
+--- src/input.c.orig
++++ src/input.c
+@@ -4,7 +4,9 @@
+ #include "settings.h"
+ #include "queues.h"
+ #include <stddef.h>
++#ifdef __linux__
+ #include <linux/input-event-codes.h>
++#endif
+ 
+ struct notification *get_notification_at(const int y) {
+         int curr_y = settings.frame_width;

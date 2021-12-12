@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_x11_x_c,v 1.1 2021/12/12 20:32:28 op Exp $
+
+Index: src/x11/x.c
+--- src/x11/x.c.orig
++++ src/x11/x.c
+@@ -19,7 +19,9 @@
+ #include <X11/Xlib.h>
+ #include <X11/Xresource.h>
+ #include <X11/Xutil.h>
++#ifdef __linux__
+ #include <linux/input-event-codes.h>
++#endif
+ 
+ #include "../dbus.h"
+ #include "../draw.h"

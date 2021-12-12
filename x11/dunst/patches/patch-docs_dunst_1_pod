@@ -1,0 +1,14 @@
+$OpenBSD: patch-docs_dunst_1_pod,v 1.1 2021/12/12 20:32:28 op Exp $
+
+Index: docs/dunst.1.pod
+--- docs/dunst.1.pod.orig
++++ docs/dunst.1.pod
+@@ -61,7 +61,7 @@ Display a notification on startup.
+ 
+ A default configuration file is included (usually ##SYSCONFDIR##/dunst/dunstrc)
+ and serves as the least important configuration file. Note: this was previously
+-/usr/share/dunst/dunstrc. You can edit this file to change the system-wide
++${PREFIX}/share/dunst/dunstrc. You can edit this file to change the system-wide
+ defaults or copy it to a more important location to override its settings. See
+ the FILES section for more details on where dunst searches for its
+ configuration files and how settings get applied.

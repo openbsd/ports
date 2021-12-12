@@ -1,0 +1,38 @@
+$OpenBSD: patch-docs_dunst_5_pod,v 1.1 2021/12/12 20:32:28 op Exp $
+
+Index: docs/dunst.5.pod
+--- docs/dunst.5.pod.orig
++++ docs/dunst.5.pod
+@@ -384,7 +384,7 @@ gets the last say.
+ 
+ If B<icon_position> is set to off, this setting is ignored.
+ 
+-=item B<icon_path> (default: "/usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/")
++=item B<icon_path> (default: "${PREFIX}/share/icons/gnome/16x16/status/:${PREFIX}/share/icons/gnome/16x16/devices/")
+ 
+ Can be set to a colon-separated list of paths to search for icons to use with
+ notifications.
+@@ -398,7 +398,7 @@ replace this and will need new settings.
+ Comma-separated of names of the the themes to use for looking up icons. This has
+ to be the name of the directory in which the theme is located, not the
+ human-friendly name of the theme. So for example, the theme B<Breeze Dark> is
+-located in F</usr/share/icons/breeze-dark>. In this case you have to set the
++located in F<${PREFIX}/share/icons/breeze-dark>. In this case you have to set the
+ theme to B<breeze-dark>.
+ 
+ The first theme in the list is the most important. Only if the icon cannot be
+@@ -438,12 +438,12 @@ Maximum number of notifications that will be kept in h
+ is reached, older notifications will be deleted once a new one arrives. See
+ HISTORY.
+ 
+-=item B<dmenu> (default: "/usr/bin/dmenu")
++=item B<dmenu> (default: "${LOCALBASE}/bin/dmenu")
+ 
+ The command that will be run when opening the context menu. Should be either
+ a dmenu command or a dmenu-compatible menu.
+ 
+-=item B<browser> (default: "/usr/bin/xdg-open")
++=item B<browser> (default: "${LOCALBASE}/bin/xdg-open")
+ 
+ The command that will be run when opening a URL. The URL to be opened will be
+ appended to the end of the value of this setting.

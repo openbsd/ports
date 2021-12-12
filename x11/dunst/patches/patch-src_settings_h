@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_settings_h,v 1.1 2021/12/12 20:32:28 op Exp $
+
+Index: src/settings.h
+--- src/settings.h.orig
++++ src/settings.h
+@@ -13,6 +13,8 @@
+ 
+ #define LIST_END (-1)
+ 
++enum mouse_button { BTN_LEFT, BTN_RIGHT, BTN_MIDDLE, BTN_TOUCH };
++
+ enum alignment { ALIGN_LEFT, ALIGN_CENTER, ALIGN_RIGHT };
+ enum icon_position { ICON_LEFT, ICON_RIGHT, ICON_OFF };
+ enum vertical_alignment { VERTICAL_TOP, VERTICAL_CENTER, VERTICAL_BOTTOM };
