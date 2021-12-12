@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.6 2021/12/10 11:19:29 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2021/12/12 13:39:09 tb Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
@@ -160,6 +160,10 @@ CONFIGURE_ARGS+=	--with-SDL_image=no \
 
 # possible symbol conflict with libestdc++
 CONFIGURE_ARGS+=	--with-execinfo=no
+
+# XXX should be picked up by autoconf. Unbreaks build with opaque BIO_METHOD.
+# res_rtp_asterisk.c:643:1: error: variable 'dtls_bio_methods' has initializer but incomplete type
+CFLAGS +=		-DHAVE_OPENSSL_BIO_METHOD
 
 # Some build options (including a useful malloc debug) are available
 # via menuselect. They may be enabled by running 'make menuselect'
