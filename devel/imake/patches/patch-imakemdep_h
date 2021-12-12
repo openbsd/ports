@@ -1,4 +1,4 @@
-$OpenBSD: patch-imakemdep_h,v 1.1 2017/02/28 21:46:51 naddy Exp $
+$OpenBSD: patch-imakemdep_h,v 1.2 2021/12/12 11:45:38 robert Exp $
 --- imakemdep.h.orig	Sat Aug 17 12:11:06 2013
 +++ imakemdep.h	Thu Feb 23 15:36:01 2017
 @@ -330,6 +330,10 @@ in this Software without prior written authorization f
@@ -7,7 +7,7 @@ $OpenBSD: patch-imakemdep_h,v 1.1 2017/02/28 21:46:51 naddy Exp $
  #   endif
 +#   if defined(__OpenBSD__)
 +#    undef USE_CC_E
-+#    define DEFAULT_CPP "/usr/libexec/tradcpp"
++#    define DEFAULT_CPP "${TRUEPREFIX}/bin/tradcpp"
 +#   endif
  
  #  endif /* !defined (CROSSCOMPILE) || defined (CROSSCOMPILE_CPP) */
