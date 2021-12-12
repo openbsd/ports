@@ -1,9 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/09/25 13:53:53 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/12/12 20:23:16 op Exp $
 @bin bin/dunst
 bin/dunstctl
 @bin bin/dunstify
 @man man/man1/dunst.1
 @man man/man1/dunstctl.1
-share/dbus-1/services/org.knopwob.dunst.service
-share/examples/dunst/
-share/examples/dunst/dunstrc
+@man man/man5/dunst.5
+share/dunst/
+@sample ${SYSCONFDIR}/dunst/
+share/dunst/dunstrc
+@sample ${SYSCONFDIR}/dunst/dunstrc
+share/examples/dbus-1/
+share/examples/dbus-1/services/
+share/examples/dbus-1/services/org.knopwob.dunst.service

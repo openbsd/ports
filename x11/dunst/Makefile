@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2020/09/27 18:37:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2021/12/12 20:23:16 op Exp $
 
 COMMENT =	customizable and lightweight notification-daemon
 
 GH_ACCOUNT =	dunst-project
 GH_PROJECT =	dunst
-GH_TAGNAME =	v1.5.0
+GH_TAGNAME =	v1.7.3
 
 CATEGORIES =	x11
 
@@ -19,9 +19,15 @@ WANTLIB += X11 Xext Xinerama Xrandr Xss c cairo gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 harfbuzz intl m notify
 WANTLIB += pango-1.0 pangocairo-1.0 pthread
 
+# C11 with GNU extensions
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS = c
+CFLAGS +=	-std=gnu11
+
 USE_GMAKE =	Yes
 
-BUILD_DEPENDS =	x11/dbus
+BUILD_DEPENDS =	graphics/png \
+		x11/dbus
 
 LIB_DEPENDS +=	devel/gettext,-runtime \
 		devel/glib2 \
@@ -32,11 +38,20 @@ LIB_DEPENDS +=	devel/gettext,-runtime \
 
 RUN_DEPENDS +=	x11/dbus
 
+TEST_DEPENDS =	shells/bash
+
+MAKE_FLAGS =	WAYLAND=0
+
 FAKE_FLAGS =	PREFIX="${PREFIX}" \
 		MANPREFIX="${PREFIX}/man" \
-		DATADIR="${PREFIX}/share/examples"
+		DATADIR="${PREFIX}/share/examples" \
+		SYSCONFDIR="/etc"
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/docs/dunst.pod ${WRKSRC}/dunstrc
+	${SUBST_CMD} ${WRKSRC}/docs/dunst.1.pod \
+		${WRKSRC}/docs/dunst.5.pod ${WRKSRC}/dunstrc
+
+post-install:
+	mv ${WRKINST}/${SYSCONFDIR}/dunst ${PREFIX}/share
 
 .include <bsd.port.mk>

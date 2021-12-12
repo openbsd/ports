@@ -1,14 +1,16 @@
-$OpenBSD: patch-config_mk,v 1.4 2019/08/02 13:49:29 sthen Exp $
+$OpenBSD: patch-config_mk,v 1.5 2021/12/12 20:23:16 op Exp $
 
 Index: config.mk
 --- config.mk.orig
 +++ config.mk
-@@ -26,7 +26,7 @@ VALGRIND ?= valgrind
+@@ -36,8 +36,8 @@ endif
  
  # flags
- DEFAULT_CPPFLAGS = -D_DEFAULT_SOURCE -DVERSION=\"${VERSION}\"
--DEFAULT_CFLAGS   = -g --std=gnu99 -pedantic -Wall -Wno-overlength-strings -Os ${STATIC}
-+DEFAULT_CFLAGS   = -g --std=gnu99 -pedantic -Wall -Wno-overlength-strings ${STATIC}
- DEFAULT_LDFLAGS  = -lm
+ DEFAULT_CPPFLAGS = -D_DEFAULT_SOURCE -DVERSION=\"${VERSION}\" -DSYSCONFDIR=\"${SYSCONFDIR}\"
+-DEFAULT_CFLAGS   = -g -std=gnu99 -pedantic -Wall -Wno-overlength-strings -Os ${ENABLE_WAYLAND} ${EXTRA_CFLAGS}
+-DEFAULT_LDFLAGS  = -lm -lrt
++DEFAULT_CFLAGS   = -g -std=gnu99 -pedantic -Wall -Wno-overlength-strings ${ENABLE_WAYLAND} ${EXTRA_CFLAGS}
++DEFAULT_LDFLAGS  = -lm
  
  CPPFLAGS_DEBUG := -DDEBUG_BUILD
+ CFLAGS_DEBUG   := -O0

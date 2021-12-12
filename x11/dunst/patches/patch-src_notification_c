@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_notification_c,v 1.3 2020/09/25 13:53:53 feinerer Exp $
+$OpenBSD: patch-src_notification_c,v 1.4 2021/12/12 20:23:16 op Exp $
 
 Index: src/notification.c
 --- src/notification.c.orig
 +++ src/notification.c
-@@ -58,7 +58,7 @@ void notification_print(const struct notification *n)
+@@ -60,7 +60,7 @@ void notification_print(const struct notification *n)
          printf("\ticon_id: '%s'\n", n->icon_id);
          printf("\tdesktop_entry: '%s'\n", n->desktop_entry ? n->desktop_entry : "");
          printf("\tcategory: %s\n", n->category);
@@ -12,23 +12,32 @@ Index: src/notification.c
          printf("\turgency: %s\n", notification_urgency_to_string(n->urgency));
          printf("\ttransient: %d\n", n->transient);
          printf("\tformatted: '%s'\n", n->msg);
-@@ -574,14 +574,14 @@ void notification_update_text_to_render(struct notific
+@@ -140,8 +140,8 @@ void notification_run_script(struct notification *n)
+                                 // Set environment variables
+                                 gchar *n_id_str = g_strdup_printf("%i", n->id);
+                                 gchar *n_progress_str = g_strdup_printf("%i", n->progress);
+-                                gchar *n_timeout_str = g_strdup_printf("%li", n->timeout/1000);
+-                                gchar *n_timestamp_str = g_strdup_printf("%li", n->timestamp / 1000);
++                                gchar *n_timeout_str = g_strdup_printf("%lli", (long long)n->timeout/1000);
++                                gchar *n_timestamp_str = g_strdup_printf("%lli", (long long)n->timestamp / 1000);
+                                 safe_setenv("DUNST_APP_NAME",  appname);
+                                 safe_setenv("DUNST_SUMMARY",   summary);
+                                 safe_setenv("DUNST_BODY",      body);
+@@ -668,14 +668,14 @@ void notification_update_text_to_render(struct notific
                  char *new_buf;
                  if (hours > 0) {
                          new_buf =
 -                            g_strdup_printf("%s (%ldh %ldm %lds old)", buf, hours,
--                                            minutes, seconds);
-+                            g_strdup_printf("%s (%lldh %lldm %llds old)", buf, (long long)hours,
-+                                            (long long)minutes, (long long)seconds);
++                            g_strdup_printf("%s (%lldh %lldm %llds old)", buf, hours,
+                                             minutes, seconds);
                  } else if (minutes > 0) {
                          new_buf =
 -                            g_strdup_printf("%s (%ldm %lds old)", buf, minutes,
--                                            seconds);
-+                            g_strdup_printf("%s (%lldm %llds old)", buf, (long long)minutes,
-+                                            (long long)seconds);
++                            g_strdup_printf("%s (%lldm %llds old)", buf, minutes,
+                                             seconds);
                  } else {
 -                        new_buf = g_strdup_printf("%s (%lds old)", buf, seconds);
-+                        new_buf = g_strdup_printf("%s (%llds old)", buf, (long long)seconds);
++                        new_buf = g_strdup_printf("%s (%llds old)", buf, seconds);
                  }
  
                  g_free(buf);
