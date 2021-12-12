@@ -1,0 +1,25 @@
+$OpenBSD: patch-mojoshader_compiler_c,v 1.1 2021/12/12 04:41:03 thfr Exp $
+
+fix incomplete function signatures
+
+Index: mojoshader_compiler.c
+--- mojoshader_compiler.c.orig
++++ mojoshader_compiler.c
+@@ -475,7 +475,7 @@ static void pop_symbol(Context *ctx, SymbolMap *map)
+     if (!item)
+         return;
+     if (item->symbol)
+-        hash_remove(map->hash, item->symbol);
++        hash_remove(map->hash, item->symbol, ctx);
+     map->scope = item->next;
+     Free(ctx, item);
+ } // pop_symbol
+@@ -524,7 +524,7 @@ static void destroy_symbolmap(Context *ctx, SymbolMap 
+ {
+     while (map->scope)
+         pop_symbol(ctx, map);
+-    hash_destroy(map->hash);
++    hash_destroy(map->hash, ctx);
+ } // destroy_symbolmap
+ 
+ 
