@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/12/12 10:44:57 ajacoutot Exp $
+include/graphemebreak.h
+include/linebreak.h
+include/linebreakdef.h
+include/unibreakbase.h
+include/unibreakdef.h
+include/wordbreak.h
+@static-lib lib/liblinebreak.a
+@static-lib lib/libunibreak.a
+lib/libunibreak.la
+@lib lib/libunibreak.so.${LIBunibreak_VERSION}
+lib/pkgconfig/libunibreak.pc
