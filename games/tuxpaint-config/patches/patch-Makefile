@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.9 2021/07/01 11:56:57 ajacoutot Exp $
+$OpenBSD: patch-Makefile,v 1.10 2021/12/12 10:45:45 ajacoutot Exp $
 
 Index: Makefile
 --- Makefile.orig
@@ -39,15 +39,15 @@ Index: Makefile
  # LOCALE_PREFIX=/usr/share/locale/
  
  
-@@ -80,7 +75,6 @@ FLTK_LIBS=`fltk-config --ldflags`
- PAPER_LIB=-lpaper
+@@ -76,7 +71,6 @@ UNIBREAK_CFLAGS=`pkg-config --cflags libunibreak`
+ UNIBREAK_LIB=`pkg-config --libs libunibreak`
  
  # Default CFLAGS:
 -CFLAGS=-O2 -Wall
  
  # The entire set of CFLAGS:
- ALL_CFLAGS=$(CFLAGS) $(FLTK_CFLAGS) -DDATA_PREFIX=\"$(DATA_PREFIX)\" \
-@@ -92,11 +86,6 @@ ALL_CFLAGS=$(CFLAGS) $(FLTK_CFLAGS) -DDATA_PREFIX=\"$(
+ ALL_CFLAGS=$(CFLAGS) $(FLTK_CFLAGS) $(UNIBREAK_CFLAGS) \
+@@ -89,11 +83,6 @@ ALL_CFLAGS=$(CFLAGS) $(FLTK_CFLAGS) $(UNIBREAK_CFLAGS)
  # "make" with no arguments builds the program and man page from sources:
  
  all:	tuxpaint-config translations
@@ -59,7 +59,7 @@ Index: Makefile
  
  releaseclean:
  	@echo
-@@ -181,16 +170,9 @@ install-win32:
+@@ -178,16 +167,9 @@ install-win32:
  # (depending on the *PREFIX variables at the top, you probably need
  # to do this as superuser ("root"))
  
@@ -78,7 +78,7 @@ Index: Makefile
  
  
  # "make clean" deletes the program, the compiled objects and the
-@@ -269,24 +251,15 @@ install-kde-icons:
+@@ -266,24 +248,15 @@ install-kde-icons:
  # and the 24-color 32x32 XPM (for other Window managers):
  
  install-icon:
@@ -107,7 +107,7 @@ Index: Makefile
  
  
  # Install the data (sound, graphics, fonts):
-@@ -302,31 +275,15 @@ install-data:
+@@ -299,31 +272,15 @@ install-data:
  # Install the text documentation:
  
  install-doc:
@@ -143,30 +143,30 @@ Index: Makefile
  
  
  # Build the program!
-@@ -334,22 +291,22 @@ install-man:
+@@ -331,22 +288,22 @@ install-man:
  tuxpaint-config:	obj/tuxpaint-config.o obj/tuxpaint-config2.o	\
  			obj/defaults.o $(ARCH_LIBS)
  	@echo Linking
 -	$(CXX) $(ALL_CFLAGS) -o tuxpaint-config obj/tuxpaint-config.o 	\
 +	$(CXX) $(ALL_CFLAGS) -liconv -lintl -o tuxpaint-config obj/tuxpaint-config.o 	\
  			obj/tuxpaint-config2.o obj/defaults.o $(ARCH_LIBS) \
- 			$(FLTK_LIBS) $(ARCH_LINKS) $(PAPER_LIB)
+ 			$(FLTK_LIBS) $(ARCH_LINKS) $(PAPER_LIB) $(UNIBREAK_LIB)
  
  
  # Build the object for the program!
  
--obj/tuxpaint-config.o:	src/tuxpaint-config.cxx src/version.h src/about.h
-+obj/tuxpaint-config.o:	src/tuxpaint-config.cxx obj src/version.h src/about.h
+-obj/tuxpaint-config.o:	src/tuxpaint-config.cxx src/tuxpaint-config2.h src/defaults.h src/version.h src/about.h
++obj/tuxpaint-config.o:	src/tuxpaint-config.cxx src/tuxpaint-config2.h src/defaults.h obj src/version.h src/about.h
  	@echo Compiling tuxpaint-config.cxx
  	$(CXX) $(ALL_CFLAGS) -c src/tuxpaint-config.cxx -o obj/tuxpaint-config.o
  
--obj/tuxpaint-config2.o:	src/tuxpaint-config2.cxx src/version.h src/about.h
-+obj/tuxpaint-config2.o:	src/tuxpaint-config2.cxx obj src/version.h src/about.h
+-obj/tuxpaint-config2.o:	src/tuxpaint-config2.cxx src/tuxpaint-config2.h src/defaults.h src/version.h src/about.h
++obj/tuxpaint-config2.o:	src/tuxpaint-config2.cxx src/tuxpaint-config2.h src/defaults.h obj src/version.h src/about.h
  	@echo Compiling tuxpaint-config2.cxx
  	$(CXX) $(ALL_CFLAGS) -c src/tuxpaint-config2.cxx -o obj/tuxpaint-config2.o
  
--obj/defaults.o:	src/defaults.cxx
-+obj/defaults.o:	src/defaults.cxx obj
+-obj/defaults.o:	src/defaults.cxx src/defaults.h
++obj/defaults.o:	src/defaults.cxx obj src/defaults.h
  	@echo Compiling defaults.cxx
  	$(CXX) $(ALL_CFLAGS) -c src/defaults.cxx -o obj/defaults.o
  

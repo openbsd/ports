@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2021/07/01 11:56:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2021/12/12 10:45:45 ajacoutot Exp $
 
 COMMENT=	graphical tool to change Tux Paint's settings
 #'
 
-DISTNAME=	tuxpaint-config-0.0.17
+DISTNAME=	tuxpaint-config-0.0.18
 CATEGORIES=	games graphics
 
 HOMEPAGE=	http://www.tuxpaint.org/
@@ -13,16 +13,19 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tuxpaint/}
+WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xcursor Xdmcp Xext Xfixes
+WANTLIB += Xft Xinerama c fltk fontconfig iconv intl m paper unibreak
 
-WANTLIB += X11 Xau Xdmcp Xext c m ${COMPILER_LIBCXX} pthread fltk paper
-WANTLIB += Xft Xinerama fontconfig Xcursor Xfixes iconv intl
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tuxpaint/}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS=	devel/gettext,-tools
-LIB_DEPENDS=	x11/fltk \
-		print/libpaper
+
+LIB_DEPENDS=	print/libpaper \
+		textproc/libunibreak \
+		x11/fltk
+
 RUN_DEPENDS=	games/tuxpaint
 
 USE_GMAKE=	Yes
@@ -33,6 +36,5 @@ NO_TEST=	Yes
 
 pre-configure:
 	rm -r ${WRKSRC}/obj
-	${SUBST_CMD} ${WRKSRC}/src/tuxpaint-config.1
 
 .include <bsd.port.mk>
