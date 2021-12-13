@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.59 2021/11/20 09:43:49 jca Exp $
+@comment $OpenBSD: PLIST-main,v 1.60 2021/12/13 12:58:06 jca Exp $
 @conflict ldb-<1.4.8p0v0
 @pkgpath net/samba,ldap,-main
 @pkgpath net/samba,ads,-main
@@ -1022,6 +1022,8 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/${MODPY_PYCACHE}spn_te
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/${MODPY_PYCACHE}spn_tests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/${MODPY_PYCACHE}test_ccache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/${MODPY_PYCACHE}test_ccache.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/${MODPY_PYCACHE}test_idmap_nss.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/${MODPY_PYCACHE}test_idmap_nss.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/${MODPY_PYCACHE}test_ldap.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/${MODPY_PYCACHE}test_ldap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/${MODPY_PYCACHE}test_min_domain_uid.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1051,6 +1053,7 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/salt_tests.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/simple_tests.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/spn_tests.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/test_ccache.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/test_idmap_nss.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/test_ldap.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/test_min_domain_uid.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/test_rpc.py

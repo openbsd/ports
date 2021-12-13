@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.305 2021/11/20 09:43:49 jca Exp $
+# $OpenBSD: Makefile,v 1.306 2021/12/13 12:58:05 jca Exp $
 
-VERSION =		4.15.2
+VERSION =		4.15.3
 DISTNAME =		samba-${VERSION}
 EPOCH =			0
-REVISION-tevent =	1
+REVISION-ldb =		0
+REVISION-tevent =	2
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
 COMMENT-ldb =		LDAP-like embedded database
