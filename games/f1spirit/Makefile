@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2021/03/06 15:29:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2021/12/13 09:07:05 landry Exp $
 
 COMMENT=	remake of Konami's F1-Spirit
 
 DISTNAME=	f1spirit.src_0.rc9-1615
 PKGNAME=	${DISTNAME:S/.src_0.rc9-/-0./}
-REVISION=	7
+REVISION=	8
 WRKDIST=	${WRKDIR}/${DISTNAME:S/.src_0.rc9-/-0.rc9./}
 DISTFILES=	${DISTNAME}-1{${DISTNAME}}.tgz
 
@@ -17,8 +17,8 @@ MASTER_SITES=	https://braingames.jorito.net/f1spirit/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB+= GL GLU SDL SDL_image SDL_mixer SDL_net c crypto curl m nghttp2
-WANTLIB+= pthread ssl ${COMPILER_LIBCXX} z
+WANTLIB+= GL GLU SDL SDL_image SDL_mixer SDL_net c curl m
+WANTLIB+= pthread ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -31,7 +31,6 @@ RUN_DEPENDS=	devel/desktop-file-utils
 LIB_DEPENDS=	devel/sdl-image \
 		devel/sdl-net \
 		devel/sdl-mixer \
-		net/curl \
-		devel/libidn
+		net/curl
 
 .include <bsd.port.mk>
