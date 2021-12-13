@@ -1,6 +1,6 @@
-$OpenBSD: patch-nss_lib_freebl_shvfy_c,v 1.1 2021/12/07 16:07:25 landry Exp $
+$OpenBSD: patch-nss_lib_freebl_shvfy_c,v 1.2 2021/12/13 17:19:54 landry Exp $
 
-https://phabricator.services.mozilla.com/D130309
+https://hg.mozilla.org/projects/nss/rev/094dafff1115d7773a65341fc6f03895f6046119
 
 Index: nss/lib/freebl/shvfy.c
 --- nss/lib/freebl/shvfy.c.orig
