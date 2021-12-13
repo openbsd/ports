@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/08/31 21:01:09 tb Exp $
+# $OpenBSD: Makefile,v 1.2 2021/12/13 16:32:22 tb Exp $
 
 COMMENT-main =		remove unnecessary files
 COMMENT-gui =		GUI to remove unnecessary files
@@ -8,7 +8,7 @@ PKGNAME-gui =		czkawka-gui-${GH_TAGNAME}
 
 GH_ACCOUNT =		qarmin
 GH_PROJECT =		czkawka
-GH_TAGNAME =		3.2.0
+GH_TAGNAME =		3.3.1
 
 CATEGORIES =		sysutils
 
