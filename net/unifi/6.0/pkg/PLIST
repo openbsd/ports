@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2021/03/30 10:15:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/12/13 22:14:59 sthen Exp $
 @option is-branch
 @pkgpath net/unifi
 @pkgpath net/unifi/5.7
@@ -106,8 +106,11 @@ share/unifi/lib/jstl-1.2.jar
 share/unifi/lib/jstun-0.7.4.jar
 share/unifi/lib/jul-to-slf4j-1.7.30.jar
 share/unifi/lib/log4j-api-2.13.3.jar
+share/unifi/lib/log4j-api-2.15.0.jar
 share/unifi/lib/log4j-core-2.13.3.jar
+share/unifi/lib/log4j-core-2.15.0.jar
 share/unifi/lib/log4j-slf4j-impl-2.13.3.jar
+share/unifi/lib/log4j-slf4j-impl-2.15.0.jar
 share/unifi/lib/mongo-java-driver-3.4.3.jar
 share/unifi/lib/openssh-1.0.jar
 share/unifi/lib/org.eclipse.paho.client.mqttv3-1.1.0.jar
@@ -123,6 +126,7 @@ share/unifi/lib/servo-core-0.13.0.jar
 share/unifi/lib/servo-graphite-0.13.0.jar
 share/unifi/lib/slf4j-api-1.7.30.jar
 share/unifi/lib/snappy-java-1.1.7.5.jar
+share/unifi/lib/snappy-java-1.1.8.4-libc++.8.0.jar
 share/unifi/lib/spectator-api-0.88.0.jar
 share/unifi/lib/spring-aop-5.1.5.RELEASE.jar
 share/unifi/lib/spring-beans-5.1.5.RELEASE.jar
