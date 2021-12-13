@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2021/03/08 09:22:09 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2021/12/13 09:59:45 landry Exp $
 
 COMMENT =	Qt-based MPD client
 
 V =		2.4.2
 DISTNAME =	cantata-${V}
 HOMEPAGE =	https://github.com/CDrummond/cantata
-REVISION =	0
+REVISION =	1
 
 MASTER_SITES =	https://github.com/CDrummond/cantata/releases/download/v${V}/
 EXTRACT_SUFX =	.tar.bz2
@@ -28,7 +28,6 @@ RUN_DEPENDS +=	x11/gtk+3,-guic
 LIB_DEPENDS +=	audio/mpg123 \
 		audio/libcdio \
 		audio/libcdio-paranoia \
-		audio/libebur128 \
 		audio/libcddb \
 		audio/libmusicbrainz5 \
 		audio/taglib \
