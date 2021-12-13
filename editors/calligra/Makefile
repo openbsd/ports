@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.47 2021/08/31 07:31:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2021/12/13 18:21:35 rsadowski Exp $
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	https://www.calligra.org
 VERSION =	3.2.1
 DISTNAME =	calligra-${VERSION}
 CATEGORIES =	editors
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS =   RtfReader                 51.0 # 0.0
 SHARED_LIBS +=  basicflakes               50.0 # 0.0
@@ -50,8 +50,7 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 PERMIT_PACKAGE =	Yes
 DPB_PROPERTIES =	parallel
 
-WANTLIB += ${COMPILER_LIBCXX} ICE Iex-3_1
-WANTLIB += IlmThread-3_1 Imath-3_1 KChart KF5Activities KF5Archive
+WANTLIB += ${COMPILER_LIBCXX} ICE KChart KF5Activities KF5Archive
 WANTLIB += KF5Auth KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5Crash KF5DBusAddons KF5GuiAddons KF5I18n KF5IconThemes
@@ -74,6 +73,8 @@ COMPILER =	base-clang ports-gcc
 
 BUILD_DEPENDS =	devel/boost \
 		devel/gettext,-tools \
+		devel/kf5/kcalendarcore \
+		devel/kf5/kcontacts \
 		devel/kf5/kdoctools \
 		devel/kf5/kinit \
 		devel/kf5/kross \
@@ -83,6 +84,8 @@ BUILD_DEPENDS =	devel/boost \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/gettext,-runtime \
+		devel/kf5/kcalendarcore \
+		devel/kf5/kcontacts \
 		devel/kf5/kinit \
 		devel/kf5/ktexteditor \
 		misc/shared-mime-info \
@@ -93,13 +96,11 @@ LIB_DEPENDS =	converters/libiconv \
 		devel/gsl \
 		devel/kf5/kactivities \
 		devel/kf5/karchive \
-		devel/kf5/kcalendarcore \
 		devel/kf5/kcmutils \
 		devel/kf5/kcodecs\
 		devel/kf5/kcompletion \
 		devel/kf5/kconfig \
 		devel/kf5/kconfigwidgets \
-		devel/kf5/kcontacts \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kdbusaddons \
 		devel/kf5/kdelibs4support \
@@ -120,11 +121,9 @@ LIB_DEPENDS =	converters/libiconv \
 		devel/kf5/sonnet \
 		graphics/kdiagram \
 		graphics/lcms2 \
-		graphics/openexr \
 		multimedia/phonon \
 		print/poppler,-qt5 \
 		security/qca-qt5 \
-		textproc/libwpd \
 		x11/kde-applications/okular \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtsvg \
