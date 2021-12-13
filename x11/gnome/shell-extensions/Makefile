@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.64 2021/10/31 13:21:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.65 2021/12/13 12:06:07 ajacoutot Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		collection of extensions for GNOME Shell
 
 GNOME_PROJECT=		gnome-shell-extensions
-GNOME_VERSION=		41.0
+GNOME_VERSION=		41.1
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -16,8 +16,7 @@ MODULES=		devel/dconf \
 
 MODGNOME_TOOLS +=	desktop-file-utils
 
-BUILD_DEPENDS=		devel/libgtop2 \
-			www/sassc
+BUILD_DEPENDS=		devel/libgtop2
 
 RUN_DEPENDS=		devel/libgtop2 \
 			x11/gnome/shell
