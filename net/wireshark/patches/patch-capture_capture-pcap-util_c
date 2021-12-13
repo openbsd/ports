@@ -1,25 +1,23 @@
-$OpenBSD: patch-caputils_capture-pcap-util_c,v 1.4 2020/11/20 17:29:11 sthen Exp $
+$OpenBSD: patch-capture_capture-pcap-util_c,v 1.1 2021/12/13 22:44:01 sthen Exp $
 
 hunks 1/2: ioctl is needed on !linux
 
 hunk 3:    pcap_findalldevs() doesn't include controllers dumpable via
            usbpcap, do a separate lookup and add to the list
 
-Index: caputils/capture-pcap-util.c
---- caputils/capture-pcap-util.c.orig
-+++ caputils/capture-pcap-util.c
-@@ -29,6 +29,10 @@
+Index: capture/capture-pcap-util.c
+--- capture/capture-pcap-util.c.orig
++++ capture/capture-pcap-util.c
+@@ -30,6 +30,8 @@
  #include <dlfcn.h>
  #endif
  
-+#ifdef HAVE_SYS_IOCTL_H
 +#include <sys/ioctl.h>
-+#endif
 +
  #include "ws_attributes.h"
  
  /*
-@@ -43,8 +47,6 @@
+@@ -44,8 +46,6 @@
   */
  #if defined(HAVE_PCAP_CREATE) && defined(__linux__)
  
@@ -28,7 +26,7 @@ Index: caputils/capture-pcap-util.c
  /*
   * If we're building for a Linux version that supports bonding,
   * HAVE_BONDING will be defined.
-@@ -689,6 +691,23 @@ get_interface_list_findalldevs(int *err, char **err_st
+@@ -689,6 +689,23 @@ get_interface_list_findalldevs(int *err, char **err_st
  		if_info_ip(if_info, dev);
  	}
  	pcap_freealldevs(alldevs);

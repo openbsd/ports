@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2021/11/17 21:18:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.128 2021/12/13 22:44:01 sthen Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
@@ -6,7 +6,7 @@ COMMENT-main =	graphical network protocol analyzer, Qt user-interface
 COMMENT-text =	network protocol analyzer
 
 DPB_PROPERTIES =	parallel
-V =		3.4.10
+V =		3.6.0
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-$V
 PKGNAME-main =	wireshark-$V
@@ -125,9 +125,9 @@ CONFIGURE_ARGS +=	-DBUILD_wireshark=false
 CXXFLAGS +=	-mxgot
 .endif
 
-post-install:
+zzzpost-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/wireshark.desktop ${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/org.wireshark.Wireshark.desktop ${PREFIX}/share/applications/
 .for _s in 16 24 32 48 64 128 256
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/${_s}x${_s}/{apps,mimetypes}
 	${INSTALL_DATA} ${WRKSRC}/image/wsicon${_s}.png ${PREFIX}/share/icons/hicolor/${_s}x${_s}/apps/wireshark.png

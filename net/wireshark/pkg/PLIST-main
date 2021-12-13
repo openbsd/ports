@@ -1,48 +1,27 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2019/03/02 18:41:12 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2021/12/13 22:44:02 sthen Exp $
 @pkgpath net/wireshark,-gtk
 @bin bin/wireshark
 @man man/man1/wireshark.1
-share/appdata/
-share/appdata/wireshark.appdata.xml
-share/applications/wireshark.desktop
+share/applications/org.wireshark.Wireshark.desktop
 share/doc/pkg-readmes/${PKGSTEM}
-share/doc/wireshark/
-share/doc/wireshark/androiddump.html
-share/doc/wireshark/capinfos.html
-share/doc/wireshark/captype.html
-share/doc/wireshark/ciscodump.html
-share/doc/wireshark/dftest.html
-share/doc/wireshark/dumpcap.html
-share/doc/wireshark/editcap.html
-share/doc/wireshark/extcap.html
-share/doc/wireshark/mergecap.html
-share/doc/wireshark/mmdbresolve.html
-share/doc/wireshark/randpkt.html
-share/doc/wireshark/randpktdump.html
-share/doc/wireshark/rawshark.html
-share/doc/wireshark/reordercap.html
-share/doc/wireshark/sshdump.html
-share/doc/wireshark/text2pcap.html
-share/doc/wireshark/tshark.html
-share/doc/wireshark/udpdump.html
-share/doc/wireshark/wireshark-filter.html
-share/doc/wireshark/wireshark.html
-share/icons/hicolor/128x128/apps/wireshark.png
-share/icons/hicolor/128x128/mimetypes/application-wireshark-doc.png
-share/icons/hicolor/16x16/apps/wireshark.png
-share/icons/hicolor/16x16/mimetypes/application-wireshark-doc.png
-share/icons/hicolor/24x24/apps/wireshark.png
-share/icons/hicolor/24x24/mimetypes/application-wireshark-doc.png
-share/icons/hicolor/256x256/apps/wireshark.png
-share/icons/hicolor/256x256/mimetypes/application-wireshark-doc.png
-share/icons/hicolor/32x32/apps/wireshark.png
-share/icons/hicolor/32x32/mimetypes/application-wireshark-doc.png
-share/icons/hicolor/48x48/apps/wireshark.png
-share/icons/hicolor/48x48/mimetypes/application-wireshark-doc.png
-share/icons/hicolor/64x64/apps/wireshark.png
-share/icons/hicolor/64x64/mimetypes/application-wireshark-doc.png
-share/icons/hicolor/scalable/apps/wireshark.svg
-share/mime/packages/wireshark.xml
+share/icons/hicolor/128x128/apps/org.wireshark.Wireshark.png
+share/icons/hicolor/128x128/mimetypes/org.wireshark.Wireshark-mimetype.png
+share/icons/hicolor/16x16/apps/org.wireshark.Wireshark.png
+share/icons/hicolor/16x16/mimetypes/org.wireshark.Wireshark-mimetype.png
+share/icons/hicolor/24x24/apps/org.wireshark.Wireshark.png
+share/icons/hicolor/24x24/mimetypes/org.wireshark.Wireshark-mimetype.png
+share/icons/hicolor/256x256/apps/org.wireshark.Wireshark.png
+share/icons/hicolor/256x256/mimetypes/org.wireshark.Wireshark-mimetype.png
+share/icons/hicolor/32x32/apps/org.wireshark.Wireshark.png
+share/icons/hicolor/32x32/mimetypes/org.wireshark.Wireshark-mimetype.png
+share/icons/hicolor/48x48/apps/org.wireshark.Wireshark.png
+share/icons/hicolor/48x48/mimetypes/org.wireshark.Wireshark-mimetype.png
+share/icons/hicolor/64x64/apps/org.wireshark.Wireshark.png
+share/icons/hicolor/64x64/mimetypes/org.wireshark.Wireshark-mimetype.png
+share/icons/hicolor/scalable/apps/org.wireshark.Wireshark.svg
+share/metainfo/
+share/metainfo/org.wireshark.Wireshark.metainfo.xml
+share/mime/packages/org.wireshark.Wireshark.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database
