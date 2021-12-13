@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.265 2021/11/17 08:06:30 landry Exp $
+# $OpenBSD: Makefile,v 1.266 2021/12/13 11:10:52 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
-BROKEN =	broken after lang/rust update 1.56.0
-
 # version = (TB version - 3) / 100 + 2
-MOZILLA_VERSION =	2.53.10
+MOZILLA_VERSION =	2.53.10.1
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	comm/suite
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-5.8.10
+PKGNAME-lightning =	lightning-seamonkey-5.8.10.1
 EPOCH-lightning =	0
 
 HOMEPAGE =	http://www.seamonkey-project.org/
