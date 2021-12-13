@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.217 2021/12/09 09:01:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.218 2021/12/13 12:05:56 ajacoutot Exp $
 
 USE_WXNEEDED=		Yes
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
-GNOME_VERSION=		41.1
-REVISION=		0
+GNOME_VERSION=		41.2
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -33,9 +32,8 @@ MODGNOME_TOOLS +=	desktop-file-utils docbook gobject-introspection gtk-update-ic
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 BUILD_DEPENDS +=	devel/gsettings-desktop-schemas \
-			shells/bash-completion \
-			textproc/asciidoc \
-			www/sassc
+			shells/bash-completion
+
 RUN_DEPENDS +=		devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=		audio/pulseaudio \
