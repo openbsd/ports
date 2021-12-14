@@ -1,15 +1,21 @@
-# $OpenBSD: Makefile.inc,v 1.26 2021/12/13 22:14:59 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.27 2021/12/14 10:09:15 sthen Exp $
 
 .if defined(V)
 COMMENT =	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
 
 _BV =		${BUILD_V:C/^http[^-]*-([0-9a-f]{10}).*/-\1/}
 MASTER_SITES ?=	https://dl.ui.com/unifi/${V}${_BV}/
+MASTER_SITES0 =	https://spacehopper.org/mirrors/
+MASTER_SITES1 =	https://dl.ubnt-ut.com/snmp/
+MASTER_SITES2 =	https://dlcdn.apache.org/logging/log4j/2.15.0/
 
 DISTFILES +=	unifi-$V{UniFi.unix}.zip \
 		unifi_sh_api-$V{unifi_sh_api} \
 		UBNT-MIB:1 \
 		UBNT-UniFi-MIB:1
+
+EXTRACT_ONLY =	unifi-$V.zip
+PKGNAME =	unifi-$V
 
 # unifi requires the native library component of snappy-java,
 # upstream doesn't include an openbsd version; use a locally built
@@ -20,16 +26,9 @@ DISTFILES +=	snappy-java-${SNAPPY_V}${SNAPPY_S}.jar:0
 
 REPLACE_LOG4J ?= No
 .if ${REPLACE_LOG4J} == Yes
-DISTFILES +=	log4j-api-2.15.0.jar:0 \
-		log4j-core-2.15.0.jar:0 \
-		log4j-slf4j-impl-2.15.0.jar:0
+DISTFILES +=	apache-log4j-2.15.0-bin.tar.gz:2
+EXTRACT_ONLY +=	apache-log4j-2.15.0-bin.tar.gz
 .endif
-
-EXTRACT_ONLY =	unifi-$V.zip
-PKGNAME =	unifi-$V
-
-MASTER_SITES0 =	https://spacehopper.org/mirrors/
-MASTER_SITES1 =	https://dl.ubnt-ut.com/snmp/
 
 CATEGORIES =	net
 
@@ -85,12 +84,9 @@ do-configure:
 	@cd ${WRKSRC}; ls -l lib/snappy-java*; echo
 .if ${REPLACE_LOG4J} == Yes
 	@echo "** Overriding vulnerable log4j versions"; echo
-.  for l4j_comp l4j_ver in \
-	log4j-api			2.15.0 \
-	log4j-core			2.15.0 \
-	log4j-slf4j-impl		2.15.0
-	@ln -fs ${l4j_comp}-${l4j_ver}.jar ${WRKSRC}/lib/${l4j_comp}*jar
-	@${INSTALL_DATA} ${FULLDISTDIR}/${l4j_comp}-${l4j_ver}.jar ${WRKSRC}/lib
+.  for l4j_comp in log4j-api log4j-core log4j-slf4j-impl
+	@ln -fs ${l4j_comp}-2.15.0.jar ${WRKSRC}/lib/${l4j_comp}-*jar
+	@${INSTALL_DATA} ${WRKDIR}/apache-log4j-*/${l4j_comp}-2.15.0.jar ${WRKSRC}/lib
 	@cd ${WRKSRC}; ls -l lib/${l4j_comp}*; echo
 .  endfor
 .endif
