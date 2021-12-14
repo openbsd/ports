@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2021/11/02 00:00:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2021/12/14 00:26:46 sthen Exp $
 
 COMMENT =		network library for easy and scalable concurrency
 
-MODPY_EGG_VERSION =	21.8.0
+MODPY_EGG_VERSION =	21.12.0
 DISTNAME =		gevent-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 HOMEPAGE =		https://www.gevent.org/
@@ -26,8 +25,7 @@ MODPY_DISTUTILS_BUILDARGS =	--build-base="${WRKBUILD}" \
 				--build-temp="tempdir"
 
 BUILD_DEPENDS =		devel/libev:configure \
-			devel/py-cffi${MODPY_FLAVOR} \
-			lang/cython${MODPY_FLAVOR}
+			devel/py-cffi${MODPY_FLAVOR}
 LIB_DEPENDS =		devel/libev \
 			net/libcares
 RUN_DEPENDS =		devel/py-greenlet${MODPY_FLAVOR}

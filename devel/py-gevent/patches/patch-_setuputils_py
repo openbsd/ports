@@ -1,0 +1,24 @@
+$OpenBSD: patch-_setuputils_py,v 1.1 2021/12/14 00:26:46 sthen Exp $
+
+don't pick up cython if present at build time; there are pregenerated files
+anyway, and 1) py-gevent wants 3.0a versions of cython, and 2) hash filenames
+are created which depend on a digest of compiler directives, which differs
+to the pregenerated ones and it ends up with both getting installed
+
+Index: _setuputils.py
+--- _setuputils.py.orig
++++ _setuputils.py
+@@ -216,11 +216,8 @@ def _dummy_cythonize(extensions, **_kwargs):
+         extension.sources[:] = sources
+     return extensions
+ 
+-try:
+-    from Cython.Build import cythonize
+-except ImportError:
+-    # The .c files had better already exist.
+-    cythonize = _dummy_cythonize
++# The .c files had better already exist.
++cythonize = _dummy_cythonize
+ 
+ def cythonize1(ext):
+     # All the directories we have .pxd files
