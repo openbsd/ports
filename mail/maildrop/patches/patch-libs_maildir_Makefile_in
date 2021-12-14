@@ -1,7 +1,8 @@
-$OpenBSD: patch-libs_maildir_Makefile_in,v 1.2 2015/04/28 07:24:43 giovanni Exp $
---- libs/maildir/Makefile.in.orig	Sat Dec 13 16:08:20 2014
-+++ libs/maildir/Makefile.in	Thu Apr 23 23:23:38 2015
-@@ -1083,16 +1083,16 @@ mailbot.h: config.status
+$OpenBSD: patch-libs_maildir_Makefile_in,v 1.3 2021/12/14 07:53:56 giovanni Exp $
+Index: libs/maildir/Makefile.in
+--- libs/maildir/Makefile.in.orig
++++ libs/maildir/Makefile.in
+@@ -1244,16 +1244,16 @@ mailbot.h: config.status
  	echo '#define MAILBOT "@MAILBOT@"' >mailbot.h
  
  maildirsharedrc.h: config.status
@@ -19,6 +20,6 @@ $OpenBSD: patch-libs_maildir_Makefile_in,v 1.2 2015/04/28 07:24:43 giovanni Exp 
  quotawarnmsg.h: config.status
 -	echo '#define QUOTAWARNMSG "$(sysconfdir)/quotawarnmsg"' >quotawarnmsg.h
 +	echo '#define QUOTAWARNMSG "$(sysconfdir)/maildrop/quotawarnmsg"' >quotawarnmsg.h
- maildir.libdeps: config.status
- 	echo @LIBFAM@ >maildir.libdeps
  
+ clean-local:
+ 	rm -rf testmd

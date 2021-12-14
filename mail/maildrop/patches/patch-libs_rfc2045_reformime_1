@@ -1,6 +1,7 @@
-$OpenBSD: patch-libs_rfc2045_reformime_1,v 1.1 2014/06/05 21:04:51 giovanni Exp $
---- libs/rfc2045/reformime.1.orig	Sun Aug 25 21:15:30 2013
-+++ libs/rfc2045/reformime.1	Fri Oct  4 15:38:06 2013
+$OpenBSD: patch-libs_rfc2045_reformime_1,v 1.2 2021/12/14 07:53:56 giovanni Exp $
+Index: libs/rfc2045/reformime.1
+--- libs/rfc2045/reformime.1.orig
++++ libs/rfc2045/reformime.1
 @@ -42,7 +42,7 @@ is a utility for reformatting MIME messages\&.
  Generally,
  \fBreformime\fR
@@ -28,7 +29,7 @@ $OpenBSD: patch-libs_rfc2045_reformime_1,v 1.1 2014/06/05 21:04:51 giovanni Exp 
  MIME headers\&.
  .RE
  .PP
-@@ -449,11 +449,11 @@ MIME objects\&.
+@@ -464,11 +464,11 @@ MIME objects\&.
  .RE
  .SH "SEE ALSO"
  .PP
