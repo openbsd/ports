@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2021/12/13 22:44:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.129 2021/12/14 11:29:58 sthen Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
@@ -70,7 +70,7 @@ BUILD_DEPENDS +=	devel/bison \
 			textproc/libxml \
 			textproc/libxslt \
 			devel/xdg-utils \
-			textproc/asciidoc
+			textproc/asciidoctor
 RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/xdg-utils \
 			misc/shared-mime-info \
