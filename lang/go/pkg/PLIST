@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.53 2021/11/06 06:54:00 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.54 2021/12/14 17:22:19 jsing Exp $
 bin/go
 bin/gofmt
 go/
@@ -5809,6 +5809,7 @@ go/src/go/types/testdata/fixedbugs/issue45635.go2
 go/src/go/types/testdata/fixedbugs/issue45985.go2
 go/src/go/types/testdata/fixedbugs/issue46403.src
 go/src/go/types/testdata/fixedbugs/issue46404.go1
+go/src/go/types/testdata/fixedbugs/issue48819.src
 go/src/go/types/testdata/fixedbugs/issue6977.src
 go/src/go/types/token_test.go
 go/src/go/types/type.go
@@ -11215,6 +11216,7 @@ go/test/fixedbugs/issue48088.dir/a.go
 go/test/fixedbugs/issue48088.dir/b.go
 go/test/fixedbugs/issue48088.go
 go/test/fixedbugs/issue4813.go
+go/test/fixedbugs/issue48289.go
 go/test/fixedbugs/issue4847.go
 go/test/fixedbugs/issue48473.go
 go/test/fixedbugs/issue48476.go
@@ -11224,11 +11226,14 @@ go/test/fixedbugs/issue4879.dir/b.go
 go/test/fixedbugs/issue4879.go
 go/test/fixedbugs/issue4909a.go
 go/test/fixedbugs/issue4909b.go
+go/test/fixedbugs/issue49122.go
+go/test/fixedbugs/issue49249.go
 go/test/fixedbugs/issue4932.dir/
 go/test/fixedbugs/issue4932.dir/foo.go
 go/test/fixedbugs/issue4932.dir/state.go
 go/test/fixedbugs/issue4932.dir/state2.go
 go/test/fixedbugs/issue4932.go
+go/test/fixedbugs/issue49378.go
 go/test/fixedbugs/issue4964.dir/
 go/test/fixedbugs/issue4964.dir/a.go
 go/test/fixedbugs/issue4964.dir/b.go

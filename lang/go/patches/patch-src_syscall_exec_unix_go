@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_syscall_exec_unix_go,v 1.2 2021/08/27 18:33:27 jsing Exp $
+$OpenBSD: patch-src_syscall_exec_unix_go,v 1.3 2021/12/14 17:22:19 jsing Exp $
 
 Index: src/syscall/exec_unix.go
 --- src/syscall/exec_unix.go.orig
 +++ src/syscall/exec_unix.go
-@@ -301,7 +301,7 @@ func Exec(argv0 string, argv []string, envv []string) 
+@@ -293,7 +293,7 @@ func Exec(argv0 string, argv []string, envv []string) 
  	} else if runtime.GOOS == "darwin" || runtime.GOOS == "ios" {
  		// Similarly on Darwin.
  		err1 = execveDarwin(argv0p, &argvp[0], &envvp[0])

@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_runtime_sys_openbsd2_go,v 1.3 2021/08/27 18:33:27 jsing Exp $
+$OpenBSD: patch-src_runtime_sys_openbsd2_go,v 1.4 2021/12/14 17:22:19 jsing Exp $
 
 Index: src/runtime/sys_openbsd2.go
 --- src/runtime/sys_openbsd2.go.orig
@@ -23,7 +23,7 @@ Index: src/runtime/sys_openbsd2.go
  	libcCall(unsafe.Pointer(funcPC(thrkill_trampoline)), unsafe.Pointer(&tid))
  }
  func thrkill_trampoline()
-@@ -196,7 +198,9 @@ func sigaction_trampoline()
+@@ -218,7 +220,9 @@ func sigaction_trampoline()
  //go:nosplit
  //go:cgo_unsafe_args
  func sigprocmask(how uint32, new *sigset, old *sigset) {
@@ -31,6 +31,6 @@ Index: src/runtime/sys_openbsd2.go
 +	// sigprocmask is called from sigsave, which is called from needm.
 +	// As such, we have to be able to run with no g here.
 +	asmcgocall_no_g(unsafe.Pointer(funcPC(sigprocmask_trampoline)), unsafe.Pointer(&how))
+ 	KeepAlive(new)
+ 	KeepAlive(old)
  }
- func sigprocmask_trampoline()
- 
