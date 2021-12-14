@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1563 2021/11/27 16:46:13 semarie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1564 2021/12/14 14:21:41 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -353,7 +353,7 @@ ERRORS += "Fatal: you're not allowed to override $t"
 
 # some introspection
 TARGETS =
-.for _t in extract patch distpatch configure build fake install
+.for _t in extract patch distpatch gen configure build fake install
 .  for _s in pre do post
 .    if target(${_s}-${_t})
 TARGETS += ${_s}-${_t}
