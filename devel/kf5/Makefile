@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2021/11/12 14:31:38 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.22 2021/12/14 18:09:21 rsadowski Exp $
 
 SUBDIR =
 SUBDIR += extra-cmake-modules
@@ -33,6 +33,7 @@ SUBDIR += syntax-highlighting
 SUBDIR += prison
 SUBDIR += syndication
 SUBDIR += kholidays
+SUBDIR += kcalendarcore
 
 # tier 2
 SUBDIR += kauth
