@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/12/14 18:16:12 rsadowski Exp $
+lib/cmake/KF5QuickCharts/
+lib/cmake/KF5QuickCharts/KF5QuickChartsConfig.cmake
+lib/cmake/KF5QuickCharts/KF5QuickChartsConfigVersion.cmake
+lib/cmake/KF5QuickCharts/KF5QuickChartsTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF5QuickCharts/KF5QuickChartsTargets.cmake
+lib/qt5/qml/org/
+lib/qt5/qml/org/kde/
+lib/qt5/qml/org/kde/quickcharts/
+lib/qt5/qml/org/kde/quickcharts/controls/
+lib/qt5/qml/org/kde/quickcharts/controls/Legend.qml
+lib/qt5/qml/org/kde/quickcharts/controls/LegendDelegate.qml
+lib/qt5/qml/org/kde/quickcharts/controls/LineChartControl.qml
+lib/qt5/qml/org/kde/quickcharts/controls/Logging.qml
+lib/qt5/qml/org/kde/quickcharts/controls/PieChartControl.qml
+lib/qt5/qml/org/kde/quickcharts/controls/Theme.qml
+@so lib/qt5/qml/org/kde/quickcharts/controls/libchartscontrolsplugin.so
+lib/qt5/qml/org/kde/quickcharts/controls/qmldir
+lib/qt5/qml/org/kde/quickcharts/controls/styles/
+lib/qt5/qml/org/kde/quickcharts/controls/styles/org.kde.desktop/
+lib/qt5/qml/org/kde/quickcharts/controls/styles/org.kde.desktop/Theme.qml
+@so lib/qt5/qml/org/kde/quickcharts/libQuickCharts.so
+lib/qt5/qml/org/kde/quickcharts/qmldir
+share/qlogging-categories5/
+share/qlogging-categories5/kquickcharts.categories
