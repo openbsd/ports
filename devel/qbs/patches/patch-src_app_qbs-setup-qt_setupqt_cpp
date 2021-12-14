@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_app_qbs-setup-qt_setupqt_cpp,v 1.1 2021/12/06 07:46:45 rsadowski Exp $
+$OpenBSD: patch-src_app_qbs-setup-qt_setupqt_cpp,v 1.2 2021/12/14 21:09:55 rsadowski Exp $
 
 Index: src/app/qbs-setup-qt/setupqt.cpp
 --- src/app/qbs-setup-qt/setupqt.cpp.orig
 +++ src/app/qbs-setup-qt/setupqt.cpp
-@@ -70,7 +70,7 @@ static QStringList qmakeExecutableNames()
+@@ -71,7 +71,7 @@ static QStringList qmakeExecutableNames()
  {
      const QString baseName = HostOsInfo::appendExecutableSuffix(QStringLiteral("qmake"));
      QStringList lst(baseName);

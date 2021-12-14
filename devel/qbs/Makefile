@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2021/12/12 07:41:46 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.20 2021/12/14 21:09:55 rsadowski Exp $
 
 COMMENT =	declarative cross-platform build tool
 
-V =		1.20.1
+V =		1.21.0
 DISTNAME =	qbs-src-${V}
 PKGNAME =	qbs-${V}
 
-SHARED_LIBS =	qbscore		8.0
+SHARED_LIBS =	qbscore		9.0
 
 CATEGORIES =	devel
 
