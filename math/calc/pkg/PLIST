@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2021/11/25 09:18:52 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.18 2021/12/14 08:09:52 sthen Exp $
 @bin bin/calc
 bin/cscript/
 bin/cscript/4dsphere
@@ -373,6 +373,7 @@ share/calc/help/rcout
 share/calc/help/rcpow
 share/calc/help/rcsq
 share/calc/help/re
+share/calc/help/releases
 share/calc/help/remove
 share/calc/help/resource
 share/calc/help/reverse

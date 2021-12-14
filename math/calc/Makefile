@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.56 2021/11/25 09:18:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2021/12/14 08:09:52 sthen Exp $
 
 COMMENT=	C-style arbitrary precision calculator
 
-V=		2.14.0.9
+V=		2.14.0.13
 DISTNAME=	calc-$V
 EXTRACT_SUFX=	.tar.bz2
 
@@ -29,10 +29,12 @@ MAKE_FLAGS= Q="" \
 	LIBDIR='$${DESTDIR}${PREFIX}/lib' \
 	INCDIR='$${DESTDIR}${PREFIX}/include' \
 	MANDIR='$${DESTDIR}${PREFIX}/man/man1' \
+	SHELL=/bin/sh \
 	CALC_SHAREDIR='$${DESTDIR}${PREFIX}/share/calc' \
 	LIB_EXT_VERSION=".so.${LIBcalc_VERSION}" \
 	USE_READLINE='-DUSE_READLINE' \
-	READLINE_LIB='-lreadline -lcurses' \
+	READLINE_LIB='-lreadline' \
+	READLINE_EXTRAS='-lcurses' \
 	ARCH_CFLAGS="" \
 	LDCONFIG="" \
 	LCC="${CC}" \
