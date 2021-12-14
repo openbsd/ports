@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/12/05 17:03:48 tracey Exp $
+# $OpenBSD: Makefile,v 1.5 2021/12/14 13:26:12 naddy Exp $
 
 COMMENT =	gdb for ${CONFIG} cross-development
 
@@ -15,7 +15,8 @@ WANTLIB += ${COMPILER_LIBCXX} c curses expat m z
 BUILD_DEPENDS =	devel/libtool \
 		devel/bison \
 		devel/xtensa-esp32-elf/binutils \
-		lang/gawk
+		lang/gawk \
+		textproc/gsed
 RUN_DEPENDS +=	devel/xtensa-esp32-elf/binutils
 
 CONFIGURE_ARGS	+=	--enable-commonbfdlib=no \
