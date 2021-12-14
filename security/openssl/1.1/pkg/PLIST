@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/08/25 03:48:01 tb Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/12/14 17:40:08 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict openssl->=1.1.0,<1.2
@@ -3834,6 +3834,8 @@ ${MAN_PREFIX}/man3/d2i_X509_REQ_fp.3
 ${MAN_PREFIX}/man3/d2i_X509_REVOKED.3
 ${MAN_PREFIX}/man3/d2i_X509_SIG.3
 ${MAN_PREFIX}/man3/d2i_X509_VAL.3
+${MAN_PREFIX}/man3/d2i_X509_bio.3
+${MAN_PREFIX}/man3/d2i_X509_fp.3
 ${MAN_PREFIX}/man3/i2d_ACCESS_DESCRIPTION.3
 ${MAN_PREFIX}/man3/i2d_ADMISSIONS.3
 ${MAN_PREFIX}/man3/i2d_ADMISSION_SYNTAX.3
@@ -4028,6 +4030,8 @@ ${MAN_PREFIX}/man3/i2d_X509_REQ_fp.3
 ${MAN_PREFIX}/man3/i2d_X509_REVOKED.3
 ${MAN_PREFIX}/man3/i2d_X509_SIG.3
 ${MAN_PREFIX}/man3/i2d_X509_VAL.3
+${MAN_PREFIX}/man3/i2d_X509_bio.3
+${MAN_PREFIX}/man3/i2d_X509_fp.3
 ${MAN_PREFIX}/man3/i2d_re_X509_CRL_tbs.3
 ${MAN_PREFIX}/man3/i2d_re_X509_REQ_tbs.3
 ${MAN_PREFIX}/man3/i2d_re_X509_tbs.3

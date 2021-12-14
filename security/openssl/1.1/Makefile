@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2021/09/07 20:54:33 tb Exp $
+# $OpenBSD: Makefile,v 1.32 2021/12/14 17:40:08 sthen Exp $
 
 # bump security/sslscan if updating
 PORTROACH=	limit:^1\.1\.[0-9][a-z] skipb:0 skipv:1.1.1
-V=		1.1.1l
+V=		1.1.1m
 PKGSPEC=	openssl->=1.1.0,<1.2
-REVISION=	0
 
 SHLIBVER=	11.6
 SHARED_LIBS=	crypto ${SHLIBVER} \
