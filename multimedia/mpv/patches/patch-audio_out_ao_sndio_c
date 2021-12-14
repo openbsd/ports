@@ -1,13 +1,13 @@
-$OpenBSD: patch-audio_out_ao_sndio_c,v 1.3 2021/08/22 06:59:18 rsadowski Exp $
+$OpenBSD: patch-audio_out_ao_sndio_c,v 1.4 2021/12/14 23:20:56 kn Exp $
 
-ao_sndio: add this audio output again
+Another attempt to return ao_sndio to mpv
 
-https://github.com/mpv-player/mpv/pull/8314
+https://github.com/mpv-player/mpv/pull/9298
 
 Index: audio/out/ao_sndio.c
 --- audio/out/ao_sndio.c.orig
 +++ audio/out/ao_sndio.c
-@@ -0,0 +1,317 @@
+@@ -0,0 +1,322 @@
 +/*
 + * Copyright (c) 2008 Alexandre Ratchov <alex@caoua.org>
 + * Copyright (c) 2013 Christian Neukirchen <chneukirchen@gmail.com>
@@ -51,7 +51,7 @@ Index: audio/out/ao_sndio.c
 +};
 +
 +
-+static const struct mp_chmap sndio_layouts[MP_NUM_CHANNELS + 1] = {
++static const struct mp_chmap sndio_layouts[] = {
 +    {0},                                        /* empty */
 +    {1, {MP_SPEAKER_ID_FL}},                    /* mono */
 +    MP_CHMAP2(FL, FR),                          /* stereo */
@@ -74,11 +74,9 @@ Index: audio/out/ao_sndio.c
 +static void process_events(struct ao *ao)
 +{
 +    struct priv *p = ao->priv;
-+    
-+    if (!p->playing)
-+        return;
++
 +    int n = sio_pollfd(p->hdl, p->pfd, POLLOUT);
-+    while (poll(p->pfd, n, 0) < 0 && errno == EINTR) {}
++    while (poll(p->pfd, n, 0) < 0 && errno == EINTR);
 +
 +    sio_revents(p->hdl, p->pfd);
 +}
@@ -129,21 +127,15 @@ Index: audio/out/ao_sndio.c
 +
 +    /* Selecting sound format. */
 +    ao->format = af_fmt_from_planar(ao->format);
-+    for (i = 0, ap = af_to_par;; i++, ap++) {
-+        if (i == MP_ARRAY_SIZE(af_to_par)) {
-+            MP_VERBOSE(ao, "unsupported format\n");
-+            p->par.bits = 16;
-+            p->par.sig = 1;
-+            p->par.le = SIO_LE_NATIVE;
-+            break;
-+        }
++
++    p->par.bits = 16;
++    p->par.sig = 1;
++    p->par.le = SIO_LE_NATIVE;
++    for (i = 0; i < MP_ARRAY_SIZE(af_to_par); i++) {
++        ap = &af_to_par[i];
 +        if (ap->format == ao->format) {
 +            p->par.bits = ap->bits;
 +            p->par.sig = ap->sig;
-+            if (ap->bits > 8)
-+                p->par.le = SIO_LE_NATIVE;
-+            if (ap->bits != SIO_BPS(ap->bits))
-+                p->par.bps = ap->bits / 8;
 +            break;
 +        }
 +    }
@@ -161,7 +153,11 @@ Index: audio/out/ao_sndio.c
 +#ifdef __FreeBSD__
 +    /* OSS wrapper have bad defaults, overwrite it. */
 +    p->par.appbufsz = ((p->par.rate * 25) / 1000); /* 25 ms. */
++#else
++    p->par.appbufsz = p->par.rate * 250 / 1000;    /* 250ms buffer */
 +#endif
++    p->par.round = p->par.rate * 10 / 1000;    /*  10ms block size */
++
 +    if (!sio_setpar(p->hdl, &p->par)) {
 +        MP_ERR(ao, "couldn't set params\n");
 +        goto err_out;
@@ -192,7 +188,7 @@ Index: audio/out/ao_sndio.c
 +    p->havevol = sio_onvol(p->hdl, volcb, ao);
 +    sio_onmove(p->hdl, movecb, ao);
 +
-+    p->pfd = calloc(sio_nfds(p->hdl), sizeof(struct pollfd));
++    p->pfd = talloc_array_ptrtype(p, p->pfd, sio_nfds(p->hdl));
 +    if (!p->pfd)
 +        goto err_out;
 +
@@ -222,7 +218,6 @@ Index: audio/out/ao_sndio.c
 +        sio_close(p->hdl);
 +        p->hdl = NULL;
 +    }
-+    free(p->pfd);
 +    p->pfd = NULL;
 +    p->playing = false;
 +}
@@ -253,23 +248,16 @@ Index: audio/out/ao_sndio.c
 +{
 +    struct priv *p = ao->priv;
 +
-+    process_events(ao);
-+    p->delay = 0;
-+    p->playing = false;
++    if (p->playing) {
++        p->playing = false;
 +
-+    /* XXX: some times may block here then sndiod used. */
-+    if (!sio_stop(p->hdl)) {
-+        MP_ERR(ao, "reset: couldn't sio_stop()\n");
-+reinit:
-+        /* Without this device will never work again. */
-+        MP_WARN(ao, "Force reinitialize audio device.\n");
-+        uninit(ao);
-+        init(ao);
-+        return;
-+    }
-+    if (!sio_start(p->hdl)) {
-+        MP_ERR(ao, "reset: sio_start() fail.\n");
-+        goto reinit;
++        if (!sio_stop(p->hdl)) {
++            MP_ERR(ao, "reset: couldn't sio_stop()\n");
++        }
++        p->delay = 0;
++        if (!sio_start(p->hdl)) {
++            MP_ERR(ao, "reset: sio_start() fail.\n");
++        }
 +    }
 +}
 +
@@ -296,7 +284,6 @@ Index: audio/out/ao_sndio.c
 +        return false;
 +    }
 +    p->delay += samples;
-+    process_events(ao);
 +
 +    return true;
 +}
@@ -307,10 +294,28 @@ Index: audio/out/ao_sndio.c
 +
 +    process_events(ao);
 +
-+    state->free_samples = (ao->device_buffer - p->delay);
++    /* how many samples we can play without blocking */
++    state->free_samples = ao->device_buffer - p->delay;
++    state->free_samples = state->free_samples / p->par.round * p->par.round;
++    /* how many samples are already in the buffer to be played */
 +    state->queued_samples = p->delay;
-+    state->delay = (p->delay / (double)p->par.rate);
-+    state->playing = p->playing;
++    /* delay in seconds between first and last sample in buffer */
++    state->delay = p->delay / (double)p->par.rate;
++
++    /* report unexpected EOF / underrun */
++    if (state->queued_samples && state->queued_samples &&
++        state->queued_samples < state->free_samples &&
++        p->playing || sio_eof(p->hdl))
++    {
++        MP_VERBOSE(ao, "get_state: EOF/underrun detected.\n");
++        MP_VERBOSE(ao, "get_state: free: %d, queued: %d, delay: %lf\n", \
++                state->free_samples, state->queued_samples, state->delay);
++        p->playing = false;
++        state->playing = p->playing;
++        ao_wakeup_playthread(ao);
++    } else {
++        state->playing = p->playing;
++    }
 +}
 +
 +const struct ao_driver audio_out_sndio = {

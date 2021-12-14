@@ -1,8 +1,8 @@
-$OpenBSD: patch-audio_out_ao_c,v 1.2 2021/11/07 18:47:37 kn Exp $
+$OpenBSD: patch-audio_out_ao_c,v 1.3 2021/12/14 23:20:56 kn Exp $
 
-ao_sndio: add this audio output again
+Another attempt to return ao_sndio to mpv
 
-https://github.com/mpv-player/mpv/pull/8314
+https://github.com/mpv-player/mpv/pull/9298
 
 Index: audio/out/ao.c
 --- audio/out/ao.c.orig
