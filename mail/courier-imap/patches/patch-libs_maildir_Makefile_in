@@ -1,8 +1,8 @@
-$OpenBSD: patch-libs_maildir_Makefile_in,v 1.4 2019/06/19 21:59:01 giovanni Exp $
+$OpenBSD: patch-libs_maildir_Makefile_in,v 1.5 2021/12/14 07:51:25 giovanni Exp $
 Index: libs/maildir/Makefile.in
 --- libs/maildir/Makefile.in.orig
 +++ libs/maildir/Makefile.in
-@@ -623,7 +623,7 @@ clean-noinstLTLIBRARIES:
+@@ -634,7 +634,7 @@ clean-noinstLTLIBRARIES:
  	}
  
  libmaildir.la: $(libmaildir_la_OBJECTS) $(libmaildir_la_DEPENDENCIES) $(EXTRA_libmaildir_la_DEPENDENCIES) 

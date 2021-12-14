@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.123 2020/06/01 07:25:32 giovanni Exp $
+# $OpenBSD: Makefile,v 1.124 2021/12/14 07:51:25 giovanni Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
 
-V=			5.0.10
+V=			5.1.4
 DISTNAME=		courier-imap-${V}
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-pop3=	courier-pop3-${V}
@@ -133,6 +133,7 @@ post-install:
 .	for i in ${CNFFILES}
 	    mv ${WRKINST}/${i} ${EXAMPLE_DIR}
 .	endfor
-	@rmdir ${WRKINST}/etc/courier/shared ${WRKINST}/etc/courier/shared.tmp
+	@rmdir ${WRKINST}/etc/courier/shared ${WRKINST}/etc/courier/shared.tmp \
+		${WRKINST}/etc/courier/imapaccess ${WRKINST}/etc/courier
 
 .include <bsd.port.mk>
