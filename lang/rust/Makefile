@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2021/12/02 14:59:19 semarie Exp $
+# $OpenBSD: Makefile,v 1.136 2021/12/14 10:57:10 semarie Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -15,6 +15,7 @@ COMMENT-rustfmt =	Rust code formatter
 
 V =			1.57.0
 DISTNAME =		rustc-${V}-src
+REVISION-main =		0
 
 # rustc bootstrap version
 BV-aarch64 =		1.57.0-20211201
@@ -69,15 +70,11 @@ SUPDISTFILES +=		${BOOTSTRAP-$m}
 .endfor
 
 # per MACHINE_ARCH configuration
-.if "${MACHINE_ARCH}" == "aarch64"
-TRIPLE_ARCH =		aarch64-unknown-openbsd
-.elif "${MACHINE_ARCH}" == "amd64"
-TRIPLE_ARCH =		x86_64-unknown-openbsd
-.elif "${MACHINE_ARCH}" == "i386"
-TRIPLE_ARCH =		i686-unknown-openbsd
-.elif "${MACHINE_ARCH}" == "sparc64"
-TRIPLE_ARCH =		sparc64-unknown-openbsd
-.endif
+TRIPLE_ARCH-aarch64 =	aarch64-unknown-openbsd
+TRIPLE_ARCH-amd64 =	x86_64-unknown-openbsd
+TRIPLE_ARCH-i386 =	i686-unknown-openbsd
+TRIPLE_ARCH-sparc64 =	sparc64-unknown-openbsd
+TRIPLE_ARCH =	${TRIPLE_ARCH-${MACHINE_ARCH}}
 
 SUBST_VARS +=		TRIPLE_ARCH \
 			V
@@ -141,6 +138,7 @@ LIB_DEPENDS-main +=	${LIB_DEPENDS} \
 			net/curl \
 			security/libssh2
 
+RUN_DEPENDS-main +=	devel/llvm
 RUN_DEPENDS-gdb +=	lang/rust,-main \
 			devel/gdb
 RUN_DEPENDS-clippy +=	lang/rust,-main
@@ -217,7 +215,6 @@ do-configure:
 
 	echo '[rust]' >>${WRKBUILD}/config.toml
 	echo 'channel = "stable"' >>${WRKBUILD}/config.toml
-	echo 'rpath = false' >>${WRKBUILD}/config.toml
 	echo 'codegen-tests = false' >>${WRKBUILD}/config.toml
 	echo 'verbose-tests = true' >>${WRKBUILD}/config.toml
 	echo 'deny-warnings = false' >>${WRKBUILD}/config.toml
@@ -273,6 +270,10 @@ do-install:
 				${PREFIX}/lib/$${libname} ; \
 		fi ; \
 	done
+	# replace rust-llvm-dwp binary by a link
+	rm ${PREFIX}/lib/rustlib/${TRIPLE_ARCH}/bin/rust-llvm-dwp
+	ln -s ${LOCALBASE}/bin/llvm-dwp \
+		${PREFIX}/lib/rustlib/${TRIPLE_ARCH}/bin/rust-llvm-dwp
 	# install cargo bash-completion
 	mkdir -p ${PREFIX}/share/bash-completion/completions
 	mv ${PREFIX}${SYSCONFDIR}/bash_completion.d/cargo \
@@ -300,13 +301,8 @@ bootstrap: build
 	${_PBUILD} llvm-strip ${BOOTSTRAPDIR}/lib/lib*.so \
 		${BOOTSTRAPDIR}/lib/rustlib/${TRIPLE_ARCH}/lib/lib*.so
 .for _bin in rustc rustdoc cargo
-	${_PBUILD} mv ${BOOTSTRAPDIR}/bin/${_bin} \
-		${BOOTSTRAPDIR}/bin/${_bin}.bin
-	${_PBUILD} llvm-strip ${BOOTSTRAPDIR}/bin/${_bin}.bin
-	${_PBUILD} cp ${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${BV}/bin/${_bin} \
-		${BOOTSTRAPDIR}/bin/${_bin}
-	LD_LIBRARY_PATH="${BOOTSTRAPDIR}/lib" \
-	ldd ${BOOTSTRAPDIR}/bin/${_bin}.bin \
+	${_PBUILD} llvm-strip ${BOOTSTRAPDIR}/bin/${_bin}
+	ldd ${BOOTSTRAPDIR}/bin/${_bin} \
 		| sed -ne 's,.* \(/.*/lib/lib.*\.so.[.0-9]*\)$$,\1,p' \
 		| xargs -r -J % ${_PBUILD} cp % ${BOOTSTRAPDIR}/lib || true
 	${BOOTSTRAPDIR}/bin/${_bin} -vV >/dev/null
