@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/09/07 21:27:30 tb Exp $
+# $OpenBSD: Makefile,v 1.4 2021/12/14 18:16:54 sthen Exp $
 
 PORTROACH=	limit:^3
-V=		3.0.0
+V=		3.0.1
 PKGNAME=	openssl-${V}
 PKGSPEC=	openssl->=3,<3.1
 
-SHLIBVER=	12.0
+SHLIBVER=	12.1
 SHARED_LIBS=	crypto ${SHLIBVER} \
 		ssl ${SHLIBVER}
 

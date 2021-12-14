@@ -1,9 +1,9 @@
-$OpenBSD: patch-Configurations_10-main_conf,v 1.1 2021/07/07 23:50:58 sthen Exp $
+$OpenBSD: patch-Configurations_10-main_conf,v 1.2 2021/12/14 18:16:54 sthen Exp $
 
 Index: Configurations/10-main.conf
 --- Configurations/10-main.conf.orig
 +++ Configurations/10-main.conf
-@@ -1024,6 +1024,7 @@ my %targets = (
+@@ -1025,6 +1025,7 @@ my %targets = (
      },
      "BSD-x86-elf" => {
          inherit_from     => [ "BSD-x86" ],
