@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2020/11/05 19:49:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.82 2021/12/14 07:49:39 giovanni Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -6,25 +6,24 @@ COMMENT-mysql=		mysql authentication module for courier-authLib
 COMMENT-pgsql=		pgsql authentication module for courier-authLib
 COMMENT-userdb=		userdb authentication module for courier-authLib
 
-DISTNAME=		courier-authlib-0.70.0
+DISTNAME=		courier-authlib-0.71.3
 PKGNAME-main=		${DISTNAME}
 PKGNAME-ldap=		${DISTNAME:S/lib-/lib-ldap-/}
 PKGNAME-mysql=		${DISTNAME:S/lib-/lib-mysql-/}
 PKGNAME-pgsql=		${DISTNAME:S/lib-/lib-pgsql-/}
 PKGNAME-userdb=		${DISTNAME:S/lib-/lib-userdb-/}
-REVISION-mysql=		0
 
 SHARED_LIBS +=  courierauth          1.0      # .0.0
 SHARED_LIBS +=  courierauthsasl      1.0      # .0.0
 SHARED_LIBS +=  courierauthsaslclient 0.0     # .0.0
 SHARED_LIBS +=  courierauthcommon    1.0      # .0.0
-SHARED_LIBS +=  authuserdb           0.0      # .0.0
-SHARED_LIBS +=  authpwd              0.0      # .0.0
-SHARED_LIBS +=  authpgsql            0.0      # .0.0
+SHARED_LIBS +=  authuserdb           1.0      # .0.0
+SHARED_LIBS +=  authpwd              1.0      # .0.0
+SHARED_LIBS +=  authpgsql            1.0      # .0.0
 SHARED_LIBS +=  authldap             1.0      # .0.0
-SHARED_LIBS +=  authmysql            0.0      # .0.0
-SHARED_LIBS +=  authpipe             0.0      # .0.0
-SHARED_LIBS +=  authsqlite           0.0      # .0.0
+SHARED_LIBS +=  authmysql            1.0      # .0.0
+SHARED_LIBS +=  authpipe             1.0      # .0.0
+SHARED_LIBS +=  authsqlite           1.0      # .0.0
 
 CATEGORIES=		mail security
 HOMEPAGE=		http://www.courier-mta.org/authlib/
@@ -157,8 +156,6 @@ post-install:
 
 	${INSTALL_SCRIPT} ${WRKSRC}/sysconftool \
 	    ${PREFIX}/libexec/courier-authlib/sysconftool
-	${INSTALL_SCRIPT} ${WRKSRC}/authmigrate \
-	    ${PREFIX}/libexec/courier-authlib/authmigrate
 	${INSTALL_DATA_DIR} ${EXAMPLE_DIR}
 	@mv ${WRKINST}${SYSCONFDIR}/courier/*.dist ${EXAMPLE_DIR}
 	@chown root:wheel ${EXAMPLE_DIR}/*
