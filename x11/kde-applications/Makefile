@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2021/11/30 17:23:07 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.67 2021/12/15 05:39:26 rsadowski Exp $
 
      SUBDIR =
 
@@ -94,6 +94,7 @@
      SUBDIR += kdegraphics-mobipocket
      SUBDIR += kdegraphics-thumbnailers
      SUBDIR += kolourpaint
+     SUBDIR += kontrast
      SUBDIR += kruler
      SUBDIR += okular
      SUBDIR += spectacle
@@ -161,6 +162,7 @@
      SUBDIR += kdf
      SUBDIR += kfloppy
      SUBDIR += kgpg
+     SUBDIR += kipi-plugins
      SUBDIR += kteatime
      SUBDIR += ktimer
      SUBDIR += kwalletmanager
@@ -204,9 +206,11 @@
      SUBDIR += kdeedu-data
      SUBDIR += kidentitymanagement
      SUBDIR += kimap
+     SUBDIR += kirigami-gallery
      SUBDIR += kitinerary
      SUBDIR += kldap
      SUBDIR += kmbox
+     SUBDIR += kopeninghours
      SUBDIR += kmime
      SUBDIR += kontactinterface
      #SUBDIR += kpat
@@ -252,10 +256,6 @@
      # x11/yakuake
 
      # TODO
-     # kipi-plugins
-     # kirigami-gallery
-     # kontrast
-     # kopeninghours
      # kosmindoormap
      # kpmcore
      # kpublictransport
