@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.173 2021/11/17 03:33:11 mlarkin Exp $
+# $OpenBSD: OpenBSD,v 1.174 2021/12/15 23:11:18 mariani Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -6,7 +6,6 @@
 -37.7374	145.0084	"brett"		# Brett Mahar
 -37.77		144.96		"djm"		# Damien Miller
 -34.709197	-58.395080	"gonzalo"	# Gonzalo L. Rodriguez
--34.66		-58.66		"mariani"	# Elias M. Mariani
 -33.867		151.192		"dtucker"	# Darren Tucker
 -30.035984	-51.220206	"renato"	# Renato Westphal
 -30.018701	-51.167282	"haesbaert"	# Christiano F. Haesbaert
@@ -177,6 +176,7 @@
 55.66817	37.78011	"zhuk"		# Vadim Zhukov
 55.747502	37.985557	"grange"	# Alexander Yurchenko
 55.8589		13.0837		"wilfried"	# Peter Stromberg
+55.9431		9.1278		"mariani"	# Elias M. Mariani
 57.698		11.967		"jakob"		# Jakob Schlyter
 57.717		11.967		"niklas"	# Niklas Hallqvist
 57.98668	15.634456	"halex"		# Alexander Hall
