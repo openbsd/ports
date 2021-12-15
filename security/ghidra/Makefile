@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/19 01:29:23 lteo Exp $
+# $OpenBSD: Makefile,v 1.9 2021/12/15 03:22:18 lteo Exp $
 
 # bundled jython has amd64 components for OpenBSD
 ONLY_FOR_ARCHS =	amd64
@@ -7,6 +7,7 @@ COMMENT =	software reverse engineering (SRE) framework
 
 VERSION = 	9.1.2
 GHIDRA_DATE =	20200212
+REVISION =	0
 
 GH_ACCOUNT =	NationalSecurityAgency
 GH_PROJECT =	ghidra
@@ -27,6 +28,7 @@ WANTLIB +=		c m ${COMPILER_LIBCXX}
 MASTER_SITES0 =		${HOMEPAGE}
 MASTER_SITES1 =		https://sourceforge.net/projects/yajsw/files/yajsw/yajsw-stable-${YAJSW_VER}/
 MASTER_SITES2 =		https://repo.maven.apache.org/maven2/
+MASTER_SITES3 =		https://dlcdn.apache.org/logging/log4j/${LOG4J_VER}/
 
 EXTRACT_SUFX =		.zip
 
@@ -37,6 +39,7 @@ JMOCKIT_VER =		1.44
 JSON_SIMPLE_VER =	1.1.1
 JUNIT_VER =		4.12
 YAJSW_VER =		12.12
+LOG4J_VER =		2.16.0
 
 # Note that ST4-${ST4_VER}.jar is only needed during build for antlr; it is not
 # needed at runtime and therefore does not need to be packed.
@@ -51,8 +54,10 @@ DISTFILES =		${DISTNAME}.tar.gz
 DISTFILES +=		ghidra_${VERSION}_PUBLIC_${GHIDRA_DATE}${EXTRACT_SUFX}:0
 DISTFILES +=		yajsw-stable-${YAJSW_VER}${EXTRACT_SUFX}:1
 DISTFILES +=		${JAR_DISTFILES:C/$/:2/}
+DISTFILES +=		apache-log4j-${LOG4J_VER}-bin.tar.gz:3
 
 EXTRACT_ONLY =		${DISTNAME}.tar.gz
+EXTRACT_ONLY +=		apache-log4j-${LOG4J_VER}-bin.tar.gz
 
 COMPILER =		base-clang ports-clang
 
@@ -138,5 +143,10 @@ do-install:
 	ln -s ${TRUEPREFIX}/share/java/ghidra/ghidraRun ${PREFIX}/bin/ghidraRun
 	${INSTALL_SCRIPT} ${WRKSRC}/Ghidra/RuntimeScripts/Linux/support/launch.sh \
 		${PREFIX}/share/java/ghidra/support/launch.sh
+	rm -f ${PREFIX}/share/java/ghidra/Ghidra/Framework/Generic/lib/log4j-{api,core}-*.jar
+	${INSTALL_DATA} ${WRKDIR}/apache-log4j-${LOG4J_VER}-bin/log4j-api-${LOG4J_VER}.jar \
+		${PREFIX}/share/java/ghidra/Ghidra/Framework/Generic/lib/
+	${INSTALL_DATA} ${WRKDIR}/apache-log4j-${LOG4J_VER}-bin/log4j-core-${LOG4J_VER}.jar \
+		${PREFIX}/share/java/ghidra/Ghidra/Framework/Generic/lib/
 
 .include <bsd.port.mk>
