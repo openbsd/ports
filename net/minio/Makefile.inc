@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.7 2021/06/05 12:03:27 danj Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2021/12/15 00:35:30 danj Exp $
 
 CATEGORIES =	net sysutils
+
+MAINTAINER =	Daniel Jakots <obsd@chown.me>
 
 HOMEPAGE =	https://minio.io
 
