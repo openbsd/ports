@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2021/12/15 12:17:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2021/12/15 12:18:23 sthen Exp $
 
 COMMENT=	full-text search engine based on Lucene
 
@@ -19,10 +19,6 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_APACHE:=lucene/solr/$V/}
-
-MASTER_SITES0=	${MASTER_SITE_APACHE:=logging/log4j/2.15.0/}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		apache-log4j-2.15.0-bin.tar.gz:0
 
 MODULES=	java
 MODJAVA_VER=	1.8+
