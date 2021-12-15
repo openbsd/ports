@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2021/01/07 22:20:25 thfr Exp $
+# $OpenBSD: Makefile,v 1.24 2021/12/15 13:44:11 sdk Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 
 COMMENT=	Yamagi Quake II
 N=		yquake2
-V=		7.45
+V=		8.00
 PKGNAME=	${N}-${V}
 DISTNAME=	quake2-${V}
 CATEGORIES=	games
@@ -17,8 +17,10 @@ EXTRACT_SUFX=	.tar.xz
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB +=	GL SDL2 c curl m openal pthread
+WANTLIB += GL SDL2 c curl execinfo m openal
 
+# Libraries loaded with dlopen(3)
+# Extra: curl.26 openal.4
 LIB_DEPENDS=	audio/openal \
 		devel/sdl2 \
 		net/curl
