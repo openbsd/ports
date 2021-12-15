@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.27 2021/12/14 10:09:15 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.28 2021/12/15 10:53:13 sthen Exp $
 
 .if defined(V)
 COMMENT =	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
@@ -7,7 +7,8 @@ _BV =		${BUILD_V:C/^http[^-]*-([0-9a-f]{10}).*/-\1/}
 MASTER_SITES ?=	https://dl.ui.com/unifi/${V}${_BV}/
 MASTER_SITES0 =	https://spacehopper.org/mirrors/
 MASTER_SITES1 =	https://dl.ubnt-ut.com/snmp/
-MASTER_SITES2 =	https://dlcdn.apache.org/logging/log4j/2.15.0/
+LOG4J_V =	2.16.0
+MASTER_SITES2 =	https://dlcdn.apache.org/logging/log4j/${LOG4J_V}/
 
 DISTFILES +=	unifi-$V{UniFi.unix}.zip \
 		unifi_sh_api-$V{unifi_sh_api} \
@@ -26,8 +27,8 @@ DISTFILES +=	snappy-java-${SNAPPY_V}${SNAPPY_S}.jar:0
 
 REPLACE_LOG4J ?= No
 .if ${REPLACE_LOG4J} == Yes
-DISTFILES +=	apache-log4j-2.15.0-bin.tar.gz:2
-EXTRACT_ONLY +=	apache-log4j-2.15.0-bin.tar.gz
+DISTFILES +=	apache-log4j-${LOG4J_V}-bin.tar.gz:2
+EXTRACT_ONLY +=	apache-log4j-${LOG4J_V}-bin.tar.gz
 .endif
 
 CATEGORIES =	net
@@ -61,7 +62,7 @@ NO_TEST =	Yes
 WRKDIST =	${WRKDIR}/UniFi
 INSTDIR =	${PREFIX}/share/unifi/
 VERSION ?=	$V.0
-SUBST_VARS =	VERSION
+SUBST_VARS +=	VERSION LOG4J_V
 
 pre-extract:
 .if ${FETCH_PACKAGES:L} == no
@@ -85,8 +86,8 @@ do-configure:
 .if ${REPLACE_LOG4J} == Yes
 	@echo "** Overriding vulnerable log4j versions"; echo
 .  for l4j_comp in log4j-api log4j-core log4j-slf4j-impl
-	@ln -fs ${l4j_comp}-2.15.0.jar ${WRKSRC}/lib/${l4j_comp}-*jar
-	@${INSTALL_DATA} ${WRKDIR}/apache-log4j-*/${l4j_comp}-2.15.0.jar ${WRKSRC}/lib
+	@ln -fs ${l4j_comp}-${LOG4J_V}.jar ${WRKSRC}/lib/${l4j_comp}-*jar
+	@${INSTALL_DATA} ${WRKDIR}/apache-log4j-*/${l4j_comp}-${LOG4J_V}.jar ${WRKSRC}/lib
 	@cd ${WRKSRC}; ls -l lib/${l4j_comp}*; echo
 .  endfor
 .endif
