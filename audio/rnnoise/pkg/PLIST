@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/12/15 22:24:32 kn Exp $
+include/rnnoise.h
+@static-lib lib/librnnoise.a
+lib/librnnoise.la
+@lib lib/librnnoise.so.${LIBrnnoise_VERSION}
+lib/pkgconfig/rnnoise.pc
+share/doc/rnnoise/
+share/doc/rnnoise/AUTHORS
+share/doc/rnnoise/COPYING
+share/doc/rnnoise/README
+share/examples/rnnoise/
+share/examples/rnnoise/rnnoise_demo.c
