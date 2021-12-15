@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2021/11/14 11:19:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2021/12/15 12:17:11 sthen Exp $
 
 COMMENT=	full-text search engine based on Lucene
 
 V=		8.11.0
 DISTNAME=	solr-$V
+REVISION=	0
 EXTRACT_SUFX=	.tgz
 
 PKG_ARCH=	*
@@ -19,6 +20,10 @@ PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_APACHE:=lucene/solr/$V/}
 
+MASTER_SITES0=	${MASTER_SITE_APACHE:=logging/log4j/2.15.0/}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		apache-log4j-2.15.0-bin.tar.gz:0
+
 MODULES=	java
 MODJAVA_VER=	1.8+
 SUBST_VARS=	V
@@ -27,6 +32,15 @@ RUN_DEPENDS=	shells/bash \
 
 NO_TEST=	Yes
 NO_BUILD=	Yes
+
+do-configure:
+	@echo "** Overriding vulnerable log4j versions"; echo
+.for l4j_comp in log4j-1.2-api log4j-api log4j-core log4j-layout-template-json log4j-slf4j-impl log4j-web
+	@ln -fs ${l4j_comp}-2.15.0.jar ${WRKSRC}/server/lib/ext/${l4j_comp}-*jar
+	-${INSTALL_DATA} ${WRKDIR}/apache-log4j-*/${l4j_comp}-2.15.0.jar \
+	    ${WRKSRC}/server/lib/ext
+	@cd ${WRKSRC}; ls -l ${WRKSRC}/server/lib/ext/${l4j_comp}*
+.endfor
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/solr
