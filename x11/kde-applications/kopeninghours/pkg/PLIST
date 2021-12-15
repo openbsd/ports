@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/22 06:30:35 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/12/15 05:38:41 rsadowski Exp $
 include/KOpeningHours/
 include/KOpeningHours/Display
 include/KOpeningHours/Interval
@@ -21,6 +21,8 @@ lib/python${MODPY_VERSION}/site-packages/PyKOpeningHours/
 lib/python${MODPY_VERSION}/site-packages/PyKOpeningHours/PyKOpeningHours.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyKOpeningHours/PyKOpeningHours.so
 lib/python${MODPY_VERSION}/site-packages/PyKOpeningHours/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/PyKOpeningHours/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/PyKOpeningHours/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/qt5/qml/org/kde/kopeninghours/
 @so lib/qt5/qml/org/kde/kopeninghours/libkopeninghoursqmlplugin.so
 lib/qt5/qml/org/kde/kopeninghours/qmldir

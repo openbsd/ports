@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/22 06:30:35 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2021/12/15 05:38:41 rsadowski Exp $
 
 COMMENT =	library for parsing and evaluating OSM data
 DISTNAME =	kopeninghours-${VERSION}
@@ -23,5 +23,9 @@ LIB_DEPENDS =	devel/boost \
 
 CONFIGURE_ARGS +=	-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
+
+post-install:
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${WRKINST}/${MODPY_SITEPKG}/PyKOpeningHours/
 
 .include <bsd.port.mk>
