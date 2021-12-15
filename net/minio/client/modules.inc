@@ -1,4 +1,4 @@
-# $OpenBSD: modules.inc,v 1.4 2021/12/07 03:04:54 danj Exp $
+# $OpenBSD: modules.inc,v 1.5 2021/12/15 00:36:51 danj Exp $
 
 MODGO_MODULES =	\
 	cloud.google.com/go					 v0.65.0 \
@@ -46,7 +46,7 @@ MODGO_MODULES =	\
 	github.com/go-kit/kit					 v0.9.0 \
 	github.com/go-kit/log					 v0.1.0 \
 	github.com/go-logfmt/logfmt				 v0.5.0 \
-	github.com/go-ole/go-ole				 v1.2.5 \
+	github.com/go-ole/go-ole				 v1.2.6 \
 	github.com/go-stack/stack				 v1.8.0 \
 	github.com/goccy/go-json				 v0.7.9 \
 	github.com/godbus/dbus/v5				 v5.0.4 \
@@ -73,6 +73,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-multierror			 v1.1.1 \
 	github.com/hashicorp/golang-lru				 v0.5.1 \
 	github.com/ianlancetaylor/demangle			 v0.0.0-20181102032728-5e5cf60278f6 \
+	github.com/inconshreveable/mousetrap			 v1.0.0 \
 	github.com/jpillora/backoff				 v1.0.0 \
 	github.com/json-iterator/go				 v1.1.12 \
 	github.com/jstemmer/go-junit-report			 v0.9.1 \
@@ -106,9 +107,9 @@ MODGO_MODULES =	\
 	github.com/minio/cli					 v1.22.0 \
 	github.com/minio/colorjson				 v1.0.1 \
 	github.com/minio/filepath				 v1.0.0 \
-	github.com/minio/madmin-go				 v1.1.11-0.20211102182201-e51fd3d6b104 \
+	github.com/minio/madmin-go				 v1.1.15 \
 	github.com/minio/md5-simd				 v1.1.2 \
-	github.com/minio/minio-go/v7				 v7.0.15-0.20211004160302-3b57c1e369ca \
+	github.com/minio/minio-go/v7				 v7.0.16-0.20211108161804-a7a36ee131df \
 	github.com/minio/pkg					 v1.1.3 \
 	github.com/minio/selfupdate				 v0.3.1 \
 	github.com/minio/sha256-simd				 v1.0.0 \
@@ -164,10 +165,10 @@ MODGO_MODULES =	\
 	golang.org/x/lint					 v0.0.0-20210508222113-6edffad5e616 \
 	golang.org/x/mobile					 v0.0.0-20190719004257-d2bd2a29d028 \
 	golang.org/x/mod					 v0.4.2 \
-	golang.org/x/net					 v0.0.0-20210928044308-7d9f5e0b762b \
+	golang.org/x/net					 v0.0.0-20211015210444-4f30a5c0130f \
 	golang.org/x/oauth2					 v0.0.0-20210514164344-f6687ab2804c \
 	golang.org/x/sync					 v0.0.0-20210220032951-036812b2e83c \
-	golang.org/x/sys					 v0.0.0-20210927094055-39ccf1dd6fa6 \
+	golang.org/x/sys					 v0.0.0-20211015200801-69063c4bb744 \
 	golang.org/x/term					 v0.0.0-20210927222741-03fcf44c2211 \
 	golang.org/x/text					 v0.3.7 \
 	golang.org/x/time					 v0.0.0-20191024005414-555d28b269f0 \
@@ -247,6 +248,7 @@ MODGO_MODFILES =	\
 	github.com/go-logfmt/logfmt				 v0.3.0 \
 	github.com/go-logfmt/logfmt				 v0.4.0 \
 	github.com/go-ole/go-ole				 v1.2.4 \
+	github.com/go-ole/go-ole				 v1.2.5 \
 	github.com/goccy/go-json				 v0.4.8 \
 	github.com/goccy/go-json				 v0.7.8 \
 	github.com/gogo/protobuf				 v1.1.1 \
