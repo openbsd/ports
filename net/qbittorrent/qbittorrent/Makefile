@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2021/11/02 00:01:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2021/12/15 22:33:09 mariani Exp $
 
 COMMENT =		BitTorrent client with Qt interface
-REVISION =		0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Network Qt5Xml boost_system
 WANTLIB += boost_system-mt c crypto execinfo m ssl torrent-rasterbar z
