@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2021/06/09 19:50:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2021/12/15 15:37:26 kn Exp $
 
 COMMENT =		libv4l userspace library
 
 VERSION =		1.20.0
 DISTNAME =		v4l-utils-${VERSION}
 PKGNAME =		libv4l-${VERSION}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=	v4l1		0.0 # 0.0
 SHARED_LIBS +=	v4l2		0.0 # 0.0
@@ -15,8 +15,6 @@ SHARED_LIBS +=	v4lconvert	0.0 # 0.0
 CATEGORIES =		multimedia
 
 HOMEPAGE =		https://git.linuxtv.org/v4l-utils.git
-
-MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # LGPLv2+
 PERMIT_PACKAGE =	Yes
