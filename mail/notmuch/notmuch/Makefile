@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2021/11/18 04:30:57 bket Exp $
+# $OpenBSD: Makefile,v 1.16 2021/12/15 11:55:29 sthen Exp $
 
 COMMENT-main =		mail indexer, tagger and threader
 COMMENT-emacs =		Emacs bindings for notmuch
@@ -53,10 +53,8 @@ MAKE_FLAGS =		V=1
 MAKE_ENV =		LIBnotmuch_MAJOR=${LIBnotmuch_VERSION:R} \
 			LIBnotmuch_MINOR=${LIBnotmuch_VERSION:E}
 
-# the --gzip option of notmuch dump is disabled so skip the relevant tests
 TEST_FLAGS =	V=1 \
 		NOTMUCH_TEST_SERIALIZE=1 \
-		NOTMUCH_SKIP_TESTS="dump-restore.14 dump-restore.15" \
 		TEST_CFLAGS="-O0 -g -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 TEST_TARGET =	test
 
