@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/12/15 22:24:32 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2021/12/15 23:10:54 kn Exp $
 
 COMMENT =		recurrent neural network for audio noise reduction
 # no tag or release, use HEAD
@@ -20,6 +20,7 @@ WANTLIB =		m
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	autoreconf
+CONFIGURE_ARGS =	--disable-doc
 AUTOCONF_VERSION =	2.71
 AUTOMAKE_VERSION =	1.16
 
