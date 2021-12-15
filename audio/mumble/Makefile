@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2021/11/22 13:55:54 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2021/12/15 22:25:39 kn Exp $
 
 COMMENT-main =		low-latency voice chat client
 COMMENT-server =	low-latency voice chat server
@@ -7,6 +7,7 @@ VERSION =		1.3.4
 DISTNAME =		mumble-${VERSION}
 PKGNAME-server =	murmur-${VERSION}
 
+REVISION-main =		0
 REVISION-server =	0
 
 CATEGORIES =		audio net
@@ -22,7 +23,7 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 WANTLIB-main += ${COMPILER_LIBCXX} GL Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB-main += Qt5Sql Qt5Svg Qt5Widgets Qt5Xml X11 Xi c crypto
-WANTLIB-main += m opus portaudio protobuf sndfile speex speexdsp ssl
+WANTLIB-main += m opus portaudio protobuf rnnoise sndfile speex speexdsp ssl
 WANTLIB-server += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Network Qt5Sql
 WANTLIB-server += Qt5Xml c crypto m protobuf ssl
 
@@ -37,6 +38,7 @@ BUILD_DEPENDS =		devel/boost
 LIB_DEPENDS-main =	audio/libsndfile>=1.0.25p0 \
 			audio/opus \
 			audio/portaudio-svn \
+			audio/rnnoise \
 			audio/speex \
 			devel/protobuf \
 			x11/qt5/qtsvg
@@ -55,6 +57,7 @@ MODQMAKE_ARGS =		MUMBLE_PREFIX=${PREFIX} \
 			CONFIG+=no-ice \
 			CONFIG+=no-bonjour \
 			CONFIG+=no-bundled-opus \
+			CONFIG+=no-bundled-rnnoise \
 			CONFIG+=no-bundled-speex \
 			CONFIG+=no-crash-report \
 			CONFIG+=no-embed-qt-translations \
