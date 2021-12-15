@@ -1,0 +1,62 @@
+$OpenBSD: patch-src_lib-storage_mail-duplicate_c,v 1.1 2021/12/15 12:57:06 sthen Exp $
+
+https://github.com/dovecot/core/compare/98f709de%5E..d36d2c59.patch
+
+From 98f709deac9381721b93d896c27576dbff1f711c Mon Sep 17 00:00:00 2001
+From: Stephan Bosch <stephan.bosch@open-xchange.com>
+Date: Fri, 12 Nov 2021 10:43:16 +0100
+Subject: [PATCH 1/2] lib-storage: mail-duplicate - Fix panic occurring when
+ user has no configured home directory.
+
+
+From d36d2c595a12378b597f1fc82cd7b47cbbadb2e1 Mon Sep 17 00:00:00 2001
+From: Stephan Bosch <stephan.bosch@open-xchange.com>
+Date: Fri, 12 Nov 2021 11:16:47 +0100
+Subject: [PATCH 2/2] lib-storage: mail-duplicate - Fix segfault occurring when
+ user has no configured home directory
+
+Index: src/lib-storage/mail-duplicate.c
+--- src/lib-storage/mail-duplicate.c.orig
++++ src/lib-storage/mail-duplicate.c
+@@ -491,13 +491,15 @@ mail_duplicate_transaction_free(struct mail_duplicate_
+ 	i_assert(trans->db->transaction_count > 0);
+ 	trans->db->transaction_count--;
+ 
+-	iter = hash_table_iterate_init(trans->hash);
+-	while (hash_table_iterate(iter, trans->hash, &d, &d))
+-		mail_duplicate_unlock(trans, d);
+-	hash_table_iterate_deinit(&iter);
++	if (hash_table_is_created(trans->hash)) {
++		iter = hash_table_iterate_init(trans->hash);
++		while (hash_table_iterate(iter, trans->hash, &d, &d))
++			mail_duplicate_unlock(trans, d);
++		hash_table_iterate_deinit(&iter);
++		hash_table_destroy(&trans->hash);
++	}
+ 	i_assert(trans->id_lock_count == 0);
+ 
+-	hash_table_destroy(&trans->hash);
+ 	event_unref(&trans->event);
+ 	pool_unref(&trans->pool);
+ }
+@@ -722,14 +724,17 @@ mail_duplicate_db_init(struct mail_user *user, const c
+ 
+ 	e_debug(db->event, "Initialize");
+ 
++	db->user = user;
++
+ 	if (mail_user_get_home(user, &home) <= 0) {
+ 		e_error(db->event, "User %s doesn't have home dir set, "
+ 			"disabling duplicate database", user->username);
++		return db;
+ 	}
+ 
+-	db->user = user;
+-	db->path = home == NULL ? NULL :
+-		i_strconcat(home, "/.dovecot.", name, NULL);
++	i_assert(home != NULL);
++
++	db->path = i_strconcat(home, "/.dovecot.", name, NULL);
+ 	db->dotlock_set = default_mail_duplicate_dotlock_set;
+ 
+ 	lock_dir = mail_user_get_volatile_dir(user);
