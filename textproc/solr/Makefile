@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2021/12/15 12:18:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2021/12/15 12:19:32 sthen Exp $
 
 COMMENT=	full-text search engine based on Lucene
 
@@ -28,15 +28,6 @@ RUN_DEPENDS=	shells/bash \
 
 NO_TEST=	Yes
 NO_BUILD=	Yes
-
-do-configure:
-	@echo "** Overriding vulnerable log4j versions"; echo
-.for l4j_comp in log4j-1.2-api log4j-api log4j-core log4j-layout-template-json log4j-slf4j-impl log4j-web
-	@ln -fs ${l4j_comp}-2.15.0.jar ${WRKSRC}/server/lib/ext/${l4j_comp}-*jar
-	-${INSTALL_DATA} ${WRKDIR}/apache-log4j-*/${l4j_comp}-2.15.0.jar \
-	    ${WRKSRC}/server/lib/ext
-	@cd ${WRKSRC}; ls -l ${WRKSRC}/server/lib/ext/${l4j_comp}*
-.endfor
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/solr
