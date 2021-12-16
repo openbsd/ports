@@ -1,0 +1,4 @@
+usrsctp is a userland SCTP stack.
+
+SCTP is a message oriented, reliable transport protocol with direct support for
+multihoming that runs on top of IP or UDP, and supports both v4 and v6 versions.
