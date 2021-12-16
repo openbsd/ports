@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/12/16 22:48:03 kn Exp $
+include/gsl/
+include/gsl/gsl
+include/gsl/gsl_algorithm
+include/gsl/gsl_assert
+include/gsl/gsl_byte
+include/gsl/gsl_util
+include/gsl/multi_span
+include/gsl/pointers
+include/gsl/span
+include/gsl/span_ext
+include/gsl/string_span
+share/cmake/
+share/cmake/Microsoft.GSL/
+share/cmake/Microsoft.GSL/Microsoft.GSLConfig.cmake
+share/cmake/Microsoft.GSL/Microsoft.GSLConfigVersion.cmake
