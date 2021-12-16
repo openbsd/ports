@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.24 2021/10/09 15:36:06 jca Exp $
+$OpenBSD: patch-configure,v 1.25 2021/12/16 13:06:44 jca Exp $
 Index: configure
 --- configure.orig
 +++ configure
-@@ -18261,7 +18261,7 @@ else
+@@ -18211,7 +18211,7 @@ else
  fi
  
  
