@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2021/12/15 23:10:54 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2021/12/16 00:29:56 kn Exp $
 
 COMMENT =		recurrent neural network for audio noise reduction
 # no tag or release, use HEAD
 DISTNAME =		rnnoise-master-7f449bf8bd3b933891d12c30112268c4090e4d59
-PKGNAME =		rnnoise-0.0.0.20210312
+V =			0.0.0.20210312
+PKGNAME =		rnnoise-${V}
+REVISION =		0
 CATEGORIES =		audio
 
 SHARED_LIBS =		rnnoise	0.0	# 4.1
@@ -24,9 +26,11 @@ CONFIGURE_ARGS =	--disable-doc
 AUTOCONF_VERSION =	2.71
 AUTOMAKE_VERSION =	1.16
 
-NO_TEST =		Yes
-
 EXAMPLESDIR =		${PREFIX}/share/examples/rnnoise
+
+post-build:
+	# fix "unknown" package version
+	sed -i /^Version:/s,unknown,${V}, ${WRKBUILD}/rnnoise.pc
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
