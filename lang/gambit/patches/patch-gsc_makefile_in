@@ -1,0 +1,20 @@
+$OpenBSD: patch-gsc_makefile_in,v 1.1 2021/12/16 21:44:38 juanfra Exp $
+
+Clang 13 workaround
+
+Index: gsc/makefile.in
+--- gsc/makefile.in.orig
++++ gsc/makefile.in
+@@ -229,6 +229,12 @@ _gsc@obj@: _gsc.c
+ _gsc_@obj@: _gsc_.c
+ 	@BUILD_OBJ@
+ 
++_t-univ-2@obj@:
++	@BUILD_OBJ@ $(CLANG_FLAGS) -D___LIBRARY
++
++_t-univ-4@obj@:
++	@BUILD_OBJ@ $(CLANG_FLAGS) -D___LIBRARY
++
+ .c@obj@:
+ 	@BUILD_OBJ@ -D___LIBRARY
+ 
