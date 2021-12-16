@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.153 2021/05/17 12:51:50 mestre Exp $
+@comment $OpenBSD: PLIST,v 1.154 2021/12/16 20:44:26 mestre Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -384,7 +384,6 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}li
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}linuxacademy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}litv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}livejournal.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}liveleak.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}livestream.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}lnkgo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}localnews8.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1171,7 +1170,6 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/linkedin.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/linuxacademy.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/litv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/livejournal.py
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/liveleak.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/livestream.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/lnkgo.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/localnews8.py
