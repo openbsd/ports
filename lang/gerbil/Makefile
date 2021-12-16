@@ -1,9 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/28 20:54:29 tb Exp $
+# $OpenBSD: Makefile,v 1.14 2021/12/16 21:56:24 juanfra Exp $
 
 BROKEN-powerpc64=gsc spins during build
-
-# Gambit doesn't have thread-local storage support on GCC platforms
-ONLY_FOR_ARCHS = ${CLANG_ARCHS}
 
 COMMENT =	dialect of Scheme designed for systems programming
 
@@ -31,6 +28,9 @@ LIB_DEPENDS =	databases/sqlite3 \
 
 RUN_DEPENDS =	devel/git \
 		lang/gambit
+
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS =	c
 
 MAKE_ENV +=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib \
