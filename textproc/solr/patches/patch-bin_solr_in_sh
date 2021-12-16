@@ -1,17 +1,14 @@
-$OpenBSD: patch-bin_solr_in_sh,v 1.8 2021/12/15 12:17:11 sthen Exp $
+$OpenBSD: patch-bin_solr_in_sh,v 1.9 2021/12/16 12:40:23 sthen Exp $
 
 Index: bin/solr.in.sh
 --- bin/solr.in.sh.orig
 +++ bin/solr.in.sh
-@@ -100,13 +100,19 @@
+@@ -100,13 +100,16 @@
  #SOLR_OPTS="$SOLR_OPTS -Dsolr.autoSoftCommit.maxTime=3000"
  #SOLR_OPTS="$SOLR_OPTS -Dsolr.autoCommit.maxTime=60000"
  
 +# Bind only to localhost by default:
 +SOLR_OPTS="$SOLR_OPTS -Djetty.host=localhost"
-+
-+# https://solr.apache.org/security.html#apache-solr-affected-by-apache-log4j-cve-2021-44228
-+SOLR_OPTS="$SOLR_OPTS -Dlog4j2.formatMsgNoLookups=true"
 +
  # Location where the bin/solr script will save PID files for running instances
  # If not set, the script will create PID files in $SOLR_TIP/bin
@@ -25,7 +22,7 @@ Index: bin/solr.in.sh
  
  # Path to a directory that Solr will use as root for data folders for each core.
  # If not set, defaults to <instance_dir>/data. Overridable per core through 'dataDir' core property
-@@ -115,14 +121,14 @@
+@@ -115,14 +118,14 @@
  # Solr provides a default Log4J configuration xml file in server/resources
  # however, you may want to customize the log settings and file appender location
  # so you can point the script to use a different log4j2.xml file
