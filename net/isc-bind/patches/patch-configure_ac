@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.19 2021/10/27 20:57:06 sthen Exp $
+$OpenBSD: patch-configure_ac,v 1.20 2021/12/16 00:18:13 sthen Exp $
 
 "struct stat" is in stat.h not fcntl.h
 https://gitlab.isc.org/isc-projects/bind9/-/issues/2905
@@ -6,7 +6,7 @@ https://gitlab.isc.org/isc-projects/bind9/-/issues/2905
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -1838,7 +1838,7 @@ AC_DEFINE(NEED_OPTARG, 1, [Defined if extern char *opt
+@@ -1846,7 +1846,7 @@ AC_DEFINE(NEED_OPTARG, 1, [Defined if extern char *opt
  AC_MSG_CHECKING([for st_mtim.tv_nsec])
  AC_COMPILE_IFELSE(
    [AC_LANG_PROGRAM(
