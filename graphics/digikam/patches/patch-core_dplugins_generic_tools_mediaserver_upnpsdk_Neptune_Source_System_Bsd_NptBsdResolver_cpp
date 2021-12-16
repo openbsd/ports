@@ -1,4 +1,4 @@
-$OpenBSD: patch-core_dplugins_generic_tools_mediaserver_upnpsdk_Neptune_Source_System_Bsd_NptBsdResolver_cpp,v 1.1 2021/03/23 10:37:35 rsadowski Exp $
+$OpenBSD: patch-core_dplugins_generic_tools_mediaserver_upnpsdk_Neptune_Source_System_Bsd_NptBsdResolver_cpp,v 1.2 2021/12/16 20:58:29 rsadowski Exp $
 
 Index: core/dplugins/generic/tools/mediaserver/upnpsdk/Neptune/Source/System/Bsd/NptBsdResolver.cpp
 --- core/dplugins/generic/tools/mediaserver/upnpsdk/Neptune/Source/System/Bsd/NptBsdResolver.cpp.orig
@@ -7,12 +7,12 @@ Index: core/dplugins/generic/tools/mediaserver/upnpsdk/Neptune/Source/System/Bsd
  #include "NptResults.h"
  #include "NptSockets.h"
  
--#if defined(NPT_CONFIG_HAVE_GETADDRINFO) 
+-#if defined(NPT_CONFIG_HAVE_GETADDRINFO)
  /*----------------------------------------------------------------------
  |   constants
  +---------------------------------------------------------------------*/
 @@ -134,4 +133,3 @@ NPT_NetworkNameResolver::Resolve(const char*          
-     
+ 
      return NPT_SUCCESS;
  }
 -#endif

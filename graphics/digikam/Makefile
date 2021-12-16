@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.73 2021/07/25 13:39:30 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.74 2021/12/16 20:58:29 rsadowski Exp $
 
 COMMENT =	KDE digital photo and video management utility
 
-V =		7.3.0
-DISTNAME =	digikam-${V}
+V =		7.4.0
+PKGNAME =	digikam-${V}
+DISTNAME =	digiKam-${V}
 CATEGORIES =	graphics
 
 HOMEPAGE =	https://www.digikam.org/
@@ -103,6 +104,8 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		x11/qt5/qtwebengine \
 		x11/qt5/qtx11extras \
 		x11/qt5/qtxmlpatterns
+
+WRKDIST =		${WRKDIR}/${PKGNAME}
 
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
 			-DENABLE_QWEBENGINE=ON

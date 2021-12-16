@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2021/07/25 13:39:30 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.29 2021/12/16 20:58:29 rsadowski Exp $
 @conflict digikam-kde4-*
 @conflict kipi-plugins-<=4
 bin/cleanup_digikamdb
@@ -233,6 +233,7 @@ lib/qt5/plugins/digikam/generic/
 @so lib/qt5/plugins/digikam/generic/Generic_MediaServer_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_MediaWiki_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_MetadataEdit_Plugin.so
+@so lib/qt5/plugins/digikam/generic/Generic_MjpegStream_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_OneDrive_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_Panorama_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_Pinterest_Plugin.so

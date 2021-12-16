@@ -1,11 +1,11 @@
-$OpenBSD: patch-core_libs_rawengine_libraw_src_decoders_fp_dng_cpp,v 1.1 2021/03/23 10:37:35 rsadowski Exp $
+$OpenBSD: patch-core_libs_rawengine_libraw_src_decoders_fp_dng_cpp,v 1.2 2021/12/16 20:58:29 rsadowski Exp $
 
 Rename to avoid conflicts
 
 Index: core/libs/rawengine/libraw/src/decoders/fp_dng.cpp
 --- core/libs/rawengine/libraw/src/decoders/fp_dng.cpp.orig
 +++ core/libs/rawengine/libraw/src/decoders/fp_dng.cpp
-@@ -549,7 +549,7 @@ _forceinline
+@@ -556,7 +556,7 @@ _forceinline
  #else
  inline
  #endif
@@ -14,7 +14,7 @@ Index: core/libs/rawengine/libraw/src/decoders/fp_dng.cpp
  {
      for (int i = 0; i < len - 2; i += 3)
      {
-@@ -565,7 +565,7 @@ _forceinline
+@@ -572,7 +572,7 @@ _forceinline
  #else
  inline
  #endif
@@ -23,7 +23,7 @@ Index: core/libs/rawengine/libraw/src/decoders/fp_dng.cpp
  {
      unsigned *d = (unsigned*)data;
      for (int i = 0; i < len / 4; i++)
-@@ -630,9 +630,9 @@ void LibRaw::uncompressed_fp_dng_load_raw()
+@@ -639,9 +639,9 @@ void LibRaw::uncompressed_fp_dng_load_raw()
                  if (bytesps == 2 && difford)
                      swab((char *)dst, (char *)dst, fullrowbytes);
                  else if (bytesps == 3 && (libraw_internal_data.unpacker_data.order == 0x4949)) // II-16bit
