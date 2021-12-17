@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/12/17 17:17:32 kn Exp $
+include/tl/
+include/tl/expected.hpp
+share/cmake/
+share/cmake/tl-expected/
+share/cmake/tl-expected/tl-expected-config-version.cmake
+share/cmake/tl-expected/tl-expected-config.cmake
+share/cmake/tl-expected/tl-expected-targets.cmake
