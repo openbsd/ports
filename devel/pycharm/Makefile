@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.37 2021/10/17 13:06:59 kn Exp $
+# $OpenBSD: Makefile,v 1.38 2021/12/17 18:22:33 rsadowski Exp $
 
 COMMENT=		Python IDE based on IntelliJ IDEA
 
-V=			2021.2.2
-REVISION=		0
+V=			2021.3
 DISTNAME=		pycharm-community-${V}
 PKGNAME=		pycharm-${V}
 CATEGORIES=		devel
@@ -40,6 +39,9 @@ do-install:
 	@cd ${WRKDIST} && pax -rw . ${PC}
 	@rm -rf ${PC}/plugins/android
 	@rm -rf ${PC}/lib/pty4j-native
+.for PLUGIN in darwin-x86-64 darwin-aarch64 win32-x86-64
+	@rm -rf ${PC}/plugins/cwm-plugin/quiche-native/${PLUGIN}
+.endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 .for PROG in pycharm pycharm-lightedit
 	@${SUBST_PROGRAM} ${FILESDIR}/${PROG} ${PREFIX}/bin/${PROG}
