@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/11/20 07:43:41 landry Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/12/17 10:13:24 landry Exp $
 bin/mapproxy-seed
 bin/mapproxy-util
 lib/python${MODPY_VERSION}/site-packages/MapProxy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -444,7 +444,9 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}te
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}test_mixed_mode_format.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}test_multi_cache_layers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}test_multiapp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}test_refresh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}test_renderd_client.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}test_response_headers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}test_scalehints.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}test_seed.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}test_seed_only.${MODPY_PYC_MAGIC_TAG}pyc
@@ -536,6 +538,7 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/sld.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/source_errors.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/source_errors_raise.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/tileservice_origin.yaml
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/tileservice_refresh.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/tilesource_minmax_res.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/util-conf-base-grids.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/util-conf-overwrite.yaml
@@ -575,7 +578,9 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_mapserver.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_mixed_mode_format.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_multi_cache_layers.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_multiapp.py
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_refresh.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_renderd_client.py
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_response_headers.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_scalehints.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_seed.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_seed_only.py
