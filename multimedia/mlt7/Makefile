@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2021/12/17 15:04:25 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2021/12/17 15:09:18 espie Exp $
 
 COMMENT-main =		multimedia transformations framework
 COMMENT-gpl2 =		GPLv2-licensed modules for mlt
 VERSION =		7.0.1
 DISTNAME =		mlt-${VERSION}
+PKGNAME-main =		mlt7-${VERSION}
+PKGNAME-gpl2 =		mlt7-gpl2-${VERSION}
 
 CATEGORIES =		multimedia devel
 
