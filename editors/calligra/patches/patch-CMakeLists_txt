@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.3 2021/08/31 07:31:43 ajacoutot Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.4 2021/12/17 11:00:26 namn Exp $
 
 Fix build with OpenEXR>=3
 
@@ -13,7 +13,7 @@ From sthen@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -391,8 +391,13 @@ endif ()
+@@ -391,8 +391,14 @@ endif ()
  ## Check for OpenEXR
  ##
  
@@ -22,6 +22,7 @@ Index: CMakeLists.txt
 +macro_optional_find_package(Imath 3.0 CONFIG QUIET)
 +if(TARGET Imath::Imath)
 +    set(OPENEXR_LIBRARIES Imath::Imath)
++    set(OpenEXR_FOUND TRUE)
 +else()
 +    macro_optional_find_package(OpenEXR)
 +endif()
@@ -29,7 +30,7 @@ Index: CMakeLists.txt
  
  ##
  ## Test for GNU Scientific Library
-@@ -641,8 +646,8 @@ if(NOT WIN32 AND NOT APPLE)
+@@ -641,8 +647,8 @@ if(NOT WIN32 AND NOT APPLE)
  	)
  endif()
  
@@ -40,7 +41,7 @@ Index: CMakeLists.txt
      set(FREETYPE_INCLUDE_DIRS "")
  else()
      add_definitions( -DSHOULD_BUILD_FONT_CONVERSION )
-@@ -912,6 +917,9 @@ set(KOPAGEAPP_INCLUDES ${TEXTLAYOUT_INCLUDES}
+@@ -912,6 +918,9 @@ set(KOPAGEAPP_INCLUDES ${TEXTLAYOUT_INCLUDES}
      ${CMAKE_SOURCE_DIR}/libs/pageapp
      ${CMAKE_SOURCE_DIR}/libs/pageapp/commands
      ${CMAKE_BINARY_DIR}/libs/pageapp )
