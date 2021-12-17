@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2167 2021/12/16 22:49:03 kn Exp $
+# $OpenBSD: Makefile,v 1.2168 2021/12/17 09:49:40 kn Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1615,6 +1615,7 @@
      SUBDIR += quirks
      SUBDIR += radare2
      SUBDIR += ragel
+     SUBDIR += range-v3
      SUBDIR += rapidsvn
      SUBDIR += rats
      SUBDIR += rcs-fast-import
