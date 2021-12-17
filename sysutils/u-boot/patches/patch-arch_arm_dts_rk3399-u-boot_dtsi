@@ -1,0 +1,21 @@
+$OpenBSD: patch-arch_arm_dts_rk3399-u-boot_dtsi,v 1.1 2021/12/17 23:00:41 jsg Exp $
+
+dts: rockchip: rk3399: enable emmc phy for spl
+http://patchwork.ozlabs.org/project/uboot/patch/20211101044347.17822-1-yifeng.zhao@rock-chips.com/
+
+fixes emmc boot on pinebook pro
+
+Index: arch/arm/dts/rk3399-u-boot.dtsi
+--- arch/arm/dts/rk3399-u-boot.dtsi.orig
++++ arch/arm/dts/rk3399-u-boot.dtsi
+@@ -88,6 +88,10 @@
+ 	u-boot,dm-pre-reloc;
+ };
+ 
++&emmc_phy {
++	u-boot,dm-pre-reloc;
++};
++
+ &grf {
+ 	u-boot,dm-pre-reloc;
+ };
