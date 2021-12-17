@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2021/03/25 16:22:16 landry Exp $
+@comment $OpenBSD: PLIST,v 1.15 2021/12/17 10:35:16 landry Exp $
 @bin bin/viking
 @man man/man1/viking.1
 share/applications/viking.desktop
@@ -19,6 +19,7 @@ share/help/C/viking/figures/Goto_Main_Window.png
 share/help/C/viking/figures/LayersTracksList.png
 share/help/C/viking/figures/LayersTracksStatistics.png
 share/help/C/viking/figures/Maps_download_region_dialog.png
+share/help/C/viking/figures/Panel_Stats_Tab.png
 share/help/C/viking/figures/Track_elevation_graph.png
 share/help/C/viking/figures/Track_properties.png
 share/help/C/viking/figures/Track_statistics.png
