@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2168 2021/12/17 09:49:40 kn Exp $
+# $OpenBSD: Makefile,v 1.2169 2021/12/17 17:18:35 kn Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1783,6 +1783,7 @@
      SUBDIR += tkcvs
      SUBDIR += tkdiff
      SUBDIR += tklib
+     SUBDIR += tl-expected
      SUBDIR += tradcpp
      SUBDIR += ucpp
      SUBDIR += udis86
