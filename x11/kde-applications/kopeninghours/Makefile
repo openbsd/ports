@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2021/12/15 05:38:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2021/12/17 06:12:50 rsadowski Exp $
 
 COMMENT =	library for parsing and evaluating OSM data
 DISTNAME =	kopeninghours-${VERSION}
 CATEGORIES =	devel geo
+REVISION =	0
 
 SHARED_LIBS +=  KOpeningHours       0.0 # 21.8.1
 
@@ -13,7 +14,8 @@ MODKDE5_TRANSLATIONS = yes
 
 MODULES +=	lang/python
 
-BUILD_DEPENDS =	x11/qt5/qtquickcontrols
+BUILD_DEPENDS =	x11/qt5/qtquickcontrols \
+		devel/bison
 RUN_DEPENDS =	x11/qt5/qtquickcontrols
 
 LIB_DEPENDS =	devel/boost \
