@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2021/11/05 10:43:56 otto Exp $
+# $OpenBSD: Makefile,v 1.27 2021/12/17 10:23:28 otto Exp $
 
 COMMENT=		recursive nameserver
 
-V=			4.5.7
+V=			4.6.0
 DISTNAME=		pdns-recursor-${V}
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME=		powerdns-recursor-${V}
@@ -15,7 +15,7 @@ HOMEPAGE=		https://www.powerdns.com/
 PERMIT_PACKAGE=		Yes
 
 WANTLIB+=		${COMPILER_LIBCXX} boost_context-mt boost_filesystem-mt
-WANTLIB+=		boost_system-mt boost_thread-mt c crypto fstrm m
+WANTLIB+=		boost_system-mt boost_thread-mt c crypto ssl fstrm m
 WANTLIB+=		sodium z
 
 MASTER_SITES=		https://downloads.powerdns.com/releases/
@@ -45,6 +45,7 @@ USE_GMAKE=		Yes
 
 CONFIGURE_ARGS+=	--disable-botan \
 			--disable-libdecaf \
+			--enable-dns-over-tls \
 			--enable-dnstap \
 			--with-lua=${MODLUA_DEP} \
 			--without-net-snmp \
