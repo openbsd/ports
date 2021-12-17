@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2021/10/16 19:20:55 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.23 2021/12/17 18:18:16 rsadowski Exp $
 
 # Qt5WebEngine
 USE_WXNEEDED =	Yes
@@ -73,5 +73,7 @@ LIB_DEPENDS =	devel/kf5/attica \
 		x11/qt5/qtsvg
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_LibV4L2=Yes
+
+TEST_IS_INTERACTIVE =	X11
 
 .include <bsd.port.mk>
