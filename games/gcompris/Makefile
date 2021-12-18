@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2021/12/18 09:24:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.81 2021/12/18 10:28:12 rsadowski Exp $
 
 COMMENT=	educational game for children
 
@@ -7,6 +7,7 @@ DISTNAME=	gcompris-qt-${V}
 PKGNAME=	gcompris-${V}
 EPOCH=		0
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 CATEGORIES=	games education
 
@@ -24,14 +25,13 @@ WANTLIB += c m
 
 MASTER_SITES=	http://gcompris.net/download/qt/src/
 
-MODULES=	devel/cmake \
-		x11/qt5
+MODULES=	devel/kf5
 
 BUILD_DEPENDS=	devel/gettext,-tools \
-		devel/kf5/extra-cmake-modules \
 		devel/kf5/kdoctools
 
 LIB_DEPENDS=	x11/qt5/qtmultimedia \
+		x11/qt5/qtdeclarative \
 		x11/qt5/qtsensors \
 		x11/qt5/qtsvg
 
