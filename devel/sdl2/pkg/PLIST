@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/01/06 22:32:08 thfr Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/12/18 05:34:57 thfr Exp $
 bin/sdl2-config
 include/SDL2/
 include/SDL2/SDL.h
@@ -18,6 +18,7 @@ include/SDL2/SDL_filesystem.h
 include/SDL2/SDL_gamecontroller.h
 include/SDL2/SDL_gesture.h
 include/SDL2/SDL_haptic.h
+include/SDL2/SDL_hidapi.h
 include/SDL2/SDL_hints.h
 include/SDL2/SDL_joystick.h
 include/SDL2/SDL_keyboard.h
@@ -77,6 +78,7 @@ include/SDL2/SDL_video.h
 include/SDL2/SDL_vulkan.h
 include/SDL2/begin_code.h
 include/SDL2/close_code.h
+lib/cmake/
 lib/cmake/SDL2/
 lib/cmake/SDL2/sdl2-config-version.cmake
 lib/cmake/SDL2/sdl2-config.cmake
@@ -88,5 +90,6 @@ lib/libSDL2_test.la
 @static-lib lib/libSDL2main.a
 lib/libSDL2main.la
 lib/pkgconfig/sdl2.pc
+share/aclocal/
 share/aclocal/sdl2.m4
 share/doc/pkg-readmes/${PKGSTEM}

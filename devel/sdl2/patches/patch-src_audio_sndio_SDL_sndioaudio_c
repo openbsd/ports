@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_audio_sndio_SDL_sndioaudio_c,v 1.3 2021/12/18 05:34:57 thfr Exp $
+
+fix assertion failure with SDL 2.0.18's new hotplugging support
+GH PR https://github.com/libsdl-org/SDL/pull/5094
+
+Index: src/audio/sndio/SDL_sndioaudio.c
+--- src/audio/sndio/SDL_sndioaudio.c.orig
++++ src/audio/sndio/SDL_sndioaudio.c
+@@ -350,6 +350,13 @@ SNDIO_Deinitialize(void)
+     UnloadSNDIOLibrary();
+ }
+ 
++static void
++SNDIO_DetectDevices(void)
++{
++	SDL_AddAudioDevice(SDL_FALSE, DEFAULT_OUTPUT_DEVNAME, NULL, (void *) 0x1);
++	SDL_AddAudioDevice(SDL_TRUE, DEFAULT_INPUT_DEVNAME, NULL, (void *) 0x2);
++}
++
+ static int
+ SNDIO_Init(SDL_AudioDriverImpl * impl)
+ {
+@@ -366,6 +373,7 @@ SNDIO_Init(SDL_AudioDriverImpl * impl)
+     impl->CaptureFromDevice = SNDIO_CaptureFromDevice;
+     impl->FlushCapture = SNDIO_FlushCapture;
+     impl->Deinitialize = SNDIO_Deinitialize;
++    impl->DetectDevices = SNDIO_DetectDevices;
+ 
+     impl->AllowsArbitraryDeviceNames = 1;
+     impl->HasCaptureSupport = SDL_TRUE;

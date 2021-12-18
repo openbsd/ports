@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.37 2021/11/15 20:02:05 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.38 2021/12/18 05:34:57 thfr Exp $
 
 COMMENT=	cross-platform multimedia library
 
-V=		2.0.16
+V=		2.0.18
 DISTNAME=	SDL2-${V}
 PKGNAME=	sdl2-${V}
 CATEGORIES=	devel
 MASTER_SITES=	https://www.libsdl.org/release/
-REVISION=	0
 
-SHARED_LIBS=	SDL2		0.10	# 0.16
+SHARED_LIBS=	SDL2		0.11	# 0.18
 
 HOMEPAGE=	https://www.libsdl.org/
 
@@ -22,7 +21,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB+=	X11 Xcursor Xext Xfixes Xi Xinerama Xrandr Xrender Xss
 WANTLIB+=	Xxf86vm m pthread samplerate sndio usbhid xcb
-# GL and X11 libraries are dlopen'd by SDL
+# GL library is dlopen'd
 WANTLIB+=	GL
 
 LIB_DEPENDS=	audio/libsamplerate

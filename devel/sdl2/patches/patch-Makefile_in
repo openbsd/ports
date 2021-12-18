@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.10 2021/08/20 16:59:32 thfr Exp $
+$OpenBSD: patch-Makefile_in,v 1.11 2021/12/18 05:34:57 thfr Exp $
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -132,7 +132,7 @@ LT_AGE      = @LT_AGE@
+@@ -133,7 +133,7 @@ LT_AGE      = @LT_AGE@
  LT_CURRENT  = @LT_CURRENT@
  LT_RELEASE  = @LT_RELEASE@
  LT_REVISION = @LT_REVISION@

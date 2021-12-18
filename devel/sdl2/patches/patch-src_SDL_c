@@ -1,27 +1,17 @@
-$OpenBSD: patch-src_SDL_c,v 1.6 2021/08/20 16:59:32 thfr Exp $
+$OpenBSD: patch-src_SDL_c,v 1.7 2021/12/18 05:34:57 thfr Exp $
 
 Disable breaking if no haptic feedback support which disallows gamecontroller API
-pretend to be Linux in SDL_GetPlatform to allow compatibility with FNA games
-until OpenBSD support has been rolled out (estimated end of 2018).
 
 Index: src/SDL.c
 --- src/SDL.c.orig
 +++ src/SDL.c
-@@ -280,8 +280,6 @@ SDL_InitSubSystem(Uint32 flags)
-             }
+@@ -279,9 +279,6 @@ SDL_InitSubSystem(Uint32 flags)
          }
-         SDL_PrivateSubsystemRefCountIncr(SDL_INIT_HAPTIC);
+         SDL_PrivateSubsystemRefCountIncr(SDL_INIT_GAMECONTROLLER);
+         flags_initialized |= SDL_INIT_GAMECONTROLLER;
 -#else
--        return SDL_SetError("SDL not built with haptic (force feedback) support");
+-        SDL_SetError("SDL not built with joystick support");
+-        goto quit_and_error;
  #endif
      }
  
-@@ -517,7 +515,7 @@ SDL_GetPlatform()
- #elif __NETBSD__
-     return "NetBSD";
- #elif __OPENBSD__
--    return "OpenBSD";
-+    return "Linux";
- #elif __OS2__
-     return "OS/2";
- #elif __OSF__
