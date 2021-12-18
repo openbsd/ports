@@ -1,0 +1,29 @@
+$OpenBSD: patch-build_php_m4,v 1.1 2021/12/18 22:28:55 sthen Exp $
+
+- don't hardcode libstdc++
+
+- libressl uses a bogus version number in its pkgconfig file
+
+Index: build/php.m4
+--- build/php.m4.orig
++++ build/php.m4
+@@ -742,7 +742,9 @@ AC_DEFUN([PHP_REQUIRE_CXX],[
+   if test -z "$php_cxx_done"; then
+     AC_PROG_CXX
+     AC_PROG_CXXCPP
+-    PHP_ADD_LIBRARY(stdc++)
++    for i in $LIBCXX; do
++      PHP_ADD_LIBRARY($i)
++    done
+     php_cxx_done=yes
+   fi
+ ])
+@@ -1942,7 +1944,7 @@ dnl
+ AC_DEFUN([PHP_SETUP_OPENSSL],[
+   found_openssl=no
+ 
+-  PKG_CHECK_MODULES([OPENSSL], [openssl >= 1.0.2], [found_openssl=yes])
++  PKG_CHECK_MODULES([OPENSSL], [openssl], [found_openssl=yes])
+ 
+   if test "$found_openssl" = "yes"; then
+     PHP_EVAL_LIBLINE($OPENSSL_LIBS, $1)

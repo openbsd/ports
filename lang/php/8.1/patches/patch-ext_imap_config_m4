@@ -1,0 +1,24 @@
+$OpenBSD: patch-ext_imap_config_m4,v 1.1 2021/12/18 22:28:55 sthen Exp $
+
+Cope with newer alpine/c-client, from slackware
+https://git.slackware.nl/current/diff/source/n/php/php.imap.api.diff?id=4f9273afa49a94b04bccc088fb87fec9d80a3fc6
+
+Index: ext/imap/config.m4
+--- ext/imap/config.m4.orig
++++ ext/imap/config.m4
+@@ -34,6 +34,7 @@ AC_DEFUN([PHP_IMAP_TEST_BUILD], [
+     PHP_IMAP_EXPORT void mm_nocritical(void){}
+     PHP_IMAP_EXPORT void mm_notify(void){}
+     PHP_IMAP_EXPORT void mm_login(void){}
++    PHP_IMAP_EXPORT void mm_login_method(void){}
+     PHP_IMAP_EXPORT void mm_diskerror(void){}
+     PHP_IMAP_EXPORT void mm_status(void){}
+     PHP_IMAP_EXPORT void mm_lsub(void){}
+@@ -262,6 +263,7 @@ if test "$PHP_IMAP" != "no"; then
+       PHP_IMAP_EXPORT void mm_nocritical(void){}
+       PHP_IMAP_EXPORT void mm_notify(void){}
+       PHP_IMAP_EXPORT void mm_login(void){}
++      PHP_IMAP_EXPORT void mm_login_method(void){}
+       PHP_IMAP_EXPORT void mm_diskerror(void){}
+       PHP_IMAP_EXPORT void mm_status(void){}
+       PHP_IMAP_EXPORT void mm_lsub(void){}

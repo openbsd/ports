@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-soap,v 1.1 2021/12/18 22:28:55 sthen Exp $
+@option no-default-conflict
+@option is-branch
+@conflict php-soap-${PHP_PKGSPEC}
+@so lib/php-${PV}/modules/soap.so
+share/examples/php-${PV}/soap.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/soap.ini

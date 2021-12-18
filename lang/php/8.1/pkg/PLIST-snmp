@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-snmp,v 1.1 2021/12/18 22:28:55 sthen Exp $
+@option no-default-conflict
+@option is-branch
+@conflict php-snmp-${PHP_PKGSPEC}
+@so lib/php-${PV}/modules/snmp.so
+share/examples/php-${PV}/snmp.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/snmp.ini

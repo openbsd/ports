@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST-imap,v 1.1 2021/12/18 22:28:55 sthen Exp $
+@option no-default-conflict
+@option is-branch
+@conflict php-imap-${PHP_PKGSPEC}
+@so lib/php-${PV}/modules/imap.so
+share/examples/php-${PV}/imap.ini
+@comment etc/master.passwd
+@comment etc/spwd.db
+@sample ${SYSCONFDIR}/php-${PV}.sample/imap.ini

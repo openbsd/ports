@@ -1,0 +1,12 @@
+#!/bin/ksh
+#
+# $OpenBSD: php81_fpm.rc,v 1.1 2021/12/18 22:28:55 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/php-fpm-${PV}"
+
+. /etc/rc.d/rc.subr
+
+pexp="php-fpm-${PV}: master process .*"
+rc_reload=NO
+
+rc_cmd $1

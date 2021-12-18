@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-pgsql,v 1.1 2021/12/18 22:28:55 sthen Exp $
+@option no-default-conflict
+@option is-branch
+@conflict php-pgsql-${PHP_PKGSPEC}
+@so lib/php-${PV}/modules/pgsql.so
+share/examples/php-${PV}/pgsql.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/pgsql.ini

@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST-apache,v 1.1 2021/12/18 22:28:55 sthen Exp $
+@option no-default-conflict
+@option is-branch
+@conflict php-apache-${PHP_PKGSPEC}
+${APACHE_DIR}/
+@so ${APACHE_DIR}/${SAPI_SO}
+@sample ${MODPHP_CONFIG_PATH}/modules.sample/
+share/examples/php-${PV}/modphp.conf
+@sample ${MODPHP_CONFIG_PATH}/modules.sample/php-${PV}.conf

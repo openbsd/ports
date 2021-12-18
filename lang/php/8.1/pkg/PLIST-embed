@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-embed,v 1.1 2021/12/18 22:28:55 sthen Exp $
+@option no-default-conflict
+@option is-branch
+@conflict php-embed-${PHP_PKGSPEC}
+@so lib/php-${PV}/${SAPI_SO}
+share/php-${PV}/include/sapi/embed/
+share/php-${PV}/include/sapi/embed/php_embed.h

@@ -1,9 +1,9 @@
-# $OpenBSD: pecl.port.mk,v 1.21 2021/10/25 15:04:03 sthen Exp $
+# $OpenBSD: pecl.port.mk,v 1.22 2021/12/18 22:28:55 sthen Exp $
 # PHP PECL module
 
 MODULES +=	lang/php
 
-FLAVORS ?= php74 php80
+FLAVORS ?= php74 php80 php81
 FLAVOR ?= php74
 
 # MODPECL_DEFAULTV is used in PLISTs so that @pkgpath markers are only

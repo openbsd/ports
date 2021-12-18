@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-sqlite3,v 1.1 2021/12/18 22:28:55 sthen Exp $
+@option no-default-conflict
+@option is-branch
+@conflict php-sqlite3-${PHP_PKGSPEC}
+@so lib/php-${PV}/modules/sqlite3.so
+share/examples/php-${PV}/sqlite3.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/sqlite3.ini

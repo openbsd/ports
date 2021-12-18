@@ -1,0 +1,32 @@
+$OpenBSD: patch-ext_imap_php_imap_c,v 1.1 2021/12/18 22:28:55 sthen Exp $
+
+Cope with newer alpine/c-client, from slackware
+https://git.slackware.nl/current/diff/source/n/php/php.imap.api.diff?id=4f9273afa49a94b04bccc088fb87fec9d80a3fc6
+
+Index: ext/imap/php_imap.c
+--- ext/imap/php_imap.c.orig
++++ ext/imap/php_imap.c
+@@ -4654,7 +4654,7 @@ PHP_IMAP_EXPORT void mm_dlog(char *str)
+ 	   php debugger? */
+ }
+ 
+-PHP_IMAP_EXPORT void mm_login(NETMBX *mb, char *user, char *pwd, long trial)
++PHP_IMAP_EXPORT void mm_login(NETMBX *mb, char *user, char **pwd, long trial)
+ {
+ 
+ 	if (*mb->user) {
+@@ -4662,7 +4662,13 @@ PHP_IMAP_EXPORT void mm_login(NETMBX *mb, char *user, 
+ 	} else {
+ 		strlcpy (user, IMAPG(imap_user), MAILTMPLEN);
+ 	}
+-	strlcpy (pwd, IMAPG(imap_password), MAILTMPLEN);
++	*pwd = cpystr(IMAPG(imap_password));	/* alpine-2.22 c-client.a */
++}
++
++/* alpine-2.22 c-client.a workaround */
++PHP_IMAP_EXPORT void mm_login_method(NETMBX *mb, char *user, void *pwd, long trial, char *method)
++{
++   pwd = NULL;
+ }
+ 
+ PHP_IMAP_EXPORT void mm_critical(MAILSTREAM *stream)

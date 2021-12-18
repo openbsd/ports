@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-cgi,v 1.1 2021/12/18 22:28:55 sthen Exp $
+@option no-default-conflict
+@option is-branch
+@conflict php-cgi-${PHP_PKGSPEC}
+@bin bin/php-cgi-${PV}
+@man man/man1/php-cgi-${PV}.1

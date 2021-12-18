@@ -1,0 +1,72 @@
+$OpenBSD: patch-sapi_fpm_fpm_fpm_atomic_h,v 1.1 2021/12/18 22:28:55 sthen Exp $
+
+Add support for mips
+
+Index: sapi/fpm/fpm/fpm_atomic.h
+--- sapi/fpm/fpm/fpm_atomic.h.orig
++++ sapi/fpm/fpm/fpm_atomic.h
+@@ -131,6 +131,64 @@ static inline atomic_uint_t atomic_cmp_set(atomic_t *l
+ #error Sparc v8 and predecessors are not and will not be supported (see bug report 53310)
+ #endif /* #if (__sparcv9 || __sparcv9__) */
+ 
++#elif ( __mips__ || __mips64__ )
++
++#if (__LP64__ || _LP64)
++typedef uint64_t                    atomic_uint_t;
++typedef volatile atomic_uint_t      atomic_t;
++
++static inline atomic_uint_t atomic_cas_64(atomic_t *lock, atomic_uint_t old, atomic_uint_t new) /* {{{ */
++{
++	atomic_uint_t v;
++
++	__asm__ __volatile__ (
++	"\t.set\tnoreorder\n"
++	"\tlld\t%0, 0(%1)\n"
++	"\tbne\t%0, %2, 1f\n"
++	"\tnop\n"
++	"\tscd\t%3, 0(%1)\n"
++	"1:\n"
++	"\t.set\treorder\n" :
++	"=r" (v) : "r" (lock), "r" (old), "r" (new) : "memory");
++
++	return v;
++}
++/* }}} */
++
++static inline atomic_uint_t atomic_cmp_set(atomic_t *lock, atomic_uint_t old, atomic_uint_t set) /* {{{ */
++{
++	return (atomic_cas_64(lock, old, set)==old);
++}
++/* }}} */
++#else
++typedef uint32_t                    atomic_uint_t;
++typedef volatile atomic_uint_t      atomic_t;
++
++static inline atomic_uint_t atomic_cas_32(atomic_t *lock, atomic_uint_t old, atomic_uint_t new) /* {{{ */
++{
++	atomic_uint_t v;
++
++	__asm__ __volatile__ (
++	"\t.set\tnoreorder\n"
++	"\tll\t%0, 0(%1)\n"
++	"\tbne\t%0, %2, 1f\n"
++	"\tnop\n"
++	"\tsc\t%3, 0(%1)\n"
++	"1:\n"
++	"\t.set\treorder\n" :
++	"=r" (v) : "r" (lock), "r" (old), "r" (new) : "memory");
++
++	return v;
++}
++/* }}} */
++
++static inline atomic_uint_t atomic_cmp_set(atomic_t *lock, atomic_uint_t old, atomic_uint_t set) /* {{{ */
++{
++	return (atomic_cas_32(lock, old, set)==old);
++}
++/* }}} */
++#endif
++
+ #else
+ 
+ #error Unsupported processor. Please open a bug report (bugs.php.net).

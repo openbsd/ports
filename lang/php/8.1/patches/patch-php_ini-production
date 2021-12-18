@@ -1,0 +1,53 @@
+$OpenBSD: patch-php_ini-production,v 1.1 2021/12/18 22:28:55 sthen Exp $
+
+Index: php.ini-production
+--- php.ini-production.orig
++++ php.ini-production
+@@ -397,7 +397,7 @@ zend.exception_string_param_max_len = 0
+ ; threat in any way, but it makes it possible to determine whether you use PHP
+ ; on your server or not.
+ ; https://php.net/expose-php
+-expose_php = On
++expose_php = Off
+ 
+ ;;;;;;;;;;;;;;;;;;;
+ ; Resource Limits ;
+@@ -737,11 +737,8 @@ default_charset = "UTF-8"
+ ;;;;;;;;;;;;;;;;;;;;;;;;;
+ 
+ ; UNIX: "/path1:/path2"
+-;include_path = ".:/php/includes"
++include_path = ".:OPENBSD_INCLUDE_PATH"
+ ;
+-; Windows: "\path1;\path2"
+-;include_path = ".;c:\php\includes"
+-;
+ ; PHP's default setting for include_path is ".;/path/to/php/pear"
+ ; https://php.net/include-path
+ 
+@@ -763,6 +760,7 @@ user_dir =
+ ;extension_dir = "./"
+ ; On windows:
+ ;extension_dir = "ext"
++extension_dir = "MODULES_DIR"
+ 
+ ; Directory where the temporary files should be placed.
+ ; Defaults to the system default (see sys_get_temp_dir)
+@@ -858,7 +856,7 @@ max_file_uploads = 20
+ 
+ ; Whether to allow the treatment of URLs (like http:// or ftp://) as files.
+ ; https://php.net/allow-url-fopen
+-allow_url_fopen = On
++allow_url_fopen = Off
+ 
+ ; Whether to allow include/require to open URLs (like https:// or ftp://) as files.
+ ; https://php.net/allow-url-include
+@@ -965,7 +963,7 @@ cli_server.color = On
+ [Date]
+ ; Defines the default timezone used by the date functions
+ ; https://php.net/date.timezone
+-;date.timezone =
++date.timezone = UTC
+ 
+ ; https://php.net/date.default-latitude
+ ;date.default_latitude = 31.7667

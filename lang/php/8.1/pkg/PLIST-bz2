@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-bz2,v 1.1 2021/12/18 22:28:55 sthen Exp $
+@option no-default-conflict
+@option is-branch
+@conflict php-bz2-${PHP_PKGSPEC}
+@so lib/php-${PV}/modules/bz2.so
+share/examples/php-${PV}/bz2.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/bz2.ini

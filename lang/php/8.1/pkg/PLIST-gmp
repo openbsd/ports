@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST-gmp,v 1.1 2021/12/18 22:28:55 sthen Exp $
+@option no-default-conflict
+@option is-branch
+@conflict php-gmp-${PHP_PKGSPEC}
+@so lib/php-${PV}/modules/gmp.so
+share/examples/php-${PV}/gmp.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/gmp.ini
+share/php-${PV}/include/ext/gmp/
+share/php-${PV}/include/ext/gmp/php_gmp_int.h
