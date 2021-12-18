@@ -1,11 +1,17 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/12/17 09:47:59 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2021/12/18 18:15:43 kn Exp $
 
 COMMENT =		range library for C++14/17/20
 
 GH_ACCOUNT =		ericniebler
 GH_PROJECT =		range-v3
 GH_TAGNAME =		0.11.0
+REVISION =		0
 CATEGORIES =		devel
+
+LIBCPP_COMMIT =		0487cca29e352e8f16bbd91fda38e76e39a0ed28
+MASTER_SITES0 =		${MASTER_SITES_GITHUB:H:H:H}/commit/
+PATCHFILES =		${DISTNAME}-clang13-libcpp-fix{${LIBCPP_COMMIT}}.patch:0
+PATCH_DIST_STRIP =	-p1
 
 # BSL 1.0 (boost software license)
 PERMIT_PACKAGE =	Yes
