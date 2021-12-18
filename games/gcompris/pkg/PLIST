@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2021/03/21 16:31:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.36 2021/12/18 09:24:59 ajacoutot Exp $
 bin/gcompris
 @bin bin/gcompris-qt
 share/applications/org.kde.gcompris.desktop
@@ -24,6 +24,7 @@ share/gcompris-qt/rcc/align4.rcc
 share/gcompris-qt/rcc/alphabet-sequence.rcc
 share/gcompris-qt/rcc/analog_electricity.rcc
 share/gcompris-qt/rcc/baby_keyboard.rcc
+share/gcompris-qt/rcc/baby_mouse.rcc
 share/gcompris-qt/rcc/baby_tangram.rcc
 share/gcompris-qt/rcc/baby_wordprocessor.rcc
 share/gcompris-qt/rcc/babymatch.rcc
@@ -93,7 +94,11 @@ share/gcompris-qt/rcc/instruments.rcc
 share/gcompris-qt/rcc/land_safe.rcc
 share/gcompris-qt/rcc/lang.rcc
 share/gcompris-qt/rcc/learn_additions.rcc
+share/gcompris-qt/rcc/learn_decimals.rcc
+share/gcompris-qt/rcc/learn_decimals_additions.rcc
+share/gcompris-qt/rcc/learn_decimals_subtractions.rcc
 share/gcompris-qt/rcc/learn_digits.rcc
+share/gcompris-qt/rcc/learn_quantities.rcc
 share/gcompris-qt/rcc/learn_subtractions.rcc
 share/gcompris-qt/rcc/leftright.rcc
 share/gcompris-qt/rcc/letter-in-word.rcc
@@ -140,13 +145,24 @@ share/gcompris-qt/rcc/nine_men_morris_2players.rcc
 share/gcompris-qt/rcc/note_names.rcc
 share/gcompris-qt/rcc/number_sequence.rcc
 share/gcompris-qt/rcc/numbers-odd-even.rcc
+share/gcompris-qt/rcc/ordering_alphabets.rcc
+share/gcompris-qt/rcc/ordering_chronology.rcc
+share/gcompris-qt/rcc/ordering_numbers.rcc
+share/gcompris-qt/rcc/ordering_sentences.rcc
+share/gcompris-qt/rcc/oware.rcc
+share/gcompris-qt/rcc/oware_2players.rcc
 share/gcompris-qt/rcc/paintings.rcc
+share/gcompris-qt/rcc/path_decoding.rcc
+share/gcompris-qt/rcc/path_decoding_relative.rcc
+share/gcompris-qt/rcc/path_encoding.rcc
+share/gcompris-qt/rcc/path_encoding_relative.rcc
 share/gcompris-qt/rcc/penalty.rcc
 share/gcompris-qt/rcc/photo_hunter.rcc
 share/gcompris-qt/rcc/piano_composition.rcc
 share/gcompris-qt/rcc/planegame.rcc
 share/gcompris-qt/rcc/play_piano.rcc
 share/gcompris-qt/rcc/play_rhythm.rcc
+share/gcompris-qt/rcc/positions.rcc
 share/gcompris-qt/rcc/programmingMaze.rcc
 share/gcompris-qt/rcc/railroad.rcc
 share/gcompris-qt/rcc/readingh.rcc
@@ -175,6 +191,7 @@ share/gcompris-qt/rcc/traffic.rcc
 share/gcompris-qt/rcc/watercycle.rcc
 share/gcompris-qt/rcc/wordsgame.rcc
 share/gcompris-qt/translations/
+share/gcompris-qt/translations/gcompris_az.qm
 share/gcompris-qt/translations/gcompris_be.qm
 share/gcompris-qt/translations/gcompris_br.qm
 share/gcompris-qt/translations/gcompris_ca.qm
@@ -184,9 +201,10 @@ share/gcompris-qt/translations/gcompris_el.qm
 share/gcompris-qt/translations/gcompris_en.qm
 share/gcompris-qt/translations/gcompris_en_GB.qm
 share/gcompris-qt/translations/gcompris_es.qm
+share/gcompris-qt/translations/gcompris_et.qm
 share/gcompris-qt/translations/gcompris_eu.qm
+share/gcompris-qt/translations/gcompris_fi.qm
 share/gcompris-qt/translations/gcompris_fr.qm
-share/gcompris-qt/translations/gcompris_ga.qm
 share/gcompris-qt/translations/gcompris_he.qm
 share/gcompris-qt/translations/gcompris_hu.qm
 share/gcompris-qt/translations/gcompris_id.qm
