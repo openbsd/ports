@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/12/09 04:48:32 thfr Exp $
+# $OpenBSD: Makefile,v 1.12 2021/12/18 03:58:33 thfr Exp $
 
 COMMENT =	Vulkan Validation Layers
 
@@ -7,6 +7,7 @@ PKGNAME =	vulkan-validation-layers-${V}
 GH_TAGNAME =	sdk-${V}
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	Vulkan-ValidationLayers
+REVISION =	0
 
 CATEGORIES =	devel graphics
 
@@ -25,7 +26,8 @@ MODULES =	devel/cmake \
 		lang/python
 MODPY_RUNDEP =	No
 
-BUILD_DEPENDS =	graphics/glslang \
+BUILD_DEPENDS =	devel/robin-hood-hashing \
+		graphics/glslang \
 		graphics/vulkan-headers \
 		graphics/spirv-headers \
 		graphics/spirv-tools
@@ -33,8 +35,11 @@ BUILD_DEPENDS =	graphics/glslang \
 CONFIGURE_ARGS +=	-DGLSLANG_INSTALL_DIR="${LOCALBASE}" \
 			-DBUILD_WSI_WAYLAND_SUPPORT=False \
 			-DSPIRV_HEADERS_INSTALL_DIR=${LOCALBASE}/include/spirv \
-			-DUSE_ROBIN_HOOD_HASHING=False \
 			-DBUILD_WERROR=False
+
+.if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
+CXXFLAGS +=	-mxgot
+.endif
 
 # Tests only build if Google Test framework is in directory external/
 NO_TEST =	Yes

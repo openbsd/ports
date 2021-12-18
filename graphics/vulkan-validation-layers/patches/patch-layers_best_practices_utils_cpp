@@ -1,0 +1,18 @@
+$OpenBSD: patch-layers_best_practices_utils_cpp,v 1.1 2021/12/18 03:58:33 thfr Exp $
+
+avoid 'mips' namespace collision with <built-in> on mips64
+
+Index: layers/best_practices_utils.cpp
+--- layers/best_practices_utils.cpp.orig
++++ layers/best_practices_utils.cpp
+@@ -376,8 +376,8 @@ IMAGE_STATE_BP* BestPractices::GetImageUsageState(VkIm
+         IMAGE_STATE* image = Get<IMAGE_STATE>(vk_image);
+         state.image = image;
+         state.usages.resize(image->createInfo.arrayLayers);
+-        for (auto& mips : state.usages) {
+-            mips.resize(image->createInfo.mipLevels, IMAGE_SUBRESOURCE_USAGE_BP::UNDEFINED);
++        for (auto& vk_mips : state.usages) {
++            vk_mips.resize(image->createInfo.mipLevels, IMAGE_SUBRESOURCE_USAGE_BP::UNDEFINED);
+         }
+         return &state;
+     }
