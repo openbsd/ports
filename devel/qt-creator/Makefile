@@ -1,30 +1,29 @@
-# $OpenBSD: Makefile,v 1.79 2021/11/13 15:13:14 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.80 2021/12/18 08:52:39 rsadowski Exp $
 
 COMMENT =		cross-platform IDE for use with Qt
 
-V =			4.15.2
+V =			5.0.3
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
-REVISION =		0
 
-SHARED_LIBS +=  Aggregation               0.0 # 0.0
-SHARED_LIBS +=  CPlusPlus                 4.0 # 0.0
-SHARED_LIBS +=  ExtensionSystem           5.0 # 0.0
-SHARED_LIBS +=  GLSL                      0.0 # 0.0
-SHARED_LIBS +=  LanguageUtils             0.2 # 0.0
-SHARED_LIBS +=  QmlDebug                  4.0 # 0.0
-SHARED_LIBS +=  QmlEditorWidgets          0.0 # 0.0
-SHARED_LIBS +=  QmlJS                     7.0 # 0.0
-SHARED_LIBS +=  QtcSsh                    1.0 # 0.0
-SHARED_LIBS +=  Utils                     7.0 # 0.0
-SHARED_LIBS +=  Sqlite                    6.0 # 1.0
-SHARED_LIBS +=  Modeling                  5.0 # 1.0
-SHARED_LIBS +=  ClangSupport              1.0 # 4.5
-SHARED_LIBS +=  Tracing                   1.0 # 4.7
-SHARED_LIBS +=  LanguageServerProtocol    2.0 # 4.8
-SHARED_LIBS +=  AdvancedDockingSystem     0.0 # 4.12
-SHARED_LIBS +=  qlitehtml                 0.0 # 4.15
-SHARED_LIBS +=  ProParser                 0.0 # 4.15
+SHARED_LIBS +=  Aggregation               1.0 # 0.0
+SHARED_LIBS +=  CPlusPlus                 5.0 # 0.0
+SHARED_LIBS +=  ExtensionSystem           6.0 # 0.0
+SHARED_LIBS +=  GLSL                      1.0 # 0.0
+SHARED_LIBS +=  LanguageUtils             1.0 # 0.0
+SHARED_LIBS +=  QmlDebug                  5.0 # 0.0
+SHARED_LIBS +=  QmlEditorWidgets          1.0 # 0.0
+SHARED_LIBS +=  QmlJS                     8.0 # 0.0
+SHARED_LIBS +=  QtcSsh                    2.0 # 0.0
+SHARED_LIBS +=  Utils                     8.0 # 0.0
+SHARED_LIBS +=  Sqlite                    7.0 # 1.0
+SHARED_LIBS +=  Modeling                  6.0 # 1.0
+SHARED_LIBS +=  ClangSupport              2.0 # 4.5
+SHARED_LIBS +=  Tracing                   2.0 # 4.7
+SHARED_LIBS +=  LanguageServerProtocol    3.0 # 4.8
+SHARED_LIBS +=  AdvancedDockingSystem     1.0 # 4.12
+SHARED_LIBS +=  qlitehtml                 1.0 # 4.15
+SHARED_LIBS +=  ProParser                 1.0 # 4.15
 
 CATEGORIES =	devel editors
 
@@ -57,6 +56,7 @@ BUILD_DEPENDS =	devel/clang-tools-extra \
 		x11/qt5/qtquickcontrols
 
 RUN_DEPENDS =	devel/clang-tools-extra \
+		devel/desktop-file-utils \
 		devel/gdb \
 		devel/gmake \
 		devel/qbs \

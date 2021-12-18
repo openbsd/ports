@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_tools_qml2puppet_CMakeLists_txt,v 1.1 2021/11/09 07:42:28 rsadowski Exp $
+$OpenBSD: patch-src_tools_qml2puppet_CMakeLists_txt,v 1.2 2021/12/18 08:52:39 rsadowski Exp $
 
 Index: src/tools/qml2puppet/CMakeLists.txt
 --- src/tools/qml2puppet/CMakeLists.txt.orig
 +++ src/tools/qml2puppet/CMakeLists.txt
-@@ -108,7 +108,7 @@ add_qtc_executable(qml2puppet
+@@ -122,7 +122,7 @@ extend_qtc_executable(qml2puppet
  )
  
  extend_qtc_executable(qml2puppet

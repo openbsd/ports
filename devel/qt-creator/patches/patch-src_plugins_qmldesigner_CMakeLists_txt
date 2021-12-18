@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_plugins_qmldesigner_CMakeLists_txt,v 1.1 2021/11/09 07:42:28 rsadowski Exp $
+$OpenBSD: patch-src_plugins_qmldesigner_CMakeLists_txt,v 1.2 2021/12/18 08:52:39 rsadowski Exp $
 
 Index: src/plugins/qmldesigner/CMakeLists.txt
 --- src/plugins/qmldesigner/CMakeLists.txt.orig
 +++ src/plugins/qmldesigner/CMakeLists.txt
-@@ -124,7 +124,7 @@ if (UNIX)
+@@ -125,7 +125,7 @@ if (UNIX)
      SOURCES_PREFIX ../../../share/qtcreator/qml/qmlpuppet/container
      SOURCES sharedmemory_unix.cpp
    )
