@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/12/16 01:23:46 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2021/12/18 01:57:39 kn Exp $
 
 COMMENT =		portable SCTP userland stack
 GH_ACCOUNT =		sctplab
 GH_PROJECT =		usrsctp
 GH_TAGNAME =		0.9.5.0
 CATEGORIES =		net
+REVISION =		0
 
 SHARED_LIBS =		usrsctp	0.0	# 2.0.0
 
@@ -19,6 +20,9 @@ CONFIGURE_ARGS =	-Dsctp_build_shared_lib=1
 
 # built but not installed by default, enable when there is a use case for them
 CONFIGURE_ARGS +=	-Dsctp_build_programs=0
+
+# fix build with clang 13.0.0;  upstream fixed, remove on next version
+CONFIGURE_ARGS +=	-Dsctp_werror=0
 
 NO_TEST =		Yes
 
