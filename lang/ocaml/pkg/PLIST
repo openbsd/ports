@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2021/12/10 04:11:00 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.30 2021/12/18 01:57:22 jca Exp $
 @pkgpath lang/ocaml,-main
 %%native%%
 bin/ocaml
@@ -360,9 +360,6 @@ lib/ocaml/compiler-libs/lexer.cmi
 lib/ocaml/compiler-libs/lexer.cmt
 lib/ocaml/compiler-libs/lexer.cmti
 lib/ocaml/compiler-libs/lexer.mli
-lib/ocaml/compiler-libs/linear_format.cmi
-lib/ocaml/compiler-libs/linear_format.cmt
-lib/ocaml/compiler-libs/linear_format.cmti
 lib/ocaml/compiler-libs/linear_format.mli
 lib/ocaml/compiler-libs/load_path.cmi
 lib/ocaml/compiler-libs/load_path.cmt
@@ -429,9 +426,6 @@ lib/ocaml/compiler-libs/oprint.cmti
 lib/ocaml/compiler-libs/oprint.mli
 lib/ocaml/compiler-libs/optcompile.mli
 lib/ocaml/compiler-libs/opterrors.mli
-lib/ocaml/compiler-libs/optmaindriver.cmi
-lib/ocaml/compiler-libs/optmaindriver.cmt
-lib/ocaml/compiler-libs/optmaindriver.cmti
 lib/ocaml/compiler-libs/optmaindriver.mli
 lib/ocaml/compiler-libs/opttopdirs.mli
 lib/ocaml/compiler-libs/opttoploop.mli

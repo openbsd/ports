@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.native,v 1.20 2021/12/10 04:11:00 daniel Exp $
+@comment $OpenBSD: PFRAG.native,v 1.21 2021/12/18 01:57:22 jca Exp $
 %%dynlink%%
 @bin bin/ocamlc.opt
 @bin bin/ocamlcp.opt
@@ -427,6 +427,9 @@ lib/ocaml/compiler-libs/linear.cmt
 lib/ocaml/compiler-libs/linear.cmti
 lib/ocaml/compiler-libs/linear.cmx
 lib/ocaml/compiler-libs/linear.mli
+lib/ocaml/compiler-libs/linear_format.cmi
+lib/ocaml/compiler-libs/linear_format.cmt
+lib/ocaml/compiler-libs/linear_format.cmti
 lib/ocaml/compiler-libs/linear_format.cmx
 lib/ocaml/compiler-libs/linearize.cmi
 lib/ocaml/compiler-libs/linearize.cmt
@@ -496,6 +499,9 @@ lib/ocaml/compiler-libs/optmain.cmo
 lib/ocaml/compiler-libs/optmain.cmt
 lib/ocaml/compiler-libs/optmain.cmx
 lib/ocaml/compiler-libs/optmain.o
+lib/ocaml/compiler-libs/optmaindriver.cmi
+lib/ocaml/compiler-libs/optmaindriver.cmt
+lib/ocaml/compiler-libs/optmaindriver.cmti
 lib/ocaml/compiler-libs/optmaindriver.cmx
 lib/ocaml/compiler-libs/parameter.cmi
 lib/ocaml/compiler-libs/parameter.cmt
