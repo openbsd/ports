@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hpijs,v 1.69 2021/11/06 09:45:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST-hpijs,v 1.70 2021/12/18 09:52:25 ajacoutot Exp $
 @conflict hplip-libs-<=3.9.8
 @conflict hpcups-<=3.2.11
 @pkgpath print/hpijs
@@ -270,7 +270,6 @@ share/foomatic/db/source/PPD/HP/hp-designjet_z2600_postscript-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_z5200_postscript-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_z5400-postscript.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_z5600_postscript-ps.ppd.gz
-share/foomatic/db/source/PPD/HP/hp-designjet_z6_pro_64in_ps-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_z6100ps_42in_photo-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_z6100ps_60in_photo-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_z6200_42in_photo-ps.ppd.gz
@@ -280,6 +279,7 @@ share/foomatic/db/source/PPD/HP/hp-designjet_z6610ps_60in-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_z6800_photo-postscript.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_z6810ps_42in-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_z6810ps_60in-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-designjet_z6_pro_64in_ps-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_z9_pro_64in_ps-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_1000_j110_series.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_1010_series.ppd.gz

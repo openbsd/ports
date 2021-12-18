@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.23 2021/05/15 17:06:01 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.24 2021/12/18 09:52:25 ajacoutot Exp $
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -11443,6 +11443,11 @@ else
+@@ -11447,6 +11447,11 @@ else
      lt_cv_dlopen_libs=
      ;;
  
@@ -15,7 +15,7 @@ Index: configure
    darwin*)
    # if libdl is installed we need to link against it
      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for dlopen in -ldl" >&5
-@@ -15381,50 +15386,6 @@ if test "x$ac_cv_lib_jpeg_jpeg_set_defaults" = xyes; t
+@@ -15385,50 +15390,6 @@ if test "x$ac_cv_lib_jpeg_jpeg_set_defaults" = xyes; t
  else
    as_fn_error 102 "\"cannot find libjpeg support\"" "$LINENO" 5
  fi

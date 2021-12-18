@@ -1,11 +1,11 @@
-$OpenBSD: patch-prnt_cupsext_cupsext_c,v 1.6 2020/10/03 13:39:31 ajacoutot Exp $
+$OpenBSD: patch-prnt_cupsext_cupsext_c,v 1.7 2021/12/18 09:52:25 ajacoutot Exp $
 
 Backwards memcpy, triggered by changing default page size in hp-toolbox
 
 Index: prnt/cupsext/cupsext.c
 --- prnt/cupsext/cupsext.c.orig
 +++ prnt/cupsext/cupsext.c
-@@ -1164,7 +1164,7 @@ PyObject * removeOption( PyObject * self, PyObject * a
+@@ -1165,7 +1165,7 @@ PyObject * removeOption( PyObject * self, PyObject * a
  
              if ( j < g_num_options )
              {
