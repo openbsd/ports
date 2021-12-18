@@ -1,0 +1,24 @@
+$OpenBSD: patch-absl_debugging_internal_elf_mem_image_h,v 1.1.1.1 2021/12/18 19:38:17 kn Exp $
+
+Disabling ABSL_HAVE_ELF_MEM_IMAGE.
+
+This will cause the files
+
+absl/debugging/internal/self_mem_image.(h|cc)
+and
+absl/debugging/internal/vdso_support.(h|cc)
+
+are excluded from the build. Since OpenBSD has no vdso, this is OK.
+
+Index: absl/debugging/internal/elf_mem_image.h
+--- absl/debugging/internal/elf_mem_image.h.orig
++++ absl/debugging/internal/elf_mem_image.h
+@@ -31,7 +31,7 @@
+ #error ABSL_HAVE_ELF_MEM_IMAGE cannot be directly set
+ #endif
+ 
+-#if defined(__ELF__) && !defined(__native_client__) && !defined(__asmjs__) && \
++#if defined(__ELF__) && !defined(__OpenBSD__) && !defined(__native_client__) && !defined(__asmjs__) && \
+     !defined(__wasm__)
+ #define ABSL_HAVE_ELF_MEM_IMAGE 1
+ #endif

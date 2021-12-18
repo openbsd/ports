@@ -1,0 +1,558 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/12/18 19:38:17 kn Exp $
+include/absl/
+include/absl/algorithm/
+include/absl/algorithm/algorithm.h
+include/absl/algorithm/container.h
+include/absl/base/
+include/absl/base/attributes.h
+include/absl/base/call_once.h
+include/absl/base/casts.h
+include/absl/base/config.h
+include/absl/base/const_init.h
+include/absl/base/dynamic_annotations.h
+include/absl/base/internal/
+include/absl/base/internal/atomic_hook.h
+include/absl/base/internal/atomic_hook_test_helper.h
+include/absl/base/internal/cycleclock.h
+include/absl/base/internal/direct_mmap.h
+include/absl/base/internal/dynamic_annotations.h
+include/absl/base/internal/endian.h
+include/absl/base/internal/errno_saver.h
+include/absl/base/internal/exception_safety_testing.h
+include/absl/base/internal/exception_testing.h
+include/absl/base/internal/fast_type_id.h
+include/absl/base/internal/hide_ptr.h
+include/absl/base/internal/identity.h
+include/absl/base/internal/inline_variable.h
+include/absl/base/internal/inline_variable_testing.h
+include/absl/base/internal/invoke.h
+include/absl/base/internal/low_level_alloc.h
+include/absl/base/internal/low_level_scheduling.h
+include/absl/base/internal/per_thread_tls.h
+include/absl/base/internal/pretty_function.h
+include/absl/base/internal/raw_logging.h
+include/absl/base/internal/scheduling_mode.h
+include/absl/base/internal/scoped_set_env.h
+include/absl/base/internal/spinlock.h
+include/absl/base/internal/spinlock_akaros.inc
+include/absl/base/internal/spinlock_linux.inc
+include/absl/base/internal/spinlock_posix.inc
+include/absl/base/internal/spinlock_wait.h
+include/absl/base/internal/spinlock_win32.inc
+include/absl/base/internal/strerror.h
+include/absl/base/internal/sysinfo.h
+include/absl/base/internal/thread_annotations.h
+include/absl/base/internal/thread_identity.h
+include/absl/base/internal/throw_delegate.h
+include/absl/base/internal/tsan_mutex_interface.h
+include/absl/base/internal/unaligned_access.h
+include/absl/base/internal/unscaledcycleclock.h
+include/absl/base/log_severity.h
+include/absl/base/macros.h
+include/absl/base/optimization.h
+include/absl/base/options.h
+include/absl/base/policy_checks.h
+include/absl/base/port.h
+include/absl/base/thread_annotations.h
+include/absl/cleanup/
+include/absl/cleanup/cleanup.h
+include/absl/cleanup/internal/
+include/absl/cleanup/internal/cleanup.h
+include/absl/container/
+include/absl/container/btree_map.h
+include/absl/container/btree_set.h
+include/absl/container/btree_test.h
+include/absl/container/fixed_array.h
+include/absl/container/flat_hash_map.h
+include/absl/container/flat_hash_set.h
+include/absl/container/inlined_vector.h
+include/absl/container/internal/
+include/absl/container/internal/btree.h
+include/absl/container/internal/btree_container.h
+include/absl/container/internal/common.h
+include/absl/container/internal/compressed_tuple.h
+include/absl/container/internal/container_memory.h
+include/absl/container/internal/counting_allocator.h
+include/absl/container/internal/hash_function_defaults.h
+include/absl/container/internal/hash_generator_testing.h
+include/absl/container/internal/hash_policy_testing.h
+include/absl/container/internal/hash_policy_traits.h
+include/absl/container/internal/hashtable_debug.h
+include/absl/container/internal/hashtable_debug_hooks.h
+include/absl/container/internal/hashtablez_sampler.h
+include/absl/container/internal/have_sse.h
+include/absl/container/internal/inlined_vector.h
+include/absl/container/internal/layout.h
+include/absl/container/internal/node_hash_policy.h
+include/absl/container/internal/raw_hash_map.h
+include/absl/container/internal/raw_hash_set.h
+include/absl/container/internal/test_instance_tracker.h
+include/absl/container/internal/tracked.h
+include/absl/container/internal/unordered_map_constructor_test.h
+include/absl/container/internal/unordered_map_lookup_test.h
+include/absl/container/internal/unordered_map_members_test.h
+include/absl/container/internal/unordered_map_modifiers_test.h
+include/absl/container/internal/unordered_set_constructor_test.h
+include/absl/container/internal/unordered_set_lookup_test.h
+include/absl/container/internal/unordered_set_members_test.h
+include/absl/container/internal/unordered_set_modifiers_test.h
+include/absl/container/node_hash_map.h
+include/absl/container/node_hash_set.h
+include/absl/debugging/
+include/absl/debugging/failure_signal_handler.h
+include/absl/debugging/internal/
+include/absl/debugging/internal/address_is_readable.h
+include/absl/debugging/internal/demangle.h
+include/absl/debugging/internal/elf_mem_image.h
+include/absl/debugging/internal/examine_stack.h
+include/absl/debugging/internal/stack_consumption.h
+include/absl/debugging/internal/stacktrace_aarch64-inl.inc
+include/absl/debugging/internal/stacktrace_arm-inl.inc
+include/absl/debugging/internal/stacktrace_config.h
+include/absl/debugging/internal/stacktrace_emscripten-inl.inc
+include/absl/debugging/internal/stacktrace_generic-inl.inc
+include/absl/debugging/internal/stacktrace_powerpc-inl.inc
+include/absl/debugging/internal/stacktrace_riscv-inl.inc
+include/absl/debugging/internal/stacktrace_unimplemented-inl.inc
+include/absl/debugging/internal/stacktrace_win32-inl.inc
+include/absl/debugging/internal/stacktrace_x86-inl.inc
+include/absl/debugging/internal/symbolize.h
+include/absl/debugging/internal/vdso_support.h
+include/absl/debugging/leak_check.h
+include/absl/debugging/stacktrace.h
+include/absl/debugging/symbolize.h
+include/absl/debugging/symbolize_darwin.inc
+include/absl/debugging/symbolize_elf.inc
+include/absl/debugging/symbolize_emscripten.inc
+include/absl/debugging/symbolize_unimplemented.inc
+include/absl/debugging/symbolize_win32.inc
+include/absl/flags/
+include/absl/flags/commandlineflag.h
+include/absl/flags/config.h
+include/absl/flags/declare.h
+include/absl/flags/flag.h
+include/absl/flags/internal/
+include/absl/flags/internal/commandlineflag.h
+include/absl/flags/internal/flag.h
+include/absl/flags/internal/flag_msvc.inc
+include/absl/flags/internal/parse.h
+include/absl/flags/internal/path_util.h
+include/absl/flags/internal/private_handle_accessor.h
+include/absl/flags/internal/program_name.h
+include/absl/flags/internal/registry.h
+include/absl/flags/internal/sequence_lock.h
+include/absl/flags/internal/usage.h
+include/absl/flags/marshalling.h
+include/absl/flags/parse.h
+include/absl/flags/reflection.h
+include/absl/flags/usage.h
+include/absl/flags/usage_config.h
+include/absl/functional/
+include/absl/functional/bind_front.h
+include/absl/functional/function_ref.h
+include/absl/functional/internal/
+include/absl/functional/internal/front_binder.h
+include/absl/functional/internal/function_ref.h
+include/absl/hash/
+include/absl/hash/hash.h
+include/absl/hash/hash_testing.h
+include/absl/hash/internal/
+include/absl/hash/internal/city.h
+include/absl/hash/internal/hash.h
+include/absl/hash/internal/low_level_hash.h
+include/absl/hash/internal/spy_hash_state.h
+include/absl/memory/
+include/absl/memory/memory.h
+include/absl/meta/
+include/absl/meta/type_traits.h
+include/absl/numeric/
+include/absl/numeric/bits.h
+include/absl/numeric/int128.h
+include/absl/numeric/int128_have_intrinsic.inc
+include/absl/numeric/int128_no_intrinsic.inc
+include/absl/numeric/internal/
+include/absl/numeric/internal/bits.h
+include/absl/numeric/internal/representation.h
+include/absl/profiling/
+include/absl/profiling/internal/
+include/absl/profiling/internal/exponential_biased.h
+include/absl/profiling/internal/periodic_sampler.h
+include/absl/profiling/internal/sample_recorder.h
+include/absl/random/
+include/absl/random/bernoulli_distribution.h
+include/absl/random/beta_distribution.h
+include/absl/random/bit_gen_ref.h
+include/absl/random/discrete_distribution.h
+include/absl/random/distributions.h
+include/absl/random/exponential_distribution.h
+include/absl/random/gaussian_distribution.h
+include/absl/random/internal/
+include/absl/random/internal/chi_square.h
+include/absl/random/internal/distribution_caller.h
+include/absl/random/internal/distribution_test_util.h
+include/absl/random/internal/explicit_seed_seq.h
+include/absl/random/internal/fast_uniform_bits.h
+include/absl/random/internal/fastmath.h
+include/absl/random/internal/generate_real.h
+include/absl/random/internal/iostream_state_saver.h
+include/absl/random/internal/mock_helpers.h
+include/absl/random/internal/mock_overload_set.h
+include/absl/random/internal/nanobenchmark.h
+include/absl/random/internal/nonsecure_base.h
+include/absl/random/internal/pcg_engine.h
+include/absl/random/internal/platform.h
+include/absl/random/internal/pool_urbg.h
+include/absl/random/internal/randen.h
+include/absl/random/internal/randen_detect.h
+include/absl/random/internal/randen_engine.h
+include/absl/random/internal/randen_hwaes.h
+include/absl/random/internal/randen_slow.h
+include/absl/random/internal/randen_traits.h
+include/absl/random/internal/salted_seed_seq.h
+include/absl/random/internal/seed_material.h
+include/absl/random/internal/sequence_urbg.h
+include/absl/random/internal/traits.h
+include/absl/random/internal/uniform_helper.h
+include/absl/random/internal/wide_multiply.h
+include/absl/random/log_uniform_int_distribution.h
+include/absl/random/mock_distributions.h
+include/absl/random/mocking_bit_gen.h
+include/absl/random/poisson_distribution.h
+include/absl/random/random.h
+include/absl/random/seed_gen_exception.h
+include/absl/random/seed_sequences.h
+include/absl/random/uniform_int_distribution.h
+include/absl/random/uniform_real_distribution.h
+include/absl/random/zipf_distribution.h
+include/absl/status/
+include/absl/status/internal/
+include/absl/status/internal/status_internal.h
+include/absl/status/internal/statusor_internal.h
+include/absl/status/status.h
+include/absl/status/status_payload_printer.h
+include/absl/status/statusor.h
+include/absl/strings/
+include/absl/strings/ascii.h
+include/absl/strings/charconv.h
+include/absl/strings/cord.h
+include/absl/strings/cord_test_helpers.h
+include/absl/strings/cordz_test_helpers.h
+include/absl/strings/escaping.h
+include/absl/strings/internal/
+include/absl/strings/internal/char_map.h
+include/absl/strings/internal/charconv_bigint.h
+include/absl/strings/internal/charconv_parse.h
+include/absl/strings/internal/cord_internal.h
+include/absl/strings/internal/cord_rep_btree.h
+include/absl/strings/internal/cord_rep_btree_navigator.h
+include/absl/strings/internal/cord_rep_btree_reader.h
+include/absl/strings/internal/cord_rep_consume.h
+include/absl/strings/internal/cord_rep_flat.h
+include/absl/strings/internal/cord_rep_ring.h
+include/absl/strings/internal/cord_rep_ring_reader.h
+include/absl/strings/internal/cord_rep_test_util.h
+include/absl/strings/internal/cordz_functions.h
+include/absl/strings/internal/cordz_handle.h
+include/absl/strings/internal/cordz_info.h
+include/absl/strings/internal/cordz_sample_token.h
+include/absl/strings/internal/cordz_statistics.h
+include/absl/strings/internal/cordz_update_scope.h
+include/absl/strings/internal/cordz_update_tracker.h
+include/absl/strings/internal/escaping.h
+include/absl/strings/internal/escaping_test_common.h
+include/absl/strings/internal/memutil.h
+include/absl/strings/internal/numbers_test_common.h
+include/absl/strings/internal/ostringstream.h
+include/absl/strings/internal/pow10_helper.h
+include/absl/strings/internal/resize_uninitialized.h
+include/absl/strings/internal/stl_type_traits.h
+include/absl/strings/internal/str_format/
+include/absl/strings/internal/str_format/arg.h
+include/absl/strings/internal/str_format/bind.h
+include/absl/strings/internal/str_format/checker.h
+include/absl/strings/internal/str_format/extension.h
+include/absl/strings/internal/str_format/float_conversion.h
+include/absl/strings/internal/str_format/output.h
+include/absl/strings/internal/str_format/parser.h
+include/absl/strings/internal/str_join_internal.h
+include/absl/strings/internal/str_split_internal.h
+include/absl/strings/internal/string_constant.h
+include/absl/strings/internal/utf8.h
+include/absl/strings/match.h
+include/absl/strings/numbers.h
+include/absl/strings/str_cat.h
+include/absl/strings/str_format.h
+include/absl/strings/str_join.h
+include/absl/strings/str_replace.h
+include/absl/strings/str_split.h
+include/absl/strings/string_view.h
+include/absl/strings/strip.h
+include/absl/strings/substitute.h
+include/absl/synchronization/
+include/absl/synchronization/barrier.h
+include/absl/synchronization/blocking_counter.h
+include/absl/synchronization/internal/
+include/absl/synchronization/internal/create_thread_identity.h
+include/absl/synchronization/internal/futex.h
+include/absl/synchronization/internal/graphcycles.h
+include/absl/synchronization/internal/kernel_timeout.h
+include/absl/synchronization/internal/per_thread_sem.h
+include/absl/synchronization/internal/thread_pool.h
+include/absl/synchronization/internal/waiter.h
+include/absl/synchronization/mutex.h
+include/absl/synchronization/notification.h
+include/absl/time/
+include/absl/time/civil_time.h
+include/absl/time/clock.h
+include/absl/time/internal/
+include/absl/time/internal/cctz/
+include/absl/time/internal/cctz/include/
+include/absl/time/internal/cctz/include/cctz/
+include/absl/time/internal/cctz/include/cctz/civil_time.h
+include/absl/time/internal/cctz/include/cctz/civil_time_detail.h
+include/absl/time/internal/cctz/include/cctz/time_zone.h
+include/absl/time/internal/cctz/include/cctz/zone_info_source.h
+include/absl/time/internal/cctz/src/
+include/absl/time/internal/cctz/src/time_zone_fixed.h
+include/absl/time/internal/cctz/src/time_zone_if.h
+include/absl/time/internal/cctz/src/time_zone_impl.h
+include/absl/time/internal/cctz/src/time_zone_info.h
+include/absl/time/internal/cctz/src/time_zone_libc.h
+include/absl/time/internal/cctz/src/time_zone_posix.h
+include/absl/time/internal/cctz/src/tzfile.h
+include/absl/time/internal/get_current_time_chrono.inc
+include/absl/time/internal/get_current_time_posix.inc
+include/absl/time/internal/test_util.h
+include/absl/time/internal/zoneinfo.inc
+include/absl/time/time.h
+include/absl/types/
+include/absl/types/any.h
+include/absl/types/bad_any_cast.h
+include/absl/types/bad_optional_access.h
+include/absl/types/bad_variant_access.h
+include/absl/types/compare.h
+include/absl/types/internal/
+include/absl/types/internal/conformance_aliases.h
+include/absl/types/internal/conformance_archetype.h
+include/absl/types/internal/conformance_profile.h
+include/absl/types/internal/conformance_testing.h
+include/absl/types/internal/conformance_testing_helpers.h
+include/absl/types/internal/optional.h
+include/absl/types/internal/parentheses.h
+include/absl/types/internal/span.h
+include/absl/types/internal/transform_args.h
+include/absl/types/internal/variant.h
+include/absl/types/optional.h
+include/absl/types/span.h
+include/absl/types/variant.h
+include/absl/utility/
+include/absl/utility/utility.h
+lib/cmake/
+lib/cmake/absl/
+lib/cmake/absl/abslConfig.cmake
+lib/cmake/absl/abslConfigVersion.cmake
+lib/cmake/absl/abslTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/absl/abslTargets.cmake
+@lib lib/libabsl_bad_any_cast_impl.so.${LIBabsl_bad_any_cast_impl_VERSION}
+@lib lib/libabsl_bad_optional_access.so.${LIBabsl_bad_optional_access_VERSION}
+@lib lib/libabsl_bad_variant_access.so.${LIBabsl_bad_variant_access_VERSION}
+@lib lib/libabsl_base.so.${LIBabsl_base_VERSION}
+@lib lib/libabsl_city.so.${LIBabsl_city_VERSION}
+@lib lib/libabsl_civil_time.so.${LIBabsl_civil_time_VERSION}
+@lib lib/libabsl_cord.so.${LIBabsl_cord_VERSION}
+@lib lib/libabsl_cord_internal.so.${LIBabsl_cord_internal_VERSION}
+@lib lib/libabsl_cordz_functions.so.${LIBabsl_cordz_functions_VERSION}
+@lib lib/libabsl_cordz_handle.so.${LIBabsl_cordz_handle_VERSION}
+@lib lib/libabsl_cordz_info.so.${LIBabsl_cordz_info_VERSION}
+lib/libabsl_cordz_sample_token.so.2111.0.0
+@lib lib/libabsl_debugging_internal.so.${LIBabsl_debugging_internal_VERSION}
+@lib lib/libabsl_demangle_internal.so.${LIBabsl_demangle_internal_VERSION}
+@lib lib/libabsl_examine_stack.so.${LIBabsl_examine_stack_VERSION}
+@lib lib/libabsl_exponential_biased.so.${LIBabsl_exponential_biased_VERSION}
+@lib lib/libabsl_failure_signal_handler.so.${LIBabsl_failure_signal_handler_VERSION}
+@lib lib/libabsl_flags.so.${LIBabsl_flags_VERSION}
+@lib lib/libabsl_flags_commandlineflag.so.${LIBabsl_flags_commandlineflag_VERSION}
+@lib lib/libabsl_flags_commandlineflag_internal.so.${LIBabsl_flags_commandlineflag_internal_VERSION}
+@lib lib/libabsl_flags_config.so.${LIBabsl_flags_config_VERSION}
+@lib lib/libabsl_flags_internal.so.${LIBabsl_flags_internal_VERSION}
+@lib lib/libabsl_flags_marshalling.so.${LIBabsl_flags_marshalling_VERSION}
+@lib lib/libabsl_flags_parse.so.${LIBabsl_flags_parse_VERSION}
+@lib lib/libabsl_flags_private_handle_accessor.so.${LIBabsl_flags_private_handle_accessor_VERSION}
+@lib lib/libabsl_flags_program_name.so.${LIBabsl_flags_program_name_VERSION}
+@lib lib/libabsl_flags_reflection.so.${LIBabsl_flags_reflection_VERSION}
+@lib lib/libabsl_flags_usage.so.${LIBabsl_flags_usage_VERSION}
+@lib lib/libabsl_flags_usage_internal.so.${LIBabsl_flags_usage_internal_VERSION}
+@lib lib/libabsl_graphcycles_internal.so.${LIBabsl_graphcycles_internal_VERSION}
+@lib lib/libabsl_hash.so.${LIBabsl_hash_VERSION}
+@lib lib/libabsl_hashtablez_sampler.so.${LIBabsl_hashtablez_sampler_VERSION}
+@lib lib/libabsl_int128.so.${LIBabsl_int128_VERSION}
+@lib lib/libabsl_leak_check.so.${LIBabsl_leak_check_VERSION}
+@lib lib/libabsl_leak_check_disable.so.${LIBabsl_leak_check_disable_VERSION}
+@lib lib/libabsl_log_severity.so.${LIBabsl_log_severity_VERSION}
+@lib lib/libabsl_low_level_hash.so.${LIBabsl_low_level_hash_VERSION}
+@lib lib/libabsl_malloc_internal.so.${LIBabsl_malloc_internal_VERSION}
+@lib lib/libabsl_periodic_sampler.so.${LIBabsl_periodic_sampler_VERSION}
+@lib lib/libabsl_random_distributions.so.${LIBabsl_random_distributions_VERSION}
+@lib lib/libabsl_random_internal_distribution_test_util.so.${LIBabsl_random_internal_distribution_test_util_VERSION}
+@lib lib/libabsl_random_internal_platform.so.${LIBabsl_random_internal_platform_VERSION}
+@lib lib/libabsl_random_internal_pool_urbg.so.${LIBabsl_random_internal_pool_urbg_VERSION}
+@lib lib/libabsl_random_internal_randen.so.${LIBabsl_random_internal_randen_VERSION}
+@lib lib/libabsl_random_internal_randen_hwaes.so.${LIBabsl_random_internal_randen_hwaes_VERSION}
+@lib lib/libabsl_random_internal_randen_hwaes_impl.so.${LIBabsl_random_internal_randen_hwaes_impl_VERSION}
+@lib lib/libabsl_random_internal_randen_slow.so.${LIBabsl_random_internal_randen_slow_VERSION}
+@lib lib/libabsl_random_internal_seed_material.so.${LIBabsl_random_internal_seed_material_VERSION}
+@lib lib/libabsl_random_seed_gen_exception.so.${LIBabsl_random_seed_gen_exception_VERSION}
+@lib lib/libabsl_random_seed_sequences.so.${LIBabsl_random_seed_sequences_VERSION}
+@lib lib/libabsl_raw_hash_set.so.${LIBabsl_raw_hash_set_VERSION}
+@lib lib/libabsl_raw_logging_internal.so.${LIBabsl_raw_logging_internal_VERSION}
+@lib lib/libabsl_scoped_set_env.so.${LIBabsl_scoped_set_env_VERSION}
+@lib lib/libabsl_spinlock_wait.so.${LIBabsl_spinlock_wait_VERSION}
+@lib lib/libabsl_stacktrace.so.${LIBabsl_stacktrace_VERSION}
+@lib lib/libabsl_status.so.${LIBabsl_status_VERSION}
+@lib lib/libabsl_statusor.so.${LIBabsl_statusor_VERSION}
+@lib lib/libabsl_str_format_internal.so.${LIBabsl_str_format_internal_VERSION}
+@lib lib/libabsl_strerror.so.${LIBabsl_strerror_VERSION}
+@lib lib/libabsl_strings.so.${LIBabsl_strings_VERSION}
+@lib lib/libabsl_strings_internal.so.${LIBabsl_strings_internal_VERSION}
+@lib lib/libabsl_symbolize.so.${LIBabsl_symbolize_VERSION}
+@lib lib/libabsl_synchronization.so.${LIBabsl_synchronization_VERSION}
+@lib lib/libabsl_throw_delegate.so.${LIBabsl_throw_delegate_VERSION}
+@lib lib/libabsl_time.so.${LIBabsl_time_VERSION}
+@lib lib/libabsl_time_zone.so.${LIBabsl_time_zone_VERSION}
+lib/pkgconfig/absl_algorithm.pc
+lib/pkgconfig/absl_algorithm_container.pc
+lib/pkgconfig/absl_any.pc
+lib/pkgconfig/absl_atomic_hook.pc
+lib/pkgconfig/absl_bad_any_cast.pc
+lib/pkgconfig/absl_bad_any_cast_impl.pc
+lib/pkgconfig/absl_bad_optional_access.pc
+lib/pkgconfig/absl_bad_variant_access.pc
+lib/pkgconfig/absl_base.pc
+lib/pkgconfig/absl_base_internal.pc
+lib/pkgconfig/absl_bind_front.pc
+lib/pkgconfig/absl_bits.pc
+lib/pkgconfig/absl_btree.pc
+lib/pkgconfig/absl_city.pc
+lib/pkgconfig/absl_civil_time.pc
+lib/pkgconfig/absl_cleanup.pc
+lib/pkgconfig/absl_cleanup_internal.pc
+lib/pkgconfig/absl_compare.pc
+lib/pkgconfig/absl_compressed_tuple.pc
+lib/pkgconfig/absl_config.pc
+lib/pkgconfig/absl_container_common.pc
+lib/pkgconfig/absl_container_memory.pc
+lib/pkgconfig/absl_cord.pc
+lib/pkgconfig/absl_cord_internal.pc
+lib/pkgconfig/absl_cordz_functions.pc
+lib/pkgconfig/absl_cordz_handle.pc
+lib/pkgconfig/absl_cordz_info.pc
+lib/pkgconfig/absl_cordz_sample_token.pc
+lib/pkgconfig/absl_cordz_statistics.pc
+lib/pkgconfig/absl_cordz_update_scope.pc
+lib/pkgconfig/absl_cordz_update_tracker.pc
+lib/pkgconfig/absl_core_headers.pc
+lib/pkgconfig/absl_counting_allocator.pc
+lib/pkgconfig/absl_debugging.pc
+lib/pkgconfig/absl_debugging_internal.pc
+lib/pkgconfig/absl_demangle_internal.pc
+lib/pkgconfig/absl_dynamic_annotations.pc
+lib/pkgconfig/absl_endian.pc
+lib/pkgconfig/absl_errno_saver.pc
+lib/pkgconfig/absl_examine_stack.pc
+lib/pkgconfig/absl_exponential_biased.pc
+lib/pkgconfig/absl_failure_signal_handler.pc
+lib/pkgconfig/absl_fast_type_id.pc
+lib/pkgconfig/absl_fixed_array.pc
+lib/pkgconfig/absl_flags.pc
+lib/pkgconfig/absl_flags_commandlineflag.pc
+lib/pkgconfig/absl_flags_commandlineflag_internal.pc
+lib/pkgconfig/absl_flags_config.pc
+lib/pkgconfig/absl_flags_internal.pc
+lib/pkgconfig/absl_flags_marshalling.pc
+lib/pkgconfig/absl_flags_parse.pc
+lib/pkgconfig/absl_flags_path_util.pc
+lib/pkgconfig/absl_flags_private_handle_accessor.pc
+lib/pkgconfig/absl_flags_program_name.pc
+lib/pkgconfig/absl_flags_reflection.pc
+lib/pkgconfig/absl_flags_usage.pc
+lib/pkgconfig/absl_flags_usage_internal.pc
+lib/pkgconfig/absl_flat_hash_map.pc
+lib/pkgconfig/absl_flat_hash_set.pc
+lib/pkgconfig/absl_function_ref.pc
+lib/pkgconfig/absl_graphcycles_internal.pc
+lib/pkgconfig/absl_hash.pc
+lib/pkgconfig/absl_hash_function_defaults.pc
+lib/pkgconfig/absl_hash_policy_traits.pc
+lib/pkgconfig/absl_hashtable_debug.pc
+lib/pkgconfig/absl_hashtable_debug_hooks.pc
+lib/pkgconfig/absl_hashtablez_sampler.pc
+lib/pkgconfig/absl_have_sse.pc
+lib/pkgconfig/absl_inlined_vector.pc
+lib/pkgconfig/absl_inlined_vector_internal.pc
+lib/pkgconfig/absl_int128.pc
+lib/pkgconfig/absl_kernel_timeout_internal.pc
+lib/pkgconfig/absl_layout.pc
+lib/pkgconfig/absl_leak_check.pc
+lib/pkgconfig/absl_leak_check_disable.pc
+lib/pkgconfig/absl_log_severity.pc
+lib/pkgconfig/absl_low_level_hash.pc
+lib/pkgconfig/absl_malloc_internal.pc
+lib/pkgconfig/absl_memory.pc
+lib/pkgconfig/absl_meta.pc
+lib/pkgconfig/absl_node_hash_map.pc
+lib/pkgconfig/absl_node_hash_policy.pc
+lib/pkgconfig/absl_node_hash_set.pc
+lib/pkgconfig/absl_numeric.pc
+lib/pkgconfig/absl_numeric_representation.pc
+lib/pkgconfig/absl_optional.pc
+lib/pkgconfig/absl_periodic_sampler.pc
+lib/pkgconfig/absl_pretty_function.pc
+lib/pkgconfig/absl_random_bit_gen_ref.pc
+lib/pkgconfig/absl_random_distributions.pc
+lib/pkgconfig/absl_random_internal_distribution_caller.pc
+lib/pkgconfig/absl_random_internal_distribution_test_util.pc
+lib/pkgconfig/absl_random_internal_fast_uniform_bits.pc
+lib/pkgconfig/absl_random_internal_fastmath.pc
+lib/pkgconfig/absl_random_internal_generate_real.pc
+lib/pkgconfig/absl_random_internal_iostream_state_saver.pc
+lib/pkgconfig/absl_random_internal_mock_helpers.pc
+lib/pkgconfig/absl_random_internal_nonsecure_base.pc
+lib/pkgconfig/absl_random_internal_pcg_engine.pc
+lib/pkgconfig/absl_random_internal_platform.pc
+lib/pkgconfig/absl_random_internal_pool_urbg.pc
+lib/pkgconfig/absl_random_internal_randen.pc
+lib/pkgconfig/absl_random_internal_randen_engine.pc
+lib/pkgconfig/absl_random_internal_randen_hwaes.pc
+lib/pkgconfig/absl_random_internal_randen_hwaes_impl.pc
+lib/pkgconfig/absl_random_internal_randen_slow.pc
+lib/pkgconfig/absl_random_internal_salted_seed_seq.pc
+lib/pkgconfig/absl_random_internal_seed_material.pc
+lib/pkgconfig/absl_random_internal_traits.pc
+lib/pkgconfig/absl_random_internal_uniform_helper.pc
+lib/pkgconfig/absl_random_internal_wide_multiply.pc
+lib/pkgconfig/absl_random_random.pc
+lib/pkgconfig/absl_random_seed_gen_exception.pc
+lib/pkgconfig/absl_random_seed_sequences.pc
+lib/pkgconfig/absl_raw_hash_map.pc
+lib/pkgconfig/absl_raw_hash_set.pc
+lib/pkgconfig/absl_raw_logging_internal.pc
+lib/pkgconfig/absl_sample_recorder.pc
+lib/pkgconfig/absl_scoped_set_env.pc
+lib/pkgconfig/absl_span.pc
+lib/pkgconfig/absl_spinlock_wait.pc
+lib/pkgconfig/absl_stacktrace.pc
+lib/pkgconfig/absl_status.pc
+lib/pkgconfig/absl_statusor.pc
+lib/pkgconfig/absl_str_format.pc
+lib/pkgconfig/absl_str_format_internal.pc
+lib/pkgconfig/absl_strerror.pc
+lib/pkgconfig/absl_strings.pc
+lib/pkgconfig/absl_strings_internal.pc
+lib/pkgconfig/absl_symbolize.pc
+lib/pkgconfig/absl_synchronization.pc
+lib/pkgconfig/absl_throw_delegate.pc
+lib/pkgconfig/absl_time.pc
+lib/pkgconfig/absl_time_zone.pc
+lib/pkgconfig/absl_type_traits.pc
+lib/pkgconfig/absl_utility.pc
+lib/pkgconfig/absl_variant.pc
