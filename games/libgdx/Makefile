@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2021/06/29 03:52:34 thfr Exp $
+# $OpenBSD: Makefile,v 1.5 2021/12/18 05:40:30 thfr Exp $
 
 COMMENT =		java game development framework
 VERSION =		1.9.11
 PKGNAME =		libgdx-${VERSION}
-REVISION =		1
+REVISION =		2
 
 .if ${MACHINE_ARCH} == "i386"
 M_ARCH =
@@ -120,6 +120,8 @@ do-install:
 		${WRKBUILD}/extensions/gdx-box2d/gdx-box2d/target/classes/com \
 		${WRKBUILD}/extensions/gdx-tools/target/classes/com \
 		${PREFIX}/share/libgdx/
+	cp -R	${WRKBUILD}/extensions/gdx-jnigen/target/classes/com/badlogic/gdx/jnigen \
+		${PREFIX}/share/libgdx/com/badlogic/gdx/
 
 post-install:
 	${SUBST_CMD} -c -m 755 ${FILESDIR}/libgdx-setup.sh ${PREFIX}/bin/libgdx-setup
