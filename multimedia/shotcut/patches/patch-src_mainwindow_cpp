@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_mainwindow_cpp,v 1.3 2020/12/11 10:13:14 espie Exp $
+$OpenBSD: patch-src_mainwindow_cpp,v 1.4 2021/12/18 06:53:38 espie Exp $
 
 Index: src/mainwindow.cpp
 --- src/mainwindow.cpp.orig
 +++ src/mainwindow.cpp
-@@ -128,7 +128,7 @@ MainWindow::MainWindow()
+@@ -131,7 +131,7 @@ MainWindow::MainWindow()
      , m_keyframesDock(0)
  {
  #if defined(Q_OS_UNIX) && !defined(Q_OS_MAC)
@@ -12,7 +12,7 @@ Index: src/mainwindow.cpp
      if (!libJack.load()) {
          QMessageBox::critical(this, qApp->applicationName(),
              tr("Error: This program requires the JACK 1 library.\n\nPlease install it using your package manager. It may be named libjack0, jack-audio-connection-kit, jack, or similar."));
-@@ -136,7 +136,7 @@ MainWindow::MainWindow()
+@@ -139,7 +139,7 @@ MainWindow::MainWindow()
      } else {
          libJack.unload();
      }

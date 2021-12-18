@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/03/05 08:16:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/12/18 06:53:38 espie Exp $
 @bin bin/shotcut
 @man man/man1/shotcut.1
 share/applications/org.shotcut.Shotcut.desktop
@@ -100,6 +100,10 @@ share/shotcut/qml/filters/bigsh0t_eq_to_rect/
 share/shotcut/qml/filters/bigsh0t_eq_to_rect/meta.qml
 share/shotcut/qml/filters/bigsh0t_eq_to_rect/ui.qml
 share/shotcut/qml/filters/bigsh0t_eq_to_rect/vui.qml
+share/shotcut/qml/filters/bigsh0t_eq_to_stereo/
+share/shotcut/qml/filters/bigsh0t_eq_to_stereo/meta.qml
+share/shotcut/qml/filters/bigsh0t_eq_to_stereo/ui.qml
+share/shotcut/qml/filters/bigsh0t_eq_to_stereo/vui.qml
 share/shotcut/qml/filters/bigsh0t_hemi_to_eq/
 share/shotcut/qml/filters/bigsh0t_hemi_to_eq/meta.qml
 share/shotcut/qml/filters/bigsh0t_hemi_to_eq/ui.qml
@@ -172,6 +176,9 @@ share/shotcut/qml/filters/crop_rectangle/vui.qml
 share/shotcut/qml/filters/dance/
 share/shotcut/qml/filters/dance/meta_dance.qml
 share/shotcut/qml/filters/dance/ui_dance.qml
+share/shotcut/qml/filters/deband/
+share/shotcut/qml/filters/deband/meta.qml
+share/shotcut/qml/filters/deband/ui.qml
 share/shotcut/qml/filters/distort/
 share/shotcut/qml/filters/distort/meta.qml
 share/shotcut/qml/filters/distort/ui.qml
@@ -214,6 +221,10 @@ share/shotcut/qml/filters/glow/meta_frei0r.qml
 share/shotcut/qml/filters/glow/meta_movit.qml
 share/shotcut/qml/filters/glow/ui_frei0r.qml
 share/shotcut/qml/filters/glow/ui_movit.qml
+share/shotcut/qml/filters/gpstext/
+share/shotcut/qml/filters/gpstext/meta.qml
+share/shotcut/qml/filters/gpstext/ui.qml
+share/shotcut/qml/filters/gpstext/vui.qml
 share/shotcut/qml/filters/gradient/
 share/shotcut/qml/filters/gradient/meta.qml
 share/shotcut/qml/filters/gradient/ui.qml
@@ -264,6 +275,9 @@ share/shotcut/qml/filters/mask_alphaspot/ui.qml
 share/shotcut/qml/filters/mask_apply/
 share/shotcut/qml/filters/mask_apply/meta.qml
 share/shotcut/qml/filters/mask_apply/ui.qml
+share/shotcut/qml/filters/mask_chromakey/
+share/shotcut/qml/filters/mask_chromakey/meta.qml
+share/shotcut/qml/filters/mask_chromakey/ui.qml
 share/shotcut/qml/filters/mask_shape/
 share/shotcut/qml/filters/mask_shape/meta.qml
 share/shotcut/qml/filters/mask_shape/ui.qml
@@ -303,6 +317,9 @@ share/shotcut/qml/filters/pillar_echo/vui.qml
 share/shotcut/qml/filters/posterize/
 share/shotcut/qml/filters/posterize/meta.qml
 share/shotcut/qml/filters/posterize/ui.qml
+share/shotcut/qml/filters/reflect/
+share/shotcut/qml/filters/reflect/meta.qml
+share/shotcut/qml/filters/reflect/ui.qml
 share/shotcut/qml/filters/rgbsplit0r/
 share/shotcut/qml/filters/rgbsplit0r/meta.qml
 share/shotcut/qml/filters/rgbsplit0r/ui.qml
@@ -366,6 +383,9 @@ share/shotcut/qml/filters/tcolor/ui.qml
 share/shotcut/qml/filters/threshold/
 share/shotcut/qml/filters/threshold/meta.qml
 share/shotcut/qml/filters/threshold/ui.qml
+share/shotcut/qml/filters/time_remap/
+share/shotcut/qml/filters/time_remap/meta.qml
+share/shotcut/qml/filters/time_remap/ui.qml
 share/shotcut/qml/filters/timer/
 share/shotcut/qml/filters/timer/ClockSpinner.qml
 share/shotcut/qml/filters/timer/meta.qml
@@ -406,11 +426,14 @@ share/shotcut/qml/modules/Shotcut/Controls/Button.qml
 share/shotcut/qml/modules/Shotcut/Controls/ColorPicker.qml
 share/shotcut/qml/modules/Shotcut/Controls/ComboBox.qml
 share/shotcut/qml/modules/Shotcut/Controls/DoubleSpinBox.qml
+share/shotcut/qml/modules/Shotcut/Controls/EditMenu.qml
 share/shotcut/qml/modules/Shotcut/Controls/Gauge.qml
 share/shotcut/qml/modules/Shotcut/Controls/GradientControl.qml
 share/shotcut/qml/modules/Shotcut/Controls/HoverTip.qml
 share/shotcut/qml/modules/Shotcut/Controls/KeyframableFilter.qml
 share/shotcut/qml/modules/Shotcut/Controls/KeyframesButton.qml
+share/shotcut/qml/modules/Shotcut/Controls/Marker.qml
+share/shotcut/qml/modules/Shotcut/Controls/MarkerBar.qml
 share/shotcut/qml/modules/Shotcut/Controls/Preset.qml
 share/shotcut/qml/modules/Shotcut/Controls/RectangleControl.qml
 share/shotcut/qml/modules/Shotcut/Controls/SaveDefaultButton.qml
@@ -419,6 +442,7 @@ share/shotcut/qml/modules/Shotcut/Controls/SliderSpinner.qml
 share/shotcut/qml/modules/Shotcut/Controls/TextFilterUi.qml
 share/shotcut/qml/modules/Shotcut/Controls/TextFilterVui.qml
 share/shotcut/qml/modules/Shotcut/Controls/TimeSpinner.qml
+share/shotcut/qml/modules/Shotcut/Controls/TipBox.qml
 share/shotcut/qml/modules/Shotcut/Controls/ToggleButton.qml
 share/shotcut/qml/modules/Shotcut/Controls/ToolButton.qml
 share/shotcut/qml/modules/Shotcut/Controls/UndoButton.qml
@@ -483,6 +507,7 @@ share/shotcut/translations/shotcut_oc.qm
 share/shotcut/translations/shotcut_pl.qm
 share/shotcut/translations/shotcut_pt_BR.qm
 share/shotcut/translations/shotcut_pt_PT.qm
+share/shotcut/translations/shotcut_ro.qm
 share/shotcut/translations/shotcut_ru.qm
 share/shotcut/translations/shotcut_sk.qm
 share/shotcut/translations/shotcut_sl.qm

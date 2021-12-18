@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2021/10/16 18:08:17 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2021/12/18 06:53:38 espie Exp $
 @bin bin/melt-7
 include/mlt-7/
 include/mlt-7/framework/
@@ -313,9 +313,11 @@ share/mlt-7/presets/consumer/avformat/stills/PNG
 share/mlt-7/presets/consumer/avformat/stills/PPM
 share/mlt-7/presets/consumer/avformat/stills/TGA
 share/mlt-7/presets/consumer/avformat/stills/TIFF
+share/mlt-7/presets/consumer/avformat/stills/webp
 share/mlt-7/presets/consumer/avformat/vp9
 share/mlt-7/presets/consumer/avformat/webm
 share/mlt-7/presets/consumer/avformat/webm-pass1
+share/mlt-7/presets/consumer/avformat/webp
 share/mlt-7/presets/consumer/avformat/x264-medium
 share/mlt-7/presets/consumer/avformat/x264-medium-baseline
 share/mlt-7/presets/consumer/avformat/x264-medium-main
@@ -429,6 +431,7 @@ share/mlt-7/vorbis/
 share/mlt-7/vorbis/producer_vorbis.yml
 share/mlt-7/xml/
 share/mlt-7/xml/consumer_xml.yml
+share/mlt-7/xml/filter_gpstext.yml
 share/mlt-7/xml/mlt-xml.dtd
 share/mlt-7/xml/producer_xml-nogl.yml
 share/mlt-7/xml/producer_xml-string.yml
