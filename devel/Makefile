@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2169 2021/12/17 17:18:35 kn Exp $
+# $OpenBSD: Makefile,v 1.2170 2021/12/18 19:39:26 kn Exp $
 
      SUBDIR =
      SUBDIR += 64tass
      SUBDIR += ElectricFence
+     SUBDIR += abseil-cpp
      SUBDIR += acpica
      SUBDIR += adb
      SUBDIR += afl
