@@ -1,11 +1,11 @@
-$OpenBSD: patch-cmake_toolchain-gcc_cmake,v 1.2 2020/09/17 12:34:22 thfr Exp $
+$OpenBSD: patch-cmake_toolchain-gcc_cmake,v 1.3 2021/12/18 05:10:57 thfr Exp $
 
 remove hardcoded -O{0,2} flags
 
 Index: cmake/toolchain-gcc.cmake
 --- cmake/toolchain-gcc.cmake.orig
 +++ cmake/toolchain-gcc.cmake
-@@ -94,9 +94,9 @@ if(SUPPORTS_STRINGOP_TRUNCATION)
+@@ -108,9 +108,9 @@ if(SUPPORTS_STRINGOP_TRUNCATION)
  	set(COMPILER_FLAGS "${COMPILER_FLAGS} -Wno-stringop-overflow")
  endif()
  
@@ -15,5 +15,5 @@ Index: cmake/toolchain-gcc.cmake
 -set(COMPILER_FLAGS_DEBUG "-O0 -g -Wshadow")
 +set(COMPILER_FLAGS_DEBUG "-g -Wshadow")
  
- # Always use the base flags and add our compiler flags at the bacl
+ # Always use the base flags and add our compiler flags at the back
  set(CMAKE_CXX_FLAGS "${CXX_BASE_FLAGS} ${COMPILER_FLAGS}")

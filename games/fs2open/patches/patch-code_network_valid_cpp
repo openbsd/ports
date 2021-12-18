@@ -1,11 +1,11 @@
-$OpenBSD: patch-code_network_valid_cpp,v 1.1 2020/09/17 12:34:22 thfr Exp $
+$OpenBSD: patch-code_network_valid_cpp,v 1.2 2021/12/18 05:10:57 thfr Exp $
 
 include sys/socket.h
 
 Index: code/network/valid.cpp
 --- code/network/valid.cpp.orig
 +++ code/network/valid.cpp
-@@ -27,6 +27,9 @@
+@@ -29,6 +29,9 @@
  #include "network/multi_fstracker.h"
  #include "io/timer.h"
  

@@ -1,14 +1,14 @@
-$OpenBSD: patch-lib_libpcp_src_net_gateway_c,v 1.1 2020/09/17 12:34:22 thfr Exp $
+$OpenBSD: patch-lib_libpcp_src_net_gateway_c,v 1.2 2021/12/18 05:10:57 thfr Exp $
 
 Index: lib/libpcp/src/net/gateway.c
 --- lib/libpcp/src/net/gateway.c.orig
 +++ lib/libpcp/src/net/gateway.c
-@@ -62,7 +62,7 @@
- #include "pcp_win_defines.h"
- #endif
- 
--#if defined(__APPLE__) || defined(__FreeBSD__)
-+#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
- #include <sys/sysctl.h>
- #include <net/if_dl.h>          //struct sockaddr_dl
- #define USE_SOCKET_ROUTE
+@@ -50,7 +50,7 @@
+ #define USE_NETLINK
+ #elif defined(WIN32)
+ #define USE_WIN32_CODE
+-#elif defined(__APPLE__) || defined(__FreeBSD__)
++#elif defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ #define USE_SYSCTL_NET_ROUTE
+ #elif defined(BSD) || defined(__FreeBSD_kernel__)
+ #define USE_SYSCTL_NET_ROUTE

@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2020/09/17 12:34:22 thfr Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2021/12/18 05:10:57 thfr Exp $
 
 add include and lib directories to find system SDL2
 try to avoid get_target_property error
@@ -16,7 +16,7 @@ Index: CMakeLists.txt
  # Make sure the source and binary directory are not the sample
  if ("${CMAKE_CURRENT_SOURCE_DIR}" STREQUAL "${CMAKE_CURRENT_BINARY_DIR}")
  	message(FATAL_ERROR "Binary and source directory can not be the same! Choose another build directory.")
-@@ -13,6 +16,7 @@ include(cmake/util.cmake)
+@@ -14,6 +17,7 @@ include(cmake/embed_file.cmake)
  set_policy(CMP0051 NEW)
  set_policy(CMP0053 NEW)
  set_policy(CMP0054 NEW)

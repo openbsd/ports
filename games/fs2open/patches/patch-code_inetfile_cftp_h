@@ -1,0 +1,13 @@
+$OpenBSD: patch-code_inetfile_cftp_h,v 1.1 2021/12/18 05:10:57 thfr Exp $
+
+Index: code/inetfile/cftp.h
+--- code/inetfile/cftp.h.orig
++++ code/inetfile/cftp.h
+@@ -14,6 +14,7 @@
+ 
+ #ifndef _WIN32
+ #include "netinet/in.h"
++#include <sys/socket.h>
+ #endif
+ 
+ #include "globalincs/pstypes.h"

@@ -1,13 +1,13 @@
-$OpenBSD: patch-lib_CMakeLists_txt,v 1.1 2020/09/17 12:34:22 thfr Exp $
+$OpenBSD: patch-lib_CMakeLists_txt,v 1.2 2021/12/18 05:10:57 thfr Exp $
 
 disable bundled SDL
 
 Index: lib/CMakeLists.txt
 --- lib/CMakeLists.txt.orig
 +++ lib/CMakeLists.txt
-@@ -13,8 +13,6 @@ include(OpenAL.cmake)
- 
- add_subdirectory(opengl)
+@@ -15,8 +15,6 @@ if (FSO_BUILD_WITH_OPENGL)
+ 	add_subdirectory(opengl)
+ endif()
  
 -ADD_SUBDIRECTORY(libsdl)
 -

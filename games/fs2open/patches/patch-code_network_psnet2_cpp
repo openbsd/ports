@@ -1,0 +1,20 @@
+$OpenBSD: patch-code_network_psnet2_cpp,v 1.1 2021/12/18 05:10:57 thfr Exp $
+
+missing define
+note this is separately defined with same value in
+code/network/multi_portfwd.cpp and
+lib/libpcp/src/net/sock_ntop.c
+if those change for some reason, so should this one
+
+Index: code/network/psnet2.cpp
+--- code/network/psnet2.cpp.orig
++++ code/network/psnet2.cpp
+@@ -8,7 +8,7 @@
+ */
+ 
+ 
+-
++#define AI_V4MAPPED	0x00000800
+ 
+ #ifdef _WIN32
+ #include <winsock2.h>

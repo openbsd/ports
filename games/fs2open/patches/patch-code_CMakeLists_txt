@@ -1,16 +1,16 @@
-$OpenBSD: patch-code_CMakeLists_txt,v 1.1 2020/09/17 12:34:22 thfr Exp $
+$OpenBSD: patch-code_CMakeLists_txt,v 1.2 2021/12/18 05:10:57 thfr Exp $
 
 correct capitalization for libSDL2
 
 Index: code/CMakeLists.txt
 --- code/CMakeLists.txt.orig
 +++ code/CMakeLists.txt
-@@ -26,7 +26,7 @@ TARGET_LINK_LIBRARIES(code PUBLIC ${LUA_LIBS})
- TARGET_LINK_LIBRARIES(code PUBLIC ${PNG_LIBS})
+@@ -28,7 +28,7 @@ TARGET_LINK_LIBRARIES(code PUBLIC ${PNG_LIBS})
  TARGET_LINK_LIBRARIES(code PUBLIC ${JPEG_LIBS})
+ TARGET_LINK_LIBRARIES(code PUBLIC lz4)
  
 -TARGET_LINK_LIBRARIES(code PUBLIC sdl2)
 +TARGET_LINK_LIBRARIES(code PUBLIC SDL2)
  
- TARGET_LINK_LIBRARIES(code PUBLIC ffmpeg)
- 
+ if (FSO_BUILD_WITH_FFMPEG)
+ 	TARGET_LINK_LIBRARIES(code PUBLIC ffmpeg)
