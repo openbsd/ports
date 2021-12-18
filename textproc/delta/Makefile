@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2021/08/14 07:06:31 tb Exp $
+# $OpenBSD: Makefile,v 1.4 2021/12/18 12:56:28 fcambus Exp $
 
 COMMENT =		viewer for git and diff output
 
 GH_ACCOUNT =		dandavison
 GH_PROJECT =		delta
-GH_TAGNAME =		0.8.3
+GH_TAGNAME =		0.11.3
 
 CATEGORIES =		textproc
 
