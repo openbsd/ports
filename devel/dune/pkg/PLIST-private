@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-private,v 1.1 2021/12/04 03:05:30 daniel Exp $
+@comment $OpenBSD: PLIST-private,v 1.2 2021/12/19 21:33:27 jca Exp $
 %%native%%
 lib/ocaml/dune-private-libs/
 lib/ocaml/dune-private-libs/META
@@ -389,7 +389,6 @@ lib/ocaml/dune-private-libs/stdune/stdune__Float.cmti
 lib/ocaml/dune-private-libs/stdune/stdune__Fpath.cmi
 lib/ocaml/dune-private-libs/stdune/stdune__Fpath.cmt
 lib/ocaml/dune-private-libs/stdune/stdune__Fpath.cmti
-lib/ocaml/dune-private-libs/stdune/stdune__Fpath.cmx
 lib/ocaml/dune-private-libs/stdune/stdune__Hashable.cmi
 lib/ocaml/dune-private-libs/stdune/stdune__Hashable.cmt
 lib/ocaml/dune-private-libs/stdune/stdune__Hashtbl.cmi
@@ -472,7 +471,6 @@ lib/ocaml/dune-private-libs/stdune/stdune__Proc.cmti
 lib/ocaml/dune-private-libs/stdune/stdune__Queue.cmi
 lib/ocaml/dune-private-libs/stdune/stdune__Queue.cmt
 lib/ocaml/dune-private-libs/stdune/stdune__Queue.cmti
-lib/ocaml/dune-private-libs/stdune/stdune__Queue.cmx
 lib/ocaml/dune-private-libs/stdune/stdune__Result.cmi
 lib/ocaml/dune-private-libs/stdune/stdune__Result.cmt
 lib/ocaml/dune-private-libs/stdune/stdune__Result.cmti
@@ -514,7 +512,6 @@ lib/ocaml/dune-private-libs/stdune/stdune__Table.cmti
 lib/ocaml/dune-private-libs/stdune/stdune__Temp.cmi
 lib/ocaml/dune-private-libs/stdune/stdune__Temp.cmt
 lib/ocaml/dune-private-libs/stdune/stdune__Temp.cmti
-lib/ocaml/dune-private-libs/stdune/stdune__Temp.cmx
 lib/ocaml/dune-private-libs/stdune/stdune__Top_closure.cmi
 lib/ocaml/dune-private-libs/stdune/stdune__Top_closure.cmt
 lib/ocaml/dune-private-libs/stdune/stdune__Top_closure.cmti

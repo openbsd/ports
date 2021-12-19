@@ -1,9 +1,10 @@
-@comment $OpenBSD: PFRAG.native-configurator,v 1.1 2021/12/04 03:05:30 daniel Exp $
+@comment $OpenBSD: PFRAG.native-configurator,v 1.2 2021/12/19 21:33:27 jca Exp $
 %%dynlink%%
 lib/ocaml/dune-configurator/configurator.a
 lib/ocaml/dune-configurator/configurator.cmx
 lib/ocaml/dune-configurator/configurator.cmxa
 lib/ocaml/dune-configurator/configurator__.cmx
+lib/ocaml/dune-configurator/configurator__Csexp.cmx
 lib/ocaml/dune-configurator/configurator__Dune_lang.cmx
 lib/ocaml/dune-configurator/configurator__Extract_obj.cmx
 lib/ocaml/dune-configurator/configurator__Import.cmx

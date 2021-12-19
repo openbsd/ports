@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.native-private,v 1.1 2021/12/04 03:05:30 daniel Exp $
+@comment $OpenBSD: PFRAG.native-private,v 1.2 2021/12/19 21:33:27 jca Exp $
 %%dynlink%%
 lib/ocaml/dune-private-libs/cache/cache.a
 lib/ocaml/dune-private-libs/cache/cache.cmx
@@ -80,6 +80,7 @@ lib/ocaml/dune-private-libs/stdune/stdune__Fcntl.cmx
 lib/ocaml/dune-private-libs/stdune/stdune__Fdecl.cmx
 lib/ocaml/dune-private-libs/stdune/stdune__Filename.cmx
 lib/ocaml/dune-private-libs/stdune/stdune__Float.cmx
+lib/ocaml/dune-private-libs/stdune/stdune__Fpath.cmx
 lib/ocaml/dune-private-libs/stdune/stdune__Hashable.cmx
 lib/ocaml/dune-private-libs/stdune/stdune__Hashtbl.cmx
 lib/ocaml/dune-private-libs/stdune/stdune__Hashtbl_intf.cmx
@@ -109,6 +110,7 @@ lib/ocaml/dune-private-libs/stdune/stdune__Pid.cmx
 lib/ocaml/dune-private-libs/stdune/stdune__Poly.cmx
 lib/ocaml/dune-private-libs/stdune/stdune__Pp.cmx
 lib/ocaml/dune-private-libs/stdune/stdune__Proc.cmx
+lib/ocaml/dune-private-libs/stdune/stdune__Queue.cmx
 lib/ocaml/dune-private-libs/stdune/stdune__Result.cmx
 lib/ocaml/dune-private-libs/stdune/stdune__Scanf.cmx
 lib/ocaml/dune-private-libs/stdune/stdune__Seq.cmx
@@ -122,6 +124,7 @@ lib/ocaml/dune-private-libs/stdune/stdune__String.cmx
 lib/ocaml/dune-private-libs/stdune/stdune__String_split.cmx
 lib/ocaml/dune-private-libs/stdune/stdune__Sys.cmx
 lib/ocaml/dune-private-libs/stdune/stdune__Table.cmx
+lib/ocaml/dune-private-libs/stdune/stdune__Temp.cmx
 lib/ocaml/dune-private-libs/stdune/stdune__Top_closure.cmx
 lib/ocaml/dune-private-libs/stdune/stdune__Top_closure_intf.cmx
 lib/ocaml/dune-private-libs/stdune/stdune__Tuple.cmx

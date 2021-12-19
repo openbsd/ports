@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-configurator,v 1.1 2021/12/04 03:05:30 daniel Exp $
+@comment $OpenBSD: PLIST-configurator,v 1.2 2021/12/19 21:33:27 jca Exp $
 %%native%%
 lib/ocaml/dune-configurator/
 lib/ocaml/dune-configurator/.private/
@@ -16,7 +16,6 @@ lib/ocaml/dune-configurator/configurator__.cmt
 lib/ocaml/dune-configurator/configurator__.ml
 lib/ocaml/dune-configurator/configurator__Csexp.cmt
 lib/ocaml/dune-configurator/configurator__Csexp.cmti
-lib/ocaml/dune-configurator/configurator__Csexp.cmx
 lib/ocaml/dune-configurator/configurator__Dune_lang.cmt
 lib/ocaml/dune-configurator/configurator__Dune_lang.cmti
 lib/ocaml/dune-configurator/configurator__Extract_obj.cmi
