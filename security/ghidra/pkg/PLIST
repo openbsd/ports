@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/12/15 03:22:18 lteo Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/12/19 03:36:25 lteo Exp $
 bin/ghidraRun
 share/java/
 share/java/ghidra/
@@ -2304,8 +2304,8 @@ share/java/ghidra/Ghidra/Framework/Generic/lib/commons-io-2.6.jar
 share/java/ghidra/Ghidra/Framework/Generic/lib/commons-lang3-3.9.jar
 share/java/ghidra/Ghidra/Framework/Generic/lib/guava-19.0.jar
 share/java/ghidra/Ghidra/Framework/Generic/lib/jdom-legacy-1.1.3.jar
-share/java/ghidra/Ghidra/Framework/Generic/lib/log4j-api-2.16.0.jar
-share/java/ghidra/Ghidra/Framework/Generic/lib/log4j-core-2.16.0.jar
+share/java/ghidra/Ghidra/Framework/Generic/lib/log4j-api-2.17.0.jar
+share/java/ghidra/Ghidra/Framework/Generic/lib/log4j-core-2.17.0.jar
 share/java/ghidra/Ghidra/Framework/Graph/
 share/java/ghidra/Ghidra/Framework/Graph/LICENSE.txt
 share/java/ghidra/Ghidra/Framework/Graph/Module.manifest

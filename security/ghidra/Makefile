@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/12/15 03:22:18 lteo Exp $
+# $OpenBSD: Makefile,v 1.10 2021/12/19 03:36:25 lteo Exp $
 
 # bundled jython has amd64 components for OpenBSD
 ONLY_FOR_ARCHS =	amd64
@@ -7,7 +7,7 @@ COMMENT =	software reverse engineering (SRE) framework
 
 VERSION = 	9.1.2
 GHIDRA_DATE =	20200212
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	NationalSecurityAgency
 GH_PROJECT =	ghidra
@@ -39,7 +39,7 @@ JMOCKIT_VER =		1.44
 JSON_SIMPLE_VER =	1.1.1
 JUNIT_VER =		4.12
 YAJSW_VER =		12.12
-LOG4J_VER =		2.16.0
+LOG4J_VER =		2.17.0
 
 # Note that ST4-${ST4_VER}.jar is only needed during build for antlr; it is not
 # needed at runtime and therefore does not need to be packed.
