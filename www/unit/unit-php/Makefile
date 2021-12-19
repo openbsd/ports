@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/12/06 20:37:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2021/12/19 00:43:09 sthen Exp $
 
 UNIT_MODNAME=	php${MODPHP_VERSION}
 UNIT_SHORTNAME=	${FLAVOR}
 
 MODULES=	lang/php
 
-FLAVORS=	php74 php80
+FLAVORS=	php74 php80 php81
 FLAVOR?=	php74
 MODPHP_VERSION=	${FLAVOR:C/php([0-9])([0-9])/\1.\2/}
 MODPHP_BUILDDEP= Yes
