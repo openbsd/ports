@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2021/02/18 02:26:43 daniel Exp $
+# $OpenBSD: Makefile,v 1.2 2021/12/19 18:01:12 daniel Exp $
 
 COMMENT =	portable C compiler
 
@@ -10,6 +10,12 @@ WANTLIB += c
 MASTER_SITES =	http://pcc.ludd.ltu.se/ftp/pub/pcc/ \
 		ftp://pcc.ludd.ltu.se/pub/pcc/
 
+# XXX:
+# upstream used autoconf 2.70 which has a bug
+# finding lex on OpenBSD. Locally regenerate
+# using an older working autoconf
+AUTOCONF_VERSION =	2.69
+CONFIGURE_STYLE =	gnu autoconf
 CONFIGURE_ENV =	YACC=/usr/bin/yacc
 
 RUN_DEPENDS =	lang/pcc/pcc-libs
