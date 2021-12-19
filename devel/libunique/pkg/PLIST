@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/11/25 21:57:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/12/19 13:37:14 ajacoutot Exp $
 include/unique-1.0/
 include/unique-1.0/unique/
 include/unique-1.0/unique/unique.h
@@ -8,7 +8,7 @@ include/unique-1.0/unique/uniqueenumtypes.h
 include/unique-1.0/unique/uniquemessage.h
 include/unique-1.0/unique/uniqueversion.h
 lib/girepository-1.0/Unique-1.0.typelib
-lib/libunique-1.0.a
+@static-lib lib/libunique-1.0.a
 lib/libunique-1.0.la
 @lib lib/libunique-1.0.so.${LIBunique-1.0_VERSION}
 lib/pkgconfig/unique-1.0.pc

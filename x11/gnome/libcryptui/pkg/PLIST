@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/07/06 06:04:45 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/12/19 13:37:14 ajacoutot Exp $
 @conflict seahorse-<=3.1.0
 @bin bin/seahorse-daemon
 include/libcryptui/
@@ -9,7 +9,7 @@ include/libcryptui/cryptui-key-store.h
 include/libcryptui/cryptui-keyset.h
 include/libcryptui/cryptui.h
 lib/girepository-1.0/CryptUI-0.0.typelib
-lib/libcryptui.a
+@static-lib lib/libcryptui.a
 lib/libcryptui.la
 @lib lib/libcryptui.so.${LIBcryptui_VERSION}
 lib/pkgconfig/cryptui-0.0.pc

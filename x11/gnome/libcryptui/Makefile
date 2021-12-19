@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2020/10/05 19:46:18 jca Exp $
+# $OpenBSD: Makefile,v 1.39 2021/12/19 13:37:14 ajacoutot Exp $
 
 COMMENT=	interface components for OpenPGP
 
 GNOME_PROJECT=	libcryptui
 GNOME_VERSION=	3.12.2
-REVISION=	10
+REVISION=	11
 
 SHARED_LIBS +=  cryptui              2.0      # 0.0
 
@@ -13,14 +13,15 @@ CATEGORIES=	security
 # GPLv2/LGPLv2/GFDLv1.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender Xtst assuan atk-1.0 atk-bridge-2.0 atspi c
-WANTLIB += cairo cairo-gobject dbus-1 dbus-glib-1 epoxy expat ffi
-WANTLIB += fontconfig freetype fribidi gcrypt gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-keyring gobject-2.0
-WANTLIB += gpg-error gpgme graphite2 gthread-2.0 gtk-3 harfbuzz iconv
-WANTLIB += intl m notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread xcb xcb-render xcb-shm z
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xcomposite Xcursor
+WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB += assuan atk-1.0 atk-bridge-2.0 c cairo cairo-gobject
+WANTLIB += dbus-1 dbus-glib-1 epoxy execinfo expat ffi fontconfig
+WANTLIB += freetype fribidi gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gnome-keyring gobject-2.0 gpg-error
+WANTLIB += gpgme graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl
+WANTLIB += jpeg m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png xcb xcb-render xcb-shm z
 
 MODULES=	x11/gnome \
 		devel/dconf
