@@ -1,6 +1,7 @@
-$OpenBSD: patch-spectrwm_c,v 1.16 2021/01/23 18:34:17 bket Exp $
+$OpenBSD: patch-spectrwm_c,v 1.17 2021/12/19 13:58:26 sdk Exp $
 
 Needs wpath pledge. Tahen from https://github.com/conformal/spectrwm/pull/425
+Let spectrwm quit when X dies. Taken from https://github.com/conformal/spectrwm/pull/478
 
 Index: spectrwm.c
 --- spectrwm.c.orig
@@ -41,3 +42,13 @@ Index: spectrwm.c
  		err(1, "pledge");
  
  	validate_spawns();
+@@ -13762,6 +13762,9 @@ main(int argc, char *argv[])
+ 			restart(NULL, NULL, NULL);
+ 
+ 		if (!running)
++			goto done;
++
++		if(xcb_connection_has_error(conn))
+ 			goto done;
+ 
+ 		if (stdin_ready) {
