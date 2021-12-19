@@ -1,0 +1,16 @@
+$OpenBSD: patch-OpenBSD_PackageManager_Pkg_Add_pm,v 1.1 2021/12/19 05:00:22 daniel Exp $
+
+adapt to latest changes in base
+
+Index: OpenBSD/PackageManager/Pkg/Add.pm
+--- OpenBSD/PackageManager/Pkg/Add.pm.orig
++++ OpenBSD/PackageManager/Pkg/Add.pm
+@@ -41,7 +41,7 @@ $state->{bad} = 0;
+ $state->handle_options($really, $update);
+ $state->progress->set_title($really ? ($update ? "Updating.." : "Installing..") :  ($update ? "Simulating update.." : "Simulating installation.."));
+ local $SIG{'INFO'} = sub { $state->status->print($state); };
+-$self->framework($state);
++$self->try_and_run_command($state);
+ return $state->{bad} != 0;
+ }
+ 

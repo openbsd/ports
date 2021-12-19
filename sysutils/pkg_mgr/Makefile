@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2021/09/21 06:57:58 solene Exp $
+# $OpenBSD: Makefile,v 1.18 2021/12/19 05:00:22 daniel Exp $
 
-BROKEN=		pkg tools API changed and pkg_mgr needs to be updated
 COMMENT=	user-friendly package browser and manager
 
 DISTNAME=	pkg_mgr-0.2.3
 CATEGORIES=	sysutils
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	https://rhaalovely.net/pkg_mgr/
 MAINTAINER=	Landry Breuil <landry@openbsd.org>

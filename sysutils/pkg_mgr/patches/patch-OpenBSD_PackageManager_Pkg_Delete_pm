@@ -1,0 +1,16 @@
+$OpenBSD: patch-OpenBSD_PackageManager_Pkg_Delete_pm,v 1.1 2021/12/19 05:00:22 daniel Exp $
+
+adapt to latest changes in base
+
+Index: OpenBSD/PackageManager/Pkg/Delete.pm
+--- OpenBSD/PackageManager/Pkg/Delete.pm.orig
++++ OpenBSD/PackageManager/Pkg/Delete.pm
+@@ -40,7 +40,7 @@ $state->{bad} = 0;
+ $state->handle_options($really);
+ $state->progress->set_title($really ? "Removing.." : "Simulating removal..");
+ local $SIG{'INFO'} = sub { $state->status->print($state); };
+-$self->framework($state);
++$self->try_and_run_command($state);
+ return $state->{bad} != 0;
+ }
+ 
