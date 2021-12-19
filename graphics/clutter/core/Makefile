@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.51 2020/03/13 12:39:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2021/12/19 13:20:34 ajacoutot Exp $
 
 COMMENT=		OpenGL-based interactive canvas library
 
 GNOME_PROJECT=		clutter
 GNOME_VERSION=		1.26.4
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  clutter-1.0          6.1   # 2600.0
 
-WANTLIB += EGL X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo cairo-gobject
-WANTLIB += cogl cogl-pango cogl-path drm epoxy expat ffi fontconfig
-WANTLIB += freetype gbm gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz
-WANTLIB += iconv intl json-glib-1.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += xcb xcb-dri2 xcb-render xcb-shm xcb-xfixes z
-WANTLIB += fribidi glapi xcb-dri3 xcb-present xcb-sync xshmfence
+WANTLIB += ${COMPILER_LIBCXX} EGL X11 X11-xcb Xau Xcomposite Xcursor
+WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB += atk-1.0 cairo cairo-gobject cogl cogl-pango cogl-path
+WANTLIB += drm epoxy expat ffi fontconfig freetype fribidi gbm
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 graphite2 gthread-2.0 harfbuzz iconv intl
+WANTLIB += jpeg json-glib-1.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png xcb xcb-dri2 xcb-dri3 xcb-present
+WANTLIB += xcb-render xcb-shm xcb-sync xcb-xfixes xshmfence z
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

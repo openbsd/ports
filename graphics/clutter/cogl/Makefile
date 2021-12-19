@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.45 2021/02/19 14:23:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2021/12/19 13:20:34 ajacoutot Exp $
 
 COMMENT=		modern 3D graphics API
 
 GNOME_PROJECT=		cogl
 GNOME_VERSION=		1.22.8
-REVISION=		0
+REVISION=		1
 
-SHARED_LIBS +=  cogl                 3.2      # 24.2
-SHARED_LIBS +=	cogl-path            0.1      # 24.2
-SHARED_LIBS +=  cogl-pango           3.1      # 24.2
+SHARED_LIBS +=  cogl                 3.2      # 24.3
+SHARED_LIBS +=  cogl-path            0.1      # 24.3
+SHARED_LIBS +=  cogl-pango           3.1      # 24.3
 
-WANTLIB += EGL X11 X11-xcb Xcomposite Xdamage Xext Xfixes Xrandr Xrender
-WANTLIB += cairo drm expat ffi fontconfig freetype fribidi gbm
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 harfbuzz iconv intl m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread xcb
-WANTLIB += xcb-dri2 xcb-dri3 xcb-present xcb-render xcb-shm xcb-sync
-WANTLIB += xcb-xfixes xshmfence z
+WANTLIB += ${COMPILER_LIBCXX} EGL X11 X11-xcb Xau Xcomposite Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xrandr Xrender cairo drm expat ffi
+WANTLIB += fontconfig freetype fribidi gbm gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glapi glib-2.0 gmodule-2.0 gobject-2.0 graphite2 harfbuzz
+WANTLIB += iconv intl jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png xcb xcb-dri2 xcb-dri3 xcb-present
+WANTLIB += xcb-render xcb-shm xcb-sync xcb-xfixes xshmfence z
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
