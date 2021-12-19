@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2020/12/10 08:28:57 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.23 2021/12/19 17:42:24 fcambus Exp $
 ${GEM_BIN}/rougify${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -50,6 +50,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/cuda
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/cypher
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/cython
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/d
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/dafny
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/dart
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/datastudio
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/diff
@@ -282,6 +283,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/cuda.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/cypher.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/cython.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/d.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/dafny.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/dart.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/datastudio.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/diff.rb
