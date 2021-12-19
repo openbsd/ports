@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2020/11/03 16:12:07 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2021/12/19 10:51:02 rsadowski Exp $
 
 COMMENT =		JavaScript/ECMAScript engine for KDE
 DISTNAME =		kjs-${VERSION}
 
-SHARED_LIBS =		KF5JS		5.0
+SHARED_LIBS =		KF5JS		6.0
 SHARED_LIBS +=		KF5JSApi	5.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core c m pcre pcreposix

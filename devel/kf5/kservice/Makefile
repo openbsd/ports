@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2021/05/09 14:32:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.20 2021/12/19 10:51:03 rsadowski Exp $
 
 COMMENT =		plugin framework for KDE desktop services
 DISTNAME =		kservice-${VERSION}
 
 SHARED_LIBS =		KF5Service		7.3
 
-WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5Crash
-WANTLIB += KF5DBusAddons KF5I18n Qt5Core Qt5DBus Qt5Xml c m
+WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5DBusAddons
+WANTLIB += KF5I18n Qt5Core Qt5DBus Qt5Xml c m
 
 BUILD_DEPENDS =	devel/bison \
 		devel/gettext,-tools \
@@ -16,7 +16,6 @@ RUN_DEPENDS =	devel/kf5/kdoctools>=${MODKF5_VERSION}
 
 LIB_DEPENDS =	devel/kf5/kconfig>=${MODKF5_VERSION} \
 		devel/kf5/kcoreaddons>=${MODKF5_VERSION} \
-		devel/kf5/kcrash>=${MODKF5_VERSION} \
 		devel/kf5/kdbusaddons>=${MODKF5_VERSION} \
 		devel/kf5/ki18n>=${MODKF5_VERSION}
 

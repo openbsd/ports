@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/11/16 14:31:00 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/12/19 10:51:01 rsadowski Exp $
 include/KF5/
 include/KF5/KGuiAddons/
 include/KF5/KGuiAddons/KColorCollection
@@ -10,6 +10,7 @@ include/KF5/KGuiAddons/KFontUtils
 include/KF5/KGuiAddons/KIconUtils
 include/KF5/KGuiAddons/KImageCache
 include/KF5/KGuiAddons/KModifierKeyInfo
+include/KF5/KGuiAddons/KSystemClipboard
 include/KF5/KGuiAddons/KWordWrap
 include/KF5/KGuiAddons/KeySequenceRecorder
 include/KF5/KGuiAddons/kcolorcollection.h
@@ -25,6 +26,7 @@ include/KF5/KGuiAddons/kimagecache.h
 include/KF5/KGuiAddons/klocalimagecacheimpl.h
 include/KF5/KGuiAddons/kmodifierkeyinfo.h
 include/KF5/KGuiAddons/kmodifierkeyinfoprovider_p.h
+include/KF5/KGuiAddons/ksystemclipboard.h
 include/KF5/KGuiAddons/kwordwrap.h
 include/KF5/kguiaddons_version.h
 lib/cmake/KF5GuiAddons/

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/06/15 09:37:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2021/12/19 10:51:00 rsadowski Exp $
 @bin bin/kreadconfig5
 @bin bin/kwriteconfig5
 include/KF5/
@@ -36,6 +36,10 @@ include/KF5/KConfigGui/kconfigloader.h
 include/KF5/KConfigGui/kconfigskeleton.h
 include/KF5/KConfigGui/kstandardshortcut.h
 include/KF5/KConfigGui/kwindowconfig.h
+include/KF5/KConfigQml/
+include/KF5/KConfigQml/KConfigPropertyMap
+include/KF5/KConfigQml/kconfigpropertymap.h
+include/KF5/KConfigQml/kconfigqml_export.h
 include/KF5/kconfig_version.h
 lib/cmake/KF5Config/
 lib/cmake/KF5Config/KF5ConfigCompilerTargets${MODCMAKE_BUILD_SUFFIX}
@@ -47,6 +51,8 @@ lib/cmake/KF5Config/KF5ConfigTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Config/KF5ConfigTargets.cmake
 @lib lib/libKF5ConfigCore.so.${LIBKF5ConfigCore_VERSION}
 @lib lib/libKF5ConfigGui.so.${LIBKF5ConfigGui_VERSION}
+lib/libKF5ConfigQml.so.5
+lib/libKF5ConfigQml.so.5.89.0
 libexec/kf5/
 @bin libexec/kf5/kconf_update
 @bin libexec/kf5/kconfig_compiler_kf5

@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.22 2021/11/21 17:53:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.23 2021/12/19 10:51:03 rsadowski Exp $
 
 COMMENT =		KDE framework for managing menu and toolbar actions
 DISTNAME =		kxmlgui-${VERSION}
-REVISION =		0
 
 SHARED_LIBS =		KF5XmlGui		6.5
 

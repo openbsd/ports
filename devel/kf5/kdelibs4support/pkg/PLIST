@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/09/10 08:42:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.12 2021/12/19 10:51:01 rsadowski Exp $
 @bin bin/kdebugdialog5
 @bin bin/kf5-config
 include/KF5/KDELibs4Support/
@@ -1340,6 +1340,9 @@ share/kf5/locale/countries/eg/flag.png
 share/kf5/locale/countries/eh/
 share/kf5/locale/countries/eh/country.desktop
 share/kf5/locale/countries/eh/flag.png
+share/kf5/locale/countries/epo/
+share/kf5/locale/countries/epo/country.desktop
+share/kf5/locale/countries/epo/flag.png
 share/kf5/locale/countries/er/
 share/kf5/locale/countries/er/country.desktop
 share/kf5/locale/countries/er/flag.png

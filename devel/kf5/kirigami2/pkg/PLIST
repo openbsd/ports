@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2021/10/13 15:02:05 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.18 2021/12/19 10:51:02 rsadowski Exp $
 include/KF5/
 include/KF5/Kirigami2/
 include/KF5/Kirigami2/KirigamiPluginFactory
@@ -42,6 +42,7 @@ lib/qt5/qml/org/kde/kirigami.2/CardsLayout.qml
 lib/qt5/qml/org/kde/kirigami.2/CardsListView.qml
 lib/qt5/qml/org/kde/kirigami.2/CheckableListItem.qml
 lib/qt5/qml/org/kde/kirigami.2/ContextDrawer.qml
+lib/qt5/qml/org/kde/kirigami.2/Dialog.qml
 lib/qt5/qml/org/kde/kirigami.2/FlexColumn.qml
 lib/qt5/qml/org/kde/kirigami.2/FormLayout.qml
 lib/qt5/qml/org/kde/kirigami.2/GlobalDrawer.qml
@@ -53,6 +54,7 @@ lib/qt5/qml/org/kde/kirigami.2/Label.qml
 lib/qt5/qml/org/kde/kirigami.2/LinkButton.qml
 lib/qt5/qml/org/kde/kirigami.2/ListItemDragHandle.qml
 lib/qt5/qml/org/kde/kirigami.2/ListSectionHeader.qml
+lib/qt5/qml/org/kde/kirigami.2/MenuDialog.qml
 lib/qt5/qml/org/kde/kirigami.2/NavigationTabBar.qml
 lib/qt5/qml/org/kde/kirigami.2/NavigationTabButton.qml
 lib/qt5/qml/org/kde/kirigami.2/OverlayDrawer.qml
@@ -62,6 +64,7 @@ lib/qt5/qml/org/kde/kirigami.2/PagePoolAction.qml
 lib/qt5/qml/org/kde/kirigami.2/PageRow.qml
 lib/qt5/qml/org/kde/kirigami.2/PasswordField.qml
 lib/qt5/qml/org/kde/kirigami.2/PlaceholderMessage.qml
+lib/qt5/qml/org/kde/kirigami.2/PromptDialog.qml
 lib/qt5/qml/org/kde/kirigami.2/RouterWindow.qml
 lib/qt5/qml/org/kde/kirigami.2/ScrollablePage.qml
 lib/qt5/qml/org/kde/kirigami.2/SearchField.qml
@@ -195,6 +198,7 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/
 share/locale/sr@ijekavianlatin/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/sr@latin/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/sv/LC_MESSAGES/libkirigami2plugin_qt.qm
+share/locale/ta/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/tg/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/tr/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/uk/LC_MESSAGES/libkirigami2plugin_qt.qm

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2021/10/13 15:02:05 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.29 2021/12/19 10:51:02 rsadowski Exp $
 
 # XXX has some internal dependency problems, look for kpasswdserver.json
 
@@ -7,7 +7,7 @@ DISTNAME =	kio-${VERSION}
 
 SHARED_LIBS =	KF5KIOCore		9.5 # 5.20
 SHARED_LIBS +=	KF5KIOGui		10.2 # 5.20
-SHARED_LIBS +=	KF5KIOFileWidgets	8.1 # 5.20
+SHARED_LIBS +=	KF5KIOFileWidgets	8.2 # 5.20
 SHARED_LIBS +=	KF5KIONTLM		7.0 # 5.20
 SHARED_LIBS +=	KF5KIOWidgets		8.5 # 5.20
 

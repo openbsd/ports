@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2021/11/16 14:31:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.30 2021/12/19 10:51:03 rsadowski Exp $
 
 COMMENT =		fully featured text editor component
 DISTNAME =		ktexteditor-${VERSION}
@@ -12,7 +12,7 @@ WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Parts KF5Service
 WANTLIB += KF5Solid KF5SonnetCore KF5SonnetUi KF5SyntaxHighlighting
 WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5Widgets Qt5Xml X11 c git2 m
+WANTLIB += Qt5Qml Qt5Widgets Qt5Xml X11 c m
 
 BUILD_DEPENDS =	archivers/gtar \
 		devel/gettext,-tools \
@@ -41,8 +41,7 @@ LIB_DEPENDS =	devel/kf5/karchive>=${MODKF5_VERSION} \
 		devel/kf5/kwindowsystem>=${MODKF5_VERSION} \
 		devel/kf5/kxmlgui>=${MODKF5_VERSION} \
 		devel/kf5/sonnet>=${MODKF5_VERSION} \
-		devel/kf5/syntax-highlighting>=${MODKF5_VERSION} \
-		devel/libgit2/libgit2
+		devel/kf5/syntax-highlighting>=${MODKF5_VERSION}
 
 #The following tests FAILED:
 # 21 - kateindenttest_testPython (Failed)
