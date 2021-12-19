@@ -1,16 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/03/01 22:09:13 robert Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/12/19 07:40:59 daniel Exp $
 ${P5ARCH}/DBD/SQLite/
 ${P5ARCH}/DBD/SQLite.pm
 ${P5ARCH}/DBD/SQLite/Constants.pm
 ${P5ARCH}/DBD/SQLite/Cookbook.pod
 ${P5ARCH}/DBD/SQLite/Fulltext_search.pod
+${P5ARCH}/DBD/SQLite/GetInfo.pm
 ${P5ARCH}/DBD/SQLite/VirtualTable/
 ${P5ARCH}/DBD/SQLite/VirtualTable.pm
 ${P5ARCH}/DBD/SQLite/VirtualTable/FileContent.pm
 ${P5ARCH}/DBD/SQLite/VirtualTable/PerlData.pm
 ${P5ARCH}/auto/DBD/
 ${P5ARCH}/auto/DBD/SQLite/
-${P5ARCH}/auto/DBD/SQLite/SQLite.so
+@so ${P5ARCH}/auto/DBD/SQLite/SQLite.so
 @man man/man3p/DBD::SQLite.3p
 @man man/man3p/DBD::SQLite::Constants.3p
 @man man/man3p/DBD::SQLite::Cookbook.3p

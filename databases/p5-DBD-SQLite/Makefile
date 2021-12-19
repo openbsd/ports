@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2020/07/03 21:44:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2021/12/19 07:40:59 daniel Exp $
 
 COMMENT=		SQLite drivers for the Perl DBI
 
 MODULES=		cpan
-DISTNAME=		DBD-SQLite-1.50
+DISTNAME=		DBD-SQLite-1.70
 CATEGORIES=		databases
 EPOCH=			0
-REVISION=		3
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
