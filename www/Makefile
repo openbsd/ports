@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1056 2021/11/28 12:41:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.1057 2021/12/19 00:40:43 sthen Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -377,18 +377,22 @@
 #    SUBDIR += pecl-chroot,php80 not yet
      SUBDIR += pecl-memcached,php74
      SUBDIR += pecl-memcached,php80
+     SUBDIR += pecl-memcached,php81
      SUBDIR += pecl-pecl_http,php74
 #    SUBDIR += pecl-pecl_http,php80 not yet, and not until pecl-propro has php80
      SUBDIR += pecl-pledge,php74
      SUBDIR += pecl-pledge,php80
+     SUBDIR += pecl-pledge,php81
      SUBDIR += pecl-proctitle,php74
 #    SUBDIR += pecl-proctitle,php80 not yet
      SUBDIR += pecl-propro,php74
 #    SUBDIR += pecl-propro,php80 not yet
      SUBDIR += pecl-raphf,php74
      SUBDIR += pecl-raphf,php80
+     SUBDIR += pecl-raphf,php81
      SUBDIR += pecl-ssh2,php74
      SUBDIR += pecl-ssh2,php80
+     SUBDIR += pecl-ssh2,php81
      SUBDIR += pelican
      SUBDIR += perlbal
      SUBDIR += phpldapadmin
