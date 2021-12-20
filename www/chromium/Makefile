@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.603 2021/12/15 15:08:09 robert Exp $
+# $OpenBSD: Makefile,v 1.604 2021/12/20 15:52:11 robert Exp $
 
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
 
@@ -9,6 +9,8 @@ DPB_PROPERTIES=		parallel parallel2
 COMMENT=		Chromium browser
 
 V=			96.0.4664.110
+
+REVISION=		0
 
 DISTNAME=		chromium-${V}
 
@@ -174,7 +176,7 @@ GN_ARGS+=	google_api_key=\"AIzaSyA015yecfJyWi8UQpneQVrNzIKlxjv4MhI\" \
 DWZ = :
 
 .if ${FLAVOR:Mdebug}
-GN_ARGS+=	symbol_level=2
+GN_ARGS+=	symbol_level=1
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 .else
 GN_ARGS+=	symbol_level=0
