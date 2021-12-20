@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/18 15:54:27 tracey Exp $
+# $OpenBSD: Makefile,v 1.5 2021/12/20 12:57:45 naddy Exp $
 
 COMMENT =	newlib for ${CONFIG} cross-development
 
@@ -10,7 +10,8 @@ GH_PROJECT =	newlib-esp32
 GH_TAGNAME =	esp-2021r2
 
 BUILD_DEPENDS =	devel/${CONFIG}/binutils \
-		devel/${CONFIG}/gcc-bootstrap
+		devel/${CONFIG}/gcc-bootstrap \
+		lang/gawk
 RUN_DEPENDS =	devel/${CONFIG}/binutils
 
 USE_GROFF =	No
