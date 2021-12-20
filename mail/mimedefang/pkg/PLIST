@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/09/04 12:46:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2021/12/20 14:35:15 giovanni Exp $
 @comment non-volatile homedir needed for sa-learn(1), MD sets user_dir to QUARANTINEDIR
 @newgroup _mdefang:570
 @newuser _mdefang:570:_mdefang:daemon:MIMEDefang User:/var/spool/MD-Quarantine:/sbin/nologin
 @extraunexec rm -rf /var/spool/MIMEDefang/*
 @extraunexec rm -rf /var/spool/MD-Quarantine/*
+@rcscript ${RCDIR}/mimedefang
+@rcscript ${RCDIR}/mimedefang_multiplexor
 @bin bin/md-mx-ctrl
 @bin bin/mimedefang
 @bin bin/mimedefang-multiplexor
@@ -38,10 +40,5 @@ share/examples/mimedefang/mail/sa-mimedefang.cf
 @mode 0750
 @owner _mdefang
 @group _mdefang
-@sample /var/spool/MIMEDefang/
 @sample /var/spool/MD-Quarantine/
-@mode
-@owner
-@group
-@rcscript ${RCDIR}/mimedefang
-@rcscript ${RCDIR}/mimedefang_multiplexor
+@sample /var/spool/MIMEDefang/
