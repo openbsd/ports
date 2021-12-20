@@ -1,4 +1,4 @@
-# $OpenBSD: unveil.main,v 1.9 2021/10/29 14:49:39 robert Exp $
+# $OpenBSD: unveil.main,v 1.10 2021/12/20 19:00:26 robert Exp $
 
 # needed for video(4)
 /dev/video rw
@@ -57,6 +57,7 @@
 
 ~/.cache/iridium rwc
 ~/.cache/dconf rwc
+~/.cache/fontconfig rwc
 ~/.cache/thumbnails rwc
 
 ~/.config/iridium rwc
