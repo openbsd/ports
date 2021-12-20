@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2021/11/16 14:31:02 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.23 2021/12/20 05:49:52 rsadowski Exp $
 @bin bin/plasmapkg2
 include/KF5/Plasma/
 include/KF5/Plasma/Applet
@@ -354,11 +354,26 @@ share/kdevappwizard/templates/plasma-wallpaper-with-qml-extension.tar.bz2
 share/kdevappwizard/templates/plasma-wallpaper.tar.bz2
 share/kdevappwizard/templates/qml-plasmoid-with-qml-extension.tar.bz2
 share/kdevappwizard/templates/qml-plasmoid.tar.bz2
+share/kservices5/plasma-applet-org.kde.example.bugreport.desktop
+share/kservices5/plasma-applet-org.kde.example.compactrepresentation.desktop
+share/kservices5/plasma-applet-org.kde.example.conditionalloader.desktop
+share/kservices5/plasma-applet-org.kde.example.configuration.desktop
+share/kservices5/plasma-applet-org.kde.example.dataenginemodel.desktop
+share/kservices5/plasma-applet-org.kde.example.helloworld.desktop
+share/kservices5/plasma-applet-org.kde.example.notes.desktop
+share/kservices5/plasma-applet-org.kde.example.tasks.desktop
+share/kservices5/plasma-applet-org.kde.example.testcomponents.desktop
+share/kservices5/plasma-applet-org.kde.example.testshaders.desktop
+share/kservices5/plasma-applet-org.kde.example.testtheme.desktop
+share/kservices5/plasma-applet-org.kde.example.widgetgallery.desktop
+share/kservices5/plasma-applet-org.kde.example.windowthumbnails.desktop
+share/kservices5/plasma-containment-org.kde.example.testcontainment.desktop
 share/kservices5/plasma-containmentactions-test.desktop
 share/kservices5/plasma-dataengine-example-customDataContainers.desktop
 share/kservices5/plasma-dataengine-example-simpleEngine.desktop
 share/kservices5/plasma-dataengine-example-sourcesOnRequest.desktop
 share/kservices5/plasma-scriptengine-applet-declarative.desktop
+share/kservices5/plasma-wallpaper-org.kde.autumn.desktop
 share/kservicetypes5/plasma-applet.desktop
 share/kservicetypes5/plasma-containment.desktop
 share/kservicetypes5/plasma-containmentactions.desktop
@@ -430,9 +445,7 @@ share/locale/zh_CN/LC_MESSAGES/libplasma5.mo
 share/locale/zh_TW/LC_MESSAGES/libplasma5.mo
 share/metainfo/
 share/metainfo/org.kde.example.bugreport.appdata.xml
-share/metainfo/org.kde.example.compactrepresentation.appdata.xml
 share/metainfo/org.kde.example.dataenginemodel.appdata.xml
-share/metainfo/org.kde.example.helloworld.appdata.xml
 share/metainfo/org.kde.example.notes.appdata.xml
 share/metainfo/org.kde.example.tasks.appdata.xml
 share/metainfo/org.kde.example.testshaders.appdata.xml
