@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_browserwindow_cpp,v 1.3 2021/09/15 17:09:05 gonzalo Exp $
+$OpenBSD: patch-src_browserwindow_cpp,v 1.4 2021/12/20 11:46:41 gonzalo Exp $
 
 Index: src/browserwindow.cpp
 --- src/browserwindow.cpp.orig
 +++ src/browserwindow.cpp
-@@ -236,7 +236,7 @@ QString BrowserWindow::homePageUrl() {
+@@ -237,7 +237,7 @@ QString BrowserWindow::homePageUrl() {
  #ifdef USE_SITES
  	return sites.currentSite().homeUrl();
  #else
@@ -12,7 +12,7 @@ Index: src/browserwindow.cpp
  #endif
  }
  
-@@ -481,7 +481,7 @@ void BrowserWindow::openYTUrl(QString title, QString e
+@@ -482,7 +482,7 @@ void BrowserWindow::openYTUrl(QString title, QString e
  	if (current_player == WebBrowser) {
  		QString u = url;
  		#if 1
@@ -21,7 +21,7 @@ Index: src/browserwindow.cpp
              "&t=" + title.toUtf8().toBase64().toPercentEncoding();
  		#endif
  		QDesktopServices::openUrl(u);
-@@ -777,7 +777,7 @@ void BrowserWindow::loadConfig() {
+@@ -799,7 +799,7 @@ void BrowserWindow::loadConfig() {
  #ifdef D_BUTTON
  	add_download_button = settings->value("add_download_button", false).toBool();
  
