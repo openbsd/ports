@@ -1,6 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.6 2017/03/01 13:04:15 gonzalo Exp $
---- Makefile.orig	Sun Jan 29 21:25:26 2017
-+++ Makefile	Tue Feb 28 16:40:26 2017
+$OpenBSD: patch-Makefile,v 1.7 2021/12/20 11:45:29 gonzalo Exp $
+Index: Makefile
+--- Makefile.orig
++++ Makefile
 @@ -5,7 +5,7 @@ PREFIX=/usr/local
  CONF_PREFIX=$(PREFIX)
  
@@ -10,9 +11,9 @@ $OpenBSD: patch-Makefile,v 1.6 2017/03/01 13:04:15 gonzalo Exp $
  TRANSLATION_PATH=$(PREFIX)/share/smplayer/translations
  THEMES_PATH=$(PREFIX)/share/smplayer/themes
  SHORTCUTS_PATH=$(PREFIX)/share/smplayer/shortcuts
-@@ -13,14 +13,6 @@ SHORTCUTS_PATH=$(PREFIX)/share/smplayer/shortcuts
- ICONS_DIR=$(PREFIX)/share/icons/hicolor/
+@@ -14,14 +14,6 @@ ICONS_DIR=$(PREFIX)/share/icons/hicolor/
  APPLNK_DIR=$(PREFIX)/share/applications/
+ METAINFO_DIR=$(PREFIX)/share/metainfo/
  
 -QMAKE=qmake
 -LRELEASE=lrelease
@@ -25,7 +26,7 @@ $OpenBSD: patch-Makefile,v 1.6 2017/03/01 13:04:15 gonzalo Exp $
  all: src/smplayer webserver/simple_web_server
  
  src/smplayer:
-@@ -49,7 +41,7 @@ install: all
+@@ -50,7 +42,7 @@ install: all
  	install -m 755 webserver/simple_web_server $(DESTDIR)$(PREFIX)/bin/
  
  	-install -d $(DESTDIR)$(DOC_PATH)
@@ -34,16 +35,3 @@ $OpenBSD: patch-Makefile,v 1.6 2017/03/01 13:04:15 gonzalo Exp $
  
  	-install -d $(DESTDIR)$(SHORTCUTS_PATH)
  	cp src/shortcuts/* $(DESTDIR)$(SHORTCUTS_PATH)
-@@ -78,9 +70,9 @@ install: all
- 	-install -d $(DESTDIR)$(APPLNK_DIR)
- 	install -m 644 smplayer.desktop $(DESTDIR)$(APPLNK_DIR)
- 	install -m 644 smplayer_enqueue.desktop $(DESTDIR)$(APPLNK_DIR)
--	-install -d $(DESTDIR)$(PREFIX)/share/man/man1/
--	install -m 644 man/smplayer.1 $(DESTDIR)$(PREFIX)/share/man/man1/
--	gzip -9 -f $(DESTDIR)$(PREFIX)/share/man/man1/smplayer.1
-+	-install -d $(DESTDIR)$(PREFIX)/man/man1/
-+	install -m 644 man/smplayer.1 $(DESTDIR)$(PREFIX)/man/man1/
-+#	gzip -9 -f $(DESTDIR)$(PREFIX)/share/man/man1/smplayer.1
- 
- uninstall:
- 	-rm -f $(PREFIX)/bin/smplayer

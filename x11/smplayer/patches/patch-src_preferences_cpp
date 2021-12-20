@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_preferences_cpp,v 1.17 2021/02/11 13:55:06 gonzalo Exp $
+$OpenBSD: patch-src_preferences_cpp,v 1.18 2021/12/20 11:45:29 gonzalo Exp $
 Index: src/preferences.cpp
 --- src/preferences.cpp.orig
 +++ src/preferences.cpp
-@@ -212,8 +212,8 @@ void Preferences::reset() {
+@@ -209,8 +209,8 @@ void Preferences::reset() {
         Drives (CD/DVD)
         *************** */
  
@@ -13,7 +13,7 @@ Index: src/preferences.cpp
  #ifdef BLURAY_SUPPORT
  	bluray_device = "";
  #endif
-@@ -335,13 +335,13 @@ void Preferences::reset() {
+@@ -332,13 +332,13 @@ void Preferences::reset() {
      mplayer_additional_audio_filters="";
  
  #ifdef LOG_MPLAYER

@@ -1,27 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.19 2020/05/17 06:09:40 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.20 2021/12/20 11:45:29 gonzalo Exp $
 @bin bin/simple_web_server
 @bin bin/smplayer
-@man man/man1/smplayer.1
 share/applications/smplayer.desktop
 share/applications/smplayer_enqueue.desktop
 share/doc/smplayer/
-share/doc/smplayer/Changelog
 share/doc/smplayer/Copying.txt
 share/doc/smplayer/Copying_BSD.txt
 share/doc/smplayer/Copying_libmaia.txt
 share/doc/smplayer/Copying_openssl.txt
-share/doc/smplayer/Finding_subtitles.txt
 share/doc/smplayer/Install.txt
-share/doc/smplayer/Not_so_obvious_things.txt
 share/doc/smplayer/Portable_Edition.txt
 share/doc/smplayer/Readme.txt
-share/doc/smplayer/Release_notes.txt
-share/doc/smplayer/Watching_TV.txt
+share/doc/smplayer/Release_notes.md
 share/doc/smplayer/cs/
 share/doc/smplayer/cs/gpl.html
 share/doc/smplayer/de/
 share/doc/smplayer/de/gpl.html
-share/doc/smplayer/dvdmenus.txt
 share/doc/smplayer/en/
 share/doc/smplayer/en/gpl.html
 share/doc/smplayer/es/
@@ -51,6 +45,10 @@ share/icons/hicolor/32x32/apps/smplayer.png
 share/icons/hicolor/512x512/apps/smplayer.png
 share/icons/hicolor/64x64/apps/smplayer.png
 share/icons/hicolor/scalable/apps/smplayer.svg
+@mandir share/man/
+share/man/man1/
+share/metainfo/
+share/metainfo/smplayer.appdata.xml
 share/smplayer/
 share/smplayer/input.conf
 share/smplayer/shortcuts/

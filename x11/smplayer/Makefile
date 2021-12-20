@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.63 2021/02/11 13:55:06 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.64 2021/12/20 11:45:28 gonzalo Exp $
 
 COMMENT =		complete front-end for MPlayer and MPV
 
-DISTNAME =		smplayer-21.1.0
+DISTNAME =		smplayer-21.10.0
 CATEGORIES =		multimedia x11
 
 HOMEPAGE =		https://www.smplayer.info/
@@ -21,8 +21,9 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=smplayer/}
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		x11/qt5
-RUN_DEPENDS =		mpv-*|mplayer->=20090708:multimedia/mpv \
-			devel/desktop-file-utils \
+RUN_DEPENDS =		devel/desktop-file-utils \
+			mpv-*|mplayer->=20090708:multimedia/mpv \
+			www/yt-dlp \
 			x11/gtk+3,-guic
 
 USE_GMAKE =		Yes
