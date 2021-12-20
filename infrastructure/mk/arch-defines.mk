@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.88 2021/12/06 12:47:51 espie Exp $
+# $OpenBSD: arch-defines.mk,v 1.89 2021/12/20 08:30:13 sthen Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -96,8 +96,8 @@ _SYSTEM_VERSION-riscv64 = 1
 _SYSTEM_VERSION-${MACHINE_ARCH} ?= 0
 _SYSTEM_VERSION-${ARCH} ?= 0
 
-# next time we need to bump all clang arches, just uncomment this
-# _SYSTEM_VERSION-clang = 1
+# added to version for all clang arches
+_SYSTEM_VERSION-clang = 1
 
 # @version = ${_SYSTEM_VERSION} + ${_SYSTEM_VERSION-${MACHINE_ARCH}}
 _PKG_ARGS_VERSION += -V ${_SYSTEM_VERSION} -V ${_SYSTEM_VERSION-${MACHINE_ARCH}}
