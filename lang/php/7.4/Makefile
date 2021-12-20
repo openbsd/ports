@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2021/12/18 22:27:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2021/12/20 10:44:01 sthen Exp $
 
 PORTROACH=	limit:^7\.4
 PHP_VERSION=	7.4.27
@@ -10,11 +10,7 @@ REVISION=	0
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
-BUILD_DEPENDS+=		devel/bison
-YACC=			bison
-
-CONFIGURE_ARGS+=	--without-valgrind \
-			--enable-inline-optimization
+CONFIGURE_ARGS+=	--enable-inline-optimization
 
 PHP_EXTENSIONS+=	-xmlrpc
 

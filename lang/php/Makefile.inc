@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.169 2021/11/21 00:41:13 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.170 2021/12/20 10:44:01 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -47,6 +47,7 @@ CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include -pthread" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread" \
 			EXTENSION_DIR=${MODULES_DIR} \
 			COMPILER_LIBCXX="${LIBCXX}" \
+			PHP=false \
 			lt_cv_path_SED=/usr/bin/sed
 
 # configure detects us as having decimal fp support but it's not built in
@@ -69,7 +70,8 @@ CONFIGURE_ARGS+=	--disable-rpath \
 			--with-pcre-jit=no \
 			--with-pear=${LOCALBASE}/share/php-${PV} \
 			--with-pic \
-			--with-readline
+			--with-readline \
+			--without-valgrind
 
 # override mysqlnd default of /tmp/mysql.sock (if using libmysql this
 # is fetched from mysql_config instead)
@@ -478,6 +480,9 @@ RUN_DEPENDS-${i}+=	php-${PHP_VERSION}:lang/php/${PV}
 .endfor
 
 DESCR-main=		${.CURDIR}/../files/DESCR-main
+
+BUILD_DEPENDS+=		devel/bison
+YACC=			bison
 
 # shouldn't normally be needed, but sometimes file timestamps in the .tar.gz
 # have the generated file older than the source file for re2c, resulting in a
