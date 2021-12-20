@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2021/12/14 21:01:52 edd Exp $
-
-BROKEN-aarch64 =golang.org/x/Sys/cpu panic (illegal instruction)
+# $OpenBSD: Makefile,v 1.38 2021/12/20 13:09:12 chrisz Exp $
 
 COMMENT =	open decentralized synchronization utility
 
