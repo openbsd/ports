@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/22 06:26:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2021/12/20 10:03:57 rsadowski Exp $
 
 COMMENT =	kirigami component gallery application
 DISTNAME =	kirigami-gallery-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/de/kirigami2.gallery/
 
@@ -13,9 +14,11 @@ WANTLIB += Qt5Svg Qt5Widgets c m
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_TRANSLATIONS = yes
 
-BUILD_DEPENDS =	x11/qt5/qtquickcontrols
+BUILD_DEPENDS =	devel/kf5/kpackage \
+		x11/qt5/qtquickcontrols
 
-RUN_DEPENDS =	devel/kf5/breeze-icons \
+RUN_DEPENDS =	devel/kf5/kpackage \
+		devel/kf5/breeze-icons \
 		devel/kf5/qqc2-desktop-style \
 		x11/qt5/qtquickcontrols
 
