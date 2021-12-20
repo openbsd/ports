@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/12/17 17:17:32 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2021/12/20 06:16:00 kn Exp $
 
 COMMENT =	c++11/14/17 std::expected with functional-style extensions
 
@@ -32,14 +32,15 @@ MODULES =		devel/cmake
 CONFIGURE_ARGS +=	-DFETCHCONTENT_FULLY_DISCONNECTED=ON \
 			-DFETCHCONTENT_SOURCE_DIR_TL_CMAKE=${FULLDISTDIR}
 
-# avoid building anything for now, enable later
-CONFIGURE_ARGS +=	-DEXPECTED_ENABLE_TESTS=OFF
-
 # just header files
 PKG_ARCH =		*
-# with tests disabled and no docs or examples:
-# "ninja: no work to do."
+
+# only tests are built, defer compilation to running tests
 NO_BUILD =		Yes
-NO_TEST =		Yes
+TEST_TARGET =		tests
+
+post-test:
+	# actually run tests
+	${WRKBUILD}/tests --order rand --durations yes
 
 .include <bsd.port.mk>
