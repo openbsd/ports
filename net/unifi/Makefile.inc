@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.30 2021/12/20 09:08:25 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.31 2021/12/20 15:06:34 sthen Exp $
 
 .if defined(V)
 COMMENT =	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
@@ -64,7 +64,7 @@ NO_TEST =	Yes
 WRKDIST =	${WRKDIR}/UniFi
 INSTDIR =	${PREFIX}/share/unifi/
 VERSION ?=	$V.0
-SUBST_VARS +=	VERSION LOG4J_V
+SUBST_VARS +=	VERSION LOG4J_V SNAPPY_S SNAPPY_V
 
 pre-extract:
 .if ${FETCH_PACKAGES:L} == no

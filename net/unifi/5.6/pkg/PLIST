@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/03/30 10:15:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2021/12/20 15:06:34 sthen Exp $
 @option is-branch
 @pkgpath net/unifi/lts
 @newgroup _unifi:732
@@ -69,7 +69,7 @@ share/unifi/lib/servo-core-0.9.4.jar
 share/unifi/lib/servo-graphite-0.9.4.jar
 share/unifi/lib/slf4j-api-1.7.6.jar
 share/unifi/lib/slf4j-log4j12-1.7.6.jar
-share/unifi/lib/snappy-java-1.1.2.6.jar
+share/unifi/lib/snappy-java-${SNAPPY_V}.jar
 share/unifi/lib/spring-beans-3.2.8.RELEASE.jar
 share/unifi/lib/spring-context-3.2.8.RELEASE.jar
 share/unifi/lib/spring-core-3.2.8.RELEASE.jar
