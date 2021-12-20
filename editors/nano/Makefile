@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.123 2021/10/10 11:51:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.124 2021/12/20 15:23:35 mestre Exp $
 
 COMMENT=	simple editor, inspired by Pico
 
-DISTNAME=	nano-5.9
+DISTNAME=	nano-6.0
 CATEGORIES=	editors
 HOMEPAGE=	https://www.nano-editor.org/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
-MASTER_SITES=	https://www.nano-editor.org/dist/v5/ \
+MASTER_SITES=	https://www.nano-editor.org/dist/v6/ \
 		${MASTER_SITE_GNU:=nano/}
 PORTROACH=	site:https://www.nano-editor.org/dist/latest/
 EXTRACT_SUFX=	.tar.xz

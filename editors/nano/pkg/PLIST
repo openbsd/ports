@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2021/10/10 11:51:21 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.38 2021/12/20 15:23:36 mestre Exp $
 @pkgpath editors/nano,slang
 @bin bin/nano
 bin/rnano
@@ -65,9 +65,7 @@ share/nano/elisp.nanorc
 share/nano/email.nanorc
 share/nano/extra/
 share/nano/extra/ada.nanorc
-share/nano/extra/debian.nanorc
 share/nano/extra/fortran.nanorc
-share/nano/extra/gentoo.nanorc
 share/nano/extra/haskell.nanorc
 share/nano/extra/povray.nanorc
 share/nano/extra/spec.nanorc
@@ -100,3 +98,4 @@ share/nano/tcl.nanorc
 share/nano/tex.nanorc
 share/nano/texinfo.nanorc
 share/nano/xml.nanorc
+share/nano/yaml.nanorc
