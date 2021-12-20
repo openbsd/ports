@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_boringssl_src_crypto_rand_extra_arc4random_c,v 1.8 2021/10/29 14:49:42 robert Exp $
+$OpenBSD: patch-third_party_boringssl_src_crypto_rand_extra_arc4random_c,v 1.9 2021/12/20 15:57:37 robert Exp $
 
 Index: third_party/boringssl/src/crypto/rand_extra/arc4random.c
 --- third_party/boringssl/src/crypto/rand_extra/arc4random.c.orig
@@ -29,11 +29,11 @@ Index: third_party/boringssl/src/crypto/rand_extra/arc4random.c
 +#include "../fipsmodule/rand/internal.h"
 +
 +void CRYPTO_sysrand_for_seed(uint8_t *out, size_t requested) {                 
-+  arc4random_buf(out, requested);
++  CRYPTO_sysrand(out, requested);
 +}                                                                              
 +
 +void CRYPTO_sysrand(uint8_t *out, size_t requested) {
-+  CRYPTO_sysrand(out, requested);
++  arc4random_buf(out, requested);
 +}
 +
 +#endif  // OPENSSL_ARC4RANDOM && !BORINGSSL_UNSAFE_DETERMINISTIC_MODE
