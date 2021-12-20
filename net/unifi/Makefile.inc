@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.29 2021/12/20 08:24:01 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.30 2021/12/20 09:08:25 sthen Exp $
 
 .if defined(V)
 COMMENT =	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
@@ -7,6 +7,7 @@ _BV =		${BUILD_V:C/^http[^-]*-([0-9a-f]{10}).*/-\1/}
 MASTER_SITES ?=	https://dl.ui.com/unifi/${V}${_BV}/
 MASTER_SITES0 =	https://spacehopper.org/mirrors/
 MASTER_SITES1 =	https://dl.ubnt-ut.com/snmp/
+
 LOG4J_V =	2.17.0
 MASTER_SITES2 =	https://dlcdn.apache.org/logging/log4j/${LOG4J_V}/
 
@@ -23,6 +24,7 @@ PKGNAME =	unifi-$V
 # one to replace.
 #
 # typical symptom of failure: APs stuck in "adopting".
+SNAPPY_S ?=	-libc++.9.0
 DISTFILES +=	snappy-java-${SNAPPY_V}${SNAPPY_S}.jar:0
 
 REPLACE_LOG4J ?= No
