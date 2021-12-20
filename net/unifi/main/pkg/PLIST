@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/12/15 10:52:54 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/12/20 08:24:01 sthen Exp $
 @option is-branch
 @pkgpath net/unifi/6.1
 @pkgpath net/unifi/6.2
@@ -115,8 +115,11 @@ share/unifi/lib/jsr305-3.0.2.jar
 share/unifi/lib/jstl-1.2.jar
 share/unifi/lib/jstun-0.7.4.jar
 share/unifi/lib/jul-to-slf4j-1.7.30.jar
+share/unifi/lib/log4j-api-2.16.0.jar
 share/unifi/lib/log4j-api-${LOG4J_V}.jar
+share/unifi/lib/log4j-core-2.16.0.jar
 share/unifi/lib/log4j-core-${LOG4J_V}.jar
+share/unifi/lib/log4j-slf4j-impl-2.16.0.jar
 share/unifi/lib/log4j-slf4j-impl-${LOG4J_V}.jar
 share/unifi/lib/mongo-java-driver-3.4.3.jar
 share/unifi/lib/openssh-1.0.jar
