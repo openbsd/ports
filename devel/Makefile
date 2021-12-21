@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2170 2021/12/18 19:39:26 kn Exp $
+# $OpenBSD: Makefile,v 1.2171 2021/12/21 11:11:07 gonzalo Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1396,6 +1396,7 @@
      SUBDIR += py-incremental,python3
      SUBDIR += py-intervaltree
      SUBDIR += py-intervaltree,python3
+     SUBDIR += py-intelhex,python3
      SUBDIR += py-invoke,python3
      SUBDIR += py-ipykernel,python3
      SUBDIR += py-ipython_genutils,python3
