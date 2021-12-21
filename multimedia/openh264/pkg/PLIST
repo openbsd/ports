@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/12/21 14:22:37 kn Exp $
+@bin bin/h264dec
+@bin bin/h264enc
+include/wels/
+include/wels/codec_api.h
+include/wels/codec_app_def.h
+include/wels/codec_def.h
+include/wels/codec_ver.h
+@static-lib lib/libopenh264.a
+@comment @so lib/libopenh264.so
+@comment lib/libopenh264.so.0
+@lib lib/libopenh264.so.${LIBopenh264_VERSION}
+lib/pkgconfig/openh264.pc
