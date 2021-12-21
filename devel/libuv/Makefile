@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2021/12/21 09:11:07 edd Exp $
+# $OpenBSD: Makefile,v 1.18 2021/12/21 14:28:07 kn Exp $
 
 COMMENT =	multi-platform library for asynchronous I/O
 
@@ -27,9 +27,11 @@ USE_GMAKE =	Yes
 CONFIGURE_STYLE = autoreconf
 CONFIGURE_ENV =	cc_cv_cflags__g=no
 
-AUTOCONF_VERSION = 2.69
+AUTOCONF_VERSION = 2.71
 AUTOMAKE_VERSION = 1.16
 AUTORECONF =	sh autogen.sh
+
+MAKE_FLAGS =	SPHINXOPTS=--no-color
 
 post-build:
 	cd ${WRKSRC} && ${MAKE_ENV} ${MAKE_PROGRAM} man -C docs
