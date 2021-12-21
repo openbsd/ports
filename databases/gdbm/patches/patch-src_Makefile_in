@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2021/12/21 20:42:15 naddy Exp $
+
+Fix parallel build.  gmake recognizes libfoo.a and ./libfoo.a as
+equivalent, ours does not.
+
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -206,13 +206,13 @@ libgdbm_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_
+ PROGRAMS = $(bin_PROGRAMS)
+ gdbm_dump_SOURCES = gdbm_dump.c
+ gdbm_dump_OBJECTS = gdbm_dump.$(OBJEXT)
+-gdbm_dump_DEPENDENCIES = ./libgdbmapp.a ./libgdbm.la
++gdbm_dump_DEPENDENCIES = libgdbmapp.a libgdbm.la
+ gdbm_load_SOURCES = gdbm_load.c
+ gdbm_load_OBJECTS = gdbm_load.$(OBJEXT)
+-gdbm_load_DEPENDENCIES = ./libgdbmapp.a ./libgdbm.la
++gdbm_load_DEPENDENCIES = libgdbmapp.a libgdbm.la
+ am_gdbmtool_OBJECTS = gdbmtool.$(OBJEXT)
+ gdbmtool_OBJECTS = $(am_gdbmtool_OBJECTS)
+-gdbmtool_DEPENDENCIES = ./libgdbmapp.a ./libgdbm.la
++gdbmtool_DEPENDENCIES = libgdbmapp.a libgdbm.la
+ AM_V_P = $(am__v_P_@AM_V@)
+ am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
+ am__v_P_0 = false
