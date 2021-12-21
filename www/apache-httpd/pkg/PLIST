@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2021/06/04 08:48:37 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.35 2021/12/21 07:38:41 giovanni Exp $
 @conflict apache-httpd-common-*
 @pkgpath www/apache-httpd,-main${FLAVOR_COMMA}
 @pkgpath www/apache-httpd,-common
@@ -993,6 +993,8 @@ share/doc/apache2/mod/mod_suexec.html.tr.utf8
 share/doc/apache2/mod/mod_systemd.html
 share/doc/apache2/mod/mod_systemd.html.en
 share/doc/apache2/mod/mod_systemd.html.fr.utf8
+share/doc/apache2/mod/mod_tls.html
+share/doc/apache2/mod/mod_tls.html.en
 share/doc/apache2/mod/mod_unique_id.html
 share/doc/apache2/mod/mod_unique_id.html.en
 share/doc/apache2/mod/mod_unique_id.html.fr.utf8
