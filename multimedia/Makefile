@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2021/12/04 17:06:35 kn Exp $
+# $OpenBSD: Makefile,v 1.146 2021/12/21 14:24:05 kn Exp $
 
      SUBDIR =
      SUBDIR += aom
@@ -57,6 +57,7 @@
      SUBDIR += oggz
      SUBDIR += ogmrip
      SUBDIR += ogmtools
+     SUBDIR += openh264
      SUBDIR += p5-AMF-Connection
      SUBDIR += p5-Data-AMF
      SUBDIR += p5-Mac-iTunes-Library
