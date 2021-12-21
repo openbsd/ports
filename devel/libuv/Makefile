@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/25 16:31:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2021/12/21 09:11:07 edd Exp $
 
 COMMENT =	multi-platform library for asynchronous I/O
 
-VER =		1.40.0
+VER =		1.42.0
 DISTNAME =	libuv-v${VER}
 PKGNAME =	libuv-${VER}
 CATEGORIES =	devel
 
-SHARED_LIBS =	uv 3.0	# 1.0
+SHARED_LIBS =	uv 4.0	# 1.0
 
 HOMEPAGE =	https://libuv.org/
 
