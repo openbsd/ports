@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/04/30 16:16:46 paco Exp $
+# $OpenBSD: Makefile,v 1.2 2021/12/21 08:41:25 paco Exp $
 
 COMMENT =	parser generator tool and incremental parsing library
 
 GH_ACCOUNT =		tree-sitter
 GH_PROJECT =		tree-sitter
-GH_TAGNAME =		v0.19.4
+GH_TAGNAME =		v0.20.1
 
-SHARED_LIBS +=		tree-sitter	0.0 # 0.0
+SHARED_LIBS +=		tree-sitter	1.0 # 0.20.1
+
+SUBST_VARS +=		LIBtree-sitter_VERSION
 
 CATEGORIES =		textproc
 MAINTAINER =		Paco Esteban <paco@openbsd.org>
@@ -24,101 +26,7 @@ COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cargo
 
-MODCARGO_CRATES +=	aho-corasick	0.7.15	# Unlicense/MIT
-MODCARGO_CRATES +=	ansi_term	0.11.0	# MIT
-MODCARGO_CRATES +=	ansi_term	0.12.1	# MIT
-MODCARGO_CRATES +=	arrayref	0.3.6	# BSD-2-Clause
-MODCARGO_CRATES +=	arrayvec	0.5.2	# MIT/Apache-2.0
-MODCARGO_CRATES +=	ascii	1.0.0	# Apache-2.0 / MIT
-MODCARGO_CRATES +=	atty	0.2.14	# MIT
-MODCARGO_CRATES +=	autocfg	1.0.1	# Apache-2.0 OR MIT
-MODCARGO_CRATES +=	base64	0.13.0	# MIT/Apache-2.0
-MODCARGO_CRATES +=	bitflags	1.2.1	# MIT/Apache-2.0
-MODCARGO_CRATES +=	blake2b_simd	0.5.11	# MIT
-MODCARGO_CRATES +=	bumpalo	3.6.1	# MIT/Apache-2.0
-MODCARGO_CRATES +=	cc	1.0.67	# MIT/Apache-2.0
-MODCARGO_CRATES +=	cfg-if	1.0.0	# MIT/Apache-2.0
-MODCARGO_CRATES +=	chrono	0.4.19	# MIT/Apache-2.0
-MODCARGO_CRATES +=	chunked_transfer	1.4.0	# Apache-2.0
-MODCARGO_CRATES +=	clap	2.33.3	# MIT
-MODCARGO_CRATES +=	constant_time_eq	0.1.5	# CC0-1.0
-MODCARGO_CRATES +=	crossbeam-utils	0.8.3	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	difference	2.0.0	# MIT
-MODCARGO_CRATES +=	dirs	3.0.1	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	dirs-sys	0.3.5	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	form_urlencoded	1.0.1	# MIT/Apache-2.0
-MODCARGO_CRATES +=	getrandom	0.1.16	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	getrandom	0.2.2	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	glob	0.3.0	# MIT/Apache-2.0
-MODCARGO_CRATES +=	hashbrown	0.9.1	# Apache-2.0/MIT
-MODCARGO_CRATES +=	hermit-abi	0.1.18	# MIT/Apache-2.0
-MODCARGO_CRATES +=	html-escape	0.2.6	# MIT
-MODCARGO_CRATES +=	idna	0.2.2	# MIT/Apache-2.0
-MODCARGO_CRATES +=	indexmap	1.6.1	# Apache-2.0/MIT
-MODCARGO_CRATES +=	itoa	0.4.7	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	js-sys	0.3.48	# MIT/Apache-2.0
-MODCARGO_CRATES +=	lazy_static	1.4.0	# MIT/Apache-2.0
-MODCARGO_CRATES +=	libc	0.2.86	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	libloading	0.7.0	# ISC
-MODCARGO_CRATES +=	log	0.4.14	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	matches	0.1.8	# MIT
-MODCARGO_CRATES +=	memchr	2.3.4	# Unlicense/MIT
-MODCARGO_CRATES +=	num-integer	0.1.44	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	num-traits	0.2.14	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	once_cell	1.7.0	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	percent-encoding	2.1.0	# MIT/Apache-2.0
-MODCARGO_CRATES +=	ppv-lite86	0.2.10	# MIT/Apache-2.0
-MODCARGO_CRATES +=	proc-macro2	1.0.24	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	quote	1.0.9	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	rand	0.8.3	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	rand_chacha	0.3.0	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	rand_core	0.6.2	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	rand_hc	0.3.0	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	redox_syscall	0.1.57	# MIT
-MODCARGO_CRATES +=	redox_syscall	0.2.5	# MIT
-MODCARGO_CRATES +=	redox_users	0.3.5	# MIT
-MODCARGO_CRATES +=	regex	1.4.3	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	regex-syntax	0.6.22	# MIT/Apache-2.0
-MODCARGO_CRATES +=	remove_dir_all	0.5.3	# MIT/Apache-2.0
-MODCARGO_CRATES +=	rust-argon2	0.8.3	# MIT/Apache-2.0
-MODCARGO_CRATES +=	ryu	1.0.5	# Apache-2.0 OR BSL-1.0
-MODCARGO_CRATES +=	same-file	1.0.6	# Unlicense/MIT
-MODCARGO_CRATES +=	serde	1.0.123	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	serde_derive	1.0.123	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	serde_json	1.0.63	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	smallbitvec	2.5.0	# MIT / Apache-2.0
-MODCARGO_CRATES +=	spin	0.7.1	# MIT
-MODCARGO_CRATES +=	strsim	0.8.0	# MIT
-MODCARGO_CRATES +=	syn	1.0.60	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	tempfile	3.2.0	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	textwrap	0.11.0	# MIT
-MODCARGO_CRATES +=	thread_local	1.1.3	# Apache-2.0/MIT
-MODCARGO_CRATES +=	time	0.1.43	# MIT/Apache-2.0
-MODCARGO_CRATES +=	tiny_http	0.8.0	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	tinyvec	1.1.1	# Zlib OR Apache-2.0 OR MIT
-MODCARGO_CRATES +=	tinyvec_macros	0.1.0	# MIT OR Apache-2.0 OR Zlib
-MODCARGO_CRATES +=	unicode-bidi	0.3.4	# MIT / Apache-2.0
-MODCARGO_CRATES +=	unicode-normalization	0.1.17	# MIT/Apache-2.0
-MODCARGO_CRATES +=	unicode-width	0.1.8	# MIT/Apache-2.0
-MODCARGO_CRATES +=	unicode-xid	0.2.1	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	url	2.2.1	# MIT/Apache-2.0
-MODCARGO_CRATES +=	utf8-width	0.1.4	# MIT
-MODCARGO_CRATES +=	vec_map	0.8.2	# MIT/Apache-2.0
-MODCARGO_CRATES +=	walkdir	2.3.1	# Unlicense/MIT
-MODCARGO_CRATES +=	wasi	0.9.0+wasi-snapshot-preview1	# Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT
-MODCARGO_CRATES +=	wasi	0.10.2+wasi-snapshot-preview1	# Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT
-MODCARGO_CRATES +=	wasm-bindgen	0.2.71	# MIT/Apache-2.0
-MODCARGO_CRATES +=	wasm-bindgen-backend	0.2.71	# MIT/Apache-2.0
-MODCARGO_CRATES +=	wasm-bindgen-macro	0.2.71	# MIT/Apache-2.0
-MODCARGO_CRATES +=	wasm-bindgen-macro-support	0.2.71	# MIT/Apache-2.0
-MODCARGO_CRATES +=	wasm-bindgen-shared	0.2.71	# MIT/Apache-2.0
-MODCARGO_CRATES +=	web-sys	0.3.48	# MIT/Apache-2.0
-MODCARGO_CRATES +=	webbrowser	0.5.5	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	widestring	0.4.3	# MIT/Apache-2.0
-MODCARGO_CRATES +=	winapi	0.3.9	# MIT/Apache-2.0
-MODCARGO_CRATES +=	winapi-i686-pc-windows-gnu	0.4.0	# MIT/Apache-2.0
-MODCARGO_CRATES +=	winapi-util	0.1.5	# Unlicense/MIT
-MODCARGO_CRATES +=	winapi-x86_64-pc-windows-gnu	0.4.0	# MIT/Apache-2.0
+.include "crates.inc"
 
 PATCHORIG =		.openbsd.orig
 
@@ -131,6 +39,9 @@ SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	cargo
+
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/Makefile
 
 do-build:
 	cd ${WRKSRC} && \

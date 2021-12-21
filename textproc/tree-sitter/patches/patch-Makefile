@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2021/04/30 16:16:46 paco Exp $
+$OpenBSD: patch-Makefile,v 1.2 2021/12/21 08:41:25 paco Exp $
 
 Remove forced SONAME so it does not disagree with lib file name.
 Also remove useless symlinks for the shared lib and fix the substitutions on
@@ -7,11 +7,13 @@ the pkg-config file
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -35,7 +35,7 @@ else
+@@ -34,8 +34,8 @@ ifeq ($(shell uname),Darwin)
+ else
  	SOEXT = so
  	SOEXTVER_MAJOR = so.$(SONAME_MAJOR)
- 	SOEXTVER = so.$(SONAME_MAJOR).$(SONAME_MINOR)
+-	SOEXTVER = so.$(SONAME_MAJOR).$(SONAME_MINOR)
 -	LINKSHARED += -shared -Wl,-soname,libtree-sitter.so.$(SONAME_MAJOR)
++	SOEXTVER = so.${LIBtree-sitter_VERSION}
 +	LINKSHARED += -shared
  endif
  ifneq (,$(filter $(shell uname),FreeBSD NetBSD DragonFly))
