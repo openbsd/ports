@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.8 2021/01/31 18:03:49 sthen Exp $
+$OpenBSD: README,v 1.9 2021/12/21 11:01:07 gonzalo Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -27,8 +27,8 @@ suricata-update
 suricata-update is the recommended way to install and update rules.
 By default it will download the new rules into ${VARBASE}/suricata/rules
 
-Edit ${SYSCONFDIR}/suricata/suricata.yaml and replace the existing default-rule-path
-and rule-files sections with this:
+Edit ${SYSCONFDIR}/suricata/suricata.yaml and replace the existing
+default-rule-path and rule-files sections with this:
 
     default-rule-path: ${VARBASE}/suricata/rules/
     rule-files:

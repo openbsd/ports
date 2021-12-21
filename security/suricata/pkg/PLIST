@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2021/10/26 16:29:58 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.19 2021/12/21 11:01:07 gonzalo Exp $
 @conflict suricata-update-*
 @pkgpath security/suricata-update
 @newgroup _suricata:800
@@ -148,7 +148,7 @@ lib/python${MODPY_VERSION}/site-packages/suricata/update/rule.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/sources.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/util.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/version.py
-lib/python${MODPY_VERSION}/site-packages/suricata_update-1.2.2-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/suricata_update-${SUPDATE_V}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/suricatasc/
 lib/python${MODPY_VERSION}/site-packages/suricatasc/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/suricatasc/${MODPY_PYCACHE}/
@@ -185,12 +185,14 @@ share/suricata/rules/files.rules
 @sample ${SYSCONFDIR}/suricata/rules/files.rules
 share/suricata/rules/http-events.rules
 @sample ${SYSCONFDIR}/suricata/rules/http-events.rules
+share/suricata/rules/http2-events.rules
 share/suricata/rules/ipsec-events.rules
 @sample ${SYSCONFDIR}/suricata/rules/ipsec-events.rules
 share/suricata/rules/kerberos-events.rules
 @sample ${SYSCONFDIR}/suricata/rules/kerberos-events.rules
 share/suricata/rules/modbus-events.rules
 @sample ${SYSCONFDIR}/suricata/rules/modbus-events.rules
+share/suricata/rules/mqtt-events.rules
 share/suricata/rules/nfs-events.rules
 @sample ${SYSCONFDIR}/suricata/rules/nfs-events.rules
 share/suricata/rules/ntp-events.rules
