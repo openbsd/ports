@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.251 2021/11/14 18:33:24 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.252 2021/12/22 08:25:55 ajacoutot Exp $
 
 # XXX add support for libcloudproviders?
 
@@ -11,14 +11,11 @@ COMMENT-cups=		gtk+3 CUPS print backend
 COMMENT-guic=		gtk+ icon theme caching utility
 
 GNOME_PROJECT=		gtk+
-GNOME_VERSION=		3.24.30
+GNOME_VERSION=		3.24.31
 
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
-REVISION-cups=		0
-REVISION-guic=		0
-REVISION-main=		0
 
 CATEGORIES=		x11 devel
 
@@ -55,8 +52,8 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 # some apps needs the svg version of the icon (librsvg pulled in)
 RUN_DEPENDS-main +=	x11/gnome/adwaita-icon-theme
 
-WANTLIB-main += ${WANTLIB} ${COMPILER_LIBCXX} c epoxy fribidi
-WANTLIB-main += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB-main += ${WANTLIB} ${COMPILER_LIBCXX} c epoxy fribidi Xau
+WANTLIB-main += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xdmcp
 WANTLIB-main += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB-main += cairo cairo-gobject dbus-1 expat fontconfig freetype
 WANTLIB-main += graphite2 harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0
@@ -74,7 +71,7 @@ WANTLIB-cups += cairo cairo-gobject dbus-1 expat fontconfig freetype
 WANTLIB-cups += graphite2 harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-cups += pixman-1 xcb xcb-render png avahi-client avahi-common
 WANTLIB-cups += cups gdk-3 gmp xcb-shm gnutls gtk-3 hogweed nettle
-WANTLIB-cups += p11-kit tasn1 unistring execinfo
+WANTLIB-cups += p11-kit tasn1 unistring execinfo Xau Xdmcp
 
 LIB_DEPENDS-guic=	graphics/gdk-pixbuf2
 RUN_DEPENDS-guic=	x11/hicolor-icon-theme
