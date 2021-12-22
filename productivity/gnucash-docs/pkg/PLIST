@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/10/09 05:58:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/12/22 18:48:06 ajacoutot Exp $
 @conflict gnucash-<4.8
 share/doc/gnucash-docs/
 share/doc/gnucash-docs/C/
@@ -1094,6 +1094,7 @@ share/gnome/help/gnucash-help/C/Help_fdl-appendix.xml
 share/gnome/help/gnucash-help/C/Help_legal.xml
 share/gnome/help/gnucash-help/C/Help_tips-appendix.xml
 share/gnome/help/gnucash-help/C/Help_txf-categories.xml
+share/gnome/help/gnucash-help/C/ch_Finance-Quote.xml
 share/gnome/help/gnucash-help/C/figures/
 share/gnome/help/gnucash-help/C/figures/Help_AccountReg_Screen.png
 share/gnome/help/gnucash-help/C/figures/Help_AccountTree_Screen.png
@@ -1161,6 +1162,7 @@ share/gnome/help/gnucash-help/de/Help_legal.xml
 share/gnome/help/gnucash-help/de/Help_para-assist-intro.xml
 share/gnome/help/gnucash-help/de/Help_tips-appendix.xml
 share/gnome/help/gnucash-help/de/Help_txf-categories.xml
+share/gnome/help/gnucash-help/de/ch_Finance-Quote.xml
 share/gnome/help/gnucash-help/de/figures/
 share/gnome/help/gnucash-help/de/figures/AccountTreeCreate.png
 share/gnome/help/gnucash-help/de/figures/AccountTree_Export_CSV.png

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2021/10/11 11:07:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/12/22 18:48:05 ajacoutot Exp $
 
 COMMENT =		user documentation module for GnuCash
 
 GNOME_PROJECT =		gnucash-docs
-GNOME_VERSION =		4.8
+GNOME_VERSION =		4.9
 EXTRACT_SUFX =		.tar.gz
 
 CATEGORIES =		productivity
