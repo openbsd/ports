@@ -1,9 +1,9 @@
-$OpenBSD: patch-misc_config_definitions_json,v 1.18 2021/11/12 18:20:08 sthen Exp $
+$OpenBSD: patch-misc_config_definitions_json,v 1.19 2021/12/22 22:52:56 sthen Exp $
 
 Index: misc/config_definitions.json
 --- misc/config_definitions.json.orig
 +++ misc/config_definitions.json
-@@ -3956,7 +3956,7 @@
+@@ -3955,7 +3955,7 @@
          },
          "nfsen_rrds": {
              "default": [

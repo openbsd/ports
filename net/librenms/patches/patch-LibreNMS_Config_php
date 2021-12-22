@@ -1,4 +1,4 @@
-$OpenBSD: patch-LibreNMS_Config_php,v 1.17 2021/10/19 15:09:29 sthen Exp $
+$OpenBSD: patch-LibreNMS_Config_php,v 1.18 2021/12/22 22:52:56 sthen Exp $
 
 openbsd (and netbsd) whereis don't support -b, neither do they prefix the
 output with the name of the searched command.
@@ -6,7 +6,7 @@ output with the name of the searched command.
 Index: LibreNMS/Config.php
 --- LibreNMS/Config.php.orig
 +++ LibreNMS/Config.php
-@@ -512,8 +512,12 @@ class Config
+@@ -528,8 +528,12 @@ class Config
      public static function locateBinary($binary)
      {
          if (! Str::contains($binary, '/')) {
