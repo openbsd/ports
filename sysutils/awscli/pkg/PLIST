@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.139 2021/11/11 10:17:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.140 2021/12/22 14:23:56 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -4804,12 +4804,16 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/list-sec
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/list-secrets.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/put-resource-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/put-secret-value.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/remove-regions-from-replication.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/replicate-secret-to-regions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/restore-secret.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/rotate-secret.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/stop-replication-to-replica.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/tag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/untag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/update-secret-version-stage.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/update-secret.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/validate-resource-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/securityhub/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/securityhub/accept-administrator-invitation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/securityhub/accept-invitation.rst
