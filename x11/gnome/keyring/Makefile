@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.139 2021/05/09 08:52:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.140 2021/12/22 15:56:30 ajacoutot Exp $
+
+# XXX GNOME keyring ssh-agent segfaults with llvm >=13.0.0
+CFLAGS +=		-O0
 
 # XXX should be a RUN_DEPENDS of x11/gnome/{libgnome-keyring,libsecret} but that
 # would create dependency loops:                                                
@@ -9,6 +12,7 @@ COMMENT=		password agent for the GNOME project
 
 GNOME_PROJECT=		gnome-keyring
 GNOME_VERSION=		40.0
+REVISION=		0
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE=		Yes
