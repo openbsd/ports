@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.8 2019/07/12 20:44:36 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2021/12/22 07:54:17 rsadowski Exp $
 
 COMMENT =		continuous integration server
 
@@ -22,7 +22,7 @@ PERMIT_PACKAGE =	Yes
 EXTRACT_ONLY =		# empty
 
 MODULES =		java
-MODJAVA_VER =		1.8+
+MODJAVA_VER =		11
 MODJAVA_JRE =		yes
 
 RUN_DEPENDS =		java/javaPathHelper
