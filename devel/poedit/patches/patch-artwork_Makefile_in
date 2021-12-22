@@ -1,11 +1,11 @@
-$OpenBSD: patch-artwork_Makefile_in,v 1.1 2021/11/17 22:46:19 op Exp $
+$OpenBSD: patch-artwork_Makefile_in,v 1.2 2021/12/22 16:42:54 op Exp $
 
 don't update the gtk icon cache
 
 Index: artwork/Makefile.in
 --- artwork/Makefile.in.orig
 +++ artwork/Makefile.in
-@@ -729,7 +729,7 @@ uninstall-am: uninstall-dist_appicons128DATA \
+@@ -726,7 +726,7 @@ uninstall-am: uninstall-dist_appicons128DATA \
  
  
  update-icon-cache:
