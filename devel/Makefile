@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2171 2021/12/21 11:11:07 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.2172 2021/12/22 15:33:22 abieber Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -194,6 +194,7 @@
      SUBDIR += gobject-introspection
      SUBDIR += goffice
      SUBDIR += goopy
+     SUBDIR += goreleaser
      SUBDIR += got
      SUBDIR += gpatch
      SUBDIR += gperf
