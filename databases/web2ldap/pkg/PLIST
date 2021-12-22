@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/12/11 14:56:14 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/12/22 17:37:45 landry Exp $
 @newgroup _web2ldap:857
 @newuser _web2ldap:857:_web2ldap:daemon:web2ldap service account:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/web2ldap
@@ -464,6 +464,7 @@ share/examples/web2ldap/templates/ae-dir/inputform_aeUser.html
 share/examples/web2ldap/templates/ae-dir/inputform_aeZone.html
 share/examples/web2ldap/templates/ae-dir/login.html
 share/examples/web2ldap/templates/ae-dir/passwd.html
+share/examples/web2ldap/templates/ae-dir/read_OpenLDAProotDSE.html
 share/examples/web2ldap/templates/ae-dir/read_aeAuthcToken.html
 share/examples/web2ldap/templates/ae-dir/read_aeContact.html
 share/examples/web2ldap/templates/ae-dir/read_aeDept.html
@@ -567,6 +568,7 @@ share/examples/web2ldap/templates/passwd.html
 share/examples/web2ldap/templates/print_organization.html
 share/examples/web2ldap/templates/print_organizationalUnit.html
 share/examples/web2ldap/templates/print_person.html
+share/examples/web2ldap/templates/read_OpenLDAProotDSE.html
 share/examples/web2ldap/templates/read_account.html
 share/examples/web2ldap/templates/read_bankArrangement.html
 share/examples/web2ldap/templates/read_changeLogEntry.html
