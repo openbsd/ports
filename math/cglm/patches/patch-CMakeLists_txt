@@ -1,6 +1,6 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2021/12/10 13:27:02 op Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2021/12/22 17:43:34 op Exp $
 
- - don't hardcode optimization flags
+ - don't hardcode optimization flags and drop -Werror
  - set PACKAGE_VERSION for cglm.pc.in
 
 Index: CMakeLists.txt
@@ -11,7 +11,7 @@ Index: CMakeLists.txt
    endforeach(flag_var)
  else()
 -  add_compile_options(-Wall -Werror -O3)
-+  add_compile_options(-Wall -Werror)
++  add_compile_options(-Wall)
  endif()
  
  if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
