@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.55 2021/10/09 05:58:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.56 2021/12/22 18:48:22 ajacoutot Exp $
 bin/gnc-fq-check
 bin/gnc-fq-dump
 bin/gnc-fq-helper
@@ -58,6 +58,7 @@ include/gnucash/gnc-accounting-period.h
 include/gnucash/gnc-addr-quickfill.h
 include/gnucash/gnc-amount-edit.h
 include/gnucash/gnc-aqbanking-templates.h
+include/gnucash/gnc-autoclear.h
 include/gnucash/gnc-basic-gobject.h
 include/gnucash/gnc-budget.h
 include/gnucash/gnc-cell-renderer-date.h
@@ -1168,11 +1169,11 @@ share/gnucash/icons/hicolor/96x96/
 share/gnucash/icons/hicolor/96x96/apps/
 share/gnucash/icons/hicolor/scalable/
 share/gnucash/icons/hicolor/scalable/apps/
-share/gnucash/migratable-prefs.xml
 share/gnucash/pixmaps/
 share/gnucash/pixmaps/gnucash-icon-48x48.bmp
 share/gnucash/pixmaps/gnucash-icon.ico
 share/gnucash/pixmaps/gnucash_splash.png
+share/gnucash/pref_transformations.xml
 share/gnucash/tip_of_the_day.list
 share/gnucash/ui/
 share/gnucash/ui/gnc-main-window-ui.xml
@@ -1493,6 +1494,8 @@ share/locale/kok/LC_MESSAGES/gnucash.mo
 share/locale/kok@latin/
 share/locale/kok@latin/LC_MESSAGES/
 share/locale/kok@latin/LC_MESSAGES/gnucash.mo
+share/locale/ks/
+share/locale/ks/LC_MESSAGES/
 share/locale/ks/LC_MESSAGES/gnucash.mo
 share/locale/lt/LC_MESSAGES/gnucash.mo
 share/locale/lv/LC_MESSAGES/gnucash.mo
@@ -1524,6 +1527,7 @@ share/locale/ur/LC_MESSAGES/gnucash.mo
 share/locale/vi/LC_MESSAGES/gnucash.mo
 share/locale/zh_CN/LC_MESSAGES/gnucash.mo
 share/locale/zh_TW/LC_MESSAGES/gnucash.mo
+share/metainfo/
 share/metainfo/gnucash.appdata.xml
 @tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor
