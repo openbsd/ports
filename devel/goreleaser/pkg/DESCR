@@ -1,0 +1,3 @@
+GoReleaser builds Go binaries for several platforms, creates a GitHub release
+and then pushes a Homebrew formula to a tap repository. All that wrapped in
+your favorite CI.
