@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2021/02/27 08:25:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2021/12/22 14:18:31 ajacoutot Exp $
 @bin bin/fix-qdf
 @bin bin/qpdf
 @bin bin/zlib-flate
@@ -64,6 +64,4 @@ lib/pkgconfig/libqpdf.pc
 @man man/man1/qpdf.1
 @man man/man1/zlib-flate.1
 share/doc/qpdf/
-share/doc/qpdf/qpdf-manual.html
-share/doc/qpdf/qpdf-manual.pdf
-share/doc/qpdf/stylesheet.css
+share/doc/qpdf/README-doc.txt

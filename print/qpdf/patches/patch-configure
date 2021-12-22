@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.9 2021/02/27 08:25:06 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.10 2021/12/22 14:18:30 ajacoutot Exp $
 
 Don't pick up libatomic from ports gcc if it happens to be installed.
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -17125,42 +17125,6 @@ ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_e
+@@ -17113,42 +17113,6 @@ ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_e
  ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
  ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  
