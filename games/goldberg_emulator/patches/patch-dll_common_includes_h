@@ -1,4 +1,4 @@
-$OpenBSD: patch-dll_common_includes_h,v 1.1.1.1 2021/08/22 02:01:47 thfr Exp $
+$OpenBSD: patch-dll_common_includes_h,v 1.2 2021/12/23 02:19:28 thfr Exp $
 
 add OpenBSD includes
 
@@ -27,7 +27,7 @@ Index: dll/common_includes.h
  
      #include <fcntl.h>
      #include <unistd.h>
-@@ -190,4 +194,4 @@ inline std::wstring utf8_decode(const std::string &str
+@@ -198,4 +202,4 @@ inline std::wstring utf8_decode(const std::string &str
  
  #define LOBBY_CONNECT_APPID ((uint32)-2)
  

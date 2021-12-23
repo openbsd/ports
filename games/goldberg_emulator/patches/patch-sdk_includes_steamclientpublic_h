@@ -1,11 +1,11 @@
-$OpenBSD: patch-sdk_includes_steamclientpublic_h,v 1.1 2021/08/23 14:24:41 thfr Exp $
+$OpenBSD: patch-sdk_includes_steamclientpublic_h,v 1.2 2021/12/23 02:19:28 thfr Exp $
 
 fix error on 32bit arches with size of ValvePackingSentinel_t
 
 Index: sdk_includes/steamclientpublic.h
 --- sdk_includes/steamclientpublic.h.orig
 +++ sdk_includes/steamclientpublic.h
-@@ -1478,7 +1478,7 @@ enum ESteamIPv6ConnectivityState
+@@ -1481,7 +1481,7 @@ enum ESteamIPv6ConnectivityState
  // Define compile time assert macros to let us validate the structure sizes.
  #define VALVE_COMPILE_TIME_ASSERT( pred ) typedef char compile_time_assert_type[(pred) ? 1 : -1];
  
