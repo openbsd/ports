@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.568 2021/12/19 00:40:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.569 2021/12/23 09:02:56 kn Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -267,6 +267,7 @@
      SUBDIR += py2-cairo
      SUBDIR += pycha,python3
      SUBDIR += qiv
+     SUBDIR += qr-code-generator
      SUBDIR += quesoglc
      SUBDIR += quirc
      SUBDIR += radeontop
