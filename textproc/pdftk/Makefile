@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2021/06/17 11:27:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2021/12/23 09:08:17 sthen Exp $
 
 COMMENT=	pdf swiss army knife
 
-V=		3.2.3
+V=		3.3.2
 # https://www.bouncycastle.org/latest_releases.html
-BC=		169
+BC=		170
 # https://commons.apache.org/proper/commons-lang/
 CL3=		3.12.0
 DISTNAME=	pdftk-v$V
