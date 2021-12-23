@@ -1,10 +1,21 @@
-$OpenBSD: patch-native_gameserver_cpp,v 1.1.1.1 2021/11/27 18:35:30 thfr Exp $
+$OpenBSD: patch-native_gameserver_cpp,v 1.2 2021/12/23 02:28:30 thfr Exp $
 
+stub EnableHeartbeats; changing function names and anyway not
+	implemented in goldberg_emulator
 GetPublicIP returns a struct; return its IPv4 member as int cast
 
 Index: native/gameserver.cpp
 --- native/gameserver.cpp.orig
 +++ native/gameserver.cpp
+@@ -101,7 +101,7 @@ void HL_NAME(gameserver_logon_anonymous)() {
+ }
+ 
+ void HL_NAME(gameserver_enable_heartbeats)( bool b ) {
+-	SteamGameServer()->EnableHeartbeats(b);
++	/* empty; not implemented in goldberg_emulator anyway */
+ }
+ 
+ void HL_NAME(gameserver_config)( char *modDir, char *product, char *desc ) {
 @@ -124,7 +124,7 @@ vuid HL_NAME(gameserver_get_steam_id)() {
  }
  
