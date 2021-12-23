@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/12/23 09:01:11 kn Exp $
+include/qrcodegen.h
+include/qrcodegen.hpp
+@lib lib/libqrcodegen.so.${LIBqrcodegen_VERSION}
+@lib lib/libqrcodegencpp.so.${LIBqrcodegencpp_VERSION}
