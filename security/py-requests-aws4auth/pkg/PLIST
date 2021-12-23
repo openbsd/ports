@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/10/24 09:28:50 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/12/23 12:05:41 sthen Exp $
 @pkgpath security/py-requests-aws4auth
-@comment lib/python${MODPY_VERSION}/site-packages/HISTORY.rst
+@comment lib/python${MODPY_VERSION}/site-packages/HISTORY.md
 @comment lib/python${MODPY_VERSION}/site-packages/LICENSE
-@comment lib/python${MODPY_VERSION}/site-packages/NOTICE
-@comment lib/python${MODPY_VERSION}/site-packages/README.rst
+@comment lib/python${MODPY_VERSION}/site-packages/README.md
 lib/python${MODPY_VERSION}/site-packages/requests_aws4auth/
 lib/python${MODPY_VERSION}/site-packages/requests_aws4auth-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/requests_aws4auth-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -17,14 +16,6 @@ lib/python${MODPY_VERSION}/site-packages/requests_aws4auth/${MODPY_PYCACHE}__ini
 lib/python${MODPY_VERSION}/site-packages/requests_aws4auth/${MODPY_PYCACHE}aws4auth.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests_aws4auth/${MODPY_PYCACHE}aws4signingkey.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests_aws4auth/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/requests_aws4auth/${MODPY_PYCACHE}service_parameters.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/requests_aws4auth/${MODPY_PYCACHE}six.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests_aws4auth/aws4auth.py
 lib/python${MODPY_VERSION}/site-packages/requests_aws4auth/aws4signingkey.py
 lib/python${MODPY_VERSION}/site-packages/requests_aws4auth/exceptions.py
-lib/python${MODPY_VERSION}/site-packages/requests_aws4auth/service_parameters.py
-lib/python${MODPY_VERSION}/site-packages/requests_aws4auth/six.py
-lib/python${MODPY_VERSION}/site-packages/requests_aws4auth/test/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/requests_aws4auth/test/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/requests_aws4auth/test/${MODPY_PYCACHE}requests_aws4auth_test.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/requests_aws4auth/test/requests_aws4auth_test.py
