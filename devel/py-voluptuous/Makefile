@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/02 00:01:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/12/23 11:14:27 sthen Exp $
 
 COMMENT =		data validation library
 
-MODPY_EGG_VERSION =	0.12.0
+MODPY_EGG_VERSION =	0.12.2
 DISTNAME =		voluptuous-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
 
 CATEGORIES =		devel
 
@@ -16,13 +15,9 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-
-TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR}
+MODPY_PYTEST_ARGS =	voluptuous/tests/tests.py
 
 FLAVORS =		python3
-FLAVOR =	python3
-
-do-test:
-	cd ${WRKSRC} && nosetests${MODPY_BIN_SUFFIX}
+FLAVOR =		python3
 
 .include <bsd.port.mk>
