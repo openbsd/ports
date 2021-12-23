@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2020/04/14 04:46:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2021/12/23 13:10:08 sdk Exp $
 
 COMMENT =	terminal-based tetris clone in vein of nintendo tetris
 CATEGORIES =	games
 
-GH_TAGNAME =	v0.58.0
+GH_TAGNAME =	v0.59.1
 GH_ACCOUNT =	vicgeralds
 GH_PROJECT =	vitetris
 
