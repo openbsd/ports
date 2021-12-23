@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2021/12/07 16:18:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.117 2021/12/23 09:36:49 ajacoutot Exp $
 
 # XXX prctl(2) or procctl(2)
 # error: #error "Please submit a patch to support parent-death signal on your OS"
@@ -7,6 +7,7 @@ COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		41.3
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -27,11 +28,6 @@ MODULES=		devel/dconf \
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
 			gobject-introspection yelp
-
-# needs support for variadic macros (__VA_OPT__)
-# https://bugs.llvm.org/show_bug.cgi?id=40665
-COMPILER=		ports-gcc
-COMPILER_LANGS=		c
 
 BUILD_DEPENDS=		devel/ectags \
 			textproc/py-sphinx${MODPY_FLAVOR}
