@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2021/11/02 00:00:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2021/12/23 12:36:26 ajacoutot Exp $
 
 COMMENT=	common interface to speech synthesis
 
-V=		0.10.2
+V=		0.11.0
 DISTNAME=	speech-dispatcher-${V}
-REVISION=	1
 
-SHARED_LIBS +=  speechd              2.2      # .8.0
+SHARED_LIBS +=  speechd              2.3      # .8.0
 
 CATEGORIES=	audio
 
@@ -57,6 +56,12 @@ CONFIGURE_ARGS=	--without-pulse \
 		--without-voxin
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/speech-dispatcher
+
+# XXX speech-dispatcher.texi:3023:
+# Next field of node `The Skeleton of a Bare Output Module' not pointed to
+# (perhaps incorrect sectioning?).
+BUILD_DEPENDS +=	print/texinfo
+CONFIGURE_ENV +=	MAKEINFO="${LOCALBASE}/bin/gmakeinfo"
 
 pre-configure:
 	sed -i -e 's,/usr/share,${LOCALBASE}/share,g;' \

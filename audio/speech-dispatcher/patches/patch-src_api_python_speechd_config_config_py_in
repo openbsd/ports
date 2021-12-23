@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_api_python_speechd_config_config_py_in,v 1.4 2020/05/16 12:00:07 ajacoutot Exp $
+$OpenBSD: patch-src_api_python_speechd_config_config_py_in,v 1.5 2021/12/23 12:36:26 ajacoutot Exp $
 
 Index: src/api/python/speechd_config/config.py.in
 --- src/api/python/speechd_config/config.py.in.orig
@@ -44,7 +44,7 @@ Index: src/api/python/speechd_config/config.py.in
              ["pulse", "libao", "alsa", "oss", "pulse,alsa"])
  
          default_speech_rate = question(
-@@ -801,6 +812,9 @@ def main():
+@@ -805,6 +816,9 @@ def main():
  
      elif options.test_pulse:
          test.audio_try_play(type='pulse')

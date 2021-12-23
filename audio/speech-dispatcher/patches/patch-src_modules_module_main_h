@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_modules_module_main_h,v 1.1 2021/12/23 12:36:26 ajacoutot Exp $
+
+./module_main.h:137:8: error: unknown type name 'pthread_mutex_t'
+
+Index: src/modules/module_main.h
+--- src/modules/module_main.h.orig
++++ src/modules/module_main.h
+@@ -29,6 +29,7 @@
+ #ifndef _SPEECHD_MODULE_MAIN_H
+ #define _SPEECHD_MODULE_MAIN_H
+ 
++#include <pthread.h>
+ #include <speechd_types.h>
+ #include <spd_audio.h>
+ 
