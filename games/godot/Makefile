@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.30 2021/12/11 11:44:44 op Exp $
+# $OpenBSD: Makefile,v 1.31 2021/12/23 02:25:33 thfr Exp $
 
 BROKEN-powerpc =	fails at runtime, the UI is totally blank
 
 COMMENT =	2D and 3D game engine
 
-V =		3.4
-GODOTSTEAM_V =	g333-s151-g397
+V =		3.4.2
+GODOTSTEAM_V =	g34-s152-gs311
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot-${V}
-REVISION =	0
 CATEGORIES =	games
 HOMEPAGE =	https://godotengine.org/
 MAINTAINER =	Omar Polo <op@omarpolo.com>
@@ -38,7 +37,7 @@ MODULES =		devel/scons
 # sharedlib_ext in modules/mono/config.py to '.so.1.0'
 MODSCONS_FLAGS =	CC="${CC}" \
 			CXX="${CXX}" \
-			CFLAGS="${CFLAGS} -I${LOCALBASE}/include/goldberg_emulator/sdk_includes" \
+			CFLAGS="${CFLAGS}" \
 			CXXFLAGS="${CXXFLAGS} -Wno-deprecated-register" \
 			LINKFLAGS="${LDFLAGS} -lintl -lmpcdec" \
 			builtin_enet=no \
@@ -94,6 +93,8 @@ LDFLAGS +=     -latomic
 WANTLIB +=     atomic
 .endif
 
+CFLAGS +=	-I${LOCALBASE}/include/goldberg_emulator
+
 post-extract:
 	cp -R ${FILESDIR}/sndio ${WRKDIST}/drivers
 
@@ -101,10 +102,8 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/drivers/unix/os_unix.cpp
 	sed -E -i 's/ISteamHTMLSurface:://g' \
 		${WRKDIR}/GodotSteam-${GODOTSTEAM_V}/godotsteam/godotsteam.cpp
-	sed -E -i 's/steam\/steam_api\.h/steam_api.h/g' \
-		${WRKDIR}/GodotSteam-${GODOTSTEAM_V}/godotsteam/godotsteam.{h,cpp}
-	sed -E -i 's,CPPPATH=.*,CPPPATH=["${LOCALBASE}/include/goldberg_emulator/sdk_includes"]),g' \
-		${WRKDIR}/GodotSteam-${GODOTSTEAM_V}/godotsteam/SCsub
+	sed -E -i 's/Connection_DEPRECATED/Connection/g' \
+		${WRKDIR}/GodotSteam-${GODOTSTEAM_V}/godotsteam/godotsteam.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/godot* \
