@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2021/11/13 19:13:20 tb Exp $
+# $OpenBSD: Makefile,v 1.20 2021/12/23 18:40:58 tb Exp $
 
 COMMENT=	SSLv3/TLS network protocol analyzer
 
@@ -6,6 +6,7 @@ GH_ACCOUNT=	adulau
 GH_PROJECT=	ssldump
 GH_TAGNAME=	v1.4
 CATEGORIES=	net
+REVISION=	0
 
 HOMEPAGE=	https://github.com/adulau/ssldump
 

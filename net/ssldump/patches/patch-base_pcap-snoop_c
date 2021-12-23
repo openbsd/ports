@@ -1,4 +1,8 @@
-$OpenBSD: patch-base_pcap-snoop_c,v 1.2 2021/11/13 19:13:20 tb Exp $
+$OpenBSD: patch-base_pcap-snoop_c,v 1.3 2021/12/23 18:40:58 tb Exp $
+
+Remove pointless cast to fix build with base-gcc:
+
+base/pcap-snoop.c:100: error: initializer element is not constant
 
 Index: base/pcap-snoop.c
 --- base/pcap-snoop.c.orig
@@ -13,6 +17,15 @@ Index: base/pcap-snoop.c
  #ifndef _WIN32
  #include <sys/param.h>
  #endif
+@@ -95,7 +97,7 @@ int conn_freq = 100; // Number of packets after which 
+                      // cleaning is performed
+ int conn_ttl = 100;  // TTL of inactive connections in connection pool
+ struct timeval last_packet_seen_time = // Timestamp of the last packet of the
+-    (struct timeval) {0};              // last block of conn_freq packets seen
++    {0};                               // last block of conn_freq packets seen
+ 
+ logger_mod *logger=NULL;
+ 
 @@ -430,7 +432,7 @@ int main(argc,argv)
      
      if(!file){
