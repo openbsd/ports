@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.49 2021/11/19 08:00:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2021/12/23 08:51:36 ajacoutot Exp $
 
 COMMENT=		GLib library wrapping libgit2
 
-V=			0.28.0.1
+V=			1.0.0.1
 DISTNAME=		libgit2-glib-$V
-REVISION =		5
 
-SHARED_LIBS +=	git2-glib-1.0        5.1      # 0.0
+SHARED_LIBS += git2-glib-1.0             5.2 # 0.0.0
 
 SUBDIR=			sources/libgit2-glib/${V:R:R}/
 MASTER_SITES=		${MASTER_SITE_GNOME:=${SUBDIR}}
@@ -27,6 +26,6 @@ LIB_DEPENDS=		devel/libgit2/libgit2>=1.1.0
 
 USE_GMAKE=		Yes
 
-WANTLIB += gio-2.0 git2 glib-2.0 gobject-2.0 intl
+WANTLIB += gio-2.0 git2 glib-2.0 gobject-2.0
 
 .include <bsd.port.mk>
