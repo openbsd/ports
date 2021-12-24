@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2021/12/24 04:01:33 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.20 2021/12/24 04:05:09 afresh1 Exp $
 
 COMMENT =	comma-separated values manipulator routines
 
@@ -7,7 +7,7 @@ PKG_ARCH =	*
 DISTNAME =	Text-CSV-2.01
 CATEGORIES =	textproc
 
-MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
+MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes
