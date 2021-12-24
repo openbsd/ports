@@ -1,9 +1,11 @@
-$OpenBSD: patch-qemu-options_hx,v 1.9 2021/09/03 23:04:49 sthen Exp $
+$OpenBSD: patch-qemu-options_hx,v 1.10 2021/12/24 03:50:41 daniel Exp $
+
+sndio module
 
 Index: qemu-options.hx
 --- qemu-options.hx.orig
 +++ qemu-options.hx
-@@ -643,6 +643,9 @@ DEF("audiodev", HAS_ARG, QEMU_OPTION_audiodev,
+@@ -657,6 +657,9 @@ DEF("audiodev", HAS_ARG, QEMU_OPTION_audiodev,
      "-audiodev sdl,id=id[,prop[=value][,...]]\n"
      "                in|out.buffer-count= number of buffers\n"
  #endif
@@ -13,15 +15,23 @@ Index: qemu-options.hx
  #ifdef CONFIG_SPICE
      "-audiodev spice,id=id[,prop[=value][,...]]\n"
  #endif
-@@ -805,6 +808,11 @@ SRST
+@@ -819,6 +822,19 @@ SRST
  
      ``in|out.buffer-count=count``
          Sets the count of the buffers.
 +
 +``-audiodev sndio,id=id[,prop[=value][,...]]``
 +    Creates a backend using SNDIO. This backend is available on
-+    OpenBSD and most other Unix-like systems. This backend has no
-+    backend specific properties.
++    OpenBSD and most other Unix-like systems.
++
++    Sndio specific options are:
++
++    ``in|out.dev=device``
++        Specify the sndio device to use for input and/or output. Default
++        is ``default``.
++
++    ``in|out.latency=usecs``
++        Sets the desired period length in microseconds.
  
  ``-audiodev spice,id=id[,prop[=value][,...]]``
      Creates a backend that sends audio through SPICE. This backend

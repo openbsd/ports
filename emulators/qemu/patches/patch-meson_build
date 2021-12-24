@@ -1,34 +1,41 @@
-$OpenBSD: patch-meson_build,v 1.2 2021/09/03 23:04:49 sthen Exp $
+$OpenBSD: patch-meson_build,v 1.3 2021/12/24 03:50:41 daniel Exp $
 
-- Fix curses build on OpenBSD
 - sndio module
 - Remove hardcoding of optimization
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -441,6 +441,11 @@ jack = not_found
- if 'CONFIG_LIBJACK' in config_host
-   jack = declare_dependency(link_args: config_host['JACK_LIBS'].split())
+@@ -554,6 +554,11 @@ if not get_option('jack').auto() or have_system
+   jack = dependency('jack', required: get_option('jack'),
+                     method: 'pkg-config', kwargs: static_kwargs)
  endif
 +sndio = not_found
-+if 'CONFIG_SNDIO' in config_host
-+  sndio = declare_dependency(compile_args: config_host['SNDIO_CFLAGS'].split(),
-+                             link_args: config_host['SNDIO_LIBS'].split())
++if not get_option('sndio').auto() or have_system
++  sndio = dependency('sndio', required: get_option('sndio'),
++                    method: 'pkg-config', kwargs: static_kwargs)
 +endif
- spice = not_found
- spice_headers = not_found
+ 
  spice_protocol = not_found
-@@ -596,7 +601,7 @@ if have_system and not get_option('curses').disabled()
-     endif
-   endforeach
-   msg = get_option('curses').enabled() ? 'curses library not found' : ''
--  curses_compile_args = ['-DNCURSES_WIDECHAR']
-+  curses_compile_args = ['-D_XOPEN_SOURCE_EXTENDED -DNCURSES_WIDECHAR']
-   if curses.found()
-     if cc.links(curses_test, args: curses_compile_args, dependencies: [curses])
-       curses = declare_dependency(compile_args: curses_compile_args, dependencies: [curses])
-@@ -2907,11 +2912,9 @@ if targetos == 'windows'
+ if not get_option('spice_protocol').auto() or have_system
+@@ -1311,6 +1316,7 @@ if have_system
+     'oss': oss.found(),
+     'pa': pulse.found(),
+     'sdl': sdl.found(),
++    'sndio': sndio.found(),
+   }
+   foreach k, v: audio_drivers_available
+     config_host_data.set('CONFIG_AUDIO_' + k.to_upper(), v)
+@@ -1318,7 +1324,7 @@ if have_system
+ 
+   # Default to native drivers first, OSS second, SDL third
+   audio_drivers_priority = \
+-    [ 'pa', 'coreaudio', 'dsound', 'oss' ] + \
++    [ 'pa', 'coreaudio', 'dsound', 'sndio', 'oss' ] + \
+     (targetos == 'linux' ? [] : [ 'sdl' ])
+   audio_drivers_default = []
+   foreach k: audio_drivers_priority
+@@ -3234,11 +3240,9 @@ if targetos == 'windows'
    endif
  endif
  summary_info += {'CFLAGS':            ' '.join(get_option('c_args')
@@ -40,3 +47,11 @@ Index: meson.build
                                                 + (get_option('debug') ? ['-g'] : []))}
  endif
  link_args = get_option(link_language + '_link_args')
+@@ -3385,6 +3389,7 @@ if vnc.found()
+ endif
+ if targetos not in ['darwin', 'haiku', 'windows']
+   summary_info += {'OSS support':     oss}
++  summary_info += {'sndio support':   sndio}
+ elif targetos == 'darwin'
+   summary_info += {'CoreAudio support': coreaudio}
+ elif targetos == 'windows'

@@ -1,4 +1,4 @@
-$OpenBSD: patch-audio_sndioaudio_c,v 1.4 2020/03/30 20:10:24 ajacoutot Exp $
+$OpenBSD: patch-audio_sndioaudio_c,v 1.5 2021/12/24 03:50:41 daniel Exp $
 
 sndio module
 
@@ -7,19 +7,9 @@ Index: audio/sndioaudio.c
 +++ audio/sndioaudio.c
 @@ -0,0 +1,555 @@
 +/*
++ * SPDX-License-Identifier: ISC
++ *
 + * Copyright (c) 2019 Alexandre Ratchov <alex@caoua.org>
-+ *
-+ * Permission to use, copy, modify, and distribute this software for any
-+ * purpose with or without fee is hereby granted, provided that the above
-+ * copyright notice and this permission notice appear in all copies.
-+ *
-+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
-+ * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
-+ * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
-+ * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
-+ * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
-+ * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
-+ * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 + */
 +
 +/*
@@ -43,7 +33,7 @@ Index: audio/sndioaudio.c
 +#define AUDIO_CAP "sndio"
 +#include "audio_int.h"
 +
-+/* default latency in ms if no option is set */
++/* default latency in microseconds if no option is set */
 +#define SNDIO_LATENCY_US   50000
 +
 +typedef struct SndioVoice {
@@ -64,6 +54,7 @@ Index: audio/sndioaudio.c
 +    size_t qemu_pos;
 +    unsigned int mode;
 +    unsigned int nfds;
++    bool enabled;
 +} SndioVoice;
 +
 +typedef struct SndioConf {
@@ -85,7 +76,7 @@ Index: audio/sndioaudio.c
 +
 +    for (i = 0; i < self->nfds; i++) {
 +        pfd = &self->pfds[i];
-+        qemu_set_fd_handler (pfd->fd, NULL, NULL, NULL);
++        qemu_set_fd_handler(pfd->fd, NULL, NULL, NULL);
 +    }
 +
 +    self->nfds = 0;
@@ -175,12 +166,12 @@ Index: audio/sndioaudio.c
 +    for (i = 0; i < self->nfds; i++) {
 +        pfd = &self->pfds[i];
 +        if (pfd->fd < 0) {
-+                continue;
++            continue;
 +        }
 +        qemu_set_fd_handler(pfd->fd,
-+                (pfd->events & POLLIN) ? sndio_poll_in : NULL,
-+                (pfd->events & POLLOUT) ? sndio_poll_out : NULL,
-+                &self->pindexes[i]);
++            (pfd->events & POLLIN) ? sndio_poll_in : NULL,
++            (pfd->events & POLLOUT) ? sndio_poll_out : NULL,
++            &self->pindexes[i]);
 +        pfd->revents = 0;
 +    }
 +}
@@ -227,7 +218,12 @@ Index: audio/sndioaudio.c
 +        }
 +    }
 +
-+    sndio_poll_wait(self);
++    /*
++     * audio_run() may have changed state
++     */
++    if (self->enabled) {
++        sndio_poll_wait(self);
++    }
 +}
 +
 +/*
@@ -238,7 +234,6 @@ Index: audio/sndioaudio.c
 +{
 +    SndioVoice *self = (SndioVoice *) hw;
 +
-+    /* size is not set by the caller */
 +    *size = self->buf_size - self->qemu_pos;
 +    return self->buf + self->qemu_pos;
 +}
@@ -375,6 +370,7 @@ Index: audio/sndioaudio.c
 +    case AUDIO_FORMAT_U32:
 +        req.bits = 32;
 +        req.sig = 0;
++        break;
 +    default:
 +        dolog("unknown audio sample format\n");
 +        return -1;
@@ -386,9 +382,9 @@ Index: audio/sndioaudio.c
 +
 +    req.rate = as->freq;
 +    if (mode == SIO_PLAY) {
-+            req.pchan = as->nchannels;
++        req.pchan = as->nchannels;
 +    } else {
-+            req.rchan = as->nchannels;
++        req.rchan = as->nchannels;
 +    }
 +
 +    /* set on-device buffer size */
@@ -458,8 +454,10 @@ Index: audio/sndioaudio.c
 +{
 +    if (enable) {
 +        sio_start(self->hdl);
++        self->enabled = true;
 +        sndio_poll_wait(self);
 +    } else {
++        self->enabled = false;
 +        sndio_poll_clear(self);
 +        sio_stop(self->hdl);
 +    }
@@ -469,14 +467,14 @@ Index: audio/sndioaudio.c
 +{
 +    SndioVoice *self = (SndioVoice *) hw;
 +
-+    return sndio_enable(self, enable);
++    sndio_enable(self, enable);
 +}
 +
 +static void sndio_enable_in(HWVoiceIn *hw, bool enable)
 +{
 +    SndioVoice *self = (SndioVoice *) hw;
 +
-+    return sndio_enable(self, enable);
++    sndio_enable(self, enable);
 +}
 +
 +static int sndio_init_out(HWVoiceOut *hw, struct audsettings *as, void *opaque)
@@ -509,14 +507,14 @@ Index: audio/sndioaudio.c
 +{
 +    SndioVoice *self = (SndioVoice *) hw;
 +
-+    return sndio_fini(self);
++    sndio_fini(self);
 +}
 +
 +static void sndio_fini_in(HWVoiceIn *hw)
 +{
 +    SndioVoice *self = (SndioVoice *) hw;
 +
-+    return sndio_fini(self);
++    sndio_fini(self);
 +}
 +
 +static void *sndio_audio_init(Audiodev *dev)
@@ -533,10 +531,12 @@ Index: audio/sndioaudio.c
 +    .init_out       = sndio_init_out,
 +    .fini_out       = sndio_fini_out,
 +    .enable_out     = sndio_enable_out,
++    .write          = audio_generic_write,
 +    .get_buffer_out = sndio_get_buffer_out,
 +    .put_buffer_out = sndio_put_buffer_out,
 +    .init_in        = sndio_init_in,
 +    .fini_in        = sndio_fini_in,
++    .read           = audio_generic_read,
 +    .enable_in      = sndio_enable_in,
 +    .get_buffer_in  = sndio_get_buffer_in,
 +    .put_buffer_in  = sndio_put_buffer_in,
@@ -544,7 +544,7 @@ Index: audio/sndioaudio.c
 +
 +static struct audio_driver sndio_audio_driver = {
 +    .name           = "sndio",
-+    .descr          = "https://man.openbsd.org/sndio",
++    .descr          = "sndio https://sndio.org",
 +    .init           = sndio_audio_init,
 +    .fini           = sndio_audio_fini,
 +    .pcm_ops        = &sndio_pcm_ops,

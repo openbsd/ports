@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.217 2021/11/22 15:00:42 espie Exp $
+# $OpenBSD: Makefile,v 1.218 2021/12/24 03:50:41 daniel Exp $
 
 ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc powerpc64 riscv64 sparc64
 DPB_PROPERTIES=	parallel
@@ -6,9 +6,8 @@ DPB_PROPERTIES=	parallel
 COMMENT-main=	multi system emulator
 COMMENT-ga=	QEMU guest agent
 
-VERSION=	6.1.0
+VERSION=	6.2.0
 DISTNAME=	qemu-${VERSION}
-REVISION-main=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 EXTRACT_SUFX=	.tar.xz
@@ -86,9 +85,10 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--cc="${CC}" \
 		--cxx="${CXX}" \
 		--host-cc="${CC}" \
-		--disable-bsd-user \
 		--enable-capstone=system \
 		--disable-auth-pam \
+		--disable-bsd-user \
+		--disable-jack \
 		--disable-sdl-image \
 		--disable-smartcard \
 		--disable-snappy \

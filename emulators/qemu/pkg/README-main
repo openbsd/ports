@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.1 2021/02/28 18:38:41 landry Exp $
+$OpenBSD: README-main,v 1.2 2021/12/24 03:50:41 daniel Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -8,13 +8,13 @@ $OpenBSD: README-main,v 1.1 2021/02/28 18:38:41 landry Exp $
 
 1. Get a bootable CDROM image:
 
-    $ ftp ftp://ftp.openbsd.org/pub/OpenBSD/snapshots/i386/cd52.iso
+    $ ftp https://cdn.openbsd.org/pub/OpenBSD/snapshots/i386/cd70.iso
 
    or to use a 64-bit client OS or SPARC, respectively:
 
-    $ ftp ftp://ftp.openbsd.org/pub/OpenBSD/snapshots/amd64/cd52.iso
+    $ ftp https://cdn.openbsd.org/pub/OpenBSD/snapshots/amd64/cd70.iso
 
-    $ ftp ftp://ftp.openbsd.org/pub/OpenBSD/snapshots/sparc/cd52.iso
+    $ ftp https://cdn.openbsd.org/pub/OpenBSD/snapshots/sparc/cd70.iso
 
 2. Create a virtual disk image:
 
@@ -23,15 +23,15 @@ $OpenBSD: README-main,v 1.1 2021/02/28 18:38:41 landry Exp $
 3. Install the OS:
 
     $ qemu-system-i386 -m 32 -monitor stdio -no-fd-bootchk \
-	-hda virtual.img -cdrom cd52.iso -boot d
+	-hda virtual.img -cdrom cd70.iso -boot d
 
    or:
 
     $ qemu-system-x86_64 -m 32 -monitor stdio -no-fd-bootchk \
-	-hda virtual.img -cdrom cd52.iso -boot d
+	-hda virtual.img -cdrom cd70.iso -boot d
 
     $ qemu-system-sparc -m 32 -monitor stdio \
-	-hda virtual.img -cdrom cd52.iso -boot d
+	-hda virtual.img -cdrom cd70.iso -boot d
 
    NOTE: start this inside an xterm or equivalent.
    NOTE: be sure to choose serial console during install.

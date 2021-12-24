@@ -1,4 +1,6 @@
-$OpenBSD: patch-qapi_audio_json,v 1.5 2021/05/02 08:15:19 landry Exp $
+$OpenBSD: patch-qapi_audio_json,v 1.6 2021/12/24 03:50:41 daniel Exp $
+
+sndio module
 
 Index: qapi/audio.json
 --- qapi/audio.json.orig
@@ -19,7 +21,7 @@ Index: qapi/audio.json
 +#
 +# @latency: play buffer size (in microseconds)
 +#
-+# Since: 5.0
++# Since: 7.0
 +##
 +{ 'struct': 'AudiodevSndioOptions',
 +  'data': {

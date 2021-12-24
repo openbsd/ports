@@ -1,47 +1,9 @@
-$OpenBSD: patch-configure,v 1.68 2021/09/03 23:04:49 sthen Exp $
-
-sndio module
+$OpenBSD: patch-configure,v 1.69 2021/12/24 03:50:41 daniel Exp $
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -743,8 +743,8 @@ NetBSD)
- OpenBSD)
-   bsd="yes"
-   make="${MAKE-gmake}"
--  audio_drv_list="try-sdl"
--  audio_possible_drivers="sdl"
-+  audio_drv_list="sndio"
-+  audio_possible_drivers="sndio"
- ;;
- Darwin)
-   bsd="yes"
-@@ -3066,6 +3066,24 @@ for drv in $audio_drv_list; do
-     fi
-     ;;
- 
-+    sndio | try-sndio)
-+    if $pkg_config sndio --exists; then
-+        sndio=yes
-+        sndio_libs=$($pkg_config sndio --libs)
-+        sndio_cflags=$($pkg_config sndio --cflags)
-+        if test "$drv" = "try-sndio"; then
-+            audio_drv_list=$(echo "$audio_drv_list" | sed -e 's/try-sndio/sndio/')
-+        fi
-+    else
-+        if test "$drv" = "try-sndio"; then
-+            audio_drv_list=$(echo "$audio_drv_list" | sed -e 's/try-sndio//')
-+        else
-+            error_exit "$drv check failed" \
-+                "Make sure to have the $drv libs and headers installed."
-+        fi
-+    fi
-+    ;;
-+
-     coreaudio | try-coreaudio)
-     if test "$coreaudio" = "no"; then
-       if test "$drv" = "try-coreaudio"; then
-@@ -4299,7 +4317,6 @@ write_c_skeleton
+@@ -3259,7 +3259,6 @@ write_c_skeleton
  if test "$gcov" = "yes" ; then
    :
  elif test "$fortify_source" = "yes" ; then
@@ -49,15 +11,3 @@ Index: configure
    debug=no
  fi
  
-@@ -4565,6 +4582,11 @@ echo "PULSE_CFLAGS=$pulse_cflags" >> $config_host_mak
- echo "COREAUDIO_LIBS=$coreaudio_libs" >> $config_host_mak
- echo "DSOUND_LIBS=$dsound_libs" >> $config_host_mak
- echo "OSS_LIBS=$oss_libs" >> $config_host_mak
-+if test "$sndio" = "yes" ; then
-+    echo "CONFIG_SNDIO=y" >> $config_host_mak
-+fi
-+echo "SNDIO_LIBS=$sndio_libs" >> $config_host_mak
-+echo "SNDIO_CFLAGS=$sndio_cflags" >> $config_host_mak
- if test "$libjack" = "yes" ; then
-     echo "CONFIG_LIBJACK=y" >> $config_host_mak
- fi

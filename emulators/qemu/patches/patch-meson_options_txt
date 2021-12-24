@@ -1,0 +1,25 @@
+$OpenBSD: patch-meson_options_txt,v 1.1 2021/12/24 03:50:41 daniel Exp $
+
+sndio module
+
+Index: meson_options.txt
+--- meson_options.txt.orig
++++ meson_options.txt
+@@ -13,7 +13,7 @@ option('sphinx_build', type : 'string', value : '',
+ option('default_devices', type : 'boolean', value : true,
+        description: 'Include a default selection of devices in emulators')
+ option('audio_drv_list', type: 'array', value: ['default'],
+-       choices: ['alsa', 'coreaudio', 'default', 'dsound', 'jack', 'oss', 'pa', 'sdl'],
++       choices: ['alsa', 'coreaudio', 'default', 'dsound', 'jack', 'oss', 'pa', 'sdl', 'sndio'],
+        description: 'Set audio driver list')
+ option('fuzzing_engine', type : 'string', value : '',
+        description: 'fuzzing engine library for OSS-Fuzz')
+@@ -184,6 +184,8 @@ option('oss', type: 'feature', value: 'auto',
+        description: 'OSS sound support')
+ option('pa', type: 'feature', value: 'auto',
+        description: 'PulseAudio sound support')
++option('sndio', type: 'feature', value: 'auto',
++       description: 'sndio sound support')
+ 
+ option('vhost_user_blk_server', type: 'feature', value: 'auto',
+        description: 'build vhost-user-blk server')

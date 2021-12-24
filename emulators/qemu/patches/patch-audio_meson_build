@@ -1,4 +1,4 @@
-$OpenBSD: patch-audio_meson_build,v 1.1 2021/05/02 08:15:19 landry Exp $
+$OpenBSD: patch-audio_meson_build,v 1.2 2021/12/24 03:50:41 daniel Exp $
 
 sndio module
 
@@ -6,10 +6,10 @@ Index: audio/meson.build
 --- audio/meson.build.orig
 +++ audio/meson.build
 @@ -17,6 +17,7 @@ foreach m : [
-   ['CONFIG_AUDIO_OSS', 'oss', oss, 'ossaudio.c'],
-   ['CONFIG_AUDIO_PA', 'pa', pulse, 'paaudio.c'],
-   ['CONFIG_AUDIO_SDL', 'sdl', sdl, 'sdlaudio.c'],
-+  ['CONFIG_AUDIO_SNDIO', 'sndio', sndio, 'sndioaudio.c'],
-   ['CONFIG_AUDIO_JACK', 'jack', jack, 'jackaudio.c'],
-   ['CONFIG_SPICE', 'spice', spice, 'spiceaudio.c']
+   ['pa', pulse, files('paaudio.c')],
+   ['sdl', sdl, files('sdlaudio.c')],
+   ['jack', jack, files('jackaudio.c')],
++  ['sndio', sndio, files('sndioaudio.c')],
+   ['spice', spice, files('spiceaudio.c')]
  ]
+   if m[1].found()

@@ -1,4 +1,6 @@
-$OpenBSD: patch-audio_audio_template_h,v 1.5 2021/05/02 08:15:19 landry Exp $
+$OpenBSD: patch-audio_audio_template_h,v 1.6 2021/12/24 03:50:41 daniel Exp $
+
+sndio module
 
 Index: audio/audio_template.h
 --- audio/audio_template.h.orig
