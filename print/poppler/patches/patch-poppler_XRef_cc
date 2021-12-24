@@ -1,8 +1,8 @@
-$OpenBSD: patch-poppler_XRef_cc,v 1.26 2021/09/08 17:50:37 kili Exp $
+$OpenBSD: patch-poppler_XRef_cc,v 1.27 2021/12/24 10:09:02 kili Exp $
 Index: poppler/XRef.cc
 --- poppler/XRef.cc.orig
 +++ poppler/XRef.cc
-@@ -1075,7 +1075,7 @@ bool XRef::isRefEncrypted(Ref r)
+@@ -1076,7 +1076,7 @@ bool XRef::isRefEncrypted(Ref r)
  
  bool XRef::okToPrint(bool ignoreOwnerPW) const
  {
@@ -11,7 +11,7 @@ Index: poppler/XRef.cc
  }
  
  // we can print at high res if we are only doing security handler revision
-@@ -1083,48 +1083,37 @@ bool XRef::okToPrint(bool ignoreOwnerPW) const
+@@ -1084,48 +1084,37 @@ bool XRef::okToPrint(bool ignoreOwnerPW) const
  // 3 and we are allowed to print, and bit 12 is set.
  bool XRef::okToPrintHighRes(bool ignoreOwnerPW) const
  {

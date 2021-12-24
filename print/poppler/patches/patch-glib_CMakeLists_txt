@@ -1,4 +1,4 @@
-$OpenBSD: patch-glib_CMakeLists_txt,v 1.10 2021/05/19 19:57:03 kili Exp $
+$OpenBSD: patch-glib_CMakeLists_txt,v 1.11 2021/12/24 10:09:02 kili Exp $
 
 - Remove hardcoded SOVERSION
 
@@ -9,7 +9,7 @@ Index: glib/CMakeLists.txt
  )
  add_library(poppler-glib ${poppler_glib_SRCS} ${poppler_glib_generated_SRCS})
  generate_export_header(poppler-glib EXPORT_MACRO_NAME POPPLER_PUBLIC EXPORT_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/poppler-macros.h")
--set_target_properties(poppler-glib PROPERTIES VERSION 8.21.0 SOVERSION 8)
+-set_target_properties(poppler-glib PROPERTIES VERSION 8.22.0 SOVERSION 8)
  if(MINGW AND BUILD_SHARED_LIBS)
      get_target_property(POPPLER_GLIB_SOVERSION poppler-glib SOVERSION)
      set_target_properties(poppler-glib PROPERTIES SUFFIX "-${POPPLER_GLIB_SOVERSION}${CMAKE_SHARED_LIBRARY_SUFFIX}")

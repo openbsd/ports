@@ -1,0 +1,16 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2021/12/24 10:09:02 kili Exp $
+
+Allow to build against qt-6.0.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -191,7 +191,7 @@ endif()
+ 
+ if (ENABLE_QT6)
+   SET(QT_NO_CREATE_VERSIONLESS_TARGETS ON)
+-  find_package(Qt6 6.1 COMPONENTS Core Gui Widgets Test QUIET)
++  find_package(Qt6 COMPONENTS Core Gui Widgets Test QUIET)
+   if (NOT (Qt6Core_FOUND AND Qt6Gui_FOUND AND Qt6Widgets_FOUND AND Qt6Test_FOUND))
+     message("-- Package Qt6Core or Qt6Gui or Qt6Widgets or Qt6Test not found")
+     set(ENABLE_QT6 OFF)

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.41 2021/11/01 18:33:25 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.42 2021/12/24 10:09:02 kili Exp $
 @conflict poppler-qt-<0.5.4p0
 @pkgpath print/poppler
 include/poppler/
@@ -20,6 +20,8 @@ include/poppler/Decrypt.h
 include/poppler/Dict.h
 include/poppler/Error.h
 include/poppler/ErrorCodes.h
+include/poppler/FDPDFDocBuilder.h
+include/poppler/FILECacheLoader.h
 include/poppler/FileSpec.h
 include/poppler/FontEncodingTables.h
 include/poppler/FontInfo.h
@@ -63,8 +65,6 @@ include/poppler/Rendition.h
 include/poppler/SecurityHandler.h
 include/poppler/Sound.h
 include/poppler/SplashOutputDev.h
-include/poppler/StdinCachedFile.h
-include/poppler/StdinPDFDocBuilder.h
 include/poppler/Stream-CCITT.h
 include/poppler/Stream.h
 include/poppler/StructElement.h
