@@ -1,8 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/09/14 20:21:25 tracey Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/12/24 01:41:02 daniel Exp $
 lib/python${MODPY_VERSION}/site-packages/chess/
+lib/python${MODPY_VERSION}/site-packages/chess-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/chess-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/chess-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/chess-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/chess-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/chess-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/chess/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/chess/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/chess/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/chess/${MODPY_PYCACHE}_interactive.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chess/${MODPY_PYCACHE}engine.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chess/${MODPY_PYCACHE}gaviota.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chess/${MODPY_PYCACHE}pgn.${MODPY_PYC_MAGIC_TAG}pyc
@@ -10,6 +17,7 @@ lib/python${MODPY_VERSION}/site-packages/chess/${MODPY_PYCACHE}polyglot.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/chess/${MODPY_PYCACHE}svg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chess/${MODPY_PYCACHE}syzygy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chess/${MODPY_PYCACHE}variant.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/chess/_interactive.py
 lib/python${MODPY_VERSION}/site-packages/chess/engine.py
 lib/python${MODPY_VERSION}/site-packages/chess/gaviota.py
 lib/python${MODPY_VERSION}/site-packages/chess/pgn.py
@@ -18,9 +26,3 @@ lib/python${MODPY_VERSION}/site-packages/chess/py.typed
 lib/python${MODPY_VERSION}/site-packages/chess/svg.py
 lib/python${MODPY_VERSION}/site-packages/chess/syzygy.py
 lib/python${MODPY_VERSION}/site-packages/chess/variant.py
-lib/python${MODPY_VERSION}/site-packages/python_chess-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/python_chess-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/python_chess-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/python_chess-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/python_chess-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
-lib/python${MODPY_VERSION}/site-packages/python_chess-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt

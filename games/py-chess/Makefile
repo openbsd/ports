@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:01:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/12/24 01:41:02 daniel Exp $
 
 COMMENT =		pure Python chess library
 
-MODPY_EGG_VERSION =	0.31.4
-
-DISTNAME =		python-chess-${MODPY_EGG_VERSION}
-PKGNAME =		${DISTNAME:S/^python-/py-/}
-REVISION =		0
+MODPY_EGG_VERSION =	1.8.0
+DISTNAME =		chess-${MODPY_EGG_VERSION}
+PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		games
 
@@ -17,13 +15,10 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-
 FLAVORS =		python3
 FLAVOR =		python3
 
-# Tests not included in PyPI tarball
-NO_TEST =		Yes
+MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
 
 .include <bsd.port.mk>
