@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2020/07/03 21:45:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2021/12/24 04:01:33 afresh1 Exp $
 
-COMMENT =	comma-separated values manipulation routines
+COMMENT =	comma-separated values manipulator routines
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Text-CSV-2.00
+DISTNAME =	Text-CSV-2.01
 CATEGORIES =	textproc
-REVISION =	0
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
