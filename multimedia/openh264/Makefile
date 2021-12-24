@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/12/21 14:22:37 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2021/12/24 03:31:11 kn Exp $
 
 COMMENT =		Cisco implementation of H.264 codec
 GH_ACCOUNT =		cisco
 GH_PROJECT =		openh264
 GH_TAGNAME =		v2.1.1
 CATEGORIES =		multimedia
+REVISION =		0
 
 # Fixed #3305: Frame reorder after the frame is read.
 # https://github.com/cisco/openh264/pull/3319
@@ -43,9 +44,10 @@ MAKE_FLAGS +=		ARCH=${MACHINE_ARCH:amd64=x86_64}
 # disable unneeded GMP API for now
 MAKE_FLAGS +=		HAVE_GMP_API=No
 
-# pass our .so version, see ${WRKSRC}/build-bsd.mk
-MAKE_FLAGS +=		FULL_VERSION=${LIBopenh264_VERSION} \
-			SHAREDLIB_MAJORVERSION=${LIBopenh264_VERSION:R}
+# pass our .so version and ensure full SONAME, see ${WRKSRC}/build-bsd.mk
+MAKE_FLAGS +=		SHAREDLIB_MAJORVERSION=${LIBopenh264_VERSION:R} \
+			SHAREDLIBSUFFIXFULLVER=so.${LIBopenh264_VERSION} \
+			SHLDFLAGS=-Wl,-soname,libopenh264.so.${LIBopenh264_VERSION}
 
 # clear upstream "-O3" and "-g" defaults
 MAKE_FLAGS +=		CXX='${CXX}' \
