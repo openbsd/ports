@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2021/12/10 04:10:59 daniel Exp $
+# $OpenBSD: Makefile,v 1.48 2021/12/24 04:11:57 daniel Exp $
 
 BROKEN-sparc64 =	"/usr/bin/ld: skipping incompatible pyml-current/libpyml_stubs.a when searching for -lpyml_stubs" \
 			"/usr/bin/ld: cannot find -lpyml_stubs"
@@ -8,7 +8,7 @@ COMMENT =	program matching and transformation engine
 # if updating, check for any additional use of diff/grep which
 # may need to be switched to gdiff/ggrep
 DISTNAME =	coccinelle-1.0.6
-REVISION =	5
+REVISION =	6
 EXTRACT_SUFX =	.tgz
 
 CATEGORIES =	devel
@@ -24,7 +24,6 @@ MASTER_SITES = ${HOMEPAGE}distrib/
 
 MODULES =		lang/ocaml \
 			lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS =		${RUN_DEPENDS} \
 			print/texlive/base \
