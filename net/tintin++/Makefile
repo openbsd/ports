@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.25 2020/03/07 14:11:32 bcallah Exp $ 
+# $OpenBSD: Makefile,v 1.26 2021/12/24 13:43:14 bcallah Exp $ 
 
 COMMENT =	client program for playing muds with advanced features
-DISTNAME =	tintin-2.01.92
+DISTNAME =	tintin-2.02.12
 CATEGORIES =	net games
 
 HOMEPAGE =	https://tintin.sourceforge.io/
@@ -21,6 +21,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
+USE_GMAKE =	Yes
 MAKE_FLAGS =	INCS=-I${LOCALBASE}/include
 
 WRKDIST =	${WRKDIR}/tt/src
