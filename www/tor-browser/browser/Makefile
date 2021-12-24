@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2021/11/17 21:08:21 sdk Exp $
+# $OpenBSD: Makefile,v 1.71 2021/12/24 14:25:40 sdk Exp $
 # Some of this comes from www/firefox-esr as apropos, since Tor
 # browser is a fork of ESR.  It is a good idea to look at that
 # Makefile when editing this one (ESR versions not always the same).
@@ -16,7 +16,7 @@ EXTRACT_SUFX =		.tar.xz
 PATCHORIG =		.pat.orig
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION}
-DISTNAME =		src-firefox-tor-browser-91.3.0esr-11.0-1-build4
+DISTNAME =		src-firefox-tor-browser-91.4.1esr-11.0-1-build1
 
 FIX_EXTRACT_PERMISSIONS	= Yes
 EXTRACT_ONLY +=		${DISTNAME}.tar.xz \
@@ -56,8 +56,9 @@ BUILD_DEPENDS +=	devel/cbindgen>=0.19.0
 BUILD_DEPENDS +=	devel/m4
 
 # uses pledge()
-WANTLIB += X11-xcb Xcursor Xi intl xcb xcb-shm harfbuzz ${COMPILER_LIBCXX}
-WANTLIB += Xcomposite Xdamage Xfixes
+# Extra:  Xcomposite.4 Xdamage.4 Xfixes.6 gdk-x11-2.0.2400 gtk-x11-2.0.2400
+WANTLIB += X11-xcb Xt gthread-2.0 harfbuzz intl pangoft2-1.0
+WANTLIB += xcb xcb-shm ${COMPILER_LIBCXX}
 
 # Regression tests are too hard to adapt to run here
 NO_TEST =		Yes
@@ -84,7 +85,7 @@ BUILD_DEPENDS +=	devel/py-virtualenv
 
 BUILD_DEPENDS +=	archivers/unzip archivers/zip
 
-RUN_DEPENDS +=		net/tor>=0.4.6.8
+RUN_DEPENDS +=		net/tor>=0.4.6.9
 
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox

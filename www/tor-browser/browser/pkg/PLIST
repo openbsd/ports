@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/11/17 21:08:22 sdk Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/12/24 14:25:40 sdk Exp $
 @conflict tor-launcher-*
 @conflict torbutton-*
 @pkgpath www/tor-browser/https-everywhere
@@ -60,7 +60,6 @@ lib/${BROWSER_NAME}/browser/fonts/NotoSansDevanagari-Regular.ttf
 lib/${BROWSER_NAME}/browser/fonts/NotoSansEthiopic-Regular.ttf
 lib/${BROWSER_NAME}/browser/fonts/NotoSansGeorgian-Regular.ttf
 lib/${BROWSER_NAME}/browser/fonts/NotoSansGujarati-Regular.ttf
-lib/${BROWSER_NAME}/browser/fonts/NotoSansGurmukhi-Regular.ttf
 lib/${BROWSER_NAME}/browser/fonts/NotoSansHebrew-Regular.ttf
 lib/${BROWSER_NAME}/browser/fonts/NotoSansJP-Regular.otf
 lib/${BROWSER_NAME}/browser/fonts/NotoSansKR-Regular.otf
@@ -72,7 +71,6 @@ lib/${BROWSER_NAME}/browser/fonts/NotoSansMongolian-Regular.ttf
 lib/${BROWSER_NAME}/browser/fonts/NotoSansMyanmar-Regular.ttf
 lib/${BROWSER_NAME}/browser/fonts/NotoSansOriya-Regular.ttf
 lib/${BROWSER_NAME}/browser/fonts/NotoSansSC-Regular.otf
-lib/${BROWSER_NAME}/browser/fonts/NotoSansSinhala-Regular.ttf
 lib/${BROWSER_NAME}/browser/fonts/NotoSansTC-Regular.otf
 lib/${BROWSER_NAME}/browser/fonts/NotoSansTamil-Regular.ttf
 lib/${BROWSER_NAME}/browser/fonts/NotoSansTelugu-Regular.ttf
