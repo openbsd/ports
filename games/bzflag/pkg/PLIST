@@ -1,41 +1,41 @@
-@comment $OpenBSD: PLIST,v 1.15 2018/09/04 12:46:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2021/12/24 22:10:06 sdk Exp $
 @bin bin/bzadmin
 @bin bin/bzflag
 @bin bin/bzfs
 lib/bzflag/
-lib/bzflag/CustomZoneSample.so
-lib/bzflag/HoldTheFlag.so
-lib/bzflag/Phoenix.so
-lib/bzflag/RogueGenocide.so
-lib/bzflag/SAMPLE_PLUGIN.so
-lib/bzflag/TimeLimit.so
-lib/bzflag/airspawn.so
-lib/bzflag/autoFlagReset.so
-lib/bzflag/bzfscron.so
-lib/bzflag/chathistory.so
-lib/bzflag/customPollTypeSample.so
-lib/bzflag/customflagsample.so
-lib/bzflag/fairCTF.so
-lib/bzflag/fastmap.so
-lib/bzflag/flagStay.so
-lib/bzflag/keepaway.so
-lib/bzflag/killall.so
-lib/bzflag/koth.so
-lib/bzflag/logDetail.so
-lib/bzflag/nagware.so
-lib/bzflag/playHistoryTracker.so
-lib/bzflag/rabbitTimer.so
-lib/bzflag/rabidRabbit.so
-lib/bzflag/recordmatch.so
-lib/bzflag/regFlag.so
-lib/bzflag/serverControl.so
-lib/bzflag/serverSidePlayerSample.so
-lib/bzflag/shockwaveDeath.so
-lib/bzflag/superUser.so
-lib/bzflag/teamflagreset.so
-lib/bzflag/thiefControl.so
-lib/bzflag/timedctf.so
-lib/bzflag/wwzones.so
+@so lib/bzflag/CustomZoneSample.so
+@so lib/bzflag/HoldTheFlag.so
+@so lib/bzflag/Phoenix.so
+@so lib/bzflag/RogueGenocide.so
+@so lib/bzflag/SAMPLE_PLUGIN.so
+@so lib/bzflag/TimeLimit.so
+@so lib/bzflag/airspawn.so
+@so lib/bzflag/autoFlagReset.so
+@so lib/bzflag/bzfscron.so
+@so lib/bzflag/chathistory.so
+@so lib/bzflag/customPollTypeSample.so
+@so lib/bzflag/customflagsample.so
+@so lib/bzflag/fairCTF.so
+@so lib/bzflag/fastmap.so
+@so lib/bzflag/flagStay.so
+@so lib/bzflag/keepaway.so
+@so lib/bzflag/killall.so
+@so lib/bzflag/koth.so
+@so lib/bzflag/logDetail.so
+@so lib/bzflag/nagware.so
+@so lib/bzflag/playHistoryTracker.so
+@so lib/bzflag/rabbitTimer.so
+@so lib/bzflag/rabidRabbit.so
+@so lib/bzflag/recordmatch.so
+@so lib/bzflag/regFlag.so
+@so lib/bzflag/serverControl.so
+@so lib/bzflag/serverSidePlayerSample.so
+@so lib/bzflag/shockwaveDeath.so
+@so lib/bzflag/superUser.so
+@so lib/bzflag/teamflagreset.so
+@so lib/bzflag/thiefControl.so
+@so lib/bzflag/timedctf.so
+@so lib/bzflag/wwzones.so
 @man man/man5/bzw.5
 @man man/man6/bzadmin.6
 @man man/man6/bzflag.6
@@ -75,6 +75,8 @@ share/bzflag/flag_won.wav
 share/bzflag/flap.wav
 share/bzflag/fonts/
 share/bzflag/fonts/DejaVu.License
+share/bzflag/fonts/DejaVuSansCondensedBold_10.fmt
+share/bzflag/fonts/DejaVuSansCondensedBold_10.png
 share/bzflag/fonts/DejaVuSansCondensedBold_12.fmt
 share/bzflag/fonts/DejaVuSansCondensedBold_12.png
 share/bzflag/fonts/DejaVuSansCondensedBold_16.fmt
@@ -91,6 +93,8 @@ share/bzflag/fonts/DejaVuSansCondensedBold_64.fmt
 share/bzflag/fonts/DejaVuSansCondensedBold_64.png
 share/bzflag/fonts/DejaVuSansCondensedBold_8.fmt
 share/bzflag/fonts/DejaVuSansCondensedBold_8.png
+share/bzflag/fonts/DejaVuSansMonoBold_10.fmt
+share/bzflag/fonts/DejaVuSansMonoBold_10.png
 share/bzflag/fonts/DejaVuSansMonoBold_12.fmt
 share/bzflag/fonts/DejaVuSansMonoBold_12.png
 share/bzflag/fonts/DejaVuSansMonoBold_16.fmt
@@ -139,6 +143,7 @@ share/bzflag/l10n/bzflag_lt.po
 share/bzflag/l10n/bzflag_nl.po
 share/bzflag/l10n/bzflag_pt.po
 share/bzflag/l10n/bzflag_ru.po
+share/bzflag/l10n/bzflag_sk.po
 share/bzflag/l10n/bzflag_sv.po
 share/bzflag/land.wav
 share/bzflag/laser.wav
