@@ -1,4 +1,4 @@
-$OpenBSD: patch-setup_py,v 1.6 2020/11/02 21:57:19 jca Exp $
+$OpenBSD: patch-setup_py,v 1.7 2021/12/25 10:21:25 sdk Exp $
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
@@ -10,4 +10,4 @@ Index: setup.py
 +		('man/man1', ['man/zim.1']),
  		('share/applications', ['xdg/zim.desktop']),
  		('share/mime/packages', ['xdg/zim.xml']),
- 		('share/pixmaps', ['xdg/hicolor/48x48/apps/zim.png']),
+ 		('share/metainfo', ['xdg/org.zim_wiki.Zim.appdata.xml']),
