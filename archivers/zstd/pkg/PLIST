@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/12/29 20:40:31 bket Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/12/25 13:28:13 bket Exp $
 bin/unzstd
 @bin bin/zstd
 bin/zstdcat
@@ -9,6 +9,8 @@ include/zdict.h
 include/zstd.h
 include/zstd_errors.h
 @static-lib lib/libzstd.a
+@comment @so lib/libzstd.so
+@comment lib/libzstd.so.1
 @lib lib/libzstd.so.${LIBzstd_VERSION}
 lib/pkgconfig/libzstd.pc
 @man man/man1/unzstd.1
