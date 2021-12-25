@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2021/09/21 10:00:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2021/12/25 07:14:35 otto Exp $
 
 COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
 DISTNAME=		dnsdist-1.6.1
+REVISION=		0
 EXTRACT_SUFX=		.tar.bz2
 
 CATEGORIES=		net
@@ -35,7 +36,12 @@ CONFIGURE_ARGS+=	--without-gnutls \
 			--enable-dnscrypt \
 			--enable-dnstap \
 			--enable-dns-over-https
+#
+# On at least amd64 using clang13 dnsdist-lua-bindings.cc gets
+# miscompiled with -O2, resulting in a segfault on startup
+#
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
+			CXXFLAGS="-O1" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			LIBEDIT_LIBS='-ledit -lcurses' \
 			LIBEDIT_CFLAGS=' '
