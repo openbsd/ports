@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2021/10/08 22:10:27 edd Exp $
+# $OpenBSD: Makefile,v 1.25 2021/12/25 10:44:22 paco Exp $
 
 # Use LuaJIT where possible, as some plugins assume it's available. Arches
 # that can't use LuaJIT have to use the system Lua (and some plugins may not
@@ -15,15 +15,15 @@ COMMENT =	continuation and extension of Vim
 
 GH_ACCOUNT =	neovim
 GH_PROJECT =	neovim
-GH_TAGNAME =	v0.5.1
+GH_TAGNAME =	v0.6.0
 
 CATEGORIES =	editors devel
 HOMEPAGE =	https://neovim.io
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
 # The versions listed here must match those in third-party/CMakeLists.txt.
-LUV_VER =	1.30.1-1
-LUAJIT_VER =	787736990ac3b7d5ceaba2697c7d0f58f77bb782
+LUV_VER =	1.42.0-1
+LUAJIT_VER =	b4b2dce9fc3ffaaaede39b36d06415311e2aa516
 
 MASTER_SITES0 =	https://github.com/luvit/luv/releases/download/${LUV_VER}/
 MASTER_SITES1 = https://github.com/LuaJIT/LuaJIT/archive/
@@ -38,7 +38,7 @@ PERMIT_PACKAGE =	Yes
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-WANTLIB += ${COMPILER_LIBCXX} c iconv intl m msgpackc pthread termkey
+WANTLIB += c iconv intl m msgpackc pthread termkey
 WANTLIB += tree-sitter unibilium util uv vterm
 
 .if ${EMBED_LUAJIT} != "Yes"
@@ -78,7 +78,7 @@ RUN_DEPENDS +=		devel/libmpack/lua \
 SEPARATE_BUILD =	Yes
 CONFIGURE_ARGS +=	-DUSE_BUNDLED=OFF \
 			-DLIBLUV_INCLUDE_DIR=${STATIC_DEPS_INST}/include \
-			-DLIBLUV_LIBRARY=${STATIC_DEPS_INST}/lib/libluv.a
+			-DLIBLUV_LIBRARY=${STATIC_DEPS_INST}/lib/libluv_a.a
 .if ${EMBED_LUAJIT} == "Yes"
 CONFIGURE_ARGS +=	-DLUA_PRG=${STATIC_DEPS_INST}/bin/luajit-2.1.0-beta3 \
 			-DLUAJIT_INCLUDE_DIR=${STATIC_DEPS_INST}/include/luajit-2.1 \
@@ -155,6 +155,7 @@ pre-configure:
 		${CONFIGURE_ENV} \
 		${LOCALBASE}/bin/cmake \
 		-DBUILD_MODULE=OFF \
+		-DBUILD_STATIC_LIBS=ON \
 		-DCMAKE_COLOR_MAKEFILE=OFF \
 		-DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY=ON \
 		-DCMAKE_SUPPRESS_REGENERATION=ON \
@@ -177,13 +178,10 @@ pre-configure:
 # If cscope is installed, one test fails:
 # https://github.com/neovim/neovim/issues/12744
 #
-# XXX: This is broken. The tarball doesn't contain the necessary 'ci'
-# directory.  Will be fixed for the next release though:
-# https://github.com/neovim/neovim/issues/15856
-NO_TEST = Yes
-#do-test:
-#	true
-#	cd ${WRKSRC}/src/nvim/testdir && ${SETENV} LC_CTYPE=en_US.UTF-8 \
-#		${MAKE_PROGRAM} NVIM_PRG=${WRKBUILD}/bin/nvim ${MAKE_FLAGS}
+do-test:
+	true
+	${SETENV} LC_CTYPE=en_US.UTF-8 \
+		${MAKE_PROGRAM} -C ${WRKSRC}/src/nvim/testdir \
+		HOME=${WRKBUILD} NVIM_PRG=${WRKBUILD}/bin/nvim ${MAKE_FLAGS}
 
 .include <bsd.port.mk>
