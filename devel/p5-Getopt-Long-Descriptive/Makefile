@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2020/12/05 19:53:26 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.15 2021/12/26 23:45:56 afresh1 Exp $
 
 COMMENT =	Getopt::Long, but simpler and more powerful
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Getopt-Long-Descriptive-0.105
+DISTNAME =	Getopt-Long-Descriptive-0.110
 CATEGORIES =	devel
 
 MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
