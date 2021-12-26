@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2021/12/26 23:23:13 afresh1 Exp $
 
-COMMENT =	exporter on steroids
+COMMENT =	sophisticated exporter for custom-built routines
 
-DISTNAME =	Sub-Exporter-0.987
+DISTNAME =	Sub-Exporter-0.988
 CATEGORIES =	devel
-REVISION =	0
 
-MAINTAINER = Andrew Fresh <afresh1@openbsd.org>
+MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
 
-# perl_5
+# Perl
 PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
 PKG_ARCH =	*
 
-RUN_DEPENDS =	devel/p5-Data-OptList>=0.100 \
+RUN_DEPENDS =	devel/p5-Data-OptList>=0.10 \
 		devel/p5-Params-Util>=0.14 \
 		devel/p5-Sub-Install>=0.92
 
