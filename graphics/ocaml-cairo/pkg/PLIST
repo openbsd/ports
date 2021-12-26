@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/08/04 19:09:17 chrisz Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/12/26 21:33:17 daniel Exp $
 %%native%%
 lib/ocaml/cairo2/
 lib/ocaml/cairo2-gtk/
@@ -37,16 +37,16 @@ lib/ocaml/cairo2/opam
 lib/ocaml/stublibs/dllcairo_gtk_stubs.so
 lib/ocaml/stublibs/dllcairo_pango_stubs.so
 lib/ocaml/stublibs/dllcairo_stubs.so
-share/doc/ocaml-ocaml-cairo/
-share/doc/ocaml-ocaml-cairo/cairo2/
-share/doc/ocaml-ocaml-cairo/cairo2-gtk/
-share/doc/ocaml-ocaml-cairo/cairo2-gtk/CHANGES.md
-share/doc/ocaml-ocaml-cairo/cairo2-gtk/LICENSE.md
-share/doc/ocaml-ocaml-cairo/cairo2-gtk/README.md
-share/doc/ocaml-ocaml-cairo/cairo2-pango/
-share/doc/ocaml-ocaml-cairo/cairo2-pango/CHANGES.md
-share/doc/ocaml-ocaml-cairo/cairo2-pango/LICENSE.md
-share/doc/ocaml-ocaml-cairo/cairo2-pango/README.md
-share/doc/ocaml-ocaml-cairo/cairo2/CHANGES.md
-share/doc/ocaml-ocaml-cairo/cairo2/LICENSE.md
-share/doc/ocaml-ocaml-cairo/cairo2/README.md
+share/doc/ocaml-cairo/
+share/doc/ocaml-cairo/cairo2/
+share/doc/ocaml-cairo/cairo2-gtk/
+share/doc/ocaml-cairo/cairo2-gtk/CHANGES.md
+share/doc/ocaml-cairo/cairo2-gtk/LICENSE.md
+share/doc/ocaml-cairo/cairo2-gtk/README.md
+share/doc/ocaml-cairo/cairo2-pango/
+share/doc/ocaml-cairo/cairo2-pango/CHANGES.md
+share/doc/ocaml-cairo/cairo2-pango/LICENSE.md
+share/doc/ocaml-cairo/cairo2-pango/README.md
+share/doc/ocaml-cairo/cairo2/CHANGES.md
+share/doc/ocaml-cairo/cairo2/LICENSE.md
+share/doc/ocaml-cairo/cairo2/README.md
