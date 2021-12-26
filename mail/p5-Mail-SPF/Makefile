@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2021/12/26 10:02:24 giovanni Exp $
 
 COMMENT =		perl oop implementation of Sender Policy Framework
 
 DISTNAME =		Mail-SPF-v2.9.0
 PKGNAME =		p5-${DISTNAME:S/-v/-/}
-REVISION =		1
+REVISION =		2
 CATEGORIES =		mail
 
 MAINTAINER =		Giovanni Bechis <giovanni@openbsd.org>
