@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2020/12/06 19:41:09 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.16 2021/12/27 00:47:17 afresh1 Exp $
 
 COMMENT =	test and show differences in strings and data structures
 
-DISTNAME =	Test-Differences-0.67
+DISTNAME =	Test-Differences-0.68
 CATEGORIES =	devel
 MODULES =	cpan
 PKG_ARCH =	*
