@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2021/01/04 00:05:10 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.20 2021/12/27 00:12:25 afresh1 Exp $
 
 COMMENT =		localization support for DateTime.pm
 
 MODULES =		cpan
 PKG_ARCH =		*
-DISTNAME =		DateTime-Locale-1.31
+DISTNAME =		DateTime-Locale-1.33
 CATEGORIES=		devel
 
 MAINTAINER =		Andrew Hewus Fresh <afresh1@openbsd.org>
