@@ -1,0 +1,32 @@
+$OpenBSD: patch-surf_c,v 1.1 2021/12/27 18:56:32 jung Exp $
+
+# cherry-picked from upstream, can be removed with next version (2.2)
+
+Index: surf.c
+--- surf.c.orig
++++ surf.c
+@@ -240,7 +240,7 @@ static void clicknewwindow(Client *c, const Arg *a, We
+ static void clickexternplayer(Client *c, const Arg *a, WebKitHitTestResult *h);
+ 
+ static char winid[64];
+-static char togglestats[12];
++static char togglestats[11];
+ static char pagestats[2];
+ static Atom atoms[AtomLast];
+ static Window embed;
+@@ -668,11 +668,10 @@ gettogglestats(Client *c)
+ 	togglestats[3] = curconfig[DiskCache].val.i ?       'D' : 'd';
+ 	togglestats[4] = curconfig[LoadImages].val.i ?      'I' : 'i';
+ 	togglestats[5] = curconfig[JavaScript].val.i ?      'S' : 's';
+-	togglestats[7] = curconfig[Style].val.i ?           'M' : 'm';
+-	togglestats[8] = curconfig[FrameFlattening].val.i ? 'F' : 'f';
+-	togglestats[9] = curconfig[Certificate].val.i ?     'X' : 'x';
+-	togglestats[10] = curconfig[StrictTLS].val.i ?      'T' : 't';
+-	togglestats[11] = '\0';
++	togglestats[6] = curconfig[Style].val.i ?           'M' : 'm';
++	togglestats[7] = curconfig[FrameFlattening].val.i ? 'F' : 'f';
++	togglestats[8] = curconfig[Certificate].val.i ?     'X' : 'x';
++	togglestats[9] = curconfig[StrictTLS].val.i ?       'T' : 't';
+ }
+ 
+ void

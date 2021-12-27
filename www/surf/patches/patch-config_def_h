@@ -1,22 +1,13 @@
-$OpenBSD: patch-config_def_h,v 1.5 2017/05/26 20:37:56 jung Exp $
+$OpenBSD: patch-config_def_h,v 1.6 2021/12/27 18:56:32 jung Exp $
 Index: config.def.h
 --- config.def.h.orig
 +++ config.def.h
-@@ -30,7 +30,7 @@ static Parameter defconfig[ParameterLast] = {
- 	SETB(SiteQuirks,         1),
- 	SETB(SpellChecking,      0),
- 	SETV(SpellLanguages,     ((char *[]){ "en_US", NULL })),
--	SETB(StrictSSL,          0),
-+	SETB(StrictSSL,          1),
- 	SETB(Style,              1),
- 	SETF(ZoomLevel,          1.0),
- };
-@@ -58,7 +58,7 @@ static WebKitFindOptions findopts = WEBKIT_FIND_OPTION
+@@ -76,7 +76,7 @@ static WebKitFindOptions findopts = WEBKIT_FIND_OPTION
+ 
  /* DOWNLOAD(URI, referer) */
- #define DOWNLOAD(d, r) { \
-         .v = (const char *[]){ "/bin/sh", "-c", \
--             "st -e /bin/sh -c \"curl -g -L -J -O --user-agent '$1'" \
-+             "xterm -e /bin/sh -c \"curl -g -L -J -O --user-agent '$1'" \
-              " --referer '$2' -b $3 -c $3 '$0';" \
-              " sleep 5;\"", \
-              d, useragent, r, cookiefile, NULL \
+ #define DOWNLOAD(u, r) { \
+-        .v = (const char *[]){ "st", "-e", "/bin/sh", "-c",\
++        .v = (const char *[]){ "xterm", "-e", "/bin/sh", "-c",\
+              "curl -g -L -J -O -A \"$1\" -b \"$2\" -c \"$2\"" \
+              " -e \"$3\" \"$4\"; read", \
+              "surf-download", useragent, cookiefile, r, u, NULL \

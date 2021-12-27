@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:51:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2021/12/27 18:56:32 jung Exp $
 
 COMMENT =	simple webbrowser based on webkit/gtk+
 
-DISTNAME =	surf-2.0
+DISTNAME =	surf-2.1
 CATEGORIES =	www
 HOMEPAGE =	http://surf.suckless.org/
-REVISION =	1
 
 MAINTAINER=	Joerg Jung <jung@openbsd.org>
 
