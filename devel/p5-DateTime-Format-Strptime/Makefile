@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2021/01/04 00:08:57 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.23 2021/12/27 00:14:52 afresh1 Exp $
 
 COMMENT =	parse and format strp and strf time patterns
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	DateTime-Format-Strptime-1.78
+DISTNAME =	DateTime-Format-Strptime-1.79
 EPOCH =		0
 CATEGORIES =	devel
 
