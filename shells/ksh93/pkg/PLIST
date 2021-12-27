@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/13 15:11:51 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/12/27 13:06:30 pascal Exp $
 @conflict libast-*
 @shell bin/ksh93
 @shell bin/rksh93
@@ -43,9 +43,9 @@ include/ast/prototyped.h
 include/ast/sfio.h
 include/ast/sfio_s.h
 include/ast/shell.h
-lib/libast.a
-lib/libcmd.a
-lib/libshell.a
+@static-lib lib/libast.a
+@static-lib lib/libcmd.a
+@static-lib lib/libshell.a
 @man man/man1/ksh93.1
 @man man/man1/rksh93.1
 @man man/man3/shell.3
