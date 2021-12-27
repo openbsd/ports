@@ -1,23 +1,18 @@
-# $OpenBSD: Makefile,v 1.5 2021/12/06 09:04:39 denis Exp $
+# $OpenBSD: Makefile,v 1.6 2021/12/27 11:47:21 denis Exp $
 
 COMMENT =	simple tool for managing encrypted backups in the cloud
 
 MODGO_MODNAME =	github.com/kopia/kopia
-MODGO_VERSION =	v0.9.7
-MODGO_FLAGS += -tags embedhtml
+MODGO_VERSION =	v0.9.8
+
+MODGO_LDFLAGS += -X github.com/kopia/kopia/repo.BuildVersion=${MODGO_VERSION} \
+		-X github.com/kopia/kopia/repo.BuildInfo="`date +%Y%m%d`" \
+		-X github.com/kopia/kopia/repo.BuildGitHubRepo="OpenBSD/ports"
 
 DISTNAME =	kopia-${MODGO_VERSION}
 
 CATEGORIES =	sysutils
 HOMEPAGE =	https://kopia.io/
-
-# Built by running 'gmake html-ui \
-#     REACT_APP_FULL_VERSION_INFO="${MODGO_VERSION} on `date`" \
-#     REACT_APP_SHORT_VERSION_INFO="${MODGO_VERSION}"' in ${WRKSRC};
-# cd htmlui && tar czf kopia-html-ui.${MODGO_VERSION}.tgz build
-# !! Requires lang/node !!
-DISTFILES = 	kopia-html-ui.${MODGO_VERSION}.tgz:0
-MASTER_SITES0 =	https://raw.githubusercontent.com/ledeuns/kopia-html-ui/main/
 
 MAINTAINER =	Denis Fondras <denis@openbsd.org>
 
@@ -29,10 +24,6 @@ WANTLIB +=	c pthread
 MODULES =	lang/go
 
 USE_GMAKE =	Yes
-
-post-extract:
-	cd ${WRKSRC} && tar -C ${WRKSRC}/htmlui -zxf \
-	    ${FULLDISTDIR}/kopia-html-ui.${MODGO_VERSION}.tgz
 
 .include "modules.inc"
 
