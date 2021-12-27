@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2021/01/03 22:27:42 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.26 2021/12/27 00:00:21 afresh1 Exp $
 
 COMMENT =	DBI driver for CSV files
 
-DISTNAME =	DBD-CSV-0.57
+DISTNAME =	DBD-CSV-0.58
 EXTRACT_SUFX =	.tgz
 CATEGORIES =	databases
 MODULES =	cpan
@@ -12,6 +12,9 @@ MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes
+
+# The build complains and waits without this:
+BUILD_DEPENDS =	databases/p5-DBI>=1.628
 
 RUN_DEPENDS =	databases/p5-DBI>=1.628 \
 		databases/p5-SQL-Statement>=1.405 \
