@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.35 2021/03/11 12:17:21 pascal Exp $
+# $OpenBSD: Makefile,v 1.36 2021/12/28 19:28:09 pascal Exp $
 
 BROKEN-arm =		MoarVM panic: Memory allocation failed; could not allocate 312268 bytes
 
 COMMENT =		Rakudo compiler for the Raku language
 
-V =			2021.02.1
+V =			2021.12
 DISTNAME =		rakudo-$V
 
-NQP_VERSION =		2021.02
+NQP_VERSION =		2021.12
 
 CATEGORIES =		lang perl6
 
