@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.296 2021/10/30 07:19:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.297 2021/12/28 09:32:13 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accerciser
@@ -39,6 +39,7 @@
      SUBDIR += gedit-plugins
      SUBDIR += gfbgraph
      SUBDIR += ghex
+     SUBDIR += gitg
      SUBDIR += gjs
      SUBDIR += grilo
      SUBDIR += grilo-plugins
