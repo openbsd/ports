@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_boringssl_src_include_openssl_base_h,v 1.10 2021/10/29 14:49:42 robert Exp $
+$OpenBSD: patch-third_party_boringssl_src_include_openssl_base_h,v 1.11 2021/12/28 15:49:55 robert Exp $
 
 Index: third_party/boringssl/src/include/openssl/base.h
 --- third_party/boringssl/src/include/openssl/base.h.orig
@@ -10,8 +10,8 @@ Index: third_party/boringssl/src/include/openssl/base.h
 +#if defined(__OpenBSD__)
 +#define OPENSSL_OPENBSD
 +#define OPENSSL_ARC4RANDOM
-+#endif
++#endif   
 +
- #if defined(TRUSTY)
+ #if defined(__TRUSTY__)
  #define OPENSSL_TRUSTY
  #define OPENSSL_NO_THREADS_CORRUPT_MEMORY_AND_LEAK_SECRETS_IF_THREADED

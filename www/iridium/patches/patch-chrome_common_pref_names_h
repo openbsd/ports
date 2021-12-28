@@ -1,10 +1,10 @@
-$OpenBSD: patch-chrome_common_pref_names_h,v 1.28 2021/10/29 14:49:40 robert Exp $
+$OpenBSD: patch-chrome_common_pref_names_h,v 1.29 2021/12/28 15:49:55 robert Exp $
 
 Index: chrome/common/pref_names.h
 --- chrome/common/pref_names.h.orig
 +++ chrome/common/pref_names.h
-@@ -362,7 +362,7 @@ extern const char kForceYouTubeRestrict[];
- extern const char kAllowedDomainsForApps[];
+@@ -365,7 +365,7 @@ extern const char kUseAshProxy[];
+ #endif  //  BUILDFLAG(IS_CHROMEOS_LACROS)
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
 -#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
@@ -12,7 +12,7 @@ Index: chrome/common/pref_names.h
  extern const char kUsesSystemTheme[];
  #endif
  extern const char kCurrentThemePackFilename[];
-@@ -391,7 +391,7 @@ extern const char kShowUpdatePromotionInfoBar[];
+@@ -394,7 +394,7 @@ extern const char kShowUpdatePromotionInfoBar[];
  #endif
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -21,7 +21,7 @@ Index: chrome/common/pref_names.h
  extern const char kUseCustomChromeFrame[];
  #endif
  #if BUILDFLAG(ENABLE_PLUGINS)
-@@ -575,7 +575,7 @@ extern const char kDownloadExtensionsToOpenByPolicy[];
+@@ -577,7 +577,7 @@ extern const char kDownloadExtensionsToOpenByPolicy[];
  extern const char kDownloadAllowedURLsForOpenByPolicy[];
  extern const char kDownloadDirUpgraded[];
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
@@ -30,7 +30,7 @@ Index: chrome/common/pref_names.h
  extern const char kOpenPdfDownloadInSystemReader[];
  #endif
  #if defined(OS_ANDROID)
-@@ -678,7 +678,7 @@ extern const char kWebAppsUninstalledDefaultChromeApps
+@@ -684,7 +684,7 @@ extern const char kWebAppsUninstalledDefaultChromeApps
  extern const char kWebAppsPreferences[];
  extern const char kWebAppsIsolationState[];
  
@@ -39,7 +39,7 @@ Index: chrome/common/pref_names.h
      (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
  extern const char kWebAppsUrlHandlerInfo[];
  #endif
-@@ -821,7 +821,7 @@ extern const char kGloballyScopeHTTPAuthCacheEnabled[]
+@@ -828,7 +828,7 @@ extern const char kGloballyScopeHTTPAuthCacheEnabled[]
  extern const char kAmbientAuthenticationInPrivateModesEnabled[];
  extern const char kBasicAuthOverHttpEnabled[];
  
@@ -48,9 +48,9 @@ Index: chrome/common/pref_names.h
  extern const char kAuthNegotiateDelegateByKdcPolicy[];
  #endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS)
  
-@@ -1068,7 +1068,7 @@ extern const char kAutoplayWhitelist[];
- extern const char kBlockAutoplayEnabled[];
+@@ -1076,7 +1076,7 @@ extern const char kBlockAutoplayEnabled[];
  #endif
+ extern const char kSandboxExternalProtocolBlocked[];
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

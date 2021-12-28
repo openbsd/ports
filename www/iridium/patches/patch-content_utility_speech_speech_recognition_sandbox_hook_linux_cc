@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_utility_speech_speech_recognition_sandbox_hook_linux_cc,v 1.1 2021/10/29 14:49:41 robert Exp $
+$OpenBSD: patch-content_utility_speech_speech_recognition_sandbox_hook_linux_cc,v 1.2 2021/12/28 15:49:55 robert Exp $
 
 Index: content/utility/speech/speech_recognition_sandbox_hook_linux.cc
 --- content/utility/speech/speech_recognition_sandbox_hook_linux.cc.orig
 +++ content/utility/speech/speech_recognition_sandbox_hook_linux.cc
-@@ -10,11 +10,14 @@
+@@ -11,11 +11,14 @@
  #include "sandbox/linux/syscall_broker/broker_command.h"
  #include "sandbox/linux/syscall_broker/broker_file_permission.h"
  
@@ -18,7 +18,7 @@ Index: content/utility/speech/speech_recognition_sandbox_hook_linux.cc
  namespace {
  
  // Gets the file permissions required by the Speech On-Device API (SODA).
-@@ -40,9 +43,11 @@ std::vector<BrokerFilePermission> GetSodaFilePermissio
+@@ -49,9 +52,11 @@ std::vector<BrokerFilePermission> GetSodaFilePermissio
  }
  
  }  // namespace
@@ -27,10 +27,10 @@ Index: content/utility/speech/speech_recognition_sandbox_hook_linux.cc
  bool SpeechRecognitionPreSandboxHook(
      sandbox::policy::SandboxLinux::Options options) {
 +#if !defined(OS_BSD)
-   void* soda_library = dlopen(GetSodaBinaryPath().value().c_str(),
-                               RTLD_NOW | RTLD_GLOBAL | RTLD_NODELETE);
-   DCHECK(soda_library);
-@@ -58,6 +63,7 @@ bool SpeechRecognitionPreSandboxHook(
+ #if BUILDFLAG(ENABLE_SODA)
+   void* soda_test_library = dlopen(GetSodaTestBinaryPath().value().c_str(),
+                                    RTLD_NOW | RTLD_GLOBAL | RTLD_NODELETE);
+@@ -73,6 +78,7 @@ bool SpeechRecognitionPreSandboxHook(
                                 sandbox::policy::SandboxLinux::PreSandboxHook(),
                                 options);
    instance->EngageNamespaceSandboxIfPossible();

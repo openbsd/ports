@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_web_applications_extensions_extension_status_utils_cc,v 1.1 2021/10/29 14:49:40 robert Exp $
+$OpenBSD: patch-chrome_browser_web_applications_extensions_extension_status_utils_cc,v 1.2 2021/12/28 15:49:55 robert Exp $
 
 Index: chrome/browser/web_applications/extensions/extension_status_utils.cc
 --- chrome/browser/web_applications/extensions/extension_status_utils.cc.orig
 +++ chrome/browser/web_applications/extensions/extension_status_utils.cc
-@@ -77,7 +77,7 @@ bool IsExternalExtensionUninstalled(content::BrowserCo
+@@ -76,7 +76,7 @@ bool IsExternalExtensionUninstalled(content::BrowserCo
    return prefs && prefs->IsExternalExtensionUninstalled(extension_id);
  }
  

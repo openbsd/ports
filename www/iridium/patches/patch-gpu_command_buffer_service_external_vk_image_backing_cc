@@ -1,4 +1,4 @@
-$OpenBSD: patch-gpu_command_buffer_service_external_vk_image_backing_cc,v 1.7 2021/10/29 14:49:41 robert Exp $
+$OpenBSD: patch-gpu_command_buffer_service_external_vk_image_backing_cc,v 1.8 2021/12/28 15:49:55 robert Exp $
 
 Index: gpu/command_buffer/service/external_vk_image_backing.cc
 --- gpu/command_buffer/service/external_vk_image_backing.cc.orig
@@ -12,7 +12,7 @@ Index: gpu/command_buffer/service/external_vk_image_backing.cc
  #include "gpu/command_buffer/service/external_vk_image_dawn_representation.h"
  #endif
  
-@@ -557,7 +557,7 @@ ExternalVkImageBacking::ProduceDawn(SharedImageManager
+@@ -556,7 +556,7 @@ ExternalVkImageBacking::ProduceDawn(SharedImageManager
                                      MemoryTypeTracker* tracker,
                                      WGPUDevice wgpuDevice,
                                      WGPUBackendType backend_type) {
@@ -21,7 +21,7 @@ Index: gpu/command_buffer/service/external_vk_image_backing.cc
    auto wgpu_format = viz::ToWGPUFormat(format());
  
    if (wgpu_format == WGPUTextureFormat_Undefined) {
-@@ -589,7 +589,7 @@ GLuint ExternalVkImageBacking::ProduceGLTextureInterna
+@@ -588,7 +588,7 @@ GLuint ExternalVkImageBacking::ProduceGLTextureInterna
    gl::GLApi* api = gl::g_current_gl_context;
    absl::optional<ScopedDedicatedMemoryObject> memory_object;
    if (!use_separate_gl_texture()) {

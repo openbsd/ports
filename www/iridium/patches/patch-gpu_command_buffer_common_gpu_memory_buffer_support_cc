@@ -1,9 +1,9 @@
-$OpenBSD: patch-gpu_command_buffer_common_gpu_memory_buffer_support_cc,v 1.10 2021/10/29 14:49:41 robert Exp $
+$OpenBSD: patch-gpu_command_buffer_common_gpu_memory_buffer_support_cc,v 1.11 2021/12/28 15:49:55 robert Exp $
 
 Index: gpu/command_buffer/common/gpu_memory_buffer_support.cc
 --- gpu/command_buffer/common/gpu_memory_buffer_support.cc.orig
 +++ gpu/command_buffer/common/gpu_memory_buffer_support.cc
-@@ -125,7 +125,7 @@ uint32_t GetPlatformSpecificTextureTarget() {
+@@ -137,7 +137,7 @@ uint32_t GetPlatformSpecificTextureTarget() {
  #if defined(OS_MAC)
    return macos_specific_texture_target;
  #elif defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
@@ -12,7 +12,7 @@ Index: gpu/command_buffer/common/gpu_memory_buffer_support.cc
    return GL_TEXTURE_EXTERNAL_OES;
  #elif defined(OS_FUCHSIA)
    return GL_TEXTURE_2D;
-@@ -156,7 +156,7 @@ GPU_EXPORT uint32_t GetBufferTextureTarget(gfx::Buffer
+@@ -168,7 +168,7 @@ GPU_EXPORT uint32_t GetBufferTextureTarget(gfx::Buffer
  GPU_EXPORT bool NativeBufferNeedsPlatformSpecificTextureTarget(
      gfx::BufferFormat format) {
  #if defined(USE_OZONE) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \

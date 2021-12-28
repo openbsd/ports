@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_test_BUILD_gn,v 1.4 2021/10/29 14:49:41 robert Exp $
+$OpenBSD: patch-content_test_BUILD_gn,v 1.5 2021/12/28 15:49:55 robert Exp $
 
 Index: content/test/BUILD.gn
 --- content/test/BUILD.gn.orig
 +++ content/test/BUILD.gn
-@@ -1847,7 +1847,7 @@ static_library("run_all_unittests") {
+@@ -1864,7 +1864,7 @@ static_library("run_all_unittests") {
      ":test_support",
      "//base/test:test_support",
    ]
@@ -12,7 +12,7 @@ Index: content/test/BUILD.gn
      deps += [ "//content/common:set_process_title_linux" ]
    }
  }
-@@ -2771,7 +2771,7 @@ test("content_unittests") {
+@@ -2775,7 +2775,7 @@ test("content_unittests") {
      deps += [ "//ui/gfx/x" ]
    }
  

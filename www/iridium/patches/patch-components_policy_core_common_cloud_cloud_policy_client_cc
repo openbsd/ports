@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_policy_core_common_cloud_cloud_policy_client_cc,v 1.2 2021/10/29 14:49:40 robert Exp $
+$OpenBSD: patch-components_policy_core_common_cloud_cloud_policy_client_cc,v 1.3 2021/12/28 15:49:55 robert Exp $
 
 Index: components/policy/core/common/cloud/cloud_policy_client.cc
 --- components/policy/core/common/cloud/cloud_policy_client.cc.orig
 +++ components/policy/core/common/cloud/cloud_policy_client.cc
-@@ -392,7 +392,7 @@ void CloudPolicyClient::FetchPolicy() {
+@@ -393,7 +393,7 @@ void CloudPolicyClient::FetchPolicy() {
          fetch_request->set_invalidation_payload(invalidation_payload_);
        }
      }

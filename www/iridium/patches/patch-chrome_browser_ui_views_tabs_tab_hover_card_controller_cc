@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_views_tabs_tab_hover_card_controller_cc,v 1.1 2021/10/29 14:49:40 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_tabs_tab_hover_card_controller_cc,v 1.2 2021/12/28 15:49:55 robert Exp $
 
 Index: chrome/browser/ui/views/tabs/tab_hover_card_controller.cc
 --- chrome/browser/ui/views/tabs/tab_hover_card_controller.cc.orig
 +++ chrome/browser/ui/views/tabs/tab_hover_card_controller.cc
-@@ -304,7 +304,7 @@ void TabHoverCardController::ShowHoverCard(bool is_ini
+@@ -302,7 +302,7 @@ void TabHoverCardController::ShowHoverCard(bool is_ini
    slide_animator_->UpdateTargetBounds();
    MaybeStartThumbnailObservation(target_tab_, is_initial);
  

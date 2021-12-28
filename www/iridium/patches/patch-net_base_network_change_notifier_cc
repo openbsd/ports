@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_base_network_change_notifier_cc,v 1.20 2021/10/29 14:49:41 robert Exp $
+$OpenBSD: patch-net_base_network_change_notifier_cc,v 1.21 2021/12/28 15:49:55 robert Exp $
 
 Index: net/base/network_change_notifier.cc
 --- net/base/network_change_notifier.cc.orig
@@ -12,7 +12,7 @@ Index: net/base/network_change_notifier.cc
  #include "net/base/network_change_notifier_posix.h"
  #elif defined(OS_FUCHSIA)
  #include "net/base/network_change_notifier_fuchsia.h"
-@@ -241,9 +241,13 @@ std::unique_ptr<NetworkChangeNotifier> NetworkChangeNo
+@@ -303,9 +303,13 @@ std::unique_ptr<NetworkChangeNotifier> NetworkChangeNo
    // service in a separate process.
    return std::make_unique<NetworkChangeNotifierPosix>(initial_type,
                                                        initial_subtype);

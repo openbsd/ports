@@ -1,9 +1,9 @@
-$OpenBSD: patch-mojo_core_BUILD_gn,v 1.2 2021/10/29 14:49:41 robert Exp $
+$OpenBSD: patch-mojo_core_BUILD_gn,v 1.3 2021/12/28 15:49:55 robert Exp $
 
 Index: mojo/core/BUILD.gn
 --- mojo/core/BUILD.gn.orig
 +++ mojo/core/BUILD.gn
-@@ -126,7 +126,7 @@ template("core_impl_source_set") {
+@@ -127,7 +127,7 @@ template("core_impl_source_set") {
          ]
        }
  

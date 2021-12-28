@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_safe_browsing_core_browser_db_v4_protocol_manager_util_cc,v 1.1 2021/10/29 14:49:40 robert Exp $
+$OpenBSD: patch-components_safe_browsing_core_browser_db_v4_protocol_manager_util_cc,v 1.2 2021/12/28 15:49:55 robert Exp $
 
 Index: components/safe_browsing/core/browser/db/v4_protocol_manager_util.cc
 --- components/safe_browsing/core/browser/db/v4_protocol_manager_util.cc.orig
 +++ components/safe_browsing/core/browser/db/v4_protocol_manager_util.cc
-@@ -116,7 +116,7 @@ std::ostream& operator<<(std::ostream& os, const ListI
+@@ -115,7 +115,7 @@ std::ostream& operator<<(std::ostream& os, const ListI
  PlatformType GetCurrentPlatformType() {
  #if defined(OS_WIN)
    return WINDOWS_PLATFORM;

@@ -1,10 +1,10 @@
-$OpenBSD: patch-printing_printing_features_cc,v 1.3 2021/10/29 14:49:41 robert Exp $
+$OpenBSD: patch-printing_printing_features_cc,v 1.4 2021/12/28 15:49:55 robert Exp $
 
 Index: printing/printing_features.cc
 --- printing/printing_features.cc.orig
 +++ printing/printing_features.cc
-@@ -7,7 +7,7 @@
- #include "build/chromeos_buildflags.h"
+@@ -8,7 +8,7 @@
+ #include "printing/buildflags/buildflags.h"
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS)
@@ -12,12 +12,3 @@ Index: printing/printing_features.cc
  #include "base/metrics/field_trial_params.h"
  #endif
  
-@@ -54,7 +54,7 @@ bool ShouldPrintUsingXps(bool source_is_pdf) {
- #endif  // defined(OS_WIN)
- 
- #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
--    defined(OS_CHROMEOS)
-+    defined(OS_CHROMEOS) || defined(OS_BSD)
- // Enables printing interactions with the operating system to be performed
- // out-of-process.
- const base::Feature kEnableOopPrintDrivers{"EnableOopPrintDrivers",

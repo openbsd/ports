@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.26 2021/10/29 14:49:39 robert Exp $
+$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.27 2021/12/28 15:49:54 robert Exp $
 
 Index: chrome/app/chrome_main_delegate.cc
 --- chrome/app/chrome_main_delegate.cc.orig
@@ -63,7 +63,7 @@ Index: chrome/app/chrome_main_delegate.cc
    // Record the startup process creation time on supported platforms. On Android
    // this is recorded in ChromeMainDelegateAndroid.
    startup_metric_utils::RecordStartupProcessCreationTime(
-@@ -673,6 +673,8 @@ void ChromeMainDelegate::PostFieldTrialInitialization(
+@@ -677,6 +677,8 @@ void ChromeMainDelegate::PostFieldTrialInitialization(
    // not always enabled on Linux/ChromeOS.
  #if defined(OS_LINUX) || defined(OS_CHROMEOS)
    bool enable_gwp_asan = crash_reporter::IsCrashpadEnabled();
@@ -72,7 +72,7 @@ Index: chrome/app/chrome_main_delegate.cc
  #else
    bool enable_gwp_asan = true;
  #endif
-@@ -794,7 +796,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
+@@ -798,7 +800,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
    }
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -81,7 +81,7 @@ Index: chrome/app/chrome_main_delegate.cc
    // This will directly exit if the user asked for help.
    HandleHelpSwitches(command_line);
  #endif
-@@ -825,7 +827,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
+@@ -829,7 +831,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
  #if BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_CHROMEOS_LACROS)
    chromeos::dbus_paths::RegisterPathProvider();
  #endif
@@ -90,7 +90,7 @@ Index: chrome/app/chrome_main_delegate.cc
    nacl::RegisterPathProvider();
  #endif
  
-@@ -1136,7 +1138,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -1140,7 +1142,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
          locale;
    }
  
@@ -99,7 +99,7 @@ Index: chrome/app/chrome_main_delegate.cc
    // Zygote needs to call InitCrashReporter() in RunZygote().
    if (process_type != switches::kZygoteProcess) {
  #if defined(OS_ANDROID)
-@@ -1219,7 +1221,7 @@ int ChromeMainDelegate::RunProcess(
+@@ -1223,7 +1225,7 @@ int ChromeMainDelegate::RunProcess(
  
      // This entry is not needed on Linux, where the NaCl loader
      // process is launched via nacl_helper instead.

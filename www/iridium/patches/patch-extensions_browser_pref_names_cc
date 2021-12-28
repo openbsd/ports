@@ -1,4 +1,4 @@
-$OpenBSD: patch-extensions_browser_pref_names_cc,v 1.1 2021/10/29 14:49:41 robert Exp $
+$OpenBSD: patch-extensions_browser_pref_names_cc,v 1.2 2021/12/28 15:49:55 robert Exp $
 
 Index: extensions/browser/pref_names.cc
 --- extensions/browser/pref_names.cc.orig
@@ -11,4 +11,4 @@ Index: extensions/browser/pref_names.cc
 +#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
  extern const char kChromeAppsEnabled[] = "extensions.chrome_apps_enabled";
  #endif
- 
+ const char kU2fSecurityKeyApiEnabled[] =

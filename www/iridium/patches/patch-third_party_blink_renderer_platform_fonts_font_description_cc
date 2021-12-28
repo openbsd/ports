@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_fonts_font_description_cc,v 1.8 2021/10/29 14:49:42 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_fonts_font_description_cc,v 1.9 2021/12/28 15:49:55 robert Exp $
 
 Index: third_party/blink/renderer/platform/fonts/font_description.cc
 --- third_party/blink/renderer/platform/fonts/font_description.cc.orig
@@ -12,7 +12,7 @@ Index: third_party/blink/renderer/platform/fonts/font_description.cc
  #include "third_party/blink/renderer/platform/fonts/font_cache.h"
  #endif
  
-@@ -258,7 +258,7 @@ FontCacheKey FontDescription::CacheKey(
+@@ -259,7 +259,7 @@ FontCacheKey FontDescription::CacheKey(
        static_cast<unsigned>(fields_.orientation_) << 1 |          // bit 2-3
        static_cast<unsigned>(fields_.subpixel_text_position_);     // bit 1
  

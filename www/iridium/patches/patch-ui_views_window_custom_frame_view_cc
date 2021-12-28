@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_views_window_custom_frame_view_cc,v 1.18 2021/10/29 14:49:43 robert Exp $
+$OpenBSD: patch-ui_views_window_custom_frame_view_cc,v 1.19 2021/12/28 15:49:56 robert Exp $
 
 Index: ui/views/window/custom_frame_view.cc
 --- ui/views/window/custom_frame_view.cc.orig
 +++ ui/views/window/custom_frame_view.cc
-@@ -261,7 +261,7 @@ int CustomFrameView::CaptionButtonY() const {
+@@ -265,7 +265,7 @@ int CustomFrameView::CaptionButtonY() const {
    // drawn flush with the screen edge, they still obey Fitts' Law.
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

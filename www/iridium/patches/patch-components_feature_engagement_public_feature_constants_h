@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_feature_engagement_public_feature_constants_h,v 1.8 2021/10/29 14:49:40 robert Exp $
+$OpenBSD: patch-components_feature_engagement_public_feature_constants_h,v 1.9 2021/12/28 15:49:55 robert Exp $
 
 Index: components/feature_engagement/public/feature_constants.h
 --- components/feature_engagement/public/feature_constants.h.orig
@@ -12,7 +12,7 @@ Index: components/feature_engagement/public/feature_constants.h
  extern const base::Feature kIPHDesktopTabGroupsNewGroupFeature;
  extern const base::Feature kIPHFocusModeFeature;
  extern const base::Feature kIPHGlobalMediaControlsFeature;
-@@ -130,7 +130,7 @@ extern const base::Feature kIPHBadgedTranslateManualTr
+@@ -137,7 +137,7 @@ extern const base::Feature kIPHBadgedTranslateManualTr
  extern const base::Feature kIPHDiscoverFeedHeaderFeature;
  #endif  // defined(OS_IOS)
  

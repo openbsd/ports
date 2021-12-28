@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_defaults_cc,v 1.18 2021/10/29 14:49:39 robert Exp $
+$OpenBSD: patch-chrome_browser_defaults_cc,v 1.19 2021/12/28 15:49:54 robert Exp $
 
 Index: chrome/browser/defaults.cc
 --- chrome/browser/defaults.cc.orig
 +++ chrome/browser/defaults.cc
-@@ -46,7 +46,7 @@ const bool kSyncAutoStarts = false;
+@@ -50,7 +50,7 @@ const bool kSyncAutoStarts = false;
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

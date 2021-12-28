@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_ppapi_plugin_ppapi_blink_platform_impl_h,v 1.13 2021/10/29 14:49:41 robert Exp $
+$OpenBSD: patch-content_ppapi_plugin_ppapi_blink_platform_impl_h,v 1.14 2021/12/28 15:49:55 robert Exp $
 
 Index: content/ppapi_plugin/ppapi_blink_platform_impl.h
 --- content/ppapi_plugin/ppapi_blink_platform_impl.h.orig
@@ -12,7 +12,7 @@ Index: content/ppapi_plugin/ppapi_blink_platform_impl.h
  #include "components/services/font/public/cpp/font_loader.h"
  #include "third_party/skia/include/core/SkRefCnt.h"
  #endif
-@@ -36,11 +36,11 @@ class PpapiBlinkPlatformImpl : public BlinkPlatformImp
+@@ -40,11 +40,11 @@ class PpapiBlinkPlatformImpl : public BlinkPlatformImp
    blink::WebThemeEngine* ThemeEngine() override;
  
   private:
@@ -25,4 +25,4 @@ Index: content/ppapi_plugin/ppapi_blink_platform_impl.h
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    sk_sp<font_service::FontLoader> font_loader_;
  #endif
- 
+ };

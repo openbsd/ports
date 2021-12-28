@@ -1,12 +1,12 @@
-$OpenBSD: patch-extensions_common_features_feature_cc,v 1.8 2021/10/29 14:49:41 robert Exp $
+$OpenBSD: patch-extensions_common_features_feature_cc,v 1.9 2021/12/28 15:49:55 robert Exp $
 
 Index: extensions/common/features/feature.cc
 --- extensions/common/features/feature.cc.orig
 +++ extensions/common/features/feature.cc
-@@ -32,6 +32,8 @@ Feature::Platform Feature::GetCurrentPlatform() {
-   return MACOSX_PLATFORM;
- #elif defined(OS_WIN)
+@@ -34,6 +34,8 @@ Feature::Platform Feature::GetCurrentPlatform() {
    return WIN_PLATFORM;
+ #elif defined(OS_FUCHSIA)
+   return FUCHSIA_PLATFORM;
 +#elif defined(OS_OPENBSD)
 +  return LINUX_PLATFORM;
  #else

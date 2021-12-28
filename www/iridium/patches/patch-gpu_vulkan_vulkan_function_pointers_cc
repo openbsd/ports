@@ -1,4 +1,4 @@
-$OpenBSD: patch-gpu_vulkan_vulkan_function_pointers_cc,v 1.7 2021/10/29 14:49:41 robert Exp $
+$OpenBSD: patch-gpu_vulkan_vulkan_function_pointers_cc,v 1.8 2021/12/28 15:49:55 robert Exp $
 
 Index: gpu/vulkan/vulkan_function_pointers.cc
 --- gpu/vulkan/vulkan_function_pointers.cc.orig
@@ -21,7 +21,7 @@ Index: gpu/vulkan/vulkan_function_pointers.cc
    if (gfx::HasExtension(enabled_extensions,
                          VK_KHR_EXTERNAL_MEMORY_FD_EXTENSION_NAME)) {
      vkGetMemoryFdKHR = reinterpret_cast<PFN_vkGetMemoryFdKHR>(
-@@ -1119,7 +1119,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
+@@ -1120,7 +1120,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
      }
    }
  

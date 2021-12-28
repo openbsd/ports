@@ -1,0 +1,12 @@
+$OpenBSD: patch-device_bluetooth_cast_bluetooth_gni,v 1.1 2021/12/28 15:49:55 robert Exp $
+
+Index: device/bluetooth/cast_bluetooth.gni
+--- device/bluetooth/cast_bluetooth.gni.orig
++++ device/bluetooth/cast_bluetooth.gni
+@@ -2,5 +2,5 @@ import("//build/config/features.gni")
+ 
+ declare_args() {
+   force_cast_bluetooth = false
+-  use_bluez = use_dbus
++  use_bluez = use_dbus && !is_openbsd
+ }

@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_app_generated_resources_grd,v 1.20 2021/10/29 14:49:39 robert Exp $
+$OpenBSD: patch-chrome_app_generated_resources_grd,v 1.21 2021/12/28 15:49:54 robert Exp $
 
 Index: chrome/app/generated_resources.grd
 --- chrome/app/generated_resources.grd.orig
@@ -12,25 +12,34 @@ Index: chrome/app/generated_resources.grd
  for making strings OS specific.  Other platform defines such as use_titlecase
  are declared in tools/grit/grit_rule.gni.
  -->
-@@ -296,7 +296,7 @@ are declared in tools/grit/grit_rule.gni.
-       <if expr="not is_android">
-         <part file="protocol_handler_intent_picker_strings.grdp" />
-       </if>
+@@ -293,7 +293,7 @@ are declared in tools/grit/grit_rule.gni.
+       <part file="profiles_strings.grdp" />
+ 
+       <!-- Web app intent picker strings -->
 -      <if expr="is_win or is_macosx or is_linux">
 +      <if expr="is_win or is_macosx or is_posix">
          <part file="url_handler_intent_picker_strings.grdp" />
        </if>
  
-@@ -5474,7 +5474,7 @@ Keep your key file in a safe place. You will need it t
+@@ -2799,7 +2799,7 @@ are declared in tools/grit/grit_rule.gni.
+       </if>
+ 
+       <!-- Bluetooth Device Credentials (i.e. PIN/Passkey) dialog -->
+-      <if expr="is_win or is_linux">
++      <if expr="is_win or is_posix">
+         <message name="IDS_BLUETOOTH_DEVICE_CREDENTIALS_TITLE" desc="Title of the Bluetooth device credentials prompt dialog.">
+           Device Credentials
+         </message>
+@@ -5528,7 +5528,7 @@ Keep your key file in a safe place. You will need it t
        </if>
  
        <!-- chrome://browser-switch strings -->
--      <if expr="is_win or is_macosx or (is_linux and not chromeos)">
-+      <if expr="is_win or is_macosx or (is_posix and not chromeos)">
+-      <if expr="is_win or is_macosx or is_fuchsia or (is_linux and not chromeos)">
++      <if expr="is_win or is_macosx or is_fuchsia or (is_posix and not chromeos)">
          <message name="IDS_ABOUT_BROWSER_SWITCH_TITLE" desc="about:browser-switch page title">
            Legacy Browser Support
          </message>
-@@ -7772,7 +7772,7 @@ Keep your key file in a safe place. You will need it t
+@@ -7904,7 +7904,7 @@ Keep your key file in a safe place. You will need it t
          Google Pay
        </message>
  
@@ -39,7 +48,7 @@ Index: chrome/app/generated_resources.grd
          <message name="IDS_SHOW_WINDOW_DECORATIONS" desc="The label of a radio button in the options dialog for using the system title bar and borders.">
            Use system title bar and borders
          </message>
-@@ -8843,7 +8843,7 @@ Please help our engineers fix this problem. Tell us wh
+@@ -8981,7 +8981,7 @@ Please help our engineers fix this problem. Tell us wh
          Set as default
        </message>
  

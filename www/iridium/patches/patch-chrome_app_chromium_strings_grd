@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_app_chromium_strings_grd,v 1.28 2021/10/29 14:49:39 robert Exp $
+$OpenBSD: patch-chrome_app_chromium_strings_grd,v 1.29 2021/12/28 15:49:54 robert Exp $
 
 Index: chrome/app/chromium_strings.grd
 --- chrome/app/chromium_strings.grd.orig
@@ -16,8 +16,8 @@ Index: chrome/app/chromium_strings.grd
        </if>
  
        <!-- about:browser-switch strings -->
--      <if expr="is_win or is_macosx or (is_linux and not chromeos)">
-+      <if expr="is_win or is_macosx or (is_posix and not chromeos)">
+-      <if expr="is_win or is_macosx or is_fuchsia or (is_linux and not chromeos)">
++      <if expr="is_win or is_macosx or is_fuchsia or (is_posix and not chromeos)">
          <message name="IDS_ABOUT_BROWSER_SWITCH_DESCRIPTION_UNKNOWN_BROWSER" desc="Description shown while waiting for an alternative browser to open, when the browser name is not auto-detected">
            Your system administrator has configured the browser to open an alternative browser to access <ph name="TARGET_URL_HOSTNAME">$1<ex>example.com</ex></ph>.
          </message>

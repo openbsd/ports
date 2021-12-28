@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_shutdown_signal_handlers_posix_cc,v 1.1 2021/10/29 14:49:40 robert Exp $
+$OpenBSD: patch-chrome_browser_shutdown_signal_handlers_posix_cc,v 1.2 2021/12/28 15:49:55 robert Exp $
 
 Index: chrome/browser/shutdown_signal_handlers_posix.cc
 --- chrome/browser/shutdown_signal_handlers_posix.cc.orig
 +++ chrome/browser/shutdown_signal_handlers_posix.cc
-@@ -186,12 +186,18 @@ void InstallShutdownSignalHandlers(
+@@ -188,12 +188,18 @@ void InstallShutdownSignalHandlers(
    g_pipe_pid = getpid();
    g_shutdown_pipe_read_fd = pipefd[0];
    g_shutdown_pipe_write_fd = pipefd[1];

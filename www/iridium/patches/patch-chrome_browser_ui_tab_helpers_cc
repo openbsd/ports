@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_tab_helpers_cc,v 1.17 2021/10/29 14:49:40 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_tab_helpers_cc,v 1.18 2021/12/28 15:49:55 robert Exp $
 
 Index: chrome/browser/ui/tab_helpers.cc
 --- chrome/browser/ui/tab_helpers.cc.orig
 +++ chrome/browser/ui/tab_helpers.cc
-@@ -161,7 +161,7 @@
+@@ -166,7 +166,7 @@
  #endif
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/tab_helpers.cc
  #include "chrome/browser/ui/blocked_content/framebust_block_tab_helper.h"
  #include "chrome/browser/ui/hats/hats_helper.h"
  #endif
-@@ -431,13 +431,13 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
+@@ -445,13 +445,13 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

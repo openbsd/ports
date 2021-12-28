@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_flag_descriptions_h,v 1.14 2021/10/29 14:49:39 robert Exp $
+$OpenBSD: patch-chrome_browser_flag_descriptions_h,v 1.15 2021/12/28 15:49:54 robert Exp $
 
 Index: chrome/browser/flag_descriptions.h
 --- chrome/browser/flag_descriptions.h.orig
@@ -12,16 +12,16 @@ Index: chrome/browser/flag_descriptions.h
  #include "base/allocator/buildflags.h"
  #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
  
-@@ -3046,7 +3046,7 @@ extern const char kDownloadShelfWebUIDescription[];
+@@ -3056,7 +3056,7 @@ extern const char kDownloadShelfWebUIDescription[];
  // Random platform combinations -----------------------------------------------
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
 +    defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
  
- extern const char kEnableOopPrintDriversName[];
- extern const char kEnableOopPrintDriversDescription[];
-@@ -3063,7 +3063,7 @@ extern const char kSettingsLandingPageRedesignDescript
+ extern const char kWebUIBrandingUpdateName[];
+ extern const char kWebUIBrandingUpdateDescription[];
+@@ -3070,7 +3070,7 @@ extern const char kSettingsLandingPageRedesignDescript
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) ||
          // defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
  
@@ -30,7 +30,7 @@ Index: chrome/browser/flag_descriptions.h
  
  extern const char kCommanderName[];
  extern const char kCommanderDescription[];
-@@ -3076,7 +3076,7 @@ extern const char kDesktopDetailedLanguageSettingsDesc
+@@ -3083,7 +3083,7 @@ extern const char kDesktopDetailedLanguageSettingsDesc
  
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
  
@@ -39,7 +39,7 @@ Index: chrome/browser/flag_descriptions.h
  #if BUILDFLAG(USE_TCMALLOC)
  extern const char kDynamicTcmallocName[];
  extern const char kDynamicTcmallocDescription[];
-@@ -3148,7 +3148,7 @@ extern const char kElasticOverscrollDescription[];
+@@ -3171,7 +3171,7 @@ extern const char kElasticOverscrollDescription[];
  #endif  // defined(OS_WIN) || defined(OS_ANDROID)
  
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \

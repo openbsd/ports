@@ -1,0 +1,14 @@
+$OpenBSD: patch-ui_ozone_platform_x11_ozone_platform_x11_cc,v 1.1 2021/12/28 15:49:56 robert Exp $
+
+Index: ui/ozone/platform/x11/ozone_platform_x11.cc
+--- ui/ozone/platform/x11/ozone_platform_x11.cc.orig
++++ ui/ozone/platform/x11/ozone_platform_x11.cc
+@@ -211,7 +211,7 @@ class OzonePlatformX11 : public OzonePlatform,
+       properties->supports_global_application_menus = true;
+       properties->app_modal_dialogs_use_event_blocker = true;
+       properties->fetch_buffer_formats_for_gmb_on_gpu = true;
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+       properties->supports_vaapi = true;
+ #endif
+ 

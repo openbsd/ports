@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_shell_browser_shell_browser_main_parts_cc,v 1.17 2021/10/29 14:49:41 robert Exp $
+$OpenBSD: patch-content_shell_browser_shell_browser_main_parts_cc,v 1.18 2021/12/28 15:49:55 robert Exp $
 
 Index: content/shell/browser/shell_browser_main_parts.cc
 --- content/shell/browser/shell_browser_main_parts.cc.orig
 +++ content/shell/browser/shell_browser_main_parts.cc
-@@ -60,7 +60,7 @@
+@@ -61,7 +61,7 @@
  #include "ui/events/devices/x11/touch_factory_x11.h"  // nogncheck
  #endif
  
@@ -12,7 +12,7 @@ Index: content/shell/browser/shell_browser_main_parts.cc
  #include "ui/base/ime/init/input_method_initializer.h"
  #endif
  
-@@ -148,7 +148,7 @@ void ShellBrowserMainParts::PostCreateMainMessageLoop(
+@@ -149,7 +149,7 @@ void ShellBrowserMainParts::PostCreateMainMessageLoop(
  }
  
  int ShellBrowserMainParts::PreEarlyInitialization() {

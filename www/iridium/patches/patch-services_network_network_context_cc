@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_network_network_context_cc,v 1.10 2021/10/29 14:49:42 robert Exp $
+$OpenBSD: patch-services_network_network_context_cc,v 1.11 2021/12/28 15:49:55 robert Exp $
 
 Index: services/network/network_context.cc
 --- services/network/network_context.cc.orig
 +++ services/network/network_context.cc
-@@ -2486,7 +2486,7 @@ NetworkContext::MakeSessionCleanupCookieStore() const 
+@@ -2487,7 +2487,7 @@ NetworkContext::MakeSessionCleanupCookieStore() const 
  
    net::CookieCryptoDelegate* crypto_delegate = nullptr;
    if (params_->enable_encrypted_cookies) {

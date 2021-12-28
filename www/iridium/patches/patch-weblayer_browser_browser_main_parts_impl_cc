@@ -1,10 +1,10 @@
-$OpenBSD: patch-weblayer_browser_browser_main_parts_impl_cc,v 1.7 2021/10/29 14:49:43 robert Exp $
+$OpenBSD: patch-weblayer_browser_browser_main_parts_impl_cc,v 1.8 2021/12/28 15:49:56 robert Exp $
 
 Index: weblayer/browser/browser_main_parts_impl.cc
 --- weblayer/browser/browser_main_parts_impl.cc.orig
 +++ weblayer/browser/browser_main_parts_impl.cc
-@@ -81,7 +81,7 @@
- #endif
+@@ -77,7 +77,7 @@
+ 
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.
 -#if defined(USE_AURA) && (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
@@ -12,7 +12,7 @@ Index: weblayer/browser/browser_main_parts_impl.cc
  #include "ui/base/ime/init/input_method_initializer.h"
  #endif
  
-@@ -206,7 +206,7 @@ int BrowserMainPartsImpl::PreEarlyInitialization() {
+@@ -195,7 +195,7 @@ int BrowserMainPartsImpl::PreEarlyInitialization() {
  
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.

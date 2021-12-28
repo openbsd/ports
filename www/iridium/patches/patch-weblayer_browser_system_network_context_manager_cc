@@ -1,9 +1,9 @@
-$OpenBSD: patch-weblayer_browser_system_network_context_manager_cc,v 1.5 2021/10/29 14:49:43 robert Exp $
+$OpenBSD: patch-weblayer_browser_system_network_context_manager_cc,v 1.6 2021/12/28 15:49:56 robert Exp $
 
 Index: weblayer/browser/system_network_context_manager.cc
 --- weblayer/browser/system_network_context_manager.cc.orig
 +++ weblayer/browser/system_network_context_manager.cc
-@@ -68,7 +68,7 @@ void SystemNetworkContextManager::ConfigureDefaultNetw
+@@ -69,7 +69,7 @@ void SystemNetworkContextManager::ConfigureDefaultNetw
    network_context_params->user_agent = user_agent;
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.

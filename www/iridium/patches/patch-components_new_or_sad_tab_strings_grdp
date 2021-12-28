@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_new_or_sad_tab_strings_grdp,v 1.13 2021/10/29 14:49:40 robert Exp $
+$OpenBSD: patch-components_new_or_sad_tab_strings_grdp,v 1.14 2021/12/28 15:49:55 robert Exp $
 
 Index: components/new_or_sad_tab_strings.grdp
 --- components/new_or_sad_tab_strings.grdp.orig
@@ -7,8 +7,8 @@ Index: components/new_or_sad_tab_strings.grdp
            Open page in a new Incognito window (⇧⌘N)
          </message>
        </if>
--      <if expr="is_win or is_linux or chromeos">
-+      <if expr="is_win or is_posix or chromeos">
+-      <if expr="is_win or is_linux or is_fuchsia or chromeos">
++      <if expr="is_win or is_posix or is_fuchsia or chromeos">
          <message name="IDS_SAD_TAB_RELOAD_INCOGNITO" desc="One of the bullet points displayed on the web page if a reload failed to fix the issue, advising the user to open the web page in Chrome's Incognito mode.">
            Open page in a new Incognito window (Ctrl-Shift-N)
          </message>
@@ -34,8 +34,8 @@ Index: components/new_or_sad_tab_strings.grdp
            Restart Chromium
          </message>
        </if>
--      <if expr="is_win or is_linux or is_macosx or chromeos">
-+      <if expr="is_win or is_posix or is_macosx or chromeos">
+-      <if expr="is_win or is_linux or is_macosx or is_fuchsia or chromeos">
++      <if expr="is_win or is_posix or is_macosx or is_fuchsia or chromeos">
          <message name="IDS_SAD_TAB_RELOAD_RESTART_DEVICE" desc="One of the bullet points displayed on the web page if a reload failed to fix the issue, advising the user to restart their computer.">
            Restart your computer
          </message>
@@ -43,8 +43,8 @@ Index: components/new_or_sad_tab_strings.grdp
            Learn more
          </message>
        </if>
--      <if expr="is_win or is_linux or is_macosx or chromeos">
-+      <if expr="is_win or is_posix or is_macosx or chromeos">
+-      <if expr="is_win or is_linux or is_macosx or is_fuchsia or chromeos">
++      <if expr="is_win or is_posix or is_macosx or is_fuchsia or chromeos">
          <message name="IDS_SAD_TAB_ERROR_CODE" desc="The message displayed on the crashed web page indicating the type of the crash.">
            Error code: <ph name="ERROR_CODE">$1<ex>STATUS_ACCESS_VIOLATION</ex></ph>
          </message>

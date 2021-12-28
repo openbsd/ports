@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_views_first_run_dialog_cc,v 1.19 2021/10/29 14:49:40 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_first_run_dialog_cc,v 1.20 2021/12/28 15:49:55 robert Exp $
 
 Index: chrome/browser/ui/views/first_run_dialog.cc
 --- chrome/browser/ui/views/first_run_dialog.cc.orig
 +++ chrome/browser/ui/views/first_run_dialog.cc
-@@ -37,7 +37,7 @@
+@@ -38,7 +38,7 @@
  
  namespace {
  
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/views/first_run_dialog.cc
  void InitCrashReporterIfEnabled(bool enabled) {
    if (!crash_reporter::IsCrashpadEnabled() && enabled)
      breakpad::InitCrashReporter(std::string());
-@@ -125,7 +125,7 @@ bool FirstRunDialog::Accept() {
+@@ -126,7 +126,7 @@ bool FirstRunDialog::Accept() {
  
  #if defined(OS_MAC)
    ChangeMetricsReportingState(report_crashes_->GetChecked());

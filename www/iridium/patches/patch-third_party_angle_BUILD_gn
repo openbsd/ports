@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_angle_BUILD_gn,v 1.16 2021/10/29 14:49:42 robert Exp $
+$OpenBSD: patch-third_party_angle_BUILD_gn,v 1.17 2021/12/28 15:49:55 robert Exp $
 
 Index: third_party/angle/BUILD.gn
 --- third_party/angle/BUILD.gn.orig
 +++ third_party/angle/BUILD.gn
-@@ -380,7 +380,7 @@ angle_static_library("angle_common") {
+@@ -384,7 +384,7 @@ angle_static_library("angle_common") {
      all_dependent_configs = [ ":angle_disable_pool_alloc" ]
    }
  
@@ -12,7 +12,7 @@ Index: third_party/angle/BUILD.gn
      libs = [ "dl" ]
    }
  
-@@ -488,6 +488,7 @@ angle_static_library("angle_gpu_info_util") {
+@@ -492,6 +492,7 @@ angle_static_library("angle_gpu_info_util") {
          "X11",
          "Xi",
          "Xext",

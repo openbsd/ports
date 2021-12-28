@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_process_process_metrics_h,v 1.18 2021/10/29 14:49:39 robert Exp $
+$OpenBSD: patch-base_process_process_metrics_h,v 1.19 2021/12/28 15:49:54 robert Exp $
 
 Index: base/process/process_metrics.h
 --- base/process/process_metrics.h.orig
@@ -21,7 +21,7 @@ Index: base/process/process_metrics.h
  // Minor and major page fault counts since the process creation.
  // Both counts are process-wide, and exclude child processes.
  //
-@@ -105,7 +105,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -108,7 +108,7 @@ class BASE_EXPORT ProcessMetrics {
    // convenience wrapper for CreateProcessMetrics().
    static std::unique_ptr<ProcessMetrics> CreateCurrentProcessMetrics();
  
@@ -30,7 +30,7 @@ Index: base/process/process_metrics.h
    // Resident Set Size is a Linux/Android specific memory concept. Do not
    // attempt to extend this to other platforms.
    BASE_EXPORT size_t GetResidentSetSize() const;
-@@ -132,7 +132,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -135,7 +135,7 @@ class BASE_EXPORT ProcessMetrics {
    TimeDelta GetCumulativeCPUUsage() WARN_UNUSED_RESULT;
  
  #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
@@ -39,7 +39,7 @@ Index: base/process/process_metrics.h
    // Emits the cumulative CPU usage for all currently active threads since they
    // were started into the output parameter (replacing its current contents).
    // Threads that have already terminated will not be reported. Thus, the sum of
-@@ -215,7 +215,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -218,7 +218,7 @@ class BASE_EXPORT ProcessMetrics {
    int GetOpenFdSoftLimit() const;
  #endif  // defined(OS_POSIX)
  
@@ -48,7 +48,7 @@ Index: base/process/process_metrics.h
    // Bytes of swap as reported by /proc/[pid]/status.
    uint64_t GetVmSwapBytes() const;
  
-@@ -235,7 +235,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -238,7 +238,7 @@ class BASE_EXPORT ProcessMetrics {
  #endif  // !defined(OS_MAC)
  
  #if defined(OS_APPLE) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
@@ -57,7 +57,7 @@ Index: base/process/process_metrics.h
    int CalculateIdleWakeupsPerSecond(uint64_t absolute_idle_wakeups);
  #endif
  #if defined(OS_APPLE)
-@@ -246,7 +246,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -249,7 +249,7 @@ class BASE_EXPORT ProcessMetrics {
  #endif
  
  #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
@@ -66,7 +66,7 @@ Index: base/process/process_metrics.h
    CPU::CoreType GetCoreType(int core_index);
  #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) ||
          // defined(OS_AIX)
-@@ -271,7 +271,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -274,7 +274,7 @@ class BASE_EXPORT ProcessMetrics {
    uint64_t last_cumulative_disk_usage_ = 0;
  
  #if defined(OS_APPLE) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
@@ -75,7 +75,7 @@ Index: base/process/process_metrics.h
    // Same thing for idle wakeups.
    TimeTicks last_idle_wakeups_time_;
    uint64_t last_absolute_idle_wakeups_;
-@@ -316,7 +316,7 @@ BASE_EXPORT void IncreaseFdLimitTo(unsigned int max_de
+@@ -317,7 +317,7 @@ BASE_EXPORT void IncreaseFdLimitTo(unsigned int max_de
  
  #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) ||      \
      defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_AIX) || \
@@ -84,7 +84,7 @@ Index: base/process/process_metrics.h
  // Data about system-wide memory consumption. Values are in KB. Available on
  // Windows, Mac, Linux, Android and Chrome OS.
  //
-@@ -351,7 +351,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
+@@ -352,7 +352,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
  #endif
  
  #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
@@ -93,7 +93,7 @@ Index: base/process/process_metrics.h
    // This provides an estimate of available memory as described here:
    // https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=34e431b0ae398fc54ea69ff85ec700722c9da773
    // NOTE: this is ONLY valid in kernels 3.14 and up.  Its value will always
-@@ -366,7 +366,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
+@@ -367,7 +367,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
  #endif
  
  #if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
@@ -102,7 +102,7 @@ Index: base/process/process_metrics.h
    int buffers = 0;
    int cached = 0;
    int active_anon = 0;
-@@ -403,7 +403,7 @@ BASE_EXPORT bool GetSystemMemoryInfo(SystemMemoryInfoK
+@@ -404,7 +404,7 @@ BASE_EXPORT bool GetSystemMemoryInfo(SystemMemoryInfoK
          // defined(OS_FUCHSIA)
  
  #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
@@ -111,7 +111,7 @@ Index: base/process/process_metrics.h
  // Parse the data found in /proc/<pid>/stat and return the sum of the
  // CPU-related ticks.  Returns -1 on parse error.
  // Exposed for testing.
-@@ -590,7 +590,7 @@ class BASE_EXPORT SystemMetrics {
+@@ -591,7 +591,7 @@ class BASE_EXPORT SystemMetrics {
    FRIEND_TEST_ALL_PREFIXES(SystemMetricsTest, SystemMetrics);
  
    size_t committed_memory_;

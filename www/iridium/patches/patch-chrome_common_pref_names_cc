@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_pref_names_cc,v 1.28 2021/10/29 14:49:40 robert Exp $
+$OpenBSD: patch-chrome_common_pref_names_cc,v 1.29 2021/12/28 15:49:55 robert Exp $
 
 Index: chrome/common/pref_names.cc
 --- chrome/common/pref_names.cc.orig
 +++ chrome/common/pref_names.cc
-@@ -1136,7 +1136,7 @@ const char kAllowedDomainsForApps[] = "settings.allowe
+@@ -1142,7 +1142,7 @@ const char kUseAshProxy[] = "lacros.proxy.use_ash_prox
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -12,7 +12,7 @@ Index: chrome/common/pref_names.cc
  // Linux specific preference on whether we should match the system theme.
  const char kUsesSystemTheme[] = "extensions.theme.use_system";
  #endif
-@@ -1239,7 +1239,7 @@ const char kShowUpdatePromotionInfoBar[] =
+@@ -1245,7 +1245,7 @@ const char kShowUpdatePromotionInfoBar[] =
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -21,7 +21,7 @@ Index: chrome/common/pref_names.cc
  // Boolean that is false if we should show window manager decorations.  If
  // true, we draw a custom chrome frame (thicker title bar and blue border).
  const char kUseCustomChromeFrame[] = "browser.custom_chrome_frame";
-@@ -1713,7 +1713,7 @@ const char kDownloadDefaultDirectory[] = "download.def
+@@ -1715,7 +1715,7 @@ const char kDownloadDefaultDirectory[] = "download.def
  const char kDownloadDirUpgraded[] = "download.directory_upgrade";
  
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
@@ -30,7 +30,7 @@ Index: chrome/common/pref_names.cc
  const char kOpenPdfDownloadInSystemReader[] =
      "download.open_pdf_in_system_reader";
  #endif
-@@ -1984,7 +1984,7 @@ const char kWebAppsPreferences[] = "web_apps.web_app_i
+@@ -2006,7 +2006,7 @@ const char kWebAppsPreferences[] = "web_apps.web_app_i
  // its isolation requirements.
  const char kWebAppsIsolationState[] = "web_apps.isolation_state";
  
@@ -39,7 +39,7 @@ Index: chrome/common/pref_names.cc
      (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
  // Dictionary that maps origins to web apps that can act as URL handlers.
  const char kWebAppsUrlHandlerInfo[] = "web_apps.url_handler_info";
-@@ -2107,7 +2107,7 @@ const char kAmbientAuthenticationInPrivateModesEnabled
+@@ -2134,7 +2134,7 @@ const char kAmbientAuthenticationInPrivateModesEnabled
  // requests.
  const char kBasicAuthOverHttpEnabled[] = "auth.basic_over_http_enabled";
  
@@ -48,9 +48,9 @@ Index: chrome/common/pref_names.cc
  // Boolean that specifies whether OK-AS-DELEGATE flag from KDC is respected
  // along with kAuthNegotiateDelegateAllowlist.
  const char kAuthNegotiateDelegateByKdcPolicy[] =
-@@ -3076,7 +3076,7 @@ const char kAutoplayWhitelist[] = "media.autoplay_whit
- const char kBlockAutoplayEnabled[] = "media.block_autoplay";
- #endif  // !defined(OS_ANDROID)
+@@ -3108,7 +3108,7 @@ const char kBlockAutoplayEnabled[] = "media.block_auto
+ const char kSandboxExternalProtocolBlocked[] =
+     "profile.sandbox_external_protocol_blocked";
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

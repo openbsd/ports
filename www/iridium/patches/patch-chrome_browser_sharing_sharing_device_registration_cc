@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_sharing_sharing_device_registration_cc,v 1.5 2021/10/29 14:49:40 robert Exp $
+$OpenBSD: patch-chrome_browser_sharing_sharing_device_registration_cc,v 1.6 2021/12/28 15:49:55 robert Exp $
 
 Index: chrome/browser/sharing/sharing_device_registration.cc
 --- chrome/browser/sharing/sharing_device_registration.cc.orig
 +++ chrome/browser/sharing/sharing_device_registration.cc
-@@ -322,7 +322,7 @@ bool SharingDeviceRegistration::IsSmsFetcherSupported(
+@@ -327,7 +327,7 @@ bool SharingDeviceRegistration::IsSmsFetcherSupported(
  
  bool SharingDeviceRegistration::IsRemoteCopySupported() const {
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \

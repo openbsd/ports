@@ -1,10 +1,10 @@
-$OpenBSD: patch-base_process_kill_posix_cc,v 1.9 2021/10/29 14:49:39 robert Exp $
+$OpenBSD: patch-base_process_kill_posix_cc,v 1.10 2021/12/28 15:49:54 robert Exp $
 
 Index: base/process/kill_posix.cc
 --- base/process/kill_posix.cc.orig
 +++ base/process/kill_posix.cc
-@@ -160,7 +160,7 @@ void EnsureProcessTerminated(Process process) {
-       0, new BackgroundReaper(std::move(process), TimeDelta::FromSeconds(2)));
+@@ -162,7 +162,7 @@ void EnsureProcessTerminated(Process process) {
+       0, new BackgroundReaper(std::move(process), Seconds(2)));
  }
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)

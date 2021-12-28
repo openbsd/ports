@@ -1,9 +1,9 @@
-$OpenBSD: patch-extensions_browser_extension_prefs_cc,v 1.1 2021/10/29 14:49:41 robert Exp $
+$OpenBSD: patch-extensions_browser_extension_prefs_cc,v 1.2 2021/12/28 15:49:55 robert Exp $
 
 Index: extensions/browser/extension_prefs.cc
 --- extensions/browser/extension_prefs.cc.orig
 +++ extensions/browser/extension_prefs.cc
-@@ -2264,7 +2264,7 @@ void ExtensionPrefs::RegisterProfilePrefs(
+@@ -2262,7 +2262,7 @@ void ExtensionPrefs::RegisterProfilePrefs(
    registry->RegisterStringPref(pref_names::kLastChromeVersion, std::string());
    registry->RegisterDictionaryPref(kInstallSignature);
    registry->RegisterListPref(kExternalUninstalls);
@@ -11,4 +11,4 @@ Index: extensions/browser/extension_prefs.cc
 +#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
    registry->RegisterBooleanPref(pref_names::kChromeAppsEnabled, false);
  #endif
- 
+   registry->RegisterBooleanPref(pref_names::kU2fSecurityKeyApiEnabled, false);

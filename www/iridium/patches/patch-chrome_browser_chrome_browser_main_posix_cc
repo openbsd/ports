@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_chrome_browser_main_posix_cc,v 1.12 2021/10/29 14:49:39 robert Exp $
+$OpenBSD: patch-chrome_browser_chrome_browser_main_posix_cc,v 1.13 2021/12/28 15:49:54 robert Exp $
 
 Index: chrome/browser/chrome_browser_main_posix.cc
 --- chrome/browser/chrome_browser_main_posix.cc.orig
 +++ chrome/browser/chrome_browser_main_posix.cc
-@@ -72,7 +72,7 @@ void ExitHandler::ExitWhenPossibleOnUIThread(int signa
+@@ -73,7 +73,7 @@ void ExitHandler::ExitWhenPossibleOnUIThread(int signa
    } else {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

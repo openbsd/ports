@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_viz_host_renderer_settings_creation_cc,v 1.1 2021/10/29 14:49:40 robert Exp $
+$OpenBSD: patch-components_viz_host_renderer_settings_creation_cc,v 1.2 2021/12/28 15:49:55 robert Exp $
 
 Index: components/viz/host/renderer_settings_creation.cc
 --- components/viz/host/renderer_settings_creation.cc.orig
 +++ components/viz/host/renderer_settings_creation.cc
-@@ -57,7 +57,7 @@ RendererSettings CreateRendererSettings() {
+@@ -56,7 +56,7 @@ RendererSettings CreateRendererSettings() {
    renderer_settings.partial_swap_enabled =
        !command_line->HasSwitch(switches::kUIDisablePartialSwap);
  

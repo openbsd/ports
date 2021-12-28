@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_events_event_cc,v 1.3 2021/10/29 14:49:42 robert Exp $
+$OpenBSD: patch-ui_events_event_cc,v 1.4 2021/12/28 15:49:56 robert Exp $
 
 Index: ui/events/event.cc
 --- ui/events/event.cc.orig
 +++ ui/events/event.cc
-@@ -455,7 +455,7 @@ std::string LocatedEvent::ToString() const {
+@@ -453,7 +453,7 @@ std::string LocatedEvent::ToString() const {
  MouseEvent::MouseEvent(const PlatformEvent& native_event)
      : LocatedEvent(native_event),
        changed_button_flags_(GetChangedMouseButtonFlagsFromNative(native_event)),
@@ -12,3 +12,12 @@ Index: ui/events/event.cc
        movement_(GetMouseMovementFromNative(native_event)),
  #endif
        pointer_details_(GetMousePointerDetailsFromNative(native_event)) {
+@@ -935,7 +935,7 @@ void KeyEvent::InitializeNative() {
+   if (synthesize_key_repeat_enabled_ && IsRepeated(GetLastKeyEvent()))
+     set_flags(flags() | EF_IS_REPEAT);
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   NormalizeFlags();
+ #elif defined(OS_WIN)
+   // Only Windows has native character events.

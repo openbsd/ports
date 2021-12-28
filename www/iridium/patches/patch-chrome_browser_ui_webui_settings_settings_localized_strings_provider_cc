@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_webui_settings_settings_localized_strings_provider_cc,v 1.7 2021/10/29 14:49:40 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_webui_settings_settings_localized_strings_provider_cc,v 1.8 2021/12/28 15:49:55 robert Exp $
 
 Index: chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
 --- chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc.orig
@@ -12,30 +12,39 @@ Index: chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
  #include "ui/display/screen.h"
  #endif
  
-@@ -364,7 +364,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
+@@ -135,7 +135,7 @@
+ #include "chrome/browser/ui/webui/certificate_manager_localized_strings_provider.h"
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "ui/ozone/public/ozone_platform.h"
+ #endif
+ 
+@@ -360,7 +360,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
      {"huge", IDS_SETTINGS_HUGE_FONT_SIZE},
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
 -#if defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !BUILDFLAG(IS_CHROMEOS_LACROS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !BUILDFLAG(IS_CHROMEOS_LACROS)
      {"systemTheme", IDS_SETTINGS_SYSTEM_THEME},
      {"useSystemTheme", IDS_SETTINGS_USE_SYSTEM_THEME},
      {"classicTheme", IDS_SETTINGS_CLASSIC_THEME},
-@@ -372,7 +372,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
+@@ -368,7 +368,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
  #else
      {"resetToDefaultTheme", IDS_SETTINGS_RESET_TO_DEFAULT_THEME},
  #endif
 -#if defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !BUILDFLAG(IS_CHROMEOS_LACROS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !BUILDFLAG(IS_CHROMEOS_LACROS)
      {"showWindowDecorations", IDS_SHOW_WINDOW_DECORATIONS},
  #endif
  #if defined(OS_MAC)
-@@ -393,7 +393,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
+@@ -389,7 +389,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
 -#if defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)
 +#if (defined(OS_LINUX) || defined(OS_BSD)) && !BUILDFLAG(IS_CHROMEOS_LACROS)
- #if defined(USE_OZONE)
-   bool show_custom_chrome_frame = true;
-   if (features::IsUsingOzonePlatform()) {
+   bool show_custom_chrome_frame = ui::OzonePlatform::GetInstance()
+                                       ->GetPlatformRuntimeProperties()
+                                       .supports_server_side_window_decorations;

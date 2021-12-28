@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_url_request_url_request_cc,v 1.6 2021/11/02 09:06:54 robert Exp $
+$OpenBSD: patch-net_url_request_url_request_cc,v 1.7 2021/12/28 15:49:55 robert Exp $
 
 Index: net/url_request/url_request.cc
 --- net/url_request/url_request.cc.orig

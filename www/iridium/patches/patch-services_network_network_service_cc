@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_network_network_service_cc,v 1.10 2021/10/29 14:49:42 robert Exp $
+$OpenBSD: patch-services_network_network_service_cc,v 1.11 2021/12/28 15:49:55 robert Exp $
 
 Index: services/network/network_service.cc
 --- services/network/network_service.cc.orig
@@ -12,7 +12,7 @@ Index: services/network/network_service.cc
      !BUILDFLAG(IS_CHROMECAST)
  #include "components/os_crypt/key_storage_config_linux.h"
  #endif
-@@ -623,7 +623,7 @@ void NetworkService::OnCertDBChanged() {
+@@ -622,7 +622,7 @@ void NetworkService::OnCertDBChanged() {
    net::CertDatabase::GetInstance()->NotifyObserversCertDBChanged();
  }
  

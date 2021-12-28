@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_views_corewm_tooltip_aura_cc,v 1.11 2021/10/29 14:49:43 robert Exp $
+$OpenBSD: patch-ui_views_corewm_tooltip_aura_cc,v 1.12 2021/12/28 15:49:56 robert Exp $
 
 Index: ui/views/corewm/tooltip_aura.cc
 --- ui/views/corewm/tooltip_aura.cc.orig
 +++ ui/views/corewm/tooltip_aura.cc
-@@ -49,7 +49,7 @@ constexpr int kVerticalPaddingBottom = 5;
+@@ -50,7 +50,7 @@ constexpr int kVerticalPaddingBottom = 5;
  bool CanUseTranslucentTooltipWidget() {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

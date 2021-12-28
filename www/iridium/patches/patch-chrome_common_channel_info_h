@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_channel_info_h,v 1.5 2021/10/29 14:49:40 robert Exp $
+$OpenBSD: patch-chrome_common_channel_info_h,v 1.6 2021/12/28 15:49:55 robert Exp $
 
 Index: chrome/common/channel_info.h
 --- chrome/common/channel_info.h.orig
 +++ chrome/common/channel_info.h
-@@ -101,7 +101,7 @@ std::string GetChannelSuffixForDataDir();
+@@ -107,7 +107,7 @@ std::string GetChannelSuffixForDataDir();
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.17 2021/10/29 14:49:39 robert Exp $
+$OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.18 2021/12/28 15:49:54 robert Exp $
 
 Index: chrome/browser/browser_process_impl.cc
 --- chrome/browser/browser_process_impl.cc.orig
 +++ chrome/browser/browser_process_impl.cc
-@@ -204,7 +204,7 @@
+@@ -208,7 +208,7 @@
  #include "components/enterprise/browser/controller/chrome_browser_cloud_management_controller.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: chrome/browser/browser_process_impl.cc
  #include "chrome/browser/error_reporting/chrome_js_error_report_processor.h"  // nogncheck
  #endif
  
-@@ -216,7 +216,7 @@
+@@ -220,7 +220,7 @@
  #include "chrome/browser/chromeos/extensions/telemetry/chromeos_telemetry_extensions_browser_api_provider.h"
  #endif
  
@@ -21,7 +21,7 @@ Index: chrome/browser/browser_process_impl.cc
  // How often to check if the persistent instance of Chrome needs to restart
  // to install an update.
  static const int kUpdateCheckIntervalHours = 6;
-@@ -1174,7 +1174,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
+@@ -1179,7 +1179,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
    ApplyMetricsReportingPolicy();
  #endif
  
@@ -30,7 +30,7 @@ Index: chrome/browser/browser_process_impl.cc
    ChromeJsErrorReportProcessor::Create();
  #endif
  
-@@ -1433,7 +1433,7 @@ void BrowserProcessImpl::Unpin() {
+@@ -1438,7 +1438,7 @@ void BrowserProcessImpl::Unpin() {
  // Mac is currently not supported.
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.
