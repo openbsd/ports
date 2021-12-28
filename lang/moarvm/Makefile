@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.27 2021/07/09 13:43:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2021/12/28 19:27:22 pascal Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64 riscv64 sparc64
 
 COMMENT =		virtual machine for nqp/rakudo
 
-V =			2021.02
+V =			2021.12
 DISTNAME =		MoarVM-$V
 PKGNAME =		moarvm-$V
 
-SHARED_LIBS =		moar	10.0
+SHARED_LIBS =		moar	11.0
 
 CATEGORIES =		lang
 

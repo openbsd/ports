@@ -1,8 +1,8 @@
-$OpenBSD: patch-Configure_pl,v 1.10 2021/03/11 12:17:21 pascal Exp $
+$OpenBSD: patch-Configure_pl,v 1.11 2021/12/28 19:27:22 pascal Exp $
 Index: Configure.pl
 --- Configure.pl.orig
 +++ Configure.pl
-@@ -460,6 +460,10 @@ if (not $args{static} and $config{prefix} ne '/usr') {
+@@ -476,6 +476,10 @@ if (not $args{static} and $config{prefix} ne '/usr') {
  $config{moarlib} = sprintf $config{lib}, $NAME;
  $config{moardll} = sprintf $config{dll}, $NAME;
  
