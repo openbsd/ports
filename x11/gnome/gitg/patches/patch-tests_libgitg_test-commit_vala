@@ -1,0 +1,32 @@
+$OpenBSD: patch-tests_libgitg_test-commit_vala,v 1.1 2021/12/28 09:40:12 ajacoutot Exp $
+
+Index: tests/libgitg/test-commit.vala
+--- tests/libgitg/test-commit.vala.orig
++++ tests/libgitg/test-commit.vala
+@@ -118,7 +118,7 @@ class LibGitg.Test.Commit : Gitg.Test.Repository
+ 		var hookdir = d_repository.get_location().get_child("hooks");
+ 		var pc = hookdir.get_child("pre-commit").get_path();
+ 
+-		assert(FileUtils.set_contents(pc, "#!/bin/bash\n\necho 'pre-commit failed'; exit 1;\n"));
++		assert(FileUtils.set_contents(pc, "#!/bin/sh\n\necho 'pre-commit failed'; exit 1;\n"));
+ 		assert_inteq(FileUtils.chmod(pc, 0744), 0);
+ 	}
+ 
+@@ -159,7 +159,7 @@ class LibGitg.Test.Commit : Gitg.Test.Repository
+ 		var hookdir = d_repository.get_location().get_child("hooks");
+ 		var pc = hookdir.get_child("commit-msg").get_path();
+ 
+-		assert(FileUtils.set_contents(pc, "#!/bin/bash\n\necho 'override message' > $1\n"));
++		assert(FileUtils.set_contents(pc, "#!/bin/sh\n\necho 'override message' > $1\n"));
+ 		assert_inteq(FileUtils.chmod(pc, 0744), 0);
+ 
+ 		var stage = d_repository.stage;
+@@ -190,7 +190,7 @@ class LibGitg.Test.Commit : Gitg.Test.Repository
+ 		var hookdir = d_repository.get_location().get_child("hooks");
+ 		var pc = hookdir.get_child("commit-msg").get_path();
+ 
+-		assert(FileUtils.set_contents(pc, "#!/bin/bash\n\necho 'override message' > $1\n"));
++		assert(FileUtils.set_contents(pc, "#!/bin/sh\n\necho 'override message' > $1\n"));
+ 		assert_inteq(FileUtils.chmod(pc, 0744), 0);
+ 
+ 		var stage = d_repository.stage;
