@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2020/03/27 07:38:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2021/12/28 08:39:12 ajacoutot Exp $
 @conflict libgsf-gnome-*
 @pkgpath devel/libgsf
 @pkgpath devel/libgsf,no_gnome
@@ -132,6 +132,7 @@ share/locale/lt/LC_MESSAGES/libgsf.mo
 share/locale/lv/LC_MESSAGES/libgsf.mo
 share/locale/ml/LC_MESSAGES/libgsf.mo
 share/locale/nb/LC_MESSAGES/libgsf.mo
+share/locale/nl/LC_MESSAGES/libgsf.mo
 share/locale/nn/LC_MESSAGES/libgsf.mo
 share/locale/oc/LC_MESSAGES/libgsf.mo
 share/locale/pa/LC_MESSAGES/libgsf.mo

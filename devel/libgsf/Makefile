@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.99 2020/03/27 07:38:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.100 2021/12/28 08:39:12 ajacoutot Exp $
 
 COMMENT=		GNOME Structured File library
 
 GNOME_PROJECT=		libgsf
-GNOME_VERSION=		1.14.47
+GNOME_VERSION=		1.14.48
 
 CATEGORIES=		devel
 
-SHARED_LIBS +=  gsf-1                114.12   # 114.47
+SHARED_LIBS +=  gsf-1                114.12   # 114.48
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -16,7 +16,8 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += bz2 c ffi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 iconv intl lzma m pcre pthread xml2 z
+WANTLIB += gobject-2.0 iconv intl jpeg lzma m pcre png pthread
+WANTLIB += xml2 z
 
 MODULES=		x11/gnome
 
