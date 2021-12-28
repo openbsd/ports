@@ -1,4 +1,4 @@
-$OpenBSD: patch-PSUtils_pm,v 1.6 2020/07/03 18:00:46 ajacoutot Exp $
+$OpenBSD: patch-PSUtils_pm,v 1.7 2021/12/28 08:36:23 ajacoutot Exp $
 
 https://bugzilla.redhat.com/show_bug.cgi?id=1072371
 
@@ -18,8 +18,8 @@ Index: PSUtils.pm
  sub paper_size {
    my ($paper_name) = @_;
    chomp($paper_name = paper([])) unless defined($paper_name);
--  my $dimensions = paper(["--unit=pt", "--size", "$paper_name"], 1) or return;
+-  my $dimensions = paper(["--unit=pt", "$paper_name"], 1) or return;
 +  my $dimensions = paper(["-s", "$paper_name"], 1) or return;
-   $dimensions =~ /^(\S+) (\S+)/;
+   $dimensions =~ / ([.0-9]+)x([.0-9]+) pt$/;
    my $old_locale = setlocale(LC_ALL);
    setlocale(LC_ALL, "");
