@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.74 2021/10/03 19:54:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2021/12/28 08:35:34 ajacoutot Exp $
 
 COMMENT=		free open source planetarium
 
-GH_TAGNAME=		v0.21.2
+GH_TAGNAME=		v0.21.3
 GH_ACCOUNT=		Stellarium
 GH_PROJECT=		stellarium
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Multimedia
 WANTLIB += Qt5MultimediaWidgets Qt5Network Qt5Positioning Qt5PrintSupport
-WANTLIB += Qt5Script Qt5SerialPort Qt5Widgets c gps m z
+WANTLIB += Qt5Script Qt5SerialPort Qt5Widgets c m z
 
 MODULES=		devel/cmake \
 			lang/python \
@@ -25,8 +25,7 @@ MODULES=		devel/cmake \
 
 MODPY_RUNDEP=		No
 
-LIB_DEPENDS=		misc/gpsd \
-			x11/qt5/qtlocation \
+LIB_DEPENDS=		x11/qt5/qtlocation \
 			x11/qt5/qtmultimedia \
 			x11/qt5/qtscript \
 			x11/qt5/qtserialport
