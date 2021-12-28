@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2021/12/06 09:51:28 robert Exp $
+# $OpenBSD: Makefile,v 1.64 2021/12/28 16:37:12 kmos Exp $
 
 ONLY_FOR_ARCHS=		${APM_ARCHS}
 
@@ -16,6 +16,10 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 EXTRACT_SUFX=		.tar.xz
+
+# C11
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
 
 WANTLIB += c confuse yajl sndio
 
