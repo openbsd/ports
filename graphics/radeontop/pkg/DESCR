@@ -1,5 +1,3 @@
 View your GPU utilization, both for the total activity percent and individual
-blocks. The total GPU utilization is also valid for OpenCL loads; the other
-blocks are only useful in GL loads.
-Requires access to /dev/dri/cardN files or /dev/mem (root privileges).
-R600 and up, even Southern Islands should work fine.
+blocks. The total GPU utilization is also valid for OpenCL loads. The other
+blocks are only useful in GL loads. It works with R600 and up.

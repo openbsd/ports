@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/10/29 21:00:42 sdk Exp $
+# $OpenBSD: Makefile,v 1.2 2021/12/28 16:34:02 sdk Exp $
 
 COMMENT =	monitor GPU utilization for R600 and up
 
 GH_ACCOUNT =	clbr
 GH_PROJECT =	radeontop
-GH_TAGNAME =	v1.3
+GH_TAGNAME =	v1.4
 
 SHARED_LIBS =	radeontop_xcb		0.0	# 1.3
 
@@ -33,6 +33,9 @@ NO_TEST =		Yes
 
 CFLAGS +=	-I${LOCALBASE}/include
 LDFLAGS +=	-L${LOCALBASE}/lib -lintl
+
+post-extract:
+	sed -i "s/ver=unknown/ver=${GH_TAGNAME}-openbsd/" ${WRKSRC}/getver.sh
 
 do-gen:
 	${SUBST_CMD} ${WRKSRC}/Makefile

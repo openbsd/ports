@@ -1,6 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/10/29 21:00:42 sdk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/12/28 16:34:02 sdk Exp $
+@bin bin/radeontop
 @lib lib/libradeontop_xcb.so.${LIBradeontop_xcb_VERSION}
 @man man/man1/radeontop.1
-@bin sbin/radeontop
-share/doc/pkg-readmes/${PKGSTEM}
+share/locale/cs/LC_MESSAGES/radeontop.mo
+share/locale/de/LC_MESSAGES/radeontop.mo
+share/locale/el/LC_MESSAGES/radeontop.mo
+share/locale/es/LC_MESSAGES/radeontop.mo
+share/locale/fi/LC_MESSAGES/radeontop.mo
+share/locale/fr/LC_MESSAGES/radeontop.mo
 share/locale/ru/LC_MESSAGES/radeontop.mo
+share/locale/sl/LC_MESSAGES/radeontop.mo
+share/locale/tr/LC_MESSAGES/radeontop.mo
+share/locale/zh_CN/LC_MESSAGES/radeontop.mo
