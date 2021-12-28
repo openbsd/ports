@@ -1,4 +1,4 @@
-# $OpenBSD: cabal.port.mk,v 1.1 2021/02/26 03:30:53 gnezdo Exp $
+# $OpenBSD: cabal.port.mk,v 1.2 2021/12/28 11:12:27 semarie Exp $
 
 # Module for building Haskell programs with cabal-install.
 # Inspired by FreeBSD cabal.mk by Gleb Popov.
@@ -32,7 +32,7 @@
 # Special files:
 #   files/cabal.project is used automatically.
 
-ONLY_FOR_ARCHS =	i386 amd64
+ONLY_FOR_ARCHS ?=	i386 amd64
 
 BUILD_DEPENDS +=	devel/cabal-install>=3.4.0.0 \
 			lang/ghc>=8.6.4
@@ -97,7 +97,7 @@ MODCABAL_post-extract += \
 _MODCABAL_CABAL = ${SETENV} ${MAKE_ENV} HOME=${WRKDIR} ${LOCALBASE}/bin/cabal
 
 # Building a cabal package is merely an invocation of cabal v2-build.
-_MODCABAL_BUILD_TARGET = \
+MODCABAL_BUILD_TARGET = \
 	cd ${WRKBUILD} \
 	&& ${_MODCABAL_CABAL} v2-build --offline --disable-benchmarks --disable-tests \
 		-w ${LOCALBASE}/bin/ghc \
@@ -106,16 +106,16 @@ _MODCABAL_BUILD_TARGET = \
 		${MODCABAL_EXECUTABLES:C/^/exe:&/}
 
 # Install fragment starts this way for uniformity of incremental construction.
-_MODCABAL_INSTALL_TARGET = true
+MODCABAL_INSTALL_TARGET = true
 
 # Prepares wrapping fragments that only need to be set up once and
 # reused across potentially multiple installed executables.
 .if defined(MODCABAL_DATA_DIR)
 _MODCABAL_LIBEXEC = libexec/cabal
-_MODCABAL_INSTALL_TARGET += \
+MODCABAL_INSTALL_TARGET += \
 	&& mkdir -p ${PREFIX}/${_MODCABAL_LIBEXEC}
 
-_MODCABAL_INSTALL_TARGET +=  \
+MODCABAL_INSTALL_TARGET +=  \
 	&& ${INSTALL_DATA_DIR} ${WRKSRC}/${MODCABAL_DATA_DIR} ${PREFIX}/share/${DISTNAME} \
 	&& cd ${WRKSRC}/${MODCABAL_DATA_DIR} && umask 022 && pax -rw . ${PREFIX}/share/${DISTNAME}
 .endif
@@ -129,7 +129,7 @@ MODCABAL_BUILT_EXECUTABLE_${_exe} = $$(find ${WRKSRC}/dist-newstyle -name ${_exe
 # Installs the ELF binary into an auxiliary location and wraps it into
 # a script which sets up the environment to point at the data-dir
 # files if any.
-_MODCABAL_INSTALL_TARGET += \
+MODCABAL_INSTALL_TARGET += \
 	&& ${INSTALL_PROGRAM} \
 		${MODCABAL_BUILT_EXECUTABLE_${_exe}} \
 		${PREFIX}/${_MODCABAL_LIBEXEC}/${_exe} \
@@ -139,17 +139,17 @@ _MODCABAL_INSTALL_TARGET += \
 	&& chmod +x ${STAGEDIR}${PREFIX}/bin/${_exe}
 .  else
 # Skips the launcher script indirection when MODCABAL_DATA_DIR is empty.
-_MODCABAL_INSTALL_TARGET += \
+MODCABAL_INSTALL_TARGET += \
 	&& ${INSTALL_PROGRAM} ${MODCABAL_BUILT_EXECUTABLE_${_exe}} ${PREFIX}/bin
 .  endif
 .endfor
 
 .if !target(do-build)
 do-build:
-	@${_MODCABAL_BUILD_TARGET}
+	@${MODCABAL_BUILD_TARGET}
 .endif
 
 .if !target(do-install)
 do-install:
-	@${_MODCABAL_INSTALL_TARGET}
+	@${MODCABAL_INSTALL_TARGET}
 .endif
