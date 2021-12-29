@@ -1,4 +1,4 @@
-# $OpenBSD: modules.inc,v 1.5 2021/12/15 00:36:10 danj Exp $
+# $OpenBSD: modules.inc,v 1.6 2021/12/29 03:07:41 danj Exp $
 
 MODGO_MODULES =	\
 	bazil.org/fuse								 v0.0.0-20180421153158-65cc252bf669 \
@@ -418,21 +418,21 @@ MODGO_MODULES =	\
 	github.com/minio/argon2							 v1.0.0 \
 	github.com/minio/cli							 v1.22.0 \
 	github.com/minio/colorjson						 v1.0.1 \
-	github.com/minio/console						 v0.12.8 \
+	github.com/minio/console						 v0.13.1 \
 	github.com/minio/csvparser						 v1.0.0 \
 	github.com/minio/direct-csi						 v1.3.5-0.20210601185811-f7776f7961bf \
 	github.com/minio/filepath						 v1.0.0 \
 	github.com/minio/highwayhash						 v1.0.2 \
 	github.com/minio/kes							 v0.14.0 \
-	github.com/minio/madmin-go						 v1.1.17 \
+	github.com/minio/madmin-go						 v1.1.23 \
 	github.com/minio/mc							 v0.0.0-20211207230606-23a05f5a17f2 \
 	github.com/minio/md5-simd						 v1.1.2 \
-	github.com/minio/minio-go/v7						 v7.0.17 \
+	github.com/minio/minio-go/v7						 v7.0.20 \
 	github.com/minio/operator						 v0.0.0-20211011212245-31460bbbc4b7 \
 	github.com/minio/operator/logsearchapi					 v0.0.0-20211011212245-31460bbbc4b7 \
 	github.com/minio/parquet-go						 v1.1.0 \
-	github.com/minio/pkg							 v1.1.9 \
-	github.com/minio/selfupdate						 v0.3.1 \
+	github.com/minio/pkg							 v1.1.11 \
+	github.com/minio/selfupdate						 v0.4.0 \
 	github.com/minio/sha256-simd						 v1.0.0 \
 	github.com/minio/simdjson-go						 v0.2.1 \
 	github.com/minio/sio							 v0.3.0 \
@@ -624,13 +624,13 @@ MODGO_MODULES =	\
 	go.uber.org/zap								 v1.19.1 \
 	gocloud.dev								 v0.19.0 \
 	golang.org/x/arch							 v0.0.0-20201008161808-52c3e6f60cff \
-	golang.org/x/crypto							 v0.0.0-20210921155107-089bfa567519 \
+	golang.org/x/crypto							 v0.0.0-20211209193657-4570a0811e8b \
 	golang.org/x/exp							 v0.0.0-20200224162631-6cc2880d07d6 \
 	golang.org/x/image							 v0.0.0-20190802002840-cff245a6509b \
 	golang.org/x/lint							 v0.0.0-20210508222113-6edffad5e616 \
 	golang.org/x/mobile							 v0.0.0-20190719004257-d2bd2a29d028 \
 	golang.org/x/mod							 v0.4.2 \
-	golang.org/x/net							 v0.0.0-20211020060615-d418f374d309 \
+	golang.org/x/net							 v0.0.0-20211112202133-69e39bad7dc2 \
 	golang.org/x/oauth2							 v0.0.0-20210819190943-2bc19b11175f \
 	golang.org/x/sync							 v0.0.0-20210220032951-036812b2e83c \
 	golang.org/x/sys							 v0.0.0-20211020174200-9d6173849985 \
@@ -1222,6 +1222,7 @@ MODGO_MODFILES =	\
 	github.com/minio/kes							 v0.11.0 \
 	github.com/minio/madmin-go						 v1.0.12 \
 	github.com/minio/madmin-go						 v1.1.15 \
+	github.com/minio/madmin-go						 v1.1.21 \
 	github.com/minio/md5-simd						 v1.1.0 \
 	github.com/minio/minio-go/v7						 v7.0.10 \
 	github.com/minio/minio-go/v7						 v7.0.11-0.20210302210017-6ae69c73ce78 \
@@ -1229,7 +1230,9 @@ MODGO_MODFILES =	\
 	github.com/minio/pkg							 v1.0.11 \
 	github.com/minio/pkg							 v1.0.3 \
 	github.com/minio/pkg							 v1.0.4 \
+	github.com/minio/pkg							 v1.1.10 \
 	github.com/minio/pkg							 v1.1.3 \
+	github.com/minio/selfupdate						 v0.3.1 \
 	github.com/minio/sha256-simd						 v0.1.1 \
 	github.com/minio/sio							 v0.2.1 \
 	github.com/mitchellh/go-homedir						 v1.0.0 \
@@ -1487,6 +1490,7 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto							 v0.0.0-20210314154223-e6e6c4f2bb5b \
 	golang.org/x/crypto							 v0.0.0-20210421170649-83a5a9bb288b \
 	golang.org/x/crypto							 v0.0.0-20210616213533-5ff15b29337e \
+	golang.org/x/crypto							 v0.0.0-20210921155107-089bfa567519 \
 	golang.org/x/exp							 v0.0.0-20190121172915-509febef88a4 \
 	golang.org/x/exp							 v0.0.0-20190125153040-c74c464bbbf2 \
 	golang.org/x/exp							 v0.0.0-20190306152737-a1d7652674e8 \
