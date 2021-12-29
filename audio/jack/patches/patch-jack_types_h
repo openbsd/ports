@@ -1,0 +1,26 @@
+$OpenBSD: patch-jack_types_h,v 1.3 2021/12/29 20:08:33 sdk Exp $
+
+Disable "register" variable name
+Picked from: https://github.com/jackaudio/headers/commit/ab27e5a59fe5294cf09d50ffa2414d1542cf245e
+
+Index: jack/types.h
+--- jack/types.h.orig
++++ jack/types.h
+@@ -386,7 +386,7 @@ typedef int  (*JackSampleRateCallback)(jack_nframes_t 
+  * @param register non-zero if the port is being registered,
+  *                     zero if the port is being unregistered
+  */ 
+-typedef void (*JackPortRegistrationCallback)(jack_port_id_t port, int register, void *arg);
++typedef void (*JackPortRegistrationCallback)(jack_port_id_t port, int /* register */, void *arg);
+ 
+ /**
+  * Prototype for the client supplied function that is called 
+@@ -408,7 +408,7 @@ typedef void (*JackPortRenameCallback)(jack_port_id_t 
+  *                     zero if the client is being unregistered
+  * @param arg pointer to a client supplied data
+  */ 
+-typedef void (*JackClientRegistrationCallback)(const char* name, int register, void *arg);
++typedef void (*JackClientRegistrationCallback)(const char* name, int /* register */, void *arg);
+ 
+ /**
+  * Prototype for the client supplied function that is called 
