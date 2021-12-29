@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.7 2021/08/13 19:28:07 sthen Exp $
+$OpenBSD: patch-Makefile_in,v 1.8 2021/12/29 14:24:08 sthen Exp $
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -581,7 +581,6 @@ install-lib:	lib $(UNBOUND_EVENT_INSTALL)
+@@ -584,7 +584,6 @@ install-lib:	lib $(UNBOUND_EVENT_INSTALL)
  	done
  	$(LIBTOOL) --mode=install cp unbound.h $(DESTDIR)$(includedir)/unbound.h
  	$(LIBTOOL) --mode=install cp libunbound.la $(DESTDIR)$(libdir)
