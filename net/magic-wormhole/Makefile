@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:01:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/12/29 06:59:14 kn Exp $
 
 COMMENT =		securely transfer data between computers
 
 MODPY_EGG_VERSION =	0.12.0
 DISTNAME =		magic-wormhole-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://magic-wormhole.readthedocs.io
 
@@ -25,6 +25,7 @@ RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR} \
 			devel/py-tqdm${MODPY_FLAVOR} \
 			devel/py-twisted${MODPY_FLAVOR} \
+			devel/py-txaio${MODPY_FLAVOR} \
 			net/py-txtorcon${MODPY_FLAVOR} \
 			security/py-PyNaCl${MODPY_FLAVOR} \
 			security/py-hkdf${MODPY_FLAVOR} \
