@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2021/08/31 11:23:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2021/12/29 22:09:36 ajacoutot Exp $
 
 COMMENT =	GNOME Shell style for Qt applications
 
 GH_ACCOUNT =	FedoraQt
 GH_PROJECT =	adwaita-qt
-GH_TAGNAME =	1.4.0
+GH_TAGNAME =	1.4.1
 
 CATEGORIES =	x11
 
@@ -21,6 +21,8 @@ MODULES =		devel/cmake \
 			x11/qt5
 
 LIB_DEPENDS =		x11/qt5/qtx11extras
+
+CONFIGURE_ENV =		QT_DIR=${LOCALBASE}/lib/qt5/cmake/Qt5/
 
 
 .include <bsd.port.mk>
