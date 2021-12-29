@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2021/08/05 11:26:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2021/12/29 21:54:18 ajacoutot Exp $
 
 COMMENT=	fake keyboard and mouse input
 
-V =		3.20210804.2
+V =		3.20211022.1
 DISTNAME =	xdotool-${V}
 EPOCH=		0
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE=	Yes
 
 USE_GMAKE=	Yes
 
-WANTLIB += X11 Xinerama Xtst c m xkbcommon
+WANTLIB += X11 Xi Xinerama Xtst c m xkbcommon
 
 MASTER_SITES =	https://github.com/jordansissel/xdotool/releases/download/v${V}/
 
