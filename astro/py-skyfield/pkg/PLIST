@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/11/15 13:27:21 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/12/29 14:23:39 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/skyfield/
 lib/python${MODPY_VERSION}/site-packages/skyfield-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/skyfield/__init__.py
@@ -101,6 +101,7 @@ lib/python${MODPY_VERSION}/site-packages/skyfield/documentation/api-vectors.rst
 lib/python${MODPY_VERSION}/site-packages/skyfield/documentation/api.rst
 lib/python${MODPY_VERSION}/site-packages/skyfield/documentation/astropy.rst
 lib/python${MODPY_VERSION}/site-packages/skyfield/documentation/bibliography.rst
+lib/python${MODPY_VERSION}/site-packages/skyfield/documentation/coordinates.rst
 lib/python${MODPY_VERSION}/site-packages/skyfield/documentation/design.rst
 lib/python${MODPY_VERSION}/site-packages/skyfield/documentation/earth-satellites.rst
 lib/python${MODPY_VERSION}/site-packages/skyfield/documentation/elements.rst

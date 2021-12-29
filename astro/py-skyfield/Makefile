@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/15 13:27:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2021/12/29 14:23:39 sthen Exp $
 
 COMMENT =	computes positions for the stars, planets, and satellites
 
-MODPY_EGG_VERSION =	1.40
+MODPY_EGG_VERSION =	1.41
 
 DISTNAME =	skyfield-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
