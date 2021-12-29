@@ -1,11 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/09/04 14:45:56 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2021/12/29 12:57:24 sthen Exp $
 @comment lib/purple-2/libsipe.a
 @comment lib/purple-2/libsipe.la
-lib/purple-2/libsipe.so
+@so lib/purple-2/libsipe.so
 share/locale/ar/LC_MESSAGES/pidgin-sipe.mo
 share/locale/cs/LC_MESSAGES/pidgin-sipe.mo
 share/locale/da/LC_MESSAGES/pidgin-sipe.mo
 share/locale/de/LC_MESSAGES/pidgin-sipe.mo
+share/locale/el/LC_MESSAGES/pidgin-sipe.mo
 share/locale/es/LC_MESSAGES/pidgin-sipe.mo
 share/locale/fi/LC_MESSAGES/pidgin-sipe.mo
 share/locale/fr/LC_MESSAGES/pidgin-sipe.mo
@@ -17,6 +18,7 @@ share/locale/hu/LC_MESSAGES/pidgin-sipe.mo
 share/locale/it/LC_MESSAGES/pidgin-sipe.mo
 share/locale/ja/LC_MESSAGES/pidgin-sipe.mo
 share/locale/ko/LC_MESSAGES/pidgin-sipe.mo
+share/locale/lt/LC_MESSAGES/pidgin-sipe.mo
 share/locale/nb/LC_MESSAGES/pidgin-sipe.mo
 share/locale/nl/LC_MESSAGES/pidgin-sipe.mo
 share/locale/pl/LC_MESSAGES/pidgin-sipe.mo
@@ -30,6 +32,7 @@ share/locale/te/LC_MESSAGES/pidgin-sipe.mo
 share/locale/tr/LC_MESSAGES/pidgin-sipe.mo
 share/locale/zh_CN/LC_MESSAGES/pidgin-sipe.mo
 share/locale/zh_TW/LC_MESSAGES/pidgin-sipe.mo
+share/metainfo/pidgin-sipe.metainfo.xml
 share/pixmaps/pidgin/protocols/16/sipe.png
 share/pixmaps/pidgin/protocols/22/sipe.png
 share/pixmaps/pidgin/protocols/24/
