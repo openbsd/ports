@@ -1,6 +1,6 @@
-$OpenBSD: patch-pan_general_string-view_h,v 1.1 2018/04/12 18:10:27 jasper Exp $
+$OpenBSD: patch-pan_general_string-view_h,v 1.2 2021/12/29 17:03:28 ajacoutot Exp $
 
-https://svnweb.freebsd.org/ports/head/news/pan/files/patch-c%2B%2B11?revision=458276&view=markup
+text-match.cc:475:8: error: no viable conversion from 'pan::StringView' to 'std::string'
 
 Index: pan/general/string-view.h
 --- pan/general/string-view.h.orig
