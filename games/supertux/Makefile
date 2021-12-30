@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2021/05/17 16:09:33 pascal Exp $
+# $OpenBSD: Makefile,v 1.25 2021/12/30 20:37:32 pascal Exp $
 
 COMMENT =		jump 'n' run game
 
-V =			0.6.2
+V =			0.6.3
 DISTNAME =		SuperTux-v${V}-Source
 PKGNAME =		supertux-$V
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU SDL2 SDL2_image boost_date_time-mt
 WANTLIB += boost_filesystem-mt boost_locale-mt boost_system-mt
-WANTLIB += c curl freetype m ogg openal png vorbis vorbisfile
+WANTLIB += c curl freetype m ogg openal physfs png vorbis vorbisfile
 WANTLIB += z
 
 MASTER_SITES =		https://github.com/SuperTux/supertux/releases/download/v${V}/
@@ -32,6 +32,7 @@ COMPILER =		base-clang ports-gcc
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 LIB_DEPENDS =		devel/sdl2-image \
+			devel/physfs \
 			graphics/glew \
 			net/curl \
 			audio/openal \

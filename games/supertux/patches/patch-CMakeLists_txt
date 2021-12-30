@@ -1,9 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.5 2021/05/17 16:09:33 pascal Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.6 2021/12/30 20:37:32 pascal Exp $
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -55,7 +55,7 @@ include(ConfigureFiles)
- include(ExternalProject)
+@@ -56,7 +56,7 @@ include(ExternalProject)
+ include(CheckCXXCompilerFlag)
  
  ## For autopackage
 -set(APPDATADIR "${CMAKE_INSTALL_PREFIX}/share/games/supertux2")
@@ -11,7 +11,7 @@ Index: CMakeLists.txt
  
  set(BUILD_DATA_DIR "${CMAKE_CURRENT_SOURCE_DIR}/data")
  set(BUILD_CONFIG_DATA_DIR "${CMAKE_BINARY_DIR}/data")
-@@ -256,7 +256,8 @@ if(NOT USE_SYSTEM_PHYSFS)
+@@ -351,7 +351,8 @@ if(NOT USE_SYSTEM_PHYSFS)
      -DLIB_SUFFIX=${LIB_SUFFIX}
      -DPHYSFS_BUILD_SHARED=${PHYSFS_BUILD_SHARED}
      -DPHYSFS_BUILD_STATIC=${PHYSFS_BUILD_STATIC}
@@ -21,28 +21,7 @@ Index: CMakeLists.txt
  
    if(WIN32)
      add_library(physfs_lib SHARED IMPORTED)
-@@ -404,7 +405,9 @@ ExternalProject_Add(squirrel
-   -DCMAKE_CXX_COMPILER=${CMAKE_CXX_COMPILER}
-   -DCMAKE_CXX_FLAGS=${CMAKE_CXX_FLAGS}
-   -DCMAKE_INSTALL_PREFIX=${SQUIRREL_PREFIX}
--  -DINSTALL_INC_DIR=include)
-+  -DINSTALL_INC_DIR=include
-+  BUILD_BYPRODUCTS "squirrel/lib/libsqstdlib_static.a"
-+  BUILD_BYPRODUCTS "squirrel/lib/libsquirrel_static.a")
- 
- if(WIN32)
-   add_library(squirrel_lib SHARED IMPORTED)
-@@ -454,7 +457,8 @@ ExternalProject_Add(tinygettext
-   -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
-   -DSDL2_LIBRARIES=${SDL2_LIBRARIES}
-   -DSDL2_INCLUDE_DIRS=${SDL2_INCLUDE_DIRS}
--  -DLIB_SUFFIX=${LIB_SUFFIX})
-+  -DLIB_SUFFIX=${LIB_SUFFIX}
-+  BUILD_BYPRODUCTS "tinygettext/lib/libtinygettext.a")
- 
- add_library(tinygettext_lib STATIC IMPORTED)
- set_target_properties(tinygettext_lib PROPERTIES IMPORTED_LOCATION "${TINYGETTEXT_PREFIX}/lib${LIB_SUFFIX}/${CMAKE_STATIC_LIBRARY_PREFIX}tinygettext${CMAKE_STATIC_LIBRARY_SUFFIX}")
-@@ -921,8 +925,8 @@ else(WIN32 AND NOT UNIX)
+@@ -1091,8 +1092,8 @@ else(WIN32 AND NOT UNIX)
  
    else(${CMAKE_SYSTEM_NAME} MATCHES "Darwin" AND DISABLE_CPACK_BUNDLING)
  
@@ -52,4 +31,4 @@ Index: CMakeLists.txt
 +    set(INSTALL_SUBDIR_SHARE "share/supertux2" CACHE STRING "Installation subdir for data")
      set(INSTALL_SUBDIR_DOC "share/doc/supertux2" CACHE STRING "Installation subdir for docs")
  
-     install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/supertux2.desktop DESTINATION "share/applications")
+     if(UBUNTU_TOUCH)
