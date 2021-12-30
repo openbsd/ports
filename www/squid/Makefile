@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.237 2021/10/04 20:11:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.238 2021/12/30 11:14:36 sthen Exp $
 
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
 COMMENT-ntlm=	NTLM authentication/ACL support for Squid
 
-V=		5.2
+V=		5.3
 DISTNAME=	squid-$V
 EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	squid-$V
@@ -26,6 +26,10 @@ HOMEPAGE=	http://www.squid-cache.org/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
+# requirement introduced with https://github.com/squid-cache/squid/pull/927
+# perhaps this can go away again later
+USE_GMAKE=	Yes
+
 cWANTLIB=	${COMPILER_LIBCXX} c execinfo gmp gnutls hogweed iconv
 cWANTLIB+=	idn2 intl m nettle p11-kit pthread ssl tasn1 unistring
 
@@ -39,8 +43,7 @@ COMPILER=	base-clang ports-gcc
 BUILD_DEPENDS+=	devel/cppunit
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 SEPARATE_BUILD=	Yes
-CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.69
+CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/cfgaux
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
