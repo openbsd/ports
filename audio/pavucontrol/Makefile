@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2021/08/27 08:16:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2021/12/30 15:02:50 ajacoutot Exp $
 
 COMMENT =		PulseAudio volume mixer
 
-DISTNAME =		pavucontrol-4.0
+DISTNAME =		pavucontrol-5.0
 HOMEPAGE =		http://freedesktop.org/software/pulseaudio/pavucontrol/
-REVISION =		0
 
 CATEGORIES =		audio
 
@@ -14,8 +13,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} X11 atk-1.0 atkmm-1.6 c cairo cairo-gobject
 WANTLIB += cairomm-1.0 canberra canberra-gtk3 gdk-3 gdk_pixbuf-2.0
 WANTLIB += gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gobject-2.0
-WANTLIB += gtk-3 gtkmm-3.0 harfbuzz intl m pango-1.0 pangocairo-1.0
-WANTLIB += pangomm-1.4 pulse pulse-mainloop-glib sigc-2.0
+WANTLIB += gtk-3 gtkmm-3.0 harfbuzz intl json-glib-1.0 m pango-1.0
+WANTLIB += pangocairo-1.0 pangomm-1.4 pulse pulse-mainloop-glib
+WANTLIB += sigc-2.0
 
 MASTER_SITES =		http://freedesktop.org/software/pulseaudio/pavucontrol/
 
@@ -36,6 +36,7 @@ RUN_DEPENDS =		devel/desktop-file-utils
 
 LIB_DEPENDS =		audio/libcanberra,-gtk3 \
 			audio/pulseaudio \
+			devel/json-glib \
 			x11/gtk3mm
 
 .include <bsd.port.mk>
