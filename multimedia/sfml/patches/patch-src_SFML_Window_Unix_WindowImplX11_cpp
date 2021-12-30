@@ -1,14 +1,14 @@
-$OpenBSD: patch-src_SFML_Window_Unix_WindowImplX11_cpp,v 1.1 2018/04/10 20:11:39 jasper Exp $
+$OpenBSD: patch-src_SFML_Window_Unix_WindowImplX11_cpp,v 1.2 2021/12/30 19:12:40 pascal Exp $
 
 Index: src/SFML/Window/Unix/WindowImplX11.cpp
 --- src/SFML/Window/Unix/WindowImplX11.cpp.orig
 +++ src/SFML/Window/Unix/WindowImplX11.cpp
-@@ -1592,7 +1592,7 @@ void WindowImplX11::initialize()
-             m_window,
-             XNInputStyle,
-             XIMPreeditNothing | XIMStatusNothing,
--            reinterpret_cast<void*>(NULL)
-+            static_cast<void*>(NULL)
-         );
+@@ -1556,7 +1556,7 @@ void WindowImplX11::initialize()
+                                    m_window,
+                                    XNInputStyle,
+                                    XIMPreeditNothing | XIMStatusNothing,
+-                                   reinterpret_cast<void*>(NULL));
++                                   static_cast<void*>(NULL));
      }
      else
+     {

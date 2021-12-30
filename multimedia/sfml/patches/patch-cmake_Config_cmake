@@ -1,23 +1,14 @@
-$OpenBSD: patch-cmake_Config_cmake,v 1.2 2016/09/01 16:50:14 pascal Exp $
---- cmake/Config.cmake.orig	Wed Aug 31 17:33:23 2016
-+++ cmake/Config.cmake	Wed Aug 31 17:34:48 2016
-@@ -31,6 +31,10 @@ elseif(${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
-     set(SFML_OS_FREEBSD 1)
-     # don't use the OpenGL ES implementation on FreeBSD
-     set(OPENGL_ES 0)
-+elseif(${CMAKE_SYSTEM_NAME} STREQUAL "OpenBSD")
-+    set(SFML_OS_OPENBSD 1)
-+    # don't use the OpenGL ES implementation on OpenBSD
-+    set(OPENGL_ES 0)
- elseif(${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")
-     if(IOS)
-         set(SFML_OS_IOS 1)
-@@ -112,7 +116,7 @@ endif()
- # define the install directory for miscellaneous files
- if(SFML_OS_WINDOWS OR SFML_OS_IOS)
-     set(INSTALL_MISC_DIR .)
--elseif(SFML_OS_LINUX OR SFML_OS_FREEBSD OR SFML_OS_MACOSX)
-+elseif(SFML_OS_LINUX OR SFML_OS_FREEBSD OR SFML_OS_MACOSX OR SFML_OS_OPENBSD)
-     set(INSTALL_MISC_DIR share/SFML)
- elseif(SFML_OS_ANDROID)
-     set(INSTALL_MISC_DIR ${ANDROID_NDK}/sources/sfml)
+$OpenBSD: patch-cmake_Config_cmake,v 1.3 2021/12/30 19:12:40 pascal Exp $
+
+Index: cmake/Config.cmake
+--- cmake/Config.cmake.orig
++++ cmake/Config.cmake
+@@ -73,7 +73,7 @@ endif()
+ # this could be e.g. macports on mac or msys2 on windows etc.
+ set(SFML_PKGCONFIG_DIR "/lib${LIB_SUFFIX}/pkgconfig")
+ 
+-if(SFML_OS_FREEBSD OR SFML_OS_OPENBSD)
++if(SFML_OS_FREEBSD)
+     set(SFML_PKGCONFIG_DIR "/libdata/pkgconfig")
+ endif()
+ 

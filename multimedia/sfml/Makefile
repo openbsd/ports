@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.13 2021/02/27 13:37:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2021/12/30 19:12:40 pascal Exp $
 
 COMMENT =		simple and fast multimedia library
 
-V =			2.4.0
+V =			2.5.1
 DISTNAME =		SFML-${V}-sources
 PKGNAME =		sfml-${V}
 EXTRACT_SUFX =		.zip
-REVISION =		2
 
-SHARED_LIBS +=  sfml-audio                1.0 # 2.1
-SHARED_LIBS +=  sfml-graphics             1.0 # 2.1
-SHARED_LIBS +=  sfml-network              1.0 # 2.1
-SHARED_LIBS +=  sfml-system               1.0 # 2.1
-SHARED_LIBS +=  sfml-window               1.0 # 2.1
+SHARED_LIBS +=  sfml-audio                2.0 # 2.1
+SHARED_LIBS +=  sfml-graphics             2.0 # 2.1
+SHARED_LIBS +=  sfml-network              2.0 # 2.1
+SHARED_LIBS +=  sfml-system               2.0 # 2.1
+SHARED_LIBS +=  sfml-window               2.0 # 2.1
 
 CATEGORIES =		multimedia
 
@@ -23,8 +22,8 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # zlib/libpng
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += FLAC GL X11-xcb freetype jpeg m ogg openal vorbis vorbisenc
-WANTLIB += vorbisfile xcb xcb-image xcb-randr usbhid ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} FLAC GL GLU freetype m ogg openal
+WANTLIB += vorbis vorbisenc vorbisfile
 
 MASTER_SITES =		https://www.sfml-dev.org/files/
 
@@ -33,7 +32,6 @@ MODULES =		devel/cmake
 COMPILER =		base-clang ports-gcc
 
 LIB_DEPENDS =		audio/openal \
-			graphics/jpeg \
 			audio/libvorbis \
 			audio/flac
 
@@ -49,9 +47,8 @@ NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/SFML-${V}
 
-post-extract:
-	mkdir ${WRKSRC}/src/SFML/Window/OpenBSD
-	cp ${FILESDIR}/JoystickImpl.* ${WRKSRC}/src/SFML/Window/OpenBSD
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/tools/pkg-config/sfml-window.pc.in
 
 post-install:
 	find ${PREFIX}/include -name '*.orig' -exec rm {} \;

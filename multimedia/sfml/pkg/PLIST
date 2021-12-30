@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/09/01 16:50:14 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/12/30 19:12:40 pascal Exp $
 include/SFML/
 include/SFML/Audio/
 include/SFML/Audio.hpp
@@ -19,6 +19,7 @@ include/SFML/Audio/SoundRecorder.hpp
 include/SFML/Audio/SoundSource.hpp
 include/SFML/Audio/SoundStream.hpp
 include/SFML/Config.hpp
+include/SFML/GpuPreference.hpp
 include/SFML/Graphics/
 include/SFML/Graphics.hpp
 include/SFML/Graphics/BlendMode.hpp
@@ -49,6 +50,7 @@ include/SFML/Graphics/Transform.hpp
 include/SFML/Graphics/Transformable.hpp
 include/SFML/Graphics/Vertex.hpp
 include/SFML/Graphics/VertexArray.hpp
+include/SFML/Graphics/VertexBuffer.hpp
 include/SFML/Graphics/View.hpp
 include/SFML/Main.hpp
 include/SFML/Network/
@@ -94,8 +96,10 @@ include/SFML/System/Vector3.hpp
 include/SFML/System/Vector3.inl
 include/SFML/Window/
 include/SFML/Window.hpp
+include/SFML/Window/Clipboard.hpp
 include/SFML/Window/Context.hpp
 include/SFML/Window/ContextSettings.hpp
+include/SFML/Window/Cursor.hpp
 include/SFML/Window/Event.hpp
 include/SFML/Window/Export.hpp
 include/SFML/Window/GlResource.hpp
@@ -108,6 +112,12 @@ include/SFML/Window/VideoMode.hpp
 include/SFML/Window/Window.hpp
 include/SFML/Window/WindowHandle.hpp
 include/SFML/Window/WindowStyle.hpp
+lib/cmake/SFML/
+lib/cmake/SFML/SFMLConfig.cmake
+lib/cmake/SFML/SFMLConfigDependencies.cmake
+lib/cmake/SFML/SFMLConfigVersion.cmake
+lib/cmake/SFML/SFMLSharedTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/SFML/SFMLSharedTargets.cmake
 @lib lib/libsfml-audio.so.${LIBsfml-audio_VERSION}
 @lib lib/libsfml-graphics.so.${LIBsfml-graphics_VERSION}
 @lib lib/libsfml-network.so.${LIBsfml-network_VERSION}
@@ -120,8 +130,5 @@ lib/pkgconfig/sfml-network.pc
 lib/pkgconfig/sfml-system.pc
 lib/pkgconfig/sfml-window.pc
 share/SFML/
-share/SFML/cmake/
-share/SFML/cmake/Modules/
-share/SFML/cmake/Modules/FindSFML.cmake
-share/SFML/license.txt
-share/SFML/readme.txt
+share/SFML/license.md
+share/SFML/readme.md
