@@ -1,0 +1,14 @@
+$OpenBSD: patch-fract4d_compiler_tests_test_codegen_py,v 1.1 2021/12/30 09:57:29 sthen Exp $
+
+Index: fract4d_compiler/tests/test_codegen.py
+--- fract4d_compiler/tests/test_codegen.py.orig
++++ fract4d_compiler/tests/test_codegen.py
+@@ -247,7 +247,7 @@ int main()
+             cmd = "gcc -Wall -fPIC -DPIC -Ifract4d/c -shared %s -o %s -lm -flat_namespace -undefined suppress" % (
+                 cFile.name, oFileName)
+         else:
+-            cmd = "gcc -Wall -fPIC -DPIC -Ifract4d/c -shared %s -o %s -lm" % (
++            cmd = "cc -Wall -fPIC -DPIC -Ifract4d/c -shared %s -o %s -lm" % (
+                 cFile.name, oFileName)
+         status, output = subprocess.getstatusoutput(cmd)
+         self.assertEqual(status, 0, "C error:\n%s\nProgram:\n%s\n" %

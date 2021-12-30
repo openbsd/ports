@@ -1,0 +1,18 @@
+$OpenBSD: patch-fract4d_compiler_fc_py,v 1.1 2021/12/30 09:57:29 sthen Exp $
+
+Index: fract4d_compiler/fc.py
+--- fract4d_compiler/fc.py.orig
++++ fract4d_compiler/fc.py
+@@ -148,10 +148,10 @@ class Compiler:
+         self.c_code = ""
+         self.path_lists = [[], [], [], []]
+ 
+-        self.compiler_name = "gcc"
++        self.compiler_name = "cc"
+ 
+         self.include_path = "-I%s/c/" % os.path.dirname(fract4d.__file__)
+-        self.flags = "-fPIC -DPIC -g -O3 -shared"
++        self.flags = "-fPIC -DPIC -shared"
+         self.output_flag = "-o "
+         self.libs = "-lm"
+ 

@@ -1,0 +1,14 @@
+$OpenBSD: patch-fract4d_tests_test_fractconfig_py,v 1.1 2021/12/30 09:57:29 sthen Exp $
+
+Index: fract4d/tests/test_fractconfig.py
+--- fract4d/tests/test_fractconfig.py.orig
++++ fract4d/tests/test_fractconfig.py
+@@ -15,7 +15,7 @@ class Test(testbase.TestSetup):
+ 
+     def testGetDefaults(self):
+         c = self.userConfig
+-        self.assertEqual("gcc", c.get("compiler", "name"))
++        self.assertEqual("cc", c.get("compiler", "name"))
+ 
+     def testGetList(self):
+         c = fractconfig.T("")

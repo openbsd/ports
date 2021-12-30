@@ -1,0 +1,14 @@
+$OpenBSD: patch-fract4d_fractconfig_py,v 1.1 2021/12/30 09:57:29 sthen Exp $
+
+Index: fract4d/fractconfig.py
+--- fract4d/fractconfig.py.orig
++++ fract4d/fractconfig.py
+@@ -12,7 +12,7 @@ class T(configparser.ConfigParser):
+     def __init__(self, file):
+         _shared_formula_dir = T.get_data_path("formulas")
+         _shared_map_dir = T.get_data_path("maps")
+-        comp = 'gcc'
++        comp = 'cc'
+ 
+         _defaults = OrderedDict((
+             ("compiler",
