@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2021/07/11 13:12:52 robert Exp $
+@comment $OpenBSD: PLIST,v 1.15 2021/12/30 16:29:56 ajacoutot Exp $
 bin/neon-config
 include/neon/
 include/neon/ne_207.h
@@ -119,19 +119,17 @@ lib/pkgconfig/neon.pc
 @man man/man3/ne_ssl_trust_default_ca.3
 @man man/man3/ne_status.3
 @man man/man3/ne_strdup.3
+@man man/man3/ne_strhash.3
 @man man/man3/ne_strndup.3
+@man man/man3/ne_strparam.3
 @man man/man3/ne_token.3
 @man man/man3/ne_version_match.3
 @man man/man3/ne_version_string.3
+@man man/man3/ne_vstrhash.3
 @man man/man3/ne_xml_create.3
 @man man/man3/ne_xml_destroy.3
 @man man/man3/neon.3
 share/doc/neon/
-share/doc/neon/BUGS
-share/doc/neon/NEWS
-share/doc/neon/README.md
-share/doc/neon/THANKS
-share/doc/neon/TODO
 share/doc/neon/html/
 share/doc/neon/html/api.html
 share/doc/neon/html/biblio.html
@@ -153,10 +151,12 @@ share/doc/neon/html/refconfig.html
 share/doc/neon/html/referr.html
 share/doc/neon/html/reffeat.html
 share/doc/neon/html/refgetst.html
+share/doc/neon/html/refhash.html
 share/doc/neon/html/refi18n.html
 share/doc/neon/html/refiaddr.html
 share/doc/neon/html/refneon.html
 share/doc/neon/html/refopts.html
+share/doc/neon/html/refparam.html
 share/doc/neon/html/refproxy.html
 share/doc/neon/html/refreq.html
 share/doc/neon/html/refreqbody.html
