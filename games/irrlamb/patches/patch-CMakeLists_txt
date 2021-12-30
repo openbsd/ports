@@ -1,0 +1,55 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2021/12/30 22:13:47 pascal Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -29,7 +29,6 @@ if(WIN32)
+ elseif(UNIX)
+ 	add_definitions(-DPLATFORM=0)
+ 	add_definitions(-DLUA_USE_LINUX)
+-	set(EXTRA_LIBS ${EXTRA_LIBS} dl)
+ endif()
+ 
+ # compiler flags
+@@ -72,7 +71,7 @@ find_package(Threads REQUIRED)
+ 
+ # include paths
+ include_directories("src")
+-include_directories("src/irrlicht/include")
++include_directories("${LOCALBASE}/include/irrlicht")
+ include_directories("src/OPCODE")
+ include_directories("src/libccd")
+ include_directories("src/libccd/custom")
+@@ -98,6 +97,7 @@ add_executable(${CMAKE_PROJECT_NAME} ${SRC_ALL})
+ 
+ # link libraries
+ target_link_libraries(${CMAKE_PROJECT_NAME}
++	Irrlicht
+ 	${OPENGL_LIBRARIES}
+ 	${FREETYPE_LIBRARIES}
+ 	${OPENAL_LIBRARY}
+@@ -115,15 +115,15 @@ if(WIN32)
+ else()
+ 
+ 	# linux installation
+-	install(TARGETS ${CMAKE_PROJECT_NAME} RUNTIME DESTINATION share/games/${CMAKE_PROJECT_NAME})
+-	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/fonts DESTINATION share/games/${CMAKE_PROJECT_NAME})
+-	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/levels DESTINATION share/games/${CMAKE_PROJECT_NAME})
+-	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/meshes DESTINATION share/games/${CMAKE_PROJECT_NAME})
+-	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/scripts DESTINATION share/games/${CMAKE_PROJECT_NAME})
+-	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/shaders DESTINATION share/games/${CMAKE_PROJECT_NAME})
+-	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/sounds DESTINATION share/games/${CMAKE_PROJECT_NAME})
+-	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/textures DESTINATION share/games/${CMAKE_PROJECT_NAME})
+-	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/ui DESTINATION share/games/${CMAKE_PROJECT_NAME})
++	install(TARGETS ${CMAKE_PROJECT_NAME} RUNTIME DESTINATION share/${CMAKE_PROJECT_NAME})
++	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/fonts DESTINATION share/${CMAKE_PROJECT_NAME})
++	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/levels DESTINATION share/${CMAKE_PROJECT_NAME})
++	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/meshes DESTINATION share/${CMAKE_PROJECT_NAME})
++	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/scripts DESTINATION share/${CMAKE_PROJECT_NAME})
++	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/shaders DESTINATION share/${CMAKE_PROJECT_NAME})
++	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/sounds DESTINATION share/${CMAKE_PROJECT_NAME})
++	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/textures DESTINATION share/${CMAKE_PROJECT_NAME})
++	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/ui DESTINATION share/${CMAKE_PROJECT_NAME})
+ 	install(FILES ${PROJECT_SOURCE_DIR}/deployment/irrlamb.png DESTINATION share/pixmaps)
+ 	install(FILES ${PROJECT_SOURCE_DIR}/deployment/irrlamb.desktop DESTINATION share/applications)
+ 	install(FILES ${PROJECT_SOURCE_DIR}/CHANGELOG DESTINATION share/doc/${CMAKE_PROJECT_NAME})

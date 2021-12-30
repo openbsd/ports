@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_ode_src_config_h,v 1.1 2021/12/30 22:13:47 pascal Exp $
+
+Index: src/ode/src/config.h
+--- src/ode/src/config.h.orig
++++ src/ode/src/config.h
+@@ -91,7 +91,7 @@
+ #define HAVE_LIMITS_H 1
+ 
+ /* Define to 1 if you have the <malloc.h> header file. */
+-#define HAVE_MALLOC_H 1
++/* #define HAVE_MALLOC_H 1 */
+ 
+ /* Define to 1 if you have the <math.h> header file. */
+ #define HAVE_MATH_H 1

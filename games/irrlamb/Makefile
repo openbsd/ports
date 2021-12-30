@@ -1,43 +1,41 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/12/30 22:13:47 pascal Exp $
 
-V =		0.2.1
+V =		1.0.1
 COMMENT =	third person, 3D physics game
-DISTNAME =	irrlamb-$V-src
+DISTNAME =	irrlamb-$Vr613-src
 PKGNAME =	irrlamb-$V
 CATEGORIES =	games x11
-REVISION =	2
 
 # GPLv3+
 PERMIT_PACKAGE =		Yes
 
-WANTLIB += BulletCollision BulletDynamics BulletSoftBody Irrlicht
-WANTLIB += X11 Xext Xrandr Xxf86vm freetype ogg sqlite3 vorbis
-WANTLIB += LinearMath c m openal vorbisfile
-WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB}
+WANTLIB += ${COMPILER_LIBCXX} GL GLU Irrlicht X11 Xext Xrandr
+WANTLIB += Xxf86vm c freetype jpeg m ogg openal png sqlite3 vorbis
+WANTLIB += vorbisfile z
 
 MASTER_SITES =	https://github.com/jazztickets/irrlamb/releases/download/v$V/
 
-MODULES =	devel/cmake \
-		lang/lua
-MODLUA_VERSION =	5.3
+MODULES =	devel/cmake
 
 COMPILER =	base-clang ports-gcc
 
 LIB_DEPENDS =	audio/libvorbis \
 		audio/openal \
 		databases/sqlite3 \
-		devel/bullet \
 		x11/irrlicht
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
-WRKDIST =	${WRKDIR}/irrlamb-$V
+WRKDIST =	${WRKDIR}/irrlamb-$Vr613
 
 NO_TEST =	Yes
+
+post-extract:
+	rm -rf ${WRKSRC}/src/irrlicht
 
 post-patch:
 	sed -i -e "s,games/,,g" ${WRKSRC}/CMakeLists.txt \
 				  ${WRKSRC}/deployment/irrlamb
-	sed -i -e "s,games,bin,g" ${WRKSRC}/CMakeLists.txt
+	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
