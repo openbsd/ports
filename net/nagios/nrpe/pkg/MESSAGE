@@ -5,7 +5,7 @@ the path to a private key in ssl_privatekey_file and a certificate
 (either self-signed or CA-signed) in ssl_cert_file.
 
 Or, preferably, switch to another method for monitoring. The check
-scripts in "manubolon-snmp" will let you perform many of the same checks
+scripts in "manubulon-snmp" will let you perform many of the same checks
 (storage, memory, load etc) with just a standard SNMP daemon on the
 monitored machine.
 
