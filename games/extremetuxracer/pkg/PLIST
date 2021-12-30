@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/12/24 14:59:12 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.8 2021/12/30 19:13:10 pascal Exp $
 @bin bin/etr
 share/appdata/
 share/appdata/etr.appdata.xml
@@ -545,11 +545,15 @@ share/etr/textures/ziff032.png
 share/etr/translations/
 share/etr/translations/cs_CZ.lst
 share/etr/translations/de_DE.lst
+share/etr/translations/du_NL.lst
+share/etr/translations/eo.lst
 share/etr/translations/es_ES.lst
 share/etr/translations/fi_FI.lst
 share/etr/translations/fr_FR.lst
 share/etr/translations/languages.lst
 share/etr/translations/pl_PL.lst
+share/etr/translations/ro_RO.lst
+share/etr/translations/se_SE.lst
 share/etr/translations/xx_XX.lst
 share/pixmaps/
 share/pixmaps/etr.png

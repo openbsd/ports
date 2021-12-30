@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:46:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2021/12/30 19:13:10 pascal Exp $
 
 COMMENT =		downhill racing game
 BROKEN-alpha =		cc1plus: error: unrecognized command line option '-std=c++11'
 BROKEN-hppa =		cc1plus: error: unrecognized command line option '-std=c++11'
 
-V =			0.7.5
+V =			0.8.1
 DISTNAME =		etr-$V
 PKGNAME =		extremetuxracer-$V
 
@@ -17,7 +17,7 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += GL GLU c m pthread sfml-audio sfml-graphics sfml-system
+WANTLIB += GL GLU X11 Xrandr c m pthread sfml-audio sfml-graphics sfml-system
 WANTLIB += sfml-window
 WANTLIB += ${COMPILER_LIBCXX}
 
