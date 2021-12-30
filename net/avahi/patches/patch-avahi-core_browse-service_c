@@ -1,9 +1,6 @@
-$OpenBSD: patch-avahi-core_browse-service_c,v 1.1 2021/09/03 11:46:03 ajacoutot Exp $
+$OpenBSD: patch-avahi-core_browse-service_c,v 1.2 2021/12/30 10:51:44 ajacoutot Exp $
 
-From 6fe6c44d953edd50c32ff6ce8fec5ac811fa3b69 Mon Sep 17 00:00:00 2001
-From: Asger Hautop Drewsen <asger@princh.com>
-Date: Mon, 9 Aug 2021 14:25:08 +0200
-Subject: [PATCH] Fix avahi-browse: Invalid service type
+https://github.com/lathiat/avahi/issues/212
 
 Index: avahi-core/browse-service.c
 --- avahi-core/browse-service.c.orig

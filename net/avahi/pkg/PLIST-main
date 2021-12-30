@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.23 2021/09/05 12:34:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.24 2021/12/30 10:51:44 ajacoutot Exp $
 @conflict howl-*
 @newgroup _avahi:629
 @newuser _avahi:629:629:daemon:Avahi User:/var/empty:/sbin/nologin
@@ -15,6 +15,7 @@ bin/avahi-resolve-host-name
 @bin bin/avahi-set-host-name
 @man man/man1/avahi-browse-domains.1
 @man man/man1/avahi-browse.1
+@man man/man1/avahi-discover.1
 @man man/man1/avahi-publish-address.1
 @man man/man1/avahi-publish-service.1
 @man man/man1/avahi-publish.1
@@ -22,6 +23,9 @@ bin/avahi-resolve-host-name
 @man man/man1/avahi-resolve-host-name.1
 @man man/man1/avahi-resolve.1
 @man man/man1/avahi-set-host-name.1
+@man man/man1/bshell.1
+@man man/man1/bssh.1
+@man man/man1/bvnc.1
 @man man/man5/avahi-daemon.conf.5
 @man man/man5/avahi.hosts.5
 @man man/man5/avahi.service.5

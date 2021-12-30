@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2021/11/02 17:56:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.151 2021/12/30 10:51:44 ajacoutot Exp $
 
 COMMENT-main=		framework for Multicast DNS Service Discovery
 COMMENT-glib=		GLib and GObject integration libraries for avahi
@@ -10,7 +10,8 @@ COMMENT-python=		python bindings for avahi
 V=			0.8
 GH_ACCOUNT=		lathiat
 GH_PROJECT=		avahi
-GH_TAGNAME=		v${V}
+#GH_TAGNAME=		v${V}
+GH_TAGNAME=		fd482a74625b8db8547b8cfca3ee3d3c6c721423
 
 PKGNAME-main=		avahi-${V}
 PKGNAME-glib=		avahi-glib-${V}
@@ -19,12 +20,12 @@ PKGNAME-gui=		avahi-gui-${V}
 PKGNAME-libs=		avahi-libs-${V}
 PKGNAME-python=		py3-avahi-${V}
 
-REVISION-python=	3
-REVISION-gui=		4
-REVISION-gtk3=		2
-REVISION-main=		4
-REVISION-libs=		1
-REVISION-glib=		0
+REVISION-python=	4
+REVISION-gui=		5
+REVISION-gtk3=		3
+REVISION-main=		5
+REVISION-libs=		2
+REVISION-glib=		1
 
 CATEGORIES=		net devel
 
@@ -113,7 +114,7 @@ WANTLIB-gtk3 += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 epoxy
 WANTLIB-gtk3 += gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-gtk3 += pcre pixman-1 png pthread xcb xcb-render graphite2
 WANTLIB-gtk3 += xcb-shm z ffi iconv intl fribidi atk-bridge-2.0 harfbuzz
-WANTLIB-gtk3 += ${COMPILER_LIBCXX} execinfo jpeg
+WANTLIB-gtk3 += ${COMPILER_LIBCXX} execinfo jpeg Xau Xdmcp
 
 ### -gui
 LIB_DEPENDS-gui=	${BUILD_PKGPATH},-gtk3
@@ -131,7 +132,7 @@ WANTLIB-gui += gdbm gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB-gui += gobject-2.0 gtk-3 m pango-1.0 fribidi atk-bridge-2.0
 WANTLIB-gui += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB-gui += xcb xcb-render xcb-shm z ffi graphite2 epoxy iconv intl
-WANTLIB-gui += ${COMPILER_LIBCXX} execinfo jpeg
+WANTLIB-gui += ${COMPILER_LIBCXX} execinfo jpeg Xau Xdmcp
 
 ### -python
 LIB_DEPENDS-python=	#empty
