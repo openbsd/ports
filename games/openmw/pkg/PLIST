@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/06/25 14:18:52 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.11 2021/12/30 22:16:17 pascal Exp $
 @bin bin/bsatool
 @bin bin/esmtool
 @bin bin/niftest
@@ -13,19 +13,19 @@ share/applications/org.openmw.launcher.desktop
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/openmw/
 @sample ${SYSCONFDIR}/openmw/
+share/examples/openmw/defaults-cs.bin
+@sample ${SYSCONFDIR}/openmw/defaults-cs.bin
+share/examples/openmw/defaults.bin
+@sample ${SYSCONFDIR}/openmw/defaults.bin
 share/examples/openmw/gamecontrollerdb.txt
 @sample ${SYSCONFDIR}/openmw/gamecontrollerdb.txt
-share/examples/openmw/openmw-cs.cfg
-@sample ${SYSCONFDIR}/openmw/openmw-cs.cfg
 share/examples/openmw/openmw.cfg
 @sample ${SYSCONFDIR}/openmw/openmw.cfg
-share/examples/openmw/settings-default.cfg
-@sample ${SYSCONFDIR}/openmw/settings-default.cfg
 share/examples/openmw/version
 @sample ${SYSCONFDIR}/openmw/version
 share/licenses/
 share/licenses/openmw/
-share/licenses/openmw/DejaVu Font License.txt
+share/licenses/openmw/DejaVuFontLicense.txt
 share/metainfo/
 share/metainfo/openmw.appdata.xml
 share/openmw/
@@ -120,7 +120,15 @@ share/openmw/resources/mygui/openmw_wait_dialog_progressbar.layout
 share/openmw/resources/mygui/openmw_windows.skin.xml
 share/openmw/resources/mygui/skins.xml
 share/openmw/resources/shaders/
+share/openmw/resources/shaders/alpha.glsl
+share/openmw/resources/shaders/groundcover_fragment.glsl
+share/openmw/resources/shaders/groundcover_vertex.glsl
 share/openmw/resources/shaders/lighting.glsl
+share/openmw/resources/shaders/lighting_util.glsl
+share/openmw/resources/shaders/nv_default_fragment.glsl
+share/openmw/resources/shaders/nv_default_vertex.glsl
+share/openmw/resources/shaders/nv_nolighting_fragment.glsl
+share/openmw/resources/shaders/nv_nolighting_vertex.glsl
 share/openmw/resources/shaders/objects_fragment.glsl
 share/openmw/resources/shaders/objects_vertex.glsl
 share/openmw/resources/shaders/parallax.glsl
@@ -132,6 +140,7 @@ share/openmw/resources/shaders/shadows_fragment.glsl
 share/openmw/resources/shaders/shadows_vertex.glsl
 share/openmw/resources/shaders/terrain_fragment.glsl
 share/openmw/resources/shaders/terrain_vertex.glsl
+share/openmw/resources/shaders/vertexcolors.glsl
 share/openmw/resources/shaders/water_fragment.glsl
 share/openmw/resources/shaders/water_nm.png
 share/openmw/resources/shaders/water_vertex.glsl
