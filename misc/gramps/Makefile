@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.57 2021/11/02 00:01:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2021/12/30 15:26:23 ajacoutot Exp $
 
 COMMENT=		Genealogical Research Analysis Management Programming System
 
-MODPY_EGG_VERSION =	5.1.3
+MODPY_EGG_VERSION =	5.1.4
 DISTNAME=		gramps-${MODPY_EGG_VERSION}
-REVISION=		0
 
 CATEGORIES=		misc x11
 
@@ -44,8 +43,5 @@ post-install:
 	echo -n '${TRUEPREFIX}/share' \
 		>${WRKINST}/${MODPY_SITEPKG}/gramps/gen/utils/resource-path
 	gunzip ${PREFIX}/man/*/{,*}/*.gz
-	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
-	mv ${PREFIX}/share/icons/gramps.png \
-		${PREFIX}/share/pixmaps/
 
 .include <bsd.port.mk>
