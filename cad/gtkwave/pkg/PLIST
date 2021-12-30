@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.12 2019/02/18 10:47:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/12/30 15:07:41 ajacoutot Exp $
 @bin bin/evcd2vcd
 @bin bin/fst2vcd
 @bin bin/fstminer
-@bin bin/ghwdump
 @bin bin/gtkwave
 @bin bin/lxt2miner
 @bin bin/lxt2vcd
@@ -19,7 +18,6 @@
 @man man/man1/evcd2vcd.1
 @man man/man1/fst2vcd.1
 @man man/man1/fstminer.1
-@man man/man1/ghwdump.1
 @man man/man1/gtkwave.1
 @man man/man1/lxt2miner.1
 @man man/man1/lxt2vcd.1
