@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2021/02/01 14:55:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2021/12/30 16:37:47 ajacoutot Exp $
 
 COMMENT=	display new entries in system logfiles since last run
 
-V=		1.3.21
+V=		1.3.23
 DISTNAME=	logcheck_${V}
 PKGNAME=	logtail-${V}
 EXTRACT_SUFX=	.tar.xz
