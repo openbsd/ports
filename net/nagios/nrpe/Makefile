@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2021/11/29 10:29:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2021/12/30 12:24:42 sthen Exp $
 
 COMMENT=	Nagios Remote Plugin Executor
 
 DISTNAME=	nrpe-4.0.3
+REVISION=	0
 CATEGORIES=	net
 
 HOMEPAGE=	https://github.com/NagiosEnterprises/nrpe
@@ -18,6 +19,7 @@ RUN_DEPENDS=	net/monitoring-plugins
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --libexecdir=${LOCALBASE}/libexec/nagios \
+		--with-need-dh=no \
 		--with-nrpe-user=_nrpe \
 		--with-nrpe-group=_nrpe \
 		--with-piddir=/var/run/nrpe

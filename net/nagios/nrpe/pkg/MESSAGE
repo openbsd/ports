@@ -1,0 +1,12 @@
+This version of NRPE is not compatible with older versions; both "server"
+(machine running the nrpe daemon) and client must be updated together.
+On the machine running the nrpe daemon, edit ${SYSCONFDIR}/nrpe.cfg - provide
+the path to a private key in ssl_privatekey_file and a certificate
+(either self-signed or CA-signed) in ssl_cert_file.
+
+Or, preferably, switch to another method for monitoring. The check
+scripts in "manubolon-snmp" will let you perform many of the same checks
+(storage, memory, load etc) with just a standard SNMP daemon on the
+monitored machine.
+
+*** NRPE no longer receives fixes upstream. ***
