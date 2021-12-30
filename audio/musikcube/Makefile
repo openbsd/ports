@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/08/29 13:04:47 solene Exp $
+# $OpenBSD: Makefile,v 1.2 2021/12/30 22:33:28 solene Exp $
 
 COMMENT =	terminal-based music player
 
 GH_ACCOUNT =	clangen
 GH_PROJECT =	musikcube
-GH_TAGNAME =	0.96.5
+GH_TAGNAME =	0.96.10
 
 CATEGORIES =	audio
 
@@ -24,6 +24,8 @@ WANTLIB +=	tag z
 COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake
+
+CONFIGURE_ARGS += -DENABLE_BUNDLED_TAGLIB=false
 
 LIB_DEPENDS =	audio/libopenmpt \
 		audio/taglib \

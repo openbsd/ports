@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/08/29 13:04:47 solene Exp $
+@comment $OpenBSD: PLIST,v 1.2 2021/12/30 22:33:28 solene Exp $
 bin/musikcube
 bin/musikcubed
 include/musikcube/
@@ -52,7 +52,9 @@ include/musikcube/musikcore/sdk/constants.h
 share/musikcube/
 @so share/musikcube/libmusikcore.so
 share/musikcube/locales/
+share/musikcube/locales/de_DE.json
 share/musikcube/locales/en_US.json
+share/musikcube/locales/es_ES.json
 share/musikcube/locales/fr_FR.json
 share/musikcube/locales/it_IT.json
 share/musikcube/locales/ja_JP.json
