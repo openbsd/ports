@@ -1,20 +1,9 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.3 2019/12/06 17:40:24 solene Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.4 2021/12/31 10:57:56 op Exp $
 
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -39,6 +39,10 @@ if( NOT ZDOOM_LIBS )
- 	set( ZDOOM_LIBS "" )
- endif()
- 
-+# add override for dynamic library name
-+set(FLUIDSYNTHLIB1 "libfluidsynth.so.0" CACHE STRING "Library name for Fluidsynth")
-+add_definitions( -DFLUIDSYNTHLIB1="${FLUIDSYNTHLIB1}" )
-+
- if( WIN32 )
- 	if( X64 )
- 		set( WIN_TYPE Win64 )
-@@ -386,7 +390,7 @@ CHECK_CXX_SOURCE_COMPILES("thread_local int i; int mai
+@@ -356,7 +360,7 @@ CHECK_CXX_SOURCE_COMPILES("thread_local int i; int mai
  	HAVE_THREAD_LOCAL)
  
  if( NOT HAVE_THREAD_LOCAL )

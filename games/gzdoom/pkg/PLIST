@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/12/06 17:40:24 solene Exp $
+@comment $OpenBSD: PLIST,v 1.3 2021/12/31 10:57:56 op Exp $
 @bin bin/gzdoom
 share/doc/gzdoom/
 share/doc/gzdoom/console.css
@@ -18,6 +18,12 @@ share/doc/pkg-readmes/${PKGSTEM}
 share/games/
 share/games/doom/
 share/games/doom/brightmaps.pk3
+share/games/doom/fm_banks/
+share/games/doom/fm_banks/GENMIDI.GS.wopl
+share/games/doom/fm_banks/gs-by-papiezak-and-sneakernets.wopn
 share/games/doom/game_support.pk3
+share/games/doom/game_widescreen_gfx.pk3
 share/games/doom/gzdoom.pk3
 share/games/doom/lights.pk3
+share/games/doom/soundfonts/
+share/games/doom/soundfonts/gzdoom.sf2
