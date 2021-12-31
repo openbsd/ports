@@ -1,0 +1,15 @@
+$OpenBSD: README,v 1.1 2021/12/31 22:07:06 sdk Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Campaign cutscenes
+==============
+
+Cutscene videos for campaigns may be downloaded from:
+
+https://github.com/Warzone2100/wz-sequences
+
+and copied to ${TRUEPREFIX}/share/warzone2100/sequences.wz
+or ~/.local/share/warzone2100/sequences.wz.
