@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.151 2021/12/30 10:51:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.152 2021/12/31 07:20:32 ajacoutot Exp $
 
 COMMENT-main=		framework for Multicast DNS Service Discovery
 COMMENT-glib=		GLib and GObject integration libraries for avahi
@@ -21,9 +21,9 @@ PKGNAME-libs=		avahi-libs-${V}
 PKGNAME-python=		py3-avahi-${V}
 
 REVISION-python=	4
-REVISION-gui=		5
+REVISION-gui=		6
 REVISION-gtk3=		3
-REVISION-main=		5
+REVISION-main=		6
 REVISION-libs=		2
 REVISION-glib=		1
 

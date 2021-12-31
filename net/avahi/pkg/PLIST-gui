@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-gui,v 1.4 2020/02/22 08:57:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST-gui,v 1.5 2021/12/31 07:20:32 ajacoutot Exp $
+@conflict avahi-<0.8p6
 @conflict avahi-gtk-<0.6.30p2
 bin/avahi-bookmarks
 bin/avahi-discover
@@ -7,6 +8,10 @@ bin/bshell
 @bin bin/bssh
 bin/bvnc
 @man man/man1/avahi-bookmarks.1
+@man man/man1/avahi-discover.1
+@man man/man1/bshell.1
+@man man/man1/bssh.1
+@man man/man1/bvnc.1
 share/applications/avahi-discover.desktop
 share/applications/bssh.desktop
 share/applications/bvnc.desktop
