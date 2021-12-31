@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2021/12/30 20:37:32 pascal Exp $
+# $OpenBSD: Makefile,v 1.26 2021/12/31 13:29:42 pascal Exp $
 
 COMMENT =		jump 'n' run game
 
@@ -29,6 +29,7 @@ MAKE_ENV +=		CXXFLAGS="${CXXFLAGS}"
 MODULES +=		devel/cmake
 USE_NINJA =		No
 COMPILER =		base-clang ports-gcc
+BUILD_DEPENDS =		graphics/glm
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 LIB_DEPENDS =		devel/sdl2-image \
