@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2021/12/09 08:27:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2021/12/31 12:35:16 ajacoutot Exp $
 
 COMMENT=		building blocks for modern adaptive GNOME apps
 
 GNOME_PROJECT=		libadwaita
-GNOME_VERSION=		1.0.0.beta.1
-PKGNAME=		${GNOME_PROJECT}-${GNOME_VERSION:S/.alpha./alpha/}
+GNOME_VERSION=		1.0.0
+EPOCH=			0
 
 SHARED_LIBS += adwaita-1                 1.2 # 0
-SHARED_LIBS += adwaita-inspector-module1 0.0 # None
 
 # LGPLv2.1+
 PERMIT_PACKAGE=		Yes

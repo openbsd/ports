@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/12/09 08:27:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2021/12/31 12:35:16 ajacoutot Exp $
 @bin bin/adwaita-1-demo
 include/libadwaita-1/
 include/libadwaita-1/adw-action-row.h
@@ -54,8 +54,6 @@ include/libadwaita-1/adw-window-title.h
 include/libadwaita-1/adw-window.h
 include/libadwaita-1/adwaita.h
 lib/girepository-1.0/Adw-1.typelib
-lib/gtk-4.0/inspector/
-@lib lib/gtk-4.0/inspector/libadwaita-inspector-module1.so.${LIBadwaita-inspector-module1_VERSION}
 @lib lib/libadwaita-1.so.${LIBadwaita-1_VERSION}
 lib/pkgconfig/libadwaita-1.pc
 share/applications/org.gnome.Adwaita1.Demo.desktop
@@ -74,6 +72,7 @@ share/locale/fi/LC_MESSAGES/libadwaita.mo
 share/locale/fr/LC_MESSAGES/libadwaita.mo
 share/locale/fur/LC_MESSAGES/libadwaita.mo
 share/locale/gl/LC_MESSAGES/libadwaita.mo
+share/locale/he/LC_MESSAGES/libadwaita.mo
 share/locale/id/LC_MESSAGES/libadwaita.mo
 share/locale/it/LC_MESSAGES/libadwaita.mo
 share/locale/ko/LC_MESSAGES/libadwaita.mo
