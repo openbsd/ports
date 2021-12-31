@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2021/05/28 16:23:31 solene Exp $
+# $OpenBSD: Makefile,v 1.47 2021/12/31 09:53:11 solene Exp $
 
 BROKEN-i386 =		build fails in "Compiling file [...]/src/compiler/generic/genesis.lisp"
 # ;; Compiling file /pobj/sbcl-2.0.1/sbcl-2.0.1/src/compiler/generic/genesis.lisp ...
@@ -25,7 +25,7 @@ USE_WXNEEDED =		Yes
 
 COMMENT=		compiler and runtime system for ANSI Common Lisp
 
-V =			2.1.4
+V =			2.1.11
 DISTNAME=		sbcl-${V}-source
 PKGNAME=		sbcl-${V}
 WRKDIST=		${WRKDIR}/sbcl-${V}

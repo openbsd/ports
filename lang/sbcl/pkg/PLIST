@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2019/05/13 12:58:58 solene Exp $
+@comment $OpenBSD: PLIST,v 1.13 2021/12/31 09:53:11 solene Exp $
 @bin bin/sbcl
 @info info/asdf.info
 @info info/sbcl.info
@@ -21,6 +21,8 @@ lib/sbcl/contrib/sb-executable.asd
 lib/sbcl/contrib/sb-executable.fasl
 lib/sbcl/contrib/sb-gmp.asd
 lib/sbcl/contrib/sb-gmp.fasl
+lib/sbcl/contrib/sb-graph.asd
+lib/sbcl/contrib/sb-graph.fasl
 lib/sbcl/contrib/sb-grovel.asd
 lib/sbcl/contrib/sb-grovel.fasl
 lib/sbcl/contrib/sb-introspect.asd
