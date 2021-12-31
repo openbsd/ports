@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.472 2021/12/15 22:25:20 kn Exp $
+# $OpenBSD: Makefile,v 1.473 2021/12/31 10:56:46 op Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -260,6 +260,7 @@
      SUBDIR += xmp
      SUBDIR += ympd
      SUBDIR += yt-audio
+     SUBDIR += zmusic
      SUBDIR += zynaddsubfx
 
 .include <bsd.port.subdir.mk>
