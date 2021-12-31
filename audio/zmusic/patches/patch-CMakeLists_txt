@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2021/12/31 10:56:16 op Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -137,7 +137,7 @@ else()
+ 
+ 	if ( UNIX )
+ 		include(CheckSymbolExists)
+-		check_symbol_exists( "fts_set" "fts.h" HAVE_FTS )
++		check_symbol_exists( "fts_set" "sys/types.h;sys/stat.h;fts.h" HAVE_FTS )
+ 		if ( NOT HAVE_FTS )
+ 			include ( FindPkgConfig )
+ 			pkg_check_modules( MUSL_FTS musl-fts )
