@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2021/12/30 22:16:17 pascal Exp $
+# $OpenBSD: Makefile,v 1.26 2021/12/31 09:29:56 pascal Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -19,12 +19,6 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # GPLv3 / custom BSD-like font license / DejaVu license
 PERMIT_PACKAGE =	Yes
 
-#WANTLIB += ${COMPILER_LIBCXX} BulletCollision GL LinearMath MyGUIEngine
-#WANTLIB += OpenThreads Qt5Core Qt5Gui Qt5Network Qt5OpenGL Qt5Widgets
-#WANTLIB += SDL2 avcodec avformat avutil boost_filesystem-mt boost_iostreams-mt
-#WANTLIB += boost_program_options-mt boost_system-mt c m openal osg osgDB osgFX
-#WANTLIB += osgGA osgParticle osgShadow osgText osgUtil osgViewer swresample
-#WANTLIB += swscale unshield
 WANTLIB += ${COMPILER_LIBCXX} BulletCollision GL LinearMath MyGUIEngine
 WANTLIB += OpenThreads Qt5Core Qt5Gui Qt5Network Qt5OpenGL Qt5Widgets
 WANTLIB += SDL2 avcodec avformat avutil c lz4 m openal osg osgAnimation
