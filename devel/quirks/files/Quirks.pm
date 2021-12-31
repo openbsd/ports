@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1353 2021/12/05 19:58:12 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.1354 2021/12/31 08:31:52 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1622,6 +1622,7 @@ setup_obsolete_reason(
 	5 => 'ocaml-biniou',
 	5 => 'ocaml-easy-format',
 	5 => 'libdsm',
+	45 => 'direvent',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1678,6 +1679,7 @@ my $obsolete_message = {
 	41 => "upstream moved to unversioned tarballs, use the plan9port (same upstream) package instead",
 	43 => "using portgen instead is recommended",
 	44 => "qucs-s Qt4 UI not working correctly, suggest xschem or kicad's eeschema instead",
+	45 => "crashes in many different ways at runtime",
 };
 
 # ->is_base_system($handle, $state):

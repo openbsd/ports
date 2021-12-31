@@ -1,8 +1,0 @@
-Direvent is a directory content watcher daemon, i.e. a program that monitors a
-set of directories on the file system and reacts when their content changes.
-When a change is detected, the daemon reacts by invoking an external command
-configured for that kind of change.
-
-The program aims to provide a uniform and system-independent command-level
-interface for file system events.  This version is known to work on GNU/Linux
-and BSD systems.
