@@ -1,0 +1,14 @@
+$OpenBSD: patch-doc_CMakeLists_txt,v 1.1 2021/12/31 14:28:31 pascal Exp $
+
+Index: doc/CMakeLists.txt
+--- doc/CMakeLists.txt.orig
++++ doc/CMakeLists.txt
+@@ -261,7 +261,7 @@ if(UNIX)
+ 			)
+ 		endif()
+ 
+-		install(FILES "${_warzone2100_6_compressed}" DESTINATION "${CMAKE_INSTALL_MANDIR}/man6" COMPONENT Manpages)
++		install(FILES "${_warzone2100_6_uncompressed}" DESTINATION "${CMAKE_INSTALL_MANDIR}/man6" COMPONENT Manpages)
+ 	else()
+ 		message( WARNING "Unable to find gzip tool; skipping Unix man page generation" )
+ 	endif()

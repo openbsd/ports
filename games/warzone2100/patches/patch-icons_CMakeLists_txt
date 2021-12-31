@@ -1,0 +1,14 @@
+$OpenBSD: patch-icons_CMakeLists_txt,v 1.1 2021/12/31 14:28:31 pascal Exp $
+
+Index: icons/CMakeLists.txt
+--- icons/CMakeLists.txt.orig
++++ icons/CMakeLists.txt
+@@ -13,7 +13,7 @@ if(UNIX AND NOT APPLE AND NOT WIN32)
+ 		COMPONENT Core
+ 	)
+ 	install(FILES warzone2100.png
+-		DESTINATION "${CMAKE_INSTALL_DATADIR}/icons"
++		DESTINATION "${CMAKE_INSTALL_DATADIR}/warzone2100/icons"
+ 		RENAME "warzone2100${WZ_OUTPUT_NAME_SUFFIX}.png"
+ 		COMPONENT Core
+ 	)

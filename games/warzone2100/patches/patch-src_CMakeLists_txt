@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1 2021/12/31 14:28:31 pascal Exp $
+
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -619,9 +619,6 @@ endif()
+ # Install
+ install(TARGETS warzone2100 COMPONENT Core DESTINATION "${WZ_APP_INSTALL_DEST}")
+ 
+-# For Portable packages only, copy the ".portable" file that triggers portable mode (Windows-only)
+-install(FILES "${CMAKE_SOURCE_DIR}/pkg/portable.in" COMPONENT PortableConfig DESTINATION "${WZ_APP_INSTALL_DEST}" RENAME ".portable")
+-
+ #####################
+ # Installing Required Runtime Dependencies
+ 
