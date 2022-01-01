@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/12/23 18:40:36 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.8 2022/01/01 11:42:27 tb Exp $
 @bin bin/newsboat
 @bin bin/podboat
 @man man/man1/newsboat.1
@@ -7,12 +7,14 @@ share/doc/newsboat/
 share/doc/newsboat/CHANGELOG.md
 share/doc/newsboat/contrib/
 share/doc/newsboat/contrib/README.md
+share/doc/newsboat/contrib/bookmark-buku.sh
 share/doc/newsboat/contrib/bookmark-evernote.sh
 share/doc/newsboat/contrib/bookmark-pinboard.sh
 share/doc/newsboat/contrib/colorschemes/
 share/doc/newsboat/contrib/colorschemes/commander
 share/doc/newsboat/contrib/colorschemes/cyanism
 share/doc/newsboat/contrib/colorschemes/greenscreen
+share/doc/newsboat/contrib/colorschemes/gruvbox
 share/doc/newsboat/contrib/colorschemes/inkpot
 share/doc/newsboat/contrib/colorschemes/kinda-maia
 share/doc/newsboat/contrib/colorschemes/light
