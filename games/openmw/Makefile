@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2021/12/31 09:29:56 pascal Exp $
+# $OpenBSD: Makefile,v 1.27 2022/01/01 12:35:09 pascal Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -9,6 +9,11 @@ GH_ACCOUNT =		OpenMW
 GH_PROJECT =		openmw
 GH_TAGNAME =		openmw-$V
 DISTNAME =		openmw-$V
+
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
+			e75adf86f91eb3082220085e42dda62679f9a3ea.zip:0
+DIST_SUBDIR =		openmw
+MASTER_SITES0 =		https://github.com/recastnavigation/recastnavigation/archive/
 
 CATEGORIES =		games
 
@@ -53,5 +58,10 @@ WRKDIST =		${WRKDIR}/openmw-openmw-$V
 
 CFLAGS += 		-I${X11BASE}/include -pthread
 CXXFLAGS += 		-I${X11BASE}/include -pthread
+
+post-extract:
+	mkdir ${WRKDIST}/extern/fetched
+	mv ${WRKDIR}/recastnavigation-e75adf86f91eb3082220085e42dda62679f9a3ea \
+		${WRKDIST}/extern/fetched/recastnavigation
 
 .include <bsd.port.mk>
