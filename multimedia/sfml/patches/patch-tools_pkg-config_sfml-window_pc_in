@@ -1,0 +1,14 @@
+$OpenBSD: patch-tools_pkg-config_sfml-window_pc_in,v 1.1 2022/01/01 12:28:46 pascal Exp $
+
+Index: tools/pkg-config/sfml-window.pc.in
+--- tools/pkg-config/sfml-window.pc.in.orig
++++ tools/pkg-config/sfml-window.pc.in
+@@ -8,7 +8,7 @@ Description: The Simple and Fast Multimedia Library, w
+ URL: http://www.sfml-dev.org
+ Version: @VERSION_MAJOR@.@VERSION_MINOR@.@VERSION_PATCH@
+ Requires: sfml-system
+-Libs: -L${libdir} -lsfml-window
++Libs: -L${libdir} -lsfml-window -L${X11BASE}/lib -lX11 -lXrandr
+ # gl may not be in pkg-config
+ Libs.private: @OPENGL_gl_LIBRARY@ @OPENGL_glu_LIBRARY@
+ Cflags: -I${includedir}

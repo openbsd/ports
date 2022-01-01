@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2021/12/30 19:12:40 pascal Exp $
+# $OpenBSD: Makefile,v 1.15 2022/01/01 12:28:46 pascal Exp $
 
 COMMENT =		simple and fast multimedia library
 
 V =			2.5.1
 DISTNAME =		SFML-${V}-sources
 PKGNAME =		sfml-${V}
+REVISION =		0
 EXTRACT_SUFX =		.zip
 
 SHARED_LIBS +=  sfml-audio                2.0 # 2.1
