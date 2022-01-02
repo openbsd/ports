@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:43:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2022/01/02 20:23:03 uaa Exp $
 
 PORTROACH=	skipv:bm_start
 
@@ -6,7 +6,7 @@ COMMENT=	radio contest logger
 
 DISTNAME=	tlf-1.2.1
 CATEGORIES=	comms hamradio
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	http://home.iae.nl/users/reinc/TLF-0.2.html
 
