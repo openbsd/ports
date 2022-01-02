@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/10/19 03:54:59 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2022/01/02 14:11:16 kevlo Exp $
 include/CL/
 include/CL/cl.h
 include/CL/cl2.hpp
@@ -11,6 +11,7 @@ include/CL/cl_ext.h
 include/CL/cl_ext_intel.h
 include/CL/cl_gl.h
 include/CL/cl_gl_ext.h
+include/CL/cl_half.h
 include/CL/cl_icd.h
 include/CL/cl_platform.h
 include/CL/cl_va_api_media_sharing_intel.h
@@ -65,6 +66,7 @@ include/arm_compute/core/PixelValue.h
 include/arm_compute/core/QuantizationInfo.h
 include/arm_compute/core/Rounding.h
 include/arm_compute/core/Size2D.h
+include/arm_compute/core/Size3D.h
 include/arm_compute/core/Steps.h
 include/arm_compute/core/Strides.h
 include/arm_compute/core/SubTensorInfo.h
@@ -78,6 +80,8 @@ include/arm_compute/core/Window.h
 include/arm_compute/core/Window.inl
 include/arm_compute/core/WindowIterator.h
 include/arm_compute/core/experimental/
+include/arm_compute/core/experimental/IPostOp.h
+include/arm_compute/core/experimental/PostOps.h
 include/arm_compute/core/experimental/Types.h
 include/arm_compute/core/utils/
 include/arm_compute/core/utils/helpers/
@@ -194,6 +198,7 @@ include/arm_compute/graph/nodes/EltwiseLayerNode.h
 include/arm_compute/graph/nodes/FlattenLayerNode.h
 include/arm_compute/graph/nodes/FullyConnectedLayerNode.h
 include/arm_compute/graph/nodes/FusedConvolutionBatchNormalizationNode.h
+include/arm_compute/graph/nodes/FusedConvolutionWithPostOpNode.h
 include/arm_compute/graph/nodes/FusedDepthwiseConvolutionBatchNormalizationNode.h
 include/arm_compute/graph/nodes/GenerateProposalsLayerNode.h
 include/arm_compute/graph/nodes/InputNode.h
@@ -264,6 +269,7 @@ include/arm_compute/runtime/CL/functions/CLCast.h
 include/arm_compute/runtime/CL/functions/CLChannelShuffleLayer.h
 include/arm_compute/runtime/CL/functions/CLComparison.h
 include/arm_compute/runtime/CL/functions/CLConcatenateLayer.h
+include/arm_compute/runtime/CL/functions/CLConv3D.h
 include/arm_compute/runtime/CL/functions/CLConvertFullyConnectedWeights.h
 include/arm_compute/runtime/CL/functions/CLConvolutionLayer.h
 include/arm_compute/runtime/CL/functions/CLCopy.h
@@ -283,7 +289,6 @@ include/arm_compute/runtime/CL/functions/CLFFT1D.h
 include/arm_compute/runtime/CL/functions/CLFFT2D.h
 include/arm_compute/runtime/CL/functions/CLFFTConvolutionLayer.h
 include/arm_compute/runtime/CL/functions/CLFill.h
-include/arm_compute/runtime/CL/functions/CLFillBorder.h
 include/arm_compute/runtime/CL/functions/CLFlattenLayer.h
 include/arm_compute/runtime/CL/functions/CLFloor.h
 include/arm_compute/runtime/CL/functions/CLFullyConnectedLayer.h
@@ -395,6 +400,7 @@ include/arm_compute/runtime/NEON/functions/NEBoundingBoxTransform.h
 include/arm_compute/runtime/NEON/functions/NECast.h
 include/arm_compute/runtime/NEON/functions/NEChannelShuffleLayer.h
 include/arm_compute/runtime/NEON/functions/NEConcatenateLayer.h
+include/arm_compute/runtime/NEON/functions/NEConv3D.h
 include/arm_compute/runtime/NEON/functions/NEConvertFullyConnectedWeights.h
 include/arm_compute/runtime/NEON/functions/NEConvolutionLayer.h
 include/arm_compute/runtime/NEON/functions/NECopy.h
@@ -522,11 +528,11 @@ include/utils/command_line/ListOption.h
 include/utils/command_line/Option.h
 include/utils/command_line/SimpleOption.h
 include/utils/command_line/ToggleOption.h
-@static-lib lib/libarm_compute-static.a
+@static-lib lib/libarm_compute.a
 @lib lib/libarm_compute.so.${LIBarm_compute_VERSION}
-@static-lib lib/libarm_compute_core-static.a
+@static-lib lib/libarm_compute_core.a
 @lib lib/libarm_compute_core.so.${LIBarm_compute_core_VERSION}
-@static-lib lib/libarm_compute_graph-static.a
+@static-lib lib/libarm_compute_graph.a
 @lib lib/libarm_compute_graph.so.${LIBarm_compute_graph_VERSION}
 share/examples/arm-compute-library/
 share/examples/arm-compute-library/cl_cache.cpp

@@ -1,9 +1,9 @@
-$OpenBSD: patch-SConstruct,v 1.1.1.1 2021/10/19 03:54:58 kevlo Exp $
+$OpenBSD: patch-SConstruct,v 1.2 2022/01/02 14:11:16 kevlo Exp $
 
 Index: SConstruct
 --- SConstruct.orig
 +++ SConstruct
-@@ -48,7 +48,7 @@ vars.AddVariables(
+@@ -94,7 +94,7 @@ vars.AddVariables(
                    allowed_values=("armv7a", "armv7a-hf", "arm64-v8a", "arm64-v8.2-a", "arm64-v8.2-a-sve", "arm64-v8.2-a-sve2", "x86_32", "x86_64",
                                    "armv8a", "armv8.2-a", "armv8.2-a-sve", "armv8.6-a", "armv8.6-a-sve", "armv8.6-a-sve2", "armv8r64", "x86")),
      EnumVariable("estate", "Execution State", "auto", allowed_values=("auto", "32", "64")),
@@ -12,7 +12,7 @@ Index: SConstruct
      EnumVariable("build", "Build type", "cross_compile", allowed_values=("native", "cross_compile", "embed_only")),
      BoolVariable("examples", "Build example programs", True),
      BoolVariable("gemm_tuner", "Build gemm_tuner programs", True),
-@@ -167,17 +167,8 @@ c_compiler = os.environ.get('CC', default_c_compiler)
+@@ -214,17 +214,8 @@ c_compiler = os.environ.get('CC', default_c_compiler)
  if env['os'] == 'android' and ( 'clang++' not in cpp_compiler or 'clang' not in c_compiler ):
      print( "WARNING: Only clang is officially supported to build the Compute Library for Android")
  
@@ -31,7 +31,7 @@ Index: SConstruct
  if env['cppthreads']:
      env.Append(CPPDEFINES = [('ARM_COMPUTE_CPP_SCHEDULER', 1)])
  
-@@ -289,25 +280,6 @@ if not GetOption("help"):
+@@ -336,25 +327,6 @@ if not GetOption("help"):
          print("ERROR: Compiler '%s' not found" % env['CXX'])
          Exit(1)
  
@@ -57,7 +57,7 @@ Index: SConstruct
  if env['fat_binary']:
      if env['arch'] != 'armv8.2-a':
          print("Currently fat binary is only supported with armv8.2-a")
-@@ -371,6 +343,9 @@ if env['opencl']:
+@@ -420,6 +392,9 @@ if env['opencl']:
  
  if env["os"] not in ["android", "bare_metal"] and (env['opencl'] or env['cppthreads']):
      env.Append(LIBS = ['pthread'])

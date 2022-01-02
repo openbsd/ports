@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/10 01:07:06 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2022/01/02 14:11:16 kevlo Exp $
 
 ONLY_FOR_ARCHS =	aarch64
 
 COMMENT =	Arm compute library
 
-V = 		21.08
+V = 		21.11
 PKGNAME =	arm-compute-library-${V}
 
 GH_ACCOUNT =	ARM-software
@@ -17,7 +17,7 @@ HOMEPAGE =	https://github.com/ARM-software/ComputeLibrary
 
 MAINTAINER = 	Kevin Lo <kevlo@openbsd.org>
 
-SO_VERSION =	0.0
+SO_VERSION =	1.0
 ACL_LIBS =	arm_compute \
 		arm_compute_core \
 		arm_compute_graph
