@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/12/20 10:44:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2022/01/02 22:59:57 jca Exp $
 
 PHP_VERSION=	8.1.1
 PHP_PKGSPEC=	>=8.1,<8.2
@@ -6,5 +6,15 @@ PHP_PKGSPEC=	>=8.1,<8.2
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 AUTOCONF_VERSION=	2.71
+
+post-extract:
+.for file in jump_riscv64_sysv_elf_gas.S make_riscv64_sysv_elf_gas.S
+	if [ -f "${WRKSRC}/Zend/asm/${file}" ]; then \
+	    echo "${WRKSRC}/Zend/asm/${file} already exists, not overwriting" >&2; \
+	    exit 1; \
+	else \
+	    cp "${FILESDIR}/${file}" "${WRKSRC}/Zend/asm/${file}"; \
+	fi
+.endfor
 
 .include <bsd.port.mk>
