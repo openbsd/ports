@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2021/12/31 12:35:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2022/01/02 10:27:03 ajacoutot Exp $
 
 COMMENT=		building blocks for modern adaptive GNOME apps
 
 GNOME_PROJECT=		libadwaita
-GNOME_VERSION=		1.0.0
+GNOME_VERSION=		1.0.1
 EPOCH=			0
 
 SHARED_LIBS += adwaita-1                 1.2 # 0
