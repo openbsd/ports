@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2020/01/26 11:14:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2022/01/02 20:23:48 uaa Exp $
 
 COMMENT=		logbook program for amateur radio operators
 
 DISTNAME=		xlog-2.0.15
 CATEGORIES=    		comms hamradio
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		http://www.nongnu.org/xlog/
 

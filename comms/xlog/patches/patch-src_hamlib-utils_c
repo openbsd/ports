@@ -1,0 +1,22 @@
+--- src/hamlib-utils.c.orig	Fri Dec 30 04:02:44 2016
++++ src/hamlib-utils.c	Sun Jan  2 20:24:36 2022
+@@ -45,6 +45,10 @@
+ #include "../data/pixmaps/s8.xpm"
+ #include "../data/pixmaps/s9.xpm"
+ 
++#ifndef HAMLIB_FILPATHLEN
++#define HAMLIB_FILPATHLEN	FILPATHLEN
++#endif
++
+ struct rig_id {
+ 	const gint modelnr;
+ 	const gchar *modelname;
+@@ -168,7 +172,7 @@ start_hamlib (gint rigid, gchar *device, gint debugmod
+ 			update_statusbar (temp);
+ 		}
+ 	}
+-	strncpy (myrig->state.rigport.pathname, device, FILPATHLEN);
++	strncpy (myrig->state.rigport.pathname, device, HAMLIB_FILPATHLEN);
+ 	retcode = rig_open (myrig);
+ 	if (retcode != RIG_OK)
+ 	{
