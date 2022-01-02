@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/02 00:01:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2022/01/02 22:42:56 daniel Exp $
 
 COMMENT =	set of python modules for machine learning and data mining
 
-MODPY_EGG_VERSION =	0.23.2
-REVISION =		1
+MODPY_EGG_VERSION =	1.0.2
 DISTNAME =		scikit-learn-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -34,10 +33,14 @@ FLAVOR =		python3
 BUILD_DEPENDS =		lang/cython${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR} \
 			math/py-scipy${MODPY_FLAVOR}
-RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR} \
-			math/py-scipy${MODPY_FLAVOR} \
-			sysutils/py-joblib${MODPY_FLAVOR} \
-			sysutils/py-threadpoolctl${MODPY_FLAVOR}
+
+RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR}>=1.14.6 \
+			math/py-scipy${MODPY_FLAVOR}>=1.1.0 \
+			sysutils/py-joblib${MODPY_FLAVOR}>=0.11 \
+			sysutils/py-threadpoolctl${MODPY_FLAVOR}>=2.0.0
+
+# XXX: pytest >= 5.0.1 required
+NO_TEST =		Yes
 TEST_DEPENDS =		math/py-pandas${MODPY_FLAVOR}
 
 pre-test:
