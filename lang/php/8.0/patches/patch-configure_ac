@@ -1,9 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.4 2021/07/02 13:53:12 sthen Exp $
-
-hunk 1, don't use ifuncs, they segfault. these are used for functions
-using avx/sse2 (presumably to reduce overhead) but they seem to resolve
-to 0x0. example crash can be seen by reenabling this and running e.g.
-$ php-8.0 -r "print(base64_encode('abcdef').PHP_EOL);"
+$OpenBSD: patch-configure_ac,v 1.5 2022/01/02 13:33:40 jca Exp $
 
 Index: configure.ac
 --- configure.ac.orig
