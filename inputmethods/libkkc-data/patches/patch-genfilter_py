@@ -1,0 +1,54 @@
+--- tools/genfilter.py.orig	Mon Jul 29 09:53:28 2013
++++ tools/genfilter.py	Thu Sep 23 10:02:41 2021
+@@ -1,7 +1,7 @@
+ #!/usr/bin/python
+ 
+-# Copyright (C) 2011-2013 Daiki Ueno <ueno@gnu.org>
+-# Copyright (C) 2011-2013 Red Hat, Inc.
++# Copyright (C) 2011-2014 Daiki Ueno <ueno@gnu.org>
++# Copyright (C) 2011-2014 Red Hat, Inc.
+ 
+ # This program is free software: you can redistribute it and/or modify
+ # it under the terms of the GNU General Public License as published by
+@@ -84,24 +84,24 @@ class FilterGenerator(object):
+ 
+     def generate(self):
+         size = os.fstat(self.infile.fileno()).st_size
+-        n = size / self.record_size
++        n = size // self.record_size
+         m = int(math.ceil(-n*math.log10(ERROR_RATE) /
+                           math.pow(math.log10(2), 2)))
+-        m = (m/8 + 1)*8
++        m = (m//8 + 1)*8
+         inmem = mmap.mmap(self.infile.fileno(),
+                           size,
+                           access=mmap.ACCESS_READ)
+-        outmem = bytearray(m/8)
+-        for i in xrange(0, n):
++        outmem = bytearray(m//8)
++        for i in range(0, n):
+             offset = i*self.record_size
+             b0, b1 = struct.unpack("=LL", inmem[offset:offset+8])
+-            for k in xrange(0, 4):
++            for k in range(0, 4):
+                 h = murmur_hash3_32(b0, b1, k)
+                 h = int(h * (m / float(0xFFFFFFFF)))
+-                outmem[h/8] |= (1 << (h%8))
++                outmem[h//8] |= (1 << (h%8))
+         inmem.close()
+-        # Convert bytearray to str, for Python 2.6 compatibility.
+-        self.outfile.write(str(outmem))
++        # Convert bytearray to bytes, for Python 3 compatibility.
++        self.outfile.write(bytes(outmem))
+ 
+ if __name__ == '__main__':
+     import sys
+@@ -110,7 +110,7 @@ if __name__ == '__main__':
+     parser = argparse.ArgumentParser(description='filter')
+     parser.add_argument('infile', type=argparse.FileType('r'),
+                         help='input file')
+-    parser.add_argument('outfile', type=argparse.FileType('w'),
++    parser.add_argument('outfile', type=argparse.FileType('wb'),
+                         help='output file')
+     parser.add_argument('record_size', type=int,
+                         help='record size')

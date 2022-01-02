@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1 2022/01/02 20:45:24 uaa Exp $
+lib/libkkc/
+lib/libkkc/models/
+lib/libkkc/models/sorted3/
+lib/libkkc/models/sorted3/data.1gram
+lib/libkkc/models/sorted3/data.1gram.index
+lib/libkkc/models/sorted3/data.2gram
+lib/libkkc/models/sorted3/data.2gram.filter
+lib/libkkc/models/sorted3/data.3gram
+lib/libkkc/models/sorted3/data.3gram.filter
+lib/libkkc/models/sorted3/data.input
+lib/libkkc/models/sorted3/metadata.json
