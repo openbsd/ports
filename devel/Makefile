@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2172 2021/12/22 15:33:22 abieber Exp $
+# $OpenBSD: Makefile,v 1.2173 2022/01/02 02:42:31 daniel Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1274,7 +1274,6 @@
      SUBDIR += pth
      SUBDIR += ptlib
      SUBDIR += pudb,python3
-     SUBDIR += py-Checker
      SUBDIR += py-algorithm-munkres,python3
      SUBDIR += py-altgraph
      SUBDIR += py-altgraph,python3
@@ -1758,7 +1757,6 @@
      SUBDIR += snare
      SUBDIR += sord
      SUBDIR += sparsehash
-     SUBDIR += spe
      SUBDIR += spice-protocol
      SUBDIR += spidermonkey78
      SUBDIR += splint

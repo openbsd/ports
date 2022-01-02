@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1355 2022/01/01 18:57:24 jung Exp $
+# $OpenBSD: Quirks.pm,v 1.1356 2022/01/02 02:42:31 daniel Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1624,6 +1624,8 @@ setup_obsolete_reason(
 	5 => 'libdsm',
 	45 => 'direvent',
 	3 => 'climm',
+	31 => 'spe',
+	31 => 'py-Checker',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
