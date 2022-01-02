@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2021/08/29 08:21:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2022/01/02 11:43:46 ajacoutot Exp $
 
 # see patch-js_src_old-configure_in
 USE_WXNEEDED =		Yes
@@ -10,7 +10,7 @@ COMMENT =		C/C++ Mozilla's JavaScript engine implementation #'
 MOZILLA_VERSION =	78
 SUBST_VARS =		MOZILLA_VERSION
 
-V =			${MOZILLA_VERSION}.13.0
+V =			${MOZILLA_VERSION}.15.0
 DISTNAME =		firefox-${V}esr.source
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME =		spidermonkey${MOZILLA_VERSION}-${V}
@@ -22,14 +22,14 @@ CATEGORIES =		devel
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
-HOMEPAGE =		https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey
+HOMEPAGE =		https://spidermonkey.dev/
 MASTER_SITES =          https://ftp.mozilla.org/pub/firefox/releases/${V}esr/source/
 EXTRACT_SUFX =		.tar.xz
 
 # MPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c curses ffi icudata icui18n icuuc m nspr4 plc4 plds4 z
+WANTLIB += curses ffi icudata icui18n icuuc m nspr4 plc4 plds4 z
 WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES =		lang/python
