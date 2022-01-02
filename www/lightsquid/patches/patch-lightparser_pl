@@ -1,0 +1,17 @@
+$OpenBSD: patch-lightparser_pl,v 1.3 2022/01/02 20:16:43 kirby Exp $
+
+Fix date ranges
+https://finisky.github.io/2021/01/03/lightsquidhardcodeyear.en/
+
+Index: lightparser.pl
+--- lightparser.pl.orig
++++ lightparser.pl
+@@ -66,7 +66,7 @@ if ($skipurl eq "") {
+ $month=sprintf("%02d",$mon+1);;
+ 	  
+ my $filterdatestart=0;
+-my $filterdatestop =timelocal(59,59,23,31,12-1,2020-1900)+1000;
++my $filterdatestop =timelocal(59,59,23,31,11,2100)+1000;
+ 
+ $fToday=1 if ($ARGV[0] eq "today");
+ $fToday=1 if ($ARGV[0] eq "yesterday");
