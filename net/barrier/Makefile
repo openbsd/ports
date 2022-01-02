@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/04 16:30:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2022/01/02 16:51:17 jca Exp $
 
 COMMENT =		mouse and keyboard sharing utility
 
 GH_ACCOUNT =		debauchee
 GH_PROJECT =		barrier
 GH_TAGNAME =		v2.3.4
+REVISION =		0
 
 CATEGORIES =		net x11
 

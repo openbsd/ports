@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_lib_barrier_ProtocolUtil_cpp,v 1.1 2022/01/02 16:51:17 jca Exp $
+
+Rename function to avoid ambiguity on platforms where va_list is void *.
+
+Index: src/lib/barrier/ProtocolUtil.cpp
+--- src/lib/barrier/ProtocolUtil.cpp.orig
++++ src/lib/barrier/ProtocolUtil.cpp
+@@ -82,7 +82,7 @@ ProtocolUtil::vwritef(barrier::IStream* stream,
+ 
+     // fill buffer
+     UInt8* buffer = new UInt8[size];
+-    writef(buffer, fmt, args);
++    writef_(buffer, fmt, args);
+ 
+     try {
+         // write buffer
+@@ -349,7 +349,7 @@ ProtocolUtil::getLength(const char* fmt, va_list args)
+ }
+ 
+ void
+-ProtocolUtil::writef(void* buffer, const char* fmt, va_list args)
++ProtocolUtil::writef_(void* buffer, const char* fmt, va_list args)
+ {
+     UInt8* dst = static_cast<UInt8*>(buffer);
+ 
