@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_include_clang_Driver_Options_td,v 1.28 2021/05/13 23:54:25 jca Exp $
+$OpenBSD: patch-tools_clang_include_clang_Driver_Options_td,v 1.29 2022/01/03 21:33:52 jca Exp $
 
 - Add ret protector options as no-ops.
 - Improve the X86FixupGadgets pass
@@ -9,7 +9,7 @@ $OpenBSD: patch-tools_clang_include_clang_Driver_Options_td,v 1.28 2021/05/13 23
 Index: tools/clang/include/clang/Driver/Options.td
 --- tools/clang/include/clang/Driver/Options.td.orig
 +++ tools/clang/include/clang/Driver/Options.td
-@@ -1799,6 +1799,16 @@ def ftrivial_auto_var_init : Joined<["-"], "ftrivial-a
+@@ -2528,6 +2528,16 @@ def ftrivial_auto_var_init : Joined<["-"], "ftrivial-a
  def enable_trivial_var_init_zero : Flag<["-"], "enable-trivial-auto-var-init-zero-knowing-it-will-be-removed-from-clang">,
    Flags<[CC1Option, CoreOption]>,
    HelpText<"Trivial automatic variable initialization to zero is only here for benchmarks, it'll eventually be removed, and I'm OK with that because I'm only using it to benchmark">;
@@ -24,9 +24,9 @@ Index: tools/clang/include/clang/Driver/Options.td
 +def ffixup_gadgets : Flag<["-"], "ffixup-gadgets">, Group<f_Group>, Flags<[CoreOption]>,
 +  HelpText<"Replace ROP friendly instructions with safe alternatives (x86 only)">;
  def ftrivial_auto_var_init_stop_after : Joined<["-"], "ftrivial-auto-var-init-stop-after=">, Group<f_Group>,
-   Flags<[CC1Option, CoreOption]>, HelpText<"Stop initializing trivial automatic stack variables after the specified number of instances">;
- def fstandalone_debug : Flag<["-"], "fstandalone-debug">, Group<f_Group>, Flags<[CoreOption]>,
-@@ -2548,6 +2558,8 @@ def mno_check_zero_division : Flag<["-"], "mno-check-z
+   Flags<[CC1Option, CoreOption]>, HelpText<"Stop initializing trivial automatic stack variables after the specified number of instances">,
+   MarshallingInfoInt<LangOpts<"TrivialAutoVarInitStopAfter">>;
+@@ -3493,6 +3503,8 @@ def mno_check_zero_division : Flag<["-"], "mno-check-z
                                Group<m_mips_Features_Group>;
  def mcompact_branches_EQ : Joined<["-"], "mcompact-branches=">,
                             Group<m_mips_Features_Group>;
@@ -35,16 +35,16 @@ Index: tools/clang/include/clang/Driver/Options.td
  def mbranch_likely : Flag<["-"], "mbranch-likely">, Group<m_Group>,
    IgnoredGCCCompat;
  def mno_branch_likely : Flag<["-"], "mno-branch-likely">, Group<m_Group>,
-@@ -2760,7 +2772,7 @@ def pthreads : Flag<["-"], "pthreads">;
- def pthread : Flag<["-"], "pthread">, Flags<[CC1Option]>,
-   HelpText<"Support POSIX threads in generated code">;
- def no_pthread : Flag<["-"], "no-pthread">, Flags<[CC1Option]>;
+@@ -3721,7 +3733,7 @@ defm pthread : BoolOption<"", "pthread",
+   LangOpts<"POSIXThreads">, DefaultFalse,
+   PosFlag<SetTrue, [], "Support POSIX threads in generated code">,
+   NegFlag<SetFalse>, BothFlags<[CC1Option]>>;
 -def p : Flag<["-"], "p">;
 +def p : Flag<["-"], "p">, Alias<pg>;
- def pie : Flag<["-"], "pie">;
- def static_pie : Flag<["-"], "static-pie">;
+ def pie : Flag<["-"], "pie">, Group<Link_Group>;
+ def static_pie : Flag<["-"], "static-pie">, Group<Link_Group>;
  def read__only__relocs : Separate<["-"], "read_only_relocs">;
-@@ -3243,6 +3255,8 @@ def mshstk : Flag<["-"], "mshstk">, Group<m_x86_Featur
+@@ -4252,6 +4264,8 @@ def mshstk : Flag<["-"], "mshstk">, Group<m_x86_Featur
  def mno_shstk : Flag<["-"], "mno-shstk">, Group<m_x86_Features_Group>;
  def mretpoline_external_thunk : Flag<["-"], "mretpoline-external-thunk">, Group<m_x86_Features_Group>;
  def mno_retpoline_external_thunk : Flag<["-"], "mno-retpoline-external-thunk">, Group<m_x86_Features_Group>;

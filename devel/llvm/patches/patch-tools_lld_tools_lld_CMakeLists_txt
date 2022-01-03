@@ -1,0 +1,16 @@
+$OpenBSD: patch-tools_lld_tools_lld_CMakeLists_txt,v 1.1 2022/01/03 21:33:52 jca Exp $
+
+Don't build MachO2 support in lld.  This code reaches into libunwind
+internals.
+
+Index: tools/lld/tools/lld/CMakeLists.txt
+--- tools/lld/tools/lld/CMakeLists.txt.orig
++++ tools/lld/tools/lld/CMakeLists.txt
+@@ -15,7 +15,6 @@ target_link_libraries(lld
+   lldCOFF
+   lldDriver
+   lldELF
+-  lldMachO2
+   lldMinGW
+   lldWasm
+   )

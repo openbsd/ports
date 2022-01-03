@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_Target_AArch64_AArch64InstrInfo_cpp,v 1.1 2020/08/05 06:49:48 jca Exp $
+$OpenBSD: patch-lib_Target_AArch64_AArch64InstrInfo_cpp,v 1.2 2022/01/03 21:33:51 jca Exp $
 
 XXX no comment
 
 Index: lib/Target/AArch64/AArch64InstrInfo.cpp
 --- lib/Target/AArch64/AArch64InstrInfo.cpp.orig
 +++ lib/Target/AArch64/AArch64InstrInfo.cpp
-@@ -96,6 +96,9 @@ unsigned AArch64InstrInfo::getInstSizeInBytes(const Ma
+@@ -97,6 +97,9 @@ unsigned AArch64InstrInfo::getInstSizeInBytes(const Ma
    default:
      // Anything not explicitly designated otherwise is a normal 4-byte insn.
      NumBytes = 4;

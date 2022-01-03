@@ -1,11 +1,11 @@
-$OpenBSD: patch-tools_lld_ELF_Config_h,v 1.9 2021/05/13 23:54:25 jca Exp $
+$OpenBSD: patch-tools_lld_ELF_Config_h,v 1.10 2022/01/03 21:33:52 jca Exp $
 
 - XXX no comment
 
 Index: tools/lld/ELF/Config.h
 --- tools/lld/ELF/Config.h.orig
 +++ tools/lld/ELF/Config.h
-@@ -249,8 +249,13 @@ struct Configuration {
+@@ -266,8 +266,13 @@ struct Configuration {
    ELFKind ekind = ELFNoneKind;
    uint16_t emachine = llvm::ELF::EM_NONE;
    llvm::Optional<uint64_t> imageBase;

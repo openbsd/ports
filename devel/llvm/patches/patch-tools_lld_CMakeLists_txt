@@ -1,0 +1,16 @@
+$OpenBSD: patch-tools_lld_CMakeLists_txt,v 1.3 2022/01/03 21:33:52 jca Exp $
+
+Don't build MachO2 support in lld.  This code reaches into libunwind
+internals.
+
+Index: tools/lld/CMakeLists.txt
+--- tools/lld/CMakeLists.txt.orig
++++ tools/lld/CMakeLists.txt
+@@ -206,7 +206,6 @@ endif()
+ add_subdirectory(docs)
+ add_subdirectory(COFF)
+ add_subdirectory(ELF)
+-add_subdirectory(MachO)
+ add_subdirectory(MinGW)
+ add_subdirectory(wasm)
+ 

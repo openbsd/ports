@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_Target_X86_X86_td,v 1.6 2021/05/13 23:54:25 jca Exp $
+$OpenBSD: patch-lib_Target_X86_X86_td,v 1.7 2022/01/03 21:33:52 jca Exp $
 
 implement -msave-args in clang/llvm, like the sun did for gcc 
 
 Index: lib/Target/X86/X86.td
 --- lib/Target/X86/X86.td.orig
 +++ lib/Target/X86/X86.td
-@@ -313,6 +313,9 @@ def FeatureLZCNTFalseDeps : SubtargetFeature<"false-de
+@@ -321,6 +321,9 @@ def FeatureLZCNTFalseDeps : SubtargetFeature<"false-de
                                       "LZCNT/TZCNT have a false dependency on dest register">;
  def FeaturePCONFIG : SubtargetFeature<"pconfig", "HasPCONFIG", "true",
                                        "platform configuration instruction">;
@@ -14,4 +14,4 @@ Index: lib/Target/X86/X86.td
 +                       "Save register arguments on the stack.">;
  // On recent X86 (port bound) processors, its preferable to combine to a single shuffle
  // using a variable mask over multiple fixed shuffles.
- def FeatureFastVariableShuffle
+ def FeatureFastVariableCrossLaneShuffle

@@ -1,19 +1,19 @@
-$OpenBSD: patch-tools_lld_ELF_LinkerScript_cpp,v 1.7 2021/05/13 23:54:25 jca Exp $
+$OpenBSD: patch-tools_lld_ELF_LinkerScript_cpp,v 1.8 2022/01/03 21:33:52 jca Exp $
 
 - XXX no comment
 
 Index: tools/lld/ELF/LinkerScript.cpp
 --- tools/lld/ELF/LinkerScript.cpp.orig
 +++ tools/lld/ELF/LinkerScript.cpp
-@@ -873,7 +873,6 @@ void LinkerScript::assignOffsets(OutputSection *sec) {
-     expandMemoryRegion(ctx->memRegion, dot - ctx->memRegion->curPos,
-                        ctx->memRegion->name, sec->name);
+@@ -954,7 +954,6 @@ void LinkerScript::assignOffsets(OutputSection *sec) {
+                          ctx->memRegion->name, sec->name);
+   }
  
 -  switchTo(sec);
  
    // ctx->lmaOffset is LMA minus VMA. If LMA is explicitly specified via AT() or
    // AT>, recompute ctx->lmaOffset; otherwise, if both previous/current LMA
-@@ -887,6 +886,8 @@ void LinkerScript::assignOffsets(OutputSection *sec) {
+@@ -968,6 +967,8 @@ void LinkerScript::assignOffsets(OutputSection *sec) {
      ctx->lmaOffset = alignTo(mr->curPos, sec->alignment) - dot;
    else if (!sameMemRegion || !prevLMARegionIsDefault)
      ctx->lmaOffset = 0;

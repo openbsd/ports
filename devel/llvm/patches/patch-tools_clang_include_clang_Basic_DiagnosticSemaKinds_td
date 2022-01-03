@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_include_clang_Basic_DiagnosticSemaKinds_td,v 1.10 2021/09/19 17:49:23 jca Exp $
+$OpenBSD: patch-tools_clang_include_clang_Basic_DiagnosticSemaKinds_td,v 1.11 2022/01/03 21:33:52 jca Exp $
 
 - Disable -Waddress-of-packed-member by default.
 
@@ -14,25 +14,25 @@ base gcc does the same.
 Index: tools/clang/include/clang/Basic/DiagnosticSemaKinds.td
 --- tools/clang/include/clang/Basic/DiagnosticSemaKinds.td.orig
 +++ tools/clang/include/clang/Basic/DiagnosticSemaKinds.td
-@@ -6440,7 +6440,7 @@ def warn_pointer_indirection_from_incompatible_type : 
+@@ -6768,7 +6768,7 @@ def warn_pointer_indirection_from_incompatible_type : 
    InGroup<UndefinedReinterpretCast>, DefaultIgnore;
  def warn_taking_address_of_packed_member : Warning<
    "taking address of packed member %0 of class or structure %q1 may result in an unaligned pointer value">,
 -  InGroup<DiagGroup<"address-of-packed-member">>;
 +  InGroup<DiagGroup<"address-of-packed-member">>, DefaultIgnore;
- 
- def err_objc_object_assignment : Error<
-   "cannot assign to class object (%0 invalid)">;
-@@ -7607,7 +7607,7 @@ def ext_typecheck_convert_incompatible_pointer_sign : 
-   "sending to parameter of different type}0,1"
+ def warn_param_mismatched_alignment : Warning<
+   "passing %0-byte aligned argument to %1-byte aligned parameter %2 of %3 may result in an unaligned pointer access">,
+   InGroup<DiagGroup<"align-mismatch">>;
+@@ -7980,7 +7980,7 @@ def ext_typecheck_convert_incompatible_pointer_sign : 
    "|%diff{casting $ to type $|casting between types}0,1}2"
-   " converts between pointers to integer types with different sign">,
+   " converts between pointers to integer types %select{with different sign|"
+   "where one is of the unique plain 'char' type and the other is not}3">,
 -  InGroup<DiagGroup<"pointer-sign">>;
 +  InGroup<DiagGroup<"pointer-sign">>, DefaultIgnore;
- def err_typecheck_convert_incompatible_pointer_sign : Error<
-   "%select{%diff{assigning to $ from $|assigning to different types}0,1"
-   "|%diff{passing $ to parameter of type $|"
-@@ -9103,6 +9103,9 @@ def err_os_log_argument_too_big : Error<
+ def err_typecheck_convert_incompatible_pointer_sign :
+   Error<ext_typecheck_convert_incompatible_pointer_sign.Text>;
+ def ext_typecheck_convert_incompatible_pointer : ExtWarn<
+@@ -9512,6 +9512,9 @@ def err_os_log_argument_too_big : Error<
    "os_log() argument %0 is too big (%1 bytes, max %2)">;
  def warn_os_log_format_narg : Error<
   "os_log() '%%n' format specifier is not allowed">, DefaultError;

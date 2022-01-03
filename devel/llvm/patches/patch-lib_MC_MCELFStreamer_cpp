@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_MC_MCELFStreamer_cpp,v 1.8 2021/05/13 23:54:24 jca Exp $
+$OpenBSD: patch-lib_MC_MCELFStreamer_cpp,v 1.9 2022/01/03 21:33:51 jca Exp $
 
 getNonexecutableStackSection() may return nullptr.
 
 Index: lib/MC/MCELFStreamer.cpp
 --- lib/MC/MCELFStreamer.cpp.orig
 +++ lib/MC/MCELFStreamer.cpp
-@@ -92,8 +92,11 @@ void MCELFStreamer::InitSections(bool NoExecStack) {
+@@ -93,8 +93,11 @@ void MCELFStreamer::InitSections(bool NoExecStack) {
    SwitchSection(Ctx.getObjectFileInfo()->getTextSection());
    emitCodeAlignment(4);
  

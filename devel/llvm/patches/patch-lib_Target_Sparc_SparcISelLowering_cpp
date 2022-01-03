@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_Sparc_SparcISelLowering_cpp,v 1.8 2021/05/13 23:54:25 jca Exp $
+$OpenBSD: patch-lib_Target_Sparc_SparcISelLowering_cpp,v 1.9 2022/01/03 21:33:51 jca Exp $
 
 - Make sure that we really don't emit quad-precision unless the
   "hard-quad-float" feature is available
@@ -6,7 +6,7 @@ $OpenBSD: patch-lib_Target_Sparc_SparcISelLowering_cpp,v 1.8 2021/05/13 23:54:25
 Index: lib/Target/Sparc/SparcISelLowering.cpp
 --- lib/Target/Sparc/SparcISelLowering.cpp.orig
 +++ lib/Target/Sparc/SparcISelLowering.cpp
-@@ -3111,6 +3111,11 @@ SparcTargetLowering::EmitInstrWithCustomInserter(Machi
+@@ -3116,6 +3116,11 @@ SparcTargetLowering::EmitInstrWithCustomInserter(Machi
    case SP::SELECT_CC_DFP_ICC:
    case SP::SELECT_CC_QFP_ICC:
      return expandSelectCC(MI, BB, SP::BCOND);

@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_Target_PowerPC_PPCInstrInfo_td,v 1.4 2021/05/13 23:54:25 jca Exp $
+$OpenBSD: patch-lib_Target_PowerPC_PPCInstrInfo_td,v 1.5 2022/01/03 21:33:51 jca Exp $
 
 Add RETGUARD implementation for powerpc and powerpc64.
 
 Index: lib/Target/PowerPC/PPCInstrInfo.td
 --- lib/Target/PowerPC/PPCInstrInfo.td.orig
 +++ lib/Target/PowerPC/PPCInstrInfo.td
-@@ -1527,6 +1527,31 @@ let Defs = [LR] in
+@@ -1690,6 +1690,31 @@ let Defs = [LR] in
    def MoveGOTtoLR : PPCEmitTimePseudo<(outs), (ins), "#MoveGOTtoLR", []>,
                      PPC970_Unit_BRU;
  

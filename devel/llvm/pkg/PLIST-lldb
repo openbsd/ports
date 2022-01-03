@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-lldb,v 1.8 2021/05/13 23:54:25 jca Exp $
+@comment $OpenBSD: PLIST-lldb,v 1.9 2022/01/03 21:33:52 jca Exp $
 @conflict ${MODPY_PY_PREFIX}llvm-<6.0.1p3
 @conflict llvm-<10.0.0p0
 @bin bin/lldb
@@ -64,7 +64,6 @@ include/lldb/API/SBThread.h
 include/lldb/API/SBThreadCollection.h
 include/lldb/API/SBThreadPlan.h
 include/lldb/API/SBTrace.h
-include/lldb/API/SBTraceOptions.h
 include/lldb/API/SBType.h
 include/lldb/API/SBTypeCategory.h
 include/lldb/API/SBTypeEnumMember.h
@@ -99,7 +98,8 @@ include/lldb/Breakpoint/BreakpointSite.h
 include/lldb/Breakpoint/BreakpointSiteList.h
 include/lldb/Breakpoint/Stoppoint.h
 include/lldb/Breakpoint/StoppointCallbackContext.h
-include/lldb/Breakpoint/StoppointLocation.h
+include/lldb/Breakpoint/StoppointHitCounter.h
+include/lldb/Breakpoint/StoppointSite.h
 include/lldb/Breakpoint/Watchpoint.h
 include/lldb/Breakpoint/WatchpointList.h
 include/lldb/Breakpoint/WatchpointOptions.h
@@ -108,10 +108,10 @@ include/lldb/Core/Address.h
 include/lldb/Core/AddressRange.h
 include/lldb/Core/AddressResolver.h
 include/lldb/Core/AddressResolverFileLine.h
-include/lldb/Core/AddressResolverName.h
 include/lldb/Core/Architecture.h
 include/lldb/Core/Communication.h
 include/lldb/Core/Debugger.h
+include/lldb/Core/Declaration.h
 include/lldb/Core/Disassembler.h
 include/lldb/Core/DumpDataExtractor.h
 include/lldb/Core/DumpRegisterValue.h
@@ -133,9 +133,11 @@ include/lldb/Core/ModuleSpec.h
 include/lldb/Core/Opcode.h
 include/lldb/Core/PluginInterface.h
 include/lldb/Core/PluginManager.h
+include/lldb/Core/Progress.h
 include/lldb/Core/RichManglingContext.h
 include/lldb/Core/SearchFilter.h
 include/lldb/Core/Section.h
+include/lldb/Core/SourceLocationSpec.h
 include/lldb/Core/SourceManager.h
 include/lldb/Core/StreamAsynchronousIO.h
 include/lldb/Core/StreamBuffer.h
@@ -159,6 +161,7 @@ include/lldb/Core/ValueObjectList.h
 include/lldb/Core/ValueObjectMemory.h
 include/lldb/Core/ValueObjectRegister.h
 include/lldb/Core/ValueObjectSyntheticFilter.h
+include/lldb/Core/ValueObjectUpdater.h
 include/lldb/Core/ValueObjectVariable.h
 include/lldb/Core/dwarf.h
 include/lldb/DataFormatters/
@@ -255,6 +258,7 @@ include/lldb/Host/freebsd/
 include/lldb/Host/freebsd/HostInfoFreeBSD.h
 include/lldb/Host/linux/
 include/lldb/Host/linux/AbstractSocket.h
+include/lldb/Host/linux/Host.h
 include/lldb/Host/linux/HostInfoLinux.h
 include/lldb/Host/linux/Ptrace.h
 include/lldb/Host/linux/Support.h
@@ -286,7 +290,6 @@ include/lldb/Host/windows/LockFileWindows.h
 include/lldb/Host/windows/PipeWindows.h
 include/lldb/Host/windows/PosixApi.h
 include/lldb/Host/windows/ProcessLauncherWindows.h
-include/lldb/Host/windows/editlinewin.h
 include/lldb/Host/windows/windows.h
 include/lldb/Initialization/
 include/lldb/Initialization/SystemInitializer.h
@@ -299,7 +302,6 @@ include/lldb/Interpreter/CommandHistory.h
 include/lldb/Interpreter/CommandInterpreter.h
 include/lldb/Interpreter/CommandObject.h
 include/lldb/Interpreter/CommandObjectMultiword.h
-include/lldb/Interpreter/CommandObjectRegexCommand.h
 include/lldb/Interpreter/CommandOptionValidators.h
 include/lldb/Interpreter/CommandReturnObject.h
 include/lldb/Interpreter/OptionArgParser.h
@@ -324,6 +326,7 @@ include/lldb/Interpreter/OptionValueBoolean.h
 include/lldb/Interpreter/OptionValueChar.h
 include/lldb/Interpreter/OptionValueDictionary.h
 include/lldb/Interpreter/OptionValueEnumeration.h
+include/lldb/Interpreter/OptionValueFileColonLine.h
 include/lldb/Interpreter/OptionValueFileSpec.h
 include/lldb/Interpreter/OptionValueFileSpecList.h
 include/lldb/Interpreter/OptionValueFormat.h
@@ -340,6 +343,7 @@ include/lldb/Interpreter/OptionValues.h
 include/lldb/Interpreter/Options.h
 include/lldb/Interpreter/Property.h
 include/lldb/Interpreter/ScriptInterpreter.h
+include/lldb/Interpreter/ScriptedProcessInterface.h
 include/lldb/Symbol/
 include/lldb/Symbol/ArmUnwindInfo.h
 include/lldb/Symbol/Block.h
@@ -352,7 +356,6 @@ include/lldb/Symbol/CompilerType.h
 include/lldb/Symbol/DWARFCallFrameInfo.h
 include/lldb/Symbol/DebugMacros.h
 include/lldb/Symbol/DeclVendor.h
-include/lldb/Symbol/Declaration.h
 include/lldb/Symbol/FuncUnwinders.h
 include/lldb/Symbol/Function.h
 include/lldb/Symbol/LineEntry.h
@@ -392,12 +395,15 @@ include/lldb/Target/LanguageRuntime.h
 include/lldb/Target/Memory.h
 include/lldb/Target/MemoryHistory.h
 include/lldb/Target/MemoryRegionInfo.h
+include/lldb/Target/MemoryTagManager.h
 include/lldb/Target/ModuleCache.h
 include/lldb/Target/OperatingSystem.h
 include/lldb/Target/PathMappingList.h
 include/lldb/Target/Platform.h
+include/lldb/Target/PostMortemProcess.h
 include/lldb/Target/Process.h
 include/lldb/Target/ProcessStructReader.h
+include/lldb/Target/ProcessTrace.h
 include/lldb/Target/Queue.h
 include/lldb/Target/QueueItem.h
 include/lldb/Target/QueueList.h
@@ -406,6 +412,7 @@ include/lldb/Target/RegisterContext.h
 include/lldb/Target/RegisterContextUnwind.h
 include/lldb/Target/RegisterNumber.h
 include/lldb/Target/RemoteAwarePlatform.h
+include/lldb/Target/Runtime.h
 include/lldb/Target/SectionLoadHistory.h
 include/lldb/Target/SectionLoadList.h
 include/lldb/Target/StackFrame.h
@@ -440,6 +447,10 @@ include/lldb/Target/ThreadPlanStepThrough.h
 include/lldb/Target/ThreadPlanStepUntil.h
 include/lldb/Target/ThreadPlanTracer.h
 include/lldb/Target/ThreadSpec.h
+include/lldb/Target/Trace.h
+include/lldb/Target/TraceCursor.h
+include/lldb/Target/TraceExporter.h
+include/lldb/Target/TraceInstructionDumper.h
 include/lldb/Target/UnixSignals.h
 include/lldb/Target/Unwind.h
 include/lldb/Target/UnwindAssembly.h
@@ -450,6 +461,7 @@ include/lldb/Utility/ArchSpec.h
 include/lldb/Utility/Args.h
 include/lldb/Utility/Baton.h
 include/lldb/Utility/Broadcaster.h
+include/lldb/Utility/Cloneable.h
 include/lldb/Utility/CompletionRequest.h
 include/lldb/Utility/Connection.h
 include/lldb/Utility/ConstString.h
@@ -471,6 +483,7 @@ include/lldb/Utility/Listener.h
 include/lldb/Utility/Log.h
 include/lldb/Utility/Logging.h
 include/lldb/Utility/NameMatches.h
+include/lldb/Utility/OptionDefinition.h
 include/lldb/Utility/Predicate.h
 include/lldb/Utility/ProcessInfo.h
 include/lldb/Utility/RangeMap.h
@@ -478,6 +491,7 @@ include/lldb/Utility/RegisterValue.h
 include/lldb/Utility/RegularExpression.h
 include/lldb/Utility/Reproducer.h
 include/lldb/Utility/ReproducerInstrumentation.h
+include/lldb/Utility/ReproducerProvider.h
 include/lldb/Utility/Scalar.h
 include/lldb/Utility/SelectHelper.h
 include/lldb/Utility/SharedCluster.h
@@ -495,8 +509,10 @@ include/lldb/Utility/StructuredData.h
 include/lldb/Utility/TildeExpressionResolver.h
 include/lldb/Utility/Timeout.h
 include/lldb/Utility/Timer.h
-include/lldb/Utility/TraceOptions.h
+include/lldb/Utility/TraceGDBRemotePackets.h
+include/lldb/Utility/TraceIntelPTGDBRemotePackets.h
 include/lldb/Utility/UUID.h
+include/lldb/Utility/UnimplementedError.h
 include/lldb/Utility/UriParser.h
 include/lldb/Utility/UserID.h
 include/lldb/Utility/UserIDResolver.h
@@ -546,6 +562,12 @@ lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/libcxx.py
 lib/python${MODPY_VERSION}/site-packages/lldb/formatters/metrics.py
 lib/python${MODPY_VERSION}/site-packages/lldb/formatters/synth.py
 lib/python${MODPY_VERSION}/site-packages/lldb/lldb-argdumper
+lib/python${MODPY_VERSION}/site-packages/lldb/plugins/
+lib/python${MODPY_VERSION}/site-packages/lldb/plugins/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lldb/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/lldb/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lldb/plugins/${MODPY_PYCACHE}scripted_process.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lldb/plugins/scripted_process.py
 lib/python${MODPY_VERSION}/site-packages/lldb/utils/
 lib/python${MODPY_VERSION}/site-packages/lldb/utils/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lldb/utils/${MODPY_PYCACHE}/

@@ -1,11 +1,11 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Arch_RISCV_cpp,v 1.1 2021/05/22 20:27:35 jca Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Arch_RISCV_cpp,v 1.2 2022/01/03 21:33:52 jca Exp $
 
 - ld.lld doesn't properly support R_RISCV_RELAX relocations, switch the default to -no-relax
 
 Index: tools/clang/lib/Driver/ToolChains/Arch/RISCV.cpp
 --- tools/clang/lib/Driver/ToolChains/Arch/RISCV.cpp.orig
 +++ tools/clang/lib/Driver/ToolChains/Arch/RISCV.cpp
-@@ -536,11 +536,19 @@ void riscv::getRISCVTargetFeatures(const Driver &D, co
+@@ -556,11 +556,19 @@ void riscv::getRISCVTargetFeatures(const Driver &D, co
    if (Args.hasArg(options::OPT_ffixed_x31))
      Features.push_back("+reserve-x31");
  

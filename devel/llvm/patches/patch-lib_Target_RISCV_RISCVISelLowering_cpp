@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_Target_RISCV_RISCVISelLowering_cpp,v 1.1 2021/05/22 20:27:35 jca Exp $
+$OpenBSD: patch-lib_Target_RISCV_RISCVISelLowering_cpp,v 1.2 2022/01/03 21:33:51 jca Exp $
 
 - enable EmuTLS on RiscV.
 
 Index: lib/Target/RISCV/RISCVISelLowering.cpp
 --- lib/Target/RISCV/RISCVISelLowering.cpp.orig
 +++ lib/Target/RISCV/RISCVISelLowering.cpp
-@@ -634,6 +634,10 @@ SDValue RISCVTargetLowering::getDynamicTLSAddr(GlobalA
+@@ -2847,6 +2847,10 @@ SDValue RISCVTargetLowering::getDynamicTLSAddr(GlobalA
  
  SDValue RISCVTargetLowering::lowerGlobalTLSAddress(SDValue Op,
                                                     SelectionDAG &DAG) const {

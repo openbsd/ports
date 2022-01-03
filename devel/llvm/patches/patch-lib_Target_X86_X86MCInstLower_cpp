@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_X86_X86MCInstLower_cpp,v 1.10 2021/05/13 23:54:25 jca Exp $
+$OpenBSD: patch-lib_Target_X86_X86MCInstLower_cpp,v 1.11 2022/01/03 21:33:51 jca Exp $
 
 - Add RETGUARD to clang for amd64. This security mechanism uses per-function
   random cookies to protect access to function return instructions, with the
@@ -25,7 +25,7 @@ $OpenBSD: patch-lib_Target_X86_X86MCInstLower_cpp,v 1.10 2021/05/13 23:54:25 jca
 Index: lib/Target/X86/X86MCInstLower.cpp
 --- lib/Target/X86/X86MCInstLower.cpp.orig
 +++ lib/Target/X86/X86MCInstLower.cpp
-@@ -2566,6 +2566,50 @@ void X86AsmPrinter::emitInstruction(const MachineInstr
+@@ -2570,6 +2570,50 @@ void X86AsmPrinter::emitInstruction(const MachineInstr
          MCInstBuilder(X86::MOV64rr).addReg(X86::R10).addReg(X86::RAX));
      return;
  
@@ -76,7 +76,7 @@ Index: lib/Target/X86/X86MCInstLower.cpp
    case X86::SEH_PushReg:
    case X86::SEH_SaveReg:
    case X86::SEH_SaveXMM:
-@@ -2615,4 +2659,10 @@ void X86AsmPrinter::emitInstruction(const MachineInstr
+@@ -2628,4 +2672,10 @@ void X86AsmPrinter::emitInstruction(const MachineInstr
    }
  
    EmitAndCountInstruction(TmpInst);

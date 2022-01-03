@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_Target_X86_X86IndirectThunks_cpp,v 1.1 2021/09/19 17:49:23 jca Exp $
+$OpenBSD: patch-lib_Target_X86_X86IndirectThunks_cpp,v 1.2 2022/01/03 21:33:51 jca Exp $
 
 Add lfence after ret in retpoline thunk.
 
 Index: lib/Target/X86/X86IndirectThunks.cpp
 --- lib/Target/X86/X86IndirectThunks.cpp.orig
 +++ lib/Target/X86/X86IndirectThunks.cpp
-@@ -250,6 +250,7 @@ void RetpolineThunkInserter::populateThunk(MachineFunc
+@@ -249,6 +249,7 @@ void RetpolineThunkInserter::populateThunk(MachineFunc
  
    CallTarget->back().setPreInstrSymbol(MF, TargetSym);
    BuildMI(CallTarget, DebugLoc(), TII->get(RetOpc));

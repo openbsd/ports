@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.287 2021/11/22 18:29:08 jca Exp $
+# $OpenBSD: Makefile,v 1.288 2022/01/03 21:33:51 jca Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
@@ -11,23 +11,19 @@ COMMENT-python =	Python bindings for Clang
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
-LLVM_V =	11.1.0
+LLVM_V =	13.0.0
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME =	llvm-${LLVM_V}
 PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-python =	py3-llvm-${LLVM_V}
 PKGNAME-lldb =	lldb-${LLVM_V}
-REVISION-main =	9
-REVISION-lldb =	1
-# XXX -main depends on python, is that right?
-REVISION-python =	1
 
 CATEGORIES =	devel
 
-SHARED_LIBS =	clang		8.1 \
-		clang-cpp	0.0 \
-		lldb		2.0 \
-		LTO		6.0 \
+SHARED_LIBS =	clang		8.2 \
+		clang-cpp	1.0 \
+		lldb		3.0 \
+		LTO		6.1 \
 		Remarks		0.0
 
 # packager notes in http://llvm.org/docs/Packaging.html
@@ -53,7 +49,9 @@ MODULES =		devel/cmake \
 
 MODPY_ADJ_FILES =	tools/clang/tools/clang-format/git-clang-format \
 			tools/clang/tools/scan-view/bin/scan-view \
-			tools/clang/utils/hmaptool/hmaptool
+			tools/clang/utils/hmaptool/hmaptool \
+			tools/clang/tools/scan-build-py/bin/* \
+			tools/clang/tools/scan-build-py/libexec/*
 
 TEST_DEPENDS =		devel/dejagnu \
 			shells/bash
@@ -91,7 +89,6 @@ CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
 			-DCMAKE_DISABLE_FIND_PACKAGE_LibXml2:Bool=True \
 			-DLLVM_LINK_LLVM_DYLIB:Bool=True \
 			-DLLVM_BUILD_LLVM_DYLIB:Bool=True \
-			-DEPYDOC_EXECUTABLE=EPYDOC_EXECUTABLE-NOTFOUND \
 			-DGO_EXECUTABLE=GO_EXECUTABLE-NOTFOUND \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Backtrace:Bool=True \
 			-DLLDB_USE_SYSTEM_SIX=ON \
@@ -126,14 +123,24 @@ GCC_CONFIG =		${MACHINE_ARCH}-unknown-openbsd${OSREV}
 CLANG_INCLUDE_PATH =	lib/clang/${LLVM_V}/include
 SUBST_VARS +=		CLANG_INCLUDE_PATH LLVM_V GCC_VER GCC_CONFIG
 
+# hack to disable the use of -Bsymbolic-functions
+.if ${PROPERTIES:Mlld}
+OPENBSD_LD_IS_LLD =	TRUE
+.else
+OPENBSD_LD_IS_LLD =	FALSE
+.endif
+SUBST_VARS +=		OPENBSD_LD_IS_LLD
+
 post-extract:
 	mv ${WRKDIR}/clang-${LLVM_V}.src ${WRKSRC}/tools/clang
 	mv ${WRKDIR}/lld-${LLVM_V}.src ${WRKSRC}/tools/lld
 	mv ${WRKDIR}/lldb-${LLVM_V}.src ${WRKSRC}/tools/lldb
 
 pre-configure:
-	@${SUBST_CMD} ${WRKSRC}/tools/clang/lib/Driver/ToolChains/OpenBSD.cpp \
-	    ${WRKSRC}/cmake/modules/LLVMProcessSources.cmake
+	@${SUBST_CMD} ${WRKSRC}/tools/clang/lib/Driver/ToolChains/OpenBSD.cpp
+	@${SUBST_CMD} ${WRKSRC}/cmake/modules/LLVMProcessSources.cmake
+	@${SUBST_CMD} ${WRKSRC}/tools/clang/tools/clang-shlib/CMakeLists.txt
+	@${SUBST_CMD} ${WRKSRC}/tools/llvm-shlib/CMakeLists.txt
 	-@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 
 post-build:
@@ -148,7 +155,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/tools/clang/bindings/python/clang/* \
 	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/clang
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/
+	    ${PREFIX}/lib/libear/ \
+	    ${PREFIX}/lib/libscanbuild/ \
+	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/ \
+	    ${PREFIX}/share/
 	${INSTALL_DATA} ${WRKSRC}/docs/_build/man/* \
 	    ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/tools/clang/docs/_build/man/clang.1 \

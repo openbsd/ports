@@ -1,0 +1,21 @@
+$OpenBSD: patch-tools_lld_tools_lld_lld_cpp,v 1.1 2022/01/03 21:33:52 jca Exp $
+
+Don't build MachO2 support in lld.  This code reaches into libunwind
+internals.
+
+Index: tools/lld/tools/lld/lld.cpp
+--- tools/lld/tools/lld/lld.cpp.orig
++++ tools/lld/tools/lld/lld.cpp
+@@ -148,10 +148,12 @@ static int lldMain(int argc, const char **argv, llvm::
+     return !elf::link(args, exitEarly, stdoutOS, stderrOS);
+   case WinLink:
+     return !coff::link(args, exitEarly, stdoutOS, stderrOS);
++#if 0
+   case Darwin:
+     return !macho::link(args, exitEarly, stdoutOS, stderrOS);
+   case DarwinOld:
+     return !mach_o::link(args, exitEarly, stdoutOS, stderrOS);
++#endif
+   case Wasm:
+     return !lld::wasm::link(args, exitEarly, stdoutOS, stderrOS);
+   default:

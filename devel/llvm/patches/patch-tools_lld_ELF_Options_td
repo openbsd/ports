@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_lld_ELF_Options_td,v 1.7 2021/05/13 23:54:25 jca Exp $
+$OpenBSD: patch-tools_lld_ELF_Options_td,v 1.8 2022/01/03 21:33:52 jca Exp $
 
 - [ELF] Add -nopie alias for -no-pie
 - defm ignore_function_address_equality: TODO (document it)
@@ -6,7 +6,7 @@ $OpenBSD: patch-tools_lld_ELF_Options_td,v 1.7 2021/05/13 23:54:25 jca Exp $
 Index: tools/lld/ELF/Options.td
 --- tools/lld/ELF/Options.td.orig
 +++ tools/lld/ELF/Options.td
-@@ -232,8 +232,9 @@ def icf_safe: F<"icf=safe">, HelpText<"Enable safe ide
+@@ -248,8 +248,9 @@ def icf_safe: F<"icf=safe">, HelpText<"Enable safe ide
  
  def icf_none: F<"icf=none">, HelpText<"Disable identical code folding (default)">;
  
@@ -18,7 +18,7 @@ Index: tools/lld/ELF/Options.td
  
  def ignore_data_address_equality: F<"ignore-data-address-equality">,
    HelpText<"lld can break the address equality of data">;
-@@ -489,6 +490,7 @@ def: Separate<["-"], "F">, Alias<filter>, HelpText<"Al
+@@ -520,6 +521,7 @@ def: Separate<["-"], "F">, Alias<filter>, HelpText<"Al
  def: Separate<["-"], "b">, Alias<format>, HelpText<"Alias for --format">;
  def: JoinedOrSeparate<["-"], "l">, Alias<library>, HelpText<"Alias for --library">;
  def: JoinedOrSeparate<["-"], "L">, Alias<library_path>, HelpText<"Alias for --library-path">;

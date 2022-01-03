@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_OpenBSD_h,v 1.9 2021/05/13 23:54:25 jca Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_OpenBSD_h,v 1.10 2022/01/03 21:33:52 jca Exp $
 
 - Add support for building against libestdc++ from ports-gcc.
 - Make clang emit the proper path to our libcompiler_rt.a when asked to.
@@ -6,7 +6,7 @@ $OpenBSD: patch-tools_clang_lib_Driver_ToolChains_OpenBSD_h,v 1.9 2021/05/13 23:
 Index: tools/clang/lib/Driver/ToolChains/OpenBSD.h
 --- tools/clang/lib/Driver/ToolChains/OpenBSD.h.orig
 +++ tools/clang/lib/Driver/ToolChains/OpenBSD.h
-@@ -76,6 +76,11 @@ class LLVM_LIBRARY_VISIBILITY OpenBSD : public Generic
+@@ -77,6 +77,11 @@ class LLVM_LIBRARY_VISIBILITY OpenBSD : public Generic
    void AddCXXStdlibLibArgs(const llvm::opt::ArgList &Args,
                             llvm::opt::ArgStringList &CmdArgs) const override;
  

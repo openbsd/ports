@@ -1,0 +1,15 @@
+$OpenBSD: patch-tools_clang_tools_clang-shlib_CMakeLists_txt,v 1.1 2022/01/03 21:33:52 jca Exp $
+
+-Bsymbolic-functions is not supported by our ld.bfd version.
+
+Index: tools/clang/tools/clang-shlib/CMakeLists.txt
+--- tools/clang/tools/clang-shlib/CMakeLists.txt.orig
++++ tools/clang/tools/clang-shlib/CMakeLists.txt
+@@ -50,6 +50,6 @@ add_clang_library(clang-cpp
+                   ${_DEPS})
+ # Optimize function calls for default visibility definitions to avoid PLT and
+ # reduce dynamic relocations.
+-if (NOT APPLE AND NOT MINGW)
++if (NOT APPLE AND NOT MINGW AND ${OPENBSD_LD_IS_LLD})
+   target_link_options(clang-cpp PRIVATE LINKER:-Bsymbolic-functions)
+ endif()

@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_X86_X86FrameLowering_cpp,v 1.9 2021/05/13 23:54:25 jca Exp $
+$OpenBSD: patch-lib_Target_X86_X86FrameLowering_cpp,v 1.10 2022/01/03 21:33:51 jca Exp $
 
 - Add RETGUARD to clang for amd64. This security mechanism uses per-function
   random cookies to protect access to function return instructions, with the
@@ -31,7 +31,7 @@ Index: lib/Target/X86/X86FrameLowering.cpp
  #include "X86Subtarget.h"
  #include "X86TargetMachine.h"
  #include "llvm/ADT/SmallSet.h"
-@@ -45,7 +46,7 @@ X86FrameLowering::X86FrameLowering(const X86Subtarget 
+@@ -46,7 +47,7 @@ X86FrameLowering::X86FrameLowering(const X86Subtarget 
                                     MaybeAlign StackAlignOverride)
      : TargetFrameLowering(StackGrowsDown, StackAlignOverride.valueOrOne(),
                            STI.is64Bit() ? -8 : -4),
@@ -40,7 +40,7 @@ Index: lib/Target/X86/X86FrameLowering.cpp
    // Cache a bunch of frame-related predicates for this subtarget.
    SlotSize = TRI->getSlotSize();
    Is64Bit = STI.is64Bit();
-@@ -53,6 +54,7 @@ X86FrameLowering::X86FrameLowering(const X86Subtarget 
+@@ -54,6 +55,7 @@ X86FrameLowering::X86FrameLowering(const X86Subtarget 
    // standard x86_64 and NaCl use 64-bit frame/stack pointers, x32 - 32-bit.
    Uses64BitFramePtr = STI.isTarget64BitLP64() || STI.isTargetNaCl64();
    StackPtr = TRI->getStackRegister();
@@ -48,7 +48,7 @@ Index: lib/Target/X86/X86FrameLowering.cpp
  }
  
  bool X86FrameLowering::hasReservedCallFrame(const MachineFunction &MF) const {
-@@ -98,7 +100,8 @@ bool X86FrameLowering::hasFP(const MachineFunction &MF
+@@ -99,7 +101,8 @@ bool X86FrameLowering::hasFP(const MachineFunction &MF
            MF.getInfo<X86MachineFunctionInfo>()->hasPreallocatedCall() ||
            MF.callsUnwindInit() || MF.hasEHFunclets() || MF.callsEHReturn() ||
            MFI.hasStackMap() || MFI.hasPatchPoint() ||
@@ -58,7 +58,7 @@ Index: lib/Target/X86/X86FrameLowering.cpp
  }
  
  static unsigned getSUBriOpcode(bool IsLP64, int64_t Imm) {
-@@ -1243,6 +1246,24 @@ void X86FrameLowering::BuildStackAlignAND(MachineBasic
+@@ -1213,6 +1216,24 @@ void X86FrameLowering::BuildStackAlignAND(MachineBasic
    }
  }
  
@@ -83,9 +83,9 @@ Index: lib/Target/X86/X86FrameLowering.cpp
  bool X86FrameLowering::has128ByteRedZone(const MachineFunction& MF) const {
    // x86-64 (non Win64) has a 128 byte red zone which is guaranteed not to be
    // clobbered by any interrupt handler.
-@@ -1517,6 +1538,43 @@ void X86FrameLowering::emitPrologue(MachineFunction &M
-                                     nullptr, DwarfFramePtr));
-       }
+@@ -1537,6 +1558,43 @@ void X86FrameLowering::emitPrologue(MachineFunction &M
+               .addReg(StackPtr)
+               .setMIFlag(MachineInstr::FrameSetup);
  
 +      if (SaveArgs && !Fn.arg_empty()) {
 +        ArrayRef<MCPhysReg> GPRs =
@@ -119,20 +119,21 @@ Index: lib/Target/X86/X86FrameLowering.cpp
 +          SaveSize += SlotSize;
 +        }
 +
-+	//dlg StackSize -= SaveSize;
++        //dlg StackSize -= SaveSize;
 +        //dlg MFI.setStackSize(StackSize);
 +        X86FI->setSaveArgSize(SaveSize);
 +      }
 +
-       if (NeedsWinFPO) {
-         // .cv_fpo_setframe $FramePtr
-         HasWinCFI = true;
-@@ -2009,10 +2067,16 @@ void X86FrameLowering::emitEpilogue(MachineFunction &M
-   // AfterPop is the position to insert .cfi_restore.
-   MachineBasicBlock::iterator AfterPop = MBBI;
-   if (HasFP) {
+         if (NeedsDwarfCFI) {
+           // Mark effective beginning of when frame pointer becomes valid.
+           // Define the current CFA to use the EBP/RBP register.
+@@ -2047,10 +2105,17 @@ void X86FrameLowering::emitEpilogue(MachineFunction &M
+       int Offset = 16 + mergeSPUpdates(MBB, MBBI, true);
+       emitSPUpdate(MBB, MBBI, DL, Offset, /*InEpilogue*/true);
+     }
 -    // Pop EBP.
 -    BuildMI(MBB, MBBI, DL, TII.get(Is64Bit ? X86::POP64r : X86::POP32r),
++
 +    if (X86FI->getSaveArgSize()) {
 +      // LEAVE is effectively mov rbp,rsp; pop rbp
 +      BuildMI(MBB, MBBI, DL, TII.get(X86::LEAVE64))
@@ -143,20 +144,18 @@ Index: lib/Target/X86/X86FrameLowering.cpp
              MachineFramePtr)
          .setMIFlag(MachineInstr::FrameDestroy);
 +    }
-     if (NeedsDwarfCFI) {
-       unsigned DwarfStackPtr =
-           TRI->getDwarfRegNum(Is64Bit ? X86::RSP : X86::ESP, true);
-@@ -2037,7 +2101,8 @@ void X86FrameLowering::emitEpilogue(MachineFunction &M
  
+     // We need to reset FP to its untagged state on return. Bit 60 is currently
+     // used to show the presence of an extended frame.
+@@ -2087,6 +2152,7 @@ void X86FrameLowering::emitEpilogue(MachineFunction &M
      if (Opc != X86::DBG_VALUE && !PI->isTerminator()) {
        if ((Opc != X86::POP32r || !PI->getFlag(MachineInstr::FrameDestroy)) &&
--          (Opc != X86::POP64r || !PI->getFlag(MachineInstr::FrameDestroy)))
-+          (Opc != X86::POP64r || !PI->getFlag(MachineInstr::FrameDestroy)) &&
-+          (Opc != X86::LEAVE64 || !PI->getFlag(MachineInstr::FrameDestroy)))
+           (Opc != X86::POP64r || !PI->getFlag(MachineInstr::FrameDestroy)) &&
++          (Opc != X86::LEAVE64 || !PI->getFlag(MachineInstr::FrameDestroy)) &&
+           (Opc != X86::BTR64ri8 || !PI->getFlag(MachineInstr::FrameDestroy)) &&
+           (Opc != X86::ADD64ri8 || !PI->getFlag(MachineInstr::FrameDestroy)))
          break;
-       FirstCSPop = PI;
-     }
-@@ -2202,6 +2267,8 @@ int X86FrameLowering::getFrameIndexReference(const Mac
+@@ -2266,6 +2332,8 @@ StackOffset X86FrameLowering::getFrameIndexReference(c
             "FPDelta isn't aligned per the Win64 ABI!");
    }
  
@@ -165,7 +164,7 @@ Index: lib/Target/X86/X86FrameLowering.cpp
  
    if (TRI->hasBasePointer(MF)) {
      assert(HasFP && "VLAs and dynamic stack realign, but no FP?!");
-@@ -3603,6 +3670,10 @@ void X86FrameLowering::processFunctionBeforeFrameFinal
+@@ -3699,6 +3767,10 @@ void X86FrameLowering::adjustFrameForMsvcCxxEh(Machine
    addFrameReference(BuildMI(MBB, MBBI, DL, TII.get(X86::MOV64mi32)),
                      UnwindHelpFI)
        .addImm(-2);

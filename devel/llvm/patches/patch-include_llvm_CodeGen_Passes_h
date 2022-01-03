@@ -1,4 +1,4 @@
-$OpenBSD: patch-include_llvm_CodeGen_Passes_h,v 1.4 2021/05/13 23:54:24 jca Exp $
+$OpenBSD: patch-include_llvm_CodeGen_Passes_h,v 1.5 2022/01/03 21:33:51 jca Exp $
 
 Add RETGUARD to clang for amd64. This security mechanism uses per-function
 random cookies to protect access to function return instructions, with the
@@ -21,7 +21,7 @@ remove these gadgets will continue through other mechanisms.
 Index: include/llvm/CodeGen/Passes.h
 --- include/llvm/CodeGen/Passes.h.orig
 +++ include/llvm/CodeGen/Passes.h
-@@ -334,6 +334,9 @@ namespace llvm {
+@@ -353,6 +353,9 @@ namespace llvm {
    ///
    FunctionPass *createStackProtectorPass();
  

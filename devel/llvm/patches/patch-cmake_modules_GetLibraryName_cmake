@@ -1,0 +1,16 @@
+$OpenBSD: patch-cmake_modules_GetLibraryName_cmake,v 1.1 2022/01/03 21:33:51 jca Exp $
+
+Properly parse library suffixes on OpenBSD
+
+Index: cmake/modules/GetLibraryName.cmake
+--- cmake/modules/GetLibraryName.cmake.orig
++++ cmake/modules/GetLibraryName.cmake
+@@ -2,7 +2,7 @@
+ function(get_library_name path name)
+   get_filename_component(path ${path} NAME)
+   set(prefixes ${CMAKE_FIND_LIBRARY_PREFIXES})
+-  set(suffixes ${CMAKE_FIND_LIBRARY_SUFFIXES})
++  set(suffixes ${CMAKE_FIND_LIBRARY_SUFFIXES} ".so.[0-9]+.[0-9]+")
+   list(FILTER prefixes EXCLUDE REGEX "^\\s*$")
+   list(FILTER suffixes EXCLUDE REGEX "^\\s*$")
+   if(prefixes)

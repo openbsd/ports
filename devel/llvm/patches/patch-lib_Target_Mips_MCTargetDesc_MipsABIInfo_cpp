@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_Target_Mips_MCTargetDesc_MipsABIInfo_cpp,v 1.1 2020/12/21 21:38:51 jca Exp $
+$OpenBSD: patch-lib_Target_Mips_MCTargetDesc_MipsABIInfo_cpp,v 1.2 2022/01/03 21:33:51 jca Exp $
 
 Adapt the -mfix-loongson2f-btb workaround from as(1) to LLVM/clang.
 
 Index: lib/Target/Mips/MCTargetDesc/MipsABIInfo.cpp
 --- lib/Target/Mips/MCTargetDesc/MipsABIInfo.cpp.orig
 +++ lib/Target/Mips/MCTargetDesc/MipsABIInfo.cpp
-@@ -22,6 +22,11 @@ EmitJalrReloc("mips-jalr-reloc", cl::Hidden,
+@@ -21,6 +21,11 @@ EmitJalrReloc("mips-jalr-reloc", cl::Hidden,
                cl::desc("MIPS: Emit R_{MICRO}MIPS_JALR relocation with jalr"),
                cl::init(true));
  

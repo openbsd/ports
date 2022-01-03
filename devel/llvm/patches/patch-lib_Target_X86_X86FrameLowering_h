@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_X86_X86FrameLowering_h,v 1.7 2021/05/13 23:54:25 jca Exp $
+$OpenBSD: patch-lib_Target_X86_X86FrameLowering_h,v 1.8 2022/01/03 21:33:51 jca Exp $
 
 - Add RETGUARD to clang for amd64. This security mechanism uses per-function
   random cookies to protect access to function return instructions, with the
@@ -29,9 +29,9 @@ Index: lib/Target/X86/X86FrameLowering.h
  
 +#include "X86ReturnProtectorLowering.h"
  #include "llvm/CodeGen/TargetFrameLowering.h"
+ #include "llvm/Support/TypeSize.h"
  
- namespace llvm {
-@@ -22,6 +23,7 @@ class MCCFIInstruction;
+@@ -23,6 +24,7 @@ class MCCFIInstruction;
  class X86InstrInfo;
  class X86Subtarget;
  class X86RegisterInfo;
@@ -39,7 +39,7 @@ Index: lib/Target/X86/X86FrameLowering.h
  
  class X86FrameLowering : public TargetFrameLowering {
  public:
-@@ -32,7 +34,10 @@ class X86FrameLowering : public TargetFrameLowering { 
+@@ -33,7 +35,10 @@ class X86FrameLowering : public TargetFrameLowering { 
    const X86Subtarget &STI;
    const X86InstrInfo &TII;
    const X86RegisterInfo *TRI;

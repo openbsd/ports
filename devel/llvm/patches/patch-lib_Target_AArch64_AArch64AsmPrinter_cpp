@@ -1,13 +1,13 @@
-$OpenBSD: patch-lib_Target_AArch64_AArch64AsmPrinter_cpp,v 1.5 2021/05/13 23:54:24 jca Exp $
+$OpenBSD: patch-lib_Target_AArch64_AArch64AsmPrinter_cpp,v 1.6 2022/01/03 21:33:51 jca Exp $
 
 Add retguard for arm64.
 
 Index: lib/Target/AArch64/AArch64AsmPrinter.cpp
 --- lib/Target/AArch64/AArch64AsmPrinter.cpp.orig
 +++ lib/Target/AArch64/AArch64AsmPrinter.cpp
-@@ -1350,6 +1350,19 @@ void AArch64AsmPrinter::emitInstruction(const MachineI
+@@ -1488,6 +1488,19 @@ void AArch64AsmPrinter::emitInstruction(const MachineI
    case AArch64::SEH_EpilogEnd:
-     TS->EmitARM64WinCFIEpilogEnd();
+     TS->emitARM64WinCFIEpilogEnd();
      return;
 +
 +  case AArch64::RETGUARD_JMP_TRAP:

@@ -1,4 +1,4 @@
-$OpenBSD: patch-include_llvm_InitializePasses_h,v 1.5 2021/05/13 23:54:24 jca Exp $
+$OpenBSD: patch-include_llvm_InitializePasses_h,v 1.6 2022/01/03 21:33:51 jca Exp $
 
 Add RETGUARD to clang for amd64. This security mechanism uses per-function
 random cookies to protect access to function return instructions, with the
@@ -21,9 +21,9 @@ remove these gadgets will continue through other mechanisms.
 Index: include/llvm/InitializePasses.h
 --- include/llvm/InitializePasses.h.orig
 +++ include/llvm/InitializePasses.h
-@@ -372,6 +372,7 @@ void initializeRegionViewerPass(PassRegistry&);
- void initializeRegisterCoalescerPass(PassRegistry&);
+@@ -387,6 +387,7 @@ void initializeRemoveRedundantDebugValuesPass(PassRegi
  void initializeRenameIndependentSubregsPass(PassRegistry&);
+ void initializeReplaceWithVeclibLegacyPass(PassRegistry &);
  void initializeResetMachineFunctionPass(PassRegistry&);
 +void initializeReturnProtectorPass(PassRegistry&);
  void initializeReversePostOrderFunctionAttrsLegacyPassPass(PassRegistry&);

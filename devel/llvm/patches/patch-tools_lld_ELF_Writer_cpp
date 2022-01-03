@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_lld_ELF_Writer_cpp,v 1.15 2021/05/13 23:54:25 jca Exp $
+$OpenBSD: patch-tools_lld_ELF_Writer_cpp,v 1.16 2022/01/03 21:33:52 jca Exp $
 
 - Merge '.openbsd.randomdata.*' sections into a single '.openbsd.randomdata'
   section when linking, as we do when using ld from binutils.
@@ -10,7 +10,7 @@ $OpenBSD: patch-tools_lld_ELF_Writer_cpp,v 1.15 2021/05/13 23:54:25 jca Exp $
 Index: tools/lld/ELF/Writer.cpp
 --- tools/lld/ELF/Writer.cpp.orig
 +++ tools/lld/ELF/Writer.cpp
-@@ -140,7 +140,8 @@ StringRef elf::getOutputSectionName(const InputSection
+@@ -145,7 +145,8 @@ StringRef elf::getOutputSectionName(const InputSection
    for (StringRef v :
         {".text.", ".rodata.", ".data.rel.ro.", ".data.", ".bss.rel.ro.",
          ".bss.", ".init_array.", ".fini_array.", ".ctors.", ".dtors.", ".tbss.",
@@ -20,7 +20,7 @@ Index: tools/lld/ELF/Writer.cpp
      if (isSectionPrefix(v, s->name))
        return v.drop_back();
  
-@@ -319,6 +320,7 @@ void elf::addReservedSymbols() {
+@@ -324,6 +325,7 @@ void elf::addReservedSymbols() {
    };
  
    ElfSym::bss = add("__bss_start", 0);
@@ -28,7 +28,7 @@ Index: tools/lld/ELF/Writer.cpp
    ElfSym::end1 = add("end", -1);
    ElfSym::end2 = add("_end", -1);
    ElfSym::etext1 = add("etext", -1);
-@@ -870,7 +872,11 @@ static bool isRelroSection(const OutputSection *sec) {
+@@ -883,7 +885,11 @@ static bool isRelroSection(const OutputSection *sec) {
    // However, if "-z now" is given, the lazy symbol resolution is
    // disabled, which enables us to put it into RELRO.
    if (sec == in.gotPlt->getParent())
@@ -40,7 +40,7 @@ Index: tools/lld/ELF/Writer.cpp
  
    // .dynamic section contains data for the dynamic linker, and
    // there's no need to write to it at runtime, so it's better to put
-@@ -1180,6 +1186,9 @@ template <class ELFT> void Writer<ELFT>::setReservedSy
+@@ -1193,6 +1199,9 @@ template <class ELFT> void Writer<ELFT>::setReservedSy
    if (ElfSym::bss)
      ElfSym::bss->section = findSection(".bss");
  
@@ -50,7 +50,7 @@ Index: tools/lld/ELF/Writer.cpp
    // Setup MIPS _gp_disp/__gnu_local_gp symbols which should
    // be equal to the _gp symbol's value.
    if (ElfSym::mipsGp) {
-@@ -2499,6 +2508,31 @@ template <class ELFT> void Writer<ELFT>::fixSectionAli
+@@ -2576,6 +2585,31 @@ template <class ELFT> void Writer<ELFT>::fixSectionAli
          };
      }
    };

@@ -1,22 +1,31 @@
-$OpenBSD: patch-tools_lld_ELF_Driver_cpp,v 1.16 2021/05/13 23:54:25 jca Exp $
+$OpenBSD: patch-tools_lld_ELF_Driver_cpp,v 1.17 2022/01/03 21:33:52 jca Exp $
 
-- Enable PIE by default.
-- XXX retpoline, EM_SPARCV9, ???
+- enable retpoline by default
+- allow-shlib-undefined by default
+- anable PIE by default.
+
 
 Index: tools/lld/ELF/Driver.cpp
 --- tools/lld/ELF/Driver.cpp.orig
 +++ tools/lld/ELF/Driver.cpp
-@@ -439,7 +439,8 @@ static bool isKnownZFlag(StringRef s) {
-          s == "nocombreloc" || s == "nocopyreloc" || s == "nodefaultlib" ||
-          s == "nodelete" || s == "nodlopen" || s == "noexecstack" ||
-          s == "nognustack" || s == "nokeep-text-section-prefix" ||
--         s == "norelro" || s == "noseparate-code" || s == "notext" ||
-+         s == "norelro" || s == "noretpolineplt" ||
-+         s == "noseparate-code" || s == "notext" ||
+@@ -455,6 +455,7 @@ static bool isKnownZFlag(StringRef s) {
+          s == "nodefaultlib" || s == "nodelete" || s == "nodlopen" ||
+          s == "noexecstack" || s == "nognustack" ||
+          s == "nokeep-text-section-prefix" || s == "norelro" ||
++         s == "noretpolineplt" ||
+          s == "noseparate-code" || s == "nostart-stop-gc" || s == "notext" ||
           s == "now" || s == "origin" || s == "pac-plt" || s == "rel" ||
           s == "rela" || s == "relro" || s == "retpolineplt" ||
-          s == "rodynamic" || s == "shstk" || s == "text" || s == "undefs" ||
-@@ -948,7 +949,8 @@ static void readConfigs(opt::InputArgList &args) {
+@@ -598,7 +599,7 @@ static void setUnresolvedSymbolPolicy(opt::InputArgLis
+                                      : UnresolvedPolicy::Warn;
+   // -shared implies -unresolved-symbols=ignore-all because missing
+   // symbols are likely to be resolved at runtime.
+-  bool diagRegular = !config->shared, diagShlib = !config->shared;
++  bool diagRegular = !config->shared, diagShlib = false;
+ 
+   for (const opt::Arg *arg : args) {
+     switch (arg->getOption().getID()) {
+@@ -1064,7 +1065,8 @@ static void readConfigs(opt::InputArgList &args) {
    config->ignoreDataAddressEquality =
        args.hasArg(OPT_ignore_data_address_equality);
    config->ignoreFunctionAddressEquality =
@@ -26,7 +35,7 @@ Index: tools/lld/ELF/Driver.cpp
    config->init = args.getLastArgValue(OPT_init, "_init");
    config->ltoAAPipeline = args.getLastArgValue(OPT_lto_aa_pipeline);
    config->ltoCSProfileGenerate = args.hasArg(OPT_lto_cs_profile_generate);
-@@ -986,7 +988,12 @@ static void readConfigs(opt::InputArgList &args) {
+@@ -1118,7 +1120,12 @@ static void readConfigs(opt::InputArgList &args) {
    config->optimize = args::getInteger(args, OPT_O, 1);
    config->orphanHandling = getOrphanHandling(args);
    config->outputFile = args.getLastArgValue(OPT_o);
@@ -39,7 +48,7 @@ Index: tools/lld/ELF/Driver.cpp
    config->printIcfSections =
        args.hasFlag(OPT_print_icf_sections, OPT_no_print_icf_sections, false);
    config->printGcSections =
-@@ -1061,7 +1068,11 @@ static void readConfigs(opt::InputArgList &args) {
+@@ -1188,7 +1195,11 @@ static void readConfigs(opt::InputArgList &args) {
    config->zOrigin = hasZOption(args, "origin");
    config->zPacPlt = hasZOption(args, "pac-plt");
    config->zRelro = getZFlag(args, "relro", "norelro", true);
@@ -52,7 +61,7 @@ Index: tools/lld/ELF/Driver.cpp
    config->zRodynamic = hasZOption(args, "rodynamic");
    config->zSeparate = getZSeparate(args);
    config->zShstk = hasZOption(args, "shstk");
-@@ -1421,7 +1432,7 @@ void LinkerDriver::inferMachineType() {
+@@ -1596,7 +1607,7 @@ void LinkerDriver::inferMachineType() {
  }
  
  // Parse -z max-page-size=<value>. The default value is defined by
@@ -61,7 +70,7 @@ Index: tools/lld/ELF/Driver.cpp
  static uint64_t getMaxPageSize(opt::InputArgList &args) {
    uint64_t val = args::getZOptionValue(args, OPT_z, "max-page-size",
                                         target->defaultMaxPageSize);
-@@ -1436,7 +1447,7 @@ static uint64_t getMaxPageSize(opt::InputArgList &args
+@@ -1611,7 +1622,7 @@ static uint64_t getMaxPageSize(opt::InputArgList &args
  }
  
  // Parse -z common-page-size=<value>. The default value is defined by
@@ -70,7 +79,7 @@ Index: tools/lld/ELF/Driver.cpp
  static uint64_t getCommonPageSize(opt::InputArgList &args) {
    uint64_t val = args::getZOptionValue(args, OPT_z, "common-page-size",
                                         target->defaultCommonPageSize);
-@@ -1453,6 +1464,16 @@ static uint64_t getCommonPageSize(opt::InputArgList &a
+@@ -1628,6 +1639,16 @@ static uint64_t getCommonPageSize(opt::InputArgList &a
    return val;
  }
  
@@ -87,7 +96,7 @@ Index: tools/lld/ELF/Driver.cpp
  // Parses -image-base option.
  static Optional<uint64_t> getImageBase(opt::InputArgList &args) {
    // Because we are using "Config->maxPageSize" here, this function has to be
-@@ -2088,6 +2109,11 @@ template <class ELFT> void LinkerDriver::link(opt::Inp
+@@ -2414,6 +2435,11 @@ template <class ELFT> void LinkerDriver::link(opt::Inp
    // optimizations such as DATA_SEGMENT_ALIGN in linker scripts. LLD's use of it
    // is limited to writing trap instructions on the last executable segment.
    config->commonPageSize = getCommonPageSize(args);
