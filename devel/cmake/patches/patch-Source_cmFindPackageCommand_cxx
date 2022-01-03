@@ -1,0 +1,22 @@
+$OpenBSD: patch-Source_cmFindPackageCommand_cxx,v 1.1 2022/01/03 16:18:52 rsadowski Exp $
+
+Disable find_package QUIET option in openbsd ports builds.
+
+Index: Source/cmFindPackageCommand.cxx
+--- Source/cmFindPackageCommand.cxx.orig
++++ Source/cmFindPackageCommand.cxx
+@@ -256,7 +256,13 @@ bool cmFindPackageCommand::InitialPass(std::vector<std
+   std::set<unsigned int> moduleArgs;
+   for (unsigned int i = 1; i < args.size(); ++i) {
+     if (args[i] == "QUIET") {
+-      this->Quiet = true;
++      std::string openbsd_build;
++      bool quiet = true;
++      if (cmSystemTools::GetEnv("MODCMAKE_PORT_BUILD", openbsd_build)) {
++        if (openbsd_build == std::string("yes"))
++          quiet = false;
++      }
++      this->Quiet = quiet;
+       doing = DoingNone;
+     } else if (args[i] == "EXACT") {
+       this->VersionExact = true;
