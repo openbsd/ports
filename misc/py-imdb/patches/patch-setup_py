@@ -1,21 +1,13 @@
-$OpenBSD: patch-setup_py,v 1.6 2014/11/07 02:27:09 millert Exp $
---- setup.py.orig	Fri May  2 14:42:07 2014
-+++ setup.py	Tue Nov  4 06:11:26 2014
-@@ -71,7 +71,7 @@ scripts = ['./bin/get_first_movie.py',
- 
- # XXX: I'm not sure that 'etc' is a good idea.  Making it an absolute
- #      path seems a recipe for a disaster (with bdist_egg, at least).
--data_files = [('doc', setuptools.findall('docs')), ('etc', ['docs/imdbpy.cfg'])]
-+data_files = [('share/doc/py-imdb', setuptools.findall('docs')), ('share/examples/py-imdb', ['docs/imdbpy.cfg'])]
- 
- 
- # Defining these 'features', it's possible to run commands like:
-@@ -130,7 +130,7 @@ params = {
-         'url': home_page,
-         'download_url': dwnl_url,
-         # Scripts.
--        'scripts': scripts,
-+        #'scripts': scripts,
-         # Documentation files.
-         'data_files': data_files,
-         # C extensions.
+$OpenBSD: patch-setup_py,v 1.7 2022/01/03 00:39:21 daniel Exp $
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -92,7 +92,7 @@ params = {
+     'classifiers': [_f for _f in classifiers.split("\n") if _f],
+     'url': home_page,
+     'download_url': dwnl_url,
+-    'scripts': scripts,
++    #'scripts': scripts,
+     'package_data': {
+         # Here, the "*" represents any possible language ID.
+         'imdb.locale': [
