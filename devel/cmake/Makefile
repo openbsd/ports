@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.199 2021/07/06 16:55:32 daniel Exp $
+# $OpenBSD: Makefile,v 1.200 2022/01/03 12:21:50 sthen Exp $
 
 DPB_PROPERTIES =	parallel
 
@@ -82,7 +82,7 @@ pre-configure:
 	${SUBST_CMD} ${SUBST_FILES}
 
 post-install:
-	@find ${WRKINST}${LOCALBASE} \( -name "*.bak" -o -name "*.orig" -o \
-		-name "*.beforesubst" \) -delete
+	@find ${WRKINST}${LOCALBASE} \( -name "*.bak" -o -name "*${PATCHORIG}" \
+	    -o -name "*.beforesubst" \) -delete
 
 .include <bsd.port.mk>
