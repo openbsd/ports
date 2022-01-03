@@ -1,0 +1,31 @@
+$OpenBSD: patch-Source_cmFileCommand_cxx,v 1.5 2022/01/03 15:10:14 sthen Exp $
+
+Index: Source/cmFileCommand.cxx
+--- Source/cmFileCommand.cxx.orig
++++ Source/cmFileCommand.cxx
+@@ -1599,6 +1599,12 @@ bool HandleDownloadCommand(std::vector<std::string> co
+                            cmExecutionStatus& status)
+ {
+ #if !defined(CMAKE_BOOTSTRAP)
++  std::string openbsd_build;
++  if ((cmSystemTools::GetEnv("MODCMAKE_PORT_BUILD", openbsd_build) &&
++     openbsd_build == std::string("yes"))) {
++    status.SetError("DOWNLOAD not supported in OpenBSD ports builds.");
++    return false;
++  }
+   auto i = args.begin();
+   if (args.size() < 2) {
+     status.SetError("DOWNLOAD must be called with at least two arguments.");
+@@ -1985,6 +1991,12 @@ bool HandleUploadCommand(std::vector<std::string> cons
+                          cmExecutionStatus& status)
+ {
+ #if !defined(CMAKE_BOOTSTRAP)
++  std::string openbsd_build;
++  if ((cmSystemTools::GetEnv("MODCMAKE_PORT_BUILD", openbsd_build) &&
++     openbsd_build == std::string("yes"))) {
++    status.SetError("UPLOAD not supported in OpenBSD ports builds.");
++    return false;
++  }
+   if (args.size() < 3) {
+     status.SetError("UPLOAD must be called with at least three arguments.");
+     return false;
