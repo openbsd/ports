@@ -1,0 +1,18 @@
+$OpenBSD: patch-loader_unknown_ext_chain_gas_aarch64_S,v 1.1 2022/01/03 05:10:10 jsg Exp $
+
+loader/aarch64: attempt to avoid text relocations in the unknown code
+a11162fcaca808eb91c0fa4fbcce99bbcd5d3be2
+
+Index: loader/unknown_ext_chain_gas_aarch64.S
+--- loader/unknown_ext_chain_gas_aarch64.S.orig
++++ loader/unknown_ext_chain_gas_aarch64.S
+@@ -50,7 +50,8 @@ terminError\num:
+     mov     x0, x11                             // Vulkan instance pointer (first arg)
+     mov     x1, VK_DEBUG_REPORT_ERROR_BIT_EXT   // The error logging bit (second arg)
+     mov     x2, #0                              // Zero (third arg)
+-    ldr     x3, =termin_error_string            // The error string (fourth arg)
++    adrp    x9, termin_error_string
++    add     x3, x9, #:lo12:termin_error_string  // The error string (fourth arg)
+     ldr     x4, [x11, x10]                      // The function name (fifth arg)
+     bl      loader_log                          // Log the error message before we crash
+     mov     x0, #0
