@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2022/01/03 08:10:50 rsadowski Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -739,7 +739,7 @@ if(ENABLE_EXAMPLES AND "${CMAKE_GENERATOR}" MATCHES "M
+ endif()
+ 
+ if(BUILD_SHARED_LIBS)
+-  if(NOT WIN32 AND NOT APPLE)
++  if(NOT WIN32 AND NOT APPLE AND NOT CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
+     # The -z defs linker option reports unresolved symbol references from object
+     # files when building a shared library.
+     if("${CMAKE_VERSION}" VERSION_LESS "3.13")
