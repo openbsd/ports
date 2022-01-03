@@ -1,37 +1,36 @@
-# $OpenBSD: Makefile,v 1.54 2021/11/06 12:37:43 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.55 2022/01/03 10:01:23 rsadowski Exp $
 
-COMMENT =		advanced drawing and image manipulation
+COMMENT =	advanced drawing and image manipulation
 
-VERSION =		4.4.8
-DISTNAME =		krita-${VERSION}
-REVISION =		0
+VERSION =	5.0.0
+DISTNAME =	krita-${VERSION}
 
 SHARED_LIBS +=  kritabasicflakes          4.0 # 16.0
-SHARED_LIBS +=  kritacolord               1.0 # 16.0
-SHARED_LIBS +=  kritaflake                6.2 # 16.0
-SHARED_LIBS +=  kritaodf                  2.0 # 16.0
-SHARED_LIBS +=  kritapigment              6.0 # 16.0
-SHARED_LIBS +=  kritaplugin               1.0 # 16.0
-SHARED_LIBS +=  kritastore                2.0 # 16.0
-SHARED_LIBS +=  kritatext                 1.0 # 16.0
-SHARED_LIBS +=  kritatextlayout           1.0 # 16.0
+SHARED_LIBS +=  kritacolord               2.0 # 16.0
+SHARED_LIBS +=  kritaflake                7.0 # 16.0
+SHARED_LIBS +=  kritapigment              7.0 # 16.0
+SHARED_LIBS +=  kritaplugin               2.0 # 16.0
+SHARED_LIBS +=  kritastore                3.0 # 16.0
 SHARED_LIBS +=  kritaversion              1.0 # 16.0
-SHARED_LIBS +=  kritawidgets              4.2 # 16.0
-SHARED_LIBS +=  kritawidgetutils          4.0 # 16.0
-SHARED_LIBS +=  kritacommand              2.0 # 16.0
-SHARED_LIBS +=  kritaimpex                1.0 # 16.0
-SHARED_LIBS +=  kritalibkis               3.2 # 16.0
-SHARED_LIBS +=  kritalibkra               4.0 # 16.0
-SHARED_LIBS +=  kritaqml                  2.0 # 16.0
-SHARED_LIBS +=  kritametadata             0.0 # 18.0
+SHARED_LIBS +=  kritawidgets              5.0 # 16.0
+SHARED_LIBS +=  kritawidgetutils          5.0 # 16.0
+SHARED_LIBS +=  kritacommand              3.0 # 16.0
+SHARED_LIBS +=  kritaimpex                2.0 # 16.0
+SHARED_LIBS +=  kritalibkis               3.0 # 16.0
+SHARED_LIBS +=  kritalibkra               5.0 # 16.0
+SHARED_LIBS +=  kritaqml                  3.0 # 16.0
+SHARED_LIBS +=  kritametadata             1.0 # 18.0
+SHARED_LIBS +=  kritaqmicinterface        0.0 # 17.0
+SHARED_LIBS +=  kritaresources            0.0 # 17.0
+SHARED_LIBS +=  kritaresourcewidgets      0.0 # 17.0
 # XXX Version numbers from editors/calligra 2.x port
-SHARED_LIBS +=  kritapsd                  3.1 # 14.0
-SHARED_LIBS +=  kritacolor                2.0 # 14.0
-SHARED_LIBS +=  kritaglobal               4.4 # 14.0
-SHARED_LIBS +=  kritaimage                60.0 # 0.0
-SHARED_LIBS +=  kritalibbrush             56.0 # 0.0
-SHARED_LIBS +=  kritalibpaintop           56.0 # 0.0
-SHARED_LIBS +=  kritaui                   62.0 # 0.0
+SHARED_LIBS +=  kritapsd                  4.0 # 14.0
+SHARED_LIBS +=  kritacolor                3.0 # 14.0
+SHARED_LIBS +=  kritaglobal               5.0 # 14.0
+SHARED_LIBS +=  kritaimage                61.0 # 0.0
+SHARED_LIBS +=  kritalibbrush             57.0 # 0.0
+SHARED_LIBS +=  kritalibpaintop           57.0 # 0.0
+SHARED_LIBS +=  kritaui                   63.0 # 0.0
 
 CATEGORIES =	graphics
 
@@ -44,16 +43,16 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2+, LGPLv2+ and GNU FDLv1.2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE Iex-3_1 OpenEXR-3_1
-WANTLIB += IlmThread-3_1 Imath-3_1 KF5Completion KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5CoreAddons KF5Crash KF5GuiAddons KF5I18n
-WANTLIB += KF5ItemViews KF5WidgetsAddons KF5WindowSystem OpenColorIO
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
-WANTLIB += Qt5Network Qt5PrintSupport Qt5Qml Qt5QmlModels Qt5Quick
-WANTLIB += Qt5QuickWidgets Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xml
-WANTLIB += SM X11 Xext Xi boost_system-mt c exiv2 fftw3 gif gsl
-WANTLIB += gslcblas heif jpeg lcms2 m openjp2 png poppler poppler-qt5
-WANTLIB += quazip5 raw tiff z
+WANTLIB += ${COMPILER_LIBCXX} ICE Iex-3_1 IlmThread-3_1 Imath-3_1
+WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5CoreAddons
+WANTLIB += KF5Crash KF5GuiAddons KF5I18n KF5ItemViews KF5WidgetsAddons
+WANTLIB += KF5WindowSystem OpenColorIO OpenEXR-3_1 Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Multimedia Qt5Network Qt5PrintSupport
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Sql
+WANTLIB += Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xml SM X11 Xext Xi
+WANTLIB += boost_system-mt c exiv2 fftw3 gif gsl gslcblas heif
+WANTLIB += jpeg lcms2 m openjp2 png poppler poppler-qt5 quazip5
+WANTLIB += raw tiff webp z
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/krita/${VERSION}/}
 EXTRACT_SUFX =	.tar.gz
@@ -85,6 +84,7 @@ LIB_DEPENDS =		archivers/quazip \
 			graphics/jpeg \
 			graphics/lcms2 \
 			graphics/libraw \
+			graphics/libwebp \
 			graphics/opencolorio \
 			graphics/openexr \
 			graphics/openjp2 \
@@ -110,6 +110,8 @@ CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_SIP=ON \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Vc=ON \
 			-DCMAKE_DISABLE_FIND_PACKAGE_PyQt5=ON \
 			-DCMAKE_DISABLE_FIND_PACKAGE_SeExpr2=ON
+
+CONFIGURE_ARGS +=	-DENABLE_UPDATERS=OFF
 
 # Fix build with OpenEXR>=3 (Imath split)
 CXXFLAGS +=		-I${LOCALBASE}/include/Imath

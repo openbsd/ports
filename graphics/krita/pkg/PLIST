@@ -1,16 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.21 2021/11/06 12:37:43 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.22 2022/01/03 10:01:23 rsadowski Exp $
 @conflict calligra-<=2.9.11
 @bin bin/krita
 @bin bin/krita_version
+include/kis_qmic_interface.h
+include/kis_qmic_plugin_interface.h
+include/kritaqmicinterface_export.h
 lib/kritaplugins/
 @so lib/kritaplugins/krita_colorspaces_extensions.so
 @so lib/kritaplugins/krita_flaketools.so
 @so lib/kritaplugins/krita_karbontools.so
 @so lib/kritaplugins/krita_raw_import.so
-@so lib/kritaplugins/krita_shape_artistictext.so
 @so lib/kritaplugins/krita_shape_image.so
 @so lib/kritaplugins/krita_shape_paths.so
-@so lib/kritaplugins/krita_shape_text.so
 @so lib/kritaplugins/krita_tool_svgtext.so
 @so lib/kritaplugins/kritaanimationdocker.so
 @so lib/kritaplugins/kritaarrangedocker.so
@@ -35,6 +36,7 @@ lib/kritaplugins/
 @so lib/kritaplugins/kritacsvexport.so
 @so lib/kritaplugins/kritacsvimport.so
 @so lib/kritaplugins/kritacurvepaintop.so
+@so lib/kritaplugins/kritadbexplorer.so
 @so lib/kritaplugins/kritadefaultpaintops.so
 @so lib/kritaplugins/kritadefaulttools.so
 @so lib/kritaplugins/kritadeformpaintop.so
@@ -67,7 +69,6 @@ lib/kritaplugins/
 @so lib/kritaplugins/kritahistogramdocker.so
 @so lib/kritaplugins/kritahistorydocker.so
 @so lib/kritaplugins/kritaimageenhancement.so
-@so lib/kritaplugins/kritaimagesize.so
 @so lib/kritaplugins/kritaimagesplit.so
 @so lib/kritaplugins/kritaindexcolors.so
 @so lib/kritaplugins/kritajp2import.so
@@ -75,6 +76,7 @@ lib/kritaplugins/
 @so lib/kritaplugins/kritajpegimport.so
 @so lib/kritaplugins/kritakraexport.so
 @so lib/kritaplugins/kritakraimport.so
+@so lib/kritaplugins/kritakrzexport.so
 @so lib/kritaplugins/kritalayerdocker.so
 @so lib/kritaplugins/kritalayergroupswitcher.so
 @so lib/kritaplugins/kritalayersplit.so
@@ -113,6 +115,7 @@ lib/kritaplugins/
 @so lib/kritaplugins/kritaqmlexport.so
 @so lib/kritaplugins/kritaraindropsfilter.so
 @so lib/kritaplugins/kritarandompickfilter.so
+@so lib/kritaplugins/kritarecorderdocker.so
 @so lib/kritaplugins/kritaresourcemanager.so
 @so lib/kritaplugins/kritarotateimage.so
 @so lib/kritaplugins/kritaroundcornersfilter.so
@@ -129,6 +132,7 @@ lib/kritaplugins/
 @so lib/kritaplugins/kritaspecificcolorselector.so
 @so lib/kritaplugins/kritaspraypaintop.so
 @so lib/kritaplugins/kritaspriterexport.so
+@so lib/kritaplugins/kritastoryboarddocker.so
 @so lib/kritaplugins/kritasvgcollectiondocker.so
 @so lib/kritaplugins/kritasvgimport.so
 @so lib/kritaplugins/kritatangentnormalpaintop.so
@@ -149,6 +153,8 @@ lib/kritaplugins/
 @so lib/kritaplugins/kritaunsharpfilter.so
 @so lib/kritaplugins/kritawavefilter.so
 @so lib/kritaplugins/kritawaveletdecompose.so
+@so lib/kritaplugins/kritawebpexport.so
+@so lib/kritaplugins/kritawebpimport.so
 @so lib/kritaplugins/kritaxcfimport.so
 @lib lib/libkritabasicflakes.so.${LIBkritabasicflakes_VERSION}
 @lib lib/libkritacolor.so.${LIBkritacolor_VERSION}
@@ -163,19 +169,18 @@ lib/kritaplugins/
 @lib lib/libkritalibkra.so.${LIBkritalibkra_VERSION}
 @lib lib/libkritalibpaintop.so.${LIBkritalibpaintop_VERSION}
 @lib lib/libkritametadata.so.${LIBkritametadata_VERSION}
-@lib lib/libkritaodf.so.${LIBkritaodf_VERSION}
 @lib lib/libkritapigment.so.${LIBkritapigment_VERSION}
 @lib lib/libkritaplugin.so.${LIBkritaplugin_VERSION}
 @lib lib/libkritapsd.so.${LIBkritapsd_VERSION}
+@lib lib/libkritaqmicinterface.so.${LIBkritaqmicinterface_VERSION}
 @lib lib/libkritaqml.so.${LIBkritaqml_VERSION}
+@lib lib/libkritaresources.so.${LIBkritaresources_VERSION}
+@lib lib/libkritaresourcewidgets.so.${LIBkritaresourcewidgets_VERSION}
 @lib lib/libkritastore.so.${LIBkritastore_VERSION}
-@lib lib/libkritatext.so.${LIBkritatext_VERSION}
-@lib lib/libkritatextlayout.so.${LIBkritatextlayout_VERSION}
 @lib lib/libkritaui.so.${LIBkritaui_VERSION}
 @lib lib/libkritaversion.so.${LIBkritaversion_VERSION}
 @lib lib/libkritawidgets.so.${LIBkritawidgets_VERSION}
 @lib lib/libkritawidgetutils.so.${LIBkritawidgetutils_VERSION}
-lib/qt5/qml/org/
 lib/qt5/qml/org/krita/
 lib/qt5/qml/org/krita/draganddrop/
 @so lib/qt5/qml/org/krita/draganddrop/libdraganddropplugin.so
@@ -184,6 +189,7 @@ lib/qt5/qml/org/krita/sketch/
 lib/qt5/qml/org/krita/sketch/components/
 lib/qt5/qml/org/krita/sketch/components/BusyIndicator.qml
 lib/qt5/qml/org/krita/sketch/components/Button.qml
+lib/qt5/qml/org/krita/sketch/components/ButtonSquared.qml
 lib/qt5/qml/org/krita/sketch/components/CategorySwitcher.qml
 lib/qt5/qml/org/krita/sketch/components/CheckBox.qml
 lib/qt5/qml/org/krita/sketch/components/ColorSwatch.qml
@@ -223,6 +229,7 @@ share/applications/krita_heightmap.desktop
 share/applications/krita_jp2.desktop
 share/applications/krita_jpeg.desktop
 share/applications/krita_kra.desktop
+share/applications/krita_krz.desktop
 share/applications/krita_ora.desktop
 share/applications/krita_pdf.desktop
 share/applications/krita_png.desktop
@@ -233,6 +240,7 @@ share/applications/krita_spriter.desktop
 share/applications/krita_svg.desktop
 share/applications/krita_tga.desktop
 share/applications/krita_tiff.desktop
+share/applications/krita_webp.desktop
 share/applications/krita_xcf.desktop
 share/applications/org.kde.krita.desktop
 share/color/
@@ -320,9 +328,12 @@ share/krita/actions/KisToolTransform.action
 share/krita/actions/MoveTool.action
 share/krita/actions/PathTool.action
 share/krita/actions/SvgTextTool.action
+share/krita/actions/dbexplorer.action
 share/krita/actions/krita.action
 share/krita/actions/kritamenu.action
+share/krita/actions/recorder.action
 share/krita/actions/threshold.action
+share/krita/actions/tools.action
 share/krita/brushes/
 share/krita/brushes/triangle.svg
 share/krita/bundles/
@@ -331,26 +342,6 @@ share/krita/bundles/Krita_4_Default_Resources.bundle
 share/krita/bundles/Krita_Artists_SeExpr_examples.bundle
 share/krita/bundles/README
 share/krita/bundles/RGBA_brushes.bundle
-share/krita/defaultpresets/
-share/krita/defaultpresets/colorsmudge.kpp
-share/krita/defaultpresets/complex.kpp
-share/krita/defaultpresets/curvebrush.kpp
-share/krita/defaultpresets/deformbrush.kpp
-share/krita/defaultpresets/duplicate.kpp
-share/krita/defaultpresets/dynabrush.kpp
-share/krita/defaultpresets/eraser.kpp
-share/krita/defaultpresets/experimentbrush.kpp
-share/krita/defaultpresets/filter.kpp
-share/krita/defaultpresets/gridbrush.kpp
-share/krita/defaultpresets/hairybrush.kpp
-share/krita/defaultpresets/hatchingbrush.kpp
-share/krita/defaultpresets/paintbrush.kpp
-share/krita/defaultpresets/particlebrush.kpp
-share/krita/defaultpresets/roundmarker.kpp
-share/krita/defaultpresets/sketchbrush.kpp
-share/krita/defaultpresets/smudge.kpp
-share/krita/defaultpresets/spraybrush.kpp
-share/krita/defaultpresets/tangentnormal.kpp
 share/krita/donation/
 share/krita/donation/banner.png
 share/krita/dtd/
@@ -360,10 +351,8 @@ share/krita/gamutmasks/Atmosphere_With_Accent.kgm
 share/krita/gamutmasks/Atmospheric_Triad.kgm
 share/krita/gamutmasks/Complementary.kgm
 share/krita/gamutmasks/Dominant_Hue_With_Accent.kgm
-share/krita/gamutmasks/GamutMaskTemplate.kra
 share/krita/gamutmasks/Shifted_Triad.kgm
 share/krita/gamutmasks/Split_Complementary.kgm
-share/krita/gamutmasks/empty_mask_preview.png
 share/krita/gradients/
 share/krita/gradients/BG-Krita2.ggr
 share/krita/gradients/GPS-FG-Glare.ggr
@@ -415,6 +404,15 @@ share/krita/metadata/schemas/xmp.schema
 share/krita/metadata/schemas/xmpmm.schema
 share/krita/metadata/schemas/xmprights.schema
 share/krita/paintoppresets/
+share/krita/paintoppresets/Digital.tag
+share/krita/paintoppresets/Erasers.tag
+share/krita/paintoppresets/FX.tag
+share/krita/paintoppresets/Favorites.tag
+share/krita/paintoppresets/Ink.tag
+share/krita/paintoppresets/Paint.tag
+share/krita/paintoppresets/Pixel_Art.tag
+share/krita/paintoppresets/Sketch.tag
+share/krita/paintoppresets/Textures.tag
 share/krita/paintoppresets/a)_Eraser_Circle.kpp
 share/krita/paintoppresets/b)_Basic-5_Size_default.kpp
 share/krita/paintoppresets/j)_WaterC_Basic_Lines-Dry.kpp
@@ -432,6 +430,7 @@ share/krita/paintoppresets/j)_WaterC_Spread.kpp
 share/krita/paintoppresets/j)_WaterC_Spread_WideArea.kpp
 share/krita/paintoppresets/j)_WaterC_Water-Pattern.kpp
 share/krita/palettes/
+share/krita/palettes/animation-color-set.gpl
 share/krita/palettes/concept-cookie.gpl
 share/krita/palettes/default.gpl
 share/krita/palettes/gradient.gpl
@@ -558,14 +557,6 @@ share/krita/patterns/generic_paper1.pat
 share/krita/patterns/generic_paper2.pat
 share/krita/patterns/hexacolBW__2.pat
 share/krita/pics/
-share/krita/pics/dark_arrow_east.png
-share/krita/pics/dark_arrow_north.png
-share/krita/pics/dark_arrow_north_east.png
-share/krita/pics/dark_arrow_north_west.png
-share/krita/pics/dark_arrow_south.png
-share/krita/pics/dark_arrow_south_east.png
-share/krita/pics/dark_arrow_south_west.png
-share/krita/pics/dark_arrow_west.png
 share/krita/pics/dark_krita_tool_assistant.png
 share/krita/pics/dark_template_DIN_A3_landscape.png
 share/krita/pics/dark_template_DIN_A4_portrait.png
@@ -577,19 +568,10 @@ share/krita/pics/dark_template_ratio_2391.png
 share/krita/pics/dark_template_ratio_43.png
 share/krita/pics/dark_template_texture.png
 share/krita/pics/dark_template_web_design.png
-share/krita/pics/extended_color_selector.png
 share/krita/pics/kis_colselng_color_patches.png
 share/krita/pics/kis_colselng_color_triangle.png
 share/krita/pics/kis_colselng_my_paint_shade_selector.png
 share/krita/pics/krita_tool_assistant.png
-share/krita/pics/light_arrow_east.png
-share/krita/pics/light_arrow_north.png
-share/krita/pics/light_arrow_north_east.png
-share/krita/pics/light_arrow_north_west.png
-share/krita/pics/light_arrow_south.png
-share/krita/pics/light_arrow_south_east.png
-share/krita/pics/light_arrow_south_west.png
-share/krita/pics/light_arrow_west.png
 share/krita/pics/light_krita_tool_assistant.png
 share/krita/pics/light_template_DIN_A3_landscape.png
 share/krita/pics/light_template_DIN_A4_portrait.png
@@ -610,6 +592,10 @@ share/krita/predefined_image_sizes/A5__300_ppi_.predefinedimage
 share/krita/predefined_image_sizes/A5__600_ppi_.predefinedimage
 share/krita/predefined_image_sizes/A6__300_ppi_.predefinedimage
 share/krita/predefined_image_sizes/A6__600_ppi_.predefinedimage
+share/krita/predefined_image_sizes/Film_16_9_4K.predefinedimage
+share/krita/predefined_image_sizes/Film_4_3_4K.predefinedimage
+share/krita/predefined_image_sizes/Film_64_27_4K_Wide.predefinedimage
+share/krita/predefined_image_sizes/Pixel_240x256.predefinedimage
 share/krita/predefined_image_sizes/Texture_1024x1024.predefinedimage
 share/krita/predefined_image_sizes/Texture_2048x2048.predefinedimage
 share/krita/predefined_image_sizes/Texture_256x256.predefinedimage
@@ -765,22 +751,29 @@ share/krita/qmlthemes/default/icons/add-black.svg
 share/krita/qmlthemes/default/icons/add.svg
 share/krita/qmlthemes/default/icons/apply-black.svg
 share/krita/qmlthemes/default/icons/apply.svg
+share/krita/qmlthemes/default/icons/back-black.svg
 share/krita/qmlthemes/default/icons/back.svg
 share/krita/qmlthemes/default/icons/camera-black.svg
 share/krita/qmlthemes/default/icons/cancel-black.svg
 share/krita/qmlthemes/default/icons/checkbox-checked.svg
 share/krita/qmlthemes/default/icons/checkbox-unchecked.svg
 share/krita/qmlthemes/default/icons/checker-small.svg
+share/krita/qmlthemes/default/icons/close-black.svg
 share/krita/qmlthemes/default/icons/close.svg
+share/krita/qmlthemes/default/icons/color_wheel-black.svg
 share/krita/qmlthemes/default/icons/color_wheel.svg
-share/krita/qmlthemes/default/icons/colorpicker.svg
+share/krita/qmlthemes/default/icons/colorsampler-black.svg
+share/krita/qmlthemes/default/icons/colorsampler.svg
 share/krita/qmlthemes/default/icons/combo-arrows-white.svg
 share/krita/qmlthemes/default/icons/crop-black.svg
 share/krita/qmlthemes/default/icons/crop.svg
 share/krita/qmlthemes/default/icons/delete-black.svg
 share/krita/qmlthemes/default/icons/delete.svg
+share/krita/qmlthemes/default/icons/down-black.svg
 share/krita/qmlthemes/default/icons/down.svg
+share/krita/qmlthemes/default/icons/edit-black.svg
 share/krita/qmlthemes/default/icons/edit.svg
+share/krita/qmlthemes/default/icons/erase-black.svg
 share/krita/qmlthemes/default/icons/erase.svg
 share/krita/qmlthemes/default/icons/expansionmarker.svg
 share/krita/qmlthemes/default/icons/fileclip-black.svg
@@ -789,17 +782,22 @@ share/krita/qmlthemes/default/icons/filenew-black.svg
 share/krita/qmlthemes/default/icons/filenew.svg
 share/krita/qmlthemes/default/icons/fileopen-black.svg
 share/krita/qmlthemes/default/icons/fileopen.svg
+share/krita/qmlthemes/default/icons/filesave-black.svg
 share/krita/qmlthemes/default/icons/filesave.svg
+share/krita/qmlthemes/default/icons/filesaveas-black.svg
 share/krita/qmlthemes/default/icons/filesaveas.svg
+share/krita/qmlthemes/default/icons/fileshare-black.svg
 share/krita/qmlthemes/default/icons/fileshare.svg
 share/krita/qmlthemes/default/icons/fill-black.svg
 share/krita/qmlthemes/default/icons/fill.svg
 share/krita/qmlthemes/default/icons/filter_delete-black.svg
 share/krita/qmlthemes/default/icons/filter_load-black.svg
 share/krita/qmlthemes/default/icons/filter_save-black.svg
+share/krita/qmlthemes/default/icons/forward-black.svg
 share/krita/qmlthemes/default/icons/forward.svg
 share/krita/qmlthemes/default/icons/gradient-black.svg
 share/krita/qmlthemes/default/icons/gradient.svg
+share/krita/qmlthemes/default/icons/help-black.svg
 share/krita/qmlthemes/default/icons/help.svg
 share/krita/qmlthemes/default/icons/krita_sketch.svg
 share/krita/qmlthemes/default/icons/layer_clear.svg
@@ -815,6 +813,7 @@ share/krita/qmlthemes/default/icons/locked_off-black.svg
 share/krita/qmlthemes/default/icons/locked_off-small.svg
 share/krita/qmlthemes/default/icons/locked_on-black.svg
 share/krita/qmlthemes/default/icons/locked_on-small.svg
+share/krita/qmlthemes/default/icons/minimize-black.svg
 share/krita/qmlthemes/default/icons/minimize.svg
 share/krita/qmlthemes/default/icons/mirror_c-black.svg
 share/krita/qmlthemes/default/icons/mirror_h-black.svg
@@ -827,25 +826,36 @@ share/krita/qmlthemes/default/icons/palette-add-black.svg
 share/krita/qmlthemes/default/icons/palette-black.svg
 share/krita/qmlthemes/default/icons/palette-delete-black.svg
 share/krita/qmlthemes/default/icons/palette.svg
+share/krita/qmlthemes/default/icons/redo-black.svg
 share/krita/qmlthemes/default/icons/redo.svg
 share/krita/qmlthemes/default/icons/select-add.svg
 share/krita/qmlthemes/default/icons/select-apply.svg
 share/krita/qmlthemes/default/icons/select-area.svg
 share/krita/qmlthemes/default/icons/select-color.svg
+share/krita/qmlthemes/default/icons/select-deselect-black.svg
 share/krita/qmlthemes/default/icons/select-deselect.svg
+share/krita/qmlthemes/default/icons/select-hide-black.svg
 share/krita/qmlthemes/default/icons/select-hide.svg
 share/krita/qmlthemes/default/icons/select-intersect.svg
 share/krita/qmlthemes/default/icons/select-polygon.svg
 share/krita/qmlthemes/default/icons/select-rectangle.svg
 share/krita/qmlthemes/default/icons/select-replace.svg
+share/krita/qmlthemes/default/icons/select-reselect-black.svg
 share/krita/qmlthemes/default/icons/select-reselect.svg
+share/krita/qmlthemes/default/icons/select-show-black.svg
 share/krita/qmlthemes/default/icons/select-show.svg
 share/krita/qmlthemes/default/icons/select-sub.svg
+share/krita/qmlthemes/default/icons/settings-black.svg
 share/krita/qmlthemes/default/icons/settings.svg
+share/krita/qmlthemes/default/icons/square-black.svg
+share/krita/qmlthemes/default/icons/square.svg
+share/krita/qmlthemes/default/icons/switch-black.svg
 share/krita/qmlthemes/default/icons/switch.svg
 share/krita/qmlthemes/default/icons/transform-black.svg
 share/krita/qmlthemes/default/icons/transform.svg
+share/krita/qmlthemes/default/icons/undo-black.svg
 share/krita/qmlthemes/default/icons/undo.svg
+share/krita/qmlthemes/default/icons/up-black.svg
 share/krita/qmlthemes/default/icons/up.svg
 share/krita/qmlthemes/default/icons/visible_off-black.svg
 share/krita/qmlthemes/default/icons/visible_off-small.svg
@@ -853,6 +863,7 @@ share/krita/qmlthemes/default/icons/visible_off.svg
 share/krita/qmlthemes/default/icons/visible_on-black.svg
 share/krita/qmlthemes/default/icons/visible_on-small.svg
 share/krita/qmlthemes/default/icons/visible_on.svg
+share/krita/qmlthemes/default/icons/web-black.svg
 share/krita/qmlthemes/default/icons/web.svg
 share/krita/qmlthemes/default/images/
 share/krita/qmlthemes/default/images/busyindicator.png
@@ -961,20 +972,18 @@ share/krita/workspaces/Big_Vector.kws
 share/krita/workspaces/Default.kws
 share/krita/workspaces/Minimal.kws
 share/krita/workspaces/Small_Vector.kws
+share/krita/workspaces/Storyboarding.kws
 share/krita/workspaces/VFX_Paint.kws
 share/kritaplugins/
 share/kritaplugins/buginfo.xmlgui
 share/kritaplugins/clonesarray.xmlgui
 share/kritaplugins/colorrange.xmlgui
 share/kritaplugins/colorspaceconversion.xmlgui
+share/kritaplugins/dbexplorer.xmlgui
 share/kritaplugins/imageseparate.xmlgui
-share/kritaplugins/imagesize.xmlgui
 share/kritaplugins/imagesplit.xmlgui
 share/kritaplugins/layersplit.xmlgui
-share/kritaplugins/metadataeditor/
 share/kritaplugins/metadataeditor.xmlgui
-share/kritaplugins/metadataeditor/dublincore.xmlgui
-share/kritaplugins/metadataeditor/exif.xmlgui
 share/kritaplugins/modify_selection.xmlgui
 share/kritaplugins/offsetimage.xmlgui
 share/kritaplugins/resourcemanager.xmlgui
@@ -1051,6 +1060,9 @@ share/locale/uz/LC_MESSAGES/krita.mo
 share/locale/uz@cyrillic/LC_MESSAGES/krita.mo
 share/locale/vi/LC_MESSAGES/krita.mo
 share/locale/wa/LC_MESSAGES/krita.mo
+share/locale/x-test/
+share/locale/x-test/LC_MESSAGES/
+share/locale/x-test/LC_MESSAGES/krita.mo
 share/locale/xh/LC_MESSAGES/krita.mo
 share/locale/zh_CN/LC_MESSAGES/krita.mo
 share/locale/zh_TW/LC_MESSAGES/krita.mo
