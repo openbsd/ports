@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2021/11/02 00:02:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2022/01/03 11:05:10 sthen Exp $
 
 COMMENT=		implements an XML/HTML/XHTML markup safe string
 
-MODPY_EGG_VERSION=	1.1.1
+MODPY_EGG_VERSION=	2.0.1
 DISTNAME=		MarkupSafe-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		4
 
 CATEGORIES=		textproc
 
@@ -20,8 +19,6 @@ WANTLIB+=		${MODPY_WANTLIB} pthread
 
 MODPY_SETUPTOOLS=	Yes
 MODPY_PYTEST=		Yes
-
-TEST_ENV=		PYTHONPATH=${WRKSRC}/src
 
 FLAVORS=		python3
 FLAVOR=			python3

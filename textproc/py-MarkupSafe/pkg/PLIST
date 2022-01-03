@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/10/29 15:38:50 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2022/01/03 11:05:10 sthen Exp $
 @pkgpath textproc/py-MarkupSafe
 lib/python${MODPY_VERSION}/site-packages/MarkupSafe-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/MarkupSafe-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -9,11 +9,9 @@ lib/python${MODPY_VERSION}/site-packages/markupsafe/
 lib/python${MODPY_VERSION}/site-packages/markupsafe/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/markupsafe/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/markupsafe/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/markupsafe/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/markupsafe/${MODPY_PYCACHE}_constants.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markupsafe/${MODPY_PYCACHE}_native.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/markupsafe/_compat.py
-lib/python${MODPY_VERSION}/site-packages/markupsafe/_constants.py
 lib/python${MODPY_VERSION}/site-packages/markupsafe/_native.py
 lib/python${MODPY_VERSION}/site-packages/markupsafe/_speedups.c
 @so lib/python${MODPY_VERSION}/site-packages/markupsafe/_speedups.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/markupsafe/_speedups.pyi
+lib/python${MODPY_VERSION}/site-packages/markupsafe/py.typed
