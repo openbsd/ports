@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2021/12/17 18:22:33 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.29 2022/01/03 07:58:15 rsadowski Exp $
 bin/pycharm
 bin/pycharm-lightedit
 @man man/man1/pycharm.1
@@ -36,7 +36,7 @@ pycharm/lib/asm-tree-7.1.jar
 pycharm/lib/asm-util-7.1.jar
 pycharm/lib/async-profiler.jar
 pycharm/lib/bootstrap.jar
-pycharm/lib/build-marker-PC-213.5744.248
+pycharm/lib/build-marker-PC-213.6461.77
 pycharm/lib/byte-buddy-agent.jar
 pycharm/lib/cds/
 pycharm/lib/cds/classesLogAgent.jar
@@ -141,15 +141,15 @@ pycharm/plugins/cwm-plugin-projector/lib/cwm-plugin-projector.jar
 pycharm/plugins/cwm-plugin-projector/lib/projector/
 pycharm/plugins/cwm-plugin-projector/lib/projector/Java-WebSocket-1.4.0.jar
 pycharm/plugins/cwm-plugin-projector/lib/projector/kotlinx-serialization-protobuf-jvm-1.3.0.jar
-pycharm/plugins/cwm-plugin-projector/lib/projector/projector-agent-initialization-f1e52565.jar
-pycharm/plugins/cwm-plugin-projector/lib/projector/projector-awt-1f1cc5e8.jar
-pycharm/plugins/cwm-plugin-projector/lib/projector/projector-common-f1e52565.jar
-pycharm/plugins/cwm-plugin-projector/lib/projector/projector-common-jvm-f1e52565.jar
-pycharm/plugins/cwm-plugin-projector/lib/projector/projector-server-1f1cc5e8.jar
-pycharm/plugins/cwm-plugin-projector/lib/projector/projector-server-core-f1e52565.jar
-pycharm/plugins/cwm-plugin-projector/lib/projector/projector-util-agent-f1e52565.jar
-pycharm/plugins/cwm-plugin-projector/lib/projector/projector-util-loading-f1e52565.jar
-pycharm/plugins/cwm-plugin-projector/lib/projector/projector-util-logging-jvm-f1e52565.jar
+pycharm/plugins/cwm-plugin-projector/lib/projector/projector-awt-30f65afc.jar
+pycharm/plugins/cwm-plugin-projector/lib/projector/projector-common-1731046c.jar
+pycharm/plugins/cwm-plugin-projector/lib/projector/projector-common-jvm-1731046c.jar
+pycharm/plugins/cwm-plugin-projector/lib/projector/projector-ij-common-1731046c.jar
+pycharm/plugins/cwm-plugin-projector/lib/projector/projector-server-30f65afc.jar
+pycharm/plugins/cwm-plugin-projector/lib/projector/projector-server-core-1731046c.jar
+pycharm/plugins/cwm-plugin-projector/lib/projector/projector-util-agent-1731046c.jar
+pycharm/plugins/cwm-plugin-projector/lib/projector/projector-util-loading-1731046c.jar
+pycharm/plugins/cwm-plugin-projector/lib/projector/projector-util-logging-jvm-1731046c.jar
 pycharm/plugins/cwm-plugin/jre-build.txt
 pycharm/plugins/cwm-plugin/lib/
 pycharm/plugins/cwm-plugin/lib/bouncy-castle-pgp.jar
@@ -518,9 +518,13 @@ pycharm/plugins/python-ce/helpers/pip-20.3.4-py2.py3-none-any.whl
 pycharm/plugins/python-ce/helpers/pockets/
 pycharm/plugins/python-ce/helpers/pockets/__init__.py
 pycharm/plugins/python-ce/helpers/pockets/_version.py
+pycharm/plugins/python-ce/helpers/pockets/autolog.py
 pycharm/plugins/python-ce/helpers/pockets/collections.py
+pycharm/plugins/python-ce/helpers/pockets/datetime.py
+pycharm/plugins/python-ce/helpers/pockets/decorators.py
 pycharm/plugins/python-ce/helpers/pockets/inspect.py
 pycharm/plugins/python-ce/helpers/pockets/iterators.py
+pycharm/plugins/python-ce/helpers/pockets/logging.py
 pycharm/plugins/python-ce/helpers/pockets/string.py
 pycharm/plugins/python-ce/helpers/profiler/
 pycharm/plugins/python-ce/helpers/profiler/__init__.py
@@ -1760,6 +1764,7 @@ pycharm/plugins/python-ce/helpers/sphinxcontrib/
 pycharm/plugins/python-ce/helpers/sphinxcontrib/__init__.py
 pycharm/plugins/python-ce/helpers/sphinxcontrib/napoleon/
 pycharm/plugins/python-ce/helpers/sphinxcontrib/napoleon/__init__.py
+pycharm/plugins/python-ce/helpers/sphinxcontrib/napoleon/_upstream.py
 pycharm/plugins/python-ce/helpers/sphinxcontrib/napoleon/_version.py
 pycharm/plugins/python-ce/helpers/sphinxcontrib/napoleon/docstring.py
 pycharm/plugins/python-ce/helpers/syspath.py
