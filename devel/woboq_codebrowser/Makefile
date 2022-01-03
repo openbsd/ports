@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2021/05/13 10:44:14 semarie Exp $
+# $OpenBSD: Makefile,v 1.5 2022/01/03 21:35:48 jca Exp $
+
+BROKEN =	needs an update for LLVM 13
 
 COMMENT =	generator for the woboq code browser
 
