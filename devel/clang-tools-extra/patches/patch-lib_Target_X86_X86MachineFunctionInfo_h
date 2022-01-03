@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_X86_X86MachineFunctionInfo_h,v 1.4 2021/05/18 03:35:07 rsadowski Exp $
+$OpenBSD: patch-lib_Target_X86_X86MachineFunctionInfo_h,v 1.5 2022/01/03 21:36:42 rsadowski Exp $
 
 implement -msave-args in clang/llvm, like the sun did for gcc 
 
@@ -15,7 +15,7 @@ Index: lib/Target/X86/X86MachineFunctionInfo.h
    /// BytesToPopOnReturn - Number of bytes function pops on return (in addition
    /// to the space used by the return address).
    /// Used on windows platform for stdcall & fastcall name decoration
-@@ -138,6 +141,9 @@ class X86MachineFunctionInfo : public MachineFunctionI
+@@ -145,6 +148,9 @@ class X86MachineFunctionInfo : public MachineFunctionI
  
    unsigned getCalleeSavedFrameSize() const { return CalleeSavedFrameSize; }
    void setCalleeSavedFrameSize(unsigned bytes) { CalleeSavedFrameSize = bytes; }

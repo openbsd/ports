@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.5 2021/05/18 06:19:48 rsadowski Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.6 2022/01/03 21:36:42 rsadowski Exp $
 
 - Switch Powerpc64 Big Endian to ELFv2 on OpenBSD.
 - Adapt the -mfix-loongson2f-btb workaround from as(1) to LLVM/clang.
@@ -35,7 +35,7 @@ $OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.5 2021/05/18 06:
 Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
 --- tools/clang/lib/Driver/ToolChains/Clang.cpp.orig
 +++ tools/clang/lib/Driver/ToolChains/Clang.cpp
-@@ -2328,6 +2328,11 @@ static void CollectArgsForIntegratedAssembler(Compilat
+@@ -2489,6 +2489,11 @@ static void CollectArgsForIntegratedAssembler(Compilat
            CmdArgs.push_back("-soft-float");
            continue;
          }
@@ -47,7 +47,7 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
  
          MipsTargetFeature = llvm::StringSwitch<const char *>(Value)
                                  .Case("-mips1", "+mips1")
-@@ -4570,9 +4575,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -4943,9 +4948,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
        OFastEnabled ? options::OPT_Ofast : options::OPT_fstrict_aliasing;
    // We turn strict aliasing off by default if we're in CL mode, since MSVC
    // doesn't do any TBAA.
@@ -62,7 +62,7 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
      CmdArgs.push_back("-relaxed-aliasing");
    if (!Args.hasFlag(options::OPT_fstruct_path_tbaa,
                      options::OPT_fno_struct_path_tbaa))
-@@ -5342,7 +5350,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -5868,7 +5876,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                                        options::OPT_fno_strict_overflow)) {
      if (A->getOption().matches(options::OPT_fno_strict_overflow))
        CmdArgs.push_back("-fwrapv");
@@ -72,14 +72,11 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
  
    if (Arg *A = Args.getLastArg(options::OPT_freroll_loops,
                                 options::OPT_fno_reroll_loops))
-@@ -5359,10 +5368,51 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -5888,7 +5897,48 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                     options::OPT_mno_speculative_load_hardening, false))
      CmdArgs.push_back(Args.MakeArgString("-mspeculative-load-hardening"));
  
--  RenderSSPOptions(TC, Args, CmdArgs, KernelOrKext);
-   RenderSCPOptions(TC, Args, CmdArgs);
-   RenderTrivialAutoVarInitOptions(D, TC, Args, CmdArgs);
- 
+-  RenderSSPOptions(D, TC, Args, CmdArgs, KernelOrKext);
 +  // -ret-protector
 +  unsigned RetProtector = 1;
 +  if (Arg *A = Args.getLastArg(options::OPT_fno_ret_protector,
@@ -109,7 +106,7 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
 +        options::OPT__param); // ssp-buffer-size
 +  } else {
 +    // If we're not using retguard, then do the usual stack protector
-+    RenderSSPOptions(TC, Args, CmdArgs, KernelOrKext);
++    RenderSSPOptions(D, TC, Args, CmdArgs, KernelOrKext);
 +  }
 +
 +  // -fixup-gadgets
@@ -122,10 +119,10 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
 +      CmdArgs.push_back(Args.MakeArgString(Twine("-x86-fixup-gadgets=true")));
 +  }
 +
-   // Translate -mstackrealign
-   if (Args.hasFlag(options::OPT_mstackrealign, options::OPT_mno_stackrealign,
-                    false))
-@@ -5857,6 +5907,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+   RenderSCPOptions(TC, Args, CmdArgs);
+   RenderTrivialAutoVarInitOptions(D, TC, Args, CmdArgs);
+ 
+@@ -6445,6 +6495,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                                       options::OPT_fno_rewrite_imports, false);
    if (RewriteImports)
      CmdArgs.push_back("-frewrite-imports");

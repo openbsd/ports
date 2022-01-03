@@ -1,13 +1,13 @@
-$OpenBSD: patch-tools_clang_tools_scan-build_libexec_ccc-analyzer,v 1.1 2021/05/18 06:19:48 rsadowski Exp $
+$OpenBSD: patch-tools_clang_tools_scan-build_libexec_ccc-analyzer,v 1.2 2022/01/03 21:36:42 rsadowski Exp $
 
 Our default compilers are cc/c++.
 
 Index: tools/clang/tools/scan-build/libexec/ccc-analyzer
 --- tools/clang/tools/scan-build/libexec/ccc-analyzer.orig
 +++ tools/clang/tools/scan-build/libexec/ccc-analyzer
-@@ -81,8 +81,8 @@ if (`uname -a` =~ m/Darwin/) {
-     $UseXCRUN = 1;
-   }
+@@ -84,8 +84,8 @@ if (`uname -a` =~ m/Darwin/) {
+   $DefaultCCompiler = 'cc';
+   $DefaultCXXCompiler = 'c++';
  } else {
 -  $DefaultCCompiler = 'gcc';
 -  $DefaultCXXCompiler = 'g++';

@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_PowerPC_PPCFrameLowering_h,v 1.1 2021/05/18 03:35:07 rsadowski Exp $
+$OpenBSD: patch-lib_Target_PowerPC_PPCFrameLowering_h,v 1.2 2022/01/03 21:36:42 rsadowski Exp $
 
 Add RETGUARD implementation for powerpc and powerpc64.
 
@@ -13,7 +13,7 @@ Index: lib/Target/PowerPC/PPCFrameLowering.h
  #include "llvm/ADT/STLExtras.h"
  #include "llvm/CodeGen/TargetFrameLowering.h"
  #include "llvm/Target/TargetMachine.h"
-@@ -169,6 +170,9 @@ class PPCFrameLowering: public TargetFrameLowering { (
+@@ -173,6 +174,9 @@ class PPCFrameLowering: public TargetFrameLowering { (
    /// function prologue/epilogue.
    bool canUseAsPrologue(const MachineBasicBlock &MBB) const override;
    bool canUseAsEpilogue(const MachineBasicBlock &MBB) const override;

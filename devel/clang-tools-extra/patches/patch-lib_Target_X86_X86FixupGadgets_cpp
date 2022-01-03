@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_X86_X86FixupGadgets_cpp,v 1.4 2021/05/18 03:35:07 rsadowski Exp $
+$OpenBSD: patch-lib_Target_X86_X86FixupGadgets_cpp,v 1.5 2022/01/03 21:36:42 rsadowski Exp $
 
 - Add a clang pass that identifies potential ROP gadgets and replaces ROP
   friendly instructions with safe alternatives. This initial commit fixes
@@ -6,11 +6,12 @@ $OpenBSD: patch-lib_Target_X86_X86FixupGadgets_cpp,v 1.4 2021/05/18 03:35:07 rsa
   Additional problematic instructions can be fixed incrementally using
   this framework.
 - Improve the X86FixupGadgets pass
+- Optimize gadget fixups for MOV instructions
 
 Index: lib/Target/X86/X86FixupGadgets.cpp
 --- lib/Target/X86/X86FixupGadgets.cpp.orig
 +++ lib/Target/X86/X86FixupGadgets.cpp
-@@ -0,0 +1,670 @@
+@@ -0,0 +1,708 @@
 +//===-- X86FixupGadgets.cpp - Fixup Instructions that make ROP Gadgets ----===//
 +//
 +//                     The LLVM Compiler Infrastructure
@@ -103,6 +104,7 @@ Index: lib/Target/X86/X86FixupGadgets.cpp
 +  unsigned getEquivalentRegForReg(unsigned oreg, unsigned nreg) const;
 +  bool hasImplicitUseOrDef(const MachineInstr &MI, unsigned Reg1,
 +                           unsigned Reg2) const;
++  bool fixupWithoutExchange(MachineInstr &MI);
 +
 +  bool fixupInstruction(MachineFunction &MF, MachineBasicBlock &MBB,
 +                        MachineInstr &MI, struct FixupInfo Info);
@@ -576,6 +578,38 @@ Index: lib/Target/X86/X86FixupGadgets.cpp
 +  return false;
 +}
 +
++bool FixupGadgetsPass::fixupWithoutExchange(MachineInstr &MI) {
++  switch (MI.getOpcode()) {
++    case X86::MOV8rr_REV:
++      MI.setDesc(TII->get(X86::MOV8rr));
++      break;
++    case X86::MOV16rr_REV:
++      MI.setDesc(TII->get(X86::MOV16rr));
++      break;
++    case X86::MOV32rr_REV:
++      MI.setDesc(TII->get(X86::MOV32rr));
++      break;
++    case X86::MOV64rr_REV:
++      MI.setDesc(TII->get(X86::MOV64rr));
++      break;
++    case X86::MOV8rr:
++      MI.setDesc(TII->get(X86::MOV8rr_REV));
++      break;
++    case X86::MOV16rr:
++      MI.setDesc(TII->get(X86::MOV16rr_REV));
++      break;
++    case X86::MOV32rr:
++      MI.setDesc(TII->get(X86::MOV32rr_REV));
++      break;
++    case X86::MOV64rr:
++      MI.setDesc(TII->get(X86::MOV64rr_REV));
++      break;
++    default:
++      return false;
++  }
++  return true;
++}
++
 +bool FixupGadgetsPass::fixupInstruction(MachineFunction &MF,
 +                                        MachineBasicBlock &MBB,
 +                                        MachineInstr &MI, FixupInfo Info) {
@@ -621,6 +655,11 @@ Index: lib/Target/X86/X86FixupGadgets.cpp
 +    unsigned treg = SwapReg1;
 +    SwapReg1 = SwapReg2;
 +    SwapReg2 = treg;
++  }
++
++  // Check for specific instructions we can fix without the xchg dance
++  if (fixupWithoutExchange(MI)) {
++      return true;
 +  }
 +
 +  // Swap the two registers to start

@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_PowerPC_PPCReturnProtectorLowering_cpp,v 1.1 2021/05/18 03:35:07 rsadowski Exp $
+$OpenBSD: patch-lib_Target_PowerPC_PPCReturnProtectorLowering_cpp,v 1.2 2022/01/03 21:36:42 rsadowski Exp $
 
 - Add RETGUARD implementation for powerpc and powerpc64.
 - Use all 64 bits of the RETGUARD cookie on powerpc64.

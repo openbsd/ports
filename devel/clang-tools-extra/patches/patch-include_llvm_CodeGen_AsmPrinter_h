@@ -1,11 +1,11 @@
-$OpenBSD: patch-include_llvm_CodeGen_AsmPrinter_h,v 1.4 2021/05/18 03:35:07 rsadowski Exp $
+$OpenBSD: patch-include_llvm_CodeGen_AsmPrinter_h,v 1.5 2022/01/03 21:36:41 rsadowski Exp $
 
 Use int3 trap padding between functions instead of trapsleds with a leading jump.
 
 Index: include/llvm/CodeGen/AsmPrinter.h
 --- include/llvm/CodeGen/AsmPrinter.h.orig
 +++ include/llvm/CodeGen/AsmPrinter.h
-@@ -375,6 +375,11 @@ class AsmPrinter : public MachineFunctionPass { (publi
+@@ -434,6 +434,11 @@ class AsmPrinter : public MachineFunctionPass { (publi
    /// correctness.
    void emitAlignment(Align Alignment, const GlobalObject *GV = nullptr) const;
  
@@ -17,7 +17,7 @@ Index: include/llvm/CodeGen/AsmPrinter.h
    /// Lower the specified LLVM Constant to an MCExpr.
    virtual const MCExpr *lowerConstant(const Constant *CV);
  
-@@ -435,6 +440,11 @@ class AsmPrinter : public MachineFunctionPass { (publi
+@@ -499,6 +504,11 @@ class AsmPrinter : public MachineFunctionPass { (publi
    virtual void emitInstruction(const MachineInstr *) {
      llvm_unreachable("EmitInstruction not implemented");
    }

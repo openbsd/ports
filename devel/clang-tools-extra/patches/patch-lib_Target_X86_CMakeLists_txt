@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_X86_CMakeLists_txt,v 1.4 2021/05/18 03:35:07 rsadowski Exp $
+$OpenBSD: patch-lib_Target_X86_CMakeLists_txt,v 1.5 2022/01/03 21:36:42 rsadowski Exp $
 
 - Add a clang pass that identifies potential ROP gadgets and replaces ROP
   friendly instructions with safe alternatives. This initial commit fixes
@@ -10,7 +10,7 @@ $OpenBSD: patch-lib_Target_X86_CMakeLists_txt,v 1.4 2021/05/18 03:35:07 rsadowsk
 Index: lib/Target/X86/CMakeLists.txt
 --- lib/Target/X86/CMakeLists.txt.orig
 +++ lib/Target/X86/CMakeLists.txt
-@@ -34,6 +34,7 @@ set(sources
+@@ -42,6 +42,7 @@ set(sources
    X86ExpandPseudo.cpp
    X86FastISel.cpp
    X86FixupBWInsts.cpp
@@ -18,7 +18,7 @@ Index: lib/Target/X86/CMakeLists.txt
    X86FixupLEAs.cpp
    X86AvoidStoreForwardingBlocks.cpp
    X86FixupSetCC.cpp
-@@ -62,6 +63,7 @@ set(sources
+@@ -71,6 +72,7 @@ set(sources
    X86PartialReduction.cpp
    X86RegisterBankInfo.cpp
    X86RegisterInfo.cpp

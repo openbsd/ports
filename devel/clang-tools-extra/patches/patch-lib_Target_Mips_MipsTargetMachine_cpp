@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_Mips_MipsTargetMachine_cpp,v 1.1 2021/05/18 03:35:07 rsadowski Exp $
+$OpenBSD: patch-lib_Target_Mips_MipsTargetMachine_cpp,v 1.2 2022/01/03 21:36:42 rsadowski Exp $
 
 Adapt the -mfix-loongson2f-btb workaround from as(1) to LLVM/clang.
 
@@ -14,7 +14,7 @@ Index: lib/Target/Mips/MipsTargetMachine.cpp
  extern "C" LLVM_EXTERNAL_VISIBILITY void LLVMInitializeMipsTarget() {
    // Register the target.
    RegisterTargetMachine<MipsebTargetMachine> X(getTheMipsTarget());
-@@ -280,6 +282,9 @@ bool MipsPassConfig::addInstSelector() {
+@@ -268,6 +270,9 @@ bool MipsPassConfig::addInstSelector() {
  
  void MipsPassConfig::addPreRegAlloc() {
    addPass(createMipsOptimizePICCallPass());

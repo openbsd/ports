@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_Mips_MipsISelLowering_cpp,v 1.4 2021/05/18 03:35:07 rsadowski Exp $
+$OpenBSD: patch-lib_Target_Mips_MipsISelLowering_cpp,v 1.5 2022/01/03 21:36:42 rsadowski Exp $
 
 - Implement the 'h' register constraint on mips64. This lets clang build
   pieces of software that use the constraint if the compiler claims
@@ -12,7 +12,7 @@ $OpenBSD: patch-lib_Target_Mips_MipsISelLowering_cpp,v 1.4 2021/05/18 03:35:07 r
 Index: lib/Target/Mips/MipsISelLowering.cpp
 --- lib/Target/Mips/MipsISelLowering.cpp.orig
 +++ lib/Target/Mips/MipsISelLowering.cpp
-@@ -3919,6 +3919,7 @@ MipsTargetLowering::getConstraintType(StringRef Constr
+@@ -3925,6 +3925,7 @@ MipsTargetLowering::getConstraintType(StringRef Constr
    //       backwards compatibility.
    // 'c' : A register suitable for use in an indirect
    //       jump. This will always be $25 for -mabicalls.
@@ -20,7 +20,7 @@ Index: lib/Target/Mips/MipsISelLowering.cpp
    // 'l' : The lo register. 1 word storage.
    // 'x' : The hilo register pair. Double word storage.
    if (Constraint.size() == 1) {
-@@ -3928,6 +3929,7 @@ MipsTargetLowering::getConstraintType(StringRef Constr
+@@ -3934,6 +3935,7 @@ MipsTargetLowering::getConstraintType(StringRef Constr
        case 'y':
        case 'f':
        case 'c':
@@ -28,7 +28,7 @@ Index: lib/Target/Mips/MipsISelLowering.cpp
        case 'l':
        case 'x':
          return C_RegisterClass;
-@@ -3973,6 +3975,7 @@ MipsTargetLowering::getSingleConstraintMatchWeight(
+@@ -3979,6 +3981,7 @@ MipsTargetLowering::getSingleConstraintMatchWeight(
        weight = CW_Register;
      break;
    case 'c': // $25 for indirect jumps
@@ -36,7 +36,7 @@ Index: lib/Target/Mips/MipsISelLowering.cpp
    case 'l': // lo register
    case 'x': // hilo register pair
      if (type->isIntegerTy())
-@@ -4147,6 +4150,11 @@ MipsTargetLowering::getRegForInlineAsmConstraint(const
+@@ -4153,6 +4156,11 @@ MipsTargetLowering::getRegForInlineAsmConstraint(const
          return std::make_pair((unsigned)Mips::T9_64, &Mips::GPR64RegClass);
        // This will generate an error message
        return std::make_pair(0U, nullptr);

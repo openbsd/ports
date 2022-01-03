@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2021/12/05 06:53:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.22 2022/01/03 21:36:41 rsadowski Exp $
 
 # XXX
 # This port is more or less a copy from devel/llvm and it tries to
@@ -12,10 +12,9 @@ ONLY_FOR_ARCHS =	${LLVM_ARCHS}
 
 COMMENT=	Clang extra tools
 
-LLVM_V =	11.1.0
+LLVM_V =	13.0.0
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME=	clang-tools-extra-${LLVM_V}
-REVISION=	2
 
 CATEGORIES =	devel
 
@@ -48,7 +47,6 @@ CONFIGURE_STYLE =	cmake
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Backtrace=ON \
 			-DCMAKE_DISABLE_FIND_PACKAGE_LibXml2=ON \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Z3=ON \
-			-DEPYDOC_EXECUTABLE=EPYDOC_EXECUTABLE-NOTFOUND \
 			-DGO_EXECUTABLE=GO_EXECUTABLE-NOTFOUND \
 			-DLLVM_BUILD_LLVM_DYLIB=OFF \
 			-DLLVM_ENABLE_FFI=OFF \
@@ -75,6 +73,11 @@ GCC_CONFIG =		${MACHINE_ARCH}-unknown-openbsd${OSREV}
 CLANG_INCLUDE_PATH =	lib/clang/${LLVM_V}/include
 SUBST_VARS +=		CLANG_INCLUDE_PATH LLVM_V GCC_VER GCC_CONFIG
 
+# hack to disable the use of -Bsymbolic-functions
+# Keep in sync with devel/llvm
+OPENBSD_LD_IS_LLD =	FALSE
+SUBST_VARS +=		OPENBSD_LD_IS_LLD
+
 ALL_TARGET =	tools/clang/tools/extra/all
 FAKE_TARGET =	tools/clang/tools/extra/install
 
@@ -84,6 +87,9 @@ post-extract:
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/tools/clang/lib/Driver/ToolChains/OpenBSD.cpp
+	@${SUBST_CMD} ${WRKSRC}/cmake/modules/LLVMProcessSources.cmake
+	@${SUBST_CMD} ${WRKSRC}/tools/clang/tools/clang-shlib/CMakeLists.txt
+	@${SUBST_CMD} ${WRKSRC}/tools/llvm-shlib/CMakeLists.txt
 	-@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 
 post-install:

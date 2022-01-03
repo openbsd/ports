@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_PowerPC_PPCFrameLowering_cpp,v 1.1 2021/05/18 03:35:07 rsadowski Exp $
+$OpenBSD: patch-lib_Target_PowerPC_PPCFrameLowering_cpp,v 1.2 2022/01/03 21:36:42 rsadowski Exp $
 
 Add RETGUARD implementation for powerpc and powerpc64.
 
@@ -13,10 +13,10 @@ Index: lib/Target/PowerPC/PPCFrameLowering.cpp
  #include "PPCSubtarget.h"
  #include "PPCTargetMachine.h"
  #include "llvm/ADT/Statistic.h"
-@@ -2626,4 +2627,8 @@ bool PPCFrameLowering::enableShrinkWrapping(const Mach
+@@ -2696,4 +2697,8 @@ bool PPCFrameLowering::enableShrinkWrapping(const Mach
+   if (MF.getInfo<PPCFunctionInfo>()->shrinkWrapDisabled())
      return false;
-   return (MF.getSubtarget<PPCSubtarget>().isSVR4ABI() &&
-           MF.getSubtarget<PPCSubtarget>().isPPC64());
+   return !MF.getSubtarget<PPCSubtarget>().is32BitELFABI();
 +}
 +
 +const ReturnProtectorLowering *PPCFrameLowering::getReturnProtector() const {

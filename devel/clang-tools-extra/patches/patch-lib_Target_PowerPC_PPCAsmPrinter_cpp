@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_Target_PowerPC_PPCAsmPrinter_cpp,v 1.1 2021/05/18 03:35:07 rsadowski Exp $
+$OpenBSD: patch-lib_Target_PowerPC_PPCAsmPrinter_cpp,v 1.2 2022/01/03 21:36:42 rsadowski Exp $
 
 Add RETGUARD implementation for powerpc and powerpc64.
 
 Index: lib/Target/PowerPC/PPCAsmPrinter.cpp
 --- lib/Target/PowerPC/PPCAsmPrinter.cpp.orig
 +++ lib/Target/PowerPC/PPCAsmPrinter.cpp
-@@ -657,6 +657,85 @@ void PPCAsmPrinter::emitInstruction(const MachineInstr
+@@ -815,6 +815,85 @@ void PPCAsmPrinter::emitInstruction(const MachineInstr
        return;
      }
    }

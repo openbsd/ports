@@ -1,11 +1,11 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Arch_X86_cpp,v 1.4 2021/05/18 03:35:07 rsadowski Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Arch_X86_cpp,v 1.5 2022/01/03 21:36:42 rsadowski Exp $
 
 - Turn on -mretpoline by default in clang on amd64.
 
 Index: tools/clang/lib/Driver/ToolChains/Arch/X86.cpp
 --- tools/clang/lib/Driver/ToolChains/Arch/X86.cpp.orig
 +++ tools/clang/lib/Driver/ToolChains/Arch/X86.cpp
-@@ -148,6 +148,12 @@ void x86::getX86TargetFeatures(const Driver &D, const 
+@@ -149,6 +149,12 @@ void x86::getX86TargetFeatures(const Driver &D, const 
    // consider deprecating this and instead warn if the user requests external
    // retpoline thunks and *doesn't* request some form of retpolines.
    auto SpectreOpt = clang::driver::options::ID::OPT_INVALID;

@@ -1,11 +1,11 @@
-$OpenBSD: patch-tools_clang_lib_Basic_Targets_X86_cpp,v 1.4 2021/05/18 03:35:07 rsadowski Exp $
+$OpenBSD: patch-tools_clang_lib_Basic_Targets_X86_cpp,v 1.5 2022/01/03 21:36:42 rsadowski Exp $
 
 implement -msave-args in clang/llvm, like the sun did for gcc 
 
 Index: tools/clang/lib/Basic/Targets/X86.cpp
 --- tools/clang/lib/Basic/Targets/X86.cpp.orig
 +++ tools/clang/lib/Basic/Targets/X86.cpp
-@@ -296,6 +296,8 @@ bool X86TargetInfo::handleTargetFeatures(std::vector<s
+@@ -309,6 +309,8 @@ bool X86TargetInfo::handleTargetFeatures(std::vector<s
        HasPTWRITE = true;
      } else if (Feature == "+invpcid") {
        HasINVPCID = true;
@@ -13,8 +13,8 @@ Index: tools/clang/lib/Basic/Targets/X86.cpp
 +      HasSaveArgs = true;
      } else if (Feature == "+enqcmd") {
        HasENQCMD = true;
-     } else if (Feature == "+amx-bf16") {
-@@ -930,6 +932,7 @@ bool X86TargetInfo::hasFeature(StringRef Feature) cons
+     } else if (Feature == "+hreset") {
+@@ -984,6 +986,7 @@ bool X86TargetInfo::hasFeature(StringRef Feature) cons
        .Case("movbe", HasMOVBE)
        .Case("movdiri", HasMOVDIRI)
        .Case("movdir64b", HasMOVDIR64B)

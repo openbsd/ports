@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_Mips_MipsLoongson2FBTBFix_cpp,v 1.1 2021/05/18 03:35:07 rsadowski Exp $
+$OpenBSD: patch-lib_Target_Mips_MipsLoongson2FBTBFix_cpp,v 1.2 2022/01/03 21:36:42 rsadowski Exp $
 
 Adapt the -mfix-loongson2f-btb workaround from as(1) to LLVM/clang.
 

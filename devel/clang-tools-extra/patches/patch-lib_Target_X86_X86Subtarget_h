@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_X86_X86Subtarget_h,v 1.4 2021/05/18 03:35:07 rsadowski Exp $
+$OpenBSD: patch-lib_Target_X86_X86Subtarget_h,v 1.5 2022/01/03 21:36:42 rsadowski Exp $
 
 - implement -msave-args in clang/llvm, like the sun did for gcc
 - Turn on -mretpoline by default in clang on amd64.
@@ -6,9 +6,9 @@ $OpenBSD: patch-lib_Target_X86_X86Subtarget_h,v 1.4 2021/05/18 03:35:07 rsadowsk
 Index: lib/Target/X86/X86Subtarget.h
 --- lib/Target/X86/X86Subtarget.h.orig
 +++ lib/Target/X86/X86Subtarget.h
-@@ -459,6 +459,9 @@ class X86Subtarget final : public X86GenSubtargetInfo 
-   /// entry to the function and which must be maintained by every function.
-   Align stackAlignment = Align(4);
+@@ -481,6 +481,9 @@ class X86Subtarget final : public X86GenSubtargetInfo 
+ 
+   Align TileConfigAlignment = Align(4);
  
 +  /// Whether function prologues should save register arguments on the stack.
 +  bool SaveArgs = false;
@@ -16,16 +16,16 @@ Index: lib/Target/X86/X86Subtarget.h
    /// Max. memset / memcpy size that is turned into rep/movs, rep/stos ops.
    ///
    // FIXME: this is a known good value for Yonah. How about others?
-@@ -549,6 +552,8 @@ class X86Subtarget final : public X86GenSubtargetInfo 
-     return &getInstrInfo()->getRegisterInfo();
-   }
+@@ -567,6 +570,8 @@ class X86Subtarget final : public X86GenSubtargetInfo 
+   unsigned getTileConfigSize() const { return 64; }
+   Align getTileConfigAlignment() const { return TileConfigAlignment; }
  
 +  bool getSaveArgs() const { return SaveArgs; }
 +
    /// Returns the minimum alignment known to hold of the
    /// stack frame on entry to the function and which must be maintained by every
    /// function for this subtarget.
-@@ -809,6 +814,7 @@ class X86Subtarget final : public X86GenSubtargetInfo 
+@@ -832,6 +837,7 @@ class X86Subtarget final : public X86GenSubtargetInfo 
  
    bool isTargetDarwin() const { return TargetTriple.isOSDarwin(); }
    bool isTargetFreeBSD() const { return TargetTriple.isOSFreeBSD(); }

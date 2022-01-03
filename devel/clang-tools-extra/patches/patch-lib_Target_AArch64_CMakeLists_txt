@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_Target_AArch64_CMakeLists_txt,v 1.4 2021/05/18 03:35:07 rsadowski Exp $
+$OpenBSD: patch-lib_Target_AArch64_CMakeLists_txt,v 1.5 2022/01/03 21:36:42 rsadowski Exp $
 
 Add retguard for arm64.
 
 Index: lib/Target/AArch64/CMakeLists.txt
 --- lib/Target/AArch64/CMakeLists.txt.orig
 +++ lib/Target/AArch64/CMakeLists.txt
-@@ -59,6 +59,7 @@ add_llvm_target(AArch64CodeGen
+@@ -70,6 +70,7 @@ add_llvm_target(AArch64CodeGen
    AArch64PromoteConstant.cpp
    AArch64PBQPRegAlloc.cpp
    AArch64RegisterInfo.cpp

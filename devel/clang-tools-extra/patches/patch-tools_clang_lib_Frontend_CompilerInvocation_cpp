@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_lib_Frontend_CompilerInvocation_cpp,v 1.4 2021/05/18 03:35:07 rsadowski Exp $
+$OpenBSD: patch-tools_clang_lib_Frontend_CompilerInvocation_cpp,v 1.5 2022/01/03 21:36:42 rsadowski Exp $
 
 - Add RETGUARD to clang for amd64. This security mechanism uses per-function
   random cookies to protect access to function return instructions, with the
@@ -21,12 +21,23 @@ $OpenBSD: patch-tools_clang_lib_Frontend_CompilerInvocation_cpp,v 1.4 2021/05/18
 Index: tools/clang/lib/Frontend/CompilerInvocation.cpp
 --- tools/clang/lib/Frontend/CompilerInvocation.cpp.orig
 +++ tools/clang/lib/Frontend/CompilerInvocation.cpp
-@@ -1250,6 +1250,8 @@ static bool ParseCodeGenArgs(CodeGenOptions &Opts, Arg
-     Opts.StackAlignment = StackAlignment;
+@@ -1470,6 +1470,10 @@ void CompilerInvocation::GenerateCodeGenArgs(
+                 F.Filename, SA);
    }
  
-+  Opts.ReturnProtector = Args.hasArg(OPT_ret_protector);
++  if (Opts.ReturnProtector) {
++    GenerateArg(Args, OPT_ret_protector, SA);
++  }
 +
-   if (Arg *A = Args.getLastArg(OPT_mstack_probe_size)) {
-     StringRef Val = A->getValue();
-     unsigned StackProbeSize = Opts.StackProbeSize;
+   // TODO: Consider removing marshalling annotations from f[no_]emulated_tls.
+   //  That would make it easy to generate the option only **once** if it was
+   //  explicitly set to non-default value.
+@@ -1805,6 +1809,8 @@ bool CompilerInvocation::ParseCodeGenArgs(CodeGenOptio
+     }
+     Opts.LinkBitcodeFiles.push_back(F);
+   }
++
++  Opts.ReturnProtector = Args.hasArg(OPT_ret_protector);
+ 
+   if (Args.getLastArg(OPT_femulated_tls) ||
+       Args.getLastArg(OPT_fno_emulated_tls)) {
