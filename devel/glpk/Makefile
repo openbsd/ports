@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2021/12/08 10:41:18 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2022/01/03 07:45:38 kmos Exp $
 
 COMMENT=	GNU Linear Programming Kit
 
@@ -11,6 +11,9 @@ MASTER_SITES=	${MASTER_SITE_GNU:=glpk/}
 
 # GPLv3
 PERMIT_PACKAGE=	Yes
+
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 WANTLIB=		c m gmp
 
