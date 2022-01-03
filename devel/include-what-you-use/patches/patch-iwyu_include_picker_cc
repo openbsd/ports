@@ -1,48 +1,49 @@
-$OpenBSD: patch-iwyu_include_picker_cc,v 1.7 2021/05/13 23:55:12 jca Exp $
+$OpenBSD: patch-iwyu_include_picker_cc,v 1.8 2022/01/03 21:34:53 jca Exp $
 
 Index: iwyu_include_picker.cc
 --- iwyu_include_picker.cc.orig
 +++ iwyu_include_picker.cc
-@@ -115,8 +115,6 @@ const IncludeMapEntry libc_symbol_map[] = {
-   { "gid_t", kPrivate, "<unistd.h>", kPublic },
-   { "id_t", kPrivate, "<sys/types.h>", kPublic },
-   { "id_t", kPrivate, "<sys/resource.h>", kPublic },
+@@ -133,8 +133,6 @@ const IncludeMapEntry libc_symbol_map[] = {
+   { "imaxdiv_t", kPrivate, "<inttypes.h>", kPublic },
+   { "intmax_t", kPrivate, "<stdint.h>", kPublic },
+   { "uintmax_t", kPrivate, "<stdint.h>", kPublic },
 -  { "ino64_t", kPrivate, "<sys/types.h>", kPublic },
 -  { "ino64_t", kPrivate, "<dirent.h>", kPublic },
    { "ino_t", kPrivate, "<sys/types.h>", kPublic },
    { "ino_t", kPrivate, "<dirent.h>", kPublic },
    { "ino_t", kPrivate, "<sys/stat.h>", kPublic },
-@@ -141,8 +139,6 @@ const IncludeMapEntry libc_symbol_map[] = {
-   { "mode_t", kPrivate, "<sys/mman.h>", kPublic },
+@@ -163,8 +161,6 @@ const IncludeMapEntry libc_symbol_map[] = {
+   { "mode_t", kPrivate, "<sys/stat.h>", kPublic },
    { "nlink_t", kPrivate, "<sys/types.h>", kPublic },
    { "nlink_t", kPrivate, "<sys/stat.h>", kPublic },
 -  { "off64_t", kPrivate, "<sys/types.h>", kPublic },
 -  { "off64_t", kPrivate, "<unistd.h>", kPublic },
    { "off_t", kPrivate, "<sys/types.h>", kPublic },
-   { "off_t", kPrivate, "<unistd.h>", kPublic },
-   { "off_t", kPrivate, "<sys/stat.h>", kPublic },
-@@ -157,11 +153,8 @@ const IncludeMapEntry libc_symbol_map[] = {
-   { "pid_t", kPrivate, "<utmpx.h>", kPublic },
-   { "ptrdiff_t", kPrivate, "<stddef.h>", kPublic },
-   { "sigset_t", kPrivate, "<signal.h>", kPublic },
--  { "sigset_t", kPrivate, "<sys/epoll.h>", kPublic },
+   { "off_t", kPrivate, "<aio.h>", kPublic },
+   { "off_t", kPrivate, "<fcntl.h>", kPublic },
+@@ -195,13 +191,10 @@ const IncludeMapEntry libc_symbol_map[] = {
+   { "sigevent", kPrivate, "<time.h>", kPublic },
+   { "siginfo_t", kPrivate, "<signal.h>", kPublic },
+   { "siginfo_t", kPrivate, "<sys/wait.h>", kPublic },
+-  { "sigset_t", kPrivate, "<signal.h>", kPublic },
+-  { "sigset_t", kPrivate, "<spawn.h>", kPublic },
    { "sigset_t", kPrivate, "<sys/select.h>", kPublic },
--  { "socklen_t", kPrivate, "<bits/socket.h>", kPrivate },
--  { "socklen_t", kPrivate, "<unistd.h>", kPublic },
--  { "socklen_t", kPrivate, "<arpa/inet.h>", kPublic },
-+  { "socklen_t", kPrivate, "<sys/socket.h>", kPublic },
+   { "sigval", kPrivate, "<signal.h>", kPublic },
+   { "sockaddr", kPrivate, "<sys/socket.h>", kPublic },
+   { "socklen_t", kPrivate, "<sys/socket.h>", kPublic },
+-  { "socklen_t", kPrivate, "<netdb.h>", kPublic },
    { "ssize_t", kPrivate, "<sys/types.h>", kPublic },
-   { "ssize_t", kPrivate, "<unistd.h>", kPublic },
+   { "ssize_t", kPrivate, "<aio.h>", kPublic },
    { "ssize_t", kPrivate, "<monetary.h>", kPublic },
-@@ -196,6 +189,7 @@ const IncludeMapEntry libc_symbol_map[] = {
-   { "size_t", kPrivate, "<time.h>", kPublic },
-   { "size_t", kPrivate, "<uchar.h>", kPublic },
+@@ -282,6 +275,7 @@ const IncludeMapEntry libc_symbol_map[] = {
+   { "size_t", kPrivate, "<unistd.h>", kPublic },
    { "size_t", kPrivate, "<wchar.h>", kPublic },
+   { "size_t", kPrivate, "<wordexp.h>", kPublic },
 +  { "size_t", kPrivate, "<sys/types.h>", kPublic },
    // Macros that can be defined in more than one file, don't have the
    // same __foo_defined guard that other types do, so the grep above
    // doesn't discover them.  Until I figure out a better way, I just
-@@ -210,6 +204,10 @@ const IncludeMapEntry libc_symbol_map[] = {
+@@ -302,6 +296,10 @@ const IncludeMapEntry libc_symbol_map[] = {
    { "calloc", kPrivate, "<stdlib.h>", kPublic },
    { "realloc", kPrivate, "<stdlib.h>", kPublic },
    { "free", kPrivate, "<stdlib.h>", kPublic },
@@ -53,19 +54,19 @@ Index: iwyu_include_picker.cc
    // Entries for NULL
    { "NULL", kPrivate, "<stddef.h>", kPublic },  // 'canonical' location for NULL
    { "NULL", kPrivate, "<clocale>", kPublic },
-@@ -255,7 +253,7 @@ const IncludeMapEntry libstdcpp_symbol_map[] = {
+@@ -354,7 +352,7 @@ const IncludeMapEntry libstdcpp_symbol_map[] = {
+   { "std::size_t", kPrivate, "<cwchar>", kPublic },
  };
  
- // Private -> public include mappings for GNU libc
 -const IncludeMapEntry libc_include_map[] = {
 +const IncludeMapEntry glibc_include_map[] = {
+   // Private -> public include mappings for GNU libc
    // ( cd /usr/include && grep '^ *# *include' {sys/,net/,}* | perl -nle 'm/^([^:]+).*<([^>]+)>/ && print qq@    { "<$2>", kPrivate, "<$1>", kPublic },@' | grep bits/ | sort )
    // When I saw more than one mapping for these, I typically picked
-   // what I thought was the "best" one.
-@@ -459,6 +457,42 @@ const IncludeMapEntry libc_include_map[] = {
-   { "<linux/limits.h>", kPrivate, "<limits.h>", kPublic },   // PATH_MAX
-   { "<linux/prctl.h>", kPrivate, "<sys/prctl.h>", kPublic },
+@@ -561,6 +559,42 @@ const IncludeMapEntry libc_include_map[] = {
    { "<sys/ucontext.h>", kPrivate, "<ucontext.h>", kPublic },
+   // Exports guaranteed by the C standard
+   { "<stdint.h>", kPublic, "<inttypes.h>", kPublic },
 +};
 +
 +// Private -> public include mappings for OpenBSD libc
