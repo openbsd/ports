@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/12/23 02:28:30 thfr Exp $
+# $OpenBSD: Makefile,v 1.3 2022/01/03 07:47:14 kmos Exp $
 
 COMMENT =	Steam API wrapper for Hashlink
 
@@ -13,6 +13,10 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
+
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB += hl steam_api
 
 FIX_CRLF_FILES =	Makefile \
