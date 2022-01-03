@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2173 2022/01/02 02:42:31 daniel Exp $
+# $OpenBSD: Makefile,v 1.2174 2022/01/03 10:33:58 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1256,6 +1256,9 @@
      SUBDIR += pcre
      SUBDIR += pcre++
      SUBDIR += pcre2
+     SUBDIR += pecl-xdebug,php74
+     SUBDIR += pecl-xdebug,php80
+     SUBDIR += pecl-xdebug,php81
      SUBDIR += perltidy
      SUBDIR += physfs
      SUBDIR += pkgconf
