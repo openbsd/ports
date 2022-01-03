@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2021/06/17 21:55:48 sebastia Exp $
+# $OpenBSD: Makefile,v 1.4 2022/01/03 22:17:53 sebastia Exp $
 
 COMMENT =		lightweight libcurl wrapper
 
 DISTNAME =		ethon-0.14.0
+REVISION =		0
 
 CATEGORIES =		www
-HOMEPAGE =		https://github.com/typhoeus/typhoeus
+HOMEPAGE =		https://github.com/typhoeus/ethon
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
 # MIT
