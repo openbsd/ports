@@ -1,11 +1,11 @@
-$OpenBSD: patch-liblwgeom_Makefile_in,v 1.1 2020/12/23 10:19:18 landry Exp $
+$OpenBSD: patch-liblwgeom_Makefile_in,v 1.2 2022/01/03 07:39:55 landry Exp $
 
 our libtool doesnt link the contents of libryu.a ?
 
 Index: liblwgeom/Makefile.in
 --- liblwgeom/Makefile.in.orig
 +++ liblwgeom/Makefile.in
-@@ -179,7 +179,7 @@ $(RYU_LIBPATH): ../deps/ryu/d2s.c
+@@ -181,7 +181,7 @@ $(RYU_LIBPATH): ../deps/ryu/d2s.c
  	$(MAKE) -C ../deps/ryu @RYU_LIB@
  
  liblwgeom.la: $(LT_OBJS) $(RYU_LIBPATH)

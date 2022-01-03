@@ -1,4 +1,4 @@
-$OpenBSD: patch-postgis_Makefile_in,v 1.3 2020/12/23 10:19:18 landry Exp $
+$OpenBSD: patch-postgis_Makefile_in,v 1.4 2022/01/03 07:39:55 landry Exp $
 
 Modify include paths order to prevent postgis from using system wide
 devel/uthash headers if they are installed.
@@ -8,12 +8,12 @@ https://trac.osgeo.org/postgis/ticket/4573
 Index: postgis/Makefile.in
 --- postgis/Makefile.in.orig
 +++ postgis/Makefile.in
-@@ -136,7 +136,7 @@ OBJS=$(PG_OBJS)
+@@ -143,7 +143,7 @@ OBJS=$(PG_OBJS)
  # to an existing liblwgeom.so in the PostgreSQL $libdir supplied by an
  # older version of PostGIS, rather than with the static liblwgeom.a
  # supplied with newer versions of PostGIS
--PG_CPPFLAGS += -I../liblwgeom @CFLAGS@ -I../libpgcommon $(WAYGU_INCLUDE) $(UTHASH_INCLUDE) @CPPFLAGS@ @PICFLAGS@
-+PG_CPPFLAGS += -I../liblwgeom $(UTHASH_INCLUDE) @CFLAGS@ -I../libpgcommon $(WAYGU_INCLUDE) @CPPFLAGS@ @PICFLAGS@
- SHLIB_LINK_F = $(WAYGU_LIB) ../libpgcommon/libpgcommon.a ../liblwgeom/.libs/liblwgeom.a @SHLIB_LINK@
+-PG_CPPFLAGS += -I../liblwgeom @CFLAGS@ -I../libpgcommon $(FLATGEOBUF_INCLUDE) $(WAYGU_INCLUDE) $(UTHASH_INCLUDE) @CPPFLAGS@ @PICFLAGS@
++PG_CPPFLAGS += -I../liblwgeom $(UTHASH_INCLUDE) @CFLAGS@ -I../libpgcommon $(FLATGEOBUF_INCLUDE) $(WAYGU_INCLUDE) @CPPFLAGS@ @PICFLAGS@
+ SHLIB_LINK_F = $(WAYGU_LIB) $(FLATGEOBUF_LIB) ../libpgcommon/libpgcommon.a ../liblwgeom/.libs/liblwgeom.a @SHLIB_LINK@
  
  # Extra files to remove during 'make clean'
