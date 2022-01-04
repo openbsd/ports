@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_eog-image_c,v 1.2 2022/01/04 18:50:40 ajacoutot Exp $
+$OpenBSD: patch-src_eog-image_c,v 1.3 2022/01/04 23:08:22 ajacoutot Exp $
 
-https://gitlab.gnome.org/GNOME/eog/-/merge_requests/117
+From 4d645c2035b3ca4917326c186e6c00154acb1ed0 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Tue, 4 Jan 2022 19:48:52 +0100
+Subject: [PATCH] eog-image: fix double-free of eog image status mutex
 
 Index: src/eog-image.c
 --- src/eog-image.c.orig
