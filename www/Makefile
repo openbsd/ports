@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1057 2021/12/19 00:40:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.1058 2022/01/04 06:28:38 sebastia Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -520,9 +520,11 @@
      SUBDIR += ruby-unicorn,ruby27
      SUBDIR += ruby-unicorn,ruby30
      SUBDIR += ruby-vegas
+     SUBDIR += ruby-webrick
      SUBDIR += ruby-websocket-driver,ruby27
      SUBDIR += ruby-websocket-driver,ruby30
      SUBDIR += ruby-websocket-extensions
+     SUBDIR += ruby-xmlrpc
      SUBDIR += ruby-xpath
      SUBDIR += sarg
      SUBDIR += sarg,ldap
