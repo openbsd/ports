@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST-python,v 1.2 2013/04/20 14:58:01 sthen Exp $
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
+@comment $OpenBSD: PLIST-python,v 1.3 2022/01/04 11:15:02 uaa Exp $
 lib/python${MODPY_VERSION}/site-packages/Hamlib.py
-lib/python${MODPY_VERSION}/site-packages/Hamlib.pyc
-lib/python${MODPY_VERSION}/site-packages/Hamlib.pyo
 lib/python${MODPY_VERSION}/site-packages/_Hamlib.la
-lib/python${MODPY_VERSION}/site-packages/_Hamlib.so
+@so lib/python${MODPY_VERSION}/site-packages/_Hamlib.so
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}Hamlib.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}Hamlib.${MODPY_PYC_MAGIC_TAG}pyc

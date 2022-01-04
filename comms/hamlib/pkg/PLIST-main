@@ -1,12 +1,19 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2014/06/14 10:34:44 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2022/01/04 11:15:02 uaa Exp $
+@bin bin/ampctl
+@bin bin/ampctld
 @bin bin/rigctl
+@bin bin/rigctlcom
 @bin bin/rigctld
 @bin bin/rigmem
 @bin bin/rigsmtr
 @bin bin/rigswr
+@bin bin/rigtestlibusb
 @bin bin/rotctl
 @bin bin/rotctld
 include/hamlib/
+include/hamlib/ampclass.h
+include/hamlib/amplifier.h
+include/hamlib/amplist.h
 include/hamlib/rig.h
 include/hamlib/rig_dll.h
 include/hamlib/rigclass.h
@@ -14,70 +21,39 @@ include/hamlib/riglist.h
 include/hamlib/rotator.h
 include/hamlib/rotclass.h
 include/hamlib/rotlist.h
-lib/hamlib/
-lib/hamlib/hamlib-adat.so
-lib/hamlib/hamlib-alinco.so
-lib/hamlib/hamlib-amsat.so
-lib/hamlib/hamlib-aor.so
-lib/hamlib/hamlib-ars.so
-lib/hamlib/hamlib-celestron.so
-lib/hamlib/hamlib-drake.so
-lib/hamlib/hamlib-dummy.so
-lib/hamlib/hamlib-easycomm.so
-lib/hamlib/hamlib-flexradio.so
-lib/hamlib/hamlib-fodtrack.so
-lib/hamlib/hamlib-gs232a.so
-lib/hamlib/hamlib-heathkit.so
-lib/hamlib/hamlib-icom.so
-lib/hamlib/hamlib-jrc.so
-lib/hamlib/hamlib-kachina.so
-lib/hamlib/hamlib-kenwood.so
-lib/hamlib/hamlib-kit.so
-lib/hamlib/hamlib-lowe.so
-lib/hamlib/hamlib-m2.so
-lib/hamlib/hamlib-pcr.so
-lib/hamlib/hamlib-prm80.so
-lib/hamlib/hamlib-racal.so
-lib/hamlib/hamlib-rft.so
-lib/hamlib/hamlib-rotorez.so
-lib/hamlib/hamlib-rpcrig.so
-lib/hamlib/hamlib-rpcrot.so
-lib/hamlib/hamlib-rs.so
-lib/hamlib/hamlib-sartek.so
-lib/hamlib/hamlib-skanti.so
-lib/hamlib/hamlib-spid.so
-lib/hamlib/hamlib-tapr.so
-lib/hamlib/hamlib-tentec.so
-lib/hamlib/hamlib-ts7400.so
-lib/hamlib/hamlib-tuner.so
-lib/hamlib/hamlib-uniden.so
-lib/hamlib/hamlib-winradio.so
-lib/hamlib/hamlib-wj.so
-lib/hamlib/hamlib-yaesu.so
 lib/libhamlib++.la
 @lib lib/libhamlib++.so.${LIBhamlib++_VERSION}
 lib/libhamlib.la
 @lib lib/libhamlib.so.${LIBhamlib_VERSION}
 lib/pkgconfig/hamlib.pc
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.16.3/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.16.3/perllocal.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Hamlib.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Hamlib/
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Hamlib/Hamlib.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Hamlib/Hamlib.so
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/perltest.pl
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Hamlib/Hamlib.so
+@man man/man1/ampctl.1
+@man man/man1/ampctld.1
 @man man/man1/rigctl.1
+@man man/man1/rigctlcom.1
+@man man/man1/rigctld.1
 @man man/man1/rigmem.1
 @man man/man1/rigsmtr.1
 @man man/man1/rigswr.1
 @man man/man1/rotctl.1
-@man man/man8/rigctld.8
-@man man/man8/rotctld.8
-@man man/man8/rpc.rigd.8
-@man man/man8/rpc.rotd.8
-@bin sbin/rpc.rigd
-@bin sbin/rpc.rotd
+@man man/man1/rotctld.1
+@man man/man7/hamlib-primer.7
+@man man/man7/hamlib-utilities.7
+@man man/man7/hamlib.7
 share/aclocal/hamlib.m4
+share/doc/hamlib/
+share/doc/hamlib/COPYING
+share/doc/hamlib/COPYING.LIB
+share/doc/hamlib/ChangeLog
+share/doc/hamlib/LICENSE
+share/doc/hamlib/README
+share/doc/hamlib/README.betatester
+share/doc/hamlib/README.developer
+share/doc/hamlib/examples/
+share/doc/hamlib/examples/perltest.pl
+share/doc/hamlib/examples/py3test.py
+share/doc/hamlib/examples/tcltest.tcl

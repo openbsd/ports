@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST-tcl,v 1.3 2018/05/15 11:02:50 espie Exp $
-lib/hamlibtcl-1.0.so
-lib/hamlibtcl.la
-lib/hamlibtcl.so
-lib/tcl/pkgIndex.tcl
+@comment $OpenBSD: PLIST-tcl,v 1.4 2022/01/04 11:15:02 uaa Exp $
+lib/tcl${MODTCL_VERSION}/
+lib/tcl${MODTCL_VERSION}/Hamlib/
+@so lib/tcl${MODTCL_VERSION}/Hamlib/hamlibtcl-4.4.so
+lib/tcl${MODTCL_VERSION}/Hamlib/hamlibtcl.la
+@so lib/tcl${MODTCL_VERSION}/Hamlib/hamlibtcl.so
+lib/tcl${MODTCL_VERSION}/Hamlib/pkgIndex.tcl
