@@ -1,0 +1,16 @@
+$OpenBSD: patch-thread_pthread_h,v 1.1.1.1 2022/01/04 19:46:40 jeremy Exp $
+
+base-gcc doesn't support __thread
+
+Index: thread_pthread.h
+--- thread_pthread.h.orig
++++ thread_pthread.h
+@@ -72,7 +72,7 @@ typedef struct rb_global_vm_lock_struct {
+ 
+ #if __STDC_VERSION__ >= 201112
+   #define RB_THREAD_LOCAL_SPECIFIER _Thread_local
+-#elif defined(__GNUC__)
++#elif defined(__clang__)
+   /* note that ICC (linux) and Clang are covered by __GNUC__ */
+   #define RB_THREAD_LOCAL_SPECIFIER __thread
+ #else

@@ -1,0 +1,28 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2022/01/04 19:46:40 jeremy Exp $
+
+Set correct shared library name.
+
+Override the arch setting to remove OpenBSD version from it,
+so ports don't have to be bumped when OpenBSD version changes.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -30742,7 +30742,7 @@ fi
+ 	 ;; #(
+   openbsd*|mirbsd*) :
+ 
+-	LIBRUBY_SO='lib$(RUBY_SO_NAME).$(SOEXT).$(MAJOR).'`expr ${MINOR} \* 10 + ${TEENY}`
++	LIBRUBY_SO='lib$(RUBY_SO_NAME).so.'${LIBruby31_VERSION}
+ 	 ;; #(
+   solaris*) :
+ 
+@@ -32366,7 +32366,7 @@ else
+ 
+ else
+ 
+-        arch="${target_cpu}-${target_os}"
++        arch="${target_cpu}-openbsd"
+ 
+ fi
+     cat >>confdefs.h <<_ACEOF

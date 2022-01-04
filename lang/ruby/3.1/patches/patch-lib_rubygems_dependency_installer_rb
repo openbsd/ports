@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_rubygems_dependency_installer_rb,v 1.1.1.1 2022/01/04 19:46:40 jeremy Exp $
+Index: lib/rubygems/dependency_installer.rb
+--- lib/rubygems/dependency_installer.rb.orig
++++ lib/rubygems/dependency_installer.rb
+@@ -20,7 +20,7 @@ class Gem::DependencyInstaller
+     :document            => %w[ri],
+     :domain              => :both, # HACK dup
+     :force               => false,
+-    :format_executable   => false, # HACK dup
++    :format_executable   => true, # HACK dup
+     :ignore_dependencies => false,
+     :prerelease          => false,
+     :security_policy     => nil, # HACK NoSecurity requires OpenSSL. AlmostNo? Low?
