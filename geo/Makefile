@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2021/11/02 21:11:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.82 2022/01/04 06:28:59 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += foxtrotgps
@@ -15,6 +15,7 @@
      SUBDIR += gpx-viewer
      SUBDIR += gpxsee
      SUBDIR += josm
+     SUBDIR += kgeotag
      SUBDIR += lib2geom
      SUBDIR += libchamplain
      SUBDIR += libosmium
