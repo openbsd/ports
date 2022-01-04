@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_eog-image_c,v 1.1 2022/01/04 10:44:17 stsp Exp $
+
+Fix double-free of eog image status mutex.
+The mutex will now only be freed in eog_image_finalize().
+The eog_image_dispose() will be called before finalize(), and dispose()
+may even be called multiple times.
+
+Index: src/eog-image.c
+--- src/eog-image.c.orig
++++ src/eog-image.c
+@@ -192,8 +192,6 @@ eog_image_dispose (GObject *object)
+ 		priv->file_type = NULL;
+ 	}
+ 
+-	g_mutex_clear (&priv->status_mutex);
+-
+ 	if (priv->trans) {
+ 		g_object_unref (priv->trans);
+ 		priv->trans = NULL;
