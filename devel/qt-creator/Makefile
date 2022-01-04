@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2021/12/18 08:52:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.81 2022/01/04 17:14:28 rsadowski Exp $
 
 COMMENT =		cross-platform IDE for use with Qt
 
@@ -51,7 +51,6 @@ MODULES =	x11/qt5 \
 CONFIGURE_STYLE = cmake
 
 BUILD_DEPENDS =	devel/clang-tools-extra \
-		devel/qbs \
 		lang/clazy \
 		x11/qt5/qtquickcontrols
 
@@ -59,7 +58,6 @@ RUN_DEPENDS =	devel/clang-tools-extra \
 		devel/desktop-file-utils \
 		devel/gdb \
 		devel/gmake \
-		devel/qbs \
 		lang/clazy \
 		x11/gtk+3,-guic \
 		x11/qt5/qtquickcontrols
