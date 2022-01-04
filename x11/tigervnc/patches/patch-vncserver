@@ -1,0 +1,30 @@
+$OpenBSD: patch-vncserver,v 1.1 2022/01/04 15:39:50 sthen Exp $
+
+Patch away check which doesn't work on OpenBSD.
+
+Index: vncserver
+--- vncserver.orig
++++ vncserver
+@@ -524,22 +524,6 @@ sub CheckDisplayNumber
+ {
+     local ($n) = @_;
+ 
+-    socket(S, $AF_INET, $SOCK_STREAM, 0) || die "$prog: socket failed: $!\n";
+-    eval 'setsockopt(S, &SOL_SOCKET, &SO_REUSEADDR, pack("l", 1))';
+-    if (!bind(S, pack('S n x12', $AF_INET, 6000 + $n))) {
+-	close(S);
+-	return 0;
+-    }
+-    close(S);
+-
+-    socket(S, $AF_INET, $SOCK_STREAM, 0) || die "$prog: socket failed: $!\n";
+-    eval 'setsockopt(S, &SOL_SOCKET, &SO_REUSEADDR, pack("l", 1))';
+-    if (!bind(S, pack('S n x12', $AF_INET, 5900 + $n))) {
+-	close(S);
+-	return 0;
+-    }
+-    close(S);
+-
+     if (-e "/tmp/.X$n-lock") {
+ 	warn "\nWarning: $host:$n is taken because of /tmp/.X$n-lock\n";
+ 	warn "Remove this file if there is no X server $host:$n\n";

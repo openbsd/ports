@@ -1,17 +1,19 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/16 21:30:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2022/01/04 15:39:50 sthen Exp $
 
 COMMENT=	high performance, multi-platform VNC client and server
 
 GH_ACCOUNT=	TigerVNC
 GH_PROJECT=	tigervnc
 GH_TAGNAME=	v1.11.0
-# 1.12.0 has an issue with connection to vmware's internal VNC which
-# results in an exception being thrown relating to the cursor.
+REVISION=	0
+# skipping 1.12.0 for now, it has an issue with connection to vmware's
+# internal VNC which results in an exception being thrown relating to
+# the cursor.
 
-DISTFILES=	${GH_DISTFILE} \
-		xorg-server-1.20.13.tar.xz:0
 # update the post-patch target if moving to a new major branch of xorg-server
 # there's no patchset in tigervnc for xorg-server-21.1.1.tar.xz:0 yet
+DISTFILES=	${GH_DISTFILE} \
+		xorg-server-1.20.13.tar.xz:0
 
 CATEGORIES=	x11 net
 
@@ -30,6 +32,12 @@ WANTLIB += idn2 intl jpeg kvm m nettle p11-kit pixman-1 tasn1
 WANTLIB += unistring xcb xshmfence z
 
 MASTER_SITES0=	https://www.x.org/releases/individual/xserver/
+
+# vncserver script is not included in 1.11.0 so fetch it from an old tag
+MASTER_SITES1=	https://raw.githubusercontent.com/TigerVNC/tigervnc/v1.10.1/unix/
+EXTRACT_ONLY=	${GH_DISTFILE} xorg-server-1.20.13.tar.xz
+DISTFILES+=	tigervnc-vncserver-1.10.1.pl{vncserver}:1 \
+		tigervnc-vncserver-1.10.1.man{vncserver.man}:1
 
 # main parts use cmake, Xvnc uses autoconf
 # Xvnc requires non-installed files generated in cmake build portion
@@ -119,6 +127,8 @@ AC_ARGS+=	--sysconfdir='${SYSCONFDIR}' \
 
 post-extract:
 	cp -R ${WRKDIR}/xorg-server-*/* ${WRKDIST}/unix/xserver
+	cp ${FULLDISTDIR}/tigervnc-vncserver-1.10.1.pl ${WRKSRC}/vncserver
+	cp ${FULLDISTDIR}/tigervnc-vncserver-1.10.1.man ${WRKSRC}/vncserver.man
 
 post-patch:
 	patch -d ${WRKDIST}/unix/xserver/ -p1 < ${WRKDIST}/unix/xserver120.patch
@@ -140,7 +150,12 @@ post-install:
 	    TIGERVNC_SRCDIR=${WRKDIST} TIGERVNC_BUILDDIR=${WRKBUILD}
 
 	rm -rf ${PREFIX}/lib/xorg
+	rm ${PREFIX}/etc/tigervnc/vncserver*
+	rmdir ${PREFIX}/etc/tigervnc ${PREFIX}/etc
 	mv ${PREFIX}/bin/vncviewer{,.tigervnc} # avoid conflict
 	mv ${PREFIX}/man/man1/vncviewer{,.tigervnc}.1
+	${INSTALL_SCRIPT} ${WRKSRC}/vncserver ${PREFIX}/bin/vncserver
+	${INSTALL_DATA} ${WRKSRC}/vncserver.man ${PREFIX}/man/man1/vncserver.1
+	rm ${PREFIX}/man/man8/vncserver.8
 
 .include <bsd.port.mk>
