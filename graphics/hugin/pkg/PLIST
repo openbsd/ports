@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2021/01/30 10:05:43 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.23 2022/01/04 10:36:37 kirby Exp $
 @bin bin/PTBatcherGUI
 @bin bin/align_image_stack
 @bin bin/autooptimiser
@@ -88,6 +88,7 @@ share/hugin/data/celeste.model
 share/hugin/data/default.setting
 share/hugin/data/duallens.assistant
 share/hugin/data/expressions.ini
+share/hugin/data/focus_stack.executor
 share/hugin/data/fused_layers.executor
 share/hugin/data/hdr_pano.executor
 share/hugin/data/hugin_exiftool_copy.arg
@@ -578,10 +579,6 @@ share/hugin/xrc/pano_panel.xrc
 share/hugin/xrc/pref_dialog.xrc
 share/hugin/xrc/preview_frame.xrc
 share/hugin/xrc/reset_dialog.xrc
-share/icons/gnome/
-share/icons/gnome/48x48/
-share/icons/gnome/48x48/mimetypes/
-share/icons/gnome/48x48/mimetypes/application-x-ptoptimizer-script.png
 share/icons/hicolor/128x128/apps/hugin.png
 share/icons/hicolor/128x128/apps/ptbatcher.png
 share/icons/hicolor/16x16/apps/hugin.png
@@ -592,6 +589,7 @@ share/icons/hicolor/32x32/apps/hugin.png
 share/icons/hicolor/32x32/apps/ptbatcher.png
 share/icons/hicolor/48x48/apps/hugin.png
 share/icons/hicolor/48x48/apps/ptbatcher.png
+share/icons/hicolor/48x48/mimetypes/application-x-ptoptimizer-script.png
 share/icons/hicolor/scalable/apps/hugin.svg
 share/icons/hicolor/scalable/apps/ptbatcher.svg
 share/locale/ca_ES/

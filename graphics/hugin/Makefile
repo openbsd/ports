@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.75 2021/11/02 00:01:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.76 2022/01/04 10:36:37 kirby Exp $
 
 BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 
 COMMENT =	panorama image stitcher
 
-DISTNAME =	hugin-2020.0.0
-REVISION =	2
+DISTNAME =	hugin-2021.0.0
 EXTRACT_SUFX =	.tar.bz2
 
 # not needed for releases, but makes RCs/betas easier to work with
@@ -15,7 +14,7 @@ WRKDIST =	${WRKDIR}/${DISTNAME:C/_.*//}
 SHARED_LIBS +=  celeste                   4.0
 SHARED_LIBS +=  flann_cpp                 4.0
 SHARED_LIBS +=  huginbase                 6.0
-SHARED_LIBS +=  huginbasewx               5.0
+SHARED_LIBS +=  huginbasewx               5.1
 SHARED_LIBS +=  icpfindlib                4.0
 SHARED_LIBS +=  localfeatures             4.0
 SHARED_LIBS +=  hugin_python_interface    4.0
@@ -61,6 +60,8 @@ LIB_DEPENDS =		devel/boost \
 			x11/wxWidgets>=3.0.4
 
 MODULES =		devel/cmake lang/python
+
+# C++11
 COMPILER =		base-clang ports-gcc
 
 CONFIGURE_ENV =		MANDIR=man
