@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.105 2021/10/06 21:10:19 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.106 2022/01/04 19:49:41 jeremy Exp $
 
 # ruby module
 
@@ -24,7 +24,7 @@ MODRUBY_HANDLE_FLAVORS ?= No
 # If ruby.pork.mk should handle FLAVORs, define a separate FLAVOR
 # for each ruby interpreter
 .    if !defined(FLAVORS)
-FLAVORS=	ruby27 ruby30
+FLAVORS=	ruby27 ruby30 ruby31
 .      if !${CONFIGURE_STYLE:L:Mext}
 FLAVORS+=	jruby
 .      endif
@@ -52,7 +52,7 @@ FLAVOR =		ruby30
 
 # Check for conflicting FLAVORs and set MODRUBY_REV appropriately based
 # on the FLAVOR.
-.    for i in ruby27 ruby30 jruby
+.    for i in ruby27 ruby30 ruby31 jruby
 .      if ${FLAVOR:M$i}
 MODRUBY_REV = ${i:C/ruby([0-9])/\1./}
 .        if ${FLAVOR:N$i:Mruby27} || \ 
