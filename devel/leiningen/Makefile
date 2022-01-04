@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2020/05/14 18:59:22 kn Exp $
+# $OpenBSD: Makefile,v 1.10 2022/01/04 10:11:50 op Exp $
 
 COMMENT =		Clojure project automation
 
 GH_ACCOUNT =		technomancy
 GH_PROJECT =		leiningen
-GH_TAGNAME =		2.9.3
+GH_TAGNAME =		2.9.8
 
-JAR_FILE =		${DISTNAME}-standalone.zip
+JAR_FILE =		${DISTNAME}-standalone.jar
 
 CATEGORIES =		devel lang
 

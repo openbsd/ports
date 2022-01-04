@@ -1,4 +1,4 @@
-$OpenBSD: patch-bin_lein-pkg,v 1.3 2020/05/14 18:59:22 kn Exp $
+$OpenBSD: patch-bin_lein-pkg,v 1.4 2022/01/04 10:11:50 op Exp $
 
 - fix shebang
 - set path to standalone jar
@@ -34,7 +34,7 @@ Index: bin/lein-pkg
  if ! { [ "$1" = "compile" ] &&
 @@ -88,8 +88,8 @@ fi
  if [ "$LEIN_FAST_TRAMPOLINE" != "" ] && [ -r project.clj ]; then
-     INPUTS="$* $(cat project.clj) $(test -f "$LEIN_HOME/profiles.clj" && cat "$LEIN_HOME/profiles.clj")"
+     INPUTS="$* $(cat project.clj) $LEIN_VERSION $(test -f "$LEIN_HOME/profiles.clj" && cat "$LEIN_HOME/profiles.clj") $(test -f profiles.clj && cat profiles.clj)"
  
 -    if command -v shasum >/dev/null 2>&1; then
 -        SUM="shasum"
