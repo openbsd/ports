@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.43 2021/02/27 07:55:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2022/01/05 10:45:16 ajacoutot Exp $
 
 COMMENT=		digital camera command-line interface
 
-VERSION=		2.5.27
+VERSION=		2.5.28
 DISTNAME=		gphoto2-${VERSION}
 PKGNAME=		gphoto-${VERSION}
 
