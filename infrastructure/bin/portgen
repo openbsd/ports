@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: portgen,v 1.4 2020/07/02 21:07:51 sthen Exp $
+# $OpenBSD: portgen,v 1.5 2022/01/05 09:12:50 espie Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -28,6 +28,16 @@ BEGIN {
 }
 
 use lib ( "$portdir/infrastructure/lib", "$FindBin::Bin/../lib" );
+use OpenBSD::Getopt;
+
+my @opt_m;
+getopts('m:', 
+    {
+	'm' => 
+	    sub {
+		push(@opt_m, shift);
+	    }
+    });
 
 my ( $type, $module ) = @ARGV;
 
@@ -57,6 +67,10 @@ sub portgen_class
 }
 
 my $o = portgen_class($type)->new;
+
+if (@opt_m) {
+    $o->add_make_options(@opt_m);
+}
 
 my @new_ports = $o->port($module);
 say for @new_ports;

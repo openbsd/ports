@@ -1,4 +1,4 @@
-# $OpenBSD: Port.pm,v 1.21 2021/06/13 18:30:50 afresh1 Exp $
+# $OpenBSD: Port.pm,v 1.22 2022/01/05 09:12:50 espie Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 # Copyright (c) 2019 Andrew Hewus Fresh <afresh1@openbsd.org>
@@ -35,6 +35,14 @@ use OpenBSD::PortGen::Utils qw(
     base_dir
     ports_dir
 );
+
+my @make_options;
+
+sub add_make_options
+{
+	my $self = shift;
+	push(@make_options, @_);
+}
 
 sub _cp {
     my (@args) = @_;
@@ -471,7 +479,7 @@ sub _format_comment
 sub _make
 {
 	my $self = shift;
-	system( 'make', @_ );
+	system( 'make', @_, @make_options);
 	return $? >> 8;
 }
 
