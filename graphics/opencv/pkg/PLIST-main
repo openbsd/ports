@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.20 2021/10/13 19:11:02 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.21 2022/01/05 13:36:55 rsadowski Exp $
 @bin bin/opencv_annotation
 @bin bin/opencv_interactive-calibration
 @bin bin/opencv_model_diagnostics
@@ -65,6 +65,7 @@ include/opencv4/opencv2/core/cvstd.inl.hpp
 include/opencv4/opencv2/core/cvstd_wrapper.hpp
 include/opencv4/opencv2/core/detail/
 include/opencv4/opencv2/core/detail/async_promise.hpp
+include/opencv4/opencv2/core/detail/dispatch_helper.impl.hpp
 include/opencv4/opencv2/core/detail/exception_ptr.hpp
 include/opencv4/opencv2/core/directx.hpp
 include/opencv4/opencv2/core/dualquaternion.hpp

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2021/11/02 00:01:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.79 2022/01/05 13:36:55 rsadowski Exp $
 
 ONLY_FOR_ARCHS-java =	aarch64 amd64 i386
 
@@ -6,12 +6,10 @@ CATEGORIES =		graphics devel
 COMMENT-main =		library for computer vision real-time processing
 COMMENT-java =		Java bindings for OpenCV
 
-V =			4.5.4
+V =			4.5.5
 GH_ACCOUNT =		opencv
 GH_PROJECT =		opencv
 GH_TAGNAME =		${V}
-REVISION-java =		0
-REVISION-main =		1
 
 PKGNAME-main =		opencv-${V}
 PKGNAME-java =		opencv-java-${V}
@@ -24,13 +22,13 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
   opencv_flann opencv_highgui opencv_imgproc opencv_ml opencv_objdetect \
   opencv_photo opencv_stitching opencv_video opencv_imgcodecs \
   opencv_videoio opencv_dnn
-SHARED_LIBS += $i 9.2
+SHARED_LIBS += $i 9.3
 .endfor
 
 WANTLIB-main += ${COMPILER_LIBCXX} avcodec avformat avutil OpenEXR-3_1
 WANTLIB-main += c cairo gdk-3 gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gstapp-1.0
-WANTLIB-main += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gstriff-1.0
-WANTLIB-main += gstvideo-1.0 gtk-3 jpeg m openjp2 png swscale tiff
+WANTLIB-main += gstbase-1.0 gstaudio-1.0 gstpbutils-1.0 gstreamer-1.0
+WANTLIB-main += gstriff-1.0 gstvideo-1.0 gtk-3 jpeg m openjp2 png swscale tiff
 WANTLIB-main += webp z
 
 WANTLIB-java += ${COMPILER_LIBCXX} opencv_calib3d opencv_core opencv_dnn
