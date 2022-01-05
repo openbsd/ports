@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/12/18 18:15:43 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2022/01/05 09:52:16 kn Exp $
 
 COMMENT =		range library for C++14/17/20
 
@@ -27,25 +27,26 @@ MODULES =		devel/cmake
 # disable hardare specific optimizations
 CONFIGURE_ARGS +=	-DRANGES_NATIVE=OFF
 
-# avoid using doxygen (configure would still detect it, though)
+# avoid using doxygen (configure would still detect it)
 CONFIGURE_ARGS +=	-DRANGE_V3_DOCS=OFF \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
 
-# avoid picking up git and fetching during build/test
-CONFIGURE_ARGS +=	-DRANGE_V3_TESTS=OFF \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
+# avoid picking up git and fetching during tests
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
 
-# avoid picking up boost (only this example)
+# avoid picking up boost due to this example (configure would still detect it)
 CONFIGURE_ARGS +=	-DRANGES_BUILD_CALENDAR_EXAMPLE=OFF \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Boost=ON
-# avoid building anything
+# not needed for now
 CONFIGURE_ARGS +=	-DRANGE_V3_EXAMPLES=OFF
 
 # just header files
 PKG_ARCH =		*
-# with docs, tests and examples disabled:
-# "ninja: no work to do."
+
+# compile tests only when testing
 NO_BUILD =		Yes
-NO_TEST =		Yes
+
+pre-test:
+	${MODCMAKE_BUILD_TARGET}
 
 .include <bsd.port.mk>
