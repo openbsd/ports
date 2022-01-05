@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.141 2021/12/22 22:52:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.142 2022/01/05 11:29:59 sthen Exp $
 
 COMMENT=	auto-discovering network management/monitoring system
 
 # changelogs at https://github.com/librenms/librenms/releases
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
-GH_TAGNAME=	21.12.0
+GH_TAGNAME=	21.12.1
 
 DISTFILES=	${GH_DISTFILE} \
 		${PKGNAME}-vendor.tar.xz:0
@@ -75,7 +75,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR} \
 	    ${WRKINST}/${LOCALBASE}/share/bash-completion/completions/
 	cd ${WRKSRC}; pax -rw . ${INSTDIR}
-	find ${INSTDIR} -name '*.orig' -delete
+	find ${INSTDIR} -name '*${PATCHORIG}' -delete
 	mkdir -p ${INSTDIR}/{rrd,logs}
 	sed -i 's,%LNMS_VERSION%,${DISTNAME:S/librenms-//},' ${INSTDIR}/includes/common.php
 	cp /usr/share/snmp/mibs/OPENBSD-* ${INSTDIR}/mibs/
