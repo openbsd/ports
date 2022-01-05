@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2022/01/05 09:54:51 kn Exp $
+# $OpenBSD: Makefile,v 1.5 2022/01/05 10:01:56 kn Exp $
 
 COMMENT =		range library for C++14/17/20
 
@@ -49,3 +49,14 @@ pre-test:
 	${MODCMAKE_BUILD_TARGET}
 
 .include <bsd.port.mk>
+
+.if ${PROPERTIES:Mclang}
+# error: identifier '...' is reserved because it contains '__' [-Werror,-Wreserved-identifier]
+# # error: '~...' overrides a destructor but is not marked 'override' [-Werror,-Wsuggest-destructor-override]
+# # error: '...' overrides a member function but is not marked 'override' [-Werror,-Wsuggest-override]
+CONFIGURE_FLAGS +=      -DRANGES_HAS_WERROR=0
+# prevent warning spam
+CXXFLAGS +=	-Wno-reserved-identifier \
+		-Wno-suggest-destructor-override \
+		-Wno-suggest-override
+.endif
