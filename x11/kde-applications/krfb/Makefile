@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2022/01/05 08:02:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2022/01/05 20:50:31 rsadowski Exp $
 
 COMMENT =	desktop sharing
 DISTNAME =	krfb-${VERSION}
 CATEGORIES =	net x11
+REVISION =	0
 
 SHARED_LIBS +=  krfbprivate               2.1 # 5.0
 
@@ -22,6 +23,8 @@ MODKDE5_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
+
+BUILD_DEPENDS =	devel/kf5/kwayland
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \
