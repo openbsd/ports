@@ -1,18 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.14 2019/12/05 07:41:37 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.15 2022/01/05 13:01:52 sebastia Exp $
 ${GEM_BIN}/puppet-lint${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/.gitignore
-${GEM_LIB}/gems/${DISTNAME}/.rspec
-${GEM_LIB}/gems/${DISTNAME}/.rubocop.yml
-${GEM_LIB}/gems/${DISTNAME}/.rubocop_todo.yml
-${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
-${GEM_LIB}/gems/${DISTNAME}/Gemfile
+${GEM_LIB}/gems/${DISTNAME}/HISTORY.md
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.md
-${GEM_LIB}/gems/${DISTNAME}/Rakefile
-${GEM_LIB}/gems/${DISTNAME}/appveyor.yml
 ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/puppet-lint
 ${GEM_LIB}/gems/${DISTNAME}/lib/
@@ -82,7 +75,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/tasks/gemfile_rewrite.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/tasks/puppet-lint.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/tasks/release_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/version.rb
-${GEM_LIB}/gems/${DISTNAME}/puppet-lint.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/
