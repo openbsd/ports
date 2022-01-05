@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/09/13 09:17:48 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2022/01/05 21:16:37 sthen Exp $
 include/dovecot-fts-flatcurve/
 include/dovecot-fts-flatcurve/fts-flatcurve-config.h
+@so lib/dovecot/doveadm/lib21_doveadm_fts_flatcurve_plugin.so
 @so lib/dovecot/lib21_fts_flatcurve_plugin.so
