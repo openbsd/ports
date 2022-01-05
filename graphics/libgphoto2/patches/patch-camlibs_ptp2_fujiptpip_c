@@ -1,0 +1,15 @@
+$OpenBSD: patch-camlibs_ptp2_fujiptpip_c,v 1.1 2022/01/05 10:45:06 ajacoutot Exp $
+
+ptp2/ptpip.c:755:7: warning: implicit declaration of function 'inet_aton'
+
+Index: camlibs/ptp2/fujiptpip.c
+--- camlibs/ptp2/fujiptpip.c.orig
++++ camlibs/ptp2/fujiptpip.c
+@@ -60,6 +60,7 @@
+ # include <ws2tcpip.h>
+ #else
+ # include <sys/socket.h>
++# include <arpa/inet.h>
+ # include <netinet/in.h>
+ #endif
+ #include "ptpip-private.h"

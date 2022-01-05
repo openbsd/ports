@@ -1,4 +1,4 @@
-$OpenBSD: patch-camlibs_ptp2_ptpip_c,v 1.2 2021/02/27 07:55:10 ajacoutot Exp $
+$OpenBSD: patch-camlibs_ptp2_ptpip_c,v 1.3 2022/01/05 10:45:06 ajacoutot Exp $
 
 ptp2/ptpip.c:697: warning: implicit declaration of function 'inet_aton'
 
@@ -11,5 +11,5 @@ Index: camlibs/ptp2/ptpip.c
  # include <sys/socket.h>
 +# include <arpa/inet.h>
  # include <netinet/in.h>
+ # include <fcntl.h>
  #endif
- 

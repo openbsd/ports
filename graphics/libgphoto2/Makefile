@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.73 2021/02/27 07:55:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2022/01/05 10:45:05 ajacoutot Exp $
 
 COMMENT=		digital camera library
 
-VERSION=		2.5.27
+VERSION=		2.5.28
 DISTNAME=		libgphoto2-${VERSION}
 PKGNAME=		libgphoto-${VERSION}
 
@@ -12,7 +12,7 @@ SUBST_VARS=		GPHOTO2_PORT_API VERSION
 CATEGORIES=		graphics devel
 
 SHARED_LIBS +=  gphoto2_port         8.1      # 12.0
-SHARED_LIBS +=  gphoto2              4.2      # 7.0
+SHARED_LIBS +=  gphoto2              4.2      # 8.0
 
 HOMEPAGE=		http://www.gphoto.org/
 
@@ -26,6 +26,8 @@ WANTLIB += freetype gd iconv intl jpeg ltdl lzma m nghttp2 png
 WANTLIB += ssl tiff usb usb-1.0 webp xml2 z zstd
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gphoto/}
+
+BUILD_DEPENDS=		devel/doxygen
 
 LIB_DEPENDS=		graphics/gd \
 			graphics/libexif \

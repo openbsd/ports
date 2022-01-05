@@ -1,0 +1,21 @@
+$OpenBSD: patch-camlibs_st2205_st2205_c,v 1.1 2022/01/05 10:45:06 ajacoutot Exp $
+
+st2205/st2205.c21:683:23: warning: implicit declaration of function 'rand_r'
+
+st2205/st2205.c:505:2: warning: implicit declaration of function 'le32toh'
+
+Index: camlibs/st2205/st2205.c
+--- camlibs/st2205/st2205.c.orig
++++ camlibs/st2205/st2205.c
+@@ -18,10 +18,10 @@
+  * Boston, MA  02110-1301  USA
+  */
+ #define _DEFAULT_SOURCE
+-#define _POSIX_C_SOURCE 1
+ #define _DARWIN_C_SOURCE
+ #include "config.h"
+ 
++#include <endian.h>
+ #include <stdio.h>
+ #include <string.h>
+ #include <errno.h>

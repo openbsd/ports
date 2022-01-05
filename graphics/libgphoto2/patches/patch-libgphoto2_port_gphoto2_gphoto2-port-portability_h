@@ -1,31 +1,29 @@
-$OpenBSD: patch-libgphoto2_port_gphoto2_gphoto2-port-portability_h,v 1.8 2018/04/22 08:27:22 ajacoutot Exp $
+$OpenBSD: patch-libgphoto2_port_gphoto2_gphoto2-port-portability_h,v 1.9 2022/01/05 10:45:06 ajacoutot Exp $
 
-libusb1/libusb1.c:304: warning: implicit declaration of function 'snprintf'
-libusb1/libusb1.c:304: warning: incompatible implicit declaration of built-in function 'snprintf'
+Don't define _XOPEN_SOURCE and _POSIX_C_SOURCE to old values, it hides C99
+symbols like snprintf (from FreeBSD ports).
 
 Index: libgphoto2_port/gphoto2/gphoto2-port-portability.h
 --- libgphoto2_port/gphoto2/gphoto2-port-portability.h.orig
 +++ libgphoto2_port/gphoto2/gphoto2-port-portability.h
-@@ -180,6 +180,7 @@ typedef struct {
+@@ -83,20 +83,6 @@ typedef struct {
+ 
  /* yummy. :) */
  
- /* XOPEN needed for usleep */
-+#ifndef __OpenBSD__
- #ifndef _XOPEN_SOURCE
- # define _XOPEN_SOURCE 500
- #else
-@@ -188,11 +189,14 @@ typedef struct {
- #  define _XOPEN_SOURCE 500
- # endif
- #endif
-+#endif
- 
- /* for nanosleep */
-+#ifndef __OpenBSD__
- # ifndef _POSIX_C_SOURCE
- #  define _POSIX_C_SOURCE 199309
- # endif
-+#endif
+-/* XOPEN needed for usleep */
+-#ifndef _XOPEN_SOURCE
+-# define _XOPEN_SOURCE 500
+-#else
+-# if ((_XOPEN_SOURCE - 0) < 500)
+-#  undef _XOPEN_SOURCE
+-#  define _XOPEN_SOURCE 500
+-# endif
+-#endif
+-
+-/* for nanosleep */
+-# ifndef _POSIX_C_SOURCE
+-#  define _POSIX_C_SOURCE 199309
+-# endif
  # include <time.h>
  
  # include <strings.h>
