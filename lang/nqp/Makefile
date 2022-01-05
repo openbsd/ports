@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2021/12/28 19:27:52 pascal Exp $
+# $OpenBSD: Makefile,v 1.29 2022/01/05 08:28:36 kmos Exp $
 
 COMMENT =		Not Quite Perl
 
@@ -13,6 +13,9 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # Artistic 2
 PERMIT_PACKAGE =	Yes
+
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 WANTLIB =		c moar
 
