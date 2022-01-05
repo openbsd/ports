@@ -1,4 +1,4 @@
-# $OpenBSD: Dependency.pm,v 1.4 2020/05/16 21:44:23 sthen Exp $
+# $OpenBSD: Dependency.pm,v 1.5 2022/01/05 09:13:40 espie Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -53,7 +53,8 @@ sub _add_dep
 {
 	my ( $self, $type, $port, $reqs ) = @_;
 
-	$self->{deps}{$type} ||= CPAN::Meta::Requirements->new;
+	$self->{deps}{$type} //=  CPAN::Meta::Requirements->new;
+	$reqs //= 0;	# any version will do
 	$self->{deps}{$type}->add_string_requirement( $port => $reqs );
 }
 
