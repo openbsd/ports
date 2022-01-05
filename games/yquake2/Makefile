@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2021/12/15 13:44:11 sdk Exp $
+# $OpenBSD: Makefile,v 1.25 2022/01/05 15:32:28 kmos Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 
@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tar.xz
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
+
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 WANTLIB += GL SDL2 c curl execinfo m openal
 
