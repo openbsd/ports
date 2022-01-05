@@ -1,4 +1,4 @@
-# $OpenBSD: Port.pm,v 1.22 2022/01/05 09:12:50 espie Exp $
+# $OpenBSD: Port.pm,v 1.23 2022/01/05 18:28:25 sdk Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 # Copyright (c) 2019 Andrew Hewus Fresh <afresh1@openbsd.org>
@@ -22,6 +22,7 @@ use warnings;
 
 use Cwd;
 use Fcntl qw( :mode );
+use File::Copy qw ( cp );
 use File::Find qw();
 use File::Path qw( make_path );
 use JSON::PP;
@@ -42,11 +43,6 @@ sub add_make_options
 {
 	my $self = shift;
 	push(@make_options, @_);
-}
-
-sub _cp {
-    my (@args) = @_;
-    system('/bin/cp', @args) == 0;
 }
 
 sub new
@@ -536,7 +532,7 @@ sub make_portdir
 	if ( -e $old ) {
 		my ($dst) = $new =~ m{^(.*)/[^/]+$};
 		make_path($dst) unless -e $dst;
-		_cp( '-a', $old, $dst )
+		copy( $old, $dst )
 		    or die "Unable to copy $old to $new: $!";
 
 		unlink glob("$new/pkg/PLIST*.orig");
