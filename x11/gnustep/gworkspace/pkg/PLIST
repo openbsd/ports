@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2017/04/11 20:32:54 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.15 2022/01/05 09:01:04 sebastia Exp $
 bin/GWorkspace
 bin/MDFinder
 bin/Recycler
@@ -705,6 +705,8 @@ libexec/GNUstep/GWorkspace.app/Resources/Hungarian.lproj/Localizable.strings
 libexec/GNUstep/GWorkspace.app/Resources/Info-gnustep.plist
 libexec/GNUstep/GWorkspace.app/Resources/Italian.lproj/
 libexec/GNUstep/GWorkspace.app/Resources/Italian.lproj/Localizable.strings
+libexec/GNUstep/GWorkspace.app/Resources/Japanese.lproj/
+libexec/GNUstep/GWorkspace.app/Resources/Japanese.lproj/Localizable.strings
 libexec/GNUstep/GWorkspace.app/Resources/Kill.tiff
 libexec/GNUstep/GWorkspace.app/Resources/LED-0.tiff
 libexec/GNUstep/GWorkspace.app/Resources/LED-1.tiff
@@ -745,6 +747,8 @@ libexec/GNUstep/GWorkspace.app/Resources/Month.tiff
 libexec/GNUstep/GWorkspace.app/Resources/Norvegian.lproj/
 libexec/GNUstep/GWorkspace.app/Resources/Norvegian.lproj/Localizable.strings
 libexec/GNUstep/GWorkspace.app/Resources/Pboard.tiff
+libexec/GNUstep/GWorkspace.app/Resources/Polish.lproj/
+libexec/GNUstep/GWorkspace.app/Resources/Polish.lproj/Localizable.strings
 libexec/GNUstep/GWorkspace.app/Resources/Portuguese.lproj/
 libexec/GNUstep/GWorkspace.app/Resources/Portuguese.lproj/Localizable.strings
 libexec/GNUstep/GWorkspace.app/Resources/REWArrow.tiff
@@ -907,6 +911,7 @@ libexec/GNUstep/gimp.app/
 libexec/GNUstep/gimp.app/FileIcon_.gif.tiff
 libexec/GNUstep/gimp.app/FileIcon_.jpg.tiff
 libexec/GNUstep/gimp.app/FileIcon_.png.tiff
+libexec/GNUstep/gimp.app/FileIcon_.svg.tiff
 libexec/GNUstep/gimp.app/FileIcon_.tga.tiff
 libexec/GNUstep/gimp.app/FileIcon_.tif.tiff
 libexec/GNUstep/gimp.app/FileIcon_.tiff.tiff
