@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2018/09/04 12:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2022/01/05 09:01:43 sebastia Exp $
 
 COMMENT =	GNUstep desktop meta-package
 
-VERSION =	0.9.4
+VERSION =	1.0.0
 PKGNAME =	gnustep-desktop-${VERSION}
-REVISION =	0
 
 RUN_DEPENDS += \
 		x11/gnustep/aclock \
