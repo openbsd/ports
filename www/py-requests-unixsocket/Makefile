@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/02 00:02:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2022/01/05 10:54:08 sthen Exp $
 
 COMMENT =		use requests to talk HTTP via a UNIX domain socket
 
-MODPY_EGG_VERSION =	0.2.0
+MODPY_EGG_VERSION =	0.3.0
 DISTNAME =		requests-unixsocket-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		www
 
@@ -29,7 +28,6 @@ TEST_DEPENDS =		devel/py-apipkg${MODPY_FLAVOR} \
 			devel/py-execnet${MODPY_FLAVOR} \
 			devel/py-parsing${MODPY_FLAVOR} \
 			devel/py-py${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR} \
 			sysutils/py-packaging${MODPY_FLAVOR} \
 			www/py-waitress${MODPY_FLAVOR}
 

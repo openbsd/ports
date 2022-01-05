@@ -1,9 +1,0 @@
-$OpenBSD: patch-pytest_ini,v 1.1.1.1 2021/01/20 05:55:58 bket Exp $
-
-Index: pytest.ini
---- pytest.ini.orig
-+++ pytest.ini
-@@ -1,2 +1,2 @@
- [pytest]
--addopts = --tb=short --pep8
-+addopts = --tb=short
