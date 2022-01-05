@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2021/03/31 08:40:25 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.16 2022/01/05 12:47:00 sebastia Exp $
 @newuser _puppetboard:739:www:daemon:Puppetboard user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/puppetboard
 puppetboard/
@@ -58,6 +58,7 @@ puppetboard/puppetboard/static/js/c3.min.js
 puppetboard/puppetboard/static/js/d3.min.js
 puppetboard/puppetboard/static/js/dailychart.js
 puppetboard/puppetboard/static/js/lists.js
+puppetboard/puppetboard/static/js/pretty.js
 puppetboard/puppetboard/static/js/radiator.js
 puppetboard/puppetboard/static/js/scroll.top.js
 puppetboard/puppetboard/static/js/tables.js
