@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2021/12/10 06:54:43 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2022/01/05 08:02:56 rsadowski Exp $
 
 COMMENT =	Japanese reference tool for KDE
 DISTNAME =	kiten-${VERSION}
 CATEGORIES =	education
-REVISION =	0
 
 SHARED_LIBS +=  kiten                     2.0 # 5.0
 

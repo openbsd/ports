@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2021/12/10 07:00:32 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2022/01/05 08:02:57 rsadowski Exp $
 
 COMMENT =	alphabet learning application for KDE
 DISTNAME =	klettres-${VERSION}
 CATEGORIES =	education
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
@@ -21,7 +20,6 @@ MODKDE5_DESKTOP_FILE = yes
 LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kauth \
 		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
 		devel/kf5/kconfig \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/kcoreaddons \

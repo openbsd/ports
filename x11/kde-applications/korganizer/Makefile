@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.16 2021/12/10 06:49:21 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.17 2022/01/05 08:02:59 rsadowski Exp $
 
 COMMENT =	calendar and scheduling component of kontact
 DISTNAME =	korganizer-${VERSION}
 CATEGORIES =	net www
-REVISION =	0
 
-SHARED_LIBS +=  korganizer_core         1.0 # 5.13.2
+SHARED_LIBS +=  korganizer_core         2.0 # 5.13.2
 SHARED_LIBS +=  korganizer_interfaces   1.0 # 5.13.2
-SHARED_LIBS +=  korganizerprivate       4.0 # 5.13.2
+SHARED_LIBS +=  korganizerprivate       5.0 # 5.13.2
 
-WANTLIB += ${COMPILER_LIBCXX} GL KF5AkonadiCalendar KF5AkonadiContact
-WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiNotes KF5AkonadiSearchPIM
+WANTLIB += ${COMPILER_LIBCXX} GL Grantlee_Templates KF5AkonadiCalendar
+WANTLIB += KF5AkonadiContact KF5AkonadiCore KF5AkonadiMime KF5AkonadiNotes
 WANTLIB += KF5AkonadiWidgets KF5Attica KF5Auth KF5AuthCore KF5CalendarCore
 WANTLIB += KF5CalendarSupport KF5CalendarUtils KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5Contacts
@@ -75,7 +74,6 @@ LIB_DEPENDS =	devel/kf5/attica \
 		x11/kde-applications/akonadi-contacts \
 		x11/kde-applications/akonadi-mime \
 		x11/kde-applications/akonadi-notes \
-		x11/kde-applications/akonadi-search \
 		x11/kde-applications/calendarsupport \
 		x11/kde-applications/eventviews \
 		x11/kde-applications/incidenceeditor \

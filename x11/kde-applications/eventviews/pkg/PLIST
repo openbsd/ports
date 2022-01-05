@@ -1,16 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/08/08 12:23:49 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2022/01/05 08:02:52 rsadowski Exp $
 include/KF5/EventViews/
 include/KF5/EventViews/AgendaView
 include/KF5/EventViews/CalendarDecoration
 include/KF5/EventViews/ConfigDialogInterface
 include/KF5/EventViews/EventView
 include/KF5/EventViews/Helper
+include/KF5/EventViews/IncidenceTreeModel
 include/KF5/EventViews/JournalView
 include/KF5/EventViews/ListView
 include/KF5/EventViews/MonthView
 include/KF5/EventViews/MultiAgendaView
 include/KF5/EventViews/Prefs
 include/KF5/EventViews/TimeLineView
+include/KF5/EventViews/TodoModel
 include/KF5/EventViews/TodoView
 include/KF5/EventViews/ViewCalendar
 include/KF5/EventViews/WhatsNextView
@@ -27,12 +29,14 @@ include/KF5/eventviews/configdialoginterface.h
 include/KF5/eventviews/eventview.h
 include/KF5/eventviews/eventviews_export.h
 include/KF5/eventviews/helper.h
+include/KF5/eventviews/incidencetreemodel.h
 include/KF5/eventviews/journalview.h
 include/KF5/eventviews/listview.h
 include/KF5/eventviews/monthview.h
 include/KF5/eventviews/multiagendaview.h
 include/KF5/eventviews/prefs.h
 include/KF5/eventviews/timelineview.h
+include/KF5/eventviews/todomodel.h
 include/KF5/eventviews/todoview.h
 include/KF5/eventviews/viewcalendar.h
 include/KF5/eventviews/whatsnextview.h

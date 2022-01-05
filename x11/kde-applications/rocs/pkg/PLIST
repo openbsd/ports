@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/06/19 18:34:46 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2022/01/05 08:03:04 rsadowski Exp $
 @pkgpath x11/kde4/rocs
 @bin bin/rocs
 include/rocs/
@@ -29,29 +29,19 @@ share/doc/HTML/de/rocs/
 share/doc/HTML/de/rocs/index.cache.bz2
 share/doc/HTML/de/rocs/index.docbook
 share/doc/HTML/en/rocs/
+share/doc/HTML/en/rocs/document-properties.png
 share/doc/HTML/en/rocs/force-based-layout-ui-screenshot.png
-share/doc/HTML/en/rocs/hi22-action-rocsalignbottom.png
-share/doc/HTML/en/rocs/hi22-action-rocsaligncircle.png
-share/doc/HTML/en/rocs/hi22-action-rocsalignhmiddle.png
-share/doc/HTML/en/rocs/hi22-action-rocsalignleft.png
-share/doc/HTML/en/rocs/hi22-action-rocsalignright.png
-share/doc/HTML/en/rocs/hi22-action-rocsaligntop.png
-share/doc/HTML/en/rocs/hi22-action-rocsaligntree.png
-share/doc/HTML/en/rocs/hi22-action-rocsalignvmiddle.png
-share/doc/HTML/en/rocs/hi22-action-rocsproperties.png
-share/doc/HTML/en/rocs/hi22-actions-control-stop.png
-share/doc/HTML/en/rocs/hi22-actions-controls-run.png
-share/doc/HTML/en/rocs/hi22-actions-rocsdelete.png
-share/doc/HTML/en/rocs/hi22-actions-rocsedge.png
-share/doc/HTML/en/rocs/hi22-actions-rocsnode.png
-share/doc/HTML/en/rocs/hi22-actions-rocsselectmove.png
 share/doc/HTML/en/rocs/index.cache.bz2
 share/doc/HTML/en/rocs/index.docbook
+share/doc/HTML/en/rocs/media-playback-start.png
+share/doc/HTML/en/rocs/process-stop.png
 share/doc/HTML/en/rocs/radial-tree-layout-ui-screenshot.png
-share/doc/HTML/en/rocs/rocs-control-engine-debug.png
-share/doc/HTML/en/rocs/rocs-control-engine-step.png
 share/doc/HTML/en/rocs/rocs-interfaces.png
 share/doc/HTML/en/rocs/rocs-screenshot.png
+share/doc/HTML/en/rocs/sc-actions-rocsdelete.png
+share/doc/HTML/en/rocs/sc-actions-rocsedge.png
+share/doc/HTML/en/rocs/sc-actions-rocsnode.png
+share/doc/HTML/en/rocs/sc-actions-rocsselect.png
 share/doc/HTML/es/rocs/
 share/doc/HTML/es/rocs/apiConsole.docbook
 share/doc/HTML/es/rocs/apiDatastructure.docbook
@@ -87,6 +77,13 @@ share/doc/HTML/pt/rocs/index.docbook
 share/doc/HTML/pt_BR/rocs/
 share/doc/HTML/pt_BR/rocs/index.cache.bz2
 share/doc/HTML/pt_BR/rocs/index.docbook
+share/doc/HTML/ru/rocs/
+share/doc/HTML/ru/rocs/index.cache.bz2
+share/doc/HTML/ru/rocs/index.docbook
+share/doc/HTML/ru/rocs/rocs-interfaces.png
+share/doc/HTML/ru/rocs/rocs-screenshot.png
+share/doc/HTML/ru/rocs/rocs-toolbar-alignment.png
+share/doc/HTML/ru/rocs/rocs-toolbar-main.png
 share/doc/HTML/sv/rocs/
 share/doc/HTML/sv/rocs/index.cache.bz2
 share/doc/HTML/sv/rocs/index.docbook

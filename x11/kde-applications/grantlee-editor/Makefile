@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/10 06:37:42 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2022/01/05 08:02:52 rsadowski Exp $
 
 COMMENT =	utilities and tools to manage themes in KDE PIM applications
 DISTNAME =	grantlee-editor-${VERSION}
@@ -6,18 +6,18 @@ CATEGORIES =	devel
 
 SHARED_LIBS +=  grantleethemeeditor       1.0 # 5.13.2
 
-WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiContact KF5AkonadiCore
-WANTLIB += KF5AkonadiMime KF5AkonadiWidgets KF5Archive KF5Attica
-WANTLIB += KF5Auth KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5Contacts KF5CoreAddons
-WANTLIB += KF5Crash KF5DBusAddons KF5GrantleeTheme KF5I18n KF5ItemModels
-WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Libkleo
-WANTLIB += KF5MessageCore KF5MessageViewer KF5Mime KF5MimeTreeParser
-WANTLIB += KF5NewStuff KF5NewStuffCore KF5PimCommon KF5PimTextEdit
-WANTLIB += KF5Service KF5Solid KF5SyntaxHighlighting KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml
-WANTLIB += Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
+WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
+WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiWidgets KF5Archive
+WANTLIB += KF5Attica KF5Auth KF5AuthCore KF5Codecs KF5Completion
+WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5Contacts
+WANTLIB += KF5CoreAddons KF5Crash KF5DBusAddons KF5GrantleeTheme
+WANTLIB += KF5I18n KF5ItemModels KF5JobWidgets KF5KIOCore KF5KIOGui
+WANTLIB += KF5KIOWidgets KF5Libkleo KF5MessageCore KF5MessageViewer
+WANTLIB += KF5Mime KF5MimeTreeParser KF5NewStuff KF5NewStuffCore
+WANTLIB += KF5PimCommon KF5PimTextEdit KF5Service KF5Solid KF5SyntaxHighlighting
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
 WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 assuan c
 WANTLIB += gpgme gpgmepp m qgpgme
 

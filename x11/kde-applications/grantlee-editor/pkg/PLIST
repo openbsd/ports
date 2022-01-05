@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/14 03:46:26 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2022/01/05 08:02:52 rsadowski Exp $
 @conflict kdepimlibs-<=4
 @bin bin/contactprintthemeeditor
 @bin bin/contactthemeeditor
@@ -62,6 +62,9 @@ share/doc/HTML/pt_BR/contactthemeeditor/index.docbook
 share/doc/HTML/pt_BR/headerthemeeditor/
 share/doc/HTML/pt_BR/headerthemeeditor/index.cache.bz2
 share/doc/HTML/pt_BR/headerthemeeditor/index.docbook
+share/doc/HTML/ru/contactthemeeditor/
+share/doc/HTML/ru/contactthemeeditor/index.cache.bz2
+share/doc/HTML/ru/contactthemeeditor/index.docbook
 share/doc/HTML/sv/contactthemeeditor/
 share/doc/HTML/sv/contactthemeeditor/index.cache.bz2
 share/doc/HTML/sv/contactthemeeditor/index.docbook

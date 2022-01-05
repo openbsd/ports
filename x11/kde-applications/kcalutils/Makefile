@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2020/11/03 16:12:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2022/01/05 08:02:54 rsadowski Exp $
 
 COMMENT =	library for the handling of calendar data.
 DISTNAME =	kcalutils-${VERSION}
 CATEGORIES =	productivity
 
-SHARED_LIBS +=  KF5CalendarUtils          1.0 # 5.6
+SHARED_LIBS +=  KF5CalendarUtils          2.0 # 5.6
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5CalendarCore
 WANTLIB += KF5Codecs KF5ConfigCore KF5ConfigGui KF5CoreAddons

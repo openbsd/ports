@@ -1,25 +1,24 @@
-# $OpenBSD: Makefile,v 1.10 2021/12/10 06:50:04 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2022/01/05 08:02:53 rsadowski Exp $
 
 COMMENT =	addressbook viewer/frontend for KDE
 DISTNAME =	kaddressbook-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
-SHARED_LIBS +=  kaddressbookprivate         1.1 # 5.13.2
-SHARED_LIBS +=  KPimAddressbookImportExport 0.0 # 5.16.1
+SHARED_LIBS +=  kaddressbookprivate         2.0 # 5.13.2
+SHARED_LIBS +=  KPimAddressbookImportExport 0.1 # 5.16.1
 
-WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiContact KF5AkonadiCore
-WANTLIB += KF5AkonadiSearchDebug KF5AkonadiWidgets KF5Auth KF5AuthCore
-WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
-WANTLIB += KF5GrantleeTheme KF5I18n KF5IMAP KF5ItemModels KF5JobWidgets
-WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOGui KF5KIOWidgets KF5KontactInterface
-WANTLIB += KF5Libkdepim KF5Mime KF5Parts KF5PimCommon KF5PimCommonAkonadi
-WANTLIB += KF5Prison KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui KUserFeedbackCore
-WANTLIB += KUserFeedbackWidgets Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets Qt5Xml
-WANTLIB += X11 c m
+WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
+WANTLIB += KF5AkonadiCore KF5AkonadiSearchDebug KF5AkonadiWidgets
+WANTLIB += KF5Auth KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5Contacts KF5CoreAddons
+WANTLIB += KF5Crash KF5GrantleeTheme KF5I18n KF5IMAP KF5ItemModels
+WANTLIB += KF5JobWidgets KF5KCMUtils KF5KIOCore KF5KIOGui KF5KIOWidgets
+WANTLIB += KF5KontactInterface KF5Libkdepim KF5Mime KF5Parts KF5PimCommon
+WANTLIB += KF5PimCommonAkonadi KF5Prison KF5Service KF5Solid KF5SonnetUi
+WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
+WANTLIB += KUserFeedbackCore KUserFeedbackWidgets Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
+WANTLIB += Qt5Xml X11 c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

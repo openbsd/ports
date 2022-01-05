@@ -1,22 +1,23 @@
-# $OpenBSD: Makefile,v 1.10 2021/12/10 06:54:14 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2022/01/05 08:02:54 rsadowski Exp $
 
 COMMENT =	KDE-based GUI for cron task scheduler
 DISTNAME =	kcron-${VERSION}
 PKGNAME =	kcron-kf5-${VERSION}
 CATEGORIES =	x11
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5Service KF5Solid KF5WidgetsAddons KF5WindowSystem
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Widgets Qt5Xml X11 m
+WANTLIB += Qt5Widgets Qt5Xml X11 c m
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
+
+RUN_DEPENDS =	x11/dbus,-suid
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \

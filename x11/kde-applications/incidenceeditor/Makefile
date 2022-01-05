@@ -1,24 +1,24 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/10 06:37:43 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2022/01/05 08:02:52 rsadowski Exp $
 
 COMMENT =	KDE PIM incidence editor
 DISTNAME =	incidenceeditor-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KF5IncidenceEditor    1.1 # 5.13.2
+SHARED_LIBS +=  KF5IncidenceEditor    2.0 # 5.13.2
 
-WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCalendar KF5AkonadiContact
-WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiWidgets KF5Auth
-WANTLIB += KF5AuthCore KF5CalendarCore KF5CalendarSupport KF5CalendarUtils
-WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5EventViews
-WANTLIB += KF5GrantleeTheme KF5I18n KF5IMAP KF5IconThemes KF5IdentityManagement
-WANTLIB += KF5ItemModels KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
-WANTLIB += KF5Ldap KF5Libkdepim KF5MailTransport KF5MailTransportAkonadi
-WANTLIB += KF5Mime KF5PimCommon KF5PimCommonAkonadi KF5PimTextEdit
-WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5Wallet
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui KGantt Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
-WANTLIB += Qt5Xml X11 c m
+WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiCalendar
+WANTLIB += KF5AkonadiContact KF5AkonadiCore KF5AkonadiMime KF5AkonadiWidgets
+WANTLIB += KF5Auth KF5AuthCore KF5CalendarCore KF5CalendarSupport
+WANTLIB += KF5CalendarUtils KF5Codecs KF5Completion KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5Contacts KF5CoreAddons
+WANTLIB += KF5EventViews KF5GrantleeTheme KF5I18n KF5IMAP KF5IconThemes
+WANTLIB += KF5IdentityManagement KF5ItemModels KF5JobWidgets KF5KIOCore
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5Ldap KF5Libkdepim KF5MailTransport
+WANTLIB += KF5MailTransportAkonadi KF5Mime KF5PimCommon KF5PimCommonAkonadi
+WANTLIB += KF5PimTextEdit KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
+WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
+WANTLIB += KGantt Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5PrintSupport Qt5Widgets Qt5Xml X11 c m
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes

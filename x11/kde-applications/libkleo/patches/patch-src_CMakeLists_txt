@@ -1,15 +1,15 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.7 2021/09/10 08:43:58 rsadowski Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.8 2022/01/05 08:03:02 rsadowski Exp $
 
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -1,6 +1,8 @@
- 
- # target_include_directories does not handle empty include paths
--include_directories(${GPGME_INCLUDES})
-+include_directories(${GPGME_INCLUDES}
-+                    "${CMAKE_INSTALL_PREFIX}/include/gpgme++"
-+                    "${CMAKE_INSTALL_PREFIX}/include/qgpgme")
+@@ -3,7 +3,8 @@
+ include_directories(
+     ${Boost_INCLUDE_DIRS}
+     ${GPGME_INCLUDES}
+-)
++    "${CMAKE_INSTALL_PREFIX}/include/gpgme++"
++    "${CMAKE_INSTALL_PREFIX}/include/qgpgme")
  
  add_definitions(-DTRANSLATION_DOMAIN=\"libkleopatra\")
  

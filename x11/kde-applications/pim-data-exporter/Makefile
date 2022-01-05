@@ -1,24 +1,23 @@
-# $OpenBSD: Makefile,v 1.12 2021/12/10 06:48:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2022/01/05 08:03:03 rsadowski Exp $
 
 COMMENT =	KDE PIM data exporter
 DISTNAME =	pim-data-exporter-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
-SHARED_LIBS +=  pimdataexporterprivate       2.0 # 5.13.2
+SHARED_LIBS +=  pimdataexporterprivate       3.0 # 5.13.2
 
-WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiContact KF5AkonadiCore
-WANTLIB += KF5AkonadiMime KF5AkonadiNotes KF5AkonadiWidgets KF5Archive
-WANTLIB += KF5Auth KF5AuthCore KF5Bookmarks KF5CalendarCore KF5Codecs
-WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5Contacts KF5CoreAddons KF5Crash KF5DBusAddons KF5GrantleeTheme
-WANTLIB += KF5I18n KF5IMAP KF5IdentityManagement KF5ItemModels
-WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
-WANTLIB += KF5KIOGui KF5KIOWidgets KF5Libkdepim KF5Libkleo KF5MailCommon
-WANTLIB += KF5MailTransport KF5MessageComposer KF5MessageCore
-WANTLIB += KF5MessageViewer KF5Mime KF5MimeTreeParser KF5Notifications
-WANTLIB += KF5PimCommon KF5PimCommonAkonadi KF5PimTextEdit KF5Service
-WANTLIB += KF5Solid KF5Wallet KF5WidgetsAddons KF5WindowSystem
+WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
+WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiNotes KF5AkonadiWidgets
+WANTLIB += KF5Archive KF5Auth KF5AuthCore KF5Bookmarks KF5CalendarCore
+WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
+WANTLIB += KF5DBusAddons KF5GrantleeTheme KF5I18n KF5IMAP KF5IdentityManagement
+WANTLIB += KF5ItemModels KF5ItemViews KF5JobWidgets KF5KIOCore
+WANTLIB += KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets KF5Libkdepim
+WANTLIB += KF5Libkleo KF5MailCommon KF5MailTransport KF5MessageComposer
+WANTLIB += KF5MessageCore KF5MessageViewer KF5Mime KF5MimeTreeParser
+WANTLIB += KF5Notifications KF5PimCommon KF5PimCommonAkonadi KF5PimTextEdit
+WANTLIB += KF5Service KF5Solid KF5Wallet KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui KUserFeedbackCore KUserFeedbackWidgets Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
 WANTLIB += X11 assuan c gpgme gpgmepp m qgpgme

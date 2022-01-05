@@ -1,12 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/06/19 18:34:42 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2022/01/05 08:02:59 rsadowski Exp $
 @pkgpath x11/kde4/kreversi
 @bin bin/kreversi
 share/applications/org.kde.kreversi.desktop
+share/doc/HTML/ca/kreversi/
+share/doc/HTML/ca/kreversi/index.cache.bz2
+share/doc/HTML/ca/kreversi/index.docbook
+share/doc/HTML/ca/kreversi/kreversi1.png
+share/doc/HTML/ca/kreversi/kreversi2.png
 share/doc/HTML/de/kreversi/
 share/doc/HTML/de/kreversi/index.cache.bz2
 share/doc/HTML/de/kreversi/index.docbook
 share/doc/HTML/de/kreversi/kreversi1.png
 share/doc/HTML/en/kreversi/
+share/doc/HTML/en/kreversi/actions-lastmoves.png
+share/doc/HTML/en/kreversi/actions-legalmoves.png
+share/doc/HTML/en/kreversi/document-new.png
+share/doc/HTML/en/kreversi/edit-undo.png
+share/doc/HTML/en/kreversi/games-hint.png
 share/doc/HTML/en/kreversi/index.cache.bz2
 share/doc/HTML/en/kreversi/index.docbook
 share/doc/HTML/en/kreversi/kreversi1.png

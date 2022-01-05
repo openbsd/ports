@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/10 06:37:57 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2022/01/05 08:03:02 rsadowski Exp $
 
 COMMENT =	KDE PIM messaging library
 DISTNAME =	messagelib-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KF5MessageComposer       7.0 # 5.13.2
-SHARED_LIBS +=  KF5MessageCore           2.0 # 5.13.2
-SHARED_LIBS +=  KF5MessageList           3.0 # 5.13.2
+SHARED_LIBS +=  KF5MessageComposer       9.0 # 5.13.2
+SHARED_LIBS +=  KF5MessageCore           3.0 # 5.13.2
+SHARED_LIBS +=  KF5MessageList           5.0 # 5.13.2
 SHARED_LIBS +=  KF5MessageViewer         6.0 # 5.13.2
-SHARED_LIBS +=  KF5MimeTreeParser        2.0 # 5.13.2
-SHARED_LIBS +=  KF5TemplateParser        2.0 # 5.13.2
-SHARED_LIBS +=  KF5WebEngineViewer       5.0 # 5.13.2
+SHARED_LIBS +=  KF5MimeTreeParser        4.0 # 5.13.2
+SHARED_LIBS +=  KF5TemplateParser        3.0 # 5.13.2
+SHARED_LIBS +=  KF5WebEngineViewer       6.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
 WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiSearchPIM KF5AkonadiWidgets

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/09/10 08:43:59 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2022/01/05 08:03:03 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @conflict kdepim-*
@@ -22,6 +22,7 @@ include/KF5/MessageComposer/ContentJobBase
 include/KF5/MessageComposer/ConvertSnippetVariableMenu
 include/KF5/MessageComposer/ConvertSnippetVariablesJob
 include/KF5/MessageComposer/ConvertSnippetVariablesUtil
+include/KF5/MessageComposer/DraftStatus
 include/KF5/MessageComposer/EncryptJob
 include/KF5/MessageComposer/FollowUpReminderSelectDateDialog
 include/KF5/MessageComposer/FollowupReminder
@@ -176,6 +177,8 @@ include/KF5/MessageViewer/RemoteContentMenu
 include/KF5/MessageViewer/RichHeaderStrategy
 include/KF5/MessageViewer/ScamCheckShortUrl
 include/KF5/MessageViewer/ScamCheckShortUrlManager
+include/KF5/MessageViewer/ScamDetectionInfo
+include/KF5/MessageViewer/ScamDetectionWhiteListSettingsManager
 include/KF5/MessageViewer/ScamExpandUrlJob
 include/KF5/MessageViewer/SpamHeaderAnalyzer
 include/KF5/MessageViewer/Stl_Util
@@ -266,6 +269,7 @@ include/KF5/messagecomposer/contentjobbase.h
 include/KF5/messagecomposer/convertsnippetvariablemenu.h
 include/KF5/messagecomposer/convertsnippetvariablesjob.h
 include/KF5/messagecomposer/convertsnippetvariablesutil.h
+include/KF5/messagecomposer/draftstatus.h
 include/KF5/messagecomposer/encryptjob.h
 include/KF5/messagecomposer/followupreminder.h
 include/KF5/messagecomposer/followupremindercreatejob.h
@@ -434,6 +438,8 @@ include/KF5/messageviewer/remotecontentmenu.h
 include/KF5/messageviewer/richheaderstrategy.h
 include/KF5/messageviewer/scamcheckshorturl.h
 include/KF5/messageviewer/scamcheckshorturlmanager.h
+include/KF5/messageviewer/scamdetectioninfo.h
+include/KF5/messageviewer/scamdetectionwhitelistsettingsmanager.h
 include/KF5/messageviewer/scamexpandurljob.h
 include/KF5/messageviewer/spamheaderanalyzer.h
 include/KF5/messageviewer/stl_util.h
@@ -565,7 +571,6 @@ lib/qt5/plugins/messageviewer/headerstyle/
 @so lib/qt5/plugins/messageviewer/headerstyle/messageviewer_defaultgrantleeheaderstyleplugin.so
 share/config.kcfg/customtemplates_kfg.kcfg
 share/config.kcfg/templatesconfiguration_kfg.kcfg
-share/kconf_update/messageviewer.upd
 share/kf5/mkspecs/qt_MessageComposer.pri
 share/kf5/mkspecs/qt_MessageCore.pri
 share/kf5/mkspecs/qt_MessageList.pri

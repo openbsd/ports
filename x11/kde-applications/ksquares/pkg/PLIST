@@ -1,9 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/06/19 18:34:42 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2022/01/05 08:03:00 rsadowski Exp $
 @pkgpath x11/kde4/ksquares
 @bin bin/ksquares
 share/applications/org.kde.ksquares.desktop
 share/config.kcfg/
 share/config.kcfg/ksquares.kcfg
+share/doc/HTML/ca/ksquares/
+share/doc/HTML/ca/ksquares/configure-display.png
+share/doc/HTML/ca/ksquares/gameboard.png
+share/doc/HTML/ca/ksquares/index.cache.bz2
+share/doc/HTML/ca/ksquares/index.docbook
+share/doc/HTML/ca/ksquares/newgame.png
 share/doc/HTML/de/ksquares/
 share/doc/HTML/de/ksquares/index.cache.bz2
 share/doc/HTML/de/ksquares/index.docbook

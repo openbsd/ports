@@ -1,7 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/06/19 18:34:43 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2022/01/05 08:03:01 rsadowski Exp $
 @conflict kdegames-*
 @bin bin/ktuberling
 share/applications/org.kde.ktuberling.desktop
+share/doc/HTML/ca/ktuberling/
+share/doc/HTML/ca/ktuberling/index.cache.bz2
+share/doc/HTML/ca/ktuberling/index.docbook
+share/doc/HTML/ca/ktuberling/ktuberling-pizzeria.png
+share/doc/HTML/ca/ktuberling/technical-reference.docbook
 share/doc/HTML/de/ktuberling/
 share/doc/HTML/de/ktuberling/button-new.png
 share/doc/HTML/de/ktuberling/button-open.png

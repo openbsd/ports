@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2021/12/10 06:56:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2022/01/05 08:02:59 rsadowski Exp $
 
 COMMENT =	desktop sharing
 DISTNAME =	krfb-${VERSION}
 CATEGORIES =	net x11
-REVISION =	0
 
-SHARED_LIBS +=  krfbprivate               2.0 # 5.0
+SHARED_LIBS +=  krfbprivate               2.1 # 5.0
 
 HOMEPAGE =	https://kde.org/applications/internet/org.kde.krfb
 

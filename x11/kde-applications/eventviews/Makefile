@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2021/12/10 06:53:00 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2022/01/05 08:02:52 rsadowski Exp $
 
 COMMENT =	KDE PIM library for creating events
 DISTNAME =	eventviews-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
-SHARED_LIBS +=  KF5EventViews       4.0 # 5.13.2
+SHARED_LIBS +=  KF5EventViews       5.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCalendar KF5AkonadiCore
 WANTLIB += KF5AkonadiWidgets KF5Auth KF5AuthCore KF5CalendarCore

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2021/11/10 06:37:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.62 2022/01/05 08:02:50 rsadowski Exp $
 
 COMMENT =	BitTorrent Client
 
@@ -21,20 +21,18 @@ WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5DBusAddons
 WANTLIB += KF5DNSSD KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets
 WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOFileWidgets KF5KIOGui
-WANTLIB += KF5KIOWidgets KF5KrossCore KF5Notifications KF5NotifyConfig
-WANTLIB += KF5Parts KF5Plotting KF5Service KF5Solid KF5SonnetUi
-WANTLIB += KF5Syndication KF5TextWidgets KF5Torrent KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml
-WANTLIB += Qt5QmlModels Qt5Quick Qt5Script Qt5WebChannel Qt5WebEngineCore
-WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 c gcrypt
-WANTLIB += gmp m phonon4qt5 tag
+WANTLIB += KF5KIOWidgets KF5Notifications KF5NotifyConfig KF5Parts
+WANTLIB += KF5Plotting KF5Service KF5Solid KF5SonnetUi KF5Syndication
+WANTLIB += KF5TextWidgets KF5Torrent KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
+WANTLIB += Qt5Quick Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
+WANTLIB += Qt5Widgets Qt5Xml X11 c gcrypt gmp m phonon4qt5 tag
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 
 MODULES =	x11/kde-applications \
-		devel/kf5 \
-		lang/python
+		devel/kf5
 
 BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/boost
@@ -63,7 +61,6 @@ LIB_DEPENDS =		audio/taglib \
 			devel/kf5/knotifyconfig \
 			devel/kf5/kparts \
 			devel/kf5/kplotting \
-			devel/kf5/kross \
 			devel/kf5/kservice \
 			devel/kf5/ktextwidgets \
 			devel/kf5/kwidgetsaddons \
@@ -75,19 +72,8 @@ LIB_DEPENDS =		audio/taglib \
 			net/libktorrent>=${MODKDE_VERSION} \
 			x11/qt5/qtdeclarative \
 			x11/qt5/qtlocation \
-			x11/qt5/qtscript \
 			x11/qt5/qtwebchannel \
 			x11/qt5/qtwebengine \
 			multimedia/phonon
-
-# email_notifications py2
-#
-post-install:
-	2to3 -w -n ${PREFIX}/share/ktorrent/scripts/email_notifications/
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/ktorrent/scripts/auto_remove/ \
-		${PREFIX}/share/ktorrent/scripts/auto_resume/ \
-		${PREFIX}/share/ktorrent/scripts/email_notifications/ \
-		${PREFIX}/share/ktorrent/scripts/tracker_groups/
 
 .include <bsd.port.mk>

@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/10 06:37:48 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2022/01/05 08:02:56 rsadowski Exp $
 
 COMMENT =	KDE interface to GnuPG
 DISTNAME =	kgpg-${VERSION}
 CATEGORIES =	x11
 
-WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiContact KF5AkonadiCore
-WANTLIB += KF5AkonadiWidgets KF5Archive KF5Auth KF5AuthCore KF5Bookmarks
-WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
-WANTLIB += KF5DBusAddons KF5GrantleeTheme KF5I18n KF5ItemModels
+WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
+WANTLIB += KF5AkonadiCore KF5AkonadiWidgets KF5Archive KF5Auth
+WANTLIB += KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5Contacts KF5CoreAddons
+WANTLIB += KF5Crash KF5DBusAddons KF5GrantleeTheme KF5I18n KF5ItemModels
 WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
 WANTLIB += KF5KIOGui KF5KIOWidgets KF5Notifications KF5Service
 WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons

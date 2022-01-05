@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/11/03 16:12:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2022/01/05 08:02:58 rsadowski Exp $
 
 COMMENT =	KDE mouse clicker for accessibility users
 DISTNAME =	kmousetool-${VERSION}
@@ -28,5 +28,4 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kxmlgui \
 		multimedia/phonon
 
-CONFIGURE_ARGS =	-DPhonon4Qt5_INCLUDE_DIR="${LOCALBASE}/include/phonon4qt5/"
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/11/03 16:12:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2022/01/05 08:03:00 rsadowski Exp $
 
 COMMENT =	KDE PIM SMTP library
 DISTNAME =	ksmtp-${VERSION}
@@ -6,7 +6,7 @@ CATEGORIES =	devel mail
 
 HOMEPAGE =	https://kontact.kde.org/
 
-SHARED_LIBS +=  KPimSMTP               1.0 # 5.13.3
+SHARED_LIBS +=  KPimSMTP               2.0 # 5.13.3
 
 WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5I18n
 WANTLIB += KF5KIOCore KF5Service Qt5Concurrent Qt5Core Qt5DBus

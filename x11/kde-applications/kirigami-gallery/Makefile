@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2021/12/20 10:03:57 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2022/01/05 08:02:56 rsadowski Exp $
 
 COMMENT =	kirigami component gallery application
 DISTNAME =	kirigami-gallery-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/de/kirigami2.gallery/
 

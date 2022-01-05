@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2021/12/15 05:39:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.68 2022/01/05 08:02:50 rsadowski Exp $
 
      SUBDIR =
 
@@ -251,8 +251,8 @@
      # graphics/skanlite
      # net/kdeconnect-kde
      # net/konversation
-     # net/ktorrent
      # net/libktorrent
+     # net/ktorrent
      # x11/yakuake
 
      # TODO

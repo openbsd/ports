@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/15 05:13:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2022/01/05 08:02:51 rsadowski Exp $
 
 COMMENT =	arcade bombing game
 DISTNAME =	bomber-${VERSION}
 CATEGORIES =	games
-REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/bomber/
 

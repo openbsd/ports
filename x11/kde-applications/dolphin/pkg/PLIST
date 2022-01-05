@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2021/10/19 20:08:36 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.15 2022/01/05 08:02:52 rsadowski Exp $
 @conflict dolphin-plugins-<=4.14.3
 @bin bin/dolphin
 @bin bin/servicemenuinstaller
@@ -15,9 +15,11 @@ lib/cmake/DolphinVcs/DolphinVcsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/DolphinVcs/DolphinVcsTargets.cmake
 @lib lib/libdolphinprivate.so.${LIBdolphinprivate_VERSION}
 @lib lib/libdolphinvcs.so.${LIBdolphinvcs_VERSION}
-@so lib/qt5/plugins/kcm_dolphingeneral.so
-@so lib/qt5/plugins/kcm_dolphinnavigation.so
-@so lib/qt5/plugins/kcm_dolphinviewmodes.so
+lib/qt5/plugins/dolphin/
+lib/qt5/plugins/dolphin/kcms/
+@so lib/qt5/plugins/dolphin/kcms/libkcm_dolphingeneral.so
+@so lib/qt5/plugins/dolphin/kcms/libkcm_dolphinnavigation.so
+@so lib/qt5/plugins/dolphin/kcms/libkcm_dolphinviewmodes.so
 lib/qt5/plugins/kf5/parts/
 @so lib/qt5/plugins/kf5/parts/dolphinpart.so
 lib/systemd/user/plasma-dolphin.service
@@ -156,9 +158,6 @@ share/doc/HTML/pt_BR/dolphin/toolbar-navigation.png
 share/doc/HTML/pt_BR/dolphin/toolbar-view-appearance.png
 share/doc/HTML/pt_BR/dolphin/toolbar.png
 share/doc/HTML/pt_BR/dolphin/viewproperties-dialog.png
-share/doc/HTML/ru/dolphin/
-share/doc/HTML/ru/dolphin/index.cache.bz2
-share/doc/HTML/ru/dolphin/index.docbook
 share/doc/HTML/sr/dolphin/
 share/doc/HTML/sr/dolphin/index.cache.bz2
 share/doc/HTML/sr/dolphin/index.docbook

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/06/19 18:34:31 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2022/01/05 08:02:51 rsadowski Exp $
 @bin bin/baloo_filemetadata_temp_extractor
 include/KF5/BalooWidgets/
 include/KF5/BalooWidgets/Baloo/
@@ -16,10 +16,10 @@ lib/cmake/KF5BalooWidgets/KF5BalooWidgetsConfigVersion.cmake
 lib/cmake/KF5BalooWidgets/KF5BalooWidgetsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5BalooWidgets/KF5BalooWidgetsTargets.cmake
 @lib lib/libKF5BalooWidgets.so.${LIBKF5BalooWidgets_VERSION}
-@so lib/qt5/plugins/baloofilepropertiesplugin.so
 lib/qt5/plugins/kf5/kfileitemaction/
 @so lib/qt5/plugins/kf5/kfileitemaction/tagsfileitemaction.so
-share/kservices5/baloofilepropertiesplugin.desktop
+lib/qt5/plugins/kf5/propertiesdialog/
+@so lib/qt5/plugins/kf5/propertiesdialog/baloofilepropertiesplugin.so
 share/locale/ar/LC_MESSAGES/baloowidgets5.mo
 share/locale/ast/LC_MESSAGES/baloowidgets5.mo
 share/locale/az/LC_MESSAGES/baloowidgets5.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/06/19 18:34:46 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2022/01/05 08:03:03 rsadowski Exp $
 @pkgpath x11/kde4/palapeli
 @bin bin/palapeli
 include/Pala/
@@ -27,13 +27,22 @@ lib/qt5/plugins/palapelislicers/
 @so lib/qt5/plugins/palapelislicers/palapeli_rectslicer.so
 @so lib/qt5/plugins/palathumbcreator.so
 share/applications/org.kde.palapeli.desktop
+share/doc/HTML/ca/palapeli/
+share/doc/HTML/ca/palapeli/index.cache.bz2
+share/doc/HTML/ca/palapeli/index.docbook
 share/doc/HTML/de/palapeli/
 share/doc/HTML/de/palapeli/index.cache.bz2
 share/doc/HTML/de/palapeli/index.docbook
 share/doc/HTML/en/palapeli/
+share/doc/HTML/en/palapeli/document-export.png
+share/doc/HTML/en/palapeli/document-import.png
+share/doc/HTML/en/palapeli/edit-delete.png
+share/doc/HTML/en/palapeli/go-previous.png
 share/doc/HTML/en/palapeli/index.cache.bz2
 share/doc/HTML/en/palapeli/index.docbook
 share/doc/HTML/en/palapeli/puzzletable1.png
+share/doc/HTML/en/palapeli/tools-wizard.png
+share/doc/HTML/en/palapeli/view-preview.png
 share/doc/HTML/es/palapeli/
 share/doc/HTML/es/palapeli/index.cache.bz2
 share/doc/HTML/es/palapeli/index.docbook

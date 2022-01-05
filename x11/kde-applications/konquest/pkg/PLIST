@@ -1,7 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/06/19 18:34:41 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2022/01/05 08:02:58 rsadowski Exp $
 @pkgpath x11/kde4/konquest
 @bin bin/konquest
 share/applications/org.kde.konquest.desktop
+share/doc/HTML/ca/konquest/
+share/doc/HTML/ca/konquest/index.cache.bz2
+share/doc/HTML/ca/konquest/index.docbook
+share/doc/HTML/ca/konquest/ingame_window.png
+share/doc/HTML/ca/konquest/main_game_window.png
+share/doc/HTML/ca/konquest/new_game_settings.png
 share/doc/HTML/de/konquest/
 share/doc/HTML/de/konquest/index.cache.bz2
 share/doc/HTML/de/konquest/index.docbook

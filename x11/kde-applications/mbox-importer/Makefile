@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2021/09/10 08:43:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2022/01/05 08:03:02 rsadowski Exp $
 
 COMMENT =	KMail mbox importer
 DISTNAME =	mbox-importer-${VERSION}
 CATEGORIES =	devel
 
-WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiContact KF5AkonadiCore
-WANTLIB += KF5AkonadiMime KF5AkonadiWidgets KF5Archive KF5Auth
-WANTLIB += KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
-WANTLIB += KF5GrantleeTheme KF5I18n KF5IMAP KF5IdentityManagement
+WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
+WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiWidgets KF5Archive
+WANTLIB += KF5Auth KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5Contacts KF5CoreAddons
+WANTLIB += KF5Crash KF5GrantleeTheme KF5I18n KF5IMAP KF5IdentityManagement
 WANTLIB += KF5ItemModels KF5KIOCore KF5Libkdepim KF5Libkleo KF5MailCommon
 WANTLIB += KF5MailImporter KF5MailImporterAkonadi KF5MessageComposer
 WANTLIB += KF5MessageCore KF5MessageViewer KF5Mime KF5MimeTreeParser

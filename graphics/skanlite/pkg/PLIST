@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/09/10 12:54:15 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2022/01/05 08:02:50 rsadowski Exp $
 @bin bin/skanlite
 share/applications/org.kde.skanlite.desktop
 share/doc/HTML/ca/skanlite/
@@ -83,6 +83,7 @@ share/doc/HTML/uk/skanlite/scanning.png
 share/doc/HTML/uk/skanlite/settings.png
 share/doc/HTML/uk/skanlite/zoom-in.png
 share/doc/HTML/uk/skanlite/zoom-to-fit.png
+share/icons/hicolor/48x48/apps/org.kde.skanlite.svg
 share/locale/ar/LC_MESSAGES/skanlite.mo
 share/locale/az/LC_MESSAGES/skanlite.mo
 share/locale/be/LC_MESSAGES/skanlite.mo
@@ -139,3 +140,4 @@ share/locale/zh_TW/LC_MESSAGES/skanlite.mo
 share/metainfo/
 share/metainfo/org.kde.skanlite.appdata.xml
 @tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

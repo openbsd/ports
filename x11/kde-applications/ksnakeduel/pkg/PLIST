@@ -1,8 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/06/19 18:34:42 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2022/01/05 08:03:00 rsadowski Exp $
 @bin bin/ksnakeduel
 share/applications/org.kde.ksnakeduel.desktop
 share/config.kcfg/
 share/config.kcfg/ksnakeduel.kcfg
+share/doc/HTML/ca/ksnakeduel/
+share/doc/HTML/ca/ksnakeduel/index.cache.bz2
+share/doc/HTML/ca/ksnakeduel/index.docbook
+share/doc/HTML/ca/ksnakeduel/settings-general.png
+share/doc/HTML/ca/ksnakeduel/settings-theme.png
 share/doc/HTML/de/ksnakeduel/
 share/doc/HTML/de/ksnakeduel/index.cache.bz2
 share/doc/HTML/de/ksnakeduel/index.docbook

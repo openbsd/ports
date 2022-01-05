@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/09/10 08:43:55 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2022/01/05 08:02:58 rsadowski Exp $
 @pkgpath x11/kde4/knavalbattle
 @bin bin/knavalbattle
 share/applications/org.kde.knavalbattle.desktop
@@ -56,7 +56,6 @@ share/icons/hicolor/22x22/apps/knavalbattle.png
 share/icons/hicolor/32x32/apps/knavalbattle.png
 share/icons/hicolor/48x48/apps/knavalbattle.png
 share/icons/hicolor/64x64/apps/knavalbattle.png
-share/kconf_update/knavalbattle.upd
 share/knavalbattle/
 share/knavalbattle/pictures/
 share/knavalbattle/pictures/default.desktop

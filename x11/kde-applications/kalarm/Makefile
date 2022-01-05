@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2021/09/10 08:43:50 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2022/01/05 08:02:53 rsadowski Exp $
 
 COMMENT =	personal alarm message, command and email scheduler
 DISTNAME =	kalarm-${VERSION}
 CATEGORIES =	productivity
 
-WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiContact KF5AkonadiCore
-WANTLIB += KF5AkonadiMime KF5AkonadiWidgets KF5AlarmCalendar KF5Auth
-WANTLIB += KF5AuthCore KF5Bookmarks KF5CalendarCore KF5CalendarUtils
+WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
+WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiWidgets KF5AlarmCalendar
+WANTLIB += KF5Auth KF5AuthCore KF5Bookmarks KF5CalendarCore KF5CalendarUtils
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5GlobalAccel KF5GrantleeTheme KF5GuiAddons

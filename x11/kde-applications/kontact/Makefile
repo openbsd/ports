@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/10 06:37:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2022/01/05 08:02:59 rsadowski Exp $
 
 COMMENT =	documentenal information management suite
 DISTNAME =	kontact-${VERSION}
 CATEGORIES =	net www
 
-SHARED_LIBS +=  kontactprivate       0.0 # 5.13.2
+SHARED_LIBS +=  kontactprivate       0.1 # 5.13.2
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5Crash KF5GrantleeTheme KF5I18n KF5IconThemes KF5JobWidgets
-WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOGui KF5KIOWidgets KF5KontactInterface
+WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Auth KF5AuthCore
+WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5GrantleeTheme
+WANTLIB += KF5GuiAddons KF5I18n KF5IconThemes KF5JobWidgets KF5KCMUtils
+WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5KontactInterface
 WANTLIB += KF5Libkdepim KF5Parts KF5PimCommon KF5Service KF5Solid
 WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network

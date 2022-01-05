@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/09/10 08:43:48 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2022/01/05 08:02:51 rsadowski Exp $
 
 COMMENT =	Akonadi management and debugging console
 DISTNAME =	akonadiconsole-${VERSION}
@@ -6,10 +6,10 @@ CATEGORIES =	devel
 
 SHARED_LIBS +=  akonadiconsole       1.1 # 5.13.2
 
-WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCalendar KF5AkonadiContact
-WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiPrivate KF5AkonadiSearchCore
-WANTLIB += KF5AkonadiSearchXapian KF5AkonadiWidgets KF5AkonadiXml
-WANTLIB += KF5Auth KF5AuthCore KF5CalendarCore KF5CalendarSupport
+WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiCalendar
+WANTLIB += KF5AkonadiContact KF5AkonadiCore KF5AkonadiMime KF5AkonadiPrivate
+WANTLIB += KF5AkonadiSearchCore KF5AkonadiSearchXapian KF5AkonadiWidgets
+WANTLIB += KF5AkonadiXml KF5Auth KF5AuthCore KF5CalendarCore KF5CalendarSupport
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5GrantleeTheme KF5I18n KF5IdentityManagement

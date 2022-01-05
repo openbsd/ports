@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/10 06:37:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2022/01/05 08:02:50 rsadowski Exp $
 
 COMMENT =	PIM Storage Service
 DISTNAME =	akonadi-${VERSION}
@@ -6,10 +6,10 @@ CATEGORIES =	databases productivity
 
 HOMEPAGE =	https://kontact.kde.org/
 
-SHARED_LIBS +=  KF5AkonadiAgentBase       1.0 # 5.6
-SHARED_LIBS +=  KF5AkonadiCore            2.1 # 5.6
-SHARED_LIBS +=  KF5AkonadiPrivate         1.1 # 5.6
-SHARED_LIBS +=  KF5AkonadiWidgets         1.2 # 5.6
+SHARED_LIBS +=  KF5AkonadiAgentBase       2.0 # 5.6
+SHARED_LIBS +=  KF5AkonadiCore            3.0 # 5.6
+SHARED_LIBS +=  KF5AkonadiPrivate         2.0 # 5.6
+SHARED_LIBS +=  KF5AkonadiWidgets         2.0 # 5.6
 SHARED_LIBS +=  KF5AkonadiXml             1.0 # 5.6
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore

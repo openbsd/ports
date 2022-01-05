@@ -1,5 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/08/08 12:23:50 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2022/01/05 08:02:54 rsadowski Exp $
 @so lib/qt5/plugins/kcm_cron.so
+@bin libexec/kauth/kcron_helper
+share/dbus-1/system-services/local.kcron.crontab.service
+share/dbus-1/system.d/local.kcron.crontab.conf
 share/doc/HTML/ca/kcontrol5/kcron/
 share/doc/HTML/ca/kcontrol5/kcron/index.cache.bz2
 share/doc/HTML/ca/kcontrol5/kcron/index.docbook
@@ -139,4 +142,5 @@ share/locale/zh_CN/LC_MESSAGES/kcron.mo
 share/locale/zh_TW/LC_MESSAGES/kcron.mo
 share/metainfo/
 share/metainfo/org.kde.kcron.metainfo.xml
+share/polkit-1/actions/local.kcron.crontab.policy
 share/qlogging-categories5/kcron.categories

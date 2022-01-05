@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/06/19 18:34:44 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2022/01/05 08:03:01 rsadowski Exp $
 @conflict kdepimlibs-<=4
 include/KF5/Libkdepim/
 include/KF5/Libkdepim/KCheckComboBox
@@ -33,6 +33,7 @@ lib/cmake/MailTransportDBusService/
 lib/cmake/MailTransportDBusService/MailTransportDBusServiceConfig.cmake
 @lib lib/libKF5Libkdepim.so.${LIBKF5Libkdepim_VERSION}
 @so lib/qt5/plugins/designer/kdepimwidgets.so
+share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.kde.addressbook.service.xml
 share/dbus-1/interfaces/org.kde.mailtransport.service.xml
 share/kf5/mkspecs/qt_Libkdepim.pri

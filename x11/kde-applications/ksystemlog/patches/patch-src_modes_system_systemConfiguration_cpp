@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_modes_system_systemConfiguration_cpp,v 1.1 2021/04/27 05:27:12 rsadowski Exp $
+$OpenBSD: patch-src_modes_system_systemConfiguration_cpp,v 1.2 2022/01/05 08:03:00 rsadowski Exp $
 
 Index: src/modes/system/systemConfiguration.cpp
 --- src/modes/system/systemConfiguration.cpp.orig
 +++ src/modes/system/systemConfiguration.cpp
-@@ -23,7 +23,11 @@
+@@ -8,7 +8,11 @@
  
  SystemConfiguration::SystemConfiguration()
      : GenericLogModeConfiguration(QStringLiteral(SYSTEM_LOG_MODE_ID),

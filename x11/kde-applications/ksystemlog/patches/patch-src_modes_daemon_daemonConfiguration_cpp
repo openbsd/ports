@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_modes_daemon_daemonConfiguration_cpp,v 1.1 2021/04/27 05:27:12 rsadowski Exp $
+$OpenBSD: patch-src_modes_daemon_daemonConfiguration_cpp,v 1.2 2022/01/05 08:03:00 rsadowski Exp $
 
 Index: src/modes/daemon/daemonConfiguration.cpp
 --- src/modes/daemon/daemonConfiguration.cpp.orig
 +++ src/modes/daemon/daemonConfiguration.cpp
-@@ -24,8 +24,11 @@
+@@ -9,8 +9,11 @@
  DaemonConfiguration::DaemonConfiguration()
  {
      mConfiguration->setCurrentGroup(QStringLiteral("DaemonLogMode"));

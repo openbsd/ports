@@ -1,21 +1,22 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/10 06:37:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2022/01/05 08:02:50 rsadowski Exp $
 
 COMMENT =	PIM Akonadi calendar support library
 DISTNAME =	akonadi-calendar-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KF5AkonadiCalendar     1.1 # 5.6
+SHARED_LIBS +=  KF5AkonadiCalendar     2.0 # 5.6
 
-WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiContact KF5AkonadiCore
-WANTLIB += KF5AkonadiMime KF5AkonadiWidgets KF5Auth KF5AuthCore
-WANTLIB += KF5CalendarCore KF5CalendarUtils KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5Contacts
-WANTLIB += KF5CoreAddons KF5GrantleeTheme KF5I18n KF5IdentityManagement
-WANTLIB += KF5ItemModels KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
-WANTLIB += KF5MailTransport KF5MailTransportAkonadi KF5Mime KF5PimTextEdit
-WANTLIB += KF5Service KF5Solid KF5Wallet KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5Xml X11 m
+WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
+WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiWidgets KF5Auth
+WANTLIB += KF5AuthCore KF5CalendarCore KF5CalendarUtils KF5Codecs
+WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
+WANTLIB += KF5Contacts KF5CoreAddons KF5GrantleeTheme KF5I18n
+WANTLIB += KF5IdentityManagement KF5ItemModels KF5JobWidgets KF5KIOCore
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5MailTransport KF5MailTransportAkonadi
+WANTLIB += KF5Mime KF5PimTextEdit KF5Service KF5Solid KF5Wallet
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
+WANTLIB += X11 m
 
 MODKDE5_TRANSLATIONS = yes
 

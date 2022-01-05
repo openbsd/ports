@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2021/12/10 06:50:18 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.26 2022/01/05 08:02:51 rsadowski Exp $
 
 COMMENT =	KDE File Manager
 DISTNAME =	dolphin-${VERSION}
 PKGNAME =	dolphin-kf5-${VERSION}
 CATEGORIES =	x11
-REVISION =	0
 
-SHARED_LIBS +=  dolphinprivate            4.0 # 5.0
+SHARED_LIBS +=  dolphinprivate            5.0 # 5.0
 SHARED_LIBS +=  dolphinvcs                2.1 # 5.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Attica KF5Auth
@@ -35,6 +34,7 @@ RUN_DEPENDS =	devel/kf5/kfilemetadata \
 		devel/kf5/kinit \
 		misc/shared-mime-info \
 		x11/kde-applications/ffmpegthumbs \
+		x11/kde-applications/kdesdk-thumbnailers \
 		x11/kde-applications/kio-extras \
 		x11/kde-applications/konsole
 

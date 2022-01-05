@@ -1,7 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:49:29 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2022/01/05 08:03:03 rsadowski Exp $
 @pkgpath x11/kde4/picmi
 @bin bin/picmi
 share/applications/org.kde.picmi.desktop
+share/doc/HTML/ca/picmi/
+share/doc/HTML/ca/picmi/gameboard.png
+share/doc/HTML/ca/picmi/index.cache.bz2
+share/doc/HTML/ca/picmi/index.docbook
 share/doc/HTML/de/picmi/
 share/doc/HTML/de/picmi/index.cache.bz2
 share/doc/HTML/de/picmi/index.docbook

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/09/10 08:43:48 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2022/01/05 08:02:50 rsadowski Exp $
 include/KF5/Akonadi/
 include/KF5/Akonadi/Contact/
 include/KF5/Akonadi/Contact/AbstractContactFormatter
@@ -16,7 +16,6 @@ include/KF5/Akonadi/Contact/ContactGroupEditorDialog
 include/KF5/Akonadi/Contact/ContactGroupExpandJob
 include/KF5/Akonadi/Contact/ContactGroupSearchJob
 include/KF5/Akonadi/Contact/ContactGroupViewer
-include/KF5/Akonadi/Contact/ContactGroupViewerDialog
 include/KF5/Akonadi/Contact/ContactParts
 include/KF5/Akonadi/Contact/ContactSearchJob
 include/KF5/Akonadi/Contact/ContactViewer
@@ -59,7 +58,6 @@ include/KF5/akonadi/contact/contactgroupeditordialog.h
 include/KF5/akonadi/contact/contactgroupexpandjob.h
 include/KF5/akonadi/contact/contactgroupsearchjob.h
 include/KF5/akonadi/contact/contactgroupviewer.h
-include/KF5/akonadi/contact/contactgroupviewerdialog.h
 include/KF5/akonadi/contact/contactparts.h
 include/KF5/akonadi/contact/contactsearchjob.h
 include/KF5/akonadi/contact/contactsfilterproxymodel.h

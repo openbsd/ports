@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/06/19 18:34:30 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2022/01/05 08:02:50 rsadowski Exp $
 @conflict kdepimlibs-<=4
 @bin bin/akonadiimportwizard
 include/KF5/KPim/
@@ -84,8 +84,6 @@ share/icons/hicolor/64x64/apps/kontact-import-wizard.png
 share/importwizard/
 share/importwizard/pics/
 share/importwizard/pics/step1.png
-share/kconf_update/importwizard-15.08-kickoff.sh
-share/kconf_update/importwizard.upd
 share/locale/ar/LC_MESSAGES/akonadiimportwizard.mo
 share/locale/az/LC_MESSAGES/akonadiimportwizard.mo
 share/locale/bs/LC_MESSAGES/akonadiimportwizard.mo

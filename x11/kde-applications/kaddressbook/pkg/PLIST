@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/12/10 06:50:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2022/01/05 08:02:53 rsadowski Exp $
 @conflict kdepimlibs-<=4
 @pkgpath x11/kde4/akregator
 @bin bin/kaddressbook
@@ -194,10 +194,6 @@ share/doc/HTML/nl/kaddressbook/
 share/doc/HTML/nl/kaddressbook/docbook-reference.docbook
 share/doc/HTML/nl/kaddressbook/index.cache.bz2
 share/doc/HTML/nl/kaddressbook/index.docbook
-share/doc/HTML/ru/kaddressbook/
-share/doc/HTML/ru/kaddressbook/docbook-reference.docbook
-share/doc/HTML/ru/kaddressbook/index.cache.bz2
-share/doc/HTML/ru/kaddressbook/index.docbook
 share/doc/HTML/sv/kaddressbook/
 share/doc/HTML/sv/kaddressbook/docbook-reference.docbook
 share/doc/HTML/sv/kaddressbook/index.cache.bz2
@@ -287,12 +283,7 @@ share/kaddressbook/viewertemplates/default/contactgroup_additionalfieldrow.html
 share/kaddressbook/viewertemplates/default/contactgroup_embedded.html
 share/kaddressbook/viewertemplates/default/contactgroup_memberrow.html
 share/kaddressbook/viewertemplates/default/theme.desktop
-share/kconf_update/kaddressbook-15.08-kickoff.sh
-share/kconf_update/kaddressbook.upd
 share/kf5/mkspecs/qt_KAddressbookImportExport.pri
-share/kontact/
-share/kontact/ksettingsdialog/
-share/kontact/ksettingsdialog/kaddressbook.setdlg
 share/kservices5/kaddressbook_config_plugins.desktop
 share/kservices5/kaddressbook_config_userfeedback.desktop
 share/kservices5/kontact/

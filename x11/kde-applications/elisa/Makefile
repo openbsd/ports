@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/06/19 18:34:32 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2022/01/05 08:02:52 rsadowski Exp $
 
 COMMENT =	audio player with QML and KDE Plasma integration
 DISTNAME =	elisa-${VERSION}
@@ -6,18 +6,18 @@ CATEGORIES =	audio
 
 HOMEPAGE =	https://elisa.kde.org/
 
-SHARED_LIBS +=  elisaLib                  0.0 # 0.1
+SHARED_LIBS +=  elisaLib                  0.1 # 0.1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5DBusAddons
-WANTLIB += KF5Declarative KF5FileMetaData KF5I18n KF5ItemViews
-WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOFileWidgets KF5KIOGui
-WANTLIB += KF5KIOWidgets KF5Package KF5QuickAddons KF5Service
+WANTLIB += KF5Declarative KF5FileMetaData KF5I18n KF5IconThemes
+WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5Package KF5QuickAddons KF5Service
 WANTLIB += KF5Solid KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
 WANTLIB += Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2
-WANTLIB += Qt5Sql Qt5Widgets Qt5Xml c m vlc
+WANTLIB += Qt5Sql Qt5Widgets Qt5Xml X11 c m vlc
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/06/19 18:34:33 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2022/01/05 08:02:53 rsadowski Exp $
 @bin bin/kalarm
 @bin bin/kalarmautostart
 @bin libexec/kauth/kalarm_helper
@@ -79,13 +79,6 @@ share/kalarm/icons/oxygen/22x22/actions/kalarm-partdisabled.png
 share/kalarm/icons/oxygen/22x22/actions/kalarm.png
 share/kalarm/icons/oxygen/22x22/actions/new-audio-alarm.png
 share/kalarm/icons/oxygen/22x22/actions/new-command-alarm.png
-share/kconf_update/kalarm-1.2.1-general.pl
-share/kconf_update/kalarm-1.9.5-defaults.pl
-share/kconf_update/kalarm-15.08-kickoff.sh
-share/kconf_update/kalarm-2.0.2-general.pl
-share/kconf_update/kalarm-2.1.5-general.pl
-share/kconf_update/kalarm-version.pl
-share/kconf_update/kalarm.upd
 share/knotifications5/kalarm.notifyrc
 share/kxmlgui5/
 share/kxmlgui5/kalarm/

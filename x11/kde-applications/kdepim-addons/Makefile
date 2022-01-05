@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/10 06:37:46 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2022/01/05 08:02:55 rsadowski Exp $
 
 COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-addons-${VERSION}
@@ -6,18 +6,24 @@ CATEGORIES =	devel
 
 SHARED_LIBS +=  adblocklibprivate                        1.0 # 5.13.2
 SHARED_LIBS +=  coisceim_widget                          1.0 # 5.13.2
-SHARED_LIBS +=  dkimverifyconfigure                      1.0 # 5.13.2
-SHARED_LIBS +=  grammarcommon                            1.0 # 5.13.2
+SHARED_LIBS +=  dkimverifyconfigure                      2.0 # 5.13.2
+SHARED_LIBS +=  grammarcommon                            1.1 # 5.13.2
 SHARED_LIBS +=  kaddressbookimportexportlibprivate       1.0 # 5.13.2
 SHARED_LIBS +=  kaddressbookmergelibprivate              1.0 # 5.13.2
 SHARED_LIBS +=  kmailgrammalecte                         1.0 # 5.13.2
 SHARED_LIBS +=  kmaillanguagetool                        3.2 # 5.13.2
 SHARED_LIBS +=  kmailmarkdown                            1.0 # 5.13.2
-SHARED_LIBS +=  kmailquicktextpluginprivate              1.0 # 5.13.2
-SHARED_LIBS +=  shorturlpluginprivate                    1.0 # 5.13.2
+SHARED_LIBS +=  kmailquicktextpluginprivate              1.1 # 5.13.2
+SHARED_LIBS +=  shorturlpluginprivate                    1.1 # 5.13.2
 SHARED_LIBS +=  expireaccounttrashfolderconfig           0.0 # 5.16.1
 SHARED_LIBS +=  folderconfiguresettings                  0.1 # 5.16.1
-SHARED_LIBS +=  kmailconfirmbeforedeleting               0.0 # 5.18.3
+SHARED_LIBS +=  kmailconfirmbeforedeleting               1.0 # 5.18.3
+SHARED_LIBS +=  scamconfiguresettings                    0.0 # 5.19.0
+
+MODKDE5_TRANSLATIONS = yes
+MODKDE5_DESKTOP_FILE = yes
+
+MODKF5_L10N_CONFLICT = yes
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiCalendar
 WANTLIB += KF5AkonadiContact KF5AkonadiCore KF5AkonadiMime KF5AkonadiNotes
@@ -26,7 +32,7 @@ WANTLIB += KF5CalendarEvents KF5CalendarSupport KF5CalendarUtils
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5ContactEditor KF5Contacts KF5CoreAddons
 WANTLIB += KF5EventViews KF5GrantleeTheme KF5Gravatar KF5GuiAddons
-WANTLIB += KF5I18n KF5IMAP KF5IconThemes KF5IdentityManagement
+WANTLIB += KF5Holidays KF5I18n KF5IMAP KF5IconThemes KF5IdentityManagement
 WANTLIB += KF5IncidenceEditor KF5ItemModels KF5ItemViews KF5JobWidgets
 WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5KManageSieve
 WANTLIB += KF5KSieve KF5KSieveUi KF5KontactInterface KF5Libkdepim
@@ -44,14 +50,11 @@ WANTLIB += Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngine Qt5WebEngineCore
 WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 assuan gpgme
 WANTLIB += gpgmepp m markdown qgpgme
 
-MODKDE5_TRANSLATIONS = yes
-MODKDE5_DESKTOP_FILE = yes
-
-MODKF5_L10N_CONFLICT = yes
-
 BUILD_DEPENDS =	textproc/libxslt \
 		devel/boost \
 		devel/libinotify
+
+RUN_DEPENDS =	x11/gtk+3,-guic
 
 LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kauth \
@@ -63,6 +66,7 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kcontacts \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kdeclarative \
+		devel/kf5/kholidays \
 		devel/kf5/ki18n \
 		devel/kf5/kiconthemes \
 		devel/kf5/kio \
@@ -76,8 +80,8 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
 		devel/kf5/prison \
-		devel/kf5/sonnet \
 		devel/kf5/solid \
+		devel/kf5/sonnet \
 		devel/kf5/syntax-highlighting \
 		security/gpgme,-qt \
 		security/gpgme \

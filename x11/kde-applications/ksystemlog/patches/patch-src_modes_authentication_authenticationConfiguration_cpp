@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_modes_authentication_authenticationConfiguration_cpp,v 1.1 2021/04/27 05:27:12 rsadowski Exp $
+$OpenBSD: patch-src_modes_authentication_authenticationConfiguration_cpp,v 1.2 2022/01/05 08:03:00 rsadowski Exp $
 
 Index: src/modes/authentication/authenticationConfiguration.cpp
 --- src/modes/authentication/authenticationConfiguration.cpp.orig
 +++ src/modes/authentication/authenticationConfiguration.cpp
-@@ -25,7 +25,11 @@ AuthenticationConfiguration::AuthenticationConfigurati
+@@ -10,7 +10,11 @@ AuthenticationConfiguration::AuthenticationConfigurati
  {
      mConfiguration->setCurrentGroup(QStringLiteral("AuthenticationLogMode"));
  

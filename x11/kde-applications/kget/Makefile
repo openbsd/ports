@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/10 06:37:48 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2022/01/05 08:02:56 rsadowski Exp $
 
 COMMENT =	download manager for KDE
 DISTNAME =	kget-${VERSION}
@@ -6,7 +6,7 @@ CATEGORIES =	net www
 
 HOMEPAGE =	https://www.kde.org/applications/internet/kget/
 
-SHARED_LIBS +=  kgetcore                  1.0 # 5.0
+SHARED_LIBS +=  kgetcore                  2.0 # 5.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui

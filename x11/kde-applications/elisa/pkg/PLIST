@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/03 15:34:12 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2022/01/05 08:02:52 rsadowski Exp $
 @bin bin/elisa
 lib/elisa/
 @lib lib/elisa/libelisaLib.so.${LIBelisaLib_VERSION}
@@ -41,7 +41,6 @@ share/doc/HTML/uk/elisa/
 share/doc/HTML/uk/elisa/Screenshot_20180912_232200.png
 share/doc/HTML/uk/elisa/index.cache.bz2
 share/doc/HTML/uk/elisa/index.docbook
-share/doc/HTML/zh_CN/
 share/doc/HTML/zh_CN/elisa/
 share/doc/HTML/zh_CN/elisa/index.cache.bz2
 share/doc/HTML/zh_CN/elisa/index.docbook
@@ -54,6 +53,7 @@ share/icons/hicolor/64x64/apps/elisa.png
 share/icons/hicolor/scalable/apps/elisa.svg
 share/locale/ar/LC_MESSAGES/elisa.mo
 share/locale/ast/LC_MESSAGES/elisa.mo
+share/locale/az/LC_MESSAGES/elisa.mo
 share/locale/bs/LC_MESSAGES/elisa.mo
 share/locale/ca/LC_MESSAGES/elisa.mo
 share/locale/ca@valencia/LC_MESSAGES/elisa.mo
@@ -68,6 +68,7 @@ share/locale/eu/LC_MESSAGES/elisa.mo
 share/locale/fi/LC_MESSAGES/elisa.mo
 share/locale/fr/LC_MESSAGES/elisa.mo
 share/locale/gl/LC_MESSAGES/elisa.mo
+share/locale/hi/LC_MESSAGES/elisa.mo
 share/locale/hu/LC_MESSAGES/elisa.mo
 share/locale/ia/LC_MESSAGES/elisa.mo
 share/locale/id/LC_MESSAGES/elisa.mo
@@ -85,10 +86,10 @@ share/locale/ru/LC_MESSAGES/elisa.mo
 share/locale/sk/LC_MESSAGES/elisa.mo
 share/locale/sl/LC_MESSAGES/elisa.mo
 share/locale/sv/LC_MESSAGES/elisa.mo
+share/locale/tr/LC_MESSAGES/elisa.mo
 share/locale/uk/LC_MESSAGES/elisa.mo
 share/locale/zh_CN/LC_MESSAGES/elisa.mo
 share/locale/zh_TW/LC_MESSAGES/elisa.mo
-share/metainfo/
 share/metainfo/org.kde.elisa.appdata.xml
 share/qlogging-categories5/elisa.categories
 @tag update-desktop-database

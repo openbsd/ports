@@ -1,18 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/06/19 18:34:42 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2022/01/05 08:03:00 rsadowski Exp $
 @conflict kdegames-*
 @pkgpath x11/kde4/kspaceduel
 @bin bin/kspaceduel
 share/applications/org.kde.kspaceduel.desktop
 share/config.kcfg/
 share/config.kcfg/kspaceduel.kcfg
+share/doc/HTML/ca/kspaceduel/
+share/doc/HTML/ca/kspaceduel/index.cache.bz2
+share/doc/HTML/ca/kspaceduel/index.docbook
+share/doc/HTML/ca/kspaceduel/kspaceduel3.png
 share/doc/HTML/de/kspaceduel/
 share/doc/HTML/de/kspaceduel/index.cache.bz2
 share/doc/HTML/de/kspaceduel/index.docbook
 share/doc/HTML/de/kspaceduel/kspaceduel3.png
 share/doc/HTML/en/kspaceduel/
+share/doc/HTML/en/kspaceduel/bullet.png
+share/doc/HTML/en/kspaceduel/energy.png
 share/doc/HTML/en/kspaceduel/index.cache.bz2
 share/doc/HTML/en/kspaceduel/index.docbook
 share/doc/HTML/en/kspaceduel/kspaceduel3.png
+share/doc/HTML/en/kspaceduel/mine.png
+share/doc/HTML/en/kspaceduel/shield.png
 share/doc/HTML/es/kspaceduel/
 share/doc/HTML/es/kspaceduel/index.cache.bz2
 share/doc/HTML/es/kspaceduel/index.docbook

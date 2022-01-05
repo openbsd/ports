@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2021/09/10 08:43:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.19 2022/01/05 08:02:52 rsadowski Exp $
 
 COMMENT =	KDE image viewer
 DISTNAME =	gwenview-${VERSION}
 CATEGORIES =	graphics x11
 
-SHARED_LIBS +=  gwenviewlib               57.0 # 4.97
+SHARED_LIBS +=  gwenviewlib               58.0 # 4.97
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Auth KF5AuthCore
 WANTLIB += KF5Baloo KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
@@ -27,6 +27,7 @@ MODKDE5_DOCS = yes
 
 RUN_DEPENDS =	devel/kf5/kfilemetadata \
 		x11/kde-applications/ffmpegthumbs \
+		x11/kde-applications/kdesdk-thumbnailers \
 		x11/kde-applications/kio-extras
 
 LIB_DEPENDS =	devel/kf5/baloo \

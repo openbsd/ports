@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/09/10 08:43:55 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2022/01/05 08:02:58 rsadowski Exp $
 @bin bin/akonadi_notes_agent
 @bin bin/knotes
 @lib lib/libknotesprivate.so.${LIBknotesprivate_VERSION}
@@ -105,8 +105,6 @@ share/icons/hicolor/32x32/apps/knotes.png
 share/icons/hicolor/48x48/apps/knotes.png
 share/icons/hicolor/64x64/apps/knotes.png
 share/icons/hicolor/scalable/apps/knotes.svg
-share/kconf_update/knotes-15.08-kickoff.sh
-share/kconf_update/knotes.upd
 share/knotes/
 share/knotes/print/
 share/knotes/print/themes/
@@ -122,9 +120,6 @@ share/knotes/print/themes/default/theme.html
 share/knotifications5/akonadi_notes_agent.notifyrc
 share/knsrcfiles/
 share/knsrcfiles/knotes_printing_theme.knsrc
-share/kontact/
-share/kontact/ksettingsdialog/
-share/kontact/ksettingsdialog/knotes.setdlg
 share/kservices5/kcm_knote_action.desktop
 share/kservices5/kcm_knote_collection.desktop
 share/kservices5/kcm_knote_display.desktop

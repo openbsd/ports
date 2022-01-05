@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 2021/12/10 06:48:32 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2022/01/05 08:03:03 rsadowski Exp $
 
 COMMENT =	mail sieve editor
 DISTNAME =	pim-sieve-editor-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 SHARED_LIBS +=  sieveeditor       2.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5Crash KF5DBusAddons KF5I18n KF5IconThemes
-WANTLIB += KF5KIOCore KF5KManageSieve KF5KSieve KF5KSieveUi KF5MailTransport
+WANTLIB += KF5CoreAddons KF5Crash KF5DBusAddons KF5I18n KF5KIOCore
+WANTLIB += KF5KManageSieve KF5KSieve KF5KSieveUi KF5MailTransport
 WANTLIB += KF5PimCommon KF5Service KF5Wallet KF5WidgetsAddons
 WANTLIB += KF5XmlGui KUserFeedbackCore KUserFeedbackWidgets Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
@@ -31,7 +30,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcrash \
 		devel/kf5/kdbusaddons \
 		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
 		devel/kf5/kio \
 		devel/kf5/kservice \
 		devel/kf5/kwallet \

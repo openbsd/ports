@@ -1,10 +1,10 @@
-$OpenBSD: patch-mimetreeparser_src_CMakeLists_txt,v 1.4 2021/09/10 08:43:59 rsadowski Exp $
+$OpenBSD: patch-mimetreeparser_src_CMakeLists_txt,v 1.5 2022/01/05 08:03:03 rsadowski Exp $
 
 Index: mimetreeparser/src/CMakeLists.txt
 --- mimetreeparser/src/CMakeLists.txt.orig
 +++ mimetreeparser/src/CMakeLists.txt
-@@ -1,9 +1,6 @@
- 
+@@ -9,9 +9,6 @@ if (BUILD_QCH)
+ endif()
  add_definitions(-DTRANSLATION_DOMAIN=\"libmimetreeparser\")
  
 -# target_include_directories does not handle empty include paths
@@ -13,7 +13,7 @@ Index: mimetreeparser/src/CMakeLists.txt
  add_library(KF5MimeTreeParser)
  add_library(KF5::MimeTreeParser ALIAS KF5MimeTreeParser)
  
-@@ -116,6 +113,10 @@ if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+@@ -156,6 +153,10 @@ if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
      set_target_properties(KF5MimeTreeParser PROPERTIES UNITY_BUILD ON)
  endif()
  

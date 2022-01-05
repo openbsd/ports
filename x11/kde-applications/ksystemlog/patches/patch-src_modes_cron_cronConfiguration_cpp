@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_modes_cron_cronConfiguration_cpp,v 1.1 2021/04/27 05:27:12 rsadowski Exp $
+$OpenBSD: patch-src_modes_cron_cronConfiguration_cpp,v 1.2 2022/01/05 08:03:00 rsadowski Exp $
 
 Index: src/modes/cron/cronConfiguration.cpp
 --- src/modes/cron/cronConfiguration.cpp.orig
 +++ src/modes/cron/cronConfiguration.cpp
-@@ -25,7 +25,11 @@ CronConfiguration::CronConfiguration()
+@@ -10,7 +10,11 @@ CronConfiguration::CronConfiguration()
  {
      mConfiguration->setCurrentGroup(QStringLiteral("CronLogMode"));
  

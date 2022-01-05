@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/09/10 08:43:56 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2022/01/05 08:02:58 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @conflict kdebase-*
@@ -28,11 +28,6 @@ lib/cmake/KF5Konq/KF5KonqTargets.cmake
 @so lib/qt5/plugins/autorefresh.so
 @so lib/qt5/plugins/babelfishplugin.so
 @so lib/qt5/plugins/dirfilterplugin.so
-@so lib/qt5/plugins/kcm_bookmarks.so
-@so lib/qt5/plugins/kcm_history.so
-@so lib/qt5/plugins/kcm_konq.so
-@so lib/qt5/plugins/kcm_konqhtml.so
-@so lib/qt5/plugins/kcm_performance.so
 lib/qt5/plugins/kf5/kfileitemaction/
 @so lib/qt5/plugins/kf5/kfileitemaction/akregatorplugin.so
 lib/qt5/plugins/kf5/parts/
@@ -47,6 +42,16 @@ lib/qt5/plugins/kf5/parts/
 @so lib/qt5/plugins/konqsidebar_history.so
 @so lib/qt5/plugins/konqsidebar_places.so
 @so lib/qt5/plugins/konqsidebar_tree.so
+lib/qt5/plugins/konqueror_kcms/
+@so lib/qt5/plugins/konqueror_kcms/kcm_bookmarks.so
+@so lib/qt5/plugins/konqueror_kcms/kcm_history.so
+@so lib/qt5/plugins/konqueror_kcms/kcm_konq.so
+@so lib/qt5/plugins/konqueror_kcms/kcm_performance.so
+@so lib/qt5/plugins/konqueror_kcms/khtml_appearance.so
+@so lib/qt5/plugins/konqueror_kcms/khtml_behavior.so
+@so lib/qt5/plugins/konqueror_kcms/khtml_filter.so
+@so lib/qt5/plugins/konqueror_kcms/khtml_general.so
+@so lib/qt5/plugins/konqueror_kcms/khtml_java_js.so
 @so lib/qt5/plugins/searchbarplugin.so
 @so lib/qt5/plugins/uachangerplugin.so
 @so lib/qt5/plugins/webarchiverplugin.so
@@ -831,18 +836,11 @@ share/konqueror/pics/indicator_connect.png
 share/konqueror/pics/indicator_empty.png
 share/konqueror/pics/indicator_noconnect.png
 share/konqueror/pics/indicator_viewactive.png
+share/konqueror/webengine_dictionaries/
+share/konqueror/webengine_dictionaries/default.bdic
+share/konqueror/webengine_dictionaries/en-GB.bdic
 share/kservices5/akregator_konqplugin.desktop
-share/kservices5/bookmarks.desktop
-share/kservices5/filebehavior.desktop
 share/kservices5/fsview_part.desktop
-share/kservices5/kcmhistory.desktop
-share/kservices5/kcmkonqyperformance.desktop
-share/kservices5/kcmperformance.desktop
-share/kservices5/khtml_appearance.desktop
-share/kservices5/khtml_behavior.desktop
-share/kservices5/khtml_filter.desktop
-share/kservices5/khtml_general.desktop
-share/kservices5/khtml_java_js.desktop
 share/kservices5/konq_sidebartng.desktop
 share/kservices5/org.kde.konqueror.desktop
 share/kservices5/webarchivethumbnail.desktop

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2021/12/10 06:52:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2022/01/05 08:02:51 rsadowski Exp $
 
 COMMENT =	Kio slave for accessing audio CDs
 DISTNAME =	audiocd-kio-${VERSION}
 PKGNAME =	audiocd-kio-kf5-${VERSION}
 CATEGORIES =	devel audio
-REVISION =	0
 
 SHARED_LIBS +=  audiocdplugins            2.0 # 5.0
 

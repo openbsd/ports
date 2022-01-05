@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2021/11/10 06:37:52 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.16 2022/01/05 08:02:59 rsadowski Exp $
 @conflict kdebase-<4
 @pkgpath x11/kde4/konsole
 @bin bin/konsole
@@ -6,6 +6,8 @@ bin/konsoleprofile
 @lib lib/libkonsoleapp.so.${LIBkonsoleapp_VERSION}
 @lib lib/libkonsoleprivate.so.${LIBkonsoleprivate_VERSION}
 @so lib/qt5/plugins/konsolepart.so
+lib/qt5/plugins/konsoleplugins/
+@so lib/qt5/plugins/konsoleplugins/konsole_sshmanagerplugin.so
 share/applications/org.kde.konsole.desktop
 share/doc/HTML/ca/konsole/
 share/doc/HTML/ca/konsole/draganddrop-contextmenu.png
@@ -32,9 +34,6 @@ share/doc/HTML/pt_BR/konsole/
 share/doc/HTML/pt_BR/konsole/draganddrop-contextmenu.png
 share/doc/HTML/pt_BR/konsole/index.cache.bz2
 share/doc/HTML/pt_BR/konsole/index.docbook
-share/doc/HTML/ru/konsole/
-share/doc/HTML/ru/konsole/index.cache.bz2
-share/doc/HTML/ru/konsole/index.docbook
 share/doc/HTML/sr/konsole/
 share/doc/HTML/sr/konsole/index.cache.bz2
 share/doc/HTML/sr/konsole/index.docbook

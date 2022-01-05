@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_lib_localeHandling_cpp,v 1.5 2021/06/19 18:34:36 rsadowski Exp $
+$OpenBSD: patch-src_lib_localeHandling_cpp,v 1.6 2022/01/05 08:02:55 rsadowski Exp $
 
 Index: src/lib/localeHandling.cpp
 --- src/lib/localeHandling.cpp.orig
 +++ src/lib/localeHandling.cpp
-@@ -20,7 +20,7 @@ auto LocaleHandling::setLocale(const QString &lcName) 
+@@ -15,7 +15,7 @@ auto LocaleHandling::setLocale(const QString &lcName) 
      QList<QString> localesToTest;
      localesToTest << lcName << lcName + ".utf-8" << lcName + ".UTF-8" << lcName + ".utf8" << lcName + ".UTF8";
      for (const auto &locale : qAsConst(localesToTest)) {
@@ -12,7 +12,7 @@ Index: src/lib/localeHandling.cpp
          auto *result = setlocale(MLT_LC_CATEGORY, locale.toStdString().c_str());
  #else
          auto *result = std::setlocale(MLT_LC_CATEGORY, locale.toStdString().c_str());
-@@ -39,7 +39,7 @@ auto LocaleHandling::setLocale(const QString &lcName) 
+@@ -34,7 +34,7 @@ auto LocaleHandling::setLocale(const QString &lcName) 
  
  void LocaleHandling::resetLocale()
  {
@@ -21,7 +21,7 @@ Index: src/lib/localeHandling.cpp
      setlocale(MLT_LC_CATEGORY, "C");
  #else
      std::setlocale(MLT_LC_CATEGORY, "C");
-@@ -49,7 +49,7 @@ void LocaleHandling::resetLocale()
+@@ -44,7 +44,7 @@ void LocaleHandling::resetLocale()
  
  void LocaleHandling::resetAllLocale()
  {

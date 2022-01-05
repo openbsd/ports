@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.14 2021/08/08 12:23:56 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.15 2022/01/05 08:03:02 rsadowski Exp $
 @conflict marble-<=4.14.3
 @bin bin/marble
 @bin bin/marble-qt
 include/astro/
 include/astro/astr2lib.h
+include/astro/astro_version.h
 include/astro/astrolib.h
 include/astro/astrolib_export.h
 include/astro/attlib.h
@@ -169,6 +170,7 @@ include/marble/WidgetGraphicsItem.h
 include/marble/geodata_export.h
 include/marble/marble_declarative_export.h
 include/marble/marble_export.h
+include/marble/marble_version.h
 lib/cmake/Astro/
 lib/cmake/Astro/AstroConfig.cmake
 lib/cmake/Astro/AstroConfigVersion.cmake
@@ -273,8 +275,23 @@ share/applications/org.kde.marble.desktop
 share/config.kcfg/
 share/config.kcfg/marble.kcfg
 share/doc/HTML/ca/marble/
+share/doc/HTML/ca/marble/configure-cacheproxy.png
+share/doc/HTML/ca/marble/configure-dateandtime.png
+share/doc/HTML/ca/marble/configure-navigation.png
+share/doc/HTML/ca/marble/configure-plugins.png
+share/doc/HTML/ca/marble/configure-routing.png
+share/doc/HTML/ca/marble/configure-synchronization.png
+share/doc/HTML/ca/marble/configure-view.png
+share/doc/HTML/ca/marble/download-region-3.png
 share/doc/HTML/ca/marble/index.cache.bz2
 share/doc/HTML/ca/marble/index.docbook
+share/doc/HTML/ca/marble/mapview-1.png
+share/doc/HTML/ca/marble/measure-1.png
+share/doc/HTML/ca/marble/movie-1.png
+share/doc/HTML/ca/marble/quick-1.png
+share/doc/HTML/ca/marble/routing-6.png
+share/doc/HTML/ca/marble/search-1.png
+share/doc/HTML/ca/marble/search-2.png
 share/doc/HTML/de/marble/
 share/doc/HTML/de/marble/configure-cacheproxy.png
 share/doc/HTML/de/marble/configure-navigation.png
@@ -464,6 +481,8 @@ share/kservices5/marble_thumbnail_kml.desktop
 share/kservices5/marble_thumbnail_kmz.desktop
 share/kservices5/marble_thumbnail_osm.desktop
 share/kservices5/marble_thumbnail_shp.desktop
+share/kservices5/plasma-applet-org.kde.plasma.worldclock.desktop
+share/kservices5/plasma-wallpaper-org.kde.plasma.worldmap.desktop
 share/kxmlgui5/
 share/kxmlgui5/marble/
 share/kxmlgui5/marble/marble_part.rc

@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.17 2021/12/10 06:49:49 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.18 2022/01/05 08:02:53 rsadowski Exp $
 @conflict kdebase-*
 @pkgpath x11/kde4/kate
 @bin bin/kate
 @bin bin/kwrite
 lib/qt5/plugins/ktexteditor/
+@so lib/qt5/plugins/ktexteditor/compilerexplorer.so
 @so lib/qt5/plugins/ktexteditor/externaltoolsplugin.so
 @so lib/qt5/plugins/ktexteditor/katebacktracebrowserplugin.so
 @so lib/qt5/plugins/ktexteditor/katebuildplugin.so
@@ -24,11 +25,10 @@ lib/qt5/plugins/ktexteditor/
 @so lib/qt5/plugins/ktexteditor/katexmlcheckplugin.so
 @so lib/qt5/plugins/ktexteditor/katexmltoolsplugin.so
 @so lib/qt5/plugins/ktexteditor/ktexteditorpreviewplugin.so
+@so lib/qt5/plugins/ktexteditor/latexcompletionplugin.so
 @so lib/qt5/plugins/ktexteditor/lspclientplugin.so
 @so lib/qt5/plugins/ktexteditor/tabswitcherplugin.so
 @so lib/qt5/plugins/ktexteditor/textfilterplugin.so
-lib/qt5/plugins/plasma/
-lib/qt5/plugins/plasma/dataengine/
 @so lib/qt5/plugins/plasma/dataengine/plasma_engine_katesessions.so
 @man man/man1/kate.1
 share/applications/org.kde.kate.desktop
@@ -404,6 +404,7 @@ share/katexmltools/xhtml1-frameset.dtd.xml
 share/katexmltools/xhtml1-strict.dtd.xml
 share/katexmltools/xhtml1-transitional.dtd.xml
 share/katexmltools/xslt-1.0.dtd.xml
+share/kservices5/plasma-applet-org.kde.plasma.katesessions.desktop
 share/kservices5/plasma-dataengine-katesessions.desktop
 share/locale/ar/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/ar/LC_MESSAGES/kate-replicode-plugin.mo
@@ -1672,8 +1673,6 @@ share/locale/zh_TW/LC_MESSAGES/tabswitcherplugin.mo
 share/metainfo/org.kde.kate.appdata.xml
 share/metainfo/org.kde.kwrite.appdata.xml
 share/metainfo/org.kde.plasma.katesessions.appdata.xml
-share/plasma/
-share/plasma/plasmoids/
 share/plasma/plasmoids/org.kde.plasma.katesessions/
 share/plasma/plasmoids/org.kde.plasma.katesessions/contents/
 share/plasma/plasmoids/org.kde.plasma.katesessions/contents/ui/
@@ -1682,7 +1681,6 @@ share/plasma/plasmoids/org.kde.plasma.katesessions/contents/ui/Menu.qml
 share/plasma/plasmoids/org.kde.plasma.katesessions/contents/ui/katesessions.qml
 share/plasma/plasmoids/org.kde.plasma.katesessions/metadata.desktop
 share/plasma/plasmoids/org.kde.plasma.katesessions/metadata.json
-share/plasma/services/
 share/plasma/services/org.kde.plasma.katesessions.operations
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

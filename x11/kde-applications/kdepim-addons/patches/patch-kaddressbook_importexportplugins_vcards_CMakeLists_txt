@@ -1,9 +1,9 @@
-$OpenBSD: patch-kaddressbook_importexportplugins_vcards_CMakeLists_txt,v 1.3 2021/04/27 05:27:00 rsadowski Exp $
+$OpenBSD: patch-kaddressbook_importexportplugins_vcards_CMakeLists_txt,v 1.4 2022/01/05 08:02:55 rsadowski Exp $
 
 Index: kaddressbook/importexportplugins/vcards/CMakeLists.txt
 --- kaddressbook/importexportplugins/vcards/CMakeLists.txt.orig
 +++ kaddressbook/importexportplugins/vcards/CMakeLists.txt
-@@ -20,7 +20,11 @@ target_link_libraries(kaddressbook_importexportvcardpl
+@@ -24,7 +24,11 @@ target_link_libraries(kaddressbook_importexportvcardpl
      KF5::Contacts
      KF5::JobWidgets
      KF5::AkonadiContact

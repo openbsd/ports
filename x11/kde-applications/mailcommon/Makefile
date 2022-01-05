@@ -1,26 +1,26 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/10 06:37:57 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2022/01/05 08:03:02 rsadowski Exp $
 
 COMMENT =	KDE PIM common mail library
 DISTNAME =	mailcommon-${VERSION}
 CATEGORIES =	devel mail
 
-SHARED_LIBS +=  KF5MailCommon       2.1 # 5.13.2
+SHARED_LIBS +=  KF5MailCommon       3.0 # 5.13.2
 
-WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiContact KF5AkonadiCore
-WANTLIB += KF5AkonadiMime KF5AkonadiWidgets KF5Archive KF5Auth
-WANTLIB += KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5GrantleeTheme
-WANTLIB += KF5GuiAddons KF5I18n KF5IMAP KF5IconThemes KF5IdentityManagement
-WANTLIB += KF5ItemModels KF5ItemViews KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOGui KF5KIOWidgets KF5Libkdepim KF5Libkleo KF5MailImporter
-WANTLIB += KF5MailTransport KF5MessageComposer KF5MessageCore
-WANTLIB += KF5MessageList KF5MessageViewer KF5Mime KF5MimeTreeParser
-WANTLIB += KF5PimCommon KF5PimCommonAkonadi KF5PimTextEdit KF5Service
-WANTLIB += KF5Solid KF5SonnetUi KF5SyntaxHighlighting KF5TemplateParser
-WANTLIB += KF5TextWidgets KF5Wallet KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5Xml X11 assuan gpgme gpgmepp m phonon4qt5
-WANTLIB += qgpgme
+WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
+WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiWidgets KF5Archive
+WANTLIB += KF5Auth KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5Contacts KF5CoreAddons
+WANTLIB += KF5GrantleeTheme KF5GuiAddons KF5I18n KF5IMAP KF5IconThemes
+WANTLIB += KF5IdentityManagement KF5ItemModels KF5ItemViews KF5JobWidgets
+WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Libkdepim KF5Libkleo
+WANTLIB += KF5MailImporter KF5MailTransport KF5MessageComposer
+WANTLIB += KF5MessageCore KF5MessageList KF5MessageViewer KF5Mime
+WANTLIB += KF5MimeTreeParser KF5PimCommon KF5PimCommonAkonadi
+WANTLIB += KF5PimTextEdit KF5Service KF5Solid KF5SonnetUi KF5SyntaxHighlighting
+WANTLIB += KF5TemplateParser KF5TextWidgets KF5Wallet KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml X11 assuan gpgme
+WANTLIB += gpgmepp m phonon4qt5 qgpgme
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes

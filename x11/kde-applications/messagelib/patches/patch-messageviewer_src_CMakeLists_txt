@@ -1,9 +1,9 @@
-$OpenBSD: patch-messageviewer_src_CMakeLists_txt,v 1.5 2021/09/10 08:43:59 rsadowski Exp $
+$OpenBSD: patch-messageviewer_src_CMakeLists_txt,v 1.6 2022/01/05 08:03:03 rsadowski Exp $
 
 Index: messageviewer/src/CMakeLists.txt
 --- messageviewer/src/CMakeLists.txt.orig
 +++ messageviewer/src/CMakeLists.txt
-@@ -34,9 +34,6 @@ set_package_properties(Qca-qt5 PROPERTIES DESCRIPTION 
+@@ -43,9 +43,6 @@ set_package_properties(Qca-qt5 PROPERTIES DESCRIPTION 
  
  configure_file(config-messageviewer.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-messageviewer.h)
  
@@ -13,7 +13,7 @@ Index: messageviewer/src/CMakeLists.txt
  add_library(KF5MessageViewer)
  add_library(KF5::MessageViewer ALIAS KF5MessageViewer)
  
-@@ -235,6 +232,11 @@ ki18n_wrap_ui(KF5MessageViewer
+@@ -385,6 +382,11 @@ ki18n_wrap_ui(KF5MessageViewer
      ui/invitationsettings.ui
      ui/printingsettings.ui
      )

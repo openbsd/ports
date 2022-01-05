@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2021/12/11 11:00:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2022/01/05 08:02:55 rsadowski Exp $
 
 COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-runtime-${VERSION}
 PKGNAME =	kdepim-runtime-kf5-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 SHARED_LIBS +=  akonadi-filestore           1.0 # 5.13.2
 SHARED_LIBS +=  akonadi-singlefileresource  1.0 # 5.13.2
@@ -12,24 +11,24 @@ SHARED_LIBS +=  folderarchivesettings       1.0 # 5.13.2
 SHARED_LIBS +=  kmindexreader               1.0 # 5.13.2
 SHARED_LIBS +=  maildir                     1.0 # 5.13.2
 
-WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiAgentBase KF5AkonadiCalendar
-WANTLIB += KF5AkonadiContact KF5AkonadiCore KF5AkonadiMime KF5AkonadiNotes
-WANTLIB += KF5AkonadiWidgets KF5AlarmCalendar KF5Auth KF5AuthCore
-WANTLIB += KF5Bookmarks KF5CalendarCore KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5Contacts
-WANTLIB += KF5CoreAddons KF5DAV KF5GrantleeTheme KF5Holidays KF5I18n
-WANTLIB += KF5IMAP KF5IdentityManagement KF5ItemModels KF5ItemViews
-WANTLIB += KF5JobWidgets KF5KCMUtils KF5KIOCore KF5KIOFileWidgets
+WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiAgentBase
+WANTLIB += KF5AkonadiCalendar KF5AkonadiContact KF5AkonadiCore
+WANTLIB += KF5AkonadiMime KF5AkonadiNotes KF5AkonadiWidgets KF5AlarmCalendar
+WANTLIB += KF5Auth KF5AuthCore KF5Bookmarks KF5CalendarCore KF5Codecs
+WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
+WANTLIB += KF5Contacts KF5CoreAddons KF5DAV KF5GrantleeTheme KF5Holidays
+WANTLIB += KF5I18n KF5IMAP KF5IdentityManagement KF5ItemModels
+WANTLIB += KF5ItemViews KF5JobWidgets KF5KCMUtils KF5KIOCore KF5KIOFileWidgets
 WANTLIB += KF5KIOGui KF5KIONTLM KF5KIOWidgets KF5Ldap KF5Libkdepim
 WANTLIB += KF5MailTransport KF5MailTransportAkonadi KF5Mbox KF5Mime
-WANTLIB += KF5Notifications KF5NotifyConfig KF5PimCommon KF5PimTextEdit
-WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5Wallet
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui KPimGAPICalendar
-WANTLIB += KPimGAPIContacts KPimGAPICore KPimGAPITasks Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5NetworkAuth Qt5Positioning
-WANTLIB += Qt5PrintSupport Qt5Qml Qt5QmlModels Qt5Quick Qt5TextToSpeech
-WANTLIB += Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
-WANTLIB += Qt5Widgets Qt5Xml X11 c m qca-qt5 qt5keychain sasl2
+WANTLIB += KF5Notifications KF5NotifyConfig KF5PimTextEdit KF5Service
+WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5Wallet KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui KPimGAPICalendar KPimGAPIContacts
+WANTLIB += KPimGAPICore KPimGAPITasks Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5NetworkAuth Qt5Positioning Qt5PrintSupport
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5TextToSpeech Qt5WebChannel
+WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5Xml
+WANTLIB += X11 c m qca-qt5 qt5keychain sasl2
 
 
 MODKDE5_TRANSLATIONS = yes
@@ -52,6 +51,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/kcontacts \
 		devel/kf5/kcoreaddons \
+		devel/kf5/kdav \
 		devel/kf5/kholidays \
 		devel/kf5/ki18n \
 		devel/kf5/kio \
@@ -75,16 +75,16 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		x11/kde-applications/akonadi-contacts \
 		x11/kde-applications/akonadi-mime \
 		x11/kde-applications/akonadi-notes \
-		devel/kf5/kdav \
 		x11/kde-applications/kalarmcal \
 		x11/kde-applications/kidentitymanagement \
 		x11/kde-applications/kimap \
+		x11/kde-applications/kldap \
 		x11/kde-applications/kmailtransport \
 		x11/kde-applications/kmbox \
 		x11/kde-applications/kmime \
 		x11/kde-applications/kpimtextedit \
+		x11/kde-applications/libkdepim \
 		x11/kde-applications/libkgapi \
-		x11/kde-applications/pimcommon \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtlocation \
 		x11/qt5/qtnetworkauth \

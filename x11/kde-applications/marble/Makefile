@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2021/11/11 16:22:10 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.24 2022/01/05 08:03:02 rsadowski Exp $
 
 COMMENT =	virtual globe and world atlas
 DISTNAME =	marble-${VERSION}
 PKGNAME =	marble-kf5-${VERSION}
 CATEGORIES =	geo
-REVISION =	0
 
 HOMEPAGE =	https://marble.kde.org/
 

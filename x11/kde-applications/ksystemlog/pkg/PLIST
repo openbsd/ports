@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/08/08 12:23:55 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2022/01/05 08:03:00 rsadowski Exp $
 @pkgpath x11/kde4/ksystemlog
 @bin bin/ksystemlog
 share/applications/org.kde.ksystemlog.desktop
@@ -47,6 +47,9 @@ share/doc/HTML/pt_BR/ksystemlog/first-opening.png
 share/doc/HTML/pt_BR/ksystemlog/index.cache.bz2
 share/doc/HTML/pt_BR/ksystemlog/index.docbook
 share/doc/HTML/pt_BR/ksystemlog/main-screen.png
+share/doc/HTML/ru/ksystemlog/
+share/doc/HTML/ru/ksystemlog/index.cache.bz2
+share/doc/HTML/ru/ksystemlog/index.docbook
 share/doc/HTML/sv/ksystemlog/
 share/doc/HTML/sv/ksystemlog/index.cache.bz2
 share/doc/HTML/sv/ksystemlog/index.docbook

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/06/19 18:34:37 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2022/01/05 08:02:56 rsadowski Exp $
 @pkgpath x11/kde4/kget
 @bin bin/kget
 @lib lib/libkgetcore.so.${LIBkgetcore_VERSION}
@@ -206,9 +206,6 @@ share/icons/hicolor/22x22/apps/kget.png
 share/icons/hicolor/32x32/apps/kget.png
 share/icons/hicolor/48x48/apps/kget.png
 share/icons/hicolor/64x64/apps/kget.png
-share/kconf_update/kget.upd
-share/kconf_update/kget_limitdownloads.pl
-share/kconf_update/kget_sensitive.pl
 share/kget/
 share/kget/pics/
 share/kget/pics/kget_splash.png

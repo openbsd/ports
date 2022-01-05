@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/08/08 12:23:47 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2022/01/05 08:02:50 rsadowski Exp $
 
 PKGNAME =		kde-${MODKDE_VERSION}
 
@@ -97,12 +97,15 @@ RUN_DEPENDS-graphics = \
 	x11/kde-applications/kolourpaint \
 	x11/kde-applications/kruler \
 	x11/kde-applications/okular \
+	x11/kde-applications/kontrast \
 	x11/kde-applications/spectacle \
 	x11/kde-applications/svgpart
 
 RUN_DEPENDS-graphics += \
+	geo/kgeotag \
+	graphics/digikam \
 	graphics/krita \
-	graphics/digikam
+	graphics/skanlite
 
 WANTLIB-games =
 LIB_DEPENDS-games =
@@ -183,7 +186,8 @@ RUN_DEPENDS-network = \
 RUN_DEPENDS-network += \
 	net/konversation \
 	net/ktorrent \
-	net/libktorrent
+	net/libktorrent \
+	net/kdeconnect-kde
 
 KDE_AKONADI = \
 	x11/kde-applications/akonadi \
@@ -261,11 +265,13 @@ RUN_DEPENDS-development = \
 	x11/kde-applications/kdeedu-data \
 	x11/kde-applications/kidentitymanagement \
 	x11/kde-applications/kimap \
+	x11/kde-applications/kirigami-gallery \
 	x11/kde-applications/kitinerary \
 	x11/kde-applications/kldap \
 	x11/kde-applications/kmbox \
 	x11/kde-applications/kmime \
 	x11/kde-applications/kontactinterface \
+	x11/kde-applications/kopeninghours \
 	x11/kde-applications/kpkpass \
 	x11/kde-applications/kqtquickcharts \
 	x11/kde-applications/kross-interpreters \
@@ -315,6 +321,7 @@ RUN_DEPENDS-main = \
 	x11/kde-applications/keditbookmarks \
 	x11/kde-applications/kfind \
 	x11/kde-applications/khelpcenter \
+	x11/kde-applications/kipi-plugins \
 	x11/kde-applications/konqueror \
 	x11/kde-applications/konsole \
 	${BUILD_PKGPATH},-accessibility=${MODKDE_VERSION} \

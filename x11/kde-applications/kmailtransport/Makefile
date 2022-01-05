@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/10 06:37:50 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2022/01/05 08:02:57 rsadowski Exp $
 
 COMMENT =	mail transport service
 DISTNAME =	kmailtransport-${VERSION}
 CATEGORIES =	mail devel
 
-SHARED_LIBS +=  KF5MailTransport             2.0 # 5.13.3
+SHARED_LIBS +=  KF5MailTransport             2.1 # 5.13.3
 SHARED_LIBS +=  KF5MailTransportAkonadi      1.0 # 5.13.3
 
-WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCore KF5AkonadiMime KF5Auth
-WANTLIB += KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5I18n KF5ItemModels
-WANTLIB += KF5JobWidgets KF5KCMUtils KF5KIOCore KF5KIOGui KF5KIOWidgets
-WANTLIB += KF5Mime KF5Service KF5Solid KF5Wallet KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KPimGAPICore KPimSMTP Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
-WANTLIB += X11 m qt5keychain
+WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCore KF5AkonadiMime KF5AkonadiWidgets
+WANTLIB += KF5Auth KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5I18n
+WANTLIB += KF5ItemModels KF5JobWidgets KF5KCMUtils KF5KIOCore
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5Mime KF5Service KF5Solid
+WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KPimGAPICore
+WANTLIB += KPimSMTP Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5Widgets Qt5Xml X11 m qt5keychain
 
 MODKDE5_TRANSLATIONS = yes
 

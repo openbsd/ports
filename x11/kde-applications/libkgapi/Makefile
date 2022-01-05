@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2021/12/10 06:59:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2022/01/05 08:03:01 rsadowski Exp $
 
 COMMENT =	KDE-based library for accessing various Google services
 DISTNAME =	libkgapi-${VERSION}
 CATEGORIES =	www devel
-REVISION =	0
 
-SHARED_LIBS +=  KPimGAPIBlogger       2.0 # 5.13.3
+SHARED_LIBS +=  KPimGAPIBlogger       3.0 # 5.13.3
 SHARED_LIBS +=  KPimGAPICalendar      2.1 # 5.13.3
-SHARED_LIBS +=  KPimGAPIContacts      2.0 # 5.13.3
+SHARED_LIBS +=  KPimGAPIContacts      2.1 # 5.13.3
 SHARED_LIBS +=  KPimGAPICore          2.0 # 5.13.3
 SHARED_LIBS +=  KPimGAPIDrive         2.0 # 5.13.3
 SHARED_LIBS +=  KPimGAPILatitude      2.0 # 5.13.3
@@ -28,7 +27,6 @@ RUN_DEPENDS =	devel/kf5/kcoreaddons \
 
 LIB_DEPENDS =	devel/kf5/kcalendarcore \
 		devel/kf5/kcontacts \
-		devel/kf5/kcoreaddons \
 		devel/kf5/kwallet
 
 .include <bsd.port.mk>

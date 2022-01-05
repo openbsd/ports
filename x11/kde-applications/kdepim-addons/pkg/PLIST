@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/11/10 06:37:46 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2022/01/05 08:02:55 rsadowski Exp $
 @conflict kdepimlibs-<=4
 bin/kmail_antivir.sh
 bin/kmail_clamav.sh
@@ -18,6 +18,7 @@ lib/contacteditor/editorpageplugins/
 @lib lib/libkmaillanguagetool.so.${LIBkmaillanguagetool_VERSION}
 @lib lib/libkmailmarkdown.so.${LIBkmailmarkdown_VERSION}
 @lib lib/libkmailquicktextpluginprivate.so.${LIBkmailquicktextpluginprivate_VERSION}
+@lib lib/libscamconfiguresettings.so.${LIBscamconfiguresettings_VERSION}
 @lib lib/libshorturlpluginprivate.so.${LIBshorturlpluginprivate_VERSION}
 @so lib/qt5/plugins/akonadi/emailaddressselectionldapdialogplugin.so
 @so lib/qt5/plugins/importwizard/evolutionv1importerplugin.so
@@ -67,6 +68,7 @@ lib/qt5/plugins/kmail/plugineditorgrammar/
 lib/qt5/plugins/kmail/plugineditorinit/
 @so lib/qt5/plugins/kmail/plugineditorinit/kmail_externalcomposereditorplugin.so
 @so lib/qt5/plugins/korg_datenums.so
+@so lib/qt5/plugins/korg_lunarphases.so
 @so lib/qt5/plugins/korg_picoftheday.so
 @so lib/qt5/plugins/korg_thisdayinhistory.so
 lib/qt5/plugins/libksieve/
@@ -89,6 +91,7 @@ lib/qt5/plugins/messageviewer/configuresettings/
 @so lib/qt5/plugins/messageviewer/configuresettings/messageviewer_expireaccounttrashfolderconfigplugin.so
 @so lib/qt5/plugins/messageviewer/configuresettings/messageviewer_folderconfiguresettingsplugin.so
 @so lib/qt5/plugins/messageviewer/configuresettings/messageviewer_gravatarconfigplugin.so
+@so lib/qt5/plugins/messageviewer/configuresettings/messageviewer_scamconfiguresettingsplugin.so
 @so lib/qt5/plugins/messageviewer/grantlee/5.0/kitinerary_grantlee_extension.so
 @so lib/qt5/plugins/messageviewer/headerstyle/messageviewer_briefheaderstyleplugin.so
 @so lib/qt5/plugins/messageviewer/headerstyle/messageviewer_fancyheaderstyleplugin.so
@@ -129,10 +132,15 @@ share/examples/kdepim-addons/xdg/kmail.antispamrc
 @sample ${SYSCONFDIR}/xdg/kmail.antispamrc
 share/examples/kdepim-addons/xdg/kmail.antivirusrc
 @sample ${SYSCONFDIR}/xdg/kmail.antivirusrc
+share/icons/hicolor/scalable/status/moon-phase-first-quarter.svg
+share/icons/hicolor/scalable/status/moon-phase-full.svg
+share/icons/hicolor/scalable/status/moon-phase-last-quarter.svg
+share/icons/hicolor/scalable/status/moon-phase-new.svg
 share/kconf_update/languagetool_kmail.upd
 share/kconf_update/webengineurlinterceptoradblock.upd
 share/kservices5/korganizer/
 share/kservices5/korganizer/datenums.desktop
+share/kservices5/korganizer/lunarphases.desktop
 share/kservices5/korganizer/picoftheday.desktop
 share/kservices5/korganizer/thisdayinhistory.desktop
 share/locale/ar/LC_MESSAGES/cryptopageplugin.mo
@@ -158,6 +166,12 @@ share/locale/ar/LC_MESSAGES/messageviewerplugins.mo
 share/locale/ar/LC_MESSAGES/pimeventsplugin.mo
 share/locale/ar/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/ar/LC_MESSAGES/webengineurlinterceptor.mo
+share/locale/az/LC_MESSAGES/cryptopageplugin.mo
+share/locale/az/LC_MESSAGES/importwizard_plugins.mo
+share/locale/az/LC_MESSAGES/kaddressbook_importexportplugins.mo
+share/locale/az/LC_MESSAGES/kmail_plugins.mo
+share/locale/az/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
+share/locale/az/LC_MESSAGES/pimeventsplugin.mo
 share/locale/be/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/be/LC_MESSAGES/korganizer_plugins.mo
 share/locale/be/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
@@ -282,6 +296,7 @@ share/locale/de/LC_MESSAGES/customtoolsplugin.mo
 share/locale/de/LC_MESSAGES/importwizard_plugins.mo
 share/locale/de/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/de/LC_MESSAGES/kaddressbook_plugins.mo
+share/locale/de/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
 share/locale/de/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/de/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
 share/locale/de/LC_MESSAGES/kmail_editorgrammar_plugins.mo
@@ -916,10 +931,12 @@ share/locale/sv/LC_MESSAGES/messageviewerplugins.mo
 share/locale/sv/LC_MESSAGES/pimeventsplugin.mo
 share/locale/sv/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/sv/LC_MESSAGES/webengineurlinterceptor.mo
+share/locale/ta/LC_MESSAGES/importwizard_plugins.mo
 share/locale/ta/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/ta/LC_MESSAGES/korganizer_plugins.mo
 share/locale/ta/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/ta/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
+share/locale/ta/LC_MESSAGES/pimeventsplugin.mo
 share/locale/tg/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/tg/LC_MESSAGES/korganizer_plugins.mo
 share/locale/tg/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
@@ -1049,3 +1066,4 @@ share/qtcreator/templates/kmaileditorplugins/plugineditorinterface.cpp
 share/qtcreator/templates/kmaileditorplugins/plugineditorinterface.h
 share/qtcreator/templates/kmaileditorplugins/wizard.json
 @tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

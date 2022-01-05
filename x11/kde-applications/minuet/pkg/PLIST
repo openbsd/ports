@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/05/15 09:56:39 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2022/01/05 08:03:03 rsadowski Exp $
 @bin bin/minuet
 include/minuet/
 include/minuet/interfaces/
@@ -16,6 +16,7 @@ share/applications/org.kde.minuet.desktop
 share/doc/HTML/ca/minuet/
 share/doc/HTML/ca/minuet/index.cache.bz2
 share/doc/HTML/ca/minuet/index.docbook
+share/doc/HTML/ca/minuet/minuet-screenshot.png
 share/doc/HTML/de/minuet/
 share/doc/HTML/de/minuet/index.cache.bz2
 share/doc/HTML/de/minuet/index.docbook

@@ -1,11 +1,11 @@
-$OpenBSD: patch-kaddressbook_editorpages_CMakeLists_txt,v 1.3 2021/09/10 08:43:52 rsadowski Exp $
+$OpenBSD: patch-kaddressbook_editorpages_CMakeLists_txt,v 1.4 2022/01/05 08:02:55 rsadowski Exp $
 
 Index: kaddressbook/editorpages/CMakeLists.txt
 --- kaddressbook/editorpages/CMakeLists.txt.orig
 +++ kaddressbook/editorpages/CMakeLists.txt
 @@ -5,6 +5,11 @@ add_definitions(-DTRANSLATION_DOMAIN=\"cryptopageplugi
  add_library(cryptopageplugin MODULE)
- target_sources(cryptopageplugin PRIVATE cryptopageplugin.cpp )
+ target_sources(cryptopageplugin PRIVATE cryptopageplugin.cpp cryptopageplugin.h)
  
 +target_include_directories(cryptopageplugin PUBLIC "${CMAKE_INSTALL_PREFIX}/include"
 +    "${CMAKE_INSTALL_PREFIX}/include/inotify"

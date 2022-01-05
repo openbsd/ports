@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2021/09/10 08:43:47 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.24 2022/01/05 08:02:50 rsadowski Exp $
 @conflict ktorrent-kde4-*
 @pkgpath net/ktorrent-kde4
 @bin bin/ktmagnetdownloader
@@ -15,7 +15,6 @@ lib/qt5/plugins/ktorrent/
 @so lib/qt5/plugins/ktorrent/ktorrent_mediaplayer.so
 @so lib/qt5/plugins/ktorrent/ktorrent_scanfolder.so
 @so lib/qt5/plugins/ktorrent/ktorrent_scanforlostfiles.so
-@so lib/qt5/plugins/ktorrent/ktorrent_scripting.so
 @so lib/qt5/plugins/ktorrent/ktorrent_search.so
 @so lib/qt5/plugins/ktorrent/ktorrent_stats.so
 @so lib/qt5/plugins/ktorrent/ktorrent_syndication.so
@@ -149,30 +148,6 @@ share/ktorrent/opensearch/duckduckgo.com/opensearch.xml
 share/ktorrent/opensearch/torrentproject.se/
 share/ktorrent/opensearch/torrentproject.se/favicon.ico
 share/ktorrent/opensearch/torrentproject.se/opensearch.xml
-share/ktorrent/scripts/
-share/ktorrent/scripts/auto_remove/
-${MODPY_COMMENT}share/ktorrent/scripts/auto_remove/${MODPY_PYCACHE}/
-share/ktorrent/scripts/auto_remove/${MODPY_PYCACHE}auto_remove.${MODPY_PYC_MAGIC_TAG}pyc
-share/ktorrent/scripts/auto_remove/auto_remove.desktop
-share/ktorrent/scripts/auto_remove/auto_remove.py
-share/ktorrent/scripts/auto_remove/auto_remove.ui
-share/ktorrent/scripts/auto_resume/
-${MODPY_COMMENT}share/ktorrent/scripts/auto_resume/${MODPY_PYCACHE}/
-share/ktorrent/scripts/auto_resume/${MODPY_PYCACHE}auto_resume.${MODPY_PYC_MAGIC_TAG}pyc
-share/ktorrent/scripts/auto_resume/auto_resume.desktop
-share/ktorrent/scripts/auto_resume/auto_resume.py
-share/ktorrent/scripts/auto_resume/auto_resume.ui
-share/ktorrent/scripts/email_notifications/
-${MODPY_COMMENT}share/ktorrent/scripts/email_notifications/${MODPY_PYCACHE}/
-share/ktorrent/scripts/email_notifications/${MODPY_PYCACHE}email_notifications.${MODPY_PYC_MAGIC_TAG}pyc
-share/ktorrent/scripts/email_notifications/email_notifications.desktop
-share/ktorrent/scripts/email_notifications/email_notifications.py
-share/ktorrent/scripts/email_notifications/emailconfig.ui
-share/ktorrent/scripts/tracker_groups/
-${MODPY_COMMENT}share/ktorrent/scripts/tracker_groups/${MODPY_PYCACHE}/
-share/ktorrent/scripts/tracker_groups/${MODPY_PYCACHE}tracker_groups.${MODPY_PYC_MAGIC_TAG}pyc
-share/ktorrent/scripts/tracker_groups/tracker_groups.desktop
-share/ktorrent/scripts/tracker_groups/tracker_groups.py
 share/ktorrent/search/
 share/ktorrent/search/home/
 share/ktorrent/search/home/body-background.jpg
@@ -195,7 +170,6 @@ share/kxmlgui5/ktorrent/ktorrent_bwschedulerui.rc
 share/kxmlgui5/ktorrent/ktorrent_downloadorderui.rc
 share/kxmlgui5/ktorrent/ktorrent_magnetgeneratorui.rc
 share/kxmlgui5/ktorrent/ktorrent_mediaplayerui.rc
-share/kxmlgui5/ktorrent/ktorrent_scriptingui.rc
 share/kxmlgui5/ktorrent/ktorrent_searchui.rc
 share/kxmlgui5/ktorrent/ktorrent_syndicationui.rc
 share/kxmlgui5/ktorrent/ktorrentui.rc

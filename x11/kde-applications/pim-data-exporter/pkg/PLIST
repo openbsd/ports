@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/04/27 05:27:21 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2022/01/05 08:03:03 rsadowski Exp $
 @bin bin/pimdataexporter
 @bin bin/pimdataexporterconsole
 @lib lib/libpimdataexporterprivate.so.${LIBpimdataexporterprivate_VERSION}
@@ -39,9 +39,8 @@ share/doc/HTML/sv/pimsettingexporter/index.docbook
 share/doc/HTML/uk/pimsettingexporter/
 share/doc/HTML/uk/pimsettingexporter/index.cache.bz2
 share/doc/HTML/uk/pimsettingexporter/index.docbook
-share/kconf_update/pimsettingexporter-15.08-kickoff.sh
-share/kconf_update/pimsettingexporter.upd
 share/locale/ar/LC_MESSAGES/pimdataexporter.mo
+share/locale/az/LC_MESSAGES/pimdataexporter.mo
 share/locale/bs/LC_MESSAGES/pimdataexporter.mo
 share/locale/ca/LC_MESSAGES/pimdataexporter.mo
 share/locale/ca@valencia/LC_MESSAGES/pimdataexporter.mo

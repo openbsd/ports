@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/11/13 07:33:39 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2022/01/05 08:03:04 rsadowski Exp $
 @pkgpath x11/kde4/ksnapshot
 @bin bin/spectacle
 lib/kconf_update_bin/
+@bin lib/kconf_update_bin/spectacle-migrate-rememberregion
 @bin lib/kconf_update_bin/spectacle-migrate-shortcuts
 lib/systemd/user/app-org.kde.spectacle.service
 @man man/man1/spectacle.1
@@ -63,6 +64,7 @@ share/kconf_update/${MODPY_PYCACHE}/
 share/kconf_update/${MODPY_PYCACHE}50-clipboard_settings_change.${MODPY_PYC_MAGIC_TAG}pyc
 share/kconf_update/spectacle_clipboard.upd
 share/kconf_update/spectacle_newConfig.upd
+share/kconf_update/spectacle_rememberregion.upd
 share/kconf_update/spectacle_shortcuts.upd
 share/kglobalaccel/
 share/kglobalaccel/org.kde.spectacle.desktop

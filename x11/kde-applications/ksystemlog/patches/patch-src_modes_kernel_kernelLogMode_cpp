@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_modes_kernel_kernelLogMode_cpp,v 1.1 2021/04/27 05:27:12 rsadowski Exp $
+$OpenBSD: patch-src_modes_kernel_kernelLogMode_cpp,v 1.2 2022/01/05 08:03:00 rsadowski Exp $
 
 Index: src/modes/kernel/kernelLogMode.cpp
 --- src/modes/kernel/kernelLogMode.cpp.orig
 +++ src/modes/kernel/kernelLogMode.cpp
-@@ -57,6 +57,6 @@ Analyzer *KernelLogMode::createAnalyzer(const QVariant
+@@ -42,6 +42,6 @@ Analyzer *KernelLogMode::createAnalyzer(const QVariant
  
  QVector<LogFile> KernelLogMode::createLogFiles()
  {

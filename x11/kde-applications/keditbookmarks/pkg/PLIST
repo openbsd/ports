@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/08/08 12:23:51 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2022/01/05 08:02:55 rsadowski Exp $
 @conflict kde-baseapps-*
 @bin bin/kbookmarkmerger
 @bin bin/keditbookmarks
@@ -34,6 +34,9 @@ share/doc/HTML/pt/keditbookmarks/index.docbook
 share/doc/HTML/pt_BR/keditbookmarks/
 share/doc/HTML/pt_BR/keditbookmarks/index.cache.bz2
 share/doc/HTML/pt_BR/keditbookmarks/index.docbook
+share/doc/HTML/ru/keditbookmarks/
+share/doc/HTML/ru/keditbookmarks/index.cache.bz2
+share/doc/HTML/ru/keditbookmarks/index.docbook
 share/doc/HTML/sv/keditbookmarks/
 share/doc/HTML/sv/keditbookmarks/index.cache.bz2
 share/doc/HTML/sv/keditbookmarks/index.docbook
