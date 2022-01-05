@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/05/22 21:49:15 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.11 2022/01/05 08:38:41 sebastia Exp $
 @option is-branch
 @conflict facter-<3.0.1
 @bin bin/facter
@@ -25,6 +25,7 @@ include/facter/logging/logging.hpp
 include/facter/ruby/
 include/facter/ruby/ruby.hpp
 include/facter/util/
+include/facter/util/aws_token.hpp
 include/facter/util/cli.hpp
 include/facter/util/config.hpp
 include/facter/util/string.hpp
