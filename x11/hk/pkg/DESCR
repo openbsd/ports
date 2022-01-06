@@ -1,0 +1,6 @@
+hk allows temporary X11 hotkeys to be set. For example:
+
+  hk Ctrl+Shift+F6 notify-send Hello
+
+will execute the command `notify-send Hello` when Ctrl+Shift+F6 is pressed. hk
+exits as soon as the command has executed.
