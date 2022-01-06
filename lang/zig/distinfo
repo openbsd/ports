@@ -1,4 +1,2 @@
-SHA256 (llvm-project-12.x-d01534d1.tar.gz) = 6t82ae1rQtyCw5ZzfDtpVWhl0y3/g+ROzo+wS3LSRrA=
-SHA256 (zig-0.8.1-12828c09.tar.gz) = Yg44RYoZLzn3G0d8RzWlmGypzYEFFWYlDEr1fokTxWk=
-SIZE (llvm-project-12.x-d01534d1.tar.gz) = 134366334
-SIZE (zig-0.8.1-12828c09.tar.gz) = 19661360
+SHA256 (zig-0.9.0-a18bf7a7.tar.gz) = V0ckBAdu+BbJ3tUzwm/q8Ee4rtoRh2p4xQmH0ITOAlw=
+SIZE (zig-0.9.0-a18bf7a7.tar.gz) = 22012119

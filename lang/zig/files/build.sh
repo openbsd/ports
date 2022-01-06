@@ -1,10 +1,9 @@
 #!/bin/sh
-# $OpenBSD: build.sh,v 1.4 2021/09/09 15:10:31 semarie Exp $
+# $OpenBSD: build.sh,v 1.5 2022/01/06 09:08:40 semarie Exp $
 
 set -eux
 
-LLVMBUILD="${WRKBUILD}/llvm"
-LLVMINST="${WRKBUILD}/llvm-install"
+LLVMINST="${LOCALBASE}"
 ZIG1BUILD="${WRKBUILD}/zig-stage1"
 ZIG2BUILD="${WRKBUILD}/zig-stage2"
 
@@ -19,42 +18,6 @@ powerpc)	XFLAGS="-fno-ret-protector"
 		CMAKE_SHARED_LINKER_FLAGS="-Wl,-relax"
 		;;
 esac
-
-
-llvm_configure() {
-	[ ! -d "${LLVMBUILD}" ] && mkdir "${LLVMBUILD}" "${LLVMINST}"
-
-	cd "${LLVMBUILD}"
-	env CXXFLAGS="${XFLAGS:-} ${CXXFLAGS:-}" \
-	    VERBOSE=1 \
-	    MODCMAKE_PORT_BUILD=yes \
-	    cmake -GNinja "${WRKSRC}/llvm-project/llvm" \
-		-DLLVM_ENABLE_PROJECTS="clang;lld" \
-		-DLLVM_ENABLE_LIBXML2=OFF \
-		-DLLVM_ENABLE_TERMINFO=OFF \
-		-DLLVM_ENABLE_ZLIB=OFF \
-		-DLLVM_ENABLE_BACKTRACES=OFF \
-		-DLLVM_ENABLE_PLUGINS=OFF \
-		-DCMAKE_INSTALL_PREFIX="${LLVMINST}" \
-		-DCMAKE_PREFIX_PATH="${LLVMINST}" \
-		-DLLVM_INCLUDE_TESTS=OFF \
-		-DLLVM_INCLUDE_GO_TESTS=OFF \
-		-DLLVM_INCLUDE_EXAMPLES=OFF \
-		-DLLVM_INCLUDE_BENCHMARKS=OFF \
-		-DLLVM_ENABLE_BINDINGS=OFF \
-		-DLLVM_ENABLE_OCAMLDOC=OFF \
-		-DLLVM_ENABLE_Z3_SOLVER=OFF \
-		-DCLANG_BUILD_TOOLS=OFF \
-		-DBacktrace_HEADER=NOT-FOUND -DBacktrace_LIBRARY=NOT-FOUND \
-		-DCMAKE_SHARED_LINKER_FLAGS="${CMAKE_SHARED_LINKER_FLAGS:-}" \
-		-DCMAKE_BUILD_TYPE=Release
-}
-
-llvm_build() {
-	cd "${LLVMBUILD}"
-	ninja -v -j${MAKE_JOBS:-1}
-	ninja -v -j${MAKE_JOBS:-1} install
-}
 
 zig1_configure() {
 	[ ! -d "${ZIG1BUILD}" ] && mkdir "${ZIG1BUILD}"
@@ -165,8 +128,6 @@ TARGET_VERSION=${1}
 
 case "${2}" in
 build)
-	llvm_configure
-	llvm_build
 	zig1_configure
 	zig1_build
 	;;

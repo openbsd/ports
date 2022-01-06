@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:01:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2022/01/06 09:08:40 semarie Exp $
 
 # should be fine for ${LLVM_ARCHS}, but it needs insane amount of datasize
 ONLY_FOR_ARCHS =	amd64 arm64 powerpc64
@@ -6,21 +6,13 @@ ONLY_FOR_ARCHS =	amd64 arm64 powerpc64
 BROKEN-arm64 =		generated binary segfault
 BROKEN-powerpc64 =	ld: error: undefined symbol: __subkf3 (and others)
 
-# build llvm as part of the port
-DPB_PROPERTIES =	parallel
-
 COMMENT =	zig compiler and toolchain
 
-DISTNAME =	zig-0.8.1
-REVISION =	0
+DISTNAME =	zig-0.9.0
 
-# see https://github.com/ziglang/zig/tree/0.8.x
-ZIG_VERSION =	0.8.1
-ZIG_COMMIT =	12828c09d66873f1626d21c898117969764f3a4f
-
-# see https://github.com/mordak/llvm-project/tree/openbsd-release/12.x
-LLVM_VERSION =	12.x
-LLVM_COMMIT =	d01534d1b1a68a370db6e79ea0ea03a63cf778d7
+# see https://github.com/ziglang/zig/tree/0.9.x
+ZIG_VERSION =	0.9.0
+ZIG_COMMIT =	a18bf7a7bfa4e8c32aa25295cfa1ca768e5f5b74
 
 CATEGORIES =	lang
 
@@ -28,23 +20,23 @@ HOMEPAGE =	https://ziglang.org/
 
 MAINTAINER =	Sebastien Marie <semarie@online.fr>
 
-# MIT: zig / Apache2: llvm+clang+lld
+# MIT
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =	${COMPILER_LIBCXX} c m
 
 MASTER_SITES =	https://github.com/ziglang/zig/archive/
-MASTER_SITES0 =	https://github.com/mordak/llvm-project/archive/
 
-DISTFILES =	zig-${ZIG_VERSION}-${ZIG_COMMIT:C/(........).*/\1/}${EXTRACT_SUFX}{${ZIG_COMMIT}${EXTRACT_SUFX}} \
-		llvm-project-${LLVM_VERSION}-${LLVM_COMMIT:C/(........).*/\1/}${EXTRACT_SUFX}{${LLVM_COMMIT}${EXTRACT_SUFX}}:0
+DISTFILES +=	zig-${ZIG_VERSION}-${ZIG_COMMIT:C/(........).*/\1/}${EXTRACT_SUFX}{${ZIG_COMMIT}${EXTRACT_SUFX}}
 
 # C++11
 COMPILER =	base-clang ports-gcc
 
-MODULES =	lang/python
-BUILD_DEPENDS =	devel/cmake \
-		devel/ninja
+# link with static-libs of llvm
+BUILD_DEPENDS +=	devel/llvm>=13,<14
+
+BUILD_DEPENDS +=	devel/cmake \
+			devel/ninja
 
 SEPARATE_BUILD =	Yes
 
@@ -63,10 +55,6 @@ BUILDCMD =	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
 post-extract:
 	mkdir -p ${WRKSRC}
 	mv ${WRKDIR}/zig-${ZIG_COMMIT} ${WRKSRC}/zig
-	mv ${WRKDIR}/llvm-project-${LLVM_COMMIT} ${WRKSRC}/llvm-project
-
-pre-configure:
-	@ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
 
 do-build:
 	${BUILDCMD} build
