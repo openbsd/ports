@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2022/01/04 06:31:48 sebastia Exp $
+# $OpenBSD: Makefile,v 1.4 2022/01/06 21:34:54 sebastia Exp $
 
 COMMENT =		parallel HTTP requests
 
-DISTNAME =		typhoeus-1.3.1
-REVISION =		0
+DISTNAME =		typhoeus-1.4.0
 
 CATEGORIES =		www
 HOMEPAGE =		https://github.com/typhoeus/typhoeus
