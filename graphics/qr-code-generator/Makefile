@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/12/24 04:35:13 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2022/01/06 00:07:44 kn Exp $
 
 COMMENT =		QR Code generator library
 GH_ACCOUNT =		nayuki
@@ -29,9 +29,9 @@ SONAME_C =		libqrcodegen.so.${LIBqrcodegen_VERSION}
 SONAME_CPP =		libqrcodegencpp.so.${LIBqrcodegen_VERSION}
 
 do-build:
-	cd ${WRKSRC}/c && ${CC} ${CFLAGS} -shared \
-	    -Wl,-soname,${SONAME_C} -o ${WRKBUILD}/${SONAME_C} qrcodegen.c
-	cd ${WRKSRC}/cpp && ${CXX} ${CXXFLAGS} -shared -fPIC \
+	cd ${WRKSRC}/c   && PATH=${PORTPATH} ${CC}  ${CFLAGS}   -shared \
+	    -Wl,-soname,${SONAME_C}   -o ${WRKBUILD}/${SONAME_C}   qrcodegen.c
+	cd ${WRKSRC}/cpp && PATH=${PORTPATH} ${CXX} ${CXXFLAGS} -shared -fPIC \
 	    -Wl,-soname,${SONAME_CPP} -o ${WRKBUILD}/${SONAME_CPP} qrcodegen.cpp
 
 do-install:
@@ -39,8 +39,8 @@ do-install:
 	${INSTALL_DATA} ${WRKBUILD}/*.so* ${PREFIX}/lib/
 
 do-test:
-	cd ${WRKSRC}/c && ${CC} ${CFLAGS} -DQRCODEGEN_TEST qrcodegen{,-test}.c \
-	    -o ${WRKBUILD}/qrcodegen-test
+	cd ${WRKSRC}/c && PATH=${PORTPATH} ${CC} ${CFLAGS} -DQRCODEGEN_TEST \
+	    qrcodegen{,-test}.c -o ${WRKBUILD}/qrcodegen-test
 	${WRKBUILD}/qrcodegen-test
 
 .include <bsd.port.mk>
