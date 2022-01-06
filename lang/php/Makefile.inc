@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.170 2021/12/20 10:44:01 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.171 2022/01/06 21:14:24 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -120,6 +120,8 @@ SAPI+=			-main -apache -cgi -dbg -embed
 # larger dependencies;
 PSEUDO_FLAVORS=		${PHP_EXTENSIONS:C/-(pdo_)?mysqli?//:C/-(pcntl|shmop)//:C/-/no_/g}
 
+MULTI_PACKAGES=		${SAPI} ${PHP_EXTENSIONS} -embed
+
 # cannot build two SAPIs producing libraries (e.g. apache and embed)
 # in a single build.
 PSEUDO_FLAVORS+=	embed
@@ -127,10 +129,8 @@ FLAVOR ?=
 
 # where the main php module is stored (outside the chroot)
 .if ${FLAVOR:Membed}
-MULTI_PACKAGES=	-main -embed
 SAPI_DIR=	lib/php-${PV}
 .else
-MULTI_PACKAGES=	${SAPI} ${PHP_EXTENSIONS}
 SAPI_DIR=	lib/apache2/php-${PV}
 APACHE_DIR=	${SAPI_DIR}
 .endif
