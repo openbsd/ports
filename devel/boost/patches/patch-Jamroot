@@ -1,11 +1,11 @@
-$OpenBSD: patch-Jamroot,v 1.13 2021/09/19 05:23:29 rsadowski Exp $
+$OpenBSD: patch-Jamroot,v 1.14 2022/01/06 08:15:51 rsadowski Exp $
 
 Index: Jamroot
 --- Jamroot.orig
 +++ Jamroot
 @@ -146,11 +146,12 @@ import tools/boost\_install/boost-install ;
  path-constant BOOST_ROOT : . ;
- constant BOOST_VERSION : 1.76.0 ;
+ constant BOOST_VERSION : 1.77.0 ;
  constant BOOST_JAMROOT_MODULE : $(__name__) ;
 +constant SO_VERSION : ${SO_VERSION} ;
  

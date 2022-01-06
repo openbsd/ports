@@ -1,11 +1,11 @@
-$OpenBSD: patch-libs_context_build_Jamfile_v2,v 1.5 2021/11/08 17:57:10 jca Exp $
+$OpenBSD: patch-libs_context_build_Jamfile_v2,v 1.6 2022/01/06 08:15:51 rsadowski Exp $
 
 Add support for clang on riscv64.
 
 Index: libs/context/build/Jamfile.v2
 --- libs/context/build/Jamfile.v2.orig
 +++ libs/context/build/Jamfile.v2
-@@ -432,6 +432,17 @@ alias asm_sources
+@@ -433,6 +433,17 @@ alias asm_sources
       <toolset>gcc
     ;
  

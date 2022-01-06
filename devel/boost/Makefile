@@ -1,22 +1,20 @@
-# $OpenBSD: Makefile,v 1.124 2021/11/22 13:55:55 espie Exp $
+# $OpenBSD: Makefile,v 1.125 2022/01/06 08:15:51 rsadowski Exp $
 
 NOT_FOR_ARCHS-md = alpha hppa sparc64
 
 COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
 
-VERSION=	1.76.0
+VERSION=	1.77.0
 EPOCH =		0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME=	boost-${VERSION}
-REVISION-main=	2
-REVISION-md=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://boostorg.jfrog.io/artifactory/main/release/${VERSION}/source/
 EXTRACT_SUFX=	.tar.bz2
 FIX_EXTRACT_PERMISSIONS =	Yes
 
-SO_VERSION=	17.0
+SO_VERSION=	18.0
 BOOST_LIBS=	boost_atomic-mt \
 		boost_chrono-mt boost_chrono \
 		boost_container-mt boost_container \
@@ -106,8 +104,8 @@ BJAM_CONFIG=	-sICU_PATH=${LOCALBASE} \
 		-j${MAKE_JOBS} \
 		--layout=tagged-1.66 \
 		pch=off \
-		cflags='${CFLAGS} -pthread' \
-		cxxflags='${CXXFLAGS} -pthread' \
+		cflags='${CFLAGS}' \
+		cxxflags='${CXXFLAGS}' \
 		variant=release \
 		link=static,shared \
 		threading=single,multi \

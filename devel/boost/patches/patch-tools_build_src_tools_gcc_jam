@@ -1,9 +1,9 @@
-$OpenBSD: patch-tools_build_src_tools_gcc_jam,v 1.14 2021/09/19 05:23:29 rsadowski Exp $
+$OpenBSD: patch-tools_build_src_tools_gcc_jam,v 1.15 2022/01/06 08:15:52 rsadowski Exp $
 
 Index: tools/build/src/tools/gcc.jam
 --- tools/build/src/tools/gcc.jam.orig
 +++ tools/build/src/tools/gcc.jam
-@@ -705,7 +705,7 @@ actions compile.c.pch
+@@ -621,7 +621,7 @@ actions compile.c.pch
  
  # Declare flags and action for compilation.
  toolset.flags gcc.compile OPTIONS <optimization>off   : -O0 ;
@@ -12,7 +12,7 @@ Index: tools/build/src/tools/gcc.jam
  toolset.flags gcc.compile OPTIONS <optimization>space : -Os ;
  
  toolset.flags gcc.compile OPTIONS <inlining>off  : -fno-inline ;
-@@ -1288,7 +1288,7 @@ cpu-flags gcc OPTIONS : x86 : c7 : -march=c7 ;
+@@ -1204,7 +1204,7 @@ cpu-flags gcc OPTIONS : x86 : c7 : -march=c7 ;
  ##
  cpu-flags gcc OPTIONS : x86 : atom : -march=atom ;
  # Sparc
