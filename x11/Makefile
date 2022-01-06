@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.718 2022/01/06 19:06:18 jeremy Exp $
+# $OpenBSD: Makefile,v 1.719 2022/01/06 20:30:28 edd Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -121,6 +121,7 @@
      SUBDIR += gxmessage
      SUBDIR += herbstluftwm
      SUBDIR += hicolor-icon-theme
+     SUBDIR += hk
      SUBDIR += hsetroot
      SUBDIR += human-icon-theme
      SUBDIR += i3
