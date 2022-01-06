@@ -1,0 +1,30 @@
+$OpenBSD: patch-kmymoney_mymoney_mymoneycontact_cpp,v 1.1 2022/01/06 08:07:05 rsadowski Exp $
+
+"Fix Compile for Newer Akonadi Builds"
+a32357290129f1acc002623acc21c72ad00e37e7
+
+Index: kmymoney/mymoney/mymoneycontact.cpp
+--- kmymoney/mymoney/mymoneycontact.cpp.orig
++++ kmymoney/mymoney/mymoneycontact.cpp
+@@ -8,11 +8,20 @@
+ #include "mymoneycontact.h"
+ 
+ #ifdef ENABLE_ADDRESSBOOK
+-#include <KIdentityManagement/IdentityManager>
+ #include <KIdentityManagement/Identity>
++#include <KIdentityManagement/IdentityManager>
++#include <akonadi_version.h>
++
++#if AKONADI_VERSION >= QT_VERSION_CHECK(5, 18, 41)
++#include <Akonadi/Collection>
++#include <Akonadi/ItemFetchScope>
++#include <Akonadi/RecursiveItemFetchJob>
++#else
+ #include <AkonadiCore/RecursiveItemFetchJob>
+ #include <AkonadiCore/ItemFetchScope>
+ #include <AkonadiCore/Collection>
++#endif
++
+ #include <KContacts/Addressee>
+ #include <QRegularExpression>
+ #endif
