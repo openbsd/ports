@@ -1,4 +1,4 @@
-$OpenBSD: patch-test_openssl_test_ssl_rb,v 1.5 2021/11/02 10:19:11 tb Exp $
+$OpenBSD: patch-test_openssl_test_ssl_rb,v 1.6 2022/01/06 13:35:56 tb Exp $
 
 Remove a pend that hides missing support for SSL_CTX_set_client_cert_cb()
 in the TLSv1.3 stack.
@@ -18,11 +18,3 @@ Index: test/openssl/test_ssl.rb
      ctx_proc = Proc.new do |ctx|
        ctx.client_ca = [@ca_cert]
      end
-@@ -669,6 +670,7 @@ class OpenSSL::TestSSL < OpenSSL::SSLTestCase
-       create_cert_with_san('DNS:*.example.com'), 'foo.example.com'))
-     assert_equal(false, OpenSSL::SSL.verify_certificate_identity(
-       create_cert_with_san('DNS:*.example.com'), 'bar.foo.example.com'))
-+    return if ENV['SKIP_EXPECTED_FAILURES']
-     # 3.  The client MAY match a presented identifier in which the wildcard
-     #     character is not the only character of the label (e.g.,
-     #     baz*.example.net and *baz.example.net and b*z.example.net would
