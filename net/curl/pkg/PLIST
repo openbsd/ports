@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.67 2021/11/12 22:44:23 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.68 2022/01/06 15:41:57 naddy Exp $
 @bin bin/curl
 bin/curl-config
 include/curl/
@@ -230,6 +230,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_MAX_RECV_SPEED_LARGE.3
 @man man/man3/CURLOPT_MAX_SEND_SPEED_LARGE.3
 @man man/man3/CURLOPT_MIMEPOST.3
+@man man/man3/CURLOPT_MIME_OPTIONS.3
 @man man/man3/CURLOPT_NETRC.3
 @man man/man3/CURLOPT_NETRC_FILE.3
 @man man/man3/CURLOPT_NEW_DIRECTORY_PERMS.3
@@ -396,6 +397,11 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_XFERINFODATA.3
 @man man/man3/CURLOPT_XFERINFOFUNCTION.3
 @man man/man3/CURLOPT_XOAUTH2_BEARER.3
+@man man/man3/CURLSHOPT_LOCKFUNC.3
+@man man/man3/CURLSHOPT_SHARE.3
+@man man/man3/CURLSHOPT_UNLOCKFUNC.3
+@man man/man3/CURLSHOPT_UNSHARE.3
+@man man/man3/CURLSHOPT_USERDATA.3
 @man man/man3/curl_easy_cleanup.3
 @man man/man3/curl_easy_duphandle.3
 @man man/man3/curl_easy_escape.3
