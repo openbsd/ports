@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2022/01/04 19:46:43 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2022/01/06 23:37:39 jeremy Exp $
 @option no-default-conflict
 @option is-branch
 @conflict ruby->=3.1,<3.2
@@ -1516,17 +1516,17 @@ lib/ruby/gems/${REV}/cache/test-unit-3.5.3.gem
 lib/ruby/gems/${REV}/cache/typeprof-0.21.1.gem
 lib/ruby/gems/${REV}/doc/
 lib/ruby/gems/${REV}/extensions/
-lib/ruby/gems/${REV}/extensions/${SUB}/
-lib/ruby/gems/${REV}/extensions/${SUB}/${REV}/
-lib/ruby/gems/${REV}/extensions/${SUB}/${REV}/debug-1.4.0/
-lib/ruby/gems/${REV}/extensions/${SUB}/${REV}/debug-1.4.0/debug/
-@so lib/ruby/gems/${REV}/extensions/${SUB}/${REV}/debug-1.4.0/debug/debug.so
-lib/ruby/gems/${REV}/extensions/${SUB}/${REV}/debug-1.4.0/gem.build_complete
-lib/ruby/gems/${REV}/extensions/${SUB}/${REV}/debug-1.4.0/gem_make.out
-lib/ruby/gems/${REV}/extensions/${SUB}/${REV}/rbs-2.0.0/
-lib/ruby/gems/${REV}/extensions/${SUB}/${REV}/rbs-2.0.0/gem.build_complete
-lib/ruby/gems/${REV}/extensions/${SUB}/${REV}/rbs-2.0.0/gem_make.out
-@so lib/ruby/gems/${REV}/extensions/${SUB}/${REV}/rbs-2.0.0/rbs_extension.so
+${GEM_EXTENSIONS_DIR}/
+${GEM_EXTENSIONS_DIR}/${REV}/
+${GEM_EXTENSIONS_DIR}/${REV}/debug-1.4.0/
+${GEM_EXTENSIONS_DIR}/${REV}/debug-1.4.0/debug/
+@so ${GEM_EXTENSIONS_DIR}/${REV}/debug-1.4.0/debug/debug.so
+${GEM_EXTENSIONS_DIR}/${REV}/debug-1.4.0/gem.build_complete
+${GEM_EXTENSIONS_DIR}/${REV}/debug-1.4.0/gem_make.out
+${GEM_EXTENSIONS_DIR}/${REV}/rbs-2.0.0/
+${GEM_EXTENSIONS_DIR}/${REV}/rbs-2.0.0/gem.build_complete
+${GEM_EXTENSIONS_DIR}/${REV}/rbs-2.0.0/gem_make.out
+@so ${GEM_EXTENSIONS_DIR}/${REV}/rbs-2.0.0/rbs_extension.so
 lib/ruby/gems/${REV}/gems/
 lib/ruby/gems/${REV}/gems/abbrev-0.1.0/
 lib/ruby/gems/${REV}/gems/base64-0.1.1/

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/01/04 19:46:40 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2022/01/06 23:37:39 jeremy Exp $
 
 VERSION =		3.1.0
 DISTNAME =		ruby-${VERSION}
 SHARED_LIBS =		ruby31	0.0
 NEXTVER =		3.2
 PKGSPEC-main ?=         ruby->=3.1.0,<${NEXTVER}
+REVISION-main =		0
 
 PSEUDO_FLAVORS=		no_ri_docs bootstrap
 # Do not build the RI docs on slow arches
@@ -24,6 +25,9 @@ INSTALL_TARGET +=	install-doc
 
 # Fix path for JIT compiler to not use shims in ports obj bin dir
 CONFIGURE_ENV +=	ac_cv_path_MJIT_CC=`which ${CC}`
+
+GEM_EXTENSIONS_DIR = lib/ruby/gems/${REV}/extensions/${MACHINE_ARCH:S/i386/x86/:S/amd64/x86_64/}-openbsd
+SUBST_VARS += GEM_EXTENSIONS_DIR
 
 WANTLIB-main +=	curses yaml-0
 
