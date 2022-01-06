@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_renderer_renderer_blink_platform_impl_h,v 1.30 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-content_renderer_renderer_blink_platform_impl_h,v 1.31 2022/01/06 06:24:05 robert Exp $
 
 Index: content/renderer/renderer_blink_platform_impl.h
 --- content/renderer/renderer_blink_platform_impl.h.orig
@@ -12,7 +12,7 @@ Index: content/renderer/renderer_blink_platform_impl.h
  #include "components/services/font/public/cpp/font_loader.h"  // nogncheck
  #include "third_party/skia/include/core/SkRefCnt.h"           // nogncheck
  #endif
-@@ -278,7 +278,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+@@ -277,7 +277,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
    void Collect3DContextInformation(blink::Platform::GraphicsInfo* gl_info,
                                     const gpu::GPUInfo& gpu_info) const;
  
@@ -21,7 +21,7 @@ Index: content/renderer/renderer_blink_platform_impl.h
    std::unique_ptr<blink::WebSandboxSupport> sandbox_support_;
  #endif
  
-@@ -302,7 +302,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+@@ -301,7 +301,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
    mojo::SharedRemote<blink::mojom::CodeCacheHost> code_cache_host_
        GUARDED_BY(code_cache_host_lock_);
  

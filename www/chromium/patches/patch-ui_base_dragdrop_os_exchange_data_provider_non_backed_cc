@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_base_dragdrop_os_exchange_data_provider_non_backed_cc,v 1.8 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-ui_base_dragdrop_os_exchange_data_provider_non_backed_cc,v 1.9 2022/01/06 06:24:05 robert Exp $
 
 Index: ui/base/dragdrop/os_exchange_data_provider_non_backed.cc
 --- ui/base/dragdrop/os_exchange_data_provider_non_backed.cc.orig

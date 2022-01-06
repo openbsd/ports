@@ -1,10 +1,10 @@
-$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.53 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.54 2022/01/06 06:24:05 robert Exp $
 
 Index: content/gpu/gpu_main.cc
 --- content/gpu/gpu_main.cc.orig
 +++ content/gpu/gpu_main.cc
-@@ -86,7 +86,7 @@
- #include "ui/gfx/x/x11_switches.h"                       // nogncheck
+@@ -82,7 +82,7 @@
+ #include "sandbox/win/src/sandbox.h"
  #endif
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
@@ -12,7 +12,7 @@ Index: content/gpu/gpu_main.cc
  #include "content/gpu/gpu_sandbox_hook_linux.h"
  #include "content/public/common/sandbox_init.h"
  #include "sandbox/policy/linux/sandbox_linux.h"
-@@ -108,7 +108,7 @@ namespace content {
+@@ -105,7 +105,7 @@ namespace content {
  
  namespace {
  
@@ -21,7 +21,7 @@ Index: content/gpu/gpu_main.cc
  bool StartSandboxLinux(gpu::GpuWatchdogThread*,
                         const gpu::GPUInfo*,
                         const gpu::GpuPreferences&);
-@@ -170,7 +170,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
+@@ -167,7 +167,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
    bool EnsureSandboxInitialized(gpu::GpuWatchdogThread* watchdog_thread,
                                  const gpu::GPUInfo* gpu_info,
                                  const gpu::GpuPreferences& gpu_prefs) override {
@@ -30,46 +30,16 @@ Index: content/gpu/gpu_main.cc
      return StartSandboxLinux(watchdog_thread, gpu_info, gpu_prefs);
  #elif defined(OS_WIN)
      return StartSandboxWindows(sandbox_info_);
-@@ -284,7 +284,7 @@ int GpuMain(const MainFunctionParams& parameters) {
+@@ -263,7 +263,7 @@ int GpuMain(const MainFunctionParams& parameters) {
+           std::make_unique<base::SingleThreadTaskExecutor>(
                gpu_preferences.message_pump_type);
      }
- #endif
 -#elif defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#elif defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  #error "Unsupported Linux platform."
  #elif defined(OS_MAC)
      // Cross-process CoreAnimation requires a CFRunLoop to function at all, and
-@@ -331,6 +331,18 @@ int GpuMain(const MainFunctionParams& parameters) {
-   // is initialized however to avoid creating threads outside the sandbox.
-   base::ThreadPoolInstance::Create("GPU");
- 
-+  // pledge(2)                                                                
-+#if defined(OS_BSD)
-+  if (!features::IsUsingOzonePlatform() &&
-+      gpu_preferences.enable_native_gpu_memory_buffers) {
-+    base::ThreadPool::PostTask(
-+        FROM_HERE, base::BindOnce([]() {
-+          SCOPED_UMA_HISTOGRAM_TIMER("Linux.X11.GbmSupportX11CreationTime");
-+          ui::GpuMemoryBufferSupportX11::GetInstance();
-+        }));
-+  }
-+#endif
-+
-   // Gpu initialization may fail for various reasons, in which case we will need
-   // to tear down this process. However, we can not do so safely until the IPC
-   // channel is set up, because the detection of early return of a child process
-@@ -363,7 +375,9 @@ int GpuMain(const MainFunctionParams& parameters) {
-   GpuProcess gpu_process(io_thread_priority);
- #endif
- 
--#if defined(USE_X11)
-+  // ^^^^^^^^^^^^^^^^^^^^^^
-+  // moved up due to pledge(2)
-+#if defined(USE_X11) && !defined(OS_BSD)
-   // ui::GbmDevice() takes >50ms with amdgpu, so kick off
-   // GpuMemoryBufferSupportX11 creation on another thread now.
-   if (!features::IsUsingOzonePlatform() &&
-@@ -435,17 +449,19 @@ int GpuMain(const MainFunctionParams& parameters) {
+@@ -406,17 +406,19 @@ int GpuMain(const MainFunctionParams& parameters) {
  
  namespace {
  
@@ -90,7 +60,7 @@ Index: content/gpu/gpu_main.cc
  
    // SandboxLinux::InitializeSandbox() must always be called
    // with only one thread.
-@@ -466,11 +482,13 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
+@@ -437,11 +439,13 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
            *base::CommandLine::ForCurrentProcess()),
        base::BindOnce(GpuProcessPreSandboxHook), sandbox_options);
  

@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_crashpad_crashpad_build_crashpad_buildconfig_gni,v 1.7 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-third_party_crashpad_crashpad_build_crashpad_buildconfig_gni,v 1.8 2022/01/06 06:24:05 robert Exp $
 
 Index: third_party/crashpad/crashpad/build/crashpad_buildconfig.gni
 --- third_party/crashpad/crashpad/build/crashpad_buildconfig.gni.orig
 +++ third_party/crashpad/crashpad/build/crashpad_buildconfig.gni
-@@ -61,7 +61,7 @@ if (crashpad_is_in_chromium) {
+@@ -58,7 +58,7 @@ if (crashpad_is_in_chromium) {
    crashpad_is_mac = is_mac
    crashpad_is_ios = is_ios
    crashpad_is_win = is_win

@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_angle_src_libANGLE_Display_cpp,v 1.26 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-third_party_angle_src_libANGLE_Display_cpp,v 1.27 2022/01/06 06:24:05 robert Exp $
 
 Index: third_party/angle/src/libANGLE/Display.cpp
 --- third_party/angle/src/libANGLE/Display.cpp.orig
@@ -39,7 +39,7 @@ Index: third_party/angle/src/libANGLE/Display.cpp
  #        if defined(ANGLE_USE_X11)
              if (platformType == EGL_PLATFORM_X11_EXT && rx::IsVulkanXcbDisplayAvailable())
              {
-@@ -1764,7 +1764,7 @@ static ClientExtensions GenerateClientExtensions()
+@@ -1761,7 +1761,7 @@ static ClientExtensions GenerateClientExtensions()
      extensions.x11Visual = true;
  #endif
  

@@ -1,9 +1,9 @@
-$OpenBSD: patch-media_gpu_vaapi_vaapi_wrapper_cc,v 1.1 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-media_gpu_vaapi_vaapi_wrapper_cc,v 1.2 2022/01/06 06:24:05 robert Exp $
 
 Index: media/gpu/vaapi/vaapi_wrapper.cc
 --- media/gpu/vaapi/vaapi_wrapper.cc.orig
 +++ media/gpu/vaapi/vaapi_wrapper.cc
-@@ -559,7 +559,7 @@ VADisplayState::VADisplayState()
+@@ -554,7 +554,7 @@ VADisplayState::VADisplayState()
  bool VADisplayState::Initialize() {
    base::AutoLock auto_lock(va_lock_);
  

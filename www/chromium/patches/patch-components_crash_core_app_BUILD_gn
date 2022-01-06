@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_crash_core_app_BUILD_gn,v 1.13 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-components_crash_core_app_BUILD_gn,v 1.14 2022/01/06 06:24:04 robert Exp $
 
 Index: components/crash/core/app/BUILD.gn
 --- components/crash/core/app/BUILD.gn.orig
@@ -51,5 +51,5 @@ Index: components/crash/core/app/BUILD.gn
 -      "//third_party/crashpad/crashpad/handler",
 -    ]
  
-     if (is_mac && is_component_build) {
+     if (is_mac && (is_component_build || is_asan)) {
        ldflags = [

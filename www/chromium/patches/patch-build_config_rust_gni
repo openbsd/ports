@@ -1,9 +1,9 @@
-$OpenBSD: patch-build_config_rust_gni,v 1.2 2021/11/16 11:28:45 robert Exp $
+$OpenBSD: patch-build_config_rust_gni,v 1.3 2022/01/06 06:24:03 robert Exp $
 
 Index: build/config/rust.gni
 --- build/config/rust.gni.orig
 +++ build/config/rust.gni
-@@ -72,7 +72,7 @@ if (use_unverified_rust_toolchain) {
+@@ -81,7 +81,7 @@ if (use_unverified_rust_toolchain) {
    assert(rust_bin_dir != "")
    rust_prefix = "$rust_bin_dir/"
  } else if (toolchain_has_official_rust) {

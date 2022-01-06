@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_paint_preview_common_proto_paint_preview_proto,v 1.6 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-components_paint_preview_common_proto_paint_preview_proto,v 1.7 2022/01/06 06:24:04 robert Exp $
 
 Index: components/paint_preview/common/proto/paint_preview.proto
 --- components/paint_preview/common/proto/paint_preview.proto.orig

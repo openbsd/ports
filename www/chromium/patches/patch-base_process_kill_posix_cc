@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_process_kill_posix_cc,v 1.6 2021/11/16 11:28:45 robert Exp $
+$OpenBSD: patch-base_process_kill_posix_cc,v 1.7 2022/01/06 06:24:03 robert Exp $
 
 Index: base/process/kill_posix.cc
 --- base/process/kill_posix.cc.orig

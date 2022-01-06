@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_BUILD_gn,v 1.46 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-net_BUILD_gn,v 1.47 2022/01/06 06:24:05 robert Exp $
 
 Index: net/BUILD.gn
 --- net/BUILD.gn.orig
@@ -12,7 +12,7 @@ Index: net/BUILD.gn
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1211,6 +1211,15 @@ component("net") {
+@@ -1213,6 +1213,15 @@ component("net") {
      ]
    }
  
@@ -28,7 +28,7 @@ Index: net/BUILD.gn
    if (is_mac) {
      sources += [
        "base/network_notification_thread_mac.cc",
-@@ -1343,7 +1352,7 @@ component("net") {
+@@ -1345,7 +1354,7 @@ component("net") {
      }
    }
  
@@ -37,7 +37,7 @@ Index: net/BUILD.gn
      sources += [
        "base/network_change_notifier_posix.cc",
        "base/network_change_notifier_posix.h",
-@@ -1376,7 +1385,7 @@ component("net") {
+@@ -1378,7 +1387,7 @@ component("net") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.
@@ -46,7 +46,7 @@ Index: net/BUILD.gn
      sources += [
        "base/network_interfaces_getifaddrs.cc",
        "base/network_interfaces_getifaddrs.h",
-@@ -4696,7 +4705,7 @@ test("net_unittests") {
+@@ -4729,7 +4738,7 @@ test("net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux and Android.

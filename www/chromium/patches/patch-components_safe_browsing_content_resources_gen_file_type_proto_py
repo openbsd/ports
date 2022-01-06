@@ -1,17 +1,17 @@
-$OpenBSD: patch-components_safe_browsing_content_resources_gen_file_type_proto_py,v 1.3 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-components_safe_browsing_content_resources_gen_file_type_proto_py,v 1.4 2022/01/06 06:24:04 robert Exp $
 
 Index: components/safe_browsing/content/resources/gen_file_type_proto.py
 --- components/safe_browsing/content/resources/gen_file_type_proto.py.orig
 +++ components/safe_browsing/content/resources/gen_file_type_proto.py
-@@ -34,6 +34,7 @@ def PlatformTypes():
-         "chromeos":
+@@ -35,6 +35,7 @@ def PlatformTypes():
          download_file_types_pb2.DownloadFileType.PLATFORM_CHROME_OS,
+         "fuchsia": download_file_types_pb2.DownloadFileType.PLATFORM_FUCHSIA,
          "linux": download_file_types_pb2.DownloadFileType.PLATFORM_LINUX,
 +        "openbsd": download_file_types_pb2.DownloadFileType.PLATFORM_LINUX,
          "mac": download_file_types_pb2.DownloadFileType.PLATFORM_MAC,
          "win": download_file_types_pb2.DownloadFileType.PLATFORM_WINDOWS,
      }
-@@ -178,7 +179,7 @@ class DownloadFileTypeProtoGenerator(BinaryProtoGenera
+@@ -179,7 +180,7 @@ class DownloadFileTypeProtoGenerator(BinaryProtoGenera
              '-t',
              '--type',
              help='The platform type. One of android, chromeos, ' +

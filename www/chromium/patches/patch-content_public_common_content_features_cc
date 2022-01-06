@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_public_common_content_features_cc,v 1.27 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-content_public_common_content_features_cc,v 1.28 2022/01/06 06:24:05 robert Exp $
 
 Index: content/public/common/content_features.cc
 --- content/public/common/content_features.cc.orig
 +++ content/public/common/content_features.cc
-@@ -49,7 +49,7 @@ const base::Feature kAudioServiceOutOfProcess {
+@@ -50,7 +50,7 @@ const base::Feature kAudioServiceOutOfProcess {
    "AudioServiceOutOfProcess",
  // TODO(crbug.com/1052397): Remove !IS_CHROMEOS_LACROS once lacros starts being
  // built with OS_CHROMEOS instead of OS_LINUX.
@@ -12,7 +12,7 @@ Index: content/public/common/content_features.cc
      (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
-@@ -61,7 +61,7 @@ const base::Feature kAudioServiceOutOfProcess {
+@@ -62,7 +62,7 @@ const base::Feature kAudioServiceOutOfProcess {
  // kAudioServiceOutOfProcess feature is enabled.
  const base::Feature kAudioServiceSandbox {
    "AudioServiceSandbox",
@@ -21,7 +21,7 @@ Index: content/public/common/content_features.cc
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -902,7 +902,7 @@ const base::Feature kWebAssemblyBaseline{"WebAssemblyB
+@@ -920,7 +920,7 @@ const base::Feature kWebAssemblyBaseline{"WebAssemblyB
  const base::Feature kWebAssemblyCodeProtection{
      "WebAssemblyCodeProtection", base::FEATURE_DISABLED_BY_DEFAULT};
  
@@ -30,16 +30,16 @@ Index: content/public/common/content_features.cc
  // Use memory protection keys in userspace (PKU) (if available) to protect code
  // JITed for WebAssembly. Fall back to traditional memory protection if
  // WebAssemblyCodeProtection is also enabled.
-@@ -928,7 +928,7 @@ const base::Feature kWebAssemblyTiering{"WebAssemblyTi
+@@ -946,7 +946,7 @@ const base::Feature kWebAssemblyTiering{"WebAssemblyTi
  const base::Feature kWebAssemblyTrapHandler {
    "WebAssemblyTrapHandler",
- #if (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_WIN) || \
--     defined(OS_MAC)) &&                                             \
-+     defined(OS_BSD) || defined(OS_MAC)) &&                          \
-     defined(ARCH_CPU_X86_64)
+ #if ((defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_WIN) || \
+-      defined(OS_MAC)) &&                                             \
++      defined(OS_MAC) || defined(OS_BSD)) &&                          \
+      defined(ARCH_CPU_X86_64)) ||                                     \
+     (defined(OS_MAC) && defined(ARCH_CPU_ARM64))
        base::FEATURE_ENABLED_BY_DEFAULT
- #else
-@@ -954,7 +954,7 @@ const base::Feature kWebAuthCable {
+@@ -973,7 +973,7 @@ const base::Feature kWebAuthCable {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  // If updating this, also update kWebAuthCableServerLink.
@@ -48,7 +48,7 @@ Index: content/public/common/content_features.cc
        base::FEATURE_DISABLED_BY_DEFAULT
  #else
        base::FEATURE_ENABLED_BY_DEFAULT
-@@ -1024,7 +1024,11 @@ const base::Feature kWebUIReportOnlyTrustedTypes{
+@@ -1043,7 +1043,11 @@ const base::Feature kWebUIReportOnlyTrustedTypes{
  
  // Controls whether the WebUSB API is enabled:
  // https://wicg.github.io/webusb
@@ -60,7 +60,7 @@ Index: content/public/common/content_features.cc
  
  // Controls whether the WebXR Device API is enabled.
  const base::Feature kWebXr{"WebXR", base::FEATURE_ENABLED_BY_DEFAULT};
-@@ -1094,7 +1098,7 @@ const base::Feature kRetryGetVideoCaptureDeviceInfos{
+@@ -1132,7 +1136,7 @@ const base::Feature kRetryGetVideoCaptureDeviceInfos{
  
  #endif  // defined(OS_MAC)
  

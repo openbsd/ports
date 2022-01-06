@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_boringssl_src_include_openssl_base_h,v 1.10 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-third_party_boringssl_src_include_openssl_base_h,v 1.11 2022/01/06 06:24:05 robert Exp $
 
 Index: third_party/boringssl/src/include/openssl/base.h
 --- third_party/boringssl/src/include/openssl/base.h.orig

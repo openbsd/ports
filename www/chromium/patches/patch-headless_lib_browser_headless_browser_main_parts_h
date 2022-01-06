@@ -1,4 +1,4 @@
-$OpenBSD: patch-headless_lib_browser_headless_browser_main_parts_h,v 1.9 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-headless_lib_browser_headless_browser_main_parts_h,v 1.10 2022/01/06 06:24:05 robert Exp $
 
 Index: headless/lib/browser/headless_browser_main_parts.h
 --- headless/lib/browser/headless_browser_main_parts.h.orig

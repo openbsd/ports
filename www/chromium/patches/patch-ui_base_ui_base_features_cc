@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_base_ui_base_features_cc,v 1.22 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-ui_base_ui_base_features_cc,v 1.23 2022/01/06 06:24:05 robert Exp $
 
 Index: ui/base/ui_base_features.cc
 --- ui/base/ui_base_features.cc.orig
 +++ ui/base/ui_base_features.cc
-@@ -151,7 +151,7 @@ const base::Feature kExperimentalFlingAnimation {
+@@ -156,7 +156,7 @@ const base::Feature kExperimentalFlingAnimation {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if defined(OS_WIN) || (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_ASH) && \
@@ -12,7 +12,7 @@ Index: ui/base/ui_base_features.cc
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -235,7 +235,7 @@ bool IsForcedColorsEnabled() {
+@@ -252,7 +252,7 @@ bool IsForcedColorsEnabled() {
  // milestones.
  const base::Feature kEyeDropper {
    "EyeDropper",

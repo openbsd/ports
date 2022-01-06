@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_prefs_browser_prefs_cc,v 1.28 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-chrome_browser_prefs_browser_prefs_cc,v 1.29 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/browser/prefs/browser_prefs.cc
 --- chrome/browser/prefs/browser_prefs.cc.orig
 +++ chrome/browser/prefs/browser_prefs.cc
-@@ -410,14 +410,14 @@
+@@ -411,14 +411,14 @@
  #include "components/os_crypt/os_crypt.h"
  #endif
  
@@ -20,7 +20,7 @@ Index: chrome/browser/prefs/browser_prefs.cc
      (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
  #include "chrome/browser/browser_switcher/browser_switcher_prefs.h"
  #endif
-@@ -485,7 +485,7 @@ const char kLocalDiscoveryNotificationsEnabled[] =
+@@ -493,7 +493,7 @@ const char kLocalDiscoveryNotificationsEnabled[] =
  #endif
  
  // Deprecated 11/2020
@@ -29,7 +29,7 @@ Index: chrome/browser/prefs/browser_prefs.cc
  const char kMigrationToLoginDBStep[] = "profile.migration_to_logindb_step";
  #endif
  
-@@ -738,7 +738,7 @@ void RegisterProfilePrefsForMigration(
+@@ -755,7 +755,7 @@ void RegisterProfilePrefsForMigration(
  
    registry->RegisterBooleanPref(prefs::kWebAppsUserDisplayModeCleanedUp, false);
  
@@ -38,7 +38,7 @@ Index: chrome/browser/prefs/browser_prefs.cc
    registry->RegisterIntegerPref(kMigrationToLoginDBStep, 0);
  #endif
  
-@@ -1058,7 +1058,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
+@@ -1080,7 +1080,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
  // TODO(crbug/1169547) Remove `BUILDFLAG(IS_CHROMEOS_LACROS)` once the
  // migration is complete.
  #if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) || \
@@ -47,7 +47,7 @@ Index: chrome/browser/prefs/browser_prefs.cc
    enterprise_connectors::RegisterLocalPrefs(registry);
  #endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN)
  
-@@ -1089,7 +1089,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
+@@ -1111,7 +1111,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
  #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
  #endif  // defined(OS_WIN)
  
@@ -56,7 +56,7 @@ Index: chrome/browser/prefs/browser_prefs.cc
      (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
    web_app::url_handler_prefs::RegisterLocalStatePrefs(registry);
  #endif
-@@ -1385,7 +1385,7 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
+@@ -1404,7 +1404,7 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -65,7 +65,7 @@ Index: chrome/browser/prefs/browser_prefs.cc
      (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
    browser_switcher::BrowserSwitcherPrefs::RegisterProfilePrefs(registry);
  #endif
-@@ -1526,7 +1526,7 @@ void MigrateObsoleteProfilePrefs(Profile* profile) {
+@@ -1554,7 +1554,7 @@ void MigrateObsoleteProfilePrefs(Profile* profile) {
        profile_prefs);
  
    // Added 11/2020

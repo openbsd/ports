@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_flag_descriptions_cc,v 1.46 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-chrome_browser_flag_descriptions_cc,v 1.47 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/browser/flag_descriptions.cc
 --- chrome/browser/flag_descriptions.cc.orig
 +++ chrome/browser/flag_descriptions.cc
-@@ -5271,7 +5271,7 @@ const char kDownloadShelfWebUIDescription[] =
+@@ -5259,7 +5259,7 @@ const char kDownloadShelfWebUIDescription[] =
  // Random platform combinations -----------------------------------------------
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -12,7 +12,7 @@ Index: chrome/browser/flag_descriptions.cc
  
  const char kWebUIBrandingUpdateName[] = "WebUI Branding Update";
  const char kWebUIBrandingUpdateDescription[] =
-@@ -5291,7 +5291,7 @@ const char kSettingsLandingPageRedesignDescription[] =
+@@ -5279,7 +5279,7 @@ const char kSettingsLandingPageRedesignDescription[] =
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) ||
          // defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
  
@@ -21,7 +21,7 @@ Index: chrome/browser/flag_descriptions.cc
  
  const char kCommanderName[] = "Commander";
  const char kCommanderDescription[] =
-@@ -5309,7 +5309,7 @@ const char kDesktopDetailedLanguageSettingsDescription
+@@ -5297,7 +5297,7 @@ const char kDesktopDetailedLanguageSettingsDescription
  
  #endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
  
@@ -30,7 +30,16 @@ Index: chrome/browser/flag_descriptions.cc
  #if BUILDFLAG(USE_TCMALLOC)
  const char kDynamicTcmallocName[] = "Dynamic Tcmalloc Tuning";
  const char kDynamicTcmallocDescription[] =
-@@ -5437,7 +5437,7 @@ const char kElasticOverscrollDescription[] =
+@@ -5320,7 +5320,7 @@ const char kWebShareDescription[] =
+     "platforms.";
+ #endif  // defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_MAC)
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ const char kOzonePlatformHintChoiceDefault[] = "Default";
+ const char kOzonePlatformHintChoiceAuto[] = "Auto";
+ const char kOzonePlatformHintChoiceX11[] = "X11";
+@@ -5438,7 +5438,7 @@ const char kElasticOverscrollDescription[] =
  #endif  // defined(OS_WIN) || defined(OS_ANDROID)
  
  #if defined(OS_WIN) || (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \

@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_BUILD_gn,v 1.28 2021/11/23 11:38:40 robert Exp $
+$OpenBSD: patch-content_browser_BUILD_gn,v 1.29 2022/01/06 06:24:05 robert Exp $
 
 Index: content/browser/BUILD.gn
 --- content/browser/BUILD.gn.orig
 +++ content/browser/BUILD.gn
-@@ -2327,8 +2327,6 @@ source_set("browser") {
+@@ -2284,8 +2284,6 @@ source_set("browser") {
        "memory/swap_metrics_driver_impl_linux.h",
        "sandbox_host_linux.cc",
        "sandbox_host_linux.h",

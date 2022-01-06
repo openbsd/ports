@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_base_ime_fake_text_input_client_cc,v 1.1 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-ui_base_ime_fake_text_input_client_cc,v 1.2 2022/01/06 06:24:05 robert Exp $
 
 Index: ui/base/ime/fake_text_input_client.cc
 --- ui/base/ime/fake_text_input_client.cc.orig

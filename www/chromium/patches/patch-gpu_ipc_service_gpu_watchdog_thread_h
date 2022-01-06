@@ -1,4 +1,4 @@
-$OpenBSD: patch-gpu_ipc_service_gpu_watchdog_thread_h,v 1.21 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-gpu_ipc_service_gpu_watchdog_thread_h,v 1.22 2022/01/06 06:24:05 robert Exp $
 
 Index: gpu/ipc/service/gpu_watchdog_thread.h
 --- gpu/ipc/service/gpu_watchdog_thread.h.orig

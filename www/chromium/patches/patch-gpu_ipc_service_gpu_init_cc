@@ -1,4 +1,4 @@
-$OpenBSD: patch-gpu_ipc_service_gpu_init_cc,v 1.39 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-gpu_ipc_service_gpu_init_cc,v 1.40 2022/01/06 06:24:05 robert Exp $
 
 Index: gpu/ipc/service/gpu_init.cc
 --- gpu/ipc/service/gpu_init.cc.orig
@@ -75,7 +75,7 @@ Index: gpu/ipc/service/gpu_init.cc
    // Driver may create a compatibility profile context when collect graphics
    // information on Linux platform. Try to collect graphics information
    // based on core profile context after disabling platform extensions.
-@@ -804,7 +804,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
+@@ -810,7 +810,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
  
    InitializePlatformOverlaySettings(&gpu_info_, gpu_feature_info_);
  

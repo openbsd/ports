@@ -1,18 +1,18 @@
-$OpenBSD: patch-chrome_browser_ui_tab_helpers_cc,v 1.42 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_tab_helpers_cc,v 1.43 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/browser/ui/tab_helpers.cc
 --- chrome/browser/ui/tab_helpers.cc.orig
 +++ chrome/browser/ui/tab_helpers.cc
-@@ -166,7 +166,7 @@
+@@ -171,7 +171,7 @@
  #endif
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
 +    defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
  #include "chrome/browser/ui/blocked_content/framebust_block_tab_helper.h"
+ #include "chrome/browser/ui/browser_finder.h"
  #include "chrome/browser/ui/hats/hats_helper.h"
- #endif
-@@ -445,13 +445,13 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
+@@ -458,13 +458,13 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -28,3 +28,12 @@ Index: chrome/browser/ui/tab_helpers.cc
    if (base::FeatureList::IsEnabled(
            features::kHappinessTrackingSurveysForDesktopDemo) ||
        base::FeatureList::IsEnabled(features::kTrustSafetySentimentSurvey) ||
+@@ -475,7 +475,7 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
+ #endif
+ 
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
+   if (Browser* browser = chrome::FindBrowserWithProfile(profile)) {
+     SharedHighlightingPromo::CreateForWebContents(web_contents, browser);
+   }

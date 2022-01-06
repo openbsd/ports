@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_policy_core_common_cloud_cloud_policy_util_cc,v 1.15 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-components_policy_core_common_cloud_cloud_policy_util_cc,v 1.16 2022/01/06 06:24:04 robert Exp $
 
 Index: components/policy/core/common/cloud/cloud_policy_util.cc
 --- components/policy/core/common/cloud/cloud_policy_util.cc.orig
@@ -30,8 +30,8 @@ Index: components/policy/core/common/cloud/cloud_policy_util.cc
  #include "base/system/sys_info.h"
  #endif
  
-@@ -97,7 +97,7 @@ std::string GetDeviceModel() {
- }
+@@ -80,7 +80,7 @@ namespace policy {
+ namespace em = enterprise_management;
  
  std::string GetMachineName() {
 -#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
@@ -39,16 +39,16 @@ Index: components/policy/core/common/cloud/cloud_policy_util.cc
    char hostname[HOST_NAME_MAX];
    if (gethostname(hostname, HOST_NAME_MAX) == 0)  // Success.
      return hostname;
-@@ -153,7 +153,7 @@ std::string GetMachineName() {
+@@ -138,7 +138,7 @@ std::string GetMachineName() {
  
  std::string GetOSVersion() {
  #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_APPLE) || \
--    defined(OS_ANDROID)
-+    defined(OS_ANDROID) || defined(OS_BSD)
+-    defined(OS_ANDROID) || defined(OS_FUCHSIA)
++    defined(OS_ANDROID) || defined(OS_FUCHSIA) || defined(OS_BSD)
    return base::SysInfo::OperatingSystemVersion();
  #elif defined(OS_WIN)
    base::win::OSInfo::VersionNumber version_number =
-@@ -176,7 +176,7 @@ std::string GetOSArchitecture() {
+@@ -161,7 +161,7 @@ std::string GetOSArchitecture() {
  }
  
  std::string GetOSUsername() {

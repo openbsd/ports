@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_memory_details_cc,v 1.50 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-chrome_browser_memory_details_cc,v 1.51 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/browser/memory_details.cc
 --- chrome/browser/memory_details.cc.orig
 +++ chrome/browser/memory_details.cc
-@@ -38,7 +38,7 @@
+@@ -37,7 +37,7 @@
  #include "services/resource_coordinator/public/cpp/memory_instrumentation/memory_instrumentation.h"
  #include "ui/base/l10n/l10n_util.h"
  
@@ -12,8 +12,8 @@ Index: chrome/browser/memory_details.cc
  #include "content/public/browser/zygote_host/zygote_host_linux.h"
  #endif
  
-@@ -321,7 +321,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
-       process.titles.push_back(title);
+@@ -325,7 +325,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
+           std::ref(process)));
      }
  
 -#if defined(OS_POSIX) && !defined(OS_MAC) && !defined(OS_ANDROID)

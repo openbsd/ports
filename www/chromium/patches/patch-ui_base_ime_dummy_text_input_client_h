@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_base_ime_dummy_text_input_client_h,v 1.1 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-ui_base_ime_dummy_text_input_client_h,v 1.2 2022/01/06 06:24:05 robert Exp $
 
 Index: ui/base/ime/dummy_text_input_client.h
 --- ui/base/ime/dummy_text_input_client.h.orig

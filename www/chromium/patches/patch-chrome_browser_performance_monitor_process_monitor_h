@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_performance_monitor_process_monitor_h,v 1.7 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-chrome_browser_performance_monitor_process_monitor_h,v 1.8 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/browser/performance_monitor/process_monitor.h
 --- chrome/browser/performance_monitor/process_monitor.h.orig

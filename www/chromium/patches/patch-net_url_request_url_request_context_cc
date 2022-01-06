@@ -1,9 +1,9 @@
-$OpenBSD: patch-net_url_request_url_request_context_cc,v 1.13 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-net_url_request_url_request_context_cc,v 1.14 2022/01/06 06:24:05 robert Exp $
 
 Index: net/url_request/url_request_context.cc
 --- net/url_request/url_request_context.cc.orig
 +++ net/url_request/url_request_context.cc
-@@ -86,7 +86,7 @@ const HttpNetworkSessionContext* URLRequestContext::Ge
+@@ -87,7 +87,7 @@ const HttpNetworkSessionContext* URLRequestContext::Ge
  
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.

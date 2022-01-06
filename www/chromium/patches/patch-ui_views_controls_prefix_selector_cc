@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_views_controls_prefix_selector_cc,v 1.1 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-ui_views_controls_prefix_selector_cc,v 1.2 2022/01/06 06:24:06 robert Exp $
 
 Index: ui/views/controls/prefix_selector.cc
 --- ui/views/controls/prefix_selector.cc.orig

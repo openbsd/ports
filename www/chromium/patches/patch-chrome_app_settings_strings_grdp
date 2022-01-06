@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_app_settings_strings_grdp,v 1.37 2021/11/16 11:28:45 robert Exp $
+$OpenBSD: patch-chrome_app_settings_strings_grdp,v 1.38 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/app/settings_strings.grdp
 --- chrome/app/settings_strings.grdp.orig

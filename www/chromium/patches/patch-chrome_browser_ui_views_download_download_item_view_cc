@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_download_download_item_view_cc,v 1.15 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_download_download_item_view_cc,v 1.16 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/browser/ui/views/download/download_item_view.cc
 --- chrome/browser/ui/views/download/download_item_view.cc.orig

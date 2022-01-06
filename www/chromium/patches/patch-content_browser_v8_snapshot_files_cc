@@ -1,12 +1,12 @@
-$OpenBSD: patch-content_browser_v8_snapshot_files_cc,v 1.4 2021/01/20 07:28:09 robert Exp $
+$OpenBSD: patch-content_browser_v8_snapshot_files_cc,v 1.5 2022/01/06 06:24:05 robert Exp $
 
 Index: content/browser/v8_snapshot_files.cc
 --- content/browser/v8_snapshot_files.cc.orig
 +++ content/browser/v8_snapshot_files.cc
-@@ -10,7 +10,7 @@
- namespace content {
+@@ -15,7 +15,7 @@ namespace content {
  
- std::map<std::string, base::FilePath> GetV8SnapshotFilesToPreload() {
+ std::map<std::string, base::FilePath> GetV8SnapshotFilesToPreload(
+     base::CommandLine& process_command_line) {
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  #if defined(USE_V8_CONTEXT_SNAPSHOT)

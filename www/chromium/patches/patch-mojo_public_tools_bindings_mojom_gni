@@ -1,4 +1,4 @@
-$OpenBSD: patch-mojo_public_tools_bindings_mojom_gni,v 1.2 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-mojo_public_tools_bindings_mojom_gni,v 1.3 2022/01/06 06:24:05 robert Exp $
 
 Index: mojo/public/tools/bindings/mojom.gni
 --- mojo/public/tools/bindings/mojom.gni.orig

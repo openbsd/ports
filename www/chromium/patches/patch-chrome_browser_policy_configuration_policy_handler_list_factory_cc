@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_policy_configuration_policy_handler_list_factory_cc,v 1.26 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-chrome_browser_policy_configuration_policy_handler_list_factory_cc,v 1.27 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
 --- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig
 +++ chrome/browser/policy/configuration_policy_handler_list_factory.cc
-@@ -1399,7 +1399,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1416,7 +1416,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      base::Value::Type::BOOLEAN },
  #endif // !defined(OS_MAC) && !defined(OS_CHROMEOS)
  
@@ -12,7 +12,7 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
    { key::kAuthNegotiateDelegateByKdcPolicy,
      prefs::kAuthNegotiateDelegateByKdcPolicy,
      base::Value::Type::BOOLEAN },
-@@ -1517,7 +1517,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1531,7 +1531,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      base::Value::Type::INTEGER },
  #endif
  
@@ -21,7 +21,7 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
    { key::kChromeAppsEnabled,
      extensions::pref_names::kChromeAppsEnabled,
      base::Value::Type::BOOLEAN },
-@@ -1781,7 +1781,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -1802,7 +1802,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
  #endif  // defined(OS_ANDROID)
  
  #if defined(OS_LINUX) || defined(OS_MAC) || defined(OS_WIN) || \
@@ -30,7 +30,7 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
    handlers->AddHandler(
        std::make_unique<
            enterprise_connectors::EnterpriseConnectorsPolicyHandler>(
-@@ -2146,7 +2146,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -2167,7 +2167,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
        SimpleSchemaValidatingPolicyHandler::MANDATORY_ALLOWED));
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -39,7 +39,7 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
    handlers->AddHandler(std::make_unique<SimpleSchemaValidatingPolicyHandler>(
        key::kWebAppSettings, prefs::kWebAppSettings, chrome_schema,
        SCHEMA_ALLOW_UNKNOWN,
-@@ -2177,7 +2177,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -2198,7 +2198,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
            policy::key::kSpellcheckLanguageBlocklist));
  #endif  // BUILDFLAG(ENABLE_SPELLCHECK)
  

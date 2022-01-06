@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_media_webrtc_webrtc_log_uploader_cc,v 1.21 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-chrome_browser_media_webrtc_webrtc_log_uploader_cc,v 1.22 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/browser/media/webrtc/webrtc_log_uploader.cc
 --- chrome/browser/media/webrtc/webrtc_log_uploader.cc.orig

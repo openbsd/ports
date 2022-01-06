@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_BUILD_gn,v 1.50 2021/11/16 11:28:45 robert Exp $
+$OpenBSD: patch-base_BUILD_gn,v 1.51 2022/01/06 06:24:03 robert Exp $
 
 Index: base/BUILD.gn
 --- base/BUILD.gn.orig
 +++ base/BUILD.gn
-@@ -958,7 +958,7 @@ component("base") {
+@@ -954,7 +954,7 @@ component("base") {
        "timer/hi_res_timer_manager_posix.cc",
      ]
  
@@ -12,7 +12,7 @@ Index: base/BUILD.gn
        sources += [
          "cpu_affinity_posix.cc",
          "cpu_affinity_posix.h",
-@@ -969,6 +969,12 @@ component("base") {
+@@ -965,6 +965,12 @@ component("base") {
          "profiler/thread_delegate_posix.h",
        ]
      }
@@ -25,7 +25,7 @@ Index: base/BUILD.gn
    }
  
    if (is_win) {
-@@ -1393,11 +1399,16 @@ component("base") {
+@@ -1391,11 +1397,16 @@ component("base") {
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
    if (!use_sysroot &&
@@ -43,7 +43,7 @@ Index: base/BUILD.gn
    if (use_allocator_shim) {
      sources += [
        "allocator/allocator_shim.cc",
-@@ -1419,7 +1430,7 @@ component("base") {
+@@ -1417,7 +1428,7 @@ component("base") {
          "allocator/allocator_shim_override_mac_symbols.h",
        ]
      }
@@ -52,7 +52,7 @@ Index: base/BUILD.gn
        sources += [
          "allocator/allocator_shim_override_cpp_symbols.h",
          "allocator/allocator_shim_override_glibc_weak_symbols.h",
-@@ -2134,6 +2145,30 @@ component("base") {
+@@ -2140,6 +2151,30 @@ component("base") {
          "linux_util.h",
        ]
      }

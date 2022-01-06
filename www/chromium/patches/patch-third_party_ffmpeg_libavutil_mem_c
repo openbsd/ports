@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_ffmpeg_libavutil_mem_c,v 1.5 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-third_party_ffmpeg_libavutil_mem_c,v 1.6 2022/01/06 06:24:05 robert Exp $
 Index: third_party/ffmpeg/libavutil/mem.c
 --- third_party/ffmpeg/libavutil/mem.c.orig
 +++ third_party/ffmpeg/libavutil/mem.c

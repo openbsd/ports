@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_renderer_host_render_view_host_impl_cc,v 1.32 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_render_view_host_impl_cc,v 1.33 2022/01/06 06:24:05 robert Exp $
 
 Index: content/browser/renderer_host/render_view_host_impl.cc
 --- content/browser/renderer_host/render_view_host_impl.cc.orig

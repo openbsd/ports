@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_services_speech_audio_source_fetcher_impl_cc,v 1.6 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-chrome_services_speech_audio_source_fetcher_impl_cc,v 1.7 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/services/speech/audio_source_fetcher_impl.cc
 --- chrome/services/speech/audio_source_fetcher_impl.cc.orig

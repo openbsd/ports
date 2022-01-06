@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_utility_services_cc,v 1.9 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-chrome_utility_services_cc,v 1.10 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/utility/services.cc
 --- chrome/utility/services.cc.orig

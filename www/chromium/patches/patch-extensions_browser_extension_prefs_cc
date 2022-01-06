@@ -1,9 +1,9 @@
-$OpenBSD: patch-extensions_browser_extension_prefs_cc,v 1.2 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-extensions_browser_extension_prefs_cc,v 1.3 2022/01/06 06:24:05 robert Exp $
 
 Index: extensions/browser/extension_prefs.cc
 --- extensions/browser/extension_prefs.cc.orig
 +++ extensions/browser/extension_prefs.cc
-@@ -2262,7 +2262,7 @@ void ExtensionPrefs::RegisterProfilePrefs(
+@@ -2260,7 +2260,7 @@ void ExtensionPrefs::RegisterProfilePrefs(
    registry->RegisterStringPref(pref_names::kLastChromeVersion, std::string());
    registry->RegisterDictionaryPref(kInstallSignature);
    registry->RegisterListPref(kExternalUninstalls);

@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_policy_core_common_cloud_cloud_policy_client_cc,v 1.7 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-components_policy_core_common_cloud_cloud_policy_client_cc,v 1.8 2022/01/06 06:24:04 robert Exp $
 
 Index: components/policy/core/common/cloud/cloud_policy_client.cc
 --- components/policy/core/common/cloud/cloud_policy_client.cc.orig

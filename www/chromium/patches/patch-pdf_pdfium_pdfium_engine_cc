@@ -1,9 +1,9 @@
-$OpenBSD: patch-pdf_pdfium_pdfium_engine_cc,v 1.53 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-pdf_pdfium_pdfium_engine_cc,v 1.54 2022/01/06 06:24:05 robert Exp $
 
 Index: pdf/pdfium/pdfium_engine.cc
 --- pdf/pdfium/pdfium_engine.cc.orig
 +++ pdf/pdfium/pdfium_engine.cc
-@@ -85,7 +85,7 @@
+@@ -84,7 +84,7 @@
  #include "gin/public/cppgc.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: pdf/pdfium/pdfium_engine.cc
  #include "pdf/pdfium/pdfium_font_linux.h"
  #endif
  
-@@ -520,7 +520,7 @@ void InitializeSDK(bool enable_v8, FontMappingMode fon
+@@ -519,7 +519,7 @@ void InitializeSDK(bool enable_v8, FontMappingMode fon
  
    FPDF_InitLibraryWithConfig(&config);
  

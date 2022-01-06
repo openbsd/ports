@@ -1,4 +1,4 @@
-$OpenBSD: patch-device_bluetooth_cast_bluetooth_gni,v 1.1 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-device_bluetooth_cast_bluetooth_gni,v 1.2 2022/01/06 06:24:05 robert Exp $
 
 Index: device/bluetooth/cast_bluetooth.gni
 --- device/bluetooth/cast_bluetooth.gni.orig

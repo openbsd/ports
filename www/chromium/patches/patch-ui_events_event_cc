@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_events_event_cc,v 1.7 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-ui_events_event_cc,v 1.8 2022/01/06 06:24:06 robert Exp $
 
 Index: ui/events/event.cc
 --- ui/events/event.cc.orig
 +++ ui/events/event.cc
-@@ -453,7 +453,7 @@ std::string LocatedEvent::ToString() const {
+@@ -452,7 +452,7 @@ std::string LocatedEvent::ToString() const {
  MouseEvent::MouseEvent(const PlatformEvent& native_event)
      : LocatedEvent(native_event),
        changed_button_flags_(GetChangedMouseButtonFlagsFromNative(native_event)),
@@ -12,7 +12,7 @@ Index: ui/events/event.cc
        movement_(GetMouseMovementFromNative(native_event)),
  #endif
        pointer_details_(GetMousePointerDetailsFromNative(native_event)) {
-@@ -935,7 +935,7 @@ void KeyEvent::InitializeNative() {
+@@ -934,7 +934,7 @@ void KeyEvent::InitializeNative() {
    if (synthesize_key_repeat_enabled_ && IsRepeated(GetLastKeyEvent()))
      set_flags(flags() | EF_IS_REPEAT);
  

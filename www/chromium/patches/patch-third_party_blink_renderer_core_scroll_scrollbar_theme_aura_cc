@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_core_scroll_scrollbar_theme_aura_cc,v 1.12 2021/09/01 16:54:40 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_core_scroll_scrollbar_theme_aura_cc,v 1.13 2022/01/06 06:24:05 robert Exp $
 
 Index: third_party/blink/renderer/core/scroll/scrollbar_theme_aura.cc
 --- third_party/blink/renderer/core/scroll/scrollbar_theme_aura.cc.orig
@@ -12,7 +12,7 @@ Index: third_party/blink/renderer/core/scroll/scrollbar_theme_aura.cc
    return false;
  #else
    return true;
-@@ -326,7 +326,7 @@ bool ScrollbarThemeAura::ShouldCenterOnThumb(const Scr
+@@ -327,7 +327,7 @@ bool ScrollbarThemeAura::ShouldCenterOnThumb(const Scr
                                               const WebMouseEvent& event) {
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.

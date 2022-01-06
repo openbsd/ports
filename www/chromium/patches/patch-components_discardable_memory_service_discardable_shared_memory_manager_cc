@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_discardable_memory_service_discardable_shared_memory_manager_cc,v 1.6 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-components_discardable_memory_service_discardable_shared_memory_manager_cc,v 1.7 2022/01/06 06:24:04 robert Exp $
 
 Index: components/discardable_memory/service/discardable_shared_memory_manager.cc
 --- components/discardable_memory/service/discardable_shared_memory_manager.cc.orig

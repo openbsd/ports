@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_download_internal_common_download_utils_cc,v 1.1 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-components_download_internal_common_download_utils_cc,v 1.2 2022/01/06 06:24:04 robert Exp $
 
 Index: components/download/internal/common/download_utils.cc
 --- components/download/internal/common/download_utils.cc.orig

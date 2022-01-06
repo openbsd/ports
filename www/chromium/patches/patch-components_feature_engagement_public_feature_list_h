@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_feature_engagement_public_feature_list_h,v 1.21 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-components_feature_engagement_public_feature_list_h,v 1.22 2022/01/06 06:24:04 robert Exp $
 
 Index: components/feature_engagement/public/feature_list.h
 --- components/feature_engagement/public/feature_list.h.orig
@@ -12,7 +12,7 @@ Index: components/feature_engagement/public/feature_list.h
  DEFINE_VARIATION_PARAM(kIPHDesktopTabGroupsNewGroupFeature,
                         "IPH_DesktopTabGroupsNewGroup");
  DEFINE_VARIATION_PARAM(kIPHFocusModeFeature, "IPH_FocusMode");
-@@ -310,7 +310,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
+@@ -312,7 +312,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
          VARIATION_ENTRY(kIPHBadgedTranslateManualTriggerFeature),
          VARIATION_ENTRY(kIPHDiscoverFeedHeaderFeature),
  #elif defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \

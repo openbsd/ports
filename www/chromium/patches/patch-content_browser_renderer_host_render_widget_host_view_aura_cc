@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_renderer_host_render_widget_host_view_aura_cc,v 1.64 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_render_widget_host_view_aura_cc,v 1.65 2022/01/06 06:24:05 robert Exp $
 
 Index: content/browser/renderer_host/render_widget_host_view_aura.cc
 --- content/browser/renderer_host/render_widget_host_view_aura.cc.orig
 +++ content/browser/renderer_host/render_widget_host_view_aura.cc
-@@ -111,7 +111,7 @@
+@@ -112,7 +112,7 @@
  #include "ui/gfx/gdi_util.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: content/browser/renderer_host/render_widget_host_view_aura.cc
  #include "content/browser/accessibility/browser_accessibility_auralinux.h"
  #include "ui/base/ime/linux/text_edit_command_auralinux.h"
  #include "ui/base/ime/linux/text_edit_key_bindings_delegate_auralinux.h"
-@@ -478,7 +478,7 @@ gfx::NativeViewAccessible RenderWidgetHostViewAura::Ge
+@@ -479,7 +479,7 @@ gfx::NativeViewAccessible RenderWidgetHostViewAura::Ge
    if (manager)
      return ToBrowserAccessibilityWin(manager->GetRoot())->GetCOM();
  
@@ -21,7 +21,7 @@ Index: content/browser/renderer_host/render_widget_host_view_aura.cc
    BrowserAccessibilityManager* manager =
        host()->GetOrCreateRootBrowserAccessibilityManager();
    if (manager && manager->GetRoot())
-@@ -1516,7 +1516,7 @@ bool RenderWidgetHostViewAura::ShouldDoLearning() {
+@@ -1530,7 +1530,7 @@ bool RenderWidgetHostViewAura::ShouldDoLearning() {
    return GetTextInputManager() && GetTextInputManager()->should_do_learning();
  }
  

@@ -1,18 +1,18 @@
-$OpenBSD: patch-content_utility_services_cc,v 1.6 2021/09/01 16:54:39 robert Exp $
+$OpenBSD: patch-content_utility_services_cc,v 1.7 2022/01/06 06:24:05 robert Exp $
 
 Index: content/utility/services.cc
 --- content/utility/services.cc.orig
 +++ content/utility/services.cc
-@@ -63,7 +63,7 @@
+@@ -67,7 +67,7 @@
  extern sandbox::TargetServices* g_utility_target_services;
  #endif  // defined(OS_WIN)
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  #include "sandbox/linux/services/libc_interceptor.h"
+ #include "sandbox/policy/mojom/sandbox.mojom.h"
  #include "sandbox/policy/sandbox_type.h"
- #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
-@@ -185,7 +185,7 @@ auto RunAudio(mojo::PendingReceiver<audio::mojom::Audi
+@@ -198,7 +198,7 @@ auto RunAudio(mojo::PendingReceiver<audio::mojom::Audi
        << "task_policy_set TASK_QOS_POLICY";
  #endif
  
@@ -20,4 +20,4 @@ Index: content/utility/services.cc
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    auto* command_line = base::CommandLine::ForCurrentProcess();
    if (sandbox::policy::SandboxTypeFromCommandLine(*command_line) ==
-       sandbox::policy::SandboxType::kNoSandbox) {
+       sandbox::mojom::Sandbox::kNoSandbox) {

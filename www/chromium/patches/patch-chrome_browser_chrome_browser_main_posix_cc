@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_chrome_browser_main_posix_cc,v 1.22 2021/11/16 11:28:45 robert Exp $
+$OpenBSD: patch-chrome_browser_chrome_browser_main_posix_cc,v 1.23 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/browser/chrome_browser_main_posix.cc
 --- chrome/browser/chrome_browser_main_posix.cc.orig

@@ -1,9 +1,9 @@
-$OpenBSD: patch-build_toolchain_gcc_solink_wrapper_py,v 1.4 2020/09/22 11:47:39 robert Exp $
+$OpenBSD: patch-build_toolchain_gcc_solink_wrapper_py,v 1.5 2022/01/06 06:24:03 robert Exp $
 
 Index: build/toolchain/gcc_solink_wrapper.py
 --- build/toolchain/gcc_solink_wrapper.py.orig
 +++ build/toolchain/gcc_solink_wrapper.py
-@@ -37,7 +37,7 @@ def CollectDynSym(args):
+@@ -39,7 +39,7 @@ def CollectDynSym(args):
    """Replaces: nm --format=posix -g -D -p $sofile | cut -f1-2 -d' '"""
    toc = ''
    nm = subprocess.Popen(wrapper_utils.CommandToRun(

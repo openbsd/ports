@@ -1,9 +1,9 @@
-$OpenBSD: patch-sandbox_policy_openbsd_sandbox_openbsd_cc,v 1.10 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-sandbox_policy_openbsd_sandbox_openbsd_cc,v 1.11 2022/01/06 06:24:05 robert Exp $
 
 Index: sandbox/policy/openbsd/sandbox_openbsd.cc
 --- sandbox/policy/openbsd/sandbox_openbsd.cc.orig
 +++ sandbox/policy/openbsd/sandbox_openbsd.cc
-@@ -0,0 +1,394 @@
+@@ -0,0 +1,395 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -52,6 +52,7 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.cc
 +#include "sandbox/linux/syscall_broker/broker_process.h"
 +#include "sandbox/policy/sandbox.h"
 +#include "sandbox/policy/sandbox_type.h"
++#include "sandbox/policy/mojom/sandbox.mojom.h"
 +#include "sandbox/policy/switches.h"
 +#include "sandbox/sandbox_buildflags.h" 
 +
@@ -101,7 +102,7 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.cc
 +  return instance;
 +}
 +
-+void SandboxLinux::PreinitializeSandbox(SandboxType sandbox_type) {
++void SandboxLinux::PreinitializeSandbox(sandbox::mojom::Sandbox sandbox_type) {
 +  CHECK(!pre_initialized_);
 +#if BUILDFLAG(USING_SANITIZER)
 +  // Sanitizers need to open some resources before the sandbox is enabled.
@@ -189,7 +190,7 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.cc
 +  return false;
 +}
 +
-+bool SandboxLinux::SetUnveil(const std::string process_type, SandboxType sandbox_type) {
++bool SandboxLinux::SetUnveil(const std::string process_type, sandbox::mojom::Sandbox sandbox_type) {
 +  FILE *fp;
 +  char *s = NULL, *cp = NULL, *home = NULL, **ap, *tokens[MAXTOKENS];
 +  char path[PATH_MAX];
@@ -205,11 +206,11 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.cc
 +  } else if (process_type == switches::kPpapiPluginProcess) {
 +    ufile = _UNVEIL_PLUGIN;
 +  } else if (process_type == switches::kUtilityProcess) {
-+    if (sandbox_type == SandboxType::kNetwork) {
++    if (sandbox_type == sandbox::mojom::Sandbox::kNetwork) {
 +      ufile = _UNVEIL_UTILITY_NETWORK;
-+    } else if (sandbox_type == SandboxType::kAudio) {
++    } else if (sandbox_type == sandbox::mojom::Sandbox::kAudio) {
 +      ufile = _UNVEIL_UTILITY_AUDIO;
-+    } else if (sandbox_type == SandboxType::kVideoCapture) {
++    } else if (sandbox_type == sandbox::mojom::Sandbox::kVideoCapture) {
 +      ufile = _UNVEIL_UTILITY_VIDEO;
 +    } else {
 +      ufile = _UNVEIL_UTILITY;
@@ -275,7 +276,7 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.cc
 +  return true;
 +}
 +
-+bool SandboxLinux::InitializeSandbox(SandboxType sandbox_type,
++bool SandboxLinux::InitializeSandbox(sandbox::mojom::Sandbox sandbox_type,
 +                                     SandboxLinux::PreSandboxHook hook,
 +                                     const Options& options) {
 +  DCHECK(!initialize_sandbox_ran_);
@@ -319,11 +320,11 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.cc
 +    // prot_exec needed by v8
 +    SetPledge("stdio rpath prot_exec recvfd sendfd", NULL);
 +  } else if (process_type == switches::kUtilityProcess) {
-+    if (sandbox_type == SandboxType::kAudio)
++    if (sandbox_type == sandbox::mojom::Sandbox::kAudio)
 +      SetPledge(NULL, "/etc/chromium/pledge.utility_audio");
-+    else if (sandbox_type == SandboxType::kNetwork)
++    else if (sandbox_type == sandbox::mojom::Sandbox::kNetwork)
 +      SetPledge(NULL, "/etc/chromium/pledge.utility_network");
-+    else if (sandbox_type == SandboxType::kVideoCapture)
++    else if (sandbox_type == sandbox::mojom::Sandbox::kVideoCapture)
 +      SetPledge(NULL, "/etc/chromium/pledge.utility_video");
 +    else
 +      SetPledge("stdio rpath cpath wpath fattr flock sendfd recvfd prot_exec", NULL);
@@ -339,7 +340,7 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.cc
 +#if !defined(ADDRESS_SANITIZER) && !defined(MEMORY_SANITIZER) && \
 +    !defined(THREAD_SANITIZER) && !defined(LEAK_SANITIZER)
 +  base::CommandLine* command_line = base::CommandLine::ForCurrentProcess();
-+  if (SandboxTypeFromCommandLine(*command_line) == SandboxType::kNoSandbox) {
++  if (SandboxTypeFromCommandLine(*command_line) == sandbox::mojom::Sandbox::kNoSandbox) {
 +    return false;
 +  }
 +
@@ -365,31 +366,31 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.cc
 +}
 +
 +// static
-+std::string SandboxLinux::GetSandboxTypeInEnglish(SandboxType sandbox_type) {
++std::string SandboxLinux::GetSandboxTypeInEnglish(sandbox::mojom::Sandbox sandbox_type) {
 +  switch (sandbox_type) {
-+    case SandboxType::kNoSandbox:
++    case sandbox::mojom::Sandbox::kNoSandbox:
 +      return "Unsandboxed";
-+    case SandboxType::kRenderer:
++    case sandbox::mojom::Sandbox::kRenderer:
 +      return "Renderer";
-+    case SandboxType::kUtility:
++    case sandbox::mojom::Sandbox::kUtility:
 +      return "Utility";
-+    case SandboxType::kGpu:
++    case sandbox::mojom::Sandbox::kGpu:
 +      return "GPU";
-+    case SandboxType::kPpapi:
++    case sandbox::mojom::Sandbox::kPpapi:
 +      return "PPAPI";
-+    case SandboxType::kNetwork:
++    case sandbox::mojom::Sandbox::kNetwork:
 +      return "Network";
-+    case SandboxType::kCdm:
++    case sandbox::mojom::Sandbox::kCdm:
 +      return "CDM";
-+    case SandboxType::kPrintCompositor:
++    case sandbox::mojom::Sandbox::kPrintCompositor:
 +      return "Print Compositor";
-+    case SandboxType::kAudio:
++    case sandbox::mojom::Sandbox::kAudio:
 +      return "Audio";
-+    case SandboxType::kSpeechRecognition:
++    case sandbox::mojom::Sandbox::kSpeechRecognition:
 +      return "Speech Recognition";
-+    case SandboxType::kService:
++    case sandbox::mojom::Sandbox::kService:
 +      return "Service";
-+    case SandboxType::kVideoCapture:
++    case sandbox::mojom::Sandbox::kVideoCapture:
 +      return "Video Capture";
 +    default:
 +      return "Unknown";

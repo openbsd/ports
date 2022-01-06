@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_chrome_browser_interface_binders_cc,v 1.16 2021/11/16 11:28:45 robert Exp $
+$OpenBSD: patch-chrome_browser_chrome_browser_interface_binders_cc,v 1.17 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/browser/chrome_browser_interface_binders.cc
 --- chrome/browser/chrome_browser_interface_binders.cc.orig
@@ -12,7 +12,7 @@ Index: chrome/browser/chrome_browser_interface_binders.cc
  #include "chrome/browser/ui/webui/connectors_internals/connectors_internals.mojom.h"
  #include "chrome/browser/ui/webui/connectors_internals/connectors_internals_ui.h"
  #endif
-@@ -158,7 +158,7 @@
+@@ -160,7 +160,7 @@
  #endif  // defined(OS_ANDROID)
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -21,16 +21,16 @@ Index: chrome/browser/chrome_browser_interface_binders.cc
  #include "chrome/browser/ui/webui/discards/discards.mojom.h"
  #include "chrome/browser/ui/webui/discards/discards_ui.h"
  #include "chrome/browser/ui/webui/discards/site_data.mojom.h"
-@@ -648,7 +648,7 @@ void PopulateChromeFrameBinders(
-       base::BindRepeating(&BindSpeechRecognitionRecognizerClientHandler));
+@@ -649,7 +649,7 @@ void PopulateChromeFrameBinders(
  #endif
  
--#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
+ #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_CHROMEOS)
++    defined(OS_CHROMEOS) || defined(OS_BSD)
    if (!render_frame_host->GetParent()) {
      map->Add<chrome::mojom::DraggableRegions>(
          base::BindRepeating(&DraggableRegionsHostImpl::CreateIfAllowed));
-@@ -656,7 +656,7 @@ void PopulateChromeFrameBinders(
+@@ -657,7 +657,7 @@ void PopulateChromeFrameBinders(
  #endif
  
  #if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_MAC) || \
@@ -39,7 +39,7 @@ Index: chrome/browser/chrome_browser_interface_binders.cc
    if (base::FeatureList::IsEnabled(blink::features::kDesktopPWAsSubApps) &&
        !render_frame_host->GetParent()) {
      map->Add<blink::mojom::SubAppsProvider>(
-@@ -691,7 +691,7 @@ void PopulateChromeWebUIFrameBinders(
+@@ -692,7 +692,7 @@ void PopulateChromeWebUIFrameBinders(
                                           FlocInternalsUI>(map);
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -48,7 +48,7 @@ Index: chrome/browser/chrome_browser_interface_binders.cc
    RegisterWebUIControllerInterfaceBinder<
        connectors_internals::mojom::PageHandler,
        enterprise_connectors::ConnectorsInternalsUI>(map);
-@@ -983,7 +983,7 @@ void PopulateChromeWebUIFrameBinders(
+@@ -982,7 +982,7 @@ void PopulateChromeWebUIFrameBinders(
  #endif
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \

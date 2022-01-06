@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.81 2021/11/19 13:47:14 robert Exp $
+$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.82 2022/01/06 06:24:05 robert Exp $
 
 Index: content/browser/browser_main_loop.cc
 --- content/browser/browser_main_loop.cc.orig
 +++ content/browser/browser_main_loop.cc
-@@ -240,6 +240,12 @@
+@@ -236,6 +236,12 @@
  #include "mojo/public/cpp/bindings/lib/test_random_mojo_delays.h"
  #endif
  
@@ -16,7 +16,7 @@ Index: content/browser/browser_main_loop.cc
  // One of the linux specific headers defines this as a macro.
  #ifdef DestroyAll
  #undef DestroyAll
-@@ -515,6 +521,12 @@ int BrowserMainLoop::EarlyInitialization() {
+@@ -525,6 +531,12 @@ int BrowserMainLoop::EarlyInitialization() {
    // by now since a thread to start the ServiceManager has been created
    // before the browser main loop starts.
    DCHECK(SandboxHostLinux::GetInstance()->IsInitialized());
@@ -28,8 +28,8 @@ Index: content/browser/browser_main_loop.cc
 +  options.fds_to_remap.push_back(std::make_pair(sfd, GetSandboxFD()));
  #endif
  
- #if defined(USE_X11)
-@@ -549,7 +561,7 @@ int BrowserMainLoop::EarlyInitialization() {
+   // GLib's spawning of new processes is buggy, so it's important that at this
+@@ -552,7 +564,7 @@ int BrowserMainLoop::EarlyInitialization() {
  
    // Up the priority of the UI thread unless it was already high (since Mac
    // and recent versions of Android (O+) do this automatically).
@@ -38,7 +38,7 @@ Index: content/browser/browser_main_loop.cc
    if (base::FeatureList::IsEnabled(
            features::kBrowserUseDisplayThreadPriority) &&
        base::PlatformThread::GetCurrentThreadPriority() <
-@@ -560,7 +572,7 @@ int BrowserMainLoop::EarlyInitialization() {
+@@ -563,7 +575,7 @@ int BrowserMainLoop::EarlyInitialization() {
  #endif  // !defined(OS_MAC)
  
  #if defined(OS_MAC) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \

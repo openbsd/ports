@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_x_generated_protos_shm_cc,v 1.3 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-ui_gfx_x_generated_protos_shm_cc,v 1.4 2022/01/06 06:24:06 robert Exp $
 
 Index: ui/gfx/x/generated_protos/shm.cc
 --- ui/gfx/x/generated_protos/shm.cc.orig

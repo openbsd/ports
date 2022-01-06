@@ -1,0 +1,14 @@
+$OpenBSD: patch-base_allocator_partition_allocator_partition_alloc_constants_h,v 1.1 2022/01/06 06:24:03 robert Exp $
+
+Index: base/allocator/partition_allocator/partition_alloc_constants.h
+--- base/allocator/partition_allocator/partition_alloc_constants.h.orig
++++ base/allocator/partition_allocator/partition_alloc_constants.h
+@@ -349,7 +349,7 @@ constexpr size_t kBitsPerSizeT = sizeof(void*) * CHAR_
+ // PartitionPurgeDecommitEmptySlotSpans flag will eagerly decommit all entries
+ // in the ring buffer, so with periodic purge enabled, this typically happens
+ // every few seconds.
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ // Set to a higher value on Linux, to assess impact on performance bots. This
+ // roughly halves the number of syscalls done during a speedometer 2.0 run on
+ // this platform.

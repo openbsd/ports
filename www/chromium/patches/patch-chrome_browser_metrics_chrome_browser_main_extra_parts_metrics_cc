@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_metrics_chrome_browser_main_extra_parts_metrics_cc,v 1.30 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-chrome_browser_metrics_chrome_browser_main_extra_parts_metrics_cc,v 1.31 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
 --- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig
 +++ chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
-@@ -60,8 +60,10 @@
+@@ -61,8 +61,10 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -15,19 +15,22 @@ Index: chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
  
  #include "base/linux_util.h"
  #include "base/strings/string_split.h"
-@@ -222,6 +224,7 @@ void RecordStartupMetrics() {
+@@ -223,15 +225,18 @@ void RecordStartupMetrics() {
    base::UmaHistogramBoolean("Windows.ApplockerRunning", IsApplockerRunning());
  #endif  // defined(OS_WIN)
  
 +#if !defined(OS_BSD)
    // TODO(crbug.com/1216328) Remove logging.
-   LOG(ERROR) << "crbug.com/1216328: Checking Bluetooth availability started. "
-                 "Please report if there is no report that this ends.";
-@@ -231,6 +234,7 @@ void RecordStartupMetrics() {
-   // Record whether Chrome is the default browser or not.
-   LOG(ERROR) << "crbug.com/1216328: Checking default browser status started. "
-                 "Please report if there is no report that this ends.";
+   LOG(ERROR) << "START: ReportBluetoothAvailability(). "
+                 "If you don't see the END: message, this is crbug.com/1216328.";
+   bluetooth_utility::ReportBluetoothAvailability();
+   LOG(ERROR) << "END: ReportBluetoothAvailability()";
 +#endif
+ 
+   // Record whether Chrome is the default browser or not.
+   // Disabled on Linux due to hanging browser tests, see crbug.com/1216328.
+ #if !BUILDFLAG(IS_LINUX)
++#error out
+   LOG(ERROR) << "START: GetDefaultBrowser(). "
+                 "If you don't see the END: message, this is crbug.com/1216328.";
    shell_integration::DefaultWebClientState default_state =
-       shell_integration::GetDefaultBrowser();
-   LOG(ERROR) << "crbug.com/1216328: Checking default browser status ended.";

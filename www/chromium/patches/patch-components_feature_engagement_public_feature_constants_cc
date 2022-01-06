@@ -1,18 +1,18 @@
-$OpenBSD: patch-components_feature_engagement_public_feature_constants_cc,v 1.11 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-components_feature_engagement_public_feature_constants_cc,v 1.12 2022/01/06 06:24:04 robert Exp $
 
 Index: components/feature_engagement/public/feature_constants.cc
 --- components/feature_engagement/public/feature_constants.cc.orig
 +++ components/feature_engagement/public/feature_constants.cc
-@@ -13,7 +13,7 @@ const base::Feature kIPHDummyFeature{"IPH_Dummy",
+@@ -20,7 +20,7 @@ const base::Feature kIPHDummyFeature{"IPH_Dummy",
                                       base::FEATURE_DISABLED_BY_DEFAULT};
  
  #if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
 -    defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
 +    defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
+ const base::Feature kIPHDesktopSharedHighlightingFeature{
+     "IPH_DesktopSharedHighlighting", base::FEATURE_DISABLED_BY_DEFAULT};
  const base::Feature kIPHDesktopTabGroupsNewGroupFeature{
-     "IPH_DesktopTabGroupsNewGroup", base::FEATURE_DISABLED_BY_DEFAULT};
- const base::Feature kIPHFocusModeFeature{"IPH_FocusMode",
-@@ -225,7 +225,7 @@ const base::Feature kIPHDiscoverFeedHeaderFeature{
+@@ -232,7 +232,7 @@ const base::Feature kIPHDiscoverFeedHeaderFeature{
      "IPH_DiscoverFeedHeaderMenu", base::FEATURE_DISABLED_BY_DEFAULT};
  #endif  // defined(OS_IOS)
  

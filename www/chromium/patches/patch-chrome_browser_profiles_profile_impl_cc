@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_profiles_profile_impl_cc,v 1.24 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-chrome_browser_profiles_profile_impl_cc,v 1.25 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/browser/profiles/profile_impl.cc
 --- chrome/browser/profiles/profile_impl.cc.orig
@@ -11,7 +11,7 @@ Index: chrome/browser/profiles/profile_impl.cc
  #include "ui/base/l10n/l10n_util.h"
  
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -845,7 +846,13 @@ void ProfileImpl::DoFinalInit(CreateMode create_mode) 
+@@ -846,7 +847,13 @@ void ProfileImpl::DoFinalInit(CreateMode create_mode) 
  }
  
  base::FilePath ProfileImpl::last_selected_directory() {

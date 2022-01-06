@@ -1,4 +1,4 @@
-$OpenBSD: patch-sandbox_policy_openbsd_sandbox_openbsd_h,v 1.4 2021/09/01 16:54:40 robert Exp $
+$OpenBSD: patch-sandbox_policy_openbsd_sandbox_openbsd_h,v 1.5 2022/01/06 06:24:05 robert Exp $
 
 Index: sandbox/policy/openbsd/sandbox_openbsd.h
 --- sandbox/policy/openbsd/sandbox_openbsd.h.orig
@@ -19,7 +19,7 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.h
 +#include "base/posix/global_descriptors.h"
 +#include "sandbox/policy/export.h"
 +#include "sandbox/policy/linux/sandbox_seccomp_bpf_linux.h"
-+#include "sandbox/policy/sandbox_type.h"
++#include "sandbox/policy/mojom/sandbox.mojom.h"
 +#include "sandbox/policy/sanitizer_buildflags.h"
 +
 +#if BUILDFLAG(USING_SANITIZER)
@@ -124,7 +124,7 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.h
 +  static SandboxLinux* GetInstance();
 +
 +  bool SetPledge(const char *pstring, const char *ppath);
-+  bool SetUnveil(const std::string process_type, SandboxType sandbox_type);
++  bool SetUnveil(const std::string process_type, sandbox::mojom::Sandbox sandbox_type);
 +
 +  // Do some initialization that can only be done before any of the sandboxes
 +  // are enabled. If using the setuid sandbox, this should be called manually
@@ -135,7 +135,7 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.h
 +  // Otherwise file descriptors that bypass the security of the setuid sandbox
 +  // would be kept open. One must be particularly careful if a process performs
 +  // a fork().
-+  void PreinitializeSandbox(SandboxType sandbox_type);
++  void PreinitializeSandbox(sandbox::mojom::Sandbox sandbox_type);
 +
 +  // Check that the current process is the init process of a new PID
 +  // namespace and then proceed to drop access to the file system by using
@@ -155,7 +155,7 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.h
 +  // Currently the layer-2 sandbox is composed of seccomp-bpf and address space
 +  // limitations.
 +  // This function should only be called without any thread running.
-+  bool InitializeSandbox(SandboxType sandbox_type,
++  bool InitializeSandbox(sandbox::mojom::Sandbox sandbox_type,
 +                         PreSandboxHook hook,
 +                         const Options& options);
 +
@@ -170,7 +170,7 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.h
 +  // is called from inside these processes.
 +  int GetStatus();
 +
-+  static std::string GetSandboxTypeInEnglish(SandboxType sandbox_type);
++  static std::string GetSandboxTypeInEnglish(sandbox::mojom::Sandbox sandbox_type);
 +
 +  // Returns true if the current process is single-threaded or if the number
 +  // of threads cannot be determined.
@@ -182,7 +182,7 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.h
 +  // Check the policy and eventually start the seccomp-bpf sandbox. This should
 +  // never be called with threads started. If we detect that threads have
 +  // started we will crash.
-+  bool StartSeccompBPF(SandboxType sandbox_type,
++  bool StartSeccompBPF(sandbox::mojom::Sandbox sandbox_type,
 +                       PreSandboxHook hook,
 +                       const Options& options);
 +
@@ -250,7 +250,7 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.h
 +
 +  // GetStatus() makes promises as to how the sandbox will behave. This
 +  // checks that no promises have been broken.
-+  void CheckForBrokenPromises(SandboxType sandbox_type);
++  void CheckForBrokenPromises(sandbox::mojom::Sandbox sandbox_type);
 +
 +  // Stop |thread| and make sure it does not appear in /proc/self/tasks/
 +  // anymore.

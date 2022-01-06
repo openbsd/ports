@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_base_paths_posix_cc,v 1.7 2020/09/22 11:47:39 robert Exp $
+$OpenBSD: patch-base_base_paths_posix_cc,v 1.8 2022/01/06 06:24:03 robert Exp $
 
 Index: base/base_paths_posix.cc
 --- base/base_paths_posix.cc.orig
@@ -98,4 +98,4 @@ Index: base/base_paths_posix.cc
 +#endif
  #endif
      }
-     case DIR_SOURCE_ROOT: {
+     case DIR_SRC_TEST_DATA_ROOT: {

@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_webrtc_rtc_base_BUILD_gn,v 1.35 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-third_party_webrtc_rtc_base_BUILD_gn,v 1.36 2022/01/06 06:24:05 robert Exp $
 
 Index: third_party/webrtc/rtc_base/BUILD.gn
 --- third_party/webrtc/rtc_base/BUILD.gn.orig

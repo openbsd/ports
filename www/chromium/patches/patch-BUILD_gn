@@ -1,4 +1,4 @@
-$OpenBSD: patch-BUILD_gn,v 1.47 2021/11/16 11:28:45 robert Exp $
+$OpenBSD: patch-BUILD_gn,v 1.48 2022/01/06 06:24:03 robert Exp $
 
 Index: BUILD.gn
 --- BUILD.gn.orig
@@ -61,7 +61,7 @@ Index: BUILD.gn
      deps += [ "//third_party/breakpad:symupload($host_toolchain)" ]
    }
  
-@@ -1147,7 +1137,7 @@ if (!is_ios) {
+@@ -1140,7 +1130,7 @@ if (!is_ios) {
        data_deps += [ "//content/web_test:web_test_common_mojom_js_data_deps" ]
      }
  
@@ -70,7 +70,7 @@ Index: BUILD.gn
        data_deps +=
            [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
      }
-@@ -1156,7 +1146,7 @@ if (!is_ios) {
+@@ -1149,7 +1139,7 @@ if (!is_ios) {
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
@@ -79,7 +79,7 @@ Index: BUILD.gn
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -1537,9 +1527,6 @@ group("chromium_builder_perf") {
+@@ -1530,9 +1520,6 @@ group("chromium_builder_perf") {
  
      if (is_win) {
        data_deps += [ "//chrome/installer/mini_installer:mini_installer" ]

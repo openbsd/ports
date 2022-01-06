@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_apps_platform_apps_platform_app_launch_h,v 1.3 2021/11/16 11:28:45 robert Exp $
+$OpenBSD: patch-chrome_browser_apps_platform_apps_platform_app_launch_h,v 1.4 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/browser/apps/platform_apps/platform_app_launch.h
 --- chrome/browser/apps/platform_apps/platform_app_launch.h.orig

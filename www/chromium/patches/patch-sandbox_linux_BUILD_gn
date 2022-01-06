@@ -1,4 +1,4 @@
-$OpenBSD: patch-sandbox_linux_BUILD_gn,v 1.22 2021/09/01 16:54:40 robert Exp $
+$OpenBSD: patch-sandbox_linux_BUILD_gn,v 1.23 2022/01/06 06:24:05 robert Exp $
 
 Index: sandbox/linux/BUILD.gn
 --- sandbox/linux/BUILD.gn.orig
@@ -28,7 +28,7 @@ Index: sandbox/linux/BUILD.gn
      cflags = [ "-fgnu-inline-asm" ]
      sources -= [
        "bpf_dsl/bpf_dsl_forward.h",
-@@ -339,34 +339,8 @@ component("sandbox_services") {
+@@ -339,36 +339,8 @@ component("sandbox_services") {
      "services/proc_util.h",
      "services/resource_limits.cc",
      "services/resource_limits.h",
@@ -54,6 +54,8 @@ Index: sandbox/linux/BUILD.gn
 -    "syscall_broker/broker_permission_list.h",
 -    "syscall_broker/broker_process.cc",
 -    "syscall_broker/broker_process.h",
+-    "syscall_broker/broker_sandbox_config.cc",
+-    "syscall_broker/broker_sandbox_config.h",
 -    "syscall_broker/broker_simple_message.cc",
 -    "syscall_broker/broker_simple_message.h",
 -    "syscall_broker/remote_syscall_arg_handler.cc",
@@ -63,7 +65,7 @@ Index: sandbox/linux/BUILD.gn
    ]
  
    defines = [ "SANDBOX_IMPLEMENTATION" ]
-@@ -422,6 +396,10 @@ component("sandbox_services") {
+@@ -426,6 +398,10 @@ component("sandbox_services") {
        "syscall_broker/remote_syscall_arg_handler.h",
        "syscall_broker/syscall_dispatcher.cc",
        "syscall_broker/syscall_dispatcher.h",

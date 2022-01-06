@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_common_webui_url_constants_cc,v 1.33 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-chrome_common_webui_url_constants_cc,v 1.34 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/common/webui_url_constants.cc
 --- chrome/common/webui_url_constants.cc.orig
@@ -51,7 +51,7 @@ Index: chrome/common/webui_url_constants.cc
      defined(USE_AURA)
  const char kChromeUITabModalConfirmDialogHost[] = "tab-modal-confirm-dialog";
  #endif
-@@ -618,18 +618,18 @@ const char* const kChromeHostURLs[] = {
+@@ -616,18 +616,18 @@ const char* const kChromeHostURLs[] = {
      kChromeUIAssistantOptInHost,
  #endif
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -73,7 +73,7 @@ Index: chrome/common/webui_url_constants.cc
      kChromeUISandboxHost,
  #endif
  #if defined(OS_WIN)
-@@ -691,7 +691,7 @@ const char* const kChromeDebugURLs[] = {
+@@ -684,7 +684,7 @@ const char* const kChromeDebugURLs[] = {
      blink::kChromeUIGpuJavaCrashURL,
      kChromeUIJavaCrashURL,
  #endif

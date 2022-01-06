@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_utility_utility_blink_platform_with_sandbox_support_impl_h,v 1.9 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-content_utility_utility_blink_platform_with_sandbox_support_impl_h,v 1.10 2022/01/06 06:24:05 robert Exp $
 
 Index: content/utility/utility_blink_platform_with_sandbox_support_impl.h
 --- content/utility/utility_blink_platform_with_sandbox_support_impl.h.orig

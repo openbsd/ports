@@ -1,4 +1,4 @@
-$OpenBSD: patch-gpu_vulkan_vulkan_function_pointers_cc,v 1.17 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-gpu_vulkan_vulkan_function_pointers_cc,v 1.18 2022/01/06 06:24:05 robert Exp $
 
 Index: gpu/vulkan/vulkan_function_pointers.cc
 --- gpu/vulkan/vulkan_function_pointers.cc.orig

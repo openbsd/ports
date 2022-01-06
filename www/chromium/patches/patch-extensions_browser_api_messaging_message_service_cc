@@ -1,4 +1,4 @@
-$OpenBSD: patch-extensions_browser_api_messaging_message_service_cc,v 1.15 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-extensions_browser_api_messaging_message_service_cc,v 1.16 2022/01/06 06:24:05 robert Exp $
 
 Index: extensions/browser/api/messaging/message_service.cc
 --- extensions/browser/api/messaging/message_service.cc.orig

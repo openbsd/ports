@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_base_address_tracker_linux_cc,v 1.16 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-net_base_address_tracker_linux_cc,v 1.17 2022/01/06 06:24:05 robert Exp $
 
 Index: net/base/address_tracker_linux.cc
 --- net/base/address_tracker_linux.cc.orig

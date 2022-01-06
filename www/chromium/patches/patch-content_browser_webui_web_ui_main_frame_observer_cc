@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_webui_web_ui_main_frame_observer_cc,v 1.8 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-content_browser_webui_web_ui_main_frame_observer_cc,v 1.9 2022/01/06 06:24:05 robert Exp $
 
 Index: content/browser/webui/web_ui_main_frame_observer.cc
 --- content/browser/webui/web_ui_main_frame_observer.cc.orig

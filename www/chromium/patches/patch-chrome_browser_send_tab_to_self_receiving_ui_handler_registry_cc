@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_send_tab_to_self_receiving_ui_handler_registry_cc,v 1.8 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-chrome_browser_send_tab_to_self_receiving_ui_handler_registry_cc,v 1.9 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/browser/send_tab_to_self/receiving_ui_handler_registry.cc
 --- chrome/browser/send_tab_to_self/receiving_ui_handler_registry.cc.orig

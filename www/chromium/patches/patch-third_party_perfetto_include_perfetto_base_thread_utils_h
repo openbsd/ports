@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_perfetto_include_perfetto_base_thread_utils_h,v 1.5 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-third_party_perfetto_include_perfetto_base_thread_utils_h,v 1.6 2022/01/06 06:24:05 robert Exp $
 
 Index: third_party/perfetto/include/perfetto/base/thread_utils.h
 --- third_party/perfetto/include/perfetto/base/thread_utils.h.orig

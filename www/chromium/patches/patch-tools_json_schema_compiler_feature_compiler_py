@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_json_schema_compiler_feature_compiler_py,v 1.18 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-tools_json_schema_compiler_feature_compiler_py,v 1.19 2022/01/06 06:24:05 robert Exp $
 
 Index: tools/json_schema_compiler/feature_compiler.py
 --- tools/json_schema_compiler/feature_compiler.py.orig

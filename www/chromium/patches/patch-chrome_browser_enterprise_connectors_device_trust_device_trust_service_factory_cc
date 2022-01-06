@@ -1,14 +1,14 @@
-$OpenBSD: patch-chrome_browser_enterprise_connectors_device_trust_device_trust_service_factory_cc,v 1.3 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-chrome_browser_enterprise_connectors_device_trust_device_trust_service_factory_cc,v 1.4 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/browser/enterprise/connectors/device_trust/device_trust_service_factory.cc
 --- chrome/browser/enterprise/connectors/device_trust/device_trust_service_factory.cc.orig
 +++ chrome/browser/enterprise/connectors/device_trust/device_trust_service_factory.cc
-@@ -17,7 +17,7 @@
- #include "components/keyed_service/core/keyed_service.h"
+@@ -19,7 +19,7 @@
  #include "components/policy/content/policy_blocklist_service.h"
  #include "content/public/browser/browser_context.h"
+ 
 -#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_MAC)
 +#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD)
  #include "chrome/browser/enterprise/connectors/device_trust/attestation/desktop/desktop_attestation_service.h"
  #endif  // defined(OS_LINUX) || defined(OS_WIN) || defined(OS_MAC)
- #if BUILDFLAG(IS_CHROMEOS_ASH)
+ 

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_enterprise_connectors_device_trust_signals_signals_service_factory_cc,v 1.2 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-chrome_browser_enterprise_connectors_device_trust_signals_signals_service_factory_cc,v 1.3 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/browser/enterprise/connectors/device_trust/signals/signals_service_factory.cc
 --- chrome/browser/enterprise/connectors/device_trust/signals/signals_service_factory.cc.orig
 +++ chrome/browser/enterprise/connectors/device_trust/signals/signals_service_factory.cc
-@@ -13,7 +13,7 @@
+@@ -14,7 +14,7 @@
  #include "chrome/browser/enterprise/connectors/device_trust/signals/signals_service_impl.h"
  #include "chrome/browser/profiles/profile.h"
  
@@ -12,9 +12,9 @@ Index: chrome/browser/enterprise/connectors/device_trust/signals/signals_service
  #include "base/check.h"
  #include "chrome/browser/enterprise/connectors/device_trust/signals/decorators/browser/browser_signals_decorator.h"
  #include "chrome/browser/enterprise/signals/device_info_fetcher.h"
-@@ -43,7 +43,7 @@ std::unique_ptr<SignalsService> CreateSignalsService(
-       g_browser_process->local_state(), profile->GetPrefs(),
-       policy_blocklist_service));
+@@ -45,7 +45,7 @@ std::unique_ptr<SignalsService> CreateSignalsService(
+   decorators.push_back(
+       std::make_unique<ContentSignalsDecorator>(policy_blocklist_service));
  
 -#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_MAC)
 +#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD)

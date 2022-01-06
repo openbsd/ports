@@ -1,4 +1,4 @@
-$OpenBSD: patch-v8_src_base_platform_platform-openbsd_cc,v 1.9 2021/01/20 07:28:12 robert Exp $
+$OpenBSD: patch-v8_src_base_platform_platform-openbsd_cc,v 1.10 2022/01/06 06:24:06 robert Exp $
 
 Index: v8/src/base/platform/platform-openbsd.cc
 --- v8/src/base/platform/platform-openbsd.cc.orig
@@ -27,5 +27,5 @@ Index: v8/src/base/platform/platform-openbsd.cc
 +  return reinterpret_cast<uint8_t*>(base) + ss.ss_size;
 +}
  
- }  // namespace base
- }  // namespace v8
+ std::vector<OS::MemoryRange> OS::GetFreeMemoryRangesWithin(
+     OS::Address boundary_start, OS::Address boundary_end, size_t minimum_size,

@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_network_BUILD_gn,v 1.28 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-services_network_BUILD_gn,v 1.29 2022/01/06 06:24:05 robert Exp $
 
 Index: services/network/BUILD.gn
 --- services/network/BUILD.gn.orig
 +++ services/network/BUILD.gn
-@@ -301,7 +301,6 @@ if (is_linux || is_chromeos) {
+@@ -307,7 +307,6 @@ if (is_linux || is_chromeos) {
      ]
      deps = [
        "//base:base",

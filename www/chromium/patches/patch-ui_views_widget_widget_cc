@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_views_widget_widget_cc,v 1.5 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-ui_views_widget_widget_cc,v 1.6 2022/01/06 06:24:06 robert Exp $
 
 Index: ui/views/widget/widget.cc
 --- ui/views/widget/widget.cc.orig
@@ -12,7 +12,7 @@ Index: ui/views/widget/widget.cc
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
  
-@@ -1797,7 +1797,7 @@ const ui::NativeTheme* Widget::GetNativeTheme() const 
+@@ -1788,7 +1788,7 @@ const ui::NativeTheme* Widget::GetNativeTheme() const 
        parent_)
      return parent_->GetNativeTheme();
  

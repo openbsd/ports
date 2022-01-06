@@ -1,25 +1,25 @@
-$OpenBSD: patch-sandbox_policy_sandbox_h,v 1.4 2021/09/01 16:54:40 robert Exp $
+$OpenBSD: patch-sandbox_policy_sandbox_h,v 1.5 2022/01/06 06:24:05 robert Exp $
 
 Index: sandbox/policy/sandbox.h
 --- sandbox/policy/sandbox.h.orig
 +++ sandbox/policy/sandbox.h
-@@ -13,6 +13,10 @@
+@@ -12,6 +12,10 @@
  #include "sandbox/policy/linux/sandbox_linux.h"
  #endif
  
 +#if defined(OS_BSD)
 +#include "sandbox/policy/openbsd/sandbox_openbsd.h"
-+#endif
++#endif  
 +
  namespace sandbox {
- struct SandboxInterfaceInfo;
- }  // namespace sandbox
-@@ -30,7 +34,7 @@ namespace policy {
+ namespace mojom {
+ enum class Sandbox;
+@@ -32,7 +36,7 @@ namespace policy {
  
  class SANDBOX_POLICY_EXPORT Sandbox {
   public:
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
-   static bool Initialize(SandboxType sandbox_type,
+   static bool Initialize(sandbox::mojom::Sandbox sandbox_type,
                           SandboxLinux::PreSandboxHook hook,
                           const SandboxLinux::Options& options);

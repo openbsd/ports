@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_views_tabs_new_tab_button_cc,v 1.25 2021/09/01 16:54:39 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_tabs_new_tab_button_cc,v 1.26 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/browser/ui/views/tabs/new_tab_button.cc
 --- chrome/browser/ui/views/tabs/new_tab_button.cc.orig
 +++ chrome/browser/ui/views/tabs/new_tab_button.cc
-@@ -58,7 +58,7 @@ NewTabButton::NewTabButton(TabStrip* tab_strip, Presse
+@@ -59,7 +59,7 @@ NewTabButton::NewTabButton(TabStrip* tab_strip, Presse
    SetAnimateOnStateChange(true);
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

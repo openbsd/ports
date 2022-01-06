@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.56 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.57 2022/01/06 06:24:05 robert Exp $
 
 Index: content/renderer/render_thread_impl.cc
 --- content/renderer/render_thread_impl.cc.orig
 +++ content/renderer/render_thread_impl.cc
-@@ -187,7 +187,7 @@
+@@ -190,7 +190,7 @@
  
  #if defined(OS_MAC)
  #include <malloc/malloc.h>
@@ -12,7 +12,7 @@ Index: content/renderer/render_thread_impl.cc
  #include <malloc.h>
  #endif
  
-@@ -703,7 +703,7 @@ void RenderThreadImpl::Init() {
+@@ -723,7 +723,7 @@ void RenderThreadImpl::Init() {
                         compositor_thread_pipeline_.get()));
    }
  
@@ -21,7 +21,7 @@ Index: content/renderer/render_thread_impl.cc
    categorized_worker_pool_->SetBackgroundingCallback(
        main_thread_scheduler_->DefaultTaskRunner(),
        base::BindOnce(
-@@ -726,7 +726,7 @@ void RenderThreadImpl::Init() {
+@@ -746,7 +746,7 @@ void RenderThreadImpl::Init() {
    base::DiscardableMemoryAllocator::SetInstance(
        discardable_memory_allocator_.get());
  
@@ -30,12 +30,21 @@ Index: content/renderer/render_thread_impl.cc
    if (base::FeatureList::IsEnabled(
            blink::features::kBlinkCompositorUseDisplayThreadPriority)) {
      render_message_filter()->SetThreadPriority(
-@@ -1058,7 +1058,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
+@@ -1077,7 +1077,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
  
-   const bool enable_video_accelerator =
+   const bool enable_video_decode_accelerator =
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
        base::FeatureList::IsEnabled(media::kVaapiVideoDecodeLinux) &&
  #else
        !cmd_line->HasSwitch(switches::kDisableAcceleratedVideoDecode) &&
+@@ -1088,7 +1088,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
+ 
+   const bool enable_video_encode_accelerator =
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+       base::FeatureList::IsEnabled(media::kVaapiVideoEncodeLinux) &&
+ #else
+       !cmd_line->HasSwitch(switches::kDisableAcceleratedVideoEncode) &&

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_resources_settings_route_ts,v 1.1 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-chrome_browser_resources_settings_route_ts,v 1.2 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/browser/resources/settings/route.ts
 --- chrome/browser/resources/settings/route.ts.orig
 +++ chrome/browser/resources/settings/route.ts
-@@ -184,7 +184,7 @@ function createBrowserSettingsRoutes(): SettingsRoutes
+@@ -182,7 +182,7 @@ function createBrowserSettingsRoutes(): SettingsRoutes
  
      r.ACCESSIBILITY = r.ADVANCED.createSection('/accessibility', 'a11y');
  

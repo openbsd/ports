@@ -1,4 +1,4 @@
-$OpenBSD: patch-pdf_out_of_process_instance_cc,v 1.4 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-pdf_out_of_process_instance_cc,v 1.5 2022/01/06 06:24:05 robert Exp $
 
 Index: pdf/out_of_process_instance.cc
 --- pdf/out_of_process_instance.cc.orig
@@ -12,7 +12,7 @@ Index: pdf/out_of_process_instance.cc
  #include "pdf/ppapi_migration/pdfium_font_linux.h"
  #endif
  
-@@ -747,7 +747,7 @@ void OutOfProcessInstance::RotateCounterclockwise() {
+@@ -749,7 +749,7 @@ void OutOfProcessInstance::RotateCounterclockwise() {
  }
  
  void OutOfProcessInstance::SetLastPluginInstance() {

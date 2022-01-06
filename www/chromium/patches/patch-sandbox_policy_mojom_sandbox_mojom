@@ -1,9 +1,9 @@
-$OpenBSD: patch-sandbox_policy_mojom_sandbox_mojom,v 1.2 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-sandbox_policy_mojom_sandbox_mojom,v 1.3 2022/01/06 06:24:05 robert Exp $
 
 Index: sandbox/policy/mojom/sandbox.mojom
 --- sandbox/policy/mojom/sandbox.mojom.orig
 +++ sandbox/policy/mojom/sandbox.mojom
-@@ -45,7 +45,7 @@ enum Sandbox {
+@@ -60,7 +60,7 @@ enum Sandbox {
  
    // Equivalent to no sandbox on all non-Fuchsia platforms.
    // Minimally privileged sandbox on Fuchsia.

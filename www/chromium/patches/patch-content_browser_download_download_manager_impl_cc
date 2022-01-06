@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_download_download_manager_impl_cc,v 1.7 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-content_browser_download_download_manager_impl_cc,v 1.8 2022/01/06 06:24:05 robert Exp $
 
 Index: content/browser/download/download_manager_impl.cc
 --- content/browser/download/download_manager_impl.cc.orig
 +++ content/browser/download/download_manager_impl.cc
-@@ -83,7 +83,7 @@
+@@ -85,7 +85,7 @@
  #include "third_party/blink/public/common/loader/referrer_utils.h"
  #include "third_party/blink/public/common/loader/throttling_url_loader.h"
  
@@ -12,7 +12,7 @@ Index: content/browser/download/download_manager_impl.cc
  #include "base/nix/xdg_util.h"
  #endif
  
-@@ -229,7 +229,7 @@ class DownloadItemFactoryImpl : public download::Downl
+@@ -231,7 +231,7 @@ class DownloadItemFactoryImpl : public download::Downl
    }
  };
  
@@ -21,7 +21,7 @@ Index: content/browser/download/download_manager_impl.cc
  base::FilePath GetTemporaryDownloadDirectory() {
    std::unique_ptr<base::Environment> env(base::Environment::Create());
    return base::nix::GetXDGDirectory(env.get(), "XDG_DATA_HOME", ".local/share");
-@@ -569,7 +569,7 @@ bool DownloadManagerImpl::InterceptDownload(
+@@ -585,7 +585,7 @@ bool DownloadManagerImpl::InterceptDownload(
  
  base::FilePath DownloadManagerImpl::GetDefaultDownloadDirectory() {
    base::FilePath default_download_directory;

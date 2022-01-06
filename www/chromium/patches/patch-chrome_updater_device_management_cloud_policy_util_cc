@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_updater_device_management_cloud_policy_util_cc,v 1.2 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-chrome_updater_device_management_cloud_policy_util_cc,v 1.3 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/updater/device_management/cloud_policy_util.cc
 --- chrome/updater/device_management/cloud_policy_util.cc.orig

@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_perfetto_src_tracing_core_tracing_service_impl_cc,v 1.24 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-third_party_perfetto_src_tracing_core_tracing_service_impl_cc,v 1.25 2022/01/06 06:24:05 robert Exp $
 
 Index: third_party/perfetto/src/tracing/core/tracing_service_impl.cc
 --- third_party/perfetto/src/tracing/core/tracing_service_impl.cc.orig
 +++ third_party/perfetto/src/tracing/core/tracing_service_impl.cc
-@@ -2898,7 +2898,8 @@ bool TracingServiceImpl::SnapshotClocks(
+@@ -2913,7 +2913,8 @@ bool TracingServiceImpl::SnapshotClocks(
  
  #if !PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE) && \
      !PERFETTO_BUILDFLAG(PERFETTO_OS_WIN) &&   \

@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_viz_test_mock_display_client_h,v 1.9 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-components_viz_test_mock_display_client_h,v 1.10 2022/01/06 06:24:05 robert Exp $
 
 Index: components/viz/test/mock_display_client.h
 --- components/viz/test/mock_display_client.h.orig

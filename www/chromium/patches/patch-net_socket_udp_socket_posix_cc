@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_socket_udp_socket_posix_cc,v 1.30 2021/11/16 11:28:47 robert Exp $
+$OpenBSD: patch-net_socket_udp_socket_posix_cc,v 1.31 2022/01/06 06:24:05 robert Exp $
 
 Index: net/socket/udp_socket_posix.cc
 --- net/socket/udp_socket_posix.cc.orig

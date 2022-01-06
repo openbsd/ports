@@ -1,10 +1,10 @@
-$OpenBSD: patch-chrome_browser_ui_browser_dialogs_h,v 1.5 2021/11/16 11:28:46 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_browser_dialogs_h,v 1.6 2022/01/06 06:24:04 robert Exp $
 
 Index: chrome/browser/ui/browser_dialogs.h
 --- chrome/browser/ui/browser_dialogs.h.orig
 +++ chrome/browser/ui/browser_dialogs.h
-@@ -24,7 +24,7 @@
- #include "third_party/skia/include/core/SkColor.h"
+@@ -26,7 +26,7 @@
+ #include "ui/base/models/dialog_model.h"
  #include "ui/gfx/native_widget_types.h"
  
 -#if defined(OS_WIN) || defined(OS_MAC) || \
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/browser_dialogs.h
      (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
  #include "chrome/browser/web_applications/web_app_id.h"
  #endif
-@@ -78,7 +78,7 @@ class WebDialogDelegate;
+@@ -80,7 +80,7 @@ class WebDialogDelegate;
  struct SelectedFileInfo;
  }  // namespace ui
  
@@ -21,8 +21,8 @@ Index: chrome/browser/ui/browser_dialogs.h
      (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
  namespace web_app {
  struct UrlHandlerLaunchParams;
-@@ -187,7 +187,7 @@ void ShowWebAppProtocolHandlerIntentPicker(
-     WebAppProtocolHandlerAcceptanceCallback close_callback);
+@@ -207,7 +207,7 @@ void ShowWebAppFileLaunchDialog(const std::vector<base
+                                 WebAppLaunchAcceptanceCallback close_callback);
  #endif  // !defined(OS_ANDROID)
  
 -#if defined(OS_WIN) || defined(OS_MAC) || \
