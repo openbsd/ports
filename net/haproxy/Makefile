@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2021/12/08 01:38:22 danj Exp $
+# $OpenBSD: Makefile,v 1.89 2022/01/06 21:03:27 sthen Exp $
 
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
@@ -42,6 +42,13 @@ EXAMPLESDIR =	${PREFIX}/share/examples/haproxy
 .if ${MACHINE_ARCH} == "hppa"
 LDFLAGS +=		"-latomic"
 WANTLIB +=		atomic
+.endif
+
+# autodetect code tries to use libatomic on i386 which we don't have with clang;
+# in theory it shouldn't be needed on 586 and up.
+.if ${MACHINE_ARCH} == i386
+MAKE_FLAGS +=	USE_LIBATOMIC=
+CFLAGS +=	-march=i586
 .endif
 
 pre-install:
