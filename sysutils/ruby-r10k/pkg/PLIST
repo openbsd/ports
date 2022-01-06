@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2021/07/21 21:13:18 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.26 2022/01/06 21:24:07 sebastia Exp $
 ${GEM_BIN}/r10k${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -101,6 +101,7 @@ ${GEM_LIB}/gems/${DISTNAME}/integration/tests/Puppetfile/HTTP_PROXY_affects_forg
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/Puppetfile/HTTP_PROXY_affects_git_source.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/README.mkd
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/basic_functionality/
+${GEM_LIB}/gems/${DISTNAME}/integration/tests/basic_functionality/basic_deployment.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/basic_functionality/install_pe_only_module_with_puppetfile.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/basic_functionality/negative/
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/basic_functionality/negative/neg_deploy_with_invalid_r10k_yaml.rb
@@ -213,7 +214,9 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/environment/bare.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/environment/base.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/environment/git.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/environment/name.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/r10k/environment/plain.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/environment/svn.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/r10k/environment/tarball.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/environment/with_modules.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/errors/
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/errors.rb
@@ -254,11 +257,13 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/logging/terminaloutputter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/module/
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/module.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/module/base.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/r10k/module/definition.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/module/forge.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/module/git.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/module/local.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/module/metadata_file.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/module/svn.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/r10k/module/tarball.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/module_loader/
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/module_loader/puppetfile/
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/module_loader/puppetfile.rb
@@ -288,11 +293,14 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/svn/
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/svn.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/svn/remote.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/svn/working_dir.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/r10k/tarball.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/util/
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/util/attempt.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/util/basedir.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/r10k/util/cacheable.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/util/cleaner.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/util/commands.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/r10k/util/downloader.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/util/exec_env.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/util/license.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/r10k/util/platform.rb
@@ -329,6 +337,8 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/module/forge/bad_module/metadata.json
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/module/forge/eight_hundred/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/module/forge/eight_hundred/Modulefile
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/module/forge/eight_hundred/metadata.json
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/tarball/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/tarball/tarball.tar.gz
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/action/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/action/r10k.yaml
@@ -337,6 +347,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/action/r10k_creds.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/action/r10k_forge_auth.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/action/r10k_forge_auth_no_url.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/action/r10k_generate_types.yaml
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/action/r10k_logging.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/action/r10k_puppet_path.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/argument-error/
@@ -345,6 +356,8 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/default-branch-overrid
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/default-branch-override/Puppetfile
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/duplicate-module-error/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/duplicate-module-error/Puppetfile
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/forge-override/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/forge-override/Puppetfile
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/invalid-syntax/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/invalid-syntax/Puppetfile
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/load-error/
@@ -355,16 +368,23 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/valid-forge-with-versi
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/valid-forge-with-version/Puppetfile
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/valid-forge-without-version/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/valid-forge-without-version/Puppetfile
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/various-modules/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/various-modules/Puppetfile
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/various-modules/Puppetfile.new
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/expected_1
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/managed_subdir_1/
-${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/managed_subdir_1/managed_subdir_2/
-${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/managed_subdir_1/managed_subdir_2/ignored_1
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/managed_subdir_1/managed_symlink_file
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/managed_subdir_1/subdir_allowlisted_2/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/managed_subdir_1/subdir_allowlisted_2/ignored_1
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/managed_subdir_1/subdir_expected_1
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/managed_subdir_1/subdir_unmanaged_1
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/managed_subdir_1/unmanaged_symlink_dir
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/managed_symlink_dir
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/unmanaged_1
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/unmanaged_symlink_file
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_two/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_two/.hidden/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_two/.hidden/unmanaged_3
@@ -377,6 +397,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/integration/
 ${GEM_LIB}/gems/${DISTNAME}/spec/integration/git/
 ${GEM_LIB}/gems/${DISTNAME}/spec/integration/git/rugged/
 ${GEM_LIB}/gems/${DISTNAME}/spec/integration/git/rugged/bare_repository_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/integration/git/rugged/cache_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/integration/git/rugged/thin_repository_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/integration/git/rugged/working_repository_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/integration/git/shellgit/
@@ -384,6 +405,8 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/integration/git/shellgit/bare_repository_spec.r
 ${GEM_LIB}/gems/${DISTNAME}/spec/integration/git/shellgit/thin_repository_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/integration/git/shellgit/working_repository_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/integration/git/stateful_repository_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/integration/util/
+${GEM_LIB}/gems/${DISTNAME}/spec/integration/util/purageable_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/matchers/
 ${GEM_LIB}/gems/${DISTNAME}/spec/matchers/exit_with.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/matchers/match_realpath.rb
@@ -394,6 +417,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/r10k-mocks/mock_env.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/r10k-mocks/mock_source.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/shared-contexts/
 ${GEM_LIB}/gems/${DISTNAME}/spec/shared-contexts/git-fixtures.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/shared-contexts/tarball.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/shared-examples/
 ${GEM_LIB}/gems/${DISTNAME}/spec/shared-examples/deploy-actions.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/shared-examples/git/
@@ -426,10 +450,13 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/unit/deployment/
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/deployment/config_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/deployment_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/environment/
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/environment/bare_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/environment/base_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/environment/git_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/environment/name_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/environment/plain_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/environment/svn_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/environment/tarball_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/environment/with_modules_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/errors/
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/errors/formatting_spec.rb
@@ -458,6 +485,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/unit/module/forge_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/module/git_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/module/metadata_file_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/module/svn_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/module/tarball_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/module_loader/
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/module_loader/puppetfile_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/module_spec.rb
@@ -483,9 +511,12 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/unit/source_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/svn/
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/svn/remote_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/svn/working_dir_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/tarball_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/util/
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/util/attempt_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/util/cacheable_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/util/commands_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/util/downloader_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/util/exec_env_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/util/purgeable_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/util/setopts_spec.rb
