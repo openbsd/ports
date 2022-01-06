@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2174 2022/01/03 10:33:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.2175 2022/01/06 19:06:17 jeremy Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1655,6 +1655,7 @@
      SUBDIR += ruby-fast_gettext
      SUBDIR += ruby-ffi,ruby27
      SUBDIR += ruby-ffi,ruby30
+     SUBDIR += ruby-ffi,ruby31
      SUBDIR += ruby-ffi-compiler
      SUBDIR += ruby-flexmock
      SUBDIR += ruby-get_process_mem
@@ -1669,8 +1670,10 @@
      SUBDIR += ruby-json_pure
      SUBDIR += ruby-kgio,ruby27
      SUBDIR += ruby-kgio,ruby30
+     SUBDIR += ruby-kgio,ruby31
      SUBDIR += ruby-libv8,ruby27
      SUBDIR += ruby-libv8,ruby30
+     SUBDIR += ruby-libv8,ruby31
      SUBDIR += ruby-locale
      SUBDIR += ruby-log4r
      SUBDIR += ruby-metaclass
@@ -1678,10 +1681,13 @@
      SUBDIR += ruby-mocha
      SUBDIR += ruby-narray,ruby27
      SUBDIR += ruby-narray,ruby30
+     SUBDIR += ruby-narray,ruby31
      SUBDIR += ruby-ncurses,ruby27
      SUBDIR += ruby-ncurses,ruby30
+     SUBDIR += ruby-ncurses,ruby31
      SUBDIR += ruby-nio4r,ruby27
      SUBDIR += ruby-nio4r,ruby30
+     SUBDIR += ruby-nio4r,ruby31
      SUBDIR += ruby-ole
      SUBDIR += ruby-open4
      SUBDIR += ruby-opt_parse_validator
@@ -1689,11 +1695,13 @@
      SUBDIR += ruby-polyglot
      SUBDIR += ruby-prof,ruby27
      SUBDIR += ruby-prof,ruby30
+     SUBDIR += ruby-prof,ruby31
      SUBDIR += ruby-puppet_forge
      SUBDIR += ruby-rake-compiler
      SUBDIR += ruby-rake-remote_task
      SUBDIR += ruby-rb-gsl,ruby27
      SUBDIR += ruby-rb-gsl,ruby30
+     SUBDIR += ruby-rb-gsl,ruby31
      SUBDIR += ruby-ref
      SUBDIR += ruby-regexp_parser
      SUBDIR += ruby-rgen
@@ -1709,10 +1717,12 @@
      SUBDIR += ruby-shims
      SUBDIR += ruby-subset_sum,ruby27
      SUBDIR += ruby-subset_sum,ruby30
+     SUBDIR += ruby-subset_sum,ruby31
      SUBDIR += ruby-sync
      SUBDIR += ruby-systemu
      SUBDIR += ruby-therubyracer,ruby27
      SUBDIR += ruby-therubyracer,ruby30
+     SUBDIR += ruby-therubyracer,ruby31
      SUBDIR += ruby-thor
      SUBDIR += ruby-thread_safe
      SUBDIR += ruby-tilt
@@ -1723,6 +1733,7 @@
      SUBDIR += ruby-xdg
      SUBDIR += ruby-yajl,ruby27
      SUBDIR += ruby-yajl,ruby30
+     SUBDIR += ruby-yajl,ruby31
      SUBDIR += ruby-zeitwerk
      SUBDIR += ruby-zentest
      SUBDIR += samurai

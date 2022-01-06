@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.445 2021/12/19 00:40:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.446 2022/01/06 19:06:17 jeremy Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -192,32 +192,43 @@
      SUBDIR += riak
      SUBDIR += ruby-amalgalite,ruby27
      SUBDIR += ruby-amalgalite,ruby30
+     SUBDIR += ruby-amalgalite,ruby31
      SUBDIR += ruby-hiera-eyaml,ruby27
      SUBDIR += ruby-hiera-eyaml,ruby30
+     SUBDIR += ruby-hiera-eyaml,ruby31
      SUBDIR += ruby-hiera-eyaml-gpg,ruby27
      SUBDIR += ruby-hiera-eyaml-gpg,ruby30
+     SUBDIR += ruby-hiera-eyaml-gpg,ruby31
      SUBDIR += ruby-hiera-file,ruby27
      SUBDIR += ruby-hiera-file,ruby30
+     SUBDIR += ruby-hiera-file,ruby31
      SUBDIR += ruby-hiera3
      SUBDIR += ruby-kirbybase
      SUBDIR += ruby-ldap,ruby27
      SUBDIR += ruby-ldap,ruby30
+     SUBDIR += ruby-ldap,ruby31
      SUBDIR += ruby-mysql,ruby27
      SUBDIR += ruby-mysql,ruby30
+     SUBDIR += ruby-mysql,ruby31
      SUBDIR += ruby-mysql2,ruby27
      SUBDIR += ruby-mysql2,ruby30
+     SUBDIR += ruby-mysql2,ruby31
      SUBDIR += ruby-pg,ruby27
      SUBDIR += ruby-pg,ruby30
+     SUBDIR += ruby-pg,ruby31
      SUBDIR += ruby-redis
      SUBDIR += ruby-redis-namespace
      SUBDIR += ruby-resque
      SUBDIR += ruby-sequel
      SUBDIR += ruby-sequel_pg,ruby27
      SUBDIR += ruby-sequel_pg,ruby30
+     SUBDIR += ruby-sequel_pg,ruby31
      SUBDIR += ruby-sqlite3,ruby27
      SUBDIR += ruby-sqlite3,ruby30
+     SUBDIR += ruby-sqlite3,ruby31
      SUBDIR += ruby-tiny_tds,ruby27
      SUBDIR += ruby-tiny_tds,ruby30
+     SUBDIR += ruby-tiny_tds,ruby31
      SUBDIR += sharedance
      SUBDIR += sqlbox
      SUBDIR += sqlcipher

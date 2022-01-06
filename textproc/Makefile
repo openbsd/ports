@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.704 2021/12/19 00:40:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.705 2022/01/06 19:06:18 jeremy Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -467,13 +467,17 @@
      SUBDIR += ruby-erubis
      SUBDIR += ruby-fast-stemmer,ruby27
      SUBDIR += ruby-fast-stemmer,ruby30
+     SUBDIR += ruby-fast-stemmer,ruby31
      SUBDIR += ruby-fast_xs,ruby27
      SUBDIR += ruby-fast_xs,ruby30
+     SUBDIR += ruby-fast_xs,ruby31
      SUBDIR += ruby-haml
      SUBDIR += ruby-hpricot,ruby27
      SUBDIR += ruby-hpricot,ruby30
+     SUBDIR += ruby-hpricot,ruby31
      SUBDIR += ruby-hyperestraier,ruby27
      SUBDIR += ruby-hyperestraier,ruby30
+     SUBDIR += ruby-hyperestraier,ruby31
      SUBDIR += ruby-icalendar
      SUBDIR += ruby-kramdown
      SUBDIR += ruby-liquid
@@ -481,13 +485,17 @@
      SUBDIR += ruby-mustache
      SUBDIR += ruby-nokogiri,ruby27
      SUBDIR += ruby-nokogiri,ruby30
+     SUBDIR += ruby-nokogiri,ruby31
      SUBDIR += ruby-pygments.rb
      SUBDIR += ruby-rdiscount,ruby27
      SUBDIR += ruby-rdiscount,ruby30
+     SUBDIR += ruby-rdiscount,ruby31
      SUBDIR += ruby-redcarpet,ruby27
      SUBDIR += ruby-redcarpet,ruby30
+     SUBDIR += ruby-redcarpet,ruby31
      SUBDIR += ruby-redcloth,ruby27
      SUBDIR += ruby-redcloth,ruby30
+     SUBDIR += ruby-redcloth,ruby31
      SUBDIR += ruby-rexical
      SUBDIR += ruby-ronn
      SUBDIR += ruby-rouge
