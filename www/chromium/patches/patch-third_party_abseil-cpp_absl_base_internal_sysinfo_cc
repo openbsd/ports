@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_abseil-cpp_absl_base_internal_sysinfo_cc,v 1.1 2020/10/22 13:52:55 robert Exp $
+$OpenBSD: patch-third_party_abseil-cpp_absl_base_internal_sysinfo_cc,v 1.2 2022/01/06 14:56:06 robert Exp $
 
 Index: third_party/abseil-cpp/absl/base/internal/sysinfo.cc
 --- third_party/abseil-cpp/absl/base/internal/sysinfo.cc.orig
@@ -12,3 +12,15 @@ Index: third_party/abseil-cpp/absl/base/internal/sysinfo.cc
  #include <sys/sysctl.h>
  #endif
  
+@@ -308,9 +308,11 @@ static double GetNominalCPUFrequency() {
+   // a new mode (turbo mode). Essentially, those frequencies cannot
+   // always be relied upon. The same reasons apply to /proc/cpuinfo as
+   // well.
++#if !defined(OS_BSD) // pledge violation
+   if (ReadLongFromFile("/sys/devices/system/cpu/cpu0/tsc_freq_khz", &freq)) {
+     return freq * 1e3;  // Value is kHz.
+   }
++#endif
+ 
+ #if defined(ABSL_INTERNAL_UNSCALED_CYCLECLOCK_FREQUENCY_IS_CPU_FREQUENCY)
+   // On these platforms, the TSC frequency is the nominal CPU
