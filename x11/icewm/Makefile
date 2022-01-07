@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.82 2021/10/13 06:14:47 bket Exp $
+# $OpenBSD: Makefile,v 1.83 2022/01/07 21:54:16 op Exp $
 
 # unconditionally uses machine/apmvar.h and related structures/defines
 ONLY_FOR_ARCHS=	${APM_ARCHS}
 
-V=		2.8.0
+V=		2.9.3
 COMMENT=	small and fast window manager
 DISTNAME=	icewm-${V}
 EXTRACT_SUFX=	.tar.lz
@@ -14,8 +14,8 @@ HOMEPAGE=	https://ice-wm.org/
 # LGPLv2 only
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} FLAC ICE Imlib2 SM X11 Xcomposite
-WANTLIB += Xdamage Xext Xfixes Xft Xinerama Xpm Xrandr Xrender
+WANTLIB += ${COMPILER_LIBCXX} FLAC ICE Imlib2 SM X11 Xau Xcomposite
+WANTLIB += Xdamage Xdmcp Xext Xfixes Xft Xinerama Xpm Xrandr Xrender
 WANTLIB += ao c cairo cairo-gobject expat ffi fontconfig freetype
 WANTLIB += fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 harfbuzz iconv intl jpeg lzma m ogg opus

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2020/12/29 10:47:01 cwen Exp $
+@comment $OpenBSD: PLIST,v 1.25 2022/01/07 21:54:16 op Exp $
 @bin bin/icehelp
 @bin bin/icesh
 @bin bin/icesound
@@ -66,6 +66,7 @@ share/icewm/icons/app_16x16.xpm
 share/icewm/icons/app_32x32.xpm
 share/icewm/icons/bomb_16x16.xpm
 share/icewm/icons/bomb_32x32.xpm
+share/icewm/icons/cancel-logout_16x16.xpm
 share/icewm/icons/communicator-abook_16x16.xpm
 share/icewm/icons/communicator-abook_32x32.xpm
 share/icewm/icons/communicator-browser_16x16.xpm
@@ -139,6 +140,15 @@ share/icewm/icons/suspend_16x16.xpm
 share/icewm/icons/suspend_32x32.xpm
 share/icewm/icons/themes_16x16.xpm
 share/icewm/icons/themes_32x32.xpm
+share/icewm/icons/tilebottom_48x48.png
+share/icewm/icons/tilebottomleft_48x48.png
+share/icewm/icons/tilebottomright_48x48.png
+share/icewm/icons/tilecenter_48x48.png
+share/icewm/icons/tileleft_48x48.png
+share/icewm/icons/tileright_48x48.png
+share/icewm/icons/tiletop_48x48.png
+share/icewm/icons/tiletopleft_48x48.png
+share/icewm/icons/tiletopright_48x48.png
 share/icewm/icons/vim_16x16.xpm
 share/icewm/icons/vim_32x32.xpm
 share/icewm/icons/vim_48x48.xpm
