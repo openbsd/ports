@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:02:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2022/01/07 11:27:26 sthen Exp $
 
 COMMENT =	library and CLI tool (ykman) for configuring a YubiKey
 
@@ -7,7 +7,7 @@ COMMENT =	library and CLI tool (ykman) for configuring a YubiKey
 PORTROACH =	site:https://github.com/Yubico/yubikey-manager/releases/
 
 MODPY_EGG_VERSION =	3.1.2
-REVISION =	1
+REVISION =	2
 
 DISTNAME =	yubikey-manager-${MODPY_EGG_VERSION}
 YK_PROJECT =	yubikey-manager
@@ -33,7 +33,7 @@ RUN_DEPENDS =	devel/py-click${MODPY_FLAVOR} \
 		devel/pyusb${MODPY_FLAVOR} \
 		security/pcsc-lite \
 		security/py-cryptography${MODPY_FLAVOR} \
-		security/py-fido2${MODPY_FLAVOR} \
+		security/py-fido2${MODPY_FLAVOR}<=0.9 \
 		security/py-openssl${MODPY_FLAVOR} \
 		security/py-pyscard${MODPY_FLAVOR}
 
