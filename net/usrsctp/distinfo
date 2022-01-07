@@ -1,2 +1,6 @@
+SHA256 (pkgconfig-register-pthread-5f3540a.patch) = uFEDda6C2CoxNJPVC3lh2/lu0BqVhQHh7hBi2ZMHKSc=
 SHA256 (usrsctp-0.9.5.0.tar.gz) = JgEHyvMYZQpXqMqlk1UOObymlD6T+XDIDWwX5Z1izZI=
+SHA256 (usrsctplib-link-pthread-40e35a7.patch) = uhF0cmh7v14iOXBPSBjlrd1aiE5YmkipClNBgT9/dEk=
+SIZE (pkgconfig-register-pthread-5f3540a.patch) = 779
 SIZE (usrsctp-0.9.5.0.tar.gz) = 771701
+SIZE (usrsctplib-link-pthread-40e35a7.patch) = 1583
