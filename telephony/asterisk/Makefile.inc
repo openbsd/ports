@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2021/12/12 13:39:09 tb Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2022/01/07 20:06:26 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
@@ -351,11 +351,13 @@ post-install:
 		${PREFIX}/share/doc/asterisk
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}/basic-pbx
 	${INSTALL_DATA} ${WRKSRC}/configs/basic-pbx/* ${EXAMPLEDIR}/basic-pbx
+.if ${SHORTVER} != 19
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}/openbsd
 .for i in ${EXAMPLEFILES}
 	@${SUBST_CMD} -c -m 444 ${FILESDIR}/$i.sample \
 	    ${EXAMPLEDIR}/openbsd/$i.sample
 .endfor
+.endif
 	${INSTALL_DATA} ${WRKSRC}/contrib/scripts/asterisk.ldif \
 	    ${WRKSRC}/contrib/scripts/asterisk.ldap-schema \
 	    ${PREFIX}/share/examples/asterisk/

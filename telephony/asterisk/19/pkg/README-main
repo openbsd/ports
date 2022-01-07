@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.1 2021/11/02 12:47:10 sthen Exp $
+$OpenBSD: README-main,v 1.2 2022/01/07 20:06:27 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -15,12 +15,6 @@ but rather large, and awkward to use as a base for your own configuration.
 
 ${PREFIX}/share/examples/asterisk/basic-pbx - an Asterisk-provided example
 of a basic pbx implementation for a fictitious company.
-
-${PREFIX}/share/examples/asterisk/openbsd, and installed by default to
-${SYSCONFDIR}/asterisk - an old bare-bones setup provided with the OpenBSD package,
-basic voicemail + music-on-hold + 2 phones using the legacy chan_sip module.
-basic-pbx is probably now a better starting point, however this is still
-kept for simplicity for now.
 
 Asterisk logs to /var/log/asterisk/messages by default; log rotation
 can be handled by adding a line like the following to /etc/newsyslog.conf:

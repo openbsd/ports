@@ -1,0 +1,21 @@
+$OpenBSD: patch-configs_basic-pbx_asterisk_conf,v 1.1 2022/01/07 20:06:26 sthen Exp $
+
+Index: configs/basic-pbx/asterisk.conf
+--- configs/basic-pbx/asterisk.conf.orig
++++ configs/basic-pbx/asterisk.conf
+@@ -5,9 +5,10 @@
+ ;verbose = 5
+ ;debug = 2
+ 
+-; User and group to run asterisk as. NOTE: This will require changes to
+-; directory and device permissions.
+-;runuser = asterisk		; The user to run as. The default is root.
+-;rungroup = asterisk		; The group to run as. The default is root
+-
+ ;defaultlanguage = es
++
++[files]
++astctlpermissions = 0660
++astctlowner = _asterisk
++astctlgroup = wheel
++astctl = asterisk.ctl
