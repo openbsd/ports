@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.74 2022/01/05 10:45:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2022/01/07 10:36:03 rsadowski Exp $
 
 COMMENT=		digital camera library
 
 VERSION=		2.5.28
 DISTNAME=		libgphoto2-${VERSION}
 PKGNAME=		libgphoto-${VERSION}
+REVISION=		0
 
 GPHOTO2_PORT_API=	0.12.0
 SUBST_VARS=		GPHOTO2_PORT_API VERSION

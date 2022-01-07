@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2022/01/05 10:45:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.29 2022/01/07 10:36:03 rsadowski Exp $
 bin/gphoto2-config
 bin/gphoto2-port-config
 include/gphoto2/
@@ -149,12 +149,12 @@ share/doc/libgphoto2/libgphoto2-api.html/compiletime-assert_8h.html
 share/doc/libgphoto2/libgphoto2-api.html/compiletime-assert_8h.js
 share/doc/libgphoto2/libgphoto2-api.html/compiletime-assert_8h_source.html
 share/doc/libgphoto2/libgphoto2-api.html/deprecated.html
-share/doc/libgphoto2/libgphoto2-api.html/dir_000001_000002.html
-share/doc/libgphoto2/libgphoto2-api.html/dir_000001_000003.html
-share/doc/libgphoto2/libgphoto2-api.html/dir_000002_000004.html
-share/doc/libgphoto2/libgphoto2-api.html/dir_000003_000002.html
+share/doc/libgphoto2/libgphoto2-api.html/dir_000001_000004.html
+share/doc/libgphoto2/libgphoto2-api.html/dir_000003_000001.html
 share/doc/libgphoto2/libgphoto2-api.html/dir_000003_000004.html
-share/doc/libgphoto2/libgphoto2-api.html/dir_000005_000006.html
+share/doc/libgphoto2/libgphoto2-api.html/dir_000005_000002.html
+share/doc/libgphoto2/libgphoto2-api.html/dir_000006_000001.html
+share/doc/libgphoto2/libgphoto2-api.html/dir_000006_000003.html
 share/doc/libgphoto2/libgphoto2-api.html/dir_0fd050eb813c55dff11104457b8b7bf9.html
 share/doc/libgphoto2/libgphoto2-api.html/dir_0fd050eb813c55dff11104457b8b7bf9.js
 share/doc/libgphoto2/libgphoto2-api.html/dir_0fd050eb813c55dff11104457b8b7bf9_dep.map
@@ -187,6 +187,9 @@ share/doc/libgphoto2/libgphoto2-api.html/dir_df723b3f25cfe80b0e773fc78a5873a4_de
 share/doc/libgphoto2/libgphoto2-api.html/dir_df723b3f25cfe80b0e773fc78a5873a4_dep.png
 share/doc/libgphoto2/libgphoto2-api.html/dir_ff2570e7e5c377838c8e56ea8c3b24f7.html
 share/doc/libgphoto2/libgphoto2-api.html/dir_ff2570e7e5c377838c8e56ea8c3b24f7.js
+share/doc/libgphoto2/libgphoto2-api.html/dir_ff2570e7e5c377838c8e56ea8c3b24f7_dep.map
+share/doc/libgphoto2/libgphoto2-api.html/dir_ff2570e7e5c377838c8e56ea8c3b24f7_dep.md5
+share/doc/libgphoto2/libgphoto2-api.html/dir_ff2570e7e5c377838c8e56ea8c3b24f7_dep.png
 share/doc/libgphoto2/libgphoto2-api.html/doc.png
 share/doc/libgphoto2/libgphoto2-api.html/doxygen.css
 share/doc/libgphoto2/libgphoto2-api.html/doxygen.svg
