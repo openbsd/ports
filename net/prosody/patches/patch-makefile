@@ -1,8 +1,6 @@
-$OpenBSD: patch-makefile,v 1.2 2021/08/23 05:38:49 rsadowski Exp $
+$OpenBSD: patch-makefile,v 1.3 2022/01/07 20:26:38 rsadowski Exp $
 
-- First hunk: fix directories
-- Second hunk: fix `prosody.version` target to stop reporting prosody
-  version as `unknown`
+fix directories
 
 Index: makefile
 --- makefile.orig
@@ -22,25 +20,3 @@ Index: makefile
  
  INSTALLEDSOURCE = $(LIBDIR)/prosody
  INSTALLEDCONFIG = $(SYSCONFDIR)
-@@ -90,12 +90,12 @@ prosody.cfg.lua.install: prosody.cfg.lua.dist
- 	sed 's|certs/|$(INSTALLEDCONFIG)/certs/|' prosody.cfg.lua.dist > $@
- 
- prosody.version:
--	test -f prosody.release && \
--		cp prosody.release $@ || \
--		test -f .hg_archival.txt && \
--		sed -n 's/^node: \(............\).*/\1/p' .hg_archival.txt > $@ || \
--		test -f .hg/dirstate && \
--		hexdump -n6 -e'6/1 "%02x"' .hg/dirstate > $@ || \
--		echo unknown > $@
--
--
-+	if [ -f prosody.release ]; then \
-+		cp prosody.release $@; \
-+	elif [ -f .hg_archival.txt ]; then \
-+		sed -n 's/^node: \(............\).*/\1/p' .hg_archival.txt > $@; \
-+	elif [ -f .hg/dirstate ]; then \
-+		hexdump -n6 -e'6/1 "%02x"' .hg/dirstate > $@; \
-+	else \
-+		echo unknown > $@; \
-+	fi
