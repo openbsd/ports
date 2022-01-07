@@ -1,16 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.14 2021/11/17 06:52:06 tb Exp $
+@comment $OpenBSD: PLIST,v 1.15 2022/01/07 10:03:43 sthen Exp $
 @bin bin/zipcmp
 @bin bin/zipmerge
 @bin bin/ziptool
 include/zip.h
 include/zipconf.h
-@comment lib/cmake/libzip/libzip-version.cmake
-@comment lib/cmake/
-@comment lib/cmake/libzip/
+lib/cmake/
+lib/cmake/libzip/
 lib/cmake/libzip/libzip-config-version.cmake
-@comment lib/cmake/libzip/libzip-config.cmake
-@comment lib/cmake/libzip/libzip-targets${MODCMAKE_BUILD_SUFFIX}
-@comment lib/cmake/libzip/libzip-targets.cmake
+lib/cmake/libzip/libzip-config.cmake
+lib/cmake/libzip/libzip-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/libzip/libzip-targets.cmake
 @lib lib/libzip.so.${LIBzip_VERSION}
 lib/pkgconfig/libzip.pc
 @man man/man1/zipcmp.1
