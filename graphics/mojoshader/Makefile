@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2021/12/12 04:41:03 thfr Exp $
+# $OpenBSD: Makefile,v 1.13 2022/01/07 16:39:55 kmos Exp $
 
 COMMENT =	library to move Direct3D shader calls to OpenGL
 
@@ -17,6 +17,9 @@ HOMEPAGE =	https://icculus.org/mojoshader/
 
 # zlib
 PERMIT_PACKAGE =	Yes
+
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS =	c
 
 WANTLIB += m
 
