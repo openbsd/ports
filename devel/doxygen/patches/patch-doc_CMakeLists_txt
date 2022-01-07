@@ -1,4 +1,4 @@
-$OpenBSD: patch-doc_CMakeLists_txt,v 1.9 2021/11/06 18:34:50 rsadowski Exp $
+$OpenBSD: patch-doc_CMakeLists_txt,v 1.10 2022/01/07 10:35:58 rsadowski Exp $
 
 - only manual pages
 - remove doxywizard.1, see devel/doxygen-gui
@@ -17,7 +17,7 @@ Index: doc/CMakeLists.txt
  include(GNUInstallDirs)
  
  if (doxygen_BINARY_DIR)
-@@ -102,7 +99,6 @@ set(DOC_FILES
+@@ -103,7 +100,6 @@ set(DOC_FILES
          maintainers.txt
          translator.py
          smile.png
@@ -25,7 +25,7 @@ Index: doc/CMakeLists.txt
  )
  
  set(DOC_FILES_IMAGES
-@@ -161,9 +157,6 @@ endforeach()
+@@ -162,9 +158,6 @@ endforeach()
  configure_file(${PROJECT_SOURCE_DIR}/doc/manual.sty         ${PROJECT_BINARY_DIR}/doc/manual.sty)
  configure_file(${PROJECT_SOURCE_DIR}/doc/doxygen_manual.tex ${PROJECT_BINARY_DIR}/doc/doxygen_manual.tex)
  configure_file(${PROJECT_SOURCE_DIR}/doc/doxygen.1          ${PROJECT_BINARY_DIR}/man/doxygen.1)
@@ -35,7 +35,7 @@ Index: doc/CMakeLists.txt
  
  # doc/language.doc (see tag Doxyfile:INPUT)
  add_custom_command(
-@@ -183,37 +176,7 @@ add_custom_command(
+@@ -184,37 +177,7 @@ add_custom_command(
  )
  set_source_files_properties(config.doc PROPERTIES GENERATED 1)
  ################################################################################
@@ -73,7 +73,7 @@ Index: doc/CMakeLists.txt
  # return status of ${HTML_HELP_COMPILER} is not correct, so we have to do a trick with an "or" statement
  # output is redirected to "nul" as we are on windows no problem
  if (build_doc_chm)
-@@ -241,22 +204,9 @@ endif ()
+@@ -242,22 +205,9 @@ endif ()
  ################################################################################
  install(FILES
          "${PROJECT_BINARY_DIR}/man/doxygen.1"
@@ -96,7 +96,7 @@ Index: doc/CMakeLists.txt
  if (build_doc_chm)
  install(CODE "if(NOT EXISTS \"${PROJECT_BINARY_DIR}/chm/doxygen_manual.chm\")
      message(FATAL_ERROR \"\nTerminating:\n    CHM documentation has not been generated, \n    create CHM documentation by using the 'docs_chm' target followed by an 'install'\n\")
-@@ -268,8 +218,3 @@ install(FILES
+@@ -269,8 +219,3 @@ install(FILES
          DESTINATION "${CMAKE_INSTALL_PREFIX}/${DOC_INSTALL_DIR}"
  )
  endif ()
