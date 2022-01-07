@@ -3,6 +3,7 @@ MA-0,02BF,Microsoft WLBS (last four octets are IP address),http://www.microsoft.
 MA-0,525400,QEMU,
 MA-0,B0C420,Bochs,
 MA-0,FEE1BAD,OpenBSD randomly generated,ether_fakeaddr()
-MA-0,00005E0001,VRRP/CARP (last octet is VHID),
+MA-0,00005E0001,CARP or IPv4 VRRPv2/v3 (last octet is VHID/VRID)
+MA-0,00005E0002,IPv6 VRRPv3 (last octet is VRID),
 MA-0,00000C07AC,HSRP (last octet is group number),
 MA-0,FFFFFFFFFFFF,Broadcast,
