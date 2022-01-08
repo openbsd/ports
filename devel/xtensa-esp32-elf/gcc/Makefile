@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/18 15:54:27 tracey Exp $
+# $OpenBSD: Makefile,v 1.6 2022/01/08 16:58:33 tracey Exp $
 
 COMMENT =	gcc for ${CONFIG} cross-development
 
@@ -30,9 +30,7 @@ PATCH_LIST =	patch-* vecstep-*
 MODULES =		lang/python
 
 BUILD_DEPENDS +=	devel/${CONFIG}/binutils \
-			devel/${CONFIG}/newlib \
-			lang/gawk \
-			textproc/gsed
+			devel/${CONFIG}/newlib
 RUN_DEPENDS =		devel/${CONFIG}/binutils \
 			devel/${CONFIG}/newlib
 LIB_DEPENDS =		devel/gmp \

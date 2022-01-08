@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/18 15:54:27 tracey Exp $
+# $OpenBSD: Makefile,v 1.8 2022/01/08 16:58:33 tracey Exp $
 
 COMMENT =	bootstrap compiler for ${CONFIG} cross-development
 
@@ -18,9 +18,7 @@ SUBST_VARS +=	V
 PATCH_LIST =	patch-* vecstep-*
 .endif
 
-BUILD_DEPENDS +=	devel/${CONFIG}/binutils \
-			lang/gawk \
-			textproc/gsed
+BUILD_DEPENDS +=	devel/${CONFIG}/binutils
 LIB_DEPENDS =		devel/gmp \
 			devel/mpfr \
 			devel/libmpc \
