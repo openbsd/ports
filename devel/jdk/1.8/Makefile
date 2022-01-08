@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2021/12/22 11:05:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.68 2022/01/08 22:41:06 kurt Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 aarch64 sparc64
 USE_WXNEEDED=	Yes
@@ -13,13 +13,13 @@ V=		${BASE_VER}.${UPDATE_VER}.${BUILD_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${V}
 PKGSTEM=	jdk-${BASE_VER}
 EPOCH=		0
+REVISION=	1
 
 DIST_SUBDIR=	jdk
 DISTNAME=	jdk8u${UPDATE_VER}-${BUILD_VER}.${BSD_PORT_REL}
 BOOTJDK_DATE=	20210615
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 WRKDIST=	${WRKDIR}/jdk8u-jdk8u${UPDATE_VER}-${BUILD_VER}.${BSD_PORT_REL}
-REVISION=	0
 
 CATEGORIES=	devel/jdk java
 
@@ -31,8 +31,6 @@ HOMEPAGE=	https://openjdk.java.net/
 MASTER_SITES=	https://github.com/battleblow/jdk8u/archive/
 MASTER_SITES1=	https://spacehopper.org/mirrors/ \
 		http://www.intricatesoftware.com/distfiles/
-MASTER_SITES2=	${MASTER_SITE_APACHE:=ant/binaries/} \
-		https://archive.apache.org/dist/ant/binaries/
 
 MAINTAINER=	Kurt Miller <kurt@openbsd.org>
 
@@ -43,13 +41,10 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 NO_TEST=	Yes
 
-APACHE_ANT_V=	1.9.7
-APACHE_ANT=	apache-ant-${APACHE_ANT_V}-bin.tar.gz
 SUPDISTFILES+=	openjdk-jdk8u-bootjdk-i386-${BOOTJDK_DATE}.tar.gz:1  \
 		openjdk-jdk8u-bootjdk-amd64-${BOOTJDK_DATE}.tar.gz:1 \
 		openjdk-jdk8u-bootjdk-aarch64-${BOOTJDK_DATE}.tar.gz:1 \
-		openjdk-jdk8u-bootjdk-sparc64-${BOOTJDK_DATE}.tar.gz:1 \
-		${APACHE_ANT}:2
+		openjdk-jdk8u-bootjdk-sparc64-${BOOTJDK_DATE}.tar.gz:1
 
 COMPILER=	base-clang base-gcc
 
@@ -60,8 +55,7 @@ INSTALLED!= (pkg_info -qe "jdk->=1.8.0.00v0,<1.9v0" && echo yes) || echo no
 .  if ${INSTALLED:L} != "yes"
 ERRORS += "Fatal: This flavor requires an installed 1.8.0.00v0 or greater jdk package"
 .  endif
-BUILD_DEPENDS+=	jdk->=1.8.0.00v0,<1.9v0:devel/jdk/1.8 \
-		devel/apache-ant>=1.8.2
+BUILD_DEPENDS+=	jdk->=1.8.0.00v0,<1.9v0:devel/jdk/1.8
 BOOT_JDK=	${LOCALBASE}/jdk-1.8.0
 .else
 BOOT_JDK_DIST=	openjdk-jdk8u-bootjdk-${MACHINE_ARCH}-${BOOTJDK_DATE}.tar.gz
@@ -69,9 +63,7 @@ BOOT_JDK_DIST=	openjdk-jdk8u-bootjdk-${MACHINE_ARCH}-${BOOTJDK_DATE}.tar.gz
       (${MACHINE_ARCH}==aarch64) || (${MACHINE_ARCH}==sparc64)
 DISTFILES+=	${BOOT_JDK_DIST}:1
 .  endif
-DISTFILES+=	${APACHE_ANT}:2
-MAKE_ENV+=	ANT_HOME=${WRKDIR}/apache-ant-${APACHE_ANT_V} \
-		LD_LIBRARY_PATH=${WRKDIR}/bootjdk-libs
+MAKE_ENV+=	LD_LIBRARY_PATH=${WRKDIR}/bootjdk-libs
 CONFIGURE_ENV+=	LD_LIBRARY_PATH=${WRKDIR}/bootjdk-libs
 BOOT_JDK=	${WRKDIR}/bootjdk
 .endif
