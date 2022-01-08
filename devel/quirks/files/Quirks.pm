@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1356 2022/01/02 02:42:31 daniel Exp $
+# $OpenBSD: Quirks.pm,v 1.1357 2022/01/08 17:33:18 bket Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1861,7 +1861,7 @@ my $cve = {
 	'security/libssh' => 'libssh-<0.9.4',
 	'security/opensc' => 'opensc-<0.20.0',
 	'security/openssl/1.1' => 'openssl-<1.1.1g',
-	'security/polarssl' => 'mbedtls-<2.16.6',
+	'security/polarssl' => 'mbedtls-<2.16.12',
 	'security/sudo' => 'sudo-<1.8.31',
 	'shells/bash' => 'bash-<4.3.27',
 	'sysutils/ansible,-main' => 'ansible-<2.7.1',
