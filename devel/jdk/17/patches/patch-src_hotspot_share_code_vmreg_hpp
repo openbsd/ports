@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_hotspot_share_code_vmreg_hpp,v 1.1 2022/01/08 15:05:30 kurt Exp $
+
+Work around using 'this' as a tagged pointer by preventing optimization
+with clang 13.
+
+Index: src/hotspot/share/code/vmreg.hpp
+--- src/hotspot/share/code/vmreg.hpp.orig
++++ src/hotspot/share/code/vmreg.hpp
+@@ -111,6 +111,9 @@ friend class OptoReg; (public)
+   }
+ 
+ 
++#if defined(__clang_major__) && (__clang_major__ >= 13)
++  NOINLINE
++#endif
+   intptr_t value() const         {return (intptr_t) this; }
+ 
+   void print_on(outputStream* st) const;
