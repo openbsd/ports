@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2021/07/15 03:26:29 bket Exp $
+@comment $OpenBSD: PLIST,v 1.18 2022/01/08 17:30:38 bket Exp $
 @conflict polarssl-*
 include/mbedtls/
 include/mbedtls/aes.h
@@ -108,6 +108,7 @@ share/examples/mbedtls/README
 @bin share/examples/mbedtls/generic_sum
 @bin share/examples/mbedtls/hello
 @bin share/examples/mbedtls/key_app
+@bin share/examples/mbedtls/load_roots
 @bin share/examples/mbedtls/mini_client
 @bin share/examples/mbedtls/mpi_demo
 @bin share/examples/mbedtls/pem2der
