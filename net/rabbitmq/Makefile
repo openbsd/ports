@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2021/11/02 00:01:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2022/01/08 12:24:10 ajacoutot Exp $
 
 BROKEN =	builds but not yet working.
 # we had rabbitmq-3.6.15 which used erlang 19, which was removed due to
@@ -14,7 +14,7 @@ V =		3.8.8
 DISTNAME =	rabbitmq-server-$V
 PKGNAME =	rabbitmq-$V
 CATEGORIES =	net
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://www.rabbitmq.com/
 
@@ -65,7 +65,7 @@ pre-configure:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/rabbitmq \
 	    ${PREFIX}/share/bash-completions/completions \
-	    ${PREFIX}/share/zsh-completions/vendor-completions
+	    ${PREFIX}/share/zsh/site-functions
 	cd ${WRKBUILD}/deps/rabbit/docs && \
 	    ${INSTALL_DATA} *.8 ${PREFIX}/man/man8/ && \
 	    ${INSTALL_DATA} *.5 ${PREFIX}/man/man5/ && \
@@ -79,7 +79,7 @@ post-install:
 	mv ${PREFIX}/autocomplete/bash_autocomplete.sh \
 	    ${PREFIX}/share/bash-completions/completions/rabbitmq
 	mv ${PREFIX}/autocomplete/zsh_autocomplete.sh \
-	    ${PREFIX}/share/zsh-completions/vendor-completions/_rabbitmq
+	    ${PREFIX}/share/zsh/site-functions/_rabbitmq
 	rm -r ${PREFIX}/autocomplete
 
 .include <bsd.port.mk>

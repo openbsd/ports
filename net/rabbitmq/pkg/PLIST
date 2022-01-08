@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/02/19 13:38:33 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2022/01/08 12:24:10 ajacoutot Exp $
 @newgroup _rabbitmq:646
 @newuser _rabbitmq:646:_rabbitmq:daemon:RabbitMQ account:/var/rabbitmq:/sbin/nologin
 @rcscript ${RCDIR}/rabbitmq
@@ -143,6 +143,6 @@ share/examples/rabbitmq/advanced.config.example
 share/examples/rabbitmq/rabbitmq-env.conf
 @sample ${SYSCONFDIR}/rabbitmq/rabbitmq-env.conf
 share/examples/rabbitmq/rabbitmq.conf.example
-share/zsh-completions/
-share/zsh-completions/vendor-completions/
-share/zsh-completions/vendor-completions/_rabbitmq
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_rabbitmq
