@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.13 2021/02/26 18:20:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2022/01/08 19:23:49 pascal Exp $
 
 V =		0.7.5
 COMMENT =	ridiculous shoot-em-up game
 DISTNAME =	mars_source_${V}
 PKGNAME =	mars-${V}
 CATEGORIES =	games x11
-REVISION =	7
+REVISION =	8
 
 HOMEPAGE =	http://mars-game.sourceforge.net/
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += GL GLU Xrandr c fribidi m pthread sfml-audio sfml-graphics
+WANTLIB += GL GLU X11 Xrandr c fribidi m pthread sfml-audio sfml-graphics
 WANTLIB += sfml-system sfml-window ${COMPILER_LIBCXX} tag
 
 COMPILER =		base-clang ports-gcc base-gcc

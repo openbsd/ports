@@ -1,7 +1,16 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2014/09/29 05:25:04 bcallah Exp $
---- src/CMakeLists.txt.orig	Sun Sep 14 01:08:34 2014
-+++ src/CMakeLists.txt	Sun Sep 14 01:09:34 2014
-@@ -68,7 +68,7 @@ if(UNIX)
+$OpenBSD: patch-src_CMakeLists_txt,v 1.2 2022/01/08 19:23:49 pascal Exp $
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -55,6 +55,7 @@ target_link_libraries(
+ 		${SFML_LIBRARIES}
+ 		${OPENGL_LIBRARIES}
+ 		${XRANDR_LIBRARY}
++		${X11_LIBRARY}
+ 		${FRIBIDI_LIBRARY}
+ 		${TAG_LIBRARY}
+ )
+@@ -68,7 +69,7 @@ if(UNIX)
  		TARGETS 
  			mars
  		RUNTIME DESTINATION
@@ -10,7 +19,7 @@ $OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2014/09/29 05:25:04 bcallah Exp $
  	)
  	install(
  		FILES
-@@ -82,7 +82,7 @@ if(UNIX)
+@@ -82,7 +83,7 @@ if(UNIX)
  			${MARS_SOURCE_DIR}/data/botnames.txt
  			${MARS_SOURCE_DIR}/data/shipnames.txt
  		DESTINATION
@@ -19,7 +28,7 @@ $OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2014/09/29 05:25:04 bcallah Exp $
  	)
  	install(
  		DIRECTORY 
-@@ -92,7 +92,7 @@ if(UNIX)
+@@ -92,7 +93,7 @@ if(UNIX)
  			${CMAKE_SOURCE_DIR}/data/shaders
  			${CMAKE_SOURCE_DIR}/data/tex
  		DESTINATION 
@@ -28,7 +37,7 @@ $OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2014/09/29 05:25:04 bcallah Exp $
  		PATTERN 
  			".svn" EXCLUDE
  	)
-@@ -126,7 +126,7 @@ if(UNIX)
+@@ -126,7 +127,7 @@ if(UNIX)
  		FILES
  			${MARS_SOURCE_DIR}/resources/mars
  		DESTINATION
