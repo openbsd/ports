@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_config_json,v 1.20 2021/10/14 12:57:56 pvk Exp $
+$OpenBSD: patch-config_config_json,v 1.21 2022/01/08 10:18:59 pvk Exp $
 
 Index: config/config.json
 --- config/config.json.orig
@@ -12,8 +12,8 @@ Index: config/config.json
      "Forward80To443": false,
      "TrustedProxyIPHeader": [],
      "ReadTimeout": 300,
-@@ -84,7 +84,7 @@
-     "EnableLatex": false,
+@@ -86,7 +86,7 @@
+     "EnableInlineLatex": true,
      "EnableAPIChannelDeletion": false,
      "EnableLocalMode": false,
 -    "LocalModeSocketLocation": "/var/tmp/mattermost_local.socket",
@@ -97,7 +97,7 @@ Index: config/config.json
      "EnableDaily": false,
      "BatchSize": 30000
    },
-@@ -519,8 +519,8 @@
+@@ -520,8 +520,8 @@
      "EnableUploads": false,
      "AllowInsecureDownloadURL": false,
      "EnableHealthCheck": true,
@@ -108,8 +108,8 @@ Index: config/config.json
      "Plugins": {},
      "PluginStates": {
        "com.mattermost.nps": {
-@@ -577,11 +577,11 @@
-     "AddChannelButton": "by_team_name"
+@@ -586,11 +586,11 @@
+     "InviteToTeam": "none"
    },
    "ImportSettings": {
 -    "Directory": "./import",
