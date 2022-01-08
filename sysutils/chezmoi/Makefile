@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/12/11 15:29:46 paco Exp $
+# $OpenBSD: Makefile,v 1.2 2022/01/08 18:14:58 paco Exp $
 
 COMMENT =		dotfiles manager across multiple diverse machines
 
 MODGO_MODNAME =		github.com/twpayne/chezmoi/v2
-MODGO_VERSION =		v2.9.2
+MODGO_VERSION =		v2.9.5
 
 DISTNAME =		chezmoi-${MODGO_VERSION}
 
@@ -26,7 +26,7 @@ post-install:
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${WRKSRC}/completions/chezmoi.zsh \
-		${PREFIX}/share/zsh/site-functions/_chezmoi_completion
+		${PREFIX}/share/zsh/site-functions/_chezmoi
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/functions
 	${INSTALL_DATA} ${WRKSRC}/completions/chezmoi.fish \

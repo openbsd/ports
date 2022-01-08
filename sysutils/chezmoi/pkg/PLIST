@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/12/11 15:29:49 paco Exp $
+@comment $OpenBSD: PLIST,v 1.2 2022/01/08 18:14:58 paco Exp $
 @bin bin/chezmoi
 share/bash-completion/
 share/bash-completion/completions/
@@ -22,4 +22,4 @@ share/fish/functions/
 share/fish/functions/chezmoi-completion.fish
 share/zsh/
 share/zsh/site-functions/
-share/zsh/site-functions/_chezmoi_completion
+share/zsh/site-functions/_chezmoi
