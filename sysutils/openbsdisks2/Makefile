@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2021/06/04 05:55:16 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2022/01/08 07:18:45 rsadowski Exp $
 
 COMMENT =	UDisks2 service implementation for OpenBSD
 
-V =		0.3.0
-DISTNAME =	openbsdisks2-${V}beta
+V =		0.3.1
+DISTNAME =	openbsdisks2-${V}
 
 CATEGORIES =	sysutils
 
@@ -16,10 +16,11 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus c m util
 
-MASTER_SITES =	https://github.com/sizeofvoid/openbsdisks2/releases/download/v${V}b/
+MASTER_SITES =	https://github.com/sizeofvoid/openbsdisks2/releases/download/v${V}/
 
 MODULES =	devel/cmake \
 		x11/qt5
+
 # /usr/local/share/dbus-1/system-services
 RUN_DEPENDS +=	x11/dbus,-suid
 
