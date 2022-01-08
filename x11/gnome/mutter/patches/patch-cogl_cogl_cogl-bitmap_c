@@ -1,0 +1,16 @@
+$OpenBSD: patch-cogl_cogl_cogl-bitmap_c,v 1.1 2022/01/08 09:49:43 ajacoutot Exp $
+
+https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/2219
+
+Index: cogl/cogl/cogl-bitmap.c
+--- cogl/cogl/cogl-bitmap.c.orig
++++ cogl/cogl/cogl-bitmap.c
+@@ -149,7 +149,7 @@ _cogl_bitmap_copy_subregion (CoglBitmap *src,
+ 
+           for (line = 0; line < height; ++line)
+             {
+-              memcpy (dstdata, srcdata, width * bpp);
++              memmove (dstdata, srcdata, width * bpp);
+               srcdata += src->rowstride;
+               dstdata += dst->rowstride;
+             }
