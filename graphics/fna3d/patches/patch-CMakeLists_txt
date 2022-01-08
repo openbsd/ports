@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.9 2021/12/12 04:49:48 thfr Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.10 2022/01/08 16:22:00 thfr Exp $
 
 set correct library version
 disable bundled mojoshader in favor of the one from ports
@@ -6,26 +6,16 @@ disable bundled mojoshader in favor of the one from ports
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -3,6 +3,9 @@
- cmake_minimum_required(VERSION 2.8.12)
- project(FNA3D C)
- 
-+include_directories("${LOCALBASE}/include"
-+			"${X11BASE}/include")
-+
- # Options
- option(BUILD_SHARED_LIBS "Build shared library" ON)
- option(TRACING_SUPPORT "Build with tracing enabled" OFF)
-@@ -12,7 +15,7 @@ option(DISABLE_D3D11 "Disable D3D11 backend")
+@@ -12,7 +12,7 @@ option(DISABLE_D3D11 "Disable D3D11 backend")
  SET(LIB_MAJOR_VERSION "0")
- SET(LIB_MINOR_VERSION "21")
- SET(LIB_REVISION "12")
+ SET(LIB_MINOR_VERSION "22")
+ SET(LIB_REVISION "01")
 -SET(LIB_VERSION "${LIB_MAJOR_VERSION}.${LIB_MINOR_VERSION}.${LIB_REVISION}")
 +SET(LIB_VERSION "${LIBFNA3D_VERSION}")
  
  # Build Type
  if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
-@@ -110,20 +113,6 @@ add_library(FNA3D
+@@ -100,18 +100,6 @@ add_library(FNA3D
  	src/FNA3D_PipelineCache.c
  	src/FNA3D_Tracing.c
  )
@@ -35,18 +25,16 @@ Index: CMakeLists.txt
 -	MojoShader/mojoshader_common.c
 -	MojoShader/mojoshader_d3d11.c
 -	MojoShader/mojoshader_opengl.c
--	MojoShader/mojoshader_metal.c
 -	MojoShader/mojoshader_vulkan.c
 -	MojoShader/profiles/mojoshader_profile_common.c
 -	MojoShader/profiles/mojoshader_profile_glsl.c
 -	MojoShader/profiles/mojoshader_profile_hlsl.c
--	MojoShader/profiles/mojoshader_profile_metal.c
 -	MojoShader/profiles/mojoshader_profile_spirv.c
 -)
  if(TRACING_SUPPORT)
  	add_executable(fna3d_replay replay/replay.c)
  	target_link_libraries(fna3d_replay FNA3D)
-@@ -136,9 +125,6 @@ endif()
+@@ -124,20 +112,15 @@ endif()
  if(NOT MSVC)
  	set_property(TARGET FNA3D PROPERTY COMPILE_FLAGS "-std=gnu99 -Wall -Wno-strict-aliasing -pedantic")
  endif()
@@ -56,9 +44,11 @@ Index: CMakeLists.txt
  
  # FNA3D folders as includes, for other targets to consume
  target_include_directories(FNA3D PUBLIC
-@@ -146,10 +132,6 @@ target_include_directories(FNA3D PUBLIC
+ 	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>
  	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
  	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/Vulkan-Headers/include>
++	${LOCALBASE}/include
++	${X11BASE}/include
  )
 -target_include_directories(mojoshader PUBLIC
 -	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/MojoShader>
@@ -67,7 +57,7 @@ Index: CMakeLists.txt
  
  # MinGW builds should statically link libgcc
  if(MINGW)
-@@ -185,7 +167,6 @@ else()
+@@ -173,7 +156,6 @@ else()
  	else()
  		message(STATUS "no TARGET SDL2::SDL2, or SDL2, using variables")
  		target_include_directories(FNA3D PUBLIC "$<BUILD_INTERFACE:${SDL2_INCLUDE_DIRS}>")

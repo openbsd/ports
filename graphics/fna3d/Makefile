@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2021/12/12 04:49:48 thfr Exp $
+# $OpenBSD: Makefile,v 1.11 2022/01/08 16:22:00 thfr Exp $
 
 # versions are in sync with FNA versions
-V =		21.12
+V =		22.01
 COMMENT =	3D graphics library for FNA
 DISTNAME =	fna-${V:S/.//g}
 PKGNAME =	fna3d-${V}
 
-SHARED_LIBS =	FNA3D		3.0	# 21.12
+SHARED_LIBS =	FNA3D		3.1	# 22.01
 
 CATEGORIES =	graphics
 HOMEPAGE =	https://github.com/FNA-XNA/FNA3D
