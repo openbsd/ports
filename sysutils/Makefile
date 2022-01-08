@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.630 2022/01/06 19:06:18 jeremy Exp $
+# $OpenBSD: Makefile,v 1.631 2022/01/08 12:36:17 denis Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -266,6 +266,7 @@
      SUBDIR += polkit
      SUBDIR += portroach-cli
      SUBDIR += prometheus
+     SUBDIR += promscale
      SUBDIR += pscpug
      SUBDIR += psftools
      SUBDIR += psrecord
