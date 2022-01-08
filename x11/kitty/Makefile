@@ -1,23 +1,22 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/15 20:02:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2022/01/08 17:21:44 thfr Exp $
 
 # Requires OpenGL>=3.3
 ONLY_FOR_ARCHS =	aarch64 amd64 i386
 
 COMMENT =		fast, feature full, GPU-based terminal emulator
 
-MODPY_EGG_VERSION =	0.23.1
+MODPY_EGG_VERSION =	0.24.1
 DISTNAME =		kitty-${MODPY_EGG_VERSION}
 CATEGORIES =		x11
 HOMEPAGE =		https://sw.kovidgoyal.net/kitty/
 MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
-REVISION =		1
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
 # libcanberra is dlopen(3)'d in desktop.c
 WANTLIB += GL X11 X11-xcb Xcursor Xinerama Xrandr c canberra dbus-1
-WANTLIB += fontconfig freetype harfbuzz intl lcms2 m png pthread
+WANTLIB += fontconfig freetype harfbuzz intl lcms2 m png pthread rsync
 WANTLIB += util xcb xkbcommon xkbcommon-x11 z ${MODPY_WANTLIB}
 
 MASTER_SITES =		https://github.com/kovidgoyal/kitty/releases/download/v${MODPY_EGG_VERSION}/
@@ -28,7 +27,9 @@ COMPILER =		base-clang ports-gcc
 
 MODULES =		lang/python
 MODPY_DISTUTILS_BUILD =	linux-package
-MODPY_SETUP_ARGS +=	--verbose
+MODPY_SETUP_ARGS +=	--verbose \
+			--extra-include-dirs=${LOCALBASE}/include \
+			--extra-library-dirs=${LOCALBASE}/lib
 # this disables checking upstream for updates
 MODPY_SETUP_ARGS +=	--update-check-interval=0
 
@@ -42,6 +43,7 @@ LIB_DEPENDS =		audio/libcanberra \
 			devel/harfbuzz \
 			graphics/lcms2 \
 			graphics/png \
+			net/librsync \
 			x11/dbus \
 			x11/xkbcommon
 
