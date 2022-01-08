@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/12/11 05:26:31 thfr Exp $
+# $OpenBSD: Makefile,v 1.2 2022/01/08 16:27:41 thfr Exp $
 
 COMMENT =	fast, memory-efficient, header-only hashtable
 
 GH_ACCOUNT =	martinus
 GH_PROJECT =	robin-hood-hashing
-GH_TAGNAME =	3.11.3
+GH_TAGNAME =	3.11.4
 
 CATEGORIES =	devel
 
