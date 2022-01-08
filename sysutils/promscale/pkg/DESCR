@@ -1,0 +1,11 @@
+Promscale is an open source observability backend for metrics and
+traces powered by SQL.
+
+Built on the robust and high-peformance foundation of PostgreSQL
+and TimescaleDB, it has native support for Prometheus metrics and
+OpenTelemetry traces as well as many other formats like StatsD,
+Jaeger and Zipkin through the OpenTelemetry Collector and is 100%
+PromQL compliant.
+
+For Prometheus users, Promscale provides a robust and highly scalable
+long-term storage system that is 100% PromQL compliant.

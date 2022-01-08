@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2022/01/08 12:34:36 denis Exp $
+@bin bin/jaeger-query-proxy
+@bin bin/prom-migrator
+@bin bin/promscale
