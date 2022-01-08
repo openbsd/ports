@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.119 2021/09/24 14:12:09 tb Exp $
+# $OpenBSD: Makefile,v 1.120 2022/01/08 07:29:52 ajacoutot Exp $
 
 COMMENT=		cross-platform networked sound server
 
 VERSION=		15.0
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 SHARED_LIBS += pulse                     7.2 # 0.24.0
 SHARED_LIBS += pulse-simple              1.2 # 0.1.1
@@ -32,7 +33,8 @@ MODULES=		devel/meson
 # C++11; no associated WANTLIB: only checked by configure but never used
 COMPILER=		base-clang ports-gcc
 
-BUILD_DEPENDS=		devel/gettext,-tools
+BUILD_DEPENDS=		devel/gettext,-tools \
+			shells/bash-completion
 
 # bundled xmltoman
 BUILD_DEPENDS +=	textproc/p5-XML-Parser
@@ -66,8 +68,6 @@ CONFIGURE_ARGS=		-Ddoxygen=false \
 			-Daccess_group=_pulse-access \
 			-Ddatabase=tdb \
 			-Datomic-arm-linux-helpers=false \
-			-Dbashcompletiondir=${PREFIX}/share/bash-completion/completions \
-			-Dzshcompletiondir=${PREFIX}/share/zsh/vendor-completions \
 			-Dalsa=disabled \
 			-Dasyncns=disabled \
 			-Davahi=disabled \

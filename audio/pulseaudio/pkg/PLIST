@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2021/08/15 16:36:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.32 2022/01/08 07:29:52 ajacoutot Exp $
 @newgroup _pulse:683
 @newgroup _pulse-access:684
 @newuser _pulse:683:683:daemon:PulseAudio System Daemon:/var/run/pulse:/sbin/nologin
@@ -238,5 +238,5 @@ share/vala/vapi/libpulse-simple.vapi
 share/vala/vapi/libpulse.deps
 share/vala/vapi/libpulse.vapi
 share/zsh/
-share/zsh/vendor-completions/
-share/zsh/vendor-completions/_pulseaudio
+share/zsh/site-functions/
+share/zsh/site-functions/_pulseaudio
