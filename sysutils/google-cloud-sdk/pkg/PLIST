@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.223 2021/12/18 09:11:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.224 2022/01/08 08:48:18 ajacoutot Exp $
 @conflict gsutil-*
 bin/bq
 bin/gcloud
@@ -36583,11 +36583,11 @@ google-cloud-sdk/platform/gsutil_py2/third_party/six/tox.ini
 google-cloud-sdk/properties
 share/bash-completion/
 share/bash-completion/completions/
-share/bash-completion/completions/google-cloud-sdk
+share/bash-completion/completions/gcloud
 share/doc/google-cloud-sdk/
 share/doc/google-cloud-sdk/LICENSE
 share/doc/google-cloud-sdk/README
 share/doc/google-cloud-sdk/RELEASE_NOTES
 share/zsh/
-share/zsh/vendor-completions/
-share/zsh/vendor-completions/_google-cloud-sdk
+share/zsh/site-functions/
+share/zsh/site-functions/_gcloud

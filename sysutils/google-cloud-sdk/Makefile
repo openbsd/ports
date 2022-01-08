@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.242 2021/12/18 09:11:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.243 2022/01/08 08:48:18 ajacoutot Exp $
 
 COMMENT=		manage resources on Google Cloud Platform
 
@@ -6,6 +6,7 @@ V=			367.0.0
 DISTNAME=		google-cloud-sdk-${V}-linux-x86
 PKGNAME=		google-cloud-sdk-${V}
 WRKDIST=		${WRKDIR}/google-cloud-sdk
+REVISION=		0
 
 CATEGORIES=		sysutils
 
@@ -36,15 +37,15 @@ RUN_DEPENDS=		devel/git
 do-install:
 	cp -Rp ${WRKSRC} ${PREFIX}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/google-cloud-sdk \
-		${PREFIX}/share/zsh/vendor-completions \
+		${PREFIX}/share/zsh/site-functions \
 		${PREFIX}/share/bash-completion/completions
 
 	mv ${PREFIX}/google-cloud-sdk/{LICENSE,README,RELEASE_NOTES} \
 		${PREFIX}/share/doc/google-cloud-sdk
 	mv ${PREFIX}/google-cloud-sdk/completion.bash.inc \
-		${PREFIX}/share/bash-completion/completions/google-cloud-sdk
+		${PREFIX}/share/bash-completion/completions/gcloud
 	mv ${PREFIX}/google-cloud-sdk/completion.zsh.inc \
-		${PREFIX}/share/zsh/vendor-completions/_google-cloud-sdk
+		${PREFIX}/share/zsh/site-functions/_gcloud
 
 	rm -r ${PREFIX}/google-cloud-sdk/.install \
 		${PREFIX}/google-cloud-sdk/path.{bash,zsh}.inc \
