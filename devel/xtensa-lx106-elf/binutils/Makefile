@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/08 17:50:34 tracey Exp $
+# $OpenBSD: Makefile,v 1.5 2022/01/08 16:58:09 tracey Exp $
 
 COMMENT =	binutils for ${CONFIG} cross-development
 
@@ -17,7 +17,5 @@ CONFIGURE_ARGS +=	--disable-multilib \
 			--with-gnu-as \
 			--with-gnu-ld \
 			--disable-werror
-
-BUILD_DEPENDS +=	lang/gawk
 
 .include <bsd.port.mk>

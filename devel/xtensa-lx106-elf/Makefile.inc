@@ -1,4 +1,4 @@
-$OpenBSD: Makefile.inc,v 1.3 2021/10/22 21:41:26 tracey Exp $
+$OpenBSD: Makefile.inc,v 1.4 2022/01/08 16:58:09 tracey Exp $
 
 CONFIG =	xtensa-lx106-elf
 CATEGORIES +=	devel
@@ -15,7 +15,9 @@ PERMIT_PACKAGE =	Yes
 COMPILER =		base-clang ports-clang
 
 BUILD_DEPENDS +=	devel/bison \
-			sysutils/coreutils
+			lang/gawk \
+			sysutils/coreutils \
+			textproc/gsed
 
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
