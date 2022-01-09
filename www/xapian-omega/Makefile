@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2021/02/06 21:42:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2022/01/09 12:12:42 sthen Exp $
 
 COMMENT=	web search application
 
-V=		1.4.18
+V=		1.4.19
 PORTROACH=	limitw:1,even
 DISTNAME=	xapian-omega-${V}
 
