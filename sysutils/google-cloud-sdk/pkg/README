@@ -1,0 +1,13 @@
+$OpenBSD: README,v 1.3 2022/01/09 11:25:52 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+To enable command completion, add this to the shell profile:
+
+* bash
+source ${PREFIX}/google-cloud-sdk/completion.bash.inc
+
+* zsh
+source ${PREFIX}/google-cloud-sdk/completion.zsh.inc

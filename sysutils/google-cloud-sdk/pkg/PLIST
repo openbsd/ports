@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.224 2022/01/08 08:48:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.225 2022/01/09 11:25:52 ajacoutot Exp $
 @conflict gsutil-*
 bin/bq
 bin/gcloud
@@ -26,6 +26,8 @@ google-cloud-sdk/bin/gcloud
 google-cloud-sdk/bin/git-credential-gcloud.sh
 google-cloud-sdk/bin/gsutil
 google-cloud-sdk/bin/java_dev_appserver.sh
+google-cloud-sdk/completion.bash.inc
+google-cloud-sdk/completion.zsh.inc
 google-cloud-sdk/data/
 google-cloud-sdk/data/cli/
 google-cloud-sdk/data/cli/bq.json
@@ -27732,7 +27734,6 @@ google-cloud-sdk/lib/third_party/yaml/resolver.py
 google-cloud-sdk/lib/third_party/yaml/scanner.py
 google-cloud-sdk/lib/third_party/yaml/serializer.py
 google-cloud-sdk/lib/third_party/yaml/tokens.py
-google-cloud-sdk/path.fish.inc
 google-cloud-sdk/platform/
 google-cloud-sdk/platform/anthoscli_licenses/
 google-cloud-sdk/platform/anthoscli_licenses/LICENSES.txt
@@ -36581,13 +36582,8 @@ google-cloud-sdk/platform/gsutil_py2/third_party/six/six.py
 google-cloud-sdk/platform/gsutil_py2/third_party/six/test_six.py
 google-cloud-sdk/platform/gsutil_py2/third_party/six/tox.ini
 google-cloud-sdk/properties
-share/bash-completion/
-share/bash-completion/completions/
-share/bash-completion/completions/gcloud
 share/doc/google-cloud-sdk/
 share/doc/google-cloud-sdk/LICENSE
 share/doc/google-cloud-sdk/README
 share/doc/google-cloud-sdk/RELEASE_NOTES
-share/zsh/
-share/zsh/site-functions/
-share/zsh/site-functions/_gcloud
+share/doc/pkg-readmes/${PKGSTEM}
