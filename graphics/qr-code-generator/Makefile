@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2022/01/09 20:45:27 kn Exp $
+# $OpenBSD: Makefile,v 1.5 2022/01/09 20:46:31 kn Exp $
 
 COMMENT =		QR Code generator library
 GH_ACCOUNT =		nayuki
@@ -25,7 +25,6 @@ COMPILER =		base-clang ports-gcc
 
 SEPARATE_BUILD =	Yes
 
-PICFLAG =		-fPIC
 SONAME_C =		libqrcodegen.so.${LIBqrcodegen_VERSION}
 SONAME_CPP =		libqrcodegencpp.so.${LIBqrcodegen_VERSION}
 
