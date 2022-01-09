@@ -1,0 +1,25 @@
+$OpenBSD: patch-dnssec_c,v 1.1 2022/01/09 19:29:01 tb Exp $
+
+Fix build with opaque DSA/RSA in LibreSSL 3.5.
+
+Index: dnssec.c
+--- dnssec.c.orig
++++ dnssec.c
+@@ -380,7 +380,7 @@ ldns_key_buf2dsa_raw(const unsigned char* key, size_t 
+ 		BN_free(Y);
+ 		return NULL;
+ 	}
+-#if OPENSSL_VERSION_NUMBER < 0x10100000 || defined(HAVE_LIBRESSL)
++#if OPENSSL_VERSION_NUMBER < 0x10100000
+ #ifndef S_SPLINT_S
+ 	dsa->p = P;
+ 	dsa->q = Q;
+@@ -466,7 +466,7 @@ ldns_key_buf2rsa_raw(const unsigned char* key, size_t 
+ 		BN_free(modulus);
+ 		return NULL;
+ 	}
+-#if OPENSSL_VERSION_NUMBER < 0x10100000 || defined(HAVE_LIBRESSL)
++#if OPENSSL_VERSION_NUMBER < 0x10100000
+ #ifndef S_SPLINT_S
+ 	rsa->n = modulus;
+ 	rsa->e = exponent;

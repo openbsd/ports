@@ -1,0 +1,25 @@
+$OpenBSD: patch-host2str_c,v 1.1 2022/01/09 19:29:01 tb Exp $
+
+Fix build with opaque DSA/RSA in LibreSSL 3.5.
+
+Index: host2str.c
+--- host2str.c.orig
++++ host2str.c
+@@ -2207,7 +2207,7 @@ ldns_key2buffer_str(ldns_buffer *output, const ldns_ke
+ 					const BIGNUM *n=NULL, *e=NULL, *d=NULL,
+ 						*p=NULL, *q=NULL, *dmp1=NULL,
+ 						*dmq1=NULL, *iqmp=NULL;
+-#if OPENSSL_VERSION_NUMBER < 0x10100000 || defined(HAVE_LIBRESSL)
++#if OPENSSL_VERSION_NUMBER < 0x10100000
+ 					n = rsa->n;
+ 					e = rsa->e;
+ 					d = rsa->d;
+@@ -2259,7 +2259,7 @@ ldns_key2buffer_str(ldns_buffer *output, const ldns_ke
+ 				if(1) {
+ 					const BIGNUM *p=NULL, *q=NULL, *g=NULL,
+ 						*priv_key=NULL, *pub_key=NULL;
+-#if OPENSSL_VERSION_NUMBER < 0x10100000 || defined(HAVE_LIBRESSL)
++#if OPENSSL_VERSION_NUMBER < 0x10100000
+ #ifndef S_SPLINT_S
+ 					p = dsa->p;
+ 					q = dsa->q;

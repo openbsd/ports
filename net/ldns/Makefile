@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2021/12/08 23:57:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2022/01/09 19:29:01 tb Exp $
 
 MULTI_PACKAGES=	-main -drill -utils
 
@@ -10,7 +10,7 @@ V=		1.8.1
 DISTNAME=	ldns-$V
 PKGNAME-main=	libldns-$V
 PKGNAME-drill=	drill-$V
-REVISION-main=	0
+REVISION-main=	1
 
 SHARED_LIBS +=	ldns                 7.2      # 3.0
 

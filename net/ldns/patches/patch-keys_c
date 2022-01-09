@@ -1,0 +1,34 @@
+$OpenBSD: patch-keys_c,v 1.1 2022/01/09 19:29:01 tb Exp $
+
+Fix build with opaque DSA/RSA in LibreSSL 3.5.
+
+Index: keys.c
+--- keys.c.orig
++++ keys.c
+@@ -860,7 +860,7 @@ ldns_key_new_frm_fp_rsa_l(FILE *f, int *line_nr)
+ 	}
+ #endif /* splint */
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000 || defined(HAVE_LIBRESSL)
++#if OPENSSL_VERSION_NUMBER < 0x10100000
+ # ifndef S_SPLINT_S
+ 	rsa->n = n;
+ 	rsa->e = e;
+@@ -980,7 +980,7 @@ ldns_key_new_frm_fp_dsa_l(FILE *f, ATTR_UNUSED(int *li
+ 	}
+ #endif /* splint */
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000 || defined(HAVE_LIBRESSL)
++#if OPENSSL_VERSION_NUMBER < 0x10100000
+ # ifndef S_SPLINT_S
+ 	dsa->p = p;
+ 	dsa->q = q;
+@@ -1657,7 +1657,7 @@ ldns_key_rsa2bin(unsigned char *data, RSA *k, uint16_t
+ 	if (!k) {
+ 		return false;
+ 	}
+-#if OPENSSL_VERSION_NUMBER < 0x10100000 || defined(HAVE_LIBRESSL)
++#if OPENSSL_VERSION_NUMBER < 0x10100000
+ 	n = k->n;
+ 	e = k->e;
+ #else
