@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.40 2021/02/06 21:42:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2022/01/09 12:12:37 sthen Exp $
 
 COMMENT=	search engine library
 
-V=		1.4.18
+V=		1.4.19
 PORTROACH=	limitw:1,even
 DISTNAME=	xapian-core-${V}
 # the other xapian ports should be kept in-sync:
 #   databases/xapian-bindings
 #   www/xapian-omega
 
-SHARED_LIBS +=  xapian               5.1      # 40.2
+SHARED_LIBS +=  xapian               5.2      # 40.2
 
 CATEGORIES=	databases textproc
 
