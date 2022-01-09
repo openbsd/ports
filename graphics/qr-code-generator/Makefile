@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2022/01/06 00:07:44 kn Exp $
+# $OpenBSD: Makefile,v 1.4 2022/01/09 20:45:27 kn Exp $
 
 COMMENT =		QR Code generator library
 GH_ACCOUNT =		nayuki
@@ -6,7 +6,7 @@ GH_PROJECT =		QR-Code-generator
 GH_TAGNAME =		v1.7.0
 PKGNAME =		${DISTNAME:L}
 CATEGORIES =		graphics
-REVISION =		0
+REVISION =		1
 
 # upstream has no shared library versions
 SHARED_LIBS +=		qrcodegen	0.0
@@ -25,11 +25,12 @@ COMPILER =		base-clang ports-gcc
 
 SEPARATE_BUILD =	Yes
 
+PICFLAG =		-fPIC
 SONAME_C =		libqrcodegen.so.${LIBqrcodegen_VERSION}
 SONAME_CPP =		libqrcodegencpp.so.${LIBqrcodegen_VERSION}
 
 do-build:
-	cd ${WRKSRC}/c   && PATH=${PORTPATH} ${CC}  ${CFLAGS}   -shared \
+	cd ${WRKSRC}/c   && PATH=${PORTPATH} ${CC}  ${CFLAGS}   -shared -fPIC \
 	    -Wl,-soname,${SONAME_C}   -o ${WRKBUILD}/${SONAME_C}   qrcodegen.c
 	cd ${WRKSRC}/cpp && PATH=${PORTPATH} ${CXX} ${CXXFLAGS} -shared -fPIC \
 	    -Wl,-soname,${SONAME_CPP} -o ${WRKBUILD}/${SONAME_CPP} qrcodegen.cpp
