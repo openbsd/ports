@@ -1,7 +1,9 @@
-$OpenBSD: patch-commands_c,v 1.1 2016/01/11 17:05:46 sthen Exp $
---- commands.c.orig	Mon Jan 11 17:03:48 2016
-+++ commands.c	Mon Jan 11 17:04:02 2016
-@@ -215,7 +215,7 @@ void ci_command_schedule_on(const char *name, void *da
+$OpenBSD: patch-commands_c,v 1.2 2022/01/09 12:11:17 sthen Exp $
+
+Index: commands.c
+--- commands.c.orig
++++ commands.c
+@@ -233,7 +233,7 @@ void ci_command_schedule_on(const char *name, void *da
      sch.when = time;
      sch.data = data;
      if (ci_list_search(COMMANDS_QUEUE, &sch)) {
