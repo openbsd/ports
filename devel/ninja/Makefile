@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2021/02/23 19:39:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2022/01/09 11:39:14 ajacoutot Exp $
 
 # as error: ``operation combines symbols in different segments''
 # (known toolchain problem) - if fixing, re-enable in devel/cmake/Makefile
@@ -10,7 +10,7 @@ COMMENT =		small build system with a focus on speed
 GH_ACCOUNT =		ninja-build
 GH_PROJECT =		ninja
 GH_TAGNAME =		v1.10.2
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -48,13 +48,15 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ninja
 	${INSTALL_DATA} ${WRKSRC}/doc/manual.asciidoc ${PREFIX}/share/doc/ninja
 	${INSTALL_DATA_DIR} ${PREFIX}/share/ninja
-	${INSTALL_DATA} ${WRKSRC}/misc/bash-completion ${PREFIX}/share/ninja
+	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions
+	${INSTALL_DATA} ${WRKSRC}/misc/bash-completion ${PREFIX}/share/bash-completion/completions/ninja
 	${INSTALL_DATA} ${WRKSRC}/misc/ninja-mode.el ${PREFIX}/share/ninja
 	${INSTALL_DATA} ${WRKSRC}/misc/ninja.vim ${PREFIX}/share/ninja
 	${INSTALL_DATA} ${WRKSRC}/misc/ninja_syntax.py ${PREFIX}/share/ninja
 	${INSTALL_DATA} ${WRKSRC}/misc/write_fake_manifests.py ${PREFIX}/share/ninja
 	${INSTALL_DATA} ${WRKSRC}/misc/measure.py ${PREFIX}/share/ninja
-	${INSTALL_DATA} ${WRKSRC}/misc/zsh-completion ${PREFIX}/share/ninja
+	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions
+	${INSTALL_DATA} ${WRKSRC}/misc/zsh-completion ${PREFIX}/share/zsh/site-functions/_ninja
 
 do-test:
 	@cd ${WRKSRC} && ${SETENV} ${ALL_TEST_ENV} ./ninja ninja_test \
