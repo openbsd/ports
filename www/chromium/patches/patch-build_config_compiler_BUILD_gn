@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.57 2022/01/06 06:24:03 robert Exp $
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.58 2022/01/09 14:32:39 robert Exp $
 
 Index: build/config/compiler/BUILD.gn
 --- build/config/compiler/BUILD.gn.orig
@@ -52,6 +52,15 @@ Index: build/config/compiler/BUILD.gn
 +      if (is_clang && !is_android && !is_nacl && !is_openbsd) {
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
+       }
+@@ -910,7 +907,7 @@ config("compiler_cpu_abi") {
+         cflags += [ "-mtune=$arm_tune" ]
+       }
+     } else if (current_cpu == "arm64") {
+-      if (is_clang && !is_android && !is_nacl && !is_fuchsia) {
++      if (is_clang && !is_android && !is_nacl && !is_fuchsia && !is_openbsd) {
+         cflags += [ "--target=aarch64-linux-gnu" ]
+         ldflags += [ "--target=aarch64-linux-gnu" ]
        }
 @@ -1258,7 +1255,7 @@ config("compiler_deterministic") {
      # different build directory like "out/feature_a" and "out/feature_b" if
