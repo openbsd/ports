@@ -1,32 +1,31 @@
-# $OpenBSD: Makefile,v 1.93 2021/11/02 00:02:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.94 2022/01/09 00:03:14 ajacoutot Exp $
 
 # XXX the "postr" plugin needs postr which hasn't been ported yet
 
 COMMENT=		plugins for EOG
 
 GNOME_PROJECT=		eog-plugins
-GNOME_VERSION=		3.26.7
-REVISION=		0
+GNOME_VERSION=		3.26.8
 
 CATEGORIES=		graphics
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB  = ${COMPILER_LIBCXX}
-WANTLIB += EGL X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 brotlicommon
-WANTLIB += brotlidec cairo cairo-gobject champlain-0.12 champlain-gtk-0.12
-WANTLIB += clutter-1.0 clutter-gtk-1.0 cogl cogl-pango cogl-path
-WANTLIB += drm epoxy exempi exif expat ffi fontconfig freetype
+WANTLIB += ${COMPILER_LIBCXX} EGL X11 X11-xcb Xau Xcomposite Xcursor
+WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB += atk-1.0 atk-bridge-2.0 brotlicommon brotlidec cairo
+WANTLIB += cairo-gobject champlain-0.12 champlain-gtk-0.12 clutter-1.0
+WANTLIB += clutter-gtk-1.0 cogl cogl-pango cogl-path drm epoxy
+WANTLIB += execinfo exempi exif expat ffi fontconfig freetype
 WANTLIB += fribidi gbm gck-1 gcr-base-3 gcrypt gdata gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 girepository-1.0 glapi glib-2.0 gmodule-2.0
 WANTLIB += gnome-desktop-3 goa-1.0 gobject-2.0 gpg-error graphite2
 WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv idn2 intl jpeg json-glib-1.0
 WANTLIB += lcms2 lzma m p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre peas-1.0 peas-gtk-1.0 pixman-1 png psl pthread
-WANTLIB += rsvg-2 soup-2.4 sqlite3 unistring xcb xcb-dri2 xcb-dri3
-WANTLIB += xcb-present xcb-render xcb-shm xcb-sync xcb-xfixes
+WANTLIB += pcre peas-1.0 peas-gtk-1.0 pixman-1 png psl rsvg-2
+WANTLIB += soup-2.4 sqlite3 unistring xcb xcb-dri2 xcb-dri3 xcb-present
+WANTLIB += xcb-render xcb-shm xcb-sync xcb-xfixes xkbregistry
 WANTLIB += xml2 xshmfence z
 
 MODULES=		devel/dconf \

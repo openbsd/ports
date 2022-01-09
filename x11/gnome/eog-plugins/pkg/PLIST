@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2020/01/05 20:03:32 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.28 2022/01/09 00:03:14 ajacoutot Exp $
 lib/eog/plugins/${MODPY_PYCACHE}/
 lib/eog/plugins/${MODPY_PYCACHE}export-to-folder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/eog/plugins/${MODPY_PYCACHE}export-to-folder.${MODPY_PYC_MAGIC_TAG}pyc
@@ -90,6 +90,7 @@ share/locale/he/LC_MESSAGES/eog-plugins.mo
 share/locale/hr/LC_MESSAGES/eog-plugins.mo
 share/locale/hu/LC_MESSAGES/eog-plugins.mo
 share/locale/id/LC_MESSAGES/eog-plugins.mo
+share/locale/is/LC_MESSAGES/eog-plugins.mo
 share/locale/it/LC_MESSAGES/eog-plugins.mo
 share/locale/ja/LC_MESSAGES/eog-plugins.mo
 share/locale/kn/LC_MESSAGES/eog-plugins.mo
