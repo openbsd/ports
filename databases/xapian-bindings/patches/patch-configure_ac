@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.1 2021/01/03 21:01:31 sthen Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2022/01/09 12:12:40 sthen Exp $
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -1390,14 +1390,6 @@ if test yes = "$GXX" ; then
+@@ -1401,14 +1401,6 @@ if test yes = "$GXX" ; then
    dnl with GCC 2.95 and we don't support anything older.
    SWIG_CXXFLAGS="-fno-strict-aliasing"
  
