@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_ne_openssl_c,v 1.7 2022/01/10 23:54:02 jca Exp $
+
+LibreSSL does not provide EVP_sha512_256()
+
+Index: src/ne_openssl.c
+--- src/ne_openssl.c.orig
++++ src/ne_openssl.c
+@@ -1121,7 +1121,6 @@ static const EVP_MD *hash_to_md(unsigned int flags)
+     case NE_HASH_SHA256: return EVP_sha256();
+ #ifdef HAVE_OPENSSL11
+     case NE_HASH_SHA512: return EVP_sha512();
+-    case NE_HASH_SHA512_256: return EVP_sha512_256();
+ #endif
+     default: break;
+     }
