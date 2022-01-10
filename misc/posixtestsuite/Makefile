@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:47:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2022/01/10 22:10:15 bluhm Exp $
 
 COMMENT =	open POSIX test suite
 
 DISTNAME =	posixtestsuite-1.5.2
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	misc
 

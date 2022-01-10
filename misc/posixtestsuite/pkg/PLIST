@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/05/23 20:28:34 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2022/01/10 22:10:15 bluhm Exp $
 bin/posixtestsuite
 bin/posixtestsuite-html
 libdata/posixtestsuite/
@@ -4371,6 +4371,8 @@ libexec/posixtestsuite/conformance/behavior/WIFEXITED/
 @bin libexec/posixtestsuite/conformance/behavior/WIFEXITED/1-1.test
 @bin libexec/posixtestsuite/conformance/behavior/WIFEXITED/1-2.test
 @bin libexec/posixtestsuite/conformance/behavior/WIFEXITED/1-3.test
+libexec/posixtestsuite/conformance/behavior/timers/
+@bin libexec/posixtestsuite/conformance/behavior/timers/1-1.test
 libexec/posixtestsuite/conformance/interfaces/
 libexec/posixtestsuite/conformance/interfaces/asctime/
 @bin libexec/posixtestsuite/conformance/interfaces/asctime/1-1.test
@@ -4395,6 +4397,8 @@ libexec/posixtestsuite/conformance/interfaces/clock_gettime/
 @bin libexec/posixtestsuite/conformance/interfaces/clock_gettime/1-1.test
 @bin libexec/posixtestsuite/conformance/interfaces/clock_gettime/1-2.test
 @bin libexec/posixtestsuite/conformance/interfaces/clock_gettime/2-1.test
+@bin libexec/posixtestsuite/conformance/interfaces/clock_gettime/3-1.test
+@bin libexec/posixtestsuite/conformance/interfaces/clock_gettime/4-1.test
 libexec/posixtestsuite/conformance/interfaces/clock_gettime/6-1.test
 @bin libexec/posixtestsuite/conformance/interfaces/clock_gettime/7-1.test
 @bin libexec/posixtestsuite/conformance/interfaces/clock_gettime/8-1.test
@@ -4489,6 +4493,8 @@ libexec/posixtestsuite/conformance/interfaces/mmap/
 @bin libexec/posixtestsuite/conformance/interfaces/mmap/1-2.test
 @bin libexec/posixtestsuite/conformance/interfaces/mmap/10-1.test
 @bin libexec/posixtestsuite/conformance/interfaces/mmap/11-1.test
+@bin libexec/posixtestsuite/conformance/interfaces/mmap/11-2.test
+@bin libexec/posixtestsuite/conformance/interfaces/mmap/11-3.test
 @bin libexec/posixtestsuite/conformance/interfaces/mmap/11-4.test
 @bin libexec/posixtestsuite/conformance/interfaces/mmap/11-5.test
 @bin libexec/posixtestsuite/conformance/interfaces/mmap/12-1.test
@@ -4566,6 +4572,8 @@ libexec/posixtestsuite/conformance/interfaces/munlockall/
 @bin libexec/posixtestsuite/conformance/interfaces/munlockall/5-1.test
 libexec/posixtestsuite/conformance/interfaces/munlockall/6-1.test
 libexec/posixtestsuite/conformance/interfaces/munmap/
+@bin libexec/posixtestsuite/conformance/interfaces/munmap/1-1.test
+@bin libexec/posixtestsuite/conformance/interfaces/munmap/1-2.test
 libexec/posixtestsuite/conformance/interfaces/munmap/10-1.test
 @bin libexec/posixtestsuite/conformance/interfaces/munmap/2-1.test
 @bin libexec/posixtestsuite/conformance/interfaces/munmap/3-1.test
@@ -4788,6 +4796,7 @@ libexec/posixtestsuite/conformance/interfaces/pthread_create/
 @bin libexec/posixtestsuite/conformance/interfaces/pthread_create/1-5.test
 @bin libexec/posixtestsuite/conformance/interfaces/pthread_create/1-6.test
 @bin libexec/posixtestsuite/conformance/interfaces/pthread_create/10-1.test
+@bin libexec/posixtestsuite/conformance/interfaces/pthread_create/11-1.test
 @bin libexec/posixtestsuite/conformance/interfaces/pthread_create/12-1.test
 @bin libexec/posixtestsuite/conformance/interfaces/pthread_create/14-1.test
 @bin libexec/posixtestsuite/conformance/interfaces/pthread_create/15-1.test
@@ -4849,6 +4858,7 @@ libexec/posixtestsuite/conformance/interfaces/pthread_join/speculative/
 libexec/posixtestsuite/conformance/interfaces/pthread_key_create/
 @bin libexec/posixtestsuite/conformance/interfaces/pthread_key_create/1-1.test
 @bin libexec/posixtestsuite/conformance/interfaces/pthread_key_create/1-2.test
+@bin libexec/posixtestsuite/conformance/interfaces/pthread_key_create/2-1.test
 @bin libexec/posixtestsuite/conformance/interfaces/pthread_key_create/3-1.test
 libexec/posixtestsuite/conformance/interfaces/pthread_key_create/speculative/
 @bin libexec/posixtestsuite/conformance/interfaces/pthread_key_create/speculative/5-1.test
@@ -5183,6 +5193,7 @@ libexec/posixtestsuite/conformance/interfaces/sem_init/
 @bin libexec/posixtestsuite/conformance/interfaces/sem_init/7-1.test
 libexec/posixtestsuite/conformance/interfaces/sem_open/
 @bin libexec/posixtestsuite/conformance/interfaces/sem_open/1-1.test
+@bin libexec/posixtestsuite/conformance/interfaces/sem_open/1-2.test
 @bin libexec/posixtestsuite/conformance/interfaces/sem_open/1-3.test
 @bin libexec/posixtestsuite/conformance/interfaces/sem_open/1-4.test
 @bin libexec/posixtestsuite/conformance/interfaces/sem_open/10-1.test
@@ -5266,6 +5277,7 @@ libexec/posixtestsuite/conformance/interfaces/shm_open/31-1.test
 @bin libexec/posixtestsuite/conformance/interfaces/shm_open/34-1.test
 libexec/posixtestsuite/conformance/interfaces/shm_open/35-1.test
 @bin libexec/posixtestsuite/conformance/interfaces/shm_open/36-1.test
+@bin libexec/posixtestsuite/conformance/interfaces/shm_open/37-1.test
 @bin libexec/posixtestsuite/conformance/interfaces/shm_open/38-1.test
 @bin libexec/posixtestsuite/conformance/interfaces/shm_open/39-1.test
 @bin libexec/posixtestsuite/conformance/interfaces/shm_open/39-2.test
@@ -5859,6 +5871,10 @@ libexec/posixtestsuite/conformance/interfaces/signal/
 @bin libexec/posixtestsuite/conformance/interfaces/signal/5-1.test
 @bin libexec/posixtestsuite/conformance/interfaces/signal/6-1.test
 @bin libexec/posixtestsuite/conformance/interfaces/signal/7-1.test
+libexec/posixtestsuite/conformance/interfaces/sigpause/
+@bin libexec/posixtestsuite/conformance/interfaces/sigpause/1-2.test
+@bin libexec/posixtestsuite/conformance/interfaces/sigpause/3-1.test
+@bin libexec/posixtestsuite/conformance/interfaces/sigpause/4-1.test
 libexec/posixtestsuite/conformance/interfaces/sigpending/
 @bin libexec/posixtestsuite/conformance/interfaces/sigpending/1-1.test
 @bin libexec/posixtestsuite/conformance/interfaces/sigpending/1-2.test
@@ -5903,23 +5919,33 @@ libexec/posixtestsuite/conformance/interfaces/timer_create/13-1.test
 libexec/posixtestsuite/conformance/interfaces/timer_create/14-1.test
 libexec/posixtestsuite/conformance/interfaces/timer_create/4-1.test
 libexec/posixtestsuite/conformance/interfaces/timer_create/6-1.test
+@bin libexec/posixtestsuite/conformance/interfaces/timer_create/8-1.test
 libexec/posixtestsuite/conformance/interfaces/timer_create/speculative/
 @bin libexec/posixtestsuite/conformance/interfaces/timer_create/speculative/15-1.test
+@bin libexec/posixtestsuite/conformance/interfaces/timer_create/speculative/5-1.test
 libexec/posixtestsuite/conformance/interfaces/timer_delete/
 libexec/posixtestsuite/conformance/interfaces/timer_delete/2-1.test
 libexec/posixtestsuite/conformance/interfaces/timer_delete/3-1.test
 libexec/posixtestsuite/conformance/interfaces/timer_delete/4-1.test
+libexec/posixtestsuite/conformance/interfaces/timer_delete/speculative/
+@bin libexec/posixtestsuite/conformance/interfaces/timer_delete/speculative/5-1.test
 libexec/posixtestsuite/conformance/interfaces/timer_getoverrun/
 @bin libexec/posixtestsuite/conformance/interfaces/timer_getoverrun/3-1.test
 libexec/posixtestsuite/conformance/interfaces/timer_getoverrun/4-1.test
 libexec/posixtestsuite/conformance/interfaces/timer_getoverrun/5-1.test
+libexec/posixtestsuite/conformance/interfaces/timer_getoverrun/speculative/
+@bin libexec/posixtestsuite/conformance/interfaces/timer_getoverrun/speculative/6-1.test
 libexec/posixtestsuite/conformance/interfaces/timer_gettime/
 libexec/posixtestsuite/conformance/interfaces/timer_gettime/4-1.test
 libexec/posixtestsuite/conformance/interfaces/timer_gettime/5-1.test
+libexec/posixtestsuite/conformance/interfaces/timer_gettime/speculative/
+@bin libexec/posixtestsuite/conformance/interfaces/timer_gettime/speculative/6-1.test
 libexec/posixtestsuite/conformance/interfaces/timer_settime/
 libexec/posixtestsuite/conformance/interfaces/timer_settime/10-1.test
 libexec/posixtestsuite/conformance/interfaces/timer_settime/11-1.test
 libexec/posixtestsuite/conformance/interfaces/timer_settime/4-1.test
+libexec/posixtestsuite/conformance/interfaces/timer_settime/speculative/
+@bin libexec/posixtestsuite/conformance/interfaces/timer_settime/speculative/12-1.test
 libexec/posixtestsuite/functional/
 libexec/posixtestsuite/functional/threads/
 libexec/posixtestsuite/functional/threads/schedule/
