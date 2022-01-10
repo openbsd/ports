@@ -1,0 +1,17 @@
+$OpenBSD: patch-cextern_cfitsio_lib_eval_defs_h,v 1.1 2022/01/10 23:51:09 jca Exp $
+
+malloc.h is not standard, even on sparc
+
+Index: cextern/cfitsio/lib/eval_defs.h
+--- cextern/cfitsio/lib/eval_defs.h.orig
++++ cextern/cfitsio/lib/eval_defs.h
+@@ -5,9 +5,6 @@
+ #if defined(__sgi) || defined(__hpux)
+ #include <alloca.h>
+ #endif
+-#ifdef sparc
+-#include <malloc.h>
+-#endif
+ #include "fitsio2.h"
+ 
+ #define MAXDIMS       5

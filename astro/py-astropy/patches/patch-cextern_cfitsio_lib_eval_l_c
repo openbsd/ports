@@ -1,0 +1,19 @@
+$OpenBSD: patch-cextern_cfitsio_lib_eval_l_c,v 1.1 2022/01/10 23:51:09 jca Exp $
+
+malloc.h is not standard, even on sparc
+
+Index: cextern/cfitsio/lib/eval_l.c
+--- cextern/cfitsio/lib/eval_l.c.orig
++++ cextern/cfitsio/lib/eval_l.c
+@@ -662,11 +662,7 @@ char *fftext;
+ #include <math.h>
+ #include <string.h>
+ #include <ctype.h>
+-#ifdef sparc
+-#include <malloc.h>
+-#else
+ #include <stdlib.h>
+-#endif
+ #include "eval_defs.h"
+ 
+ ParseData gParse;     /* Global structure holding all parser information     */
