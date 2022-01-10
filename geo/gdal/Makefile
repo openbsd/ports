@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.102 2021/11/16 08:57:28 landry Exp $
+# $OpenBSD: Makefile,v 1.103 2022/01/10 07:52:52 landry Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 
-V =		3.4.0
+V =		3.4.1
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}${EXTRACT_SUFX}
@@ -13,7 +13,7 @@ FULLPKGPATH-main =	geo/gdal,-main
 FULLPKGNAME-python =	py3-${DISTNAME}
 FULLPKGPATH-python =	geo/gdal,-python${FLAVOR_EXT:S/-/,/g}
 
-SHARED_LIBS =	gdal 42.0 # 30.0
+SHARED_LIBS =	gdal 42.1 # 30.1
 CATEGORIES =	geo devel
 
 HOMEPAGE =	https://gdal.org/
@@ -52,13 +52,13 @@ LIB_DEPENDS-main =	databases/sqlite3 \
 			graphics/jpeg \
 			graphics/jasper \
 			graphics/openjp2 \
-			devel/pcre \
+			devel/pcre2 \
 			devel/proj>=6.0 \
 			devel/geotiff>=1.5.0
 
 WANTLIB-main =		c charset crypto curl expat freexl geos geos_c geotiff \
-			gif hdf5 hdf5_hl iconv jasper jpeg json-c lzma m \
-			netcdf nghttp2 openjp2 pcre png pq proj pthread qhull \
+			gif hdf5 hdf5_hl iconv jasper jpeg json-c lzma lz4 m \
+			netcdf nghttp2 openjp2 pcre2-8 png pq proj pthread qhull \
 			minizip rttopo spatialite sqlite3 ssl tiff xml2 webp z zstd \
 			${COMPILER_LIBCXX}
 
