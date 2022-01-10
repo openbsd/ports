@@ -1,6 +1,6 @@
-$OpenBSD: patch-cmake_xapian-config_cmake_in,v 1.5 2022/01/10 21:14:07 rsadowski Exp $
+$OpenBSD: patch-cmake_xapian-config_cmake_in,v 1.6 2022/01/10 21:19:43 sthen Exp $
 
-Allow Xapian library to be found by CMake-based ports.
+Allow Xapian library to be found by CMake-based KDE ports.
 
 Index: cmake/xapian-config.cmake.in
 --- cmake/xapian-config.cmake.in.orig
