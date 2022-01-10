@@ -1,0 +1,16 @@
+$OpenBSD: patch-cmake_xapian-config_cmake_in,v 1.5 2022/01/10 21:14:07 rsadowski Exp $
+
+Allow Xapian library to be found by CMake-based ports.
+
+Index: cmake/xapian-config.cmake.in
+--- cmake/xapian-config.cmake.in.orig
++++ cmake/xapian-config.cmake.in
+@@ -1,7 +1,7 @@
+ SET(prefix "@prefix@")
+ SET(exec_prefix "@exec_prefix@")
+ SET(XAPIAN_SHARED @XAPIAN_CMAKE_SHARED@ CACHE BOOL "Use shared xapian library")
+-SET(XAPIAN_SHARED_LIBRARY "@libdir@/libxapian@LIBRARY_VERSION_SUFFIX@@SHLIBEXT@@LIBRARY_SHARED_IMP_EXT@" CACHE FILEPATH "Shared Xapian library")
++SET(XAPIAN_SHARED_LIBRARY "@libdir@/libxapian@LIBRARY_VERSION_SUFFIX@@SHLIBEXT@.${LIBxapian_VERSION}" CACHE FILEPATH "Libraries for Xapian")
+ SET(XAPIAN_STATIC_LIBRARY "@libdir@/libxapian@LIBRARY_VERSION_SUFFIX@@LIBRARY_STATIC_EXT@" CACHE FILEPATH "Static Xapian library")
+ SET(XAPIAN_STATIC_DEP_LIBS "@XAPIAN_CMAKE_LIBS@" CACHE STRING "Dependencies of static xapian library")
+ IF(XAPIAN_SHARED)
