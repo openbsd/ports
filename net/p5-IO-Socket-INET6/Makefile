@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2020/07/03 21:45:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2022/01/10 22:22:19 bluhm Exp $
 
 COMMENT =		object interface for AF_INET and AF_INET6 domain sockets
 
-DISTNAME =		IO-Socket-INET6-2.72
-REVISION =		0
+DISTNAME =		IO-Socket-INET6-2.73
 
 CATEGORIES =		net
 
