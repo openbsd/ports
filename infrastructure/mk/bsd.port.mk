@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1564 2021/12/14 14:21:41 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1565 2022/01/10 17:51:55 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1318,7 +1318,7 @@ _PATH_$v =
 _LIST_$v =
 .  endif
 .endfor
-_FULL_FETCHLIST ?=
+_FULL_FETCH_LIST ?=
 
 CHECKSUMFILES = ${_PATH_DISTFILES} ${_PATH_PATCHFILES}
 MAKESUMFILES = ${CHECKSUMFILES} ${_PATH_SUPDISTFILES}
@@ -3675,6 +3675,12 @@ show-indexed:
 .  endif
 .endfor
 
+show-list:
+.for _v in ${show-list}
+.  for _e in ${${_v}}
+	@echo ${_e:Q}
+.  endfor
+.endfor
 # du fails if it can't access everything
 show-size:
 	@${_PBUILD} du -ks ${WRKDIR}

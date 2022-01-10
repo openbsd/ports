@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.85 2020/03/29 15:06:05 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.86 2022/01/10 17:51:55 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -176,7 +176,7 @@ REPORT_PROBLEM ?= exit 1
 #
 .if !defined(_LOCKS_HELD)
 # handle the default target choice
-.  for t in verbose-show show clean show-indexed
+.  for t in verbose-show show clean show-indexed show-list
 .    if defined($t)
 .      if defined(_overidden_default)
 ERRORS += "Fatal: ambiguous default target: $t or ${_overidden_default}"
