@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2021/02/14 09:47:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.36 2022/01/10 23:58:49 daniel Exp $
 @conflict cyrus-sasl-*
 @extraunexec rm -rf /var/sasl2/*
 @rcscript ${RCDIR}/saslauthd
@@ -10,29 +10,29 @@ include/sasl/prop.h
 include/sasl/sasl.h
 include/sasl/saslplug.h
 include/sasl/saslutil.h
-lib/libsasl2.a
+@static-lib lib/libsasl2.a
 lib/libsasl2.la
 @lib lib/libsasl2.so.${LIBsasl2_VERSION}
 lib/pkgconfig/libsasl2.pc
 lib/sasl2/
 lib/sasl2/libanonymous.la
-lib/sasl2/libanonymous.so
+@so lib/sasl2/libanonymous.so
 lib/sasl2/libcrammd5.la
-lib/sasl2/libcrammd5.so
+@so lib/sasl2/libcrammd5.so
 lib/sasl2/libdigestmd5.la
-lib/sasl2/libdigestmd5.so
+@so lib/sasl2/libdigestmd5.so
 lib/sasl2/liblogin.la
-lib/sasl2/liblogin.so
+@so lib/sasl2/liblogin.so
 lib/sasl2/libntlm.la
-lib/sasl2/libntlm.so
+@so lib/sasl2/libntlm.so
 lib/sasl2/libotp.la
-lib/sasl2/libotp.so
+@so lib/sasl2/libotp.so
 lib/sasl2/libplain.la
-lib/sasl2/libplain.so
+@so lib/sasl2/libplain.so
 lib/sasl2/libsasldb.la
-lib/sasl2/libsasldb.so
+@so lib/sasl2/libsasldb.so
 lib/sasl2/libscram.la
-lib/sasl2/libscram.so
+@so lib/sasl2/libscram.so
 @man man/man3/sasl.3
 @man man/man3/sasl_authorize_t.3
 @man man/man3/sasl_auxprop.3
