@@ -1,6 +1,7 @@
-$OpenBSD: patch-sldns_keyraw_c,v 1.1 2022/01/09 18:50:07 tb Exp $
+$OpenBSD: patch-sldns_keyraw_c,v 1.2 2022/01/11 20:25:55 tb Exp $
 
 Fix build with opaque DSA and RSA in LibreSSL 3.5.
+https://github.com/NLnetLabs/unbound/pull/603
 
 Index: sldns/keyraw.c
 --- sldns/keyraw.c.orig
