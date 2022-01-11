@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_script_script_h,v 1.1 2022/01/11 12:55:18 jca Exp $
+
+Missing include, breaks with ports-gcc
+
+Index: src/script/script.h
+--- src/script/script.h.orig
++++ src/script/script.h
+@@ -26,6 +26,7 @@
+ 
+ #include "CBot/CBot.h"
+ 
++#include <limits>
+ #include <memory>
+ #include <string>
+ #include <boost/optional.hpp>
