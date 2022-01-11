@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2021/12/21 11:01:07 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.47 2022/01/11 12:38:49 ajacoutot Exp $
 
 COMMENT =	high performance network IDS, IPS and security monitoring
 
@@ -52,6 +52,7 @@ AUTOMAKE_VERSION =	1.15
 
 CONFIGURE_ENV =		ac_cv_path_HAVE_PDFLATEX= \
 			ac_cv_path_HAVE_GIT_CMD= \
+			ac_cv_path_CBINDGEN= \
 			CARGO_HOME=${WRKBUILD}/cargo-home
 
 CONFIGURE_ARGS =	--disable-gccmarch-native \
