@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.51 2021/12/03 14:44:33 bket Exp $
+# $OpenBSD: Makefile,v 1.52 2022/01/11 09:51:58 kn Exp $
 
 COMMENT=	synchronize IMAP4 and maildir mailboxes
 
 DISTNAME=	isync-1.4.4
+REVISION=	0
 
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=isync/}
@@ -17,7 +18,8 @@ PERMIT_PACKAGE=	Yes
 # uses pledge()
 WANTLIB= c crypto db sasl2 ssl z
 
-COMPILER=		base-clang ports-clang ports-gcc
+# on sparc64 ports-clang fails due to `-no-intergrated-as' default
+COMPILER=		base-clang ports-gcc
 
 LIB_DEPENDS=		databases/db/v4 \
 			security/cyrus-sasl2
