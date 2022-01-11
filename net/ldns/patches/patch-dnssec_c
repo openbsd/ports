@@ -1,6 +1,7 @@
-$OpenBSD: patch-dnssec_c,v 1.1 2022/01/09 19:29:01 tb Exp $
+$OpenBSD: patch-dnssec_c,v 1.2 2022/01/11 20:23:42 tb Exp $
 
 Fix build with opaque DSA/RSA in LibreSSL 3.5.
+https://github.com/NLnetLabs/ldns/pull/151
 
 Index: dnssec.c
 --- dnssec.c.orig
