@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2021/11/13 17:40:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.103 2022/01/11 12:50:30 jca Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
@@ -28,10 +28,7 @@ FLAVOR ?=
 # http://git.ghostscript.com/?p=mupdf.git;a=summary
 MASTER_SITES =	https://mupdf.com/downloads/archive/
 
-# armv7: alignment issue https://marc.info/?l=openbsd-ports&m=156448467232400&w=2
-COMPILER =	 base-clang ports-gcc base-gcc
-COMPILER_LANGS = c
-MODGCC4_ARCHS =	 armv7
+COMPILER =	 base-clang ports-gcc
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/xdg-utils
