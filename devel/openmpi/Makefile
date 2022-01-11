@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.35 2021/06/23 13:01:22 martin Exp $
+# $OpenBSD: Makefile,v 1.36 2022/01/11 08:52:43 martin Exp $
 
 COMMENT =		open source MPI-3.1 implementation
 
-V =			4.0.6
+V =			4.1.2
 DISTNAME =		openmpi-$V
 
-SHARED_LIBS +=  open-pal		5.0 # 60.5
-SHARED_LIBS +=  mca_common_sm		2.0 # 60.0
+SHARED_LIBS +=  open-pal		6.0 # 70.2
+SHARED_LIBS +=  mca_common_sm		3.0 # 70.0
 SHARED_LIBS +=  mca_common_dstore	1.0 # 1.2
-SHARED_LIBS +=  open-rte		5.0 # 60.5
-SHARED_LIBS +=  mpi			5.0 # 60.5
-SHARED_LIBS +=  mpi_mpifh		0.0 # 60.2
-SHARED_LIBS +=  mpi_usempi_ignore_tkr	0.0 # 60.0
-SHARED_LIBS +=  mpi_usempif08		2.0 # 61.1
-SHARED_LIBS +=  mca_common_monitoring	0.0 # 60.0
-SHARED_LIBS +=  mca_common_ompio	2.0 # 60.4
-SHARED_LIBS +=  ompitrace		0.0 # 60.0
+SHARED_LIBS +=  open-rte		6.0 # 70.2
+SHARED_LIBS +=  mpi			6.0 # 70.2
+SHARED_LIBS +=  mpi_mpifh		1.0 # 70.0
+SHARED_LIBS +=  mpi_usempi_ignore_tkr	1.0 # 70.0
+SHARED_LIBS +=  mpi_usempif08		3.0 # 70.0
+SHARED_LIBS +=  mca_common_monitoring	1.0 # 70.0
+SHARED_LIBS +=  mca_common_ompio	3.0 # 70.2
+SHARED_LIBS +=  ompitrace		1.0 # 70.0
 
 CATEGORIES =		devel
 
@@ -40,6 +40,7 @@ MODFORTRAN_COMPILER =	gfortran
 BUILD_DEPENDS =		devel/libtool,-ltdl
 
 CONFIGURE_ARGS +=	--enable-mpi-fortran=usempif08 \
+			--enable-mca-no-build=op-avx \
 			FC=egfortran \
 			CC=egcc
 

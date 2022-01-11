@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/06/23 13:01:22 martin Exp $
+@comment $OpenBSD: PLIST,v 1.10 2022/01/11 08:52:43 martin Exp $
 bin/aggregate_profile.pl
 bin/mpiCC
 bin/mpic++
@@ -110,9 +110,15 @@ lib/openmpi/mca_btl_tcp.la
 lib/openmpi/mca_btl_vader.a
 lib/openmpi/mca_btl_vader.la
 @so lib/openmpi/mca_btl_vader.so
+lib/openmpi/mca_coll_adapt.a
+lib/openmpi/mca_coll_adapt.la
+@so lib/openmpi/mca_coll_adapt.so
 lib/openmpi/mca_coll_basic.a
 lib/openmpi/mca_coll_basic.la
 @so lib/openmpi/mca_coll_basic.so
+lib/openmpi/mca_coll_han.a
+lib/openmpi/mca_coll_han.la
+@so lib/openmpi/mca_coll_han.so
 lib/openmpi/mca_coll_inter.a
 lib/openmpi/mca_coll_inter.la
 @so lib/openmpi/mca_coll_inter.so
@@ -318,6 +324,9 @@ lib/openmpi/mca_rtc_hwloc.la
 lib/openmpi/mca_schizo_flux.a
 lib/openmpi/mca_schizo_flux.la
 @so lib/openmpi/mca_schizo_flux.so
+lib/openmpi/mca_schizo_jsm.a
+lib/openmpi/mca_schizo_jsm.la
+@so lib/openmpi/mca_schizo_jsm.so
 lib/openmpi/mca_schizo_ompi.a
 lib/openmpi/mca_schizo_ompi.la
 @so lib/openmpi/mca_schizo_ompi.so
