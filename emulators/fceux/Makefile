@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2021/10/29 10:26:23 bentley Exp $
+# $OpenBSD: Makefile,v 1.23 2022/01/11 13:52:38 bentley Exp $
 
 COMMENT =		emulator for Nintendo Entertainment System
 
-V =			2.4.0
+V =			2.5.0
 DISTNAME =		fceux-${V}
 CATEGORIES =		emulators games
 
@@ -16,14 +16,16 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=fceultra/}
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB}
-WANTLIB += GL GLU Qt5Core Qt5Gui Qt5OpenGL Qt5Widgets
-WANTLIB += SDL2 c m minizip x264 z
+WANTLIB += avcodec avformat avutil GL GLU Qt5Core
+WANTLIB += Qt5Gui Qt5OpenGL Qt5Widgets SDL2
+WANTLIB += swresample swscale c m minizip x264 x265 z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
 RUN_DEPENDS =		devel/desktop-file-utils
 LIB_DEPENDS =		archivers/minizip \
 			devel/sdl2 \
+			graphics/ffmpeg \
 			multimedia/x264
 
 MODULES =		devel/cmake \
