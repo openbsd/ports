@@ -1,0 +1,16 @@
+$OpenBSD: patch-third_party_libwebrtc_modules_video_capture_BUILD_gn,v 1.1 2022/01/11 15:18:01 landry Exp $
+
+https://hg.mozilla.org/releases/mozilla-release/rev/84dcbf1f62567c072c4e18f7ba98be1fadd110bb
+
+Index: third_party/libwebrtc/modules/video_capture/BUILD.gn
+--- third_party/libwebrtc/modules/video_capture/BUILD.gn.orig
++++ third_party/libwebrtc/modules/video_capture/BUILD.gn
+@@ -60,7 +60,7 @@ if (!build_with_chromium) {
+       "../../system_wrappers",
+     ]
+ 
+-    if (is_linux || is_chromeos) {
++    if (is_linux || is_bsd || is_chromeos) {
+       sources = [
+         "linux/device_info_linux.cc",
+         "linux/device_info_linux.h",

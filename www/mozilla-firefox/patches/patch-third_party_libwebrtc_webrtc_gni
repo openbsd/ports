@@ -1,0 +1,16 @@
+$OpenBSD: patch-third_party_libwebrtc_webrtc_gni,v 1.1 2022/01/11 15:18:01 landry Exp $
+
+https://hg.mozilla.org/releases/mozilla-release/rev/84dcbf1f62567c072c4e18f7ba98be1fadd110bb
+
+Index: third_party/libwebrtc/webrtc.gni
+--- third_party/libwebrtc/webrtc.gni.orig
++++ third_party/libwebrtc/webrtc.gni
+@@ -292,7 +292,7 @@ rtc_opus_dir = "//third_party/opus"
+ 
+ # Desktop capturer is supported only on Windows, OSX and Linux.
+ rtc_desktop_capture_supported =
+-    (is_win && current_os != "winuwp") || is_mac ||
++    (is_win && current_os != "winuwp") || is_mac || is_bsd ||
+     ((is_linux || is_chromeos) && (rtc_use_x11_extensions || rtc_use_pipewire))
+ 
+ ###############################################################################
