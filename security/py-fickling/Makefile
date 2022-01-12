@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/02 00:02:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2022/01/12 10:17:13 sebastia Exp $
 
 COMMENT =	analyze Python pickle object serializations
 
-MODPY_EGG_VERSION = 0.0.2
+MODPY_EGG_VERSION = 0.0.3
 DISTNAME =	fickling-${MODPY_EGG_VERSION}
 PKGNAME =       py-${DISTNAME}
 CATEGORIES =	security
-REVISION =      0
 
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
