@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.23 2020/07/03 21:45:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2022/01/12 22:47:04 bluhm Exp $
 
 COMMENT =	drop-in object-oriented CGI.pm replacement
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	CGI-Simple-1.115
+DISTNAME =	CGI-Simple-1.280
 CATEGORIES =	www
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS =		devel/p5-IO-stringy
-TEST_DEPENDS =		www/p5-libwww
+TEST_DEPENDS =		devel/p5-Test-Exception \
+			devel/p5-Test-NoWarnings \
+			www/p5-libwww
 
 .include <bsd.port.mk>
