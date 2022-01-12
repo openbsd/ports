@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2021/12/18 01:57:22 jca Exp $
+# $OpenBSD: Makefile,v 1.92 2022/01/12 21:30:14 chrisz Exp $
 
 COMMENT =	   ML language with complete class-based objective system
 
@@ -25,12 +25,18 @@ MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 # QPL/LGPL
 PERMIT_PACKAGE=	Yes
 
+.include <bsd.port.arch.mk>
+
 AUTOCONF_VERSION =	2.69
 CONFIGURE_STYLE =	gnu autoconf no-autoheader
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS}" \
 			CPPFLAGS="${CFLAGS} ${CPPFLAGS}" \
 			LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS +=	--disable-force-safe-string
+.if ${PROPERTIES:Mclang}
+CONFIGURE_ENV+=		OBJDUMP=/usr/bin/llvm-objdump
+.endif
+CONFIGURE_ARGS +=	--disable-force-safe-string \
+			--enable-ocamltest
 
 CFLAGS +=	-I${LOCALBASE}/include
 LDFLAGS +=	-L${LOCALBASE}/lib
@@ -47,12 +53,9 @@ WANTLIB =		c iberty m pthread z
 # for libbfd (used by ocamlobjinfo on .cmxs files)
 BUILD_DEPENDS +=	devel/gdb
 
-.include <bsd.port.arch.mk>
-
 .if ${PROPERTIES:Mocaml_native}
 ALL_TARGET=	world.opt
 PKG_ARGS +=	-Dnative=1
-TEST_DEPENDS +=	${BUILD_PKGPATH}
 
 .if ${PROPERTIES:Mocaml_native_dynlink}
 PKG_ARGS +=	-Ddynlink=1
@@ -65,6 +68,8 @@ ALL_TARGET=	world
 PKG_ARGS +=	-Dnative=0
 NO_TEST   =	yes
 .endif
+
+TEST_TARGET =	tests
 
 DPB_PROPERTIES +=	parallel
 
@@ -85,7 +90,5 @@ post-install:
 # connection to internet
 TEST_IS_INTERACTIVE =		Yes
 
-do-test:
-	@cd ${WRKSRC}/testsuite && ulimit -Sn 256 && ${MAKE_PROGRAM} all
 
 .include <bsd.port.mk>
