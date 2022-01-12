@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.308 2021/11/14 10:12:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.309 2022/01/12 19:08:46 robert Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
-GNOME_VERSION=		41.0
-REVISION=		1
+GNOME_VERSION=		41.3
 
 GH_ACCOUNT=		rnagy
 GH_PROJECT=		gdm
-GH_COMMIT=		4fa25ddcd5d43c9f124195acb45ed456c0672cca
+GH_COMMIT=		4922f26cf109b706763040aa82bcf05c3c73d574
 EXTRACT_SUFX=		.tar.gz
 
 # bsd.port.mk:1288
