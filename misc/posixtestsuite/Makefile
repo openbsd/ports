@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2022/01/10 22:10:15 bluhm Exp $
+# $OpenBSD: Makefile,v 1.8 2022/01/12 19:04:22 jca Exp $
 
 COMMENT =	open POSIX test suite
 
 DISTNAME =	posixtestsuite-1.5.2
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	misc
 
@@ -21,6 +21,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=posixtest/}
 BUILD_DEPENDS =		textproc/gsed
 
 USE_GMAKE =		Yes
+MAKE_FLAGS =		PORTS_CFLAGS="${CFLAGS}"
 
 WRKDIST =		${WRKDIR}/posixtestsuite
 
