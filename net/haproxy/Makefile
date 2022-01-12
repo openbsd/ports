@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.89 2022/01/06 21:03:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.90 2022/01/12 01:45:16 danj Exp $
 
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
-DISTNAME =	haproxy-2.4.9
+DISTNAME =	haproxy-2.4.12
 CATEGORIES =	net www
 HOMEPAGE =	https://www.haproxy.org/
 MAINTAINER =	Daniel Jakots <obsd@chown.me>
@@ -25,6 +25,7 @@ USE_GMAKE =	Yes
 MAKE_FLAGS +=	CPU_CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKE_FLAGS +=	CC="${CC}" LD="${CC}" TARGET="openbsd"
 MAKE_FLAGS +=	USE_OPENSSL=1 USE_PCRE=1 USE_ZLIB=1 V=1
+MAKE_FLAGS +=	USE_LIBATOMIC=
 
 COMPILER =	base-clang ports-gcc
 
@@ -44,13 +45,6 @@ LDFLAGS +=		"-latomic"
 WANTLIB +=		atomic
 .endif
 
-# autodetect code tries to use libatomic on i386 which we don't have with clang;
-# in theory it shouldn't be needed on 586 and up.
-.if ${MACHINE_ARCH} == i386
-MAKE_FLAGS +=	USE_LIBATOMIC=
-CFLAGS +=	-march=i586
-.endif
-
 pre-install:
 	${SUBST_CMD} ${WRKSRC}/doc/haproxy.1
 
@@ -66,6 +60,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/${file}.cfg ${EXAMPLESDIR}
 .endfor
 	${INSTALL_DATA} ${FILESDIR}/haproxy.cfg ${EXAMPLESDIR}
-
 
 .include <bsd.port.mk>
