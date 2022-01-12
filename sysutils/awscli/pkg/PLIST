@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.140 2021/12/22 14:23:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.141 2022/01/12 07:36:09 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -717,6 +717,29 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/appmesh/update-route.rs
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/appmesh/update-virtual-node.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/appmesh/update-virtual-router.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/appmesh/update-virtual-service.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apprunner/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apprunner/associate-custom-domain.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apprunner/create-auto-scaling-configuration.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apprunner/create-connection.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apprunner/create-service.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apprunner/delete-auto-scaling-configuration.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apprunner/delete-connection.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apprunner/delete-service.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apprunner/describe-auto-scaling-configuration.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apprunner/describe-custom-domains.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apprunner/describe-service.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apprunner/disassociate-custom-domain.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apprunner/list-auto-scaling-configurations.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apprunner/list-connections.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apprunner/list-operations.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apprunner/list-services.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apprunner/list-tags-for-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apprunner/pause-service.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apprunner/resume-service.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apprunner/start-deployment.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apprunner/tag-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apprunner/untag-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apprunner/update-service.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/athena/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/athena/batch-get-named-query.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/athena/batch-get-query-execution.rst
@@ -1830,6 +1853,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/accept-vpc-peering-
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/advertise-byoip-cidr.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/allocate-address.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/allocate-hosts.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/allocate-ipam-pool-cidr.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/apply-security-groups-to-client-vpn-target-network.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/assign-ipv6-addresses.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/assign-private-ip-addresses.rst
@@ -1877,6 +1901,9 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-fpga-image.r
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-image.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-instance-export-task.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-internet-gateway.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-ipam-pool.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-ipam-scope.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-ipam.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-key-pair.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-launch-template-version.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-launch-template.rst
@@ -1935,6 +1962,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-fleets.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-flow-logs.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-fpga-image.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-internet-gateway.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-ipam-scope.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-ipam.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-key-pair.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-launch-template-versions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-launch-template.rst
@@ -1980,6 +2009,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-vpn-connecti
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-vpn-connection.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/delete-vpn-gateway.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/deprovision-byoip-cidr.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/deprovision-ipam-pool-cidr.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/deregister-image.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/deregister-instance-event-notification-attributes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/deregister-transit-gateway-multicast-group-members.rst
@@ -2032,6 +2062,9 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-instance-t
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-instance-types.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-internet-gateways.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-ipam-pools.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-ipam-scopes.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-ipams.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-ipv6-pools.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-key-pairs.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-launch-template-versions.rst
@@ -2128,6 +2161,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disassociate-transi
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disassociate-vpc-cidr-block.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-ebs-encryption-by-default.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-fast-snapshot-restores.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-ipam-organization-admin-account.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-serial-console-access.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-transit-gateway-route-table-propagation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-vgw-route-propagation.rst
@@ -2148,6 +2182,10 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-ebs-encryption-
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-flow-logs-integration-template.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-groups-for-capacity-reservation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-host-reservation-purchase-preview.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-ipam-address-history.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-ipam-pool-allocations.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-ipam-pool-cidrs.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-ipam-resource-cidrs.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-launch-template-data.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-managed-prefix-list-associations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-managed-prefix-list-entries.rst
@@ -2182,6 +2220,9 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-instance-cre
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-instance-event-start-time.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-instance-metadata-options.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-instance-placement.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-ipam-pool.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-ipam-resource-cidr.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-ipam.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-launch-template.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-managed-prefix-list.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-network-interface-attribute.rst
@@ -2210,7 +2251,9 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpn-tunnel-c
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpn-tunnel-options.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/monitor-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/move-address-to-vpc.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/move-byoip-cidr-to-ipam.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/provision-byoip-cidr.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/provision-ipam-pool-cidr.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/purchase-host-reservation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/purchase-reserved-instances-offering.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/purchase-scheduled-instances.rst
