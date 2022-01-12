@@ -1,4 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2021/08/16 15:00:14 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2022/01/12 09:57:10 sthen Exp $
+
+# 20220112 - build often fails due to out of memory
+# memory allocation of 402653184 bytes failed
+# error: could not compile `notify_push`
+NOT_FOR_ARCHS= =	i386
 
 COMMENT =		update notifications for nextcloud clients
 
