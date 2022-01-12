@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.14 2020/08/26 01:49:51 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.15 2022/01/12 23:31:27 bluhm Exp $
 
 COMMENT=		Moose role for processing command line options
 
 MODULES=		cpan
 PKG_ARCH=		*
-DISTNAME=		MooseX-Getopt-0.74
+DISTNAME=		MooseX-Getopt-0.75
 CATEGORIES=		devel
 
 FIX_EXTRACT_PERMISSIONS=Yes
 
-# perl
+# Perl
 PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		devel/p5-Getopt-Long-Descriptive>=0.088 \
