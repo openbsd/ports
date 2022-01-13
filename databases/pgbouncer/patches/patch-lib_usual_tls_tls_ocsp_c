@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_usual_tls_tls_ocsp_c,v 1.1 2022/01/13 09:57:47 tb Exp $
+
+Index: lib/usual/tls/tls_ocsp.c
+--- lib/usual/tls/tls_ocsp.c.orig
++++ lib/usual/tls/tls_ocsp.c
+@@ -31,7 +31,7 @@
+ 
+ #define USE_NONCE 0
+ 
+-#if defined(LIBRESSL_VERSION_NUMBER) || OPENSSL_VERSION_NUMBER < 0x10002000
++#if OPENSSL_VERSION_NUMBER < 0x10002000
+ #define BUGGY_VERIFY
+ #endif
+ 
