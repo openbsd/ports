@@ -1,19 +1,19 @@
-$OpenBSD: patch-xmobar_cabal,v 1.21 2021/06/11 15:04:49 gnezdo Exp $
+$OpenBSD: patch-xmobar_cabal,v 1.22 2022/01/13 04:09:52 gnezdo Exp $
 
 Hook in APM bindings
 
 Index: xmobar.cabal
 --- xmobar.cabal.orig
 +++ xmobar.cabal
-@@ -145,6 +145,7 @@ library
+@@ -150,6 +150,7 @@ library
                     Xmobar.Plugins.NotmuchMail,
                     Xmobar.Plugins.Monitors,
                     Xmobar.Plugins.Monitors.Batt,
 +                   Xmobar.Plugins.Monitors.Batt.Binding,
+                    Xmobar.Plugins.Monitors.Batt.Common,
                     Xmobar.Plugins.Monitors.Common.Output,
                     Xmobar.Plugins.Monitors.Common.Parsers,
-                    Xmobar.Plugins.Monitors.Common.Files,
-@@ -164,6 +165,7 @@ library
+@@ -175,6 +176,7 @@ library
                     Xmobar.Plugins.Monitors.CatInt
  
      extra-libraries: Xrandr Xrender
