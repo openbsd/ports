@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2021/12/11 06:44:39 bket Exp $
+# $OpenBSD: Makefile,v 1.35 2022/01/13 19:05:04 bket Exp $
 
 COMMENT=		python library for building powerful interactive CLI
 
@@ -6,12 +6,11 @@ MODPY_EGG_VERSION=	3.0.24
 DISTNAME=		prompt_toolkit-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 EPOCH=			1
+REVISION =		0
 
 CATEGORIES=		devel
 
 HOMEPAGE=		https://github.com/prompt-toolkit/python-prompt-toolkit
-
-MAINTAINER=		Bjorn Ketelaars <bket@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes

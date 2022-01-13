@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/02 00:01:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2022/01/13 19:05:04 bket Exp $
 
 COMMENT =		statistical data visualization
 
 MODPY_EGG_VERSION =	0.11.2
 DISTNAME =		seaborn-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		graphics math
 
 HOMEPAGE =		https://seaborn.pydata.org/
-
-MAINTAINER =		Bjorn Ketelaars <bket@openbsd.org>
 
 # BSD 3-Clause
 PERMIT_PACKAGE =	Yes

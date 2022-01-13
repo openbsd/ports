@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.70 2022/01/06 06:25:28 bket Exp $
+# $OpenBSD: Makefile,v 1.71 2022/01/13 19:05:04 bket Exp $
 
 COMMENT =		enhanced interactive Python shell
 
 MODPY_EGG_VERSION =	7.31.0
 DISTNAME =		ipython-${MODPY_EGG_VERSION}
 PKGNAME =		ipython${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://ipython.org/
-
-MAINTAINER =		Bjorn Ketelaars <bket@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

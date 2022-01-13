@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/02 00:02:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2022/01/13 19:05:04 bket Exp $
 
 COMMENT =		sphinx theme used by guzzle
 
 MODPY_EGG_VERSION =	0.7.11
-REVISION =		5
+REVISION =		6
 DISTNAME =		guzzle_sphinx_theme-${MODPY_EGG_VERSION}
 PKGNAME =		py-sphinx_guzzle_theme-${MODPY_EGG_VERSION}
 
 CATEGORIES =		textproc
-
-MAINTAINER =		Bjorn Ketelaars <bket@openbsd.org>
 
 # MIT/OFL
 PERMIT_PACKAGE =	Yes
