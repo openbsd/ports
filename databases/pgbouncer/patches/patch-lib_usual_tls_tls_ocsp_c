@@ -1,4 +1,6 @@
-$OpenBSD: patch-lib_usual_tls_tls_ocsp_c,v 1.1 2022/01/13 09:57:47 tb Exp $
+$OpenBSD: patch-lib_usual_tls_tls_ocsp_c,v 1.2 2022/01/13 10:01:24 tb Exp $
+
+Disable a workaround for a verifier bug fixed in LibreSSL 2.4.2
 
 Index: lib/usual/tls/tls_ocsp.c
 --- lib/usual/tls/tls_ocsp.c.orig
