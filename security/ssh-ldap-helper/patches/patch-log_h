@@ -1,12 +1,15 @@
-$OpenBSD: patch-log_h,v 1.1.1.1 2012/11/14 18:42:50 landry Exp $
---- log.h.orig	Sun Nov 11 22:35:23 2012
-+++ log.h	Sun Nov 11 22:35:33 2012
-@@ -14,7 +14,7 @@
- 
+$OpenBSD: patch-log_h,v 1.2 2022/01/13 09:49:55 tb Exp $
+
+Index: log.h
+--- log.h.orig
++++ log.h
+@@ -15,6 +15,9 @@
  #ifndef SSH_LOG_H
  #define SSH_LOG_H
--
+ 
 +#include <stdarg.h>
++#include <stdio.h>
++
  /* Supported syslog facilities and levels. */
  typedef enum {
  	SYSLOG_FACILITY_DAEMON,

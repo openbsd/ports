@@ -1,37 +1,40 @@
-# $OpenBSD: Makefile,v 1.7 2021/01/10 22:34:50 kn Exp $
+# $OpenBSD: Makefile,v 1.8 2022/01/13 09:49:55 tb Exp $
 
 COMMENT =	fetch ssh AuthorizedKeys from LDAP
 
-DISTNAME =	openssh-5.3p1-81
-PKGNAME =	ssh-ldap-helper-5.3
-REVISION =	0
+V =		8.0p1
+DISTNAME =	openssh-${V}-10
+PKGNAME =	ssh-ldap-helper-8.0
 
 CATEGORIES =	security net
-EXTRACT_SUFX=	.el6.src.rpm
+EXTRACT_SUFX=	.el8.src.rpm
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB +=	c crypto lber-2.4 ldap-2.4 util z
+WANTLIB +=	c crypto lber ldap util z
 
-MASTER_SITES =	http://ftp.redhat.com/pub/redhat/linux/enterprise/6Server/en/os/SRPMS/
+MASTER_SITES =	https://dl.rockylinux.org/pub/rocky/8/BaseOS/source/tree/Packages/o/
 
-PATCH_LIST =	${WRKDIR}/openssh-5.3p1-ldap.patch patch-*
+LDAP_PATCH =	${WRKDIR}/openssh-6.7p1-ldap.patch
+
+PATCH_LIST =	${LDAP_PATCH} patch-*
 PATCH_STRIP =	-p1
-WRKDIST =	${WRKDIR}/openssh-5.3p1
+WRKDIST =	${WRKDIR}/openssh-${V}
 
 CONFIGURE_STYLE =	autoconf
-AUTOCONF_VERSION =	2.62
+AUTOCONF_VERSION =	2.69
 CONFIGURE_ARGS =	--with-ldap=${LOCALBASE} \
 			--without-pam
 NO_TEST =	Yes
 ALL_TARGET =	ssh-ldap-helper
 
-BUILD_DEPENDS=	archivers/bzip2
 LIB_DEPENDS =	databases/openldap
 
 post-extract:
-	cd ${WRKDIR} && ${TAR} xjf openssh-5.3p1-noacss.tar.bz2
+	# Fix a 64-bit time_t issue in the LDAP_PATCH
+	sed -i 's/timeout to %l/&l/' ${LDAP_PATCH}
+	cd ${WRKDIR} && ${TAR} xzf openssh-${V}.tar.gz
 
 # The LDAP_SET_REBIND_PROC_ARGS macro is set to literal
 # "$ac_cv_ldap_set_rebind_proc" instead of "3" because of the improper
