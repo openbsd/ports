@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2020/05/19 06:22:48 kmos Exp $
+# $OpenBSD: Makefile,v 1.21 2022/01/13 10:10:52 tb Exp $
 
 PORTROACH =		limit:[0-9]\.tar\.gz
 
 COMMENT =		command line client application for Mega
 
 DISTNAME =		megatools-1.10.3
+REVISION =		0
 
 CATEGORIES =		net
 

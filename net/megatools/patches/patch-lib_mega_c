@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_mega_c,v 1.3 2022/01/13 10:10:52 tb Exp $
+
+Fix build with opaque RSA in LibreSSL 3.5.
+
+Index: lib/mega.c
+--- lib/mega.c.orig
++++ lib/mega.c
+@@ -785,7 +785,7 @@ static gboolean rsa_key_gen(struct rsa_key *k)
+ 		return FALSE;
+ 	}
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L
+ 	const BIGNUM *p, *q, *d, *u, *m, *_e;
+ 	RSA_get0_key(key, &m, &_e, &d);
+ 	RSA_get0_factors(key, &q, &p);
