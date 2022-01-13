@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-qt5,v 1.1 2022/01/13 14:12:37 ajacoutot Exp $
+@bin bin/pinentry-qt

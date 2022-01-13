@@ -1,2 +1,4 @@
-@comment $OpenBSD: PLIST-gnome3,v 1.1 2015/10/12 05:43:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST-gnome3,v 1.2 2022/01/13 14:12:37 ajacoutot Exp $
+@conflict pinentry-gtk2-*
+@pkgpath security/pinentry,-gtk2
 @bin bin/pinentry-gnome3

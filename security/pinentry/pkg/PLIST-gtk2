@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-gtk2,v 1.1 2011/11/04 12:12:56 stsp Exp $
-@bin bin/pinentry-gtk-2
