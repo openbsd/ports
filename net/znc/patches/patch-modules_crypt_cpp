@@ -1,0 +1,17 @@
+$OpenBSD: patch-modules_crypt_cpp,v 1.1 2022/01/13 10:40:09 tb Exp $
+
+DH_set0_pqg() has been available since LibreSSL version 2.7. This version
+won't compile with opaque DH in LibreSSL 3.5.
+
+Index: modules/crypt.cpp
+--- modules/crypt.cpp.orig
++++ modules/crypt.cpp
+@@ -68,7 +68,7 @@ class CCryptMod : public CModule {
+     CString m_sPrivKey;
+     CString m_sPubKey;
+ 
+-#if OPENSSL_VERSION_NUMBER < 0X10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0X10100000L
+     static int DH_set0_pqg(DH* dh, BIGNUM* p, BIGNUM* q, BIGNUM* g) {
+         /* If the fields p and g in dh are nullptr, the corresponding input
+          * parameters MUST be non-nullptr.  q may remain nullptr.

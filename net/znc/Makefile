@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.45 2021/10/25 18:51:15 tb Exp $
+# $OpenBSD: Makefile,v 1.46 2022/01/13 10:40:09 tb Exp $
 
 COMMENT=	advanced IRC bouncer
 
 DISTNAME=	znc-1.8.2
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}releases/
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://znc.in/
 
