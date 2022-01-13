@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_apps_relay_mainrelay_c,v 1.1 2022/01/13 10:15:54 tb Exp $
+
+Use accessors instead of reaching into DH to fix build with opaque DH
+in LibreSSL 3.5
+
+Index: src/apps/relay/mainrelay.c
+--- src/apps/relay/mainrelay.c.orig
++++ src/apps/relay/mainrelay.c
+@@ -2710,7 +2710,7 @@ static DH *get_dh566(void) {
+ 
+ 	if ((dh = DH_new()) == NULL )
+ 		return (NULL );
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ 	dh->p = BN_bin2bn(dh566_p, sizeof(dh566_p), NULL );
+ 	dh->g = BN_bin2bn(dh566_g, sizeof(dh566_g), NULL );
+ 	if ((dh->p == NULL )|| (dh->g == NULL)){ DH_free(dh); return(NULL);}
+@@ -2748,7 +2748,7 @@ static DH *get_dh1066(void) {
+ 
+ 	if ((dh = DH_new()) == NULL )
+ 		return (NULL );
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ 	dh->p = BN_bin2bn(dh1066_p, sizeof(dh1066_p), NULL );
+ 	dh->g = BN_bin2bn(dh1066_g, sizeof(dh1066_g), NULL );
+ 	if ((dh->p == NULL )|| (dh->g == NULL)){ DH_free(dh); return(NULL);}
+@@ -2799,7 +2799,7 @@ static DH *get_dh2066(void) {
+ 
+ 	if ((dh = DH_new()) == NULL )
+ 		return (NULL );
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ 	dh->p = BN_bin2bn(dh2066_p, sizeof(dh2066_p), NULL );
+ 	dh->g = BN_bin2bn(dh2066_g, sizeof(dh2066_g), NULL );
+ 	if ((dh->p == NULL )|| (dh->g == NULL)){ DH_free(dh); return(NULL);}
