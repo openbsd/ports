@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.191 2022/01/11 21:53:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.192 2022/01/13 08:07:52 ajacoutot Exp $
 
 COMMENT=		components for the GNOME desktop
 
 GNOME_PROJECT=		gnome-desktop
 # sync with meta/gnome "V" variable
 GNOME_VERSION=		41.3
+REVISION=		0
 
 SHARED_LIBS += gnome-desktop-3           2.3 # 19.1.7
 

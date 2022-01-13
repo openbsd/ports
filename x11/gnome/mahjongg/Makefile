@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2020/11/09 07:16:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2022/01/13 08:07:52 ajacoutot Exp $
 
 COMMENT =	mahjongg game for GNOME
 
 GNOME_PROJECT =	gnome-mahjongg
 GNOME_VERSION =	3.38.3
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	games
 

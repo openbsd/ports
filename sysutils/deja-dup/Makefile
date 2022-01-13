@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.62 2021/11/14 06:27:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2022/01/13 08:07:51 ajacoutot Exp $
 
 COMMENT=		simple encrypted backup tool for GNOME
 
 GNOME_VERSION=		42.8
 GNOME_PROJECT=		deja-dup
 
-REVISION=		0
+REVISION=		1
 
 # override gnome MODULE
 MASTER_SITES=		https://gitlab.gnome.org/World/deja-dup/-/archive/${GNOME_VERSION}/

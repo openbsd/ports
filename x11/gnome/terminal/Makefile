@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.181 2021/12/09 09:28:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.182 2022/01/13 08:07:52 ajacoutot Exp $
 
 COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
 GNOME_VERSION=	3.42.2
+REVISION=	0
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes

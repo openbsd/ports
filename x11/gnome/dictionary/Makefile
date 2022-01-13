@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2021/05/24 12:26:01 kmos Exp $
+# $OpenBSD: Makefile,v 1.34 2022/01/13 08:07:52 ajacoutot Exp $
 
 COMMENT=		GNOME dictionary application
 
 GNOME_PROJECT=		gnome-dictionary
 GNOME_VERSION=		40.0
+REVISION=		0
 
 SHARED_LIBS +=  gdict-1.0            9.1      # 10.0
 

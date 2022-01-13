@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/14 06:27:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2022/01/13 08:07:52 ajacoutot Exp $
 
 COMMENT=		simple note editor
 
 GNOME_PROJECT=		gnome-notes
 GNOME_VERSION=		40.1
-REVISION=		2
+REVISION=		3
 
 # override gnome MODULE
 MASTER_SITES=		https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/BIJIBEN_${GNOME_VERSION:S/./_/}/

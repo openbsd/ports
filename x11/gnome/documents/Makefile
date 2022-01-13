@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.107 2020/05/14 15:25:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.108 2022/01/13 08:07:52 ajacoutot Exp $
 
 COMMENT=		document manager application for GNOME
 
 GNOME_PROJECT=		gnome-documents
 GNOME_VERSION=		3.34.0
-REVISION=		0
+REVISION=		1
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes

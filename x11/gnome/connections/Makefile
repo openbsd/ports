@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2021/12/04 10:47:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2022/01/13 08:07:52 ajacoutot Exp $
 
 COMMENT=		remote desktop client for GNOME
 
 GNOME_PROJECT=		gnome-connections
 GNOME_VERSION=		41.2
+REVISION=		0
 
 CATEGORIES=		net
 
