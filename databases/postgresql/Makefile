@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.279 2021/11/22 13:55:55 espie Exp $
+# $OpenBSD: Makefile,v 1.280 2022/01/13 15:59:34 jeremy Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -7,12 +7,8 @@ COMMENT-contrib=PostgreSQL RDBMS contributions
 COMMENT-plpython=Python procedural language for PostgreSQL
 COMMENT-pg_upgrade=Support for upgrading PostgreSQL data from previous version
 
-VERSION=	13.4
-REVISION=	0
-REVISION-server=	1
-REVISION-plpython=	1
-
-PREV_MAJOR=	12
+VERSION=	14.1
+PREV_MAJOR=	13
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
 
@@ -22,11 +18,11 @@ CATEGORIES=	databases
 SHARED_LIBS=	ecpg		7.10 \
 		ecpg_compat	4.10 \
 		pgtypes		4.9 \
-		pq		6.12
+		pq		6.13
 
 HOMEPAGE=	https://www.postgresql.org/
 
-MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
+MAINTAINER=	Jeremy Evans <jeremy@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes

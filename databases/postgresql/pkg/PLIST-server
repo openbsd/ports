@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.42 2021/03/01 13:40:08 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.43 2022/01/13 15:59:34 jeremy Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-clients-*
@@ -87,10 +87,12 @@ include/postgresql/server/access/spgist_private.h
 include/postgresql/server/access/spgxlog.h
 include/postgresql/server/access/stratnum.h
 include/postgresql/server/access/subtrans.h
+include/postgresql/server/access/syncscan.h
 include/postgresql/server/access/sysattr.h
 include/postgresql/server/access/table.h
 include/postgresql/server/access/tableam.h
 include/postgresql/server/access/timeline.h
+include/postgresql/server/access/toast_compression.h
 include/postgresql/server/access/toast_helper.h
 include/postgresql/server/access/toast_internals.h
 include/postgresql/server/access/transam.h
@@ -103,6 +105,7 @@ include/postgresql/server/access/twophase.h
 include/postgresql/server/access/twophase_rmgr.h
 include/postgresql/server/access/valid.h
 include/postgresql/server/access/visibilitymap.h
+include/postgresql/server/access/visibilitymapdefs.h
 include/postgresql/server/access/xact.h
 include/postgresql/server/access/xlog.h
 include/postgresql/server/access/xlog_internal.h
@@ -127,7 +130,6 @@ include/postgresql/server/catalog/indexing.h
 include/postgresql/server/catalog/namespace.h
 include/postgresql/server/catalog/objectaccess.h
 include/postgresql/server/catalog/objectaddress.h
-include/postgresql/server/catalog/opfam_internal.h
 include/postgresql/server/catalog/partition.h
 include/postgresql/server/catalog/pg_aggregate.h
 include/postgresql/server/catalog/pg_aggregate_d.h
@@ -257,6 +259,7 @@ include/postgresql/server/catalog/pg_user_mapping_d.h
 include/postgresql/server/catalog/schemapg.h
 include/postgresql/server/catalog/storage.h
 include/postgresql/server/catalog/storage_xlog.h
+include/postgresql/server/catalog/system_fk_info.h
 include/postgresql/server/catalog/toasting.h
 include/postgresql/server/commands/
 include/postgresql/server/commands/alter.h
@@ -266,6 +269,7 @@ include/postgresql/server/commands/collationcmds.h
 include/postgresql/server/commands/comment.h
 include/postgresql/server/commands/conversioncmds.h
 include/postgresql/server/commands/copy.h
+include/postgresql/server/commands/copyfrom_internal.h
 include/postgresql/server/commands/createas.h
 include/postgresql/server/commands/dbcommands.h
 include/postgresql/server/commands/dbcommands_xlog.h
@@ -301,10 +305,12 @@ include/postgresql/server/common/checksum_helper.h
 include/postgresql/server/common/config_info.h
 include/postgresql/server/common/connect.h
 include/postgresql/server/common/controldata_utils.h
+include/postgresql/server/common/cryptohash.h
 include/postgresql/server/common/fe_memutils.h
 include/postgresql/server/common/file_perm.h
 include/postgresql/server/common/file_utils.h
 include/postgresql/server/common/hashfn.h
+include/postgresql/server/common/hmac.h
 include/postgresql/server/common/int.h
 include/postgresql/server/common/int128.h
 include/postgresql/server/common/ip.h
@@ -320,17 +326,20 @@ include/postgresql/server/common/relpath.h
 include/postgresql/server/common/restricted_token.h
 include/postgresql/server/common/saslprep.h
 include/postgresql/server/common/scram-common.h
+include/postgresql/server/common/sha1.h
 include/postgresql/server/common/sha2.h
 include/postgresql/server/common/shortest_dec.h
 include/postgresql/server/common/string.h
 include/postgresql/server/common/unicode_combining_table.h
 include/postgresql/server/common/unicode_norm.h
+include/postgresql/server/common/unicode_norm_hashfunc.h
 include/postgresql/server/common/unicode_norm_table.h
 include/postgresql/server/common/unicode_normprops_table.h
 include/postgresql/server/common/username.h
 include/postgresql/server/datatype/
 include/postgresql/server/datatype/timestamp.h
 include/postgresql/server/executor/
+include/postgresql/server/executor/execAsync.h
 include/postgresql/server/executor/execExpr.h
 include/postgresql/server/executor/execParallel.h
 include/postgresql/server/executor/execPartition.h
@@ -361,6 +370,7 @@ include/postgresql/server/executor/nodeIndexscan.h
 include/postgresql/server/executor/nodeLimit.h
 include/postgresql/server/executor/nodeLockRows.h
 include/postgresql/server/executor/nodeMaterial.h
+include/postgresql/server/executor/nodeMemoize.h
 include/postgresql/server/executor/nodeMergeAppend.h
 include/postgresql/server/executor/nodeMergejoin.h
 include/postgresql/server/executor/nodeModifyTable.h
@@ -376,6 +386,7 @@ include/postgresql/server/executor/nodeSort.h
 include/postgresql/server/executor/nodeSubplan.h
 include/postgresql/server/executor/nodeSubqueryscan.h
 include/postgresql/server/executor/nodeTableFuncscan.h
+include/postgresql/server/executor/nodeTidrangescan.h
 include/postgresql/server/executor/nodeTidscan.h
 include/postgresql/server/executor/nodeUnique.h
 include/postgresql/server/executor/nodeValuesscan.h
@@ -402,10 +413,14 @@ include/postgresql/server/fe_utils/
 include/postgresql/server/fe_utils/archive.h
 include/postgresql/server/fe_utils/cancel.h
 include/postgresql/server/fe_utils/conditional.h
+include/postgresql/server/fe_utils/connect_utils.h
 include/postgresql/server/fe_utils/mbprint.h
+include/postgresql/server/fe_utils/option_utils.h
+include/postgresql/server/fe_utils/parallel_slot.h
 include/postgresql/server/fe_utils/print.h
 include/postgresql/server/fe_utils/psqlscan.h
 include/postgresql/server/fe_utils/psqlscan_int.h
+include/postgresql/server/fe_utils/query_utils.h
 include/postgresql/server/fe_utils/recovery_gen.h
 include/postgresql/server/fe_utils/simple_list.h
 include/postgresql/server/fe_utils/string_utils.h
@@ -433,6 +448,7 @@ include/postgresql/server/lib/pairingheap.h
 include/postgresql/server/lib/qunique.h
 include/postgresql/server/lib/rbtree.h
 include/postgresql/server/lib/simplehash.h
+include/postgresql/server/lib/sort_template.h
 include/postgresql/server/lib/stringinfo.h
 include/postgresql/server/libpq/
 include/postgresql/server/libpq/auth.h
@@ -471,6 +487,7 @@ include/postgresql/server/nodes/primnodes.h
 include/postgresql/server/nodes/print.h
 include/postgresql/server/nodes/readfuncs.h
 include/postgresql/server/nodes/replnodes.h
+include/postgresql/server/nodes/subscripting.h
 include/postgresql/server/nodes/supportnodes.h
 include/postgresql/server/nodes/tidbitmap.h
 include/postgresql/server/nodes/value.h
@@ -580,6 +597,8 @@ include/postgresql/server/port/openbsd.h
 include/postgresql/server/port/pg_bitutils.h
 include/postgresql/server/port/pg_bswap.h
 include/postgresql/server/port/pg_crc32c.h
+include/postgresql/server/port/pg_iovec.h
+include/postgresql/server/port/pg_pthread.h
 include/postgresql/server/port/solaris.h
 @comment include/postgresql/server/port/win32/
 @comment include/postgresql/server/port/win32.h
@@ -655,6 +674,7 @@ include/postgresql/server/rewrite/rewriteDefine.h
 include/postgresql/server/rewrite/rewriteHandler.h
 include/postgresql/server/rewrite/rewriteManip.h
 include/postgresql/server/rewrite/rewriteRemove.h
+include/postgresql/server/rewrite/rewriteSearchCycle.h
 include/postgresql/server/rewrite/rewriteSupport.h
 include/postgresql/server/rewrite/rowsecurity.h
 include/postgresql/server/rusagestub.h
@@ -663,6 +683,8 @@ include/postgresql/server/snowball/header.h
 include/postgresql/server/snowball/libstemmer/
 include/postgresql/server/snowball/libstemmer/api.h
 include/postgresql/server/snowball/libstemmer/header.h
+include/postgresql/server/snowball/libstemmer/stem_ISO_8859_1_basque.h
+include/postgresql/server/snowball/libstemmer/stem_ISO_8859_1_catalan.h
 include/postgresql/server/snowball/libstemmer/stem_ISO_8859_1_danish.h
 include/postgresql/server/snowball/libstemmer/stem_ISO_8859_1_dutch.h
 include/postgresql/server/snowball/libstemmer/stem_ISO_8859_1_english.h
@@ -681,6 +703,9 @@ include/postgresql/server/snowball/libstemmer/stem_ISO_8859_2_hungarian.h
 include/postgresql/server/snowball/libstemmer/stem_ISO_8859_2_romanian.h
 include/postgresql/server/snowball/libstemmer/stem_KOI8_R_russian.h
 include/postgresql/server/snowball/libstemmer/stem_UTF_8_arabic.h
+include/postgresql/server/snowball/libstemmer/stem_UTF_8_armenian.h
+include/postgresql/server/snowball/libstemmer/stem_UTF_8_basque.h
+include/postgresql/server/snowball/libstemmer/stem_UTF_8_catalan.h
 include/postgresql/server/snowball/libstemmer/stem_UTF_8_danish.h
 include/postgresql/server/snowball/libstemmer/stem_UTF_8_dutch.h
 include/postgresql/server/snowball/libstemmer/stem_UTF_8_english.h
@@ -688,6 +713,7 @@ include/postgresql/server/snowball/libstemmer/stem_UTF_8_finnish.h
 include/postgresql/server/snowball/libstemmer/stem_UTF_8_french.h
 include/postgresql/server/snowball/libstemmer/stem_UTF_8_german.h
 include/postgresql/server/snowball/libstemmer/stem_UTF_8_greek.h
+include/postgresql/server/snowball/libstemmer/stem_UTF_8_hindi.h
 include/postgresql/server/snowball/libstemmer/stem_UTF_8_hungarian.h
 include/postgresql/server/snowball/libstemmer/stem_UTF_8_indonesian.h
 include/postgresql/server/snowball/libstemmer/stem_UTF_8_irish.h
@@ -699,10 +725,12 @@ include/postgresql/server/snowball/libstemmer/stem_UTF_8_porter.h
 include/postgresql/server/snowball/libstemmer/stem_UTF_8_portuguese.h
 include/postgresql/server/snowball/libstemmer/stem_UTF_8_romanian.h
 include/postgresql/server/snowball/libstemmer/stem_UTF_8_russian.h
+include/postgresql/server/snowball/libstemmer/stem_UTF_8_serbian.h
 include/postgresql/server/snowball/libstemmer/stem_UTF_8_spanish.h
 include/postgresql/server/snowball/libstemmer/stem_UTF_8_swedish.h
 include/postgresql/server/snowball/libstemmer/stem_UTF_8_tamil.h
 include/postgresql/server/snowball/libstemmer/stem_UTF_8_turkish.h
+include/postgresql/server/snowball/libstemmer/stem_UTF_8_yiddish.h
 include/postgresql/server/statistics/
 include/postgresql/server/statistics/extended_stats_internal.h
 include/postgresql/server/statistics/statistics.h
@@ -787,6 +815,8 @@ include/postgresql/server/utils/array.h
 include/postgresql/server/utils/arrayaccess.h
 include/postgresql/server/utils/ascii.h
 include/postgresql/server/utils/attoptcache.h
+include/postgresql/server/utils/backend_progress.h
+include/postgresql/server/utils/backend_status.h
 include/postgresql/server/utils/builtins.h
 include/postgresql/server/utils/bytea.h
 include/postgresql/server/utils/cash.h
@@ -825,7 +855,9 @@ include/postgresql/server/utils/logtape.h
 include/postgresql/server/utils/lsyscache.h
 include/postgresql/server/utils/memdebug.h
 include/postgresql/server/utils/memutils.h
+include/postgresql/server/utils/multirangetypes.h
 include/postgresql/server/utils/numeric.h
+include/postgresql/server/utils/old_snapshot.h
 include/postgresql/server/utils/palloc.h
 include/postgresql/server/utils/partcache.h
 include/postgresql/server/utils/pg_crc.h
@@ -838,6 +870,7 @@ include/postgresql/server/utils/portal.h
 include/postgresql/server/utils/probes.h
 include/postgresql/server/utils/ps_status.h
 include/postgresql/server/utils/queryenvironment.h
+include/postgresql/server/utils/queryjumble.h
 include/postgresql/server/utils/rangetypes.h
 include/postgresql/server/utils/regproc.h
 include/postgresql/server/utils/rel.h
@@ -867,6 +900,7 @@ include/postgresql/server/utils/tzparser.h
 include/postgresql/server/utils/uuid.h
 include/postgresql/server/utils/varbit.h
 include/postgresql/server/utils/varlena.h
+include/postgresql/server/utils/wait_event.h
 include/postgresql/server/utils/xid8.h
 include/postgresql/server/utils/xml.h
 include/postgresql/server/windowapi.h
@@ -887,6 +921,9 @@ include/postgresql/server/windowapi.h
 lib/postgresql/pgxs/src/pl/
 lib/postgresql/pgxs/src/pl/plpython/
 lib/postgresql/pgxs/src/pl/plpython/regress-python3-mangle.mk
+lib/postgresql/pgxs/src/test/isolation/
+@bin lib/postgresql/pgxs/src/test/isolation/isolationtester
+@bin lib/postgresql/pgxs/src/test/isolation/pg_isolation_regress
 @so lib/postgresql/plperl.so
 @so lib/postgresql/plpgsql.so
 @so lib/postgresql/test_decoding.so
@@ -932,6 +969,8 @@ share/postgresql/pg_ident.conf.sample
 share/postgresql/pg_service.conf.sample
 share/postgresql/postgres.bki
 share/postgresql/postgresql.conf.sample
+share/postgresql/system_constraints.sql
+share/postgresql/system_functions.sql
 share/postgresql/tsearch_data/
 share/postgresql/tsearch_data/danish.stop
 share/postgresql/tsearch_data/dutch.stop
