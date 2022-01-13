@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1358 2022/01/13 14:13:00 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1359 2022/01/13 15:12:55 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1627,6 +1627,8 @@ setup_obsolete_reason(
 	3 => 'climm',
 	31 => 'spe',
 	31 => 'py-Checker',
+	14 => 'ssvnc',
+	14 => 'ssvnc-viewer',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1661,6 +1663,7 @@ my $obsolete_message = {
 	11 => "no longer packageable",
 	12 => "replace with IMAPSieve, see https://wiki.dovecot.org/HowTo/AntispamWithSieve",
 	13 => "has a dependency on obsolete software",
+	14 => "no longer maintained upstream and has security issues, consider remmina or tigervnc's vncviewer as an alternative",
 	17 => "old GeoIP databases end-of-life, see alternative using geoip2/libmaxminddb",
 	20 => "merged into IETF Opus codec, obsolete, audio/mumble uses bundled version now",
 	21 => "upstream recommends to use composer to build a drupal site",

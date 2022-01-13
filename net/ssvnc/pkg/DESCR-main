@@ -1,6 +1,0 @@
-The Enhanced VNC viewer provides for remote access to VNC displays
-using the standard protocol and various extensions including those used
-by TightVNC, UltraVNC, RealVNC and x11vnc providing for features such
-as dynamic screen resizing, server-side scaling, blocking input devices
-on the server, and low colour modes. Many of these can now be set from
-the popup menu.

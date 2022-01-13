@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2013/04/20 16:26:25 sthen Exp $
-@conflict tightvnc-viewer-*
-@conflict ssvnc-<=ssvnc-1.0.29p0v0
-@pkgpath net/tightvnc,-viewer
-@bin bin/vncviewer
-@bin bin/vncstorepw
-@man man/man1/vncviewer.1
-@comment share/applications/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1284 2022/01/06 19:06:18 jeremy Exp $
+# $OpenBSD: Makefile,v 1.1285 2022/01/13 15:12:55 sthen Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -662,7 +662,6 @@
      SUBDIR += ssldump
      SUBDIR += sslh
      SUBDIR += sslsniffer
-     SUBDIR += ssvnc
      SUBDIR += strongswan
      SUBDIR += supybot
      SUBDIR += swirc
