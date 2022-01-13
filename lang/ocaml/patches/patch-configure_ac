@@ -1,8 +1,33 @@
-$OpenBSD: patch-configure_ac,v 1.7 2022/01/11 19:01:28 chrisz Exp $
+$OpenBSD: patch-configure_ac,v 1.8 2022/01/13 04:19:45 daniel Exp $
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
+@@ -735,6 +735,11 @@ AS_CASE([$CC,$host],
+ )
+ 
+ 
++# Respect LDFLAGS and CFLAGS
++common_cflags="$common_cflags $CFLAGS"
++oc_ldflags="$oc_ldflags $LDFLAGS"
++
++
+ ## Program to use to install files
+ AC_PROG_INSTALL
+ 
+@@ -867,10 +872,10 @@ AS_IF([test x"$enable_shared" != "xno"],
+     [[*-*-linux*|*-*-freebsd[3-9]*|*-*-freebsd[1-9][0-9]*\
+     |*-*-openbsd*|*-*-netbsd*|*-*-dragonfly*|*-*-gnu*|*-*-haiku*]],
+       [sharedlib_cflags="-fPIC"
++      oc_ldflags="$oc_ldflags -Wl,-E"
+        AS_CASE([$CC,$host],
+            [gcc*,powerpc-*-linux*], [mksharedlib="$CC -shared -mbss-plt"],
+-           [mksharedlib="$CC -shared"])
+-      oc_ldflags="$oc_ldflags -Wl,-E"
++           [mksharedlib="$CC -shared $oc_ldflags"])
+       rpath="-Wl,-rpath,"
+       mksharedlibrpath="-Wl,-rpath,"
+       natdynlinkopts="-Wl,-E"
 @@ -864,6 +869,7 @@ AS_IF([test x"$enable_shared" != "xno"],
      [earm*-*-netbsd*], [natdynlink=true],
      [aarch64-*-linux*], [natdynlink=true],

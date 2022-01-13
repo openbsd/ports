@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.92 2022/01/12 21:30:14 chrisz Exp $
+# $OpenBSD: Makefile,v 1.93 2022/01/13 04:19:45 daniel Exp $
 
 COMMENT =	   ML language with complete class-based objective system
 
 # XXX Don't even think of updating ocaml alone.
 # Do check that the ports that depend on it still work, or repair them.
 VERSION=		4.12.1
-REVISION=		0
+REVISION=		1
 
 PKGNAME =		ocaml-${VERSION:C/\+//}
 
