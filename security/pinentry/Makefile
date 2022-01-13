@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2022/01/13 14:12:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2022/01/13 14:43:49 ajacoutot Exp $
 
 COMMENT-main = 	PIN or passphrase entry dialog (ncurses interface)
 COMMENT-gnome3 =PIN or passphrase entry dialog (GNOME 3 interface)
@@ -8,6 +8,7 @@ VERSION = 	1.2.0
 DISTNAME = 	pinentry-${VERSION}
 CATEGORIES = 	security
 EXTRACT_SUFX =	.tar.bz2
+REVISION =	0
 
 MASTER_SITES = 	${MASTER_SITE_GNUPG:=pinentry/}
 
@@ -33,10 +34,12 @@ LIB_DEPENDS-gnome3 =	${LIB_DEPENDS} \
 			x11/gnome/gcr
 
 WANTLIB-qt5 += ${WANTLIB}
-WANTLIB-qt5 += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets m
+WANTLIB-qt5 += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets Qt5X11Extras
+WANTLIB-qt5 += X11 m
 
 LIB_DEPENDS-qt5 =	${LIB_DEPENDS} \
-			x11/qt5/qtbase
+			x11/qt5/qtbase \
+			x11/qt5/qtx11extras
 
 CONFIGURE_STYLE = 	gnu
 CONFIGURE_ENV = 	CPPFLAGS="-I${LOCALBASE}/include -D_XOPEN_SOURCE_EXTENDED" \
@@ -51,13 +54,18 @@ CONFIGURE_ARGS = 	--enable-pinentry-curses \
 
 MULTI_PACKAGES =	-main -gnome3 -qt5
 
-PSEUDO_FLAVORS=		no_gnome3 bootstrap
-FLAVOR?=		no_gnome3 bootstrap
+PSEUDO_FLAVORS=		no_gnome3 no_qt5 bootstrap
+FLAVOR?=		no_gnome3 no_qt5 bootstrap
 
 .include <bsd.port.arch.mk>
 
 .if !${BUILD_PACKAGES:M-gnome3}
 CONFIGURE_ARGS +=	--disable-pinentry-gnome3
+.endif
+
+.if !${BUILD_PACKAGES:M-qt5}
+CONFIGURE_ARGS +=	--disable-pinentry-qt
+CONFIGURE_ARGS +=	--disable-pinentry-qt5
 .endif
 
 # http://pkgs.fedoraproject.org/cgit/pinentry.git/tree/pinentry-wrapper
