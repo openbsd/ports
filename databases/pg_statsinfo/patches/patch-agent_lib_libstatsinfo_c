@@ -1,11 +1,11 @@
-$OpenBSD: patch-agent_lib_libstatsinfo_c,v 1.7 2020/02/06 19:26:34 jeremy Exp $
+$OpenBSD: patch-agent_lib_libstatsinfo_c,v 1.8 2022/01/13 16:01:29 jeremy Exp $
 
-Work with PostgreSQL 12.
+Work with PostgreSQL 14.
 
 Index: agent/lib/libstatsinfo.c
 --- agent/lib/libstatsinfo.c.orig
 +++ agent/lib/libstatsinfo.c
-@@ -7,6 +7,7 @@
+@@ -7,10 +7,10 @@
  #include "libstatsinfo.h"
  
  #include <fcntl.h>
@@ -13,11 +13,14 @@ Index: agent/lib/libstatsinfo.c
  #include <unistd.h>
  #include <sys/stat.h>
  #include <sys/types.h>
-@@ -34,9 +35,10 @@
+-#include <sys/sysmacros.h>
+ #include <sys/wait.h>
+ #include <time.h>
+ #include <float.h>
+@@ -35,8 +35,10 @@
  #include "storage/procarray.h"
  #include "utils/builtins.h"
  #include "utils/guc.h"
--#include "utils/tqual.h"
 +#include "utils/snapmgr.h"
  #include "utils/lsyscache.h"
  #include "utils/ps_status.h"
@@ -25,7 +28,7 @@ Index: agent/lib/libstatsinfo.c
  
  #if PG_VERSION_NUM >= 90100
  #include "catalog/pg_collation.h"
-@@ -595,6 +597,7 @@ sample_activity(void)
+@@ -608,6 +610,7 @@ sample_activity(void)
  	int			waiting = 0;
  	int			running = 0;
  	int			i;
@@ -33,7 +36,16 @@ Index: agent/lib/libstatsinfo.c
  
  	if (!long_xacts)
  	{
-@@ -1887,9 +1890,11 @@ statsinfo_restart(PG_FUNCTION_ARGS)
+@@ -696,7 +699,7 @@ sample_activity(void)
+ 		/* XXX: needs lock? */
+ #if PG_VERSION_NUM >= 90200
+ 		if ((proc = BackendPidGetProc(be->st_procpid)) == NULL ||
+-			(ProcGlobal->allPgXact[proc->pgprocno].vacuumFlags & PROC_IN_VACUUM))
++			(ProcGlobal->statusFlags[proc->pgxactoff] & PROC_IN_VACUUM))
+ 			continue;
+ #else
+ 		if ((proc = BackendPidGetProc(be->st_procpid)) == NULL ||
+@@ -1903,9 +1906,11 @@ statsinfo_restart(PG_FUNCTION_ARGS)
  #define NUM_STAT_FIELDS_MIN		6
  
  /* not support a kernel that does not have the required fields at "/proc/stat" */
@@ -45,7 +57,7 @@ Index: agent/lib/libstatsinfo.c
  
  /*
   * statsinfo_cpustats - get cpu information
-@@ -1928,6 +1933,7 @@ statsinfo_cpustats_noarg(PG_FUNCTION_ARGS)
+@@ -1944,6 +1949,7 @@ statsinfo_cpustats_noarg(PG_FUNCTION_ARGS)
  	PG_RETURN_DATUM(get_cpustats(fcinfo, 0, 0, 0, 0));
  }
  
@@ -53,7 +65,7 @@ Index: agent/lib/libstatsinfo.c
  static Datum
  get_cpustats(FunctionCallInfo fcinfo,
  			 int64 prev_cpu_user,
-@@ -1940,6 +1946,59 @@ get_cpustats(FunctionCallInfo fcinfo,
+@@ -1956,6 +1962,59 @@ get_cpustats(FunctionCallInfo fcinfo,
  	int64			 cpu_system;
  	int64			 cpu_idle;
  	int64			 cpu_iowait;
@@ -113,7 +125,7 @@ Index: agent/lib/libstatsinfo.c
  	List			*records = NIL;
  	List			*fields = NIL;
  	HeapTuple		 tuple;
-@@ -2012,6 +2071,7 @@ get_cpustats(FunctionCallInfo fcinfo,
+@@ -2028,6 +2087,7 @@ get_cpustats(FunctionCallInfo fcinfo,
  
  	return HeapTupleGetDatum(tuple);
  }
@@ -121,7 +133,7 @@ Index: agent/lib/libstatsinfo.c
  
  #define NUM_DEVICESTATS_COLS			17
  #define TYPE_DEVICE_TABLESPACES			TEXTOID
-@@ -2185,10 +2245,46 @@ statsinfo_devicestats(PG_FUNCTION_ARGS)
+@@ -2201,10 +2261,46 @@ statsinfo_devicestats(PG_FUNCTION_ARGS)
  /*
   * statsinfo_loadavg - get loadavg information
   */
@@ -168,7 +180,7 @@ Index: agent/lib/libstatsinfo.c
  	int			fd;
  	char		buffer[256];
  	int			nbytes;
-@@ -2247,6 +2343,7 @@ statsinfo_loadavg(PG_FUNCTION_ARGS)
+@@ -2263,6 +2359,7 @@ statsinfo_loadavg(PG_FUNCTION_ARGS)
  
  	return HeapTupleGetDatum(tuple);
  }
@@ -176,7 +188,7 @@ Index: agent/lib/libstatsinfo.c
  
  #define FILE_MEMINFO		"/proc/meminfo"
  #define NUM_MEMORY_COLS		5
-@@ -2266,6 +2363,7 @@ compare_meminfo_table(const void *a, const void *b)
+@@ -2282,6 +2379,7 @@ compare_meminfo_table(const void *a, const void *b)
  /*
   * statsinfo_memory - get memory information
   */
@@ -184,7 +196,7 @@ Index: agent/lib/libstatsinfo.c
  Datum
  statsinfo_memory(PG_FUNCTION_ARGS)
  {
-@@ -2273,6 +2371,36 @@ statsinfo_memory(PG_FUNCTION_ARGS)
+@@ -2289,6 +2387,36 @@ statsinfo_memory(PG_FUNCTION_ARGS)
  	HeapTuple		 tuple;
  	Datum			 values[NUM_MEMORY_COLS];
  	bool			 nulls[NUM_MEMORY_COLS];
@@ -221,7 +233,7 @@ Index: agent/lib/libstatsinfo.c
  	int				 fd;
  	char			 buffer[2048];
  	int				 nbytes;
-@@ -2371,6 +2499,7 @@ nextline:
+@@ -2387,6 +2515,7 @@ nextline:
  
  	return HeapTupleGetDatum(tuple);
  }
@@ -229,7 +241,7 @@ Index: agent/lib/libstatsinfo.c
  
  #define FILE_PROFILE		"/proc/systemtap/statsinfo_prof/profile"
  #define NUM_PROFILE_COLS	3
-@@ -2379,9 +2508,16 @@ nextline:
+@@ -2395,9 +2524,16 @@ nextline:
  /*
   * statsinfo_profile - get profile information
   */
@@ -246,7 +258,7 @@ Index: agent/lib/libstatsinfo.c
  	ReturnSetInfo	*rsinfo = (ReturnSetInfo *) fcinfo->resultinfo;
  	TupleDesc		 tupdesc;
  	Tuplestorestate	*tupstore;
-@@ -2488,6 +2624,7 @@ statsinfo_profile(PG_FUNCTION_ARGS)
+@@ -2504,6 +2640,7 @@ statsinfo_profile(PG_FUNCTION_ARGS)
  
  	PG_RETURN_VOID();
  }
@@ -254,49 +266,3 @@ Index: agent/lib/libstatsinfo.c
  
  static bool
  checked_write(int fd, const void *buf, int size)
-@@ -3014,7 +3151,7 @@ statsinfo_tablespaces(PG_FUNCTION_ARGS)
- 	Tuplestorestate	   *tupstore;
- 	MemoryContext		per_query_ctx;
- 	MemoryContext		oldcontext;
--	HeapScanDesc		scan;
-+	TableScanDesc		scan;
- 	HeapTuple			tuple;
- 	Relation			relation;
- 	Datum				values[TABLESPACES_COLS];
-@@ -3053,9 +3190,9 @@ statsinfo_tablespaces(PG_FUNCTION_ARGS)
- 
- 	relation = heap_open(TableSpaceRelationId, AccessShareLock);
- #if PG_VERSION_NUM >= 90400
--	scan = heap_beginscan_catalog(relation, 0, NULL);
-+	scan = table_beginscan_catalog(relation, 0, NULL);
- #else
--	scan = heap_beginscan(relation, SnapshotNow, 0, NULL);
-+	scan = table_beginscan(relation, SnapshotNow, 0, NULL);
- #endif
- 	while ((tuple = heap_getnext(scan, ForwardScanDirection)) != NULL)
- 	{
-@@ -3067,20 +3204,20 @@ statsinfo_tablespaces(PG_FUNCTION_ARGS)
- 		i = 0;
- 
- 		/* oid */
--		values[i++] = ObjectIdGetDatum(HeapTupleGetOid(tuple));
-+		values[i++] = ObjectIdGetDatum(form->oid);
- 
- 		/* name */
- 		values[i++] = CStringGetTextDatum(NameStr(form->spcname));
- 
- 		/* location */
--		if (HeapTupleGetOid(tuple) == DEFAULTTABLESPACE_OID ||
--			HeapTupleGetOid(tuple) == GLOBALTABLESPACE_OID)
-+		if (form->oid == DEFAULTTABLESPACE_OID ||
-+			form->oid == GLOBALTABLESPACE_OID)
- 			datum = CStringGetTextDatum(DataDir);
- 		else
- 		{
- #if PG_VERSION_NUM >= 90200
- 			datum = DirectFunctionCall1(pg_tablespace_location,
--										ObjectIdGetDatum(HeapTupleGetOid(tuple)));
-+										ObjectIdGetDatum(form->oid));
- #else
- 			bool isnull;
- 			datum = fastgetattr(tuple, Anum_pg_tablespace_spclocation,

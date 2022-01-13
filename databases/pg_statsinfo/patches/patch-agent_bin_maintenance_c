@@ -1,0 +1,14 @@
+$OpenBSD: patch-agent_bin_maintenance_c,v 1.1 2022/01/13 16:01:29 jeremy Exp $
+
+Index: agent/bin/maintenance.c
+--- agent/bin/maintenance.c.orig
++++ agent/bin/maintenance.c
+@@ -88,7 +88,7 @@ maintenance_log(const char *command, int *fd_err)
+ 					/* %l: log directory */
+ 					sp++;
+ 					if (is_absolute_path(log_directory))
+-						StrNCpy(dp, log_directory, endp - dp);
++						strncpy(dp, log_directory, endp - dp);
+ 					else
+ 						join_path_components(dp, data_directory, log_directory);
+ 					dp += strlen(dp);

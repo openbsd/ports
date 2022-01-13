@@ -1,16 +1,56 @@
-$OpenBSD: patch-agent_lib_last_xact_activity_c,v 1.5 2020/02/06 00:39:37 jeremy Exp $
+$OpenBSD: patch-agent_lib_last_xact_activity_c,v 1.6 2022/01/13 16:01:29 jeremy Exp $
 
-Work with PostgreSQL 12.
+Work with PostgreSQL 14.
 
 Index: agent/lib/last_xact_activity.c
 --- agent/lib/last_xact_activity.c.orig
 +++ agent/lib/last_xact_activity.c
-@@ -527,7 +527,7 @@ statsinfo_last_xact_activity(PG_FUNCTION_ARGS)
- 
- 		oldcontext = MemoryContextSwitchTo(funcctx->multi_call_memory_ctx);
- 
--		tupdesc = CreateTemplateTupleDesc(LAST_XACT_ACTIVITY_COLS, false);
-+		tupdesc = CreateTemplateTupleDesc(LAST_XACT_ACTIVITY_COLS);
- 		TupleDescInitEntry(tupdesc, (AttrNumber) 1, "pid",
- 						   INT4OID, -1, 0);
- 		TupleDescInitEntry(tupdesc, (AttrNumber) 2, "xid",
+@@ -99,7 +99,7 @@ static Size buffer_size(int nbackends);
+ #if PG_VERSION_NUM >= 90000
+ static void myProcessUtility0(Node *parsetree, const char *queryString);
+ #if PG_VERSION_NUM >= 130000
+-static void myProcessUtility(PlannedStmt *pstmt, const char *queryString,
++static void myProcessUtility(PlannedStmt *pstmt, const char *queryString, bool readOnlyTree,
+ 			   ProcessUtilityContext context, ParamListInfo params,
+ 			   QueryEnvironment *queryEnv,
+ 			   DestReceiver *dest, QueryCompletion *qc);
+@@ -290,7 +290,7 @@ myExecutorStart(QueryDesc *queryDesc, int eflags)
+ 	if (!(entry->inxact && entry->pid != MyProc->pid))
+ 	{
+ #if PG_VERSION_NUM >= 90200
+-		entry->xid = ProcGlobal->allPgXact[MyProc->pgprocno].xid;
++		entry->xid = MyProc->xid;
+ #else
+ 		entry->xid = MyProc->xid;
+ #endif
+@@ -422,7 +422,7 @@ myProcessUtility0(Node *parsetree, const char *querySt
+  */
+ #if PG_VERSION_NUM >= 130000
+ static void
+-myProcessUtility(PlannedStmt *pstmt, const char *queryString,
++myProcessUtility(PlannedStmt *pstmt, const char *queryString, bool readOnlyTree,
+ 				 ProcessUtilityContext context, ParamListInfo params,
+ 				 QueryEnvironment *queryEnv,
+ 				 DestReceiver *dest, QueryCompletion *qc)
+@@ -435,10 +435,10 @@ myProcessUtility(PlannedStmt *pstmt, const char *query
+ 	PG_TRY();
+ 	{
+ 		if (prev_ProcessUtility_hook)
+-			prev_ProcessUtility_hook(pstmt, queryString, context, params,
++			prev_ProcessUtility_hook(pstmt, queryString, true, context, params,
+ 									 queryEnv, dest, qc);
+ 		else
+-			standard_ProcessUtility(pstmt, queryString, context, params,
++			standard_ProcessUtility(pstmt, queryString, true, context, params,
+ 									queryEnv, dest, qc);
+ 	}
+ 	PG_CATCH();
+@@ -855,7 +855,7 @@ init_entry(int beid, Oid userid)
+ 	{
+ 		entry->pid = MyProc->pid;
+ #if PG_VERSION_NUM >= 90200
+-		entry->xid = ProcGlobal->allPgXact[MyProc->pgprocno].xid;
++		entry->xid = MyProc->xid;
+ #else
+ 		entry->xid = MyProc->xid;
+ #endif

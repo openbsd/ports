@@ -1,0 +1,16 @@
+$OpenBSD: patch-agent_bin_pgut_pgut_h,v 1.1 2022/01/13 16:01:29 jeremy Exp $
+
+Fix conflict when using PostgreSQL 14.
+
+Index: agent/bin/pgut/pgut.h
+--- agent/bin/pgut/pgut.h.orig
++++ agent/bin/pgut/pgut.h
+@@ -151,7 +151,7 @@ extern void CHECK_FOR_INTERRUPTS(void);
+ #define appendStringInfoChar	appendPQExpBufferChar
+ #define appendBinaryStringInfo	appendBinaryPQExpBuffer
+ 
+-extern bool appendStringInfoVA(StringInfo str, const char *fmt, va_list args)
++extern bool appendStringInfoVA_(StringInfo str, const char *fmt, va_list args)
+ __attribute__((format(PG_PRINTF_ATTRIBUTE, 2, 0)));
+ extern int appendStringInfoFile(StringInfo str, FILE *fp);
+ extern int appendStringInfoFd(StringInfo str, int fd);
