@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.61 2021/03/01 20:42:11 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.62 2022/01/13 17:45:36 sthen Exp $
 @conflict p5-PerlMagick-*
 @pkgpath graphics/ImageMagick,no_x11
 @sample ${SYSCONFDIR}/ImageMagick/
@@ -376,6 +376,7 @@ share/doc/ImageMagick/www/Magick++/thumbnail-anatomy-plain.fig
 share/doc/ImageMagick/www/Magick++/thumbnail-anatomy-plain.jpg
 share/doc/ImageMagick/www/Magick++/thumbnail-sample-framed.jpg
 share/doc/ImageMagick/www/Magick++/thumbnail-sample-plain.jpg
+share/doc/ImageMagick/www/advanced-linux-installation.html
 share/doc/ImageMagick/www/advanced-unix-installation.html
 share/doc/ImageMagick/www/advanced-windows-installation.html
 share/doc/ImageMagick/www/animate.html
