@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.78 2021/02/10 07:15:17 jsg Exp $
+# $OpenBSD: Makefile,v 1.79 2022/01/13 05:51:46 daniel Exp $
 
 COMMENT=	(E)nhanced (P)rogrammable (I)RC-II (C)lient
 
 VERSION=	2.10.5
-REVISION=	2
+REVISION=	3
 HELP_DATE=	20050315
 DISTNAME=	epic4-${VERSION}
 CATEGORIES=	net
@@ -11,8 +11,6 @@ MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/
 DISTFILES=	epic4-${VERSION}.tar.bz2 epic4-help-${HELP_DATE}.tar.bz2
 
 HOMEPAGE=	http://www.epicsol.org/
-
-MAINTAINER=	Adam Jeanguenat <avj@6v6.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes
