@@ -1,0 +1,15 @@
+$OpenBSD: patch-data_meson_build,v 1.1 2022/01/13 08:06:39 ajacoutot Exp $
+
+data/meson.build:34:0: ERROR: Function does not take positional arguments.
+
+Index: data/meson.build
+--- data/meson.build.orig
++++ data/meson.build
+@@ -32,7 +32,6 @@ if desktop_file_validate.found()
+ endif
+ 
+ appdata_file = i18n.merge_file(
+-  'appdata',
+   input: configure_file(
+     input: files('org.gnome.meld.appdata.xml.in.in'),
+     output: 'org.gnome.meld.appdata.xml.in',

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/12/28 09:32:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2022/01/13 08:06:39 ajacoutot Exp $
 @bin bin/gitg
 include/libgitg-1.0/
 include/libgitg-1.0/libgitg/
@@ -18,8 +18,6 @@ lib/gitg/plugins/files.plugin
 @lib lib/libgitg-ext-1.0.so.${LIBgitg-ext-1.0_VERSION}
 lib/pkgconfig/libgitg-1.0.pc
 lib/pkgconfig/libgitg-ext-1.0.pc
-lib/python3.9/site-packages/gi/
-lib/python3.9/site-packages/gi/overrides/
 lib/python3.9/site-packages/gi/overrides/GitgExt.py
 @man man/man1/gitg.1
 share/applications/org.gnome.gitg.desktop

@@ -1,0 +1,18 @@
+$OpenBSD: patch-ui_meson_build,v 1.1 2022/01/13 08:06:39 ajacoutot Exp $
+
+From b3ca1d02bb0148ca787ac4aead164d7c8ce2c4d8 Mon Sep 17 00:00:00 2001
+From: Jakub Jirutka <jakub@jirutka.cz>
+Date: Wed, 12 Jan 2022 00:24:20 +0100
+Subject: [PATCH] meson: Fix unknown kw argument in gnome.generate_gir
+
+Index: ui/meson.build
+--- ui/meson.build.orig
++++ ui/meson.build
+@@ -152,7 +152,6 @@ if get_option('introspection')
+     export_packages: 'gcr-ui-@0@'.format(gcr_major_version),
+     identifier_prefix: 'Gcr',
+     symbol_prefix: 'gcr',
+-    packages: gcr_ui_deps,
+     includes: [
+       'GObject-2.0',
+       'Gio-2.0',

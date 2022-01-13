@@ -1,0 +1,28 @@
+$OpenBSD: patch-giscanner_docmain_py,v 1.1 2022/01/13 08:06:39 ajacoutot Exp $
+
+From 827494d6415b696a98fa195cbd883b50cc893bfc Mon Sep 17 00:00:00 2001
+From: Emmanuele Bassi <ebassi@gnome.org>
+Date: Tue, 11 Jan 2022 15:47:50 +0000
+Subject: [PATCH] doctool: Add templates_dir CLI argument
+
+Index: giscanner/docmain.py
+--- giscanner/docmain.py.orig
++++ giscanner/docmain.py
+@@ -51,6 +51,8 @@ def doc_main(args):
+     parser.add_argument("-s", "--write-sections-file",
+                         action="store_const", dest="format", const="sections",
+                         help="Backwards-compatible equivalent to -f sections")
++    parser.add_argument("--templates-dir",
++                        action="store")
+ 
+     args = parser.parse_args(args[1:])
+     if not args.output:
+@@ -74,7 +76,7 @@ def doc_main(args):
+         with open(args.output, 'w', encoding='utf-8') as fp:
+             write_sections_file(fp, sections_file)
+     else:
+-        writer = DocWriter(transformer, args.language, args.format)
++        writer = DocWriter(transformer, args.language, args.format, args.templates_dir)
+         writer.write(args.output)
+ 
+     return 0

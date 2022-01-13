@@ -1,0 +1,75 @@
+$OpenBSD: patch-tests_scanner_meson_build,v 1.1 2022/01/13 08:06:39 ajacoutot Exp $
+
+From effb1e09dee263cdac4ec593e8caf316e6f01fe2 Mon Sep 17 00:00:00 2001
+From: Emmanuele Bassi <ebassi@gnome.org>
+Date: Tue, 11 Jan 2022 15:51:10 +0000
+Subject: [PATCH] build: Avoid the doctemplates hack
+
+Index: tests/scanner/meson.build
+--- tests/scanner/meson.build.orig
++++ tests/scanner/meson.build
+@@ -525,19 +525,26 @@ foreach gir : test_girs
+ endforeach
+ 
+ if has_girdoctool and glib_dep.type_name() == 'pkgconfig'
++  doctool_env = environment()
++  doctool_env.set('srcdir', meson.current_source_dir())
++  doctool_env.set('builddir', meson.current_build_dir())
++
+   foreach language : ['C', 'Python', 'Gjs']
+     regress_docs = custom_target(
+       'generate-docs-' + language,
+       input: regress_gir,
+-      depends: [doc_templates],
++      depend_files: doc_templates,
+       build_by_default: not cairo_deps_found,
++      env: doctool_env,
+       output: 'Regress-1.0-' + language,
+       command: [
+         python, girdoctool,
+         '--add-include-path=' + join_paths(build_root, 'gir'),
+         '--add-include-path=' + meson.current_build_dir(),
+         '--language', language,
+-        '@INPUT@', '-o', '@OUTPUT@'],
++        '--templates-dir=' + join_paths(meson.current_source_dir(), '../../giscanner/doctemplates'),
++        '@INPUT@', '-o', '@OUTPUT@',
++      ],
+     )
+ 
+     if cairo_deps_found
+@@ -546,10 +553,7 @@ if has_girdoctool and glib_dep.type_name() == 'pkgconf
+         python,
+         args: [gi_tester, 'Regress-1.0-' + language],
+         depends: [regress_docs],
+-        env: [
+-          'srcdir=' + meson.current_source_dir(),
+-          'builddir=' + meson.current_build_dir(),
+-        ],
++        env: doctool_env,
+       )
+     endif
+   endforeach
+@@ -557,9 +561,10 @@ if has_girdoctool and glib_dep.type_name() == 'pkgconf
+   regress_sections = custom_target(
+     'generate-docs-sections',
+     input: regress_gir,
+-    depends: [doc_templates],
++    depend_files: [doc_templates],
+     build_by_default: not cairo_deps_found,
+     output: 'Regress-1.0-sections.txt',
++    env: doctool_env,
+     command: [
+       python, girdoctool,
+       '--add-include-path=' + join_paths(build_root, 'gir'),
+@@ -574,10 +579,7 @@ if has_girdoctool and glib_dep.type_name() == 'pkgconf
+       python,
+       args: [gi_tester, 'Regress-1.0-sections.txt'],
+       depends: [regress_sections],
+-      env: [
+-        'srcdir=' + meson.current_source_dir(),
+-        'builddir=' + meson.current_build_dir(),
+-      ],
++      env: doctool_env,
+     )
+   endif
+ endif

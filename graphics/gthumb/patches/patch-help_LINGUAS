@@ -1,0 +1,18 @@
+$OpenBSD: patch-help_LINGUAS,v 1.1 2022/01/13 08:06:39 ajacoutot Exp $
+
+From daef485dffd67319c114cf1bda453bf6157e11ff Mon Sep 17 00:00:00 2001
+From: Paolo Bacchilega <paobac@src.gnome.org>
+Date: Tue, 11 Jan 2022 12:30:44 +0100
+Subject: [PATCH] LINGUAS: removed duplicated entry
+
+Index: help/LINGUAS
+--- help/LINGUAS.orig
++++ help/LINGUAS
+@@ -8,7 +8,6 @@ eu
+ fr
+ hu
+ id
+-id
+ nl
+ oc
+ sl

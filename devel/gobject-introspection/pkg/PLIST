@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2021/10/25 14:48:35 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.29 2022/01/13 08:06:39 ajacoutot Exp $
 bin/g-ir-annotation-tool
 @bin bin/g-ir-compiler
 bin/g-ir-doc-tool
@@ -79,6 +79,7 @@ lib/gobject-introspection/giscanner/doctemplates/devdocs/Gjs/function.tmpl
 lib/gobject-introspection/giscanner/doctemplates/devdocs/Gjs/interface.tmpl
 lib/gobject-introspection/giscanner/doctemplates/devdocs/Gjs/method.tmpl
 lib/gobject-introspection/giscanner/doctemplates/devdocs/Gjs/namespace.tmpl
+lib/gobject-introspection/giscanner/doctemplates/devdocs/meson.build
 lib/gobject-introspection/giscanner/doctemplates/mallard/
 lib/gobject-introspection/giscanner/doctemplates/mallard/C/
 lib/gobject-introspection/giscanner/doctemplates/mallard/C/callback.tmpl
@@ -127,6 +128,7 @@ lib/gobject-introspection/giscanner/doctemplates/mallard/Python/signal.tmpl
 lib/gobject-introspection/giscanner/doctemplates/mallard/Python/vfunc.tmpl
 lib/gobject-introspection/giscanner/doctemplates/mallard/base.tmpl
 lib/gobject-introspection/giscanner/doctemplates/mallard/class.tmpl
+lib/gobject-introspection/giscanner/doctemplates/mallard/meson.build
 lib/gobject-introspection/giscanner/doctemplates/mallard/namespace.tmpl
 lib/gobject-introspection/giscanner/docwriter.py
 lib/gobject-introspection/giscanner/dumper.py
