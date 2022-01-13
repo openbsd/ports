@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:44:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2022/01/13 10:05:03 tb Exp $
 
 COMMENT =		Javascript Object Signing and Encryption library
 
 GH_ACCOUNT =		cisco
 GH_PROJECT =		cjose
 GH_TAGNAME =		0.6.1
+REVISION =		0
 
 SHARED_LIBS =		cjose 0.0
 
@@ -27,5 +28,7 @@ AUTOMAKE_VERSION =	1.16
 
 CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ARGS =	--with-jansson=${PREFIX}
+
+CFLAGS +=		-DCJOSE_OPENSSL_11X
 
 .include <bsd.port.mk>
