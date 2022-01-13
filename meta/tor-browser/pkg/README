@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.7 2022/01/13 20:02:29 sdk Exp $
+$OpenBSD: README,v 1.8 2022/01/13 21:06:25 sdk Exp $
 
 +-----------------------------------------------------------------------
 | ${PKGSTEM} on OpenBSD
@@ -21,7 +21,7 @@ please do the following BEFORE starting tor-browser after you upgrade:
 
 Tor Browser uses its own instance of the tor server running on a
 different port than the net/tor port is configured to use by default.
-It starts and stops this tor daemon using the integrate tor-launcher.
+It starts and stops this tor daemon using the integrated tor-launcher.
 It should not interfere with any tor daemon you have running via the
 standard mechanism (e.g. rcctl start tor).
 
