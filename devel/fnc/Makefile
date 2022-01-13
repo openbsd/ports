@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/25 18:26:23 sdk Exp $
+# $OpenBSD: Makefile,v 1.2 2022/01/13 20:26:16 sdk Exp $
 
 COMMENT =	a terminal frontend for fossil
 
-V =		0.6
+V =		0.8
 DISTNAME =	fnc-${V}
 CATEGORIES =	devel
 
@@ -18,7 +18,5 @@ WANTLIB +=	c curses m panel pthread util z
 MASTER_SITES =	https://fnc.bsdbox.org/tarball/${V}/
 
 MAKE_ENV =	MANDIR=/man
-
-MAKE_TEST =	Yes
 
 .include <bsd.port.mk>
