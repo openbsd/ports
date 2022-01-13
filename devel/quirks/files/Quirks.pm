@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1357 2022/01/08 17:33:18 bket Exp $
+# $OpenBSD: Quirks.pm,v 1.1358 2022/01/13 14:13:00 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -694,6 +694,7 @@ my $stem_extensions = {
 	'apertium-mk-bg' => 'apertium-mkd-bul',
 	'apertium-mk-en' => 'apertium-mkd-eng',
 	'apertium-pt-ca' => 'apertium-por-cat',
+	'pinentry-gtk2' => 'pinentry-gnome3',
 };
 
 my $obsolete_reason = {};
