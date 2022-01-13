@@ -8,12 +8,10 @@ fingerprinting.  Other aspects of Firefox have also been patched
 to plug privacy leaks in ways not possible any other way.
 
 TB includes custom Firefox add-ons only meant for TB, including
-NoScript, HTTPS Everywhere, TorButton and Tor-Launcher.  This package
-provides merely the modified version of Firefox ESR.  Please install
-the tor-browser meta-package to make sure you have everything installed
-correctly.
+NoScript, HTTPS Everywhere. This package provides merely the modified
+version of Firefox ESR.  Please install the tor-browser meta-package
+to make sure you have everything installed correctly.
 
 Remember that there are no perfect privacy or anonymity solutions, and
 this includes TB.  As always you must pay attention and in many cases
-modify your behavior to ensure your privacy online.  Note that JS is
-blocked everywhere by default in TB using NoScript.
+modify your behavior to ensure your privacy online.

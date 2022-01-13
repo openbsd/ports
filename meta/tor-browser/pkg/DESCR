@@ -4,14 +4,9 @@ network. In addition to obscuring the client's IP address, TB also
 mitigates browser fingerprinting attacks and patches the Mozilla code
 in other ways to prevent privacy leaks.
 
-Tor Browser includes the patched version of Firefox ESR and four
+Tor Browser includes the patched version of Firefox ESR and these
 Firefox add-ons:
 
-* torbutton: an add-on from the Tor project that provides a configuration
-  GUI in the browser (the onion button);
-* tor-launcher: another add-on from the Tor project that allows Tor
-  Browser to control and interface with a private instance of the tor
-  daemon used by Tor Browser;
 * noscript: a well-known add-on for Firefox that allows flexible blocking
   of JS.  The version in the Tor Browser ports is specifically configured
   for use in Tor Browser by the Tor project and is not for use with other
