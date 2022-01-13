@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_pgsql_c,v 1.3 2022/01/13 16:03:04 jeremy Exp $
+
+Work with PostgreSQL 14.
+
+Index: src/pgsql.c
+--- src/pgsql.c.orig
++++ src/pgsql.c
+@@ -772,6 +772,10 @@ pgsql_read_result(struct kore_pgsql *pgsql)
+ 	}
+ 
+ 	switch (PQresultStatus(pgsql->result)) {
++#if PG_VERSION_NUM >= 140000
++	case PGRES_PIPELINE_SYNC:
++	case PGRES_PIPELINE_ABORTED:
++#endif
+ 	case PGRES_COPY_OUT:
+ 	case PGRES_COPY_IN:
+ 	case PGRES_NONFATAL_ERROR:
