@@ -1,0 +1,162 @@
+$OpenBSD: patch-mesonbuild_modules_gnome_py,v 1.10 2022/01/13 08:05:58 ajacoutot Exp $
+
+From 9952446a2a28ea2b009f4b8b2a14ad50f0878bdd Mon Sep 17 00:00:00 2001
+From: Michal Vasilek <michal.vasilek@nic.cz>
+Date: Mon, 10 Jan 2022 21:27:30 +0100
+Subject: [PATCH] gnome: fix typo in vapigen option metadatadir
+
+From 704e9802c9f424a57c32d9e63ececfece807529a Mon Sep 17 00:00:00 2001
+From: Eli Schwartz <eschwartz@archlinux.org>
+Date: Tue, 11 Jan 2022 20:20:50 -0500
+Subject: [PATCH] gome.gdbus_codegen: fix annotations argument for multiple annotations
+
+From bcfb4d0f46608db46cd8881e2a02ba6c33ff066e Mon Sep 17 00:00:00 2001
+From: Eli Schwartz <eschwartz@archlinux.org>
+Date: Tue, 11 Jan 2022 21:49:34 -0500
+Subject: [PATCH] gnome.gtkdoc: fix passing file arguments as a configured file
+
+From 63593a55288ee5b89fc9c298dbc300f9c6adaba9 Mon Sep 17 00:00:00 2001
+From: Eli Schwartz <eschwartz@archlinux.org>
+Date: Tue, 11 Jan 2022 23:47:53 -0500
+Subject: [PATCH] gnome.gdbus_codegen: allow File objects as XML file
+
+From 71540d184120e66796923f7056c478fe9e79444e Mon Sep 17 00:00:00 2001
+From: Eli Schwartz <eschwartz@archlinux.org>
+Date: Tue, 11 Jan 2022 23:51:35 -0500
+Subject: [PATCH] fix typo in error message
+
+From bda11fe25d1efe688d251148cb7cf7939cd50433 Mon Sep 17 00:00:00 2001
+From: Eli Schwartz <eschwartz@archlinux.org>
+Date: Wed, 12 Jan 2022 18:42:44 -0500
+Subject: [PATCH] gome.gdbus_codegen: fix annotations argument for multiple annotations, harder
+
+Index: mesonbuild/modules/gnome.py
+--- mesonbuild/modules/gnome.py.orig
++++ mesonbuild/modules/gnome.py
+@@ -119,9 +119,9 @@ if T.TYPE_CHECKING:
+         install_dir: T.List[str]
+         check: bool
+         install: bool
+-        gobject_typesfile: T.List[str]
+-        html_assets: T.List[str]
+-        expand_content_files: T.List[str]
++        gobject_typesfile: T.List[FileOrString]
++        html_assets: T.List[FileOrString]
++        expand_content_files: T.List[FileOrString]
+         c_args: T.List[str]
+         include_directories: T.List[T.Union[str, build.IncludeDirs]]
+         dependencies: T.List[T.Union[Dependency, build.SharedLibrary, build.StaticLibrary]]
+@@ -134,7 +134,7 @@ if T.TYPE_CHECKING:
+         namespace: T.Optional[str]
+         object_manager: bool
+         build_by_default: bool
+-        annotations: T.List[str]
++        annotations: T.List[T.List[str]]
+         install_header: bool
+         install_dir: T.Optional[str]
+         docbook: T.Optional[str]
+@@ -222,6 +222,27 @@ _MK_ENUMS_COMMON_KWS: T.List[KwargInfo] = [
+     KwargInfo('symbol_prefix', (str, NoneType)),
+ ]
+ 
++def annotations_validator(annotations: T.List[T.Union[str, T.List[str]]]) -> T.Optional[str]:
++
++    """Validate gdbus-codegen annotations argument"""
++
++    badlist = 'must be made up of 3 strings for ELEMENT, KEY, and VALUE'
++
++    if all(isinstance(annot, str) for annot in annotations):
++        if len(annotations) == 3:
++            return None
++        else:
++            return badlist
++    elif not all(isinstance(annot, list) for annot in annotations):
++        for c, annot in enumerate(annotations):
++            if not isinstance(annot, list):
++                return f'element {c+1} must be a list'
++    else:
++        for c, annot in enumerate(annotations):
++            if len(annot) != 3 or not all(isinstance(i, str) for i in annot):
++                return f'element {c+1} {badlist}'
++    return None
++
+ # gresource compilation is broken due to the way
+ # the resource compiler and Ninja clash about it
+ #
+@@ -1259,11 +1280,11 @@ class GnomeModule(ExtensionModule):
+             'dependencies',
+             ContainerTypeInfo(list, (Dependency, build.SharedLibrary, build.StaticLibrary)),
+             listify=True, default=[]),
+-        KwargInfo('expand_content_files', ContainerTypeInfo(list, str), default=[], listify=True),
++        KwargInfo('expand_content_files', ContainerTypeInfo(list, (str, mesonlib.File)), default=[], listify=True),
+         KwargInfo('fixxref_args', ContainerTypeInfo(list, str), default=[], listify=True),
+-        KwargInfo('gobject_typesfile', ContainerTypeInfo(list, str), default=[], listify=True),
++        KwargInfo('gobject_typesfile', ContainerTypeInfo(list, (str, mesonlib.File)), default=[], listify=True),
+         KwargInfo('html_args', ContainerTypeInfo(list, str), default=[], listify=True),
+-        KwargInfo('html_assets', ContainerTypeInfo(list, str), default=[], listify=True),
++        KwargInfo('html_assets', ContainerTypeInfo(list, (str, mesonlib.File)), default=[], listify=True),
+         KwargInfo('ignore_headers', ContainerTypeInfo(list, str), default=[], listify=True),
+         KwargInfo(
+             'include_directories',
+@@ -1289,7 +1310,7 @@ class GnomeModule(ExtensionModule):
+         main_xml = kwargs['main_xml']
+         if main_xml is not None:
+             if main_file is not None:
+-                raise InvalidArguments('gnome.gtkdoc: main_xml and main_xgml are exclusive arguments')
++                raise InvalidArguments('gnome.gtkdoc: main_xml and main_sgml are exclusive arguments')
+             main_file = main_xml
+         moduleversion = kwargs['module_version']
+         targetname = modulename + ('-' + moduleversion if moduleversion else '') + '-doc'
+@@ -1424,7 +1445,7 @@ class GnomeModule(ExtensionModule):
+     def gtkdoc_html_dir(self, state: 'ModuleState', args: T.Tuple[str], kwargs: 'TYPE_kwargs') -> str:
+         return os.path.join('share/gtk-doc/html', args[0])
+ 
+-    @typed_pos_args('gnome.gdbus_codegen', str, optargs=[str])
++    @typed_pos_args('gnome.gdbus_codegen', str, optargs=[(str, mesonlib.File)])
+     @typed_kwargs(
+         'gnome.gdbus_codegen',
+         _BUILD_BY_DEFAULT.evolve(since='0.40.0'),
+@@ -1434,10 +1455,10 @@ class GnomeModule(ExtensionModule):
+         KwargInfo('namespace', (str, NoneType)),
+         KwargInfo('object_manager', bool, default=False),
+         KwargInfo(
+-            'annotations', ContainerTypeInfo(list, str),
+-            listify=True,
++            'annotations', ContainerTypeInfo(list, (list, str)),
+             default=[],
+-            validator=lambda x: 'must be made up of 3 strings for ELEMENT, KEY, and VALUE' if len(x) != 3 else None
++            validator=annotations_validator,
++            convertor=lambda x: [x] if x and isinstance(x[0], str) else x,
+         ),
+         KwargInfo('install_header', bool, default=False, since='0.46.0'),
+         KwargInfo('install_dir', (str, NoneType), since='0.46.0'),
+@@ -1446,7 +1467,7 @@ class GnomeModule(ExtensionModule):
+             'autocleanup', str, default='default', since='0.47.0',
+             validator=in_set_validator({'all', 'none', 'objects'})),
+     )
+-    def gdbus_codegen(self, state: 'ModuleState', args: T.Tuple[str, T.Optional[str]],
++    def gdbus_codegen(self, state: 'ModuleState', args: T.Tuple[str, T.Optional['FileOrString']],
+                       kwargs: 'GdbusCodegen') -> ModuleReturnValue:
+         namebase = args[0]
+         xml_files: T.List['FileOrString'] = [args[1]] if args[1] else []
+@@ -1477,9 +1498,9 @@ class GnomeModule(ExtensionModule):
+         build_by_default = kwargs['build_by_default']
+ 
+         # Annotations are a bit ugly in that they are a list of lists of strings...
+-        if kwargs['annotations']:
++        for annot in kwargs['annotations']:
+             cmd.append('--annotate')
+-            cmd.extend(kwargs['annotations'])
++            cmd.extend(annot)
+ 
+         targets = []
+         install_header = kwargs['install_header']
+@@ -1934,7 +1955,7 @@ class GnomeModule(ExtensionModule):
+         cmd: T.List[T.Union[str, 'ExternalProgram']]
+         cmd = [state.find_program('vapigen'), '--quiet', f'--library={library}', f'--directory={build_dir}']
+         cmd.extend([f'--vapidir={d}' for d in kwargs['vapi_dirs']])
+-        cmd.extend([f'--metadatdir={d}' for d in kwargs['metadata_dirs']])
++        cmd.extend([f'--metadatadir={d}' for d in kwargs['metadata_dirs']])
+         cmd.extend([f'--girdir={d}' for d in kwargs['gir_dirs']])
+         cmd += pkg_cmd
+         cmd += ['--metadatadir=' + source_dir]
