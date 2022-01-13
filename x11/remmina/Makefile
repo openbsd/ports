@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.52 2021/11/15 19:40:17 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.53 2022/01/13 16:00:06 ajacoutot Exp $
 
 COMMENT=		GTK+ remote desktop client
 
-V=			1.4.13
+V=			1.4.23
 DISTNAME=		remmina-${V}
-WRKDIST=		${WRKDIR}/Remmina-v${V}-bd1be9d309b420234961b6dd5d2c6364f4a08e49
-REVISION=		1
+WRKDIST=		${WRKDIR}/Remmina-v${V}-a03c1648a090458736434c77c0be00a7cf9cc44b
 
 CATEGORIES=		x11 net
 
@@ -18,8 +17,8 @@ WANTLIB += ICE SM X11 Xext avahi-client avahi-common avahi-ui-gtk3
 WANTLIB += c cairo crypto cups freerdp-client2 freerdp2 gcrypt
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gtk-3 intl json-glib-1.0 pango-1.0 pthread secret-1
-WANTLIB += sodium soup-2.4 spice-client-gtk-3.0 ssh ssl vncclient
-WANTLIB += vte-2.91 winpr2 xkbfile spice-client-glib-2.0
+WANTLIB += sodium soup-2.4 spice-client-glib-2.0 spice-client-gtk-3.0
+WANTLIB += ssh ssl vncclient vte-2.91 winpr2
 
 MASTER_SITES=		https://gitlab.com/Remmina/Remmina/-/archive/v${V}/
 
@@ -48,7 +47,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
 # Appindicator is only used by Ubuntu's Unity.
-CONFIGURE_ARGS +=	-DWITH_APPINDICATOR=OFF \
+CONFIGURE_ARGS +=	-DHAVE_LIBAPPINDICATOR=OFF \
 			-DWITH_ICON_CACHE=OFF \
 			-DWITH_UPDATE_DESKTOP_DB=OFF \
 			-DCMAKE_C_FLAGS="-I${X11BASE}/include -I${LOCALBASE}/include ${CFLAGS}"

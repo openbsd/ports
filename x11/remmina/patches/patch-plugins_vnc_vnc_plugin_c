@@ -1,11 +1,11 @@
-$OpenBSD: patch-plugins_vnc_vnc_plugin_c,v 1.3 2021/03/30 20:18:28 sthen Exp $
+$OpenBSD: patch-plugins_vnc_vnc_plugin_c,v 1.4 2022/01/13 16:00:06 ajacoutot Exp $
 
 Fix double mutex lock and double free
 
 Index: plugins/vnc/vnc_plugin.c
 --- plugins/vnc/vnc_plugin.c.orig
 +++ plugins/vnc/vnc_plugin.c
-@@ -110,8 +110,6 @@ static void onMainThread_schedule_callback_and_wait(st
+@@ -111,8 +111,6 @@ static void onMainThread_schedule_callback_and_wait(st
  	pthread_mutex_lock(&d->mu);
  	gdk_threads_add_idle((GSourceFunc)onMainThread_cb, (gpointer)d);
  
@@ -14,7 +14,7 @@ Index: plugins/vnc/vnc_plugin.c
  	pthread_cleanup_pop(0);
  	pthread_mutex_unlock(&d->mu);
  	pthread_mutex_destroy(&d->mu);
-@@ -235,7 +233,6 @@ static void remmina_plugin_vnc_update_scale(RemminaPro
+@@ -237,7 +235,6 @@ static void remmina_plugin_vnc_update_scale(RemminaPro
  		d->gp = gp;
  		d->scale = scale;
  		onMainThread_schedule_callback_and_wait(d);

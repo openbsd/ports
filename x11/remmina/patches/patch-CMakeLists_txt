@@ -1,11 +1,11 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.9 2021/11/15 19:40:17 rsadowski Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.10 2022/01/13 16:00:06 ajacoutot Exp $
 
 - Disable wayland
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -262,9 +262,9 @@ check_include_files(errno.h HAVE_ERRNO_H)
+@@ -282,9 +282,9 @@ check_include_files(errno.h HAVE_ERRNO_H)
  include_directories(.)
  include_directories(src/include)
  
@@ -17,15 +17,51 @@ Index: CMakeLists.txt
    set(CMAKE_SHARED_LIBRARY_LINK_C_FLAGS "-rdynamic")
    include_directories(/usr/local/include /usr/include)
    link_directories(/usr/local/lib /usr/lib)
-@@ -376,10 +376,7 @@ if(NOT GTK3_FOUND)
- endif(NOT GTK3_FOUND)
+@@ -409,36 +409,17 @@ if(NOT GTK3_FOUND)
+ endif()
  include_directories(${GTK3_INCLUDE_DIRS})
  
--pkg_check_modules(wayland-client REQUIRED wayland-client)
--if(NOT wayland-client_FOUND)
--    message(FATAL_ERROR "Wayland library not found")
--endif(NOT wayland-client_FOUND)
-+#pkg_check_modules(wayland-client wayland-client)
+-pkg_check_modules(wayland-client wayland-client)
+-if(wayland-client_FOUND)
+-  set(GTK_LIBRARIES
+-      ${GTK3_LIBRARY}
+-      ${GDK3_LIBRARY}
+-      ${GDKPixbuf_LIBRARY}
+-      ${Pango_LIBRARY}
+-      ${Cairo_LIBRARY}
+-      ${GObject_LIBRARY}
+-      ${GLib_LIBRARY}
+-      ${GIO_LIBRARY}
+-      ${Gmodule_LIBRARIES}
+-      ${GMODULE_LIBRARY}
+-      ${wayland-client_LIBRARIES})
+-  include_directories(${wayland-client_INCLUDE_DIRS})
+-  message(STATUS "Wayland library found.")
+-else()
+-  set(GTK_LIBRARIES
+-      ${GTK3_LIBRARY}
+-      ${GDK3_LIBRARY}
+-      ${GDKPixbuf_LIBRARY}
+-      ${Pango_LIBRARY}
+-      ${Cairo_LIBRARY}
+-      ${GObject_LIBRARY}
+-      ${GLib_LIBRARY}
+-      ${GIO_LIBRARY}
+-      ${Gmodule_LIBRARIES}
+-      ${GMODULE_LIBRARY})
+-  message(STATUS "Wayland library not found.")
+-endif()
++set(GTK_LIBRARIES
++    ${GTK3_LIBRARY}
++    ${GDK3_LIBRARY}
++    ${GDKPixbuf_LIBRARY}
++    ${Pango_LIBRARY}
++    ${Cairo_LIBRARY}
++    ${GObject_LIBRARY}
++    ${GLib_LIBRARY}
++    ${GIO_LIBRARY}
++    ${Gmodule_LIBRARIES}
++    ${GMODULE_LIBRARY})
  
- include_directories(${wayland-client_INCLUDE_DIRS})
- 
+ set(CMAKE_THREAD_PREFER_PTHREAD TRUE)
+ find_package(Threads REQUIRED)
