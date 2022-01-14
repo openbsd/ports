@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_network_ssl_qsslsocket_openssl_symbols_cpp,v 1.10 2021/11/22 06:49:11 tb Exp $
+$OpenBSD: patch-src_network_ssl_qsslsocket_openssl_symbols_cpp,v 1.11 2022/01/14 11:11:02 tb Exp $
 
 https://github.com/gentoo/libressl/blob/master/dev-qt/qtnetwork/files/qtnetwork-5.15.2-libressl.patch
 
 Index: src/network/ssl/qsslsocket_openssl_symbols.cpp
 --- src/network/ssl/qsslsocket_openssl_symbols.cpp.orig
 +++ src/network/ssl/qsslsocket_openssl_symbols.cpp
-@@ -145,11 +145,14 @@ DEFINEFUNC(const BIO_METHOD *, BIO_s_mem, void, DUMMYA
+@@ -145,22 +145,35 @@ DEFINEFUNC(const BIO_METHOD *, BIO_s_mem, void, DUMMYA
  DEFINEFUNC2(int, BN_is_word, BIGNUM *a, a, BN_ULONG w, w, return 0, return)
  DEFINEFUNC(int, EVP_CIPHER_CTX_reset, EVP_CIPHER_CTX *c, c, return 0, return)
  DEFINEFUNC(int, EVP_PKEY_up_ref, EVP_PKEY *a, a, return 0, return)
@@ -16,11 +16,11 @@ Index: src/network/ssl/qsslsocket_openssl_symbols.cpp
 +#endif // OPENSSL_NO_DEPRECATED_3_0
  DEFINEFUNC(int, EVP_PKEY_base_id, EVP_PKEY *a, a, return NID_undef, return)
  DEFINEFUNC(int, RSA_bits, RSA *a, a, return 0, return)
-+#ifndef LIBRESSL_VERSION_NUMBER
  DEFINEFUNC(int, DSA_bits, DSA *a, a, return 0, return)
++#ifndef LIBRESSL_VERSION_NUMBER
  DEFINEFUNC(int, OPENSSL_sk_num, OPENSSL_STACK *a, a, return -1, return)
  DEFINEFUNC2(void, OPENSSL_sk_pop_free, OPENSSL_STACK *a, a, void (*b)(void*), b, return, DUMMYARG)
-@@ -157,10 +160,20 @@ DEFINEFUNC(OPENSSL_STACK *, OPENSSL_sk_new_null, DUMMY
+ DEFINEFUNC(OPENSSL_STACK *, OPENSSL_sk_new_null, DUMMYARG, DUMMYARG, return nullptr, return)
  DEFINEFUNC2(void, OPENSSL_sk_push, OPENSSL_STACK *a, a, void *b, b, return, DUMMYARG)
  DEFINEFUNC(void, OPENSSL_sk_free, OPENSSL_STACK *a, a, return, DUMMYARG)
  DEFINEFUNC2(void *, OPENSSL_sk_value, OPENSSL_STACK *a, a, int b, b, return nullptr, return)
@@ -90,17 +90,7 @@ Index: src/network/ssl/qsslsocket_openssl_symbols.cpp
      RESOLVEFUNC(DH_get0_pqg)
      RESOLVEFUNC(SSL_CTX_set_options)
      RESOLVEFUNC(SSL_CTX_get_security_level)
-@@ -898,7 +921,9 @@ bool q_resolveOpenSslSymbols()
- 
-     RESOLVEFUNC(SSL_SESSION_get_ticket_lifetime_hint)
-     RESOLVEFUNC(DH_bits)
-+#ifndef LIBRESSL_VERSION_NUMBER
-     RESOLVEFUNC(DSA_bits)
-+#endif
- 
- #if QT_CONFIG(dtls)
-     RESOLVEFUNC(DTLSv1_listen)
-@@ -1058,12 +1083,14 @@ bool q_resolveOpenSslSymbols()
+@@ -1058,12 +1081,14 @@ bool q_resolveOpenSslSymbols()
      RESOLVEFUNC(SSL_CTX_use_RSAPrivateKey)
      RESOLVEFUNC(SSL_CTX_use_PrivateKey_file)
      RESOLVEFUNC(SSL_CTX_get_cert_store);

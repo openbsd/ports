@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_network_ssl_qsslsocket_openssl_symbols_p_h,v 1.9 2021/11/22 06:49:11 tb Exp $
+$OpenBSD: patch-src_network_ssl_qsslsocket_openssl_symbols_p_h,v 1.10 2022/01/14 11:11:02 tb Exp $
 
 https://github.com/gentoo/libressl/blob/master/dev-qt/qtnetwork/files/qtnetwork-5.15.2-libressl.patch
 
@@ -19,15 +19,8 @@ Index: src/network/ssl/qsslsocket_openssl_symbols_p.h
  #if !defined QT_LINKED_OPENSSL
  // **************** Shared declarations ******************
  // ret func(arg)
-@@ -230,20 +237,43 @@ const unsigned char * q_ASN1_STRING_get0_data(const AS
- Q_AUTOTEST_EXPORT BIO *q_BIO_new(const BIO_METHOD *a);
- Q_AUTOTEST_EXPORT const BIO_METHOD *q_BIO_s_mem();
- 
-+#ifndef LIBRESSL_VERSION_NUMBER
+@@ -233,17 +240,36 @@ Q_AUTOTEST_EXPORT const BIO_METHOD *q_BIO_s_mem();
  int q_DSA_bits(DSA *a);
-+#else
-+#define q_DSA_bits(dsa) q_BN_num_bits((dsa)->p)
-+#endif
  int q_EVP_CIPHER_CTX_reset(EVP_CIPHER_CTX *c);
  Q_AUTOTEST_EXPORT int q_EVP_PKEY_up_ref(EVP_PKEY *a);
 +#ifdef OPENSSL_NO_DEPRECATED_3_0
@@ -63,7 +56,7 @@ Index: src/network/ssl/qsslsocket_openssl_symbols_p.h
  int q_SSL_session_reused(SSL *a);
  unsigned long q_SSL_CTX_set_options(SSL_CTX *ctx, unsigned long op);
  int q_OPENSSL_init_ssl(uint64_t opts, const OPENSSL_INIT_SETTINGS *settings);
-@@ -269,8 +299,13 @@ int q_DH_bits(DH *dh);
+@@ -269,8 +295,13 @@ int q_DH_bits(DH *dh);
  # define q_SSL_load_error_strings() q_OPENSSL_init_ssl(OPENSSL_INIT_LOAD_SSL_STRINGS \
                                                         | OPENSSL_INIT_LOAD_CRYPTO_STRINGS, NULL)
  
@@ -77,7 +70,7 @@ Index: src/network/ssl/qsslsocket_openssl_symbols_p.h
  
  #define q_OPENSSL_add_all_algorithms_conf()  q_OPENSSL_init_crypto(OPENSSL_INIT_ADD_ALL_CIPHERS \
                                                                     | OPENSSL_INIT_ADD_ALL_DIGESTS \
-@@ -279,7 +314,11 @@ int q_DH_bits(DH *dh);
+@@ -279,7 +310,11 @@ int q_DH_bits(DH *dh);
                                                                      | OPENSSL_INIT_ADD_ALL_DIGESTS, NULL)
  
  int q_OPENSSL_init_crypto(uint64_t opts, const OPENSSL_INIT_SETTINGS *settings);
@@ -89,7 +82,7 @@ Index: src/network/ssl/qsslsocket_openssl_symbols_p.h
  
  long q_OpenSSL_version_num();
  const char *q_OpenSSL_version(int type);
-@@ -497,12 +536,14 @@ int q_SSL_CTX_use_PrivateKey(SSL_CTX *a, EVP_PKEY *b);
+@@ -497,12 +532,14 @@ int q_SSL_CTX_use_PrivateKey(SSL_CTX *a, EVP_PKEY *b);
  int q_SSL_CTX_use_RSAPrivateKey(SSL_CTX *a, RSA *b);
  int q_SSL_CTX_use_PrivateKey_file(SSL_CTX *a, const char *b, int c);
  X509_STORE *q_SSL_CTX_get_cert_store(const SSL_CTX *a);
