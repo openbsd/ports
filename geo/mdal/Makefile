@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2021/12/16 09:17:04 landry Exp $
+# $OpenBSD: Makefile,v 1.19 2022/01/14 09:29:19 landry Exp $
 
 COMMENT =	mesh data abstration library
 
 GH_ACCOUNT=	lutraconsulting
 GH_PROJECT =	MDAL
-GH_TAGNAME =	release-0.9.1
+GH_TAGNAME =	release-0.9.2
 
 PKGNAME =	${GH_PROJECT:L}-${GH_TAGNAME:S/release-//}
 
