@@ -1,0 +1,68 @@
+$OpenBSD: patch-Crypto_src_CipherImpl_cpp,v 1.1 2022/01/14 10:51:15 tb Exp $
+
+Index: Crypto/src/CipherImpl.cpp
+--- Crypto/src/CipherImpl.cpp.orig
++++ Crypto/src/CipherImpl.cpp
+@@ -97,7 +97,7 @@ namespace
+ 
+ 	private:
+ 		const EVP_CIPHER* _pCipher;
+-		EVP_CIPHER_CTX    _ctx;
++		EVP_CIPHER_CTX*   _ctx;
+ 		ByteVec           _key;
+ 		ByteVec           _iv;
+ 	};
+@@ -112,8 +112,11 @@ namespace
+ 		_key(key),
+ 		_iv(iv)
+ 	{
++		_ctx = EVP_CIPHER_CTX_new();
++		if (_ctx == NULL)
++			throwError();
+ 		EVP_CipherInit(
+-			&_ctx,
++			_ctx,
+ 			_pCipher,
+ 			&_key[0],
+ 			_iv.empty() ? 0 : &_iv[0],
+@@ -123,19 +126,19 @@ namespace
+ 
+ 	CryptoTransformImpl::~CryptoTransformImpl()
+ 	{
+-		EVP_CIPHER_CTX_cleanup(&_ctx);
++		EVP_CIPHER_CTX_free(_ctx);
+ 	}
+ 
+ 
+ 	std::size_t CryptoTransformImpl::blockSize() const
+ 	{
+-		return EVP_CIPHER_CTX_block_size(&_ctx);
++		return EVP_CIPHER_CTX_block_size(_ctx);
+ 	}
+ 
+ 	
+ 	int CryptoTransformImpl::setPadding(int padding)
+ 	{
+-		return EVP_CIPHER_CTX_set_padding(&_ctx, padding);
++		return EVP_CIPHER_CTX_set_padding(_ctx, padding);
+ 	}
+ 	
+ 
+@@ -149,7 +152,7 @@ namespace
+ 
+ 		int outLen = static_cast<int>(outputLength);
+ 		int rc = EVP_CipherUpdate(
+-			&_ctx,
++			_ctx,
+ 			output,
+ 			&outLen,
+ 			input,
+@@ -173,7 +176,7 @@ namespace
+ 		// Use the '_ex' version that does not perform implicit cleanup since we
+ 		// will call EVP_CIPHER_CTX_cleanup() from the dtor as there is no
+ 		// guarantee that finalize() will be called if an error occurred.
+-		int rc = EVP_CipherFinal_ex(&_ctx, output, &len);
++		int rc = EVP_CipherFinal_ex(_ctx, output, &len);
+ 
+ 		if (rc == 0)
+ 			throwError();

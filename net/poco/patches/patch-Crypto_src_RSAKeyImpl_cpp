@@ -1,0 +1,28 @@
+$OpenBSD: patch-Crypto_src_RSAKeyImpl_cpp,v 1.1 2022/01/14 10:51:15 tb Exp $
+
+Index: Crypto/src/RSAKeyImpl.cpp
+--- Crypto/src/RSAKeyImpl.cpp.orig
++++ Crypto/src/RSAKeyImpl.cpp
+@@ -222,19 +222,19 @@ int RSAKeyImpl::size() const
+ 
+ RSAKeyImpl::ByteVec RSAKeyImpl::modulus() const
+ {
+-	return convertToByteVec(_pRSA->n);
++	return convertToByteVec(RSA_get0_n(_pRSA));
+ }
+ 
+ 
+ RSAKeyImpl::ByteVec RSAKeyImpl::encryptionExponent() const
+ {
+-	return convertToByteVec(_pRSA->e);
++	return convertToByteVec(RSA_get0_e(_pRSA));
+ }
+ 
+ 
+ RSAKeyImpl::ByteVec RSAKeyImpl::decryptionExponent() const
+ {
+-	return convertToByteVec(_pRSA->d);
++	return convertToByteVec(RSA_get0_d(_pRSA));
+ }
+ 
+ 
