@@ -1,0 +1,17 @@
+$OpenBSD: patch-libfreerdp_crypto_opensslcompat_h,v 1.1 2022/01/14 11:09:16 tb Exp $
+
+Fix build with opaque BIO in LibreSSL 3.5
+
+Index: libfreerdp/crypto/opensslcompat.h
+--- libfreerdp/crypto/opensslcompat.h.orig
++++ libfreerdp/crypto/opensslcompat.h
+@@ -30,7 +30,8 @@
+ 
+ #include <openssl/opensslv.h>
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || \
++    (defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x3050000fL)
+ 
+ #include <openssl/bio.h>
+ #include <openssl/rsa.h>
