@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2022/01/13 16:00:52 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2022/01/14 20:52:38 sthen Exp $
 include/postgresql/server/citus_version.h
 include/postgresql/server/distributed/
 include/postgresql/server/distributed/adaptive_executor.h
@@ -123,6 +123,8 @@ share/postgresql/extension/citus--10.0-3--10.0-4.sql
 share/postgresql/extension/citus--10.0-4--10.1-1.sql
 share/postgresql/extension/citus--10.1-1--10.2-1.sql
 share/postgresql/extension/citus--10.2-1--10.2-2.sql
+share/postgresql/extension/citus--10.2-2--10.2-3.sql
+share/postgresql/extension/citus--10.2-3--10.2-4.sql
 share/postgresql/extension/citus--8.0-1--8.0-2.sql
 share/postgresql/extension/citus--8.0-1.sql
 share/postgresql/extension/citus--8.0-10--8.0-11.sql
