@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_Plugins_Qt_qt_gui_cpp,v 1.5 2021/02/09 17:36:58 namn Exp $
+$OpenBSD: patch-src_Plugins_Qt_qt_gui_cpp,v 1.6 2022/01/14 04:30:11 namn Exp $
 Index: src/Plugins/Qt/qt_gui.cpp
 --- src/Plugins/Qt/qt_gui.cpp.orig
 +++ src/Plugins/Qt/qt_gui.cpp
-@@ -868,7 +868,7 @@ qt_gui_rep::update () {
+@@ -878,7 +878,7 @@ qt_gui_rep::update () {
    
    time_t delay = delayed_commands.lapse - texmacs_time();
    if (needing_update) delay = 0;

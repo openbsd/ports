@@ -1,9 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2021/02/09 17:36:58 namn Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2022/01/14 04:30:11 namn Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -603,7 +603,7 @@ if (TEXMACS_GUI MATCHES "Qt.*")
+@@ -644,7 +644,7 @@ if (TEXMACS_GUI MATCHES "Qt.*")
  
    set (TeXmacs_All_SRCS ${TeXmacs_All_SRCS} ${TeXmacs_Qt_SRCS} ${TeXmacs_Qt_Moc_HDRS})
    set (TeXmacs_Include_Dirs ${TeXmacs_Include_Dirs} ${QT_INCLUDES})
