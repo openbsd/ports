@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2019/07/12 20:48:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2022/01/14 16:46:27 sthen Exp $
 
 COMMENT-main=	packet filter statistics visualization
 COMMENT-daemon=	pfstat daemon
@@ -9,7 +9,7 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-daemon=	${DISTNAME:S/-/d-/}
 CATEGORIES=	net
 MASTER_SITES=	http://www.benzedrine.ch/
-REVISION=	4
+REVISION=	5
 
 HOMEPAGE=	http://www.benzedrine.ch/pfstat.html
 
