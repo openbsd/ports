@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/14 00:39:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2022/01/14 10:53:19 tb Exp $
 
 SHARED_LIBS =		rtmp 1.1
 
@@ -7,6 +7,7 @@ COMMENT =		dump RTMP media streams
 # also see VERSION in MAKE_FLAGS below
 DISTNAME =		rtmpdump-2.4.20151223
 PATCHFILES =		rtmpdump-KSV-20151215.patch.gz
+REVISION =		0
 
 CATEGORIES =		net
 

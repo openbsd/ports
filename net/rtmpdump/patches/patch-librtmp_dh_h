@@ -1,0 +1,87 @@
+$OpenBSD: patch-librtmp_dh_h,v 1.1 2022/01/14 10:53:19 tb Exp $
+
+Fix build with opaque DH in LibreSSL 3.5.
+
+Index: librtmp/dh.h
+--- librtmp/dh.h.orig
++++ librtmp/dh.h
+@@ -249,27 +249,31 @@ DHInit(int nKeyBits)
+ {
+   size_t res;
+   MDH *dh = MDH_new();
++  MP_t p = NULL, g = NULL;
+ 
+   if (!dh)
+     goto failed;
+ 
+-  MP_new(dh->g);
++  MP_new(g);
+ 
+-  if (!dh->g)
++  if (!g)
+     goto failed;
+ 
+-  MP_gethex(dh->p, P1024, res);	/* prime P1024, see dhgroups.h */
++  MP_gethex(p, P1024, res);	/* prime P1024, see dhgroups.h */
+   if (!res)
+     {
+       goto failed;
+     }
+ 
+-  MP_set_w(dh->g, 2);	/* base 2 */
++  MP_set_w(g, 2);	/* base 2 */
++  DH_set0_pqg(dh, p, NULL, g);
++  DH_set_length(dh, nKeyBits);
+ 
+-  dh->length = nKeyBits;
+   return dh;
+ 
+ failed:
++  MP_free(g);
++  MP_free(p);
+   if (dh)
+     MDH_free(dh);
+ 
+@@ -293,12 +297,10 @@ DHGenerateKey(MDH *dh)
+       MP_gethex(q1, Q1024, res);
+       assert(res);
+ 
+-      res = isValidPublicKey(dh->pub_key, dh->p, q1);
++      res = isValidPublicKey((MP_t)DH_get0_pub_key(dh), (MP_t)DH_get0_p(dh), q1);
+       if (!res)
+ 	{
+-	  MP_free(dh->pub_key);
+-	  MP_free(dh->priv_key);
+-	  dh->pub_key = dh->priv_key = 0;
++          return 0;
+ 	}
+ 
+       MP_free(q1);
+@@ -314,15 +316,15 @@ static int
+ DHGetPublicKey(MDH *dh, uint8_t *pubkey, size_t nPubkeyLen)
+ {
+   int len;
+-  if (!dh || !dh->pub_key)
++  if (!dh || !DH_get0_pub_key(dh))
+     return 0;
+ 
+-  len = MP_bytes(dh->pub_key);
++  len = MP_bytes(DH_get0_pub_key(dh));
+   if (len <= 0 || len > (int) nPubkeyLen)
+     return 0;
+ 
+   memset(pubkey, 0, nPubkeyLen);
+-  MP_setbin(dh->pub_key, pubkey + (nPubkeyLen - len), len);
++  MP_setbin(DH_get0_pub_key(dh), pubkey + (nPubkeyLen - len), len);
+   return 1;
+ }
+ 
+@@ -364,7 +366,7 @@ DHComputeSharedSecretKey(MDH *dh, uint8_t *pubkey, siz
+   MP_gethex(q1, Q1024, len);
+   assert(len);
+ 
+-  if (isValidPublicKey(pubkeyBn, dh->p, q1))
++  if (isValidPublicKey(pubkeyBn, (MP_t)DH_get0_p(dh), q1))
+     res = MDH_compute_key(secret, nPubkeyLen, pubkeyBn, dh);
+   else
+     res = -1;
