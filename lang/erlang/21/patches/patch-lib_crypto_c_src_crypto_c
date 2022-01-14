@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_crypto_c_src_crypto_c,v 1.1 2022/01/14 10:40:28 tb Exp $
+
+Fix build with opaque EVP structures
+
+Index: lib/crypto/c_src/crypto.c
+--- lib/crypto/c_src/crypto.c.orig
++++ lib/crypto/c_src/crypto.c
+@@ -93,6 +93,7 @@
+ #ifdef LIBRESSL_VERSION_NUMBER
+ /* A macro to test on in this file */
+ #define HAS_LIBRESSL
++#define HAS_EVP_PKEY_CTX
+ #endif
+ 
+ #ifdef HAS_LIBRESSL
