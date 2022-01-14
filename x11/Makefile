@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.719 2022/01/06 20:30:28 edd Exp $
+# $OpenBSD: Makefile,v 1.720 2022/01/14 19:26:01 sdk Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -425,5 +425,6 @@
      SUBDIR += yaru
      SUBDIR += yeahconsole
      SUBDIR += yeahlaunch
+     SUBDIR += zutty
 
 .include <bsd.port.subdir.mk>
