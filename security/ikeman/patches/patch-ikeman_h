@@ -1,4 +1,4 @@
-$OpenBSD: patch-ikeman_h,v 1.1 2021/10/11 12:05:26 tb Exp $
+$OpenBSD: patch-ikeman_h,v 1.2 2022/01/14 10:56:10 tb Exp $
 
 Index: ikeman.h
 --- ikeman.h.orig
@@ -12,3 +12,12 @@ Index: ikeman.h
  
  /* certificates.c */
  int	altname_guess_and_fill(struct ikeman_x509v3_altname *, char *);
+@@ -185,7 +185,7 @@ int	ca_create_selfsigned_cert(X509 **, EVP_PKEY *, int
+     u_int8_t *, u_int8_t *, u_int8_t *, u_int8_t *, u_int8_t *, u_int8_t *);
+ void	ca_free_private_key(struct ikeman_ca *);
+ int	ca_load_private_key(struct ikeman_ca *, char *, char *);
+-int	ca_create_rsa_private_key(RSA **, EVP_PKEY *, int);
++int	ca_create_rsa_private_key(RSA **, EVP_PKEY **, int);
+ int	ca_write_private_key(EVP_PKEY *, char *, char *);
+ int	ca_create_write_cert(X509 *, char *);
+ int	ca_generate_crl(struct ikeman_ca *, EVP_PKEY *, int, int, char *);

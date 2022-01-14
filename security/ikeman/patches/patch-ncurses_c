@@ -1,6 +1,7 @@
-$OpenBSD: patch-ncurses_c,v 1.1 2014/05/23 12:33:30 sthen Exp $
---- ncurses.c.orig	Fri May 23 13:32:32 2014
-+++ ncurses.c	Fri May 23 13:32:41 2014
+$OpenBSD: patch-ncurses_c,v 1.2 2022/01/14 10:56:10 tb Exp $
+Index: ncurses.c
+--- ncurses.c.orig
++++ ncurses.c
 @@ -25,6 +25,7 @@
  #include <signal.h>
  #include <stdint.h>
@@ -9,3 +10,50 @@ $OpenBSD: patch-ncurses_c,v 1.1 2014/05/23 12:33:30 sthen Exp $
  #include <unistd.h>
  
  #include "ikeman.h"
+@@ -653,7 +654,7 @@ create_ca(void *arg1, struct ikeman_ncurses_window *w)
+ 	char cc[3], st[64], l[64], o[64], ou[64], cn[64], email[64];
+ 	int keysize = 1024, tries = 3, days = 365, i, error = 0;
+ 	RSA *rsa = NULL;
+-	EVP_PKEY pk;
++	EVP_PKEY *pk = NULL;
+ 	X509 *cert = NULL;
+ 	struct ikeman_ca *ca = NULL;
+ 
+@@ -734,8 +735,8 @@ create_ca(void *arg1, struct ikeman_ncurses_window *w)
+ 		separator(w, i, ' ');
+ 
+ 	/* XXX BAD_BAD_OPENSSL just don't let it free() */
+-	pk.references++;
+-	error = ca_create_selfsigned_cert(&cert, &pk, days * 60 * 60 * 24,
++	EVP_PKEY_up_ref(pk);
++	error = ca_create_selfsigned_cert(&cert, pk, days * 60 * 60 * 24,
+ 	    (u_int8_t *) cc, (u_int8_t *) st, (u_int8_t *) l,
+ 	    (u_int8_t *) o, (u_int8_t *) ou, (u_int8_t *) cn,
+ 	    (u_int8_t *) email);
+@@ -773,7 +774,7 @@ create_ca(void *arg1, struct ikeman_ncurses_window *w)
+ 	    strlcat(tmpdest, "ca.key", sizeof(tmpdest)) >= sizeof tmpdest)
+ 		ERROR2FAIL("key path too long");
+ 
+-	if ((error = ca_write_private_key(&pk, pwd1, tmpdest)) != 0)
++	if ((error = ca_write_private_key(pk, pwd1, tmpdest)) != 0)
+ 		goto fail;
+ 	memset(pwd1, 0, sizeof(pwd1));
+ 
+@@ -828,7 +829,7 @@ create_ca(void *arg1, struct ikeman_ncurses_window *w)
+ 	/* generate empty crl for 10 years - not necessary, but good practice */
+ 	if (strlcat(cadest, "ca.crl", sizeof(cadest)) >= sizeof cadest)
+ 		ERROR2FAIL("crl path too long");
+-	if ((error = ca_generate_crl(ca, &pk, 3653, 0, cadest)) != 0)
++	if ((error = ca_generate_crl(ca, pk, 3653, 0, cadest)) != 0)
+ 		goto fail;
+ 
+ 	mvwprintw(w->win, 8, 1, "generated CRL to %s", cadest);
+@@ -841,7 +842,7 @@ create_ca(void *arg1, struct ikeman_ncurses_window *w)
+ 	    "directory and restart ikeman. ");
+ 
+ fail:
+-	pk.references--;
++	EVP_PKEY_free(pk);
+ 	if (ca)
+ 		ca_free_private_key(ca);
+ #if 0

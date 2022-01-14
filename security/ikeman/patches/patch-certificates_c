@@ -1,9 +1,33 @@
-$OpenBSD: patch-certificates_c,v 1.2 2021/10/21 09:33:34 tb Exp $
+$OpenBSD: patch-certificates_c,v 1.3 2022/01/14 10:56:10 tb Exp $
 
 Index: certificates.c
 --- certificates.c.orig
 +++ certificates.c
-@@ -141,10 +141,11 @@ fail:
+@@ -59,13 +59,19 @@ add_v3_extension(X509 *cert, int nid, char *val)
+ static int
+ assign_random_number(int bits, ASN1_INTEGER *aint)
+ {
+-	BIGNUM bn;
++	BIGNUM *bn;
+ 
+-	memset(&bn, 0, sizeof bn);
+-	if (BN_rand(&bn, bits, 0, 0) == 0)
++	if ((bn = BN_new()) == NULL)
+ 		return (0);
+-	if (BN_to_ASN1_INTEGER(&bn, aint) == 0)
++	if (BN_rand(bn, bits, 0, 0) == 0) {
++		BN_free(bn);
+ 		return (0);
++	}
++	if (BN_to_ASN1_INTEGER(bn, aint) == 0) {
++		BN_free(bn);
++		return (0);
++	}
++	BN_free(bn);
+ 
+ 	return (1);
+ }
+@@ -141,10 +147,11 @@ fail:
  static int
  ca_x509_subjectaltname(X509 *cert, unsigned char **altname, size_t *len)
  {
@@ -19,7 +43,7 @@ Index: certificates.c
  
  	if ((ext = X509_get_ext_by_NID(cert, NID_subject_alt_name, -1)) == -1
  	    || (san = X509_get_ext(cert, ext)) == NULL) {
-@@ -152,21 +153,21 @@ ca_x509_subjectaltname(X509 *cert, unsigned char **alt
+@@ -152,21 +159,21 @@ ca_x509_subjectaltname(X509 *cert, unsigned char **alt
  		    __func__);
  		return (ALTNAME_FAIL);
  	}
@@ -45,7 +69,7 @@ Index: certificates.c
  		log_debug("%s: invalid subjectAltName length", __func__);
  		return (ALTNAME_FAIL);
  	}
-@@ -263,8 +264,8 @@ fill_crl_attributes(X509_CRL *crl, struct ikeman_crl_a
+@@ -263,8 +270,8 @@ fill_crl_attributes(X509_CRL *crl, struct ikeman_crl_a
  		/* LINTED BAD_BAD_OPENSSL */
  		r = sk_X509_REVOKED_value(rev, i);
  		rc[i].revocation_date =
@@ -56,7 +80,7 @@ Index: certificates.c
  	}
  
  	at->revoked_certs = rc;
-@@ -327,7 +328,7 @@ ca_sign_csr(char *csrpath, char *certpath, struct ikem
+@@ -327,7 +334,7 @@ ca_sign_csr(char *csrpath, char *certpath, struct ikem
  
  	if (X509_set_issuer_name(cert, X509_get_subject_name(ca->x509)) == 0)
  		ERROR("couldn't set issuer's name");
@@ -65,7 +89,40 @@ Index: certificates.c
  		ERROR("couldn't set subject's name");
  
  	if (ca_new_serial_number(ca, X509_get_serialNumber(cert)) == 0)
-@@ -768,9 +769,9 @@ ca_load(const char *ca_dir, const char *crl_dir, const
+@@ -481,22 +488,24 @@ ca_create_selfsigned_cert(X509 **cert, EVP_PKEY *pk, i
+ }
+ 
+ int
+-ca_create_rsa_private_key(RSA **rsa, EVP_PKEY *pk, int bits)
++ca_create_rsa_private_key(RSA **rsa, EVP_PKEY **pk, int bits)
+ {
+-	BIGNUM bn;
++	BIGNUM *bn;
+ 
+ 	if ((*rsa = RSA_new()) == NULL)
+ 		ERROR("allocating RSA key");
+ 
+-	memset(&bn, 0, sizeof bn);
+-	if (BN_set_word(&bn, 0x10001) == 0)
++	if ((bn = BN_new()) == NULL)
++		ERROR("allocating BN");
++	if (BN_set_word(bn, 0x10001) == 0)
+ 		ERROR("setting exponent");
+-	if (RSA_generate_key_ex(*rsa, bits, &bn, NULL) == 0)
++	if (RSA_generate_key_ex(*rsa, bits, bn, NULL) == 0)
+ 		ERROR("generating RSA key");
+-
+-	memset(pk, 0, sizeof(EVP_PKEY));
+-	if (EVP_PKEY_assign_RSA(pk, *rsa) == 0)
++	if ((*pk = EVP_PKEY_new()) == NULL)
++		ERROR("allocating EVP_PKEY");
++	if (EVP_PKEY_assign_RSA(*pk, *rsa) == 0)
+ 		ERROR("assigning key");
++	BN_free(bn);
+ 
+ 	return (EXIT_SUCCESS);
+ }
+@@ -768,9 +777,9 @@ ca_load(const char *ca_dir, const char *crl_dir, const
  {
  	DIR			*dir;
  	struct dirent		*entry;
@@ -77,7 +134,7 @@ Index: certificates.c
  	X509_STORE		*st;
  	X509_OBJECT		*xo;
  	X509			*x509;
-@@ -805,15 +806,15 @@ ca_load(const char *ca_dir, const char *crl_dir, const
+@@ -805,15 +814,15 @@ ca_load(const char *ca_dir, const char *crl_dir, const
  		}
  
  		/* retreive which one was it and store it in own SLIST */
@@ -96,7 +153,7 @@ Index: certificates.c
  	}
  	if (closedir(dir) == -1)
  		ERROR(strerror(errno));
-@@ -845,22 +846,28 @@ ca_load(const char *ca_dir, const char *crl_dir, const
+@@ -845,22 +854,28 @@ ca_load(const char *ca_dir, const char *crl_dir, const
  		X509_STORE_set_flags(store.ca_cas, X509_V_FLAG_CRL_CHECK);
  
  		/* Find out which CA does this CRL belong to */
@@ -130,7 +187,7 @@ Index: certificates.c
  				crl->filename = strdup(entry->d_name);
  				if (crl->filename == NULL)
  					ERROR("strdup crl filename");
-@@ -873,9 +880,11 @@ ca_load(const char *ca_dir, const char *crl_dir, const
+@@ -873,9 +888,11 @@ ca_load(const char *ca_dir, const char *crl_dir, const
  				fill_crl_attributes(crl->x509, crl->attrs);
  
  				/* got it, go after next CRL */
@@ -142,7 +199,7 @@ Index: certificates.c
  			OPENSSL_free(subjname);
  		}
  		if (ca)
-@@ -908,10 +917,10 @@ ca_load(const char *ca_dir, const char *crl_dir, const
+@@ -908,10 +925,10 @@ ca_load(const char *ca_dir, const char *crl_dir, const
  			continue;
  		}
  
@@ -155,7 +212,7 @@ Index: certificates.c
  
  		/* Certificate needs a valid subjectName */
  		if (X509_get_subject_name(x509) == NULL) {
-@@ -958,21 +967,22 @@ ca_load(const char *ca_dir, const char *crl_dir, const
+@@ -958,21 +975,22 @@ ca_load(const char *ca_dir, const char *crl_dir, const
  		}
  #endif
  
@@ -185,7 +242,7 @@ Index: certificates.c
  			case X509_V_ERR_CERT_HAS_EXPIRED:
  				ca->num_certs_expired++;
  				matches_at_least_a_bit++;
-@@ -1000,7 +1010,7 @@ ca_load(const char *ca_dir, const char *crl_dir, const
+@@ -1000,7 +1018,7 @@ ca_load(const char *ca_dir, const char *crl_dir, const
  
  				cert->x509 = x509;
  				cert->ca = ca;
@@ -194,7 +251,7 @@ Index: certificates.c
  				cert->filename = strdup(entry->d_name);
  				if (cert->filename == NULL)
  					ERROR("strdup cert filename");
-@@ -1017,13 +1027,14 @@ ca_load(const char *ca_dir, const char *crl_dir, const
+@@ -1017,13 +1035,14 @@ ca_load(const char *ca_dir, const char *crl_dir, const
  				 * Don't forget revoked certs - find the
  				 * appropriate CRL and fill in the info.
  				 */
