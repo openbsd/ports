@@ -1,0 +1,32 @@
+$OpenBSD: patch-include_ssl_compat_h,v 1.1 2022/01/14 10:32:15 tb Exp $
+
+Provide generous estimates of the sizes of EVP_MD_CTX and EVP_CIPHER_CTX.
+(In OpenBSD 7.0 amd64 and sparc64 they are 48 and 168, respectively).
+Also provide EVP_MD_CTX_init and EVP_CIPHER_CTX_init because someone
+decided it was a good idea to do this.
+
+Index: include/ssl_compat.h
+--- include/ssl_compat.h.orig
++++ include/ssl_compat.h
+@@ -61,6 +61,13 @@
+ #endif /* HAVE_OPENSSL11 */
+ #endif
+ 
++#ifdef LIBRESSL_VERSION_NUMBER
++#define EVP_MD_CTX_SIZE			64
++#define EVP_CIPHER_CTX_SIZE             192
++#define EVP_MD_CTX_init(X) do { memset((X), 0, EVP_MD_CTX_SIZE); EVP_MD_CTX_reset(X); } while(0)
++#define EVP_CIPHER_CTX_init(X) do { memset((X), 0, EVP_CIPHER_CTX_SIZE); EVP_CIPHER_CTX_reset(X); } while(0)
++#else
++
+ #ifdef HAVE_WOLFSSL
+ #define EVP_MD_CTX_SIZE                 sizeof(wc_Md5)
+ #endif
+@@ -84,6 +91,7 @@
+ #define EVP_CIPHER_CTX_reset(X) EVP_CIPHER_CTX_cleanup(X)
+ #define X509_get0_notBefore(X) X509_get_notBefore(X)
+ #define X509_get0_notAfter(X) X509_get_notAfter(X)
++#endif
+ #endif
+ #endif
+ 

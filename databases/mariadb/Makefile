@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2021/11/22 13:55:54 espie Exp $
+# $OpenBSD: Makefile,v 1.120 2022/01/14 10:32:15 tb Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
@@ -8,8 +8,7 @@ VERSION=	10.6.5
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 EPOCH=		1
-# execinfo WANTLIB was added post-6.9
-# keep REVISION in -current above -stable until 7.0
+REVISION-main=	0
 
 CATEGORIES=	databases
 MASTER_SITES=	https://downloads.mariadb.com/MariaDB/${DISTNAME}/source/ \
