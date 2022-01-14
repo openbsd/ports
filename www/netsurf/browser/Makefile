@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2021/10/19 19:42:22 tb Exp $
+# $OpenBSD: Makefile,v 1.43 2022/01/14 11:05:23 tb Exp $
 
 COMMENT =		lightweight web browser, with GTK interface
 
 NETSURF_PROJECT =	netsurf
 NETSURF_VERSION =	3.10
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE =		https://www.netsurf-browser.org/
 MASTER_SITES =		https://download.netsurf-browser.org/netsurf/releases/source/

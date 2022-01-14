@@ -1,4 +1,7 @@
-$OpenBSD: patch-content_fetchers_curl_c,v 1.1 2021/10/19 19:42:22 tb Exp $
+$OpenBSD: patch-content_fetchers_curl_c,v 1.2 2022/01/14 11:05:23 tb Exp $
+
+X509_up_ref has been available since LibreSSL 2.5.
+X509_free has always been available.
 
 Index: content/fetchers/curl.c
 --- content/fetchers/curl.c.orig
