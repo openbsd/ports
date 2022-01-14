@@ -1,0 +1,16 @@
+$OpenBSD: patch-src__cffi_src_openssl_dh_py,v 1.1 2022/01/14 10:59:10 tb Exp $
+
+LibreSSL 3.5 provides this define.
+
+Index: src/_cffi_src/openssl/dh.py
+--- src/_cffi_src/openssl/dh.py.orig
++++ src/_cffi_src/openssl/dh.py
+@@ -37,7 +37,7 @@ int Cryptography_i2d_DHxparams_bio(BIO *bp, DH *x);
+ """
+ 
+ CUSTOMIZATIONS = """
+-#if CRYPTOGRAPHY_IS_LIBRESSL
++#if 0
+ #ifndef DH_CHECK_Q_NOT_PRIME
+ #define DH_CHECK_Q_NOT_PRIME            0x10
+ #endif

@@ -1,14 +1,28 @@
-$OpenBSD: patch-src__cffi_src_openssl_ct_py,v 1.1 2021/11/26 07:59:42 tb Exp $
+$OpenBSD: patch-src__cffi_src_openssl_ct_py,v 1.2 2022/01/14 10:59:10 tb Exp $
+
+LibreSSL 3.5 has Certificate Transparency code, so enable it to fix build
+breakage.
 
 Index: src/_cffi_src/openssl/ct.py
 --- src/_cffi_src/openssl/ct.py.orig
 +++ src/_cffi_src/openssl/ct.py
-@@ -87,7 +87,7 @@ typedef enum {
- } sct_source_t;
+@@ -4,7 +4,8 @@
  
- /* OpenSSL compiled with `no-ct` still defines the `SCT` struct. */
--#if !defined(OPENSSL_NO_CT)
-+#if !defined(OPENSSL_NO_CT) || defined(LIBRESSL_VERSION_NUMBER)
- typedef void SCT;
- #endif
  
+ INCLUDES = """
+-#if CRYPTOGRAPHY_OPENSSL_110F_OR_GREATER && !defined(OPENSSL_NO_CT)
++#if (CRYPTOGRAPHY_OPENSSL_110F_OR_GREATER && !defined(OPENSSL_NO_CT)) || \
++    defined(LIBRESSL_VERSION_NUMBER)
+ #include <openssl/ct.h>
+ 
+ typedef STACK_OF(SCT) Cryptography_STACK_OF_SCT;
+@@ -65,7 +66,8 @@ int SCT_set_log_entry_type(SCT *, ct_log_entry_type_t)
+ """
+ 
+ CUSTOMIZATIONS = """
+-#if CRYPTOGRAPHY_OPENSSL_110F_OR_GREATER && !defined(OPENSSL_NO_CT)
++#if CRYPTOGRAPHY_OPENSSL_110F_OR_GREATER && !defined(OPENSSL_NO_CT) || \
++	defined(LIBRESSL_VERSION_NUMBER)
+ static const long Cryptography_HAS_SCT = 1;
+ #else
+ static const long Cryptography_HAS_SCT = 0;

@@ -1,0 +1,17 @@
+$OpenBSD: patch-tests_x509_test_ocsp_py,v 1.1 2022/01/14 10:59:10 tb Exp $
+
+Skip test that checks that SCT is unsupported which is no longer true
+in LibreSSL 3.5.
+
+Index: tests/x509/test_ocsp.py
+--- tests/x509/test_ocsp.py.orig
++++ tests/x509/test_ocsp.py
+@@ -1034,7 +1034,7 @@ class TestOCSPResponse(object):
+ 
+     @pytest.mark.supported(
+         only_if=lambda backend: (
+-            not backend._lib.CRYPTOGRAPHY_OPENSSL_110F_OR_GREATER
++            not backend._lib.CRYPTOGRAPHY_OPENSSL_110F_OR_GREATER and not backend._lib.Cryptography_HAS_SCT
+         ),
+         skip_message="Requires OpenSSL < 1.1.0f",
+     )
