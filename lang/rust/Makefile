@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2021/12/16 07:43:24 semarie Exp $
+# $OpenBSD: Makefile,v 1.138 2022/01/14 07:18:46 semarie Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -13,15 +13,14 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.57.0
+V =			1.58.0
 DISTNAME =		rustc-${V}-src
-REVISION-main =		0
 
 # rustc bootstrap version
-BV-aarch64 =		1.57.0-20211215
-BV-amd64 =		1.57.0-20211214
-BV-i386 =		1.57.0-20211214
-BV-sparc64 =		1.57.0-20211214
+BV-aarch64 =		1.58.0-20220113
+BV-amd64 =		1.58.0-20220111
+BV-i386 =		1.58.0-20220112
+BV-sparc64 =		1.58.0-20220113
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -149,10 +148,6 @@ MAKE_ENV +=	CARGO_HOME=${WRKBUILD}/cargo-home \
 		LIBGIT2_SYS_USE_PKG_CONFIG=1 \
 		LIBSSH2_SYS_USE_PKG_CONFIG=1
 
-# XXX temporary workaround for 1.52.0
-# https://github.com/rust-lang/rust/issues/84970
-MAVE_ENV +=	CARGO_INCREMENTAL=0
-
 # cargo assert() on i386 with standard libz
 .if "${MACHINE_ARCH}" == "i386"
 MAKE_ENV += 	LIBZ_SYS_STATIC=1
@@ -175,11 +170,13 @@ TEST_DEPENDS +=		devel/git \
 
 # - disable vendor checksum checks
 # - SUBSTR cargo testsuite
+# - remove src/llvm-project
 SUBST_VARS +=	WRKBUILD
 post-patch:
 	sed -i 's/"files":{[^}]*}/"files":{}/' \
 		${WRKSRC}/vendor/*/.cargo-checksum.json
 	${SUBST_CMD} ${WRKSRC}/src/tools/cargo/crates/cargo-test-support/src/paths.rs
+	rm -rf -- ${WRKSRC}/src/llvm-project/
 
 # - check datasize limit before configuring (and building)
 pre-configure:
@@ -238,7 +235,7 @@ TEST_BIN = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${TEST_ENV} \
 
 do-build:
 	${BUILD_BIN} dist --jobs=${MAKE_JOBS} \
-		library/std src/librustc cargo clippy rustfmt
+		rust-std rustc cargo clippy rustfmt
 	rm -rf -- ${WRKBUILD}/build/tmp
 
 COMPONENTS ?=	rustc-${V} rust-std-${V} cargo-${V} \
