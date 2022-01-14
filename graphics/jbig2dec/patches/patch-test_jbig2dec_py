@@ -1,9 +1,11 @@
-$OpenBSD: patch-test_jbig2dec_py,v 1.1.1.1 2009/10/11 09:59:16 sthen Exp $
---- test_jbig2dec.py.orig	Tue Jul 14 22:00:16 2009
-+++ test_jbig2dec.py	Tue Jul 14 22:00:21 2009
+$OpenBSD: patch-test_jbig2dec_py,v 1.2 2022/01/14 20:55:44 sthen Exp $
+
+Index: test_jbig2dec.py
+--- test_jbig2dec.py.orig
++++ test_jbig2dec.py
 @@ -1,4 +1,4 @@
 -#! /usr/bin/env python
 +#!${MODPY_BIN}
  
- # this is the testtest script for jbig2dec
+ # this is the test script for jbig2dec
  

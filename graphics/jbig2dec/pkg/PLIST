@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/03/25 21:12:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2022/01/14 20:55:44 sthen Exp $
 @bin bin/jbig2dec
 include/jbig2.h
-lib/libjbig2dec.a
+@static-lib lib/libjbig2dec.a
 lib/libjbig2dec.la
 @lib lib/libjbig2dec.so.${LIBjbig2dec_VERSION}
+lib/pkgconfig/jbig2dec.pc
 @man man/man1/jbig2dec.1
