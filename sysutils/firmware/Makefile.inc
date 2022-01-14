@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2019/07/12 22:55:20 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2022/01/14 14:20:21 espie Exp $
 
 COMMENT ?=	firmware binary images for ${FW_DRIVER}(4) driver
 
@@ -20,6 +20,8 @@ PREFIX ?=	/etc
 NO_BUILD ?=	Yes
 NO_TEST ?=	Yes
 
+# XXX fw_update doesn't know what to do with @ts
+PKG_ARGS += 	-DNO_TS_IN_PLIST
 .if ${PERMIT_PACKAGE:L:Myes}
 #
 # This is a special-purpose directory. Packages produced from this should
