@@ -1,4 +1,4 @@
-# $OpenBSD: modules.inc,v 1.1 2022/01/13 10:15:21 ajacoutot Exp $
+# $OpenBSD: modules.inc,v 1.2 2022/01/14 08:08:08 ajacoutot Exp $
 
 MODGO_MODULES =	\
 	bazil.org/fuse						 v0.0.0-20160811212531-371fbbdaa898 \
