@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_meson_build,v 1.1 2022/01/14 07:25:36 ajacoutot Exp $
+
+src/meson.build:172:0: ERROR: gnome.genmarshal keyword argument 'sources' was of type array[File] but should have been array[str] that cannot be empty
+
+Index: src/meson.build
+--- src/meson.build.orig
++++ src/meson.build
+@@ -174,9 +174,7 @@ server_sources += gnome.genmarshal(
+   internal: true,
+   install_header: false,
+   prefix: '_terminal_marshal',
+-  sources: files(
+-    'terminal-marshal.list',
+-  ),
++  sources: 'terminal-marshal.list',
+   stdinc: true,
+   valist_marshallers: true,
+ )
