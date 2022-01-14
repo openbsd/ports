@@ -1,0 +1,41 @@
+$OpenBSD: patch-src_utils_diffie_hellman_cc,v 1.1 2022/01/14 10:46:57 tb Exp $
+
+Fix build with opaque DH in LibreSSL 3.5.
+
+Index: src/utils/diffie_hellman.cc
+--- src/utils/diffie_hellman.cc.orig
++++ src/utils/diffie_hellman.cc
+@@ -53,9 +53,11 @@ DiffieHellman::DiffieHellman(const unsigned char *prim
+   m_secret(NULL), m_size(0) {
+ 
+ #ifdef USE_OPENSSL
++  BIGNUM *p, *g;
+   m_dh = DH_new();
+-  m_dh->p = BN_bin2bn(prime, primeLength, NULL);
+-  m_dh->g = BN_bin2bn(generator, generatorLength, NULL);
++  p = BN_bin2bn(prime, primeLength, NULL);
++  g = BN_bin2bn(generator, generatorLength, NULL);
++  DH_set0_pqg(m_dh, p, NULL, g);
+ 
+   DH_generate_key(m_dh);
+ #else
+@@ -73,7 +75,7 @@ DiffieHellman::~DiffieHellman() {
+ bool
+ DiffieHellman::is_valid() const {
+ #ifdef USE_OPENSSL
+-  return m_dh != NULL && m_dh->pub_key != NULL;
++  return m_dh != NULL && DH_get0_pub_key(m_dh) != NULL;
+ #else
+   return false;
+ #endif
+@@ -102,8 +104,8 @@ DiffieHellman::store_pub_key(unsigned char* dest, unsi
+ #ifdef USE_OPENSSL
+   std::memset(dest, 0, length);
+ 
+-  if ((int)length >= BN_num_bytes(m_dh->pub_key))
+-    BN_bn2bin(m_dh->pub_key, dest + length - BN_num_bytes(m_dh->pub_key));
++  if ((int)length >= BN_num_bytes(DH_get0_pub_key(m_dh)))
++    BN_bn2bin(DH_get0_pub_key(m_dh), dest + length - BN_num_bytes(DH_get0_pub_key(m_dh)));
+ #endif
+ }
+ 
