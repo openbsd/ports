@@ -1,0 +1,25 @@
+$OpenBSD: patch-lib_pypy__cffi_ssl__cffi_src_openssl_ocsp_py,v 1.1 2022/01/14 10:43:11 tb Exp $
+
+Fix build with opaque OCSP in LibreSSL 3.5.
+
+Index: lib_pypy/_cffi_ssl/_cffi_src/openssl/ocsp.py
+--- lib_pypy/_cffi_ssl/_cffi_src/openssl/ocsp.py.orig
++++ lib_pypy/_cffi_ssl/_cffi_src/openssl/ocsp.py
+@@ -109,7 +109,7 @@ struct ocsp_basic_response_st {
+ };
+ #endif
+ 
+-#if CRYPTOGRAPHY_OPENSSL_LESS_THAN_110
++#if CRYPTOGRAPHY_OPENSSL_LESS_THAN_110 && LIBRESSL_VERSION_NUMBER < 0x3050000fL
+ /* These functions are all taken from ocsp_cl.c in OpenSSL 1.1.0 */
+ const OCSP_CERTID *OCSP_SINGLERESP_get0_id(const OCSP_SINGLERESP *single)
+ {
+@@ -148,7 +148,7 @@ const ASN1_OCTET_STRING *OCSP_resp_get0_signature(cons
+ }
+ #endif
+ 
+-#if CRYPTOGRAPHY_OPENSSL_LESS_THAN_110J
++#if CRYPTOGRAPHY_OPENSSL_LESS_THAN_110J && LIBRESSL_VERSION_NUMBER < 0x3050000fL
+ const X509_ALGOR *OCSP_resp_get0_tbs_sigalg(const OCSP_BASICRESP *bs)
+ {
+ #if CRYPTOGRAPHY_OPENSSL_LESS_THAN_110

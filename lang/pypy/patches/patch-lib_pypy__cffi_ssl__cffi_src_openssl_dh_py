@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_pypy__cffi_ssl__cffi_src_openssl_dh_py,v 1.1 2022/01/14 10:43:11 tb Exp $
+
+Do not redefine a constant available in LibreSSL's headers.
+
+Index: lib_pypy/_cffi_ssl/_cffi_src/openssl/dh.py
+--- lib_pypy/_cffi_ssl/_cffi_src/openssl/dh.py.orig
++++ lib_pypy/_cffi_ssl/_cffi_src/openssl/dh.py
+@@ -110,7 +110,7 @@ int DH_set0_key(DH *dh, BIGNUM *pub_key, BIGNUM *priv_
+ }
+ #endif
+ 
+-#if CRYPTOGRAPHY_OPENSSL_LESS_THAN_110
++#if CRYPTOGRAPHY_OPENSSL_LESS_THAN_110 && !CRYPTOGRAPHY_LIBRESSL_27_OR_GREATER
+ #ifndef DH_CHECK_Q_NOT_PRIME
+ #define DH_CHECK_Q_NOT_PRIME            0x10
+ #endif

@@ -1,0 +1,25 @@
+$OpenBSD: patch-lib_pypy__cffi_ssl__cffi_src_openssl_hmac_py,v 1.1 2022/01/14 10:43:11 tb Exp $
+
+Fix build with opaque HMAC_CTX in LibreSSL 3.5.
+
+Index: lib_pypy/_cffi_ssl/_cffi_src/openssl/hmac.py
+--- lib_pypy/_cffi_ssl/_cffi_src/openssl/hmac.py.orig
++++ lib_pypy/_cffi_ssl/_cffi_src/openssl/hmac.py
+@@ -24,7 +24,7 @@ void Cryptography_HMAC_CTX_free(HMAC_CTX *ctx);
+ 
+ CUSTOMIZATIONS = """
+ HMAC_CTX *Cryptography_HMAC_CTX_new(void) {
+-#if CRYPTOGRAPHY_OPENSSL_110_OR_GREATER
++#if CRYPTOGRAPHY_OPENSSL_110_OR_GREATER || defined(LIBRESSL_VERSION_NUMBER)
+     return HMAC_CTX_new();
+ #else
+     /* This uses OPENSSL_zalloc in 1.1.0, which is malloc + memset */
+@@ -36,7 +36,7 @@ HMAC_CTX *Cryptography_HMAC_CTX_new(void) {
+ 
+ 
+ void Cryptography_HMAC_CTX_free(HMAC_CTX *ctx) {
+-#if CRYPTOGRAPHY_OPENSSL_110_OR_GREATER
++#if CRYPTOGRAPHY_OPENSSL_110_OR_GREATER || defined(LIBRESSL_VERSION_NUMBER)
+     return HMAC_CTX_free(ctx);
+ #else
+     if (ctx != NULL) {
