@@ -1,0 +1,313 @@
+$OpenBSD: patch-retr_c,v 1.1 2022/01/14 11:01:09 tb Exp $
+
+Fix build with opaque EVP_MD_CTX in LibreSSL 3.5.
+
+Index: retr.c
+--- retr.c.orig
++++ retr.c
+@@ -74,7 +74,7 @@ retr( SNET *sn, char *pathdesc, char *path, char *temp
+     char		buf[ 8192 ]; 
+     ssize_t		rr;
+     extern EVP_MD	*md;
+-    EVP_MD_CTX		mdctx;
++    EVP_MD_CTX		*mdctx = NULL;
+     unsigned char	md_value[ EVP_MAX_MD_SIZE ];
+     char		cksum_b64[ SZ_BASE64_E( EVP_MAX_MD_SIZE ) ];
+ 
+@@ -84,26 +84,32 @@ retr( SNET *sn, char *pathdesc, char *path, char *temp
+ 	    fprintf( stderr, "%s\n", pathdesc );
+ 	    return( 1 );
+ 	}
+-	EVP_DigestInit( &mdctx, md );
++	mdctx = EVP_MD_CTX_new();
++	if ( mdctx == NULL) {
++	    fprintf( stderr, "EVP_MD_CTX_new failed\n" );
++	    goto error0;
++	}
++	EVP_DigestInit( mdctx, md );
+     }
+ 
+     if ( verbose ) printf( ">>> RETR %s\n", pathdesc );
+     if ( snet_writef( sn, "RETR %s\n", pathdesc ) < 0 ) {
+ 	fprintf( stderr, "retrieve %s failed: 1-%s\n", pathdesc,
+ 	    strerror( errno ));
+-	return( -1 );
++	goto error0;
+     }
+ 
+     tv = timeout;
+     if (( line = snet_getline_multi( sn, logger, &tv )) == NULL ) {
+ 	fprintf( stderr, "retrieve %s failed: 2-%s\n", pathdesc,
+ 	    strerror( errno ));
+-	return( -1 );
++	goto error0;
+     }
+ 
+     if ( *line != '2' ) {
+ 	fprintf( stderr, "%s\n", line );
+-	return( 1 );
++	returnval = 1;
++	goto error0;
+     }
+ 
+     /* Get file size from server */
+@@ -111,7 +117,7 @@ retr( SNET *sn, char *pathdesc, char *path, char *temp
+     if (( line = snet_getline( sn, &tv )) == NULL ) {
+ 	fprintf( stderr, "retrieve %s failed: 3-%s\n", pathdesc,
+ 	    strerror( errno ));
+-	return( -1 );
++	goto error0;
+     }
+     size = strtoofft( line, NULL, 10 );
+     if ( verbose ) printf( "<<< %" PRIofft "d\n", size );
+@@ -119,7 +125,7 @@ retr( SNET *sn, char *pathdesc, char *path, char *temp
+ 	fprintf( stderr, "line %d: size in transcript does not match size "
+ 	    "from server\n", linenum );
+ 	fprintf( stderr, "%s\n", pathdesc );
+-	return( -1 );
++	goto error0;
+     }
+ 
+     /*Create temp file name*/
+@@ -127,7 +133,7 @@ retr( SNET *sn, char *pathdesc, char *path, char *temp
+ 	    path, getpid()) >= MAXPATHLEN ) {
+ 	fprintf( stderr, "%s.radmind.%i: too long", path,
+ 		(int)getpid());
+-	return( -1 );
++	goto error0;
+     }
+     /* Open file */
+     if (( fd = open( temppath, O_WRONLY | O_CREAT, tempmode )) < 0 ) {
+@@ -135,15 +141,15 @@ retr( SNET *sn, char *pathdesc, char *path, char *temp
+ 	    errno = 0;
+ 	    if ( mkprefix( temppath ) != 0 ) {
+ 		perror( temppath );
+-		return( -1 );
++	        goto error0;
+ 	    }
+ 	    if (( fd = open( temppath, O_WRONLY | O_CREAT, tempmode )) < 0 ) {
+ 		perror( temppath );
+-		return( -1 );
++	        goto error0;
+ 	    }
+ 	} else {
+ 	    perror( temppath );
+-	    return( -1 );
++	    goto error0;
+ 	}
+     }
+ 
+@@ -165,7 +171,7 @@ retr( SNET *sn, char *pathdesc, char *path, char *temp
+ 	    goto error2;
+ 	}
+ 	if ( cksum ) {
+-	    EVP_DigestUpdate( &mdctx, buf, (unsigned int)rr );
++	    EVP_DigestUpdate( mdctx, buf, (unsigned int)rr );
+ 	}
+ 	if ( dodots ) { putc( '.', stdout ); fflush( stdout ); }
+ 	size -= rr;
+@@ -197,7 +203,7 @@ retr( SNET *sn, char *pathdesc, char *path, char *temp
+ 
+     /* cksum file */
+     if ( cksum ) {
+-	EVP_DigestFinal( &mdctx, md_value, &md_len );
++	EVP_DigestFinal( mdctx, md_value, &md_len );
+ 	base64_e( md_value, md_len, cksum_b64 );
+ 	if ( strcmp( trancksum, cksum_b64 ) != 0 ) {
+ 	    fprintf( stderr, "line %d: checksum in transcript does not match "
+@@ -208,12 +214,15 @@ retr( SNET *sn, char *pathdesc, char *path, char *temp
+ 	}
+     }
+ 
++    EVP_MD_CTX_free( mdctx );
+     return( 0 );
+ 
+ error2:
+     close( fd );
+ error1:
+     unlink( temppath );
++error0:
++    EVP_MD_CTX_free( mdctx );
+     return( returnval );
+ }
+ 
+@@ -246,7 +255,7 @@ retr_applefile( SNET *sn, char *pathdesc, char *path, 
+     struct as_entry		ae_ents[ 3 ]; 
+     struct timeval		tv;
+     extern EVP_MD       	*md;
+-    EVP_MD_CTX   	       	mdctx;
++    EVP_MD_CTX   	       	*mdctx = NULL;
+     unsigned char       	md_value[ EVP_MAX_MD_SIZE ];
+     char		       	cksum_b64[ SZ_BASE64_E( EVP_MAX_MD_SIZE ) ];
+ 
+@@ -256,26 +265,29 @@ retr_applefile( SNET *sn, char *pathdesc, char *path, 
+ 	    fprintf( stderr, "%s\n", pathdesc );
+             return( 1 );
+         }
+-        EVP_DigestInit( &mdctx, md );
++        if ( ( mdctx = EVP_MD_CTX_new( ) ) == NULL )
++            return( -1 );
++        EVP_DigestInit( mdctx, md );
+     }
+ 
+     if ( verbose ) printf( ">>> RETR %s\n", pathdesc );
+     if ( snet_writef( sn, "RETR %s\n", pathdesc ) < 0 ) {
+ 	fprintf( stderr, "retrieve applefile %s failed: 1-%s\n", pathdesc,
+ 	    strerror( errno ));
+-	return( -1 );
++	goto error0;
+     }
+ 
+     tv = timeout;
+     if (( line = snet_getline_multi( sn, logger, &tv )) == NULL ) {
+ 	fprintf( stderr, "retrieve applefile %s failed: 2-%s\n", pathdesc,
+ 	    strerror( errno ));
+-	return( -1 );
++	goto error0;
+     }
+ 
+     if ( *line != '2' ) {
+         fprintf( stderr, "%s\n", line );
+-        return( 1 );
++        returnval = 1;
++        goto error0;
+     }
+ 
+     /* Get file size from server */
+@@ -283,7 +295,7 @@ retr_applefile( SNET *sn, char *pathdesc, char *path, 
+     if (( line = snet_getline( sn, &tv )) == NULL ) {
+ 	fprintf( stderr, "retrieve applefile %s failed: 3-%s\n", pathdesc,
+ 	    strerror( errno ));
+-	return( -1 );
++	goto error0;
+     }
+     size = strtoofft( line, NULL, 10 );
+     if ( verbose ) printf( "<<< %" PRIofft "d\n", size );
+@@ -291,14 +303,14 @@ retr_applefile( SNET *sn, char *pathdesc, char *path, 
+ 	fprintf( stderr, "line %d: size in transcript does not match size"
+ 	    "from server\n", linenum );
+ 	fprintf( stderr, "%s\n", pathdesc );
+-	return( -1 );
++	goto error0;
+     }  
+     if ( size < ( AS_HEADERLEN + ( 3 * sizeof( struct as_entry )) +
+ 	    FINFOLEN )) {
+ 	fprintf( stderr,
+ 	    "retrieve applefile %s failed: AppleSingle-encoded file too "
+ 	    "short\n", path );
+-	return( -1 );
++	goto error0;
+     }
+ 
+     /* read header to determine if file is encoded in applesingle */
+@@ -306,24 +318,24 @@ retr_applefile( SNET *sn, char *pathdesc, char *path, 
+     if (( rc = snet_read( sn, ( char * )&ah, AS_HEADERLEN, &tv )) <= 0 ) {
+ 	fprintf( stderr, "retrieve applefile %s failed: 4-%s\n", pathdesc,
+ 	    strerror( errno ));
+-	return( -1 );
++	goto error0;
+     }
+     if (( rc != AS_HEADERLEN ) ||
+ 	    ( memcmp( &as_header, &ah, AS_HEADERLEN ) != 0 )) {
+ 	fprintf( stderr,
+ 	    "retrieve applefile %s failed: corrupt AppleSingle-encoded file\n",
+ 	    path );
+-	return( -1 );
++	goto error0;
+     }
+     if ( cksum ) {
+-	EVP_DigestUpdate( &mdctx, (char *)&ah, (unsigned int)rc );
++	EVP_DigestUpdate( mdctx, (char *)&ah, (unsigned int)rc );
+     }
+ 
+     /* name temp file */
+     if ( snprintf( temppath, MAXPATHLEN, "%s.radmind.%i", path,
+ 	    getpid()) >= MAXPATHLEN ) {
+ 	fprintf( stderr, "%s.radmind.%i: too long", path, ( int )getpid());
+-	return( -1 );
++	goto error0;
+     }
+ 
+     /* data fork must exist to write to rsrc fork */        
+@@ -333,16 +345,16 @@ retr_applefile( SNET *sn, char *pathdesc, char *path, 
+ 	    errno = 0;
+ 	    if ( mkprefix( temppath ) != 0 ) {
+ 		perror( temppath );
+-		return( -1 );
++		goto error0;
+ 	    }
+ 	    if (( dfd = open( temppath, O_CREAT | O_EXCL | O_WRONLY,
+ 		    tempmode )) < 0 ) {
+ 		perror( temppath );
+-		return( -1 );
++		goto error0;
+ 	    }
+ 	} else {
+ 	    perror( temppath );
+-	    return( -1 );
++	    goto error0;
+ 	}
+     }
+ 
+@@ -373,7 +385,7 @@ retr_applefile( SNET *sn, char *pathdesc, char *path, 
+     /* Should we check for valid ae_ents here? YES! */
+ 
+     if ( cksum ) {
+-	EVP_DigestUpdate( &mdctx, (char *)&ae_ents, (unsigned int)rc );
++	EVP_DigestUpdate( mdctx, (char *)&ae_ents, (unsigned int)rc );
+     }
+     if ( dodots ) { putc( '.', stdout ); fflush( stdout ); }
+ 
+@@ -398,7 +410,7 @@ retr_applefile( SNET *sn, char *pathdesc, char *path, 
+ 	goto error2;
+     }
+     if ( cksum ) {
+-	EVP_DigestUpdate( &mdctx, finfo, (unsigned int)rc );
++	EVP_DigestUpdate( mdctx, finfo, (unsigned int)rc );
+     }
+     if ( dodots ) { putc( '.', stdout ); fflush( stdout ); }
+     size -= rc;
+@@ -448,7 +460,7 @@ retr_applefile( SNET *sn, char *pathdesc, char *path, 
+ 		goto error3;
+ 	    }
+ 	    if ( cksum ) {
+-		EVP_DigestUpdate( &mdctx, buf, (unsigned int)rc );
++		EVP_DigestUpdate( mdctx, buf, (unsigned int)rc );
+ 	    }
+ 	    if ( dodots ) { putc( '.', stdout ); fflush( stdout ); }
+ 	    if ( showprogress ) {
+@@ -482,7 +494,7 @@ retr_applefile( SNET *sn, char *pathdesc, char *path, 
+ 	}
+ 
+ 	if ( cksum ) {
+-	    EVP_DigestUpdate( &mdctx, buf, (unsigned int)rc );
++	    EVP_DigestUpdate( mdctx, buf, (unsigned int)rc );
+ 	}
+ 	if ( dodots ) { putc( '.', stdout ); fflush( stdout); }
+ 	if ( showprogress ) {
+@@ -523,7 +535,7 @@ retr_applefile( SNET *sn, char *pathdesc, char *path, 
+     if ( verbose ) printf( "<<< .\n" );
+ 
+     if ( cksum ) {
+-	EVP_DigestFinal( &mdctx, md_value, &md_len );
++	EVP_DigestFinal( mdctx, md_value, &md_len );
+ 	base64_e(( char*)&md_value, md_len, cksum_b64 );
+         if ( strcmp( trancksum, cksum_b64 ) != 0 ) {
+ 	    fprintf( stderr, "line %d: checksum in transcript does not match "
+@@ -534,6 +546,7 @@ retr_applefile( SNET *sn, char *pathdesc, char *path, 
+         }
+     }
+ 
++    EVP_MD_CTX_free( mdctx );
+     return( 0 );
+ 
+ error3:
+@@ -542,6 +555,8 @@ error2:
+     close( dfd );
+ error1:
+     unlink( temppath );
++error0:
++    EVP_MD_CTX_free( mdctx );
+     return( returnval );
+ }
+ 

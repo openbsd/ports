@@ -1,0 +1,70 @@
+$OpenBSD: patch-stor_c,v 1.6 2022/01/14 11:01:09 tb Exp $
+
+Fix build with opaque EVP_MD_CTX in LibreSSL 3.5.
+
+Index: stor.c
+--- stor.c.orig
++++ stor.c
+@@ -136,7 +136,7 @@ stor_file( SNET *sn, char *pathdesc, char *path, off_t
+     ssize_t             rr, size = 0;
+     unsigned int	md_len;
+     extern EVP_MD       *md;
+-    EVP_MD_CTX          mdctx;
++    EVP_MD_CTX          *mdctx = NULL;
+     unsigned char       md_value[ EVP_MAX_MD_SIZE ];
+     char       cksum_b64[ SZ_BASE64_E( EVP_MAX_MD_SIZE ) ];
+ 
+@@ -146,7 +146,12 @@ stor_file( SNET *sn, char *pathdesc, char *path, off_t
+ 	    fprintf( stderr, "line %d: No checksum listed\n", linenum );
+ 	    exit( 2 );
+         }
+-	EVP_DigestInit( &mdctx, md );
++	mdctx = EVP_MD_CTX_new( );
++        if ( mdctx == NULL ) {
++            fprintf( stderr, "EVP_MD_CTX_new failed\n");
++            exit( 2 );
++        }
++	EVP_DigestInit( mdctx, md );
+     }
+ 
+     /* Open and stat file */
+@@ -197,12 +202,13 @@ stor_file( SNET *sn, char *pathdesc, char *path, off_t
+ 	if ( snet_write( sn, buf, rr, &tv ) != rr ) {
+ 	    fprintf( stderr, "stor_file %s failed: %s\n", pathdesc,
+ 		strerror( errno ));
++	    EVP_MD_CTX_free( mdctx );
+ 	    return( -1 );
+ 	}
+ 	size -= rr;
+ 	if ( dodots ) { putc( '.', stdout ); fflush( stdout ); }
+ 	if ( cksum ) {
+-	    EVP_DigestUpdate( &mdctx, buf, (unsigned int)rr );
++	    EVP_DigestUpdate( mdctx, buf, (unsigned int)rr );
+ 	}
+ 	
+ 	if ( showprogress ) {
+@@ -226,6 +232,7 @@ stor_file( SNET *sn, char *pathdesc, char *path, off_t
+     if ( snet_writef( sn, ".\r\n" ) < 0 ) {
+ 	fprintf( stderr, "stor_file %s failed: %s\n", pathdesc,
+ 	    strerror( errno ));
++	EVP_MD_CTX_free( mdctx );
+ 	return( -1 );
+     }
+     if ( verbose ) fputs( "\n>>> .\n", stdout );
+@@ -237,7 +244,7 @@ stor_file( SNET *sn, char *pathdesc, char *path, off_t
+ 
+     /* cksum data sent */
+     if ( cksum ) {
+-	EVP_DigestFinal( &mdctx, md_value, &md_len );
++	EVP_DigestFinal( mdctx, md_value, &md_len );
+ 	base64_e( md_value, md_len, cksum_b64 );
+         if ( strcmp( trancksum, cksum_b64 ) != 0 ) {
+ 	    fprintf( stderr,
+@@ -247,6 +254,7 @@ stor_file( SNET *sn, char *pathdesc, char *path, off_t
+     }
+ 
+     if ( !quiet && !showprogress ) printf( "%s: stored\n", path );
++    EVP_MD_CTX_free( mdctx );
+     return( 0 );
+ }
+ 
