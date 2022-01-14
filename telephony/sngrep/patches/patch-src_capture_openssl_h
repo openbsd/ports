@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_capture_openssl_h,v 1.1 2022/01/14 11:03:35 tb Exp $
+
+All the OpenSSL API has long been available in LibreSSL except for
+EVP_CIPHER_CTX_get_cipher_data().
+
+Index: src/capture_openssl.h
+--- src/capture_openssl.h.orig
++++ src/capture_openssl.h
+@@ -70,7 +70,7 @@
+  * changes from OpenSSL >= 1.1 (new functions, macros, deprecations, ...)
+  */
+ #if defined(LIBRESSL_VERSION_NUMBER)
+-#define MODSSL_USE_OPENSSL_PRE_1_1_API (1)
++#define MODSSL_USE_OPENSSL_PRE_1_1_API (0)
+ #else
+ #define MODSSL_USE_OPENSSL_PRE_1_1_API (OPENSSL_VERSION_NUMBER < 0x10100000L)
+ #endif
