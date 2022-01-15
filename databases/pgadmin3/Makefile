@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2022/01/15 12:15:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2022/01/15 15:41:27 sthen Exp $
 
 COMMENT=	administration and development platform for PostgreSQL
 
@@ -14,10 +14,10 @@ MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 # Artistic license
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c crypto m pq wx_baseu-3.0 wx_baseu_net-3.0
+WANTLIB += ${COMPILER_LIBCXX} c m pq wx_baseu-3.0 wx_baseu_net-3.0
 WANTLIB += wx_baseu_xml-3.0 wx_gtk3u_adv-3.0 wx_gtk3u_aui-3.0
 WANTLIB += wx_gtk3u_core-3.0 wx_gtk3u_html-3.0 wx_gtk3u_stc-3.0
-WANTLIB += wx_gtk3u_xrc-3.0 xml2 xslt z
+WANTLIB += wx_gtk3u_xrc-3.0 xml2 xslt
 
 MASTER_SITES=	https://ftp.postgresql.org/pub/pgadmin/pgadmin3/v$V/src/
 
@@ -31,12 +31,14 @@ LIB_DEPENDS=	x11/wxWidgets>=3.0.4 \
 BUILD_DEPENDS +=	databases/postgresql,-server \
 			textproc/py-sphinx,python3>=4.0.2
 
-CONFIGURE_STYLE=  autoconf
+CONFIGURE_STYLE=autoreconf
+AUTORECONF=	sh ./bootstrap
 AUTOCONF_VERSION= 2.69
+AUTOMAKE_VERSION= 1.15
 
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS}" \
-		BUILD_SSH_TUNNEL=no
-CONFIGURE_ARGS=	--with-pgsql=${LOCALBASE} \
+CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS}"
+CONFIGURE_ARGS=	--with-libgcrypt=no \
+		--with-pgsql=${LOCALBASE} \
 		--with-wx-version=3.0
 
 USE_GMAKE=	Yes

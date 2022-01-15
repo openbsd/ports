@@ -1,0 +1,27 @@
+$OpenBSD: patch-configure_ac_in,v 1.1 2022/01/15 15:41:27 sthen Exp $
+
+Index: configure.ac.in
+--- configure.ac.in.orig
++++ configure.ac.in
+@@ -95,20 +95,8 @@ fi
+ 
+ AC_SUBST(LIBSREQUIRED)
+ 
+-if test "$ac_cv_libssl" != "yes" && test "$ac_cv_libgcrypt" != "yes"; then
+-	AC_MSG_NOTICE([cannot find OpenSSL or Libgcrypt, try --with-libssl-prefix=PATH or --with-libgcrypt-prefix=PATH])
+-	BUILD_SSH_TUNNEL="no"
+-else
+-	BUILD_SSH_TUNNEL="yes"
+-fi
++BUILD_SSH_TUNNEL="no"
+ AM_CONDITIONAL([BUILD_SSH_TUNNEL], [test x$BUILD_SSH_TUNNEL = xyes])
+-
+-if test "$ac_cv_libssl" = "yes"; then
+-    AC_DEFINE(LIBSSH2_OPENSSL, 1, [Compile libssh2 with OpenSSL support])
+-    AC_DEFINE(HAVE_OPENSSL_CRYPTO, 1, [Compile libssh2 with OpenSSL support])
+-	CPPFLAGS="$CPPFLAGS -DHAVE_OPENSSL_CRYPTO -DLIBSSH2_OPENSSL"
+-	LIBS="$LIBS $LIBSSL"
+-fi
+ 
+ if test "$ac_cv_libgcrypt" = "yes"; then
+ 	CPPFLAGS="$CPPFLAGS -DHAVE_GCRYPT"
