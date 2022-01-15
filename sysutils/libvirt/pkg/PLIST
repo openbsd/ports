@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2021/12/02 21:08:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.41 2022/01/15 10:19:35 ajacoutot Exp $
 @bin bin/virsh
 @bin bin/virt-admin
 @bin bin/virt-host-validate
@@ -52,6 +52,7 @@ libexec/libvirt-guests.sh
 @man man/man1/virsh.1
 @man man/man1/virt-admin.1
 @man man/man1/virt-host-validate.1
+@man man/man1/virt-pki-query-dn.1
 @man man/man1/virt-pki-validate.1
 @man man/man1/virt-qemu-run.1
 @man man/man1/virt-xml-validate.1
@@ -68,6 +69,7 @@ libexec/libvirt-guests.sh
 @man man/man7/virkeyname-osx.7
 @man man/man7/virkeyname-win32.7
 @man man/man8/libvirtd.8
+@man man/man8/virt-ssh-helper.8
 @man man/man8/virtlockd.8
 @man man/man8/virtlogd.8
 @man man/man8/virtproxyd.8
@@ -183,6 +185,12 @@ share/doc/libvirt/html/compiling.html
 share/doc/libvirt/html/contact.html
 share/doc/libvirt/html/contribute.html
 share/doc/libvirt/html/csharp.html
+share/doc/libvirt/html/css/
+share/doc/libvirt/html/css/fonts.css
+share/doc/libvirt/html/css/generic.css
+share/doc/libvirt/html/css/libvirt.css
+share/doc/libvirt/html/css/main.css
+share/doc/libvirt/html/css/mobile.css
 share/doc/libvirt/html/daemons.html
 share/doc/libvirt/html/dbus.html
 share/doc/libvirt/html/developer-tooling.html
@@ -222,7 +230,6 @@ share/doc/libvirt/html/fonts/overpass-mono-light.woff
 share/doc/libvirt/html/fonts/overpass-mono-regular.woff
 share/doc/libvirt/html/fonts/overpass-mono-semibold.woff
 share/doc/libvirt/html/fonts/overpass-regular.woff
-share/doc/libvirt/html/fonts/stylesheet.css
 share/doc/libvirt/html/format.html
 share/doc/libvirt/html/formatbackup.html
 share/doc/libvirt/html/formatcaps.html
@@ -238,7 +245,6 @@ share/doc/libvirt/html/formatsnapshot.html
 share/doc/libvirt/html/formatstorage.html
 share/doc/libvirt/html/formatstoragecaps.html
 share/doc/libvirt/html/formatstorageencryption.html
-share/doc/libvirt/html/generic.css
 share/doc/libvirt/html/glib-adoption.html
 share/doc/libvirt/html/go/
 share/doc/libvirt/html/go/libvirt.html
@@ -274,6 +280,19 @@ share/doc/libvirt/html/html/libvirt-virterror.html
 share/doc/libvirt/html/html/right.png
 share/doc/libvirt/html/html/up.png
 share/doc/libvirt/html/hvsupport.html
+share/doc/libvirt/html/images/
+share/doc/libvirt/html/images/event_loop_simple.png
+share/doc/libvirt/html/images/event_loop_worker.png
+share/doc/libvirt/html/images/libvirt-daemon-arch.png
+share/doc/libvirt/html/images/libvirt-driver-arch.png
+share/doc/libvirt/html/images/libvirt-object-model.png
+share/doc/libvirt/html/images/libvirt-virConnect-example.png
+share/doc/libvirt/html/images/migration-managed-direct.png
+share/doc/libvirt/html/images/migration-managed-p2p.png
+share/doc/libvirt/html/images/migration-native.png
+share/doc/libvirt/html/images/migration-tunnel.png
+share/doc/libvirt/html/images/migration-unmanaged-direct.png
+share/doc/libvirt/html/images/node.gif
 share/doc/libvirt/html/index.html
 share/doc/libvirt/html/internals/
 share/doc/libvirt/html/internals.html
@@ -306,13 +325,8 @@ share/doc/libvirt/html/kbase/s390_protected_virt.html
 share/doc/libvirt/html/kbase/secureusage.html
 share/doc/libvirt/html/kbase/systemtap.html
 share/doc/libvirt/html/kbase/virtiofs.html
-share/doc/libvirt/html/libvirt-daemon-arch.png
-share/doc/libvirt/html/libvirt-driver-arch.png
 share/doc/libvirt/html/libvirt-go-xml.html
 share/doc/libvirt/html/libvirt-go.html
-share/doc/libvirt/html/libvirt-object-model.png
-share/doc/libvirt/html/libvirt-virConnect-example.png
-share/doc/libvirt/html/libvirt.css
 share/doc/libvirt/html/logging.html
 share/doc/libvirt/html/logos/
 share/doc/libvirt/html/logos/logo-banner-dark-256.png
@@ -334,7 +348,6 @@ share/doc/libvirt/html/logos/logo-square-powered.svg
 share/doc/libvirt/html/logos/logo-square.svg
 share/doc/libvirt/html/logos/logo-sticker-hexagon.svg
 share/doc/libvirt/html/logos/logo-sticker-square.svg
-share/doc/libvirt/html/main.css
 share/doc/libvirt/html/manifest.json
 share/doc/libvirt/html/manpages/
 share/doc/libvirt/html/manpages/index.html
@@ -355,9 +368,11 @@ share/doc/libvirt/html/manpages/virsh.html
 share/doc/libvirt/html/manpages/virt-admin.html
 share/doc/libvirt/html/manpages/virt-host-validate.html
 share/doc/libvirt/html/manpages/virt-login-shell.html
+share/doc/libvirt/html/manpages/virt-pki-query-dn.html
 share/doc/libvirt/html/manpages/virt-pki-validate.html
 share/doc/libvirt/html/manpages/virt-qemu-run.html
 share/doc/libvirt/html/manpages/virt-sanlock-cleanup.html
+share/doc/libvirt/html/manpages/virt-ssh-helper.html
 share/doc/libvirt/html/manpages/virt-xml-validate.html
 share/doc/libvirt/html/manpages/virtbhyved.html
 share/doc/libvirt/html/manpages/virtinterfaced.html
@@ -374,17 +389,10 @@ share/doc/libvirt/html/manpages/virtstoraged.html
 share/doc/libvirt/html/manpages/virtvboxd.html
 share/doc/libvirt/html/manpages/virtvzd.html
 share/doc/libvirt/html/manpages/virtxend.html
-share/doc/libvirt/html/migration-managed-direct.png
-share/doc/libvirt/html/migration-managed-p2p.png
-share/doc/libvirt/html/migration-native.png
-share/doc/libvirt/html/migration-tunnel.png
-share/doc/libvirt/html/migration-unmanaged-direct.png
 share/doc/libvirt/html/migration.html
-share/doc/libvirt/html/mobile.css
 share/doc/libvirt/html/mstile-150x150.png
 share/doc/libvirt/html/newreposetup.html
 share/doc/libvirt/html/news.html
-share/doc/libvirt/html/node.gif
 share/doc/libvirt/html/nss.html
 share/doc/libvirt/html/pci-addresses.html
 share/doc/libvirt/html/pci-hotplug.html

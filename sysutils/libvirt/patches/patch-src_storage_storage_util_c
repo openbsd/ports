@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_storage_storage_util_c,v 1.1 2021/12/02 10:04:15 ajacoutot Exp $
+$OpenBSD: patch-src_storage_storage_util_c,v 1.2 2022/01/15 10:19:35 ajacoutot Exp $
 
 Index: src/storage/storage_util.c
 --- src/storage/storage_util.c.orig
 +++ src/storage/storage_util.c
-@@ -1910,7 +1910,7 @@ virStorageBackendUpdateVolTargetInfoFD(virStorageSourc
+@@ -1912,7 +1912,7 @@ virStorageBackendUpdateVolTargetInfoFD(virStorageSourc
  
  #ifdef __APPLE__
      target->timestamps->atime = sb->st_atimespec;
@@ -12,7 +12,7 @@ Index: src/storage/storage_util.c
      target->timestamps->ctime = sb->st_ctimespec;
      target->timestamps->mtime = sb->st_mtimespec;
  #else /* ! __APPLE__ */
-@@ -1918,7 +1918,7 @@ virStorageBackendUpdateVolTargetInfoFD(virStorageSourc
+@@ -1920,7 +1920,7 @@ virStorageBackendUpdateVolTargetInfoFD(virStorageSourc
  # ifdef __linux__
      target->timestamps->btime = (struct timespec){0, 0};
  # else /* ! __linux__ */
