@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.51 2021/11/15 16:26:21 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.52 2022/01/15 15:40:27 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk3%%
 bin/ex
@@ -201,6 +201,7 @@ share/vim/${P}/delmenu.vim
 share/vim/${P}/doc/
 share/vim/${P}/doc/arabic.txt
 share/vim/${P}/doc/autocmd.txt
+share/vim/${P}/doc/builtin.txt
 share/vim/${P}/doc/change.txt
 share/vim/${P}/doc/channel.txt
 share/vim/${P}/doc/cmdline.txt
@@ -421,7 +422,6 @@ share/vim/${P}/ftplugin/freebasic.vim
 share/vim/${P}/ftplugin/fstab.vim
 share/vim/${P}/ftplugin/fvwm.vim
 share/vim/${P}/ftplugin/gdb.vim
-share/vim/${P}/ftplugin/git.vim
 share/vim/${P}/ftplugin/gitcommit.vim
 share/vim/${P}/ftplugin/gitconfig.vim
 share/vim/${P}/ftplugin/gitrebase.vim
@@ -442,6 +442,7 @@ share/vim/${P}/ftplugin/hostconf.vim
 share/vim/${P}/ftplugin/hostsaccess.vim
 share/vim/${P}/ftplugin/html.vim
 share/vim/${P}/ftplugin/htmldjango.vim
+share/vim/${P}/ftplugin/i3config.vim
 share/vim/${P}/ftplugin/indent.vim
 share/vim/${P}/ftplugin/initex.vim
 share/vim/${P}/ftplugin/ishd.vim
@@ -533,6 +534,7 @@ share/vim/${P}/ftplugin/rhelp.vim
 share/vim/${P}/ftplugin/rmd.vim
 share/vim/${P}/ftplugin/rnc.vim
 share/vim/${P}/ftplugin/rnoweb.vim
+share/vim/${P}/ftplugin/routeros.vim
 share/vim/${P}/ftplugin/rpl.vim
 share/vim/${P}/ftplugin/rrst.vim
 share/vim/${P}/ftplugin/rst.vim
@@ -555,6 +557,7 @@ share/vim/${P}/ftplugin/sieve.vim
 share/vim/${P}/ftplugin/slpconf.vim
 share/vim/${P}/ftplugin/slpreg.vim
 share/vim/${P}/ftplugin/slpspi.vim
+share/vim/${P}/ftplugin/solution.vim
 share/vim/${P}/ftplugin/spec.vim
 share/vim/${P}/ftplugin/sql.vim
 share/vim/${P}/ftplugin/sshconfig.vim
@@ -1083,6 +1086,7 @@ share/vim/${P}/syntax/debcopyright.vim
 share/vim/${P}/syntax/debsources.vim
 share/vim/${P}/syntax/def.vim
 share/vim/${P}/syntax/denyhosts.vim
+share/vim/${P}/syntax/dep3patch.vim
 share/vim/${P}/syntax/desc.vim
 share/vim/${P}/syntax/desktop.vim
 share/vim/${P}/syntax/dictconf.vim
@@ -1198,6 +1202,7 @@ share/vim/${P}/syntax/htmlcheetah.vim
 share/vim/${P}/syntax/htmldjango.vim
 share/vim/${P}/syntax/htmlm4.vim
 share/vim/${P}/syntax/htmlos.vim
+share/vim/${P}/syntax/i3config.vim
 share/vim/${P}/syntax/ia64.vim
 share/vim/${P}/syntax/ibasic.vim
 share/vim/${P}/syntax/icemenu.vim
@@ -1411,6 +1416,7 @@ share/vim/${P}/syntax/rnc.vim
 share/vim/${P}/syntax/rng.vim
 share/vim/${P}/syntax/rnoweb.vim
 share/vim/${P}/syntax/robots.vim
+share/vim/${P}/syntax/routeros.vim
 share/vim/${P}/syntax/rpcgen.vim
 share/vim/${P}/syntax/rpl.vim
 share/vim/${P}/syntax/rrst.vim
@@ -1484,6 +1490,7 @@ share/vim/${P}/syntax/sqlj.vim
 share/vim/${P}/syntax/sqloracle.vim
 share/vim/${P}/syntax/sqr.vim
 share/vim/${P}/syntax/squid.vim
+share/vim/${P}/syntax/squirrel.vim
 share/vim/${P}/syntax/srec.vim
 share/vim/${P}/syntax/sshconfig.vim
 share/vim/${P}/syntax/sshdconfig.vim
