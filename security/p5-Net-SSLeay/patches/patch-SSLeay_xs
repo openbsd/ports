@@ -1,11 +1,48 @@
-$OpenBSD: patch-SSLeay_xs,v 1.6 2022/01/14 19:58:46 bluhm Exp $
+$OpenBSD: patch-SSLeay_xs,v 1.7 2022/01/15 12:03:04 tb Exp $
+
+Fix build with opaque RSA in LibreSSL 3.5
+
+and
 
 https://github.com/radiator-software/p5-net-ssleay/pull/360
 
 Index: SSLeay.xs
 --- SSLeay.xs.orig
 +++ SSLeay.xs
-@@ -7197,7 +7197,7 @@ ASN1_OBJECT *
+@@ -6283,17 +6283,24 @@ RSA_generate_key(bits,e,perl_cb=&PL_sv_undef,perl_data
+ void
+ RSA_get_key_parameters(rsa)
+ 	    RSA * rsa
++PREINIT:
++    BIGNUM *n, *e, *d;
++    BIGNUM *p, *q;
++    BIGNUM *dmp1, *dmq1, *iqmp;
+ PPCODE:
+ {
++    RSA_get0_key(rsa, (const BIGNUM **)&n, (const BIGNUM **)&e, (const BIGNUM **)&d);
++    RSA_get0_factors(rsa, (const BIGNUM **)&p, (const BIGNUM **)&q);
++    RSA_get0_crt_params(rsa, (const BIGNUM **)&dmp1, (const BIGNUM **)&dmq1, (const BIGNUM **)&iqmp);
+     /* Caution: returned list consists of SV pointers to BIGNUMs, which would need to be blessed as Crypt::OpenSSL::Bignum for further use */
+-    XPUSHs(bn2sv(rsa->n));
+-    XPUSHs(bn2sv(rsa->e));
+-    XPUSHs(bn2sv(rsa->d));
+-    XPUSHs(bn2sv(rsa->p));
+-    XPUSHs(bn2sv(rsa->q));
+-    XPUSHs(bn2sv(rsa->dmp1));
+-    XPUSHs(bn2sv(rsa->dmq1));
+-    XPUSHs(bn2sv(rsa->iqmp));
++    XPUSHs(bn2sv(n));
++    XPUSHs(bn2sv(e));
++    XPUSHs(bn2sv(d));
++    XPUSHs(bn2sv(p));
++    XPUSHs(bn2sv(q));
++    XPUSHs(bn2sv(dmp1));
++    XPUSHs(bn2sv(dmq1));
++    XPUSHs(bn2sv(iqmp));
+ }
+ 
+ #endif
+@@ -7197,7 +7204,7 @@ ASN1_OBJECT *
  P_X509_get_signature_alg(x)
          X509 * x
      CODE:
@@ -14,3 +51,30 @@ Index: SSLeay.xs
          RETVAL = (X509_get0_tbs_sigalg(x)->algorithm);
  #else
          RETVAL = (x->cert_info->signature->algorithm);
+@@ -7663,7 +7670,7 @@ OCSP_response_results(rsp,...)
+ 
+ 	    if (sir)
+ 	    {
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if (OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)) || (LIBRESSL_VERSION_NUMBER >= 0x3050000fL)
+ 		status = OCSP_single_get0_status(sir, &revocationReason, &revocationTime, &thisupdate, &nextupdate);
+ #else
+ 		status = sir->certStatus->type;
+@@ -7690,7 +7697,7 @@ OCSP_response_results(rsp,...)
+ 		if (!idsv) {
+ 		    /* getall: create new SV with OCSP_CERTID */
+ 		    unsigned char *pi,*pc;
+-#if OPENSSL_VERSION_NUMBER >= 0x10100003L && !defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)) || (LIBRESSL_VERSION_NUMBER >= 0x3050000fL)
+ 		    int len = i2d_OCSP_CERTID((OCSP_CERTID *)OCSP_SINGLERESP_get0_id(sir),NULL);
+ #else
+ 		    int len = i2d_OCSP_CERTID(sir->certId,NULL);
+@@ -7699,7 +7706,7 @@ OCSP_response_results(rsp,...)
+ 		    Newx(pc,len,unsigned char);
+ 		    if (!pc) croak("out of memory");
+ 		    pi = pc;
+-#if OPENSSL_VERSION_NUMBER >= 0x10100003L && !defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)) || (LIBRESSL_VERSION_NUMBER >= 0x3050000fL)
+ 		    i2d_OCSP_CERTID((OCSP_CERTID *)OCSP_SINGLERESP_get0_id(sir),&pi);
+ #else
+ 		    i2d_OCSP_CERTID(sir->certId,&pi);
