@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/02/20 14:18:24 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2022/01/15 14:17:52 ajacoutot Exp $
 bin/flake8
 lib/python${MODPY_VERSION}/site-packages/flake8/
 lib/python${MODPY_VERSION}/site-packages/flake8-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -46,19 +46,11 @@ lib/python${MODPY_VERSION}/site-packages/flake8/main/${MODPY_PYCACHE}__init__.${
 lib/python${MODPY_VERSION}/site-packages/flake8/main/${MODPY_PYCACHE}application.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flake8/main/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flake8/main/${MODPY_PYCACHE}debug.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/flake8/main/${MODPY_PYCACHE}git.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/flake8/main/${MODPY_PYCACHE}mercurial.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flake8/main/${MODPY_PYCACHE}options.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/flake8/main/${MODPY_PYCACHE}setuptools_command.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/flake8/main/${MODPY_PYCACHE}vcs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flake8/main/application.py
 lib/python${MODPY_VERSION}/site-packages/flake8/main/cli.py
 lib/python${MODPY_VERSION}/site-packages/flake8/main/debug.py
-lib/python${MODPY_VERSION}/site-packages/flake8/main/git.py
-lib/python${MODPY_VERSION}/site-packages/flake8/main/mercurial.py
 lib/python${MODPY_VERSION}/site-packages/flake8/main/options.py
-lib/python${MODPY_VERSION}/site-packages/flake8/main/setuptools_command.py
-lib/python${MODPY_VERSION}/site-packages/flake8/main/vcs.py
 lib/python${MODPY_VERSION}/site-packages/flake8/options/
 lib/python${MODPY_VERSION}/site-packages/flake8/options/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flake8/options/${MODPY_PYCACHE}/
