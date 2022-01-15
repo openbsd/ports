@@ -1,4 +1,6 @@
-$OpenBSD: patch-test_rtpw_test_sh,v 1.5 2021/08/14 08:27:29 sthen Exp $
+$OpenBSD: patch-test_rtpw_test_sh,v 1.6 2022/01/15 21:40:52 kn Exp $
+
+https://github.com/cisco/libsrtp/pull/594
 
 Index: test/rtpw_test.sh
 --- test/rtpw_test.sh.orig
