@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_api_python_speechd_config_config_py_in,v 1.5 2021/12/23 12:36:26 ajacoutot Exp $
+$OpenBSD: patch-src_api_python_speechd_config_config_py,v 1.4 2022/01/15 14:14:13 ajacoutot Exp $
 
-Index: src/api/python/speechd_config/config.py.in
---- src/api/python/speechd_config/config.py.in.orig
-+++ src/api/python/speechd_config/config.py.in
+Index: src/api/python/speechd_config/config.py
+--- src/api/python/speechd_config/config.py.orig
++++ src/api/python/speechd_config/config.py
 @@ -147,6 +147,8 @@ def setup_argparse():
          default=False, help=_("Test ALSA audio output"))
      parser.add_argument('--test-pulse', dest='test_pulse', action="store_true",
@@ -35,7 +35,7 @@ Index: src/api/python/speechd_config/config.py.in
          report(_("Testing whether Python Speech Dispatcher library is in path and importable"))
          python_speechd_working = self.python_speechd_in_path()
  
-@@ -632,7 +643,7 @@ Do you want to keep it?"""), False)
+@@ -642,7 +653,7 @@ Do you want to keep it?"""), False)
  
          self.default_audio_method = question_with_suggested_answers(
              "Default audio output method",
@@ -44,7 +44,7 @@ Index: src/api/python/speechd_config/config.py.in
              ["pulse", "libao", "alsa", "oss", "pulse,alsa"])
  
          default_speech_rate = question(
-@@ -805,6 +816,9 @@ def main():
+@@ -817,6 +828,9 @@ def main():
  
      elif options.test_pulse:
          test.audio_try_play(type='pulse')

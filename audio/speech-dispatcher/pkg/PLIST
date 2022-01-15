@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/12/23 12:36:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2022/01/15 14:14:13 ajacoutot Exp $
 bin/spd-conf
 @bin bin/spd-say
 @bin bin/spdsend
@@ -36,12 +36,12 @@ lib/python${MODPY_VERSION}/site-packages/speechd_config/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}buildconfig.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}buildconfig.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}paths.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}paths.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/speechd_config/buildconfig.py
 lib/python${MODPY_VERSION}/site-packages/speechd_config/config.py
-lib/python${MODPY_VERSION}/site-packages/speechd_config/paths.py
 lib/speech-dispatcher/
 @so lib/speech-dispatcher/spd_libao.so
 libexec/speech-dispatcher-modules/
