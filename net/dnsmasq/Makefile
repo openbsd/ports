@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2021/10/07 21:39:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2022/01/15 23:59:32 kmos Exp $
 
 COMMENT=	lightweight caching DNS forwarder, DHCP and TFTP server
 
@@ -29,5 +29,10 @@ pre-build:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dnsmasq
 	${INSTALL_DATA} ${WRKSRC}/dnsmasq.conf.example ${PREFIX}/share/examples/dnsmasq
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
 
 .include <bsd.port.mk>
