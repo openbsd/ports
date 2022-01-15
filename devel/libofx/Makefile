@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2021/05/27 15:21:32 landry Exp $
+# $OpenBSD: Makefile,v 1.28 2022/01/15 08:44:08 landry Exp $
 
 COMMENT=	opensource implementation of the OFX specification
 
-DISTNAME=	libofx-0.10.2
+DISTNAME=	libofx-0.10.3
 CATEGORIES=	devel
 
 HOMEPAGE=	http://libofx.sourceforge.net/
@@ -26,8 +26,7 @@ LIB_DEPENDS=	textproc/opensp \
 WANTLIB += crypto curl ffi glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0
 WANTLIB += lzma nghttp2 pcre sigc-2.0 ssl xml++-2.6 xml2 z
 
-BUILD_DEPENDS =	devel/help2man \
-		devel/gengetopt
+BUILD_DEPENDS =	devel/help2man
 
 CONFIGURE_STYLE =	gnu
 # iconv.h
@@ -39,6 +38,7 @@ USE_GMAKE =	Yes
 
 CONFIGURE_ARGS=	--with-opensp-includes=${LOCALBASE}/include/OpenSP \
 		--with-opensp-libs=${LOCALBASE}/lib \
+		--disable-gengetopt \
 		--disable-doxygen \
 		--disable-dot
 
