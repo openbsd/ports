@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2022/01/15 14:07:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2022/01/15 14:08:31 ajacoutot Exp $
 
 COMMENT=	display chm files
 
@@ -22,7 +22,8 @@ MASTER_SITES=	https://github.com/rzvncj/xCHM/releases/download/$V/
 LIB_DEPENDS=	devel/chmlib \
 		x11/wxWidgets>=3.0.4
 
-RUN_DEPENDS=	devel/desktop-file-utils
+RUN_DEPENDS=	devel/desktop-file-utils \
+		x11/gtk+3,-guic
 
 COMPILER=	base-clang ports-gcc base-gcc
 
