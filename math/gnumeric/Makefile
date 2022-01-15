@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2021/06/12 10:34:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.149 2022/01/15 21:39:15 kmos Exp $
 
 GOFFICE_API_VERSION=	0.10
 GOFFICE_VERSION=	0.10.50
@@ -17,6 +17,9 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
+
+# C++
+COMPILER=		base-clang ports-gcc
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
