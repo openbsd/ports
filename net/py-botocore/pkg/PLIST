@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.178 2021/12/11 10:56:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.179 2022/01/15 10:31:27 ajacoutot Exp $
 @conflict py-botocore-*
 @pkgpath net/py-botocore
 lib/python${MODPY_VERSION}/site-packages/botocore/
@@ -1358,6 +1358,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/sdb/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sdb/2009-04-15/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sdb/2009-04-15/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sdb/2009-04-15/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/sdk-default-configuration.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/secretsmanager/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/secretsmanager/2017-10-17/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/secretsmanager/2017-10-17/examples-1.json
