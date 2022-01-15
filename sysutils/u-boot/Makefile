@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.89 2021/12/17 23:00:41 jsg Exp $
+#	$OpenBSD: Makefile,v 1.90 2022/01/15 11:56:50 kevlo Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 BROKEN-arm=	lib/time.c:187:1: internal compiler error: Bus error
@@ -8,7 +8,7 @@ FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
 VERSION=	2021.10
-REVISION=	2
+REVISION=	3
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
@@ -39,11 +39,12 @@ MAKE_ENV=	KBUILD_VERBOSE=1 \
 .if "${FLAVOR}" == "aarch64"
 BUILD_DEPENDS+=	devel/arm-none-eabi/gcc-linaro,aarch64 \
 		devel/py-elftools \
-		sysutils/arm-trusted-firmware>=2.2v0
+		sysutils/arm-trusted-firmware>=2.2p0v0
 MAKE_ENV+=	CROSS_COMPILE="aarch64-none-elf-"
 RK3328_BL31=	"${LOCALBASE}/share/arm-trusted-firmware/rk3328-bl31.elf"
 RK3399_BL31=	"${LOCALBASE}/share/arm-trusted-firmware/rk3399-bl31.elf"
 SUNXI_BL31=	"${LOCALBASE}/share/arm-trusted-firmware/sun50i_a64-bl31.bin"
+SUNXI_H6_BL31=	"${LOCALBASE}/share/arm-trusted-firmware/sun50i_h6-bl31.bin"
 .elif "${FLAVOR}" == "arm"
 BUILD_DEPENDS+=	devel/arm-none-eabi/gcc-linaro>=7.4.2019.02
 MAKE_ENV+=	CROSS_COMPILE="arm-none-eabi-"
@@ -69,6 +70,7 @@ SUNXI64=\
 	orangepi_zero_plus \
 	pine64-lts \
 	pine64_plus \
+	pine_h64-model-b \
 	pinebook \
 	sopine_baseboard
 BOARDS=\
@@ -203,6 +205,16 @@ do-build:
 .endif
 .endfor
 .for BOARD in ${SUNXI64}
+.if "${BOARD:M*_h64*}"
+	cd ${WRKSRC} && \
+	    mkdir -p build/${BOARD} && \
+	    ${SETENV} ${MAKE_ENV} BL31=${SUNXI_H6_BL31} ${MAKE_PROGRAM} \
+	        ${MAKE_FLAGS} O="build/${BOARD}" \
+	        -f ${MAKE_FILE} "${BOARD}"_defconfig && \
+	    ${SETENV} ${MAKE_ENV} BL31=${SUNXI_H6_BL31} ${MAKE_PROGRAM} \
+	        ${MAKE_FLAGS} O="build/${BOARD}" \
+	        -f ${MAKE_FILE} ${ALL_TARGET}
+.else
 	cd ${WRKSRC} && \
 	    mkdir -p build/${BOARD} && \
 	    ${SETENV} ${MAKE_ENV} BL31=${SUNXI_BL31} ${MAKE_PROGRAM} \
@@ -211,6 +223,7 @@ do-build:
 	    ${SETENV} ${MAKE_ENV} BL31=${SUNXI_BL31} ${MAKE_PROGRAM} \
 	        ${MAKE_FLAGS} O="build/${BOARD}" \
 	        -f ${MAKE_FILE} ${ALL_TARGET}
+.endif
 	if [[ -f ${WRKSRC}/build/${BOARD}/spl/sunxi-spl.bin && \
 	      -f ${WRKSRC}/build/${BOARD}/u-boot.itb ]]; then \
 		cd ${WRKSRC}/build/${BOARD} && \
