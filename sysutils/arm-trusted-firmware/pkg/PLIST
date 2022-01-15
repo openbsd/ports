@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/09/27 15:43:29 kurt Exp $
+@comment $OpenBSD: PLIST,v 1.5 2022/01/15 11:43:27 kevlo Exp $
 @pkgpath sysutils/atf-allwinner
 share/arm-trusted-firmware/
 share/arm-trusted-firmware/rk3328-bl31.elf
 share/arm-trusted-firmware/rk3399-bl31.elf
 share/arm-trusted-firmware/sun50i_a64-bl31.bin
+share/arm-trusted-firmware/sun50i_h6-bl31.bin

@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.16 2021/06/18 09:17:28 jsg Exp $
+#	$OpenBSD: Makefile,v 1.17 2022/01/15 11:43:27 kevlo Exp $
 
 PKG_ARCH=		*
 
@@ -9,6 +9,7 @@ GH_PROJECT=	arm-trusted-firmware
 GH_TAGNAME=	v2.5
 
 EPOCH=		0
+REVISION=	0
 
 CATEGORIES=	sysutils
 
@@ -32,7 +33,8 @@ CFLAGS=
 PLATFORMS=\
 	rk3328 \
 	rk3399 \
-	sun50i_a64
+	sun50i_a64 \
+	sun50i_h6
 
 do-build:
 .for P in ${PLATFORMS}
@@ -49,5 +51,7 @@ do-install:
 	    ${PREFIX}/share/arm-trusted-firmware/rk3399-bl31.elf
 	${INSTALL_DATA} ${WRKBUILD}/build/sun50i_a64/debug/bl31.bin \
 	    ${PREFIX}/share/arm-trusted-firmware/sun50i_a64-bl31.bin
+	${INSTALL_DATA} ${WRKBUILD}/build/sun50i_h6/debug/bl31.bin \
+	    ${PREFIX}/share/arm-trusted-firmware/sun50i_h6-bl31.bin
 
 .include <bsd.port.mk>
