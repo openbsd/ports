@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/10/11 08:43:00 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2022/01/15 21:46:51 kmos Exp $
 
 COMMENT =	high performance C++ OpenPGP library and tools
 
@@ -14,6 +14,9 @@ HOMEPAGE =	https://www.rnpgp.org/
 
 # BSD / Apache v2 ?
 PERMIT_PACKAGE=	Yes
+
+# C++11
+COMPILER =	base-clang ports-gcc
 
 LIB_DEPENDS +=	security/botan2 \
 		archivers/bzip2 \
