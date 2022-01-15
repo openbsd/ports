@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2022/01/08 07:18:45 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2022/01/15 21:48:29 kmos Exp $
 
 COMMENT =	UDisks2 service implementation for OpenBSD
 
@@ -13,6 +13,9 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
+
+# C++
+COMPILER =	base-clang ports-gcc
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus c m util
 
