@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.46 2021/07/06 16:55:32 daniel Exp $
+# $OpenBSD: Makefile,v 1.47 2022/01/15 12:15:22 sthen Exp $
 
 COMMENT=	administration and development platform for PostgreSQL
 
 V=		1.22.1
 DISTNAME=	pgadmin3-$V
 CATEGORIES=	databases devel
-REVISION=	6
+REVISION=	7
 
 HOMEPAGE=	https://www.pgadmin.org/
 
@@ -21,7 +21,7 @@ WANTLIB += wx_gtk3u_xrc-3.0 xml2 xslt z
 
 MASTER_SITES=	https://ftp.postgresql.org/pub/pgadmin/pgadmin3/v$V/src/
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=	x11/wxWidgets>=3.0.4 \
 		databases/postgresql \
@@ -31,8 +31,11 @@ LIB_DEPENDS=	x11/wxWidgets>=3.0.4 \
 BUILD_DEPENDS +=	databases/postgresql,-server \
 			textproc/py-sphinx,python3>=4.0.2
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS}"
+CONFIGURE_STYLE=  autoconf
+AUTOCONF_VERSION= 2.69
+
+CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS}" \
+		BUILD_SSH_TUNNEL=no
 CONFIGURE_ARGS=	--with-pgsql=${LOCALBASE} \
 		--with-wx-version=3.0
 
