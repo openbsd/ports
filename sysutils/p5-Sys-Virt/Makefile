@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2021/12/02 21:09:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2022/01/15 10:20:05 ajacoutot Exp $
 
 PORTROACH=		skipv:4.0.0,4.1.0,4.2.0
 
 COMMENT=		represent and manage a libvirt hypervisor connection
 
-V=			7.10.0
+V=			8.0.0
 DISTNAME=		Sys-Virt-v${V}
 PKGNAME=		p5-Sys-Virt-${V}
 

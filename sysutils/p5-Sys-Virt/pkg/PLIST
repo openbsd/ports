@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2021/12/02 21:09:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2022/01/15 10:20:05 ajacoutot Exp $
 ${P5ARCH}/Sys/
 ${P5ARCH}/Sys/Virt/
 ${P5ARCH}/Sys/Virt.pm
@@ -37,34 +37,34 @@ ${P5ARCH}/auto/Sys/Virt/Virt.bs
 @man man/man3p/Sys::Virt::StoragePool.3p
 @man man/man3p/Sys::Virt::StorageVol.3p
 @man man/man3p/Sys::Virt::Stream.3p
-share/examples/p5-Sys-Virt-v7.10.0/
-share/examples/p5-Sys-Virt-v7.10.0/auth.pl
-share/examples/p5-Sys-Virt-v7.10.0/devices.pl
-share/examples/p5-Sys-Virt-v7.10.0/dhcp-leases.pl
-share/examples/p5-Sys-Virt-v7.10.0/dom-fsinfo.pl
-share/examples/p5-Sys-Virt-v7.10.0/dom-ifinfo.pl
-share/examples/p5-Sys-Virt-v7.10.0/dom-migrate.pl
-share/examples/p5-Sys-Virt-v7.10.0/dom-stats.pl
-share/examples/p5-Sys-Virt-v7.10.0/dump-info.pl
-share/examples/p5-Sys-Virt-v7.10.0/dump-xml.pl
-share/examples/p5-Sys-Virt-v7.10.0/emulator-pin.pl
-share/examples/p5-Sys-Virt-v7.10.0/events.pl
-share/examples/p5-Sys-Virt-v7.10.0/fs-freeze.pl
-share/examples/p5-Sys-Virt-v7.10.0/hv-stat.pl
-share/examples/p5-Sys-Virt-v7.10.0/iothreadinfo.pl
-share/examples/p5-Sys-Virt-v7.10.0/node-alloc.pl
-share/examples/p5-Sys-Virt-v7.10.0/node-cpu.pl
-share/examples/p5-Sys-Virt-v7.10.0/node-devlist.pl
-share/examples/p5-Sys-Virt-v7.10.0/node-info.pl
-share/examples/p5-Sys-Virt-v7.10.0/node-ksm.pl
-share/examples/p5-Sys-Virt-v7.10.0/open-console.pl
-share/examples/p5-Sys-Virt-v7.10.0/save-restore.pl
-share/examples/p5-Sys-Virt-v7.10.0/send-key.pl
-share/examples/p5-Sys-Virt-v7.10.0/vcpuinfo.pl
-share/examples/p5-Sys-Virt-v7.10.0/vol-download-all.pl
-share/examples/p5-Sys-Virt-v7.10.0/vol-download-nonblock.pl
-share/examples/p5-Sys-Virt-v7.10.0/vol-download.pl
-share/examples/p5-Sys-Virt-v7.10.0/vol-sparse.pl
-share/examples/p5-Sys-Virt-v7.10.0/vol-upload-all.pl
-share/examples/p5-Sys-Virt-v7.10.0/vol-upload-nonblock.pl
-share/examples/p5-Sys-Virt-v7.10.0/vol-upload.pl
+share/examples/p5-Sys-Virt-v8.0.0/
+share/examples/p5-Sys-Virt-v8.0.0/auth.pl
+share/examples/p5-Sys-Virt-v8.0.0/devices.pl
+share/examples/p5-Sys-Virt-v8.0.0/dhcp-leases.pl
+share/examples/p5-Sys-Virt-v8.0.0/dom-fsinfo.pl
+share/examples/p5-Sys-Virt-v8.0.0/dom-ifinfo.pl
+share/examples/p5-Sys-Virt-v8.0.0/dom-migrate.pl
+share/examples/p5-Sys-Virt-v8.0.0/dom-stats.pl
+share/examples/p5-Sys-Virt-v8.0.0/dump-info.pl
+share/examples/p5-Sys-Virt-v8.0.0/dump-xml.pl
+share/examples/p5-Sys-Virt-v8.0.0/emulator-pin.pl
+share/examples/p5-Sys-Virt-v8.0.0/events.pl
+share/examples/p5-Sys-Virt-v8.0.0/fs-freeze.pl
+share/examples/p5-Sys-Virt-v8.0.0/hv-stat.pl
+share/examples/p5-Sys-Virt-v8.0.0/iothreadinfo.pl
+share/examples/p5-Sys-Virt-v8.0.0/node-alloc.pl
+share/examples/p5-Sys-Virt-v8.0.0/node-cpu.pl
+share/examples/p5-Sys-Virt-v8.0.0/node-devlist.pl
+share/examples/p5-Sys-Virt-v8.0.0/node-info.pl
+share/examples/p5-Sys-Virt-v8.0.0/node-ksm.pl
+share/examples/p5-Sys-Virt-v8.0.0/open-console.pl
+share/examples/p5-Sys-Virt-v8.0.0/save-restore.pl
+share/examples/p5-Sys-Virt-v8.0.0/send-key.pl
+share/examples/p5-Sys-Virt-v8.0.0/vcpuinfo.pl
+share/examples/p5-Sys-Virt-v8.0.0/vol-download-all.pl
+share/examples/p5-Sys-Virt-v8.0.0/vol-download-nonblock.pl
+share/examples/p5-Sys-Virt-v8.0.0/vol-download.pl
+share/examples/p5-Sys-Virt-v8.0.0/vol-sparse.pl
+share/examples/p5-Sys-Virt-v8.0.0/vol-upload-all.pl
+share/examples/p5-Sys-Virt-v8.0.0/vol-upload-nonblock.pl
+share/examples/p5-Sys-Virt-v8.0.0/vol-upload.pl
