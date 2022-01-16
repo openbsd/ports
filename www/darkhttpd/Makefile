@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/01/18 21:20:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2022/01/16 00:16:57 kmos Exp $
 
 COMMENT=	simple and small webserver intended for ad-hoc usage
 
@@ -20,5 +20,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/darkhttpd ${PREFIX}/sbin/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/darkhttpd/
 	${INSTALL_DATA} ${WRKSRC}/README.md ${PREFIX}/share/doc/darkhttpd/README
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
 
 .include <bsd.port.mk>
