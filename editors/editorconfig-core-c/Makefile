@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/10/30 04:23:02 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2022/01/16 11:02:55 kmos Exp $
 
 COMMENT =	library for IDE consistency
 CATEGORIES =	editors x11
@@ -24,5 +24,10 @@ LIB_DEPENDS =	devel/pcre2
 CONFIGURE_ARGS +=	-DBUILD_DOCUMENTATION=OFF
 
 NO_TEST =	Yes
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
 
 .include <bsd.port.mk>
