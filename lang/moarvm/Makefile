@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2021/12/28 19:27:22 pascal Exp $
+# $OpenBSD: Makefile,v 1.29 2022/01/16 20:41:04 kmos Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64 riscv64 sparc64
 
@@ -18,6 +18,9 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # Artistic2
 PERMIT_PACKAGE =	Yes
+
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 WANTLIB =		atomic_ops c ffi kvm m pthread uv zstd
 
