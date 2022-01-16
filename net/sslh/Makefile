@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2021/10/30 14:51:25 bket Exp $
+# $OpenBSD: Makefile,v 1.27 2022/01/16 09:20:20 kmos Exp $
 
 COMMENT =	SSL/SSH multiplexer
 
@@ -42,5 +42,10 @@ do-install:
 .for p in sslh-fork sslh-select
 	${INSTALL_PROGRAM} ${WRKSRC}/$p ${PREFIX}/sbin
 .endfor
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
 
 .include <bsd.port.mk>
