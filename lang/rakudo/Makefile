@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2021/12/28 19:28:09 pascal Exp $
+# $OpenBSD: Makefile,v 1.37 2022/01/16 21:38:55 kmos Exp $
 
 BROKEN-arm =		MoarVM panic: Memory allocation failed; could not allocate 312268 bytes
 
@@ -17,6 +17,9 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # Artistic 2
 PERMIT_PACKAGE =	Yes
+
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 WANTLIB += atomic_ops c ffi kvm m moar pthread uv zstd
 
