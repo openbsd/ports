@@ -1,6 +1,8 @@
-$OpenBSD: patch-Makefile,v 1.8 2021/01/23 20:35:02 fcambus Exp $
+$OpenBSD: patch-Makefile,v 1.9 2022/01/16 10:19:37 kmos Exp $
 
 GCC 4.2.1 doesn't recognize the "-Wtype-limits" option.
+
+Also drop -Werror
 
 Index: Makefile
 --- Makefile.orig
@@ -14,8 +16,12 @@ Index: Makefile
  SHARE_DIR=$(PREFIX)/share/kore
  INCLUDE_DIR=$(PREFIX)/include/kore
  
-@@ -31,7 +31,6 @@ FEATURES_INC=
- CFLAGS+=-Wall -Werror -Wstrict-prototypes -Wmissing-prototypes
+@@ -28,10 +28,9 @@ S_SRC=	src/kore.c src/buf.c src/config.c src/connectio
+ FEATURES=
+ FEATURES_INC=
+ 
+-CFLAGS+=-Wall -Werror -Wstrict-prototypes -Wmissing-prototypes
++CFLAGS+=-Wall -Wstrict-prototypes -Wmissing-prototypes
  CFLAGS+=-Wmissing-declarations -Wshadow -Wpointer-arith -Wcast-qual
  CFLAGS+=-Wsign-compare -Iinclude/kore -I$(OBJDIR) -std=c99 -pedantic
 -CFLAGS+=-Wtype-limits
