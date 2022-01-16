@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2021/12/04 11:44:41 tb Exp $
+# $OpenBSD: Makefile,v 1.35 2022/01/16 09:24:09 kmos Exp $
 
 COMMENT=		802.11 WEP and WPA-PSK keys cracking program
 DISTNAME=		aircrack-ng-1.5.2
@@ -59,5 +59,10 @@ MAKE_ENV+=              ALTIVEC=false POWER8=false
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/airodump-ng.h
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
 
 .include <bsd.port.mk>
