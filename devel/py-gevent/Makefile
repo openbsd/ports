@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2021/12/14 00:26:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2022/01/16 19:56:05 kmos Exp $
 
 COMMENT =		network library for easy and scalable concurrency
 
@@ -11,6 +11,9 @@ HOMEPAGE =		https://www.gevent.org/
 
 # MPL
 PERMIT_PACKAGE =	Yes
+
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 WANTLIB += ${MODPY_WANTLIB} cares ev pthread
 
