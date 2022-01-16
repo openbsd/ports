@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2021/11/02 00:02:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2022/01/16 19:37:01 kmos Exp $
 
 COMMENT=	toolkit for generation of output for the web
 
@@ -13,6 +13,9 @@ HOMEPAGE=	https://genshi.edgewall.org/
 
 # BSD
 PERMIT_PACKAGE=	Yes
+
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 WANTLIB += pthread
 
