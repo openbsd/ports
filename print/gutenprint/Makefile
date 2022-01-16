@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2021/01/24 16:08:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2022/01/16 20:10:33 kmos Exp $
 
 COMMENT=		high quality print drivers for foomatic and CUPS
 
@@ -20,6 +20,9 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
+
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 WANTLIB += avahi-client avahi-common c cups curses dbus-1 gmp
 WANTLIB += gnutls hogweed iconv idn2 intl m nettle p11-kit pthread
