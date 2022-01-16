@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2020/06/12 14:57:07 robert Exp $
+# $OpenBSD: Makefile,v 1.30 2022/01/16 19:54:53 kmos Exp $
 
 COMMENT=	GDI+ comptible API
 
@@ -14,6 +14,9 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 # GPLv2 and Mozilla Public License 1.1
 PERMIT_PACKAGE=	Yes
+
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 WANTLIB += X11 Xext Xrender cairo exif expat fontconfig freetype
 WANTLIB += gif glib-2.0
