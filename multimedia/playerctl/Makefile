@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/12/06 19:05:47 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2022/01/16 09:09:06 kmos Exp $
 
 COMMENT =	MPRIS command-line controller and library
 
@@ -21,5 +21,10 @@ BUILD_DEPENDS =		devel/gobject-introspection \
 LIB_DEPENDS =		devel/glib2
 
 NO_TEST =		Yes
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
 
 .include <bsd.port.mk>
