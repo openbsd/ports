@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2021/02/23 19:39:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2022/01/16 20:17:54 kmos Exp $
 
 COMMENT =	extremely fast password cracker, with community patches
 BROKEN-alpha =	DES_bs.c:173: internal compiler error: in get_callee_fndecl, at tree.c:5940
@@ -17,6 +17,9 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # files from various authors; see license review txt file
 PERMIT_PACKAGE =	Yes
+
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 WANTLIB += c crypto m nspr4 nss3 pcap plc4 plds4 smime3
 WANTLIB += nssutil3 ssl ssl3 z
