@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2021/12/07 17:06:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2022/01/16 19:38:14 kmos Exp $
 
 COMMENT=		libgit2 bindings in Python
 
@@ -18,5 +18,10 @@ LIB_DEPENDS=		devel/libgit2/libgit2
 
 BUILD_DEPENDS=		devel/py-cffi${MODPY_FLAVOR}
 RUN_DEPENDS=		devel/py-cffi${MODPY_FLAVOR}
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
 
 .include <bsd.port.mk>
