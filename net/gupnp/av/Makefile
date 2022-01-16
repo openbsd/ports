@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2021/10/26 14:43:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2022/01/16 20:11:33 kmos Exp $
 
 COMMENT=		helpers for building A/V applications using GUPnP
 
@@ -9,6 +9,10 @@ SHARED_LIBS +=  gupnp-av-1.0         0.1      # 2.0
 
 MODULES=		devel/meson \
 			x11/gnome
+
+# C11
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 WANTLIB += glib-2.0 gobject-2.0 xml2
 
