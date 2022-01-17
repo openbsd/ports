@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2021/11/02 00:01:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2022/01/17 01:35:46 kmos Exp $
 
 COMMENT =		ncurses-based Tox client
 
@@ -52,6 +52,11 @@ pre-configure:
 .if ${FLAVOR:Mno_x11}
 post-install:
 	rm -Rf ${PREFIX}/share/applications/
+.endif
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
 .endif
 
 .include <bsd.port.mk>
