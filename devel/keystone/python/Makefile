@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/02 00:00:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2022/01/17 15:42:47 kmos Exp $
 
 BROKEN-riscv64 =	Unknown architecture riscv64
 
@@ -17,6 +17,8 @@ WRKDIST =       ${WRKDIR}/${DISTNAME}/bindings/python
 
 FLAVORS =       python3
 FLAVOR ?=
+
+COMPILER =	base-clang ports-gcc
 
 RUN_DEPENDS =   devel/keystone/main
 
