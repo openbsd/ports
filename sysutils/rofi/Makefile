@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2021/08/30 07:06:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2022/01/17 15:32:53 kmos Exp $
 
 COMMENT =		window switcher, run dialog and dmenu replacement
 
@@ -14,6 +14,9 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/releases/download/${V}/
+
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 WANTLIB += c cairo gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 harfbuzz intl m pango-1.0 pangocairo-1.0
