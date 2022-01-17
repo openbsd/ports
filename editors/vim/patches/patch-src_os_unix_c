@@ -1,0 +1,96 @@
+$OpenBSD: patch-src_os_unix_c,v 1.1 2022/01/17 17:03:19 sthen Exp $
+
+backout ab16ad33ba "patch 8.2.3941: SIGTSTP is not handled"
+causes hangs on ^Z
+
+Index: src/os_unix.c
+--- src/os_unix.c.orig
++++ src/os_unix.c
+@@ -157,11 +157,6 @@ static void handle_resize(void);
+ #if defined(SIGWINCH)
+ static RETSIGTYPE sig_winch SIGPROTOARG;
+ #endif
+-#if defined(SIGTSTP)
+-static RETSIGTYPE sig_tstp SIGPROTOARG;
+-// volatile because it is used in signal handler sig_tstp() and sigcont_handler().
+-static volatile sig_atomic_t in_mch_suspend = FALSE;
+-#endif
+ #if defined(SIGINT)
+ static RETSIGTYPE catch_sigint SIGPROTOARG;
+ #endif
+@@ -202,8 +197,6 @@ static int save_patterns(int num_pat, char_u **pat, in
+ 
+ // volatile because it is used in signal handler sig_winch().
+ static volatile sig_atomic_t do_resize = FALSE;
+-// volatile because it is used in signal handler sig_tstp().
+-static volatile sig_atomic_t got_tstp = FALSE;
+ static char_u	*extra_shell_arg = NULL;
+ static int	show_shell_mess = TRUE;
+ // volatile because it is used in signal handler deathtrap().
+@@ -858,24 +851,6 @@ sig_winch SIGDEFARG(sigarg)
+ }
+ #endif
+ 
+-#if defined(SIGTSTP)
+-    static RETSIGTYPE
+-sig_tstp SIGDEFARG(sigarg)
+-{
+-    // Second time we get called we actually need to suspend
+-    if (in_mch_suspend)
+-    {
+-	signal(SIGTSTP, ignore_sigtstp ? SIG_IGN : SIG_DFL);
+-	raise(sigarg);
+-    }
+-
+-    // this is not required on all systems, but it doesn't hurt anybody
+-    signal(SIGTSTP, (RETSIGTYPE (*)())sig_tstp);
+-    got_tstp = TRUE;
+-    SIGRETURN;
+-}
+-#endif
+-
+ #if defined(SIGINT)
+     static RETSIGTYPE
+ catch_sigint SIGDEFARG(sigarg)
+@@ -1183,6 +1158,7 @@ after_sigcont(void)
+ 
+ #if defined(SIGCONT)
+ static RETSIGTYPE sigcont_handler SIGPROTOARG;
++static volatile sig_atomic_t in_mch_suspend = FALSE;
+ 
+ /*
+  * With multi-threading, suspending might not work immediately.  Catch the
+@@ -1377,7 +1353,7 @@ set_signals(void)
+ 
+ #ifdef SIGTSTP
+     // See mch_init() for the conditions under which we ignore SIGTSTP.
+-    signal(SIGTSTP, ignore_sigtstp ? SIG_IGN : (RETSIGTYPE (*)())sig_tstp);
++    signal(SIGTSTP, ignore_sigtstp ? SIG_IGN : SIG_DFL);
+ #endif
+ #if defined(SIGCONT)
+     signal(SIGCONT, sigcont_handler);
+@@ -6410,15 +6386,6 @@ select_eintr:
+ # ifdef EINTR
+ 	if (ret == -1 && errno == EINTR)
+ 	{
+-	    // Check whether the EINTR is caused by SIGTSTP
+-	    if (got_tstp && !in_mch_suspend)
+-	    {
+-		exarg_T ea;
+-		ea.forceit = TRUE;
+-		ex_stop(&ea);
+-		got_tstp = FALSE;
+-	    }
+-
+ 	    // Check whether window has been resized, EINTR may be caused by
+ 	    // SIGWINCH.
+ 	    if (do_resize)
+@@ -7209,7 +7176,7 @@ gpm_open(void)
+ 	    // we are going to suspend or starting an external process
+ 	    // so we shouldn't  have problem with this
+ # ifdef SIGTSTP
+-	    signal(SIGTSTP, restricted ? SIG_IGN : (RETSIGTYPE (*)())sig_tstp);
++	    signal(SIGTSTP, restricted ? SIG_IGN : SIG_DFL);
+ # endif
+ 	    return 1; // succeed
+ 	}
