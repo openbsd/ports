@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2021/08/25 12:05:52 robert Exp $
+# $OpenBSD: Makefile,v 1.25 2022/01/17 15:19:46 kmos Exp $
 
 COMMENT=		panel component for MATE
 
@@ -38,5 +38,10 @@ MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
 			gobject-introspection yelp
 
 CONFIGURE_STYLE=	gnu
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
 
 .include <bsd.port.mk>
