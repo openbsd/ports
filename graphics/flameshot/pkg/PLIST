@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/10/17 18:35:53 denis Exp $
+@comment $OpenBSD: PLIST,v 1.6 2022/01/17 07:47:32 sdk Exp $
 @bin bin/flameshot
 @man man/man1/flameshot.1
 share/applications/org.flameshot.Flameshot.desktop
@@ -6,6 +6,9 @@ share/bash-completion/completions/flameshot
 share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.flameshot.Flameshot.xml
 share/dbus-1/services/org.flameshot.Flameshot.service
+share/fish/
+share/fish/vendor_completions.d/
+share/fish/vendor_completions.d/flameshot.fish
 share/flameshot/
 share/flameshot/translations/
 share/flameshot/translations/Internationalization_ca.qm
