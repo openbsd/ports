@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2021/08/25 12:05:51 robert Exp $
+# $OpenBSD: Makefile,v 1.17 2022/01/17 15:18:18 kmos Exp $
 
 COMMENT=		MATE calculator
 
@@ -24,5 +24,10 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas
 MODGNOME_TOOLS=		desktop-file-utils yelp
 
 CONFIGURE_STYLE=	gnu
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
 
 .include <bsd.port.mk>
