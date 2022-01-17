@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2021/10/23 09:15:12 landry Exp $
+@comment $OpenBSD: PLIST,v 1.21 2022/01/17 12:13:41 landry Exp $
 bin/geos-config
 @bin bin/geosop
 include/geos/
@@ -512,6 +512,8 @@ include/geos/util/UniqueCoordinateArrayFilter.h
 include/geos/util/UnsupportedOperationException.h
 include/geos/util/math.h
 include/geos/vend/
+include/geos/vend/include_nlohmann_json.hpp
+include/geos/vend/json.hpp
 include/geos/version.h
 include/geos_c.h
 lib/cmake/
