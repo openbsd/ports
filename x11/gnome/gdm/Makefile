@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.310 2022/01/13 08:07:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.311 2022/01/17 15:15:16 kmos Exp $
 
 COMMENT=		GNOME display manager
 
@@ -121,5 +121,10 @@ post-install:
 	${SUBST_CMD} -m 0555 -c -o ${BINOWN} -g ${BINGRP} \
 		${FILESDIR}/Xsession \
 		${PREFIX}/share/examples/gdm/etc/gdm/Xsession
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
 
 .include <bsd.port.mk>
