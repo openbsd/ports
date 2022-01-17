@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2021/11/15 12:03:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2022/01/17 08:07:16 ajacoutot Exp $
 
 COMMENT=		VirtualBox client with remote management
 
-DISTNAME=		RemoteBox-3.0
+DISTNAME=		RemoteBox-3.1
 PKGNAME=		${DISTNAME:L}
 EXTRACT_SUFX=		.tar.bz2
 
@@ -32,12 +32,9 @@ pre-configure:
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{applications,pixmaps}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/remotebox
 	${INSTALL_SCRIPT} ${WRKSRC}/remotebox ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/packagers-readme/remotebox.desktop \
 		${PREFIX}/share/applications/
-	${INSTALL_DATA} ${WRKSRC}/docs/remotebox.pdf \
-		${PREFIX}/share/doc/remotebox
 	cd ${PREFIX}/share/pixmaps && \
 		ln -sf ${TRUEPREFIX}/share/remotebox/icons/remotebox.png
 	cp -Rp ${WRKSRC}/share/remotebox ${PREFIX}/share

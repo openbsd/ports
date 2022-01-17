@@ -1,7 +1,9 @@
-$OpenBSD: patch-remotebox,v 1.1.1.1 2014/11/26 15:32:05 ajacoutot Exp $
---- remotebox.orig	Sun Oct 26 03:10:27 2014
-+++ remotebox	Wed Nov 26 15:29:46 2014
-@@ -7,12 +7,12 @@ use FindBin qw($Bin);
+$OpenBSD: patch-remotebox,v 1.2 2022/01/17 08:07:16 ajacoutot Exp $
+
+Index: remotebox
+--- remotebox.orig
++++ remotebox
+@@ -7,11 +7,11 @@ use FindBin qw($Bin);
  use POSIX qw(ceil);
  use MIME::Base64;
  # *** PACKAGERS MAY WISH TO PATCH THIS LOCATION ***
@@ -9,11 +11,9 @@ $OpenBSD: patch-remotebox,v 1.1.1.1 2014/11/26 15:32:05 ajacoutot Exp $
 +use lib "${PREFIX}/share/remotebox";
  # *************************************************
  use vboxService qw($endpoint $fault :all);
- # *** PACKAGERS MAY WISH TO PATCH THESE LOCATIONS ***
+ # *** PACKAGERS MAY WISH TO PATCH THIS LOCATION ***
 -our $sharedir = "$Bin/share/remotebox";
--our $docdir   = "$Bin/docs";
 +our $sharedir = "${PREFIX}/share/remotebox";
-+our $docdir   = "${PREFIX}/share/doc/remotebox";
- # ***************************************************
+ # *************************************************
  
  require 'vboxserializers.pl';
