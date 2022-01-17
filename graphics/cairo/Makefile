@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.73 2021/11/07 19:35:33 kurt Exp $
+# $OpenBSD: Makefile,v 1.74 2022/01/17 13:09:21 tobhe Exp $
 
 COMMENT=		vector graphics library
 
 DISTNAME=		cairo-1.17.4
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		graphics
 DPB_PROPERTIES=		parallel
