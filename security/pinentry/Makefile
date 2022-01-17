@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2022/01/13 14:43:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2022/01/17 21:31:17 kmos Exp $
 
 COMMENT-main = 	PIN or passphrase entry dialog (ncurses interface)
 COMMENT-gnome3 =PIN or passphrase entry dialog (GNOME 3 interface)
@@ -21,6 +21,9 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c assuan gio-2.0 glib-2.0 gobject-2.0 gpg-error iconv intl
 WANTLIB += curses secret-1
+
+# C++11
+COMPILER =		base-clang ports-gcc
 
 LIB_DEPENDS =		security/libassuan \
 			x11/gnome/libsecret
