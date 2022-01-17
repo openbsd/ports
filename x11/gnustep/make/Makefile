@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2021/10/19 19:43:37 sebastia Exp $
+# $OpenBSD: Makefile,v 1.60 2022/01/17 08:05:25 sebastia Exp $
 
 # WARNING: this port does NOT use the x11/gnustep MODULE
 
@@ -17,7 +17,7 @@ WANTLIB=	${COMPILER_LIBCXX}
 BUILD_DEPENDS =	x11/gnustep/libobjc2
 RUN_DEPENDS=	archivers/gtar
 
-COMPILER =	base-clang ports-clang
+COMPILER =	base-clang
 
 USE_GMAKE=	Yes
 MAKE_FILE=	GNUmakefile
@@ -55,6 +55,3 @@ post-install:
 		${PREFIX}/share/GNUstep/
 
 .include <bsd.port.mk>
-.if ${PROPERTIES:Mclang}
-PATCH_LIST = patch-* clangpatch-*
-.endif

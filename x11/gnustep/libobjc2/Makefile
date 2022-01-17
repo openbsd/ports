@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.28 2021/10/22 08:50:48 sebastia Exp $
+# $OpenBSD: Makefile,v 1.29 2022/01/17 08:05:25 sebastia Exp $
 
-BROKEN-hppa =	missing asm impl in block_trampolines.S
-NOT_FOR_ARCHS = ${GCC3_ARCHS}
+ONLY_FOR_ARCHS =	${LLD_ARCHS}
 
 COMMENT =	GNUstep libobjc2 objective-c runtime
 

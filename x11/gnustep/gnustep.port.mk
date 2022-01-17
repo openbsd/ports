@@ -1,4 +1,4 @@
-# $OpenBSD: gnustep.port.mk,v 1.38 2021/10/23 17:48:21 jca Exp $
+# $OpenBSD: gnustep.port.mk,v 1.39 2022/01/17 08:05:25 sebastia Exp $
 
 # until tested on others
 ONLY_FOR_ARCHS ?=	${LLD_ARCHS}
@@ -11,7 +11,7 @@ MAKE_FILE ?=	GNUmakefile
 BUILD_DEPENDS +=		x11/gnustep/make
 MODGNUSTEP_RUN_DEPENDS +=	x11/gnustep/make
 
-COMPILER =		base-clang ports-clang
+COMPILER =		base-clang
 
 CONFIGURE_ENV +=	OPTFLAG="${CFLAGS}"
 # Not yet GS_WITH_ARC
