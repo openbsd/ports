@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2022/01/12 09:57:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2022/01/17 14:58:06 landry Exp $
 
 # 20220112 - build often fails due to out of memory
 # memory allocation of 402653184 bytes failed
@@ -9,7 +9,7 @@ COMMENT =		update notifications for nextcloud clients
 
 GH_ACCOUNT =		nextcloud
 GH_PROJECT =		notify_push
-GH_TAGNAME =		v0.2.2
+GH_TAGNAME =		v0.3.0
 
 CATEGORIES =		www
 
