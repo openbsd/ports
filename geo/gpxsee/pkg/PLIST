@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/11/08 14:33:37 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2022/01/17 14:24:38 landry Exp $
 @bin bin/gpxsee
 share/applications/gpxsee.desktop
 share/gpxsee/
@@ -39,6 +39,10 @@ share/gpxsee/symbols/Dam.png
 share/gpxsee/symbols/Drinking Water.png
 share/gpxsee/symbols/Fastfood.png
 share/gpxsee/symbols/Fishing Area.png
+share/gpxsee/symbols/Flag, Blue.png
+share/gpxsee/symbols/Flag, Green.png
+share/gpxsee/symbols/Flag, Red.png
+share/gpxsee/symbols/Flag.png
 share/gpxsee/symbols/Forest.png
 share/gpxsee/symbols/Furbearer.png
 share/gpxsee/symbols/Gas Station.png
@@ -97,6 +101,12 @@ share/gpxsee/symbols/Waterfowl.png
 share/gpxsee/symbols/Waypoint.png
 share/gpxsee/symbols/Winery.png
 share/gpxsee/symbols/Zoo.png
+share/icons/hicolor/128x128/apps/gpxsee.png
+share/icons/hicolor/16x16/apps/gpxsee.png
+share/icons/hicolor/32x32/apps/gpxsee.png
+share/icons/hicolor/48x48/apps/gpxsee.png
+share/icons/hicolor/64x64/apps/gpxsee.png
+share/icons/hicolor/scalable/apps/gpxsee.svg
 share/mime/packages/gpxsee.xml
 @tag update-mime-database
 @tag update-desktop-database
