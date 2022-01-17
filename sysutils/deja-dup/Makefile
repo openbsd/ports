@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.63 2022/01/13 08:07:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2022/01/17 09:13:34 ajacoutot Exp $
 
 COMMENT=		simple encrypted backup tool for GNOME
 
-GNOME_VERSION=		42.8
+GNOME_VERSION=		43.1
 GNOME_PROJECT=		deja-dup
-
-REVISION=		1
 
 # override gnome MODULE
 MASTER_SITES=		https://gitlab.gnome.org/World/deja-dup/-/archive/${GNOME_VERSION}/
@@ -20,9 +18,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += atk-1.0 c gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += gpg-error gtk-3 handy-1 intl json-glib-1.0 secret-1
-WANTLIB += soup-2.4
+WANTLIB += adwaita-1 c gio-2.0 glib-2.0 gobject-2.0 gpg-error
+WANTLIB += gtk-4 intl json-glib-1.0 pango-1.0 secret-1 soup-3.0
 
 MODULES=		devel/meson \
 			devel/dconf \
@@ -34,9 +31,9 @@ MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache vala yelp
 RUN_DEPENDS=		sysutils/duplicity
 
 LIB_DEPENDS=		devel/json-glib \
-			devel/libsoup \
+			devel/libsoup3 \
 			x11/gnome/libsecret \
-			x11/libhandy
+			x11/gnome/libadwaita
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.32 2020/10/25 20:47:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2022/01/17 09:13:34 ajacoutot Exp $
 @bin bin/deja-dup
 lib/deja-dup/
 @so lib/deja-dup/libdeja.so
 libexec/deja-dup/
 @bin libexec/deja-dup/deja-dup-monitor
+libexec/deja-dup/restic-dump-to
 @man man/man1/deja-dup.1
 share/applications/org.gnome.DejaDup.desktop
 share/dbus-1/services/org.gnome.DejaDup.service
@@ -533,7 +534,7 @@ share/locale/vi/LC_MESSAGES/deja-dup.mo
 share/locale/zh_CN/LC_MESSAGES/deja-dup.mo
 share/locale/zh_HK/LC_MESSAGES/deja-dup.mo
 share/locale/zh_TW/LC_MESSAGES/deja-dup.mo
-share/metainfo/org.gnome.DejaDup.appdata.xml
+share/metainfo/org.gnome.DejaDup.metainfo.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag glib-compile-schemas
 @tag update-desktop-database

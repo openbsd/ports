@@ -8,3 +8,6 @@ Features:
     * Incrementally backs up, letting you restore from any backup
     * Schedules regular backups
     * Integrates well into your GNOME desktop
+
+Support for Microsoft OneDrive requires the requests_oauthlib python module;
+available in the www/py-requests-oauthlib port / package.
