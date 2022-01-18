@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2022/01/14 14:56:13 jturner Exp $
+# $OpenBSD: Makefile,v 1.17 2022/01/18 03:16:39 jturner Exp $
 
-BROKEN=			requires a new release to support LibreSSL 3.5.0+ since we aren't allowed to patch
 COMMENT=		client for the tarsnap.com online encrypted backup service
 V=			1.0.39
 DISTNAME=		tarsnap-autoconf-${V}
 PKGNAME=		tarsnap-${V}
+REVISION=		0
 CATEGORIES=		sysutils
 HOMEPAGE=		http://www.tarsnap.com/
 MAINTAINER=		James Turner <james@calminferno.net>
