@@ -55,7 +55,7 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto					 v0.0.0-20190308221718-c2843e01d9a2 \
 	golang.org/x/crypto					 v0.0.0-20200115085410-6d4e4cb37c7d \
 	golang.org/x/crypto					 v0.0.0-20200622213623-75b288015ac9 \
-	golang.org/x/crypto					 v0.0.0-20210921155107-089bfa567519 \
+	golang.org/x/crypto					 v0.0.0-20211108221036-ceb1ce70b4fa \
 	golang.org/x/net					 v0.0.0-20180724234803-3673e40ba225 \
 	golang.org/x/net					 v0.0.0-20180906233101-161cd47e91fd \
 	golang.org/x/net					 v0.0.0-20181114220301-adae6a3d119a \
@@ -63,7 +63,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net					 v0.0.0-20190404232315-eb5bcb51f2a3 \
 	golang.org/x/net					 v0.0.0-20190613194153-d28f0bde5980 \
 	golang.org/x/net					 v0.0.0-20200625001655-4c5254603344 \
-	golang.org/x/net					 v0.0.0-20210226172049-e18ecbb05110 \
+	golang.org/x/net					 v0.0.0-20211112202133-69e39bad7dc2 \
 	golang.org/x/sync					 v0.0.0-20180314180146-1d60e4601c6f \
 	golang.org/x/sync					 v0.0.0-20181108010431-42b317875d0f \
 	golang.org/x/sync					 v0.0.0-20181221193216-37e7f081c4d4 \
@@ -84,7 +84,6 @@ MODGO_MODFILES =	\
 	golang.org/x/sys					 v0.0.0-20210603081109-ebe580a85c40 \
 	golang.org/x/text					 v0.3.0 \
 	golang.org/x/text					 v0.3.2 \
-	golang.org/x/text					 v0.3.3 \
 	google.golang.org/protobuf				 v0.0.0-20200109180630-ec00e32a8dfd \
 	google.golang.org/protobuf				 v0.0.0-20200221191635-4d8936d0db64 \
 	google.golang.org/protobuf				 v0.0.0-20200228230310-ab0ca4ff8a60 \
@@ -139,8 +138,8 @@ MODGO_MODULES =	\
 	github.com/kr/pretty					 v0.1.0 \
 	github.com/kr/pty					 v1.1.1 \
 	github.com/kr/text					 v0.1.0 \
-	github.com/lib/pq					 v1.10.3 \
-	github.com/mattn/go-sqlite3				 v1.14.9 \
+	github.com/lib/pq					 v1.10.4 \
+	github.com/mattn/go-sqlite3				 v1.14.10 \
 	github.com/matttproud/golang_protobuf_extensions	 v1.0.1 \
 	github.com/modern-go/concurrent				 v0.0.0-20180306012644-bacd9c7ef1dd \
 	github.com/modern-go/reflect2				 v1.0.1 \
@@ -163,10 +162,10 @@ MODGO_MODULES =	\
 	github.com/tidwall/pretty				 v1.2.0 \
 	github.com/tidwall/sjson				 v1.2.3 \
 	go.mau.fi/libsignal					 v0.0.0-20211109153248-a67163214910 \
-	go.mau.fi/whatsmeow					 v0.0.0-20211110182414-ba28bae40fb5 \
-	golang.org/x/crypto					 v0.0.0-20211108221036-ceb1ce70b4fa \
-	golang.org/x/image					 v0.0.0-20210628002857-a66eb6448b8d \
-	golang.org/x/net					 v0.0.0-20211020060615-d418f374d309 \
+	go.mau.fi/whatsmeow					 v0.0.0-20220111203410-b078a9e90863 \
+	golang.org/x/crypto					 v0.0.0-20211215153901-e495a2d5b3d3 \
+	golang.org/x/image					 v0.0.0-20211028202545-6944b10bf410 \
+	golang.org/x/net					 v0.0.0-20211216030914-fe4d6282115f \
 	golang.org/x/oauth2					 v0.0.0-20190226205417-e64efc72b421 \
 	golang.org/x/sync					 v0.0.0-20201207232520-09787c993a3a \
 	golang.org/x/sys					 v0.0.0-20210615035016-665e8c7367d1 \
@@ -183,5 +182,5 @@ MODGO_MODULES =	\
 	gopkg.in/yaml.v2					 v2.4.0 \
 	gopkg.in/yaml.v3					 v3.0.0-20210107192922-496545a6307b \
 	maunium.net/go/mauflag					 v1.0.0 \
-	maunium.net/go/maulogger/v2				 v2.3.1 \
-	maunium.net/go/mautrix					 v0.10.1
+	maunium.net/go/maulogger/v2				 v2.3.2 \
+	maunium.net/go/mautrix					 v0.10.10
