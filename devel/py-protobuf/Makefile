@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2021/11/03 07:40:52 tb Exp $
+# $OpenBSD: Makefile,v 1.21 2022/01/18 19:14:26 tb Exp $
 
 COMMENT=		Google data interchange format (protocol buffers)
 
-MODPY_EGG_VERSION=	3.19.1
+MODPY_EGG_VERSION=	3.19.3
 DISTNAME=		protobuf-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
