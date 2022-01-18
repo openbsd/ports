@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1359 2022/01/13 15:12:55 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1360 2022/01/18 20:07:17 sebastia Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -795,7 +795,6 @@ setup_obsolete_reason(
 	3 => 'py3-crypto',
 	5 => 'tremor',
 	5 => 'tremor-tools',
-	3 => 'xtrkcad',
 	2 => 'webkit',
 	5 => 'py-test-capturelog',
 	5 => 'py3-test-capturelog',
