@@ -1,28 +1,20 @@
-$OpenBSD: patch-unix_vncserver_CMakeLists_txt,v 1.1 2021/11/14 22:45:25 sthen Exp $
+$OpenBSD: patch-unix_vncserver_CMakeLists_txt,v 1.2 2022/01/18 13:12:18 sthen Exp $
 
-vncsession appears to require pam
+vncsession requires pam
 
 Index: unix/vncserver/CMakeLists.txt
 --- unix/vncserver/CMakeLists.txt.orig
 +++ unix/vncserver/CMakeLists.txt
-@@ -1,13 +1,15 @@
--add_executable(vncsession vncsession.c)
--target_link_libraries(vncsession ${PAM_LIBS})
--
- configure_file(vncserver@.service.in vncserver@.service @ONLY)
--configure_file(vncsession-start.in vncsession-start @ONLY)
- configure_file(vncserver.in vncserver @ONLY)
- 
+@@ -1,3 +1,4 @@
 +if(HAVE_PAM_H)
-+add_executable(vncsession vncsession.c)
-+target_link_libraries(vncsession ${PAM_LIBS})
-+configure_file(vncsession-start.in vncsession-start @ONLY)
-+install(FILES vncsession.man DESTINATION ${CMAKE_INSTALL_FULL_MANDIR}/man8 RENAME vncsession.8)
- install(TARGETS vncsession DESTINATION ${CMAKE_INSTALL_FULL_SBINDIR})
- install(FILES tigervnc.pam DESTINATION ${CMAKE_INSTALL_FULL_SYSCONFDIR}/pam.d RENAME tigervnc)
--install(FILES vncsession.man DESTINATION ${CMAKE_INSTALL_FULL_MANDIR}/man8 RENAME vncsession.8)
-+endif()
-+
- install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/vncserver DESTINATION ${CMAKE_INSTALL_FULL_LIBEXECDIR})
- install(FILES vncserver.man DESTINATION ${CMAKE_INSTALL_FULL_MANDIR}/man8 RENAME vncserver.8)
+ add_executable(vncsession vncsession.c)
+ target_link_libraries(vncsession ${PAM_LIBS})
+ 
+@@ -14,6 +15,7 @@ install(FILES vncserver.man DESTINATION ${CMAKE_INSTAL
  install(FILES vncserver-config-defaults vncserver-config-mandatory DESTINATION ${CMAKE_INSTALL_FULL_SYSCONFDIR}/tigervnc)
+ 
+ install(FILES vncserver.users DESTINATION ${CMAKE_INSTALL_FULL_SYSCONFDIR}/tigervnc)
++endif(HAVE_PAM_H)
+ 
+ install(FILES HOWTO.md DESTINATION ${CMAKE_INSTALL_FULL_DOCDIR})
+ 

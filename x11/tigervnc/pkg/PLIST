@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2022/01/04 15:39:50 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2022/01/18 13:12:18 sthen Exp $
 @bin bin/Xvnc
 @bin bin/vncconfig
 @bin bin/vncpasswd
 bin/vncserver
 @bin bin/vncviewer.tigervnc
 @bin bin/x0vncserver
-libexec/vncserver
 @man man/man1/Xserver.1
 @man man/man1/Xvnc.1
 @man man/man1/vncconfig.1

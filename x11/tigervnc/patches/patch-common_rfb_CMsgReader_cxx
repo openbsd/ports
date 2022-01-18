@@ -1,0 +1,27 @@
+$OpenBSD: patch-common_rfb_CMsgReader_cxx,v 1.1 2022/01/18 13:12:18 sthen Exp $
+
+From 1a729dc0129052a028eae4582a6d6d10564d13c4 Mon Sep 17 00:00:00 2001
+From: Pierre Ossman <ossman@cendio.se>
+Date: Tue, 18 Jan 2022 13:38:41 +0100
+Subject: [PATCH] Fix handling of VMware cursors
+
+This is a regression from ad0f061. If a VMware cursor rect was split up
+over multiple read()s then the stream would become corrupted as we set
+the restore point at the wrong place.
+
+Index: common/rfb/CMsgReader.cxx
+--- common/rfb/CMsgReader.cxx.orig
++++ common/rfb/CMsgReader.cxx
+@@ -632,10 +632,10 @@ bool CMsgReader::readSetVMwareCursor(int width, int he
+   if (!is->hasData(1 + 1))
+     return false;
+ 
++  is->setRestorePoint();
++
+   type = is->readU8();
+   is->skip(1);
+-
+-  is->setRestorePoint();
+ 
+   if (type == 0) {
+     int len = width * height * (handler->server.pf().bpp/8);
