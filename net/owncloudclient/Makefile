@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.56 2021/12/05 18:55:21 kirby Exp $
+# $OpenBSD: Makefile,v 1.57 2022/01/18 13:00:31 kirby Exp $
 
 COMMENT =		owncloud sync client
 
-V = 			2.9.2.6206
+V = 			2.10.0.6519
 DISTNAME =		ownCloud-${V}
 PKGNAME =  		owncloudclient-${V}
 
-SHARED_LIBS +=		owncloudsync	7.1
-SHARED_LIBS +=		owncloud_csync	1.0
+SHARED_LIBS +=		owncloudsync	7.2
+SHARED_LIBS +=		owncloud_csync	1.1
 
 CATEGORIES =		net
 
@@ -64,7 +64,7 @@ CONFIGURE_ARGS +=	-Wno-dev \
 NO_TEST =		Yes
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mirall/
-	mv ${WRKINST}/etc/ownCloud ${PREFIX}/share/examples/mirall/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ownCloud/
+	mv ${WRKINST}/etc/ownCloud ${PREFIX}/share/examples/
 
 .include <bsd.port.mk>

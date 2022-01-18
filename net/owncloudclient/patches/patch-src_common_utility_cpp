@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_common_utility_cpp,v 1.4 2021/10/04 11:15:20 kirby Exp $
+$OpenBSD: patch-src_common_utility_cpp,v 1.5 2022/01/18 13:00:31 kirby Exp $
 
 Index: src/common/utility.cpp
 --- src/common/utility.cpp.orig
 +++ src/common/utility.cpp
-@@ -218,8 +218,8 @@ qint64 Utility::freeDiskSpace(const QString &path)
+@@ -220,8 +220,8 @@ qint64 Utility::freeDiskSpace(const QString &path)
          return (qint64)stat.f_bavail * stat.f_frsize;
      }
  #elif defined(Q_OS_UNIX)

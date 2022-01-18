@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2021/10/04 11:15:20 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.15 2022/01/18 13:00:31 kirby Exp $
 @conflict ocsync-*
 @conflict mirall-*
 @pkgpath net/ocsync
@@ -27,10 +27,9 @@ share/applications/owncloud.desktop
 share/caja-python/
 share/caja-python/extensions/
 share/caja-python/extensions/syncstate-ownCloud.py
-share/examples/mirall/
-share/examples/mirall/ownCloud/
+share/examples/ownCloud/
 @sample ${SYSCONFDIR}/ownCloud/
-share/examples/mirall/ownCloud/sync-exclude.lst
+share/examples/ownCloud/sync-exclude.lst
 @sample ${SYSCONFDIR}/ownCloud/sync-exclude.lst
 share/icons/hicolor/1024x1024/
 share/icons/hicolor/1024x1024/apps/
