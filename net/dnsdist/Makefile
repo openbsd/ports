@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2021/12/25 07:14:35 otto Exp $
+# $OpenBSD: Makefile,v 1.26 2022/01/18 06:29:19 otto Exp $
 
 COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
-DISTNAME=		dnsdist-1.6.1
-REVISION=		0
+DISTNAME=		dnsdist-1.7.0
 EXTRACT_SUFX=		.tar.bz2
 
 CATEGORIES=		net
@@ -16,7 +15,7 @@ MAINTAINER=		Otto Moerbeek <otto@drijf.net>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB +=		${MODLUA_WANTLIB} c curses edit m \
-			fstrm h2o-evloop pthread \
+			fstrm h2o-evloop nghttp2 pthread \
 			z crypto ssl sodium ${COMPILER_LIBCXX}
 
 MASTER_SITES=		https://downloads.powerdns.com/releases/
@@ -32,6 +31,7 @@ CONFIGURE_ARGS+=	--without-gnutls \
 			--without-libcap \
 			--without-ebpf \
 			--without-lmdb \
+			--with-nghttp2 \
 			--enable-dns-over-tls \
 			--enable-dnscrypt \
 			--enable-dnstap \
@@ -41,7 +41,6 @@ CONFIGURE_ARGS+=	--without-gnutls \
 # miscompiled with -O2, resulting in a segfault on startup
 #
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
-			CXXFLAGS="-O1" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			LIBEDIT_LIBS='-ledit -lcurses' \
 			LIBEDIT_CFLAGS=' '
@@ -56,7 +55,8 @@ BUILD_DEPENDS=		devel/boost
 LIB_DEPENDS+=		${MODLUA_LIB_DEPENDS} \
 			security/libsodium \
 			net/libfstrm \
-			www/h2o
+			www/h2o \
+			www/nghttp2
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/dnsdist
