@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/29 20:38:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2022/01/18 08:53:05 sthen Exp $
 
 COMMENT =		PostgreSQL Foreign Data Wrapper for SQLite
 
 GH_ACCOUNT =		pgspider
 GH_PROJECT =		sqlite_fdw
-GH_TAGNAME =		v2.1.0
+GH_TAGNAME =		v2.1.1
 
 PKGNAME =		pg_${DISTNAME}
 
