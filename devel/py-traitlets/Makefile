@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2021/11/02 00:01:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2022/01/18 00:23:57 daniel Exp $
 
 COMMENT =		configuration system for Python applications
 
-MODPY_EGG_VERSION =	4.3.3
+MODPY_EGG_VERSION =	5.1.1
 DISTNAME =		traitlets-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		devel
 
@@ -16,15 +15,11 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-RUN_DEPENDS =		devel/py-ipython_genutils${MODPY_FLAVOR} \
-			devel/py-decorator${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR}
+FLAVORS =		python3
+FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	traitlets
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>
