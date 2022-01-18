@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2021/07/25 11:57:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2022/01/18 20:06:36 sebastia Exp $
 
      SUBDIR =
      SUBDIR += abc
@@ -29,6 +29,7 @@
      SUBDIR += xcircuit
      SUBDIR += xnecview
      SUBDIR += xschem
+     SUBDIR += xtrkcad
      SUBDIR += yosys
 
 .include <bsd.port.subdir.mk>
