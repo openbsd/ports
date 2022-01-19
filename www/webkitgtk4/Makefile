@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.159 2021/12/21 15:08:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.160 2022/01/19 19:04:33 kmos Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -51,8 +51,7 @@ MODULES =		devel/cmake \
 			lang/ruby \
 			x11/gnome
 
-# gcc>=5.0.0 or clang
-COMPILER =		base-clang ports-clang ports-gcc
+COMPILER =		base-clang ports-gcc
 
 MODRUBY_RUNDEP =	No
 MODPY_RUNDEP =		No
