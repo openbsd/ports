@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.198 2022/01/19 14:54:54 espie Exp $
+# $OpenBSD: update-plist,v 1.199 2022/01/19 15:06:08 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -52,11 +52,22 @@ use lib "$ports1/infrastructure/lib";
 use OpenBSD::FS2;
 use OpenBSD::UpdatePlistReader;
 
+# so in order to put objects in the right plist part, we need to track
+# destination file: objects are annotated with a "TrackedFile"
+# which consists ultimately of all the items that are going to end up in
+# that specific file
+
 package TrackedFile;
+# the actual TrackedFile(s) will be created by the next (factory) class
 sub new
 {
 	my ($class, $name, $ext) = @_;
-	bless {name => $name, ext => $ext, items => [], items2 => []}, $class;
+	bless {name => $name, 	# the actual filename proper
+		ext => $ext, 	# extension like -new since update-plist
+				# creates new files for people to diff
+		items => [], 	# "normal" list of items
+		items2 => []	# secondary list of more items
+	    }, $class;
 }
 
 sub add
@@ -123,8 +134,11 @@ sub next_item2
 	}
 }
 
+# this is the factory class that is responsible for (physically) dispatching
+# items into the right plist fragment
 package TrackFile;
 
+# the base factory creates a "default" destination
 sub new
 {
 	my ($class, $default, $ext) = @_;
@@ -134,6 +148,7 @@ sub new
 	return $self;
 }
 
+# each new fragment creates a new TrackedFile (unless it already exists)
 sub file
 {
 	my ($self, $name) = @_;
@@ -147,6 +162,9 @@ sub default
 	return $self->{default};
 }
 
+# and this is the actual method that writes every object: responsible for
+# handling each and every file, and also passing offstate changes (@mode and
+# the likes) to prepare_restate to avoid too much duplication
 sub write_all
 {
 	my ($self, $p) = @_;
