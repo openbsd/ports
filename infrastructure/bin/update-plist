@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.197 2022/01/19 14:38:48 espie Exp $
+# $OpenBSD: update-plist,v 1.198 2022/01/19 14:54:54 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1592,7 +1592,7 @@ sub write_new_files
 	my $self = shift;
 	for my $p (@{$self->{lists}}) {
 		# default is the last content we have, thanks ruby :(
-		$p->{tracker} = TrackFile->new($p->{base_plists}->[-1],
+		$p->{tracker} = TrackFile->new($p->{base_plists}[-1],
 		    $self->{state}{extnew});
 		$p->nlist->redistribute($p);
 		$p->{tracker}->write_all($p);
@@ -1657,7 +1657,7 @@ sub locate_list
 	}
 }
 
-sub no_need_to_run
+sub no_need_to_run_locate
 {
 	my ($self, $state) = @_;
 	if (!defined $state->{PKGLOCATE_COOKIE} || 
@@ -1707,7 +1707,7 @@ sub try_pkglocate
 	my $state = $self->{state};
 	# hardcode the location for now
 	if (-x '/usr/local/bin/pkg_locate') {
-		if ($self->no_need_to_run($state)) {
+		if ($self->no_need_to_run_locate($state)) {
 			$state->say("pkglocate already ran")
 			    unless $state->{quiet};
 			return;
