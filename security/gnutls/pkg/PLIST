@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.56 2021/05/29 22:43:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.57 2022/01/19 12:23:35 ajacoutot Exp $
 @bin bin/certtool
 @bin bin/danetool
 @bin bin/gnutls-cli
@@ -250,6 +250,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_digest_get_name.3
 @man man/man3/gnutls_digest_get_oid.3
 @man man/man3/gnutls_digest_list.3
+@man man/man3/gnutls_digest_set_secure.3
 @man man/man3/gnutls_dtls_cookie_send.3
 @man man/man3/gnutls_dtls_cookie_verify.3
 @man man/man3/gnutls_dtls_get_data_mtu.3
@@ -268,6 +269,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_ecc_curve_get_pk.3
 @man man/man3/gnutls_ecc_curve_get_size.3
 @man man/man3/gnutls_ecc_curve_list.3
+@man man/man3/gnutls_ecc_curve_set_enabled.3
 @man man/man3/gnutls_encode_ber_digest_info.3
 @man man/man3/gnutls_encode_gost_rs_value.3
 @man man/man3/gnutls_encode_rs_value.3
@@ -282,8 +284,14 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_ext_register.3
 @man man/man3/gnutls_ext_set_data.3
 @man man/man3/gnutls_fingerprint.3
+@man man/man3/gnutls_fips140_context_deinit.3
+@man man/man3/gnutls_fips140_context_init.3
+@man man/man3/gnutls_fips140_get_operation_state.3
 @man man/man3/gnutls_fips140_mode_enabled.3
+@man man/man3/gnutls_fips140_pop_context.3
+@man man/man3/gnutls_fips140_push_context.3
 @man man/man3/gnutls_fips140_set_mode.3
+@man man/man3/gnutls_get_library_config.3
 @man man/man3/gnutls_get_system_config_file.3
 @man man/man3/gnutls_global_deinit.3
 @man man/man3/gnutls_global_init.3
@@ -628,6 +636,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_protocol_get_name.3
 @man man/man3/gnutls_protocol_get_version.3
 @man man/man3/gnutls_protocol_list.3
+@man man/man3/gnutls_protocol_set_enabled.3
 @man man/man3/gnutls_psk_allocate_client_credentials.3
 @man man/man3/gnutls_psk_allocate_server_credentials.3
 @man man/man3/gnutls_psk_client_get_hint.3
@@ -775,6 +784,8 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_sign_is_secure.3
 @man man/man3/gnutls_sign_is_secure2.3
 @man man/man3/gnutls_sign_list.3
+@man man/man3/gnutls_sign_set_secure.3
+@man man/man3/gnutls_sign_set_secure_for_certs.3
 @man man/man3/gnutls_sign_supports_pk_algorithm.3
 @man man/man3/gnutls_srp_allocate_client_credentials.3
 @man man/man3/gnutls_srp_allocate_server_credentials.3
@@ -831,6 +842,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_transport_get_int2.3
 @man man/man3/gnutls_transport_get_ptr.3
 @man man/man3/gnutls_transport_get_ptr2.3
+@man man/man3/gnutls_transport_is_ktls_enabled.3
 @man man/man3/gnutls_transport_set_errno.3
 @man man/man3/gnutls_transport_set_errno_function.3
 @man man/man3/gnutls_transport_set_fastopen.3
@@ -1087,6 +1099,8 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_x509_crt_sign2.3
 @man man/man3/gnutls_x509_crt_verify.3
 @man man/man3/gnutls_x509_crt_verify_data2.3
+@man man/man3/gnutls_x509_ct_sct_get.3
+@man man/man3/gnutls_x509_ct_sct_get_version.3
 @man man/man3/gnutls_x509_dn_deinit.3
 @man man/man3/gnutls_x509_dn_export.3
 @man man/man3/gnutls_x509_dn_export2.3
@@ -1098,6 +1112,10 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_x509_dn_oid_known.3
 @man man/man3/gnutls_x509_dn_oid_name.3
 @man man/man3/gnutls_x509_dn_set_str.3
+@man man/man3/gnutls_x509_ext_ct_export_scts.3
+@man man/man3/gnutls_x509_ext_ct_import_scts.3
+@man man/man3/gnutls_x509_ext_ct_scts_deinit.3
+@man man/man3/gnutls_x509_ext_ct_scts_init.3
 @man man/man3/gnutls_x509_ext_deinit.3
 @man man/man3/gnutls_x509_ext_export_aia.3
 @man man/man3/gnutls_x509_ext_export_authority_key_id.3
