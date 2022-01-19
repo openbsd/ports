@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2021/12/22 15:56:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.141 2022/01/19 10:37:00 ajacoutot Exp $
 
 # XXX GNOME keyring ssh-agent segfaults with llvm >=13.0.0
 CFLAGS +=		-O0
@@ -12,19 +12,20 @@ COMMENT=		password agent for the GNOME project
 
 GNOME_PROJECT=		gnome-keyring
 GNOME_VERSION=		40.0
-REVISION=		0
+REVISION=		1
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
-WANTLIB += c cairo cairo-gobject epoxy expat ffi fontconfig freetype
-WANTLIB += fribidi gck-1 gcr-base-3 gcr-ui-3 gcrypt gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
-WANTLIB += graphite2 gtk-3 harfbuzz iconv intl jpeg m p11-kit
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png xcb xcb-render xcb-shm z
+WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
+WANTLIB += atk-bridge-2.0 c cairo cairo-gobject epoxy execinfo
+WANTLIB += expat ffi fontconfig freetype fribidi gck-1 gcr-base-3
+WANTLIB += gcr-ui-3 gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 gtk-3 harfbuzz
+WANTLIB += iconv intl jpeg m p11-kit pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png xcb xcb-render xcb-shm
+WANTLIB += z
 
 MODULES=		devel/dconf \
 			x11/gnome
@@ -40,6 +41,10 @@ CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS=		--disable-pam \
 			--disable-valgrind
+
+# default to /etc/pkcs11/modules
+# pkg-config p11-kit-1 --variable=p11_system_config_modules
+CONFIGURE_ARGS +=	--with-pkcs11-config=${LOCALBASE}/share/p11-kit/modules/
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
