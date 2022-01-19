@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.75 2021/12/28 08:35:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2022/01/19 15:25:13 ajacoutot Exp $
 
 COMMENT=		free open source planetarium
 
 GH_TAGNAME=		v0.21.3
 GH_ACCOUNT=		Stellarium
 GH_PROJECT=		stellarium
+REVISION=		0
 
 CATEGORIES=		astro x11
 
@@ -17,7 +18,9 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Multimedia
 WANTLIB += Qt5MultimediaWidgets Qt5Network Qt5Positioning Qt5PrintSupport
-WANTLIB += Qt5Script Qt5SerialPort Qt5Widgets c m z
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5Script Qt5SerialPort
+WANTLIB += Qt5WebChannel Qt5WebEngine Qt5WebEngineCore Qt5WebEngineWidgets
+WANTLIB += Qt5Widgets c m z
 
 MODULES=		devel/cmake \
 			lang/python \
@@ -28,7 +31,8 @@ MODPY_RUNDEP=		No
 LIB_DEPENDS=		x11/qt5/qtlocation \
 			x11/qt5/qtmultimedia \
 			x11/qt5/qtscript \
-			x11/qt5/qtserialport
+			x11/qt5/qtserialport \
+			x11/qt5/qtwebengine
 
 # used to download more stars definitions
 RUN_DEPENDS=		net/curl \
