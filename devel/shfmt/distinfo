@@ -35,7 +35,7 @@ SHA256 (go_modules/gopkg.in/errgo.v2/@v/v2.1.0.mod) = 4wUgQkglZieWb/hcfcWRzy0Ofe
 SHA256 (go_modules/gopkg.in/errgo.v2/@v/v2.1.0.zip) = a4lUgZog7FKYKiBv0+uUYp/1PFeQqndTTm2Nr33gG+4=
 SHA256 (go_modules/mvdan.cc/editorconfig/@v/v0.2.0.mod) = 9Zm959knns+MkZaERhjWNHJZ0j2u5YLTb+XzjOUfLIo=
 SHA256 (go_modules/mvdan.cc/editorconfig/@v/v0.2.0.zip) = qeQ61HQvJ/ey+yeCDTalFxxUD6Q/nsXZK5tm0KA7ctE=
-SHA256 (shfmt-v3.4.1.zip) = O1c5NFfrXURcbgYaupXWK0KStxRjaeXcgfQMl9kNy18=
+SHA256 (shfmt-v3.4.2.zip) = VQBlYz2lEZwsrHbAtG1Y84A2lURMkQk8qHNxrirrzJ8=
 SIZE (go_modules/github.com/creack/pty/@v/v1.1.15.mod) = 38
 SIZE (go_modules/github.com/creack/pty/@v/v1.1.15.zip) = 23943
 SIZE (go_modules/github.com/creack/pty/@v/v1.1.9.mod) = 39
@@ -73,4 +73,4 @@ SIZE (go_modules/gopkg.in/errgo.v2/@v/v2.1.0.mod) = 133
 SIZE (go_modules/gopkg.in/errgo.v2/@v/v2.1.0.zip) = 15087
 SIZE (go_modules/mvdan.cc/editorconfig/@v/v0.2.0.mod) = 38
 SIZE (go_modules/mvdan.cc/editorconfig/@v/v0.2.0.zip) = 12867
-SIZE (shfmt-v3.4.1.zip) = 217642
+SIZE (shfmt-v3.4.2.zip) = 217742
