@@ -1,4 +1,4 @@
-# $OpenBSD: CommonPlist.pm,v 1.3 2019/11/19 14:54:01 espie Exp $
+# $OpenBSD: BasePlistReader.pm,v 1.1 2022/01/19 14:46:00 espie Exp $
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
