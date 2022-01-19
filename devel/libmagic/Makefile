@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2021/10/19 07:13:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2022/01/19 17:12:47 kmos Exp $
 
 COMMENT=	library to determine file type
 
@@ -27,5 +27,10 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 post-install:
 	mv ${PREFIX}/bin/{,e}file
 	mv ${PREFIX}/man/man1/{,e}file.1
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
 
 .include <bsd.port.mk>
