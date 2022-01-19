@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/01/14 19:20:56 sdk Exp $
+# $OpenBSD: Makefile,v 1.2 2022/01/19 17:17:57 kmos Exp $
 
 COMMENT =	opinionated command line journal
 
@@ -14,6 +14,9 @@ MAINTAINER =	Matthias Schmidt <openbsd@xosc.org>
 
 # ISC
 PERMIT_PACKAGE = Yes
+
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS =	c
 
 # Uses pledge()
 WANTLIB += c json-c sodium
