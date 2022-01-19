@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/12/22 15:32:51 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2022/01/19 18:54:05 abieber Exp $
 
 COMMENT =	deliver Go binaries as fast and easily as possible
 
 MODGO_MODNAME =	github.com/goreleaser/goreleaser
-MODGO_VERSION =	v1.1.0
+MODGO_VERSION =	v1.3.1
 
 HOMEPAGE =	https://goreleaser.com/
 
