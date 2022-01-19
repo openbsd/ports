@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/02 00:01:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2022/01/19 10:57:56 sthen Exp $
 
-V =		2.0
+V =		2.1
 COMMENT =	classic word search game that you can play in your terminal
 DISTNAME =	wordsearch-${V}
 REVISION =	1

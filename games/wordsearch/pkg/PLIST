@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/10/15 14:12:09 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2022/01/19 10:57:56 sthen Exp $
 bin/wordsearch
 @man man/man6/wordsearch.6
 share/doc/wordsearch/
@@ -10,6 +10,7 @@ share/wordsearch/animals.txt
 share/wordsearch/apocalypse.txt
 share/wordsearch/baseball.txt
 share/wordsearch/bbq.txt
+share/wordsearch/bread.txt
 share/wordsearch/camping.txt
 share/wordsearch/candy.txt
 share/wordsearch/cars.txt
@@ -27,7 +28,9 @@ share/wordsearch/dogs.txt
 share/wordsearch/edm.txt
 share/wordsearch/email.txt
 share/wordsearch/engines.txt
+share/wordsearch/fair.txt
 share/wordsearch/fall.txt
+share/wordsearch/farms.txt
 share/wordsearch/fish.txt
 share/wordsearch/fitness.txt
 share/wordsearch/football.txt
@@ -40,6 +43,9 @@ share/wordsearch/hockey.txt
 share/wordsearch/household.txt
 share/wordsearch/instruments.txt
 share/wordsearch/internet.txt
+share/wordsearch/magic.txt
+share/wordsearch/math.txt
+share/wordsearch/military.txt
 share/wordsearch/mobile.txt
 share/wordsearch/movies.txt
 share/wordsearch/nationalparks.txt
@@ -48,24 +54,35 @@ share/wordsearch/nuts.txt
 share/wordsearch/oldtimes.txt
 share/wordsearch/pasta.txt
 share/wordsearch/photography.txt
+share/wordsearch/pizza.txt
 share/wordsearch/places.txt
 share/wordsearch/planets.txt
+share/wordsearch/sanfrancisco.txt
+share/wordsearch/school.txt
 share/wordsearch/science.txt
 share/wordsearch/scifi.txt
+share/wordsearch/shapes.txt
+share/wordsearch/sleep.txt
+share/wordsearch/snacks.txt
 share/wordsearch/sodas.txt
 share/wordsearch/space.txt
 share/wordsearch/spices.txt
 share/wordsearch/spring.txt
 share/wordsearch/states.txt
+share/wordsearch/stpatricks.txt
 share/wordsearch/strings.txt
 share/wordsearch/summer.txt
 share/wordsearch/superpowers.txt
 share/wordsearch/technology.txt
 share/wordsearch/tennis.txt
+share/wordsearch/thanksgiving.txt
+share/wordsearch/themepark.txt
 share/wordsearch/trains.txt
 share/wordsearch/travel.txt
 share/wordsearch/trees.txt
 share/wordsearch/unix.txt
+share/wordsearch/vegas.txt
+share/wordsearch/weather.txt
 share/wordsearch/wine.txt
 share/wordsearch/winter.txt
 share/wordsearch/work.txt
