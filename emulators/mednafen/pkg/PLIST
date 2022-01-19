@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/06/19 04:01:21 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2022/01/19 14:36:36 mestre Exp $
 @bin bin/mednafen
 share/doc/mednafen/
 share/doc/mednafen/apple2.html
@@ -45,6 +45,8 @@ share/doc/mednafen/psx.html
 share/doc/mednafen/psx.php
 share/doc/mednafen/sapphire0.png
 share/doc/mednafen/sapphire1.png
+share/doc/mednafen/sasplay.html
+share/doc/mednafen/sasplay.php
 share/doc/mednafen/settings.def
 share/doc/mednafen/sms.html
 share/doc/mednafen/sms.php
