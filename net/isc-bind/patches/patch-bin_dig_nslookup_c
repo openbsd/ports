@@ -1,4 +1,4 @@
-$OpenBSD: patch-bin_dig_nslookup_c,v 1.18 2021/07/22 12:28:53 sthen Exp $
+$OpenBSD: patch-bin_dig_nslookup_c,v 1.19 2022/01/19 17:46:00 sthen Exp $
 
 Patch to use pledge on OpenBSD.
 locale is needed for idn2.
@@ -6,7 +6,7 @@ locale is needed for idn2.
 Index: bin/dig/nslookup.c
 --- bin/dig/nslookup.c.orig
 +++ bin/dig/nslookup.c
-@@ -1009,6 +1009,15 @@ main(int argc, char **argv) {
+@@ -1011,6 +1011,15 @@ main(int argc, char **argv) {
  	result = isc_app_start();
  	check_result(result, "isc_app_start");
  
@@ -22,7 +22,7 @@ Index: bin/dig/nslookup.c
  	setup_libs();
  	progname = argv[0];
  
-@@ -1019,6 +1028,21 @@ main(int argc, char **argv) {
+@@ -1021,6 +1030,21 @@ main(int argc, char **argv) {
  	} else if (keysecret[0] != 0) {
  		setup_text_key();
  	}

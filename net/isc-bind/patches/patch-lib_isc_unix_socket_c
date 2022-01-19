@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_isc_unix_socket_c,v 1.32 2021/10/27 20:57:06 sthen Exp $
+$OpenBSD: patch-lib_isc_unix_socket_c,v 1.33 2022/01/19 17:46:00 sthen Exp $
 
 Disable some socket options which pledge doesn't allow.
 
 Index: lib/isc/unix/socket.c
 --- lib/isc/unix/socket.c.orig
 +++ lib/isc/unix/socket.c
-@@ -2104,10 +2104,12 @@ set_ip_disable_pmtud(isc_socket_t *sock) {
+@@ -2106,10 +2106,12 @@ set_ip_disable_pmtud(isc_socket_t *sock) {
  	 * Disable Path MTU Discover on IP packets
  	 */
  	if (sock->pf == AF_INET6) {
@@ -18,7 +18,7 @@ Index: lib/isc/unix/socket.c
  #if defined(IPV6_MTU_DISCOVER) && defined(IP_PMTUDISC_OMIT)
  		(void)setsockopt(sock->fd, IPPROTO_IPV6, IPV6_MTU_DISCOVER,
  				 &(int){ IP_PMTUDISC_OMIT }, sizeof(int));
-@@ -2384,6 +2386,7 @@ again:
+@@ -2386,6 +2388,7 @@ again:
  		}
  #endif /* if defined(SO_SNDBUF) */
  	}
@@ -26,7 +26,7 @@ Index: lib/isc/unix/socket.c
  #ifdef IPV6_RECVTCLASS
  	if ((sock->pf == AF_INET6) &&
  	    (setsockopt(sock->fd, IPPROTO_IPV6, IPV6_RECVTCLASS, (void *)&on,
-@@ -2408,6 +2411,7 @@ again:
+@@ -2410,6 +2413,7 @@ again:
  				 sock->fd, strbuf);
  	}
  #endif /* ifdef IP_RECVTOS */
@@ -34,7 +34,7 @@ Index: lib/isc/unix/socket.c
  #endif /* defined(USE_CMSG) || defined(SET_RCVBUF) || defined(SET_SNDBUF) */
  
  	set_ip_disable_pmtud(sock);
-@@ -5090,6 +5094,13 @@ isc_socket_gettype(isc_socket_t *sock) {
+@@ -5092,6 +5096,13 @@ isc_socket_gettype(isc_socket_t *sock) {
  
  void
  isc_socket_ipv6only(isc_socket_t *sock, bool yes) {

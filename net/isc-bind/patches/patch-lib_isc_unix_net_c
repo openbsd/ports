@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_isc_unix_net_c,v 1.12 2021/07/22 12:28:53 sthen Exp $
+$OpenBSD: patch-lib_isc_unix_net_c,v 1.13 2022/01/19 17:46:00 sthen Exp $
 
 Patch to use pledge on OpenBSD.
 
 Index: lib/isc/unix/net.c
 --- lib/isc/unix/net.c.orig
 +++ lib/isc/unix/net.c
-@@ -221,6 +221,13 @@ isc_net_probeunix(void) {
+@@ -223,6 +223,13 @@ isc_net_probeunix(void) {
  
  static void
  try_ipv6only(void) {
@@ -19,7 +19,7 @@ Index: lib/isc/unix/net.c
  #ifdef IPV6_V6ONLY
  	int s, on;
  	char strbuf[ISC_STRERRORSIZE];
-@@ -671,7 +678,7 @@ try_dscp_v6(void) {
+@@ -673,7 +680,7 @@ try_dscp_v6(void) {
  		dscp_result |= ISC_NET_DSCPSETV6;
  	}
  

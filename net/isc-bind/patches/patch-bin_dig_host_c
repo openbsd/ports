@@ -1,4 +1,4 @@
-$OpenBSD: patch-bin_dig_host_c,v 1.17 2021/07/22 12:28:53 sthen Exp $
+$OpenBSD: patch-bin_dig_host_c,v 1.18 2022/01/19 17:46:00 sthen Exp $
 
 Patch to use pledge on OpenBSD.
 locale is needed for idn2.
@@ -6,7 +6,7 @@ locale is needed for idn2.
 Index: bin/dig/host.c
 --- bin/dig/host.c.orig
 +++ bin/dig/host.c
-@@ -16,6 +16,7 @@
+@@ -18,6 +18,7 @@
  #include <locale.h>
  #include <stdbool.h>
  #include <stdlib.h>
@@ -14,7 +14,7 @@ Index: bin/dig/host.c
  
  #include <isc/app.h>
  #include <isc/commandline.h>
-@@ -901,6 +902,15 @@ main(int argc, char **argv) {
+@@ -903,6 +904,15 @@ main(int argc, char **argv) {
  	dighost_trying = trying;
  	dighost_shutdown = host_shutdown;
  
@@ -30,7 +30,7 @@ Index: bin/dig/host.c
  	debug("main()");
  	progname = argv[0];
  	pre_parse_args(argc, argv);
-@@ -914,6 +924,21 @@ main(int argc, char **argv) {
+@@ -916,6 +926,21 @@ main(int argc, char **argv) {
  	} else if (keysecret[0] != 0) {
  		setup_text_key();
  	}

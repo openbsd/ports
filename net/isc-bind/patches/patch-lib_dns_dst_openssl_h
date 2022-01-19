@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_dns_dst_openssl_h,v 1.5 2020/03/19 17:07:20 sthen Exp $
+$OpenBSD: patch-lib_dns_dst_openssl_h,v 1.6 2022/01/19 17:46:00 sthen Exp $
 
 Index: lib/dns/dst_openssl.h
 --- lib/dns/dst_openssl.h.orig
 +++ lib/dns/dst_openssl.h
-@@ -23,7 +23,7 @@
+@@ -25,7 +25,7 @@
  #include <isc/log.h>
  #include <isc/result.h>
  

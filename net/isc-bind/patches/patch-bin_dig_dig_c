@@ -1,4 +1,4 @@
-$OpenBSD: patch-bin_dig_dig_c,v 1.24 2021/07/22 12:28:53 sthen Exp $
+$OpenBSD: patch-bin_dig_dig_c,v 1.25 2022/01/19 17:46:00 sthen Exp $
 
 Patch to use pledge on OpenBSD.
 locale is needed for idn2.
@@ -6,7 +6,7 @@ locale is needed for idn2.
 Index: bin/dig/dig.c
 --- bin/dig/dig.c.orig
 +++ bin/dig/dig.c
-@@ -16,6 +16,7 @@
+@@ -18,6 +18,7 @@
  #include <stdbool.h>
  #include <stdlib.h>
  #include <time.h>
@@ -14,7 +14,7 @@ Index: bin/dig/dig.c
  
  #include <isc/app.h>
  #include <isc/netaddr.h>
-@@ -2639,6 +2640,15 @@ dig_setup(int argc, char **argv) {
+@@ -2641,6 +2642,15 @@ dig_setup(int argc, char **argv) {
  	ISC_LIST_INIT(server_list);
  	ISC_LIST_INIT(search_list);
  
@@ -30,7 +30,7 @@ Index: bin/dig/dig.c
  	debug("dig_setup()");
  
  	/* setup dighost callbacks */
-@@ -2670,6 +2680,21 @@ dig_query_setup(bool is_batchfile, bool config_only, i
+@@ -2672,6 +2682,21 @@ dig_query_setup(bool is_batchfile, bool config_only, i
  	} else if (keysecret[0] != 0) {
  		setup_text_key();
  	}

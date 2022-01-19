@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.150 2021/12/16 00:18:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.151 2022/01/19 17:46:00 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
 # Second digits: odd numbers devel, even numbers stable,
 # ESV branched occasionally.  9.16.x is ESV.
-V=		9.16.24
+V=		9.16.25
 SUBST_VARS+=	V
 PORTROACH=	limitw:1,even
 EXTRACT_SUFX=	.tar.xz
