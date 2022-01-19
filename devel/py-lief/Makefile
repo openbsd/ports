@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/02 00:00:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2022/01/19 17:14:36 kmos Exp $
 
 COMMENT =	library to instrument executable formats
 
@@ -18,6 +18,9 @@ MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 EXTRACT_SUFX =		.zip
+
+# C++
+COMPILER =		base-clang ports-gcc
 
 WANTLIB += ${COMPILER_LIBCXX} m
 
