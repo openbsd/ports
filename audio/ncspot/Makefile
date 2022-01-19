@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2022/01/18 18:43:37 tb Exp $
+# $OpenBSD: Makefile,v 1.25 2022/01/19 13:14:03 kn Exp $
 
 BROKEN-sparc64 =        ring-0.16.20 does not build on sparc64
 
@@ -8,7 +8,7 @@ COMMENT =		ncurses Spotify client
 
 GH_ACCOUNT =		hrkfdn
 GH_PROJECT =		ncspot
-GH_TAGNAME =		v0.9.4
+GH_TAGNAME =		v0.9.5
 
 CATEGORIES =		audio
 
