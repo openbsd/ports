@@ -1,0 +1,47 @@
+$OpenBSD: patch-configure_ac,v 1.1 2022/01/19 08:08:29 sthen Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -114,6 +114,11 @@ AC_CHECK_LIB(gd,gdImagePng,[
+    GLIBS="-lgd -lpng -lz"
+         ],:,[-lgd -lpng -lz ${MATHLIBS}])
+ 
++AC_CHECK_LIB(gd,gdImageStringTTF,[
++   GDFORM_EXT=png
++   GLIBS="-lgd -lpng -lz -ljpeg"
++        ],:,[-lgd -lpng -lz -ljpeg ${MATHLIBS}])
++
+ AC_CHECK_LIB(gd,gdImagePng_jpg,[
+    GDFORM_EXT=png
+    GLIBS="-lgd -lpng -lz -ljpeg"
+@@ -194,29 +199,3 @@ AC_SUBST(CFLAGS)
+ AC_CONFIG_HEADERS(config.h)
+ AC_CONFIG_FILES([Makefile])
+ AC_OUTPUT
+-
+-
+-echo $ECHO_N "ordering CD from http://tobi.oetiker.ch/wish $ECHO_C" 1>&6
+-sleep 1
+-echo $ECHO_N ".$ECHO_C" 1>&6
+-sleep 1
+-echo $ECHO_N ".$ECHO_C" 1>&6
+-sleep 1
+-echo $ECHO_N ".$ECHO_C" 1>&6
+-sleep 1
+-echo $ECHO_N ".$ECHO_C" 1>&6
+-sleep 1
+-AC_MSG_RESULT([ just kidding ;-)])
+-sleep 2
+-echo
+-echo "----------------------------------------------------------------"
+-echo "Config is DONE!"
+-echo
+-echo "Type 'make' to compile the software"
+-echo 
+-echo "       ... that wishlist mentioned above does really exist. So if"
+-echo "you feel like showing your appreciation for MRTG, this is the"
+-echo "place to go. I just love CDs and DVDs"
+-echo 
+-echo "                            -- Tobi Oetiker <tobi@oetiker.ch>"
+-echo "----------------------------------------------------------------"

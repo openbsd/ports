@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2021/03/08 16:58:41 afresh1 Exp $
+@comment $OpenBSD: PLIST,v 1.31 2022/01/19 08:08:29 sthen Exp $
 @newgroup _mrtg:578
 @newuser _mrtg:578:578:daemon:MRTG account:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/mrtg
@@ -34,6 +34,7 @@ libdata/perl5/site_perl/locales_mrtg.pm
 @man man/man1/mrtg-webserver.1
 @man man/man1/mrtg.1
 @man man/man1/mrtglib.1
+@man man/man1/rateup.1
 @man man/man5/mrtg.cfg.5
 share/examples/mrtg/
 share/examples/mrtg/mrtg.cfg
