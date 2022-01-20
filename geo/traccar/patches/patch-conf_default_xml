@@ -1,18 +1,22 @@
-$OpenBSD: patch-conf_default_xml,v 1.7 2021/06/05 18:35:51 sthen Exp $
+$OpenBSD: patch-conf_default_xml,v 1.8 2022/01/20 09:52:20 sthen Exp $
+
+seems that database.changelog requires a relative path
 
 Index: conf/default.xml
 --- conf/default.xml.orig
 +++ conf/default.xml
-@@ -11,13 +11,14 @@
+@@ -11,7 +11,8 @@
      -->
  
      <entry key='web.port'>8082</entry>
 -    <entry key='web.path'>./web</entry>
 +    <entry key='web.address'>127.0.0.1</entry>
 +    <entry key='web.path'>${LOCALBASE}/share/traccar/web</entry>
+     <entry key='web.persistSession'>false</entry>
  
-     <entry key='geocoder.enable'>false</entry>
-     <entry key='geocoder.type'>google</entry>
+     <entry key='geocoder.enable'>true</entry>
+@@ -20,7 +21,7 @@
+     <entry key='geocoder.key'>pk.689d849289c8c63708068b2ff1f63b2d</entry>
  
      <entry key='logger.level'>info</entry>
 -    <entry key='logger.file'>./logs/tracker-server.log</entry>
@@ -20,7 +24,7 @@ Index: conf/default.xml
      <entry key='logger.rotate'>true</entry>
  
      <entry key='filter.enable'>true</entry>
-@@ -27,17 +28,16 @@
+@@ -30,17 +31,16 @@
      <entry key='processing.computedAttributes.enable'>true</entry>
      <entry key='processing.engineHours.enable'>true</entry>
  
