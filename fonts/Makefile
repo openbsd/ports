@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2021/11/02 21:04:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.78 2022/01/20 00:55:43 kevlo Exp $
 
      SUBDIR =
      SUBDIR += abyssinica
@@ -110,6 +110,7 @@
      SUBDIR += vollkorn
      SUBDIR += work-sans
      SUBDIR += zh-arphicttf
+     SUBDIR += zh-iansui
      SUBDIR += zh-kcfonts
      SUBDIR += zh-taipeifonts
      SUBDIR += zh-wqy-bitmapfont
