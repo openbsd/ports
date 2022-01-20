@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2022/01/20 17:15:11 abieber Exp $
+@bin bin/gosec
+@bin bin/gosecutil
+@bin bin/tlsconfig

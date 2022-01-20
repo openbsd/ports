@@ -1,0 +1,1 @@
+Inspects source code for security problems by scanning the Go AST.
