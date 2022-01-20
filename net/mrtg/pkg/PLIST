@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2022/01/19 08:08:29 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.32 2022/01/20 09:18:49 sthen Exp $
 @newgroup _mrtg:578
 @newuser _mrtg:578:578:daemon:MRTG account:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/mrtg
@@ -7,15 +7,13 @@ bin/indexmaker
 bin/mrtg
 bin/mrtg-traffic-sum
 @bin bin/rateup
-libdata/perl5/site_perl/MRTG_lib.pm
-libdata/perl5/site_perl/Net_SNMP_util.pm
-@comment core perl or p5-Pod-Parser
-@comment libdata/perl5/site_perl/Pod/InputObjects.pm
-@comment libdata/perl5/site_perl/Pod/Parser.pm
-@comment libdata/perl5/site_perl/Pod/PlainText.pm
-@comment libdata/perl5/site_perl/Pod/Select.pm
-@comment libdata/perl5/site_perl/Pod/Usage.pm
-libdata/perl5/site_perl/locales_mrtg.pm
+lib/mrtg2/
+@comment lib/mrtg2/BER.pm
+lib/mrtg2/MRTG_lib.pm
+lib/mrtg2/Net_SNMP_util.pm
+@comment lib/mrtg2/SNMP_Session.pm
+@comment lib/mrtg2/SNMP_util.pm
+lib/mrtg2/locales_mrtg.pm
 @man man/man1/cfgmaker.1
 @man man/man1/indexmaker.1
 @man man/man1/mrtg-contrib.1
@@ -33,8 +31,8 @@ libdata/perl5/site_perl/locales_mrtg.pm
 @man man/man1/mrtg-unix-guide.1
 @man man/man1/mrtg-webserver.1
 @man man/man1/mrtg.1
-@man man/man1/mrtglib.1
 @man man/man1/rateup.1
+@man man/man3/mrtglib.3
 @man man/man5/mrtg.cfg.5
 share/examples/mrtg/
 share/examples/mrtg/mrtg.cfg

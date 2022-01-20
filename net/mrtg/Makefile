@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.96 2022/01/19 08:08:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.97 2022/01/20 09:18:49 sthen Exp $
 
 COMMENT=	multi-router traffic grapher
 
-DISTNAME=	mrtg-2.17.9
+DISTNAME=	mrtg-2.17.10
 
 CATEGORIES=	net
 
@@ -16,7 +16,6 @@ WANTLIB=	c jpeg m png z gd>=18
 MASTER_SITES=	${HOMEPAGE}pub/ \
 		${HOMEPAGE}pub/old/
 
-BUILD_DEPENDS=	textproc/groff
 RUN_DEPENDS=	net/p5-IO-Socket-INET6 \
 		net/p5-Net-SNMP \
 		net/p5-SNMP_Session \
@@ -35,28 +34,24 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 
 NO_TEST=	Yes
 
-# SUBST_CMD mangles the file
-pre-configure:
-	sed -i 's,/etc/mrtg,${SYSCONFDIR}/mrtg,g' ${WRKSRC}/bin/mrtg
+post-install:
+	# use same location as old versions, to save churn in case anyone
+	# is pointing directly at them
+	mv ${PREFIX}/share/mrtg2/icons ${PREFIX}/share/mrtg
+	${INSTALL_DATA} ${WRKSRC}/images/favicon.ico ${PREFIX}/share/mrtg
+	rmdir ${PREFIX}/share/mrtg2
 
-post-build:
-	cd ${WRKSRC}; ${MAKE_PROGRAM} doc
+	# docs are mostly just formatted copies of the manpages
+	rm -r ${PREFIX}/share/doc/mrtg2 ${PREFIX}/lib/mrtg2/Pod
 
-do-install:
+	# courtesy symlink for ease of finding
+	ln -s ../man1/mrtg-reference.1 ${PREFIX}/man/man5/mrtg.cfg.5
+
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mrtg
-	${INSTALL_DATA_DIR} ${PREFIX}/libdata/perl5/site_perl/Pod
-	${INSTALL_DATA_DIR} ${PREFIX}/share/mrtg
-	${INSTALL_DATA} ${WRKSRC}/images/* ${PREFIX}/share/mrtg
-	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/rateup ${PREFIX}/bin
-	cd ${WRKSRC}/bin; ${INSTALL_SCRIPT} cfgmaker indexmaker mrtg \
-	    mrtg-traffic-sum ${PREFIX}/bin
-	cd ${WRKSRC}/lib/mrtg2; ${INSTALL_DATA} MRTG_lib.pm Net_SNMP_util.pm \
-	    locales_mrtg.pm ${PREFIX}/libdata/perl5/site_perl/
-	cd ${WRKSRC}/lib/mrtg2/Pod; ${INSTALL_DATA} *.pm \
-	    ${PREFIX}/libdata/perl5/site_perl/Pod
 	${INSTALL_DATA} ${WRKSRC}/contrib/mrtgmk/cfg/mrtg.cfg \
 	    ${PREFIX}/share/examples/mrtg
-	ln -s ../man1/mrtg-reference.1 ${PREFIX}/man/man5/mrtg.cfg.5
+
+	# we use p5-SNMP_Session from the separate port
+	cd ${PREFIX}/lib/mrtg2; rm BER.pm SNMP_Session.pm SNMP_util.pm
 
 .include <bsd.port.mk>
