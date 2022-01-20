@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2019/07/12 20:47:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2022/01/20 16:13:11 ajacoutot Exp $
 
 COMMENT=	scanner frontend for SANE
 
 DISTNAME=	xsane-0.999
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	graphics
 
@@ -11,7 +11,6 @@ MASTER_SITES=	http://www.xsane.org/download/
 
 HOMEPAGE=	http://www.xsane.org/
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # GPLv2
