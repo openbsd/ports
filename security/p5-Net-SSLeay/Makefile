@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2022/01/19 16:17:43 bluhm Exp $
+# $OpenBSD: Makefile,v 1.10 2022/01/20 19:27:09 bluhm Exp $
 
 COMMENT =	Perl bindings for OpenSSL and LibreSSL
 
 DISTNAME =	Net-SSLeay-1.92
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	security
 

@@ -1,40 +1,38 @@
-$OpenBSD: patch-SSLeay_xs,v 1.8 2022/01/19 16:17:43 bluhm Exp $
+$OpenBSD: patch-SSLeay_xs,v 1.9 2022/01/20 19:27:09 bluhm Exp $
 
-Fix build with opaque RSA in LibreSSL 3.5
-
-and
-
+https://github.com/radiator-software/p5-net-ssleay/commit/3dd2f101b8e15a59f66e22525b8d001d5ad6ce7d
 https://github.com/radiator-software/p5-net-ssleay/commit/4a886e06c1cac80e7fb3f8d52146a27ce557ba8c
-
-and
-
-https://github.com/radiator-software/p5-net-ssleay/pull/362
+https://github.com/radiator-software/p5-net-ssleay/commit/88c3bbc45399c8ef2c8879aada8bfa91d8bc6c10
 
 Index: SSLeay.xs
 --- SSLeay.xs.orig
 +++ SSLeay.xs
-@@ -6283,17 +6283,24 @@ RSA_generate_key(bits,e,perl_cb=&PL_sv_undef,perl_data
+@@ -1914,7 +1914,7 @@ X509 * find_issuer(X509 *cert,X509_STORE *store, STACK
+     return issuer;
+ }
+ 
+-SV* bn2sv(BIGNUM* p_bn)
++SV* bn2sv(const BIGNUM* p_bn)
+ {
+     return p_bn != NULL
+         ? sv_2mortal(newSViv((IV) BN_dup(p_bn)))
+@@ -6283,9 +6283,29 @@ RSA_generate_key(bits,e,perl_cb=&PL_sv_undef,perl_data
  void
  RSA_get_key_parameters(rsa)
  	    RSA * rsa
 +PREINIT:
-+    BIGNUM *n, *e, *d;
-+    BIGNUM *p, *q;
-+    BIGNUM *dmp1, *dmq1, *iqmp;
++#if defined(LIBRESSL_VERSION_NUMBER) && (LIBRESSL_VERSION_NUMBER >= 0x3050000fL)
++    const BIGNUM *n, *e, *d;
++    const BIGNUM *p, *q;
++    const BIGNUM *dmp1, *dmq1, *iqmp;
++#endif
  PPCODE:
  {
-+    RSA_get0_key(rsa, (const BIGNUM **)&n, (const BIGNUM **)&e, (const BIGNUM **)&d);
-+    RSA_get0_factors(rsa, (const BIGNUM **)&p, (const BIGNUM **)&q);
-+    RSA_get0_crt_params(rsa, (const BIGNUM **)&dmp1, (const BIGNUM **)&dmq1, (const BIGNUM **)&iqmp);
++#if defined(LIBRESSL_VERSION_NUMBER) && (LIBRESSL_VERSION_NUMBER >= 0x3050000fL)
++    RSA_get0_key(rsa, &n, &e, &d);
++    RSA_get0_factors(rsa, &p, &q);
++    RSA_get0_crt_params(rsa, &dmp1, &dmq1, &iqmp);
      /* Caution: returned list consists of SV pointers to BIGNUMs, which would need to be blessed as Crypt::OpenSSL::Bignum for further use */
--    XPUSHs(bn2sv(rsa->n));
--    XPUSHs(bn2sv(rsa->e));
--    XPUSHs(bn2sv(rsa->d));
--    XPUSHs(bn2sv(rsa->p));
--    XPUSHs(bn2sv(rsa->q));
--    XPUSHs(bn2sv(rsa->dmp1));
--    XPUSHs(bn2sv(rsa->dmq1));
--    XPUSHs(bn2sv(rsa->iqmp));
 +    XPUSHs(bn2sv(n));
 +    XPUSHs(bn2sv(e));
 +    XPUSHs(bn2sv(d));
@@ -43,10 +41,24 @@ Index: SSLeay.xs
 +    XPUSHs(bn2sv(dmp1));
 +    XPUSHs(bn2sv(dmq1));
 +    XPUSHs(bn2sv(iqmp));
++#else
++    /* Caution: returned list consists of SV pointers to BIGNUMs, which would need to be blessed as Crypt::OpenSSL::Bignum for further use */
+     XPUSHs(bn2sv(rsa->n));
+     XPUSHs(bn2sv(rsa->e));
+     XPUSHs(bn2sv(rsa->d));
+@@ -6294,9 +6314,10 @@ PPCODE:
+     XPUSHs(bn2sv(rsa->dmp1));
+     XPUSHs(bn2sv(rsa->dmq1));
+     XPUSHs(bn2sv(rsa->iqmp));
++#endif
  }
  
- #endif
-@@ -7197,7 +7204,7 @@ ASN1_OBJECT *
+-#endif
++#endif /* OpenSSL < 1.1 or LibreSSL */
+ 
+ void
+ RSA_free(r)
+@@ -7197,7 +7218,7 @@ ASN1_OBJECT *
  P_X509_get_signature_alg(x)
          X509 * x
      CODE:
@@ -55,7 +67,7 @@ Index: SSLeay.xs
          RETVAL = (X509_get0_tbs_sigalg(x)->algorithm);
  #else
          RETVAL = (x->cert_info->signature->algorithm);
-@@ -7690,7 +7697,7 @@ OCSP_response_results(rsp,...)
+@@ -7690,7 +7711,7 @@ OCSP_response_results(rsp,...)
  		if (!idsv) {
  		    /* getall: create new SV with OCSP_CERTID */
  		    unsigned char *pi,*pc;
@@ -64,7 +76,7 @@ Index: SSLeay.xs
  		    int len = i2d_OCSP_CERTID((OCSP_CERTID *)OCSP_SINGLERESP_get0_id(sir),NULL);
  #else
  		    int len = i2d_OCSP_CERTID(sir->certId,NULL);
-@@ -7699,7 +7706,7 @@ OCSP_response_results(rsp,...)
+@@ -7699,7 +7720,7 @@ OCSP_response_results(rsp,...)
  		    Newx(pc,len,unsigned char);
  		    if (!pc) croak("out of memory");
  		    pi = pc;
