@@ -1,27 +1,16 @@
-$OpenBSD: patch-src_mumble_Settings_cpp,v 1.3 2020/02/25 05:14:52 rsadowski Exp $
+$OpenBSD: patch-src_mumble_Settings_cpp,v 1.4 2022/01/20 18:03:18 kn Exp $
 
-Disable Text-To-Speech
-
-Disable submitting anonymous statistics
+Disable submitting anonymous statistics by default
 
 Index: src/mumble/Settings.cpp
 --- src/mumble/Settings.cpp.orig
 +++ src/mumble/Settings.cpp
-@@ -222,7 +222,7 @@ Settings::Settings() {
- 	atTransmit = VAD;
- 	bTransmitPosition = false;
- 	bMute = bDeaf = false;
--	bTTS = true;
-+	bTTS = false;
- 	bTTSMessageReadBack = false;
- 	iTTSVolume = 75;
- 	iTTSThreshold = 250;
-@@ -298,7 +298,7 @@ Settings::Settings() {
+@@ -393,7 +393,7 @@ Settings::Settings() {
  	bHideInTray = !isUnityDesktop && QSystemTrayIcon::isSystemTrayAvailable();
  #endif
- 	bStateInTray = true;
--	bUsage = true;
-+	bUsage = false;
- 	bShowUserCount = false;
- 	bChatBarUseSelection = false;
- 	bFilterHidesEmptyChannels = true;
+ 	bStateInTray              = true;
+-	bUsage                    = true;
++	bUsage                    = false;
+ 	bShowUserCount            = false;
+ 	bShowVolumeAdjustments    = true;
+ 	bShowNicknamesOnly        = false;

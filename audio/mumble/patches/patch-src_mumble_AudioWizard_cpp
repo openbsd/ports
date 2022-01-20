@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_mumble_AudioWizard_cpp,v 1.5 2020/03/13 23:31:22 jca Exp $
+$OpenBSD: patch-src_mumble_AudioWizard_cpp,v 1.6 2022/01/20 18:03:18 kn Exp $
 
 There's a convoluted threading issue: in PAAudio.cpp, around line 338,
 it will get caught in an infinite loop. It relies on the PortAudioInput
@@ -13,10 +13,10 @@ https://github.com/mumble-voip/mumble/issues/1138
 Index: src/mumble/AudioWizard.cpp
 --- src/mumble/AudioWizard.cpp.orig
 +++ src/mumble/AudioWizard.cpp
-@@ -292,7 +292,8 @@ void AudioWizard::on_qcbOutputDevice_activated(int) {
+@@ -290,7 +290,8 @@ void AudioWizard::on_qcbOutputDevice_activated(int) {
  void AudioWizard::on_qsOutputDelay_valueChanged(int v) {
- 	qlOutputDelay->setText(tr("%1 ms").arg(v*10));
- 	g.s.iOutputDelay = v;
+ 	qlOutputDelay->setText(tr("%1 ms").arg(v * 10));
+ 	Global::get().s.iOutputDelay = v;
 -	restartAudio();
 +	if (! bInit)
 +		restartAudio();
