@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_config_json,v 1.21 2022/01/08 10:18:59 pvk Exp $
+$OpenBSD: patch-config_config_json,v 1.22 2022/01/20 22:11:37 pvk Exp $
 
 Index: config/config.json
 --- config/config.json.orig
@@ -21,7 +21,7 @@ Index: config/config.json
      "EnableAWSMetering": false,
      "SplitKey": "",
      "FeatureFlagSyncIntervalSeconds": 30,
-@@ -141,14 +141,14 @@
+@@ -140,14 +140,14 @@
      "ReplicaLagSettings": []
    },
    "LogSettings": {
@@ -38,7 +38,7 @@ Index: config/config.json
      "EnableWebhookDebugging": true,
      "EnableDiagnostics": true,
      "EnableSentry": true,
-@@ -165,14 +165,14 @@
+@@ -164,14 +164,14 @@
      "AdvancedLoggingConfig": ""
    },
    "NotificationLogSettings": {
@@ -55,7 +55,7 @@ Index: config/config.json
      "AdvancedLoggingConfig": ""
    },
    "PasswordSettings": {
-@@ -189,7 +189,7 @@
+@@ -188,7 +188,7 @@
      "MaxFileSize": 104857600,
      "MaxImageResolution": 33177600,
      "DriverName": "local",
@@ -64,7 +64,7 @@ Index: config/config.json
      "EnablePublicLink": false,
      "ExtractContent": true,
      "ArchiveRecursion": false,
-@@ -220,11 +220,11 @@
+@@ -219,11 +219,11 @@
      "EnableSMTPAuth": false,
      "SMTPUsername": "",
      "SMTPPassword": "",
@@ -79,7 +79,7 @@ Index: config/config.json
      "PushNotificationServer": "https://push-test.mattermost.com",
      "PushNotificationContents": "full",
      "PushNotificationBuffer": 1000,
-@@ -260,7 +260,7 @@
+@@ -259,7 +259,7 @@
      "SupportEmail": "",
      "CustomTermsOfServiceEnabled": false,
      "CustomTermsOfServiceReAcceptancePeriod": 365,
@@ -88,7 +88,7 @@ Index: config/config.json
    },
    "AnnouncementSettings": {
      "EnableBanner": false,
-@@ -366,7 +366,7 @@
+@@ -365,7 +365,7 @@
    },
    "ComplianceSettings": {
      "Enable": false,
@@ -97,7 +97,7 @@ Index: config/config.json
      "EnableDaily": false,
      "BatchSize": 30000
    },
-@@ -520,8 +520,8 @@
+@@ -519,8 +519,8 @@
      "EnableUploads": false,
      "AllowInsecureDownloadURL": false,
      "EnableHealthCheck": true,
