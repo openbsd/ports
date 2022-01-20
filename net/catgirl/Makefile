@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2021/12/12 23:32:02 kn Exp $
+# $OpenBSD: Makefile,v 1.14 2022/01/20 09:47:58 kn Exp $
 
 COMMENT =	curses TLS-only IRC client
-DISTNAME =	catgirl-2.0
+DISTNAME =	catgirl-2.0a
 
 CATEGORIES =	net
 
-MAINTAINER =	Solene Rapenne <solene@perso.pw> \
+MAINTAINER =	Solene Rapenne <solene@perso.pw>, \
 		Klemens Nanni <kn@openbsd.org>
 
 HOMEPAGE =	https://git.causal.agency/catgirl
