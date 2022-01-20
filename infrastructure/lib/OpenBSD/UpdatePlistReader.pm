@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: UpdatePlistReader.pm,v 1.1 2022/01/19 14:38:48 espie Exp $
+# $OpenBSD: UpdatePlistReader.pm,v 1.2 2022/01/20 08:18:47 sthen Exp $
 # Copyright (c) 2018-2022 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -17,7 +17,7 @@
 use strict;
 use warnings;
 
-use OpenBSD::CommonPlist;
+use OpenBSD::BasePlistReader;
 use OpenBSD::ReverseSubst;
 
 # UpdatePlistReader is "just" a specialized version of PkgCreate algorithm
