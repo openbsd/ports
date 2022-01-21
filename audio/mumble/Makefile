@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2022/01/21 00:41:29 kn Exp $
+# $OpenBSD: Makefile,v 1.60 2022/01/21 20:49:17 kn Exp $
 
 COMMENT-main =		low-latency voice chat client
 COMMENT-server =	low-latency voice chat server
@@ -15,17 +15,14 @@ HOMEPAGE =		https://www.mumble.info/
 MASTER_SITES =		https://github.com/mumble-voip/mumble/releases/download/v${VERSION}/
 
 MASTER_SITES0 =		https://github.com/mumble-voip/mumble/commit/
-# all merged into master but not 1.4.x yet
+# all merged into master but not released yet
 PATCHFILES =		mumble-kvm_getprocs-ALL_arg-{}42ad5ed.patch:0 \
 			mumble-kvm_getprocs-pass-elemsize-{}ccbacbf.patch:0 \
 			mumble-struct_procinfo-member_prefix-{}a707213.patch:0 \
 			mumble-audiowizard-fix_Werror-{}0c769d8.patch:0 \
-			mumble-use-system-rnnoise-{}d45318d.patch:0
+			mumble-use-system-rnnoise-{}d45318d.patch:0 \
+			mumble-enable-xinput2-{}904bae1.patch:0
 PATCH_DIST_STRIP =	-p1
-
-# pending "BUILD(client): Enable XInput2 support on OpenBSD by default"
-# https://github.com/mumble-voip/mumble/pull/5487
-CONFIGURE_ARGS +=	-Dxinput2=ON
 
 # BSD3
 PERMIT_PACKAGE =	Yes
