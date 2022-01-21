@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.37 2021/06/05 21:28:07 fcambus Exp $
+# $OpenBSD: Makefile,v 1.38 2022/01/21 20:59:25 sthen Exp $
 
 COMMENT =	ncurses Git repository browser
 
-V =		2.5.4
+V =		2.5.5
 DISTNAME =	tig-$V
 
 CATEGORIES =	devel
@@ -12,7 +12,7 @@ HOMEPAGE =	https://jonas.github.io/tig/
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	c curses iconv
+WANTLIB +=	c curses iconv pcre2-8 pcre2-posix
 
 MASTER_SITES =	https://github.com/jonas/tig/releases/download/tig-$V/
 
@@ -20,7 +20,8 @@ BUILD_DEPENDS =	textproc/xmlto
 
 RUN_DEPENDS =	devel/git
 
-LIB_DEPENDS =	converters/libiconv
+LIB_DEPENDS =	converters/libiconv \
+		devel/pcre2
 
 USE_GMAKE =	Yes
 
