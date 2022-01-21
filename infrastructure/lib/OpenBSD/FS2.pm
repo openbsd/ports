@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.36 2021/11/26 16:47:30 ajacoutot Exp $
+# $OpenBSD: FS2.pm,v 1.37 2022/01/21 10:55:18 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -70,6 +70,9 @@ sub classes
 		OpenBSD::FS::File::MimeInfo
 		OpenBSD::FS::File::Icon
 		OpenBSD::FS::File::IconTheme
+		OpenBSD::FS::File::Ocaml::Cmx
+		OpenBSD::FS::File::Ocaml::Cmxa
+		OpenBSD::FS::File::Ocaml::Cmxs
 		OpenBSD::FS::File::Subinfo OpenBSD::FS::File::Info
 		OpenBSD::FS::File::Dirinfo OpenBSD::FS::File::Manpage
 		OpenBSD::FS::File::Library OpenBSD::FS::File::Plugin
@@ -97,7 +100,7 @@ sub fill_objdump
 	$data->{objdump} = $check;
 }
 
-# some files may "bleed" into parents
+# some files may "bleed" into other objects
 sub tweak_other_paths
 {
 }
@@ -544,6 +547,84 @@ sub tweak_other_paths
 	}
 }
 
+package OpenBSD::FS::File::Ocaml::Cmx;
+our @ISA = qw(OpenBSD::FS::File);
+
+sub recognize
+{
+	my ($class, $filename, $fs, $data) = @_;
+	return $filename =~ m/\.cmx$/;
+}
+
+sub element_class
+{
+	"OpenBSD::PackingElement::File::Ocaml::Cmx"
+}
+
+sub tweak_other_paths
+{
+	my ($self, $fs, $files) = @_;
+	my $o = $self->path;
+	$o =~ s/\.cmx$/.o/;
+	if (exists $files->{$o}) {
+		bless $files->{$o}, "OpenBSD::FS::File::Ocaml::o";
+	}
+}
+
+package OpenBSD::FS::File::Ocaml::Cmxa;
+our @ISA = qw(OpenBSD::FS::File);
+
+sub recognize
+{
+	my ($class, $filename, $fs, $data) = @_;
+	return $filename =~ m/\.cmxa$/;
+}
+
+sub element_class
+{
+	"OpenBSD::PackingElement::File::Ocaml::Cmxa"
+}
+
+sub tweak_other_paths
+{
+	my ($self, $fs, $files) = @_;
+	my $a = $self->path;
+	$a =~ s/\.cmxa$/.a/;
+	if (exists $files->{$a}) {
+		bless $files->{$a}, "OpenBSD::FS::File::Ocaml::a";
+	}
+}
+
+package OpenBSD::FS::File::Ocaml::Cmxs;
+our @ISA = qw(OpenBSD::FS::File);
+
+sub recognize
+{
+	my ($class, $filename, $fs, $data) = @_;
+	return $filename =~ m/\.cmxs$/;
+}
+
+sub element_class
+{
+	"OpenBSD::PackingElement::File::Ocaml::Cmxs"
+}
+
+package OpenBSD::FS::File::Ocaml::a;
+our @ISA = qw(OpenBSD::FS::File);
+
+sub element_class
+{
+	"OpenBSD::PackingElement::File::Ocaml::a"
+}
+
+package OpenBSD::FS::File::Ocaml::o;
+our @ISA = qw(OpenBSD::FS::File);
+
+sub element_class
+{
+	"OpenBSD::PackingElement::File::Ocaml::o"
+}
+
 package OpenBSD::FS2;
 our @ISA = qw(OpenBSD::BaseFS);
 
@@ -674,8 +755,10 @@ sub scan
 			}
 			my $file = $self->create($path);
 			$files->{$file->path} = $file;
-			$file->tweak_other_paths($self, $files);
 		}, $self->destdir);
+	for my $file (values %$files) {
+		$file->tweak_other_paths($self, $files);
+	}
 	$self->zap_dirs($files, '/etc/X11/app-defaults');
 	return $files;
 }
