@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.199 2022/01/19 15:06:08 espie Exp $
+# $OpenBSD: update-plist,v 1.200 2022/01/21 09:25:09 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -65,8 +65,8 @@ sub new
 	bless {name => $name, 	# the actual filename proper
 		ext => $ext, 	# extension like -new since update-plist
 				# creates new files for people to diff
-		items => [], 	# "normal" list of items
-		items2 => []	# secondary list of more items
+		items => [], 	# list of items for 1st pass
+		items2 => []	# actual list of items that get written
 	    }, $class;
 }
 
@@ -76,6 +76,7 @@ sub add
 	push(@{$self->{items}}, $item);
 }
 
+# this is the internal method that gets called through prepare_restate
 sub add2
 {
 	my ($self, $item, $p) = @_;
@@ -114,6 +115,7 @@ sub name
 	return $self->{name};
 }
 
+# iterating through the list for preparing
 sub next_item
 {
 	my $self = shift;
@@ -124,6 +126,7 @@ sub next_item
 	}
 }
 
+# iterating through the list for writing
 sub next_item2
 {
 	my $self = shift;
@@ -169,8 +172,11 @@ sub write_all
 {
 	my ($self, $p) = @_;
 
+	# we mimic the way pkg_create writes files
+
+	# first pass is just going to scan through the list and queue actual
+	# stuff we want to write
 	for my $i (@{$p->{base_plists}}) {
-		# we mimic the way pkg_create writes files
 		$p->{restate} = {};
 
 		my @stack = ();
@@ -256,12 +262,17 @@ sub redistribute
 	}
 }
 
-# the actual method that keeps state (@mode/@owner/@group) and does
+# the actual methods that keep state (@mode/@owner/@group) and do
 # backsubstitution and writing.
 # part of the state is the current fragment, so it should return the
 # new filename when it changes
 # Note that this is not called as a visitor, but directly by the FileTracker
 # on the lists it builds
+# The methods are split into a "restate" and a "backsubst" level so that
+# subclasses may concentrate on that part of the job
+
+
+# this is the actual writer. 
 sub write_restate
 {
 	my ($o, $file, $p) = @_;
@@ -269,6 +280,7 @@ sub write_restate
 	return undef;
 }
 
+# this just prepares data for the second pass
 sub prepare_restate
 {
 	my ($o, $file, $p) = @_;
@@ -1216,8 +1228,8 @@ sub handle_options
 		    },
 
 	};
-	$state->SUPER::handle_options('rvI:c:qV:fFC:i:j:L:s:S:X:P:w:e:E:', 
-	    '[-Ffmnrvx] [-C dir] [-c comment] [-E ext] [-e ext] [-i var]',
+	$state->SUPER::handle_options('OrvI:c:qV:fFC:i:j:L:s:S:X:P:w:e:E:', 
+	    '[-FfmnOrvx] [-C dir] [-c comment] [-E ext] [-e ext] [-i var]',
 	    '[-I ignored] [-j jobs] [-L logfile] [-P pkgdir] [-S var]',
 	    '[-s var] [-V var] [-w suffix] [-X path] -- pkg_create_args ...');
     	$state->{pkgdir} = $state->opt('P');
@@ -1228,6 +1240,7 @@ sub handle_options
 	$state->{extnew} = $state->opt('E') // ".new";
 	$state->{extorig} = $state->opt('e') // ".orig";
 	$state->{logfile} = $state->opt('L');
+	$state->{ocaml} = $state->opt('O');
 	for my $i (qw(FAKE_COOKIE PKGLOCATE_COOKIE)) {
 		$state->{$i} = $state->defines($i);
 		if (defined $state->{$i}) {
