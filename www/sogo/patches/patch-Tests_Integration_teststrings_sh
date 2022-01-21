@@ -1,9 +1,0 @@
-$OpenBSD: patch-Tests_Integration_teststrings_sh,v 1.1 2015/09/26 14:29:22 sebastia Exp $
---- Tests/Integration/teststrings.sh.orig	Fri Sep 25 11:01:30 2015
-+++ Tests/Integration/teststrings.sh	Fri Sep 25 11:01:38 2015
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/bin/sh
- 
- TOPDIR=../..
- RC=0

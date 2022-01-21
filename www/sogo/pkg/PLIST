@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.48 2021/09/14 12:21:58 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.49 2022/01/21 11:30:20 sebastia Exp $
 @newgroup _sogo:659
 @newuser _sogo:659:_sogo:daemon:SOGo user:${VARBASE}/sogo:/bin/sh
 @rcscript ${RCDIR}/sogod
@@ -2444,6 +2444,8 @@ lib/GNUstep/SOGo/WebServerResources/img/certificate.svg
 lib/GNUstep/SOGo/WebServerResources/img/felt-transp.png
 lib/GNUstep/SOGo/WebServerResources/img/ic_person_grey_24px.svg
 lib/GNUstep/SOGo/WebServerResources/img/inverse.png
+lib/GNUstep/SOGo/WebServerResources/img/mark_email_read.svg
+lib/GNUstep/SOGo/WebServerResources/img/mark_email_unread.svg
 lib/GNUstep/SOGo/WebServerResources/img/sogo-compact.svg
 lib/GNUstep/SOGo/WebServerResources/img/sogo-full.svg
 lib/GNUstep/SOGo/WebServerResources/img/sogo-logo.png
