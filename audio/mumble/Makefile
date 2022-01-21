@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2022/01/20 18:03:18 kn Exp $
+# $OpenBSD: Makefile,v 1.59 2022/01/21 00:41:29 kn Exp $
 
 COMMENT-main =		low-latency voice chat client
 COMMENT-server =	low-latency voice chat server
@@ -6,6 +6,7 @@ COMMENT-server =	low-latency voice chat server
 VERSION =		1.4.230
 DISTNAME =		mumble-${VERSION}
 PKGNAME-server =	murmur-${VERSION}
+REVISION-main =		0
 
 CATEGORIES =		audio net
 
@@ -22,6 +23,10 @@ PATCHFILES =		mumble-kvm_getprocs-ALL_arg-{}42ad5ed.patch:0 \
 			mumble-use-system-rnnoise-{}d45318d.patch:0
 PATCH_DIST_STRIP =	-p1
 
+# pending "BUILD(client): Enable XInput2 support on OpenBSD by default"
+# https://github.com/mumble-voip/mumble/pull/5487
+CONFIGURE_ARGS +=	-Dxinput2=ON
+
 # BSD3
 PERMIT_PACKAGE =	Yes
 
@@ -29,7 +34,7 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 WANTLIB-main += ${COMPILER_LIBCXX} PocoFoundation PocoUtil PocoXML
 WANTLIB-main += PocoZip Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB-main += Qt5Sql Qt5Svg Qt5Widgets Qt5Xml X11 Xext c crypto kvm
+WANTLIB-main += Qt5Sql Qt5Svg Qt5Widgets Qt5Xml X11 Xext Xi c crypto kvm
 WANTLIB-main += m protobuf rnnoise sndfile speex speexdsp ssl
 
 # dlopen()'ed
