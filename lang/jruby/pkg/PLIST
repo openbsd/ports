@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.56 2021/12/05 03:55:06 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.57 2022/01/21 23:28:19 jeremy Exp $
 bin/jruby
 jruby/
 jruby/bin/
@@ -436,7 +436,7 @@ jruby/lib/ruby/gems/1.8/specifications/default/json-2.5.1-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/logger-1.3.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/matrix-0.3.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/mutex_m-0.1.0.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/ostruct-0.1.0.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/ostruct-0.5.1.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/prime-0.1.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/psych-3.3.2-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/racc-1.5.2-java.gemspec
