@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2021/11/21 00:41:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.136 2022/01/21 08:51:07 ajacoutot Exp $
 
 COMMENT=		Unicode character map for the GNOME project
 
@@ -7,7 +7,7 @@ GNOME_VERSION=		14.0.1
 REVISION=		0
 
 # override gnome MODULE
-MASTER_SITES =		https://gitlab.gnome.org/GNOME/gucharmap/-/archive/${GNOME_VERSION}/
+MASTER_SITES =		https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${GNOME_VERSION}/
 EXTRACT_SUFX =		.tar.gz
 
 SHARED_LIBS += gucharmap_2_90            7.1 # 7.0.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2022/01/13 08:07:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2022/01/21 08:51:07 ajacoutot Exp $
 
 COMMENT =		suite of solitaire card games
 
@@ -7,7 +7,7 @@ GNOME_VERSION =		3.22.12
 REVISION =		0
 
 # override gnome MODULE
-MASTER_SITES =		https://gitlab.gnome.org/GNOME/aisleriot/-/archive/${GNOME_VERSION}/
+MASTER_SITES =		https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${GNOME_VERSION}/
 EXTRACT_SUFX =		.tar.gz
 
 CATEGORIES =		games
