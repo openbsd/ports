@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_puppet_defaults_rb,v 1.6 2021/05/04 22:03:06 kn Exp $
+$OpenBSD: patch-lib_puppet_defaults_rb,v 1.7 2022/01/21 12:10:39 kn Exp $
 
 Update the user and group to _puppet
 Fix module search path to /var/puppetlabs
@@ -24,7 +24,7 @@ Index: lib/puppet/defaults.rb
      end
    end
  
-@@ -1343,13 +1343,13 @@ EOT
+@@ -1360,13 +1360,13 @@ EOT
  
    settings.define_settings(:server,
      :user => {
