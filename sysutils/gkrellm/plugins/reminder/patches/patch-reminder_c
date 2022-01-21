@@ -1,6 +1,11 @@
-$OpenBSD: patch-reminder_c,v 1.1.1.1 2003/11/03 20:34:18 sturm Exp $
---- reminder.c.orig	2002-12-04 06:29:09.000000000 +0100
-+++ reminder.c	2003-11-02 16:42:30.000000000 +0100
+$OpenBSD: patch-reminder_c,v 1.2 2022/01/21 20:09:42 op Exp $
+Index: reminder.c
+
+second, third and fourth chunk: scan/serialize time_t as/into into long
+long, fixes crashes at runtime due to timestamps corruption.
+
+--- reminder.c.orig
++++ reminder.c
 @@ -87,7 +87,7 @@ static struct reminder_config {
  
  struct event_stored {
@@ -10,25 +15,48 @@ $OpenBSD: patch-reminder_c,v 1.1.1.1 2003/11/03 20:34:18 sturm Exp $
    gint days;
    gint occurs;
    time_t start;
-@@ -333,7 +333,7 @@ reminder_load_stored()
+@@ -320,6 +320,8 @@ reminder_load_stored()
+ 
+   while( fscanf( fp, "%[^\n]\n", buffer ) )
+     {
++      long long start, end, last_displayed;
++
+       current = malloc( sizeof( struct event_stored ) );
+       if( !current )
+ 	break;
+@@ -333,14 +335,17 @@ reminder_load_stored()
    //    strcpy( current->name, buffer );
        current->name = g_strdup(buffer);
  
 -      if( fscanf( fp, "%u %d %d %ld %ld %ld\n", &current->id, &current->days,
-+      if( fscanf( fp, "%lu %d %d %d %d %d\n", &current->id, &current->days,
-           &current->occurs, &current->start, &current->end,
-           &current->last_displayed ) != 6 )
+-          &current->occurs, &current->start, &current->end,
+-          &current->last_displayed ) != 6 )
++      if( fscanf( fp, "%lu %d %d %lld %lld %lld\n", &current->id, &current->days,
++          &current->occurs, &start, &end,
++          &last_displayed ) != 6 )
  	{
-@@ -431,7 +431,7 @@ reminder_save_stored()
+ 	  g_free( current->name );
+ 	  free( current );
+ 	  break;
+ 	}
++      current->start = start;
++      current->end = end;
++      current->last_displayed = last_displayed;
+       if( current->occurs == TRUE && current->days >> 16 == 0 )
+ 	{
+ 	  current->occurs = OPT_WEEKLY;
+@@ -431,8 +436,8 @@ reminder_save_stored()
    current = head_stored;
    while( current )
      {
 -      fprintf( fp, "%s\n%u %d %d %ld %ld %ld\n", current->name, current->id, current->days,
-+      fprintf( fp, "%s\n%lu %d %d %d %d %d\n", current->name, current->id, current->days,
- 	       current->occurs, current->start, current->end, current->last_displayed );
+-	       current->occurs, current->start, current->end, current->last_displayed );
++      fprintf( fp, "%s\n%lu %d %d %lld %lld %lld\n", current->name, current->id, current->days,
++	       current->occurs, (long long)current->start, (long long)current->end, (long long)current->last_displayed );
  
        current = current->next;
-@@ -529,7 +529,7 @@ reminder_remove_event_stored( struct eve
+     }
+@@ -529,7 +534,7 @@ reminder_remove_event_stored( struct event_stored **he
  }
  
  static struct event_stored *
@@ -37,7 +65,7 @@ $OpenBSD: patch-reminder_c,v 1.1.1.1 2003/11/03 20:34:18 sturm Exp $
  {
    struct event_stored *current;
  
-@@ -1003,8 +1003,8 @@ reminder_build_today( gboolean rebuild )
+@@ -1003,8 +1008,8 @@ reminder_build_today( gboolean rebuild )
  static void
  cb_set_days( GtkWidget *window, gpointer data )
  {
@@ -48,7 +76,7 @@ $OpenBSD: patch-reminder_c,v 1.1.1.1 2003/11/03 20:34:18 sturm Exp $
  
    gtk_toggle_button_set_active( GTK_TOGGLE_BUTTON( check_sun ), weekends );
    gtk_toggle_button_set_active( GTK_TOGGLE_BUTTON( check_sat ), weekends );
-@@ -1383,12 +1383,12 @@ static void
+@@ -1383,12 +1388,12 @@ static void
  cb_remove( GtkWidget *window, gpointer data )
  {
    struct id_list *current;
@@ -63,7 +91,7 @@ $OpenBSD: patch-reminder_c,v 1.1.1.1 2003/11/03 20:34:18 sturm Exp $
  
    /* Try to remove event from temp list. If not, add to to-be-deleted list */
    if( !reminder_remove_event_stored( &head_temp, id ) )
-@@ -1661,13 +1661,13 @@ cb_sort_days( GtkCList *clist, gconstpoi
+@@ -1661,13 +1666,13 @@ cb_sort_days( GtkCList *clist, gconstpointer *p1, gcon
  
    struct event_stored *es1, *es2;
  
@@ -81,7 +109,7 @@ $OpenBSD: patch-reminder_c,v 1.1.1.1 2003/11/03 20:34:18 sturm Exp $
  
    if( es1 && es2 )
      {
-@@ -1692,13 +1692,13 @@ cb_sort_time( GtkCList *clist, gconstpoi
+@@ -1692,13 +1697,13 @@ cb_sort_time( GtkCList *clist, gconstpointer *p1, gcon
  
    struct event_stored *es1, *es2;
  
@@ -99,7 +127,7 @@ $OpenBSD: patch-reminder_c,v 1.1.1.1 2003/11/03 20:34:18 sturm Exp $
  
    if( es1 && es2 )
      return( ( ( es1->start - TIMEZONE_DIFF ) % SECS_PER_DAY ) -
-@@ -1715,13 +1715,13 @@ cb_sort_start( GtkCList *clist, gconstpo
+@@ -1715,13 +1720,13 @@ cb_sort_start( GtkCList *clist, gconstpointer *p1, gco
  
    struct event_stored *es1, *es2;
  
@@ -117,7 +145,7 @@ $OpenBSD: patch-reminder_c,v 1.1.1.1 2003/11/03 20:34:18 sturm Exp $
  
    if( es1 && es2 )
      return es1->start - es2->start;
-@@ -1737,13 +1737,13 @@ cb_sort_end( GtkCList *clist, gconstpoin
+@@ -1737,13 +1742,13 @@ cb_sort_end( GtkCList *clist, gconstpointer *p1, gcons
  
    struct event_stored *es1, *es2;
  
@@ -135,7 +163,7 @@ $OpenBSD: patch-reminder_c,v 1.1.1.1 2003/11/03 20:34:18 sturm Exp $
  
    if( es1 && es2 )
      return es1->end - es2->end;
-@@ -2884,7 +2884,7 @@ reminder_text_button_enable( void )
+@@ -2884,7 +2889,7 @@ reminder_text_button_enable( void )
  static void
  reminder_window_never( GtkWidget *window, gpointer data )
  {
@@ -144,7 +172,7 @@ $OpenBSD: patch-reminder_c,v 1.1.1.1 2003/11/03 20:34:18 sturm Exp $
  
    /* delete event from today */
    num_active--;
-@@ -2914,7 +2914,7 @@ reminder_window_never( GtkWidget *window
+@@ -2914,7 +2919,7 @@ reminder_window_never( GtkWidget *window, gpointer dat
  static void
  reminder_window_later( GtkWidget *window, gpointer data )
  {
@@ -153,7 +181,7 @@ $OpenBSD: patch-reminder_c,v 1.1.1.1 2003/11/03 20:34:18 sturm Exp $
    struct event_stored *new, *old;
  
    /* delete event from today */
-@@ -2991,7 +2991,7 @@ reminder_window_later( GtkWidget *window
+@@ -2991,7 +2996,7 @@ reminder_window_later( GtkWidget *window, gpointer dat
  static void
  reminder_window_dismiss( GtkWidget *window, gpointer data )
  {
