@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.103 2021/09/03 11:48:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.104 2022/01/21 07:09:33 ajacoutot Exp $
 
 BROKEN-alpha=		ICE hp5590.c:1141: error: unrecognizable insn
 
 COMMENT=		API for accessing scanners, backends
 
-DISTNAME=		sane-backends-1.0.32
-REVISION=		2
+V=			1.1.1
+DISTNAME=		backends-${V}
+PKGNAME=		sane-${DISTNAME}
 
-SHARED_LIBS +=  sane                 2.1      # unknown
+SHARED_LIBS +=  sane                 2.2      # unknown
 
 CATEGORIES=		graphics
 
@@ -21,7 +22,7 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += ${COMPILER_LIBCXX} c execinfo iconv jpeg lzma m png
 WANTLIB += tiff usb-1.0 v4l1 v4l2 v4lconvert xml2 z zstd
 
-MASTER_SITES=		https://gitlab.com/sane-project/backends/uploads/104f09c07d35519cc8e72e604f11643f/
+MASTER_SITES=		https://gitlab.com/sane-project/backends/-/archive/${V}/
 
 COMPILER=		base-clang ports-gcc
 
@@ -44,7 +45,12 @@ USE_GMAKE=		Yes
 
 LOCALSTATEDIR=		${BASELOCALSTATEDIR}/spool
 
-CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.16
+# ./configure[18935]: syntax error: `noext,' unexpected
+BUILD_DEPENDS +=	devel/autoconf-archive
+
+CONFIGURE_STYLE=	autoreconf
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
@@ -67,7 +73,7 @@ WANTLIB += X11 Xext Xrender avahi-client avahi-common cairo crypto
 WANTLIB += curl dbus-1 expat ffi fontconfig freetype gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 intl lcms2 nghttp2 openjp2
 WANTLIB += pcre pixman-1 poppler poppler-glib ssl xcb xcb-render
-WANTLIB += xcb-shm
+WANTLIB += xcb-shm Xau Xdmcp
 .else
 CONFIGURE_ARGS +=	--without-avahi
 .endif
@@ -86,6 +92,11 @@ CFLAGS +=		-DHAVE_SYS_SOCKET_H
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 FAKE_FLAGS=		configdir=${PREFIX}/share/examples/sane-backends/sane.d
+
+# https://gitlab.com/sane-project/backends/-/issues/440
+post-extract:
+	echo ${V} >${WRKSRC}/.tarball-version
+	echo ${V} >${WRKSRC}/.version
 
 post-install:
 	# removing the microtek2 backend which needs a Linux kernel module

@@ -1,0 +1,24 @@
+$OpenBSD: patch-configure_ac,v 1.1 2022/01/21 07:09:33 ajacoutot Exp $
+
+1st chunk: ur libtool(1) and devel/libtool versions are too old.
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -55,7 +55,7 @@ AC_USE_SYSTEM_EXTENSIONS        dnl call before runnin
+ 
+ AM_PROG_AR
+ LT_INIT([disable-static win32-dll])
+-LT_PREREQ([2.4.6])
++LT_PREREQ([2.4.2])
+ 
+ dnl *****************************************************************
+ dnl  Set up I18N/L10N support
+@@ -239,6 +239,7 @@ AC_MSG_RESULT($have_long_long)
+ 
+ AC_MSG_CHECKING([for socklen_t in <sys/socket.h>])
+ AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
++#include <sys/types.h>
+ #include <sys/socket.h>
+ ]], [[socklen_t len]])],AC_MSG_RESULT(yes),
+ [AC_MSG_RESULT(no); AC_DEFINE(socklen_t,int,

@@ -1,0 +1,32 @@
+$OpenBSD: patch-acinclude_m4,v 1.1 2022/01/21 07:09:33 ajacoutot Exp $
+
+Index: acinclude.m4
+--- acinclude.m4.orig
++++ acinclude.m4
+@@ -351,16 +351,6 @@ AC_DEFUN([SANE_CHECK_LOCKING],
+                      [use the specified group for lock dir @<:@default=uucp@:>@]),
+         [LOCKPATH_GROUP="$withval"]
+     )
+-    # check if the group does exist
+-    lasterror=""
+-    touch sanetest.file
+-    chgrp $LOCKPATH_GROUP sanetest.file 2>/dev/null || lasterror=$?
+-    rm -f sanetest.file
+-    if test ! -z "$lasterror"; then
+-      AC_MSG_WARN([Group $LOCKPATH_GROUP does not exist on this system.])
+-      AC_MSG_WARN([Locking feature will be disabled.])
+-      use_locking=no
+-    fi
+   fi
+   if test $use_locking = yes ; then
+     INSTALL_LOCKPATH=install-lockpath
+@@ -660,8 +650,7 @@ for be in ${BACKENDS}; do
+     ;;
+ 
+     v4l)
+-    if test "${have_linux_ioctl_defines}" != "yes" \
+-      || test "${have_libv4l1}" != "yes"; then
++    if test "${have_libv4l1}" != "yes"; then
+       echo "*** $be backend requires v4l libraries - $DISABLE_MSG"
+       backend_supported="no"
+     fi

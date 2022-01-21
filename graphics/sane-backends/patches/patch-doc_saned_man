@@ -1,9 +1,9 @@
-$OpenBSD: patch-doc_saned_man,v 1.9 2021/02/14 17:15:05 ajacoutot Exp $
+$OpenBSD: patch-doc_saned_man,v 1.10 2022/01/21 07:09:33 ajacoutot Exp $
 
 Index: doc/saned.man
 --- doc/saned.man.orig
 +++ doc/saned.man
-@@ -231,7 +231,7 @@ configuration file
+@@ -250,7 +250,7 @@ configuration file
  The configuration line normally looks like this:
  .PP
  .RS
@@ -12,7 +12,7 @@ Index: doc/saned.man
  .RE
  .PP
  However, if your system uses
-@@ -245,16 +245,16 @@ and use a line of the following form in
+@@ -264,16 +264,16 @@ and use a line of the following form in
  instead:
  .PP
  .RS
@@ -32,7 +32,7 @@ Index: doc/saned.man
  can access the scanner (the program generally needs read and
  write access to scanner devices).
  
-@@ -279,8 +279,8 @@ service sane\-port
+@@ -298,8 +298,8 @@ service sane\-port
     port        = 6566
     socket_type = stream
     wait        = no

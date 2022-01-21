@@ -1,14 +1,14 @@
-$OpenBSD: patch-backend_Makefile_in,v 1.15 2021/02/14 17:15:05 ajacoutot Exp $
+$OpenBSD: patch-backend_Makefile_am,v 1.1 2022/01/21 07:09:33 ajacoutot Exp $
 
-Index: backend/Makefile.in
---- backend/Makefile.in.orig
-+++ backend/Makefile.in
-@@ -2415,7 +2415,7 @@ top_srcdir = @top_srcdir@
+Index: backend/Makefile.am
+--- backend/Makefile.am.orig
++++ backend/Makefile.am
+@@ -11,7 +11,7 @@ AM_LDFLAGS += $(STRICT_LDFLAGS)
  # The -rpath option is added because we are creating _LTLIBRARIES based
  # on configure substitution.  This causes automake to not know the
  # correct $libdir and must be added here.
 -DIST_SANELIBS_LDFLAGS = $(AM_LDFLAGS) -rpath '$(libdir)/sane' -version-number $(V_MAJOR):$(V_MINOR):$(V_REV) $(DYNAMIC_FLAG)
 +DIST_SANELIBS_LDFLAGS = $(AM_LDFLAGS) -rpath '$(libdir)/sane' -avoid-version $(DYNAMIC_FLAG)
  DIST_LIBS_LDFLAGS = $(AM_LDFLAGS) -rpath '$(libdir)' -version-number $(V_MAJOR):$(V_MINOR):$(V_REV)
- FIRMWARE_DIRS = artec_eplus48u gt68xx snapscan epjitsu
  
+ # LIBTOOL install is a little to noisy for my liking.
