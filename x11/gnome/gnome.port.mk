@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.122 2021/09/04 13:06:31 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.123 2022/01/21 08:51:44 ajacoutot Exp $
 #
 # Module for GNOME ports
 
@@ -10,6 +10,7 @@ DISTNAME=		${GNOME_PROJECT}-${GNOME_VERSION}
 VERSION=		${GNOME_VERSION}
 HOMEPAGE ?=		https://wiki.gnome.org/
 # XXX make it more generic
+# XXX add support for fetching DISTFILES from gitlab
 .    if ${GNOME_VERSION:R:R:R} == "40" || ${GNOME_VERSION:R:R:R} == "41" || \
         ${GNOME_VERSION:R:R:R} == "42" || ${GNOME_VERSION:R:R:R} == "43"
 MASTER_SITES ?=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:R:R:R}/}
