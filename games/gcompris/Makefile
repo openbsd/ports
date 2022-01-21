@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.81 2021/12/18 10:28:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.82 2022/01/21 08:25:21 ajacoutot Exp $
 
 COMMENT=	educational game for children
 
-V=		2.0
+V=		2.1
 DISTNAME=	gcompris-qt-${V}
 PKGNAME=	gcompris-${V}
 EPOCH=		0
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
 
 CATEGORIES=	games education
 
