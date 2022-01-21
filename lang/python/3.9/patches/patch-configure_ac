@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.6 2021/11/24 15:35:20 kmos Exp $
+$OpenBSD: patch-configure_ac,v 1.7 2022/01/21 04:25:12 kmos Exp $
 
 #1: Set ports library version
 #2: Don't pick up an installed linux/e2fsprogs libuuid.so
@@ -27,16 +27,15 @@ Index: configure.ac
  #elif defined(__linux__)
  # if defined(__x86_64__) && defined(__LP64__)
          x86_64-linux-gnu
-@@ -883,7 +883,7 @@ fi
- rm -f conftest.c conftest.out
- 
- if test x$PLATFORM_TRIPLET != xdarwin; then
--  MULTIARCH=$($CC --print-multiarch 2>/dev/null)
-+  MULTIARCH=$(false)
- fi
- AC_SUBST(MULTIARCH)
- 
-@@ -2860,18 +2860,7 @@ AC_CHECK_LIB(dl, dlopen)	# Dynamic linking for SunOS/S
+@@ -886,6 +886,7 @@ AC_MSG_CHECKING([for multiarch])
+ AS_CASE([$ac_sys_system],
+   [Darwin*], [MULTIARCH=""],
+   [FreeBSD*], [MULTIARCH=""],
++  [OpenBSD*], [MULTIARCH=""],
+   [MULTIARCH=$($CC --print-multiarch 2>/dev/null)]
+ )
+ AC_SUBST([MULTIARCH])
+@@ -2865,18 +2866,7 @@ AC_CHECK_LIB(dl, dlopen)	# Dynamic linking for SunOS/S
  AC_CHECK_LIB(dld, shl_load)	# Dynamic linking for HP-UX
  
  # checks for uuid.h location

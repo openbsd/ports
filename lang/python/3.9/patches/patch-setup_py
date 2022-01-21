@@ -1,9 +1,9 @@
-$OpenBSD: patch-setup_py,v 1.4 2021/11/24 15:35:20 kmos Exp $
+$OpenBSD: patch-setup_py,v 1.5 2022/01/21 04:25:12 kmos Exp $
 
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -1046,6 +1046,8 @@ class PyBuildExt(build_ext):
+@@ -1049,6 +1049,8 @@ class PyBuildExt(build_ext):
                                                       'termcap'):
                  readline_libs.append('termcap')
              self.add(Extension('readline', ['readline.c'],
@@ -12,7 +12,7 @@ Index: setup.py
                                 library_dirs=['/usr/lib/termcap'],
                                 extra_link_args=readline_extra_link_args,
                                 libraries=readline_libs))
-@@ -1773,7 +1775,7 @@ class PyBuildExt(build_ext):
+@@ -1776,7 +1778,7 @@ class PyBuildExt(build_ext):
          uuid_h = sysconfig.get_config_var("HAVE_UUID_H")
          uuid_uuid_h = sysconfig.get_config_var("HAVE_UUID_UUID_H")
          if uuid_h or uuid_uuid_h:
