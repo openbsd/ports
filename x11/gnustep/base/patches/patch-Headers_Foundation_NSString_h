@@ -1,0 +1,21 @@
+$OpenBSD: patch-Headers_Foundation_NSString_h,v 1.1 2022/01/21 11:27:38 sebastia Exp $
+
+revert https://github.com/gnustep/libs-base/commit/bd5f2909e6edc8012a0a6e44ea1402dfbe1353a4
+see: https://github.com/gnustep/libs-base/issues/212
+and: https://www.sogo.nu/bugs/view.php?id=5416
+
+
+Index: Headers/Foundation/NSString.h
+--- Headers/Foundation/NSString.h.orig
++++ Headers/Foundation/NSString.h
+@@ -482,10 +482,6 @@ GS_EXPORT_CLASS
+ // Working With Encodings
+ - (BOOL) canBeConvertedToEncoding: (NSStringEncoding)encoding;
+ - (NSData*) dataUsingEncoding: (NSStringEncoding)encoding;
+-/** Conversion to an encoding where byte order matters but is not specified
+- * (NSUnicodeStringEncoding, NSUTF16StringEncoding, NSUTF32StringEncoding)
+- * produces data with a Byte Order Marker (BOM) at the start of the data.
+- */
+ - (NSData*) dataUsingEncoding: (NSStringEncoding)encoding
+ 	 allowLossyConversion: (BOOL)flag;
+ + (NSStringEncoding) defaultCStringEncoding;
