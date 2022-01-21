@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: TrackFile.pm,v 1.1 2022/01/21 09:36:00 espie Exp $
+# $OpenBSD: TrackFile.pm,v 1.2 2022/01/21 09:38:48 espie Exp $
 # Copyright (c) 2018-2022 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -164,8 +164,8 @@ sub write_all
 		}
 	}
 
+	# second pass writes out the resulting "restated" data
 	for my $i (@{$p->{base_plists}}) {
-		# we mimic the way pkg_create writes files
 		$p->{restate} = {};
 
 		my @stack = ();
