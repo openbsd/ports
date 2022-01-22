@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/02 00:00:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2022/01/22 09:49:26 ajacoutot Exp $
 
 COMMENT=		C++ and python library of 2D and 3D vector & matrix
 
-V=			3.1.3
+V=			3.1.4
 GH_ACCOUNT=		AcademySoftwareFoundation
 GH_PROJECT=		Imath
 GH_TAGNAME=		v${V}
-REVISION=		0
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

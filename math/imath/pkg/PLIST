@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/11/02 00:00:06 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2022/01/22 09:49:26 ajacoutot Exp $
 @conflict OpenEXR-<3
 include/Imath/
 include/Imath/ImathBox.h
@@ -55,7 +55,6 @@ include/Imath/PyImathFixedVArray.h
 include/Imath/PyImathFrustum.h
 include/Imath/PyImathFun.h
 include/Imath/PyImathLine.h
-include/Imath/PyImathM44Array.h
 include/Imath/PyImathMathExc.h
 include/Imath/PyImathMatrix.h
 include/Imath/PyImathOperators.h
@@ -81,7 +80,6 @@ include/Imath/halfFunction.h
 include/Imath/halfLimits.h
 lib/cmake/
 lib/cmake/Imath/
-lib/cmake/Imath/ImathConfig${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Imath/ImathConfig.cmake
 lib/cmake/Imath/ImathConfigVersion.cmake
 lib/cmake/Imath/ImathTargets${MODCMAKE_BUILD_SUFFIX}
