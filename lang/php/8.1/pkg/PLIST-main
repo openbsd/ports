@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2021/12/18 22:28:55 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2022/01/23 13:50:32 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict php-${PHP_PKGSPEC}
@@ -12,12 +12,11 @@
 @owner
 @group
 @sample ${SYSCONFDIR}/php-fpm.d/
-@rcscript ${RCDIR}/php81_fpm
+@rcscript ${RCDIR}/php${SV}_fpm
 bin/phar-${PV}
 @bin bin/php-${PV}
 bin/php-config-${PV}
 bin/phpize-${PV}
-lib/apache2/
 lib/php-${PV}/
 lib/php-${PV}/modules/
 @so lib/php-${PV}/modules/opcache.so

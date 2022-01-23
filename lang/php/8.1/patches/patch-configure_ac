@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.3 2022/01/02 22:59:57 jca Exp $
+$OpenBSD: patch-configure_ac,v 1.4 2022/01/23 13:50:32 sthen Exp $
 
 Index: configure.ac
 --- configure.ac.orig
@@ -23,23 +23,7 @@ Index: configure.ac
      if test -z "$PHP_MODULES" && test -z "$PHP_ZEND_EX"; then
        enable_shared=no
      fi
-@@ -1201,6 +1201,7 @@ AS_CASE([$host_cpu],
-   [arm*], [fiber_cpu="arm32"],
-   [ppc64*|powerpc64*], [fiber_cpu="ppc64"],
-   [ppc*|powerpc*], [fiber_cpu="ppc32"],
-+  [riscv64*], [fiber_cpu="riscv64"],
-   [s390x*], [fiber_cpu="s390x"],
-   [mips64*], [fiber_cpu="mips64"],
-   [mips*], [fiber_cpu="mips32"],
-@@ -1220,6 +1221,7 @@ AS_CASE([$fiber_cpu],
-   [arm32], [fiber_asm_file_prefix="arm_aapcs"],
-   [ppc64], [fiber_asm_file_prefix="ppc64_sysv"],
-   [ppc32], [fiber_asm_file_prefix="ppc32_sysv"],
-+  [riscv64], [fiber_asm_file_prefix="riscv64_sysv"],
-   [s390x], [fiber_asm_file_prefix="s390x_sysv"],
-   [mips64], [fiber_asm_file_prefix="mips64_n64"],
-   [mips32], [fiber_asm_file_prefix="mips32_o32"],
-@@ -1360,7 +1362,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfdir`
+@@ -1362,7 +1362,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfdir`
  EXPANDED_DATADIR=$datadir
  EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
  EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CONFIG_FILE_SCAN_DIR"`
