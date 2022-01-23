@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2021/10/16 14:38:45 thfr Exp $
+# $OpenBSD: Makefile,v 1.7 2022/01/23 14:29:45 sthen Exp $
 
 COMMENT =	neomutt and isync configuration with good defaults
 CATEGORIES =	mail
-DISTNAME =	mutt-wizard-3.2.1.20211006
+DISTNAME =	mutt-wizard-3.2.1.20220121
 
 GH_ACCOUNT =	LukeSmithxyz
 GH_PROJECT =	mutt-wizard
-GH_COMMIT =	85c5d01dcd09058094a8a180c38751e88416b1f4
+GH_COMMIT =	29b7b59ffd1b0dfad10c74b5daa6ff67954261b9
 
 EPOCH =		0
 
@@ -27,7 +27,7 @@ USE_GMAKE =	Yes
 
 FAKE_FLAGS =	PREFIX=${TRUEPREFIX} MANPREFIX=${PREFIX}/man
 
-post-patch:
+post-extract:
 	cd ${WRKSRC} && \
 	sed -e "s/\<grep\>/ggrep/g" -i bin/mw
 

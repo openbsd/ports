@@ -1,0 +1,33 @@
+$OpenBSD: patch-bin_mw,v 1.1 2022/01/23 14:29:45 sthen Exp $
+
+fix account number switch macro
+fix account deletion
+publish gpg using gpg-wks protocol
+dynamically load mailboxes
+
+Index: bin/mw
+--- bin/mw.orig
++++ bin/mw
+@@ -173,7 +173,7 @@ delete() { if [ -z "${fulladdr+x}" ]; then
+ 
+ 	sed -ibu "/IMAPStore $fulladdr-remote$/,/# End profile/d" "$mbsyncrc" 2>/dev/null ; rm -f "$mbsyncrc"bu
+ 	rm -rf "${cachedir:?}/${fulladdr:?}" "$accdir/$fulladdr.muttrc"  "$accdir/"[0-9]-"$fulladdr.muttrc"
+-	sed -ibu "/\([0-9]-\)\?$fulladdr.muttrc/d" "$muttrc" 2>/dev/null; rm -f "$muttrc"bu
++	sed -ibu "/macro.*i[0-9].*$fulladdr.muttrc/d" "$muttrc" 2>/dev/null; rm -f "$muttrc"bu
+ 	sed -ibu "/account $fulladdr$/,/^\(\s*$\|account\)/d" "$msmtprc" 2>/dev/null; rm -f "$msmtprc"bu
+ 	sed -ibu "/account $fulladdr$/,/^\(\s*$\|account\)/d" "$mpoprc" 2>/dev/null; rm -f "$mpoprc"bu
+ 	pass rm -f "$fulladdr" >/dev/null 2>&1
+@@ -224,11 +224,11 @@ getboxes() { if [ -n "${force+x}" ] ; then
+ 		mailboxes="$(echo "$info" | ggrep -v HasChildren | sed "s/.*\" //;s/\"//g" | tr -d '\r')"
+ 	fi
+ 	[ "$type" = "pop" ] && mailboxes="INBOX"
+-	for x in $(sed -n "/^macro.* i[0-9] / s/\(^macro.* i\| .*\)//gp " "$muttrc" | sort -u; echo 0); do
++	for x in $(ggrep -Eo "^macro.* i[0-9] " "$muttrc" | sed "s/^macro.* i//g" | sort -u; echo 0); do
+ 		idnum=$((idnum + 1))
+ 		[ "$idnum" -eq "$x" ] || break
+ 	done
+-	toappend="mailboxes $(echo "$mailboxes" | sed "s/^/\"=/;s/$/\"/" | paste -sd ' ' - )"
++	toappend="mailboxes \`mdir=$maildir/$fulladdr/; find \$mdir -mindepth 1 -type d -name cur | sed -e 's:/cur\$:\":' -e \"s:\$mdir:\\\"=:\" | sort | tr '\\\n' ' '\`"
+ }
+ 
+ finalize() { echo "$toappend" >> "$accdir/$fulladdr.muttrc"
