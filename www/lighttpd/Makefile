@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.166 2021/12/07 19:47:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.167 2022/01/23 14:43:47 sthen Exp $
 
 COMMENT=	secure, fast, compliant, and very flexible web-server
 
-DISTNAME=	lighttpd-1.4.63
+DISTNAME=	lighttpd-1.4.64
 CATEGORIES=	www net
 MASTER_SITES=	https://download.lighttpd.net/lighttpd/releases-1.4.x/
 EXTRACT_SUFX=	.tar.xz
@@ -14,14 +14,14 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c crypto m pcre ssl z ${MODLUA_WANTLIB}
+WANTLIB=	c crypto m pcre2-8 ssl z ${MODLUA_WANTLIB}
 
 COMPILER=	base-clang ports-gcc base-gcc
 
 MODULES=	lang/lua
 MODLUA_SA=	Yes
 
-LIB_DEPENDS+=	devel/pcre \
+LIB_DEPENDS+=	devel/pcre2 \
 		${MODLUA_LIB_DEPENDS}
 RUN_DEPENDS+=	www/spawn-fcgi
 

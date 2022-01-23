@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2021/02/06 14:37:53 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.30 2022/01/23 14:43:47 sthen Exp $
 @newgroup _lighttpd:585
 @newuser _lighttpd:585:_lighttpd:daemon:lighttpd Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/lighttpd
@@ -10,7 +10,6 @@ lib/lighttpd/
 @so lib/lighttpd/mod_auth.so
 @so lib/lighttpd/mod_authn_file.so
 @so lib/lighttpd/mod_cgi.so
-@so lib/lighttpd/mod_cml.so
 @so lib/lighttpd/mod_deflate.so
 @so lib/lighttpd/mod_dirlisting.so
 @so lib/lighttpd/mod_evasive.so
@@ -18,7 +17,6 @@ lib/lighttpd/
 @so lib/lighttpd/mod_expire.so
 @so lib/lighttpd/mod_extforward.so
 @so lib/lighttpd/mod_fastcgi.so
-@so lib/lighttpd/mod_flv_streaming.so
 @so lib/lighttpd/mod_indexfile.so
 @so lib/lighttpd/mod_magnet.so
 @so lib/lighttpd/mod_openssl.so
@@ -52,7 +50,6 @@ share/doc/lighttpd/accesslog.txt
 share/doc/lighttpd/alias.txt
 share/doc/lighttpd/authentication.txt
 share/doc/lighttpd/cgi.txt
-share/doc/lighttpd/cml.txt
 share/doc/lighttpd/compress.txt
 share/doc/lighttpd/configuration.txt
 share/doc/lighttpd/dirlisting.txt
@@ -63,7 +60,6 @@ share/doc/lighttpd/fastcgi-state.txt
 share/doc/lighttpd/fastcgi.txt
 share/doc/lighttpd/features.txt
 share/doc/lighttpd/magnet.txt
-share/doc/lighttpd/mysqlvhost.txt
 share/doc/lighttpd/performance.txt
 share/doc/lighttpd/plugins.txt
 share/doc/lighttpd/proxy.txt
@@ -81,7 +77,6 @@ share/doc/lighttpd/ssl.txt
 share/doc/lighttpd/state.txt
 share/doc/lighttpd/status.txt
 share/doc/lighttpd/traffic-shaping.txt
-share/doc/lighttpd/trigger_b4_dl.txt
 share/doc/lighttpd/userdir.txt
 share/doc/lighttpd/webdav.txt
 share/examples/lighttpd/
