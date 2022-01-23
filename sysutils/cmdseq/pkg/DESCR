@@ -1,0 +1,4 @@
+cmdseq executes interleaved sequences of commands. For a given sequence of
+counts and commands, each execution of cmdseq executes one of the commands,
+cycling through the sequence and wrapping back to the beginning when it is
+complete.
