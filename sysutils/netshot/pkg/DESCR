@@ -1,6 +1,0 @@
-Netshot maintains a history of the configurations of your network devices.
-While doing so it builds an inventory of IP addresses, MAC addresses,
-serial numbers and other things. It checks the saved configurations and
-discovered versions against the defined policy and marks devices that are
-not compliant. It is compatibles with many network devices out of the
-box and is easy to extend.

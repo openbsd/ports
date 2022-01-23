@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.392 2021/11/17 20:32:34 kn Exp $
+$OpenBSD: user.list,v 1.393 2022/01/23 17:10:07 remi Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -325,7 +325,7 @@ id  user		group		port
 814 _fastnetmon		_fastnetmon	net/fastnetmon
 815 _osrm_routed	_osrm_routed	geo/osrm-backend
 816 			_libpostal	geo/libpostal
-817 _netshot		_netshot	sysutils/netshot
+#817 _netshot		_netshot	sysutils/netshot
 818 _vnu		_vnu		www/vnu
 819 _nomad		_nomad		sysutils/nomad
 820 _arpwatch		_arpwatch	net/arpwatch

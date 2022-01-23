@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.632 2022/01/23 14:51:37 op Exp $
+# $OpenBSD: Makefile,v 1.633 2022/01/23 17:10:07 remi Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -213,7 +213,6 @@
      SUBDIR += ncal
      SUBDIR += ncdu
      SUBDIR += neofetch
-     SUBDIR += netshot
      SUBDIR += nnn
      SUBDIR += node_exporter
      SUBDIR += noice

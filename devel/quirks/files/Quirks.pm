@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1360 2022/01/18 20:07:17 sebastia Exp $
+# $OpenBSD: Quirks.pm,v 1.1361 2022/01/23 17:10:07 remi Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1628,6 +1628,7 @@ setup_obsolete_reason(
 	31 => 'py-Checker',
 	14 => 'ssvnc',
 	14 => 'ssvnc-viewer',
+	11 => 'netshot',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
