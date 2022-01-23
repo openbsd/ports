@@ -1,21 +1,11 @@
-$OpenBSD: patch-lib_libzstd_mk,v 1.1 2021/12/25 13:28:13 bket Exp $
+$OpenBSD: patch-lib_libzstd_mk,v 1.2 2022/01/23 15:05:55 bket Exp $
 
-Don't set compiler optimisation level.
 Some compilers don't have -Wvla.
 
 Index: lib/libzstd.mk
 --- lib/libzstd.mk.orig
 +++ lib/libzstd.mk
-@@ -79,7 +79,7 @@ endif
-   CFLAGS += -fno-stack-protector -fomit-frame-pointer -fno-ident \
-             -DDYNAMIC_BMI2=0 -DNDEBUG
- else
--  CFLAGS += -O3
-+  CFLAGS +=
- endif
- 
- DEBUGLEVEL ?= 0
-@@ -90,7 +90,7 @@ endif
+@@ -92,7 +92,7 @@ endif
  DEBUGFLAGS= -Wall -Wextra -Wcast-qual -Wcast-align -Wshadow \
              -Wstrict-aliasing=1 -Wswitch-enum -Wdeclaration-after-statement \
              -Wstrict-prototypes -Wundef -Wpointer-arith \
@@ -23,4 +13,4 @@ Index: lib/libzstd.mk
 +            -Wformat=2 -Winit-self -Wfloat-equal -Wwrite-strings \
              -Wredundant-decls -Wmissing-prototypes -Wc++-compat
  CFLAGS   += $(DEBUGFLAGS) $(MOREFLAGS)
- LDFLAGS  += $(MOREFLAGS)
+ ASFLAGS  += $(DEBUGFLAGS) $(MOREFLAGS) $(CFLAGS)
