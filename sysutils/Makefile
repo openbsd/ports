@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.631 2022/01/08 12:36:17 denis Exp $
+# $OpenBSD: Makefile,v 1.632 2022/01/23 14:51:37 op Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -42,6 +42,7 @@
      SUBDIR += clusterit
      SUBDIR += clusterit,no_x11
      SUBDIR += cmb
+     SUBDIR += cmdseq
      SUBDIR += collectd
      SUBDIR += colorls
      SUBDIR += colortail
