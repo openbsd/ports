@@ -1,26 +1,25 @@
-$OpenBSD: README,v 1.5 2018/09/04 12:46:17 espie Exp $
+$OpenBSD: README,v 1.6 2022/01/23 15:00:37 op Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
-Setting up a gopher site
-========================
-
 After installing the gophernicus package, edit /etc/inetd.conf and add
 the following, all on one line:
 
-gopher stream tcp nowait _gophernicus ${TRUEPREFIX}/libexec/in.gophernicus	in.gophernicus -h "hostname"
+gopher stream tcp nowait _gophernicus ${TRUEPREFIX}/libexec/in.gophernicus	in.gophernicus -h "hostname" -nm -nu -nx
 
-Replace "hostname" with the system's hostname, this should be valid
-and resolvable as it is used to construct links.
+Replace "hostname" with the system's hostname. This should be valid
+and resolvable, as it is used to construct links.
 
-inetd(8) must be reloaded (or started). To enable it at boot, the
-following line needs to be added to rc.conf.local(8):
-inetd_flags=
+inetd(8) must then be enabled and started:
 
-By default Gophernicus serves documents from /var/gopher and will
+	# rcctl enable inetd
+	# rcctl start inetd
+
+By default, Gophernicus serves documents from ${VARBASE}/gopher and will
 only serve files which are world-readable; being readable by the
 server process is not enough.
 
-For more information, see ${TRUEPREFIX}/share/doc/gophernicus/README.
+For more information, see gophernicus(8) and
+${TRUEPREFIX}/share/doc/gophernicus/README.md.
