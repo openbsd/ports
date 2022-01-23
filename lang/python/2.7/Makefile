@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.72 2021/11/18 15:45:28 tb Exp $
+# $OpenBSD: Makefile,v 1.73 2022/01/23 21:32:07 daniel Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
 # requirement of the PSF license, if it constitutes a change to
 # Python itself.
 
-VERSION =		2.7
-PATCHLEVEL =		.18
+FULL_VERSION =		2.7.18
 SHARED_LIBS =		python2.7 0.0
 VERSION_SPEC =		>=2.7,<2.8
 

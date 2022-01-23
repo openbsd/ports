@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2022/01/21 04:25:12 kmos Exp $
+# $OpenBSD: Makefile,v 1.19 2022/01/23 21:32:07 daniel Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
 # requirement of the PSF license, if it constitutes a change to
 # Python itself.
 
-VERSION =		3.9
-PATCHLEVEL =		.10
+FULL_VERSION =		3.9.10
 SHARED_LIBS =		python3.9 0.0
 VERSION_SPEC =		>=3.9,<3.10
 

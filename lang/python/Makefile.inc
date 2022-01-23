@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.141 2021/11/01 16:56:24 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.142 2022/01/23 21:32:07 daniel Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -12,6 +12,9 @@ COMMENT-idle =	IDE for Python
 COMMENT-tests =	Python test suite
 COMMENT-tkinter = tk GUI module for Python
 COMMENT-tools =	extra tools for Python
+
+VERSION =	${FULL_VERSION:R}
+PATCHLEVEL =	.${FULL_VERSION:E}
 
 DISTNAME =	Python-${VERSION}${PATCHLEVEL}
 PKGNAME-main =	python-${VERSION}${PATCHLEVEL}
@@ -129,7 +132,7 @@ FAKE_FLAGS +=	RANLIB=:
 PY_DEFAULTONLY ?= "@comment "
 
 PY_PLATFORM =	openbsd${OSMAJOR}
-SUBST_VARS +=	VERSION_SPEC PY_PLATFORM PY_DEFAULTONLY
+SUBST_VARS +=	FULL_VERSION VERSION_SPEC PY_PLATFORM PY_DEFAULTONLY
 
 # Python itself is clean, but some extensions e.g. py-cryptography
 # and QtWebKit require W|X mappings.

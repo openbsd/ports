@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2021/11/01 16:56:25 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2022/01/23 21:32:07 daniel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-${VERSION_SPEC}
@@ -2087,9 +2087,9 @@ lib/python3.10/lib-dynload/
 @so lib/python3.10/lib-dynload/zlib.cpython-310.so
 lib/python3.10/lib2to3/
 lib/python3.10/lib2to3/Grammar.txt
-lib/python3.10/lib2to3/Grammar3.10.0.final.0.pickle
+lib/python3.10/lib2to3/Grammar${FULL_VERSION}.final.0.pickle
 lib/python3.10/lib2to3/PatternGrammar.txt
-lib/python3.10/lib2to3/PatternGrammar3.10.0.final.0.pickle
+lib/python3.10/lib2to3/PatternGrammar${FULL_VERSION}.final.0.pickle
 lib/python3.10/lib2to3/__init__.py
 lib/python3.10/lib2to3/__main__.py
 lib/python3.10/lib2to3/__pycache__/
