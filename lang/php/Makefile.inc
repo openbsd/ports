@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.172 2022/01/07 14:04:03 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.173 2022/01/23 13:49:46 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -241,8 +241,8 @@ WANTLIB-enchant=	${COMPILER_LIBCXX} enchant glib-2.0 gmodule-2.0 \
 			iconv intl
 .else
 LIB_DEPENDS-enchant=	textproc/enchant2
-WANTLIB-enchant=	${COMPILER_LIBCXX} aspell enchant-2 glib-2.0 \
-			gmodule-2.0 iconv intl
+WANTLIB-enchant=	aspell enchant-2 glib-2.0 gmodule-2.0 iconv intl \
+			pthread
 .endif
 .if ${BUILD_PACKAGES:M-enchant}
 CONFIGURE_ARGS+=	--with-enchant=shared,${LOCALBASE}
@@ -457,7 +457,7 @@ COMMENT-zip=		zip functions for php
 HOMEPAGE-zip=		https://www.php.net/zip
 LIB_DEPENDS-zip=	archivers/bzip2 \
 			archivers/libzip
-WANTLIB-zip=		bz2 crypto lzma pthread ssl z zip
+WANTLIB-zip=		bz2 crypto lzma pthread z zip zstd
 .if ${BUILD_PACKAGES:M-zip}
 CONFIGURE_ARGS+=	--with-zip=shared
 .endif
