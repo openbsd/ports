@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:43:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2022/01/23 09:14:46 jsg Exp $
 
 COMMENT=	extract files from InstallShield CAB archives
 
 GH_ACCOUNT=	twogood
 GH_PROJECT=	unshield
-GH_TAGNAME=	1.4.3
+GH_TAGNAME=	1.5.1
 
 CATEGORIES=	archivers
 
-SHARED_LIBS+=	unshield	2.1
+SHARED_LIBS+=	unshield	2.2
 
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c crypto ssl z
+WANTLIB=	c crypto z
 
 MODULES =	devel/cmake
 

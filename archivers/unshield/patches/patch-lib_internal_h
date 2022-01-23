@@ -1,8 +1,9 @@
-$OpenBSD: patch-lib_internal_h,v 1.3 2017/01/21 23:46:01 jsg Exp $
---- lib/internal.h.orig	Sun Jan 22 09:33:13 2017
-+++ lib/internal.h	Sun Jan 22 09:34:10 2017
-@@ -103,30 +103,7 @@ uint8_t* unshield_header_get_buffer(Header* header, ui
- #define FSIZE(file)     (file ? unshield_fsize(file) : 0)
+$OpenBSD: patch-lib_internal_h,v 1.4 2022/01/23 09:14:46 jsg Exp $
+Index: lib/internal.h
+--- lib/internal.h.orig
++++ lib/internal.h
+@@ -105,30 +105,7 @@ uint8_t* unshield_header_get_buffer(Header* header, ui
+ #define FSIZE(file)     ((file) ? unshield_fsize(file) : 0)
  #define STREQ(s1,s2)    (0 == strcmp(s1,s2))
  
 -#if WORDS_BIGENDIAN
