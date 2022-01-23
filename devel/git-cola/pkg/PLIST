@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2021/07/14 09:07:21 bket Exp $
+@comment $OpenBSD: PLIST,v 1.22 2022/01/23 10:57:17 bket Exp $
 bin/git-cola
 bin/git-cola-sequence-editor
 bin/git-dag
@@ -206,11 +206,15 @@ share/git-cola/bin/ssh-askpass
 share/git-cola/bin/ssh-askpass-darwin
 share/git-cola/icons/
 share/git-cola/icons/a-z-order.svg
+share/git-cola/icons/arrow-down.svg
+share/git-cola/icons/arrow-up.svg
 share/git-cola/icons/check.svg
 share/git-cola/icons/circle-slash-red.svg
 share/git-cola/icons/circle-slash.svg
 share/git-cola/icons/dark/
 share/git-cola/icons/dark/a-z-order.svg
+share/git-cola/icons/dark/arrow-down.svg
+share/git-cola/icons/dark/arrow-up.svg
 share/git-cola/icons/dark/check.svg
 share/git-cola/icons/dark/circle-slash-red.svg
 share/git-cola/icons/dark/circle-slash.svg
@@ -218,6 +222,9 @@ share/git-cola/icons/dark/desktop-download.svg
 share/git-cola/icons/dark/diff.svg
 share/git-cola/icons/dark/document-save-symbolic.svg
 share/git-cola/icons/dark/edit-copy.svg
+share/git-cola/icons/dark/edit-cut.svg
+share/git-cola/icons/dark/edit-paste.svg
+share/git-cola/icons/dark/edit-redo.svg
 share/git-cola/icons/dark/edit-select-all.svg
 share/git-cola/icons/dark/edit-undo.svg
 share/git-cola/icons/dark/ellipsis.svg
@@ -269,6 +276,9 @@ share/git-cola/icons/desktop-download.svg
 share/git-cola/icons/diff.svg
 share/git-cola/icons/document-save-symbolic.svg
 share/git-cola/icons/edit-copy.svg
+share/git-cola/icons/edit-cut.svg
+share/git-cola/icons/edit-paste.svg
+share/git-cola/icons/edit-redo.svg
 share/git-cola/icons/edit-select-all.svg
 share/git-cola/icons/edit-undo.svg
 share/git-cola/icons/ellipsis.svg
