@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.31 2021/12/20 15:06:34 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.32 2022/01/24 16:35:12 sthen Exp $
 
 .if defined(V)
 COMMENT =	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
@@ -8,7 +8,7 @@ MASTER_SITES ?=	https://dl.ui.com/unifi/${V}${_BV}/
 MASTER_SITES0 =	https://spacehopper.org/mirrors/
 MASTER_SITES1 =	https://dl.ubnt-ut.com/snmp/
 
-LOG4J_V =	2.17.0
+LOG4J_V =	2.17.1
 MASTER_SITES2 =	https://dlcdn.apache.org/logging/log4j/${LOG4J_V}/
 
 DISTFILES +=	unifi-$V{UniFi.unix}.zip \
