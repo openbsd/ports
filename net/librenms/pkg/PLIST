@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.87 2021/12/22 22:52:56 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.88 2022/01/24 13:56:51 sthen Exp $
 @ask-update librenms-<1.60v0 pkg_add cannot handle this update directly. Cancel now, pkg_delete librenms, then install the new version.
 @newgroup _librenms:755
 @newuser _librenms:755:_librenms:daemon:librenms user:${INSTDIR}:/sbin/nologin
@@ -1941,6 +1941,7 @@ librenms/html/images/os/ccpower.png
 librenms/html/images/os/cdata.png
 librenms/html/images/os/centos.svg
 librenms/html/images/os/ceragon.png
+librenms/html/images/os/cet.png
 librenms/html/images/os/chatsworth.png
 librenms/html/images/os/checkpoint.png
 librenms/html/images/os/ciena.svg
@@ -1972,7 +1973,7 @@ librenms/html/images/os/ddn.png
 librenms/html/images/os/debian.svg
 librenms/html/images/os/deliberant.png
 librenms/html/images/os/dell.svg
-librenms/html/images/os/delta.png
+librenms/html/images/os/delta.svg
 librenms/html/images/os/develop.png
 librenms/html/images/os/devuan.svg
 librenms/html/images/os/dhcpatriot.png
@@ -2429,6 +2430,7 @@ librenms/includes/definitions/acsw.yaml
 librenms/includes/definitions/adtran-aos.yaml
 librenms/includes/definitions/adva_fsp150.yaml
 librenms/includes/definitions/adva_fsp3kr7.yaml
+librenms/includes/definitions/adva_xg300.yaml
 librenms/includes/definitions/advantech.yaml
 librenms/includes/definitions/aen.yaml
 librenms/includes/definitions/airconsole.yaml
@@ -2520,6 +2522,7 @@ librenms/includes/definitions/catos.yaml
 librenms/includes/definitions/cdata.yaml
 librenms/includes/definitions/celvin.yaml
 librenms/includes/definitions/ceraos.yaml
+librenms/includes/definitions/cetpower.yaml
 librenms/includes/definitions/chatsworth-pdu.yaml
 librenms/includes/definitions/ciena-saos.yaml
 librenms/includes/definitions/ciena-sds.yaml
@@ -2588,6 +2591,7 @@ librenms/includes/definitions/discovery/acs.yaml
 librenms/includes/definitions/discovery/adtran-aos.yaml
 librenms/includes/definitions/discovery/adva_fsp150.yaml
 librenms/includes/definitions/discovery/adva_fsp3kr7.yaml
+librenms/includes/definitions/discovery/adva_xg300.yaml
 librenms/includes/definitions/discovery/advantech.yaml
 librenms/includes/definitions/discovery/aen.yaml
 librenms/includes/definitions/discovery/airos-af-ltu.yaml
@@ -2658,6 +2662,7 @@ librenms/includes/definitions/discovery/cat1900.yaml
 librenms/includes/definitions/discovery/catos.yaml
 librenms/includes/definitions/discovery/cdata.yaml
 librenms/includes/definitions/discovery/ceraos.yaml
+librenms/includes/definitions/discovery/cetpower.yaml
 librenms/includes/definitions/discovery/chatsworth-pdu.yaml
 librenms/includes/definitions/discovery/ciena-saos.yaml
 librenms/includes/definitions/discovery/ciena-sds.yaml
@@ -2778,6 +2783,7 @@ librenms/includes/definitions/discovery/fs-nmu.yaml
 librenms/includes/definitions/discovery/fs-switch.yaml
 librenms/includes/definitions/discovery/ftd.yaml
 librenms/includes/definitions/discovery/ftos.yaml
+librenms/includes/definitions/discovery/fujitsuiRMC.yaml
 librenms/includes/definitions/discovery/fujitsupyos.yaml
 librenms/includes/definitions/discovery/fusion.yaml
 librenms/includes/definitions/discovery/fusionhub.yaml
@@ -3026,6 +3032,7 @@ librenms/includes/definitions/discovery/sixnet.yaml
 librenms/includes/definitions/discovery/slxos.yaml
 librenms/includes/definitions/discovery/sm-os.yaml
 librenms/includes/definitions/discovery/smartax.yaml
+librenms/includes/definitions/discovery/smartos-dcp-m.yaml
 librenms/includes/definitions/discovery/smartos.yaml
 librenms/includes/definitions/discovery/snr-erd.yaml
 librenms/includes/definitions/discovery/snr.yaml
@@ -3178,6 +3185,7 @@ librenms/includes/definitions/fs-switch.yaml
 librenms/includes/definitions/ftd.yaml
 librenms/includes/definitions/ftos.yaml
 librenms/includes/definitions/fujitsueternusos.yaml
+librenms/includes/definitions/fujitsuiRMC.yaml
 librenms/includes/definitions/fujitsupyos.yaml
 librenms/includes/definitions/fusion.yaml
 librenms/includes/definitions/fusionhub.yaml
@@ -3480,6 +3488,7 @@ librenms/includes/definitions/slxos.yaml
 librenms/includes/definitions/sm-os.yaml
 librenms/includes/definitions/smartax-mdu.yaml
 librenms/includes/definitions/smartax.yaml
+librenms/includes/definitions/smartos-dcp-m.yaml
 librenms/includes/definitions/smartos-t.yaml
 librenms/includes/definitions/smartos.yaml
 librenms/includes/definitions/snr-erd.yaml
@@ -3562,6 +3571,7 @@ librenms/includes/definitions/xirrus_aos.yaml
 librenms/includes/definitions/xos.yaml
 librenms/includes/definitions/zebra.yaml
 librenms/includes/definitions/zmtel.yaml
+librenms/includes/definitions/zxa10.yaml
 librenms/includes/definitions/zxdsl.yaml
 librenms/includes/definitions/zxr10.yaml
 librenms/includes/definitions/zynos.yaml
@@ -3594,6 +3604,7 @@ librenms/includes/discovery/entity-physical/
 librenms/includes/discovery/entity-physical.inc.php
 librenms/includes/discovery/entity-physical/ciena-sds.inc.php
 librenms/includes/discovery/entity-physical/cimc.inc.php
+librenms/includes/discovery/entity-physical/eltex-mes23xx.inc.php
 librenms/includes/discovery/entity-physical/entity-physical.inc.php
 librenms/includes/discovery/entity-physical/eurostor.inc.php
 librenms/includes/discovery/entity-physical/linux.inc.php
@@ -3640,6 +3651,7 @@ librenms/includes/discovery/ports.inc.php
 librenms/includes/discovery/ports/airos-af-ltu.inc.php
 librenms/includes/discovery/ports/brocade.inc.php
 librenms/includes/discovery/ports/ekinops.inc.php
+librenms/includes/discovery/ports/luminato.inc.php
 librenms/includes/discovery/printer-supplies.inc.php
 librenms/includes/discovery/processors.inc.php
 librenms/includes/discovery/route.inc.php
@@ -3651,6 +3663,8 @@ librenms/includes/discovery/sensors/airflow/geist-watchdog.inc.php
 librenms/includes/discovery/sensors/ber/
 librenms/includes/discovery/sensors/ber/infinera-groove.inc.php
 librenms/includes/discovery/sensors/ber/junos.inc.php
+librenms/includes/discovery/sensors/bitrate/
+librenms/includes/discovery/sensors/bitrate/luminato.inc.php
 librenms/includes/discovery/sensors/charge/
 librenms/includes/discovery/sensors/charge/apc.inc.php
 librenms/includes/discovery/sensors/charge/compas.inc.php
@@ -3802,6 +3816,7 @@ librenms/includes/discovery/sensors/power/dell-ups.inc.php
 librenms/includes/discovery/sensors/power/dell.inc.php
 librenms/includes/discovery/sensors/power/dsm.inc.php
 librenms/includes/discovery/sensors/power/eatonups.inc.php
+librenms/includes/discovery/sensors/power/eltex-mes23xx.inc.php
 librenms/includes/discovery/sensors/power/enlogic-pdu.inc.php
 librenms/includes/discovery/sensors/power/geist-pdu.inc.php
 librenms/includes/discovery/sensors/power/hpblmos.inc.php
@@ -3839,6 +3854,7 @@ librenms/includes/discovery/sensors/pre-cache/infinera-groove.inc.php
 librenms/includes/discovery/sensors/pre-cache/ipoman.inc.php
 librenms/includes/discovery/sensors/pre-cache/junos.inc.php
 librenms/includes/discovery/sensors/pre-cache/linux.inc.php
+librenms/includes/discovery/sensors/pre-cache/luminato.inc.php
 librenms/includes/discovery/sensors/pre-cache/nokia-isam.inc.php
 librenms/includes/discovery/sensors/pre-cache/pbn.inc.php
 librenms/includes/discovery/sensors/pre-cache/poweralert.inc.php
@@ -4526,6 +4542,8 @@ librenms/includes/html/graphs/application/squid_reqhit.inc.php
 librenms/includes/html/graphs/application/squid_server.inc.php
 librenms/includes/html/graphs/application/squid_serverbw.inc.php
 librenms/includes/html/graphs/application/squid_sysnumread.inc.php
+librenms/includes/html/graphs/application/supervisord_totals.inc.php
+librenms/includes/html/graphs/application/supervisord_uptime.inc.php
 librenms/includes/html/graphs/application/tinydns_dnssec.inc.php
 librenms/includes/html/graphs/application/tinydns_errors.inc.php
 librenms/includes/html/graphs/application/tinydns_other.inc.php
@@ -4645,6 +4663,7 @@ librenms/includes/html/graphs/device/bigip_system_client_connection_rate.inc.php
 librenms/includes/html/graphs/device/bigip_system_server_concurrent_connections.inc.php
 librenms/includes/html/graphs/device/bigip_system_server_connection_rate.inc.php
 librenms/includes/html/graphs/device/bigip_system_tps.inc.php
+librenms/includes/html/graphs/device/bitrate.inc.php
 librenms/includes/html/graphs/device/bits.inc.php
 librenms/includes/html/graphs/device/cambium-epmp-frameUtilization.inc.php
 librenms/includes/html/graphs/device/cambium_250_dataRate.inc.php
@@ -4827,6 +4846,7 @@ librenms/includes/html/graphs/device/sla_icmpjitter_lost.inc.php
 librenms/includes/html/graphs/device/sla_icmpjitter_oos.inc.php
 librenms/includes/html/graphs/device/sla_jitter-icpif.inc.php
 librenms/includes/html/graphs/device/sla_jitter-latency.inc.php
+librenms/includes/html/graphs/device/sla_jitter-loss-percent.inc.php
 librenms/includes/html/graphs/device/sla_jitter-loss.inc.php
 librenms/includes/html/graphs/device/sla_jitter-lost.inc.php
 librenms/includes/html/graphs/device/sla_jitter-mos.inc.php
@@ -5006,6 +5026,7 @@ librenms/includes/html/graphs/sensor/
 librenms/includes/html/graphs/sensor/airflow.inc.php
 librenms/includes/html/graphs/sensor/auth.inc.php
 librenms/includes/html/graphs/sensor/ber.inc.php
+librenms/includes/html/graphs/sensor/bitrate.inc.php
 librenms/includes/html/graphs/sensor/charge.inc.php
 librenms/includes/html/graphs/sensor/chromatic_dispersion.inc.php
 librenms/includes/html/graphs/sensor/cooling.inc.php
@@ -5210,6 +5231,7 @@ librenms/includes/html/pages/device/apps/seafile.inc.php
 librenms/includes/html/pages/device/apps/shoutcast.inc.php
 librenms/includes/html/pages/device/apps/smart.inc.php
 librenms/includes/html/pages/device/apps/squid.inc.php
+librenms/includes/html/pages/device/apps/supervisord.inc.php
 librenms/includes/html/pages/device/apps/tinydns.inc.php
 librenms/includes/html/pages/device/apps/unbound.inc.php
 librenms/includes/html/pages/device/apps/ups-apcups.inc.php
@@ -5256,6 +5278,7 @@ librenms/includes/html/pages/device/health/
 librenms/includes/html/pages/device/health.inc.php
 librenms/includes/html/pages/device/health/airflow.inc.php
 librenms/includes/html/pages/device/health/ber.inc.php
+librenms/includes/html/pages/device/health/bitrate.inc.php
 librenms/includes/html/pages/device/health/charge.inc.php
 librenms/includes/html/pages/device/health/chromatic_dispersion.inc.php
 librenms/includes/html/pages/device/health/cooling.inc.php
@@ -5345,6 +5368,7 @@ librenms/includes/html/pages/device/overview/puppet_agent.inc.php
 librenms/includes/html/pages/device/overview/sensors/
 librenms/includes/html/pages/device/overview/sensors/airflow.inc.php
 librenms/includes/html/pages/device/overview/sensors/ber.inc.php
+librenms/includes/html/pages/device/overview/sensors/bitrate.inc.php
 librenms/includes/html/pages/device/overview/sensors/charge.inc.php
 librenms/includes/html/pages/device/overview/sensors/chromatic_dispersion.inc.php
 librenms/includes/html/pages/device/overview/sensors/cooling.inc.php
@@ -5436,6 +5460,7 @@ librenms/includes/html/pages/graylog.inc.php
 librenms/includes/html/pages/health/
 librenms/includes/html/pages/health.inc.php
 librenms/includes/html/pages/health/ber.inc.php
+librenms/includes/html/pages/health/bitrate.inc.php
 librenms/includes/html/pages/health/charge.inc.php
 librenms/includes/html/pages/health/chromatic_dispersion.inc.php
 librenms/includes/html/pages/health/cooling.inc.php
@@ -5629,6 +5654,7 @@ librenms/includes/polling/applications/seafile.inc.php
 librenms/includes/polling/applications/shoutcast.inc.php
 librenms/includes/polling/applications/smart.inc.php
 librenms/includes/polling/applications/squid.inc.php
+librenms/includes/polling/applications/supervisord.inc.php
 librenms/includes/polling/applications/tinydns.inc.php
 librenms/includes/polling/applications/unbound.inc.php
 librenms/includes/polling/applications/ups-apcups.inc.php
@@ -5704,6 +5730,7 @@ librenms/includes/polling/ports/os/ekinops.inc.php
 librenms/includes/polling/ports/os/fabos.inc.php
 librenms/includes/polling/ports/os/infinera-groove.inc.php
 librenms/includes/polling/ports/os/junos.inc.php
+librenms/includes/polling/ports/os/luminato.inc.php
 librenms/includes/polling/ports/os/nokia-isam.inc.php
 librenms/includes/polling/ports/os/procera.inc.php
 librenms/includes/polling/ports/os/timos.inc.php
@@ -6125,6 +6152,8 @@ librenms/mibs/adva/CM-SAT-MIB
 librenms/mibs/adva/CM-SECURITY-MIB
 librenms/mibs/adva/CM-SYSTEM-MIB
 librenms/mibs/adva/CM-TOPOLOGY-MIB
+librenms/mibs/adva/DEV-CFG-MIB
+librenms/mibs/adva/DEV-ID-MIB
 librenms/mibs/adva/F3-AMP-MIB
 librenms/mibs/adva/F3-BFD-MIB
 librenms/mibs/adva/F3-BRIDGE-MIB
@@ -6153,6 +6182,8 @@ librenms/mibs/adva/F3-SYNC-MIB
 librenms/mibs/adva/F3-SYNCJACK-MIB
 librenms/mibs/adva/F3-TIMEZONE-MIB
 librenms/mibs/adva/F3-TWAMP-MIB
+librenms/mibs/adva/OA-SFP-MIB
+librenms/mibs/adva/OS-COMMON-TC-MIB
 librenms/mibs/advantech/
 librenms/mibs/advantech/ADVANTECH-COMMON-MIB
 librenms/mibs/advantech/ADVANTECH-EKI-PRONEER-MIB
@@ -6695,6 +6726,9 @@ librenms/mibs/ceraos/MWRM-NETWORK-MIB
 librenms/mibs/ceraos/MWRM-PM-MIB
 librenms/mibs/ceraos/MWRM-RADIO-MIB
 librenms/mibs/ceraos/MWRM-UNIT-MIB
+librenms/mibs/cet/
+librenms/mibs/cet/CET-TSI-MIB
+librenms/mibs/cet/CET-TSI-SMI
 librenms/mibs/chatsworth/
 librenms/mibs/chatsworth/CPI-UNITY-MIB
 librenms/mibs/checkpoint/
@@ -7693,7 +7727,9 @@ librenms/mibs/eltexmes21xx/RADLAN-rndMng
 librenms/mibs/eltexmes23xx/
 librenms/mibs/eltexmes23xx/ELTEX-MES
 librenms/mibs/eltexmes23xx/ELTEX-MES-HWENVIROMENT-MIB
+librenms/mibs/eltexmes23xx/ELTEX-MES-PHYSICAL-DESCRIPTION-MIB
 librenms/mibs/eltexmes23xx/ELTEX-SMI-ACTUAL
+librenms/mibs/eltexmes23xx/MARVELL-POE-MIB
 librenms/mibs/eltexmes23xx/RADLAN-DEVICEPARAMS-MIB
 librenms/mibs/eltexmes23xx/RADLAN-File
 librenms/mibs/eltexmes23xx/RADLAN-HWENVIROMENT
@@ -8043,6 +8079,7 @@ librenms/mibs/fs/STP-MIB
 librenms/mibs/fs/SWITCH
 librenms/mibs/fujitsu/
 librenms/mibs/fujitsu/FJDARY-E150
+librenms/mibs/fujitsu/FSC-SERVERCONTROL2-MIB
 librenms/mibs/gamatronic/
 librenms/mibs/gamatronic/GAMATRONIC-MIB
 librenms/mibs/gandi/
@@ -9395,6 +9432,7 @@ librenms/mibs/nortel/SWPRIMGMT-MIB
 librenms/mibs/nortel/SYNOPTICS-ROOT-MIB
 librenms/mibs/nti/
 librenms/mibs/nti/ENVIROMUX-1W-MIB
+librenms/mibs/nti/ENVIROMUXMICRO-MIB
 librenms/mibs/omnitron/
 librenms/mibs/omnitron/OMNITRON-MIB
 librenms/mibs/omnitron/OMNITRON-POE-MIB
@@ -9892,11 +9930,18 @@ librenms/mibs/silverpeak/SILVERPEAK-TC
 librenms/mibs/sinetica/
 librenms/mibs/sinetica/HAWK-I2-MIB
 librenms/mibs/smartoptics/
+librenms/mibs/smartoptics/DCP-ALARM-MIB
+librenms/mibs/smartoptics/DCP-INTERFACE-MIB
+librenms/mibs/smartoptics/DCP-LINKVIEW-MIB
+librenms/mibs/smartoptics/DCP-MIB
+librenms/mibs/smartoptics/DCP-OCH-MIB
 librenms/mibs/smartoptics/MSERIES-ALARM-MIB
 librenms/mibs/smartoptics/MSERIES-ENVMON-MIB
 librenms/mibs/smartoptics/MSERIES-MIB
 librenms/mibs/smartoptics/MSERIES-PORT-MIB
 librenms/mibs/smartoptics/MSERIES-TC
+librenms/mibs/smartoptics/SO-MIB
+librenms/mibs/smartoptics/SO-TC-MIB
 librenms/mibs/snr/
 librenms/mibs/snr/NAG-MIB
 librenms/mibs/snrerd/
