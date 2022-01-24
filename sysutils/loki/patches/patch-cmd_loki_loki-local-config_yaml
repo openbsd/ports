@@ -1,25 +1,17 @@
-$OpenBSD: patch-cmd_loki_loki-local-config_yaml,v 1.3 2021/11/01 12:46:31 landry Exp $
-
-Index: cmd/loki/loki-local-config.yaml
 --- cmd/loki/loki-local-config.yaml.orig
 +++ cmd/loki/loki-local-config.yaml
-@@ -33,15 +33,15 @@ schema_config:
+@@ -5,11 +5,11 @@
+   grpc_listen_port: 9096
  
- storage_config:
-   boltdb_shipper:
--    active_index_directory: /tmp/loki/boltdb-shipper-active
--    cache_location: /tmp/loki/boltdb-shipper-cache
-+    active_index_directory: /var/loki/boltdb-shipper-active
-+    cache_location: /var/loki/boltdb-shipper-cache
-     cache_ttl: 24h         # Can be increased for faster performance over longer query periods, uses more disk space
-     shared_store: filesystem
-   filesystem:
--    directory: /tmp/loki/chunks
-+    directory: /var/loki/chunks
- 
- compactor:
--  working_directory: /tmp/loki/boltdb-shipper-compactor
-+  working_directory: /var/loki/boltdb-shipper-compactor
-   shared_store: filesystem
- 
- limits_config:
+ common:
+-  path_prefix: /tmp/loki
++  path_prefix: /var/loki
+   storage:
+     filesystem:
+-      chunks_directory: /tmp/loki/chunks
+-      rules_directory: /tmp/loki/rules
++      chunks_directory: /var/loki/chunks
++      rules_directory: /var/loki/rules
+   replication_factor: 1
+   ring:
+     instance_addr: 127.0.0.1
