@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2021/12/20 09:08:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2022/01/24 16:35:54 sthen Exp $
 
 V=		6.0.45
 SNAPPY_V=	1.1.8.4
-REVISION=	8
+REVISION=	9
 
 REPLACE_LOG4J=	Yes
 
