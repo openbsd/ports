@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/02/06 14:10:05 kmos Exp $
+# $OpenBSD: Makefile,v 1.2 2022/01/24 09:19:39 sthen Exp $
 
 COMMENT=        script to copy one's SSH keys to remote hosts
-V=              8.1p1
+V=              8.8p1
 DISTNAME=       openssh-${V}
 PKGNAME=        ssh-copy-id-${V:S/p/pl/}
 CATEGORIES=     sysutils
