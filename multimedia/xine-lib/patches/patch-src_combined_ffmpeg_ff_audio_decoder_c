@@ -1,0 +1,89 @@
+$OpenBSD: patch-src_combined_ffmpeg_ff_audio_decoder_c,v 1.12 2022/01/25 18:10:36 sthen Exp $
+
+ffmpeg 4 compatibility attempt.
+4e5ad7ebed6111ba9e1ea2eab4a6b94477b066a8
+
+Index: src/combined/ffmpeg/ff_audio_decoder.c
+--- src/combined/ffmpeg/ff_audio_decoder.c.orig
++++ src/combined/ffmpeg/ff_audio_decoder.c
+@@ -74,7 +74,7 @@ typedef struct ff_audio_decoder_s {
+   int               size;
+ 
+   AVCodecContext    *context;
+-  AVCodec           *codec;
++  const AVCodec     *codec;
+ 
+   char              *decode_buffer;
+   int               decoder_ok;
+@@ -83,6 +83,9 @@ typedef struct ff_audio_decoder_s {
+ #if XFF_AUDIO > 3
+   AVFrame          *av_frame;
+ #endif
++#if XFF_AUDIO > 2
++  XFF_PACKET_DECL (avpkt);
++#endif
+ 
+   /* AAC ADTS */
+   uint32_t          buftype;
+@@ -690,11 +693,9 @@ static int ff_audio_decode (ff_audio_decoder_t *this,
+   else parsed = 0;
+ 
+ #if XFF_AUDIO > 2
+-  AVPacket avpkt;
+-  av_init_packet (&avpkt);
+-  avpkt.data = buf;
+-  avpkt.size = size;
+-  avpkt.flags = AV_PKT_FLAG_KEY;
++  this->avpkt->data = buf;
++  this->avpkt->size = size;
++  this->avpkt->flags = AV_PKT_FLAG_KEY;
+ #  if XFF_AUDIO > 3
+   int got_frame;
+   float gain = this->class->gain;
+@@ -702,7 +703,7 @@ static int ff_audio_decode (ff_audio_decoder_t *this,
+     this->av_frame = XFF_ALLOC_FRAME ();
+ #   if XFF_AUDIO == 5
+   {
+-    int err = avcodec_send_packet (this->context, &avpkt);
++    int err = avcodec_send_packet (this->context, this->avpkt);
+     /* xprintf (this->stream->xine, XINE_VERBOSITY_DEBUG, "ff_audio_dec: send (%d) = %d.\n", (int)size, err); */
+     /* multiple frames per packet */
+     consumed = (err >= 0) ? size : ((err == AVERROR (EAGAIN)) ? 0 : err);
+@@ -712,7 +713,7 @@ static int ff_audio_decode (ff_audio_decoder_t *this,
+     got_frame = (err == 0);
+   }
+ #   else
+-  consumed = avcodec_decode_audio4 (this->context, this->av_frame, &got_frame, &avpkt);
++  consumed = avcodec_decode_audio4 (this->context, this->av_frame, &got_frame, this->avpkt);
+ #   endif
+   if ((consumed >= 0) && got_frame) {
+     /* setup may have altered while decoding */
+@@ -970,7 +971,7 @@ static int ff_audio_decode (ff_audio_decoder_t *this,
+     }
+   } else *decode_buffer_size = 0;
+ #  else
+-  consumed = avcodec_decode_audio3 (this->context, decode_buffer, decode_buffer_size, &avpkt);
++  consumed = avcodec_decode_audio3 (this->context, decode_buffer, decode_buffer_size, this->avpkt);
+   ff_map_channels (this);
+ #  endif
+ #else
+@@ -1286,6 +1287,8 @@ static void ff_audio_dispose (audio_decoder_t *this_ge
+   this->context->extradata_size = 0;
+   XFF_FREE_CONTEXT (this->context);
+ 
++  XFF_PACKET_UNREF (this->avpkt);
++
+   free (this_gen);
+ }
+ 
+@@ -1311,6 +1314,10 @@ static audio_decoder_t *ff_audio_open_plugin (audio_de
+ # if XFF_AUDIO > 3
+   this->av_frame    = NULL;
+ # endif
++#endif
++
++# if XFF_AUDIO > 2
++  XFF_PACKET_NEW (this->avpkt);
+ #endif
+ 
+   this->class  = (ff_audio_class_t *)class_gen;

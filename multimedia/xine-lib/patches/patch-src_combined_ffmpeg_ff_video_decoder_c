@@ -1,0 +1,396 @@
+$OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.24 2022/01/25 18:10:36 sthen Exp $
+
+- ffmpeg 4 compatibility attempt.
+  4e5ad7ebed6111ba9e1ea2eab4a6b94477b066a8
+- Fix video failure after temporary video out jam.
+  c87919f2efbb51cbeda963e4cb5db9a8cd08163
+
+Index: src/combined/ffmpeg/ff_video_decoder.c
+--- src/combined/ffmpeg/ff_video_decoder.c.orig
++++ src/combined/ffmpeg/ff_video_decoder.c
+@@ -51,23 +51,33 @@
+ #include "ffmpeg_decoder.h"
+ #include "ff_mpeg_parser.h"
+ 
++#include "ffmpeg_compat.h"
++
++#if LIBAVCODEC_VERSION_INT >= XFF_INT_VERSION(59,0,100)
++# undef HAVE_POSTPROC
++#endif
++
+ #ifdef HAVE_POSTPROC
+-#ifdef HAVE_FFMPEG_AVUTIL_H
+-# include <postprocess.h>
+-#else
+-# include <libpostproc/postprocess.h>
+-# include <libavutil/mem.h>
++# ifdef HAVE_FFMPEG_AVUTIL_H
++#  include <postprocess.h>
++# else
++#  include <libpostproc/postprocess.h>
++#  include <libavutil/mem.h>
++# endif
+ #endif
+-#endif
+ 
+ #ifdef HAVE_VA_VA_X11_H
+-# include <libavcodec/vaapi.h>
++# if XFF_VAAPI == 1
++#  include <libavcodec/vaapi.h>
++# elif XFF_VAAPI == 2
++#  warning rumms
++#  include <libavutil/hwcontext.h>
++#  include <libavutil/hwcontext_vaapi.h>
++# endif
+ # include "accel_vaapi.h"
+ # define ENABLE_VAAPI 1
+ #endif
+ 
+-#include "ffmpeg_compat.h"
+-
+ #if defined(ARCH_X86) && defined(HAVE_MMX)
+ # include "xine_mmx.h"
+ # define ENABLE_EMMS
+@@ -140,7 +150,7 @@ struct ff_video_decoder_s {
+   AVFrame          *av_frame;
+   AVFrame          *av_frame2;
+   AVCodecContext   *context;
+-  AVCodec          *codec;
++  const AVCodec    *codec;
+ 
+ #ifdef HAVE_POSTPROC
+   int               pp_quality;
+@@ -187,7 +197,15 @@ struct ff_video_decoder_s {
+ #ifdef ENABLE_VAAPI
+   int                   vaapi_width, vaapi_height;
+   int                   vaapi_profile;
++# if XFF_VAAPI == 1
+   struct vaapi_context  vaapi_context;
++# elif XFF_VAAPI == 2
++  /* these are _here_ for debugging mostly. */
++  AVBufferRef          *vaapi_av_ctx_ref;
++  AVHWDeviceContext    *vaapi_av_ctx;
++  AVVAAPIDeviceContext *vaapi_hw_ctx;
++  AVVAAPIHWConfig      *vaapi_hw_cfg;
++# endif
+   const struct vaapi_accel_funcs_s *accel;
+   vo_frame_t            *accel_img;
+ #endif
+@@ -210,13 +228,80 @@ struct ff_video_decoder_s {
+   /* see get_buffer () */
+   int               use_emms;
+ #endif
++
++#if XFF_VIDEO > 1
++  XFF_PACKET_DECL (avpkt);
++#endif
+ };
+ 
+ /* import color matrix names */
+ #define CM_HAVE_YCGCO_SUPPORT 1
+ #include "../../video_out/color_matrix.c"
+ 
++#ifdef ENABLE_VAAPI
++# if XFF_VAAPI == 2
+ 
++static void ff_vaapi_stop (ff_video_decoder_t *this) {
++  if (this->vaapi_av_ctx) {
++    av_buffer_unref (&this->vaapi_av_ctx_ref);
++    this->vaapi_av_ctx = NULL;
++    this->vaapi_av_ctx_ref = NULL;
++  }
++}
++
++static void ff_vaapi_free_ctx (AVHWDeviceContext *ctx) {
++  ff_video_decoder_t *this;
++
++  if (!ctx)
++    return;
++  this = (ff_video_decoder_t *)ctx->user_opaque;
++  if (!this)
++    return;
++
++  av_free (this->vaapi_hw_cfg);
++  this->vaapi_hw_cfg = NULL;
++}
++
++static int ff_vaapi_start (ff_video_decoder_t *this, VADisplay display, VAConfigID config_id) {
++  xprintf (this->stream->xine, XINE_VERBOSITY_DEBUG,
++    "ffmpeg_video_dec: ff_vaapi_start (display = %p, config_id = %d).\n",
++    (void *)display, (int)config_id);
++
++  this->vaapi_av_ctx_ref = av_hwdevice_ctx_alloc (AV_HWDEVICE_TYPE_VAAPI);
++  if (!this->vaapi_av_ctx_ref)
++    return 0;
++  this->vaapi_av_ctx = (AVHWDeviceContext *)this->vaapi_av_ctx_ref->data;
++  if (!this->vaapi_av_ctx) {
++    ff_vaapi_stop (this);
++    return 0;
++  }
++
++  this->vaapi_hw_ctx = (AVVAAPIDeviceContext *)this->vaapi_av_ctx->hwctx;
++  if (!this->vaapi_hw_ctx) {
++    ff_vaapi_stop (this);
++    return 0;
++  }
++  this->vaapi_av_ctx->user_opaque = this;
++  this->vaapi_av_ctx->free = ff_vaapi_free_ctx;
++  this->vaapi_hw_ctx->display = display;
++
++  this->vaapi_hw_cfg = (AVVAAPIHWConfig *)av_hwdevice_hwconfig_alloc (this->vaapi_av_ctx_ref);
++  if (!this->vaapi_hw_cfg) {
++    ff_vaapi_stop (this);
++    return 0;
++  }
++  this->vaapi_hw_cfg->config_id = config_id;
++
++  if (av_hwdevice_ctx_init (this->vaapi_av_ctx_ref)) {
++    ff_vaapi_stop (this);
++    return 0;
++  }
++  return 1;
++}
++
++# endif
++#endif
++
+ static void ff_check_colorspace (ff_video_decoder_t *this) {
+   int i, cm, caps;
+ 
+@@ -481,9 +566,20 @@ static int get_buffer_vaapi_vld (AVCodecContext *conte
+       ff_vaapi_context_t *va_context = this->accel->get_context (this->accel_img);
+ 
+       if (va_context) {
++#  if XFF_VAAPI == 2
++        /* avcodec.h saye custom frame allocators shall use AVCodecContext.hw_frames_ctx instead.
++         * however, avcodec_default_get_buffer2 () seems the only 1 using it as such. */
++        if (ff_vaapi_start (this, va_context->va_display, va_context->va_config_id)) {
++          AVBufferRef *old_vaapi_av_ctx_ref = context->hw_device_ctx;
++
++          context->hw_device_ctx = this->vaapi_av_ctx_ref;
++          av_buffer_unref (&old_vaapi_av_ctx_ref);
++        }
++#  else
+         this->vaapi_context.config_id  = va_context->va_config_id;
+         this->vaapi_context.context_id = va_context->va_context_id;
+         this->vaapi_context.display    = va_context->va_display;
++#  endif
+       }
+     }
+   }
+@@ -867,11 +963,22 @@ static enum PixelFormat get_format(struct AVCodecConte
+         context->draw_horiz_band = NULL;
+         context->slice_flags = SLICE_FLAG_CODED_ORDER | SLICE_FLAG_ALLOW_FIELD;
+ 
++# if XFF_VAAPI == 2
++        /* avcodec.h saye custom frame allocators shall use AVCodecContext.hw_frames_ctx instead.
++         * however, avcodec_default_get_buffer2 () seems the only 1 using it as such. */
++        if (ff_vaapi_start (this, va_context->va_display, va_context->va_config_id)) {
++          AVBufferRef *old_vaapi_av_ctx_ref = context->hw_device_ctx;
++
++          context->hw_device_ctx = this->vaapi_av_ctx_ref;
++          av_buffer_unref (&old_vaapi_av_ctx_ref);
++        }
++# else
+         this->vaapi_context.config_id    = va_context->va_config_id;
+         this->vaapi_context.context_id   = va_context->va_context_id;
+         this->vaapi_context.display      = va_context->va_display;
+ 
+         context->hwaccel_context     = &this->vaapi_context;
++# endif
+         this->pts = 0;
+ 
+         return fmt[i];
+@@ -955,7 +1062,12 @@ static void init_video_codec (ff_video_decoder_t *this
+   if( this->codec->capabilities & AV_CODEC_CAP_DR1 && this->class->enable_dri ) {
+ # ifdef XFF_AV_BUFFER
+     this->context->get_buffer2 = get_buffer;
++#  if XFF_THREAD_SAFE_CB == 2
++#   warning h.264 still needs this set, or falls back to indirect rendering. please ignore the next warning.
++#  endif
++#  if XFF_THREAD_SAFE_CB != 0
+     this->context->thread_safe_callbacks = 1;
++#  endif
+ #  if XFF_VIDEO != 3
+     this->context->refcounted_frames = 1;
+ #  endif
+@@ -1162,9 +1274,9 @@ static void pp_change_quality (ff_video_decoder_t *thi
+ 
+ static void init_postprocess (ff_video_decoder_t *this) {
+ #ifdef HAVE_POSTPROC
+-#if defined(ARCH_X86)
++# if defined(ARCH_X86)
+   uint32_t cpu_caps;
+-#endif
++# endif
+ 
+   /* Allow post processing on mpeg-4 (based) codecs */
+   switch(this->codec->id) {
+@@ -1183,7 +1295,7 @@ static void init_postprocess (ff_video_decoder_t *this
+ 
+   this->pp_flags = PP_FORMAT_420;
+ 
+-#if defined(ARCH_X86)
++# if defined(ARCH_X86)
+   /* Detect what cpu accel we have */
+   cpu_caps = xine_mm_accel();
+ 
+@@ -1195,10 +1307,12 @@ static void init_postprocess (ff_video_decoder_t *this
+ 
+   if(cpu_caps & MM_ACCEL_X86_3DNOW)
+     this->pp_flags |= PP_CPU_CAPS_3DNOW;
+-#endif
++# endif
+ 
+   /* Set level */
+   pp_change_quality(this);
++#else
++  (void)this;
+ #endif /* HAVE_POSTPROC */
+ }
+ 
+@@ -1848,15 +1962,13 @@ static int decode_video_wrapper (ff_video_decoder_t *t
+ #endif /* ENABLE_VAAPI */
+ 
+ #if XFF_VIDEO > 1
+-  AVPacket avpkt;
+-  av_init_packet(&avpkt);
+-  avpkt.data = buf;
+-  avpkt.size = buf_size;
+-  avpkt.flags = AV_PKT_FLAG_KEY;
++  this->avpkt->data = buf;
++  this->avpkt->size = buf_size;
++  this->avpkt->flags = AV_PKT_FLAG_KEY;
+ 
+ # if XFF_PALETTE == 2 || XFF_PALETTE == 3
+   if (buf && this->palette_changed) {
+-    uint8_t *sd = av_packet_new_side_data (&avpkt, AV_PKT_DATA_PALETTE, 256 * 4);
++    uint8_t *sd = av_packet_new_side_data (this->avpkt, AV_PKT_DATA_PALETTE, 256 * 4);
+     if (sd)
+       memcpy (sd, this->palette, 256 * 4);
+   }
+@@ -1868,7 +1980,7 @@ static int decode_video_wrapper (ff_video_decoder_t *t
+   {
+     int e = AVERROR (EAGAIN);
+     if (buf || !this->flush_packet_sent) {
+-      e = avcodec_send_packet (this->context, &avpkt);
++      e = avcodec_send_packet (this->context, this->avpkt);
+       this->flush_packet_sent = (buf == NULL);
+     }
+     len = (e == AVERROR (EAGAIN)) ? 0 : buf_size;
+@@ -1878,7 +1990,7 @@ static int decode_video_wrapper (ff_video_decoder_t *t
+ # else
+   {
+     int got_picture = 0;
+-    len = avcodec_decode_video2 (this->context, av_frame, &got_picture, &avpkt);
++    len = avcodec_decode_video2 (this->context, av_frame, &got_picture, this->avpkt);
+     if ((len < 0) || (len > (int)buf_size)) {
+       *err = got_picture ? 0 : len;
+       len = buf_size;
+@@ -1891,16 +2003,16 @@ static int decode_video_wrapper (ff_video_decoder_t *t
+ # if XFF_PALETTE == 2 || XFF_PALETTE == 3
+   if (buf && this->palette_changed) {
+     /* Prevent freeing our data buffer */
+-    avpkt.data = NULL;
+-    avpkt.size = 0;
++    this->avpkt->data = NULL;
++    this->avpkt->size = 0;
+ #  if XFF_PALETTE == 2
+     /* TJ. Oh dear and sigh.
+        AVPacket side data handling is broken even in ffmpeg 1.1.1 - see avcodec/avpacket.c
+        The suggested av_free_packet () would leave a memory leak here, and
+        ff_packet_free_side_data () is private. */
+-    av_destruct_packet (&avpkt);
++    av_destruct_packet (this->avpkt);
+ #  else /* XFF_PALETTE == 3 */
+-    XFF_PACKET_UNREF (&avpkt);
++    /* XFF_PACKET_UNREF (this->avpkt); */ ;
+ #  endif
+     this->palette_changed = 0;
+   }
+@@ -1929,6 +2041,8 @@ static int decode_video_wrapper (ff_video_decoder_t *t
+   return len;
+ }
+ 
++static void ff_reset (video_decoder_t *this_gen);
++
+ static void ff_handle_mpeg12_buffer (ff_video_decoder_t *this, buf_element_t *buf) {
+ 
+   vo_frame_t *img;
+@@ -2012,8 +2126,20 @@ static void ff_handle_mpeg12_buffer (ff_video_decoder_
+     flush = next_flush;
+ 
+     if ((err < 0) && (err != AVERROR (EAGAIN))) {
+-      xprintf (this->stream->xine, XINE_VERBOSITY_DEBUG,
+-        "ffmpeg_video_dec: error decompressing frame (%d).\n", err);
++#ifdef AVERROR_EOF
++      if (err == AVERROR_EOF) {
++        xprintf (this->stream->xine, XINE_VERBOSITY_DEBUG,
++          "ffmpeg_video_dec: lost track, reinitializing.\n");
++        ff_reset (&this->video_decoder);
++      } else
++#endif
++      {
++        char b[20];
++
++        _x_tag32_me2str (b, -err);
++        xprintf (this->stream->xine, XINE_VERBOSITY_DEBUG,
++          "ffmpeg_video_dec: error decompressing frame [%s] (%d).\n", b, err);
++      }
+     }
+     size -= len;
+     offset += len;
+@@ -2266,8 +2392,20 @@ static void ff_handle_buffer (ff_video_decoder_t *this
+             this->size -= len;
+             continue;
+           }
+-          xprintf (this->stream->xine, XINE_VERBOSITY_DEBUG,
+-            "ffmpeg_video_dec: error decompressing frame (%d).\n", err);
++#ifdef AVERROR_EOF
++          if (err == AVERROR_EOF) {
++            xprintf (this->stream->xine, XINE_VERBOSITY_DEBUG,
++              "ffmpeg_video_dec: lost track, reinitializing.\n");
++            ff_reset (&this->video_decoder);
++          } else
++#endif
++          {
++            char b[20];
++
++            _x_tag32_me2str (b, -err);
++            xprintf (this->stream->xine, XINE_VERBOSITY_DEBUG,
++              "ffmpeg_video_dec: error decompressing frame [%s] (%d).\n", b, err);
++          }
+           this->size = 0;
+ 
+         } else {
+@@ -2763,6 +2901,10 @@ static void ff_dispose (video_decoder_t *this_gen) {
+     XFF_FREE_CONTEXT (this->context);
+   }
+ 
++#if XFF_VIDEO > 1
++  XFF_PACKET_UNREF (this->avpkt);
++#endif
++
+   if( this->av_frame )
+     XFF_FREE_FRAME( this->av_frame );
+   if (this->av_frame2)
+@@ -2805,7 +2947,7 @@ static void ff_dispose (video_decoder_t *this_gen) {
+ static video_decoder_t *ff_video_open_plugin (video_decoder_class_t *class_gen, xine_stream_t *stream) {
+ 
+   ff_video_decoder_t  *this ;
+-  AVCodec             *codec = NULL;
++  const AVCodec       *codec = NULL;
+   uint32_t             video_type;
+   size_t               i;
+ 
+@@ -2913,6 +3055,10 @@ static video_decoder_t *ff_video_open_plugin (video_de
+   this->pix_fmt   = -1;
+ #ifdef LOG
+   this->debug_fmt = -1;
++#endif
++
++#if XFF_VIDEO > 1
++  XFF_PACKET_NEW (this->avpkt);
+ #endif
+ 
+ #ifdef ENABLE_VAAPI
