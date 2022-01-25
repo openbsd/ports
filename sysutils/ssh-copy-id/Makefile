@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2022/01/24 09:19:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2022/01/25 14:26:57 kn Exp $
 
 COMMENT=        script to copy one's SSH keys to remote hosts
 V=              8.8p1
@@ -19,8 +19,7 @@ NO_TEST=	Yes
 PKG_ARCH=	*
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/contrib/ssh-copy-id ${PREFIX}/bin
-	${INSTALL_MAN_DIR} ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/contrib/ssh-copy-id.1 ${PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/ssh-copy-id ${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/contrib/ssh-copy-id.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
