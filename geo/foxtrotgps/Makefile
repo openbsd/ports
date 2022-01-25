@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2021/02/23 19:39:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2022/01/25 03:13:41 daniel Exp $
 
 COMMENT =		lightweight mapping application for use with or without GPS
 
 DISTNAME =		foxtrotgps-1.2.2
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		geo x11
 
@@ -27,7 +27,6 @@ WANTLIB += ssl xcb xcb-render xcb-shm xml2 z ${COMPILER_LIBCXX}
 MODULES = 		devel/dconf \
 			lang/python \
 			textproc/intltool
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS = 	devel/gettext,-tools \
 			devel/gsettings-desktop-schemas
