@@ -1,0 +1,29 @@
+#!/bin/ksh
+#
+# $OpenBSD: tomcat.rc,v 1.1 2022/01/25 11:12:26 sthen Exp $
+
+daemon="${TRUEPREFIX}/tomcat/bin/catalina.sh"
+daemon_flags="-server"
+daemon_user="_tomcat"
+
+. /etc/rc.d/rc.subr
+
+pexp="$(${LOCALBASE}/bin/javaPathHelper -c tomcat) .*-Dcatalina.base=${CATALINA_BASE}.*org.apache.catalina.startup.Bootstrap.*"
+
+rc_reload=NO
+
+rc_start() {
+        ${rcexec} \
+	    "CATALINA_BASE=\"${CATALINA_BASE}\" \
+	    CATALINA_OPTS=\"${daemon_flags}\" \
+	    JAVA_HOME=\"$(${LOCALBASE}/bin/javaPathHelper -h tomcat)\" ${daemon} start"
+}
+
+rc_stop() {
+	CATALINA_BASE="${CATALINA_BASE}" \
+	CATALINA_OPTS="${daemon_flags}" \
+	    JAVA_HOME="$(${LOCALBASE}/bin/javaPathHelper -h tomcat)" \
+	    ${daemon} stop
+}
+
+rc_cmd $1

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2020/05/20 16:00:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2022/01/25 11:12:26 sthen Exp $
 
      SUBDIR =
-     SUBDIR += v7
      SUBDIR += v8
      SUBDIR += v9
+     SUBDIR += v10
 
 .include <bsd.port.subdir.mk>

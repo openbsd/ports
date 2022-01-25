@@ -1,0 +1,38 @@
+$OpenBSD: patch-conf_server_xml,v 1.1 2022/01/25 11:12:26 sthen Exp $
+
+Index: conf/server.xml
+--- conf/server.xml.orig
++++ conf/server.xml
+@@ -65,12 +65,12 @@
+          AJP  Connector: /docs/config/ajp.html
+          Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
+     -->
+-    <Connector port="8080" protocol="HTTP/1.1"
++    <Connector address="0.0.0.0" port="8080" protocol="HTTP/1.1"
+                connectionTimeout="20000"
+                redirectPort="8443" />
+     <!-- A "Connector" using the shared thread pool-->
+     <!--
+-    <Connector executor="tomcatThreadPool"
++    <Connector executor="tomcatThreadPool" address="0.0.0.0"
+                port="8080" protocol="HTTP/1.1"
+                connectionTimeout="20000"
+                redirectPort="8443" />
+@@ -83,7 +83,7 @@
+          the SSLImplementation selected. JSSE style configuration is used below.
+     -->
+     <!--
+-    <Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
++    <Connector address="0.0.0.0" port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
+                maxThreads="150" SSLEnabled="true">
+         <UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol" />
+         <SSLHostConfig>
+@@ -130,7 +130,7 @@
+                resourceName="UserDatabase"/>
+       </Realm>
+ 
+-      <Host name="localhost"  appBase="webapps"
++      <Host name="localhost"  appBase="${CATALINA_BASE}/webapps"
+             unpackWARs="true" autoDeploy="true">
+ 
+         <!-- SingleSignOn valve, share authentication between web applications

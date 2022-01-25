@@ -1,0 +1,179 @@
+@comment $OpenBSD: PLIST-main,v 1.1 2022/01/25 11:12:26 sthen Exp $
+@option is-branch
+@newgroup _tomcat:526
+@newuser _tomcat:526:_tomcat:daemon:Tomcat Account:/nonexistent:/sbin/nologin
+@extraunexec rm -rf ${CATALINA_BASE}/logs/* ${CATALINA_BASE}/work/*
+@rcscript ${RCDIR}/tomcat
+@owner _tomcat
+@group _tomcat
+@sample ${CONFDIR}/
+@owner
+@group
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/tomcat/
+share/examples/tomcat/catalina.policy
+@owner _tomcat
+@group _tomcat
+@sample ${CONFDIR}/catalina.policy
+@owner
+@group
+share/examples/tomcat/catalina.properties
+@owner _tomcat
+@group _tomcat
+@sample ${CONFDIR}/catalina.properties
+@owner
+@group
+share/examples/tomcat/context.xml
+@owner _tomcat
+@group _tomcat
+@sample ${CONFDIR}/context.xml
+@owner
+@group
+share/examples/tomcat/host-manager.xml
+share/examples/tomcat/jaspic-providers.xml
+@owner _tomcat
+@group _tomcat
+@sample ${CONFDIR}/jaspic-providers.xml
+@owner
+@group
+share/examples/tomcat/jaspic-providers.xsd
+share/examples/tomcat/logging.properties
+@owner _tomcat
+@group _tomcat
+@sample ${CONFDIR}/logging.properties
+@owner
+@group
+share/examples/tomcat/manager.xml
+share/examples/tomcat/server.xml
+@owner _tomcat
+@group _tomcat
+@sample ${CONFDIR}/server.xml
+@owner
+@group
+share/examples/tomcat/tomcat-users.xml
+@mode 600
+@owner _tomcat
+@group _tomcat
+@sample ${CONFDIR}/tomcat-users.xml
+@mode
+@owner
+@group
+share/examples/tomcat/tomcat-users.xsd
+share/examples/tomcat/web.xml
+@owner _tomcat
+@group _tomcat
+@sample ${CONFDIR}/web.xml
+@owner
+@group
+tomcat/
+tomcat/BUILDING.txt
+tomcat/CONTRIBUTING.md
+tomcat/LICENSE
+tomcat/NOTICE
+tomcat/README.md
+tomcat/RELEASE-NOTES
+tomcat/RUNNING.txt
+tomcat/bin/
+tomcat/bin/bootstrap.jar
+tomcat/bin/catalina-tasks.xml
+tomcat/bin/catalina.sh
+tomcat/bin/ciphers.sh
+tomcat/bin/commons-daemon-native.tar.gz
+tomcat/bin/commons-daemon.jar
+tomcat/bin/configtest.sh
+tomcat/bin/daemon.sh
+tomcat/bin/digest.sh
+tomcat/bin/makebase.sh
+tomcat/bin/migrate.sh
+tomcat/bin/setclasspath.sh
+tomcat/bin/shutdown.sh
+tomcat/bin/startup.sh
+tomcat/bin/tomcat-juli.jar
+tomcat/bin/tomcat-native.tar.gz
+tomcat/bin/tool-wrapper.sh
+tomcat/bin/version.sh
+tomcat/lib/
+tomcat/lib/annotations-api.jar
+tomcat/lib/catalina-ant.jar
+tomcat/lib/catalina-ha.jar
+tomcat/lib/catalina-ssi.jar
+tomcat/lib/catalina-storeconfig.jar
+tomcat/lib/catalina-tribes.jar
+tomcat/lib/catalina.jar
+tomcat/lib/ecj-4.20.jar
+tomcat/lib/el-api.jar
+tomcat/lib/jakartaee-migration-1.0.0-shaded.jar
+tomcat/lib/jasper-el.jar
+tomcat/lib/jasper.jar
+tomcat/lib/jaspic-api.jar
+tomcat/lib/jsp-api.jar
+tomcat/lib/servlet-api.jar
+tomcat/lib/tomcat-api.jar
+tomcat/lib/tomcat-coyote.jar
+tomcat/lib/tomcat-dbcp.jar
+tomcat/lib/tomcat-i18n-cs.jar
+tomcat/lib/tomcat-i18n-de.jar
+tomcat/lib/tomcat-i18n-es.jar
+tomcat/lib/tomcat-i18n-fr.jar
+tomcat/lib/tomcat-i18n-ja.jar
+tomcat/lib/tomcat-i18n-ko.jar
+tomcat/lib/tomcat-i18n-pt-BR.jar
+tomcat/lib/tomcat-i18n-ru.jar
+tomcat/lib/tomcat-i18n-zh-CN.jar
+tomcat/lib/tomcat-jdbc.jar
+tomcat/lib/tomcat-jni.jar
+tomcat/lib/tomcat-util-scan.jar
+tomcat/lib/tomcat-util.jar
+tomcat/lib/tomcat-websocket.jar
+tomcat/lib/websocket-api.jar
+tomcat/webapps/
+tomcat/webapps/host-manager/
+tomcat/webapps/host-manager/META-INF/
+tomcat/webapps/host-manager/META-INF/context.xml
+tomcat/webapps/host-manager/WEB-INF/
+tomcat/webapps/host-manager/WEB-INF/jsp/
+tomcat/webapps/host-manager/WEB-INF/jsp/401.jsp
+tomcat/webapps/host-manager/WEB-INF/jsp/403.jsp
+tomcat/webapps/host-manager/WEB-INF/jsp/404.jsp
+tomcat/webapps/host-manager/WEB-INF/manager.xml
+tomcat/webapps/host-manager/WEB-INF/web.xml
+tomcat/webapps/host-manager/css/
+tomcat/webapps/host-manager/css/manager.css
+tomcat/webapps/host-manager/images/
+tomcat/webapps/host-manager/images/asf-logo.svg
+tomcat/webapps/host-manager/images/tomcat.svg
+tomcat/webapps/host-manager/index.jsp
+tomcat/webapps/manager/
+tomcat/webapps/manager/META-INF/
+tomcat/webapps/manager/META-INF/context.xml
+tomcat/webapps/manager/WEB-INF/
+tomcat/webapps/manager/WEB-INF/jsp/
+tomcat/webapps/manager/WEB-INF/jsp/401.jsp
+tomcat/webapps/manager/WEB-INF/jsp/403.jsp
+tomcat/webapps/manager/WEB-INF/jsp/404.jsp
+tomcat/webapps/manager/WEB-INF/jsp/connectorCerts.jsp
+tomcat/webapps/manager/WEB-INF/jsp/connectorCiphers.jsp
+tomcat/webapps/manager/WEB-INF/jsp/connectorTrustedCerts.jsp
+tomcat/webapps/manager/WEB-INF/jsp/sessionDetail.jsp
+tomcat/webapps/manager/WEB-INF/jsp/sessionsList.jsp
+tomcat/webapps/manager/WEB-INF/web.xml
+tomcat/webapps/manager/css/
+tomcat/webapps/manager/css/manager.css
+tomcat/webapps/manager/images/
+tomcat/webapps/manager/images/asf-logo.svg
+tomcat/webapps/manager/images/tomcat.svg
+tomcat/webapps/manager/index.jsp
+tomcat/webapps/manager/status.xsd
+tomcat/webapps/manager/xform.xsl
+@owner _tomcat
+@group _tomcat
+@sample ${CATALINA_BASE}/
+@sample ${CATALINA_BASE}/logs/
+@sample ${CATALINA_BASE}/shared/
+@sample ${CATALINA_BASE}/shared/classes/
+@sample ${CATALINA_BASE}/shared/lib/
+@sample ${CATALINA_BASE}/temp/
+@sample ${CATALINA_BASE}/webapps/
+@sample ${CATALINA_BASE}/work/
+@exec if [ ! -e ${CATALINA_BASE}/conf ]; then ln -sf ${CONFDIR} ${CATALINA_BASE}/conf; fi
+@unexec if [ -h ${CATALINA_BASE}/conf ]; then rm ${CATALINA_BASE}/conf; fi
