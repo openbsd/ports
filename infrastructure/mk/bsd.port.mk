@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1566 2022/01/20 09:35:50 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1567 2022/01/25 14:02:38 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1003,6 +1003,7 @@ DEBUG ?= -g
 CONFIGURE_ARGS += ${DEBUG_CONFIGURE_ARGS}
 .endif
 
+_authorized_chars = -a-zA-Z0-9_./+
 .if empty(SUBPACKAGE) || ${SUBPACKAGE} == "-"
 FULLPKGPATH ?= ${PKGPATH}${FLAVOR_EXT:S/-/,/g}
 FULLPKGPATH- = ${FULLPKGPATH}
@@ -1013,10 +1014,22 @@ _ALLPKGPATHS = ${PKGPATH}${FLAVOR_EXT:S/-/,/g}
 .  for _S in ${MULTI_PACKAGES}
 FULLPKGPATH${_S} ?= ${PKGPATH},${_S}${FLAVOR_EXT:S/-/,/g}
 _ALLPKGPATHS += ${FULLPKGPATH${_S}}
+.    for _a in ${_authorized_chars},
+.      if ${FULLPKGPATH${_S}:M*[^${_a}]*}
+ERRORS += "Fatal: FULLPKGPATH${_S}=${FULLPKGPATH${_S}} uses forbidden characters '${FULLPKGPATH${_S}:C@[${_a}]@@g}'"
+.      endif
+.    endfor
 .  endfor
 FULLPKGPATH = ${FULLPKGPATH${SUBPACKAGE}}
 _FULLPKGPATH = ${PKGPATH},${SUBPACKAGE}${_FLAVOR_EXT2:S/-/,/g}
 .endif
+
+
+.for _a in ${_authorized_chars}
+.  if ${CATEGORIES:M*[^${_a}]*}
+ERRORS += "Fatal: CATEGORIES=${CATEGORIES} uses forbidden characters '${CATEGORIES:C@[${_a}]@@g}'"
+.  endif
+.endfor
 
 _INSTALL ?= ${WRKDIR}/bin/install
 
