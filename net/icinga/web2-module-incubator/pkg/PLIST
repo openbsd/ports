@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/12/07 09:36:17 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2022/01/25 09:53:56 sthen Exp $
 icinga-web2/modules/incubator/
 icinga-web2/modules/incubator/.gitignore
 icinga-web2/modules/incubator/LICENSE
@@ -58,6 +58,11 @@ icinga-web2/modules/incubator/vendor/gipfl/curl/src/CurlAsync.php
 icinga-web2/modules/incubator/vendor/gipfl/curl/src/CurlHandle.php
 icinga-web2/modules/incubator/vendor/gipfl/curl/src/RequestError.php
 icinga-web2/modules/incubator/vendor/gipfl/curl/src/ResponseParseError.php
+icinga-web2/modules/incubator/vendor/gipfl/data-type/
+icinga-web2/modules/incubator/vendor/gipfl/data-type/composer.json
+icinga-web2/modules/incubator/vendor/gipfl/data-type/src/
+icinga-web2/modules/incubator/vendor/gipfl/data-type/src/SetOfSettings.php
+icinga-web2/modules/incubator/vendor/gipfl/data-type/src/Settings.php
 icinga-web2/modules/incubator/vendor/gipfl/db-migration/
 icinga-web2/modules/incubator/vendor/gipfl/db-migration/composer.json
 icinga-web2/modules/incubator/vendor/gipfl/db-migration/src/
