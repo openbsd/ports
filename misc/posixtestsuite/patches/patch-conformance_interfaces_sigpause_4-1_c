@@ -1,0 +1,18 @@
+$OpenBSD: patch-conformance_interfaces_sigpause_4-1_c,v 1.1 2022/01/25 14:17:54 bluhm Exp $
+
+Our sigpause(3) does not implement POSIX semantics, but BSD behavior.
+As sigpause(-1) with BSD semantics blocks SIGALRM, this code does
+neither terminate nor timeout on OpenBSD.  Disable the test.
+
+Index: conformance/interfaces/sigpause/4-1.c
+--- conformance/interfaces/sigpause/4-1.c.orig
++++ conformance/interfaces/sigpause/4-1.c
+@@ -26,6 +26,8 @@ int main()
+ 	int return_value = 0;
+         int result;
+ 
++	return PTP_UNSUPPORTED;
++
+ 	return_value = sigpause(-1);
+ 	if (return_value == -1) {
+ 		if (errno == EINVAL) {
