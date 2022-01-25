@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2022/01/09 17:58:37 anton Exp $
+# $OpenBSD: Makefile,v 1.28 2022/01/25 18:56:03 anton Exp $
 
 COMMENT =	maildir sort
 
-V =		11.2.0
+V =		11.3.0
 DISTNAME =	mdsort-${V}
 
 CATEGORIES =	mail
