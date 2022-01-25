@@ -1,9 +1,9 @@
-$OpenBSD: patch-man_Makefile_in,v 1.7 2021/05/24 16:59:57 sthen Exp $
+$OpenBSD: patch-man_Makefile_in,v 1.8 2022/01/25 09:51:17 sthen Exp $
 
 Index: man/Makefile.in
 --- man/Makefile.in.orig
 +++ man/Makefile.in
-@@ -1005,7 +1005,7 @@ uninstall-man: uninstall-man3 uninstall-man5 uninstall
+@@ -1007,7 +1007,7 @@ uninstall-man: uninstall-man3 uninstall-man5 uninstall
  
  
  $(MANS_CPP): $(MANS_CPP:%=%.pre)

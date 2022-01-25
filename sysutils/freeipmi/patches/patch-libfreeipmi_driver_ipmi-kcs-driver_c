@@ -1,4 +1,4 @@
-$OpenBSD: patch-libfreeipmi_driver_ipmi-kcs-driver_c,v 1.4 2019/08/23 20:18:13 sthen Exp $
+$OpenBSD: patch-libfreeipmi_driver_ipmi-kcs-driver_c,v 1.5 2022/01/25 09:51:17 sthen Exp $
 
 Index: libfreeipmi/driver/ipmi-kcs-driver.c
 --- libfreeipmi/driver/ipmi-kcs-driver.c.orig
@@ -20,4 +20,4 @@ Index: libfreeipmi/driver/ipmi-kcs-driver.c
 +#if defined(__FreeBSD__) || defined(__NetBSD__)
  # define _INB(port)  inb (port)
  # define _OUTB(data, port)  outb (port, data)
- #elif defined(HAVE_IOPL)
+ #elif defined(HAVE_INB) && defined(HAVE_OUTB)

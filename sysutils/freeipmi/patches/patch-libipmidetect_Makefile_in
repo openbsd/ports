@@ -1,9 +1,9 @@
-$OpenBSD: patch-libipmidetect_Makefile_in,v 1.7 2021/05/24 16:59:57 sthen Exp $
+$OpenBSD: patch-libipmidetect_Makefile_in,v 1.8 2022/01/25 09:51:17 sthen Exp $
 
 Index: libipmidetect/Makefile.in
 --- libipmidetect/Makefile.in.orig
 +++ libipmidetect/Makefile.in
-@@ -293,7 +293,7 @@ LIBIPMIMONITORING_VERSION_MAJOR = @LIBIPMIMONITORING_V
+@@ -294,7 +294,7 @@ LIBIPMIMONITORING_VERSION_MAJOR = @LIBIPMIMONITORING_V
  LIBIPMIMONITORING_VERSION_MINOR = @LIBIPMIMONITORING_VERSION_MINOR@
  LIBIPMIMONITORING_VERSION_PATCH = @LIBIPMIMONITORING_VERSION_PATCH@
  LIBOBJS = @LIBOBJS@
