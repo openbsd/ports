@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.35 2021/06/26 15:19:43 sthen Exp $
+@comment $OpenBSD: PLIST-examples,v 1.36 2022/01/25 11:12:02 sthen Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -65,7 +65,11 @@ webapps/docs/annotationapi/overview-frame.html
 webapps/docs/annotationapi/overview-summary.html
 webapps/docs/annotationapi/overview-tree.html
 webapps/docs/annotationapi/package-list
-webapps/docs/annotationapi/script.js
+webapps/docs/annotationapi/resources/
+webapps/docs/annotationapi/resources/background.gif
+webapps/docs/annotationapi/resources/tab.gif
+webapps/docs/annotationapi/resources/titlebar.gif
+webapps/docs/annotationapi/resources/titlebar_end.gif
 webapps/docs/annotationapi/stylesheet.css
 webapps/docs/api/
 webapps/docs/api/allclasses-frame.html
@@ -435,10 +439,6 @@ webapps/docs/api/org/apache/catalina/mbeans/ContextResourceLinkMBean.html
 webapps/docs/api/org/apache/catalina/mbeans/ContextResourceMBean.html
 webapps/docs/api/org/apache/catalina/mbeans/GlobalResourcesLifecycleListener.html
 webapps/docs/api/org/apache/catalina/mbeans/GroupMBean.html
-webapps/docs/api/org/apache/catalina/mbeans/JmxRemoteLifecycleListener.RmiClientLocalhostSocketFactory.html
-webapps/docs/api/org/apache/catalina/mbeans/JmxRemoteLifecycleListener.RmiServerBindSocketFactory.html
-webapps/docs/api/org/apache/catalina/mbeans/JmxRemoteLifecycleListener.SslRmiServerBindSocketFactory.html
-webapps/docs/api/org/apache/catalina/mbeans/JmxRemoteLifecycleListener.html
 webapps/docs/api/org/apache/catalina/mbeans/MBeanDumper.html
 webapps/docs/api/org/apache/catalina/mbeans/MBeanFactory.html
 webapps/docs/api/org/apache/catalina/mbeans/MBeanUtils.html
@@ -1059,6 +1059,7 @@ webapps/docs/api/org/apache/coyote/http11/package-summary.html
 webapps/docs/api/org/apache/coyote/http11/package-tree.html
 webapps/docs/api/org/apache/coyote/http11/upgrade/
 webapps/docs/api/org/apache/coyote/http11/upgrade/InternalHttpUpgradeHandler.html
+webapps/docs/api/org/apache/coyote/http11/upgrade/UpgradeApplicationBufferHandler.html
 webapps/docs/api/org/apache/coyote/http11/upgrade/UpgradeGroupInfo.html
 webapps/docs/api/org/apache/coyote/http11/upgrade/UpgradeInfo.html
 webapps/docs/api/org/apache/coyote/http11/upgrade/UpgradeProcessorBase.html
@@ -1380,9 +1381,6 @@ webapps/docs/api/org/apache/tomcat/buildutil/package-frame.html
 webapps/docs/api/org/apache/tomcat/buildutil/package-summary.html
 webapps/docs/api/org/apache/tomcat/buildutil/package-tree.html
 webapps/docs/api/org/apache/tomcat/buildutil/translate/
-webapps/docs/api/org/apache/tomcat/buildutil/translate/BackportBase.html
-webapps/docs/api/org/apache/tomcat/buildutil/translate/BackportEnglish.html
-webapps/docs/api/org/apache/tomcat/buildutil/translate/BackportTranslations.html
 webapps/docs/api/org/apache/tomcat/buildutil/translate/Constants.html
 webapps/docs/api/org/apache/tomcat/buildutil/translate/Import.html
 webapps/docs/api/org/apache/tomcat/buildutil/translate/Utils.html
@@ -1398,6 +1396,7 @@ webapps/docs/api/org/apache/tomcat/dbcp/dbcp2/BasicDataSourceMXBean.html
 webapps/docs/api/org/apache/tomcat/dbcp/dbcp2/ConnectionFactory.html
 webapps/docs/api/org/apache/tomcat/dbcp/dbcp2/Constants.html
 webapps/docs/api/org/apache/tomcat/dbcp/dbcp2/DataSourceConnectionFactory.html
+webapps/docs/api/org/apache/tomcat/dbcp/dbcp2/DataSourceMXBean.html
 webapps/docs/api/org/apache/tomcat/dbcp/dbcp2/DelegatingCallableStatement.html
 webapps/docs/api/org/apache/tomcat/dbcp/dbcp2/DelegatingConnection.html
 webapps/docs/api/org/apache/tomcat/dbcp/dbcp2/DelegatingDatabaseMetaData.html
@@ -1644,6 +1643,7 @@ webapps/docs/api/org/apache/tomcat/util/buf/Asn1Writer.html
 webapps/docs/api/org/apache/tomcat/util/buf/B2CConverter.html
 webapps/docs/api/org/apache/tomcat/util/buf/ByteBufferHolder.html
 webapps/docs/api/org/apache/tomcat/util/buf/ByteBufferUtils.html
+webapps/docs/api/org/apache/tomcat/util/buf/ByteChunk.BufferOverflowException.html
 webapps/docs/api/org/apache/tomcat/util/buf/ByteChunk.ByteInputChannel.html
 webapps/docs/api/org/apache/tomcat/util/buf/ByteChunk.ByteOutputChannel.html
 webapps/docs/api/org/apache/tomcat/util/buf/ByteChunk.html
@@ -2080,6 +2080,7 @@ webapps/docs/api/org/apache/tomcat/util/security/KeyStoreUtil.html
 webapps/docs/api/org/apache/tomcat/util/security/MD5Encoder.html
 webapps/docs/api/org/apache/tomcat/util/security/PermissionCheck.html
 webapps/docs/api/org/apache/tomcat/util/security/PrivilegedGetTccl.html
+webapps/docs/api/org/apache/tomcat/util/security/PrivilegedSetAccessControlContext.html
 webapps/docs/api/org/apache/tomcat/util/security/PrivilegedSetTccl.html
 webapps/docs/api/org/apache/tomcat/util/security/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/security/package-summary.html
@@ -2092,6 +2093,11 @@ webapps/docs/api/org/apache/tomcat/util/threads/StopPooledThreadException.html
 webapps/docs/api/org/apache/tomcat/util/threads/TaskQueue.html
 webapps/docs/api/org/apache/tomcat/util/threads/TaskThread.html
 webapps/docs/api/org/apache/tomcat/util/threads/TaskThreadFactory.html
+webapps/docs/api/org/apache/tomcat/util/threads/ThreadPoolExecutor.AbortPolicy.html
+webapps/docs/api/org/apache/tomcat/util/threads/ThreadPoolExecutor.CallerRunsPolicy.html
+webapps/docs/api/org/apache/tomcat/util/threads/ThreadPoolExecutor.DiscardOldestPolicy.html
+webapps/docs/api/org/apache/tomcat/util/threads/ThreadPoolExecutor.DiscardPolicy.html
+webapps/docs/api/org/apache/tomcat/util/threads/ThreadPoolExecutor.RejectedExecutionHandler.html
 webapps/docs/api/org/apache/tomcat/util/threads/ThreadPoolExecutor.html
 webapps/docs/api/org/apache/tomcat/util/threads/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/threads/package-summary.html
@@ -2184,7 +2190,11 @@ webapps/docs/api/overview-frame.html
 webapps/docs/api/overview-summary.html
 webapps/docs/api/overview-tree.html
 webapps/docs/api/package-list
-webapps/docs/api/script.js
+webapps/docs/api/resources/
+webapps/docs/api/resources/background.gif
+webapps/docs/api/resources/tab.gif
+webapps/docs/api/resources/titlebar.gif
+webapps/docs/api/resources/titlebar_end.gif
 webapps/docs/api/serialized-form.html
 webapps/docs/api/stylesheet.css
 webapps/docs/appdev/
@@ -2320,7 +2330,11 @@ webapps/docs/elapi/javax/el/package-summary.html
 webapps/docs/elapi/javax/el/package-tree.html
 webapps/docs/elapi/overview-tree.html
 webapps/docs/elapi/package-list
-webapps/docs/elapi/script.js
+webapps/docs/elapi/resources/
+webapps/docs/elapi/resources/background.gif
+webapps/docs/elapi/resources/tab.gif
+webapps/docs/elapi/resources/titlebar.gif
+webapps/docs/elapi/resources/titlebar_end.gif
 webapps/docs/elapi/serialized-form.html
 webapps/docs/elapi/stylesheet.css
 webapps/docs/extras.html
@@ -2416,7 +2430,11 @@ webapps/docs/jaspicapi/overview-frame.html
 webapps/docs/jaspicapi/overview-summary.html
 webapps/docs/jaspicapi/overview-tree.html
 webapps/docs/jaspicapi/package-list
-webapps/docs/jaspicapi/script.js
+webapps/docs/jaspicapi/resources/
+webapps/docs/jaspicapi/resources/background.gif
+webapps/docs/jaspicapi/resources/tab.gif
+webapps/docs/jaspicapi/resources/titlebar.gif
+webapps/docs/jaspicapi/resources/titlebar_end.gif
 webapps/docs/jaspicapi/serialized-form.html
 webapps/docs/jaspicapi/stylesheet.css
 webapps/docs/jdbc-pool.html
@@ -2499,7 +2517,11 @@ webapps/docs/jspapi/overview-frame.html
 webapps/docs/jspapi/overview-summary.html
 webapps/docs/jspapi/overview-tree.html
 webapps/docs/jspapi/package-list
-webapps/docs/jspapi/script.js
+webapps/docs/jspapi/resources/
+webapps/docs/jspapi/resources/background.gif
+webapps/docs/jspapi/resources/tab.gif
+webapps/docs/jspapi/resources/titlebar.gif
+webapps/docs/jspapi/resources/titlebar_end.gif
 webapps/docs/jspapi/serialized-form.html
 webapps/docs/jspapi/stylesheet.css
 webapps/docs/logging.html
@@ -2619,7 +2641,11 @@ webapps/docs/servletapi/overview-frame.html
 webapps/docs/servletapi/overview-summary.html
 webapps/docs/servletapi/overview-tree.html
 webapps/docs/servletapi/package-list
-webapps/docs/servletapi/script.js
+webapps/docs/servletapi/resources/
+webapps/docs/servletapi/resources/background.gif
+webapps/docs/servletapi/resources/tab.gif
+webapps/docs/servletapi/resources/titlebar.gif
+webapps/docs/servletapi/resources/titlebar_end.gif
 webapps/docs/servletapi/serialized-form.html
 webapps/docs/servletapi/stylesheet.css
 webapps/docs/setup.html
@@ -2707,7 +2733,11 @@ webapps/docs/websocketapi/overview-frame.html
 webapps/docs/websocketapi/overview-summary.html
 webapps/docs/websocketapi/overview-tree.html
 webapps/docs/websocketapi/package-list
-webapps/docs/websocketapi/script.js
+webapps/docs/websocketapi/resources/
+webapps/docs/websocketapi/resources/background.gif
+webapps/docs/websocketapi/resources/tab.gif
+webapps/docs/websocketapi/resources/titlebar.gif
+webapps/docs/websocketapi/resources/titlebar_end.gif
 webapps/docs/websocketapi/serialized-form.html
 webapps/docs/websocketapi/stylesheet.css
 webapps/docs/windows-auth-howto.html
