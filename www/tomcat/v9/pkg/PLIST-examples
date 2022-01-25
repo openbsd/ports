@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.10 2021/06/26 15:21:12 sthen Exp $
+@comment $OpenBSD: PLIST-examples,v 1.11 2022/01/25 11:12:10 sthen Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -122,6 +122,7 @@ webapps/docs/api/org/apache/catalina/User.html
 webapps/docs/api/org/apache/catalina/UserDatabase.html
 webapps/docs/api/org/apache/catalina/Valve.html
 webapps/docs/api/org/apache/catalina/WebResource.html
+webapps/docs/api/org/apache/catalina/WebResourceRoot.CacheStrategy.html
 webapps/docs/api/org/apache/catalina/WebResourceRoot.ResourceSetType.html
 webapps/docs/api/org/apache/catalina/WebResourceRoot.html
 webapps/docs/api/org/apache/catalina/WebResourceSet.html
@@ -437,12 +438,9 @@ webapps/docs/api/org/apache/catalina/mbeans/ContextEnvironmentMBean.html
 webapps/docs/api/org/apache/catalina/mbeans/ContextMBean.html
 webapps/docs/api/org/apache/catalina/mbeans/ContextResourceLinkMBean.html
 webapps/docs/api/org/apache/catalina/mbeans/ContextResourceMBean.html
+webapps/docs/api/org/apache/catalina/mbeans/DataSourceUserDatabaseMBean.html
 webapps/docs/api/org/apache/catalina/mbeans/GlobalResourcesLifecycleListener.html
 webapps/docs/api/org/apache/catalina/mbeans/GroupMBean.html
-webapps/docs/api/org/apache/catalina/mbeans/JmxRemoteLifecycleListener.RmiClientLocalhostSocketFactory.html
-webapps/docs/api/org/apache/catalina/mbeans/JmxRemoteLifecycleListener.RmiServerBindSocketFactory.html
-webapps/docs/api/org/apache/catalina/mbeans/JmxRemoteLifecycleListener.SslRmiServerBindSocketFactory.html
-webapps/docs/api/org/apache/catalina/mbeans/JmxRemoteLifecycleListener.html
 webapps/docs/api/org/apache/catalina/mbeans/MBeanDumper.html
 webapps/docs/api/org/apache/catalina/mbeans/MBeanFactory.html
 webapps/docs/api/org/apache/catalina/mbeans/MBeanUtils.html
@@ -450,6 +448,7 @@ webapps/docs/api/org/apache/catalina/mbeans/MemoryUserDatabaseMBean.html
 webapps/docs/api/org/apache/catalina/mbeans/NamingResourcesMBean.html
 webapps/docs/api/org/apache/catalina/mbeans/RoleMBean.html
 webapps/docs/api/org/apache/catalina/mbeans/ServiceMBean.html
+webapps/docs/api/org/apache/catalina/mbeans/SparseUserDatabaseMBean.html
 webapps/docs/api/org/apache/catalina/mbeans/UserMBean.html
 webapps/docs/api/org/apache/catalina/mbeans/package-frame.html
 webapps/docs/api/org/apache/catalina/mbeans/package-summary.html
@@ -842,11 +841,17 @@ webapps/docs/api/org/apache/catalina/users/AbstractGroup.html
 webapps/docs/api/org/apache/catalina/users/AbstractRole.html
 webapps/docs/api/org/apache/catalina/users/AbstractUser.html
 webapps/docs/api/org/apache/catalina/users/Constants.html
+webapps/docs/api/org/apache/catalina/users/DataSourceUserDatabase.html
+webapps/docs/api/org/apache/catalina/users/DataSourceUserDatabaseFactory.html
+webapps/docs/api/org/apache/catalina/users/GenericGroup.html
+webapps/docs/api/org/apache/catalina/users/GenericRole.html
+webapps/docs/api/org/apache/catalina/users/GenericUser.html
 webapps/docs/api/org/apache/catalina/users/MemoryGroup.html
 webapps/docs/api/org/apache/catalina/users/MemoryRole.html
 webapps/docs/api/org/apache/catalina/users/MemoryUser.html
 webapps/docs/api/org/apache/catalina/users/MemoryUserDatabase.html
 webapps/docs/api/org/apache/catalina/users/MemoryUserDatabaseFactory.html
+webapps/docs/api/org/apache/catalina/users/SparseUserDatabase.html
 webapps/docs/api/org/apache/catalina/users/package-frame.html
 webapps/docs/api/org/apache/catalina/users/package-summary.html
 webapps/docs/api/org/apache/catalina/users/package-tree.html
@@ -1090,6 +1095,7 @@ webapps/docs/api/org/apache/coyote/http11/package-summary.html
 webapps/docs/api/org/apache/coyote/http11/package-tree.html
 webapps/docs/api/org/apache/coyote/http11/upgrade/
 webapps/docs/api/org/apache/coyote/http11/upgrade/InternalHttpUpgradeHandler.html
+webapps/docs/api/org/apache/coyote/http11/upgrade/UpgradeApplicationBufferHandler.html
 webapps/docs/api/org/apache/coyote/http11/upgrade/UpgradeGroupInfo.html
 webapps/docs/api/org/apache/coyote/http11/upgrade/UpgradeInfo.html
 webapps/docs/api/org/apache/coyote/http11/upgrade/UpgradeProcessorBase.html
@@ -1420,6 +1426,7 @@ webapps/docs/api/org/apache/tomcat/dbcp/dbcp2/BasicDataSourceMXBean.html
 webapps/docs/api/org/apache/tomcat/dbcp/dbcp2/ConnectionFactory.html
 webapps/docs/api/org/apache/tomcat/dbcp/dbcp2/Constants.html
 webapps/docs/api/org/apache/tomcat/dbcp/dbcp2/DataSourceConnectionFactory.html
+webapps/docs/api/org/apache/tomcat/dbcp/dbcp2/DataSourceMXBean.html
 webapps/docs/api/org/apache/tomcat/dbcp/dbcp2/DelegatingCallableStatement.html
 webapps/docs/api/org/apache/tomcat/dbcp/dbcp2/DelegatingConnection.html
 webapps/docs/api/org/apache/tomcat/dbcp/dbcp2/DelegatingDatabaseMetaData.html
@@ -1683,6 +1690,7 @@ webapps/docs/api/org/apache/tomcat/util/buf/Asn1Writer.html
 webapps/docs/api/org/apache/tomcat/util/buf/B2CConverter.html
 webapps/docs/api/org/apache/tomcat/util/buf/ByteBufferHolder.html
 webapps/docs/api/org/apache/tomcat/util/buf/ByteBufferUtils.html
+webapps/docs/api/org/apache/tomcat/util/buf/ByteChunk.BufferOverflowException.html
 webapps/docs/api/org/apache/tomcat/util/buf/ByteChunk.ByteInputChannel.html
 webapps/docs/api/org/apache/tomcat/util/buf/ByteChunk.ByteOutputChannel.html
 webapps/docs/api/org/apache/tomcat/util/buf/ByteChunk.html
@@ -2103,6 +2111,7 @@ webapps/docs/api/org/apache/tomcat/util/security/KeyStoreUtil.html
 webapps/docs/api/org/apache/tomcat/util/security/MD5Encoder.html
 webapps/docs/api/org/apache/tomcat/util/security/PermissionCheck.html
 webapps/docs/api/org/apache/tomcat/util/security/PrivilegedGetTccl.html
+webapps/docs/api/org/apache/tomcat/util/security/PrivilegedSetAccessControlContext.html
 webapps/docs/api/org/apache/tomcat/util/security/PrivilegedSetTccl.html
 webapps/docs/api/org/apache/tomcat/util/security/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/security/package-summary.html
@@ -2117,6 +2126,11 @@ webapps/docs/api/org/apache/tomcat/util/threads/StopPooledThreadException.html
 webapps/docs/api/org/apache/tomcat/util/threads/TaskQueue.html
 webapps/docs/api/org/apache/tomcat/util/threads/TaskThread.html
 webapps/docs/api/org/apache/tomcat/util/threads/TaskThreadFactory.html
+webapps/docs/api/org/apache/tomcat/util/threads/ThreadPoolExecutor.AbortPolicy.html
+webapps/docs/api/org/apache/tomcat/util/threads/ThreadPoolExecutor.CallerRunsPolicy.html
+webapps/docs/api/org/apache/tomcat/util/threads/ThreadPoolExecutor.DiscardOldestPolicy.html
+webapps/docs/api/org/apache/tomcat/util/threads/ThreadPoolExecutor.DiscardPolicy.html
+webapps/docs/api/org/apache/tomcat/util/threads/ThreadPoolExecutor.RejectedExecutionHandler.html
 webapps/docs/api/org/apache/tomcat/util/threads/ThreadPoolExecutor.html
 webapps/docs/api/org/apache/tomcat/util/threads/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/threads/package-summary.html
