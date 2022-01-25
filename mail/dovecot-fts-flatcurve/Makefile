@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2022/01/11 15:29:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2022/01/25 09:37:29 sthen Exp $
 
 COMMENT=		full text search plugin for Dovecot using Xapian
 
 GH_ACCOUNT=		slusarz
 GH_PROJECT=		dovecot-fts-flatcurve
-GH_COMMIT=		ea1f9cd57d65268cd4d3df7d911dcc708ab2c0f0
-DISTNAME=		dovecot-fts-flatcurve-0.1.1pre20220109
+GH_TAGNAME=		v0.2.0
 
 CATEGORIES=		mail
 
