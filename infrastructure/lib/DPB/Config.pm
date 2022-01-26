@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.91 2021/05/03 07:16:46 espie Exp $
+# $OpenBSD: Config.pm,v 1.92 2022/01/26 14:28:13 yasuoka Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -334,6 +334,9 @@ sub command_line_overrides
 	}
 	if (defined $state->{port_user}) {
 		$override_prop->{port_user} = $state->{port_user};
+	}
+	if (defined $state->{build_user}) {
+		$override_prop->{build_user} = $state->{build_user};
 	}
 	if (!$state->{subst}->empty('HISTORY_ONLY')) {
 		$state->{want_fetchinfo} = 1;
