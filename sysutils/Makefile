@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.634 2022/01/26 08:54:55 op Exp $
+# $OpenBSD: Makefile,v 1.635 2022/01/26 15:48:06 abieber Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -117,6 +117,7 @@
      SUBDIR += gdmap
      SUBDIR += ggrep
      SUBDIR += gitlab-runner
+     SUBDIR += gitmux
      SUBDIR += gitolite
      SUBDIR += gkrellm
      SUBDIR += glances
