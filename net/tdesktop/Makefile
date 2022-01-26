@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2022/01/26 21:23:00 kn Exp $
+# $OpenBSD: Makefile,v 1.5 2022/01/26 21:53:51 kn Exp $
 
 # the MTProto implementation does not support big-endian
 # https://github.com/telegramdesktop/tdesktop/issues/3167#issuecomment-658308298
@@ -83,10 +83,11 @@ NEEDED_BUNDLES +=	minizip
 NEEDED_BUNDLES +=	rlottie tgcalls
 
 post-extract:
-	@echo All bundles:
+	# All bundles:
 	@cd ${WRKSRC}/Telegram/ThirdParty/ && ls -x
-	@echo 'Needed bundles (others are removed to prevent accidential use):'
-	@cd ${WRKSRC}/Telegram/ThirdParty/ && mkdir .need && \
-	    mv ${NEEDED_BUNDLES} .need/ && rm -rf -- ./* && mv .need/* . && ls -x
+	# Needed bundles (others are removed to prevent accidential use):
+	@cd ${WRKSRC}/Telegram/ThirdParty/ && mkdir .need/ && \
+		mv ${NEEDED_BUNDLES} .need/ && rm -fr -- ./* && \
+		mv .need/* . && rmdir .need/ && ls -x
 
 .include <bsd.port.mk>

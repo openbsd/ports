@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2022/01/26 19:30:29 kn Exp $
+# $OpenBSD: Makefile,v 1.5 2022/01/26 21:53:51 kn Exp $
 
 # CMake Warning at cmake/arch.cmake:114 (message):
 #   Unsupported CPU architecture.
@@ -14,6 +14,7 @@ GH_PROJECT =		tg_owt
 # no releases or tags, use latest master
 GH_COMMIT =		6372a0848f8dd84013e291b44f9d1427fde3a90e
 DISTNAME =		${GH_PROJECT}-0.0.0.20220123
+REVISION =		0
 CATEGORIES =		net
 
 SHARED_LIBS =		tg_owt	0.0	# 0.0.0
@@ -114,6 +115,7 @@ CONFIGURE_ARGS +=	-DTG_OWT_USE_PIPEWIRE=OFF
 
 # match standard version with abseil
 CONFIGURE_ARGS +=	-DCMAKE_CXX_STANDARD=17
+
 # devel/abseil-cpp is found but it's include path is not picked up
 CXXFLAGS +=		-I/usr/local/include
 
@@ -127,11 +129,12 @@ NEEDED_BUNDLES +=	libsrtp
 NEEDED_BUNDLES +=	libyuv pffft
 
 post-extract:
-	@echo All bundles:
+	# All bundles:
 	@cd ${WRKSRC}/src/third_party/ && ls -x
-	@echo 'Needed bundles (others are removed to prevent accidential use):'
-	@cd ${WRKSRC}/src/third_party/ && mkdir .need && \
-	    mv ${NEEDED_BUNDLES} .need/ && rm -rf -- ./* && mv .need/* . && ls -x
+	# Needed bundles (others are removed to prevent accidential use):
+	@cd ${WRKSRC}/src/third_party/ && mkdir .need/ && \
+		mv ${NEEDED_BUNDLES} .need/ && rm -fr -- ./* && \
+		mv .need/* . && rmdir .need/ && ls -x
 	# all source headers get packaged, so remove those not needed at
 	# build-time by tg_owt and tdesktop
 	cd ${WRKSRC}/src/ && rm -fr -- \
