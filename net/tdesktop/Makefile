@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2022/01/26 19:48:25 kn Exp $
+# $OpenBSD: Makefile,v 1.4 2022/01/26 21:23:00 kn Exp $
 
 # the MTProto implementation does not support big-endian
 # https://github.com/telegramdesktop/tdesktop/issues/3167#issuecomment-658308298
@@ -6,6 +6,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS}
 
 COMMENT =		Telegram Desktop messenger
 V =			3.4.8
+REVISION =		0
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		tdesktop-${V}
 CATEGORIES =		net
@@ -42,7 +43,6 @@ LIB_DEPENDS =		archivers/lz4 \
 			audio/rnnoise \
 			audio/openal \
 			devel/abseil-cpp \
-			devel/libevent2 \
 			graphics/ffmpeg \
 			graphics/qr-code-generator>=1.7.0p1 \
 			net/tg_owt \
