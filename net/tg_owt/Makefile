@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2022/01/26 18:56:45 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2022/01/26 19:25:54 kn Exp $
 
 # CMake Warning at cmake/arch.cmake:114 (message):
 #   Unsupported CPU architecture.
@@ -133,5 +133,20 @@ post-extract:
 	@echo 'Needed bundles (others are removed to prevent accidential use):'
 	@cd ${WRKSRC}/src/third_party/ && mkdir .need && \
 	    mv ${NEEDED_BUNDLES} .need/ && rm -rf -- ./* && mv .need/* . && ls -x
+	# all source headers get packaged, so remove those not needed at
+	# build-time by tg_owt and tdesktop
+	cd ${WRKSRC}/src/ && rm -fr -- \
+	    base/android/ \
+	    modules/deskop_capture/{mac,win}/ \
+	    sdk/{android,objc}/
+
+post-install:
+	# remove more sources not needed to build tdeskop, they are however
+	# required at tg_owt configure-time even though they are not built, see
+	# nice_target_sources()/remove_target_sources() calls in CMakeLists.txt
+	cd ${PREFIX}/include/tg_owt/ && rm -fr -- \
+	    modules/audio_device/{android,mac,win}/ \
+	    modules/video_capture/windows/ \
+	    rtc_base/{win/,win32*.h}
 
 .include <bsd.port.mk>
