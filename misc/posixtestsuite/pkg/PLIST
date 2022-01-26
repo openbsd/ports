@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2022/01/10 22:10:15 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2022/01/26 00:12:26 bluhm Exp $
 bin/posixtestsuite
 bin/posixtestsuite-html
 libdata/posixtestsuite/
@@ -5874,7 +5874,6 @@ libexec/posixtestsuite/conformance/interfaces/signal/
 libexec/posixtestsuite/conformance/interfaces/sigpause/
 @bin libexec/posixtestsuite/conformance/interfaces/sigpause/1-2.test
 @bin libexec/posixtestsuite/conformance/interfaces/sigpause/3-1.test
-@bin libexec/posixtestsuite/conformance/interfaces/sigpause/4-1.test
 libexec/posixtestsuite/conformance/interfaces/sigpending/
 @bin libexec/posixtestsuite/conformance/interfaces/sigpending/1-1.test
 @bin libexec/posixtestsuite/conformance/interfaces/sigpending/1-2.test
