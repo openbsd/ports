@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/02 00:01:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2022/01/26 22:58:21 kmos Exp $
 
 COMMENT =		module for fast object serialization similar to bencode
 
@@ -26,9 +26,7 @@ WANTLIB +=		pthread ${MODPY_WANTLIB}
 
 BUILD_DEPENDS =		devel/py-wheel${MODPY_FLAVOR}
 
-TESTLIBDIR=		${WRKSRC}/lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION}/
-
 pre-test:
-	cp ${TESTLIBDIR}/rencode/*.so ${WRKSRC}/rencode
+	cp ${WRKSRC}/${MODPY_TEST_LIBDIR}/rencode/*.so ${WRKSRC}/rencode
 
 .include <bsd.port.mk>

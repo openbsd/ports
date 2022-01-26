@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/02 00:02:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2022/01/26 22:58:22 kmos Exp $
 
 COMMENT=	python bindings to libstatgrab
 
@@ -25,9 +25,6 @@ FLAVOR=		python3
 
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	test.py
-
-TESTLIBDIR =		lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION}
-TEST_ENV +=		PYTHONPATH=${TESTLIBDIR}
 
 LIB_DEPENDS=	sysutils/libstatgrab>=0.91
 

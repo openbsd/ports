@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2021/11/02 00:01:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2022/01/26 22:58:22 kmos Exp $
 
 COMMENT =		fast numerical expression evaluator for NumPy
 
@@ -22,13 +22,7 @@ FLAVOR =		python3
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
-MODPY_PYTEST_ARGS =	${TESTLIBDIR}
-
-# some path error with tests,
-# ModuleNotFoundError: No module named 'numexpr.interpreter'
-# running those tests by hand from the shell does seem to work
-TESTLIBDIR =	lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION}/numexpr/
-TEST_ENV =	PYTHONPATH=${WRKSRC}/${TESTLIBDIR}
+MODPY_PYTEST_ARGS =	${MODPY_TEST_LIBDIR}
 
 RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR}
 BUILD_DEPENDS =		${RUN_DEPENDS}

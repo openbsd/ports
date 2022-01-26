@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2021/11/02 00:00:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2022/01/26 22:58:21 kmos Exp $
 
 # XXX: Check _cffi__ hashes of dependent ports if updating.
 # e.g. devel/libgit2/py-git2
@@ -32,9 +32,5 @@ RUN_DEPENDS=		devel/py-cparser${MODPY_FLAVOR}
 # see https://cffi.readthedocs.io/en/latest/using.html#callbacks
 TEST_DEPENDS=		devel/py-py${MODPY_FLAVOR} \
 			devel/py-test${MODPY_FLAVOR}
-
-TESTLIBDIR=	${WRKSRC}/lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION}/cffi/
-
-TEST_ENV=	PYTHONPATH=${WRKSRC}/${TESTLIBDIR}
 
 .include <bsd.port.mk>
