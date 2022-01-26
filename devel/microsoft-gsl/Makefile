@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/12/16 22:48:03 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2022/01/26 15:27:11 kn Exp $
 
 COMMENT =		guidelines support library
 GH_ACCOUNT =		microsoft
 GH_PROJECT =		GSL
-V =			3.1.0
+V =			4.0.0
 GH_TAGNAME =		v${V}
 DISTNAME =		microsoft-gsl-${V}
 CATEGORIES =		devel
