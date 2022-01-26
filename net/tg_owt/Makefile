@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/01/26 18:48:48 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2022/01/26 18:56:45 kn Exp $
 
 # CMake Warning at cmake/arch.cmake:114 (message):
 #   Unsupported CPU architecture.
@@ -45,6 +45,19 @@ PATCHFILES +=		rtc_base-pthread-{}8207a87c.patch:1
 # Pending "Defer third-party source handling to when it is needed"
 # https://github.com/desktop-app/tg_owt/pull/85
 PATCHFILES +=		defer-third-party-sources-{}bf55efe3.patch:1
+# Pending "Fix TG_OWT_USE_PIPEWIRE=OFF build (on unix systems without Pipewire)"
+# https://github.com/desktop-app/tg_owt/pull/86
+PATCHFILES +=		tg_owt-fix-build-without-pipewire-{}4263c7b7.patch:1
+
+# Pending "Bundled libsrtp 2.2.0 will require LibreSSL fix to build"
+# https://github.com/desktop-app/tg_owt/issues/84
+# https://github.com/cisco/libsrtp/pull/593
+MASTER_SITES2 =		https://github.com/cisco/libsrtp/commit/
+PATCHFILES +=		tg_owt-libsrtp-fix-libressl-build-{}16483b1.patch:2
+PATCH_CASES +=		tg_owt-libsrtp-*.patch) \
+				${PATCH} ${PATCH_DIST_ARGS} < $$patchfile \
+				    -d ${WRKSRC}/src/third_party/libsrtp ;;
+
 PATCH_DIST_STRIP =	-p1
 
 MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \

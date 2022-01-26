@@ -1,7 +1,6 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2022/01/26 18:48:48 kn Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2022/01/26 18:56:45 kn Exp $
 
 - attempt to fix undefined references to dcsctp by removing dcsctp_transport.*
-- disable unused and unported linux specific pipewire code
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
@@ -15,12 +14,3 @@ Index: CMakeLists.txt
      media/sctp/sctp_transport_factory.cc
      media/sctp/sctp_transport_factory.h
      media/sctp/usrsctp_transport.cc
-@@ -2087,8 +2085,6 @@ PRIVATE
-     modules/desktop_capture/window_capturer_null.cc
- 
-     # linux specific
--    modules/desktop_capture/linux/base_capturer_pipewire.cc
--    modules/desktop_capture/linux/base_capturer_pipewire.h
-     modules/desktop_capture/linux/mouse_cursor_monitor_x11.cc
-     modules/desktop_capture/linux/mouse_cursor_monitor_x11.h
-     modules/desktop_capture/linux/screen_capturer_x11.cc
