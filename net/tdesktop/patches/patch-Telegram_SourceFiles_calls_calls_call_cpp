@@ -1,0 +1,33 @@
+$OpenBSD: patch-Telegram_SourceFiles_calls_calls_call_cpp,v 1.1.1.1 2022/01/26 19:38:06 kn Exp $
+
+Disable unneeded libtgvoip, tgcalls provide everything we need; from alt linux
+http://www.sisyphus.ru/cgi-bin/srpm.pl/Sisyphus/telegram-desktop/getpatch/1
+
+Index: Telegram/SourceFiles/calls/calls_call.cpp
+--- Telegram/SourceFiles/calls/calls_call.cpp.orig
++++ Telegram/SourceFiles/calls/calls_call.cpp
+@@ -37,8 +37,6 @@ https://github.com/telegramdesktop/tdesktop/blob/maste
+ namespace tgcalls {
+ class InstanceImpl;
+ class InstanceV2Impl;
+-class InstanceImplLegacy;
+-void SetLegacyGlobalServerConfig(const std::string &serverConfig);
+ } // namespace tgcalls
+ 
+ namespace Calls {
+@@ -52,7 +50,6 @@ const auto kDefaultVersion = "2.4.4"_q;
+ 
+ const auto Register = tgcalls::Register<tgcalls::InstanceImpl>();
+ const auto RegisterV2 = tgcalls::Register<tgcalls::InstanceV2Impl>();
+-const auto RegisterLegacy = tgcalls::Register<tgcalls::InstanceImplLegacy>();
+ 
+ void AppendEndpoint(
+ 		std::vector<tgcalls::Endpoint> &list,
+@@ -1269,7 +1266,6 @@ Call::~Call() {
+ }
+ 
+ void UpdateConfig(const std::string &data) {
+-	tgcalls::SetLegacyGlobalServerConfig(data);
+ }
+ 
+ } // namespace Calls

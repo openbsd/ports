@@ -1,0 +1,26 @@
+$OpenBSD: patch-Telegram_CMakeLists_txt,v 1.1.1.1 2022/01/26 19:38:06 kn Exp $
+
+Disable unneeded libtgvoip, tgcalls provide everything we need; from alt linux
+http://www.sisyphus.ru/cgi-bin/srpm.pl/Sisyphus/telegram-desktop/getpatch/1
+
+Index: Telegram/CMakeLists.txt
+--- Telegram/CMakeLists.txt.orig
++++ Telegram/CMakeLists.txt
+@@ -31,7 +31,6 @@ get_filename_component(res_loc Resources REALPATH)
+ include(cmake/telegram_options.cmake)
+ include(cmake/lib_ffmpeg.cmake)
+ include(cmake/lib_stripe.cmake)
+-include(cmake/lib_tgvoip.cmake)
+ include(cmake/lib_tgcalls.cmake)
+ include(cmake/td_export.cmake)
+ include(cmake/td_mtproto.cmake)
+@@ -55,9 +54,7 @@ target_prepare_qrc(Telegram)
+ 
+ target_link_libraries(Telegram
+ PRIVATE
+-    tdesktop::lib_tgcalls_legacy
+     tdesktop::lib_tgcalls
+-    tdesktop::lib_tgvoip
+ 
+     # Order in this list defines the order of include paths in command line.
+     # We need to place desktop-app::external_minizip this early to have its

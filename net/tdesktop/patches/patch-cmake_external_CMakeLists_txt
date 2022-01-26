@@ -1,0 +1,19 @@
+$OpenBSD: patch-cmake_external_CMakeLists_txt,v 1.1.1.1 2022/01/26 19:38:06 kn Exp $
+
+We prefer to use the system malloc instead of jemalloc. The problem
+that is solved with it has never been reproduced with OpenBSD malloc.
+more: https://github.com/telegramdesktop/tdesktop/issues/16084
+
+Index: cmake/external/CMakeLists.txt
+--- cmake/external/CMakeLists.txt.orig
++++ cmake/external/CMakeLists.txt
+@@ -40,9 +40,6 @@ if (add_hunspell_library)
+ 	add_checked_subdirectory(hunspell)
+ endif()
+ add_checked_subdirectory(iconv)
+-if (LINUX)
+-    add_checked_subdirectory(jemalloc)
+-endif()
+ add_checked_subdirectory(jpeg)
+ if (LINUX AND NOT DESKTOP_APP_DISABLE_WAYLAND_INTEGRATION)
+     add_checked_subdirectory(kwayland)

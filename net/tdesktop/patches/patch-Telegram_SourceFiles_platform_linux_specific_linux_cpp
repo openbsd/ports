@@ -1,0 +1,26 @@
+$OpenBSD: patch-Telegram_SourceFiles_platform_linux_specific_linux_cpp,v 1.1.1.1 2022/01/26 19:38:06 kn Exp $
+
+Disabling jemalloc-related code on OpenBSD.
+We use our system malloc.
+
+Index: Telegram/SourceFiles/platform/linux/specific_linux.cpp
+--- Telegram/SourceFiles/platform/linux/specific_linux.cpp.orig
++++ Telegram/SourceFiles/platform/linux/specific_linux.cpp
+@@ -44,8 +44,6 @@ https://github.com/telegramdesktop/tdesktop/blob/maste
+ 
+ #ifdef Q_OS_FREEBSD
+ #include <malloc_np.h>
+-#else // Q_OS_FREEBSD
+-#include <jemalloc/jemalloc.h>
+ #endif // Q_OS_FREEBSD
+ 
+ #ifndef DESKTOP_APP_DISABLE_DBUS_INTEGRATION
+@@ -690,8 +688,6 @@ int psFixPrevious() {
+ namespace Platform {
+ 
+ void start() {
+-	auto backgroundThread = true;
+-	mallctl("background_thread", nullptr, nullptr, &backgroundThread, sizeof(bool));
+ 
+ 	// Prevent any later calls into setlocale() by Qt
+ 	QCoreApplicationPrivate::initLocale();

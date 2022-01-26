@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2022/01/26 19:38:06 kn Exp $
+@bin bin/telegram-desktop
+share/applications/telegramdesktop.desktop
+share/icons/hicolor/128x128/apps/telegram.png
+share/icons/hicolor/16x16/apps/telegram.png
+share/icons/hicolor/256x256/apps/telegram.png
+share/icons/hicolor/32x32/apps/telegram.png
+share/icons/hicolor/48x48/apps/telegram.png
+share/icons/hicolor/512x512/apps/telegram.png
+share/icons/hicolor/64x64/apps/telegram.png
+share/metainfo/
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+share/metainfo/telegramdesktop.metainfo.xml
