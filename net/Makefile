@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1286 2022/01/15 20:28:53 op Exp $
+# $OpenBSD: Makefile,v 1.1287 2022/01/26 08:57:50 op Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -706,6 +706,7 @@
      SUBDIR += toxic,no_x11
      SUBDIR += trafshow
      SUBDIR += transmission
+     SUBDIR += tremc
      SUBDIR += trickle
      SUBDIR += ttg
      SUBDIR += twirssi
