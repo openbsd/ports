@@ -1,11 +1,11 @@
-$OpenBSD: patch-sendmail_tls_c,v 1.1 2021/11/27 18:26:16 tb Exp $
+$OpenBSD: patch-sendmail_tls_c,v 1.2 2022/01/26 13:01:08 ajacoutot Exp $
 
 Unbreak build with opaque DH in LibreSSL 3.5: force use of DH_set0_pqg().
 
 Index: sendmail/tls.c
 --- sendmail/tls.c.orig
 +++ sendmail/tls.c
-@@ -44,6 +44,7 @@ SM_RCSID("@(#)$Id: tls.c,v 8.127 2013-11-27 02:51:11 g
+@@ -43,6 +43,7 @@ SM_RCSID("@(#)$Id: tls.c,v 8.127 2013-11-27 02:51:11 g
  #  include <openssl/bn.h>
  #  include <openssl/dsa.h>
  # else
