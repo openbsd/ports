@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.140 2021/11/03 19:08:27 sthen Exp $
+# $OpenBSD: python.port.mk,v 1.141 2022/01/26 00:03:23 sthen Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -154,6 +154,9 @@ MODPY_SETUPUTILS =	Yes
 # The setuptools uses test target
 TEST_TARGET ?=	test
 _MODPY_USERBASE =
+_MODPY_PRE_BUILD_STEPS += ;[ -e ${WRKSRC}/${MODPY_SETUP} ] || \
+			echo 'from setuptools import setup; setup()' \
+			> ${WRKSRC}/${MODPY_SETUP}
 _MODPY_PRE_BUILD_STEPS += ;${MODPY_CMD} egg_info || true
 # Setuptools opportunistically picks up plugins. If it picks one up that
 # uses finalize_distribution_options (usually setuptools_scm), junking
