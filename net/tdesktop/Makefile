@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2022/01/26 19:41:45 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2022/01/26 19:48:25 kn Exp $
 
 # the MTProto implementation does not support big-endian
 # https://github.com/telegramdesktop/tdesktop/issues/3167#issuecomment-658308298
@@ -21,12 +21,9 @@ MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5Svg
-WANTLIB += Qt5Widgets X11 absl_base absl_int128 absl_log_severity
-WANTLIB += absl_raw_logging_internal absl_spinlock_wait absl_strings
-WANTLIB += absl_strings_internal absl_throw_delegate avcodec avformat
-WANTLIB += avutil c crypto event_core event_extra hunspell-1.7
-WANTLIB += lz4 m openal qrcodegencpp rnnoise swresample swscale
-WANTLIB += tg_owt usrsctp vpx xcb xcb-keysyms xcb-record xcb-screensaver
+WANTLIB += Qt5Widgets absl_strings avcodec avformat avutil c crypto
+WANTLIB += hunspell-1.7 lz4 m openal qrcodegencpp rnnoise swresample
+WANTLIB += swscale tg_owt xcb xcb-keysyms xcb-record xcb-screensaver
 WANTLIB += xxhash z
 
 # C++17 set below
@@ -49,7 +46,6 @@ LIB_DEPENDS =		archivers/lz4 \
 			graphics/ffmpeg \
 			graphics/qr-code-generator>=1.7.0p1 \
 			net/tg_owt \
-			net/usrsctp>=0.9.5.0p2 \
 			sysutils/xxhash \
 			textproc/hunspell \
 			x11/qt5/qtsvg
@@ -74,9 +70,8 @@ CONFIGURE_ARGS +=	-DDESKTOP_APP_DISABLE_WAYLAND_INTEGRATION=ON \
 			-DDESKTOP_APP_QT6=OFF
 
 # match standard version with abseil
-CONFIGURE_ARGS +=	-DCMAKE_CXX_STANDARD=17 \
-			-DCMAKE_EXE_LINKER_FLAGS='${LDFLAGS}'
-LDFLAGS +=	`pkg-config --libs absl_strings libevent usrsctp vpx x11`
+CONFIGURE_ARGS +=	-DCMAKE_CXX_STANDARD=17
+
 # disable use of unported dispatch library
 CXXFLAGS +=		-DCRL_FORCE_QT
 
