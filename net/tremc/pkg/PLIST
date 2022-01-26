@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2022/01/26 08:57:01 op Exp $
+bin/tremc
+@man man/man1/tremc.1
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/tremc
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_tremc

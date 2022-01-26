@@ -1,0 +1,3 @@
+tremc is a curses interface for the Transmission BitTorrent daemon that
+can show the list of enqueued torrents, display their stats and also
+enqueue torrents.
