@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/02 00:01:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2022/01/26 18:19:46 paco Exp $
 
 COMMENT =		Python library to interact with Task Warrior
 
-MODPY_EGG_VERSION =	2.4.0
+MODPY_EGG_VERSION =	2.4.3
 
 DISTNAME =		tasklib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		productivity
 
