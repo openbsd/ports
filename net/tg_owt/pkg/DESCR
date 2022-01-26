@@ -1,0 +1,6 @@
+tg_owt is a WebRTC build for Telegram Desktop (net/tdesktop).
+
+WebRTC is an open source project that enables web browsers with Real-Time
+Communications (RTC) capabilities via simple Javascript APIs.
+The WebRTC components have been optimized to best serve this purpose.
+WebRTC implements the W3C's proposal for video conferencing on the web.

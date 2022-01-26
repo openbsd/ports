@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_third_party_libsrtp_crypto_hash_hmac_ossl_c,v 1.1.1.1 2022/01/26 18:48:48 kn Exp $
+
+Fix bundled libsrtp 2.2.0 build after recent libcrypto bump (from tb@, thanks!)
+https://github.com/desktop-app/tg_owt/issues/84
+https://github.com/cisco/libsrtp/pull/593
+
+Index: src/third_party/libsrtp/crypto/hash/hmac_ossl.c
+--- src/third_party/libsrtp/crypto/hash/hmac_ossl.c.orig
++++ src/third_party/libsrtp/crypto/hash/hmac_ossl.c
+@@ -77,7 +77,7 @@ static srtp_err_status_t srtp_hmac_alloc(srtp_auth_t *
+ 
+ /* OpenSSL 1.1.0 made HMAC_CTX an opaque structure, which must be allocated
+    using HMAC_CTX_new.  But this function doesn't exist in OpenSSL 1.0.x. */
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || LIBRESSL_VERSION_NUMBER
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+     {
+         /* allocate memory for auth and HMAC_CTX structures */
+         uint8_t *pointer;
+@@ -123,7 +123,7 @@ static srtp_err_status_t srtp_hmac_dealloc(srtp_auth_t
+ 
+     hmac_ctx = (HMAC_CTX *)a->state;
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || LIBRESSL_VERSION_NUMBER
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+     HMAC_CTX_cleanup(hmac_ctx);
+ 
+     /* zeroize entire state*/
