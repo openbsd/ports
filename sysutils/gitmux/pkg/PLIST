@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2022/01/26 15:47:38 abieber Exp $
+@bin bin/gitmux
+share/doc/gitmux/
+share/doc/gitmux/README.md
