@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/01/26 19:38:06 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2022/01/26 19:41:45 kn Exp $
 
 # the MTProto implementation does not support big-endian
 # https://github.com/telegramdesktop/tdesktop/issues/3167#issuecomment-658308298
@@ -13,13 +13,10 @@ CATEGORIES =		net
 HOMEPAGE =		https://desktop.telegram.org
 MASTER_SITES =		https://github.com/telegramdesktop/tdesktop/releases/download/v${V}/
 
-# ${WRKSRC}/Telegram/ThirdParty/hunspell/tests/suggestiontest/Makefile.orig
-PATCHORIG =		.pat.orig
-
 MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 			Klemens Nanni <kn@openbsd.org>
 
-# tdesktop: GPLv3+; minizip: zlib; tgcalls: LGPL 3
+# tdesktop: GPLv3 with OpenSSL exception; minizip: zlib; tgcalls: LGPL 3
 # rlottie: LGPL 2.1 with freetype, LGPL, MIT, BSD dependencies
 PERMIT_PACKAGE =	Yes
 
