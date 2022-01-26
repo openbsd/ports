@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2022/01/26 08:54:08 op Exp $
+lib/python${MODPY_VERSION}/site-packages/pyperclip/
+lib/python${MODPY_VERSION}/site-packages/pyperclip-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/pyperclip-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/pyperclip-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/pyperclip-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/pyperclip-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pyperclip/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pyperclip/__main__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyperclip/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyperclip/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyperclip/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
