@@ -1,11 +1,11 @@
-$OpenBSD: patch-glib_gfileutils_c,v 1.7 2020/11/01 08:21:04 ajacoutot Exp $
+$OpenBSD: patch-glib_gfileutils_c,v 1.8 2022/01/27 07:36:46 ajacoutot Exp $
 
 https://gitlab.gnome.org/GNOME/glib/merge_requests/832
 
 Index: glib/gfileutils.c
 --- glib/gfileutils.c.orig
 +++ glib/gfileutils.c
-@@ -263,7 +263,7 @@ g_mkdir_with_parents (const gchar *pathname,
+@@ -258,7 +258,7 @@ g_mkdir_with_parents (const gchar *pathname,
        
        if (!g_file_test (fn, G_FILE_TEST_EXISTS))
  	{
