@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.9 2020/06/19 18:39:01 martin Exp $
+$OpenBSD: README,v 1.10 2022/01/27 14:20:42 martin Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -9,7 +9,7 @@ HTTP server Configuration
 Baikal has been installed into ${INSTDIR}.
 
 You should point this to the DocumentRoot of your web-server:
-   # ln -s ../baikal/html /var/www/htdocs/baikal
+   # ln -s ../baikal/html ${PREFIX}/htdocs/baikal
 (make sure you use a relative symlink if your server is chrooted)
 
 Alternatively the below configuration can be used for httpd from
