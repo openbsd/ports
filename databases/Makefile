@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.446 2022/01/06 19:06:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.447 2022/01/27 09:25:37 denis Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -247,6 +247,7 @@
      SUBDIR += timescaledb
      SUBDIR += tinycdb
      SUBDIR += tokyocabinet
+     SUBDIR += victoriametrics
      SUBDIR += web2ldap
      SUBDIR += xapian-bindings
      SUBDIR += xapian-core
