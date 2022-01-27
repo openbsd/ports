@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2022/01/13 10:05:03 tb Exp $
+# $OpenBSD: Makefile,v 1.5 2022/01/27 12:29:13 yasuoka Exp $
 
 COMMENT =		Javascript Object Signing and Encryption library
 
 GH_ACCOUNT =		cisco
 GH_PROJECT =		cjose
 GH_TAGNAME =		0.6.1
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS =		cjose 0.0
 

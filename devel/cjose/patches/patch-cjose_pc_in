@@ -1,0 +1,13 @@
+$OpenBSD: patch-cjose_pc_in,v 1.1 2022/01/27 12:29:14 yasuoka Exp $
+
+Index: cjose.pc.in
+--- cjose.pc.in.orig
++++ cjose.pc.in
+@@ -11,6 +11,6 @@ Name: cjose
+ URL: https://github.com/cisco/cjose
+ Description: JOSE implementation for C
+ Version: @VERSION@
+-Requires: jansson >= 2.3, libcrypto >= 1.0.1
++Requires: jansson >= 2.3
+ Cflags: -I${includedir}
+ Libs: -L${libdir} -lcjose
