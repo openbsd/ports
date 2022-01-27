@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/01/14 19:25:17 sdk Exp $
+# $OpenBSD: Makefile,v 1.2 2022/01/27 00:32:39 jca Exp $
 
 COMMENT =	X terminal which uses OpenGL ES Compute Shaders
 
 GH_ACCOUNT =	tomszilagyi
 GH_PROJECT =	zutty
 GH_TAGNAME =	0.11
+REVISION =	0
 
 CATEGORIES =	x11
 
@@ -21,6 +22,10 @@ WANTLIB += ${COMPILER_LIBCXX} EGL GLESv2 ICE SM X11 Xau Xdmcp
 WANTLIB += Xext Xmu Xt c freetype m xcb z
 
 COMPILER=	base-clang ports-gcc
+
+CONFIGURE_ENV =	CFLAGS="${CFLAGS}" \
+		CXXFLAGS="${CXXFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 
 do-configure:
 	cd ${WRKSRC} && env -i ${CONFIGURE_ENV} \
