@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.64 2021/10/30 11:38:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2022/01/27 07:51:23 robert Exp $
 
 COMMENT=		framework for streaming media
 
 DISTNAME=		gstreamer-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-${V}
+REVISION=		0
 
 SHARED_LIBS += gstreamer-1.0             6.0 # 0.1805.0
 SHARED_LIBS += gstbase-1.0               6.0 # 0.1805.0
@@ -29,9 +30,7 @@ CONFIGURE_ARGS=		-Dgtk_doc=disabled \
 
 # PTP helper does not do anything on OpenBSD (functionality needs to be
 # implemented): no need to install it suid root
-# XXX the script doesn't handle the 'none' option; that's fine because we don't
-# explicitely set the setuid in PLIST
-CONFIGURE_ARGS +=	-Dptp-helper-permissions=setuid-root
+CONFIGURE_ARGS +=	-Dptp-helper-permissions=none
 
 # XXX configure check lost in the autoconf -> meson migration
 CFLAGS +=		-DHAVE_SYS_SOCKET_H
