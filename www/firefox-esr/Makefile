@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.158 2022/01/11 15:11:08 landry Exp $
+# $OpenBSD: Makefile,v 1.159 2022/01/27 15:55:44 landry Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 ONLY_FOR_ARCHS =	amd64 aarch64
 
-MOZILLA_VERSION =	91.5.0esr
+MOZILLA_VERSION =	91.5.1esr
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox-esr
 MOZILLA_CODENAME =	browser
