@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.635 2022/01/26 15:48:06 abieber Exp $
+# $OpenBSD: Makefile,v 1.636 2022/01/27 00:22:15 kmos Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -283,7 +283,6 @@
      SUBDIR += py-distro,python3
      SUBDIR += py-dotenv,python3
      SUBDIR += py-elasticsearch-curator	# unflavoured (standalone?) but uses python3
-     SUBDIR += py-filelock,python3
      SUBDIR += py-ghmi,python3
      SUBDIR += py-hpilo,python3
      SUBDIR += py-joblib,python3
