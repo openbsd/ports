@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/02 00:01:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2022/01/27 08:10:26 paco Exp $
 
 COMMENT =		Python XMPP and Jabber implementation
 
-MODPY_EGG_VERSION =	2.0.2
+MODPY_EGG_VERSION =	2.0.4
 DISTNAME =		nbxmpp-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		net devel
-REVISION =		0
 
 HOMEPAGE =		https://python-nbxmpp.gajim.org/
 
