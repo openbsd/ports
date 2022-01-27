@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.93 2021/11/14 19:30:32 kirby Exp $
+# $OpenBSD: Makefile,v 1.94 2022/01/27 06:08:19 kirby Exp $
 
 PORTROACH = 	limitw:1,even
 
 BROKEN-hppa =	missing atomic ops
 COMMENT=	fantasy turn-based strategy game
 
-DISTNAME=	wesnoth-1.16.1
+DISTNAME=	wesnoth-1.16.2
 
 CATEGORIES=	games x11
 
@@ -49,6 +49,8 @@ CONFIGURE_ARGS+=-DFIFO_DIR=${VARBASE}/wesnothd \
 		-DSERVER_GID=708 \
 		-DENABLE_CAMPAIGN_SERVER=ON \
 		-DENABLE_STRICT_COMPILATION=OFF \
+		-DCMAKE_EXE_LINKER_FLAGS=-lpthread \
+		-DHAVE_SYS_SENDFILE_H=0 \
 		-DOPT=-O2 \
 		-Wno_dev
 

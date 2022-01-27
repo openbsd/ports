@@ -1,7 +1,7 @@
-$OpenBSD: patch-po_LINGUAS,v 1.5 2021/11/01 20:39:39 kirby Exp $
+$OpenBSD: patch-po_LINGUAS,v 1.6 2022/01/27 06:08:19 kirby Exp $
 Index: po/LINGUAS
 --- po/LINGUAS.orig
 +++ po/LINGUAS
 @@ -1 +1 @@
--af ang@latin ar bg ca ca_ES@valencia cs da de el en_GB en@shaw es eo et eu fi fr ga gd gl grc he hr hu id is it ja ko la lt lv mk mr my nl nb_NO pl pt pt_BR racv ro ru sk sl sr sr@ijekavian sr@ijekavianlatin sr@latin sv tl tr uk vi zh_CN zh_TW
+-af ang@latin ar bg ca ca_ES@valencia cs da de el en_GB en@shaw es es_419 eo et eu fi fr ga gd gl grc he hr hu id is it ja ko la lt lv mk mr my nl nb_NO pl pt pt_BR racv ro ru sk sl sr sr@ijekavian sr@ijekavianlatin sr@latin sv tl tr uk vi zh_CN zh_TW
 +ca cs de en_GB es fr hu it ja pt_BR ru tr vi zh_CN zh_TW
