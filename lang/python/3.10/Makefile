@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2022/01/23 21:32:07 daniel Exp $
+# $OpenBSD: Makefile,v 1.5 2022/01/27 01:37:47 kmos Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
 # requirement of the PSF license, if it constitutes a change to
 # Python itself.
 
-FULL_VERSION =		3.10.0
+FULL_VERSION =		3.10.2
 SHARED_LIBS =		python3.10 0.0
 VERSION_SPEC =		>=3.10,<3.11
 #PSUBDIR =		python/3.10.0
-
-REVISION-main =		1
-
 
 CONFIGURE_ARGS +=	--with-ensurepip=no
 CONFIGURE_ARGS +=	--enable-loadable-sqlite-extensions

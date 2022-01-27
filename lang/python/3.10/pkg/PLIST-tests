@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.1.1.1 2021/11/01 14:16:12 kmos Exp $
+@comment $OpenBSD: PLIST-tests,v 1.2 2022/01/27 01:37:48 kmos Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-tests-${VERSION_SPEC}
@@ -539,6 +539,12 @@ lib/python3.10/test/__pycache__/ann_module3.cpython-310.pyc
 lib/python3.10/test/__pycache__/ann_module4.cpython-310.opt-1.pyc
 lib/python3.10/test/__pycache__/ann_module4.cpython-310.opt-2.pyc
 lib/python3.10/test/__pycache__/ann_module4.cpython-310.pyc
+lib/python3.10/test/__pycache__/ann_module5.cpython-310.opt-1.pyc
+lib/python3.10/test/__pycache__/ann_module5.cpython-310.opt-2.pyc
+lib/python3.10/test/__pycache__/ann_module5.cpython-310.pyc
+lib/python3.10/test/__pycache__/ann_module6.cpython-310.opt-1.pyc
+lib/python3.10/test/__pycache__/ann_module6.cpython-310.opt-2.pyc
+lib/python3.10/test/__pycache__/ann_module6.cpython-310.pyc
 lib/python3.10/test/__pycache__/audiotests.cpython-310.opt-1.pyc
 lib/python3.10/test/__pycache__/audiotests.cpython-310.opt-2.pyc
 lib/python3.10/test/__pycache__/audiotests.cpython-310.pyc
@@ -1998,6 +2004,8 @@ lib/python3.10/test/ann_module.py
 lib/python3.10/test/ann_module2.py
 lib/python3.10/test/ann_module3.py
 lib/python3.10/test/ann_module4.py
+lib/python3.10/test/ann_module5.py
+lib/python3.10/test/ann_module6.py
 lib/python3.10/test/audiodata/
 lib/python3.10/test/audiodata/pluck-alaw.aifc
 lib/python3.10/test/audiodata/pluck-pcm16.aiff
@@ -3996,16 +4004,12 @@ lib/python3.10/tkinter/test/__pycache__/
 lib/python3.10/tkinter/test/__pycache__/__init__.cpython-310.opt-1.pyc
 lib/python3.10/tkinter/test/__pycache__/__init__.cpython-310.opt-2.pyc
 lib/python3.10/tkinter/test/__pycache__/__init__.cpython-310.pyc
-lib/python3.10/tkinter/test/__pycache__/runtktests.cpython-310.opt-1.pyc
-lib/python3.10/tkinter/test/__pycache__/runtktests.cpython-310.opt-2.pyc
-lib/python3.10/tkinter/test/__pycache__/runtktests.cpython-310.pyc
 lib/python3.10/tkinter/test/__pycache__/support.cpython-310.opt-1.pyc
 lib/python3.10/tkinter/test/__pycache__/support.cpython-310.opt-2.pyc
 lib/python3.10/tkinter/test/__pycache__/support.cpython-310.pyc
 lib/python3.10/tkinter/test/__pycache__/widget_tests.cpython-310.opt-1.pyc
 lib/python3.10/tkinter/test/__pycache__/widget_tests.cpython-310.opt-2.pyc
 lib/python3.10/tkinter/test/__pycache__/widget_tests.cpython-310.pyc
-lib/python3.10/tkinter/test/runtktests.py
 lib/python3.10/tkinter/test/support.py
 lib/python3.10/tkinter/test/test_tkinter/
 lib/python3.10/tkinter/test/test_tkinter/__init__.py
@@ -4066,9 +4070,6 @@ lib/python3.10/tkinter/test/test_ttk/__pycache__/__init__.cpython-310.pyc
 lib/python3.10/tkinter/test/test_ttk/__pycache__/test_extensions.cpython-310.opt-1.pyc
 lib/python3.10/tkinter/test/test_ttk/__pycache__/test_extensions.cpython-310.opt-2.pyc
 lib/python3.10/tkinter/test/test_ttk/__pycache__/test_extensions.cpython-310.pyc
-lib/python3.10/tkinter/test/test_ttk/__pycache__/test_functions.cpython-310.opt-1.pyc
-lib/python3.10/tkinter/test/test_ttk/__pycache__/test_functions.cpython-310.opt-2.pyc
-lib/python3.10/tkinter/test/test_ttk/__pycache__/test_functions.cpython-310.pyc
 lib/python3.10/tkinter/test/test_ttk/__pycache__/test_style.cpython-310.opt-1.pyc
 lib/python3.10/tkinter/test/test_ttk/__pycache__/test_style.cpython-310.opt-2.pyc
 lib/python3.10/tkinter/test/test_ttk/__pycache__/test_style.cpython-310.pyc
@@ -4076,7 +4077,6 @@ lib/python3.10/tkinter/test/test_ttk/__pycache__/test_widgets.cpython-310.opt-1.
 lib/python3.10/tkinter/test/test_ttk/__pycache__/test_widgets.cpython-310.opt-2.pyc
 lib/python3.10/tkinter/test/test_ttk/__pycache__/test_widgets.cpython-310.pyc
 lib/python3.10/tkinter/test/test_ttk/test_extensions.py
-lib/python3.10/tkinter/test/test_ttk/test_functions.py
 lib/python3.10/tkinter/test/test_ttk/test_style.py
 lib/python3.10/tkinter/test/test_ttk/test_widgets.py
 lib/python3.10/tkinter/test/widget_tests.py

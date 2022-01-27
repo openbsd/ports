@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_pre_in,v 1.1.1.1 2021/11/01 14:16:09 kmos Exp $
+$OpenBSD: patch-Makefile_pre_in,v 1.2 2022/01/27 01:37:47 kmos Exp $
 
 Index: Makefile.pre.in
 --- Makefile.pre.in.orig
@@ -13,8 +13,8 @@ Index: Makefile.pre.in
 +PY_LDFLAGS=	$(LDFLAGS)
  PY_LDFLAGS_NODIST=$(CONFIGURE_LDFLAGS_NODIST) $(LDFLAGS_NODIST)
  NO_AS_NEEDED=	@NO_AS_NEEDED@
- SGI_ABI=	@SGI_ABI@
-@@ -671,7 +671,7 @@ gdbhooks: $(BUILDPYTHON)-gdb.py
+ CCSHARED=	@CCSHARED@
+@@ -670,7 +670,7 @@ gdbhooks: $(BUILDPYTHON)-gdb.py
  
  SRC_GDB_HOOKS=$(srcdir)/Tools/gdb/libpython.py
  $(BUILDPYTHON)-gdb.py: $(SRC_GDB_HOOKS)

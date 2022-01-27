@@ -1,9 +1,9 @@
-$OpenBSD: patch-Modules__hashopenssl_c,v 1.1.1.1 2021/11/01 14:16:09 kmos Exp $
+$OpenBSD: patch-Modules__hashopenssl_c,v 1.2 2022/01/27 01:37:47 kmos Exp $
 
 Index: Modules/_hashopenssl.c
 --- Modules/_hashopenssl.c.orig
 +++ Modules/_hashopenssl.c
-@@ -40,11 +40,6 @@
+@@ -45,11 +45,6 @@
  
  #define MUNCH_SIZE INT_MAX
  
@@ -12,6 +12,6 @@ Index: Modules/_hashopenssl.c
 -#define PY_OPENSSL_HAS_SHAKE 1
 -#define PY_OPENSSL_HAS_BLAKE2 1
 -
- static PyModuleDef _hashlibmodule;
- 
- typedef struct {
+ #if OPENSSL_VERSION_NUMBER >= 0x30000000L
+ #define PY_EVP_MD EVP_MD
+ #define PY_EVP_MD_fetch(algorithm, properties) EVP_MD_fetch(NULL, algorithm, properties)
