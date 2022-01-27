@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# $OpenBSD: vmetrics.rc,v 1.1.1.1 2022/01/27 09:23:01 denis Exp $
+
+daemon="${TRUEPREFIX}/bin/vmetrics"
+daemon_flags="-storageDataPath '${LOCALSTATEDIR}/db/vmetrics/'"
+daemon_user="_vmetrics"
+daemon_logger="daemon.info"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1
