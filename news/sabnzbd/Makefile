@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2021/11/02 00:01:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2022/01/28 17:47:02 bket Exp $
 
 COMMENT =			retrieve and process nzb-files via web interface
 
-VERSION =			3.4.2
+VERSION =			3.5.0
 DISTNAME =			SABnzbd-${VERSION}
 PKGNAME =			sabnzbd-${VERSION}
-REVISION =			0
 
 CATEGORIES =			news
 
@@ -33,6 +32,7 @@ RUN_DEPENDS =			archivers/par2cmdline \
 				devel/py-puremagic${MODPY_FLAVOR} \
 				multimedia/py-guessit${MODPY_FLAVOR} \
 				net/py-portend${MODPY_FLAVOR} \
+				net/py-socks${MODPY_FLAVOR} \
 				news/py-sabyenc${MODPY_FLAVOR}>=4.0.0 \
 				security/py-cryptography${MODPY_FLAVOR} \
 				textproc/py-chardet${MODPY_FLAVOR} \
