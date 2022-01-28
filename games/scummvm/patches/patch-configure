@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.22 2021/10/10 03:12:02 jsg Exp $
+$OpenBSD: patch-configure,v 1.23 2022/01/28 12:27:36 jsg Exp $
 Index: configure
 --- configure.orig
 +++ configure
-@@ -2311,22 +2311,6 @@ if test "$_release_build" = yes; then
+@@ -2312,22 +2312,6 @@ if test "$_release_build" = yes; then
  	append_var DEFINES "-DRELEASE_BUILD"
  fi
  
@@ -25,7 +25,7 @@ Index: configure
  # If possible, we want to use -Wglobal-constructors
  # However, not all compilers support that, so check whether the active one does.
  echocheck "whether C++ compiler accepts -Wglobal-constructors"
-@@ -4380,16 +4364,14 @@ if test "$_vorbis" = auto ; then
+@@ -4399,16 +4383,14 @@ if test "$_vorbis" = auto ; then
  int main(void) { vorbis_packet_blocksize(0,0); return 0; }
  EOF
  	if test "$_ogg" = yes ; then
@@ -46,7 +46,7 @@ Index: configure
  fi
  define_in_config_if_yes "$_vorbis" 'USE_VORBIS'
  echo "$_vorbis"
-@@ -4472,16 +4454,14 @@ int main(void) {
+@@ -4491,16 +4473,14 @@ int main(void) {
  }
  EOF
  	if test "$_ogg" = yes ; then
