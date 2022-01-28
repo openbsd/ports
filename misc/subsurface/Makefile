@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/17 12:17:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2022/01/28 11:11:32 ajacoutot Exp $
 
 # Qt5Webkit
 USE_WXNEEDED =	Yes
@@ -72,7 +72,8 @@ do-gen:
 pre-configure:
 	mkdir -p ${WRKSRC}/libdivecomputer/build
 	cd ${WRKSRC}/libdivecomputer/build && \
-		${XXCONFIGURE_ENV} MKDIR_P="/bin/mkdir -p" ../configure \
+		${XXCONFIGURE_ENV} ac_cv_path_SED=/usr/bin/sed \
+		MKDIR_P="/bin/mkdir -p" ../configure \
 		--without-libusb \
 		--without-hidapi \
 		--without-bluez \
