@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2021/11/12 20:55:21 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.18 2022/01/28 08:30:51 ajacoutot Exp $
 @bin bin/gpg-error
 bin/gpg-error-config
 bin/gpgrt-config
@@ -39,6 +39,7 @@ share/locale/ro/LC_MESSAGES/libgpg-error.mo
 share/locale/ru/LC_MESSAGES/libgpg-error.mo
 share/locale/sr/LC_MESSAGES/libgpg-error.mo
 share/locale/sv/LC_MESSAGES/libgpg-error.mo
+share/locale/tr/LC_MESSAGES/libgpg-error.mo
 share/locale/uk/LC_MESSAGES/libgpg-error.mo
 share/locale/vi/LC_MESSAGES/libgpg-error.mo
 share/locale/zh_CN/LC_MESSAGES/libgpg-error.mo
