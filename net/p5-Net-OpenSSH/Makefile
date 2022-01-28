@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2022/01/28 07:47:13 benoit Exp $
 
 COMMENT =	perl SSH client package implemented on top of OpenSSH
 
-DISTNAME =	Net-OpenSSH-0.78
+DISTNAME =	Net-OpenSSH-0.80
 CATEGORIES =	net security
 MODULES =	cpan
 PKG_ARCH =	*
-REVISION =	0
 
 MAINTAINER =	Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
