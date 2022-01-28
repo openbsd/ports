@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2021/01/26 20:31:55 paco Exp $
+# $OpenBSD: Makefile,v 1.3 2022/01/28 18:20:03 paco Exp $
 
 FIX_EXTRACT_PERMISSIONS =	Yes
 
 COMMENT =		LWP::UserAgent for simulating and testing network calls
 
-DISTNAME =		Test-LWP-UserAgent-0.034
+DISTNAME =		Test-LWP-UserAgent-0.036
 
 CATEGORIES =		www devel
 
