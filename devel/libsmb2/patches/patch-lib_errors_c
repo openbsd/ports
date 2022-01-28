@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_errors_c,v 1.1.1.1 2019/12/31 11:35:55 ajacoutot Exp $
+$OpenBSD: patch-lib_errors_c,v 1.2 2022/01/28 21:22:05 sdk Exp $
 
 Index: lib/errors.c
 --- lib/errors.c.orig
 +++ lib/errors.c
-@@ -204,7 +204,7 @@ int nterror_to_errno(uint32_t status) {
+@@ -1108,7 +1108,7 @@ int nterror_to_errno(uint32_t status) {
          case SMB2_STATUS_FILE_DELETED:
                  return EPERM;
          case SMB2_STATUS_NO_MORE_FILES:

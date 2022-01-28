@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/12/31 11:35:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2022/01/28 21:22:05 sdk Exp $
 
 COMMENT=	userspace client library for accessing SMB2/SMB3 shares
 
 GH_ACCOUNT=	sahlberg
 GH_PROJECT=	libsmb2
-GH_TAGNAME=	v3.0.0
+GH_TAGNAME=	v4.0.0
 
 CATEGORIES=	devel
 
-SHARED_LIBS=	smb2	0.0
+SHARED_LIBS=	smb2	1.0
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
