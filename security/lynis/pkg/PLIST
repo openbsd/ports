@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2020/10/26 12:09:55 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.23 2022/01/28 09:26:19 gonzalo Exp $
 @group wheel
 bin/lynis
 @man man/man8/lynis.8
@@ -13,12 +13,15 @@ share/examples/lynis/
 share/examples/lynis/default.prf
 @sample ${SYSCONFDIR}/lynis/default.prf
 share/lynis/
+@mode 0755
 share/lynis/db/
-@mode 0600
+@mode 0640
 share/lynis/db/fileperms.db
 share/lynis/db/hints.db
 share/lynis/db/integrity.db
+@mode 0755
 share/lynis/db/languages/
+@mode
 share/lynis/db/languages/az
 share/lynis/db/languages/br
 share/lynis/db/languages/cn
@@ -54,7 +57,7 @@ share/lynis/db/software-eol.db
 share/lynis/db/tests.db
 @mode 0755
 share/lynis/include/
-@mode 0600
+@mode 0640
 @owner root
 share/lynis/include/binaries
 share/lynis/include/consts

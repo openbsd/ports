@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.42 2021/08/07 07:59:24 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.43 2022/01/28 09:26:19 gonzalo Exp $
 
 COMMENT=	security auditing tool
 
-DISTNAME =	lynis-3.0.6
+DISTNAME =	lynis-3.0.7
 
 CATEGORIES=	security
 
