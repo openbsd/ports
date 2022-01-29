@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2022/01/02 11:43:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2022/01/29 13:19:22 daniel Exp $
 
 # see patch-js_src_old-configure_in
 USE_WXNEEDED =		Yes
@@ -15,6 +15,7 @@ DISTNAME =		firefox-${V}esr.source
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME =		spidermonkey${MOZILLA_VERSION}-${V}
 EPOCH =			1
+REVISION =		0
 
 SHARED_LIBS =		mozjs-78 0.0
 
@@ -33,7 +34,7 @@ WANTLIB += curses ffi icudata icui18n icuuc m nspr4 plc4 plds4 z
 WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES =		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+
 MODPY_RUNDEP =		No
 
 # C++11
@@ -51,8 +52,7 @@ AUTOCONF_VERSION=	2.13
 BUILD_DEPENDS +=	devel/autoconf/${AUTOCONF_VERSION} \
 			devel/cbindgen \
 			devel/llvm \
-			lang/rust \
-			lang/python/${MODPY_DEFAULT_VERSION_3}
+			lang/rust
 
 SEPARATE_BUILD =	Yes
 WRKDIST =		${WRKDIR}/firefox-${V}
