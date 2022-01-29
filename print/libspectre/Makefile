@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.31 2021/09/11 09:19:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2022/01/29 07:37:52 ajacoutot Exp $
 
 # libgs from ghostscript is only provided on shared libs archs
 
 COMMENT=	library for rendering Postscript documents
 
 DISTNAME=	libspectre-0.2.9
+REVISION=	0
+
 CATEGORIES=	print
 
 SHARED_LIBS +=  spectre              1.0      # 2.8
@@ -17,9 +19,10 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xext Xt avahi-client avahi-common cups dbus-1
-WANTLIB += execinfo freetype gmp gnutls gs hogweed iconv idn2
-WANTLIB += ijs intl jbig2dec jpeg lcms2 lzma m nettle p11-kit
-WANTLIB += png pthread tasn1 tiff unistring xcb z zstd
+WANTLIB += execinfo expat fontconfig freetype gmp gnutls gs hogweed
+WANTLIB += iconv idn idn2 ijs intl jbig2dec jpeg lzma m nettle
+WANTLIB += openjp2 p11-kit paper png pthread tasn1 tiff unistring
+WANTLIB += xcb z zstd
 
 MASTER_SITES=	http://libspectre.freedesktop.org/releases/
 
@@ -28,9 +31,8 @@ MASTER_SITES=	http://libspectre.freedesktop.org/releases/
 LIB_DEPENDS=	devel/gettext,-runtime \
 		ghostscript-*-!no_x11:print/ghostscript/gnu
 
+CONFIGURE_STYLE=gnu
 
-CONFIGURE_STYLE=autoconf
-AUTOCONF_VERSION=2.69
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 

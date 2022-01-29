@@ -1,15 +1,14 @@
-$OpenBSD: patch-libspectre_spectre-device_c,v 1.1 2021/09/11 09:19:19 ajacoutot Exp $
+$OpenBSD: patch-libspectre_spectre-device_c,v 1.2 2022/01/29 07:37:52 ajacoutot Exp $
 
 From 6928e8933e8b6c98c0590985866cc12e7321f491 Mon Sep 17 00:00:00 2001
 From: Albert Astals Cid <aacid@kde.org>
 Date: Sat, 26 Dec 2020 12:21:22 +0100
 Subject: Free the previous user_image in case spectre_presize is called multiple times
 
-revert (our ghoscript version is too old):
-From 90000c9d5c1d0928e02da0a799bb81676589e073 Mon Sep 17 00:00:00 2001
-From: Christian Persch <chpe@src.gnome.org>
-Date: Sat, 20 Oct 2018 00:17:47 +0200
-Subject: spectre-gs: Remove support for old ghostscript
+From 4d34d6cfe9bd8fc7b8355a39502374d9d6426ed0 Mon Sep 17 00:00:00 2001
+From: Marek Kasik <mkasik@redhat.com>
+Date: Mon, 29 Nov 2021 16:27:57 +0100
+Subject: [PATCH] Set alignment for rendering to default
 
 Index: libspectre/spectre-device.c
 --- libspectre/spectre-device.c.orig
@@ -22,38 +21,12 @@ Index: libspectre/spectre-device.c
  	sd->user_image = malloc (sd->row_length * sd->height);
  	
  	return 0;
-@@ -284,11 +285,14 @@ spectre_device_render (SpectreDevice        *device,
- 	char      *dsp_format, *dsp_handle;
- 	char      *width_points = NULL;
- 	char      *height_points = NULL;
-+        long       gs_version;
- 
- 	gs = spectre_gs_new ();
- 	if (!gs)
- 		return SPECTRE_STATUS_NO_MEMORY;
- 
-+        gs_version = spectre_gs_get_version();
-+
- 	if (!spectre_gs_create_instance (gs, device)) {
- 		spectre_gs_cleanup (gs, CLEANUP_DELETE_INSTANCE);
- 		spectre_gs_free (gs);
-@@ -377,7 +381,7 @@ spectre_device_render (SpectreDevice        *device,
- 	}
- 
- 	set = _spectre_strdup_printf ("<< /Orientation %d >> setpagedevice .locksafe",
--				      SPECTRE_ORIENTATION_PORTRAIT);
-+				      gs_version >= 908 ? SPECTRE_ORIENTATION_PORTRAIT : rc->orientation);
- 	if (!spectre_gs_send_string (gs, set)) {
- 		free (set);
- 		free (device->user_image);
-@@ -394,8 +398,8 @@ spectre_device_render (SpectreDevice        *device,
- 
- 	*page_data = device->user_image;
- 	*row_length = device->row_length;
--
--        rotate_image_to_orientation (page_data, row_length, width, height, rc->orientation);
-+        if (gs_version >= 908)
-+                rotate_image_to_orientation (page_data, row_length, width, height, rc->orientation);
- 
- 	spectre_gs_free (gs);
- 
+@@ -330,7 +331,7 @@ spectre_device_render (SpectreDevice        *device,
+ 	args[arg++] = dsp_format = _spectre_strdup_printf ("-dDisplayFormat=%d",
+ 							   DISPLAY_COLORS_RGB |
+ 							   DISPLAY_DEPTH_8 |
+-							   DISPLAY_ROW_ALIGN_32 |
++							   DISPLAY_ROW_ALIGN_DEFAULT |
+ #ifdef WORDS_BIGENDIAN
+ 							   DISPLAY_UNUSED_FIRST |
+ 							   DISPLAY_BIGENDIAN |
