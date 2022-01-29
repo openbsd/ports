@@ -1,9 +1,9 @@
-$OpenBSD: patch-codec_common_src_cpu_cpp,v 1.1.1.1 2021/12/21 14:22:37 kn Exp $
+$OpenBSD: patch-codec_common_src_cpu_cpp,v 1.2 2022/01/29 19:03:29 kn Exp $
 
 Index: codec/common/src/cpu.cpp
 --- codec/common/src/cpu.cpp.orig
 +++ codec/common/src/cpu.cpp
-@@ -290,9 +290,17 @@ uint32_t WelsCPUFeatureDetect (int32_t* pNumberOfLogic
+@@ -299,9 +299,17 @@ uint32_t WelsCPUFeatureDetect (int32_t* pNumberOfLogic
   * that NEON and all associated features are available. */
  
  uint32_t WelsCPUFeatureDetect (int32_t* pNumberOfLogicProcessors) {

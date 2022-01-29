@@ -1,19 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2021/12/24 03:31:11 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2022/01/29 19:03:29 kn Exp $
 
 COMMENT =		Cisco implementation of H.264 codec
 GH_ACCOUNT =		cisco
 GH_PROJECT =		openh264
-GH_TAGNAME =		v2.1.1
+GH_TAGNAME =		v2.2.0
 CATEGORIES =		multimedia
-REVISION =		0
 
-# Fixed #3305: Frame reorder after the frame is read.
-# https://github.com/cisco/openh264/pull/3319
-MASTER_SITES0 =		https://github.com/cisco/openh264/commit/
-PATCHFILES =		openh264-frame-reorder-fix-{}6cc269be.patch:0
-PATCH_DIST_STRIP =	-p1
-
-SHARED_LIBS =		openh264	0.0	# 6.0
+SHARED_LIBS =		openh264	1.0	# 6.0
 
 HOMEPAGE =		https://www.openh264.org/
 

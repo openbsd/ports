@@ -1,4 +1,2 @@
-SHA256 (openh264-2.1.1.tar.gz) = rxc+kPzmX4ByL6iU4a8NawdXIpLnbee2UnPfTAqL5ng=
-SHA256 (openh264-frame-reorder-fix-6cc269be.patch) = pich0tK7FMej97nU2doJItsVyahUtDHkdYe+aJ8cUOg=
-SIZE (openh264-2.1.1.tar.gz) = 60239654
-SIZE (openh264-frame-reorder-fix-6cc269be.patch) = 1151
+SHA256 (openh264-2.2.0.tar.gz) = 5OXIukjmS6bOYei24rdrLYcMdMJwFHZJCC/qu0DyWQU=
+SIZE (openh264-2.2.0.tar.gz) = 60275282
