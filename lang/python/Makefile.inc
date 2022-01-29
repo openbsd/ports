@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.142 2022/01/23 21:32:07 daniel Exp $
+# $OpenBSD: Makefile.inc,v 1.143 2022/01/29 17:44:59 daniel Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -14,27 +14,26 @@ COMMENT-tkinter = tk GUI module for Python
 COMMENT-tools =	extra tools for Python
 
 VERSION =	${FULL_VERSION:R}
-PATCHLEVEL =	.${FULL_VERSION:E}
 
-DISTNAME =	Python-${VERSION}${PATCHLEVEL}
-PKGNAME-main =	python-${VERSION}${PATCHLEVEL}
+DISTNAME =	Python-${FULL_VERSION}
+PKGNAME-main =	python-${FULL_VERSION}
 PKGSPEC-main =	python-${VERSION_SPEC}
-PKGNAME-bsddb =	python-bsddb-${VERSION}${PATCHLEVEL}
+PKGNAME-bsddb =	python-bsddb-${FULL_VERSION}
 PKGSPEC-bsddb =	python-bsddb-${VERSION_SPEC}
-PKGNAME-gdbm =	python-gdbm-${VERSION}${PATCHLEVEL}
+PKGNAME-gdbm =	python-gdbm-${FULL_VERSION}
 PKGSPEC-gdbm =	python-gdbm-${VERSION_SPEC}
-PKGNAME-idle =	python-idle-${VERSION}${PATCHLEVEL}
+PKGNAME-idle =	python-idle-${FULL_VERSION}
 PKGSPEC-idle =	python-idle-${VERSION_SPEC}
-PKGNAME-tests =	python-tests-${VERSION}${PATCHLEVEL}
+PKGNAME-tests =	python-tests-${FULL_VERSION}
 PKGSPEC-tests =	python-tests-${VERSION_SPEC}
-PKGNAME-tkinter = python-tkinter-${VERSION}${PATCHLEVEL}
+PKGNAME-tkinter = python-tkinter-${FULL_VERSION}
 PKGSPEC-tkinter = python-tkinter-${VERSION_SPEC}
-PKGNAME-tools =	python-tools-${VERSION}${PATCHLEVEL}
+PKGNAME-tools =	python-tools-${FULL_VERSION}
 PKGSPEC-tools =	python-tools-${VERSION_SPEC}
 
 CATEGORIES =	lang
 MASTER_SITES =	https://www.python.org/ftp/${PSUBDIR}/
-PSUBDIR ?=	python/${VERSION}${PATCHLEVEL}
+PSUBDIR ?=	python/${FULL_VERSION}
 EXTRACT_SUFX =	.tgz
 
 HOMEPAGE =	https://www.python.org/
