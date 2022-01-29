@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2021/02/23 19:39:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2022/01/29 13:36:30 daniel Exp $
 
 COMMENT=		migrate repositories from CVS to Subversion/GIT/BZR
 
 # py3: https://github.com/mhagger/cvs2svn/issues/9
-MODPY_EGG_VERSION=	2.4.0
-REVISION=		2
+MODPY_EGG_VERSION=	2.5.0
 DISTNAME=		cvs2svn-${MODPY_EGG_VERSION}
-MASTER_SITES=		https://spacehopper.org/mirrors/
+MASTER_SITES=		https://github.com/mhagger/cvs2svn/releases/download/${MODPY_EGG_VERSION}/
 
 CATEGORIES=		devel
 
