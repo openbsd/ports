@@ -1,4 +1,4 @@
-$OpenBSD: patch-audio_out_ao_sndio_c,v 1.4 2021/12/14 23:20:56 kn Exp $
+$OpenBSD: patch-audio_out_ao_sndio_c,v 1.5 2022/01/29 12:30:14 kn Exp $
 
 Another attempt to return ao_sndio to mpv
 
@@ -7,11 +7,12 @@ https://github.com/mpv-player/mpv/pull/9298
 Index: audio/out/ao_sndio.c
 --- audio/out/ao_sndio.c.orig
 +++ audio/out/ao_sndio.c
-@@ -0,0 +1,322 @@
+@@ -0,0 +1,318 @@
 +/*
 + * Copyright (c) 2008 Alexandre Ratchov <alex@caoua.org>
 + * Copyright (c) 2013 Christian Neukirchen <chneukirchen@gmail.com>
 + * Copyright (c) 2020 Rozhuk Ivan <rozhuk.im@gmail.com>
++ * Copyright (c) 2021 Andrew Krasavin <noiseless-ak@yandex.ru>
 + * 
 + * Permission to use, copy, modify, and distribute this software for any
 + * purpose with or without fee is hereby granted, provided that the above
@@ -150,12 +151,7 @@ Index: audio/out/ao_sndio.c
 +        goto err_out;
 +
 +    p->par.pchan = ao->channels.num;
-+#ifdef __FreeBSD__
-+    /* OSS wrapper have bad defaults, overwrite it. */
-+    p->par.appbufsz = ((p->par.rate * 25) / 1000); /* 25 ms. */
-+#else
 +    p->par.appbufsz = p->par.rate * 250 / 1000;    /* 250ms buffer */
-+#endif
 +    p->par.round = p->par.rate * 10 / 1000;    /*  10ms block size */
 +
 +    if (!sio_setpar(p->hdl, &p->par)) {

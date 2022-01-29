@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.78 2021/12/14 23:20:56 kn Exp $
+# $OpenBSD: Makefile,v 1.79 2022/01/29 12:30:14 kn Exp $
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
-GH_TAGNAME =		v0.34.0
-REVISION =		1
+GH_TAGNAME =		v0.34.1
 
 SHARED_LIBS +=		mpv		0.2 # 1.109
 
@@ -27,7 +26,8 @@ WANTLIB += avfilter avformat avresample avutil bluray c cdio cdio_cdda
 WANTLIB += cdio_paranoia drm dvdnav dvdread epoxy expat fontconfig
 WANTLIB += freetype fribidi gbm glib-2.0 graphite2 harfbuzz iconv
 WANTLIB += intl jpeg lcms2 ${MODLUA_WANTLIB} m pcre placebo postproc
-WANTLIB += pthread sndio swresample swscale xcb xcb-dri2 xcb-glx xml2 z
+WANTLIB += pthread sndio swresample swscale udfread xcb xcb-dri2
+WANTLIB += xcb-glx xml2 z
 
 MODULES =		lang/lua \
 			lang/python
