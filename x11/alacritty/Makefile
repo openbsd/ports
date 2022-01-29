@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/15 20:00:49 tb Exp $
+# $OpenBSD: Makefile,v 1.5 2022/01/29 12:11:51 sdk Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -11,8 +11,7 @@ MAINTAINER =	Eric Auge <eau+obsd@unix4fun.net>
 
 GH_ACCOUNT =	alacritty
 GH_PROJECT =	alacritty
-GH_TAGNAME =	v0.9.0
-REVISION =	2
+GH_TAGNAME =	v0.10.0
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
@@ -38,6 +37,9 @@ SEPARATE_BUILD =	Yes
 
 RELEASE_DIR =	${MODCARGO_TARGET_DIR}/release
 EXTRA_DIR= 	${WRKSRC}/extra
+
+# test result: FAILED. 60 passed; 1 failed;
+# failed test: config::tests::config_read_eof
 
 do-install:
 	${INSTALL_PROGRAM} ${RELEASE_DIR}/alacritty ${PREFIX}/bin/
