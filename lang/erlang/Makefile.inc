@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.22 2020/03/16 16:07:45 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.23 2022/01/29 13:47:06 jasper Exp $
 
 COMMENT ?=	real-time, concurrent and distributed functional language
 
@@ -16,7 +16,8 @@ DISTFILES ?=	${DISTNAME}.tar.gz \
 EXTRACT_ONLY ?=	${DISTNAME}.tar.gz
 
 CONFIGURE_STYLE ?=	autoconf no-autoheader
-CONFIGURE_ENV ?=	LDFLAGS="${LDFLAGS} -pthread"
+CONFIGURE_ENV ?=	LDFLAGS="${LDFLAGS} -pthread" \
+			ac_cv_prog_LLVM_PROFDATA=no
 AUTOCONF_VERSION ?=	2.59
 AUTOCONF_DIR ?=		${WRKSRC} \
 			${WRKSRC}/erts \
