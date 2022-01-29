@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.1 2022/01/28 17:05:41 jca Exp $
+$OpenBSD: patch-configure,v 1.2 2022/01/29 07:37:14 ajacoutot Exp $
 
 Index: configure
 --- configure.orig
@@ -14,3 +14,20 @@ Index: configure
  GS_SONAME="lib\$(GS${libname1}"
  GS_SONAME_MAJOR="lib\$(GS${libname2}"
  GS_SONAME_MAJOR_MINOR="lib\$(GS${libname3}"
+@@ -11577,11 +11577,11 @@ case $host in
+     ;;
+     *bsd*)
+       DYNAMIC_CFLAGS="-fPIC $DYNAMIC_CFLAGS"
+-      GS_DYNAMIC_LDFLAGS="-shared -Wl,\$(LD_SET_DT_SONAME)\$(LDFLAGS_SO_PREFIX)\$(GS_SONAME_MAJOR)"
+-      PCL_DYNAMIC_LDFLAGS="-shared -Wl,\$(LD_SET_DT_SONAME)\$(LDFLAGS_SO_PREFIX)\$(PCL_SONAME_MAJOR)"
+-      XPS_DYNAMIC_LDFLAGS="-shared -Wl,\$(LD_SET_DT_SONAME)\$(LDFLAGS_SO_PREFIX)\$(XPS_SONAME_MAJOR)"
+-      PDL_DYNAMIC_LDFLAGS="-shared -Wl,\$(LD_SET_DT_SONAME)\$(LDFLAGS_SO_PREFIX)\$(GPDL_SONAME_MAJOR)"
+-      PDF_DYNAMIC_LDFLAGS="-shared -Wl,\$(LD_SET_DT_SONAME)\$(LDFLAGS_SO_PREFIX)\$(PDF_SONAME_MAJOR)"
++      GS_DYNAMIC_LDFLAGS="-shared -Wl,\$(LD_SET_DT_SONAME)\$(LDFLAGS_SO_PREFIX)\$(GS_SONAME_MAJOR_MINOR)"
++      PCL_DYNAMIC_LDFLAGS="-shared -Wl,\$(LD_SET_DT_SONAME)\$(LDFLAGS_SO_PREFIX)\$(PCL_SONAME_MAJOR_MINOR)"
++      XPS_DYNAMIC_LDFLAGS="-shared -Wl,\$(LD_SET_DT_SONAME)\$(LDFLAGS_SO_PREFIX)\$(XPS_SONAME_MAJOR_MINOR)"
++      PDL_DYNAMIC_LDFLAGS="-shared -Wl,\$(LD_SET_DT_SONAME)\$(LDFLAGS_SO_PREFIX)\$(GPDL_SONAME_MAJOR_MINOR)"
++      PDF_DYNAMIC_LDFLAGS="-shared -Wl,\$(LD_SET_DT_SONAME)\$(LDFLAGS_SO_PREFIX)\$(PDF_SONAME_MAJOR_MINOR)"
+       DYNAMIC_LIBS=""
+       SO_LIB_EXT=".so"
+     ;;

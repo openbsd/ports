@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2022/01/29 07:20:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.120 2022/01/29 07:37:14 ajacoutot Exp $
 
 COMMENT =	PostScript and PDF interpreter
 
@@ -6,6 +6,7 @@ VERSION =	9.55.0
 DISTNAME =	ghostscript-${VERSION}
 CATEGORIES =	lang print
 SHARED_LIBS =	gs 16.0
+REVISION =	0
 
 MASTER_SITES =	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${VERSION:S/.//g}/
 
