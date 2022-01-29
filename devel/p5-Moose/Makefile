@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2021/05/24 00:00:05 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.32 2022/01/29 22:48:54 afresh1 Exp $
 
 COMMENT =	postmodern object system for Perl 5
 
 MODULES =	cpan
-DISTNAME =	Moose-2.2015
+DISTNAME =	Moose-2.2201
 CATEGORIES =	devel
 
 # Perl
@@ -32,7 +32,6 @@ RUN_DEPENDS =	devel/p5-Class-Load>=0.09 \
 		devel/p5-Package-Stash-XS>=0.24 \
 		devel/p5-Params-Util>=1.0 \
 		devel/p5-Sub-Exporter>=0.980 \
-		devel/p5-Sub-Name>=0.20 \
 		devel/p5-Try-Tiny>=0.17
 
 # Moose recommends
