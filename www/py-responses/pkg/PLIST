@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/10/24 16:52:31 kmos Exp $
+@comment $OpenBSD: PLIST,v 1.5 2022/01/30 14:16:48 kmos Exp $
 @conflict py-responses-<0.12.0
 @pkgpath www/py-responses
 lib/python${MODPY_VERSION}/site-packages/responses/
@@ -10,9 +10,16 @@ lib/python${MODPY_VERSION}/site-packages/responses-${MODPY_EGG_VERSION}-py${MODP
 lib/python${MODPY_VERSION}/site-packages/responses-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/responses-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/responses/__init__.py
+lib/python${MODPY_VERSION}/site-packages/responses/__init__.pyi
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/responses/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/responses/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/responses/${MODPY_PYCACHE}matchers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/responses/${MODPY_PYCACHE}registries.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/responses/${MODPY_PYCACHE}test_matchers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/responses/${MODPY_PYCACHE}test_responses.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/responses/matchers.py
+lib/python${MODPY_VERSION}/site-packages/responses/matchers.pyi
+lib/python${MODPY_VERSION}/site-packages/responses/registries.py
+lib/python${MODPY_VERSION}/site-packages/responses/registries.pyi
+lib/python${MODPY_VERSION}/site-packages/responses/test_matchers.py
 lib/python${MODPY_VERSION}/site-packages/responses/test_responses.py
