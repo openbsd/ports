@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2022/01/26 21:53:51 kn Exp $
+# $OpenBSD: Makefile,v 1.6 2022/01/30 16:33:59 kn Exp $
 
 # CMake Warning at cmake/arch.cmake:114 (message):
 #   Unsupported CPU architecture.
@@ -14,7 +14,7 @@ GH_PROJECT =		tg_owt
 # no releases or tags, use latest master
 GH_COMMIT =		6372a0848f8dd84013e291b44f9d1427fde3a90e
 DISTNAME =		${GH_PROJECT}-0.0.0.20220123
-REVISION =		0
+REVISION =		1
 CATEGORIES =		net
 
 SHARED_LIBS =		tg_owt	0.0	# 0.0.0
@@ -48,15 +48,17 @@ PATCHFILES +=		tg_owt-defer-third-party-sources-{}bf55efe3.patch:1
 # Pending "Fix TG_OWT_USE_PIPEWIRE=OFF build (on unix systems without Pipewire)"
 # https://github.com/desktop-app/tg_owt/pull/86
 PATCHFILES +=		tg_owt-fix-build-without-pipewire-{}4263c7b7.patch:1
+# Pending "libabsl: Use system include directories"
+# https://github.com/desktop-app/tg_owt/pull/87
+PATCHFILES +=		tg_owt-libabsl-use-includes-{}fb12b4bd.patch:1
 
 # Pending "Bundled libsrtp 2.2.0 will require LibreSSL fix to build"
 # https://github.com/desktop-app/tg_owt/issues/84
 # https://github.com/cisco/libsrtp/pull/593
 MASTER_SITES2 =		https://github.com/cisco/libsrtp/commit/
 PATCHFILES +=		tg_owt-libsrtp-fix-libressl-build-{}16483b1.patch:2
-PATCH_CASES +=		tg_owt-libsrtp-*.patch) \
-				${PATCH} ${PATCH_DIST_ARGS} < $$patchfile \
-				    -d ${WRKSRC}/src/third_party/libsrtp ;;
+PATCH_CASES +=		tg_owt-libsrtp-*.patch) ${PATCH} ${PATCH_DIST_ARGS} \
+			    -d ${WRKSRC}/src/third_party/libsrtp <$$patchfile ;;
 
 PATCH_DIST_STRIP =	-p1
 
@@ -115,9 +117,6 @@ CONFIGURE_ARGS +=	-DTG_OWT_USE_PIPEWIRE=OFF
 
 # match standard version with abseil
 CONFIGURE_ARGS +=	-DCMAKE_CXX_STANDARD=17
-
-# devel/abseil-cpp is found but it's include path is not picked up
-CXXFLAGS +=		-I/usr/local/include
 
 NO_TEST =		Yes
 
