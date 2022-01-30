@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2022/01/30 18:59:59 kn Exp $
+# $OpenBSD: Makefile,v 1.8 2022/01/30 21:52:18 kn Exp $
 
 # CMake Warning at cmake/arch.cmake:114 (message):
 #   Unsupported CPU architecture.
@@ -14,7 +14,7 @@ GH_PROJECT =		tg_owt
 # no releases or tags, use latest master
 GH_COMMIT =		6372a0848f8dd84013e291b44f9d1427fde3a90e
 DISTNAME =		${GH_PROJECT}-0.0.0.20220123
-REVISION =		2
+REVISION =		3
 CATEGORIES =		net
 
 SHARED_LIBS =		tg_owt	0.0	# 0.0.0
@@ -132,11 +132,11 @@ post-extract:
 	@cd ${WRKSRC}/src/third_party/ && ls -x
 	# Needed bundles (others are removed to prevent accidential use):
 	@cd ${WRKSRC}/src/third_party/ && mkdir .need/ && \
-		mv ${NEEDED_BUNDLES} .need/ && rm -fr -- ./* && \
+		mv ${NEEDED_BUNDLES} .need/ && rm -r -- ./* && \
 		mv .need/* . && rmdir .need/ && ls -x
 	# all source headers get packaged, so remove those not needed at
 	# build-time by tg_owt and tdesktop
-	cd ${WRKSRC}/src/ && rm -fr -- \
+	cd ${WRKSRC}/src/ && rm -r -- \
 	    base/android/ \
 	    sdk/{android,objc}/
 
@@ -144,10 +144,13 @@ post-install:
 	# remove more sources not needed to build tdesktop, they are however
 	# required at tg_owt configure-time even though they are not built, see
 	# nice_target_sources()/remove_target_sources() calls in CMakeLists.txt
-	cd ${PREFIX}/include/tg_owt/ && rm -fr -- \
+	cd ${PREFIX}/include/tg_owt/ && rm -r -- \
 	    modules/audio_device/{android,mac,win}/ \
-	    modules/destkop_capture/{mac,win}/ \
+	    modules/desktop_capture/{mac,win}/ \
 	    modules/video_capture/windows/ \
 	    rtc_base/{win/,win32*.h}
+	# remove bundled sources not needed to build tdesktop
+	cd ${PREFIX}/include/tg_owt/ && rm -r -- \
+	    third_party/{libsrtp,rnnoise,pffft}
 
 .include <bsd.port.mk>
