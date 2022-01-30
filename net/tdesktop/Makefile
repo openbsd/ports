@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2022/01/27 07:03:36 kn Exp $
+# $OpenBSD: Makefile,v 1.7 2022/01/30 13:34:25 sthen Exp $
 
 # the MTProto implementation does not support big-endian
 # https://github.com/telegramdesktop/tdesktop/issues/3167#issuecomment-658308298
-NOT_FOR_ARCHS =		${BE_ARCHS}
+# build uses too much memory on i386 (noticed in calls_group_menu.cpp)
+NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
