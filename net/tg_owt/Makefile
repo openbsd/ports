@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2022/01/30 16:33:59 kn Exp $
+# $OpenBSD: Makefile,v 1.7 2022/01/30 18:59:59 kn Exp $
 
 # CMake Warning at cmake/arch.cmake:114 (message):
 #   Unsupported CPU architecture.
@@ -14,7 +14,7 @@ GH_PROJECT =		tg_owt
 # no releases or tags, use latest master
 GH_COMMIT =		6372a0848f8dd84013e291b44f9d1427fde3a90e
 DISTNAME =		${GH_PROJECT}-0.0.0.20220123
-REVISION =		1
+REVISION =		2
 CATEGORIES =		net
 
 SHARED_LIBS =		tg_owt	0.0	# 0.0.0
@@ -138,15 +138,15 @@ post-extract:
 	# build-time by tg_owt and tdesktop
 	cd ${WRKSRC}/src/ && rm -fr -- \
 	    base/android/ \
-	    modules/deskop_capture/{mac,win}/ \
 	    sdk/{android,objc}/
 
 post-install:
-	# remove more sources not needed to build tdeskop, they are however
+	# remove more sources not needed to build tdesktop, they are however
 	# required at tg_owt configure-time even though they are not built, see
 	# nice_target_sources()/remove_target_sources() calls in CMakeLists.txt
 	cd ${PREFIX}/include/tg_owt/ && rm -fr -- \
 	    modules/audio_device/{android,mac,win}/ \
+	    modules/destkop_capture/{mac,win}/ \
 	    modules/video_capture/windows/ \
 	    rtc_base/{win/,win32*.h}
 
