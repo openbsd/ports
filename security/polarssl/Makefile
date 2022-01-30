@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2022/01/08 17:30:38 bket Exp $
+# $OpenBSD: Makefile,v 1.42 2022/01/30 21:28:55 daniel Exp $
 
 PORTROACH=	limit:^2\.16
 
@@ -8,6 +8,7 @@ GH_ACCOUNT=	ARMmbed
 GH_PROJECT=	mbedtls
 GH_TAGNAME=	mbedtls-2.16.12
 DISTNAME=	${GH_TAGNAME}
+REVISION=	0
 
 # check SOVERSION
 SHARED_LIBS +=  mbedtls                   6.2 # 12
@@ -25,7 +26,6 @@ WANTLIB += c pthread
 
 MODULES=	devel/cmake \
 		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_RUNDEP=	No
 
