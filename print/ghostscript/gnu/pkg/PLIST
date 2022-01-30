@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2022/01/27 20:55:01 kili Exp $
+@comment $OpenBSD: PLIST,v 1.31 2022/01/30 15:08:08 ajacoutot Exp $
 bin/dvipdf
 bin/eps2eps
 @bin bin/gs
@@ -271,3 +271,4 @@ share/ghostscript/${VERSION}/lib/viewpcx.ps
 share/ghostscript/${VERSION}/lib/viewps2a.ps
 share/ghostscript/${VERSION}/lib/winmaps.ps
 share/ghostscript/${VERSION}/lib/zeroline.ps
+%%gtk%%
