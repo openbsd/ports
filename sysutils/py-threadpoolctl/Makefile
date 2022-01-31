@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:02:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2022/01/31 00:18:35 daniel Exp $
 
 COMMENT =	introspect/set max threads in native libraries like BLAS
 
-MODPY_EGG_VERSION =	2.1.0
+MODPY_EGG_VERSION =	3.0.0
 DISTNAME =		threadpoolctl-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -16,12 +15,12 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
+FLAVORS =		python3
+FLAVOR  =		python3
+
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
-
-FLAVORS =		python3
-FLAVOR  =		python3
 
 post-extract:
 	sed -i 's/python/python${MODPY_VERSION}/g' \
