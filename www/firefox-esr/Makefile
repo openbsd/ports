@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.159 2022/01/27 15:55:44 landry Exp $
+# $OpenBSD: Makefile,v 1.160 2022/01/31 15:36:11 landry Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 ONLY_FOR_ARCHS =	amd64 aarch64
@@ -55,6 +55,8 @@ CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
 CONFIGURE_ARGS +=	--enable-forkserver
 CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/lib
+# remove post 96
+CONFIGURE_ARGS +=	--disable-necko-wifi
 
 # XXX badly formed debug in libxul ?
 DWZ = :

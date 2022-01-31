@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.267 2021/12/30 17:29:56 landry Exp $
+# $OpenBSD: Makefile,v 1.268 2022/01/31 15:36:11 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -62,6 +62,8 @@ MAKE_ENV +=	RUSTC_BOOTSTRAP="packed_simd,encoding_rs"
 
 # build lightning xpi
 CONFIGURE_ARGS +=	--enable-calendar
+# remove post 96
+CONFIGURE_ARGS +=	--disable-necko-wifi
 
 post-configure:
 	sed -i 's/"files":{[^}]*}/"files":{}/' \

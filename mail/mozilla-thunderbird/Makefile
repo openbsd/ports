@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.370 2022/01/25 13:31:45 landry Exp $
+# $OpenBSD: Makefile,v 1.371 2022/01/31 15:36:11 landry Exp $
 
 ONLY_FOR_ARCHS =	amd64 aarch64
 COMMENT =		Mozilla e-mail, calendar, rss and usenet client
@@ -57,6 +57,8 @@ CONFIGURE_SCRIPT =	${MODPY_BIN} ${WRKSRC}/configure.py
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
 # pledge strings to be defined, and no multiprocess anyway..
 CONFIGURE_ARGS +=	--disable-sandbox
+# remove post 96
+CONFIGURE_ARGS +=	--disable-necko-wifi
 CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/lib
 # #1664111
 CONFIGURE_ARGS +=	--with-system-ffi
