@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2022/01/13 20:02:29 sdk Exp $
+# $OpenBSD: Makefile,v 1.73 2022/01/31 15:37:36 landry Exp $
 # Some of this comes from www/firefox-esr as apropos, since Tor
 # browser is a fork of ESR.  It is a good idea to look at that
 # Makefile when editing this one (ESR versions not always the same).
@@ -91,6 +91,8 @@ CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
 CONFIGURE_ARGS +=	--enable-forkserver
 CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/lib
+# remove post 96
+CONFIGURE_ARGS ==	--disable-necko-wifi
 
 # XXX badly formed debug in libxul ?
 DWZ = :
