@@ -1,4 +1,4 @@
-$OpenBSD: patch-main_php_ini_c,v 1.2 2022/01/25 12:15:42 sthen Exp $
+$OpenBSD: patch-main_php_ini_c,v 1.3 2022/01/31 21:18:10 sthen Exp $
 
 Index: main/php_ini.c
 --- main/php_ini.c.orig
@@ -8,7 +8,7 @@ Index: main/php_ini.c
  		/* If still no ini file found, search for php.ini file in search path */
  		if (!fp) {
 -			fp = php_fopen_with_path("php.ini", "r", php_ini_search_path, &opened_path);
-+			fp = php_fopen_with_path("php-${MODPHP_VERSION}.ini", "r", php_ini_search_path, &opened_path);
++			fp = php_fopen_with_path("php-${PV}.ini", "r", php_ini_search_path, &opened_path);
  			if (fp) {
  				filename = ZSTR_VAL(opened_path);
  			}
