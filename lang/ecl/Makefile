@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2020/08/24 21:38:05 gkoehler Exp $
+# $OpenBSD: Makefile,v 1.41 2022/01/31 09:53:58 op Exp $
 
 COMMENT =	embeddable common-lisp
 CATEGORIES =	lang
 
-V =		20.4.24
+V =		21.2.1
 DISTNAME =	ecl-$V
-SHARED_LIBS +=	ecl	7.0
+SHARED_LIBS +=	ecl	8.0
 
 HOMEPAGE =	https://common-lisp.net/project/ecl/
 MAINTAINER =	Timo Myyra <timo.myyra@bittivirhe.fi>
@@ -46,9 +46,7 @@ LIB_DEPENDS +=	devel/gmp \
 		devel/libffi
 
 TEST_DEPENDS =	${BASE_PKGPATH}
-
-# XXX: Workaround for missing Copyright file
-post-configure:
-	@cp ${WRKSRC}/{LICENSE,Copyright}
+TEST_ENV =	"ECL=${WRKDIST}/build/bin/ecl" \
+		"TEST_IMAGE=${WRKDIST}/build/bin/ecl"
 
 .include <bsd.port.mk>

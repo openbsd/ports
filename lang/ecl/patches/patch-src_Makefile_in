@@ -1,12 +1,10 @@
-$OpenBSD: patch-src_Makefile_in,v 1.7 2020/08/24 21:38:06 gkoehler Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.8 2022/01/31 09:53:58 op Exp $
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -212,30 +212,15 @@ install:
- 	for i in `(cd ecl && find . -name '*.h')`; do echo $$i; \
+@@ -213,29 +213,13 @@ install:
  	  $(INSTALL_DATA) ecl/$$i $(DESTDIR)$(includedir)/ecl/$$i; \
  	done
-+	$(INSTALL_DATA) help.doc $(DESTDIR)$(ecldir)
  	$(INSTALL_SCRIPT) bin/ecl-config $(DESTDIR)$(bindir)
 -	for i in build-stamp help.doc TAGS ; do \
 -	  $(INSTALL_DATA) $$i $(DESTDIR)$(ecldir); \
@@ -26,8 +24,8 @@ Index: src/Makefile.in
 -	    $(LN_S) @SONAME3@ @SONAME1@ && \
 -	    $(LN_S) @SONAME3@ @SONAME@ ) \
 -	fi
++	$(INSTALL_DATA) help.doc $(DESTDIR)$(ecldir)
 +	${INSTALL_LIBRARY} libecl.so $(DESTDIR)$(libdir)/$(LSP_LIBRARIES)
-+	cd $(DESTDIR)$(libdir) && ln -sf $(LSP_LIBRARIES) libecl.so
  	$(INSTALL_PROGRAM) c/$(DPP) $(DESTDIR)$(ecldir)
  	$(INSTALL_PROGRAM) $(ECL_MIN) $(DESTDIR)$(ecldir)
  	for i in `cat modules`; do \

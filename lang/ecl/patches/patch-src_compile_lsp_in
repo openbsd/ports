@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_compile_lsp_in,v 1.4 2016/12/20 20:12:29 juanfra Exp $
---- src/compile.lsp.in.orig	Mon Dec 19 21:27:57 2016
-+++ src/compile.lsp.in	Mon Dec 19 21:29:57 2016
-@@ -74,19 +74,19 @@
+$OpenBSD: patch-src_compile_lsp_in,v 1.5 2022/01/31 09:53:58 op Exp $
+Index: src/compile.lsp.in
+--- src/compile.lsp.in.orig
++++ src/compile.lsp.in
+@@ -91,19 +91,19 @@
        "@LDFLAGS@ @LIBPREFIX@ecl.@LIBEXT@ @CORE_LIBS@ @FASL_LIBS@ @LIBS@")
  #+(and :wants-dlopen (not nonstop))
  (setf c::*ld-flags*

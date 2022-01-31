@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/08/24 21:38:06 gkoehler Exp $
+@comment $OpenBSD: PLIST,v 1.10 2022/01/31 09:53:59 op Exp $
 @bin bin/ecl
 bin/ecl-config
 include/ecl/
@@ -29,7 +29,6 @@ include/ecl/object.h
 include/ecl/page.h
 include/ecl/stack-resize.h
 include/ecl/stacks.h
-info/ecl.info.gz
 lib/ecl/
 lib/ecl/COPYING
 lib/ecl/LICENSE
@@ -227,7 +226,6 @@ lib/ecl/serve-event.asd
 @bin lib/ecl/serve-event.fas
 lib/ecl/sockets.asd
 @bin lib/ecl/sockets.fas
-@so lib/libecl.so
 @lib lib/libecl.so.${LIBecl_VERSION}
 @man man/man1/ecl-config.1
 @man man/man1/ecl.1
