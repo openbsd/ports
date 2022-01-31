@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.148 2021/10/06 07:37:02 espie Exp $
+# $OpenBSD: Makefile,v 1.149 2022/01/31 13:16:57 sthen Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
-DISTNAME =	gimp-2.10.28
+DISTNAME =	gimp-2.10.30
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets
-SHARED_LIBS +=  $i-2.0 274.0
+SHARED_LIBS +=  $i-2.0 275.0
 .endfor
 
 CATEGORIES=	graphics
@@ -26,15 +26,15 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += ICE Iex-3_1 IlmThread-3_1 OpenEXR-3_1 OpenEXRCore-3_1 OpenEXRUtil-3_1
 WANTLIB += Imath-3_1 SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xmu Xpm Xrandr Xrender Xt aa aom atk-1.0
+WANTLIB += Xau Xdmcp Xi Xinerama Xmu Xpm Xrandr Xrender Xt aa aom atk-1.0
 WANTLIB += avahi-client avahi-common babl-0.1 bz2 c cairo cairo-gobject
 WANTLIB += cups curses dav1d dbus-1 de265 execinfo exiv2 expat
 WANTLIB += ffi fontconfig freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gegl-0.4 gexiv2 gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls
 WANTLIB += gobject-2.0 graphite2 gs gtk-x11-2.0 harfbuzz heif
-WANTLIB += hogweed iconv idn2 ijs intl jbig2dec jpeg json-c json-glib-1.0
+WANTLIB += hogweed iconv idn idn2 ijs intl jbig2dec jpeg json-c json-glib-1.0
 WANTLIB += lcms lcms2 lzma m mng mypaint nettle openjp2 p11-kit
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 paper pcre pixman-1
 WANTLIB += png poppler poppler-glib rsvg-2 tasn1 tiff unistring
 WANTLIB += webp webpdemux webpmux wmf-0.2 wmflite-0.2 x265 xcb
 WANTLIB += xcb-render xcb-shm xml2 z zstd
