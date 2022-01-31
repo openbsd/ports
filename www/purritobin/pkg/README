@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2020/08/11 21:43:59 bcallah Exp $
+$OpenBSD: README,v 1.2 2022/01/31 08:45:06 op Exp $
 
 +-------------------------------------------------------------------------------
 | Running PurritoBin on OpenBSD
@@ -13,15 +13,18 @@ You need to set at least the following option for PurritoBin
 
   rcctl set purritobin flags -d <domain-name>
 
-To look at all the possible options and descriptions
+To take a quick look at all the possible options and descriptions
   purrito -h
+
+For an in-depth explanation
+  man purrito
 
 
 Exposing a webserver
 ====================
 
 PurritoBin saves all the pastes to a single folder.
-By default it is the folder /var/www/purritobin.
+By default it is the folder ${LOCALSTATEDIR}/www/purritobin.
 So it is possible to just expose the folder via httpd(8)
 
 sample httpd(8) configuration
@@ -29,6 +32,10 @@ sample httpd(8) configuration
 http_port=80
 https_port=443
 ext_if=egress
+
+# so that non suffixed paste files are recognized as
+# plain text files
+default type text/plain
 
 server "bsd.ac" {
 	alias "www.bsd.ac"
@@ -44,9 +51,63 @@ server "bsd.ac" {
 
 server "bsd.ac" {
 	alias "www.bsd.ac"
-	listen on egress port $https_port
+	listen on $ext_if port $https_port
+	tls {
+		certificate "/etc/ssl/bsd.ac.crt"
+		key "/etc/ssl/private/bsd.ac.key"
+	}
 	root "/purritobin"
 	directory index "index.html"
+}
+
+
+sample nginx(8) configuration
+-----------------------------
+user nginx;
+worker_processes 1;
+error_log /var/log/nginx/error.log warn;
+pid /var/run/nginx.pid;
+
+events {
+	worker_connections 1024;
+}
+
+http {
+	include	           /etc/nginx/mime.types;
+	default_type       text/plain;
+	charset            utf-8;
+	log_format  main   '$remote_addr - $remote_user [$time_local] "$request" '
+			   '$status $body_bytes_sent "$http_referer" '
+			   '"$http_user_agent" "$http_x_forwarded_for"';
+	access_log         /var/log/nginx/access.log  main;
+	sendfile           on;
+	keepalive_timeout  65;
+
+	server {
+		listen 80 default_server;
+		location / {
+			return 301 https://$host$request_uri;
+		}
+		location /.well-known/acme-challenge/ {
+			alias /var/www/acme-challenge/;
+		}
+	}
+
+	server {
+		listen 443 ssl;
+		server_name bsd.ac www.bsd.ac;
+
+		ssl_certificate     /etc/ssl/bsd.ac.crt;
+		ssl_certificate_key /etc/ssl/private/bsd.ac.key;
+
+		# to allow online paste submission
+		add_header 'Access-Control-Allow-Origin' 'https://bsd.ac:42069';
+
+		root /var/www/purritobin;
+		location /.well-known/acme-challenge/ {
+			alias /var/www/acme-challenge/;
+		}
+	}
 }
 
 
@@ -54,19 +115,33 @@ Encrypted pastes
 ================
 
 The default clients of PurritoBin are installed to
-${PREFIX}/share/purritobin/POSIX_shell_clients.sh
+${PREFIX}/share/PurritoBin/POSIX_shell_client.sh
 
 To enable server side support for these pastes
 make sure that paste.html file located at
-${PREFIX}/share/purritobin/paste.html
+${PREFIX}/share/PurritoBin/paste.html
 is available for viewing, typically possible by just
-dumping the file into /var/www/purritobin
+dumping the file into ${LOCALSTATEDIR}/www/purritobin
+
+
+Online pasting through web-portal
+=================================
+
+To paste using the javascript form, the CORS header
+from both the paste server and the http server need to
+allow each other in the "Access-Control-Allow-Origin"
+HTTP header.
+
+An example for setting the CORS header in purrito(1)
+is available in the man page. As httpd(8) does not allow
+setting HTTP headers, relayd(8) can be used as a workaround,
+or the above nginx(8) example can be used.
 
 
 PF bruteforce blocking
 ======================
 
-PurritoBin exposes a port using -p <port> (by default: 42069) for
+PurritoBin exposes ports using -p <port> (by default: 42069) for
 clients to post their pastes.
 PurritoBin does not enforce any rate limiting for number of pastes
 at a time as this can be done much better using pf(4)
@@ -83,7 +158,7 @@ pass		# establish keep-state
 
 block quick from <bruteforce>
 
-# no more than one connection every 3 seconds
+# no more than 1 connection every 3 seconds
 pass in on egress proto tcp from any to any port $purritobin_port \
 		flags S/SA keep state \
 		(max-src-conn-rate 1/3, \
@@ -94,20 +169,3 @@ block return in on ! lo0 proto tcp to port 6000:6010
 
 # Port build user does not need network
 block return out log proto {tcp udp} user _pbuild
-
-
-Cron job for cleaning
-=====================
-
-PurritoBin leaves the cleaning upto the webmaster.
-Fortunately, due to the simple storage mechanism, you can
-do the cleaning very easily in daily.local
-
-sample daily.local for cron cleanup
------------------------------------
-
-find /var/www/purritobin/ -type f ! -name index.html \
-				! -name paste.html \
-				-delete
-
-This clears all pastes which were done during the day.

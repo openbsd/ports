@@ -6,7 +6,7 @@ CATEGORIES =	www net
 
 GH_ACCOUNT =	PurritoBin
 GH_PROJECT =	PurritoBin
-GH_TAGNAME =	0.3.3
+GH_TAGNAME =	0.6.7
 
 HOMEPAGE =	https://bsd.ac/
 MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
@@ -15,24 +15,28 @@ MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
 PERMIT_PACKAGE =	Yes
 
 # uses pledge()
-WANTLIB +=	${COMPILER_LIBCXX} c m usockets
+WANTLIB +=	${COMPILER_LIBCXX} c lmdb usockets
 
-# C++2a
-COMPILER =	base-clang
+# C++17
+COMPILER =	base-clang ports-gcc
 
-BUILD_DEPENDS =	www/uwebsockets
+MODULES =	devel/meson
 
-LIB_DEPENDS =	net/usockets
+CXXFLAGS +=	-I${LOCALBASE}/include
 
-NO_TEST	=	Yes
+CONFIGURE_ENV =	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/purritobin
-	${INSTALL_DATA} ${WRKSRC}/frontend/paste.html \
-		${PREFIX}/share/purritobin
-	${INSTALL_DATA} ${WRKSRC}/clients/POSIX_shell_client.sh \
-		${PREFIX}/share/purritobin
+# ssl tests fail
+CONFIGURE_ARGS= -Denable_testing=true \
+		-Dtest_shuf=gshuf \
+		-Dtest_seq=gseq
 
-FAKE_FLAGS =	PREFIX=${TRUEPREFIX}
+BUILD_DEPENDS =	databases/lmdbxx \
+		net/curl \
+		sysutils/coreutils \
+		www/uwebsockets
+
+LIB_DEPENDS =	databases/lmdb \
+		net/usockets
 
 .include <bsd.port.mk>
