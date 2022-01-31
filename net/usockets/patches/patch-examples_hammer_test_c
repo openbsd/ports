@@ -1,0 +1,17 @@
+$OpenBSD: patch-examples_hammer_test_c,v 1.1 2022/01/31 08:34:58 op Exp $
+
+Index: examples/hammer_test.c
+--- examples/hammer_test.c.orig
++++ examples/hammer_test.c
+@@ -403,9 +403,8 @@ int main() {
+ 
+     // these are ignored for non-SSL
+     struct us_socket_context_options_t options = {};
+-    options.key_file_name = "/home/alexhultman/uWebSockets.js/misc/key.pem";
+-    options.cert_file_name = "/home/alexhultman/uWebSockets.js/misc/cert.pem";
+-    options.passphrase = "1234";
++    options.key_file_name = "localhost.pem";
++    options.cert_file_name = "localhost.crt";
+ 
+     http_context = us_create_socket_context(SSL, loop, sizeof(struct http_context), options);
+ 
