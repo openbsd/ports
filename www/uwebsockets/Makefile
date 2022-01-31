@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/12/11 22:36:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2022/01/31 08:48:03 op Exp $
 
 COMMENT	=	ultra fast, simple, secure, standards compliant web server
 PKGNAME =	${DISTNAME:L}
@@ -6,7 +6,7 @@ CATEGORIES =	www
 
 GH_ACCOUNT =	uNetworking
 GH_PROJECT =	uWebSockets
-GH_TAGNAME =	v18.17.0
+GH_TAGNAME =	v20.9.0
 
 MAINTAINER =	Aisha Tammy <openbsd@aisha.cc>
 
@@ -21,9 +21,7 @@ NO_BUILD =	Yes
 NO_TEST =	Yes
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/include/uWebSockets/f2
+	${INSTALL_DATA_DIR} ${PREFIX}/include/uWebSockets
 	${INSTALL_DATA} ${WRKSRC}/src/*.h ${PREFIX}/include/uWebSockets
-	${INSTALL_DATA} ${WRKSRC}/src/f2/*.hpp \
-		${PREFIX}/include/uWebSockets/f2
 
 .include <bsd.port.mk>
