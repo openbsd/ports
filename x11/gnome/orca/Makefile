@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.125 2021/12/02 21:15:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.126 2022/01/31 16:14:10 ajacoutot Exp $
 
 COMMENT=		assistive screen reader
 
 GNOME_PROJECT=		orca
-GNOME_VERSION=		41.1
+GNOME_VERSION=		41.2
 
 # LGPLv2
 PERMIT_PACKAGE=		Yes
