@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_dune_cram_exec_ml,v 1.1 2022/01/31 00:04:53 daniel Exp $
+
+Backport commit for ocaml 4.13 support. see:
+https://github.com/ocaml/dune/commit/c1e82f94aa2883feda752df450130ee204855c09
+
+Index: src/dune/cram_exec.ml
+--- src/dune/cram_exec.ml.orig
++++ src/dune/cram_exec.ml
+@@ -283,7 +283,7 @@ let rewrite_paths build_path_prefix_map ~parent_script
+ 
+ let sanitize ~parent_script cram_to_output :
+     (block_result * metadata_entry * string) Cram_lexer.block list =
+-  List.map cram_to_output ~f:(fun t ->
++  List.map cram_to_output ~f:(fun (t : (block_result * _) Cram_lexer.block) ->
+       match t with
+       | Cram_lexer.Comment t -> Cram_lexer.Comment t
+       | Command

@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2021/12/19 21:33:27 jca Exp $
+# $OpenBSD: Makefile,v 1.15 2022/01/31 00:04:53 daniel Exp $
 
 MULTI_PACKAGES =	-main -private -configurator
 
 COMMENT-main =		OCaml build system
 COMMENT-private =	private libraries of the dune build system
 COMMENT-configurator =	OCaml library for gathering system configuration
-REVISION-configurator =	1
-REVISION-main =		0
-REVISION-private =	1
+REVISION-configurator =	2
+REVISION-main =		1
+REVISION-private =	2
 
 VERSION =		2.7.0
 
