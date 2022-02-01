@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2021/11/21 10:36:23 paco Exp $
+# $OpenBSD: Makefile,v 1.41 2022/02/01 18:17:33 paco Exp $
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 COMMENT =	fast and flexible static site generator
 
 MODGO_MODNAME =	github.com/gohugoio/hugo
-MODGO_VERSION =	v0.89.4
+MODGO_VERSION =	v0.92.1
 
 DISTNAME =	hugo-${MODGO_VERSION}
 
@@ -30,6 +30,7 @@ FLAVORS =	extended
 FLAVOR ?=
 
 .if ${FLAVOR:Mextended}
+COMPILER =	base-clang ports-gcc
 MODGO_FLAGS +=	--tags extended
 LIB_DEPENDS +=	www/libsass
 WANTLIB +=	${COMPILER_LIBCXX}
