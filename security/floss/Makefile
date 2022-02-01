@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/05/21 19:50:34 kmos Exp $
+# $OpenBSD: Makefile,v 1.7 2022/02/01 18:32:10 sthen Exp $
 
 COMMENT =	FireEye Labs Obfuscated String Solver
 
@@ -9,6 +9,8 @@ REVISION =	0
 GH_ACCOUNT =	fireeye
 GH_PROJECT =	flare-floss
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
+
+PORTROACH =	site:https://github.com/mandiant/flare-floss/releases/
 
 CATEGORIES =	security
 
