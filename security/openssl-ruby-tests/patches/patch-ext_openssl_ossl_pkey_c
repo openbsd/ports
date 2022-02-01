@@ -1,9 +1,9 @@
-$OpenBSD: patch-ext_openssl_ossl_pkey_c,v 1.1 2022/01/14 10:57:39 tb Exp $
+$OpenBSD: patch-ext_openssl_ossl_pkey_c,v 1.2 2022/02/01 18:54:28 tb Exp $
 
 Index: ext/openssl/ossl_pkey.c
 --- ext/openssl/ossl_pkey.c.orig
 +++ ext/openssl/ossl_pkey.c
-@@ -602,7 +602,7 @@ ossl_pkey_export_traditional(int argc, VALUE *argv, VA
+@@ -670,7 +670,7 @@ ossl_pkey_export_traditional(int argc, VALUE *argv, VA
  	}
      }
      else {
