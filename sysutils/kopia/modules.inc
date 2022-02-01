@@ -1,4 +1,4 @@
-# $OpenBSD: modules.inc,v 1.6 2022/01/16 17:51:07 denis Exp $
+# $OpenBSD: modules.inc,v 1.7 2022/02/01 17:46:43 denis Exp $
 
 MODGO_MODULES =	\
 	cloud.google.com/go					 v0.99.0 \
@@ -34,6 +34,9 @@ MODGO_MODULES =	\
 	github.com/cespare/xxhash				 v1.1.0 \
 	github.com/cespare/xxhash/v2				 v2.1.2 \
 	github.com/chmduquesne/rollinghash			 v4.0.0+incompatible \
+	github.com/chromedp/cdproto				 v0.0.0-20211126220118-81fa0469ad77 \
+	github.com/chromedp/chromedp				 v0.7.6 \
+	github.com/chromedp/sysutil				 v1.0.0 \
 	github.com/chzyer/logex					 v1.1.10 \
 	github.com/chzyer/readline				 v0.0.0-20180603132655-2972be24d48e \
 	github.com/chzyer/test					 v0.0.0-20180213035817-a1ea475d72b1 \
@@ -60,6 +63,9 @@ MODGO_MODULES =	\
 	github.com/go-logfmt/logfmt				 v0.5.1 \
 	github.com/go-logr/logr					 v0.4.0 \
 	github.com/go-stack/stack				 v1.8.0 \
+	github.com/gobwas/httphead				 v0.1.0 \
+	github.com/gobwas/pool					 v0.2.1 \
+	github.com/gobwas/ws					 v1.1.0 \
 	github.com/godbus/dbus/v5				 v5.0.5 \
 	github.com/gofrs/flock					 v0.8.1 \
 	github.com/gogo/protobuf				 v1.1.1 \
@@ -82,12 +88,12 @@ MODGO_MODULES =	\
 	github.com/googleapis/gax-go/v2				 v2.1.1 \
 	github.com/gorilla/mux					 v1.8.0 \
 	github.com/grpc-ecosystem/grpc-gateway			 v1.16.0 \
-	github.com/hanwen/go-fuse				 v1.0.0 \
-	github.com/hanwen/go-fuse/v2				 v2.1.0 \
+	github.com/hanwen/go-fuse/v2				 v2.1.1-0.20220112183258-f57e95bda82d \
 	github.com/hashicorp/golang-lru				 v0.5.1 \
 	github.com/ianlancetaylor/demangle			 v0.0.0-20200824232613-28f6c0f3b639 \
 	github.com/jmespath/go-jmespath				 v0.4.0 \
 	github.com/jmespath/go-jmespath/internal/testify	 v1.5.1 \
+	github.com/josharian/intern				 v1.0.0 \
 	github.com/jpillora/backoff				 v1.0.0 \
 	github.com/json-iterator/go				 v1.1.12 \
 	github.com/jstemmer/go-junit-report			 v0.9.1 \
@@ -98,13 +104,14 @@ MODGO_MODULES =	\
 	github.com/klauspost/cpuid/v2				 v2.0.9 \
 	github.com/klauspost/pgzip				 v1.2.5 \
 	github.com/konsorten/go-windows-terminal-sequences	 v1.0.3 \
-	github.com/kopia/htmluibuild				 v0.0.0-20220103200652-9a7b3d8f5556 \
+	github.com/kopia/htmluibuild				 v0.0.0-20220131042136-3e252f22c951 \
 	github.com/kr/fs					 v0.1.0 \
 	github.com/kr/logfmt					 v0.0.0-20140226030751-b84e30acd515 \
 	github.com/kr/pretty					 v0.3.0 \
 	github.com/kr/pty					 v1.1.1 \
 	github.com/kr/text					 v0.2.0 \
 	github.com/kylelemons/godebug				 v1.1.0 \
+	github.com/mailru/easyjson				 v0.7.7 \
 	github.com/mattn/go-colorable				 v0.1.12 \
 	github.com/mattn/go-ieproxy				 v0.0.1 \
 	github.com/mattn/go-isatty				 v0.0.14 \
@@ -118,6 +125,7 @@ MODGO_MODULES =	\
 	github.com/modocache/gover				 v0.0.0-20171022184752-b58185e213c5 \
 	github.com/mwitkow/go-conntrack				 v0.0.0-20190716064945-2f068394615f \
 	github.com/natefinch/atomic				 v1.0.1 \
+	github.com/orisano/pixelmatch				 v0.0.0-20210112091706-4fa4c7ba91d5 \
 	github.com/pierrec/lz4					 v2.6.1+incompatible \
 	github.com/pkg/errors					 v0.9.1 \
 	github.com/pkg/profile					 v1.6.0 \
@@ -551,6 +559,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys					 v0.0.0-20201014080544-cc95f250f6bc \
 	golang.org/x/sys					 v0.0.0-20201119102817-f84b799fce68 \
 	golang.org/x/sys					 v0.0.0-20201201145000-ef89a241ccb3 \
+	golang.org/x/sys					 v0.0.0-20201207223542-d4d67f95c62d \
 	golang.org/x/sys					 v0.0.0-20210104204734-6f8348627aad \
 	golang.org/x/sys					 v0.0.0-20210119212857-b64e53b001e4 \
 	golang.org/x/sys					 v0.0.0-20210124154548-22da62e12c0c \
