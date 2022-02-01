@@ -1,6 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/01/04 14:06:39 sthen Exp $
-lib/python${MODPY_VERSION}/site-packages/PyYAML-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
-@so lib/python${MODPY_VERSION}/site-packages/_yaml.${MODPY_PYC_MAGIC_TAG}so
+@comment $OpenBSD: PLIST,v 1.5 2022/02/01 18:30:27 sthen Exp $
+lib/python${MODPY_VERSION}/site-packages/PyYAML-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/PyYAML-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/PyYAML-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/PyYAML-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/PyYAML-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/_yaml/
+lib/python${MODPY_VERSION}/site-packages/_yaml/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/_yaml/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/_yaml/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yaml/
 lib/python${MODPY_VERSION}/site-packages/yaml/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yaml/${MODPY_PYCACHE}/
@@ -21,6 +28,7 @@ lib/python${MODPY_VERSION}/site-packages/yaml/${MODPY_PYCACHE}resolver.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/yaml/${MODPY_PYCACHE}scanner.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yaml/${MODPY_PYCACHE}serializer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yaml/${MODPY_PYCACHE}tokens.${MODPY_PYC_MAGIC_TAG}pyc
+${MODPY_COMMENT}@so lib/python${MODPY_VERSION}/site-packages/yaml/_yaml.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/yaml/composer.py
 lib/python${MODPY_VERSION}/site-packages/yaml/constructor.py
 lib/python${MODPY_VERSION}/site-packages/yaml/cyaml.py
