@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.89 2020/08/21 20:44:15 tracey Exp $
+# $OpenBSD: Makefile,v 1.90 2022/02/01 14:16:08 sthen Exp $
 
 COMMENT =	command-line client for Pandora Internet Radio
 
-DISTNAME =	pianobar-2020.04.05
+DISTNAME =	pianobar-2020.11.28
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio
 
@@ -10,7 +10,7 @@ HOMEPAGE =	https://6xq.net/pianobar/
 
 MASTER_SITES =	${HOMEPAGE}
 
-SHARED_LIBS =	piano	9.0	# 0.0.0
+SHARED_LIBS =	piano	10.0	# 0.0.0
 
 # MIT
 PERMIT_PACKAGE =	Yes
