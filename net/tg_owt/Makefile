@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2022/01/30 21:52:18 kn Exp $
+# $OpenBSD: Makefile,v 1.9 2022/02/01 16:40:42 kn Exp $
 
 # CMake Warning at cmake/arch.cmake:114 (message):
 #   Unsupported CPU architecture.
 # ...
 # ${WRKSRC}/src/common_audio/wav_header.cc:30:2:
 #   error: #error "Code not working properly for big endian platforms."
-NOT_FOR_ARCHS =		${BE_ARCHS}
+# i386: no need to build tg_owt as long as net/desktop fails to build
+NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		WebRTC build for Telegram
 
