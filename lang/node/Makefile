@@ -1,17 +1,13 @@
-# $OpenBSD: Makefile,v 1.93 2021/11/02 00:01:17 sthen Exp $
-
-# XXX:
-# - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
-# - Needs bundled libcares as arpa/nameser.h does not include ns_t_a.
+# $OpenBSD: Makefile,v 1.94 2022/02/01 22:17:58 abieber Exp $
 
 ONLY_FOR_ARCHS =	amd64 aarch64 i386 powerpc64
 DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
 
-COMMENT =		V8 JavaScript for clients and servers
+COMMENT = JavaScript runtime built on Chrome's V8 JavaScript engine
 
-NODE_VERSION =		v12.22.7
+NODE_VERSION =		v16.13.2
 PLEDGE_VER =		1.1.2
 DISTFILES =		node-pledge-{}${PLEDGE_VER}.tar.gz:0 \
 			${DISTNAME}-headers.tar.gz \
@@ -19,7 +15,6 @@ DISTFILES =		node-pledge-{}${PLEDGE_VER}.tar.gz:0 \
 
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
-REVISION =		0
 
 MASTER_SITES0 =		https://github.com/qbit/node-pledge/archive/
 
@@ -35,28 +30,36 @@ MASTER_SITES =		${HOMEPAGE}dist/${NODE_VERSION}/
 
 MODULES =		lang/python
 
-WANTLIB += c execinfo kvm m pthread util ${COMPILER_LIBCXX}
+WANTLIB += c execinfo m pthread ${COMPILER_LIBCXX}
+WANTLIB += z brotlienc brotlidec
+WANTLIB += icudata icui18n icuuc cares nghttp2 uv
+WANTLIB += lib/eopenssl11/ssl lib/eopenssl11/crypto
 
 COMPILER =		base-clang ports-gcc
 
 USE_GMAKE =		Yes
+
+MAKE_ENV +=		CXXFLAGS="${CXXFLAGS}"
 
 BUILD_DEPENDS =		sysutils/flock
 
 RUN_DEPENDS =		devel/gmake \
 			sysutils/flock
 
-TEST_TARGET =		test
+TEST_TARGET =		test-only
 CONFIGURE_STYLE =	simple
-CONFIGURE_SCRIPT =	${MODPY_BIN} configure.py
+CONFIGURE_SCRIPT =	configure
 
-# libpath and includes aren't picked up, but I added them here as a note.
-# The patch for node.gyp is where they are actually being set.
-CONFIGURE_ARGS =	--prefix=${PREFIX}
-
-.if "${MACHINE_ARCH}" == "aarch64" || "${MACHINE_ARCH}" == "powerpc64"
-CONFIGURE_ARGS +=	--openssl-no-asm
-.endif
+CONFIGURE_ARGS =	--prefix=${PREFIX} \
+			--with-intl=system-icu \
+			--shared-brotli \
+			--shared-cares \
+			--shared-libuv \
+			--shared-nghttp2 \
+			--shared-zlib \
+			--shared-openssl \
+			--shared-openssl-libpath=${EOPENSSL_LIB} \
+			--shared-openssl-includes=${EOPENSSL_INC}
 
 SUBST_VARS += 		DISTNAME
 SUBST_VARS += 		DISTFILES
@@ -66,9 +69,17 @@ SUBST_VARS += 		PREFIX
 SUBST_VARS +=		WRKDIST
 SUBST_VARS +=		MAKE_PROGRAM
 SUBST_VARS +=		NODE_VERSION
+SUBST_VARS += 		EOPENSSL_LIB
 
-MAKE_ENV +=		V=1 CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+LIB_DEPENDS +=		archivers/brotli \
+			devel/libuv \
+			net/libcares \
+			textproc/icu4c \
+			www/nghttp2 \
+			security/openssl/1.1
+
+EOPENSSL_LIB =		${LOCALBASE}/lib/eopenssl11
+EOPENSSL_INC =		${LOCALBASE}/include/eopenssl11
 
 do-extract:
 	mkdir ${WRKSRC}; \
@@ -79,26 +90,16 @@ do-extract:
 		${WRKSRC}/deps/npm/node_modules/node-pledge
 
 pre-configure:
-	@# Bad practice, but prevents a whole stack of patches.
-	ln -sf ${LOCALBASE}/bin/python${MODPY_VERSION} ${WRKDIR}/bin/python
-	${SUBST_CMD} ${WRKDIST}/lib/module.js \
-		${WRKDIST}/deps/npm/bin/node-gyp-bin/node-gyp \
-		${WRKDIST}/deps/npm/node_modules/node-gyp/lib/find-python.js \
+	${SUBST_CMD} ${WRKDIST}/common.gypi \
 		${WRKDIST}/deps/npm/node_modules/node-gyp/lib/install.js \
-		${WRKDIST}/deps/openssl/config/generate_gypi.pl \
-		${WRKDIST}/node.gyp \
-		${WRKDIST}/common.gypi \
+		${WRKDIST}/src/env.cc \
 		${WRKDIST}/tools/test.py
-	cd ${WRKDIST}/deps/openssl/config && \
-		${MAKE_PROGRAM} ASM_ARCHS=BSD-x86-elf NO_ASM_ARCHS=
-
-post-configure:
-	sed -i 's/-ldl //' ${WRKSRC}/out/deps/openssl/openssl.target.mk
-	sed -i 's/-ldl //' ${WRKSRC}/out/deps/openssl/openssl-cli.target.mk
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/gyp
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/update-gyp.py
 	${INSTALL_DATA_DIR} ${PREFIX}/share/node
 	${INSTALL_DATA} ${FULLDISTDIR}/${DISTNAME}-headers.tar.gz \
 		${PREFIX}/share/node/${DISTNAME}-headers.tar.gz
@@ -109,11 +110,12 @@ post-install:
 		ln -s ../../$$x $$x; \
 	done
 
+# Includes a lot of networking tests that will fail when running as _pbuild
 do-test:
 	cd ${WRKSRC} && \
+	export HOME=${WRKSRC} && \
 	ulimit -n $$(ulimit -Hn) && \
 	ulimit -d $$(ulimit -Hd) && \
-	${MAKE_PROGRAM} test
-
+	${MAKE_PROGRAM} ${TEST_TARGET}
 
 .include <bsd.port.mk>

@@ -1,0 +1,13 @@
+$OpenBSD: patch-deps_v8_src_trap-handler_handler-inside-posix_h,v 1.1 2022/02/01 22:17:58 abieber Exp $
+
+--- deps/v8/src/trap-handler/handler-inside-posix.h.orig	Fri Jan  7 17:53:40 2022
++++ deps/v8/src/trap-handler/handler-inside-posix.h	Sat Jan  1 17:10:11 2022
+@@ -13,7 +13,7 @@ namespace v8 {
+ namespace internal {
+ namespace trap_handler {
+ 
+-#if V8_OS_LINUX || V8_OS_FREEBSD
++#if V8_OS_LINUX || V8_OS_FREEBSD || V8_OS_OPENBSD
+ constexpr int kOobSignal = SIGSEGV;
+ #elif V8_OS_MACOSX
+ constexpr int kOobSignal = SIGBUS;

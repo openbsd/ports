@@ -1,25 +1,15 @@
-$OpenBSD: patch-common_gypi,v 1.16 2021/09/06 13:27:41 sthen Exp $
+$OpenBSD: patch-common_gypi,v 1.17 2022/02/01 22:17:58 abieber Exp $
 
-Index: common.gypi
---- common.gypi.orig
-+++ common.gypi
-@@ -396,7 +396,7 @@
-             'cflags': [ '-m32' ],
-             'ldflags': [ '-m32' ],
+--- common.gypi.orig	Fri Jan  7 16:05:41 2022
++++ common.gypi	Sun Jan  2 14:37:05 2022
+@@ -401,7 +401,9 @@
            }],
--          [ 'target_arch=="ppc64" and OS!="aix"', {
-+          [ 'target_arch=="ppc64" and OS!="aix" and OS!="openbsd"', {
-             'cflags': [ '-m64', '-mminimal-toc' ],
-             'ldflags': [ '-m64' ],
+           ['OS=="openbsd"', {
+             'cflags': [ '-I/usr/local/include' ],
+-            'ldflags': [ '-Wl,-z,wxneeded' ],
++            'ldflags': [ '-Wl,-z,wxneeded'
++                , '-Wl,-rpath,${EOPENSSL_LIB}'
++            ],
            }],
-@@ -524,6 +524,10 @@
-         'ldflags': [
-           '-Wl,--export-dynamic',
          ],
-+      }],
-+      ['OS=="openbsd"', {
-+        'cflags': [ '-I${LOCALBASE}/include' ],
-+        'libraries': [ '-L${LOCALBASE}/lib' ],
-       }],
-       # if node is built as an executable,
-       #      the openssl mechanism for keeping itself "dload"-ed to ensure proper
+         'conditions': [

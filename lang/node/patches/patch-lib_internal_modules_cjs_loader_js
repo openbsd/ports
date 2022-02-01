@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_internal_modules_cjs_loader_js,v 1.1 2022/02/01 22:17:58 abieber Exp $
+
+Index: lib/internal/modules/cjs/loader.js
+--- lib/internal/modules/cjs/loader.js.orig
++++ lib/internal/modules/cjs/loader.js
+@@ -1234,7 +1234,10 @@ Module._initPaths = function() {
+     path.resolve(process.execPath, '..') :
+     path.resolve(process.execPath, '..', '..');
+ 
+-  const paths = [path.resolve(prefixDir, 'lib', 'node')];
++  const paths = [
++      path.resolve(prefixDir, 'lib', 'node'),
++      path.resolve(prefixDir, 'lib', 'node_modules')
++  ];
+ 
+   if (homeDir) {
+     ArrayPrototypeUnshift(paths, path.resolve(homeDir, '.node_libraries'));

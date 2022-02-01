@@ -1,0 +1,13 @@
+$OpenBSD: patch-deps_v8_src_base_sys-info_cc,v 1.1 2022/02/01 22:17:58 abieber Exp $
+
+--- deps/v8/src/base/sys-info.cc.orig	Sat Jan  1 17:10:10 2022
++++ deps/v8/src/base/sys-info.cc	Sat Jan  1 17:10:10 2022
+@@ -38,7 +38,7 @@ namespace base {
+ // static
+ int SysInfo::NumberOfProcessors() {
+ #if V8_OS_OPENBSD
+-  int mib[2] = {CTL_HW, HW_NCPU};
++  int mib[2] = {CTL_HW, HW_NCPUONLINE};
+   int ncpu = 0;
+   size_t len = sizeof(ncpu);
+   if (sysctl(mib, arraysize(mib), &ncpu, &len, nullptr, 0) != 0) {
