@@ -1,4 +1,4 @@
-# $OpenBSD: pecl.port.mk,v 1.22 2021/12/18 22:28:55 sthen Exp $
+# $OpenBSD: pecl.port.mk,v 1.23 2022/02/02 11:25:24 sthen Exp $
 # PHP PECL module
 
 MODULES +=	lang/php
@@ -26,7 +26,7 @@ _PECLMOD ?=	${DISTNAME:S/pecl-//:C/-[0-9].*//:L}
 
 SUBST_VARS +=	MODPECL_DEFAULTV
 
-.if !defined(MASTER_SITES)
+.if !defined(MASTER_SITES) && !defined(GH_PROJECT)
 MASTER_SITES ?=	https://pecl.php.net/get/
 HOMEPAGE ?=	https://pecl.php.net/package/${_PECLMOD}
 EXTRACT_SUFX ?=	.tgz
