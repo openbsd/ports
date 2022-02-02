@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.306 2021/12/13 12:58:05 jca Exp $
+# $OpenBSD: Makefile,v 1.307 2022/02/02 12:33:52 jca Exp $
 
-VERSION =		4.15.3
+VERSION =		4.15.5
 DISTNAME =		samba-${VERSION}
 EPOCH =			0
-REVISION-ldb =		0
-REVISION-tevent =	2
+REVISION-ldb =		1
+REVISION-tevent =	3
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
 COMMENT-ldb =		LDAP-like embedded database
@@ -25,7 +25,7 @@ TEVENT_V =		0.11.0
 
 SHARED_LIBS =		asn1-samba4		2.0 \
 			com_err-samba4		1.0 \
-			dcerpc			1.0 \
+			dcerpc			1.1 \
 			dcerpc-binding		4.0 \
 			dcerpc-samr		1.0 \
 			dcerpc-server-core	2.0 \
@@ -48,10 +48,10 @@ SHARED_LIBS =		asn1-samba4		2.0 \
 			samba-errors		2.1 \
 			samba-hostconfig	9.0 \
 			samba-passdb		3.0 \
-			samba-util		7.0 \
+			samba-util		7.1 \
 			samdb			2.0 \
 			smbclient		6.1 \
-			smbconf			10.0 \
+			smbconf			10.1 \
 			smbldap			1.0 \
 			tevent			2.0 \
 			tevent-util		2.0 \
