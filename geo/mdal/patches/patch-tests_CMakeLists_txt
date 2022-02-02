@@ -1,4 +1,4 @@
-$OpenBSD: patch-tests_CMakeLists_txt,v 1.7 2021/11/19 13:28:07 landry Exp $
+$OpenBSD: patch-tests_CMakeLists_txt,v 1.8 2022/02/02 08:08:41 landry Exp $
 
 Index: tests/CMakeLists.txt
 --- tests/CMakeLists.txt.orig
@@ -12,7 +12,7 @@ Index: tests/CMakeLists.txt
  ENDIF(NOT GTEST_FOUND)
  
  #########################################################################
-@@ -181,5 +181,5 @@ SET(UNITTESTS_SRC
+@@ -182,5 +182,5 @@ SET(UNITTESTS_SRC
  )
  
  ADD_EXECUTABLE(mdal_unittests ${UNITTESTS_SRC})
