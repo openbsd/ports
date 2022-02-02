@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2022/02/02 15:19:33 kn Exp $
+# $OpenBSD: Makefile,v 1.9 2022/02/02 23:25:53 kn Exp $
 
 # the MTProto implementation does not support big-endian
 # https://github.com/telegramdesktop/tdesktop/issues/3167#issuecomment-658308298
@@ -88,6 +88,10 @@ NO_TEST =		Yes
 
 # archivers/minizip is minizip-ng, telegram requires incompatible original zlib
 NEEDED_BUNDLES +=	minizip
+# fix Telegram/ThirdParty/minizip/ioapi.c build: off_t is always 64 bit,
+# no need for ftello64()
+CFLAGS +=		-DIOAPI_NO_64
+
 # unported and required
 NEEDED_BUNDLES +=	rlottie tgcalls
 
