@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.125 2022/01/06 08:15:51 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.126 2022/02/02 12:24:14 sthen Exp $
 
 NOT_FOR_ARCHS-md = alpha hppa sparc64
 
 COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
 
-VERSION=	1.77.0
+VERSION=	1.78.0
 EPOCH =		0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME=	boost-${VERSION}
@@ -14,7 +14,7 @@ MASTER_SITES=	https://boostorg.jfrog.io/artifactory/main/release/${VERSION}/sour
 EXTRACT_SUFX=	.tar.bz2
 FIX_EXTRACT_PERMISSIONS =	Yes
 
-SO_VERSION=	18.0
+SO_VERSION=	19.0
 BOOST_LIBS=	boost_atomic-mt \
 		boost_chrono-mt boost_chrono \
 		boost_container-mt boost_container \
@@ -69,9 +69,10 @@ MAINTAINER=	Brad Smith <brad@comstyle.com> \
 # Boost
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} bz2 icudata icui18n icuuc m z
+WANTLIB=	${COMPILER_LIBCXX} bz2 icudata icui18n icuuc m z
+WANTLIB-md=	${COMPILER_LIBCXX} boost_filesystem-mt m
 
-COMPILER= base-clang ports-gcc
+COMPILER=	base-clang ports-gcc
 
 MULTI_PACKAGES=	-main -md
 
@@ -84,9 +85,6 @@ LIB_DEPENDS=	archivers/bzip2 \
 		textproc/icu4c
 
 LIB_DEPENDS-md=	devel/boost
-
-WANTLIB-md+=	${COMPILER_LIBCXX} m boost_chrono-mt boost_filesystem-mt \
-		boost_thread-mt
 
 .include <bsd.port.arch.mk>
 
